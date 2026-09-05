@@ -1,0 +1,3286 @@
+{
+  "method": {
+    "site_top_k": 4,
+    "grouping": "same label-propagation logic as phonetic-language-atlas.js",
+    "known_reference": "Glottolog CLDF master, matched by ISO 639-3"
+  },
+  "counts": {
+    "languages": 348,
+    "groups": 60,
+    "glottolog_matched": 317
+  },
+  "summary": {
+    "weighted_cluster_purity": 0.6091954022988506,
+    "mean_same_family_jaccard": 0.5074655339594965,
+    "mean_cross_family_jaccard": 0.37168952721731296,
+    "same_family_pairs": 8183,
+    "cross_family_pairs": 41903,
+    "pairwise": {
+      "n": 317,
+      "tp": 780,
+      "fp": 1180,
+      "fn": 7403,
+      "tn": 40723,
+      "precision": 0.3979591836734694,
+      "recall": 0.09531956495172919,
+      "f1": 0.1538006506950606
+    }
+  },
+  "groups": [
+    {
+      "group": 1,
+      "size": 34,
+      "purity": 0.20588235294117646,
+      "dominant_family": "Austronesian",
+      "dominant_n": 7,
+      "families": [
+        [
+          "Austronesian",
+          7
+        ],
+        [
+          "Sino-Tibetan",
+          5
+        ],
+        [
+          "Uto-Aztecan",
+          3
+        ],
+        [
+          "Pama-Nyungan",
+          2
+        ],
+        [
+          "Turkic",
+          2
+        ],
+        [
+          "Indo-European",
+          2
+        ],
+        [
+          "Afro-Asiatic",
+          2
+        ],
+        [
+          "Austroasiatic",
+          2
+        ],
+        [
+          "Japonic",
+          1
+        ],
+        [
+          "Uralic",
+          1
+        ],
+        [
+          "Dravidian",
+          1
+        ],
+        [
+          "Algic",
+          1
+        ],
+        [
+          "Tupian",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ],
+        [
+          "Athabaskan-Eyak-Tlingit",
+          1
+        ],
+        [
+          "Misumalpan",
+          1
+        ],
+        [
+          "Arawakan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "acm",
+          "name": "Mesopotamian Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "aot",
+          "name": "Atong (India)",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "bak",
+          "name": "Bashkir",
+          "family": "Turkic"
+        },
+        {
+          "iso": "ban",
+          "name": "Balinese",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "bjb",
+          "name": "Banggarla",
+          "family": "Pama-Nyungan"
+        },
+        {
+          "iso": "cbn",
+          "name": "Nyahkur",
+          "family": "Austroasiatic"
+        },
+        {
+          "iso": "iba",
+          "name": "Iban",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "jpn",
+          "name": "Japanese",
+          "family": "Japonic"
+        },
+        {
+          "iso": "klj",
+          "name": "Khalaj",
+          "family": "Turkic"
+        },
+        {
+          "iso": "koi",
+          "name": "Komi-Permyak",
+          "family": "Uralic"
+        },
+        {
+          "iso": "kru",
+          "name": "Kurukh",
+          "family": "Dravidian"
+        },
+        {
+          "iso": "kxd",
+          "name": "Brunei",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "lif",
+          "name": "Limbu",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "lmy",
+          "name": "Lamboya",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "mai",
+          "name": "Maithili",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mak",
+          "name": "Makasar",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "mdh",
+          "name": "Maguindanaon",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "mtq",
+          "name": "Muong",
+          "family": "Austroasiatic"
+        },
+        {
+          "iso": "nci",
+          "name": "Classical Nahuatl",
+          "family": "Uto-Aztecan"
+        },
+        {
+          "iso": "new",
+          "name": "Newari",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "nhn",
+          "name": "Central Nahuatl",
+          "family": "Uto-Aztecan"
+        },
+        {
+          "iso": "oji",
+          "name": "Ojibwa",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "pag",
+          "name": "Pangasinan",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "pga",
+          "name": "Sudanese Creole Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "pjt",
+          "name": "Pitjantjatjara",
+          "family": "Pama-Nyungan"
+        },
+        {
+          "iso": "ppl",
+          "name": "Pipil",
+          "family": "Uto-Aztecan"
+        },
+        {
+          "iso": "pqm",
+          "name": "Malecite-Passamaquoddy",
+          "family": "Algic"
+        },
+        {
+          "iso": "srs",
+          "name": "Sarsi",
+          "family": "Athabaskan-Eyak-Tlingit"
+        },
+        {
+          "iso": "ulw",
+          "name": "Ulwa",
+          "family": "Misumalpan"
+        },
+        {
+          "iso": "wau",
+          "name": "Waurá",
+          "family": "Arawakan"
+        },
+        {
+          "iso": "wbk",
+          "name": "Waigali",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "xkz",
+          "name": "Kurtokha",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "ybi",
+          "name": "Yamphu",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "yrl",
+          "name": "Nhengatu",
+          "family": "Tupian"
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "size": 33,
+      "purity": 0.8484848484848485,
+      "dominant_family": "Indo-European",
+      "dominant_n": 28,
+      "families": [
+        [
+          "Indo-European",
+          28
+        ],
+        [
+          "Artificial Language",
+          2
+        ],
+        [
+          "Afro-Asiatic",
+          1
+        ],
+        [
+          "Uralic",
+          1
+        ],
+        [
+          "Uto-Aztecan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "amh",
+          "name": "Amharic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "arg",
+          "name": "Aragonese",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ast",
+          "name": "Asturian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "cat",
+          "name": "Catalan",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "dlm",
+          "name": "Dalmatian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "fax",
+          "name": "Fala",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "fro",
+          "name": "Old French (842-ca. 1400)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "frp",
+          "name": "Arpitan",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "gml",
+          "name": "Middle Low German",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "goh",
+          "name": "Old High German (ca. 750-1050)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hat",
+          "name": "Haitian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ina",
+          "name": "Interlingua (International Auxiliary Language Association)",
+          "family": "Artificial Language"
+        },
+        {
+          "iso": "jam",
+          "name": "Jamaican Creole English",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kpv",
+          "name": "Komi-Zyrian",
+          "family": "Uralic"
+        },
+        {
+          "iso": "lad",
+          "name": "Ladino",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "lij",
+          "name": "Ligurian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "lit",
+          "name": "Lithuanian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "lmo",
+          "name": "Lombard",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "lou",
+          "name": "Louisiana Creole",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ltg",
+          "name": "Latgalian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mfe",
+          "name": "Morisyen",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "nhg",
+          "name": "Tetelcingo Nahuatl",
+          "family": "Uto-Aztecan"
+        },
+        {
+          "iso": "osp",
+          "name": "Old Spanish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "pdc",
+          "name": "Pennsylvania German",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "pms",
+          "name": "Piemontese",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "rgn",
+          "name": "Romagnol",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "rue",
+          "name": "Rusyn",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "rup",
+          "name": "Macedo-Romanian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "snd",
+          "name": "Sindhi",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "spa",
+          "name": "Spanish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "srn",
+          "name": "Sranan Tongo",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "vec",
+          "name": "Venetian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "vol",
+          "name": "Volapük",
+          "family": "Artificial Language"
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "size": 21,
+      "purity": 0.23809523809523808,
+      "dominant_family": "Austronesian",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Austronesian",
+          5
+        ],
+        [
+          "Atlantic-Congo",
+          4
+        ],
+        [
+          "Unclassified",
+          3
+        ],
+        [
+          "North Halmahera",
+          2
+        ],
+        [
+          "Chibchan",
+          1
+        ],
+        [
+          "Tungusic",
+          1
+        ],
+        [
+          "Pama-Nyungan",
+          1
+        ],
+        [
+          "Isolate",
+          1
+        ],
+        [
+          "Huitotoan",
+          1
+        ],
+        [
+          "Afro-Asiatic",
+          1
+        ],
+        [
+          "Indo-European",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "bbn",
+          "name": "Uneapa",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "chb",
+          "name": "Chibcha",
+          "family": "Chibchan"
+        },
+        {
+          "iso": "evn",
+          "name": "Evenki",
+          "family": "Tungusic"
+        },
+        {
+          "iso": "haw",
+          "name": "Hawaiian",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "hts",
+          "name": "Hadza",
+          "family": "Isolate"
+        },
+        {
+          "iso": "huu",
+          "name": "Murui Huitoto",
+          "family": "Huitotoan"
+        },
+        {
+          "iso": "kik",
+          "name": "Kikuyu",
+          "family": "Atlantic-Congo"
+        },
+        {
+          "iso": "kld",
+          "name": "Gamilaraay",
+          "family": "Pama-Nyungan"
+        },
+        {
+          "iso": "mlg",
+          "name": "Malagasy",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "mqs",
+          "name": "West Makian",
+          "family": "North Halmahera"
+        },
+        {
+          "iso": "mri",
+          "name": "Maori",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "nya",
+          "name": "Nyanja",
+          "family": "Atlantic-Congo"
+        },
+        {
+          "iso": "sid",
+          "name": "Sidamo",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "syl",
+          "name": "Sylheti",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "tft",
+          "name": "Ternate",
+          "family": "North Halmahera"
+        },
+        {
+          "iso": "tkl",
+          "name": "Tokelau",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "ton",
+          "name": "Tonga (Tonga Islands)",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "tpw",
+          "name": "Tupí",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "xho",
+          "name": "Xhosa",
+          "family": "Atlantic-Congo"
+        },
+        {
+          "iso": "zha",
+          "name": "Zhuang",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "zul",
+          "name": "Zulu",
+          "family": "Atlantic-Congo"
+        }
+      ]
+    },
+    {
+      "group": 4,
+      "size": 16,
+      "purity": 0.3125,
+      "dominant_family": "Austronesian",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Austronesian",
+          5
+        ],
+        [
+          "Sino-Tibetan",
+          3
+        ],
+        [
+          "Indo-European",
+          3
+        ],
+        [
+          "Dravidian",
+          2
+        ],
+        [
+          "Austroasiatic",
+          2
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "bcl",
+          "name": "Central Bikol",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "bod",
+          "name": "Tibetan",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "ceb",
+          "name": "Cebuano",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "ilo",
+          "name": "Iloko",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "kan",
+          "name": "Kannada",
+          "family": "Dravidian"
+        },
+        {
+          "iso": "khm",
+          "name": "Khmer",
+          "family": "Austroasiatic"
+        },
+        {
+          "iso": "mar",
+          "name": "Marathi",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mnw",
+          "name": "Mon",
+          "family": "Austroasiatic"
+        },
+        {
+          "iso": "mya",
+          "name": "Burmese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "och",
+          "name": "Old Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "okm",
+          "name": "Middle Korean (10th-16th cent.)",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "pam",
+          "name": "Pampanga",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "pan",
+          "name": "Panjabi",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "san",
+          "name": "Sanskrit",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "tel",
+          "name": "Telugu",
+          "family": "Dravidian"
+        },
+        {
+          "iso": "tgl",
+          "name": "Tagalog",
+          "family": "Austronesian"
+        }
+      ]
+    },
+    {
+      "group": 5,
+      "size": 15,
+      "purity": 0.4,
+      "dominant_family": "Austronesian",
+      "dominant_n": 6,
+      "families": [
+        [
+          "Austronesian",
+          6
+        ],
+        [
+          "Indo-European",
+          3
+        ],
+        [
+          "Austroasiatic",
+          2
+        ],
+        [
+          "Muskogean",
+          1
+        ],
+        [
+          "Uto-Aztecan",
+          1
+        ],
+        [
+          "Uralic",
+          1
+        ],
+        [
+          "Tupian",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ace",
+          "name": "Achinese",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "bdq",
+          "name": "Bahnar",
+          "family": "Austroasiatic"
+        },
+        {
+          "iso": "cho",
+          "name": "Choctaw",
+          "family": "Muskogean"
+        },
+        {
+          "iso": "gug",
+          "name": "Paraguayan Guaraní",
+          "family": "Tupian"
+        },
+        {
+          "iso": "hil",
+          "name": "Hiligaynon",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "jav",
+          "name": "Javanese",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "kas",
+          "name": "Kashmiri",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kaw",
+          "name": "Kawi",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "lwl",
+          "name": "Eastern Lawa",
+          "family": "Austroasiatic"
+        },
+        {
+          "iso": "nhx",
+          "name": "Isthmus-Mecayapan Nahuatl",
+          "family": "Uto-Aztecan"
+        },
+        {
+          "iso": "sin",
+          "name": "Sinhala",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "skr",
+          "name": "Saraiki",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "urk",
+          "name": "Urak Lawoi'",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "war",
+          "name": "Waray (Philippines)",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "yrk",
+          "name": "Nenets",
+          "family": "Uralic"
+        }
+      ]
+    },
+    {
+      "group": 6,
+      "size": 15,
+      "purity": 0.7333333333333333,
+      "dominant_family": "Indo-European",
+      "dominant_n": 11,
+      "families": [
+        [
+          "Indo-European",
+          11
+        ],
+        [
+          "Isolate",
+          2
+        ],
+        [
+          "Unclassified",
+          2
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ckb",
+          "name": "Central Kurdish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "cor",
+          "name": "Cornish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "div",
+          "name": "Dhivehi",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "dum",
+          "name": "Middle Dutch (ca. 1050-1350)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ett",
+          "name": "Etruscan",
+          "family": "Isolate"
+        },
+        {
+          "iso": "eus",
+          "name": "Basque",
+          "family": "Isolate"
+        },
+        {
+          "iso": "frr",
+          "name": "Northern Frisian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "glv",
+          "name": "Manx",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "gmh",
+          "name": "Middle High German (ca. 1050-1500)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hrx",
+          "name": "Hunsrik",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "lim",
+          "name": "Limburgan",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mga",
+          "name": "Middle Irish (900-1200)",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "nds",
+          "name": "Low German",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "stq",
+          "name": "Saterfriesisch",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "wlm",
+          "name": "Middle Welsh",
+          "family": "Unclassified"
+        }
+      ]
+    },
+    {
+      "group": 7,
+      "size": 14,
+      "purity": 0.5714285714285714,
+      "dominant_family": "Indo-European",
+      "dominant_n": 8,
+      "families": [
+        [
+          "Indo-European",
+          8
+        ],
+        [
+          "Unclassified",
+          2
+        ],
+        [
+          "Artificial Language",
+          1
+        ],
+        [
+          "Koreanic",
+          1
+        ],
+        [
+          "Dravidian",
+          1
+        ],
+        [
+          "Uralic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ben",
+          "name": "Bengali",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "fao",
+          "name": "Faroese",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "fry",
+          "name": "Western Frisian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ido",
+          "name": "Ido",
+          "family": "Artificial Language"
+        },
+        {
+          "iso": "ita",
+          "name": "Italian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kor",
+          "name": "Korean",
+          "family": "Koreanic"
+        },
+        {
+          "iso": "lat",
+          "name": "Latin",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "lav",
+          "name": "Latvian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mal",
+          "name": "Malayalam",
+          "family": "Dravidian"
+        },
+        {
+          "iso": "nep",
+          "name": "Nepali (macrolanguage)",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "ron",
+          "name": "Romanian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "sme",
+          "name": "Northern Sami",
+          "family": "Uralic"
+        },
+        {
+          "iso": "sqi",
+          "name": "Albanian",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "wln",
+          "name": "Walloon",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 8,
+      "size": 13,
+      "purity": 0.3076923076923077,
+      "dominant_family": "Unclassified",
+      "dominant_n": 4,
+      "families": [
+        [
+          "Unclassified",
+          4
+        ],
+        [
+          "Turkic",
+          4
+        ],
+        [
+          "Afro-Asiatic",
+          3
+        ],
+        [
+          "Kartvelian",
+          1
+        ],
+        [
+          "Indo-European",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "afb",
+          "name": "Gulf Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "ayl",
+          "name": "Libyan Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "aze",
+          "name": "Azerbaijani",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "kaz",
+          "name": "Kazakh",
+          "family": "Turkic"
+        },
+        {
+          "iso": "kir",
+          "name": "Kirghiz",
+          "family": "Turkic"
+        },
+        {
+          "iso": "lzz",
+          "name": "Laz",
+          "family": "Kartvelian"
+        },
+        {
+          "iso": "orv",
+          "name": "Old Russian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "slr",
+          "name": "Salar",
+          "family": "Turkic"
+        },
+        {
+          "iso": "swa",
+          "name": "Swahili (macrolanguage)",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "syc",
+          "name": "Classical Syriac",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "tuk",
+          "name": "Turkmen",
+          "family": "Turkic"
+        },
+        {
+          "iso": "uzb",
+          "name": "Uzbek",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "zza",
+          "name": "Zaza",
+          "family": "Unclassified"
+        }
+      ]
+    },
+    {
+      "group": 9,
+      "size": 11,
+      "purity": 0.6363636363636364,
+      "dominant_family": "Afro-Asiatic",
+      "dominant_n": 7,
+      "families": [
+        [
+          "Afro-Asiatic",
+          7
+        ],
+        [
+          "Unclassified",
+          2
+        ],
+        [
+          "Indo-European",
+          2
+        ]
+      ],
+      "members": [
+        {
+          "iso": "aar",
+          "name": "Afar",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "acw",
+          "name": "Hijazi Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "ajp",
+          "name": "South Levantine Arabic",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "apc",
+          "name": "Levantine Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "ara",
+          "name": "Arabic",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "ary",
+          "name": "Moroccan Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "arz",
+          "name": "Egyptian Arabic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "deu",
+          "name": "German",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mlt",
+          "name": "Maltese",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "tgk",
+          "name": "Tajik",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "tzm",
+          "name": "Central Atlas Tamazight",
+          "family": "Afro-Asiatic"
+        }
+      ]
+    },
+    {
+      "group": 10,
+      "size": 11,
+      "purity": 0.8181818181818182,
+      "dominant_family": "Indo-European",
+      "dominant_n": 9,
+      "families": [
+        [
+          "Indo-European",
+          9
+        ],
+        [
+          "Abkhaz-Adyge",
+          2
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ady",
+          "name": "Adyghe",
+          "family": "Abkhaz-Adyge"
+        },
+        {
+          "iso": "bel",
+          "name": "Belarusian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "bul",
+          "name": "Bulgarian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ell",
+          "name": "Modern Greek (1453-)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "grc",
+          "name": "Ancient Greek (to 1453)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hbs",
+          "name": "Serbo-Croatian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kbd",
+          "name": "Kabardian",
+          "family": "Abkhaz-Adyge"
+        },
+        {
+          "iso": "mkd",
+          "name": "Macedonian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "por",
+          "name": "Portuguese",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "rus",
+          "name": "Russian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "sga",
+          "name": "Old Irish (to 900)",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 11,
+      "size": 10,
+      "purity": 0.5,
+      "dominant_family": "Indo-European",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Indo-European",
+          5
+        ],
+        [
+          "Uralic",
+          2
+        ],
+        [
+          "Koreanic",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ],
+        [
+          "Turkic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "eng",
+          "name": "English",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "enm",
+          "name": "Middle English (1100-1500)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hun",
+          "name": "Hungarian",
+          "family": "Uralic"
+        },
+        {
+          "iso": "jje",
+          "name": "Jejueo",
+          "family": "Koreanic"
+        },
+        {
+          "iso": "liv",
+          "name": "Liv",
+          "family": "Uralic"
+        },
+        {
+          "iso": "nno",
+          "name": "Norwegian Nynorsk",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "nob",
+          "name": "Norwegian Bokmål",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "nor",
+          "name": "Norwegian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "swe",
+          "name": "Swedish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "tur",
+          "name": "Turkish",
+          "family": "Turkic"
+        }
+      ]
+    },
+    {
+      "group": 12,
+      "size": 9,
+      "purity": 1.0,
+      "dominant_family": "Indo-European",
+      "dominant_n": 9,
+      "families": [
+        [
+          "Indo-European",
+          9
+        ]
+      ],
+      "members": [
+        {
+          "iso": "afr",
+          "name": "Afrikaans",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ang",
+          "name": "Old English (ca. 450-1100)",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "bre",
+          "name": "Breton",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "dan",
+          "name": "Danish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "fra",
+          "name": "French",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "gle",
+          "name": "Irish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "ltz",
+          "name": "Luxembourgish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "nld",
+          "name": "Dutch",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "pol",
+          "name": "Polish",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 13,
+      "size": 9,
+      "purity": 0.6666666666666666,
+      "dominant_family": "Uralic",
+      "dominant_n": 6,
+      "families": [
+        [
+          "Uralic",
+          6
+        ],
+        [
+          "Unclassified",
+          1
+        ],
+        [
+          "Indo-European",
+          1
+        ],
+        [
+          "Dravidian",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "est",
+          "name": "Estonian",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "fin",
+          "name": "Finnish",
+          "family": "Uralic"
+        },
+        {
+          "iso": "gla",
+          "name": "Scottish Gaelic",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "izh",
+          "name": "Ingrian",
+          "family": "Uralic"
+        },
+        {
+          "iso": "krl",
+          "name": "Karelian",
+          "family": "Uralic"
+        },
+        {
+          "iso": "olo",
+          "name": "Livvi",
+          "family": "Uralic"
+        },
+        {
+          "iso": "sjd",
+          "name": "Kildin Sami",
+          "family": "Uralic"
+        },
+        {
+          "iso": "tam",
+          "name": "Tamil",
+          "family": "Dravidian"
+        },
+        {
+          "iso": "vot",
+          "name": "Votic",
+          "family": "Uralic"
+        }
+      ]
+    },
+    {
+      "group": 14,
+      "size": 9,
+      "purity": 0.8888888888888888,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 8,
+      "families": [
+        [
+          "Sino-Tibetan",
+          8
+        ],
+        [
+          "Tai-Kadai",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "cnk",
+          "name": "Khumi Chin",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "csp",
+          "name": "Southern Pinghua",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "gan",
+          "name": "Gan Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "hak",
+          "name": "Hakka Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "luh",
+          "name": "Leizhou Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "mnp",
+          "name": "Min Bei Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "nan",
+          "name": "Min Nan Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "pcc",
+          "name": "Bouyei",
+          "family": "Tai-Kadai"
+        },
+        {
+          "iso": "yue",
+          "name": "Yue Chinese",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 15,
+      "size": 7,
+      "purity": 0.8571428571428571,
+      "dominant_family": "Indo-European",
+      "dominant_n": 6,
+      "families": [
+        [
+          "Indo-European",
+          6
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "bar",
+          "name": "Bavarian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "gsw",
+          "name": "Swiss German",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "non",
+          "name": "Old Norse",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "osx",
+          "name": "Old Saxon",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "pus",
+          "name": "Pushto",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "sco",
+          "name": "Scots",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "yol",
+          "name": "Yola",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 16,
+      "size": 7,
+      "purity": 0.7142857142857143,
+      "dominant_family": "Indo-European",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Indo-European",
+          5
+        ],
+        [
+          "Nakh-Daghestanian",
+          1
+        ],
+        [
+          "Nivkh",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "bbl",
+          "name": "Bats",
+          "family": "Nakh-Daghestanian"
+        },
+        {
+          "iso": "csb",
+          "name": "Kashubian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "dsb",
+          "name": "Lower Sorbian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hsb",
+          "name": "Upper Sorbian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "niv",
+          "name": "Gilyak",
+          "family": "Nivkh"
+        },
+        {
+          "iso": "slv",
+          "name": "Slovenian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "szl",
+          "name": "Silesian",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 17,
+      "size": 7,
+      "purity": 0.7142857142857143,
+      "dominant_family": "Indo-European",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Indo-European",
+          5
+        ],
+        [
+          "Eskimo-Aleut",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "cos",
+          "name": "Corsican",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kal",
+          "name": "Kalaallisut",
+          "family": "Eskimo-Aleut"
+        },
+        {
+          "iso": "nap",
+          "name": "Neapolitan",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "nrf",
+          "name": "Jèrriais",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "scn",
+          "name": "Sicilian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "sdc",
+          "name": "Sassarese Sardinian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "srd",
+          "name": "Sardinian",
+          "family": "Unclassified"
+        }
+      ]
+    },
+    {
+      "group": 18,
+      "size": 7,
+      "purity": 0.5714285714285714,
+      "dominant_family": "Indo-European",
+      "dominant_n": 4,
+      "families": [
+        [
+          "Indo-European",
+          4
+        ],
+        [
+          "Artificial Language",
+          1
+        ],
+        [
+          "Kartvelian",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "cym",
+          "name": "Welsh",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "epo",
+          "name": "Esperanto",
+          "family": "Artificial Language"
+        },
+        {
+          "iso": "got",
+          "name": "Gothic",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "isl",
+          "name": "Icelandic",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kat",
+          "name": "Georgian",
+          "family": "Kartvelian"
+        },
+        {
+          "iso": "ukr",
+          "name": "Ukrainian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "yid",
+          "name": "Yiddish",
+          "family": "Unclassified"
+        }
+      ]
+    },
+    {
+      "group": 19,
+      "size": 7,
+      "purity": 0.7142857142857143,
+      "dominant_family": "Tai-Kadai",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Tai-Kadai",
+          5
+        ],
+        [
+          "Sino-Tibetan",
+          1
+        ],
+        [
+          "Austroasiatic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "blt",
+          "name": "Tai Dam",
+          "family": "Tai-Kadai"
+        },
+        {
+          "iso": "khb",
+          "name": "Lü",
+          "family": "Tai-Kadai"
+        },
+        {
+          "iso": "lao",
+          "name": "Lao",
+          "family": "Tai-Kadai"
+        },
+        {
+          "iso": "lsi",
+          "name": "Lashi",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "shn",
+          "name": "Shan",
+          "family": "Tai-Kadai"
+        },
+        {
+          "iso": "tha",
+          "name": "Thai",
+          "family": "Tai-Kadai"
+        },
+        {
+          "iso": "vie",
+          "name": "Vietnamese",
+          "family": "Austroasiatic"
+        }
+      ]
+    },
+    {
+      "group": 20,
+      "size": 6,
+      "purity": 0.8333333333333334,
+      "dominant_family": "Indo-European",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Indo-European",
+          5
+        ],
+        [
+          "Turkic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "guj",
+          "name": "Gujarati",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hin",
+          "name": "Hindi",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "hye",
+          "name": "Armenian",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "kmr",
+          "name": "Northern Kurdish",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "uig",
+          "name": "Uighur",
+          "family": "Turkic"
+        },
+        {
+          "iso": "urd",
+          "name": "Urdu",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 21,
+      "size": 6,
+      "purity": 0.8333333333333334,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 5,
+      "families": [
+        [
+          "Sino-Tibetan",
+          5
+        ],
+        [
+          "Hmong-Mien",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "cdo",
+          "name": "Min Dong Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "cpx",
+          "name": "Pu-Xian Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "kix",
+          "name": "Khiamniungan Naga",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "ltc",
+          "name": "Late Middle Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "mww",
+          "name": "Hmong Daw",
+          "family": "Hmong-Mien"
+        },
+        {
+          "iso": "wuu",
+          "name": "Wu Chinese",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 22,
+      "size": 5,
+      "purity": 0.8,
+      "dominant_family": "Afro-Asiatic",
+      "dominant_n": 4,
+      "families": [
+        [
+          "Afro-Asiatic",
+          4
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "aii",
+          "name": "Assyrian Neo-Aramaic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "arc",
+          "name": "Official Aramaic (700-300 BCE)",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "egy",
+          "name": "Egyptian (Ancient)",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "fas",
+          "name": "Persian",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "heb",
+          "name": "Hebrew",
+          "family": "Afro-Asiatic"
+        }
+      ]
+    },
+    {
+      "group": 23,
+      "size": 5,
+      "purity": 0.8,
+      "dominant_family": "Afro-Asiatic",
+      "dominant_n": 4,
+      "families": [
+        [
+          "Afro-Asiatic",
+          4
+        ],
+        [
+          "Abkhaz-Adyge",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "akk",
+          "name": "Akkadian",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "shi",
+          "name": "Tachelhit",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "sjs",
+          "name": "Senhaja De Srair",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "tru",
+          "name": "Turoyo",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "uby",
+          "name": "Ubykh",
+          "family": "Abkhaz-Adyge"
+        }
+      ]
+    },
+    {
+      "group": 24,
+      "size": 5,
+      "purity": 0.6,
+      "dominant_family": "Indo-European",
+      "dominant_n": 3,
+      "families": [
+        [
+          "Indo-European",
+          3
+        ],
+        [
+          "Tungusic",
+          1
+        ],
+        [
+          "Mongolic-Khitan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "asm",
+          "name": "Assamese",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "glg",
+          "name": "Galician",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mnc",
+          "name": "Manchu",
+          "family": "Tungusic"
+        },
+        {
+          "iso": "mon",
+          "name": "Mongolian",
+          "family": "Mongolic-Khitan"
+        },
+        {
+          "iso": "oci",
+          "name": "Occitan (post 1500)",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 25,
+      "size": 5,
+      "purity": 0.4,
+      "dominant_family": "Nakh-Daghestanian",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Nakh-Daghestanian",
+          2
+        ],
+        [
+          "Mongolic-Khitan",
+          1
+        ],
+        [
+          "Algic",
+          1
+        ],
+        [
+          "Yukaghir",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "che",
+          "name": "Chechen",
+          "family": "Nakh-Daghestanian"
+        },
+        {
+          "iso": "inh",
+          "name": "Ingush",
+          "family": "Nakh-Daghestanian"
+        },
+        {
+          "iso": "mic",
+          "name": "Mi'kmaq",
+          "family": "Algic"
+        },
+        {
+          "iso": "xal",
+          "name": "Kalmyk",
+          "family": "Mongolic-Khitan"
+        },
+        {
+          "iso": "yux",
+          "name": "Southern Yukaghir",
+          "family": "Yukaghir"
+        }
+      ]
+    },
+    {
+      "group": 26,
+      "size": 4,
+      "purity": 0.75,
+      "dominant_family": "Indo-European",
+      "dominant_n": 3,
+      "families": [
+        [
+          "Indo-European",
+          3
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ces",
+          "name": "Czech",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "phl",
+          "name": "Phalura",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "rsk",
+          "name": "Ruthenian",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "slk",
+          "name": "Slovak",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 27,
+      "size": 4,
+      "purity": 1.0,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 4,
+      "families": [
+        [
+          "Sino-Tibetan",
+          4
+        ]
+      ],
+      "members": [
+        {
+          "iso": "cjy",
+          "name": "Jinyu Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "cmn",
+          "name": "Mandarin Chinese",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "dng",
+          "name": "Dungan",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "hsn",
+          "name": "Xiang Chinese",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 28,
+      "size": 4,
+      "purity": 0.5,
+      "dominant_family": "Indo-European",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Indo-European",
+          2
+        ],
+        [
+          "Uralic",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "gul",
+          "name": "Sea Island Creole English",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "mdf",
+          "name": "Moksha",
+          "family": "Uralic"
+        },
+        {
+          "iso": "ota",
+          "name": "Ottoman Turkish (1500-1928)",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "pox",
+          "name": "Polabian",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 29,
+      "size": 4,
+      "purity": 0.25,
+      "dominant_family": "Mongolic-Khitan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Mongolic-Khitan",
+          1
+        ],
+        [
+          "Sino-Tibetan",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ],
+        [
+          "Algic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "crk",
+          "name": "Plains Cree",
+          "family": "Algic"
+        },
+        {
+          "iso": "dzo",
+          "name": "Dzongkha",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "kok",
+          "name": "Konkani (macrolanguage)",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "sce",
+          "name": "Dongxiang",
+          "family": "Mongolic-Khitan"
+        }
+      ]
+    },
+    {
+      "group": 30,
+      "size": 3,
+      "purity": 0.6666666666666666,
+      "dominant_family": "Turkic",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Turkic",
+          2
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "bua",
+          "name": "Buriat",
+          "family": "Unclassified"
+        },
+        {
+          "iso": "sah",
+          "name": "Yakut",
+          "family": "Turkic"
+        },
+        {
+          "iso": "tyv",
+          "name": "Tuvinian",
+          "family": "Turkic"
+        }
+      ]
+    },
+    {
+      "group": 31,
+      "size": 3,
+      "purity": 0.6666666666666666,
+      "dominant_family": "Cariban",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Cariban",
+          2
+        ],
+        [
+          "Muskogean",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "car",
+          "name": "Galibi Carib",
+          "family": "Cariban"
+        },
+        {
+          "iso": "cic",
+          "name": "Chickasaw",
+          "family": "Muskogean"
+        },
+        {
+          "iso": "mch",
+          "name": "Maquiritari",
+          "family": "Cariban"
+        }
+      ]
+    },
+    {
+      "group": 32,
+      "size": 3,
+      "purity": 0.3333333333333333,
+      "dominant_family": "Afro-Asiatic",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Afro-Asiatic",
+          1
+        ],
+        [
+          "Austronesian",
+          1
+        ],
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "cop",
+          "name": "Coptic",
+          "family": "Afro-Asiatic"
+        },
+        {
+          "iso": "ind",
+          "name": "Indonesian",
+          "family": "Austronesian"
+        },
+        {
+          "iso": "msa",
+          "name": "Malay (macrolanguage)",
+          "family": "Unclassified"
+        }
+      ]
+    },
+    {
+      "group": 33,
+      "size": 3,
+      "purity": 0.6666666666666666,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Sino-Tibetan",
+          2
+        ],
+        [
+          "Athabaskan-Eyak-Tlingit",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "crx",
+          "name": "Carrier",
+          "family": "Athabaskan-Eyak-Tlingit"
+        },
+        {
+          "iso": "nmy",
+          "name": "Namuyi",
+          "family": "Sino-Tibetan"
+        },
+        {
+          "iso": "ycl",
+          "name": "Lolopo",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 34,
+      "size": 3,
+      "purity": 0.6666666666666666,
+      "dominant_family": "Atlantic-Congo",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Atlantic-Congo",
+          2
+        ],
+        [
+          "Athabaskan-Eyak-Tlingit",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "nup",
+          "name": "Nupe-Nupe-Tako",
+          "family": "Atlantic-Congo"
+        },
+        {
+          "iso": "xsl",
+          "name": "South Slavey",
+          "family": "Athabaskan-Eyak-Tlingit"
+        },
+        {
+          "iso": "yor",
+          "name": "Yoruba",
+          "family": "Atlantic-Congo"
+        }
+      ]
+    },
+    {
+      "group": 35,
+      "size": 2,
+      "purity": 0.5,
+      "dominant_family": "Iroquoian",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Iroquoian",
+          1
+        ],
+        [
+          "Athabaskan-Eyak-Tlingit",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "apw",
+          "name": "Western Apache",
+          "family": "Athabaskan-Eyak-Tlingit"
+        },
+        {
+          "iso": "chr",
+          "name": "Cherokee",
+          "family": "Iroquoian"
+        }
+      ]
+    },
+    {
+      "group": 36,
+      "size": 2,
+      "purity": 1.0,
+      "dominant_family": "Atlantic-Congo",
+      "dominant_n": 2,
+      "families": [
+        [
+          "Atlantic-Congo",
+          2
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ewe",
+          "name": "Ewe",
+          "family": "Atlantic-Congo"
+        },
+        {
+          "iso": "guw",
+          "name": "Gun",
+          "family": "Atlantic-Congo"
+        }
+      ]
+    },
+    {
+      "group": 37,
+      "size": 2,
+      "purity": 0.5,
+      "dominant_family": "Indo-European",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Indo-European",
+          1
+        ],
+        [
+          "Athabaskan-Eyak-Tlingit",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "fpe",
+          "name": "Fernando Po Creole English",
+          "family": "Indo-European"
+        },
+        {
+          "iso": "nav",
+          "name": "Navajo",
+          "family": "Athabaskan-Eyak-Tlingit"
+        }
+      ]
+    },
+    {
+      "group": 38,
+      "size": 2,
+      "purity": 0.5,
+      "dominant_family": "Wakashan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Wakashan",
+          1
+        ],
+        [
+          "Sino-Tibetan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "kwk",
+          "name": "Kwakiutl",
+          "family": "Wakashan"
+        },
+        {
+          "iso": "zom",
+          "name": "Zou",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 39,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Abkhaz-Adyge",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Abkhaz-Adyge",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "abk",
+          "name": "Abkhazian",
+          "family": "Abkhaz-Adyge"
+        }
+      ]
+    },
+    {
+      "group": 40,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Eskimo-Aleut",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Eskimo-Aleut",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ale",
+          "name": "Aleut",
+          "family": "Eskimo-Aleut"
+        }
+      ]
+    },
+    {
+      "group": 41,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Atlantic-Congo",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Atlantic-Congo",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "gur",
+          "name": "Farefare",
+          "family": "Atlantic-Congo"
+        }
+      ]
+    },
+    {
+      "group": 42,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Indo-European",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Indo-European",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "gwc",
+          "name": "Gawri",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 43,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Afro-Asiatic",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Afro-Asiatic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "hau",
+          "name": "Hausa",
+          "family": "Afro-Asiatic"
+        }
+      ]
+    },
+    {
+      "group": 44,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Nuclear-Macro-Je",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Nuclear-Macro-Je",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "kgp",
+          "name": "Kaingang",
+          "family": "Nuclear-Macro-Je"
+        }
+      ]
+    },
+    {
+      "group": 45,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Sino-Tibetan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ksw",
+          "name": "S'gaw Karen",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 46,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Kxa",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Kxa",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ktz",
+          "name": "Juǀʼhoan",
+          "family": "Kxa"
+        }
+      ]
+    },
+    {
+      "group": 47,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Sino-Tibetan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "kyu",
+          "name": "Western Kayah",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 48,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Salishan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Salishan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "lut",
+          "name": "Lushootseed",
+          "family": "Salishan"
+        }
+      ]
+    },
+    {
+      "group": 49,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Austronesian",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Austronesian",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "mah",
+          "name": "Marshallese",
+          "family": "Austronesian"
+        }
+      ]
+    },
+    {
+      "group": 50,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Tuu",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Tuu",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ngh",
+          "name": "Nǁng",
+          "family": "Tuu"
+        }
+      ]
+    },
+    {
+      "group": 51,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Indo-European",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Indo-European",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "ofs",
+          "name": "Old Frisian",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 52,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Indo-European",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Indo-European",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "oss",
+          "name": "Iron Ossetic",
+          "family": "Indo-European"
+        }
+      ]
+    },
+    {
+      "group": 53,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Austroasiatic",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Austroasiatic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "pbv",
+          "name": "Pnar",
+          "family": "Austroasiatic"
+        }
+      ]
+    },
+    {
+      "group": 54,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Sino-Tibetan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Sino-Tibetan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "pwo",
+          "name": "Pwo Western Karen",
+          "family": "Sino-Tibetan"
+        }
+      ]
+    },
+    {
+      "group": 55,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Unclassified",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Unclassified",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "rom",
+          "name": "Romany",
+          "family": "Unclassified"
+        }
+      ]
+    },
+    {
+      "group": 56,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Uralic",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Uralic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "sia",
+          "name": "Akkala Sami",
+          "family": "Uralic"
+        }
+      ]
+    },
+    {
+      "group": 57,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Uralic",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Uralic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "sms",
+          "name": "Skolt Sami",
+          "family": "Uralic"
+        }
+      ]
+    },
+    {
+      "group": 58,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Kiowa-Tanoan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Kiowa-Tanoan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "tew",
+          "name": "Tewa (USA)",
+          "family": "Kiowa-Tanoan"
+        }
+      ]
+    },
+    {
+      "group": 59,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Kiowa-Tanoan",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Kiowa-Tanoan",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "twf",
+          "name": "Northern Tiwa",
+          "family": "Kiowa-Tanoan"
+        }
+      ]
+    },
+    {
+      "group": 60,
+      "size": 1,
+      "purity": 1.0,
+      "dominant_family": "Algic",
+      "dominant_n": 1,
+      "families": [
+        [
+          "Algic",
+          1
+        ]
+      ],
+      "members": [
+        {
+          "iso": "wiy",
+          "name": "Wiyot",
+          "family": "Algic"
+        }
+      ]
+    }
+  ],
+  "strongest_cross_family_pairs": [
+    {
+      "a": "nup",
+      "a_name": "Nupe-Nupe-Tako",
+      "a_family": "Atlantic-Congo",
+      "b": "xsl",
+      "b_name": "South Slavey",
+      "b_family": "Athabaskan-Eyak-Tlingit",
+      "jaccard": 1.0
+    },
+    {
+      "a": "xsl",
+      "a_name": "South Slavey",
+      "a_family": "Athabaskan-Eyak-Tlingit",
+      "b": "yor",
+      "b_name": "Yoruba",
+      "b_family": "Atlantic-Congo",
+      "jaccard": 1.0
+    },
+    {
+      "a": "ido",
+      "a_name": "Ido",
+      "a_family": "Artificial Language",
+      "b": "ron",
+      "b_name": "Romanian",
+      "b_family": "Indo-European",
+      "jaccard": 0.8803418803418803
+    },
+    {
+      "a": "eng",
+      "a_name": "English",
+      "a_family": "Indo-European",
+      "b": "tur",
+      "b_name": "Turkish",
+      "b_family": "Turkic",
+      "jaccard": 0.875
+    },
+    {
+      "a": "hun",
+      "a_name": "Hungarian",
+      "a_family": "Uralic",
+      "b": "swe",
+      "b_name": "Swedish",
+      "b_family": "Indo-European",
+      "jaccard": 0.8727272727272727
+    },
+    {
+      "a": "eng",
+      "a_name": "English",
+      "a_family": "Indo-European",
+      "b": "hun",
+      "b_name": "Hungarian",
+      "b_family": "Uralic",
+      "jaccard": 0.8705882352941177
+    },
+    {
+      "a": "hun",
+      "a_name": "Hungarian",
+      "a_family": "Uralic",
+      "b": "tur",
+      "b_name": "Turkish",
+      "b_family": "Turkic",
+      "jaccard": 0.8659217877094972
+    },
+    {
+      "a": "epo",
+      "a_name": "Esperanto",
+      "a_family": "Artificial Language",
+      "b": "isl",
+      "b_name": "Icelandic",
+      "b_family": "Indo-European",
+      "jaccard": 0.8590604026845637
+    },
+    {
+      "a": "epo",
+      "a_name": "Esperanto",
+      "a_family": "Artificial Language",
+      "b": "ukr",
+      "b_name": "Ukrainian",
+      "b_family": "Indo-European",
+      "jaccard": 0.8513513513513513
+    },
+    {
+      "a": "kxd",
+      "a_name": "Brunei",
+      "a_family": "Austronesian",
+      "b": "jpn",
+      "b_name": "Japanese",
+      "b_family": "Japonic",
+      "jaccard": 0.8461538461538461
+    },
+    {
+      "a": "nld",
+      "a_name": "Dutch",
+      "a_family": "Indo-European",
+      "b": "hun",
+      "b_name": "Hungarian",
+      "b_family": "Uralic",
+      "jaccard": 0.8432432432432433
+    },
+    {
+      "a": "fao",
+      "a_name": "Faroese",
+      "a_family": "Indo-European",
+      "b": "ido",
+      "b_name": "Ido",
+      "b_family": "Artificial Language",
+      "jaccard": 0.8429752066115702
+    },
+    {
+      "a": "nld",
+      "a_name": "Dutch",
+      "a_family": "Indo-European",
+      "b": "heb",
+      "b_name": "Hebrew",
+      "b_family": "Afro-Asiatic",
+      "jaccard": 0.835
+    },
+    {
+      "a": "swe",
+      "a_name": "Swedish",
+      "a_family": "Indo-European",
+      "b": "tur",
+      "b_name": "Turkish",
+      "b_family": "Turkic",
+      "jaccard": 0.8342857142857143
+    },
+    {
+      "a": "deu",
+      "a_name": "German",
+      "a_family": "Indo-European",
+      "b": "heb",
+      "b_name": "Hebrew",
+      "b_family": "Afro-Asiatic",
+      "jaccard": 0.8316326530612245
+    },
+    {
+      "a": "nld",
+      "a_name": "Dutch",
+      "a_family": "Indo-European",
+      "b": "tur",
+      "b_name": "Turkish",
+      "b_family": "Turkic",
+      "jaccard": 0.8290155440414507
+    },
+    {
+      "a": "dan",
+      "a_name": "Danish",
+      "a_family": "Indo-European",
+      "b": "hun",
+      "b_name": "Hungarian",
+      "b_family": "Uralic",
+      "jaccard": 0.8238636363636364
+    },
+    {
+      "a": "hun",
+      "a_name": "Hungarian",
+      "a_family": "Uralic",
+      "b": "ltz",
+      "b_name": "Luxembourgish",
+      "b_family": "Indo-European",
+      "jaccard": 0.8238636363636364
+    },
+    {
+      "a": "deu",
+      "a_name": "German",
+      "a_family": "Indo-European",
+      "b": "mlt",
+      "b_name": "Maltese",
+      "b_family": "Afro-Asiatic",
+      "jaccard": 0.819672131147541
+    },
+    {
+      "a": "ido",
+      "a_name": "Ido",
+      "a_family": "Artificial Language",
+      "b": "lat",
+      "b_name": "Latin",
+      "b_family": "Indo-European",
+      "jaccard": 0.8189655172413793
+    },
+    {
+      "a": "ast",
+      "a_name": "Asturian",
+      "a_family": "Indo-European",
+      "b": "ido",
+      "b_name": "Ido",
+      "b_family": "Artificial Language",
+      "jaccard": 0.8165137614678899
+    },
+    {
+      "a": "ina",
+      "a_name": "Interlingua (International Auxiliary Language Association)",
+      "a_family": "Artificial Language",
+      "b": "lmo",
+      "b_name": "Lombard",
+      "b_family": "Indo-European",
+      "jaccard": 0.8152173913043478
+    },
+    {
+      "a": "eng",
+      "a_name": "English",
+      "a_family": "Indo-European",
+      "b": "fin",
+      "b_name": "Finnish",
+      "b_family": "Uralic",
+      "jaccard": 0.8148148148148148
+    },
+    {
+      "a": "fax",
+      "a_name": "Fala",
+      "a_family": "Indo-European",
+      "b": "ina",
+      "b_name": "Interlingua (International Auxiliary Language Association)",
+      "b_family": "Artificial Language",
+      "jaccard": 0.8131868131868132
+    },
+    {
+      "a": "tft",
+      "a_name": "Ternate",
+      "a_family": "North Halmahera",
+      "b": "ton",
+      "b_name": "Tonga (Tonga Islands)",
+      "b_family": "Austronesian",
+      "jaccard": 0.8115942028985508
+    }
+  ]
+}
