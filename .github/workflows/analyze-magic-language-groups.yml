@@ -7,6 +7,10 @@ on:
       - '.github/workflows/analyze-magic-language-groups.yml'
   workflow_dispatch:
 
+concurrency:
+  group: analyze-magic-language-groups
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -22,8 +26,8 @@ jobs:
         run: pip install PyICU pycountry
       - name: Run ordered alphabet 3-4-5 magic bridge analysis
         env:
-          MAGIC_345_PERMS: '300'
-          MAGIC_345_WORDS: '8000'
+          MAGIC_345_PERMS: '200'
+          MAGIC_345_WORDS: '5000'
         run: python tools/analyze_345_magic_groups.py
       - name: Commit results safely on latest main
         run: |
