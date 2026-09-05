@@ -1,0 +1,98 @@
+{
+  "validation_version": 1,
+  "pins": {
+    "phoible": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "wikipron": "d282e848a211ea31cfd730f0ced8bc8cdab9e83d",
+    "aligned_librispeech": "MontrealCorpusTools/aligned-librispeech main (workflow checkout)"
+  },
+  "principle": "Claims are promoted only when their predeclared validation criterion is met. An executed test is not itself evidence of success.",
+  "tests": {
+    "sixteen_cell_optimality": {
+      "status": "orange",
+      "claim": "The 16-cell compression is globally optimal.",
+      "criterion": "4x4 must dominate both adjacent 3x3 and 5x5 resolutions on coverage, forward loss, round-trip loss, and exact recovery.",
+      "results": {
+        "3": {
+          "cells": 9,
+          "coverage": 0.987874738827994,
+          "forward_loss": 0.041477943973048194,
+          "roundtrip_loss": 0.038147057477897844,
+          "roundtrip_exact": 0.4702146227354531
+        },
+        "4": {
+          "cells": 16,
+          "coverage": 0.9486213859889895,
+          "forward_loss": 0.03726324450224002,
+          "roundtrip_loss": 0.032369651182583746,
+          "roundtrip_exact": 0.4740469560410247
+        },
+        "5": {
+          "cells": 25,
+          "coverage": 0.9113463620595381,
+          "forward_loss": 0.03349972353913162,
+          "roundtrip_loss": 0.02810658207541682,
+          "roundtrip_exact": 0.47403729976812875
+        }
+      },
+      "dominated_by": [],
+      "conclusion": "Not established: 4x4 is a trade-off. 3x3 has higher coverage; 5x5 has lower feature/round-trip loss. Global optimality therefore remains unproven."
+    },
+    "lexical_vs_speech": {
+      "status": "orange",
+      "claim": "WikiPron lexical transitions equal continuous connected-speech articulation.",
+      "corpus": "MontrealCorpusTools/aligned-librispeech test-clean, MFA phone alignments",
+      "speech_textgrids_used": 2500,
+      "mapped_speech_phones": 181701,
+      "wikipron": {
+        "words": 106931,
+        "mapped": 751944,
+        "unknown": 11654,
+        "mapping_coverage": 0.9847380427921498
+      },
+      "metrics": {
+        "pearson_gate_frequency": 0.6351079270958421,
+        "cosine_gate_frequency": 0.6903475369901044,
+        "jensen_shannon_divergence": 0.18807509152448368
+      },
+      "criterion": "Pearson >= 0.90, cosine >= 0.95, JSD <= 0.10, >=500 aligned utterances. Passing supports only English read speech, not universal equivalence.",
+      "conclusion": "The lexical gate distribution does not meet the predeclared speech-agreement threshold; the claim remains orange."
+    },
+    "magic_powers3": {
+      "status": "orange",
+      "claim": "The magic-square / powers-of-3 ordering has a phonetic relationship beyond chance.",
+      "centroid_path": {
+        "observed_cost": 13.332020847220416,
+        "random_permutations": 100000,
+        "random_mean": 12.717249525987526,
+        "random_sd": 0.774483751080077,
+        "one_sided_p": 0.7694523054769452,
+        "percentile_better": 0.7694523054769452
+      },
+      "gate_prevalence": {
+        "spearman_abs_exponent_distance_vs_prevalence": 0.1049817536322129,
+        "random_magic_assignments": 20000,
+        "one_sided_p": 0.7957602119894005
+      },
+      "criterion": "Both independent tests p < 0.01 in the predicted direction: unusually short PHOIBLE centroid path and negative gate-prevalence association with |power exponent delta|.",
+      "conclusion": "The Duerer/powers-of-3 ordering does not pass both controlled chance tests; it remains an exploratory overlay."
+    }
+  },
+  "phoible_cell_occupancy": {
+    "B4": 7,
+    "B2": 298,
+    "A2": 96,
+    "A1": 632,
+    "A4": 52,
+    "A3": 322,
+    "D1": 241,
+    "D4": 198,
+    "D2": 570,
+    "C1": 96,
+    "C4": 17,
+    "C3": 48,
+    "B3": 49,
+    "B1": 108,
+    "D3": 174,
+    "C2": 196
+  }
+}
