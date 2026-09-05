@@ -1,0 +1,50 @@
+name: Phonetic Transmission Test
+
+on:
+  push:
+    paths:
+      - 'tools/analyze_phonetic_transmission.py'
+      - 'phonetic-transmission-test.js'
+      - '.github/workflows/phonetic-transmission-test.yml'
+      - 'data/phonetic-benchmark-languages.csv'
+      - 'data/phonetic-benchmark-pairs.csv'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Run transmission hypothesis analysis
+        run: python tools/analyze_phonetic_transmission.py
+      - name: Wire section into phonetic page
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('phonetic-bridge.html')
+          s=p.read_text(encoding='utf-8')
+          tag='<script defer src="phonetic-transmission-test.js?v=20260905-transmission1"></script>'
+          if tag not in s:
+              s=s.replace('</head>',tag+'\n</head>',1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit generated analysis and page wiring
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-transmission-analysis.json phonetic-bridge.html
+          if git diff --cached --quiet; then
+            echo 'Transmission analysis already current.'
+          else
+            git commit -m 'Publish phonetic transmission experiment results'
+            git pull --rebase origin main
+            git push
+          fi
