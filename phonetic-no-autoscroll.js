@@ -31,6 +31,11 @@
   hv.src='phonetic-holdout-results.js?v=20260906-holdout1';
   hv.defer=true; document.head.appendChild(hv);
 
+  // Plain-language explanation + hover/focus tooltips for the live coordinate tool and result tables.
+  const ex=document.createElement('script');
+  ex.src='phonetic-coordinate-explainer.js?v=20260906-explain1';
+  ex.defer=true; document.head.appendChild(ex);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
