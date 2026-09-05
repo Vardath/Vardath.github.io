@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "description": "Compact seed graph for the phonetic/etymology Word Explorer. Green edges are independently attested or directly documented; blue edges are external semantic/data relationships; orange edges are model hypotheses.",
+  "words": [
+    {"id":"eight-en","form":"eight","language":"English","ipa":"/eɪt/","meaning":"the number 8","concepts":["EIGHT","NUMBER"],"status":"attested"},
+    {"id":"eahta-ang","form":"eahta","language":"Old English","ipa":"/ˈæɑx.tɑ/","meaning":"eight","concepts":["EIGHT","NUMBER"],"status":"attested"},
+    {"id":"ahto-pgm","form":"*ahtō","language":"Proto-Germanic","ipa":"reconstructed","meaning":"eight","concepts":["EIGHT","NUMBER"],"status":"reconstructed"},
+    {"id":"okto-pie","form":"*oḱtṓw","language":"Proto-Indo-European","ipa":"reconstructed","meaning":"eight","concepts":["EIGHT","NUMBER"],"status":"reconstructed"},
+    {"id":"okto-grc","form":"oktṓ","language":"Ancient Greek","ipa":"/ok.tɔ̌ː/","meaning":"eight","concepts":["EIGHT","NUMBER"],"status":"attested"},
+    {"id":"ogdoos-grc","form":"ógdoos","language":"Ancient Greek","ipa":"/óɡ.do.os/","meaning":"eighth","concepts":["EIGHT","ORDINAL"],"status":"attested"},
+    {"id":"ogdoad-en","form":"ogdoad","language":"English via Greek","ipa":"/ˈɒɡ.doʊ.æd/","meaning":"a group or set of eight","concepts":["EIGHT","GROUP"],"status":"attested"},
+    {"id":"ase-yor","form":"àṣẹ","language":"Yoruba","ipa":"/à.ʃɛ̄/","meaning":"efficacy, authority, command; power to make things come to pass","concepts":["EFFICACY","POWER","AUTHORITY","CAUSE"],"status":"attested"},
+    {"id":"se-yor","form":"ṣẹ","language":"Yoruba","ipa":"/ʃɛ/","meaning":"to come to pass; take effect","concepts":["EFFECT","CAUSE"],"status":"attested"},
+    {"id":"ansuz-pgm","form":"*ansuz","language":"Proto-Germanic","ipa":"reconstructed","meaning":"god, deity","concepts":["DEITY","DIVINE_AGENCY"],"status":"reconstructed"},
+    {"id":"ass-on","form":"áss","language":"Old Norse","ipa":"/aːsː/","meaning":"god; member of the Æsir","concepts":["DEITY","DIVINE_AGENCY"],"status":"attested"},
+    {"id":"aesir-on","form":"Æsir","language":"Old Norse","ipa":"/ˈɛː.sir/","meaning":"the principal group of Norse gods","concepts":["DEITY","DIVINE_AGENCY","GROUP"],"status":"attested"},
+    {"id":"arch-grc","form":"arkhē / arch-","language":"Ancient Greek","ipa":"various","meaning":"beginning, rule, chief authority","concepts":["BEGINNING","AUTHORITY","RULE"],"status":"attested"},
+    {"id":"aitia-grc","form":"aitía","language":"Ancient Greek","ipa":"/ai̯.tí.aː/","meaning":"cause, responsibility","concepts":["CAUSE","ORIGIN"],"status":"attested"},
+    {"id":"aetiology-en","form":"aetiology","language":"English via Greek","ipa":"/ˌiː.tiˈɒl.ə.dʒi/","meaning":"the study or assignment of causes","concepts":["CAUSE","ORIGIN"],"status":"attested"},
+    {"id":"ark-en","form":"ark","language":"English via Latin","ipa":"/ɑːrk/","meaning":"a chest, vessel, or protective container","concepts":["CONTAINER","PROTECTION"],"status":"attested"}
+  ],
+  "edges": [
+    {"from":"okto-pie","to":"ahto-pgm","type":"etymology","status":"green","label":"documented descent branch"},
+    {"from":"ahto-pgm","to":"eahta-ang","type":"etymology","status":"green","label":"documented descent"},
+    {"from":"eahta-ang","to":"eight-en","type":"etymology","status":"green","label":"documented descent"},
+    {"from":"okto-pie","to":"okto-grc","type":"etymology","status":"green","label":"documented descent branch"},
+    {"from":"okto-grc","to":"ogdoos-grc","type":"etymology","status":"green","label":"ordinal development; OKT → OGD"},
+    {"from":"ogdoos-grc","to":"ogdoad-en","type":"etymology","status":"green","label":"Greek eight-derived form → English borrowing"},
+    {"from":"se-yor","to":"ase-yor","type":"morphology","status":"green","label":"internal Yoruba derivation"},
+    {"from":"ansuz-pgm","to":"ass-on","type":"etymology","status":"green","label":"documented Germanic descent"},
+    {"from":"ass-on","to":"aesir-on","type":"morphology","status":"green","label":"Old Norse singular/plural lexical relationship"},
+    {"from":"aitia-grc","to":"aetiology-en","type":"etymology","status":"green","label":"documented Greek-derived formation"},
+    {"from":"aitia-grc","to":"ase-yor","type":"semantic","status":"blue","label":"cause ↔ efficacy / making happen"},
+    {"from":"ase-yor","to":"arch-grc","type":"semantic","status":"blue","label":"effective power ↔ authority"},
+    {"from":"arch-grc","to":"aesir-on","type":"semantic","status":"blue","label":"authority / rule ↔ divine agency"},
+    {"from":"ase-yor","to":"ass-on","type":"hypothesis","status":"orange","label":"phonetic + semantic candidate; no documented historical link"},
+    {"from":"ase-yor","to":"ansuz-pgm","type":"hypothesis","status":"orange","label":"directional phonetic-semantic candidate; no documented historical link"}
+  ]
+}
