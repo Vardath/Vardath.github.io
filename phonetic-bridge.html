@@ -33,9 +33,10 @@
 </section>
 
 <section class="section wrap" id="grid">
-<div class="gridtop"><div><h2>2. The sixteen-state bridge</h2><p class="lead">Rows encode broad manner/openess; columns encode broad place/front-back territory. Tone is kept outside the sixteen cells as prosody.</p></div><div class="control"><label>Overlay</label><select id="overlayMode"><option value="code">Bridge codes A1–D4</option><option value="magic">4×4 Dürer magic-square numbers</option><option value="power">Chessboard powers 2^(magic−1)</option><option value="binary">4-bit sequential addresses</option></select></div></div>
+<div class="gridtop"><div><h2>2. The sixteen-state bridge</h2><p class="lead">Rows encode broad manner/openess; columns encode broad place/front-back territory. Tone is kept outside the sixteen cells as prosody.</p></div><div class="control"><label>Overlay</label><select id="overlayMode"><option value="code">Bridge codes A1–D4</option><option value="magic">4×4 Dürer magic-square numbers</option><option value="power">Chessboard powers 3^(magic−1)</option><option value="binary">4-bit sequential addresses</option></select></div></div>
 <div id="bridge" class="bridge"></div>
 <div id="cellDetail" class="detail"><h3>Select a cell</h3><p>Once PHOIBLE loads this box shows its real segment occupancy.</p></div>
+<div class="notice"><b>Exploration-of-8 power overlay:</b> the chessboard-power layer uses powers of three, not powers of two. A magic-square value <i>n</i> is displayed as 3<sup>n−1</sup>, giving the sequence 1, 3, 9, 27, 81, 243, 729 … through 3<sup>15</sup>. This overlay is exploratory and remains separate from the PHOIBLE phonetic classification.</div>
 </section>
 
 <section class="section wrap" id="experiment">
@@ -67,17 +68,17 @@
 <h2>5. Does the magic-square ordering beat chance?</h2>
 <p class="lead">This is the important control. We calculate a PHOIBLE-frequency-weighted feature centroid for each of the sixteen experimental cells. Then we follow the cells in the numerical order 1→2→…→16 induced by the classic Dürer 4×4 magic square and measure the total phonetic path length. Finally, we compare it with 5,000 random cell orderings.</p>
 <div class="magiclayout">
-<div class="panel"><h3>Dürer 4×4 overlay</h3><div class="magic-square"><div>16</div><div>2</div><div>3</div><div>13</div><div>5</div><div>11</div><div>10</div><div>8</div><div>9</div><div>7</div><div>6</div><div>12</div><div>4</div><div>14</div><div>15</div><div>1</div></div><p class="small">Rows, columns and principal diagonals sum to 34. Here it is only an overlay until the permutation test says otherwise.</p></div>
+<div class="panel"><h3>Dürer 4×4 overlay</h3><div class="magic-square"><div>16</div><div>2</div><div>3</div><div>13</div><div>5</div><div>11</div><div>10</div><div>8</div><div>9</div><div>7</div><div>6</div><div>12</div><div>4</div><div>14</div><div>15</div><div>1</div></div><p class="small">Rows, columns and principal diagonals sum to 34. Here it is only an overlay until the permutation test says otherwise. The optional chessboard-power display maps these square values to powers of 3.</p></div>
 <div class="panel"><h3>Permutation experiment</h3><p>Lower path cost means consecutive numbers traverse more similar PHOIBLE feature centroids. A result near the middle of the random distribution means there is no special smoothness signal.</p><button id="runMagic" class="btn">Run 5,000 random comparisons</button><div id="magicResult" style="margin-top:14px" class="small">Run the test after PHOIBLE has loaded.</div></div>
 </div>
 </section>
 
 <section class="section wrap" id="status">
 <h2>6. What the page can and cannot establish</h2>
-<table class="compare"><tr><th>Statement</th><th>Status</th></tr><tr><td>PHOIBLE supplies cross-linguistic inventories and distinctive-feature data.</td><td class="goodtxt">Data layer</td></tr><tr><td>Every non-prosodic segment can be assigned by our present rules to one of sixteen coarse bridge cells.</td><td class="warntxt">Implemented hypothesis</td></tr><tr><td>The bridge preserves the same nearest target sound as the unconstrained feature matcher.</td><td class="warntxt">Testable per sound/language pair</td></tr><tr><td>The 16-cell compression is globally optimal.</td><td class="warntxt">Not established</td></tr><tr><td>16² produces 256 possible directed coarse-state pairs.</td><td class="goodtxt">Mathematical fact</td></tr><tr><td>Those 256 gates are common real-speech transition units.</td><td class="warntxt">Requires corpus testing</td></tr><tr><td>The magic-square ordering has a phonetic relationship beyond chance.</td><td class="warntxt">Permutation test above</td></tr></table>
+<table class="compare"><tr><th>Statement</th><th>Status</th></tr><tr><td>PHOIBLE supplies cross-linguistic inventories and distinctive-feature data.</td><td class="goodtxt">Data layer</td></tr><tr><td>Every non-prosodic segment can be assigned by our present rules to one of sixteen coarse bridge cells.</td><td class="warntxt">Implemented hypothesis</td></tr><tr><td>The bridge preserves the same nearest target sound as the unconstrained feature matcher.</td><td class="warntxt">Testable per sound/language pair</td></tr><tr><td>The 16-cell compression is globally optimal.</td><td class="warntxt">Not established</td></tr><tr><td>16² produces 256 possible directed coarse-state pairs.</td><td class="goodtxt">Mathematical fact</td></tr><tr><td>Those 256 gates are common real-speech transition units.</td><td class="warntxt">Requires corpus testing</td></tr><tr><td>The magic-square/powers-of-3 ordering has a phonetic relationship beyond chance.</td><td class="warntxt">Open hypothesis / permutation testing</td></tr></table>
 <div class="notice"><b>Why this matters:</b> a negative result is useful. If a proposed cell boundary repeatedly forces worse target matches, or if the magic-square path performs like random permutations, we can change or reject that part instead of protecting the theory from evidence.</div>
 </section>
 </main>
-<footer>Vardath · Exploration of 8 · Universal Phonetic Bridge<br><span class="small">PHOIBLE data: Moran &amp; McCloy, PHOIBLE 2.0. Experimental bridge and overlay analysis: Vardath research project.</span></footer>
+<footer>Vardath · Exploration of 8 · Universal Phonetic Bridge<br><span class="small">PHOIBLE data: Moran &amp; McCloy, PHOIBLE 2.0. Experimental bridge, powers-of-3 overlay and magic-square analysis: Vardath research project.</span></footer>
 </body>
 </html>
