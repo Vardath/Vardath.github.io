@@ -20,6 +20,12 @@
   wr.defer=true;
   document.head.appendChild(wr);
 
+  // Make the SAME top language selector localize the entire research page.
+  const fl=document.createElement('script');
+  fl.src='phonetic-full-localize.js?v=20260905-full1';
+  fl.defer=true;
+  document.head.appendChild(fl);
+
   // Remove stale/deep-link hashes on initial page load so the page does not jump automatically.
   // Clicking a navigation link after load still works normally.
   if(location.hash){
