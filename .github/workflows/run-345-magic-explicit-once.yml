@@ -1,0 +1,33 @@
+name: Run 3-4-5 Magic Explicit Snapshot
+
+on:
+  push:
+    paths:
+      - 'tools/run-phonetic-345-magic-explicit.mjs'
+      - '.github/workflows/run-345-magic-explicit-once.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shared-page-engine-explicit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Execute exact page engine on curated alphabet orders
+        run: node tools/run-phonetic-345-magic-explicit.mjs
+      - name: Publish curated result snapshot
+        run: |
+          cp data/phonetic-345-magic-results-explicit.json /tmp/result.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/result.json data/phonetic-345-magic-results-explicit.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/phonetic-345-magic-results-explicit.json
+          git commit -m 'Publish curated 3-4-5 magic shared-engine results'
+          git push origin main
