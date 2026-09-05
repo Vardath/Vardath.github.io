@@ -1,0 +1,45 @@
+name: Full Phonetic Bridge Benchmark
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/benchmark_phonetic_bridge.py'
+      - '.github/workflows/phonetic-benchmark.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run full WikiPron benchmark
+        env:
+          BENCHMARK_SAMPLE_WORDS: '20000'
+          BENCHMARK_MIN_GATE_COUNT: '3'
+          BENCHMARK_WORKERS: '8'
+        run: python tools/benchmark_phonetic_bridge.py
+
+      - name: Commit benchmark results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/phonetic-benchmark-*.json data/phonetic-benchmark-*.csv
+          if git diff --cached --quiet; then
+            echo 'No benchmark result changes.'
+          else
+            git commit -m 'Update full phonetic bridge benchmark results'
+            git push
+          fi
