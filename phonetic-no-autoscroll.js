@@ -21,11 +21,11 @@
   vs.src='phonetic-validation-status.js?v=20260905-validation1';
   vs.defer=true; document.head.appendChild(vs);
 
-  // The real 3×3 → 4×4 → 5×5 ordered-alphabet / phonetic / magic-square experiment.
-  // It runs in the page itself; no workflow-generated magic-group result is loaded.
-  const ex=document.createElement('script');
-  ex.src='phonetic-345-magic-experiment.js?v=20260905-exp1';
-  ex.defer=true; document.head.appendChild(ex);
+  // Final browser-native 3×3 → 4×4 → 5×5 ordered-alphabet / phonetic / magic-square lab.
+  // The experiment runs on the page itself and does not read workflow-generated magic results.
+  const lab=document.createElement('script');
+  lab.src='phonetic-345-magic-lab.js?v=20260905-lab1';
+  lab.defer=true; document.head.appendChild(lab);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
