@@ -21,9 +21,11 @@
   vs.src='phonetic-validation-status.js?v=20260905-validation1';
   vs.defer=true; document.head.appendChild(vs);
 
-  const mg=document.createElement('script');
-  mg.src='phonetic-magic-language-groups.js?v=20260905-magicgroups4';
-  mg.defer=true; document.head.appendChild(mg);
+  // The real 3×3 → 4×4 → 5×5 ordered-alphabet / phonetic / magic-square experiment.
+  // It runs in the page itself; no workflow-generated magic-group result is loaded.
+  const ex=document.createElement('script');
+  ex.src='phonetic-345-magic-experiment.js?v=20260905-exp1';
+  ex.defer=true; document.head.appendChild(ex);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
