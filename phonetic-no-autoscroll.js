@@ -22,7 +22,7 @@
   vs.defer=true; document.head.appendChild(vs);
 
   const mg=document.createElement('script');
-  mg.src='phonetic-magic-language-groups.js?v=20260905-magicgroups3';
+  mg.src='phonetic-magic-language-groups.js?v=20260905-magicgroups4';
   mg.defer=true; document.head.appendChild(mg);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
