@@ -146,7 +146,7 @@ function runMatch(){
 
 function renderGrid(){
   const mode=el('overlayMode')?.value||'code',bridge=el('bridge');if(!bridge)return;
-  bridge.innerHTML=CELL_IDS.map((id,i)=>{let over=id;if(mode==='magic')over=MAGIC[i];if(mode==='power')over='2^'+(MAGIC[i]-1);if(mode==='binary')over=i.toString(2).padStart(4,'0');return `<button class="cell" data-cell="${id}" onclick="showCell('${id}')"><span class="overlay">${esc(over)}</span><strong>${id} · ${esc(CELL_INFO[id][0])}</strong><small>${esc(CELL_INFO[id][1])}</small></button>`}).join('');
+  bridge.innerHTML=CELL_IDS.map((id,i)=>{let over=id;if(mode==='magic')over=MAGIC[i];if(mode==='power')over='3^'+(MAGIC[i]-1);if(mode==='binary')over=i.toString(2).padStart(4,'0');return `<button class="cell" data-cell="${id}" onclick="showCell('${id}')"><span class="overlay">${esc(over)}</span><strong>${id} · ${esc(CELL_INFO[id][0])}</strong><small>${esc(CELL_INFO[id][1])}</small></button>`}).join('');
 }
 window.showCell=function(id){
   document.querySelectorAll('.cell').forEach(x=>x.classList.toggle('active',x.dataset.cell===id));
