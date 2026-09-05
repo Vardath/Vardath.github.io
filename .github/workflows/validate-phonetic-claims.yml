@@ -1,0 +1,33 @@
+name: Validate Phonetic Claims
+
+on:
+  push:
+    paths:
+      - 'tools/validate_phonetic_claims.py'
+      - '.github/workflows/validate-phonetic-claims.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clone aligned LibriSpeech validation corpus
+        run: git clone --depth 1 https://github.com/MontrealCorpusTools/aligned-librispeech.git /tmp/aligned-librispeech
+      - name: Run controlled validation suite
+        env:
+          ALIGNED_LIBRISPEECH: /tmp/aligned-librispeech/librispeech_aligned
+          SPEECH_TEXTGRID_CAP: '2500'
+        run: python tools/validate_phonetic_claims.py
+      - name: Commit validation results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/phonetic-validation-results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish controlled phonetic validation results'
+            git push
+          fi
