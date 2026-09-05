@@ -1,7 +1,7 @@
 const INTEGRATED_CELLS=['A1','A2','A3','A4','B1','B2','B3','B4','C1','C2','C3','C4','D1','D2','D3','D4'];
 let BENCH=null;
 const gi=id=>document.getElementById(id);
-function ie(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]))}
+function ie(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function featureWords(p){return FEATURE_NAMES.filter(f=>fnum(p[f])>.25)}
 
 // Canonical IPA reference recordings hosted by Wikimedia Commons.
@@ -37,7 +37,7 @@ window.playIpaReference=function(symbol,button){
 function audioButton(segment){
   const ref=audioReferenceFor(segment);if(!ref)return '';
   const label=ref.exact?'hear':'reference /'+ref.symbol+'/';
-  return `<button type="button" onclick="playIpaReference('${ie(String(segment).replace(/'/g,'&#39;'))}',this)" title="Wikimedia Commons IPA reference recording${ref.exact?'':' — base sound only'}" style="margin-left:7px;border:1px solid #3d455d;background:#0d1320;color:#eef1f8;border-radius:999px;padding:5px 9px;cursor:pointer;font-size:.76rem">🔊 ${ie(label)}</button>`;
+  return `<button type="button" data-ipa="${ie(segment)}" onclick="playIpaReference(this.dataset.ipa,this)" title="Wikimedia Commons IPA reference recording${ref.exact?'':' — base sound only'}" style="margin-left:7px;border:1px solid #3d455d;background:#0d1320;color:#eef1f8;border-radius:999px;padding:5px 9px;cursor:pointer;font-size:.76rem">🔊 ${ie(label)}</button>`;
 }
 
 function renderSoundCorrespondence(){
