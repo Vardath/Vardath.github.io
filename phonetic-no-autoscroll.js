@@ -6,15 +6,12 @@
   if(document.body) document.body.style.overflowAnchor='none';
 
   // Load the compact localized word-connection / Wikipedia translation explorer.
-  // Kept here so the existing phonetic page stays a single page and older cached HTML
-  // still acquires the new module as soon as this script refreshes.
   const wc=document.createElement('script');
   wc.src='phonetic-word-connect-localize.js?v=20260905-connect1';
   wc.defer=true;
   document.head.appendChild(wc);
 
-  // Add the existing research layers directly to the same top results table:
-  // phonetic/semantic/etymology links, numeral corpus forms, evidence status and speech.
+  // Add the existing research layers directly to the same top results table.
   const wr=document.createElement('script');
   wr.src='phonetic-word-table-research.js?v=20260905-table2';
   wr.defer=true;
@@ -26,15 +23,19 @@
   fl.defer=true;
   document.head.appendChild(fl);
 
-  // Replace the old "needs testing" orange wording with the completed controlled
-  // validation outcomes. Negative results remain visible rather than being promoted.
+  // Completed controlled validation outcomes.
   const vs=document.createElement('script');
   vs.src='phonetic-validation-status.js?v=20260905-validation1';
   vs.defer=true;
   document.head.appendChild(vs);
 
+  // Per-language / per-family Durer magic-square subgroup tester.
+  const mg=document.createElement('script');
+  mg.src='phonetic-magic-language-groups.js?v=20260905-magicgroups1';
+  mg.defer=true;
+  document.head.appendChild(mg);
+
   // Remove stale/deep-link hashes on initial page load so the page does not jump automatically.
-  // Clicking a navigation link after load still works normally.
   if(location.hash){
     try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ }
   }
@@ -50,7 +51,6 @@
     requestAnimationFrame(()=>scrollTo({top:0,left:0,behavior:'auto'}));
   };
 
-  // Counter browser restoration and layout shifts caused by dynamically injected sections.
   top();
   addEventListener('DOMContentLoaded',top,{once:true});
   addEventListener('load',()=>{ top(); setTimeout(top,120); setTimeout(top,500); },{once:true});
