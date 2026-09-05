@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Inject additive codec, guide, title, human UI, evidence lab, and aggregate results
+      - name: Inject additive codec, guide, title, human UI, evidence lab, aggregate results, and residual codec
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -29,6 +29,7 @@ jobs:
           human='<script defer src="phonetic-345-human.js?v=20260905-human1"></script>'
           evidence='<script defer src="phonetic-pyramid-benchmark.js?v=20260905-evidence1"></script>'
           aggregate='<script defer src="phonetic-pyramid-aggregate.js?v=20260905-aggregate1"></script>'
+          residual='<script defer src="phonetic-residual-codec.js?v=20260905-residual1"></script>'
           s=s.replace('<title>4×4 Phonetic Bridge Experiment — Vardath</title>','<title>The Three Square Pyramid Phonetic Bridge — Vardath</title>')
           s=s.replace('<h1>The 4×4 Phonetic Bridge</h1>','<h1>The Three Square Pyramid Phonetic Bridge</h1>')
           if old in s:
@@ -39,7 +40,7 @@ jobs:
               s=s.replace(oldguide,guide,1)
           elif guide not in s:
               s=s.replace('</head>',guide+'\n</head>',1)
-          for x in (human,evidence,aggregate):
+          for x in (human,evidence,aggregate,residual):
               if x not in s:s=s.replace('</head>',x+'\n</head>',1)
           p.write_text(s,encoding='utf-8')
           PY
@@ -51,7 +52,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Page already up to date.'
           else
-            git commit -m 'Load full pyramid evidence and aggregate benchmark'
+            git commit -m 'Load residual-memory codec experiment'
             git pull --rebase origin main
             git push
           fi
