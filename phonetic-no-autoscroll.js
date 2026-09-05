@@ -21,10 +21,9 @@
   vs.src='phonetic-validation-status.js?v=20260905-validation1';
   vs.defer=true; document.head.appendChild(vs);
 
-  // Final browser-native 3×3 → 4×4 → 5×5 ordered-alphabet / phonetic / magic-square experiment.
-  // It runs in the page itself; there is no workflow-generated magic-group result dependency.
+  // Browser-native full-dataset 3×3 → 4×4 → 5×5 ordered-symbol / phonetic / magic-square experiment.
   const lab=document.createElement('script');
-  lab.src='phonetic-345-magic-page.js?v=20260905-final1';
+  lab.src='phonetic-345-magic-page.js?v=20260906-full348-1';
   lab.defer=true; document.head.appendChild(lab);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
