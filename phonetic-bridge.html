@@ -2,119 +2,82 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4×4 Universal Phonetic Bridge — Vardath</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4×4 Phonetic Bridge Experiment — Vardath</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
-:root{--bg:#090a0f;--panel:#12141e;--panel2:#181b29;--text:#eef0f7;--muted:#aab0c3;--line:#30364a;--accent:#8e8cff;--accent2:#5ce1e6;--good:#80e7a8;--warn:#ffd37a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 50% 0,#17182c 0,#090a0f 42%);color:var(--text);line-height:1.6}
-a{color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{padding:18px 0;display:flex;justify-content:space-between;gap:16px;align-items:center}.brand{text-decoration:none;font-weight:800;letter-spacing:.08em}.back{text-decoration:none;color:var(--muted);font-size:.95rem}.hero{padding:64px 0 42px;text-align:center}.eyebrow{color:var(--accent2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}.hero h1{font-size:clamp(2.4rem,7vw,5.5rem);line-height:1;margin:.18em 0}.hero p{max-width:820px;margin:18px auto;color:var(--muted);font-size:1.1rem}.formula{display:inline-block;margin:22px 0 0;padding:14px 20px;border:1px solid var(--line);border-radius:999px;background:#10121b;font-family:Consolas,monospace;color:#e8e9ff}.nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:28px 0}.nav a{padding:9px 14px;border-radius:999px;background:#151824;border:1px solid var(--line);text-decoration:none;color:#d8dbeb}.section{padding:54px 0}.section h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 12px}.lead{color:var(--muted);max-width:850px}.notice{border-left:4px solid var(--warn);padding:14px 18px;background:#17150f;border-radius:8px;margin:22px 0;color:#e9e2cf}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{margin-top:0}.card p{color:var(--muted);margin-bottom:0}.grid-shell{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;margin-top:28px}.axis{color:var(--muted);font-size:.92rem}.bridge{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.cell{min-height:132px;border:1px solid #414865;background:linear-gradient(160deg,#1c2030,#10131c);border-radius:14px;padding:14px;text-align:left;color:white;cursor:pointer;transition:.18s ease;position:relative}.cell:hover,.cell.active{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 0 0 1px #7775ff55,0 12px 28px #0008}.cell .code{font-family:Consolas,monospace;color:var(--accent2);font-size:.82rem}.cell strong{display:block;font-size:1rem;margin:4px 0}.cell span{font-size:.82rem;color:var(--muted)}.detail{margin-top:18px;background:#11141d;border:1px solid var(--line);border-radius:14px;padding:20px}.detail h3{margin-top:0}.examples{font-family:Consolas,monospace;color:#fff}.demo{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-top:28px}.demo-box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.demo-box select,.demo-box input{width:100%;background:#0d1018;color:white;border:1px solid #3b4259;border-radius:9px;padding:11px;margin-top:8px;font-size:1rem}.arrow{font-size:2rem;color:var(--accent2)}.result{margin-top:18px;padding:18px;border-radius:14px;background:#0f1716;border:1px solid #315749}.result b{color:var(--good)}.trajectory{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 0}.node{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#151826;font-family:Consolas,monospace}.gate{color:var(--accent2)}.gate-matrix{display:grid;grid-template-columns:repeat(16,minmax(34px,1fr));gap:3px;overflow:auto;margin-top:20px}.g{aspect-ratio:1;display:grid;place-items:center;background:#151826;border:1px solid #262c3c;font-size:.65rem;color:#8990a6;border-radius:4px}.g:hover{border-color:var(--accent);color:white}.compare{width:100%;border-collapse:collapse;margin-top:20px}.compare th,.compare td{border-bottom:1px solid var(--line);padding:12px;text-align:left}.compare th{color:#dfe2f5}.compare td{color:var(--muted)}.tag{display:inline-block;padding:3px 8px;border-radius:999px;border:1px solid var(--line);font-size:.75rem;margin-right:5px;color:#dce0ef}.good{color:var(--good)}.experimental{color:var(--warn)}footer{padding:54px 0 70px;text-align:center;color:#737a90}.small{font-size:.9rem;color:var(--muted)}
-@media(max-width:850px){.cards{grid-template-columns:1fr}.grid-shell{grid-template-columns:1fr}.demo{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}.cell{min-height:115px}.gate-matrix{grid-template-columns:repeat(8,minmax(34px,1fr))}}
-@media(max-width:520px){.bridge{grid-template-columns:repeat(2,1fr)}.hero{padding-top:38px}}
+:root{--bg:#090a0f;--panel:#121520;--panel2:#181c2a;--line:#30374c;--text:#eef1f8;--muted:#aab1c5;--accent:#8583ff;--cyan:#5ce1e6;--good:#80e7a8;--warn:#ffd37a;--bad:#ff9292}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,#181a31,#090a0f 42%);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.top{padding:18px 0;display:flex;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.1em;text-decoration:none}.back{color:var(--muted);text-decoration:none}.hero{text-align:center;padding:58px 0 35px}.eyebrow{color:var(--cyan);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700}.hero h1{font-size:clamp(2.4rem,7vw,5.2rem);line-height:1;margin:.2em 0}.hero p{max-width:880px;margin:18px auto;color:var(--muted);font-size:1.08rem}.formula{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:13px 19px;background:#10131d;font-family:Consolas,monospace}.nav{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:24px}.nav a,.pill{border:1px solid var(--line);border-radius:999px;padding:5px 10px;text-decoration:none;background:#151925;font-size:.85rem}.section{padding:52px 0}.section h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 10px}.lead,.small{color:var(--muted)}.small{font-size:.9rem}.status{padding:15px 18px;border:1px solid var(--line);border-radius:12px;background:#161923;margin:22px 0}.status.ok{border-color:#315749;background:#0f1716}.status.error{border-color:#704040;background:#1d1113}.stats{display:flex;gap:10px;flex-wrap:wrap}.stats span{flex:1;min-width:160px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-align:center}.stats b{display:block;font-size:1.3rem;color:var(--cyan)}.notice{border-left:4px solid var(--warn);padding:15px 18px;background:#18150e;border-radius:8px;margin:20px 0}.gridtop{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.control label{display:block;color:var(--muted);font-size:.82rem;margin-bottom:5px}.control select{background:#0c1018;color:white;border:1px solid #3d455d;border-radius:9px;padding:10px;width:100%}.bridge{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.cell{position:relative;min-height:126px;border:1px solid #404861;border-radius:14px;background:linear-gradient(155deg,#1b2030,#10131b);color:white;text-align:left;padding:14px;cursor:pointer;transition:.16s}.cell:hover,.cell.active{transform:translateY(-2px);border-color:var(--accent)}.cell.sourcecell{box-shadow:0 0 0 2px var(--cyan) inset}.cell .overlay{position:absolute;right:10px;top:8px;color:var(--cyan);font-family:Consolas,monospace;font-size:.8rem}.cell strong{display:block;padding-right:42px}.cell small{display:block;color:var(--muted);margin-top:6px}.detail,.panel,.matchcard,.resultbox{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:15px;padding:19px}.ipa-cloud{display:flex;flex-wrap:wrap;gap:7px}.ipa-cloud span{padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:#0d1018;font-family:serif}.experiment{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.controls .wide{grid-column:1/-1}.meta{color:var(--muted);font-size:.9rem;margin-top:10px}.bigipa{font-family:Georgia,serif;font-size:2.8rem;margin:.15em 0}.featureline{font-size:.88rem;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}.matchgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.matchcard h4{margin:0}.matchcard details{margin-top:12px;border-top:1px solid var(--line);padding-top:9px}.matchcard summary{cursor:pointer}.verdict{padding:14px 16px;border-radius:12px;background:#101820;border:1px solid #284959}.good,.goodtxt{color:var(--good)}.warn,.warntxt{color:var(--warn)}.gates{display:grid;grid-template-columns:repeat(16,minmax(34px,1fr));gap:3px;overflow:auto;margin-top:18px}.g{aspect-ratio:1;display:grid;place-items:center;text-align:center;background:#141824;border:1px solid #262c3d;border-radius:4px;color:#8890a8;font-size:.63rem}.g:hover{border-color:var(--accent);color:white}.node{display:inline-block;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:#151925;font-family:Consolas,monospace}.arrowmini{color:var(--cyan);padding:0 6px}.magiclayout{display:grid;grid-template-columns:1fr 1fr;gap:18px}.magic-square{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.magic-square div{aspect-ratio:1;display:grid;place-items:center;font-size:1.5rem;font-weight:bold;border-radius:10px;border:1px solid var(--line);background:#151925}.btn{border:1px solid #565f82;background:#232945;color:white;border-radius:10px;padding:11px 16px;font-weight:bold;cursor:pointer}.btn:hover{border-color:var(--cyan)}.metric{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.metric span{color:var(--cyan);font-family:Consolas,monospace}.compare{width:100%;border-collapse:collapse}.compare th,.compare td{text-align:left;border-bottom:1px solid var(--line);padding:11px}.compare td:last-child{width:30%}footer{text-align:center;color:#747c93;padding:55px 0 70px}
+@media(max-width:900px){.experiment,.matchgrid,.magiclayout{grid-template-columns:1fr}.gates{grid-template-columns:repeat(8,minmax(34px,1fr))}}
+@media(max-width:600px){.bridge{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}.controls .wide{grid-column:auto}.cell{min-height:112px}.hero{padding-top:34px}}
 </style>
+<script defer src="phonetic-bridge.js"></script>
 </head>
 <body>
-<div class="wrap top"><a class="brand" href="index.html">VARDATH</a><a class="back" href="index.html">← Back to main site</a></div>
+<div class="wrap top"><a class="brand" href="index.html">VARDATH</a><a class="back" href="index.html">← Main site</a></div>
 <header class="hero wrap">
-<div class="eyebrow">Exploration of 8 · Experimental Language Mapping</div>
+<div class="eyebrow">Exploration of 8 · Live PHOIBLE experiment</div>
 <h1>The 4×4 Phonetic Bridge</h1>
-<p>A visual experiment: instead of forcing every language into the same alphabet, map speech into a small universal articulatory state-space, preserve the fine detail, then reconstruct the nearest legal sound in another language.</p>
-<div class="formula">sound → 16-state bridge → fine coordinates → target sound</div>
-<div class="nav"><a href="#idea">The idea</a><a href="#grid">Explore the 4×4</a><a href="#demo">Try the demo</a><a href="#gates">256 gates</a><a href="#evidence">What is proven?</a></div>
+<p>This is now a working experiment rather than an illustrative mock-up. It loads real PHOIBLE inventories and distinctive-feature vectors, maps each segment into the proposed sixteen-state articulatory bridge, then compares the bridge result against an unconstrained phonetic nearest-neighbour calculation.</p>
+<div class="formula">source phoneme → PHOIBLE features → 4×4 address + fine coordinates → target inventory</div>
+<div class="nav"><a href="#data">Live data</a><a href="#grid">4×4 map</a><a href="#experiment">Language test</a><a href="#gates">256 gates</a><a href="#magic">Magic-square test</a><a href="#status">What this proves</a></div>
 </header>
 
 <main>
-<section class="section wrap" id="idea">
-<h2>1. What is the bridge?</h2>
-<p class="lead">The proposal is not that humanity has only sixteen sounds. The proposal is that a large part of speech can first be projected into sixteen coarse articulatory regions, while the exact phonetic properties stay attached as finer coordinates.</p>
-<div class="cards">
-<div class="card"><h3>16 coarse states</h3><p>A 4×4 address tells us the broad physical territory of a sound: vowel, resonant, friction or closure; front/labial, coronal, dorsal/back, or laryngeal/deep.</p></div>
-<div class="card"><h3>Fine coordinates</h3><p>Voicing, aspiration, exact tongue position, nasalisation, rounding, vowel height, length, airstream and other features distinguish sounds that share one coarse cell.</p></div>
-<div class="card"><h3>Language projection</h3><p>A source-language sound can be mapped into the bridge, then matched to the nearest sound allowed by a target language rather than relying on spelling.</p></div>
-</div>
-<div class="notice"><strong>Important:</strong> this page separates established phonetic facts from the experimental 4×4, magic-square and chessboard interpretation. The bridge is a model being tested, not a claim that linguistics has already accepted a universal 16-cell inventory.</div>
+<section class="section wrap" id="data">
+<h2>1. Live PHOIBLE data</h2>
+<p class="lead">The page loads the CLDF PHOIBLE dataset directly in your browser. PHOIBLE models phonemes as parameter rows, inventories separately, and inventory membership through its value table. No invented language inventory is substituted if the dataset fails to load.</p>
+<div id="loadStatus" class="status">Preparing PHOIBLE…</div>
+<div id="dataStats" class="stats"><span><b>…</b>languages</span><span><b>…</b>inventories</span><span><b>…</b>segments</span><span><b>…</b>memberships</span></div>
+<div class="notice"><b>Research boundary:</b> PHOIBLE supplies the real inventories and distinctive features. The rule assigning those features to A1–D4 is our experimental 4×4 classifier. The page deliberately keeps those two layers separate.</div>
 </section>
 
 <section class="section wrap" id="grid">
-<h2>2. Explore the 4×4</h2>
-<p class="lead">Click a cell. The rows move from relatively open vocal configurations toward stronger constriction. For consonants, the columns move roughly from lips/front to tongue-front, tongue-back and throat/glottis.</p>
-<div class="grid-shell">
-<div class="axis"><b>Rows</b><br>A · vowel/open<br>B · sonorant/resonant<br>C · friction/continuant<br>D · closure/stop<br><br><b>Columns</b><br>1 · front/labial<br>2 · coronal/front-tongue<br>3 · dorsal/back<br>4 · deep/laryngeal</div>
-<div><div class="bridge" id="bridge"></div><div class="detail" id="detail"><h3>Select a cell</h3><p>Examples and fine features will appear here.</p></div></div>
-</div>
+<div class="gridtop"><div><h2>2. The sixteen-state bridge</h2><p class="lead">Rows encode broad manner/openess; columns encode broad place/front-back territory. Tone is kept outside the sixteen cells as prosody.</p></div><div class="control"><label>Overlay</label><select id="overlayMode"><option value="code">Bridge codes A1–D4</option><option value="magic">4×4 Dürer magic-square numbers</option><option value="power">Chessboard powers 2^(magic−1)</option><option value="binary">4-bit sequential addresses</option></select></div></div>
+<div id="bridge" class="bridge"></div>
+<div id="cellDetail" class="detail"><h3>Select a cell</h3><p>Once PHOIBLE loads this box shows its real segment occupancy.</p></div>
 </section>
 
-<section class="section wrap" id="demo">
-<h2>3. Demonstration: one sound, two languages</h2>
-<p class="lead">Choose a source sound. The demonstration shows the bridge cell first, then one plausible nearest target sound from a small illustrative inventory. This is a conceptual demo, not yet a full PHOIBLE-backed translator.</p>
-<div class="demo">
-<div class="demo-box"><b>Source sound</b><select id="source"></select><div id="sourceInfo" class="small"></div></div>
-<div class="arrow">→</div>
-<div class="demo-box"><b>Target inventory</b><select id="target"><option value="english">Illustrative English</option><option value="sanskrit">Illustrative Sanskrit</option><option value="greek">Illustrative Greek</option><option value="mandarin">Illustrative Mandarin</option></select><div id="targetInfo" class="small"></div></div>
+<section class="section wrap" id="experiment">
+<h2>3. Test one language against another</h2>
+<p class="lead">Choose two actual PHOIBLE language records and inventories, then any source segment. The left result ignores our bridge and simply finds the nearest target segment in PHOIBLE feature space. The right result first requires the same 4×4 cell when possible. Their difference is the measurable cost of the bridge compression.</p>
+<div class="experiment">
+<div class="panel">
+<h3>Source</h3>
+<div class="controls"><div class="control"><label>Language</label><select id="sourceLanguage"></select></div><div class="control"><label>Inventory</label><select id="sourceInventory"></select></div><div class="control wide"><label>Source phoneme</label><select id="sourceSegment"></select></div></div>
+<div id="sourceMeta" class="meta"></div><div id="sourceDetail"></div>
 </div>
-<div class="result" id="result"></div>
+<div class="panel">
+<h3>Target</h3>
+<div class="controls"><div class="control"><label>Language</label><select id="targetLanguage"></select></div><div class="control"><label>Inventory</label><select id="targetInventory"></select></div></div>
+<div id="targetMeta" class="meta"></div><p class="small">Distances use PHOIBLE's distinctive features. Broad features used by the 4×4 classifier receive extra weight in the comparison, while detailed features remain available as residual coordinates.</p>
+</div>
+</div>
+<div id="matchResults" class="resultbox" style="margin-top:18px">Choose a source and target after the dataset loads.</div>
 </section>
 
 <section class="section wrap" id="gates">
-<h2>4. From 16 states to 256 directed gates</h2>
-<p class="lead">A static sound is only part of speech. Speech is movement. If there are 16 coarse states, every ordered transition from one state to another gives 16² = 256 possible directed state-pairs.</p>
-<div class="trajectory"><div class="node">D2 closure-coronal</div><div class="gate">→</div><div class="node">C2 friction-coronal</div><div class="gate">≈</div><div class="node">affricate-like trajectory</div></div>
-<div class="trajectory"><div class="node">A2/A4 low vowel region</div><div class="gate">→</div><div class="node">A1 high-front vowel</div><div class="gate">≈</div><div class="node">diphthong-like trajectory</div></div>
-<p class="small">The matrix below is a visual representation of the 256 possible ordered gates. Hovering shows the state pair.</p>
-<div class="gate-matrix" id="gateMatrix"></div>
+<h2>4. The 256 directed gates</h2>
+<p class="lead">Sixteen coarse states have 16² = 256 ordered state-pairs. This is a genuine mathematical state-transition space. PHOIBLE, however, is an inventory database rather than a speech corpus, so the page does not pretend that inventory ordering proves real transition frequencies.</p>
+<div id="gateExample" class="detail"></div>
+<div id="gateMatrix" class="gates"></div>
 </section>
 
-<section class="section wrap" id="evidence">
-<h2>5. Established phonetics vs. experimental mapping</h2>
-<table class="compare">
-<tr><th>Claim</th><th>Status</th></tr>
-<tr><td>Speech sounds can be represented using articulatory/acoustic feature systems.</td><td class="good">Established</td></tr>
-<tr><td>Different languages can realize similar sound categories differently.</td><td class="good">Established</td></tr>
-<tr><td>Tone, stress and other suprasegmental information should not be treated as ordinary consonant/vowel identity alone.</td><td class="good">Established</td></tr>
-<tr><td>A 4×4 set of sixteen coarse articulatory regions is an optimal universal compression.</td><td class="experimental">Experimental — to test</td></tr>
-<tr><td>16² = 256 ordered coarse transitions can be treated as useful “gates” for modelling speech trajectories.</td><td class="experimental">Experimental interpretation</td></tr>
-<tr><td>A particular 4×4 magic-square or chessboard-power ordering improves linguistic mapping beyond arbitrary numbering.</td><td class="experimental">Open hypothesis — must beat chance</td></tr>
-</table>
-</section>
-
-<section class="section wrap">
-<h2>6. The research path</h2>
-<div class="cards">
-<div class="card"><h3>Stage A</h3><p>Map real phoneme feature vectors into the 16 regions and measure how much information is lost.</p></div>
-<div class="card"><h3>Stage B</h3><p>For each language pair, test whether bridge + fine features reconstructs the nearest legal target sound reliably.</p></div>
-<div class="card"><h3>Stage C</h3><p>Only after the phonetic map is independently stable, overlay the 4×4 magic-square/chessboard ordering and test whether it produces structure better than random permutations.</p></div>
+<section class="section wrap" id="magic">
+<h2>5. Does the magic-square ordering beat chance?</h2>
+<p class="lead">This is the important control. We calculate a PHOIBLE-frequency-weighted feature centroid for each of the sixteen experimental cells. Then we follow the cells in the numerical order 1→2→…→16 induced by the classic Dürer 4×4 magic square and measure the total phonetic path length. Finally, we compare it with 5,000 random cell orderings.</p>
+<div class="magiclayout">
+<div class="panel"><h3>Dürer 4×4 overlay</h3><div class="magic-square"><div>16</div><div>2</div><div>3</div><div>13</div><div>5</div><div>11</div><div>10</div><div>8</div><div>9</div><div>7</div><div>6</div><div>12</div><div>4</div><div>14</div><div>15</div><div>1</div></div><p class="small">Rows, columns and principal diagonals sum to 34. Here it is only an overlay until the permutation test says otherwise.</p></div>
+<div class="panel"><h3>Permutation experiment</h3><p>Lower path cost means consecutive numbers traverse more similar PHOIBLE feature centroids. A result near the middle of the random distribution means there is no special smoothness signal.</p><button id="runMagic" class="btn">Run 5,000 random comparisons</button><div id="magicResult" style="margin-top:14px" class="small">Run the test after PHOIBLE has loaded.</div></div>
 </div>
 </section>
-</main>
 
-<footer>Vardath · Exploration of 8 · 4×4 Universal Phonetic Bridge<br><span class="small">A live research demonstration, not a finished linguistic theory.</span></footer>
-<script>
-const cells=[
-{id:'A1',name:'High / front vowel',examples:'i, ɪ, y',fine:'height · frontness · rounding · length · nasalisation'},
-{id:'A2',name:'Low / front vowel',examples:'æ, a, ɛ',fine:'height · frontness · openness · length'},
-{id:'A3',name:'High / back vowel',examples:'u, ʊ, ɯ',fine:'height · backness · rounding · length'},
-{id:'A4',name:'Low / back / central vowel',examples:'ɑ, ɒ, ʌ, ə',fine:'height · backness · centrality · rounding'},
-{id:'B1',name:'Labial sonorant',examples:'m, w',fine:'nasal · approximant · voicing · secondary articulation'},
-{id:'B2',name:'Coronal sonorant',examples:'n, l, r, ɹ',fine:'nasal · lateral · trill/tap · exact coronal place'},
-{id:'B3',name:'Dorsal sonorant',examples:'ŋ, j, ɰ',fine:'nasal · approximant · exact dorsal place'},
-{id:'B4',name:'Deep / laryngeal sonorant',examples:'ʕ̞ and rare deep approximants',fine:'pharyngeal/laryngeal setting · voicing'},
-{id:'C1',name:'Labial friction',examples:'f, v, ɸ, β',fine:'labiodental/bilabial · voicing · intensity'},
-{id:'C2',name:'Coronal friction',examples:'s, z, ʃ, ʒ, θ, ð',fine:'dental/alveolar/postalveolar/retroflex · voicing'},
-{id:'C3',name:'Dorsal friction',examples:'x, ɣ, ç, ʝ',fine:'palatal/velar/uvular · voicing'},
-{id:'C4',name:'Laryngeal friction',examples:'h, ɦ, ħ, ʕ',fine:'pharyngeal/glottal · voicing · constriction'},
-{id:'D1',name:'Labial closure',examples:'p, b',fine:'voicing · aspiration · ejective/implosive · release'},
-{id:'D2',name:'Coronal closure',examples:'t, d, ʈ, ɖ',fine:'dental/alveolar/retroflex · voicing · aspiration'},
-{id:'D3',name:'Dorsal closure',examples:'k, g, q, ɢ',fine:'palatal/velar/uvular · voicing · aspiration'},
-{id:'D4',name:'Laryngeal closure',examples:'ʔ',fine:'glottal closure · timing · phonation'}];
-const bridge=document.getElementById('bridge'),detail=document.getElementById('detail');
-cells.forEach(c=>{const b=document.createElement('button');b.className='cell';b.innerHTML=`<div class="code">${c.id}</div><strong>${c.name}</strong><span>${c.examples}</span>`;b.onclick=()=>{document.querySelectorAll('.cell').forEach(x=>x.classList.remove('active'));b.classList.add('active');detail.innerHTML=`<h3>${c.id} · ${c.name}</h3><p><b>Example sounds:</b> <span class="examples">${c.examples}</span></p><p><b>Fine coordinates retained:</b> ${c.fine}</p><p class="small">The cell is the coarse address. It does not erase these distinctions.</p>`};bridge.appendChild(b)});
-const sounds=[
-{s:'p',cell:'D1',desc:'voiceless labial stop'}, {s:'b',cell:'D1',desc:'voiced labial stop'}, {s:'m',cell:'B1',desc:'labial nasal'}, {s:'t',cell:'D2',desc:'coronal stop'}, {s:'ʈ',cell:'D2',desc:'retroflex stop'}, {s:'s',cell:'C2',desc:'coronal fricative'}, {s:'ʃ',cell:'C2',desc:'postalveolar fricative'}, {s:'k',cell:'D3',desc:'dorsal stop'}, {s:'ŋ',cell:'B3',desc:'dorsal nasal'}, {s:'x',cell:'C3',desc:'dorsal fricative'}, {s:'h',cell:'C4',desc:'laryngeal fricative'}, {s:'ʔ',cell:'D4',desc:'glottal stop'}, {s:'i',cell:'A1',desc:'high front vowel'}, {s:'a',cell:'A2',desc:'low/front-central vowel'}, {s:'u',cell:'A3',desc:'high back vowel'}];
-const inv={english:['p','b','m','t','s','ʃ','k','ŋ','h','i','a','u'],sanskrit:['p','b','m','t','ʈ','s','ʃ','k','ŋ','h','i','a','u'],greek:['p','b','m','t','s','k','x','ŋ','i','a','u'],mandarin:['p','m','t','s','ʃ','k','ŋ','x','h','i','a','u']};
-const src=document.getElementById('source'),tar=document.getElementById('target'),res=document.getElementById('result');sounds.forEach(x=>src.add(new Option(`/${x.s}/ — ${x.desc}`,x.s)));
-function renderDemo(){const x=sounds.find(q=>q.s===src.value);const choices=inv[tar.value];let exact=choices.includes(x.s)?x.s:null;let same=sounds.filter(q=>choices.includes(q.s)&&q.cell===x.cell);let y=exact||((same[0]||{}).s)||'—';document.getElementById('sourceInfo').innerHTML=`Bridge address: <b>${x.cell}</b>`;document.getElementById('targetInfo').textContent=`Small teaching inventory: ${choices.map(z=>'/'+z+'/').join(' ')}`;res.innerHTML=`<b>/${x.s}/</b> enters coarse cell <b>${x.cell}</b>. In the selected target inventory, the demonstration chooses <b>/${y}/</b>${exact?' because the same sound is available.':same.length?' from the same coarse bridge region.':' as no same-cell example is present in this tiny demo.'}<br><span class="small">A real implementation would compare full feature vectors and target-language phonotactics, not just choose the first item in a cell.</span>`}
-src.onchange=renderDemo;tar.onchange=renderDemo;renderDemo();
-const gm=document.getElementById('gateMatrix');cells.forEach(a=>cells.forEach(b=>{const d=document.createElement('div');d.className='g';d.textContent='·';d.title=`${a.id} → ${b.id}`;gm.appendChild(d)}));
-</script>
+<section class="section wrap" id="status">
+<h2>6. What the page can and cannot establish</h2>
+<table class="compare"><tr><th>Statement</th><th>Status</th></tr><tr><td>PHOIBLE supplies cross-linguistic inventories and distinctive-feature data.</td><td class="goodtxt">Data layer</td></tr><tr><td>Every non-prosodic segment can be assigned by our present rules to one of sixteen coarse bridge cells.</td><td class="warntxt">Implemented hypothesis</td></tr><tr><td>The bridge preserves the same nearest target sound as the unconstrained feature matcher.</td><td class="warntxt">Testable per sound/language pair</td></tr><tr><td>The 16-cell compression is globally optimal.</td><td class="warntxt">Not established</td></tr><tr><td>16² produces 256 possible directed coarse-state pairs.</td><td class="goodtxt">Mathematical fact</td></tr><tr><td>Those 256 gates are common real-speech transition units.</td><td class="warntxt">Requires corpus testing</td></tr><tr><td>The magic-square ordering has a phonetic relationship beyond chance.</td><td class="warntxt">Permutation test above</td></tr></table>
+<div class="notice"><b>Why this matters:</b> a negative result is useful. If a proposed cell boundary repeatedly forces worse target matches, or if the magic-square path performs like random permutations, we can change or reject that part instead of protecting the theory from evidence.</div>
+</section>
+</main>
+<footer>Vardath · Exploration of 8 · Universal Phonetic Bridge<br><span class="small">PHOIBLE data: Moran &amp; McCloy, PHOIBLE 2.0. Experimental bridge and overlay analysis: Vardath research project.</span></footer>
 </body>
 </html>
