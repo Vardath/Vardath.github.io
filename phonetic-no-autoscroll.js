@@ -26,6 +26,11 @@
   lab.src='phonetic-345-magic-page.js?v=20260906-coordinate2';
   lab.defer=true; document.head.appendChild(lab);
 
+  // Locally-run frozen-method hold-out validation, displayed below the verified coordinate result.
+  const hv=document.createElement('script');
+  hv.src='phonetic-holdout-results.js?v=20260906-holdout1';
+  hv.defer=true; document.head.appendChild(hv);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
