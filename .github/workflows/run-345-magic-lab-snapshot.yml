@@ -1,0 +1,40 @@
+name: Run 3-4-5 Magic Lab Snapshot
+
+on:
+  push:
+    paths:
+      - 'phonetic-345-magic-core.mjs'
+      - 'tools/run-phonetic-345-magic-lab.mjs'
+      - 'data/phonetic-alphabet-orders.json'
+      - '.github/workflows/run-345-magic-lab-snapshot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-shared-page-engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Execute the exact shared page experiment engine
+        env:
+          M345_SCOPE: full
+          M345_PERMS: '80'
+          M345_WORDS: '2000'
+          M345_CONCURRENCY: '5'
+        run: node tools/run-phonetic-345-magic-lab.mjs
+      - name: Publish snapshot used by the page
+        run: |
+          cp data/phonetic-345-magic-results.json /tmp/phonetic-345-magic-results.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/phonetic-345-magic-results.json data/phonetic-345-magic-results.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/phonetic-345-magic-results.json
+          git commit -m 'Publish 3-4-5 magic lab shared-engine results'
+          git push origin main
