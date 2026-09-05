@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "note": "Curated explicit alphabet orders used by the 3-4-5 magic-square experiment. Languages not listed fall back to locale-aware collation of observed graphemes and are marked inferred. Multi-character alphabet symbols are supported.",
+  "orders": {
+    "eng": {"source":"Modern English alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]},
+    "spa": {"source":"Modern Spanish alphabet (ñ distinct; ch/ll not separate letters)","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"]},
+    "swe": {"source":"Swedish alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","å","ä","ö"]},
+    "dan": {"source":"Danish alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","æ","ø","å"]},
+    "nor": {"source":"Norwegian alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","æ","ø","å"]},
+    "nob": {"source":"Norwegian alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","æ","ø","å"]},
+    "nno": {"source":"Norwegian alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","æ","ø","å"]},
+    "fin": {"source":"Finnish alphabet","symbols":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","å","ä","ö"]},
+    "isl": {"source":"Icelandic alphabet","symbols":["a","á","b","d","ð","e","é","f","g","h","i","í","j","k","l","m","n","o","ó","p","r","s","t","u","ú","v","x","y","ý","þ","æ","ö"]},
+    "pol": {"source":"Polish alphabet","symbols":["a","ą","b","c","ć","d","e","ę","f","g","h","i","j","k","l","ł","m","n","ń","o","ó","p","r","s","ś","t","u","w","y","z","ź","ż"]},
+    "ces": {"source":"Czech alphabet; ch treated as one ordered letter","symbols":["a","á","b","c","č","d","ď","e","é","ě","f","g","h","ch","i","í","j","k","l","m","n","ň","o","ó","p","q","r","ř","s","š","t","ť","u","ú","ů","v","w","x","y","ý","z","ž"]},
+    "hun": {"source":"Hungarian alphabet; digraphs/trigraph treated as letters","symbols":["a","á","b","c","cs","d","dz","dzs","e","é","f","g","gy","h","i","í","j","k","l","ly","m","n","ny","o","ó","ö","ő","p","q","r","s","sz","t","ty","u","ú","ü","ű","v","w","x","y","z","zs"]},
+    "tur": {"source":"Turkish alphabet","symbols":["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","n","o","ö","p","r","s","ş","t","u","ü","v","y","z"]},
+    "vie": {"source":"Vietnamese alphabet","symbols":["a","ă","â","b","c","d","đ","e","ê","g","h","i","k","l","m","n","o","ô","ơ","p","q","r","s","t","u","ư","v","x","y"]},
+    "yor": {"source":"Yorùbá alphabet; gb treated as one ordered letter","symbols":["a","b","d","e","ẹ","f","g","gb","h","i","j","k","l","m","n","o","ọ","p","r","s","ṣ","t","u","w","y"]},
+    "cym": {"source":"Welsh alphabet; traditional digraph letters retained","symbols":["a","b","c","ch","d","dd","e","f","ff","g","ng","h","i","l","ll","m","n","o","p","ph","r","rh","s","t","th","u","w","y"]},
+    "ell": {"source":"Modern Greek alphabet","symbols":["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω"]},
+    "grc": {"source":"Greek alphabet","symbols":["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω"]},
+    "rus": {"source":"Russian alphabet","symbols":["а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я"]},
+    "ukr": {"source":"Ukrainian alphabet","symbols":["а","б","в","г","ґ","д","е","є","ж","з","и","і","ї","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ь","ю","я"]},
+    "kat": {"source":"Modern Georgian Mkhedruli alphabet","symbols":["ა","ბ","გ","დ","ე","ვ","ზ","თ","ი","კ","ლ","მ","ნ","ო","პ","ჟ","რ","ს","ტ","უ","ფ","ქ","ღ","ყ","შ","ჩ","ც","ძ","წ","ჭ","ხ","ჯ","ჰ"]},
+    "heb": {"source":"Hebrew alphabet; final forms are not separate ordinal letters","symbols":["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ל","מ","נ","ס","ע","פ","צ","ק","ר","ש","ת"]},
+    "ara": {"source":"Arabic alphabet","symbols":["ا","ب","ت","ث","ج","ح","خ","د","ذ","ر","ز","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ك","ل","م","ن","ه","و","ي"]},
+    "fas": {"source":"Persian alphabet","symbols":["ا","ب","پ","ت","ث","ج","چ","ح","خ","د","ذ","ر","ز","ژ","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ک","گ","ل","م","ن","و","ه","ی"]}
+  }
+}
