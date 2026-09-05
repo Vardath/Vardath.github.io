@@ -5,6 +5,14 @@
   document.documentElement.style.overflowAnchor='none';
   if(document.body) document.body.style.overflowAnchor='none';
 
+  // Load the compact localized word-connection / Wikipedia translation explorer.
+  // Kept here so the existing phonetic page stays a single page and older cached HTML
+  // still acquires the new module as soon as this script refreshes.
+  const wc=document.createElement('script');
+  wc.src='phonetic-word-connect-localize.js?v=20260905-connect1';
+  wc.defer=true;
+  document.head.appendChild(wc);
+
   // Remove stale/deep-link hashes on initial page load so the page does not jump automatically.
   // Clicking a navigation link after load still works normally.
   if(location.hash){
