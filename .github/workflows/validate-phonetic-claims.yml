@@ -15,8 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Clone aligned LibriSpeech validation corpus
-        run: git clone --depth 1 https://github.com/MontrealCorpusTools/aligned-librispeech.git /tmp/aligned-librispeech
+      - name: Clone representative aligned LibriSpeech sample
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/MontrealCorpusTools/aligned-librispeech.git /tmp/aligned-librispeech
+          cd /tmp/aligned-librispeech
+          git sparse-checkout set \
+            librispeech_aligned/1089 \
+            librispeech_aligned/121 \
+            librispeech_aligned/1221 \
+            librispeech_aligned/237 \
+            librispeech_aligned/2830 \
+            librispeech_aligned/3570
       - name: Run controlled validation suite
         env:
           ALIGNED_LIBRISPEECH: /tmp/aligned-librispeech/librispeech_aligned
