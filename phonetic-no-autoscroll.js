@@ -5,52 +5,30 @@
   document.documentElement.style.overflowAnchor='none';
   if(document.body) document.body.style.overflowAnchor='none';
 
-  // Load the compact localized word-connection / Wikipedia translation explorer.
   const wc=document.createElement('script');
   wc.src='phonetic-word-connect-localize.js?v=20260905-connect1';
-  wc.defer=true;
-  document.head.appendChild(wc);
+  wc.defer=true; document.head.appendChild(wc);
 
-  // Add the existing research layers directly to the same top results table.
   const wr=document.createElement('script');
   wr.src='phonetic-word-table-research.js?v=20260905-table2';
-  wr.defer=true;
-  document.head.appendChild(wr);
+  wr.defer=true; document.head.appendChild(wr);
 
-  // Make the SAME top language selector localize the entire research page.
   const fl=document.createElement('script');
   fl.src='phonetic-full-localize.js?v=20260905-full1';
-  fl.defer=true;
-  document.head.appendChild(fl);
+  fl.defer=true; document.head.appendChild(fl);
 
-  // Completed controlled validation outcomes.
   const vs=document.createElement('script');
   vs.src='phonetic-validation-status.js?v=20260905-validation1';
-  vs.defer=true;
-  document.head.appendChild(vs);
+  vs.defer=true; document.head.appendChild(vs);
 
-  // Per-language / per-family Durer magic-square subgroup tester.
   const mg=document.createElement('script');
-  mg.src='phonetic-magic-language-groups.js?v=20260905-magicgroups1';
-  mg.defer=true;
-  document.head.appendChild(mg);
+  mg.src='phonetic-magic-language-groups.js?v=20260905-magicgroups2';
+  mg.defer=true; document.head.appendChild(mg);
 
-  // Remove stale/deep-link hashes on initial page load so the page does not jump automatically.
-  if(location.hash){
-    try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ }
-  }
-
+  if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
-  addEventListener('click',e=>{
-    const a=e.target.closest?.('a[href^="#"]');
-    if(a) userNavigated=true;
-  },{capture:true});
-
-  const top=()=>{
-    if(userNavigated) return;
-    requestAnimationFrame(()=>scrollTo({top:0,left:0,behavior:'auto'}));
-  };
-
+  addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
+  const top=()=>{ if(userNavigated)return; requestAnimationFrame(()=>scrollTo({top:0,left:0,behavior:'auto'})); };
   top();
   addEventListener('DOMContentLoaded',top,{once:true});
   addEventListener('load',()=>{ top(); setTimeout(top,120); setTimeout(top,500); },{once:true});
