@@ -41,5 +41,6 @@ jobs:
             echo 'No benchmark result changes.'
           else
             git commit -m 'Update full phonetic bridge benchmark results'
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
