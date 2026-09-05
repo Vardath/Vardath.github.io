@@ -22,8 +22,12 @@ jobs:
           from pathlib import Path
           p=Path('phonetic-bridge.html')
           s=p.read_text(encoding='utf-8')
-          tag='<script defer src="phonetic-345.js?v=20260905-pyramid1"></script>'
-          if tag not in s:
+          old='<script defer src="phonetic-345.js?v=20260905-pyramid1"></script>'
+          tag='<script defer src="phonetic-345.js?v=20260905-pyramid2"></script>'
+          if old in s:
+              s=s.replace(old,tag,1)
+              p.write_text(s,encoding='utf-8')
+          elif tag not in s:
               s=s.replace('</head>',tag+'\n</head>',1)
               p.write_text(s,encoding='utf-8')
           PY
@@ -35,7 +39,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Codec script already wired.'
           else
-            git commit -m 'Load additive 3-4-5 pyramid phonetic codec'
+            git commit -m 'Load interactive 3-4-5 pyramid translation lab'
             git pull --rebase origin main
             git push
           fi
