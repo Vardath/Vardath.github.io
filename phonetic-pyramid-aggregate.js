@@ -1,0 +1,19 @@
+// Renders the completed aggregate 3–4–5 benchmark when its JSON is available.
+(function(){
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const labels={plain:'Plain PHOIBLE nearest','5':'Forced 5×5','4':'Forced 4×4','3':'Forced 3×3',adaptive:'Adaptive 5→4→3'};
+  async function render(){
+    const host=document.getElementById('pyramidEvidence');if(!host||document.getElementById('peAggregate'))return;
+    const sec=document.createElement('div');sec.id='peAggregate';sec.innerHTML=`<h3 style="margin-top:30px">Full cross-language pyramid benchmark</h3><div id="peAggregateBody" class="panel"><span class="small">Loading full benchmark result…</span></div>`;host.appendChild(sec);
+    try{
+      const r=await fetch('data/pyramid-benchmark-summary.json?v=20260905',{cache:'no-store'});if(!r.ok)throw Error('result not available yet');const d=await r.json();
+      const body=document.getElementById('peAggregateBody');
+      if(!d.canonical_languages_with_phoible_inventory){body.innerHTML='<div class="notice"><b>Benchmark rerun pending.</b> The aggregate result is being rebuilt after a data-linkage correction. The selected-language tests above remain usable.</div>';return;}
+      const rows=d.strategy_order.map(k=>({k,...d.strategies[k]}));
+      const bestF=rows.filter(x=>x.mean_forward_loss!=null).sort((a,b)=>a.mean_forward_loss-b.mean_forward_loss)[0];
+      const bestR=rows.filter(x=>x.mean_roundtrip_loss!=null).sort((a,b)=>a.mean_roundtrip_loss-b.mean_roundtrip_loss)[0];
+      body.innerHTML=`<div class="stats"><span><b>${d.canonical_languages_with_phoible_inventory}</b>canonical languages with PHOIBLE inventories</span><span><b>${d.ordered_language_pairs.toLocaleString()}</b>ordered language pairs</span><span><b>${d.missing_canonical_isos.length}</b>canonical languages missing PHOIBLE inventory</span><span><b>${d.benchmark_version}</b>benchmark version</span></div><div style="overflow:auto;margin-top:16px"><table class="pe-table"><thead><tr><th>Strategy</th><th>Coverage</th><th>Mean forward loss</th><th>Exact forward</th><th>Mean round-trip loss</th><th>Exact round-trip</th><th>Pair wins</th></tr></thead><tbody>${rows.map(x=>`<tr><td><b>${esc(labels[x.k]||x.k)}</b>${x===bestF?' <span class="pill good">lowest forward loss</span>':''}${x===bestR?' <span class="pill good">lowest return loss</span>':''}</td><td>${(100*x.coverage_rate).toFixed(1)}%</td><td>${x.mean_forward_loss==null?'—':x.mean_forward_loss.toFixed(4)}</td><td>${(100*x.exact_forward_rate).toFixed(1)}%</td><td>${x.mean_roundtrip_loss==null?'—':x.mean_roundtrip_loss.toFixed(4)}</td><td>${(100*x.roundtrip_exact_rate).toFixed(1)}%</td><td>${x.pairwise_forward_wins} forward · ${x.pairwise_roundtrip_wins} return</td></tr>`).join('')}</tbody></table></div><div class="pe-verdict"><b>Aggregate interpretation:</b> the pyramid is only supported if Adaptive remains competitive on feature loss while providing useful coverage and round-trip recovery. A fixed layer or plain nearest-neighbour winning consistently would count against the adaptive-pyramid hypothesis.</div><div class="small" style="margin-top:10px">Adaptive route usage: 5×5 ${d.adaptive_route_counts['5'].toLocaleString()} · 4×4 ${d.adaptive_route_counts['4'].toLocaleString()} · 3×3 ${d.adaptive_route_counts['3'].toLocaleString()} · fallback ${d.adaptive_route_counts.fallback.toLocaleString()}.</div>`;
+    }catch(e){document.getElementById('peAggregateBody').innerHTML=`<div class="notice"><b>Full benchmark still running.</b> ${esc(e.message)}. The page will show the aggregate automatically once the workflow publishes it.</div>`;}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(render,500));else setTimeout(render,500);
+})();
