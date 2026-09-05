@@ -26,6 +26,13 @@
   fl.defer=true;
   document.head.appendChild(fl);
 
+  // Replace the old "needs testing" orange wording with the completed controlled
+  // validation outcomes. Negative results remain visible rather than being promoted.
+  const vs=document.createElement('script');
+  vs.src='phonetic-validation-status.js?v=20260905-validation1';
+  vs.defer=true;
+  document.head.appendChild(vs);
+
   // Remove stale/deep-link hashes on initial page load so the page does not jump automatically.
   // Clicking a navigation link after load still works normally.
   if(location.hash){
