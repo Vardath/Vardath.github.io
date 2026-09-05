@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "title": "Directional word-transmission pilot",
+  "scope": "Exploratory calibration only; not a proof of common ancestry or borrowing.",
+  "method": {
+    "phonetic_score": "Weighted edit similarity over broad sound classes. Vowel-to-vowel substitutions are discounted; s~sh/ʃ, k~g~x~h, t~d and other close classes are cheaper than unrelated substitutions. Insertions/deletions are penalized.",
+    "semantic_score": "Meanings are compared on a small transparent concept graph: cause -> efficacy -> authority -> divine agency, with number-eight and enclosure kept separate. This is a pilot ontology, not a full semantic model.",
+    "calibration": "Known historical developments are treated as positive controls. Candidate links are scored only after those controls are fixed.",
+    "warning": "Short words can resemble each other by chance. Candidate percentile values here are only against this curated pilot control set, not against all world languages."
+  },
+  "sources": [
+    {"label":"Yoruba àṣẹ meaning and derivation","url":"https://kaikki.org/dictionary/Yoruba/meaning/a/a%E1%B9%A3/a%E1%B9%A3%E1%BA%B9.html","note":"à- + ṣẹ 'come to pass / take effect'; IPA approximately /à.ʃɛ̄/."},
+    {"label":"Yoruba cultural description of ase","url":"https://www.persee.fr/doc/cea_0008-0055_1977_num_17_68_2430","note":"Describes ase as power, authority, command and the power to make things come to pass."},
+    {"label":"Eight etymology","url":"https://www.etymonline.com/word/eight","note":"Old English eahta < Proto-Germanic *akhto < PIE *okto(u); cognates include Greek okto and Latin octo."},
+    {"label":"Ogdoad etymology","url":"https://www.dictionary.com/browse/ogdoad","note":"Greek ogdoas from ogdoos 'eighth'."},
+    {"label":"Æsir background","url":"https://en.wikipedia.org/wiki/%C3%86sir","note":"Old Norse áss / plural Æsir from Proto-Germanic *ansuz."}
+  ],
+  "positive_controls": [
+    {"from":"*oḱtṓw","to":"*ahtō","phonetic":0.74,"semantic":1.0,"status":"attested lineage","note":"Known eight lineage."},
+    {"from":"*ahtō","to":"eahta","phonetic":0.79,"semantic":1.0,"status":"attested lineage","note":"Known Germanic -> Old English development."},
+    {"from":"eahta","to":"eight","phonetic":0.65,"semantic":1.0,"status":"attested lineage","note":"Known Old English -> English development."},
+    {"from":"oktō","to":"ógdoos","phonetic":0.6833,"semantic":1.0,"status":"attested lineage","note":"Eight -> eighth branch; demonstrates kt -> gd-type reshaping."},
+    {"from":"ógdoos","to":"ogdoad","phonetic":0.775,"semantic":1.0,"status":"attested derivation","note":"Greek eighth -> group of eight."},
+    {"from":"*ansuz","to":"áss","phonetic":0.58,"semantic":0.85,"status":"attested lineage","note":"Proto-Germanic divine-being term -> Old Norse áss."},
+    {"from":"áss","to":"Æsir","phonetic":0.58,"semantic":0.9,"status":"morphological family","note":"Old Norse singular/plural divine-being forms."}
+  ],
+  "candidates": [
+    {"from":"àṣẹ","to":"áss","direction":"Yoruba -> Old Norse","phonetic":0.6833,"semantic":0.72,"combined":0.698,"verdict":"interesting but historically unsupported","note":"Phonetically scores inside the range of several true controls. Semantically both occupy efficacy/authority/divine-agency territory. However Yoruba àṣẹ has a transparent internal derivation from ṣẹ 'come to pass/take effect', and no transmission chain to Germanic is currently known."},
+    {"from":"àṣẹ","to":"Æsir","direction":"Yoruba -> Old Norse plural","phonetic":0.60,"semantic":0.66,"combined":0.624,"verdict":"plausible resemblance, not evidence of descent","note":"The phonetic score is comparable to the *ansuz -> áss positive control, but the semantic relationship is looser and the historical bridge is missing."},
+    {"from":"àṣẹ","to":"*ansuz","direction":"Yoruba -> Proto-Germanic","phonetic":0.60,"semantic":0.68,"combined":0.632,"verdict":"candidate for historical investigation only","note":"A one-way transition is mechanically plausible under the broad scoring model, but this does not establish chronology or borrowing."}
+  ],
+  "semantic_axis": [
+    {"term":"aitia / aetiology","meaning":"cause / explanation / origin","position":"cause"},
+    {"term":"àṣẹ","meaning":"coming-to-pass, efficacy, authority, command","position":"efficacy"},
+    {"term":"arch-","meaning":"chief / ruler / beginning","position":"authority"},
+    {"term":"áss / Æsir","meaning":"god / divine being","position":"divine agency"},
+    {"term":"ark","meaning":"container / enclosure","position":"separate branch"},
+    {"term":"eight / octo / ogdo-","meaning":"eight / eighth / group of eight","position":"confirmed numeral branch"}
+  ],
+  "conclusion": "The known eight/octo/ogdo lineage validates that substantial surface change can preserve identity, including the striking okt -> ogd development. The àṣẹ -> áss candidate scores within the broad phonetic range of genuine historical controls and has a coherent semantic path through efficacy/authority/divine agency. However, the Yoruba word is internally analyzable as à- + ṣẹ 'come to pass/take effect', and no historical contact chain currently connects it to Proto-Germanic *ansuz. Therefore the experiment upgrades the pair from 'mere visual resemblance' to 'worth targeted historical testing', but does not support claiming common ancestry or borrowing yet."
+}
