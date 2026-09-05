@@ -1,0 +1,48 @@
+const INTEGRATED_CELLS=['A1','A2','A3','A4','B1','B2','B3','B4','C1','C2','C3','C4','D1','D2','D3','D4'];
+let BENCH=null;
+const gi=id=>document.getElementById(id);
+function ie(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function featureWords(p){return FEATURE_NAMES.filter(f=>fnum(p[f])>.25)}
+function renderSoundCorrespondence(){
+  if(!state?.loaded)return;
+  const srcInv=gi('sourceInventory')?.value,tgtInv=gi('targetInventory')?.value;
+  if(!srcInv||!tgtInv)return;
+  const src=(state.inventorySegments.get(srcInv)||[]).map(id=>state.parameters.get(id)).filter(Boolean).filter(p=>classify(p)!=='PROSODY');
+  const tgtIds=state.inventorySegments.get(tgtInv)||[];
+  const sLang=state.languages.get(gi('sourceLanguage').value),tLang=state.languages.get(gi('targetLanguage').value);
+  gi('corrTitle').textContent=`${sLang?.Name||'Source'} → ${tLang?.Name||'Target'}`;
+  const rows=src.map(p=>{
+    const r=nearest(p,tgtIds,false).ranked[0]; if(!r)return '';
+    const q=r.p,sc=classify(p),tc=classify(q),shared=featureWords(p).filter(x=>featureWords(q).includes(x));
+    const dif=r.parts.slice(0,6).map(x=>x[0]);
+    let why=`Both sounds share ${shared.slice(0,6).join(', ')||'few strongly positive features'}. `;
+    why+=sc===tc?`They occupy the same coarse bridge cell (${sc}), so their broad articulatory state agrees. `:`They occupy different bridge cells (${sc} → ${tc}), so this is a cross-cell fallback. `;
+    if(dif.length)why+=`The largest remaining PHOIBLE differences are ${dif.join(', ')}.`;
+    const kind=p.Name===q.Name?'exact IPA':(sc===tc?'same-cell':'fallback');
+    return `<div class="corrrow"><div class="corrsound">/${ie(p.Name)}/ <span>→</span> /${ie(q.Name)}/</div><div class="corrmeta"><span class="pill">${ie(sc)}</span><span class="pill">${ie(tc)}</span><span class="pill">distance ${r.distance.toFixed(4)}</span><span class="pill ${kind==='exact IPA'?'good':''}">${kind}</span></div><details><summary>Why this maps this way</summary><p>${ie(why)}</p></details></div>`;
+  }).join('');
+  gi('correspondenceGrid').innerHTML=rows||'<p class="small">No comparable non-prosodic sounds in these inventories.</p>';
+}
+function renderBenchmark(){
+  if(!BENCH)return;
+  const c=BENCH.counts,core=BENCH.core_thresholds['0.8']||[],strict=BENCH.core_thresholds['1.0']||[];
+  gi('benchStatus').className='status ok';
+  gi('benchStatus').innerHTML=`Complete benchmark · ${c.datasets_completed}/${c.wikipron_datasets_indexed} WikiPron datasets · ${c.canonical_languages} canonical languages · ${c.pairwise_comparisons.toLocaleString()} pairwise comparisons · ${c.datasets_failed} failures`;
+  gi('benchStats').innerHTML=`<span><b>${c.canonical_languages}</b>languages</span><span><b>${core.length}</b>80% core gates</span><span><b>${strict.length}</b>100% strict core</span><span><b>${c.families_ge_3_languages}</b>families ≥3 languages</span>`;
+  gi('benchCore').innerHTML=core.map(g=>`<span class="pill">${ie(g)}</span>`).join(' ')||'<span class="small">none</span>';
+  let html='<div></div>'+INTEGRATED_CELLS.map(x=>`<div class="bmhead">${x}</div>`).join('');
+  const by=new Map(BENCH.gate_prevalence.map(x=>[x.index,x]));
+  for(let i=0;i<16;i++){html+=`<div class="bmhead">${INTEGRATED_CELLS[i]}</div>`;for(let j=0;j<16;j++){const g=by.get(i*16+j),p=g?.prevalence||0;html+=`<div class="bmcell" title="${ie(g?.gate||'')} · ${(p*100).toFixed(1)}% languages · power ratio 3^${g?.power_exponent_delta??0}" style="background:rgba(92,225,230,${(.06+.86*p).toFixed(3)})">${(p*100).toFixed(0)}%</div>`}};
+  gi('benchmarkMatrix').innerHTML=html;
+  const top=[...BENCH.power_delta_profile].sort((a,b)=>b.language_prevalence-a.language_prevalence||b.mass-a.mass).slice(0,12);
+  gi('powerProfile').innerHTML=top.map(x=>`<div class="metric"><b>3^${x.delta}</b><span>${(x.language_prevalence*100).toFixed(1)}% of languages</span></div>`).join('');
+}
+async function loadBenchmark(){
+  try{const r=await fetch('data/phonetic-benchmark-summary.json?v=2',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);BENCH=await r.json();renderBenchmark()}catch(e){gi('benchStatus').className='status error';gi('benchStatus').textContent='Benchmark results unavailable: '+e.message}
+}
+function wireIntegrated(){
+  ['sourceLanguage','targetLanguage','sourceInventory','targetInventory'].forEach(id=>gi(id)?.addEventListener('change',()=>setTimeout(renderSoundCorrespondence,0)));
+  const timer=setInterval(()=>{if(typeof state!=='undefined'&&state.loaded){clearInterval(timer);renderSoundCorrespondence()}},250);
+  loadBenchmark();
+}
+document.addEventListener('DOMContentLoaded',wireIntegrated);
