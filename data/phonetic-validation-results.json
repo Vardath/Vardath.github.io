@@ -41,8 +41,8 @@
       "status": "orange",
       "claim": "WikiPron lexical transitions equal continuous connected-speech articulation.",
       "corpus": "MontrealCorpusTools/aligned-librispeech test-clean, MFA phone alignments",
-      "speech_textgrids_used": 2500,
-      "mapped_speech_phones": 181701,
+      "speech_textgrids_used": 395,
+      "mapped_speech_phones": 29162,
       "wikipron": {
         "words": 106931,
         "mapped": 751944,
@@ -50,9 +50,9 @@
         "mapping_coverage": 0.9847380427921498
       },
       "metrics": {
-        "pearson_gate_frequency": 0.6351079270958421,
-        "cosine_gate_frequency": 0.6903475369901044,
-        "jensen_shannon_divergence": 0.18807509152448368
+        "pearson_gate_frequency": 0.6178719544986703,
+        "cosine_gate_frequency": 0.6756029169625319,
+        "jensen_shannon_divergence": 0.19422174816422969
       },
       "criterion": "Pearson >= 0.90, cosine >= 0.95, JSD <= 0.10, >=500 aligned utterances. Passing supports only English read speech, not universal equivalence.",
       "conclusion": "The lexical gate distribution does not meet the predeclared speech-agreement threshold; the claim remains orange."
