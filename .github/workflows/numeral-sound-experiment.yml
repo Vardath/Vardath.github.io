@@ -1,0 +1,45 @@
+name: Numeral Sound Experiment
+
+on:
+  push:
+    paths:
+      - 'tools/build_numeral_sound_experiment.py'
+      - 'phonetic-numeral-sounds.js'
+      - '.github/workflows/numeral-sound-experiment.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build pinned UniNum numeral experiment
+        run: python tools/build_numeral_sound_experiment.py
+      - name: Inject compact number-sound module
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('phonetic-bridge.html')
+          s=p.read_text(encoding='utf-8')
+          tag='<script defer src="phonetic-numeral-sounds.js?v=20260905-num1"></script>'
+          if tag not in s:
+              s=s.replace('</head>',tag+'\n</head>',1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit generated data and wiring
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-numeral-sounds.json phonetic-bridge.html
+          if git diff --cached --quiet; then
+            echo 'Numeral experiment already current.'
+          else
+            git commit -m 'Add numeral sound experiment to phonetic bridge'
+            git pull --rebase origin main
+            git push
+          fi
