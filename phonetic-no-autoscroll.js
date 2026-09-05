@@ -13,6 +13,13 @@
   wc.defer=true;
   document.head.appendChild(wc);
 
+  // Add the existing research layers directly to the same top results table:
+  // phonetic/semantic/etymology links, numeral corpus forms, evidence status and speech.
+  const wr=document.createElement('script');
+  wr.src='phonetic-word-table-research.js?v=20260905-table2';
+  wr.defer=true;
+  document.head.appendChild(wr);
+
   // Remove stale/deep-link hashes on initial page load so the page does not jump automatically.
   // Clicking a navigation link after load still works normally.
   if(location.hash){
