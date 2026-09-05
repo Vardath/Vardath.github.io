@@ -24,10 +24,9 @@ MAGIC=bp.MAGIC_EXP
 def iso_to_locale(iso3):
     try:
         x=pycountry.languages.get(alpha_3=iso3)
-        code=getattr(x,'alpha_2',None) or iso3
+        return getattr(x,'alpha_2',None) or iso3
     except Exception:
-        code=iso3
-    return code
+        return iso3
 
 def is_letter(ch): return unicodedata.category(ch).startswith('L')
 def chars(word): return [c.casefold() for c in unicodedata.normalize('NFC',word) if is_letter(c)]
@@ -40,8 +39,6 @@ def ordered_alphabet(words,iso3):
     try:
         coll=icu.Collator.createInstance(icu.Locale(loc))
         ordered=sorted(seen,key=coll.getSortKey)
-        # ICU root fallback is still deterministic, but we only call a locale tailored
-        # when ICU reports at least the requested language code.
         src=f'ICU collation locale {loc}'
     except Exception:
         coll=icu.Collator.createInstance(icu.Locale.getRoot())
@@ -49,9 +46,11 @@ def ordered_alphabet(words,iso3):
     return ordered,src
 
 def rank_to_cell(rank,total,n):
+    """Project an alphabet ordinal into one of n² ordered cells."""
+    cells=n*n
     if total<=1:return 0
     x=rank/(total-1)
-    return min(n-1,int(x*n))
+    return min(cells-1,int(x*cells))
 
 def cosine(a,b):
     sa=sum(x*x for x in a);sb=sum(x*x for x in b)
@@ -64,21 +63,22 @@ def power_delta_mean(counts):
     s=0.0
     for i,n in enumerate(counts):
         if n:
-            a,b=divmod(i,16);s+=n*abs(MAGIC[b]-MAGIC[a])/15
+            a,b=divmod(i,16)
+            s+=n*abs(MAGIC[b]-MAGIC[a])/15
     return s/total
 
-def make_orth_counts(pair_counts,rankmap,n,perm=None):
-    out=[0]*(n*n)
+def make_orth_counts(pair_counts,rankmap,n):
+    states=n*n
+    out=[0]*(states*states)
     total=len(rankmap)
     for (a,b),cnt in pair_counts.items():
-        ra,rb=rankmap[a],rankmap[b]
-        ca,cb=rank_to_cell(ra,total,n),rank_to_cell(rb,total,n)
-        if n==4 and perm is not None: ca,cb=perm[ca],perm[cb]
-        out[ca*n+cb]+=cnt
+        ca=rank_to_cell(rankmap[a],total,n);cb=rank_to_cell(rankmap[b],total,n)
+        out[ca*states+cb]+=cnt
     return out
 
 def phone_counts(lines,params,n):
-    out=[0]*(n*n);mapped=unknown=0
+    states=n*n
+    out=[0]*(states*states);mapped=unknown=0
     for line in lines:
         tab=line.find('\t')
         if tab<0:continue
@@ -90,7 +90,7 @@ def phone_counts(lines,params,n):
             if not p or bp.classify(p) is None:
                 unknown+=1;prev=None;continue
             mapped+=1;cur=pc.cell(p,n)
-            if prev is not None:out[prev*n+cur]+=1
+            if prev is not None:out[prev*states+cur]+=1
             prev=cur
     return out,mapped,unknown
 
@@ -111,7 +111,6 @@ def analyze_language(row,params):
     if not sum(p4):return None
     o3=make_orth_counts(pairs,rank,3);o4=make_orth_counts(pairs,rank,4);o5=make_orth_counts(pairs,rank,5)
     sim3,sim4,sim5=cosine(o3,p3),cosine(o4,p4),cosine(o5,p5)
-    # The middle layer should bridge broad and fine rather than being an isolated match.
     bridge_residual=abs(sim4-(sim3+sim5)/2)
     magic_cost=power_delta_mean(o4)
     observed=(1-sim3)+(1-sim4)+(1-sim5)+bridge_residual+0.25*magic_cost
@@ -163,7 +162,7 @@ def main():
             x=analyze_language(r,params)
             if x:langs.append(x)
             print(i,len(rows),r['iso'],x['z'] if x else 'NA',flush=True)
-        except Exception as e:print('FAIL',r.get('iso'),e,flush=True)
+        except Exception as e:print('FAIL',r.get('iso'),repr(e),flush=True)
     fam=defaultdict(list)
     for x in langs:fam[x['family']].append(x['iso'])
     families=group_rows(fam,langs,'Glottolog family')
@@ -176,7 +175,7 @@ def main():
     for x in langs:bands[x['fit_band']].append(x['name'])
     out={'version':4,'system':'ordered alphabet numbers → 3×3 → 4×4 phonetic bridge → 5×5, with Dürer/powers-of-3 on 4×4','method':{
       'alphabet_order':'Observed alphabetic characters are sorted with ICU locale collation for the language and assigned ordinal numbers 1..N. This preserves language-specific ordering among observed letters; multi-character letters/digraphs are a stated limitation.',
-      'projection':'Ordinal alphabet positions are normalized and projected into 3, 4 and 5 ordered bins. Word letter-to-letter transitions generate an ordered-alphabet transition graph at each resolution.',
+      'projection':'Ordinal alphabet positions are normalized and projected into 9, 16 and 25 ordered cells. Word letter-to-letter transitions generate an ordered-alphabet transition graph at each resolution.',
       'phonetic_comparison':'WikiPron pronunciations are independently projected through the existing PHOIBLE-derived 3×3, 4×4 and 5×5 phonetic layers. Cosine similarity compares ordered-alphabet and phonetic transition distributions at each resolution.',
       'bridge_score':'Absolute difference between 4×4 similarity and the midpoint of 3×3 and 5×5 similarities. Lower means the 4×4 layer behaves as an interpolating bridge.',
       'magic_score':'Mean Dürer powers-of-3 exponent distance for ordered-alphabet 4×4 transitions; lower is more locally aligned to the magic ordering.',
