@@ -1,0 +1,56 @@
+// Selected-language pyramid benchmark and round-trip validation.
+// Additive only; consumes the existing PHOIBLE state and phonetic345 codec.
+(function(){
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const modes=[
+    {id:'plain',label:'Plain PHOIBLE nearest'},
+    {id:'5',label:'Forced 5×5'},
+    {id:'4',label:'Forced 4×4'},
+    {id:'3',label:'Forced 3×3'},
+    {id:'adaptive',label:'Adaptive 5→4→3'}
+  ];
+  function install(){
+    if($('pyramidEvidence'))return;
+    const css=document.createElement('style');css.textContent=`
+      .pe-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}.pe-card{border:1px solid #30384d;border-radius:12px;padding:14px;background:#10151f}.pe-card b{display:block;color:#5ce1e6}.pe-big{font-size:1.45rem;font-weight:700;margin:4px 0}.pe-good{color:#80e7a8}.pe-warn{color:#ffd37a}.pe-table{width:100%;border-collapse:collapse}.pe-table th,.pe-table td{padding:10px;border-bottom:1px solid #30384d;text-align:left;vertical-align:top}.pe-table th{color:#aab1c5;font-size:.8rem;text-transform:uppercase}.pe-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.pe-note{padding:12px 14px;border-left:3px solid #5ce1e6;background:#0e141e;border-radius:8px;color:#c4ccdc}.pe-flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}.pe-flow span{border:1px solid #3c465d;border-radius:9px;padding:8px 10px;background:#10151f}.pe-arrow{color:#5ce1e6;border:0!important;background:transparent!important;padding:0!important}.pe-verdict{border:1px solid #315749;background:#0f1716;border-radius:12px;padding:14px;margin-top:14px}.pe-bar{height:7px;background:#0b0f16;border-radius:999px;overflow:hidden;margin-top:6px}.pe-bar i{display:block;height:100%;background:#5ce1e6}@media(max-width:900px){.pe-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.pe-grid{grid-template-columns:1fr}.pe-table{font-size:.86rem}}`;
+    document.head.appendChild(css);
+    const sec=document.createElement('section');sec.className='section wrap';sec.id='pyramidEvidence';sec.innerHTML=`
+      <h2>Does the pyramid actually improve translation?</h2>
+      <p class="lead">This section turns the 3–4–5 idea into a direct test. It compares the same source inventory against the selected target language using five strategies, then sends each result back to the source language to measure round-trip information loss.</p>
+      <div class="pe-note"><b>What counts as a better result?</b> High coverage matters, but so does accuracy. Lower PHOIBLE feature distance means the translated sound is closer to the original. In the round-trip test, returning to the exact original IPA is strongest; otherwise lower return distance is better.</div>
+      <div class="pe-actions"><button id="peRun" class="btn" type="button">Run selected-language benchmark</button><button id="peRoundRandom" class="btn" type="button">Random round-trip example</button></div>
+      <div id="peStatus" class="status">Choose source and target languages above, then run the benchmark.</div>
+      <div id="peSummary" class="pe-grid"></div>
+      <div id="peResults" class="panel" style="margin-top:14px"></div>
+      <h3 style="margin-top:30px">Round-trip reconstruction</h3>
+      <p class="small">For each source sound: source language → target language → source language. This tests whether the codec preserves enough information to recover the starting pronunciation.</p>
+      <div id="peRoundTrip" class="panel">Run the benchmark first.</div>
+      <h3 style="margin-top:30px">How to interpret this</h3>
+      <div class="magiclayout"><div class="panel"><b class="goodtxt">Evidence for the pyramid</b><p class="small">Adaptive routing improves or matches feature accuracy while maintaining higher coverage than the fixed layers, and round-trip reconstruction stays close to the original.</p></div><div class="panel"><b class="warntxt">Evidence against it</b><p class="small">Plain nearest-neighbour or a single fixed grid consistently performs as well or better, or adaptive contraction loses too much information on the return trip.</p></div></div>`;
+    const anchor=$('magic')||$('status');if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor);else document.querySelector('main')?.appendChild(sec);
+    const nav=document.querySelector('.nav');if(nav&&!nav.querySelector('a[href="#pyramidEvidence"]')){const a=document.createElement('a');a.href='#pyramidEvidence';a.textContent='Pyramid evidence';nav.insertBefore(a,nav.querySelector('a[href="#magic"]')||null);}
+    $('peRun')?.addEventListener('click',runBenchmark);$('peRoundRandom')?.addEventListener('click',randomRoundTrip);
+  }
+  function sourcePhones(){const ids=state.inventorySegments.get($('sourceInventory')?.value)||[];return ids.map(id=>state.parameters.get(id)).filter(Boolean).filter(p=>classify(p)!=='PROSODY');}
+  function targetIds(){return state.inventorySegments.get($('targetInventory')?.value)||[];}
+  function plain(p,tids){const r=nearest(p,tids,false).ranked[0];return r?{best:r,covered:true,mode:'plain nearest'}:{best:null,covered:false,mode:'plain nearest'};}
+  function route(p,tids,m){if(m==='plain')return plain(p,tids);if(!window.phonetic345)return{best:null,covered:false,mode:'codec unavailable'};return window.phonetic345.resultForMode(p,tids,m);}
+  function mean(xs){return xs.length?xs.reduce((a,b)=>a+b,0)/xs.length:null;}
+  function runBenchmark(){
+    if(typeof state==='undefined'||!state.loaded||!window.phonetic345){$('peStatus').className='status error';$('peStatus').textContent='PHOIBLE or pyramid codec has not loaded yet.';return;}
+    const src=sourcePhones(),tids=targetIds();if(!src.length||!tids.length)return;
+    const rows=modes.map(m=>{let outputs=0,covered=0,exact=0;const ds=[];const routes={5:0,4:0,3:0,fallback:0};for(const p of src){const r=route(p,tids,m.id);if(r.covered)covered++;if(r.best){outputs++;ds.push(r.best.distance);if(r.best.p.Name===p.Name)exact++;}if(m.id==='adaptive'){if(r.chosen===5)routes[5]++;else if(r.chosen===4)routes[4]++;else if(r.chosen===3)routes[3]++;else routes.fallback++;}}return{...m,outputs,covered,exact,mean:mean(ds),routes};});
+    const usable=rows.filter(r=>r.mean!==null);const best=usable.slice().sort((a,b)=>a.mean-b.mean)[0];const widest=rows.slice().sort((a,b)=>b.covered-a.covered)[0];
+    const sl=state.languages.get($('sourceLanguage')?.value),tl=state.languages.get($('targetLanguage')?.value);
+    $('peStatus').className='status ok';$('peStatus').innerHTML=`Tested <b>${src.length}</b> source phonemes: ${esc(sl?.Name||'source')} → ${esc(tl?.Name||'target')}.`;
+    $('peSummary').innerHTML=rows.map(r=>`<div class="pe-card"><b>${esc(r.label)}</b><div class="pe-big">${r.mean===null?'—':r.mean.toFixed(4)}</div><span class="small">mean feature loss</span><div class="small">coverage ${r.covered}/${src.length} (${(100*r.covered/src.length).toFixed(1)}%)</div><div class="small">exact IPA ${r.exact}/${src.length}</div>${r===best?'<div class="pe-good">lowest mean loss</div>':''}${r===widest?'<div class="pe-good">highest coverage</div>':''}</div>`).join('');
+    $('peResults').innerHTML=`<table class="pe-table"><thead><tr><th>Strategy</th><th>Coverage</th><th>Outputs</th><th>Exact IPA</th><th>Mean feature loss</th><th>Adaptive route mix</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.label)}</b></td><td>${r.covered}/${src.length}</td><td>${r.outputs}/${src.length}</td><td>${r.exact}/${src.length}</td><td>${r.mean===null?'—':r.mean.toFixed(4)}</td><td>${r.id==='adaptive'?`5×5 ${r.routes[5]} · 4×4 ${r.routes[4]} · 3×3 ${r.routes[3]} · fallback ${r.routes.fallback}`:'—'}</td></tr>`).join('')}</tbody></table><div class="pe-verdict"><b>Current selected-pair result:</b> ${esc(best?.label||'No strategy')} has the lowest mean feature loss. ${esc(widest?.label||'No strategy')} has the widest same-region coverage. A real pyramid advantage requires Adaptive to remain competitive on both, not merely one.</div>`;
+    runRoundTrip(src,tids);
+  }
+  function reverseRoute(targetPhone,sourceIds,m){if(m==='plain')return plain(targetPhone,sourceIds);return window.phonetic345.resultForMode(targetPhone,sourceIds,m);}
+  function runRoundTrip(src,tids){const sourceIds=state.inventorySegments.get($('sourceInventory')?.value)||[];const rows=modes.map(m=>{let attempted=0,returned=0,exact=0;const ds=[];for(const p of src){const f=route(p,tids,m.id);if(!f.best)continue;attempted++;const b=reverseRoute(f.best.p,sourceIds,m.id);if(!b.best)continue;returned++;ds.push(featureDistance(p,b.best.p).distance);if(b.best.p.Name===p.Name)exact++;}return{...m,attempted,returned,exact,mean:mean(ds)};});const best=rows.filter(r=>r.mean!==null).sort((a,b)=>a.mean-b.mean)[0];$('peRoundTrip').innerHTML=`<table class="pe-table"><thead><tr><th>Strategy</th><th>Forward outputs</th><th>Returned</th><th>Exact reconstruction</th><th>Mean return loss</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(r.label)}</b></td><td>${r.attempted}/${src.length}</td><td>${r.returned}/${src.length}</td><td>${r.exact}/${src.length} (${src.length?(100*r.exact/src.length).toFixed(1):'0.0'}%)</td><td>${r.mean===null?'—':r.mean.toFixed(4)}</td></tr>`).join('')}</tbody></table><div class="pe-verdict"><b>Best reconstruction for this language pair:</b> ${esc(best?.label||'none')} has the lowest average return loss. Exact reconstruction rate is the stricter measure.</div>`;}
+  function randomRoundTrip(){if(typeof state==='undefined'||!state.loaded)return;const src=sourcePhones(),tids=targetIds();if(!src.length||!tids.length)return;const p=src[Math.floor(Math.random()*src.length)],sourceIds=state.inventorySegments.get($('sourceInventory')?.value)||[];const cards=modes.map(m=>{const f=route(p,tids,m.id);if(!f.best)return`<div class="pe-card"><b>${esc(m.label)}</b><div class="pe-warn">no forward match</div></div>`;const b=reverseRoute(f.best.p,sourceIds,m.id);const d=b.best?featureDistance(p,b.best.p).distance:null;return`<div class="pe-card"><b>${esc(m.label)}</b><div class="pe-flow"><span>/${esc(p.Name)}/</span><span class="pe-arrow">→</span><span>/${esc(f.best.p.Name)}/</span><span class="pe-arrow">→</span><span>${b.best?'/'+esc(b.best.p.Name)+'/':'no return'}</span></div><div class="small">return loss ${d===null?'—':d.toFixed(4)} ${b.best&&b.best.p.Name===p.Name?'<span class="pe-good">· exact recovery</span>':''}</div>${typeof audioButton==='function'?`<div class="small" style="margin-top:7px">start ${audioButton(p.Name)} target ${audioButton(f.best.p.Name)} ${b.best?'return '+audioButton(b.best.p.Name):''}</div>`:''}</div>`;}).join('');$('peRoundTrip').innerHTML=`<h4>Random example: /${esc(p.Name)}/</h4><div class="pe-grid">${cards}</div><p class="small">Use this for listening and intuition; use the inventory-wide table above for evidence.</p>`;}
+  function boot(){install();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
