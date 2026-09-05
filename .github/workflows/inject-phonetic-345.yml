@@ -24,12 +24,15 @@ jobs:
           s=p.read_text(encoding='utf-8')
           old='<script defer src="phonetic-345.js?v=20260905-pyramid1"></script>'
           tag='<script defer src="phonetic-345.js?v=20260905-pyramid2"></script>'
-          guide='<script defer src="phonetic-guide.js?v=20260905-guide1"></script>'
+          oldguide='<script defer src="phonetic-guide.js?v=20260905-guide1"></script>'
+          guide='<script defer src="phonetic-guide.js?v=20260905-guide2"></script>'
           if old in s:
               s=s.replace(old,tag,1)
           elif tag not in s:
               s=s.replace('</head>',tag+'\n</head>',1)
-          if guide not in s:
+          if oldguide in s:
+              s=s.replace(oldguide,guide,1)
+          elif guide not in s:
               s=s.replace('</head>',guide+'\n</head>',1)
           p.write_text(s,encoding='utf-8')
           PY
@@ -41,7 +44,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Scripts already wired.'
           else
-            git commit -m 'Load phonetic page tutorial and interaction guide'
+            git commit -m 'Refresh cleaned phonetic interaction guide'
             git pull --rebase origin main
             git push
           fi
