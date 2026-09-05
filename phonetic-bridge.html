@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>4×4 Phonetic Bridge Experiment — Vardath</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
@@ -11,7 +14,7 @@
 @media(max-width:900px){.experiment,.matchgrid,.magiclayout{grid-template-columns:1fr}.gates{grid-template-columns:repeat(8,minmax(34px,1fr))}}
 @media(max-width:600px){.bridge{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}.controls .wide{grid-column:auto}.cell{min-height:112px}.hero{padding-top:34px}}
 </style>
-<script defer src="phonetic-bridge.js"></script>
+<script defer src="phonetic-bridge.js?v=20260905-powers3"></script>
 </head>
 <body>
 <div class="wrap top"><a class="brand" href="index.html">VARDATH</a><a class="back" href="index.html">← Main site</a></div>
@@ -33,10 +36,10 @@
 </section>
 
 <section class="section wrap" id="grid">
-<div class="gridtop"><div><h2>2. The sixteen-state bridge</h2><p class="lead">Rows encode broad manner/openess; columns encode broad place/front-back territory. Tone is kept outside the sixteen cells as prosody.</p></div><div class="control"><label>Overlay</label><select id="overlayMode"><option value="code">Bridge codes A1–D4</option><option value="magic">4×4 Dürer magic-square numbers</option><option value="power">Chessboard powers 3^(magic−1)</option><option value="binary">4-bit sequential addresses</option></select></div></div>
+<div class="gridtop"><div><h2>2. The sixteen-state bridge</h2><p class="lead">Rows encode broad manner/openess; columns encode broad place/front-back territory. Tone is kept outside the sixteen cells as prosody.</p></div><div class="control"><label>Overlay</label><select id="overlayMode"><option value="code">Bridge codes A1–D4</option><option value="magic">4×4 Dürer magic-square numbers</option><option value="power">Chessboard powers of 3 — 3^(magic−1)</option><option value="binary">4-bit sequential addresses</option></select></div></div>
 <div id="bridge" class="bridge"></div>
 <div id="cellDetail" class="detail"><h3>Select a cell</h3><p>Once PHOIBLE loads this box shows its real segment occupancy.</p></div>
-<div class="notice"><b>Exploration-of-8 power overlay:</b> the chessboard-power layer uses powers of three, not powers of two. A magic-square value <i>n</i> is displayed as 3<sup>n−1</sup>, giving the sequence 1, 3, 9, 27, 81, 243, 729 … through 3<sup>15</sup>. This overlay is exploratory and remains separate from the PHOIBLE phonetic classification.</div>
+<div class="notice"><b>Exploration-of-8 power overlay:</b> the chessboard-power layer uses powers of three. A magic-square value <i>n</i> is displayed as 3<sup>n−1</sup>, giving the sequence 1, 3, 9, 27, 81, 243, 729 … through 3<sup>15</sup>. This overlay is exploratory and remains separate from the PHOIBLE phonetic classification.</div>
 </section>
 
 <section class="section wrap" id="experiment">
