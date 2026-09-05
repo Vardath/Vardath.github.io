@@ -1,0 +1,34 @@
+name: Analyze Magic Language Groups
+
+on:
+  push:
+    paths:
+      - 'tools/analyze_magic_language_groups.py'
+      - '.github/workflows/analyze-magic-language-groups.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run per-language magic fit analysis
+        env:
+          BENCHMARK_SAMPLE_WORDS: '20000'
+        run: python tools/analyze_magic_language_groups.py
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/magic-language-groups.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish magic-square language grouping results'
+            git pull --rebase origin main
+            git push
+          fi
