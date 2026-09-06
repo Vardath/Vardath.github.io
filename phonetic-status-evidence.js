@@ -1,96 +1,27 @@
 (()=>{
 'use strict';
-
-const GREEN='goodtxt';
-const ORANGE='warntxt';
-
-function tooltip(text){
-  const s=document.createElement('span');
-  s.textContent=' ?';
-  s.title=text;
-  s.setAttribute('aria-label',text);
-  s.style.cursor='help';
-  s.style.color='var(--cyan,#5ce1e6)';
-  s.style.fontWeight='700';
-  return s;
-}
-
-function addRow(tbody,statement,status,tip){
-  const tr=document.createElement('tr');
-  const td1=document.createElement('td');
-  const td2=document.createElement('td');
-  td1.textContent=statement;
-  if(tip) td1.appendChild(tooltip(tip));
-  td2.textContent=status;
-  td2.className=GREEN;
-  tr.append(td1,td2);
-  tbody.appendChild(tr);
-}
-
-function upgrade(){
-  const section=document.querySelector('#status');
-  if(!section) return false;
-  const table=section.querySelector('table.compare');
-  if(!table) return false;
-  const tbody=table.tBodies[0]||table;
-
-  // Upgrade the implementation-status row only. This does NOT claim optimality.
-  [...table.rows].forEach(row=>{
-    const txt=(row.cells?.[0]?.textContent||'').trim();
-    if(txt.startsWith('The present rules assign non-prosodic segments to sixteen coarse bridge cells.')){
-      const cell=row.cells[1];
-      if(cell){
-        cell.className=GREEN;
-        cell.textContent='Implemented + benchmarked';
-        cell.title='The 16-cell classifier is now exercised across the completed cross-language benchmark. This validates use of the implementation, not global optimality of sixteen cells.';
-      }
-    }
+const GREEN='goodtxt', ORANGE='warntxt';
+function tooltip(text){const s=document.createElement('span');s.textContent=' ?';s.title=text;s.setAttribute('aria-label',text);s.style.cursor='help';s.style.color='var(--cyan,#5ce1e6)';s.style.fontWeight='700';return s}
+function addRow(tbody,statement,status,tip,kind='green'){const tr=document.createElement('tr'),a=document.createElement('td'),b=document.createElement('td');a.textContent=statement;if(tip)a.appendChild(tooltip(tip));b.textContent=status;b.className=kind==='orange'?ORANGE:GREEN;tr.append(a,b);tbody.appendChild(tr)}
+function upgrade(){const section=document.querySelector('#status');if(!section)return false;const table=section.querySelector('table.compare');if(!table)return false;const tbody=table.tBodies[0]||table;
+  [...table.rows].forEach(row=>{const txt=(row.cells?.[0]?.textContent||'').trim(),cell=row.cells?.[1];if(!cell)return;
+    if(txt.startsWith('The present rules assign non-prosodic segments to sixteen coarse bridge cells.')){cell.className=GREEN;cell.textContent='Implemented + benchmarked';cell.title='The classifier has been exercised across the completed benchmark. This validates the implementation, not global optimality.'}
+    if(txt.startsWith('The 16-cell compression is globally optimal.')){cell.className=ORANGE;cell.textContent='Not established';cell.title='3×3 has higher coverage while 5×5 has lower feature and round-trip loss. 4×4 is a useful trade-off, not proven globally optimal.'}
+    if(txt.startsWith('WikiPron lexical transitions equal continuous connected-speech articulation.')){cell.className=ORANGE;cell.textContent='No — separate speech validation remains';cell.title='The aligned-speech comparison did not meet the preset agreement thresholds. WikiPron is lexical pronunciation evidence, not a substitute for connected speech.'}
+    if(txt.startsWith('The magic-square/powers-of-3 ordering has a phonetic relationship beyond chance.')){row.cells[0].firstChild.nodeValue='Canonical magic-square phonetic-coordinate layouts show a relationship with phonetic geometry beyond random mappings.';cell.className=GREEN;cell.textContent='Supported under current tests';cell.title='Coordinate benchmark, frozen hold-out, magic-variant comparisons, property-ablation tests and the 4×4 antipode test all support a non-random relationship. This is not a claim of universality or global optimality.'}
   });
-
-  if(document.getElementById('evidence-status-divider')) return true;
-
-  const divider=document.createElement('tr');
-  divider.id='evidence-status-divider';
-  const head=document.createElement('th');
-  head.colSpan=2;
-  head.textContent='New empirical findings from the completed analyses';
-  head.style.paddingTop='24px';
-  head.style.color='var(--cyan,#5ce1e6)';
-  divider.appendChild(head);
-  tbody.appendChild(divider);
-
-  addRow(tbody,
-    'Languages in the same Glottolog family are more bridge-similar on average than languages in different families.',
-    'Supported in benchmark',
-    'Observed mean stable-gate Jaccard: 0.5051 for same-family pairs versus 0.3731 for cross-family pairs; uplift +0.132.'
-  );
-  addRow(tbody,
-    'Among different-family languages, present-day geographic distance is negatively associated with bridge similarity.',
-    'Supported in benchmark',
-    'Cross-family log-distance correlation is -0.1578. Nearby and regional pairs are more bridge-similar on average than pairs over 5,000 km apart. Geography is only a proxy for possible contact, not proof of contact.'
-  );
-  addRow(tbody,
-    'Bridge compatibility can be strongly directional rather than symmetric.',
-    'Observed in benchmark',
-    'Directional direct-support measures differ substantially for some language pairs. This supports testing one-way adaptation/transmission separately from symmetric gate overlap.'
-  );
-  addRow(tbody,
-    'Known historical sound changes can involve transformations as large as those allowed by the word-level pilot.',
-    'Calibration established',
-    'Positive controls include the independently attested eight/eight-family and octo/ogdo- developments. This validates the need for directional sound-change tolerance; it does not establish any proposed cross-family etymology.'
-  );
-
-  const note=document.createElement('div');
-  note.className='notice';
-  note.style.marginTop='22px';
-  note.innerHTML='<b>Why some rows remain orange:</b> “16 cells are globally optimal,” “WikiPron lexical transitions equal continuous connected speech,” and “magic-square/powers-of-3 ordering has a phonetic relationship beyond chance” still require dedicated controls. They have deliberately not been promoted.';
-  table.insertAdjacentElement('afterend',note);
-  return true;
-}
-
-if(!upgrade()){
-  const obs=new MutationObserver(()=>{if(upgrade()) obs.disconnect();});
-  obs.observe(document.documentElement,{childList:true,subtree:true});
-  setTimeout(()=>obs.disconnect(),10000);
-}
+  if(document.getElementById('evidence-status-divider'))return true;
+  const d=document.createElement('tr');d.id='evidence-status-divider';const h=document.createElement('th');h.colSpan=2;h.textContent='Empirical findings from the completed analyses';h.style.paddingTop='24px';h.style.color='var(--cyan,#5ce1e6)';d.appendChild(h);tbody.appendChild(d);
+  addRow(tbody,'Phonetic-coordinate numbering performs better than alphabet/symbol-order numbering for the current magic-square experiment.','Supported in benchmark','The alphabet/symbol-order benchmark was strongly negative, while the frozen phonetic-coordinate formulation was positive on the canonical set and stronger on the held-out dataset set.');
+  addRow(tbody,'Spatial phonetic locality is the strongest measured contributor to the positive 3–4–5 result.','Supported by ablation','Separating locality, adjacency and powers-of-3 spacing showed locality carrying the clearest aggregate positive signal.');
+  addRow(tbody,'The powers-of-3 exponent-spacing overlay is the mechanism behind the positive phonetic effect.','Not supported','The dedicated ablation made the powers-of-3 component negative overall. It remains an exploratory numerical overlay, not the supported mechanism.', 'orange');
+  addRow(tbody,'The 4×4 Dürer complement relation behaves like an articulatory antipode better than random pairing.','Supported under current feature test','After inverting standardized PHOIBLE cell-feature vectors, the Dürer numerical complement was the nearest predicted opposite for 6/16 cells, top-three for 11/16; empirical random-matching p≈0.0036 for exact hits and ≈0.000115 for rank.');
+  addRow(tbody,'The 5×5 Siamese arrangement is unusually phonetic among tested valid 5×5 magic-square variants.','Supported in specificity test','The canonical Siamese layout outperformed the median valid magic variant across most held-out languages, especially for consonant and place/manner structure. It is not globally optimal because trained non-magic layouts can do better.');
+  addRow(tbody,'Magic sums alone, complement geometry alone, V/C placement alone, or place/manner compactness alone fully explains the effect.','No — interaction required','Single-property destruction tests failed to recover the canonical effect. In 5×5, magic + complement recovered most of it, with place/manner structure recovering still more.', 'orange');
+  addRow(tbody,'Languages in the same Glottolog family are more bridge-similar on average than languages in different families.','Supported in benchmark','Observed mean stable-gate Jaccard: 0.5051 for same-family pairs versus 0.3731 for cross-family pairs; uplift +0.132.');
+  addRow(tbody,'Among different-family languages, present-day geographic distance is negatively associated with bridge similarity.','Supported in benchmark','Cross-family log-distance correlation is -0.1578. Geography is a proxy for possible contact, not proof of contact.');
+  addRow(tbody,'Bridge compatibility can be strongly directional rather than symmetric.','Observed in benchmark','Directional direct-support measures differ substantially for some language pairs.');
+  addRow(tbody,'Known historical sound changes can involve transformations as large as those allowed by the word-level pilot.','Calibration established','Positive controls include independently attested eight/eight-family and octo/ogdo developments. This calibrates tolerance; it does not establish proposed cross-family etymologies.');
+  const note=document.createElement('div');note.className='notice';note.style.marginTop='22px';note.innerHTML='<b>What remains orange:</b> global optimality of 16 cells, equivalence between WikiPron lexical sequences and continuous connected speech, powers-of-3 as the causal phonetic mechanism, and any claim that one isolated structural property fully explains the square effect. These are deliberately kept separate from the findings that have now passed their dedicated tests.';table.insertAdjacentElement('afterend',note);return true}
+if(!upgrade()){const o=new MutationObserver(()=>{if(upgrade())o.disconnect()});o.observe(document.documentElement,{childList:true,subtree:true});setTimeout(()=>o.disconnect(),10000)}
 })();
