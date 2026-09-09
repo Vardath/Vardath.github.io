@@ -1,0 +1,125 @@
+# Hierarchical original-language reconstruction
+
+This is a candidate latent reconstruction from broad phonetic/semantic data. A strong fit can challenge or support a phonetic historical chain, but cannot by itself overturn documentary chronology, morphology, borrowing evidence, archaeology, or established comparative sound laws.
+
+- ASJP varieties: 11,540
+- ASJP source forms: 568,820
+- mapped forms: 556,119
+- historical chain links audited: 10
+- reconstructed dictionary entries: 100
+
+## Historical regression audit
+
+- Ancient Greek (to 1453) → Modern Greek (1453-): rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Old English (ca. 450-1100) → Middle English (1100-1500): rank 19/154, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Middle English (1100-1500) → English: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Old Spanish → Spanish: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Old High German (ca. 750-1050) → German: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Middle Dutch (ca. 1050-1350) → Dutch: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Old Russian → Russian: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Old French (842-ca. 1400) → French: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+- Old Irish (to 900) → Middle Irish (900-1200): rank 1/154, best operator identity, supports accepted chain strongly
+- Middle Irish (900-1200) → Irish: rank 70/69, best operator identity, phonetic profile alone does not strongly select accepted chain
+
+## Candidate dictionary
+
+- **white** /patuni/ — 245 families, fit 0.786, stability 1.000, confidence 0.904
+- **root** /nitana/ — 232 families, fit 0.783, stability 1.000, confidence 0.902
+- **hot** /tutana/ — 230 families, fit 0.783, stability 1.000, confidence 0.902
+- **tail** /numatu/ — 244 families, fit 0.782, stability 1.000, confidence 0.902
+- ***two** /sanaku/ — 379 families, fit 0.781, stability 1.000, confidence 0.902
+- **flesh** /nipuni/ — 236 families, fit 0.779, stability 1.000, confidence 0.901
+- ***tree** /tuna/ — 366 families, fit 0.776, stability 1.000, confidence 0.899
+- **give** /mamita/ — 232 families, fit 0.774, stability 1.000, confidence 0.898
+- **bite** /tupana/ — 227 families, fit 0.773, stability 1.000, confidence 0.898
+- **man** /naisma/ — 251 families, fit 0.771, stability 1.000, confidence 0.897
+- ***come** /mana/ — 353 families, fit 0.771, stability 1.000, confidence 0.897
+- ***name** /nani/ — 356 families, fit 0.770, stability 1.000, confidence 0.896
+- ***fire** /mata/ — 381 families, fit 0.769, stability 1.000, confidence 0.896
+- **belly** /puana/ — 245 families, fit 0.762, stability 1.000, confidence 0.893
+- **cold** /nimani/ — 242 families, fit 0.760, stability 1.000, confidence 0.892
+- **eat** /nana/ — 246 families, fit 0.759, stability 1.000, confidence 0.891
+- ***skin** /nakana/ — 361 families, fit 0.783, stability 0.958, confidence 0.890
+- ***tongue** /manina/ — 376 families, fit 0.781, stability 0.958, confidence 0.889
+- ***eye** /tana/ — 376 families, fit 0.752, stability 1.000, confidence 0.888
+- ***new** /kikani/ — 334 families, fit 0.774, stability 0.958, confidence 0.886
+- ***stone** /kana/ — 377 families, fit 0.768, stability 0.958, confidence 0.883
+- ***knee** /tunuku/ — 358 families, fit 0.763, stability 0.958, confidence 0.881
+- **fly** /pmana/ — 220 families, fit 0.733, stability 1.000, confidence 0.880
+- ***louse** /tini/ — 343 families, fit 0.761, stability 0.958, confidence 0.880
+- ***sun** /sani/ — 376 families, fit 0.757, stability 0.958, confidence 0.878
+- **sleep** /nanisa/ — 245 families, fit 0.780, stability 0.917, confidence 0.876
+- ***drink** /mata/ — 355 families, fit 0.747, stability 0.958, confidence 0.874
+- **foot** /tana/ — 247 families, fit 0.761, stability 0.917, confidence 0.867
+- **not** /maki/ — 214 families, fit 0.788, stability 0.875, confidence 0.867
+- ***die** /suma/ — 357 families, fit 0.732, stability 0.958, confidence 0.867
+- ***path** /tana/ — 354 families, fit 0.758, stability 0.917, confidence 0.866
+- **claw** /sikati/ — 214 families, fit 0.753, stability 0.917, confidence 0.864
+- **ash** /sunpa/ — 245 families, fit 0.752, stability 0.917, confidence 0.864
+- **kill** /tukuta/ — 228 families, fit 0.751, stability 0.917, confidence 0.863
+- **moon** /sumani/ — 249 families, fit 0.779, stability 0.875, confidence 0.863
+- ***we** /niŋa/ — 365 families, fit 0.769, stability 0.875, confidence 0.858
+- **cloud** /kapunu/ — 238 families, fit 0.763, stability 0.875, confidence 0.856
+- ***ear** /tinaki/ — 381 families, fit 0.780, stability 0.833, confidence 0.851
+- ***one** /minaki/ — 380 families, fit 0.775, stability 0.833, confidence 0.849
+- **black** /sumni/ — 252 families, fit 0.732, stability 0.875, confidence 0.842
+- **long** /ŋakani/ — 236 families, fit 0.775, stability 0.792, confidence 0.836
+- **say** /ninati/ — 230 families, fit 0.794, stability 0.750, confidence 0.832
+- **this** /nina/ — 216 families, fit 0.789, stability 0.750, confidence 0.830
+- ***hand** /tana/ — 378 families, fit 0.758, stability 0.750, confidence 0.816
+- **stand** /ninati/ — 239 families, fit 0.782, stability 0.708, confidence 0.815
+- ***night** /siniku/ — 378 families, fit 0.777, stability 0.708, confidence 0.812
+- **dry** /sunuka/ — 218 families, fit 0.772, stability 0.708, confidence 0.810
+- **heart** /tapuna/ — 225 families, fit 0.767, stability 0.708, confidence 0.808
+- ***fish** /kana/ — 359 families, fit 0.746, stability 0.708, confidence 0.798
+- ***dog** /sunuka/ — 379 families, fit 0.788, stability 0.625, confidence 0.792
+- ***see** /kina/ — 362 families, fit 0.758, stability 0.667, confidence 0.791
+- **good** /namisi/ — 249 families, fit 0.775, stability 0.625, confidence 0.786
+- ***nose** /sunu/ — 381 families, fit 0.739, stability 0.583, confidence 0.758
+- **that** /kani/ — 217 families, fit 0.790, stability 0.500, confidence 0.756
+- **grease** /manika/ — 209 families, fit 0.774, stability 0.500, confidence 0.748
+- **egg** /katani/ — 244 families, fit 0.770, stability 0.500, confidence 0.746
+- ***person** /ninsa/ — 350 families, fit 0.766, stability 0.500, confidence 0.745
+- ***water** /pani/ — 379 families, fit 0.763, stability 0.500, confidence 0.743
+- **woman** /maita/ — 250 families, fit 0.759, stability 0.417, confidence 0.717
+- ***leaf** /nkapa/ — 362 families, fit 0.760, stability 0.375, confidence 0.704
+- ***I** /nia/ — 374 families, fit 0.784, stability 0.333, confidence 0.703
+- **walk** /suana/ — 217 families, fit 0.750, stability 0.375, confidence 0.700
+- ***liver** /kinma/ — 345 families, fit 0.748, stability 0.333, confidence 0.687
+- **red** /kapanu/ — 242 families, fit 0.767, stability 0.292, confidence 0.683
+- ***tooth** /nasi/ — 378 families, fit 0.758, stability 0.292, confidence 0.679
+- **rain** /kani/ — 247 families, fit 0.741, stability 0.250, confidence 0.658
+- **lie** /samina/ — 195 families, fit 0.762, stability 0.208, confidence 0.655
+- ***full** /matanu/ — 310 families, fit 0.757, stability 0.208, confidence 0.653
+- ***star** /pukinu/ — 371 families, fit 0.756, stability 0.167, confidence 0.640
+- **burn** /sanapun/ — 208 families, fit 0.780, stability 0.125, confidence 0.639
+- ***horn** /kansi/ — 254 families, fit 0.765, stability 0.125, confidence 0.632
+- **sit** /suana/ — 248 families, fit 0.758, stability 0.125, confidence 0.629
+- **mouth** /naka/ — 245 families, fit 0.753, stability 0.125, confidence 0.626
+- **know** /nakumi/ — 232 families, fit 0.763, stability 0.083, confidence 0.619
+- **yellow** /sukanu/ — 213 families, fit 0.763, stability 0.083, confidence 0.618
+- **all** /natima/ — 228 families, fit 0.756, stability 0.083, confidence 0.615
+- **neck** /kuntu/ — 237 families, fit 0.756, stability 0.083, confidence 0.615
+- **sand** /sanka/ — 232 families, fit 0.767, stability 0.042, confidence 0.608
+- **bird** /sinaka/ — 251 families, fit 0.789, stability 0.000, confidence 0.605
+- **bark** /sikupa/ — 222 families, fit 0.760, stability 0.042, confidence 0.604
+- **hair** /sinta/ — 252 families, fit 0.757, stability 0.042, confidence 0.603
+- **many** /sanam/ — 223 families, fit 0.748, stability 0.042, confidence 0.599
+- ***you** /nmu/ — 369 families, fit 0.746, stability 0.042, confidence 0.598
+- **small** /takanu/ — 245 families, fit 0.769, stability 0.000, confidence 0.596
+- **big** /natin/ — 243 families, fit 0.769, stability 0.000, confidence 0.596
+- ***mountain** /kunaxa/ — 351 families, fit 0.769, stability 0.000, confidence 0.596
+- **round** /kunuki/ — 181 families, fit 0.740, stability 0.042, confidence 0.595
+- **who** /nani/ — 235 families, fit 0.767, stability 0.000, confidence 0.595
+- **seed** /nasia/ — 206 families, fit 0.764, stability 0.000, confidence 0.594
+- **what** /pani/ — 234 families, fit 0.762, stability 0.000, confidence 0.593
+- ***hear** /nakin/ — 350 families, fit 0.760, stability 0.000, confidence 0.592
+- ***bone** /kana/ — 370 families, fit 0.756, stability 0.000, confidence 0.590
+- ***blood** /nani/ — 375 families, fit 0.753, stability 0.000, confidence 0.589
+- **earth** /naka/ — 241 families, fit 0.752, stability 0.000, confidence 0.589
+- **swim** /nanupu/ — 216 families, fit 0.752, stability 0.000, confidence 0.588
+- **smoke** /kiuni/ — 244 families, fit 0.752, stability 0.000, confidence 0.588
+- ***breasts** /mani/ — 364 families, fit 0.752, stability 0.000, confidence 0.588
+- **feather** /sikmun/ — 222 families, fit 0.751, stability 0.000, confidence 0.588
+- **green** /samani/ — 212 families, fit 0.747, stability 0.000, confidence 0.586
+- **head** /naku/ — 256 families, fit 0.746, stability 0.000, confidence 0.586

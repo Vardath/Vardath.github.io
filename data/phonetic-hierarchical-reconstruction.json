@@ -1,17 +1,169 @@
 {
   "version": 3,
-  "title": "Candidate original-language dictionary",
-  "method": {
-    "source": "ASJP v21 + existing WikiPron/PHOIBLE bridge + audited historical regression prior",
-    "concept_inventory": 100,
-    "minimum_independent_families": 8,
-    "research_boundary": "This is a candidate latent reconstruction from broad phonetic/semantic data. A strong fit can challenge or support a phonetic historical chain, but cannot by itself overturn documentary chronology, morphology, borrowing evidence, archaeology, or established comparative sound laws."
+  "title": "Hierarchical original-language reconstruction experiment",
+  "research_boundary": "This is a candidate latent reconstruction from broad phonetic/semantic data. A strong fit can challenge or support a phonetic historical chain, but cannot by itself overturn documentary chronology, morphology, borrowing evidence, archaeology, or established comparative sound laws.",
+  "sources": {
+    "ASJP": "lexibank/asjp v21",
+    "ASJP_varieties": 11540,
+    "ASJP_concepts": 100,
+    "ASJP_forms": 568820,
+    "mapped_forms": 556119,
+    "WikiPron_PHOBLE_benchmark": "data/phonetic-benchmark-summary.json",
+    "benchmark_languages": 348
   },
-  "summary": {
+  "historical_regression_audit": {
+    "known_chain_links": [
+      {
+        "older": "Ancient Greek (to 1453)",
+        "newer": "Modern Greek (1453-)",
+        "family": "Indo-European",
+        "identity_similarity": 0.95656,
+        "best_similarity": 0.95656,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.91475,
+        "accepted_minus_best_margin": 0.04181,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Old English (ca. 450-1100)",
+        "newer": "Middle English (1100-1500)",
+        "family": "Unclassified",
+        "identity_similarity": 0.89033,
+        "best_similarity": 0.89033,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 19,
+        "same_family_candidates": 154,
+        "best_same_family_similarity": 0.96962,
+        "accepted_minus_best_margin": -0.07929,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Middle English (1100-1500)",
+        "newer": "English",
+        "family": "Indo-European",
+        "identity_similarity": 0.92665,
+        "best_similarity": 0.92665,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.94582,
+        "accepted_minus_best_margin": -0.01917,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Old Spanish",
+        "newer": "Spanish",
+        "family": "Indo-European",
+        "identity_similarity": 0.92922,
+        "best_similarity": 0.92922,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.97167,
+        "accepted_minus_best_margin": -0.04245,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Old High German (ca. 750-1050)",
+        "newer": "German",
+        "family": "Indo-European",
+        "identity_similarity": 0.79286,
+        "best_similarity": 0.79286,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.893,
+        "accepted_minus_best_margin": -0.10014,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Middle Dutch (ca. 1050-1350)",
+        "newer": "Dutch",
+        "family": "Indo-European",
+        "identity_similarity": 0.94117,
+        "best_similarity": 0.94117,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.96465,
+        "accepted_minus_best_margin": -0.02348,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Old Russian",
+        "newer": "Russian",
+        "family": "Indo-European",
+        "identity_similarity": 0.78215,
+        "best_similarity": 0.78215,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.91611,
+        "accepted_minus_best_margin": -0.13396,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Old French (842-ca. 1400)",
+        "newer": "French",
+        "family": "Indo-European",
+        "identity_similarity": 0.66465,
+        "best_similarity": 0.66465,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.83666,
+        "accepted_minus_best_margin": -0.17201,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      },
+      {
+        "older": "Old Irish (to 900)",
+        "newer": "Middle Irish (900-1200)",
+        "family": "Unclassified",
+        "identity_similarity": 0.91102,
+        "best_similarity": 0.91102,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 1,
+        "same_family_candidates": 154,
+        "best_same_family_similarity": 0.91102,
+        "accepted_minus_best_margin": 0.0,
+        "interpretation": "supports accepted chain strongly"
+      },
+      {
+        "older": "Middle Irish (900-1200)",
+        "newer": "Irish",
+        "family": "Indo-European",
+        "identity_similarity": 0.88373,
+        "best_similarity": 0.88373,
+        "best_operator": "identity",
+        "accepted_predecessor_rank_within_family": 70,
+        "same_family_candidates": 69,
+        "best_same_family_similarity": 0.94861,
+        "accepted_minus_best_margin": -0.06488,
+        "interpretation": "phonetic profile alone does not strongly select accepted chain"
+      }
+    ],
+    "learned_reverse_operator_prior": {
+      "identity": 0.5,
+      "reverse": 0.045454545454545456,
+      "place": 0.045454545454545456,
+      "reverse+place": 0.045454545454545456,
+      "manner": 0.045454545454545456,
+      "reverse+manner": 0.045454545454545456,
+      "place+manner": 0.045454545454545456,
+      "reverse+place+manner": 0.045454545454545456,
+      "metathesis": 0.045454545454545456,
+      "acrophonic": 0.045454545454545456,
+      "clipblend": 0.045454545454545456,
+      "resegmentation": 0.045454545454545456
+    },
+    "note": "Accepted chains are treated as hypotheses to audit. Rank asks whether the accepted older stage is selected by the bridge among same-family alternatives; poor rank is a flag for deeper lexical investigation, not automatic proof the historical chain is wrong."
+  },
+  "dictionary_summary": {
     "entries": 100,
-    "five_family_entries": 100,
-    "four_or_more": 100,
-    "mean_confidence": 0.75613
+    "mean_confidence": 0.75613,
+    "mean_families": 284.09
   },
   "entries": [
     {
