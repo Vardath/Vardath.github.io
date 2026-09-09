@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "title": "Candidate original-language dictionary",
+  "method": {
+    "concept_inventory": 107,
+    "minimum_independent_proto_families": 3,
+    "families": [
+      "Proto-Indo-European",
+      "Proto-Semitic",
+      "Proto-Austronesian",
+      "Proto-Uralic",
+      "Proto-Dravidian"
+    ],
+    "source": "Kaikki/Wiktionary machine-readable proto-family dictionaries",
+    "reconstruction": "semantic gloss match -> broad 4x4 phonetic path -> cross-family latent candidate optimized under validated lexical operator bank",
+    "research_boundary": "Candidate latent reconstructions under the experiment. They are not historically established Proto-World forms."
+  },
+  "summary": {
+    "entries": 0,
+    "five_family_entries": 0,
+    "four_or_more": 0,
+    "mean_confidence": 0
+  },
+  "entries": []
+}
