@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'tools/reconstruct_original_language_dictionary.py'
+      - 'tools/reconstruct_original_language_dictionary_v2.py'
       - '.github/workflows/reconstruct-original-language-dictionary.yml'
 
 permissions:
@@ -20,7 +21,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Reconstruct expanded dictionary
-        run: python tools/reconstruct_original_language_dictionary.py
+        run: python tools/reconstruct_original_language_dictionary_v2.py
       - name: Commit results
         run: |
           git config user.name 'github-actions[bot]'
