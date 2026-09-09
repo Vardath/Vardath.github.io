@@ -65,6 +65,10 @@
   hp.src='phonetic-hidden-proto-word.js?v=20260909-hidden2';
   hp.defer=true; document.head.appendChild(hp);
 
+  const od=document.createElement('script');
+  od.src='phonetic-original-language-dictionary.js?v=20260910-dict1';
+  od.defer=true; document.head.appendChild(od);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
