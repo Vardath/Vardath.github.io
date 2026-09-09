@@ -1,0 +1,35 @@
+name: Infer Deep Proto Word State
+
+on:
+  push:
+    paths:
+      - 'tools/infer_deep_proto_word_state.py'
+      - 'data/phonetic-cross-family-proto-meaning.json'
+      - '.github/workflows/infer-deep-proto-word-state.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  infer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Infer hidden ancestral word states
+        run: python tools/infer_deep_proto_word_state.py
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-deep-proto-word-state.json data/phonetic-deep-proto-word-state.md
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Infer hidden ancestral proto-word bridge states'
+            git pull --rebase origin main
+            git push
+          fi
