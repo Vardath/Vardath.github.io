@@ -1,0 +1,753 @@
+{
+  "version": 1,
+  "scope": "cross-family proto-form meaning test",
+  "research_boundary": "These are independently reconstructed family-level forms mapped through coarse bridge proxies. Similarity cannot establish a Proto-World word, deliberate language engineering, or intrinsic sound meaning. A null result is evidence against a simple universal lexical-form hypothesis at this resolution.",
+  "method": {
+    "meanings": [
+      "water",
+      "mother",
+      "fire",
+      "star"
+    ],
+    "family_slots": [
+      "Proto-Indo-European",
+      "Proto-Semitic",
+      "Proto-Austronesian",
+      "Proto-Uralic",
+      "Proto-Dravidian"
+    ],
+    "proto_forms": 20,
+    "same_mean_cross_family_pairs": 40,
+    "wrong_mean_cross_family_pairs": 123,
+    "permutations": 10000,
+    "operators": [
+      "identity",
+      "reverse",
+      "place",
+      "reverse+place",
+      "manner",
+      "reverse+manner",
+      "place+manner",
+      "reverse+place+manner"
+    ]
+  },
+  "summary": {
+    "same_mean_identity": 0.577728,
+    "wrong_mean_identity": 0.579672,
+    "identity_uplift": -0.001943,
+    "identity_permutation_mean": 0.578428,
+    "identity_permutation_sd": 0.016933,
+    "identity_p_ge_observed": 0.450455,
+    "same_mean_operator_best": 0.636081,
+    "wrong_mean_operator_best": 0.633788,
+    "operator_uplift": 0.002293,
+    "operator_permutation_mean": 0.633902,
+    "operator_permutation_sd": 0.016191,
+    "operator_p_ge_observed": 0.379162
+  },
+  "meanings": {
+    "water": {
+      "forms": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*wódr̥",
+          "seg": [
+            "w",
+            "o",
+            "d",
+            "r"
+          ],
+          "source": "standard PIE reconstruction used in the calibrated daughter test",
+          "path": [
+            "B1",
+            "A3",
+            "D2",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*māy-",
+          "seg": [
+            "m",
+            "a",
+            "j"
+          ],
+          "source": "Kogan/Fronzaroli tradition; broad y→j proxy",
+          "path": [
+            "B1",
+            "A2",
+            "B3"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*daNum",
+          "seg": [
+            "d",
+            "a",
+            "n",
+            "u",
+            "m"
+          ],
+          "source": "Austronesian Comparative Dictionary; conventional N collapsed to broad nasal proxy",
+          "path": [
+            "D2",
+            "A2",
+            "B2",
+            "A3",
+            "B1"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*wete",
+          "seg": [
+            "w",
+            "e",
+            "t",
+            "e"
+          ],
+          "source": "Uralic etymological reconstruction",
+          "path": [
+            "B1",
+            "A1",
+            "D2",
+            "A1"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*nīr",
+          "seg": [
+            "n",
+            "i",
+            "r"
+          ],
+          "source": "Krishnamurti / Dravidian Etymological Dictionary",
+          "path": [
+            "B2",
+            "A1",
+            "B2"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Semitic",
+          "identity": 0.666667,
+          "best": 0.666667,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Austronesian",
+          "identity": 0.566667,
+          "best": 0.733333,
+          "operator": "reverse+manner"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Uralic",
+          "identity": 0.833333,
+          "best": 0.833333,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Dravidian",
+          "identity": 0.625,
+          "best": 0.708333,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Austronesian",
+          "identity": 0.466667,
+          "best": 0.533333,
+          "operator": "reverse"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Uralic",
+          "identity": 0.583333,
+          "best": 0.583333,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Dravidian",
+          "identity": 0.833333,
+          "best": 0.833333,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Uralic",
+          "identity": 0.566667,
+          "best": 0.733333,
+          "operator": "place+manner"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Dravidian",
+          "identity": 0.5,
+          "best": 0.566667,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Uralic",
+          "b": "Proto-Dravidian",
+          "identity": 0.625,
+          "best": 0.625,
+          "operator": "identity"
+        }
+      ],
+      "identity_mean": 0.626667,
+      "operator_mean": 0.681666,
+      "medoid_family": "Proto-Indo-European",
+      "medoid_form": "*wódr̥",
+      "medoid_path": [
+        "B1",
+        "A3",
+        "D2",
+        "B2"
+      ],
+      "medoid_mean_similarity": 0.735417
+    },
+    "mother": {
+      "forms": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*méh₂tēr",
+          "seg": [
+            "m",
+            "e",
+            "t",
+            "e",
+            "r"
+          ],
+          "source": "standard PIE reconstruction; laryngeal omitted in broad proxy",
+          "path": [
+            "B1",
+            "A1",
+            "D2",
+            "A1",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*ʔimm-",
+          "seg": [
+            "ʔ",
+            "i",
+            "m"
+          ],
+          "source": "Proto-Semitic reconstruction",
+          "path": [
+            "D4",
+            "A1",
+            "B1"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*ina",
+          "seg": [
+            "i",
+            "n",
+            "a"
+          ],
+          "source": "Austronesian Comparative Dictionary",
+          "path": [
+            "A1",
+            "B2",
+            "A2"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*emä",
+          "seg": [
+            "e",
+            "m",
+            "a"
+          ],
+          "source": "Uralic reconstruction; irregular initial-vowel correspondence noted in source",
+          "path": [
+            "A1",
+            "B1",
+            "A2"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*taḷḷay",
+          "seg": [
+            "t",
+            "a",
+            "l",
+            "l",
+            "a",
+            "j"
+          ],
+          "source": "Krishnamurti; retroflex lateral collapsed to broad lateral proxy",
+          "path": [
+            "D2",
+            "A2",
+            "B2",
+            "B2",
+            "A2",
+            "B3"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Semitic",
+          "identity": 0.5,
+          "best": 0.533333,
+          "operator": "reverse"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Austronesian",
+          "identity": 0.5,
+          "best": 0.566667,
+          "operator": "manner"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Uralic",
+          "identity": 0.533333,
+          "best": 0.533333,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Dravidian",
+          "identity": 0.611111,
+          "best": 0.722222,
+          "operator": "reverse+place+manner"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Austronesian",
+          "identity": 0.444444,
+          "best": 0.555556,
+          "operator": "reverse"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Uralic",
+          "identity": 0.5,
+          "best": 0.611111,
+          "operator": "reverse"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Dravidian",
+          "identity": 0.388889,
+          "best": 0.416667,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Uralic",
+          "identity": 0.944444,
+          "best": 0.944444,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Dravidian",
+          "identity": 0.472222,
+          "best": 0.472222,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Uralic",
+          "b": "Proto-Dravidian",
+          "identity": 0.444444,
+          "best": 0.444444,
+          "operator": "reverse"
+        }
+      ],
+      "identity_mean": 0.533889,
+      "operator_mean": 0.58,
+      "medoid_family": "Proto-Austronesian",
+      "medoid_form": "*ina",
+      "medoid_path": [
+        "A1",
+        "B2",
+        "A2"
+      ],
+      "medoid_mean_similarity": 0.634722
+    },
+    "fire": {
+      "forms": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*péh₂wr̥",
+          "seg": [
+            "p",
+            "e",
+            "χ",
+            "w",
+            "r"
+          ],
+          "source": "standard PIE reconstruction; h₂→χ proxy",
+          "path": [
+            "D1",
+            "A1",
+            "C3",
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*ʔiš-",
+          "seg": [
+            "ʔ",
+            "i",
+            "ʃ"
+          ],
+          "source": "Proto-Semitic reconstruction",
+          "path": [
+            "D4",
+            "A1",
+            "C2"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*Sapuy",
+          "seg": [
+            "s",
+            "a",
+            "p",
+            "u",
+            "j"
+          ],
+          "source": "Austronesian Comparative Dictionary; conventional S→broad s proxy",
+          "path": [
+            "C2",
+            "A2",
+            "D1",
+            "A3",
+            "B3"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*tule",
+          "seg": [
+            "t",
+            "u",
+            "l",
+            "e"
+          ],
+          "source": "Uralic etymological reconstruction",
+          "path": [
+            "D2",
+            "A3",
+            "B2",
+            "A1"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*tiyam",
+          "seg": [
+            "t",
+            "i",
+            "j",
+            "a",
+            "m"
+          ],
+          "source": "Proto-Dravidian reconstruction",
+          "path": [
+            "D2",
+            "A1",
+            "B3",
+            "A2",
+            "B1"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Semitic",
+          "identity": 0.466667,
+          "best": 0.466667,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Austronesian",
+          "identity": 0.666667,
+          "best": 0.8,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Uralic",
+          "identity": 0.6,
+          "best": 0.666667,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Dravidian",
+          "identity": 0.833333,
+          "best": 0.833333,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Austronesian",
+          "identity": 0.4,
+          "best": 0.566667,
+          "operator": "reverse+place+manner"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Uralic",
+          "identity": 0.541667,
+          "best": 0.625,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Dravidian",
+          "identity": 0.466667,
+          "best": 0.533333,
+          "operator": "reverse+manner"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Uralic",
+          "identity": 0.566667,
+          "best": 0.7,
+          "operator": "reverse+manner"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Dravidian",
+          "identity": 0.7,
+          "best": 0.9,
+          "operator": "reverse+place+manner"
+        },
+        {
+          "a": "Proto-Uralic",
+          "b": "Proto-Dravidian",
+          "identity": 0.7,
+          "best": 0.733333,
+          "operator": "place"
+        }
+      ],
+      "identity_mean": 0.594167,
+      "operator_mean": 0.6825,
+      "medoid_family": "Proto-Dravidian",
+      "medoid_form": "*tiyam",
+      "medoid_path": [
+        "D2",
+        "A1",
+        "B3",
+        "A2",
+        "B1"
+      ],
+      "medoid_mean_similarity": 0.766667
+    },
+    "star": {
+      "forms": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*h₂stḗr",
+          "seg": [
+            "χ",
+            "s",
+            "t",
+            "e",
+            "r"
+          ],
+          "source": "standard PIE reconstruction; h₂→χ proxy",
+          "path": [
+            "C3",
+            "C2",
+            "D2",
+            "A1",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*kabkab-",
+          "seg": [
+            "k",
+            "a",
+            "b",
+            "k",
+            "a",
+            "b"
+          ],
+          "source": "Proto-Semitic reconstruction",
+          "path": [
+            "D3",
+            "A2",
+            "D1",
+            "D3",
+            "A2",
+            "D1"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*bituqən",
+          "seg": [
+            "b",
+            "i",
+            "t",
+            "u",
+            "q",
+            "ə",
+            "n"
+          ],
+          "source": "Austronesian Comparative Dictionary; IPA /bituqən/",
+          "path": [
+            "D1",
+            "A1",
+            "D2",
+            "A3",
+            "D3",
+            "A2",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Uralic (Finno-Volgaic)",
+          "form": "*täštä",
+          "seg": [
+            "t",
+            "a",
+            "ʃ",
+            "t",
+            "a"
+          ],
+          "source": "Finno-Volgaic reconstruction; NOT claimed for all Proto-Uralic",
+          "path": [
+            "D2",
+            "A2",
+            "C2",
+            "D2",
+            "A2"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*miHn",
+          "seg": [
+            "m",
+            "i",
+            "n"
+          ],
+          "source": "Krishnamurti / DEDR; H omitted as uncertain broad proxy",
+          "path": [
+            "B1",
+            "A1",
+            "B2"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Semitic",
+          "identity": 0.611111,
+          "best": 0.611111,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Austronesian",
+          "identity": 0.571429,
+          "best": 0.619048,
+          "operator": "place"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Uralic (Finno-Volgaic)",
+          "identity": 0.666667,
+          "best": 0.8,
+          "operator": "reverse+manner"
+        },
+        {
+          "a": "Proto-Indo-European",
+          "b": "Proto-Dravidian",
+          "identity": 0.533333,
+          "best": 0.533333,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Austronesian",
+          "identity": 0.690476,
+          "best": 0.690476,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Uralic (Finno-Volgaic)",
+          "identity": 0.722222,
+          "best": 0.722222,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Semitic",
+          "b": "Proto-Dravidian",
+          "identity": 0.333333,
+          "best": 0.444444,
+          "operator": "manner"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Uralic (Finno-Volgaic)",
+          "identity": 0.619048,
+          "best": 0.619048,
+          "operator": "identity"
+        },
+        {
+          "a": "Proto-Austronesian",
+          "b": "Proto-Dravidian",
+          "identity": 0.380952,
+          "best": 0.428571,
+          "operator": "manner"
+        },
+        {
+          "a": "Proto-Uralic (Finno-Volgaic)",
+          "b": "Proto-Dravidian",
+          "identity": 0.433333,
+          "best": 0.533333,
+          "operator": "manner"
+        }
+      ],
+      "identity_mean": 0.55619,
+      "operator_mean": 0.600159,
+      "medoid_family": "Proto-Uralic (Finno-Volgaic)",
+      "medoid_form": "*täštä",
+      "medoid_path": [
+        "D2",
+        "A2",
+        "C2",
+        "D2",
+        "A2"
+      ],
+      "medoid_mean_similarity": 0.668651
+    }
+  }
+}
