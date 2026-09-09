@@ -1,0 +1,37 @@
+name: Reconstruct Phonetic Proto Language
+
+on:
+  push:
+    paths:
+      - '.github/workflows/reconstruct-phonetic-proto.yml'
+      - 'tools/reconstruct_phonetic_proto.py'
+      - 'data/phonetic-benchmark-summary.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Reconstruct recursive phonetic root
+        run: python tools/reconstruct_phonetic_proto.py
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-proto-reconstruction.json data/phonetic-proto-reconstruction.md
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Reconstruct recursive phonetic proto-language model'
+            git pull --rebase origin main
+            git push
+          fi
