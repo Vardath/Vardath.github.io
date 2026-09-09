@@ -1,0 +1,35 @@
+name: Test Shared Family Transform Grammar
+
+on:
+  push:
+    paths:
+      - 'tools/test_shared_family_transform_grammar.py'
+      - '.github/workflows/test-shared-family-transform.yml'
+      - 'data/phonetic-cross-family-proto-meaning.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test shared family transformation grammar
+        run: python tools/test_shared_family_transform_grammar.py
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-shared-family-transform.json data/phonetic-shared-family-transform.md
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add shared family transformation grammar results'
+            git pull --rebase origin main
+            git push
+          fi
