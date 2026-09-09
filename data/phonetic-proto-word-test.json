@@ -1,0 +1,682 @@
+{
+  "version": 1,
+  "scope": "Proto-Indo-European calibration pilot",
+  "research_boundary": "This tests whether established reconstructed meanings retain bridge-path similarity to daughter forms. It does not reconstruct Proto-World or prove intrinsic sound-meaning symbolism. IPA values are broad experimental approximations used only for bridge placement.",
+  "method": {
+    "meanings": 7,
+    "descendant_forms": 28,
+    "permutations": 10000,
+    "similarity": "feature-aware edit similarity on 4x4 bridge paths",
+    "control": "one-to-one shuffled assignment of proto meanings to descendant meaning sets"
+  },
+  "summary": {
+    "same_mean_mean_similarity": 0.706264,
+    "all_wrong_mean_similarity": 0.639246,
+    "uplift": 0.067019,
+    "permutation_mean": 0.64893,
+    "permutation_sd": 0.025916,
+    "permutation_p_ge_observed": 0.022298
+  },
+  "meanings": [
+    {
+      "meaning": "water",
+      "proto_form": "*wódr̥",
+      "proto_segments": [
+        "w",
+        "o",
+        "d",
+        "r"
+      ],
+      "proto_bridge_path": [
+        "B1",
+        "A3",
+        "D2",
+        "B2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; compare Hittite wātar, Sanskrit udán, Greek hýdōr, Old English wæter.",
+      "descendants": [
+        {
+          "language": "Hittite",
+          "form": "wātar",
+          "ipa": [
+            "w",
+            "a",
+            "t",
+            "a",
+            "r"
+          ],
+          "bridge_path": [
+            "B1",
+            "A2",
+            "D2",
+            "A2",
+            "B2"
+          ],
+          "similarity_to_proto": 0.766667
+        },
+        {
+          "language": "Sanskrit",
+          "form": "udán",
+          "ipa": [
+            "u",
+            "d",
+            "a",
+            "n"
+          ],
+          "bridge_path": [
+            "A3",
+            "D2",
+            "A2",
+            "B2"
+          ],
+          "similarity_to_proto": 0.583333
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "hýdōr",
+          "ipa": [
+            "h",
+            "y",
+            "d",
+            "ɔ",
+            "r"
+          ],
+          "bridge_path": [
+            "C4",
+            "A1",
+            "D2",
+            "A4",
+            "B2"
+          ],
+          "similarity_to_proto": 0.6
+        },
+        {
+          "language": "Old English",
+          "form": "wæter",
+          "ipa": [
+            "w",
+            "æ",
+            "t",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "B1",
+            "A2",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.766667
+        }
+      ],
+      "mean_same_mean_similarity": 0.679167
+    },
+    {
+      "meaning": "mother",
+      "proto_form": "*méh₂tēr",
+      "proto_segments": [
+        "m",
+        "e",
+        "t",
+        "e",
+        "r"
+      ],
+      "proto_bridge_path": [
+        "B1",
+        "A1",
+        "D2",
+        "A1",
+        "B2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; bridge playback omits uncertain laryngeal realization.",
+      "descendants": [
+        {
+          "language": "Sanskrit",
+          "form": "mātṛ",
+          "ipa": [
+            "m",
+            "a",
+            "t",
+            "r"
+          ],
+          "bridge_path": [
+            "B1",
+            "A2",
+            "D2",
+            "B2"
+          ],
+          "similarity_to_proto": 0.766667
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "mḗtēr",
+          "ipa": [
+            "m",
+            "e",
+            "t",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "B1",
+            "A1",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 1.0
+        },
+        {
+          "language": "Latin",
+          "form": "māter",
+          "ipa": [
+            "m",
+            "a",
+            "t",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "B1",
+            "A2",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.966667
+        },
+        {
+          "language": "Old English",
+          "form": "mōdor",
+          "ipa": [
+            "m",
+            "o",
+            "d",
+            "o",
+            "r"
+          ],
+          "bridge_path": [
+            "B1",
+            "A3",
+            "D2",
+            "A3",
+            "B2"
+          ],
+          "similarity_to_proto": 0.866667
+        }
+      ],
+      "mean_same_mean_similarity": 0.9
+    },
+    {
+      "meaning": "father",
+      "proto_form": "*ph₂tḗr",
+      "proto_segments": [
+        "p",
+        "χ",
+        "t",
+        "e",
+        "r"
+      ],
+      "proto_bridge_path": [
+        "D1",
+        "C3",
+        "D2",
+        "A1",
+        "B2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; h₂ is represented as a dorsal/pharyngeal proxy χ only for the bridge experiment.",
+      "descendants": [
+        {
+          "language": "Sanskrit",
+          "form": "pitṛ",
+          "ipa": [
+            "p",
+            "i",
+            "t",
+            "r"
+          ],
+          "bridge_path": [
+            "D1",
+            "A1",
+            "D2",
+            "B2"
+          ],
+          "similarity_to_proto": 0.666667
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "patḗr",
+          "ipa": [
+            "p",
+            "a",
+            "t",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "D1",
+            "A2",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.9
+        },
+        {
+          "language": "Latin",
+          "form": "pater",
+          "ipa": [
+            "p",
+            "a",
+            "t",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "D1",
+            "A2",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.9
+        },
+        {
+          "language": "Old English",
+          "form": "fæder",
+          "ipa": [
+            "f",
+            "æ",
+            "d",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "C1",
+            "A2",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.866667
+        }
+      ],
+      "mean_same_mean_similarity": 0.833333
+    },
+    {
+      "meaning": "night",
+      "proto_form": "*nókʷts",
+      "proto_segments": [
+        "n",
+        "o",
+        "k",
+        "w",
+        "t",
+        "s"
+      ],
+      "proto_bridge_path": [
+        "B2",
+        "A3",
+        "D3",
+        "B1",
+        "D2",
+        "C2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; labialized kʷ is represented as k+w in the coarse bridge.",
+      "descendants": [
+        {
+          "language": "Sanskrit",
+          "form": "náktam",
+          "ipa": [
+            "n",
+            "a",
+            "k",
+            "t",
+            "a",
+            "m"
+          ],
+          "bridge_path": [
+            "B2",
+            "A2",
+            "D3",
+            "D2",
+            "A2",
+            "B1"
+          ],
+          "similarity_to_proto": 0.75
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "nýx",
+          "ipa": [
+            "n",
+            "y",
+            "k",
+            "s"
+          ],
+          "bridge_path": [
+            "B2",
+            "A1",
+            "D3",
+            "C2"
+          ],
+          "similarity_to_proto": 0.611111
+        },
+        {
+          "language": "Latin",
+          "form": "nox",
+          "ipa": [
+            "n",
+            "o",
+            "k",
+            "s"
+          ],
+          "bridge_path": [
+            "B2",
+            "A3",
+            "D3",
+            "C2"
+          ],
+          "similarity_to_proto": 0.666667
+        },
+        {
+          "language": "Old English",
+          "form": "niht",
+          "ipa": [
+            "n",
+            "i",
+            "x",
+            "t"
+          ],
+          "bridge_path": [
+            "B2",
+            "A1",
+            "C3",
+            "D2"
+          ],
+          "similarity_to_proto": 0.583333
+        }
+      ],
+      "mean_same_mean_similarity": 0.652778
+    },
+    {
+      "meaning": "fire",
+      "proto_form": "*péh₂wr̥",
+      "proto_segments": [
+        "p",
+        "e",
+        "χ",
+        "w",
+        "r"
+      ],
+      "proto_bridge_path": [
+        "D1",
+        "A1",
+        "C3",
+        "B1",
+        "B2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; h₂ uses χ as a coarse experimental proxy.",
+      "descendants": [
+        {
+          "language": "Hittite",
+          "form": "paḫḫur",
+          "ipa": [
+            "p",
+            "a",
+            "χ",
+            "χ",
+            "u",
+            "r"
+          ],
+          "bridge_path": [
+            "D1",
+            "A2",
+            "C3",
+            "C3",
+            "A3",
+            "B2"
+          ],
+          "similarity_to_proto": 0.722222
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "pŷr",
+          "ipa": [
+            "p",
+            "y",
+            "r"
+          ],
+          "bridge_path": [
+            "D1",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.6
+        },
+        {
+          "language": "Old English",
+          "form": "fȳr",
+          "ipa": [
+            "f",
+            "y",
+            "r"
+          ],
+          "bridge_path": [
+            "C1",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.566667
+        },
+        {
+          "language": "Armenian",
+          "form": "hur",
+          "ipa": [
+            "h",
+            "u",
+            "r"
+          ],
+          "bridge_path": [
+            "C4",
+            "A3",
+            "B2"
+          ],
+          "similarity_to_proto": 0.466667
+        }
+      ],
+      "mean_same_mean_similarity": 0.588889
+    },
+    {
+      "meaning": "heart",
+      "proto_form": "*ḱḗr",
+      "proto_segments": [
+        "k",
+        "e",
+        "r"
+      ],
+      "proto_bridge_path": [
+        "D3",
+        "A1",
+        "B2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; palatovelar ḱ is collapsed to the dorsal stop region in the 4x4 bridge.",
+      "descendants": [
+        {
+          "language": "Sanskrit",
+          "form": "hṛd",
+          "ipa": [
+            "h",
+            "r",
+            "d"
+          ],
+          "bridge_path": [
+            "C4",
+            "B2",
+            "D2"
+          ],
+          "similarity_to_proto": 0.666667
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "kardía",
+          "ipa": [
+            "k",
+            "a",
+            "r",
+            "d",
+            "i",
+            "a"
+          ],
+          "bridge_path": [
+            "D3",
+            "A2",
+            "B2",
+            "D2",
+            "A1",
+            "A2"
+          ],
+          "similarity_to_proto": 0.472222
+        },
+        {
+          "language": "Latin",
+          "form": "cor",
+          "ipa": [
+            "k",
+            "o",
+            "r"
+          ],
+          "bridge_path": [
+            "D3",
+            "A3",
+            "B2"
+          ],
+          "similarity_to_proto": 0.888889
+        },
+        {
+          "language": "Old English",
+          "form": "heorte",
+          "ipa": [
+            "h",
+            "e",
+            "o",
+            "r",
+            "t",
+            "e"
+          ],
+          "bridge_path": [
+            "C4",
+            "A1",
+            "A3",
+            "B2",
+            "D2",
+            "A1"
+          ],
+          "similarity_to_proto": 0.444444
+        }
+      ],
+      "mean_same_mean_similarity": 0.618055
+    },
+    {
+      "meaning": "star",
+      "proto_form": "*h₂stḗr",
+      "proto_segments": [
+        "χ",
+        "s",
+        "t",
+        "e",
+        "r"
+      ],
+      "proto_bridge_path": [
+        "C3",
+        "C2",
+        "D2",
+        "A1",
+        "B2"
+      ],
+      "source_note": "Proto-Indo-European reconstruction; h₂ uses χ as a coarse experimental proxy.",
+      "descendants": [
+        {
+          "language": "Sanskrit",
+          "form": "stṛ",
+          "ipa": [
+            "s",
+            "t",
+            "r"
+          ],
+          "bridge_path": [
+            "C2",
+            "D2",
+            "B2"
+          ],
+          "similarity_to_proto": 0.6
+        },
+        {
+          "language": "Ancient Greek",
+          "form": "astḗr",
+          "ipa": [
+            "a",
+            "s",
+            "t",
+            "e",
+            "r"
+          ],
+          "bridge_path": [
+            "A2",
+            "C2",
+            "D2",
+            "A1",
+            "B2"
+          ],
+          "similarity_to_proto": 0.9
+        },
+        {
+          "language": "Latin",
+          "form": "stella",
+          "ipa": [
+            "s",
+            "t",
+            "e",
+            "l",
+            "l",
+            "a"
+          ],
+          "bridge_path": [
+            "C2",
+            "D2",
+            "A1",
+            "B2",
+            "B2",
+            "A2"
+          ],
+          "similarity_to_proto": 0.638889
+        },
+        {
+          "language": "Old English",
+          "form": "steorra",
+          "ipa": [
+            "s",
+            "t",
+            "e",
+            "o",
+            "r",
+            "r",
+            "a"
+          ],
+          "bridge_path": [
+            "C2",
+            "D2",
+            "A1",
+            "A3",
+            "B2",
+            "B2",
+            "A2"
+          ],
+          "similarity_to_proto": 0.547619
+        }
+      ],
+      "mean_same_mean_similarity": 0.671627
+    }
+  ]
+}
