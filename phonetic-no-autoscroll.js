@@ -49,6 +49,10 @@
   pr.src='phonetic-proto-reconstruction.js?v=20260909-proto2';
   pr.defer=true; document.head.appendChild(pr);
 
+  const pa=document.createElement('script');
+  pa.src='phonetic-proto-audio.js?v=20260909-audio1';
+  pa.defer=true; document.head.appendChild(pa);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
