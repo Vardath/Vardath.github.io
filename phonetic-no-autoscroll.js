@@ -53,6 +53,10 @@
   pa.src='phonetic-proto-audio.js?v=20260909-audio1';
   pa.defer=true; document.head.appendChild(pa);
 
+  const pw=document.createElement('script');
+  pw.src='phonetic-proto-word-lab.js?v=20260909-wordproto1';
+  pw.defer=true; document.head.appendChild(pw);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
