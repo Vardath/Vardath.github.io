@@ -45,6 +45,10 @@
   mg.src='phonetic-manuscript-grid.js?v=20260909-grid1';
   mg.defer=true; document.head.appendChild(mg);
 
+  const pr=document.createElement('script');
+  pr.src='phonetic-proto-reconstruction.js?v=20260909-proto2';
+  pr.defer=true; document.head.appendChild(pr);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
