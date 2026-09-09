@@ -61,6 +61,10 @@
   dp.src='phonetic-cross-family-proto.js?v=20260909-deep1';
   dp.defer=true; document.head.appendChild(dp);
 
+  const hp=document.createElement('script');
+  hp.src='phonetic-hidden-proto-word.js?v=20260909-hidden2';
+  hp.defer=true; document.head.appendChild(hp);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
