@@ -1,0 +1,107 @@
+name: Reconstruct Original Language From All Dictionaries - 20 Shards
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/reconstruct_original_language_all_dictionaries_sharded.py'
+      - '.github/workflows/reconstruct-original-language-all-dictionaries-20-shards.yml'
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: '1'
+  MIN_FAMILIES: '3'
+  MIN_LANGUAGES: '5'
+  MAX_CONCEPTS: '12000'
+  N_SHARDS: '20'
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan every Wiktionary dictionary and build 20 complete evidence shards
+        run: python tools/reconstruct_original_language_all_dictionaries_sharded.py prepare
+      - name: Upload prepared man-grid evidence shards
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-dictionaries-prepared-shards
+          path: data/phonetic-all-dictionaries-shards/
+          compression-level: 1
+          retention-days: 2
+
+  reconstruct:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download prepared full-dictionary evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: all-dictionaries-prepared-shards
+          path: data/phonetic-all-dictionaries-shards/
+      - name: Reconstruct shard through the man grid
+        run: python tools/reconstruct_original_language_all_dictionaries_sharded.py shard --id ${{ matrix.shard }}
+      - name: Upload reconstructed shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: reconstructed-shard-${{ matrix.shard }}
+          path: data/phonetic-all-dictionaries-shards/result-*.json.gz
+          compression-level: 1
+          retention-days: 2
+
+  merge:
+    needs: reconstruct
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download preparation manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: all-dictionaries-prepared-shards
+          path: data/phonetic-all-dictionaries-shards/
+      - name: Download all 20 reconstructed shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: reconstructed-shard-*
+          path: data/phonetic-all-dictionaries-shards/
+          merge-multiple: true
+      - name: Merge all shards into final original-language dictionary
+        run: python tools/reconstruct_original_language_all_dictionaries_sharded.py merge
+      - name: Commit complete 20-shard reconstruction results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-all-dictionaries-reconstruction.json data/phonetic-all-dictionaries-reconstruction.md data/phonetic-original-language-dictionary.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add complete 20-shard all-language man-grid reconstruction'
+            git pull --rebase origin main
+            git push
+          fi
