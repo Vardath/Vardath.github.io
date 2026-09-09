@@ -41,6 +41,11 @@
   cc.src='phonetic-conclusions-20260906.js?v=20260906-conclusions1';
   cc.defer=true; document.head.appendChild(cc);
 
+  // Mirrored-language hypothesis lab: reversal, articulation reflection, combined transforms and batch controls.
+  const ml=document.createElement('script');
+  ml.src='phonetic-mirror-lab.js?v=20260909-mirror1';
+  ml.defer=true; document.head.appendChild(ml);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
