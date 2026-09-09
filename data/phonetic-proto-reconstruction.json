@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "source": {
     "benchmark": "data/phonetic-benchmark-summary.json",
     "languages": 348,
@@ -1103,5 +1103,926 @@
       "Zou",
       "Zulu"
     ]
+  },
+  "refined_roots": {
+    "family_balanced": {
+      "label": "Family-balanced root",
+      "entropy_bits": 6.541169,
+      "effective_gates": 93.129645,
+      "operator_usage": {
+        "identity": 32,
+        "manner": 1,
+        "reverse+place": 1,
+        "place": 2
+      },
+      "top_gates": [
+        {
+          "index": 5,
+          "gate": "A1→B2",
+          "mass": 0.040884
+        },
+        {
+          "index": 80,
+          "gate": "B2→A1",
+          "mass": 0.037718
+        },
+        {
+          "index": 21,
+          "gate": "A2→B2",
+          "mass": 0.037061
+        },
+        {
+          "index": 81,
+          "gate": "B2→A2",
+          "mass": 0.034479
+        },
+        {
+          "index": 217,
+          "gate": "D2→C2",
+          "mass": 0.033704
+        },
+        {
+          "index": 37,
+          "gate": "A3→B2",
+          "mass": 0.028778
+        },
+        {
+          "index": 208,
+          "gate": "D2→A1",
+          "mass": 0.022853
+        },
+        {
+          "index": 225,
+          "gate": "D3→A2",
+          "mass": 0.022424
+        },
+        {
+          "index": 82,
+          "gate": "B2→A3",
+          "mass": 0.021343
+        },
+        {
+          "index": 226,
+          "gate": "D3→A3",
+          "mass": 0.020626
+        },
+        {
+          "index": 144,
+          "gate": "C2→A1",
+          "mass": 0.019746
+        },
+        {
+          "index": 224,
+          "gate": "D3→A1",
+          "mass": 0.019359
+        },
+        {
+          "index": 64,
+          "gate": "B1→A1",
+          "mass": 0.01928
+        },
+        {
+          "index": 193,
+          "gate": "D1→A2",
+          "mass": 0.019099
+        },
+        {
+          "index": 209,
+          "gate": "D2→A2",
+          "mass": 0.018751
+        },
+        {
+          "index": 210,
+          "gate": "D2→A3",
+          "mass": 0.017134
+        },
+        {
+          "index": 192,
+          "gate": "D1→A1",
+          "mass": 0.016925
+        },
+        {
+          "index": 65,
+          "gate": "B1→A2",
+          "mass": 0.016894
+        },
+        {
+          "index": 9,
+          "gate": "A1→C2",
+          "mass": 0.016218
+        },
+        {
+          "index": 20,
+          "gate": "A2→B1",
+          "mass": 0.014726
+        },
+        {
+          "index": 145,
+          "gate": "C2→A2",
+          "mass": 0.014434
+        },
+        {
+          "index": 13,
+          "gate": "A1→D2",
+          "mass": 0.014116
+        },
+        {
+          "index": 14,
+          "gate": "A1→D3",
+          "mass": 0.012508
+        },
+        {
+          "index": 4,
+          "gate": "A1→B1",
+          "mass": 0.011907
+        }
+      ],
+      "closest_proxies": [
+        {
+          "iso": "oci",
+          "name": "Occitan (post 1500)",
+          "family": "Indo-European",
+          "similarity": 0.91753,
+          "operator": "identity"
+        },
+        {
+          "iso": "msa",
+          "name": "Malay (macrolanguage)",
+          "family": "Unclassified",
+          "similarity": 0.912408,
+          "operator": "identity"
+        },
+        {
+          "iso": "ind",
+          "name": "Indonesian",
+          "family": "Austronesian",
+          "similarity": 0.910633,
+          "operator": "identity"
+        },
+        {
+          "iso": "mqs",
+          "name": "West Makian",
+          "family": "North Halmahera",
+          "similarity": 0.907468,
+          "operator": "identity"
+        },
+        {
+          "iso": "srn",
+          "name": "Sranan Tongo",
+          "family": "Unclassified",
+          "similarity": 0.90531,
+          "operator": "identity"
+        },
+        {
+          "iso": "iba",
+          "name": "Iban",
+          "family": "Austronesian",
+          "similarity": 0.90055,
+          "operator": "identity"
+        },
+        {
+          "iso": "jav",
+          "name": "Javanese",
+          "family": "Austronesian",
+          "similarity": 0.898762,
+          "operator": "place"
+        },
+        {
+          "iso": "tgl",
+          "name": "Tagalog",
+          "family": "Austronesian",
+          "similarity": 0.897364,
+          "operator": "identity"
+        },
+        {
+          "iso": "tgk",
+          "name": "Tajik",
+          "family": "Indo-European",
+          "similarity": 0.895423,
+          "operator": "place"
+        },
+        {
+          "iso": "aar",
+          "name": "Afar",
+          "family": "Afro-Asiatic",
+          "similarity": 0.892477,
+          "operator": "identity"
+        },
+        {
+          "iso": "jam",
+          "name": "Jamaican Creole English",
+          "family": "Indo-European",
+          "similarity": 0.890644,
+          "operator": "identity"
+        },
+        {
+          "iso": "lmo",
+          "name": "Lombard",
+          "family": "Unclassified",
+          "similarity": 0.890503,
+          "operator": "identity"
+        },
+        {
+          "iso": "slk",
+          "name": "Slovak",
+          "family": "Indo-European",
+          "similarity": 0.890169,
+          "operator": "reverse"
+        },
+        {
+          "iso": "glg",
+          "name": "Galician",
+          "family": "Indo-European",
+          "similarity": 0.889574,
+          "operator": "identity"
+        },
+        {
+          "iso": "mdh",
+          "name": "Maguindanaon",
+          "family": "Unclassified",
+          "similarity": 0.889496,
+          "operator": "identity"
+        }
+      ],
+      "families_weighted_equally": 36
+    },
+    "early_attested_subset": {
+      "label": "Older/early-labelled attested subset",
+      "entropy_bits": 6.373496,
+      "effective_gates": 82.911232,
+      "operator_usage": {
+        "place": 1,
+        "identity": 25,
+        "reverse+place": 1
+      },
+      "top_gates": [
+        {
+          "index": 5,
+          "gate": "A1→B2",
+          "mass": 0.07167
+        },
+        {
+          "index": 80,
+          "gate": "B2→A1",
+          "mass": 0.057493
+        },
+        {
+          "index": 21,
+          "gate": "A2→B2",
+          "mass": 0.037355
+        },
+        {
+          "index": 208,
+          "gate": "D2→A1",
+          "mass": 0.034615
+        },
+        {
+          "index": 37,
+          "gate": "A3→B2",
+          "mass": 0.031178
+        },
+        {
+          "index": 9,
+          "gate": "A1→C2",
+          "mass": 0.02952
+        },
+        {
+          "index": 144,
+          "gate": "C2→A1",
+          "mass": 0.027189
+        },
+        {
+          "index": 81,
+          "gate": "B2→A2",
+          "mass": 0.024727
+        },
+        {
+          "index": 64,
+          "gate": "B1→A1",
+          "mass": 0.021556
+        },
+        {
+          "index": 13,
+          "gate": "A1→D2",
+          "mass": 0.021037
+        },
+        {
+          "index": 93,
+          "gate": "B2→D2",
+          "mass": 0.020313
+        },
+        {
+          "index": 82,
+          "gate": "B2→A3",
+          "mass": 0.019774
+        },
+        {
+          "index": 224,
+          "gate": "D3→A1",
+          "mass": 0.017197
+        },
+        {
+          "index": 209,
+          "gate": "D2→A2",
+          "mass": 0.015816
+        },
+        {
+          "index": 192,
+          "gate": "D1→A1",
+          "mass": 0.015541
+        },
+        {
+          "index": 65,
+          "gate": "B1→A2",
+          "mass": 0.013776
+        },
+        {
+          "index": 225,
+          "gate": "D3→A2",
+          "mass": 0.012384
+        },
+        {
+          "index": 210,
+          "gate": "D2→A3",
+          "mass": 0.012364
+        },
+        {
+          "index": 41,
+          "gate": "A3→C2",
+          "mass": 0.012259
+        },
+        {
+          "index": 157,
+          "gate": "C2→D2",
+          "mass": 0.012234
+        },
+        {
+          "index": 226,
+          "gate": "D3→A3",
+          "mass": 0.012069
+        },
+        {
+          "index": 29,
+          "gate": "A2→D2",
+          "mass": 0.011789
+        },
+        {
+          "index": 145,
+          "gate": "C2→A2",
+          "mass": 0.011183
+        },
+        {
+          "index": 128,
+          "gate": "C1→A1",
+          "mass": 0.010818
+        }
+      ],
+      "closest_proxies": [
+        {
+          "iso": "swe",
+          "name": "Swedish",
+          "family": "Indo-European",
+          "similarity": 0.962998,
+          "operator": "identity"
+        },
+        {
+          "iso": "yol",
+          "name": "Yola",
+          "family": "Unclassified",
+          "similarity": 0.960679,
+          "operator": "identity"
+        },
+        {
+          "iso": "sqi",
+          "name": "Albanian",
+          "family": "Unclassified",
+          "similarity": 0.958219,
+          "operator": "identity"
+        },
+        {
+          "iso": "nno",
+          "name": "Norwegian Nynorsk",
+          "family": "Unclassified",
+          "similarity": 0.957977,
+          "operator": "identity"
+        },
+        {
+          "iso": "tur",
+          "name": "Turkish",
+          "family": "Turkic",
+          "similarity": 0.955328,
+          "operator": "identity"
+        },
+        {
+          "iso": "lmo",
+          "name": "Lombard",
+          "family": "Unclassified",
+          "similarity": 0.95338,
+          "operator": "identity"
+        },
+        {
+          "iso": "cor",
+          "name": "Cornish",
+          "family": "Unclassified",
+          "similarity": 0.951147,
+          "operator": "identity"
+        },
+        {
+          "iso": "ron",
+          "name": "Romanian",
+          "family": "Indo-European",
+          "similarity": 0.95028,
+          "operator": "identity"
+        },
+        {
+          "iso": "dan",
+          "name": "Danish",
+          "family": "Indo-European",
+          "similarity": 0.949071,
+          "operator": "identity"
+        },
+        {
+          "iso": "gle",
+          "name": "Irish",
+          "family": "Indo-European",
+          "similarity": 0.947358,
+          "operator": "identity"
+        },
+        {
+          "iso": "ina",
+          "name": "Interlingua (International Auxiliary Language Association)",
+          "family": "Unclassified",
+          "similarity": 0.947219,
+          "operator": "identity"
+        },
+        {
+          "iso": "cym",
+          "name": "Welsh",
+          "family": "Indo-European",
+          "similarity": 0.942789,
+          "operator": "identity"
+        },
+        {
+          "iso": "oci",
+          "name": "Occitan (post 1500)",
+          "family": "Indo-European",
+          "similarity": 0.941527,
+          "operator": "identity"
+        },
+        {
+          "iso": "lat",
+          "name": "Latin",
+          "family": "Unclassified",
+          "similarity": 0.940619,
+          "operator": "identity"
+        },
+        {
+          "iso": "hrx",
+          "name": "Hunsrik",
+          "family": "Unclassified",
+          "similarity": 0.938056,
+          "operator": "identity"
+        }
+      ],
+      "source_languages": [
+        "Akkadian",
+        "Ancient Greek (to 1453)",
+        "Classical Nahuatl",
+        "Classical Syriac",
+        "Egyptian (Ancient)",
+        "Gothic",
+        "Kawi",
+        "Latin",
+        "Middle Dutch (ca. 1050-1350)",
+        "Middle English (1100-1500)",
+        "Middle High German (ca. 1050-1500)",
+        "Middle Irish (900-1200)",
+        "Middle Korean (10th-16th cent.)",
+        "Middle Low German",
+        "Middle Welsh",
+        "Official Aramaic (700-300 BCE)",
+        "Old Chinese",
+        "Old English (ca. 450-1100)",
+        "Old French (842-ca. 1400)",
+        "Old Frisian",
+        "Old High German (ca. 750-1050)",
+        "Old Irish (to 900)",
+        "Old Norse",
+        "Old Russian",
+        "Old Saxon",
+        "Old Spanish",
+        "Sanskrit"
+      ],
+      "source_count": 27
+    },
+    "family_recurrent_gate_core": [
+      {
+        "gate": "A1→B2",
+        "families_top32": 33,
+        "family_fraction": 0.916667
+      },
+      {
+        "gate": "B2→A1",
+        "families_top32": 33,
+        "family_fraction": 0.916667
+      },
+      {
+        "gate": "D2→A1",
+        "families_top32": 32,
+        "family_fraction": 0.888889
+      },
+      {
+        "gate": "A2→B2",
+        "families_top32": 32,
+        "family_fraction": 0.888889
+      },
+      {
+        "gate": "B2→A2",
+        "families_top32": 32,
+        "family_fraction": 0.888889
+      },
+      {
+        "gate": "D3→A3",
+        "families_top32": 31,
+        "family_fraction": 0.861111
+      },
+      {
+        "gate": "A3→B2",
+        "families_top32": 30,
+        "family_fraction": 0.833333
+      },
+      {
+        "gate": "D3→A2",
+        "families_top32": 29,
+        "family_fraction": 0.805556
+      },
+      {
+        "gate": "B2→A3",
+        "families_top32": 29,
+        "family_fraction": 0.805556
+      },
+      {
+        "gate": "D1→A1",
+        "families_top32": 28,
+        "family_fraction": 0.777778
+      },
+      {
+        "gate": "D2→A3",
+        "families_top32": 28,
+        "family_fraction": 0.777778
+      },
+      {
+        "gate": "D3→A1",
+        "families_top32": 28,
+        "family_fraction": 0.777778
+      },
+      {
+        "gate": "D2→A2",
+        "families_top32": 27,
+        "family_fraction": 0.75
+      },
+      {
+        "gate": "B1→A1",
+        "families_top32": 27,
+        "family_fraction": 0.75
+      },
+      {
+        "gate": "C2→A1",
+        "families_top32": 26,
+        "family_fraction": 0.722222
+      },
+      {
+        "gate": "C2→A2",
+        "families_top32": 24,
+        "family_fraction": 0.666667
+      },
+      {
+        "gate": "B1→A2",
+        "families_top32": 23,
+        "family_fraction": 0.638889
+      },
+      {
+        "gate": "A1→D2",
+        "families_top32": 23,
+        "family_fraction": 0.638889
+      },
+      {
+        "gate": "D1→A3",
+        "families_top32": 21,
+        "family_fraction": 0.583333
+      },
+      {
+        "gate": "D1→A2",
+        "families_top32": 20,
+        "family_fraction": 0.555556
+      },
+      {
+        "gate": "A2→D2",
+        "families_top32": 19,
+        "family_fraction": 0.527778
+      },
+      {
+        "gate": "A2→B1",
+        "families_top32": 19,
+        "family_fraction": 0.527778
+      },
+      {
+        "gate": "C2→A3",
+        "families_top32": 19,
+        "family_fraction": 0.527778
+      },
+      {
+        "gate": "A1→D3",
+        "families_top32": 18,
+        "family_fraction": 0.5
+      },
+      {
+        "gate": "B1→A3",
+        "families_top32": 18,
+        "family_fraction": 0.5
+      },
+      {
+        "gate": "A3→D3",
+        "families_top32": 18,
+        "family_fraction": 0.5
+      },
+      {
+        "gate": "A1→B3",
+        "families_top32": 17,
+        "family_fraction": 0.472222
+      },
+      {
+        "gate": "A1→C2",
+        "families_top32": 16,
+        "family_fraction": 0.444444
+      },
+      {
+        "gate": "A3→D2",
+        "families_top32": 16,
+        "family_fraction": 0.444444
+      },
+      {
+        "gate": "A2→D3",
+        "families_top32": 15,
+        "family_fraction": 0.416667
+      },
+      {
+        "gate": "A2→B3",
+        "families_top32": 15,
+        "family_fraction": 0.416667
+      },
+      {
+        "gate": "A1→B1",
+        "families_top32": 15,
+        "family_fraction": 0.416667
+      },
+      {
+        "gate": "B3→A2",
+        "families_top32": 12,
+        "family_fraction": 0.333333
+      },
+      {
+        "gate": "B2→D2",
+        "families_top32": 11,
+        "family_fraction": 0.305556
+      },
+      {
+        "gate": "A3→B1",
+        "families_top32": 11,
+        "family_fraction": 0.305556
+      },
+      {
+        "gate": "A3→C2",
+        "families_top32": 11,
+        "family_fraction": 0.305556
+      },
+      {
+        "gate": "A2→C2",
+        "families_top32": 11,
+        "family_fraction": 0.305556
+      },
+      {
+        "gate": "A3→B3",
+        "families_top32": 11,
+        "family_fraction": 0.305556
+      },
+      {
+        "gate": "D2→C2",
+        "families_top32": 10,
+        "family_fraction": 0.277778
+      },
+      {
+        "gate": "A2→D1",
+        "families_top32": 9,
+        "family_fraction": 0.25
+      },
+      {
+        "gate": "C1→A1",
+        "families_top32": 9,
+        "family_fraction": 0.25
+      },
+      {
+        "gate": "B3→A1",
+        "families_top32": 8,
+        "family_fraction": 0.222222
+      },
+      {
+        "gate": "C3→A1",
+        "families_top32": 8,
+        "family_fraction": 0.222222
+      },
+      {
+        "gate": "B3→A3",
+        "families_top32": 8,
+        "family_fraction": 0.222222
+      },
+      {
+        "gate": "B2→D3",
+        "families_top32": 7,
+        "family_fraction": 0.194444
+      },
+      {
+        "gate": "C3→A3",
+        "families_top32": 7,
+        "family_fraction": 0.194444
+      },
+      {
+        "gate": "B2→B2",
+        "families_top32": 6,
+        "family_fraction": 0.166667
+      },
+      {
+        "gate": "A1→D4",
+        "families_top32": 6,
+        "family_fraction": 0.166667
+      },
+      {
+        "gate": "C1→A2",
+        "families_top32": 6,
+        "family_fraction": 0.166667
+      },
+      {
+        "gate": "C4→A3",
+        "families_top32": 6,
+        "family_fraction": 0.166667
+      }
+    ],
+    "bootstrap_stability": [
+      {
+        "gate": "D3→A3",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.020169
+      },
+      {
+        "gate": "D3→A2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.022913
+      },
+      {
+        "gate": "D3→A1",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.022452
+      },
+      {
+        "gate": "D1→A2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.019098
+      },
+      {
+        "gate": "D1→A1",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.017953
+      },
+      {
+        "gate": "D2→A1",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.02179
+      },
+      {
+        "gate": "D2→A2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.018337
+      },
+      {
+        "gate": "D2→C2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.034101
+      },
+      {
+        "gate": "C2→A1",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.020696
+      },
+      {
+        "gate": "A3→B2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.02788
+      },
+      {
+        "gate": "A1→B2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.044087
+      },
+      {
+        "gate": "A2→B2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.036874
+      },
+      {
+        "gate": "B2→A1",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.038269
+      },
+      {
+        "gate": "B2→A3",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.020917
+      },
+      {
+        "gate": "B2→A2",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.034409
+      },
+      {
+        "gate": "B1→A1",
+        "top20_bootstrap_fraction": 1.0,
+        "mean_mass": 0.018565
+      },
+      {
+        "gate": "D2→A3",
+        "top20_bootstrap_fraction": 0.9625,
+        "mean_mass": 0.016287
+      },
+      {
+        "gate": "B1→A2",
+        "top20_bootstrap_fraction": 0.925,
+        "mean_mass": 0.016039
+      },
+      {
+        "gate": "A1→C2",
+        "top20_bootstrap_fraction": 0.875,
+        "mean_mass": 0.015704
+      },
+      {
+        "gate": "A2→B1",
+        "top20_bootstrap_fraction": 0.5375,
+        "mean_mass": 0.014699
+      },
+      {
+        "gate": "C2→A2",
+        "top20_bootstrap_fraction": 0.4125,
+        "mean_mass": 0.014266
+      },
+      {
+        "gate": "A1→D2",
+        "top20_bootstrap_fraction": 0.175,
+        "mean_mass": 0.013699
+      },
+      {
+        "gate": "A1→B1",
+        "top20_bootstrap_fraction": 0.0625,
+        "mean_mass": 0.012496
+      },
+      {
+        "gate": "A1→B3",
+        "top20_bootstrap_fraction": 0.0375,
+        "mean_mass": 0.01047
+      },
+      {
+        "gate": "B3→D2",
+        "top20_bootstrap_fraction": 0.0125,
+        "mean_mass": 0.007294
+      },
+      {
+        "gate": "D4→A2",
+        "top20_bootstrap_fraction": 0.0,
+        "mean_mass": 0.002613
+      },
+      {
+        "gate": "D4→A1",
+        "top20_bootstrap_fraction": 0.0,
+        "mean_mass": 0.00239
+      },
+      {
+        "gate": "D4→B3",
+        "top20_bootstrap_fraction": 0.0,
+        "mean_mass": 3.8e-05
+      },
+      {
+        "gate": "D4→C4",
+        "top20_bootstrap_fraction": 0.0,
+        "mean_mass": 0.000124
+      },
+      {
+        "gate": "D4→D3",
+        "top20_bootstrap_fraction": 0.0,
+        "mean_mass": 0.000397
+      }
+    ],
+    "root_comparison": {
+      "all_vs_family_balanced_top20_overlap": 18,
+      "all_vs_early_top20_overlap": 18,
+      "family_balanced_vs_early_top20_overlap": 16
+    }
   }
 }

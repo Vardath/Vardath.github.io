@@ -78,3 +78,91 @@ Closest language profiles to the latent root (after allowed alignment):
 ## Interpretation
 
 A useful result requires the structured operators to outperform arbitrary state permutations and ideally improve recovery of known family relationships. If they do not, the finite-operator idea is not supported by this test. The recursive map in the JSON is descriptive and should not be mistaken for an accepted linguistic family tree.
+
+## Refinement: can the root survive family imbalance?
+
+The family-balanced reconstruction gives each of **36 named PHOIBLE families one vote**, rather than allowing large families to dominate the root.
+
+- Family-balanced entropy: **6.541 bits** (93.1 effective gates)
+- Top-20 overlap with the all-language root: **18/20**
+
+Family-balanced top gates:
+
+- A1→B2: 0.04088
+- B2→A1: 0.03772
+- A2→B2: 0.03706
+- B2→A2: 0.03448
+- D2→C2: 0.03370
+- A3→B2: 0.02878
+- D2→A1: 0.02285
+- D3→A2: 0.02242
+- B2→A3: 0.02134
+- D3→A3: 0.02063
+- C2→A1: 0.01975
+- D3→A1: 0.01936
+- B1→A1: 0.01928
+- D1→A2: 0.01910
+- D2→A2: 0.01875
+
+## Refinement: older/early-labelled subset
+
+The benchmark contains **27** records explicitly labelled Ancient/Old/Middle/Classical or selected early-attested languages. This is not a chronological phylogeny; it is a bias check using the labels available in WikiPron.
+
+- Early-subset entropy: **6.373 bits**
+- Top-20 overlap with the all-language root: **18/20
+
+Early-subset top gates:
+
+- A1→B2: 0.07167
+- B2→A1: 0.05749
+- A2→B2: 0.03735
+- D2→A1: 0.03461
+- A3→B2: 0.03118
+- A1→C2: 0.02952
+- C2→A1: 0.02719
+- B2→A2: 0.02473
+- B1→A1: 0.02156
+- A1→D2: 0.02104
+- B2→D2: 0.02031
+- B2→A3: 0.01977
+- D3→A1: 0.01720
+- D2→A2: 0.01582
+- D1→A1: 0.01554
+
+## Bootstrap-stable root gates
+
+Each bootstrap chooses one language from every named family, reconstructs a root, and records which gates remain in the top 20. High survival means the inferred root feature is not being carried by one oversized family.
+
+- D3→A3: top-20 in 100.0% of runs; mean mass 0.02017
+- D3→A2: top-20 in 100.0% of runs; mean mass 0.02291
+- D3→A1: top-20 in 100.0% of runs; mean mass 0.02245
+- D1→A2: top-20 in 100.0% of runs; mean mass 0.01910
+- D1→A1: top-20 in 100.0% of runs; mean mass 0.01795
+- D2→A1: top-20 in 100.0% of runs; mean mass 0.02179
+- D2→A2: top-20 in 100.0% of runs; mean mass 0.01834
+- D2→C2: top-20 in 100.0% of runs; mean mass 0.03410
+- C2→A1: top-20 in 100.0% of runs; mean mass 0.02070
+- A3→B2: top-20 in 100.0% of runs; mean mass 0.02788
+- A1→B2: top-20 in 100.0% of runs; mean mass 0.04409
+- A2→B2: top-20 in 100.0% of runs; mean mass 0.03687
+- B2→A1: top-20 in 100.0% of runs; mean mass 0.03827
+- B2→A3: top-20 in 100.0% of runs; mean mass 0.02092
+- B2→A2: top-20 in 100.0% of runs; mean mass 0.03441
+
+## Recurrent family-level gates
+
+- A1→B2: top-32 in 33/36 families (91.7%)
+- B2→A1: top-32 in 33/36 families (91.7%)
+- D2→A1: top-32 in 32/36 families (88.9%)
+- A2→B2: top-32 in 32/36 families (88.9%)
+- B2→A2: top-32 in 32/36 families (88.9%)
+- D3→A3: top-32 in 31/36 families (86.1%)
+- A3→B2: top-32 in 30/36 families (83.3%)
+- D3→A2: top-32 in 29/36 families (80.6%)
+- B2→A3: top-32 in 29/36 families (80.6%)
+- D1→A1: top-32 in 28/36 families (77.8%)
+- D2→A3: top-32 in 28/36 families (77.8%)
+- D3→A1: top-32 in 28/36 families (77.8%)
+- D2→A2: top-32 in 27/36 families (75.0%)
+- B1→A1: top-32 in 27/36 families (75.0%)
+- C2→A1: top-32 in 26/36 families (72.2%)
