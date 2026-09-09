@@ -1,0 +1,41 @@
+name: Reconstruct Original Language Hierarchically
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/reconstruct_original_language_hierarchical.py'
+      - '.github/workflows/reconstruct-original-language-hierarchical.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run hierarchical phonetic regression and dictionary reconstruction
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: python tools/reconstruct_original_language_hierarchical.py
+      - name: Commit hierarchical results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-hierarchical-reconstruction.json data/phonetic-hierarchical-reconstruction.md data/phonetic-original-language-dictionary.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add hierarchical original-language reconstruction results'
+            git pull --rebase origin main
+            git push
+          fi
