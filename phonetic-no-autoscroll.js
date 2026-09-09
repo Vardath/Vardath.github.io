@@ -21,30 +21,29 @@
   vs.src='phonetic-validation-status.js?v=20260905-validation1';
   vs.defer=true; document.head.appendChild(vs);
 
-  // Browser-native full-dataset 3×3 → 4×4 → 5×5 phonetic-coordinate / magic-square experiment.
   const lab=document.createElement('script');
   lab.src='phonetic-345-magic-page.js?v=20260906-coordinate2';
   lab.defer=true; document.head.appendChild(lab);
 
-  // Locally-run frozen-method hold-out validation, displayed below the verified coordinate result.
   const hv=document.createElement('script');
   hv.src='phonetic-holdout-results.js?v=20260906-holdout1';
   hv.defer=true; document.head.appendChild(hv);
 
-  // Plain-language explanation + hover/focus tooltips for the live coordinate tool and result tables.
   const ex=document.createElement('script');
   ex.src='phonetic-coordinate-explainer.js?v=20260906-explain1';
   ex.defer=true; document.head.appendChild(ex);
 
-  // Plain-language summary of the completed local ablation/specificity/opposition tests.
   const cc=document.createElement('script');
   cc.src='phonetic-conclusions-20260906.js?v=20260906-conclusions1';
   cc.defer=true; document.head.appendChild(cc);
 
-  // Mirrored-language hypothesis lab: reversal, articulation reflection, combined transforms and batch controls.
   const ml=document.createElement('script');
   ml.src='phonetic-mirror-lab.js?v=20260909-mirror1';
   ml.defer=true; document.head.appendChild(ml);
+
+  const mg=document.createElement('script');
+  mg.src='phonetic-manuscript-grid.js?v=20260909-grid1';
+  mg.defer=true; document.head.appendChild(mg);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
