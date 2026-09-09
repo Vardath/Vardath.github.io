@@ -1,0 +1,1107 @@
+{
+  "version": 1,
+  "source": {
+    "benchmark": "data/phonetic-benchmark-summary.json",
+    "languages": 348,
+    "profile": "normalized 256 directed-gate frequency vector",
+    "pins": {
+      "wikipron": "d282e848a211ea31cfd730f0ced8bc8cdab9e83d",
+      "phoible": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+    }
+  },
+  "research_boundary": "This reconstructs a latent phonetic/gate-state prototype, not a recoverable original vocabulary, grammar, script, or proof of deliberate ancient engineering.",
+  "operators": [
+    {
+      "id": "identity",
+      "place": false,
+      "manner": false,
+      "reverse": false,
+      "description": "No transformation"
+    },
+    {
+      "id": "reverse",
+      "place": false,
+      "manner": false,
+      "reverse": true,
+      "description": "Reverse gate direction / temporal trajectory"
+    },
+    {
+      "id": "place",
+      "place": true,
+      "manner": false,
+      "reverse": false,
+      "description": "Reflect bridge place: labial ↔ dorsal"
+    },
+    {
+      "id": "reverse+place",
+      "place": true,
+      "manner": false,
+      "reverse": true,
+      "description": "Reverse trajectory plus place reflection"
+    },
+    {
+      "id": "manner",
+      "place": false,
+      "manner": true,
+      "reverse": false,
+      "description": "Reflect broad manner: sonorant ↔ stop/obstruent"
+    },
+    {
+      "id": "reverse+manner",
+      "place": false,
+      "manner": true,
+      "reverse": true,
+      "description": "Reverse trajectory plus manner reflection"
+    },
+    {
+      "id": "place+manner",
+      "place": true,
+      "manner": true,
+      "reverse": false,
+      "description": "Reflect place and manner"
+    },
+    {
+      "id": "reverse+place+manner",
+      "place": true,
+      "manner": true,
+      "reverse": true,
+      "description": "Reverse trajectory plus place and manner reflection"
+    }
+  ],
+  "genealogy_test": {
+    "eligible_languages": 179,
+    "identity_nearest_neighbor_family_accuracy": 0.446927,
+    "operator_aware_nearest_neighbor_family_accuracy": 0.446927,
+    "change": 0.0,
+    "same_family_mean_operator_gain": 0.013794,
+    "cross_family_mean_operator_gain": 0.020625,
+    "structured_gain_advantage_same_minus_cross": -0.006831,
+    "random_control_same_family_gain_mean": 0.003093,
+    "random_control_same_family_gain_sd": 0.001586,
+    "random_control_nn_accuracy_mean": 0.44879,
+    "random_control_nn_accuracy_sd": 0.003484
+  },
+  "latent_root": {
+    "entropy_bits": 6.496777,
+    "effective_gates": 90.307669,
+    "mean_identity_similarity": 0.766741,
+    "mean_operator_aligned_similarity": 0.773596,
+    "alignment_gain": 0.006855,
+    "operator_usage": {
+      "identity": 295,
+      "place": 38,
+      "reverse": 6,
+      "manner": 5,
+      "reverse+manner": 4
+    },
+    "top_gates": [
+      {
+        "index": 5,
+        "gate": "A1→B2",
+        "mass": 0.05533,
+        "source": "A1",
+        "target": "B2"
+      },
+      {
+        "index": 80,
+        "gate": "B2→A1",
+        "mass": 0.048174,
+        "source": "B2",
+        "target": "A1"
+      },
+      {
+        "index": 21,
+        "gate": "A2→B2",
+        "mass": 0.035723,
+        "source": "A2",
+        "target": "B2"
+      },
+      {
+        "index": 208,
+        "gate": "D2→A1",
+        "mass": 0.030707,
+        "source": "D2",
+        "target": "A1"
+      },
+      {
+        "index": 81,
+        "gate": "B2→A2",
+        "mass": 0.029503,
+        "source": "B2",
+        "target": "A2"
+      },
+      {
+        "index": 37,
+        "gate": "A3→B2",
+        "mass": 0.026781,
+        "source": "A3",
+        "target": "B2"
+      },
+      {
+        "index": 144,
+        "gate": "C2→A1",
+        "mass": 0.026417,
+        "source": "C2",
+        "target": "A1"
+      },
+      {
+        "index": 82,
+        "gate": "B2→A3",
+        "mass": 0.022456,
+        "source": "B2",
+        "target": "A3"
+      },
+      {
+        "index": 224,
+        "gate": "D3→A1",
+        "mass": 0.021287,
+        "source": "D3",
+        "target": "A1"
+      },
+      {
+        "index": 9,
+        "gate": "A1→C2",
+        "mass": 0.020189,
+        "source": "A1",
+        "target": "C2"
+      },
+      {
+        "index": 192,
+        "gate": "D1→A1",
+        "mass": 0.019838,
+        "source": "D1",
+        "target": "A1"
+      },
+      {
+        "index": 209,
+        "gate": "D2→A2",
+        "mass": 0.019288,
+        "source": "D2",
+        "target": "A2"
+      },
+      {
+        "index": 64,
+        "gate": "B1→A1",
+        "mass": 0.018451,
+        "source": "B1",
+        "target": "A1"
+      },
+      {
+        "index": 225,
+        "gate": "D3→A2",
+        "mass": 0.017879,
+        "source": "D3",
+        "target": "A2"
+      },
+      {
+        "index": 13,
+        "gate": "A1→D2",
+        "mass": 0.017446,
+        "source": "A1",
+        "target": "D2"
+      },
+      {
+        "index": 226,
+        "gate": "D3→A3",
+        "mass": 0.017332,
+        "source": "D3",
+        "target": "A3"
+      },
+      {
+        "index": 210,
+        "gate": "D2→A3",
+        "mass": 0.015831,
+        "source": "D2",
+        "target": "A3"
+      },
+      {
+        "index": 193,
+        "gate": "D1→A2",
+        "mass": 0.01521,
+        "source": "D1",
+        "target": "A2"
+      },
+      {
+        "index": 65,
+        "gate": "B1→A2",
+        "mass": 0.013961,
+        "source": "B1",
+        "target": "A2"
+      },
+      {
+        "index": 93,
+        "gate": "B2→D2",
+        "mass": 0.013814,
+        "source": "B2",
+        "target": "D2"
+      },
+      {
+        "index": 145,
+        "gate": "C2→A2",
+        "mass": 0.013252,
+        "source": "C2",
+        "target": "A2"
+      },
+      {
+        "index": 14,
+        "gate": "A1→D3",
+        "mass": 0.013188,
+        "source": "A1",
+        "target": "D3"
+      },
+      {
+        "index": 4,
+        "gate": "A1→B1",
+        "mass": 0.012499,
+        "source": "A1",
+        "target": "B1"
+      },
+      {
+        "index": 29,
+        "gate": "A2→D2",
+        "mass": 0.012314,
+        "source": "A2",
+        "target": "D2"
+      },
+      {
+        "index": 6,
+        "gate": "A1→B3",
+        "mass": 0.012159,
+        "source": "A1",
+        "target": "B3"
+      },
+      {
+        "index": 20,
+        "gate": "A2→B1",
+        "mass": 0.011599,
+        "source": "A2",
+        "target": "B1"
+      },
+      {
+        "index": 146,
+        "gate": "C2→A3",
+        "mass": 0.011486,
+        "source": "C2",
+        "target": "A3"
+      },
+      {
+        "index": 194,
+        "gate": "D1→A3",
+        "mass": 0.011305,
+        "source": "D1",
+        "target": "A3"
+      },
+      {
+        "index": 25,
+        "gate": "A2→C2",
+        "mass": 0.010001,
+        "source": "A2",
+        "target": "C2"
+      },
+      {
+        "index": 41,
+        "gate": "A3→C2",
+        "mass": 0.009628,
+        "source": "A3",
+        "target": "C2"
+      },
+      {
+        "index": 45,
+        "gate": "A3→D2",
+        "mass": 0.009067,
+        "source": "A3",
+        "target": "D2"
+      },
+      {
+        "index": 66,
+        "gate": "B1→A3",
+        "mass": 0.009054,
+        "source": "B1",
+        "target": "A3"
+      }
+    ],
+    "state_profile": [
+      {
+        "cell": "A1",
+        "outgoing": 0.171143,
+        "incoming": 0.213157,
+        "balance": 0.042013
+      },
+      {
+        "cell": "A2",
+        "outgoing": 0.115852,
+        "incoming": 0.139439,
+        "balance": 0.023587
+      },
+      {
+        "cell": "A3",
+        "outgoing": 0.091866,
+        "incoming": 0.116955,
+        "balance": 0.025088
+      },
+      {
+        "cell": "A4",
+        "outgoing": 0.019192,
+        "incoming": 0.022102,
+        "balance": 0.00291
+      },
+      {
+        "cell": "B1",
+        "outgoing": 0.053424,
+        "incoming": 0.047752,
+        "balance": -0.005671
+      },
+      {
+        "cell": "B2",
+        "outgoing": 0.146168,
+        "incoming": 0.158077,
+        "balance": 0.011909
+      },
+      {
+        "cell": "B3",
+        "outgoing": 0.032263,
+        "incoming": 0.038088,
+        "balance": 0.005825
+      },
+      {
+        "cell": "B4",
+        "outgoing": 0.000332,
+        "incoming": 0.00048,
+        "balance": 0.000148
+      },
+      {
+        "cell": "C1",
+        "outgoing": 0.023207,
+        "incoming": 0.015671,
+        "balance": -0.007537
+      },
+      {
+        "cell": "C2",
+        "outgoing": 0.077875,
+        "incoming": 0.06409,
+        "balance": -0.013785
+      },
+      {
+        "cell": "C3",
+        "outgoing": 0.016588,
+        "incoming": 0.013861,
+        "balance": -0.002727
+      },
+      {
+        "cell": "C4",
+        "outgoing": 0.016003,
+        "incoming": 0.00834,
+        "balance": -0.007663
+      },
+      {
+        "cell": "D1",
+        "outgoing": 0.060308,
+        "incoming": 0.033291,
+        "balance": -0.027017
+      },
+      {
+        "cell": "D2",
+        "outgoing": 0.089746,
+        "incoming": 0.071394,
+        "balance": -0.018352
+      },
+      {
+        "cell": "D3",
+        "outgoing": 0.07726,
+        "incoming": 0.046246,
+        "balance": -0.031014
+      },
+      {
+        "cell": "D4",
+        "outgoing": 0.008772,
+        "incoming": 0.011057,
+        "balance": 0.002286
+      }
+    ],
+    "closest_language_proxies": [
+      {
+        "iso": "oci",
+        "name": "Occitan (post 1500)",
+        "family": "Indo-European",
+        "aligned_similarity": 0.953812,
+        "identity_similarity": 0.953812,
+        "operator": "identity"
+      },
+      {
+        "iso": "sqi",
+        "name": "Albanian",
+        "family": "Unclassified",
+        "aligned_similarity": 0.953412,
+        "identity_similarity": 0.953412,
+        "operator": "identity"
+      },
+      {
+        "iso": "ind",
+        "name": "Indonesian",
+        "family": "Austronesian",
+        "aligned_similarity": 0.952987,
+        "identity_similarity": 0.952987,
+        "operator": "identity"
+      },
+      {
+        "iso": "msa",
+        "name": "Malay (macrolanguage)",
+        "family": "Unclassified",
+        "aligned_similarity": 0.944697,
+        "identity_similarity": 0.944697,
+        "operator": "identity"
+      },
+      {
+        "iso": "lmo",
+        "name": "Lombard",
+        "family": "Unclassified",
+        "aligned_similarity": 0.944452,
+        "identity_similarity": 0.944452,
+        "operator": "identity"
+      },
+      {
+        "iso": "tur",
+        "name": "Turkish",
+        "family": "Turkic",
+        "aligned_similarity": 0.941398,
+        "identity_similarity": 0.941398,
+        "operator": "identity"
+      },
+      {
+        "iso": "ina",
+        "name": "Interlingua (International Auxiliary Language Association)",
+        "family": "Unclassified",
+        "aligned_similarity": 0.941231,
+        "identity_similarity": 0.941231,
+        "operator": "identity"
+      },
+      {
+        "iso": "ron",
+        "name": "Romanian",
+        "family": "Indo-European",
+        "aligned_similarity": 0.938766,
+        "identity_similarity": 0.938766,
+        "operator": "identity"
+      },
+      {
+        "iso": "srn",
+        "name": "Sranan Tongo",
+        "family": "Unclassified",
+        "aligned_similarity": 0.934597,
+        "identity_similarity": 0.934597,
+        "operator": "identity"
+      },
+      {
+        "iso": "tgk",
+        "name": "Tajik",
+        "family": "Indo-European",
+        "aligned_similarity": 0.934352,
+        "identity_similarity": 0.862148,
+        "operator": "place"
+      },
+      {
+        "iso": "ast",
+        "name": "Asturian",
+        "family": "Indo-European",
+        "aligned_similarity": 0.934317,
+        "identity_similarity": 0.934317,
+        "operator": "identity"
+      },
+      {
+        "iso": "lat",
+        "name": "Latin",
+        "family": "Unclassified",
+        "aligned_similarity": 0.93408,
+        "identity_similarity": 0.93408,
+        "operator": "identity"
+      },
+      {
+        "iso": "glg",
+        "name": "Galician",
+        "family": "Indo-European",
+        "aligned_similarity": 0.934024,
+        "identity_similarity": 0.934024,
+        "operator": "identity"
+      },
+      {
+        "iso": "ita",
+        "name": "Italian",
+        "family": "Indo-European",
+        "aligned_similarity": 0.933077,
+        "identity_similarity": 0.933077,
+        "operator": "identity"
+      },
+      {
+        "iso": "div",
+        "name": "Dhivehi",
+        "family": "Indo-European",
+        "aligned_similarity": 0.932458,
+        "identity_similarity": 0.932458,
+        "operator": "identity"
+      },
+      {
+        "iso": "jam",
+        "name": "Jamaican Creole English",
+        "family": "Indo-European",
+        "aligned_similarity": 0.932304,
+        "identity_similarity": 0.932304,
+        "operator": "identity"
+      },
+      {
+        "iso": "mlt",
+        "name": "Maltese",
+        "family": "Afro-Asiatic",
+        "aligned_similarity": 0.931888,
+        "identity_similarity": 0.931888,
+        "operator": "identity"
+      },
+      {
+        "iso": "swe",
+        "name": "Swedish",
+        "family": "Indo-European",
+        "aligned_similarity": 0.931702,
+        "identity_similarity": 0.931702,
+        "operator": "identity"
+      },
+      {
+        "iso": "slk",
+        "name": "Slovak",
+        "family": "Indo-European",
+        "aligned_similarity": 0.931097,
+        "identity_similarity": 0.931097,
+        "operator": "identity"
+      },
+      {
+        "iso": "spa",
+        "name": "Spanish",
+        "family": "Indo-European",
+        "aligned_similarity": 0.93018,
+        "identity_similarity": 0.93018,
+        "operator": "identity"
+      },
+      {
+        "iso": "ben",
+        "name": "Bengali",
+        "family": "Indo-European",
+        "aligned_similarity": 0.929123,
+        "identity_similarity": 0.814859,
+        "operator": "place"
+      },
+      {
+        "iso": "iba",
+        "name": "Iban",
+        "family": "Austronesian",
+        "aligned_similarity": 0.928248,
+        "identity_similarity": 0.928248,
+        "operator": "identity"
+      },
+      {
+        "iso": "ces",
+        "name": "Czech",
+        "family": "Indo-European",
+        "aligned_similarity": 0.926277,
+        "identity_similarity": 0.926277,
+        "operator": "identity"
+      },
+      {
+        "iso": "hrx",
+        "name": "Hunsrik",
+        "family": "Unclassified",
+        "aligned_similarity": 0.925946,
+        "identity_similarity": 0.925946,
+        "operator": "identity"
+      },
+      {
+        "iso": "arg",
+        "name": "Aragonese",
+        "family": "Indo-European",
+        "aligned_similarity": 0.922985,
+        "identity_similarity": 0.922985,
+        "operator": "identity"
+      }
+    ]
+  },
+  "diachronic_checks": [
+    {
+      "older": "Ancient Greek (to 1453)",
+      "newer": "Modern Greek (1453-)",
+      "identity_similarity": 0.956557,
+      "best_similarity": 0.956557,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Old English (ca. 450-1100)",
+      "newer": "Middle English (1100-1500)",
+      "identity_similarity": 0.890335,
+      "best_similarity": 0.890335,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Middle English (1100-1500)",
+      "newer": "English",
+      "identity_similarity": 0.926647,
+      "best_similarity": 0.926647,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Old Spanish",
+      "newer": "Spanish",
+      "identity_similarity": 0.929224,
+      "best_similarity": 0.929224,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Old High German (ca. 750-1050)",
+      "newer": "German",
+      "identity_similarity": 0.792864,
+      "best_similarity": 0.792864,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Middle Dutch (ca. 1050-1350)",
+      "newer": "Dutch",
+      "identity_similarity": 0.941166,
+      "best_similarity": 0.941166,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Old Russian",
+      "newer": "Russian",
+      "identity_similarity": 0.78215,
+      "best_similarity": 0.78215,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Old French (842-ca. 1400)",
+      "newer": "French",
+      "identity_similarity": 0.664649,
+      "best_similarity": 0.664649,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Old Irish (to 900)",
+      "newer": "Middle Irish (900-1200)",
+      "identity_similarity": 0.911016,
+      "best_similarity": 0.911016,
+      "gain": 0.0,
+      "best_operator": "identity"
+    },
+    {
+      "older": "Middle Irish (900-1200)",
+      "newer": "Irish",
+      "identity_similarity": 0.883733,
+      "best_similarity": 0.883733,
+      "gain": 0.0,
+      "best_operator": "identity"
+    }
+  ],
+  "recursive_operator_map": {
+    "id": "R",
+    "depth": 0,
+    "size": 348,
+    "dominant_family": "Indo-European",
+    "family_purity": 0.20114942528735633,
+    "families": [
+      [
+        "Indo-European",
+        70
+      ],
+      [
+        "Austronesian",
+        17
+      ],
+      [
+        "Sino-Tibetan",
+        12
+      ],
+      [
+        "Uralic",
+        12
+      ],
+      [
+        "Afro-Asiatic",
+        11
+      ],
+      [
+        "Turkic",
+        8
+      ],
+      [
+        "Atlantic-Congo",
+        7
+      ],
+      [
+        "Tai-Kadai",
+        5
+      ]
+    ],
+    "examples": [
+      "Abkhazian",
+      "Achinese",
+      "Adyghe",
+      "Afar",
+      "Afrikaans",
+      "Akkadian",
+      "Akkala Sami",
+      "Albanian"
+    ],
+    "members": [
+      "Abkhazian",
+      "Achinese",
+      "Adyghe",
+      "Afar",
+      "Afrikaans",
+      "Akkadian",
+      "Akkala Sami",
+      "Albanian",
+      "Aleut",
+      "Amharic",
+      "Ancient Greek (to 1453)",
+      "Arabic",
+      "Aragonese",
+      "Armenian",
+      "Arpitan",
+      "Assamese",
+      "Assyrian Neo-Aramaic",
+      "Asturian",
+      "Atong (India)",
+      "Azerbaijani",
+      "Bahnar",
+      "Balinese",
+      "Banggarla",
+      "Bashkir",
+      "Basque",
+      "Bats",
+      "Bavarian",
+      "Belarusian",
+      "Bengali",
+      "Bouyei",
+      "Breton",
+      "Brunei",
+      "Bulgarian",
+      "Buriat",
+      "Burmese",
+      "Carrier",
+      "Catalan",
+      "Cebuano",
+      "Central Atlas Tamazight",
+      "Central Bikol",
+      "Central Kurdish",
+      "Central Nahuatl",
+      "Chechen",
+      "Cherokee",
+      "Chibcha",
+      "Chickasaw",
+      "Choctaw",
+      "Classical Nahuatl",
+      "Classical Syriac",
+      "Coptic",
+      "Cornish",
+      "Corsican",
+      "Czech",
+      "Dalmatian",
+      "Danish",
+      "Dhivehi",
+      "Dongxiang",
+      "Dungan",
+      "Dutch",
+      "Dzongkha",
+      "Eastern Lawa",
+      "Egyptian (Ancient)",
+      "Egyptian Arabic",
+      "English",
+      "Esperanto",
+      "Estonian",
+      "Etruscan",
+      "Evenki",
+      "Ewe",
+      "Fala",
+      "Farefare",
+      "Faroese",
+      "Fernando Po Creole English",
+      "Finnish",
+      "French",
+      "Galibi Carib",
+      "Galician",
+      "Gamilaraay",
+      "Gan Chinese",
+      "Gawri",
+      "Georgian",
+      "German",
+      "Gilyak",
+      "Gothic",
+      "Gujarati",
+      "Gulf Arabic",
+      "Gun",
+      "Hadza",
+      "Haitian",
+      "Hakka Chinese",
+      "Hausa",
+      "Hawaiian",
+      "Hebrew",
+      "Hijazi Arabic",
+      "Hiligaynon",
+      "Hindi",
+      "Hmong Daw",
+      "Hungarian",
+      "Hunsrik",
+      "Iban",
+      "Icelandic",
+      "Ido",
+      "Iloko",
+      "Indonesian",
+      "Ingrian",
+      "Ingush",
+      "Interlingua (International Auxiliary Language Association)",
+      "Irish",
+      "Iron Ossetic",
+      "Isthmus-Mecayapan Nahuatl",
+      "Italian",
+      "Jamaican Creole English",
+      "Japanese",
+      "Javanese",
+      "Jejueo",
+      "Jinyu Chinese",
+      "Juǀʼhoan",
+      "Jèrriais",
+      "Kabardian",
+      "Kaingang",
+      "Kalaallisut",
+      "Kalmyk",
+      "Kannada",
+      "Karelian",
+      "Kashmiri",
+      "Kashubian",
+      "Kawi",
+      "Kazakh",
+      "Khalaj",
+      "Khiamniungan Naga",
+      "Khmer",
+      "Khumi Chin",
+      "Kikuyu",
+      "Kildin Sami",
+      "Kirghiz",
+      "Komi-Permyak",
+      "Komi-Zyrian",
+      "Konkani (macrolanguage)",
+      "Korean",
+      "Kurtokha",
+      "Kurukh",
+      "Kwakiutl",
+      "Ladino",
+      "Lamboya",
+      "Lao",
+      "Lashi",
+      "Late Middle Chinese",
+      "Latgalian",
+      "Latin",
+      "Latvian",
+      "Laz",
+      "Leizhou Chinese",
+      "Levantine Arabic",
+      "Libyan Arabic",
+      "Ligurian",
+      "Limbu",
+      "Limburgan",
+      "Lithuanian",
+      "Liv",
+      "Livvi",
+      "Lolopo",
+      "Lombard",
+      "Louisiana Creole",
+      "Low German",
+      "Lower Sorbian",
+      "Lushootseed",
+      "Luxembourgish",
+      "Lü",
+      "Macedo-Romanian",
+      "Macedonian",
+      "Maguindanaon",
+      "Maithili",
+      "Makasar",
+      "Malagasy",
+      "Malay (macrolanguage)",
+      "Malayalam",
+      "Malecite-Passamaquoddy",
+      "Maltese",
+      "Manchu",
+      "Mandarin Chinese",
+      "Manx",
+      "Maori",
+      "Maquiritari",
+      "Marathi",
+      "Marshallese",
+      "Mesopotamian Arabic",
+      "Mi'kmaq",
+      "Middle Dutch (ca. 1050-1350)",
+      "Middle English (1100-1500)",
+      "Middle High German (ca. 1050-1500)",
+      "Middle Irish (900-1200)",
+      "Middle Korean (10th-16th cent.)",
+      "Middle Low German",
+      "Middle Welsh",
+      "Min Bei Chinese",
+      "Min Dong Chinese",
+      "Min Nan Chinese",
+      "Modern Greek (1453-)",
+      "Moksha",
+      "Mon",
+      "Mongolian",
+      "Morisyen",
+      "Moroccan Arabic",
+      "Muong",
+      "Murui Huitoto",
+      "Namuyi",
+      "Navajo",
+      "Neapolitan",
+      "Nenets",
+      "Nepali (macrolanguage)",
+      "Newari",
+      "Nhengatu",
+      "Northern Frisian",
+      "Northern Kurdish",
+      "Northern Sami",
+      "Northern Tiwa",
+      "Norwegian",
+      "Norwegian Bokmål",
+      "Norwegian Nynorsk",
+      "Nupe-Nupe-Tako",
+      "Nyahkur",
+      "Nyanja",
+      "Nǁng",
+      "Occitan (post 1500)",
+      "Official Aramaic (700-300 BCE)",
+      "Ojibwa",
+      "Old Chinese",
+      "Old English (ca. 450-1100)",
+      "Old French (842-ca. 1400)",
+      "Old Frisian",
+      "Old High German (ca. 750-1050)",
+      "Old Irish (to 900)",
+      "Old Norse",
+      "Old Russian",
+      "Old Saxon",
+      "Old Spanish",
+      "Ottoman Turkish (1500-1928)",
+      "Pampanga",
+      "Pangasinan",
+      "Panjabi",
+      "Paraguayan Guaraní",
+      "Pennsylvania German",
+      "Persian",
+      "Phalura",
+      "Piemontese",
+      "Pipil",
+      "Pitjantjatjara",
+      "Plains Cree",
+      "Pnar",
+      "Polabian",
+      "Polish",
+      "Portuguese",
+      "Pu-Xian Chinese",
+      "Pushto",
+      "Pwo Western Karen",
+      "Romagnol",
+      "Romanian",
+      "Romany",
+      "Russian",
+      "Rusyn",
+      "Ruthenian",
+      "S'gaw Karen",
+      "Salar",
+      "Sanskrit",
+      "Saraiki",
+      "Sardinian",
+      "Sarsi",
+      "Sassarese Sardinian",
+      "Saterfriesisch",
+      "Scots",
+      "Scottish Gaelic",
+      "Sea Island Creole English",
+      "Senhaja De Srair",
+      "Serbo-Croatian",
+      "Shan",
+      "Sicilian",
+      "Sidamo",
+      "Silesian",
+      "Sindhi",
+      "Sinhala",
+      "Skolt Sami",
+      "Slovak",
+      "Slovenian",
+      "South Levantine Arabic",
+      "South Slavey",
+      "Southern Pinghua",
+      "Southern Yukaghir",
+      "Spanish",
+      "Sranan Tongo",
+      "Sudanese Creole Arabic",
+      "Swahili (macrolanguage)",
+      "Swedish",
+      "Swiss German",
+      "Sylheti",
+      "Tachelhit",
+      "Tagalog",
+      "Tai Dam",
+      "Tajik",
+      "Tamil",
+      "Telugu",
+      "Ternate",
+      "Tetelcingo Nahuatl",
+      "Tewa (USA)",
+      "Thai",
+      "Tibetan",
+      "Tokelau",
+      "Tonga (Tonga Islands)",
+      "Tupí",
+      "Turkish",
+      "Turkmen",
+      "Turoyo",
+      "Tuvinian",
+      "Ubykh",
+      "Uighur",
+      "Ukrainian",
+      "Ulwa",
+      "Uneapa",
+      "Upper Sorbian",
+      "Urak Lawoi'",
+      "Urdu",
+      "Uzbek",
+      "Venetian",
+      "Vietnamese",
+      "Volapük",
+      "Votic",
+      "Waigali",
+      "Walloon",
+      "Waray (Philippines)",
+      "Waurá",
+      "Welsh",
+      "West Makian",
+      "Western Apache",
+      "Western Frisian",
+      "Western Kayah",
+      "Wiyot",
+      "Wu Chinese",
+      "Xhosa",
+      "Xiang Chinese",
+      "Yakut",
+      "Yamphu",
+      "Yiddish",
+      "Yola",
+      "Yoruba",
+      "Yue Chinese",
+      "Zaza",
+      "Zhuang",
+      "Zou",
+      "Zulu"
+    ]
+  }
+}
