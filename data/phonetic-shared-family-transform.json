@@ -1,0 +1,343 @@
+{
+  "version": 2,
+  "research_boundary": "This test asks whether each proto-family can be described by one shared bridge transformation reused across multiple meanings. A positive result would support a recurring family-level transformation grammar, not prove deliberate engineering or a single historical Proto-World language.",
+  "method": {
+    "meanings": [
+      "water",
+      "mother",
+      "fire",
+      "star"
+    ],
+    "families": [
+      "Proto-Indo-European",
+      "Proto-Semitic",
+      "Proto-Austronesian",
+      "Proto-Uralic",
+      "Proto-Dravidian"
+    ],
+    "operators": [
+      "identity",
+      "reverse",
+      "place",
+      "reverse+place",
+      "manner",
+      "reverse+manner",
+      "place+manner",
+      "reverse+place+manner"
+    ],
+    "shared_operator_constraint": "one fixed operator per family across all meanings",
+    "operator_assignments": 32768,
+    "permutation_controls": 200,
+    "shuffle": "meaning labels independently within family",
+    "optimization": "cached dynamic-programming similarities plus NumPy-vectorized exhaustive operator evaluation; statistical search space unchanged"
+  },
+  "summary": {
+    "observed_joint_fit": 0.731012,
+    "permutation_mean": 0.734518,
+    "permutation_sd": 0.012822,
+    "delta_vs_permutation": -0.003506,
+    "p_ge_observed": 0.557214
+  },
+  "family_operators": {
+    "Proto-Indo-European": "identity",
+    "Proto-Semitic": "place",
+    "Proto-Austronesian": "reverse+place+manner",
+    "Proto-Uralic": "place",
+    "Proto-Dravidian": "reverse+manner"
+  },
+  "meanings": {
+    "water": {
+      "hidden_path": [
+        "B3",
+        "A2",
+        "D2",
+        "B2"
+      ],
+      "mean_fit": 0.748333,
+      "alignments": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*wódr̥",
+          "operator": "identity",
+          "score": 0.875,
+          "path": [
+            "B1",
+            "A3",
+            "D2",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*māy-",
+          "operator": "place",
+          "score": 0.708333,
+          "path": [
+            "B1",
+            "A2",
+            "B3"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*daNum",
+          "operator": "reverse+place+manner",
+          "score": 0.7,
+          "path": [
+            "D2",
+            "A2",
+            "B2",
+            "A3",
+            "B1"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*wete",
+          "operator": "place",
+          "score": 0.875,
+          "path": [
+            "B1",
+            "A1",
+            "D2",
+            "A1"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*nīr",
+          "operator": "reverse+manner",
+          "score": 0.583333,
+          "path": [
+            "B2",
+            "A1",
+            "B2"
+          ]
+        }
+      ]
+    },
+    "mother": {
+      "hidden_path": [
+        "A2",
+        "D2",
+        "A3",
+        "B2"
+      ],
+      "mean_fit": 0.667778,
+      "alignments": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*méh₂tēr",
+          "operator": "identity",
+          "score": 0.7,
+          "path": [
+            "B1",
+            "A1",
+            "D2",
+            "A1",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*ʔimm-",
+          "operator": "place",
+          "score": 0.625,
+          "path": [
+            "D4",
+            "A1",
+            "B1"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*ina",
+          "operator": "reverse+place+manner",
+          "score": 0.75,
+          "path": [
+            "A1",
+            "B2",
+            "A2"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*emä",
+          "operator": "place",
+          "score": 0.625,
+          "path": [
+            "A1",
+            "B1",
+            "A2"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*taḷḷay",
+          "operator": "reverse+manner",
+          "score": 0.638889,
+          "path": [
+            "D2",
+            "A2",
+            "B2",
+            "B2",
+            "A2",
+            "B3"
+          ]
+        }
+      ]
+    },
+    "fire": {
+      "hidden_path": [
+        "D1",
+        "A1",
+        "B3",
+        "A2",
+        "B2"
+      ],
+      "mean_fit": 0.786667,
+      "alignments": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*péh₂wr̥",
+          "operator": "identity",
+          "score": 0.9,
+          "path": [
+            "D1",
+            "A1",
+            "C3",
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*ʔiš-",
+          "operator": "place",
+          "score": 0.5,
+          "path": [
+            "D4",
+            "A1",
+            "C2"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*Sapuy",
+          "operator": "reverse+place+manner",
+          "score": 0.966667,
+          "path": [
+            "C2",
+            "A2",
+            "D1",
+            "A3",
+            "B3"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*tule",
+          "operator": "place",
+          "score": 0.7,
+          "path": [
+            "D2",
+            "A3",
+            "B2",
+            "A1"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*tiyam",
+          "operator": "reverse+manner",
+          "score": 0.866667,
+          "path": [
+            "D2",
+            "A1",
+            "B3",
+            "A2",
+            "B1"
+          ]
+        }
+      ]
+    },
+    "star": {
+      "hidden_path": [
+        "D2",
+        "A2",
+        "D2",
+        "D1",
+        "A2"
+      ],
+      "mean_fit": 0.72127,
+      "alignments": [
+        {
+          "family": "Proto-Indo-European",
+          "form": "*h₂stḗr",
+          "operator": "identity",
+          "score": 0.733333,
+          "path": [
+            "C3",
+            "C2",
+            "D2",
+            "A1",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Semitic",
+          "form": "*kabkab-",
+          "operator": "place",
+          "score": 0.777778,
+          "path": [
+            "D3",
+            "A2",
+            "D1",
+            "D3",
+            "A2",
+            "D1"
+          ]
+        },
+        {
+          "family": "Proto-Austronesian",
+          "form": "*bituqən",
+          "operator": "reverse+place+manner",
+          "score": 0.595238,
+          "path": [
+            "D1",
+            "A1",
+            "D2",
+            "A3",
+            "D3",
+            "A2",
+            "B2"
+          ]
+        },
+        {
+          "family": "Proto-Uralic",
+          "form": "*täštä",
+          "operator": "place",
+          "score": 0.933333,
+          "path": [
+            "D2",
+            "A2",
+            "C2",
+            "D2",
+            "A2"
+          ]
+        },
+        {
+          "family": "Proto-Dravidian",
+          "form": "*miHn",
+          "operator": "reverse+manner",
+          "score": 0.566667,
+          "path": [
+            "B1",
+            "A1",
+            "B2"
+          ]
+        }
+      ]
+    }
+  }
+}
