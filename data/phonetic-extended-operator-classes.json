@@ -1,0 +1,698 @@
+{
+  "version": 1,
+  "research_boundary": "The four added classes are operational proxies over the existing 4x4 bridge paths. Metathesis is a local transposition model; acrophonic compression approximates retaining initial states from hypothesized chunks because the current proto-word dataset has no phrase boundaries; clipping/blending removes medial material or keeps word edges; resegmentation is approximated by boundary rotations. A positive result would show predictive structure under these operators, not prove a particular prehistoric derivation, Proto-World, or deliberate language engineering.",
+  "method": {
+    "families": [
+      "Proto-Indo-European",
+      "Proto-Semitic",
+      "Proto-Austronesian",
+      "Proto-Uralic",
+      "Proto-Dravidian"
+    ],
+    "meanings": [
+      "water",
+      "mother",
+      "fire",
+      "star"
+    ],
+    "operator_classes": [
+      "identity",
+      "reverse",
+      "place",
+      "reverse+place",
+      "manner",
+      "reverse+manner",
+      "place+manner",
+      "reverse+place+manner",
+      "metathesis",
+      "acrophonic",
+      "clipblend",
+      "resegmentation"
+    ],
+    "new_classes": [
+      "metathesis",
+      "acrophonic",
+      "clipblend",
+      "resegmentation"
+    ],
+    "validation": "leave-one-meaning-out; operator class selected on other meanings for each ordered family pair",
+    "permutation_controls": 100000,
+    "null": "independent within-target-family meaning-label permutations; cached exact score table",
+    "anagram_ceiling": "exact unrestricted unique permutations for paths of length <=7; diagnostic only, excluded from model selection"
+  },
+  "summary": {
+    "heldout_operator_bank_score": 0.648467,
+    "identity_heldout_same_mean": 0.577728,
+    "oracle_same_mean_ceiling": 0.720809,
+    "unrestricted_anagram_same_mean_ceiling": 0.639911,
+    "baseline_classes_cv_score": 0.537718,
+    "new_classes_cv_score": 0.652634,
+    "permutation_mean": 0.626203,
+    "permutation_sd": 0.012155,
+    "delta_vs_permutation": 0.022265,
+    "p_ge_observed": 0.04125
+  },
+  "class_same_vs_wrong": {
+    "identity": {
+      "same_mean": 0.577728,
+      "wrong_mean": 0.578886,
+      "uplift": -0.001157
+    },
+    "reverse": {
+      "same_mean": 0.569514,
+      "wrong_mean": 0.558786,
+      "uplift": 0.010728
+    },
+    "place": {
+      "same_mean": 0.581002,
+      "wrong_mean": 0.564752,
+      "uplift": 0.01625
+    },
+    "reverse+place": {
+      "same_mean": 0.54997,
+      "wrong_mean": 0.546339,
+      "uplift": 0.003631
+    },
+    "manner": {
+      "same_mean": 0.542877,
+      "wrong_mean": 0.560734,
+      "uplift": -0.017857
+    },
+    "reverse+manner": {
+      "same_mean": 0.572252,
+      "wrong_mean": 0.571171,
+      "uplift": 0.001081
+    },
+    "place+manner": {
+      "same_mean": 0.542153,
+      "wrong_mean": 0.546571,
+      "uplift": -0.004418
+    },
+    "reverse+place+manner": {
+      "same_mean": 0.55745,
+      "wrong_mean": 0.556472,
+      "uplift": 0.000979
+    },
+    "metathesis": {
+      "same_mean": 0.624673,
+      "wrong_mean": 0.62462,
+      "uplift": 5.3e-05
+    },
+    "acrophonic": {
+      "same_mean": 0.651483,
+      "wrong_mean": 0.649802,
+      "uplift": 0.001682
+    },
+    "clipblend": {
+      "same_mean": 0.60994,
+      "wrong_mean": 0.608929,
+      "uplift": 0.001012
+    },
+    "resegmentation": {
+      "same_mean": 0.604821,
+      "wrong_mean": 0.600188,
+      "uplift": 0.004633
+    }
+  },
+  "selected_class_counts": {
+    "identity": 1,
+    "reverse": 0,
+    "place": 1,
+    "reverse+place": 0,
+    "manner": 0,
+    "reverse+manner": 0,
+    "place+manner": 0,
+    "reverse+place+manner": 1,
+    "metathesis": 21,
+    "acrophonic": 37,
+    "clipblend": 7,
+    "resegmentation": 12
+  },
+  "heldout_details": [
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Semitic",
+      "meaning": "water",
+      "selected_class": "clipblend",
+      "heldout_score": 0.888889
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Semitic",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Semitic",
+      "meaning": "fire",
+      "selected_class": "clipblend",
+      "heldout_score": 0.777778
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Semitic",
+      "meaning": "star",
+      "selected_class": "clipblend",
+      "heldout_score": 0.527778
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Austronesian",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.7
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Austronesian",
+      "meaning": "mother",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.566667
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Austronesian",
+      "meaning": "fire",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.8
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Austronesian",
+      "meaning": "star",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.595238
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Uralic",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Uralic",
+      "meaning": "mother",
+      "selected_class": "metathesis",
+      "heldout_score": 0.566667
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Uralic",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.75
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Uralic",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.7
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Dravidian",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.625
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Dravidian",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.527778
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Dravidian",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.733333
+    },
+    {
+      "source_family": "Proto-Indo-European",
+      "target_family": "Proto-Dravidian",
+      "meaning": "star",
+      "selected_class": "metathesis",
+      "heldout_score": 0.533333
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "mother",
+      "selected_class": "metathesis",
+      "heldout_score": 0.533333
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "fire",
+      "selected_class": "metathesis",
+      "heldout_score": 0.5
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "star",
+      "selected_class": "metathesis",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.533333
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "mother",
+      "selected_class": "metathesis",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "fire",
+      "selected_class": "metathesis",
+      "heldout_score": 0.466667
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "star",
+      "selected_class": "metathesis",
+      "heldout_score": 0.738095
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Uralic",
+      "meaning": "water",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.583333
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Uralic",
+      "meaning": "mother",
+      "selected_class": "place",
+      "heldout_score": 0.388889
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Uralic",
+      "meaning": "fire",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.541667
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Uralic",
+      "meaning": "star",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.722222
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.388889
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.466667
+    },
+    {
+      "source_family": "Proto-Semitic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "star",
+      "selected_class": "identity",
+      "heldout_score": 0.333333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.7
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "mother",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.566667
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.6
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "star",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.595238
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Semitic",
+      "meaning": "water",
+      "selected_class": "clipblend",
+      "heldout_score": 0.777778
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Semitic",
+      "meaning": "mother",
+      "selected_class": "clipblend",
+      "heldout_score": 0.611111
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Semitic",
+      "meaning": "fire",
+      "selected_class": "clipblend",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Semitic",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.583333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Uralic",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.708333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Uralic",
+      "meaning": "mother",
+      "selected_class": "clipblend",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Uralic",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.708333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Uralic",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.733333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Dravidian",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Dravidian",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.472222
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Dravidian",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.633333
+    },
+    {
+      "source_family": "Proto-Austronesian",
+      "target_family": "Proto-Dravidian",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.888889
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "mother",
+      "selected_class": "metathesis",
+      "heldout_score": 0.566667
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "fire",
+      "selected_class": "metathesis",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Indo-European",
+      "meaning": "star",
+      "selected_class": "metathesis",
+      "heldout_score": 0.8
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Semitic",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.777778
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Semitic",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.666667
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Semitic",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.722222
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Semitic",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.611111
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "water",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.7
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "mother",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "fire",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.7
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Austronesian",
+      "meaning": "star",
+      "selected_class": "resegmentation",
+      "heldout_score": 0.642857
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.444444
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.7
+    },
+    {
+      "source_family": "Proto-Uralic",
+      "target_family": "Proto-Dravidian",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.722222
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "water",
+      "selected_class": "metathesis",
+      "heldout_score": 0.625
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "mother",
+      "selected_class": "metathesis",
+      "heldout_score": 0.722222
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "fire",
+      "selected_class": "metathesis",
+      "heldout_score": 0.9
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Indo-European",
+      "meaning": "star",
+      "selected_class": "metathesis",
+      "heldout_score": 0.533333
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Semitic",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.833333
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Semitic",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.777778
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Semitic",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.777778
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Semitic",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.333333
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Austronesian",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.5
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Austronesian",
+      "meaning": "mother",
+      "selected_class": "reverse+place+manner",
+      "heldout_score": 0.416667
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Austronesian",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.633333
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Austronesian",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.380952
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Uralic",
+      "meaning": "water",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.625
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Uralic",
+      "meaning": "mother",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.722222
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Uralic",
+      "meaning": "fire",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.875
+    },
+    {
+      "source_family": "Proto-Dravidian",
+      "target_family": "Proto-Uralic",
+      "meaning": "star",
+      "selected_class": "acrophonic",
+      "heldout_score": 0.433333
+    }
+  ],
+  "variant_counts": {
+    "min": 1,
+    "max": 41,
+    "mean": 3.046
+  }
+}
