@@ -1,0 +1,35 @@
+name: Reconstruct Original Language Dictionary
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/reconstruct_original_language_dictionary.py'
+      - '.github/workflows/reconstruct-original-language-dictionary.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconstruct expanded dictionary
+        run: python tools/reconstruct_original_language_dictionary.py
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/phonetic-original-language-dictionary.json data/phonetic-original-language-dictionary.md
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add expanded original-language dictionary reconstruction'
+            git pull --rebase origin main
+            git push
+          fi
