@@ -72,10 +72,12 @@ Rules:
 - Combination counts and check timing are tunable Def values.
 - Genuine destruction of a higher form produces operational lower forms rather than making the mass disappear.
 - Intentional upward recombination consumption must not trigger death splitting.
-- Split-born children receive the current tunable ~2,500-tick recombination lockout so a destroyed large form cannot instantly rebuild itself.
+- Split-born children receive the current tunable ~2,500-tick / ~1 in-game hour recombination lockout.
+- **The purpose of that lockout is combat playability:** destroying a Titan or Siege Mass must not let its children immediately recreate the same large threat and make the fight effectively impossible/immortal.
+- The exact duration remains tunable; the anti-impossible-combat behavior is required.
 - Material/adaptation/control state must survive transformations where appropriate.
 
-Status: **implemented foundation; state transfer must expand with richer adaptation/control state.**
+Status: **implemented foundation; cumulative adaptation state has now been added, while later control-domain transfer still remains to be implemented with the sovereign/control layer.**
 
 ### Controller
 
@@ -148,20 +150,21 @@ Known independent learned branches:
 - Power
 - Shield
 - Grav
+- Anti-shield/countermeasure knowledge after suitable shield experience
 
 Evidence relationships:
 - weapons/turrets -> Ranged learning
 - armor/strong materials -> Armor/material learning
 - power systems -> Power learning
-- real shield technology/encounters -> Shield learning
+- real shield technology/encounters -> Shield learning and suitable anti-shield knowledge
 - gravtech -> Grav learning
 - suitable advanced precursor/Asuran systems -> later advanced learned effects
 
 Adaptations must be earned from successful interaction/assimilation rather than arbitrary spawn flags.
 
-Current problem: `ReplicatorState.cs` stores only one enum adaptation, so later learning overwrites earlier learning and split/recombine cannot preserve a genuinely multi-adapted Replicator.
+The previous fresh implementation stored only one enum adaptation at a time, causing later learning to overwrite earlier learning. This has been corrected to cumulative bit-flag state with save migration support.
 
-Status: **unfinished — state must become save-persistent multi-adaptation state.**
+Status: **implemented state foundation; gameplay effects and full target classifiers remain unfinished.**
 
 ### Adaptation gameplay effects and retained overlays
 
@@ -186,7 +189,7 @@ Shield:
 - retained overlay: `WNG_ReplicatorAdapt_Shield.png`.
 - later learned anti-shield/countermeasure development must exist after suitable shield encounters; this is separate from merely having a shield.
 
-Status: **unfinished — current code records some categories but applies no gameplay effects and draws none of the retained overlays. Grav and anti-shield also depend on later concrete grav/shield targets for full learning classification.**
+Status: **unfinished — state is now cumulative, but gameplay effects and retained overlay rendering are not implemented yet. Grav and anti-shield integration also depend on later concrete grav/shield targets for complete classification.**
 
 ### State inheritance
 
@@ -198,7 +201,7 @@ State that must survive split/recombine where appropriate:
 - later sovereign-controller identity/control state
 - matter/economy contribution where transaction semantics require it
 
-Status: **partial — current code copies one material and one adaptation; richer merge semantics unfinished.**
+Status: **partial — material and all current adaptation flags now copy/merge through transformations; later sovereign/control-domain state and explicit matter-accounting semantics remain to be added.**
 
 ### Regeneration
 
@@ -277,6 +280,8 @@ Vardath clarification, 2026-09-10:
 - After that transformation it follows the normal Replicator Drone/autonomous-hostile behavior/domain unless another real control mechanic subsequently changes it.
 - Historical gestation/feral timing remains tunable and must not be buried as magic numbers.
 
+Historical public implementation is reference evidence only; the current rebuild must reconstruct this cleanly against the new block-state/control system.
+
 Status: **unfinished — player mech Def/behavior, gestation/feral transition and Drone conversion need implementation.**
 
 ### Autonomous faction / threat roster
@@ -310,7 +315,7 @@ Status: **unfinished — dependency recorded for later human-form/Queen implemen
 
 ## Implementation order from this reconciliation
 
-1. Replace single-adaptation state with multi-adaptation/save-safe state and improve split/recombine merge semantics.
+1. Replace single-adaptation state with multi-adaptation/save-safe state and improve split/recombine merge semantics. **State portion implemented; later control-domain extension remains dependent.**
 2. Implement adaptation effects/visual overlays that can be supported now; preserve explicit dependencies for Grav and anti-shield integration where later concrete systems are needed.
 3. Implement Controller, Repairer, Burrower and Artillery actual behavior.
 4. Improve assimilation target scoring and bounded population/growth.
