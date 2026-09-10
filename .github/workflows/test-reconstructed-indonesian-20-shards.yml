@@ -1,0 +1,66 @@
+name: Test Reconstructed Language vs Indonesian - 20 Shards
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/test_reconstructed_indonesian_words.py'
+      - '.github/workflows/test-reconstructed-indonesian-20-shards.yml'
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Extract Indonesian meaning+IPA lexicon
+        run: python tools/test_reconstructed_indonesian_words.py prepare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reconstructed-indonesian-prepared
+          path: data/reconstructed-indonesian-prepared.json
+  test:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: reconstructed-indonesian-prepared
+          path: data
+      - name: Run shard
+        run: python tools/test_reconstructed_indonesian_words.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reconstructed-indonesian-${{ matrix.shard }}
+          path: data/reconstructed-indonesian-shards/shard-*.json
+  merge:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: reconstructed-indonesian-*
+          path: artifacts
+      - name: Merge shards
+        run: |
+          mkdir -p data/reconstructed-indonesian-shards
+          find artifacts -name 'shard-*.json' -exec cp {} data/reconstructed-indonesian-shards/ \;
+          python tools/test_reconstructed_indonesian_words.py merge
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/reconstructed-indonesian-results.json
+          git commit -m 'Add reconstructed-language vs Indonesian results' || exit 0
+          git pull --rebase origin main
+          git push
