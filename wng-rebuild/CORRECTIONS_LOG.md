@@ -106,8 +106,8 @@ Current first-build design:
 - discovered in a real cryosleep/cryptosleep chamber;
 - she is recruited to the player immediately when released/spawned;
 - hostile Asuran/Lattice operatives attempt to capture her during the vault encounter;
-- later, while she remains player-owned, the Asurans may occasionally raid a home map where she is physically present specifically to capture her;
-- no capture raid should target a different home map while she is absent/traveling/off-map;
+- later, while she remains player-owned, the Asurans may occasionally raid **any player map where she is physically present** specifically to capture her;
+- no capture raid should target a different player map while she is absent/traveling/off-map;
 - capture commits only after a hostile carrier physically exits the map with the exact Queen pawn;
 - if interrupted before exit she remains recoverable/player-owned;
 - if captured, the Lattice gains real sovereign block-Replicator access in appropriate future threats rather than an arbitrary `+1 outbreak` bonus.
