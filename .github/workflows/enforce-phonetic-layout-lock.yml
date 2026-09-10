@@ -1,0 +1,39 @@
+name: Enforce Phonetic Layout Lock
+
+on:
+  push:
+    paths:
+      - 'phonetic-bridge.html'
+      - 'phonetic-no-autoscroll.js'
+      - 'phonetic-original-language-dictionary.js'
+      - 'tools/enforce_phonetic_layout_lock.py'
+      - '.github/workflows/enforce-phonetic-layout-lock.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Repair and verify locked dictionary layout
+        run: python tools/enforce_phonetic_layout_lock.py
+      - name: Commit automatic repair if required
+        run: |
+          if git diff --quiet -- phonetic-bridge.html; then
+            echo 'Layout already locked.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add phonetic-bridge.html
+          git commit -m 'Auto-repair phonetic dictionary layout lock'
+          git pull --rebase origin main
+          git push
