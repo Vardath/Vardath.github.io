@@ -1,0 +1,79 @@
+name: Validate Full Occitan Indonesian Candidate - 20 Shards
+
+on:
+  push:
+    paths:
+      - 'data/full-occitan-indonesian-candidate-language.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download prepared reconstruction evidence from completed source run
+        uses: actions/download-artifact@v4
+        with:
+          name: full-candidate-prepared
+          path: data/full-occitan-indonesian-candidate-shards/
+          repository: Vardath/Vardath.github.io
+          run-id: 34529096551
+          github-token: ${{ github.token }}
+      - name: Validate shard ${{ matrix.shard }}
+        run: python tools/validate_full_occitan_indonesian_candidate_20_shards.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-candidate-validation-${{ matrix.shard }}
+          path: data/full-candidate-validation-shards/shard-*.json
+          retention-days: 2
+
+  merge:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: full-candidate-validation-*
+          path: data/full-candidate-validation-shards/
+          merge-multiple: true
+      - name: Merge validation results
+        run: python tools/validate_full_occitan_indonesian_candidate_20_shards.py merge
+      - name: Validate result schema
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/full-candidate-validation.json'))
+          assert p['shards']==20
+          assert p['primary_independent_family_holdout']['n']>100
+          print(json.dumps(p['primary_independent_family_holdout'],indent=2))
+          print(json.dumps(p['verdict'],indent=2))
+          PY
+      - name: Commit validation result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/full-candidate-validation.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add full candidate 20-shard validation result'
+            git pull --rebase origin main
+            git push
+          fi
