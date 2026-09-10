@@ -1,0 +1,34 @@
+name: Publish Nearest Language Result
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/publish-nearest-language-page.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh page loader and remove stale duplicate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('phonetic-bridge.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('<script defer src="phonetic-no-autoscroll.js?v=20260905-scroll1"></script>\n','')
+          s=s.replace('phonetic-no-autoscroll.js?v=20260910-loader18','phonetic-no-autoscroll.js?v=20260910-loader19')
+          p.write_text(s,encoding='utf-8')
+          q=Path('phonetic-no-autoscroll.js')
+          t=q.read_text(encoding='utf-8').replace('phonetic-nearest-current-results.js?v=20260910-nearest1','phonetic-nearest-current-results.js?v=20260910-nearest2')
+          q.write_text(t,encoding='utf-8')
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add phonetic-bridge.html phonetic-no-autoscroll.js
+          git commit -m 'Show nearest-language result in dictionary section' || exit 0
+          git pull --rebase origin main
+          git push
