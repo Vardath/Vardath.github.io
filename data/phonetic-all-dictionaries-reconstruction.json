@@ -1,0 +1,145 @@
+{
+  "version": 4,
+  "source": {
+    "dataset": "English Wiktionary via Wiktextract/Kaikki raw all-language dump",
+    "url": "https://kaikki.org/dictionary/raw-wiktextract-data.jsonl.gz",
+    "scope": "Every dictionary entry in the dump is scanned; entries with usable IPA and English glosses enter the man-grid lexical reconstruction."
+  },
+  "method": {
+    "coordinate_system": "16-state A1-D4 man-grid phonetic bridge",
+    "historical_validation": "Wiktionary inherited-from etymology links backtracked through the same grid when both forms have phonetics",
+    "minimum_independent_families": 3,
+    "minimum_languages": 5,
+    "max_concepts": 12000,
+    "execution": "20 concurrent reconstruction shards after one complete dictionary scan"
+  },
+  "scan": {
+    "dictionary_entries": 10913996,
+    "entries_with_mappable_ipa": 3553872,
+    "languages": 5213,
+    "families_seen": 345
+  },
+  "historical_word_regression": {
+    "matched_inheritance_edges": 71575,
+    "mean_best_fit": 0.88105,
+    "operator_usage": {
+      "acrophonic": 6995,
+      "identity": 27411,
+      "metathesis": 4953,
+      "clipblend": 29396,
+      "reverse+place+manner": 53,
+      "resegmentation": 1640,
+      "place": 549,
+      "reverse": 84,
+      "reverse+place": 90,
+      "manner": 275,
+      "place+manner": 49,
+      "reverse+manner": 80
+    }
+  },
+  "eligible_meaning_groups": 12000,
+  "dictionary_entries": 12000,
+  "shard_counts": [
+    {
+      "shard": 0,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 1,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 2,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 3,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 4,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 5,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 6,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 7,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 8,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 9,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 10,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 11,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 12,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 13,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 14,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 15,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 16,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 17,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 18,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 19,
+      "input": 600,
+      "output": 600
+    }
+  ],
+  "research_boundary": "This is a model-derived deep ancestral candidate dictionary. It can test consistency with documented historical chains but phonetic fit alone does not establish or overturn a historical relationship."
+}
