@@ -70,7 +70,7 @@
   od.defer=true; document.head.appendChild(od);
 
   const nc=document.createElement('script');
-  nc.src='phonetic-nearest-current-results.js?v=20260910-nearest1';
+  nc.src='phonetic-nearest-current-results.js?v=20260910-nearest2';
   nc.defer=true; document.head.appendChild(nc);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
