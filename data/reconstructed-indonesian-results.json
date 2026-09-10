@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "test": "reconstructed original-language vs Indonesian meaning-matched word test",
+  "shards": 20,
+  "matched_meanings": 0,
+  "mean_by_operator": {
+    "identity": 0,
+    "reverse": 0,
+    "row": 0,
+    "col": 0,
+    "row_col": 0,
+    "reverse_row": 0,
+    "reverse_col": 0,
+    "reverse_row_col": 0
+  },
+  "best_global_operator": "identity",
+  "best_operator_counts": {
+    "identity": 0,
+    "reverse": 0,
+    "row": 0,
+    "col": 0,
+    "row_col": 0,
+    "reverse_row": 0,
+    "reverse_col": 0,
+    "reverse_row_col": 0
+  },
+  "mean_best_per_word": 0,
+  "mean_wrong_meaning_control": 0,
+  "signal_over_control": 0,
+  "interpretation_boundary": "Meaning-matched phonetic/grid compatibility is structural evidence only; it does not by itself establish ancestry or geography.",
+  "top_examples": []
+}
