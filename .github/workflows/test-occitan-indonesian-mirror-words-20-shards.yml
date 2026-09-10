@@ -1,0 +1,66 @@
+name: Test Occitan Indonesian Mirror Words - 20 Shards
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/test_occitan_indonesian_mirror_words.py'
+      - '.github/workflows/test-occitan-indonesian-mirror-words-20-shards.yml'
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Extract matched Occitan-Indonesian lexicon
+        run: python tools/test_occitan_indonesian_mirror_words.py prepare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: occitan-indonesian-lexicon
+          path: data/occitan-indonesian-matched-lexicon.json
+  test:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: occitan-indonesian-lexicon
+          path: data
+      - name: Run matched-meaning shard
+        run: python tools/test_occitan_indonesian_mirror_words.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: occitan-indonesian-mirror-${{ matrix.shard }}
+          path: data/occitan-indonesian-mirror-word-shards/shard-*.json
+  merge:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: occitan-indonesian-mirror-*
+          path: artifacts
+      - name: Merge
+        run: |
+          mkdir -p data/occitan-indonesian-mirror-word-shards
+          find artifacts -name 'shard-*.json' -exec cp {} data/occitan-indonesian-mirror-word-shards/ \;
+          python tools/test_occitan_indonesian_mirror_words.py merge
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/occitan-indonesian-mirror-words.json
+          git commit -m 'Add Occitan-Indonesian mirror-word results' || exit 0
+          git pull --rebase origin main
+          git push
