@@ -1,0 +1,75 @@
+name: Reconstruct Occitan Indonesian Candidate Language - 20 Shards
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/reconstruct_occitan_indonesian_candidate_language.py'
+      - '.github/workflows/reconstruct-occitan-indonesian-candidate-20-shards.yml'
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Extract matched Occitan-Indonesian meanings
+        run: python tools/reconstruct_occitan_indonesian_candidate_language.py prepare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oi-candidate-prepared
+          path: data/occitan-indonesian-candidate-prepared.json
+  reconstruct:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: oi-candidate-prepared
+          path: data
+      - name: Reconstruct shard
+        run: python tools/reconstruct_occitan_indonesian_candidate_language.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oi-candidate-shard-${{ matrix.shard }}
+          path: data/occitan-indonesian-candidate-shards/shard-*.json
+  merge:
+    needs: reconstruct
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: oi-candidate-shard-*
+          path: artifacts
+      - name: Merge and validate
+        run: |
+          mkdir -p data/occitan-indonesian-candidate-shards
+          find artifacts -name 'shard-*.json' -exec cp {} data/occitan-indonesian-candidate-shards/ \;
+          test "$(find data/occitan-indonesian-candidate-shards -name 'shard-*.json' | wc -l)" -eq 20
+          python tools/reconstruct_occitan_indonesian_candidate_language.py merge
+          python - <<'PY'
+          import json
+          a=json.load(open('data/occitan-indonesian-candidate-results.json'))
+          b=json.load(open('data/occitan-indonesian-candidate-language.json'))
+          assert a['shards']==20 and len(b['entries'])>=100
+          print('validated',len(b['entries']),'candidate words')
+          PY
+      - name: Commit reconstruction
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/occitan-indonesian-candidate-results.json data/occitan-indonesian-candidate-language.json
+          git commit -m 'Add 20-shard Occitan-Indonesian candidate language' || exit 0
+          git pull --rebase origin main
+          git push
