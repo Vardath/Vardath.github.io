@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "test": "20-shard word-by-word Occitan + Indonesian latent candidate language reconstruction",
+  "shards": 20,
+  "design": {
+    "inference": "For each exact matched English meaning, Occitan and Indonesian IPA paths are independently inverse-transformed through all 8x8 fixed Man-grid operator pairs. The pair with highest mutual agreement is aligned and merged into one latent bridge path. The existing reconstructed dictionary is never used to choose the candidate word.",
+    "null": "Each real meaning is compared with ten deterministic wrong Indonesian meanings using the identical 8x8 search.",
+    "root_check": "After reconstruction, candidate words are compared with same-meaning entries in the existing 12,000-word reconstruction and against the Occitan/Indonesian child forms.",
+    "external_profile_check": "The merged candidate profile is then tested against canonical language profiles excluding Occitan and Indonesian."
+  },
+  "verdict": {
+    "candidate_words": 602,
+    "mean_occitan_indonesian_parent_agreement": 0.7174221320205938,
+    "mean_wrong_meaning_parent_agreement": 0.6777712359871931,
+    "mean_agreement_uplift": 0.03965089603340069,
+    "root_matched_words": 575,
+    "mean_candidate_to_current_root": 0.639989776716456,
+    "mean_occitan_to_current_root": 0.6377089512318346,
+    "mean_indonesian_to_current_root": 0.6838758329858075,
+    "candidate_beats_both_children_count": 53,
+    "heldout_language_profile_scores": {
+      "candidate": 0.6993808587955347,
+      "root": 0.730164926788063,
+      "oci": 0.7280104270069886,
+      "ind": 0.73399835308149,
+      "lat": 0.7179041067046505
+    },
+    "best_heldout_profile_predictor": "ind",
+    "profile_target_wins": {
+      "candidate": 34,
+      "ind": 113,
+      "lat": 78,
+      "root": 52,
+      "oci": 69
+    },
+    "occitan_operator_counts": {
+      "manner": 72,
+      "identity": 455,
+      "reverse+manner": 8,
+      "reverse": 29,
+      "place": 32,
+      "place+manner": 2,
+      "reverse+place": 4
+    },
+    "indonesian_operator_counts": {
+      "manner": 84,
+      "identity": 213,
+      "place": 65,
+      "reverse+manner": 65,
+      "reverse+place+manner": 37,
+      "reverse": 77,
+      "place+manner": 26,
+      "reverse+place": 35
+    }
+  },
+  "boundary": "This is an experimental latent phonetic-grid reconstruction, not an attested historical language. Positive generalization is evidence for structure in this representation, not by itself proof of chronology or descent."
+}
