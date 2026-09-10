@@ -66,7 +66,7 @@
   hp.defer=true; document.head.appendChild(hp);
 
   const od=document.createElement('script');
-  od.src='phonetic-original-language-dictionary.js?v=20260910-grid4-force17';
+  od.src='phonetic-original-language-dictionary.js?v=20260910-fourcol18';
   od.defer=true; document.head.appendChild(od);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
