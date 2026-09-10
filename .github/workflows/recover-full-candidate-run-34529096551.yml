@@ -1,0 +1,65 @@
+name: Recover Full Candidate Run 34529096551
+
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-full-candidate-run-34529096551.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download prepared corpus artifact from completed run
+        uses: actions/download-artifact@v4
+        with:
+          name: full-candidate-prepared
+          path: data/full-occitan-indonesian-candidate-shards/
+          repository: Vardath/Vardath.github.io
+          run-id: 34529096551
+          github-token: ${{ github.token }}
+      - name: Download all 20 completed result artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: full-candidate-result-*
+          path: /tmp/full-results
+          repository: Vardath/Vardath.github.io
+          run-id: 34529096551
+          github-token: ${{ github.token }}
+      - name: Gather shard outputs
+        run: find /tmp/full-results -name 'result-*.json.gz' -exec cp {} data/full-occitan-indonesian-candidate-shards/ \;
+      - name: Merge completed candidate
+        run: python tools/reconstruct_full_occitan_indonesian_candidate_sharded.py merge
+      - name: Validate exact completeness
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/full-occitan-indonesian-candidate-language.json'))
+          s=p['summary']
+          assert s['entries'] == 12000, s
+          assert s['eligible_meanings'] == 12000, s
+          assert s['shards'] == 20, s
+          print(s)
+          PY
+      - name: Commit recovered candidate data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/full-occitan-indonesian-candidate-language.json data/full-occitan-indonesian-candidate-results.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Recover full 20-shard candidate reconstruction'
+            git pull --rebase origin main
+            git push
+          fi
