@@ -1,6 +1,45 @@
-// Keep the phonetic experiment at the top on initial load while preserving explicit nav-link scrolling.
+// Keep the phonetic experiment stable on load and permanently protect the dictionary layout.
 (()=>{
   'use strict';
+
+  try{
+    const me=document.currentScript;
+    document.querySelectorAll('script[src*="phonetic-no-autoscroll.js"]').forEach(s=>{if(s!==me)s.remove();});
+  }catch(_){ }
+
+  if(!window.__VARDATH_PHONETIC_LAYOUT_GUARD__){
+    window.__VARDATH_PHONETIC_LAYOUT_GUARD__=true;
+    const st=document.createElement('style');
+    st.id='vardath-phonetic-layout-lock';
+    st.textContent=`
+#originalLanguageDictionary{grid-column:1/-1!important;min-width:0!important;width:auto!important;max-width:none!important;justify-self:stretch!important}
+#originalLanguageDictionary .oldict-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;width:100%!important;min-width:0!important}
+@media(max-width:700px){#originalLanguageDictionary .oldict-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:430px){#originalLanguageDictionary .oldict-grid{grid-template-columns:1fr!important}}
+`;
+    document.head.appendChild(st);
+    const enforce=()=>{
+      const d=document.getElementById('originalLanguageDictionary');
+      if(d){
+        d.style.setProperty('grid-column','1 / -1','important');
+        d.style.setProperty('min-width','0','important');
+        d.style.setProperty('width','auto','important');
+        d.style.setProperty('max-width','none','important');
+        d.style.setProperty('justify-self','stretch','important');
+      }
+      document.querySelectorAll('#originalLanguageDictionary .oldict-grid').forEach(g=>{
+        const cols=innerWidth<=430?1:(innerWidth<=700?2:4);
+        g.style.setProperty('grid-template-columns',`repeat(${cols},minmax(0,1fr))`,'important');
+        g.style.setProperty('width','100%','important');
+        g.style.setProperty('min-width','0','important');
+      });
+    };
+    new MutationObserver(enforce).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
+    addEventListener('resize',enforce,{passive:true});
+    addEventListener('DOMContentLoaded',enforce,{once:true});
+    enforce();
+  }
+
   try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(_){ }
   document.documentElement.style.overflowAnchor='none';
   if(document.body) document.body.style.overflowAnchor='none';
@@ -66,7 +105,7 @@
   hp.defer=true; document.head.appendChild(hp);
 
   const od=document.createElement('script');
-  od.src='phonetic-original-language-dictionary.js?v=20260910-fourcol18';
+  od.src='phonetic-original-language-dictionary.js?v=20260910-fourcol-lock20';
   od.defer=true; document.head.appendChild(od);
 
   const nc=document.createElement('script');
