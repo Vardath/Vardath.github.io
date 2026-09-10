@@ -1,0 +1,57 @@
+name: Test Reverse Family Convergence - 20 Shards
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/test_reverse_family_convergence.py'
+      - '.github/workflows/test-reverse-family-convergence-20-shards.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run reverse-convergence shard
+        run: python tools/test_reverse_family_convergence.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reverse-family-convergence-${{ matrix.shard }}
+          path: data/reverse-family-convergence-shards/shard-*.json
+
+  merge:
+    needs: test
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: reverse-family-convergence-*
+          path: artifacts
+          merge-multiple: false
+      - name: Merge
+        run: |
+          mkdir -p data/reverse-family-convergence-shards
+          find artifacts -name 'shard-*.json' -exec cp {} data/reverse-family-convergence-shards/ \;
+          python tools/test_reverse_family_convergence.py merge
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/reverse-family-convergence.json
+          git commit -m 'Add reverse family convergence results' || exit 0
+          git pull --rebase origin main
+          git push
