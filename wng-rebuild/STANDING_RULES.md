@@ -18,6 +18,18 @@ These rules apply at the start of every WNG continuation and throughout the rebu
 12. **Do not depend on the private WNG repository for current work.** Use the public `Vardath/Wraith-Nanite-Gravtech-1.6` repository and the durable continuity copy under `Vardath/Vardath.github.io/wng-rebuild/` unless Vardath explicitly changes this.
 13. **Do not generate replacement art unless Vardath asks for image/art generation or a specific art task requires it.** Existing approved Replicator graphics are to be preserved through the current reset.
 14. **Continue the build after refreshing memory.** Do not stop after summarizing context when the user asked to continue.
+15. **Follow the plan rigorously before writing code.** Do not implement a subsystem from partial memory, a previous assistant summary, or whichever files happen to be open. Before changing a subsystem, perform the complete reconciliation procedure in `PLAN_EXECUTION_PROTOCOL.md`. Build an explicit feature inventory from the standing rules, corrections log, master plan, active subsystem notes, retained assets/graphics, current public source/Defs, and relevant historical/reference evidence. Only then implement. Every known item in that inventory must end the pass as implemented, intentionally deferred with a recorded dependency, or explicitly rejected/changed by Vardath. Never let an item disappear because it was forgotten.
+16. **The plan is the default implementation authority for the first complete build.** Do not improvise away from it merely because another implementation seems easier. If implementation reality requires a departure, record the issue and make the smallest practical adjustment consistent with Vardath's instructions; if the design itself needs changing, Vardath decides.
+
+## Mandatory pre-implementation rule
+
+For every subsystem, the order is:
+
+**read -> reconcile -> inventory -> implement -> account for every item -> then move on.**
+
+Do not reverse that order. In particular, do not start writing code and then use the plan afterwards to discover what was forgotten.
+
+The explicit procedure is in `PLAN_EXECUTION_PROTOCOL.md` and is part of the rebuild plan.
 
 ## Completeness rule for the current reset
 
