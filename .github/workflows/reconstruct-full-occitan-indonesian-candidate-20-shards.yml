@@ -5,7 +5,6 @@ on:
   push:
     paths:
       - 'tools/reconstruct_full_occitan_indonesian_candidate_sharded.py'
-      - '.github/workflows/reconstruct-full-occitan-indonesian-candidate-20-shards.yml'
 
 permissions:
   contents: write
@@ -55,6 +54,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -88,7 +89,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No changes.'
           else
-            git pull --rebase origin main
             git commit -m 'Add full 20-shard Occitan-Indonesian candidate reconstruction'
+            git pull --rebase origin main
             git push
           fi
