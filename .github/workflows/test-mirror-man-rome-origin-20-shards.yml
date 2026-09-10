@@ -1,9 +1,14 @@
 name: Test Mirror-Man Rome Origin - 20 Shards
+
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - 'tools/test_mirror_man_rome_origin.py'
+      - '.github/workflows/test-mirror-man-rome-origin-20-shards.yml'
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,21 +19,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
+        with:
+          python-version: '3.12'
       - name: Run Mirror-Man Rome-origin shard
         run: python tools/test_mirror_man_rome_origin.py shard --id ${{ matrix.shard }}
       - uses: actions/upload-artifact@v4
         with:
           name: mirror-man-rome-${{ matrix.shard }}
           path: data/mirror-man-rome-origin-shards/shard-*.json
+
   merge:
     needs: test
     runs-on: ubuntu-latest
-    permissions: {contents: write}
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
+        with:
+          python-version: '3.12'
       - uses: actions/download-artifact@v4
         with:
           pattern: mirror-man-rome-*
