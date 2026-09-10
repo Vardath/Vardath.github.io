@@ -10,13 +10,14 @@ Current intended Queen:
 - age 13 in the current design;
 - uses the human-form Replicator/nanite humanoid identity rather than a block-machine race;
 - unique sovereign authority belongs to the exact Queen, not every human-form Replicator;
-- one exact pawn/state should persist through the storyline.
+- one exact pawn/state should persist through the storyline;
+- while player-aligned/present, she has genuine sovereign control over appropriate block Replicators rather than a cosmetic or statistical bonus.
 
 ## Cryosleep release
 
 The Queen is held in a real RimWorld cryptosleep/cryosleep chamber at the precursor-style vault/site.
 
-**When she is retrieved/released and becomes spawned, she joins/recruits to the player immediately.** There is no later neutral guest recruitment stage.
+**When the cryosleep casket is opened and she is released/spawned, she joins/recruits to the player immediately.** There is no later neutral guest recruitment stage.
 
 Her release also triggers the hostile Asuran/Lattice recovery attempt.
 
@@ -25,7 +26,7 @@ Her release also triggers the hostile Asuran/Lattice recovery attempt.
 Current intended flow:
 1. player reaches vault;
 2. Queen remains in casket until released;
-3. release recruits her immediately;
+3. opening/releasing the casket recruits her immediately;
 4. hostile recovery operation activates after a short warning/reaction period;
 5. current design uses four human-form Asuran/Replicator recovery operatives;
 6. they prioritize the Queen rather than generic destruction;
@@ -43,8 +44,8 @@ Numbers/timing/arrival method are tunable. CatCraft Stargates may later provide 
 If she remains with the player, hostile Asurans/Lattice may occasionally attempt to recover her again.
 
 Rules:
-- only target a **player home map where the exact Queen is physically present**;
-- do not fire against a different home map while she is elsewhere;
+- may target **any player map where the exact Queen is physically present**; this is not restricted to home maps;
+- do not target another player map while she is physically elsewhere;
 - do not fire while she is caravaning/off-map/dead/already captured;
 - real raid/entry, not teleporting directly beside her;
 - objective is Queen subdual/kidnap;
@@ -54,8 +55,9 @@ Rules:
 ## Queen authority vs implant authority
 
 Real Queen:
-- innate broader sovereign coordination of appropriate same-faction block Replicators when physically present/aligned;
-- may directly command/convert block Replicators according to balance design.
+- innate broader sovereign coordination/control of appropriate block Replicators when physically present/aligned;
+- may directly command/convert block Replicators according to balance design;
+- this is genuine control state, not a fake outbreak-count modifier.
 
 Sovereign Neural Lattice implant bearer:
 - is not made into a Queen;
