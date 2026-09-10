@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "test": "Full 12,000-word Occitan-Indonesian constrained candidate validation \u2014 20 shards",
+  "shards": 20,
+  "design": {
+    "primary_test": "For a deterministic one-third subset of meanings with at least one Occitan/Indonesian anchor, hold out one non-anchor language family before reconstruction. Compare correct anchors, no extra anchors, and wrong-meaning shuffled anchors, then score only against the held-out family.",
+    "null": "Anchor availability is preserved but each available Occitan/Indonesian anchor path is deterministically reassigned from a different meaning. The same grid machinery and weights are used.",
+    "unanchored_control": "Same Man-grid reconstruction machinery from remaining family medoids with no extra Occitan/Indonesian anchor weighting.",
+    "secondary_tests": "Completed candidate versus original 12,000-word root on same-meaning family fit and canonical transition profiles, including targets outside both anchor families.",
+    "predeclared_success_rule": "Primary anchor evidence is positive only if correct-anchor held-out mean exceeds both unanchored and shuffled-anchor means and both paired bootstrap 95% intervals are entirely above zero.",
+    "no_custom_timeout": true
+  },
+  "primary_independent_family_holdout": {
+    "n": 2228,
+    "anchored_mean": 0.7452806250415488,
+    "unanchored_mean": 0.7563539331307971,
+    "shuffled_mean": 0.7498425917036383,
+    "anchored_minus_unanchored": {
+      "n": 2228,
+      "mean_difference": -0.01107330808924826,
+      "median_difference": 0.0,
+      "wins": 656,
+      "losses": 885,
+      "ties": 687
+    },
+    "anchored_minus_unanchored_bootstrap_95": [
+      -0.014361180642724363,
+      -0.007805853498851704
+    ],
+    "anchored_minus_shuffled": {
+      "n": 2228,
+      "mean_difference": -0.004561966662089428,
+      "median_difference": 0.0,
+      "wins": 932,
+      "losses": 958,
+      "ties": 338
+    },
+    "anchored_minus_shuffled_bootstrap_95": [
+      -0.008251998203966467,
+      -0.0008770513942060534
+    ],
+    "by_anchor_coverage": {
+      "both": {
+        "n": 198,
+        "anchored_mean": 0.7531815526521409,
+        "unanchored_mean": 0.7588747529401124,
+        "shuffled_mean": 0.7595257440068789,
+        "anchored_minus_unanchored": {
+          "n": 198,
+          "mean_difference": -0.00569320028797153,
+          "median_difference": 0.0,
+          "wins": 67,
+          "losses": 79,
+          "ties": 52
+        },
+        "anchored_minus_shuffled": {
+          "n": 198,
+          "mean_difference": -0.006344191354737991,
+          "median_difference": 0.0,
+          "wins": 81,
+          "losses": 90,
+          "ties": 27
+        }
+      },
+      "occitan": {
+        "n": 69,
+        "anchored_mean": 0.7635195467441844,
+        "unanchored_mean": 0.7738783975015859,
+        "shuffled_mean": 0.7557479592334665,
+        "anchored_minus_unanchored": {
+          "n": 69,
+          "mean_difference": -0.01035885075740148,
+          "median_difference": 0.0,
+          "wins": 23,
+          "losses": 33,
+          "ties": 13
+        },
+        "anchored_minus_shuffled": {
+          "n": 69,
+          "mean_difference": 0.007771587510717946,
+          "median_difference": 0.01200000000000001,
+          "wins": 37,
+          "losses": 26,
+          "ties": 6
+        }
+      },
+      "indonesian": {
+        "n": 1961,
+        "anchored_mean": 0.7438411200622632,
+        "unanchored_mean": 0.755482790670915,
+        "shuffled_mean": 0.7486571075039443,
+        "anchored_minus_unanchored": {
+          "n": 1961,
+          "mean_difference": -0.011641670608651738,
+          "median_difference": 0.0,
+          "wins": 566,
+          "losses": 773,
+          "ties": 622
+        },
+        "anchored_minus_shuffled": {
+          "n": 1961,
+          "mean_difference": -0.0048159874416811126,
+          "median_difference": 0.0,
+          "wins": 814,
+          "losses": 842,
+          "ties": 305
+        }
+      }
+    }
+  },
+  "same_mean_descriptive": {
+    "n": 12000,
+    "candidate_family_fit": 0.8000952083333334,
+    "root_family_fit": 0.8129219758113325,
+    "candidate_minus_root_family_fit": -0.012826767477999212,
+    "candidate_root_path_similarity": 0.8682099772526856,
+    "by_anchor_coverage": {
+      "both": {
+        "n": 581,
+        "candidate_family_fit": 0.7820219965576592,
+        "root_family_fit": 0.7975997451649759,
+        "candidate_minus_root_family_fit": -0.015577748607316644,
+        "candidate_root_similarity": 0.7699126230752736
+      },
+      "occitan": {
+        "n": 191,
+        "candidate_family_fit": 0.7871040314136125,
+        "root_family_fit": 0.8110419070998031,
+        "candidate_minus_root_family_fit": -0.023937875686190546,
+        "candidate_root_similarity": 0.7523869648869649
+      },
+      "indonesian": {
+        "n": 5900,
+        "candidate_family_fit": 0.789346106779661,
+        "root_family_fit": 0.8131255453416649,
+        "candidate_minus_root_family_fit": -0.02377943856200393,
+        "candidate_root_similarity": 0.7626262004630648
+      },
+      "none": {
+        "n": 5328,
+        "candidate_family_fit": 0.8144348385885886,
+        "root_family_fit": 0.8144347852896497,
+        "candidate_minus_root_family_fit": 5.329893881800274e-08,
+        "candidate_root_similarity": 1.0
+      }
+    }
+  },
+  "anchor_specific_descriptive": {
+    "occitan_correct_minus_shuffled": {
+      "n": 772,
+      "mean_difference": 0.16298943751735542,
+      "median_difference": 0.16666666666666663,
+      "wins": 681,
+      "losses": 82,
+      "ties": 9
+    },
+    "indonesian_correct_minus_shuffled": {
+      "n": 6481,
+      "mean_difference": 0.2251912035986309,
+      "median_difference": 0.2222222222222222,
+      "wins": 6229,
+      "losses": 229,
+      "ties": 23
+    }
+  },
+  "canonical_profile_comparison": {
+    "all_non_anchor_languages": {
+      "n": 346,
+      "candidate_mean": 0.7222323583084989,
+      "root_mean": 0.727984031887311,
+      "candidate_minus_root": {
+        "n": 346,
+        "mean_difference": -0.005751673578812164,
+        "median_difference": -0.005261771135869842,
+        "wins": 130,
+        "losses": 216,
+        "ties": 0
+      },
+      "bootstrap_95": [
+        -0.007781111138723088,
+        -0.003749915492242726
+      ]
+    },
+    "excluding_occitan_and_indonesian_families": {
+      "n": 261,
+      "candidate_mean": 0.7012114145911402,
+      "root_mean": 0.7063396001603846,
+      "candidate_minus_root": {
+        "n": 261,
+        "mean_difference": -0.005128185569244342,
+        "median_difference": -0.005378613095331497,
+        "wins": 102,
+        "losses": 159,
+        "ties": 0
+      },
+      "bootstrap_95": [
+        -0.007383998376748421,
+        -0.002836400296082804
+      ]
+    },
+    "anchor_families_excluded": [
+      "Austronesian",
+      "Indo-European"
+    ]
+  },
+  "verdict": {
+    "supports_extra_anchor_value_on_independent_families": false,
+    "note": "This tests whether extra Occitan/Indonesian constraints improve prediction of withheld non-anchor family evidence under the Man-grid model. It does not by itself establish historical chronology, geography, or descent."
+  }
+}
