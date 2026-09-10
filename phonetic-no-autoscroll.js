@@ -1,4 +1,4 @@
-// Keep the phonetic experiment stable on load and permanently protect the dictionary layout.
+// Keep the phonetic experiment stable on load, lock refreshes to the top, and permanently protect the dictionary layout.
 (()=>{
   'use strict';
 
@@ -43,6 +43,19 @@
   try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(_){ }
   document.documentElement.style.overflowAnchor='none';
   if(document.body) document.body.style.overflowAnchor='none';
+
+  // Refresh/navigation must always start at the very top. Explicit in-page clicks still work after load.
+  try{
+    if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+  }catch(_){ }
+  let userNavigated=false;
+  const forceTop=()=>{ if(userNavigated)return; window.scrollTo(0,0); };
+  forceTop();
+  requestAnimationFrame(forceTop);
+  addEventListener('DOMContentLoaded',()=>{forceTop();setTimeout(forceTop,0);setTimeout(forceTop,80);},{once:true});
+  addEventListener('load',()=>{forceTop();setTimeout(forceTop,120);setTimeout(forceTop,500);setTimeout(forceTop,1200);},{once:true});
+  addEventListener('pageshow',()=>{forceTop();setTimeout(forceTop,100);});
+  addEventListener('click',e=>{const a=e.target.closest?.('a[href^="#"]');if(a)userNavigated=true;},{capture:true});
 
   const wc=document.createElement('script');
   wc.src='phonetic-word-connect-localize.js?v=20260905-connect1';
@@ -111,12 +124,4 @@
   const nc=document.createElement('script');
   nc.src='phonetic-nearest-current-results.js?v=20260910-nearest3';
   nc.defer=true; document.head.appendChild(nc);
-
-  let userNavigated=!!location.hash;
-  addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
-  const top=()=>{ if(userNavigated)return; requestAnimationFrame(()=>scrollTo({top:0,left:0,behavior:'auto'})); };
-  top();
-  addEventListener('DOMContentLoaded',top,{once:true});
-  addEventListener('load',()=>{ top(); setTimeout(top,120); setTimeout(top,500); },{once:true});
-  addEventListener('pageshow',e=>{ if(e.persisted) top(); });
 })();
