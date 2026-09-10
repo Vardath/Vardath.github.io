@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "test": "Occitan <-> Indonesian matched-meaning Mirror-Man and backwards-word compatibility",
+  "shards": 20,
+  "design": {
+    "lexicon": "One full Kaikki/Wiktextract streaming pass extracts only Occitan and Indonesian entries with usable IPA and English glosses.",
+    "matching": "Only exact normalized English gloss/concept matches are compared, preventing arbitrary look-alike word fishing.",
+    "phonetic_tests": "Direct gate-path similarity, literal path reversal, and all eight preregistered identity/reverse/place/manner Mirror-Man transforms.",
+    "orthographic_tests": "Direct spelling similarity, reversed-Occitan spelling similarity, and exact backwards spelling matches.",
+    "null": "For every matched meaning, ten deterministic mismatched Indonesian meanings provide a chance/phonotactic control.",
+    "falsification": "Literal backwards compatibility requires reversal to beat direct alignment and wrong-meaning reversal overall, and to improve a majority of matched concepts."
+  },
+  "verdict": {
+    "matched_meanings": 602,
+    "means": {
+      "direct": 0.6609300858122511,
+      "reverse": 0.6196448856980573,
+      "best": 0.7095123208092876,
+      "orth_direct": 0.2703174425339577,
+      "orth_reverse": 0.17941539515350496,
+      "null_direct": 0.6105652957250058,
+      "null_reverse": 0.5970368803407025,
+      "null_best": 0.6691810142729743,
+      "null_orth_reverse": 0.1751742708414548
+    },
+    "counts": {
+      "reverse_beats_direct": 147,
+      "reverse_ties_direct": 133,
+      "reverse_beats_wrong_meaning_reverse": 352,
+      "mirror_best_beats_direct": 333,
+      "orth_reverse_beats_direct": 110,
+      "exact_reversed_spellings": 0
+    },
+    "best_operator_counts": {
+      "identity": 263,
+      "reverse": 79,
+      "place": 92,
+      "reverse+place": 36,
+      "manner": 45,
+      "reverse+manner": 42,
+      "place+manner": 19,
+      "reverse+place+manner": 26
+    },
+    "supports_literal_backwards_phonetic_compatibility": false,
+    "supports_systematic_mirror_compatibility": true
+  },
+  "boundary": "A positive result would establish a reproducible structural correspondence in this representation, not by itself genealogical descent or geographic origin."
+}
