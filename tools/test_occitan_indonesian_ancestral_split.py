@@ -92,7 +92,7 @@ def shard(i):
  L=langs(); oci=L['oci']['p']; ind=L['ind']['p']; lat=L['lat']['p']
  jf,oo,oi,latent=joint_parent(oci,ind)
  o2i=best_forward(oci,ind); i2o=best_forward(ind,oci)
- ob=best_backward(oci,root); ib=best_backward(ind,root)
+ occitan_back=best_backward(oci,root); indonesian_back=best_backward(ind,root)
  latent_root=score(latent,root); oci_root=score(oci,root); ind_root=score(ind,root); lat_root=score(lat,root)
  # Hold out 1/20 of canonical languages on each shard for prediction; candidate parent was inferred without them.
  target_keys=sorted(L)
@@ -105,25 +105,37 @@ def shard(i):
   for k,p in srcs.items():
    s,_=best_forward(p,t['p']); pred[k].append(s); fam[t['family']][k].append(s)
  # Deterministic unrelated-pair control: 50 pairs, parent inferred the same way, then scored to shard root.
+ # Keep control operator names separate so they cannot overwrite the focal Occitan backward result.
  pool=[x for x in sorted(L) if x not in {'oci','ind'}]
  rng=random.Random(9173+i)
  controls=[]
  for _ in range(50):
-  a,b=rng.sample(pool,2); ag,oa,ob,lp=joint_parent(L[a]['p'],L[b]['p'])
+  a,b=rng.sample(pool,2); ag,ctrl_oa,ctrl_ob,lp=joint_parent(L[a]['p'],L[b]['p'])
   controls.append(score(lp,root))
  pct=sum(x<=latent_root for x in controls)/len(controls)
  out={'shard':i,'entries':len(chosen),'joint_parent':{'agreement':jf,'occitan_inverse_operator':oo,'indonesian_inverse_operator':oi,'root_score':latent_root},
       'bidirectional':{'occitan_to_indonesian':{'score':o2i[0],'operator':o2i[1]},'indonesian_to_occitan':{'score':i2o[0],'operator':i2o[1]},
-                       'occitan_backward_to_root':{'score':ob[0],'operator':ob[1]},'indonesian_backward_to_root':{'score':ib[0],'operator':ib[1]}},
+                       'occitan_backward_to_root':{'score':occitan_back[0],'operator':occitan_back[1]},'indonesian_backward_to_root':{'score':indonesian_back[0],'operator':indonesian_back[1]}},
       'direct_root_scores':{'latent':latent_root,'oci':oci_root,'ind':ind_root,'lat':lat_root},
       'heldout_prediction':{k:(statistics.mean(v) if v else None) for k,v in pred.items()},
       'family_prediction':{f:{k:statistics.mean(v) for k,v in d.items()} for f,d in fam.items()},
       'control':{'n':len(controls),'mean_random_pair_parent_root_score':statistics.mean(controls),'occitan_indonesian_parent_percentile':pct}}
+ # Fail loudly at shard time if a numeric score/operator pair is corrupted.
+ for label in ('occitan_to_indonesian','indonesian_to_occitan','occitan_backward_to_root','indonesian_backward_to_root'):
+  row=out['bidirectional'][label]
+  if not isinstance(row['score'],(int,float)) or row['operator'] not in OPS:
+   raise TypeError(f'Corrupt bidirectional result for {label}: {row!r}')
  OUTDIR.mkdir(parents=True,exist_ok=True); (OUTDIR/f'shard-{i:02d}.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
- print(json.dumps({'shard':i,'joint_parent':out['joint_parent'],'direct_root_scores':out['direct_root_scores'],'control':out['control']}))
+ print(json.dumps({'shard':i,'joint_parent':out['joint_parent'],'bidirectional':out['bidirectional'],'direct_root_scores':out['direct_root_scores'],'control':out['control']}))
 
 def merge():
  xs=[json.loads((OUTDIR/f'shard-{i:02d}.json').read_text()) for i in range(N)]
+ # Validate every shard before aggregating so future schema/type regressions identify the exact shard/field.
+ for x in xs:
+  for label in ('occitan_to_indonesian','indonesian_to_occitan','occitan_backward_to_root','indonesian_backward_to_root'):
+   row=x['bidirectional'][label]
+   if not isinstance(row.get('score'),(int,float)) or row.get('operator') not in OPS:
+    raise TypeError(f"Shard {x.get('shard')} corrupt {label}: {row!r}")
  means=lambda path: statistics.mean(path(x) for x in xs)
  op_o=defaultdict(int); op_i=defaultdict(int); op_or=defaultdict(int); op_ir=defaultdict(int)
  for x in xs:
@@ -157,7 +169,7 @@ def merge():
   'joint_parent_mean_control_percentile':means(lambda x:x['control']['occitan_indonesian_parent_percentile'])}
  verdict['joint_parent_closer_to_root_than_both_children']=verdict['joint_parent_root_score']>max(verdict['occitan_direct_root_score'],verdict['indonesian_direct_root_score'])
  verdict['joint_parent_beats_reconstructed_root_on_heldout_languages']=pmean.get('latent',0)>pmean.get('root',0)
- result={'version':1,'test':'Occitan + Indonesian backward-through-Man-grid common-ancestor / split test','shards':N,'dictionary_entries':sum(x['entries'] for x in xs),'operators':OPS,
+ result={'version':2,'test':'Occitan + Indonesian backward-through-Man-grid common-ancestor / split test','shards':N,'dictionary_entries':sum(x['entries'] for x in xs),'operators':OPS,
  'design':{'ancestral_inference':'A latent pre-split profile is inferred solely by inverse-transforming Occitan and Indonesian under all 8x8 operator pairs and choosing the pair with maximum mutual agreement. The reconstructed root and held-out languages are not used to select that parent.',
  'bidirectional':'Occitan->Indonesian and Indonesian->Occitan are measured explicitly; each is also inverse-transformed independently toward the reconstructed root.',
  'heldout':'Canonical benchmark languages are partitioned deterministically across 20 shards and used only after parent inference.',
