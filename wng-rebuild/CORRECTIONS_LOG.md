@@ -65,12 +65,18 @@ The initial fresh-reset scaffold incorrectly reduced the Replicator design to th
 
 The rebuild must account for the full recorded Replicator ecology, including the primary size ladder **and** specialist/adaptation branches. In particular, **Shield Replicators / shield adaptation are not optional**, including the learned shield specialization and later anti-shield/countermeasure development recorded in the prior design. Controller, Repairer, Burrower, Artillery, ranged, armor, power and grav adaptations must likewise remain represented/tracked. Exact balance and implementation may be redesigned, but the features may not silently disappear.
 
+### Clarification: “other hierarchy” means the physical small-to-large ladder
+Vardath clarified that the hierarchy being referred to is the full physical size/combat chain and its two-way transformation behavior:
+
+**Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass** upward through recombination, and **Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base** downward through genuine destruction breakup.
+
+Split-born children must be prevented from immediately recombining for approximately **one in-game hour** in the current design (historically 2,500 ticks). This exists specifically so destroying a Siege Mass/Titan does not produce children that instantly rebuild the same large threat and make the big Replicator appear immortal. The delay is a tunable gameplay parameter, not a design-lock audit rule.
+
+### Replicator graphics as completeness evidence
+The approved retained `Textures/Things/Pawn/Replicator` tree itself must be inventoried when reconstructing the Replicator roster. The reset retained graphics for Drone, Hunter, Bulwark, Titan, Siege Mass, Controller, Repairer, Burrower and Artillery plus adaptation overlays for Armor, Ranged, Power, Grav and Shield. Do not copy the graphics tree and then rebuild an incomplete Def/behavior roster from memory alone.
+
 ### Replicator split behavior
-Large combined block forms must break down into smaller existing forms when destroyed rather than simply disappearing. Current intended hierarchy:
-
-Siege Mass -> Titans -> Bulwarks -> Hunters -> base/Drones.
-
-The exact counts/timing are first-build choices and may be tuned later, but the core behavior is: larger forms break down, intentional upward recombination does not trigger accidental death-splitting, and the state/material economy survives the hierarchy transitions.
+Large combined block forms must break down into smaller existing forms when destroyed rather than simply disappearing. The transformation state/material economy should survive where appropriate; intentional upward recombination consumption must not accidentally trigger death splitting.
 
 ### Human-form Replicators
 Human-form Replicators/Asurans are distinct from block Replicator custom races. They are nanite humanoids with appropriate xenotype/genes/PawnKinds and collective/reconstruction/interface systems.
