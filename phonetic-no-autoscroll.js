@@ -121,6 +121,10 @@
   od.src='phonetic-original-language-dictionary.js?v=20260910-fourcol-lock20';
   od.defer=true; document.head.appendChild(od);
 
+  const da=document.createElement('script');
+  da.src='phonetic-dictionary-audio-fix.js?v=20260910-wordaudio2';
+  da.defer=true; document.head.appendChild(da);
+
   const nc=document.createElement('script');
   nc.src='phonetic-nearest-current-results.js?v=20260910-nearest3';
   nc.defer=true; document.head.appendChild(nc);
