@@ -1,0 +1,146 @@
+{
+  "test": "full 20-shard Occitan-Indonesian constrained candidate reconstruction",
+  "summary": {
+    "entries": 12000,
+    "eligible_meanings": 12000,
+    "shards": 20,
+    "anchor_coverage": {
+      "indonesian": 5900,
+      "none": 5328,
+      "occitan": 191,
+      "both": 581
+    },
+    "mean_family_fit": 0.800095
+  },
+  "scan": {
+    "dictionary_entries": 10913996,
+    "entries_with_mappable_ipa": 3553872,
+    "languages": 5213,
+    "families_seen": 345
+  },
+  "shard_counts": [
+    {
+      "shard": 0,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 1,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 2,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 3,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 4,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 5,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 6,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 7,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 8,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 9,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 10,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 11,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 12,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 13,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 14,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 15,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 16,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 17,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 18,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 19,
+      "input": 600,
+      "output": 600
+    }
+  ],
+  "design": {
+    "meaning_space": "same eligibility rules as the 12,000-word all-dictionary reconstruction",
+    "old_dictionary_forms_used": false,
+    "base_weight": 0.7,
+    "anchor_weight_each_when_both": 0.15,
+    "single_anchor_weight": 0.3,
+    "no_anchor_rule": "family-balanced reconstruction only; no invented anchor form",
+    "operators": [
+      "identity",
+      "reverse",
+      "place",
+      "reverse+place",
+      "manner",
+      "reverse+manner",
+      "place+manner",
+      "reverse+place+manner",
+      "metathesis",
+      "acrophonic",
+      "clipblend",
+      "resegmentation"
+    ],
+    "candidate_generation": "same fixed Man-grid candidate pool as original full-dictionary model"
+  }
+}
