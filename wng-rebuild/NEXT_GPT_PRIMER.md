@@ -17,7 +17,9 @@ Read in this order:
 5. relevant sections of `wng-rebuild/MASTER_PLAN.md`
 6. `wng-rebuild/REPLICATOR_HIERARCHY.md`
 7. `wng-rebuild/REPLICATOR_QUEEN.md` when working on Queen/Asuran systems
-8. current public `Vardath/Wraith-Nanite-Gravtech-1.6` tree
+8. `wng-rebuild/REPLICATOR_FEATURE_MAP.md`
+9. `wng-rebuild/REPLICATOR_FOUNDATION_CHECKPOINT_2026-09-10.md`
+10. current public `Vardath/Wraith-Nanite-Gravtech-1.6` tree
 
 Then perform the mandatory subsystem reconciliation before writing code.
 
@@ -29,7 +31,7 @@ Current implementation repository:
 Durable requirements/continuity repository:
 - public `Vardath/Vardath.github.io/wng-rebuild/`
 
-Do **not** depend on or write to the private WNG repository unless Vardath explicitly re-authorizes it. Private credits are currently not to be consumed for this rebuild.
+Do **not** depend on or write to the private WNG repository unless Vardath explicitly re-authorizes it. Private credits are not to be consumed for this rebuild.
 
 ## Current reset state
 
@@ -38,16 +40,16 @@ The public 1.6 mod was deliberately wiped and restarted on 2026-09-10.
 Reset commit:
 - `0386f33665b08f9c4f82cbcec23d844bc68ea3af` — `reset: restart WNG from Replicator foundation only`
 
-Latest verified public `main` at the time of this primer:
-- `84b9c08991cabd26e950d640fb9c4a350613e760` — `rebuild: restore full Replicator size hierarchy`
+Latest implementation cleanup head at this snapshot:
+- `94705ee8894b6659920178e19ea0ebe21555c7be` — temporary verification workflow removed after the tactical Burrower refinement passed compilation/XML checks.
 
 Always fetch `main` again because it may have advanced after this primer.
 
-The fresh tree intentionally does **not** contain the old Wraith/Asuran/Queen implementation, old audit suite, old release gates or old design-lock machinery. Git history still exists for reference, but there is no known-good old state.
+The fresh tree intentionally does **not** contain the old Wraith/Asuran/Queen implementation, old audit suite, old release gates or old design-lock machinery. Git history remains reference material only; there is no known-good old state.
 
-## What was deliberately preserved
+## Preserved asset inventory
 
-Approved block Replicator graphics and resource graphics were retained.
+Approved block Replicator graphics and resource graphics remain retained.
 
 The retained Replicator graphic inventory includes:
 - Drone/base Replicator;
@@ -62,91 +64,89 @@ The retained Replicator graphic inventory includes:
 - adaptation overlays for Armor, Ranged, Power, Grav and Shield;
 - Replicator Matter and Core Fragment resource graphics.
 
-**Treat this asset inventory as completeness evidence.** Do not rebuild a shorter Def/behavior roster from memory while these assets show that additional planned forms/branches exist.
+Treat this asset inventory as completeness evidence. Do not rebuild a shorter Def/behavior roster from memory.
 
-## Current Replicator implementation — partial, not complete
+## Block Replicator foundation — current implemented state
 
-The current fresh source includes a reconstructed foundation around:
-- Replicator state;
-- assimilation;
-- matter/resource handling;
-- EMP suppression;
-- regeneration;
-- physical hierarchy;
-- Replicator ThinkTree/faction/basic Defs;
-- specialist Def placeholders for Repairer, Burrower and Artillery;
-- Controller Def;
-- approved graphics.
-
-This subsystem is **not complete**.
-
-### Physical size hierarchy currently implemented
-
-Upward recombination:
+Physical hierarchy:
 
 **Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass**
 
-Downward breakup on genuine destruction:
+Genuine-destruction breakup:
 
 **Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base**
 
-Current first-build breakup count is generally two children per higher form. Upward combine counts vary by tier and are stored in Def/component data.
+Intentional upward recombination is separated from genuine destruction so consumed bodies do not trigger death splitting.
 
-Intentional upward recombination consumption is distinguished from genuine destruction so consumed source bodies do not trigger unwanted death splitting.
+Split-born children receive the current first-build approximately **one in-game hour / 2,500-tick recombination lockout**. This exists specifically so destroying a Titan or Siege Mass does not immediately recreate the same large threat and make combat effectively impossible/immortal. The exact timer remains tunable.
 
-Split-born children receive the current first-build recombination lockout of about **one in-game hour / historically 2,500 ticks**, configured in Def data. The reason is gameplay: destroying a Siege Mass or Titan must not produce smaller forms that instantly rebuild the same large threat and make it feel immortal.
+Current fresh implementation now includes:
+- cumulative learned adaptation state rather than single-value overwrite state;
+- adaptation/state inheritance through split and recombination;
+- stored matter conservation through recombination and genuine-death splitting;
+- technology-prioritized assimilation;
+- matter-budget offspring production;
+- Def-tunable population ceiling for autonomous growth and dormant-matter reassembly;
+- dangerous Replicator Matter reassembly;
+- Replicator Core Fragment resource;
+- regeneration with EMP suppression;
+- Power adaptation improving regeneration;
+- Armor adaptation damage reduction;
+- Shield adaptation with rechargeable defensive pool;
+- Ranged adaptation with learned ranged fire;
+- repeated shield evidence before AntiShield knowledge unlocks;
+- retained Armor/Ranged/Power/Grav/Shield overlay rendering;
+- Controller coordination behavior;
+- Repairer support behavior;
+- Burrower breach behavior with tactical priority for WNG containment projectors, doors/gates/bulkheads, walls and barricades before generic hostile structures;
+- Artillery ranged support behavior;
+- autonomous Replicator faction roster containing Drone, Hunter, Bulwark, Controller, Repairer, Burrower, Artillery, Titan and Siege Mass;
+- powered Replicator containment projector that blocks hostile assimilation/recombination and freezes dangerous Matter reassembly while powered;
+- player-owned safety preventing autonomous hostile-style assimilation/recombination;
+- Child's Toy as a player-owned mech branch that physically transforms into an ordinary hostile Replicator Drone after a tunable feral/uncontrolled period.
 
-The current design values are tunable. Do not turn them into anti-regression doctrine.
+## Current verification status
 
-### Important current gap discovered during reset
+The fresh block Replicator implementation was verified with temporary public GitHub Actions checks and the temporary workflow was then deleted.
 
-The first fresh scaffold initially omitted the Titan -> Siege Mass upward path. Vardath corrected this. Commit `84b9c089...` added it. This is a concrete example of why the mandatory reconciliation protocol now exists.
+Latest completed verification before cleanup:
+- RimWorld 1.6 C# assembly build: **SUCCESS**
+- Def XML syntax parse: **SUCCESS**
 
-## Replicator work that is still explicitly unfinished
+Do not recreate a permanent release-lock/audit framework. Use only temporary/minimal checks when needed to establish that newly written code and Defs function.
 
-Do **not** move to Wraith merely because the main size ladder now exists.
+## Explicitly unfinished block-related dependencies
 
-Before the block Replicator foundation is considered accounted for, reconcile and implement/track all of the following:
+These are tracked and must not be forgotten:
 
-- Controller actual coordination behavior;
-- Repairer actual repair/support behavior;
-- Burrower actual breach/infiltration behavior;
-- Artillery actual ranged/siege support behavior;
-- full adaptation system earned from actual assimilation;
-- Ranged adaptation gameplay effect;
-- Armor adaptation gameplay effect;
-- Power adaptation gameplay effect;
-- Grav adaptation gameplay effect;
-- **Shield adaptation / Shield Replicator behavior**;
-- **learned anti-shield/countermeasure development** after suitable shield encounters;
-- adaptation visuals using retained overlays;
-- state/adaptation/material transfer through split and recombination;
-- Replicator Matter dangerous salvage/reassembly behavior;
-- assimilation target priorities and matter economy;
-- bounded growth/population behavior;
-- EMP behavior across forms/adaptations;
-- containment awareness/behavior;
-- swarm coordination/AI;
-- player-owned Replicator safety/control behavior so they do not eat the player's colony;
-- Child's Toy/player Replicator branch;
-- any additional Replicator feature found by full plan/history/asset reconciliation;
-- later dependent human-form/Asuran/Queen sovereign interactions must remain tracked even if implemented in the later human-form layer.
+- **Grav adaptation gameplay effect:** learned state and retained overlay exist, but the actual mobility/grav effect must bind to WNG's real later gravtech implementation. Do not invent an unrelated placeholder buff.
+- **Full anti-shield interaction:** evidence/learning state exists, but countermeasure behavior against later concrete shield systems remains dependent on those systems existing.
+- **Queen sovereign control domain:** the exact Queen must later provide genuine sovereign access/control over block Replicators.
+- **Asuran sovereign consequence:** only physical successful Queen capture grants later Asuran/Lattice sovereign block-Replicator access.
+- **Mixed human-form + block raids:** remain a later human-form/Asuran-layer integration.
+- **Broader deliberate player sovereign control commands:** block safety exists now; richer intentional control belongs with the later sovereign/control layer.
 
-If another planned feature is discovered, add it to the inventory; do not silently omit it because it was absent from this primer.
+If full reconciliation discovers another block feature, add it rather than silently omitting it.
 
-## Required working method from this point
+## Major later-plan reminders
 
-For the active Replicator subsystem, do this **before the next code change**:
-
-1. Re-read the complete Replicator-related plan/corrections/subsystem notes.
-2. Inventory every retained Replicator asset and every current Replicator Def/source file.
-3. Compare that inventory against all planned Replicator roles, forms, mechanics and branches.
-4. Build a complete feature/relationship map.
-5. Mark current status for every item: implemented / unfinished with dependency / changed by Vardath.
-6. Only then implement the next coherent slice.
-7. Reconcile again before moving to the next slice or subsystem.
-
-Do not use the previous bad workflow of writing from memory first and waiting for Vardath to point out what was forgotten.
+- Wraith are one identity/xenotype with caste PawnKinds such as Hunter, Warrior, Commander, Keeper and Queen; backstories are biography, not races/castes.
+- Ordinary Wraith Drain Life never opens the strategic feeding-request popup.
+- Strategic Wraith faction hunger is separate and drives genuine feeding requests and escalating attack pressure when unresolved/refused.
+- Mature-Hive feeding ecology and mature-Hive retaliation are separate from strategic hunger.
+- Use **Wraith Grav Engine**, not obsolete Gravcore substitution.
+- Human-form Replicators/Asurans are nanite humanoids, distinct from block Replicator custom forms.
+- Mixed block + human-form raid composition can be intentional.
+- Queen is one exact female human-form Replicator, age 13 in the current first-build design, held in a real cryosleep chamber.
+- Queen becomes player-recruited immediately upon release/spawn.
+- Asuran/Lattice recovery operatives try to capture her during the vault encounter.
+- Capture is committed only when a hostile carrier physically exits the map with the exact Queen.
+- While she remains player-owned, Asurans may later make occasional capture raids against **any player map where she is physically present**; this is not restricted to home maps.
+- If captured, the Lattice gains genuine sovereign use of block Replicators in appropriate threats, not a fake `+1 outbreak` bonus.
+- Old day-84 discovery pacing was rejected. Major WNG content must be reachable in short campaigns and story/event pacing must remain tunable rather than buried in code.
+- CatCraft Stargates! integration is optional; CatCraft owns gate networking, WNG owns WNG incidents/craft/objectives.
+- Both Wraith and Asuran/Precursor Odyssey gravship families remain planned and must be functionally distinct.
+- Professional art/audio remains part of the full mod, but approved Replicator graphics are currently preserved and should not be casually replaced.
 
 ## Process rules that must not regress
 
@@ -156,40 +156,9 @@ Do not use the previous bad workflow of writing from memory first and waiting fo
 - Do not omit features.
 - Do not bury author-tunable design/balance choices as scattered magic numbers or immutable constants.
 - Prefer Defs/settings/centralized configuration where practical for tunable behavior.
-- Do not recreate anti-regression or release-check bureaucracy. Use only minimal checks necessary to establish that code/Defs function.
 - Historical source is reference evidence only, not a code authority.
 - Do not call any old checkpoint known-good.
 - Do not use private-repository credits for this rebuild.
-- Do not generate new art unless Vardath explicitly asks for image/art generation or a specific art task requires it.
+- Do not generate new art unless Vardath explicitly asks for it.
 - Do not ask Vardath to repeat requirements already recorded in the continuity set.
 - Continue implementation when told to continue; do not stop after a context summary.
-
-## Major later-plan reminders
-
-These are not the immediate coding target while the block Replicator foundation is incomplete, but must not be forgotten later:
-
-- Wraith are one identity/xenotype with caste PawnKinds such as Hunter, Warrior, Commander, Keeper and Queen; backstories are biography, not races/castes.
-- Ordinary Wraith Drain Life never opens the strategic feeding-request popup.
-- Strategic Wraith faction hunger is separate and drives genuine feeding requests and escalating attack pressure when unresolved/refused.
-- Mature-Hive feeding ecology and mature-Hive retaliation are separate from strategic hunger.
-- Wraith Living Forge / Grav Engine biological progression should support the intended living-host and corpse paths where retained.
-- Use **Wraith Grav Engine**, not obsolete Gravcore substitution.
-- Human-form Replicators/Asurans are nanite humanoids, distinct from block Replicator custom forms.
-- Mixed block + human-form raid composition can be intentional.
-- Queen is currently designed as one exact age-13 female human-form Replicator in a real cryosleep chamber.
-- Queen becomes player-recruited immediately upon release/spawn.
-- Four hostile Asuran/Lattice recovery operatives attempt to capture her during the vault encounter under the current design.
-- Capture is committed only when a hostile carrier physically exits the map with the exact Queen.
-- If she remains on a player home map, Asurans may later make occasional capture raids against the home map where she is physically present.
-- If captured, the Lattice gains genuine sovereign use of block Replicators in appropriate threats, not a fake `+1 outbreak` bonus.
-- Old day-84 discovery pacing was rejected. Major WNG content must be reachable in short campaigns and story/event pacing must remain tunable rather than buried in code.
-- CatCraft Stargates! integration is optional; CatCraft owns gate networking, WNG owns WNG incidents/craft/objectives.
-- Wraith Dart culling currently intends two real culling/abduction passes, but counts remain editable by Vardath.
-- Both Wraith and Asuran/Precursor Odyssey gravship families remain planned and must be functionally distinct.
-- Professional art/audio remains part of the full mod, but approved Replicator graphics are currently preserved and should not be casually replaced.
-
-## Verification status at this handoff
-
-The fresh-reset public repository does not currently use the old release/audit workflow, by design. Do not infer that `84b9c089...` is compile-verified merely because older pre-reset commits once had green CI.
-
-When continuing, use a minimal compile/load/reference check when needed to establish that the fresh implementation actually works. Do not turn that check into a new design-lock framework.
