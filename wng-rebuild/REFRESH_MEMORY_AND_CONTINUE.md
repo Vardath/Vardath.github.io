@@ -90,7 +90,7 @@ Do not carry forward:
 - Retained Replicator graphics are part of the subsystem inventory and must be reconciled against Defs/behavior before the Replicator foundation is called complete.
 - Mixed block + human-form Replicator raid composition is intentional where appropriate even though block recombination itself is block-machine behavior.
 - Queen release from the cryosleep chamber recruits her to the player **immediately on spawning**.
-- Asurans/Lattice try to capture the Queen during that quest and may later launch occasional capture raids only against a player home map where she is physically present.
+- Asurans/Lattice try to capture the Queen during that quest and may later launch occasional capture raids against **any player map where she is physically present**.
 - Queen capture is only real when a carrier physically exits the map with her; downing/pickup alone is not loss.
 - If the Asurans capture her, they gain real sovereign access to block Replicators in appropriate future threats, not a fake `+1 outbreak` modifier.
 - Obsolete Wraith `Gravcore` must not replace the intended functional **Wraith Grav Engine**.
