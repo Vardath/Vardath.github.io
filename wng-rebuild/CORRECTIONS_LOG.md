@@ -44,6 +44,21 @@ Vardath explicitly corrected the fresh reset after Shield Replicators and the wi
 
 A temporary partial scaffold may exist during implementation, but it must be identified as partial and cannot be treated as the finished subsystem. Before moving on, compare the subsystem against the whole plan/history and account for all known branches.
 
+### Rigorous plan execution — standing correction
+Vardath explicitly challenged the point of maintaining a plan if the assistant still implemented from partial recollection and required repeated corrections. The failure was procedural: the plan, corrections and retained assets already contained the information, but implementation began before a complete subsystem reconciliation.
+
+From this correction onward, **the plan must be followed rigorously before code is written**. `PLAN_EXECUTION_PROTOCOL.md` is part of the rebuild plan and is mandatory.
+
+For every subsystem, the assistant must:
+- read the standing rules, correction log, relevant master-plan sections and active subsystem notes;
+- inspect the current public implementation;
+- inventory retained graphics/assets and all other relevant references;
+- build a complete feature/relationship map before implementation;
+- account for every known feature as implemented, explicitly unfinished with dependency recorded, or explicitly changed/rejected by Vardath;
+- reconcile the subsystem again before moving on.
+
+Do not write a partial remembered implementation first and use the plan afterwards to discover omissions. The required order is **read -> reconcile -> inventory -> map -> implement -> reconcile again**.
+
 ## Gameplay/design corrections
 
 ### Wraith feeding request popup
