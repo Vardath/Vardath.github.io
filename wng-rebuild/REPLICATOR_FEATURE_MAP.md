@@ -2,17 +2,17 @@
 
 Author/final design authority: **Vardath**.
 
-This is the working reconciliation map for the clean RimWorld 1.6 rebuild. It is not immutable canon. Newer explicit Vardath instructions override it.
+This is the current reconciliation map for the clean RimWorld 1.6 rebuild. It is not immutable canon. Newer explicit Vardath instructions override it.
 
 ## Scope / identity boundary
 
-This map covers the **mechanical block Replicator foundation**. Human-form Replicators/Asurans and the Replicator Queen are separate later identity layers, although their later sovereign/control interfaces with block Replicators remain tracked as dependencies.
+This map covers the **mechanical block Replicator foundation**. Human-form Replicators/Asurans and the exact Replicator Queen are separate later identity layers, although their sovereign/control interfaces with block Replicators are tracked here as dependencies.
 
 Specialist bodies and learned adaptations are separate from the physical size ladder.
 
 ## Retained assets — all accounted for
 
-Body graphics retained under `Textures/Things/Pawn/Replicator/`:
+Body graphics under `Textures/Things/Pawn/Replicator/`:
 - Drone/base
 - Hunter
 - Bulwark
@@ -23,41 +23,43 @@ Body graphics retained under `Textures/Things/Pawn/Replicator/`:
 - Burrower
 - Artillery
 
-Adaptation overlays retained under `Textures/Things/Pawn/Replicator/Adaptation/`:
+Adaptation overlays under `Textures/Things/Pawn/Replicator/Adaptation/`:
 - Armor
 - Ranged
 - Power
 - Grav
 - Shield
 
-Resources retained under `Textures/Things/Item/Resource/Replicator/`:
+Resources under `Textures/Things/Item/Resource/Replicator/`:
 - Replicator Matter
 - Replicator Core Fragment
 
 No replacement art is to be generated unless Vardath asks for it.
 
-## Current public implementation inventory
+## Current public implementation snapshot
 
-Verified public `main` before this reconciliation: `84b9c08991cabd26e950d640fb9c4a350613e760`.
+Fresh-rebuild implementation cleanup head after the latest verified block work:
+- `94705ee8894b6659920178e19ea0ebe21555c7be`
 
-Current source:
-- `ReplicatorState.cs` — material/adaptation state packet
-- `ReplicatorAssimilation.cs` — hostile assimilation, matter yield, offspring spawning
-- `ReplicatorEMP.cs` — EMP suppression
-- `ReplicatorRegeneration.cs` — periodic healing while not EMP-suppressed
-- `ReplicatorHierarchy.cs` — recombination, genuine-death splitting, split-born lockout, state transfer
-- `ReplicatorMatter.cs` — death salvage and dangerous dormant-matter reassembly
+The head must always be fetched again before future edits.
 
-Current Defs:
-- Drone, Hunter, Bulwark, Titan, Siege Mass and Controller races/PawnKinds
-- Repairer, Burrower and Artillery races/PawnKinds
-- autonomous Replicator faction
-- assimilation job / Replicator ThinkTree
-- Replicator Matter / Core Fragment
+Current block source includes:
+- `ReplicatorState.cs`
+- `ReplicatorAssimilation.cs`
+- `ReplicatorEMP.cs`
+- `ReplicatorRegeneration.cs`
+- `ReplicatorHierarchy.cs`
+- `ReplicatorMatter.cs`
+- `ReplicatorAdaptationEffects.cs`
+- `ReplicatorSpecialists.cs`
+- `ReplicatorContainment.cs`
+- `ChildsToy.cs`
+
+Current Defs include the full ladder, all four specialist bodies, Child's Toy, Replicator faction, jobs/ThinkTree, research/gestation, containment and Replicator resources.
 
 ## Complete relationship/status map
 
-### Physical hierarchy
+### Physical hierarchy — IMPLEMENTED
 
 Upward recombination:
 
@@ -67,262 +69,260 @@ Downward genuine-destruction breakup:
 
 **Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base**
 
-Rules:
+Rules implemented:
 - Drone/base is irreducible.
-- Combination counts and check timing are tunable Def values.
-- Genuine destruction of a higher form produces operational lower forms rather than making the mass disappear.
-- Intentional upward recombination consumption must not trigger death splitting.
-- Split-born children receive the current tunable ~2,500-tick / ~1 in-game hour recombination lockout.
-- **The purpose of that lockout is combat playability:** destroying a Titan or Siege Mass must not let its children immediately recreate the same large threat and make the fight effectively impossible/immortal.
-- The exact duration remains tunable; the anti-impossible-combat behavior is required.
-- Material/adaptation/control state must survive transformations where appropriate.
+- combine counts/check timing are Def-tunable;
+- genuine destruction creates operational lower forms rather than making large forms vanish;
+- intentional upward recombination consumption does not trigger death splitting;
+- split-born children receive the tunable ~2,500-tick / ~1 in-game hour recombination lockout;
+- the lockout exists specifically for combat playability so killing a Titan/Siege Mass does not immediately recreate the same threat and appear immortal;
+- learned state and stored matter survive hierarchy transactions appropriately;
+- stored matter sums upward and is divided among genuine-death children rather than being duplicated or lost.
 
-Status: **implemented foundation; cumulative adaptation state has now been added, while later control-domain transfer still remains to be implemented with the sovereign/control layer.**
+Later sovereign-control identity transfer remains a dependency of the later Queen/control layer, not a missing block-hierarchy mechanic.
 
-### Controller
+### Controller — IMPLEMENTED
 
-Relationship: specialist coordination body, not a size-ladder rung and not equivalent to Queen/implant sovereign control.
+Controller is a specialist coordination body, not a size-ladder rung and not equivalent to Queen/implant sovereign control.
 
-Required behavior:
-- coordinate nearby same-domain Replicators;
-- improve swarm target/focus/support behavior;
-- respect EMP and ownership/control boundaries;
-- remain useful but not required for basic Replicator operation.
+Implemented behavior:
+- finds nearby same-faction autonomous Replicators;
+- provides a shared hostile focus;
+- respects faction/control boundaries;
+- stops active coordination behavior under EMP;
+- ordinary Replicators still function without a Controller.
 
-Status: **unfinished — Def/PawnKind exists; behavior missing.**
+### Repairer — IMPLEMENTED
 
-### Repairer
+Implemented behavior:
+- seeks damaged same-faction block Replicators;
+- prioritizes more seriously injured allies;
+- moves into repair range and heals damage;
+- does not repair hostile Replicators merely because they are Replicators;
+- stops active repair under EMP.
 
-Relationship: specialist support body.
+### Burrower — IMPLEMENTED
 
-Required behavior:
-- find damaged allied block Replicators;
-- move to/support them and actively repair injuries/damage;
-- respect EMP and faction/control domains;
-- never repair hostile Replicators merely because they share a race family.
+Implemented behavior:
+- breaches hostile structures;
+- prioritizes the WNG Replicator containment projector first;
+- then prioritizes access blockers such as doors/gates/bulkheads, walls and barricades;
+- generic hostile buildings are fallback targets;
+- can attack eligible factionless access blockers where necessary;
+- respects ownership/hostility and EMP rules.
 
-Status: **unfinished — Def/PawnKind exists; behavior missing.**
+This is the current first-build tactical implementation and remains tunable/refinable through testing.
 
-### Burrower
+### Artillery / siege support — IMPLEMENTED
 
-Relationship: specialist breach/path-opening body.
+Implemented behavior:
+- real long-range support attack;
+- Def-tunable minimum/maximum range, warmup, damage and armor penetration;
+- operates as a ranged support specialist rather than a melee pawn with an Artillery label;
+- respects hostility/control boundaries and EMP.
 
-Required behavior:
-- identify tactically meaningful walls/doors/fortifications/containment blockers;
-- breach them to open paths for the swarm;
-- prioritize purposeful access over random destruction where practical;
-- respect EMP and ownership/control boundaries.
+### Assimilation and matter economy — IMPLEMENTED FOUNDATION
 
-Status: **unfinished — Def/PawnKind exists; behavior missing.**
+Implemented behavior:
+- autonomous hostile Replicators search for accessible assimilable matter/technology;
+- useful technology is prioritized above arbitrary nearest-object choice;
+- shield/barrier, grav, ranged weapons, power systems, apparel/strong structures and valuable matter receive differentiated priority;
+- successful assimilation records learning evidence and converts consumed material into stored replication matter;
+- offspring consume stored matter rather than spawning freely;
+- offspring count is bounded per assimilation;
+- autonomous hostile Replicator population is capped by a Def-tunable per-map ceiling;
+- player-owned/player-controlled Replicators do not autonomously consume the player colony.
 
-### Artillery / siege support
+### Learned adaptation state — IMPLEMENTED FOUNDATION
 
-Relationship: mature long-range support specialist.
-
-Required behavior:
-- possess a real ranged/siege attack or support function;
-- operate at range behind/with the swarm rather than remain a melee pawn merely named Artillery;
-- use swarm/controller target context where practical;
-- respect EMP and control boundaries.
-
-Status: **unfinished — Def/PawnKind exists; real ranged behavior missing.**
-
-### Assimilation and matter economy
-
-Required behavior:
-- autonomous hostile Replicators seek accessible matter and useful technology;
-- successful consumption produces Replicator matter/economy and learning evidence;
-- growth/reproduction spends matter rather than spawning for free;
-- target selection should value useful technology/materials/tactical targets rather than only nearest-object distance;
-- population/growth must be bounded;
-- player-owned Replicators must not autonomously consume the player colony.
-
-Current implementation already prevents player-faction/player-controlled Replicators from autonomous assimilation and converts consumed targets into stored matter.
-
-Status: **partial — basic consumption/economy implemented; target priorities and bounded swarm growth unfinished.**
-
-### Learned adaptation state
-
-Known independent learned branches:
+Independent cumulative branches:
 - Material
 - Armor
 - Ranged
 - Power
 - Shield
 - Grav
-- Anti-shield/countermeasure knowledge after suitable shield experience
+- AntiShield
 
-Evidence relationships:
-- weapons/turrets -> Ranged learning
-- armor/strong materials -> Armor/material learning
-- power systems -> Power learning
-- real shield technology/encounters -> Shield learning and suitable anti-shield knowledge
-- gravtech -> Grav learning
-- suitable advanced precursor/Asuran systems -> later advanced learned effects
+The fresh rebuild originally allowed only one adaptation enum value at a time. That has been corrected to cumulative save-persistent bit flags with migration for the earlier fresh-save field.
 
-Adaptations must be earned from successful interaction/assimilation rather than arbitrary spawn flags.
+Learning is driven by successful assimilation evidence rather than arbitrary spawn flags.
 
-The previous fresh implementation stored only one enum adaptation at a time, causing later learning to overwrite earlier learning. This has been corrected to cumulative bit-flag state with save migration support.
+### Armor adaptation — IMPLEMENTED
 
-Status: **implemented state foundation; gameplay effects and full target classifiers remain unfinished.**
+- learned from applicable armor/material/strong-target evidence;
+- reduces incoming non-EMP damage through Def-tunable multiplier;
+- retained Armor overlay renders when learned.
 
-### Adaptation gameplay effects and retained overlays
+### Ranged adaptation — IMPLEMENTED
 
-Armor:
-- real protection/damage-resistance effect based on learned armor/material evidence.
-- retained overlay: `WNG_ReplicatorAdapt_Armor.png`.
+- learned from ranged weapon/technology evidence;
+- gives autonomous block Replicators learned ranged fire;
+- distinct from the Artillery specialist's innate siege-support role;
+- retained Ranged overlay renders when learned.
 
-Ranged:
-- real ranged combat capability learned from weapons/turrets; distinct from the Artillery specialist's innate siege role.
-- retained overlay: `WNG_ReplicatorAdapt_Ranged.png`.
+### Power adaptation — IMPLEMENTED
 
-Power:
-- real benefit learned from powered systems, such as improved regeneration/operational output, with exact tuning editable.
-- retained overlay: `WNG_ReplicatorAdapt_Power.png`.
+- learned from powered systems;
+- improves self-regeneration through Def-tunable multiplier;
+- retained Power overlay renders when learned.
 
-Grav:
-- real mobility/grav-related benefit after gravtech learning; exact mechanic remains author-tunable and should not be faked before the relevant grav systems exist.
-- retained overlay: `WNG_ReplicatorAdapt_Grav.png`.
+### Shield adaptation / Shield Replicator behavior — IMPLEMENTED
 
-Shield:
-- real defensive shield adaptation / Shield Replicator behavior after shield learning.
-- retained overlay: `WNG_ReplicatorAdapt_Shield.png`.
-- later learned anti-shield/countermeasure development must exist after suitable shield encounters; this is separate from merely having a shield.
+- learned from shield/barrier evidence;
+- gives a rechargeable defensive shield pool;
+- EMP bypasses/suppresses the adaptive shield behavior;
+- retained Shield overlay renders when learned.
 
-Status: **unfinished — state is now cumulative, but gameplay effects and retained overlay rendering are not implemented yet. Grav and anti-shield integration also depend on later concrete grav/shield targets for complete classification.**
+### Learned anti-shield development — IMPLEMENTED STATE / EXTERNAL INTEGRATION DEPENDENCY
 
-### State inheritance
+- first shield encounter does **not** instantly grant complete anti-shield mastery;
+- repeated shield evidence is required (current threshold Def-tunable);
+- AntiShield knowledge is stored cumulatively and survives hierarchy transformations;
+- current adaptive ranged damage can exploit learned anti-shield state against Replicator adaptive shields.
 
-State that must survive split/recombine where appropriate:
-- learned material information
-- all learned adaptation flags/evidence
-- recombination lockout on split-born children
-- player/hostile ownership/control domain
-- later sovereign-controller identity/control state
-- matter/economy contribution where transaction semantics require it
+Still dependent on later concrete non-Replicator WNG shield systems for full cross-system countermeasure interaction. This is explicitly unfinished with dependency recorded, not forgotten.
 
-Status: **partial — material and all current adaptation flags now copy/merge through transformations; later sovereign/control-domain state and explicit matter-accounting semantics remain to be added.**
+### Grav adaptation — IMPLEMENTED STATE/VISUAL / GAMEPLAY DEPENDENCY
 
-### Regeneration
+- grav evidence can be learned and retained;
+- Grav overlay renders when learned;
+- actual mobility/grav gameplay effect is intentionally **not faked** before WNG's real gravtech/gravship mechanics exist.
 
-Required behavior:
-- block Replicators repair themselves over time;
+Dependency: bind Grav adaptation to the later concrete WNG grav system once implemented.
+
+### State inheritance — IMPLEMENTED FOR CURRENT BLOCK STATE
+
+Current split/recombine transfer includes:
+- material identity;
+- all cumulative adaptation flags;
+- shield/anti-shield evidence;
+- split-born recombination lockout;
+- stored replication matter with conservation semantics;
+- faction ownership through normal pawn generation/transaction flow.
+
+Later exact sovereign-controller identity/control metadata belongs to the later Queen/control subsystem.
+
+### Regeneration — IMPLEMENTED
+
+- block Replicators heal over time;
 - EMP suppresses regeneration;
-- Power/Repairer adaptations may modify this through centralized/tunable behavior.
+- Power adaptation improves healing rate;
+- Repairer support is a separate active ally-repair system.
 
-Status: **basic regeneration implemented; specialist/adaptation interaction unfinished.**
+### EMP suppression — IMPLEMENTED FOUNDATION
 
-### EMP suppression
+EMP meaningfully suppresses core replication systems including:
+- assimilation;
+- recombination;
+- regeneration;
+- specialist active functions;
+- adaptive shield recharge/active ranged functions.
 
-Required behavior:
-- EMP meaningfully suppresses replication systems across forms;
-- at minimum blocks assimilation, recombination, regeneration and specialist/adaptation active functions while suppressed;
-- exact duration remains tunable.
+Exact timing remains tunable.
 
-Status: **partial — core assimilation/recombination/regeneration suppression exists; new specialist/adaptation behaviors must integrate with it.**
+### Dangerous Replicator Matter / reassembly — IMPLEMENTED
 
-### Dangerous Replicator Matter / reassembly
+- genuine Replicator destruction can produce Replicator Matter and Core Fragments;
+- sufficiently large dormant Matter stacks can reassemble into hostile Drones;
+- thresholds/delay/chance/output are tunable Def/component values;
+- autonomous reassembly respects the same population ceiling as assimilation growth;
+- powered containment freezes the reassembly clock.
 
-Required behavior:
-- genuine Replicator destruction can leave Replicator Matter and occasional Core Fragments;
-- sufficiently large dormant matter stacks can reassemble into hostile base Replicators;
-- thresholds, delay, retry chance and output remain tunable;
-- containment must provide a practical way to keep recovered matter safe.
+### Containment — IMPLEMENTED
 
-Status: **dangerous reassembly implemented; containment interaction unfinished.**
+A powered Replicator containment projector now exists.
 
-### Containment
+While active:
+- dangerous Replicator Matter does not advance toward reassembly;
+- hostile block Replicators inside the field cannot assimilate or recombine;
+- Burrowers specifically prioritize destroying the projector when eligible;
+- player-controlled Replicators do not treat their own colony containment as an autonomous hostile objective.
 
-Required behavior:
-- Replicators and recovered Replicator Matter should recognize effective containment where appropriate;
-- containment must matter to escape/breach/reassembly decisions rather than be flavor text;
-- Burrowers should be the specialist most capable of defeating physical containment;
-- player-controlled Replicators must not treat their own colony containment as a hostile breach objective.
+Projector radius, power draw, construction cost and research access remain tunable.
 
-Status: **unfinished — dependency: concrete containment behavior/Defs must be implemented.**
+### Swarm coordination / AI — IMPLEMENTED FOUNDATION
 
-### Swarm coordination / AI
+The current Replicator ThinkTree now includes role-specific behavior:
+- Repairer support;
+- Artillery ranged support;
+- Burrower breaching;
+- Controller-shared target focus;
+- assimilation;
+- normal LordDuty/hostile behavior fallback.
 
-Required behavior:
-- local swarm members should not act as unrelated independent pawns;
-- Controllers provide stronger coordination;
-- specialists select jobs appropriate to their role;
-- target focus, repairing, breaching and artillery support should cooperate where practical;
-- avoid expensive whole-map per-tick scans; use bounded/interval-based decisions.
+Controller and specialist searches are bounded by role/range and are not a design-lock architecture; further tactical refinement can follow live testing.
 
-Status: **unfinished — current ThinkTree provides assimilation + LordDuty + wandering only.**
+### Bounded population / growth — IMPLEMENTED
 
-### Bounded population / growth
+- assimilation offspring require matter;
+- per-assimilation offspring count is bounded;
+- map-level hostile Replicator population ceiling is Def-tunable;
+- dangerous Matter reassembly respects the ceiling;
+- genuine-death split children are treated as transformation mass rather than free autonomous growth and therefore are not blocked by the growth cap;
+- the one-hour split-born recombination lockout remains the combat-balancing mechanism for large-form breakup.
 
-Required behavior:
-- prevent uncontrolled tick-heavy self-replication;
-- growth should depend on available matter and tunable limits/conditions;
-- death-split children are transformation mass, not free new threat mass;
-- autonomous matter reassembly must also remain bounded.
+### Player-owned safety / control — IMPLEMENTED FOUNDATION
 
-Status: **unfinished — individual assimilation has per-event offspring limits, but no coherent map/swarm population cap/budget exists yet.**
+- player-owned/player-controlled Replicators do not autonomously assimilate colony assets;
+- specialist autonomous hostile jobs exclude player-controlled bodies;
+- player-owned ladder forms do not silently perform hostile-style automatic recombination;
+- richer deliberate sovereign control commands are deferred to the later Queen/control subsystem.
 
-### Player-owned safety / control
+### Child's Toy / player Replicator branch — IMPLEMENTED
 
-Required behavior:
-- player-owned Replicators must obey player control rather than autonomously consume player assets;
-- their specialist/adaptation functions must respect player ownership;
-- player-controlled bodies must not silently join hostile autonomous swarm domains unless a real feral/override/control transition occurs.
-
-Status: **partial — current assimilation blocks player-owned/player-controlled Replicators; broader ownership/control semantics unfinished.**
-
-### Child's Toy / player Replicator branch
-
-Vardath clarification, 2026-09-10:
+Vardath rule:
 - **Child's Toy is a player-owned mech.**
-- It remains player-owned while controlled/non-feral.
-- **If it goes feral, it transforms into an ordinary Replicator Drone.**
-- After that transformation it follows the normal Replicator Drone/autonomous-hostile behavior/domain unless another real control mechanic subsequently changes it.
-- Historical gestation/feral timing remains tunable and must not be buried as magic numbers.
+- while validly controlled it remains a normal colony mech;
+- **if it goes feral, it transforms into an ordinary Replicator Drone**;
+- the feral/uncontrolled delay is tunable;
+- transformation carries learned Replicator state into the Drone;
+- replacement Drone is successfully placed before the Toy is consumed, preventing failed transformation from silently deleting the pawn;
+- the resulting Drone belongs to the hostile autonomous Replicator swarm and follows normal Drone behavior.
 
-Historical public implementation is reference evidence only; the current rebuild must reconstruct this cleanly against the new block-state/control system.
+The current gestation recipe uses Replicator Matter plus a basic subcore and is gated by Replicator gestation research; exact cost/timing remains tunable.
 
-Status: **unfinished — player mech Def/behavior, gestation/feral transition and Drone conversion need implementation.**
+### Autonomous faction / threat roster — IMPLEMENTED FOUNDATION
 
-### Autonomous faction / threat roster
+Current combat roster includes:
+- Drone
+- Hunter
+- Bulwark
+- Controller
+- Repairer
+- Burrower
+- Artillery
+- Titan
+- Siege Mass
 
-Required behavior:
-- autonomous hostile block Replicator swarm faction;
-- raid/threat roster can include ladder forms and specialist bodies at appropriate weights;
-- later mixed block + human-form raid composition remains allowed where appropriate.
+Weights are editable. Mixed block + human-form raid composition remains a later Asuran/human-form integration dependency.
 
-Current problem: current faction combat options list Drone, Hunter, Bulwark and Controller only; Titan, Siege Mass, Repairer, Burrower and Artillery are absent.
+### Core Fragment progression interface — IMPLEMENTED RESOURCE / LATER DEPENDENCY
 
-Status: **partial — faction exists; full roster/threat composition unfinished.**
+Core Fragment exists as salvage/research material. Later reconstruction/control/advanced research uses remain dependent on later subsystems and are not implied complete merely because the resource exists.
 
-### Core Fragment progression interface
+### Human-form / Asuran / Queen sovereign dependencies — EXPLICITLY UNFINISHED
 
-Core Fragment is planned salvage for later research, containment and reconstruction/player systems. It should not be presented as completing those later mechanics by itself.
-
-Status: **implemented resource; later research/reconstruction dependency recorded.**
-
-### Human-form / Asuran / Queen sovereign dependencies
-
-Tracked now, implemented later in the human-form layer:
+Tracked for the later human-form/Queen layer:
 - block Replicators remain mechanically distinct from human-form Replicators/Asurans;
-- mixed raids can intentionally contain both;
-- exact Queen has broader sovereign access to appropriate block Replicators;
-- Sovereign Neural Lattice implant control is bounded and target-specific, not Queen identity;
-- temporary Asuran lattice intrusion is another separate override state;
-- if Asurans physically capture the Queen, later suitable Lattice threats gain genuine sovereign block-Replicator access.
+- mixed raids may intentionally contain both;
+- exact Queen has genuine sovereign block-Replicator authority;
+- Queen is one exact female human-form Replicator, age 13 in the current first-build design, held in a real cryosleep chamber;
+- she becomes player-recruited immediately when released/spawned;
+- Asuran/Lattice operatives attempt to capture her during recovery;
+- while player-owned, later Asuran capture raids may target **any player map where she is physically present**, not only home maps;
+- capture commits only when a hostile carrier physically exits the map with the exact Queen;
+- if captured, suitable future Lattice threats gain genuine sovereign block-Replicator access rather than a fake outbreak modifier;
+- Sovereign Neural Lattice implant control remains separate and bounded;
+- temporary Asuran lattice intrusion remains another distinct override state.
 
-Status: **unfinished — dependency recorded for later human-form/Queen implementation; current block state/control architecture must not make this impossible.**
+## Final block-foundation reconciliation result
 
-## Implementation order from this reconciliation
+Every known block Replicator feature found in the plan, correction history, retained asset tree and current implementation now ends this pass as either:
 
-1. Replace single-adaptation state with multi-adaptation/save-safe state and improve split/recombine merge semantics. **State portion implemented; later control-domain extension remains dependent.**
-2. Implement adaptation effects/visual overlays that can be supported now; preserve explicit dependencies for Grav and anti-shield integration where later concrete systems are needed.
-3. Implement Controller, Repairer, Burrower and Artillery actual behavior.
-4. Improve assimilation target scoring and bounded population/growth.
-5. Implement containment interaction and ensure matter reassembly respects it.
-6. Implement broader swarm coordination/role AI.
-7. Implement complete player-owned control semantics and Child's Toy player-mech -> feral -> normal Replicator Drone transformation.
-8. Expand autonomous threat roster appropriately.
-9. Reconcile the entire inventory again before leaving the block Replicator foundation.
+- **implemented in the block foundation**, or
+- **explicitly unfinished because it depends on a later concrete subsystem** (Grav gameplay integration, external shield countermeasure integration, Queen/Asuran sovereign-control integration, mixed human-form raids and richer sovereign player commands).
 
-Every item above must finish the Replicator pass as **implemented**, **unfinished with dependency recorded**, or **explicitly changed/rejected by Vardath**. There is no forgotten state.
+There is no known block Replicator feature currently left in an untracked/forgotten state.
+
+Latest fresh implementation was minimally verified with a temporary GitHub Actions compile/XML pass; both succeeded and the temporary workflow was removed afterward.
