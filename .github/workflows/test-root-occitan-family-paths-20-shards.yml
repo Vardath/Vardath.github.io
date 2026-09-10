@@ -1,0 +1,49 @@
+name: Test Root Occitan Family Paths - 20 Shards
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/test_root_occitan_family_paths.py'
+      - '.github/workflows/test-root-occitan-family-paths-20-shards.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Run shard
+        run: python tools/test_root_occitan_family_paths.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: root-occitan-family-${{ matrix.shard }}
+          path: data/root-occitan-family-paths-shards/shard-*.json
+  merge:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: root-occitan-family-*
+          path: artifacts
+      - name: Merge
+        run: |
+          mkdir -p data/root-occitan-family-paths-shards
+          find artifacts -name 'shard-*.json' -exec cp {} data/root-occitan-family-paths-shards/ \;
+          python tools/test_root_occitan_family_paths.py merge
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/root-occitan-family-paths.json
+          git commit -m 'Add root-to-Occitan family-path results' || exit 0
+          git pull --rebase origin main
+          git push
