@@ -1,0 +1,620 @@
+{
+  "version": 1,
+  "test": "Reconstructed root -> Occitan-like conserved state -> Mirror-Man family paths",
+  "shards": 20,
+  "dictionary_entries": 12000,
+  "operators": [
+    "id",
+    "row_mirror",
+    "col_mirror",
+    "both_mirror",
+    "transpose",
+    "transpose_row",
+    "transpose_col",
+    "transpose_both"
+  ],
+  "design": {
+    "root": "Independent reconstructed dictionary gate-transition profile, recomputed per deterministic shard.",
+    "conserved_state": "Occitan is tested as the proposed surviving root-like state; Indonesian, Latin and Italian are explicit competitors.",
+    "prediction": "Each source is transformed by the same eight preregistered Mirror-Man operators; the best operator predicts each canonical target language. Results are aggregated by broad language family and on non-Romance targets.",
+    "falsification": "If Occitan is uniquely privileged as a conserved branching state, it should consistently beat competitors out of family, not merely resemble the reconstructed root."
+  },
+  "verdict": {
+    "root_to_occitan_mean_best_operator_score": 0.9265533087271546,
+    "root_to_occitan_operator_counts": {
+      "id": 20
+    },
+    "best_nonromance_source": "ind",
+    "nonromance_scores": {
+      "root": 0.7210307569004719,
+      "oci": 0.7198285493259696,
+      "ind": 0.7252314205095602,
+      "lat": 0.7064865017132397,
+      "ita": 0.7000829643056259
+    },
+    "occitan_beats_indonesian_nonromance": false,
+    "occitan_beats_latin_nonromance": true,
+    "family_wins": {
+      "root": 7,
+      "oci": 5,
+      "ind": 20,
+      "lat": 5,
+      "ita": 0
+    }
+  },
+  "family_results": [
+    {
+      "family": "Abkhaz-Adyge",
+      "winner": "ind",
+      "scores": {
+        "root": 0.6146804689618965,
+        "oci": 0.5930209925526264,
+        "ind": 0.6248978027586074,
+        "lat": 0.5212574211148884,
+        "ita": 0.5295194192976154
+      }
+    },
+    {
+      "family": "Afro-Asiatic",
+      "winner": "root",
+      "scores": {
+        "root": 0.7802225363673803,
+        "oci": 0.7607685630783063,
+        "ind": 0.779802231730388,
+        "lat": 0.7188250183904902,
+        "ita": 0.7326010857820687
+      }
+    },
+    {
+      "family": "Algic",
+      "winner": "ind",
+      "scores": {
+        "root": 0.5892591876702276,
+        "oci": 0.5698413693864343,
+        "ind": 0.5942839437999722,
+        "lat": 0.5406840966196309,
+        "ita": 0.5188632333185892
+      }
+    },
+    {
+      "family": "Arawakan",
+      "winner": "ind",
+      "scores": {
+        "root": 0.6398760106198272,
+        "oci": 0.6004396484593694,
+        "ind": 0.7068761981569242,
+        "lat": 0.6357279569625174,
+        "ita": 0.5703238000353836
+      }
+    },
+    {
+      "family": "Athabaskan-Eyak-Tlingit",
+      "winner": "ind",
+      "scores": {
+        "root": 0.37603567305202823,
+        "oci": 0.38127730634072227,
+        "ind": 0.39857822880991356,
+        "lat": 0.3231652262454704,
+        "ita": 0.3595985271936731
+      }
+    },
+    {
+      "family": "Atlantic-Congo",
+      "winner": "root",
+      "scores": {
+        "root": 0.5585666837340293,
+        "oci": 0.5460559208036665,
+        "ind": 0.5335702489890274,
+        "lat": 0.5395737384923439,
+        "ita": 0.5147707946162636
+      }
+    },
+    {
+      "family": "Austroasiatic",
+      "winner": "ind",
+      "scores": {
+        "root": 0.6679489101282665,
+        "oci": 0.6505391272941199,
+        "ind": 0.6745906564879196,
+        "lat": 0.633685021729915,
+        "ita": 0.6330503703033143
+      }
+    },
+    {
+      "family": "Austronesian",
+      "winner": "ind",
+      "scores": {
+        "root": 0.8065808276984677,
+        "oci": 0.7865346873711228,
+        "ind": 0.8461492866681093,
+        "lat": 0.7685109679106917,
+        "ita": 0.7604217864505532
+      }
+    },
+    {
+      "family": "Cariban",
+      "winner": "ind",
+      "scores": {
+        "root": 0.750691452512583,
+        "oci": 0.7485762575750229,
+        "ind": 0.7833747770505826,
+        "lat": 0.7294479694711573,
+        "ita": 0.7220828900150897
+      }
+    },
+    {
+      "family": "Chibchan",
+      "winner": "root",
+      "scores": {
+        "root": 0.6217039561424705,
+        "oci": 0.6019524773651054,
+        "ind": 0.5939178184722116,
+        "lat": 0.5639490229721542,
+        "ita": 0.5591290481879
+      }
+    },
+    {
+      "family": "Dravidian",
+      "winner": "ind",
+      "scores": {
+        "root": 0.801575201620246,
+        "oci": 0.774060977455258,
+        "ind": 0.8372783600682242,
+        "lat": 0.7478519555594013,
+        "ita": 0.7687458185569496
+      }
+    },
+    {
+      "family": "Eskimo-Aleut",
+      "winner": "root",
+      "scores": {
+        "root": 0.7106483533777116,
+        "oci": 0.6964303811118133,
+        "ind": 0.7001751427166139,
+        "lat": 0.6434755637219004,
+        "ita": 0.6536084357413459
+      }
+    },
+    {
+      "family": "Huitotoan",
+      "winner": "ind",
+      "scores": {
+        "root": 0.7356960784132196,
+        "oci": 0.7162049651043066,
+        "ind": 0.7367540575301317,
+        "lat": 0.7344900981792041,
+        "ita": 0.7352832782348255
+      }
+    },
+    {
+      "family": "Indo-European",
+      "winner": "oci",
+      "scores": {
+        "root": 0.7966774121935836,
+        "oci": 0.8079659725397637,
+        "ind": 0.7923944291994556,
+        "lat": 0.798939160073546,
+        "ita": 0.8010886298838126
+      }
+    },
+    {
+      "family": "Iroquoian",
+      "winner": "oci",
+      "scores": {
+        "root": 0.7426518407885365,
+        "oci": 0.7451052222809407,
+        "ind": 0.7268781938808105,
+        "lat": 0.7137158401621025,
+        "ita": 0.7089305721009057
+      }
+    },
+    {
+      "family": "Japonic",
+      "winner": "root",
+      "scores": {
+        "root": 0.7050497495963798,
+        "oci": 0.6809369084654715,
+        "ind": 0.6935581318621371,
+        "lat": 0.6736308264323461,
+        "ita": 0.6049617533695112
+      }
+    },
+    {
+      "family": "Kartvelian",
+      "winner": "lat",
+      "scores": {
+        "root": 0.6827529839790691,
+        "oci": 0.7200773496459367,
+        "ind": 0.6491431432191245,
+        "lat": 0.76243174629234,
+        "ita": 0.7434937729106585
+      }
+    },
+    {
+      "family": "Kiowa-Tanoan",
+      "winner": "root",
+      "scores": {
+        "root": 0.3518210663271235,
+        "oci": 0.33704216674249765,
+        "ind": 0.3436527805707762,
+        "lat": 0.32793668681149957,
+        "ita": 0.30676859858040645
+      }
+    },
+    {
+      "family": "Koreanic",
+      "winner": "ind",
+      "scores": {
+        "root": 0.8189658081927451,
+        "oci": 0.8056439340166626,
+        "ind": 0.8392716072804887,
+        "lat": 0.7776601482444404,
+        "ita": 0.7572866640840326
+      }
+    },
+    {
+      "family": "Kxa",
+      "winner": "ind",
+      "scores": {
+        "root": 0.2566199613383189,
+        "oci": 0.24764923486957843,
+        "ind": 0.315958279198523,
+        "lat": 0.1705203418199319,
+        "ita": 0.24947601242914097
+      }
+    },
+    {
+      "family": "Misumalpan",
+      "winner": "ind",
+      "scores": {
+        "root": 0.6652363689816493,
+        "oci": 0.639257821642748,
+        "ind": 0.7303416339087653,
+        "lat": 0.5863919882366067,
+        "ita": 0.6051981240650554
+      }
+    },
+    {
+      "family": "Mongolic-Khitan",
+      "winner": "oci",
+      "scores": {
+        "root": 0.6878302728460054,
+        "oci": 0.7033464771093797,
+        "ind": 0.6778032287781401,
+        "lat": 0.6885617512375128,
+        "ita": 0.6648223254738738
+      }
+    },
+    {
+      "family": "Muskogean",
+      "winner": "ind",
+      "scores": {
+        "root": 0.7428393389054201,
+        "oci": 0.7370241834352569,
+        "ind": 0.7445083436238734,
+        "lat": 0.7292208673782399,
+        "ita": 0.7248606669216149
+      }
+    },
+    {
+      "family": "Nakh-Daghestanian",
+      "winner": "ind",
+      "scores": {
+        "root": 0.7812305116280944,
+        "oci": 0.747874172326765,
+        "ind": 0.7863111022163788,
+        "lat": 0.7128088369144938,
+        "ita": 0.7054555481404444
+      }
+    },
+    {
+      "family": "Nivkh",
+      "winner": "oci",
+      "scores": {
+        "root": 0.726987298076557,
+        "oci": 0.741127341031981,
+        "ind": 0.7090929611410695,
+        "lat": 0.6848949371367027,
+        "ita": 0.7157988365765281
+      }
+    },
+    {
+      "family": "North Halmahera",
+      "winner": "ind",
+      "scores": {
+        "root": 0.8451026324171005,
+        "oci": 0.8236095788467148,
+        "ind": 0.8527620164445959,
+        "lat": 0.7965704389220862,
+        "ita": 0.8122330718572874
+      }
+    },
+    {
+      "family": "Nuclear-Macro-Je",
+      "winner": "oci",
+      "scores": {
+        "root": 0.6821051451816931,
+        "oci": 0.7581829487289057,
+        "ind": 0.7044510206522617,
+        "lat": 0.6661461606690985,
+        "ita": 0.701836035293868
+      }
+    },
+    {
+      "family": "Pama-Nyungan",
+      "winner": "ind",
+      "scores": {
+        "root": 0.7621378730180196,
+        "oci": 0.7577901392502486,
+        "ind": 0.8202951645106945,
+        "lat": 0.72439268736476,
+        "ita": 0.7562206186328471
+      }
+    },
+    {
+      "family": "Sino-Tibetan",
+      "winner": "ind",
+      "scores": {
+        "root": 0.5912156488489343,
+        "oci": 0.5765150426741672,
+        "ind": 0.6042546263640802,
+        "lat": 0.5707759180403132,
+        "ita": 0.5355770696849846
+      }
+    },
+    {
+      "family": "Tai-Kadai",
+      "winner": "ind",
+      "scores": {
+        "root": 0.6394385394433435,
+        "oci": 0.6327655701373959,
+        "ind": 0.6587698278082277,
+        "lat": 0.5746635064171391,
+        "ita": 0.5672449855531061
+      }
+    },
+    {
+      "family": "Tungusic",
+      "winner": "lat",
+      "scores": {
+        "root": 0.6332499082731725,
+        "oci": 0.6806884069644854,
+        "ind": 0.6697354604541883,
+        "lat": 0.7048370357356786,
+        "ita": 0.65875823523839
+      }
+    },
+    {
+      "family": "Tupian",
+      "winner": "ind",
+      "scores": {
+        "root": 0.7859335808168201,
+        "oci": 0.7567122544808472,
+        "ind": 0.8496646797798447,
+        "lat": 0.7598075922915208,
+        "ita": 0.7318769670263099
+      }
+    },
+    {
+      "family": "Turkic",
+      "winner": "lat",
+      "scores": {
+        "root": 0.70261100432592,
+        "oci": 0.716686227260859,
+        "ind": 0.7076353322710129,
+        "lat": 0.7184980494083325,
+        "ita": 0.6940173225279372
+      }
+    },
+    {
+      "family": "Unclassified",
+      "winner": "root",
+      "scores": {
+        "root": 0.7219300374387713,
+        "oci": 0.7211117743899281,
+        "ind": 0.7216443484052899,
+        "lat": 0.7086747750563772,
+        "ita": 0.703371331145871
+      }
+    },
+    {
+      "family": "Uralic",
+      "winner": "lat",
+      "scores": {
+        "root": 0.7432043718448478,
+        "oci": 0.7590491480842878,
+        "ind": 0.7409532976867543,
+        "lat": 0.7656007565178302,
+        "ita": 0.7436223772639454
+      }
+    },
+    {
+      "family": "Wakashan",
+      "winner": "ind",
+      "scores": {
+        "root": 0.5035900965059359,
+        "oci": 0.5200608019972739,
+        "ind": 0.5765340472015998,
+        "lat": 0.5515129074178243,
+        "ita": 0.5070444767908593
+      }
+    },
+    {
+      "family": "Yukaghir",
+      "winner": "lat",
+      "scores": {
+        "root": 0.7762226703324011,
+        "oci": 0.7929360582738645,
+        "ind": 0.7727754366133979,
+        "lat": 0.8146477706856706,
+        "ita": 0.7641782294201752
+      }
+    }
+  ],
+  "focal_targets": [
+    {
+      "iso": "sqi",
+      "name": "Albanian",
+      "family": "Unclassified",
+      "winner": "oci",
+      "scores": {
+        "root": 0.894232383558718,
+        "oci": 0.9143102227432337,
+        "ind": 0.9033857357632464,
+        "lat": 0.900571547267562,
+        "ita": 0.9078084599202778
+      }
+    },
+    {
+      "iso": "grc",
+      "name": "Ancient Greek (to 1453)",
+      "family": "Unclassified",
+      "winner": "lat",
+      "scores": {
+        "root": 0.8891824005876017,
+        "oci": 0.8893978026702296,
+        "ind": 0.8741237375926898,
+        "lat": 0.9288905830797561,
+        "ita": 0.8865460624290011
+      }
+    },
+    {
+      "iso": "ind",
+      "name": "Indonesian",
+      "family": "Austronesian",
+      "winner": "root",
+      "scores": {
+        "root": 0.9091835993702505,
+        "oci": 0.8950242459709403,
+        "lat": 0.8981826453620042,
+        "ita": 0.8736430378041876
+      }
+    },
+    {
+      "iso": "ita",
+      "name": "Italian",
+      "family": "Indo-European",
+      "winner": "oci",
+      "scores": {
+        "root": 0.8933069699882333,
+        "oci": 0.917228970833983,
+        "ind": 0.8736430378041876,
+        "lat": 0.9096321836920868
+      }
+    },
+    {
+      "iso": "lat",
+      "name": "Latin",
+      "family": "Unclassified",
+      "winner": "ita",
+      "scores": {
+        "root": 0.8889966218172903,
+        "oci": 0.8953480801474699,
+        "ind": 0.8981826453620042,
+        "ita": 0.9096321836920868
+      }
+    },
+    {
+      "iso": "oci",
+      "name": "Occitan (post 1500)",
+      "family": "Indo-European",
+      "winner": "root",
+      "scores": {
+        "root": 0.9265533087271546,
+        "ind": 0.8950242459709403,
+        "lat": 0.8953480801474699,
+        "ita": 0.917228970833983
+      }
+    },
+    {
+      "iso": "por",
+      "name": "Portuguese",
+      "family": "Indo-European",
+      "winner": "oci",
+      "scores": {
+        "root": 0.9092163339373655,
+        "oci": 0.9143965742700122,
+        "ind": 0.863226539516132,
+        "lat": 0.8715399555050822,
+        "ita": 0.8695514970087816
+      }
+    },
+    {
+      "iso": "ron",
+      "name": "Romanian",
+      "family": "Indo-European",
+      "winner": "ita",
+      "scores": {
+        "root": 0.892111947417372,
+        "oci": 0.9102284195494084,
+        "ind": 0.8871753933175359,
+        "lat": 0.9328641663851006,
+        "ita": 0.9446334709181475
+      }
+    },
+    {
+      "iso": "spa",
+      "name": "Spanish",
+      "family": "Indo-European",
+      "winner": "root",
+      "scores": {
+        "root": 0.922354679023525,
+        "oci": 0.9130715233627179,
+        "ind": 0.9108170968305294,
+        "lat": 0.920384227398867,
+        "ita": 0.9219508361101849
+      }
+    },
+    {
+      "iso": "tur",
+      "name": "Turkish",
+      "family": "Turkic",
+      "winner": "root",
+      "scores": {
+        "root": 0.9080393653775656,
+        "oci": 0.9047980645619417,
+        "ind": 0.9040963060840075,
+        "lat": 0.8744797652595532,
+        "ita": 0.8965803555766869
+      }
+    }
+  ],
+  "operator_counts": {
+    "root": {
+      "id": 6444,
+      "transpose": 348,
+      "transpose_row": 68,
+      "row_mirror": 80,
+      "both_mirror": 20
+    },
+    "oci": {
+      "id": 6520,
+      "transpose": 240,
+      "row_mirror": 100,
+      "transpose_row": 60,
+      "both_mirror": 20
+    },
+    "ind": {
+      "id": 6280,
+      "transpose": 500,
+      "transpose_row": 80,
+      "row_mirror": 60,
+      "transpose_both": 20
+    },
+    "lat": {
+      "transpose": 520,
+      "id": 6260,
+      "row_mirror": 40,
+      "transpose_row": 100,
+      "transpose_both": 20
+    },
+    "ita": {
+      "transpose": 340,
+      "id": 6460,
+      "transpose_row": 40,
+      "row_mirror": 80,
+      "both_mirror": 20
+    }
+  },
+  "boundary": "This is a structural phonetic-grid experiment. It does not by itself establish geographic or chronological origin."
+}
