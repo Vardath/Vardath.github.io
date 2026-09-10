@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'data/full-occitan-indonesian-candidate-language.json'
+      - 'tools/validate_full_occitan_indonesian_candidate_20_shards.py'
+      - '.github/workflows/validate-full-occitan-indonesian-candidate-20-shards.yml'
   workflow_dispatch:
 
 permissions:
