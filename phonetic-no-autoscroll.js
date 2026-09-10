@@ -66,7 +66,7 @@
   hp.defer=true; document.head.appendChild(hp);
 
   const od=document.createElement('script');
-  od.src='phonetic-original-language-dictionary.js?v=20260910-sort7';
+  od.src='phonetic-original-language-dictionary.js?v=20260910-sort8';
   od.defer=true; document.head.appendChild(od);
 
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
