@@ -1,0 +1,95 @@
+name: Test Historical Language Drift - 20 Shards
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/test_historical_language_drift_20_shards.py'
+      - '.github/workflows/test-historical-language-drift-20-shards.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extract historical Occitan and Malayic lexical chains
+        run: python tools/test_historical_language_drift_20_shards.py prepare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: historical-drift-prepared
+          path: data/historical-drift-shards/prepared.json.gz
+          retention-days: 2
+
+  test:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: historical-drift-prepared
+          path: data/historical-drift-shards/
+      - name: Test held-out reverse drift shard ${{ matrix.shard }}
+        run: python tools/test_historical_language_drift_20_shards.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: historical-drift-result-${{ matrix.shard }}
+          path: data/historical-drift-shards/result-*.json
+          retention-days: 2
+
+  merge:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: historical-drift-prepared
+          path: data/historical-drift-shards/
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: historical-drift-result-*
+          path: data/historical-drift-shards/
+          merge-multiple: true
+      - name: Merge historical drift results
+        run: python tools/test_historical_language_drift_20_shards.py merge
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/historical-drift-20-shards.json'))
+          assert p['shards']==20
+          assert p['tested_pairs']>0
+          print(json.dumps(p['verdict'],indent=2))
+          print(json.dumps(p['by_branch'],indent=2))
+          PY
+      - name: Commit historical drift result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/historical-drift-20-shards.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add historical language drift 20-shard result'
+            git pull --rebase origin main
+            git push
+          fi
