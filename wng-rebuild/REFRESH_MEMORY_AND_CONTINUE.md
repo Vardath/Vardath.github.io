@@ -12,19 +12,23 @@ Read this before touching the WNG 1.6 repository after any context reset.
 
 ## How to continue
 
-1. Read `CORRECTIONS_LOG.md` first. It records user corrections that override older implementation assumptions.
-2. Read `MASTER_PLAN.md` completely enough to understand the subsystem being rebuilt and adjacent dependencies.
-3. Read `REPLICATOR_QUEEN.md` when Queen/Asuran work is involved.
-4. Fetch current public 1.6 `main` before editing. Do not assume the last chat head is still current.
-5. Continue implementation, not merely a summary.
-6. Do not ask Vardath to repeat a requirement already recorded here.
-7. Historical code/builds are reference material only. There are no known-good historical states.
-8. If current code conflicts with the plan or a newer explicit Vardath instruction, correct it forward or rebuild it.
-9. If Vardath changes the plan, append/update these website continuity documents; do not erase the accumulated history of corrections.
+1. Read `STANDING_RULES.md` first. Its rules govern how all other plan/history material is interpreted.
+2. Read `CORRECTIONS_LOG.md`. It records user corrections that override older assistant assumptions.
+3. Read `MASTER_PLAN.md` completely enough to understand the subsystem being rebuilt and adjacent dependencies.
+4. Read `REPLICATOR_QUEEN.md` when Queen/Asuran work is involved.
+5. Fetch current public 1.6 `main` before editing. Do not assume the last chat head is still current.
+6. Continue implementation, not merely a summary.
+7. Do not ask Vardath to repeat a requirement already recorded here.
+8. Historical code/builds are reference material only. There are no known-good historical states.
+9. If current code conflicts with the plan or a newer explicit Vardath instruction, correct it forward or rebuild it.
+10. If Vardath changes the plan, append/update these website continuity documents; do not erase the accumulated history of corrections.
+11. Before leaving a subsystem, compare it against the full current plan/history and confirm that **no known feature or branch has been silently omitted**. Missing dependencies must be tracked explicitly rather than dropped.
 
 ## Development philosophy — critical correction
 
 The plan is a **working first-build target**, not immutable canon.
+
+**Do not omit planned features.** A simpler implementation is acceptable only as an explicitly temporary stage. It must not be mistaken for completion, and omitted branches must remain recorded for implementation.
 
 Do not hard-code design choices merely because a number or structure was once discussed. Prefer data/Defs/settings/configuration or clearly centralized tunable values where practical. A low-level implementation may still contain constants when technically appropriate, but story timing, balance, population, progression and author-tunable behavior must not be scattered as buried magic numbers.
 
@@ -68,6 +72,7 @@ Do not carry forward:
 - Strategic Wraith faction hunger is a separate system. A popup/request appears only when a Wraith faction genuinely becomes strategically hungry and requests feeding access/subjects. Refusal/non-acceptance increases attack/raid pressure.
 - Mature-Hive local feeding stock and Hive retaliation are separate from strategic hunger/request UI.
 - Block Replicators are mechanical custom forms; human-form Replicators/Asurans are nanite humanoids and belong to a separate identity layer.
+- The Replicator system includes both the main combat ladder and specialist/adaptation branches. **Shield Replicators/shield adaptation and anti-shield development must not be omitted**, nor may Controller, Repairer, Burrower, Artillery, ranged/armor/power/grav adaptations or other recorded branches disappear from the rebuild.
 - Mixed block + human-form Replicator raid composition is intentional where appropriate even though block recombination itself is block-machine behavior.
 - Queen release from the cryosleep chamber recruits her to the player **immediately on spawning**.
 - Asurans/Lattice try to capture the Queen during that quest and may later launch occasional capture raids only against a player home map where she is physically present.
@@ -80,8 +85,8 @@ Do not carry forward:
 ## Immediate restart sequence
 
 1. Preserve/carry approved Replicator PNG assets into the fresh 1.6 tree.
-2. Reconstruct the minimum block Replicator foundation: defs, PawnKinds, faction, split/recombine, matter economy, adaptation, EMP/control behavior and swarm AI.
-3. Verify the Replicator hierarchy works in code/compile before building unrelated systems on top.
+2. Reconstruct the **complete** block Replicator foundation: defs, PawnKinds, main hierarchy, specialist/adaptation branches including Shield, faction, split/recombine, matter economy, EMP/control behavior, containment, swarm AI and player-safety behavior. Do not call the foundation complete while a known branch is missing.
+3. Verify the Replicator behavior works in code/compile before building unrelated systems on top.
 4. Rebuild Wraith identity/castes/factions and Life Force/feeding.
 5. Rebuild strategic hunger separately from ordinary feeding.
 6. Rebuild Wraith captivity/Hive/living-tech systems.

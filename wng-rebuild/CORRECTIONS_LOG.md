@@ -37,6 +37,13 @@ Private repo work is currently unavailable/undesired because private credits wer
 ### Do not waste chat turns
 Read the continuity documents and current repo first. Do not ask questions already answered in the plan/history.
 
+### Do not omit features — standing correction
+Vardath explicitly corrected the fresh reset after Shield Replicators and the wider Replicator hierarchy/adaptation branches were omitted from the initial scaffold.
+
+**Standing rule: do not omit any feature.** Every feature, subsystem, branch, faction, caste, race/xenotype, PawnKind, Replicator form, adaptation path, quest, event, integration, craft, gravship component, resource, art/sound family, UI flow and behavior recorded in the current plan/history must either be implemented or remain explicitly tracked as unfinished. Never silently simplify it away because it is difficult, secondary, inconvenient or appears redundant.
+
+A temporary partial scaffold may exist during implementation, but it must be identified as partial and cannot be treated as the finished subsystem. Before moving on, compare the subsystem against the whole plan/history and account for all known branches.
+
 ## Gameplay/design corrections
 
 ### Wraith feeding request popup
@@ -52,6 +59,11 @@ Wraith have castes. Hunter, Warrior, Commander, Keeper, Queen, etc. are Wraith c
 
 ### Backstories
 Backstories are not races. They are biography/history and must not be used as race/caste identity.
+
+### Replicator hierarchy/adaptation branches
+The initial fresh-reset scaffold incorrectly reduced the Replicator design to the primary combat ladder plus a few placeholder specialists. Vardath corrected that omission.
+
+The rebuild must account for the full recorded Replicator ecology, including the primary size ladder **and** specialist/adaptation branches. In particular, **Shield Replicators / shield adaptation are not optional**, including the learned shield specialization and later anti-shield/countermeasure development recorded in the prior design. Controller, Repairer, Burrower, Artillery, ranged, armor, power and grav adaptations must likewise remain represented/tracked. Exact balance and implementation may be redesigned, but the features may not silently disappear.
 
 ### Replicator split behavior
 Large combined block forms must break down into smaller existing forms when destroyed rather than simply disappearing. Current intended hierarchy:
