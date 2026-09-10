@@ -69,6 +69,10 @@
   od.src='phonetic-original-language-dictionary.js?v=20260910-fourcol18';
   od.defer=true; document.head.appendChild(od);
 
+  const nc=document.createElement('script');
+  nc.src='phonetic-nearest-current-results.js?v=20260910-nearest1';
+  nc.defer=true; document.head.appendChild(nc);
+
   if(location.hash){ try{ history.replaceState(null,'',location.pathname+location.search); }catch(_){ } }
   let userNavigated=false;
   addEventListener('click',e=>{ const a=e.target.closest?.('a[href^="#"]'); if(a) userNavigated=true; },{capture:true});
