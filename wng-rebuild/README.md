@@ -11,23 +11,28 @@ This website repository is being used as the durable requirements/continuity cop
 ## Read in this order when told “refresh memory and continue”
 
 1. `wng-rebuild/STANDING_RULES.md`
-2. `wng-rebuild/PLAN_EXECUTION_PROTOCOL.md`
-3. `wng-rebuild/REFRESH_MEMORY_AND_CONTINUE.md`
-4. `wng-rebuild/CORRECTIONS_LOG.md`
-5. `wng-rebuild/MASTER_PLAN.md`
-6. Active subsystem notes such as `wng-rebuild/REPLICATOR_HIERARCHY.md` and `wng-rebuild/REPLICATOR_QUEEN.md`.
-7. `wng-rebuild/NEXT_GPT_PRIMER.md` for the latest handoff snapshot, then verify it against current public `main`.
-8. Inspect the current public `Vardath/Wraith-Nanite-Gravtech-1.6` tree and continue the next unfinished subsystem.
+2. **`wng-rebuild/WNG_IMPLEMENTATION_CHECKLIST.md` — mandatory STARGATE LORE FIRST gate before any code.**
+3. `wng-rebuild/PLAN_EXECUTION_PROTOCOL.md`
+4. `wng-rebuild/REFRESH_MEMORY_AND_CONTINUE.md`
+5. `wng-rebuild/CORRECTIONS_LOG.md`
+6. `wng-rebuild/MASTER_PLAN.md`
+7. Active subsystem notes such as `wng-rebuild/REPLICATOR_HIERARCHY.md` and `wng-rebuild/REPLICATOR_QUEEN.md`.
+8. `wng-rebuild/NEXT_GPT_PRIMER.md` for the latest handoff snapshot, then verify it against current public `main`.
+9. Inspect the current public `Vardath/Wraith-Nanite-Gravtech-1.6` tree and continue the next unfinished subsystem.
 
 ## Mandatory working method
 
 Do not code from memory and then check the plan afterwards.
 
-For each subsystem use:
+For every pass, the working order is:
 
-**read -> reconcile -> inventory -> map relationships -> implement -> account for every known item -> then move on.**
+**STARGATE LORE -> VARDATH/CHAT -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
+
+The detailed mandatory gate is `WNG_IMPLEMENTATION_CHECKLIST.md`.
 
 The plan is the default specification for the first complete build. Every known planned feature must be implemented, explicitly tracked as unfinished with its dependency recorded, or explicitly changed/rejected by Vardath. Silent omission is not acceptable.
+
+**An older “next step”, “unfinished”, “reconcile”, “correct” or “rebuild” note does not prove a current feature is absent. Verify current public `main` first. Rebuild/correct/refine does not mean remove.**
 
 ## Reset instruction — 2026-09-10
 
