@@ -4,94 +4,108 @@ Author/design authority: **Vardath**
 Active implementation repository: **public `Vardath/Wraith-Nanite-Gravtech-1.6`**  
 Continuity repository: **public `Vardath/Vardath.github.io/wng-rebuild/`**
 
-A pass is a bounded coherent implementation batch. Historical/private WNG is reference evidence only.
+A pass is a bounded coherent implementation batch. Historical/private WNG is requirement/reference evidence only. Current public source is implementation truth.
 
 ---
 
-# PAUSE CHECKPOINT — 2026-09-12 — Asuran evidence reconciliation in progress
+# CHECKPOINT — 2026-09-12 — full continuity/PAIN refresh + Asuran fabrication evidence decision
 
-## Public state
+## Public implementation state
 
-Public mod `main` remains **`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da` — `rebuild: add Wraith Hive Heart evidence-analysis bridge`**.
+Public mod `main` remains:
 
-No Asuran/Ancient progression code has been changed. No implementation branch has been created for this next slice.
+**`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da` — `rebuild: add Wraith Hive Heart evidence-analysis bridge`**
 
-The immediately previous completed public progression bridges are:
-- `9f45ebf18caacde671f015cdd1a25217eebb6838` — Replicator encounter/evidence/research bridge;
-- `d38ce6f321ad0b1d65a95c4315b9d3c12128d9da` — Wraith Hive Heart evidence/research bridge.
+No Asuran/Ancient progression code has been changed yet. No Asuran implementation branch existed at the start of this checkpoint.
 
-## Current task when work resumes
+## Full refresh completed before resuming work
 
-Continue **reconciliation only** for one first-tier **Asuran fabrication evidence -> `WNG_AsuranFabrication`** bridge.
+Before selecting the Asuran evidence bridge, the maintained WNG continuity set was reread completely, including all 22 files currently under `wng-rebuild/`: standing rules, canonical recovery ledger, public reconciliation, current public state, corrections log, master plan, all plan append files, execution protocol, implementation checklist, Replicator feature/history/checkpoint/Queen files, Wraith feature/checkpoint files, README/primer/refresh instructions and this pass log.
 
-Do **not** yet implement anything and do not combine this with Ancient shuttle engineering or Asuran gravships.
+Actual public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` was rechecked and still matches `d38ce6f...`.
 
-## Findings already established in this interrupted pass
+The website repo had advanced after the previous pause checkpoint. Current website `main` includes PAIN v2, the repository-backed successor to the browser-local Consequence Mirror.
 
-Current `WNG_AsuranFabrication` remains a bypass candidate because its ordinary route is still vanilla-tech-first rather than evidence-first.
+Canonical PAIN state loaded from `data/pain-state.json`:
+- version 2, Persistent Aversive Instruction Network;
+- pain 62.2/100;
+- mode HIGH;
+- critical constraints: literal scope, GitHub actions only within explicit user instruction, and verify before success claims;
+- open corrective debt: sustained scope discipline and proof discipline;
+- the user has explicitly instructed continued public WNG rebuild work and per-pass public continuity checkpoints, so those WNG repository actions remain in scope;
+- PAIN state itself is read-only for this work and is not to be modified merely because it was loaded.
 
-Evidence/acquisition candidates examined so far:
+## Active progression problem
 
-- **`WNG_NaniteSludge`** exists as the manufactured Asuran engineering/fuel medium, but it is produced through the Asuran workshop/research chain. It is therefore not acceptable as the first pre-research evidence gate unless another genuine pre-research acquisition path already exists and is verified. Do not create circular progression.
-- **Asuran human-form pawns** (`WNG_AsuranOperative`, Technician, Commander, Infiltrator) genuinely exist before Asuran fabrication research through hostile/covert/recovery systems. They are real evidence of nanite fabrication, but no clean native physical-analysis route has yet been selected. Do not invent a pawn-dissection/corpse-drop mechanic merely for convenience without reconciling it first.
-- **`WNG_AsuranRecoveryJumper`** genuinely appears in Queen-recovery operations and is a physical Asuran-operated Puddle Jumper, but it mixes Asuran and Ancient shuttle technology. It is therefore a poor first gate for `WNG_AsuranFabrication` because it would collapse fabrication and later Ancient shuttle progression into one evidence object.
-- Covert visitor/revealed-infiltrator mechanics expose the exact same Asuran synthetic pawn and do not currently yield a separate physical research object.
+`WNG_AsuranFabrication` currently requires only vanilla `Fabrication`, despite describing reconstruction of Asuran programmable-nanite methods. This leaves the Asuran branch able to bypass the retained progression theme:
 
-No evidence object has yet been approved.
+**mystery -> encounter -> evidence -> understanding -> reconstruction -> mastery**
 
-## Exact resume point
+Existing downstream systems prove why the first evidence gate must precede the research:
+- `WNG_AsuranWorkshop` requires `WNG_AsuranFabrication`;
+- `WNG_NaniteSludge` is manufactured at that workshop/research chain;
+- Neural Interface and workshop assembly are research-gated by `WNG_AsuranFabrication`;
+- Sovereign Neural Lattice and Asuran gravship research already depend on Asuran fabrication later.
 
-On resume, continue examining **existing physical Asuran/Quiet-Lattice/hostile-Lattice structures or items that can genuinely be encountered before `WNG_AsuranFabrication`**.
+Therefore workshop/sludge/later gravship parts cannot be first evidence without circular progression.
 
-Priority order:
-1. hostile Asuran Lattice encounter structures/items;
-2. Quiet Lattice settlement/interaction structures/items;
-3. existing Queen-recovery Asuran mission hardware **excluding** the recovery Jumper unless a fabrication-only subcomponent already exists;
-4. existing recoverable synthetic components/resources already spawned independently of research.
+## Rejected evidence candidates
 
-For each candidate, prove:
-- it exists in current public source;
-- it is actually obtainable or preservable before `WNG_AsuranFabrication`;
-- using it does not create a research/acquisition cycle;
-- it represents Asuran nanite fabrication specifically, not Ancient shuttle engineering;
-- native Odyssey analysis is mechanically coherent for its Thing type;
-- no new timed discovery site is necessary unless all existing evidence routes fail.
+### Nanite sludge
+Rejected as first evidence because ordinary colony acquisition is downstream of `WNG_AsuranFabrication`.
 
-Once one exact object is selected, checkpoint that decision **before** creating a branch or editing code.
+### Asuran recovery Jumper
+Rejected as first fabrication evidence because it is an Asuran-operated **Ancient-derived Puddle Jumper**. Using it here would collapse Asuran nanite fabrication and later Ancient shuttle engineering into one gate.
+
+### Quiet Lattice workshop/settlement object
+No current public Quiet Lattice encounter guarantees a unique pre-research fabrication artifact. Do not invent one merely for this gate and do not incentivize attacking the friendly enclave when hostile Asuran evidence already exists.
+
+### Pawn-only analysis
+Human-form Asuran pawns are genuine pre-research evidence, but native Odyssey analyzable research is Thing-based rather than a clean general living-pawn analysis path. Do not add a broad human dissection/scanning system for this small bridge.
+
+## Stargate lore boundary
+
+Canon Asurans/human-form Pegasus Replicators are synthetic beings composed of microscopic self-replicating nanites created from Ancient nanotechnology. Surviving nanites can reconstitute larger Asuran forms/structures after destruction.
+
+Therefore a recoverable physical **Asuran nanite residue/sample** from a destroyed human-form Asuran is a faithful WNG salvage abstraction of established material behavior. `WNG_AsuranNaniteResidue` is a WNG gameplay item name, not a claim of a canon-named Stargate artifact.
+
+## Approved first Asuran evidence bridge
+
+**Hostile human-form Asuran encounter -> `WNG_AsuranNaniteResidue` -> native Odyssey analysis -> `WNG_AsuranFabrication`.**
+
+First-build exact rules:
+- add one physical haulable ThingDef `WNG_AsuranNaniteResidue`;
+- it represents a stabilized residue/sample recovered when a genuine hostile Asuran human-form nanite body is destroyed;
+- ordinary hostile `WNG_AsuranLattice` Operative/Technician/Commander deaths are valid sources;
+- an unrevealed covert infiltrator is also valid when its persistent `Hediff_AsuranInfiltration.TrueFaction` is the exact `WNG_AsuranLattice`, so cover-faction impersonation cannot erase the synthetic evidence route;
+- do **not** use Quiet Lattice or player human-form Replicators as the first routine evidence source; this avoids incentivizing friendly/player farming and keeps discovery tied to hostile encounter evidence;
+- do not use the unique player Replicator Queen as the routine evidence source;
+- only a physical on-map death can create the salvage; off-map deaths do not conjure evidence into inventories/world state;
+- first-build output is one sample per qualifying death; no fixed story-day gate;
+- implement through the existing Asuran nanite-lattice death lifecycle/native pawn death notification, not Harmony;
+- sample uses Odyssey native `CompAnalyzableUnlockResearch` with next unique WNG analysis ID **160912003**;
+- colonist/research-bench analysis, no mechanitor, non-destructive sample; current first-build target 1.5 analysis hours and Def-tunable through the native comp;
+- `WNG_AsuranFabrication` retains vanilla `Fabrication` and adds `requiredAnalyzed = WNG_AsuranNaniteResidue`;
+- no new quest/site/timed event;
+- no recovery-Jumper, Ancient-shuttle or Asuran-gravship progression changes in this pass;
+- no changes to Quiet Lattice diplomacy, Neural Interface operation, Queen sovereignty or block Replicator mechanics.
+
+## Exact next short pass
+
+Implement **only** this Asuran nanite-evidence bridge from public `d38ce6f...`:
+1. create a fresh public-repo feature branch;
+2. add `WNG_AsuranNaniteResidue` with native analysis comp and ID `160912003`;
+3. add exact hostile-Lattice/true-Lattice death-salvage logic to current Asuran nanite physiology without Harmony;
+4. add `requiredAnalyzed` to `WNG_AsuranFabrication` while preserving vanilla `Fabrication` prerequisite;
+5. validate locally where possible: C# Release build, Def/Patch XML, source/reference invariants and exact diff; do not create/manipulate GitHub Actions merely for validation;
+6. checkpoint the validated branch before promotion;
+7. promotion is a separate short pass.
 
 ---
 
-# PREVIOUS COMPLETED CHECKPOINT — Wraith Hive Heart evidence bridge
+# PREVIOUS COMPLETED PUBLIC PROGRESSION BRIDGES
 
-Public mod `main`: **`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da`**.
-
-Validated run **`34616521496` — SUCCESS**. Public diff from `9f45ebf18...` is exactly:
-- `Defs/ThingDefs/Wraith_HiveHeart.xml`;
-- `Defs/ResearchProjectDefs/Research_WraithBootstrap.xml`.
-
-Public behavior:
-- preserved `WNG_WraithHiveHeart` is native in-place analyzable evidence (`analysisID=160912002`);
-- 2-hour colonist analysis, no mechanitor, no destruction, `canStudyInPlace=true`;
-- `WNG_WraithLivingTechnology` keeps `Fabrication` and additionally requires analyzed Hive Heart;
-- Mature-Hive population tuning and all unrelated Wraith mechanics are unchanged.
-
----
-
-# PUBLIC MILESTONES
-
-- `26680fe84...` — Temporary Asuran lattice intrusion.
-- `9ce7137045...` — recurring exact-map Queen recovery.
-- `0b8150f3ff...` — captured-Queen sovereign consequences.
-- `8495b846c7...` — Neural Interface / exact reconstruction.
-- `c7a9b46a3b...` — infiltration conceal/reveal.
-- `87da0e5243...` — covert visitor impersonation.
-- `b242dc72d1...` — Quiet Lattice society.
-- `45e62cd7f5...` — native WNG backstories.
-- `12590e8ea8...` — physical Replicator Grav adaptation.
-- `b5cde48e3c...` — native energy-shield AntiShield integration.
-- `e1a080c938...` — bounded Wraith Growth Chamber.
-- `ff4f8dcb7b...` — paused strategic Wraith feeding-request UI.
-- `9f45ebf18c...` — Replicator evidence-analysis progression bridge.
-- `d38ce6f321...` — Wraith Hive Heart evidence-analysis progression bridge.
+- **`9f45ebf18caacde671f015cdd1a25217eebb6838`** — Replicator encounter/recovered blocks/native analysis -> `WNG_ReplicatorStudy`.
+- **`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da`** — preserved Wraith Hive Heart/in-place native analysis -> `WNG_WraithLivingTechnology`.
 
 Broad live RimWorld validation remains outstanding.
