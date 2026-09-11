@@ -2,6 +2,24 @@
 
 Read this before touching the WNG 1.6 repository after any context reset.
 
+# ⛔ STARGATE LORE FIRST — DO NOT CODE BEFORE THIS
+
+Before any implementation pass, read and answer `WNG_IMPLEMENTATION_CHECKLIST.md`.
+
+The required questions are:
+- **What is this in Stargate?**
+- **What does it actually do in Stargate?**
+- **What has Vardath said about it in chat/history?**
+- **What does current public WNG already do?**
+- **What had historical WNG attempted before, and what failed?**
+- **What native RimWorld/Odyssey/Biotech mechanics already provide the required function?**
+- **What do optional Stargate integrations own?**
+- **What is the best faithful implementation now?**
+
+Do not write a generic sci-fi approximation and check Stargate lore afterwards.
+
+An older note saying `next`, `unfinished`, `reconcile`, `correct` or `rebuild` does not prove a feature is absent from current public `main`. Verify current state and recent implementation history first. **Rebuild/correct/refine does not mean remove.**
+
 ## Identity and authority
 
 - Mod: **Wraith & Nanite Gravtech (WNG)** for RimWorld 1.6.
@@ -13,12 +31,13 @@ Read this before touching the WNG 1.6 repository after any context reset.
 ## Mandatory read order
 
 1. Read `STANDING_RULES.md` first.
-2. Read `PLAN_EXECUTION_PROTOCOL.md` second and follow it before writing code.
-3. Read `CORRECTIONS_LOG.md`.
-4. Read `MASTER_PLAN.md` for the active subsystem and adjacent dependencies.
-5. Read active subsystem notes, including `REPLICATOR_HIERARCHY.md` and `REPLICATOR_QUEEN.md` when relevant.
-6. Read `NEXT_GPT_PRIMER.md` for the latest handoff snapshot, then verify that snapshot against the current public repository head before trusting it.
-7. Fetch current public 1.6 `main` before editing. Do not assume the last chat head is still current.
+2. **Read `WNG_IMPLEMENTATION_CHECKLIST.md` second — mandatory Stargate-lore gate before any code.**
+3. Read `PLAN_EXECUTION_PROTOCOL.md` and follow it before writing code.
+4. Read `CORRECTIONS_LOG.md`.
+5. Read `MASTER_PLAN.md` for the active subsystem and adjacent dependencies.
+6. Read active subsystem notes, including `REPLICATOR_HIERARCHY.md` and `REPLICATOR_QUEEN.md` when relevant.
+7. Read `NEXT_GPT_PRIMER.md` for the latest handoff snapshot, then verify that snapshot against the current public repository head before trusting it.
+8. Fetch current public 1.6 `main` and inspect relevant recent commits before editing. Do not assume the last chat head or an old next-step note is still current.
 
 ## Mandatory implementation method
 
@@ -26,28 +45,31 @@ Do **not** start coding from remembered requirements or a previous assistant sum
 
 For every subsystem:
 
-**read -> reconcile -> inventory -> map relationships -> implement -> account for every known item -> then move on.**
+**STARGATE LORE -> VARDATH/CHAT -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
 
 Before implementation, inventory the subsystem using all relevant evidence:
+- Stargate canon/lore and actual function;
 - standing rules;
 - correction log;
 - master plan;
 - subsystem notes;
+- relevant Vardath chat/history;
 - retained graphics/assets/audio;
-- current public Defs/source;
+- current public Defs/source and recent implementation history;
 - faction/PawnKind/xenotype/race references;
 - research/recipes/resources;
 - quests/incidents/integrations;
-- relevant historical code only as reference evidence.
+- native RimWorld/Odyssey/Biotech mechanics;
+- relevant historical WNG code only as reference evidence.
 
 Every known feature must end the pass as:
 - implemented;
 - explicitly unfinished with its dependency recorded; or
 - explicitly changed/rejected by Vardath.
 
-There is no acceptable fourth state where a feature simply disappears because it was forgotten.
+There is no acceptable fourth state where a feature simply disappears because it was forgotten, assumed absent from stale prose, or removed while being "rebuilt".
 
-Before leaving a subsystem, reconcile it against the full inventory again. Do not move on merely because the most obvious feature works.
+Before leaving a subsystem, reconcile it against the full inventory and the implementation checklist again. Do not move on merely because the most obvious feature works.
 
 ## Development philosophy — critical correction
 
@@ -99,6 +121,8 @@ Do not carry forward:
 
 ## Immediate restart sequence
 
+The numbered restart sequence below is historical planning context, **not authoritative current implementation state**. Before acting on any item, reconcile it against current public `main`, recent commits and the checklist.
+
 1. Preserve/carry approved Replicator PNG assets into the fresh 1.6 tree.
 2. Reconstruct the **complete** block Replicator foundation: Defs, PawnKinds, physical hierarchy, specialist/adaptation branches including Shield, faction, split/recombine, matter economy, assimilation, regeneration, EMP/control behavior, containment, swarm AI, player-safety behavior and Child's Toy/player branch. Do not call the foundation complete while a known branch is missing.
 3. Verify actual behavior/compile as needed without creating design-lock tests.
@@ -107,7 +131,7 @@ Do not carry forward:
 6. Rebuild Wraith captivity/Hive/living-tech systems.
 7. Rebuild human-form Replicators/Asurans, Queen, Neural Interface and infiltration.
 8. Rebuild quests/discovery with author-tunable pacing rather than a fixed day-84 style schedule.
-9. Rebuild craft, Stargate integrations and both gravship families.
+9. Rebuild craft, Stargate integrations and gravship families.
 10. Add/review professional art/audio and tune the entire mod from live testing.
 
-Do not stop after refreshing this material when Vardath asked to continue. Continue the implementation from the first unfinished item after reconciling the subsystem completely.
+Do not stop after refreshing this material when Vardath asked to continue. Continue implementation only after identifying the **actual first unfinished item from current public state**, not merely the first item that an older document calls unfinished.
