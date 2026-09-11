@@ -1,0 +1,123 @@
+name: Exact Man Grid v4 Test 5 — 50 shards
+
+on:
+  push:
+    paths:
+      - '.github/workflows/man-grid-v4-test5-shard50.yml'
+      - 'tools/man_grid_test5_v4_shard50.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: exact-man-grid-v4-test5-shard50
+  cancel-in-progress: false
+
+jobs:
+  prepare50:
+    name: Prepare Test 5 exact-v4 corpus as 50 disjoint shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download exact source corpus used by Test 4
+        uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-base-34609281179
+          path: data/man-grid-exact-v4-work
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Vardath/Vardath.github.io
+          run-id: 34609281179
+      - name: Repartition same corpus into 50 genuine disjoint shards
+        run: python tools/man_grid_test5_v4_shard50.py prepare
+      - name: Validate Test 4 dependency and 50-shard execution contract
+        run: |
+          python - <<'PY'
+          import json, glob
+          t4=json.load(open('data/man-grid-test-04-exact-v4.json',encoding='utf-8'))
+          m=json.load(open('data/man-grid-exact-v4-work/prepared-manifest.json',encoding='utf-8'))
+          assert t4['status']=='complete' and t4['test_id']==4
+          assert len(glob.glob('data/man-grid-exact-v4-work/lexical-shard-*.json.gz'))==50
+          assert m['shards']==50
+          assert len(m['lexical_shard_sizes'])==50
+          assert m['execution']['shards_per_test']==50
+          assert m['execution']['merge_requires_all_50'] is True
+          assert m['execution']['workflow_custom_timeout_minutes'] is None
+          assert m['execution']['invalid_old_mapping_reused'] is False
+          assert m['test5_shard50']['same_source_corpus_as_test4'] is True
+          print({'test':5,'shards':50,'source_run':m['test5_shard50']['source_run_id'],'source_meanings':m['test5_shard50']['source_meanings']})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t05-50-base-${{ github.run_id }}
+          path: |
+            data/man-grid-exact-v4-work/prepared-manifest.json
+            data/man-grid-exact-v4-work/model.json.gz
+            data/man-grid-exact-v4-work/lexical-shard-*.json.gz
+          retention-days: 7
+
+  t5_shards50:
+    name: Test 5 v4 50-shard ${{ matrix.shard }}
+    needs: prepare50
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 50
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t05-50-base-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+      - run: python tools/man_grid_test5_v4_shard50.py run --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t05-50-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work/t05-result-*.json.gz
+          retention-days: 7
+
+  merge50:
+    name: Merge Test 5 v4 — require all 50
+    needs: t5_shards50
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t05-50-base-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t05-50-s*-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+          merge-multiple: true
+      - name: Require every shard before merge
+        run: test "$(find data/man-grid-exact-v4-work -name 't05-result-*.json.gz' | wc -l)" -eq 50
+      - run: python tools/man_grid_test5_v4_shard50.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t05-50-merged-${{ github.run_id }}
+          path: data/man-grid-test-05-exact-v4.json
+          retention-days: 7
+      - name: Publish 50-shard Test 5 result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-05-exact-v4.json
+          git commit -m "Publish exact-v4 Test 5 50-shard result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
