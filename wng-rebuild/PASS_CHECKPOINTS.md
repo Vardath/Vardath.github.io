@@ -8,44 +8,55 @@ A pass is a bounded coherent implementation batch. Historical/private WNG is ref
 
 ---
 
-# CHECKPOINT — 2026-09-12 — Replicator evidence-analysis bridge promoted to public
+# CHECKPOINT — 2026-09-12 — Wraith evidence-to-research bridge reconciled
 
 ## Public state
 
-Public mod `main` is now **`9f45ebf18caacde671f015cdd1a25217eebb6838` — `rebuild: add Replicator evidence-analysis bridge`**.
+Public mod `main` remains **`9f45ebf18caacde671f015cdd1a25217eebb6838` — Replicator evidence-analysis bridge**.
 
-Promoted clean tree: **`1adc84839a890d31e3e53f4aa9e941d3d9d7d97c`**.
+No Wraith progression code was changed in this reconciliation pass.
 
-Public diff from `ff4f8dcb...` is exactly:
-- `Defs/ThingDefs/Things_Replicator.xml`;
-- `Defs/ResearchProjectDefs/Research_Replicator.xml`.
+## Exact evidence object
 
-No generated `Assemblies/` or `Source/WNG/obj/` output entered public `main`.
+Use the existing **`WNG_WraithHiveHeart`** as the first Wraith living-technology evidence object.
 
-## Public behavior now
+Why this is the correct bridge:
+- every generated `WNG_WraithMatureHive` already requires and spawns one exact Hive Heart before the site is accepted;
+- Mature Hive discovery has no WNG research prerequisite, so the Heart genuinely exists before `WNG_WraithLivingTechnology`;
+- the Heart is the central living biological population/control system of a mature Hive, making it direct evidence for understanding Wraith-grown machinery;
+- a Mature Hive is neutralized by eliminating actual hostile threats, not by requiring Heart destruction, so a player can deliberately preserve the Heart for study;
+- no new ruin/site/quest/timed event is required.
 
-- recovered `WNG_ReplicatorMatter` remains dangerous self-reassembling Replicator material with its previous tuning unchanged;
-- it is additionally native Odyssey analyzable evidence using stable analysis ID `160912001`;
-- one 1.5-hour colonist/research-bench analysis is required and does not consume the blocks;
-- `WNG_ReplicatorStudy` still requires `Machining` and now additionally requires analyzed `WNG_ReplicatorMatter`;
-- no new incident, site, Quest, fixed-day gate or custom progression component was added;
-- rarer `WNG_ReplicatorCoreFragment` remains deeper evidence/material rather than the first-tier gate.
+Rejected as the first gate:
+- `WNG_WraithBioSludge`, because colony production of it is already gated by `WNG_WraithLivingTechnology` and would create circular progression;
+- Living Forge/forge implants, because their normal colony acquisition/crafting is also behind the same research;
+- shuttle/gravship evidence, because that would unnecessarily couple later flight progression into this short first Wraith bridge.
 
-Result: **Replicator encounter -> recovered blocks -> analysis -> Replicator Study -> later containment/gestation/reconstruction.**
+## Native analysis path
 
-## Validation / process correction
+`WNG_WraithHiveHeart` is a 3x3 building, not a haulable item. Odyssey's native analyzable component supports `canStudyInPlace=true`; native `JobDriver_AnalyzeItem` then analyzes the building at its current position rather than trying to haul it to a bench.
 
-Run **`34615590179` — SUCCESS**: Release build, all Def/Patch XML and evidence-bridge invariants passed.
+Exact first implementation:
+- add native `CompProperties_CompAnalyzableUnlockResearch` to `WNG_WraithHiveHeart`;
+- use a stable WNG-specific analysis ID distinct from Replicator analysis;
+- require one successful in-place analysis;
+- do not destroy the Heart on analysis;
+- colonist-only analyzer targeting;
+- keep all existing Mature-Hive population component/tuning unchanged;
+- keep `Fabrication` as the ordinary prerequisite for `WNG_WraithLivingTechnology`;
+- additionally require analyzed `WNG_WraithHiveHeart` through native `requiredAnalyzed`;
+- add no new incident, site, Quest, fixed-day gate or progression GameComponent;
+- do not change Wraith shuttles, gravships, Growth Chamber power, strategic hunger, feeding ecology or retaliation.
 
-The temporary workflow later staged generated build outputs because cleanup used `git add -A`. That dirty head was rejected before promotion. The clean tree was reconstructed from the exact public base plus the two validated XML blobs and compared before promotion. Future post-build cleanup must use explicit paths or clean-tree reconstruction; never `git add -A`.
-
-This remains source/Def validation, not live RimWorld validation.
+Resulting chain: **Mature Hive discovery -> neutralize/preserve Hive Heart -> analyze living Hive system in place -> Wraith Living Technology -> colony reconstruction/growth.**
 
 ## Exact next short pass
 
-**Wraith evidence-to-research reconciliation only.**
+Implement and validate only:
+- `Defs/ThingDefs/Wraith_HiveHeart.xml`;
+- `Defs/ResearchProjectDefs/Research_WraithBootstrap.xml`.
 
-Identify one physical Wraith evidence object that is genuinely obtainable before `WNG_WraithLivingTechnology`, preferably from existing Mature Hive/Dart/living-tech encounters. Confirm acquisition order and native analysis suitability, checkpoint the exact bridge, then stop the reconciliation pass before implementation.
+Validation must prove Release build, all Def/Patch XML, unique WNG analysis ID, `canStudyInPlace=true`, exact `requiredAnalyzed` target, unchanged Mature-Hive population comp settings, and no unrelated file changes. Use explicit cleanup paths or clean-tree reconstruction; never `git add -A` after building.
 
 ---
 
