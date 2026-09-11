@@ -37,23 +37,25 @@ Private repo work is currently unavailable/undesired because private credits wer
 ### Do not waste chat turns
 Read the continuity documents and current repo first. Do not ask questions already answered in the plan/history.
 
-### Full WNG chat-history retrieval before mod changes — standing correction
-Vardath had already explicitly required on 2026-09-07 that future WNG modifications review previous WNG chats and that handoff summaries are insufficient. On 2026-09-11 this was reinforced after continuity errors caused stale handoff prose to be interpreted as current implementation state.
+### Full WNG chat-history retrieval before mod changes — historical standing correction
+Vardath had already explicitly required on 2026-09-07 that future WNG modifications review previous WNG chats and that handoff summaries were insufficient. On 2026-09-11 this was reinforced after continuity errors caused stale handoff prose to be interpreted as current implementation state.
 
-**Standing rule: before touching WNG code, retrieve and reconcile all accessible relevant WNG prior conversations for the subsystem being changed and adjacent systems that may be affected.**
+That correction required broad history retrieval because the continuity documents were not yet trustworthy enough to replace the raw conversation history.
 
-Requirements:
-- underlying accessible chat history outranks handoff summaries as evidence of what Vardath actually instructed;
-- when Vardath says read/check/review chat history, do not substitute memory summaries, repo notes or an assistant recap;
-- use multiple focused retrieval passes across the WNG timeline/subsystems when necessary rather than reading one recent chat and assuming continuity is complete;
-- reconcile historical contradictions chronologically: **newest explicit Vardath instruction wins**;
-- older instructions remain historical evidence but do not reactivate superseded repository authority, code architecture or design;
-- do not ask Vardath to repeat requirements that are retrievable from prior WNG conversation history;
-- if literal complete transcripts are unavailable to the current session, do not falsely claim every line is loaded; retrieve all accessible WNG history and identify any real retrieval limitation before modifying code.
+### One-time reconstruction + canonical ledger — NEWER correction, supersedes repeated full-history retrieval
+Later on 2026-09-11, Vardath clarified the intended end state: **do the exhaustive reconstruction once, then every future handoff/recovery must be smooth without requiring Vardath to repeat every decision or requiring the next GPT to reread weeks of chat every time.**
 
-The mandatory implementation order therefore begins with:
+The broad WNG history/current-state reconstruction was therefore consolidated into `CANONICAL_RECOVERY_LEDGER.md`.
 
-**FULL ACCESSIBLE WNG CHAT HISTORY -> STARGATE LORE -> VARDATH/CHAT CHRONOLOGY -> CURRENT PUBLIC STATE -> ...**
+Current rule:
+- future sessions read the canonical ledger, standing rules and checklist, then verify current public `main`;
+- do **not** reread weeks of raw WNG chat by default;
+- retrieve raw history only when the ledger flags an unresolved gap/conflict, current repo evidence conflicts with the ledger, or Vardath explicitly asks for raw-history review;
+- resolve a raw-history conflict once and write the resolution back into the ledger;
+- after every meaningful implementation batch, update the ledger with exact public HEAD, actual changes, statuses, superseded decisions and next genuine unfinished slice;
+- the objective is that Vardath can say **“refresh memory and continue”** and work continues without interrogation/reconstruction.
+
+This newer correction supersedes the earlier process wording that required full raw-chat retrieval before every single code change. The earlier rule remains here as history explaining why the one-time reconstruction was necessary.
 
 ### Do not omit features — standing correction
 Vardath explicitly corrected the fresh reset after Shield Replicators and the wider Replicator hierarchy/adaptation branches were omitted from the initial scaffold.
@@ -63,20 +65,21 @@ Vardath explicitly corrected the fresh reset after Shield Replicators and the wi
 A temporary partial scaffold may exist during implementation, but it must be identified as partial and cannot be treated as the finished subsystem. Before moving on, compare the subsystem against the whole plan/history and account for all known branches.
 
 ### Rigorous plan execution — standing correction
-Vardath explicitly challenged the point of maintaining a plan if the assistant still implemented from partial recollection and required repeated corrections. The failure was procedural: the plan, corrections and retained assets already contained the information, but implementation began before a complete subsystem reconciliation.
+Vardath explicitly challenged the point of maintaining a plan if the assistant still implemented from partial recollection and required repeated corrections. The failure was procedural: the plan, corrections and retained assets already contained information, but implementation began before a complete subsystem reconciliation.
 
-From this correction onward, **the plan must be followed rigorously before code is written**. `PLAN_EXECUTION_PROTOCOL.md` is part of the rebuild plan and is mandatory.
+From this correction onward, **the plan/ledger must be followed rigorously before code is written**. `PLAN_EXECUTION_PROTOCOL.md` is mandatory.
 
 For every subsystem, the assistant must:
-- retrieve the relevant prior WNG chat history;
-- read the standing rules, correction log, relevant master-plan sections and active subsystem notes;
-- inspect the current public implementation;
+- read the canonical recovery ledger and standing rules;
+- verify current public `main` and recent implementation state;
+- read the active subsystem contracts and Stargate lore/function;
 - inventory retained graphics/assets and all other relevant references;
 - build a complete feature/relationship map before implementation;
 - account for every known feature as implemented, explicitly unfinished with dependency recorded, or explicitly changed/rejected by Vardath;
-- reconcile the subsystem again before moving on.
+- reconcile the subsystem again before moving on;
+- update the canonical ledger before handoff.
 
-Do not write a partial remembered implementation first and use the plan afterwards to discover omissions. The required order is **history -> lore -> reconcile -> inventory -> map -> implement -> reconcile again**.
+Do not write a partial remembered implementation first and use the plan afterwards to discover omissions. The required order is **ledger -> lore -> current state -> reconcile -> inventory -> map -> implement -> verify -> ledger update**.
 
 ## Gameplay/design corrections
 
@@ -169,3 +172,5 @@ Vardath explicitly ordered:
 - rebuild according to the accumulated plan and corrections;
 - no hard-coded design doctrine;
 - no anti-regression or release-check machinery unless absolutely necessary for implementing a functioning mod.
+
+This reset instruction is historical context, not current implementation state. The current fresh public tree has advanced substantially beyond the reset; use `CANONICAL_RECOVERY_LEDGER.md` plus current public `main` to determine present state.
