@@ -3,7 +3,7 @@
 Updated: **2026-09-11**  
 Author/final design authority: **Vardath**
 
-This is the mutable live-state supplement to `CANONICAL_RECOVERY_LEDGER.md` and `PUBLIC_RECONCILIATION_2026-09-11.md`.
+This is the mutable live-state supplement to `CANONICAL_RECOVERY_LEDGER.md`, `PUBLIC_RECONCILIATION_2026-09-11.md` and the running short-pass log `PASS_CHECKPOINTS.md`.
 
 **Current public source is implementation truth. Private/old work is reference evidence only. There are no known-good historical builds.**
 
@@ -13,12 +13,13 @@ This is the mutable live-state supplement to `CANONICAL_RECOVERY_LEDGER.md` and 
 2. all of `CANONICAL_RECOVERY_LEDGER.md` for recovered history/design;
 3. all of `PUBLIC_RECONCILIATION_2026-09-11.md`;
 4. all of this file;
-5. `WNG_IMPLEMENTATION_CHECKLIST.md`;
-6. fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` and compare it with the HEAD below;
-7. inspect every newer commit before coding;
-8. read active subsystem contracts/plan append(s);
-9. follow `PLAN_EXECUTION_PROTOCOL.md`;
-10. update this live state before handoff.
+5. latest entries in `PASS_CHECKPOINTS.md`;
+6. `WNG_IMPLEMENTATION_CHECKLIST.md`;
+7. fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` and compare it with the HEAD below;
+8. inspect every newer commit before coding;
+9. read active subsystem contracts/plan append(s);
+10. follow `PLAN_EXECUTION_PROTOCOL.md`;
+11. update `PASS_CHECKPOINTS.md` after every bounded pass and this live state whenever public/debt state changes materially.
 
 ---
 
@@ -26,35 +27,83 @@ This is the mutable live-state supplement to `CANONICAL_RECOVERY_LEDGER.md` and 
 
 Repository: `Vardath/Wraith-Nanite-Gravtech-1.6`
 
-**`26680fe84b95a0bfd5a23841b714fdba9cde1a98` — temporary Asuran lattice intrusion implementation/checkpoint landed on public `main`.**
+**`9ce713704505a220d357f8a6f234fb6e040e0b2e` — recurring exact-map Queen recovery landed on public `main`.**
 
 The original canonical implementation snapshot `4af4f60...` is historical only and substantially behind current public source.
 
-## Most recent completed slice — Temporary Asuran lattice intrusion
+## Most recent completed public slices
+
+### Temporary Asuran lattice intrusion
+
+Public milestone:
+
+**`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**
 
 Status: **IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED**.
 
-Public now contains:
+Public contains:
 - `WNG_AsuranLatticeLink` on `WNG_NaniteHumanoid`;
 - hostile automatic use restricted to the exact hostile `WNG_AsuranLattice` faction;
 - Def-tunable current first-build range 18, duration 2,500 ticks, cap 3, 600-tick AI check and 0.65 attempt chance;
-- `TemporaryAsuran` authority now performs a real temporary controller transaction instead of an empty enum reservation;
+- `TemporaryAsuran` authority as a real temporary controller transaction;
 - exact pre-intrusion authority/controller/original faction/control faction/domain snapshot;
-- active temporary domain keyed by both exact Asuran intruder identity and exact restoration-domain identity;
-- no merging of blocks that came from different Queen/Neural-Lattice/autonomous domains merely because the same Asuran hacked them;
-- exact temporary/restoration state copied through hierarchy split/recombine via the existing `CopyAuthorityFrom` transaction path;
-- save/load persistence for active intrusion and suspended authority metadata;
-- timeout, intruder death/downing, physical separation, EMP and containment interrupt the intrusion;
-- expiry/interruption restores the exact suspended Queen/Neural-Lattice/autonomous state when still valid, otherwise falls back through normal recorded-faction/autonomous release behavior;
-- ordinary/recruited/player-aligned nanite humanoids do not silently auto-hijack blocks;
-- ordinary Asurans still do **not** receive permanent Queen sovereignty.
+- active temporary domain keyed by exact intruder and exact restoration identity;
+- no merge of blocks from different suspended domains merely because one Asuran hacked them;
+- split/recombine/save-load continuity for active and suspended authority;
+- timeout, intruder death/downing, physical separation, EMP and containment interruption;
+- restoration of exact suspended Queen/Neural-Lattice/autonomous state when still valid;
+- ordinary/recruited/player nanite humanoids do not silently auto-hijack blocks;
+- ordinary Asurans do not receive permanent Queen sovereignty.
 
 Validation:
-- temporary public branch workflow run **34590952017** passed `dotnet build Source/WNG/WNG.csproj -c Release`;
-- all current Def/Patch XML parsed successfully;
-- temporary validation workflow was removed before public `main` was fast-forwarded;
-- checkpoint: `Docs/WNG_TEMPORARY_ASURAN_INTRUSION_CHECKPOINT_2026-09-11.md`;
-- this is source/Def validation, **not live RimWorld validation**.
+- C# build passed;
+- current Def/Patch XML parsed successfully;
+- temporary validation workflow removed before public promotion;
+- source/Def validation only, not live RimWorld validation.
+
+### Recurring exact-map Queen recovery
+
+Public milestone:
+
+**`9ce713704505a220d357f8a6f234fb6e040e0b2e`**
+
+Status: **IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED**.
+
+Public contains:
+- later recovery attempts after the initial vault-triggered recovery;
+- exact target is only the player-home map on which the exact Queen is physically spawned;
+- no recovery attack against another player map while she is traveling, caravanning or off-map;
+- existing physical Asuran recovery Jumper, exact nonlethal subdual, physical loading and native departure/capture transaction are reused;
+- current first-build cadence is Def-tunable at 2–4 in-game days;
+- transient edge/spawn failure retries rather than consuming the attempt forever;
+- one real Queen recovery operation at a time;
+- exact recovery operatives are read from the recovery Jumper's native `CompShuttle.requiredPawns`, preventing unrelated Asurans from keeping an old recovery attempt flagged active;
+- recurring scheduler state is save-persistent.
+
+Validation:
+- C# build passed;
+- Def/Patch XML parse passed after exact-operative refinement;
+- temporary validation workflow removed before promotion;
+- source/Def validation only, not live RimWorld validation.
+
+---
+
+# CURRENT ACTIVE BRANCH — NOT PUBLIC YET
+
+Branch:
+
+**`rebuild/captured-queen-sovereign-threats-20260911`**
+
+Current branch HEAD at this state write:
+
+**`af77e358a411f25e7c2ab88dfeb8a76e4b2bff03`**
+
+Branch-only work currently includes:
+- assimilation-born block Replicators now inherit the parent's exact `CompReplicatorSovereignty` state in addition to learned Replicator/adaptation state.
+
+This branch is **not** public `main` yet and must not be reported as completed public functionality until validated and promoted.
+
+The current captured-Queen design boundary is recorded in `PASS_CHECKPOINTS.md`.
 
 ---
 
@@ -82,13 +131,15 @@ Still partial:
 
 ## Controller domains
 
-Implemented:
+Implemented publicly:
 - `None` autonomous;
 - exact `Queen` authority;
 - physical `NeuralLattice` implant authority;
 - temporary restorable `TemporaryAsuran` intrusion.
 
 Queen and implant remain separate exact controller identities. Temporary Asuran intrusion suspends/restores them rather than erasing them.
+
+Captured-Queen remote sovereign use is the active branch and is not yet public.
 
 ## Human-form Replicators / Asurans
 
@@ -116,11 +167,12 @@ Still required:
 
 ## Exact Replicator Queen
 
-Implemented:
+Implemented publicly:
 - one exact persistent female human-form Queen, current age 13;
 - real precursor cryptosleep vault;
 - immediate player recruitment on release;
 - first all-or-nothing four-operative nonlethal Asuran recovery operation;
+- recurring later exact-map recovery operations;
 - exact physical Asuran recovery Jumper;
 - capture commits only when the exact Queen physically exits in the exact hostile shuttle transit container;
 - exact kidnapped-pawn persistence;
@@ -129,10 +181,9 @@ Implemented:
 - Temporary Asuran intrusion exists separately from both.
 
 Still required:
-- **recurring later recovery/capture operations targeting only the exact player map where the Queen is physically present**;
-- no capture operation against another player map while Queen is traveling/off-map;
 - captured-Queen consequences;
 - genuine Asuran sovereign block access/mixed Asuran + block threats after successful capture;
+- authority collapse/reversion if the exact Queen is no longer genuinely retained by the capturing Asuran faction;
 - infiltration linkage.
 
 ## Wraith
@@ -202,28 +253,27 @@ Still required/blocked:
 
 # CURRENT REQUIRED UNFINISHED INVENTORY
 
-Temporary Asuran intrusion is removed from this debt list because it is now implemented on public `main`.
+Temporary Asuran intrusion and recurring exact-map Queen recovery are removed from this debt list because they are now implemented on public `main`.
 
-1. **Recurring exact-map Queen recovery/capture operations.**
-2. **Captured-Queen sovereign consequences + mixed Asuran/block threats.**
-3. Human-form Neural Interface recruit/imprison/enslave/copy/create-human-form branch.
-4. Human-form infiltration/impersonation/reveal.
-5. Quiet Lattice non-hostile enclave, player human-form variants and broader human-form role/faction composition.
-6. Native WNG backstories.
-7. Richer block Grav adaptation and broader AntiShield integration.
-8. Wraith Growth Chamber.
-9. Strategic Wraith hunger involved-Wraith count/names UI stage.
-10. Broader discovery/story progression.
-11. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
-12. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
-13. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
-14. Unloaded-world-site transport-ring exact-pawn/world-object transport; never fake via pawn recreation.
-15. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
-16. Final professional craft/gravship/implant/building/weapon/resource art review.
-17. Professional WNG audio layer.
-18. Hostile Ha'tak native takeoff/retreat/pursuit only if Odyssey ownership can be solved safely; never fake it.
-19. Broad current-build live RimWorld/save-load/mod-stack/performance validation and tuning.
-20. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
+1. **Captured-Queen sovereign consequences + mixed Asuran/block threats.**
+2. Human-form Neural Interface recruit/imprison/enslave/copy/create-human-form branch.
+3. Human-form infiltration/impersonation/reveal.
+4. Quiet Lattice non-hostile enclave, player human-form variants and broader human-form role/faction composition.
+5. Native WNG backstories.
+6. Richer block Grav adaptation and broader AntiShield integration.
+7. Wraith Growth Chamber.
+8. Strategic Wraith hunger involved-Wraith count/names UI stage.
+9. Broader discovery/story progression.
+10. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
+11. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
+12. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
+13. Unloaded-world-site transport-ring exact-pawn/world-object transport; never fake via pawn recreation.
+14. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
+15. Final professional craft/gravship/implant/building/weapon/resource art review.
+16. Professional WNG audio layer.
+17. Hostile Ha'tak native takeoff/retreat/pursuit only if Odyssey ownership can be solved safely; never fake it.
+18. Broad current-build live RimWorld/save-load/mod-stack/performance validation and tuning.
+19. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
 
 No item may silently disappear merely because another branch is worked first.
 
@@ -231,17 +281,16 @@ No item may silently disappear merely because another branch is worked first.
 
 # GENUINE NEXT IMPLEMENTATION SLICE
 
-**Recurring exact-map Replicator Queen recovery/capture operations.**
+**Captured-Queen sovereign consequences + mixed Asuran/block threats.**
 
 Required boundary:
-- reuse the current exact Queen and existing physical recovery operation rather than creating a proxy/new Queen;
-- target only the player map on which the exact Queen is physically spawned/present;
-- no recovery raid against another player map while she is absent, traveling, caravanning or otherwise off that map;
-- one recovery operation at a time;
-- author-tunable interval/cooldown rather than another buried story-day constant;
-- preserve exact nonlethal subdual/physical boarding/departure capture semantics;
-- if the operation is interrupted before the exact physical departure boundary, the Queen remains recoverable/player-owned;
-- save/load must not duplicate a scheduled/active operation;
-- after this slice, implement the captured-Queen sovereign consequence/mixed-threat layer rather than replacing it with an outbreak-count modifier.
+- exact kidnapped Queen remains the genuine controller identity; do not create a proxy Queen or abstract faction bonus;
+- the exact capturing Asuran faction must genuinely retain that exact Queen in its native kidnapped-pawn tracker for captured-Lattice Queen authority to remain valid;
+- if that exact faction no longer retains that exact Queen, captured-Queen remote authority must become invalid and blocks must fall back through recorded release/faction state;
+- real Asuran-backed blocks must carry exact `Queen` authority/domain metadata tied to the exact Queen;
+- mixed threats must contain real spawned Asuran pawns and real block Replicators using normal Replicator specialist/combat/domain behavior;
+- assimilation offspring, split/recombine and save/load must retain the exact controller domain correctly;
+- no outbreak-count modifier or decorative faction bonus as a substitute;
+- source/Def validation before promotion, with live RimWorld validation still separately required.
 
-Live RimWorld validation remains required after source/Def implementation.
+Work this as bounded meaningful passes, and checkpoint each pass in `PASS_CHECKPOINTS.md` before beginning the next one.
