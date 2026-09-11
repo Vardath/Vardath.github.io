@@ -2,12 +2,13 @@
 
 Read this before touching the WNG 1.6 repository after any context reset.
 
-# ⛔ THE BROAD HISTORY RECOVERY HAS ALREADY BEEN DONE
+# ⛔ THE BROAD HISTORY RECOVERY AND PUBLIC RECONCILIATION HAVE ALREADY BEEN DONE
 
-Historical reconstruction: **`CANONICAL_RECOVERY_LEDGER.md`**.  
+Historical/design reconstruction: **`CANONICAL_RECOVERY_LEDGER.md`**.  
+Completed public-vs-plan/private reconciliation: **`PUBLIC_RECONCILIATION_2026-09-11.md`**.  
 Mutable implementation state: **`CURRENT_PUBLIC_STATE.md`**.
 
-Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Use raw history only for a genuine ledger gap/conflict, a current-repo contradiction, or an explicit Vardath request.
+Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Use raw history only for a genuine ledger/reconciliation gap, current-repo contradiction, or explicit Vardath request.
 
 ## Identity and authority
 
@@ -21,19 +22,20 @@ Do not make Vardath reconstruct the project again. Do not reread weeks of raw ch
 ## Mandatory recovery order
 
 1. Read `STANDING_RULES.md`.
-2. Read **all of `CANONICAL_RECOVERY_LEDGER.md`**.
-3. Read **all of `CURRENT_PUBLIC_STATE.md`**.
-4. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
-5. Fetch current public mod `main`; compare it to `CURRENT_PUBLIC_STATE.md`.
-6. Inspect any newer real commits/files before relying on old state.
-7. Read the active subsystem contract/master-plan append(s).
-8. Read `PLAN_EXECUTION_PROTOCOL.md`.
-9. Continue implementation; do not stop at a summary.
-10. Update `CURRENT_PUBLIC_STATE.md` before handoff.
+2. Read **all of `CANONICAL_RECOVERY_LEDGER.md`** for recovered history/design.
+3. Read **all of `PUBLIC_RECONCILIATION_2026-09-11.md`**.
+4. Read **all of `CURRENT_PUBLIC_STATE.md`**.
+5. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
+6. Fetch current public mod `main`; compare it to the maintained HEAD.
+7. Inspect any newer real commits/files before relying on old state.
+8. Read the active subsystem contract/master-plan append(s).
+9. Read `PLAN_EXECUTION_PROTOCOL.md`.
+10. Continue implementation; do not stop at a summary when Vardath asked to continue.
+11. Update live state/reconciliation before handoff.
 
 Mandatory working order:
 
-**CANONICAL LEDGER -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE HANDOFF**
+**CANONICAL HISTORY -> PUBLIC RECONCILIATION -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE HANDOFF**
 
 ## Current live public snapshot
 
@@ -41,64 +43,93 @@ Current mod HEAD:
 
 **`0e5dfc893a8efec624053e677ae99d6983c25fc9` — `cleanup: remove temporary Neural Lattice validation workflow`**
 
-The ledger's `4af4f60...` is an old reconstruction checkpoint only.
+The canonical ledger's `4af4f60...` implementation snapshot is 45 public commits behind. It is historical only.
 
-### Critical current state
+### Hard state rule
 
-- Full block hierarchy/specialists/adaptations/matter/EMP/containment foundations exist.
-- Exact Queen vault/release/first recovery/capture boundary exists.
-- Exact Queen sovereignty exists as genuine per-block controller/faction state.
-- **Sovereign Neural Lattice implant now exists** as a physical craftable Asuran-workshop item with native brain installation/removal and real bounded `NeuralLattice` controller-domain ownership.
-- Queen and implant authority remain separate identities; ordinary Asurans do not gain innate Queen authority.
-- Neural Lattice current first-build acquisition tuning is 24 cells / normal cap 3; EMP disruption is 1,800 ticks; no nearby-swarm seizure.
-- Removing the implant releases that exact bearer's implant-controlled blocks; invalid physical state also releases authority.
-- Split/recombine preserves exact controller domains and does not cross-contaminate Queen/implant domains.
-- Block stored matter remains separate from human-form Nanite Reserve.
-- Human-form Nanite Reserve is the renamed native food need; ordinary edible matter refuels it.
-- Wraith subsystem, native craft stack, gravship families, Ha'tak/Death-Glider/carrier/orbital layers remain implemented; **Al'kesh stays**.
-- Hostile Ha'tak takeoff remains blocked by Odyssey's player-oriented `Current.Game.Gravship` singleton; never fake it with deletion/proxy replacement.
-- All five official DLCs are hard WNG dependencies: Royalty, Ideology, Biotech, Anomaly, Odyssey.
-- CatCraft/ONAC/RimGate remain optional external ownership boundaries.
+**Public source is implementation truth.**
 
-Validation:
-- Queen sovereignty run **34576583840** passed.
-- Neural Lattice corrected run **34580647197** passed C# build, all Def/Patch XML parsing and physical implant/surgery/domain invariants after an earlier candidate compile defect was fixed.
-- temporary workflows removed.
-- **This does not equal live RimWorld validation.**
+Never claim work exists because:
+- it was discussed;
+- a checkpoint said it was done;
+- work was prepared against the private repository;
+- an old branch contains it;
+- a previous assistant believed it committed.
 
-## Genuine next implementation slice
+If public `main` does not contain an equivalent real implementation, it is not currently implemented.
 
-**Temporary Asuran lattice intrusion.**
+### Major implemented foundations
+
+- block Replicator hierarchy/specialists/matter/EMP/containment/Child's Toy;
+- Armor/Ranged/Power/Shield adaptation effects, with Grav/broader AntiShield refinements still outstanding;
+- exact Queen vault/release/first recovery/capture boundary;
+- exact Queen sovereignty;
+- physical Sovereign Neural Lattice;
+- human-form nanite physiology/Nanite Reserve and hostile Asuran Lattice foundation;
+- Wraith identity/biology/factions/strategic hunger/mature-Hive/captivity/living-tech foundations;
+- native craft mechanical stacks including **Al'kesh**;
+- Wraith/Asuran gravship mechanical families;
+- transport rings and Wraith stunner;
+- Ha'tak/Death Glider/carrier/orbital foundations.
+
+### Do not mistake these for complete subsystems
+
+Important current gaps include:
+- Temporary Asuran intrusion;
+- recurring Queen recovery/captured-Queen mixed sovereign threats;
+- Neural Interface copies/reconstruction;
+- infiltration;
+- Quiet Lattice/player human-form variants/mixed human-form roles;
+- native WNG backstories;
+- richer Grav/broader AntiShield integration;
+- Wraith Growth Chamber;
+- strategic hunger involved-Wraith count/names UI stage;
+- broader discovery/story progression;
+- friendly Quiet-Lattice/Puddle-Jumper courier path;
+- standalone Goa'uld ship resource/research path without ONAC;
+- Puddle Jumper final power/fuel abstraction;
+- themed gravship hull corner/diagonal presentation;
+- final professional art/audio;
+- broad live RimWorld/save-load/mod-stack testing.
+
+The complete debt list is in `PUBLIC_RECONCILIATION_2026-09-11.md`.
+
+## Genuine immediate controller slice
+
+**Temporary Asuran lattice intrusion** remains a valid immediate implementation slice.
 
 It must:
 - use `ReplicatorControlAuthority.TemporaryAsuran`;
-- remain a temporary hijack, not Queen or implant ownership;
-- preserve enough exact pre-intrusion authority/faction/domain state to restore Queen/Neural-Lattice/autonomous ownership correctly on expiry/interruption;
+- remain temporary;
+- snapshot and restore exact pre-intrusion Queen/Neural-Lattice/autonomous authority/faction/domain state;
 - keep EMP/containment real;
-- keep duration/range/cap/trigger rules author-tunable;
-- preserve coherent state through any hierarchy transactions during the intrusion;
+- keep trigger/range/duration/cap tunable;
+- preserve coherent temporary/restoration state through hierarchy transactions;
 - never grant ordinary Asurans permanent Queen sovereignty.
 
-After that, derive the next work from actual current `main` plus the plans.
+The existing generic timeout release is not itself the finished restoration mechanic.
+
+After that, derive the next work from actual public `main` plus the **entire** reconciliation debt list, not from a single stale “next” sentence.
 
 ## Critical standing reminders
 
 - WNG is a Stargate mod; lore/function check precedes implementation.
-- `next`, `unfinished`, `correct`, `rebuild`, or `refine` never means delete required existing content.
-- Ordinary Wraith feeding, strategic faction hunger, Mature-Hive feeding ecology and Mature-Hive retaliation are separate.
+- `next`, `unfinished`, `correct`, `rebuild` or `refine` never means delete required existing content.
+- Ordinary Wraith feeding, strategic faction hunger, mature-Hive feeding ecology and mature-Hive retaliation are separate.
 - Use **Wraith Grav Engine**, not Gravcore.
+- Wraith gravship defense currently uses living-hull regeneration; generic shield reskin was rejected.
 - Do not invent Goa'uld fuel/resources to solve integration inconvenience.
 - CatCraft owns its Stargate network/dial/iris/receive buffer.
 - No replacement/generated art unless Vardath explicitly requests it.
-- Approved planned Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa content is recorded in the two 2026-09-11 planning appends and remains required planned work.
+- Planned Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty content remains planned until Vardath advances it.
 
 ## Handoff maintenance
 
 Before ending a meaningful batch, record:
 - exact new public HEAD;
 - what actually changed;
-- implemented / unfinished dependency / Vardath change / live-test-needed status;
+- implemented / partial / unfinished / changed-rejected / planned-only / live-test-needed status;
 - superseded decisions;
-- next genuine slice derived from current `main`.
+- next genuine slice derived from current public source plus the full debt inventory.
 
 The objective is that Vardath can say **“refresh memory and continue”** and work resumes without interrogation or reconstruction.
