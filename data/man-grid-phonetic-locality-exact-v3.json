@@ -1,0 +1,60 @@
+{
+  "version": 3,
+  "test_id": 2,
+  "test": "Man Grid phonetic locality / shuffled-assignment control",
+  "status": "complete",
+  "shards": 20,
+  "independent_of_test1_reconstruction": true,
+  "source": {
+    "dataset": "PHOIBLE CLDF",
+    "commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "marginal_segments_excluded": true,
+    "tone_segments_excluded_from_research_inventory": true,
+    "projection_fit_to_all_phoible_parameters": true
+  },
+  "grid": {
+    "cells": 1074,
+    "all_rectangles_mirrored": true
+  },
+  "coverage": {
+    "all_phoible_parameters": 3164,
+    "research_segments": 3065,
+    "all_languages": 2177,
+    "eligible_languages": 2105,
+    "value_rows": 105459,
+    "accepted_inventory_rows": 103309,
+    "families": 177
+  },
+  "method": {
+    "similar_pairs": "for each shard-owned PHOIBLE segment, up to 8 nearest distinctive-feature neighbours; unordered pairs retained once",
+    "grid_metric": "mean normalized Manhattan row/column separation across all 10 mirrored layer coordinates, source on LEFT and target on RIGHT",
+    "control": "deterministic hash-shuffled target segment per real pair",
+    "engine": "same mapping rules as phonetic-man-grid-engine-core.js"
+  },
+  "summary": {
+    "segments": 3065,
+    "evaluated_pairs": 10440,
+    "mean_real_structural_distance": 0.02816732519157088,
+    "mean_shuffled_structural_distance": 0.3573358477011494,
+    "effect_size_cohen_d_control_minus_real": 2.187817206930014,
+    "mean_real_same_mirrored_coordinate_rate": 0.7235727969348659,
+    "mean_shuffled_same_mirrored_coordinate_rate": 0.08197318007662835,
+    "shards_real_closer_than_shuffle": 20,
+    "shards_compared": 20,
+    "shard_agreement": 1.0,
+    "supports_phonetic_locality": true
+  },
+  "confidence": {
+    "stability_fraction": 1.0,
+    "interpretation": "descriptive stability across 20 genuinely partitioned source-segment shards; not a posterior probability"
+  },
+  "failures_missing_data": {
+    "tone_segments_excluded_from_research_pair_pool": true,
+    "marginal_inventory occurrences excluded": true
+  },
+  "assumptions": [
+    "PHOIBLE distinctive-feature distance is an external phonetic-similarity criterion",
+    "nearest-neighbour selection is fixed before examining Man Grid distances",
+    "LEFT/RIGHT side itself carries sibling-channel identity, so locality compares matched row/column structure across mirrored sides"
+  ]
+}
