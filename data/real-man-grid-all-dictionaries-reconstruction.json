@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "test": "all-language original-language reconstruction through source-traced Man Grid",
+  "dictionary_entries": 12000,
+  "shards": 20,
+  "shard_counts": [
+    {
+      "shard": 0,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 1,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 2,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 3,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 4,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 5,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 6,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 7,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 8,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 9,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 10,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 11,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 12,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 13,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 14,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 15,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 16,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 17,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 18,
+      "input": 600,
+      "output": 600
+    },
+    {
+      "shard": 19,
+      "input": 600,
+      "output": 600
+    }
+  ],
+  "scan": {
+    "dictionary_entries": 10913996,
+    "entries_with_mappable_ipa": 3390910,
+    "languages": 5213,
+    "families_seen": 345
+  },
+  "historical_identity_or_fold_audit": {
+    "matched_edges": 50000,
+    "mean_best_identity_or_fold": 0.8538133230960403,
+    "fold_best_count": 2215,
+    "identity_best_count": 47785
+  },
+  "geometry": {
+    "width": 716.0,
+    "height": 910.0,
+    "axis": 358.0,
+    "trace_segments": 868,
+    "trace_file": "phonetic-historical-grid-data.json"
+  },
+  "phonetic_overlay": {
+    "source": "PHOIBLE feature vectors only",
+    "method": "standardized PHOIBLE feature PCA(2), deterministic sign; 2-98% scale; nearest-point snap to traced line segments",
+    "phoible_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "allowed_transform": [
+    "identity",
+    "tool_fold"
+  ],
+  "metrics": {
+    "mean_family_fit": 0.8001440549166666,
+    "median_family_fit": 0.7891455,
+    "mean_leave_one_family_out": 0.77270621725,
+    "mean_fold_gain": 0.01141918575,
+    "entries_using_fold": 10110
+  },
+  "boundary": "Source-traced Man Grid geometry is used directly. PHOIBLE supplies an experimental phonetic overlay because the manuscript cells are unlabeled; these results test that explicit model, not a claim about the manuscript author’s intended phonetic labels."
+}
