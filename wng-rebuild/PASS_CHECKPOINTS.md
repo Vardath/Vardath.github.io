@@ -8,7 +8,7 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-12 — Wraith Growth Chamber reconciliation complete
+# CHECKPOINT — 2026-09-12 — Wraith Growth Chamber validated on branch
 
 ## Public state
 
@@ -16,95 +16,85 @@ Public mod `main` remains:
 
 **`b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — native energy-shield AntiShield integration.**
 
-No Growth Chamber code was changed in this reconciliation pass.
+Growth Chamber remains branch-only at this checkpoint.
 
-## Recovered plan/chat-history requirement
+## Active branch
 
-The Wraith subsystem has always retained a dedicated Growth Chamber / cloning branch. The requirement is not generic population spawning:
-- support **bounded biological Wraith replacement/growth**;
-- caste outcome and resources must be coherent with Wraith biology and Hive ecology;
-- no uncontrolled infinite spawning;
-- timers/costs remain tunable;
-- earlier design specifically described rapid warrior production at **very high biomass and power cost**;
-- older visual/history material used a Wraith Growth Pod/Chamber identity, but old code/builds remain reference only.
+**`rebuild/wraith-growth-chamber-20260912`**
 
-## Current public architecture inspected
+Validated clean branch HEAD:
 
-Current Mature Hive generation already creates:
-- exact Hive Heart;
-- exact active Queen, Keeper, Hunters and Warriors;
-- ordinary exact hibernators in Hibernation Pods;
-- finite combat reserve in Dormancy Vaults;
-- finite exact biological feeding stock in Feeding Niches.
+**`6bbb804a81b06159a33729b877412859a6b7e60c` — `rebuild: bind Growth Chamber to Mature Hive demographic cap`**
 
-`CompMatureWraithHivePopulation` deliberately records a **founding Wraith population cap** and explicitly says it does not create demographic replacements because Growth Chamber integration is the later replacement layer.
+Clean compare against public contains exactly four intended files:
+- `Defs/ThingDefs/Wraith_GrowthChamber.xml` — added;
+- `Defs/ThingDefs/Wraith_HiveHeart.xml` — description reconciled;
+- `Source/WNG/Wraith/WraithGrowthChamber.cs` — added;
+- `Source/WNG/Wraith/WraithMatureHive.cs` — bounded replacement-registration API added.
 
-Important existing separation:
-- Hibernation Pods preserve existing Wraith; they do not create them;
-- Dormancy Vaults are a finite sealed combat reserve and are explicitly outside the demographic replacement pool;
-- Feeding Niches hold exact captives/feeding stock;
-- Hive Heart is the exact demographic anchor/cap, not a cloning machine.
+Temporary workflow/helper files are absent from clean branch HEAD.
 
-Current public also has real `WNG_WraithBioSludge` produced from biological feedstock through the Wraith living-tech economy, and current Wraith structures already use ordinary RimWorld power where a gameplay power interface is needed.
+## Implemented behavior
 
-## Stargate lore gate
+- `WNG_WraithGrowthChamber` is a real ticker building using ordinary RimWorld electrical power plus `CompRefuelable` restricted to `WNG_WraithBioSludge`;
+- first-build Def tuning is centralized: 60,000-tick cycle, 60 bio-sludge per completed replacement, 0.35 Queen Life Force cost, 4,000W draw, 45% Hunter / 55% Warrior weighting, five-cell release search;
+- chamber only operates beside an initialized same-map/same-faction Mature Hive Heart;
+- chamber reads exact `FoundingPopulationCap` and `LivingDemographicCount` and resets growth progress at the cap rather than pre-growing expansion beyond it;
+- exact local operational same-faction `WNG_WraithQueen` is required as genetic source;
+- Queen Life Force must be available before a cycle may progress/complete;
+- output is strictly `WNG_WraithHunter` or `WNG_WraithWarrior`;
+- Hive Heart API independently rejects non-Hunter/Warrior registrations, duplicate pawns, wrong faction/map, non-Wraith or over-cap replacements;
+- replacement pawn is generated/spawned/validated and registered into the exact Hive demographic list **before** bio-sludge and Queen Life Force are committed;
+- failed generation/spawn/registration destroys the attempted pawn and commits no biomass/Queen cost;
+- successful replacement joins the active Queen's existing Lord when available;
+- progress and block reason are save-persistent;
+- chamber does not interact with strategic faction hunger, ordinary feeding, Feeding Niche captive identity, Dormancy Vault reserve or mature-Hive retaliation.
 
-Canon source: SGA **“Spoils of War.”**
+## Mature-Hive site integration boundary
 
-Established behavior:
-- a Wraith Queen creates a small number of warriors/genetic material;
-- a cloning facility reproduces those warriors thousands of times;
-- the process uses numerous growth/cloning pods;
-- Queen participation is exhausting and she needs to feed afterwards;
-- energy requirements are enormous;
-- Ancient ZPMs were used to power the facility;
-- the facility's purpose was mass **warrior** production, not cloning replacement Queens/Keepers as ordinary output.
+The chamber is **deliberately not yet inserted into generated hostile Mature Hive infrastructure**.
 
-Therefore WNG's single-building Growth Chamber is a **RimWorld-scale abstraction of the canon cloning-pod/facility function**, not a claim that one small chamber in the series could independently equal the full planet-side facility.
+Reason: current generated Mature Hive sites have no grounded Wraith electrical-power source. Adding a 4,000W required chamber there today would create guaranteed inert infrastructure or force this pass to invent/restore a separate Wraith power-generator subsystem. That would violate the bounded Growth Chamber pass and the recovered requirement not to invent fake ZPM/Gravcore substitutes.
 
-## Exact WNG first implementation role
+Therefore generated-site placement remains an explicit dependency on the later Wraith ground-power/bioelectric-energy reconciliation. The chamber itself is mechanically complete enough to function wherever a valid initialized Heart, Queen, power grid and bio-sludge supply genuinely exist.
 
-**Growth Chamber = bounded mature-Hive Hunter/Warrior demographic replacement facility.**
+## Validation
 
-It is distinct from every existing Hive system.
+Initial validation wrapper run **`34612309236` failed before GitHub created a job**. This was a workflow-wrapper failure, not source/Def validation.
 
-Required behavior:
-- must belong to the same Wraith faction/map as a real initialized Hive Heart;
-- must read that Hive Heart's recorded `FoundingPopulationCap` and current `LivingDemographicCount`;
-- may only grow replacements while the living demographic count is below that cap;
-- first-build output is **Hunter/Warrior only**; it must not manufacture Queens, Keepers or Commanders as routine replacement output;
-- must require a living same-faction Wraith Queen on the map as the genetic source;
-- each completed growth cycle must impose a real Queen biological cost through WNG Life Force/exhaustion rather than treating Queen participation as free;
-- must consume real current WNG biological feedstock (`WNG_WraithBioSludge`) as the biomass abstraction;
-- must require substantial power through the existing RimWorld power system as WNG's current first-build abstraction for the canon enormous energy requirement;
-- do **not** invent a fake ZPM/gravcore resource merely to satisfy the chamber; Ancient/ZPM-specific power remains a later higher-end integration/progression opportunity;
-- cycle time, biomass cost, power draw, Queen Life Force cost and Hunter/Warrior weighting must be Def-tunable;
-- no cycle may commit resources and then silently fail to produce a valid exact pawn; resource/cycle transaction must fail safely;
-- generated replacement must be a real exact Wraith pawn of the chamber/Hive faction and be registered into the Hive Heart demographic list before another replacement can be authorized;
-- chamber must not use or replenish Dormancy Vault reserve;
-- chamber must not consume/replace Feeding Niche captive identities directly; bio-sludge is the production input abstraction;
-- chamber must not modify strategic faction hunger, open feeding-request UI, perform ordinary Drain Life, or trigger mature-Hive retaliation.
+Because the same wrapper class had already occurred during AntiShield, the validation method was changed rather than retried unchanged: patch and invariant logic were moved into small temporary helper scripts and the workflow was reduced to a minimal runner.
 
-## Queen-loss boundary
+Corrected run:
 
-If the exact local Queen is dead/missing/downed beyond valid operation, the chamber cannot begin/complete another cloning cycle. Growth Chamber does not create a substitute Queen.
+**`34612430265` — SUCCESS**
 
-## Population-cap boundary
+Passed:
+- mature-Hive API patch application;
+- Release C# build;
+- all Def/Patch XML parsing;
+- Growth Chamber / Heart population-cap invariants;
+- Queen / Hunter / Warrior / Life Force / bio-sludge / power requirements;
+- explicit no-Keeper clone invariant;
+- explicit no-inert generated-site chamber invariant while no Wraith ground-power source exists;
+- temporary workflow and helper scripts removed before clean branch HEAD.
 
-The current founding cap is the first-build demographic ceiling. The chamber replaces losses **up to that recorded cap** rather than expanding a generated Mature Hive indefinitely. Any later mechanic that deliberately raises a Hive's cap must be a separate explicit progression/design change.
+This remains **source/Def validation, not live RimWorld validation**.
 
 ## Exact next pass
 
-**Implement Growth Chamber only** on a fresh public-repo branch from `b5cde48...`:
-1. expose a safe Hive Heart registration/replacement API without breaking exact demographic references;
-2. add Growth Chamber building/component Def with Def-tunable cycle/power/bio-sludge/Queen-Life-Force settings;
-3. find/validate same-map initialized same-faction Hive Heart + living Queen;
-4. bound production to `FoundingPopulationCap` and Hunter/Warrior output only;
-5. make biomass/Queen-cost/output transaction safe;
-6. integrate chamber into Mature Hive site generation as required infrastructure only if the whole generated-site transaction remains all-or-nothing;
-7. keep all feeding/hunger/dormancy/retaliation systems separate;
-8. Release build + XML/static invariants;
-9. checkpoint validated branch before promotion.
+**Promotion-only pass:**
+1. recheck public `main` remains `b5cde48...`;
+2. promote clean tree `24114e331f752afdb607d98402cdd6c6ef75bd82` as one public commit without temporary validation history;
+3. verify public diff is exactly the four intended files;
+4. update `CURRENT_PUBLIC_STATE.md` and this checkpoint to exact promoted SHA;
+5. remove Growth Chamber core behavior from missing-required debt but retain generated-Mature-Hive chamber placement as an explicit Wraith ground-power dependency;
+6. only then reconcile the next required Wraith slice.
+
+---
+
+# PREVIOUS RECONCILIATION DECISION
+
+Growth Chamber is a RimWorld-scale abstraction of the Wraith cloning-facility function from SGA `Spoils of War`: Queen-derived genetics, very high biomass/energy demand, and warrior production. WNG deliberately bounds that behavior to Hunter/Warrior demographic replacement up to an initialized Hive Heart's recorded founding population ceiling.
 
 ---
 
