@@ -1,0 +1,143 @@
+{
+  "version": 2,
+  "title": "Exact Man Grid phonetics and original-language rebuild",
+  "status": "pass-1-started",
+  "correction": "The earlier ChatGPT-built original-phonetics and original-language experiments used the wrong computational object: a 16-state A1-D4 proxy (and later a noisy source-trace) instead of the exact discrete Man Grid. That was an implementation error by ChatGPT. The old results remain on the site as historical research records, but they are not treated as valid results from the actual Man Grid. This V2 sequence starts again from the exact discrete grid supplied by the researcher.",
+  "exact_grid": {
+    "upper": ["4x4 each side", "7x5 each side", "10x5 each side", "7x4 each side", "5x5 each side"],
+    "transform": "transformative circle",
+    "lower": ["6x5", "11x5", "17x4", "21x5", "25x5"],
+    "cells": 691,
+    "hypothesis": "The lower single-grid stack represents a shared phonetic state which can pass through the transformative circle and bifurcate into paired left/right sibling-language states in the upper stack. The tests are required to determine whether this interpretation is supported rather than assuming it is true."
+  },
+  "tests": [
+    {
+      "id": 1,
+      "name": "Original phonetic sounds through the exact Man Grid",
+      "dependency": "none",
+      "can_run_now": true,
+      "shards": 20,
+      "purpose": "Analyse the full PHOIBLE inventory evidence family-by-family, split within-family language inventories into two data-driven sibling branches, map the two descendant sound states to the paired upper grids, infer shared midpoint/ancestor sound states below the transformative circle, and reconstruct a stable candidate original phoneme inventory. Compare within-family sibling reconstruction with unrelated-family controls. This test creates the phonetic coordinate system used by every later language reconstruction."
+    },
+    {
+      "id": 2,
+      "name": "Exact-grid phonetic locality and shuffle control",
+      "dependency": "none",
+      "can_run_now": true,
+      "shards": 20,
+      "purpose": "Check independently whether phones close in PHOIBLE distinctive-feature space land near one another in the exact Man Grid at its different resolutions more strongly than shuffled cell assignments. If the grid cannot preserve phonetic locality, later linguistic interpretation is weakened."
+    },
+    {
+      "id": 3,
+      "name": "Sibling-language split falsification",
+      "dependency": "none",
+      "can_run_now": true,
+      "shards": 20,
+      "purpose": "Test the proposed one-parent-to-two-sibling function directly. Compare real within-family paired branches against deterministically mismatched unrelated families. Measure whether a common lower-grid parent state predicts both upper branches better and more coherently than the null pairings."
+    },
+    {
+      "id": 4,
+      "name": "Original-language lexical reconstruction through the exact Man Grid",
+      "dependency": "Test 1",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Re-scan the all-language lexical corpus and reconstruct same-meaning ancestral word paths using the V2 original phonetic inventory and exact Man Grid rather than A1-D4. Produce the first corrected candidate original language."
+    },
+    {
+      "id": 5,
+      "name": "Full dictionary expansion and stability",
+      "dependency": "Test 4",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Expand the corrected reconstruction to approximately 12,000 words or more if the evidence supports more eligible meanings; run leave-family-out and shard-stability checks and retain confidence/evidence for every entry."
+    },
+    {
+      "id": 6,
+      "name": "Nearest current and historical language comparison",
+      "dependency": "Tests 4-5",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Compare the corrected reconstructed language with attested language profiles without importing the old 16-state rankings. Determine which languages are structurally closest under the exact-grid representation."
+    },
+    {
+      "id": 7,
+      "name": "Origin-hypothesis and held-out-family stress test",
+      "dependency": "Tests 4-5",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Test whether any language family is genuinely enriched for similarity to the reconstruction while holding that family out of the reconstruction that predicts it. This checks circularity and broad origin claims."
+    },
+    {
+      "id": 8,
+      "name": "Reverse-family convergence",
+      "dependency": "Tests 4-5",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Reverse-transform independent language families through the exact Man Grid and ask whether they converge reproducibly on the same reconstructed attractor rather than on arbitrary modern languages."
+    },
+    {
+      "id": 9,
+      "name": "Data-driven sibling-anchor discovery",
+      "dependency": "Tests 4-8",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Relearn which attested languages or language groups best occupy the two sibling branches. Do not hard-code the previous Occitan/Indonesian result; rediscover or reject it from the corrected data."
+    },
+    {
+      "id": 10,
+      "name": "Common-parent split test for the discovered sibling anchors",
+      "dependency": "Test 9",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Infer the lower-grid parent using only the two discovered sibling branches, then test it against the reconstructed root, held-out languages, and random-pair controls."
+    },
+    {
+      "id": 11,
+      "name": "Sibling-constrained candidate-language reconstruction",
+      "dependency": "Test 10",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Reconstruct a second full candidate lexicon using the discovered sibling information as constrained evidence while retaining independent multilingual family evidence."
+    },
+    {
+      "id": 12,
+      "name": "Independent candidate validation",
+      "dependency": "Test 11",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Compare correct sibling anchors, no-anchor reconstruction, and shuffled/wrong-meaning anchors on held-out families and meanings to determine whether the sibling information genuinely predicts unseen evidence."
+    },
+    {
+      "id": 13,
+      "name": "Historical language drift through the exact Man Grid",
+      "dependency": "Test 1",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Learn ancestor-to-descendant changes from documented historical inheritance pairs using the V2 phonetic/grid representation, testing on held-out historical forms against shuffled and wrong-meaning controls."
+    },
+    {
+      "id": 14,
+      "name": "All-language transformation-rule discovery",
+      "dependency": "Tests 1 and 13",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Generalise historically supported substitutions, deletions, insertions, branch changes and circle-crossing transformations across all sufficiently supported language routes. These are the corrected language-transformation rules."
+    },
+    {
+      "id": 15,
+      "name": "Rule-augmented original-language reconstruction",
+      "dependency": "Tests 5 and 14",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Feed only cross-validated historical transformation rules back into the exact-grid reconstruction and test whether they improve held-out prediction over the unaugmented and shuffled-rule reconstructions."
+    },
+    {
+      "id": 16,
+      "name": "Final phonetics, language and dictionary consistency pass",
+      "dependency": "Tests 1-15",
+      "can_run_now": false,
+      "shards": 20,
+      "purpose": "Freeze the corrected original phoneme inventory, grammar/transform rules and final 12,000+ word dictionary; publish confidence, evidence, comparison tables and playable reconstructed pronunciations without erasing the earlier research record."
+    }
+  ]
+}
