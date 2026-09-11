@@ -19,14 +19,15 @@ Every known item must remain implemented, explicitly partial, explicitly missing
 
 Repository: **`Vardath/Wraith-Nanite-Gravtech-1.6`**
 
-**`b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — `rebuild: integrate Replicator AntiShield with native energy shields`**
+**`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — `rebuild: add bounded Wraith Growth Chamber`**
 
-Public diff from `12590e8...` contains exactly:
-- `Defs/ThingDefs/Projectiles_Replicator.xml` — added;
-- `Source/WNG/Replicators/ReplicatorAdaptiveProjectile.cs` — added;
-- `Source/WNG/Replicators/ReplicatorAdaptationEffects.cs` — modified.
+Public diff from `b5cde48...` is exactly:
+- `Defs/ThingDefs/Wraith_GrowthChamber.xml` — added;
+- `Defs/ThingDefs/Wraith_HiveHeart.xml` — bounded replacement description reconciled;
+- `Source/WNG/Wraith/WraithGrowthChamber.cs` — added;
+- `Source/WNG/Wraith/WraithMatureHive.cs` — exact demographic replacement-registration API added.
 
-Corrected validation run **`34610731875` — SUCCESS** before clean promotion. The earlier run `34610597370` failed at the temporary workflow-wrapper level before creating a job and did not produce a source result. Release build, Def/Patch XML and AntiShield invariants passed in the corrected run. This is source/Def validation, not broad live RimWorld validation.
+Corrected validation run **`34612430265` — SUCCESS** before clean promotion. Initial run `34612309236` failed only at the temporary workflow-wrapper level before a job existed; the process was changed to small helper scripts + minimal workflow rather than repeating the same wrapper pattern. Release build, Def/Patch XML and Growth Chamber invariants passed. This is source/Def validation, not broad live RimWorld validation.
 
 ## Recent public milestones
 
@@ -40,6 +41,7 @@ Corrected validation run **`34610731875` — SUCCESS** before clean promotion. T
 - `45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — native WNG backstories.
 - `12590e8ea88ce208a640fe2475de1843a7e227af` — physical Replicator Grav adaptation.
 - `b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — native-projectile AntiShield integration.
+- `e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — bounded Wraith Growth Chamber.
 
 ---
 
@@ -55,30 +57,9 @@ Implemented:
 - controller-domain inheritance through split/recombine/assimilation offspring;
 - Material / Armor / Ranged / Power / Shield adaptation foundations;
 - Grav evidence/save state + approved overlay + real physical gravitic reposition behavior;
-- AntiShield persistent evidence/state + block adaptive-shield countermeasure + **native energy-shield integration**.
+- AntiShield persistent evidence/state + block adaptive-shield countermeasure + native energy-shield integration.
 
-### Grav adaptation — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
-
-- learned through existing grav/gravity assimilation evidence;
-- native `JumpUtility.DoJump` / `PawnFlyer` exact-pawn reposition;
-- no MoveSpeed bonus, teleport, permanent flight, phasing or pawn recreation;
-- current Def tuning: range 7, minimum useful distance 3, cooldown 360 ticks, landing radius 2;
-- native valid/walkable/LOS constraints;
-- EMP and WNG containment suppress use;
-- player command + bounded autonomous tactical use;
-- cooldown save-persistent.
-
-### AntiShield — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
-
-- AntiShield remains a later countermeasure unlocked only after repeated shield/barrier evidence; current threshold is Def-tunable and set to 3;
-- adaptive ranged fire now uses a real native `Bullet` projectile instead of direct `TakeDamage`, so walls/cover and native projectile shields participate normally;
-- non-AntiShield shots are normally intercepted by `CompProjectileInterceptor` / `CompGravshipShieldGenerator` shields;
-- an AntiShield launcher presents the existing Def-tunable `antiShieldDamageMultiplier` as increased shield depletion to native interceptors;
-- ordinary unshielded body impact remains normal configured adaptive-ranged body damage/armor penetration rather than a generic AntiShield body-damage bonus;
-- existing WNG block adaptive-shield countermeasure behavior is retained;
-- Wraith living-hull regeneration is not an energy shield and receives no AntiShield interaction;
-- no Harmony patch is used;
-- third-party shield systems outside the native projectile-interceptor path remain explicit future integrations only if their real APIs are later supplied/verified.
+Grav and AntiShield are implemented foundations but still require live-game/save-load tuning and verification.
 
 ## Controller / Queen architecture
 
@@ -91,8 +72,8 @@ Implemented:
 - hostile `WNG_AsuranLattice` with Operative / Technician / Commander / Infiltrator roles;
 - Temporary Asuran block intrusion and captured-Queen mixed threats;
 - Neural Interface recruit/imprison/Ideology-slave/skill-copy/exact reconstruction;
-- same-pawn conceal/reveal and covert visitor impersonation with valid native cover-faction/guest mechanics;
-- non-hostile **The Quiet Lattice** / `WNG_HumanFormEnclave` as separate WNG-created splinter society;
+- same-pawn conceal/reveal and covert visitor impersonation with native cover-faction/guest mechanics;
+- non-hostile **The Quiet Lattice** / `WNG_HumanFormEnclave`;
 - generalist / engineer / soldier / coordinator / player human-form PawnKinds;
 - Peaceful / Settlement / bounded Combat Quiet-Lattice composition;
 - native WNG synthetic backstories.
@@ -116,12 +97,28 @@ Implemented:
 - Feeding Niche / Hibernation Pod / Dormancy Vault / Hive Heart;
 - mature-Hive feeding-stock/population/retaliation foundation;
 - living-tech bootstrap, real Wraith Grav Engine, stun staff, Dart/captivity foundation, Wraith gravship mechanics and living-hull regeneration;
-- native WNG Wraith backstories.
+- native WNG Wraith backstories;
+- **bounded Wraith Growth Chamber**.
+
+### Growth Chamber — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
+
+- real powered `WNG_WraithGrowthChamber` building using current WNG bio-sludge biomass and normal RimWorld power;
+- Def-tunable first-build values: 60,000-tick cycle, 60 bio-sludge per replacement, 0.35 Queen Life Force, 4,000W draw, 45/55 Hunter/Warrior weighting;
+- only links to initialized same-faction Mature Hive Heart and reads exact founding cap/current living demographic count;
+- requires a living operational same-faction Wraith Queen;
+- only Hunter/Warrior output; Hive Heart independently rejects other caste registrations;
+- no production above recorded founding cap;
+- exact pawn is validated and registered before biomass/Queen cost is committed;
+- failed spawn/registration consumes no cycle resources;
+- no coupling to strategic hunger, ordinary feeding, Feeding Niche exact captives, Dormancy Vault reserve or retaliation.
+
+Explicit dependency:
+- generated hostile Mature Hive sites do **not** yet receive the Growth Chamber because those sites currently have no grounded Wraith electrical-power source. Adding an inert 4,000W chamber or inventing a fake ZPM/Gravcore substitute was rejected. Site placement waits for explicit Wraith ground-power/bioelectric-energy reconciliation.
 
 Still required:
-- Wraith Growth Chamber;
 - strategic-hunger involved-Wraith count/names UI stage;
 - broader discovery/story progression;
+- generated-Mature-Hive Growth Chamber placement after a real Wraith ground-power solution exists;
 - final presentation/audio/live testing.
 
 Ordinary feeding, strategic hunger, mature-Hive feeding ecology and mature-Hive retaliation remain separate systems.
@@ -142,11 +139,11 @@ Still required/blocked: safe standalone Goa'uld ship material/fuel/research path
 
 # CURRENT REQUIRED UNFINISHED INVENTORY
 
-Broader native AntiShield integration is removed from missing debt because it is now public.
+The Growth Chamber core is removed from missing-required debt because it is public. Generated-Mature-Hive placement remains an explicit Wraith-power dependency rather than being silently treated as complete.
 
-1. **Wraith Growth Chamber.**
-2. Strategic Wraith hunger involved-Wraith count/names UI stage.
-3. Broader discovery/story progression.
+1. **Strategic Wraith hunger involved-Wraith count/names UI stage.**
+2. Broader discovery/story progression.
+3. Generated Mature Hive Growth Chamber placement after real Wraith ground-power/bioelectric-energy support exists.
 4. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
 5. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
 6. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
@@ -167,12 +164,11 @@ No item may silently disappear.
 
 # GENUINE NEXT PASS
 
-**Wraith Growth Chamber reconciliation only.**
+**Strategic Wraith hunger involved-Wraith count/names UI reconciliation only.**
 
 Before code:
-- recover the Growth Chamber requirement from chat/history/plan and inspect historical file evidence without treating it as known-good;
-- inspect current public Wraith Hive infrastructure, feeding, reproduction/population and living-tech files/assets;
-- perform Stargate lore gate: distinguish canon Wraith cloning facilities/growth systems from WNG gameplay abstractions;
-- define exactly what the Growth Chamber adds that current Hive Heart / Feeding Niche / Hibernation Pod / Dormancy Vault do not already provide;
-- ensure it does not merge ordinary feeding, strategic hunger, mature-Hive ecology or retaliation;
-- checkpoint the reconciliation decision before implementation.
+- inspect current public strategic-hunger state/request UI and exact Wraith-faction ownership;
+- recover the two-stage modal requirement from history: first stage is feeding-stock/subject decision, not Wraith selection; next stage shows count/names of involved Wraiths;
+- preserve the absolute separation from ordinary `Drain Life`, local Mature-Hive feeding stock and retaliation;
+- inspect current RimWorld window/dialog APIs so the decision sequence stays paused and does not invent a fake quest system;
+- checkpoint the exact UI/data-flow decision before implementation.
