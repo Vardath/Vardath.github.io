@@ -8,78 +8,63 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-12 — Replicator Grav adaptation validated on branch
+# CHECKPOINT — 2026-09-12 — Replicator Grav adaptation promoted to public
 
 ## Public implementation state
 
-Public mod `main` remains:
+Public mod `main` is now:
 
-**`45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — native WNG backstories.**
+**`12590e8ea88ce208a640fe2475de1843a7e227af` — `rebuild: add Replicator Grav reposition adaptation`**
 
-The Grav implementation is branch-only at this checkpoint.
+Promotion used the validated clean branch tree `1353c93224ddb116512d998f71afff4b75bd2948` with parent `45e62cd...`. Temporary validation-workflow history did not enter public `main`.
 
-## Active branch
-
-**`rebuild/replicator-grav-adaptation-20260912`**
-
-Validated clean branch HEAD:
-
-**`82f22acb64b11ebf812dd8b0004ab423be8c0800` — `rebuild: wire Def-tunable Replicator Grav maneuver`**
-
-The branch is three commits ahead of public because it contains the source edit, temporary validator commit and final validated Def/validator-removal commit. Comparison against public shows only two intended files changed:
+Public diff contains only:
 - `Source/WNG/Replicators/ReplicatorAdaptationEffects.cs`;
 - `Defs/ThingDefs/Races_Replicator.xml`.
 
-## What this pass implemented
+## What is now public
 
-- learned `ReplicatorAdaptation.Grav` now has a real gameplay effect instead of state/overlay only;
-- effect is a short-range gravitic reposition using RimWorld's native `JumpUtility.DoJump` / `PawnFlyer` same-pawn movement transaction;
-- no passive MoveSpeed bonus, teleport, sustained flight or pawn recreation;
-- Def-tunable first-build values are `gravRange=7`, `gravMinDistance=3`, `gravCooldownTicks=360`, `gravLandingRadius=2`;
-- target validation uses native `JumpUtility.ValidJumpTarget`, range/minimum-distance bounds and line of sight, so the maneuver does not phase through sealed structures;
-- active WNG containment blocks both launch from the origin and landing in the destination;
-- EMP suppression disables Grav use;
-- player-faction Grav-adapted block Replicators expose an explicit `Grav reposition` target command;
-- autonomous hostile Grav-adapted blocks may use the maneuver tactically toward a visible hostile target, with cooldown and short retry delay rather than per-tick spam;
-- autonomous use remains behind existing `ReplicatorCombatPermission.CanAttack` and does not replace specialist jobs;
-- existing Grav learned state, overlay and hierarchy/save inheritance are untouched;
-- `nextGravTick` is save-persistent.
+- learned Grav evidence now produces real physical mobility rather than state/overlay only;
+- native `JumpUtility.DoJump` / `PawnFlyer` exact-pawn reposition transaction;
+- Def-tunable range/min-distance/cooldown/landing radius;
+- no generic MoveSpeed buff, teleport, permanent flight, phasing or pawn recreation;
+- native walkable/LOS/range validation;
+- EMP and WNG containment suppression at origin/destination;
+- explicit player Grav target command;
+- bounded autonomous hostile tactical reposition under normal combat-permission rules;
+- save-persistent cooldown;
+- existing learned state/overlay/hierarchy inheritance preserved.
 
 ## Validation
 
-GitHub Actions run:
+GitHub Actions run **`34609531708` — SUCCESS** before promotion:
+- Release C# build passed;
+- all Def/Patch XML parsed;
+- Grav source/Def invariants passed;
+- temporary validator removed before the promoted tree.
 
-**`34609531708` — SUCCESS**
+This remains **source/Def validation, not live RimWorld validation**.
 
-Passed:
-- Release C# build;
-- all Def/Patch XML parsing;
-- native JumpUtility/PawnFlyer source path present;
-- EMP + containment boundaries present;
-- controlled target command present;
-- autonomous tactical path present;
-- save-persistent Grav cooldown present;
-- Def tuning present;
-- validation explicitly rejects implementing Grav as a source-level generic MoveSpeed effect.
-
-The workflow removed its temporary validator before branch HEAD `82f22ac...`.
-
-This is **source/Def validation, not live RimWorld validation**.
+`CURRENT_PUBLIC_STATE.md` is updated to exact public HEAD `12590e8...` and removes richer Grav behavior from missing-required debt.
 
 ## Exact next pass
 
-**Promotion-only pass:**
-1. recheck public `main` is still `45e62cd...`;
-2. promote the clean validated Grav tree to public `main` as one clean commit without validator history;
-3. verify public diff contains only the two intended files;
-4. update `CURRENT_PUBLIC_STATE.md` and this checkpoint to the exact promoted SHA;
-5. only then begin the separate AntiShield reconciliation pass.
+**AntiShield reconciliation only.**
+
+1. recover plan/history meaning and learning boundary;
+2. inspect current Replicator AntiShield evidence/state and Replicator-shield effect;
+3. inspect native `CompProjectileInterceptor` / `CompGravshipShieldGenerator` and current WNG shield Defs;
+4. perform Stargate lore gate and explicitly separate this from ARG anti-Replicator disruption;
+5. decide concrete shield interactions that current public APIs can support;
+6. explicitly exclude Wraith living-hull regeneration because it is not an energy shield;
+7. checkpoint the decision before implementation.
 
 ---
 
-# PRIOR CHECKPOINT — Replicator Grav adaptation reconciliation
+# PRIOR CHECKPOINT — Grav branch validation
 
-The plan/history/lore/native-mechanics decision is preserved here: Grav means a short native gravitic reposition maneuver, not generic speed, teleport, permanent flight or telekinesis. Stargate canon supports learned gravitic field control as the basis, while the pawn-scale maneuver is explicitly a WNG gameplay extrapolation.
+Validated branch milestone: **`82f22acb64b11ebf812dd8b0004ab423be8c0800`**.  
+Validation run: **`34609531708` — SUCCESS**.
 
 ---
 
@@ -93,5 +78,6 @@ The plan/history/lore/native-mechanics decision is preserved here: Grav means a 
 - `87da0e5243...` — covert visitor impersonation.
 - `b242dc72d1...` — Quiet Lattice society.
 - `45e62cd7f5...` — native WNG backstories.
+- `12590e8ea8...` — physical Replicator Grav adaptation.
 
 All completed public milestones were source/Def validated before promotion. Broad live RimWorld validation remains outstanding.
