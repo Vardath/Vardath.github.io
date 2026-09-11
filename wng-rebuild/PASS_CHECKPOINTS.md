@@ -8,65 +8,108 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-11 — native WNG backstories promoted to public
+# CHECKPOINT — 2026-09-12 — Replicator Grav adaptation reconciliation complete
 
 ## Public implementation state
 
-Public mod `main` is now:
+Public mod `main` remains:
 
-**`45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — `rebuild: add native WNG backstories`**
+**`45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — native WNG backstories.**
 
-Promotion used validated clean tree `04727e84ed76927eb760b50d15ccddc473ffc343` with parent `b242dc72...`, so temporary branch validation tooling did not enter public `main`.
+No Grav code was changed in this reconciliation pass.
 
-Public diff contains only:
-- `Defs/BackstoryDefs/Backstories_WNG.xml`;
-- `PawnKinds_Wraith.xml` backstory-filter wiring;
-- `PawnKinds_Asuran.xml` backstory-filter wiring;
-- `PawnKinds_HumanFormSocieties.xml` backstory-filter wiring;
-- `PawnKinds_ReplicatorQueen.xml` backstory-filter wiring.
+## Recovered plan/history boundary
 
-## What is now public
+The recovered plan explicitly requires:
+- adaptation earned from actual assimilation evidence;
+- `gravtech -> grav capability`;
+- Grav must matter in gameplay;
+- the already-saved Grav state and retained Grav overlay must remain;
+- the unfinished effect is specifically described as a **richer physical/mobility behavior**;
+- the earlier foundation checkpoint explicitly forbids substituting an unrelated generic movement/stat buff merely to mark Grav complete.
 
-- native current-schema WNG BackstoryDefs for Wraith and human-form synthetic identities;
-- Wraith shared Hive origins plus Hunter / Warrior / Commander / Keeper / Queen / Player adulthood pools;
-- synthetic/Asuran origins plus hostile Operative / Engineer / Soldier / Coordinator / Infiltrator / Quiet-Lattice / Player adulthood pools;
-- every WNG backstory uses `requiresSpawnCategory=true`;
-- each current PawnKind is wired through `backstoryFiltersOverride`, preserving race/xenotype, faction, PawnKind-role and biography as separate identity layers;
-- exact Replicator Queen uses current synthetic-origin/player-independent categories without changing her exact age/story control systems.
+Current public source confirms:
+- assimilation identities containing `grav` / `gravity` learn `ReplicatorAdaptation.Grav`;
+- Grav state is save-persistent and transferred with the other learned state;
+- the approved `WNG_ReplicatorAdapt_Grav` overlay is already rendered;
+- `CompReplicatorAdaptationEffects` currently has no Grav gameplay effect.
 
-## Reconciliation corrections
+## Stargate lore gate
 
-Historical `Backstories_WNG.xml` was not copied wholesale. It used obsolete dictionary-style skill XML. Current RimWorld 1.6 `BackstoryDef.skillGains` is `List<SkillGain>`, so the rebuilt public Def uses current `<li><skill>...<amount>...` entries.
+Canon-grounded facts used for the implementation interpretation:
+- individual Replicator blocks interact through reactive modulating energy fields;
+- Replicators consume/study advanced technology and reproduce capabilities in their own structures/ships;
+- at Halla, a Replicator mass used captured advanced technology to counter gravitational effects strong enough to trap/destroy them and then formed a Replicator cruiser to escape.
 
-Wraith biographies were tightened against Stargate lore to avoid asserting unseen detailed childhood institutions. Synthetic biographies distinguish canon-grounded Asuran/Replicator pattern/base-code/reconstruction concepts from WNG-created Quiet Lattice society roles.
+Canon does **not** establish ordinary block Replicator bugs as permanently flying/hovering infantry, and there is no basis for generic telekinesis.
 
-## Validation
+Therefore WNG's pawn-scale Grav adaptation remains explicitly a **gameplay extrapolation of learned gravitic field control**, not a claim that SG-1 depicted ordinary bugs using this exact maneuver.
 
-GitHub Actions run **`34608137484` — SUCCESS**:
-- Release C# build passed;
-- all Def/Patch XML parsed;
-- current SkillGain schema passed;
-- 25+ WNG BackstoryDefs present;
-- all required Wraith/synthetic categories present;
-- all WNG backstories require WNG spawn categories;
-- all targeted current PawnKinds have expected childhood/adulthood filters.
+## Native RimWorld/Odyssey mapping
 
-This is source/Def validation, **not live RimWorld validation**.
+Do **not** use:
+- a generic `MoveSpeed` stat buff;
+- permanent hovering/flying pathing;
+- teleportation;
+- Harmony movement-cost replacement merely to simulate a bonus;
+- gravship ownership mechanics on an individual pawn.
 
-`CURRENT_PUBLIC_STATE.md` is updated to exact public HEAD `45e62cd...` and removes native backstories from missing debt.
+Use RimWorld's existing physical jump/flyer transaction instead:
+- `JumpUtility.DoJump` / native `PawnFlyer` provides a real same-pawn movement transaction;
+- landing remains on a native valid/walkable cell;
+- use native jump target validation / line-of-sight semantics rather than phasing through sealed structures;
+- the maneuver is a brief local gravitic field displacement, not sustained flight.
+
+## Exact first implementation interpretation
+
+**Grav adaptation = short-range gravitic reposition maneuver.**
+
+Required behavior for the next code pass:
+- only block Replicators with learned `ReplicatorAdaptation.Grav` can use it;
+- same exact pawn is moved through native `PawnFlyer`; no pawn replacement/proxy;
+- current first-build range/cooldown/minimum useful distance remain Def-tunable in `CompProperties_ReplicatorAdaptationEffects`;
+- no passive speed bonus;
+- target must be in bounds, native-valid/walkable and within range; use native/LOS constraints so the adaptation does not phase through closed structures;
+- EMP disables the maneuver;
+- active WNG Replicator containment at the origin or destination blocks the maneuver;
+- player/controller-operational blocks expose an explicit Grav reposition target command;
+- autonomous hostile blocks may use it tactically to close/reposition toward a visible hostile target, but not spam continuously and not replace specialist roles;
+- preserve all existing authority/domain/combat-permission rules;
+- Grav state/overlay/save inheritance remain unchanged.
+
+Current first-build tuning can be modest (roughly a 6-8 cell local maneuver with several seconds of cooldown), but must remain Def data and is not permanent design doctrine.
+
+## AntiShield boundary deliberately not implemented in this pass
+
+AntiShield remains separate. Current public already has:
+- save-persistent AntiShield evidence/state;
+- extra damage against Replicator adaptive shields.
+
+Concrete non-Replicator shield systems confirmed for the later AntiShield pass include native `CompProjectileInterceptor` / `CompGravshipShieldGenerator`, including the current WNG Asuran gravship shield emitter. Wraith gravship defense is **living-hull regeneration**, not an energy shield, and must not be incorrectly treated as an AntiShield target.
 
 ## Exact next pass
 
-**Richer block Replicator Grav adaptation + broader AntiShield integration.**
+**Implement Grav adaptation only** on a fresh branch from public `45e62cd...`:
+1. add Def-tunable grav range/cooldown/min-use-distance fields to existing adaptation comp properties;
+2. add native `JumpUtility`/`PawnFlyer` transaction and target validation;
+3. add controlled/player Grav target command;
+4. add bounded autonomous tactical use;
+5. enforce EMP + containment + existing combat/authority boundaries;
+6. preserve saved state/overlay;
+7. Release build + XML/static invariants;
+8. checkpoint branch before promotion.
 
-Before implementation:
-1. inspect actual current public Replicator state/adaptation/effect code and current shield/grav systems;
-2. inspect recovered plan/history for intended evidence-learning and effect boundaries;
-3. perform Stargate lore gate — do not turn “Grav” into generic telekinesis and do not confuse Replicator adaptation with ARG disruption;
-4. map against native RimWorld/Odyssey movement/grav/shield mechanics and current WNG shield implementations;
-5. preserve existing saved adaptation evidence/state and overlays;
-6. implement only concrete real-system interactions and record unresolved external shield dependencies explicitly;
-7. validate, checkpoint, then promote cleanly.
+Do **not** begin AntiShield implementation until that Grav pass is closed/checkpointed.
+
+---
+
+# PRIOR CHECKPOINT — native WNG backstories promoted to public
+
+Public milestone:
+
+**`45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — `rebuild: add native WNG backstories`**
+
+Validation run **`34608137484` — SUCCESS**. Native current-schema WNG Wraith/synthetic BackstoryDefs and current PawnKind category wiring are public. This remains source/Def validation, not broad live RimWorld validation.
 
 ---
 
@@ -81,4 +124,4 @@ Before implementation:
 - `b242dc72d1...` — Quiet Lattice society.
 - `45e62cd7f5...` — native WNG backstories.
 
-All were source/Def validated before promotion. Broad live RimWorld validation remains outstanding.
+All completed public milestones were source/Def validated before promotion. Broad live RimWorld validation remains outstanding.
