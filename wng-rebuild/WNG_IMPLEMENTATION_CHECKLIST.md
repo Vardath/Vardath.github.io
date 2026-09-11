@@ -2,11 +2,33 @@
 
 Author/design authority: **Vardath**.
 
-# ⛔ STOP — STARGATE LORE FIRST
+# ⛔ STOP — FULL WNG CHAT HISTORY + STARGATE LORE FIRST
 
-**WNG IS A STARGATE MOD. DO NOT WRITE OR CHANGE CODE UNTIL THIS SECTION HAS BEEN ANSWERED.**
+**DO NOT WRITE, CHANGE, DELETE, REBUILD OR REINTERPRET WNG CODE UNTIL THE HISTORY AND LORE GATES BELOW HAVE BEEN COMPLETED.**
 
 This checklist applies to **every pass, implementation, addition, correction, rebuild, integration, balance pass, art/audio pass and subsystem review**.
+
+## ABSOLUTE CHAT-HISTORY GATE
+
+Before touching the mod, reconstruct the relevant WNG history from the actual accessible prior conversations. **Handoff summaries, memory summaries, repo notes and old assistant recaps are not substitutes for retrieving the underlying WNG chat history when it is accessible.**
+
+Required behavior:
+
+- retrieve prior WNG conversations across earlier chats before modifying the mod;
+- read broadly enough to recover the complete instruction/decision timeline for the subsystem being touched, including adjacent systems that can be affected;
+- when Vardath explicitly says **read/check/review chat history**, treat that as a mandatory retrieval instruction, not permission to rely on a summary;
+- reconcile contradictory historical instructions chronologically: **newest explicit Vardath instruction wins**;
+- preserve older instructions as historical evidence when useful, but do not reactivate a superseded repo policy, implementation or design merely because it appears in an older chat;
+- do not ask Vardath to repeat information that exists in accessible WNG conversation history;
+- if literal full transcripts are not technically available to the current session, do **not** pretend they are. Retrieve all accessible WNG history in multiple focused passes and state any genuine retrieval limitation before code is changed.
+
+A prior explicit Vardath rule from 2026-09-07 already required that future WNG modifications review previous WNG chats and that handoff summaries were insufficient. This rule remains active and is now elevated here so it cannot be skipped.
+
+---
+
+# ⛔ STARGATE LORE FIRST
+
+**WNG IS A STARGATE MOD. DO NOT WRITE OR CHANGE CODE UNTIL THIS SECTION HAS BEEN ANSWERED.**
 
 The most important question is not "what code is easiest?" It is:
 
@@ -37,7 +59,7 @@ Before implementation, establish from relevant Stargate canon/lore:
 
 Before implementation, answer:
 
-- **What has Vardath explicitly said about this feature in chat history?**
+- **What has Vardath explicitly said about this feature across prior WNG chats?** Retrieve the underlying conversation history, not just a handoff summary.
 - **What are the newest instructions?** Newer explicit Vardath instructions override older assistant assumptions, old notes and old plan text.
 - **What do `STANDING_RULES.md`, `CORRECTIONS_LOG.md`, `MASTER_PLAN.md` and active subsystem notes say?**
 - **Has Vardath corrected this exact feature before?** If so, preserve the correction.
@@ -85,7 +107,7 @@ Ask:
 - **What names/assets/relationships are useful evidence?**
 - **What architecture must NOT be copied because it was broken or obsolete?**
 
-Historical source informs the design; it does not override current requirements, lore, or current public implementation.
+Historical source informs the design; it does not override current requirements, lore, current public implementation, or newer explicit Vardath instructions.
 
 ---
 
@@ -105,14 +127,14 @@ For optional Stargate mods, establish ownership before coding:
 
 - **Who owns the mechanic?** CatCraft, ONAC, RimGate, WNG, or vanilla RimWorld?
 - **What happens when the optional mod is absent?** WNG must remain valid where the plan says it is standalone.
-- **Are exact package IDs and Def names verified?** Never guess an external Def identity.
+- **Are exact package IDs and Def names verified from supplied/source mod files?** Never guess an external Def identity.
 - **Are we duplicating something the integration mod already provides?** Do not create competing factions/resources/systems without an explicit reason.
 
 ---
 
 ## F. BEST-IMPLEMENTATION GATE
 
-Only after A-E are answered, decide implementation.
+Only after the history gate and A-E are answered, decide implementation.
 
 Ask:
 
@@ -138,6 +160,8 @@ There is no fourth status called "forgotten" or "silently removed".
 
 Before committing or moving on, answer **YES** to every applicable item:
 
+- [ ] **FULL CHAT HISTORY:** I retrieved all accessible relevant WNG prior conversations for this subsystem and adjacent affected systems; I did not rely on a summary as a substitute.
+- [ ] **CHRONOLOGY:** I reconciled historical instructions chronologically and used the newest explicit Vardath instruction where older instructions conflict.
 - [ ] **STARGATE:** I verified what this is in Stargate canon/lore.
 - [ ] **FUNCTION:** I verified what it actually does in Stargate, not just its name.
 - [ ] **IDENTITY:** The implementation still reads/plays as Stargate rather than generic sci-fi.
@@ -147,7 +171,7 @@ Before committing or moving on, answer **YES** to every applicable item:
 - [ ] **HISTORY:** I checked relevant historical WNG evidence without treating it as known-good code authority.
 - [ ] **PRESERVATION:** I did not remove an existing required feature merely because it needed rebuilding/correction.
 - [ ] **NATIVE GAME:** I checked vanilla RimWorld/Odyssey/Biotech mechanics and reused them where appropriate.
-- [ ] **INTEGRATIONS:** I respected ownership boundaries and verified optional external Def/package identities where relevant.
+- [ ] **INTEGRATIONS:** I respected ownership boundaries and verified optional external Def/package identities from supplied/source mod files where relevant.
 - [ ] **NO INVENTED SUBSTITUTE:** I did not invent an unsupported generic replacement/fallback because it was easier.
 - [ ] **COMPLETE INVENTORY:** Every known related feature is implemented, explicitly deferred with dependency, or explicitly changed/rejected by Vardath.
 - [ ] **VERIFY FUNCTION:** I used only the necessary compile/XML/reference/live-game/log checks needed to establish function.
@@ -161,6 +185,6 @@ If any applicable box is **NO**, the pass is not ready to move on.
 
 For every WNG subsystem or feature:
 
-**STARGATE LORE -> VARDATH/CHAT -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
+**FULL ACCESSIBLE WNG CHAT HISTORY -> STARGATE LORE -> VARDATH/CHAT CHRONOLOGY -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
 
-Do not reverse this order by writing code first and discovering the intended Stargate behavior afterwards.
+Do not reverse this order by writing code first and discovering the intended history or Stargate behavior afterwards.
