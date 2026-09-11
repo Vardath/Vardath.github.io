@@ -1,0 +1,40 @@
+(()=>{
+'use strict';
+if(window.VARDATH_MAN_GRID_CORE)return;
+const FF=['tone','stress','syllabic','short','long','consonantal','sonorant','continuant','delayedRelease','approximant','tap','trill','nasal','lateral','labial','round','labiodental','coronal','anterior','distributed','strident','dorsal','high','low','front','back','tense','retractedTongueRoot','advancedTongueRoot','periodicGlottalSource','epilaryngealSource','spreadGlottis','constrictedGlottis','fortis','raisedLarynxEjective','loweredLarynxImplosive','click'];
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+function fv(v){try{if(typeof fnum==='function')return fnum(v)}catch{}if(v==null||v===''||v==='0'||v==='N')return 0;let n=0,c=0;for(const x of String(v).split(',')){if(x==='+'){n++;c++}else if(x==='-'){n--;c++}}return c?n/c:0}
+function fs(){try{return typeof FEATURE_NAMES!=='undefined'?[...FEATURE_NAMES]:FF}catch{return FF}}
+function vec(p){return fs().map(f=>fv(p?.[f]))}
+function dot(a,b){let s=0;for(let i=0;i<a.length;i++)s+=a[i]*b[i];return s}
+function norm(a){return Math.sqrt(dot(a,a))||1}
+function unit(a){const n=norm(a);return a.map(x=>x/n)}
+function mv(M,v){return M.map(r=>dot(r,v))}
+function mean(vs){const d=vs[0]?.length||0,m=Array(d).fill(0);for(const v of vs)for(let i=0;i<d;i++)m[i]+=v[i];return m.map(x=>x/Math.max(1,vs.length))}
+function cov(vs,m){const d=m.length,C=Array.from({length:d},()=>Array(d).fill(0));for(const v of vs)for(let i=0;i<d;i++){const a=v[i]-m[i];for(let j=i;j<d;j++)C[i][j]+=a*(v[j]-m[j])}const n=Math.max(1,vs.length-1);for(let i=0;i<d;i++)for(let j=i;j<d;j++){C[i][j]/=n;C[j][i]=C[i][j]}return C}
+function eig(C,seed,orth=null){let v=unit(seed);for(let k=0;k<100;k++){let w=mv(C,v);if(orth){const q=dot(w,orth);w=w.map((x,i)=>x-q*orth[i])}const z=unit(w);let d=0;for(let i=0;i<v.length;i++)d=Math.max(d,Math.abs(z[i]-v[i]));v=z;if(d<1e-9)break}return{v,val:dot(v,mv(C,v))}}
+function pct(a,q){const b=a.slice().sort((x,y)=>x-y),p=(b.length-1)*q,i=Math.floor(p),f=p-i;return b.length?b[i]*(1-f)+b[Math.min(i+1,b.length-1)]*f:0}
+function orient(a,params,k){let c=0;for(const p of params){const v=vec(p);const t=k==='x'?fv(p.back)-fv(p.front)+.5*fv(p.dorsal)-.45*fv(p.labial):fv(p.syllabic)+.65*fv(p.sonorant)+.25*fv(p.approximant)-.5*fv(p.consonantal);c+=dot(v,a)*t}return c<0?a.map(x=>-x):a}
+function projection(params){const vs=params.map(vec),m=mean(vs),C=cov(vs,m),d=m.length,e1=eig(C,Array.from({length:d},(_,i)=>Math.sin((i+1)*1.731)+.5)),lam=e1.val,C2=C.map((r,i)=>r.map((x,j)=>x-lam*e1.v[i]*e1.v[j])),e2=eig(C2,Array.from({length:d},(_,i)=>Math.cos((i+1)*2.117)+.25),e1.v),ax=orient(e1.v,params,'x'),ay=orient(e2.v,params,'y'),xs=[],ys=[];for(const v of vs){const c=v.map((x,i)=>x-m[i]);xs.push(dot(c,ax));ys.push(dot(c,ay))}return{features:fs(),mean:m,axisX:ax,axisY:ay,x0:pct(xs,.01),x1:pct(xs,.99),y0:pct(ys,.01),y1:pct(ys,.99),method:'PHOIBLE full-feature PCA (2 components); axis signs fixed with independent place/backness and sonority/openness references'}}
+function create(spec,st){const params=[...st.parameters.values()].filter(p=>p?.ID&&p?.Name),P=projection(params),byName=new Map();for(const p of params){if(!byName.has(p.Name))byName.set(p.Name,p)}const names=[...byName.keys()].sort((a,b)=>b.length-a.length);
+ const project=v=>{const c=v.map((x,i)=>x-P.mean[i]),sx=dot(c,P.axisX),sy=dot(c,P.axisY);return{x:clamp((sx-P.x0)/((P.x1-P.x0)||1)),y:clamp((sy-P.y0)/((P.y1-P.y0)||1)),scoreX:sx,scoreY:sy}};
+ const id=(l,s,r,c)=>`${l.id}-${s}-R${r}-C${c}`;
+ const q=(xy,l,s)=>{const c=Math.min(l.columns,1+Math.floor(clamp(xy.x,0,.999999)*l.columns)),r=Math.min(l.rows,1+Math.floor((1-clamp(xy.y,0,.999999))*l.rows));return{cell:id(l,s,r,c),layer:l.id,side:s,row:r,column:c,columns:l.columns,rows:l.rows,zone:l.id[0]==='U'?'upper':'lower'}};
+ const mapVector=(v,s='L')=>{const xy=project(v),upper=spec.upper.map(l=>q(xy,l,s)),lower=spec.lower.map(l=>q(xy,l,s));return{xy,side:s,upper,lower,all:[...upper,...lower]}};
+ const mapParameter=(p,s='L')=>({parameter_id:p.ID,name:p.Name,segment_class:p.SegmentClass,vector:vec(p),...mapVector(vec(p),s)});
+ const parseCellId=x=>{const m=/^([UD]\d+)-(L|R)-R(\d+)-C(\d+)$/.exec(x);return m?{layer:m[1],side:m[2],row:+m[3],column:+m[4],zone:m[1][0]==='U'?'upper':'lower'}:null};
+ const mirrorCell=x=>{const p=parseCellId(x);return p?`${p.layer}-${p.side==='L'?'R':'L'}-R${p.row}-C${p.column}`:null};
+ const parameterByName=n=>byName.get(String(n||'').trim().replace(/^[/\[]|[/\]]$/g,''))||null;
+ const parameterById=x=>st.parameters.get(x)||null;
+ const tokenizeIPA=text=>{let s=String(text||'').trim().replace(/^[/\[]|[/\]]$/g,'');if(!s)return{tokens:[],unknown:[]};if(/\s/.test(s)){const tokens=[],unknown=[];for(const t of s.split(/\s+/).filter(Boolean)){const p=parameterByName(t);p?tokens.push(p):unknown.push(t)}return{tokens,unknown}}const tokens=[],unknown=[];for(let i=0;i<s.length;){if(/[ˈˌ.‿#\-]/u.test(s[i])){i++;continue}let hit=null;for(const n of names)if(s.startsWith(n,i)){hit=n;break}if(hit){tokens.push(byName.get(hit));i+=hit.length}else{unknown.push(s[i]);i++}}return{tokens,unknown}};
+ const invParams=i=>(st.inventorySegments.get(String(i))||[]).map(parameterById).filter(Boolean);
+ const dist=(a,b)=>{let sum=0,w=0,F=fs();for(let i=0;i<F.length;i++){let wt=1;try{if(typeof PRIMARY_FEATURES!=='undefined'&&PRIMARY_FEATURES.has(F[i]))wt=2}catch{}sum+=Math.abs(a[i]-b[i])*wt/2;w+=wt}return w?sum/w:1};
+ const nearest=(v,pool)=>{let b=null;for(const p of pool){const d=dist(v,vec(p));if(!b||d<b.distance)b={parameter:p,distance:d}}return b};
+ const inventoryAnalysis=(i,s='L')=>{const segments=invParams(i).map(p=>mapParameter(p,s));return{inventory_id:String(i),side:s,mapped:segments.length,segments}};
+ const compareInventories=(a,b)=>{const A=invParams(a),B=invParams(b),pairs=[];for(const p of A){const n=nearest(vec(p),B);if(n)pairs.push({source:p,target:n.parameter,distance:n.distance,source_map:mapParameter(p,'L'),target_map:mapParameter(n.parameter,'R')})}const layer_stats={};for(const l of [...spec.upper,...spec.lower]){let same=0;for(const z of pairs){const x=z.source_map.all.find(c=>c.layer===l.id),y=z.target_map.all.find(c=>c.layer===l.id);if(x&&y&&x.row===y.row&&x.column===y.column)same++}layer_stats[l.id]={pairs:pairs.length,same_coordinate:same,rate:pairs.length?same/pairs.length:0}}return{source_inventory:String(a),target_inventory:String(b),pairs,mean_feature_distance:pairs.length?pairs.reduce((s,x)=>s+x.distance,0)/pairs.length:null,layer_stats}};
+ const inferParent=(a,b)=>{const A=invParams(a),B=invParams(b),pairs=[],all=params;for(const p of A){const n=nearest(vec(p),B);if(!n)continue;const av=vec(p),bv=vec(n.parameter),mid=av.map((x,i)=>(x+bv[i])/2),cand=nearest(mid,all);pairs.push({left:p,right:n.parameter,child_distance:n.distance,parent:cand?.parameter||null,parent_distance:cand?.distance??null,parent_vector:mid,parent_map_L:mapVector(mid,'L'),parent_map_R:mapVector(mid,'R')})}const u=new Map();for(const z of pairs)if(z.parent&&!u.has(z.parent.ID))u.set(z.parent.ID,z.parent);const shift=Math.max(1,Math.floor(B.length/3)),nullD=[];for(let i=0;i<Math.min(A.length,B.length);i++)nullD.push(dist(vec(A[i]),vec(B[(i+shift)%B.length])));return{source_inventory:String(a),target_inventory:String(b),pair_count:pairs.length,candidate_parent_inventory:[...u.values()].map(p=>({id:p.ID,ipa:p.Name,class:p.SegmentClass,map_L:mapParameter(p,'L'),map_R:mapParameter(p,'R')})),mean_child_pair_distance:pairs.length?pairs.reduce((s,x)=>s+x.child_distance,0)/pairs.length:null,deterministic_mismatch_mean:nullD.length?nullD.reduce((s,x)=>s+x,0)/nullD.length:null,pairs}};
+ const all=[];for(const l of [...spec.upper,...spec.lower])for(const s of ['L','R'])for(let r=1;r<=l.rows;r++)for(let c=1;c<=l.columns;c++)all.push(id(l,s,r,c));
+ return{version:3,spec,projection:P,vectorForParameter:vec,mapVector,mapParameter,parseCellId,mirrorCell,parameterByName,parameterById,tokenizeIPA,inventoryAnalysis,compareInventories,inferParent,allCellIds:()=>all.slice(),featureDistanceVectors:dist}
+}
+window.VARDATH_MAN_GRID_CORE={create};
+})();
