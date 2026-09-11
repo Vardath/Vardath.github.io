@@ -70,8 +70,13 @@ If it has become generic sci-fi rather than recognisably Stargate, redesign befo
 - **Current public `main` is implementation state.** Old next-step/checkpoint prose can be stale.
 - `next`, `unfinished`, `reconcile`, `correct`, `refine`, or `rebuild` never means delete a required existing feature.
 - **Al'kesh is required and currently implemented; do not remove it.**
-- **Ha'tak is now implemented as an Odyssey-native gravship family.** The canonical ledger's old Ha'tak-not-implemented text describes its original snapshot only.
-- **Death Glider is a real native fighter physically carried on Ha'tak substructure**, not a decorative hangar token.
+- **Ha'tak is implemented as an Odyssey-native gravship family**, including real Death Gliders, landed hostile carrier site and true player orbital bombardment.
+- Hostile Ha'tak takeoff/retreat/pursuit remains blocked by Odyssey's player-oriented singleton; do not fake it with proxy deletion/replacement.
+- **Human-form nanite physiology is implemented** using native food behavior as Nanite Reserve, with same-tick biological Malnutrition removal, reserve-funded repair/fabrication and EMP disruption.
+- **The exact Replicator Queen / first Asuran recovery layer is implemented.** One exact age-13 female nanite-humanoid Queen is physically held in a real cryptosleep casket, recruited only on real vault release, and targeted by an all-or-nothing four-operative nonlethal recovery team using a physical native Asuran Jumper.
+- Queen capture is committed only at the real leaving-skyfaller map-exit boundary when that exact pawn is still inside that exact transit container.
+- Ordinary Asurans do not possess the Queen's sovereign authority.
+- Block Replicators keep their separate stored-matter economy; human-form Nanite Reserve does not replace it.
 - Do not invent a Goa'uld uranium/chemfuel fallback or any other unspecified substitute.
 - Supplied ONAC/RimGate/Stargates source identities recorded in the ledger/contracts are authoritative for optional integrations.
 - Use **Wraith Grav Engine**, not obsolete Wraith Gravcore.
@@ -83,11 +88,11 @@ If it has become generic sci-fi rather than recognisably Stargate, redesign befo
 
 Read `CURRENT_PUBLIC_STATE.md` and then verify against GitHub. At this update the mod HEAD is:
 
-**`ef04575fb88ed6300b7c681c32971eec0c98d253` — `feat: add System Lord Death Glider strikes`**
+**`442800f3bd84de018c47403ec50663252a60b7c5` — `docs: record hardened Queen recovery contract`**
 
 The canonical ledger's `4af4f60...` SHA is an original reconstruction checkpoint, not the current implementation head.
 
-Current Ha'tak state includes the real native gravship family, heavy plasma battery, real Death Glider carrier relationship and exact verified System-Lord/Jaffa Death Glider strike. The next Ha'tak slice currently recorded is a **real hostile Ha'tak carrier encounter/site path that physically stages/deploys its Death Gliders**, followed by true cross-map/orbital bombardment.
+The genuine next implementation slice is **Replicator Queen sovereign authority over the real block-Replicator hierarchy**. It must be exact-Queen control state, not a passive stat aura/outbreak modifier and not a generic Asuran xenotype ability. Existing hierarchy, split/recombine, adaptations, block stored matter, EMP and containment remain real mechanics under sovereignty.
 
 ## Handoff maintenance
 
