@@ -37,6 +37,24 @@ Private repo work is currently unavailable/undesired because private credits wer
 ### Do not waste chat turns
 Read the continuity documents and current repo first. Do not ask questions already answered in the plan/history.
 
+### Full WNG chat-history retrieval before mod changes — standing correction
+Vardath had already explicitly required on 2026-09-07 that future WNG modifications review previous WNG chats and that handoff summaries are insufficient. On 2026-09-11 this was reinforced after continuity errors caused stale handoff prose to be interpreted as current implementation state.
+
+**Standing rule: before touching WNG code, retrieve and reconcile all accessible relevant WNG prior conversations for the subsystem being changed and adjacent systems that may be affected.**
+
+Requirements:
+- underlying accessible chat history outranks handoff summaries as evidence of what Vardath actually instructed;
+- when Vardath says read/check/review chat history, do not substitute memory summaries, repo notes or an assistant recap;
+- use multiple focused retrieval passes across the WNG timeline/subsystems when necessary rather than reading one recent chat and assuming continuity is complete;
+- reconcile historical contradictions chronologically: **newest explicit Vardath instruction wins**;
+- older instructions remain historical evidence but do not reactivate superseded repository authority, code architecture or design;
+- do not ask Vardath to repeat requirements that are retrievable from prior WNG conversation history;
+- if literal complete transcripts are unavailable to the current session, do not falsely claim every line is loaded; retrieve all accessible WNG history and identify any real retrieval limitation before modifying code.
+
+The mandatory implementation order therefore begins with:
+
+**FULL ACCESSIBLE WNG CHAT HISTORY -> STARGATE LORE -> VARDATH/CHAT CHRONOLOGY -> CURRENT PUBLIC STATE -> ...**
+
 ### Do not omit features — standing correction
 Vardath explicitly corrected the fresh reset after Shield Replicators and the wider Replicator hierarchy/adaptation branches were omitted from the initial scaffold.
 
@@ -50,6 +68,7 @@ Vardath explicitly challenged the point of maintaining a plan if the assistant s
 From this correction onward, **the plan must be followed rigorously before code is written**. `PLAN_EXECUTION_PROTOCOL.md` is part of the rebuild plan and is mandatory.
 
 For every subsystem, the assistant must:
+- retrieve the relevant prior WNG chat history;
 - read the standing rules, correction log, relevant master-plan sections and active subsystem notes;
 - inspect the current public implementation;
 - inventory retained graphics/assets and all other relevant references;
@@ -57,7 +76,7 @@ For every subsystem, the assistant must:
 - account for every known feature as implemented, explicitly unfinished with dependency recorded, or explicitly changed/rejected by Vardath;
 - reconcile the subsystem again before moving on.
 
-Do not write a partial remembered implementation first and use the plan afterwards to discover omissions. The required order is **read -> reconcile -> inventory -> map -> implement -> reconcile again**.
+Do not write a partial remembered implementation first and use the plan afterwards to discover omissions. The required order is **history -> lore -> reconcile -> inventory -> map -> implement -> reconcile again**.
 
 ## Gameplay/design corrections
 
