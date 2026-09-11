@@ -27,7 +27,7 @@ This is the mutable live-state supplement to `CANONICAL_RECOVERY_LEDGER.md`, `PU
 
 Repository: `Vardath/Wraith-Nanite-Gravtech-1.6`
 
-**`9ce713704505a220d357f8a6f234fb6e040e0b2e` — recurring exact-map Queen recovery landed on public `main`.**
+**`0b8150f3ff6ca7138482ba9a604847f5967fc48b` — captured Queen sovereign consequences and mixed Asuran/block threats landed on public `main`.**
 
 The original canonical implementation snapshot `4af4f60...` is historical only and substantially behind current public source.
 
@@ -35,75 +35,66 @@ The original canonical implementation snapshot `4af4f60...` is historical only a
 
 ### Temporary Asuran lattice intrusion
 
-Public milestone:
-
-**`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**
-
+Public milestone: **`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**  
 Status: **IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED**.
 
 Public contains:
 - `WNG_AsuranLatticeLink` on `WNG_NaniteHumanoid`;
-- hostile automatic use restricted to the exact hostile `WNG_AsuranLattice` faction;
-- Def-tunable current first-build range 18, duration 2,500 ticks, cap 3, 600-tick AI check and 0.65 attempt chance;
-- `TemporaryAsuran` authority as a real temporary controller transaction;
-- exact pre-intrusion authority/controller/original faction/control faction/domain snapshot;
-- active temporary domain keyed by exact intruder and exact restoration identity;
-- no merge of blocks from different suspended domains merely because one Asuran hacked them;
-- split/recombine/save-load continuity for active and suspended authority;
-- timeout, intruder death/downing, physical separation, EMP and containment interruption;
-- restoration of exact suspended Queen/Neural-Lattice/autonomous state when still valid;
-- ordinary/recruited/player nanite humanoids do not silently auto-hijack blocks;
-- ordinary Asurans do not receive permanent Queen sovereignty.
-
-Validation:
-- C# build passed;
-- current Def/Patch XML parsed successfully;
-- temporary validation workflow removed before public promotion;
-- source/Def validation only, not live RimWorld validation.
+- hostile automatic use restricted to exact hostile `WNG_AsuranLattice`;
+- Def-tunable first-build range/duration/cap/check/chance;
+- real `TemporaryAsuran` authority transaction;
+- exact suspended authority/controller/faction/domain snapshot and restoration;
+- split/recombine/save-load continuity;
+- timeout, intruder death/downing, separation, EMP and containment interruption;
+- no permanent Queen sovereignty for ordinary Asurans.
 
 ### Recurring exact-map Queen recovery
 
-Public milestone:
-
-**`9ce713704505a220d357f8a6f234fb6e040e0b2e`**
-
+Public milestone: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**  
 Status: **IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED**.
 
 Public contains:
-- later recovery attempts after the initial vault-triggered recovery;
-- exact target is only the player-home map on which the exact Queen is physically spawned;
-- no recovery attack against another player map while she is traveling, caravanning or off-map;
-- existing physical Asuran recovery Jumper, exact nonlethal subdual, physical loading and native departure/capture transaction are reused;
-- current first-build cadence is Def-tunable at 2–4 in-game days;
-- transient edge/spawn failure retries rather than consuming the attempt forever;
-- one real Queen recovery operation at a time;
-- exact recovery operatives are read from the recovery Jumper's native `CompShuttle.requiredPawns`, preventing unrelated Asurans from keeping an old recovery attempt flagged active;
-- recurring scheduler state is save-persistent.
+- later recovery attempts after the initial vault recovery;
+- only the exact player-home map physically containing the exact Queen can be targeted;
+- no attack against a different colony while she is off-map/travelling/caravanning;
+- real recovery Jumper, nonlethal subdual, physical loading and exact shuttle-departure capture boundary;
+- Def-tunable 2–4 day current cadence, transient retry handling, one operation at a time and save-persistent scheduling;
+- active recovery identity tied to the exact Jumper `CompShuttle.requiredPawns` list.
 
-Validation:
-- C# build passed;
-- Def/Patch XML parse passed after exact-operative refinement;
-- temporary validation workflow removed before promotion;
-- source/Def validation only, not live RimWorld validation.
+### Captured Queen sovereign consequences / mixed threat
+
+Public milestone: **`0b8150f3ff6ca7138482ba9a604847f5967fc48b`**  
+Status: **IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED**.
+
+Public contains:
+- assimilation-born blocks inherit exact `CompReplicatorSovereignty` as well as learned state;
+- exact captured-Queen retention is verified against `GameComponent_ReplicatorQueenState`, the exact Queen pawn and the exact `WNG_AsuranLattice` native `KidnappedPawnsTracker`;
+- captured remote Queen authority is valid only while that exact faction genuinely retains that exact Queen;
+- real captured-Queen assignment uses genuine `ReplicatorControlAuthority.Queen`, exact Queen pawn reference and exact Queen domain key;
+- only the narrow captured-retained-Queen case bypasses ordinary same-map Queen physical-presence validation;
+- remote blocks must actually belong to the exact captor faction;
+- when exact retention ends, per-block authority becomes invalid and the normal sovereignty release path restores recorded pre-control/autonomous faction/domain;
+- `GameComponent_CapturedQueenThreats` save-persistently schedules consequence strikes only while exact retention remains true;
+- `WNG_CapturedQueenSovereignStrike` is scheduler-only (`baseChance=0`) and uses storyteller threat points with Def-tunable cadence/chance/count/composition;
+- mixed strikes contain real Asuran Operative/Technician/Commander pawns plus real WNG block Replicators;
+- each hostile block is generated first as autonomous `WNG_ReplicatorSwarm`, then genuinely assigned to the exact captured Queen, preserving autonomous `originalFaction` for later reversion;
+- real Drone/Hunter plus optional specialist/heavy/Titan composition is used; first-build mixed pool deliberately excludes Siege Mass;
+- one real `LordJob_AssaultColony` controls the mixed exact-captor force;
+- active Queen-domain force detection prevents immediate stacking of another consequence force;
+- partial spawn failure rolls the force back rather than leaving a fake half-event.
+
+Validation for the captured-Queen branch:
+- remote-sovereignty foundation run **34596238345** — passed C# build, Def/Patch XML and authority invariants;
+- mixed-threat run **34596657164** — passed C# build, Def/Patch XML and mixed-threat invariants;
+- temporary validation helpers were removed before promotion;
+- the branch tree was promoted as one clean public commit, not with temporary validator history;
+- all validation above is source/Def validation, **not live RimWorld validation**.
 
 ---
 
-# CURRENT ACTIVE BRANCH — NOT PUBLIC YET
+# CURRENT ACTIVE BRANCH
 
-Branch:
-
-**`rebuild/captured-queen-sovereign-threats-20260911`**
-
-Current branch HEAD at this state write:
-
-**`af77e358a411f25e7c2ab88dfeb8a76e4b2bff03`**
-
-Branch-only work currently includes:
-- assimilation-born block Replicators now inherit the parent's exact `CompReplicatorSovereignty` state in addition to learned Replicator/adaptation state.
-
-This branch is **not** public `main` yet and must not be reported as completed public functionality until validated and promoted.
-
-The current captured-Queen design boundary is recorded in `PASS_CHECKPOINTS.md`.
+No branch-only feature is currently authoritative after the captured-Queen promotion. Create the next bounded public-repo branch from current public `main` for the next subsystem.
 
 ---
 
@@ -120,7 +111,7 @@ Implemented foundation:
 - EMP and powered containment;
 - regeneration/local retaliation/terminal-consumption behavior;
 - Child's Toy player branch;
-- controller-domain-aware split/recombine/state inheritance;
+- controller-domain-aware split/recombine/assimilation offspring state inheritance;
 - Material/Armor/Ranged/Power/Shield adaptation foundations;
 - AntiShield persistent state/current Replicator-shield interaction;
 - Grav learned/save-persistent state + visual overlay.
@@ -135,11 +126,10 @@ Implemented publicly:
 - `None` autonomous;
 - exact `Queen` authority;
 - physical `NeuralLattice` implant authority;
-- temporary restorable `TemporaryAsuran` intrusion.
+- temporary restorable `TemporaryAsuran` intrusion;
+- exact captured-retained-Queen remote `Queen` authority for genuine Asuran sovereign consequence forces.
 
-Queen and implant remain separate exact controller identities. Temporary Asuran intrusion suspends/restores them rather than erasing them.
-
-Captured-Queen remote sovereign use is the active branch and is not yet public.
+Queen and implant remain separate exact controller identities. Temporary Asuran intrusion suspends/restores rather than erases. Captured remote Queen authority exists only while the exact Asuran Lattice native kidnapped-pawn tracker still retains the exact Queen.
 
 ## Human-form Replicators / Asurans
 
@@ -152,7 +142,8 @@ Implemented foundation:
 - Asuran workshop/fabrication;
 - hidden hostile `WNG_AsuranLattice`;
 - Operative/Technician/Commander roles;
-- temporary lattice intrusion.
+- temporary lattice intrusion;
+- captured-Queen mixed Asuran/block consequence strikes.
 
 Still required:
 - broader Neural Interface recruit/imprison/Ideology-enslave/copy/create-human-form system;
@@ -160,7 +151,7 @@ Still required:
 - real infiltration/impersonation/reveal;
 - non-hostile Quiet Lattice;
 - player human-form variants;
-- broader role/faction composition and mixed human-form/block threats;
+- broader role/faction composition beyond the current hostile/captured-Queen strike foundation;
 - native WNG backstories;
 - complete synthetic disease/implant/temperature/vacuum physiology audit;
 - final dedicated art/audio and live testing.
@@ -178,13 +169,14 @@ Implemented publicly:
 - exact kidnapped-pawn persistence;
 - genuine exact Queen block-Replicator sovereignty;
 - physical Sovereign Neural Lattice exists separately from Queen authority;
-- Temporary Asuran intrusion exists separately from both.
+- Temporary Asuran intrusion exists separately from both;
+- captured-Queen remote sovereign consequence authority;
+- save-persistent mixed Asuran + genuine Queen-domain block threat consequences;
+- authority collapse/reversion if the exact Queen is no longer genuinely retained by the exact capturing Asuran faction.
 
 Still required:
-- captured-Queen consequences;
-- genuine Asuran sovereign block access/mixed Asuran + block threats after successful capture;
-- authority collapse/reversion if the exact Queen is no longer genuinely retained by the capturing Asuran faction;
-- infiltration linkage.
+- infiltration/Neural-Interface linkage and broader human-form society/story consequences;
+- live RimWorld validation.
 
 ## Wraith
 
@@ -253,27 +245,26 @@ Still required/blocked:
 
 # CURRENT REQUIRED UNFINISHED INVENTORY
 
-Temporary Asuran intrusion and recurring exact-map Queen recovery are removed from this debt list because they are now implemented on public `main`.
+Temporary Asuran intrusion, recurring exact-map Queen recovery and captured-Queen sovereign mixed-threat consequences are removed from this debt list because they are now implemented on public `main`.
 
-1. **Captured-Queen sovereign consequences + mixed Asuran/block threats.**
-2. Human-form Neural Interface recruit/imprison/enslave/copy/create-human-form branch.
-3. Human-form infiltration/impersonation/reveal.
-4. Quiet Lattice non-hostile enclave, player human-form variants and broader human-form role/faction composition.
-5. Native WNG backstories.
-6. Richer block Grav adaptation and broader AntiShield integration.
-7. Wraith Growth Chamber.
-8. Strategic Wraith hunger involved-Wraith count/names UI stage.
-9. Broader discovery/story progression.
-10. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
-11. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
-12. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
-13. Unloaded-world-site transport-ring exact-pawn/world-object transport; never fake via pawn recreation.
-14. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
-15. Final professional craft/gravship/implant/building/weapon/resource art review.
-16. Professional WNG audio layer.
-17. Hostile Ha'tak native takeoff/retreat/pursuit only if Odyssey ownership can be solved safely; never fake it.
-18. Broad current-build live RimWorld/save-load/mod-stack/performance validation and tuning.
-19. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
+1. **Human-form Neural Interface recruit/imprison/enslave/copy/create-human-form branch.**
+2. Human-form infiltration/impersonation/reveal.
+3. Quiet Lattice non-hostile enclave, player human-form variants and broader human-form role/faction composition.
+4. Native WNG backstories.
+5. Richer block Grav adaptation and broader AntiShield integration.
+6. Wraith Growth Chamber.
+7. Strategic Wraith hunger involved-Wraith count/names UI stage.
+8. Broader discovery/story progression.
+9. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
+10. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
+11. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
+12. Unloaded-world-site transport-ring exact-pawn/world-object transport; never fake via pawn recreation.
+13. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
+14. Final professional craft/gravship/implant/building/weapon/resource art review.
+15. Professional WNG audio layer.
+16. Hostile Ha'tak native takeoff/retreat/pursuit only if Odyssey ownership can be solved safely; never fake it.
+17. Broad current-build live RimWorld/save-load/mod-stack/performance validation and tuning.
+18. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
 
 No item may silently disappear merely because another branch is worked first.
 
@@ -281,16 +272,15 @@ No item may silently disappear merely because another branch is worked first.
 
 # GENUINE NEXT IMPLEMENTATION SLICE
 
-**Captured-Queen sovereign consequences + mixed Asuran/block threats.**
+**Human-form Neural Interface / exact copy-reconstruction foundation.**
 
-Required boundary:
-- exact kidnapped Queen remains the genuine controller identity; do not create a proxy Queen or abstract faction bonus;
-- the exact capturing Asuran faction must genuinely retain that exact Queen in its native kidnapped-pawn tracker for captured-Lattice Queen authority to remain valid;
-- if that exact faction no longer retains that exact Queen, captured-Queen remote authority must become invalid and blocks must fall back through recorded release/faction state;
-- real Asuran-backed blocks must carry exact `Queen` authority/domain metadata tied to the exact Queen;
-- mixed threats must contain real spawned Asuran pawns and real block Replicators using normal Replicator specialist/combat/domain behavior;
-- assimilation offspring, split/recombine and save/load must retain the exact controller domain correctly;
-- no outbreak-count modifier or decorative faction bonus as a substitute;
-- source/Def validation before promotion, with live RimWorld validation still separately required.
-
-Work this as bounded meaningful passes, and checkpoint each pass in `PASS_CHECKPOINTS.md` before beginning the next one.
+Required boundary before implementation:
+- use current public human-form Asuran/Nanite Reserve architecture rather than restoring an old private implementation wholesale;
+- use private/reference Neural Interface code only as requirement/behavior evidence after current public mechanics are checked;
+- preserve exact source pawn identity data required by the plan: name/biography/backstories, skills/passions/XP, appearance and genome/xenotype data where native APIs permit exact copying;
+- recruit/imprison/Ideology-enslave operations must use native RimWorld faction/guest/slavery mechanics rather than fake flags;
+- copy/create-human-form operations must create a genuine new pawn while leaving the exact source pawn intact;
+- resource spending/rollback must be transactional so a failed operation does not consume the required nanite/resource cost;
+- Queen, Neural Lattice, Temporary Asuran and captured-Queen block-control systems remain distinct from ordinary Neural Interface pawn manipulation;
+- implementation must be broken into bounded coherent passes and checkpointed in `PASS_CHECKPOINTS.md` before each next pass;
+- source/Def validation before promotion; live RimWorld validation remains separately required.
