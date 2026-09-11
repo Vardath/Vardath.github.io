@@ -1,0 +1,638 @@
+name: Exact Man Grid v4 Tests 4-16 — 20 shards each
+
+on:
+  push:
+    paths:
+      - '.github/workflows/man-grid-exact-v4-tests-4-16.yml'
+      - 'tools/man_grid_exact_v4.py'
+      - 'data/man-grid-v4-execution-contract.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: exact-man-grid-v4-tests-4-16
+  cancel-in-progress: false
+
+env:
+  V4_BASE: exact-v4-base-${{ github.run_id }}
+
+jobs:
+  prepare:
+    name: Prepare exact-v4 shared corpus once
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce v4 execution contract before work starts
+        run: |
+          python -m py_compile tools/man_grid_exact_engine.py tools/man_grid_exact_data.py tools/man_grid_exact_v4.py
+          ! grep -q 'timeout[-]minutes:' .github/workflows/man-grid-exact-v4-tests-4-16.yml
+          python - <<'PY'
+          import json
+          x=json.load(open('data/man-grid-original-phonetics-exact-v3.json'))
+          assert x['status']=='complete' and x['shards']==20
+          assert x['grid']['cells']==1074 and x['grid']['all_rectangles_mirrored'] is True
+          assert len(x['original_phoneme_inventory'])==36
+          print({'fixed_Test1_phonemes':36,'exact_cells':1074,'v4_shards_per_test':20})
+          PY
+      - name: Scan multilingual evidence once and make deterministic disjoint partitions
+        run: python tools/man_grid_exact_v4.py prepare
+      - name: Validate all four v4 partition families
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/man-grid-exact-v4-work/prepared-manifest.json'))
+          assert x['version']==4 and x['shards']==20
+          assert x['grid_cells']==1074 and x['all_rectangles_mirrored'] is True
+          assert x['execution']['shards_per_test']==20
+          assert x['execution']['merge_requires_all_20'] is True
+          assert x['execution']['workflow_custom_timeout_minutes'] is None
+          assert x['execution']['invalid_old_mapping_reused'] is False
+          for k in ('lexical_shard_sizes','language_shard_sizes','family_shard_sizes','historical_shard_sizes'):
+              assert len(x[k])==20
+          print(json.dumps(x,ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-base-${{ github.run_id }}
+          path: |
+            data/man-grid-exact-v4-work/prepared-manifest.json
+            data/man-grid-exact-v4-work/model.json.gz
+            data/man-grid-exact-v4-work/lexical-shard-*.json.gz
+            data/man-grid-exact-v4-work/language-shard-*.json.gz
+            data/man-grid-exact-v4-work/family-shard-*.json.gz
+            data/man-grid-exact-v4-work/historical-shard-*.json.gz
+          retention-days: 7
+
+  t4_shards:
+    name: Test 4 v4 shard ${{ matrix.shard }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-base-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+      - run: python tools/man_grid_exact_v4.py run --test 4 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t04-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work/t04-result-*.json.gz
+          retention-days: 7
+
+  t13_shards:
+    name: Test 13 v4 shard ${{ matrix.shard }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-base-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+      - run: python tools/man_grid_exact_v4.py run --test 13 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t13-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work/t13-result-*.json.gz
+          retention-days: 7
+
+  merge4:
+    name: Merge Test 4 v4 — require all 20
+    needs: t4_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t04-s*-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+          merge-multiple: true
+      - run: test "$(find data/man-grid-exact-v4-work -name 't04-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t04-merged-${{ github.run_id }}
+          path: data/man-grid-test-04-exact-v4.json
+          retention-days: 7
+      - name: Publish Test 4
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-04-exact-v4.json
+          git commit -m "Publish exact-v4 Test 4 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  merge13:
+    name: Merge Test 13 v4 — require all 20
+    needs: t13_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t13-s*-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work
+          merge-multiple: true
+      - run: test "$(find data/man-grid-exact-v4-work -name 't13-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 13
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t13-merged-${{ github.run_id }}
+          path: data/man-grid-test-13-exact-v4.json
+          retention-days: 7
+      - name: Publish Test 13
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-13-exact-v4.json
+          git commit -m "Publish exact-v4 Test 13 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t5_shards:
+    name: Test 5 v4 shard ${{ matrix.shard }}
+    needs: merge4
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t04-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 5 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t05-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work/t05-result-*.json.gz
+          retention-days: 7
+
+  t14_shards:
+    name: Test 14 v4 shard ${{ matrix.shard }}
+    needs: merge13
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t13-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 14 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t14-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work/t14-result-*.json.gz
+          retention-days: 7
+
+  merge5:
+    name: Merge Test 5 v4 — require all 20
+    needs: t5_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t05-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't05-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 5
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: data/man-grid-test-05-exact-v4.json, retention-days: 7}
+      - name: Publish Test 5
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-05-exact-v4.json
+          git commit -m "Publish exact-v4 Test 5 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  merge14:
+    name: Merge Test 14 v4 — require all 20
+    needs: t14_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t14-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't14-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 14
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t14-merged-${{ github.run_id }}', path: data/man-grid-test-14-exact-v4.json, retention-days: 7}
+      - name: Publish Test 14
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-14-exact-v4.json
+          git commit -m "Publish exact-v4 Test 14 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t678_shards:
+    name: Test ${{ matrix.test }} v4 shard ${{ matrix.shard }}
+    needs: merge5
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 60
+      matrix:
+        test: [6,7,8]
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t04-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test ${{ matrix.test }} --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t0${{ matrix.test }}-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v4-work/t0${{ matrix.test }}-result-*.json.gz
+          retention-days: 7
+
+  merge678:
+    name: Merge Test ${{ matrix.test }} v4 — require all 20
+    needs: t678_shards
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: {test: [6,7,8]}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t0${{ matrix.test }}-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name "t0${{ matrix.test }}-result-*.json.gz" | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test ${{ matrix.test }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t0${{ matrix.test }}-merged-${{ github.run_id }}
+          path: data/man-grid-test-0${{ matrix.test }}-exact-v4.json
+          retention-days: 7
+      - name: Publish result
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-0${{ matrix.test }}-exact-v4.json
+          git commit -m "Publish exact-v4 Test ${{ matrix.test }} result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t15_shards:
+    name: Test 15 v4 shard ${{ matrix.shard }}
+    needs: [merge5, merge14]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t14-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 15 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t15-s${{ matrix.shard }}-${{ github.run_id }}', path: 'data/man-grid-exact-v4-work/t15-result-*.json.gz', retention-days: 7}
+
+  merge15:
+    name: Merge Test 15 v4 — require all 20
+    needs: t15_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t15-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't15-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 15
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t15-merged-${{ github.run_id }}', path: data/man-grid-test-15-exact-v4.json, retention-days: 7}
+      - name: Publish Test 15
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-15-exact-v4.json
+          git commit -m "Publish exact-v4 Test 15 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t9_shards:
+    name: Test 9 v4 shard ${{ matrix.shard }}
+    needs: merge678
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t04-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t06-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t07-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t08-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 9 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t09-s${{ matrix.shard }}-${{ github.run_id }}', path: 'data/man-grid-exact-v4-work/t09-result-*.json.gz', retention-days: 7}
+
+  merge9:
+    name: Merge Test 9 v4 — require all 20
+    needs: t9_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t09-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't09-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 9
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t09-merged-${{ github.run_id }}', path: data/man-grid-test-09-exact-v4.json, retention-days: 7}
+      - name: Publish Test 9
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-09-exact-v4.json
+          git commit -m "Publish exact-v4 Test 9 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t10_shards:
+    name: Test 10 v4 shard ${{ matrix.shard }}
+    needs: merge9
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t09-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 10 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t10-s${{ matrix.shard }}-${{ github.run_id }}', path: 'data/man-grid-exact-v4-work/t10-result-*.json.gz', retention-days: 7}
+
+  merge10:
+    name: Merge Test 10 v4 — require all 20
+    needs: t10_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t10-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't10-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 10
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t10-merged-${{ github.run_id }}', path: data/man-grid-test-10-exact-v4.json, retention-days: 7}
+      - name: Publish Test 10
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-10-exact-v4.json
+          git commit -m "Publish exact-v4 Test 10 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t11_shards:
+    name: Test 11 v4 shard ${{ matrix.shard }}
+    needs: merge10
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t09-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t10-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 11 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t11-s${{ matrix.shard }}-${{ github.run_id }}', path: 'data/man-grid-exact-v4-work/t11-result-*.json.gz', retention-days: 7}
+
+  merge11:
+    name: Merge Test 11 v4 — require all 20
+    needs: t11_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t11-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't11-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 11
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t11-merged-${{ github.run_id }}', path: data/man-grid-test-11-exact-v4.json, retention-days: 7}
+      - name: Publish Test 11
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-11-exact-v4.json
+          git commit -m "Publish exact-v4 Test 11 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t12_shards:
+    name: Test 12 v4 shard ${{ matrix.shard }}
+    needs: merge11
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t09-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t11-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 12 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t12-s${{ matrix.shard }}-${{ github.run_id }}', path: 'data/man-grid-exact-v4-work/t12-result-*.json.gz', retention-days: 7}
+
+  merge12:
+    name: Merge Test 12 v4 — require all 20
+    needs: t12_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t12-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't12-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 12
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t12-merged-${{ github.run_id }}', path: data/man-grid-test-12-exact-v4.json, retention-days: 7}
+      - name: Publish Test 12
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-12-exact-v4.json
+          git commit -m "Publish exact-v4 Test 12 result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  t16_shards:
+    name: Test 16 v4 shard ${{ matrix.shard }}
+    needs: [merge12, merge15]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t05-merged-${{ github.run_id }}', path: .}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-t15-merged-${{ github.run_id }}', path: .}
+      - run: python tools/man_grid_exact_v4.py run --test 16 --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'exact-v4-t16-s${{ matrix.shard }}-${{ github.run_id }}', path: 'data/man-grid-exact-v4-work/t16-result-*.json.gz', retention-days: 7}
+
+  merge16:
+    name: Merge Test 16 v4 — final freeze, require all 20
+    needs: t16_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: 'exact-v4-base-${{ github.run_id }}', path: data/man-grid-exact-v4-work}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'exact-v4-t16-s*-${{ github.run_id }}', path: data/man-grid-exact-v4-work, merge-multiple: true}
+      - run: test "$(find data/man-grid-exact-v4-work -name 't16-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_exact_v4.py merge --test 16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-final-${{ github.run_id }}
+          path: |
+            data/man-grid-test-16-exact-v4.json
+            data/man-grid-original-language-final-exact-v4.json
+          retention-days: 30
+      - name: Publish final exact-v4 freeze
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-16-exact-v4.json data/man-grid-original-language-final-exact-v4.json
+          git commit -m "Publish exact-v4 final Tests 4-16 reconstruction" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
