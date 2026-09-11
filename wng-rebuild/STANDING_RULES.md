@@ -4,6 +4,7 @@ Author/design authority: **Vardath**.
 
 These rules apply at the start of every WNG continuation and throughout the rebuild. Read them before interpreting old code, old plans, old audits or prior assistant summaries.
 
+0. **⛔ STARGATE LORE FIRST — mandatory before every pass.** WNG is a Stargate mod. Before every implementation, addition, correction, rebuild, integration, balance pass, art/audio pass or subsystem review, read and answer `WNG_IMPLEMENTATION_CHECKLIST.md`. Establish **what this is in Stargate, what it actually does in Stargate, what Vardath said about it in chat/history, what current public WNG already does, what historical WNG attempted, what vanilla RimWorld/Odyssey already provides, and only then decide the best faithful implementation.** Do not code a generic sci-fi substitute and check lore afterwards. If the result no longer reads/plays recognisably as Stargate, redesign it before implementation.
 1. **Do not omit any feature.** If a feature, subsystem, branch, faction, caste, race/xenotype, PawnKind, Replicator form, adaptation path, quest, event, integration, craft, gravship part, resource, art family, sound family, UI flow or behavior exists in the current plan/history, it must either be implemented in the rebuild or remain explicitly tracked as unfinished. Never silently simplify it away because it looks secondary, difficult, redundant or inconvenient.
 2. **Vardath is the mod author and final design authority.** Assistant implementation choices are proposals, not permanent doctrine.
 3. **There are no known-good historical builds.** Old code/builds are reference material only.
@@ -20,14 +21,17 @@ These rules apply at the start of every WNG continuation and throughout the rebu
 14. **Continue the build after refreshing memory.** Do not stop after summarizing context when the user asked to continue.
 15. **Follow the plan rigorously before writing code.** Do not implement a subsystem from partial memory, a previous assistant summary, or whichever files happen to be open. Before changing a subsystem, perform the complete reconciliation procedure in `PLAN_EXECUTION_PROTOCOL.md`. Build an explicit feature inventory from the standing rules, corrections log, master plan, active subsystem notes, retained assets/graphics, current public source/Defs, and relevant historical/reference evidence. Only then implement. Every known item in that inventory must end the pass as implemented, intentionally deferred with a recorded dependency, or explicitly rejected/changed by Vardath. Never let an item disappear because it was forgotten.
 16. **The plan is the default implementation authority for the first complete build.** Do not improvise away from it merely because another implementation seems easier. If implementation reality requires a departure, record the issue and make the smallest practical adjustment consistent with Vardath's instructions; if the design itself needs changing, Vardath decides.
+17. **Current public state beats stale “next step” prose.** Before treating anything as absent, unfinished or safe to rebuild, inspect current public `main` and recent implementation history. An older note saying “next”, “unfinished”, “reconcile”, “correct” or “rebuild” is not proof the feature is absent. **Rebuild/correct/refine does not mean remove. A named required feature remains required unless Vardath explicitly removes it.**
 
 ## Mandatory pre-implementation rule
 
 For every subsystem, the order is:
 
-**read -> reconcile -> inventory -> implement -> account for every item -> then move on.**
+**STARGATE LORE -> VARDATH/CHAT -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
 
-Do not reverse that order. In particular, do not start writing code and then use the plan afterwards to discover what was forgotten.
+The detailed gate is `WNG_IMPLEMENTATION_CHECKLIST.md` and must be answered before code is written.
+
+Do not reverse that order. In particular, do not start writing code and then use the plan or Stargate lore afterwards to discover what was forgotten or what the feature was actually supposed to do.
 
 The explicit procedure is in `PLAN_EXECUTION_PROTOCOL.md` and is part of the rebuild plan.
 
