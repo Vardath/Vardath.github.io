@@ -4,168 +4,127 @@ Author/design authority: **Vardath**
 Active implementation repository: **public `Vardath/Wraith-Nanite-Gravtech-1.6`**  
 Continuity repository: **public `Vardath/Vardath.github.io/wng-rebuild/`**
 
-# PURPOSE
-
-This is the mandatory short-pass checkpoint log for the WNG rebuild.
-
-A **pass** is a bounded, coherent implementation batch — not one line or one tiny edit, and not a multi-hour uncheckpointed session. Each pass should complete a meaningful slice that can be reasoned about and validated before moving on.
-
-After every meaningful pass, before beginning the next one, record exact public/branch SHAs, implementation, validation boundary, remaining debt and exact next steps. Never write branch-only work as public and never treat historical/private work as a known-good state.
+A pass is a bounded coherent implementation batch. Before beginning the next pass, record exact public/branch SHAs, actual implementation, validation boundary, discovered defects/dependencies, remaining work and exact next steps. Branch-only work is never written as public. Historical/private WNG is reference evidence only.
 
 ---
 
-# CHECKPOINT — 2026-09-11 — covert Asuran visitor / cover-break foundation validated on branch
+# CHECKPOINT — 2026-09-11 — Asuran covert visitor impersonation promoted to public
 
 ## Public implementation state
 
-Public mod `main` remains:
+Public mod `main` is now:
 
-**`c7a9b46a3bef9393301d153e3f56c3c44c7ce95c` — persistent Asuran infiltration concealment/reveal.**
+**`87da0e524324190584ac31e1830265db76688fae` — `rebuild: add Asuran covert visitor impersonation`**
 
-The covert-presence work below is branch-only at this checkpoint.
+It was promoted as one clean public commit with parent `c7a9b46...` from the validated clean tree `3a140d0774600e92162baf74b4af153fed35b3a0`.
 
-## Active branch
+Public diff contains only:
+- `Defs/IncidentDefs/Incidents_AsuranCovertPresence.xml` — added;
+- `Source/WNG/Asuran/AsuranCovertPresence.cs` — added;
+- `Source/WNG/Asuran/AsuranInfiltration.cs` — updated.
 
-**`rebuild/humanform-covert-presence-20260911`**
+No temporary validation workflow entered public `main`.
 
-Clean branch HEAD after removing the temporary validator:
+## What is now public
 
-**`ba72ec916fcb5cb984ebdc6d8000f2e3111f2efc` — `cleanup: remove covert presence validator`**
+- save-persistent Def-tunable covert-visitor scheduler;
+- real `WNG_AsuranInfiltrator` covert arrival on player-home maps;
+- real visible non-hostile humanlike faction used as temporary cover identity;
+- exact true `WNG_AsuranLattice` source faction saved on the same pawn's persistent infiltration state;
+- native `GuestStatus.Guest` and native `LordJob_VisitColony` under that valid cover identity;
+- visitor letter does not disclose hidden Asuran source;
+- direct scan, EMP, meaningful injury and suspicious self-repair all break cover through the same reveal path;
+- exact same pawn restores its stored Asuran faction and enters real `LordJob_AssaultColony` behavior when revealed and free;
+- prisoner reveal preserves prisoner status while restoring true faction;
+- slave reveal defers hostile activation rather than destroying native slavery state;
+- downed/off-map activation is deferred until physically valid;
+- no pawn recreation/proxy and no Queen/block-sovereignty inference.
 
-The validated source/Def tree was tested at `e021162cb41127badc902515a86fb182acbe417d`; `ba72ec...` differs only by removal of the temporary validation workflow.
+## Native API correction preserved
 
-## Mandatory native-API correction discovered in this pass
+Current RimWorld `Pawn_GuestTracker.SetGuestStatus(... Guest)` rejects a pawn whose current faction is hostile to the proposed host. The earlier idea of keeping active hostile Asuran faction while simply adding player Guest status is therefore superseded.
 
-The immediately prior checkpoint said a permanently-hostile `WNG_AsuranLattice` pawn could simply be assigned native `GuestStatus.Guest` while keeping its active hostile faction. **That was incomplete and is superseded.**
-
-Direct inspection of current RimWorld 1.6 `Pawn_GuestTracker.SetGuestStatus` shows that `GuestStatus.Guest` explicitly rejects a pawn whose current faction is hostile to the proposed host. Current `GenHostility` does suppress hostility for a valid `HostFaction`, but the hostile pawn cannot enter that guest state through the native API in the first place.
-
-Therefore the validated WNG implementation uses real impersonation semantics instead of bypassing native rules:
-- the exact infiltrator pawn temporarily carries a real non-hostile human cover faction while concealed;
-- the exact true `WNG_AsuranLattice` faction reference is stored save-persistently on that same pawn's `Hediff_AsuranInfiltration`;
-- native `GuestStatus.Guest` and `LordJob_VisitColony` then operate normally under the cover identity;
-- reveal restores the stored exact Asuran source relationship on the same pawn and transitions it into real hostile Asuran behavior;
-- no pawn recreation/proxy is used.
-
-This is consistent with the recovered WNG requirement for actual impersonation and with Stargate lore that Asurans are human-looking nanite beings and, after base-code changes, Replicators can assume human forms/identities. It is a WNG gameplay extrapolation of that capability, not a claim that the Asuran Council canonically used RimWorld-style visitor infiltration.
-
-## Files implemented in this pass
-
-Updated:
-- `Source/WNG/Asuran/AsuranInfiltration.cs`
-
-Added:
-- `Source/WNG/Asuran/AsuranCovertPresence.cs`
-- `Defs/IncidentDefs/Incidents_AsuranCovertPresence.xml`
-
-## What this pass implements
-
-- exact true-faction and assumed-cover-faction references are persisted on the same infiltrator pawn;
-- covert-presence and deferred-activation state persist through save/load;
-- new save-persistent `GameComponent_AsuranCovertPresence` schedules rare infiltrator visits;
-- cadence/chance/retry/visit duration/PawnKind/true-faction Def identity are author-tunable through `AsuranCovertPresenceExtension`;
-- current first-build cadence is 4–8 in-game days with a 0.65 scheduled-attempt chance; these are tuning values, not design locks;
-- the scheduler only targets player-home maps with living spawned colonists and will not stack another still-concealed covert visitor;
-- cover identity is selected from a real visible non-hostile humanlike faction rather than inventing a fake cover faction;
-- the exact `WNG_AsuranInfiltrator` pawn is generated under that temporary cover faction, preserving its existing concealed human-baseline mask physiology;
-- native player `GuestStatus.Guest` is used under the cover identity;
-- native `LordJob_VisitColony` drives visitor behavior and visit duration;
-- the arrival letter presents only the assumed visitor identity and does not disclose the hidden Asuran source;
-- the exact true Asuran faction remains stored on the pawn's persistent infiltration state;
-- existing direct Neural Interface scan, EMP, meaningful injury and suspicious self-repair reveal paths now call the same cover-break activation path;
-- ordinary reveal on a non-covert hostile infiltrator still only reveals synthetic identity and does not invent a new source faction;
-- when a covert infiltrator is revealed while free, guest cover is cleared natively, the exact same pawn returns to its stored `WNG_AsuranLattice` faction, and a real `LordJob_AssaultColony` begins;
-- if revealed while a native prisoner, the pawn remains a prisoner while its true Asuran faction is restored;
-- if revealed while a native slave, hostile activation is deferred so slavery is not destroyed by WNG code; the same persistent state retries activation only after native slave status ends;
-- if revealed while downed/off-map, true-faction restoration occurs and assault activation is deferred until physical conditions permit;
-- no Queen identity or block-sovereignty authority is inferred from covert infiltrator state.
+The public implementation instead temporarily uses a genuine non-hostile human cover faction while storing the exact true Asuran source on the same pawn. This is actual impersonation and obeys native guest mechanics.
 
 ## Validation
 
-GitHub Actions run:
-
-**`34605318105` — SUCCESS**
-
-Validated:
+GitHub Actions run **`34605318105` — SUCCESS**:
 - Release C# build passed;
-- all current Def/Patch XML parsed successfully;
-- save-persistent covert scheduler state present;
-- exact true/cover faction references present;
-- native `GuestStatus.Guest` visitor path present;
-- native `LordJob_VisitColony` path present;
-- exact same-pawn reveal/hostile `LordJob_AssaultColony` transition present;
-- incident is scheduler-only (`baseChance=0`) and category `Misc`;
-- cadence is Def-driven rather than a fixed story-day gate.
+- all current Def/Patch XML parsed;
+- persistent scheduler/true-cover faction/native Guest/native VisitColony/reveal-assault invariants passed.
 
-Temporary validation workflow was removed at branch HEAD `ba72ec...`.
+This remains **source/Def validation, not live RimWorld validation**.
 
-This is **source/Def validation, not live RimWorld validation**.
-
-## Remaining infiltration debt
-
-This pass materially completes the first planned covert-presence/impersonation path, but live behavior is still unverified. Remaining related work/dependencies include:
-- live verification that visitor UI/faction display, guest AI and reveal transitions read correctly in-game;
-- live verification of prisoner/slave reveal/save-load behavior;
-- native WNG backstories remain missing, so covert visitors can still receive generic generated biography material until the backstory pass lands;
-- dedicated final human-form art/audio remains later presentation debt;
-- broader human-form society structure still requires Quiet Lattice, player human-form variants and broader role/faction composition.
-
-## Exact next pass
-
-**Promotion + Quiet Lattice reconciliation pass:**
-1. recheck public `main` is still `c7a9b46...`;
-2. promote the clean validated covert-presence tree to public `main` as one clean commit without temporary validator history;
-3. update `CURRENT_PUBLIC_STATE.md` to the exact promoted SHA and remove strategic covert presence from missing-required debt while retaining live-test debt;
-4. reconcile the entire Quiet Lattice/human-form faction slice against the canonical history, historical faction/backstory files, current public Defs/assets and Stargate lore before writing code;
-5. implement the next coherent Quiet Lattice/player-human-form/faction-role foundation on a fresh public branch;
-6. checkpoint again before moving to native WNG backstories or courier integration.
+`CURRENT_PUBLIC_STATE.md` has been corrected to public HEAD `87da0e...` and strategic infiltration/impersonation is now recorded as implemented foundation / live-test-needed rather than missing-required.
 
 ---
 
-# PRIOR CHECKPOINT — infiltration conceal/reveal promoted to public
+# QUIET LATTICE RECONCILIATION — completed before next code pass
 
-Public milestone:
+## Recovered chat/history requirement
 
-**`c7a9b46a3bef9393301d153e3f56c3c44c7ce95c` — `rebuild: add persistent Asuran infiltration concealment and reveal`**
+The human-form slice must not collapse identity layers or silently discard branches. Required society/role structure includes:
+- hostile Asuran/Lattice society;
+- non-hostile **Quiet Lattice** human-form Replicator enclave;
+- player human-form variants;
+- engineer / infiltrator / soldier / coordinator-command roles where distinct;
+- later native WNG backstories;
+- later friendly Quiet-Lattice / Puddle-Jumper Stargate courier integration.
 
-Validation run **`34600994766` — SUCCESS**.
+Quiet Lattice is defined by recovered WNG history as a human-form Replicator enclave choosing **controlled replication and negotiated coexistence over unrestricted expansion**.
 
-Implemented foundation:
-- `WNG_AsuranInfiltrator` PawnKind and human-baseline mask xenotype;
-- ordinary Food presentation while concealed using the same native `Need_Food` reserve quantity;
-- exact save-persistent `Hediff_AsuranInfiltration` reveal state;
-- hidden lattice/depletion/EMP health presentation while concealed;
-- same-pawn permanent transition to real `WNG_NaniteHumanoid` identity;
-- direct Neural Interface scan reveal;
-- EMP reveal;
-- Def-tunable meaningful-damage reveal;
-- Def-tunable accumulated self-repair suspicion reveal.
+## Historical file evidence inspected
 
-The old statement that covert guest status could be assigned directly while retaining a permanently hostile active faction is superseded by the native-API correction in the current checkpoint above.
+Historical/reference branch `rebuild/wngr2-humanform-factions-20260909` contains:
+- `WNG_HumanFormEnclave` / **The Quiet Lattice** as non-hostile, coordinator-led, settlement-capable human-form synthetic faction;
+- hostile `WNG_PrecursorCollective` / Lattice Collective as a separate society;
+- role PawnKinds `WNG_PrecursorEngineer`, `WNG_PrecursorSoldier`, `WNG_PrecursorCommander`, generic `WNG_HumanFormReplicator`, and `WNG_PlayerHumanFormReplicator`;
+- `Backstories_WNG.xml` with synthetic origins and engineer/soldier/commander/human-form/player backstory categories.
+
+Those old Defs use superseded identities such as `WNG_NanitePrecursor` and old equipment tags/assets that are not present in current public. They are **requirement evidence only and must not be copied wholesale**.
+
+## Current public file reality
+
+Current public uses:
+- `WNG_NaniteHumanoid` as the real human-form nanite xenotype;
+- current Asuran Operative / Technician / Commander / Infiltrator PawnKinds;
+- current hostile `WNG_AsuranLattice` as the canon-Asuran hostile society;
+- current Nanite Reserve / Neural Interface / concealment / covert-presence systems.
+
+Search of current public found no current equivalents for old `WNG_PrecursorWeapon`, `WNG_PrecursorFieldArmor`, `WNG_PrecursorCommandArmor` or `WNG_HumanFormUniform`. Therefore the next pass must **not** resurrect references to those absent assets/Defs.
+
+## Stargate lore gate
+
+Quiet Lattice is **not a canon-named faction**. Its basis is a WNG extrapolation grounded in canon evidence that:
+- Asurans are individual functioning beings linked by shared base-code/subspace updates rather than a single hive mind;
+- Niam and others sought removal/suppression of the aggression directive and were willing to stop attacks on Atlantis;
+- Niam's group represents internal ideological divergence;
+- the later Niam-associated splinter group pursued ascension separately from Oberoth's main Asuran society and created human replicas/impersonations after base-code alteration.
+
+Therefore a non-hostile splinter society choosing restrained replication/coexistence is lore-compatible WNG design, but must not be falsely described as a canon faction called “Quiet Lattice.”
+
+## Exact next implementation pass
+
+Create a fresh branch from public `87da0e...` and implement one coherent **Quiet Lattice / broader human-form faction-role foundation**:
+1. real non-hostile `WNG_HumanFormEnclave` / The Quiet Lattice faction using current `WNG_NaniteHumanoid` architecture;
+2. current human-form engineer, soldier and coordinator roles without references to missing old gear/assets;
+3. generic human-form Replicator and player human-form Replicator PawnKinds where they remain distinct from those roles;
+4. Quiet Lattice Peaceful / Settlement / bounded Combat group composition;
+5. preserve hostile `WNG_AsuranLattice` as separate faction; do not merge or replace it;
+6. preserve infiltrator as distinct hostile/covert role rather than making Quiet Lattice secretly hostile by default;
+7. explicitly leave native WNG backstories as the next dependency rather than using old generic biography as final design;
+8. leave Quiet-Lattice/Puddle-Jumper courier as later integration after the faction foundation;
+9. Release build + XML/reference validation, remove temp validator, checkpoint before promotion/next pass.
 
 ---
 
-# PRIOR CHECKPOINT — Neural Interface promoted to public
-
-Public milestone:
-
-**`8495b846c7dd31c079db6d4f007be490df3247f3` — `rebuild: add Neural Interface and exact human-form reconstruction`**
-
-Validation:
-- initial run **34597748048** exposed obsolete historical `Gene.Xenogene` API use;
-- corrected to current `Pawn_GeneTracker.Xenogenes` semantics;
-- final run **34599563874 — SUCCESS**;
-- Release build **0 warnings / 0 errors**;
-- all then-current **102** Def/Patch XML files parsed.
-
----
-
-# PRIOR PUBLIC MILESTONES
+# PUBLIC MILESTONES
 
 - Temporary Asuran lattice intrusion: **`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**.
 - Recurring exact-map Queen recovery: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**.
 - Captured Queen sovereign consequences: **`0b8150f3ff6ca7138482ba9a604847f5967fc48b`**.
-- Neural Interface / exact human-form reconstruction: **`8495b846c7dd31c079db6d4f007be490df3247f3`**.
-- Infiltration conceal/reveal foundation: **`c7a9b46a3bef9393301d153e3f56c3c44c7ce95c`**.
+- Neural Interface / exact reconstruction: **`8495b846c7dd31c079db6d4f007be490df3247f3`**.
+- Infiltration conceal/reveal: **`c7a9b46a3bef9393301d153e3f56c3c44c7ce95c`**.
+- Covert visitor impersonation: **`87da0e524324190584ac31e1830265db76688fae`**.
 
-All completed public slices were source/Def validated before promotion; broad live RimWorld validation remains outstanding.
+All are source/Def validated; broad live RimWorld validation remains outstanding.
