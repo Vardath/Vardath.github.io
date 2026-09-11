@@ -8,7 +8,7 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-12 — Strategic Wraith hunger count/names UI reconciliation complete
+# CHECKPOINT — 2026-09-12 — Strategic Wraith hunger two-stage UI validated on branch
 
 ## Public state
 
@@ -16,86 +16,87 @@ Public mod `main` remains:
 
 **`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — bounded Wraith Growth Chamber.**
 
-No strategic-hunger UI code was changed in this reconciliation pass.
+Strategic-hunger UI work is branch-only at this checkpoint.
 
-## Recovered corrected requirement
+## Active branch
 
-The recovered plan and explicit later correction agree:
-- these boxes belong only to **genuine faction-level strategic Wraith hunger**;
-- ordinary pawn `Drain Life`/feeding never opens them;
-- local Mature-Hive Feeding Niches/feeding stock never opens them;
-- box/stage 1 is only about the biological prisoner/feeding-stock subject(s); individual Wraiths are never selected there;
-- submitting stage 1 advances to stage 2;
-- stage 2 shows the **count and names of the Wraiths involved/to be fed**;
-- the decision sequence remains paused from opening until final completion;
-- final Submit accepts/fulfils the feeding agreement;
-- Cancel/refusal is a real refusal and retains the configured attack/raid consequence.
+**`rebuild/wraith-hunger-request-ui-20260912`**
 
-Current public source is mechanically incomplete against that requirement: it opens an initial `Dialog_MessageBox`, then releases `requestWindowOpen` and opens a `FloatMenu` of prisoners. There is no involved-Wraith count/name stage, and the flow is not locked as one paused transaction across stages.
+Validated clean branch HEAD:
 
-## Native UI/API check
+**`639c4a284dcd8254aea4e9e7dfb6d7f507939498` — `rebuild: complete paused strategic Wraith feeding request UI`**
 
-RimWorld 1.6 `Dialog_MessageBox` is already a force-paused, input-absorbing `Window`, so it is suitable for the final count/name confirmation stage.
+Clean tree:
 
-The current prisoner `FloatMenu` is not the correct transaction surface for the recovered requirement. Stage 1 therefore needs a small WNG `Window` with `forcePause=true` / `absorbInputAroundWindow=true` so subject selection/identification and Submit/Cancel remain inside the same paused decision transaction.
+**`f2c5a161a65fa0879a4980d29eadf21d7c9ed492`**
 
-## Involved-Wraith identity boundary
+Clean compare against public contains exactly two intended files:
+- `Source/WNG/Wraith/WraithFactionHunger.cs` — strategic request flow modified;
+- `Source/WNG/Wraith/WraithFeedingRequestDialog.cs` — new paused stage-one subject dialog.
 
-Recovered history specifies that count/names must be shown, but it does **not** specify an arbitrary numeric formula such as “N Wraiths per hunger percentage.” Do not invent such a formula merely to make the box look populated.
+Temporary workflow/helper files are absent from clean branch HEAD.
 
-The first implementation therefore uses **real Wraith pawn identities only**:
-- prefer living, same-faction Wraith pawns physically present on the request home map when such Wraiths genuinely exist there;
-- otherwise use the requesting faction's exact living Wraith leader as the involved identity;
-- deduplicate exact pawns;
-- do not generate disposable presentation-only names/pawns;
-- if no valid real same-faction Wraith identity can be resolved, do not open a misleading request; schedule the normal retry instead.
+## Implemented behavior
 
-This means the count displayed in stage 2 is the count of the actual resolved Wraith identities, not a fabricated hunger-derived number. A later Vardath-defined multi-Wraith roster formula can replace this without redesigning the transaction.
+- genuine strategic faction hunger remains the only source of the feeding-request UI;
+- the previous initial-message-plus-`FloatMenu` flow is removed;
+- stage 1 is a dedicated WNG `Window` with `forcePause=true`, `absorbInputAroundWindow=true`, no close-X and no click-outside dismissal;
+- stage 1 shows only eligible prisoner/feeding-stock subjects, preserving the rule that the player does not choose Wraiths there;
+- one subject is auto-selected only when exactly one eligible subject exists; otherwise the player selects a prisoner by exact pawn name;
+- stage 1 displays current strategic hunger percentage, the existing biological-age/Life-Drained consequence, and the refusal-pressure warning;
+- Submit advances to stage 2 without releasing `requestWindowOpen`;
+- Cancel/Escape routes through the existing `RefuseRequest` path, including configured forced-raid consequence;
+- stage 2 is native force-paused `Dialog_MessageBox` and shows selected subject, exact involved-Wraith count and each exact Wraith name;
+- involved Wraiths are **not fabricated**: living operational same-faction Wraiths physically present on the home map are used when present; otherwise the exact living same-faction faction leader is used;
+- if no real Wraith identity can be resolved, the request is not opened and uses the normal retry timer;
+- if the exact roster becomes invalid between stages, the request is safely released for retry rather than substituting fake names;
+- final Submit clears the request lock and invokes the existing `AcceptRequest` effect on the exact selected prisoner;
+- final Cancel/Escape clears the lock and invokes the existing refusal/raid consequence;
+- invalid selected prisoner at final completion remains a refusal; no replacement prisoner is silently substituted;
+- no Quest conversion and no changes to ordinary Drain Life, Mature-Hive feeding ecology, Growth Chamber, Dormancy Vault or retaliation.
 
-## Exact UI/data-flow decision
+## Reconciliation boundary retained
 
-**Stage 1 — feeding-stock subject selection/identification**
-- open only after the existing genuine strategic-hunger threshold/chance checks pass;
-- show eligible biological prisoner/feeding-stock names only;
-- player selects the subject if more than one is available;
-- no Wraith selection appears in this stage;
-- Submit is disabled until one valid subject is selected;
-- Cancel/refusal calls the existing strategic refusal path and therefore preserves faction hostility/forced-raid behavior where configured;
-- `requestWindowOpen` remains true; stage 1 Submit does not release the strategic request lock.
+Recovered history requires count/names but contains no rule for inventing a hunger-percentage participant count. This implementation therefore reports actual resolved Wraith pawn identities rather than creating arbitrary presentation-only pawns or names. Any later Vardath-defined multi-Wraith roster rule can replace the resolver without changing the two-stage UI transaction.
 
-**Stage 2 — involved-Wraith roster confirmation**
-- receives the exact selected prisoner and exact resolved Wraith pawn references from stage 1;
-- force-paused `Dialog_MessageBox` displays the requesting faction, exact involved-Wraith count and each resolved Wraith name, plus the selected prisoner's name and existing biological-age/Life-Drained consequence;
-- no Wraith selection controls exist;
-- Submit invokes the existing strategic `AcceptRequest` effect on that exact prisoner and only then clears `requestWindowOpen`;
-- Cancel/refusal invokes the existing `RefuseRequest` consequence and only then clears `requestWindowOpen`.
+## Validation
 
-## Failure/closure boundary
+Validation run:
 
-- any invalid/dead/despawned subject at final Submit becomes refusal rather than silently feeding a replacement prisoner;
-- if the real involved-Wraith roster becomes invalid between stages, the request is refused/retried safely rather than substituting fabricated names;
-- close/cancel/Escape behavior must map to the same refusal outcome so the player cannot dismiss the request without consequence;
-- ordinary strategic hunger records/timers remain the authority; this is not converted into a Quest system;
-- no ordinary `Drain Life`, Mature-Hive local ecology or retaliation code is changed in this pass.
+**`34613728004` — SUCCESS**
+
+Passed:
+- targeted strategic-hunger source patch;
+- Release C# build;
+- all Def/Patch XML parsing;
+- force-paused stage-one dialog invariants;
+- exact involved-Wraith stage-two count/name invariants;
+- single request lock across both stages;
+- Submit/Cancel paths tied to existing accept/refusal methods;
+- removal of old `FloatMenu` prisoner stage;
+- explicit invariant forbidding `PawnGenerator.GeneratePawn` in this UI pass, preventing fake presentation identities;
+- explicit subsystem-boundary checks against Drain Life, Feeding Niche, Dormancy Vault and Growth Chamber coupling;
+- temporary validation workflow/helpers removed before clean branch HEAD.
+
+The validation used the corrected **small helper scripts + minimal workflow** method established after the repeated workflow-wrapper failures. No large inline validation workflow was reintroduced.
+
+This remains **source/Def validation, not live RimWorld validation**.
 
 ## Exact next pass
 
-**Implement only this strategic-hunger two-stage paused UI** on a fresh branch from public `e1a080c...`:
-1. add the force-paused WNG subject-selection dialog;
-2. keep one request lock active across both stages;
-3. resolve exact real same-faction involved Wraith identities without synthetic names;
-4. add stage-2 count/name confirmation using native force-paused dialog behavior;
-5. preserve existing accept/refusal/raid consequences and faction-specific hunger state;
-6. do not alter ordinary feeding, Mature-Hive feeding stock, Growth Chamber, or retaliation;
-7. validate using the corrected small-helper/minimal-workflow method rather than another large inline workflow;
-8. checkpoint validated branch before promotion.
+**Promotion-only pass:**
+1. recheck public `main` is still `e1a080c...`;
+2. promote clean tree `f2c5a161...` as one public commit with parent `e1a080c...`;
+3. verify public diff is exactly the two intended strategic-hunger UI files;
+4. update `CURRENT_PUBLIC_STATE.md` and this checkpoint to exact promoted SHA;
+5. remove the strategic-hunger count/names UI stage from missing-required debt;
+6. only then begin reconciliation of broader discovery/story progression.
 
 ---
 
-# PRIOR PUBLIC MILESTONE — Wraith Growth Chamber
+# PREVIOUS RECONCILIATION DECISION
 
-Public mod milestone: **`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7`**.  
-Validation run: **`34612430265` — SUCCESS**.
+The recovered corrected sequence is: stage 1 identifies/selects feeding-stock prisoner subject(s) only; Submit advances to stage 2; stage 2 shows count/names of involved Wraiths; final Submit accepts, Cancel/refusal retains raid pressure; the game remains paused throughout. Ordinary Wraith feeding never creates these boxes. memcite
 
 ---
 
