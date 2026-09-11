@@ -8,81 +8,55 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-12 — AntiShield native-projectile integration validated on branch
+# CHECKPOINT — 2026-09-12 — AntiShield promoted to public
 
 ## Public state
 
-Public mod `main` remains:
+Public mod `main` is now:
 
-**`12590e8ea88ce208a640fe2475de1843a7e227af` — physical Replicator Grav adaptation.**
+**`b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — `rebuild: integrate Replicator AntiShield with native energy shields`**
 
-AntiShield work is branch-only at this checkpoint.
+Promotion used clean validated tree `37fecb7e3f137ff92ab5f2255105cb7c214a5471` with parent `12590e8...`. Temporary validation/script history did not enter public `main`.
 
-## Active branch
-
-**`rebuild/replicator-antishield-20260912`**
-
-Validated clean branch HEAD:
-
-**`625ab2254ed5e4a8d88985822836554c6750f657` — `rebuild: route Replicator adaptive fire through native shields`**
-
-Clean compare against public contains exactly three intended files:
+Public diff is exactly:
 - `Defs/ThingDefs/Projectiles_Replicator.xml` — added;
 - `Source/WNG/Replicators/ReplicatorAdaptiveProjectile.cs` — added;
 - `Source/WNG/Replicators/ReplicatorAdaptationEffects.cs` — modified.
 
-Temporary workflow/script helpers are absent from the clean branch tree.
+## Public behavior now
 
-## What this pass implements
-
-- learned Replicator adaptive ranged fire no longer calls direct `target.TakeDamage`; it launches a real native projectile;
-- new `WNG_ReplicatorAdaptiveBolt` uses current RimWorld 1.6 `BaseBullet`/`Bullet` projectile machinery;
-- native walls/cover/projectile interception now participate instead of being bypassed;
-- native `CompProjectileInterceptor` / `CompGravshipShieldGenerator` energy shields can intercept ordinary adaptive shots normally;
-- launcher-side existing Def-tunable ranged body damage and armor penetration remain the source values for real body impacts;
-- when the exact launcher has learned `ReplicatorAdaptation.AntiShield`, the projectile reports the existing Def-tunable `antiShieldDamageMultiplier`-amplified `DamageAmount` to native shield interception;
-- genuine ordinary unshielded body impacts are explicitly resolved at normal configured body damage, so AntiShield is not a generic body-damage multiplier;
-- current block-Replicator adaptive-shield countermeasure behavior is preserved: an AntiShield shot hitting a WNG adaptive-shield Replicator still presents amplified damage to that WNG shield transaction;
-- current EMP and `ReplicatorCombatPermission` gates remain before adaptive fire;
-- no Harmony patch was introduced;
-- no interaction with `CompWraithHullRegenerator` exists, preserving the rule that Wraith living-hull regeneration is biological repair, not an AntiShield target.
+- adaptive Replicator ranged fire is a real native projectile rather than direct damage;
+- native walls/cover and `CompProjectileInterceptor` / `CompGravshipShieldGenerator` shields participate normally;
+- AntiShield after repeated shield evidence increases native energy-shield depletion using the existing Def-tunable multiplier;
+- ordinary unshielded body impact remains normal adaptive-ranged damage, not a generic AntiShield body-damage bonus;
+- existing block-Replicator adaptive-shield countermeasure behavior is preserved;
+- Wraith living-hull regeneration is explicitly excluded because it is not an energy shield;
+- no Harmony interception patch was introduced.
 
 ## Validation
 
-First workflow attempt `34610597370` failed before creating a job because the temporary workflow wrapper was malformed. No source patch from that failed run was committed/promoted.
+Corrected run **`34610731875` — SUCCESS**:
+- Release build passed;
+- all Def/Patch XML parsed;
+- native projectile/shield/body-damage invariants passed;
+- temp validator and helper removed before promoted tree.
 
-Corrected validation run:
+Earlier run `34610597370` was only a malformed temporary-workflow failure before any job/source validation and is not a code failure.
 
-**`34610731875` — SUCCESS**
+This remains **source/Def validation, not live RimWorld validation**.
 
-Passed:
-- patch application;
-- Release C# build;
-- all Def/Patch XML parsing;
-- native projectile launch invariants;
-- no remaining direct adaptive `TakeDamage` path;
-- custom AntiShield projectile/shield-vs-body distinction;
-- projectile Def/class wiring;
-- explicit absence of Wraith living-hull AntiShield coupling;
-- temporary validation workflow and patch script removed by clean branch HEAD.
-
-This is **source/Def validation, not live RimWorld validation**.
+`CURRENT_PUBLIC_STATE.md` now records exact public HEAD `b5cde48...` and removes broader native AntiShield integration from missing-required debt.
 
 ## Exact next pass
 
-**Promotion-only pass:**
-1. recheck public `main` is still `12590e8...`;
-2. promote clean tree from branch HEAD `625ab225...` as one public commit without temp history;
-3. verify public diff is exactly the three intended files;
-4. update `CURRENT_PUBLIC_STATE.md` and this checkpoint to the promoted SHA;
-5. close AntiShield as implemented foundation / live-test-needed;
-6. only then reconcile the next required subsystem, currently Wraith Growth Chamber unless newer Vardath instruction changes priority.
+**Wraith Growth Chamber reconciliation only.**
 
----
-
-# PREVIOUS RECONCILIATION DECISION
-
-AntiShield is learned shield-countermeasure modulation after repeated shield evidence. It is not ARG anti-Replicator disruption, not a shield-deleting aura, not generic shield immunity, and not generic bonus body damage. Current native projectile-interceptor shields are the concrete supported target; third-party non-native shield systems remain future explicit integrations.
+1. recover exact plan/chat-history requirement and historical file evidence;
+2. inspect current public Wraith Hive infrastructure/source/Defs/assets;
+3. Stargate lore gate on Wraith cloning/growth facilities;
+4. define the exact distinct gameplay role relative to Hive Heart, Feeding Niche, Hibernation Pod and Dormancy Vault;
+5. preserve separation between ordinary feeding, strategic faction hunger, mature-Hive local ecology and retaliation;
+6. checkpoint the decision before any Growth Chamber code.
 
 ---
 
@@ -97,5 +71,6 @@ AntiShield is learned shield-countermeasure modulation after repeated shield evi
 - `b242dc72d1...` — Quiet Lattice society.
 - `45e62cd7f5...` — native WNG backstories.
 - `12590e8ea8...` — physical Replicator Grav adaptation.
+- `b5cde48e3c...` — native energy-shield AntiShield integration.
 
 All completed public milestones were source/Def validated before promotion. Broad live RimWorld validation remains outstanding.
