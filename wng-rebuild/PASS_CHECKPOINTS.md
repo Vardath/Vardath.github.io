@@ -8,38 +8,72 @@ A pass is a bounded coherent implementation batch. Historical/private WNG is ref
 
 ---
 
-# CHECKPOINT — 2026-09-12 — Wraith Hive Heart evidence bridge promoted to public
+# PAUSE CHECKPOINT — 2026-09-12 — Asuran evidence reconciliation in progress
 
 ## Public state
 
-Public mod `main` is now **`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da` — `rebuild: add Wraith Hive Heart evidence-analysis bridge`**.
+Public mod `main` remains **`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da` — `rebuild: add Wraith Hive Heart evidence-analysis bridge`**.
 
-Promoted validated tree: **`a97e879e5fc73ba4012d7281997e6398c3334dc0`** with parent `9f45ebf18...`.
+No Asuran/Ancient progression code has been changed. No implementation branch has been created for this next slice.
 
-Public diff is exactly:
+The immediately previous completed public progression bridges are:
+- `9f45ebf18caacde671f015cdd1a25217eebb6838` — Replicator encounter/evidence/research bridge;
+- `d38ce6f321ad0b1d65a95c4315b9d3c12128d9da` — Wraith Hive Heart evidence/research bridge.
+
+## Current task when work resumes
+
+Continue **reconciliation only** for one first-tier **Asuran fabrication evidence -> `WNG_AsuranFabrication`** bridge.
+
+Do **not** yet implement anything and do not combine this with Ancient shuttle engineering or Asuran gravships.
+
+## Findings already established in this interrupted pass
+
+Current `WNG_AsuranFabrication` remains a bypass candidate because its ordinary route is still vanilla-tech-first rather than evidence-first.
+
+Evidence/acquisition candidates examined so far:
+
+- **`WNG_NaniteSludge`** exists as the manufactured Asuran engineering/fuel medium, but it is produced through the Asuran workshop/research chain. It is therefore not acceptable as the first pre-research evidence gate unless another genuine pre-research acquisition path already exists and is verified. Do not create circular progression.
+- **Asuran human-form pawns** (`WNG_AsuranOperative`, Technician, Commander, Infiltrator) genuinely exist before Asuran fabrication research through hostile/covert/recovery systems. They are real evidence of nanite fabrication, but no clean native physical-analysis route has yet been selected. Do not invent a pawn-dissection/corpse-drop mechanic merely for convenience without reconciling it first.
+- **`WNG_AsuranRecoveryJumper`** genuinely appears in Queen-recovery operations and is a physical Asuran-operated Puddle Jumper, but it mixes Asuran and Ancient shuttle technology. It is therefore a poor first gate for `WNG_AsuranFabrication` because it would collapse fabrication and later Ancient shuttle progression into one evidence object.
+- Covert visitor/revealed-infiltrator mechanics expose the exact same Asuran synthetic pawn and do not currently yield a separate physical research object.
+
+No evidence object has yet been approved.
+
+## Exact resume point
+
+On resume, continue examining **existing physical Asuran/Quiet-Lattice/hostile-Lattice structures or items that can genuinely be encountered before `WNG_AsuranFabrication`**.
+
+Priority order:
+1. hostile Asuran Lattice encounter structures/items;
+2. Quiet Lattice settlement/interaction structures/items;
+3. existing Queen-recovery Asuran mission hardware **excluding** the recovery Jumper unless a fabrication-only subcomponent already exists;
+4. existing recoverable synthetic components/resources already spawned independently of research.
+
+For each candidate, prove:
+- it exists in current public source;
+- it is actually obtainable or preservable before `WNG_AsuranFabrication`;
+- using it does not create a research/acquisition cycle;
+- it represents Asuran nanite fabrication specifically, not Ancient shuttle engineering;
+- native Odyssey analysis is mechanically coherent for its Thing type;
+- no new timed discovery site is necessary unless all existing evidence routes fail.
+
+Once one exact object is selected, checkpoint that decision **before** creating a branch or editing code.
+
+---
+
+# PREVIOUS COMPLETED CHECKPOINT — Wraith Hive Heart evidence bridge
+
+Public mod `main`: **`d38ce6f321ad0b1d65a95c4315b9d3c12128d9da`**.
+
+Validated run **`34616521496` — SUCCESS**. Public diff from `9f45ebf18...` is exactly:
 - `Defs/ThingDefs/Wraith_HiveHeart.xml`;
 - `Defs/ResearchProjectDefs/Research_WraithBootstrap.xml`.
 
-## Public behavior now
-
-- every generated Mature Hive still requires its exact Hive Heart and all existing population behavior/tuning is unchanged;
-- a preserved `WNG_WraithHiveHeart` is now native Odyssey analyzable evidence using analysis ID `160912002`;
-- analysis takes 2 hours, is colonist-only, requires no mechanitor, does not destroy the Heart and uses `canStudyInPlace=true`;
-- `WNG_WraithLivingTechnology` still requires `Fabrication` and now also requires analyzed `WNG_WraithHiveHeart`;
-- no new site, Quest, timed gate or progression component was added;
-- no Wraith shuttle, gravship, Growth Chamber power, hunger, feeding or retaliation mechanics changed.
-
-Result: **Mature Hive discovery -> neutralize/preserve Hive Heart -> in-place analysis -> Wraith Living Technology -> reconstruction/growth.**
-
-## Validation
-
-Run **`34616521496` — SUCCESS**: Release build, all Def/Patch XML, unique analysis ID, in-place analysis, exact `requiredAnalyzed` target and unchanged Mature-Hive population invariants passed.
-
-Corrected cleanup used explicit paths only; public compare confirms exactly two intended XML files. This remains source/Def validation, not live RimWorld validation.
-
-## Exact next short pass
-
-Stop this pass here. The next progression pass must begin with **reconciliation of one Asuran/Ancient evidence-to-research bridge only**, before any implementation. Do not combine Asuran fabrication, shuttle engineering and later gravship progression into one batch.
+Public behavior:
+- preserved `WNG_WraithHiveHeart` is native in-place analyzable evidence (`analysisID=160912002`);
+- 2-hour colonist analysis, no mechanitor, no destruction, `canStudyInPlace=true`;
+- `WNG_WraithLivingTechnology` keeps `Fabrication` and additionally requires analyzed Hive Heart;
+- Mature-Hive population tuning and all unrelated Wraith mechanics are unchanged.
 
 ---
 
