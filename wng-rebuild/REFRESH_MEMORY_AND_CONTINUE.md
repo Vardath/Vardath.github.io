@@ -8,14 +8,20 @@ The broad WNG conversation/history reconstruction was completed on **2026-09-11*
 
 **`CANONICAL_RECOVERY_LEDGER.md`**
 
-Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Recover from the canonical ledger plus the actual current public repository state.
+The current implementation state is maintained separately in:
+
+**`CURRENT_PUBLIC_STATE.md`**
+
+The ledger preserves settled history. The current-state file exists specifically so the ledger's original repository snapshot cannot be mistaken for live implementation state after the mod advances.
+
+Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Recover from the canonical ledger, the live-state file and the actual current public repository.
 
 Retrieve older raw WNG chat only when:
 - the canonical ledger explicitly flags an unresolved historical conflict/gap;
-- current public repo evidence conflicts with the ledger; or
+- current public repo evidence conflicts with the ledger/state file; or
 - Vardath explicitly asks for raw-history review.
 
-When a raw-history issue is resolved, update the ledger so it never has to be solved again.
+When a raw-history issue is resolved, update continuity so it never has to be solved again.
 
 ## Identity and authority
 
@@ -30,18 +36,19 @@ When a raw-history issue is resolved, update the ledger so it never has to be so
 
 1. Read `STANDING_RULES.md`.
 2. Read **all of `CANONICAL_RECOVERY_LEDGER.md`**.
-3. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
-4. Fetch current public `main` and compare its HEAD/state to the ledger snapshot.
-5. If `main` advanced, inspect the actual commits/files and update the ledger before relying on its current-state section.
-6. Read only the active subsystem contract/master-plan append(s) needed for the genuine next slice.
-7. Read `PLAN_EXECUTION_PROTOCOL.md` and implement through the checklist.
-8. After the batch, update the canonical ledger before handoff.
+3. Read **all of `CURRENT_PUBLIC_STATE.md`**.
+4. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
+5. Fetch current public mod `main` and compare its HEAD/state to `CURRENT_PUBLIC_STATE.md`.
+6. If `main` advanced, inspect the actual commits/files before relying on old state and update `CURRENT_PUBLIC_STATE.md`.
+7. Read only the active subsystem contract/master-plan append(s) needed for the genuine next slice.
+8. Read `PLAN_EXECUTION_PROTOCOL.md` and implement through the checklist.
+9. After the batch, update `CURRENT_PUBLIC_STATE.md` before handoff.
 
-`NEXT_GPT_PRIMER.md` is only a short pointer/snapshot. It never outranks the ledger or current `main`.
+`NEXT_GPT_PRIMER.md` is only a short pointer. It never outranks the ledger, current-state file or current `main`.
 
 ## Mandatory implementation order
 
-**CANONICAL LEDGER -> STARGATE LORE -> CURRENT PUBLIC STATE -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE LEDGER/HANDOFF**
+**CANONICAL LEDGER -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE HANDOFF**
 
 Do not code from memory or a stale assistant summary.
 
@@ -63,6 +70,8 @@ If it has become generic sci-fi rather than recognisably Stargate, redesign befo
 - **Current public `main` is implementation state.** Old next-step/checkpoint prose can be stale.
 - `next`, `unfinished`, `reconcile`, `correct`, `refine`, or `rebuild` never means delete a required existing feature.
 - **Al'kesh is required and currently implemented; do not remove it.**
+- **Ha'tak is now implemented as an Odyssey-native gravship family.** The canonical ledger's old Ha'tak-not-implemented text describes its original snapshot only.
+- **Death Glider is a real native fighter physically carried on Ha'tak substructure**, not a decorative hangar token.
 - Do not invent a Goa'uld uranium/chemfuel fallback or any other unspecified substitute.
 - Supplied ONAC/RimGate/Stargates source identities recorded in the ledger/contracts are authoritative for optional integrations.
 - Use **Wraith Grav Engine**, not obsolete Wraith Gravcore.
@@ -70,23 +79,23 @@ If it has become generic sci-fi rather than recognisably Stargate, redesign befo
 - CatCraft owns Stargate network/dial/iris/receive mechanics; WNG integrates around them rather than replacing them.
 - No replacement/generated art unless Vardath explicitly asks.
 
-## Current public snapshot at creation of the canonical ledger
+## Current live public snapshot
 
-Current verified mod HEAD recorded by the ledger:
+Read `CURRENT_PUBLIC_STATE.md` and then verify against GitHub. At this update the mod HEAD is:
 
-**`4af4f60c184f1971ee7bc7516b63e3b33142fea0` — `cleanup: remove temporary Wraith stunner validation workflow`**
+**`ef04575fb88ed6300b7c681c32971eec0c98d253` — `feat: add System Lord Death Glider strikes`**
 
-This is only a checkpoint. **Fetch `main` every time.**
+The canonical ledger's `4af4f60...` SHA is an original reconstruction checkpoint, not the current implementation head.
 
-The fresh public rebuild has already advanced far beyond the old “Replicator foundation only” stage. The canonical ledger records current implemented Wraith, Replicator, shuttle, ring, Wraith/Asuran gravship and integration state, plus required unfinished human-form/Queen and Ha'tak branches.
+Current Ha'tak state includes the real native gravship family, heavy plasma battery, real Death Glider carrier relationship and exact verified System-Lord/Jaffa Death Glider strike. The next Ha'tak slice currently recorded is a **real hostile Ha'tak carrier encounter/site path that physically stages/deploys its Death Gliders**, followed by true cross-map/orbital bombardment.
 
 ## Handoff maintenance
 
-Before ending any meaningful work batch, update `CANONICAL_RECOVERY_LEDGER.md` with:
+Before ending any meaningful work batch, update `CURRENT_PUBLIC_STATE.md` with:
 - exact new public HEAD;
 - what actually changed;
 - implemented / unfinished-dependency / changed-by-Vardath / live-test-needed status;
 - any newly superseded decision;
 - the next genuinely unfinished slice derived from current `main`.
 
-This update is part of completing the work. The objective is that Vardath can say **“refresh memory and continue”** and the next GPT can simply recover and continue without interrogation or reconstruction.
+This update is part of completing the work. The objective is that Vardath can say **“refresh memory and continue”** and the next GPT can read the actual handoff and continue without interrogation or reconstruction.
