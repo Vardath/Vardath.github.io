@@ -2,34 +2,20 @@
 
 Read this before touching the WNG 1.6 repository after any context reset.
 
-# ⛔ THE RECOVERY WORK HAS ALREADY BEEN DONE
+# ⛔ THE BROAD HISTORY RECOVERY HAS ALREADY BEEN DONE
 
-The broad WNG conversation/history reconstruction was completed on **2026-09-11** and consolidated into:
+Historical reconstruction: **`CANONICAL_RECOVERY_LEDGER.md`**.  
+Mutable implementation state: **`CURRENT_PUBLIC_STATE.md`**.
 
-**`CANONICAL_RECOVERY_LEDGER.md`**
-
-The current implementation state is maintained separately in:
-
-**`CURRENT_PUBLIC_STATE.md`**
-
-The ledger preserves settled history. The current-state file exists specifically so the ledger's original repository snapshot cannot be mistaken for live implementation state after the mod advances.
-
-Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Recover from the canonical ledger, the live-state file and the actual current public repository.
-
-Retrieve older raw WNG chat only when:
-- the canonical ledger explicitly flags an unresolved historical conflict/gap;
-- current public repo evidence conflicts with the ledger/state file; or
-- Vardath explicitly asks for raw-history review.
-
-When a raw-history issue is resolved, update continuity so it never has to be solved again.
+Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Use raw history only for a genuine ledger gap/conflict, a current-repo contradiction, or an explicit Vardath request.
 
 ## Identity and authority
 
 - Mod: **Wraith & Nanite Gravtech (WNG)** for RimWorld 1.6.
 - Author/final design authority: **Vardath**.
-- Active code repository: public `Vardath/Wraith-Nanite-Gravtech-1.6`.
-- Durable continuity: `Vardath/Vardath.github.io/wng-rebuild/`.
-- Private/old WNG repositories/builds are historical/reference evidence only unless Vardath explicitly re-authorizes them.
+- Active code: public `Vardath/Wraith-Nanite-Gravtech-1.6`.
+- Durable continuity: public `Vardath/Vardath.github.io/wng-rebuild/`.
+- Old/private builds are reference evidence only.
 - There are **no known-good historical WNG builds**.
 
 ## Mandatory recovery order
@@ -38,84 +24,81 @@ When a raw-history issue is resolved, update continuity so it never has to be so
 2. Read **all of `CANONICAL_RECOVERY_LEDGER.md`**.
 3. Read **all of `CURRENT_PUBLIC_STATE.md`**.
 4. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
-5. Fetch current public mod `main` and compare its HEAD/state to `CURRENT_PUBLIC_STATE.md`.
-6. If `main` advanced, inspect the actual commits/files before relying on old state and update `CURRENT_PUBLIC_STATE.md`.
-7. Read only the active subsystem contract/master-plan append(s) needed for the genuine next slice.
-8. Read `PLAN_EXECUTION_PROTOCOL.md` and implement through the checklist.
-9. After the batch, update `CURRENT_PUBLIC_STATE.md` before handoff.
+5. Fetch current public mod `main`; compare it to `CURRENT_PUBLIC_STATE.md`.
+6. Inspect any newer real commits/files before relying on old state.
+7. Read the active subsystem contract/master-plan append(s).
+8. Read `PLAN_EXECUTION_PROTOCOL.md`.
+9. Continue implementation; do not stop at a summary.
+10. Update `CURRENT_PUBLIC_STATE.md` before handoff.
 
-`NEXT_GPT_PRIMER.md` is only a short pointer. It never outranks the ledger, current-state file or current `main`.
-
-## Mandatory implementation order
+Mandatory working order:
 
 **CANONICAL LEDGER -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE HANDOFF**
 
-Do not code from memory or a stale assistant summary.
-
-## Stargate-first rule
-
-WNG is a Stargate mod. Before every implementation/addition/rebuild/correction, establish:
-- what the feature actually is in Stargate;
-- what it actually does, including limitations/scale/ownership;
-- what Vardath's current decision is in the ledger/current conversation;
-- what current public WNG already implements;
-- what native RimWorld/Odyssey/Biotech already provides;
-- what any optional Stargate integration owns;
-- and only then the best faithful RimWorld implementation.
-
-If it has become generic sci-fi rather than recognisably Stargate, redesign before coding.
-
-## Critical state rules
-
-- **Current public `main` is implementation state.** Old next-step/checkpoint prose can be stale.
-- `next`, `unfinished`, `reconcile`, `correct`, `refine`, or `rebuild` never means delete a required existing feature.
-- **Al'kesh is required and currently implemented; do not remove it.**
-- **Ha'tak is implemented as an Odyssey-native gravship family**, including real Death Gliders, landed hostile carrier site and true player orbital bombardment.
-- Hostile Ha'tak takeoff/retreat/pursuit remains blocked by Odyssey's player-oriented singleton; do not fake it with proxy deletion/replacement.
-- **Human-form nanite physiology is implemented** using native food behavior as Nanite Reserve, with same-tick biological Malnutrition removal, reserve-funded repair/fabrication and EMP disruption.
-- **The exact Replicator Queen / first Asuran recovery layer is implemented.** One exact age-13 female nanite-humanoid Queen is physically held in a real cryptosleep casket, recruited only on real vault release, and targeted by an all-or-nothing four-operative nonlethal recovery team using a physical native Asuran Jumper.
-- Queen capture is committed only at the real leaving-skyfaller map-exit boundary when that exact pawn is still inside that exact transit container.
-- **Exact-Queen block sovereignty is implemented.** Every WNG block form inherits persistent controller-domain state; the exact Queen can genuinely acquire exact block pawns through real faction transfer and dedicated commands.
-- Queen authority survives real split/recombine transactions with adaptation/stored-matter conservation and exact controller-domain isolation.
-- Same faction does not mean same sovereign domain; Controller coordination, Repairer support, retaliation and recombination respect the explicit domain boundary.
-- EMP and active Replicator containment interfere with Queen control rather than being bypassed.
-- Ordinary Asurans do not possess the Queen's sovereign authority.
-- Block Replicators keep their separate stored-matter economy; human-form Nanite Reserve does not replace it.
-- `NeuralLattice` and `TemporaryAsuran` are reserved distinct controller-domain paths; do not collapse them into Queen authority.
-- Do not invent a Goa'uld uranium/chemfuel fallback or any other unspecified substitute.
-- Supplied ONAC/RimGate/Stargates source identities recorded in the ledger/contracts are authoritative for optional integrations.
-- Use **Wraith Grav Engine**, not obsolete Wraith Gravcore.
-- Ordinary Wraith Drain Life, strategic faction hunger, Mature-Hive feeding ecology and Mature-Hive retaliation are separate systems.
-- CatCraft owns Stargate network/dial/iris/receive mechanics; WNG integrates around them rather than replacing them.
-- No replacement/generated art unless Vardath explicitly asks.
-
 ## Current live public snapshot
 
-Read `CURRENT_PUBLIC_STATE.md` and then verify against GitHub. At this update the mod HEAD is:
+Current mod HEAD:
 
-**`f2b9c0b3c7ac6ac440dd80d715d44f47a0981973` — `docs: record validated Queen sovereignty build`**
+**`0e5dfc893a8efec624053e677ae99d6983c25fc9` — `cleanup: remove temporary Neural Lattice validation workflow`**
 
-The canonical ledger's `4af4f60...` SHA is an original reconstruction checkpoint, not the current implementation head.
+The ledger's `4af4f60...` is an old reconstruction checkpoint only.
 
-Queen sovereignty passed temporary GitHub Actions validation run **34576583840**: C# build SUCCESS, all Def/Patch XML parse SUCCESS and sovereignty-domain invariants SUCCESS. The temporary workflow was removed. This does **not** replace live RimWorld testing.
+### Critical current state
 
-The genuine next implementation slice is the **Sovereign Neural Lattice implant**:
-- bearer is not a Queen;
-- bounded target-specific control;
-- reuse `CompReplicatorSovereignty` with the existing `NeuralLattice` authority domain;
-- preserve exact controller identity through save/load and valid hierarchy transactions;
-- keep Queen/implant/temporary-Asuran domains isolated;
-- keep block adaptation, stored matter, EMP and containment real;
-- restore/release ownership cleanly when controller validity fails;
-- temporary Asuran intrusion remains a separate later override with expiry/restoration semantics.
+- Full block hierarchy/specialists/adaptations/matter/EMP/containment foundations exist.
+- Exact Queen vault/release/first recovery/capture boundary exists.
+- Exact Queen sovereignty exists as genuine per-block controller/faction state.
+- **Sovereign Neural Lattice implant now exists** as a physical craftable Asuran-workshop item with native brain installation/removal and real bounded `NeuralLattice` controller-domain ownership.
+- Queen and implant authority remain separate identities; ordinary Asurans do not gain innate Queen authority.
+- Neural Lattice current first-build acquisition tuning is 24 cells / normal cap 3; EMP disruption is 1,800 ticks; no nearby-swarm seizure.
+- Removing the implant releases that exact bearer's implant-controlled blocks; invalid physical state also releases authority.
+- Split/recombine preserves exact controller domains and does not cross-contaminate Queen/implant domains.
+- Block stored matter remains separate from human-form Nanite Reserve.
+- Human-form Nanite Reserve is the renamed native food need; ordinary edible matter refuels it.
+- Wraith subsystem, native craft stack, gravship families, Ha'tak/Death-Glider/carrier/orbital layers remain implemented; **Al'kesh stays**.
+- Hostile Ha'tak takeoff remains blocked by Odyssey's player-oriented `Current.Game.Gravship` singleton; never fake it with deletion/proxy replacement.
+- All five official DLCs are hard WNG dependencies: Royalty, Ideology, Biotech, Anomaly, Odyssey.
+- CatCraft/ONAC/RimGate remain optional external ownership boundaries.
+
+Validation:
+- Queen sovereignty run **34576583840** passed.
+- Neural Lattice corrected run **34580647197** passed C# build, all Def/Patch XML parsing and physical implant/surgery/domain invariants after an earlier candidate compile defect was fixed.
+- temporary workflows removed.
+- **This does not equal live RimWorld validation.**
+
+## Genuine next implementation slice
+
+**Temporary Asuran lattice intrusion.**
+
+It must:
+- use `ReplicatorControlAuthority.TemporaryAsuran`;
+- remain a temporary hijack, not Queen or implant ownership;
+- preserve enough exact pre-intrusion authority/faction/domain state to restore Queen/Neural-Lattice/autonomous ownership correctly on expiry/interruption;
+- keep EMP/containment real;
+- keep duration/range/cap/trigger rules author-tunable;
+- preserve coherent state through any hierarchy transactions during the intrusion;
+- never grant ordinary Asurans permanent Queen sovereignty.
+
+After that, derive the next work from actual current `main` plus the plans.
+
+## Critical standing reminders
+
+- WNG is a Stargate mod; lore/function check precedes implementation.
+- `next`, `unfinished`, `correct`, `rebuild`, or `refine` never means delete required existing content.
+- Ordinary Wraith feeding, strategic faction hunger, Mature-Hive feeding ecology and Mature-Hive retaliation are separate.
+- Use **Wraith Grav Engine**, not Gravcore.
+- Do not invent Goa'uld fuel/resources to solve integration inconvenience.
+- CatCraft owns its Stargate network/dial/iris/receive buffer.
+- No replacement/generated art unless Vardath explicitly requests it.
+- Approved planned Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa content is recorded in the two 2026-09-11 planning appends and remains required planned work.
 
 ## Handoff maintenance
 
-Before ending any meaningful work batch, update `CURRENT_PUBLIC_STATE.md` with:
+Before ending a meaningful batch, record:
 - exact new public HEAD;
 - what actually changed;
-- implemented / unfinished-dependency / changed-by-Vardath / live-test-needed status;
-- any newly superseded decision;
-- the next genuinely unfinished slice derived from current `main`.
+- implemented / unfinished dependency / Vardath change / live-test-needed status;
+- superseded decisions;
+- next genuine slice derived from current `main`.
 
-This update is part of completing the work. The objective is that Vardath can say **“refresh memory and continue”** and the next GPT can read the actual handoff and continue without interrogation or reconstruction.
+The objective is that Vardath can say **“refresh memory and continue”** and work resumes without interrogation or reconstruction.
