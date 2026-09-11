@@ -13,7 +13,7 @@ The current mutable implementation state is stored in:
 
 **`CURRENT_PUBLIC_STATE.md`**
 
-The ledger preserves the recovered project history. `CURRENT_PUBLIC_STATE.md` prevents its original implementation snapshot from being mistaken for the live repo state. This primer is only the entry pointer.
+The ledger preserves recovered project history. `CURRENT_PUBLIC_STATE.md` prevents its original implementation snapshot from being mistaken for live repo state. This primer is only the entry pointer.
 
 ## Mandatory recovery sequence
 
@@ -43,7 +43,7 @@ There are **no known-good historical WNG builds**.
 
 Read `CURRENT_PUBLIC_STATE.md` for the maintained SHA. At this update its verified mod HEAD is:
 
-**`442800f3bd84de018c47403ec50663252a60b7c5` — `docs: record hardened Queen recovery contract`**
+**`f2b9c0b3c7ac6ac440dd80d715d44f47a0981973` — `docs: record validated Queen sovereignty build`**
 
 The canonical ledger's original `4af4f60...` checkpoint is historical state only. Always fetch `main`.
 
@@ -51,6 +51,10 @@ The canonical ledger's original `4af4f60...` checkpoint is historical state only
 
 Present in the fresh public source/Defs:
 - block Replicator hierarchy/specialists/adaptations/matter/containment/Child's Toy foundations;
+- **persistent block controller-domain state** inherited by Drone, Hunter, Bulwark, Titan, Siege Mass, Controller, Repairer, Burrower and Artillery;
+- genuine exact-Queen sovereignty with real faction transfer, exact controller/domain identity, physical-presence validity and EMP/containment interference;
+- Queen-linked block move/attack/repair/breach/recombine/release commands independent of vanilla mechanitor drafting;
+- sovereign authority inheritance/domain isolation through real split/recombine, Controller coordination, Repairer support and retaliation;
 - Wraith xenotype/castes/factions, Life Force/feeding, strategic faction hunger, Mature-Hive ecology/retaliation, captivity/rescue and living-tech bootstrap;
 - Wraith Dart culling/native retreat/exact captive persistence and Wraith stun staff;
 - complete native Odyssey shuttle stacks for Dart, Wraith scout/strike craft, Wraith cruiser, Puddle Jumper and **Al'kesh**;
@@ -64,10 +68,13 @@ Present in the fresh public source/Defs:
 - dedicated nonlethal subdue/load/hold jobs whose damage override is disabled;
 - exact Queen capture committed only when that same physical shuttle really leaves the map with her in the native transit container.
 
+Queen sovereignty compile/XML/domain validation run **34576583840** succeeded; the temporary workflow was removed afterward. Live RimWorld validation is still pending.
+
 Major required unfinished branches currently recorded:
-- **genuine Queen sovereign control over block Replicators** — the current next slice;
-- Neural Interface / Sovereign Neural Lattice, temporary lattice intrusion and infiltration;
+- **Sovereign Neural Lattice implant control** — the current next slice;
+- temporary Asuran lattice intrusion and restoration/expiry semantics;
 - recurring Queen recovery/capture consequences and mixed human-form/block sovereign threats;
+- infiltration;
 - safe hostile Ha'tak takeoff/retreat/pursuit only if Odyssey's player-oriented singleton can be safely separated;
 - safe standalone Goa'uld resource/research route when ONAC is absent;
 - final deliberate Ancient/Puddle Jumper power/fuel abstraction;
@@ -76,9 +83,17 @@ Major required unfinished branches currently recorded:
 
 ## Current next slice
 
-Implement **genuine Replicator Queen sovereign authority over block Replicators**.
+Implement the **Sovereign Neural Lattice implant** using the controller-domain architecture that Queen sovereignty has now made real.
 
-Do not turn this into a passive stat aura, outbreak probability, generic Asuran ability or second fake block economy. Sovereignty belongs to the exact Queen and must act on the real block-Replicator hierarchy/control state while preserving existing split/recombine, adaptation, stored-matter, EMP and containment mechanics.
+Required boundary:
+- an implant bearer is not the Queen;
+- use the existing `NeuralLattice` authority domain in `CompReplicatorSovereignty`, not a new parallel control system;
+- make control bounded/target-specific and author-tunable;
+- preserve exact controller identity through save/load and valid split/recombine;
+- never merge blocks from Queen/implant/temporary-Asuran domains accidentally;
+- keep block stored matter, adaptations, EMP and containment real;
+- restore/release ownership cleanly when controller validity fails;
+- keep temporary Asuran intrusion separate and temporary.
 
 ## Critical reminders
 
@@ -86,9 +101,11 @@ Do not turn this into a passive stat aura, outbreak probability, generic Asuran 
 - **Al'kesh exists and stays.** Rebuild/refine never means remove it.
 - Ha'tak is implemented as a real Odyssey gravship family; do not regress it because the old ledger snapshot predates those commits.
 - Death Gliders are real native shuttle fighters physically carried by Ha'tak substructure, not decorative hangar tokens.
-- The exact Queen is now real and persistent; never replace her with a generated proxy or generic Asuran.
+- The exact Queen is real and persistent; never replace her with a generated proxy or generic Asuran.
 - Ordinary Asurans do **not** possess Queen sovereignty merely because they share the nanite-humanoid xenotype.
+- Queen sovereignty is **already implemented**. Do not regress it to an aura, outbreak modifier, faction-only shortcut or generic mechanitor system.
 - Block Replicators keep their separate stored-matter economy; Queen/human-form Nanite Reserve does not replace it.
+- Controller domains are identity boundaries: same faction does not imply same sovereign domain.
 - Do not invent uranium/chemfuel or another unspecified Goa'uld fallback.
 - CatCraft owns Stargate network/dial/iris/receive behavior; WNG integrates around it.
 - Ordinary Wraith Drain Life, strategic Wraith faction hunger, Mature-Hive feeding ecology and Mature-Hive retaliation are separate systems.
@@ -98,4 +115,4 @@ Do not turn this into a passive stat aura, outbreak probability, generic Asuran 
 
 ## Handoff rule
 
-Do not create another independent giant primer. Maintain the historical ledger and the live `CURRENT_PUBLIC_STATE.md` so the next GPT can recover from settled history + actual current implementation state without making Vardath repeat anything.
+Do not create another independent giant primer. Maintain the historical ledger and live `CURRENT_PUBLIC_STATE.md` so the next GPT can recover from settled history + actual current implementation state without making Vardath repeat anything.
