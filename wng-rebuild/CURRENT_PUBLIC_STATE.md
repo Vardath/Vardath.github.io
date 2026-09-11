@@ -27,7 +27,7 @@ Current public `main` always beats stale checkpoint prose.
 
 Repository: `Vardath/Wraith-Nanite-Gravtech-1.6`
 
-**`d50637fa34e16631fa87874015f63221992ffcc3` — `fix: reconcile nanite reserve starvation tick`**
+**`442800f3bd84de018c47403ec50663252a60b7c5` — `docs: record hardened Queen recovery contract`**
 
 Important recent state-changing commits after the canonical-ledger snapshot include:
 
@@ -36,7 +36,9 @@ Important recent state-changing commits after the canonical-ledger snapshot incl
 - `ef04575fb88ed6300b7c681c32971eec0c98d253` — exact System-Lord/Jaffa Death Glider strikes;
 - `9c78be450aebedbc94b6e279bbd761c91bc63baf` — landed hostile System-Lord Ha'tak carrier site;
 - `f2becbde25bf58e5e026d5ee5270ce8c5d08f2c3` — true cross-map/orbital Ha'tak bombardment and full-RimWorld-DLC dependency correction;
-- `1184456f8dc7719a6d129e20baf6bc3d575b0a67` / `79d4cb2d5e7a6404a33f5be052f29e457d222e80` / `d50637fa34e16631fa87874015f63221992ffcc3` — human-form Replicator/Asuran nanite-physiology foundation, corrected xenotype UI Def and same-tick starvation reconciliation.
+- `1184456f8dc7719a6d129e20baf6bc3d575b0a67` / `79d4cb2d5e7a6404a33f5be052f29e457d222e80` / `d50637fa34e16631fa87874015f63221992ffcc3` — human-form Replicator/Asuran nanite-physiology foundation, corrected xenotype UI Def and same-tick starvation reconciliation;
+- `e0aedd036fc9ad041b1f07eee25cf4acbd5d38f6` — first exact Replicator Queen / physical Asuran recovery implementation;
+- `54cb2d5fc539fd1f49e20c9b03fc535e056215c5` / `0f0868eb0467c493b5ad5c16fa8e169ea675fb38` / `442800f3bd84de018c47403ec50663252a60b7c5` — hardened Queen release identity, exact all-or-nothing four-operative recovery and nonlethal recovery-job semantics, with checkpoint reconciliation.
 
 The old ledger statements that Ha'tak or human-form Replicators were absent are historical snapshot state only.
 
@@ -69,7 +71,7 @@ Current public source/Defs contain the fresh block-Replicator ecology: hierarchy
 
 Block Replicators **do not gain a food/hunger system**. Their stored matter remains the separate reproduction/construction/adaptation economy.
 
-Required later branches remain Queen sovereign authority, richer player sovereignty/control and mixed human-form + block threats.
+Required later branches remain genuine Queen sovereign authority, richer player sovereignty/control and mixed human-form + block threats.
 
 ## Wraith
 
@@ -77,9 +79,9 @@ Current public source/Defs contain Wraith xenotype/castes/factions; Life Force, 
 
 Ordinary Drain Life, strategic faction hunger, Mature-Hive local feeding and Mature-Hive retaliation remain separate systems.
 
-## Human-form Replicator / Asuran — CURRENT FOUNDATION
+## Human-form Replicator / Asuran — CURRENT
 
-Current public source/Defs now contain a real human-form nanite identity rather than only an abstract reserve gene:
+Current public source/Defs contain a real human-form nanite identity and the first exact Queen storyline layer:
 
 - non-inheritable `WNG_NaniteHumanoid` xenotype for Asurans/compatible human-form Replicators;
 - ordinary Asuran role PawnKinds (`Operative`, `Technician`, `Commander`) kept separate from unique Queen sovereignty;
@@ -94,13 +96,25 @@ Current public source/Defs now contain a real human-form nanite identity rather 
 - nanite self-repair is bounded and author-tunable;
 - EMP applies persistent lattice disruption and suspends self-repair;
 - nanite humanoids are ageless/sterile synthetic bodies in the current first-build physiology;
-- the older broad rule saying Replicator consumption can never be survival fuel is superseded **only for human-form nanite bodies**. Block Replicators remain unchanged.
+- the older broad rule saying Replicator consumption can never be survival fuel is superseded **only for human-form nanite bodies**. Block Replicators remain unchanged;
+- one exact persistent female Replicator Queen is generated at fixed age 13 with `WNG_NaniteHumanoid` identity;
+- the Queen is physically held in RimWorld's real `CryptosleepCasket` at a neutral precursor-vault world site;
+- only the Dormant exact Queen physically emerging on that vault map triggers release/recruitment, preventing later map transitions from replaying release or resetting the recovery timer;
+- release immediately makes that exact pawn a player pawn and globally schedules the first Asuran recovery operation;
+- the recovery attempt requires the complete configured team — currently exactly four human-form `WNG_AsuranOperative` pawns — or rolls the partial spawn back and remains eligible to retry;
+- recovery operatives are generated without ordinary weapons and use dedicated subdue/load/hold jobs with damage override disabled, rather than switching into generic lethal raid AI;
+- one operative non-damagingly subdues the exact Queen with RimWorld's real `StunHandler`, physically carries her to a real Asuran recovery Jumper, and transfers her into its native transporter;
+- surviving operatives physically board that same Jumper;
+- capture does **not** commit on stun, down, carry or loading;
+- capture commits only inside WNG's native `PassengerShuttleLeaving.LeaveMap()` hook when the exact Queen is still physically present in the exact departing transit container;
+- successful departure registers that same pawn in the exact Asuran faction's native `KidnappedPawnsTracker` and marks the global Queen state `CapturedByAsurans`;
+- failed/unprovable departure is halted rather than proxying or silently losing the Queen.
 
-The exact Replicator Queen, sovereign control, capture storyline, infiltration and mixed human-form/block threat logic remain unfinished.
+Still unfinished here: genuine Queen sovereign control of block Replicators, later recurring recovery raids/consequences, Neural Lattice implant control, temporary lattice intrusion, infiltration and mixed human-form/block sovereign threats.
 
 ## Asuran / Ancient-derived technology
 
-Current public source/Defs also contain the Asuran nanite workshop/fabrication branch and an Odyssey-native Asuran gravship family with themed native GravEngine/hull/substructure, nanite-sludge fuel family, power/fuel networks, shield and supporting Odyssey equivalents. Puddle Jumper remains a real native-boardable shuttle.
+Current public source/Defs also contain the Asuran nanite workshop/fabrication branch and an Odyssey-native Asuran gravship family with themed native GravEngine/hull/substructure, nanite-sludge fuel family, power/fuel networks, shield and supporting Odyssey equivalents. Puddle Jumper remains a real native-boardable shuttle. The Queen-recovery carrier is a physical Asuran-operated Puddle-Jumper-derived native shuttle using the existing placeholder Ancient/Asuran power abstraction and no generated art.
 
 ## Stargate / shuttle integration
 
@@ -148,36 +162,32 @@ Therefore hostile Ha'tak takeoff/retreat/pursuit is **not** claimed implemented 
 
 These remain required unless Vardath changes them:
 
-1. **Exact Replicator Queen / Asuran recovery layer** — persistent exact Queen, real cryosleep release, immediate recruitment, four-operative Asuran recovery attack, physical exact-pawn capture/escape semantics, later sovereign consequences.
-2. **Human-form Replicator/Asuran infiltration + Neural Interface + sovereign control**, including mixed human-form/block integration.
-3. **Hostile Ha'tak world behavior** — genuine takeoff/retreat/pursuit and hostile orbital use only if safe real Odyssey/world mechanics support it; current singleton blocker is recorded above.
-4. **Goa'uld sensors/other Odyssey equivalents** only where Stargate function actually justifies them.
-5. **Bombardment of otherwise-unloaded settlements/sites** only if map generation/consequences can be handled without pretending damage occurred on a nonexistent map.
-6. **Safe standalone Goa'uld resource/research path** when ONAC is absent remains unresolved. Do not invent uranium/chemfuel.
-7. **Final Puddle Jumper/Ancient power-fuel abstraction** remains deliberate future work.
-8. **Professional final art/audio pass** — dedicated faction assets, all rotation/connection/corner states, Ha'tak/Death-Glider visuals, shield/VFX/audio, Wraith/Asuran production assets.
-9. **Broad live RimWorld validation** — source/API/static reasoning is not live gameplay validation.
+1. **Replicator Queen sovereign control** — genuine exact-Queen authority over appropriate block Replicators, with explicit ownership/control state rather than a statistical outbreak modifier.
+2. **Human-form Replicator/Asuran infiltration + Neural Interface / Sovereign Neural Lattice**, temporary lattice intrusion and mixed human-form/block integration.
+3. **Later Queen recovery/capture consequences** — recurring recovery raids on the map where the exact Queen physically exists, Asuran retention/recruitment consequences and mixed Asuran + sovereign block threats.
+4. **Hostile Ha'tak world behavior** — genuine takeoff/retreat/pursuit and hostile orbital use only if safe real Odyssey/world mechanics support it; current singleton blocker is recorded above.
+5. **Goa'uld sensors/other Odyssey equivalents** only where Stargate function actually justifies them.
+6. **Bombardment of otherwise-unloaded settlements/sites** only if map generation/consequences can be handled without pretending damage occurred on a nonexistent map.
+7. **Safe standalone Goa'uld resource/research path** when ONAC is absent remains unresolved. Do not invent uranium/chemfuel.
+8. **Final Puddle Jumper/Ancient power-fuel abstraction** remains deliberate future work.
+9. **Professional final art/audio pass** — dedicated faction assets, all rotation/connection/corner states, Ha'tak/Death-Glider visuals, shield/VFX/audio, Wraith/Asuran production assets.
+10. **Broad live RimWorld validation** — source/API/static reasoning is not live gameplay validation.
 
 ---
 
 # NEXT ACTUAL SLICE
 
-After `d50637fa...`, active implementation moves to the settled **Replicator Queen / Asuran recovery foundation**.
+After `442800f3...`, active implementation moves to **genuine Replicator Queen sovereign authority over block Replicators**.
 
 Current contract:
-- one exact persistent female human-form Replicator Queen;
-- age **13** in the current first-build design;
-- uses the nanite-humanoid identity, not a block-machine race;
-- held in a real RimWorld cryosleep/cryptosleep chamber at the recovery site;
-- opening/releasing the casket recruits the exact Queen immediately;
-- release triggers a hostile Asuran/Lattice recovery operation after a bounded tunable delay;
-- current recovery team is four human-form Asuran operatives;
-- they prioritize/subdue the exact Queen rather than generic destruction;
-- downing or picking her up does **not** commit capture;
-- capture commits only when a hostile carrier physically exits the map with the exact Queen;
-- interrupting escape leaves her recoverable/player-owned;
-- later recovery raids may target any player map where the exact Queen is physically present;
-- sovereign Queen authority over block Replicators is a later concrete layer and must be genuine control state, not a statistical outbreak modifier.
+- sovereignty belongs to the one exact persistent Queen, not to ordinary `WNG_NaniteHumanoid` pawns and not to ordinary Asuran rank;
+- it must act on real block-Replicator pawns/state already present in the rebuilt hierarchy;
+- it must be genuine control/ownership/command state, not a raid probability modifier, stat aura or decorative label;
+- Drone -> Hunter -> Bulwark -> Titan -> Siege Mass and specialist block forms must retain their real hierarchy/split/recombine/matter/adaptation mechanics while under sovereign control;
+- command/control must not merge the Queen's personal human-form Nanite Reserve with block Replicators' separate stored-matter economy;
+- EMP/containment and existing Replicator physical behavior remain real constraints rather than being bypassed by sovereignty;
+- ordinary Asurans must not inherit sovereign authority merely from sharing the nanite-humanoid xenotype;
+- any future Neural Lattice/player-control path must integrate with this authority model rather than replace it with a second incompatible system.
 
 ---
 
@@ -185,7 +195,7 @@ Current contract:
 
 Current work has been source/API checked against RimWorld 1.6 classes and Def patterns. No claim is made that RimWorld itself has been launched in this environment.
 
-Live validation still required includes Def load, pawn generation, nanite-reserve need replacement, native eating/caravan behavior, same-tick Malnutrition removal, reserve-funded repair/fabrication, EMP suppression, Asuran faction/PawnKind generation, carrier sites, power/fuel/shields, Death Glider launch/return, orbital targeting/bombardment and save-load.
+Live validation still required includes Def load, pawn generation, nanite-reserve need replacement, native eating/caravan behavior, same-tick Malnutrition removal, reserve-funded repair/fabrication, EMP suppression, Asuran faction/PawnKind generation, Queen vault/casket release, exact four-operative recovery, physical carrying/boarding/native departure, exact Queen kidnapping/save-load, carrier sites, power/fuel/shields, Death Glider launch/return and orbital targeting/bombardment.
 
 ---
 
