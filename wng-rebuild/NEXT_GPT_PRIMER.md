@@ -43,7 +43,7 @@ There are **no known-good historical WNG builds**.
 
 Read `CURRENT_PUBLIC_STATE.md` for the maintained SHA. At this update its verified mod HEAD is:
 
-**`ef04575fb88ed6300b7c681c32971eec0c98d253` — `feat: add System Lord Death Glider strikes`**
+**`442800f3bd84de018c47403ec50663252a60b7c5` — `docs: record hardened Queen recovery contract`**
 
 The canonical ledger's original `4af4f60...` checkpoint is historical state only. Always fetch `main`.
 
@@ -51,37 +51,45 @@ The canonical ledger's original `4af4f60...` checkpoint is historical state only
 
 Present in the fresh public source/Defs:
 - block Replicator hierarchy/specialists/adaptations/matter/containment/Child's Toy foundations;
-- Wraith xenotype/castes, four Wraith factions, Life Force/feeding, strategic faction hunger, Mature-Hive ecology/retaliation, captivity/rescue and living-tech bootstrap;
-- Wraith Dart culling/native retreat/exact captive persistence;
-- Wraith stun staff;
+- Wraith xenotype/castes/factions, Life Force/feeding, strategic faction hunger, Mature-Hive ecology/retaliation, captivity/rescue and living-tech bootstrap;
+- Wraith Dart culling/native retreat/exact captive persistence and Wraith stun staff;
 - complete native Odyssey shuttle stacks for Dart, Wraith scout/strike craft, Wraith cruiser, Puddle Jumper and **Al'kesh**;
 - verified CatCraft/ONAC/RimGate optional-integration identities;
-- Goa'uld transport rings;
-- Wraith and Asuran Odyssey-native gravship families;
-- family-isolated power/fuel networking;
-- Asuran Nanite Reserve/fabrication/workshop foundations;
-- **Ha'tak Odyssey gravship family**, including pel'tac, ONAC liquid-Naquadria tanks/pipes, thrusters, power, shield, field projector and heavy plasma battery;
-- **real Death Glider fighter/carrier relationship** using native shuttle + native gravship carriage rather than a decorative bay;
-- **exact System-Lord/Jaffa Death Glider strike** using verified external factions/crew and real native withdrawal.
+- Wraith, Asuran and Goa'uld/Ha'tak Odyssey-native gravship families with family-isolated power/fuel networking;
+- Ha'tak heavy plasma battery, real Death Glider carrier relationship, exact System-Lord/Jaffa Death Glider strikes, landed hostile carrier site and true player orbital bombardment;
+- human-form `WNG_NaniteHumanoid` physiology using native food behavior as Nanite Reserve, reserve-funded repair/fabrication and EMP disruption;
+- one exact persistent age-13 female Replicator Queen in a real cryptosleep-casket vault;
+- immediate exact-pawn Queen recruitment on real vault release;
+- globally scheduled, all-or-nothing **four-operative** Asuran recovery using a physical native Asuran Jumper;
+- dedicated nonlethal subdue/load/hold jobs whose damage override is disabled;
+- exact Queen capture committed only when that same physical shuttle really leaves the map with her in the native transit container.
 
 Major required unfinished branches currently recorded:
-- human-form Replicator/Asuran infiltration + Neural Interface + exact Queen + sovereign/capture layer;
-- mixed human-form/block raid integration tied to that layer;
-- real hostile Ha'tak carrier/site encounter physically staging/deploying its Death Gliders;
-- true cross-map/orbital Ha'tak bombardment distinct from the on-map heavy plasma battery;
-- safe standalone Goa'uld craft/gravship resource/research route when ONAC is absent;
+- **genuine Queen sovereign control over block Replicators** — the current next slice;
+- Neural Interface / Sovereign Neural Lattice, temporary lattice intrusion and infiltration;
+- recurring Queen recovery/capture consequences and mixed human-form/block sovereign threats;
+- safe hostile Ha'tak takeoff/retreat/pursuit only if Odyssey's player-oriented singleton can be safely separated;
+- safe standalone Goa'uld resource/research route when ONAC is absent;
 - final deliberate Ancient/Puddle Jumper power/fuel abstraction;
 - professional final art/audio/directional-connection audit;
 - broad live-game validation of the fresh current build.
+
+## Current next slice
+
+Implement **genuine Replicator Queen sovereign authority over block Replicators**.
+
+Do not turn this into a passive stat aura, outbreak probability, generic Asuran ability or second fake block economy. Sovereignty belongs to the exact Queen and must act on the real block-Replicator hierarchy/control state while preserving existing split/recombine, adaptation, stored-matter, EMP and containment mechanics.
 
 ## Critical reminders
 
 - **WNG is a Stargate mod. Lore/function check before every implementation.**
 - **Al'kesh exists and stays.** Rebuild/refine never means remove it.
-- Ha'tak is now implemented as a real Odyssey gravship family; do not regress it because the old ledger snapshot predates those commits.
+- Ha'tak is implemented as a real Odyssey gravship family; do not regress it because the old ledger snapshot predates those commits.
 - Death Gliders are real native shuttle fighters physically carried by Ha'tak substructure, not decorative hangar tokens.
+- The exact Queen is now real and persistent; never replace her with a generated proxy or generic Asuran.
+- Ordinary Asurans do **not** possess Queen sovereignty merely because they share the nanite-humanoid xenotype.
+- Block Replicators keep their separate stored-matter economy; Queen/human-form Nanite Reserve does not replace it.
 - Do not invent uranium/chemfuel or another unspecified Goa'uld fallback.
-- ONAC supplied source uses `ONAC_Naquadah` and `ONAC_LiquidNaquadria`; exact IDs are recorded in the ledger/contracts.
 - CatCraft owns Stargate network/dial/iris/receive behavior; WNG integrates around it.
 - Ordinary Wraith Drain Life, strategic Wraith faction hunger, Mature-Hive feeding ecology and Mature-Hive retaliation are separate systems.
 - Use **Wraith Grav Engine**, not obsolete Wraith Gravcore.
