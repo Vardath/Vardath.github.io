@@ -96,7 +96,7 @@ This remains **source/Def validation, not live RimWorld validation**.
 
 # PREVIOUS RECONCILIATION DECISION
 
-The recovered corrected sequence is: stage 1 identifies/selects feeding-stock prisoner subject(s) only; Submit advances to stage 2; stage 2 shows count/names of involved Wraiths; final Submit accepts, Cancel/refusal retains raid pressure; the game remains paused throughout. Ordinary Wraith feeding never creates these boxes. memcite
+The recovered corrected sequence is: stage 1 identifies/selects feeding-stock prisoner subject(s) only; Submit advances to stage 2; stage 2 shows count/names of involved Wraiths; final Submit accepts, Cancel/refusal retains raid pressure; the game remains paused throughout. Ordinary Wraith feeding never creates these boxes.
 
 ---
 
