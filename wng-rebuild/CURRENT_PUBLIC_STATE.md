@@ -19,15 +19,13 @@ Every known item must remain implemented, explicitly partial, explicitly missing
 
 Repository: **`Vardath/Wraith-Nanite-Gravtech-1.6`**
 
-**`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — `rebuild: add bounded Wraith Growth Chamber`**
+**`ff4f8dcb7b8ba17760a48a54f616466642189b0c` — `rebuild: complete strategic Wraith feeding request UI`**
 
-Public diff from `b5cde48...` is exactly:
-- `Defs/ThingDefs/Wraith_GrowthChamber.xml` — added;
-- `Defs/ThingDefs/Wraith_HiveHeart.xml` — bounded replacement description reconciled;
-- `Source/WNG/Wraith/WraithGrowthChamber.cs` — added;
-- `Source/WNG/Wraith/WraithMatureHive.cs` — exact demographic replacement-registration API added.
+Public diff from `e1a080c...` is exactly:
+- `Source/WNG/Wraith/WraithFactionHunger.cs` — strategic request flow modified;
+- `Source/WNG/Wraith/WraithFeedingRequestDialog.cs` — paused stage-one subject dialog added.
 
-Corrected validation run **`34612430265` — SUCCESS** before clean promotion. Initial run `34612309236` failed only at the temporary workflow-wrapper level before a job existed; the process was changed to small helper scripts + minimal workflow rather than repeating the same wrapper pattern. Release build, Def/Patch XML and Growth Chamber invariants passed. This is source/Def validation, not broad live RimWorld validation.
+Validation run **`34613728004` — SUCCESS** before clean promotion. Release build, Def/Patch XML and request-flow invariants passed using the corrected small-helper/minimal-workflow validation method. This is source/Def validation, not broad live RimWorld validation.
 
 ## Recent public milestones
 
@@ -42,6 +40,7 @@ Corrected validation run **`34612430265` — SUCCESS** before clean promotion. I
 - `12590e8ea88ce208a640fe2475de1843a7e227af` — physical Replicator Grav adaptation.
 - `b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — native-projectile AntiShield integration.
 - `e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — bounded Wraith Growth Chamber.
+- `ff4f8dcb7b8ba17760a48a54f616466642189b0c` — paused two-stage strategic Wraith feeding request UI.
 
 ---
 
@@ -98,25 +97,35 @@ Implemented:
 - mature-Hive feeding-stock/population/retaliation foundation;
 - living-tech bootstrap, real Wraith Grav Engine, stun staff, Dart/captivity foundation, Wraith gravship mechanics and living-hull regeneration;
 - native WNG Wraith backstories;
-- **bounded Wraith Growth Chamber**.
+- bounded Wraith Growth Chamber;
+- **complete paused two-stage strategic-hunger feeding-request UI**.
+
+### Strategic hunger request UI — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
+
+- opens only from genuine faction-level strategic hunger;
+- stage 1 is force-paused and selects/identifies eligible biological prisoner/feeding-stock subjects only;
+- no Wraith selection exists in stage 1;
+- stage 1 Submit preserves the request lock and advances to stage 2;
+- stage 2 is force-paused and shows selected subject plus exact involved-Wraith count and names;
+- involved names are real same-faction Wraith pawn identities, never generated presentation-only names: physically present same-faction Wraiths are used when available, otherwise the exact living faction leader;
+- if no valid exact Wraith identity exists, the request retries instead of fabricating one;
+- final Submit uses the existing exact-prisoner strategic feeding consequence and reduces strategic hunger;
+- Cancel/Escape at either stage uses the existing refusal/raid-pressure path;
+- ordinary Drain Life, Mature-Hive feeding stock, Dormancy Vault, Growth Chamber and retaliation remain separate.
 
 ### Growth Chamber — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
 
-- real powered `WNG_WraithGrowthChamber` building using current WNG bio-sludge biomass and normal RimWorld power;
+- real powered `WNG_WraithGrowthChamber` using current WNG bio-sludge biomass and normal RimWorld power;
 - Def-tunable first-build values: 60,000-tick cycle, 60 bio-sludge per replacement, 0.35 Queen Life Force, 4,000W draw, 45/55 Hunter/Warrior weighting;
 - only links to initialized same-faction Mature Hive Heart and reads exact founding cap/current living demographic count;
-- requires a living operational same-faction Wraith Queen;
-- only Hunter/Warrior output; Hive Heart independently rejects other caste registrations;
-- no production above recorded founding cap;
-- exact pawn is validated and registered before biomass/Queen cost is committed;
-- failed spawn/registration consumes no cycle resources;
-- no coupling to strategic hunger, ordinary feeding, Feeding Niche exact captives, Dormancy Vault reserve or retaliation.
+- requires living operational same-faction Queen;
+- Hunter/Warrior output only and no production above recorded founding cap;
+- exact pawn validates/registers before biomass/Queen cost commits.
 
-Explicit dependency:
-- generated hostile Mature Hive sites do **not** yet receive the Growth Chamber because those sites currently have no grounded Wraith electrical-power source. Adding an inert 4,000W chamber or inventing a fake ZPM/Gravcore substitute was rejected. Site placement waits for explicit Wraith ground-power/bioelectric-energy reconciliation.
+Explicit Growth-Chamber dependency:
+- generated hostile Mature Hive sites do **not** yet receive the chamber because those sites currently have no grounded Wraith electrical-power source. Site placement waits for explicit Wraith ground-power/bioelectric-energy reconciliation; no fake ZPM/Gravcore substitute was introduced.
 
 Still required:
-- strategic-hunger involved-Wraith count/names UI stage;
 - broader discovery/story progression;
 - generated-Mature-Hive Growth Chamber placement after a real Wraith ground-power solution exists;
 - final presentation/audio/live testing.
@@ -139,24 +148,23 @@ Still required/blocked: safe standalone Goa'uld ship material/fuel/research path
 
 # CURRENT REQUIRED UNFINISHED INVENTORY
 
-The Growth Chamber core is removed from missing-required debt because it is public. Generated-Mature-Hive placement remains an explicit Wraith-power dependency rather than being silently treated as complete.
+Strategic Wraith hunger count/names UI is removed from missing-required debt because it is public.
 
-1. **Strategic Wraith hunger involved-Wraith count/names UI stage.**
-2. Broader discovery/story progression.
-3. Generated Mature Hive Growth Chamber placement after real Wraith ground-power/bioelectric-energy support exists.
-4. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
-5. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
-6. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
-7. Unloaded-world-site transport-ring exact-pawn/world-object transport.
-8. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
-9. Final professional craft/gravship/implant/building/weapon/resource art review.
-10. Professional WNG audio layer.
-11. Hostile Ha'tak native takeoff/retreat/pursuit only if safely solvable through Odyssey ownership; never fake it.
-12. Broad current-build live RimWorld/save-load/mod-stack/performance validation/tuning.
-13. Human-form synthetic disease/implant/temperature/vacuum physiology audit.
-14. Optional broader DLC identity-copy fidelity audit for Neural Interface copies.
-15. Explicit third-party shield integration only for verified shield systems outside RimWorld's native projectile-interceptor path.
-16. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
+1. **Broader discovery/story progression.**
+2. Generated Mature Hive Growth Chamber placement after real Wraith ground-power/bioelectric-energy support exists.
+3. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
+4. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
+5. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
+6. Unloaded-world-site transport-ring exact-pawn/world-object transport.
+7. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
+8. Final professional craft/gravship/implant/building/weapon/resource art review.
+9. Professional WNG audio layer.
+10. Hostile Ha'tak native takeoff/retreat/pursuit only if safely solvable through Odyssey ownership; never fake it.
+11. Broad current-build live RimWorld/save-load/mod-stack/performance validation/tuning.
+12. Human-form synthetic disease/implant/temperature/vacuum physiology audit.
+13. Optional broader DLC identity-copy fidelity audit for Neural Interface copies.
+14. Explicit third-party shield integration only for verified shield systems outside RimWorld's native projectile-interceptor path.
+15. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
 
 No item may silently disappear.
 
@@ -164,11 +172,13 @@ No item may silently disappear.
 
 # GENUINE NEXT PASS
 
-**Strategic Wraith hunger involved-Wraith count/names UI reconciliation only.**
+**Broader discovery/story progression reconciliation only.**
 
 Before code:
-- inspect current public strategic-hunger state/request UI and exact Wraith-faction ownership;
-- recover the two-stage modal requirement from history: first stage is feeding-stock/subject decision, not Wraith selection; next stage shows count/names of involved Wraiths;
-- preserve the absolute separation from ordinary `Drain Life`, local Mature-Hive feeding stock and retaliation;
-- inspect current RimWorld window/dialog APIs so the decision sequence stays paused and does not invent a fake quest system;
-- checkpoint the exact UI/data-flow decision before implementation.
+- inspect all current public WNG incidents, site parts, discovery/recovery events, research gates and acquisition paths;
+- compare them against the retained progression theme `mystery -> encounter -> evidence -> understanding -> reconstruction -> mastery`;
+- recover which historical site concepts are still requirements versus reference ideas only;
+- preserve Vardath's rejection of old fixed day-20-to-day-84 gating and keep major content reachable in shorter campaigns;
+- do not turn the mod into one giant starting research dump or make every eligible event fire together;
+- identify the smallest concrete missing progression slice that connects existing public systems without inventing unrelated content;
+- checkpoint that exact slice before implementation.
