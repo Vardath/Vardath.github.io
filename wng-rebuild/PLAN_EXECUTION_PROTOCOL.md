@@ -2,167 +2,139 @@
 
 Author/design authority: **Vardath**.
 
-This protocol is part of the WNG rebuild plan. It exists because prior implementation repeatedly started from partial recollection and only discovered omitted features after Vardath had to correct them. That process is not acceptable for this rebuild.
+This protocol is part of the WNG rebuild plan. The one-time broad conversation/history reconstruction now lives in `CANONICAL_RECOVERY_LEDGER.md`. The protocol's job is to keep future implementation aligned with that recovered history and current public state without making Vardath reconstruct it again.
 
-# ⛔ FIRST GATE: STARGATE LORE BEFORE CODE
+# ⛔ FIRST GATE: RECOVER STATE, THEN STARGATE LORE, THEN CODE
 
-**WNG is a Stargate mod. `WNG_IMPLEMENTATION_CHECKLIST.md` must be answered before every implementation pass.**
+Before every implementation pass:
 
-Before code, establish:
-- what this is in Stargate;
-- what it actually does in Stargate, including capabilities, limitations, scale, users and relationships;
-- what Vardath has said about it in chat/history;
-- what current public WNG `main` already does;
-- what historical WNG attempted and what failed;
-- what native RimWorld/Odyssey/Biotech already provides;
-- what optional Stargate integrations own;
-- and only then how to implement it faithfully and cleanly.
+1. read `STANDING_RULES.md`;
+2. read `CANONICAL_RECOVERY_LEDGER.md` completely;
+3. fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` and compare it to the ledger's recorded HEAD/state;
+4. read `WNG_IMPLEMENTATION_CHECKLIST.md`;
+5. read the active subsystem contract/plan documents;
+6. establish the actual Stargate identity/function of the thing being implemented;
+7. only then write code.
 
-Do not write a generic sci-fi approximation and check Stargate lore afterwards.
-
-An older note saying `next`, `unfinished`, `reconcile`, `correct` or `rebuild` does not prove a feature is absent from current `main`. Verify the current public state first. **Rebuild/correct/refine does not mean remove.**
+Raw historical chat is **not** a default step anymore. Retrieve it only for a genuine ledger gap/conflict, repo-vs-ledger contradiction, or explicit Vardath request. Resolve the issue once and write the resolution back into the ledger.
 
 ## Core rule
 
-**Do not code a subsystem from memory. Reconcile the whole subsystem first.**
+**Do not code a subsystem from memory. Reconcile the whole affected slice first.**
 
-The plan is not a loose suggestion to glance at after implementation. It is the default first-build specification. Newer explicit Vardath instructions override older plan text, and all values/systems remain editable later, but the current plan must be followed rigorously while building the first complete version.
+The current plan/ledger is the default first-build specification. Newer explicit Vardath instructions override it and must be written back into continuity before handoff.
 
 ## Required procedure before every subsystem implementation
 
-### 0. Pass the mandatory implementation checklist
-Read and answer `WNG_IMPLEMENTATION_CHECKLIST.md` first.
+### 1. Recover the current design and implementation state
 
-Required order:
-
-**STARGATE LORE -> VARDATH/CHAT -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
-
-Do not proceed to implementation while an applicable checklist gate is unanswered.
-
-### 1. Read the governing material
-Read, in order:
+Use:
 - `STANDING_RULES.md`;
+- `CANONICAL_RECOVERY_LEDGER.md`;
+- current public `main` and recent commits;
 - `WNG_IMPLEMENTATION_CHECKLIST.md`;
-- `CORRECTIONS_LOG.md`;
-- `MASTER_PLAN.md` sections relevant to the subsystem and adjacent dependencies;
-- any active subsystem document, such as `REPLICATOR_HIERARCHY.md` or `REPLICATOR_QUEEN.md`;
-- the current public 1.6 repository state and relevant recent commits.
+- relevant master-plan append/active subsystem contract(s);
+- retained assets and supplied external-mod source evidence where relevant.
 
 Do not depend on the private WNG repository for current work.
 
-### 2. Inventory the subsystem completely
-Before writing code, make an explicit working inventory of every known element belonging to the subsystem. Sources must include, where relevant:
-- Stargate canon/lore and the feature's real function;
-- current plan requirements;
-- Vardath chat/history and corrections;
-- existing public Defs/source and recent implementation history;
-- retained graphics/icons/textures;
-- retained audio if present;
-- faction/PawnKind/xenotype/race references;
+### 2. Pass the Stargate identity/function gate
+
+For each feature, establish:
+- what it is in Stargate;
+- what it actually does;
+- who uses/owns it;
+- its scale, limitations and interactions;
+- what visual/audio/behavioral cues make it recognisable;
+- how Vardath has chosen to represent it in WNG.
+
+Do not implement generic sci-fi first and retrofit lore afterwards.
+
+### 3. Inventory the affected slice completely
+
+Before writing code, make an explicit working inventory of every known related element, including where relevant:
+- current ledger requirements;
+- newest Vardath corrections;
+- current public Defs/source and recent commits;
+- retained graphics/icons/textures/audio;
+- faction/PawnKind/xenotype/race identity;
 - recipes/resources/research;
 - quests/incidents/sites;
-- integrations;
-- save-state requirements;
+- integrations and exact external Def/package IDs;
+- save-state/exact-pawn requirements;
 - native RimWorld/Odyssey/Biotech mechanics;
-- relevant historical WNG source only as reference evidence.
+- historical WNG evidence only when needed for a known gap.
 
-Assets are evidence. If an approved graphic exists for a form such as Shield adaptation, Artillery, Repairer, Burrower, Controller, Titan or Siege Mass, it must be reconciled against the feature inventory instead of ignored because the remembered code list was shorter.
+Assets are evidence. A retained/approved form or overlay must be accounted for rather than omitted because code memory is shorter.
 
-### 3. Build the feature map before implementation
-For each inventory item, record its intended relationship to the rest of the subsystem. Examples:
-- Stargate identity/function: what canon role is being represented and what must remain recognisable;
-- identity: race/xenotype/caste/PawnKind/faction/backstory;
-- physical hierarchy: what combines into what and what breaks down into what;
-- specialist branch: how a specialist appears and what it actually does;
-- adaptation: what evidence unlocks it, what gameplay effect it has, what visual representation exists;
-- economy: what resource is consumed/produced and how state survives transitions;
-- event: what triggers it, what real pawn/item/site state changes, how it ends;
-- integration: who owns which mechanics and what happens when the optional mod is absent;
-- vanilla mapping: what native game mechanic should remain authoritative and what WNG genuinely needs to add.
+### 4. Build the relationship map before implementation
 
-Do not start coding until this map is internally coherent and still recognisably Stargate.
+For every inventory item identify:
+- Stargate identity/function;
+- identity layer: race/xenotype/caste/PawnKind/faction/backstory;
+- physical hierarchy/transformations where relevant;
+- economy/resource flow;
+- state/save-load requirements;
+- event trigger and completion transaction;
+- native-game ownership vs WNG custom behavior;
+- optional-mod ownership and absent-mod behavior;
+- art/audio/UI requirements that the mechanics must leave room for.
 
-### 4. Distinguish first-build defaults from implementation invariants
-Author-tunable values must remain easy to change. Prefer Defs, settings or centralized configuration where practical for:
+Do not start coding until the map is coherent and still recognisably Stargate.
+
+### 5. Preserve author-tunable design
+
+Prefer Defs/settings/centralized configuration for author-facing values such as:
 - story/event timing;
-- cooldowns that affect balance;
-- population counts;
-- raid/event frequency;
+- cooldowns and population caps;
+- raid/request frequency;
 - resource costs/yields;
 - combat/stat tuning;
 - progression thresholds.
 
-Technical constants may remain in code when they are genuinely implementation details rather than author-facing design locks.
+Technical constants may remain in code when they are genuinely implementation details.
 
-Do not create anti-regression tests that freeze a current balance value or design choice.
+Do not create tests whose purpose is to freeze a balance/design choice.
 
-### 5. Implement the whole accounted slice
-Implementation may be staged, but the stage must be explicit. For every feature-map item, end the pass with one of three statuses:
+### 6. Implement the whole accounted slice
+
+Implementation may be staged, but every known item must finish the pass as:
 - **implemented**;
-- **unfinished — dependency recorded**;
+- **unfinished — dependency explicitly recorded**; or
 - **changed/rejected by Vardath**.
 
-There is no fourth status called `forgotten`, `silently removed`, or `assumed absent from an old note`.
+There is no forgotten/silently removed state.
 
-Do not represent an unfinished feature as complete through flavor text, placeholder Defs, marker genes or empty comps.
+Do not represent an unfinished mechanic as finished with flavor text, a marker gene, empty comp or decorative-only substitute.
 
-Do not invent a generic fallback, duplicate resource, new faction, substitute technology or altered canon role merely because it is easier to implement. Any necessary abstraction must remain consistent with Stargate lore and Vardath's instructions.
+Do not invent a fallback resource/faction/technology merely because it is easier. In particular, do not repeat the rejected invented Goa'uld uranium/chemfuel fallback.
 
-### 6. Verify function, not doctrine
-Use only checks necessary to establish that the current implementation is usable, such as:
+### 7. Verify function proportionately
+
+Use checks needed for the current slice, such as:
 - C# compile;
-- XML/Def load/reference sanity when needed;
-- direct code inspection for transaction correctness;
-- later live RimWorld testing/log review.
+- XML/Def/reference sanity;
+- code inspection for exact transaction/state behavior;
+- real RimWorld testing/log review when available/required.
 
-Verification must also include a design sanity question: **does this still behave like the Stargate thing it is supposed to represent?**
+Static green does not outrank actual `Player.log`, RimDoctor, screenshots or live behavior.
 
-Do not rebuild the prior anti-regression/release-gate framework. A test must not become the authority over Vardath's design.
+Do not rebuild the old audit/release-gate bureaucracy.
 
-### 7. Reconcile again before moving on
-Before leaving the subsystem:
-- compare the implemented state against `WNG_IMPLEMENTATION_CHECKLIST.md` and the feature inventory;
-- re-check Stargate lore/function for any abstraction that drifted during implementation;
-- inspect current public state so the handoff records what actually exists now;
-- inspect retained assets again for unaccounted forms/content;
-- inspect plan/corrections for missed branches;
-- record any unfinished dependency;
-- update continuity documentation if Vardath corrected the design/process.
+### 8. Reconcile before moving on
 
-Only after this reconciliation should work move to another subsystem.
+Before leaving the slice:
+- compare implementation against the full inventory and checklist;
+- re-check Stargate function/identity for drift;
+- inspect current public state for accidental removal/regression;
+- record every unfinished dependency;
+- update any Vardath correction/supersession;
+- update `CANONICAL_RECOVERY_LEDGER.md`.
 
-## Current Replicator application
+Only then move to the next subsystem.
 
-The fresh public reset is currently in the **block Replicator foundation** and must remain there until the full planned foundation is accounted for.
+## Mandatory working order
 
-Physical hierarchy currently intended:
+**CANONICAL LEDGER -> STARGATE LORE -> CURRENT PUBLIC STATE -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE LEDGER/HANDOFF**
 
-**Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass** through upward recombination.
-
-**Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base** through genuine destruction breakup.
-
-Split-born children have a current first-build recombination delay of roughly one in-game hour (historically 2,500 ticks) so killing a large form does not result in immediate recreation of that same large form. The delay is gameplay behavior and remains tunable.
-
-The Replicator foundation also includes, and must not omit:
-- Controller;
-- Repairer;
-- Burrower;
-- Artillery/Siege support;
-- Ranged adaptation;
-- Armor adaptation;
-- Power adaptation;
-- Grav adaptation;
-- Shield adaptation / Shield Replicators;
-- learned anti-shield/countermeasure development;
-- matter economy and dangerous Replicator Matter;
-- assimilation;
-- regeneration;
-- EMP suppression;
-- containment behavior;
-- swarm coordination/AI;
-- player-owned safety/control behavior;
-- Child's Toy/player branch;
-- state inheritance through split/recombine where appropriate;
-- later human-form/Asuran/Queen sovereign interactions as dependent branches.
-
-Do not move to Wraith implementation while known block-Replicator foundation features are still silently absent. If a dependent later feature cannot yet be completed, mark the dependency explicitly and continue completing everything that can be done in the current layer.
+The ledger update is part of completing the pass, not optional paperwork. It is what makes the next recovery smooth.
