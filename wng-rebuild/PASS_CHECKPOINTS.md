@@ -24,131 +24,77 @@ Never write a checkpoint as though branch-only work is already public. Never tre
 
 ---
 
-# CHECKPOINT — 2026-09-11 — Neural Interface / exact human-form reconstruction validated on branch
+# CHECKPOINT — 2026-09-11 — Neural Interface promoted to public
 
-## Public implementation state
+Public mod `main` is now:
 
-Public mod `main` remains:
+**`8495b846c7dd31c079db6d4f007be490df3247f3` — `rebuild: add Neural Interface and exact human-form reconstruction`**
 
-**`0b8150f3ff6ca7138482ba9a604847f5967fc48b` — captured Queen sovereign consequences.**
+Promotion used the already validated clean branch tree `64e1020a0d3bbe1ec06aac64db52428bbb52dedf` with parent `0b8150...`, producing one clean public commit. Temporary validation workflow history did not enter public `main`.
 
-The Neural Interface work in this checkpoint is branch-only until promotion.
+Public diff from `0b8150...` contains only intended Neural Interface files:
+- `Defs/AbilityDefs/Abilities_NeuralInterface.xml` — added;
+- `Defs/GeneDefs/Genes_AsuranFabrication.xml` — Neural Interface ability grant added;
+- `Defs/PawnKindDefs/PawnKinds_HumanFormReplicator.xml` — added;
+- `Source/WNG/Asuran/AsuranNeuralInterface.cs` — added.
 
-## Active branch
+Validation inherited by the promoted tree:
+- initial run **34597748048** exposed obsolete historical `Gene.Xenogene` API use;
+- implementation corrected to current `Pawn_GeneTracker.Xenogenes` semantics;
+- final run **34599563874 — SUCCESS**;
+- Release build: **0 warnings / 0 errors**;
+- all **102** current Def/Patch XML files parsed;
+- native recruit/prisoner/slave operations, exact core identity snapshot, current gene-type preservation and transactional Nanite Reserve rollback invariants passed.
 
-Branch:
-
-**`rebuild/neural-interface-foundation-20260911`**
-
-Clean branch HEAD after removing the temporary validator:
-
-**`7220a394173d850863156123b8bf27016b7290a5` — `cleanup: remove Neural Interface validator`**
-
-Validated source/Def tree was tested at `e3defb46c82441e31e8e7bea1f788e9174f30889`; `7220a...` differs only by removal of the temporary validation workflow.
-
-## What this pass implemented
-
-New source:
-- `Source/WNG/Asuran/AsuranNeuralInterface.cs`
-
-New Defs:
-- `Defs/AbilityDefs/Abilities_NeuralInterface.xml`
-- `Defs/PawnKindDefs/PawnKinds_HumanFormReplicator.xml`
-
-Updated:
-- `Defs/GeneDefs/Genes_AsuranFabrication.xml`
-
-Implemented behavior:
-- real touch-range `WNG_NeuralInterface` ability granted by the existing `WNG_AsuranNanitePhysiology` gene;
-- use restricted to player-controlled living nanite humanoids after `WNG_AsuranFabrication` research;
-- valid subjects are other living spawned biological humanlikes on the same map; existing nanite humanoids and block Replicators are excluded;
-- operation state is revalidated at execution/touch range so a changed/vanished subject cancels safely;
-- native faction recruitment uses `Pawn.SetFaction(caster.Faction, caster)` rather than a fake allegiance flag;
-- native prisoner state uses `Pawn_GuestTracker.SetGuestStatus(..., GuestStatus.Prisoner)` and requires a downed/prisoner/slave-compatible target state;
-- Ideology-gated slavery uses native `GuestStatus.Slave` and is unavailable without Ideology;
-- direct skill-pattern extraction copies skill levels upward into the operator, passions and XP state using native `SkillRecord` fields;
-- real `WNG_HumanFormReplicatorCopy` PawnKind added for reconstructed synthetic persons;
-- reconstruction leaves the exact biological source pawn intact and creates a genuinely separate pawn;
-- current reconstruction cost is Def-tunable and first-build value is 60% of the operator's existing Nanite Reserve;
-- reserve is checked before generation but spent only after a viable copy has been created and physically placed;
-- if placement fails, reserve is not spent;
-- if reserve commit fails after placement, the generated copy is destroyed/rolled back instead of granting a free duplicate;
-- exact person snapshot preserves source name, gender, biological/chronological age, childhood/adulthood backstories, explicit title and birth surname, body/head/hair/skin presentation, traits, skill levels, passions and XP;
-- source genes are copied using the current RimWorld gene tracker distinction between `Xenogenes` and endogenes; the obsolete private-build `Gene.Xenogene` assumption was removed;
-- WNG nanite identity genes are layered after the source identity/genome pass while the final PawnKind remains the current WNG nanite humanoid synthetic identity;
-- source pawn is never deleted/recreated as part of copy semantics.
-
-## Validation / defect fixed
-
-Initial validation run:
-
-**`34597748048` — FAILED**
-
-Failure was one compile-time API mismatch inherited from historical reference assumptions:
-- `Gene.Xenogene` does not exist in the current referenced RimWorld API.
-
-The implementation was corrected against current native `Pawn_GeneTracker` API by determining source gene type through:
-- `source.genes.Xenogenes.Contains(sourceGene)`
-
-Final validation run:
-
-**`34599563874` — SUCCESS**
-
-Validated:
-- `dotnet build Source/WNG/WNG.csproj -c Release` — passed with **0 warnings / 0 errors**;
-- all **102** current Def/Patch XML files parsed successfully;
-- native recruitment/prisoner/slave calls present;
-- exact age/backstory/skill/passion/gene snapshot invariants present;
-- source xenogene/endogene distinction present using current API;
-- transactional Nanite Reserve commit/rollback present;
-- Neural Interface ability/gene/PawnKind wiring present.
-
-This is source/Def validation, **not live RimWorld validation**.
-
-## Remaining human-form slice
-
-Still required after this foundation:
-- live-game validation of Neural Interface targeting, cooldown/operation UI, recruit/prisoner/slavery transitions and copy spawning/save-load;
-- infiltration/impersonation/reveal as a real mechanic;
-- Quiet Lattice non-hostile enclave;
-- player human-form variants and broader role/faction composition;
-- native WNG backstories;
-- further copy fidelity audit for optional DLC identity trackers/presentation not explicitly included in the current exact core snapshot;
-- final UI/art/audio polish.
+`CURRENT_PUBLIC_STATE.md` has been updated to exact public HEAD `8495b...`, Neural Interface/core exact copy-reconstruction is removed from required implementation debt, and live-test/optional broader DLC-copy-fidelity work remains explicitly open.
 
 ## Exact next pass
 
-**Promotion + continuity pass**, then begin real human-form infiltration/reveal foundation:
+Create a fresh branch from `8495b...` for the **human-form infiltration / impersonation / reveal foundation**.
 
-1. Recheck public `main` is still `0b8150...`.
-2. Promote the clean validated Neural Interface tree as a clean public commit without temporary validator history.
-3. Verify intended public diff only.
-4. Update `CURRENT_PUBLIC_STATE.md` to the new public SHA and remove Neural Interface/exact copy-reconstruction from required debt while retaining live-test and optional-fidelity debt.
-5. Update this checkpoint with the promoted SHA.
-6. Create a fresh branch from the new public HEAD for infiltration/reveal.
-7. Implement a real persistent hidden/revealed synthetic identity state, with concrete reveal paths from scanning/injury/suspicious behavior rather than flavor text.
-8. Checkpoint before the next subsystem.
-
----
-
-# PRIOR CHECKPOINT — captured Queen consequences promoted to public
-
-Public milestone:
-
-**`0b8150f3ff6ca7138482ba9a604847f5967fc48b` — `rebuild: add captured Queen sovereign consequences`**
-
-Promotion used the validated clean branch tree and did not copy temporary validation/helper commits into public history.
-
-Captured-Queen validation runs:
-- remote sovereignty: **34596238345 — SUCCESS**;
-- mixed sovereign threat: **34596657164 — SUCCESS**.
+Required first-pass boundary:
+- exact pawn remains the same pawn throughout conceal/reveal;
+- hidden/revealed state is persistent and save/load safe;
+- concealment must materially affect what the player is told/shown, not only flavor text;
+- reveal is permanent unless Vardath later specifies a re-conceal mechanic;
+- implement real current-mechanic reveal triggers for scanning, meaningful injury/damage exposure and suspicious synthetic behavior where current APIs allow them;
+- Queen uniqueness/block sovereignty remain separate;
+- validate source/Defs and checkpoint before moving to Quiet Lattice or another subsystem.
 
 ---
 
-# EARLIER PUBLIC MILESTONES
+# PRIOR CHECKPOINT — Neural Interface / exact human-form reconstruction validated on branch
+
+Public `main` at that checkpoint was `0b8150...`.
+
+Clean branch HEAD:
+
+**`7220a394173d850863156123b8bf27016b7290a5`**
+
+Validated source/Def tree: `e3defb46c82441e31e8e7bea1f788e9174f30889`.
+
+Implemented:
+- touch-range player nanite-human Neural Interface;
+- native faction recruitment;
+- native prisoner status;
+- Ideology-gated native slave status;
+- skill/passion/XP copying;
+- real separate reconstructed human-form pawn;
+- Def-tunable 60% first-build Nanite Reserve copy cost;
+- transactional placement/cost rollback;
+- source name, gender, age, backstories, title/surname, appearance, traits, skills/passions/XP and genome snapshot;
+- current RimWorld xenogene/endogene distinction;
+- WNG nanite identity layering after source-person snapshot.
+
+Final validation run: **34599563874 — SUCCESS**.
+
+---
+
+# PRIOR PUBLIC MILESTONES
 
 - Temporary Asuran lattice intrusion: **`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**.
 - Recurring exact-map Queen recovery: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**.
 - Captured Queen sovereign consequences: **`0b8150f3ff6ca7138482ba9a604847f5967fc48b`**.
+- Neural Interface / exact human-form reconstruction: **`8495b846c7dd31c079db6d4f007be490df3247f3`**.
 
 All completed public slices were source/Def validated before promotion; broad live RimWorld validation remains outstanding.
