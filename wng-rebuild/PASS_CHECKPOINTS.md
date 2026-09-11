@@ -24,88 +24,124 @@ Never write a checkpoint as though branch-only work is already public. Never tre
 
 ---
 
-# CHECKPOINT — 2026-09-11 — captured Queen consequences promoted to public
+# CHECKPOINT — 2026-09-11 — Neural Interface / exact human-form reconstruction validated on branch
 
 ## Public implementation state
 
-Public mod `main` is now:
+Public mod `main` remains:
 
-**`0b8150f3ff6ca7138482ba9a604847f5967fc48b` — `rebuild: add captured Queen sovereign consequences`**
+**`0b8150f3ff6ca7138482ba9a604847f5967fc48b` — captured Queen sovereign consequences.**
 
-Promotion was created as one clean public commit using the already-validated clean branch tree with parent `9ce713...`. Temporary validation/helper commits were **not** copied into public `main` history.
+The Neural Interface work in this checkpoint is branch-only until promotion.
 
-Public diff from `9ce713...` contains only intended files:
-- `Defs/IncidentDefs/Incidents_CapturedQueen.xml` — added;
-- `Source/WNG/Replicators/ReplicatorCapturedQueenThreats.cs` — added;
-- `Source/WNG/Replicators/ReplicatorSovereignty.cs` — captured-retained-Queen remote authority foundation;
-- `Source/WNG/Replicators/ReplicatorAssimilation.cs` — offspring sovereignty inheritance.
+## Active branch
 
-No temporary captured-Queen validation workflow/helper is present in the promoted tree.
+Branch:
 
-## Validation inherited by promoted tree
+**`rebuild/neural-interface-foundation-20260911`**
 
-- remote-sovereignty run **34596238345** — SUCCESS;
-- mixed-threat run **34596657164** — SUCCESS;
-- C# Release build passed;
-- all current Def/Patch XML parsed;
-- captured Queen retention/remote-authority/assimilation inheritance invariants passed;
-- save-persistent scheduler/autonomous-source block/real mixed assault invariants passed.
+Clean branch HEAD after removing the temporary validator:
 
-This remains source/Def validation, **not live RimWorld validation**.
+**`7220a394173d850863156123b8bf27016b7290a5` — `cleanup: remove Neural Interface validator`**
 
-## Continuity state
+Validated source/Def tree was tested at `e3defb46c82441e31e8e7bea1f788e9174f30889`; `7220a...` differs only by removal of the temporary validation workflow.
 
-`CURRENT_PUBLIC_STATE.md` is updated to exact public HEAD `0b8150...` and removes captured-Queen sovereign consequences/mixed threats from the required debt list.
+## What this pass implemented
+
+New source:
+- `Source/WNG/Asuran/AsuranNeuralInterface.cs`
+
+New Defs:
+- `Defs/AbilityDefs/Abilities_NeuralInterface.xml`
+- `Defs/PawnKindDefs/PawnKinds_HumanFormReplicator.xml`
+
+Updated:
+- `Defs/GeneDefs/Genes_AsuranFabrication.xml`
+
+Implemented behavior:
+- real touch-range `WNG_NeuralInterface` ability granted by the existing `WNG_AsuranNanitePhysiology` gene;
+- use restricted to player-controlled living nanite humanoids after `WNG_AsuranFabrication` research;
+- valid subjects are other living spawned biological humanlikes on the same map; existing nanite humanoids and block Replicators are excluded;
+- operation state is revalidated at execution/touch range so a changed/vanished subject cancels safely;
+- native faction recruitment uses `Pawn.SetFaction(caster.Faction, caster)` rather than a fake allegiance flag;
+- native prisoner state uses `Pawn_GuestTracker.SetGuestStatus(..., GuestStatus.Prisoner)` and requires a downed/prisoner/slave-compatible target state;
+- Ideology-gated slavery uses native `GuestStatus.Slave` and is unavailable without Ideology;
+- direct skill-pattern extraction copies skill levels upward into the operator, passions and XP state using native `SkillRecord` fields;
+- real `WNG_HumanFormReplicatorCopy` PawnKind added for reconstructed synthetic persons;
+- reconstruction leaves the exact biological source pawn intact and creates a genuinely separate pawn;
+- current reconstruction cost is Def-tunable and first-build value is 60% of the operator's existing Nanite Reserve;
+- reserve is checked before generation but spent only after a viable copy has been created and physically placed;
+- if placement fails, reserve is not spent;
+- if reserve commit fails after placement, the generated copy is destroyed/rolled back instead of granting a free duplicate;
+- exact person snapshot preserves source name, gender, biological/chronological age, childhood/adulthood backstories, explicit title and birth surname, body/head/hair/skin presentation, traits, skill levels, passions and XP;
+- source genes are copied using the current RimWorld gene tracker distinction between `Xenogenes` and endogenes; the obsolete private-build `Gene.Xenogene` assumption was removed;
+- WNG nanite identity genes are layered after the source identity/genome pass while the final PawnKind remains the current WNG nanite humanoid synthetic identity;
+- source pawn is never deleted/recreated as part of copy semantics.
+
+## Validation / defect fixed
+
+Initial validation run:
+
+**`34597748048` — FAILED**
+
+Failure was one compile-time API mismatch inherited from historical reference assumptions:
+- `Gene.Xenogene` does not exist in the current referenced RimWorld API.
+
+The implementation was corrected against current native `Pawn_GeneTracker` API by determining source gene type through:
+- `source.genes.Xenogenes.Contains(sourceGene)`
+
+Final validation run:
+
+**`34599563874` — SUCCESS**
+
+Validated:
+- `dotnet build Source/WNG/WNG.csproj -c Release` — passed with **0 warnings / 0 errors**;
+- all **102** current Def/Patch XML files parsed successfully;
+- native recruitment/prisoner/slave calls present;
+- exact age/backstory/skill/passion/gene snapshot invariants present;
+- source xenogene/endogene distinction present using current API;
+- transactional Nanite Reserve commit/rollback present;
+- Neural Interface ability/gene/PawnKind wiring present.
+
+This is source/Def validation, **not live RimWorld validation**.
+
+## Remaining human-form slice
+
+Still required after this foundation:
+- live-game validation of Neural Interface targeting, cooldown/operation UI, recruit/prisoner/slavery transitions and copy spawning/save-load;
+- infiltration/impersonation/reveal as a real mechanic;
+- Quiet Lattice non-hostile enclave;
+- player human-form variants and broader role/faction composition;
+- native WNG backstories;
+- further copy fidelity audit for optional DLC identity trackers/presentation not explicitly included in the current exact core snapshot;
+- final UI/art/audio polish.
 
 ## Exact next pass
 
-Start a fresh bounded public-repo branch from `0b8150...` for the **Human-form Neural Interface / exact copy-reconstruction foundation**.
+**Promotion + continuity pass**, then begin real human-form infiltration/reveal foundation:
 
-Before implementing:
-1. inspect current public human-form Asuran/Nanite Reserve/workshop/resource architecture;
-2. inspect historical/private Neural Interface only as behavior/reference evidence, never as a known-good source to copy wholesale;
-3. map each operation to native RimWorld 1.6/DLC mechanics;
-4. first coherent implementation pass should establish the real Neural Interface building/interaction transaction layer and native recruit/imprison/Ideology-enslave operations, plus the resource-cost/rollback mechanism required by later copying;
-5. exact copy/reconstruction of biography/name/skills/passions/XP/appearance/genome follows as the next bounded pass unless it can be safely completed in the same validated batch;
-6. checkpoint before moving on.
-
----
-
-# PRIOR CHECKPOINT — captured Queen mixed sovereign threat validated on branch
-
-Public mod `main` at that checkpoint remained `9ce713...`.
-
-Clean branch HEAD:
-
-**`4ec9872d5f34c1c1ed542e0da93b5052b25e45f8`**
-
-Implemented:
-- Def-tunable/save-persistent captured-Queen consequence scheduler;
-- scheduler-only `WNG_CapturedQueenSovereignStrike`;
-- real mixed Asuran + Queen-domain block force;
-- autonomous-source block generation then real captured-Queen assignment;
-- real hostile `LordJob_AssaultColony`;
-- authority collapse/reversion when exact retention ends;
-- bounded points-scaled composition and rollback.
-
-Validation run: **34596657164 — SUCCESS**.
+1. Recheck public `main` is still `0b8150...`.
+2. Promote the clean validated Neural Interface tree as a clean public commit without temporary validator history.
+3. Verify intended public diff only.
+4. Update `CURRENT_PUBLIC_STATE.md` to the new public SHA and remove Neural Interface/exact copy-reconstruction from required debt while retaining live-test and optional-fidelity debt.
+5. Update this checkpoint with the promoted SHA.
+6. Create a fresh branch from the new public HEAD for infiltration/reveal.
+7. Implement a real persistent hidden/revealed synthetic identity state, with concrete reveal paths from scanning/injury/suspicious behavior rather than flavor text.
+8. Checkpoint before the next subsystem.
 
 ---
 
-# PRIOR CHECKPOINT — captured Queen remote-sovereignty foundation validated on branch
+# PRIOR CHECKPOINT — captured Queen consequences promoted to public
 
-Validated branch milestone:
+Public milestone:
 
-**`70533bf848a6b1d00f15bf5f6a7b06c7e49a25dc`**
+**`0b8150f3ff6ca7138482ba9a604847f5967fc48b` — `rebuild: add captured Queen sovereign consequences`**
 
-Implemented:
-- assimilation-born sovereignty inheritance;
-- exact captured-Queen retention against native `KidnappedPawnsTracker`;
-- captured-Queen faction lookup;
-- real remote exact-Queen authority assignment/validation;
-- exact authority collapse/reversion when retention ends.
+Promotion used the validated clean branch tree and did not copy temporary validation/helper commits into public history.
 
-Validation run: **34596238345 — SUCCESS**.
+Captured-Queen validation runs:
+- remote sovereignty: **34596238345 — SUCCESS**;
+- mixed sovereign threat: **34596657164 — SUCCESS**.
 
 ---
 
@@ -115,4 +151,4 @@ Validation run: **34596238345 — SUCCESS**.
 - Recurring exact-map Queen recovery: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**.
 - Captured Queen sovereign consequences: **`0b8150f3ff6ca7138482ba9a604847f5967fc48b`**.
 
-All were source/Def validated before public promotion; broad live RimWorld validation remains outstanding.
+All completed public slices were source/Def validated before promotion; broad live RimWorld validation remains outstanding.
