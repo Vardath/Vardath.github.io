@@ -8,116 +8,81 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-12 — AntiShield reconciliation complete
+# CHECKPOINT — 2026-09-12 — AntiShield native-projectile integration validated on branch
 
-## Public implementation state
+## Public state
 
 Public mod `main` remains:
 
 **`12590e8ea88ce208a640fe2475de1843a7e227af` — physical Replicator Grav adaptation.**
 
-No AntiShield implementation code was changed in this reconciliation pass.
+AntiShield work is branch-only at this checkpoint.
 
-## Recovered plan/history boundary
+## Active branch
 
-The recovered plan/history requires:
-- shield adaptation / Shield Replicators remain a real learned branch;
-- AntiShield is **later learned countermeasure development**, not the same flag as learning Shield;
-- repeated shield/barrier evidence is required before AntiShield unlocks;
-- learned adaptation state survives hierarchy/swarm transactions;
-- EMP remains a meaningful counter;
-- broader non-Replicator shield interaction was explicitly deferred until concrete shield systems existed.
+**`rebuild/replicator-antishield-20260912`**
 
-Current public source confirms:
-- `antiShieldEvidenceRequired` is Def-tunable and currently 3;
-- assimilating a Def whose identity contains `shield` or `barrier` learns Shield, increments persistent `shieldEvidence`, and unlocks AntiShield only at the evidence threshold;
-- evidence/state copy, merge and save/load correctly;
-- current AntiShield gameplay only multiplies adaptive ranged damage against another block Replicator's WNG adaptive shield.
+Validated clean branch HEAD:
 
-## Concrete current technical defect
+**`625ab2254ed5e4a8d88985822836554c6750f657` — `rebuild: route Replicator adaptive fire through native shields`**
 
-Current Replicator adaptive ranged fire in `CompReplicatorAdaptationEffects` calls `target.TakeDamage(...)` directly.
+Clean compare against public contains exactly three intended files:
+- `Defs/ThingDefs/Projectiles_Replicator.xml` — added;
+- `Source/WNG/Replicators/ReplicatorAdaptiveProjectile.cs` — added;
+- `Source/WNG/Replicators/ReplicatorAdaptationEffects.cs` — modified.
 
-That means RimWorld's normal projectile flight/interception path never runs, so native energy shields such as `CompProjectileInterceptor` / `CompGravshipShieldGenerator` cannot intercept the shot at all. The missing cross-system AntiShield behavior therefore cannot be repaired correctly by merely adding more direct damage multipliers.
+Temporary workflow/script helpers are absent from the clean branch tree.
 
-## Stargate lore boundary
+## What this pass implements
 
-Lore supports Replicators learning and reproducing capabilities/countermeasures from advanced technology they study and consume, including ship defensive technology. This supports WNG's repeated-shield-evidence countermeasure progression.
+- learned Replicator adaptive ranged fire no longer calls direct `target.TakeDamage`; it launches a real native projectile;
+- new `WNG_ReplicatorAdaptiveBolt` uses current RimWorld 1.6 `BaseBullet`/`Bullet` projectile machinery;
+- native walls/cover/projectile interception now participate instead of being bypassed;
+- native `CompProjectileInterceptor` / `CompGravshipShieldGenerator` energy shields can intercept ordinary adaptive shots normally;
+- launcher-side existing Def-tunable ranged body damage and armor penetration remain the source values for real body impacts;
+- when the exact launcher has learned `ReplicatorAdaptation.AntiShield`, the projectile reports the existing Def-tunable `antiShieldDamageMultiplier`-amplified `DamageAmount` to native shield interception;
+- genuine ordinary unshielded body impacts are explicitly resolved at normal configured body damage, so AntiShield is not a generic body-damage multiplier;
+- current block-Replicator adaptive-shield countermeasure behavior is preserved: an AntiShield shot hitting a WNG adaptive-shield Replicator still presents amplified damage to that WNG shield transaction;
+- current EMP and `ReplicatorCombatPermission` gates remain before adaptive fire;
+- no Harmony patch was introduced;
+- no interaction with `CompWraithHullRegenerator` exists, preserving the rule that Wraith living-hull regeneration is biological repair, not an AntiShield target.
 
-Do **not** implement AntiShield as:
-- the Ancient anti-Replicator gun/disruptor (ARG);
-- a generic anti-Replicator energy wave;
-- a shield-deleting aura;
-- immunity to all shields;
-- generic bonus damage against ordinary unshielded targets.
+## Validation
 
-AntiShield here is specifically **learned modulation/countermeasure behavior against energy-shield technology**.
+First workflow attempt `34610597370` failed before creating a job because the temporary workflow wrapper was malformed. No source patch from that failed run was committed/promoted.
 
-## Concrete native shield systems confirmed
+Corrected validation run:
 
-Current RimWorld/Odyssey exposes:
-- `CompProjectileInterceptor`;
-- `CompGravshipShieldGenerator : CompProjectileInterceptor`;
-- `ThingRequestGroup.ProjectileInterceptor` used by native projectile flight;
-- `CheckIntercept(Projectile, lastExactPos, newExactPos)` which consumes shield hit points using the projectile's `DamageAmount`;
-- public `Active`, `currentHitPoints`, `HitPointsMax`, radius/ground/air interception configuration.
+**`34610731875` — SUCCESS**
 
-Current WNG concrete true-energy-shield target:
-- `WNG_AsuranShieldEmitter` uses native `CompGravshipShieldGenerator` with a real projectile-interceptor shield pool.
+Passed:
+- patch application;
+- Release C# build;
+- all Def/Patch XML parsing;
+- native projectile launch invariants;
+- no remaining direct adaptive `TakeDamage` path;
+- custom AntiShield projectile/shield-vs-body distinction;
+- projectile Def/class wiring;
+- explicit absence of Wraith living-hull AntiShield coupling;
+- temporary validation workflow and patch script removed by clean branch HEAD.
 
-Explicit non-target:
-- Wraith gravship living-hull regeneration is biological repair, **not** an energy shield and must never be affected by AntiShield.
-
-## Exact implementation decision
-
-**Convert the learned Replicator adaptive ranged attack from direct `TakeDamage` into a real WNG projectile using RimWorld's normal `Projectile` / `Bullet` flight path.**
-
-This makes normal shield behavior correct first:
-- a non-AntiShield Replicator adaptive shot is intercepted normally by native projectile shields;
-- a shot that reaches an unshielded pawn applies the existing adaptive ranged body damage/armor penetration;
-- ordinary collision, cover and projectile-interceptor behavior become native rather than bypassed.
-
-**AntiShield effect:** if the exact launcher has learned `ReplicatorAdaptation.AntiShield`, its adaptive projectile presents increased effective `DamageAmount` **to native projectile interceptors**, using the existing Def-tunable `antiShieldDamageMultiplier` as the first-build shield-drain multiplier.
-
-Body-hit boundary:
-- AntiShield must not simply increase normal body damage after a native shield has been bypassed/depleted;
-- the custom projectile should distinguish shield-interception damage from ordinary impact damage;
-- current WNG Replicator adaptive-shield behavior must remain at least functionally equivalent to today's countermeasure behavior rather than accidentally losing the existing Replicator-vs-Replicator interaction.
-
-A technically compatible native path exists because:
-- `Projectile.DamageAmount` is virtual and is what `CompProjectileInterceptor.CheckIntercept` reads when reducing shield HP;
-- shield interception then calls projectile `Impact(..., blockedByShield: true)` and ends the projectile;
-- `Bullet.Impact` is virtual, so a WNG bullet subclass can report amplified shield-drain damage during flight/interception while using normal configured body damage on a genuine non-shield impact.
-
-## Required implementation boundaries
-
-Next implementation pass must:
-1. create one real WNG adaptive projectile Def/class rather than direct damage;
-2. launch it from the exact Replicator pawn toward the exact hostile target using native projectile launch semantics;
-3. keep current ranged range/cooldown/base damage/armor penetration Def-tunable;
-4. make native `CompProjectileInterceptor` shields intercept normal adaptive shots naturally;
-5. when launcher has AntiShield, multiply shield HP depletion using Def-tunable `antiShieldDamageMultiplier`;
-6. preserve normal body damage instead of multiplying all post-shield damage;
-7. preserve the existing WNG adaptive-shield countermeasure behavior for block Replicator shields;
-8. respect existing EMP and `ReplicatorCombatPermission` gates;
-9. do not affect Wraith living-hull regeneration;
-10. do not add Harmony patches if a native projectile subclass is sufficient;
-11. source/Def validate and checkpoint branch before promotion.
-
-## Explicit future dependency boundary
-
-This pass covers current native projectile-interceptor shields. Optional third-party shield systems that do not derive from / participate in RimWorld's native projectile-interceptor path remain separate integration dependencies and must not be guessed or patched blindly.
+This is **source/Def validation, not live RimWorld validation**.
 
 ## Exact next pass
 
-**Implement native adaptive projectile + AntiShield shield-drain integration only** on a fresh public-repo branch from `12590e8...`. Do not move into Wraith Growth Chamber or another subsystem until this implementation is validated, checkpointed, and promoted/closed.
+**Promotion-only pass:**
+1. recheck public `main` is still `12590e8...`;
+2. promote clean tree from branch HEAD `625ab225...` as one public commit without temp history;
+3. verify public diff is exactly the three intended files;
+4. update `CURRENT_PUBLIC_STATE.md` and this checkpoint to the promoted SHA;
+5. close AntiShield as implemented foundation / live-test-needed;
+6. only then reconcile the next required subsystem, currently Wraith Growth Chamber unless newer Vardath instruction changes priority.
 
 ---
 
-# PRIOR PUBLIC MILESTONE — Replicator Grav adaptation
+# PREVIOUS RECONCILIATION DECISION
 
-Public milestone: **`12590e8ea88ce208a640fe2475de1843a7e227af`**.  
-Validation run: **`34609531708` — SUCCESS**.
+AntiShield is learned shield-countermeasure modulation after repeated shield evidence. It is not ARG anti-Replicator disruption, not a shield-deleting aura, not generic shield immunity, and not generic bonus body damage. Current native projectile-interceptor shields are the concrete supported target; third-party non-native shield systems remain future explicit integrations.
 
 ---
 
