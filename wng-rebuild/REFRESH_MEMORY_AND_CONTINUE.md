@@ -75,8 +75,13 @@ If it has become generic sci-fi rather than recognisably Stargate, redesign befo
 - **Human-form nanite physiology is implemented** using native food behavior as Nanite Reserve, with same-tick biological Malnutrition removal, reserve-funded repair/fabrication and EMP disruption.
 - **The exact Replicator Queen / first Asuran recovery layer is implemented.** One exact age-13 female nanite-humanoid Queen is physically held in a real cryptosleep casket, recruited only on real vault release, and targeted by an all-or-nothing four-operative nonlethal recovery team using a physical native Asuran Jumper.
 - Queen capture is committed only at the real leaving-skyfaller map-exit boundary when that exact pawn is still inside that exact transit container.
+- **Exact-Queen block sovereignty is implemented.** Every WNG block form inherits persistent controller-domain state; the exact Queen can genuinely acquire exact block pawns through real faction transfer and dedicated commands.
+- Queen authority survives real split/recombine transactions with adaptation/stored-matter conservation and exact controller-domain isolation.
+- Same faction does not mean same sovereign domain; Controller coordination, Repairer support, retaliation and recombination respect the explicit domain boundary.
+- EMP and active Replicator containment interfere with Queen control rather than being bypassed.
 - Ordinary Asurans do not possess the Queen's sovereign authority.
 - Block Replicators keep their separate stored-matter economy; human-form Nanite Reserve does not replace it.
+- `NeuralLattice` and `TemporaryAsuran` are reserved distinct controller-domain paths; do not collapse them into Queen authority.
 - Do not invent a Goa'uld uranium/chemfuel fallback or any other unspecified substitute.
 - Supplied ONAC/RimGate/Stargates source identities recorded in the ledger/contracts are authoritative for optional integrations.
 - Use **Wraith Grav Engine**, not obsolete Wraith Gravcore.
@@ -88,11 +93,21 @@ If it has become generic sci-fi rather than recognisably Stargate, redesign befo
 
 Read `CURRENT_PUBLIC_STATE.md` and then verify against GitHub. At this update the mod HEAD is:
 
-**`442800f3bd84de018c47403ec50663252a60b7c5` — `docs: record hardened Queen recovery contract`**
+**`f2b9c0b3c7ac6ac440dd80d715d44f47a0981973` — `docs: record validated Queen sovereignty build`**
 
 The canonical ledger's `4af4f60...` SHA is an original reconstruction checkpoint, not the current implementation head.
 
-The genuine next implementation slice is **Replicator Queen sovereign authority over the real block-Replicator hierarchy**. It must be exact-Queen control state, not a passive stat aura/outbreak modifier and not a generic Asuran xenotype ability. Existing hierarchy, split/recombine, adaptations, block stored matter, EMP and containment remain real mechanics under sovereignty.
+Queen sovereignty passed temporary GitHub Actions validation run **34576583840**: C# build SUCCESS, all Def/Patch XML parse SUCCESS and sovereignty-domain invariants SUCCESS. The temporary workflow was removed. This does **not** replace live RimWorld testing.
+
+The genuine next implementation slice is the **Sovereign Neural Lattice implant**:
+- bearer is not a Queen;
+- bounded target-specific control;
+- reuse `CompReplicatorSovereignty` with the existing `NeuralLattice` authority domain;
+- preserve exact controller identity through save/load and valid hierarchy transactions;
+- keep Queen/implant/temporary-Asuran domains isolated;
+- keep block adaptation, stored matter, EMP and containment real;
+- restore/release ownership cleanly when controller validity fails;
+- temporary Asuran intrusion remains a separate later override with expiry/restoration semantics.
 
 ## Handoff maintenance
 
