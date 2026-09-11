@@ -8,53 +8,61 @@ A pass is a bounded coherent implementation batch. Historical/private WNG is ref
 
 ---
 
-# CHECKPOINT — 2026-09-12 — First discovery/progression bridge reconciled
+# CHECKPOINT — 2026-09-12 — Replicator evidence-analysis bridge validated on clean branch
 
 ## Public state
 
 Public mod `main` remains **`ff4f8dcb7b8ba17760a48a54f616466642189b0c`**.
 
-No progression source was changed in this reconciliation pass.
+## Validated branch
 
-## Audit result
+Branch: **`rebuild/replicator-evidence-analysis-20260912`**  
+Clean HEAD: **`9f45ebf18caacde671f015cdd1a25217eebb6838`**  
+Clean tree: **`1adc84839a890d31e3e53f4aa9e941d3d9d7d97c`**
 
-Current public already has real encounter/discovery content including the Replicator Queen vault, Mature Wraith Hives, exact Wraith holding/rescue sites, Wraith Dart activity, Asuran covert presence and captured-Queen threats. The first missing progression layer is the bridge from encountered alien evidence into research.
-
-Examples of current bypasses:
-- `WNG_ReplicatorStudy` requires only `Machining`;
-- `WNG_WraithLivingTechnology` requires only `Fabrication`;
-- `WNG_ShuttleEngineering` requires only `Fabrication`;
-- `WNG_AsuranFabrication` requires only `Fabrication`.
-
-This skips the retained chain `mystery -> encounter -> evidence -> understanding -> reconstruction -> mastery`.
-
-## First small bridge
-
-Implement **Replicator evidence analysis only**.
-
-Existing Replicator combat already yields `WNG_ReplicatorMatter` reliably. `WNG_ReplicatorStudy` already describes studying recovered Replicator blocks. RimWorld/Odyssey 1.6 provides the native `CompAnalyzableUnlockResearch`, `ResearchProjectDef.requiredAnalyzed` and save-persistent `AnalysisManager` path, and WNG already requires Odyssey.
-
-Exact first implementation:
-- add a native analyzable comp to `WNG_ReplicatorMatter`;
-- require one successful analysis;
-- analysis does not consume the blocks and does not alter their existing reassembly behavior;
-- keep `Machining` as the ordinary prerequisite for `WNG_ReplicatorStudy`;
-- additionally require analyzed `WNG_ReplicatorMatter` through `requiredAnalyzed`;
-- do not use the rarer `WNG_ReplicatorCoreFragment` for this first-tier gate;
-- add no new incident, Quest, site, custom GameComponent or fixed-day gate;
-- change no Wraith, Asuran, Ancient, Goa'uld or Queen progression in this pass.
-
-Resulting chain: **Replicator encounter -> recover blocks -> analyze blocks -> Replicator Study -> later containment/gestation/reconstruction.**
-
-## Exact next short pass
-
-Implement and validate only:
+Diff from public is exactly two files:
 - `Defs/ThingDefs/Things_Replicator.xml`;
 - `Defs/ResearchProjectDefs/Research_Replicator.xml`.
 
-Validation: Release build, all Def/Patch XML, stable WNG-specific analysis ID, native analyze interaction fields, exact `requiredAnalyzed` target, unchanged existing Replicator Matter reassembly tuning, and no unrelated file changes. Checkpoint the branch before promotion.
+## Implemented bridge
 
-After promotion, stop that pass and reconcile the next single evidence bridge rather than batching multiple progression families together.
+- `WNG_ReplicatorMatter` retains its existing dangerous reassembly component and exact tuning;
+- it now also uses native Odyssey `CompProperties_CompAnalyzableUnlockResearch`;
+- stable WNG analysis ID: `160912001`;
+- analysis takes 1.5 hours, requires a colonist/research bench, does not require a mechanitor and does not consume the blocks;
+- `WNG_ReplicatorStudy` still requires `Machining` and now additionally requires analyzed `WNG_ReplicatorMatter` through native `requiredAnalyzed`;
+- no core-fragment gate, new incident, site, Quest, GameComponent or fixed-day schedule was added;
+- no other progression family changed.
+
+Result: **Replicator encounter -> recovered blocks -> analysis -> Replicator Study -> containment/gestation/reconstruction.**
+
+## Validation
+
+Run **`34615590179` — SUCCESS**:
+- Release C# build passed;
+- all Def/Patch XML parsed;
+- analysis comp/ID/interaction invariants passed;
+- `requiredAnalyzed` target passed;
+- existing Replicator Matter reassembly tuning was verified unchanged.
+
+### Consequence-Mirror correction during cleanup
+
+The validation workflow itself succeeded, but its cleanup step used `git add -A`, which accidentally committed generated `Assemblies/` and `Source/WNG/obj/` output to the temporary branch history. That head was immediately rejected as unclean and was never eligible for promotion.
+
+Rather than manually trusting a large delete set or rerunning the same workflow, the branch was reconstructed from the exact public base tree plus the two already-validated XML blobs. Branch compare now proves the clean head contains only the intended two files. Future validation cleanup must use explicit paths or reconstruct a clean tree; do not use `git add -A` after builds.
+
+This remains source/Def validation, not live RimWorld validation.
+
+## Exact next short pass
+
+**Promotion only**:
+1. recheck public `main` remains `ff4f8dcb...`;
+2. promote clean tree `1adc8483...` as one commit;
+3. verify public diff is exactly two XML files;
+4. update current-state continuity;
+5. stop that pass.
+
+Then reconcile **one** next evidence bridge, not the whole remaining progression system at once.
 
 ---
 
