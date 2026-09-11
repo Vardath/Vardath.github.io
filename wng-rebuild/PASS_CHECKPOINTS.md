@@ -24,69 +24,124 @@ Never write a checkpoint as though branch-only work is already public. Never tre
 
 ---
 
-# CHECKPOINT — 2026-09-11 — Neural Interface promoted to public
+# CHECKPOINT — 2026-09-11 — human-form conceal/reveal foundation validated on branch
 
-Public mod `main` is now:
+## Public implementation state
 
-**`8495b846c7dd31c079db6d4f007be490df3247f3` — `rebuild: add Neural Interface and exact human-form reconstruction`**
+Public mod `main` remains:
 
-Promotion used the already validated clean branch tree `64e1020a0d3bbe1ec06aac64db52428bbb52dedf` with parent `0b8150...`, producing one clean public commit. Temporary validation workflow history did not enter public `main`.
+**`8495b846c7dd31c079db6d4f007be490df3247f3` — Neural Interface and exact human-form reconstruction.**
 
-Public diff from `0b8150...` contains only intended Neural Interface files:
-- `Defs/AbilityDefs/Abilities_NeuralInterface.xml` — added;
-- `Defs/GeneDefs/Genes_AsuranFabrication.xml` — Neural Interface ability grant added;
-- `Defs/PawnKindDefs/PawnKinds_HumanFormReplicator.xml` — added;
-- `Source/WNG/Asuran/AsuranNeuralInterface.cs` — added.
+The infiltration work below is branch-only at this checkpoint.
 
-Validation inherited by the promoted tree:
-- initial run **34597748048** exposed obsolete historical `Gene.Xenogene` API use;
-- implementation corrected to current `Pawn_GeneTracker.Xenogenes` semantics;
-- final run **34599563874 — SUCCESS**;
-- Release build: **0 warnings / 0 errors**;
-- all **102** current Def/Patch XML files parsed;
-- native recruit/prisoner/slave operations, exact core identity snapshot, current gene-type preservation and transactional Nanite Reserve rollback invariants passed.
+## Active branch
 
-`CURRENT_PUBLIC_STATE.md` has been updated to exact public HEAD `8495b...`, Neural Interface/core exact copy-reconstruction is removed from required implementation debt, and live-test/optional broader DLC-copy-fidelity work remains explicitly open.
+Branch:
+
+**`rebuild/humanform-infiltration-20260911`**
+
+Clean branch HEAD after removing the temporary validator:
+
+**`09e6c7eb741d3bf2629d067f99dae8554f45ed69` — `cleanup: remove infiltration validator`**
+
+The validated source/Def tree was tested at `6a9a0479ee0de1150eb892b4500af8d3f2dc1c81`; `09e6c...` differs only by removal of the temporary validation workflow.
+
+## What this pass implemented
+
+New source:
+- `Source/WNG/Asuran/AsuranInfiltration.cs`
+
+New Def:
+- `Defs/GeneDefs/Genes_AsuranInfiltration.xml`
+
+Updated:
+- `Source/WNG/Asuran/AsuranNaniteFabrication.cs`;
+- `Source/WNG/Asuran/AsuranNeuralInterface.cs`;
+- `Defs/XenotypeDefs/Xenotypes_Asuran.xml`;
+- `Defs/PawnKindDefs/PawnKinds_Asuran.xml`;
+- `Defs/HediffDefs/Hediffs_AsuranNanite.xml`;
+- `Defs/FactionDefs/Factions_Asuran.xml`.
+
+Implemented behavior:
+- new real `WNG_AsuranInfiltrator` PawnKind exists as an Asuran role;
+- concealed infiltrator generation uses `WNG_AsuranHumanBaselineMask` rather than publicly exposing `WNG_NaniteHumanoid` at generation;
+- the mask presents a Baseliner-style xenotype label/icon and ordinary visible Food need while concealed;
+- hidden infiltrator physiology still uses the same native `Need_Food` quantity as its finite internal matter reserve, but does not expose the Nanite Reserve label until reveal;
+- exact conceal/reveal state is a real `Hediff_AsuranInfiltration` attached to the exact pawn and serialized through save/load;
+- concealed infiltration state, nanite lattice, nanite depletion and EMP-disruption health readouts are hidden while cover remains intact;
+- reveal is currently permanent and changes state on the same pawn; there is no pawn recreation/proxy/replacement;
+- permanent reveal removes only the masking physiology gene, layers the real current `WNG_NaniteHumanoid` genes, changes xenotype metadata to the real WNG nanite humanoid, reconciles needs, and dirties graphics;
+- reveal therefore materially changes visible game state from ordinary Food/Baseliner-style cover to public WNG synthetic xenotype/Nanite Reserve/nanite health-state semantics;
+- Queen uniqueness and block sovereignty are not granted or inferred by infiltrator state;
+- direct Neural Interface contact is a concrete scan path: a concealed infiltrator is accepted as an apparently biological target, but the touch scan exposes the synthetic lattice instead of opening ordinary recruit/copy operations;
+- EMP permanently reveals a concealed infiltrator and transfers EMP suppression onto the replacement public nanite-lattice state;
+- non-EMP damage of Def-tunable meaningful size (first-build threshold 8 damage) permanently reveals synthetic structure;
+- automatic nanite self-repair accumulates Def-tunable suspicion and reveals the pawn after first-build cumulative 1 hit point of visibly unnatural repair;
+- current ordinary Asuran combat pool includes a low-weight infiltrator role so the exact concealed/reveal mechanics can occur in normal current faction generation while broader covert arrival/cover-faction delivery remains a separate unfinished pass;
+- current physiology class was made inheritable so the mask gene can reuse the real nanite physiology implementation instead of duplicating a second synthetic body system.
+
+## Validation
+
+GitHub Actions run:
+
+**`34600994766` — SUCCESS**
+
+Validated:
+- `dotnet build Source/WNG/WNG.csproj -c Release` — passed;
+- all current Def/Patch XML parsed successfully;
+- save-persistent reveal state present;
+- masked public identity -> real WNG xenotype conversion present;
+- concealed Food-cover reserve path present;
+- hidden synthetic health-readout paths present;
+- direct Neural Interface scan reveal present;
+- EMP/meaningful-damage reveal present;
+- cumulative self-repair suspicion reveal present;
+- infiltrator PawnKind/mask xenotype/faction pool wiring present.
+
+Temporary validator removed at branch HEAD `09e6c...`.
+
+This is **source/Def validation, not live RimWorld validation**.
+
+## Important scope boundary
+
+This pass establishes **real conceal/reveal mechanics**, but it does **not yet complete strategic impersonation/delivery**.
+
+Still required in the infiltration subsystem:
+- a credible covert arrival/presence path where an infiltrator is not immediately given away simply by arriving as part of an openly hostile Asuran assault;
+- cover/guest/visitor behavior that uses native RimWorld relations where possible without replacing the exact pawn or inventing proxy identity;
+- persistent transition from cover behavior to hostile Asuran behavior when revealed/activated, while preserving exact pawn identity and the true Asuran source relationship;
+- live validation of Bio/Genes/Needs/Health presentation before and after reveal;
+- live validation of damage, EMP, Neural Interface scan and repair-triggered reveal/save-load.
+
+Because those are still open, `Human-form infiltration/impersonation/reveal` must **not** yet be removed from the required debt list. The implemented foundation should be recorded separately after promotion.
 
 ## Exact next pass
 
-Create a fresh branch from `8495b...` for the **human-form infiltration / impersonation / reveal foundation**.
+**Promotion + covert-presence design/implementation pass:**
 
-Required first-pass boundary:
-- exact pawn remains the same pawn throughout conceal/reveal;
-- hidden/revealed state is persistent and save/load safe;
-- concealment must materially affect what the player is told/shown, not only flavor text;
-- reveal is permanent unless Vardath later specifies a re-conceal mechanic;
-- implement real current-mechanic reveal triggers for scanning, meaningful injury/damage exposure and suspicious synthetic behavior where current APIs allow them;
-- Queen uniqueness/block sovereignty remain separate;
-- validate source/Defs and checkpoint before moving to Quiet Lattice or another subsystem.
+1. Recheck public `main` remains `8495b...`.
+2. Promote the clean validated conceal/reveal foundation as one clean public commit without the temporary validator history.
+3. Update `CURRENT_PUBLIC_STATE.md` with the new public SHA, recording conceal/reveal as implemented foundation while retaining covert impersonation/presence as required debt.
+4. Create a fresh branch from the new public HEAD.
+5. Inspect current native visitor/guest/faction/incident APIs before choosing cover semantics; do not fake neutrality by silently deleting/recreating the pawn.
+6. Implement one genuine covert-presence path that allows the exact infiltrator pawn to exist around the colony without ordinary hostile-assault presentation immediately disclosing the role.
+7. Define exact reveal/activation handling that preserves the pawn and links back to the true Asuran source relationship.
+8. Validate and checkpoint before moving to Quiet Lattice.
 
 ---
 
-# PRIOR CHECKPOINT — Neural Interface / exact human-form reconstruction validated on branch
+# PRIOR CHECKPOINT — Neural Interface promoted to public
 
-Public `main` at that checkpoint was `0b8150...`.
+Public milestone:
 
-Clean branch HEAD:
+**`8495b846c7dd31c079db6d4f007be490df3247f3` — `rebuild: add Neural Interface and exact human-form reconstruction`**
 
-**`7220a394173d850863156123b8bf27016b7290a5`**
-
-Validated source/Def tree: `e3defb46c82441e31e8e7bea1f788e9174f30889`.
-
-Implemented:
-- touch-range player nanite-human Neural Interface;
-- native faction recruitment;
-- native prisoner status;
-- Ideology-gated native slave status;
-- skill/passion/XP copying;
-- real separate reconstructed human-form pawn;
-- Def-tunable 60% first-build Nanite Reserve copy cost;
-- transactional placement/cost rollback;
-- source name, gender, age, backstories, title/surname, appearance, traits, skills/passions/XP and genome snapshot;
-- current RimWorld xenogene/endogene distinction;
-- WNG nanite identity layering after source-person snapshot.
-
-Final validation run: **34599563874 — SUCCESS**.
+Validation:
+- initial run **34597748048** exposed obsolete historical `Gene.Xenogene` API use;
+- corrected to current `Pawn_GeneTracker.Xenogenes` semantics;
+- final run **34599563874 — SUCCESS**;
+- Release build **0 warnings / 0 errors**;
+- all then-current **102** Def/Patch XML files parsed.
 
 ---
 
