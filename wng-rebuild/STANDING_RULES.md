@@ -23,12 +23,13 @@ These rules apply at the start of every WNG continuation and throughout the rebu
 16. **The plan is the default implementation authority for the first complete build.** Do not improvise away from it merely because another implementation seems easier. If implementation reality requires a departure, record the issue and make the smallest practical adjustment consistent with Vardath's instructions; if the design itself needs changing, Vardath decides.
 17. **Current public state beats stale “next step” prose.** Before treating anything as absent, unfinished or safe to rebuild, inspect current public `main` and recent implementation history. An older note saying “next”, “unfinished”, “reconcile”, “correct” or “rebuild” is not proof the feature is absent. **Rebuild/correct/refine does not mean remove. A named required feature remains required unless Vardath explicitly removes it.**
 18. **A subsystem can be materially implemented and still be partial.** Use the reconciliation status honestly. Examples at the 2026-09-11 baseline include Replicator Grav adaptation (state/visual but richer effect unfinished), Wraith strategic hunger (mechanics present but planned involved-Wraith UI stage unfinished), mature-Hive infrastructure (Growth Chamber missing), craft/gravships (mechanics present but professional presentation/live validation incomplete), and human-form Asurans (physiology foundation present but Neural Interface/infiltration/Quiet Lattice/backstories/mixed threats missing).
+19. **Work in bounded, meaningful passes and checkpoint every pass publicly.** A pass must be large enough to complete a coherent feature batch, not one line or one trivial micro-edit, but small enough to validate and checkpoint before long-session/tool-window failure becomes a risk. **Before beginning the next pass, update `PASS_CHECKPOINTS.md` in the public website continuity repo** with the exact public `main` SHA, active branch/SHA if applicable, what was actually changed, validation status, discovered defects/dependencies, what remains unfinished, and the exact next steps. Branch-only work must be labelled branch-only. If `CURRENT_PUBLIC_STATE.md` becomes stale during a pass, record that fact immediately and correct it no later than the next continuity write.
 
 ## Mandatory pre-implementation rule
 
 For every subsystem, the order is:
 
-**CANONICAL HISTORY -> PUBLIC RECONCILIATION -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE LIVE STATE/HANDOFF**
+**CANONICAL HISTORY -> PUBLIC RECONCILIATION -> CURRENT PUBLIC STATE -> PASS CHECKPOINTS -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE PASS CHECKPOINT + LIVE STATE/HANDOFF**
 
 The detailed gate is `WNG_IMPLEMENTATION_CHECKLIST.md` and must be answered before code is written.
 
@@ -36,10 +37,26 @@ Do not reverse that order. In particular, do not start writing code and then use
 
 The explicit procedure is in `PLAN_EXECUTION_PROTOCOL.md` and is part of the rebuild plan.
 
+## Pass checkpoint protocol
+
+`PASS_CHECKPOINTS.md` is the running operational memory for short rebuild passes.
+
+After each pass and before the next pass:
+- record exact public `main` HEAD;
+- record exact active branch and branch HEAD if work is not yet promoted;
+- record what was truly implemented, not what was merely planned;
+- distinguish source/Def validation from live RimWorld validation;
+- record any newly discovered defect/dependency;
+- record what remains unfinished in the active feature;
+- record the next coherent batch of work;
+- update `CURRENT_PUBLIC_STATE.md` whenever public `main` or debt classification changed materially.
+
+A checkpoint is not optional just because the active code repository is public. The public website continuity repository is specifically available so progress survives resets/timeouts without consuming private-repository budget.
+
 ## Completeness rule for the current reset
 
 Before leaving a subsystem and moving to another one, compare it against the canonical design history, `PUBLIC_RECONCILIATION_2026-09-11.md`, current public source and the entire current plan for that subsystem. Make sure no known branch has been silently dropped. If part cannot yet be completed because another dependency is missing, record it explicitly and return when the dependency exists.
 
 For Replicators specifically, the fresh rebuild must account for more than the main Drone -> Hunter -> Bulwark -> Titan -> Siege Mass combat ladder. It must also preserve/reconstruct the specialist/adaptation branches described in the plan/history, including Controller, Repairer, Burrower, Artillery/Siege support, ranged adaptation, armor adaptation, power adaptation, grav adaptation, **shield adaptation / shield Replicators and their anti-shield development**, matter economy, EMP behavior, containment, swarm coordination, player behavior, Child's Toy branch, human-form interactions and sovereign/Asuran interactions. None may be silently omitted.
 
-At the reconciled `0e5dfc8...` baseline, the remaining Replicator debt includes Temporary Asuran intrusion, recurring/captured-Queen consequences, mixed human-form/block threats, Neural Interface/infiltration, richer Grav behavior and broader AntiShield integration. This list can only shrink through real public implementation or explicit Vardath redesign.
+At the reconciled `0e5dfc8...` baseline, the remaining Replicator debt includes recurring/captured-Queen consequences, mixed human-form/block threats, Neural Interface/infiltration, richer Grav behavior and broader AntiShield integration. Temporary Asuran intrusion has since landed publicly and recurring exact-map Queen recovery has also landed publicly; verify current public `main` and `PASS_CHECKPOINTS.md` rather than relying on this historical baseline sentence alone.
