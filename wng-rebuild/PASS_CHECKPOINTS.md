@@ -8,67 +8,94 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-12 — Wraith Growth Chamber promoted to public
+# CHECKPOINT — 2026-09-12 — Strategic Wraith hunger count/names UI reconciliation complete
 
 ## Public state
 
-Public mod `main` is now:
+Public mod `main` remains:
 
-**`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — `rebuild: add bounded Wraith Growth Chamber`**
+**`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — bounded Wraith Growth Chamber.**
 
-Promotion used clean validated tree `24114e331f752afdb607d98402cdd6c6ef75bd82` with parent `b5cde48...`. Temporary validation/helper history did not enter public `main`.
+No strategic-hunger UI code was changed in this reconciliation pass.
 
-Public diff is exactly:
-- `Defs/ThingDefs/Wraith_GrowthChamber.xml` — added;
-- `Defs/ThingDefs/Wraith_HiveHeart.xml` — bounded replacement description reconciled;
-- `Source/WNG/Wraith/WraithGrowthChamber.cs` — added;
-- `Source/WNG/Wraith/WraithMatureHive.cs` — exact bounded replacement-registration API added.
+## Recovered corrected requirement
 
-## Public behavior now
+The recovered plan and explicit later correction agree:
+- these boxes belong only to **genuine faction-level strategic Wraith hunger**;
+- ordinary pawn `Drain Life`/feeding never opens them;
+- local Mature-Hive Feeding Niches/feeding stock never opens them;
+- box/stage 1 is only about the biological prisoner/feeding-stock subject(s); individual Wraiths are never selected there;
+- submitting stage 1 advances to stage 2;
+- stage 2 shows the **count and names of the Wraiths involved/to be fed**;
+- the decision sequence remains paused from opening until final completion;
+- final Submit accepts/fulfils the feeding agreement;
+- Cancel/refusal is a real refusal and retains the configured attack/raid consequence.
 
-- real powered Wraith Growth Chamber with Def-tunable cycle timing, bio-sludge biomass, Queen Life Force cost and Hunter/Warrior weighting;
-- only links to initialized same-faction Mature Hive Heart;
-- reads exact founding population cap/current living demographic count;
-- cannot exceed the recorded cap;
-- requires a living operational same-faction Wraith Queen;
-- only Hunter/Warrior replacement output;
-- exact replacement pawn is validated and registered into the Heart demographic list before biomass/Queen cost is committed;
-- failed generation/registration consumes no cycle resources;
-- no coupling to ordinary feeding, strategic hunger, Feeding Niche exact captives, Dormancy Vault reserve or retaliation.
+Current public source is mechanically incomplete against that requirement: it opens an initial `Dialog_MessageBox`, then releases `requestWindowOpen` and opens a `FloatMenu` of prisoners. There is no involved-Wraith count/name stage, and the flow is not locked as one paused transaction across stages.
 
-## Explicit retained dependency
+## Native UI/API check
 
-Generated hostile Mature Hive sites do **not** yet receive the chamber because current generated Hives have no grounded Wraith electrical-power source. Adding guaranteed inert 4,000W infrastructure, inventing a fake ZPM or restoring Gravcore was rejected. Generated-site placement waits for explicit Wraith ground-power/bioelectric-energy reconciliation.
+RimWorld 1.6 `Dialog_MessageBox` is already a force-paused, input-absorbing `Window`, so it is suitable for the final count/name confirmation stage.
 
-## Validation / consequence-mirror process correction
+The current prisoner `FloatMenu` is not the correct transaction surface for the recovered requirement. Stage 1 therefore needs a small WNG `Window` with `forcePause=true` / `absorbInputAroundWindow=true` so subject selection/identification and Submit/Cancel remain inside the same paused decision transaction.
 
-Initial temporary workflow run **`34612309236`** failed before a job existed. This was another workflow-wrapper failure, not a source failure.
+## Involved-Wraith identity boundary
 
-Because that failure class had already occurred during AntiShield, it was treated as a repeated process defect under the Consequence Mirror rule rather than retried unchanged. Patch/invariant logic was moved into small helper scripts and the workflow reduced to a minimal runner.
+Recovered history specifies that count/names must be shown, but it does **not** specify an arbitrary numeric formula such as “N Wraiths per hunger percentage.” Do not invent such a formula merely to make the box look populated.
 
-Corrected validation run **`34612430265` — SUCCESS**:
-- Release C# build passed;
-- all Def/Patch XML parsed;
-- Growth Chamber/Heart cap, Queen, Hunter/Warrior, Life Force, bio-sludge and power invariants passed;
-- explicit no-Keeper clone invariant passed;
-- explicit no-inert generated-site chamber invariant passed;
-- temporary validation files were removed before promoted tree.
+The first implementation therefore uses **real Wraith pawn identities only**:
+- prefer living, same-faction Wraith pawns physically present on the request home map when such Wraiths genuinely exist there;
+- otherwise use the requesting faction's exact living Wraith leader as the involved identity;
+- deduplicate exact pawns;
+- do not generate disposable presentation-only names/pawns;
+- if no valid real same-faction Wraith identity can be resolved, do not open a misleading request; schedule the normal retry instead.
 
-This remains **source/Def validation, not live RimWorld validation**.
+This means the count displayed in stage 2 is the count of the actual resolved Wraith identities, not a fabricated hunger-derived number. A later Vardath-defined multi-Wraith roster formula can replace this without redesigning the transaction.
 
-`CURRENT_PUBLIC_STATE.md` is updated to exact public HEAD `e1a080c...` and removes Growth Chamber core behavior from missing-required debt while retaining the generated-site power dependency.
+## Exact UI/data-flow decision
+
+**Stage 1 — feeding-stock subject selection/identification**
+- open only after the existing genuine strategic-hunger threshold/chance checks pass;
+- show eligible biological prisoner/feeding-stock names only;
+- player selects the subject if more than one is available;
+- no Wraith selection appears in this stage;
+- Submit is disabled until one valid subject is selected;
+- Cancel/refusal calls the existing strategic refusal path and therefore preserves faction hostility/forced-raid behavior where configured;
+- `requestWindowOpen` remains true; stage 1 Submit does not release the strategic request lock.
+
+**Stage 2 — involved-Wraith roster confirmation**
+- receives the exact selected prisoner and exact resolved Wraith pawn references from stage 1;
+- force-paused `Dialog_MessageBox` displays the requesting faction, exact involved-Wraith count and each resolved Wraith name, plus the selected prisoner's name and existing biological-age/Life-Drained consequence;
+- no Wraith selection controls exist;
+- Submit invokes the existing strategic `AcceptRequest` effect on that exact prisoner and only then clears `requestWindowOpen`;
+- Cancel/refusal invokes the existing `RefuseRequest` consequence and only then clears `requestWindowOpen`.
+
+## Failure/closure boundary
+
+- any invalid/dead/despawned subject at final Submit becomes refusal rather than silently feeding a replacement prisoner;
+- if the real involved-Wraith roster becomes invalid between stages, the request is refused/retried safely rather than substituting fabricated names;
+- close/cancel/Escape behavior must map to the same refusal outcome so the player cannot dismiss the request without consequence;
+- ordinary strategic hunger records/timers remain the authority; this is not converted into a Quest system;
+- no ordinary `Drain Life`, Mature-Hive local ecology or retaliation code is changed in this pass.
 
 ## Exact next pass
 
-**Strategic Wraith hunger involved-Wraith count/names UI reconciliation only.**
+**Implement only this strategic-hunger two-stage paused UI** on a fresh branch from public `e1a080c...`:
+1. add the force-paused WNG subject-selection dialog;
+2. keep one request lock active across both stages;
+3. resolve exact real same-faction involved Wraith identities without synthetic names;
+4. add stage-2 count/name confirmation using native force-paused dialog behavior;
+5. preserve existing accept/refusal/raid consequences and faction-specific hunger state;
+6. do not alter ordinary feeding, Mature-Hive feeding stock, Growth Chamber, or retaliation;
+7. validate using the corrected small-helper/minimal-workflow method rather than another large inline workflow;
+8. checkpoint validated branch before promotion.
 
-1. inspect current strategic-hunger state/request UI code and exact faction ownership;
-2. recover the intended two-stage decision flow from history;
-3. first modal remains feeding-stock/subject decision only — never a Wraith selector;
-4. second stage shows count/names of the actual involved Wraiths;
-5. decision sequence remains paused until completed;
-6. ordinary Drain Life, local Mature-Hive feeding stock and retaliation remain fully separate;
-7. inspect native RimWorld window/dialog APIs and checkpoint the exact UI/data-flow before implementation.
+---
+
+# PRIOR PUBLIC MILESTONE — Wraith Growth Chamber
+
+Public mod milestone: **`e1a080c93893ff5742f5aa91bc00fd7ecc1699f7`**.  
+Validation run: **`34612430265` — SUCCESS**.
 
 ---
 
