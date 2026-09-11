@@ -2,389 +2,340 @@
 
 Author/final design authority: **Vardath**.
 
-This is the current reconciliation map for the clean RimWorld 1.6 rebuild. It is not immutable canon. Newer explicit Vardath instructions override it.
+This is the current reconciliation map for the clean RimWorld 1.6 rebuild. It is not immutable canon; newer explicit Vardath instructions override it.
 
 ## Scope / identity boundary
 
-This map covers the **mechanical block Replicator foundation and its live sovereign-control interface**. Human-form Replicators/Asurans and the exact Replicator Queen remain separate identity layers even where they control block bodies.
+Mechanical block Replicators, human-form Replicators/Asurans, the exact Replicator Queen, and controller implants are separate identity layers even where they interact.
 
-Specialist bodies and learned adaptations are separate from the physical size ladder. Queen authority, Sovereign Neural Lattice authority and temporary Asuran intrusion are separate controller domains rather than one generic control flag.
+Physical size ladder, specialist bodies, learned adaptations and controller authority are also separate concepts.
 
-## Retained assets — all accounted for
+Current controller identities are deliberately distinct:
+- autonomous / no authority;
+- exact Queen authority;
+- Sovereign Neural Lattice implant authority;
+- future temporary Asuran intrusion.
 
-Body graphics under `Textures/Things/Pawn/Replicator/`:
-- Drone/base
-- Hunter
-- Bulwark
-- Titan
-- Siege Mass
-- Controller
-- Repairer
-- Burrower
-- Artillery
+Same faction never implies same controller domain.
 
-Adaptation overlays under `Textures/Things/Pawn/Replicator/Adaptation/`:
-- Armor
-- Ranged
-- Power
-- Grav
-- Shield
+## Current public snapshot
 
-Resources under `Textures/Things/Item/Resource/Replicator/`:
-- Replicator Matter
-- Replicator Core Fragment
+Current public mod HEAD:
 
-No replacement art is to be generated unless Vardath asks for it.
+**`0e5dfc893a8efec624053e677ae99d6983c25fc9`**
 
-## Current public implementation snapshot
+Fetch `main` again before editing.
 
-Current public mod head after the validated Queen-sovereignty pass:
+## Retained assets — accounted for
 
-- **`f2b9c0b3c7ac6ac440dd80d715d44f47a0981973`**
+Block body graphics:
+- Drone/base;
+- Hunter;
+- Bulwark;
+- Titan;
+- Siege Mass;
+- Controller;
+- Repairer;
+- Burrower;
+- Artillery.
 
-The head must always be fetched again before future edits.
+Adaptation overlays:
+- Armor;
+- Ranged;
+- Power;
+- Grav;
+- Shield.
 
-Current block source includes:
-- `ReplicatorState.cs`
-- `ReplicatorAssimilation.cs`
-- `ReplicatorEMP.cs`
-- `ReplicatorRegeneration.cs`
-- `ReplicatorHierarchy.cs`
-- `ReplicatorMatter.cs`
-- `ReplicatorAdaptationEffects.cs`
-- `ReplicatorSpecialists.cs`
-- `ReplicatorContainment.cs`
-- `ReplicatorRetaliation.cs`
-- `ReplicatorSovereignty.cs`
-- `ChildsToy.cs`
+Resources:
+- Replicator Matter;
+- Replicator Core Fragment.
 
-Current Defs include the full ladder, all four specialist bodies, Child's Toy, Replicator faction, jobs/ThinkTree, research/gestation, containment, Replicator resources and Queen-sovereignty Hediff/job wiring.
+No replacement art is generated unless Vardath asks.
 
-## Complete relationship/status map
+---
 
-### Physical hierarchy — IMPLEMENTED
+# FEATURE STATUS MAP
 
-Upward recombination:
+## Physical hierarchy — IMPLEMENTED
 
-**Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass**
+Upward:
 
-Downward genuine-destruction breakup:
+**Drone -> Hunter -> Bulwark -> Titan -> Siege Mass**
 
-**Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base**
+Genuine destruction:
 
-Rules implemented:
-- Drone/base is irreducible.
-- combine counts/check timing are Def-tunable;
-- genuine destruction creates operational lower forms rather than making large forms vanish;
-- intentional upward recombination consumption does not trigger death splitting;
-- split-born children receive the tunable ~2,500-tick / ~1 in-game hour recombination lockout;
-- the lockout exists specifically so killing a Titan/Siege Mass does not immediately recreate the same threat and appear immortal;
+**Siege Mass -> Titans -> Bulwarks -> Hunters -> Drones**
+
+Implemented rules:
+- Drone is irreducible;
+- combine counts/timing and split counts/lockout remain Def-tunable;
+- genuine destruction creates real lower forms rather than deleting large bodies;
+- intentional upward consumption does not trigger death splitting;
+- split-born bodies receive the current tunable ~2,500-tick recombination lockout;
 - learned state and stored matter survive hierarchy transactions;
-- stored matter sums upward and is divided among genuine-death children rather than duplicated or lost;
-- sovereign controller authority/domain now also survives both directions;
-- different control domains cannot recombine merely because their current faction is the same;
-- Queen-controlled player blocks use explicit sovereign recombination rather than silently restoring hostile automatic recombination.
+- stored matter sums upward and divides downward rather than duplicating/disappearing;
+- exact controller authority/domain also survives both directions;
+- different controller domains cannot recombine even when faction matches;
+- controlled/player ladder forms require explicit controller recombination rather than restoring hostile autonomous recombination.
 
-### Controller — IMPLEMENTED
+## Specialists — IMPLEMENTED
 
-Controller is a specialist coordination body, not a size-ladder rung and not equivalent to Queen/implant sovereign authority.
+### Controller
+- specialist coordination body, not a size rung or sovereign identity;
+- coordinates nearby same-domain autonomous/operational Replicators onto shared hostile focus;
+- respects exact controller domain;
+- stops active coordination under EMP/controller interference.
 
-Implemented behavior:
-- finds nearby same-domain autonomous Replicators;
-- provides a shared hostile focus;
-- respects controller-domain boundaries, not faction equality alone;
-- stops active coordination behavior under EMP or sovereign interference;
-- ordinary Replicators still function without a Controller.
+### Repairer
+- seeks and repairs damaged same-domain Replicators;
+- prioritizes serious injury;
+- cannot heal another sovereign domain merely because faction matches;
+- controlled Repairers expose exact-target repair command;
+- stops active repair under EMP/interference.
 
-### Repairer — IMPLEMENTED
+### Burrower
+- real structural breaching role;
+- prioritizes active WNG containment projector, then access blockers/walls/barricades, then eligible hostile structures;
+- controlled Burrowers expose explicit breach command;
+- respects hostility/domain/EMP rules.
 
-Implemented behavior:
-- seeks damaged same-domain block Replicators;
-- prioritizes more seriously injured allies;
-- moves into repair range and heals damage;
-- does not repair Replicators belonging to another sovereign domain merely because faction matches;
-- stops active repair under EMP/interference;
-- a Queen-controlled Repairer also exposes an explicit sovereign repair command for an exact same-domain target.
+### Artillery
+- real long-range support job with Def-tunable min/max range, warmup, damage and penetration;
+- distinct from learned Ranged adaptation;
+- controlled attack orders use artillery job when valid, otherwise real physical attack fallback.
 
-### Burrower — IMPLEMENTED
+## Assimilation / block matter economy — IMPLEMENTED FOUNDATION
 
-Implemented behavior:
-- breaches hostile structures;
-- prioritizes the WNG Replicator containment projector first;
-- then prioritizes access blockers such as doors/gates/bulkheads, walls and barricades;
-- generic hostile buildings are fallback targets;
-- can attack eligible factionless access blockers where necessary;
-- respects ownership/hostility and EMP rules;
-- Queen-controlled Burrowers expose a dedicated sovereign breach command rather than depending on mechanitor UI.
+- autonomous hostile blocks seek useful accessible matter/technology;
+- successful assimilation records technological evidence and creates stored replication matter;
+- useful technology is prioritized over arbitrary objects;
+- offspring consume stored matter;
+- offspring count and map population are bounded;
+- player-owned/controller-owned bodies do not autonomously eat the colony.
 
-This is the current first-build tactical implementation and remains tunable/refinable through testing.
+**Block stored matter is not human-form Nanite Reserve.**
 
-### Artillery / siege support — IMPLEMENTED
+## Learned adaptations — IMPLEMENTED FOUNDATION
 
-Implemented behavior:
-- real long-range support attack;
-- Def-tunable minimum/maximum range, warmup, damage and armor penetration;
-- operates as a ranged support specialist rather than a melee pawn with an Artillery label;
-- respects hostility/control boundaries and EMP;
-- sovereign attack orders use the real artillery job when range/line-of-sight permit, otherwise fall back to normal physical attack behavior.
+Cumulative save-persistent branches:
+- Material;
+- Armor;
+- Ranged;
+- Power;
+- Shield;
+- Grav;
+- AntiShield.
 
-### Assimilation and matter economy — IMPLEMENTED FOUNDATION
+Learning follows real assimilation evidence.
 
-Implemented behavior:
-- autonomous hostile Replicators search for accessible assimilable matter/technology;
-- useful technology is prioritized above arbitrary nearest-object choice;
-- shield/barrier, grav, ranged weapons, power systems, apparel/strong structures and valuable matter receive differentiated priority;
-- successful assimilation records learning evidence and converts consumed material into stored replication matter;
-- offspring consume stored matter rather than spawning freely;
-- offspring count is bounded per assimilation;
-- autonomous hostile Replicator population is capped by a Def-tunable per-map ceiling;
-- player-owned/player-controlled Replicators do not autonomously consume the player colony.
+### Armor — IMPLEMENTED
+- reduces incoming non-EMP damage by tunable effect;
+- retained Armor overlay renders.
 
-Queen/human-form **Nanite Reserve remains separate** from this block stored-matter economy.
+### Ranged — IMPLEMENTED
+- learned from ranged/weapon evidence;
+- gives autonomous ranged fire;
+- separate from Artillery specialist;
+- retained overlay renders.
 
-### Learned adaptation state — IMPLEMENTED FOUNDATION
+### Power — IMPLEMENTED
+- learned from power systems;
+- improves self-regeneration;
+- retained overlay renders.
 
-Independent cumulative branches:
-- Material
-- Armor
-- Ranged
-- Power
-- Shield
-- Grav
-- AntiShield
-
-The fresh rebuild originally allowed only one adaptation enum value at a time. That was corrected to cumulative save-persistent bit flags with migration for the earlier fresh-save field.
-
-Learning is driven by successful assimilation evidence rather than arbitrary spawn flags.
-
-### Armor adaptation — IMPLEMENTED
-
-- learned from applicable armor/material/strong-target evidence;
-- reduces incoming non-EMP damage through Def-tunable multiplier;
-- retained Armor overlay renders when learned.
-
-### Ranged adaptation — IMPLEMENTED
-
-- learned from ranged weapon/technology evidence;
-- gives autonomous block Replicators learned ranged fire;
-- distinct from the Artillery specialist's innate siege-support role;
-- retained Ranged overlay renders when learned.
-
-### Power adaptation — IMPLEMENTED
-
-- learned from powered systems;
-- improves self-regeneration through Def-tunable multiplier;
-- retained Power overlay renders when learned.
-
-### Shield adaptation / Shield Replicator behavior — IMPLEMENTED
-
+### Shield — IMPLEMENTED
 - learned from shield/barrier evidence;
-- gives a rechargeable defensive shield pool;
-- EMP bypasses/suppresses the adaptive shield behavior;
-- retained Shield overlay renders when learned.
+- rechargeable defensive shield pool;
+- EMP bypasses/suppresses behavior;
+- retained overlay renders.
 
-### Learned anti-shield development — IMPLEMENTED STATE / EXTERNAL INTEGRATION DEPENDENCY
+### AntiShield — IMPLEMENTED STATE / BROADER INTEGRATION DEPENDENCY
+- repeated shield evidence required rather than instant mastery;
+- cumulative state survives transformations;
+- current Replicator ranged interaction can exploit it against Replicator adaptive shields;
+- broader non-Replicator shield interactions remain a later concrete-system dependency.
 
-- first shield encounter does **not** instantly grant complete anti-shield mastery;
-- repeated shield evidence is required (current threshold Def-tunable);
-- AntiShield knowledge is stored cumulatively and survives hierarchy transformations;
-- current adaptive ranged damage can exploit learned anti-shield state against Replicator adaptive shields.
+### Grav — IMPLEMENTED STATE/VISUAL / RICHER EFFECT DEPENDENCY
+- grav evidence can be learned/saved;
+- retained overlay renders;
+- dedicated richer mobility behavior still needs deliberate integration rather than a generic fake buff.
 
-Still dependent on concrete non-Replicator shield integrations for broader cross-system countermeasure interaction. This is explicitly unfinished with dependency recorded, not forgotten.
+## Regeneration — IMPLEMENTED
+- block self-healing;
+- EMP suppression;
+- Power adaptation improves rate;
+- separate from Repairer ally-repair.
 
-### Grav adaptation — IMPLEMENTED STATE/VISUAL / GAMEPLAY DEPENDENCY
-
-- grav evidence can be learned and retained;
-- Grav overlay renders when learned;
-- the retained learned state exists even though a richer dedicated block mobility effect still needs deliberate integration with current gravtech/gravship mechanics rather than a fake generic buff.
-
-### State inheritance — IMPLEMENTED FOR CURRENT BLOCK + QUEEN AUTHORITY STATE
-
-Current split/recombine transfer includes:
-- material identity;
-- all cumulative adaptation flags;
-- shield/anti-shield evidence;
-- split-born recombination lockout;
-- stored replication matter with conservation semantics;
-- faction ownership through normal pawn transaction flow;
-- sovereign authority type;
-- exact controller reference/domain key;
-- control/original faction metadata.
-
-Different controller domains are deliberately prevented from accidental cross-domain recombination.
-
-Future Neural Lattice and temporary-Asuran authority must reuse this same persistence/transaction interface.
-
-### Regeneration — IMPLEMENTED
-
-- block Replicators heal over time;
-- EMP suppresses regeneration;
-- Power adaptation improves healing rate;
-- Repairer support is a separate active ally-repair system.
-
-### EMP suppression — IMPLEMENTED FOUNDATION + SOVEREIGN INTERFERENCE
-
-EMP meaningfully suppresses core replication systems including:
+## EMP — IMPLEMENTED
+EMP suppresses/interferes with:
 - assimilation;
 - recombination;
 - regeneration;
-- specialist active functions;
-- adaptive shield recharge/active ranged functions;
-- sovereign block commands when the block is EMP suppressed;
-- exact-Queen command signal when the Queen's human-form lattice is EMP disrupted.
+- specialist active behavior;
+- adaptive shields/ranged functions where applicable;
+- Queen signal through human-form EMP disruption;
+- Sovereign Neural Lattice signal through implant EMP disruption;
+- controlled block commands.
 
-A sovereign-controlled block under EMP/containment receives a dedicated high-priority non-combat suppression job. Exact timing remains tunable.
+Interfered controlled blocks use a high-priority non-combat suppression job.
 
-### Dangerous Replicator Matter / reassembly — IMPLEMENTED
+## Dangerous Replicator Matter — IMPLEMENTED
+- destroyed Replicators can produce Matter/Core Fragments;
+- sufficiently large uncontained Matter can self-assemble into hostile Drones;
+- delay/chance/threshold/output are tunable;
+- population ceiling respected;
+- powered containment freezes reassembly clock.
 
-- genuine Replicator destruction can produce Replicator Matter and Core Fragments;
-- sufficiently large dormant Matter stacks can reassemble into hostile Drones;
-- thresholds/delay/chance/output are tunable Def/component values;
-- autonomous reassembly respects the same population ceiling as assimilation growth;
-- powered containment freezes the reassembly clock.
+## Containment — IMPLEMENTED
+Powered projector:
+- suppresses hostile assimilation/recombination within field;
+- freezes dangerous Matter reassembly;
+- is a Burrower priority target;
+- does not become an autonomous objective for valid player-controlled blocks;
+- blocks Queen and Neural-Lattice acquisition when target is contained;
+- blocks controller signal while controller is contained;
+- suppresses already-controlled blocks instead of letting sovereignty bypass containment.
 
-### Containment — IMPLEMENTED + SOVEREIGN INTERFERENCE
-
-A powered Replicator containment projector exists.
-
-While active:
-- dangerous Replicator Matter does not advance toward reassembly;
-- hostile block Replicators inside the field cannot assimilate or recombine;
-- Burrowers specifically prioritize destroying the projector when eligible;
-- player-controlled Replicators do not treat their own colony containment as an autonomous hostile objective;
-- Queen acquisition/commands are blocked when the target block is contained;
-- Queen command signal is blocked while the Queen herself is inside active Replicator containment;
-- already controlled blocks in active containment are suppressed rather than sovereignty bypassing containment.
-
-Projector radius, power draw, construction cost and research access remain tunable.
-
-### Swarm coordination / AI — IMPLEMENTED FOUNDATION
-
-The current Replicator ThinkTree includes role-specific behavior:
-- sovereign interference suppression above queued/player orders;
+## Swarm AI / coordination — IMPLEMENTED FOUNDATION
+Current ThinkTree includes:
+- controller-interference suppression before queued/player orders;
 - Repairer support;
-- Artillery ranged support;
-- Burrower breaching;
-- Controller-shared target focus;
+- Artillery support;
+- Burrower breach;
+- Controller focus;
 - assimilation;
-- normal LordDuty/hostile behavior fallback.
+- normal duty/hostile fallback.
 
-Controller, Repairer and retaliation relationships now use controller-domain identity where authority exists. Further tactical refinement can follow live testing.
+Relationships are controller-domain aware where authority exists.
 
-### Bounded population / growth — IMPLEMENTED
+## Population / growth — IMPLEMENTED
+- assimilation growth spends matter;
+- bounded offspring;
+- hostile map population cap;
+- Matter reassembly respects cap;
+- genuine-death split is transformation mass rather than free reproduction and therefore is not blocked by the growth cap;
+- split-born recombination lockout is the anti-instant-reformation combat mechanic.
 
-- assimilation offspring require matter;
-- per-assimilation offspring count is bounded;
-- map-level hostile Replicator population ceiling is Def-tunable;
-- dangerous Matter reassembly respects the ceiling;
-- genuine-death split children are transformation mass rather than free autonomous growth and therefore are not blocked by the growth cap;
-- the one-hour split-born recombination lockout remains the combat-balancing mechanism for large-form breakup.
+## Child's Toy — IMPLEMENTED
+- player-owned mech branch;
+- valid control keeps colony ownership;
+- prolonged feral/uncontrolled state converts it into a real hostile ordinary Drone;
+- learned state transfers;
+- replacement is successfully placed before Toy is consumed;
+- current gestation uses Replicator Matter + basic subcore and research; tuning remains editable.
 
-### Player-owned safety / control — QUEEN FOUNDATION IMPLEMENTED
+## Autonomous threat roster — IMPLEMENTED FOUNDATION
+- Drone;
+- Hunter;
+- Bulwark;
+- Controller;
+- Repairer;
+- Burrower;
+- Artillery;
+- Titan;
+- Siege Mass.
 
-- player-owned/player-controlled Replicators do not autonomously assimilate colony assets;
-- specialist autonomous hostile jobs exclude ordinary player-controlled bodies;
-- player-owned ladder forms do not silently perform hostile-style automatic recombination;
-- exact Queen sovereignty is now genuine persistent per-block control/faction state;
-- Queen-controlled blocks expose dedicated sovereign move/attack/repair/breach/recombine/release commands so the system does not pretend vanilla mechanitor control exists;
-- exact Queen can acquire an individual block or a bounded nearby swarm;
-- current Queen range/cap are Def-tunable and subject to live balance testing;
-- invalid physical/controller state releases authority cleanly.
+Mixed human-form/block threat composition remains later Asuran integration work.
 
-Still later: the bounded Sovereign Neural Lattice implant control path and temporary Asuran override path.
+## Core Fragment — IMPLEMENTED RESOURCE
+A real salvage resource used by containment/progression and now by Sovereign Neural Lattice fabrication. Broader future research/reconstruction use remains open.
 
-### Child's Toy / player Replicator branch — IMPLEMENTED
+---
 
-Vardath rule:
-- **Child's Toy is a player-owned mech.**
-- while validly controlled it remains a normal colony mech;
-- **if it goes feral, it transforms into an ordinary Replicator Drone**;
-- the feral/uncontrolled delay is tunable;
-- transformation carries learned Replicator state into the Drone;
-- replacement Drone is successfully placed before the Toy is consumed, preventing failed transformation from silently deleting the pawn;
-- the resulting Drone belongs to the hostile autonomous Replicator swarm and follows normal Drone behavior.
+# CONTROLLER LAYERS
 
-The current gestation recipe uses Replicator Matter plus a basic subcore and is gated by Replicator gestation research; exact cost/timing remains tunable.
+## Exact Queen sovereignty — IMPLEMENTED
 
-### Autonomous faction / threat roster — IMPLEMENTED FOUNDATION
-
-Current combat roster includes:
-- Drone
-- Hunter
-- Bulwark
-- Controller
-- Repairer
-- Burrower
-- Artillery
-- Titan
-- Siege Mass
-
-Weights are editable. Mixed block + human-form raid composition remains a later Asuran/human-form integration dependency.
-
-### Core Fragment progression interface — IMPLEMENTED RESOURCE / LATER DEPENDENCY
-
-Core Fragment exists as salvage/research material. Later reconstruction/control/advanced research uses remain dependent on later subsystems and are not implied complete merely because the resource exists.
-
-### Exact Queen sovereign authority — IMPLEMENTED FOUNDATION
-
-Current exact-Queen behavior:
-- Queen is one exact persistent female human-form Replicator, age 13 in the current first-build design;
-- she uses real human-form nanite identity, not a block-machine race;
-- she becomes player-recruited immediately on actual vault casket release;
-- `WNG_ReplicatorQueenSovereignty` is ensured on that exact pawn, including existing-save maintenance;
-- only that exact Queen has innate `Queen` authority;
-- ordinary Asuran rank/xenotype is not sovereign authority;
-- exact block pawns receive persistent authority/controller/domain metadata and real faction transfer;
-- current physical-presence validity is same map or same caravan;
-- EMP/containment interrupt command rather than being bypassed;
-- hierarchy and specialist state remain real while controlled;
-- authority survives split/recombine with domain isolation;
-- Queen capture remains a separate exact-pawn physical storyline boundary.
-
-### Sovereign Neural Lattice — EXPLICIT NEXT UNFINISHED CONTROL LAYER
-
-Required behavior remains:
-- bearer is **not** a Queen;
-- bounded target-specific control;
-- must use the existing `NeuralLattice` authority value and `CompReplicatorSovereignty` persistence/domain system;
-- exact controller identity persists through save/load while valid;
-- split/recombine preserves the correct controller domain;
-- different controller domains never merge accidentally;
-- invalid bearer/controller state restores/releases ownership cleanly;
-- capacity/range/cost/cooldown should remain author-tunable and mechanically more bounded than the exact Queen.
-
-### Temporary Asuran lattice intrusion — EXPLICITLY UNFINISHED AND SEPARATE
-
-Required later:
-- separate `TemporaryAsuran` authority path;
-- explicit expiry/restoration semantics;
-- must not silently convert into Queen or Neural Lattice ownership;
-- future hostile Asuran control should use real domain state, not faction-only shortcuts.
-
-### Queen recovery/captured-Queen consequences — PARTIAL / LATER DEPENDENCY
+The one exact persistent age-13 female nanite-humanoid Queen has innate broader authority.
 
 Implemented:
-- exact Queen vault/release;
-- first all-or-nothing four-operative Asuran recovery operation;
-- nonlethal dedicated jobs;
+- exact persistent controller identity;
+- real faction transfer of exact block pawns;
+- same-map/same-caravan physical validity;
+- exact-target acquisition plus bounded local-swarm seizure;
+- Def-driven current tuning: 40-cell direct, 24-cell local swarm, normal cap 12;
+- dedicated move/attack/repair/breach/recombine/release commands independent of vanilla mechanitor UI;
+- existing-save Queen Hediff maintenance;
+- EMP/containment interference;
+- split/recombine authority continuity;
+- domain-isolated Controller/Repairer/retaliation.
+
+Queen sovereignty validation: **34576583840 SUCCESS** for C# build, XML parse and sovereignty invariants. Live RimWorld validation pending.
+
+## Sovereign Neural Lattice — IMPLEMENTED
+
+This is a WNG-specific Stargate-derived controller implant, **not a canon-named Stargate device and not a Queen identity**.
+
+Physical/progression path:
+- tangible `WNG_SovereignNeuralLattice` item;
+- research requires both Replicator study and Asuran fabrication;
+- manufactured only at `WNG_AsuranWorkshop`;
+- ingredients include a real Replicator Core Fragment + `WNG_NaniteSludge` + high-tech substrate;
+- native `Recipe_InstallImplant` brain surgery;
+- native `Recipe_RemoveImplant` removal returns physical implant item.
+
+Authority behavior:
+- exact non-Queen bearer controls exact target blocks using `ReplicatorControlAuthority.NeuralLattice`;
+- exact bearer reference and unique domain key persist through save/load;
+- real block faction transfer and prior-faction restoration;
+- **24-cell acquisition range / normal cap 3 / 1,800-tick EMP signal disruption** in current Def tuning;
+- acquisition is target-specific only—no Queen-style swarm seizure;
+- after acquisition, shared physical-presence validity is same map or same caravan; 24 cells is acquisition range, not an ownership-breaking live leash;
+- EMP/containment interfere;
+- block commands use the same proven controller command surface;
+- split/recombine conserves exact implant domain;
+- cross-domain merge/repair/coordination/retaliation remains prohibited;
+- removing the implant releases that exact controller domain;
+- exact Queen cannot create a second overlapping implant domain on top of innate Queen authority;
+- genuine split may temporarily put a domain above the normal acquisition cap because inherited controller identity is conserved rather than stripped.
+
+Validation:
+- run **34580535936** caught direct protected `Gizmo.disabled` access;
+- corrected to public `Command.Disable(...)`;
+- run **34580647197** passed C# build, all Def/Patch XML parsing and implant/research/surgery/domain invariants;
+- temporary workflow removed;
+- live RimWorld validation remains pending;
+- current vanilla health-item graphic is mechanics placeholder; final dedicated art is unfinished and no replacement art was generated.
+
+## Temporary Asuran lattice intrusion — NEXT / UNFINISHED
+
+Required next implementation:
+- use `ReplicatorControlAuthority.TemporaryAsuran`;
+- temporary hijack only;
+- must preserve the exact previous authority/controller/domain/faction so expiry/interruption can restore Queen, Neural-Lattice or autonomous state correctly;
+- ordinary Asuran does not receive permanent Queen sovereignty;
+- author-tunable duration/range/cap/trigger behavior;
+- EMP/containment remain counters;
+- split/recombine during intrusion must keep coherent temporary state and restoration metadata;
+- no cross-domain contamination.
+
+## Queen recovery / captured-Queen consequence — PARTIAL
+
+Implemented:
+- exact vault/casket/release;
+- first four-operative nonlethal recovery operation;
 - physical Asuran Jumper;
-- capture commits only when exact Queen physically departs in exact transit container;
+- capture only at real departure with the exact Queen physically aboard;
 - exact kidnapped-pawn persistence.
 
 Still later:
-- recurring recovery operations on any player map where the exact Queen physically exists;
-- consequences if Asurans retain/recruit the captured Queen;
-- suitable Lattice threats gaining genuine sovereign block access from the captured Queen;
-- mixed Asuran + sovereign block threat composition;
+- recurring recovery operations on the exact map containing the Queen;
+- hostile consequences if Asurans retain/recruit her;
+- genuine Asuran-controlled block access in suitable threat compositions;
+- mixed Asuran + block threats;
 - infiltration.
 
-## Final block-foundation reconciliation result
+---
 
-Every known block Replicator feature found in the plan, correction history, retained asset tree and current implementation is currently either:
+# CURRENT RECONCILIATION RESULT
 
-- **implemented in the block/Queen-control foundation**, or
-- **explicitly unfinished because it belongs to a later concrete subsystem** (broader Grav gameplay refinement, cross-system shield countermeasures, Sovereign Neural Lattice, temporary Asuran intrusion, recurring/captured-Queen consequences, mixed human-form threats and infiltration).
+Every known block/control requirement is currently either implemented or explicitly dependency-recorded. Current tracked future dependencies are:
+- temporary Asuran intrusion;
+- captured-Queen/mixed human-form threats;
+- infiltration/broader Neural Interface;
+- richer Grav adaptation;
+- broader cross-system anti-shield behavior;
+- final dedicated art/audio;
+- live RimWorld validation.
 
-There is no known block Replicator feature currently left in an untracked/forgotten state.
-
-Queen sovereignty was validated with temporary GitHub Actions run **34576583840**: C# build SUCCESS, all Def/Patch XML parse SUCCESS, sovereignty-domain invariants SUCCESS. The temporary workflow was removed afterward. This is not live RimWorld gameplay validation.
+Do not regress Queen or Neural-Lattice control into an aura, generic faction flag, outbreak modifier or fake mechanitor system.
