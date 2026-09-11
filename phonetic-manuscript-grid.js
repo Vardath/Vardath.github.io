@@ -1,64 +1,65 @@
 (()=>{
 'use strict';
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const style=document.createElement('style');
 style.textContent=`
-.manugrid{margin-top:30px}.manugrid .mg-shell{display:grid;grid-template-columns:minmax(0,1fr) 118px minmax(0,1fr);gap:14px;align-items:start;margin-top:18px}.manugrid .mg-wing{border:1px solid var(--line);border-radius:15px;background:linear-gradient(180deg,#171b27,#0e1119);padding:12px;min-width:0}.manugrid .mg-title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px}.manugrid .mg-title b{color:var(--cyan)}.manugrid .mg-matrix{display:grid;grid-template-columns:repeat(16,minmax(12px,1fr));gap:2px;aspect-ratio:1}.manugrid .mg-cell{padding:0;border:1px solid #293044;background:#111622;border-radius:2px;min-width:0;cursor:pointer;position:relative}.manugrid .mg-cell:hover,.manugrid .mg-cell.hit{background:#2c3751;border-color:var(--cyan)}.manugrid .mg-cell.sel{outline:2px solid var(--warn);outline-offset:-1px}.manugrid .mg-spine{display:flex;flex-direction:column;align-items:center;gap:5px;padding-top:37px}.manugrid .mg-state{width:42px;height:24px;display:grid;place-items:center;border:1px solid #39435b;border-radius:5px;background:#111622;font:700 .68rem Consolas,monospace;color:#aeb6ca;cursor:pointer}.manugrid .mg-state.active{border-color:var(--cyan);color:#fff;background:#1e293c}.manugrid .mg-axis{width:2px;height:14px;background:#39435b}.manugrid .mg-hub{width:104px;height:104px;border:2px solid #55617f;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,#222b41 0 34%,#121722 35% 62%,#0c1018 63%);box-shadow:0 0 0 8px #0b0f17,0 0 0 9px #31394d;margin:10px 0;color:var(--cyan);font:700 .7rem Consolas,monospace;cursor:pointer}.manugrid .mg-hub:hover{border-color:var(--cyan)}.manugrid .mg-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:16px 0}.manugrid label{display:block;color:var(--muted);font-size:.82rem;margin-bottom:5px}.manugrid input,.manugrid select{width:100%;background:#0c1018;color:white;border:1px solid #3d455d;border-radius:9px;padding:10px}.manugrid .mg-path{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.manugrid .mg-chip{padding:4px 7px;border:1px solid var(--line);border-radius:7px;background:#0d1018;font:700 .75rem Consolas,monospace}.manugrid .mg-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.manugrid .mg-legend div{border:1px solid var(--line);border-radius:9px;padding:9px;background:#111622;font-size:.78rem}.manugrid .mg-legend b{display:block;color:var(--cyan)}.manugrid .mg-lower{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.manugrid .mg-mini{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:8px}.manugrid .mg-mini div{min-height:42px;border:1px solid #2e364a;border-radius:5px;background:#101521;display:grid;place-items:center;text-align:center;font-size:.7rem;padding:3px}.manugrid .mg-tip{border-bottom:1px dotted var(--cyan);cursor:help}.manugrid [data-tip]{position:relative}.manugrid [data-tip]:hover:after,.manugrid [data-tip]:focus:after{content:attr(data-tip);position:absolute;z-index:50;left:0;top:calc(100% + 5px);width:min(330px,80vw);padding:8px 10px;border:1px solid #4c5877;border-radius:8px;background:#080c14;color:#eef1f8;font-size:.78rem;line-height:1.4;box-shadow:0 8px 22px #000a}.manugrid .mg-readout{margin-top:14px}.manugrid .mg-score{font-size:1.8rem;color:var(--cyan);font-weight:800}.manugrid .mg-cell[data-tip]:hover:after{left:auto;right:0;width:220px}
-@media(max-width:900px){.manugrid .mg-shell{grid-template-columns:1fr}.manugrid .mg-spine{padding-top:0;flex-direction:row;flex-wrap:wrap;justify-content:center}.manugrid .mg-axis{width:14px;height:2px}.manugrid .mg-hub{order:-1;width:90px;height:90px}.manugrid .mg-controls,.manugrid .mg-lower{grid-template-columns:1fr}.manugrid .mg-legend{grid-template-columns:1fr 1fr}}
+.manugrid{margin-top:30px}.manugrid .mg-grid{display:grid;grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr);gap:14px;align-items:stretch;margin:18px 0}.manugrid .mg-side{display:grid;gap:8px}.manugrid .mg-layer{border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#171b27,#0e1119);padding:10px;min-height:74px;position:relative;overflow:hidden}.manugrid .mg-layer:before{content:'';position:absolute;inset:8px;background:repeating-linear-gradient(90deg,transparent 0 17px,#2b3347 18px 19px),repeating-linear-gradient(0deg,transparent 0 14px,#2b3347 15px 16px);opacity:.72;pointer-events:none}.manugrid .mg-layer>*{position:relative;z-index:1}.manugrid .mg-layer b{color:var(--cyan)}.manugrid .mg-fold{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}.manugrid .mg-axis{width:2px;flex:1;min-height:32px;background:#46516d}.manugrid .mg-hub{width:92px;height:92px;border:2px solid #596783;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,#273149 0 32%,#171d2b 33% 57%,#0b0f17 58%);box-shadow:0 0 0 7px #0b0f17,0 0 0 8px #333c52;color:var(--cyan);font-weight:800;font-size:.78rem;padding:8px}.manugrid .mg-arrow{font-size:1.25rem;color:var(--cyan)}.manugrid .mg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.manugrid .mg-card{border:1px solid var(--line);border-radius:12px;background:#111622;padding:13px}.manugrid .mg-card b{display:block;color:var(--cyan);margin-bottom:5px}.manugrid .mg-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:stretch;margin:16px 0}.manugrid .mg-step{border:1px solid var(--line);border-radius:10px;padding:10px;background:#0f1420;text-align:center;font-size:.82rem}.manugrid .mg-step strong{display:block;color:var(--cyan);margin-bottom:4px}.manugrid .mg-note{border-left:3px solid var(--warn);padding:10px 12px;background:#17131a;border-radius:8px;margin-top:14px}.manugrid .mg-status{border:1px solid #3d455d;border-radius:12px;padding:13px;background:#0c1018;margin-top:14px}.manugrid .mg-status b{color:var(--cyan)}
+@media(max-width:820px){.manugrid .mg-grid{grid-template-columns:1fr}.manugrid .mg-fold{flex-direction:row;min-height:104px}.manugrid .mg-axis{height:2px;width:auto;min-width:28px;min-height:0}.manugrid .mg-cards{grid-template-columns:1fr}.manugrid .mg-flow{grid-template-columns:1fr}}
 `;
 document.head.appendChild(style);
 
-const section=document.createElement('section');section.className='section wrap manugrid';section.id='manuscript-grid';section.innerHTML=`
-<h2>Manuscript Grid Reconstruction — Live Test Tool</h2>
-<p class="lead">This rebuilds the <b>structure visible in the supplied manuscript image</b> as a working phonetic instrument: two large mirrored information fields, a narrow central indexing axis, and a circular transformation junction. Because the historical cell labels have not yet been identified, the geometry is reconstructed while the cells are populated with our measurable 16-state phonetic bridge and its 256 directed gates.</p>
-<div class="notice"><b>Research boundary:</b> the layout is manuscript-inspired; the phonetic contents are our experiment. We are not claiming the original diagram encoded these phonetic values. The point is to test whether this grid architecture is useful for connecting distinct sound systems.</div>
-<div class="mg-controls">
- <div><label>Source IPA <span class="mg-tip" tabindex="0" data-tip="A sequence of speech sounds. Spaces are optional; stress marks and brackets are ignored.">?</span></label><input id="mgSource" placeholder="e.g. ʃ a l o m"></div>
- <div><label>Target IPA <span class="mg-tip" tabindex="0" data-tip="The comparison pronunciation in the second language.">?</span></label><input id="mgTarget" placeholder="e.g. ..."></div>
- <div><label>Central gate/operator <span class="mg-tip" tabindex="0" data-tip="The circular junction applies one controlled transformation before the source trajectory is projected onto the mirrored field.">?</span></label><select id="mgOperator"><option value="identity">Identity / no mirror</option><option value="reverse">Reverse sequence</option><option value="place">Mirror articulation place</option><option value="both" selected>Reverse + mirror place</option><option value="voice">Voice flip</option><option value="fric">Stop ↔ fricative</option><option value="placevoice">Place mirror + voice</option><option value="revvoice">Reverse + voice</option></select></div>
-</div>
-<button class="btn" id="mgRun">Project through manuscript grid</button>
-<div class="mg-shell">
- <div class="mg-wing"><div class="mg-title"><span><b>SOURCE FIELD</b> · 16 × 16 gates</span><span class="small">256 transitions</span></div><div class="mg-matrix" id="mgLeft"></div><div class="mg-path" id="mgLeftPath"></div></div>
- <div class="mg-spine" id="mgSpine"><div class="small" style="text-align:center">central<br>index</div></div>
- <div class="mg-wing"><div class="mg-title"><span><b>MIRRORED FIELD</b> · transformed gates</span><span class="small">same coordinates</span></div><div class="mg-matrix" id="mgRight"></div><div class="mg-path" id="mgRightPath"></div></div>
-</div>
-<div class="mg-lower">
- <div class="panel"><h3>5 × 5 physical mouth lattice</h3><p class="small">The large matrices above use sixteen compressed states. This lower grid keeps the five-place articulatory axis visible so the mirror operation has a physical interpretation.</p><div class="mg-mini"><div><b>1</b><br>velar</div><div><b>2</b><br>palatal</div><div><b>3</b><br>retroflex / central</div><div><b>4</b><br>dental / alveolar</div><div><b>5</b><br>labial</div><div>stop</div><div>affricate</div><div>fricative</div><div>sonorant</div><div>vowel</div></div></div>
- <div class="panel"><h3>How the reconstruction maps to the image</h3><div class="mg-legend"><div><b>Left dense grid</b>source language gate field</div><div><b>Central spine</b>16 bridge-state index</div><div><b>Circular junction</b>selected mirror/operator</div><div><b>Right dense grid</b>transformed / target field</div></div><p class="small">Click any small square in either dense field to inspect its directed gate. Squares used by the current word are highlighted. The same gate address on both sides lets us see whether a transformation creates a simpler correspondence.</p></div>
-</div>
-<div id="mgReadout" class="resultbox mg-readout">Enter a source and target pronunciation, then project them through the grid.</div>`;
-const mirror=document.querySelector('#mirror-lab');if(mirror?.parentNode)mirror.parentNode.insertBefore(section,mirror);else(document.querySelector('main')||document.body).appendChild(section);
-const nav=document.querySelector('.nav');if(nav&&!nav.querySelector('a[href="#manuscript-grid"]')){const a=document.createElement('a');a.href='#manuscript-grid';a.textContent='Image grid';nav.appendChild(a)}
+const section=document.createElement('section');
+section.className='section wrap manugrid';
+section.id='manuscript-grid';
+section.innerHTML=`
+<h2>The Man Grid — layered mirror / fold model</h2>
+<p class="lead">The manuscript figure is being treated as a <b>layered coordinate system built around a central vertical fold</b>. It is <b>not a magic square</b>, and it is <b>not a 16×16 matrix</b>. The earlier 16-state/256-gate display was a computational proxy and is retired as a representation of the manuscript itself.</p>
+<div class="notice"><b>Working interpretation:</b> the left and right fields are paired faces of one system. A word is placed as a path through one side/layer, folded across the centreline, and read on the corresponding position of the opposite side or another aligned layer. The layers can be overlaid and transformed in a way analogous to how we used stacked magic-square layers, but there is no claim that these manuscript grids are magic squares or obey magic-sum rules.</div>
 
-// Broad feature model: [place 1..5, manner row 0..3, voice 0/1]. The 4x4 state is manner-row × compressed place-column.
-const F={
-'k':[1,0,0],'g':[1,0,1],'q':[1,0,0],'ʔ':[1,0,0],'x':[1,1,0],'ɣ':[1,1,1],'χ':[1,1,0],'ʁ':[1,1,1],'h':[1,1,0],'ŋ':[1,2,1],
-'tʃ':[2,0,0],'dʒ':[2,0,1],'c':[2,0,0],'ɟ':[2,0,1],'ʃ':[2,1,0],'ʒ':[2,1,1],'ɲ':[2,2,1],'j':[2,2,1],
-'ʈ':[3,0,0],'ɖ':[3,0,1],'ʂ':[3,1,0],'ʐ':[3,1,1],'ɳ':[3,2,1],'ɽ':[3,2,1],'ɻ':[3,2,1],
-'t':[4,0,0],'d':[4,0,1],'θ':[4,1,0],'ð':[4,1,1],'s':[4,1,0],'z':[4,1,1],'n':[4,2,1],'r':[4,2,1],'ɾ':[4,2,1],'l':[4,2,1],
-'p':[5,0,0],'b':[5,0,1],'f':[5,1,0],'v':[5,1,1],'m':[5,2,1],'w':[5,2,1],
-'a':[3,3,1],'ɑ':[1,3,1],'ɐ':[3,3,1],'ə':[3,3,1],'ɜ':[3,3,1],'e':[4,3,1],'ɛ':[4,3,1],'i':[5,3,1],'ɪ':[5,3,1],'y':[5,3,1],'o':[2,3,1],'ɔ':[2,3,1],'u':[1,3,1],'ʊ':[1,3,1]
-};
-const MULTI=['tʃ','dʒ'];
-function tok(s){s=(s||'').normalize('NFC').replace(/[\/\[\],.;:ˈˌ\-]/g,' ').trim();if(!s)return[];if(/\s/.test(s))return s.split(/\s+/).filter(Boolean);let o=[];for(let i=0;i<s.length;){const m=MULTI.find(x=>s.startsWith(x,i));if(m){o.push(m);i+=m.length}else o.push(s[i++])}return o}
-function stateOf(x){const f=F[x];if(!f)return 5;const placeCol=f[0]<=1?0:f[0]===2?1:f[0]<=4?2:3;return f[1]*4+placeCol}
-function code(i){return 'ABCD'[Math.floor(i/4)]+(i%4+1)}
-function gates(seq){const s=seq.map(stateOf);return s.slice(0,-1).map((a,i)=>a*16+s[i+1])}
-function gateLabel(g){return `${code(Math.floor(g/16))} → ${code(g%16)}`}
-function nearest(x,pred,pen){const a=F[x];if(!a)return x;let best=x,bd=99;for(const [y,b] of Object.entries(F)){if(!pred(a,b))continue;const d=(Math.abs(a[0]-b[0])/4)+((a[1]===b[1])?0:.65)+((a[2]===b[2])?0:.25)+(pen?pen(a,b):0);if(d<bd){bd=d;best=y}}return best}
-function mirrorPlace(x){const a=F[x];if(!a)return x;const want=6-a[0];return nearest(x,(_,b)=>b[0]===want,(_,b)=>(b[1]===a[1]?0:.4)+(b[2]===a[2]?0:.2))}
-function voice(x){const a=F[x];if(!a||a[1]>=2)return x;return nearest(x,(_,b)=>b[0]===a[0]&&b[2]!==a[2],(_,b)=>b[1]===a[1]?0:.4)}
-function fric(x){const a=F[x];if(!a)return x;const want=a[1]===0?1:a[1]===1?0:a[1];return nearest(x,(_,b)=>b[0]===a[0]&&b[1]===want,(_,b)=>b[2]===a[2]?0:.2)}
-function transform(a,op){if(op==='reverse')return [...a].reverse();if(op==='place')return a.map(mirrorPlace);if(op==='both')return a.map(mirrorPlace).reverse();if(op==='voice')return a.map(voice);if(op==='fric')return a.map(fric);if(op==='placevoice')return a.map(x=>voice(mirrorPlace(x)));if(op==='revvoice')return a.map(voice).reverse();return [...a]}
-function seqDistance(A,B){const n=A.length,m=B.length,d=Array.from({length:n+1},()=>Array(m+1).fill(0));for(let i=0;i<=n;i++)d[i][0]=i;for(let j=0;j<=m;j++)d[0][j]=j;for(let i=1;i<=n;i++)for(let j=1;j<=m;j++){const a=F[A[i-1]],b=F[B[j-1]];let sub=A[i-1]===B[j-1]?0:1;if(a&&b)sub=Math.min(1,(Math.abs(a[0]-b[0])/4+(a[1]===b[1]?0:.5)+(a[2]===b[2]?0:.2))/1.7);d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+sub)}return Math.max(0,100*(1-d[n][m]/Math.max(n,m,1)))}
-function gateOverlap(A,B){if(!A.length&&!B.length)return 100;const aa=new Set(A),bb=new Set(B);let inter=0;aa.forEach(x=>{if(bb.has(x))inter++});const union=new Set([...aa,...bb]).size||1;return 100*inter/union}
-const left=section.querySelector('#mgLeft'),right=section.querySelector('#mgRight');
-for(let g=0;g<256;g++){for(const side of [left,right]){const b=document.createElement('button');b.className='mg-cell';b.type='button';b.dataset.g=String(g);b.dataset.tip=`Gate ${g+1}/256 · ${gateLabel(g)} · click to inspect`;b.setAttribute('aria-label',gateLabel(g));b.onclick=()=>{[left,right].querySelectorAll?.('.sel');document.querySelectorAll('.manugrid .mg-cell.sel').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');section.querySelector('#mgReadout').innerHTML=`<b>Selected gate:</b> ${esc(gateLabel(g))}<br><span class="small">matrix address ${g+1} · source state ${code(Math.floor(g/16))} · destination state ${code(g%16)}</span>`};side.appendChild(b)}}
-const spine=section.querySelector('#mgSpine');for(let i=0;i<16;i++){const s=document.createElement('button');s.type='button';s.className='mg-state';s.textContent=code(i);s.dataset.state=String(i);s.dataset.tip=`Bridge state ${code(i)} · row ${Math.floor(i/4)+1}, column ${i%4+1}`;spine.appendChild(s);if(i===7){const ax=document.createElement('div');ax.className='mg-axis';spine.appendChild(ax);const hub=document.createElement('button');hub.type='button';hub.className='mg-hub';hub.id='mgHub';hub.innerHTML='CIRCULAR<br>BRIDGE<br>GATE';hub.dataset.tip='This circular junction corresponds to the conspicuous central circle in the manuscript image. Here it applies the selected transformation operator.';spine.appendChild(hub);const ax2=document.createElement('div');ax2.className='mg-axis';spine.appendChild(ax2)}}
-function chips(seq){return seq.map((x,i)=>`<span class="mg-chip" data-tip="${esc(x)} → ${code(stateOf(x))}">${esc(x)}:${code(stateOf(x))}</span>`).join('')||'<span class="small">No path</span>'}
-function paint(container,gs){container.querySelectorAll('.mg-cell').forEach(x=>x.classList.toggle('hit',gs.includes(+x.dataset.g)))}
-function syncFromMirror(){const a=document.querySelector('#mlSrc'),b=document.querySelector('#mlTgt');if(a&&a.value&&!section.querySelector('#mgSource').value)section.querySelector('#mgSource').value=a.value;if(b&&b.value&&!section.querySelector('#mgTarget').value)section.querySelector('#mgTarget').value=b.value}
-function run(){syncFromMirror();const src=tok(section.querySelector('#mgSource').value),tgt=tok(section.querySelector('#mgTarget').value),op=section.querySelector('#mgOperator').value,tr=transform(src,op);const gs=gates(src),gt=gates(tgt),gx=gates(tr);paint(left,gs);paint(right,gx);section.querySelectorAll('.mg-state').forEach(x=>x.classList.toggle('active',tr.map(stateOf).includes(+x.dataset.state)));section.querySelector('#mgLeftPath').innerHTML=chips(src);section.querySelector('#mgRightPath').innerHTML=chips(tr);const raw=seqDistance(src,tgt),mapped=seqDistance(tr,tgt),over=gateOverlap(gx,gt),delta=mapped-raw;section.querySelector('#mgHub').innerHTML=`${esc(op.toUpperCase())}<br>${mapped.toFixed(0)}%`;section.querySelector('#mgReadout').innerHTML=`<div class="mg-score">${mapped.toFixed(1)} / 100 transformed phonetic similarity</div><div>${delta>=0?'+':''}${delta.toFixed(1)} points versus the untransformed baseline (${raw.toFixed(1)}).</div><div style="margin-top:7px"><b>Gate-trajectory overlap:</b> ${over.toFixed(1)}%</div><p class="small">Source path uses ${gs.length} directed gates; transformed source uses ${gx.length}; target uses ${gt.length}. Highlighted cells show the actual trajectory through the two dense manuscript-style fields. A useful mirror effect should improve scores across many preselected pairs, not only individual examples.</p>`}
-section.querySelector('#mgRun').onclick=run;section.querySelector('#mgHub').onclick=run;
+<div class="mg-grid" aria-label="Schematic of the layered Man Grid fold model">
+  <div class="mg-side">
+    <div class="mg-layer"><b>Upper left layer</b><br><span class="small">source-side coordinates / one resolution of the lattice</span></div>
+    <div class="mg-layer" style="min-height:122px"><b>Torso left layers</b><br><span class="small">multiple dense, superimposed coordinate fields</span></div>
+    <div class="mg-layer" style="min-height:150px"><b>Lower left layers</b><br><span class="small">expanded lower-body lattice / continuation of the source field</span></div>
+  </div>
+  <div class="mg-fold">
+    <div class="mg-axis"></div>
+    <div class="mg-arrow">⇄</div>
+    <div class="mg-hub">CENTRAL<br>FOLD /<br>TRANSFER</div>
+    <div class="mg-arrow">⇄</div>
+    <div class="mg-axis"></div>
+  </div>
+  <div class="mg-side">
+    <div class="mg-layer"><b>Upper right layer</b><br><span class="small">mirror partner of the upper-left coordinates</span></div>
+    <div class="mg-layer" style="min-height:122px"><b>Torso right layers</b><br><span class="small">paired mirror fields sharing the same centreline</span></div>
+    <div class="mg-layer" style="min-height:150px"><b>Lower right layers</b><br><span class="small">folded / target-side coordinates</span></div>
+  </div>
+</div>
+
+<div class="mg-cards">
+  <div class="mg-card"><b>1. The centreline is the fold</b>The body is not decoration in the model. The vertical middle axis is the stable reference used to pair left and right coordinates.</div>
+  <div class="mg-card"><b>2. The grids are layered</b>The visible lattices are not one uniform square. Upper, torso and lower regions contain overlapping scales/resolutions that can be aligned, overlaid and read as different layers.</div>
+  <div class="mg-card"><b>3. Words are paths, not single cells</b>A pronunciation is treated as an ordered path through positions on a chosen layer. Folding that path produces a second path to compare with the same meaning in another language.</div>
+</div>
+
+<h3>How a language test now uses the real Man Grid</h3>
+<div class="mg-flow">
+  <div class="mg-step"><strong>Source word</strong>take an IPA/sound sequence for one meaning</div>
+  <div class="mg-step"><strong>Place on a layer</strong>map the sound sequence to the selected manuscript-derived coordinates</div>
+  <div class="mg-step"><strong>Fold</strong>reflect positions across the actual central axis, preserving the layer geometry</div>
+  <div class="mg-step"><strong>Change layer if defined</strong>use only alignments genuinely produced by the manuscript layers</div>
+  <div class="mg-step"><strong>Compare target</strong>measure whether the folded path matches the same-meaning word better than direct and wrong-meaning controls</div>
+</div>
+
+<div class="mg-note"><b>Critical correction:</b> old results labelled “Mirror-Man” were produced with earlier proxy operators (4×4/16-state reflections, reversals and related transforms). Those results remain useful as historical comparison data, but they are <b>not evidence from the reconstructed manuscript Man Grid itself</b>. They must be rerun through the real layered fold model before being described as Man-Grid results.</div>
+
+<div class="mg-status"><b>Current reconstruction status:</b> the manuscript geometry is now treated as the primary object. The next implementation step is to transcribe the visible layer boundaries and mirror-paired coordinates directly from the image, derive the permitted folds from that geometry, and rerun the complete test suite using only those derived operations. No 16×16 substitute is to be used for those reruns.</div>
+
+<p class="small">Research boundary: the layered/fold interpretation is our working reconstruction of the supplied manuscript image. Until the historical labels and exact original purpose are independently identified, the linguistic use of those coordinates remains experimental.</p>`;
+
+const old=document.querySelector('#manuscript-grid');if(old)old.remove();
+const mirror=document.querySelector('#mirror-lab');
+if(mirror?.parentNode)mirror.parentNode.insertBefore(section,mirror);else(document.querySelector('main')||document.body).appendChild(section);
+const nav=document.querySelector('.nav');
+if(nav&&!nav.querySelector('a[href="#manuscript-grid"]')){const a=document.createElement('a');a.href='#manuscript-grid';a.textContent='Man Grid';nav.appendChild(a)}
+else if(nav){const a=nav.querySelector('a[href="#manuscript-grid"]');if(a)a.textContent='Man Grid'}
 })();
