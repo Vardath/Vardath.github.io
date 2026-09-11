@@ -8,117 +8,88 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-11 — Asuran covert visitor impersonation promoted to public
+# CHECKPOINT — 2026-09-11 — Quiet Lattice / human-form society foundation promoted to public
 
 ## Public implementation state
 
 Public mod `main` is now:
 
-**`87da0e524324190584ac31e1830265db76688fae` — `rebuild: add Asuran covert visitor impersonation`**
+**`b242dc72d139910172e8de3290530b505fcfa823` — `rebuild: add Quiet Lattice human-form society`**
 
-It was promoted as one clean public commit with parent `c7a9b46...` from the validated clean tree `3a140d0774600e92162baf74b4af153fed35b3a0`.
-
-Public diff contains only:
-- `Defs/IncidentDefs/Incidents_AsuranCovertPresence.xml` — added;
-- `Source/WNG/Asuran/AsuranCovertPresence.cs` — added;
-- `Source/WNG/Asuran/AsuranInfiltration.cs` — updated.
-
-No temporary validation workflow entered public `main`.
+Promotion used the validated **pre-workflow** source tree from branch commit `8d3810ae372179d72375a08d0a53418d7848f755`, with public parent `87da0e...`. The temporary validator therefore did **not** enter public `main` even though connector safety blocked deleting it from the old branch.
 
 ## What is now public
 
-- save-persistent Def-tunable covert-visitor scheduler;
-- real `WNG_AsuranInfiltrator` covert arrival on player-home maps;
-- real visible non-hostile humanlike faction used as temporary cover identity;
-- exact true `WNG_AsuranLattice` source faction saved on the same pawn's persistent infiltration state;
-- native `GuestStatus.Guest` and native `LordJob_VisitColony` under that valid cover identity;
-- visitor letter does not disclose hidden Asuran source;
-- direct scan, EMP, meaningful injury and suspicious self-repair all break cover through the same reveal path;
-- exact same pawn restores its stored Asuran faction and enters real `LordJob_AssaultColony` behavior when revealed and free;
-- prisoner reveal preserves prisoner status while restoring true faction;
-- slave reveal defers hostile activation rather than destroying native slavery state;
-- downed/off-map activation is deferred until physically valid;
-- no pawn recreation/proxy and no Queen/block-sovereignty inference.
+Added:
+- `Defs/FactionDefs/Factions_QuietLattice.xml`;
+- `Defs/PawnKindDefs/PawnKinds_HumanFormSocieties.xml`.
 
-## Native API correction preserved
+Implemented:
+- real non-hostile `WNG_HumanFormEnclave` / **The Quiet Lattice** as a separate society from hostile `WNG_AsuranLattice`;
+- current-architecture `WNG_NaniteHumanoid` society rather than old `WNG_NanitePrecursor`;
+- `WNG_HumanFormReplicator` generalist role;
+- `WNG_HumanFormEngineer` fabrication/infrastructure role;
+- `WNG_HumanFormSoldier` defensive role;
+- `WNG_HumanFormCoordinator` leadership/coordinator role;
+- `WNG_PlayerHumanFormReplicator` player-aligned human-form role;
+- bounded Combat, Peaceful and Settlement group compositions;
+- Quiet Lattice is not permanently/naturally hostile and can exist as a settlement faction;
+- hostile Asuran Lattice remains separate and unchanged;
+- no references to obsolete/missing historical precursor weapon/armor/uniform Defs.
 
-Current RimWorld `Pawn_GuestTracker.SetGuestStatus(... Guest)` rejects a pawn whose current faction is hostile to the proposed host. The earlier idea of keeping active hostile Asuran faction while simply adding player Guest status is therefore superseded.
+## Reconciliation basis
 
-The public implementation instead temporarily uses a genuine non-hostile human cover faction while storing the exact true Asuran source on the same pawn. This is actual impersonation and obeys native guest mechanics.
+Recovered chat/history required:
+- hostile Asuran/Lattice society;
+- separate non-hostile Quiet Lattice human-form enclave;
+- player human-form variants;
+- engineer / infiltrator / soldier / coordinator-command role structure;
+- later native WNG backstories;
+- later friendly Quiet-Lattice/Puddle-Jumper Stargate courier.
+
+Historical/private `WNG_HumanFormEnclave`, human-form role PawnKinds and `Backstories_WNG.xml` were used only as requirement evidence. Superseded `WNG_NanitePrecursor` and missing precursor equipment were not restored.
+
+Stargate lore gate: Quiet Lattice is explicitly a **WNG-created splinter society**, not a canon-named faction. Its basis is canon-compatible Asuran ideological divergence such as Niam's anti-aggression/ascension-seeking group and the existence of individual human-form Replicator identities.
 
 ## Validation
 
-GitHub Actions run **`34605318105` — SUCCESS**:
+GitHub Actions run **`34606524857` — SUCCESS**:
 - Release C# build passed;
 - all current Def/Patch XML parsed;
-- persistent scheduler/true-cover faction/native Guest/native VisitColony/reveal-assault invariants passed.
+- Quiet Lattice faction identity, non-hostility and current xenotype wiring passed;
+- Peaceful/Settlement/Combat group wiring passed;
+- engineer/soldier/coordinator/generalist/player-role presence passed;
+- hostile `WNG_AsuranLattice` separation passed;
+- forbidden obsolete `WNG_NanitePrecursor` / precursor equipment references absent.
 
-This remains **source/Def validation, not live RimWorld validation**.
+This is **source/Def validation, not live RimWorld validation**.
 
-`CURRENT_PUBLIC_STATE.md` has been corrected to public HEAD `87da0e...` and strategic infiltration/impersonation is now recorded as implemented foundation / live-test-needed rather than missing-required.
+## Remaining human-form dependencies
 
----
+- native WNG backstories are still missing; Quiet Lattice currently uses generic `Outlander`/`Offworld` generation categories only as provisional compatibility;
+- hostile Asuran roles also still lack native WNG synthetic biographies;
+- Wraith native backstories remain missing too;
+- Quiet-Lattice/Puddle-Jumper friendly Stargate courier remains later integration after faction/backstory foundation;
+- live faction world-generation, relations, settlement, pawn-group and save/load testing remains required;
+- final art/audio remains later debt.
 
-# QUIET LATTICE RECONCILIATION — completed before next code pass
+## Exact next pass
 
-## Recovered chat/history requirement
+**Native WNG BackstoryDef foundation** covering both Wraith and human-form synthetic society roles.
 
-The human-form slice must not collapse identity layers or silently discard branches. Required society/role structure includes:
-- hostile Asuran/Lattice society;
-- non-hostile **Quiet Lattice** human-form Replicator enclave;
-- player human-form variants;
-- engineer / infiltrator / soldier / coordinator-command roles where distinct;
-- later native WNG backstories;
-- later friendly Quiet-Lattice / Puddle-Jumper Stargate courier integration.
-
-Quiet Lattice is defined by recovered WNG history as a human-form Replicator enclave choosing **controlled replication and negotiated coexistence over unrestricted expansion**.
-
-## Historical file evidence inspected
-
-Historical/reference branch `rebuild/wngr2-humanform-factions-20260909` contains:
-- `WNG_HumanFormEnclave` / **The Quiet Lattice** as non-hostile, coordinator-led, settlement-capable human-form synthetic faction;
-- hostile `WNG_PrecursorCollective` / Lattice Collective as a separate society;
-- role PawnKinds `WNG_PrecursorEngineer`, `WNG_PrecursorSoldier`, `WNG_PrecursorCommander`, generic `WNG_HumanFormReplicator`, and `WNG_PlayerHumanFormReplicator`;
-- `Backstories_WNG.xml` with synthetic origins and engineer/soldier/commander/human-form/player backstory categories.
-
-Those old Defs use superseded identities such as `WNG_NanitePrecursor` and old equipment tags/assets that are not present in current public. They are **requirement evidence only and must not be copied wholesale**.
-
-## Current public file reality
-
-Current public uses:
-- `WNG_NaniteHumanoid` as the real human-form nanite xenotype;
-- current Asuran Operative / Technician / Commander / Infiltrator PawnKinds;
-- current hostile `WNG_AsuranLattice` as the canon-Asuran hostile society;
-- current Nanite Reserve / Neural Interface / concealment / covert-presence systems.
-
-Search of current public found no current equivalents for old `WNG_PrecursorWeapon`, `WNG_PrecursorFieldArmor`, `WNG_PrecursorCommandArmor` or `WNG_HumanFormUniform`. Therefore the next pass must **not** resurrect references to those absent assets/Defs.
-
-## Stargate lore gate
-
-Quiet Lattice is **not a canon-named faction**. Its basis is a WNG extrapolation grounded in canon evidence that:
-- Asurans are individual functioning beings linked by shared base-code/subspace updates rather than a single hive mind;
-- Niam and others sought removal/suppression of the aggression directive and were willing to stop attacks on Atlantis;
-- Niam's group represents internal ideological divergence;
-- the later Niam-associated splinter group pursued ascension separately from Oberoth's main Asuran society and created human replicas/impersonations after base-code alteration.
-
-Therefore a non-hostile splinter society choosing restrained replication/coexistence is lore-compatible WNG design, but must not be falsely described as a canon faction called “Quiet Lattice.”
-
-## Exact next implementation pass
-
-Create a fresh branch from public `87da0e...` and implement one coherent **Quiet Lattice / broader human-form faction-role foundation**:
-1. real non-hostile `WNG_HumanFormEnclave` / The Quiet Lattice faction using current `WNG_NaniteHumanoid` architecture;
-2. current human-form engineer, soldier and coordinator roles without references to missing old gear/assets;
-3. generic human-form Replicator and player human-form Replicator PawnKinds where they remain distinct from those roles;
-4. Quiet Lattice Peaceful / Settlement / bounded Combat group composition;
-5. preserve hostile `WNG_AsuranLattice` as separate faction; do not merge or replace it;
-6. preserve infiltrator as distinct hostile/covert role rather than making Quiet Lattice secretly hostile by default;
-7. explicitly leave native WNG backstories as the next dependency rather than using old generic biography as final design;
-8. leave Quiet-Lattice/Puddle-Jumper courier as later integration after the faction foundation;
-9. Release build + XML/reference validation, remove temp validator, checkpoint before promotion/next pass.
+Required steps:
+1. inspect the complete historical `Backstories_WNG.xml` as requirement/reference evidence;
+2. inspect current Wraith and human-form PawnKinds/faction generation filters and current RimWorld 1.6 `BackstoryDef` schema;
+3. reconcile backstory text/roles against Stargate lore — do not invent false canon claims;
+4. rebuild native WNG origin/adulthood categories against current identities (`WNG_Wraith`, `WNG_NaniteHumanoid`, Quiet Lattice/current Asuran roles), not superseded precursor identities;
+5. preserve race/xenotype, caste/PawnKind, faction and backstory as separate identity layers;
+6. wire faction/PawnKind generation to native WNG backstory categories without breaking existing current pawns;
+7. validate Release build + XML/reference/category invariants;
+8. checkpoint before promotion/next subsystem.
 
 ---
 
-# PUBLIC MILESTONES
+# PRIOR PUBLIC MILESTONES
 
 - Temporary Asuran lattice intrusion: **`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**.
 - Recurring exact-map Queen recovery: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**.
@@ -126,5 +97,6 @@ Create a fresh branch from public `87da0e...` and implement one coherent **Quiet
 - Neural Interface / exact reconstruction: **`8495b846c7dd31c079db6d4f007be490df3247f3`**.
 - Infiltration conceal/reveal: **`c7a9b46a3bef9393301d153e3f56c3c44c7ce95c`**.
 - Covert visitor impersonation: **`87da0e524324190584ac31e1830265db76688fae`**.
+- Quiet Lattice human-form society: **`b242dc72d139910172e8de3290530b505fcfa823`**.
 
-All are source/Def validated; broad live RimWorld validation remains outstanding.
+All are source/Def validated before public promotion; broad live RimWorld validation remains outstanding.
