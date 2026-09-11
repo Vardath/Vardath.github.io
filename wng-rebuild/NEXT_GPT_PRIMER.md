@@ -1,164 +1,86 @@
-# WNG rebuild — primer for the next GPT
+# WNG rebuild — short primer for the next GPT
 
-Snapshot date: **2026-09-10**  
+Snapshot date: **2026-09-11**  
 Author/design authority: **Vardath**
 
-This is a handoff snapshot, not a substitute for the plan. **Verify the current public repository head before editing.**
+# DO NOT USE THIS FILE AS THE PROJECT MEMORY
 
-## Mandatory first action
+The one-time WNG history reconstruction is stored in:
 
-Do not begin coding from this primer alone.
+**`CANONICAL_RECOVERY_LEDGER.md`**
 
-Read in this order:
-1. `wng-rebuild/STANDING_RULES.md`
-2. `wng-rebuild/PLAN_EXECUTION_PROTOCOL.md`
-3. `wng-rebuild/REFRESH_MEMORY_AND_CONTINUE.md`
-4. `wng-rebuild/CORRECTIONS_LOG.md`
-5. relevant sections of `wng-rebuild/MASTER_PLAN.md`
-6. `wng-rebuild/REPLICATOR_HIERARCHY.md`
-7. `wng-rebuild/REPLICATOR_QUEEN.md` when working on Queen/Asuran systems
-8. `wng-rebuild/REPLICATOR_FEATURE_MAP.md`
-9. `wng-rebuild/REPLICATOR_FOUNDATION_CHECKPOINT_2026-09-10.md`
-10. current public `Vardath/Wraith-Nanite-Gravtech-1.6` tree
+That ledger is the canonical recovered continuity record. This primer is deliberately short so it cannot drift into a competing history.
 
-Then perform the mandatory subsystem reconciliation before writing code.
+## Recovery sequence
 
-## Current repository arrangement
+1. Read `STANDING_RULES.md`.
+2. Read **all of `CANONICAL_RECOVERY_LEDGER.md`**.
+3. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
+4. Fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main`.
+5. Compare current HEAD/state to the ledger snapshot and update the ledger if the repo has advanced.
+6. Read the active subsystem contract/plan append needed for the actual next slice.
+7. Continue implementation through `PLAN_EXECUTION_PROTOCOL.md`.
+8. Update the canonical ledger before ending the batch.
 
-Current implementation repository:
-- public `Vardath/Wraith-Nanite-Gravtech-1.6`
+Do not reread weeks of raw WNG chat by default. Retrieve raw history only for a real ledger gap/conflict, repo-vs-ledger contradiction, or explicit Vardath request.
 
-Durable requirements/continuity repository:
-- public `Vardath/Vardath.github.io/wng-rebuild/`
+## Current repository authority
 
-Do **not** depend on or write to the private WNG repository unless Vardath explicitly re-authorizes it. Private credits are not to be consumed for this rebuild.
+Implementation: public `Vardath/Wraith-Nanite-Gravtech-1.6` `main`.
 
-## Current reset state
+Continuity: public `Vardath/Vardath.github.io/wng-rebuild/`.
 
-The public 1.6 mod was deliberately wiped and restarted on 2026-09-10.
+Private/old WNG repos/builds: reference evidence only unless Vardath explicitly re-authorizes them.
 
-Reset commit:
-- `0386f33665b08f9c4f82cbcec23d844bc68ea3af` — `reset: restart WNG from Replicator foundation only`
+There are **no known-good historical WNG builds**.
 
-Latest implementation cleanup head at this snapshot:
-- `94705ee8894b6659920178e19ea0ebe21555c7be` — temporary verification workflow removed after the tactical Burrower refinement passed compilation/XML checks.
+## Current public implementation checkpoint recorded by the ledger
 
-Always fetch `main` again because it may have advanced after this primer.
+**`4af4f60c184f1971ee7bc7516b63e3b33142fea0` — `cleanup: remove temporary Wraith stunner validation workflow`**
 
-The fresh tree intentionally does **not** contain the old Wraith/Asuran/Queen implementation, old audit suite, old release gates or old design-lock machinery. Git history remains reference material only; there is no known-good old state.
+Always fetch `main`; this SHA is a checkpoint, not a branch lock.
 
-## Preserved asset inventory
+The fresh rebuild began at:
 
-Approved block Replicator graphics and resource graphics remain retained.
+`0386f33665b08f9c4f82cbcec23d844bc68ea3af` — `reset: restart WNG from Replicator foundation only`
 
-The retained Replicator graphic inventory includes:
-- Drone/base Replicator;
-- Hunter;
-- Bulwark;
-- Titan;
-- Siege Mass;
-- Controller;
-- Repairer;
-- Burrower;
-- Artillery;
-- adaptation overlays for Armor, Ranged, Power, Grav and Shield;
-- Replicator Matter and Core Fragment resource graphics.
+At ledger creation current `main` is **269 commits beyond that reset**, so any older primer/checkpoint claiming the current tree contains only the Replicator foundation is stale.
 
-Treat this asset inventory as completeness evidence. Do not rebuild a shorter Def/behavior roster from memory.
+## Current broad implementation state
 
-## Block Replicator foundation — current implemented state
+Present in current fresh public source/Defs:
+- block Replicator hierarchy/specialists/adaptations/matter/containment/Child's Toy foundations;
+- Wraith xenotype/castes, four Wraith factions, Life Force/feeding, strategic faction hunger, Mature-Hive ecology/retaliation, captivity/rescue and living-tech bootstrap;
+- Wraith Dart culling/native retreat/exact captive persistence;
+- Wraith stun staff;
+- complete native Odyssey shuttle stacks for Dart, Wraith scout/strike craft, Wraith cruiser, Puddle Jumper and **Al'kesh**;
+- verified CatCraft/ONAC/RimGate optional-integration identities;
+- Goa'uld transport rings;
+- Wraith and Asuran Odyssey-native gravship core families;
+- family-isolated power/fuel networking;
+- Asuran Nanite Reserve/fabrication/workshop foundations.
 
-Physical hierarchy:
+Major required unfinished branches currently recorded:
+- human-form Replicator/Asuran infiltration + Neural Interface + exact Queen + sovereign/capture layer;
+- mixed human-form/block raid integration tied to that layer;
+- Goa'uld **Ha'tak** Odyssey gravship family;
+- safe standalone Goa'uld craft/gravship resource/research route when ONAC is absent;
+- final deliberate Ancient/Puddle Jumper power/fuel abstraction;
+- professional final art/audio/directional-connection audit;
+- broad live-game validation of the fresh current build.
 
-**Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass**
+## Critical reminders
 
-Genuine-destruction breakup:
+- **WNG is a Stargate mod. Lore/function check before every implementation.**
+- **Al'kesh exists and stays.** Rebuild/refine never means remove it.
+- Do not invent uranium/chemfuel or another unspecified Goa'uld fallback.
+- ONAC supplied source uses `ONAC_Naquadah` and `ONAC_LiquidNaquadria`; exact IDs are recorded in the ledger/contracts.
+- CatCraft owns Stargate network/dial/iris/receive behavior; WNG integrates around it.
+- Ordinary Wraith Drain Life, strategic Wraith faction hunger, Mature-Hive feeding ecology and Mature-Hive retaliation are separate systems.
+- Use **Wraith Grav Engine**, not obsolete Wraith Gravcore.
+- No replacement/generated art unless Vardath asks.
+- Current public state beats stale `next step` prose.
 
-**Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base**
+## Handoff rule
 
-Intentional upward recombination is separated from genuine destruction so consumed bodies do not trigger death splitting.
-
-Split-born children receive the current first-build approximately **one in-game hour / 2,500-tick recombination lockout**. This exists specifically so destroying a Titan or Siege Mass does not immediately recreate the same large threat and make combat effectively impossible/immortal. The exact timer remains tunable.
-
-Current fresh implementation now includes:
-- cumulative learned adaptation state rather than single-value overwrite state;
-- adaptation/state inheritance through split and recombination;
-- stored matter conservation through recombination and genuine-death splitting;
-- technology-prioritized assimilation;
-- matter-budget offspring production;
-- Def-tunable population ceiling for autonomous growth and dormant-matter reassembly;
-- dangerous Replicator Matter reassembly;
-- Replicator Core Fragment resource;
-- regeneration with EMP suppression;
-- Power adaptation improving regeneration;
-- Armor adaptation damage reduction;
-- Shield adaptation with rechargeable defensive pool;
-- Ranged adaptation with learned ranged fire;
-- repeated shield evidence before AntiShield knowledge unlocks;
-- retained Armor/Ranged/Power/Grav/Shield overlay rendering;
-- Controller coordination behavior;
-- Repairer support behavior;
-- Burrower breach behavior with tactical priority for WNG containment projectors, doors/gates/bulkheads, walls and barricades before generic hostile structures;
-- Artillery ranged support behavior;
-- autonomous Replicator faction roster containing Drone, Hunter, Bulwark, Controller, Repairer, Burrower, Artillery, Titan and Siege Mass;
-- powered Replicator containment projector that blocks hostile assimilation/recombination and freezes dangerous Matter reassembly while powered;
-- player-owned safety preventing autonomous hostile-style assimilation/recombination;
-- Child's Toy as a player-owned mech branch that physically transforms into an ordinary hostile Replicator Drone after a tunable feral/uncontrolled period.
-
-## Current verification status
-
-The fresh block Replicator implementation was verified with temporary public GitHub Actions checks and the temporary workflow was then deleted.
-
-Latest completed verification before cleanup:
-- RimWorld 1.6 C# assembly build: **SUCCESS**
-- Def XML syntax parse: **SUCCESS**
-
-Do not recreate a permanent release-lock/audit framework. Use only temporary/minimal checks when needed to establish that newly written code and Defs function.
-
-## Explicitly unfinished block-related dependencies
-
-These are tracked and must not be forgotten:
-
-- **Grav adaptation gameplay effect:** learned state and retained overlay exist, but the actual mobility/grav effect must bind to WNG's real later gravtech implementation. Do not invent an unrelated placeholder buff.
-- **Full anti-shield interaction:** evidence/learning state exists, but countermeasure behavior against later concrete shield systems remains dependent on those systems existing.
-- **Queen sovereign control domain:** the exact Queen must later provide genuine sovereign access/control over block Replicators.
-- **Asuran sovereign consequence:** only physical successful Queen capture grants later Asuran/Lattice sovereign block-Replicator access.
-- **Mixed human-form + block raids:** remain a later human-form/Asuran-layer integration.
-- **Broader deliberate player sovereign control commands:** block safety exists now; richer intentional control belongs with the later sovereign/control layer.
-
-If full reconciliation discovers another block feature, add it rather than silently omitting it.
-
-## Major later-plan reminders
-
-- Wraith are one identity/xenotype with caste PawnKinds such as Hunter, Warrior, Commander, Keeper and Queen; backstories are biography, not races/castes.
-- Ordinary Wraith Drain Life never opens the strategic feeding-request popup.
-- Strategic Wraith faction hunger is separate and drives genuine feeding requests and escalating attack pressure when unresolved/refused.
-- Mature-Hive feeding ecology and mature-Hive retaliation are separate from strategic hunger.
-- Use **Wraith Grav Engine**, not obsolete Gravcore substitution.
-- Human-form Replicators/Asurans are nanite humanoids, distinct from block Replicator custom forms.
-- Mixed block + human-form raid composition can be intentional.
-- Queen is one exact female human-form Replicator, age 13 in the current first-build design, held in a real cryosleep chamber.
-- Queen becomes player-recruited immediately upon release/spawn.
-- Asuran/Lattice recovery operatives try to capture her during the vault encounter.
-- Capture is committed only when a hostile carrier physically exits the map with the exact Queen.
-- While she remains player-owned, Asurans may later make occasional capture raids against **any player map where she is physically present**; this is not restricted to home maps.
-- If captured, the Lattice gains genuine sovereign use of block Replicators in appropriate threats, not a fake `+1 outbreak` bonus.
-- Old day-84 discovery pacing was rejected. Major WNG content must be reachable in short campaigns and story/event pacing must remain tunable rather than buried in code.
-- CatCraft Stargates! integration is optional; CatCraft owns gate networking, WNG owns WNG incidents/craft/objectives.
-- Both Wraith and Asuran/Precursor Odyssey gravship families remain planned and must be functionally distinct.
-- Professional art/audio remains part of the full mod, but approved Replicator graphics are currently preserved and should not be casually replaced.
-
-## Process rules that must not regress
-
-- Vardath is the author and final design authority.
-- Follow the current plan rigorously for the first complete build.
-- Nothing is permanently set in stone; Vardath may redesign any part later.
-- Do not omit features.
-- Do not bury author-tunable design/balance choices as scattered magic numbers or immutable constants.
-- Prefer Defs/settings/centralized configuration where practical for tunable behavior.
-- Historical source is reference evidence only, not a code authority.
-- Do not call any old checkpoint known-good.
-- Do not use private-repository credits for this rebuild.
-- Do not generate new art unless Vardath explicitly asks for it.
-- Do not ask Vardath to repeat requirements already recorded in the continuity set.
-- Continue implementation when told to continue; do not stop after a context summary.
+Do not create another independent giant primer. Update `CANONICAL_RECOVERY_LEDGER.md` after meaningful work so the next GPT can recover smoothly from one maintained source.
