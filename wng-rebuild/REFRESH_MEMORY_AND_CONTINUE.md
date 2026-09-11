@@ -2,14 +2,28 @@
 
 Read this before touching the WNG 1.6 repository after any context reset.
 
-# ⛔ STARGATE LORE FIRST — DO NOT CODE BEFORE THIS
+# ⛔ FULL WNG CHAT HISTORY FIRST — DO NOT TOUCH MOD CODE BEFORE THIS
 
-Before any implementation pass, read and answer `WNG_IMPLEMENTATION_CHECKLIST.md`.
+Before any implementation pass, retrieve and reconcile **all accessible relevant WNG prior conversations** for the subsystem being touched and any adjacent systems that could be affected.
+
+- Handoff summaries, memory summaries, repo notes and old assistant recaps are **not substitutes** for the underlying prior WNG chats when those chats are accessible.
+- If Vardath says **read/check/review chat history**, retrieval is mandatory before code changes.
+- Use multiple focused retrieval passes across the WNG timeline/subsystems when necessary; do not skim one recent chat and assume continuity is complete.
+- Reconcile conflicts chronologically: **newest explicit Vardath instruction wins**.
+- Older instructions remain useful historical evidence, but must not reactivate superseded repo authority, architecture or design.
+- Do not ask Vardath to repeat information that exists in accessible WNG chat history.
+- If literal full transcripts are not technically available, do not falsely claim every literal line is loaded. Retrieve all accessible WNG history and identify any genuine retrieval limitation **before** modifying code.
+
+This requirement was explicitly stated by Vardath before the 2026-09-10 reset and is now a standing gate again because summaries alone repeatedly caused continuity errors.
+
+# ⛔ STARGATE LORE SECOND — DO NOT CODE BEFORE THIS
+
+After the chat-history reconstruction, read and answer `WNG_IMPLEMENTATION_CHECKLIST.md`.
 
 The required questions are:
 - **What is this in Stargate?**
 - **What does it actually do in Stargate?**
-- **What has Vardath said about it in chat/history?**
+- **What has Vardath said about it across retrieved chat history?**
 - **What does current public WNG already do?**
 - **What had historical WNG attempted before, and what failed?**
 - **What native RimWorld/Odyssey/Biotech mechanics already provide the required function?**
@@ -26,18 +40,19 @@ An older note saying `next`, `unfinished`, `reconcile`, `correct` or `rebuild` d
 - Author/final design authority: **Vardath**.
 - Active code repository: public `Vardath/Wraith-Nanite-Gravtech-1.6`.
 - Durable plan/continuity copy: `Vardath/Vardath.github.io/wng-rebuild/`.
-- Do not depend on or write to the private WNG repository unless Vardath explicitly re-authorizes it later.
+- Do not depend on or write to the private WNG repository unless Vardath explicitly re-authorizes it later. Older chats that made the private repo authoritative are superseded historical instructions.
 
-## Mandatory read order
+## Mandatory read/retrieval order
 
-1. Read `STANDING_RULES.md` first.
-2. **Read `WNG_IMPLEMENTATION_CHECKLIST.md` second — mandatory Stargate-lore gate before any code.**
-3. Read `PLAN_EXECUTION_PROTOCOL.md` and follow it before writing code.
-4. Read `CORRECTIONS_LOG.md`.
-5. Read `MASTER_PLAN.md` for the active subsystem and adjacent dependencies.
-6. Read active subsystem notes, including `REPLICATOR_HIERARCHY.md` and `REPLICATOR_QUEEN.md` when relevant.
-7. Read `NEXT_GPT_PRIMER.md` for the latest handoff snapshot, then verify that snapshot against the current public repository head before trusting it.
-8. Fetch current public 1.6 `main` and inspect relevant recent commits before editing. Do not assume the last chat head or an old next-step note is still current.
+1. **Retrieve all accessible relevant WNG chat history first.**
+2. Read `STANDING_RULES.md`.
+3. Read `WNG_IMPLEMENTATION_CHECKLIST.md` — mandatory chat-history + Stargate-lore gate before any code.
+4. Read `PLAN_EXECUTION_PROTOCOL.md` and follow it before writing code.
+5. Read `CORRECTIONS_LOG.md`.
+6. Read `MASTER_PLAN.md` for the active subsystem and adjacent dependencies.
+7. Read active subsystem notes, including `REPLICATOR_HIERARCHY.md` and `REPLICATOR_QUEEN.md` when relevant.
+8. Read `NEXT_GPT_PRIMER.md` only as a handoff snapshot, then verify it against retrieved chat history and current public repository state before trusting it.
+9. Fetch current public 1.6 `main` and inspect relevant recent commits before editing. Do not assume the last chat head or an old next-step note is still current.
 
 ## Mandatory implementation method
 
@@ -45,15 +60,15 @@ Do **not** start coding from remembered requirements or a previous assistant sum
 
 For every subsystem:
 
-**STARGATE LORE -> VARDATH/CHAT -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
+**FULL ACCESSIBLE WNG CHAT HISTORY -> STARGATE LORE -> VARDATH/CHAT CHRONOLOGY -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
 
 Before implementation, inventory the subsystem using all relevant evidence:
+- retrieved WNG chat history;
 - Stargate canon/lore and actual function;
 - standing rules;
 - correction log;
 - master plan;
 - subsystem notes;
-- relevant Vardath chat/history;
 - retained graphics/assets/audio;
 - current public Defs/source and recent implementation history;
 - faction/PawnKind/xenotype/race references;
@@ -121,7 +136,7 @@ Do not carry forward:
 
 ## Immediate restart sequence
 
-The numbered restart sequence below is historical planning context, **not authoritative current implementation state**. Before acting on any item, reconcile it against current public `main`, recent commits and the checklist.
+The numbered restart sequence below is historical planning context, **not authoritative current implementation state**. Before acting on any item, reconcile it against retrieved chat history, current public `main`, recent commits and the checklist.
 
 1. Preserve/carry approved Replicator PNG assets into the fresh 1.6 tree.
 2. Reconstruct the **complete** block Replicator foundation: Defs, PawnKinds, physical hierarchy, specialist/adaptation branches including Shield, faction, split/recombine, matter economy, assimilation, regeneration, EMP/control behavior, containment, swarm AI, player-safety behavior and Child's Toy/player branch. Do not call the foundation complete while a known branch is missing.
@@ -134,4 +149,4 @@ The numbered restart sequence below is historical planning context, **not author
 9. Rebuild craft, Stargate integrations and gravship families.
 10. Add/review professional art/audio and tune the entire mod from live testing.
 
-Do not stop after refreshing this material when Vardath asked to continue. Continue implementation only after identifying the **actual first unfinished item from current public state**, not merely the first item that an older document calls unfinished.
+Do not stop after refreshing this material when Vardath asked to continue. Continue implementation only after identifying the **actual first unfinished item from retrieved chat history plus current public state**, not merely the first item that an older document calls unfinished.
