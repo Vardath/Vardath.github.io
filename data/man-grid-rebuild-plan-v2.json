@@ -1,143 +1,201 @@
 {
-  "version": 2,
-  "title": "Exact Man Grid phonetics and original-language rebuild",
-  "status": "pass-1-started",
-  "correction": "The earlier ChatGPT-built original-phonetics and original-language experiments used the wrong computational object: a 16-state A1-D4 proxy (and later a noisy source-trace) instead of the exact discrete Man Grid. That was an implementation error by ChatGPT. The old results remain on the site as historical research records, but they are not treated as valid results from the actual Man Grid. This V2 sequence starts again from the exact discrete grid supplied by the researcher.",
+  "version": 3,
+  "title": "Authoritative corrected Man Grid language/phonetics reconstruction plan",
+  "status": "corrected-exact-v3-tests-1-3-ready",
+  "authoritative": true,
+  "correction": "The earlier ChatGPT implementation used the wrong computational object: first the A1-D4 / 16-state / 256-gate proxy, and later an incorrect traced/manual Man Grid representation. Those were ChatGPT implementation errors. Earlier results remain historical research records but are not valid evidence for the correct Man Grid. All corrected tests use the same exact computational data model as the live website Man Grid engine.",
   "exact_grid": {
-    "upper": ["4x4 each side", "7x5 each side", "10x5 each side", "7x4 each side", "5x5 each side"],
-    "transform": "transformative circle",
-    "lower": ["6x5", "11x5", "17x4", "21x5", "25x5"],
-    "cells": 691,
-    "hypothesis": "The lower single-grid stack represents a shared phonetic state which can pass through the transformative circle and bifurcate into paired left/right sibling-language states in the upper stack. The tests are required to determine whether this interpretation is supported rather than assuming it is true."
+    "upper": [
+      "U1: 4x4 LEFT + RIGHT",
+      "U2: 7x5 LEFT + RIGHT",
+      "U3: 10x5 LEFT + RIGHT",
+      "U4: 7x4 LEFT + RIGHT",
+      "U5: 5x5 LEFT + RIGHT"
+    ],
+    "transform": "single transformative circle",
+    "lower": [
+      "D1: 6x5 LEFT + RIGHT",
+      "D2: 11x5 LEFT + RIGHT",
+      "D3: 17x4 LEFT + RIGHT",
+      "D4: 21x5 LEFT + RIGHT",
+      "D5: 25x5 LEFT + RIGHT"
+    ],
+    "rectangular_cells": 1074,
+    "transform_nodes": 1,
+    "addressing": "<layer>-<side L/R>-R<row>-C<column>, one-based row/column",
+    "mirror": "LEFT <-> RIGHT with the same layer, row and column, above and below the transformative circle",
+    "hypothesis": "The mirrored Man Grid may provide a mechanism by which a parent phonetic/language state can produce two sibling language states. This is a hypothesis to test, not an assumed property."
+  },
+  "engine_contract": {
+    "canonical_browser_engine": "phonetic-man-grid-engine-core.js + data/man-grid-structure-v1.json",
+    "batch_port": "tools/man_grid_exact_engine.py + tools/man_grid_exact_data.py",
+    "required_parity": [
+      "same PHOIBLE full-feature vectors",
+      "same two-component PCA seeds, signs and percentile bounds",
+      "same per-layer row/column quantisation",
+      "same y-axis inversion",
+      "same weighted phonetic feature distance",
+      "same 1074 stable cell IDs",
+      "same L/R mirror addressing on every rectangular layer"
+    ]
+  },
+  "execution_contract": {
+    "heavy_tests": "20 genuinely independent shards run concurrently",
+    "partitioning": "each shard owns a deterministic disjoint partition of the assigned evidence; 20 repetitions of the full test do not count as shards",
+    "merge": "deterministic",
+    "timeouts": "do not impose arbitrary short execution timeouts",
+    "dependency_rule": "dependent tests consume the actual output of preceding corrected tests",
+    "failed_shards": "diagnose and rerun failed shard(s); never silently drop them",
+    "required_reporting": [
+      "sample/data coverage",
+      "languages involved",
+      "language families involved",
+      "null/control comparison",
+      "shard agreement/stability",
+      "effect size or equivalent quantitative measure",
+      "reconstruction confidence",
+      "failures/missing data",
+      "assumptions introduced by the model"
+    ],
+    "sources": "Use pinned PHOIBLE, WikiPron, Wiktionary/Wiktextract and established repository datasets where appropriate, preserving pinned source versions.",
+    "invalid-result-boundary": "Do not import mappings, reconstructions or transformation rules learned from the invalid 16-state or traced-grid experiments."
   },
   "tests": [
     {
       "id": 1,
-      "name": "Original phonetic sounds through the exact Man Grid",
+      "name": "Original phonetic reconstruction",
       "dependency": "none",
       "can_run_now": true,
       "shards": 20,
-      "purpose": "Analyse the full PHOIBLE inventory evidence family-by-family, split within-family language inventories into two data-driven sibling branches, map the two descendant sound states to the paired upper grids, infer shared midpoint/ancestor sound states below the transformative circle, and reconstruct a stable candidate original phoneme inventory. Compare within-family sibling reconstruction with unrelated-family controls. This test creates the phonetic coordinate system used by every later language reconstruction."
+      "purpose": "Analyse usable phonetic evidence across available languages and families through the exact 1074-cell mirrored Man Grid. Reconstruct a candidate ancestral phoneme inventory before lexical reconstruction and test shared-parent / two-sibling representation rather than assuming it.",
+      "required_output": ["candidate ancestral phoneme inventory", "IPA", "phonetic features", "exact Man Grid state/location", "contributing languages", "independent families", "LEFT/RIGHT sibling evidence", "support/confidence", "competing sounds", "null controls", "20-shard stability"]
     },
     {
       "id": 2,
-      "name": "Exact-grid phonetic locality and shuffle control",
+      "name": "Man Grid phonetic locality / control",
       "dependency": "none",
       "can_run_now": true,
       "shards": 20,
-      "purpose": "Check independently whether phones close in PHOIBLE distinctive-feature space land near one another in the exact Man Grid at its different resolutions more strongly than shuffled cell assignments. If the grid cannot preserve phonetic locality, later linguistic interpretation is weakened."
+      "purpose": "Independently determine whether genuinely similar phonemes occupy structurally related exact Man Grid states more often than shuffled/random assignments."
     },
     {
       "id": 3,
-      "name": "Sibling-language split falsification",
+      "name": "Parent to two sibling phonetic systems falsification test",
       "dependency": "none",
       "can_run_now": true,
       "shards": 20,
-      "purpose": "Test the proposed one-parent-to-two-sibling function directly. Compare real within-family paired branches against deterministically mismatched unrelated families. Measure whether a common lower-grid parent state predicts both upper branches better and more coherently than the null pairings."
+      "purpose": "Use real within-family sibling branches where possible and compare them with unrelated or deterministically mismatched pairs. Test whether one shared parent predicts both real sibling branches better than controls; do not force a positive result."
     },
     {
       "id": 4,
-      "name": "Original-language lexical reconstruction through the exact Man Grid",
-      "dependency": "Test 1",
+      "name": "Original-language lexical reconstruction",
+      "dependency": "Test 1 actual output",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Re-scan the all-language lexical corpus and reconstruct same-meaning ancestral word paths using the V2 original phonetic inventory and exact Man Grid rather than A1-D4. Produce the first corrected candidate original language."
+      "purpose": "Scan full usable multilingual dictionary evidence, group comparable meanings, and reconstruct same-meaning ancestral forms using only the corrected Test 1 phonetics, exact Man Grid and independent family evidence."
     },
     {
       "id": 5,
       "name": "Full dictionary expansion and stability",
-      "dependency": "Test 4",
+      "dependency": "Test 4 actual output",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Expand the corrected reconstruction to approximately 12,000 words or more if the evidence supports more eligible meanings; run leave-family-out and shard-stability checks and retain confidence/evidence for every entry."
+      "purpose": "Expand toward approximately 12000 words or more if evidence supports more; never force exactly 12000. Each entry should retain gloss, reconstructed form and IPA, Man Grid phoneme/path representation, contributing languages/families, confidence, alternatives and historical/transformation evidence; run leave-family-out and shard-stability checks."
     },
     {
       "id": 6,
-      "name": "Nearest current and historical language comparison",
-      "dependency": "Tests 4-5",
+      "name": "Nearest current and historical language",
+      "dependency": "Tests 4-5 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Compare the corrected reconstructed language with attested language profiles without importing the old 16-state rankings. Determine which languages are structurally closest under the exact-grid representation."
+      "purpose": "Relearn which attested languages are closest to the corrected reconstruction using the exact Man Grid representation; do not reuse the old ranking."
     },
     {
       "id": 7,
-      "name": "Origin-hypothesis and held-out-family stress test",
-      "dependency": "Tests 4-5",
+      "name": "Origin / family enrichment plus held-out-family stress test",
+      "dependency": "Tests 4-5 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Test whether any language family is genuinely enriched for similarity to the reconstruction while holding that family out of the reconstruction that predicts it. This checks circularity and broad origin claims."
+      "purpose": "Test whether any family is genuinely unusually similar while excluding that family from evidence used to build the predictor, explicitly guarding against circularity and false origin claims."
     },
     {
       "id": 8,
       "name": "Reverse-family convergence",
-      "dependency": "Tests 4-5",
+      "dependency": "Tests 4-5 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Reverse-transform independent language families through the exact Man Grid and ask whether they converge reproducibly on the same reconstructed attractor rather than on arbitrary modern languages."
+      "purpose": "Reverse-transform independent language families using the corrected representation and determine whether they reproducibly converge on the same ancestral attractor rather than arbitrary modern languages."
     },
     {
       "id": 9,
-      "name": "Data-driven sibling-anchor discovery",
-      "dependency": "Tests 4-8",
+      "name": "Data-driven sibling-language anchor discovery",
+      "dependency": "Tests 4-8 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Relearn which attested languages or language groups best occupy the two sibling branches. Do not hard-code the previous Occitan/Indonesian result; rediscover or reject it from the corrected data."
+      "purpose": "Discover which extant or historical languages/groups best occupy the two sibling branches. Do not hard-code Occitan or Indonesian; independently rediscover or reject the earlier behaviour."
     },
     {
       "id": 10,
-      "name": "Common-parent split test for the discovered sibling anchors",
-      "dependency": "Test 9",
+      "name": "Common-parent test of discovered sibling anchors",
+      "dependency": "Test 9 actual output",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Infer the lower-grid parent using only the two discovered sibling branches, then test it against the reconstructed root, held-out languages, and random-pair controls."
+      "purpose": "Infer a parent using only the two discovered sibling branches, then test it against the independently reconstructed root, held-out languages and random-pair controls."
     },
     {
       "id": 11,
       "name": "Sibling-constrained candidate-language reconstruction",
-      "dependency": "Test 10",
+      "dependency": "Test 10 actual output",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Reconstruct a second full candidate lexicon using the discovered sibling information as constrained evidence while retaining independent multilingual family evidence."
+      "purpose": "Reconstruct a second complete candidate lexicon using discovered sibling information only as constrained additional evidence while retaining independent multilingual family evidence."
     },
     {
       "id": 12,
       "name": "Independent candidate validation",
-      "dependency": "Test 11",
+      "dependency": "Test 11 actual output",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Compare correct sibling anchors, no-anchor reconstruction, and shuffled/wrong-meaning anchors on held-out families and meanings to determine whether the sibling information genuinely predicts unseen evidence."
+      "purpose": "Compare correct sibling anchors, no sibling anchors, and shuffled/wrong-meaning anchors against held-out languages, families and meanings to test genuine predictive value."
     },
     {
       "id": 13,
-      "name": "Historical language drift through the exact Man Grid",
-      "dependency": "Test 1",
+      "name": "Historical language drift through the correct Man Grid",
+      "dependency": "Test 1 actual output",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Learn ancestor-to-descendant changes from documented historical inheritance pairs using the V2 phonetic/grid representation, testing on held-out historical forms against shuffled and wrong-meaning controls."
+      "purpose": "Learn documented ancestor-to-descendant phonetic/language changes using held-out historical examples with shuffled-target and wrong-meaning controls; do not import old-grid transformation rules."
     },
     {
       "id": 14,
       "name": "All-language transformation-rule discovery",
-      "dependency": "Tests 1 and 13",
+      "dependency": "Tests 1 and 13 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Generalise historically supported substitutions, deletions, insertions, branch changes and circle-crossing transformations across all sufficiently supported language routes. These are the corrected language-transformation rules."
+      "purpose": "Learn statistically supported substitutions, insertions, deletions, positional/context-conditioned changes, Man Grid movements, sibling-branch changes, mirror relationships and transformative-circle behaviour only where supported."
     },
     {
       "id": 15,
       "name": "Rule-augmented original-language reconstruction",
-      "dependency": "Tests 5 and 14",
+      "dependency": "Tests 5 and 14 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Feed only cross-validated historical transformation rules back into the exact-grid reconstruction and test whether they improve held-out prediction over the unaugmented and shuffled-rule reconstructions."
+      "purpose": "Feed only cross-validated historically supported rules back into the corrected reconstruction and compare rule-augmented, unaugmented and shuffled-rule systems on held-out prediction."
     },
     {
       "id": 16,
-      "name": "Final phonetics, language and dictionary consistency pass",
-      "dependency": "Tests 1-15",
+      "name": "Final phonetics / language / dictionary consistency pass",
+      "dependency": "Tests 1-15 actual outputs",
       "can_run_now": false,
       "shards": 20,
-      "purpose": "Freeze the corrected original phoneme inventory, grammar/transform rules and final 12,000+ word dictionary; publish confidence, evidence, comparison tables and playable reconstructed pronunciations without erasing the earlier research record."
+      "purpose": "Freeze the corrected original phoneme inventory, reconstructed language, transformation rules, 12000+ word dictionary if supported, pronunciation representation/audio support, confidence/evidence tables and explicit evidence boundaries."
     }
-  ]
+  ],
+  "website_contract": {
+    "preserve_previous_research": true,
+    "label_invalid_old_results": "historical records from ChatGPT implementation error; not evidence for the correct Man Grid",
+    "append_as_each_test_finishes": true,
+    "corrected_result_namespace": "exact-v3",
+    "required_explanation": ["what ChatGPT implemented incorrectly", "what the exact Man Grid is", "why tests were repeated", "methodology", "20-shard architecture", "controls", "quantitative results", "supported conclusions", "failed hypotheses", "remaining speculation"]
+  }
 }
