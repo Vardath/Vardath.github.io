@@ -8,103 +8,77 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-11 — native WNG backstories validated on branch
+# CHECKPOINT — 2026-09-11 — native WNG backstories promoted to public
 
 ## Public implementation state
 
-Public mod `main` remains:
+Public mod `main` is now:
 
-**`b242dc72d139910172e8de3290530b505fcfa823` — Quiet Lattice human-form society.**
+**`45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — `rebuild: add native WNG backstories`**
 
-Native backstories are branch-only at this checkpoint.
+Promotion used validated clean tree `04727e84ed76927eb760b50d15ccddc473ffc343` with parent `b242dc72...`, so temporary branch validation tooling did not enter public `main`.
 
-## Active branch
+Public diff contains only:
+- `Defs/BackstoryDefs/Backstories_WNG.xml`;
+- `PawnKinds_Wraith.xml` backstory-filter wiring;
+- `PawnKinds_Asuran.xml` backstory-filter wiring;
+- `PawnKinds_HumanFormSocieties.xml` backstory-filter wiring;
+- `PawnKinds_ReplicatorQueen.xml` backstory-filter wiring.
 
-**`rebuild/native-backstories-20260911`**
+## What is now public
 
-Validated clean branch HEAD:
+- native current-schema WNG BackstoryDefs for Wraith and human-form synthetic identities;
+- Wraith shared Hive origins plus Hunter / Warrior / Commander / Keeper / Queen / Player adulthood pools;
+- synthetic/Asuran origins plus hostile Operative / Engineer / Soldier / Coordinator / Infiltrator / Quiet-Lattice / Player adulthood pools;
+- every WNG backstory uses `requiresSpawnCategory=true`;
+- each current PawnKind is wired through `backstoryFiltersOverride`, preserving race/xenotype, faction, PawnKind-role and biography as separate identity layers;
+- exact Replicator Queen uses current synthetic-origin/player-independent categories without changing her exact age/story control systems.
 
-**`c28562be20c441bd1587fe78125cfef503a78356` — `rebuild: wire native WNG backstories to current roles`**
+## Reconciliation corrections
 
-Validated clean tree:
+Historical `Backstories_WNG.xml` was not copied wholesale. It used obsolete dictionary-style skill XML. Current RimWorld 1.6 `BackstoryDef.skillGains` is `List<SkillGain>`, so the rebuilt public Def uses current `<li><skill>...<amount>...` entries.
 
-**`04727e84ed76927eb760b50d15ccddc473ffc343`**
-
-The branch contains no temporary validation workflow in the final tree.
-
-## What this pass implemented
-
-Added:
-- `Defs/BackstoryDefs/Backstories_WNG.xml` — a substantial native current-schema WNG backstory pool.
-
-Wired current PawnKinds:
-- all Wraith Hunter / Warrior / Commander / Keeper / Queen / Player Wraith roles;
-- Asuran Operative / Technician / Commander / Infiltrator;
-- Quiet Lattice generalist / engineer / soldier / coordinator;
-- player human-form Replicator;
-- exact Replicator Queen.
-
-Current backstory categories now distinguish:
-- Wraith origin;
-- Wraith Hunter / Warrior / Commander / Keeper / Queen / player adulthood;
-- synthetic/Asuran origin;
-- hostile Asuran operative;
-- synthetic engineer / soldier / coordinator;
-- infiltrator;
-- Quiet Lattice;
-- player/independent human-form Replicator.
-
-Identity layers remain separate: xenotype/race, PawnKind/caste-role, faction, and biography/backstory are not collapsed.
-
-## Historical / schema reconciliation
-
-Historical `Backstories_WNG.xml` was used only as requirement/reference evidence.
-
-A concrete incompatibility was found and corrected: historical backstories used dictionary-style skill XML such as `<Melee>2</Melee>`, while current RimWorld 1.6 `BackstoryDef.skillGains` is a `List<SkillGain>`. The rebuilt file uses current list entries with `<skill>` and `<amount>`.
-
-Every WNG backstory sets `requiresSpawnCategory=true`, preventing WNG-specific biographies from leaking into unrelated pawn generation.
-
-Wraith origin text was tightened against Stargate lore: it describes Hive-raised life, living technology, feeding, culling, dormancy and Queen hierarchy without claiming detailed canonical childhood institutions that the series never establishes.
-
-Synthetic backstories are grounded in Asuran/Replicator pattern construction, reconstruction, collective/base-code knowledge, divergence, technical roles and impersonation while distinguishing WNG extrapolations such as Quiet Lattice society from canon-named factions.
+Wraith biographies were tightened against Stargate lore to avoid asserting unseen detailed childhood institutions. Synthetic biographies distinguish canon-grounded Asuran/Replicator pattern/base-code/reconstruction concepts from WNG-created Quiet Lattice society roles.
 
 ## Validation
 
-GitHub Actions run:
-
-**`34608137484` — SUCCESS**
-
-Validated:
-- XML patch wiring applied to all required current PawnKinds;
+GitHub Actions run **`34608137484` — SUCCESS**:
 - Release C# build passed;
 - all Def/Patch XML parsed;
-- current RimWorld 1.6 list-style `SkillGain` schema used;
-- no legacy dictionary-style skill entries remain;
-- at least 25 WNG BackstoryDefs present;
-- all required Wraith/synthetic role categories present;
-- every WNG backstory requires its WNG spawn category;
-- every targeted current PawnKind has the expected childhood/adulthood `backstoryFiltersOverride`.
+- current SkillGain schema passed;
+- 25+ WNG BackstoryDefs present;
+- all required Wraith/synthetic categories present;
+- all WNG backstories require WNG spawn categories;
+- all targeted current PawnKinds have expected childhood/adulthood filters.
 
-This is **source/Def validation, not live RimWorld validation**.
+This is source/Def validation, **not live RimWorld validation**.
 
-## Exact next steps
+`CURRENT_PUBLIC_STATE.md` is updated to exact public HEAD `45e62cd...` and removes native backstories from missing debt.
 
-1. Recheck public `main` is still `b242dc72...`.
-2. Promote clean validated tree `04727e84...` to public `main` as one clean commit with no temporary workflow history.
-3. Verify public diff contains only the backstory Def and four current PawnKind files.
-4. Update `CURRENT_PUBLIC_STATE.md` and this checkpoint to the exact promoted SHA.
-5. Move to the next reconciled debt: **richer block Grav adaptation + broader AntiShield integration**, after checking current Replicator adaptation source, shield/grav dependencies, recovered history and Stargate behavior.
+## Exact next pass
+
+**Richer block Replicator Grav adaptation + broader AntiShield integration.**
+
+Before implementation:
+1. inspect actual current public Replicator state/adaptation/effect code and current shield/grav systems;
+2. inspect recovered plan/history for intended evidence-learning and effect boundaries;
+3. perform Stargate lore gate — do not turn “Grav” into generic telekinesis and do not confuse Replicator adaptation with ARG disruption;
+4. map against native RimWorld/Odyssey movement/grav/shield mechanics and current WNG shield implementations;
+5. preserve existing saved adaptation evidence/state and overlays;
+6. implement only concrete real-system interactions and record unresolved external shield dependencies explicitly;
+7. validate, checkpoint, then promote cleanly.
 
 ---
 
-# PRIOR PUBLIC MILESTONES
+# PUBLIC MILESTONES
 
-- Temporary Asuran lattice intrusion: `26680fe84b95a0bfd5a23841b714fdba9cde1a98`.
-- Recurring exact-map Queen recovery: `9ce713704505a220d357f8a6f234fb6e040e0b2e`.
-- Captured Queen sovereign consequences: `0b8150f3ff6ca7138482ba9a604847f5967fc48b`.
-- Neural Interface / exact reconstruction: `8495b846c7dd31c079db6d4f007be490df3247f3`.
-- Infiltration conceal/reveal: `c7a9b46a3bef9393301d153e3f56c3c44c7ce95c`.
-- Covert visitor impersonation: `87da0e524324190584ac31e1830265db76688fae`.
-- Quiet Lattice human-form society: `b242dc72d139910172e8de3290530b505fcfa823`.
+- `26680fe84...` — Temporary Asuran lattice intrusion.
+- `9ce7137045...` — recurring exact-map Queen recovery.
+- `0b8150f3ff...` — captured-Queen sovereign consequences.
+- `8495b846c7...` — Neural Interface / exact reconstruction.
+- `c7a9b46a3b...` — infiltration conceal/reveal.
+- `87da0e5243...` — covert visitor impersonation.
+- `b242dc72d1...` — Quiet Lattice society.
+- `45e62cd7f5...` — native WNG backstories.
 
-All promoted milestones were source/Def validated before public promotion; broad live RimWorld validation remains outstanding.
+All were source/Def validated before promotion. Broad live RimWorld validation remains outstanding.
