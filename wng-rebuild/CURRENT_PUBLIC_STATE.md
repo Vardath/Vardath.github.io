@@ -27,22 +27,36 @@ Current public `main` always beats stale checkpoint prose.
 
 Repository: `Vardath/Wraith-Nanite-Gravtech-1.6`
 
-**`ef04575fb88ed6300b7c681c32971eec0c98d253` — `feat: add System Lord Death Glider strikes`**
+**`f2becbde25bf58e5e026d5ee5270ce8c5d08f2c3` — `feat: add true Ha'tak orbital bombardment`**
 
-Recent state-changing Goa'uld/Ha'tak commits after the canonical ledger snapshot include:
+Recent Goa'uld/Ha'tak state-changing commits after the canonical-ledger snapshot include:
 
-- `277017be...` — Ha'tak gravship research;
-- `26cbf24d...` — Ha'tak gravship substructure;
-- `7220a08c...` — Ha'tak Odyssey gravship core family;
-- `9111cbb9...` — Ha'tak liquid-Naquadria fuel pipes;
-- `bbcc1a4a...` — Ha'tak native power conduits;
-- `1ddd55cd...` — Ha'tak family linked into native Odyssey GravEngine;
-- `f7342590...` — Ha'tak same-family fuel-pipe requirement;
 - `647fa984a6383a7fa85ec753c5393294f45fe728` — Ha'tak heavy plasma battery;
 - `0ce8830238eb5844208084dc5f4565b9aaa7333c` — real Ha'tak Death Glider fighter;
-- `ef04575fb88ed6300b7c681c32971eec0c98d253` — exact System-Lord/Jaffa Death Glider strikes.
+- `ef04575fb88ed6300b7c681c32971eec0c98d253` — exact System-Lord/Jaffa Death Glider strikes;
+- `9c78be450aebedbc94b6e279bbd761c91bc63baf` — landed hostile System-Lord Ha'tak carrier site;
+- `f2becbde25bf58e5e026d5ee5270ce8c5d08f2c3` — true cross-map/orbital Ha'tak bombardment and full-RimWorld-DLC dependency correction.
 
-The old ledger statement that the Ha'tak family was not implemented is therefore **historical snapshot state only** and must not be used as current implementation state.
+The old ledger statement that the Ha'tak family was not implemented is historical snapshot state only.
+
+---
+
+# GLOBAL RIMWORLD CONTENT REQUIREMENT
+
+Vardath explicitly requires WNG 1.6 to depend on the **complete RimWorld DLC set**:
+
+- Royalty;
+- Ideology;
+- Biotech;
+- Anomaly;
+- Odyssey.
+
+WNG does not have to force every subsystem to use every DLC, but the rebuild may use the most appropriate native mechanic from any of them. `About/About.xml` now declares all five DLCs as hard dependencies.
+
+Third-party Stargate ecosystem mods remain optional unless Vardath changes that:
+- CatCraft Stargates!;
+- ONAC;
+- RimGate - Jaffa, Kree! (Biotech).
 
 ---
 
@@ -56,59 +70,45 @@ Required later branches remain the human-form/Asuran sovereign layer, Queen stor
 
 ## Wraith
 
-Current public source/Defs contain:
-- Wraith xenotype and caste PawnKinds;
-- four Wraith factions;
-- Life Force / Drain Life / regeneration / hibernation;
-- strategic faction hunger and its feeding-request/raid-pressure system;
-- Mature-Hive local feeding ecology, Hive Heart population, hibernation/dormancy, neutralization and retaliation;
-- exact captivity/rescue foundations;
-- living-tech bootstrap through living forge / grav-engine growth;
-- Wraith stun staff;
-- native-boardable Dart, scout craft and cruiser transport;
-- Wraith Odyssey-native gravship family with living hull regeneration rather than a fake energy-shield reskin.
+Current public source/Defs contain Wraith xenotype/castes/factions; Life Force, Drain Life, regeneration and hibernation; strategic faction hunger; Mature-Hive feeding ecology/retaliation; exact captivity/rescue foundations; living-tech bootstrap; stun staff; native-boardable Dart/scout/cruiser craft; and the Odyssey-native Wraith gravship family with living-hull regeneration.
 
 Ordinary Drain Life, strategic faction hunger, Mature-Hive local feeding and Mature-Hive retaliation remain separate systems.
 
 ## Asuran / Ancient-derived
 
-Current public source/Defs contain Asuran Nanite Reserve/fabrication/workshop foundations and an Odyssey-native Asuran gravship family with themed native GravEngine/hull/substructure, nanite-sludge fuel family, power/fuel networks, shield and supporting Odyssey equivalents. Puddle Jumper remains a real native-boardable shuttle and its final deliberate power/fuel abstraction is still unfinished.
+Current public source/Defs contain Asuran Nanite Reserve/fabrication/workshop foundations and an Odyssey-native Asuran gravship family with themed native GravEngine/hull/substructure, nanite-sludge fuel family, power/fuel networks, shield and supporting Odyssey equivalents. Puddle Jumper remains a real native-boardable shuttle.
 
-The human-form Replicator/Asuran infiltration, Neural Interface, exact Queen and sovereign/capture layer remain required and not yet implemented in the fresh public rebuild.
+Human-form Replicator/Asuran infiltration, Neural Interface, exact Queen and sovereign/capture layer remain required and unfinished.
 
-## Shuttles / Stargate integration
+## Stargate / shuttle integration
 
-Current WNG shuttles use the complete native RimWorld/Odyssey player-shuttle stack wherever applicable. CatCraft Stargates! remains optional and owns its network/dial/direction/iris/receive-buffer mechanics. WNG adds Stargate-themed missions around that system without replacing it.
+Current WNG shuttles use the complete native RimWorld/Odyssey player-shuttle stack wherever applicable. CatCraft Stargates! owns its network/dial/direction/iris/receive-buffer mechanics. WNG integrates around it.
 
 Al'kesh remains implemented and required.
 
-## Goa'uld transport rings
-
-Goa'uld transport rings are implemented as real powered transporter endpoints using native `CompTransporter` exact cargo/loading state. They do not require Stargate dialing. Their construction UI routes according to the current optional-integration rules; do not replace them with a Stargate proxy.
-
 ## Goa'uld / Ha'tak — CURRENT
 
-The Ha'tak family **is implemented as an Odyssey-native gravship family**. Current public content includes:
+The Ha'tak family is now a substantial Odyssey-native gravship branch. Current public content includes:
 
 - `WNG_GoauldGravships` research;
-- Goa'uld engine seed converting into Odyssey's exact native `GravEngine` with `Goauld` theme;
+- Goa'uld engine seed converting into Odyssey's exact native `GravEngine` with `Goauld` runtime theme;
 - Goa'uld native gravship substructure;
 - hull seed converting into exact native `GravshipHull` with Goa'uld runtime theme;
 - pel'tac using native `CompPilotConsole` behavior;
-- small/large ONAC `ONAC_LiquidNaquadria` reservoirs;
-- small/large direction-sensitive native gravship thrusters;
+- ONAC liquid-Naquadria tanks and fuel network;
+- directional native gravship thrusters;
 - gravitic field projector;
-- native Odyssey energy-shield generator behavior;
-- naquadah power core on the ordinary RimWorld power net;
-- visible/hidden liquid-Naquadria fuel pipes;
-- visible/hidden native power conduits;
-- same-family fuel-pipe enforcement and gravship-family isolation;
-- powered on-map Ha'tak heavy plasma battery;
-- real `WNG_GoauldDeathGlider` native shuttle fighter;
-- physical Death Glider/Ha'tak carrier relationship: a real fighter parked on connected Ha'tak substructure is carried by Odyssey with the gravship, with no fake hangar inventory;
-- Death Glider two-person combat crew requirement, paired physical staff-cannon passes, short no-hyperdrive range, ONAC fuel, return-to-origin/deck behavior and hacking support;
-- bounded optional `WNG_GoauldDeathGliderStrike` using only exact verified existing System-Lord factions (`JKB_JaffaApophis`, `JKB_JaffaAnubis`, `JKB_JaffaRa`) and exact verified RimGate Biotech Jaffa warrior PawnKinds;
-- hostile Glider strike uses exact craft/crew through the physical pass and real native shuttle withdrawal; failed withdrawal leaves the actual craft/crew on-map.
+- native Odyssey energy shield;
+- naquadah power core and native power network;
+- heavy plasma battery for local gravship combat;
+- real two-seat native-shuttle Death Glider with ONAC fuel, exact loaded crew, physical staff-cannon attack passes, return-to-deck behavior and hacking/capture;
+- bounded hostile Death Glider strikes bound only to verified existing Apophis/Anubis/Ra factions and exact RimGate Jaffa PawnKinds;
+- real landed hostile Ha'tak carrier site built from the exact native GravEngine/GravshipHull plus actual Goa'uld WNG facilities, exact Jaffa defenders and physically parked crewed Death Gliders;
+- bounded defensive Glider sorties from the carrier deck;
+- true player-controlled cross-map/orbital bombardment from the exact physical heavy plasma battery when it is powered, on connected Goa'uld substructure, and the source map is Odyssey `Orbit`;
+- orbital targeting selects a different generated Surface-layer `MapParent`, then an exact impact cell on that target map;
+- the target receives Royalty's exact native `Bombardment` Thing, configured from author-tunable WNG Def values;
+- no same-map turret shot/local explosion is relabeled as orbital fire.
 
 ONAC/RimGate ownership is preserved. Do not create duplicate Goa'uld/Jaffa factions or duplicate `ONAC_LiquidNaquadria`.
 
@@ -116,50 +116,48 @@ ONAC/RimGate ownership is preserved. Do not create duplicate Goa'uld/Jaffa facti
 
 # CURRENT REQUIRED UNFINISHED BRANCHES
 
-These are required unless Vardath changes them:
+These remain required unless Vardath changes them:
 
 1. **Human-form Replicator / Asuran layer** — infiltration, Neural Interface, exact Queen, sovereign/capture consequences and mixed human-form/block integration.
-2. **Hostile Ha'tak carrier encounter** — a real map/site/encounter path that physically stages a valid Ha'tak and its carried/deployed Death Gliders rather than relying only on the standalone edge-strike incident.
-3. **True Ha'tak cross-map/orbital bombardment** — separate from the already implemented on-map heavy plasma battery; must reuse appropriate native Odyssey/world systems rather than faking an orbital label.
-4. **Goa'uld sensors/other Odyssey equivalents** only where Stargate function actually justifies them.
-5. **Safe standalone Goa'uld resource/research path** when ONAC is absent remains unresolved. Do not remove current ONAC gating or invent uranium/chemfuel to force a solution.
+2. **Hostile Ha'tak world behavior** — genuine takeoff/retreat/pursuit and hostile use of orbital fire through real Odyssey/world mechanics; do not replace the landed ship with an abstract proxy merely to claim that it moved.
+3. **Goa'uld sensors/other Odyssey equivalents** only where Stargate function actually justifies them.
+4. **Bombardment of otherwise-unloaded settlements/sites** only if map generation/consequences can be handled without pretending damage occurred on a nonexistent map.
+5. **Safe standalone Goa'uld resource/research path** when ONAC is absent remains unresolved. Do not invent uranium/chemfuel.
 6. **Final Puddle Jumper/Ancient power-fuel abstraction** remains deliberate future work.
-7. **Professional final art/audio pass** — dedicated faction assets, all rotation/connection/corner states, Death Glider/Ha'tak visuals, shield/VFX/audio, Wraith/Asuran production assets.
-8. **Broad live RimWorld validation** — XML/static reasoning does not prove live gameplay. ONAC integration, incidents, gravships, launch/travel, save/load and exact-craft behavior still require real-game testing.
+7. **Professional final art/audio pass** — dedicated faction assets, all rotation/connection/corner states, Ha'tak/Death-Glider visuals, shield/VFX/audio, Wraith/Asuran production assets.
+8. **Broad live RimWorld validation** — source/API/static reasoning is not live gameplay validation.
 
 ---
 
 # NEXT ACTUAL SLICE
 
-The next Ha'tak slice after `ef04575...` is:
+After `f2becbde...`, the active Ha'tak mechanical slice is:
 
-**Reconcile and implement a real hostile Ha'tak carrier encounter/deployment path that can physically stage/deploy its exact Death Gliders.**
+**Reconcile hostile Ha'tak takeoff/retreat/pursuit and hostile orbital-fire behavior using genuine Odyssey gravship/world mechanics.**
 
-Before coding it:
-- establish the Stargate role and encounter scale;
-- inspect current Odyssey gravship/map-generation APIs and any native hostile/orbital gravship encounter grammar;
-- preserve a genuinely valid connected native GravEngine/substructure/facility structure rather than spawning decorative Ha'tak props;
-- use only existing verified external System-Lord/Jaffa factions/crew;
-- preserve the exact physical Death Glider carrier model already implemented;
-- if native mechanics cannot safely support the intended encounter in the first slice, record the concrete dependency rather than substituting a fake ship.
-
-After that, the other current Ha'tak mechanical branch is true cross-map/orbital bombardment.
+Before coding:
+- inspect the actual RimWorld 1.6 `Building_GravEngine`, pilot-console launch flow, gravship map transfer, leaving skyfaller/world-object behavior and orbit-layer destination mechanics;
+- preserve the exact generated hostile carrier ship and physically loaded Death Gliders;
+- use only the verified external System-Lord/Jaffa factions/crew;
+- do not destroy the landed carrier and manufacture a replacement proxy merely to simulate takeoff;
+- if native hostile/AI launch cannot be driven safely, record the exact missing native boundary and move to another required branch rather than faking it.
 
 ---
 
 # VALIDATION STATUS
 
-The recent Death Glider / hostile-strike implementation was structurally checked against APIs already used by current WNG (`CompTransporter`, `CompRefuelable`, exact-craft skyfallers, native `TransportShip` / `ShipJob_FlyAway`). The current environment has not run RimWorld itself. Do not call these features live-game validated until they are actually tested in RimWorld with the intended optional mods.
+Current Ha'tak work has been source/API checked against current RimWorld 1.6 classes and Def patterns, including Odyssey gravship/world-layer APIs and Royalty orbital bombardment. No claim is made that RimWorld itself has been launched in this environment.
+
+Live validation still required includes Def load, ONAC/RimGate integration, carrier-site generation, power/fuel/facility links, shields/turrets, Death Glider launch/return, gravship launch/travel, orbital world/cell targeting, native bombardment impacts and save-load.
 
 ---
 
 # HANDOFF MAINTENANCE
 
 After every meaningful implementation batch:
-
 - update the exact mod HEAD above;
 - state exactly what changed;
-- move completed requirements out of unfinished state rather than leaving stale contradictions;
+- move completed requirements out of unfinished state;
 - record live-test-needed status honestly;
 - derive the next slice from actual current `main`;
 - never make Vardath reconstruct already-settled project state from raw chat again.
