@@ -3,11 +3,23 @@
 Date: **2026-09-11**  
 Author/design authority: **Vardath**
 
-This file is an explicit append to `MASTER_PLAN.md`. Newer Vardath instructions override it. Historical WNG source remains reference evidence only, never a known-good implementation source.
+# ⛔ CURRENT-STATE WARNING
+
+This file records the design contract and the implementation snapshot **at the time this append was written**. Its old status/`Next implementation work` wording is **not current-state authority**.
+
+Before acting on anything below:
+1. read `CANONICAL_RECOVERY_LEDGER.md`;
+2. fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main`;
+3. verify whether the named feature already exists and what later commits changed;
+4. preserve required existing features.
+
+**`reconcile`, `rebuild`, `correct`, `refine`, `unfinished`, or `next` never means remove an existing required feature. Al'kesh is a required retained feature. Do not invent a uranium/chemfuel or other unspecified Goa'uld fallback.**
+
+Newer explicit Vardath instructions and the canonical ledger override this snapshot.
 
 ## Mandatory continuity note
 
-When working on Goa'uld transport/craft or Wraith capture weapons, read this append together with `MASTER_PLAN.md`, `CORRECTIONS_LOG.md`, the current public WNG repository, and the repository contract `Docs/WNG_RING_TRANSPORT_AND_WRAITH_STUNNER_CONTRACT_2026-09-11.md`.
+When working on Goa'uld transport/craft or Wraith capture weapons, read this append together with `CANONICAL_RECOVERY_LEDGER.md`, `MASTER_PLAN.md`, `CORRECTIONS_LOG.md`, the current public WNG repository, and the repository contract `Docs/WNG_RING_TRANSPORT_AND_WRAITH_STUNNER_CONTRACT_2026-09-11.md`.
 
 ## Goa'uld transport rings
 
@@ -60,6 +72,8 @@ Current rule:
 - current ONAC liquid Naquadria integration must remain authoritative when ONAC exists;
 - removing ONAC `MayRequire` from existing Al'kesh/Ha'tak content must wait until a safe standalone material/fuel/research fallback exists.
 
+**This append does not define that standalone craft fuel/material fallback. Do not invent one.**
+
 ## Wraith stun staff
 
 `WNG_WraithStunStaff` is a required ranged Wraith capture weapon.
@@ -75,7 +89,7 @@ Design:
 - distinct from Goa'uld staff weapon, zat, Wraith Dart culling beam and Drain Life;
 - dedicated Stargate-authentic art/audio remain a later production pass.
 
-## Implementation status at this append
+## Implementation status at the time of this append
 
 Implemented in public WNG `main` during the 2026-09-11 pass:
 - generic ONAC-or-WNG Goa'uld Architect router;
@@ -89,13 +103,15 @@ Implemented in public WNG `main` during the 2026-09-11 pass:
 - custom non-damaging stun projectile path;
 - Hunter/Warrior/Commander/Keeper stunner weapon budgets/tags.
 
-Validation status:
+Validation status at that time:
 - ring slice compiled and XML/invariant checks passed in temporary Actions run **34543660172**; workflow removed afterwards;
 - Wraith stunner initially exposed a C# 9 pattern-syntax mismatch against WNG's C# 8 project and was corrected to C# 8-compatible syntax;
 - corrected stunner validation run **34544150092** passed compilation/XML/invariant checks;
-- a final compile rerun including the subsequent defensive ring-power correction was still in progress when this append was written; check the newer public head/run before claiming that final combined state green.
+- later current-state validation must be determined from current `main`/ledger rather than this old status paragraph.
 
-## Next implementation work
+## Historical next-work snapshot — DO NOT EXECUTE BLINDLY
+
+The following was the next-work list **at the time of this append**. It is preserved as history, not current authority:
 
 1. Confirm final combined validation after the ring power-guard correction and remove the temporary workflow.
 2. Reconcile standalone Goa'uld shuttle/gravship resources and research so existing WNG-owned Goa'uld craft can use the ONAC-category/WNG-category fallback without requiring ONAC while also avoiding duplicated ONAC resources when it is present.
@@ -103,3 +119,5 @@ Validation status:
 4. Continue the fresh Goa'uld Ha'tak gravship family using Odyssey-native gravship contracts and family-isolated Goa'uld fuel/parts.
 5. Treat transport rings as expected internal Ha'tak equipment.
 6. Later add authentic ring-rise/transport visuals and sounds and dedicated Wraith stunner graphics/audio without replacing the validated mechanics with decorative-only behavior.
+
+**Current interpretation must come from `CANONICAL_RECOVERY_LEDGER.md` + current public `main`.** At canonical-ledger creation, ring/stunner validation/cleanup had advanced, Al'kesh remained fully implemented and ONAC-gated, no safe standalone Al'kesh/Ha'tak fallback had been specified, and the Ha'tak gravship family itself remained a required unfinished branch.
