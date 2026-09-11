@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "test": "Rule-augmented Man-grid reconstruction — full 12k reconstruction plus 20-shard leave-one-family-out validation",
+  "source_audit": {
+    "dictionary_entries": 10913996,
+    "target_entries_with_mappable_ipa": 750886,
+    "historical_forms_extracted": 342481,
+    "language_codes_seen": 5319,
+    "family_labeled_codes": 4861,
+    "family_inferred_codes": 752
+  },
+  "prepared": {
+    "unclassified_language_evidence": 5033,
+    "prepared_meanings": 12000,
+    "prepared_family_evidence": 143941,
+    "meanings_with_historical_family_evidence": 6540
+  },
+  "rule_banks": {
+    "descendant_languages": 197,
+    "families": 19,
+    "universal_rules": 36
+  },
+  "design": {
+    "all_language_scope": "The complete Wiktextract stream is scanned. All target-meaning IPA evidence is considered; explicit inherited historical/proto forms are added as fallback evidence when a language has no IPA for that meaning.",
+    "family_control": "Evidence is compressed to one medoid per inferred genealogical family. Historical/proto language codes inherit a family only when the inheritance graph gives a >=60% and 1.5x-majority family vote; otherwise they do not count as independent families.",
+    "known_rules": "Only ancestor→descendant routes that previously passed held-out reversible-rule testing are admitted. Their contextual substitution/deletion/insertion rules are aggregated by descendant language and family. Recurrent cross-route rules form a separate universal bank.",
+    "backtracking": "Rules are inverted before reconstruction: historical substitutions reverse, historical deletions restore a cell, and historical insertions remove a cell. Up to two high-confidence context-matched changes are applied per family medoid without consulting the target root.",
+    "primary_validation": "For each meaning with >=4 families, deterministically hold out one family. Reconstruct from the others using baseline Man-grid, correct historical rules, shuffled wrong-language/family rules, and universal rules. Score every reconstruction against the untouched raw held-out family.",
+    "primary_success": "Correct-rule held-out mean must exceed baseline and shuffled-rule means, with both paired bootstrap 95% confidence intervals entirely above zero.",
+    "full_reconstruction": "All 12,000 target meanings are also reconstructed with correct historical rules using all available family evidence; the existing root remains the untouched baseline.",
+    "no_custom_timeout": true
+  },
+  "validation": {
+    "n": 12000,
+    "baseline_raw": 0.7631385388333334,
+    "correct_rules_raw": 0.7511497376666667,
+    "shuffled_rules_raw": 0.7513601048333334,
+    "universal_rules_raw": 0.7515737876666666,
+    "correct_minus_baseline": -0.011988803000000001,
+    "correct_minus_baseline_bootstrap_95": [
+      -0.013607692333333333,
+      -0.010345978416666667
+    ],
+    "correct_minus_shuffled": -0.00021037016666666664,
+    "correct_minus_shuffled_bootstrap_95": [
+      -0.0011773274166666666,
+      0.0007389939166666667
+    ],
+    "universal_minus_baseline": -0.011564750833333333,
+    "universal_minus_baseline_bootstrap_95": [
+      -0.013204306916666667,
+      -0.009913062
+    ]
+  },
+  "validation_subgroups": {
+    "no_training_family_transformed": {
+      "n": 9,
+      "baseline": 0.5996448888888889,
+      "correct": 0.5996448888888889,
+      "shuffled": 0.5996448888888889,
+      "universal": 0.5996448888888889,
+      "correct_minus_baseline": 0.0,
+      "correct_minus_baseline_95": [
+        0.0,
+        0.0
+      ],
+      "correct_minus_shuffled": 0.0,
+      "correct_minus_shuffled_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "one_or_two_training_families_transformed": {
+      "n": 37,
+      "baseline": 0.6926431351351351,
+      "correct": 0.7012404594594595,
+      "shuffled": 0.7147544864864864,
+      "universal": 0.7182962972972973,
+      "correct_minus_baseline": 0.008597378378378378,
+      "correct_minus_baseline_95": [
+        -0.014378432432432435,
+        0.030341945945945945
+      ],
+      "correct_minus_shuffled": -0.013514054054054056,
+      "correct_minus_shuffled_95": [
+        -0.033424243243243244,
+        0.0031421621621621617
+      ]
+    },
+    "three_plus_training_families_transformed": {
+      "n": 11954,
+      "baseline": 0.7634798281746695,
+      "correct": 0.7514182826668897,
+      "shuffled": 0.7515876307512129,
+      "universal": 0.7517911732474486,
+      "correct_minus_baseline": -0.012061547515475992,
+      "correct_minus_baseline_95": [
+        -0.013749165049355864,
+        -0.010468610088673247
+      ],
+      "correct_minus_shuffled": -0.000169351012213485,
+      "correct_minus_shuffled_95": [
+        -0.0011172097205956165,
+        0.0007765153923372929
+      ]
+    },
+    "historical_variant_in_training": {
+      "n": 6323,
+      "baseline": 0.7507002383362328,
+      "correct": 0.7440474730349518,
+      "shuffled": 0.7453320982128736,
+      "universal": 0.7452256095207971,
+      "correct_minus_baseline": -0.0066527643523643844,
+      "correct_minus_baseline_95": [
+        -0.008935233433496758,
+        -0.004371316305551163
+      ],
+      "correct_minus_shuffled": -0.0012846283409773842,
+      "correct_minus_shuffled_95": [
+        -0.002642401391744425,
+        7.569128578206555e-05
+      ]
+    },
+    "heldout_has_historical_rule": {
+      "n": 10070,
+      "baseline": 0.7689224083416087,
+      "correct": 0.7530530523336644,
+      "shuffled": 0.7531114675273088,
+      "universal": 0.7533924883813307,
+      "correct_minus_baseline": -0.01586936087388282,
+      "correct_minus_baseline_95": [
+        -0.017631278848063554,
+        -0.014019268023833166
+      ],
+      "correct_minus_shuffled": -5.841926514399203e-05,
+      "correct_minus_shuffled_95": [
+        -0.0011094003972194637,
+        0.0009971257199602782
+      ]
+    }
+  },
+  "full_reconstruction": {
+    "entries": 12000,
+    "changed_entries": 11920,
+    "changed_fraction": 0.9933333333333333,
+    "mean_root_similarity": 0.6832910466666666,
+    "mean_old_raw_family_fit": 0.8014642323333333,
+    "mean_rule_raw_family_fit": 0.7767261674166667,
+    "mean_old_backtracked_family_fit": 0.7357544688333333,
+    "mean_rule_backtracked_family_fit": 0.80185381425,
+    "entries_with_transformed_evidence": 11993,
+    "total_rules_applied": 202236,
+    "entries_with_historical_family_evidence": 6540
+  },
+  "verdict": {
+    "supports_historical_rules_improving_man_grid_reconstruction": false,
+    "boundary": "The primary score is prediction of an untouched held-out family from the remaining families. Correct historical rules must beat both the original Man-grid baseline and a same-complexity shuffled-rule control. Historical/proto spelling evidence is family-compressed and never used as the held-out target after transformation."
+  }
+}
