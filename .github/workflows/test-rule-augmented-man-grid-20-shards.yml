@@ -1,0 +1,131 @@
+name: Test Rule-Augmented Man-Grid Reconstruction - 20 Shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_rule_augmented_man_grid_20_shards.py'
+      - '.github/workflows/test-rule-augmented-man-grid-20-shards.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan all languages, historical variants, and build verified rule banks
+        run: python tools/test_rule_augmented_man_grid_20_shards.py prepare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rule-augmented-man-grid-prepared
+          path: |
+            data/rule-augmented-man-grid/prepared.jsonl
+            data/rule-augmented-man-grid/prepared-meta.json
+            data/rule-augmented-man-grid/rule-banks.json
+          retention-days: 2
+
+  reconstruct:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: rule-augmented-man-grid-prepared
+          path: data/rule-augmented-man-grid/
+      - name: Reconstruct full root shard ${{ matrix.shard }} with historical rules
+        run: python tools/test_rule_augmented_man_grid_20_shards.py reconstruct --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rule-augmented-reconstruction-${{ matrix.shard }}
+          path: data/rule-augmented-man-grid/reconstruction-*.json
+          retention-days: 2
+
+  validate:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: rule-augmented-man-grid-prepared
+          path: data/rule-augmented-man-grid/
+      - name: Leave-one-family-out validation shard ${{ matrix.shard }}
+        run: python tools/test_rule_augmented_man_grid_20_shards.py validate --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rule-augmented-validation-${{ matrix.shard }}
+          path: data/rule-augmented-man-grid/validation-*.json
+          retention-days: 2
+
+  merge:
+    needs: [reconstruct, validate]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: rule-augmented-man-grid-prepared
+          path: data/rule-augmented-man-grid/
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: rule-augmented-reconstruction-*
+          path: data/rule-augmented-man-grid/
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: rule-augmented-validation-*
+          path: data/rule-augmented-man-grid/
+          merge-multiple: true
+      - name: Merge reconstruction and validation results
+        run: python tools/test_rule_augmented_man_grid_20_shards.py merge
+      - name: Validate merged outputs
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('data/rule-augmented-man-grid-reconstruction-results.json'))
+          d=json.load(open('data/rule-augmented-original-language-dictionary.json'))
+          assert r['full_reconstruction']['entries'] == 12000
+          assert len(d['entries']) == 12000
+          assert r['validation']['n'] > 1000
+          print(json.dumps(r['validation'],indent=2))
+          print(json.dumps(r['full_reconstruction'],indent=2))
+          print(json.dumps(r['verdict'],indent=2))
+          PY
+      - name: Commit rule-augmented reconstruction results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git pull --rebase origin main
+          git add data/rule-augmented-man-grid-reconstruction-results.json data/rule-augmented-original-language-dictionary.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Add rule-augmented Man-grid reconstruction results'
+            git push
+          fi
