@@ -1,0 +1,192 @@
+name: Exact Man Grid corrected Tests 4 and 13
+
+on:
+  push:
+    paths:
+      - '.github/workflows/man-grid-exact-tests-4-13.yml'
+      - 'tools/man_grid_exact_lexical_historical_v3.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: exact-man-grid-corrected-tests-4-13
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Prepare shared exact-v3 lexical and historical evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile corrected runner
+        run: python -m py_compile tools/man_grid_exact_engine.py tools/man_grid_exact_data.py tools/man_grid_exact_lexical_historical_v3.py
+      - name: Verify corrected Test 1 dependency
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/man-grid-original-phonetics-exact-v3.json'))
+          assert x['status']=='complete' and x['shards']==20
+          assert x['grid']['cells']==1074 and x['grid']['all_rectangles_mirrored'] is True
+          assert len(x['original_phoneme_inventory'])==36
+          print({'test1_phonemes':len(x['original_phoneme_inventory']),'grid_cells':x['grid']['cells']})
+          PY
+      - name: Scan corpus once and prepare 20 genuine disjoint shards for both tests
+        run: python tools/man_grid_exact_lexical_historical_v3.py prepare
+      - name: Verify preparation contract
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/man-grid-exact-v3-remaining-work/prepared-manifest.json'))
+          assert x['shards']==20 and x['grid_cells']==1074 and x['all_rectangles_mirrored'] is True
+          assert x['method']['invalid_old_mapping_reused'] is False
+          assert x['method']['custom_timeout_minutes'] is None
+          assert len(x['lexical_shard_sizes'])==20 and len(x['historical_shard_sizes'])==20
+          print(json.dumps(x,ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v3-remaining-prepared-${{ github.run_id }}
+          path: |
+            data/man-grid-exact-v3-remaining-work/prepared-manifest.json
+            data/man-grid-exact-v3-remaining-work/lexical-shard-*.json.gz
+            data/man-grid-exact-v3-remaining-work/historical-shard-*.json.gz
+          retention-days: 7
+
+  test4_shards:
+    name: Test 4 shard ${{ matrix.shard }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v3-remaining-prepared-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work
+      - name: Run genuine disjoint Test 4 lexical partition
+        run: python tools/man_grid_exact_lexical_historical_v3.py test4-shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v3-t4-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work/test4-result-*.json.gz
+          retention-days: 7
+
+  test13_shards:
+    name: Test 13 shard ${{ matrix.shard }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v3-remaining-prepared-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work
+      - name: Run genuine disjoint Test 13 historical partition
+        run: python tools/man_grid_exact_lexical_historical_v3.py test13-shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v3-t13-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work/test13-result-*.json.gz
+          retention-days: 7
+
+  merge_test4:
+    name: Merge and publish corrected Test 4
+    needs: test4_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v3-remaining-prepared-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v3-t4-s*-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work
+          merge-multiple: true
+      - name: Require all 20 Test 4 shard results
+        run: test "$(find data/man-grid-exact-v3-remaining-work -name 'test4-result-*.json.gz' | wc -l)" -eq 20
+      - name: Merge Test 4
+        run: python tools/man_grid_exact_lexical_historical_v3.py merge4
+      - name: Validate Test 4
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/man-grid-original-language-lexical-exact-v3.json'))
+          assert x['status']=='complete' and x['shards']==20 and x['grid']['cells']==1074
+          print(json.dumps(x['summary'],ensure_ascii=False,indent=2))
+          PY
+      - name: Publish Test 4
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-original-language-lexical-exact-v3.json
+          git commit -m "Publish corrected exact Man Grid Test 4 result" || exit 0
+          for n in 1 2 3 4 5; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
+
+  merge_test13:
+    name: Merge and publish corrected Test 13
+    needs: test13_shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v3-remaining-prepared-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v3-t13-s*-${{ github.run_id }}
+          path: data/man-grid-exact-v3-remaining-work
+          merge-multiple: true
+      - name: Require all 20 Test 13 shard results
+        run: test "$(find data/man-grid-exact-v3-remaining-work -name 'test13-result-*.json.gz' | wc -l)" -eq 20
+      - name: Merge Test 13
+        run: python tools/man_grid_exact_lexical_historical_v3.py merge13
+      - name: Validate Test 13
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/man-grid-historical-drift-exact-v3.json'))
+          assert x['status']=='complete' and x['shards']==20 and x['grid']['cells']==1074
+          print(json.dumps(x['summary'],ensure_ascii=False,indent=2))
+          PY
+      - name: Publish Test 13
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-historical-drift-exact-v3.json
+          git commit -m "Publish corrected exact Man Grid Test 13 result" || exit 0
+          for n in 1 2 3 4 5; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
