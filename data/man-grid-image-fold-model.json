@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "name": "Image-native Lokapurusha / Man-grid bilateral fold",
+  "source": {
+    "image_width_px": 716,
+    "image_height_px": 1536,
+    "fold_axis_x_px": 353,
+    "fold_axis_x_normalized": 0.4930167598,
+    "observed_structure": [
+      "upper stepped/dense lattice split into left and right halves",
+      "narrow vertical central spine",
+      "circular waist/middle-world interruption",
+      "lower stepped/dense lattice split into left and right halves",
+      "bilateral reflection about the central vertical axis"
+    ]
+  },
+  "reconstruction_rule": {
+    "point_fold": "x' = 2*c - x; y' = y",
+    "c": 0.4930167598,
+    "word_projection": "Lay a phonetic sequence laterally on one side. A literal vertical fold maps positions to the opposite side. Read in the same left-to-right convention after folding, so the spatial sequence is reversed.",
+    "ipa_operation": "reverse the raw IPA token sequence only",
+    "orthographic_operation": "reverse the normalized written sequence only"
+  },
+  "explicit_exclusions": [
+    "No 4x4 magic square",
+    "No 16-state phonetic bridge",
+    "No 16x16 or 256-gate matrix",
+    "No row/column/transpose Man-grid operators",
+    "No place, manner, voicing or stop/fricative substitutions",
+    "No old reconstructed-language forms are used as evidence"
+  ],
+  "research_boundary": "The manuscript image itself does not provide phonetic labels for individual cells. Therefore the only phonetic transform admitted here is the bilateral geometric fold that is visibly present. Any cell-to-phoneme assignment would be invented and is deliberately excluded."
+}
