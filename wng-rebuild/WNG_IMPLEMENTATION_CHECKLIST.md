@@ -2,27 +2,28 @@
 
 Author/design authority: **Vardath**.
 
-# ⛔ STOP — FULL WNG CHAT HISTORY + STARGATE LORE FIRST
+# ⛔ STOP — CANONICAL LEDGER + STARGATE LORE FIRST
 
-**DO NOT WRITE, CHANGE, DELETE, REBUILD OR REINTERPRET WNG CODE UNTIL THE HISTORY AND LORE GATES BELOW HAVE BEEN COMPLETED.**
+**DO NOT WRITE, CHANGE, DELETE, REBUILD OR REINTERPRET WNG CODE UNTIL THE RECOVERY AND LORE GATES BELOW HAVE BEEN COMPLETED.**
 
 This checklist applies to **every pass, implementation, addition, correction, rebuild, integration, balance pass, art/audio pass and subsystem review**.
 
-## ABSOLUTE CHAT-HISTORY GATE
+## RECOVERY GATE — USE THE ONE-TIME RECONSTRUCTION
 
-Before touching the mod, reconstruct the relevant WNG history from the actual accessible prior conversations. **Handoff summaries, memory summaries, repo notes and old assistant recaps are not substitutes for retrieving the underlying WNG chat history when it is accessible.**
+The broad WNG chat/history reconstruction was completed on 2026-09-11 and consolidated into `CANONICAL_RECOVERY_LEDGER.md`.
 
-Required behavior:
+Before touching the mod:
 
-- retrieve prior WNG conversations across earlier chats before modifying the mod;
-- read broadly enough to recover the complete instruction/decision timeline for the subsystem being touched, including adjacent systems that can be affected;
-- when Vardath explicitly says **read/check/review chat history**, treat that as a mandatory retrieval instruction, not permission to rely on a summary;
-- reconcile contradictory historical instructions chronologically: **newest explicit Vardath instruction wins**;
-- preserve older instructions as historical evidence when useful, but do not reactivate a superseded repo policy, implementation or design merely because it appears in an older chat;
-- do not ask Vardath to repeat information that exists in accessible WNG conversation history;
-- if literal full transcripts are not technically available to the current session, do **not** pretend they are. Retrieve all accessible WNG history in multiple focused passes and state any genuine retrieval limitation before code is changed.
+- read `CANONICAL_RECOVERY_LEDGER.md` completely;
+- read the current `STANDING_RULES.md`;
+- fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` and verify the ledger's recorded HEAD/state against reality;
+- read the active subsystem contract/plan documents needed for this pass;
+- **do not force Vardath to repeat old decisions**;
+- **do not reread weeks of raw WNG chat by default**;
+- retrieve older raw chat only if the ledger marks an unresolved conflict/gap, current repo evidence conflicts with the ledger, or Vardath explicitly asks for raw-history review;
+- when a raw-history conflict is resolved, update the ledger so the same archaeology is not needed again.
 
-A prior explicit Vardath rule from 2026-09-07 already required that future WNG modifications review previous WNG chats and that handoff summaries were insufficient. This rule remains active and is now elevated here so it cannot be skipped.
+The ledger is the durable recovered continuity record; a short assistant summary or stale `NEXT_GPT_PRIMER.md` is not an authority over it.
 
 ---
 
@@ -32,7 +33,7 @@ A prior explicit Vardath rule from 2026-09-07 already required that future WNG m
 
 The most important question is not "what code is easiest?" It is:
 
-> **What is this in Stargate, what does it actually do there, what has Vardath said about it, what does WNG already do, what did WNG attempt before, and what is the best faithful RimWorld implementation now?**
+> **What is this in Stargate, what does it actually do there, what has Vardath decided, what does current WNG already do, what does native RimWorld provide, and what is the best faithful implementation now?**
 
 A generic sci-fi approximation is not acceptable merely because it compiles.
 
@@ -55,18 +56,18 @@ Before implementation, establish from relevant Stargate canon/lore:
 
 ---
 
-## B. VARDATH / CHAT / PLAN GATE
+## B. VARDATH / LEDGER / PLAN GATE
 
 Before implementation, answer:
 
-- **What has Vardath explicitly said about this feature across prior WNG chats?** Retrieve the underlying conversation history, not just a handoff summary.
-- **What are the newest instructions?** Newer explicit Vardath instructions override older assistant assumptions, old notes and old plan text.
+- **What does `CANONICAL_RECOVERY_LEDGER.md` say about this feature?**
+- **What are Vardath's newest instructions in the current conversation?** Newer explicit Vardath instructions override the ledger and must then be written back into it.
 - **What do `STANDING_RULES.md`, `CORRECTIONS_LOG.md`, `MASTER_PLAN.md` and active subsystem notes say?**
-- **Has Vardath corrected this exact feature before?** If so, preserve the correction.
+- **Is there a flagged unresolved historical conflict/gap?** If yes, retrieve only the relevant raw WNG history, resolve it chronologically, and update the ledger.
 - **Is this feature required, optional, intentionally deferred, or explicitly rejected?**
 - **What parts are author-tunable?** Do not bury balance/design choices in hard-coded doctrine.
 
-Do not ask Vardath to repeat an answer already recorded in chat/continuity material.
+Do not ask Vardath to repeat an answer already preserved in the canonical continuity set.
 
 ---
 
@@ -76,6 +77,7 @@ Before interpreting an old checklist or "next step" note, inspect current public
 
 Answer:
 
+- **Does the current HEAD match the ledger snapshot?** If not, inspect what changed and update the ledger before relying on its implementation-state section.
 - **Does this feature already exist on current public `main`?**
 - **What does it currently do in Defs/source/assets/research/integrations?**
 - **What recent commits changed it?** Trace the actual implementation timeline when state is unclear.
@@ -91,7 +93,7 @@ Verify current `main` first.
 
 **"Rebuild/correct/refine" does not mean "remove". A named required feature remains required unless Vardath explicitly removes it.**
 
-Example process lesson: Al'kesh may require refinement/rebuild/integration correction, but it must not be deleted merely because an older note discusses unfinished Goa'uld craft work.
+Process lesson: Al'kesh may require refinement/rebuild/integration correction, but it must not be deleted merely because an older note discusses unfinished Goa'uld craft work.
 
 ---
 
@@ -99,7 +101,7 @@ Example process lesson: Al'kesh may require refinement/rebuild/integration corre
 
 Historical WNG has **no known-good state**, but it still contains useful evidence.
 
-Ask:
+Use historical source/commits only when needed to answer:
 
 - **What had WNG attempted before?**
 - **What behavior/design was Vardath trying to achieve?**
@@ -107,7 +109,7 @@ Ask:
 - **What names/assets/relationships are useful evidence?**
 - **What architecture must NOT be copied because it was broken or obsolete?**
 
-Historical source informs the design; it does not override current requirements, lore, current public implementation, or newer explicit Vardath instructions.
+Historical source informs the design; it does not override the canonical ledger, newer Vardath instructions, Stargate lore, or current public implementation.
 
 ---
 
@@ -126,7 +128,7 @@ Ask:
 For optional Stargate mods, establish ownership before coding:
 
 - **Who owns the mechanic?** CatCraft, ONAC, RimGate, WNG, or vanilla RimWorld?
-- **What happens when the optional mod is absent?** WNG must remain valid where the plan says it is standalone.
+- **What happens when the optional mod is absent?** WNG must remain valid where the ledger/plan says it is standalone.
 - **Are exact package IDs and Def names verified from supplied/source mod files?** Never guess an external Def identity.
 - **Are we duplicating something the integration mod already provides?** Do not create competing factions/resources/systems without an explicit reason.
 
@@ -134,7 +136,7 @@ For optional Stargate mods, establish ownership before coding:
 
 ## F. BEST-IMPLEMENTATION GATE
 
-Only after the history gate and A-E are answered, decide implementation.
+Only after A-E are answered, decide implementation.
 
 Ask:
 
@@ -160,22 +162,21 @@ There is no fourth status called "forgotten" or "silently removed".
 
 Before committing or moving on, answer **YES** to every applicable item:
 
-- [ ] **FULL CHAT HISTORY:** I retrieved all accessible relevant WNG prior conversations for this subsystem and adjacent affected systems; I did not rely on a summary as a substitute.
-- [ ] **CHRONOLOGY:** I reconciled historical instructions chronologically and used the newest explicit Vardath instruction where older instructions conflict.
+- [ ] **LEDGER:** I read the canonical recovery ledger and verified its recorded current state against current public `main`.
 - [ ] **STARGATE:** I verified what this is in Stargate canon/lore.
 - [ ] **FUNCTION:** I verified what it actually does in Stargate, not just its name.
 - [ ] **IDENTITY:** The implementation still reads/plays as Stargate rather than generic sci-fi.
-- [ ] **CHAT:** I checked Vardath's relevant chat/history and newest corrections.
-- [ ] **PLAN:** I checked current standing rules, corrections, master plan and subsystem notes.
+- [ ] **VARDATH:** I applied the newest explicit Vardath instructions and did not ask for decisions already preserved in continuity.
+- [ ] **PLAN:** I checked current standing rules, master plan and active subsystem contracts.
 - [ ] **CURRENT STATE:** I inspected current public 1.6 `main` before deciding what was missing.
-- [ ] **HISTORY:** I checked relevant historical WNG evidence without treating it as known-good code authority.
+- [ ] **RAW HISTORY ONLY IF NEEDED:** If a genuine ledger gap/conflict existed, I retrieved the relevant raw history, resolved it, and updated the ledger. Otherwise I did not waste the handoff rereading weeks of chat.
 - [ ] **PRESERVATION:** I did not remove an existing required feature merely because it needed rebuilding/correction.
 - [ ] **NATIVE GAME:** I checked vanilla RimWorld/Odyssey/Biotech mechanics and reused them where appropriate.
 - [ ] **INTEGRATIONS:** I respected ownership boundaries and verified optional external Def/package identities from supplied/source mod files where relevant.
 - [ ] **NO INVENTED SUBSTITUTE:** I did not invent an unsupported generic replacement/fallback because it was easier.
 - [ ] **COMPLETE INVENTORY:** Every known related feature is implemented, explicitly deferred with dependency, or explicitly changed/rejected by Vardath.
 - [ ] **VERIFY FUNCTION:** I used only the necessary compile/XML/reference/live-game/log checks needed to establish function.
-- [ ] **HANDOFF:** I updated continuity clearly enough that the next GPT can identify current state without guessing from an older "next step" note.
+- [ ] **LEDGER UPDATED:** I updated `CANONICAL_RECOVERY_LEDGER.md` with the new HEAD, actual changes, status, supersessions and next genuine unfinished slice.
 
 If any applicable box is **NO**, the pass is not ready to move on.
 
@@ -185,6 +186,6 @@ If any applicable box is **NO**, the pass is not ready to move on.
 
 For every WNG subsystem or feature:
 
-**FULL ACCESSIBLE WNG CHAT HISTORY -> STARGATE LORE -> VARDATH/CHAT CHRONOLOGY -> CURRENT PUBLIC STATE -> HISTORICAL EVIDENCE -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> HANDOFF**
+**CANONICAL LEDGER -> STARGATE LORE -> CURRENT PUBLIC STATE -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE LEDGER/HANDOFF**
 
 Do not reverse this order by writing code first and discovering the intended history or Stargate behavior afterwards.
