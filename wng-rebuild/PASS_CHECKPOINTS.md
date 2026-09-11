@@ -24,7 +24,7 @@ Never write a checkpoint as though branch-only work is already public. Never tre
 
 ---
 
-# CHECKPOINT — 2026-09-11 — captured Queen remote-sovereignty foundation validated on branch
+# CHECKPOINT — 2026-09-11 — captured Queen mixed sovereign threat validated on branch
 
 ## Public implementation state
 
@@ -32,7 +32,7 @@ Public mod `main` remains:
 
 **`9ce713704505a220d357f8a6f234fb6e040e0b2e` — recurring exact-map Queen recovery.**
 
-No captured-Queen consequence work from this pass has been promoted to public `main` yet.
+The captured-Queen consequence branch is validated but has **not yet been promoted** at this checkpoint.
 
 ## Active branch
 
@@ -40,81 +40,115 @@ Branch:
 
 **`rebuild/captured-queen-sovereign-threats-20260911`**
 
-Validated branch HEAD:
+Current clean branch HEAD after removing the temporary validator:
 
-**`70533bf848a6b1d00f15bf5f6a7b06c7e49a25dc` — `rebuild: add captured Queen remote sovereignty foundation`**
+**`4ec9872d5f34c1c1ed542e0da93b5052b25e45f8` — `cleanup: remove captured Queen mixed threat validator`**
+
+The validated mixed-threat source/Def tree was tested at `2859e9d174d569e1910cff4ca92c05e0ac493870`; `4ec987...` differs only by removal of the temporary validation workflow.
 
 ## What this pass implemented
 
-- assimilation-born block Replicators now inherit the parent block's exact `CompReplicatorSovereignty` state as well as learned Replicator/adaptation state;
-- added exact captured-Queen retention detection against the **real `WNG_AsuranLattice` faction's native `KidnappedPawnsTracker`** and exact global Queen pawn reference;
-- captured-Queen remote authority exists only while `GameComponent_ReplicatorQueenState` says the exact Queen is `CapturedByAsurans` **and** that exact Asuran Lattice faction still physically/native-logically retains that exact pawn in `KidnappedPawnsListForReading`;
-- added captured-Queen faction lookup for the exact retained Queen;
-- added `TryAssignCapturedQueen` / `TryAcquireForCapturedQueen` assignment path for real spawned WNG block Replicators;
-- captured-Queen blocks use genuine `ReplicatorControlAuthority.Queen`, the exact kidnapped Queen pawn as controller, and the exact Queen domain key — no proxy Queen, outbreak modifier or abstract faction buff;
-- captured remote Queen authority is allowed to remain valid without same-map physical presence **only** for the exact retained-Queen/captor-faction case;
-- remote blocks must actually belong to that exact captor faction for authority to remain valid;
-- if the exact Queen is no longer retained by that faction, normal per-block sovereignty validation fails and the existing release path restores the recorded pre-control/autonomous faction/domain;
-- rescuing/removing the exact Queen therefore has a real mechanical effect on any remote captured-Queen sovereign blocks;
-- ordinary player Queen control, Neural-Lattice control and Temporary-Asuran intrusion retain their existing physical-presence/identity rules.
+New source:
+
+`Source/WNG/Replicators/ReplicatorCapturedQueenThreats.cs`
+
+New Def:
+
+`Defs/IncidentDefs/Incidents_CapturedQueen.xml`
+
+Implemented behavior:
+- new `CapturedQueenThreatExtension` keeps cadence, retry delay, attempt chance, Asuran count, block count, point share and composition chances author-tunable in Def data;
+- current first-build schedule is 3–6 in-game days with a 0.70 scheduled-attempt chance and a short retry delay for transient inability to fire; these are tuning values, not design locks;
+- `GameComponent_CapturedQueenThreats` persists `nextThreatTick`/check state through save/load;
+- scheduler is active only while the exact global Queen is genuinely retained in the exact `WNG_AsuranLattice` native kidnapped-pawn tracker;
+- losing that exact retention resets the scheduler rather than leaving a permanent Asuran bonus;
+- only player-home maps with living spawned free colonists are eligible targets;
+- the Queen herself is **not** falsely spawned/projected onto the target map;
+- an already-active captured-Queen sovereign block force prevents another mixed force from stacking immediately;
+- `WNG_CapturedQueenSovereignStrike` has `baseChance=0`; it is driven by the captured-Queen scheduler rather than accidentally entering ordinary storyteller random incident selection;
+- threat size uses current storyteller points and a Def-tunable Asuran/block point split, with bounded min/max counts;
+- real `WNG_AsuranOperative`, `WNG_AsuranTechnician` and `WNG_AsuranCommander` PawnKinds form the human-form side;
+- block force uses real Drone/Hunter plus Def-tunable chances for Controller/Repairer/Burrower/Artillery, Bulwark and high-point Titan presence; Siege Mass is deliberately not in this first mixed-strike pool;
+- every block is generated first under real autonomous `WNG_ReplicatorSwarm` ownership and only then assigned with `TryAcquireForCapturedQueen`;
+- this preserves each block's real autonomous `originalFaction`, so when exact Queen retention ends its Queen authority validation fails and existing sovereignty release returns it to the autonomous swarm instead of leaving a permanent Asuran-owned fake;
+- every successfully bound block uses genuine `ReplicatorControlAuthority.Queen`, exact Queen pawn reference and exact Queen domain key;
+- Asurans and sovereign blocks are put into one real hostile `LordJob_AssaultColony` under the exact captor faction;
+- existing Replicator same-domain specialist/combat behavior remains in use rather than adding a proxy combat system;
+- spawn rollback removes a partially constructed force if the mixed incident cannot establish at least one real Asuran and one real sovereign block.
 
 ## Validation
 
 GitHub Actions run:
 
-**`34596238345` — SUCCESS**
+**`34596657164` — SUCCESS**
 
 Validated:
 - `dotnet build Source/WNG/WNG.csproj -c Release` — passed;
-- all current Def/Patch XML parsing — passed;
-- captured-Queen retention/assignment/remote-validity invariants — passed;
-- assimilation sovereignty inheritance invariant — passed;
-- temporary workflow and patch helper removed by the validated branch commit.
+- all current Def/Patch XML parsed successfully;
+- captured-Queen mixed-threat scheduler/state invariant present;
+- exact captured-Queen retention lookup present;
+- autonomous Replicator source-faction path present;
+- captured-Queen assignment path present;
+- real `LordJob_AssaultColony` integration present;
+- save persistence for next threat tick present;
+- incident Def is scheduler-only (`baseChance=0`) and points-scalable.
+
+Temporary validation workflow was removed at `4ec987...`.
 
 This is **source/Def validation, not live RimWorld validation**.
 
-## Validation-wrapper failures during this pass
+## Captured-Queen consequence status after this pass
 
-Two temporary workflow attempts failed before modifying source because the embedded patch wrapper was malformed. They were validation-mechanism failures only; no failed source patch was promoted. The final direct patch-script workflow succeeded and removed its temporary helpers.
+Branch implementation now contains the complete current planned foundation for:
+- captured-Queen exact retention;
+- remote exact-Queen sovereign block authority;
+- authority collapse when retention ends;
+- assimilation offspring authority inheritance;
+- save-persistent captured-Queen consequence scheduling;
+- real mixed Asuran + sovereign block hostile strikes.
 
-## Remaining captured-Queen slice
-
-Still not implemented/public:
-- actual mixed **Asuran + sovereign block Replicator hostile threat composition**;
-- a Def-tunable event/incident cadence/trigger for those threats while the exact Queen remains captured;
-- real spawning of autonomous-source Replicator blocks followed by captured-Queen assignment so loss of Queen retention can revert them to `WNG_ReplicatorSwarm` rather than leaving permanent Asuran-owned blocks;
-- sensible block form/specialist mix and threat sizing;
-- exact hostile Lord/assault integration;
-- save/load/event scheduling rules preventing duplicate threats;
-- live RimWorld validation.
+Remaining for this branch before moving to another subsystem:
+- promote the clean validated tree to public `main` without dragging temporary validation-helper commits into public history if practical;
+- update `CURRENT_PUBLIC_STATE.md` to the promoted public HEAD and remove captured-Queen mixed threats from the required-debt list;
+- live RimWorld validation remains pending and must stay recorded as such.
 
 ## Exact next pass
 
-Build one coherent **captured-Queen mixed-threat pass**:
+**Promotion + continuity pass:**
 
-1. Add a captured-Queen consequence Def/extension with author-tunable interval/chance/threat composition rather than hard-coded story-day behavior.
-2. Schedule threats only while the exact Queen is genuinely retained by `WNG_AsuranLattice`.
-3. Target an eligible player-home map using normal hostile incident rules; do not pretend the Queen herself is physically on that map.
-4. Spawn real Asuran human-form combatants plus real WNG block Replicators.
-5. Generate block Replicators from the autonomous `WNG_ReplicatorSwarm` faction first, then bind them through `TryAcquireForCapturedQueen` so their `originalFaction` is the real autonomous swarm.
-6. Use real Queen authority/domain on every sovereign block, real same-domain specialist behavior and normal Replicator combat AI.
-7. Give the mixed force a real hostile assault Lord/job.
-8. Ensure the event is unavailable when exact Queen retention ends and existing remote blocks subsequently release through normal sovereignty validation.
-9. Run C# build + Def/Patch XML + static mixed-threat invariants.
-10. Checkpoint this file again before promotion or the next subsystem.
+1. Recheck public `main` has not advanced from `9ce713...`.
+2. Promote the clean validated captured-Queen tree to public `main` as a clean fast-forward/squashed public commit where practical.
+3. Verify public `main` contains only intended source/Def changes and no temporary validation workflow/helper.
+4. Update `CURRENT_PUBLIC_STATE.md` with the exact new public HEAD and captured-Queen consequence status.
+5. Update this checkpoint with the promoted SHA.
+6. Select the next genuine required subsystem from the reconciled debt list; current likely next major rebuild branch is the human-form Neural Interface / exact copy-reconstruction foundation unless newer Vardath instruction changes priority.
 
 ---
 
-# PRIOR CHECKPOINT — recurring Queen recovery landed; captured-Queen branch started
+# PRIOR CHECKPOINT — captured Queen remote-sovereignty foundation validated on branch
 
-Public milestone before this branch:
+Public mod `main` at that checkpoint:
 
 **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**
 
-Landed public foundations immediately before the captured-Queen branch:
-- Temporary Asuran lattice intrusion at `26680fe84b95a0bfd5a23841b714fdba9cde1a98`;
-- recurring exact-map Queen recovery at `9ce713704505a220d357f8a6f234fb6e040e0b2e`;
-- recurring recovery uses only the exact Queen's physically occupied player-home map, real recovery Jumper/subdual/loading/departure semantics, one operation at a time, Def-tunable 2–4 day current cadence and save-persistent scheduling;
-- both public slices passed C# build and Def/Patch XML validation before promotion; live RimWorld validation remains required.
+Validated branch milestone:
 
-The captured-Queen branch originally began at `af77e358a411f25e7c2ab88dfeb8a76e4b2bff03` with the assimilation offspring sovereignty-inheritance correction; that work is now included in validated branch HEAD `70533bf...` above.
+**`70533bf848a6b1d00f15bf5f6a7b06c7e49a25dc` — captured Queen remote-sovereignty foundation.**
+
+That pass implemented:
+- assimilation-born sovereignty inheritance;
+- exact captured-Queen retention against native `KidnappedPawnsTracker`;
+- captured-Queen faction lookup;
+- real remote exact-Queen authority assignment/validation;
+- exact authority collapse/reversion when retention ends.
+
+Validation run: **`34596238345` — SUCCESS**.
+
+---
+
+# EARLIER PUBLIC MILESTONES
+
+- Temporary Asuran lattice intrusion: **`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**.
+- Recurring exact-map Queen recovery: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**.
+
+Both were source/Def validated before promotion; broad live RimWorld validation remains outstanding.
