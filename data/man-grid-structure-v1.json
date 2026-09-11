@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "name": "Vardath Man Grid",
+  "description": "Exact discrete Man Grid structure supplied by the researcher. Dimensions are columns across x rows down.",
+  "upper": [
+    {"id": "U1", "columns": 4, "rows": 4, "paired_sides": ["L", "R"]},
+    {"id": "U2", "columns": 7, "rows": 5, "paired_sides": ["L", "R"]},
+    {"id": "U3", "columns": 10, "rows": 5, "paired_sides": ["L", "R"]},
+    {"id": "U4", "columns": 7, "rows": 4, "paired_sides": ["L", "R"]},
+    {"id": "U5", "columns": 5, "rows": 5, "paired_sides": ["L", "R"]}
+  ],
+  "transform": {"id": "CIRCLE", "type": "transformative_circle"},
+  "lower": [
+    {"id": "D1", "columns": 6, "rows": 5},
+    {"id": "D2", "columns": 11, "rows": 5},
+    {"id": "D3", "columns": 17, "rows": 4},
+    {"id": "D4", "columns": 21, "rows": 5},
+    {"id": "D5", "columns": 25, "rows": 5}
+  ],
+  "counts": {
+    "upper_cells": 308,
+    "lower_cells": 383,
+    "total_cells": 691,
+    "transform_nodes": 1
+  },
+  "cell_addressing": {
+    "upper": "<layer>-<side>-R<row>-C<column>",
+    "lower": "<layer>-R<row>-C<column>",
+    "row_and_column_indices_are_one_based": true
+  }
+}
