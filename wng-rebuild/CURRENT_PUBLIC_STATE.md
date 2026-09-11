@@ -27,17 +27,18 @@ Current public `main` always beats stale checkpoint prose.
 
 Repository: `Vardath/Wraith-Nanite-Gravtech-1.6`
 
-**`f2becbde25bf58e5e026d5ee5270ce8c5d08f2c3` — `feat: add true Ha'tak orbital bombardment`**
+**`d50637fa34e16631fa87874015f63221992ffcc3` — `fix: reconcile nanite reserve starvation tick`**
 
-Recent Goa'uld/Ha'tak state-changing commits after the canonical-ledger snapshot include:
+Important recent state-changing commits after the canonical-ledger snapshot include:
 
 - `647fa984a6383a7fa85ec753c5393294f45fe728` — Ha'tak heavy plasma battery;
 - `0ce8830238eb5844208084dc5f4565b9aaa7333c` — real Ha'tak Death Glider fighter;
 - `ef04575fb88ed6300b7c681c32971eec0c98d253` — exact System-Lord/Jaffa Death Glider strikes;
 - `9c78be450aebedbc94b6e279bbd761c91bc63baf` — landed hostile System-Lord Ha'tak carrier site;
-- `f2becbde25bf58e5e026d5ee5270ce8c5d08f2c3` — true cross-map/orbital Ha'tak bombardment and full-RimWorld-DLC dependency correction.
+- `f2becbde25bf58e5e026d5ee5270ce8c5d08f2c3` — true cross-map/orbital Ha'tak bombardment and full-RimWorld-DLC dependency correction;
+- `1184456f8dc7719a6d129e20baf6bc3d575b0a67` / `79d4cb2d5e7a6404a33f5be052f29e457d222e80` / `d50637fa34e16631fa87874015f63221992ffcc3` — human-form Replicator/Asuran nanite-physiology foundation, corrected xenotype UI Def and same-tick starvation reconciliation.
 
-The old ledger statement that the Ha'tak family was not implemented is historical snapshot state only.
+The old ledger statements that Ha'tak or human-form Replicators were absent are historical snapshot state only.
 
 ---
 
@@ -51,7 +52,7 @@ Vardath explicitly requires WNG 1.6 to depend on the **complete RimWorld DLC set
 - Anomaly;
 - Odyssey.
 
-WNG does not have to force every subsystem to use every DLC, but the rebuild may use the most appropriate native mechanic from any of them. `About/About.xml` now declares all five DLCs as hard dependencies.
+WNG does not have to force every subsystem to use every DLC, but the rebuild may use the most appropriate native mechanic from any of them. `About/About.xml` declares all five DLCs as hard dependencies.
 
 Third-party Stargate ecosystem mods remain optional unless Vardath changes that:
 - CatCraft Stargates!;
@@ -66,7 +67,9 @@ Third-party Stargate ecosystem mods remain optional unless Vardath changes that:
 
 Current public source/Defs contain the fresh block-Replicator ecology: hierarchy and genuine split/recombine behavior, specialist roles, cumulative material/adaptation state, assimilation and physical map-cell consumption, regeneration/EMP suppression, retaliation, dangerous loose blocks, containment, population limits, salvage/matter economy and Child's Toy foundations.
 
-Required later branches remain the human-form/Asuran sovereign layer, Queen story/capture layer, richer player sovereignty/control and mixed human-form + block threats.
+Block Replicators **do not gain a food/hunger system**. Their stored matter remains the separate reproduction/construction/adaptation economy.
+
+Required later branches remain Queen sovereign authority, richer player sovereignty/control and mixed human-form + block threats.
 
 ## Wraith
 
@@ -74,11 +77,30 @@ Current public source/Defs contain Wraith xenotype/castes/factions; Life Force, 
 
 Ordinary Drain Life, strategic faction hunger, Mature-Hive local feeding and Mature-Hive retaliation remain separate systems.
 
-## Asuran / Ancient-derived
+## Human-form Replicator / Asuran — CURRENT FOUNDATION
 
-Current public source/Defs contain Asuran Nanite Reserve/fabrication/workshop foundations and an Odyssey-native Asuran gravship family with themed native GravEngine/hull/substructure, nanite-sludge fuel family, power/fuel networks, shield and supporting Odyssey equivalents. Puddle Jumper remains a real native-boardable shuttle.
+Current public source/Defs now contain a real human-form nanite identity rather than only an abstract reserve gene:
 
-Human-form Replicator/Asuran infiltration, Neural Interface, exact Queen and sovereign/capture layer remain required and unfinished.
+- non-inheritable `WNG_NaniteHumanoid` xenotype for Asurans/compatible human-form Replicators;
+- ordinary Asuran role PawnKinds (`Operative`, `Technician`, `Commander`) kept separate from unique Queen sovereignty;
+- hidden hostile `WNG_AsuranLattice` faction foundation;
+- human-form Replicator personal matter economy uses RimWorld's **native food system itself**;
+- the exact native `Need_Food` runtime class is retained but exposed through WNG as **Nanite Reserve**;
+- ordinary edible matter therefore refills the reserve through native eating/caravan/feeding behavior;
+- normal Need_Food drain represents ongoing matter consumption by the nanite body;
+- self-repair and Asuran workshop assembly spend the **same** reserve directly;
+- critical reserve depletion applies WNG nanite-depletion/shutdown effects rather than biological starvation;
+- vanilla Malnutrition created by native `Need_Food` is removed on the same pawn tick after needs update, because RimWorld ticks needs before genes;
+- nanite self-repair is bounded and author-tunable;
+- EMP applies persistent lattice disruption and suspends self-repair;
+- nanite humanoids are ageless/sterile synthetic bodies in the current first-build physiology;
+- the older broad rule saying Replicator consumption can never be survival fuel is superseded **only for human-form nanite bodies**. Block Replicators remain unchanged.
+
+The exact Replicator Queen, sovereign control, capture storyline, infiltration and mixed human-form/block threat logic remain unfinished.
+
+## Asuran / Ancient-derived technology
+
+Current public source/Defs also contain the Asuran nanite workshop/fabrication branch and an Odyssey-native Asuran gravship family with themed native GravEngine/hull/substructure, nanite-sludge fuel family, power/fuel networks, shield and supporting Odyssey equivalents. Puddle Jumper remains a real native-boardable shuttle.
 
 ## Stargate / shuttle integration
 
@@ -112,43 +134,58 @@ The Ha'tak family is now a substantial Odyssey-native gravship branch. Current p
 
 ONAC/RimGate ownership is preserved. Do not create duplicate Goa'uld/Jaffa factions or duplicate `ONAC_LiquidNaquadria`.
 
+### Hostile Ha'tak takeoff blocker — VERIFIED NATIVE BOUNDARY
+
+Odyssey's real gravship generation/travel path was inspected before attempting hostile takeoff.
+
+`GravshipUtility.GenerateGravship` writes the generated traveling gravship into the singleton `Current.Game.Gravship`, and the native traveling `Gravship` restores itself through that same player-oriented singleton on load. Although faction ownership itself can survive through `gravship.Engine.Faction`, driving a hostile System-Lord Ha'tak through this singleton risks overwriting/corrupting the player's current gravship state.
+
+Therefore hostile Ha'tak takeoff/retreat/pursuit is **not** claimed implemented and must not be faked by deleting the real carrier and spawning an abstract proxy. Revisit only if a safe native/world-state separation is found.
+
 ---
 
 # CURRENT REQUIRED UNFINISHED BRANCHES
 
 These remain required unless Vardath changes them:
 
-1. **Human-form Replicator / Asuran layer** — infiltration, Neural Interface, exact Queen, sovereign/capture consequences and mixed human-form/block integration.
-2. **Hostile Ha'tak world behavior** — genuine takeoff/retreat/pursuit and hostile use of orbital fire through real Odyssey/world mechanics; do not replace the landed ship with an abstract proxy merely to claim that it moved.
-3. **Goa'uld sensors/other Odyssey equivalents** only where Stargate function actually justifies them.
-4. **Bombardment of otherwise-unloaded settlements/sites** only if map generation/consequences can be handled without pretending damage occurred on a nonexistent map.
-5. **Safe standalone Goa'uld resource/research path** when ONAC is absent remains unresolved. Do not invent uranium/chemfuel.
-6. **Final Puddle Jumper/Ancient power-fuel abstraction** remains deliberate future work.
-7. **Professional final art/audio pass** — dedicated faction assets, all rotation/connection/corner states, Ha'tak/Death-Glider visuals, shield/VFX/audio, Wraith/Asuran production assets.
-8. **Broad live RimWorld validation** — source/API/static reasoning is not live gameplay validation.
+1. **Exact Replicator Queen / Asuran recovery layer** — persistent exact Queen, real cryosleep release, immediate recruitment, four-operative Asuran recovery attack, physical exact-pawn capture/escape semantics, later sovereign consequences.
+2. **Human-form Replicator/Asuran infiltration + Neural Interface + sovereign control**, including mixed human-form/block integration.
+3. **Hostile Ha'tak world behavior** — genuine takeoff/retreat/pursuit and hostile orbital use only if safe real Odyssey/world mechanics support it; current singleton blocker is recorded above.
+4. **Goa'uld sensors/other Odyssey equivalents** only where Stargate function actually justifies them.
+5. **Bombardment of otherwise-unloaded settlements/sites** only if map generation/consequences can be handled without pretending damage occurred on a nonexistent map.
+6. **Safe standalone Goa'uld resource/research path** when ONAC is absent remains unresolved. Do not invent uranium/chemfuel.
+7. **Final Puddle Jumper/Ancient power-fuel abstraction** remains deliberate future work.
+8. **Professional final art/audio pass** — dedicated faction assets, all rotation/connection/corner states, Ha'tak/Death-Glider visuals, shield/VFX/audio, Wraith/Asuran production assets.
+9. **Broad live RimWorld validation** — source/API/static reasoning is not live gameplay validation.
 
 ---
 
 # NEXT ACTUAL SLICE
 
-After `f2becbde...`, the active Ha'tak mechanical slice is:
+After `d50637fa...`, active implementation moves to the settled **Replicator Queen / Asuran recovery foundation**.
 
-**Reconcile hostile Ha'tak takeoff/retreat/pursuit and hostile orbital-fire behavior using genuine Odyssey gravship/world mechanics.**
-
-Before coding:
-- inspect the actual RimWorld 1.6 `Building_GravEngine`, pilot-console launch flow, gravship map transfer, leaving skyfaller/world-object behavior and orbit-layer destination mechanics;
-- preserve the exact generated hostile carrier ship and physically loaded Death Gliders;
-- use only the verified external System-Lord/Jaffa factions/crew;
-- do not destroy the landed carrier and manufacture a replacement proxy merely to simulate takeoff;
-- if native hostile/AI launch cannot be driven safely, record the exact missing native boundary and move to another required branch rather than faking it.
+Current contract:
+- one exact persistent female human-form Replicator Queen;
+- age **13** in the current first-build design;
+- uses the nanite-humanoid identity, not a block-machine race;
+- held in a real RimWorld cryosleep/cryptosleep chamber at the recovery site;
+- opening/releasing the casket recruits the exact Queen immediately;
+- release triggers a hostile Asuran/Lattice recovery operation after a bounded tunable delay;
+- current recovery team is four human-form Asuran operatives;
+- they prioritize/subdue the exact Queen rather than generic destruction;
+- downing or picking her up does **not** commit capture;
+- capture commits only when a hostile carrier physically exits the map with the exact Queen;
+- interrupting escape leaves her recoverable/player-owned;
+- later recovery raids may target any player map where the exact Queen is physically present;
+- sovereign Queen authority over block Replicators is a later concrete layer and must be genuine control state, not a statistical outbreak modifier.
 
 ---
 
 # VALIDATION STATUS
 
-Current Ha'tak work has been source/API checked against current RimWorld 1.6 classes and Def patterns, including Odyssey gravship/world-layer APIs and Royalty orbital bombardment. No claim is made that RimWorld itself has been launched in this environment.
+Current work has been source/API checked against RimWorld 1.6 classes and Def patterns. No claim is made that RimWorld itself has been launched in this environment.
 
-Live validation still required includes Def load, ONAC/RimGate integration, carrier-site generation, power/fuel/facility links, shields/turrets, Death Glider launch/return, gravship launch/travel, orbital world/cell targeting, native bombardment impacts and save-load.
+Live validation still required includes Def load, pawn generation, nanite-reserve need replacement, native eating/caravan behavior, same-tick Malnutrition removal, reserve-funded repair/fabrication, EMP suppression, Asuran faction/PawnKind generation, carrier sites, power/fuel/shields, Death Glider launch/return, orbital targeting/bombardment and save-load.
 
 ---
 
