@@ -19,13 +19,14 @@ Every known item must remain implemented, explicitly partial, explicitly missing
 
 Repository: **`Vardath/Wraith-Nanite-Gravtech-1.6`**
 
-**`12590e8ea88ce208a640fe2475de1843a7e227af` — `rebuild: add Replicator Grav reposition adaptation`**
+**`b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — `rebuild: integrate Replicator AntiShield with native energy shields`**
 
-Public diff from `45e62cd...` contains only:
-- `Source/WNG/Replicators/ReplicatorAdaptationEffects.cs`;
-- `Defs/ThingDefs/Races_Replicator.xml`.
+Public diff from `12590e8...` contains exactly:
+- `Defs/ThingDefs/Projectiles_Replicator.xml` — added;
+- `Source/WNG/Replicators/ReplicatorAdaptiveProjectile.cs` — added;
+- `Source/WNG/Replicators/ReplicatorAdaptationEffects.cs` — modified.
 
-Validation run **`34609531708` — SUCCESS** before clean promotion. Release build, Def/Patch XML and Grav invariants passed. This is source/Def validation, not broad live RimWorld validation.
+Corrected validation run **`34610731875` — SUCCESS** before clean promotion. The earlier run `34610597370` failed at the temporary workflow-wrapper level before creating a job and did not produce a source result. Release build, Def/Patch XML and AntiShield invariants passed in the corrected run. This is source/Def validation, not broad live RimWorld validation.
 
 ## Recent public milestones
 
@@ -38,6 +39,7 @@ Validation run **`34609531708` — SUCCESS** before clean promotion. Release bui
 - `b242dc72d139910172e8de3290530b505fcfa823` — Quiet Lattice human-form society.
 - `45e62cd7f5ea18d2cf3f57df8b25beda1aabe1ad` — native WNG backstories.
 - `12590e8ea88ce208a640fe2475de1843a7e227af` — physical Replicator Grav adaptation.
+- `b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — native-projectile AntiShield integration.
 
 ---
 
@@ -52,25 +54,31 @@ Implemented:
 - assimilation/stored-matter offspring economy, dangerous Replicator Matter, EMP, containment, regeneration/retaliation, Child's Toy branch;
 - controller-domain inheritance through split/recombine/assimilation offspring;
 - Material / Armor / Ranged / Power / Shield adaptation foundations;
-- AntiShield persistent state and current Replicator-shield interaction;
-- Grav evidence/save state + approved overlay + **real physical gravitic reposition behavior**.
+- Grav evidence/save state + approved overlay + real physical gravitic reposition behavior;
+- AntiShield persistent evidence/state + block adaptive-shield countermeasure + **native energy-shield integration**.
 
 ### Grav adaptation — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
 
-- learned only through existing grav/gravity assimilation evidence;
-- uses RimWorld native `JumpUtility.DoJump` / `PawnFlyer` on the exact same pawn;
+- learned through existing grav/gravity assimilation evidence;
+- native `JumpUtility.DoJump` / `PawnFlyer` exact-pawn reposition;
 - no MoveSpeed bonus, teleport, permanent flight, phasing or pawn recreation;
-- first-build Def tuning: range 7, minimum useful distance 3, cooldown 360 ticks, landing search radius 2;
-- native valid/walkable target and line-of-sight constraints;
-- origin/destination WNG containment blocks use;
-- EMP blocks use;
-- player-owned Grav-adapted block Replicators receive a target command;
-- hostile autonomous Grav-adapted blocks can use bounded tactical reposition toward visible hostile pawns under existing combat-permission rules;
-- cooldown is save-persistent;
-- existing learned state/overlay/hierarchy inheritance remain intact.
+- current Def tuning: range 7, minimum useful distance 3, cooldown 360 ticks, landing radius 2;
+- native valid/walkable/LOS constraints;
+- EMP and WNG containment suppress use;
+- player command + bounded autonomous tactical use;
+- cooldown save-persistent.
 
-Still partial:
-- broader AntiShield interaction with concrete non-Replicator shields.
+### AntiShield — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
+
+- AntiShield remains a later countermeasure unlocked only after repeated shield/barrier evidence; current threshold is Def-tunable and set to 3;
+- adaptive ranged fire now uses a real native `Bullet` projectile instead of direct `TakeDamage`, so walls/cover and native projectile shields participate normally;
+- non-AntiShield shots are normally intercepted by `CompProjectileInterceptor` / `CompGravshipShieldGenerator` shields;
+- an AntiShield launcher presents the existing Def-tunable `antiShieldDamageMultiplier` as increased shield depletion to native interceptors;
+- ordinary unshielded body impact remains normal configured adaptive-ranged body damage/armor penetration rather than a generic AntiShield body-damage bonus;
+- existing WNG block adaptive-shield countermeasure behavior is retained;
+- Wraith living-hull regeneration is not an energy shield and receives no AntiShield interaction;
+- no Harmony patch is used;
+- third-party shield systems outside the native projectile-interceptor path remain explicit future integrations only if their real APIs are later supplied/verified.
 
 ## Controller / Queen architecture
 
@@ -80,14 +88,14 @@ Distinct public authorities: autonomous `None`, exact Queen, physical Sovereign 
 
 Implemented:
 - `WNG_NaniteHumanoid`, Nanite Reserve, synthetic depletion/self-repair/fabrication, EMP disruption;
-- hostile `WNG_AsuranLattice` with current Operative / Technician / Commander / Infiltrator roles;
+- hostile `WNG_AsuranLattice` with Operative / Technician / Commander / Infiltrator roles;
 - Temporary Asuran block intrusion and captured-Queen mixed threats;
 - Neural Interface recruit/imprison/Ideology-slave/skill-copy/exact reconstruction;
-- same-pawn conceal/reveal and real covert visitor impersonation using valid native cover-faction/guest mechanics;
-- non-hostile **The Quiet Lattice** / `WNG_HumanFormEnclave` as a separate WNG-created splinter society;
+- same-pawn conceal/reveal and covert visitor impersonation with valid native cover-faction/guest mechanics;
+- non-hostile **The Quiet Lattice** / `WNG_HumanFormEnclave` as separate WNG-created splinter society;
 - generalist / engineer / soldier / coordinator / player human-form PawnKinds;
 - Peaceful / Settlement / bounded Combat Quiet-Lattice composition;
-- native WNG synthetic backstories with distinct origins and role adulthood categories.
+- native WNG synthetic backstories.
 
 Still required:
 - complete synthetic disease/implant/temperature/vacuum physiology audit;
@@ -108,7 +116,7 @@ Implemented:
 - Feeding Niche / Hibernation Pod / Dormancy Vault / Hive Heart;
 - mature-Hive feeding-stock/population/retaliation foundation;
 - living-tech bootstrap, real Wraith Grav Engine, stun staff, Dart/captivity foundation, Wraith gravship mechanics and living-hull regeneration;
-- native WNG Wraith backstories with shared Hive origins plus caste/role adulthood categories.
+- native WNG Wraith backstories.
 
 Still required:
 - Wraith Growth Chamber;
@@ -134,23 +142,23 @@ Still required/blocked: safe standalone Goa'uld ship material/fuel/research path
 
 # CURRENT REQUIRED UNFINISHED INVENTORY
 
-Richer Grav adaptation is removed from missing debt because its physical mobility foundation is now public.
+Broader native AntiShield integration is removed from missing debt because it is now public.
 
-1. **Broader AntiShield integration with concrete non-Replicator energy shields.**
-2. Wraith Growth Chamber.
-3. Strategic Wraith hunger involved-Wraith count/names UI stage.
-4. Broader discovery/story progression.
-5. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
-6. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
-7. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
-8. Unloaded-world-site transport-ring exact-pawn/world-object transport.
-9. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
-10. Final professional craft/gravship/implant/building/weapon/resource art review.
-11. Professional WNG audio layer.
-12. Hostile Ha'tak native takeoff/retreat/pursuit only if safely solvable through Odyssey ownership; never fake it.
-13. Broad current-build live RimWorld/save-load/mod-stack/performance validation/tuning.
-14. Human-form synthetic disease/implant/temperature/vacuum physiology audit.
-15. Optional broader DLC identity-copy fidelity audit for Neural Interface copies.
+1. **Wraith Growth Chamber.**
+2. Strategic Wraith hunger involved-Wraith count/names UI stage.
+3. Broader discovery/story progression.
+4. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
+5. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
+6. Deliberate Ancient/Puddle-Jumper power/fuel abstraction.
+7. Unloaded-world-site transport-ring exact-pawn/world-object transport.
+8. Faction-specific professional gravship corner/inside-corner/diagonal/transition presentation.
+9. Final professional craft/gravship/implant/building/weapon/resource art review.
+10. Professional WNG audio layer.
+11. Hostile Ha'tak native takeoff/retreat/pursuit only if safely solvable through Odyssey ownership; never fake it.
+12. Broad current-build live RimWorld/save-load/mod-stack/performance validation/tuning.
+13. Human-form synthetic disease/implant/temperature/vacuum physiology audit.
+14. Optional broader DLC identity-copy fidelity audit for Neural Interface copies.
+15. Explicit third-party shield integration only for verified shield systems outside RimWorld's native projectile-interceptor path.
 16. Approved planned-only Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty branches when Vardath advances them.
 
 No item may silently disappear.
@@ -159,13 +167,12 @@ No item may silently disappear.
 
 # GENUINE NEXT PASS
 
-**AntiShield reconciliation only.**
+**Wraith Growth Chamber reconciliation only.**
 
 Before code:
-- recover exactly what AntiShield learning/countermeasure meant in the plan/history;
-- inspect current Replicator AntiShield evidence threshold and existing Replicator-vs-Replicator interaction;
-- inspect concrete native `CompProjectileInterceptor` / `CompGravshipShieldGenerator` APIs and current WNG shield Defs;
-- Stargate lore gate: distinguish Replicator adaptation to shield technology from the Ancient ARG anti-Replicator weapon and do not invent a generic shield-deleting aura;
-- identify which concrete shield types can be safely interacted with through current public APIs;
-- Wraith living-hull regeneration is **not** an energy shield and is never an AntiShield target;
+- recover the Growth Chamber requirement from chat/history/plan and inspect historical file evidence without treating it as known-good;
+- inspect current public Wraith Hive infrastructure, feeding, reproduction/population and living-tech files/assets;
+- perform Stargate lore gate: distinguish canon Wraith cloning facilities/growth systems from WNG gameplay abstractions;
+- define exactly what the Growth Chamber adds that current Hive Heart / Feeding Niche / Hibernation Pod / Dormancy Vault do not already provide;
+- ensure it does not merge ordinary feeding, strategic hunger, mature-Hive ecology or retaliation;
 - checkpoint the reconciliation decision before implementation.
