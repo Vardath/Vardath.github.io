@@ -1,0 +1,8254 @@
+{
+  "version": 3,
+  "test_id": 1,
+  "test": "Original phonetic reconstruction through the exact mirrored Man Grid",
+  "status": "complete",
+  "shards": 20,
+  "correction": "This corrected run replaces ChatGPT implementations that used the A1-D4/16-state proxy and later the traced-image coordinate model. Those are implementation errors and are not evidence from the correct Man Grid.",
+  "source": {
+    "dataset": "PHOIBLE CLDF",
+    "commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "marginal_segments_excluded": true,
+    "tone_segments_excluded_from_research_inventory": true,
+    "projection_fit_to_all_phoible_parameters": true
+  },
+  "grid": {
+    "cells": 1074,
+    "transform_nodes": 1,
+    "upper": [
+      {
+        "id": "U1",
+        "columns": 4,
+        "rows": 4,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "U2",
+        "columns": 7,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "U3",
+        "columns": 10,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "U4",
+        "columns": 7,
+        "rows": 4,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "U5",
+        "columns": 5,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      }
+    ],
+    "lower": [
+      {
+        "id": "D1",
+        "columns": 6,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "D2",
+        "columns": 11,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "D3",
+        "columns": 17,
+        "rows": 4,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "D4",
+        "columns": 21,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      },
+      {
+        "id": "D5",
+        "columns": 25,
+        "rows": 5,
+        "paired_sides": [
+          "L",
+          "R"
+        ]
+      }
+    ],
+    "all_rectangles_mirrored": true
+  },
+  "design": {
+    "grid": "exact 1,074-cell mirrored Man Grid + transformative circle from data/man-grid-structure-v1.json",
+    "engine_parity": "Python research mapping ports phonetic-man-grid-engine-core.js: same raw PHOIBLE feature vectors, PCA seeds/orientation, 1st/99th-percentile bounds, y inversion, per-layer quantisation, weighted feature distance and L/R mirror addressing",
+    "rectangles": "U1 4x4, U2 7x5, U3 10x5, U4 7x4, U5 5x5, D1 6x5, D2 11x5, D3 17x4, D4 21x5, D5 25x5; every layer exists on LEFT and RIGHT",
+    "sibling_split": "within-family inventory centroids are split by a global within-family residual axis; no modern language is preselected",
+    "ancestor_sound": "mutual-nearest LEFT/RIGHT branch sounds are midpointed in full PHOIBLE feature space; candidate roots are aggregated by mirrored D5 row/column coordinate and retain both L and R addresses",
+    "control": "for each real family, replace its RIGHT branch with a deterministically rotated unrelated family RIGHT branch",
+    "shards": 20
+  },
+  "coverage": {
+    "all_phoible_parameters": 3164,
+    "research_segments": 3065,
+    "all_languages": 2177,
+    "eligible_languages": 2105,
+    "value_rows": 105459,
+    "accepted_inventory_rows": 103309,
+    "families": 177
+  },
+  "summary": {
+    "languages": 2045,
+    "families": 117,
+    "segments_considered": 3065,
+    "candidate_phonemes": 36,
+    "minimum_family_support_per_root_coordinate": 6,
+    "minimum_shard_support": 5,
+    "real_sibling_pairs": 2219,
+    "unrelated_control_pairs": 2103,
+    "mean_real_sibling_feature_distance": 0.001150105152471083,
+    "mean_unrelated_control_feature_distance": 0.0032344666349659215,
+    "effect_size_cohen_d_control_minus_real": 0.24827204386821708,
+    "shards_with_real_closer_than_control": 19,
+    "shards_compared": 20,
+    "mean_shard_advantage": 0.001960455393679362,
+    "real_siblings_closer_than_unrelated_control": true
+  },
+  "original_phoneme_inventory": [
+    {
+      "ipa": "eʲ",
+      "parameter_id": "343D6585F467EF5FA7A95609EB18CB7E",
+      "features": [
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "root_coordinate": "D5-R3-C23",
+      "root_cell": "D5-L-R3-C23",
+      "root_cell_left": "D5-L-R3-C23",
+      "root_cell_right": "D5-R-R3-C23",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C4",
+          "U2-L-R3-C7",
+          "U3-L-R3-C10",
+          "U4-L-R2-C7",
+          "U5-L-R3-C5",
+          "D1-L-R3-C6",
+          "D2-L-R3-C10",
+          "D3-L-R2-C16",
+          "D4-L-R3-C20",
+          "D5-L-R3-C23"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C4",
+          "U2-R-R3-C7",
+          "U3-R-R3-C10",
+          "U4-R-R2-C7",
+          "U5-R-R3-C5",
+          "D1-R-R3-C6",
+          "D2-R-R3-C10",
+          "D3-R-R2-C16",
+          "D4-R-R3-C20",
+          "D5-R-R3-C23"
+        ]
+      },
+      "family_support": 117,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0009793447293447292,
+      "prototype_feature_distance": 0.013844373219373221,
+      "competing_candidates": [
+        {
+          "ipa": "i",
+          "distance": 0.013844373219373221
+        },
+        {
+          "ipa": "ii",
+          "distance": 0.013844373219373221
+        },
+        {
+          "ipa": "aʲ",
+          "distance": 0.020076566951566954
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ɨ",
+          "right_ipa": "ɨ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "i",
+          "right_ipa": "i",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "iː",
+          "right_ipa": "iː",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "i",
+          "right_ipa": "i",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "i",
+          "right_ipa": "i",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "i",
+          "right_ipa": "i",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "i",
+          "right_ipa": "i",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "i",
+          "right_ipa": "i",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "k",
+      "parameter_id": "5A838FF4DABE1950734CFAFAB9383903",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R5-C5",
+      "root_cell": "D5-L-R5-C5",
+      "root_cell_left": "D5-L-R5-C5",
+      "root_cell_right": "D5-R-R5-C5",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R4-C1",
+          "U2-L-R5-C2",
+          "U3-L-R5-C2",
+          "U4-L-R4-C2",
+          "U5-L-R5-C1",
+          "D1-L-R5-C2",
+          "D2-L-R5-C3",
+          "D3-L-R4-C4",
+          "D4-L-R5-C4",
+          "D5-L-R5-C5"
+        ],
+        "parent_path_R": [
+          "U1-R-R4-C1",
+          "U2-R-R5-C2",
+          "U3-R-R5-C2",
+          "U4-R-R4-C2",
+          "U5-R-R5-C1",
+          "D1-R-R5-C2",
+          "D2-R-R5-C3",
+          "D3-R-R4-C4",
+          "D4-R-R5-C4",
+          "D5-R-R5-C5"
+        ]
+      },
+      "family_support": 115,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.00018115942028985507,
+      "prototype_feature_distance": 0.0015398550724637684,
+      "competing_candidates": [
+        {
+          "ipa": "k͉",
+          "distance": 0.0015398550724637684
+        },
+        {
+          "ipa": "ɡ̊",
+          "distance": 0.0015398550724637684
+        },
+        {
+          "ipa": "ʰk",
+          "distance": 0.010688405797101447
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "kʲʰ",
+          "right_ipa": "kʲʰ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "k",
+          "right_ipa": "k",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "m",
+      "parameter_id": "5AE9663626770D1D4B97AAE5769AB83C",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C8",
+      "root_cell": "D5-L-R3-C8",
+      "root_cell_left": "D5-L-R3-C8",
+      "root_cell_right": "D5-R-R3-C8",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C2",
+          "U2-L-R3-C3",
+          "U3-L-R3-C4",
+          "U4-L-R3-C3",
+          "U5-L-R3-C2",
+          "D1-L-R3-C2",
+          "D2-L-R3-C4",
+          "D3-L-R3-C6",
+          "D4-L-R3-C7",
+          "D5-L-R3-C8"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C2",
+          "U2-R-R3-C3",
+          "U3-R-R3-C4",
+          "U4-R-R3-C3",
+          "U5-R-R3-C2",
+          "D1-R-R3-C2",
+          "D2-R-R3-C4",
+          "D3-R-R3-C6",
+          "D4-R-R3-C7",
+          "D5-R-R3-C8"
+        ]
+      },
+      "family_support": 115,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.00942028985507247,
+      "competing_candidates": [
+        {
+          "ipa": "m͉",
+          "distance": 0.00942028985507247
+        },
+        {
+          "ipa": "m̥m",
+          "distance": 0.018387681159420296
+        },
+        {
+          "ipa": "ʱm",
+          "distance": 0.018387681159420296
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "m",
+          "right_ipa": "m",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "a",
+      "parameter_id": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "features": [
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "root_coordinate": "D5-R2-C23",
+      "root_cell": "D5-L-R2-C23",
+      "root_cell_left": "D5-L-R2-C23",
+      "root_cell_right": "D5-R-R2-C23",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C4",
+          "U2-L-R2-C7",
+          "U3-L-R2-C10",
+          "U4-L-R2-C7",
+          "U5-L-R2-C5",
+          "D1-L-R2-C6",
+          "D2-L-R2-C11",
+          "D3-L-R2-C16",
+          "D4-L-R2-C20",
+          "D5-L-R2-C23"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C4",
+          "U2-R-R2-C7",
+          "U3-R-R2-C10",
+          "U4-R-R2-C7",
+          "U5-R-R2-C5",
+          "D1-R-R2-C6",
+          "D2-R-R2-C11",
+          "D3-R-R2-C16",
+          "D4-R-R2-C20",
+          "D5-R-R2-C23"
+        ]
+      },
+      "family_support": 112,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0005580357142857143,
+      "prototype_feature_distance": 0.0026971726190476194,
+      "competing_candidates": [
+        {
+          "ipa": "ä",
+          "distance": 0.0026971726190476194
+        },
+        {
+          "ipa": "a̞",
+          "distance": 0.0026971726190476194
+        },
+        {
+          "ipa": "a̟",
+          "distance": 0.02111235119047619
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ä",
+          "right_ipa": "a",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "a",
+          "right_ipa": "a",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "n",
+      "parameter_id": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C5",
+      "root_cell": "D5-L-R2-C5",
+      "root_cell_left": "D5-L-R2-C5",
+      "root_cell_right": "D5-R-R2-C5",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R1-C1",
+          "U2-L-R2-C2",
+          "U3-L-R2-C2",
+          "U4-L-R1-C2",
+          "U5-L-R2-C1",
+          "D1-L-R2-C2",
+          "D2-L-R2-C3",
+          "D3-L-R1-C4",
+          "D4-L-R2-C4",
+          "D5-L-R2-C5"
+        ],
+        "parent_path_R": [
+          "U1-R-R1-C1",
+          "U2-R-R2-C2",
+          "U3-R-R2-C2",
+          "U4-R-R1-C2",
+          "U5-R-R2-C1",
+          "D1-R-R2-C2",
+          "D2-R-R2-C3",
+          "D3-R-R1-C4",
+          "D4-R-R2-C4",
+          "D5-R-R2-C5"
+        ]
+      },
+      "family_support": 111,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0008445945945945945,
+      "prototype_feature_distance": 0.0032376126126126142,
+      "competing_candidates": [
+        {
+          "ipa": "n̪̺",
+          "distance": 0.0032376126126126142
+        },
+        {
+          "ipa": "n̺",
+          "distance": 0.0032376126126126142
+        },
+        {
+          "ipa": "n͉",
+          "distance": 0.0032376126126126142
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ʒ͇",
+          "right_ipa": "ʓ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "n",
+          "right_ipa": "n",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "l",
+      "parameter_id": "03413638BD1DFC7AEF53192FEF71F017",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R1-C10",
+      "root_cell": "D5-L-R1-C10",
+      "root_cell_left": "D5-L-R1-C10",
+      "root_cell_right": "D5-R-R1-C10",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R1-C2",
+          "U2-L-R1-C3",
+          "U3-L-R1-C4",
+          "U4-L-R1-C3",
+          "U5-L-R1-C2",
+          "D1-L-R1-C3",
+          "D2-L-R1-C5",
+          "D3-L-R1-C7",
+          "D4-L-R1-C9",
+          "D5-L-R1-C10"
+        ],
+        "parent_path_R": [
+          "U1-R-R1-C2",
+          "U2-R-R1-C3",
+          "U3-R-R1-C4",
+          "U4-R-R1-C3",
+          "U5-R-R1-C2",
+          "D1-R-R1-C3",
+          "D2-R-R1-C5",
+          "D3-R-R1-C7",
+          "D4-R-R1-C9",
+          "D5-R-R1-C10"
+        ]
+      },
+      "family_support": 110,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.002556818181818182,
+      "prototype_feature_distance": 0.010937500000000001,
+      "competing_candidates": [
+        {
+          "ipa": "l̟",
+          "distance": 0.010937500000000001
+        },
+        {
+          "ipa": "l̺",
+          "distance": 0.010937500000000001
+        },
+        {
+          "ipa": "l͉",
+          "distance": 0.010937500000000001
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "l",
+          "right_ipa": "l",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "l",
+          "right_ipa": "l",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "l",
+          "right_ipa": "l",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "ɾ",
+          "right_ipa": "ɾ",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "ɾ",
+          "right_ipa": "ɾ",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "l",
+          "right_ipa": "l",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "l",
+          "right_ipa": "l",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "l",
+          "right_ipa": "l",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "u",
+      "parameter_id": "58EB693AE523323410326D60806B9ADF",
+      "features": [
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "root_coordinate": "D5-R4-C25",
+      "root_cell": "D5-L-R4-C25",
+      "root_cell_left": "D5-L-R4-C25",
+      "root_cell_right": "D5-R-R4-C25",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C4",
+          "U2-L-R4-C7",
+          "U3-L-R4-C10",
+          "U4-L-R3-C7",
+          "U5-L-R4-C5",
+          "D1-L-R4-C6",
+          "D2-L-R4-C11",
+          "D3-L-R3-C17",
+          "D4-L-R4-C21",
+          "D5-L-R4-C25"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C4",
+          "U2-R-R4-C7",
+          "U3-R-R4-C10",
+          "U4-R-R3-C7",
+          "U5-R-R4-C5",
+          "D1-R-R4-C6",
+          "D2-R-R4-C11",
+          "D3-R-R3-C17",
+          "D4-R-R4-C21",
+          "D5-R-R4-C25"
+        ]
+      },
+      "family_support": 109,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.001146788990825688,
+      "prototype_feature_distance": 0.008218654434250764,
+      "competing_candidates": [
+        {
+          "ipa": "u̞",
+          "distance": 0.015194954128440366
+        },
+        {
+          "ipa": "ʊu",
+          "distance": 0.015194954128440366
+        },
+        {
+          "ipa": "u̜",
+          "distance": 0.018635321100917427
+        }
+      ],
+      "examples": [
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "u",
+          "right_ipa": "u",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "uː",
+          "right_ipa": "uː",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "b̥",
+      "parameter_id": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C4",
+      "root_cell": "D5-L-R4-C4",
+      "root_cell_left": "D5-L-R4-C4",
+      "root_cell_right": "D5-R-R4-C4",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R4-C1",
+          "U2-L-R4-C1",
+          "U3-L-R4-C2",
+          "U4-L-R4-C1",
+          "U5-L-R4-C1",
+          "D1-L-R4-C1",
+          "D2-L-R4-C2",
+          "D3-L-R4-C3",
+          "D4-L-R4-C3",
+          "D5-L-R4-C4"
+        ],
+        "parent_path_R": [
+          "U1-R-R4-C1",
+          "U2-R-R4-C1",
+          "U3-R-R4-C2",
+          "U4-R-R4-C1",
+          "U5-R-R4-C1",
+          "D1-R-R4-C1",
+          "D2-R-R4-C2",
+          "D3-R-R4-C3",
+          "D4-R-R4-C3",
+          "D5-R-R4-C4"
+        ]
+      },
+      "family_support": 105,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 9.92063492063492e-05,
+      "prototype_feature_distance": 0.004414682539682539,
+      "competing_candidates": [
+        {
+          "ipa": "p",
+          "distance": 0.004414682539682539
+        },
+        {
+          "ipa": "p͉",
+          "distance": 0.004414682539682539
+        },
+        {
+          "ipa": "ˀp",
+          "distance": 0.014732142857142855
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "p",
+          "right_ipa": "p",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "j",
+      "parameter_id": "ADF56B8E4119266843033E723A149AE2",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C18",
+      "root_cell": "D5-L-R3-C18",
+      "root_cell_left": "D5-L-R3-C18",
+      "root_cell_right": "D5-R-R3-C18",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C3",
+          "U2-L-R3-C5",
+          "U3-L-R3-C7",
+          "U4-L-R2-C5",
+          "U5-L-R3-C4",
+          "D1-L-R3-C5",
+          "D2-L-R3-C8",
+          "D3-L-R2-C12",
+          "D4-L-R3-C15",
+          "D5-L-R3-C18"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C3",
+          "U2-R-R3-C5",
+          "U3-R-R3-C7",
+          "U4-R-R2-C5",
+          "U5-R-R3-C4",
+          "D1-R-R3-C5",
+          "D2-R-R3-C8",
+          "D3-R-R2-C12",
+          "D4-R-R3-C15",
+          "D5-R-R3-C18"
+        ]
+      },
+      "family_support": 103,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.002528317152103559,
+      "competing_candidates": [
+        {
+          "ipa": "ˀj",
+          "distance": 0.012742718446601941
+        },
+        {
+          "ipa": "ʱj",
+          "distance": 0.012944983818770225
+        },
+        {
+          "ipa": "jˀ",
+          "distance": 0.023159385113268607
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "j",
+          "right_ipa": "j",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "w",
+      "parameter_id": "501394D0E2658752D9DA624E7DEBE14B",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C20",
+      "root_cell": "D5-L-R4-C20",
+      "root_cell_left": "D5-L-R4-C20",
+      "root_cell_right": "D5-R-R4-C20",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C4",
+          "U2-L-R4-C6",
+          "U3-L-R4-C8",
+          "U4-L-R3-C6",
+          "U5-L-R4-C4",
+          "D1-L-R4-C5",
+          "D2-L-R4-C9",
+          "D3-L-R3-C13",
+          "D4-L-R4-C16",
+          "D5-L-R4-C20"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C4",
+          "U2-R-R4-C6",
+          "U3-R-R4-C8",
+          "U4-R-R3-C6",
+          "U5-R-R4-C4",
+          "D1-R-R4-C5",
+          "D2-R-R4-C9",
+          "D3-R-R3-C13",
+          "D4-R-R4-C16",
+          "D5-R-R4-C20"
+        ]
+      },
+      "family_support": 100,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.0002083333333333335,
+      "competing_candidates": [
+        {
+          "ipa": "w̜",
+          "distance": 0.010625
+        },
+        {
+          "ipa": "ʱw",
+          "distance": 0.010625
+        },
+        {
+          "ipa": "ˀw",
+          "distance": 0.010625
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "w",
+          "right_ipa": "w",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "d̥",
+      "parameter_id": "C0A16085D28E420764D7FD27A85E0B99",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C1",
+      "root_cell": "D5-L-R2-C1",
+      "root_cell_left": "D5-L-R2-C1",
+      "root_cell_right": "D5-R-R2-C1",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R2-C1",
+          "U3-L-R2-C1",
+          "U4-L-R2-C1",
+          "U5-L-R2-C1",
+          "D1-L-R2-C1",
+          "D2-L-R2-C1",
+          "D3-L-R2-C1",
+          "D4-L-R2-C1",
+          "D5-L-R2-C1"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R2-C1",
+          "U3-R-R2-C1",
+          "U4-R-R2-C1",
+          "U5-R-R2-C1",
+          "D1-R-R2-C1",
+          "D2-R-R2-C1",
+          "D3-R-R2-C1",
+          "D4-R-R2-C1",
+          "D5-R-R2-C1"
+        ]
+      },
+      "family_support": 98,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.00042517006802721087,
+      "prototype_feature_distance": 0.011160714285714288,
+      "competing_candidates": [
+        {
+          "ipa": "d̺̥",
+          "distance": 0.011160714285714288
+        },
+        {
+          "ipa": "t",
+          "distance": 0.011160714285714288
+        },
+        {
+          "ipa": "t̟",
+          "distance": 0.011160714285714288
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ts",
+          "right_ipa": "ts",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "t",
+          "right_ipa": "t",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "t",
+          "right_ipa": "t",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "ts",
+          "right_ipa": "ts",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "t",
+          "right_ipa": "t",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "t",
+          "right_ipa": "t",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "t",
+          "right_ipa": "t",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "t",
+          "right_ipa": "t",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "e",
+      "parameter_id": "199408E3D0668F10F475143F0E8CC0CB",
+      "features": [
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "root_coordinate": "D5-R2-C24",
+      "root_cell": "D5-L-R2-C24",
+      "root_cell_left": "D5-L-R2-C24",
+      "root_cell_right": "D5-R-R2-C24",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C4",
+          "U2-L-R2-C7",
+          "U3-L-R2-C10",
+          "U4-L-R2-C7",
+          "U5-L-R2-C5",
+          "D1-L-R2-C6",
+          "D2-L-R2-C11",
+          "D3-L-R2-C16",
+          "D4-L-R2-C20",
+          "D5-L-R2-C24"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C4",
+          "U2-R-R2-C7",
+          "U3-R-R2-C10",
+          "U4-R-R2-C7",
+          "U5-R-R2-C5",
+          "D1-R-R2-C6",
+          "D2-R-R2-C11",
+          "D3-R-R2-C16",
+          "D4-R-R2-C20",
+          "D5-R-R2-C24"
+        ]
+      },
+      "family_support": 95,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.000986842105263158,
+      "prototype_feature_distance": 0.025164473684210528,
+      "competing_candidates": [
+        {
+          "ipa": "eɛ",
+          "distance": 0.02867324561403509
+        },
+        {
+          "ipa": "e̞",
+          "distance": 0.02867324561403509
+        },
+        {
+          "ipa": "ɛe",
+          "distance": 0.02867324561403509
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "äː",
+          "right_ipa": "äː",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "e",
+          "right_ipa": "e",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "aː",
+          "right_ipa": "aː",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "e",
+          "right_ipa": "e",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "e",
+          "right_ipa": "e",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "aː",
+          "right_ipa": "aː",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "e",
+          "right_ipa": "e",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "e",
+          "right_ipa": "e",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "oɔ",
+      "parameter_id": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "features": [
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "root_coordinate": "D5-R3-C25",
+      "root_cell": "D5-L-R3-C25",
+      "root_cell_left": "D5-L-R3-C25",
+      "root_cell_right": "D5-R-R3-C25",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C4",
+          "U2-L-R3-C7",
+          "U3-L-R3-C10",
+          "U4-L-R3-C7",
+          "U5-L-R3-C5",
+          "D1-L-R3-C6",
+          "D2-L-R3-C11",
+          "D3-L-R3-C17",
+          "D4-L-R3-C21",
+          "D5-L-R3-C25"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C4",
+          "U2-R-R3-C7",
+          "U3-R-R3-C10",
+          "U4-R-R3-C7",
+          "U5-R-R3-C5",
+          "D1-R-R3-C6",
+          "D2-R-R3-C11",
+          "D3-R-R3-C17",
+          "D4-R-R3-C21",
+          "D5-R-R3-C25"
+        ]
+      },
+      "family_support": 89,
+      "shard_support": 20,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 1.0,
+      "mean_sibling_feature_distance": 0.0016385767790262171,
+      "prototype_feature_distance": 0.009714419475655432,
+      "competing_candidates": [
+        {
+          "ipa": "o̞",
+          "distance": 0.009714419475655432
+        },
+        {
+          "ipa": "ɔo",
+          "distance": 0.009714419475655432
+        },
+        {
+          "ipa": "ɔ̝",
+          "distance": 0.009714419475655432
+        }
+      ],
+      "examples": [
+        {
+          "family": "Algic",
+          "left_ipa": "o",
+          "right_ipa": "o",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "o",
+          "right_ipa": "o",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "o",
+          "right_ipa": "o",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "ɔ",
+          "right_ipa": "ɔ",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "ɔ",
+          "right_ipa": "ɔ",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "o",
+          "right_ipa": "o",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "o",
+          "right_ipa": "o",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "oː",
+          "right_ipa": "oː",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "s",
+      "parameter_id": "7FF174469DAC4E61520F4E1610B2F088",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C3",
+      "root_cell": "D5-L-R2-C3",
+      "root_cell_left": "D5-L-R2-C3",
+      "root_cell_right": "D5-R-R2-C3",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R2-C1",
+          "U3-L-R2-C2",
+          "U4-L-R2-C1",
+          "U5-L-R2-C1",
+          "D1-L-R2-C1",
+          "D2-L-R2-C2",
+          "D3-L-R2-C2",
+          "D4-L-R2-C3",
+          "D5-L-R2-C3"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R2-C1",
+          "U3-R-R2-C2",
+          "U4-R-R2-C1",
+          "U5-R-R2-C1",
+          "D1-R-R2-C1",
+          "D2-R-R2-C2",
+          "D3-R-R2-C2",
+          "D4-R-R2-C3",
+          "D5-R-R2-C3"
+        ]
+      },
+      "family_support": 86,
+      "shard_support": 19,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.985,
+      "mean_sibling_feature_distance": 0.0025436046511627904,
+      "prototype_feature_distance": 0.013020833333333334,
+      "competing_candidates": [
+        {
+          "ipa": "s̟",
+          "distance": 0.013020833333333334
+        },
+        {
+          "ipa": "s̺",
+          "distance": 0.013020833333333334
+        },
+        {
+          "ipa": "s͉",
+          "distance": 0.013020833333333334
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "dz",
+          "right_ipa": "dz",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "s",
+          "right_ipa": "s",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "b",
+      "parameter_id": "694212B746622E482E0E58D50036100E",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C6",
+      "root_cell": "D5-L-R4-C6",
+      "root_cell_left": "D5-L-R4-C6",
+      "root_cell_right": "D5-R-R4-C6",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C1",
+          "U2-L-R4-C2",
+          "U3-L-R4-C3",
+          "U4-L-R3-C2",
+          "U5-L-R4-C2",
+          "D1-L-R4-C2",
+          "D2-L-R4-C3",
+          "D3-L-R3-C4",
+          "D4-L-R4-C5",
+          "D5-L-R4-C6"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C1",
+          "U2-R-R4-C2",
+          "U3-R-R4-C3",
+          "U4-R-R3-C2",
+          "U5-R-R4-C2",
+          "D1-R-R4-C2",
+          "D2-R-R4-C3",
+          "D3-R-R3-C4",
+          "D4-R-R4-C5",
+          "D5-R-R4-C6"
+        ]
+      },
+      "family_support": 70,
+      "shard_support": 19,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.985,
+      "mean_sibling_feature_distance": 0.0005952380952380952,
+      "prototype_feature_distance": 0.04226190476190476,
+      "competing_candidates": [
+        {
+          "ipa": "b͉",
+          "distance": 0.04226190476190476
+        },
+        {
+          "ipa": "ʱb",
+          "distance": 0.05238095238095238
+        },
+        {
+          "ipa": "ˀb",
+          "distance": 0.05238095238095238
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "q",
+          "right_ipa": "q",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "b",
+          "right_ipa": "b",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "b",
+          "right_ipa": "b",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "b",
+          "right_ipa": "b",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "b",
+          "right_ipa": "b",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "b",
+          "right_ipa": "b",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "q",
+          "right_ipa": "q",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "b",
+          "right_ipa": "b",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ʔ",
+      "parameter_id": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C3",
+      "root_cell": "D5-L-R4-C3",
+      "root_cell_left": "D5-L-R4-C3",
+      "root_cell_right": "D5-R-R4-C3",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C1",
+          "U2-L-R4-C1",
+          "U3-L-R4-C2",
+          "U4-L-R3-C1",
+          "U5-L-R4-C1",
+          "D1-L-R4-C1",
+          "D2-L-R4-C2",
+          "D3-L-R3-C2",
+          "D4-L-R4-C3",
+          "D5-L-R4-C3"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C1",
+          "U2-R-R4-C1",
+          "U3-R-R4-C2",
+          "U4-R-R3-C1",
+          "U5-R-R4-C1",
+          "D1-R-R4-C1",
+          "D2-R-R4-C2",
+          "D3-R-R3-C2",
+          "D4-R-R4-C3",
+          "D5-R-R4-C3"
+        ]
+      },
+      "family_support": 61,
+      "shard_support": 18,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.97,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.032274590163934434,
+      "competing_candidates": [
+        {
+          "ipa": "ʔʼ",
+          "distance": 0.05037568306010929
+        },
+        {
+          "ipa": "ʔˤ",
+          "distance": 0.05310792349726776
+        },
+        {
+          "ipa": "ʔ̬",
+          "distance": 0.05310792349726776
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "pʼ",
+          "right_ipa": "pʼ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "ʔ",
+          "right_ipa": "ʔ",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "ʔ",
+          "right_ipa": "ʔ",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "ʔ",
+          "right_ipa": "ʔ",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "ʔ",
+          "right_ipa": "ʔ",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "pʼ",
+          "right_ipa": "pʼ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "ʔ",
+          "right_ipa": "ʔ",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "ʔ",
+          "right_ipa": "ʔ",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ɡ",
+      "parameter_id": "ECC959553F23387998DAF88D69D7736C",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R5-C7",
+      "root_cell": "D5-L-R5-C7",
+      "root_cell_left": "D5-L-R5-C7",
+      "root_cell_right": "D5-R-R5-C7",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R4-C2",
+          "U2-L-R5-C2",
+          "U3-L-R5-C3",
+          "U4-L-R4-C2",
+          "U5-L-R5-C2",
+          "D1-L-R5-C2",
+          "D2-L-R5-C3",
+          "D3-L-R4-C5",
+          "D4-L-R5-C6",
+          "D5-L-R5-C7"
+        ],
+        "parent_path_R": [
+          "U1-R-R4-C2",
+          "U2-R-R5-C2",
+          "U3-R-R5-C3",
+          "U4-R-R4-C2",
+          "U5-R-R5-C2",
+          "D1-R-R5-C2",
+          "D2-R-R5-C3",
+          "D3-R-R4-C5",
+          "D4-R-R5-C6",
+          "D5-R-R5-C7"
+        ]
+      },
+      "family_support": 60,
+      "shard_support": 18,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.97,
+      "mean_sibling_feature_distance": 0.0006944444444444444,
+      "prototype_feature_distance": 0.021874999999999995,
+      "competing_candidates": [
+        {
+          "ipa": "kɡ",
+          "distance": 0.023263888888888886
+        },
+        {
+          "ipa": "ˀɡ",
+          "distance": 0.030902777777777776
+        },
+        {
+          "ipa": "ʱɡ",
+          "distance": 0.031597222222222214
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "qʷ",
+          "right_ipa": "qʷ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "ɡ",
+          "right_ipa": "ɡ",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "ɡ",
+          "right_ipa": "ɡ",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "ɡ",
+          "right_ipa": "ɡ",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "ɡ",
+          "right_ipa": "ɡ",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "ɡ",
+          "right_ipa": "ɡ",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        },
+        {
+          "family": "Cochimi-Yuman",
+          "left_ipa": "kʷ",
+          "right_ipa": "kʷ",
+          "left_languages": [
+            "Tipai"
+          ],
+          "right_languages": [
+            "Quechan"
+          ]
+        },
+        {
+          "family": "Dogon",
+          "left_ipa": "ɡ",
+          "right_ipa": "ɡ",
+          "left_languages": [
+            "Jamsay Dogon"
+          ],
+          "right_languages": [
+            "Toro So Dogon"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ɲɟʑ",
+      "parameter_id": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -0.3333333333333333,
+        -0.3333333333333333,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -0.3333333333333333,
+        1.0,
+        -0.3333333333333333,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C7",
+      "root_cell": "D5-L-R3-C7",
+      "root_cell_left": "D5-L-R3-C7",
+      "root_cell_right": "D5-R-R3-C7",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C2",
+          "U2-L-R3-C2",
+          "U3-L-R3-C3",
+          "U4-L-R2-C2",
+          "U5-L-R3-C2",
+          "D1-L-R3-C2",
+          "D2-L-R3-C3",
+          "D3-L-R2-C5",
+          "D4-L-R3-C6",
+          "D5-L-R3-C7"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C2",
+          "U2-R-R3-C2",
+          "U3-R-R3-C3",
+          "U4-R-R2-C2",
+          "U5-R-R3-C2",
+          "D1-R-R3-C2",
+          "D2-R-R3-C3",
+          "D3-R-R2-C5",
+          "D4-R-R3-C6",
+          "D5-R-R3-C7"
+        ]
+      },
+      "family_support": 59,
+      "shard_support": 19,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.985,
+      "mean_sibling_feature_distance": 0.0017655367231638418,
+      "prototype_feature_distance": 0.09722222222222225,
+      "competing_candidates": [
+        {
+          "ipa": "ɲ̟dʑ",
+          "distance": 0.10134180790960455
+        },
+        {
+          "ipa": "n̠ʲ",
+          "distance": 0.10346045197740115
+        },
+        {
+          "ipa": "ɲ",
+          "distance": 0.10346045197740115
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "v",
+          "right_ipa": "v",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "ɲ",
+          "right_ipa": "ɲ",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "v",
+          "right_ipa": "v",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "ɲ",
+          "right_ipa": "ɲ",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "ɲ",
+          "right_ipa": "ɲ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Bunaban",
+          "left_ipa": "ȵ",
+          "right_ipa": "ȵ",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "ɲ",
+          "right_ipa": "ɲ",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        },
+        {
+          "family": "Chukotko-Kamchatkan",
+          "left_ipa": "ʝ",
+          "right_ipa": "ʝ",
+          "left_languages": [
+            "Koryak",
+            "Alutor"
+          ],
+          "right_languages": [
+            "Chukchi",
+            "West Itelmen"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ŋ",
+      "parameter_id": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C10",
+      "root_cell": "D5-L-R4-C10",
+      "root_cell_left": "D5-L-R4-C10",
+      "root_cell_right": "D5-R-R4-C10",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C2",
+          "U2-L-R4-C3",
+          "U3-L-R4-C4",
+          "U4-L-R3-C3",
+          "U5-L-R4-C2",
+          "D1-L-R4-C3",
+          "D2-L-R4-C5",
+          "D3-L-R3-C7",
+          "D4-L-R4-C8",
+          "D5-L-R4-C10"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C2",
+          "U2-R-R4-C3",
+          "U3-R-R4-C4",
+          "U4-R-R3-C3",
+          "U5-R-R4-C2",
+          "D1-R-R4-C3",
+          "D2-R-R4-C5",
+          "D3-R-R3-C7",
+          "D4-R-R4-C8",
+          "D5-R-R4-C10"
+        ]
+      },
+      "family_support": 58,
+      "shard_support": 19,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.985,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.014906609195402298,
+      "competing_candidates": [
+        {
+          "ipa": "ŋ̥ŋ",
+          "distance": 0.02316810344827586
+        },
+        {
+          "ipa": "ŋ̞",
+          "distance": 0.024245689655172414
+        },
+        {
+          "ipa": "ʱŋ",
+          "distance": 0.025323275862068964
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "χʷ",
+          "right_ipa": "χʷ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Austronesian",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Atayal",
+            "Batak Toba",
+            "Sundanese",
+            "Tagalog",
+            "Iaai",
+            "Kaliai"
+          ],
+          "right_languages": [
+            "Eastern Cham",
+            "Plateau Malagasy",
+            "Standard Malay",
+            "Sa'ban",
+            "Javanese",
+            "Chamorro"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Bookkeeping",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Samre of Siem Reap",
+            "Bubia"
+          ],
+          "right_languages": [
+            "Chuanqiandian Cluster Miao",
+            "Katukína",
+            "Bandjigali"
+          ]
+        },
+        {
+          "family": "Bunaban",
+          "left_ipa": "ŋ",
+          "right_ipa": "ŋ",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "t̪|t",
+      "parameter_id": "19543364EAF61142000DD72C6A8928C2",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C1",
+      "root_cell": "D5-L-R3-C1",
+      "root_cell_left": "D5-L-R3-C1",
+      "root_cell_right": "D5-R-R3-C1",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R3-C1",
+          "U3-L-R3-C1",
+          "U4-L-R2-C1",
+          "U5-L-R3-C1",
+          "D1-L-R3-C1",
+          "D2-L-R3-C1",
+          "D3-L-R2-C1",
+          "D4-L-R3-C1",
+          "D5-L-R3-C1"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R3-C1",
+          "U3-R-R3-C1",
+          "U4-R-R2-C1",
+          "U5-R-R3-C1",
+          "D1-R-R3-C1",
+          "D2-R-R3-C1",
+          "D3-R-R2-C1",
+          "D4-R-R3-C1",
+          "D5-R-R3-C1"
+        ]
+      },
+      "family_support": 56,
+      "shard_support": 19,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.985,
+      "mean_sibling_feature_distance": 0.0018601190476190475,
+      "prototype_feature_distance": 0.022879464285714288,
+      "competing_candidates": [
+        {
+          "ipa": "ˀt",
+          "distance": 0.026785714285714288
+        },
+        {
+          "ipa": "d̥",
+          "distance": 0.027715773809523808
+        },
+        {
+          "ipa": "d̺̥",
+          "distance": 0.027715773809523808
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "tʼ",
+          "right_ipa": "tʼ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "tʼ",
+          "right_ipa": "tʼ",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "tʼ",
+          "right_ipa": "tʼ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Bunaban",
+          "left_ipa": "t̪",
+          "right_ipa": "t̪",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        },
+        {
+          "family": "Caddoan",
+          "left_ipa": "t̪|t",
+          "right_ipa": "t̪|t",
+          "left_languages": [
+            "Wichita"
+          ],
+          "right_languages": [
+            "Caddo"
+          ]
+        },
+        {
+          "family": "Chocoan",
+          "left_ipa": "tʰ",
+          "right_ipa": "tʰ",
+          "left_languages": [
+            "Epena",
+            "Woun Meu",
+            "Emberá-Chamí"
+          ],
+          "right_languages": [
+            "Emberá-Baudó",
+            "Emberá-Catío",
+            "Northern Emberá"
+          ]
+        },
+        {
+          "family": "Chonan",
+          "left_ipa": "tʼ",
+          "right_ipa": "tʼ",
+          "left_languages": [
+            "Selk'nam"
+          ],
+          "right_languages": [
+            "Tehuelche"
+          ]
+        },
+        {
+          "family": "Chukotko-Kamchatkan",
+          "left_ipa": "t̪|t",
+          "right_ipa": "t̪|t",
+          "left_languages": [
+            "Koryak",
+            "Alutor"
+          ],
+          "right_languages": [
+            "Chukchi",
+            "West Itelmen"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "d",
+      "parameter_id": "E6253384902D489FDB1FE487B7ED4AB2",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C2",
+      "root_cell": "D5-L-R2-C2",
+      "root_cell_left": "D5-L-R2-C2",
+      "root_cell_right": "D5-R-R2-C2",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R2-C1",
+          "U3-L-R2-C1",
+          "U4-L-R2-C1",
+          "U5-L-R2-C1",
+          "D1-L-R2-C1",
+          "D2-L-R2-C1",
+          "D3-L-R2-C2",
+          "D4-L-R2-C2",
+          "D5-L-R2-C2"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R2-C1",
+          "U3-R-R2-C1",
+          "U4-R-R2-C1",
+          "U5-R-R2-C1",
+          "D1-R-R2-C1",
+          "D2-R-R2-C1",
+          "D3-R-R2-C2",
+          "D4-R-R2-C2",
+          "D5-R-R2-C2"
+        ]
+      },
+      "family_support": 50,
+      "shard_support": 19,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.985,
+      "mean_sibling_feature_distance": 0.0020833333333333333,
+      "prototype_feature_distance": 0.010833333333333335,
+      "competing_candidates": [
+        {
+          "ipa": "d̟",
+          "distance": 0.010833333333333335
+        },
+        {
+          "ipa": "d̠",
+          "distance": 0.010833333333333335
+        },
+        {
+          "ipa": "d̪̺",
+          "distance": 0.010833333333333335
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ɬʼ",
+          "right_ipa": "ɬʼ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "d",
+          "right_ipa": "d",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Arawan",
+          "left_ipa": "d",
+          "right_ipa": "d",
+          "left_languages": [
+            "Madi",
+            "Suruahá"
+          ],
+          "right_languages": [
+            "Deni",
+            "Culina",
+            "Paumari"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "d",
+          "right_ipa": "d",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Austroasiatic",
+          "left_ipa": "d",
+          "right_ipa": "d",
+          "left_languages": [
+            "Central Khmer",
+            "Vietnamese",
+            "Western Bru",
+            "Nyahkur",
+            "Khmu",
+            "South Wa"
+          ],
+          "right_languages": [
+            "Mundari",
+            "Kharia",
+            "Khasi",
+            "Sedang",
+            "Brao",
+            "Car Nicobarese"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "d",
+          "right_ipa": "d̠",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "d",
+          "right_ipa": "d",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "ɗ",
+          "right_ipa": "ɗ",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "s̠",
+      "parameter_id": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C4",
+      "root_cell": "D5-L-R2-C4",
+      "root_cell_left": "D5-L-R2-C4",
+      "root_cell_right": "D5-R-R2-C4",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R2-C1",
+          "U3-L-R2-C2",
+          "U4-L-R2-C1",
+          "U5-L-R2-C1",
+          "D1-L-R2-C1",
+          "D2-L-R2-C2",
+          "D3-L-R2-C3",
+          "D4-L-R2-C3",
+          "D5-L-R2-C4"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R2-C1",
+          "U3-R-R2-C2",
+          "U4-R-R2-C1",
+          "U5-R-R2-C1",
+          "D1-R-R2-C1",
+          "D2-R-R2-C2",
+          "D3-R-R2-C3",
+          "D4-R-R2-C3",
+          "D5-R-R2-C4"
+        ]
+      },
+      "family_support": 47,
+      "shard_support": 17,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.955,
+      "mean_sibling_feature_distance": 0.0011081560283687944,
+      "prototype_feature_distance": 0.01340868794326241,
+      "competing_candidates": [
+        {
+          "ipa": "s̺̠",
+          "distance": 0.01340868794326241
+        },
+        {
+          "ipa": "s̻̠",
+          "distance": 0.01340868794326241
+        },
+        {
+          "ipa": "ʂ̻",
+          "distance": 0.01340868794326241
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ʃ͇",
+          "right_ipa": "ʆ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "ʃ",
+          "right_ipa": "ʃ",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "ʃ",
+          "right_ipa": "ʃ",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "ʃ",
+          "right_ipa": "ʃ",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "ʃ",
+          "right_ipa": "ʃ",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "ʃ",
+          "right_ipa": "ʃ",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "d̠ʒ",
+          "right_ipa": "d̠ʒ",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        },
+        {
+          "family": "Cahuapanan",
+          "left_ipa": "ʃ",
+          "right_ipa": "ʃ",
+          "left_languages": [
+            "Shawi"
+          ],
+          "right_languages": [
+            "Jebero"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "d̥ʒ̊",
+      "parameter_id": "AC51EE4FC08BAF952575AB613AD70C25",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C2",
+      "root_cell": "D5-L-R3-C2",
+      "root_cell_left": "D5-L-R3-C2",
+      "root_cell_right": "D5-R-R3-C2",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R3-C1",
+          "U3-L-R3-C1",
+          "U4-L-R2-C1",
+          "U5-L-R3-C1",
+          "D1-L-R3-C1",
+          "D2-L-R3-C1",
+          "D3-L-R2-C1",
+          "D4-L-R3-C2",
+          "D5-L-R3-C2"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R3-C1",
+          "U3-R-R3-C1",
+          "U4-R-R2-C1",
+          "U5-R-R3-C1",
+          "D1-R-R3-C1",
+          "D2-R-R3-C1",
+          "D3-R-R2-C1",
+          "D4-R-R3-C2",
+          "D5-R-R3-C2"
+        ]
+      },
+      "family_support": 44,
+      "shard_support": 17,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.955,
+      "mean_sibling_feature_distance": 0.00047348484848484844,
+      "prototype_feature_distance": 0.00023674242424242403,
+      "competing_candidates": [
+        {
+          "ipa": "d̥ʒ̥",
+          "distance": 0.00023674242424242403
+        },
+        {
+          "ipa": "t̠ʃ",
+          "distance": 0.00023674242424242403
+        },
+        {
+          "ipa": "t̠ʃ͉",
+          "distance": 0.00023674242424242403
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Algic",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Unami",
+            "Michif",
+            "Siksika"
+          ],
+          "right_languages": [
+            "Eastern Ojibwa",
+            "Wiyot",
+            "Shawnee",
+            "Yurok"
+          ]
+        },
+        {
+          "family": "Arawakan",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Island Carib",
+            "Wayuu",
+            "Xiriâna",
+            "Chamicuro",
+            "Apurinã",
+            "Yine"
+          ],
+          "right_languages": [
+            "Wapishana",
+            "Asháninka",
+            "Ignaciano",
+            "Yanesha'",
+            "Resígaro",
+            "Yucuna"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "t̠ʃ",
+          "right_ipa": "t̠ʃ",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "f",
+      "parameter_id": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C6",
+      "root_cell": "D5-L-R3-C6",
+      "root_cell_left": "D5-L-R3-C6",
+      "root_cell_right": "D5-R-R3-C6",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C1",
+          "U2-L-R3-C2",
+          "U3-L-R3-C3",
+          "U4-L-R3-C2",
+          "U5-L-R3-C2",
+          "D1-L-R3-C2",
+          "D2-L-R3-C3",
+          "D3-L-R3-C4",
+          "D4-L-R3-C5",
+          "D5-L-R3-C6"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C1",
+          "U2-R-R3-C2",
+          "U3-R-R3-C3",
+          "U4-R-R3-C2",
+          "U5-R-R3-C2",
+          "D1-R-R3-C2",
+          "D2-R-R3-C3",
+          "D3-R-R3-C4",
+          "D4-R-R3-C5",
+          "D5-R-R3-C6"
+        ]
+      },
+      "family_support": 25,
+      "shard_support": 13,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.895,
+      "mean_sibling_feature_distance": 0.0037500000000000003,
+      "prototype_feature_distance": 0.018541666666666668,
+      "competing_candidates": [
+        {
+          "ipa": "f͉",
+          "distance": 0.018541666666666668
+        },
+        {
+          "ipa": "v̥",
+          "distance": 0.018541666666666668
+        },
+        {
+          "ipa": "ɸ",
+          "distance": 0.03270833333333334
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "f",
+          "right_ipa": "f",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "f",
+          "right_ipa": "f",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "f",
+          "right_ipa": "f",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "ɸ",
+          "right_ipa": "ɸ",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "f",
+          "right_ipa": "f",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        },
+        {
+          "family": "Dogon",
+          "left_ipa": "f",
+          "right_ipa": "f",
+          "left_languages": [
+            "Jamsay Dogon"
+          ],
+          "right_languages": [
+            "Toro So Dogon"
+          ]
+        },
+        {
+          "family": "Hmong-Mien",
+          "left_ipa": "f",
+          "right_ipa": "f",
+          "left_languages": [
+            "Hmong Njua"
+          ],
+          "right_languages": [
+            "Iu Mien"
+          ]
+        },
+        {
+          "family": "Huitotoan",
+          "left_ipa": "ɸ",
+          "right_ipa": "ɸ",
+          "left_languages": [
+            "Ocaina",
+            "Murui Huitoto"
+          ],
+          "right_languages": [
+            "Minica Huitoto",
+            "Nonuya"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ɳɖr̠",
+      "parameter_id": "75E779177D614451E5497DDD599BA165",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        0.3333333333333333,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -0.3333333333333333,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C6",
+      "root_cell": "D5-L-R2-C6",
+      "root_cell_left": "D5-L-R2-C6",
+      "root_cell_right": "D5-R-R2-C6",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C1",
+          "U2-L-R2-C2",
+          "U3-L-R2-C3",
+          "U4-L-R2-C2",
+          "U5-L-R2-C2",
+          "D1-L-R2-C2",
+          "D2-L-R2-C3",
+          "D3-L-R2-C4",
+          "D4-L-R2-C5",
+          "D5-L-R2-C6"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C1",
+          "U2-R-R2-C2",
+          "U3-R-R2-C3",
+          "U4-R-R2-C2",
+          "U5-R-R2-C2",
+          "D1-R-R2-C2",
+          "D2-R-R2-C3",
+          "D3-R-R2-C4",
+          "D4-R-R2-C5",
+          "D5-R-R2-C6"
+        ]
+      },
+      "family_support": 22,
+      "shard_support": 15,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.925,
+      "mean_sibling_feature_distance": 0.0023674242424242425,
+      "prototype_feature_distance": 0.043323863636363646,
+      "competing_candidates": [
+        {
+          "ipa": "n̠ʒ",
+          "distance": 0.044270833333333336
+        },
+        {
+          "ipa": "ɳɖɽ",
+          "distance": 0.050110479797979814
+        },
+        {
+          "ipa": "ɳ",
+          "distance": 0.050426136363636374
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ʒ",
+          "right_ipa": "ʒ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Barbacoan",
+          "left_ipa": "ʒ",
+          "right_ipa": "ʒ",
+          "left_languages": [
+            "Awa-Cuaiquer",
+            "Tsafiki"
+          ],
+          "right_languages": [
+            "Cha'palaa",
+            "Guambiano"
+          ]
+        },
+        {
+          "family": "Bunaban",
+          "left_ipa": "ɳ",
+          "right_ipa": "ɳ",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        },
+        {
+          "family": "Dravidian",
+          "left_ipa": "ɳ",
+          "right_ipa": "ɳ",
+          "left_languages": [
+            "Brahui",
+            "Tulu",
+            "Kuvi",
+            "Betta Kurumba",
+            "Abujmaria",
+            "Irula of the Nilgiri"
+          ],
+          "right_languages": [
+            "Kurukh",
+            "Telugu",
+            "Kota (India)",
+            "Koya",
+            "Nepali Kurux",
+            "Tamil"
+          ]
+        },
+        {
+          "family": "Giimbiyu",
+          "left_ipa": "ɳ",
+          "right_ipa": "ɳ",
+          "left_languages": [
+            "Erre"
+          ],
+          "right_languages": [
+            "Mangerr",
+            "Urningangg"
+          ]
+        },
+        {
+          "family": "Gunwinyguan",
+          "left_ipa": "ɳ",
+          "right_ipa": "ɳ",
+          "left_languages": [
+            "Wubuy",
+            "Bininj Kun-Wok",
+            "Ngalakgan",
+            "Ngalkbun",
+            "Ngandi",
+            "Kune"
+          ],
+          "right_languages": [
+            "Warray",
+            "Anindilyakwa",
+            "Kundjeyhmi",
+            "Kuninjku",
+            "Kunwinjku",
+            "Manyallaluk Mayali"
+          ]
+        },
+        {
+          "family": "Iwaidjan Proper",
+          "left_ipa": "ɳ",
+          "right_ipa": "ɳ",
+          "left_languages": [
+            "Mawng",
+            "Garig"
+          ],
+          "right_languages": [
+            "Amurdak",
+            "Ilgar",
+            "Iwaidja"
+          ]
+        },
+        {
+          "family": "Kartvelian",
+          "left_ipa": "ʒ",
+          "right_ipa": "ʒ",
+          "left_languages": [
+            "Georgian",
+            "Svan"
+          ],
+          "right_languages": [
+            "Mingrelian",
+            "Laz"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "əɯ",
+      "parameter_id": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "features": [
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      "root_coordinate": "D5-R3-C24",
+      "root_cell": "D5-L-R3-C24",
+      "root_cell_left": "D5-L-R3-C24",
+      "root_cell_right": "D5-R-R3-C24",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C4",
+          "U2-L-R3-C7",
+          "U3-L-R3-C10",
+          "U4-L-R2-C7",
+          "U5-L-R3-C5",
+          "D1-L-R3-C6",
+          "D2-L-R3-C11",
+          "D3-L-R2-C16",
+          "D4-L-R3-C20",
+          "D5-L-R3-C24"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C4",
+          "U2-R-R3-C7",
+          "U3-R-R3-C10",
+          "U4-R-R2-C7",
+          "U5-R-R3-C5",
+          "D1-R-R3-C6",
+          "D2-R-R3-C11",
+          "D3-R-R2-C16",
+          "D4-R-R3-C20",
+          "D5-R-R3-C24"
+        ]
+      },
+      "family_support": 22,
+      "shard_support": 14,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.91,
+      "mean_sibling_feature_distance": 0.007102272727272727,
+      "prototype_feature_distance": 0.035748106060606064,
+      "competing_candidates": [
+        {
+          "ipa": "ɯə",
+          "distance": 0.035748106060606064
+        },
+        {
+          "ipa": "ɯ̽",
+          "distance": 0.035748106060606064
+        },
+        {
+          "ipa": "əɯ̃",
+          "distance": 0.03669507575757576
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ə",
+          "right_ipa": "ə",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "ɯː",
+          "right_ipa": "ɯː",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        },
+        {
+          "family": "Border",
+          "left_ipa": "ə",
+          "right_ipa": "ə",
+          "left_languages": [
+            "Waris"
+          ],
+          "right_languages": [
+            "Imonda",
+            "Amanab"
+          ]
+        },
+        {
+          "family": "Chicham",
+          "left_ipa": "ɯ̃",
+          "right_ipa": "ɯ̃",
+          "left_languages": [
+            "Achuar-Shiwiar",
+            "Huambisa"
+          ],
+          "right_languages": [
+            "Shuar",
+            "Aguaruna"
+          ]
+        },
+        {
+          "family": "Chocoan",
+          "left_ipa": "ɯ̃",
+          "right_ipa": "ɯ̃",
+          "left_languages": [
+            "Epena",
+            "Woun Meu",
+            "Emberá-Chamí"
+          ],
+          "right_languages": [
+            "Emberá-Baudó",
+            "Emberá-Catío",
+            "Northern Emberá"
+          ]
+        },
+        {
+          "family": "Iroquoian",
+          "left_ipa": "ə̃",
+          "right_ipa": "ə̃",
+          "left_languages": [
+            "Seneca",
+            "Oneida"
+          ],
+          "right_languages": [
+            "Cherokee",
+            "Lorette Huron"
+          ]
+        },
+        {
+          "family": "Kadugli-Krongo",
+          "left_ipa": "ə",
+          "right_ipa": "ə",
+          "left_languages": [
+            "Tulishi",
+            "Keiga",
+            "Krongo"
+          ],
+          "right_languages": [
+            "Katcha",
+            "Katcha-Kadugli-Miri",
+            "Kanga",
+            "Tumtum"
+          ]
+        },
+        {
+          "family": "Naduhup",
+          "left_ipa": "ɤ",
+          "right_ipa": "ɤ",
+          "left_languages": [
+            "Nadëb",
+            "Yuhup"
+          ],
+          "right_languages": [
+            "Hup",
+            "Dâw"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "x",
+      "parameter_id": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C8",
+      "root_cell": "D5-L-R4-C8",
+      "root_cell_left": "D5-L-R4-C8",
+      "root_cell_right": "D5-R-R4-C8",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C2",
+          "U2-L-R4-C3",
+          "U3-L-R4-C3",
+          "U4-L-R3-C3",
+          "U5-L-R4-C2",
+          "D1-L-R4-C2",
+          "D2-L-R4-C4",
+          "D3-L-R3-C6",
+          "D4-L-R4-C7",
+          "D5-L-R4-C8"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C2",
+          "U2-R-R4-C3",
+          "U3-R-R4-C3",
+          "U4-R-R3-C3",
+          "U5-R-R4-C2",
+          "D1-R-R4-C2",
+          "D2-R-R4-C4",
+          "D3-R-R3-C6",
+          "D4-R-R4-C7",
+          "D5-R-R4-C8"
+        ]
+      },
+      "family_support": 21,
+      "shard_support": 13,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.895,
+      "mean_sibling_feature_distance": 0.000992063492063492,
+      "prototype_feature_distance": 0.028273809523809524,
+      "competing_candidates": [
+        {
+          "ipa": "x̥",
+          "distance": 0.028273809523809524
+        },
+        {
+          "ipa": "x͉",
+          "distance": 0.028273809523809524
+        },
+        {
+          "ipa": "ɣ̊",
+          "distance": 0.028273809523809524
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "χ",
+          "right_ipa": "χ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "x",
+          "right_ipa": "x",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "x",
+          "right_ipa": "x",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Chicham",
+          "left_ipa": "x",
+          "right_ipa": "x",
+          "left_languages": [
+            "Achuar-Shiwiar",
+            "Huambisa"
+          ],
+          "right_languages": [
+            "Shuar",
+            "Aguaruna"
+          ]
+        },
+        {
+          "family": "Chonan",
+          "left_ipa": "x",
+          "right_ipa": "x",
+          "left_languages": [
+            "Selk'nam"
+          ],
+          "right_languages": [
+            "Tehuelche"
+          ]
+        },
+        {
+          "family": "Eskimo-Aleut",
+          "left_ipa": "χ",
+          "right_ipa": "χ",
+          "left_languages": [
+            "Central Siberian Yupik",
+            "Naukan Yupik"
+          ],
+          "right_languages": [
+            "Aleut",
+            "Kalaallisut",
+            "North Alaskan Inupiatun"
+          ]
+        },
+        {
+          "family": "Huitotoan",
+          "left_ipa": "x",
+          "right_ipa": "x",
+          "left_languages": [
+            "Ocaina",
+            "Murui Huitoto"
+          ],
+          "right_languages": [
+            "Minica Huitoto",
+            "Nonuya"
+          ]
+        },
+        {
+          "family": "Kartvelian",
+          "left_ipa": "χ",
+          "right_ipa": "χ",
+          "left_languages": [
+            "Georgian",
+            "Svan"
+          ],
+          "right_languages": [
+            "Mingrelian",
+            "Laz"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ʼɡ",
+      "parameter_id": "24C73F794A5FC866ED5422C084622587",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C5",
+      "root_cell": "D5-L-R4-C5",
+      "root_cell_left": "D5-L-R4-C5",
+      "root_cell_right": "D5-R-R4-C5",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C1",
+          "U2-L-R4-C2",
+          "U3-L-R4-C2",
+          "U4-L-R3-C2",
+          "U5-L-R4-C1",
+          "D1-L-R4-C2",
+          "D2-L-R4-C3",
+          "D3-L-R3-C4",
+          "D4-L-R4-C4",
+          "D5-L-R4-C5"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C1",
+          "U2-R-R4-C2",
+          "U3-R-R4-C2",
+          "U4-R-R3-C2",
+          "U5-R-R4-C1",
+          "D1-R-R4-C2",
+          "D2-R-R4-C3",
+          "D3-R-R3-C4",
+          "D4-R-R4-C4",
+          "D5-R-R4-C5"
+        ]
+      },
+      "family_support": 20,
+      "shard_support": 16,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.94,
+      "mean_sibling_feature_distance": 0.0010416666666666667,
+      "prototype_feature_distance": 0.12864583333333338,
+      "competing_candidates": [
+        {
+          "ipa": "ʔ",
+          "distance": 0.13281250000000003
+        },
+        {
+          "ipa": "ʔ̬",
+          "distance": 0.13489583333333335
+        },
+        {
+          "ipa": "kɡ",
+          "distance": 0.13697916666666668
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "qʼ",
+          "right_ipa": "qʼ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Aymaran",
+          "left_ipa": "qʼ",
+          "right_ipa": "qʼ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Chonan",
+          "left_ipa": "qʼ",
+          "right_ipa": "qʼ",
+          "left_languages": [
+            "Selk'nam"
+          ],
+          "right_languages": [
+            "Tehuelche"
+          ]
+        },
+        {
+          "family": "Gunwinyguan",
+          "left_ipa": "p͈",
+          "right_ipa": "p͈",
+          "left_languages": [
+            "Wubuy",
+            "Bininj Kun-Wok",
+            "Ngalakgan",
+            "Ngalkbun",
+            "Ngandi",
+            "Kune"
+          ],
+          "right_languages": [
+            "Warray",
+            "Anindilyakwa",
+            "Kundjeyhmi",
+            "Kuninjku",
+            "Kunwinjku",
+            "Manyallaluk Mayali"
+          ]
+        },
+        {
+          "family": "Heibanic",
+          "left_ipa": "ɟ",
+          "right_ipa": "ɟ",
+          "left_languages": [
+            "Otoro",
+            "Tira",
+            "Koalib-Rere"
+          ],
+          "right_languages": [
+            "Moro",
+            "Ebang",
+            "Shwai"
+          ]
+        },
+        {
+          "family": "Jodi-Saliban",
+          "left_ipa": "ɟ",
+          "right_ipa": "ɟ",
+          "left_languages": [
+            "Hoti"
+          ],
+          "right_languages": [
+            "Sáliba",
+            "Piaroa"
+          ]
+        },
+        {
+          "family": "Kadugli-Krongo",
+          "left_ipa": "ɟː",
+          "right_ipa": "ɟː",
+          "left_languages": [
+            "Tulishi",
+            "Keiga",
+            "Krongo"
+          ],
+          "right_languages": [
+            "Katcha",
+            "Katcha-Kadugli-Miri",
+            "Kanga",
+            "Tumtum"
+          ]
+        },
+        {
+          "family": "Kartvelian",
+          "left_ipa": "qʼ",
+          "right_ipa": "qʼ",
+          "left_languages": [
+            "Georgian",
+            "Svan"
+          ],
+          "right_languages": [
+            "Mingrelian",
+            "Laz"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "z",
+      "parameter_id": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R1-C5",
+      "root_cell": "D5-L-R1-C5",
+      "root_cell_left": "D5-L-R1-C5",
+      "root_cell_right": "D5-R-R1-C5",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R1-C1",
+          "U2-L-R1-C2",
+          "U3-L-R1-C2",
+          "U4-L-R1-C2",
+          "U5-L-R1-C1",
+          "D1-L-R1-C2",
+          "D2-L-R1-C3",
+          "D3-L-R1-C4",
+          "D4-L-R1-C4",
+          "D5-L-R1-C5"
+        ],
+        "parent_path_R": [
+          "U1-R-R1-C1",
+          "U2-R-R1-C2",
+          "U3-R-R1-C2",
+          "U4-R-R1-C2",
+          "U5-R-R1-C1",
+          "D1-R-R1-C2",
+          "D2-R-R1-C3",
+          "D3-R-R1-C4",
+          "D4-R-R1-C4",
+          "D5-R-R1-C5"
+        ]
+      },
+      "family_support": 17,
+      "shard_support": 13,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.895,
+      "mean_sibling_feature_distance": 0.001838235294117647,
+      "prototype_feature_distance": 0.01746323529411765,
+      "competing_candidates": [
+        {
+          "ipa": "z̟",
+          "distance": 0.01746323529411765
+        },
+        {
+          "ipa": "z̺",
+          "distance": 0.01746323529411765
+        },
+        {
+          "ipa": "z̪|z",
+          "distance": 0.022365196078431376
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ɮ",
+          "right_ipa": "ɮ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Afro-Asiatic",
+          "left_ipa": "z",
+          "right_ipa": "z",
+          "left_languages": [
+            "Hausa",
+            "Ngas",
+            "Somali",
+            "Iraqw",
+            "Maltese",
+            "Afade"
+          ],
+          "right_languages": [
+            "Tachelhit",
+            "Marghi Central",
+            "Awngi",
+            "Tigre",
+            "Amharic",
+            "Egyptian Arabic"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "z",
+          "right_ipa": "z",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "z",
+          "right_ipa": "z",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        },
+        {
+          "family": "Heibanic",
+          "left_ipa": "ð",
+          "right_ipa": "ð",
+          "left_languages": [
+            "Otoro",
+            "Tira",
+            "Koalib-Rere"
+          ],
+          "right_languages": [
+            "Moro",
+            "Ebang",
+            "Shwai"
+          ]
+        },
+        {
+          "family": "Ijoid",
+          "left_ipa": "z",
+          "right_ipa": "z",
+          "left_languages": [
+            "Izon",
+            "Kalabari",
+            "Defaka"
+          ],
+          "right_languages": [
+            "Southeast Ijo",
+            "Ibani",
+            "Kirike"
+          ]
+        },
+        {
+          "family": "Indo-European",
+          "left_ipa": "z",
+          "right_ipa": "z",
+          "left_languages": [
+            "Irish",
+            "Breton",
+            "Icelandic",
+            "Norwegian Bokmål",
+            "English",
+            "German"
+          ],
+          "right_languages": [
+            "Romanian",
+            "Russian",
+            "Bulgarian",
+            "Lithuanian",
+            "Northern Tosk Albanian",
+            "Modern Greek"
+          ]
+        },
+        {
+          "family": "Kadugli-Krongo",
+          "left_ipa": "nː",
+          "right_ipa": "nː",
+          "left_languages": [
+            "Tulishi",
+            "Keiga",
+            "Krongo"
+          ],
+          "right_languages": [
+            "Katcha",
+            "Katcha-Kadugli-Miri",
+            "Kanga",
+            "Tumtum"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ɭ",
+      "parameter_id": "512D7E3344FCD21B1EE47971D72DB39A",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R1-C11",
+      "root_cell": "D5-L-R1-C11",
+      "root_cell_left": "D5-L-R1-C11",
+      "root_cell_right": "D5-R-R1-C11",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R1-C2",
+          "U2-L-R1-C3",
+          "U3-L-R1-C5",
+          "U4-L-R1-C3",
+          "U5-L-R1-C3",
+          "D1-L-R1-C3",
+          "D2-L-R1-C5",
+          "D3-L-R1-C7",
+          "D4-L-R1-C9",
+          "D5-L-R1-C11"
+        ],
+        "parent_path_R": [
+          "U1-R-R1-C2",
+          "U2-R-R1-C3",
+          "U3-R-R1-C5",
+          "U4-R-R1-C3",
+          "U5-R-R1-C3",
+          "D1-R-R1-C3",
+          "D2-R-R1-C5",
+          "D3-R-R1-C7",
+          "D4-R-R1-C9",
+          "D5-R-R1-C11"
+        ]
+      },
+      "family_support": 17,
+      "shard_support": 11,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.865,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.006127450980392157,
+      "competing_candidates": [
+        {
+          "ipa": "ɭ̺",
+          "distance": 0.006127450980392157
+        },
+        {
+          "ipa": "ɭ̟",
+          "distance": 0.016544117647058824
+        },
+        {
+          "ipa": "ɭ͓",
+          "distance": 0.016544117647058824
+        }
+      ],
+      "examples": [
+        {
+          "family": "Bunaban",
+          "left_ipa": "ɭ",
+          "right_ipa": "ɭ",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        },
+        {
+          "family": "Dravidian",
+          "left_ipa": "ɭ",
+          "right_ipa": "ɭ",
+          "left_languages": [
+            "Brahui",
+            "Tulu",
+            "Kuvi",
+            "Betta Kurumba",
+            "Abujmaria",
+            "Irula of the Nilgiri"
+          ],
+          "right_languages": [
+            "Kurukh",
+            "Telugu",
+            "Kota (India)",
+            "Koya",
+            "Nepali Kurux",
+            "Tamil"
+          ]
+        },
+        {
+          "family": "Giimbiyu",
+          "left_ipa": "ɭ",
+          "right_ipa": "ɭ",
+          "left_languages": [
+            "Erre"
+          ],
+          "right_languages": [
+            "Mangerr",
+            "Urningangg"
+          ]
+        },
+        {
+          "family": "Gunwinyguan",
+          "left_ipa": "ɭ",
+          "right_ipa": "ɭ",
+          "left_languages": [
+            "Wubuy",
+            "Bininj Kun-Wok",
+            "Ngalakgan",
+            "Ngalkbun",
+            "Ngandi",
+            "Kune"
+          ],
+          "right_languages": [
+            "Warray",
+            "Anindilyakwa",
+            "Kundjeyhmi",
+            "Kuninjku",
+            "Kunwinjku",
+            "Manyallaluk Mayali"
+          ]
+        },
+        {
+          "family": "Heibanic",
+          "left_ipa": "ɽ",
+          "right_ipa": "ɽ",
+          "left_languages": [
+            "Otoro",
+            "Tira",
+            "Koalib-Rere"
+          ],
+          "right_languages": [
+            "Moro",
+            "Ebang",
+            "Shwai"
+          ]
+        },
+        {
+          "family": "Iwaidjan Proper",
+          "left_ipa": "ɭ",
+          "right_ipa": "ɭ",
+          "left_languages": [
+            "Mawng",
+            "Garig"
+          ],
+          "right_languages": [
+            "Amurdak",
+            "Ilgar",
+            "Iwaidja"
+          ]
+        },
+        {
+          "family": "Jarrakan",
+          "left_ipa": "ɻ",
+          "right_ipa": "ɻ",
+          "left_languages": [
+            "Kitja"
+          ],
+          "right_languages": [
+            "Miriwung"
+          ]
+        },
+        {
+          "family": "Mangarrayi-Maran",
+          "left_ipa": "ɭ",
+          "right_ipa": "ɭ",
+          "left_languages": [
+            "Wandarang",
+            "Mangarrayi"
+          ],
+          "right_languages": [
+            "Alawa",
+            "Marra"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "c̟",
+      "parameter_id": "F6C43224882036FC95D46CB7ADB6E016",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R4-C2",
+      "root_cell": "D5-L-R4-C2",
+      "root_cell_left": "D5-L-R4-C2",
+      "root_cell_right": "D5-R-R4-C2",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C1",
+          "U2-L-R4-C1",
+          "U3-L-R4-C1",
+          "U4-L-R3-C1",
+          "U5-L-R4-C1",
+          "D1-L-R4-C1",
+          "D2-L-R4-C1",
+          "D3-L-R3-C2",
+          "D4-L-R4-C2",
+          "D5-L-R4-C2"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C1",
+          "U2-R-R4-C1",
+          "U3-R-R4-C1",
+          "U4-R-R3-C1",
+          "U5-R-R4-C1",
+          "D1-R-R4-C1",
+          "D2-R-R4-C1",
+          "D3-R-R3-C2",
+          "D4-R-R4-C2",
+          "D5-R-R4-C2"
+        ]
+      },
+      "family_support": 16,
+      "shard_support": 11,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.865,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.0013020833333333333,
+      "competing_candidates": [
+        {
+          "ipa": "c̻̟",
+          "distance": 0.0013020833333333333
+        },
+        {
+          "ipa": "t̪ʲ",
+          "distance": 0.0013020833333333333
+        },
+        {
+          "ipa": "t̻ʲ",
+          "distance": 0.0013020833333333333
+        }
+      ],
+      "examples": [
+        {
+          "family": "Bunaban",
+          "left_ipa": "ȶ",
+          "right_ipa": "ȶ",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        },
+        {
+          "family": "Garrwan",
+          "left_ipa": "ȶ",
+          "right_ipa": "ȶ",
+          "left_languages": [
+            "Wanyi"
+          ],
+          "right_languages": [
+            "Garrwa"
+          ]
+        },
+        {
+          "family": "Giimbiyu",
+          "left_ipa": "ȶ",
+          "right_ipa": "ȶ",
+          "left_languages": [
+            "Erre"
+          ],
+          "right_languages": [
+            "Mangerr",
+            "Urningangg"
+          ]
+        },
+        {
+          "family": "Gunwinyguan",
+          "left_ipa": "ȶ͉",
+          "right_ipa": "ȶ͉",
+          "left_languages": [
+            "Wubuy",
+            "Bininj Kun-Wok",
+            "Ngalakgan",
+            "Ngalkbun",
+            "Ngandi",
+            "Kune"
+          ],
+          "right_languages": [
+            "Warray",
+            "Anindilyakwa",
+            "Kundjeyhmi",
+            "Kuninjku",
+            "Kunwinjku",
+            "Manyallaluk Mayali"
+          ]
+        },
+        {
+          "family": "Huitotoan",
+          "left_ipa": "tʲ",
+          "right_ipa": "tʲ",
+          "left_languages": [
+            "Ocaina",
+            "Murui Huitoto"
+          ],
+          "right_languages": [
+            "Minica Huitoto",
+            "Nonuya"
+          ]
+        },
+        {
+          "family": "Iwaidjan Proper",
+          "left_ipa": "ȶ",
+          "right_ipa": "ȶ",
+          "left_languages": [
+            "Mawng",
+            "Garig"
+          ],
+          "right_languages": [
+            "Amurdak",
+            "Ilgar",
+            "Iwaidja"
+          ]
+        },
+        {
+          "family": "Jarrakan",
+          "left_ipa": "ȶ",
+          "right_ipa": "ȶ",
+          "left_languages": [
+            "Kitja"
+          ],
+          "right_languages": [
+            "Miriwung"
+          ]
+        },
+        {
+          "family": "Mangarrayi-Maran",
+          "left_ipa": "ȶ",
+          "right_ipa": "ȶ",
+          "left_languages": [
+            "Wandarang",
+            "Mangarrayi"
+          ],
+          "right_languages": [
+            "Alawa",
+            "Marra"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "l̪ʲ",
+      "parameter_id": "E5E7941D03C1A1122781B44E236A17E0",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R2-C12",
+      "root_cell": "D5-L-R2-C12",
+      "root_cell_left": "D5-L-R2-C12",
+      "root_cell_right": "D5-R-R2-C12",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R2-C2",
+          "U2-L-R2-C4",
+          "U3-L-R2-C5",
+          "U4-L-R2-C4",
+          "U5-L-R2-C3",
+          "D1-L-R2-C3",
+          "D2-L-R2-C6",
+          "D3-L-R2-C8",
+          "D4-L-R2-C10",
+          "D5-L-R2-C12"
+        ],
+        "parent_path_R": [
+          "U1-R-R2-C2",
+          "U2-R-R2-C4",
+          "U3-R-R2-C5",
+          "U4-R-R2-C4",
+          "U5-R-R2-C3",
+          "D1-R-R2-C3",
+          "D2-R-R2-C6",
+          "D3-R-R2-C8",
+          "D4-R-R2-C10",
+          "D5-R-R2-C12"
+        ]
+      },
+      "family_support": 15,
+      "shard_support": 10,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.85,
+      "mean_sibling_feature_distance": 0.004166666666666667,
+      "prototype_feature_distance": 0.009027777777777777,
+      "competing_candidates": [
+        {
+          "ipa": "ȴ",
+          "distance": 0.009027777777777777
+        },
+        {
+          "ipa": "ʎ̟",
+          "distance": 0.009027777777777777
+        },
+        {
+          "ipa": "ʎ̻̟",
+          "distance": 0.009027777777777777
+        }
+      ],
+      "examples": [
+        {
+          "family": "Aymaran",
+          "left_ipa": "ʎ",
+          "right_ipa": "ʎ",
+          "left_languages": [
+            "Central Aymara"
+          ],
+          "right_languages": [
+            "Jaqaru"
+          ]
+        },
+        {
+          "family": "Bunaban",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Bunaba"
+          ],
+          "right_languages": [
+            "Gooniyandi"
+          ]
+        },
+        {
+          "family": "Garrwan",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Wanyi"
+          ],
+          "right_languages": [
+            "Garrwa"
+          ]
+        },
+        {
+          "family": "Giimbiyu",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Erre"
+          ],
+          "right_languages": [
+            "Mangerr",
+            "Urningangg"
+          ]
+        },
+        {
+          "family": "Iwaidjan Proper",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Mawng",
+            "Garig"
+          ],
+          "right_languages": [
+            "Amurdak",
+            "Ilgar",
+            "Iwaidja"
+          ]
+        },
+        {
+          "family": "Jarrakan",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Kitja"
+          ],
+          "right_languages": [
+            "Miriwung"
+          ]
+        },
+        {
+          "family": "Mirndi",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Nungali",
+            "Ngarnka",
+            "Binbinka",
+            "Wambayan"
+          ],
+          "right_languages": [
+            "Jaminjung-Ngaliwurru",
+            "Ngaliwurru",
+            "Jingulu",
+            "Gudanji"
+          ]
+        },
+        {
+          "family": "Nyulnyulan",
+          "left_ipa": "ȴ",
+          "right_ipa": "ȴ",
+          "left_languages": [
+            "Bardi",
+            "Dyugun",
+            "Yawuru",
+            "Nimanbur",
+            "Djawi"
+          ],
+          "right_languages": [
+            "Ngumbarl",
+            "Nyigina",
+            "Warrwa",
+            "Dyaberdyaber",
+            "Nyulnyul"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "bˠ",
+      "parameter_id": "193E450776044D4845752C8FFB808BB3",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R5-C8",
+      "root_cell": "D5-L-R5-C8",
+      "root_cell_left": "D5-L-R5-C8",
+      "root_cell_right": "D5-R-R5-C8",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R4-C2",
+          "U2-L-R5-C3",
+          "U3-L-R5-C3",
+          "U4-L-R4-C3",
+          "U5-L-R5-C2",
+          "D1-L-R5-C2",
+          "D2-L-R5-C4",
+          "D3-L-R4-C6",
+          "D4-L-R5-C7",
+          "D5-L-R5-C8"
+        ],
+        "parent_path_R": [
+          "U1-R-R4-C2",
+          "U2-R-R5-C3",
+          "U3-R-R5-C3",
+          "U4-R-R4-C3",
+          "U5-R-R5-C2",
+          "D1-R-R5-C2",
+          "D2-R-R5-C4",
+          "D3-R-R4-C6",
+          "D4-R-R5-C7",
+          "D5-R-R5-C8"
+        ]
+      },
+      "family_support": 8,
+      "shard_support": 7,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.6717,
+      "mean_sibling_feature_distance": 0.0026041666666666665,
+      "prototype_feature_distance": 0.009114583333333334,
+      "competing_candidates": [
+        {
+          "ipa": "ɡb",
+          "distance": 0.009114583333333334
+        },
+        {
+          "ipa": "bʷˠ",
+          "distance": 0.014322916666666666
+        },
+        {
+          "ipa": "ɡbʷ",
+          "distance": 0.014322916666666666
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ɡʷ",
+          "right_ipa": "ɡʷ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "ɡb",
+          "right_ipa": "ɡb",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "ɡb",
+          "right_ipa": "ɡb",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        },
+        {
+          "family": "Ijoid",
+          "left_ipa": "ɡb",
+          "right_ipa": "ɡb",
+          "left_languages": [
+            "Izon",
+            "Kalabari",
+            "Defaka"
+          ],
+          "right_languages": [
+            "Southeast Ijo",
+            "Ibani",
+            "Kirike"
+          ]
+        },
+        {
+          "family": "Kresh-Aja",
+          "left_ipa": "ɡb",
+          "right_ipa": "ɡb",
+          "left_languages": [
+            "Aja (Sudan)"
+          ],
+          "right_languages": [
+            "Kresh-Woro"
+          ]
+        },
+        {
+          "family": "Mande",
+          "left_ipa": "ɡb",
+          "right_ipa": "ɡb",
+          "left_languages": [
+            "Liberia Kpelle",
+            "Bambara",
+            "Dan",
+            "Bandi",
+            "Beng",
+            "Hainyaxo Bozo"
+          ],
+          "right_languages": [
+            "Northern Bobo Madaré",
+            "Bissa",
+            "Boko (Benin)",
+            "Dyula",
+            "Guinea Kpelle",
+            "Loko"
+          ]
+        },
+        {
+          "family": "Tsimshian",
+          "left_ipa": "ɡʷ",
+          "right_ipa": "ɡʷ",
+          "left_languages": [
+            "Nisga'a"
+          ],
+          "right_languages": [
+            "Southern-Coastal Tsimshian"
+          ]
+        },
+        {
+          "family": "Boran",
+          "left_ipa": "ɡʷ",
+          "right_ipa": "kʷ",
+          "left_languages": [
+            "Miraña"
+          ],
+          "right_languages": [
+            "Muinane",
+            "Bora"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ɬ",
+      "parameter_id": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R1-C3",
+      "root_cell": "D5-L-R1-C3",
+      "root_cell_left": "D5-L-R1-C3",
+      "root_cell_right": "D5-R-R1-C3",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R1-C1",
+          "U2-L-R1-C1",
+          "U3-L-R1-C1",
+          "U4-L-R1-C1",
+          "U5-L-R1-C1",
+          "D1-L-R1-C1",
+          "D2-L-R1-C2",
+          "D3-L-R1-C2",
+          "D4-L-R1-C2",
+          "D5-L-R1-C3"
+        ],
+        "parent_path_R": [
+          "U1-R-R1-C1",
+          "U2-R-R1-C1",
+          "U3-R-R1-C1",
+          "U4-R-R1-C1",
+          "U5-R-R1-C1",
+          "D1-R-R1-C1",
+          "D2-R-R1-C2",
+          "D3-R-R1-C2",
+          "D4-R-R1-C2",
+          "D5-R-R1-C3"
+        ]
+      },
+      "family_support": 8,
+      "shard_support": 6,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.6567,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.0,
+      "competing_candidates": [
+        {
+          "ipa": "ɬ̪̺",
+          "distance": 0.0
+        },
+        {
+          "ipa": "ɬ̪|ɬ",
+          "distance": 0.010416666666666666
+        },
+        {
+          "ipa": "s͇",
+          "distance": 0.020833333333333332
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Athabaskan-Eyak-Tlingit",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Tolowa-Chetco",
+            "Eyak",
+            "Mescalero-Chiricahua Apache",
+            "Tanacross",
+            "Jicarilla Apache"
+          ],
+          "right_languages": [
+            "Chipewyan",
+            "Hupa-Chilula",
+            "Navajo",
+            "Ahtena",
+            "Tlingit"
+          ]
+        },
+        {
+          "family": "Kiowa-Tanoan",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Kiowa",
+            "Towa"
+          ],
+          "right_languages": [
+            "Picuris Northern Tiwa",
+            "Rio Grande Tewa"
+          ]
+        },
+        {
+          "family": "Matacoan",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Iyo'wujwa Chorote",
+            "Maca"
+          ],
+          "right_languages": [
+            "Nivaclé",
+            "Wichí Lhamtés Güisnay"
+          ]
+        },
+        {
+          "family": "Muskogean",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Koasati",
+            "Chickasaw"
+          ],
+          "right_languages": [
+            "Alabama",
+            "Choctaw"
+          ]
+        },
+        {
+          "family": "Totonacan",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Tlachichilco Tepehua"
+          ],
+          "right_languages": [
+            "Papantla Totonac",
+            "Huehuetla Tepehua"
+          ]
+        },
+        {
+          "family": "Tsimshian",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Nisga'a"
+          ],
+          "right_languages": [
+            "Southern-Coastal Tsimshian"
+          ]
+        },
+        {
+          "family": "Wakashan",
+          "left_ipa": "ɬ",
+          "right_ipa": "ɬ",
+          "left_languages": [
+            "Nuu-chah-nulth"
+          ],
+          "right_languages": [
+            "Kwak'wala"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "ʁ",
+      "parameter_id": "B8654231A8D23801B38D10EE554ACBD5",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R3-C10",
+      "root_cell": "D5-L-R3-C10",
+      "root_cell_left": "D5-L-R3-C10",
+      "root_cell_right": "D5-R-R3-C10",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R3-C2",
+          "U2-L-R3-C3",
+          "U3-L-R3-C4",
+          "U4-L-R3-C3",
+          "U5-L-R3-C2",
+          "D1-L-R3-C3",
+          "D2-L-R3-C5",
+          "D3-L-R3-C7",
+          "D4-L-R3-C9",
+          "D5-L-R3-C10"
+        ],
+        "parent_path_R": [
+          "U1-R-R3-C2",
+          "U2-R-R3-C3",
+          "U3-R-R3-C4",
+          "U4-R-R3-C3",
+          "U5-R-R3-C2",
+          "D1-R-R3-C3",
+          "D2-R-R3-C5",
+          "D3-R-R3-C7",
+          "D4-R-R3-C9",
+          "D5-R-R3-C10"
+        ]
+      },
+      "family_support": 7,
+      "shard_support": 7,
+      "leave_one_shard_out_survival": 20,
+      "support_confidence": 0.6383,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.005952380952380952,
+      "competing_candidates": [
+        {
+          "ipa": "ʁː",
+          "distance": 0.026785714285714284
+        },
+        {
+          "ipa": "ʁˤ",
+          "distance": 0.026785714285714284
+        },
+        {
+          "ipa": "χ",
+          "distance": 0.026785714285714284
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "ʁ",
+          "right_ipa": "ʁ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Eskimo-Aleut",
+          "left_ipa": "ʁ",
+          "right_ipa": "ʁ",
+          "left_languages": [
+            "Central Siberian Yupik",
+            "Naukan Yupik"
+          ],
+          "right_languages": [
+            "Aleut",
+            "Kalaallisut",
+            "North Alaskan Inupiatun"
+          ]
+        },
+        {
+          "family": "Guaicuruan",
+          "left_ipa": "ʁ",
+          "right_ipa": "ʁ",
+          "left_languages": [
+            "Abipon",
+            "Kadiwéu"
+          ],
+          "right_languages": [
+            "Toba",
+            "Pilagá",
+            "Mocoví"
+          ]
+        },
+        {
+          "family": "Kartvelian",
+          "left_ipa": "ʁ",
+          "right_ipa": "ʁ",
+          "left_languages": [
+            "Georgian",
+            "Svan"
+          ],
+          "right_languages": [
+            "Mingrelian",
+            "Laz"
+          ]
+        },
+        {
+          "family": "Kresh-Aja",
+          "left_ipa": "ʕ",
+          "right_ipa": "ʕ",
+          "left_languages": [
+            "Aja (Sudan)"
+          ],
+          "right_languages": [
+            "Kresh-Woro"
+          ]
+        },
+        {
+          "family": "Nakh-Daghestanian",
+          "left_ipa": "ʁ",
+          "right_ipa": "ʁ",
+          "left_languages": [
+            "Bats",
+            "Chechen",
+            "Ingush",
+            "Hunzib",
+            "Karata",
+            "Godoberi"
+          ],
+          "right_languages": [
+            "Lak",
+            "Archi",
+            "Avar",
+            "Rutul",
+            "Lezgian",
+            "Tsez"
+          ]
+        },
+        {
+          "family": "Yukaghir",
+          "left_ipa": "ʁ",
+          "right_ipa": "ʁ",
+          "left_languages": [
+            "Northern Yukaghir"
+          ],
+          "right_languages": [
+            "Southern Yukaghir"
+          ]
+        }
+      ]
+    },
+    {
+      "ipa": "kp",
+      "parameter_id": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "features": [
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "root_coordinate": "D5-R5-C6",
+      "root_cell": "D5-L-R5-C6",
+      "root_cell_left": "D5-L-R5-C6",
+      "root_cell_right": "D5-R-R5-C6",
+      "man_grid_state": {
+        "parent_path_L": [
+          "U1-L-R4-C1",
+          "U2-L-R5-C2",
+          "U3-L-R5-C3",
+          "U4-L-R4-C2",
+          "U5-L-R5-C2",
+          "D1-L-R5-C2",
+          "D2-L-R5-C3",
+          "D3-L-R4-C4",
+          "D4-L-R5-C5",
+          "D5-L-R5-C6"
+        ],
+        "parent_path_R": [
+          "U1-R-R4-C1",
+          "U2-R-R5-C2",
+          "U3-R-R5-C3",
+          "U4-R-R4-C2",
+          "U5-R-R5-C2",
+          "D1-R-R5-C2",
+          "D2-R-R5-C3",
+          "D3-R-R4-C4",
+          "D4-R-R5-C5",
+          "D5-R-R5-C6"
+        ]
+      },
+      "family_support": 7,
+      "shard_support": 6,
+      "leave_one_shard_out_survival": 19,
+      "support_confidence": 0.6083,
+      "mean_sibling_feature_distance": 0.0,
+      "prototype_feature_distance": 0.014880952380952378,
+      "competing_candidates": [
+        {
+          "ipa": "pˠ",
+          "distance": 0.014880952380952378
+        },
+        {
+          "ipa": "ˀkp",
+          "distance": 0.019345238095238096
+        },
+        {
+          "ipa": "kpʷ",
+          "distance": 0.023809523809523808
+        }
+      ],
+      "examples": [
+        {
+          "family": "Abkhaz-Adyge",
+          "left_ipa": "kʷʰ",
+          "right_ipa": "kʷʰ",
+          "left_languages": [
+            "Kabardian"
+          ],
+          "right_languages": [
+            "Adyghe",
+            "Abkhaz"
+          ]
+        },
+        {
+          "family": "Atlantic-Congo",
+          "left_ipa": "kp",
+          "right_ipa": "kp",
+          "left_languages": [
+            "Dagbani",
+            "Akan",
+            "Beembe",
+            "Luvale",
+            "Aghem",
+            "Alladian"
+          ],
+          "right_languages": [
+            "Wolof",
+            "Ga",
+            "Ewe",
+            "Igbo",
+            "Swahili",
+            "Zulu"
+          ]
+        },
+        {
+          "family": "Central Sudanic",
+          "left_ipa": "kp",
+          "right_ipa": "kp",
+          "left_languages": [
+            "Lugbara",
+            "Avokaya",
+            "Jur Modo",
+            "Ngambay",
+            "Pandikeri",
+            "Furu"
+          ],
+          "right_languages": [
+            "Yulu-Binga",
+            "Lendu",
+            "Mangbetu",
+            "Ma'di",
+            "Baka (Sudan)",
+            "Southern Ma'di"
+          ]
+        },
+        {
+          "family": "Ijoid",
+          "left_ipa": "kp",
+          "right_ipa": "kp",
+          "left_languages": [
+            "Izon",
+            "Kalabari",
+            "Defaka"
+          ],
+          "right_languages": [
+            "Southeast Ijo",
+            "Ibani",
+            "Kirike"
+          ]
+        },
+        {
+          "family": "Kresh-Aja",
+          "left_ipa": "kp",
+          "right_ipa": "kp",
+          "left_languages": [
+            "Aja (Sudan)"
+          ],
+          "right_languages": [
+            "Kresh-Woro"
+          ]
+        },
+        {
+          "family": "Mande",
+          "left_ipa": "kp",
+          "right_ipa": "kp",
+          "left_languages": [
+            "Liberia Kpelle",
+            "Bambara",
+            "Dan",
+            "Bandi",
+            "Beng",
+            "Hainyaxo Bozo"
+          ],
+          "right_languages": [
+            "Northern Bobo Madaré",
+            "Bissa",
+            "Boko (Benin)",
+            "Dyula",
+            "Guinea Kpelle",
+            "Loko"
+          ]
+        },
+        {
+          "family": "Wakashan",
+          "left_ipa": "kʷʼ",
+          "right_ipa": "kʷʼ",
+          "left_languages": [
+            "Nuu-chah-nulth"
+          ],
+          "right_languages": [
+            "Kwak'wala"
+          ]
+        }
+      ]
+    }
+  ],
+  "failures_missing_data": {
+    "unclassified_families_excluded": true,
+    "inventories_under_10_segments_excluded": true,
+    "marginal_segments_excluded": true,
+    "tone_segments_excluded_from_reconstruction_inventory": true
+  },
+  "assumptions": [
+    "PHOIBLE distinctive features are a usable phonetic representation",
+    "within-family residual inventory variation can define two provisional sibling channels",
+    "feature midpoints are only candidate parent states, not attested ancestral forms",
+    "the transformative circle has no learned operator in Test 1; no circle behaviour is assumed beyond the mirrored coordinate hypothesis"
+  ],
+  "boundary": "Experimental reconstruction under a falsifiable Man Grid hypothesis; candidate sounds are feature-space prototypes supported across families, not direct attestation of a single prehistoric language."
+}
