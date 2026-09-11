@@ -19,13 +19,13 @@ Every known item must remain implemented, explicitly partial, explicitly missing
 
 Repository: **`Vardath/Wraith-Nanite-Gravtech-1.6`**
 
-**`ff4f8dcb7b8ba17760a48a54f616466642189b0c` — `rebuild: complete strategic Wraith feeding request UI`**
+**`9f45ebf18caacde671f015cdd1a25217eebb6838` — `rebuild: add Replicator evidence-analysis bridge`**
 
-Public diff from `e1a080c...` is exactly:
-- `Source/WNG/Wraith/WraithFactionHunger.cs` — strategic request flow modified;
-- `Source/WNG/Wraith/WraithFeedingRequestDialog.cs` — paused stage-one subject dialog added.
+Public diff from `ff4f8dcb...` is exactly:
+- `Defs/ThingDefs/Things_Replicator.xml` — recovered Replicator blocks made native analyzable evidence;
+- `Defs/ResearchProjectDefs/Research_Replicator.xml` — `WNG_ReplicatorStudy` additionally requires analyzed Replicator blocks.
 
-Validation run **`34613728004` — SUCCESS** before clean promotion. Release build, Def/Patch XML and request-flow invariants passed using the corrected small-helper/minimal-workflow validation method. This is source/Def validation, not broad live RimWorld validation.
+Validation run **`34615590179` — SUCCESS** before clean promotion. Release build, Def/Patch XML and evidence-bridge invariants passed. A cleanup command accidentally staged generated build outputs on the temporary branch; that head was rejected and never promoted. The branch/public tree was reconstructed from the exact public base plus the two validated XML blobs. Public compare is exactly the intended two files.
 
 ## Recent public milestones
 
@@ -41,6 +41,7 @@ Validation run **`34613728004` — SUCCESS** before clean promotion. Release bui
 - `b5cde48e3cbcb2d608edabc78758e5fe9e4aec39` — native-projectile AntiShield integration.
 - `e1a080c93893ff5742f5aa91bc00fd7ecc1699f7` — bounded Wraith Growth Chamber.
 - `ff4f8dcb7b8ba17760a48a54f616466642189b0c` — paused two-stage strategic Wraith feeding request UI.
+- `9f45ebf18caacde671f015cdd1a25217eebb6838` — first encounter/evidence/research progression bridge.
 
 ---
 
@@ -56,9 +57,20 @@ Implemented:
 - controller-domain inheritance through split/recombine/assimilation offspring;
 - Material / Armor / Ranged / Power / Shield adaptation foundations;
 - Grav evidence/save state + approved overlay + real physical gravitic reposition behavior;
-- AntiShield persistent evidence/state + block adaptive-shield countermeasure + native energy-shield integration.
+- AntiShield persistent evidence/state + block adaptive-shield countermeasure + native energy-shield integration;
+- **native Replicator evidence-analysis progression bridge**.
 
-Grav and AntiShield are implemented foundations but still require live-game/save-load tuning and verification.
+### Replicator evidence progression — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
+
+- destroyed Replicators already yield real `WNG_ReplicatorMatter`;
+- Replicator Matter retains its existing dangerous reassembly mechanics and tuning;
+- Replicator Matter now uses Odyssey native `CompAnalyzableUnlockResearch` with stable WNG analysis ID `160912001`;
+- one 1.5-hour research-bench analysis by a colonist is sufficient and does not consume the blocks;
+- `WNG_ReplicatorStudy` still requires `Machining` and now also requires analyzed `WNG_ReplicatorMatter` through native `requiredAnalyzed`;
+- no fixed-day gate, new incident, Quest or custom progression component was introduced;
+- rarer `WNG_ReplicatorCoreFragment` remains available for deeper later containment/lattice/reconstruction use rather than being consumed as the first-tier gate.
+
+Grav, AntiShield and evidence analysis are implemented foundations but still require live-game/save-load tuning and verification.
 
 ## Controller / Queen architecture
 
@@ -98,35 +110,10 @@ Implemented:
 - living-tech bootstrap, real Wraith Grav Engine, stun staff, Dart/captivity foundation, Wraith gravship mechanics and living-hull regeneration;
 - native WNG Wraith backstories;
 - bounded Wraith Growth Chamber;
-- **complete paused two-stage strategic-hunger feeding-request UI**.
-
-### Strategic hunger request UI — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
-
-- opens only from genuine faction-level strategic hunger;
-- stage 1 is force-paused and selects/identifies eligible biological prisoner/feeding-stock subjects only;
-- no Wraith selection exists in stage 1;
-- stage 1 Submit preserves the request lock and advances to stage 2;
-- stage 2 is force-paused and shows selected subject plus exact involved-Wraith count and names;
-- involved names are real same-faction Wraith pawn identities, never generated presentation-only names: physically present same-faction Wraiths are used when available, otherwise the exact living faction leader;
-- if no valid exact Wraith identity exists, the request retries instead of fabricating one;
-- final Submit uses the existing exact-prisoner strategic feeding consequence and reduces strategic hunger;
-- Cancel/Escape at either stage uses the existing refusal/raid-pressure path;
-- ordinary Drain Life, Mature-Hive feeding stock, Dormancy Vault, Growth Chamber and retaliation remain separate.
-
-### Growth Chamber — IMPLEMENTED FOUNDATION / LIVE-TEST NEEDED
-
-- real powered `WNG_WraithGrowthChamber` using current WNG bio-sludge biomass and normal RimWorld power;
-- Def-tunable first-build values: 60,000-tick cycle, 60 bio-sludge per replacement, 0.35 Queen Life Force, 4,000W draw, 45/55 Hunter/Warrior weighting;
-- only links to initialized same-faction Mature Hive Heart and reads exact founding cap/current living demographic count;
-- requires living operational same-faction Queen;
-- Hunter/Warrior output only and no production above recorded founding cap;
-- exact pawn validates/registers before biomass/Queen cost commits.
-
-Explicit Growth-Chamber dependency:
-- generated hostile Mature Hive sites do **not** yet receive the chamber because those sites currently have no grounded Wraith electrical-power source. Site placement waits for explicit Wraith ground-power/bioelectric-energy reconciliation; no fake ZPM/Gravcore substitute was introduced.
+- complete paused two-stage strategic-hunger feeding-request UI.
 
 Still required:
-- broader discovery/story progression;
+- broader discovery/story progression, including a real Wraith evidence-to-research bridge;
 - generated-Mature-Hive Growth Chamber placement after a real Wraith ground-power solution exists;
 - final presentation/audio/live testing.
 
@@ -148,9 +135,9 @@ Still required/blocked: safe standalone Goa'uld ship material/fuel/research path
 
 # CURRENT REQUIRED UNFINISHED INVENTORY
 
-Strategic Wraith hunger count/names UI is removed from missing-required debt because it is public.
+Broader discovery/story progression remains unfinished; the first Replicator encounter/evidence/research bridge is now public rather than the whole progression family being marked complete.
 
-1. **Broader discovery/story progression.**
+1. **Broader discovery/story progression** — continue as short evidence bridges for Wraith, Asuran/Ancient and other retained families.
 2. Generated Mature Hive Growth Chamber placement after real Wraith ground-power/bioelectric-energy support exists.
 3. Friendly Quiet-Lattice/Puddle-Jumper Stargate courier path.
 4. Safe standalone Goa'uld craft/gravship material/fuel/research route when ONAC is absent.
@@ -170,15 +157,14 @@ No item may silently disappear.
 
 ---
 
-# GENUINE NEXT PASS
+# GENUINE NEXT SHORT PASS
 
-**Broader discovery/story progression reconciliation only.**
+**Reconcile one Wraith evidence-to-research bridge only.**
 
 Before code:
-- inspect all current public WNG incidents, site parts, discovery/recovery events, research gates and acquisition paths;
-- compare them against the retained progression theme `mystery -> encounter -> evidence -> understanding -> reconstruction -> mastery`;
-- recover which historical site concepts are still requirements versus reference ideas only;
-- preserve Vardath's rejection of old fixed day-20-to-day-84 gating and keep major content reachable in shorter campaigns;
-- do not turn the mod into one giant starting research dump or make every eligible event fire together;
-- identify the smallest concrete missing progression slice that connects existing public systems without inventing unrelated content;
-- checkpoint that exact slice before implementation.
+- inspect what physical Wraith evidence is genuinely available before `WNG_WraithLivingTechnology` is researched;
+- prefer evidence already present at Mature Hive/Dart/feeding/living-tech encounters rather than inventing a new timed site;
+- ensure the evidence is actually obtainable before the research it gates;
+- use the native Odyssey analysis path where coherent;
+- do not bundle Wraith shuttle, gravship, Growth Chamber power or Asuran/Ancient progression into the same pass;
+- checkpoint the exact Wraith evidence object/acquisition path before implementation.
