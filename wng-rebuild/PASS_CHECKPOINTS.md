@@ -8,95 +8,103 @@ A pass is a bounded coherent implementation batch. Before beginning the next pas
 
 ---
 
-# CHECKPOINT — 2026-09-11 — Quiet Lattice / human-form society foundation promoted to public
+# CHECKPOINT — 2026-09-11 — native WNG backstories validated on branch
 
 ## Public implementation state
 
-Public mod `main` is now:
+Public mod `main` remains:
 
-**`b242dc72d139910172e8de3290530b505fcfa823` — `rebuild: add Quiet Lattice human-form society`**
+**`b242dc72d139910172e8de3290530b505fcfa823` — Quiet Lattice human-form society.**
 
-Promotion used the validated **pre-workflow** source tree from branch commit `8d3810ae372179d72375a08d0a53418d7848f755`, with public parent `87da0e...`. The temporary validator therefore did **not** enter public `main` even though connector safety blocked deleting it from the old branch.
+Native backstories are branch-only at this checkpoint.
 
-## What is now public
+## Active branch
+
+**`rebuild/native-backstories-20260911`**
+
+Validated clean branch HEAD:
+
+**`c28562be20c441bd1587fe78125cfef503a78356` — `rebuild: wire native WNG backstories to current roles`**
+
+Validated clean tree:
+
+**`04727e84ed76927eb760b50d15ccddc473ffc343`**
+
+The branch contains no temporary validation workflow in the final tree.
+
+## What this pass implemented
 
 Added:
-- `Defs/FactionDefs/Factions_QuietLattice.xml`;
-- `Defs/PawnKindDefs/PawnKinds_HumanFormSocieties.xml`.
+- `Defs/BackstoryDefs/Backstories_WNG.xml` — a substantial native current-schema WNG backstory pool.
 
-Implemented:
-- real non-hostile `WNG_HumanFormEnclave` / **The Quiet Lattice** as a separate society from hostile `WNG_AsuranLattice`;
-- current-architecture `WNG_NaniteHumanoid` society rather than old `WNG_NanitePrecursor`;
-- `WNG_HumanFormReplicator` generalist role;
-- `WNG_HumanFormEngineer` fabrication/infrastructure role;
-- `WNG_HumanFormSoldier` defensive role;
-- `WNG_HumanFormCoordinator` leadership/coordinator role;
-- `WNG_PlayerHumanFormReplicator` player-aligned human-form role;
-- bounded Combat, Peaceful and Settlement group compositions;
-- Quiet Lattice is not permanently/naturally hostile and can exist as a settlement faction;
-- hostile Asuran Lattice remains separate and unchanged;
-- no references to obsolete/missing historical precursor weapon/armor/uniform Defs.
+Wired current PawnKinds:
+- all Wraith Hunter / Warrior / Commander / Keeper / Queen / Player Wraith roles;
+- Asuran Operative / Technician / Commander / Infiltrator;
+- Quiet Lattice generalist / engineer / soldier / coordinator;
+- player human-form Replicator;
+- exact Replicator Queen.
 
-## Reconciliation basis
+Current backstory categories now distinguish:
+- Wraith origin;
+- Wraith Hunter / Warrior / Commander / Keeper / Queen / player adulthood;
+- synthetic/Asuran origin;
+- hostile Asuran operative;
+- synthetic engineer / soldier / coordinator;
+- infiltrator;
+- Quiet Lattice;
+- player/independent human-form Replicator.
 
-Recovered chat/history required:
-- hostile Asuran/Lattice society;
-- separate non-hostile Quiet Lattice human-form enclave;
-- player human-form variants;
-- engineer / infiltrator / soldier / coordinator-command role structure;
-- later native WNG backstories;
-- later friendly Quiet-Lattice/Puddle-Jumper Stargate courier.
+Identity layers remain separate: xenotype/race, PawnKind/caste-role, faction, and biography/backstory are not collapsed.
 
-Historical/private `WNG_HumanFormEnclave`, human-form role PawnKinds and `Backstories_WNG.xml` were used only as requirement evidence. Superseded `WNG_NanitePrecursor` and missing precursor equipment were not restored.
+## Historical / schema reconciliation
 
-Stargate lore gate: Quiet Lattice is explicitly a **WNG-created splinter society**, not a canon-named faction. Its basis is canon-compatible Asuran ideological divergence such as Niam's anti-aggression/ascension-seeking group and the existence of individual human-form Replicator identities.
+Historical `Backstories_WNG.xml` was used only as requirement/reference evidence.
+
+A concrete incompatibility was found and corrected: historical backstories used dictionary-style skill XML such as `<Melee>2</Melee>`, while current RimWorld 1.6 `BackstoryDef.skillGains` is a `List<SkillGain>`. The rebuilt file uses current list entries with `<skill>` and `<amount>`.
+
+Every WNG backstory sets `requiresSpawnCategory=true`, preventing WNG-specific biographies from leaking into unrelated pawn generation.
+
+Wraith origin text was tightened against Stargate lore: it describes Hive-raised life, living technology, feeding, culling, dormancy and Queen hierarchy without claiming detailed canonical childhood institutions that the series never establishes.
+
+Synthetic backstories are grounded in Asuran/Replicator pattern construction, reconstruction, collective/base-code knowledge, divergence, technical roles and impersonation while distinguishing WNG extrapolations such as Quiet Lattice society from canon-named factions.
 
 ## Validation
 
-GitHub Actions run **`34606524857` — SUCCESS**:
+GitHub Actions run:
+
+**`34608137484` — SUCCESS**
+
+Validated:
+- XML patch wiring applied to all required current PawnKinds;
 - Release C# build passed;
-- all current Def/Patch XML parsed;
-- Quiet Lattice faction identity, non-hostility and current xenotype wiring passed;
-- Peaceful/Settlement/Combat group wiring passed;
-- engineer/soldier/coordinator/generalist/player-role presence passed;
-- hostile `WNG_AsuranLattice` separation passed;
-- forbidden obsolete `WNG_NanitePrecursor` / precursor equipment references absent.
+- all Def/Patch XML parsed;
+- current RimWorld 1.6 list-style `SkillGain` schema used;
+- no legacy dictionary-style skill entries remain;
+- at least 25 WNG BackstoryDefs present;
+- all required Wraith/synthetic role categories present;
+- every WNG backstory requires its WNG spawn category;
+- every targeted current PawnKind has the expected childhood/adulthood `backstoryFiltersOverride`.
 
 This is **source/Def validation, not live RimWorld validation**.
 
-## Remaining human-form dependencies
+## Exact next steps
 
-- native WNG backstories are still missing; Quiet Lattice currently uses generic `Outlander`/`Offworld` generation categories only as provisional compatibility;
-- hostile Asuran roles also still lack native WNG synthetic biographies;
-- Wraith native backstories remain missing too;
-- Quiet-Lattice/Puddle-Jumper friendly Stargate courier remains later integration after faction/backstory foundation;
-- live faction world-generation, relations, settlement, pawn-group and save/load testing remains required;
-- final art/audio remains later debt.
-
-## Exact next pass
-
-**Native WNG BackstoryDef foundation** covering both Wraith and human-form synthetic society roles.
-
-Required steps:
-1. inspect the complete historical `Backstories_WNG.xml` as requirement/reference evidence;
-2. inspect current Wraith and human-form PawnKinds/faction generation filters and current RimWorld 1.6 `BackstoryDef` schema;
-3. reconcile backstory text/roles against Stargate lore — do not invent false canon claims;
-4. rebuild native WNG origin/adulthood categories against current identities (`WNG_Wraith`, `WNG_NaniteHumanoid`, Quiet Lattice/current Asuran roles), not superseded precursor identities;
-5. preserve race/xenotype, caste/PawnKind, faction and backstory as separate identity layers;
-6. wire faction/PawnKind generation to native WNG backstory categories without breaking existing current pawns;
-7. validate Release build + XML/reference/category invariants;
-8. checkpoint before promotion/next subsystem.
+1. Recheck public `main` is still `b242dc72...`.
+2. Promote clean validated tree `04727e84...` to public `main` as one clean commit with no temporary workflow history.
+3. Verify public diff contains only the backstory Def and four current PawnKind files.
+4. Update `CURRENT_PUBLIC_STATE.md` and this checkpoint to the exact promoted SHA.
+5. Move to the next reconciled debt: **richer block Grav adaptation + broader AntiShield integration**, after checking current Replicator adaptation source, shield/grav dependencies, recovered history and Stargate behavior.
 
 ---
 
 # PRIOR PUBLIC MILESTONES
 
-- Temporary Asuran lattice intrusion: **`26680fe84b95a0bfd5a23841b714fdba9cde1a98`**.
-- Recurring exact-map Queen recovery: **`9ce713704505a220d357f8a6f234fb6e040e0b2e`**.
-- Captured Queen sovereign consequences: **`0b8150f3ff6ca7138482ba9a604847f5967fc48b`**.
-- Neural Interface / exact reconstruction: **`8495b846c7dd31c079db6d4f007be490df3247f3`**.
-- Infiltration conceal/reveal: **`c7a9b46a3bef9393301d153e3f56c3c44c7ce95c`**.
-- Covert visitor impersonation: **`87da0e524324190584ac31e1830265db76688fae`**.
-- Quiet Lattice human-form society: **`b242dc72d139910172e8de3290530b505fcfa823`**.
+- Temporary Asuran lattice intrusion: `26680fe84b95a0bfd5a23841b714fdba9cde1a98`.
+- Recurring exact-map Queen recovery: `9ce713704505a220d357f8a6f234fb6e040e0b2e`.
+- Captured Queen sovereign consequences: `0b8150f3ff6ca7138482ba9a604847f5967fc48b`.
+- Neural Interface / exact reconstruction: `8495b846c7dd31c079db6d4f007be490df3247f3`.
+- Infiltration conceal/reveal: `c7a9b46a3bef9393301d153e3f56c3c44c7ce95c`.
+- Covert visitor impersonation: `87da0e524324190584ac31e1830265db76688fae`.
+- Quiet Lattice human-form society: `b242dc72d139910172e8de3290530b505fcfa823`.
 
-All are source/Def validated before public promotion; broad live RimWorld validation remains outstanding.
+All promoted milestones were source/Def validated before public promotion; broad live RimWorld validation remains outstanding.
