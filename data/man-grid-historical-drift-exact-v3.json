@@ -1,0 +1,2654 @@
+{
+  "version": 3,
+  "test_id": 13,
+  "test": "Historical language drift through the corrected exact Man Grid",
+  "status": "complete",
+  "shards": 20,
+  "source": {
+    "wiktextract": "https://kaikki.org/dictionary/raw-wiktextract-data.jsonl.gz",
+    "phoible_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "grid": {
+    "cells": 1074,
+    "all_rectangles_mirrored": true
+  },
+  "coverage": {
+    "matched_historical_pairs_prepared": 30299,
+    "heldout_pairs_evaluated": 6128
+  },
+  "summary": {
+    "mean_raw_distance": 0.15558390394107763,
+    "mean_learned_reverse_distance": 0.1551633893276082,
+    "mean_shuffled_rule_distance": 0.15669791656443177,
+    "mean_wrong_meaning_distance": 0.2570930377293502,
+    "effect_size_cohen_d_shuffled_minus_learned": 0.012005976954105251,
+    "shards_learned_beats_shuffled": 16,
+    "shards_compared": 20,
+    "shard_agreement": 0.8
+  },
+  "shard_counts": [
+    {
+      "shard": 0,
+      "assigned": 1568,
+      "train": 1246,
+      "heldout": 322
+    },
+    {
+      "shard": 1,
+      "assigned": 1511,
+      "train": 1230,
+      "heldout": 281
+    },
+    {
+      "shard": 2,
+      "assigned": 1558,
+      "train": 1243,
+      "heldout": 315
+    },
+    {
+      "shard": 3,
+      "assigned": 1545,
+      "train": 1243,
+      "heldout": 302
+    },
+    {
+      "shard": 4,
+      "assigned": 1564,
+      "train": 1230,
+      "heldout": 334
+    },
+    {
+      "shard": 5,
+      "assigned": 1577,
+      "train": 1261,
+      "heldout": 316
+    },
+    {
+      "shard": 6,
+      "assigned": 1569,
+      "train": 1278,
+      "heldout": 291
+    },
+    {
+      "shard": 7,
+      "assigned": 1431,
+      "train": 1191,
+      "heldout": 240
+    },
+    {
+      "shard": 8,
+      "assigned": 1448,
+      "train": 1179,
+      "heldout": 269
+    },
+    {
+      "shard": 9,
+      "assigned": 1501,
+      "train": 1224,
+      "heldout": 277
+    },
+    {
+      "shard": 10,
+      "assigned": 1502,
+      "train": 1211,
+      "heldout": 291
+    },
+    {
+      "shard": 11,
+      "assigned": 1505,
+      "train": 1196,
+      "heldout": 309
+    },
+    {
+      "shard": 12,
+      "assigned": 1537,
+      "train": 1192,
+      "heldout": 345
+    },
+    {
+      "shard": 13,
+      "assigned": 1489,
+      "train": 1165,
+      "heldout": 324
+    },
+    {
+      "shard": 14,
+      "assigned": 1518,
+      "train": 1164,
+      "heldout": 354
+    },
+    {
+      "shard": 15,
+      "assigned": 1534,
+      "train": 1206,
+      "heldout": 328
+    },
+    {
+      "shard": 16,
+      "assigned": 1500,
+      "train": 1186,
+      "heldout": 314
+    },
+    {
+      "shard": 17,
+      "assigned": 1498,
+      "train": 1186,
+      "heldout": 312
+    },
+    {
+      "shard": 18,
+      "assigned": 1418,
+      "train": 1103,
+      "heldout": 315
+    },
+    {
+      "shard": 19,
+      "assigned": 1526,
+      "train": 1237,
+      "heldout": 289
+    }
+  ],
+  "top_transition_rules": [
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 15685
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 8497
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 4605
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 4351
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 4311
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 4255
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 4158
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 4078
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 3602
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 3112
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 3054
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 2919
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 2730
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 2346
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 2214
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 1473
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 1276
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 1121
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 1057
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 1036
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 939
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 912
+    },
+    {
+      "from": "19543364EAF61142000DD72C6A8928C2",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 905
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 900
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 814
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 729
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 616
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 592
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 565
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 558
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 548
+    },
+    {
+      "from": "19543364EAF61142000DD72C6A8928C2",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 538
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 491
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 486
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 448
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 414
+    },
+    {
+      "from": "E5E7941D03C1A1122781B44E236A17E0",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 375
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 374
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 368
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 365
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 357
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 353
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 316
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 309
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 294
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 291
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 290
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 280
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 264
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 261
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 255
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 252
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 251
+    },
+    {
+      "from": "E5E7941D03C1A1122781B44E236A17E0",
+      "to": "E5E7941D03C1A1122781B44E236A17E0",
+      "count": 243
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 236
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 229
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 227
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 226
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 222
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "count": 218
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 217
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 213
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 210
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 196
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 194
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 194
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 194
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 193
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 189
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 187
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 181
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 178
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 177
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 176
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 170
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 168
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 166
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 156
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 155
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 152
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 151
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 150
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 149
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 147
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 146
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 136
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 134
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 132
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 131
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 130
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 127
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 124
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "count": 123
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 123
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 123
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 122
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 115
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 114
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 113
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 110
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 109
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 107
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 104
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 103
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 102
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 101
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 101
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 100
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 97
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 95
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 95
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 92
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 91
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "E5E7941D03C1A1122781B44E236A17E0",
+      "count": 90
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 89
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 89
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 88
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 88
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 86
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 83
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 82
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 79
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 78
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 77
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 77
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 76
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 74
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 73
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 73
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 73
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 72
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 71
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "count": 71
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 70
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 67
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 67
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 66
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 65
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 64
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 63
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 63
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 62
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 62
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 61
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 61
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 59
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 58
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 58
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 57
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 57
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 56
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 56
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 55
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 55
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 53
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 53
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 52
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 51
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 51
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 51
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 51
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 51
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 50
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 50
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 50
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 50
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 49
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 49
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 48
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 48
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 48
+    },
+    {
+      "from": "193E450776044D4845752C8FFB808BB3",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 48
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 48
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 47
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 46
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 46
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 46
+    },
+    {
+      "from": "193E450776044D4845752C8FFB808BB3",
+      "to": "193E450776044D4845752C8FFB808BB3",
+      "count": 46
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 46
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 45
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 45
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 45
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 45
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "E5E7941D03C1A1122781B44E236A17E0",
+      "count": 44
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 43
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 43
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 42
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 42
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 41
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 41
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 41
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 41
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 41
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 40
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 40
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 40
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 40
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 39
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 39
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 39
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 38
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 37
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 37
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 36
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 35
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 35
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 35
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 34
+    },
+    {
+      "from": "193E450776044D4845752C8FFB808BB3",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 34
+    },
+    {
+      "from": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 34
+    },
+    {
+      "from": "19543364EAF61142000DD72C6A8928C2",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 33
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 33
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 33
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 33
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 32
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 32
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 32
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 32
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 32
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 31
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 31
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 31
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 30
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 30
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 30
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 29
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 29
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 29
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 28
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 28
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 28
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 28
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 28
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "E5E7941D03C1A1122781B44E236A17E0",
+      "count": 28
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 28
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 27
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 27
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 27
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 26
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 26
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 26
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 26
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 25
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 25
+    },
+    {
+      "from": "E5E7941D03C1A1122781B44E236A17E0",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 25
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 24
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 24
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 24
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 24
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 24
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 24
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 23
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 23
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 23
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 22
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 22
+    },
+    {
+      "from": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 22
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 22
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 22
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 21
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 21
+    },
+    {
+      "from": "193E450776044D4845752C8FFB808BB3",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 21
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 21
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 21
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 21
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 21
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 21
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 21
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 20
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 20
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 20
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 19
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 19
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 19
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 19
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 19
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 19
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 18
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 18
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 18
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "193E450776044D4845752C8FFB808BB3",
+      "count": 18
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 18
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 18
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 18
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 18
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 18
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 18
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 18
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 18
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 17
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 17
+    },
+    {
+      "from": "19543364EAF61142000DD72C6A8928C2",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 17
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 17
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "E5E7941D03C1A1122781B44E236A17E0",
+      "count": 17
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 17
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 17
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 17
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 17
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 17
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 16
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 16
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 16
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 16
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "193E450776044D4845752C8FFB808BB3",
+      "count": 16
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 16
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 16
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 16
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 16
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 16
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 16
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 16
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 16
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 16
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 16
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 15
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 15
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 15
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 15
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 15
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 15
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 15
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "count": 15
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 15
+    },
+    {
+      "from": "A9854AE39D5CFE88EC2519C89E6E2A37",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 15
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 14
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 14
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 14
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 14
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 14
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 14
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 14
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 14
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 14
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 14
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 14
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 14
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 14
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 13
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 13
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "E5E7941D03C1A1122781B44E236A17E0",
+      "count": 13
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 13
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "24C73F794A5FC866ED5422C084622587",
+      "count": 13
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 13
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 13
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 13
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 13
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 13
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "count": 13
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 13
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 12
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 12
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 12
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 12
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 12
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 12
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 12
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 12
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 12
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 12
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 12
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 12
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 12
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 12
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 12
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 12
+    },
+    {
+      "from": "19543364EAF61142000DD72C6A8928C2",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 11
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 11
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 11
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 11
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 11
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 11
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 11
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 11
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 11
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 11
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 11
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 11
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 11
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 11
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 11
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 11
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 10
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 10
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 10
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 10
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 10
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 10
+    },
+    {
+      "from": "75E779177D614451E5497DDD599BA165",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 10
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 10
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 10
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 10
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 10
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 10
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 10
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 10
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 10
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 10
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 10
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 10
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 10
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 10
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 10
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 10
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 10
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 9
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "count": 9
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 9
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 9
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "193E450776044D4845752C8FFB808BB3",
+      "count": 9
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 9
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 9
+    },
+    {
+      "from": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 9
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 9
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 9
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 9
+    },
+    {
+      "from": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 9
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 9
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 9
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 9
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 9
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 9
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 9
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 9
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 8
+    },
+    {
+      "from": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 8
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 8
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 8
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 8
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 8
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 8
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 8
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 8
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 8
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 8
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 8
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 8
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "199408E3D0668F10F475143F0E8CC0CB",
+      "count": 8
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "193E450776044D4845752C8FFB808BB3",
+      "count": 8
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 8
+    },
+    {
+      "from": "19543364EAF61142000DD72C6A8928C2",
+      "to": "F6C43224882036FC95D46CB7ADB6E016",
+      "count": 8
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 8
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 8
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 8
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 8
+    },
+    {
+      "from": "E5E7941D03C1A1122781B44E236A17E0",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 8
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 7
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 7
+    },
+    {
+      "from": "7FF174469DAC4E61520F4E1610B2F088",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 7
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 7
+    },
+    {
+      "from": "E6253384902D489FDB1FE487B7ED4AB2",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 7
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "343D6585F467EF5FA7A95609EB18CB7E",
+      "count": 7
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 7
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 7
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 7
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 7
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 7
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 7
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 7
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 7
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "B8654231A8D23801B38D10EE554ACBD5",
+      "count": 7
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 7
+    },
+    {
+      "from": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 7
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "C0A16085D28E420764D7FD27A85E0B99",
+      "count": 7
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "58EB693AE523323410326D60806B9ADF",
+      "count": 7
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "5A838FF4DABE1950734CFAFAB9383903",
+      "count": 7
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 7
+    },
+    {
+      "from": "ADF56B8E4119266843033E723A149AE2",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 7
+    },
+    {
+      "from": "193E450776044D4845752C8FFB808BB3",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 7
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 7
+    },
+    {
+      "from": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 7
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 7
+    },
+    {
+      "from": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "to": "ADF56B8E4119266843033E723A149AE2",
+      "count": 7
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "694212B746622E482E0E58D50036100E",
+      "count": 7
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 7
+    },
+    {
+      "from": "5AE9663626770D1D4B97AAE5769AB83C",
+      "to": "7FF174469DAC4E61520F4E1610B2F088",
+      "count": 7
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "3BE9D8AA68FB8CA25C1D8EE2091DC6D0",
+      "count": 7
+    },
+    {
+      "from": "ECC959553F23387998DAF88D69D7736C",
+      "to": "E03DA215BAB0A158BA5D1CB5C4D5D6FD",
+      "count": 7
+    },
+    {
+      "from": "343D6585F467EF5FA7A95609EB18CB7E",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 6
+    },
+    {
+      "from": "694212B746622E482E0E58D50036100E",
+      "to": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "count": 6
+    },
+    {
+      "from": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "to": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "count": 6
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "75E779177D614451E5497DDD599BA165",
+      "count": 6
+    },
+    {
+      "from": "501394D0E2658752D9DA624E7DEBE14B",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 6
+    },
+    {
+      "from": "F62AFB705D2A2D30BB41CF3FBE917891",
+      "to": "1F0C89A7E99CD5113AA994AD2CC86CBC",
+      "count": 6
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "86E80A7DA80F7F58CA76F85BACA48F86",
+      "count": 6
+    },
+    {
+      "from": "D01FCC1B1BA39329AFF2EDEDC2F6BC14",
+      "to": "5D3AB34D19BE7E319369F0328CB3CB7D",
+      "count": 6
+    },
+    {
+      "from": "03413638BD1DFC7AEF53192FEF71F017",
+      "to": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "count": 6
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "C5FE6D33992EBF0F10AEF6EF54754C2E",
+      "count": 6
+    },
+    {
+      "from": "5A838FF4DABE1950734CFAFAB9383903",
+      "to": "CF16A4B609D0F5EF4BC2327A6A83F58A",
+      "count": 6
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "941ED37AAF5E9C4E1B40D85008C6B2D9",
+      "count": 6
+    },
+    {
+      "from": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 6
+    },
+    {
+      "from": "B8654231A8D23801B38D10EE554ACBD5",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 6
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "count": 6
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "501394D0E2658752D9DA624E7DEBE14B",
+      "count": 6
+    },
+    {
+      "from": "512D7E3344FCD21B1EE47971D72DB39A",
+      "to": "19543364EAF61142000DD72C6A8928C2",
+      "count": 6
+    },
+    {
+      "from": "72FB536ACFF408163656BBCDAFCAC6F6",
+      "to": "ECC959553F23387998DAF88D69D7736C",
+      "count": 6
+    },
+    {
+      "from": "F6C43224882036FC95D46CB7ADB6E016",
+      "to": "E77FDA2EAABA78B3E55A968B2257CF26",
+      "count": 6
+    },
+    {
+      "from": "C0A16085D28E420764D7FD27A85E0B99",
+      "to": "24C73F794A5FC866ED5422C084622587",
+      "count": 6
+    },
+    {
+      "from": "0844E3AEAF1C8E3837465942B92FE4C5",
+      "to": "03413638BD1DFC7AEF53192FEF71F017",
+      "count": 6
+    },
+    {
+      "from": "199408E3D0668F10F475143F0E8CC0CB",
+      "to": "E6253384902D489FDB1FE487B7ED4AB2",
+      "count": 6
+    },
+    {
+      "from": "58EB693AE523323410326D60806B9ADF",
+      "to": "5AE9663626770D1D4B97AAE5769AB83C",
+      "count": 6
+    }
+  ],
+  "research_boundary": "Cross-validated historical phonetic drift signal only. It does not establish the ultimate original language or assign an operator to the transformative circle."
+}
