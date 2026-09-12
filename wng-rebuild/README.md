@@ -1,76 +1,62 @@
-# WNG RimWorld 1.6 rebuild handoff
+# WNG RimWorld 1.6 rebuild continuity
 
-This directory is the durable continuity/handoff record for rebuilding **Wraith & Nanite Gravtech (WNG)**.
+Author/final design authority: **Vardath**.
 
-Author and design authority: **Vardath**.
+Active implementation repository: `Vardath/Wraith-Nanite-Gravtech-1.6`.
 
-Active mod repository: `Vardath/Wraith-Nanite-Gravtech-1.6`.
+This directory stores the durable WNG plan, corrections, recovered history and descriptive current-state material.
 
-The one-time broad chat/history reconstruction was consolidated on **2026-09-11** into `CANONICAL_RECOVERY_LEDGER.md`.
+# Plan-first rule
 
-A later contradiction was then found: the canonical ledger's implementation snapshot was 45 public commits behind current `main`, while later checkpoint prose still overstated several subsystems as complete. The completed public-vs-plan/private audit is therefore preserved separately in:
+**Do not use checkpoint files, pass logs, pass numbers or stale short handoffs to decide what to build. They were removed on 2026-09-12 by explicit Vardath instruction and must not be recreated.**
 
-**`PUBLIC_RECONCILIATION_2026-09-11.md`**
+The authority order is:
 
-That reconciliation must be read before using any old implementation-status/"next" statement.
+1. newest explicit Vardath instruction;
+2. `MASTER_PLAN.md` + active master-plan append files + `CORRECTIONS_LOG.md`;
+3. `STANDING_RULES.md` and the mandatory implementation protocol/checklist;
+4. `CANONICAL_RECOVERY_LEDGER.md` for recovered historical/design context;
+5. actual current public WNG `main` for implementation truth — what already exists;
+6. reconciliation/current-state/feature-map/contract documents as supporting reference only where they agree with the plan and current source.
 
-## Read in this order when told “refresh memory and continue”
+**The plan defines the target. Public source defines the present implementation.**
 
-1. `wng-rebuild/STANDING_RULES.md`
-2. **`wng-rebuild/CANONICAL_RECOVERY_LEDGER.md` — recovered project history/design.**
-3. **`wng-rebuild/PUBLIC_RECONCILIATION_2026-09-11.md` — authoritative completed public-vs-plan/private reconciliation.**
-4. **`wng-rebuild/CURRENT_PUBLIC_STATE.md` — mutable current implementation state.**
-5. **`wng-rebuild/WNG_IMPLEMENTATION_CHECKLIST.md` — mandatory Stargate/current-state implementation gate.**
-6. `wng-rebuild/REFRESH_MEMORY_AND_CONTINUE.md`
-7. `wng-rebuild/PLAN_EXECUTION_PROTOCOL.md`
-8. Relevant current master-plan append/active subsystem contract(s) for the actual next slice.
-9. `wng-rebuild/CORRECTIONS_LOG.md` and `wng-rebuild/MASTER_PLAN.md` when deeper design chronology is needed.
-10. `wng-rebuild/NEXT_GPT_PRIMER.md` only as a short pointer; it never outranks current public source/reconciliation/live state.
-11. Fetch current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main`, compare it with the maintained HEAD/state, inspect any new commits, and continue only the genuinely unfinished slice.
+There are no known-good historical WNG builds. Old/private repositories and branches are reference evidence only.
 
-### Hard public-state rule
+## Recovery order for “refresh memory and continue”
 
-**Current public source is implementation truth.**
+1. Load PAIN if needed.
+2. Read `STANDING_RULES.md`.
+3. Read `MASTER_PLAN.md` completely.
+4. Read every active `MASTER_PLAN_APPEND_*` file completely.
+5. Read `CORRECTIONS_LOG.md` completely.
+6. Read `CANONICAL_RECOVERY_LEDGER.md` completely so recovered requirements/history are not lost.
+7. Read `WNG_IMPLEMENTATION_CHECKLIST.md` and `PLAN_EXECUTION_PROTOCOL.md`.
+8. Read the relevant feature map/contract for the plan section being implemented.
+9. Fetch actual current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` and inspect newer commits/files before deciding what is missing.
+10. Reconcile current implementation against the plan and continue the next genuinely unfinished plan requirement.
 
-Do not claim a feature exists merely because:
-- it was discussed in chat;
-- an assistant said it was completed;
-- a checkpoint says it was completed;
-- code exists on the old/private repository;
-- a private commit/branch was prepared;
-- a historical build once had something similar.
+Do not reread weeks of raw chat by default. Retrieve raw WNG history only for a real unresolved conflict/gap, a repo-vs-plan contradiction, or an explicit Vardath request.
 
-Historical/private work is requirement/reference evidence only unless an equivalent real implementation is present on current public `main`.
+## Non-negotiable process rules
 
-### Raw-chat retrieval rule
+- WNG is a Stargate mod: lore/function first.
+- Do not code from memory and consult the plan afterwards.
+- Do not silently omit features.
+- Do not remove an existing required feature because an older note says rebuild/correct/refine.
+- Current public source must be inspected before deciding something is absent.
+- Preserve approved block Replicator graphics and intended behavior.
+- Keep Wraith ordinary feeding, strategic hunger, mature-Hive ecology and retaliation separate.
+- Keep Queen, Neural-Lattice and Temporary-Asuran controller identities separate.
+- Use native RimWorld/DLC systems when they faithfully fit.
+- Respect CatCraft/ONAC/RimGate ownership boundaries and verified Def/package IDs.
+- Do not invent convenience fallbacks such as arbitrary Goa'uld ship fuel.
+- Do not generate replacement art unless Vardath explicitly asks.
+- Do not rebuild design-locking audit/release bureaucracy.
+- Static validation is not live-game validation.
 
-Do **not** reread weeks of WNG chat by default after the one-time reconstruction/reconciliation. Retrieve older raw WNG chat only when:
-- the canonical history or public reconciliation flags a genuine unresolved gap/conflict;
-- current repo evidence conflicts with the maintained state; or
-- Vardath explicitly asks for raw-history review.
+## Continuity after changes
 
-When a conflict is resolved, update durable continuity so it does not need to be solved again.
+Update the master plan/corrections/current-state description only when needed to keep them truthful. Do not create checkpoint files, numbered pass diaries or rebuild pass logs.
 
-## Mandatory working method
-
-Do not code from memory and then check the plan afterwards.
-
-For every pass:
-
-**CANONICAL HISTORY -> PUBLIC RECONCILIATION -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE HANDOFF**
-
-The plan is the default specification for the first complete build. Every known planned feature must be implemented, explicitly tracked as unfinished/dependency-recorded, explicitly planned-only/deferred, or explicitly changed/rejected by Vardath. Silent omission is not acceptable.
-
-**An older “next step”, “unfinished”, “reconcile”, “correct” or “rebuild” note does not prove a current feature is absent. Verify current public `main` first. Rebuild/correct/refine does not mean remove.**
-
-## Reset instruction — 2026-09-10
-
-The public 1.6 mod was deliberately restarted from a clean fresh-rebuild tree.
-
-The fresh rebuild preserved approved **block Replicator graphics** and reconstructed intended Replicator behavior cleanly. Historical implementations are reference evidence only; there is no known-good old state.
-
-The current public repository has advanced substantially beyond the reset. **Do not interpret the reset instruction or the canonical ledger's original implementation snapshot as the current inventory.** Use the public reconciliation + current live state + actual public `main`.
-
-Do not create design-locking anti-regression machinery. Do not build release-check bureaucracy around an unfinished mod. Use only the practical sanity/compile/load/live checks needed to establish function.
-
-Nothing in the mod is immutable merely because it appears in this continuity set. Timers, races/xenotypes, castes, sounds, art, processes, systems, balance, quests, factions, progression and whole subsystems can all be changed later by Vardath. Newer explicit Vardath instructions must be written back into durable continuity before handoff.
+The intended workflow is simple: **plan -> inspect current source -> implement unfinished plan requirement -> verify -> reconcile against plan -> continue.**
