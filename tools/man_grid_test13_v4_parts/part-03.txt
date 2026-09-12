@@ -1,0 +1,87 @@
+      JOIN lexagg p ON p.lang_code=i.parent_lang AND p.word_key=i.parent_word AND p.concept=c.concept
+      WHERE i.child_lang<>i.parent_lang
+      ORDER BY i.parent_lang,i.child_lang,i.parent_word,i.child_word,c.concept
+    '''
+    for cl, cln, cw, pl, pln, pw, meaning, cs, cn, ps, pn in con.execute(q):
+        key = (pl, cl, pw, cw, meaning)
+        rec = matched.get(key)
+        if rec is None:
+            rec = {
+                'parent_code': pl, 'parent_language': pln, 'parent_word': pw,
+                'child_code': cl, 'child_language': cln, 'child_word': cw,
+                'meaning': meaning, 'ancestor_forms': {}, 'descendant_forms': {},
+            }
+            matched[key] = rec
+        rec['ancestor_forms'][ps] = max(int(pn), rec['ancestor_forms'].get(ps, 0))
+        rec['descendant_forms'][cs] = max(int(cn), rec['descendant_forms'].get(cs, 0))
+
+    records = []
+    for key, r in matched.items():
+        if not r['ancestor_forms'] or not r['descendant_forms']:
+            continue
+        records.append({
+            'record_key': '|'.join(key),
+            'parent_code': r['parent_code'], 'parent_language': r['parent_language'], 'parent_word': r['parent_word'],
+            'child_code': r['child_code'], 'child_language': r['child_language'], 'child_word': r['child_word'],
+            'meaning': r['meaning'],
+            'ancestor_forms': [[s.split(), n] for s, n in sorted(r['ancestor_forms'].items())],
+            'descendant_forms': [[s.split(), n] for s, n in sorted(r['descendant_forms'].items())],
+        })
+    stats['matched_historical_records'] = len(records)
+
+    by_lineage = defaultdict(list); by_meaning = defaultdict(list)
+    for r in records:
+        lin = (r['parent_code'], r['child_code'])
+        by_lineage[lin].append(r)
+        by_meaning[r['meaning']].append(r)
+
+    # Freeze deterministic train/heldout word-pair ownership within each lineage.
+    for lin, rs in by_lineage.items():
+        word_groups = defaultdict(list)
+        for r in rs:
+            word_groups[(r['parent_word'], r['child_word'])].append(r)
+        groups = sorted(word_groups, key=lambda g: (V.h64('t13-split', *lin, *g), g))
+        nh = max(1, len(groups) // 5) if len(groups) >= 5 else 0
+        held = set(groups[:nh])
+        for g, grs in word_groups.items():
+            role = 'heldout' if g in held else 'train'
+            for r in grs:
+                r['role'] = role
+
+    # Pre-attach controls from the full matched set so shard partition does not weaken controls.
+    for r in records:
+        lin = (r['parent_code'], r['child_code'])
+        same_lin = [x for x in by_lineage[lin] if x['meaning'] != r['meaning']]
+        if same_lin:
+            x = min(same_lin, key=lambda z: (V.h64('t13-wrong', r['record_key'], z['record_key']), z['record_key']))
+            r['wrong_control'] = {
+                'meaning': x['meaning'], 'child_code': x['child_code'], 'child_language': x['child_language'],
+                'descendant_forms': x['descendant_forms'],
+            }
+        else:
+            r['wrong_control'] = None
+        same_mean = [x for x in by_meaning[r['meaning']] if (x['parent_code'], x['child_code']) != lin]
+        if same_mean:
+            x = min(same_mean, key=lambda z: (V.h64('t13-shuffle', r['record_key'], z['record_key']), z['record_key']))
+            r['shuffled_control'] = {
+                'parent_code': x['parent_code'], 'child_code': x['child_code'], 'child_language': x['child_language'],
+                'descendant_forms': x['descendant_forms'],
+            }
+        else:
+            r['shuffled_control'] = None
+
+    shards = [[] for _ in range(N)]
+    for lin, rs in by_lineage.items():
+        sh = V.h64('t13-lineage-shard', *lin) % N
+        rs.sort(key=lambda r: (r['meaning'], r['parent_word'], r['child_word'], r['record_key']))
+        shards[sh].extend(rs)
+    for i, rs in enumerate(shards):
+        write_gz(WORK / f'historical-shard-{i:02d}.json.gz', rs)
+
+    manifest = {
+        'version': 4,
+        'test_id': 13,
+        'test': 'Historical language drift through the correct mirrored Man Grid',
+        'status': 'prepared',
+        'shards': N,
+        'dependency': {

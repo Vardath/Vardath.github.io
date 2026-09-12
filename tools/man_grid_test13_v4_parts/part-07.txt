@@ -1,0 +1,61 @@
+        'mean_real_historical_distance':round(statistics.mean(real),8) if real else None,
+        'same_meaning_shuffled_n':len(rs),
+        'mean_same_meaning_shuffled_distance':round(statistics.mean(sh),8) if sh else None,
+        'real_beats_same_meaning_shuffled':sum(r<c for r,c in zip(rs,sh)),
+        'fraction_real_beats_same_meaning_shuffled':round(sum(r<c for r,c in zip(rs,sh))/len(rs),8) if rs else None,
+        'effect_dz_real_vs_same_meaning_shuffled':round(paired_dz(rs,sh),8) if paired_dz(rs,sh) is not None else None,
+        'wrong_meaning_n':len(rw),
+        'mean_wrong_meaning_distance':round(statistics.mean(wr),8) if wr else None,
+        'real_beats_wrong_meaning':sum(r<c for r,c in zip(rw,wr)),
+        'fraction_real_beats_wrong_meaning':round(sum(r<c for r,c in zip(rw,wr))/len(rw),8) if rw else None,
+        'effect_dz_real_vs_wrong_meaning':round(paired_dz(rw,wr),8) if paired_dz(rw,wr) is not None else None,
+        'shards_real_mean_better_than_same_meaning_shuffled':sum(
+            x.get('mean_same_meaning_shuffled_distance') is not None and x.get('mean_real_for_same_meaning_shuffled') is not None and x['mean_real_for_same_meaning_shuffled'] < x['mean_same_meaning_shuffled_distance']
+            for x in shard_summaries),
+        'shards_real_mean_better_than_wrong_meaning':sum(
+            x.get('mean_wrong_meaning_distance') is not None and x.get('mean_real_for_wrong_meaning') is not None and x['mean_real_for_wrong_meaning'] < x['mean_wrong_meaning_distance']
+            for x in shard_summaries),
+        'lineages_direction_evaluable':len(le),
+        'mean_heldout_lineage_vector_error':round(statistics.mean(le),8) if le else None,
+        'mean_shuffled_lineage_vector_error':round(statistics.mean(ls),8) if ls else None,
+        'lineages_real_direction_beats_shuffled':sum(r<c for r,c in zip(le,ls)),
+        'fraction_lineages_real_direction_beats_shuffled':round(sum(r<c for r,c in zip(le,ls))/len(le),8) if le else None,
+        'effect_dz_lineage_vector_error_real_vs_shuffled':round(paired_dz(le,ls),8) if paired_dz(le,ls) is not None else None,
+        'mean_heldout_lineage_cosine':round(statistics.mean(rc),8) if rc else None,
+        'mean_shuffled_lineage_cosine':round(statistics.mean(sc),8) if sc else None,
+        'alignment_operation_counts':dict(ops),
+        'top_nonidentity_transitions':[
+            {'from':a,'from_ipa':root_name.get(a),'to':b,'to_ipa':root_name.get(b),'count':n}
+            for a,b,n in nonidentity[:100]
+        ],
+        'top_all_transitions':[
+            {'from':a,'from_ipa':root_name.get(a),'to':b,'to_ipa':root_name.get(b),'count':n}
+            for (a,b),n in trans.most_common(100)
+        ],
+        'feature_distance_used_for_test13_scoring':False,
+        'test5_lexicon_used_for_test13':False,
+        'old_test13_result_used':False,
+        'old_grid_rules_imported':False,
+        'central_circle_operator_used':False,
+    }
+    out={
+        'version':4,'test_id':13,'test':manifest['test'],'status':'complete','shards':N,
+        'dependency':manifest['dependency'],'source':manifest['source'],'prepared':manifest['scan'],
+        'coverage_prepared':manifest['coverage'],'grid':manifest['grid'],'calculation':manifest['calculation'],
+        'summary':summary,'shard_summaries':shard_summaries,'lineage_evaluation':lin,'entries':rows,
+        'execution':manifest['execution'],
+        'evidence_boundary': 'Documents inherited lexical relationships and their exact mirrored-Man-Grid movement. It does not itself establish universal sound laws, a single proto-language, or a transformative-circle operator; Test 14 must independently learn and cross-validate any transformation rules.'
+    }
+    write_json(OUT,out)
+    print(json.dumps(summary,ensure_ascii=False,indent=2),flush=True)
+
+
+def main():
+    ap=argparse.ArgumentParser(); sp=ap.add_subparsers(dest='cmd',required=True)
+    sp.add_parser('prepare'); r=sp.add_parser('run'); r.add_argument('--shard',type=int,required=True); sp.add_parser('merge')
+    a=ap.parse_args()
+    if a.cmd=='prepare':prepare()
+    elif a.cmd=='run':run(a.shard)
+    else:merge()
+
+if __name__=='__main__': main()

@@ -1,0 +1,106 @@
+    return sum(x * y for x, y in zip(a, b)) / (na * nb)
+
+
+def paired_dz(real, control):
+    ds = [c - r for r, c in zip(real, control)]
+    if len(ds) < 2:
+        return None
+    sd = statistics.stdev(ds)
+    return statistics.mean(ds) / sd if sd else None
+
+
+def prepare():
+    model_path = SRC / 'model.json.gz'
+    if not model_path.exists():
+        raise RuntimeError('corrected Test 5 base model.json.gz is missing')
+    model = read_gz(model_path)
+    validate_model(model)
+    write_gz(WORK / 'model.json.gz', model)
+    byfirst = build_byfirst(model)
+
+    con = init_db(); cur = con.cursor()
+    lex_batch = []; edge_batch = []
+    stats = Counter()
+    req = urllib.request.Request(RAW, headers={'User-Agent': 'Vardath-ManGrid-Test13-Historical/4.0'})
+    with urllib.request.urlopen(req) as resp, gzip.GzipFile(fileobj=resp) as gz, io.TextIOWrapper(
+        gz, encoding='utf-8', errors='replace'
+    ) as f:
+        for line in f:
+            stats['dictionary_entries'] += 1
+            try:
+                o = json.loads(line)
+            except Exception:
+                stats['json_errors'] += 1
+                continue
+            lc = str(o.get('lang_code') or '').strip()
+            ln = str(o.get('lang') or '').strip()
+            wk = word_key(o.get('word'))
+            if not lc or not wk:
+                continue
+
+            concepts = []
+            for g in V.get_glosses(o)[:8]:
+                c = V.norm_text(g)
+                if c and c not in concepts:
+                    concepts.append(c)
+                if len(concepts) >= 4:
+                    break
+
+            seqs = []
+            for raw in V.get_ipa(o)[:3]:
+                q, unknown = T5.tokenize_ipa(raw, model, byfirst)
+                stats['ipa_unknown_symbols'] += unknown
+                if len(q) >= 2 and q not in seqs:
+                    seqs.append(q)
+            if seqs and concepts:
+                stats['entries_with_mirror_mappable_ipa_and_gloss'] += 1
+                for c in concepts:
+                    for q in seqs[:2]:
+                        lex_batch.append((lc, ln, wk, c, ' '.join(q)))
+
+            for pl, pw in parse_inheritance(o):
+                if pl != lc:
+                    edge_batch.append((lc, wk, pl, pw))
+                    stats['inheritance_templates_seen'] += 1
+
+            if len(lex_batch) >= 20000:
+                cur.executemany('INSERT INTO lex VALUES(?,?,?,?,?)', lex_batch)
+                lex_batch.clear()
+            if len(edge_batch) >= 10000:
+                cur.executemany('INSERT OR IGNORE INTO inheritance VALUES(?,?,?,?)', edge_batch)
+                edge_batch.clear()
+            if stats['dictionary_entries'] % 500000 == 0:
+                con.commit()
+                print(json.dumps({
+                    'entries': stats['dictionary_entries'],
+                    'mappable': stats['entries_with_mirror_mappable_ipa_and_gloss'],
+                    'inheritance_templates': stats['inheritance_templates_seen'],
+                }), flush=True)
+
+    if lex_batch:
+        cur.executemany('INSERT INTO lex VALUES(?,?,?,?,?)', lex_batch)
+    if edge_batch:
+        cur.executemany('INSERT OR IGNORE INTO inheritance VALUES(?,?,?,?)', edge_batch)
+    con.commit()
+    stats['unique_inheritance_edges'] = con.execute('SELECT COUNT(*) FROM inheritance').fetchone()[0]
+
+    print('aggregating lexicon forms', flush=True)
+    con.executescript('''
+      CREATE TABLE lexagg AS
+      SELECT lang_code, MAX(lang) AS lang, word_key, concept, seq, COUNT(*) AS n
+      FROM lex
+      GROUP BY lang_code,word_key,concept,seq;
+      DROP TABLE lex;
+      CREATE INDEX lexagg_lookup ON lexagg(lang_code,word_key,concept);
+      CREATE INDEX inheritance_child ON inheritance(child_lang,child_word);
+      CREATE INDEX inheritance_parent ON inheritance(parent_lang,parent_word);
+    ''')
+    con.commit()
+
+    matched = {}
+    q = '''
+      SELECT i.child_lang, c.lang, i.child_word,
+             i.parent_lang, p.lang, i.parent_word,
+             c.concept, c.seq, c.n, p.seq, p.n
+      FROM inheritance i
+      JOIN lexagg c ON c.lang_code=i.child_lang AND c.word_key=i.child_word

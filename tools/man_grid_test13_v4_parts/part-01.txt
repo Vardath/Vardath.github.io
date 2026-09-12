@@ -1,0 +1,133 @@
+    cnt = Counter({tuple(seq): int(n) for seq, n in rows})
+    items = cnt.most_common(limit)
+    if not items:
+        return None
+    den = sum(n for _, n in items)
+    best = None
+    for s, n in items:
+        d = sum(seqdist(s, t, costs) * w for t, w in items) / den
+        key = (d, -n, len(s), s)
+        if best is None or key < best[0]:
+            best = (key, s, d)
+    return best[1]
+
+
+def substitution_costs(model):
+    ids = list(model['root_ids'])
+    return {a: {b: T5.mirror_grid_distance(a, b, model) for b in ids} for a in ids}
+
+
+def seqdist(a, b, costs):
+    a, b = tuple(a), tuple(b)
+    if not a and not b:
+        return 0.0
+    if not a or not b:
+        return 1.0
+    m = len(b)
+    dp = [j * GAP for j in range(m + 1)]
+    for i, x in enumerate(a, 1):
+        nd = [i * GAP] + [0.0] * m
+        for j, y in enumerate(b, 1):
+            nd[j] = min(
+                dp[j] + GAP,
+                nd[j - 1] + GAP,
+                dp[j - 1] + costs[x][y],
+            )
+        dp = nd
+    return min(1.0, dp[m] / max(len(a), len(b)))
+
+
+def alignment(a, b, costs):
+    a, b = tuple(a), tuple(b)
+    n, m = len(a), len(b)
+    dp = [[0.0] * (m + 1) for _ in range(n + 1)]
+    bt = [[None] * (m + 1) for _ in range(n + 1)]
+    for i in range(1, n + 1):
+        dp[i][0] = i * GAP
+        bt[i][0] = 'D'
+    for j in range(1, m + 1):
+        dp[0][j] = j * GAP
+        bt[0][j] = 'I'
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            cand = [
+                (dp[i - 1][j - 1] + costs[a[i - 1]][b[j - 1]], 0, 'S'),
+                (dp[i - 1][j] + GAP, 1, 'D'),
+                (dp[i][j - 1] + GAP, 2, 'I'),
+            ]
+            val, _, op = min(cand)
+            dp[i][j] = val
+            bt[i][j] = op
+    i, j = n, m
+    rev = []
+    while i or j:
+        op = bt[i][j]
+        if op == 'S':
+            rev.append(('M' if a[i - 1] == b[j - 1] else 'S', a[i - 1], b[j - 1], i - 1, j - 1))
+            i -= 1
+            j -= 1
+        elif op == 'D':
+            rev.append(('D', a[i - 1], None, i - 1, j))
+            i -= 1
+        elif op == 'I':
+            rev.append(('I', None, b[j - 1], i, j - 1))
+            j -= 1
+        else:
+            raise RuntimeError('alignment traceback failed')
+    rev.reverse()
+    return rev
+
+
+def signed_grid_move(a, b, model):
+    ga = model['params'][a]['grid']
+    gb = model['params'][b]['grid']
+    layers = [*model['grid']['upper'], *model['grid']['lower']]
+    out = []
+    for i, layer in enumerate(layers):
+        # Explicitly average both mirror directions. Coordinates are read from
+        # ancestor LEFT -> descendant RIGHT and ancestor RIGHT -> descendant LEFT.
+        al = T5.cell_rc(ga['all_left'][i]); ar = T5.cell_rc(ga['all_right'][i])
+        bl = T5.cell_rc(gb['all_left'][i]); br = T5.cell_rc(gb['all_right'][i])
+        rden = max(1, int(layer['rows']) - 1)
+        cden = max(1, int(layer['columns']) - 1)
+        dr = (((br[0] - al[0]) / rden) + ((bl[0] - ar[0]) / rden)) / 2.0
+        dc = (((br[1] - al[1]) / cden) + ((bl[1] - ar[1]) / cden)) / 2.0
+        out.extend([dr, dc])
+    return out
+
+
+def movement_from_alignment(aln, model):
+    moves = []
+    events = []
+    for op, a, b, ia, ib in aln:
+        if a is not None and b is not None:
+            mv = signed_grid_move(a, b, model)
+            moves.append(mv)
+            events.append({'op': op, 'a': a, 'b': b, 'ia': ia, 'ib': ib})
+        else:
+            events.append({'op': op, 'a': a, 'b': b, 'ia': ia, 'ib': ib})
+    if not moves:
+        return None, events
+    vec = [statistics.mean(x[k] for x in moves) for k in range(20)]
+    return vec, events
+
+
+def vec_mean(vs):
+    vs = [v for v in vs if v is not None]
+    if not vs:
+        return None
+    return [statistics.mean(v[k] for v in vs) for k in range(len(vs[0]))]
+
+
+def vec_l2(a, b):
+    if a is None or b is None:
+        return None
+    return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)) / len(a))
+
+
+def cosine(a, b):
+    if a is None or b is None:
+        return None
+    na = math.sqrt(sum(x * x for x in a)); nb = math.sqrt(sum(x * x for x in b))
+    if na < 1e-12 or nb < 1e-12:
+        return None

@@ -1,0 +1,82 @@
+            'test1': 'corrected 36-phoneme inventory embedded in the exact mirror-grid model',
+            'test5_model_artifact': 'reused only as the validated exact 1,074-cell/Test-1-root geometry and mirror-grid nearest-root implementation; no Test 5 lexical reconstruction is used',
+            'old_test13': 'not used for scoring, rules, or controls',
+        },
+        'source': {
+            'wiktextract': RAW,
+            'phoible_commit': model.get('phoible_commit'),
+            'source_test5_base_run': SOURCE_TEST5_RUN,
+            'source_test5_base_artifact_id': SOURCE_TEST5_BASE_ARTIFACT_ID,
+        },
+        'scan': dict(stats),
+        'coverage': {
+            'lineages': len(by_lineage),
+            'meanings': len(by_meaning),
+            'records': len(records),
+            'records_with_wrong_meaning_control': sum(r['wrong_control'] is not None for r in records),
+            'records_with_same_meaning_shuffled_lineage_control': sum(r['shuffled_control'] is not None for r in records),
+            'lineages_with_heldout_word_groups': sum(any(r['role'] == 'heldout' for r in rs) for rs in by_lineage.values()),
+        },
+        'historical_shard_sizes': [len(x) for x in shards],
+        'grid': {
+            'cells': 1074,
+            'all_rectangles_mirrored': True,
+            'layers_per_side': 10,
+            'transformative_circle_operator': None,
+        },
+        'calculation': {
+            'metric': 'exact_mirror_man_grid_10_layer_bilateral',
+            'phoneme_snap': 'exact mirror-grid nearest mapping into corrected Test 1 36-root inventory',
+            'sequence_alignment': 'dynamic programming with exact bilateral mirror-grid substitution costs and gap cost 0.70',
+            'drift_vector': '20 signed components: normalized row and column movement on each of the ten exact layers, explicitly averaged across LEFT->RIGHT and RIGHT->LEFT mirror directions',
+            'same_meaning_shuffled_target_control': 'descendant form from a different documented inheritance lineage for the same normalized meaning',
+            'wrong_meaning_control': 'different descendant meaning within the same documented parent->child lineage',
+            'heldout_direction_test': 'word-pair-disjoint heldout records compared with a lineage drift vector estimated only from train records',
+            'feature_distance_used_for_test13_scoring': False,
+            'test5_lexicon_used_for_test13': False,
+            'old_grid_rules_imported': False,
+            'central_circle_operator_used': False,
+        },
+        'execution': {
+            'version': 'exact-v4-test13-mirror-grid-shard20',
+            'partition': '20 deterministic disjoint parent->child lineage shards; all meanings for a lineage stay in one shard',
+            'merge_requires_all_20': True,
+            'workflow_custom_timeout_minutes': None,
+        },
+    }
+    write_json(WORK / 'prepared-manifest.json', manifest)
+    try:
+        con.close(); DB.unlink(missing_ok=True)
+        for suffix in ('-wal', '-shm'):
+            Path(str(DB) + suffix).unlink(missing_ok=True)
+    except Exception:
+        pass
+    print(json.dumps(manifest, ensure_ascii=False, indent=2), flush=True)
+
+
+def run(shard):
+    if not 0 <= shard < N:
+        raise SystemExit('shard must be 0..19')
+    model = read_gz(WORK / 'model.json.gz')
+    validate_model(model)
+    costs = substitution_costs(model)
+    rows = read_gz(WORK / f'historical-shard-{shard:02d}.json.gz')
+    out = []
+    lineage_rows = defaultdict(list)
+    transition = Counter(); op_counts = Counter()
+    move_sums = [0.0] * 20; move_n = 0
+
+    for r in rows:
+        anc = medoid(r['ancestor_forms'], costs)
+        des = medoid(r['descendant_forms'], costs)
+        if not anc or not des:
+            continue
+        real = seqdist(anc, des, costs)
+        aln = alignment(anc, des, costs)
+        mv, events = movement_from_alignment(aln, model)
+        for e in events:
+            op_counts[e['op']] += 1
+            if e.get('a') is not None and e.get('b') is not None:
+                transition[(e['a'], e['b'])] += 1
+        if mv is not None:
+            move_n += 1

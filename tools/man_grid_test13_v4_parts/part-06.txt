@@ -1,0 +1,61 @@
+        'records': len(out), 'lineages': len(lineage_rows),
+        'mean_real_distance': round(statistics.mean(vals('real_distance')), 8) if out else None,
+        'mean_real_for_same_meaning_shuffled': round(statistics.mean(real_s), 8) if real_s else None,
+        'same_meaning_shuffled_n': len(real_s),
+        'mean_same_meaning_shuffled_distance': round(statistics.mean(shuf), 8) if shuf else None,
+        'real_beats_same_meaning_shuffled': sum(r < c for r,c in zip(real_s,shuf)),
+        'effect_dz_real_vs_same_meaning_shuffled': round(paired_dz(real_s,shuf), 8) if paired_dz(real_s,shuf) is not None else None,
+        'mean_real_for_wrong_meaning': round(statistics.mean(real_w), 8) if real_w else None,
+        'wrong_meaning_n': len(real_w),
+        'mean_wrong_meaning_distance': round(statistics.mean(wrong), 8) if wrong else None,
+        'real_beats_wrong_meaning': sum(r < c for r,c in zip(real_w,wrong)),
+        'effect_dz_real_vs_wrong_meaning': round(paired_dz(real_w,wrong), 8) if paired_dz(real_w,wrong) is not None else None,
+        'lineages_direction_evaluable': len(le_real),
+        'mean_heldout_lineage_vector_error': round(statistics.mean(le_real),8) if le_real else None,
+        'mean_shuffled_lineage_vector_error': round(statistics.mean(le_shuf),8) if le_shuf else None,
+        'lineages_real_direction_beats_shuffled': sum(r < c for r,c in zip(le_real,le_shuf)),
+    }
+    write_gz(WORK / f't13-result-{shard}.json.gz', {
+        'test':13, 'shard':shard, 'summary':summary, 'entries':out, 'lineage_evaluation':lineage_eval,
+        'transition_counts': [[a,b,n] for (a,b),n in transition.most_common()],
+        'operation_counts': dict(op_counts),
+        'mean_signed_movement_vector': [round(x / move_n, 8) for x in move_sums] if move_n else None,
+        'calculation_metric':'exact_mirror_man_grid_10_layer_bilateral',
+        'feature_distance_used_for_scoring':False,
+    })
+    print(json.dumps(summary), flush=True)
+
+
+def merge():
+    manifest = read_json(WORK / 'prepared-manifest.json')
+    parts=[]
+    for i in range(N):
+        p=WORK / f't13-result-{i}.json.gz'
+        if not p.exists(): raise RuntimeError(f'missing Test 13 shard {i}')
+        parts.append(read_gz(p))
+    rows=[x for p in parts for x in p.get('entries',[])]
+    rows.sort(key=lambda x:(x['parent_code'],x['child_code'],x['meaning'],x['parent_word'],x['child_word']))
+    lin=[x for p in parts for x in p.get('lineage_evaluation',[])]
+    trans=Counter(); ops=Counter()
+    for p in parts:
+        for a,b,n in p.get('transition_counts',[]): trans[(a,b)] += int(n)
+        ops.update(p.get('operation_counts',{}))
+
+    real=[x['real_distance'] for x in rows]
+    rs=[x['real_distance'] for x in rows if x.get('shuffled_same_meaning_distance') is not None]
+    sh=[x['shuffled_same_meaning_distance'] for x in rows if x.get('shuffled_same_meaning_distance') is not None]
+    rw=[x['real_distance'] for x in rows if x.get('wrong_meaning_distance') is not None]
+    wr=[x['wrong_meaning_distance'] for x in rows if x.get('wrong_meaning_distance') is not None]
+    le=[x['mean_heldout_vector_error'] for x in lin if x.get('mean_heldout_vector_error') is not None and x.get('mean_shuffled_vector_error') is not None]
+    ls=[x['mean_shuffled_vector_error'] for x in lin if x.get('mean_heldout_vector_error') is not None and x.get('mean_shuffled_vector_error') is not None]
+    rc=[x['mean_heldout_cosine'] for x in lin if x.get('mean_heldout_cosine') is not None and x.get('mean_shuffled_cosine') is not None]
+    sc=[x['mean_shuffled_cosine'] for x in lin if x.get('mean_heldout_cosine') is not None and x.get('mean_shuffled_cosine') is not None]
+
+    shard_summaries=[p['summary'] for p in parts]
+    nonidentity=[(a,b,n) for (a,b),n in trans.most_common() if a!=b]
+    root_name={pid:read_gz(WORK/'model.json.gz')['params'][pid]['name'] for pid in read_gz(WORK/'model.json.gz')['root_ids']}
+    summary={
+        'shards_completed':len(parts),
+        'historical_records_evaluated':len(rows),
+        'documented_parent_child_lineages':len(set((x['parent_code'],x['child_code']) for x in rows)),
+        'meanings_evaluated':len(set(x['meaning'] for x in rows)),

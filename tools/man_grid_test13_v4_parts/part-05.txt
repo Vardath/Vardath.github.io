@@ -1,0 +1,68 @@
+            for k, x in enumerate(mv): move_sums[k] += x
+
+        wrong_d = None; wrong_seq = None
+        if r.get('wrong_control'):
+            wrong_seq = medoid(r['wrong_control']['descendant_forms'], costs)
+            if wrong_seq: wrong_d = seqdist(anc, wrong_seq, costs)
+        shuf_d = None; shuf_seq = None; shuf_mv = None
+        if r.get('shuffled_control'):
+            shuf_seq = medoid(r['shuffled_control']['descendant_forms'], costs)
+            if shuf_seq:
+                shuf_d = seqdist(anc, shuf_seq, costs)
+                shuf_mv, _ = movement_from_alignment(alignment(anc, shuf_seq, costs), model)
+
+        rec = {
+            'record_key': r['record_key'],
+            'parent_code': r['parent_code'], 'parent_language': r['parent_language'], 'parent_word': r['parent_word'],
+            'child_code': r['child_code'], 'child_language': r['child_language'], 'child_word': r['child_word'],
+            'meaning': r['meaning'], 'role': r['role'],
+            'ancestor_seq': list(anc), 'descendant_seq': list(des),
+            'ancestor_ipa': ''.join(model['params'][x]['name'] for x in anc),
+            'descendant_ipa': ''.join(model['params'][x]['name'] for x in des),
+            'real_distance': round(real, 8),
+            'wrong_meaning_distance': round(wrong_d, 8) if wrong_d is not None else None,
+            'shuffled_same_meaning_distance': round(shuf_d, 8) if shuf_d is not None else None,
+            'movement_vector': [round(x, 8) for x in mv] if mv is not None else None,
+            'shuffled_movement_vector': [round(x, 8) for x in shuf_mv] if shuf_mv is not None else None,
+            'alignment': events,
+        }
+        out.append(rec)
+        lineage_rows[(r['parent_code'], r['child_code'], r['parent_language'], r['child_language'])].append(rec)
+
+    lineage_eval = []
+    for lin, rs in sorted(lineage_rows.items()):
+        train = [x for x in rs if x['role'] == 'train' and x.get('movement_vector') is not None]
+        held = [x for x in rs if x['role'] == 'heldout' and x.get('movement_vector') is not None]
+        proto = vec_mean([x['movement_vector'] for x in train])
+        if proto is None or not held:
+            continue
+        real_err=[]; shuf_err=[]; real_cos=[]; shuf_cos=[]
+        for x in held:
+            re = vec_l2(x['movement_vector'], proto)
+            se = vec_l2(x.get('shuffled_movement_vector'), proto)
+            if re is not None: real_err.append(re)
+            if re is not None and se is not None: shuf_err.append(se)
+            rc = cosine(x['movement_vector'], proto); sc = cosine(x.get('shuffled_movement_vector'), proto)
+            if rc is not None: real_cos.append(rc)
+            if sc is not None: shuf_cos.append(sc)
+        lineage_eval.append({
+            'parent_code': lin[0], 'child_code': lin[1], 'parent_language': lin[2], 'child_language': lin[3],
+            'train_records': len(train), 'heldout_records': len(held),
+            'mean_heldout_vector_error': round(statistics.mean(real_err), 8) if real_err else None,
+            'mean_shuffled_vector_error': round(statistics.mean(shuf_err), 8) if shuf_err else None,
+            'mean_heldout_cosine': round(statistics.mean(real_cos), 8) if real_cos else None,
+            'mean_shuffled_cosine': round(statistics.mean(shuf_cos), 8) if shuf_cos else None,
+        })
+
+    def vals(key): return [x[key] for x in out if x.get(key) is not None]
+    real_w = [x['real_distance'] for x in out if x.get('wrong_meaning_distance') is not None]
+    wrong = [x['wrong_meaning_distance'] for x in out if x.get('wrong_meaning_distance') is not None]
+    real_s = [x['real_distance'] for x in out if x.get('shuffled_same_meaning_distance') is not None]
+    shuf = [x['shuffled_same_meaning_distance'] for x in out if x.get('shuffled_same_meaning_distance') is not None]
+    le_real=[]; le_shuf=[]
+    for x in lineage_eval:
+        if x['mean_heldout_vector_error'] is not None and x['mean_shuffled_vector_error'] is not None:
+            le_real.append(x['mean_heldout_vector_error']); le_shuf.append(x['mean_shuffled_vector_error'])
+
+    summary = {
+        'test': 13, 'shard': shard,

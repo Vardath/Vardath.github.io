@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import gzip
+import io
+import json
+import math
+import os
+import re
+import sqlite3
+import statistics
+import unicodedata
+import urllib.request
+from collections import Counter, defaultdict
+from pathlib import Path
+
+import man_grid_exact_v4 as V
+import man_grid_test5_v4_shard50 as T5
+
+ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / 'data' / 'man-grid-exact-v4-work'
+WORK = ROOT / 'data' / 'man-grid-test13-exact-v4-work'
+OUT = ROOT / 'data' / 'man-grid-test-13-exact-v4.json'
+DB = WORK / 'test13-historical.sqlite3'
+N = 20
+SOURCE_TEST5_RUN = 34660500756
+SOURCE_TEST5_BASE_ARTIFACT_ID = 10287516871
+RAW = os.environ.get('WIKTEXTRACT_URL', 'https://kaikki.org/dictionary/raw-wiktextract-data.jsonl.gz')
+GAP = T5.GAP
+INH_NAMES = {'inh', 'inh+', 'inherited'}
+
+
+def read_json(path):
+    return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def write_json(path, obj):
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+def read_gz(path):
+    with gzip.open(path, 'rt', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def write_gz(path, obj):
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(path, 'wt', encoding='utf-8', compresslevel=6) as f:
+        json.dump(obj, f, ensure_ascii=False, separators=(',', ':'))
+
+
+def build_byfirst(model):
+    byfirst = defaultdict(list)
+    for pid, p in model['params'].items():
+        nm = unicodedata.normalize('NFC', p['name'])
+        if nm and not any(ch.isspace() for ch in nm):
+            byfirst[nm[0]].append((nm, pid))
+    for k in byfirst:
+        byfirst[k].sort(key=lambda x: (-len(x[0]), x[0], x[1]))
+    return byfirst
+
+
+def validate_model(model):
+    if int(model.get('grid', {}).get('counts', {}).get('total_cells', 0)) != 1074:
+        raise RuntimeError('source model is not the exact 1,074-cell mirrored Man Grid')
+    if len(model.get('root_ids', [])) != 36:
+        raise RuntimeError('source model does not contain the corrected Test 1 36-root inventory')
+    calc = model.get('calculation', {})
+    if calc.get('feature_distance_used_for_test5_reconstruction') is not False:
+        raise RuntimeError('source model is not the corrected mirror-grid model')
+    if calc.get('transformative_circle_operator') is not None:
+        raise RuntimeError('source model unexpectedly contains a learned circle operator')
+    for pid in model['root_ids']:
+        g = model['params'][pid].get('grid', {})
+        if len(g.get('all_left', [])) != 10 or len(g.get('all_right', [])) != 10:
+            raise RuntimeError(f'root {pid} does not carry ten mirrored grid layers')
+
+
+def word_key(s):
+    s = unicodedata.normalize('NFC', str(s or '')).strip()
+    s = re.sub(r'^\*+', '', s)
+    s = s.replace('[[', '').replace(']]', '')
+    s = re.sub(r'<[^>]+>', '', s)
+    s = re.sub(r'\s+', ' ', s)
+    return s.casefold().strip()
+
+
+def parse_inheritance(o):
+    out = []
+    for t in o.get('etymology_templates') or []:
+        name = str(t.get('name') or '').strip().lower()
+        if name not in INH_NAMES:
+            continue
+        a = t.get('args') or {}
+        src = str(a.get('2') or a.get(2) or a.get('source') or a.get('from') or '').strip()
+        term = str(a.get('3') or a.get(3) or a.get('term') or '').strip()
+        pk = word_key(term)
+        if src and pk:
+            out.append((src, pk))
+    return out
+
+
+def init_db():
+    WORK.mkdir(parents=True, exist_ok=True)
+    if DB.exists():
+        DB.unlink()
+    con = sqlite3.connect(DB)
+    con.execute('PRAGMA journal_mode=WAL')
+    con.execute('PRAGMA synchronous=OFF')
+    con.execute('PRAGMA temp_store=MEMORY')
+    con.executescript('''
+      CREATE TABLE lex(lang_code TEXT, lang TEXT, word_key TEXT, concept TEXT, seq TEXT);
+      CREATE TABLE inheritance(
+        child_lang TEXT,
+        child_word TEXT,
+        parent_lang TEXT,
+        parent_word TEXT,
+        PRIMARY KEY(child_lang,child_word,parent_lang,parent_word)
+      ) WITHOUT ROWID;
+    ''')
+    return con
+
+
+def medoid(rows, costs, limit=24):
