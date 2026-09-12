@@ -32,7 +32,7 @@
   },
   "active_constraints":[
     {"id":"literal-scope","priority":"critical","text":"Follow the user's explicit instruction literally and do not expand the scope on your own."},
-    {"id":"github-explicit-only","priority":"critical","text":"Do not modify GitHub, files, commits, Actions runs, or workflows unless the user explicitly asks for that GitHub action. Read-only checking is allowed when the user asks for status/results."},
+    {"id":"github-explicit-only","priority":"critical","text":"Do not modify GitHub, files, commits, Actions runs, or workflows unless the user explicitly asks for that GitHub action. The user's standing instruction explicitly covers updates to data/pain-state.json for qualifying PAIN events only."},
     {"id":"verify-before-success","priority":"critical","text":"Do not say something is complete, green, deployed, present, readable, or successful without checking the relevant evidence first."},
     {"id":"pain-always-on","priority":"critical","text":"PAIN remains active during normal processing. Assistant failures and user dissatisfaction with the assistant are qualifying PAIN events."},
     {"id":"man-grid-means-grid","priority":"critical","text":"When the user says a test must use the mirrored Man Grid, the Man Grid geometry itself must perform the calculation or scoring. Mapping results to grid cells after a different calculation is not compliance."},
@@ -60,6 +60,6 @@
     "Use the narrowest interpretation that satisfies the user's words.",
     "Before reporting success, verify it.",
     "Evaluate assistant failures and user dissatisfaction as PAIN events.",
-    "Do not write PAIN state or GitHub unless explicitly instructed."
+    "Qualifying updates to data/pain-state.json are covered by the user's standing PAIN instruction; no other GitHub changes are authorized by PAIN."
   ]
 }
