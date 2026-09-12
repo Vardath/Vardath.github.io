@@ -1,135 +1,71 @@
 # WNG — refresh memory and continue
 
-Read this before touching the WNG 1.6 repository after any context reset.
+Read this before touching WNG after any context reset.
 
-# ⛔ THE BROAD HISTORY RECOVERY AND PUBLIC RECONCILIATION HAVE ALREADY BEEN DONE
+Author/final design authority: **Vardath**.
 
-Historical/design reconstruction: **`CANONICAL_RECOVERY_LEDGER.md`**.  
-Completed public-vs-plan/private reconciliation: **`PUBLIC_RECONCILIATION_2026-09-11.md`**.  
-Mutable implementation state: **`CURRENT_PUBLIC_STATE.md`**.
+# NO CHECKPOINTS / NO PASS LOGS
 
-Do not make Vardath reconstruct the project again. Do not reread weeks of raw chat by default. Use raw history only for a genuine ledger/reconciliation gap, current-repo contradiction, or explicit Vardath request.
+Checkpoint files and the rebuild pass log were removed on 2026-09-12 by explicit Vardath instruction.
 
-## Identity and authority
+Do **not** recreate them. Do **not** recover project direction from old checkpoint/pass-log prose, pass numbers, stale validation notes or a short “next step” sentence.
 
-- Mod: **Wraith & Nanite Gravtech (WNG)** for RimWorld 1.6.
-- Author/final design authority: **Vardath**.
-- Active code: public `Vardath/Wraith-Nanite-Gravtech-1.6`.
-- Durable continuity: public `Vardath/Vardath.github.io/wng-rebuild/`.
-- Old/private builds are reference evidence only.
-- There are **no known-good historical WNG builds**.
+# ACTIVE AUTHORITY ORDER
 
-## Mandatory recovery order
+1. Newest explicit Vardath instruction.
+2. `STANDING_RULES.md`.
+3. `MASTER_PLAN.md` + active `MASTER_PLAN_APPEND_*` files + `CORRECTIONS_LOG.md`.
+4. `CANONICAL_RECOVERY_LEDGER.md` for recovered historical/design context and superseded-decision evidence.
+5. Actual current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main` for implementation truth: what currently exists in code/Defs/assets.
+6. `PUBLIC_RECONCILIATION_2026-09-11.md`, `CURRENT_PUBLIC_STATE.md`, feature maps and repository contracts only as supporting reference where they still agree with the plan and current public source.
 
-1. Read `STANDING_RULES.md`.
-2. Read **all of `CANONICAL_RECOVERY_LEDGER.md`** for recovered history/design.
-3. Read **all of `PUBLIC_RECONCILIATION_2026-09-11.md`**.
-4. Read **all of `CURRENT_PUBLIC_STATE.md`**.
-5. Read `WNG_IMPLEMENTATION_CHECKLIST.md`.
-6. Fetch current public mod `main`; compare it to the maintained HEAD.
-7. Inspect any newer real commits/files before relying on old state.
-8. Read the active subsystem contract/master-plan append(s).
-9. Read `PLAN_EXECUTION_PROTOCOL.md`.
-10. Continue implementation; do not stop at a summary when Vardath asked to continue.
-11. Update live state/reconciliation before handoff.
+**The plan decides what WNG must become. Current public source decides what has already been built.**
 
-Mandatory working order:
+There are no known-good historical WNG builds. Private/old source is reference evidence only.
 
-**CANONICAL HISTORY -> PUBLIC RECONCILIATION -> CURRENT PUBLIC STATE -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE HANDOFF**
+# RECOVERY PROCEDURE
 
-## Current live public snapshot
+When told “refresh memory and continue”:
 
-Current mod HEAD:
+1. Load PAIN if it is not already loaded.
+2. Read `STANDING_RULES.md`.
+3. Read `MASTER_PLAN.md` completely.
+4. Read all active master-plan append files completely.
+5. Read `CORRECTIONS_LOG.md` completely.
+6. Read `CANONICAL_RECOVERY_LEDGER.md` completely so recovered requirements/history are not lost.
+7. Read `WNG_IMPLEMENTATION_CHECKLIST.md` and `PLAN_EXECUTION_PROTOCOL.md`.
+8. Read the relevant feature map/contract for the plan section being worked on.
+9. Fetch actual current public WNG `main` and inspect newer commits/files before deciding what is absent.
+10. Compare current implementation against the plan, choose the next genuinely unfinished plan requirement, implement it, verify it, and reconcile back against the plan.
 
-**`0e5dfc893a8efec624053e677ae99d6983c25fc9` — `cleanup: remove temporary Neural Lattice validation workflow`**
+Do not make Vardath repeat decisions already preserved in the plan/history. Raw chat retrieval is only for a genuine unresolved conflict/gap, current-source contradiction, or explicit Vardath request.
 
-The canonical ledger's `4af4f60...` implementation snapshot is 45 public commits behind. It is historical only.
+# CORE BUILD RULES
 
-### Hard state rule
+- WNG is a Stargate mod. Establish Stargate identity/function before code.
+- Never silently omit a planned feature.
+- Never delete an existing required feature merely because an older note says rebuild/correct/refine.
+- Preserve approved block Replicator graphics and intended block behavior.
+- Block Replicator hierarchy remains Drone -> Hunter -> Bulwark -> Titan -> Siege Mass with real destruction breakup downward.
+- Replicator specialists/adaptations remain required and tracked.
+- Ordinary Wraith Drain Life, strategic faction hunger, mature-Hive local ecology and mature-Hive retaliation are separate systems.
+- Wraith castes are PawnKind/role layers under one Wraith identity, not separate races.
+- Human-form Replicators/Asurans are distinct from block Replicators.
+- Queen sovereignty, Sovereign Neural Lattice authority and Temporary Asuran intrusion are distinct control layers.
+- Use Wraith Grav Engine, not obsolete Wraith Gravcore semantics.
+- CatCraft owns Stargate network/dial/iris/receive mechanics.
+- Do not invent Goa'uld ship fuel/resource fallbacks.
+- Do not generate replacement art unless Vardath explicitly asks.
+- Planned Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty content stays planned-only until Vardath advances it.
 
-**Public source is implementation truth.**
+# CURRENT-SOURCE RULE
 
-Never claim work exists because:
-- it was discussed;
-- a checkpoint said it was done;
-- work was prepared against the private repository;
-- an old branch contains it;
-- a previous assistant believed it committed.
+Never claim a feature exists because it was discussed, historically implemented, prepared on a branch or described in a continuity document. Verify current public `main`.
 
-If public `main` does not contain an equivalent real implementation, it is not currently implemented.
+Likewise, never rebuild a feature merely because an old continuity note says it was unfinished. Inspect current source first.
 
-### Major implemented foundations
+# CONTINUITY AFTER WORK
 
-- block Replicator hierarchy/specialists/matter/EMP/containment/Child's Toy;
-- Armor/Ranged/Power/Shield adaptation effects, with Grav/broader AntiShield refinements still outstanding;
-- exact Queen vault/release/first recovery/capture boundary;
-- exact Queen sovereignty;
-- physical Sovereign Neural Lattice;
-- human-form nanite physiology/Nanite Reserve and hostile Asuran Lattice foundation;
-- Wraith identity/biology/factions/strategic hunger/mature-Hive/captivity/living-tech foundations;
-- native craft mechanical stacks including **Al'kesh**;
-- Wraith/Asuran gravship mechanical families;
-- transport rings and Wraith stunner;
-- Ha'tak/Death Glider/carrier/orbital foundations.
+Keep the plan/corrections/current-state description truthful when a meaningful implementation changes them. Do not create checkpoint files, pass logs or numbered pass diaries.
 
-### Do not mistake these for complete subsystems
-
-Important current gaps include:
-- Temporary Asuran intrusion;
-- recurring Queen recovery/captured-Queen mixed sovereign threats;
-- Neural Interface copies/reconstruction;
-- infiltration;
-- Quiet Lattice/player human-form variants/mixed human-form roles;
-- native WNG backstories;
-- richer Grav/broader AntiShield integration;
-- Wraith Growth Chamber;
-- strategic hunger involved-Wraith count/names UI stage;
-- broader discovery/story progression;
-- friendly Quiet-Lattice/Puddle-Jumper courier path;
-- standalone Goa'uld ship resource/research path without ONAC;
-- Puddle Jumper final power/fuel abstraction;
-- themed gravship hull corner/diagonal presentation;
-- final professional art/audio;
-- broad live RimWorld/save-load/mod-stack testing.
-
-The complete debt list is in `PUBLIC_RECONCILIATION_2026-09-11.md`.
-
-## Genuine immediate controller slice
-
-**Temporary Asuran lattice intrusion** remains a valid immediate implementation slice.
-
-It must:
-- use `ReplicatorControlAuthority.TemporaryAsuran`;
-- remain temporary;
-- snapshot and restore exact pre-intrusion Queen/Neural-Lattice/autonomous authority/faction/domain state;
-- keep EMP/containment real;
-- keep trigger/range/duration/cap tunable;
-- preserve coherent temporary/restoration state through hierarchy transactions;
-- never grant ordinary Asurans permanent Queen sovereignty.
-
-The existing generic timeout release is not itself the finished restoration mechanic.
-
-After that, derive the next work from actual public `main` plus the **entire** reconciliation debt list, not from a single stale “next” sentence.
-
-## Critical standing reminders
-
-- WNG is a Stargate mod; lore/function check precedes implementation.
-- `next`, `unfinished`, `correct`, `rebuild` or `refine` never means delete required existing content.
-- Ordinary Wraith feeding, strategic faction hunger, mature-Hive feeding ecology and mature-Hive retaliation are separate.
-- Use **Wraith Grav Engine**, not Gravcore.
-- Wraith gravship defense currently uses living-hull regeneration; generic shield reskin was rejected.
-- Do not invent Goa'uld fuel/resources to solve integration inconvenience.
-- CatCraft owns its Stargate network/dial/iris/receive buffer.
-- No replacement/generated art unless Vardath explicitly requests it.
-- Planned Anomaly/Ideology/Iratus/diplomacy/pharmacology/Kassa/Royalty content remains planned until Vardath advances it.
-
-## Handoff maintenance
-
-Before ending a meaningful batch, record:
-- exact new public HEAD;
-- what actually changed;
-- implemented / partial / unfinished / changed-rejected / planned-only / live-test-needed status;
-- superseded decisions;
-- next genuine slice derived from current public source plus the full debt inventory.
-
-The objective is that Vardath can say **“refresh memory and continue”** and work resumes without interrogation or reconstruction.
+The objective is simple: Vardath should be able to say **“refresh memory and continue”** and implementation resumes from the plan and actual public source without reconstruction or checkpoint archaeology.
