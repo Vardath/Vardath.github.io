@@ -1,191 +1,166 @@
 # WNG — Replicator Queen / Asuran recovery / controller design
 
-This is a working first-build design, not immutable canon. Vardath may alter details after testing.
+Author/final design authority: **Vardath**.
 
-## Current implementation checkpoint — 2026-09-11
+This is a working first-build design contract, not an implementation checkpoint and not immutable canon. Vardath may alter any detail after testing.
 
-Public mod implementation through:
+**Implementation status must be determined from current public `Vardath/Wraith-Nanite-Gravtech-1.6` source. Do not use this document to decide that a feature is absent or to choose a “next pass.” The master plan and active corrections define the target.**
 
-**`0e5dfc893a8efec624053e677ae99d6983c25fc9` — validated Sovereign Neural Lattice build with temporary workflow removed**
+# Queen identity
 
-Implemented now:
-- one exact persistent Queen pawn;
-- real cryptosleep-vault release and immediate player recruitment;
-- first physical all-or-nothing four-operative Asuran recovery/capture attempt;
-- capture only when the exact Queen physically leaves inside the exact recovery Jumper transit container;
-- genuine exact-Queen controller-domain authority over real block Replicators;
-- physical Sovereign Neural Lattice implant for bounded non-Queen controller authority;
-- authority persistence through save/load and block split/recombine;
-- dedicated controller-linked block commands;
-- EMP/containment interference and physical-presence validity;
-- controller-domain isolation across hierarchy, Controller coordination, Repairer support and retaliation.
-
-Not yet implemented:
-- temporary Asuran lattice intrusion;
-- later recurring Queen recovery attempts;
-- captured-Queen hostile sovereign consequences / mixed Asuran + block threats;
-- infiltration / broader Neural Interface copy-reconstruction;
-- live RimWorld validation/balance tuning.
-
-## Queen identity
-
-Current exact Queen:
-- unique human-form Replicator individual;
+Current exact Queen design:
+- one unique human-form Replicator individual;
 - female;
-- age 13 in current first-build design;
+- age 13 in the current first-build design;
 - `WNG_NaniteHumanoid` physical identity;
 - unique innate sovereignty belongs only to that exact pawn;
 - one exact pawn/state persists through storyline and capture;
-- ordinary Asuran Operative/Technician/Commander roles remain separate and do not gain Queen authority by sharing physiology.
+- ordinary Asuran roles remain separate and do not gain Queen authority merely by sharing nanite physiology.
 
-## Vault/release — IMPLEMENTED
+# Vault and release contract
 
-- neutral Queen-vault world site;
-- exact Queen physically held in vanilla `CryptosleepCasket`;
-- only the Dormant exact Queen becoming physically spawned on the real vault map triggers release;
-- she joins the player immediately;
-- later map transitions cannot replay release/reset first recovery timer;
-- synthetic Queen does not keep ordinary cryptosleep-sickness residue.
+Required behavior:
+- neutral precursor-style Queen-vault world site;
+- exact Queen physically held in a real vanilla `CryptosleepCasket` or equivalent real cryptosleep chamber;
+- only the dormant exact Queen becoming physically spawned/released on the real vault map triggers her release state;
+- she joins the player immediately on release/spawn;
+- later map transitions cannot replay release or reset the first recovery sequence;
+- synthetic Queen should not retain inappropriate ordinary cryptosleep-sickness residue.
 
-## First Asuran recovery — IMPLEMENTED FOUNDATION
+Discovery timing must remain suitable for short campaigns and author-tunable. Never restore the old hard-coded day-84 schedule.
 
-Current flow:
-1. exact Queen released;
-2. global bounded recovery delay begins;
-3. recovery requires all four configured `WNG_AsuranOperative` pawns to spawn or the partial attempt is rolled back;
-4. operatives are generated without ordinary weapons;
-5. dedicated subdue/load/hold jobs are nonlethal and damage-override-proof;
-6. one exact operative uses native `StunHandler` against the exact Queen;
-7. the real Queen is physically carried to the real Asuran recovery Jumper;
-8. she is transferred into that exact native transporter;
-9. surviving operatives physically board;
-10. stun/down/carry/load are **not capture**;
-11. only the exact shuttle actually leaving the map with the exact Queen still inside commits capture;
-12. successful departure registers the same pawn in exact Asuran faction native kidnapped-pawn state and marks WNG global Queen state captured;
-13. failed/unprovable departure does not silently consume/proxy her.
+# First Asuran recovery/capture contract
 
-Current timings/counts remain Def-tunable.
+The intended physical recovery flow is:
+1. exact Queen is released;
+2. a bounded, tunable recovery delay begins;
+3. the recovery team arrives physically rather than teleporting beside her;
+4. the intended first recovery team is an all-or-nothing four-operative Asuran/Lattice group unless Vardath changes the design;
+5. recovery operatives use nonlethal subdual/carry/load behavior;
+6. the same exact Queen pawn is physically carried to the real recovery craft;
+7. she is transferred into that exact carrier/transporter;
+8. stun/down/carry/load are **not capture**;
+9. only the exact hostile carrier actually leaving the map with the exact Queen still aboard commits capture;
+10. failed/interrupted departure leaves the same pawn recoverable/player-owned;
+11. successful capture preserves exact pawn identity and faction/story state rather than creating a proxy Queen.
 
-## Later recovery raids — UNFINISHED
+Counts, delays, ranges and similar balance values remain author-tunable.
 
-Required:
+# Recurring Queen recovery contract
+
+Later recovery attempts:
 - may target any player map physically containing the exact Queen;
-- never target another map while she is elsewhere/caravaning/off-map/dead/already captured;
-- real raid/entry rather than teleport beside her;
-- physical subdual/carry/carrier departure remains the capture boundary;
-- cadence must remain tunable and non-spammy.
+- must not target a different player map while she is elsewhere, caravaning, off-map, dead or already captured;
+- use real entry/raid/recovery behavior rather than teleporting beside her;
+- retain the same physical subdual/carry/carrier-departure capture boundary;
+- cadence remains tunable and non-spammy.
 
----
+# Controller authority model
 
-# CONTROLLER AUTHORITY
+Block Replicator controller identity is a real state layer separate from faction alone.
 
-## Shared real controller-domain architecture — IMPLEMENTED
+Required authority classes are:
+- autonomous / `None`;
+- exact Queen authority;
+- Sovereign Neural Lattice authority;
+- Temporary Asuran intrusion;
+- captured-retained-Queen remote sovereign access where the current implementation uses that consequence.
 
-`CompReplicatorSovereignty` lives on every WNG block body and distinguishes:
-- `None`;
-- `Queen`;
-- `NeuralLattice`;
-- future `TemporaryAsuran`.
+Same faction does not imply same controller domain.
 
-A controlled block stores exact authority/controller/domain/faction metadata and changes real faction ownership. It remains the same physical hierarchy/adaptation/matter pawn—not a proxy or outbreak modifier.
+A controlled block remains the same physical hierarchy/adaptation/matter pawn. Do not replace real control with a proxy pawn, outbreak count, abstract faction buff or fake mechanitor ownership.
 
-Different controller domains cannot recombine, coordinate, repair or share retaliation simply because faction matches.
+Different controller domains must not casually recombine, coordinate, repair or share retaliation merely because their faction matches.
 
-## Exact Queen authority — IMPLEMENTED
+# Exact Queen authority
 
-Current behavior:
+Required semantics:
 - exact living WNG block targets;
-- exact Queen reference + persistent Queen domain key;
-- block pre-control faction recorded;
-- real faction transfer to Queen's faction;
-- valid while physically together on same map or same caravan;
-- invalid authority releases/restores prior faction where possible;
-- Queen EMP, block EMP and active containment interfere;
-- dedicated move/attack/Repairer/Burrower/recombine/release commands;
-- explicit upward recombination retains real hierarchy requirements;
+- exact Queen reference plus persistent domain identity;
+- pre-control faction/authority state preserved where needed for valid restoration;
+- real faction/control transfer rather than descriptive flags only;
+- authority validity tied to appropriate physical presence such as same map or same caravan unless current design changes;
+- Queen EMP, block EMP and active containment can interfere;
+- dedicated move/attack/Repairer/Burrower/recombine/release control surface where appropriate;
+- upward recombination retains real hierarchy requirements;
 - split/recombine conserves exact Queen domain, adaptations and stored matter;
 - Queen human-form Nanite Reserve remains separate from block stored matter.
 
-Current Def tuning:
-- 40-cell exact-target acquisition;
-- 24-cell nearby-swarm acquisition radius;
-- normal cap 12 controlled spawned bodies.
+Ranges/caps are tunable design data. Do not treat older numeric values as immutable doctrine.
 
-Validation run **34576583840**: C# build, XML parse and sovereignty-domain invariants SUCCESS. Live RimWorld testing pending.
+# Sovereign Neural Lattice authority
 
-## Sovereign Neural Lattice authority — IMPLEMENTED
+The **Sovereign Neural Lattice is a WNG-specific Stargate-derived extrapolation**, not a claim of a canon-named Stargate device.
 
-The **Sovereign Neural Lattice is a WNG-specific Stargate-derived extrapolation**, not a claim of a canon-named device. Its design derives from demonstrated Replicator controller/network behavior including Reese's direct command relationship and later human-form command of block Replicators.
-
-Physical implementation:
-- tangible `WNG_SovereignNeuralLattice` item;
-- research requires Replicator study + Asuran fabrication;
-- fabrication belongs only to `WNG_AsuranWorkshop`;
-- uses real Replicator Core Fragment, `WNG_NaniteSludge`, plasteel and advanced components;
-- native brain `Recipe_InstallImplant` surgery;
-- native `Recipe_RemoveImplant` removal returns the physical item;
-- removal releases the exact bearer's implant domain.
-
-Authority boundary:
-- bearer is **not Queen**;
-- exact Queen cannot create an overlapping implant controller domain over innate Queen authority;
-- authority type is exactly `NeuralLattice`, with exact bearer reference + unique domain key;
-- real block faction transfer/prior faction restoration uses the same proven controller infrastructure;
-- exact-target acquisition only; no Queen nearby-swarm seizure;
-- current Def tuning: **24-cell acquisition range, normal cap 3 controlled bodies, 1,800-tick EMP signal disruption**;
-- after acquisition the shared physical-presence validity is same map/same caravan; 24 cells is current acquisition range, not an ownership-breaking leash;
-- EMP/containment interfere with both acquisition and commands;
+Design purpose:
+- physical implant/item giving a non-Queen bearer bounded, target-specific block-Replicator control;
+- bearer is **not a Queen**;
+- exact Queen should not create a second overlapping implant domain over innate Queen authority;
+- authority type remains distinct from Queen and Temporary Asuran control;
+- physical fabrication/progression should require actual Replicator/Asuran knowledge and materials;
+- native surgery/install/remove mechanics should be used where faithful;
+- removal returns/releases the physical implant/control domain where applicable;
+- exact bearer reference/domain persists through save/load;
+- EMP/containment remain real counterplay;
 - split/recombine preserves exact implant domain;
-- genuine split may temporarily produce more same-domain bodies than the normal acquisition cap because controller identity is conserved;
-- different Queen/implant domains remain isolated.
+- cross-domain merge/repair/coordination/retaliation remains prohibited.
 
-Candidate run **34580535936** found one real compile issue (protected Gizmo field access). It was corrected to public `Command.Disable(...)`.
+Acquisition range, cap and EMP disruption duration remain author-tunable.
 
-Corrected validation run **34580647197**: C# build, all Def/Patch XML parsing and physical implant/research/fabrication/surgery/domain invariants SUCCESS. Temporary workflow removed before promotion. Live RimWorld testing pending.
+# Temporary Asuran lattice intrusion
 
-Current implant graphic is a vanilla mechanics placeholder only; no generated replacement art was created and final dedicated art remains unfinished.
-
-## Temporary Asuran lattice intrusion — NEXT / UNFINISHED
-
-This must remain a third distinct authority model.
+This is a third distinct authority model, not Queen authority and not Neural-Lattice authority.
 
 Required semantics:
-- use `ReplicatorControlAuthority.TemporaryAsuran`;
-- temporary hijack only, not Queen or implant acquisition;
+- use `ReplicatorControlAuthority.TemporaryAsuran` or equivalent distinct current authority identity;
+- temporary hijack only;
 - ordinary Asuran rank/physiology does not confer permanent sovereignty;
-- preserve enough exact prior controller-domain state to restore Queen, Neural-Lattice or autonomous ownership correctly when the override ends;
-- expiry/interruption must not erase pre-existing controller ownership;
+- snapshot/preserve the exact prior authority/controller/domain/faction state;
+- expiry/interruption restores that exact prior state rather than merely releasing everything to autonomous control;
 - duration/range/cap/trigger behavior remains author-tunable;
 - EMP/containment are real counterplay;
-- hierarchy transactions during active override must preserve coherent temporary/restoration state without duplication/cross-domain leakage.
+- split/recombine during the intrusion must preserve coherent temporary state plus restoration metadata;
+- no cross-domain duplication/leakage.
 
-## If Asurans capture the Queen — CONSEQUENCE UNFINISHED
+# Captured-Queen sovereign consequences
 
-Do not model this as an arbitrary `+1 outbreak` or generic faction buff.
+Successful Asuran retention of the exact Queen must have a real consequence, not an arbitrary `+1 outbreak` or generic faction buff.
 
 Intended consequence:
-- suitable future Lattice/Asuran threats can gain **genuine sovereign block access** if the faction retains the exact captured Queen;
-- use real controller/domain state and mixed physical Asuran + block threat composition;
-- do not create duplicate/proxy Queen state.
+- suitable later Asuran/Lattice threats may gain genuine sovereign access to physical block Replicators while the faction retains the exact captured Queen;
+- use real controller/domain state and mixed physical human-form + block threat composition;
+- never create duplicate/proxy Queen state;
+- if the Queen is recovered/lost/dead or sovereignty validity otherwise ends, consequences must follow actual state rather than a permanent ungrounded flag.
 
-## Infiltration / broader Neural Interface — UNFINISHED
+# Infiltration and Neural Interface relationship
 
-Still required later:
-- human-looking infiltrator behavior/reveal mechanics;
-- recruit/imprison/enslave/copy/create-human-form Neural Interface operations where game rules permit;
-- exact copied-person biography/name/skill/passions/appearance/genome continuity;
-- real resource costs and no free duplication loop.
+The broader human-form branch must connect coherently to Queen/controller systems without collapsing identities.
 
-## Validation boundary
+Planned/current-design capabilities include:
+- human-looking infiltration and reveal mechanics;
+- recruit/imprison/enslave/copy/create-human-form Neural Interface operations where game/DLC rules permit;
+- exact copied-person biography/name/skills/passions/XP/appearance/genome continuity where required;
+- real resource costs and no free duplication loop;
+- Quiet Lattice/player human-form variants where the master plan requires them;
+- mixed human-form + block threats where appropriate.
 
-Static compile/XML/API checks are source sanity only. Live gameplay still needs testing for:
-- Queen release/recovery/capture/save-load;
-- Queen control/acquisition/commands/release;
-- Neural Lattice fabrication/install/remove/save-load/control;
-- EMP/containment interruption;
-- split/recombine inheritance/domain isolation;
-- later temporary override restoration.
+Whether each item is already implemented must always be checked against current public source.
 
-## Pacing
+# Save/load and exact-identity rules
 
-Never restore old hard-coded day-84 Queen discovery. Vardath's games may be performance-bound by around day 20; major content needs tunable short-campaign accessibility.
+State that matters must survive correctly:
+- exact Queen pawn identity;
+- vault/release state;
+- recovery/capture state;
+- Queen/implant/temporary controller domains;
+- prior state needed for temporary override restoration;
+- split/recombine controller inheritance;
+- exact captured/recovered Queen consequences.
+
+At-most-once transactions must remain at-most-once through reload. No duplicate Queen, duplicate capture, duplicate restoration or double resource spending.
+
+# Validation boundary
+
+Compile/XML/API checks establish source sanity only. Live RimWorld behavior remains the final authority for gameplay behavior, save/load, UI, AI, transport/capture and balance.
+
+Do not create checkpoint files or pass logs to track this design. Reconcile actual public source against the master plan when continuing work.
