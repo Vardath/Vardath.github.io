@@ -2,61 +2,147 @@
 
 Author/design authority: **Vardath**.
 
-These rules apply at the start of every WNG continuation and throughout the rebuild. Read them before interpreting old code, old plans, old audits or prior assistant summaries.
+These rules govern every WNG continuation. They supersede older checkpoint/pass-log procedures.
 
-0. **⛔ CANONICAL HISTORY + COMPLETED PUBLIC RECONCILIATION + STARGATE LORE FIRST.** The one-time broad WNG chat/history reconstruction was consolidated on 2026-09-11 into `CANONICAL_RECOVERY_LEDGER.md`. A later public-vs-plan/private audit established that its original implementation snapshot was 45 public commits behind and that later checkpoints still omitted real debts. The completed reconciliation is `PUBLIC_RECONCILIATION_2026-09-11.md`. Future sessions must read the canonical ledger completely **and then the public reconciliation completely**, then `CURRENT_PUBLIC_STATE.md`, then verify current public `Vardath/Wraith-Nanite-Gravtech-1.6` `main`, then answer `WNG_IMPLEMENTATION_CHECKLIST.md` before code. **Do not reread weeks of raw chat by default and do not force Vardath to reconstruct the project again.** Retrieve older raw WNG chat only when the canonical history/reconciliation identifies an unresolved gap/conflict, current repo evidence conflicts with maintained continuity, or Vardath explicitly asks for raw-history review. After every meaningful batch, update live continuity so the next recovery starts from state, not archaeology.
-1. **Do not omit any feature.** If a feature, subsystem, branch, faction, caste, race/xenotype, PawnKind, Replicator form, adaptation path, quest, event, integration, craft, gravship part, resource, art family, sound family, UI flow or behavior exists in the current plan/history, it must either be implemented in the rebuild, remain explicitly tracked as unfinished, remain explicitly planned-only/deferred, or be explicitly changed/rejected by Vardath. Never silently simplify it away because it looks secondary, difficult, redundant or inconvenient.
-2. **Vardath is the mod author and final design authority.** Assistant implementation choices are proposals, not permanent doctrine.
-3. **There are no known-good historical builds.** Old code/builds are reference material only.
-4. **Rebuild cleanly rather than preserving accumulated mistakes.** Keep only explicitly preserved assets/behavior and reconstruct the rest from the current plan.
-5. **Nothing is set in stone.** Timers, races/xenotypes, castes, PawnKinds, sounds, art, recipes, resources, balance, quests, progression, UI, processes, systems and the whole mod may be changed later if Vardath dislikes the result.
-6. **Do not hard-code author-tunable design choices as buried magic numbers or immutable doctrine.** Prefer Defs, settings, centralized configuration or clearly editable data where practical. Technical/internal constants are fine when they are implementation details rather than design locks.
-7. **Do not build anti-regression or release-check bureaucracy.** Use only the minimum compile/load/reference sanity needed to implement a functioning mod. Tests must not freeze design choices.
-8. **Do not confuse identity layers.** Race/xenotype, caste/PawnKind, faction role and backstory/biography are separate concepts.
-9. **Do not merge separate gameplay systems merely because they are thematically related.** In particular, ordinary Wraith feeding, strategic Wraith faction hunger, mature-Hive feeding ecology and mature-Hive retaliation are distinct systems.
-10. **Do not substitute a reduced approximation for a planned feature without recording that it is incomplete.** A marker gene is not a finished mechanic; flavor text is not a finished infiltration system; a faction flip is not necessarily a complete sovereign-control system; a bare site is not a complete quest environment.
-11. **Do not erase corrections.** Update durable continuity when Vardath corrects the design or process so later refreshes can see which instruction is current and which was superseded.
-12. **Do not depend on the private WNG repository for current work.** Use the public `Vardath/Wraith-Nanite-Gravtech-1.6` repository and the durable continuity copy under `Vardath/Vardath.github.io/wng-rebuild/` unless Vardath explicitly changes this. Older chat instructions that made the private repo authoritative are superseded historical evidence only. **Never infer that discussed/prepared/private work changed public WNG; verify an equivalent real implementation on public `main`.**
-13. **Do not generate replacement art unless Vardath asks for image/art generation or a specific art task requires it.** Existing approved Replicator graphics are to be preserved through the current reset.
-14. **Continue the build after refreshing memory.** Do not stop after summarizing context when the user asked to continue.
-15. **Follow the plan rigorously before writing code.** Do not implement a subsystem from partial memory, a previous assistant summary, or whichever files happen to be open. Before changing a subsystem, read the canonical history, completed public reconciliation, current live state, standing rules, implementation checklist, relevant master-plan/subsystem contracts, retained assets, current public source/Defs and relevant reference evidence. Every known item must end the pass as implemented, intentionally unfinished with dependency recorded, intentionally planned-only/deferred, or explicitly rejected/changed by Vardath. Never let an item disappear because it was forgotten.
-16. **The plan is the default implementation authority for the first complete build.** Do not improvise away from it merely because another implementation seems easier. If implementation reality requires a departure, record the issue and make the smallest practical adjustment consistent with Vardath's instructions; if the design itself needs changing, Vardath decides.
-17. **Current public state beats stale “next step” prose.** Before treating anything as absent, unfinished or safe to rebuild, inspect current public `main` and recent implementation history. An older note saying “next”, “unfinished”, “reconcile”, “correct” or “rebuild” is not proof the feature is absent. **Rebuild/correct/refine does not mean remove. A named required feature remains required unless Vardath explicitly removes it.**
-18. **A subsystem can be materially implemented and still be partial.** Use the reconciliation status honestly. Examples at the 2026-09-11 baseline include Replicator Grav adaptation (state/visual but richer effect unfinished), Wraith strategic hunger (mechanics present but planned involved-Wraith UI stage unfinished), mature-Hive infrastructure (Growth Chamber missing), craft/gravships (mechanics present but professional presentation/live validation incomplete), and human-form Asurans (physiology foundation present but Neural Interface/infiltration/Quiet Lattice/backstories/mixed threats missing).
-19. **Work in bounded, meaningful passes and checkpoint every pass publicly.** A pass must be large enough to complete a coherent feature batch, not one line or one trivial micro-edit, but small enough to validate and checkpoint before long-session/tool-window failure becomes a risk. **Before beginning the next pass, update `PASS_CHECKPOINTS.md` in the public website continuity repo** with the exact public `main` SHA, active branch/SHA if applicable, what was actually changed, validation status, discovered defects/dependencies, what remains unfinished, and the exact next steps. Branch-only work must be labelled branch-only. If `CURRENT_PUBLIC_STATE.md` becomes stale during a pass, record that fact immediately and correct it no later than the next continuity write.
+# 0. AUTHORITY ORDER — PLAN FIRST, NO CHECKPOINTS
 
-## Mandatory pre-implementation rule
+The active authority order is:
 
-For every subsystem, the order is:
+1. **Newest explicit Vardath instruction.**
+2. **`MASTER_PLAN.md` + active master-plan append(s) + `CORRECTIONS_LOG.md`.** These define what WNG is supposed to be and what must be built.
+3. **`CANONICAL_RECOVERY_LEDGER.md`** only as recovered history/design evidence and for superseded-decision context.
+4. **Current public `Vardath/Wraith-Nanite-Gravtech-1.6` source/Defs/assets** as implementation truth for what already exists right now.
+5. `PUBLIC_RECONCILIATION_2026-09-11.md`, `CURRENT_PUBLIC_STATE.md`, feature maps, old contracts and historical/private work as supporting state/reference evidence only where still consistent with the plan and current public source.
 
-**CANONICAL HISTORY -> PUBLIC RECONCILIATION -> CURRENT PUBLIC STATE -> PASS CHECKPOINTS -> STARGATE LORE -> CURRENT REPO -> ACTIVE CONTRACTS -> VANILLA/OPTIONAL-MOD MECHANICS -> FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE -> UPDATE PASS CHECKPOINT + LIVE STATE/HANDOFF**
+**There are no WNG checkpoint files and there is no WNG pass-log authority. Do not recreate them. Do not decide the next task from an old checkpoint, pass number, short handoff, stale “next” sentence or validation note.**
 
-The detailed gate is `WNG_IMPLEMENTATION_CHECKLIST.md` and must be answered before code is written.
+The plan decides what remains required. Current public source decides what has already been implemented. The next implementation work is the next genuinely unfinished requirement in the plan after checking actual public source.
 
-Do not reverse that order. In particular, do not start writing code and then use the plan, history or Stargate lore afterwards to discover what was forgotten or what the feature was actually supposed to do.
+# 1. CURRENT REPOSITORY AUTHORITY
 
-The explicit procedure is in `PLAN_EXECUTION_PROTOCOL.md` and is part of the rebuild plan.
+- Active implementation repository: public `Vardath/Wraith-Nanite-Gravtech-1.6`.
+- Durable design/continuity repository: public `Vardath/Vardath.github.io/wng-rebuild/`.
+- Private/old WNG repositories and branches are **reference evidence only** unless Vardath explicitly says otherwise.
+- There are **no known-good historical WNG builds**.
+- Never infer that discussed, prepared, private, branch-only or historical work exists in the current mod. Verify public `main`.
 
-## Pass checkpoint protocol
+# 2. FOLLOW THE PLAN, DO NOT IMPROVISE A DIFFERENT MOD
 
-`PASS_CHECKPOINTS.md` is the running operational memory for short rebuild passes.
+- The plan is the default first-build specification.
+- Do not simplify away a required feature because it is difficult, inconvenient or secondary.
+- Every planned feature must end up implemented, explicitly still unfinished, explicitly deferred/planned-only, or explicitly changed/rejected by Vardath.
+- `rebuild`, `correct`, `refine`, `reconcile`, `unfinished` and `next` never mean delete a required existing feature.
+- Vardath can change any part of the plan. Newer instructions override older wording and should be written back into the plan/corrections when appropriate.
 
-After each pass and before the next pass:
-- record exact public `main` HEAD;
-- record exact active branch and branch HEAD if work is not yet promoted;
-- record what was truly implemented, not what was merely planned;
-- distinguish source/Def validation from live RimWorld validation;
-- record any newly discovered defect/dependency;
-- record what remains unfinished in the active feature;
-- record the next coherent batch of work;
-- update `CURRENT_PUBLIC_STATE.md` whenever public `main` or debt classification changed materially.
+# 3. WNG IS A STARGATE MOD
 
-A checkpoint is not optional just because the active code repository is public. The public website continuity repository is specifically available so progress survives resets/timeouts without consuming private-repository budget.
+Before implementing a subsystem:
 
-## Completeness rule for the current reset
+1. establish what it is in Stargate;
+2. establish what it actually does, who uses it, its scale and limitations;
+3. read the relevant plan section and active append/contract;
+4. inspect current public source to see what already exists;
+5. inspect native RimWorld 1.6/DLC mechanics and verified optional-mod ownership;
+6. implement the smallest faithful WNG layer needed.
 
-Before leaving a subsystem and moving to another one, compare it against the canonical design history, `PUBLIC_RECONCILIATION_2026-09-11.md`, current public source and the entire current plan for that subsystem. Make sure no known branch has been silently dropped. If part cannot yet be completed because another dependency is missing, record it explicitly and return when the dependency exists.
+Do not create generic sci-fi substitutes and retrofit Stargate names afterwards.
 
-For Replicators specifically, the fresh rebuild must account for more than the main Drone -> Hunter -> Bulwark -> Titan -> Siege Mass combat ladder. It must also preserve/reconstruct the specialist/adaptation branches described in the plan/history, including Controller, Repairer, Burrower, Artillery/Siege support, ranged adaptation, armor adaptation, power adaptation, grav adaptation, **shield adaptation / shield Replicators and their anti-shield development**, matter economy, EMP behavior, containment, swarm coordination, player behavior, Child's Toy branch, human-form interactions and sovereign/Asuran interactions. None may be silently omitted.
+# 4. DO NOT OMIT FEATURES OR IDENTITY LAYERS
 
-At the reconciled `0e5dfc8...` baseline, the remaining Replicator debt includes recurring/captured-Queen consequences, mixed human-form/block threats, Neural Interface/infiltration, richer Grav behavior and broader AntiShield integration. Temporary Asuran intrusion has since landed publicly and recurring exact-map Queen recovery has also landed publicly; verify current public `main` and `PASS_CHECKPOINTS.md` rather than relying on this historical baseline sentence alone.
+Race/xenotype, caste/PawnKind, faction role and biography/backstory are separate concepts.
+
+Important examples:
+- Wraith are one Wraith identity/xenotype with caste/PawnKind roles such as Hunter, Warrior, Commander, Keeper and Queen.
+- Human-form Replicators/Asurans are nanite humanoids, distinct from block Replicators.
+- Block Replicator size hierarchy, specialists, adaptations and controller authority are separate layers.
+
+For Replicators, the required physical hierarchy remains:
+
+**Drone -> Hunter -> Bulwark -> Titan -> Siege Mass** upward through recombination, and genuine destruction breaks downward through the same ladder.
+
+The specialist/adaptation ecology must remain accounted for, including Controller, Repairer, Burrower, Artillery, Armor, Ranged, Power, Grav, Shield and AntiShield/countermeasure development.
+
+Approved block Replicator graphics remain preserved. Do not generate replacement art unless Vardath explicitly asks for it.
+
+# 5. KEEP DISTINCT GAMEPLAY SYSTEMS DISTINCT
+
+Do not merge systems merely because they share a theme.
+
+Especially:
+- ordinary Wraith Drain Life/feeding;
+- strategic Wraith faction hunger/request pressure;
+- mature-Hive local feeding ecology;
+- mature-Hive neutralization/retaliation;
+
+are separate systems.
+
+Likewise Queen sovereignty, Sovereign Neural Lattice authority and Temporary Asuran intrusion are distinct control identities.
+
+# 6. PRESERVE EXACT IDENTITY AND SAVE/LOAD STATE WHERE IT MATTERS
+
+Do not replace exact pawns with proxy recreations when story or control continuity depends on identity.
+
+Stateful systems include, where relevant:
+- Replicator split/recombine/adaptation/control state;
+- exact Queen identity/capture/sovereignty;
+- temporary controller override/restoration;
+- Neural Interface copies;
+- exact Wraith abductees/captives/rescue;
+- strategic faction hunger/request state;
+- shuttle/ring/gravship cargo and transport state;
+- living-tech incubation;
+- mature-Hive population/retaliation.
+
+At-most-once transactions must remain at-most-once through reload.
+
+# 7. USE NATIVE RIMWORLD/DLC SYSTEMS WHEN THEY FIT
+
+Prefer native RimWorld 1.6, Biotech, Odyssey, Royalty, Ideology and Anomaly systems when they faithfully perform the intended function.
+
+Do not replace correct native boarding, transport, gravship, power, fuel, faction, gene, surgery, containment, research-analysis or save/load behavior with unnecessary parallel systems.
+
+For optional Stargate mods, verify exact package/Def identities from source and respect ownership boundaries. CatCraft owns its Stargate network/dial/iris/receive behavior. ONAC/RimGate own their Goa'uld/Tok'ra/Jaffa systems. Do not guess external Def names.
+
+# 8. NO INVENTED FALLBACKS TO SOLVE IMPLEMENTATION INCONVENIENCE
+
+Do not invent resources, fuels, factions or replacement mechanics merely because integration is difficult.
+
+In particular:
+- use **Wraith Grav Engine**, not obsolete Wraith Gravcore semantics;
+- do not invent uranium/chemfuel or another arbitrary standalone Goa'uld ship fallback;
+- Puddle Jumper final power/fuel design must be deliberate rather than convenience-driven;
+- hostile Ha'tak takeoff must not be faked through deletion/proxy replacement if Odyssey ownership prevents a real implementation.
+
+# 9. AUTHOR-TUNABLE DESIGN STAYS TUNABLE
+
+Do not bury story timing, cooldowns, raid/request frequency, population caps, resource costs, combat tuning or progression thresholds as scattered immutable doctrine.
+
+Use Defs/settings/centralized configuration where practical. Technical constants are fine when they are genuinely implementation details.
+
+# 10. NO DESIGN-LOCKING AUDIT BUREAUCRACY
+
+Do not rebuild the old anti-regression/release-check machinery.
+
+Use only proportionate checks needed to establish function:
+- compile/build when needed;
+- XML/Def/reference sanity;
+- direct code/API inspection;
+- real RimWorld testing, save/load testing, screenshots, `Player.log` and RimDoctor where applicable.
+
+Static green does not equal live gameplay validation.
+
+# 11. WORKING ORDER FOR EVERY IMPLEMENTATION SLICE
+
+**PLAN + CORRECTIONS -> RELEVANT RECOVERED HISTORY -> STARGATE LORE/FUNCTION -> CURRENT PUBLIC SOURCE/ASSETS -> NATIVE/OPTIONAL-MOD MECHANICS -> COMPLETE FEATURE MAP -> IMPLEMENT -> VERIFY -> RECONCILE AGAINST THE PLAN**
+
+Do not write code from memory and then consult the plan afterwards.
+
+# 12. CONTINUITY WITHOUT CHECKPOINTS
+
+After meaningful work, update the durable **plan/corrections/current-state description only when needed to keep them truthful**. Do not create checkpoint files, pass logs, numbered-pass ledgers or branch-status diaries.
+
+A state document may describe what public source contains, but it never outranks the plan and never chooses the next feature by itself.
+
+# 13. CONTINUE WHEN ASKED TO CONTINUE
+
+When Vardath says “refresh memory and continue”, recover the plan and current source and continue implementation. Do not stop at a summary and do not make Vardath reconstruct decisions already preserved in the plan/history.
