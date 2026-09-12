@@ -1,176 +1,228 @@
 # WNG rebuild — corrections and process history
 
-This file records explicit Vardath corrections. These notes override older assistant assumptions and old source behavior. Preserve this file when the plan evolves; append new corrections instead of erasing history.
+Author/final design authority: **Vardath**.
 
-## Process corrections
+This file records explicit corrections that override older assistant assumptions, stale process rules and historical source behavior.
 
-### No known-good state
-Vardath repeatedly corrected the assumption that an older build/commit was “known good.” There are **no known-good historical WNG states**. Old public/private builds can be inspected only for design/reference evidence.
+# NEWEST PROCESS CORRECTION — 2026-09-12
 
-### Rebuild rather than patching accumulated damage
-The active instruction is to rebuild cleanly. Do not keep repairing a tangled current implementation merely because work already exists.
+## No checkpoints or pass logs; rely on the plan
 
-### Preserve Replicator graphics/behavior, rebuild everything else
-For the 2026-09-10 reset, keep the approved block Replicator graphics and preserve/reconstruct the intended Replicator behavior. Everything else is to be rebuilt from the plan.
+Vardath explicitly corrected the continuation process:
 
-### Vardath is the author/design authority
-The mod author is **Vardath**. The assistant implements Vardath’s design and may propose implementation details, but must not convert those proposals into permanent doctrine.
+- stop relying on checkpoints;
+- remove checkpoint files;
+- remove the rebuild pass log;
+- do not recreate checkpoint/pass-log machinery;
+- rely on the **master plan and active append/correction material** to determine what WNG is supposed to contain;
+- use actual current public WNG source only to determine what has already been implemented;
+- do not let a stale “next pass”, validation note, pass number, branch diary or short handoff choose the next feature.
 
-### Nothing is set in stone
-Vardath explicitly stated that timers, races, sounds, art, processes, systems, balance and the entire mod can be changed later if the results are unsatisfactory.
+The active authority order is now:
 
-Therefore any older plan language such as “locked,” “canonical,” “protected,” “must remain stable,” or similar means only “current intended first-build behavior” unless Vardath explicitly says a detail is immutable.
+**newest Vardath instruction -> MASTER_PLAN + active append(s) + CORRECTIONS_LOG -> relevant recovered history -> actual public source for implementation truth.**
 
-### No hard-coded design doctrine
-Do not scatter author-tunable behavior through magic constants. Story/event timing in particular must be adjustable and must not repeat the day-84 mistake. Prefer Defs/settings/configuration/centralized parameters.
+`CURRENT_PUBLIC_STATE.md`, reconciliation documents, feature maps and repository contracts are supporting reference/state evidence only. They do not outrank the plan and do not choose work.
 
-This does **not** ban every literal constant in programming. Internal polling intervals, algorithmic invariants and technical values may be constants where appropriate. The rule is against burying design/balance choices so they are painful to change.
+# CORE PROCESS CORRECTIONS
 
-### No anti-regression/release-check bureaucracy
-Vardath explicitly rejected the large anti-regression/audit/release-check framework that had started to dictate the design.
+## No known-good state
 
-Do not rebuild it. Only use checks that are genuinely necessary to implement a functioning mod, such as compilation or a small reference-validation check when it catches a concrete breakage. Static tests must never decide design acceptance.
+There are **no known-good historical WNG builds**. Old code/builds/branches are reference evidence only.
 
-### Public repo only for current continuity
-Private repo work is currently unavailable/undesired because private credits were exhausted. Keep enough requirements in this website repo and work against public `Vardath/Wraith-Nanite-Gravtech-1.6`. Do not spend private-repo credits or require private access.
+## Rebuild rather than patching accumulated damage
 
-### Do not waste chat turns
-Read the continuity documents and current repo first. Do not ask questions already answered in the plan/history.
+The active reset/rebuild instruction was to reconstruct WNG cleanly from the plan rather than preserving accumulated mistakes merely because code already existed.
 
-### Full WNG chat-history retrieval before mod changes — historical standing correction
-Vardath had already explicitly required on 2026-09-07 that future WNG modifications review previous WNG chats and that handoff summaries were insufficient. On 2026-09-11 this was reinforced after continuity errors caused stale handoff prose to be interpreted as current implementation state.
+This does not mean repeatedly rewriting current working foundations. Current public source must be checked first; existing required implementation that already satisfies the plan should be preserved and refined rather than replaced without reason.
 
-That correction required broad history retrieval because the continuity documents were not yet trustworthy enough to replace the raw conversation history.
+## Preserve approved Replicator graphics and intended behavior
 
-### One-time reconstruction + canonical ledger — NEWER correction, supersedes repeated full-history retrieval
-Later on 2026-09-11, Vardath clarified the intended end state: **do the exhaustive reconstruction once, then every future handoff/recovery must be smooth without requiring Vardath to repeat every decision or requiring the next GPT to reread weeks of chat every time.**
+Approved block Replicator graphics are preserved through the reset. Intended Replicator behavior must remain/reconstruct cleanly. Do not regenerate replacement art unless Vardath explicitly asks.
 
-The broad WNG history/current-state reconstruction was therefore consolidated into `CANONICAL_RECOVERY_LEDGER.md`.
+## Vardath is the author/design authority
 
-Current rule:
-- future sessions read the canonical ledger, standing rules and checklist, then verify current public `main`;
-- do **not** reread weeks of raw WNG chat by default;
-- retrieve raw history only when the ledger flags an unresolved gap/conflict, current repo evidence conflicts with the ledger, or Vardath explicitly asks for raw-history review;
-- resolve a raw-history conflict once and write the resolution back into the ledger;
-- after every meaningful implementation batch, update the ledger with exact public HEAD, actual changes, statuses, superseded decisions and next genuine unfinished slice;
-- the objective is that Vardath can say **“refresh memory and continue”** and work continues without interrogation/reconstruction.
+Assistant implementation choices are proposals/technical decisions, not permanent doctrine.
 
-This newer correction supersedes the earlier process wording that required full raw-chat retrieval before every single code change. The earlier rule remains here as history explaining why the one-time reconstruction was necessary.
+## Nothing is set in stone
 
-### Do not omit features — standing correction
-Vardath explicitly corrected the fresh reset after Shield Replicators and the wider Replicator hierarchy/adaptation branches were omitted from the initial scaffold.
+Timers, races/xenotypes, castes, PawnKinds, sounds, art, recipes, resources, balance, quests, progression, UI, processes and whole systems can be revised by Vardath.
 
-**Standing rule: do not omit any feature.** Every feature, subsystem, branch, faction, caste, race/xenotype, PawnKind, Replicator form, adaptation path, quest, event, integration, craft, gravship component, resource, art/sound family, UI flow and behavior recorded in the current plan/history must either be implemented or remain explicitly tracked as unfinished. Never silently simplify it away because it is difficult, secondary, inconvenient or appears redundant.
+Older words such as “locked”, “canonical”, “protected” or “must remain stable” mean only current first-build intent unless Vardath explicitly declares something immutable.
 
-A temporary partial scaffold may exist during implementation, but it must be identified as partial and cannot be treated as the finished subsystem. Before moving on, compare the subsystem against the whole plan/history and account for all known branches.
+## No buried design doctrine
 
-### Rigorous plan execution — standing correction
-Vardath explicitly challenged the point of maintaining a plan if the assistant still implemented from partial recollection and required repeated corrections. The failure was procedural: the plan, corrections and retained assets already contained information, but implementation began before a complete subsystem reconciliation.
+Do not scatter author-tunable timing/cost/cap/frequency/balance values as buried magic constants. Prefer Defs/settings/centralized configuration where practical.
 
-From this correction onward, **the plan/ledger must be followed rigorously before code is written**. `PLAN_EXECUTION_PROTOCOL.md` is mandatory.
+Technical constants are fine when they are implementation details rather than design locks.
 
-For every subsystem, the assistant must:
-- read the canonical recovery ledger and standing rules;
-- verify current public `main` and recent implementation state;
-- read the active subsystem contracts and Stargate lore/function;
-- inventory retained graphics/assets and all other relevant references;
-- build a complete feature/relationship map before implementation;
-- account for every known feature as implemented, explicitly unfinished with dependency recorded, or explicitly changed/rejected by Vardath;
-- reconcile the subsystem again before moving on;
-- update the canonical ledger before handoff.
+## No anti-regression/release-check bureaucracy
 
-Do not write a partial remembered implementation first and use the plan afterwards to discover omissions. The required order is **ledger -> lore -> current state -> reconcile -> inventory -> map -> implement -> verify -> ledger update**.
+Do not recreate the old design-locking audit/release-check framework. Use only proportionate compile/XML/reference/live checks needed to establish function.
 
-## Gameplay/design corrections
+Static validation does not decide design acceptance and does not equal live gameplay validation.
 
-### Wraith feeding request popup
-The popup/request is **not** triggered by a normal Wraith using Drain Life or feeding.
+## Public repo is current implementation authority
 
-It appears only when a Wraith **faction** becomes strategically hungry enough to request feeding subjects/access. If the player refuses or does not accept the genuine request, raid/attack likelihood rises. This is strategic faction pressure, not an ordinary pawn ability and not necessarily a generic quest.
+Active code: public `Vardath/Wraith-Nanite-Gravtech-1.6`.
 
-### Mature Hive vs strategic hunger
-Mature-Hive feeding stock is local Hive ecology. It must not trigger the strategic feeding-request popup. Mature-Hive neutralization retaliation is another separate system.
+Private/old repositories are reference evidence only unless Vardath explicitly changes that instruction.
 
-### Wraith castes
-Wraith have castes. Hunter, Warrior, Commander, Keeper, Queen, etc. are Wraith caste/PawnKind roles under the Wraith identity, not separate races.
+Never infer public implementation from a private branch, historical commit, discussion or assistant statement.
 
-### Backstories
-Backstories are not races. They are biography/history and must not be used as race/caste identity.
+## Do not waste chat turns reconstructing settled history
 
-### Replicator hierarchy/adaptation branches
-The initial fresh-reset scaffold incorrectly reduced the Replicator design to the primary combat ladder plus a few placeholder specialists. Vardath corrected that omission.
+The broad WNG history recovery was done once and consolidated into `CANONICAL_RECOVERY_LEDGER.md`.
 
-The rebuild must account for the full recorded Replicator ecology, including the primary size ladder **and** specialist/adaptation branches. In particular, **Shield Replicators / shield adaptation are not optional**, including the learned shield specialization and later anti-shield/countermeasure development recorded in the prior design. Controller, Repairer, Burrower, Artillery, ranged, armor, power and grav adaptations must likewise remain represented/tracked. Exact balance and implementation may be redesigned, but the features may not silently disappear.
+Do not reread weeks of raw chat by default. Retrieve raw history only for a genuine unresolved plan/history conflict, current-source contradiction or explicit Vardath request. Resolve it once and write the correction back into durable plan/history material.
 
-### Clarification: “other hierarchy” means the physical small-to-large ladder
-Vardath clarified that the hierarchy being referred to is the full physical size/combat chain and its two-way transformation behavior:
+## Do not omit features
 
-**Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass** upward through recombination, and **Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base** downward through genuine destruction breakup.
+Every feature/branch/faction/caste/xenotype/PawnKind/Replicator form/adaptation path/quest/event/integration/craft/gravship part/resource/art/sound/UI flow/behavior recorded in the current plan must remain implemented, explicitly unfinished, planned-only/deferred or explicitly changed/rejected by Vardath.
 
-Split-born children must be prevented from immediately recombining for approximately **one in-game hour** in the current design (historically 2,500 ticks). This exists specifically so destroying a Siege Mass/Titan does not produce children that instantly rebuild the same large threat and make the big Replicator appear immortal. The delay is a tunable gameplay parameter, not a design-lock audit rule.
+Never silently simplify something away because it is inconvenient or difficult.
 
-### Replicator graphics as completeness evidence
-The approved retained `Textures/Things/Pawn/Replicator` tree itself must be inventoried when reconstructing the Replicator roster. The reset retained graphics for Drone, Hunter, Bulwark, Titan, Siege Mass, Controller, Repairer, Burrower and Artillery plus adaptation overlays for Armor, Ranged, Power, Grav and Shield. Do not copy the graphics tree and then rebuild an incomplete Def/behavior roster from memory alone.
+## Follow the plan before code
 
-### Replicator split behavior
-Large combined block forms must break down into smaller existing forms when destroyed rather than simply disappearing. The transformation state/material economy should survive where appropriate; intentional upward recombination consumption must not accidentally trigger death splitting.
+Do not write a partial remembered implementation and then use the plan afterwards to discover omissions.
 
-### Human-form Replicators
-Human-form Replicators/Asurans are distinct from block Replicator custom races. They are nanite humanoids with appropriate xenotype/genes/PawnKinds and collective/reconstruction/interface systems.
+Working order:
 
-### Mixed raids
-Human-form + block Replicator raid composition can be intentional. Do not prohibit mixed raids just because block recombination is block-only.
+**plan + corrections -> relevant recovered history -> Stargate lore/function -> current public source/assets -> native/optional-mod mechanics -> full feature map -> implement -> verify -> reconcile against plan.**
 
-### Replicator Queen
-Current first-build design:
+# GAMEPLAY / DESIGN CORRECTIONS
+
+## Wraith feeding request popup
+
+The request popup is **not** triggered by normal Wraith Drain Life or ordinary feeding.
+
+It appears only when a Wraith **faction** is strategically hungry enough to request feeding subjects/access. Refusal/non-acceptance/unresolved hunger increases attack/raid pressure according to faction behavior.
+
+This is faction strategy, not a normal pawn ability and not automatically a generic quest.
+
+## Mature Hive vs strategic hunger
+
+Mature-Hive feeding stock is local Hive ecology. It does not trigger the strategic feeding-request popup.
+
+Mature-Hive neutralization retaliation is another separate system.
+
+Therefore keep four distinct systems:
+- ordinary Drain Life;
+- strategic faction hunger/request pressure;
+- mature-Hive local feeding ecology;
+- mature-Hive retaliation.
+
+## Wraith castes
+
+Hunter, Warrior, Commander, Keeper, Queen and related roles are caste/PawnKind layers under the Wraith identity, not separate races.
+
+## Backstories
+
+Backstories are biography/history, not race/xenotype/caste identity.
+
+## Replicator hierarchy and adaptation branches
+
+The block Replicator design is more than a reduced main combat ladder.
+
+Required physical size ladder:
+
+**Drone/base -> Hunter -> Bulwark -> Titan -> Siege Mass** upward through recombination.
+
+Genuine destruction breaks downward:
+
+**Siege Mass -> Titan -> Bulwark -> Hunter -> Drone/base**.
+
+Base Drone is irreducible.
+
+Split-born children currently have an approximately one-hour / 2,500-tick recombination lockout so destroying a large form does not make it instantly rebuild itself. This is tunable.
+
+Required specialist/adaptation ecology includes:
+- Controller;
+- Repairer;
+- Burrower;
+- Artillery/Siege support;
+- Ranged;
+- Armor;
+- Power;
+- Grav;
+- Shield;
+- AntiShield/countermeasure development.
+
+Do not silently omit any of these merely because an old scaffold did.
+
+## Replicator graphics are completeness evidence
+
+Approved retained graphics include Drone, Hunter, Bulwark, Titan, Siege Mass, Controller, Repairer, Burrower and Artillery plus Armor/Ranged/Power/Grav/Shield overlays and Replicator Matter/Core Fragment resources.
+
+The graphics roster itself is evidence of planned forms and must be accounted for.
+
+## Replicator split behavior
+
+Large combined forms must break down into smaller existing forms on genuine destruction rather than simply disappearing.
+
+Intentional upward recombination consumption must not accidentally trigger death splitting. Matter/state/adaptation/control should survive appropriate transformations.
+
+## Human-form Replicators
+
+Human-form Replicators/Asurans are nanite humanoids using Human-pawn systems and their own xenotype/genes/PawnKinds. They are distinct from block Replicator custom forms.
+
+## Mixed raids
+
+Human-form + block Replicator compositions can be intentional. Block recombination rules do not prohibit mixed raid composition.
+
+## Replicator Queen
+
+Current first-build Queen design includes:
 - one exact female human-form Replicator Queen;
-- age 13 in the current design;
-- discovered in a real cryosleep/cryptosleep chamber;
-- she is recruited to the player immediately when released/spawned;
-- hostile Asuran/Lattice operatives attempt to capture her during the vault encounter;
-- later, while she remains player-owned, the Asurans may occasionally raid **any player map where she is physically present** specifically to capture her;
-- no capture raid should target a different player map while she is absent/traveling/off-map;
-- capture commits only after a hostile carrier physically exits the map with the exact Queen pawn;
-- if interrupted before exit she remains recoverable/player-owned;
-- if captured, the Lattice gains real sovereign block-Replicator access in appropriate future threats rather than an arbitrary `+1 outbreak` bonus.
+- current age target 13;
+- real cryosleep/cryptosleep chamber;
+- immediate player recruitment on release/spawn;
+- hostile Asuran/Lattice physical capture attempts;
+- later recovery/capture attempts only on a player map where the exact Queen is physically present;
+- capture commits only after a hostile carrier physically exits with that exact pawn;
+- before exit she remains recoverable/player-owned;
+- captured-Queen consequences give the Lattice genuine sovereign block-Replicator access in appropriate threats, not an arbitrary +1 outbreak modifier.
 
-### Queen pacing correction
-The old “day 84” vault timing was rejected as absurdly late for Vardath’s actual games, which can bog down around day 20. Major WNG content should be reachable much earlier.
+Queen innate authority, Sovereign Neural Lattice authority and Temporary Asuran intrusion are separate control identities.
 
-Do not replace day 84 with another buried magic number. Rebuild discovery/event pacing so it is tunable and suitable for short campaigns. Eligibility should not mean every event is forcibly dumped on the player at once.
+## Queen pacing
 
-### Grav Engine
-A Wraith **Grav Engine** is intended. Do not accidentally restore obsolete “Gravcore” naming/content where the engine should be.
+The old day-84 vault schedule was rejected. Major WNG content must be reachable in shorter campaigns.
 
-### Wraith appearance
-Wraith hair should be strictly pale/white/colorless rather than ordinary random human colors. Long straight Wraith-appropriate hair is preferred where feasible. This is tunable presentation, not a separate race definition.
+Do not replace day 84 with another buried magic number. Pacing remains tunable and should not dump every event at once.
 
-### Wraith Drain Life
-Current first-build behavior remembered from Vardath:
-- full Drain Life/Wither is one coherent ability;
+## Wraith Grav Engine
+
+Use the intended **Wraith Grav Engine**. Do not restore obsolete Wraith Gravcore semantics where the engine is intended.
+
+## Wraith appearance
+
+Wraith hair should be strongly pale/white/colorless rather than ordinary random human colors. Long straight Wraith-appropriate hair is preferred where feasible.
+
+## Wraith Drain Life
+
+Current first-build full-feed target:
+- one coherent Drain Life/Wither ability;
 - victim biological age increases substantially (current target +50 years);
-- Wraith biological age decreases (current target -5 years), not below adulthood/current target age 18;
+- Wraith biological age decreases (current target -5 years) but not below adulthood/current target 18;
 - victim gets temporary Life Drained state;
 - Wraith gets temporary Fed Recently state;
 - duplicated/overwritten genes must not permanently lose their granted ability gizmos.
 
-Exact numeric values may be tuned after testing.
+Exact numeric tuning remains editable.
 
-### Wraith living-tech bootstrap
-Living Forge/workshop and Grav Engine progression should support corpse use as well as a living host where that system remains in the first build, so testing/progression is not dependent on keeping a living victim available.
+## Wraith living-tech bootstrap
 
-### Art generation
-Do not generate new images merely because graphics are being audited. Vardath has explicitly instructed not to generate images unless asked.
+Living Forge/workshop and Wraith Grav Engine progression should support corpse use as well as a living host where the current plan requires that route, so progression/testing is not dependent on keeping a living victim available.
 
-## 2026-09-10 full reset
-Vardath explicitly ordered:
+## Art generation
 
-- copy the full plan/refresh material to the website repository;
-- delete the 1.6 repo working contents;
-- start WNG again;
-- keep only approved Replicator graphics and intended Replicator behavior, or reconstruct that behavior cleanly;
-- rebuild according to the accumulated plan and corrections;
-- no hard-coded design doctrine;
-- no anti-regression or release-check machinery unless absolutely necessary for implementing a functioning mod.
+Do not generate new images merely because graphics are being audited. Only generate/replace art when Vardath explicitly asks for image/art creation.
 
-This reset instruction is historical context, not current implementation state. The current fresh public tree has advanced substantially beyond the reset; use `CANONICAL_RECOVERY_LEDGER.md` plus current public `main` to determine present state.
+# 2026-09-10 RESET CONTEXT
+
+Vardath ordered the public 1.6 mod restarted cleanly, preserving approved Replicator graphics and intended behavior and rebuilding everything else according to accumulated requirements.
+
+That reset is historical context, not current implementation state. Current public source has advanced substantially beyond it.
+
+The reset does not authorize deleting later required/current features. Always compare actual public source against the plan before changing a subsystem.
