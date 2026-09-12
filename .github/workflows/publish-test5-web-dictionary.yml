@@ -1,0 +1,100 @@
+name: Publish Test 5 web dictionary data
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-test5-web-dictionary.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download merged corrected Test 5 result
+        uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t05-50-merged-34660500756
+          path: source-test5
+          repository: Vardath/Vardath.github.io
+          run-id: 34660500756
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build compact web dictionary
+        run: |
+          python - <<'PY'
+          import json, pathlib, statistics
+          src=pathlib.Path('source-test5/man-grid-test-05-exact-v4.json')
+          obj=json.loads(src.read_text(encoding='utf-8'))
+          s=obj['summary']
+          assert obj['status']=='complete'
+          assert obj['shards']==50
+          assert len(obj['entries'])==12000
+          assert s['shards_real_better_than_control']==50
+          assert s['feature_distance_used_for_test5_reconstruction'] is False
+          assert s['mirror_grid_used_for_phoneme_snap'] is True
+          assert s['mirror_grid_used_for_sequence_scoring'] is True
+          entries=sorted(obj['entries'],key=lambda e:int(e.get('rank',0)))
+          out=pathlib.Path('data/man-grid-test5-web'); out.mkdir(parents=True,exist_ok=True)
+          for old in out.glob('part-*.jsonl'): old.unlink()
+          chunk=3000; parts=[]
+          for pi in range(4):
+              subset=entries[pi*chunk:(pi+1)*chunk]
+              p=out/f'part-{pi:02d}.jsonl'
+              with p.open('w',encoding='utf-8') as f:
+                  for e in subset:
+                      row=[e['meaning'],e['ipa'],int(e.get('languages',0)),int(e.get('families',0)),round(float(e.get('mean_family_distance',0)),6),round(float(e.get('stability',0)),6),round(float(e.get('confidence',0)),6)]
+                      f.write(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n')
+              parts.append({'file':p.name,'entries':len(subset)})
+          conf=[float(e.get('confidence',0)) for e in entries]
+          stab=[float(e.get('stability',0)) for e in entries]
+          langs=[int(e.get('languages',0)) for e in entries]
+          fams=[int(e.get('families',0)) for e in entries]
+          dist=[float(e.get('mean_family_distance',0)) for e in entries]
+          index={
+            'version':1,'test_id':5,'title':'Exact mirrored Man Grid — 50-shard reconstructed dictionary','status':'complete','entries':12000,'shards':50,
+            'source_run_id':34660500756,'source_artifact_id':10288413679,'source_artifact_sha256':'07498f7b4959215ac475f2a1a634b514f6f0695db9c6d1b7f30dd15fbb2da7d4',
+            'parts':parts,
+            'row_schema':['meaning','ipa','languages','families','mean_family_distance','stability','confidence'],
+            'grid':{'cells':1074,'all_rectangles_mirrored':True,'layers_per_side':10,'transformative_circle_operator':None},
+            'calculation':{'metric':'exact_mirror_man_grid_10_layer_bilateral','phoneme_snap':'exact mirrored-grid structural distance','sequence_scoring':'bilateral L→R and R→L mean normalized row/column distance across all 10 layers','gap_cost':0.70,'feature_distance_used_for_test5_reconstruction':False,'test4_prior_used':False},
+            'summary':{'shards_real_better_than_control':50,'shards_compared':50,'mean_confidence':round(statistics.mean(conf),6),'median_confidence':round(statistics.median(conf),6),'mean_stability':round(statistics.mean(stab),6),'median_stability':round(statistics.median(stab),6),'confidence_ge_090':sum(x>=.9 for x in conf),'confidence_ge_080':sum(x>=.8 for x in conf),'stability_ge_090':sum(x>=.9 for x in stab),'median_languages':statistics.median(langs),'median_families':statistics.median(fams),'mean_family_distance':round(statistics.mean(dist),6)},
+            'evidence_boundary':obj.get('evidence_boundary')
+          }
+          (out/'index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps({'parts':parts,'summary':index['summary']},indent=2))
+          PY
+
+      - name: Verify compact dictionary
+        run: |
+          test "$(find data/man-grid-test5-web -name 'part-*.jsonl' | wc -l)" -eq 4
+          test "$(cat data/man-grid-test5-web/part-*.jsonl | wc -l)" -eq 12000
+          python - <<'PY'
+          import json, pathlib
+          i=json.loads(pathlib.Path('data/man-grid-test5-web/index.json').read_text())
+          assert i['entries']==12000 and i['shards']==50
+          assert sum(p['entries'] for p in i['parts'])==12000
+          assert i['calculation']['feature_distance_used_for_test5_reconstruction'] is False
+          assert i['summary']['shards_real_better_than_control']==50
+          print('Test 5 web dictionary verified: 12000 entries, 50/50 shards, exact mirror-grid metric.')
+          PY
+
+      - name: Commit compact web dictionary
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test5-web/index.json data/man-grid-test5-web/part-*.jsonl
+          git commit -m 'Publish 12000-entry corrected Test 5 web dictionary' || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
