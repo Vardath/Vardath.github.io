@@ -50,8 +50,8 @@ function css(){
 @media(max-width:430px){#test5MirrorDictionary .t5-grid{grid-template-columns:1fr}}
 `;document.head.appendChild(s);
 }
-async function loadIndex(){const r=await fetch(DATA_ROOT+'index.json?v=20260912-test5dict1',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status+' index');return r.json();}
-async function loadPart(p,pi){if(typeof DecompressionStream==='undefined')throw Error('This browser does not support gzip decompression.');const texts=await Promise.all(p.segments.map(async f=>{const r=await fetch(DATA_ROOT+f+'?v=20260912-test5dict1',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status+' '+f);return (await r.text()).trim();}));const bin=atob(texts.join('')),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));const text=await new Response(stream).text();return text.split(/\r?\n/).filter(Boolean).map((line,i)=>{const v=line.split('\t');return {rank:pi*3000+i+1,meaning:v[0],ipa:v[1],languages:+v[2],families:+v[3],distance:(+v[4])/1e6,stability:(+v[5])/1e6,confidence:(+v[6])/1e6,_part:pi,_line:i+1};});}
+async function loadIndex(){const r=await fetch(DATA_ROOT+'index.json?v=20260912-test5dict2',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status+' index');return r.json();}
+async function loadPart(p,pi){const r=await fetch(DATA_ROOT+p.file+'?v=20260912-test5dict2',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status+' '+p.file);const text=await r.text();return text.split('\n').map(x=>x.trim()).filter(Boolean).map((line,i)=>{const v=JSON.parse(line);return {rank:pi*3000+i+1,meaning:v[0],ipa:v[1],languages:+v[2],families:+v[3],distance:+v[4],stability:+v[5],confidence:+v[6],_part:pi,_line:i+1};});}
 async function loadAll(){const index=await loadIndex();const chunks=await Promise.all(index.parts.map((p,i)=>loadPart(p,i)));return {index,words:chunks.flat()};}
 function confLabel(c){return c>=.9?'very high model fit':c>=.8?'high model fit':c>=.7?'moderate-high model fit':'exploratory';}
 function waitForTest3(attempt=0){
