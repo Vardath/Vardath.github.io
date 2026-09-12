@@ -7,14 +7,17 @@ html=ROOT/'phonetic-bridge.html'
 loader=ROOT/'phonetic-no-autoscroll.js'
 
 text=html.read_text(encoding='utf-8')
-# Collapse every no-autoscroll loader reference to one authoritative tag.
+# Collapse every layout/scroll loader reference to one authoritative pair.
+text=re.sub(r'\s*<script\s+defer\s+src="phonetic-layout-safe-guard\.js\?v=[^"]+"></script>','',text)
 text=re.sub(r'\s*<script\s+defer\s+src="phonetic-no-autoscroll\.js\?v=[^"]+"></script>','',text)
 needle='<script defer src="phonetic-numeral-sounds.js?v=20260905-num1"></script>'
+guard='<script defer src="phonetic-layout-safe-guard.js?v=20260912-guard1"></script>'
 tag='<script defer src="phonetic-no-autoscroll.js?v=20260911-sequence3"></script>'
+insert=guard+'\n'+tag
 if needle in text:
-    text=text.replace(needle,tag+'\n'+needle,1)
+    text=text.replace(needle,insert+'\n'+needle,1)
 else:
-    text=text.replace('</head>',tag+'\n</head>',1)
+    text=text.replace('</head>',insert+'\n</head>',1)
 html.write_text(text,encoding='utf-8')
 
 src=loader.read_text(encoding='utf-8')
@@ -33,11 +36,16 @@ if missing:
     raise SystemExit('Layout/top/audio/corrected-sequence lock missing from phonetic-no-autoscroll.js: '+', '.join(missing))
 
 final=html.read_text(encoding='utf-8')
-count=len(re.findall(r'phonetic-no-autoscroll\.js\?v=',final))
-if count!=1:
-    raise SystemExit(f'Expected exactly one phonetic-no-autoscroll loader, found {count}')
+scroll_count=len(re.findall(r'phonetic-no-autoscroll\.js\?v=',final))
+guard_count=len(re.findall(r'phonetic-layout-safe-guard\.js\?v=',final))
+if scroll_count!=1:
+    raise SystemExit(f'Expected exactly one phonetic-no-autoscroll loader, found {scroll_count}')
+if guard_count!=1:
+    raise SystemExit(f'Expected exactly one safe layout guard, found {guard_count}')
+if final.index('phonetic-layout-safe-guard.js')>final.index('phonetic-no-autoscroll.js'):
+    raise SystemExit('Safe layout guard must load before phonetic-no-autoscroll.js')
 if '20260905-scroll1' in final or '20260910-top-lock23' in final:
     raise SystemExit('Stale phonetic loader cache key returned')
 if '20260911-sequence3' not in final:
     raise SystemExit('Authoritative corrected-sequence loader cache key missing')
-print('phonetic lock OK: refresh-to-top, full-span dictionary, reconstructed-word audio, corrected Man Grid sequence')
+print('phonetic lock OK: safe static layout guard, refresh-to-top, reconstructed-word audio, corrected Man Grid sequence')
