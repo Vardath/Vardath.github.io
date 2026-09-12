@@ -1,0 +1,132 @@
+name: Exact Man Grid v4 Test 6 — 20 shards
+
+on:
+  push:
+    paths:
+      - '.github/workflows/man-grid-v4-test6-shard20.yml'
+      - 'tools/man_grid_test6_v4_shard20.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: exact-man-grid-v4-test6-shard20
+  cancel-in-progress: false
+
+jobs:
+  prepare6:
+    name: Prepare corrected Test 6 attested-language corpus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download corrected Test 5 mirror-grid model
+        uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t05-50-base-34660500756
+          path: data/man-grid-exact-v4-work
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Vardath/Vardath.github.io
+          run-id: 34660500756
+      - name: Download corrected merged Test 5 dictionary
+        uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t05-50-merged-34660500756
+          path: data/test6-source
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Vardath/Vardath.github.io
+          run-id: 34660500756
+      - name: Build 20 deterministic Test 6 language shards
+        run: python tools/man_grid_test6_v4_shard20.py prepare
+      - name: Validate exact Test 6 contract
+        run: |
+          python - <<'PY'
+          import glob, json
+          p='data/man-grid-test6-exact-v4-work/prepared-manifest.json'
+          m=json.load(open(p,encoding='utf-8'))
+          assert m['test_id']==6 and m['status']=='prepared'
+          assert m['shards']==20 and len(m['language_shard_sizes'])==20
+          assert len(glob.glob('data/man-grid-test6-exact-v4-work/language-shard-*.json.gz'))==20
+          assert m['source_test5_entries']==12000
+          assert m['calculation']['feature_distance_used_for_test6_scoring'] is False
+          assert m['calculation']['test4_result_used'] is False
+          assert m['grid']['cells']==1074 and m['grid']['all_rectangles_mirrored'] is True
+          assert m['execution']['merge_requires_all_20'] is True
+          assert m['execution']['workflow_custom_timeout_minutes'] is None
+          print({'test':6,'shards':20,'source_test5_run':m['source_test5_run'],'languages_scanned':m['scan']['languages_with_any_test5_meaning']})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t06-base-${{ github.run_id }}
+          path: |
+            data/man-grid-test6-exact-v4-work/prepared-manifest.json
+            data/man-grid-test6-exact-v4-work/model.json.gz
+            data/man-grid-test6-exact-v4-work/test5-roots.json.gz
+            data/man-grid-test6-exact-v4-work/language-shard-*.json.gz
+          retention-days: 7
+
+  t6_shards20:
+    name: Test 6 v4 shard ${{ matrix.shard }}
+    needs: prepare6
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t06-base-${{ github.run_id }}
+          path: data/man-grid-test6-exact-v4-work
+      - run: python tools/man_grid_test6_v4_shard20.py run --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t06-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-test6-exact-v4-work/t06-result-*.json.gz
+          retention-days: 7
+
+  merge6:
+    name: Merge Test 6 v4 — require all 20
+    needs: t6_shards20
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t06-base-${{ github.run_id }}
+          path: data/man-grid-test6-exact-v4-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t06-s*-${{ github.run_id }}
+          path: data/man-grid-test6-exact-v4-work
+          merge-multiple: true
+      - name: Require every Test 6 shard before merge
+        run: test "$(find data/man-grid-test6-exact-v4-work -name 't06-result-*.json.gz' | wc -l)" -eq 20
+      - run: python tools/man_grid_test6_v4_shard20.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t06-merged-${{ github.run_id }}
+          path: data/man-grid-test-06-exact-v4.json
+          retention-days: 7
+      - name: Publish corrected Test 6 result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-06-exact-v4.json
+          git commit -m "Publish corrected exact-v4 Test 6 20-shard result" || exit 0
+          for n in 1 2 3 4 5 6; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((n*5)); done
+          exit 1
