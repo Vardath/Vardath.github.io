@@ -1,0 +1,137 @@
+name: Exact Man Grid v4 Test 12 — independent ASJP validation 20 shards
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/man-grid-v4-test12-shard20.yml'
+      - 'tools/man_grid_test12_v4_shard20.py'
+  workflow_dispatch:
+
+concurrency:
+  group: exact-man-grid-v4-test12-shard20
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  prepare12:
+    name: Prepare independent Test 12 ASJP evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download corrected Test 11 base model
+        uses: actions/download-artifact@v4
+        with:
+          repository: Vardath/Vardath.github.io
+          run-id: 34681081381
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: exact-v4-t11-base-34681081381
+          path: data/man-grid-test12-source
+      - name: Build 20 deterministic independent Test 12 language shards
+        run: python tools/man_grid_test12_v4_shard20.py prepare
+      - name: Validate exact independent Test 12 contract
+        run: |
+          python - <<'PY'
+          import json
+          p='data/man-grid-test12-exact-v4-work/prepared-manifest.json'
+          d=json.load(open(p,encoding='utf-8'))
+          assert d['test_id'] == 12 and d['shards'] == 20
+          assert d['independent_source']['commit'] == '012795349540ba0dabfdcf2be16f2e77622f62d6'
+          assert d['independent_source']['lexical_forms_used_by_test11_candidate_training'] is False
+          assert d['independent_source']['concepts_overlapping_test11'] >= 90
+          assert d['prepared']['fully_mapped_form_rows'] >= 10000
+          assert d['calculation']['metric'] == 'exact_mirror_man_grid_10_layer_bilateral'
+          assert d['calculation']['feature_distance_used_for_test12_scoring'] is False
+          assert d['calculation']['test5_root_used_for_test12_scoring'] is False
+          assert d['calculation']['test4_result_used'] is False
+          assert d['calculation']['specific_test9_anchor_pair_special_weight'] is False
+          assert d['calculation']['central_circle_operator_used'] is False
+          assert d['grid']['cells'] == 1074 and d['grid']['layers_per_side'] == 10
+          assert len(d['prepared']['language_shard_sizes']) == 20
+          print('Test 12 independent contract validated')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t12-base-${{ github.run_id }}
+          path: |
+            data/man-grid-test12-exact-v4-work/model.json.gz
+            data/man-grid-test12-exact-v4-work/candidates.json.gz
+            data/man-grid-test12-exact-v4-work/prepared-manifest.json
+            data/man-grid-test12-exact-v4-work/asjp-language-shard-*.json.gz
+          retention-days: 7
+
+  shard12:
+    name: Test 12 v4 shard ${{ matrix.shard }}
+    needs: prepare12
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t12-base-${{ github.run_id }}
+          path: data/man-grid-test12-exact-v4-work
+      - name: Run independent Test 12 shard
+        run: python tools/man_grid_test12_v4_shard20.py run --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t12-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-test12-exact-v4-work/t12-result-${{ matrix.shard }}.json.gz
+          retention-days: 7
+
+  merge12:
+    name: Merge Test 12 v4 — require all 20
+    needs: shard12
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t12-base-${{ github.run_id }}
+          path: data/man-grid-test12-exact-v4-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t12-s*-${{ github.run_id }}
+          path: data/man-grid-test12-exact-v4-work
+          merge-multiple: true
+      - name: Require every Test 12 shard before merge
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          missing=[]
+          for i in range(20):
+              p=Path(f'data/man-grid-test12-exact-v4-work/t12-result-{i}.json.gz')
+              if not p.exists(): missing.append(i)
+          if missing: raise SystemExit(f'missing Test 12 shards: {missing}')
+          print('all 20 Test 12 shards present')
+          PY
+      - name: Merge independent Test 12
+        run: python tools/man_grid_test12_v4_shard20.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t12-merged-${{ github.run_id }}
+          path: data/man-grid-test-12-exact-v4.json
+          retention-days: 7
+      - name: Publish corrected Test 12 result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/man-grid-test-12-exact-v4.json
+          git commit -m "Publish corrected exact-v4 Test 12 result"
+          git pull --rebase origin main
+          git push origin HEAD:main
