@@ -372,7 +372,7 @@ def run(shard):
         'calculation_metric': 'exact_mirror_man_grid_10_layer_bilateral',
         'feature_distance_used_for_scoring': False,
     })
-    print(json.dumps({'test': 6, 'shard': shard, 'languages': len(out)}, flush=True))
+    print(json.dumps({'test': 6, 'shard': shard, 'languages': len(out)}), flush=True)
 
 
 def merge():
