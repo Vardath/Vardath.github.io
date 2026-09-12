@@ -8,7 +8,7 @@
   "ui_path":"pain.html",
   "updated_at":"2026-09-12",
   "always_on":true,
-  "pain":100.0,
+  "pain":75.0,
   "mode":"CRITICAL",
   "thresholds":{"NORMAL":[0,24.999],"ELEVATED":[25,49.999],"HIGH":[50,74.999],"CRITICAL":[75,100]},
   "load_protocol":[
@@ -52,13 +52,14 @@
     {"type":"pain_activation_failure","severity":9,"responsibility":100,"impact":8,"recurrence_count":0,"delta":25.2,"summary":"Failed to keep PAIN active during normal processing and required repeated reminders from the user."},
     {"type":"scope_expansion_external_action","severity":9,"responsibility":100,"impact":8,"recurrence_count":2,"delta":42.84,"summary":"While told to continue the WNG rebuild, launched a TinyFish browser automation session for an external .NET Fiddle compile and made branch/continuity GitHub writes without explicit authorization for those specific external actions."},
     {"type":"workflow_publish_failure","severity":7,"responsibility":100,"impact":5,"recurrence_count":0,"delta":12.25,"summary":"Corrected mirrored-Man-Grid Test 5 completed all 50 shards and merged successfully, but the workflow's final publish-to-repository step failed. The merged result artifact exists, but the workflow concluded failure because publication did not complete."},
-    {"type":"workflow_execution_failure","severity":8,"responsibility":100,"impact":7,"recurrence_count":0,"delta":19.6,"summary":"Test 6 20-shard run failed on all shards because the runner passed flush=True into json.dumps instead of print, causing a TypeError after each shard wrote its local result but before artifact upload. The merge was skipped and no usable shard results persisted."}
+    {"type":"workflow_execution_failure","severity":8,"responsibility":100,"impact":7,"recurrence_count":0,"delta":19.6,"summary":"Test 6 20-shard run failed on all shards because the runner passed flush=True into json.dumps instead of print, causing a TypeError after each shard wrote its local result but before artifact upload. The merge was skipped and no usable shard results persisted."},
+    {"type":"verified_repair","pain_before":100.0,"pain_after":75.0,"summary":"The Test 6 shard logging bug was fixed with a one-line correction. Fresh run 34669265024 completed all 20 shards, merged successfully, published the result, and the published Test 6 JSON was verified."}
   ],
   "assistant_runtime_checklist":[
     "Treat PAIN as active throughout normal processing once fetched for the active conversation.",
-    "If PAIN is not loaded, fetch the canonical state before substantive work.",
+    "If PAIN is not loaded, fetch canonical state before substantive work.",
     "Read current pain and mode.",
-    "Apply active constraints before planning the action.",
+    "Apply active constraints before planning.",
     "Inspect related events for recurrence risk.",
     "Use the narrowest interpretation that satisfies the user's words.",
     "Before reporting success, verify it.",
