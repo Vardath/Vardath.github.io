@@ -7,5 +7,6 @@ load('phonetic-man-grid-engine-core.js?v=20260911-engine3')
  .then(()=>load('phonetic-man-grid-rebuild-v2.js?v=20260911-sequence2'))
  .then(()=>load('phonetic-man-grid-original-phonetics-exact-v3.js?v=20260911-exactphon1'))
  .then(()=>load('phonetic-man-grid-tests-2-3-exact-v3.js?v=20260911-tests23-1'))
+ .then(()=>load('phonetic-man-grid-test5-dictionary.js?v=20260912-test5dict2'))
  .catch(e=>console.error('Man Grid corrected sequence failed to load',e));
 })();
