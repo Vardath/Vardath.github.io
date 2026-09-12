@@ -1,0 +1,139 @@
+name: Exact Man Grid v4 Test 10 — 20 shards
+
+on:
+  push:
+    paths:
+      - '.github/workflows/man-grid-v4-test10-shard20.yml'
+      - 'tools/man_grid_test10_v4_shard20.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: exact-man-grid-v4-test10-shard20
+  cancel-in-progress: false
+
+jobs:
+  prepare10:
+    name: Prepare corrected Test 10 common-parent evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download corrected Test 6 base evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t06-base-34669265024
+          path: data/test10-source
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Vardath/Vardath.github.io
+          run-id: 34669265024
+      - name: Build 20 deterministic Test 10 meaning shards
+        run: python tools/man_grid_test10_v4_shard20.py prepare
+      - name: Validate exact Test 10 contract
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/man-grid-test10-exact-v4-work/prepared-manifest.json',encoding='utf-8'))
+          assert p['test_id']==10 and p['shards']==20
+          assert p['grid']['cells']==1074 and p['grid']['all_rectangles_mirrored'] is True
+          assert p['grid']['layers_per_side']==10 and p['grid']['transformative_circle_operator'] is None
+          c=p['calculation']
+          assert c['metric']=='exact_mirror_man_grid_10_layer_bilateral'
+          assert c['feature_distance_used_for_test10_scoring'] is False
+          assert c['test4_result_used'] is False
+          assert c['test5_root_used_for_parent_inference'] is False
+          assert c['central_circle_operator_used'] is False
+          assert p['discovered_anchors']['branch_a']['code']
+          assert p['discovered_anchors']['branch_b']['code']
+          assert p['prepared']['eligible_meanings']>0
+          assert len(p['prepared']['meaning_shard_sizes'])==20
+          assert sum(p['prepared']['meaning_shard_sizes'])==p['prepared']['eligible_meanings']
+          print(json.dumps({'eligible_meanings':p['prepared']['eligible_meanings'],'anchors':[p['discovered_anchors']['branch_a']['name'],p['discovered_anchors']['branch_b']['name']]}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t10-base-${{ github.run_id }}
+          path: data/man-grid-test10-exact-v4-work
+          retention-days: 7
+
+  shard10:
+    name: Test 10 v4 shard ${{ matrix.shard }}
+    needs: prepare10
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t10-base-${{ github.run_id }}
+          path: data/man-grid-test10-exact-v4-work
+      - name: Run Test 10 shard
+        run: python tools/man_grid_test10_v4_shard20.py run --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t10-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-test10-exact-v4-work/t10-result-${{ format('{0:D2}', matrix.shard) }}.json.gz
+          retention-days: 7
+
+  merge10:
+    name: Merge Test 10 v4 — require all 20
+    needs: shard10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t10-base-${{ github.run_id }}
+          path: data/man-grid-test10-exact-v4-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t10-s*-${{ github.run_id }}
+          path: data/man-grid-test10-exact-v4-work
+          merge-multiple: true
+      - name: Require every Test 10 shard before merge
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          root=Path('data/man-grid-test10-exact-v4-work')
+          missing=[i for i in range(20) if not (root/f't10-result-{i:02d}.json.gz').exists()]
+          if missing: raise SystemExit(f'missing Test 10 shards: {missing}')
+          print('all 20 Test 10 shards present')
+          PY
+      - name: Merge Test 10
+        run: python tools/man_grid_test10_v4_shard20.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t10-merged-${{ github.run_id }}
+          path: data/man-grid-test-10-exact-v4.json
+          retention-days: 7
+      - name: Publish corrected Test 10 result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/man-grid-test-10-exact-v4.json
+          if git diff --cached --quiet; then
+            echo 'No Test 10 result change to publish.'
+            exit 0
+          fi
+          git commit -m 'Publish corrected exact-v4 Test 10 result'
+          for n in 1 2 3 4 5 6; do
+            if git push; then exit 0; fi
+            echo "push attempt $n failed; rebasing and retrying"
+            git pull --rebase origin main
+            sleep $((n*4))
+          done
+          exit 1
