@@ -2,19 +2,11 @@
 
 Author/final design authority: **Vardath**.
 
-This map is the pre-implementation reconciliation for the fresh RimWorld 1.6 rebuild after the block Replicator foundation was accounted for. It is not immutable canon. Newer explicit Vardath instructions override it.
+This is a **design/relationship map only**. It is not an implementation checkpoint, current-state inventory or next-task list. The master plan + active append(s) + corrections define the target; actual public `Vardath/Wraith-Nanite-Gravtech-1.6` source defines what is already implemented.
 
-## Current implementation state
+Do not infer present absence/completion from this file.
 
-Fresh public implementation repository: `Vardath/Wraith-Nanite-Gravtech-1.6`.
-
-Verified public `main` before beginning this Wraith reconciliation: `94705ee8894b6659920178e19ea0ebe21555c7be`.
-
-The current clean-reset tree contains the block Replicator foundation only. **No old Wraith implementation is currently present.** This is intentional.
-
-Historical public Wraith source/Defs/assets may be inspected only as reference evidence. There are no known-good historical builds and old code must not be restored wholesale.
-
-## Identity model
+# Identity model
 
 Required relationship:
 
@@ -23,97 +15,87 @@ Required relationship:
 Wraith are one Wraith identity/xenotype, not separate races per caste.
 
 Current caste/PawnKind roles include at minimum:
-- Hunter
-- Warrior
-- Commander
-- Keeper
-- Queen
+- Hunter;
+- Warrior;
+- Commander;
+- Keeper;
+- Queen.
 
-Player-aligned variants may exist where useful, but must remain the same Wraith identity rather than duplicate races.
+Player-aligned variants may exist where useful, but remain the same Wraith identity rather than duplicate races.
 
-Backstories are biography/history only. They must not be used to define race, xenotype or caste.
+Backstories are biography/history only. They do not define race, xenotype or caste.
 
-Status: **not implemented in fresh reset**.
+# Wraith appearance
 
-## Wraith appearance
-
-Current first-build presentation requirements:
-- strongly enforce pale/white/colorless Wraith hair rather than normal random human colors;
+Current first-build presentation goals:
+- strongly pale/white/colorless hair rather than ordinary random human colours;
 - long straight Wraith-appropriate hair preferred where feasible;
-- caste distinction should come from role/apparel/behavior rather than inventing separate races;
-- future visual tuning remains author-editable.
+- caste distinction primarily through role/apparel/behavior rather than separate races;
+- presentation remains author-editable.
 
-Status: **not implemented in fresh reset**.
+# Life Force — core biological resource
 
-## Life Force — core biological resource
-
-Life Force is the central Wraith feeding/regeneration resource.
+Life Force is central to feeding/regeneration/torpor behavior.
 
 Required relationships:
 - feeding raises Life Force;
 - regeneration consumes/is throttled by Life Force;
-- severe depletion can produce torpor/incapacitation behavior;
+- severe depletion can produce torpor/incapacitation;
 - high reserve can support expensive healing/missing-part recovery;
 - hibernation greatly reduces Life Force use;
-- save state must preserve meaningful Life Force values.
+- meaningful state survives save/load.
 
-Exact capacities/drain/healing costs remain tunable and should be centralized/Def-driven where practical.
+Capacities, drain rates and healing costs remain tunable/centralized where practical.
 
-Status: **not implemented in fresh reset**.
+# Drain Life / Wither — ordinary pawn-level feeding
 
-## Drain Life / Wither — ordinary pawn ability
-
-Current first-build full-feed behavior:
+Current first-build full-feed target:
 - one coherent Drain Life/Wither ability rather than duplicate competing abilities;
 - touch-range valid biological target;
-- victim biological age increases substantially (current target +50 years);
-- feeding Wraith biological age decreases (current target -5 years) but not below adulthood/current target age 18;
-- victim receives a temporary `Life Drained` state, roughly 1–2 days in current design;
-- Wraith receives a temporary `Fed Recently` state, roughly about a day in current design;
+- victim biological age increases substantially, current target +50 years;
+- feeding Wraith biological age decreases, current target -5 years, with adult floor around 18;
+- victim receives temporary `Life Drained` state;
+- Wraith receives temporary `Fed Recently` state;
 - repeated full feeding before recovery may become lethal;
 - partial feeding may remain a distinct smaller action;
 - feeding modifies Life Force appropriately;
-- duplicated/overwritten genes must not permanently lose their granted ability gizmos.
+- duplicated/overwritten genes must not permanently lose granted ability gizmos.
 
-**Critical separation:** normal Drain Life/feeding does **not** open the strategic faction feeding-request popup.
+Exact values remain tunable.
 
-Status: **not implemented in fresh reset**.
+**Ordinary Drain Life does not open the strategic faction feeding-request UI.**
 
-## Regeneration / biological recovery
+# Regeneration / biological recovery
 
 Required behavior:
-- Wraith heal more aggressively than ordinary humans where Life Force allows;
+- Wraith heal more aggressively than ordinary humans where Life Force permits;
 - low Life Force throttles regeneration;
-- depleted Wraith may enter torpor rather than freely regenerating;
-- high reserve may regenerate severe injury/missing parts at appropriately high cost;
-- EMP/bioelectric interactions must be reconciled where relevant;
-- exact rates/costs remain tunable.
+- depletion may push Wraith into torpor rather than granting free healing;
+- high reserve may recover severe injury/missing parts at appropriately high cost;
+- bioelectric/EMP interactions must be coherent where relevant;
+- rates/costs remain tunable.
 
-Status: **not implemented in fresh reset**.
+# Strategic Wraith faction hunger — separate system
 
-## Strategic Wraith faction hunger — separate from ordinary feeding
-
-This is a faction-level system, not a pawn ability.
+Strategic hunger belongs to factions/lineages, not ordinary pawn feeding.
 
 Required behavior:
-- each relevant Wraith faction/lineage has strategic hunger/feeding pressure;
-- genuine strategic hunger determines when that faction needs subjects/access;
-- **only genuine strategic faction hunger may create the feeding-request popup**;
-- regular Wraith Drain Life does not create that popup;
-- mature-Hive local feeding stock does not create that popup;
-- refusal/non-acceptance/unresolved hunger increases that faction's raid/attack pressure;
-- hunger should affect request and attack likelihood rather than being mislabeled as a generic quest requirement;
-- state should remain faction-specific rather than global if multiple lineages exist.
+- each relevant Wraith faction has its own strategic feeding pressure;
+- genuine strategic hunger determines when that faction needs feeding access/subjects;
+- only genuine strategic faction hunger may create the feeding-request UI;
+- ordinary Drain Life does not create that UI;
+- mature-Hive local feeding stock does not create that UI;
+- refusal/non-acceptance/unresolved hunger increases raid/attack pressure according to faction behavior;
+- state remains faction-specific rather than global.
 
-Current request UI intent retained from prior design:
-- first stage identifies relevant feeding-stock/prisoner subject(s);
+Current request UI intent:
+- first stage identifies appropriate prisoner/feeding-stock subject(s);
 - player does not choose individual Wraiths in the first modal;
-- next stage shows count/names of involved Wraiths;
-- decision flow remains paused until the decision sequence completes.
+- a following stage shows the exact count/names of involved Wraiths;
+- the decision flow stays paused until complete;
+- cancellation/refusal uses the strategic-hunger consequence path, not ordinary feeding logic.
 
-Status: **not implemented in fresh reset**.
-
-## Mature-Hive feeding ecology — separate system
+# Mature-Hive feeding ecology — separate system
 
 Mature-Hive feeding stock is local site/Hive ecology.
 
@@ -121,25 +103,21 @@ Required behavior:
 - finite biological captives/feeding stock;
 - Feeding Niches hold exact captive pawns where used;
 - feeding stock belongs to the local Hive ecology;
-- local depletion/replacement rules are bounded;
-- local feeding stock does not trigger strategic hunger request UI.
+- local depletion/replacement is bounded;
+- local Hive feeding does not trigger strategic faction hunger request UI.
 
-Status: **not implemented in fresh reset**.
+# Mature-Hive retaliation — separate system
 
-## Mature-Hive retaliation — separate system
+Neutralizing a hostile mature Hive may create delayed retaliation tied to the relevant lineage/site.
 
-Neutralizing a hostile mature Hive can produce delayed retaliation tied to the relevant lineage/site.
-
-This retaliation is separate from:
-- normal Wraith feeding;
+This is separate from:
+- ordinary Wraith feeding;
 - strategic faction hunger/request UI;
-- local feeding-stock ecology.
+- local mature-Hive feeding ecology.
 
 Timing remains tunable and must not be buried as an old fixed schedule.
 
-Status: **not implemented in fresh reset**.
-
-## Wraith factions / politics
+# Wraith factions / politics
 
 Current lineage concepts:
 - **Sable Brood** — uncompromising hostile predatory Hive;
@@ -147,33 +125,31 @@ Current lineage concepts:
 - **Veiled Hive** — cautious/selective/concealment-oriented and capable of negotiation;
 - **Pale Covenant** — exile/offshoot capable of coexistence/trade when supplied appropriately.
 
-Required faction behavior:
-- raid independently of Stargates/ONAC/RimGate;
-- caste-appropriate raid composition;
+Required relationships:
+- factions raid independently of Stargates/ONAC/RimGate;
+- caste-appropriate composition;
 - lineage-specific diplomacy/hostility;
 - exact faction identity preserved through captivity/rescue/retaliation where story depends on it;
 - strategic hunger belongs to the actual faction/lineage;
-- later optional Stargate corridors enhance travel/events but are not required for ordinary Wraith raids.
+- optional Stargate corridors can enhance events/travel but are not required for ordinary Wraith raids.
 
-Status: **not implemented in fresh reset**.
+Future diplomacy/patronage/worship/client-state expansion is recorded in the planned Iratus/diplomacy/Royalty append and must not be implemented until Vardath advances it.
 
-## Wraith captivity / exact-pawn continuity
+# Wraith captivity / exact-pawn continuity
 
-Required behavior supports real pawn identity through:
+The design supports exact identity through:
 - abduction;
 - captivity;
 - feeding stock;
 - prisoner feeding;
 - rescue/recovery;
-- thrall/experiment/hybrid branches where retained by the final plan.
+- later thrall/experiment/hybrid branches where retained.
 
-Do not replace an abducted real pawn with a fake proxy victim when later rescue/story continuity depends on the exact pawn.
+Do not replace an abducted real pawn with a generated proxy when later story/rescue continuity depends on the exact pawn.
 
-Save/load must preserve exact pawn and faction ownership where required.
+Save/load must preserve exact pawn/faction ownership where required.
 
-Status: **not implemented in fresh reset**.
-
-## Mature Hive population / castes / infrastructure
+# Mature Hive population / castes / infrastructure
 
 Required ecology includes:
 - bounded active Wraith population;
@@ -186,161 +162,146 @@ Required ecology includes:
 - bounded replacement/growth rather than infinite spawning;
 - exact site-faction ownership;
 - dormant occupants remain dormant until valid wake conditions;
-- failed generation cleans up partial state rather than leaking pawns/things/world state.
+- failed generation cleans up partial state.
 
-Historical public reference families included `WraithMatureHivePopulation`, `WraithHibernation`, `WraithHibernationPod`, `WraithDormancyVault`, `WraithFeedingNiche`, `WraithHiveHeart` and mature-Hive site/incident workers. These names are reference evidence only, not code authority.
+# Wraith Growth Chamber
 
-Status: **not implemented in fresh reset**.
+Required role:
+- bounded biological Wraith replacement/growth;
+- coherent resource/Queen/Hive requirements;
+- same-faction/Hive linkage where appropriate;
+- caste outcomes limited according to the current plan rather than uncontrolled spawning;
+- exact pawn registration/state handled safely before resource commit;
+- costs/timers/caps remain tunable.
 
-## Wraith growth / biological production
+Generated hostile Mature-Hive placement must not invent an ungrounded electrical/ZPM/Gravcore power source merely to make a Growth Chamber work. Site placement should follow the real Wraith ground-power/bioelectric design when that plan slice is reconciled.
 
-Historical design included Wraith Growth Chamber behavior.
+# Wraith living technology
 
-Required relationship:
-- support bounded Wraith biological growth/replacement where retained;
-- caste outcomes and resource requirements must be coherent with Wraith biology/faction ecology;
-- no uncontrolled infinite spawning;
-- exact timers/costs remain tunable.
+Wraith technology should feel grown, organic and biomechanical rather than generic industrial crafting.
 
-Status: **not implemented in fresh reset**.
+Required concepts:
+- biological interaction/implantation begins the progression;
+- Living Forge/workshop can use living-host and corpse pathways where the current plan requires them;
+- Wraith Grav Engine progression likewise supports the intended biological bootstrap;
+- incubation timings remain tunable;
+- grown structures/weapons have real functions;
+- use **Wraith Grav Engine**, never obsolete Wraith Gravcore semantics.
 
-## Wraith living technology
+# Bioelectric / living-power relationship
 
-Wraith technology should feel grown/organic/biomechanical rather than generic industrial crafting.
+Wraith bioelectric technology should connect coherently to living-tech/gravship/ground-power needs rather than becoming an arbitrary generic generator label.
 
-Required current concepts:
-- biological interaction/implantation starts the progression;
-- Living Forge/workshop can be grown from a living host **or a corpse** where this route remains in the first build;
-- Wraith Grav Engine progression can likewise use living-host/corpse interaction where appropriate;
-- incubation timings are tunable;
-- grown structures/weapons must have actual gameplay functions;
-- **use Wraith Grav Engine, never obsolete Gravcore substitution**.
+Where native Odyssey power behavior correctly supplies the mechanical layer, WNG should use it while preserving Wraith biological identity.
 
-Historical public reference families included `WraithLivingForge`, `WraithGrowthChamber`, `WraithBioelectricOrgan` and related research/recipes. Reference only.
+Any future Mature-Hive ground-power solution must be grounded in the plan/lore and must not be invented solely to satisfy another building.
 
-Status: **not implemented in fresh reset**.
+# Wraith weapons / capture tools
 
-## Bioelectric organ / Wraith biological interaction
+Wraith weapons remain real functional systems with caste/faction-appropriate use and organic/biomechanical identity.
 
-Historical design included a Wraith bioelectric-organ branch and implantation/testing paths.
+The Wraith stun staff is a distinct ranged nonlethal capture weapon:
+- zero ordinary projectile health damage on a normal successful shot;
+- native stun resistance/`StunHandler` remains authoritative;
+- distinct from Drain Life, Dart culling, Goa'uld staff weapons and zats;
+- Hunter/Warrior/Commander/Keeper carrier behavior follows the active plan;
+- Queen/player Wraith roles are not automatically forced to carry it unless Vardath changes the design;
+- final authentic art/audio remains a presentation task.
 
-Required reconciliation before implementation:
-- determine exact role in Life Force, living-tech bootstrap and Grav Engine progression from current plan/history;
-- support corpse interaction where Vardath explicitly required it for Living Forge/Grav Engine testing/progression;
-- avoid recreating obsolete Gravcore semantics.
+# Wraith Dart / culling / abduction
 
-Status: **explicitly unfinished pending detailed living-tech slice reconciliation**.
+The Dart is a core Wraith culling craft/event family.
 
-## Wraith weapons
+Current hostile-culling intent:
+- exactly two real flyover/culling passes in the current first-build design unless Vardath changes it;
+- passes perform actual absorption/culling/abduction, not decorative animation;
+- exact abductee identities persist into captivity/rescue systems;
+- pilot/craft retreat is physically tied to the real shuttle/native lifecycle;
+- Wraith ordinary raids do not depend on Stargates or Dart incidents.
 
-Wraith living weapons remain planned.
-
-Required behavior:
-- real functional weapon effects;
-- caste/faction-appropriate usage;
-- organic/biomechanical identity;
-- professional audio where appropriate later;
-- avoid orphan weapon Defs with no acquisition/use path.
-
-Status: **not implemented in fresh reset**.
-
-## Wraith Dart / culling / abduction
-
-Wraith Dart remains a core Wraith craft/event family.
-
-Current first-build hostile-culling intent:
-- two real flyover/culling passes in the current design;
-- passes perform actual ray-of-absorption/culling/abduction, not decorative flyovers;
-- abductee identities persist into captivity/rescue systems;
-- craft transitions to intended final state after the passes;
-- pass count remains editable by Vardath.
-
-Wraith raids do not depend on Stargates or Dart events.
-
-Status: **later Wraith craft/event dependency; not implemented in fresh reset**.
-
-## Stargate interaction — optional later dependency
+# Stargate integration — optional ownership boundary
 
 CatCraft Stargates! is optional.
 
 Ownership boundary:
 - CatCraft owns gate network/address/dial/iris/shield/receive-buffer mechanics;
-- WNG owns Wraith incidents/corridors/craft/objectives/outcomes;
+- WNG owns WNG incidents/corridors/craft/objectives/outcomes;
 - no replacement Stargate network;
 - no hard dependency;
 - do not steal CatCraft receive-buffer ownership;
-- avoid Harmony takeover where native/API integration works.
+- avoid Harmony takeover when native/API integration works.
 
-Status: **later integration dependency**.
+Friendly Quiet-Lattice/Puddle-Jumper courier behavior is separate from hostile Wraith Dart behavior.
 
-## Wraith gravship family — later dependency
+# Wraith gravship family
 
-A distinct Odyssey-compatible Wraith gravship family remains planned, separate from Asuran/Precursor gravships.
+Wraith uses an Odyssey-compatible gravship family with Stargate/Wraith biological identity.
 
-Must ultimately include real:
-- hull/substructure;
-- walls/corners/diagonals/transitions where needed;
-- functional Wraith Grav Engine;
-- pilot console/node;
-- fuel storage/feed;
-- thrusters/field systems;
-- boarding/world/save-load behavior as appropriate.
+Required family relationships include:
+- real Odyssey gravship engine/connected structure behavior;
+- Wraith living substructure/hull presentation;
+- pilot/control interface;
+- Wraith fuel/resource storage/feed;
+- thrusters/field/support systems;
+- native power network where appropriate;
+- family isolation from Asuran/Goa'uld/vanilla hardware except deliberately shared native elements;
+- physical fuel-routing where current WNG design uses it;
+- vacuum/atmosphere/doors/power/sensors grounded in native Odyssey contracts where they fit;
+- correct save/load/launch/construction behavior.
 
-Do not cross-connect Wraith resources with Asuran/Precursor resources by accident.
+Wraith defensive identity is **living-hull regeneration**, not a generic Wraith energy-shield reskin, unless Vardath later changes that design.
 
-Status: **later craft/gravship subsystem dependency**.
+Final themed hull topology/corners/diagonals/transitions and professional art/audio remain plan requirements even when native mechanics already work.
 
-## Backstories — biography only
+# Native backstories
 
-Native RimWorld 1.6 `BackstoryDef` should be used when WNG biographies are rebuilt.
+Use RimWorld 1.6 `BackstoryDef` for native WNG biographies.
 
-Historical first-build target was 30 WNG backstories across Wraith/synthetic origins and adult histories. Count/content remains editable.
+Backstory pools can align with caste/role but cannot substitute for identity/caste.
 
-Wraith origin concepts included:
+Wraith origin concepts include:
 - Hive creche broodling;
 - Living-ship broodling;
 - Feeding-court ward.
 
-Backstory pools may align with caste/role but cannot substitute for identity/caste.
+Count/content remains editable.
 
-Status: **not implemented in fresh reset**.
+# Discovery / progression
 
-## Discovery / progression
-
-Wraith content participates in the broader progression theme:
+Wraith participates in the broader progression theme:
 
 **mystery -> encounter -> evidence -> understanding -> reconstruction -> mastery**
 
-Historical day-20-to-day-84 schedules are rejected as fixed gating.
-
 Requirements:
-- major WNG/Wraith content must be reachable in short campaigns;
+- major content must be reachable in short campaigns;
+- historical day-20-to-day-84 fixed schedules are rejected;
 - pacing remains tunable/centralized;
 - eligibility should not dump every event at once;
-- encounters/salvage/analysis should introduce advanced tech before full reconstruction.
+- encounters/salvage/analysis should introduce advanced technology before full reconstruction where appropriate;
+- Mature-Hive/Hive-Heart evidence can logically support understanding Wraith living technology;
+- broader ruins/lab/cloning/story progression remains governed by the master plan.
 
-Useful historical site concepts include ruined Wraith laboratories, cloning installations and mature Hive sites.
+# Planned-only future biological branches
 
-Status: **later story/progression layer dependency**.
+Anomaly/Ideology/Iratus/hybrid/diplomacy/pharmacology/Kassa/Royalty branches are recorded in their master-plan append files.
 
-## Audio / presentation
+They are **planned-only until Vardath explicitly advances them**. Their presence in the broader Wraith design must not cause premature implementation.
 
-Professional-level audio remains expected where it meaningfully improves Wraith weapons, craft, feeding, living structures and major incidents.
+# Audio / presentation
 
-No replacement/generated art is to be created unless Vardath explicitly requests image/art generation.
+Professional-level presentation remains required where it meaningfully improves:
+- feeding;
+- living structures;
+- weapons;
+- craft/culling;
+- Hive ambience;
+- gravship/living-tech operation;
+- major events.
 
-Status: **later presentation pass, but audio hooks/Defs should not be designed out of current systems**.
+Do not generate replacement art unless Vardath explicitly asks.
 
-## Immediate Wraith implementation order from this reconciliation
+# Validation / continuity
 
-1. Rebuild one Wraith identity/race/xenotype foundation and caste PawnKinds without race-per-caste mistakes.
-2. Rebuild Life Force and ordinary Drain Life/Wither as a coherent pawn-level system, including age changes, temporary states and regeneration/torpor interactions.
-3. Rebuild the four Wraith factions/lineages and caste-appropriate raid composition.
-4. Rebuild strategic faction hunger and feeding-request pressure **separately** from ordinary feeding.
-5. Rebuild exact-pawn captivity/rescue/feeding-stock foundations.
-6. Rebuild Mature-Hive ecology, population, hibernation, Feeding Niches, Dormancy Vault, Hive Heart and retaliation as separate local systems.
-7. Rebuild Living Forge / biological-tech bootstrap / Wraith Grav Engine progression, including corpse pathways where required.
-8. Rebuild remaining living weapons/growth/backstory/research/progression hooks.
-9. Reconcile the Wraith foundation again before moving to human-form Replicators/Asurans/Queen or craft/integration layers.
+Compile/XML/API checks establish source sanity only. Real `Player.log`, RimDoctor, screenshots, save/load and observed RimWorld behavior outrank static assumptions.
 
-Every item must end its pass as **implemented**, **explicitly unfinished with dependency recorded**, or **explicitly changed/rejected by Vardath**. There is no forgotten state.
+Do not create checkpoint files or pass logs for this map. When continuing, read the master plan/corrections and inspect current public source to determine which design requirements remain unfinished.
