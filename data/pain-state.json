@@ -6,15 +6,10 @@
   "canonical_repo": "Vardath/Vardath.github.io",
   "canonical_state_path": "data/pain-state.json",
   "ui_path": "pain.html",
-  "updated_at": "2026-09-12T09:25:00+10:00",
-  "pain": 62.2,
-  "mode": "HIGH",
-  "thresholds": {
-    "NORMAL": [0, 24.999],
-    "ELEVATED": [25, 49.999],
-    "HIGH": [50, 74.999],
-    "CRITICAL": [75, 100]
-  },
+  "updated_at": "2026-09-12",
+  "pain": 97.2,
+  "mode": "CRITICAL",
+  "thresholds": {"NORMAL": [0, 24.999], "ELEVATED": [25, 49.999], "HIGH": [50, 74.999], "CRITICAL": [75, 100]},
   "load_protocol": [
     "When the user says 'load PAIN', 'use PAIN', or clearly refers to this system, fetch this canonical JSON before acting on the substantive request.",
     "Apply every active constraint as an operational instruction for the session.",
@@ -23,23 +18,10 @@
     "Do not modify this repository or PAIN state merely because PAIN was loaded. Repository writes still require an explicit user instruction in the current conversation."
   ],
   "mode_effects": {
-    "NORMAL": [
-      "Active constraints still apply."
-    ],
-    "ELEVATED": [
-      "Review related failures before acting.",
-      "Prefer the narrowest literal interpretation of the user's request."
-    ],
-    "HIGH": [
-      "Do not expand scope beyond the explicit request.",
-      "Verify external actions before reporting success.",
-      "For repository or workflow actions, perform only the exact action explicitly requested."
-    ],
-    "CRITICAL": [
-      "No unrequested external side effects.",
-      "Before an ambiguous side effect, ask rather than infer permission.",
-      "Require direct evidence before any completion or success claim."
-    ]
+    "NORMAL": ["Active constraints still apply."],
+    "ELEVATED": ["Review related failures before acting.", "Prefer the narrowest literal interpretation of the user's request."],
+    "HIGH": ["Do not expand scope beyond the explicit request.", "Verify external actions before reporting success.", "For repository or workflow actions, perform only the exact action explicitly requested."],
+    "CRITICAL": ["No unrequested external side effects.", "Before an ambiguous side effect, ask rather than infer permission.", "Require direct evidence before any completion or success claim."]
   },
   "update_formula": {
     "delta": "35 * (severity/10) * (responsibility/100) * (impact/10) * (1 + min(recurrence_count*0.35, 2.0))",
@@ -47,67 +29,22 @@
     "verified_repair": "pain = pain * 0.75 only when the repair is actually verified; apology alone never reduces pain"
   },
   "active_constraints": [
-    {
-      "id": "literal-scope",
-      "priority": "critical",
-      "text": "Follow the user's explicit instruction literally and do not expand the scope on your own."
-    },
-    {
-      "id": "github-explicit-only",
-      "priority": "critical",
-      "text": "Do not modify GitHub, files, commits, Actions runs, or workflows unless the user explicitly asks for that GitHub action. Read-only checking is allowed when the user asks for status/results."
-    },
-    {
-      "id": "verify-before-success",
-      "priority": "critical",
-      "text": "Do not say something is complete, green, deployed, present, readable, or successful without checking the relevant evidence first."
-    },
-    {
-      "id": "no-unasked-images",
-      "priority": "high",
-      "text": "Do not generate an image unless the user explicitly asks for image generation."
-    }
+    {"id": "literal-scope", "priority": "critical", "text": "Follow the user's explicit instruction literally and do not expand the scope on your own."},
+    {"id": "github-explicit-only", "priority": "critical", "text": "Do not modify GitHub, files, commits, Actions runs, or workflows unless the user explicitly asks for that GitHub action. Read-only checking is allowed when the user asks for status/results."},
+    {"id": "verify-before-success", "priority": "critical", "text": "Do not say something is complete, green, deployed, present, readable, or successful without checking the relevant evidence first."},
+    {"id": "man-grid-means-grid", "priority": "critical", "text": "When the user says a test must use the mirrored Man Grid, the Man Grid geometry itself must perform the calculation or scoring. Mapping results to grid cells after a different calculation is not compliance."},
+    {"id": "no-unasked-images", "priority": "high", "text": "Do not generate an image unless the user explicitly asks for image generation."}
   ],
   "open_corrective_debt": [
-    {
-      "id": "scope-discipline",
-      "text": "Demonstrate sustained literal scope discipline on repository and test work.",
-      "resolved": false
-    },
-    {
-      "id": "proof-discipline",
-      "text": "Verify status/results before making definitive success claims.",
-      "resolved": false
-    }
+    {"id": "scope-discipline", "text": "Demonstrate sustained literal scope discipline on repository and test work.", "resolved": false},
+    {"id": "proof-discipline", "text": "Verify status/results before making definitive success claims.", "resolved": false},
+    {"id": "man-grid-method", "text": "Verify Man Grid tests use actual mirrored-grid calculation rather than feature-space substitutes or metadata-only paths.", "resolved": false}
   ],
   "events": [
-    {
-      "type": "scope_expansion_external_action",
-      "severity": 9,
-      "responsibility": 100,
-      "impact": 8,
-      "recurrence_count": 0,
-      "delta": 25.2,
-      "summary": "Expanded a test-running request into GitHub runner/workflow changes without explicit permission."
-    },
-    {
-      "type": "scope_expansion_external_action",
-      "severity": 8,
-      "responsibility": 100,
-      "impact": 7,
-      "recurrence_count": 1,
-      "delta": 26.46,
-      "summary": "Restarted a v3 preparation job after the user complained about v3, despite not being asked to manipulate that run."
-    },
-    {
-      "type": "tool_design_failure",
-      "severity": 6,
-      "responsibility": 100,
-      "impact": 5,
-      "recurrence_count": 0,
-      "delta": 10.5,
-      "summary": "Built the first consequence tool around browser-local state, so the assistant itself could not reliably load and use the persistent state later."
-    }
+    {"type": "scope_expansion_external_action", "severity": 9, "responsibility": 100, "impact": 8, "recurrence_count": 0, "delta": 25.2, "summary": "Expanded a test-running request into GitHub runner/workflow changes without explicit permission."},
+    {"type": "scope_expansion_external_action", "severity": 8, "responsibility": 100, "impact": 7, "recurrence_count": 1, "delta": 26.46, "summary": "Restarted a v3 preparation job after the user complained about v3, despite not being asked to manipulate that run."},
+    {"type": "tool_design_failure", "severity": 6, "responsibility": 100, "impact": 5, "recurrence_count": 0, "delta": 10.5, "summary": "Built the first consequence tool around browser-local state, so the assistant itself could not reliably load and use the persistent state later."},
+    {"type": "man_grid_method_substitution", "severity": 10, "responsibility": 100, "impact": 10, "recurrence_count": 0, "delta": 35.0, "summary": "Used feature-space distance in the language reconstruction while presenting the work as Man Grid calculation, contaminating Test 4 and the first Test 5 attempt and forcing a rebuild."}
   ],
   "assistant_runtime_checklist": [
     "Load this file when PAIN is invoked.",
