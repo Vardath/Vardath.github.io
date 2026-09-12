@@ -1,0 +1,41 @@
+<h2 id="how-meltology-fits-the-cosmology-if-treated-as-a-hypothesis">How
+Meltology fits the cosmology if treated as a hypothesis</h2><p>The shell-lattice event already predicts a period of extreme surface
+deformation. A high-energy activation could, in principle, add
+thermal/electrical effects to the mechanical movement. Meltology
+therefore sits at the <strong>Reset / surface-material</strong> stage of
+the event architecture rather than at the Axis/Gate stage.</p><div class="callout good"><p>The strongest version is not “every mountain is a melted building.”
+It is a testable narrower proposition:</p></div><blockquote>
+<p>Some anomalous masonry-like formations claimed by Meltology may
+preserve high-temperature transformation textures. If the Vardath event
+involved strong electrical/plasma heating, those samples should show a
+coherent, datable mineralogical signature distinguishable from ordinary
+geology and ordinary fire damage.</p>
+</blockquote><p>If they do not, the Meltology branch should be rejected without
+damaging the rest of the cosmology.</p><hr/><h1 id="19-the-full-integrated-event">19. The full integrated event</h1><p>Putting the historical strands together gives a much richer sequence
+than the current shell section alone.</p><figure class="vdiagram"><h4>Diagram 11 · Integrated event cycle</h4><svg viewbox="0 0 1100 540"><circle class="soft" cx="550" cy="270" r="175"></circle><circle class="rod" cx="550" cy="270" r="62"></circle><text x="510" y="263">AXIAL</text><text x="497" y="289">WINDOW</text><g><rect class="box" height="60" rx="12" width="180" x="460" y="25"></rect><text x="492" y="61">stable world</text><rect class="box" height="60" rx="12" width="180" x="770" y="95"></rect><text x="803" y="131">activation</text><rect class="box" height="60" rx="12" width="180" x="860" y="250"></rect><text x="891" y="286">convergence</text><rect class="box" height="60" rx="12" width="205" x="735" y="410"></rect><text x="768" y="446">contact / transfer</text><rect class="box" height="60" rx="12" width="205" x="355" y="445"></rect><text x="391" y="481">surface reset</text><rect class="box" height="60" rx="12" width="180" x="70" y="310"></rect><text x="104" y="346">re-opening</text><rect class="box" height="60" rx="12" width="210" x="110" y="120"></rect><text x="143" y="156">new stabilization</text></g><path class="cyan" d="M640 60 C720 62 775 85 800 110 M940 155 C975 195 975 235 950 250 M930 310 C910 365 875 400 835 410 M735 455 C655 490 595 495 560 475 M355 475 C275 450 225 400 205 370 M150 310 C125 245 140 190 185 175 M320 145 C370 90 420 70 460 60"></path></svg><figcaption>The integrated sequence is the current hypothesis tying together axis imagery, gates, water/reset myths, shell mechanics and land deformation.</figcaption></figure><h2 id="phase-0--stable-world">Phase 0 — Stable world</h2><p>A present shell-turn is open and mechanically settled. Geography
+closes normally. Adjacent turns are hidden. The axis exists as geometry
+but is not necessarily visible as a luminous object.</p><h2 id="phase-1--trigger--pulse">Phase 1 — Trigger / pulse</h2><p>An unknown driver changes lattice tension or field state. Historical
+vocabulary: thunder, divine anger, fire, lightning, Birkeland current,
+Phoenix event, “god” approaching.</p><h2 id="phase-2--manifestation-of-the-axis">Phase 2 — Manifestation of
+the axis</h2><p>The changing field makes central and local convergence geometry
+visible. Different observers see:</p><ul>
+<li>Squatter-Man/hourglass plasma forms;</li>
+<li>pillar or rod;</li>
+<li>world mountain;</li>
+<li>world tree;</li>
+<li>cross;</li>
+<li>wheel/eye;</li>
+<li>many-eyed or winged entity;</li>
+<li>serpentine channels.</li>
+</ul><h2 id="phase-3--roll-up--convergence">Phase 3 — Roll-up /
+convergence</h2><p>The expanded lattice tightens finger-trap style. Surface directions
+converge toward one or many axial throats. In projection this is the
+32→1 transition.</p><h2 id="phase-4--boundary-opening">Phase 4 — Boundary opening</h2><p>Normally separated shell turns approach through the throat. Mythic
+vocabulary: doors of heaven, windows, guarded mountain passages,
+ladders, opened firmament, realm-crossing mounts.</p><h2 id="phase-5--operator--vehicle--contact">Phase 5 — Operator /
+vehicle / contact</h2><p>A recurring apparatus or gate is distinguished from whoever appears
+to command or inhabit it. Watchers, Æsir, gods, guardians or “8ers” are
+assigned to the operator/threshold class; chariots, wheels and Sleipnir
+to the vehicle/interface class.</p><p>If larger neighbouring shell turns also imply larger organisms—an
+unproven assumption—this is where giant traditions could enter.</p><h2 id="phase-6--water-release-and-surface-catastrophe">Phase 6 — Water
+release and surface catastrophe</h2>

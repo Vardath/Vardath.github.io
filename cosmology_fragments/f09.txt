@@ -1,0 +1,41 @@
+<figure class="vdiagram"><h4>Diagram 6 · From inventory to gates and paths</h4><svg viewbox="0 0 1100 330"><g><rect class="box" height="80" rx="12" width="165" x="35" y="115"></rect><text x="70" y="147">finite inventory</text><text class="muted" x="83" y="173">gauge n</text><rect class="box" height="80" rx="12" width="150" x="235" y="115"></rect><text x="279" y="147">order</text><text class="muted" x="254" y="173">coordinates</text><rect class="box" height="80" rx="12" width="180" x="420" y="115"></rect><text x="455" y="147">product space</text><text class="muted" x="464" y="173">n², n³ …</text><rect class="box" height="80" rx="12" width="175" x="635" y="115"></rect><text x="670" y="147">symmetry</text><text class="muted" x="660" y="173">compression/orbits</text><rect class="box" height="80" rx="12" width="190" x="845" y="115"></rect><text x="895" y="147">gates</text><text class="muted" x="870" y="173">allowed paths</text></g><path class="cyan" d="M200 155 L235 155 M385 155 L420 155 M600 155 L635 155 M810 155 L845 155"></path><text class="muted" x="345" y="65">the method that separated exact mathematics from attractive coincidence</text><text x="410" y="255">example: 22 letters → C(22,2) = 231 gates</text></svg></figure><p>Its central framework became:</p><p><strong>finite set → order → coordinates → Cartesian product →
+dimensional power → symmetry/constraint → quotient/compression →
+orbit/cycle → emergent number</strong></p><p>The crucial idea was that <strong>order creates coordinates</strong>.
+Once a finite inventory is ordered, product spaces and gate counts arise
+automatically. This let the investigation separate structural
+mathematics from attractive coincidences.</p><h2 id="sator-square">Sator Square</h2><p>The Sator square has 25 cells but only 8 distinct letters. Under a
+four-element symmetry subgroup, the 25 cells compress into 9 geometric
+orbits, with sizes 1, four 2s and four 4s. Two distinct geometric
+classes carry the same R label, giving an intrinsic compression:</p><p><strong>25 → 9 → 8.</strong></p><p>The modern 26-letter ordinal diagonal SRNRS gives 88, while a
+classical-Latin ordering gives 83. That difference taught an important
+lesson: a path value depends on the chosen coordinate/gauge; it is not
+automatically invariant or anciently intended.</p><h2 id="elder-futhark">Elder Futhark</h2><p>Elder Futhark gives an historically real 24=3×8 grouping. The Kylver
+palindrome SUEUS gives 55 under the tested ordinal assignment, exactly
+the fifth square-pyramidal number; ALU gives 27=3³. Those are exact
+correlations, but intention remains a separate historical question.</p><h2 id="sefer-yetzirah-and-231-gates">Sefer Yetzirah and 231 Gates</h2><p>The 22 foundation letters are classified as 3 Mothers + 7 Doubles +
+12 Simples. If every distinct unordered non-self pair is treated as a
+gate:</p><p><strong>C(22,2)=231 = 3×7×11.</strong></p><p>The mathematics is forced once the operation is chosen. The
+historical manuscript tradition, including 221/231 variants, must still
+be distinguished from the combinatorics.</p><h2 id="maya-and-144000">Maya and 144,000</h2><p>A Maya baktun is exactly <strong>144,000 days</strong>, while
+Revelation separately uses 144,000 through 12×12,000 and 144=12² in New
+Jerusalem imagery. This is a striking exact convergence but does not
+establish historical contact.</p><p>The Maya Haab and Egyptian civil year both show a
+<strong>360+5=365</strong> architecture through different constructions.
+Maya Tzolk’in gives 13×20=260, numerically equal to the magic constant
+of a normal 8×8 magic square. Again: exact arithmetic equality, not
+automatic common origin.</p><h2 id="language-as-gauge-not-alphabet-mysticism">Language as gauge, not
+alphabet mysticism</h2><p>Exploration of 8 eventually reframed language as a <strong>gauge/path
+system</strong>. An inventory of n states provides lanes or coordinates.
+n^k counts ordered k-position state spaces. C(n,2) counts unordered pair
+gates. Grammar and phonotactics select allowed routes. A word is a
+path.</p><p>That framework directly produced the Phonetic Bridge project and also
+fed back into cosmology: a lattice is not defined only by its nodes. Its
+meaning lies in <strong>allowed paths, gates, symmetries and phase
+transitions</strong>.</p><h2 id="the-classification-discipline">The classification
+discipline</h2><p>Every match should be classified before interpretation:</p><p>A. mathematically forced / inevitable; B. culturally selected but
+internally derived; C. historically transmitted / genealogically
+related; D. cross-cultural convergence without established transmission;
+E. hypothesis requiring evidence.</p><p>Vardath Cosmology inherits this system. It is the main protection
+against turning the site into a catalogue where every resemblance is
+treated as equal evidence.</p><hr/><h1 id="11-the-three-shell-hypothesis-and-the-archaix-timing-test">11.
+The three-shell hypothesis and the Archaix timing test</h1>

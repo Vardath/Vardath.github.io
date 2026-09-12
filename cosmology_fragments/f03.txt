@@ -1,0 +1,84 @@
+<table>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Development</th>
+<th>What survived into the mature model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Feb 2025</td>
+<td>Rainbow Serpent as charged creator/land-shaper</td>
+<td>serpent/energy + land deformation + water/reset</td>
+</tr>
+<tr class="even">
+<td>late 2025</td>
+<td>Squatter Man / pictograph-plasma comparison</td>
+<td>axial/hourglass morphology, perspective problem</td>
+</tr>
+<tr class="odd">
+<td>Dec 2025</td>
+<td>bell enclosure; four lands/four rivers; central spike</td>
+<td>enclosure, fourfold upper geometry, axis</td>
+</tr>
+<tr class="even">
+<td>Feb 2026</td>
+<td>caduceus-like world apparatus; canopy/flooded upper room</td>
+<td>paired channels, central rod, hidden upper region</td>
+</tr>
+<tr class="odd">
+<td>Aug 8 2026</td>
+<td>many gods as one recurring phenomenon; Sleipnir as interface</td>
+<td>one event, many cultural “camera angles”; transport/gate role</td>
+</tr>
+<tr class="even">
+<td>Aug 10–16</td>
+<td>7/8/11/33/137; JANUS</td>
+<td>threshold language; formal lattice and polarity</td>
+</tr>
+<tr class="odd">
+<td>Aug 28–30</td>
+<td>nested layers; Aetio/Atel/Ase role equivalence</td>
+<td>shell layers; centre/generator/doorway category</td>
+</tr>
+<tr class="even">
+<td>Sep 3–4</td>
+<td>Exploration of 8</td>
+<td>rigorous gate/state-space classification</td>
+</tr>
+<tr class="odd">
+<td>Sep 12–13</td>
+<td>Archaix three-shell timing; ammonite; finger-trap sky</td>
+<td>present braided shell model</td>
+</tr>
+</tbody>
+</table><hr/><h1 id="2-rainbow-serpent-the-earliest-recoverable-branch">2. Rainbow
+Serpent: the earliest recoverable branch</h1><p>The Rainbow Serpent branch matters because it supplies the oldest
+recovered version of the same geometry later attributed to dragons,
+caduceus snakes, Vṛtra, Tiamat and the braided lattice.</p><p>The traditional Aboriginal Australian material must be kept distinct
+from the Vardath reinterpretation. Rainbow Serpent traditions vary
+between language groups and regions; there is no single pan-Australian
+canonical story. In Kakadu, for example, the Rainbow Serpent is a major
+creator ancestor associated with waterholes, rock passages, hills,
+habitat, seasonal life and care for Country. The <strong>plasma</strong>
+interpretation is a modern Vardath layer placed on top of that
+tradition, not an Indigenous teaching.</p><p>Within the Vardath model, the Serpent became a moving high-energy
+channel that could leave topographic traces. This was the first form of
+what later became the moving lattice: a structure that is not merely
+seen in the sky but <strong>moves matter</strong>.</p><p>The early “Serpent bites the Sun” retelling introduced another motif
+that later recurs with Indra/Vṛtra and Tiamat/Marduk: a dangerous
+energetic or serpentine obstruction is confronted by a storm/wind/water
+counterforce, after which water and life return to a new
+equilibrium.</p><hr/><h1 id="3-squatter-man-petroglyphs-and-the-hanging-figure-geometry">3.
+Squatter Man, petroglyphs and the hanging-figure geometry</h1><p>“Squatter Man” became useful because the figure compresses several
+later motifs into one diagram: vertical axis, pinched middle, lateral
+extensions, possible upper and lower lobes, and an anthropomorphic
+appearance.</p><figure class="vdiagram"><h4>Diagram 2 · Axial/hourglass morphology</h4><svg viewbox="0 0 900 380"><line class="violet" x1="450" x2="450" y1="35" y2="345"></line><path class="cyan" d="M190 85 C315 75 365 120 450 190 C535 120 585 75 710 85"></path><path class="cyan" d="M190 295 C315 305 365 260 450 190 C535 260 585 305 710 295"></path><ellipse class="soft" cx="450" cy="190" rx="55" ry="75"></ellipse><line class="soft" x1="300" x2="600" y1="190" y2="190"></line><text x="380" y="25">axis</text><text class="muted" x="90" y="80">upper lateral lobes</text><text class="muted" x="85" y="318">lower lateral lobes</text><text x="540" y="180">pinch / body</text><text class="muted" x="560" y="210">anthropomorphic projection</text></svg><figcaption>A neutral schematic of the geometry that made the Squatter-Man / plasma comparison attractive. It does not reproduce any particular petroglyph.</figcaption></figure><p>The Peratt plasma-petroglyph hypothesis proposed that some globally
+recurring petroglyph forms could record intense auroral/plasma phenomena
+associated with high-current Z-pinches. That is a controversial
+proposal, not an archaeological consensus. Vardath Cosmology treats it
+as a <strong>candidate visual mechanism</strong>, not as a demonstrated
+reading of the art.</p><p>The important historical move in our chats was broader than Peratt.
+Once an axial plasma form could look anthropomorphic, other religious
+figures could be compared by <em>geometry rather than name</em>:</p>

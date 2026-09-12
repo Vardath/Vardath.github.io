@@ -1,0 +1,51 @@
+<ul>
+<li>138, ~395 and 792 as three simple pairwise constant-rate rotation
+periods;</li>
+<li>literal north-pole azimuthal map as the physical geographic
+surface;</li>
+<li>logarithmic spiral angle used directly as longitude;</li>
+<li>current φ law as exact derivation of 395/792;</li>
+<li>automatic equation of 144,000 days with 144,000 units of shell
+size;</li>
+<li>any claim that JANUS v1.0 itself derives physical cycles, α, Earth
+tilt, mythology or a literal helix.</li>
+</ul><hr/><h1 id="21-falsification-programme">21. Falsification programme</h1><p>The cosmology becomes more valuable when it can fail.</p><h2 id="a-global-deformation-field">A. Global deformation field</h2><p>Fix lattice-node coordinates and shear directions before comparing
+all continents. Generate a global vector field. Test it against
+coastlines, faults, trenches, mountain axes and GPS plate vectors.</p><p><strong>Failure:</strong> each region needs its own ad hoc node
+placement.</p><h2 id="b-stable-layer-metric">B. Stable-layer metric</h2><p>Specify the metric inside one stable world. Recover actual geodesic
+distances and closed coastlines.</p><p><strong>Failure:</strong> southern distances inherit the extreme
+distortions of ordinary polar flat maps.</p><h2 id="c-celestial-geometry">C. Celestial geometry</h2><p>Specify Sun, Moon, star and observer trajectories in the shell/braid
+system.</p><p><strong>Failure:</strong> northern and southern circumpolar
+observations cannot be generated simultaneously.</p><h2 id="d-chronology-holdout">D. Chronology holdout</h2><p>Calibrate gate layout and growth/phase laws on only part of the
+proposed event chronology. Predict withheld events.</p><p><strong>Failure:</strong> every new event requires a new phase
+offset, gate or fitted strength rule.</p><h2 id="e-myth-sequence-coding">E. Myth-sequence coding</h2><p>Before reading target myths, define objective criteria for Axis,
+Gate, Operator, Vehicle, Manifestation, Medium, Witness and Reset.
+Compare target traditions with negative controls.</p><p><strong>Failure:</strong> matches depend on flexible synonyms or only
+appear after the story is known.</p><h2 id="f-meltology-materials-test">F. Meltology materials test</h2><p>Blind-test claimed transformed masonry against ordinary rock, known
+fired brick, vitrified brick and natural volcanic/metamorphic samples
+using petrography, XRD, chemistry and dating.</p><p><strong>Failure:</strong> samples are normal geological material or
+show no coherent high-temperature architectural precursor.</p><h2 id="g-energy-budget">G. Energy budget</h2><p>Estimate the mass moved/heated and the duration of the proposed
+event. Derive a field/force/energy source.</p><p><strong>Failure:</strong> required energy is impossible within the
+model or would produce unobserved global signatures.</p><h2 id="h-layer-contact-mechanism">H. Layer-contact mechanism</h2><p>Specify real radial positions, thicknesses, chirality and overlap of
+shell turns.</p><p><strong>Failure:</strong> “contact” exists only as symbolic phase
+language with no physical intersection.</p><hr/><h1 id="22-working-glossary">22. Working glossary</h1><p><strong>Axis</strong> — central geometric connector: rod, tree,
+mountain, cross-line or scroll-rod.</p><p><strong>Active braid</strong> — two opposed strands linking
+neighbouring stable shell turns.</p><p><strong>Aetio/Atel/Ase branch</strong> — August 2026 role-equivalence
+hypothesis around centre/generator/threshold; not an etymological
+theorem.</p><p><strong>Convergence throat</strong> — region where surface directions
+narrow into an axial state.</p><p><strong>33rd direction</strong> — modern Vardath name for the axis
+through a 32-bearing surface network; not a historical compass
+point.</p><p><strong>Gate</strong> — privileged position/phase where transition or
+coupling is possible.</p><p><strong>Operator</strong> — narrative agent associated with
+controlling/crossing a gate; not necessarily identical with the
+apparatus.</p><p><strong>Vehicle</strong> — moving interface such as
+chariot/wheel/mount; Sleipnir occupies this role in the user’s
+model.</p><p><strong>Manifestation</strong> — visible form of the activated
+structure: eyes, wings, serpents, hourglass, many limbs, etc.</p><p><strong>Stabilized turn</strong> — world-region after the active
+braid reopens and its geography settles.</p><p><strong>Rubble layer</strong> — fractured land material carried and
+deformed by the hypothetical substrate.</p><p><strong>Reset</strong> — catastrophic transition involving water/land
+displacement and subsequent new stability.</p><p><strong>JANUS core</strong> — frozen audited mathematics.
+Symbolic/physical comparisons are explicitly outside the theorem
+core.</p><p><strong>Exploration of 8</strong> — state-space/gate research
+framework that classifies exact mathematics separately from
+cultural/historical interpretation.</p><hr/>

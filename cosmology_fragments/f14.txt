@@ -1,0 +1,42 @@
+<p>because angular distinctions vanish as radius tends toward zero.</p><p>On re-expansion:</p><p><strong>1 → 32</strong></p><p>and the reopened lattice may carry a different phase.</p><p>The presence of many wind roses/convergence centres on old charts
+then suggested an important mechanical refinement: the sky need not
+collapse toward one single global pole. A large woven surface can
+contain <strong>many local throats</strong>, each participating in a
+larger global deformation.</p><hr/><h1 id="16-flat-map-tests-and-the-correction-they-forced">16. Flat-map
+tests and the correction they forced</h1><p>The similarity between an end-on lattice and a north-pole-centred
+flat map was initially attractive. Direct geometry tests made the
+literal interpretation untenable.</p><p>A north-polar azimuthal-equidistant layout preserves radial distance
+from its centre but strongly distorts circumferential scale away from
+it. Southern east-west distances and continent shapes inflate
+drastically. Australia is an excellent failure case: its east-west scale
+becomes far too large relative to its north-south dimension.</p><p>A direct logarithmic-spiral longitude is even worse. If longitude θ
+is inserted into R(θ)=R₀e^(bθ), then after θ→θ+2π the radius changes. A
+coastline crossing 0°/360° does not return to the same point. Closed
+geography fails.</p><p>The mature solution separates coordinate systems:</p><p><strong>geographic state = (latitude, longitude)</strong><br/>
+<strong>shell state = (turn, braid phase, expansion)</strong></p><p>The spiral describes the relation between world layers. It does not
+replace ordinary longitude within one stable world.</p><p>This is a good example of the project improving through failure: the
+visual similarity to flat maps survives as a <strong>projection
+analogy</strong>, while the literal flat-map geography is rejected.</p><hr/><h1 id="17-lands-as-rubble-on-a-moving-substrate">17. Lands as rubble on
+a moving substrate</h1><p>The latest physical intuition is that continents are not the lattice.
+They are the material sitting on it.</p><figure class="vdiagram"><h4>Diagram 9 · Alternating shear and S-shaped transport</h4><svg viewbox="0 0 1050 330"><path class="soft" d="M55 70 C190 20 285 115 410 70 C535 25 635 115 760 70 C875 30 950 55 1000 70"></path><path class="soft" d="M55 260 C190 310 285 215 410 260 C535 305 635 215 760 260 C875 300 950 275 1000 260"></path><path class="cyan" d="M70 165 C195 70 295 70 400 165 C505 260 605 260 710 165 C815 70 900 70 1000 165" stroke-width="5"></path><path class="violet" d="M70 165 C195 260 295 260 400 165 C505 70 605 70 710 165 C815 260 900 260 1000 165"></path><text x="120" y="145">shear +</text><text x="315" y="205">shear −</text><text x="520" y="145">shear +</text><text x="725" y="205">shear −</text></svg><figcaption>A conceptual transport field, not a geographic map. The serious test is whether one fixed version predicts real tectonic vectors.</figcaption></figure><p>If the substrate has radial and tangential velocity components:</p><p><strong>v(r,θ)=vr(r,θ) r-hat + vθ(r,θ) θ-hat</strong></p><p>and the tangential component changes sign across neighbouring cells,
+transported material follows alternating curvature. The natural trace is
+an <strong>S-shape</strong>.</p><p>That immediately suggested a global chain of regions the user had
+already been visually noticing:</p><h2 id="north-america--central-america--south-america">North America →
+Central America → South America</h2><p>The two continents do not form one straight strip. The
+Caribbean/Central American region looks like a hinge between broad
+masses swept in different senses. In the lattice hypothesis this is a
+major shear/convergence transition.</p><h2 id="europe--mediterranean--africa">Europe → Mediterranean →
+Africa</h2><p>Europe and Africa bend into a highly fragmented Mediterranean jamming
+zone. The lattice reading is differential motion and rotation around a
+convergence cell.</p><h2 id="arabia--iraq--zagros">Arabia / Iraq / Zagros</h2><p>Arabia appears wedge-like: pulled apart behind along the Red Sea/Gulf
+of Aden region and driven into resistance to the north/northeast. In the
+speculative model this is a projecting packet of rubble caught between
+divergence and compression.</p><h2 id="india">India</h2><p>India is the clearest “projectile” shape in the user’s description: a
+triangular block driven into Eurasia. Conventional geology already
+records large northward plate motion and collision, so this region
+becomes a critical control rather than merely a visual match.</p><h2 id="myanmar--thailand--sumatra--java">Myanmar → Thailand → Sumatra →
+Java</h2><p>The deformation chain bends sharply east/southeast from India into
+the Sunda system. Oblique convergence and along-margin motion in
+standard tectonics already produce curvature. A Vardath flow field would
+have to recover those measured directions from one deeper lattice
+geometry.</p>

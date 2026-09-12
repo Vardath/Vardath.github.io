@@ -1,0 +1,44 @@
+<figure class="vdiagram"><h4>Diagram 5 · JANUS formal chain and the cosmology boundary</h4><svg viewbox="0 0 1100 420"><g><rect class="box" height="75" rx="12" width="160" x="45" y="75"></rect><text x="87" y="107">1 → 3 → 7</text><text class="muted" x="75" y="132">selected seed depth</text><rect class="box" height="75" rx="12" width="145" x="250" y="75"></rect><text x="300" y="107">11</text><text class="muted" x="275" y="132">seed sum</text><rect class="box" height="75" rx="12" width="195" x="440" y="75"></rect><text x="480" y="107">Q² = −8Q</text><text class="muted" x="468" y="132">rank-one lattice</text><rect class="box" height="75" rx="12" width="170" x="680" y="75"></rect><text x="720" y="107">3–4–5</text><text class="muted" x="705" y="132">decomposition</text><rect class="box" height="75" rx="12" width="160" x="895" y="75"></rect><text x="945" y="107">33</text><text class="muted" x="920" y="132">oriented det</text></g><path class="cyan" d="M205 112 L250 112 M395 112 L440 112 M635 112 L680 112 M850 112 L895 112"></path><rect class="box" height="100" rx="14" width="300" x="400" y="235"></rect><text x="470" y="270">canonical completion</text><text x="480" y="300">11I ± 4J → 137</text><path class="violet" d="M975 150 C925 205 760 235 700 260"></path><text class="muted" x="65" y="385">formal core stops here: no physical time, α correction, Earth tilt, literal helix, or mythology is derived</text></svg><figcaption>JANUS contributes exact structure only inside its audited dependency boundary. Cosmological use is a later comparison layer.</figcaption></figure><p>The audited core begins with a selected binary seed depth:</p><p><strong>1 → 3 → 7</strong></p><p>with global scalar:</p><p><strong>11 = 1 + 3 + 7</strong></p><p>On an oriented Euclidean lattice, the chosen polarity and
+endpoint-neutral directions lead to the primitive rank-one operator:</p><p><strong>Q = [[−1, 7], [1, −7]]</strong></p><p>with exact properties:</p><ul>
+<li>Q² = −8Q;</li>
+<li>rank(Q)=1;</li>
+<li>det(Q)=0;</li>
+<li>tr(Q)=−8;</li>
+<li>spectrum {0,−8}.</li>
+</ul><p>A transpose decomposition yields:</p><p><strong>Q = −4I + 5X + 3J</strong></p><p>with:</p><ul>
+<li>X²=I;</li>
+<li>J²=−I;</li>
+<li>XJ=−JX.</li>
+</ul><p>Thus 3–4–5 is not merely painted onto the operator after the fact.
+Under the stated Euclidean/orientation assumptions it is an intrinsic
+decomposition. In the broader control family, the right-triangle
+mechanism is generic, but endpoint 7 is the first nondegenerate member
+that closes into an integral 3–4–5 triple.</p><p>With orientation fixed:</p><p><strong>det(11I + Q) = 33.</strong></p><p>A separately labelled canonical completion:</p><p><strong>Z = 11I ± 4J</strong></p><p>gives:</p><p><strong>det(Z)=137.</strong></p><p>And standard number theory independently gives 137 as the 33rd
+prime.</p><h2 id="what-janus-did-not-derive">What JANUS did <em>not</em>
+derive</h2><p>The audit is just as important as the attractive numbers. JANUS v1.0
+explicitly did <strong>not</strong> derive:</p><ul>
+<li>a physical time unit;</li>
+<li>the 138-year Phoenix cycle;</li>
+<li>an 11-year solar cycle;</li>
+<li>Earth’s axial tilt;</li>
+<li>the fine-structure constant 137.036 rather than the integer
+137;</li>
+<li>a literal three-dimensional helix;</li>
+<li>Meru, rivers, doorways, stars, mythologies or historical
+traditions.</li>
+</ul><p>Those remained comparisons outside the theorem core.</p><p>This discipline is vital to Vardath Cosmology. JANUS can contribute a
+formal vocabulary—polarity, two-face exchange, 1|7, 8-state completion,
+gates, complementary directions—but it cannot be used as a mathematical
+certificate for the shell cosmology unless a real physical bridge is
+derived.</p><h2 id="janus-and-the-cosmological-imagination">JANUS and the
+cosmological imagination</h2><p>The non-core branch nevertheless influenced the later picture. The
+user explored two middle rods/columns, changing polarity, complementary
+triangles and an emergent third direction. Static rods alone were
+insufficient: a third spatial effect required phase/time. That insight
+foreshadowed the later braid model, where two opposed strands plus phase
+genuinely produce changing vertical relation.</p><p>The conceptual chain is therefore:</p><p><strong>symbolic two rods → audited two-state/polarity mathematics →
+failed literal 3-D lift → later physical braid requiring explicit
+phase.</strong></p><p>That is a genuine developmental connection even though JANUS does not
+mathematically derive the braid.</p><hr/><h1 id="10-exploration-of-8-the-method-that-disciplined-the-cosmology">10.
+Exploration of 8: the method that disciplined the cosmology</h1><p>Exploration of 8 is not just another numerology chapter. It changed
+the research method.</p>

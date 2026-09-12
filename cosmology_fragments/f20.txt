@@ -1,0 +1,15 @@
+<ul>
+<li>Parks Australia / Kakadu visitor guide — Rainbow Serpent and
+regional creation/water traditions: <a href="https://api.parksaustralia.gov.au/sites/default/files/2024-04/document/knp-visitor-guide.pdf">https://api.parksaustralia.gov.au/sites/default/files/2024-04/document/knp-visitor-guide.pdf</a></li>
+<li>Anthony L. Peratt, <em>Characteristics for the Occurrence of a
+High-Current, Z-Pinch Aurora as Recorded in Antiquity</em> (IEEE TPS
+31(6), DOI 10.1109/TPS.2003.820956): <a href="https://zenodo.org/records/1232269">https://zenodo.org/records/1232269</a></li>
+<li>Hávamál stanza 139 archive — Odin's hanging-tree passage: <a href="https://www.thehavamalarchive.org/havamal/stanza/passage-139">https://www.thehavamalarchive.org/havamal/stanza/passage-139</a></li>
+<li>British Museum — Bodhi Tree: <a href="https://www.britishmuseum.org/collection/term/BIOG138195">https://www.britishmuseum.org/collection/term/BIOG138195</a></li>
+<li>Numbers 17 — Aaron's budding rod: <a href="https://www.biblegateway.com/passage/?search=Numbers+17">https://www.biblegateway.com/passage/?search=Numbers+17</a></li>
+<li>IGNCA Rig-Veda translation, including Indra/Vṛtra/waters: <a href="https://ignca.gov.in/Asi_data/8737.pdf">https://ignca.gov.in/Asi_data/8737.pdf</a></li>
+<li>Meltology.org — community's own description as “The Study of Melted
+Buildings”: <a href="https://meltology.org/">https://meltology.org/</a></li>
+<li>Materials 2021 brick study — thermal expansion, quartz inversion and
+vitrification/shrinkage: <a href="https://www.mdpi.com/1996-1944/14/23/7471">https://www.mdpi.com/1996-1944/14/23/7471</a></li>
+</ul>

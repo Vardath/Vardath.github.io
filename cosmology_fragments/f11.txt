@@ -1,0 +1,53 @@
+<figure class="vdiagram"><h4>Diagram 7 · Expanded braid → scroll rod → re-opening</h4><svg viewbox="0 0 1100 340"><path class="cyan" d="M60 80 C170 95 250 120 350 170 C250 220 170 245 60 260"></path><path class="violet" d="M60 260 C170 245 250 220 350 170 C250 120 170 95 60 80"></path><path class="cyan" d="M350 170 C425 135 470 135 525 170 C470 205 425 205 350 170"></path><path class="violet" d="M350 170 C425 205 470 205 525 170 C470 135 425 135 350 170"></path><rect class="rod" height="250" rx="22" width="55" x="525" y="45"></rect><path class="cyan" d="M580 170 C645 135 700 135 770 170 C860 120 920 90 1040 80"></path><path class="violet" d="M580 170 C645 205 700 205 770 170 C860 220 920 250 1040 260"></path><text x="90" y="48">expanded lattice</text><text x="487" y="28">32 → 1</text><text class="muted" x="503" y="320">axial state</text><text x="860" y="48">1 → 32</text></svg><figcaption>The current mechanical core: two opposed strands can narrow into one axial throat without being cut, then re-emerge in a new phase.</figcaption></figure><p><strong>R(θ)=R₀e^(bθ)</strong></p><p>and places a two-strand braid inside the active transition
+region:</p><p><strong>zA = pθ + a sin(kθ)</strong><br/>
+<strong>zB = pθ − a sin(kθ)</strong></p><p>The derivatives are p±ak cos(kθ). Whenever the oscillating term
+exceeds the slow pitch, one strand is literally moving upward while its
+partner moves downward. Half a braid cycle later the roles exchange.</p><p>This is the cleanest mathematical realization so far of the user’s
+phrase that <strong>part of the lattice grows up while part grows down,
+intertwining the layers before stabilizing</strong>.</p><p>The finger-trap part supplies the contraction mechanism. For a
+helical strand of approximately fixed length S:</p><p><strong>S² = L² + (2πNa)²</strong></p><p>so increasing axial length L reduces radius a. A broad woven tube can
+become a long, thin rod without cutting its strands.</p><p>This turns the phrase <strong>“the sky rolls up like a scroll
+fingertrap rod”</strong> into a specific geometric transformation:</p><ol type="1">
+<li>expanded lattice with distinct surface directions;</li>
+<li>tension increases;</li>
+<li>the lattice narrows around one or many convergence throats;</li>
+<li>angular distinctions collapse near the axis;</li>
+<li>opposed strands pass through the axial state in opposite
+senses;</li>
+<li>the lattice re-expands;</li>
+<li>a neighbouring shell turn stabilizes.</li>
+</ol><h2 id="the-three-shells-become-three-phases-of-one-growth-process">The
+three shells become three phases of one growth process</h2><p>The mature version no longer needs three permanently independent
+shell-organisms. At a given epoch an observer may instead
+experience:</p><ul>
+<li><strong>previous/lower stabilized turn</strong>;</li>
+<li><strong>present inhabited turn</strong>;</li>
+<li><strong>next/upper forming turn</strong>;</li>
+<li>with the <strong>active braid</strong> between them.</li>
+</ul><p>This retains the original “three worlds” intuition while reducing the
+number of independent cosmic objects.</p><hr/><h1 id="14-many-myths-as-different-camera-angles-on-one-event">14. Many
+myths as different camera angles on one event</h1><p>The earlier comparative work can now be rewritten in mechanical
+language.</p><h2 id="stable-enclosure">Stable enclosure</h2><p>The ordinary world is in a low-change phase. Adjacent shell turns are
+separated. The upper structure is mostly hidden. Land, sky and celestial
+tracks appear stable.</p><h2 id="activation">Activation</h2><p>A pulse, stress change or phase condition increases tension in the
+lattice. Mythically this is where wind, fire, lightning, thunder,
+radiance or divine approach repeatedly appear.</p><h2 id="axis-and-gate-become-perceptible">Axis and gate become
+perceptible</h2><p>Local convergence throats gather the mesh. From different viewpoints
+this can appear as:</p><ul>
+<li>world mountain;</li>
+<li>world tree;</li>
+<li>rod or pillar;</li>
+<li>cross;</li>
+<li>ladder;</li>
+<li>tunnel;</li>
+<li>wheel or eye;</li>
+<li>guarded portal.</li>
+</ul><h2 id="layers-approach">Layers approach</h2><p>The active braid changes adjacency. Normally separated regions can
+become close through the throat. “Heaven opens” is the mythological
+expression of this phase in the Vardath reading.</p><h2 id="contact">Contact</h2><p>Beings, information, debris or energy may cross the temporary
+boundary if the geometry permits actual physical overlap. Watchers,
+gods, giants, teachers, operators and forbidden knowledge are assigned
+to this role in the speculative synthesis.</p><h2 id="deformation-and-catastrophe">Deformation and catastrophe</h2><p>The surface rubble does not remain rigid while the substrate moves.
+Land is dragged, rotated, uplifted or broken. Water moves
+catastrophically. Myth remembers flood, war of the gods, dragon-slaying,
+destruction or world-renewal.</p><h2 id="re-opening-and-reset">Re-opening and reset</h2>

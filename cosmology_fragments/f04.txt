@@ -1,0 +1,49 @@
+<ul>
+<li>a figure suspended on a cross;</li>
+<li>a figure beneath or attached to a world tree;</li>
+<li>a god hanging from a tree;</li>
+<li>a living rod that buds like a tree;</li>
+<li>a mountain or gate with an axial passage;</li>
+<li>a caduceus whose paired snakes wrap a rod.</li>
+</ul><p>This gave rise to a working rule that still governs the model:
+<strong>the same structure viewed from below, from the side, from
+inside, or after cultural personification can become very different
+icons.</strong></p><h1 id="4-the-axis-atlas-cross-tree-rod-mountain-and-gate">4. The axis
+atlas: cross, tree, rod, mountain and gate</h1><p>Several user-recalled branches are not fully recoverable verbatim
+from the old chat index, especially the exact Buddha/Bodhi, Loki,
+Aaron/rod-of-iron and “Gilga-mesh” exchanges. They still belong in the
+historical atlas because the user explicitly remembers them as part of
+the development. They are therefore marked here as <strong>recalled
+branches</strong>, while their underlying source motifs are checked
+independently.</p><figure class="vdiagram"><h4>Diagram 3 · One axial role, many symbolic projections</h4><svg viewbox="0 0 1100 430"><line class="violet" x1="550" x2="550" y1="65" y2="370"></line><line class="cyan" x1="395" x2="705" y1="180" y2="180"></line><path class="soft" d="M550 75 C465 120 455 275 550 355 C645 275 635 120 550 75"></path><circle class="node" cx="550" cy="180" r="18"></circle><g><rect class="box" height="70" rx="12" width="250" x="55" y="70"></rect><text x="75" y="98">cross / hanging figure</text><text class="muted" x="75" y="122">transverse plane + axis</text><rect class="box" height="70" rx="12" width="250" x="55" y="270"></rect><text x="75" y="298">rod / staff / pillar</text><text class="muted" x="75" y="322">authority + connector</text><rect class="box" height="70" rx="12" width="250" x="795" y="70"></rect><text x="815" y="98">world tree</text><text class="muted" x="815" y="122">roots / trunk / revelation</text><rect class="box" height="70" rx="12" width="250" x="795" y="270"></rect><text x="815" y="298">world mountain / gate</text><text class="muted" x="815" y="322">Mashu / Meru role</text></g><path class="soft" d="M305 105 L470 155 M305 305 L470 225 M795 105 L630 155 M795 305 L630 225"></path></svg><figcaption>Vardath Cosmology groups these motifs by structural role, not by claiming the traditions are historically identical.</figcaption></figure><h2 id="jesus-and-the-cross--recalled-branch">Jesus and the cross —
+recalled branch</h2><p>The Christian cross entered the investigation through the
+hanging-figure geometry. The comparison is not “Jesus was a plasma
+discharge.” It is structural: a human body fixed to a vertical axis
+crossed by a horizontal member produces the same basic silhouette that
+the Squatter-Man/hourglass/plasma discussions kept returning to.</p><p>The mature interpretation adds perspective: the cross can function as
+an <strong>axis plus transverse plane</strong>, while the hanging body
+personifies the point where those dimensions meet. In a fourfold
+upper-world model, the cross also resembles four directions/rivers
+around a centre. These are Vardath comparisons, not claims about
+historical Christian doctrine.</p><h2 id="buddha-beneath-the-bodhi-tree--user-recalled-branch">Buddha
+beneath the Bodhi tree — user-recalled branch</h2><p>The independent source motif is firm: Buddhist tradition locates
+awakening beneath the Bodhi tree at Bodh Gaya, and early Buddhist art
+could use the tree itself as a symbol of the Buddha and enlightenment.
+The Vardath comparison treats this as an <strong>axis-tree + human
+witness + revelation</strong> configuration.</p><p>Unlike Odin, Buddha is not hanging from the tree. That difference is
+important. The shared structural element is not body position but the
+relationship between <strong>human figure, central tree/axis and
+transformative knowledge</strong>. In the event architecture, this
+belongs mainly to the <em>Witness</em> and <em>Axis</em> roles rather
+than catastrophe.</p><h2 id="odin-and-yggdrasil--partly-recovered-directly">Odin and
+Yggdrasil — partly recovered directly</h2><p>The August conversations already connected Odin and Sleipnir to the
+recurring phenomenon. The source tradition adds a strong axis/hanging
+motif: in Hávamál, Odin says that he hung on a windy tree for nine
+nights, wounded by a spear, sacrificing himself to himself, then takes
+up the runes and gains knowledge.</p><p>For Vardath Cosmology this is a remarkably dense structural
+package:</p><p><strong>world tree / axis → suspended figure → wound/spear/rod →
+ordeal → downward gaze → acquisition of symbols/knowledge → return
+transformed.</strong></p><p>That does not prove a physical event. It does explain why Odin became
+a central comparison once the Squatter-Man and hanging-axis patterns
+were already in play.</p><h2 id="loki-and-sleipnir--partly-recalled-partly-recovered">Loki and
+Sleipnir — partly recalled, partly recovered</h2>

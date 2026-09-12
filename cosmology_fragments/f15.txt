@@ -1,0 +1,49 @@
+<h2 id="eastern-australia--new-guinea--indonesia">Eastern Australia →
+New Guinea → Indonesia</h2><p>The eastern/northern Australian margin, New Guinea, Banda and
+Indonesia form another complex curve of arcs, collisions and fragments.
+Again, ordinary plate tectonics explains the observations. Vardath
+Cosmology only gains explanatory value if its fixed nodes and shear
+directions independently predict the same patterns.</p><p>The falsification condition is therefore strong:</p><p><strong>one fixed lattice-flow field must simultaneously predict
+coastline curvature, mountain belts, faults, trenches, island arcs and
+GPS plate vectors.</strong></p><p>If nodes are moved after each mismatch, the model is not
+predictive.</p><h1 id="18-meltology-plasma-heating-and-the-expanded-brick-hypothesis">18.
+Meltology, plasma heating and the “expanded brick” hypothesis</h1><p>Meltology entered the wider research as another possible trace of a
+catastrophic energetic reset. The Meltology community describes
+mountains and unusual stone formations as the remnants of melted or
+transformed buildings and “Old World” architecture. This is a fringe
+interpretation and is not accepted geology. The official Meltology site
+itself describes its subject as “the study of melted buildings,”
+including melted buildings, mountains, old-world architecture,
+civilization and technology.</p><figure class="vdiagram"><h4>Diagram 10 · Turning the Meltology branch into a materials test</h4><svg viewbox="0 0 1100 330"><g><rect class="box" height="90" rx="12" width="165" x="40" y="115"></rect><text x="75" y="148">masonry / rock</text><text class="muted" x="72" y="177">starting material</text><rect class="box" height="90" rx="12" width="170" x="245" y="115"></rect><text x="285" y="148">rapid heating</text><text class="muted" x="268" y="177">electrical / thermal?</text><rect class="box" height="90" rx="12" width="190" x="455" y="70"></rect><text x="487" y="104">phase changes</text><text class="muted" x="483" y="133">quartz / melt / glass</text><rect class="box" height="90" rx="12" width="190" x="455" y="210"></rect><text x="485" y="244">gas / fracture</text><text class="muted" x="485" y="273">vesicles / spalling</text><rect class="box" height="90" rx="12" width="180" x="690" y="115"></rect><text x="725" y="148">cooling</text><text class="muted" x="711" y="177">recrystallization</text><rect class="box" height="90" rx="12" width="150" x="910" y="115"></rect><text x="935" y="148">sample test</text><text class="muted" x="930" y="177">XRD / chemistry</text></g><path class="cyan" d="M205 160 L245 160 M415 160 L455 115 M415 160 L455 255 M645 115 L690 150 M645 255 L690 170 M870 160 L910 160"></path></svg><figcaption>Standard brick data show modest thermal expansion followed by vitrification/shrinkage, so giant-scale expansion would require clear nonstandard evidence.</figcaption></figure><p>The Vardath version became more specific than simple “rocks were
+buildings.” The question was whether an extreme plasma/electrical event
+could cause manufactured masonry or clay-rich material to:</p><ol type="1">
+<li>heat rapidly through Joule/plasma coupling;</li>
+<li>cross mineral phase transitions;</li>
+<li>soften, partially melt or vitrify;</li>
+<li>develop gas/bloating or fracture textures;</li>
+<li>recrystallize on cooling;</li>
+<li>emerge at a different apparent scale or morphology.</li>
+</ol><p>The phrase <strong>“plasma expanding bricks via
+crystallization”</strong> belongs here. It is a proposed materials
+mechanism that can be tested.</p><h2 id="what-ordinary-brick-science-actually-shows">What ordinary brick
+science actually shows</h2><p>Fired clay does undergo real thermal changes. Quartz has an α→β
+inversion around 573 °C that produces a measurable length anomaly.
+Experimental clay specimens can show soft thermal expansion up to a
+maximum around the 700–760 °C range. However, one published study found
+maximum expansions on the order of roughly <strong>0.5–1.13%</strong>,
+followed by shrinkage as vitreous phases formed above roughly 780–800
+°C. Other brick studies likewise use quartz inversion and residual
+shrinkage as indicators of firing history.</p><p>That does <strong>not</strong> support ordinary bricks swelling into
+mountain-sized blocks. It instead gives the old hypothesis a much
+sharper test:</p><ul>
+<li>Are claimed “expanded bricks” chemically and mineralogically
+consistent with fired clay or masonry?</li>
+<li>Do they contain melt glass, vitrified surfaces, vesicles,
+recrystallized phases or former mortar boundaries?</li>
+<li>Are crystal fabrics consistent with rapid thermal processing?</li>
+<li>Can measured phase-volume changes explain the claimed scale, or
+would enormous additional porosity/gas expansion be required?</li>
+<li>Is there an energy source capable of heating the required mass?</li>
+<li>Do geologic ages and stratigraphy agree with a recent architectural
+origin, or contradict it?</li>
+</ul>

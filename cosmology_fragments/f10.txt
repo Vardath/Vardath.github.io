@@ -1,0 +1,69 @@
+<p>The September 12 branch proposed three enormous spiral-shell
+organisms or shell systems. Each could carry world-disc sections that
+preserve whole eras or moments. Two remained active; a third was
+dead/reversed and supplied the stronger structural influence. Tiamat was
+proposed as a symbolic identity for that dead structural shell. Apsu and
+Kingu were deliberately left unassigned.</p><p>The Archaix-style chronology used three target tracks:</p><ul>
+<li>Phoenix ≈138 years;</li>
+<li>Dark Satellite ≈395 years;</li>
+<li>Nemesis X ≈792 years, with a broader transit window.</li>
+</ul><h2 id="the-first-hard-failure">The first hard failure</h2><p>Treating these as the three pairwise beat periods of three
+constant-rate rotators fails. Once two relative angular rates are fixed,
+the third is constrained. No assignment of 138, 395 and 792 to the three
+pairwise differences works exactly.</p><p>That failure was productive. It forced the model to distinguish
+different kinds of recurrence:</p><ul>
+<li>full rotations;</li>
+<li>gate crossings;</li>
+<li>half/full phase returns;</li>
+<li>radial growth thresholds;</li>
+<li>slower modulation envelopes.</li>
+</ul><h2 id="the-eight-gate-phoenix-construction">The eight-gate Phoenix
+construction</h2><p>A fitted toy model gave shell A a 1104-year turn relative to the dead
+frame. Eight equally spaced gates then produce:</p><p><strong>1104 / 8 = 138 years.</strong></p><p>Two opposite gates were made stronger, yielding a 552-year primary
+spacing. Shell B was given a 736-year turn, so in 2208 years:</p><ul>
+<li>A completes 2 turns;</li>
+<li>B completes 3 turns.</li>
+</ul><p>The relative phase repeats after 2208 years. This can be represented
+as relative rates 0:2:3, or after adding a common frame as an equivalent
+5:3:2 pattern.</p><p>The strength pattern was fitted with an explicit score; it was not
+independently derived. The value of the exercise was conceptual:
+<strong>events can occur at repeated gates inside a slower global
+cycle.</strong></p><h2 id="the-unresolved-spatial-condition">The unresolved spatial
+condition</h2><p>Angular alignment is not enough. If shells grow, two angularly
+aligned world layers may sit at different radii or heights. A real
+mechanism must specify:</p><ul>
+<li>shell radii and thickness;</li>
+<li>axis orientation;</li>
+<li>chirality;</li>
+<li>growth rate;</li>
+<li>location of each stabilized world layer;</li>
+<li>how old turns remain accessible;</li>
+<li>what force actually couples overlapping layers.</li>
+</ul><p>The mature lattice model is partly an attempt to supply that missing
+spatial mechanism.</p><hr/><h1 id="12-fibonacci--ammonite-growth-and-the-395792-near-relation">12.
+Fibonacci / ammonite growth and the 395–792 near relation</h1><p>The ammonite image suggested self-similar growth. A continuous toy
+law was tested:</p><p><strong>R(t)=R₀ φ^(t/552).</strong></p><p>Under that deliberately calibrated law:</p><ul>
+<li>one φ increase takes 552 years;</li>
+<li>a √2 scale increase takes about <strong>397.56 years</strong>;</li>
+<li>a doubling takes about <strong>795.11 years</strong>.</li>
+</ul><p>Those values sit close to the proposed ~395 and 792 tracks, but they
+are not exact. Repetition accumulates phase error. If doubling is forced
+to exactly 792 years, the implied φ-step becomes about 549.84 years and
+a quarter-step about 137.46, not exactly 552 and 138.</p><p>The simple law therefore does not derive all target periods
+simultaneously.</p><p>The later braid added a second reason the 395/792 pair is
+interesting. A two-strand system naturally distinguishes an
+<strong>opposite-phase half cycle</strong> from a <strong>same-phase
+full cycle</strong>. If the full recurrence is 792, half is 396—one year
+from the ~395 chart value. That is a structurally natural 2:1 relation,
+but it is still not proof that those chronology tracks describe a
+physical braid.</p><h2 id="144000-days-is-not-144000-in-size">144,000 days is not 144,000
+in size</h2><p>The research also separated two very different uses of 144,000:</p><ul>
+<li>a duration of 144,000 days;</li>
+<li>a hypothetical terminal shell size of 144,000 units.</li>
+</ul><p>They have different dimensions. A number alone cannot turn time into
+length. Under the toy φ law, choosing Rmax/R₀=144,000 produces a
+conditional time of roughly 13,624.8 years, but the starting scale is
+arbitrary. Fibonacci numbers do not stop at 144,000.</p><p>That distinction remains important whenever the same
+sacred/chronological number appears in a physical-scale hypothesis.</p><h1 id="13-the-mature-braid-the-sky-rolls-into-a-finger-trap-scroll-rod">13.
+The mature braid: the sky rolls into a finger-trap scroll rod</h1><p>The current model begins with a large-scale logarithmic/ammonite-like
+growth envelope:</p>

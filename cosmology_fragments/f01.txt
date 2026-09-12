@@ -1,0 +1,40 @@
+<h2 id="historical-archive-and-living-model--february-2025-to-september-2026">Historical
+archive and living model — February 2025 to September 2026</h2><div class="callout good"><p><strong>Working thesis:</strong> a long-running speculative
+investigation into whether recurring forms in myth, pictographs,
+numerical systems, old maps, catastrophic traditions and the shape of
+the lands can be organized as different views of a single structured
+event: an enclosed world with an axis and paired channels, periodic
+activation, opening or convergence of normally separated regions,
+violent redistribution of water and surface material, and
+re-stabilization into a new phase.</p></div><blockquote class="source-boundary">
+<p><strong>Research boundary.</strong> This is a personal research
+model, not established cosmology. The page keeps four things separate:
+(1) what the old conversations actually proposed, (2) what source
+traditions and physical measurements independently say, (3) mathematical
+toy models we constructed, and (4) later Vardath interpretations that
+connect them. Similar symbols do not prove a common physical event.</p>
+</blockquote><hr/><h1 id="1-the-investigation-before-the-three-shells">1. The
+investigation before the three shells</h1><p>The present three-layer / braided-lattice model is not where the
+cosmology began. The earliest recoverable thread reaches back to
+<strong>26 February 2025</strong>, when the Rainbow Serpent was
+reimagined as a charged, plasma-like or filamentary phenomenon whose
+motion could shape Country: carving channels, lifting land, producing
+storms, water, coloured sky phenomena and, in the speculative retelling,
+participating in the origin of life. A later version of that same story
+had the Serpent bite a plasma-like Sun, provoke dangerous flaring, and
+be forced away by wind and water.</p><figure class="vdiagram"><h4>Diagram 1 · Development spine</h4><svg viewbox="0 0 1100 400"><line class="soft" x1="70" x2="1030" y1="210" y2="210"></line><path class="cyan" d="M80 210 C150 85 245 85 315 210 C385 335 480 335 550 210 C620 85 715 85 785 210 C855 335 950 335 1020 210"></path><path class="violet" d="M80 210 C150 335 245 335 315 210 C385 85 480 85 550 210 C620 335 715 335 785 210 C855 85 950 85 1020 210"></path><g><circle class="node" cx="80" cy="210" r="9"></circle><circle class="node" cx="245" cy="210" r="9"></circle><circle class="node" cx="400" cy="210" r="9"></circle><circle class="node" cx="550" cy="210" r="9"></circle><circle class="node" cx="705" cy="210" r="9"></circle><circle class="node" cx="860" cy="210" r="9"></circle><circle class="node" cx="1020" cy="210" r="9"></circle></g><text x="40" y="175">Feb 2025</text><text class="muted" x="20" y="150">Rainbow Serpent</text><text x="195" y="260">late 2025</text><text class="muted" x="185" y="284">Squatter Man</text><text x="350" y="175">Dec–Feb</text><text class="muted" x="324" y="150">enclosure/caduceus</text><text x="510" y="260">Aug 2026</text><text class="muted" x="475" y="284">one phenomenon</text><text x="660" y="175">JANUS / 8</text><text class="muted" x="642" y="150">gates + lattice</text><text x="810" y="260">Exploration of 8</text><text class="muted" x="810" y="284">state-space method</text><text x="960" y="175">Sep 12–13</text><text class="muted" x="955" y="150">shell/braid</text><text class="muted" x="320" y="365">persistent structure: axis/serpent · enclosure/threshold · activation/reset</text></svg><figcaption>The latest shell model is shown as the endpoint of a much older investigation, not its beginning.</figcaption></figure><p>Already present were three ideas that later became central:</p><ul>
+<li>a <strong>serpentine energetic structure</strong> rather than a
+static object;</li>
+<li>a world whose <strong>land and water are physically
+reshaped</strong> by that structure;</li>
+<li>a cycle of <strong>activation, danger, water, retreat and
+renewal</strong>.</li>
+</ul><p>By late 2025 the research had moved toward the recurring
+anthropomorphic petroglyph sometimes called <strong>Squatter
+Man</strong>. The interest was not simply that an ancient image “looked
+like a person.” Its geometry could be read as an axis with a pinched or
+hourglass body and paired lateral structures. Anthony Peratt’s
+controversial plasma-petroglyph hypothesis supplied one possible
+physical vocabulary: high-current plasma instabilities can produce
+columnar, pinched and lobed forms. This was never settled archaeology;
+it became a visual hypothesis to compare against other axis figures.</p>
