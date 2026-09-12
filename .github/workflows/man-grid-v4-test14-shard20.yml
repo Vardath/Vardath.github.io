@@ -1,0 +1,145 @@
+name: Exact Man Grid v4 Test 14 — transformation rules 20 shards
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/man-grid-v4-test14-shard20.yml'
+      - 'tools/man_grid_test14_v4_shard20.py'
+  workflow_dispatch:
+
+concurrency:
+  group: exact-man-grid-v4-test14-shard20
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  prepare14:
+    name: Prepare corrected Test 13 evidence for rule discovery
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download completed corrected Test 13 result
+        uses: actions/download-artifact@v4
+        with:
+          repository: Vardath/Vardath.github.io
+          run-id: 34688953266
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: exact-v4-t13-merged-34688953266
+          path: data
+      - name: Download corrected exact mirror-grid model
+        uses: actions/download-artifact@v4
+        with:
+          repository: Vardath/Vardath.github.io
+          run-id: 34660500756
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: exact-v4-t05-50-base-34660500756
+          path: data/man-grid-exact-v4-work
+      - name: Prepare 20 deterministic heldout-lineage folds
+        run: python tools/man_grid_test14_v4_shard20.py prepare
+      - name: Validate corrected exact Test 14 contract
+        run: |
+          python - <<'PY'
+          import json
+          p='data/man-grid-test14-exact-v4-work/prepared-manifest.json'
+          d=json.load(open(p,encoding='utf-8'))
+          assert d['test_id'] == 14 and d['shards'] == 20
+          assert d['grid']['cells'] == 1074 and d['grid']['layers_per_side'] == 10
+          assert d['grid']['all_rectangles_mirrored'] is True
+          assert d['grid']['transformative_circle_operator'] is None
+          c=d['calculation']
+          assert c['metric'] == 'exact_mirror_man_grid_10_layer_bilateral'
+          assert c['feature_distance_used_for_test14_scoring'] is False
+          assert c['test5_lexicon_used_for_test14'] is False
+          assert c['old_test14_result_used'] is False
+          assert c['old_grid_rules_imported'] is False
+          assert c['central_circle_operator_used'] is False
+          assert len(d['lineage_fold_sizes']) == 20
+          assert d['coverage']['evaluation_lineages'] > 0
+          assert d['coverage']['heldout_records'] > 0
+          print('Test 14 corrected transformation-rule contract validated')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t14-base-${{ github.run_id }}
+          path: |
+            data/man-grid-test14-exact-v4-work/test13.json.gz
+            data/man-grid-test14-exact-v4-work/model.json.gz
+            data/man-grid-test14-exact-v4-work/prepared-manifest.json
+          retention-days: 7
+
+  shard14:
+    name: Test 14 v4 shard ${{ matrix.shard }}
+    needs: prepare14
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t14-base-${{ github.run_id }}
+          path: data/man-grid-test14-exact-v4-work
+      - name: Run corrected Test 14 shard
+        run: python tools/man_grid_test14_v4_shard20.py run --shard ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t14-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/man-grid-test14-exact-v4-work/t14-result-${{ matrix.shard }}.json.gz
+          retention-days: 7
+
+  merge14:
+    name: Merge Test 14 v4 — require all 20
+    needs: shard14
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: exact-v4-t14-base-${{ github.run_id }}
+          path: data/man-grid-test14-exact-v4-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: exact-v4-t14-s*-${{ github.run_id }}
+          path: data/man-grid-test14-exact-v4-work
+          merge-multiple: true
+      - name: Require every Test 14 shard before merge
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          missing=[]
+          for i in range(20):
+              p=Path(f'data/man-grid-test14-exact-v4-work/t14-result-{i}.json.gz')
+              if not p.exists(): missing.append(i)
+          if missing: raise SystemExit(f'missing Test 14 shards: {missing}')
+          print('all 20 Test 14 shards present')
+          PY
+      - name: Merge corrected Test 14
+        run: python tools/man_grid_test14_v4_shard20.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-v4-t14-merged-${{ github.run_id }}
+          path: data/man-grid-test-14-exact-v4.json
+          retention-days: 7
+      - name: Publish corrected Test 14 result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/man-grid-test-14-exact-v4.json
+          git commit -m "Publish corrected exact-v4 Test 14 result"
+          git pull --rebase origin main
+          git push origin HEAD:main
