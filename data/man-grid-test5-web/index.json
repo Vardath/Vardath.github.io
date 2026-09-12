@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "test_id": 5,
+  "title": "Exact mirrored Man Grid — 50-shard reconstructed dictionary",
+  "status": "complete",
+  "entries": 12000,
+  "shards": 50,
+  "parts": [
+    {"segments": ["part-00-0.b64", "part-00-1.b64", "part-00-2.b64"], "entries": 3000},
+    {"segments": ["part-01-0.b64", "part-01-1.b64", "part-01-2.b64"], "entries": 3000},
+    {"segments": ["part-02-0.b64", "part-02-1.b64", "part-02-2.b64"], "entries": 3000},
+    {"segments": ["part-03-0.b64", "part-03-1.b64", "part-03-2.b64"], "entries": 3000}
+  ],
+  "grid": {
+    "cells": 1074,
+    "all_rectangles_mirrored": true,
+    "layers_per_side": 10,
+    "transformative_circle_operator": null
+  },
+  "calculation": {
+    "metric": "exact_mirror_man_grid_10_layer_bilateral",
+    "phoneme_snap": "exact mirrored-grid structural distance",
+    "sequence_scoring": "bilateral L→R and R→L mean normalized row/column distance across all 10 layers",
+    "gap_cost": 0.7,
+    "feature_distance_used_for_test5_reconstruction": false,
+    "test4_prior_used": false
+  },
+  "summary": {
+    "shards_real_better_than_control": 50,
+    "shards_compared": 50,
+    "mean_confidence": 0.805081,
+    "median_confidence": 0.809819,
+    "mean_stability": 0.942171,
+    "median_stability": 0.95798,
+    "confidence_ge_090": 396,
+    "confidence_ge_080": 6618,
+    "stability_ge_090": 9532,
+    "median_languages": 28.0,
+    "median_families": 9.0,
+    "mean_family_distance": 0.239787
+  },
+  "evidence_boundary": "Experimental dictionary reconstruction under the exact mirrored Man Grid hypothesis; not proof of a literal single prehistoric world language."
+}
