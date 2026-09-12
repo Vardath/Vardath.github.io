@@ -5,11 +5,35 @@
   "status": "complete",
   "entries": 12000,
   "shards": 50,
+  "source_run_id": 34660500756,
+  "source_artifact_id": 10288413679,
+  "source_artifact_sha256": "07498f7b4959215ac475f2a1a634b514f6f0695db9c6d1b7f30dd15fbb2da7d4",
   "parts": [
-    {"segments": ["part-00-0.b64", "part-00-1.b64", "part-00-2.b64"], "entries": 3000},
-    {"segments": ["part-01-0.b64", "part-01-1.b64", "part-01-2.b64"], "entries": 3000},
-    {"segments": ["part-02-0.b64", "part-02-1.b64", "part-02-2.b64"], "entries": 3000},
-    {"segments": ["part-03-0.b64", "part-03-1.b64", "part-03-2.b64"], "entries": 3000}
+    {
+      "file": "part-00.jsonl",
+      "entries": 3000
+    },
+    {
+      "file": "part-01.jsonl",
+      "entries": 3000
+    },
+    {
+      "file": "part-02.jsonl",
+      "entries": 3000
+    },
+    {
+      "file": "part-03.jsonl",
+      "entries": 3000
+    }
+  ],
+  "row_schema": [
+    "meaning",
+    "ipa",
+    "languages",
+    "families",
+    "mean_family_distance",
+    "stability",
+    "confidence"
   ],
   "grid": {
     "cells": 1074,
