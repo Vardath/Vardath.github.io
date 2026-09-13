@@ -1,0 +1,57 @@
+name: Masonic ladder sky lattice - 20 shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_masonic_ladder_sky.py'
+      - '.github/workflows/masonic-ladder-sky-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  shards:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen protocol
+        run: |
+          python -m py_compile tools/test_masonic_ladder_sky.py
+          python tools/test_masonic_ladder_sky.py validate
+          test -f research/masonic_ladder_sky/PREREGISTRATION.md
+      - name: Run shard
+        run: python tools/test_masonic_ladder_sky.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ladder-sky-shard-${{ matrix.shard }}-${{ github.run_id }}
+          path: research/masonic_ladder_sky_work/shard-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ladder-sky-shard-*-${{ github.run_id }}
+          path: research/masonic_ladder_sky_work
+          merge-multiple: true
+      - name: Merge all 20 shards
+        run: |
+          test "$(find research/masonic_ladder_sky_work -name 'shard-*.json' | wc -l)" -eq 20
+          python tools/test_masonic_ladder_sky.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: masonic-ladder-sky-result-${{ github.run_id }}
+          path: research/masonic_ladder_sky_results
+          retention-days: 14
