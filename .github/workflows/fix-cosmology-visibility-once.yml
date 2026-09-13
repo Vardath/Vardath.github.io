@@ -1,0 +1,60 @@
+name: Fix cosmology research visibility once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-cosmology-visibility-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch only cosmology visibility anchors and TOC
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          f18 = Path('cosmology_fragments/f18.txt')
+          s = f18.read_text(encoding='utf-8')
+          replacements = {
+              '<h2>Visual atlas — the geometry the test was asking about</h2>': '<h2 id="masonic-alchemical-visual-atlas">Visual atlas — the geometry the test was asking about</h2>',
+              '<h2>What the result adds to the model</h2>': '<h2 id="masonic-alchemical-result-in-the-vardath-model">What the result adds to the model</h2>',
+          }
+          for old, new in replacements.items():
+              count = s.count(old)
+              assert count == 1, f'f18 expected exactly one {old!r}, found {count}'
+              s = s.replace(old, new)
+          f18.write_text(s, encoding='utf-8')
+
+          page = Path('vardath-cosmology.html')
+          h = page.read_text(encoding='utf-8')
+          old_cache = '20260913-masonicart2'
+          assert old_cache in h, 'expected current cosmology cache key not found'
+          h = h.replace(old_cache, '20260914-cosmology-visible1')
+
+          old_toc = "root.querySelectorAll(':scope > h1, .assistant-intro > h1')"
+          new_toc = "root.querySelectorAll(':scope > h1, .late-research-block > h1, #ladder-as-lattice-the-masonic-sky-projection, .assistant-intro > h1')"
+          count = h.count(old_toc)
+          assert count == 1, f'expected exactly one old TOC selector, found {count}'
+          h = h.replace(old_toc, new_toc)
+          page.write_text(h, encoding='utf-8')
+
+          # Guard the scope: no other tracked files may differ.
+          PY
+          changed="$(git diff --name-only)"
+          printf '%s\n' "$changed"
+          test "$changed" = $'cosmology_fragments/f18.txt\nvardath-cosmology.html'
+          git diff --check
+      - name: Commit guarded visibility repair
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add cosmology_fragments/f18.txt vardath-cosmology.html
+          git commit -m 'Expose latest cosmology art research on live page'
+          git push origin HEAD:main
