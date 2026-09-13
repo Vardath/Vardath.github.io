@@ -1,0 +1,111 @@
+name: Phonetic square progression 3x3 to 9x9 - 20 shards
+
+on:
+  push:
+    paths:
+      - '.github/workflows/phonetic-square-progression-20-shard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phonetic-square-progression-20-shard
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile test code
+        run: python -m py_compile tools/man_grid_exact_engine.py tools/man_grid_exact_data.py tools/test_phonetic_square_progression_v1.py
+      - name: Prepare pinned PHOIBLE evidence
+        run: python tools/test_phonetic_square_progression_v1.py prepare
+      - name: Validate predeclared protocol
+        run: |
+          python - <<'PY'
+          import gzip,json
+          p='data/phonetic-square-progression-v1-work/prepared.json.gz'
+          with gzip.open(p,'rt',encoding='utf8') as f:x=json.load(f)
+          assert x['shards']==20 and x['candidate']==[3,4,5,6,7,8,9] and x['boundary']==[2,10,11]
+          assert set(x['primary']).isdisjoint(x['heldout'])
+          print({'families':len(x['eligible']),'languages':len(x['langs']),'segments':len(x['params'])})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: square-progression-prepared-${{ github.run_id }}
+          path: data/phonetic-square-progression-v1-work/prepared.json.gz
+          retention-days: 7
+
+  shards:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: square-progression-prepared-${{ github.run_id }}
+          path: data/phonetic-square-progression-v1-work
+      - name: Run independent family partition ${{ matrix.shard }}
+        run: python tools/test_phonetic_square_progression_v1.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: square-progression-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/phonetic-square-progression-v1-work/result-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: square-progression-prepared-${{ github.run_id }}
+          path: data/phonetic-square-progression-v1-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: square-progression-s*-${{ github.run_id }}
+          path: data/phonetic-square-progression-v1-work
+          merge-multiple: true
+      - name: Require all 20 shards
+        run: test "$(find data/phonetic-square-progression-v1-work -name 'result-*.json' | wc -l)" -eq 20
+      - name: Merge and evaluate preregistered criteria
+        run: python tools/test_phonetic_square_progression_v1.py merge
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/phonetic-square-progression-v1.json'))
+          assert x['status']=='complete' and x['summary']['shards']==20
+          assert all(str(n) in x['resolutions'] for n in [2,3,4,5,6,7,8,9,10,11])
+          print(json.dumps(x['summary'],indent=2))
+          PY
+      - name: Publish result to website repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/phonetic-square-progression-v1.json
+          git commit -m "Publish 20-shard phonetic square progression result" || exit 0
+          for n in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((n*5))
+          done
+          exit 1
