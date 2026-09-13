@@ -1,0 +1,43 @@
+{
+  "protocol": "masonic-alchemy-v1",
+  "status": "complete",
+  "date": "2026-09-13",
+  "final_actions_run": 34757471398,
+  "artifact_digest": "sha256:94e134681e37f9a5a068b45b41a18a4ba054f6fc443ab8bc946f05763903a58c",
+  "shards": 20,
+  "raw_unique_records": 8486,
+  "matched_target": 3568,
+  "matched_control": 3568,
+  "primary": {
+    "endpoint": ">=3 predicted Vardath families",
+    "target_hits": 4,
+    "control_hits": 7,
+    "target_rate": 0.0011210762,
+    "control_rate": 0.0019618834,
+    "risk_ratio": 0.57142857,
+    "odds_ratio": 0.59949502,
+    "fisher_p": 0.54851169,
+    "bh_fdr_q": 1.0,
+    "result": "not supported"
+  },
+  "masonic": {
+    "matched_n": 1736,
+    "package_ge3": {"target_rate":0.000576,"control_rate":0.002304,"risk_ratio":0.25,"bh_fdr_q":0.96},
+    "four_eight": {"target_hits":24,"control_hits":3,"target_rate":0.013825,"control_rate":0.001728,"risk_ratio":8.0,"bh_fdr_q":0.000474},
+    "gate_ladder": {"target_hits":43,"control_hits":19,"target_rate":0.02477,"control_rate":0.010945,"risk_ratio":2.263,"bh_fdr_q":0.01697}
+  },
+  "alchemy": {
+    "matched_n": 1832,
+    "package_ge3": {"target_rate":0.001638,"control_rate":0.001638,"risk_ratio":1.0,"bh_fdr_q":1.0},
+    "serpent_braid": {"target_hits":40,"control_hits":3,"target_rate":0.021834,"control_rate":0.001638,"risk_ratio":13.3333,"bh_fdr_q":5.15e-8},
+    "paired_polarity": {"target_hits":37,"control_hits":6,"target_rate":0.020197,"control_rate":0.003275,"risk_ratio":6.1667,"bh_fdr_q":1.96e-5}
+  },
+  "posthoc_known_year_le_1930": {
+    "matched_pairs": 781,
+    "primary_ge3": {"risk_ratio":2.0,"fisher_p":1.0},
+    "masonic_four_eight": {"risk_ratio":5.5,"fisher_p":0.0216252},
+    "masonic_gate_ladder": {"risk_ratio":6.0,"fisher_p":0.0123433},
+    "alchemy_serpent_braid": {"control_hits":0,"fisher_p":0.0000245397},
+    "alchemy_paired_polarity": {"risk_ratio":1.0,"fisher_p":1.0}
+  }
+}
