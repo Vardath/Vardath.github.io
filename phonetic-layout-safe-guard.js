@@ -19,4 +19,14 @@
     seq.src='phonetic-square-sequence-section.js?v=20260913-sequence1';
     document.head.appendChild(seq);
   }
+
+  // Follow-up presentation for the 20-fold held-out feature-birth test.
+  // It waits for the successive-grid section, then inserts directly after it.
+  if(!document.querySelector('script[data-vardath-feature-birth]')){
+    const fb=document.createElement('script');
+    fb.defer=true;
+    fb.dataset.vardathFeatureBirth='1';
+    fb.src='phonetic-feature-birth-section.js?v=20260913-birth1';
+    document.head.appendChild(fb);
+  }
 })();
