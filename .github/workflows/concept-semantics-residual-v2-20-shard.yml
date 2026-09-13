@@ -1,0 +1,100 @@
+name: Residual concept semantics after lexical-form exclusion - 20 shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_concept_semantics_residual_v2.py'
+      - '.github/workflows/concept-semantics-residual-v2-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile residual concept test
+        run: python -m py_compile tools/test_concept_semantics_residual_v2.py
+      - name: Prepare frozen 27-concept evidence
+        run: python tools/test_concept_semantics_residual_v2.py prepare
+      - name: Validate preregistration
+        run: |
+          python - <<'PY'
+          import gzip,json
+          p='data/concept-semantics-residual-v2-work/prepared.json.gz'
+          with gzip.open(p,'rt',encoding='utf8') as f:x=json.load(f)
+          assert len(x['survivors'])==27
+          assert x['primary_threshold']==0.25
+          assert x['thresholds']==[0.15,0.25,0.35]
+          assert len(x['shard_sizes'])==20 and min(x['shard_sizes'])>=1 and sum(x['shard_sizes'])==27
+          print(json.dumps({'survivors':len(x['survivors']),'shards':x['shard_sizes'],'protocol':x['protocol']},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-semantics-residual-v2-prepared-${{ github.run_id }}
+          path: data/concept-semantics-residual-v2-work/prepared.json.gz
+          retention-days: 7
+
+  shards:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: concept-semantics-residual-v2-prepared-${{ github.run_id }}
+          path: data/concept-semantics-residual-v2-work
+      - name: Run residual concept shard ${{ matrix.shard }}
+        run: python tools/test_concept_semantics_residual_v2.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-semantics-residual-v2-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/concept-semantics-residual-v2-work/result-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: concept-semantics-residual-v2-prepared-${{ github.run_id }}
+          path: data/concept-semantics-residual-v2-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: concept-semantics-residual-v2-s*-${{ github.run_id }}
+          path: data/concept-semantics-residual-v2-work
+          merge-multiple: true
+      - name: Require all 20 populated shards
+        run: test "$(find data/concept-semantics-residual-v2-work -name 'result-*.json' | wc -l)" -eq 20
+      - name: Merge residual evidence and FDR
+        run: python tools/test_concept_semantics_residual_v2.py merge
+      - name: Validate complete result
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/concept-semantics-residual-v2.json'))
+          assert x['status']=='complete' and x['shards']==20
+          assert x['summary']['frozen_survivors']==27
+          assert set(x['results'])=={'0.15','0.25','0.35'}
+          print(json.dumps(x['summary'],indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-semantics-residual-v2-result-${{ github.run_id }}
+          path: data/concept-semantics-residual-v2.json
+          retention-days: 7
