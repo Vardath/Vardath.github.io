@@ -1,0 +1,106 @@
+name: Concept-by-concept sound meaning residual - 20 shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_concept_semantics_v1.py'
+      - '.github/workflows/concept-semantics-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile concept semantics test
+        run: python -m py_compile tools/test_concept_semantics_v1.py
+      - name: Prepare pinned PHOIBLE and NorthEuraLex evidence
+        run: python tools/test_concept_semantics_v1.py prepare
+      - name: Validate preregistered concept protocol
+        run: |
+          python - <<'PY'
+          import gzip,json
+          with gzip.open('data/concept-semantics-v1-work/prepared.json.gz','rt',encoding='utf8') as f:x=json.load(f)
+          assert x['source']['phoible_commit']=='5c477f1934f57b3c1a16168fadc08e83dbc03362'
+          assert x['source']['northeuralex_commit']=='e9a8119f25cf6078299132d8c4e7db338d46ff23'
+          assert x['counts']['concepts']>=1000 and x['counts']['languages']>=80
+          assert x['counts']['canonical_nonloan_forms']>=50000
+          assert len(x['shard_sizes'])==20 and min(x['shard_sizes'])>0 and sum(x['shard_sizes'])==x['counts']['concepts']
+          assert x['protocol']['primary_grid'].startswith('20x20')
+          print(json.dumps(x['counts'],indent=2))
+          print('shards',x['shard_sizes'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-semantics-prepared-${{ github.run_id }}
+          path: data/concept-semantics-v1-work/prepared.json.gz
+          retention-days: 7
+
+  shards:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: concept-semantics-prepared-${{ github.run_id }}
+          path: data/concept-semantics-v1-work
+      - name: Run concept shard ${{ matrix.shard }}
+        run: python tools/test_concept_semantics_v1.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-semantics-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/concept-semantics-v1-work/result-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: concept-semantics-prepared-${{ github.run_id }}
+          path: data/concept-semantics-v1-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: concept-semantics-s*-${{ github.run_id }}
+          path: data/concept-semantics-v1-work
+          merge-multiple: true
+      - name: Require all 20 populated concept shards
+        run: test "$(find data/concept-semantics-v1-work -name 'result-*.json' | wc -l)" -eq 20
+      - name: Merge concept-level evidence and FDR
+        run: python tools/test_concept_semantics_v1.py merge
+      - name: Validate complete concept result
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/concept-semantics-v1.json'))
+          assert x['status']=='complete' and x['shards']==20
+          assert x['summary']['concepts_total']>=1000
+          assert len(x['concepts'])==x['summary']['concepts_total']
+          assert x['primary_grid']==20 and x['primary_distance_km']==2000
+          print(json.dumps({k:x['summary'][k] for k in [
+            'concepts_total','concepts_eligible','eligible_positive_semantic_advantage',
+            'eligible_positive_fraction','eligible_positive_sign_p','semantic_supported_fdr',
+            'geometry_supported_fdr','both_semantic_and_geometry_supported_fdr']},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concept-semantics-result-${{ github.run_id }}
+          path: data/concept-semantics-v1.json
+          retention-days: 7
