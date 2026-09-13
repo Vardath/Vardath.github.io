@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "protocol": "masonic-ladder-sky-v2",
+  "date": "2026-09-13",
+  "actions_run": 34760966706,
+  "artifact_digest": "sha256:f26fc049cfbcc546173dd5141e52dd8bf67abb178f0b6e81de921b1096f559c7",
+  "shards": 20,
+  "unique_records": 3012,
+  "target_records": 1158,
+  "control_records": 1854,
+  "masonic_ladder_records": 7,
+  "matched_primary_pairs": 7,
+  "minimum_pairs_required": 25,
+  "conclusive_sample_size": false,
+  "primary": {
+    "endpoint": "celestial context: Masonic ladder-positive vs matched Masonic ladder-negative",
+    "ladder_hits": 0,
+    "ladder_n": 7,
+    "control_hits": 1,
+    "control_n": 7,
+    "risk_ratio": 0.0,
+    "fisher_p": 1.0,
+    "bh_fdr_q": 1.0,
+    "result": "underpowered; metadata-level prediction not supported"
+  },
+  "secondary": {
+    "structure": {"ladder_hits": 0, "control_hits": 0, "n_each": 7},
+    "axis": {"ladder_hits": 2, "control_hits": 0, "n_each": 7, "fisher_p": 0.4615384615},
+    "celestial_plus_axis": {"ladder_hits": 0, "control_hits": 0, "n_each": 7},
+    "external_celestial": {"masonic_hits": 0, "non_masonic_hits": 3, "n_each": 4, "fisher_p": 0.1428571429}
+  }
+}
