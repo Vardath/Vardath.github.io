@@ -1,0 +1,97 @@
+{
+  "version": 2,
+  "status": "complete",
+  "test": "3x3-to-21x21 successive phonetic square sequence",
+  "source": {
+    "dataset": "PHOIBLE",
+    "commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "method": {
+    "question": "Do square resolutions 3x3 through 21x21 form a genuine successive phonetic refinement sequence?",
+    "mapping": "All phones share one continuous PHOIBLE-derived place/manner coordinate. Each successive n x n grid is the same articulatory plane quantized more finely; no magic-number order is used.",
+    "heldout": "Grid and matching use only broad place/manner features; residual phonetic features are held out for evaluation.",
+    "controls": "Real within-family sibling branches versus deterministic unrelated-family controls; 2x2,22x22,23x23 are boundary controls.",
+    "sequence": "Track split and remerge events across 3..21. A genuine refinement should create distinctions more often than it collapses previously created distinctions.",
+    "capacity": "Cumulative square-cell count is reported because 3^2+...+21^2=3306, but arithmetic capacity alone is not treated as evidence that the sequence encodes 3065 phones.",
+    "support": "Primary support requires rho<=-0.85 for resolution vs coverage, rho<=-0.70 for resolution vs held-out loss, positive held-out real-vs-control advantage at >=16/19 candidate grids, and significant held-out shard wins (>=15/20, sign p<0.05) at >=14/19 grids.",
+    "endpoint": "21x21 is special only if its balanced score is the best candidate score and is not beaten by 22x22 or 23x23."
+  },
+  "summary": {
+    "families": 117,
+    "shards": 20,
+    "segments": 3065,
+    "cumulative_cells_3_to_21": 3306,
+    "real_pairs": 1949,
+    "control_pairs": 1695,
+    "rho_resolution_coverage": -0.9907855275879235,
+    "rho_resolution_heldout_loss": -0.9368421052631579,
+    "positive_heldout_advantage_resolutions": 19,
+    "significant_heldout_resolutions": 19,
+    "best_balanced_candidate": 3,
+    "progressive_supported": true,
+    "structural_refinement_supported": true,
+    "twentyone_special_endpoint_supported": false
+  },
+  "sequence_refinement": {
+    "real": {
+      "pairs": 1949,
+      "split_events": 32,
+      "remerge_events": 21,
+      "remerge_per_pair": 0.0107747562852745,
+      "monotonic_pair_rate": 0.9948691636736788,
+      "median_first_split_resolution": 4.0
+    },
+    "control": {
+      "pairs": 1695,
+      "split_events": 32,
+      "remerge_events": 20,
+      "remerge_per_pair": 0.011799410029498525,
+      "monotonic_pair_rate": 0.9941002949852508,
+      "median_first_split_resolution": 4
+    }
+  },
+  "cumulative_cells": {
+    "3": 9,
+    "4": 25,
+    "5": 50,
+    "6": 86,
+    "7": 135,
+    "8": 199,
+    "9": 280,
+    "10": 380,
+    "11": 501,
+    "12": 645,
+    "13": 814,
+    "14": 1010,
+    "15": 1235,
+    "16": 1491,
+    "17": 1780,
+    "18": 2104,
+    "19": 2465,
+    "20": 2865,
+    "21": 3306
+  },
+  "resolutions": {
+    "3": {"cells":9,"occupied":9,"within_cell_heldout_loss":0.13431970251186334,"real_coverage":0.9924151215988443,"real_heldout_loss":0.04707698114224865,"real_f1":0.9722682077390271,"control_coverage":0.9785697086443534,"control_heldout_loss":0.06023331556211723,"heldout_advantage":0.013156334419868583,"heldout_shard_wins":19,"heldout_sign_p":2.002716064453125e-05},
+    "4": {"cells":16,"occupied":15,"within_cell_heldout_loss":0.1282781222266391,"real_coverage":0.979532867806405,"real_heldout_loss":0.04603852562001529,"real_f1":0.9665780740993476,"control_coverage":0.95906573561281,"control_heldout_loss":0.059618831422434224,"heldout_advantage":0.01358030580241893,"heldout_shard_wins":18,"heldout_sign_p":0.00020122528076171875},
+    "5": {"cells":25,"occupied":24,"within_cell_heldout_loss":0.12244188327226814,"real_coverage":0.9572598121839634,"real_heldout_loss":0.044729698570410426,"real_f1":0.9562640220118173,"control_coverage":0.910185408138695,"control_heldout_loss":0.05533785273368606,"heldout_advantage":0.010608154163275638,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "6": {"cells":36,"occupied":34,"within_cell_heldout_loss":0.12122975470068897,"real_coverage":0.9454611124488321,"real_heldout_loss":0.044218769896854714,"real_f1":0.9505931620038368,"control_coverage":0.8720202263424031,"control_heldout_loss":0.05341651709696718,"heldout_advantage":0.009197747200112467,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "7": {"cells":49,"occupied":45,"within_cell_heldout_loss":0.11712620614652837,"real_coverage":0.939682157476523,"real_heldout_loss":0.0434283578902413,"real_f1":0.9480516844682623,"control_coverage":0.8546833614254755,"control_heldout_loss":0.05153210154794886,"heldout_advantage":0.008103743657707559,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "8": {"cells":64,"occupied":54,"within_cell_heldout_loss":0.11385059230293784,"real_coverage":0.939682157476523,"real_heldout_loss":0.04318723752580255,"real_f1":0.9481700915562574,"control_coverage":0.8658800866843246,"control_heldout_loss":0.051228795884315906,"heldout_advantage":0.008041558358513355,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "9": {"cells":81,"occupied":65,"within_cell_heldout_loss":0.11461888439264921,"real_coverage":0.9334216229231881,"real_heldout_loss":0.04391848316780601,"real_f1":0.9446156953239092,"control_coverage":0.8502287503009872,"control_heldout_loss":0.052626144623808165,"heldout_advantage":0.008707661456002151,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "10": {"cells":100,"occupied":76,"within_cell_heldout_loss":0.11391075106296014,"real_coverage":0.9307729352275463,"real_heldout_loss":0.04401920838183934,"real_f1":0.9432084694202955,"control_coverage":0.8691307488562485,"control_heldout_loss":0.054683050899632143,"heldout_advantage":0.010663842517792801,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "11": {"cells":121,"occupied":91,"within_cell_heldout_loss":0.11166003810375155,"real_coverage":0.9242716108836986,"real_heldout_loss":0.043572612276207436,"real_f1":0.940074603112235,"control_coverage":0.8392728148326511,"control_heldout_loss":0.05252713623105245,"heldout_advantage":0.008954523954845015,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "12": {"cells":144,"occupied":97,"within_cell_heldout_loss":0.10801924138592361,"real_coverage":0.9129544907295931,"real_heldout_loss":0.04280499509135933,"real_f1":0.9345514679691928,"control_coverage":0.8059234288466169,"control_heldout_loss":0.04991721442087442,"heldout_advantage":0.007112219329515092,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "13": {"cells":169,"occupied":107,"within_cell_heldout_loss":0.1064096314702573,"real_coverage":0.9207801589212617,"real_heldout_loss":0.04276354021385403,"real_f1":0.9386544621460936,"control_coverage":0.8332530700698291,"control_heldout_loss":0.05099315288413684,"heldout_advantage":0.008229612670282813,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "14": {"cells":196,"occupied":117,"within_cell_heldout_loss":0.10385750643871428,"real_coverage":0.9089814591861305,"real_heldout_loss":0.04258002207505519,"real_f1":0.9325721586833264,"control_coverage":0.7972549963881531,"control_heldout_loss":0.04941860465116279,"heldout_advantage":0.006838582576107595,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "15": {"cells":225,"occupied":129,"within_cell_heldout_loss":0.10375220014699923,"real_coverage":0.9127137009390802,"real_heldout_loss":0.04265781412595818,"real_f1":0.9344954187687589,"control_coverage":0.820972790753672,"control_heldout_loss":0.05068354760391716,"heldout_advantage":0.008025733477958985,"heldout_shard_wins":16,"heldout_sign_p":0.005908966064453125},
+    "16": {"cells":256,"occupied":140,"within_cell_heldout_loss":0.1025866074277766,"real_coverage":0.9092222489766434,"real_heldout_loss":0.042431732580037664,"real_f1":0.9327692271897906,"control_coverage":0.7989405249217433,"control_heldout_loss":0.049483875828812536,"heldout_advantage":0.0070521432487748725,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "17": {"cells":289,"occupied":146,"within_cell_heldout_loss":0.10240466635833123,"real_coverage":0.9062123765952323,"real_heldout_loss":0.04246471960202531,"real_f1":0.9311671769161542,"control_coverage":0.79532867806405,"control_heldout_loss":0.04951306892723787,"heldout_advantage":0.007048349325212561,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "18": {"cells":324,"occupied":155,"within_cell_heldout_loss":0.10199900479340271,"real_coverage":0.9051288225379244,"real_heldout_loss":0.04260238390824984,"real_f1":0.9305297997179637,"control_coverage":0.7966530219118709,"control_heldout_loss":0.04957558813158028,"heldout_advantage":0.006973204223330441,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "19": {"cells":361,"occupied":169,"within_cell_heldout_loss":0.10017963078715238,"real_coverage":0.9054900072236937,"real_heldout_loss":0.04264633101390181,"real_f1":0.9306998667860577,"control_coverage":0.7941247291114857,"control_heldout_loss":0.04963235294117648,"heldout_advantage":0.006986021927274669,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "20": {"cells":400,"occupied":179,"within_cell_heldout_loss":0.09752377987798036,"real_coverage":0.9006742114134361,"real_heldout_loss":0.04216886482793447,"real_f1":0.9283737643513393,"control_coverage":0.7908740669395617,"control_heldout_loss":0.04886271375653322,"heldout_advantage":0.006693848928598749,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "21": {"cells":441,"occupied":191,"within_cell_heldout_loss":0.0958260043446908,"real_coverage":0.897664339032025,"real_heldout_loss":0.04205319355030996,"real_f1":0.9268263870189971,"control_coverage":0.7831687936431495,"control_heldout_loss":0.04869971816551371,"heldout_advantage":0.00664652461520375,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "22": {"cells":484,"occupied":193,"within_cell_heldout_loss":0.09715685433796363,"real_coverage":0.897664339032025,"real_heldout_loss":0.04218545094182165,"real_f1":0.9267644807109959,"control_coverage":0.7842523477004575,"control_heldout_loss":0.04884991300788046,"heldout_advantage":0.006664462066058814,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438},
+    "23": {"cells":529,"occupied":202,"within_cell_heldout_loss":0.09526878376474163,"real_coverage":0.8923669636407416,"real_heldout_loss":0.041980534568567485,"real_f1":0.9240285251167158,"control_coverage":0.7785937876234048,"control_heldout_loss":0.04870238647492397,"heldout_advantage":0.006721851906356484,"heldout_shard_wins":17,"heldout_sign_p":0.0012884140014648438}
+  }
+}
