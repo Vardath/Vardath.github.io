@@ -1,0 +1,58 @@
+name: Masonic ladder sky lattice validation v2 - 20 shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_masonic_ladder_sky_v2.py'
+      - 'research/masonic_ladder_sky_v2/PREREGISTRATION.md'
+      - '.github/workflows/masonic-ladder-sky-v2-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  shards:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen v2 protocol
+        run: |
+          python -m py_compile tools/test_masonic_ladder_sky_v2.py
+          python tools/test_masonic_ladder_sky_v2.py validate
+          test -f research/masonic_ladder_sky_v2/PREREGISTRATION.md
+      - name: Run shard
+        run: python tools/test_masonic_ladder_sky_v2.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ladder-sky-v2-shard-${{ matrix.shard }}-${{ github.run_id }}
+          path: research/masonic_ladder_sky_v2_work/shard-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ladder-sky-v2-shard-*-${{ github.run_id }}
+          path: research/masonic_ladder_sky_v2_work
+          merge-multiple: true
+      - name: Merge all 20 shards
+        run: |
+          test "$(find research/masonic_ladder_sky_v2_work -name 'shard-*.json' | wc -l)" -eq 20
+          python tools/test_masonic_ladder_sky_v2.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: masonic-ladder-sky-v2-result-${{ github.run_id }}
+          path: research/masonic_ladder_sky_v2_results
+          retention-days: 14
