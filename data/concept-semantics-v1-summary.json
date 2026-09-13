@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "concept-by-concept residual sound -> meaning after family/loan/cognacy/geography controls",
+  "source": {
+    "phoible_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "northeuralex_commit": "e9a8119f25cf6078299132d8c4e7db338d46ff23"
+  },
+  "counts": {
+    "raw_forms": 121611,
+    "loan_forms_removed": 0,
+    "unmapped_forms": 16626,
+    "mapped_nonloan_forms": 104985,
+    "languages": 106,
+    "concepts": 1016,
+    "canonical_nonloan_forms": 92678
+  },
+  "shards": 20,
+  "shard_sizes": [51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,50,50,50,50],
+  "primary_grid": 20,
+  "primary_distance_km": 2000,
+  "sensitivity_distance_km": [1000,2000,3000],
+  "eligibility": {"min_cases":25,"min_target_families":8},
+  "summary": {
+    "concepts_total":1016,
+    "concepts_eligible":1016,
+    "eligible_positive_semantic_advantage":816,
+    "eligible_positive_fraction":0.8031496062992126,
+    "eligible_positive_sign_p":4.2837606123286434e-89,
+    "semantic_supported_fdr":27,
+    "geometry_supported_fdr":1,
+    "both_semantic_and_geometry_supported_fdr":0,
+    "sensitivity_pooled": {
+      "1000":{"cases":92678,"auc_real":0.5724652380644099,"auc_label":0.49528007366005644,"auc_random":0.5647719343677401,"auc_raw":0.5400940172784634,"top1_real":0.10489760245149872,"top1_label":0.0594882280584389,"top1_random":0.09609831891063682,"top1_raw":0.1005174960083351},
+      "2000":{"cases":92675,"auc_real":0.5691506159518035,"auc_label":0.4967269130473877,"auc_random":0.5622965560651024,"auc_raw":0.5369646614513086,"top1_real":0.1004325150615952,"top1_label":0.06028594550849744,"top1_random":0.09384138117075802,"top1_raw":0.09878835677405934},
+      "3000":{"cases":92640,"auc_real":0.5664935952792172,"auc_label":0.49440162636730045,"auc_random":0.5586593264248708,"auc_raw":0.5329220639032817,"top1_real":0.09714971934369604,"top1_label":0.05983196603339089,"top1_random":0.09035064047207829,"top1_raw":0.09333762980986086}
+    }
+  },
+  "semantic_supported": [
+    {"concept_id":"473_december","label":"DECEMBER","cases":90,"target_families":20,"auc_real":0.8596296296296295,"auc_label":0.47888888888888875,"auc_random":0.8248148148148148,"semantic_auc_advantage":0.38074074074074077,"semantic_q":0.02034759521484375,"geometry_auc_advantage":0.03481481481481474,"geometry_q":0.8040352035724119},
+    {"concept_id":"158_cuckoo","label":"CUCKOO","cases":96,"target_families":19,"auc_real":0.8493055555555555,"auc_label":0.5031249999999999,"auc_random":0.7694444444444445,"semantic_auc_advantage":0.3461805555555556,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.07986111111111105,"geometry_q":0.8628503374834364},
+    {"concept_id":"462_january","label":"JANUARY","cases":78,"target_families":19,"auc_real":0.7918803418803417,"auc_label":0.47735042735042743,"auc_random":0.7786324786324785,"semantic_auc_advantage":0.3145299145299143,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.0132478632478632,"geometry_q":0.9788053949903661},
+    {"concept_id":"479_saturday","label":"SATURDAY","cases":91,"target_families":20,"auc_real":0.7754578754578754,"auc_label":0.4747252747252747,"auc_random":0.717216117216117,"semantic_auc_advantage":0.30073260073260066,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.05824175824175837,"geometry_q":0.9998626708984375},
+    {"concept_id":"1003_measure","label":"MEASURE","cases":86,"target_families":19,"auc_real":0.6651162790697674,"auc_label":0.41240310077519376,"auc_random":0.6875968992248063,"semantic_auc_advantage":0.2527131782945737,"semantic_q":0.028471726637620192,"geometry_auc_advantage":-0.022480620155038822,"geometry_q":0.9998626708984375},
+    {"concept_id":"203_mother","label":"MOTHER","cases":103,"target_families":20,"auc_real":0.7074433656957929,"auc_label":0.4624595469255663,"auc_random":0.6932038834951457,"semantic_auc_advantage":0.24498381877022662,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.014239482200647191,"geometry_q":0.901325466208262},
+    {"concept_id":"456_month","label":"MONTH","cases":102,"target_families":20,"auc_real":0.6866013071895424,"auc_label":0.457843137254902,"auc_random":0.5950980392156864,"semantic_auc_advantage":0.22875816993464038,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.091503267973856,"geometry_q":0.869897595879172},
+    {"concept_id":"440_arrow","label":"ARROW","cases":96,"target_families":20,"auc_real":0.6684027777777777,"auc_label":0.44583333333333336,"auc_random":0.6454861111111111,"semantic_auc_advantage":0.22256944444444432,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.022916666666666585,"geometry_q":0.9998626708984375},
+    {"concept_id":"1008_draw","label":"zeichnen::V","cases":79,"target_families":17,"auc_real":0.710548523206751,"auc_label":0.49282700421940934,"auc_random":0.6691983122362869,"semantic_auc_advantage":0.21772151898734166,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.041350210970464096,"geometry_q":0.7094704367897727},
+    {"concept_id":"334_picture","label":"PICTURE (PAINTING)","cases":96,"target_families":20,"auc_real":0.6260416666666665,"auc_label":0.42812500000000003,"auc_random":0.5503472222222223,"semantic_auc_advantage":0.19791666666666646,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.07569444444444418,"geometry_q":0.869897595879172},
+    {"concept_id":"202_father","label":"FATHER","cases":95,"target_families":20,"auc_real":0.6726315789473684,"auc_label":0.4950877192982456,"auc_random":0.6866666666666666,"semantic_auc_advantage":0.17754385964912278,"semantic_q":0.028471726637620192,"geometry_auc_advantage":-0.01403508771929829,"geometry_q":0.9998626708984375},
+    {"concept_id":"606_here","label":"HERE","cases":98,"target_families":21,"auc_real":0.6571428571428573,"auc_label":0.519047619047619,"auc_random":0.6482993197278911,"semantic_auc_advantage":0.13809523809523827,"semantic_q":0.028471726637620192,"geometry_auc_advantage":0.00884353741496613,"geometry_q":0.9998626708984375},
+    {"concept_id":"496_round","label":"ROUND","cases":104,"target_families":21,"auc_real":0.5724358974358974,"auc_label":0.45032051282051283,"auc_random":0.6185897435897435,"semantic_auc_advantage":0.12211538461538457,"semantic_q":0.028471726637620192,"geometry_auc_advantage":-0.0461538461538461,"geometry_q":0.9998626708984375},
+    {"concept_id":"361_milk","label":"MILK","cases":100,"target_families":19,"auc_real":0.6893333333333332,"auc_label":0.4203333333333332,"auc_random":0.6270000000000001,"semantic_auc_advantage":0.269,"semantic_q":0.04166412353515625,"geometry_auc_advantage":0.06233333333333313,"geometry_q":0.9511179490522905},
+    {"concept_id":"307_house","label":"HOUSE","cases":101,"target_families":18,"auc_real":0.6580858085808581,"auc_label":0.4996699669966995,"auc_random":0.6293729372937295,"semantic_auc_advantage":0.15841584158415856,"semantic_q":0.04166412353515625,"geometry_auc_advantage":0.028712871287128627,"geometry_q":0.9511179490522905},
+    {"concept_id":"836_build","label":"BUILD","cases":96,"target_families":20,"auc_real":0.6142361111111111,"auc_label":0.47708333333333336,"auc_random":0.5927083333333333,"semantic_auc_advantage":0.13715277777777773,"semantic_q":0.04166412353515625,"geometry_auc_advantage":0.021527777777777812,"geometry_q":0.9998626708984375},
+    {"concept_id":"641_thou","label":"THOU","cases":104,"target_families":21,"auc_real":0.828525641025641,"auc_label":0.4945512820512822,"auc_random":0.7961538461538461,"semantic_auc_advantage":0.3339743589743588,"semantic_q":0.04204093085394965,"geometry_auc_advantage":0.03237179487179487,"geometry_q":0.8040352035724119},
+    {"concept_id":"358_salt","label":"SALT","cases":102,"target_families":21,"auc_real":0.7290849673202616,"auc_label":0.49248366013071887,"auc_random":0.6866013071895425,"semantic_auc_advantage":0.23660130718954275,"semantic_q":0.04204093085394965,"geometry_auc_advantage":0.042483660130719136,"geometry_q":0.7107816423688617},
+    {"concept_id":"362_tea","label":"TEA","cases":64,"target_families":17,"auc_real":0.9072916666666666,"auc_label":0.4401041666666667,"auc_random":0.901041666666667,"semantic_auc_advantage":0.4671874999999999,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.006249999999999645,"geometry_q":0.8040352035724119},
+    {"concept_id":"464_march","label":"MARCH","cases":84,"target_families":17,"auc_real":0.7623015873015873,"auc_label":0.45674603174603173,"auc_random":0.8043650793650793,"semantic_auc_advantage":0.3055555555555555,"semantic_q":0.048482541684751156,"geometry_auc_advantage":-0.042063492063492025,"geometry_q":0.9998626708984375},
+    {"concept_id":"984_chat","label":"CHAT (WITH SOMEBODY)","cases":76,"target_families":17,"auc_real":0.7293859649122808,"auc_label":0.49561403508771934,"auc_random":0.725,"semantic_auc_advantage":0.23377192982456146,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.004385964912280826,"geometry_q":0.901325466208262},
+    {"concept_id":"221_mind","label":"MIND","cases":101,"target_families":21,"auc_real":0.634983498349835,"auc_label":0.4379537953795379,"auc_random":0.5732673267326732,"semantic_auc_advantage":0.19702970297029715,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.06171617161716181,"geometry_q":0.6727625528971354},
+    {"concept_id":"570_familiar","label":"FAMILIAR","cases":96,"target_families":18,"auc_real":0.6774305555555554,"auc_label":0.4930555555555555,"auc_random":0.5881944444444444,"semantic_auc_advantage":0.1843749999999999,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.08923611111111107,"geometry_q":0.540277099609375},
+    {"concept_id":"841_bow","label":"beugen::V","cases":95,"target_families":20,"auc_real":0.6280701754385966,"auc_label":0.4463157894736842,"auc_random":0.5263157894736843,"semantic_auc_advantage":0.18175438596491234,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.10175438596491226,"geometry_q":0.6727625528971354},
+    {"concept_id":"894_break","label":"BREAK (CLEAVE)","cases":94,"target_families":20,"auc_real":0.6223404255319148,"auc_label":0.45177304964538995,"auc_random":0.5546099290780142,"semantic_auc_advantage":0.17056737588652487,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.06773049645390061,"geometry_q":0.8040352035724119},
+    {"concept_id":"744_relax","label":"REST","cases":71,"target_families":17,"auc_real":0.6347417840375588,"auc_label":0.46807511737089214,"auc_random":0.5727699530516431,"semantic_auc_advantage":0.16666666666666663,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.06197183098591563,"geometry_q":0.540277099609375},
+    {"concept_id":"548_clever","label":"CLEVER","cases":90,"target_families":17,"auc_real":0.5585185185185186,"auc_label":0.4574074074074075,"auc_random":0.5425925925925927,"semantic_auc_advantage":0.10111111111111115,"semantic_q":0.048482541684751156,"geometry_auc_advantage":0.0159259259259259,"geometry_q":0.8040352035724119}
+  ],
+  "geometry_supported": [
+    {"concept_id":"527_yellow","label":"YELLOW","cases":95,"target_families":19,"auc_real":0.5877192982456141,"auc_label":0.5410526315789475,"auc_random":0.44947368421052625,"auc_raw":0.5375438596491229,"semantic_auc_advantage":0.046666666666666634,"semantic_q":0.5323362381327114,"geometry_auc_advantage":0.13824561403508784,"geometry_q":0.03875732421875}
+  ],
+  "interpretation_boundary": "A supported concept shows reproducible cross-family pronunciation/concept association after the explicit filters used here. It does not establish innate meaning, universal sound symbolism, or absence of ancient contact/unflagged borrowing. The pinned NorthEuraLex Loan field removed zero rows, so borrowing was not effectively controlled by that field in this run."
+}
