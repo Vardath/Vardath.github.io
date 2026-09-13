@@ -1,0 +1,101 @@
+name: Phonetic square sequence 3x3 to 21x21 - 20 shards
+
+on:
+  push:
+    paths:
+      - '.github/workflows/phonetic-square-sequence-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile sequence test code
+        run: python -m py_compile tools/man_grid_exact_engine.py tools/man_grid_exact_data.py tools/test_phonetic_square_sequence_v2.py
+      - name: Prepare pinned PHOIBLE sequence evidence
+        run: python tools/test_phonetic_square_sequence_v2.py prepare
+      - name: Validate predeclared sequence protocol
+        run: |
+          python - <<'PY'
+          import gzip,json
+          p='data/phonetic-square-sequence-v2-work/prepared.json.gz'
+          with gzip.open(p,'rt',encoding='utf8') as f:x=json.load(f)
+          assert x['shards']==20
+          assert x['candidate']==list(range(3,22))
+          assert x['boundary']==[2,22,23]
+          assert x['cumulative_cells']['21']==3306
+          assert set(x['primary']).isdisjoint(x['heldout'])
+          print({'families':len(x['eligible']),'languages':len(x['langs']),'segments':len(x['params']),'cumulative_cells':x['cumulative_cells']['21']})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: square-sequence-prepared-${{ github.run_id }}
+          path: data/phonetic-square-sequence-v2-work/prepared.json.gz
+          retention-days: 7
+
+  shards:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: square-sequence-prepared-${{ github.run_id }}
+          path: data/phonetic-square-sequence-v2-work
+      - name: Run independent family partition ${{ matrix.shard }}
+        run: python tools/test_phonetic_square_sequence_v2.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: square-sequence-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/phonetic-square-sequence-v2-work/result-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: square-sequence-prepared-${{ github.run_id }}
+          path: data/phonetic-square-sequence-v2-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: square-sequence-s*-${{ github.run_id }}
+          path: data/phonetic-square-sequence-v2-work
+          merge-multiple: true
+      - name: Require all 20 shard results
+        run: test "$(find data/phonetic-square-sequence-v2-work -name 'result-*.json' | wc -l)" -eq 20
+      - name: Merge and evaluate sequence criteria
+        run: python tools/test_phonetic_square_sequence_v2.py merge
+      - name: Validate complete sequence result
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/phonetic-square-sequence-v2.json'))
+          assert x['status']=='complete' and x['summary']['shards']==20
+          assert x['summary']['cumulative_cells_3_to_21']==3306
+          assert all(str(n) in x['resolutions'] for n in range(2,24))
+          print(json.dumps(x['summary'],indent=2))
+          print(json.dumps(x['sequence_refinement'],indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: square-sequence-result-${{ github.run_id }}
+          path: data/phonetic-square-sequence-v2.json
+          retention-days: 7
