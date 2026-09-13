@@ -1,0 +1,70 @@
+name: Masonic + alchemical visual grammar corpus - 20 shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_masonic_alchemy_corpus.py'
+      - '.github/workflows/masonic-alchemy-corpus-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  shards:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate preregistered protocol
+        run: |
+          python -m py_compile tools/test_masonic_alchemy_corpus.py
+          python tools/test_masonic_alchemy_corpus.py validate
+          test -f research/masonic_alchemy_corpus/PREREGISTRATION.md
+      - name: Run shard ${{ matrix.shard }}
+        run: python tools/test_masonic_alchemy_corpus.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: masonic-alchemy-shard-${{ matrix.shard }}-${{ github.run_id }}
+          path: research/masonic_alchemy_corpus_work/shard-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: masonic-alchemy-shard-*-${{ github.run_id }}
+          path: research/masonic_alchemy_corpus_work
+          merge-multiple: true
+      - name: Require all 20 shards
+        run: |
+          test "$(find research/masonic_alchemy_corpus_work -name 'shard-*.json' | wc -l)" -eq 20
+          python tools/test_masonic_alchemy_corpus.py validate
+      - name: Merge and test preregistered endpoints
+        run: python tools/test_masonic_alchemy_corpus.py merge
+      - name: Validate aggregate output
+        run: |
+          python - <<'PY'
+          import json,glob
+          x=json.load(open('research/masonic_alchemy_corpus_results/summary.json'))
+          assert x['status']=='complete'
+          assert x['shards']==20
+          assert len(glob.glob('research/masonic_alchemy_corpus_results/shards/shard-*.json'))==20
+          assert x['matched_target']==x['matched_control'] and x['matched_target']>0
+          print(json.dumps({'raw_records':x['raw_records'],'matched_target':x['matched_target'],'matched_control':x['matched_control'],'primary':x['primary']},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: masonic-alchemy-corpus-result-${{ github.run_id }}
+          path: research/masonic_alchemy_corpus_results
+          retention-days: 14
