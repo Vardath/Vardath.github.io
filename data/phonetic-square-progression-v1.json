@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "3x3-to-9x9 progressive phonetic resolution falsification",
+  "source": {
+    "dataset": "PHOIBLE",
+    "commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "method": {
+    "question": "Does 3x3..9x9 act as a progressively refining phonetic hierarchy?",
+    "heldout": "Grid and matching use only broad place/manner features; residual features are held out for evaluation.",
+    "controls": "Real within-family sibling branches versus unrelated-family controls; 2x2,10x10,11x11 are boundary controls.",
+    "magic": "Magic-square number ordering is not used because the earlier Durer/powers-of-3 chance test failed.",
+    "support": "Require rho<=-0.75 for resolution vs coverage and held-out loss, positive retention advantage at >=6/7 candidate grids, and 9x9 retention replicated in >=15/20 shards with sign-test p<0.05.",
+    "endpoint": "9x9 is special only if it has the best balanced candidate score and is not beaten by 10x10 or 11x11."
+  },
+  "features": {
+    "grid_and_matching": [
+      "syllabic",
+      "consonantal",
+      "sonorant",
+      "continuant",
+      "labial",
+      "coronal",
+      "dorsal",
+      "high",
+      "low",
+      "front",
+      "back"
+    ],
+    "heldout_evaluation": [
+      "short",
+      "long",
+      "delayedRelease",
+      "approximant",
+      "tap",
+      "trill",
+      "nasal",
+      "lateral",
+      "round",
+      "labiodental",
+      "anterior",
+      "distributed",
+      "strident",
+      "tense",
+      "retractedTongueRoot",
+      "advancedTongueRoot",
+      "periodicGlottalSource",
+      "epilaryngealSource",
+      "spreadGlottis",
+      "constrictedGlottis",
+      "fortis",
+      "raisedLarynxEjective",
+      "loweredLarynxImplosive",
+      "click"
+    ]
+  },
+  "summary": {
+    "families": 117,
+    "shards": 20,
+    "real_pairs": 1949,
+    "control_pairs": 1695,
+    "rho_resolution_coverage": -0.9910312089651149,
+    "rho_resolution_heldout_loss": -0.8928571428571429,
+    "positive_retention_resolutions": 7,
+    "best_balanced_candidate": 3,
+    "progressive_supported": false,
+    "nine_by_nine_81_supported": false,
+    "nine_special_endpoint_supported": false
+  },
+  "resolutions": {
+    "2": {
+      "real": {
+        "retention": 0.9989738327347357,
+        "coverage": 0.9997592102094871,
+        "heldout_loss": 0.046806425283665166,
+        "f1": 0.9759212437604902,
+        "pairs": 1949,
+        "outputs": 8304
+      },
+      "control": {
+        "retention": 0.9988200589970502,
+        "coverage": 0.9985552612569227,
+        "heldout_loss": 0.05932417678107332,
+        "f1": 0.9687517902657096,
+        "pairs": 1695,
+        "outputs": 8294
+      },
+      "retention_advantage": 0.00015377373768554747,
+      "heldout_advantage": 0.012517751497408157,
+      "retention_shard_wins": 2,
+      "retention_sign_p": 0.9999799728393555,
+      "heldout_shard_wins": 19,
+      "heldout_sign_p": 2.002716064453125e-05
+    },
+    "3": {
+      "real": {
+        "retention": 0.9979476654694716,
+        "coverage": 0.9924151215988443,
+        "heldout_loss": 0.04707698114224864,
+        "f1": 0.9722682077390271,
+        "pairs": 1949,
+        "outputs": 8243
+      },
+      "control": {
+        "retention": 0.9964601769911504,
+        "coverage": 0.9785697086443534,
+        "heldout_loss": 0.06023331556211723,
+        "f1": 0.9587757537211317,
+        "pairs": 1695,
+        "outputs": 8128
+      },
+      "retention_advantage": 0.0014874884783211417,
+      "heldout_advantage": 0.01315633441986859,
+      "retention_shard_wins": 5,
+      "retention_sign_p": 0.9940910339355469,
+      "heldout_shard_wins": 19,
+      "heldout_sign_p": 2.002716064453125e-05
+    },
+    "4": {
+      "real": {
+        "retention": 0.9964084145715751,
+        "coverage": 0.979532867806405,
+        "heldout_loss": 0.04603852562001529,
+        "f1": 0.9665780740993476,
+        "pairs": 1949,
+        "outputs": 8136
+      },
+      "control": {
+        "retention": 0.9952802359882006,
+        "coverage": 0.95906573561281,
+        "heldout_loss": 0.05961883142243424,
+        "f1": 0.9496315534891978,
+        "pairs": 1695,
+        "outputs": 7966
+      },
+      "retention_advantage": 0.0011281785833745506,
+      "heldout_advantage": 0.013580305802418945,
+      "retention_shard_wins": 5,
+      "retention_sign_p": 0.9940910339355469,
+      "heldout_shard_wins": 19,
+      "heldout_sign_p": 2.002716064453125e-05
+    },
+    "5": {
+      "real": {
+        "retention": 0.9943560800410467,
+        "coverage": 0.9572598121839634,
+        "heldout_loss": 0.044729698570410426,
+        "f1": 0.9562640220118173,
+        "pairs": 1949,
+        "outputs": 7951
+      },
+      "control": {
+        "retention": 0.9911504424778761,
+        "coverage": 0.910185408138695,
+        "heldout_loss": 0.05533785273368606,
+        "f1": 0.9271033617369415,
+        "pairs": 1695,
+        "outputs": 7560
+      },
+      "retention_advantage": 0.0032056375631706047,
+      "heldout_advantage": 0.010608154163275638,
+      "retention_shard_wins": 8,
+      "retention_sign_p": 0.8684120178222656,
+      "heldout_shard_wins": 18,
+      "heldout_sign_p": 0.00020122528076171875
+    },
+    "6": {
+      "real": {
+        "retention": 0.995382247306311,
+        "coverage": 0.9454611124488321,
+        "heldout_loss": 0.04421876989685471,
+        "f1": 0.9505931620038368,
+        "pairs": 1949,
+        "outputs": 7853
+      },
+      "control": {
+        "retention": 0.9923303834808259,
+        "coverage": 0.8720202263424031,
+        "heldout_loss": 0.053416517096967195,
+        "f1": 0.9077732975212829,
+        "pairs": 1695,
+        "outputs": 7243
+      },
+      "retention_advantage": 0.003051863825485057,
+      "heldout_advantage": 0.009197747200112488,
+      "retention_shard_wins": 9,
+      "retention_sign_p": 0.7482776641845703,
+      "heldout_shard_wins": 18,
+      "heldout_sign_p": 0.00020122528076171875
+    },
+    "7": {
+      "real": {
+        "retention": 0.9938429964084146,
+        "coverage": 0.939682157476523,
+        "heldout_loss": 0.0434283578902413,
+        "f1": 0.9480516844682623,
+        "pairs": 1949,
+        "outputs": 7805
+      },
+      "control": {
+        "retention": 0.9911504424778761,
+        "coverage": 0.8546833614254755,
+        "heldout_loss": 0.05153210154794886,
+        "f1": 0.8991366943982455,
+        "pairs": 1695,
+        "outputs": 7099
+      },
+      "retention_advantage": 0.002692553930538466,
+      "heldout_advantage": 0.008103743657707559,
+      "retention_shard_wins": 9,
+      "retention_sign_p": 0.7482776641845703,
+      "heldout_shard_wins": 17,
+      "heldout_sign_p": 0.0012884140014648438
+    },
+    "8": {
+      "real": {
+        "retention": 0.9938429964084146,
+        "coverage": 0.939682157476523,
+        "heldout_loss": 0.04318723752580255,
+        "f1": 0.9481700915562574,
+        "pairs": 1949,
+        "outputs": 7805
+      },
+      "control": {
+        "retention": 0.9911504424778761,
+        "coverage": 0.8658800866843246,
+        "heldout_loss": 0.05122879588431591,
+        "f1": 0.9054324614632739,
+        "pairs": 1695,
+        "outputs": 7192
+      },
+      "retention_advantage": 0.002692553930538466,
+      "heldout_advantage": 0.008041558358513362,
+      "retention_shard_wins": 10,
+      "retention_sign_p": 0.5880985260009766,
+      "heldout_shard_wins": 18,
+      "heldout_sign_p": 0.00020122528076171875
+    },
+    "9": {
+      "real": {
+        "retention": 0.9933299127757824,
+        "coverage": 0.9334216229231881,
+        "heldout_loss": 0.04391848316780601,
+        "f1": 0.9446156953239092,
+        "pairs": 1949,
+        "outputs": 7753
+      },
+      "control": {
+        "retention": 0.9899705014749263,
+        "coverage": 0.8502287503009872,
+        "heldout_loss": 0.052626144623808165,
+        "f1": 0.8961763702171446,
+        "pairs": 1695,
+        "outputs": 7062
+      },
+      "retention_advantage": 0.003359411300856152,
+      "heldout_advantage": 0.008707661456002151,
+      "retention_shard_wins": 9,
+      "retention_sign_p": 0.7482776641845703,
+      "heldout_shard_wins": 18,
+      "heldout_sign_p": 0.00020122528076171875
+    },
+    "10": {
+      "real": {
+        "retention": 0.9928168291431503,
+        "coverage": 0.9307729352275463,
+        "heldout_loss": 0.04401920838183935,
+        "f1": 0.9432084694202955,
+        "pairs": 1949,
+        "outputs": 7731
+      },
+      "control": {
+        "retention": 0.9899705014749263,
+        "coverage": 0.8691307488562485,
+        "heldout_loss": 0.05468305089963214,
+        "f1": 0.905624371320679,
+        "pairs": 1695,
+        "outputs": 7219
+      },
+      "retention_advantage": 0.0028463276682240135,
+      "heldout_advantage": 0.010663842517792788,
+      "retention_shard_wins": 9,
+      "retention_sign_p": 0.7482776641845703,
+      "heldout_shard_wins": 19,
+      "heldout_sign_p": 2.002716064453125e-05
+    },
+    "11": {
+      "real": {
+        "retention": 0.9933299127757824,
+        "coverage": 0.9242716108836986,
+        "heldout_loss": 0.04357261227620742,
+        "f1": 0.940074603112235,
+        "pairs": 1949,
+        "outputs": 7677
+      },
+      "control": {
+        "retention": 0.9911504424778761,
+        "coverage": 0.8392728148326511,
+        "heldout_loss": 0.05252713623105246,
+        "f1": 0.8900967013674536,
+        "pairs": 1695,
+        "outputs": 6971
+      },
+      "retention_advantage": 0.0021794702979063274,
+      "heldout_advantage": 0.008954523954845035,
+      "retention_shard_wins": 9,
+      "retention_sign_p": 0.7482776641845703,
+      "heldout_shard_wins": 18,
+      "heldout_sign_p": 0.00020122528076171875
+    }
+  },
+  "boundary": "This run tests square-resolution geometry, not magic-number order and not a pre-labelled throat/tongue/lip-teeth ancestry. A direct ternary anatomical test is only justified as a follow-up if this ladder survives."
+}
