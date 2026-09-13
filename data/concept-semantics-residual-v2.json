@@ -1,0 +1,75 @@
+{
+  "version": 2,
+  "status": "complete",
+  "test": "27-concept residual semantics after near-identical cross-family lexical-form exclusion",
+  "source": {
+    "phoible_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "northeuralex_commit": "e9a8119f25cf6078299132d8c4e7db338d46ff23"
+  },
+  "shards": 20,
+  "shard_sizes": [2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  "protocol": {
+    "question": "Which of the 27 v1 FDR concept survivors remain after removing cross-family lexical forms that are still too close in raw phone sequence?",
+    "status": "Robustness test on previously selected concepts; not an independent discovery sample.",
+    "frozen_survivors": "The exact 27 semantic FDR survivors from the completed v1 concept test are hard-coded before v2 scoring.",
+    "grid": "20x20 fixed from the prior pooled family-blocked peak; no per-concept grid selection.",
+    "existing_controls": "Different target/reference families; 2000 km reference threshold; same non-empty NorthEuraLex cognacy label excluded for the true concept; NorthEuraLex Loan=true excluded where available.",
+    "new_lexical_transmission_filter": "Before candidate scoring, every reference form whose normalized raw-phone edit distance to the target is <= the threshold is removed, for true and false concepts alike.",
+    "primary_threshold": 0.25,
+    "sensitivity_thresholds": [0.15,0.25,0.35],
+    "negative_candidates": "Up to 80 deterministically hashed candidate concepts are searched to obtain 15 wrong concepts with at least two surviving reference forms.",
+    "eligibility": ">=20 cases across >=8 target families.",
+    "replication": "Target families are deterministically split into two disjoint hash halves; support requires positive semantic advantage in both halves with >=4 families per half.",
+    "statistics": "One-sided family sign tests, BH-FDR across the 27 frozen survivors separately at each lexical-similarity threshold.",
+    "semantic_support": "Positive real-grid AUC minus pseudo-label AUC, q<0.05, and positive effect in both family halves.",
+    "geometry_support": "Positive real-grid AUC minus random-cell AUC, q<0.05, and positive effect in both family halves.",
+    "interpretation_boundary": "Survival would show robustness to near-identical cross-family word forms; it would not by itself distinguish ancient inheritance, convergent sound symbolism, or undocumented borrowing."
+  },
+  "summary": {
+    "frozen_survivors": 27,
+    "primary_threshold": 0.25,
+    "primary_eligible": 27,
+    "primary_semantic_supported": 14,
+    "primary_geometry_supported": 0,
+    "primary_both_supported": 0,
+    "semantic_survivor_labels": ["MOTHER","PICTURE (PAINTING)","MILK","TEA","ARROW","MONTH","JANUARY","MARCH","DECEMBER","SATURDAY","THOU","REST","BREAK (CLEAVE)","CHAT (WITH SOMEBODY)"],
+    "geometry_survivor_labels": [],
+    "sensitivity_counts": {
+      "0.15": {"eligible":27,"semantic":18,"geometry":2,"both":1},
+      "0.25": {"eligible":27,"semantic":14,"geometry":0,"both":0},
+      "0.35": {"eligible":27,"semantic":14,"geometry":1,"both":1}
+    }
+  },
+  "primary_pooled": {
+    "cases": 2488,
+    "auc_real": 0.6932341907824223,
+    "auc_label": 0.4819935691318327,
+    "auc_random": 0.6603295819935691,
+    "auc_raw": 0.6064710610932477,
+    "top1_real": 0.20860128617363344,
+    "top1_label": 0.05338960342979636,
+    "top1_random": 0.1940648445873526,
+    "top1_raw": 0.20090809679334595
+  },
+  "primary_semantic_survivors": [
+    {"concept_id":"203_mother","label":"MOTHER","cases":103,"target_families":20,"auc_real":0.6919093851132685,"auc_label":0.502588996763754,"auc_random":0.7009708737864078,"auc_raw":0.6517799352750808,"semantic_auc_advantage":0.18932038834951448,"semantic_q":0.0066375732421875,"semantic_half_advantage":{"0":0.4715277777777778,"1":0.2859761904761905},"geometry_auc_advantage":-0.009061488673139273,"geometry_q":0.2919491854580966},
+    {"concept_id":"334_picture","label":"PICTURE (PAINTING)","cases":96,"target_families":20,"auc_real":0.6312499999999999,"auc_label":0.5041666666666668,"auc_random":0.5788194444444446,"auc_raw":0.6229166666666667,"semantic_auc_advantage":0.1270833333333331,"semantic_q":0.04298136784480168,"semantic_half_advantage":{"0":0.22847222222222224,"1":0.1395187856125356},"geometry_auc_advantage":0.052430555555555314,"geometry_q":0.29607295989990234},
+    {"concept_id":"361_milk","label":"MILK","cases":100,"target_families":19,"auc_real":0.6966666666666665,"auc_label":0.4433333333333333,"auc_random":0.612,"auc_raw":0.5536666666666666,"semantic_auc_advantage":0.25333333333333324,"semantic_q":0.0016393661499023438,"semantic_half_advantage":{"0":0.3041666666666667,"1":0.33803113553113556},"geometry_auc_advantage":0.08466666666666656,"geometry_q":0.34508690467247594},
+    {"concept_id":"362_tea","label":"TEA","cases":64,"target_families":17,"auc_real":0.8989583333333333,"auc_label":0.4416666666666667,"auc_random":0.8885416666666668,"auc_raw":0.8671874999999999,"semantic_auc_advantage":0.4572916666666666,"semantic_q":0.000926971435546875,"semantic_half_advantage":{"0":0.5351851851851852,"1":0.37222222222222223},"geometry_auc_advantage":0.010416666666666519,"geometry_q":0.4369419642857143},
+    {"concept_id":"440_arrow","label":"ARROW","cases":96,"target_families":20,"auc_real":0.6638888888888889,"auc_label":0.47986111111111107,"auc_random":0.6472222222222223,"auc_raw":0.45937500000000003,"semantic_auc_advantage":0.1840277777777778,"semantic_q":0.047290257045200894,"semantic_half_advantage":{"0":0.11190476190476195,"1":0.18881334436173147},"geometry_auc_advantage":0.016666666666666607,"geometry_q":0.8204315185546875},
+    {"concept_id":"456_month","label":"MONTH","cases":102,"target_families":20,"auc_real":0.7078431372549019,"auc_label":0.4591503267973856,"auc_random":0.5937908496732025,"auc_raw":0.5385620915032678,"semantic_auc_advantage":0.2486928104575163,"semantic_q":0.0010866165161132813,"semantic_half_advantage":{"0":0.21626984126984128,"1":0.24982741617357002},"geometry_auc_advantage":0.11405228758169939,"geometry_q":0.6108970642089844},
+    {"concept_id":"462_january","label":"JANUARY","cases":78,"target_families":19,"auc_real":0.7653846153846154,"auc_label":0.3923076923076923,"auc_random":0.7452991452991454,"auc_raw":0.6799145299145298,"semantic_auc_advantage":0.37307692307692314,"semantic_q":0.000514984130859375,"semantic_half_advantage":{"0":0.5145833333333334,"1":0.3141375291375291},"geometry_auc_advantage":0.020085470085470014,"geometry_q":0.6108970642089844},
+    {"concept_id":"464_march","label":"MARCH","cases":84,"target_families":17,"auc_real":0.7662698412698412,"auc_label":0.5154761904761904,"auc_random":0.7777777777777777,"auc_raw":0.8440476190476189,"semantic_auc_advantage":0.2507936507936508,"semantic_q":0.015618064186789772,"semantic_half_advantage":{"0":0.16666666666666666,"1":0.3184480139743298},"geometry_auc_advantage":-0.011507936507936467,"geometry_q":0.6428571428571429},
+    {"concept_id":"473_december","label":"DECEMBER","cases":90,"target_families":20,"auc_real":0.8603703703703705,"auc_label":0.4425925925925926,"auc_random":0.835925925925926,"auc_raw":0.6785185185185185,"semantic_auc_advantage":0.41777777777777786,"semantic_q":0.000514984130859375,"semantic_half_advantage":{"0":0.44722222222222224,"1":0.4455853174603175},"geometry_auc_advantage":0.02444444444444449,"geometry_q":0.208465576171875},
+    {"concept_id":"479_saturday","label":"SATURDAY","cases":91,"target_families":20,"auc_real":0.7677655677655678,"auc_label":0.5241758241758242,"auc_random":0.7113553113553114,"auc_raw":0.7315018315018316,"semantic_auc_advantage":0.2435897435897436,"semantic_q":0.004969596862792969,"semantic_half_advantage":{"0":0.31527777777777777,"1":0.3469095719095719},"geometry_auc_advantage":0.05641025641025643,"geometry_q":0.208465576171875},
+    {"concept_id":"641_thou","label":"THOU","cases":104,"target_families":21,"auc_real":0.8397435897435896,"auc_label":0.47371794871794876,"auc_random":0.8198717948717948,"auc_raw":0.7169871794871795,"semantic_auc_advantage":0.3660256410256409,"semantic_q":0.000926971435546875,"semantic_half_advantage":{"0":0.41875,"1":0.2739562787639711},"geometry_auc_advantage":0.0198717948717948,"geometry_q":0.22847638811383927},
+    {"concept_id":"744_relax","label":"REST","cases":71,"target_families":17,"auc_real":0.6661971830985917,"auc_label":0.45023474178403755,"auc_random":0.5967136150234743,"auc_raw":0.4107981220657277,"semantic_auc_advantage":0.2159624413145541,"semantic_q":0.0066375732421875,"semantic_half_advantage":{"0":0.22037037037037038,"1":0.27580842752467466},"geometry_auc_advantage":0.06948356807511735,"geometry_q":0.22847638811383927},
+    {"concept_id":"894_break","label":"BREAK (CLEAVE)","cases":94,"target_families":20,"auc_real":0.6092198581560283,"auc_label":0.4641843971631205,"auc_random":0.5326241134751772,"auc_raw":0.4946808510638298,"semantic_auc_advantage":0.14503546099290782,"semantic_q":0.04298136784480168,"semantic_half_advantage":{"0":0.26979166666666665,"1":0.1406756699095409},"geometry_auc_advantage":0.07659574468085106,"geometry_q":0.6958196888799253},
+    {"concept_id":"984_chat","label":"CHAT (WITH SOMEBODY)","cases":76,"target_families":17,"auc_real":0.7447368421052633,"auc_label":0.5144736842105263,"auc_random":0.7350877192982456,"auc_raw":0.4934210526315789,"semantic_auc_advantage":0.23026315789473695,"semantic_q":0.015618064186789772,"semantic_half_advantage":{"0":0.14444444444444446,"1":0.368408695652174},"geometry_auc_advantage":0.009649122807017685,"geometry_q":0.6428571428571429}
+  ],
+  "sensitivity": {
+    "0.15": {"eligible":27,"semantic_supported_labels":["MEASURE","CUCKOO","FATHER","MOTHER","MIND","SALT","TEA","MONTH","JANUARY","MARCH","DECEMBER","SATURDAY","ROUND","CLEVER","FAMILIAR","HERE","THOU","beugen::V"],"geometry_supported_labels":["MIND","REST"],"both_supported_labels":["MIND"],"pooled":{"cases":2488,"auc_real":0.6924169346195069,"auc_label":0.487459807073955,"auc_random":0.6588558413719184,"auc_raw":0.6094453376205788,"top1_real":0.22216639871382637,"top1_label":0.04953778135048231,"top1_random":0.18823687031082528,"top1_raw":0.20322917581257613}},
+    "0.25": {"eligible":27,"semantic_supported_labels":["MOTHER","PICTURE (PAINTING)","MILK","TEA","ARROW","MONTH","JANUARY","MARCH","DECEMBER","SATURDAY","THOU","REST","BREAK (CLEAVE)","CHAT (WITH SOMEBODY)"],"geometry_supported_labels":[],"both_supported_labels":[],"pooled":{"cases":2488,"auc_real":0.6932341907824223,"auc_label":0.4819935691318327,"auc_random":0.6603295819935691,"auc_raw":0.6064710610932477,"top1_real":0.20860128617363344,"top1_label":0.05338960342979636,"top1_random":0.1940648445873526,"top1_raw":0.20090809679334595}},
+    "0.35": {"eligible":27,"semantic_supported_labels":["zeichnen::V","CUCKOO","MOTHER","TEA","JANUARY","MARCH","DECEMBER","SATURDAY","CLEVER","FAMILIAR","HERE","THOU","REST","CHAT (WITH SOMEBODY)"],"geometry_supported_labels":["FAMILIAR"],"both_supported_labels":["FAMILIAR"],"pooled":{"cases":2488,"auc_real":0.6903135048231511,"auc_label":0.4988612004287245,"auc_random":0.6513263665594856,"auc_raw":0.6008976420150054,"top1_real":0.20176848874598072,"top1_label":0.052719721329046086,"top1_random":0.18448553054662378,"top1_raw":0.18262975022922773}}
+  }
+}
