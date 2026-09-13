@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "sound sequence -> word concept/meaning across successive phonetic grids",
+  "source": {
+    "phoible_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "northeuralex_commit": "e9a8119f25cf6078299132d8c4e7db338d46ff23"
+  },
+  "counts": {
+    "languages": 106,
+    "concepts": 1016,
+    "raw_forms": 121611,
+    "mapped_forms": 104985,
+    "canonical_forms": 92678,
+    "token_total": 699892,
+    "token_mapped": 619521
+  },
+  "shards": 20,
+  "shard_sizes": [6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5],
+  "task": "For each target-language pronunciation, rank its independently labelled true NorthEuraLex concept against 15 deterministic wrong concepts. Meanings are withheld from phonetic-grid construction.",
+  "controls": [
+    "meaning-label pseudo-positive null",
+    "same-capacity random segment-to-cell coding",
+    "raw segment-identity edit-distance baseline"
+  ],
+  "support_rule": "Real top-1 and pairwise AUC must beat the label null in >=15/20 populated shards with one-sided sign p<0.05. Geometry support additionally requires real-grid top-1 to beat random-cell coding by the same rule.",
+  "within_family": {
+    "cases": 80170,
+    "semantic_onset": 3,
+    "geometry_onset": 3,
+    "peak_resolution": 14,
+    "peak": {
+      "real_top1": 0.3127590477378428,
+      "real_auc": 0.7147474117500333,
+      "real_mrr": 0.4562262226666995,
+      "label_null_top1": 0.04603105305986684,
+      "random_cells_top1": 0.27011246933599437,
+      "semantic_top1_shard_wins": 20,
+      "semantic_top1_sign_p": 9.5367431640625e-07,
+      "semantic_auc_shard_wins": 20,
+      "semantic_auc_sign_p": 9.5367431640625e-07,
+      "geometry_top1_shard_wins": 20,
+      "geometry_top1_sign_p": 9.5367431640625e-07
+    },
+    "raw_identity": {
+      "top1": 0.35803732914902925,
+      "auc": 0.7024023949108231,
+      "mrr": 0.46052284460675863
+    },
+    "all_resolutions_semantic_supported": true,
+    "all_resolutions_geometry_supported": true,
+    "meaning_refinement_progression_supported": false,
+    "rho_resolution_top1_mean": 0.06612964823682153,
+    "rho_positive_shards": 9,
+    "rho_sign_p": 0.7482776641845703,
+    "selected_top1": {
+      "3": 0.2986883675760437,
+      "4": 0.3126472020765397,
+      "5": 0.31263855972724625,
+      "9": 0.31140804956134877,
+      "14": 0.3127590477378428,
+      "20": 0.309769864391916,
+      "21": 0.3108446675813908,
+      "23": 0.3100473986930205
+    }
+  },
+  "family_blocked": {
+    "cases": 92307,
+    "semantic_onset": 3,
+    "geometry_onset": 3,
+    "peak_resolution": 20,
+    "peak": {
+      "real_top1": 0.08950837964618068,
+      "real_auc": 0.5545032698856354,
+      "real_mrr": 0.24668729869656283,
+      "label_null_top1": 0.06106886079423373,
+      "random_cells_top1": 0.08395806024100738,
+      "semantic_top1_shard_wins": 20,
+      "semantic_top1_sign_p": 9.5367431640625e-07,
+      "semantic_auc_shard_wins": 20,
+      "semantic_auc_sign_p": 9.5367431640625e-07,
+      "geometry_top1_shard_wins": 15,
+      "geometry_top1_sign_p": 0.020694732666015625
+    },
+    "raw_identity": {
+      "top1": 0.080960221123616,
+      "auc": 0.512353342650072,
+      "mrr": 0.2082083948583322
+    },
+    "semantic_supported_resolutions": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+    "geometry_supported_resolutions": [3,4,6,7,8,9,10,11,16,17,19,20,21,22,23],
+    "meaning_refinement_progression_supported": false,
+    "rho_resolution_top1_mean": 0.17437750482366704,
+    "rho_positive_shards": 13,
+    "rho_sign_p": 0.13158798217773438,
+    "selected_top1": {
+      "3": 0.0879970323322398,
+      "4": 0.08743166565812732,
+      "5": 0.08797196071563126,
+      "9": 0.08831850961104432,
+      "14": 0.08900552865257601,
+      "20": 0.08950837964618068,
+      "21": 0.0889179585513558,
+      "23": 0.08892554194156457
+    }
+  },
+  "verdict": {
+    "word_level_semantic_information_in_pronunciation": "supported",
+    "within_family_lexical_transmission": "strongly supported",
+    "family_blocked_cross_family_signal": "supported but small",
+    "articulatory_grid_geometry_contributes": "strong within families; modest and resolution-dependent in family-blocked comparison",
+    "successive_grids_create_a_monotonic_meaning_progression": "not supported",
+    "meaning_is_generated_by_the_grid": "not established"
+  },
+  "boundary": "22x22 and 23x23 were continuation checks only. Candidate onset/peak claims are restricted to 3x3 through 21x21."
+}
