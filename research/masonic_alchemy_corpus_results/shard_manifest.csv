@@ -1,0 +1,21 @@
+shard,channel,tradition,target_query,control_query,target_records,control_records
+0,commons,masonic,freemasonry,heraldry,100,100
+1,commons,masonic,masonic,fraternal order,100,100
+2,commons,masonic,freemason,architectural drawing,100,100
+3,commons,masonic,masonic lodge,ceremonial dress,100,100
+4,commons,masonic,masonic symbolism,Christian symbolism,100,100
+5,commons,alchemy,alchemy,historical chemistry,100,100
+6,commons,alchemy,alchemical,astronomy,100,100
+7,commons,alchemy,alchemist,botany,100,100
+8,commons,alchemy,alchemical manuscript,medical illustration,100,100
+9,commons,alchemy,alchemical illustration,emblem book,100,100
+10,openlibrary,masonic,subject:freemasonry,subject:heraldry,400,400
+11,openlibrary,masonic,freemasonry,fraternal organizations,400,400
+12,openlibrary,masonic,subject:freemasons,architecture,400,400
+13,openlibrary,masonic,masonic,ceremonial dress,230,198
+14,openlibrary,masonic,masonic symbolism,christian symbolism,400,400
+15,openlibrary,alchemy,subject:alchemy,subject:chemistry,400,400
+16,openlibrary,alchemy,alchemy,astronomy,400,400
+17,openlibrary,alchemy,subject:alchemists,botany,400,400
+18,openlibrary,alchemy,alchemical,medicine,400,400
+19,openlibrary,alchemy,alchemist,emblems,400,400
