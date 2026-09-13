@@ -1,0 +1,58 @@
+name: Vardath lattice art corpus
+
+on:
+  push:
+    paths:
+      - '.github/workflows/vardath-lattice-art-corpus.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout Vardath site
+        uses: actions/checkout@v4
+
+      - name: Prepare Git LFS
+        run: git lfs install
+
+      - name: Fetch Met Open Access corpus
+        run: |
+          export GIT_LFS_SKIP_SMUDGE=1
+          git clone --depth 1 https://github.com/metmuseum/openaccess.git /tmp/met-openaccess
+          cd /tmp/met-openaccess
+          git lfs pull --include="MetObjects.csv" --exclude=""
+          ls -lh MetObjects.csv
+
+      - name: Fetch Cleveland Museum of Art corpus
+        run: |
+          export GIT_LFS_SKIP_SMUDGE=1
+          git clone --depth 1 https://github.com/ClevelandMuseumArt/openaccess.git /tmp/cleveland-openaccess
+          cd /tmp/cleveland-openaccess
+          git lfs pull --include="data.csv" --exclude=""
+          ls -lh data.csv
+
+      - name: Fetch Walters Art Museum corpus
+        run: |
+          git clone --depth 1 https://github.com/WaltersArtMuseum/api-thewalters-org.git /tmp/walters-openaccess
+          ls -lh /tmp/walters-openaccess/art.csv
+
+      - name: Run pre-registered corpus test
+        run: |
+          python3 research/lattice_art_corpus.py \
+            --met /tmp/met-openaccess/MetObjects.csv \
+            --cleveland /tmp/cleveland-openaccess/data.csv \
+            --walters /tmp/walters-openaccess/art.csv \
+            --out lattice-art-results
+
+      - name: Upload corpus results
+        uses: actions/upload-artifact@v4
+        with:
+          name: vardath-lattice-art-corpus-results
+          path: lattice-art-results/
+          if-no-files-found: error
+          retention-days: 14
