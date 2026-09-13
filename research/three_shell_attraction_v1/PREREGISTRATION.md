@@ -38,6 +38,9 @@ Each shard samples 80 cases (1,600 total):
 - proximity width sigma: 0.045–0.12 in log-radius
 - phase grid: 24 evenly spaced offsets
 - angular sampling: 180 rays
+- finite-difference torque step: 0.001 rad
+- pitch multipliers for T7: 0.70, 0.85, 1.00, 1.15, 1.30
+- T7 elastic penalty: `0.08 * (multiplier - 1)^2`
 
 Random seeds are `73013 + shard_id * 100003`.
 
@@ -78,7 +81,7 @@ Prediction: the strong `+-+` preference should weaken or reverse under repulsion
 Positive rule for attraction-specific behavior: the `+-+` win rate under attraction exceeds its repulsion win rate by >25 percentage points.
 
 ### T5 — opposite chirality creates recurring gates
-A gate is a local minimum of the nearest adjacent-shell log-radius separation around polar angle. Count gates and measure angular-spacing regularity.
+A gate is a circular local minimum of the nearest adjacent-shell log-radius separation around polar angle. All local minima are counted; no post-hoc separation threshold is applied. Gate-spacing CV uses the cyclic angular spacings when at least three gates exist.
 
 Prediction: opposite-chirality pairs produce more repeated local minima than same-chirality pairs and have lower coefficient of variation in gate spacing.
 
@@ -92,28 +95,28 @@ Prediction: counter-wound pairs show localized high-coupling zones rather than u
 Positive rule: median concentration ratio >1.5 and greater than same-chirality concentration; median strong-coupling fraction <0.35.
 
 ### T7 — attraction changes preferred pitch under an elastic penalty
-For one shell, scan pitch multipliers 0.70, 0.85, 1.00, 1.15, 1.30. Optimize phase at each pitch and subtract a fixed quadratic pitch-change penalty. Compare attraction and repulsion optima.
+For one adjacent opposite-chirality pair, scan pitch multipliers 0.70, 0.85, 1.00, 1.15, 1.30 on the second shell. At each multiplier optimize phase. Attraction maximizes `P - 0.08*(m-1)^2`; repulsion maximizes `-P - 0.08*(m-1)^2`.
 
 Prediction: attraction more often selects a non-unit pitch (changes turning) than repulsion.
 
 Positive rule: attraction selects a non-unit multiplier at least 15 percentage points more often than repulsion. If not, attraction aligns shells but does not by itself explain spiral pitch in this toy model.
 
 ### T8 — 138 / 395 / 792 timing bridge
-Take ordered gate radii from opposite-chirality attraction-optimal pairs. Where at least three usable radii exist, normalize three consecutive radii to the first and compare to `[1, 395/138, 792/138]`. Compare against a shuffled/null triplet drawn from the same radial range.
+Take ordered unique gate radii from opposite-chirality attraction-optimal pairs. Gate radii within 1% are merged. For every consecutive radius triplet, normalize to the first and compare with `[1, 395/138, 792/138]`; each case contributes the median triplet error. The null uses the same number of log-uniform random radii over that case's observed gate-radius range, sorted and evaluated identically.
 
 This is deliberately hard to pass because no timing constants enter the geometry.
 
 Positive rule: median relative RMS error <10% and at least 25% lower than the null error. Otherwise the shell geometry does not derive the Archaix timing trio.
 
 ### T9 — Fibonacci / ammonite phi bridge
-For consecutive gate radii, measure absolute log-ratio error to phi = 1.6180339887 and compare with a within-range null ratio.
+For all consecutive unique gate-radius ratios, measure `abs(log(ratio/phi))`, phi = 1.6180339887. The null uses log-uniform random radii over each case's observed range.
 
 Positive rule: median phi error at least 25% lower than null and median raw radius ratio lies within 5% of phi. Otherwise phi is not derived by the geometry.
 
 ### T10 — robustness to which handedness is called positive
-Repeat all chirality comparisons with every sign flipped. Because handedness labels are arbitrary, results should be invariant.
+Repeat the same/opposite pair calculations with every chirality sign flipped. Because handedness labels are arbitrary, results should be invariant.
 
-Positive rule: aggregate metrics differ by <1e-9 except floating-point noise.
+Positive rule: aggregate optimized proximity metrics differ by <1e-9 except floating-point noise.
 
 ## Interpretation rules
 
