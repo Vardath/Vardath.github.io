@@ -1,5 +1,6 @@
 name: Fix cosmology research visibility once
 
+# One-time guarded repair; this second commit triggers the workflow after creation.
 on:
   push:
     paths:
@@ -44,8 +45,6 @@ jobs:
           assert count == 1, f'expected exactly one old TOC selector, found {count}'
           h = h.replace(old_toc, new_toc)
           page.write_text(h, encoding='utf-8')
-
-          # Guard the scope: no other tracked files may differ.
           PY
           changed="$(git diff --name-only)"
           printf '%s\n' "$changed"
