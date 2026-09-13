@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Transport-only wrapper for the preregistered Masonic/alchemy corpus test.
+"""Acquisition-safe wrapper for the preregistered Masonic/alchemy corpus test.
 
-This does not alter shard definitions, motif lexicons, matching, endpoints, or statistics.
-It only adds respectful Retry-After/exponential backoff for public APIs after the first
-Commons run exposed HTTP 429 rate limiting.
+This does not alter shard definitions, motif lexicons, matching, declared endpoints,
+or statistics. It adds Retry-After/exponential backoff for public APIs and bounds the
+Commons visual channel to the first 100 accepted records per target/control query so
+that deep search pagination cannot turn API throttling into an inclusion rule.
 """
 import json
 import time
@@ -31,22 +32,29 @@ def resilient_fetch_json(url, tries=10):
             if e.code == 429:
                 retry = e.headers.get('Retry-After')
                 try:
-                    delay = float(retry) if retry else min(90.0, 8.0 * (i + 1))
+                    delay = float(retry) if retry else min(60.0, 6.0 * (i + 1))
                 except Exception:
-                    delay = min(90.0, 8.0 * (i + 1))
-                time.sleep(max(8.0, delay))
+                    delay = min(60.0, 6.0 * (i + 1))
+                time.sleep(max(6.0, delay))
                 continue
             if 500 <= e.code < 600:
-                time.sleep(min(45.0, 4.0 * (i + 1)))
+                time.sleep(min(30.0, 3.0 * (i + 1)))
                 continue
             raise
         except Exception as e:
             err = e
-            time.sleep(min(45.0, 4.0 * (i + 1)))
+            time.sleep(min(30.0, 3.0 * (i + 1)))
     raise RuntimeError(f'fetch failed after resilient backoff {url}: {err}')
 
 
+_original_commons_search = test.commons_search
+
+def bounded_commons_search(query, tradition, cohort, limit=300):
+    return _original_commons_search(query, tradition, cohort, min(limit, 100))
+
+
 test.fetch_json = resilient_fetch_json
+test.commons_search = bounded_commons_search
 
 if __name__ == '__main__':
     test.main()
