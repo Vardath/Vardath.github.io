@@ -1,0 +1,99 @@
+name: Phonetic feature birth across successive grids - 20 folds
+
+on:
+  push:
+    paths:
+      - 'tools/test_phonetic_feature_birth_v1.py'
+      - '.github/workflows/phonetic-feature-birth-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile feature-birth test
+        run: python -m py_compile tools/test_phonetic_feature_birth_v1.py
+      - name: Prepare pinned PHOIBLE evidence
+        run: python tools/test_phonetic_feature_birth_v1.py prepare
+      - name: Validate preregistered protocol
+        run: |
+          python - <<'PY'
+          import gzip,json
+          with gzip.open('data/phonetic-feature-birth-v1-work/prepared.json.gz','rt',encoding='utf8') as f:x=json.load(f)
+          assert x['segments']==3065
+          assert x['candidate']==list(range(3,22))
+          assert x['boundary']==[22,23]
+          assert len(x['heldout'])==24
+          assert set(x['primary']).isdisjoint(x['heldout'])
+          print({'segments':x['segments'],'heldout':len(x['heldout']),'folds':20})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: feature-birth-prepared-${{ github.run_id }}
+          path: data/phonetic-feature-birth-v1-work/prepared.json.gz
+          retention-days: 7
+
+  shards:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: feature-birth-prepared-${{ github.run_id }}
+          path: data/phonetic-feature-birth-v1-work
+      - name: Run held-out segment fold ${{ matrix.shard }}
+        run: python tools/test_phonetic_feature_birth_v1.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: feature-birth-s${{ matrix.shard }}-${{ github.run_id }}
+          path: data/phonetic-feature-birth-v1-work/result-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: feature-birth-prepared-${{ github.run_id }}
+          path: data/phonetic-feature-birth-v1-work
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: feature-birth-s*-${{ github.run_id }}
+          path: data/phonetic-feature-birth-v1-work
+          merge-multiple: true
+      - name: Require all 20 fold results
+        run: test "$(find data/phonetic-feature-birth-v1-work -name 'result-*.json' | wc -l)" -eq 20
+      - name: Merge and assign feature births
+        run: python tools/test_phonetic_feature_birth_v1.py merge
+      - name: Validate complete result
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('data/phonetic-feature-birth-v1.json'))
+          assert x['status']=='complete' and x['shards']==20 and x['segments']==3065
+          assert len(x['feature_results'])==24
+          print(json.dumps(x['feature_births_by_peak_resolution'],indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phonetic-feature-birth-result-${{ github.run_id }}
+          path: data/phonetic-feature-birth-v1.json
+          retention-days: 7
