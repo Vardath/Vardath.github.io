@@ -1,0 +1,98 @@
+// Successive square-resolution evidence section for the Vardath phonetics page.
+// Additive presentation only: reads the completed 20-shard result and does not alter any classifier/test maths.
+(()=>{
+'use strict';
+if(window.__VARDATH_SQUARE_SEQUENCE_SECTION__)return;
+window.__VARDATH_SQUARE_SEQUENCE_SECTION__=true;
+const DATA='data/phonetic-square-sequence-v2-summary.json';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pct=x=>(100*x).toFixed(2)+'%';
+const num=(x,d=4)=>Number(x).toFixed(d);
+
+function styles(){
+ if(document.getElementById('sqseqStyles'))return;
+ const s=document.createElement('style');s.id='sqseqStyles';s.textContent=`
+ #square-sequence .sqseq-hero{border:1px solid #355066;border-radius:16px;padding:20px;background:linear-gradient(180deg,#111925,#0d131d);margin:18px 0}
+ #square-sequence .sqseq-verdicts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+ #square-sequence .sqseq-verdict{border:1px solid #30384d;border-radius:12px;padding:14px;background:#10151e}
+ #square-sequence .sqseq-verdict b{display:block;color:#5ce1e6;font-size:1.08rem;margin-bottom:4px}#square-sequence .sqseq-verdict.goodv{border-color:#315749;background:#0f1716}#square-sequence .sqseq-verdict.warnv{border-color:#66562f;background:#18150e}
+ #square-sequence .sqseq-flow{display:flex;gap:9px;align-items:center;overflow-x:auto;padding:14px 2px 18px;scrollbar-width:thin}
+ #square-sequence .sqseq-node{flex:0 0 82px;border:1px solid #374057;border-radius:12px;background:linear-gradient(180deg,#171d2a,#10141d);padding:10px 7px;text-align:center;position:relative}
+ #square-sequence .sqseq-node b{display:block;color:#eef1f8;font-size:1rem}#square-sequence .sqseq-node span{display:block;color:#5ce1e6;font-family:Consolas,monospace;font-size:.79rem}#square-sequence .sqseq-node small{display:block;color:#9099b0;font-size:.67rem;line-height:1.3;margin-top:4px}
+ #square-sequence .sqseq-node:after{content:'→';position:absolute;right:-13px;top:35%;color:#5ce1e6;font-weight:700}#square-sequence .sqseq-node:last-child:after{display:none}
+ #square-sequence .sqseq-node.key{border-color:#5ce1e6;box-shadow:0 0 0 1px rgba(92,225,230,.2) inset}#square-sequence .sqseq-node.end{border-color:#ffd37a}
+ #square-sequence .sqseq-method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}#square-sequence .sqseq-method>div{border:1px solid #30384d;border-radius:12px;padding:14px;background:#11151f}#square-sequence .sqseq-method b{display:block;color:#5ce1e6;margin-bottom:5px}
+ #square-sequence .sqseq-charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}#square-sequence .sqseq-chart{border:1px solid #30384d;border-radius:14px;background:#0e131c;padding:13px;min-width:0}#square-sequence .sqseq-chart h4{margin:0 0 8px}.sqseq-svg{width:100%;height:auto;display:block}.sqseq-axis{stroke:#3a435b;stroke-width:1}.sqseq-line{fill:none;stroke:#5ce1e6;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.sqseq-point{fill:#0e131c;stroke:#5ce1e6;stroke-width:2}.sqseq-label{fill:#aab1c5;font:10px Arial,sans-serif}.sqseq-value{fill:#eef1f8;font:10px Consolas,monospace}
+ #square-sequence .sqseq-split{display:grid;grid-template-columns:auto 1fr auto 1fr auto;gap:9px;align-items:center;margin:20px 0;padding:16px;border:1px solid #30384d;border-radius:14px;background:#10141d}#square-sequence .sqseq-pair{display:grid;grid-template-columns:repeat(2,32px);gap:3px}#square-sequence .sqseq-pair i{height:32px;border:1px solid #5ce1e6;border-radius:6px;background:#15303a}#square-sequence .sqseq-pair.split i:first-child{transform:translateX(-4px)}#square-sequence .sqseq-pair.split i:last-child{transform:translateX(4px);border-color:#80e7a8;background:#163025}#square-sequence .sqseq-stage{text-align:center;color:#aab1c5;font-size:.8rem}#square-sequence .sqseq-arrow{color:#5ce1e6;font-size:1.5rem;text-align:center}
+ #square-sequence .sqseq-tablewrap{overflow:auto;border:1px solid #30384d;border-radius:12px;margin:14px 0}#square-sequence table{width:100%;border-collapse:collapse;min-width:760px}#square-sequence th,#square-sequence td{padding:9px 10px;border-bottom:1px solid #293044;text-align:right;font-size:.86rem}#square-sequence th:first-child,#square-sequence td:first-child{text-align:left}#square-sequence th{color:#aab1c5;background:#10151e;position:sticky;top:0}#square-sequence tr:last-child td{border-bottom:0}#square-sequence .best{color:#80e7a8;font-weight:700}
+ #square-sequence .sqseq-capacity{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:15px 0}#square-sequence .sqseq-capacity>div{border:1px solid #30384d;border-radius:11px;padding:12px;background:#10141d;text-align:center}#square-sequence .sqseq-capacity b{display:block;color:#5ce1e6;font-size:1.2rem}#square-sequence .sqseq-capacity small{color:#aab1c5}
+ #square-sequence .sqseq-boundary{border-left:4px solid #ffd37a;padding:14px 16px;background:#18150e;border-radius:8px;margin:18px 0}
+ #square-sequence .sqseq-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}#square-sequence .sqseq-links a{border:1px solid #30384d;border-radius:999px;padding:6px 10px;text-decoration:none;background:#151925;color:#c9d1e4}#square-sequence .sqseq-links a:hover{border-color:#5ce1e6;color:#5ce1e6}
+ @media(max-width:850px){#square-sequence .sqseq-verdicts,#square-sequence .sqseq-method,#square-sequence .sqseq-charts{grid-template-columns:1fr}#square-sequence .sqseq-capacity{grid-template-columns:1fr 1fr}#square-sequence .sqseq-split{grid-template-columns:1fr;justify-items:center}.sqseq-arrow{transform:rotate(90deg)}}
+ `;document.head.appendChild(s);
+}
+
+function chart(title,rows,key,format){
+ const W=520,H=210,L=45,R=16,T=18,B=34;const vals=rows.map(r=>r[key]);let lo=Math.min(...vals),hi=Math.max(...vals);if(hi===lo){hi+=1;lo-=1}const pad=(hi-lo)*.12;lo-=pad;hi+=pad;
+ const x=i=>L+i*(W-L-R)/(rows.length-1), y=v=>T+(hi-v)*(H-T-B)/(hi-lo);
+ const pts=rows.map((r,i)=>`${x(i).toFixed(1)},${y(r[key]).toFixed(1)}`).join(' ');
+ const labels=rows.map((r,i)=>i%3===0||i===rows.length-1?`<text class="sqseq-label" x="${x(i)}" y="${H-12}" text-anchor="middle">${r.n}</text>`:'').join('');
+ const dots=rows.map((r,i)=>`<circle class="sqseq-point" cx="${x(i)}" cy="${y(r[key])}" r="3"><title>${r.n}×${r.n}: ${format(r[key])}</title></circle>`).join('');
+ return `<div class="sqseq-chart"><h4>${title}</h4><svg class="sqseq-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}"><line class="sqseq-axis" x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}"/><line class="sqseq-axis" x1="${L}" y1="${T}" x2="${L}" y2="${H-B}"/><text class="sqseq-value" x="5" y="${T+4}">${format(hi)}</text><text class="sqseq-value" x="5" y="${H-B}">${format(lo)}</text><polyline class="sqseq-line" points="${pts}"/>${dots}${labels}<text class="sqseq-label" x="${W/2}" y="${H-1}" text-anchor="middle">grid side n</text></svg></div>`;
+}
+
+function render(d){
+ styles();if(document.getElementById('square-sequence'))return;
+ const r=d.resolutions||{}, candidate=Array.from({length:19},(_,i)=>i+3), rows=candidate.map(n=>({n,...r[String(n)]}));
+ const section=document.createElement('section');section.className='section wrap';section.id='square-sequence';
+ const nodes=rows.map(x=>`<div class="sqseq-node ${[3,4,5,9].includes(x.n)?'key':''} ${x.n===21?'end':''}"><b>${x.n}×${x.n}</b><span>${x.cells} cells</span><small>${x.occupied} occupied<br>Σ=${d.cumulative_cells[String(x.n)]}</small></div>`).join('');
+ const selected=[3,4,5,8,9,12,16,20,21,22,23].map(n=>({n,...r[String(n)]}));
+ const table=selected.map(x=>`<tr><td>${x.n}×${x.n}</td><td>${x.cells}</td><td>${x.occupied}</td><td>${pct(x.real_coverage)}</td><td>${num(x.real_heldout_loss,5)}</td><td>${num(x.control_heldout_loss,5)}</td><td class="${x.heldout_shard_wins>=15?'best':''}">${x.heldout_shard_wins}/20</td></tr>`).join('');
+ const s=d.summary, q=d.sequence_refinement;
+ section.innerHTML=`
+ <div class="eyebrow">20-shard follow-up · PHOIBLE · successive resolution</div>
+ <h2>Successive phonetic grids: 3×3 → 21×21</h2>
+ <p class="lead">The original 3–4–5 pyramid suggested that one phonetic space might be viewed at progressively finer square resolutions. We extended that idea all the way from 3×3 through 21×21 and tested the whole ladder instead of choosing a favourite grid in advance.</p>
+ <div class="sqseq-hero"><h3 style="margin-top:0">Result in one sentence</h3><p>The <b>successive square-resolution hierarchy is supported as a phonetic refinement system</b>: finer grids trade some coverage for finer held-out phonetic agreement, and this pattern survives unrelated-family controls across all 19 candidate resolutions. What is <b>not</b> supported is a unique stopping point at 9×9, 21×21, or any claim that cumulative cell count equals one unique sound per cell.</p></div>
+ <div class="sqseq-verdicts"><div class="sqseq-verdict goodv"><b>Progressive hierarchy · supported</b>ρ(resolution, coverage) = ${num(s.rho_resolution_coverage,4)}<br>ρ(resolution, held-out loss) = ${num(s.rho_resolution_heldout_loss,4)}</div><div class="sqseq-verdict goodv"><b>Independent phonetic advantage · supported</b>${s.positive_heldout_advantage_resolutions}/19 resolutions beat unrelated-family controls; ${s.significant_heldout_resolutions}/19 pass the shard-sign criterion.</div><div class="sqseq-verdict warnv"><b>21×21 endpoint · not supported</b>The refinement continues into 22×22 and 23×23. The number 21 came from cumulative capacity, not from a detected phonetic stopping point.</div></div>
+
+ <h3>How the successive sequence is built</h3>
+ <div class="sqseq-method"><div><b>1 · One articulatory plane</b>All ${s.segments.toLocaleString()} research segment types receive one continuous coordinate from broad PHOIBLE place/manner features. No magic-square numbering is used.</div><div><b>2 · Same space, finer grids</b>3×3, 4×4, 5×5 … 21×21 are not different alphabets. They are progressively finer quantisations of exactly the same phonetic coordinate system.</div><div><b>3 · Independent check</b>Twenty-four residual phonetic features are withheld from placement. They are used afterward to ask whether each finer grouping really contains more similar sounds.</div></div>
+ <div class="sqseq-flow" aria-label="Successive phonetic grid sequence">${nodes}</div>
+ <p class="small">Each node shows the geometrical cell count, how many cells are actually occupied by the 3,065 PHOIBLE research segments, and the cumulative number of cells from 3×3 up to that layer. The cumulative count is bookkeeping capacity, not a claim that each cell is a unique phoneme.</p>
+
+ <h3>What the data does as resolution increases</h3>
+ <div class="sqseq-charts">${chart('Coverage falls as the grid becomes finer',rows,'real_coverage',v=>(100*v).toFixed(1)+'%')}${chart('Held-out phonetic loss also falls · lower is better',rows,'real_heldout_loss',v=>Number(v).toFixed(4))}</div>
+ <p>The two trends move together in the expected multiresolution trade-off. Coarse grids are forgiving and cover almost everything; fine grids demand a closer articulatory match, so coverage falls while the surviving matches become more similar on features that were <em>not used to construct the grid</em>. Across 3×3→21×21, the rank correlations are <b>${num(s.rho_resolution_coverage,4)}</b> for coverage and <b>${num(s.rho_resolution_heldout_loss,4)}</b> for held-out loss.</p>
+
+ <h3>Does it behave like successive mutation/refinement?</h3>
+ <div class="sqseq-split"><div><div class="sqseq-pair"><i></i><i></i></div><div class="sqseq-stage">coarse grid<br>pair shares a region</div></div><div class="sqseq-arrow">→</div><div><div class="sqseq-pair split"><i></i><i></i></div><div class="sqseq-stage">first distinction<br>median at 4×4</div></div><div class="sqseq-arrow">→</div><div><div class="sqseq-pair split"><i></i><i></i></div><div class="sqseq-stage">finer grids<br>distinction usually persists</div></div></div>
+ <p>For the <b>${q.real.pairs.toLocaleString()} related-family sound pairs</b>, ${pct(q.real.monotonic_pair_rate)} of trajectories were monotonic across the sequence: once a pair separated into different cells, it almost always stayed separated as the grid became finer. The median first split was at <b>${q.real.median_first_split_resolution}×${q.real.median_first_split_resolution}</b>. Only ${q.real.remerge_events} re-merge events were observed across the full related-pair run. The unrelated control was also highly monotonic (${pct(q.control.monotonic_pair_rate)}), so monotonicity is a structural property of this quantisation as well as a weak related-language discriminator.</p>
+
+ <h3>The 20-shard falsification test</h3>
+ <p>The evidence was split into <b>${s.shards} independent language-family shards</b> covering <b>${s.families} families</b>, with <b>${s.real_pairs.toLocaleString()} real sibling-system sound pairs</b> compared against <b>${s.control_pairs.toLocaleString()} deterministic unrelated-family control pairs</b>. The square placement/matching used only broad place/manner features; residual features were held out. A resolution counted as replicated only when the related systems beat controls in at least 15 of 20 shards with a one-sided sign-test p&lt;0.05.</p>
+ <div class="sqseq-tablewrap"><table><thead><tr><th>grid</th><th>cells</th><th>occupied</th><th>real coverage</th><th>real held-out loss</th><th>control loss</th><th>shard wins</th></tr></thead><tbody>${table}</tbody></table></div>
+ <p class="small">Selected resolutions shown; the stored result contains every grid from 3×3 through 23×23. At every candidate resolution 3×3–21×21, the related-family mapping had lower held-out loss than the unrelated control, and every candidate resolution met the shard replication threshold.</p>
+
+ <h3>Why 3×3→21×21 was tested</h3>
+ <div class="sqseq-capacity"><div><b>3,065</b><small>research segment types</small></div><div><b>2,865</b><small>cumulative cells through 20×20</small></div><div><b>3,306</b><small>cumulative cells through 21×21</small></div><div><b>191 / 441</b><small>21×21 cells actually occupied</small></div></div>
+ <p>Because 3²+4²+…+20² = 2,865 and adding 21² gives 3,306, the 21×21 layer is the first cumulative sequence whose raw cell count exceeds the 3,065 PHOIBLE research segment types. We therefore tested it explicitly. The experiment shows that this is an <b>arithmetic capacity coincidence, not yet a one-sound-per-cell encoding</b>: only 191 of the 441 cells in the 21×21 projection are occupied, and many detailed segment variants remain clustered inside the same articulatory region.</p>
+
+ <div class="sqseq-boundary"><b>Important boundary result:</b> 9×9 is not a privileged endpoint, and 21×21 is not a privileged endpoint. Extending the test to 22×22 and 23×23 continued the same refinement behaviour. The supported claim is therefore the <b>successive-resolution principle</b>, not a special terminal square.</div>
+ <h3>How this changes the earlier 3–4–5 interpretation</h3>
+ <p>The earlier 3×3, 4×4 and 5×5 benchmark had already shown a coverage-versus-detail trade-off, and it specifically failed to establish 4×4 as globally optimal. The first 3×3→9×9 follow-up then showed the same broad trend but failed its deliberately strict 9×9 endpoint criterion. The full 3×3→21×21 test resolves those observations: <b>3–4–5 was the beginning of a longer resolution ladder</b>. The evidence supports the ladder as a whole while rejecting the idea that 4×4, 9×9, or 21×21 is uniquely selected by this test.</p>
+ <div class="notice"><b>Separate hypotheses remain separate:</b> this test supports square-resolution geometry. It does not revive the powers-of-three overlay as a causal phonetic mechanism, does not prove that historical human speech literally evolved one grid at a time, and does not turn cumulative cell counts into attested phonemes. Those require their own independent tests.</div>
+ <details class="panel" style="margin-top:16px"><summary><b>Technical protocol and predeclared criteria</b></summary><p>${esc(d.method.support)}</p><p><b>Mapping:</b> ${esc(d.method.mapping)}</p><p><b>Controls:</b> ${esc(d.method.controls)}</p><p><b>Sequence test:</b> ${esc(d.method.sequence)}</p><p><b>Endpoint rule:</b> ${esc(d.method.endpoint)}</p></details>
+ <div class="sqseq-links"><a href="${DATA}" target="_blank" rel="noopener">Merged 20-shard result JSON ↗</a><a href="https://github.com/Vardath/Vardath.github.io/blob/main/tools/test_phonetic_square_sequence_v2.py" target="_blank" rel="noopener">Test source ↗</a><a href="https://github.com/Vardath/Vardath.github.io/blob/main/.github/workflows/phonetic-square-sequence-20-shard.yml" target="_blank" rel="noopener">20-shard workflow ↗</a></div>`;
+ const anchor=document.getElementById('resolution345');
+ if(anchor&&anchor.parentNode)anchor.insertAdjacentElement('afterend',section);else{const magic=document.getElementById('magic')||document.getElementById('status');if(magic&&magic.parentNode)magic.parentNode.insertBefore(section,magic);else document.querySelector('main')?.appendChild(section)}
+ const nav=document.querySelector('.nav');if(nav&&!nav.querySelector('a[href="#square-sequence"]')){const a=document.createElement('a');a.href='#square-sequence';a.textContent='3×3→21×21 sequence';const rlink=nav.querySelector('a[href="#resolution345"]');if(rlink)rlink.insertAdjacentElement('afterend',a);else nav.appendChild(a)}
+ const status=document.querySelector('#status table.compare');if(status&&!status.textContent.includes('Successive 3×3→21×21 square resolution')){const tr=document.createElement('tr');tr.innerHTML='<td>Successive 3×3→21×21 square resolution forms a reproducible phonetic refinement hierarchy.</td><td class="goodtxt">Supported in 20-shard held-out test</td>';status.appendChild(tr);const tr2=document.createElement('tr');tr2.innerHTML='<td>9×9 or 21×21 is a uniquely selected terminal phonetic grid.</td><td class="warntxt">Not supported</td>';status.appendChild(tr2)}
+}
+
+async function boot(){
+ try{const res=await fetch(DATA,{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);const d=await res.json();render(d)}catch(e){console.error('Square-sequence evidence section failed to load',e)}
+}
+function start(){if(document.getElementById('resolution345'))boot();else{const o=new MutationObserver(()=>{if(document.getElementById('resolution345')){o.disconnect();boot()}});o.observe(document.body,{childList:true,subtree:true});setTimeout(()=>{o.disconnect();boot()},5000)}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
