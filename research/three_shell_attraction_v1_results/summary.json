@@ -1,0 +1,19 @@
+{
+  "protocol": "three-shell-attraction-v1",
+  "actions_run": 34784012808,
+  "artifact_id": 10326321002,
+  "artifact_digest": "sha256:d1b5ee1f63cd7c2fe33dbbe5ff4178cf18459782d2c9f1c7188e674db5cf4562",
+  "cases": 1600,
+  "tests": {
+    "T1_attraction_torque": {"median_abs_gradient": 0.005204949199616449, "opposite_direction_rate": 1.0, "pass": false},
+    "T2_opposite_chirality_attraction": {"median_ratio": 0.6715589713220815, "opposite_win_rate": 0.00875, "pass": false},
+    "T3_middle_reversed": {"middle_reversed_win_rate": 0.00875, "median_middle_vs_best_edge_ratio": 0.7699389193706534, "pass": false},
+    "T4_attraction_specificity": {"attraction_middle_win_rate": 0.00875, "repulsion_middle_win_rate": 0.0, "difference": 0.00875, "pass": false},
+    "T5_recurring_gates": {"median_same_gate_count": 1.0, "median_opposite_gate_count": 8.0, "median_same_spacing_cv": null, "median_opposite_spacing_cv": 1.138495867144968, "pass": true},
+    "T6_temporary_bundling": {"median_same_concentration": 1.0470808589885827, "median_opposite_concentration": 1.5924924059884824, "median_opposite_strong_fraction": 0.7666666666666667, "pass": false},
+    "T7_pitch_change": {"attraction_nonunit_rate": 0.99375, "repulsion_nonunit_rate": 0.4075, "difference": 0.58625, "pass": true},
+    "T8_timing_138_395_792": {"median_error": 0.5593931822573268, "median_null_error": 0.5765919142012295, "improvement": 0.029828257247985435, "pass": false},
+    "T9_phi_bridge": {"median_phi_error": 0.3364631818623773, "median_null_error": 0.39713139308457157, "median_gate_radius_ratio": 1.1629591104925274, "improvement": 0.1527660927306107, "pass": false},
+    "T10_handedness_label_invariance": {"max_metric_difference": 0.004855523861179711, "pass": false}
+  }
+}
