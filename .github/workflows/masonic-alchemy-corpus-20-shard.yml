@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tools/test_masonic_alchemy_corpus.py'
+      - 'tools/run_masonic_alchemy_corpus_resilient.py'
       - '.github/workflows/masonic-alchemy-corpus-20-shard.yml'
   workflow_dispatch:
 
@@ -12,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 1
       matrix:
         shard: [0,1,2,3,4,5,6,7,8,9]
     steps:
@@ -22,11 +23,11 @@ jobs:
           python-version: '3.12'
       - name: Validate preregistered protocol
         run: |
-          python -m py_compile tools/test_masonic_alchemy_corpus.py
-          python tools/test_masonic_alchemy_corpus.py validate
+          python -m py_compile tools/test_masonic_alchemy_corpus.py tools/run_masonic_alchemy_corpus_resilient.py
+          python tools/run_masonic_alchemy_corpus_resilient.py validate
           test -f research/masonic_alchemy_corpus/PREREGISTRATION.md
       - name: Run Commons shard ${{ matrix.shard }}
-        run: python tools/test_masonic_alchemy_corpus.py shard --id ${{ matrix.shard }}
+        run: python tools/run_masonic_alchemy_corpus_resilient.py shard --id ${{ matrix.shard }}
       - uses: actions/upload-artifact@v4
         with:
           name: masonic-alchemy-shard-${{ matrix.shard }}-${{ github.run_id }}
@@ -47,11 +48,11 @@ jobs:
           python-version: '3.12'
       - name: Validate preregistered protocol
         run: |
-          python -m py_compile tools/test_masonic_alchemy_corpus.py
-          python tools/test_masonic_alchemy_corpus.py validate
+          python -m py_compile tools/test_masonic_alchemy_corpus.py tools/run_masonic_alchemy_corpus_resilient.py
+          python tools/run_masonic_alchemy_corpus_resilient.py validate
           test -f research/masonic_alchemy_corpus/PREREGISTRATION.md
       - name: Run document shard ${{ matrix.shard }}
-        run: python tools/test_masonic_alchemy_corpus.py shard --id ${{ matrix.shard }}
+        run: python tools/run_masonic_alchemy_corpus_resilient.py shard --id ${{ matrix.shard }}
       - uses: actions/upload-artifact@v4
         with:
           name: masonic-alchemy-shard-${{ matrix.shard }}-${{ github.run_id }}
