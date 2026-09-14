@@ -138,14 +138,26 @@ def write_extra_test_archives():
         body = [
             '<details class="corpus-section source-index" id="lattice-art-saved-records" open>',
             f'<summary><strong>Lattice-art corpus — additional saved scored records</strong><span>{len(rows):,} museum records</span></summary>',
-            '<p class="corpus-note">Additional scored museum records saved by the lattice-art test. The visual atlas above carries the examples with assembled thumbnail URLs; these source links retain the wider saved example set.</p>',
-            '<div class="source-chip-grid">',
+            '<p class="corpus-note">Additional scored museum records saved by the lattice-art test. Every retained record with a resolved museum image is shown as a source-linked thumbnail card; a text-only fallback remains only for records whose source provides no usable image.</p>',
+            '<div class="corpus-grid">',
         ]
         for row in rows:
-            body.append(
-                f'<a class="source-chip" href="{safe(row.get("url"))}" target="_blank" rel="noopener noreferrer">'
-                f'<b>{safe(row.get("title"))}</b><small>{safe(row.get("culture_group"))} · {safe(row.get("motifs"))}</small></a>'
-            )
+            if row.get('image_url'):
+                body.append(card({
+                    'title': row.get('title'),
+                    'url': row.get('url'),
+                    'image_url': row.get('image_url'),
+                    'tradition': row.get('culture_group'),
+                    'cohort': 'saved scored record',
+                    'source': f"{row.get('source') or 'Museum source'} · {row.get('motifs') or ''}",
+                    'year': row.get('date'),
+                    'family_count': None,
+                }))
+            else:
+                body.append(
+                    f'<a class="source-chip" href="{safe(row.get("url"))}" target="_blank" rel="noopener noreferrer">'
+                    f'<b>{safe(row.get("title"))}</b><small>{safe(row.get("culture_group"))} · {safe(row.get("motifs"))}</small></a>'
+                )
         body.extend(['</div>', '</details>'])
         sections.append('\n'.join(body))
 
