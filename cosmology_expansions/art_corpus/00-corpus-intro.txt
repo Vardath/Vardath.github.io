@@ -1,0 +1,24 @@
+<section class="gallery-section corpus-intro" id="full-test-corpus-archive">
+<h2>Full scored visual test corpus — not just the showcase hits</h2>
+<p>The original Art Archive showed only a small set of illustrative hits. The preserved 20-shard Masonic/alchemical test actually gathered thousands of image-bearing records. This expansion restores that hidden visual corpus as a source-linked archive rather than selecting only images that resemble the model.</p>
+<div class="corpus-stats">
+<div><b>6,189</b><span>unique image-bearing scored records</span></div>
+<div><b>2,610</b><span>target-corpus images</span></div>
+<div><b>3,579</b><span>control images</span></div>
+<div><b>1,787</b><span>Wikimedia Commons records</span></div>
+<div><b>4,402</b><span>Open Library covers</span></div>
+</div>
+<p class="corpus-note"><strong>Archive rule:</strong> being present here means the record was gathered and scored in the test; it does not mean it was a positive motif hit. Target, control, weak, null and noisy records are deliberately retained so the page represents the research corpus rather than a curated confirmation gallery.</p>
+<nav class="corpus-jumps">
+<a href="#corpus-masonic-target-commons">Masonic target — Wikimedia Commons visual records (440)</a>
+<a href="#corpus-masonic-target-openlibrary">Masonic target — Open Library covers/documents (806)</a>
+<a href="#corpus-alchemy-target-commons">Alchemical target — Wikimedia Commons visual records (365)</a>
+<a href="#corpus-alchemy-target-openlibrary">Alchemical target — Open Library covers/documents (999)</a>
+<a href="#corpus-masonic-control-commons">Masonic controls — Wikimedia Commons visual records (495)</a>
+<a href="#corpus-masonic-control-openlibrary">Masonic controls — Open Library covers/documents (1,084)</a>
+<a href="#corpus-alchemy-control-commons">Alchemical controls — Wikimedia Commons visual records (487)</a>
+<a href="#corpus-alchemy-control-openlibrary">Alchemical controls — Open Library covers/documents (1,513)</a>
+<a href="#ladder-sky-v2">Ladder/sky test archaeology</a>
+<a href="#lattice-art-saved-records">Lattice-art saved records</a>
+</nav>
+</section>
