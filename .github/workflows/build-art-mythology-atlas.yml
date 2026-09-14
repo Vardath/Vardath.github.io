@@ -1,0 +1,35 @@
+name: Build mythology and sacred imagery Art Archive atlas
+
+on:
+  push:
+    paths:
+      - 'tools/build_art_mythology_atlas.py'
+      - '.github/workflows/build-art-mythology-atlas.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-mythology-atlas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build source-linked mythology and symbol atlas
+        run: python tools/build_art_mythology_atlas.py
+
+      - name: Commit expanded Art Archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add art.html cosmology_expansions/art_mythology research/art_mythology_atlas_manifest.json
+          if git diff --cached --quiet; then
+            echo 'Atlas already current.'
+            exit 0
+          fi
+          git commit -m 'Expand Art Archive with mythology symbols and deity atlas'
+          git pull --rebase origin main
+          git push
