@@ -1,0 +1,32 @@
+name: Upgrade Art Archive saved-record thumbnails
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/upgrade_art_saved_record_thumbnails.py'
+
+permissions:
+  contents: write
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Upgrade generator and rebuild extra gallery
+        run: python tools/upgrade_art_saved_record_thumbnails.py
+      - name: Commit permanent thumbnail fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/build_art_archive_from_test_corpus.py cosmology_expansions/art_corpus/00-extra-test-archives.txt
+          if git diff --cached --quiet; then
+            echo 'Thumbnail upgrade already applied.'
+            exit 0
+          fi
+          git commit -m 'Fix missing thumbnails in saved lattice-art section [skip ci]'
+          git pull --rebase origin main
+          git push
