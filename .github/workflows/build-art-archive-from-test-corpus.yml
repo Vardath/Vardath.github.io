@@ -24,32 +24,19 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          python - <<'PY'
-          import io
-          import os
-          import pathlib
-          import urllib.request
-          import zipfile
-
-          repo = 'Vardath/Vardath.github.io'
-          artifact_id = 10318026684
-          req = urllib.request.Request(
-              f'https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip',
-              headers={
-                  'Authorization': f'Bearer {os.environ["GH_TOKEN"]}',
-                  'Accept': 'application/vnd.github+json',
-                  'X-GitHub-Api-Version': '2022-11-28',
-                  'User-Agent': 'vardath-art-archive-builder',
-              },
-          )
-          payload = urllib.request.urlopen(req, timeout=120).read()
-          out = pathlib.Path('/tmp/vardath-art-corpus')
-          out.mkdir(parents=True, exist_ok=True)
-          with zipfile.ZipFile(io.BytesIO(payload)) as archive:
-              archive.extractall(out)
-          print('artifact bytes', len(payload))
-          print('shards', len(list((out / 'shards').glob('*.json'))))
-          PY
+          rm -rf /tmp/vardath-art-corpus /tmp/vardath-art-corpus.zip
+          mkdir -p /tmp/vardath-art-corpus
+          # Use GitHub CLI rather than urllib here. GitHub serves artifact ZIPs through a
+          # signed cross-host redirect; gh handles that redirect without leaking the
+          # GitHub Authorization header to blob storage.
+          gh api \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "/repos/${GITHUB_REPOSITORY}/actions/artifacts/10318026684/zip" \
+            > /tmp/vardath-art-corpus.zip
+          unzip -q /tmp/vardath-art-corpus.zip -d /tmp/vardath-art-corpus
+          echo "artifact bytes $(wc -c < /tmp/vardath-art-corpus.zip)"
+          echo "shards $(find /tmp/vardath-art-corpus/shards -name '*.json' -type f | wc -l)"
 
       - name: Generate static source-linked corpus gallery
         run: python tools/build_art_archive_from_test_corpus.py
