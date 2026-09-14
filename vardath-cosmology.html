@@ -46,13 +46,11 @@ layout: null
 {% include_relative cosmology_expansions/x14-comparative-mythology-visuals.txt %}
 </div>
 {% include_relative cosmology_fragments/f21.txt %}
-{% include_relative cosmology_fragments/f23-water-horse.txt %}
 {% include_relative cosmology_fragments/f22-revelation.txt %}
 <section class="assistant-zone">
 {% include_relative cosmology_expansions/assistant-notes.txt %}
 {% include_relative cosmology_expansions/assistant-notes-waterborne.txt %}
 {% include_relative cosmology_expansions/assistant-notes-mythology.txt %}
-{% include_relative cosmology_expansions/assistant-notes-water-horse.txt %}
 {% include_relative cosmology_expansions/assistant-notes-revelation.txt %}
 </section>
 </main>
@@ -61,8 +59,6 @@ layout: null
 document.addEventListener('DOMContentLoaded',()=>{
  const last=new Map();
  document.querySelectorAll('.deepening[data-after]').forEach(d=>{const id=d.dataset.after,h=document.getElementById(id)||(id==='23-compact-statement-of-the-mature-vardath-cosmology'?document.getElementById('moved-mature-overview-anchor'):null);if(!h)return;const ref=last.get(id)||h;ref.insertAdjacentElement('afterend',d);last.set(id,d)});
- const waterHorse=document.getElementById('water-horse-world-door-section'),mythMatrix=document.getElementById('comparative-mythology-second-pass');
- if(waterHorse&&mythMatrix) mythMatrix.insertAdjacentElement('afterend',waterHorse);
  document.querySelectorAll('.myth-region-visual[data-myth-region]').forEach(v=>{const h=document.getElementById(v.dataset.mythRegion);if(!h)return;let ref=h,n=h.nextElementSibling;while(n&&n.tagName!=='H2'&&n.tagName!=='H1'){ref=n;n=n.nextElementSibling}ref.insertAdjacentElement('afterend',v)});
  const titleFixes=[
   ['14b-comparative-mythology-world-atlas','comparative-mythology-world-atlas','Comparative mythology — the world traditions beside the Vardath mechanism'],
