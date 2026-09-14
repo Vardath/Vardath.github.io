@@ -1,0 +1,44 @@
+name: Build full Art Archive from preserved test corpus v2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-art-archive-from-test-corpus-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  build-art-archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download preserved result artifact with GitHub CLI
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/vardath-art-corpus
+          gh run download 34757471398 --repo Vardath/Vardath.github.io --name masonic-alchemy-corpus-result-34757471398 --dir /tmp/vardath-art-corpus
+          test -d /tmp/vardath-art-corpus/shards
+          echo "shards=$(find /tmp/vardath-art-corpus/shards -name '*.json' | wc -l)"
+
+      - name: Generate static build-time gallery
+        run: python tools/build_art_archive_from_test_corpus.py
+
+      - name: Commit expanded archive
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add art.html cosmology_expansions/art_corpus research/art_archive_masonic_alchemy_visual_manifest.csv
+          if git diff --cached --quiet; then
+            echo 'Archive already current.'
+            exit 0
+          fi
+          git commit -m 'Expand Art Archive with full scored visual test corpus'
+          git pull --rebase origin main
+          git push
