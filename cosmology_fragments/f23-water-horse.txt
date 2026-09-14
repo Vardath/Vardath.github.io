@@ -1,0 +1,10 @@
+<!-- Compatibility/placement helper only. The substantive Water Horse / Ceffyl Dŵr / Sleipnir section is build-time content in cosmology_expansions/x13.txt. -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(()=>{
+    const waterHorse=document.getElementById('water-horse-world-door-sleipnir');
+    const mythMatrix=document.getElementById('comparative-mythology-second-pass');
+    if(waterHorse&&mythMatrix) mythMatrix.insertAdjacentElement('afterend',waterHorse);
+  },0);
+});
+</script>
