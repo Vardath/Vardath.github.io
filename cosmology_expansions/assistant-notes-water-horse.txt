@@ -1,0 +1,1 @@
+<!-- Water-horse / Ceffyl Dŵr / Sleipnir evidence boundary is consolidated into assistant-notes-mythology.txt. This file remains only because vardath-cosmology.html includes it at build time. -->
