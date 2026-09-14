@@ -1,0 +1,3 @@
+Art Archive thumbnail deployment marker.
+The saved lattice-art corpus records now carry resolved museum image URLs and render as source-linked thumbnail cards.
+Permanent generator fix commit: b400714.
