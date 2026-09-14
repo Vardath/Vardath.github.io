@@ -1,0 +1,43 @@
+name: Waterborne-child travelling-fingertrap v1.2 - full extract serial test
+
+on:
+  push:
+    paths:
+      - '.github/workflows/waterborne-child-fingertrap-v1-2-single.yml'
+      - 'tools/run_waterborne_child_fingertrap_v1_2.py'
+      - 'tools/run_waterborne_child_fingertrap_v1_1.py'
+  workflow_dispatch:
+
+jobs:
+  single-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen v1 protocol and v1.2 transport
+        run: |
+          python -m py_compile tools/test_waterborne_child_fingertrap_v1.py tools/run_waterborne_child_fingertrap_v1_resilient.py tools/run_waterborne_child_fingertrap_v1_1.py tools/run_waterborne_child_fingertrap_v1_2.py
+          python tools/run_waterborne_child_fingertrap_v1_2.py validate
+      - name: Run all 20 language acquisitions serially with full extracts
+        run: |
+          set -euo pipefail
+          rm -rf research/waterborne_child_fingertrap_v1_work research/waterborne_child_fingertrap_v1_results
+          for i in $(seq 0 19); do
+            echo "===== LANGUAGE PASS $i / 19 ====="
+            python tools/run_waterborne_child_fingertrap_v1_2.py shard --id "$i"
+            sleep 3
+          done
+          test "$(find research/waterborne_child_fingertrap_v1_work -name 'shard-*.json' | wc -l)" -eq 20
+      - name: Merge and score frozen v1 test
+        run: python tools/run_waterborne_child_fingertrap_v1_2.py merge
+      - name: Preserve complete v1.2 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: waterborne-child-fingertrap-v1-2-${{ github.run_id }}
+          path: |
+            research/waterborne_child_fingertrap_v1_work
+            research/waterborne_child_fingertrap_v1_results
+          retention-days: 14
