@@ -1,0 +1,1 @@
+Hero repair checkpoint: corrupted JPEG confirmed in deployed Pages artifact; replacing with validated binary.
