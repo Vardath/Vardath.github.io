@@ -1,0 +1,47 @@
+name: Waterborne-child travelling-fingertrap v1 - single serial test
+
+on:
+  push:
+    paths:
+      - '.github/workflows/waterborne-child-fingertrap-v1-single.yml'
+      - 'research/waterborne_child_fingertrap_v1/SINGLE_RUN_NOTE.md'
+  workflow_dispatch:
+
+jobs:
+  single-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen protocol and resilient runner
+        run: |
+          python -m py_compile tools/test_waterborne_child_fingertrap_v1.py tools/run_waterborne_child_fingertrap_v1_resilient.py
+          python tools/run_waterborne_child_fingertrap_v1_resilient.py validate
+          test -f research/waterborne_child_fingertrap_v1/PREREGISTRATION.md
+          test -f research/waterborne_child_fingertrap_v1/IMPLEMENTATION_FREEZE.md
+          test -f research/waterborne_child_fingertrap_v1/TRANSPORT_NOTE.md
+          test -f research/waterborne_child_fingertrap_v1/ACQUISITION_CORRECTION.md
+          test -f research/waterborne_child_fingertrap_v1/SINGLE_RUN_NOTE.md
+      - name: Run all 20 language acquisitions serially
+        run: |
+          set -euo pipefail
+          rm -rf research/waterborne_child_fingertrap_v1_work research/waterborne_child_fingertrap_v1_results
+          for i in $(seq 0 19); do
+            echo "===== LANGUAGE PASS $i / 19 ====="
+            python tools/run_waterborne_child_fingertrap_v1_resilient.py shard --id "$i"
+            sleep 3
+          done
+          test "$(find research/waterborne_child_fingertrap_v1_work -name 'shard-*.json' | wc -l)" -eq 20
+      - name: Merge and score frozen v1 test
+        run: python tools/run_waterborne_child_fingertrap_v1_resilient.py merge
+      - name: Preserve complete result
+        uses: actions/upload-artifact@v4
+        with:
+          name: waterborne-child-fingertrap-v1-single-${{ github.run_id }}
+          path: |
+            research/waterborne_child_fingertrap_v1_work
+            research/waterborne_child_fingertrap_v1_results
+          retention-days: 14
