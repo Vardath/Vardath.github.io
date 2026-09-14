@@ -5,7 +5,6 @@ from urllib.error import HTTPError
 import test_waterborne_child_fingertrap_v1 as core
 
 _original_json_dumps = json.dumps
-_original_positions = core.positions
 
 
 def _json_safe(x):
@@ -86,21 +85,25 @@ def resilient_api_get(lang, params, retries=10):
 
 
 def paced_fetch_en_extracts(titles):
+    """Retrieve all resolvable English plaintext, explicitly overriding MediaWiki's extract default limit."""
     out = {}
-    for idx, batch in enumerate(core.batches(titles, 25)):
+    for idx, batch in enumerate(core.batches(titles, 20)):
         if idx:
             time.sleep(2.0)
         data = resilient_api_get("en", {
-            "action": "query", "prop": "extracts|pageprops", "explaintext": 1,
+            "action": "query", "prop": "extracts|pageprops", "explaintext": 1, "exlimit": "max",
             "redirects": 1, "titles": "|".join(batch), "ppprop": "wikibase_item"
         })
         for _, p in data.get("query", {}).get("pages", {}).items():
             if "missing" in p:
                 continue
             title = p.get("title", "")
+            extract = p.get("extract", "")
+            if not extract:
+                continue
             out[title] = {
                 "title": title,
-                "extract": p.get("extract", ""),
+                "extract": extract,
                 "qid": p.get("pageprops", {}).get("wikibase_item")
             }
     return out
@@ -123,14 +126,12 @@ def main():
     args = ap.parse_args()
     if args.cmd == "validate":
         core.validate()
-        # Explicit execution-layer sanity checks.
         assert boundary_positions("dark ark mark", ["ark"]) == [5]
         assert boundary_positions("bag baggage", ["bag"]) == [0]
-        print(json.dumps({"resilient_transport": "ok", "short_term_boundaries": "ok"}))
+        print(json.dumps({"resilient_transport": "ok", "short_term_boundaries": "ok", "extract_batch": 20, "exlimit": "max"}))
     elif args.cmd == "shard":
         if not 0 <= args.id < 20:
             raise SystemExit("shard id must be 0..19")
-        # Small deterministic staggering reduces synchronized enwiki bursts without changing acquisition.
         time.sleep((args.id % 5) * 1.5)
         core.run_shard(args.id)
     else:
