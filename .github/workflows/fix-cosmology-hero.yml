@@ -1,0 +1,38 @@
+name: Fix cosmology hero binary
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/hero-valid.b64'
+      - '.github/workflows/fix-cosmology-hero.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-hero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Decode validated hero image
+        run: |
+          base64 --decode assets/hero-valid.b64 > assets/vardath-connected-worlds-fixed.jpg
+          test -s assets/vardath-connected-worlds-fixed.jpg
+          file assets/vardath-connected-worlds-fixed.jpg
+          test "$(head -c 2 assets/vardath-connected-worlds-fixed.jpg | xxd -p)" = "ffd8"
+          test "$(tail -c 2 assets/vardath-connected-worlds-fixed.jpg | xxd -p)" = "ffd9"
+      - name: Commit corrected binary
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/vardath-connected-worlds-fixed.jpg
+          if git diff --cached --quiet; then
+            echo 'Hero binary already matches validated payload.'
+            exit 0
+          fi
+          git commit -m 'Fix cosmology hero image binary'
+          git push
