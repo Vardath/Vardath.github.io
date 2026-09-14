@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded',()=>{
  const last=new Map();
  document.querySelectorAll('.deepening[data-after]').forEach(d=>{const id=d.dataset.after,h=document.getElementById(id)||(id==='23-compact-statement-of-the-mature-vardath-cosmology'?document.getElementById('moved-mature-overview-anchor'):null);if(!h)return;const ref=last.get(id)||h;ref.insertAdjacentElement('afterend',d);last.set(id,d)});
  document.querySelectorAll('.myth-region-visual[data-myth-region]').forEach(v=>{const h=document.getElementById(v.dataset.mythRegion);if(!h)return;let ref=h,n=h.nextElementSibling;while(n&&n.tagName!=='H2'&&n.tagName!=='H1'){ref=n;n=n.nextElementSibling}ref.insertAdjacentElement('afterend',v)});
+ const titleFixes=[
+  ['14b-comparative-mythology-world-atlas','comparative-mythology-world-atlas','Comparative mythology — the world traditions beside the Vardath mechanism'],
+  ['14c-revelation-as-an-event-sequence','revelation-as-an-event-sequence','Revelation — the full event sequence beside the Vardath mechanism']
+ ];
+ titleFixes.forEach(([oldId,newId,title])=>{const h=document.getElementById(oldId);if(h){h.id=newId;h.textContent=title}});
  const toc=document.getElementById('toc');
  document.querySelectorAll('#content h1[id]').forEach(h=>{const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/^\s*\d+\.\s*/,'').trim();toc.appendChild(a)});
 });
