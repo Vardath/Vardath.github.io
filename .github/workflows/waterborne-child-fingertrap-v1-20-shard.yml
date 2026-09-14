@@ -1,0 +1,60 @@
+name: Waterborne-child travelling-fingertrap v1 - 20 shards
+
+on:
+  push:
+    paths:
+      - 'tools/test_waterborne_child_fingertrap_v1.py'
+      - 'research/waterborne_child_fingertrap_v1/PREREGISTRATION.md'
+      - 'research/waterborne_child_fingertrap_v1/IMPLEMENTATION_FREEZE.md'
+      - '.github/workflows/waterborne-child-fingertrap-v1-20-shard.yml'
+  workflow_dispatch:
+
+jobs:
+  shards:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen protocol
+        run: |
+          python -m py_compile tools/test_waterborne_child_fingertrap_v1.py
+          python tools/test_waterborne_child_fingertrap_v1.py validate
+          test -f research/waterborne_child_fingertrap_v1/PREREGISTRATION.md
+          test -f research/waterborne_child_fingertrap_v1/IMPLEMENTATION_FREEZE.md
+      - name: Run shard ${{ matrix.shard }}
+        run: python tools/test_waterborne_child_fingertrap_v1.py shard --id ${{ matrix.shard }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waterborne-child-shard-${{ matrix.shard }}-${{ github.run_id }}
+          path: research/waterborne_child_fingertrap_v1_work/shard-*.json
+          retention-days: 7
+
+  merge:
+    needs: shards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: waterborne-child-shard-*-${{ github.run_id }}
+          path: research/waterborne_child_fingertrap_v1_work
+          merge-multiple: true
+      - name: Require all 20 shards and merge
+        run: |
+          test "$(find research/waterborne_child_fingertrap_v1_work -name 'shard-*.json' | wc -l)" -eq 20
+          python tools/test_waterborne_child_fingertrap_v1.py merge
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waterborne-child-fingertrap-v1-result-${{ github.run_id }}
+          path: research/waterborne_child_fingertrap_v1_results
+          retention-days: 14
