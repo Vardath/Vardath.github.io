@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/waterborne-child-fingertrap-v1-1-single.yml'
+      - 'tools/run_waterborne_child_fingertrap_v1_1.py'
   workflow_dispatch:
 
 jobs:
