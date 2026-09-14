@@ -1,0 +1,555 @@
+{
+  "count": 55,
+  "records": [
+    {
+      "tradition": "Greek",
+      "name": "Zeus",
+      "query": "Zeus ancient statue",
+      "title": "Statue of Zeus, World Museum Liverpool.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Zeus,_World_Museum_Liverpool.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/46/Statue_of_Zeus%2C_World_Museum_Liverpool.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY 3.0",
+      "date": "2012-02-19"
+    },
+    {
+      "tradition": "Greek",
+      "name": "Athena",
+      "query": "Athena ancient statue",
+      "title": "Statue Athena Vatican Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_Athena_Vatican_Museum.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Statue_Athena_Vatican_Museum.jpg/960px-Statue_Athena_Vatican_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 3.0",
+      "date": "2016-05-24 13:02:38"
+    },
+    {
+      "tradition": "Greek",
+      "name": "Apollo",
+      "query": "Apollo ancient statue",
+      "title": "Statue of Apollo, Petworth House.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Apollo,_Petworth_House.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Statue_of_Apollo%2C_Petworth_House.jpg/960px-Statue_of_Apollo%2C_Petworth_House.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2015-08-09"
+    },
+    {
+      "tradition": "Greek",
+      "name": "Artemis",
+      "query": "Artemis ancient statue",
+      "title": "Statue of Artemis (5282695469).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Artemis_(5282695469).jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Statue_of_Artemis_%285282695469%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY 2.0",
+      "date": "2010-12-22 07:51"
+    },
+    {
+      "tradition": "Greek",
+      "name": "Hermes",
+      "query": "Hermes ancient statue",
+      "title": "Marble statue of Hermes MET 250346.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Marble_statue_of_Hermes_MET_250346.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/70/Marble_statue_of_Hermes_MET_250346.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC0",
+      "date": "1st or 2nd century A.D."
+    },
+    {
+      "tradition": "Greek",
+      "name": "Aphrodite",
+      "query": "Aphrodite ancient statue",
+      "title": "Statue of Aphrodite in the Museo delle Terme di Diocleziano.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Aphrodite_in_the_Museo_delle_Terme_di_Diocleziano.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Statue_of_Aphrodite_in_the_Museo_delle_Terme_di_Diocleziano.jpg/960px-Statue_of_Aphrodite_in_the_Museo_delle_Terme_di_Diocleziano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2015-01-04 18:17:54"
+    },
+    {
+      "tradition": "Roman",
+      "name": "Jupiter",
+      "query": "Jupiter Roman statue",
+      "title": "Statue of Jupiter. Campana Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Jupiter._Campana_Museum.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/80/Statue_of_Jupiter._Campana_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "1856"
+    },
+    {
+      "tradition": "Roman",
+      "name": "Mars",
+      "query": "Mars Roman statue",
+      "title": "Statue of God Mars York.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_God_Mars_York.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Statue_of_God_Mars_York.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY-SA 3.0",
+      "date": "23 October 2007 (original upload date)"
+    },
+    {
+      "tradition": "Roman",
+      "name": "Venus",
+      "query": "Venus Roman statue",
+      "title": "Statue der Esquiline Venus 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_der_Esquiline_Venus_01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Statue_der_Esquiline_Venus_01.jpg/960px-Statue_der_Esquiline_Venus_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2017-10-21 11:36:23"
+    },
+    {
+      "tradition": "Roman",
+      "name": "Minerva",
+      "query": "Minerva Roman statue",
+      "title": "Statue of Minerva, Minerva House, North Crescent (off Chenies Street), WC1 - geograph.org.uk - 1289612.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Minerva,_Minerva_House,_North_Crescent_(off_Chenies_Street),_WC1_-_geograph.org.uk_-_1289612.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/51/Statue_of_Minerva%2C_Minerva_House%2C_North_Crescent_%28off_Chenies_Street%29%2C_WC1_-_geograph.org.uk_-_1289612.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY-SA 2.0",
+      "date": "2009-04-07"
+    },
+    {
+      "tradition": "Norse",
+      "name": "Odin",
+      "query": "Odin mythology illustration",
+      "title": "Odin and his brothers create the world.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Odin_and_his_brothers_create_the_world.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Odin_and_his_brothers_create_the_world.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "13 July 2005 (original upload date)"
+    },
+    {
+      "tradition": "Norse",
+      "name": "Thor",
+      "query": "Thor mythology illustration",
+      "title": "Thor in his chariot.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Thor_in_his_chariot.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Thor_in_his_chariot.jpg/960px-Thor_in_his_chariot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "published 1865"
+    },
+    {
+      "tradition": "Norse",
+      "name": "Freyja",
+      "query": "Freyja mythology illustration",
+      "title": "Freyja in the dwarfs' cave.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Freyja_in_the_dwarfs%27_cave.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Freyja_in_the_dwarfs%27_cave.jpg/960px-Freyja_in_the_dwarfs%27_cave.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "Published in 1891 (and earlier, this book went through several editions and reprints)"
+    },
+    {
+      "tradition": "Norse",
+      "name": "Tyr",
+      "query": "Tyr Norse mythology illustration",
+      "title": "IB 299 4to Tyr.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:IB_299_4to_Tyr.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/IB_299_4to_Tyr.jpg/960px-IB_299_4to_Tyr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "2006-02-01 13:51:47"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Ra",
+      "query": "Ra Egyptian god art",
+      "title": "Figure of Egyptian sun god Ra, National Academy of Sciences, Washington, D.C LCCN2011631969.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:Figure_of_Egyptian_sun_god_Ra,_National_Academy_of_Sciences,_Washington,_D.C_LCCN2011631969.tif",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Figure_of_Egyptian_sun_god_Ra%2C_National_Academy_of_Sciences%2C_Washington%2C_D.C_LCCN2011631969.tif/lossy-page1-960px-Figure_of_Egyptian_sun_god_Ra%2C_National_Academy_of_Sciences%2C_Washington%2C_D.C_LCCN2011631969.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "between 1980 and 2006"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Isis",
+      "query": "Isis Egyptian goddess art",
+      "title": "Egyptian - Statue of Isis Protecting Osiris - Walters 22199 - Three Quarter.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Egyptian_-_Statue_of_Isis_Protecting_Osiris_-_Walters_22199_-_Three_Quarter.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/58/Egyptian_-_Statue_of_Isis_Protecting_Osiris_-_Walters_22199_-_Three_Quarter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "between circa 589 and circa 526 <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a> (Late Period)"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Osiris",
+      "query": "Osiris Egyptian god art",
+      "title": "Egyptian - Statue of Osiris - Walters 54551.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Egyptian_-_Statue_of_Osiris_-_Walters_54551.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Egyptian_-_Statue_of_Osiris_-_Walters_54551.jpg/960px-Egyptian_-_Statue_of_Osiris_-_Walters_54551.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "between circa 580 and circa 550 <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a> (Late Period)"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Horus",
+      "query": "Horus Egyptian god art",
+      "title": "Egyptian - The Falcon God Horus - Walters 481605 - Back.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Egyptian_-_The_Falcon_God_Horus_-_Walters_481605_-_Back.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/84/Egyptian_-_The_Falcon_God_Horus_-_Walters_481605_-_Back.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "between 664 and 332 <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a> (Late Period)"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Anubis",
+      "query": "Anubis Egyptian god art",
+      "title": "Fresco of Anubis, the Egyptian god of death and the afterlife Baths of Caracalla.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fresco_of_Anubis,_the_Egyptian_god_of_death_and_the_afterlife_Baths_of_Caracalla.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Fresco_of_Anubis%2C_the_Egyptian_god_of_death_and_the_afterlife_Baths_of_Caracalla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "2nd - 3rd century CE"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Sekhmet",
+      "query": "Sekhmet Egyptian goddess statue",
+      "title": "Statue of the goddess Sekhmet, granodiorite - Museo Egizio Turin C 246 p01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Statue_of_the_goddess_Sekhmet,_granodiorite_-_Museo_Egizio_Turin_C_246_p01.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Statue_of_the_goddess_Sekhmet%2C_granodiorite_-_Museo_Egizio_Turin_C_246_p01.jpg/960px-Statue_of_the_goddess_Sekhmet%2C_granodiorite_-_Museo_Egizio_Turin_C_246_p01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "date": "between 1390 and 1353 <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a><div style=\"display: none;\">date QS:P,-1350-00-00T00:00:00Z/7,P1319,-1390-00-00T00:00:00Z/9,P1326,-1353-00-00T00:00:00Z/9</div> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q117394511#P571\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span><br><a href=\"https://en.wikipedia.org/wiki/en:New_Kingdom_of_Egypt\" class=\"extiw\" title=\"w:en:New Kingdom of Egypt\"><span title=\"period from 1570 to 1069 BC in Egypt\">Egyptian Empire</span></a> (circa 1550 <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a><div style=\"display: none;\">date QS:P,-1550-00-00T00:00:00Z/9,P1480,Q5727902</div>–1070 <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a><div style=\"display: none;\">date QS:P,-1070-00-00T00:00:00Z/9</div>) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q117394511#P2348\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>"
+    },
+    {
+      "tradition": "Egyptian",
+      "name": "Thoth",
+      "query": "Thoth Egyptian god art",
+      "title": "Egyptian - Thoth-Ibis Figure - Walters 542152 - Left.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Egyptian_-_Thoth-Ibis_Figure_-_Walters_542152_-_Left.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Egyptian_-_Thoth-Ibis_Figure_-_Walters_542152_-_Left.jpg/960px-Egyptian_-_Thoth-Ibis_Figure_-_Walters_542152_-_Left.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "7<sup>th</sup> century <a href=\"https://en.wikipedia.org/wiki/en:Ante_Christum_Natum\" class=\"extiw\" title=\"w:en:Ante Christum Natum\">BC</a><div style=\"display: none;\">date QS:P571,-650-00-00T00:00:00Z/7</div> (Late Period)"
+    },
+    {
+      "tradition": "Mesopotamian",
+      "name": "Inanna / Ishtar",
+      "query": "Inanna Ishtar ancient relief",
+      "title": "Old-Babylonian plaque showing the goddess Ishtar, from Southern Mesopotamia, Iraq, on display in the Pergamon Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Old-Babylonian_plaque_showing_the_goddess_Ishtar,_from_Southern_Mesopotamia,_Iraq,_on_display_in_the_Pergamon_Museum.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Old-Babylonian_plaque_showing_the_goddess_Ishtar%2C_from_Southern_Mesopotamia%2C_Iraq%2C_on_display_in_the_Pergamon_Museum.jpg/960px-Old-Babylonian_plaque_showing_the_goddess_Ishtar%2C_from_Southern_Mesopotamia%2C_Iraq%2C_on_display_in_the_Pergamon_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2014-08-11 16:31:37"
+    },
+    {
+      "tradition": "Mesopotamian",
+      "name": "Enki / Ea",
+      "query": "Enki Ea Mesopotamian god",
+      "title": "Copia de Enki.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Copia_de_Enki.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Copia_de_Enki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "unknown (uploaded 2006)"
+    },
+    {
+      "tradition": "Mesopotamian",
+      "name": "Marduk",
+      "query": "Marduk ancient relief",
+      "title": "Marduks strid med Tiamat.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Marduks_strid_med_Tiamat.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Marduks_strid_med_Tiamat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "Uploaded 16-10-2005"
+    },
+    {
+      "tradition": "Mesopotamian",
+      "name": "Nergal",
+      "query": "Nergal Mesopotamian god",
+      "title": "Ancient Parthian relief carving of the god Nergal from Hatra.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ancient_Parthian_relief_carving_of_the_god_Nergal_from_Hatra.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ancient_Parthian_relief_carving_of_the_god_Nergal_from_Hatra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "circa first or second century AD"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Shiva",
+      "query": "Shiva painting sculpture",
+      "title": "1010 CE Brihadishwara Shiva Temple, painting, built by Rajaraja I, Thanjavur Tamil Nadu India.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:1010_CE_Brihadishwara_Shiva_Temple,_painting,_built_by_Rajaraja_I,_Thanjavur_Tamil_Nadu_India.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/1010_CE_Brihadishwara_Shiva_Temple%2C_painting%2C_built_by_Rajaraja_I%2C_Thanjavur_Tamil_Nadu_India.jpg/960px-1010_CE_Brihadishwara_Shiva_Temple%2C_painting%2C_built_by_Rajaraja_I%2C_Thanjavur_Tamil_Nadu_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "date": "Taken on 1 September 2017, 18:02"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Vishnu",
+      "query": "Vishnu painting sculpture",
+      "title": "Vishnu - Pala School - Circa 13th Century CE - Bihar - Indian Museum - Kolkata 2013-04-10 7812.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Vishnu_-_Pala_School_-_Circa_13th_Century_CE_-_Bihar_-_Indian_Museum_-_Kolkata_2013-04-10_7812.JPG",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Vishnu_-_Pala_School_-_Circa_13th_Century_CE_-_Bihar_-_Indian_Museum_-_Kolkata_2013-04-10_7812.JPG/960px-Vishnu_-_Pala_School_-_Circa_13th_Century_CE_-_Bihar_-_Indian_Museum_-_Kolkata_2013-04-10_7812.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 3.0",
+      "date": "2013-04-10 16:23:45"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Krishna",
+      "query": "Krishna painting",
+      "title": "Sri Krishna (Miniature Painting, Kashmir School, 19th century).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sri_Krishna_(Miniature_Painting,_Kashmir_School,_19th_century).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Sri_Krishna_%28Miniature_Painting%2C_Kashmir_School%2C_19th_century%29.jpg/960px-Sri_Krishna_%28Miniature_Painting%2C_Kashmir_School%2C_19th_century%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "2020-05-22"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Ganesha",
+      "query": "Ganesha painting sculpture",
+      "title": "Ganesha Idol.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ganesha_Idol.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Ganesha_Idol.jpg/960px-Ganesha_Idol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 3.0",
+      "date": "5 September 2016 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Kali",
+      "query": "Kali goddess painting",
+      "title": "India, Calcutta, Kalighat painting, 19th century - The Goddess Kali - 2003.110.a - Cleveland Museum of Art.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:India,_Calcutta,_Kalighat_painting,_19th_century_-_The_Goddess_Kali_-_2003.110.a_-_Cleveland_Museum_of_Art.tif",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/India%2C_Calcutta%2C_Kalighat_painting%2C_19th_century_-_The_Goddess_Kali_-_2003.110.a_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-India%2C_Calcutta%2C_Kalighat_painting%2C_19th_century_-_The_Goddess_Kali_-_2003.110.a_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "date": "1800s<div style=\"display: none;\">date QS:P571,+1800-00-00T00:00:00Z/8</div>"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Durga",
+      "query": "Durga goddess painting",
+      "title": "Portrayal of Durga Puja in Bengal through Painting.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Portrayal_of_Durga_Puja_in_Bengal_through_Painting.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Portrayal_of_Durga_Puja_in_Bengal_through_Painting.jpg/960px-Portrayal_of_Durga_Puja_in_Bengal_through_Painting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "date": "2020-01-12 16:55:37"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Lakshmi",
+      "query": "Lakshmi painting",
+      "title": "India, Calcutta, Kalighat painting, 19th century - Vishnu and Lakshmi - 2003.132 - Cleveland Museum of Art.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:India,_Calcutta,_Kalighat_painting,_19th_century_-_Vishnu_and_Lakshmi_-_2003.132_-_Cleveland_Museum_of_Art.tif",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/India%2C_Calcutta%2C_Kalighat_painting%2C_19th_century_-_Vishnu_and_Lakshmi_-_2003.132_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-India%2C_Calcutta%2C_Kalighat_painting%2C_19th_century_-_Vishnu_and_Lakshmi_-_2003.132_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "date": "1800s<div style=\"display: none;\">date QS:P571,+1800-00-00T00:00:00Z/8</div>"
+    },
+    {
+      "tradition": "Hindu",
+      "name": "Saraswati",
+      "query": "Saraswati painting",
+      "title": "1895 CE Saraswati on hamsa सरस्वती हंस painting 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:1895_CE_Saraswati_on_hamsa_%E0%A4%B8%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%80_%E0%A4%B9%E0%A4%82%E0%A4%B8_painting_2.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/1895_CE_Saraswati_on_hamsa_%E0%A4%B8%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%80_%E0%A4%B9%E0%A4%82%E0%A4%B8_painting_2.jpg/960px-1895_CE_Saraswati_on_hamsa_%E0%A4%B8%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%80_%E0%A4%B9%E0%A4%82%E0%A4%B8_painting_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "2021-08-18"
+    },
+    {
+      "tradition": "Buddhist",
+      "name": "Avalokiteshvara",
+      "query": "Avalokiteshvara painting sculpture",
+      "title": "Chöying Dorjé, the Tenth Black Hat Karmapa - Bodhisattva of Compassion (Avalokiteshvara) - 1968.280 - Cleveland Museum of Art.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%B6ying_Dorj%C3%A9,_the_Tenth_Black_Hat_Karmapa_-_Bodhisattva_of_Compassion_(Avalokiteshvara)_-_1968.280_-_Cleveland_Museum_of_Art.tif",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Ch%C3%B6ying_Dorj%C3%A9%2C_the_Tenth_Black_Hat_Karmapa_-_Bodhisattva_of_Compassion_%28Avalokiteshvara%29_-_1968.280_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-Ch%C3%B6ying_Dorj%C3%A9%2C_the_Tenth_Black_Hat_Karmapa_-_Bodhisattva_of_Compassion_%28Avalokiteshvara%29_-_1968.280_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC0",
+      "date": "1647-1648 or 1658"
+    },
+    {
+      "tradition": "Buddhist",
+      "name": "Tara",
+      "query": "Green Tara thangka",
+      "title": "Tara thangka.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tara_thangka.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Tara_thangka.jpg/960px-Tara_thangka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "18<sup>th</sup> century<div style=\"display: none;\">date QS:P,+1750-00-00T00:00:00Z/7</div>"
+    },
+    {
+      "tradition": "Buddhist",
+      "name": "Manjushri",
+      "query": "Manjushri Buddhist painting",
+      "title": "Astasahasrika Prajnaparamita Manjushri Bodhisattva.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Astasahasrika_Prajnaparamita_Manjushri_Bodhisattva.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Astasahasrika_Prajnaparamita_Manjushri_Bodhisattva.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "Artwork created circa 1151-1200 CE."
+    },
+    {
+      "tradition": "Buddhist",
+      "name": "Vajrapani",
+      "query": "Vajrapani Buddhist painting",
+      "title": "Vajrapani Thangka Painting. Mongolia. 19th c. Toulon Asian Arts Museum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Vajrapani_Thangka_Painting._Mongolia._19th_c._Toulon_Asian_Arts_Museum.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Vajrapani_Thangka_Painting._Mongolia._19th_c._Toulon_Asian_Arts_Museum.jpg/960px-Vajrapani_Thangka_Painting._Mongolia._19th_c._Toulon_Asian_Arts_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2020-07-01"
+    },
+    {
+      "tradition": "Shinto / Japanese",
+      "name": "Amaterasu",
+      "query": "Amaterasu Japanese mythology art",
+      "title": "Amaterasu cave edited.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amaterasu_cave_edited.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Amaterasu_cave_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "2008-07-12 19:02"
+    },
+    {
+      "tradition": "Shinto / Japanese",
+      "name": "Susanoo",
+      "query": "Susanoo Japanese mythology art",
+      "title": "The God Susanoo no Mikoto Defeats the Evil Spirits - 進雄尊悪神退治.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_God_Susanoo_no_Mikoto_Defeats_the_Evil_Spirits_-_%E9%80%B2%E9%9B%84%E5%B0%8A%E6%82%AA%E7%A5%9E%E9%80%80%E6%B2%BB.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/The_God_Susanoo_no_Mikoto_Defeats_the_Evil_Spirits_-_%E9%80%B2%E9%9B%84%E5%B0%8A%E6%82%AA%E7%A5%9E%E9%80%80%E6%B2%BB.jpg/960px-The_God_Susanoo_no_Mikoto_Defeats_the_Evil_Spirits_-_%E9%80%B2%E9%9B%84%E5%B0%8A%E6%82%AA%E7%A5%9E%E9%80%80%E6%B2%BB.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "1868"
+    },
+    {
+      "tradition": "Shinto / Japanese",
+      "name": "Inari",
+      "query": "Inari Japanese deity art",
+      "title": "Inari- und Fuchskult Japan EthnM.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Inari-_und_Fuchskult_Japan_EthnM.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Inari-_und_Fuchskult_Japan_EthnM.jpg/960px-Inari-_und_Fuchskult_Japan_EthnM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "2009-02"
+    },
+    {
+      "tradition": "Shinto / Japanese",
+      "name": "Hachiman",
+      "query": "Hachiman Japanese deity art",
+      "title": "Empress OKINAGA TARASI.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Empress_OKINAGA_TARASI.JPG",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Empress_OKINAGA_TARASI.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "CC BY-SA 3.0",
+      "date": "ACE1326, photo:  ACE2004"
+    },
+    {
+      "tradition": "Aztec / Nahua",
+      "name": "Quetzalcoatl",
+      "query": "Quetzalcoatl codex",
+      "title": "Quetzalcoatl feathered serpent form as depicted in the Codex Telleriano-Remensi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Quetzalcoatl_feathered_serpent_form_as_depicted_in_the_Codex_Telleriano-Remensi.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/38/Quetzalcoatl_feathered_serpent_form_as_depicted_in_the_Codex_Telleriano-Remensi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "2016-04-11 12:33:32"
+    },
+    {
+      "tradition": "Aztec / Nahua",
+      "name": "Tlaloc",
+      "query": "Tlaloc codex",
+      "title": "Tlaloc, Codex Rios, p.20r.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Tlaloc,_Codex_Rios,_p.20r.JPG",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/55/Tlaloc%2C_Codex_Rios%2C_p.20r.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "2006-05-14"
+    },
+    {
+      "tradition": "Aztec / Nahua",
+      "name": "Huitzilopochtli",
+      "query": "Huitzilopochtli codex",
+      "title": "Fundation of Tenochtitlan Codex Azcatitlan f18 Copil and Huitzilopochtli.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fundation_of_Tenochtitlan_Codex_Azcatitlan_f18_Copil_and_Huitzilopochtli.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Fundation_of_Tenochtitlan_Codex_Azcatitlan_f18_Copil_and_Huitzilopochtli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "2016-07-27 11:37:55"
+    },
+    {
+      "tradition": "Aztec / Nahua",
+      "name": "Tezcatlipoca",
+      "query": "Tezcatlipoca codex",
+      "title": "Tezcatlipoca Tudela.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Tezcatlipoca_Tudela.png",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Tezcatlipoca_Tudela.png/960px-Tezcatlipoca_Tudela.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2023-04-27"
+    },
+    {
+      "tradition": "Maya",
+      "name": "Chaac",
+      "query": "Maya Chaac god",
+      "title": "Chaac, le Dieu maya des eaux et de la pluie du Codex céramique.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Chaac,_le_Dieu_maya_des_eaux_et_de_la_pluie_du_Codex_c%C3%A9ramique.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/79/Chaac%2C_le_Dieu_maya_des_eaux_et_de_la_pluie_du_Codex_c%C3%A9ramique.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "Maya Classic period"
+    },
+    {
+      "tradition": "Maya",
+      "name": "Itzamna",
+      "query": "Maya Itzamna god",
+      "title": "God D Itzamna.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:God_D_Itzamna.jpg",
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3d/God_D_Itzamna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "license": "Public domain",
+      "date": "Classic period"
+    },
+    {
+      "tradition": "Chinese",
+      "name": "Mazu",
+      "query": "Mazu Chinese goddess painting",
+      "title": "2016 Singapur, Chinatown, Ulica Telok Ayer, Thian Hock Keng (18).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2016_Singapur,_Chinatown,_Ulica_Telok_Ayer,_Thian_Hock_Keng_(18).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/2016_Singapur%2C_Chinatown%2C_Ulica_Telok_Ayer%2C_Thian_Hock_Keng_%2818%29.jpg/960px-2016_Singapur%2C_Chinatown%2C_Ulica_Telok_Ayer%2C_Thian_Hock_Keng_%2818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "date": "2016-02-09 05:40"
+    },
+    {
+      "tradition": "Chinese / Buddhist",
+      "name": "Guanyin",
+      "query": "Guanyin Chinese painting",
+      "title": "Shuilu painting of Guanyin in male form.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Shuilu_painting_of_Guanyin_in_male_form.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Shuilu_painting_of_Guanyin_in_male_form.jpg/960px-Shuilu_painting_of_Guanyin_in_male_form.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "1568"
+    },
+    {
+      "tradition": "Chinese",
+      "name": "Jade Emperor",
+      "query": "Jade Emperor Chinese art",
+      "title": "Jade Emperor. Ming Dynasty.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Jade_Emperor._Ming_Dynasty.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Jade_Emperor._Ming_Dynasty.jpg/960px-Jade_Emperor._Ming_Dynasty.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "16<sup>th</sup> century<div style=\"display: none;\">date QS:P571,+1550-00-00T00:00:00Z/7</div>"
+    },
+    {
+      "tradition": "Slavic",
+      "name": "Perun",
+      "query": "Perun Slavic mythology illustration",
+      "title": "The Mythology of all races (1918) (14578796339).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Mythology_of_all_races_(1918)_(14578796339).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/The_Mythology_of_all_races_%281918%29_%2814578796339%29.jpg/960px-The_Mythology_of_all_races_%281918%29_%2814578796339%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "No restrictions",
+      "date": "1918"
+    },
+    {
+      "tradition": "Celtic / Irish",
+      "name": "Lugh",
+      "query": "Lugh Celtic mythology illustration",
+      "title": "Lugh spear Millar.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lugh_spear_Millar.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Lugh_spear_Millar.jpg/960px-Lugh_spear_Millar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "1905"
+    },
+    {
+      "tradition": "Celtic / Irish",
+      "name": "Brigid",
+      "query": "Brigid Celtic goddess art",
+      "title": "Thecomingofbrideduncan1917.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Thecomingofbrideduncan1917.jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Thecomingofbrideduncan1917.jpg/960px-Thecomingofbrideduncan1917.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "Public domain",
+      "date": "1917<div style=\"display: none;\">date QS:P571,+1917-00-00T00:00:00Z/9</div>"
+    },
+    {
+      "tradition": "Celtic / Irish",
+      "name": "The Dagda",
+      "query": "Dagda Celtic mythology illustration",
+      "title": "The Mythology of all races (1918) (14763049014).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Mythology_of_all_races_(1918)_(14763049014).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/The_Mythology_of_all_races_%281918%29_%2814763049014%29.jpg/960px-The_Mythology_of_all_races_%281918%29_%2814763049014%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "No restrictions",
+      "date": "1918"
+    },
+    {
+      "tradition": "Gaulish Celtic",
+      "name": "Cernunnos",
+      "query": "Cernunnos ancient depiction",
+      "title": "Modern , Unidentified Object (FindID 749516).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Modern_,_Unidentified_Object_(FindID_749516).jpg",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Modern_%2C_Unidentified_Object_%28FindID_749516%29.jpg/960px-Modern_%2C_Unidentified_Object_%28FindID_749516%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY 2.0",
+      "date": "between 1900 and 2000"
+    }
+  ]
+}
