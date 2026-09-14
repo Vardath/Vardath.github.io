@@ -1,9 +1,43 @@
 #!/usr/bin/env python3
+import json
 import time
+import urllib.parse
+import urllib.request
+from urllib.error import HTTPError
 
 import run_waterborne_child_fingertrap_v1_resilient as old
 
 core = old.core
+
+
+def wikidata_get(params, retries=10):
+    params = dict(params)
+    params["format"] = "json"
+    params["utf8"] = 1
+    url = "https://www.wikidata.org/w/api.php?" + urllib.parse.urlencode(params, doseq=True)
+    req = urllib.request.Request(url, headers={"User-Agent": core.UA, "Accept": "application/json"})
+    delay = 8.0
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=45) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except HTTPError as e:
+            if attempt == retries - 1:
+                raise
+            wait = delay
+            if e.code == 429 and e.headers:
+                try:
+                    wait = max(delay, float(e.headers.get("Retry-After") or delay))
+                except (TypeError, ValueError):
+                    pass
+            print(f"Wikidata request retry in {wait:.1f}s", flush=True)
+            time.sleep(wait)
+            delay = min(delay * 2.0, 120.0)
+        except Exception:
+            if attempt == retries - 1:
+                raise
+            time.sleep(delay)
+            delay = min(delay * 2.0, 120.0)
 
 
 def resolve_local_via_wikidata(lang, pages):
@@ -31,16 +65,12 @@ def resolve_local_via_wikidata(lang, pages):
     qids = sorted({p.get("qid") for p in byid.values() if p.get("qid")})
     en_by_qid = {}
     for batch in core.batches(qids, 50):
-        data = old.resilient_base_get(
-            "https://www.wikidata.org/w/api.php",
-            "wikidata",
-            {
-                "action": "wbgetentities",
-                "ids": "|".join(batch),
-                "props": "sitelinks",
-                "sitefilter": "enwiki",
-            },
-        )
+        data = wikidata_get({
+            "action": "wbgetentities",
+            "ids": "|".join(batch),
+            "props": "sitelinks",
+            "sitefilter": "enwiki",
+        })
         for qid, entity in data.get("entities", {}).items():
             title = entity.get("sitelinks", {}).get("enwiki", {}).get("title")
             if title:
