@@ -4,8 +4,10 @@ on:
   push:
     paths:
       - 'tools/test_waterborne_child_fingertrap_v1.py'
+      - 'tools/run_waterborne_child_fingertrap_v1_resilient.py'
       - 'research/waterborne_child_fingertrap_v1/PREREGISTRATION.md'
       - 'research/waterborne_child_fingertrap_v1/IMPLEMENTATION_FREEZE.md'
+      - 'research/waterborne_child_fingertrap_v1/TRANSPORT_NOTE.md'
       - '.github/workflows/waterborne-child-fingertrap-v1-20-shard.yml'
   workflow_dispatch:
 
@@ -22,14 +24,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate frozen protocol
+      - name: Validate frozen protocol and transport layer
         run: |
-          python -m py_compile tools/test_waterborne_child_fingertrap_v1.py
-          python tools/test_waterborne_child_fingertrap_v1.py validate
+          python -m py_compile tools/test_waterborne_child_fingertrap_v1.py tools/run_waterborne_child_fingertrap_v1_resilient.py
+          python tools/run_waterborne_child_fingertrap_v1_resilient.py validate
           test -f research/waterborne_child_fingertrap_v1/PREREGISTRATION.md
           test -f research/waterborne_child_fingertrap_v1/IMPLEMENTATION_FREEZE.md
+          test -f research/waterborne_child_fingertrap_v1/TRANSPORT_NOTE.md
       - name: Run shard ${{ matrix.shard }}
-        run: python tools/test_waterborne_child_fingertrap_v1.py shard --id ${{ matrix.shard }}
+        run: python tools/run_waterborne_child_fingertrap_v1_resilient.py shard --id ${{ matrix.shard }}
       - uses: actions/upload-artifact@v4
         with:
           name: waterborne-child-shard-${{ matrix.shard }}-${{ github.run_id }}
@@ -52,7 +55,7 @@ jobs:
       - name: Require all 20 shards and merge
         run: |
           test "$(find research/waterborne_child_fingertrap_v1_work -name 'shard-*.json' | wc -l)" -eq 20
-          python tools/test_waterborne_child_fingertrap_v1.py merge
+          python tools/run_waterborne_child_fingertrap_v1_resilient.py merge
       - uses: actions/upload-artifact@v4
         with:
           name: waterborne-child-fingertrap-v1-result-${{ github.run_id }}
