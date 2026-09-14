@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-import html, json, pathlib, re, time, urllib.parse, urllib.request
+import html, json, pathlib, re, time, urllib.error, urllib.parse, urllib.request
 from collections import OrderedDict
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'cosmology_expansions' / 'art_mythology'
 OUT.mkdir(parents=True, exist_ok=True)
 API = 'https://commons.wikimedia.org/w/api.php'
-UA = 'Vardath-Art-Archive/1.0 (source-linked research gallery; github.com/Vardath/Vardath.github.io)'
+UA = 'Vardath-Art-Archive/1.1 (source-linked research gallery; https://vardath.github.io)'
+PAUSE = 1.15
 
 SECTIONS = OrderedDict([
   ('celtic-insular', {
@@ -78,28 +79,22 @@ SECTIONS = OrderedDict([
   ('deities', {
     'title': 'Gods, goddesses and sacred figures — comparative visual atlas',
     'intro': 'A deliberately broad visual atlas across religions and mythologies. The grouping is for browsing only: each card retains its own tradition label and Commons source, and sacred figures are not being asserted to be equivalents of one another.',
-    'per_query': 2,
+    'per_query': 5,
     'queries': [
-      ('Zeus ancient statue', 'Greek — Zeus'), ('Athena ancient statue', 'Greek — Athena'),
-      ('Apollo ancient statue', 'Greek — Apollo'), ('Aphrodite ancient statue', 'Greek — Aphrodite'),
-      ('Odin mythology illustration', 'Norse — Odin'), ('Thor mythology illustration', 'Norse — Thor'),
-      ('Freyja mythology illustration', 'Norse — Freyja'), ('Tyr mythology illustration', 'Norse — Týr'),
-      ('Ra Egyptian god', 'Egyptian — Ra'), ('Isis Egyptian goddess', 'Egyptian — Isis'),
-      ('Osiris Egyptian god', 'Egyptian — Osiris'), ('Horus Egyptian god', 'Egyptian — Horus'),
-      ('Anubis Egyptian god', 'Egyptian — Anubis'), ('Sekhmet Egyptian goddess', 'Egyptian — Sekhmet'),
-      ('Inanna Ishtar ancient relief', 'Mesopotamian — Inanna/Ishtar'), ('Enki Ea ancient', 'Mesopotamian — Enki/Ea'),
-      ('Marduk ancient relief', 'Mesopotamian — Marduk'), ('Nergal ancient god', 'Mesopotamian — Nergal'),
-      ('Shiva painting sculpture', 'Hindu — Shiva'), ('Vishnu painting sculpture', 'Hindu — Vishnu'),
-      ('Krishna painting', 'Hindu — Krishna'), ('Ganesha painting sculpture', 'Hindu — Ganesha'),
-      ('Kali painting goddess', 'Hindu — Kali'), ('Durga painting goddess', 'Hindu — Durga'),
-      ('Avalokiteshvara painting sculpture', 'Buddhist — Avalokiteśvara'), ('Green Tara thangka', 'Buddhist — Tārā'),
-      ('Manjushri Buddhist painting', 'Buddhist — Mañjuśrī'), ('Vajrapani Buddhist painting', 'Buddhist — Vajrapāṇi'),
-      ('Amaterasu Japanese mythology art', 'Shinto/Japanese — Amaterasu'), ('Susanoo Japanese mythology art', 'Shinto/Japanese — Susanoo'),
-      ('Inari Japanese deity art', 'Shinto/Japanese — Inari'), ('Hachiman Japanese deity art', 'Shinto/Japanese — Hachiman'),
-      ('Quetzalcoatl codex', 'Aztec/Nahua — Quetzalcoatl'), ('Tlaloc codex', 'Aztec/Nahua — Tlaloc'),
-      ('Huitzilopochtli codex', 'Aztec/Nahua — Huitzilopochtli'), ('Tezcatlipoca codex', 'Aztec/Nahua — Tezcatlipoca'),
-      ('Maya Chaac god', 'Maya — Chaac'), ('Maya Itzamna god', 'Maya — Itzamna'),
-      ('Mazu Chinese goddess painting', 'Chinese — Mazu'), ('Guanyin Chinese painting', 'Chinese/Buddhist — Guanyin')
+      ('Zeus Athena Apollo Aphrodite ancient art', 'Greek deities — Zeus, Athena, Apollo, Aphrodite'),
+      ('Hermes Dionysus Poseidon Artemis ancient art', 'Greek deities — Hermes, Dionysus, Poseidon, Artemis'),
+      ('Odin Thor Freyja Tyr mythology illustration', 'Norse deities — Odin, Thor, Freyja, Týr'),
+      ('Ra Isis Osiris Horus Egyptian gods', 'Egyptian deities — Ra, Isis, Osiris, Horus'),
+      ('Anubis Sekhmet Hathor Thoth Egyptian gods', 'Egyptian deities — Anubis, Sekhmet, Hathor, Thoth'),
+      ('Inanna Ishtar Enki Marduk ancient relief', 'Mesopotamian deities — Inanna/Ishtar, Enki, Marduk'),
+      ('Shiva Vishnu Krishna Ganesha painting sculpture', 'Hindu deities — Shiva, Vishnu, Krishna, Ganesha'),
+      ('Kali Durga Lakshmi Saraswati painting', 'Hindu goddesses — Kali, Durga, Lakshmi, Saraswati'),
+      ('Avalokiteshvara Tara Manjushri Vajrapani Buddhist art', 'Buddhist sacred figures — Avalokiteśvara, Tārā, Mañjuśrī, Vajrapāṇi'),
+      ('Amaterasu Susanoo Inari Hachiman Japanese art', 'Shinto/Japanese deities — Amaterasu, Susanoo, Inari, Hachiman'),
+      ('Quetzalcoatl Tlaloc Huitzilopochtli Tezcatlipoca codex', 'Aztec/Nahua deities'),
+      ('Chaac Itzamna Kukulkan Maya god', 'Maya deities'),
+      ('Mazu Guanyin Jade Emperor Chinese deity art', 'Chinese sacred/deity imagery'),
+      ('Perun Veles Mokosh Slavic mythology illustration', 'Slavic deities')
     ]
   })
 ])
@@ -107,16 +102,35 @@ SECTIONS = OrderedDict([
 BAD_TITLE = re.compile(r'\b(map|flag|logo|coat of arms|stamp|coin|banknote|diagram|chart|screenshot|icon|emoji|cosplay|tattoo)\b', re.I)
 GOOD_MIME = {'image/jpeg','image/png','image/webp','image/gif','image/tiff','image/svg+xml'}
 
-def fetch_json(params):
+def fetch_json(params, attempts=6):
     q = urllib.parse.urlencode(params)
-    req = urllib.request.Request(API + '?' + q, headers={'User-Agent': UA})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.load(r)
+    url = API + '?' + q
+    for attempt in range(attempts):
+        req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 503, 502) or attempt == attempts - 1:
+                raise
+            retry = e.headers.get('Retry-After')
+            try:
+                wait = max(float(retry), 4.0) if retry else 4.0 * (attempt + 1)
+            except Exception:
+                wait = 4.0 * (attempt + 1)
+            print(f'RATE LIMIT {e.code}; waiting {wait:.1f}s (attempt {attempt+1}/{attempts})')
+            time.sleep(wait)
+        except urllib.error.URLError:
+            if attempt == attempts - 1:
+                raise
+            wait = 3.0 * (attempt + 1)
+            time.sleep(wait)
+    raise RuntimeError('unreachable')
 
 def commons_search(query, limit):
     data = fetch_json({
-      'action':'query','generator':'search','gsrsearch':query,'gsrnamespace':6,'gsrlimit':max(limit*4,12),
-      'prop':'imageinfo','iiprop':'url|mime|extmetadata','iiurlwidth':640,'format':'json','formatversion':2
+      'action':'query','generator':'search','gsrsearch':query,'gsrnamespace':6,'gsrlimit':max(limit*4,16),
+      'prop':'imageinfo','iiprop':'url|mime|extmetadata','iiurlwidth':640,'format':'json','formatversion':2,'maxlag':5
     })
     out=[]
     for p in data.get('query',{}).get('pages',[]):
@@ -141,7 +155,8 @@ def commons_search(query, limit):
             break
     return out
 
-def esc(s): return html.escape(str(s or ''), quote=True).replace('{','&#123;').replace('}','&#125;')
+def esc(s):
+    return html.escape(str(s or ''), quote=True).replace('{','&#123;').replace('}','&#125;')
 
 def card(item, label):
     bits=[esc(label)]
@@ -157,21 +172,21 @@ def card(item, label):
 def build():
     used=set(); totals={}; files=[]
     for idx,(slug,sec) in enumerate(SECTIONS.items(),1):
-        rows=[]
-        query_counts=[]
+        rows=[]; query_counts=[]
         for query,label in sec['queries']:
             got=[]
             try:
                 results=commons_search(query, sec['per_query'])
             except Exception as e:
-                print('WARN search failed',query,e)
+                print('WARN search failed',query,repr(e))
                 results=[]
             for item in results:
                 key=item['page']
                 if key in used: continue
                 used.add(key); got.append((item,label)); rows.append((item,label))
             query_counts.append((label,len(got)))
-            time.sleep(0.12)
+            print(slug,'|',label,'|',len(got))
+            time.sleep(PAUSE)
         totals[slug]=len(rows)
         jump=''.join(f'<span>{esc(label)} <b>{n}</b></span>' for label,n in query_counts if n)
         body=[f'<section class="gallery-section mythology-atlas" id="atlas-{slug}">',
@@ -187,7 +202,8 @@ def build():
 <p>This archive expansion moves beyond the images that happened to appear in the cosmology tests. It deliberately adds a much wider comparative visual field: Celtic and Insular knotwork; Norse runestones and dragon/serpent ornament; rune systems and later Icelandic magical signs; mythological narrative art from multiple cultures; and a broad deity/sacred-figure atlas. Every card links to its Wikimedia Commons source page.</p>
 <p class="art-source-note"><strong>Dating discipline:</strong> visual similarity is not being used as a dating claim. Medieval Christian Insular manuscripts, Viking Age runestones, ancient temple/relief art, early-modern mythological engravings and nineteenth-century myth illustrations are different source classes and remain labelled as such.</p>
 <div class="atlas-jumps">'''
-    for slug,sec in SECTIONS.items(): intro += f'<a href="#atlas-{slug}">{esc(sec["title"])} ({totals[slug]})</a>'
+    for slug,sec in SECTIONS.items():
+        intro += f'<a href="#atlas-{slug}">{esc(sec["title"])} ({totals[slug]})</a>'
     intro += '</div></section>\n'
     (OUT/'00-intro.txt').write_text(intro,encoding='utf-8')
 
@@ -198,11 +214,14 @@ def build():
     marker='<!-- MYTHOLOGY_SYMBOL_ATLAS -->'
     if marker not in s:
         block='\n'+marker+'\n{% include_relative cosmology_expansions/art_mythology/00-intro.txt %}\n'
-        for fn in files: block += '{% include_relative '+str(fn.relative_to(ROOT)).replace('\\','/')+' %}\n'
+        for fn in files:
+            block += '{% include_relative '+str(fn.relative_to(ROOT)).replace('\\','/')+' %}\n'
         s=s.replace('<!-- FULL_TEST_CORPUS_ARCHIVE -->',block+'\n<!-- FULL_TEST_CORPUS_ARCHIVE -->',1)
     css='''\n.mythology-atlas-intro{border-color:#6c4e86;background:linear-gradient(180deg,#1b1425,#10151d)}.atlas-jumps{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.atlas-jumps a{font-size:.78rem;text-decoration:none;border:1px solid #4b4264;border-radius:999px;padding:6px 9px;background:#151222}.atlas-key{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.atlas-key span{font-size:.68rem;color:var(--muted);border:1px solid #313b50;border-radius:999px;padding:3px 7px}.atlas-key b{color:var(--cyan)}.myth-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:14px}.myth-card{display:flex;flex-direction:column;min-width:0;background:#0d121a;border:1px solid #303a4e;border-radius:9px;overflow:hidden;color:var(--text);text-decoration:none}.myth-card:hover{border-color:var(--violet);transform:translateY(-1px)}.myth-card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#070a0f}.myth-card span{padding:8px;min-width:0}.myth-card b{display:block;font-size:.73rem;line-height:1.25}.myth-card small{display:block;color:var(--muted);font-size:.62rem;line-height:1.35;margin-top:4px}.myth-card em{display:block;color:#b8c1d6;font-style:normal;font-size:.58rem;line-height:1.3;margin-top:3px;max-height:2.6em;overflow:hidden}@media(max-width:760px){.myth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}\n'''
-    if '.mythology-atlas-intro{' not in s: s=s.replace('</style>',css+'</style>',1)
+    if '.mythology-atlas-intro{' not in s:
+        s=s.replace('</style>',css+'</style>',1)
     art.write_text(s,encoding='utf-8')
     print('TOTAL',sum(totals.values()))
 
-if __name__=='__main__': build()
+if __name__=='__main__':
+    build()
