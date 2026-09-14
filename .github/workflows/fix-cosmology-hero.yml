@@ -36,3 +36,5 @@ jobs:
           fi
           git commit -m 'Fix cosmology hero image binary'
           git push
+
+# Trigger repair after workflow was installed on main.
