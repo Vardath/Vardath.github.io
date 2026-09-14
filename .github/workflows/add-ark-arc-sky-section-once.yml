@@ -1,0 +1,23 @@
+name: Add ARK ARC SKY cosmology section once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-ark-arc-sky-section-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python tools/add_ark_arc_sky_section_once.py
+      - run: git diff --check
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add cosmology_fragments/f18.txt
+          git commit -m "Add travelling fingertrap ARK ARC SKY section"
+          git push
