@@ -2,12 +2,12 @@
   "generated_from": "Wikimedia Commons MediaWiki API",
   "sections": {
     "celtic-insular": 26,
-    "norse-stones": 9,
-    "runes-symbols": 0,
-    "myth-illustrations": 12,
-    "deities": 10
+    "norse-stones": 27,
+    "runes-symbols": 22,
+    "myth-illustrations": 33,
+    "deities": 7
   },
-  "unique_images": 57,
+  "unique_images": 115,
   "queries": {
     "celtic-insular": [
       [
@@ -171,164 +171,60 @@
     ],
     "deities": [
       [
-        "Zeus ancient statue",
-        "Greek — Zeus"
+        "Zeus Athena Apollo Aphrodite ancient art",
+        "Greek deities — Zeus, Athena, Apollo, Aphrodite"
       ],
       [
-        "Athena ancient statue",
-        "Greek — Athena"
+        "Hermes Dionysus Poseidon Artemis ancient art",
+        "Greek deities — Hermes, Dionysus, Poseidon, Artemis"
       ],
       [
-        "Apollo ancient statue",
-        "Greek — Apollo"
+        "Odin Thor Freyja Tyr mythology illustration",
+        "Norse deities — Odin, Thor, Freyja, Týr"
       ],
       [
-        "Aphrodite ancient statue",
-        "Greek — Aphrodite"
+        "Ra Isis Osiris Horus Egyptian gods",
+        "Egyptian deities — Ra, Isis, Osiris, Horus"
       ],
       [
-        "Odin mythology illustration",
-        "Norse — Odin"
+        "Anubis Sekhmet Hathor Thoth Egyptian gods",
+        "Egyptian deities — Anubis, Sekhmet, Hathor, Thoth"
       ],
       [
-        "Thor mythology illustration",
-        "Norse — Thor"
+        "Inanna Ishtar Enki Marduk ancient relief",
+        "Mesopotamian deities — Inanna/Ishtar, Enki, Marduk"
       ],
       [
-        "Freyja mythology illustration",
-        "Norse — Freyja"
+        "Shiva Vishnu Krishna Ganesha painting sculpture",
+        "Hindu deities — Shiva, Vishnu, Krishna, Ganesha"
       ],
       [
-        "Tyr mythology illustration",
-        "Norse — Týr"
+        "Kali Durga Lakshmi Saraswati painting",
+        "Hindu goddesses — Kali, Durga, Lakshmi, Saraswati"
       ],
       [
-        "Ra Egyptian god",
-        "Egyptian — Ra"
+        "Avalokiteshvara Tara Manjushri Vajrapani Buddhist art",
+        "Buddhist sacred figures — Avalokiteśvara, Tārā, Mañjuśrī, Vajrapāṇi"
       ],
       [
-        "Isis Egyptian goddess",
-        "Egyptian — Isis"
+        "Amaterasu Susanoo Inari Hachiman Japanese art",
+        "Shinto/Japanese deities — Amaterasu, Susanoo, Inari, Hachiman"
       ],
       [
-        "Osiris Egyptian god",
-        "Egyptian — Osiris"
+        "Quetzalcoatl Tlaloc Huitzilopochtli Tezcatlipoca codex",
+        "Aztec/Nahua deities"
       ],
       [
-        "Horus Egyptian god",
-        "Egyptian — Horus"
+        "Chaac Itzamna Kukulkan Maya god",
+        "Maya deities"
       ],
       [
-        "Anubis Egyptian god",
-        "Egyptian — Anubis"
+        "Mazu Guanyin Jade Emperor Chinese deity art",
+        "Chinese sacred/deity imagery"
       ],
       [
-        "Sekhmet Egyptian goddess",
-        "Egyptian — Sekhmet"
-      ],
-      [
-        "Inanna Ishtar ancient relief",
-        "Mesopotamian — Inanna/Ishtar"
-      ],
-      [
-        "Enki Ea ancient",
-        "Mesopotamian — Enki/Ea"
-      ],
-      [
-        "Marduk ancient relief",
-        "Mesopotamian — Marduk"
-      ],
-      [
-        "Nergal ancient god",
-        "Mesopotamian — Nergal"
-      ],
-      [
-        "Shiva painting sculpture",
-        "Hindu — Shiva"
-      ],
-      [
-        "Vishnu painting sculpture",
-        "Hindu — Vishnu"
-      ],
-      [
-        "Krishna painting",
-        "Hindu — Krishna"
-      ],
-      [
-        "Ganesha painting sculpture",
-        "Hindu — Ganesha"
-      ],
-      [
-        "Kali painting goddess",
-        "Hindu — Kali"
-      ],
-      [
-        "Durga painting goddess",
-        "Hindu — Durga"
-      ],
-      [
-        "Avalokiteshvara painting sculpture",
-        "Buddhist — Avalokiteśvara"
-      ],
-      [
-        "Green Tara thangka",
-        "Buddhist — Tārā"
-      ],
-      [
-        "Manjushri Buddhist painting",
-        "Buddhist — Mañjuśrī"
-      ],
-      [
-        "Vajrapani Buddhist painting",
-        "Buddhist — Vajrapāṇi"
-      ],
-      [
-        "Amaterasu Japanese mythology art",
-        "Shinto/Japanese — Amaterasu"
-      ],
-      [
-        "Susanoo Japanese mythology art",
-        "Shinto/Japanese — Susanoo"
-      ],
-      [
-        "Inari Japanese deity art",
-        "Shinto/Japanese — Inari"
-      ],
-      [
-        "Hachiman Japanese deity art",
-        "Shinto/Japanese — Hachiman"
-      ],
-      [
-        "Quetzalcoatl codex",
-        "Aztec/Nahua — Quetzalcoatl"
-      ],
-      [
-        "Tlaloc codex",
-        "Aztec/Nahua — Tlaloc"
-      ],
-      [
-        "Huitzilopochtli codex",
-        "Aztec/Nahua — Huitzilopochtli"
-      ],
-      [
-        "Tezcatlipoca codex",
-        "Aztec/Nahua — Tezcatlipoca"
-      ],
-      [
-        "Maya Chaac god",
-        "Maya — Chaac"
-      ],
-      [
-        "Maya Itzamna god",
-        "Maya — Itzamna"
-      ],
-      [
-        "Mazu Chinese goddess painting",
-        "Chinese — Mazu"
-      ],
-      [
-        "Guanyin Chinese painting",
-        "Chinese/Buddhist — Guanyin"
+        "Perun Veles Mokosh Slavic mythology illustration",
+        "Slavic deities"
       ]
     ]
   }
