@@ -55,7 +55,7 @@ layout: null
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
  const last=new Map();
- document.querySelectorAll('.deepening[data-after]').forEach(d=>{const id=d.dataset.after,h=document.getElementById(id);if(!h)return;const ref=last.get(id)||h;ref.insertAdjacentElement('afterend',d);last.set(id,d)});
+ document.querySelectorAll('.deepening[data-after]').forEach(d=>{const id=d.dataset.after,h=document.getElementById(id)||(id==='23-compact-statement-of-the-mature-vardath-cosmology'?document.getElementById('moved-mature-overview-anchor'):null);if(!h)return;const ref=last.get(id)||h;ref.insertAdjacentElement('afterend',d);last.set(id,d)});
  const toc=document.getElementById('toc');
  document.querySelectorAll('#content h1[id]').forEach(h=>{const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/^\s*\d+\.\s*/,'').trim();toc.appendChild(a)});
 });
