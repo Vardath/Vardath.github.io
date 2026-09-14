@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+import time
+
+import run_waterborne_child_fingertrap_v1_resilient as old
+
+core = old.core
+
+
+def resolve_local_via_wikidata(lang, pages):
+    byid = {p["pageid"]: dict(p) for p in pages}
+
+    for batch in core.batches(list(byid), 50):
+        data = old.resilient_api_get(lang, {
+            "action": "query",
+            "prop": "pageprops",
+            "pageids": "|".join(str(x) for x in batch),
+            "ppprop": "wikibase_item",
+        })
+        for p in data.get("query", {}).get("pages", {}).values():
+            pid = p.get("pageid")
+            if pid not in byid:
+                continue
+            byid[pid]["qid"] = p.get("pageprops", {}).get("wikibase_item")
+            if lang == "en":
+                byid[pid]["en_title"] = p.get("title") or byid[pid].get("title")
+        time.sleep(0.35)
+
+    if lang == "en":
+        return list(byid.values())
+
+    qids = sorted({p.get("qid") for p in byid.values() if p.get("qid")})
+    en_by_qid = {}
+    for batch in core.batches(qids, 50):
+        data = old.resilient_base_get(
+            "https://www.wikidata.org/w/api.php",
+            "wikidata",
+            {
+                "action": "wbgetentities",
+                "ids": "|".join(batch),
+                "props": "sitelinks",
+                "sitefilter": "enwiki",
+            },
+        )
+        for qid, entity in data.get("entities", {}).items():
+            title = entity.get("sitelinks", {}).get("enwiki", {}).get("title")
+            if title:
+                en_by_qid[qid] = title
+        time.sleep(0.5)
+
+    for p in byid.values():
+        qid = p.get("qid")
+        if qid in en_by_qid:
+            p["en_title"] = en_by_qid[qid]
+
+    return list(byid.values())
+
+
+core.resolve_local = resolve_local_via_wikidata
+
+
+if __name__ == "__main__":
+    old.main()
