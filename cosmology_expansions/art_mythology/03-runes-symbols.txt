@@ -1,0 +1,7 @@
+<section class="gallery-section mythology-atlas" id="atlas-runes-symbols">
+<h2>Runes, rune rows and historic symbols</h2>
+<p class="art-source-note">Rune rows, inscriptions and symbol material from different periods. Elder/Younger Futhark and inscribed stones are kept distinct from much later Icelandic magical-sign manuscripts such as Vegvísir and Ægishjálmur.</p>
+<div class="atlas-key"></div>
+<div class="myth-grid">
+</div>
+</section>

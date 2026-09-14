@@ -1,0 +1,335 @@
+{
+  "generated_from": "Wikimedia Commons MediaWiki API",
+  "sections": {
+    "celtic-insular": 26,
+    "norse-stones": 9,
+    "runes-symbols": 0,
+    "myth-illustrations": 12,
+    "deities": 10
+  },
+  "unique_images": 57,
+  "queries": {
+    "celtic-insular": [
+      [
+        "Book of Kells carpet page",
+        "Book of Kells / Insular manuscript"
+      ],
+      [
+        "Lindisfarne Gospels carpet page",
+        "Lindisfarne Gospels / Insular manuscript"
+      ],
+      [
+        "Book of Durrow carpet page",
+        "Book of Durrow / Insular manuscript"
+      ],
+      [
+        "Celtic knot stone cross interlace",
+        "Stone knotwork / ringed crosses"
+      ],
+      [
+        "Pictish interlace stone",
+        "Pictish carved interlace"
+      ],
+      [
+        "Insular interlace manuscript",
+        "Insular manuscript ornament"
+      ],
+      [
+        "Celtic spiral ornament manuscript",
+        "Spiral and knot ornament"
+      ]
+    ],
+    "norse-stones": [
+      [
+        "Ramsund Sigurd inscription",
+        "Ramsund / Sigurd and Fafnir"
+      ],
+      [
+        "Jelling stone animal ornament",
+        "Jelling style"
+      ],
+      [
+        "Urnes style runestone",
+        "Urnes style"
+      ],
+      [
+        "Ringerike style runestone",
+        "Ringerike style"
+      ],
+      [
+        "Gotland picture stone",
+        "Gotland picture stones"
+      ],
+      [
+        "Stora Hammars stone",
+        "Stora Hammars stones"
+      ],
+      [
+        "Altuna runestone Thor",
+        "Altuna / Thor scene"
+      ],
+      [
+        "Ledberg stone runestone",
+        "Ledberg stone"
+      ],
+      [
+        "Sigurd runestone dragon",
+        "Sigurd stones / dragon-slayer imagery"
+      ]
+    ],
+    "runes-symbols": [
+      [
+        "Elder Futhark inscription",
+        "Elder Futhark"
+      ],
+      [
+        "Younger Futhark inscription",
+        "Younger Futhark"
+      ],
+      [
+        "Anglo Saxon futhorc runes",
+        "Anglo-Saxon Futhorc"
+      ],
+      [
+        "Kylver Stone runes",
+        "Kylver stone / early rune row"
+      ],
+      [
+        "Rok Runestone",
+        "Rök runestone"
+      ],
+      [
+        "Valknut archaeology",
+        "Valknut / interlocked-triangle motif"
+      ],
+      [
+        "Vegvisir manuscript",
+        "Later Icelandic magical sign: Vegvísir"
+      ],
+      [
+        "Aegishjalmur manuscript",
+        "Later Icelandic magical sign: Ægishjálmur"
+      ],
+      [
+        "Galdrabok magical signs",
+        "Later Icelandic magical-sign manuscripts"
+      ],
+      [
+        "historic bind rune inscription",
+        "Historic bind-runes"
+      ]
+    ],
+    "myth-illustrations": [
+      [
+        "Greek mythology engraving gods heroes",
+        "Greek mythology"
+      ],
+      [
+        "Roman mythology engraving gods",
+        "Roman mythology"
+      ],
+      [
+        "Norse mythology illustration Edda",
+        "Norse / Germanic mythology"
+      ],
+      [
+        "Egyptian mythology papyrus gods",
+        "Ancient Egyptian mythology"
+      ],
+      [
+        "Mesopotamian mythology relief gods",
+        "Mesopotamian mythology"
+      ],
+      [
+        "Ramayana painting manuscript",
+        "Hindu epic: Ramayana"
+      ],
+      [
+        "Mahabharata painting manuscript",
+        "Hindu epic: Mahabharata"
+      ],
+      [
+        "Buddhist Jataka painting",
+        "Buddhist Jataka narratives"
+      ],
+      [
+        "Japanese mythology ukiyo-e Susanoo",
+        "Japanese mythology"
+      ],
+      [
+        "Chinese mythology painting deity",
+        "Chinese mythology"
+      ],
+      [
+        "Aztec codex gods",
+        "Aztec/Nahua codex imagery"
+      ],
+      [
+        "Maya codex gods",
+        "Maya codex imagery"
+      ]
+    ],
+    "deities": [
+      [
+        "Zeus ancient statue",
+        "Greek — Zeus"
+      ],
+      [
+        "Athena ancient statue",
+        "Greek — Athena"
+      ],
+      [
+        "Apollo ancient statue",
+        "Greek — Apollo"
+      ],
+      [
+        "Aphrodite ancient statue",
+        "Greek — Aphrodite"
+      ],
+      [
+        "Odin mythology illustration",
+        "Norse — Odin"
+      ],
+      [
+        "Thor mythology illustration",
+        "Norse — Thor"
+      ],
+      [
+        "Freyja mythology illustration",
+        "Norse — Freyja"
+      ],
+      [
+        "Tyr mythology illustration",
+        "Norse — Týr"
+      ],
+      [
+        "Ra Egyptian god",
+        "Egyptian — Ra"
+      ],
+      [
+        "Isis Egyptian goddess",
+        "Egyptian — Isis"
+      ],
+      [
+        "Osiris Egyptian god",
+        "Egyptian — Osiris"
+      ],
+      [
+        "Horus Egyptian god",
+        "Egyptian — Horus"
+      ],
+      [
+        "Anubis Egyptian god",
+        "Egyptian — Anubis"
+      ],
+      [
+        "Sekhmet Egyptian goddess",
+        "Egyptian — Sekhmet"
+      ],
+      [
+        "Inanna Ishtar ancient relief",
+        "Mesopotamian — Inanna/Ishtar"
+      ],
+      [
+        "Enki Ea ancient",
+        "Mesopotamian — Enki/Ea"
+      ],
+      [
+        "Marduk ancient relief",
+        "Mesopotamian — Marduk"
+      ],
+      [
+        "Nergal ancient god",
+        "Mesopotamian — Nergal"
+      ],
+      [
+        "Shiva painting sculpture",
+        "Hindu — Shiva"
+      ],
+      [
+        "Vishnu painting sculpture",
+        "Hindu — Vishnu"
+      ],
+      [
+        "Krishna painting",
+        "Hindu — Krishna"
+      ],
+      [
+        "Ganesha painting sculpture",
+        "Hindu — Ganesha"
+      ],
+      [
+        "Kali painting goddess",
+        "Hindu — Kali"
+      ],
+      [
+        "Durga painting goddess",
+        "Hindu — Durga"
+      ],
+      [
+        "Avalokiteshvara painting sculpture",
+        "Buddhist — Avalokiteśvara"
+      ],
+      [
+        "Green Tara thangka",
+        "Buddhist — Tārā"
+      ],
+      [
+        "Manjushri Buddhist painting",
+        "Buddhist — Mañjuśrī"
+      ],
+      [
+        "Vajrapani Buddhist painting",
+        "Buddhist — Vajrapāṇi"
+      ],
+      [
+        "Amaterasu Japanese mythology art",
+        "Shinto/Japanese — Amaterasu"
+      ],
+      [
+        "Susanoo Japanese mythology art",
+        "Shinto/Japanese — Susanoo"
+      ],
+      [
+        "Inari Japanese deity art",
+        "Shinto/Japanese — Inari"
+      ],
+      [
+        "Hachiman Japanese deity art",
+        "Shinto/Japanese — Hachiman"
+      ],
+      [
+        "Quetzalcoatl codex",
+        "Aztec/Nahua — Quetzalcoatl"
+      ],
+      [
+        "Tlaloc codex",
+        "Aztec/Nahua — Tlaloc"
+      ],
+      [
+        "Huitzilopochtli codex",
+        "Aztec/Nahua — Huitzilopochtli"
+      ],
+      [
+        "Tezcatlipoca codex",
+        "Aztec/Nahua — Tezcatlipoca"
+      ],
+      [
+        "Maya Chaac god",
+        "Maya — Chaac"
+      ],
+      [
+        "Maya Itzamna god",
+        "Maya — Itzamna"
+      ],
+      [
+        "Mazu Chinese goddess painting",
+        "Chinese — Mazu"
+      ],
+      [
+        "Guanyin Chinese painting",
+        "Chinese/Buddhist — Guanyin"
+      ]
+    ]
+  }
+}
