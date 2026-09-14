@@ -1,0 +1,23 @@
+name: Add cross-cultural example thumbnails once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-crossculture-thumbnails-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python tools/add_crossculture_thumbnails_once.py
+      - run: git diff --check
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add cosmology_fragments/f18.txt
+          git commit -m "Add thumbnails beside cross-cultural lattice examples"
+          git push
