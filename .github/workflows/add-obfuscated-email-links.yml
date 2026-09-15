@@ -1,0 +1,55 @@
+name: Add obfuscated email links
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-obfuscated-email-links.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Add Email me links without publishing address as plaintext
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          enc = 'c3RlcGhlbmhhd3RvbkBnbWFpbC5jb20='
+          click = "onclick=\"window.location.href='mailto:'+atob('%s');return false;\"" % enc
+
+          def patch(path, old, new):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              if 'Email me</a>' in s:
+                  print(path, 'already contains Email me; skipping')
+                  return
+              if old not in s:
+                  raise SystemExit(f'Expected marker not found in {path}')
+              p.write_text(s.replace(old, new, 1), encoding='utf-8')
+              print('patched', path)
+
+          donate = '<a href="https://paypal.me/vardath" target="_blank" rel="noopener noreferrer">Buy me a coffee if you found any value here</a>'
+          email_plain = f'<a href="#" {click} aria-label="Email Vardath">Email me</a>'
+          patch('index.html', donate, donate + email_plain)
+          patch('vardath-cosmology.html', donate, donate + email_plain)
+          patch('art.html', donate, donate + email_plain)
+
+          donate_ph = '<a class="donate-top" href="https://paypal.me/vardath" target="_blank" rel="noopener noreferrer">Buy me a coffee if you found any value here</a>'
+          email_ph = f'<a class="donate-top" href="#" {click} aria-label="Email Vardath">Email me</a>'
+          patch('phonetic-bridge.html', donate_ph, donate_ph + email_ph)
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html vardath-cosmology.html phonetic-bridge.html art.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add obfuscated Email me links to site pages'
+          git push
