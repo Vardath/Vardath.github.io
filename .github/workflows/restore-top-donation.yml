@@ -1,0 +1,68 @@
+name: Restore top donation links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-top-donation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Buy me a coffee links at top of research pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          donate = '<a href="https://paypal.me/vardath" target="_blank" rel="noopener noreferrer">Buy me a coffee if you found any value here</a>'
+
+          # Cosmology: restore donation link in fixed top navigation.
+          p = Path('vardath-cosmology.html')
+          s = p.read_text()
+          old = '<div class="links"><a href="index.html">Home</a><a href="vardath-cosmology.html">Cosmology</a><a href="phonetic-bridge.html">Phonetics</a><a href="art.html">Art</a></div>'
+          new = '<div class="links"><a href="index.html">Home</a><a href="vardath-cosmology.html">Cosmology</a><a href="phonetic-bridge.html">Phonetics</a><a href="art.html">Art</a>'+donate+'</div>'
+          if old not in s:
+              raise SystemExit('Cosmology top navigation pattern not found')
+          p.write_text(s.replace(old,new,1))
+
+          # Art Archive: restore donation link in top navigation.
+          p = Path('art.html')
+          s = p.read_text()
+          old = '<div class="links"><a href="index.html">Home</a><a href="vardath-cosmology.html">Cosmology</a><a href="phonetic-bridge.html">Phonetic Bridge</a><a href="art.html">Art Archive</a></div>'
+          new = '<div class="links"><a href="index.html">Home</a><a href="vardath-cosmology.html">Cosmology</a><a href="phonetic-bridge.html">Phonetic Bridge</a><a href="art.html">Art Archive</a>'+donate+'</div>'
+          if old not in s:
+              raise SystemExit('Art top navigation pattern not found')
+          p.write_text(s.replace(old,new,1))
+
+          # Phonetic Bridge: restore visible top donation control beside Main site.
+          p = Path('phonetic-bridge.html')
+          s = p.read_text()
+          old_css = '.top{padding:18px 0;display:flex;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.1em;text-decoration:none}.back{color:var(--muted);text-decoration:none}'
+          new_css = '.top{padding:18px 0;display:flex;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.1em;text-decoration:none}.toplinks{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.back{color:var(--muted);text-decoration:none}.donate-top{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:#151925}.donate-top:hover{color:#fff;border-color:var(--cyan)}'
+          if old_css not in s:
+              raise SystemExit('Phonetic top CSS pattern not found')
+          s = s.replace(old_css,new_css,1)
+          old_top = '<div class="wrap top"><a class="brand" href="index.html">VARDATH</a><a class="back" href="index.html">← Main site</a></div>'
+          new_top = '<div class="wrap top"><a class="brand" href="index.html">VARDATH</a><div class="toplinks"><a class="back" href="index.html">← Main site</a><a class="donate-top" href="https://paypal.me/vardath" target="_blank" rel="noopener noreferrer">Buy me a coffee if you found any value here</a></div></div>'
+          if old_top not in s:
+              raise SystemExit('Phonetic top markup pattern not found')
+          p.write_text(s.replace(old_top,new_top,1))
+          PY
+
+          grep -n 'paypal.me/vardath' vardath-cosmology.html | head -2
+          grep -n 'paypal.me/vardath' art.html | head -2
+          grep -n 'paypal.me/vardath' phonetic-bridge.html | head -2
+
+      - name: Commit restored links
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/restore-top-donation.yml
+          git add vardath-cosmology.html art.html phonetic-bridge.html
+          git commit -m 'Restore donation links at top of research pages'
+          git push
