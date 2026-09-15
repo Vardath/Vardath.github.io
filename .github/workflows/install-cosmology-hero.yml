@@ -1,0 +1,59 @@
+name: Install full-resolution cosmology hero
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/hero-upload/**'
+      - '.github/workflows/install-cosmology-hero.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  install-hero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild hero and update page
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, hashlib
+          parts = sorted(Path('assets/hero-upload').glob('chunk*.b64'))
+          if len(parts) != 28:
+              raise SystemExit(f'Expected 28 chunks, got {len(parts)}')
+          encoded = ''.join(p.read_text().strip() for p in parts)
+          data = base64.b64decode(encoded, validate=True)
+          expected = 'a87bf25698ea45afab3d5dc5fa62b85b35e0c09e379c9c11049506bb71573b95'
+          actual = hashlib.sha256(data).hexdigest()
+          if actual != expected:
+              raise SystemExit(f'Hero SHA mismatch: {actual}')
+          out = Path('assets/vardath-cosmology-worldstack.webp')
+          out.write_bytes(data)
+          page = Path('vardath-cosmology.html')
+          text = page.read_text()
+          old_css = '.hero-art{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}'
+          new_css = '.hero-art{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}'
+          if old_css not in text:
+              raise SystemExit('Expected old hero CSS not found')
+          text = text.replace(old_css, new_css, 1)
+          old_src = 'src="assets/vardath-connected-worlds-fixed.jpg"'
+          new_src = 'src="assets/vardath-cosmology-worldstack.webp" width="1122" height="1402"'
+          if old_src not in text:
+              raise SystemExit('Expected old hero source not found')
+          text = text.replace(old_src, new_src, 1)
+          page.write_text(text)
+          print('hero-bytes', len(data), 'sha256', actual)
+          PY
+          file assets/vardath-cosmology-worldstack.webp
+          grep -o 'hero-art{[^}]*}' vardath-cosmology.html
+          grep -o 'src="assets/vardath-cosmology-worldstack.webp"[^>]*' vardath-cosmology.html | head -1
+      - name: Commit installed hero
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -r assets/hero-upload .github/workflows/install-cosmology-hero.yml
+          git add assets/vardath-cosmology-worldstack.webp vardath-cosmology.html
+          git commit -m 'Install full-resolution cosmology hero'
+          git push
