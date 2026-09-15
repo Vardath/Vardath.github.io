@@ -1,0 +1,44 @@
+name: Link uploaded cosmology hero
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/link-uploaded-cosmology-hero.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  link-hero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link uploaded image and remove crop
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          page = Path('vardath-cosmology.html')
+          text = page.read_text()
+          old_css = '.hero-art{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}'
+          new_css = '.hero-art{display:block;width:auto;max-width:100%;height:auto;margin:0 auto;object-fit:contain}'
+          if old_css not in text:
+              raise SystemExit('Expected old hero CSS not found')
+          text = text.replace(old_css, new_css, 1)
+          old_src = 'src="assets/vardath-connected-worlds-fixed.jpg"'
+          new_src = 'src="fcebc8fa-90e3-4113-bfbe-5d160f44c82d.png" width="1122" height="1402"'
+          if old_src not in text:
+              raise SystemExit('Expected old hero source not found')
+          text = text.replace(old_src, new_src, 1)
+          page.write_text(text)
+          PY
+          grep -o 'hero-art{[^}]*}' vardath-cosmology.html
+          grep -o 'src="fcebc8fa-90e3-4113-bfbe-5d160f44c82d.png"[^>]*' vardath-cosmology.html | head -1
+      - name: Commit page change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/link-uploaded-cosmology-hero.yml
+          git add vardath-cosmology.html
+          git commit -m 'Use uploaded full-resolution cosmology hero'
+          git push
