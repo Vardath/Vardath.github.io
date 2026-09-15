@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'assets/hero-valid.b64'
       - '.github/workflows/fix-cosmology-hero.yml'
+      - 'assets/hero600/**'
   workflow_dispatch:
 
 permissions:
@@ -18,23 +18,31 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Decode validated hero image
+      - name: Rebuild larger saved hero image
         run: |
-          base64 --decode assets/hero-valid.b64 > assets/vardath-connected-worlds-fixed.jpg
-          test -s assets/vardath-connected-worlds-fixed.jpg
-          file assets/vardath-connected-worlds-fixed.jpg
-          test "$(head -c 2 assets/vardath-connected-worlds-fixed.jpg | xxd -p)" = "ffd8"
-          test "$(tail -c 2 assets/vardath-connected-worlds-fixed.jpg | xxd -p)" = "ffd9"
-      - name: Commit corrected binary
+          cat assets/hero600/chunk01.txt assets/hero600/chunk02.txt assets/hero600/chunk03.txt | tr -d '\r\n' | base64 --decode > assets/vardath-connected-worlds-hq.jpg
+          test -s assets/vardath-connected-worlds-hq.jpg
+          file assets/vardath-connected-worlds-hq.jpg
+          test "$(head -c 2 assets/vardath-connected-worlds-hq.jpg | xxd -p)" = "ffd8"
+          test "$(tail -c 2 assets/vardath-connected-worlds-hq.jpg | xxd -p)" = "ffd9"
+      - name: Point cosmology page at rebuilt hero
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('vardath-cosmology.html')
+          s=p.read_text()
+          s=s.replace('assets/vardath-connected-worlds-fixed.jpg','assets/vardath-connected-worlds-hq.jpg?v=4')
+          s=s.replace('max-width:1160px;border:1px solid #34445b','max-width:850px;border:1px solid #34445b',1)
+          p.write_text(s)
+          PY
+      - name: Commit rebuilt hero
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/vardath-connected-worlds-fixed.jpg
+          git add assets/vardath-connected-worlds-hq.jpg vardath-cosmology.html
           if git diff --cached --quiet; then
-            echo 'Hero binary already matches validated payload.'
+            echo 'No changes required.'
             exit 0
           fi
-          git commit -m 'Fix cosmology hero image binary'
+          git commit -m 'Use larger cosmology hero image'
           git push
-
-# Trigger repair after workflow was installed on main.
