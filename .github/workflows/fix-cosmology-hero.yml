@@ -5,44 +5,25 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/fix-cosmology-hero.yml'
-      - 'assets/hero600/**'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  fix-hero:
+  inspect-hero:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Rebuild larger saved hero image
-        run: |
-          cat assets/hero600/chunk01.txt assets/hero600/chunk02.txt assets/hero600/chunk03.txt | tr -d '\r\n' | base64 --decode > assets/vardath-connected-worlds-hq.jpg
-          test -s assets/vardath-connected-worlds-hq.jpg
-          file assets/vardath-connected-worlds-hq.jpg
-          test "$(head -c 2 assets/vardath-connected-worlds-hq.jpg | xxd -p)" = "ffd8"
-          test "$(tail -c 2 assets/vardath-connected-worlds-hq.jpg | xxd -p)" = "ffd9"
-      - name: Point cosmology page at rebuilt hero
+      - name: Inspect saved hero fragments
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('vardath-cosmology.html')
-          s=p.read_text()
-          s=s.replace('assets/vardath-connected-worlds-fixed.jpg','assets/vardath-connected-worlds-hq.jpg?v=4')
-          s=s.replace('max-width:1160px;border:1px solid #34445b','max-width:850px;border:1px solid #34445b',1)
-          p.write_text(s)
+          import re
+          for d in ['assets/hero600','assets/hero600v2','assets/hero600v3','assets/hero_chunks']:
+              print('\nDIR', d)
+              for p in sorted(Path(d).glob('*.txt')):
+                  s=p.read_text().strip()
+                  bad=''.join(sorted(set(re.sub(r'[A-Za-z0-9+/=\\r\\n]','',s))))
+                  print(p, 'len=',len(s),'head=',repr(s[:24]),'tail=',repr(s[-24:]),'bad=',repr(bad),'slash9j=',s.startswith('/9j/'),'padding=',s.endswith('='))
           PY
-      - name: Commit rebuilt hero
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/vardath-connected-worlds-hq.jpg vardath-cosmology.html
-          if git diff --cached --quiet; then
-            echo 'No changes required.'
-            exit 0
-          fi
-          git commit -m 'Use larger cosmology hero image'
-          git push
