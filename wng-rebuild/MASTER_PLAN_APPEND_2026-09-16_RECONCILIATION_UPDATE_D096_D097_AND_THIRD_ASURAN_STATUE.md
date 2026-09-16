@@ -58,9 +58,9 @@ Implemented behavior:
 
 These two objects remain mechanically distinct.
 
-## 4. NEW — third Asuran trade statue: Replicator reliquary
+## 4. Third Asuran trade statue — Replicator reliquary
 
-Vardath adds a third Asuran-made trap-statue variant.
+Vardath added a third Asuran-made trap-statue variant.
 
 ### Required behavior
 
@@ -68,10 +68,10 @@ Vardath adds a third Asuran-made trap-statue variant.
 - The exact physical statue receives a hidden, save-persistent transformation deadline rolled once between **5 and 60 in-game days**.
 - Moving, minifying, storing, buying, selling or reinstalling the exact statue must not reroll that deadline.
 - When the deadline expires and the statue is installed/spawned, the statue **breaks apart into five real Replicators**.
-- First implementation target is five ordinary `WNG_ReplicatorDrone` pawns, not proxy effects and not five unrelated incidents.
-- The spawned Replicators are hostile autonomous Replicators, using the existing Replicator faction/domain grammar rather than player-controlled drones.
-- They should emerge at/around the statue’s actual map cell, with transactional placement/rollback safeguards where practical.
-- The statue itself is consumed by the transformation.
+- The first implementation uses five ordinary `WNG_ReplicatorDrone` pawns, not proxy effects and not five unrelated incidents.
+- The spawned Replicators are hostile autonomous Replicators using the existing Replicator faction/domain grammar rather than player-controlled drones.
+- They emerge at/around the statue’s actual map cell with staged placement/rollback safeguards.
+- The statue itself is consumed by the transformation only after the full five-Drone release transaction succeeds.
 
 ### Explicit separation from the other variants
 
@@ -114,3 +114,22 @@ The following ideas remain approved but are not displaced by the statue work:
 Every new WNG gameplay idea introduced in chat must be written into durable continuity and the master-plan layer even when implementation is deferred. Once implemented, its status must be updated rather than left described as merely planned.
 
 Static/API-reference validation remains evidence only; no checkpoint should be called compiled, Def-loaded, save-tested or live-playtested until RimWorld itself proves it.
+
+## 8. D098 implementation status — Replicator reliquary complete
+
+The third statue is now implemented in the local rebuild as **D098 — Asuran Replicator Reliquary**.
+
+Implemented details:
+- `WNG_AsuranReplicatorReliquary` is a third real minifiable Asuran art building in `WNG_AsuranArtifactExchange` stock;
+- its hidden absolute release deadline is rolled once between 5 and 60 days and is serialized with the exact statue;
+- moving/minifying/trading/reinstalling does not reroll the timer;
+- on maturity it resolves the hidden permanent-enemy `WNG_ReplicatorSwarm` faction and `WNG_ReplicatorDrone` kind;
+- it stages exactly five real Drones around the statue’s real map cell;
+- all five receive one shared autonomous Replicator domain, so they behave as one feral swarm rather than five unrelated singleton domains;
+- if any Drone cannot be generated/placed, all staged Drones are removed and the statue remains intact to retry later;
+- only after all five are placed does the statue vanish and the release commit;
+- there is still no generic sculpture recipe for any of the three trap statues.
+
+Focused static/API contract: **52/52 PASS**. Sealed archive verification: **708/708 byte-identical**. Restore archive: `WNGv1-CHECKPOINT-20260916-ASURAN-REPLICATOR-RELIQUARY-COMPLETE.zip`, SHA-256 `f1104637346613da7e2b77edc8260a63e483eba6f5cb118a452848f719886180`.
+
+Live RimWorld compile, Def load, trader generation, save/load timer persistence and actual five-Drone emergence remain runtime test debt.
