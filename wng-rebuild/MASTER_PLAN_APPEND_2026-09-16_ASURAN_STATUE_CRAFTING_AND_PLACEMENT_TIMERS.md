@@ -13,7 +13,7 @@ All three Asuran-derived trap statues are now **research-gated technology, not b
 - After the colony completes the appropriate Asuran fabrication research, any faction/pawn that can legitimately use an Art Bench, meets the recipe skill/material requirements, and has access to the research may craft them.
 - Do **not** require the worker to be an Asuran xenotype, carry `WNG_NaniteBody`, or belong to the Quiet Lattice.
 - Asuran traders may still sell the statues as before.
-- The recipes should appear on the ordinary Art Bench and use appropriate high-tech/nanite ingredients rather than generic stone-only sculpture costs.
+- The recipes appear on the ordinary Art Bench and use high-tech/nanite ingredients rather than generic stone-only sculpture costs.
 - Initial research gate: `WNG_PrecursorFabrication`, unless a later explicit Vardath decision introduces a more specific statue-fabrication project.
 
 ## 2. Timer-start rule — newest authority
@@ -41,17 +41,17 @@ For all three statues, the hidden dangerous cycle **starts when the exact statue
 
 ## 3. Art Bench recipes
 
-Add one recipe per statue to the Art Bench:
+The implemented first-balance recipes are:
 
-1. `WNG_AsuranSleeperStatue` — high-quality lattice sculpture with nanite and spacer fabrication components.
-2. `WNG_AsuranFeederStatue` — heavier nanite-bioconversion content because it repeatedly consumes flesh into slurry.
-3. `WNG_AsuranReplicatorReliquary` — highest nanite/spacer cost because it contains enough dormant Replicator structure to unfold into five real Drones.
+1. `WNG_AsuranSleeperStatue` — 35 Plasteel, 1 Advanced Component (`ComponentSpacer`), 30 `WNG_AsuranNaniteSlurry`, 100 Silver; Artistic 6; 32,000 work.
+2. `WNG_AsuranFeederStatue` — 40 Plasteel, 2 Advanced Components, 50 `WNG_AsuranNaniteSlurry`; Artistic 6; 36,000 work.
+3. `WNG_AsuranReplicatorReliquary` — 50 Plasteel, 3 Advanced Components, 70 `WNG_AsuranNaniteSlurry`; Artistic 6; 42,000 work.
 
-Exact quantities are balance parameters, but all three should require `WNG_AsuranNaniteSlurry`, advanced/spacer components and durable advanced material such as Plasteel. They should require Artistic work at the vanilla Art Bench and `WNG_PrecursorFabrication` research.
+All three use the vanilla Art Bench (`TableSculpting`), require `WNG_PrecursorFabrication`, and may be crafted by any suitable pawn/faction after that research.
 
 ## 4. Continuity
 
-D097/D098 remain historical valid checkpoints for the prior behavior. The next checkpoint must intentionally modify the three existing statue Defs and statue comp code to implement this override; it must not silently rewrite the old checkpoint archives.
+D097/D098 remain historical valid checkpoints for the prior behavior. D099 intentionally supersedes their timer-start/provenance behavior without rewriting those archives.
 
 The three statue identities remain otherwise unchanged:
 - sleeper → one hostile human-form Asuran after 5–60 days;
@@ -59,3 +59,22 @@ The three statue identities remain otherwise unchanged:
 - Replicator reliquary → breaks into exactly five hostile autonomous Replicator Drones after 5–60 days.
 
 Static/API validation remains evidence only until RimWorld live testing confirms Art Bench bill generation, first-placement timer initialization, minify/reinstall persistence and hostile transformations.
+
+## 5. D099 implementation status — COMPLETE
+
+Implemented as **D099 — Asuran statue crafting + first-placement timers**.
+
+Technical boundary:
+- no new mod files;
+- two intentional edits only: `Defs/ThingDefs/Things_AsuranTrapStatues.xml` and `Source/WraithNaniteGravtech/Asurans/AsuranTrapStatues.cs`;
+- creation/post-load paths no longer initialize hidden statue timers;
+- first `PostSpawnSetup` initializes the relevant sleeper/reliquary deadline or feeder cycle;
+- all existing serialized state still travels with the exact minified building;
+- the Replicator reliquary still stages exactly five real hostile Drones with one shared autonomous domain and rollback on incomplete placement.
+
+Focused static/API contract: **62/62 PASS**. Sealed archive verification: **708/708 byte-identical**.
+
+Restore archive: `WNGv1-CHECKPOINT-20260916-ASURAN-STATUE-CRAFTING-PLACEMENT-TIMERS-COMPLETE.zip`  
+SHA-256: `6301942e6ded7e22ef805a936d094a5172b3e8afa390b0f0ebd4b8f0ba2130bc`.
+
+Managed compile, native Def loading, actual Art Bench bill generation, crafted-statue minification, first placement, save/load and hostile execution remain runtime test debt.
