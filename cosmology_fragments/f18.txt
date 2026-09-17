@@ -147,7 +147,7 @@ language with no physical intersection.</p><h2 id="i-cross-cultural-lattice-art-
 </div>
 <p class="art-source-note">Each thumbnail links to its source record.</p>
 
-<h2>What this predicts next</h2>
+<h2>What the waterborne-child pattern predicts next</h2>
 <p>The interpretation is testable. If the travelling-fingertrap reading is more than free resemblance, waterborne-child stories should disproportionately use <strong>woven, hollow, tubular, sealed, flexible or reopenable enclosures</strong>; they should disproportionately terminate at a distinct boundary or receiver; and the stories should disproportionately pair transport with <strong>changed household, changed identity or second-birth language</strong>. Those features can be frozen before a multilingual corpus search and tested against exposed-child stories that do not involve water.</p>
 </section>
 
