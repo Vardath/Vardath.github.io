@@ -268,3 +268,55 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 </script>
+<style>
+/* Keep the site's normal page-navigation buttons available in the fixed mobile header. */
+@media (max-width:900px){
+  .bar{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    align-content:flex-start !important;
+    gap:6px 8px !important;
+    min-height:104px
+  }
+  .bar .brand{order:1}
+  .mobile-nav-toggle{order:2}
+  .bar .links{
+    order:3;
+    display:flex !important;
+    flex:0 0 100% !important;
+    width:100%;
+    gap:6px !important;
+    margin:0 !important;
+    padding:0 1px 2px !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none
+  }
+  .bar .links::-webkit-scrollbar{display:none}
+  .bar .links a{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+    min-height:36px;
+    padding:7px 10px !important;
+    white-space:nowrap;
+    font-size:.74rem !important;
+    line-height:1 !important;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent
+  }
+  .page-frame{padding-top:108px !important}
+  .bar #toc{top:112px !important;height:var(--mobile-cosmology-nav-height,62vh)}
+}
+@media (max-width:520px){
+  .bar{min-height:104px}
+  .bar .links a{min-height:36px;font-size:.72rem !important;padding:7px 9px !important}
+  .page-frame{padding-top:108px !important}
+  .bar #toc{top:112px !important;height:var(--mobile-cosmology-nav-height,66vh)}
+}
+</style>
