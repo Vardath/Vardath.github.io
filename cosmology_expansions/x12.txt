@@ -1,11 +1,13 @@
 <!-- Mobile navigation enhancement for Vardath Cosmology.
      Desktop sidebar remains unchanged. On <=900px screens this becomes a fixed,
      compact two-row header with normal site navigation plus a hideable,
-     touch-friendly, vertically resizable section sheet. -->
+     touch-friendly, horizontally resizable section drawer. -->
 <style>
 @media (max-width:900px){
-  :root{--mobile-cosmology-header-height:108px}
-  body.mobile-cosmology-nav-open{overflow:hidden}
+  :root{
+    --mobile-cosmology-header-height:108px;
+    --mobile-cosmology-drawer-width:min(82vw,340px)
+  }
 
   .bar{
     position:fixed !important;
@@ -109,18 +111,17 @@
   .bar #toc{
     display:flex !important;
     position:fixed !important;
-    left:8px !important;
-    right:8px !important;
+    left:auto !important;
+    right:6px !important;
     top:calc(var(--mobile-cosmology-header-height) + 6px) !important;
-    bottom:auto !important;
+    bottom:8px !important;
     z-index:100 !important;
-    width:auto !important;
-    height:var(--mobile-cosmology-nav-height,62vh) !important;
-    min-height:200px !important;
-    max-height:calc(100dvh - var(--mobile-cosmology-header-height) - 14px) !important;
-    max-width:720px;
-    margin:0 auto !important;
-    padding:10px 10px 34px !important;
+    width:var(--mobile-cosmology-drawer-width) !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    margin:0 !important;
+    padding:10px 10px 12px 18px !important;
     gap:7px !important;
     overflow-y:auto !important;
     overflow-x:hidden !important;
@@ -128,10 +129,10 @@
     -webkit-overflow-scrolling:touch;
     background:rgba(9,13,20,.985) !important;
     border:1px solid #3a4761 !important;
-    border-radius:16px !important;
-    box-shadow:0 22px 70px rgba(0,0,0,.62) !important;
-    transform:translateY(-14px) scale(.985);
-    transform-origin:top center;
+    border-radius:16px 0 0 16px !important;
+    box-shadow:-16px 18px 50px rgba(0,0,0,.44) !important;
+    transform:translateX(calc(100% + 18px));
+    transform-origin:right center;
     opacity:0;
     visibility:hidden;
     pointer-events:none;
@@ -140,23 +141,24 @@
     scrollbar-color:#46536f #0b1018
   }
   .bar #toc.open{
-    transform:translateY(0) scale(1);
+    transform:translateX(0);
     opacity:1;
     visibility:visible;
     pointer-events:auto
   }
+
   .bar #toc a{
     display:flex !important;
     align-items:center;
-    min-height:50px;
+    min-height:48px;
     flex:0 0 auto !important;
-    padding:11px 13px !important;
+    padding:10px 12px !important;
     border:1px solid #2e3950 !important;
-    border-radius:11px !important;
+    border-radius:10px !important;
     background:#111824 !important;
     color:#dce4f3 !important;
-    font-size:.94rem !important;
-    line-height:1.22 !important;
+    font-size:.9rem !important;
+    line-height:1.2 !important;
     font-weight:650;
     touch-action:manipulation;
     -webkit-tap-highlight-color:transparent
@@ -170,73 +172,51 @@
   .bar #toc a:active{transform:scale(.985)}
 
   .mobile-cosmology-nav-grip{
-    position:sticky;
-    left:0;
-    right:0;
-    bottom:-34px;
-    order:9999;
-    flex:0 0 34px;
-    min-height:34px;
-    margin:4px -10px -34px;
+    position:fixed;
+    top:calc(var(--mobile-cosmology-header-height) + 14px);
+    bottom:16px;
+    left:calc(100vw - var(--mobile-cosmology-drawer-width) - 6px);
+    width:18px;
+    min-width:18px;
+    margin:0;
     border:0;
-    border-top:1px solid #2f3a50;
-    background:linear-gradient(to bottom,rgba(16,22,33,.9),#0c1119);
-    cursor:ns-resize;
+    border-right:1px solid #344159;
+    background:linear-gradient(to right,rgba(20,28,42,.92),rgba(12,17,25,.75));
+    cursor:ew-resize;
     touch-action:none;
-    z-index:4
+    z-index:105
   }
   .mobile-cosmology-nav-grip::before{
     content:"";
     position:absolute;
-    left:50%;
-    top:9px;
-    width:54px;
-    height:5px;
+    left:5px;
+    top:50%;
+    width:5px;
+    height:58px;
     border-radius:999px;
     background:#65718b;
-    transform:translateX(-50%)
+    transform:translateY(-50%)
   }
   .mobile-cosmology-nav-grip::after{
-    content:"drag to resize";
+    content:"";
     position:absolute;
-    left:50%;
-    top:17px;
-    transform:translateX(-50%);
-    color:#8994aa;
-    font:9px/1 Arial,sans-serif;
-    letter-spacing:.05em;
-    white-space:nowrap
+    inset:0
   }
 
   .mobile-cosmology-nav-backdrop{
-    position:fixed;
-    left:0;
-    right:0;
-    top:var(--mobile-cosmology-header-height);
-    bottom:0;
-    z-index:70;
-    background:rgba(2,4,8,.56);
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:opacity .18s ease,visibility .18s ease
-  }
-  .mobile-cosmology-nav-backdrop.open{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto
+    display:none !important
   }
 }
 
 @media (max-width:520px){
+  :root{--mobile-cosmology-drawer-width:min(84vw,320px)}
   .mobile-nav-toggle{min-width:108px;font-size:.9rem !important}
   .bar .links a{min-height:36px;font-size:.72rem !important;padding:7px 9px !important}
-  .bar #toc{left:6px !important;right:6px !important;height:var(--mobile-cosmology-nav-height,66vh) !important}
-  .bar #toc a{min-height:52px;font-size:.96rem !important;padding:12px 13px !important}
+  .bar #toc a{min-height:50px;font-size:.92rem !important;padding:11px 12px !important}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .bar #toc,.mobile-cosmology-nav-backdrop{transition:none !important}
+  .bar #toc{transition:none !important}
 }
 </style>
 <script>
@@ -253,28 +233,24 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.documentElement.style.setProperty('--mobile-cosmology-header-height',h+'px');
   };
 
-  let backdrop=document.querySelector('.mobile-cosmology-nav-backdrop');
-  if(!backdrop){
-    backdrop=document.createElement('div');
-    backdrop.className='mobile-cosmology-nav-backdrop';
-    backdrop.setAttribute('aria-hidden','true');
-    document.body.appendChild(backdrop);
-  }
+  const oldBackdrop=document.querySelector('.mobile-cosmology-nav-backdrop');
+  if(oldBackdrop)oldBackdrop.remove();
 
   let grip=toc.querySelector('.mobile-cosmology-nav-grip');
   if(!grip){
     grip=document.createElement('div');
     grip.className='mobile-cosmology-nav-grip';
     grip.setAttribute('role','separator');
-    grip.setAttribute('aria-label','Drag to resize section navigation');
-    grip.setAttribute('aria-orientation','horizontal');
+    grip.setAttribute('aria-label','Drag to resize section navigation width');
+    grip.setAttribute('aria-orientation','vertical');
     toc.appendChild(grip);
+  }else{
+    grip.setAttribute('aria-label','Drag to resize section navigation width');
+    grip.setAttribute('aria-orientation','vertical');
   }
 
   const sync=open=>{
     toc.classList.toggle('open',open);
-    backdrop.classList.toggle('open',open&&mobile());
-    document.body.classList.toggle('mobile-cosmology-nav-open',open&&mobile());
     toggle.setAttribute('aria-expanded',String(open));
     toggle.textContent=open&&mobile()?'✕ Close':'☰ Sections';
     syncHeaderHeight();
@@ -288,7 +264,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     sync(!toc.classList.contains('open'));
   },true);
 
-  backdrop.addEventListener('click',close);
   toc.addEventListener('click',e=>{
     if(mobile()&&e.target.closest('a'))close();
   });
@@ -299,11 +274,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   let dragging=false;
   const resizeFromPointer=e=>{
     if(!dragging||!mobile())return;
-    const top=toc.getBoundingClientRect().top;
-    const min=200;
-    const max=Math.max(min,window.innerHeight-top-10);
-    const h=Math.max(min,Math.min(max,e.clientY-top));
-    document.documentElement.style.setProperty('--mobile-cosmology-nav-height',h+'px');
+    const min=230;
+    const max=Math.max(min,Math.min(430,window.innerWidth-48));
+    const width=Math.max(min,Math.min(max,window.innerWidth-e.clientX-6));
+    document.documentElement.style.setProperty('--mobile-cosmology-drawer-width',width+'px');
   };
   grip.addEventListener('pointerdown',e=>{
     if(!mobile())return;
@@ -323,8 +297,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   const refresh=()=>{
     syncHeaderHeight();
     if(!mobile()){
-      backdrop.classList.remove('open');
-      document.body.classList.remove('mobile-cosmology-nav-open');
       toc.classList.remove('open');
       toggle.setAttribute('aria-expanded','false');
       toggle.textContent='☰ Sections';
