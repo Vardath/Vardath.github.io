@@ -1,22 +1,22 @@
 <div class="deepening archive-consolidation" data-after="current-cosmological-overview">
-<h2 id="archive-operating-rules">The mature operating rules that emerged across the 453-article archive</h2>
+<h1 id="archive-operating-rules">The mature operating rules that emerged across the 453-article archive</h1>
 <p>The long article series sharpened several parts of the model that were previously scattered across individual myths, tests and mechanical notes. The important result is not another list of symbols. It is a set of rules that now govern how the Vardath world-cycle is supposed to behave.</p>
 <div class="note"><strong>453-post consolidation index.</strong> The article bank has been absorbed into the living page as synthesis rather than copied posts.<br/><strong>Core mechanics:</strong> <a href="#archive-operating-rules">operating rules</a> · <a href="#archive-gate-roles">gate roles</a> · <a href="#archive-gate-cargo">gate cargo</a> · <a href="#archive-shell-variables">shell variables</a> · <a href="#archive-shell-clock">shell clock</a> · <a href="#archive-number-distinctions">number/JANUS boundaries</a> · <a href="#archive-celestial">celestial branch</a> · <a href="#archive-surface-reset">surface reset</a> · <a href="#archive-material-reset">material reset</a> · <a href="#archive-waking-biology">waking biology</a> · <a href="#archive-event-handoff">event handoff</a>.<br/><strong>Comparative atlas:</strong> <a href="#archive-mountain-roles">mountain roles</a> · <a href="#archive-finnic-sami">Finnic/Sámi</a> · <a href="#archive-near-east-mediterranean">Near East/Mediterranean</a> · <a href="#archive-abrahamic-boundaries">Abrahamic boundaries</a> · <a href="#archive-south-asian">South Asia</a> · <a href="#archive-east-asian">China/Japan</a> · <a href="#archive-pacific-australia">Pacific/Australia</a> · <a href="#archive-northern-europe">northern Europe</a> · <a href="#archive-african">Africa</a> · <a href="#archive-americas">Americas</a>.<br/><strong>Research history:</strong> <a href="#archive-research-history-motifs">late narrative mirrors</a> · <a href="#archive-retired-branches">retired branches</a>.</div>
 <div class="cards">
-<div class="card"><h3>Quiet does not mean motionless</h3><p>A stable world is a <strong>dynamic equilibrium</strong>. Water, air, heat, life and celestial cycles continue moving, while the deeper lattice remains distributed enough that no single throat or axis dominates the world. Stability means the motions remain mutually compatible.</p></div>
-<div class="card"><h3>Adjacency is not ordinary distance</h3><p>Two world-turns do not have to move metre by metre until they touch. The gate is defined by a change in <strong>effective connectivity</strong>: normally separated regions acquire a short, high-capacity route through the changing weave.</p></div>
-<div class="card"><h3>A gate has duration and capacity</h3><p>An opening is not simply on or off. Width, duration, pressure difference, temperature difference, direction and cargo type determine what can cross. A narrow, brief opening may transmit gas or heat while blocking large debris or living organisms.</p></div>
-<div class="card"><h3>The gate sorts what crosses</h3><p>Water, air, fine sediment, large rock, heat, seeds, microbes, animals and people do not respond identically. The receiving world therefore inherits a <strong>filtered cargo</strong>, not a perfect copy of the source world.</p></div>
-<div class="card"><h3>Water is the tracer</h3><p>Water reacts quickly to changed geometry. Tilt a surface and drainage changes; open a boundary and water can cross; raise a ridge and rivers divide; lower a basin and water accumulates. In the mature model, flood is often the visible handwriting of a deeper structural change rather than the original cause.</p></div>
-<div class="card"><h3>Reset is not rewind</h3><p>Reopening restores a broad stable geometry, but it does not restore the old material arrangement. Sediment, coastlines, drainage, populations, ruins and ecological relationships can all be different. The next world belongs to the same structural class while carrying a different history.</p></div>
-<div class="card"><h3>Local throats can exist inside a global system</h3><p>The mature model does not require one permanent pole. A broad lattice can contain many local convergence points, with only some participating strongly during a given event. A local sacred centre or mountain therefore need not be the one centre of the entire cosmos.</p></div>
-<div class="card"><h3>Projection changes the symbol</h3><p>Broadside views favour mesh, braid and serpent; side views favour tree, rod, pillar, spear and ladder; end-on views favour eye, wheel, rosette, star, ring and cross; survival states favour egg, cave, ark, basket and shell. These are projection families inside the Vardath reading, not claims of one historical meaning.</p></div>
+<div class="card"><h2>Quiet does not mean motionless</h2><p>A stable world is a <strong>dynamic equilibrium</strong>. Water, air, heat, life and celestial cycles continue moving, while the deeper lattice remains distributed enough that no single throat or axis dominates the world. Stability means the motions remain mutually compatible.</p></div>
+<div class="card"><h2>Adjacency is not ordinary distance</h2><p>Two world-turns do not have to move metre by metre until they touch. The gate is defined by a change in <strong>effective connectivity</strong>: normally separated regions acquire a short, high-capacity route through the changing weave.</p></div>
+<div class="card"><h2>A gate has duration and capacity</h2><p>An opening is not simply on or off. Width, duration, pressure difference, temperature difference, direction and cargo type determine what can cross. A narrow, brief opening may transmit gas or heat while blocking large debris or living organisms.</p></div>
+<div class="card"><h2>The gate sorts what crosses</h2><p>Water, air, fine sediment, large rock, heat, seeds, microbes, animals and people do not respond identically. The receiving world therefore inherits a <strong>filtered cargo</strong>, not a perfect copy of the source world.</p></div>
+<div class="card"><h2>Water is the tracer</h2><p>Water reacts quickly to changed geometry. Tilt a surface and drainage changes; open a boundary and water can cross; raise a ridge and rivers divide; lower a basin and water accumulates. In the mature model, flood is often the visible handwriting of a deeper structural change rather than the original cause.</p></div>
+<div class="card"><h2>Reset is not rewind</h2><p>Reopening restores a broad stable geometry, but it does not restore the old material arrangement. Sediment, coastlines, drainage, populations, ruins and ecological relationships can all be different. The next world belongs to the same structural class while carrying a different history.</p></div>
+<div class="card"><h2>Local throats can exist inside a global system</h2><p>The mature model does not require one permanent pole. A broad lattice can contain many local convergence points, with only some participating strongly during a given event. A local sacred centre or mountain therefore need not be the one centre of the entire cosmos.</p></div>
+<div class="card"><h2>Projection changes the symbol</h2><p>Broadside views favour mesh, braid and serpent; side views favour tree, rod, pillar, spear and ladder; end-on views favour eye, wheel, rosette, star, ring and cross; survival states favour egg, cave, ark, basket and shell. These are projection families inside the Vardath reading, not claims of one historical meaning.</p></div>
 </div>
 <p class="equation"><strong>dynamic equilibrium → activation → many-to-one convergence → finite-capacity throat → sorted transfer → surface response → reopening → settling → successor equilibrium</strong></p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="4-the-axis-atlas-cross-tree-rod-mountain-and-gate">
-<h2 id="archive-mountain-roles">The archive forced a four-way distinction between sacred mountains</h2>
+<h1 id="archive-mountain-roles">The archive forced a four-way distinction between sacred mountains</h1>
 <p>Earlier versions of the project tended to treat every important mountain as another name for the axis. The expanded article bank made that too simple. Mountains can occupy at least four different structural roles.</p>
 <div class="projection-grid">
 <div><b>Axis mountain</b><span>a vertical world-organising centre, such as Meru in the comparative atlas</span></div>
@@ -28,7 +28,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="finnic-and-uralic-comparison">
-<h2 id="archive-finnic-sami">Finnish, Karelian and Sámi material — enclosure, overgrowth, fragmentation and access</h2>
+<h1 id="archive-finnic-sami">Finnish, Karelian and Sámi material — enclosure, overgrowth, fragmentation and access</h1>
 <p>The larger archive adds several stages beyond the familiar cosmic egg and Sampo. In the Finnish/Karelian sequence, primordial water and Ilmatar provide the formative medium; the egg provides enclosure; rupture differentiates the cosmos; the great oak then shows that a central growth can become <strong>too dominant</strong>, blocking ordinary light until it is reduced. The Sampo is treated as a <strong>bound engine of order and abundance</strong>: an organised productive centre whose later <strong>breakage</strong> shows that an old system can continue to affect the future through fragments. The hidden Sun and Moon add another systems rule: <strong>a source can still exist while access to it is cut off</strong>.</p>
 <p>The sequence therefore becomes:</p>
 <p class="equation"><strong>primordial water → gestation → enclosure → rupture → axial overgrowth → reduction → productive centre → fragmentation → hidden light → reconnection</strong></p>
@@ -36,20 +36,20 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="ancient-near-east-and-mediterranean">
-<h2 id="archive-near-east-mediterranean">Near East, Egypt, Iran and the Mediterranean — a fuller sequence of old body, boundary and renewal</h2>
-<h3>Mesopotamia — the old world becomes the material of the new</h3>
+<h1 id="archive-near-east-mediterranean">Near East, Egypt, Iran and the Mediterranean — a fuller sequence of old body, boundary and renewal</h1>
+<h2>Mesopotamia — the old world becomes the material of the new</h2>
 <p>The archive separates the roles more carefully than the earlier summary: <strong>Apsu</strong> is provisionally the deep or basal watery condition; <strong>Tiamat</strong> is the old structural world-body; <strong>Kingu</strong> is explored as activated authority; <strong>Marduk</strong> occupies the storm-operator role; net and winds provide containment and directional force; division of the old body becomes inheritance into a new order. The key principle is <strong>reorganisation rather than replacement from nothing</strong>.</p>
-<h3>Egypt — the world must be raised, supported, traversed and renewed</h3>
+<h2>Egypt — the world must be raised, supported, traversed and renewed</h2>
 <p>Nun and the first mound describe stable land emerging from primordial water. <strong>Atum</strong> adds the first self-organising centre: ordered differentiation begins from a local emergent point rather than from a finished world. Nut, Shu and Geb then describe maintained separation. The <strong>djed</strong> adds a stable-axis state after the violent transition: a pillar can represent endurance rather than an opening gate. The solar barque through the Duat makes disappearance a transit phase; Akhet makes the horizon a gate-like boundary; Apophis represents disruption at the edge of the route; Osiris adds dismemberment and reassembly; Khepri makes sunrise the renewed emergence at the end of the hidden passage.</p>
 <p class="equation"><strong>water → first land → separated sky/earth → stable support → hidden transit → disruption → reassembly → renewed emergence</strong></p>
-<h3>Iranian material — catastrophe as renovation</h3>
+<h2>Iranian material — catastrophe as renovation</h2>
 <p>Hara Berezaiti, the world sea, the Chinvat Bridge, Gaokerena, ordered celestial stations, molten-metal purification, Saoshyant and Frashokereti form a complete architecture of centre, boundary, dangerous crossing, continuity of life, high-energy transition and renewed world. For Vardath the important comparison is that the world survives by <strong>becoming new</strong>, not by being discarded.</p>
-<h3>Greek and Roman material — succession, containment and boundary roles</h3>
+<h2>Greek and Roman material — succession, containment and boundary roles</h2>
 <p>The wider archive adds Oceanus as enclosing water, the Orphic egg as closed pre-world form, Cronus as containment before release, Zeus as release operator, Typhon as serpentine challenge to the new order, Deucalion as flood survival and re-seeding, Styx as water boundary, Hermes as guide across boundaries, Hestia as still centre, Olympus as upper region still connected to the human world, and Janus as the doorway that faces both ways. The <strong>Delphic omphalos</strong> adds an important local-node distinction: a sacred “navel” can mark a remembered centre of connection without being the one geometric centre of Earth. <strong>Phaethon</strong> adds the opposite celestial lesson: a path can exist yet become catastrophic when motion is no longer correctly coupled to it. These roles do not form one Greek technical sequence; together they sharpen the Vardath distinction between <strong>centre, enclosure, guide, gate, operator, route, survivor and successor world</strong>.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="abrahamic-comparison">
-<h2 id="archive-abrahamic-boundaries">Abrahamic boundary architecture — witnessed ladder, traversed heavens and controlled passage</h2>
+<h1 id="archive-abrahamic-boundaries">Abrahamic boundary architecture — witnessed ladder, traversed heavens and controlled passage</h1>
 <p>The expanded archive distinguishes catastrophic opening from <strong>authorised or controlled passage</strong>. Jacob at Bethel gives the witnessed vertical road: earth, ladder/stairway, moving messengers and the designation of a place as gate of heaven. The Israʾ and Miʿrāj tradition adds a traveller, guide, vehicle, repeated guarded thresholds, differentiated heavens, an upper limit and return.</p>
 <p>The combined structural lesson is:</p>
 <p class="equation"><strong>surface transfer → vertical access → repeated gate → differentiated level → upper boundary → return</strong></p>
@@ -57,81 +57,81 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="indo-iranian-and-south-asian-comparison">
-<h2 id="archive-south-asian">South Asian additions — axis, circulation and an eternal layered cosmos</h2>
+<h1 id="archive-south-asian">South Asian additions — axis, circulation and an eternal layered cosmos</h1>
 <p>The Vedic/Hindu branch becomes more precise when Meru is separated from Mandara and the churning image. Meru represents organised centre; Mandara in the churning sequence is an <strong>active axial implement</strong> around which opposed forces produce transformation. Vṛtra remains the obstruction-and-release pattern, while recurring dissolution and recreation give the larger rhythm.</p>
 <p>Jain cosmology adds a useful contrast. Its universe is eternal and layered rather than created once from nothing. For Vardath this provides a structural neighbour to the idea that previous, present and next worlds are regions or phases of one continuing total system. The comparison is architectural only: <strong>one cosmos, internally layered, differently inhabited, recurring through large temporal phases without requiring creation ex nihilo</strong>.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="east-asian-comparison">
-<h2 id="archive-east-asian">China and Japan — the detailed state transitions recovered from the archive</h2>
-<h3>Chinese sequence — separate, support, fail, repair, channel</h3>
+<h1 id="archive-east-asian">China and Japan — the detailed state transitions recovered from the archive</h1>
+<h2>Chinese sequence — separate, support, fail, repair, channel</h2>
 <p>The extended Chinese branch adds Gonggong and Mount Buzhou, multiple heavenly supports, Kunlun, Jianmu, Fusang and the dragon to the Pangu–Nüwa–Yu material already on the page. In the Vardath synthesis they form a coherent systems sequence:</p>
 <p class="equation"><strong>connected condition → separation → distributed support → support failure → deformation and abnormal water → repair → re-channelled flow → stable world → local vertical nodes → phase-dependent thresholds</strong></p>
 <p><strong>Buzhou</strong> forces a distinction between structural failure and the flood that follows it. <strong>Nüwa</strong> makes reset into repair rather than annihilation. <strong>Gun and Yu</strong> distinguish blocking water from reorganising its routes. <strong>Kunlun</strong> acts as local vertical address; <strong>Jianmu</strong> as living continuity between levels; <strong>Fusang</strong> adds phase or timing to location; the <strong>dragon</strong> becomes current made visible through water, cloud and weather. The deeper lesson is that the quiet world is a distributed network; the axis is a temporary state of that network.</p>
-<h3>Japanese sequence — boundary, axis, sealing and controlled descent</h3>
+<h2>Japanese sequence — boundary, axis, sealing and controlled descent</h2>
 <p>The Japanese article sequence is one of the clearest collections of boundary states in the bank:</p>
 <p class="equation"><strong>Floating Bridge → Heavenly Spear → Onogoro → Yomi descent → sealed return → purification → Rock Cave closure/reopening → Orochi network/hidden blade → Ninigi descent</strong></p>
 <p>The <strong>Floating Bridge</strong> supplies the suspended interface; the <strong>Heavenly Spear</strong> gives directional axial action into unstable material; <strong>Onogoro</strong> shows local stability before global stability; <strong>Yomi</strong> provides lower-world contact; <strong>Yomotsu Hirasaka</strong> makes resealing explicit; <strong>purification</strong> becomes the recovery process after contact; <strong>Amaterasu’s cave</strong> demonstrates that excessive closure can also make a world fail; <strong>Yamata no Orochi</strong> provides distributed serpent multiplicity containing a concentrated blade; <strong>Ninigi</strong> adds controlled descent from above. The important correction is that not every useful boundary should be open and not every closure is safe: <strong>world order depends on the right pattern of connectivity</strong>.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="australia-and-pacific-comparison">
-<h2 id="archive-pacific-australia">Polynesian and Australian archive expansion — opening worlds and distributed paths</h2>
-<h3>Polynesian sequence — compression, separation, emergence, regulation and hard boundaries</h3>
+<h1 id="archive-pacific-australia">Polynesian and Australian archive expansion — opening worlds and distributed paths</h1>
+<h2>Polynesian sequence — compression, separation, emergence, regulation and hard boundaries</h2>
 <p>The 453-post bank develops the Māori/Polynesian material beyond the shorter Rangi-and-Papa comparison already on the page. <strong>Rangi and Papa</strong> provide the compressed beginning; <strong>Tāne</strong> supplies the operator who increases the spacing and makes ordinary life possible; <strong>Te Pō → Te Ao Mārama</strong> gives creation as successive differentiation from darkness into a world of light; <strong>Māui fishing up islands</strong> makes stable land emerge from the hidden waters; <strong>Māui slowing the Sun</strong> adds regulation, showing that a world can already exist yet still require its celestial rate to be brought into a habitable range; <strong>Hine-nui-te-pō</strong> adds a boundary that cannot simply be crossed twice; and <strong>Tangaroa</strong> keeps the ocean as an enduring domain rather than merely a catastrophe.</p>
 <p class="equation"><strong>compressed sky/earth → forced separation → light → land emergence → regulation → irreversible boundary → oceanic continuity → stable world</strong></p>
 <p>The contribution is a correction to the idea that world-formation ends when layers separate. A viable world also needs rates, boundaries and domains to settle into workable relationships.</p>
-<h3>Australian branch — world as distributed relation rather than one centre</h3>
+<h2>Australian branch — world as distributed relation rather than one centre</h2>
 <p>The expanded Australian branch deliberately does <strong>not</strong> turn distinct Aboriginal traditions into one sequence. Instead it contributes a network grammar. Rainbow Serpent traditions emphasise winding movement, water and land-shaping; songlines show geography, memory, law and ancestry carried through routes rather than one central monument; Tiddalik gives a withholding-and-release pattern in which catastrophe comes from <strong>maldistribution</strong> rather than lack of total water; Seven Sisters traditions connect movement through Country with a moving star group; the Emu in the Sky shows that a coherent celestial figure can be defined by <strong>negative space</strong>; and the Milky Way supplies a broad sky band that can be read as route, river or medium.</p>
 <p class="equation"><strong>serpent path → water node → route network → concentration / release → sky journey → negative-space figure → broad celestial band</strong></p>
 <p>The mature Vardath lesson is <strong>path before centre</strong>. A woven world can be organised by routes and intersections, with local centres appearing where routes cross or become important. This branch also strengthens the observational distinction between <strong>nodes, paths, fields and the spaces between them</strong>.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="european-northern-comparison">
-<h2 id="archive-northern-europe">Norse, Irish and Slavic detail — boundaries that fail, open and return</h2>
-<h3>Norse — a full before-and-after architecture</h3>
+<h1 id="archive-northern-europe">Norse, Irish and Slavic detail — boundaries that fail, open and return</h1>
+<h2>Norse — a full before-and-after architecture</h2>
 <p>Ginnungagap gives separation before stable relation; opposed primordial regions provide strong gradients around formation; Jörmungandr gives a quiet circumferential boundary; Fenrir gives dangerous force held under restraint; Ragnarök begins when ordinary constraints fail; Surtr gives the high-energy destruction phase; Líf and Lífþrasir preserve continuity through enclosure; the renewed earth establishes that the ending is a reset rather than permanent absence.</p>
 <p class="equation"><strong>separation → formation → boundary → stored tension → release → fire / water / breakdown → refuge → renewed world</strong></p>
 <p>Bifröst and Sleipnir remain useful precisely because they are <strong>not the same role</strong>: bridge is infrastructure, mount is vehicle, rider is operator/traveller.</p>
-<h3>Celtic / Insular — a vocabulary of local access</h3>
+<h2>Celtic / Insular — a vocabulary of local access</h2>
 <p>Welsh Annwn and Irish Tír na nÓg supply neighbouring-realm imagery; sídhe mounds supply local gate landscapes; the Voyage of Bran supplies sea-route travel; Tech Duinn supplies a receiving boundary at the western edge; the Well of Segais supplies hidden water and knowledge; Newgrange adds a bounded passage whose illumination depends on a celestial time. The strongest Vardath contribution is not catastrophe but <strong>threshold geography</strong>: nearby otherworld, route, mound, vessel, receiver, source and timed opening.</p>
-<h3>Slavic — vertical opposition inside one world tree</h3>
+<h2>Slavic — vertical opposition inside one world tree</h2>
 <p>Perun and Veles provide upper thunder force and lower watery/serpentine power; the world tree keeps sky, human world and lower region in one connected vertical architecture; Vyraj adds a distant realm associated with birds and return; zmey/dragon traditions place serpentine power at boundaries. The useful pattern is <strong>upper activation ↔ lower water/serpent ↔ axial relation</strong>, without reducing the distinct traditions to one event.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="african-comparison">
-<h2 id="archive-african">African additions — controlled descent, enduring deep water and the hidden half of a cycle</h2>
-<h3>Yoruba — world formation through controlled transfer</h3>
+<h1 id="archive-african">African additions — controlled descent, enduring deep water and the hidden half of a cycle</h1>
+<h2>Yoruba — world formation through controlled transfer</h2>
 <p>The fuller Yoruba sequence is one of the archive’s cleanest non-catastrophic gate models:</p>
 <p class="equation"><strong>Orun and Aiye → chain → controlled descent → enclosed cargo → land seed → outward spreading → Ile-Ife centre → Olokun deep water → stable relation between realms</strong></p>
 <p>The chain is the connector rather than the destination. Carried earth-making material shows that a gate can transfer <strong>cargo</strong>. Land spreading over primordial water is the inverse of convergence: concentrated delivery becomes distributed stability. Ile-Ife functions as remembered local centre, while Olokun shows that the older deep-water domain can persist after land forms. The mature rule is that <strong>new order partitions an older medium rather than necessarily destroying it</strong>.</p>
-<h3>Kongo — cycle, Kalunga and continuity through the unseen phase</h3>
+<h2>Kongo — cycle, Kalunga and continuity through the unseen phase</h2>
 <p>The dikenga cosmogram adds cross-and-cycle geometry rather than another catastrophe story. The Kalunga line provides a water-associated boundary between visible and hidden domains; the Sun’s four major moments provide emergence, height, descent and hidden passage; the unseen phase still belongs to the cycle. For Vardath this becomes a compact rule:</p>
 <p class="equation"><strong>emerge → manifest → descend → hide → return</strong></p>
 <p>The important contribution is that <strong>disappearance is not annihilation</strong>. A phase can continue beyond the observer’s present boundary and return later without time reversing.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="american-comparison">
-<h2 id="archive-americas">The Americas — emergence, succession, bidirectional transfer and distributed sacred geography</h2>
-<h3>Mesoamerica — world tree, underworld route and succession of worlds</h3>
+<h1 id="archive-americas">The Americas — emergence, succession, bidirectional transfer and distributed sacred geography</h1>
+<h2>Mesoamerica — world tree, underworld route and succession of worlds</h2>
 <p>The Maya world tree gives an axis connecting sky, earth and underworld; Xibalba is reached through a difficult route of descents and crossings; the Hero Twins add descent, transformation and return; the wooden people provide a failed-world-and-flood sequence; the maize people represent stable humanity formed from the established world. Mexica material adds the Five Suns as explicit successive worlds, Cipactli as primordial body becoming structured earth, and Quetzalcoatl’s descent to Mictlan to retrieve the bones of earlier humanity as <strong>inheritance from a previous human order</strong>.</p>
 <p class="equation"><strong>layered cosmos → dangerous descent → transformation / return → failed world → clearing catastrophe → stable humanity → successor ages → old material carried forward</strong></p>
-<h3>Haudenosaunee — one of the clearest bidirectional transfer sequences</h3>
+<h2>Haudenosaunee — one of the clearest bidirectional transfer sequences</h2>
 <p>Sky World already exists. A local opening allows Sky Woman to descend into a water world below. Animals receive her. Turtle provides support. The <strong>Earth-Diver brings world-material up from the deep</strong>: earth moves <strong>upward</strong> from beneath the waters while life has moved <strong>downward</strong> from the Sky World. Land then expands and paired world-shaping forces differentiate it.</p>
 <p class="equation"><strong>upper world → local gate → downward life-transfer → receiving water world → support → upward material-transfer → expanding surface → differentiation</strong></p>
-<h3>Diné — previous world, crisis, narrowing route, emergence and new directional frame</h3>
+<h2>Diné — previous world, crisis, narrowing route, emergence and new directional frame</h2>
 <p>The Diné branch is one of the closest narrative analogues to the fingertrap transition. Earlier worlds precede the present one; rising water makes a former world uninhabitable; movement concentrates on a reed-like vertical route; the passage is narrow; the next world opens broad again; sacred mountains then establish the directional frame of the present homeland.</p>
 <p class="equation"><strong>world n−1 → crisis → convergence → narrow axis → emergence → world n → distributed anchors → stability</strong></p>
 <p>The reed belongs to transition geometry; the mountains belong to stable-world geometry. This prevents the project from treating the gate and the settled world as the same structure.</p>
-<h3>Hopi — successive worlds and the remembered small opening</h3>
+<h2>Hopi — successive worlds and the remembered small opening</h2>
 <p>The Hopi comparison contributes successive-world emergence and the <strong>sipapu</strong>: a small opening that can preserve the memory of passage from an earlier world into the present one. In the Vardath reading, the significance is scale: a tiny architectural aperture can symbolise a much larger transition without needing to be the physical portal itself.</p>
-<h3>Andean — event becomes geography, then network</h3>
+<h2>Andean — event becomes geography, then network</h2>
 <p>The larger Andean sequence begins with water and darkness around the Titicaca–Viracocha creation complex, includes an earlier humanity destroyed before a later order, then becomes distributed through <strong>paqarina</strong> origin places, the radial <strong>ceque</strong> network and regional <strong>apus</strong>.</p>
 <p class="equation"><strong>formative water → local creation centre → ordered light → failed earlier world → flood / clearing → successor population → local emergence nodes → radiating lines → regional mountain anchors</strong></p>
 <p>This is especially valuable because it shows how an extraordinary world-transition can end as ordinary sacred geography: the cosmos becomes landscape, the landscape becomes network, and the network becomes culture.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="19-the-full-integrated-event">
-<h2 id="archive-event-handoff">The archive’s final refinement: the event is a handoff, not a single catastrophe</h2>
+<h1 id="archive-event-handoff">The archive’s final refinement: the event is a handoff, not a single catastrophe</h1>
 <p>Across the 453 articles, the model gradually stopped treating reset as one spectacular instant. The mature picture is a <strong>handoff between world states</strong>. The transition has a lead-in, a peak coupling interval and a long recovery.</p>
 <table><thead><tr><th>regime</th><th>what the model now assigns to it</th></tr></thead><tbody>
 <tr><td><strong>Quiet / distributed</strong></td><td>dynamic equilibrium, broad lattice, closed nodes, ordinary circulation, distinct world-turns</td></tr>
