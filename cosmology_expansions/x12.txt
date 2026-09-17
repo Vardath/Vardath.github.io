@@ -1,39 +1,266 @@
-<div class="deepening" data-after="1-the-investigation-before-the-three-shells"><h2>Visual reference — where the investigation begins</h2><p class="art-source-note">These source-linked cards are visual anchors for the landscape, historical object, tradition, physical mechanism or comparison named in each chapter. Click any card to open the original source record and its image/licensing context.</p><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Floodplains_at_Ubirr,_Kakadu_National_Park.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Floodplains_at_Ubirr,_Kakadu_National_Park.jpg?width=720" alt="Floodplains at Ubirr in Kakadu National Park"><span class="art-copy"><strong>Ubirr floodplains — Kakadu</strong><small>Northern Territory, Australia · landscape reference</small><em>Country, escarpment and water provide a visual anchor for the earliest recovered Rainbow Serpent branch of the research.</em></span></a></div></div>
+<!-- Mobile navigation enhancement for Vardath Cosmology.
+     Desktop sidebar remains unchanged. On <=900px screens the section list becomes
+     a touch-friendly, hideable, vertically resizable navigation sheet. -->
+<style>
+@media (max-width:900px){
+  body.mobile-cosmology-nav-open{overflow:hidden}
+  .bar{
+    position:sticky !important;
+    top:0;
+    z-index:80;
+    width:100%;
+    min-height:58px;
+    padding:8px 10px !important;
+    background:rgba(8,10,15,.96) !important;
+    border-bottom:1px solid #30394f !important;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 8px 24px rgba(0,0,0,.26)
+  }
+  .bar .brand{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    padding:0 6px;
+    flex:0 0 auto
+  }
+  .bar .links{
+    display:none !important
+  }
+  .mobile-nav-toggle{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    min-width:116px;
+    min-height:44px;
+    margin-left:auto !important;
+    padding:8px 14px !important;
+    border:1px solid #46536f !important;
+    border-radius:12px !important;
+    background:#151c29 !important;
+    color:#fff !important;
+    font-size:.92rem !important;
+    font-weight:800;
+    letter-spacing:.02em;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent
+  }
+  .mobile-nav-toggle[aria-expanded="true"]{
+    border-color:var(--cyan) !important;
+    background:#14212b !important;
+    box-shadow:0 0 0 1px rgba(92,225,230,.18) inset
+  }
+  .bar #toc{
+    display:flex !important;
+    position:fixed !important;
+    left:8px !important;
+    right:8px !important;
+    top:66px !important;
+    bottom:auto !important;
+    z-index:100;
+    max-height:none !important;
+    height:var(--mobile-cosmology-nav-height,62vh);
+    min-height:220px;
+    max-width:720px;
+    margin:0 auto;
+    padding:10px 10px 30px !important;
+    gap:7px !important;
+    overflow-y:auto !important;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    background:rgba(9,13,20,.985) !important;
+    border:1px solid #3a4761 !important;
+    border-radius:16px !important;
+    box-shadow:0 22px 70px rgba(0,0,0,.62) !important;
+    transform:translateY(-18px) scale(.985);
+    transform-origin:top center;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:transform .18s ease,opacity .18s ease,visibility .18s ease;
+    scrollbar-width:thin;
+    scrollbar-color:#46536f #0b1018
+  }
+  .bar #toc.open{
+    transform:translateY(0) scale(1);
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto
+  }
+  .bar #toc a{
+    display:flex;
+    align-items:center;
+    min-height:50px;
+    flex:0 0 auto;
+    padding:11px 13px !important;
+    border:1px solid #2e3950 !important;
+    border-radius:11px !important;
+    background:#111824 !important;
+    color:#dce4f3 !important;
+    font-size:.94rem !important;
+    line-height:1.22 !important;
+    font-weight:650;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent
+  }
+  .bar #toc a.active{
+    border-color:var(--cyan) !important;
+    color:#fff !important;
+    background:#14242d !important;
+    box-shadow:0 0 0 1px rgba(92,225,230,.12) inset
+  }
+  .bar #toc a:active{
+    transform:scale(.985)
+  }
+  .mobile-cosmology-nav-grip{
+    position:sticky;
+    left:0;
+    right:0;
+    bottom:-30px;
+    order:9999;
+    flex:0 0 30px;
+    min-height:30px;
+    margin:4px -10px -30px;
+    border:0;
+    border-top:1px solid #2f3a50;
+    background:linear-gradient(to bottom,rgba(16,22,33,.86),#0c1119);
+    cursor:ns-resize;
+    touch-action:none;
+    z-index:4
+  }
+  .mobile-cosmology-nav-grip::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:9px;
+    width:54px;
+    height:5px;
+    border-radius:999px;
+    background:#65718b;
+    transform:translateX(-50%)
+  }
+  .mobile-cosmology-nav-grip::after{
+    content:"drag to resize";
+    position:absolute;
+    left:50%;
+    top:15px;
+    transform:translateX(-50%);
+    color:#8994aa;
+    font:9px/1 Arial,sans-serif;
+    letter-spacing:.05em;
+    white-space:nowrap
+  }
+  .mobile-cosmology-nav-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:70;
+    background:rgba(2,4,8,.56);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .18s ease,visibility .18s ease
+  }
+  .mobile-cosmology-nav-backdrop.open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto
+  }
+}
+@media (max-width:520px){
+  .bar{min-height:56px}
+  .mobile-nav-toggle{min-width:108px;min-height:44px;font-size:.9rem !important}
+  .bar #toc{left:6px !important;right:6px !important;top:63px !important;height:var(--mobile-cosmology-nav-height,68vh)}
+  .bar #toc a{min-height:52px;font-size:.96rem !important;padding:12px 13px !important}
+}
+@media (prefers-reduced-motion:reduce){
+  .bar #toc,.mobile-cosmology-nav-backdrop{transition:none !important}
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const mobile=()=>window.matchMedia('(max-width:900px)').matches;
+  const bar=document.querySelector('.bar');
+  const toc=document.getElementById('toc');
+  const toggle=document.querySelector('.mobile-nav-toggle');
+  if(!bar||!toc||!toggle)return;
 
-<div class="deepening" data-after="2-rainbow-serpent-the-earliest-recoverable-branch"><h2>Visual reference — Rainbow Serpent</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:RainbowSerpent.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/RainbowSerpent.jpg?width=720" alt="Australian Aboriginal rock painting of a Rainbow Serpent"><span class="art-copy"><strong>Rainbow Serpent rock painting</strong><small>Australian Aboriginal rock art · source-linked photograph</small><em>The serpent-as-moving-line is the earliest recovered visual and conceptual starting point in Vardath Cosmology.</em></span></a></div></div>
+  let backdrop=document.querySelector('.mobile-cosmology-nav-backdrop');
+  if(!backdrop){
+    backdrop=document.createElement('div');
+    backdrop.className='mobile-cosmology-nav-backdrop';
+    backdrop.setAttribute('aria-hidden','true');
+    document.body.appendChild(backdrop);
+  }
 
-<div class="deepening" data-after="3-squatter-man-petroglyphs-and-the-hanging-figure-geometry"><h2>Visual references — anthropomorphic rock art and plasma pinch</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Mantis_petroglyph,_Iran,_Khomein_County,_Markazi_Province.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mantis_petroglyph,_Iran,_Khomein_County,_Markazi_Province.jpg?width=720" alt="Squatting mantis-man petroglyph from Iran"><span class="art-copy"><strong>“Squatting mantis-man” petroglyph</strong><small>Teymareh, Iran · published rock-art example</small><em>A compact anthropomorphic petroglyph useful for seeing how spread limbs, a narrow centre and bilateral geometry can read as a squatting figure.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Z-pinch_H-gamma.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Z-pinch_H-gamma.jpg?width=720" alt="Laboratory hydrogen Z-pinch plasma"><span class="art-copy"><strong>Laboratory hydrogen Z-pinch</strong><small>1986 · real plasma-compression reference</small><em>A laboratory-scale current-carrying plasma column photographed in operation—the physical morphology that made the Peratt comparison visually important to this branch.</em></span></a></div></div>
+  let grip=toc.querySelector('.mobile-cosmology-nav-grip');
+  if(!grip){
+    grip=document.createElement('div');
+    grip.className='mobile-cosmology-nav-grip';
+    grip.setAttribute('role','separator');
+    grip.setAttribute('aria-label','Drag to resize section navigation');
+    grip.setAttribute('aria-orientation','horizontal');
+    toc.appendChild(grip);
+  }
 
-<div class="deepening" data-after="4-the-axis-atlas-cross-tree-rod-mountain-and-gate"><h2>Visual atlas — tree, witness and living rod</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Yggdrasil.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Yggdrasil.jpg?width=720" alt="Nineteenth-century Yggdrasil world-tree illustration"><span class="art-copy"><strong>Yggdrasil — the world tree</strong><small>Oluf Olufsen Bagge · 1847</small><em>A later historical visualization of the Norse world-tree: branching above, rooted below, and organizing multiple regions around one living axis.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:064_Worshipping_the_Bodhi_Tree_(33620517001).jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/064_Worshipping_the_Bodhi_Tree_(33620517001).jpg?width=720" alt="Worship of the Bodhi Tree at Sanchi"><span class="art-copy"><strong>Bodhi Tree — Sanchi</strong><small>Indian Buddhist monument · photographed relief</small><em>The living-tree / revelation side of the axis family: sacred centre, witness and awakening gathered around a tree-form.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Figures_Aarons_rod_budding.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Figures_Aarons_rod_budding.jpg?width=720" alt="Aaron's rod budding in an eighteenth-century Bible illustration"><span class="art-copy"><strong>Aaron’s rod budding</strong><small>Gerard Hoet et al. · 1728 illustration</small><em>The rod becoming living and fertile—the exact symbolic transition that placed Aaron’s staff inside the wider rod/tree axis atlas.</em></span></a></div></div>
+  const sync=open=>{
+    toc.classList.toggle('open',open);
+    backdrop.classList.toggle('open',open&&mobile());
+    document.body.classList.toggle('mobile-cosmology-nav-open',open&&mobile());
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.textContent=open&&mobile()?'✕ Close':'☰ Sections';
+  };
+  const close=()=>sync(false);
 
-<div class="deepening" data-after="5-the-early-enclosure-and-caduceus-model"><h2>Visual references — canopy and paired channels</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Geb,_Nut,_Shu.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Geb,_Nut,_Shu.jpg?width=720" alt="Nut arched over Geb while Shu supports the sky"><span class="art-copy"><strong>Nut, Shu and Geb — sky over earth</strong><small>Greenfield Papyrus detail · British Museum tradition</small><em>An old visual grammar of an arched upper body, a supported space and the earth below—useful beside the early enclosure/canopy sketch.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Hermes_e_seu_caduceu.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hermes_e_seu_caduceu.jpg?width=720" alt="Hermes holding a caduceus on an ancient Greek vase"><span class="art-copy"><strong>Hermes with caduceus</strong><small>Attic vase detail · c. 480–470 BCE · Louvre</small><em>The paired-serpent / central-staff form that became the clearest historical analogue for two winding channels organized around one axis.</em></span></a></div></div>
+  // Capture phase prevents the original mobile toggle listener from toggling a second time.
+  toggle.addEventListener('click',e=>{
+    if(!mobile())return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    sync(!toc.classList.contains('open'));
+  },true);
 
-<div class="deepening" data-after="6-one-phenomenon-many-gods-operator-versus-apparatus"><h2>Visual references — operator, mount and interface</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Tj%C3%A4ngvide.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tj%C3%A4ngvide.jpg?width=720" alt="Tjängvide Viking Age image stone"><span class="art-copy"><strong>Tjängvide image stone</strong><small>Gotland · Viking Age</small><em>The famous rider-and-eight-legged-horse scene supplies an early visual anchor for the recurring distinction between rider/operator and realm-crossing mount.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:NKS_1867_4to,_97v,_Odin_on_Sleipnir.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/NKS_1867_4to,_97v,_Odin_on_Sleipnir.jpg?width=720" alt="Odin riding Sleipnir in an Icelandic manuscript"><span class="art-copy"><strong>Odin on Sleipnir</strong><small>NKS 1867 4to, fol. 97v · 1760</small><em>A much later manuscript rendering that makes the narrative separation of operator, spear/rod and eight-legged vehicle unusually explicit.</em></span></a></div></div>
+  backdrop.addEventListener('click',close);
+  toc.addEventListener('click',e=>{
+    if(mobile()&&e.target.closest('a'))close();
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&toc.classList.contains('open'))close();
+  });
 
-<div class="deepening" data-after="7-serpents-and-the-release-of-waters"><h2>Visual references — serpent, conflict and release</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Indra_kills_Vrttirasura_(story_from_Rik_Veda,_featured_in_Bhagavatha).jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Indra_kills_Vrttirasura_(story_from_Rik_Veda,_featured_in_Bhagavatha).jpg?width=720" alt="Indra battling Vritrasura"><span class="art-copy"><strong>Indra battles Vṛtra / Vṛtrāsura</strong><small>1916 publication image · older textual tradition</small><em>The thunderer-versus-obstruction story sits at the centre of the serpent → activation → released-waters sequence used in this chapter.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ishtar_Gate_Dragon.JPG" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ishtar_Gate_Dragon.JPG?width=720" alt="Mušḫuššu dragon from Babylon's Processional Way"><span class="art-copy"><strong>Babylonian mušḫuššu dragon</strong><small>Processional Way / Ishtar Gate complex · Neo-Babylonian</small><em>A surviving Mesopotamian dragon form associated with Marduk, giving the Tiamat/Marduk side of the chapter a direct ancient visual reference.</em></span></a></div></div>
+  let dragging=false;
+  const resizeFromPointer=e=>{
+    if(!dragging||!mobile())return;
+    const top=toc.getBoundingClientRect().top;
+    const min=220;
+    const max=Math.max(min,window.innerHeight-top-12);
+    const h=Math.max(min,Math.min(max,e.clientY-top));
+    document.documentElement.style.setProperty('--mobile-cosmology-nav-height',h+'px');
+  };
+  grip.addEventListener('pointerdown',e=>{
+    if(!mobile())return;
+    dragging=true;
+    grip.setPointerCapture?.(e.pointerId);
+    e.preventDefault();
+  });
+  grip.addEventListener('pointermove',resizeFromPointer);
+  const stopDrag=e=>{
+    if(!dragging)return;
+    dragging=false;
+    try{grip.releasePointerCapture?.(e.pointerId)}catch(_){ }
+  };
+  grip.addEventListener('pointerup',stopDrag);
+  grip.addEventListener('pointercancel',stopDrag);
 
-<div class="deepening" data-after="8-aetio-atel-aseàṣẹ-and-the-threshold-identity"><h2>Visual reference — the threshold as a real symbolic form</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:False_door_of_Khufuankh.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/False_door_of_Khufuankh.jpg?width=720" alt="Ancient Egyptian false door of Khufuankh"><span class="art-copy"><strong>False door of Khufuankh</strong><small>Old Kingdom Egypt · Dynasty 5</small><em>A literal architectural-symbolic threshold: framed, bounded and visually door-like, yet functioning as a passage concept rather than an ordinary opening.</em></span></a></div></div>
-
-<div class="deepening" data-after="9-janus-the-mathematical-core-and-its-proper-boundary"><h2>Visual reference — two faces, one structure</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Janus1.JPG" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Janus1.JPG?width=720" alt="Two-faced head of Janus"><span class="art-copy"><strong>Janus — paired orientation around one head</strong><small>Roman threshold deity · Vatican Museums photograph</small><em>The image captures the conceptual habit JANUS contributed to the later cosmology: opposed views can belong to one shared object rather than two unrelated systems.</em></span></a></div></div>
-
-<div class="deepening" data-after="10-exploration-of-8-the-method-that-disciplined-the-cosmology"><h2>Visual references — finite arrangements, paths and gates</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Sator_Square_Palestra_Pompeii_(CIL_8623_%26_8622a-b).jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sator_Square_Palestra_Pompeii_(CIL_8623_%26_8622a-b).jpg?width=720" alt="Sator Square inscription from Pompeii"><span class="art-copy"><strong>Sator / Rotas square — Pompeii</strong><small>Ancient five-by-five inscription · photographed in 1937</small><em>A compact finite arrangement in which order, reversal and allowed reading paths became part of the Exploration of 8 method.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Kylverstenen_futhark.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Kylverstenen_futhark.jpg?width=720" alt="Elder Futhark sequence on the Kylver stone"><span class="art-copy"><strong>Kylver Elder Futhark sequence</strong><small>Gotland · c. 400 CE</small><em>A historical ordered symbol set: exactly the kind of finite state-space whose sequence, coordinates and transformations drove the bridge method.</em></span></a></div></div>
-
-<div class="deepening" data-after="11-the-three-shell-hypothesis-and-the-archaix-timing-test"><h2>Visual reference — cycles inside cycles</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ferguson_0008_Orrery.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ferguson_0008_Orrery.jpg?width=720" alt="Historical orrery diagram"><span class="art-copy"><strong>Historical orrery</strong><small>James Ferguson · 1794 astronomy plate</small><em>A mechanical visual analogy for the timing problem: several motions can produce repeated encounters and alignments without sharing one simple period.</em></span></a></div></div>
-
-<div class="deepening" data-after="12-fibonacci--ammonite-growth-and-the-395792-near-relation"><h2>Visual reference — growth by successive chambers</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ammonite_section.JPG" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ammonite_section.JPG?width=720" alt="Cross-section of an ammonite shell"><span class="art-copy"><strong>Ammonite cross-section</strong><small>Jurassic fossil · chambered spiral growth</small><em>The image that best expresses the move from a merely rotating shell to a structure that preserves earlier chambers while adding larger successive growth.</em></span></a></div></div>
-
-<div class="deepening" data-after="13-the-mature-braid-the-sky-rolls-into-a-finger-trap-scroll-rod"><h2>Visual reference — the finger-trap mechanism</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Finger_trap_toys.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Finger_trap_toys.jpg?width=720" alt="Braided Chinese finger traps"><span class="art-copy"><strong>Braided finger traps</strong><small>Mechanical analogy · woven tube</small><em>The practical geometry behind the mature braid: one continuous weave trades radius against axial length and can narrow without cutting its strands.</em></span></a></div></div>
-
-<div class="deepening" data-after="14-many-myths-as-different-camera-angles-on-one-event"><h2>Visual references — radically different views of cosmic structure</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:William_Blake_Ezekiel%27s_Vision_ca_1803-5_Boston_Museum.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/William_Blake_Ezekiel%27s_Vision_ca_1803-5_Boston_Museum.jpg?width=720" alt="William Blake's illustration of Ezekiel's vision"><span class="art-copy"><strong>Ezekiel’s eyed wheels and cherubim</strong><small>William Blake · c. 1803–1805 · Museum of Fine Arts Boston</small><em>Wheel, eye, wing, fire and throne imagery rendered as one visionary scene—the mechanical/visual viewpoint represented in the comparison table.</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Vishvarupa_The_Cosmic_Form_of_Krishna.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Museum_-_Vishvarupa_The_Cosmic_Form_of_Krishna.jpg?width=720" alt="Vishvarupa cosmic form of Krishna"><span class="art-copy"><strong>Vishvarupa — Krishna’s cosmic form</strong><small>c. 1820 · Brooklyn Museum</small><em>A very different cultural visualization of hidden totality becoming visible at once: multiplicity, scale and cosmic body compressed into a single image.</em></span></a></div></div>
-
-<div class="deepening" data-after="15-the-32--1-direction-and-old-navigation-lattices"><h2>Visual reference — historical convergence lines</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Carte_Pisane_Portolan.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Carte_Pisane_Portolan.jpg?width=960" alt="Carta Pisana portolan chart with rhumb-line network"><span class="art-copy"><strong>Carta Pisana — portolan network</strong><small>c. 1258–1291 · Bibliothèque nationale de France</small><em>Repeated rhumb-line convergence centres make the old navigation lattice visible as an historical charting convention rather than an abstract reconstruction.</em></span></a></div></div>
-
-<div class="deepening" data-after="16-flat-map-tests-and-the-correction-they-forced"><h2>Visual reference — what a polar projection actually does</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Usgs_map_azimuthal_equidistant.PNG" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Usgs_map_azimuthal_equidistant.PNG?width=960" alt="USGS azimuthal equidistant projection diagram"><span class="art-copy"><strong>Azimuthal-equidistant projection</strong><small>U.S. Geological Survey · projection reference</small><em>The control image for the failed literal flat-map branch: radial relations can look compelling while circumferential distortion grows away from the centre.</em></span></a></div></div>
-
-<div class="deepening" data-after="17-lands-as-rubble-on-a-moving-substrate"><h2>Visual reference — the measured crustal layer</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Tectonic_plates_(2022).svg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tectonic_plates_(2022).svg?width=960" alt="Map of Earth's principal tectonic plates and boundaries"><span class="art-copy"><strong>Earth’s principal tectonic plates</strong><small>Modern plate-boundary map</small><em>The observable crustal system the deeper-lattice proposal must meet: spreading, collision, subduction and transform boundaries are already mapped globally.</em></span></a></div></div>
-
-<div class="deepening" data-after="18-meltology-plasma-heating-and-the-expanded-brick-hypothesis"><h2>Visual reference — real vitrified masonry</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Tap_o_Noth_-_geograph.org.uk_-_129071.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tap_o_Noth_-_geograph.org.uk_-_129071.jpg?width=720" alt="Vitrified wall at Tap o Noth hillfort in Scotland"><span class="art-copy"><strong>Tap o’ Noth vitrified wall</strong><small>Iron Age hillfort · Aberdeenshire, Scotland</small><em>A real archaeological example of stone fortification altered by intense heat—useful as a material comparison for the chapter’s proposed petrography and vitrification tests.</em></span></a></div></div>
-
-<div class="deepening" data-after="19-the-full-integrated-event"><h2>Visual reference — crossing the apparent boundary</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Flammarion.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Flammarion.jpg?width=720" alt="Flammarion engraving showing a traveller reaching through the visible sky"><span class="art-copy"><strong>Flammarion engraving</strong><small>Unknown artist · published 1888</small><em>A later artistic image, not an ancient source, but an unusually clear visual metaphor for the integrated event’s central idea: a stable visible world, a boundary, and a normally hidden structure beyond it.</em></span></a></div></div>
-
-<div class="deepening" data-after="23-compact-statement-of-the-mature-vardath-cosmology"><h2>Visual reference — the visible sky at the end of the reconstruction</h2><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Image_of_aurora_at_night_from_the_ISS_02.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Image_of_aurora_at_night_from_the_ISS_02.jpg?width=960" alt="Aurora over Earth photographed from the International Space Station"><span class="art-copy"><strong>Aurora over Earth from orbit</strong><small>NASA / ISS · 2016</small><em>A real luminous interaction at the atmosphere–space boundary, used here as a closing visual anchor for a research history that began by asking how charged sky phenomena might become remembered as world-scale forms.</em></span></a></div></div>
+  window.addEventListener('resize',()=>{
+    if(!mobile()){
+      backdrop.classList.remove('open');
+      document.body.classList.remove('mobile-cosmology-nav-open');
+      toggle.textContent='☰ Sections';
+    }else if(toc.classList.contains('open')){
+      backdrop.classList.add('open');
+      document.body.classList.add('mobile-cosmology-nav-open');
+      toggle.textContent='✕ Close';
+    }
+  });
+});
+</script>
