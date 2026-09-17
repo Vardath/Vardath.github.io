@@ -1,9 +1,3 @@
-<style>
-/* A legacy assistant paragraph sits immediately after the travelling-fingertrap section in f18.
-   Keep it out of Vardath's narrative even if JavaScript is unavailable; the script below moves it
-   into the Assistant Notes appendix when the page loads. */
-#ark-arc-sky-section + p{display:none}
-</style>
 <section class="late-research-block" id="waterborne-child-v2-section">
 <hr/>
 <h1 id="25-waterborne-child-travelling-fingertrap-v2-result">Waterborne children — the prediction meets the corpus</h1>
@@ -86,16 +80,3 @@
 <p>That is why I now treat the mythologies as different camera positions around one proposed mechanism rather than as copies of one story. Finland and the Baltic-Finnic field preserve the shell/egg and support; Mesopotamia preserves primordial medium, capture and division; Egypt preserves canopy and separated layers; India preserves serpent, waters and axis; Norse myth preserves axis, vehicle and reset; Haudenosaunee preserves vertical transfer into a water world; Māori preserves separation of compressed sky and earth; Revelation preserves an unusually long event sequence. The differences are part of the model: each tradition emphasises what its viewpoint made memorable.</p>
 <p>The source-linked thumbnails attached to the regional subsections are there to keep the comparison tied to real manuscript, monument, codex, carving and historical-art traditions while the textual argument stays here in the Cosmology itself.</p>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
- const ark=document.getElementById('ark-arc-sky-section');
- const section=document.getElementById('waterborne-child-v2-section');
- const assistant=document.querySelector('.assistant-zone');
- if(ark&&assistant){
-   const candidate=ark.nextElementSibling;
-   if(candidate&&candidate.tagName==='P'&&candidate.textContent.trim().toLowerCase().startsWith('assistant note')) assistant.appendChild(candidate);
- }
- if(ark&&section) ark.insertAdjacentElement('afterend',section);
-});
-</script>
