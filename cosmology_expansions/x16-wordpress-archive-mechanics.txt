@@ -1,5 +1,34 @@
+<div class="deepening archive-consolidation" data-after="6-one-phenomenon-many-gods-operator-versus-apparatus">
+<h2 id="archive-gate-roles">Gate roles, scale and closure — distinctions recovered from E270–E278</h2>
+<p>The gate articles sharpened the event grammar by separating roles that earlier versions sometimes collapsed together.</p>
+<div class="cards">
+<div class="card"><h3>Guardian ≠ gate</h3><p>A guardian marks, watches or restricts a threshold. The gate is the changed adjacency itself. Monster, serpent, paired sentry, giant or divine watcher can occupy the guardian role without being the mechanism that opens the boundary.</p></div>
+<div class="card"><h3>Gatekeeper ≠ operator</h3><p>The gatekeeper regulates local passage; the operator belongs to the larger apparatus or event. A traveller can encounter boundary control before ever reaching the figure associated with command.</p></div>
+<div class="card"><h3>Closed and open are two states of one boundary</h3><p>The quiet world does not lack the gate location. The same interface exists in a non-traversable state. Activation changes its function from stable separation to temporary passage, and recovery changes it back.</p></div>
+<div class="card"><h3>Surface threshold ≠ global reset</h3><p>Mountain, cave, well, bridge, mound, river edge and similar landscapes can represent local access. The archive explicitly separates <strong>local crossing → regional activation → multi-node event → global reset</strong>.</p></div>
+<div class="card"><h3>Ascent and descent share one axis</h3><p>The route does not need a different mechanism for each direction. Upward emergence and downward descent can be opposite senses through one changing throat.</p></div>
+<div class="card"><h3>Impossible distance follows changed adjacency</h3><p>Realm travel need not mean extraordinary speed along ordinary geography. If the gate shortens the effective route, sudden arrival is a consequence of topology rather than velocity.</p></div>
+<div class="card"><h3>Return is a timing problem</h3><p>A traveller can come back only while the route remains coupled strongly enough. The mountain, cave or river may remain after closure while the exceptional destination is no longer reachable.</p></div>
+<div class="card"><h3>Mythic memory begins after closure</h3><p>The witness preserves only one viewpoint. Later retelling can convert node to eye, winding strand to serpent, axis to tree or rod, enclosure to ark or egg, and material reset to flood, fire or opened heaven.</p></div>
+</div>
+<p class="equation"><strong>boundary → guardian / gatekeeper → opening → traversal → operator or destination → return window → closure → cultural memory</strong></p>
+</div>
+
+<div class="deepening archive-consolidation" data-after="4-the-axis-atlas-cross-tree-rod-mountain-and-gate">
+<h2 id="archive-research-history-motifs">Two late narrative mirrors kept as research history — Saint Christopher and the beanstalk</h2>
+<p>Two of the WordPress articles deliberately used much later stories, not as ancient evidence, but as exceptionally clean narrative mirrors of mechanisms the model had already developed.</p>
+<h3>Saint Christopher — embodied carrier, river boundary and rod becoming tree</h3>
+<p>In the medieval Christopher legend, the giant carries a child across dangerous water while using a staff for stability; the burden becomes impossibly heavy and is revealed as Christ and the weight/maker of the world; afterward the planted staff becomes a living, fruiting tree. The Vardath interest is the compressed role sequence:</p>
+<p class="equation"><strong>embodied carrier → water boundary → exceptional child / world-weight → portable rod → far bank → planted rod → living tree</strong></p>
+<p>This adds a third carrier class beside enclosed carriers and mounted carriers: the <strong>body itself becomes the vehicle</strong>. It also makes the portable staff a reversible human-scale form of the living axis. The source is medieval hagiography, so it is retained as a research-history analogy, not an independent ancient witness.</p>
+<h3>Jack and the Beanstalk — a temporary living route that must be severed</h3>
+<p>The beanstalk story gives an unusually explicit temporary-gate sequence: seed, sudden vertical growth through the clouds, human ascent, giant-associated upper domain, material transfer downward, pursuit and deliberate severing of the route.</p>
+<p class="equation"><strong>closed separation → living connector → crossing → cargo transfer → dangerous pursuit → connector cut → separation restored</strong></p>
+<p>Its recorded literary history is modern, so the value is mechanical rather than evidential. It demonstrates in story form the distinction between a permanent world-axis and a <strong>transient access state</strong> whose closure is necessary for ordinary separation to return.</p>
+</div>
+
 <div class="deepening archive-consolidation" data-after="9-janus-the-mathematical-core-and-its-proper-boundary">
-<h2>The archive’s numerical distinctions — what survived, what failed, and what must not be merged</h2>
+<h2 id="archive-number-distinctions">The archive’s numerical distinctions — what survived, what failed, and what must not be merged</h2>
 <p>The 453-post archive repeatedly returns to 7, 8, 11, 33 and 137, but the later articles are much stricter about keeping unlike meanings apart.</p>
 <div class="cards">
 <div class="card"><h3>7 and 8</h3><p>Seven is treated symbolically as the completed internal field, the missing/harvested component or the seven nonzero directions inside selected JANUS structures. Eight is the closure or threshold beyond that field. This remains a Vardath symbolic relation unless a specific mathematical construction forces it.</p></div>
@@ -12,7 +41,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="11-the-three-shell-hypothesis-and-the-archaix-timing-test">
-<h2>The shell clock after the full archive — recurrence, strength, reversal and pitch</h2>
+<h2 id="archive-shell-clock">The shell clock after the full archive — recurrence, strength, reversal and pitch</h2>
 <p>The article bank separates several questions that were originally mixed together.</p>
 <div class="projection-grid">
 <div><b>Recurrence</b><span>when a gate condition returns</span></div>
@@ -28,7 +57,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="13-the-mature-braid-the-sky-rolls-into-a-finger-trap-scroll-rod">
-<h2>Radius, thickness, pitch, phase and chirality — the state variables behind the shell picture</h2>
+<h2 id="archive-shell-variables">Radius, thickness, pitch, phase and chirality — the state variables behind the shell picture</h2>
 <p>The archive eventually gave each recurring geometric word a separate job.</p>
 <table><thead><tr><th>variable</th><th>role in the mature model</th></tr></thead><tbody>
 <tr><td><strong>radius</strong></td><td>sets the scale of a particular turn; later turns may be larger without being different universes</td></tr>
@@ -42,7 +71,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="7-serpents-and-the-release-of-waters">
-<h2>Gate cargo and counterflow — the archive’s more detailed transfer model</h2>
+<h2 id="archive-gate-cargo">Gate cargo and counterflow — the archive’s more detailed transfer model</h2>
 <p>Once the gate became a physical transfer state, the articles stopped treating “something crosses” as sufficient. Different cargo has different response times and constraints.</p>
 <table><thead><tr><th>cargo</th><th>Vardath expectation during a gate interval</th></tr></thead><tbody>
 <tr><td>gas / atmosphere</td><td>can respond rapidly to pressure gradients and may move before bulk liquid or rock</td></tr>
@@ -57,7 +86,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="17-lands-as-rubble-on-a-moving-substrate">
-<h2>The surface-reset branch in full — what a deeper moving lattice would have to reproduce</h2>
+<h2 id="archive-surface-reset">The surface-reset branch in full — what a deeper moving lattice would have to reproduce</h2>
 <p>The article bank develops the “surface is cargo” idea beyond coastlines. A successful deeper-driver model would have to account for the same observed system that plate tectonics already describes quantitatively.</p>
 <div class="cards">
 <div class="card"><h3>Compression</h3><p>Mountain belts and thickened crust would be surface responses above regions where deeper flow converges or where transported blocks jam.</p></div>
@@ -73,14 +102,14 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="18-meltology-plasma-heating-and-the-expanded-brick-hypothesis">
-<h2>From heating to cooling — the full material-reset chain</h2>
+<h2 id="archive-material-reset">From heating to cooling — the full material-reset chain</h2>
 <p>The later archive treats vitrification as only one possible stage in a longer materials sequence:</p>
 <p class="equation"><strong>loading / fracture → heating → phase change → melt or glass formation → gas / vesicle development → recrystallisation → cooling → renewed weathering and sedimentation</strong></p>
 <p>That framing matters because “melted-looking” is not a diagnosis. A claimed reset sample would need petrography, chemistry, mineral phases, microstructure and dating that distinguish natural geology, ordinary fire, industrial heat and the proposed event. The article bank keeps ordinary brick expansion and quartz inversion as controls precisely because the measured changes are far smaller than the spectacular scale claimed by fringe Meltology interpretations.</p>
 </div>
 
 <div class="deepening archive-consolidation" data-after="18-meltology-plasma-heating-and-the-expanded-brick-hypothesis">
-<h2>The waking-world biology branch — environmental variables before giants</h2>
+<h2 id="archive-waking-biology">The waking-world biology branch — environmental variables before giants</h2>
 <p>The archive eventually broke the biological hypothesis into separate variables instead of treating “more oxygen” as a complete explanation.</p>
 <div class="projection-grid">
 <div><b>pressure</b><span>changes gas density, breathing conditions and physiology before size is considered</span></div>
@@ -94,7 +123,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="13-the-mature-braid-the-sky-rolls-into-a-finger-trap-scroll-rod">
-<h2>The celestial branch after the archive — motion model first, ontology second</h2>
+<h2 id="archive-celestial">The celestial branch after the archive — motion model first, ontology second</h2>
 <p>The later posts make a useful distinction: the model can ask what organises celestial motion without claiming it already knows what the Sun, Moon and planets physically are.</p>
 <p>The working possibilities remain open: material bodies, luminous structures, plasma phenomena, electromagnetic convergence points, or different classes of object. The more definite Vardath proposal is that their apparent tracks are organised by the broader sky geometry and its slow breathing or phase changes.</p>
 <p>The archive separates several roles:</p>
@@ -110,7 +139,7 @@
 </div>
 
 <div class="deepening archive-consolidation" data-after="5-the-early-enclosure-and-caduceus-model">
-<h2>Retired branches preserved as part of the research history</h2>
+<h2 id="archive-retired-branches">Retired branches preserved as part of the research history</h2>
 <p>The article archive contains several ideas that mattered to the development but are no longer required by the mature cosmology. Keeping them visible prevents the page from rewriting its own history.</p>
 <ul>
 <li><strong>The −113 °C upper-water branch:</strong> an early attempt to make the upper region a very cold ordered water/ice layer. The temperature was exploratory and never physically derived.</li>
