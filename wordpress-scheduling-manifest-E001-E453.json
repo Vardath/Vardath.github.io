@@ -1,0 +1,58 @@
+{
+  "series": "Vardath Cosmology WordPress article bank",
+  "audited_date": "2026-09-18",
+  "status": "scheduling-ready",
+  "article_count": 453,
+  "sequence": {
+    "first": 1,
+    "last": 453,
+    "gaps": [],
+    "canonical_duplicate_numbers": []
+  },
+  "publication_state": {
+    "published_by_audit": false,
+    "scheduled_by_audit": false
+  },
+  "living_archive": "https://vardath.github.io/vardath-cosmology.html",
+  "canonical_sources": [
+    {
+      "from": 1,
+      "to": 261,
+      "path": "wordpress-memory-CHECKPOINT-E342-20260918.md",
+      "section_heading_format": "## Expanded Post E[number] — ..."
+    },
+    {
+      "from": 262,
+      "to": 262,
+      "path": "wordpress_articles/E262.md",
+      "override": true,
+      "reason": "Replaces duplicate-topic E262 preserved in historical E342 checkpoint"
+    },
+    {
+      "from": 263,
+      "to": 342,
+      "path": "wordpress-memory-CHECKPOINT-E342-20260918.md",
+      "section_heading_format": "## Expanded Post E[number] — ..."
+    },
+    {
+      "from": 343,
+      "to": 453,
+      "path_pattern": "wordpress_articles/E{NNN}.md"
+    }
+  ],
+  "noncanonical_sources": [
+    "wordpress%20memory.md",
+    "wordpress-memory.md"
+  ],
+  "required_fields": [
+    "Title",
+    "Categories",
+    "Excerpt",
+    "Final article",
+    "Authoritative living archive",
+    "Research/source boundary"
+  ],
+  "scope": "Cosmology only; Phonetics excluded",
+  "scheduling_order": "numerical unless user explicitly chooses otherwise",
+  "scheduling_dates": null
+}
