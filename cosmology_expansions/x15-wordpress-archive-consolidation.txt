@@ -118,3 +118,31 @@
 <h3>Haudenosaunee — one of the clearest bidirectional transfer sequences</h3>
 <p>Sky World already exists. A local opening allows Sky Woman to descend into a water world below. Animals receive her. Turtle provides support. Earth-diver material moves <strong>upward</strong> from beneath the waters while life has moved <strong>downward</strong> from the Sky World. Land then expands and paired world-shaping forces differentiate it.</p>
 <p class="equation"><strong>upper world → local gate → downward life-transfer → receiving water world → support → upward material-transfer → expanding surface → differentiation</strong></p>
+<h3>Diné — previous world, crisis, narrowing route, emergence and new directional frame</h3>
+<p>The Diné branch is one of the closest narrative analogues to the fingertrap transition. Earlier worlds precede the present one; rising water makes a former world uninhabitable; movement concentrates on a reed-like vertical route; the passage is narrow; the next world opens broad again; sacred mountains then establish the directional frame of the present homeland.</p>
+<p class="equation"><strong>world n−1 → crisis → convergence → narrow axis → emergence → world n → distributed anchors → stability</strong></p>
+<p>The reed belongs to transition geometry; the mountains belong to stable-world geometry. This prevents the project from treating the gate and the settled world as the same structure.</p>
+<h3>Hopi — successive worlds and the remembered small opening</h3>
+<p>The Hopi comparison contributes successive-world emergence and the <strong>sipapu</strong>: a small opening that can preserve the memory of passage from an earlier world into the present one. In the Vardath reading, the significance is scale: a tiny architectural aperture can symbolise a much larger transition without needing to be the physical portal itself.</p>
+<h3>Andean — event becomes geography, then network</h3>
+<p>The larger Andean sequence begins with water and darkness around the Titicaca–Viracocha creation complex, includes an earlier humanity destroyed before a later order, then becomes distributed through <strong>paqarina</strong> origin places, the radial <strong>ceque</strong> network and regional <strong>apus</strong>.</p>
+<p class="equation"><strong>formative water → local creation centre → ordered light → failed earlier world → flood / clearing → successor population → local emergence nodes → radiating lines → regional mountain anchors</strong></p>
+<p>This is especially valuable because it shows how an extraordinary world-transition can end as ordinary sacred geography: the cosmos becomes landscape, the landscape becomes network, and the network becomes culture.</p>
+</div>
+
+<div class="deepening archive-consolidation" data-after="19-the-full-integrated-event">
+<h2 id="archive-event-handoff">The archive’s final refinement: the event is a handoff, not a single catastrophe</h2>
+<p>Across the 453 articles, the model gradually stopped treating reset as one spectacular instant. The mature picture is a <strong>handoff between world states</strong>. The transition has a lead-in, a peak coupling interval and a long recovery.</p>
+<table><thead><tr><th>regime</th><th>what the model now assigns to it</th></tr></thead><tbody>
+<tr><td><strong>Quiet / distributed</strong></td><td>dynamic equilibrium, broad lattice, closed nodes, ordinary circulation, distinct world-turns</td></tr>
+<tr><td><strong>Activation</strong></td><td>growing preferred paths, stronger nodes, increasing coupling, atmospheric or hydraulic precursors in speculative branches</td></tr>
+<tr><td><strong>Convergence</strong></td><td>many directions narrow, local throats strengthen, braid becomes axial/fingertrap-like</td></tr>
+<tr><td><strong>Gate interval</strong></td><td>finite-duration adjacency, capacity-limited counterflow, sorting of gas/water/heat/sediment/debris/life</td></tr>
+<tr><td><strong>Surface response</strong></td><td>flood, wind, heat, darkness, debris movement, changed drainage, deformation and possible local material transformation</td></tr>
+<tr><td><strong>Reopening</strong></td><td>one-to-many geometry returns, coupling drops, nodes close, local directions reappear</td></tr>
+<tr><td><strong>Recovery</strong></td><td>cooling, drainage, settling, sedimentation, ecological and atmospheric re-equilibration</td></tr>
+<tr><td><strong>Successor world</strong></td><td>same broad structural class, different material history; inherited cargo and memory remain</td></tr>
+</tbody></table>
+<p>This is why the model now treats flood, fire, violent wind, darkness, falling material and moving land as potentially different <strong>surface expressions</strong> of one deeper transition rather than requiring every region to remember the same catastrophe. It is also why failure of one speculative branch—giants, upper-water physics, celestial incorporation or a particular chronology—does not automatically remove the geometric core. The strongest internal sequence remains:</p>
+<p class="equation"><strong>quiet lattice → convergence → axial throat → temporary adjacency → transfer → reopening → successor equilibrium</strong></p>
+</div>
