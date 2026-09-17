@@ -476,7 +476,7 @@ The closure pass specifically repaired gaps found after the first consolidation:
 
 ## Navigation audit
 
-The main sidebar intentionally remains H1-only. The new archive material is mostly H2-level deepening inside existing chapters; adding every H2 to the sidebar would make it unwieldy. The first consolidation block now contains a compact internal jump index with stable IDs for the new archive sections.
+The main sidebar remains H1-driven, and the substantive E001–E453 consolidation additions have now been promoted to real H1 website sections so they appear directly in that sidebar. Their internal explanatory headings remain subordinate. The compact consolidation jump index is retained as a secondary shortcut.
 
 ## Placement / duplication audit
 
