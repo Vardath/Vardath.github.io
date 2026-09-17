@@ -5,10 +5,12 @@
 @media (max-width:900px){
   body.mobile-cosmology-nav-open{overflow:hidden}
   .bar{
-    position:sticky !important;
+    position:fixed !important;
+    left:0;
+    right:0;
     top:0;
     z-index:80;
-    width:100%;
+    width:auto;
     min-height:58px;
     padding:8px 10px !important;
     background:rgba(8,10,15,.96) !important;
@@ -17,6 +19,7 @@
     -webkit-backdrop-filter:blur(14px);
     box-shadow:0 8px 24px rgba(0,0,0,.26)
   }
+  .page-frame{padding-top:58px}
   .bar .brand{
     min-height:42px;
     display:flex;
@@ -168,6 +171,7 @@
 }
 @media (max-width:520px){
   .bar{min-height:56px}
+  .page-frame{padding-top:56px}
   .mobile-nav-toggle{min-width:108px;min-height:44px;font-size:.9rem !important}
   .bar #toc{left:6px !important;right:6px !important;top:63px !important;height:var(--mobile-cosmology-nav-height,68vh)}
   .bar #toc a{min-height:52px;font-size:.96rem !important;padding:12px 13px !important}
