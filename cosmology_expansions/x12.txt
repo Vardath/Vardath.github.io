@@ -1,49 +1,66 @@
 <!-- Mobile navigation enhancement for Vardath Cosmology.
-     Desktop sidebar remains unchanged. On <=900px screens the section list becomes
-     a touch-friendly, hideable, vertically resizable navigation sheet. -->
+     Desktop sidebar remains unchanged. On <=900px screens this becomes a fixed,
+     compact two-row header with normal site navigation plus a hideable,
+     touch-friendly, vertically resizable section sheet. -->
 <style>
 @media (max-width:900px){
+  :root{--mobile-cosmology-header-height:108px}
   body.mobile-cosmology-nav-open{overflow:hidden}
+
   .bar{
     position:fixed !important;
-    left:0;
-    right:0;
-    top:0;
-    z-index:80;
-    width:auto;
-    min-height:58px;
+    left:0 !important;
+    right:0 !important;
+    top:0 !important;
+    bottom:auto !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+    z-index:80 !important;
+    display:grid !important;
+    grid-template-columns:auto 1fr auto !important;
+    grid-template-areas:
+      "brand spacer toggle"
+      "links links links" !important;
+    align-items:center !important;
+    gap:6px 8px !important;
     padding:8px 10px !important;
     background:rgba(8,10,15,.96) !important;
+    border:0 !important;
     border-bottom:1px solid #30394f !important;
     backdrop-filter:blur(14px);
     -webkit-backdrop-filter:blur(14px);
     box-shadow:0 8px 24px rgba(0,0,0,.26)
   }
-  .page-frame{padding-top:58px}
+
   .bar .brand{
-    min-height:42px;
-    display:flex;
+    grid-area:brand;
+    display:flex !important;
     align-items:center;
-    padding:0 6px;
-    flex:0 0 auto
+    min-height:42px;
+    margin:0 !important;
+    padding:0 6px !important;
+    white-space:nowrap
   }
-  .bar .links{
-    display:none !important
-  }
+
+  .nav-heading{display:none !important}
+
   .mobile-nav-toggle{
+    grid-area:toggle;
     display:flex !important;
     align-items:center;
     justify-content:center;
     min-width:116px;
     min-height:44px;
-    margin-left:auto !important;
+    margin:0 !important;
     padding:8px 14px !important;
     border:1px solid #46536f !important;
     border-radius:12px !important;
     background:#151c29 !important;
     color:#fff !important;
-    font-size:.92rem !important;
-    font-weight:800;
+    font:800 .92rem/1 Arial,sans-serif !important;
     letter-spacing:.02em;
     touch-action:manipulation;
     -webkit-tap-highlight-color:transparent
@@ -53,29 +70,67 @@
     background:#14212b !important;
     box-shadow:0 0 0 1px rgba(92,225,230,.18) inset
   }
+
+  .bar .links{
+    grid-area:links;
+    display:flex !important;
+    width:100% !important;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:0 1px 2px !important;
+    gap:6px !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none
+  }
+  .bar .links::-webkit-scrollbar{display:none}
+  .bar .links a{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto !important;
+    min-height:36px;
+    padding:7px 10px !important;
+    white-space:nowrap;
+    font-size:.74rem !important;
+    line-height:1 !important;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent
+  }
+
+  .page-frame{
+    margin-left:0 !important;
+    padding-top:var(--mobile-cosmology-header-height) !important
+  }
+
   .bar #toc{
     display:flex !important;
     position:fixed !important;
     left:8px !important;
     right:8px !important;
-    top:66px !important;
+    top:calc(var(--mobile-cosmology-header-height) + 6px) !important;
     bottom:auto !important;
-    z-index:100;
-    max-height:none !important;
-    height:var(--mobile-cosmology-nav-height,62vh);
-    min-height:220px;
+    z-index:100 !important;
+    width:auto !important;
+    height:var(--mobile-cosmology-nav-height,62vh) !important;
+    min-height:200px !important;
+    max-height:calc(100dvh - var(--mobile-cosmology-header-height) - 14px) !important;
     max-width:720px;
-    margin:0 auto;
-    padding:10px 10px 30px !important;
+    margin:0 auto !important;
+    padding:10px 10px 34px !important;
     gap:7px !important;
     overflow-y:auto !important;
+    overflow-x:hidden !important;
     overscroll-behavior:contain;
     -webkit-overflow-scrolling:touch;
     background:rgba(9,13,20,.985) !important;
     border:1px solid #3a4761 !important;
     border-radius:16px !important;
     box-shadow:0 22px 70px rgba(0,0,0,.62) !important;
-    transform:translateY(-18px) scale(.985);
+    transform:translateY(-14px) scale(.985);
     transform-origin:top center;
     opacity:0;
     visibility:hidden;
@@ -91,10 +146,10 @@
     pointer-events:auto
   }
   .bar #toc a{
-    display:flex;
+    display:flex !important;
     align-items:center;
     min-height:50px;
-    flex:0 0 auto;
+    flex:0 0 auto !important;
     padding:11px 13px !important;
     border:1px solid #2e3950 !important;
     border-radius:11px !important;
@@ -112,21 +167,20 @@
     background:#14242d !important;
     box-shadow:0 0 0 1px rgba(92,225,230,.12) inset
   }
-  .bar #toc a:active{
-    transform:scale(.985)
-  }
+  .bar #toc a:active{transform:scale(.985)}
+
   .mobile-cosmology-nav-grip{
     position:sticky;
     left:0;
     right:0;
-    bottom:-30px;
+    bottom:-34px;
     order:9999;
-    flex:0 0 30px;
-    min-height:30px;
-    margin:4px -10px -30px;
+    flex:0 0 34px;
+    min-height:34px;
+    margin:4px -10px -34px;
     border:0;
     border-top:1px solid #2f3a50;
-    background:linear-gradient(to bottom,rgba(16,22,33,.86),#0c1119);
+    background:linear-gradient(to bottom,rgba(16,22,33,.9),#0c1119);
     cursor:ns-resize;
     touch-action:none;
     z-index:4
@@ -146,16 +200,20 @@
     content:"drag to resize";
     position:absolute;
     left:50%;
-    top:15px;
+    top:17px;
     transform:translateX(-50%);
     color:#8994aa;
     font:9px/1 Arial,sans-serif;
     letter-spacing:.05em;
     white-space:nowrap
   }
+
   .mobile-cosmology-nav-backdrop{
     position:fixed;
-    inset:0;
+    left:0;
+    right:0;
+    top:var(--mobile-cosmology-header-height);
+    bottom:0;
     z-index:70;
     background:rgba(2,4,8,.56);
     opacity:0;
@@ -169,13 +227,14 @@
     pointer-events:auto
   }
 }
+
 @media (max-width:520px){
-  .bar{min-height:56px}
-  .page-frame{padding-top:56px}
-  .mobile-nav-toggle{min-width:108px;min-height:44px;font-size:.9rem !important}
-  .bar #toc{left:6px !important;right:6px !important;top:63px !important;height:var(--mobile-cosmology-nav-height,68vh)}
+  .mobile-nav-toggle{min-width:108px;font-size:.9rem !important}
+  .bar .links a{min-height:36px;font-size:.72rem !important;padding:7px 9px !important}
+  .bar #toc{left:6px !important;right:6px !important;height:var(--mobile-cosmology-nav-height,66vh) !important}
   .bar #toc a{min-height:52px;font-size:.96rem !important;padding:12px 13px !important}
 }
+
 @media (prefers-reduced-motion:reduce){
   .bar #toc,.mobile-cosmology-nav-backdrop{transition:none !important}
 }
@@ -187,6 +246,12 @@ document.addEventListener('DOMContentLoaded',()=>{
   const toc=document.getElementById('toc');
   const toggle=document.querySelector('.mobile-nav-toggle');
   if(!bar||!toc||!toggle)return;
+
+  const syncHeaderHeight=()=>{
+    if(!mobile())return;
+    const h=Math.max(58,Math.ceil(bar.getBoundingClientRect().height));
+    document.documentElement.style.setProperty('--mobile-cosmology-header-height',h+'px');
+  };
 
   let backdrop=document.querySelector('.mobile-cosmology-nav-backdrop');
   if(!backdrop){
@@ -212,10 +277,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.body.classList.toggle('mobile-cosmology-nav-open',open&&mobile());
     toggle.setAttribute('aria-expanded',String(open));
     toggle.textContent=open&&mobile()?'✕ Close':'☰ Sections';
+    syncHeaderHeight();
   };
   const close=()=>sync(false);
 
-  // Capture phase prevents the original mobile toggle listener from toggling a second time.
   toggle.addEventListener('click',e=>{
     if(!mobile())return;
     e.preventDefault();
@@ -235,8 +300,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   const resizeFromPointer=e=>{
     if(!dragging||!mobile())return;
     const top=toc.getBoundingClientRect().top;
-    const min=220;
-    const max=Math.max(min,window.innerHeight-top-12);
+    const min=200;
+    const max=Math.max(min,window.innerHeight-top-10);
     const h=Math.max(min,Math.min(max,e.clientY-top));
     document.documentElement.style.setProperty('--mobile-cosmology-nav-height',h+'px');
   };
@@ -255,68 +320,22 @@ document.addEventListener('DOMContentLoaded',()=>{
   grip.addEventListener('pointerup',stopDrag);
   grip.addEventListener('pointercancel',stopDrag);
 
-  window.addEventListener('resize',()=>{
+  const refresh=()=>{
+    syncHeaderHeight();
     if(!mobile()){
       backdrop.classList.remove('open');
       document.body.classList.remove('mobile-cosmology-nav-open');
+      toc.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
       toggle.textContent='☰ Sections';
-    }else if(toc.classList.contains('open')){
-      backdrop.classList.add('open');
-      document.body.classList.add('mobile-cosmology-nav-open');
-      toggle.textContent='✕ Close';
     }
-  });
+  };
+
+  syncHeaderHeight();
+  requestAnimationFrame(syncHeaderHeight);
+  setTimeout(syncHeaderHeight,120);
+  window.addEventListener('resize',refresh);
+  window.addEventListener('orientationchange',()=>setTimeout(syncHeaderHeight,100));
+  if('ResizeObserver' in window)new ResizeObserver(syncHeaderHeight).observe(bar);
 });
 </script>
-<style>
-/* Keep the site's normal page-navigation buttons available in the fixed mobile header. */
-@media (max-width:900px){
-  .bar{
-    display:flex !important;
-    flex-wrap:wrap !important;
-    align-items:center !important;
-    align-content:flex-start !important;
-    gap:6px 8px !important;
-    min-height:104px
-  }
-  .bar .brand{order:1}
-  .mobile-nav-toggle{order:2}
-  .bar .links{
-    order:3;
-    display:flex !important;
-    flex:0 0 100% !important;
-    width:100%;
-    gap:6px !important;
-    margin:0 !important;
-    padding:0 1px 2px !important;
-    flex-wrap:nowrap !important;
-    overflow-x:auto !important;
-    overflow-y:hidden !important;
-    overscroll-behavior-x:contain;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none
-  }
-  .bar .links::-webkit-scrollbar{display:none}
-  .bar .links a{
-    display:flex !important;
-    align-items:center;
-    justify-content:center;
-    flex:0 0 auto;
-    min-height:36px;
-    padding:7px 10px !important;
-    white-space:nowrap;
-    font-size:.74rem !important;
-    line-height:1 !important;
-    touch-action:manipulation;
-    -webkit-tap-highlight-color:transparent
-  }
-  .page-frame{padding-top:108px !important}
-  .bar #toc{top:112px !important;height:var(--mobile-cosmology-nav-height,62vh)}
-}
-@media (max-width:520px){
-  .bar{min-height:104px}
-  .bar .links a{min-height:36px;font-size:.72rem !important;padding:7px 9px !important}
-  .page-frame{padding-top:108px !important}
-  .bar #toc{top:112px !important;height:var(--mobile-cosmology-nav-height,66vh)}
-}
-</style>
