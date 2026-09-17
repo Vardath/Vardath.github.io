@@ -1,0 +1,5 @@
+<section class="archive-divider" id="historical-development-archive-section">
+<hr/>
+<h1 id="historical-development-archive">Historical development and research archive</h1>
+<p>The sections below preserve how the cosmology developed from February 2025 onward: early branches, discarded models, comparative work, tests, corrections and the route by which the present model was reached. The current model and current research are kept above so this archive can be read as development history rather than mistaken for the latest state.</p>
+</section>
