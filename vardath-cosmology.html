@@ -9,6 +9,14 @@ layout: null
 <header class="hero"><figure class="hero-art-wrap"><img class="hero-art" src="fcebc8fa-90e3-4113-bfbe-5d160f44c82d.png" width="1122" height="1402" alt="Visionary Vardath cosmology showing connected layered worlds, a luminous central axis, braided gates, water boundaries and a serpent-like cosmic enclosure"><figcaption>Connected worlds in the current Vardath cosmological view.</figcaption></figure><div class="eyebrow">Historical reconstruction + living research model · February 2025 → September 2026</div><h1>Vardath Cosmology</h1><p>A reconstructed history of an investigation that began with Rainbow Serpent and Squatter-Man plasma imagery, moved through enclosure geometry, world trees, crosses, rods, gods, gates, Aetio, JANUS and Exploration of 8, and only later became the present three-shell / ammonite / finger-trap lattice model.</p><div class="formula">serpent / axis → enclosure / gate → activation / reset → number / lattice → shell / braid → land deformation</div><div class="stats"><div class="stat"><b>Feb 2025</b>earliest recovered branch</div><div class="stat"><b>1 → 3 → 7 → 8</b>threshold/lattice formalization</div><div class="stat"><b>32 + 1</b>surface + axial directions</div><div class="stat"><b>One event · many views</b>myth · map · pictograph · geology</div></div><p class="source-build-note">This is delivered as one rendered page. Research fragments are assembled by GitHub Pages before delivery.</p></header>
 <main id="content" class="content">
 {% include_relative cosmology_fragments/f00-overview.txt %}
+
+{% include_relative cosmology_expansions/x17-current-research-sections.txt %}
+{% include_relative cosmology_fragments/f21.txt %}
+{% include_relative cosmology_fragments/f24-yggdrasil-time-switch-plenum.txt %}
+{% include_relative cosmology_expansions/x13.txt %}
+{% include_relative cosmology_fragments/f22-revelation.txt %}
+
+{% include_relative cosmology_fragments/f26-historical-divider.txt %}
 {% include_relative cosmology_fragments/f01.txt %}
 {% include_relative cosmology_fragments/f02.txt %}
 {% include_relative cosmology_fragments/f03.txt %}
@@ -29,7 +37,8 @@ layout: null
 {% include_relative cosmology_fragments/f18.txt %}
 {% include_relative cosmology_fragments/f19.txt %}
 {% include_relative cosmology_fragments/f20.txt %}
-<div id="deepening-source" aria-label="Research deepening sections">
+
+<div id="deepening-source" aria-label="Historical research deepening sections">
 {% include_relative cosmology_expansions/x01.txt %}
 {% include_relative cosmology_expansions/x02.txt %}
 {% include_relative cosmology_expansions/x03.txt %}
@@ -42,17 +51,14 @@ layout: null
 {% include_relative cosmology_expansions/x10.txt %}
 {% include_relative cosmology_expansions/x11.txt %}
 {% include_relative cosmology_expansions/x12.txt %}
-{% include_relative cosmology_expansions/x13.txt %}
 {% include_relative cosmology_expansions/x14-comparative-mythology-visuals.txt %}
-{% include_relative cosmology_expansions/x15-wordpress-archive-consolidation.txt %}
-{% include_relative cosmology_expansions/x16-wordpress-archive-mechanics.txt %}
 </div>
-{% include_relative cosmology_fragments/f21.txt %}
-{% include_relative cosmology_fragments/f23-water-horse.txt %}
-{% include_relative cosmology_fragments/f22-revelation.txt %}
-{% include_relative cosmology_fragments/f24-yggdrasil-time-switch-plenum.txt %}
+
+{% include_relative cosmology_fragments/f25-working-glossary.txt %}
+
 <section class="assistant-zone">
 {% include_relative cosmology_expansions/assistant-notes.txt %}
+{% include_relative cosmology_expansions/assistant-notes-freemason-alchemy.txt %}
 {% include_relative cosmology_expansions/assistant-notes-waterborne.txt %}
 {% include_relative cosmology_expansions/assistant-notes-mythology.txt %}
 {% include_relative cosmology_expansions/assistant-notes-water-horse.txt %}
@@ -67,8 +73,6 @@ layout: null
 document.addEventListener('DOMContentLoaded',()=>{
  const last=new Map();
  document.querySelectorAll('.deepening[data-after]').forEach(d=>{const id=d.dataset.after,h=document.getElementById(id)||(id==='23-compact-statement-of-the-mature-vardath-cosmology'?document.getElementById('moved-mature-overview-anchor'):null);if(!h)return;const ref=last.get(id)||h;ref.insertAdjacentElement('afterend',d);last.set(id,d)});
- const waterHorse=document.getElementById('water-horse-world-door-section'),mythMatrix=document.getElementById('comparative-mythology-second-pass');
- if(waterHorse&&mythMatrix) mythMatrix.insertAdjacentElement('afterend',waterHorse);
  document.querySelectorAll('.myth-region-visual[data-myth-region]').forEach(v=>{const h=document.getElementById(v.dataset.mythRegion);if(!h)return;let ref=h,n=h.nextElementSibling;while(n&&n.tagName!=='H2'&&n.tagName!=='H1'){ref=n;n=n.nextElementSibling}ref.insertAdjacentElement('afterend',v)});
  const titleFixes=[['14b-comparative-mythology-world-atlas','comparative-mythology-world-atlas','Comparative mythology — the world traditions beside the Vardath mechanism'],['14c-revelation-as-an-event-sequence','revelation-as-an-event-sequence','Revelation — the full event sequence beside the Vardath mechanism']];
  titleFixes.forEach(([oldId,newId,title])=>{const h=document.getElementById(oldId);if(h){h.id=newId;h.textContent=title}});
