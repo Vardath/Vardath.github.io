@@ -233,8 +233,11 @@ The full current chapter list is authoritative in:
 Current writing state:
 - Chapter 53 — **Anthony Peratt and the Primordial Current** — drafted and saved
 - Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim** — drafted and saved
+- Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat** — drafted and saved
+- Chapter 56 — **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal** — drafted and saved
+- Chapter 57 — **Indra and Vritra: Serpent, Thunderbolt and Released Waters** — drafted and saved
 
 Continue next at:
-- Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat**
+- Chapter 58 — **Meru and the Churning of the Cosmic Ocean**
 
 Appendices now follow Chapter 88 rather than Chapter 52.
