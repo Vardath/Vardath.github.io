@@ -66,13 +66,7 @@ That is the current picture.
 
 This book is my attempt to explain it as one connected cosmology rather than hundreds of separate notes, posts, comparisons and discoveries.
 
-The book is not about my number research.
-
-It is not about phonetics.
-
-It is not a collection of test reports.
-
-Those things belong to other branches of my work. They helped shape some of my thinking, but they are not the subject here.
+Other branches of my work developed alongside this one, but they are not the subject here.
 
 Here I want to stay with the world itself.
 
