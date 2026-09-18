@@ -62,7 +62,7 @@ A clear tour of the current integrated picture: quiet world, world-disc, lattice
 The Rainbow Serpent as my earliest useful intuition: a moving line, current and land-shaping form.
 
 ## Chapter 2 — The Figure in the Current
-Squatter Man, plasma-like morphology, anthropomorphic projection and the discovery that viewpoint can turn one structure into figure, eye, wheel, cross, tree or radiant being.
+Squatter Man, Anthony Peratt's high-current plasma/Z-pinch morphology, Birkeland-current filamentation, anthropomorphic projection and the idea that the ancient sky figure may be a reduced later pulse of the same primordial fire that formed the world structure.
 
 ## Chapter 3 — The First World-Machine
 The early enclosure, world-floor, upper region, central axis, paired channels and the moment the separate symbols first became architecture.
@@ -84,7 +84,7 @@ Previous, present and next as neighbouring stages of one continuing world-body.
 The possibility that each inhabited world is a flat disc-like plane with depth, bounded and supported by a woven lattice dome, while the total world-tree/shell system grows through multiple levels or turns.
 
 ## Chapter 8 — The Current Beneath the World
-The persistent primordial current: quiet state, waking state and the idea that later events reactivate the same inherited world-forming pathways.
+The persistent primordial Birkeland-like current: Peratt as the physical morphology bridge, the first vast fire, Fibonacci-like expansion of successive worlds, matter forming/organising around the current, accumulated matter damping later pulses, and Squatter Man/Meru as a reduced descendant of the original world-forming event.
 
 ## Chapter 9 — The Broad Lattice
 The distributed woven field, crossings, nodes and supporting vault of the quiet world.
