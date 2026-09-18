@@ -84,8 +84,8 @@
 52. What I Am Still Exploring
 
 # Part IX — Ancient Cosmologies and Sacred Worlds
-53. Tiamat and the World Made From an Older Body
-54. Atrahasis, Utnapishtim and the Flood Carrier
+53. Anthony Peratt and the Primordial Current
+54. Mesopotamia: Tiamat, Atrahasis and Utnapishtim
 55. Egypt: Nun, the First Mound and the Road Through the Duat
 56. Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal
 57. Indra and Vritra: Serpent, Thunderbolt and Released Waters
