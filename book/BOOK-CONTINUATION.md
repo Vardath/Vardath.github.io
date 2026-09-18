@@ -136,3 +136,14 @@ Completed and saved:
 - Chapter 20 — `book/chapters/20-water.md`
 
 The recurring-natural-time-door thesis is now explicit in the Preface, Introduction, convergence/gate chapters and Part VII architecture.
+
+
+## Part IV completed
+
+Completed and saved:
+- Chapter 21 — `book/chapters/21-air-vapour-heat-and-pressure.md`
+- Chapter 22 — `book/chapters/22-stone-crust-and-sediment.md`
+- Chapter 23 — `book/chapters/23-living-cargo.md`
+- Chapter 24 — `book/chapters/24-the-enclosure-principle.md`
+- Chapter 25 — `book/chapters/25-carrier-and-vehicle.md`
+- Chapter 26 — `book/chapters/26-the-handoff.md`
