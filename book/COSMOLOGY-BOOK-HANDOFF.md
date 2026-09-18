@@ -411,10 +411,12 @@ The 88-chapter list is already written in `book/outline.md`.
 - Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat**
 - Chapter 56 — **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal**
 - Chapter 57 — **Indra and Vritra: Serpent, Thunderbolt and Released Waters**
+- Chapter 58 — **Meru and the Churning of the Cosmic Ocean**
+- Chapter 59 — **Buddhist and Jain Layered Worlds**
 
 Continue sequentially at:
 
-**Chapter 58 — Meru and the Churning of the Cosmic Ocean**
+**Chapter 60 — Greek Succession: Uranus, Cronus and Zeus**
 
 Chapter 53 is the only dedicated plasma/Peratt extra chapter. Chapters 54–88 return to mythology, religion, cosmology, legend, fairy tale and modern-story comparison.
 
