@@ -246,11 +246,11 @@ The remaining possibilities, unresolved relationships and branches that may yet 
 
 # Part IX — Ancient Cosmologies and Sacred Worlds
 
-## Chapter 53 — Tiamat and the World Made From an Older Body
-Mesopotamian primordial water, Tiamat, Marduk, division and the striking idea that the material of an older world becomes the architecture of a newer one.
+## Chapter 53 — Anthony Peratt and the Primordial Current
+The one physics-focused chapter in the 53–88 expansion: Peratt's Birkeland-current, Z-pinch and ancient-sky work; Squatter Man; and Vardath's larger extension into a primordial world-forming current, later damped pulses, Meru, Meltology and the still-open connection to the time door.
 
-## Chapter 54 — Atrahasis, Utnapishtim and the Flood Carrier
-Mesopotamian flood traditions, warning, enclosure, survival, landing and continuity after a world-level water catastrophe.
+## Chapter 54 — Mesopotamia: Tiamat, Atrahasis and Utnapishtim
+Tiamat and Marduk as old-body/reorganisation imagery together with the Mesopotamian flood-carrier traditions: primordial water, inherited world material, warning, enclosure, survival, landing and living continuity into the renewed world.
 
 ## Chapter 55 — Egypt: Nun, the First Mound and the Road Through the Duat
 Primeval water, first land, Nut and Geb, maintained separation, the solar barque, the lower route and return.
