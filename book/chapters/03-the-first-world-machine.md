@@ -18,11 +18,11 @@ For the first time, the separate symbolic pieces were placed inside one complete
 
 I think of this period as the construction of the **first world-machine**.
 
-It was crude compared with the current model.
+It was simpler than the current model.
 
-Several parts of it would later be rejected.
+As the project grew, several parts changed role, scale or relationship.
 
-But almost every important component of the mature cosmology appeared there in some early form.
+Almost every important component of the later cosmology was already there in some early form.
 
 ## The December enclosure
 
@@ -141,19 +141,15 @@ The world no longer contained one isolated current.
 
 It contained a **central axis with winding paths around it**.
 
-At the time, many identifications were explored too quickly.
-
-The open ends of the channels were considered as possible Sun and Moon positions.
+At the time, the open ends of the channels were explored as possible Sun and Moon positions.
 
 Later, the Moon was explored as a possible projector of stars.
 
 Planets were considered as plasma formations inside the enclosure.
 
-Those celestial assignments are not required by the mature model.
+I still keep those possibilities in the wider cosmology. I do not need to force one of them into the final answer yet. They can sit beside the later idea that the sky itself is part of the lattice structure and may have different behaviours in quiet and waking phases.
 
-They remain research history.
-
-What survived was the geometry.
+The geometry is what joins those possibilities together.
 
 A central axis.
 
@@ -167,9 +163,9 @@ An inhabited lower region.
 
 That is already remarkably close to the later braid, even though the mechanics were not yet worked out.
 
-## Why the Sun/Moon branch failed to mature
+## The Sun, Moon and the open celestial branch
 
-The early celestial interpretation was visually satisfying.
+The early celestial interpretation remains one of the places where I prefer to keep several possibilities alive.
 
 Two channels.
 
@@ -177,35 +173,29 @@ Two bright endpoints.
 
 Sun and Moon.
 
-The problem is that the real sky is not a symbolic diagram.
+The Moon as a possible projector or organising body.
 
-The Sun and Moon have constrained, measurable motions.
+Planets as material or energetic concentrations inside the larger enclosure.
 
-The Moon has phases.
+Later, the sky itself became part of the lattice and the possibilities expanded again.
 
-Eclipses have geometry.
+I do not need to choose between those pictures yet.
 
-Observers at different latitudes see different tracks.
+They may represent different states, different scales, different viewpoints, or pieces of the same larger celestial structure.
 
-Stars maintain relationships that cannot be explained by a loose projector story.
+What matters for the book is that the sky belongs to the machine.
 
-Planets have their own measured behaviours.
+The Sun, Moon, planets and stars are not just decorative lights beyond the world in this cosmology. Their paths, appearances and relationships may be organised by the same larger structure that supports the world, wakes during the active phase and gathers toward the axis.
 
-The caduceus sky branch never developed equations capable of reproducing those observations.
+That lets the old caduceus picture remain useful.
 
-That failure produced one of the project’s best rules:
+Its endpoints may still matter.
 
-> **the sky has to compute**
+Its paired channels may still matter.
 
-A celestial model does not become better because it produces a beautiful image.
+Its relation to the rod may still matter.
 
-It has to reproduce the actual sky.
-
-The present book therefore keeps the physical identity of Sun, Moon and planets open.
-
-The model can still ask whether a larger lattice organises paths.
-
-It cannot simply decide what each celestial body is because a mythic or geometric association is attractive.
+Later chapters can explore how those pieces might connect to the breathing sky without forcing one interpretation to erase another.
 
 ## The cold upper region
 
@@ -213,19 +203,11 @@ The old enclosure also explored an extremely cold upper water or ice region.
 
 A working temperature around −113 °C appeared in one branch.
 
-The number did not survive as a derived value.
-
-The architecture itself changed.
-
-But the problem that produced the number survived:
+I do not need that one value to define the whole upper region, but the branch opened a larger question that remains important:
 
 **if water exists above the inhabited region, what state is it in and what supports it?**
 
-A picture can suspend an ocean easily.
-
-Physics cannot.
-
-The upper-water branch immediately inherits questions of:
+A suspended or supported upper water immediately raises questions of:
 
 - mass;
 - pressure;
@@ -235,39 +217,37 @@ The upper-water branch immediately inherits questions of:
 - stability;
 - energy.
 
-The mature model later reinterprets the upper water not as an arbitrary ceiling but as a possible lower watery boundary of the next world-turn.
+The later model adds another possibility: the upper water may also be the lower watery boundary of the next world-turn.
 
-That is conceptually cleaner.
+That does not replace the older canopy image. It gives it another side.
 
-It does not solve the physical burden.
+The same region can be canopy from below, floor or lower boundary from above, and part of the lattice-dome structure that separates neighbouring worlds.
 
-The problem survives because the question was real even if the early answer was not.
+## Gravity, pressure and support
 
-## The outward-gravity branch
+The enclosed-world picture also made me wonder whether what we call weight might involve more than one kind of support or directional force inside the world-machine.
 
-Gravity was another place where the room model outran its equations.
+That opened several possibilities:
 
-If the world is imagined inside an enclosure, ordinary gravitational language can feel visually strange.
+outward pressure;
 
-An early branch explored outward pressure, buoyancy-like mechanisms and changes in apparent weight with height.
+buoyancy-like effects;
 
-That branch was abandoned.
+changes in apparent weight with height;
 
-The reason is straightforward.
+local gravitational behaviour inside a larger lattice-supported world;
 
-A replacement theory of gravity would have to reproduce an enormous body of measurement:
+and interactions between ordinary weight, pressure and the deeper current.
 
-free fall, altitude dependence, latitude dependence, tides, orbital motion, geodesy and much more.
+I do not treat those possibilities as mutually exclusive.
 
-The old enclosure did not do that.
+The flat world-disc and lattice-dome picture makes the question even more interesting because support can operate at several levels at once.
 
-The mature model therefore does not require ordinary local gravity to be replaced.
+The lived surface can have its familiar downward behaviour while the larger dome, boundary and world-tree structure may be held by different forces.
 
-If deeper lattice forces exist, they have to coexist with what is already measured.
+That means local gravity and larger lattice support do not have to be the same mechanism.
 
-That change is important because it shows the model becoming more conservative where it has to.
-
-An unusual world architecture does not grant permission to ignore ordinary measurement.
+The branch remains open as part of the question of how a world-disc, its water, its atmosphere and its upper boundary are held in their quiet configuration.
 
 ## The early canopy
 
@@ -338,17 +318,17 @@ The translation is approximately:
 | paired plasma serpents | counter-wound braid strands |
 | flooded upper region | boundary relation to neighbouring upper turn |
 | canopy collapse | active boundary reorganisation |
-| Sun/Moon tube ends | historical branch, not required |
-| Moon projector | retired historical branch |
-| unusual gravity | retired historical branch |
+| Sun/Moon tube ends | possible celestial endpoints or nodes within the larger sky structure |
+| Moon projector | open celestial possibility within the wider sky branch |
+| unusual gravity / pressure | open support branch alongside lattice-dome and local weight behaviour |
 
-This is why I do not regard the enclosure phase as a discarded cosmology.
+This is why I do not regard the enclosure phase as something left behind.
 
-It is an **ancestor model**.
+It is an **ancestor model** and still one view of the larger structure.
 
 It supplied parts.
 
-Later mechanics reassigned them.
+Later ideas connected those parts to more scales and more states.
 
 ## The apparatus emerges
 
@@ -500,9 +480,9 @@ The upper region could be a neighbouring turn.
 
 The catastrophe could be the interval of changed adjacency.
 
-The first world-machine had been too literal.
+The first world-machine was the first literal picture of something that later grew far beyond the original room.
 
-But its parts were pointing toward the right kind of question:
+Its parts were already asking the central question:
 
 > **What architecture could remain stable most of the time and yet transform itself into a temporary route between worlds?**
 
