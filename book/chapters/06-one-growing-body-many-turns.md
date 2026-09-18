@@ -14,17 +14,19 @@ What comes next is already forming.
 
 The present is therefore not a single isolated platform floating in emptiness. It is the currently inhabited region of a structure that has grown through earlier states and is continuing into later ones.
 
-This is the point where the old image of stacked worlds stopped being enough for me.
+This is the point where the old image of stacked worlds began to connect with the idea of a growing body.
 
-A stack is too dead.
+The stack still matters.
 
-A stack has separate floors placed one above another.
+From inside a local vertical section, neighbouring worlds may genuinely look like levels or floors one above another.
 
-A growing body is different.
+The growth picture adds another dimension: those levels may also develop from a continuous structure already there.
 
-Its parts are related because each one develops from the structure already there.
+So I keep both images.
 
-That is much closer to what I mean.
+The stack describes the local sequence.
+
+The growing body describes the larger relationship among the levels.
 
 ## Previous, present and next
 
@@ -158,9 +160,7 @@ The previous world matters because the cosmology is built on inheritance.
 
 If the old world vanished completely, there would be nothing structural to inherit from it except memory.
 
-That is not the picture I use.
-
-The previous turn remains part of the larger body.
+The picture I use most often keeps the previous turn as part of the larger body.
 
 It becomes the deeper history of the system.
 
@@ -202,11 +202,11 @@ It can represent movement into the inherited layers of the world-body.
 
 The next world matters just as much.
 
-If the new world appeared only after the old one had been destroyed, the whole system would need to create a complete environment instantly.
+One possibility is that the new world appears only after the old arrangement has been transformed.
 
-That makes less sense to me than continuous growth.
+Another, which connects strongly with the growing-body picture, is that the next turn is already developing while the present world remains inhabited.
 
-In Vardath Cosmology, the next turn is already developing while the present world remains inhabited.
+I keep the second possibility central because it gives the gate a receiving world that already exists, without requiring the first possibility to be impossible.
 
 It does not yet need to be habitable in the way our current surface is habitable.
 
@@ -222,7 +222,7 @@ It can become increasingly coherent.
 
 Then, when the gate interval comes, the next turn is already there to receive inheritance.
 
-That is one of the strongest reasons I no longer think of world renewal as creation from nothing.
+That is one of the strongest reasons I often picture world renewal as inheritance into something already forming rather than creation from nothing.
 
 The receiver exists before the handoff.
 
