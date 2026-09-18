@@ -4,121 +4,113 @@
 **Author/project owner:** Stephen Michael Hawton / Vardath  
 **Repository:** `Vardath/Vardath.github.io`
 
-## Current user instruction — OVERRIDES THE EARLIER BOOK SCOPE
+## Current instruction — authoritative
 
-Write Vardath Cosmology as a real long-form book in Vardath/Stephen's voice.
+Write Vardath Cosmology as a substantial real book in Vardath/Stephen's voice.
 
-The book must **not** be a copy-and-paste compilation of the website or WordPress series.
+Do not copy and paste the website or WordPress archive. Use them as the research reservoir and rewrite the cosmology as continuous book prose.
 
-The following are OUT OF SCOPE for this book:
+## Governing philosophy — CRITICAL
+
+Stephen's method is:
+
+**explore → find the strongest similarities → connect → integrate → keep exploring.**
+
+Do NOT frame the cosmology as:
+- correct model versus failed model;
+- conventional explanation defeating Vardath explanation;
+- old idea rejected by new idea;
+- test result used to argue an idea away.
+
+Everything remains a **maybe** unless Stephen explicitly fixes it otherwise.
+
+When different pictures seem inconsistent, first explore whether they belong to different:
+- scales;
+- phases;
+- viewpoints;
+- layers;
+- local/global states;
+- parts of one apparatus.
+
+Use open language:
+- may be;
+- could be;
+- perhaps;
+- I think;
+- I see;
+- this fits with;
+- this may connect to;
+- this can be another view of.
+
+Uncertainty is not dismissal.
+
+## Core components that must NOT be argued away
+
+### Flat Earth / world-disc
+An inhabited world-turn may be a flat disc-like Earth/world with real depth and material thickness.
+
+### Lattice dome
+A flat inhabited world may be bounded and/or supported by a woven lattice dome or vault. The quiet dome/lattice can be the broad state of the same structure that later contracts toward a rod/throat.
+
+### Larger shell / world-tree growth
+The total system can still grow through turns, chambers or levels in an ammonite/world-tree/fingertrap-like architecture. The large-scale shell idea and local flat-disc worlds may coexist.
+
+### Meltology
+Meltology is a core part of the reset/material branch. It may represent surface material transformed by intense electrical/plasma/thermal conditions: glazing, fusion, foaming, vitrification, recrystallisation, distorted or enlarged masonry, mountain-like former structures, buried Old World architecture and related forms.
+
+Do not reduce Meltology to a footnote, test case or idea to be dismissed.
+
+### Moving lands
+Continents, regions, cities or structures may be shifted, bent, buried, raised, lowered or moved between world levels/times during major transition. Integrate this with the lattice, flood, sediment and Meltology branches.
+
+## Out of scope for this book
+
 - JANUS / number research;
-- numerology and number-pattern material;
+- numerology and number-pattern research;
 - phonetics;
 - test runs, corpus tests, prediction tests and test logs;
 - assistant commentary;
-- methodological audit sections that interrupt the cosmology.
+- methodological audit prose.
 
-Ordinary descriptive quantities can appear where the cosmology genuinely needs them, but do not turn them into number research.
+The cosmological ideas discovered during those activities may remain, but the testing machinery does not belong in the book.
 
-The book may preserve development history where it helps explain how the current cosmology formed, but it should tell that history as narrative, not as a research log.
+## Canonical sources
 
-## Canonical research sources
+Repository: `Vardath/Vardath.github.io`
 
-Primary live cosmology source:
-- `vardath-cosmology.html`
-- remember that it is an assembly wrapper;
-- full page content is assembled from `cosmology_fragments/` and `cosmology_expansions/`.
+Use:
+- `vardath-cosmology.html` plus all assembled `cosmology_fragments/` and `cosmology_expansions/`;
+- `wordpress-memory-CHECKPOINT-E342-20260918.md`;
+- `wordpress-memory-CONTINUATION-E343-ONWARD.md`;
+- later `wordpress_articles/` and continuation material.
 
-Primary WordPress/research reservoir:
-- `wordpress-memory-CHECKPOINT-E342-20260918.md`
-- `wordpress-memory-CONTINUATION-E343-ONWARD.md`
-- later continuation material where applicable.
+The GitHub archive is more complete than the old local WordPress memory.
 
-The GitHub WordPress archive is more complete than the older local copy and should be preferred.
+Important: older website/WordPress passages that dismiss flat-disc geometry or treat Meltology primarily as a falsification exercise are **historical snapshots**, not instructions for the book. Stephen's current clarification overrides that framing.
 
-## Book architecture
+## Current book architecture
 
-The revised book design is saved in:
+See:
 - `book/outline.md`
 - `book/VARDATH-COSMOLOGY-BOOK.md`
 
-Current structure:
-1. Finding the Hidden Shape
-2. The Living World Structure
-3. The Gate
-4. What Crosses
-5. Mythology as Camera Angles
-6. Land, Sky and the Waking Environment
-7. Time, World Succession and the Moving Door
-8. The Current Vardath Cosmology
-9. Appendices: glossary, readable research chronology, motif/role atlas, source boundaries, index
+The current outline has 52 chapters and explicitly includes:
+- Chapter 7 — **The World-Disc and the Lattice Dome**
+- Chapter 40 — **Meltology: The Material Memory of Reset**
 
-There is deliberately no JANUS/numbers part, no phonetics part and no test-report part.
+## Completed drafts
 
-## Manuscript voice
+- Preface
+- Introduction
+- Chapters 1–6
 
-Write in first person as Vardath/Stephen when explaining:
-- what I think;
-- how I came to an idea;
-- what changed in my model;
-- what the current cosmology proposes;
-- what I am uncertain about.
+Chapter 6 has already been revised so the inhabited world may be a flat disc supported by a lattice dome while the total system retains the larger shell/world-tree growth architecture.
 
-Do not write the main book in assistant voice.
+## Next work
 
-Do not flatten mythologies into one universal religion. Compare:
-- role;
-- relation;
-- sequence;
-- viewpoint;
-- state of the world-machine.
+Before drafting Chapter 7:
+1. clean remaining dismissive “failed/wrong/rejected” language from the existing chapters;
+2. preserve useful earlier interpretations by showing how they were absorbed or re-scaled;
+3. then draft Chapter 7 positively, from inside the cosmology.
 
-Keep speculation visible as speculation without constantly derailing the prose into audit language.
-
-## Completed manuscript files
-
-Front matter:
-- `book/chapters/00-preface.md` — revised to cosmology-only scope
-- `book/chapters/00-introduction.md` — revised to remove number/test material
-
-Part I:
-- `book/chapters/01-the-serpent-and-the-question.md` — drafted
-- `book/chapters/02-the-figure-in-the-current.md` — drafted
-- `book/chapters/03-the-first-world-machine.md` — drafted and cleaned of number/JANUS references
-- `book/chapters/04-one-phenomenon-many-gods.md` — drafted
-- `book/chapters/05-what-the-early-world-machine-was-trying-to-become.md` — drafted
-
-Part II:
-- `book/chapters/06-one-growing-body-many-turns.md` — drafted
-
-Next chapter:
-- Chapter 7 — **The Current Beneath the World**
-
-## Current writing direction
-
-Continue directly from Chapter 7 rather than restarting.
-
-The next sequence should build the mechanics in reader order:
-- persistent current;
-- broad lattice;
-- counter-wound braid;
-- world boundary;
-- quiet/waking state;
-- activation;
-- convergence;
-- fingertrap;
-- mesh → ladder → rod → throat;
-- gate as changed adjacency;
-- local/global throats;
-- two-way transfer;
-- reopening.
-
-Then move into material inheritance and comparative mythology.
-
-## Important continuity note
-
-Earlier versions of this continuation file described a book containing JANUS mathematics, number research, tests and detailed methodological sections. That scope is now superseded.
-
-The current book is **the cosmology itself**.
-
-Use the research archive to understand and enrich the cosmology, not to reproduce the archive's structure.
+Continue in batches and commit each substantial batch to GitHub.
