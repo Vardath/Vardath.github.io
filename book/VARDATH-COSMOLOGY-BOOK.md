@@ -94,12 +94,11 @@ E. Index
 
 ## Current manuscript files
 
-- Preface — drafted and aligned to explore-and-integrate method
-- Introduction — drafted
-- Chapters 1–6 — drafted and being cleaned of adversarial/failed-branch framing
-- Chapter 7 — drafted: **The World-Disc and the Lattice Dome**
-- Chapter 8 — drafted: **The Current Beneath the World**
-- Chapter 9 — drafted: **The Broad Lattice**
-- Chapter 10 — next: **Two Directions in One Braid**
+- Preface and Introduction — drafted
+- Chapters 1–42 — drafted
+- Chapter 2 — expanded with Anthony Peratt, Z-pinch/Birkeland-current morphology and Squatter-Man scale
+- Chapter 8 — expanded with the primordial fire, Fibonacci-like world growth, matter-enclosure and pulse-damping thesis
+- Chapter 43 — next: **The Waking Atmosphere**
+- Chapter 44 — next: **Life Under Different Conditions**
 
 The chapter files under `book/chapters/` are the canonical working manuscript during drafting.
