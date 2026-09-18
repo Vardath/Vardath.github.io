@@ -123,3 +123,16 @@ Then proceed into the Gate section.
 Continue cleaning any remaining adversarial “failed/wrong/rejected” wording when encountered. Do not stop the writing process to perform tests or audits.
 
 Continue in batches and commit each substantial batch to GitHub.
+
+
+## Latest completed batch
+
+Completed and saved:
+- Chapter 15 — `book/chapters/15-mesh-ladder-rod-and-throat.md`
+- Chapter 16 — `book/chapters/16-the-gate-is-a-change-in-adjacency.md`
+- Chapter 17 — `book/chapters/17-many-throats-not-one-pole.md`
+- Chapter 18 — `book/chapters/18-two-way-transfer.md`
+- Chapter 19 — `book/chapters/19-reopening.md`
+- Chapter 20 — `book/chapters/20-water.md`
+
+The recurring-natural-time-door thesis is now explicit in the Preface, Introduction, convergence/gate chapters and Part VII architecture.
