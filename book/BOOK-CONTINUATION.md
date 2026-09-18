@@ -207,7 +207,7 @@ Important: do not reintroduce JANUS/number research, phonetics or test logs duri
 
 ## 88-chapter expansion — 2026-09-19
 
-Stephen requested that the main book grow from 52 to exactly **88 chapters** by examining additional mythologies, religions, fables, fairy tales and stories through the same Vardath role/viewpoint method.
+Stephen requested that the main book grow from 52 to exactly **88 chapters**. Chapter 53 is the single physics-focused extra chapter, devoted to Anthony Peratt / Birkeland-current / Z-pinch material and Stephen's primordial-current extension. Chapters 54–88 then examine mythologies, religions, cosmologies, legends, fables, fairy tales, modern stories and films through the Vardath role/viewpoint method.
 
 This is now the active plan.
 
@@ -230,7 +230,11 @@ The full current chapter list is authoritative in:
 - `book/outline.md`
 - `book/VARDATH-COSMOLOGY-BOOK.md`
 
-Next writing begins at:
-- Chapter 53 — **Tiamat and the World Made From an Older Body**
+Current writing state:
+- Chapter 53 — **Anthony Peratt and the Primordial Current** — drafted and saved
+- Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim** — drafted and saved
+
+Continue next at:
+- Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat**
 
 Appendices now follow Chapter 88 rather than Chapter 52.
