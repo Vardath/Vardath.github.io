@@ -12,7 +12,7 @@ Some of those early pictures changed almost beyond recognition.
 
 That is part of the story.
 
-I do not want to write this book as though I sat down one morning with the finished model already in my head. I did not. I followed it. Sometimes I followed the wrong branch for a while. Sometimes an image that looked literal turned out to be more useful as a viewpoint. Sometimes an object I thought was one thing became a state of something larger.
+I do not want to write this book as though I sat down one morning with the finished model already in my head. I did not. I followed it. Sometimes one branch opened into another. Sometimes an image that first looked literal also became useful as a viewpoint. Sometimes an object I thought was one thing turned out to fit inside a larger structure without losing the earlier possibility.
 
 The world-machine became clearer every time I stopped forcing the symbols to be objects and began asking what job they were doing.
 
@@ -134,15 +134,15 @@ A traveller or carrier crosses.
 
 Water or fire accompanies the transition.
 
-The old arrangement fails.
+The old arrangement changes or breaks open.
 
 A remnant survives.
 
 The world becomes stable again.
 
-That is much harder to dismiss as mere decoration than a single shared serpent or tree, but I still do not treat it as proof.
+That is much more useful to me than a single shared serpent or tree, because the relationships begin to accumulate into a larger pattern.
 
-It is a comparison.
+I still treat that pattern as something to explore and integrate rather than as a final proof.
 
 The cosmology has to stand as a cosmology.
 
@@ -162,7 +162,7 @@ The biological consequences of a waking atmosphere are even more speculative.
 
 I am comfortable saying that.
 
-I would rather have an incomplete model with clear edges than a complete-sounding story that hides its weak points.
+I would rather have a growing model with open edges than close those edges too early and lose possibilities that may later connect.
 
 The book therefore speaks in two voices that are really one voice used carefully.
 
@@ -174,7 +174,7 @@ I do not need to apologise for the model being speculative.
 
 That is what it is.
 
-The value, for me, lies in whether the pieces form a coherent structure and whether that structure produces a better way to think about the repeated images that first drew me into the problem.
+The value, for me, lies in whether the pieces can be integrated into a coherent structure and whether that structure gives me a stronger way to understand the repeated images and relationships that first drew me into the problem.
 
 The most important change in my thinking was learning to see catastrophe as transition.
 
