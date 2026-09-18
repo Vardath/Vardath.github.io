@@ -181,11 +181,11 @@ A return to the central idea: catastrophe as handoff, continuity through transit
 - [x] Source archive fully read before manuscript drafting.
 - [x] Current live Cosmology page fully read before manuscript drafting.
 - [x] Book workspace created.
-- [ ] Preface
-- [ ] Introduction
-- [ ] Chapter 1
-- [ ] Chapter 2
-- [ ] Chapter 3
+- [x] Preface
+- [x] Introduction
+- [x] Chapter 1
+- [x] Chapter 2
+- [x] Chapter 3
 - [ ] Remaining chapters
 
 This outline is expected to evolve as full chapters expose duplication or better chapter boundaries.
