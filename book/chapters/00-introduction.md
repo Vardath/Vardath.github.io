@@ -10,7 +10,17 @@ Land is land. Oceans have coastlines. The atmosphere circulates. The sky is broa
 
 That is where Vardath Cosmology begins.
 
-I call this the **quiet world**.
+At the centre of the model is one further idea that runs through this entire book: **the great gate is a natural door through time**.
+
+I do not picture history as containing hundreds of unrelated supernatural portals. I picture one class of natural world-event recurring at different times. When the larger structure enters the gate-state, normally separated world-states can become temporarily adjacent. People living in different ages encounter the same underlying event from different places, cultures and stages of the cycle.
+
+That is why the record is scattered.
+
+One age remembers a world tree. Another remembers a fairy road, hollow hill or impossible journey. Another remembers a flood, a bridge, a mountain opening, a shining wheel, a serpent, a descent into an underworld, a visit to another realm, a meeting with someone who should belong to another time, or a land that seems to have moved from where history says it should be.
+
+In my cosmology these are not automatically separate phenomena. They can be different human records of the same natural door appearing again and again through history.
+
+I call the ordinary condition the **quiet world**.
 
 Quiet does not mean motionless.
 
