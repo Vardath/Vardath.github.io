@@ -4,7 +4,7 @@ The oldest recoverable part of Vardath Cosmology is not the shell.
 
 It is not the lattice.
 
-It is not JANUS, the number eight, the thirty-third direction, the three-turn world, the upper ocean or the finger-trap rod.
+It is not the shell, the upper ocean, the layered worlds or the finger-trap rod.
 
 It is the Rainbow Serpent.
 
@@ -414,7 +414,7 @@ What field strengths are involved?
 
 Why would stable large-scale chambers form?
 
-Why the number proposed in some Yggdrasil branches?
+How does that structure divide into the world-regions later imagined around Yggdrasil?
 
 How do matter, water and atmosphere become organised around the current?
 
@@ -490,7 +490,7 @@ The enclosure led to paired channels.
 
 The paired channels led to polarity.
 
-Polarity led into JANUS and later into the braid.
+Polarity eventually became the counter-wound braid.
 
 The braid met the finger trap.
 
