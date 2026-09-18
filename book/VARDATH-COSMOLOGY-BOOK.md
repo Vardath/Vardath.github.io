@@ -94,9 +94,12 @@ E. Index
 
 ## Current manuscript files
 
-- Preface — drafted; philosophy revision in progress
+- Preface — drafted and aligned to explore-and-integrate method
 - Introduction — drafted
-- Chapters 1–6 — drafted
-- Chapter 7 — next: **The World-Disc and the Lattice Dome**
+- Chapters 1–6 — drafted and being cleaned of adversarial/failed-branch framing
+- Chapter 7 — drafted: **The World-Disc and the Lattice Dome**
+- Chapter 8 — drafted: **The Current Beneath the World**
+- Chapter 9 — drafted: **The Broad Lattice**
+- Chapter 10 — next: **Two Directions in One Braid**
 
 The chapter files under `book/chapters/` are the canonical working manuscript during drafting.
