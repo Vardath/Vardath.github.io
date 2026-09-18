@@ -100,17 +100,26 @@ The current outline has 52 chapters and explicitly includes:
 
 ## Completed drafts
 
-- Preface
+- Preface — revised toward explore-and-integrate framing
 - Introduction
 - Chapters 1–6
+- Chapter 7 — `book/chapters/07-the-world-disc-and-the-lattice-dome.md`
+- Chapter 8 — `book/chapters/08-the-current-beneath-the-world.md`
+- Chapter 9 — `book/chapters/09-the-broad-lattice.md`
 
-Chapter 6 has already been revised so the inhabited world may be a flat disc supported by a lattice dome while the total system retains the larger shell/world-tree growth architecture.
+Chapter 3 has been revised so the Sun/Moon endpoints, Moon-projector idea, unusual gravity/pressure support and upper canopy remain open integrated possibilities rather than retired branches.
+
+Chapter 6 has been revised so stacked levels, flat inhabited discs, lattice domes and the larger shell/world-tree growth architecture can coexist at different scales.
 
 ## Next work
 
-Before drafting Chapter 7:
-1. clean remaining dismissive “failed/wrong/rejected” language from the existing chapters;
-2. preserve useful earlier interpretations by showing how they were absorbed or re-scaled;
-3. then draft Chapter 7 positively, from inside the cosmology.
+Continue with:
+- Chapter 10 — **Two Directions in One Braid**
+- Chapter 11 — **The Boundary Between Worlds**
+- Chapter 12 — **The Quiet World and the Waking World**
+
+Then proceed into the Gate section.
+
+Continue cleaning any remaining adversarial “failed/wrong/rejected” wording when encountered. Do not stop the writing process to perform tests or audits.
 
 Continue in batches and commit each substantial batch to GitHub.
