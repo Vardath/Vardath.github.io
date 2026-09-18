@@ -28,23 +28,245 @@ A luminous or structured axial phenomenon.
 
 That ambiguity became one of the most productive ambiguities in Vardath Cosmology.
 
-## The Peratt comparison
+## Anthony Peratt and the figure in the plasma
 
-Anthony Peratt's work on high-current Z-pinch and plasma morphologies became relevant because it offered a possible physical vocabulary for recurrent anthropomorphic petroglyph forms.
+Anthony Peratt became much more important to this project than a passing comparison with a few petroglyphs.
 
-I need to state the boundary carefully.
+His work gave me a physical vocabulary for something I had already been circling around visually: a vast current can develop **recognisable shapes** as it pinches, filaments, twists and reorganises.
 
-Peratt did publish plasma-physics work comparing high-current configurations with ancient petroglyph morphologies. The archaeological interpretation is controversial and is not established consensus.
+Peratt's plasma-physics work dealt directly with Birkeland currents, high-current plasma columns and Z-pinch behaviour. In a later series of papers he and his collaborators compared laboratory and simulated high-current plasma morphologies with ancient petroglyph forms. They described dozens of recurring forms and argued that some ancient images may have recorded an extreme auroral or plasma event. Later work reconstructed a proposed south-polar configuration containing pinched plasmoids and Birkeland-current filamentation.
 
-Vardath Cosmology goes farther still.
+That published work is the starting point.
 
-The model eventually proposes a persistent primordial current, a world-forming structure, multiple chambers and a recurrent axial event. Those are my speculative extensions, not claims established by Peratt's work.
+My cosmology goes much farther.
 
-What I took from the comparison was more modest and more important:
+I am not simply borrowing Peratt's proposed ancient aurora and placing it above the modern Earth.
 
-**a physical structure can become anthropomorphic without being a human body.**
+I think the Squatter-Man form may be a **later, reduced appearance of something vastly older and larger**.
 
-Once that possibility entered the project, a large symbolic landscape opened.
+The figure in the sky may be a surviving echo of the same kind of current that helped form the world-system itself.
+
+That possibility changed the scale of the entire cosmology.
+
+### The Squatter Man as a current-state
+
+The Squatter-Man form is important because it can be read as a sequence of plasma states rather than one frozen picture.
+
+There is an axis.
+
+There is a narrow central region.
+
+There are wider structures above and below.
+
+There are lateral forms that can become arm-like.
+
+There are changing nodes, loops and filamentary features.
+
+A person looking at that from the ground does not need to understand plasma physics.
+
+The eye does what the eye always does.
+
+It finds a body.
+
+The column becomes a torso.
+
+The lateral structures become arms.
+
+Upper concentrations become head, horns or headdress.
+
+Lower structures become legs or supports.
+
+A dynamic electrical form becomes a giant person in the sky.
+
+This is exactly the kind of transformation that Vardath projection grammar requires.
+
+The event is physical.
+
+The remembered image becomes biological.
+
+The later myth becomes personal.
+
+### Birkeland current rather than isolated lightning
+
+The scale matters.
+
+I do not picture the important current as ordinary lightning enlarged until it looks impressive.
+
+A Birkeland-current system is more useful to my cosmology because it is filamentary, extended and capable of organising plasma along magnetic-field-aligned paths.
+
+Peratt's wider plasma work is valuable here because it treats cosmic plasma as structured by currents, fields, double layers, pinches and filamentation rather than as featureless glowing gas.
+
+That is much closer to the world-machine I am building.
+
+The serpent is not one lightning bolt.
+
+It is a **long-lived pathway**.
+
+The world tree is not one flash.
+
+It is the structure organised around that pathway.
+
+The Squatter Man is not necessarily the current's only form.
+
+It may be what one powerful pulse looks like from one particular place and phase.
+
+### From Peratt's sky to my world-tree
+
+This is where my extension begins.
+
+I think the great current may run through the entire expanding set of worlds.
+
+The worlds do not merely sit beside the current.
+
+They may have **formed around it**.
+
+The earliest pulse may have been enormous: not a local auroral disturbance, but a world-forming fire passing through a far less enclosed space.
+
+Matter may have condensed, accumulated, fused or otherwise organised around that current.
+
+What is now the physical enclosure of a world may partly be the cooled and settled residue of earlier current activity.
+
+In that picture, the current comes first.
+
+The enclosure grows around it.
+
+The world tree is the long material history of the fire.
+
+That is my cosmological extension, not Peratt's claim.
+
+But Peratt gave me the missing physical image: a current does not have to remain an invisible line. Under the right conditions it can develop large, structured, repeatable morphologies.
+
+### Why later pulses may be smaller
+
+Once matter accumulates around the current, the next pulse does not travel through the same environment.
+
+This is one of the ideas I now think may explain why the ancient Squatter-Man event could be immense to human witnesses while still being smaller than the primordial world-forming fire.
+
+The first current moves through relatively open structure.
+
+It forms matter and boundaries around itself.
+
+That matter then becomes **load, shielding, resistance, enclosure and inertia** for later pulses.
+
+Every successful world-forming episode changes the conditions encountered by the next one.
+
+The current is still there.
+
+But it has more world around it.
+
+More material has to be heated.
+
+More boundaries have to be crossed.
+
+More of the pulse is absorbed, redirected or distributed through the lattice.
+
+The later manifestation is therefore reduced.
+
+Not harmless.
+
+Reduced.
+
+The current that may once have built the enclosure can later appear inside that enclosure as the Squatter Man.
+
+This gives the cosmology a natural hierarchy of scale:
+
+**primordial fire → world-forming current → enclosed later pulse → Squatter-Man / axial sky manifestation**
+
+That hierarchy is now central to how I understand the Peratt material.
+
+### Mount Meru as the reduced cosmic axis
+
+Mount Meru fits naturally beside this.
+
+I do not need Meru to be merely a stone mountain.
+
+I also do not need the Squatter Man and Meru to be unrelated objects.
+
+At the scale of a later enclosed world, a powerful axial pulse can create a vast central form in the sky.
+
+From one angle it can look anthropomorphic.
+
+From another it can look like a pillar.
+
+At a larger landscape or cosmological scale it can be remembered as a mountain.
+
+The same active region can therefore generate:
+
+**Squatter Man as figure**
+
+**Meru as mountain**
+
+**rod as geometry**
+
+**tree as living architecture**
+
+**Birkeland current as moving physical pathway**
+
+Those are not five things forced into one identity.
+
+They are different descriptions of one axial event at different scales and viewpoints.
+
+### The figure may be a diminished ancestor of creation
+
+This is the part I find most important.
+
+The Squatter Man may not be the original event.
+
+It may be a **small descendant of creation**.
+
+A later pulse re-enters the inherited pathways of the world-tree.
+
+The accumulated material of previous ages limits and shapes it.
+
+The current pinches.
+
+The sky becomes structured.
+
+A giant figure appears.
+
+The axis becomes visible.
+
+The world wakes.
+
+The same family of process that once created the enclosure now temporarily reactivates inside it.
+
+That would explain why the imagery feels simultaneously creative and catastrophic.
+
+The current is both because it has always been both.
+
+Its earliest work may have built.
+
+Its later work may reset.
+
+### Time remains open
+
+I do not yet know how this part connects to time travel.
+
+The cosmology increasingly treats previous, present and next worlds as neighbouring states that can become adjacent during the gate event.
+
+The great current is clearly involved in creating the axial connection.
+
+That makes it difficult for me to believe the current and the time-door are completely unrelated.
+
+But I do not yet want to force the relationship.
+
+Perhaps the current creates the geometry through which time-adjacency becomes possible.
+
+Perhaps the world-turn structure already contains the temporal relationship and the pulse merely opens it.
+
+Perhaps the primordial current built the physical world-tree while later pulses make selected parts of that tree traversable.
+
+Those possibilities belong later in the book.
+
+For now I leave the connection open.
+
+What Peratt gave me here is more fundamental:
+
+**the human figure in the sky can be the visible anatomy of a current.**
+
+And once that is possible, the Squatter Man stops being an isolated curiosity.
+
+It becomes a surviving image of the same fire that may run through the entire world-tree.
 
 ## The projection problem
 
@@ -471,13 +693,11 @@ A cross inside rings.
 
 A central node surrounded by four or eight sectors.
 
-These are exactly the kinds of compositions that became interesting in later visual-corpus work.
+These are exactly the kinds of compositions that became increasingly important as I looked across old imagery.
 
-The first broad artwork test found some enrichment of serpent/dragon imagery inside mesh/interlace records, but it did not show a complete Vardath package appearing everywhere. That narrower result may actually fit the projection model better.
+I do not expect every tradition to preserve a complete machine. Different cultures may preserve different views, different phases and different scales.
 
-Different traditions may specialise in different views.
-
-That is a more constrained claim than “ancient art contains the machine.”
+That is more useful to me than the idea that ancient art contains one uniform technical diagram.
 
 ## The human figure as projection
 
