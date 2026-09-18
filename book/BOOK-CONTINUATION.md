@@ -201,3 +201,34 @@ Next:
 6. After appendices, do a full chapter-order/duplication/voice continuity pass before assembling export formats.
 
 Important: do not reintroduce JANUS/number research, phonetics or test logs during appendices.
+
+
+## 88-chapter expansion — 2026-09-19
+
+Stephen requested that the main book grow from 52 to exactly **88 chapters** by examining additional mythologies, religions, fables, fairy tales and stories through the same Vardath role/viewpoint method.
+
+This is now the active plan.
+
+Added:
+- Part IX — Ancient Cosmologies and Sacred Worlds — Chapters 53–64
+- Part X — Worlds Above, Below and Before — Chapters 65–76
+- Part XI — Fairy Doors, Time Slips and Modern Echoes — Chapters 77–88
+
+Important:
+- these chapters are not filler;
+- each source/tradition must be explained recognisably in its own terms before the Vardath comparison;
+- compare role, relation, sequence, threshold, viewpoint and world-state;
+- do not claim source traditions literally teach Vardath Cosmology;
+- do not turn the chapters into test reports;
+- retain the author's explore/connect/integrate voice;
+- modern fiction and fairy stories may be used as cultural echoes of the same recurring door/time/world-transition grammar;
+- Chapter 88 is the comparative synthesis, **The Same Door Wearing Different Stories**.
+
+The full current chapter list is authoritative in:
+- `book/outline.md`
+- `book/VARDATH-COSMOLOGY-BOOK.md`
+
+Next writing begins at:
+- Chapter 53 — **Tiamat and the World Made From an Older Body**
+
+Appendices now follow Chapter 88 rather than Chapter 52.
