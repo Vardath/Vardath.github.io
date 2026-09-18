@@ -6,7 +6,7 @@
 
 > Working manuscript.
 >
-> This is a book about the cosmology itself. The number/JANUS research, phonetics and research-test logs are deliberately outside its scope. Comparative mythology is presented as my structural reading of the sources, not as a replacement for their own cultural meanings.
+> This book explores and integrates the strongest similarities I find across cosmology, mythology, landscape, Meltology and the world-machine I have been building. Possibilities remain possibilities; the purpose is to see how they may fit together into one larger structure. Number/JANUS research, phonetics and test logs are outside this book.
 
 ---
 
@@ -20,86 +20,83 @@
 2. The Figure in the Current
 3. The First World-Machine
 4. One Phenomenon, Many Gods
-5. What the Early World-Machine Was Trying to Become
+5. What the Early World-Machine Was Becoming
 
 # Part II — The Living World Structure
 6. One Growing Body, Many Turns
-7. The Current Beneath the World
-8. The Broad Lattice
-9. Two Directions in One Braid
-10. The Boundary Between Worlds
-11. The Quiet World and the Waking World
+7. The World-Disc and the Lattice Dome
+8. The Current Beneath the World
+9. The Broad Lattice
+10. Two Directions in One Braid
+11. The Boundary Between Worlds
+12. The Quiet World and the Waking World
 
 # Part III — The Gate
-12. Activation
-13. Convergence
-14. Why the Fingertrap Changed Everything
-15. Mesh, Ladder, Rod and Throat
-16. The Gate Is a Change in Adjacency
-17. Many Throats, Not One Pole
-18. Two-Way Transfer
-19. Reopening
+13. Activation
+14. Convergence
+15. Why the Fingertrap Changed Everything
+16. Mesh, Ladder, Rod and Throat
+17. The Gate Is a Change in Adjacency
+18. Many Throats and the Larger Axis
+19. Two-Way Transfer
+20. Reopening
 
 # Part IV — What Crosses
-20. Water
-21. Air, Vapour, Heat and Pressure
-22. Stone, Crust and Sediment
-23. Living Cargo
-24. The Enclosure Principle
-25. Carrier and Vehicle
-26. The Handoff
+21. Water
+22. Air, Vapour, Heat and Pressure
+23. Stone, Crust and Sediment
+24. Living Cargo
+25. The Enclosure Principle
+26. Carrier and Vehicle
+27. The Handoff
 
 # Part V — Mythology as Camera Angles
-27. Projection Grammar
-28. Operator, Apparatus, Guide, Guardian and Witness
-29. Tree, Rod, Mountain, Ladder and Pillar
-30. Eye, Wheel, Star and Rosette
-31. Serpent, Dragon, Braid and World Boundary
-32. Water at the Threshold
-33. Crossing Worlds
-34. Creation, Destruction and Renewal
-35. Revelation as a World-Cycle Vision
-36. Yggdrasil and the Door Through Time
+28. Projection Grammar
+29. Operator, Apparatus, Guide, Guardian and Witness
+30. Tree, Rod, Mountain, Ladder and Pillar
+31. Eye, Wheel, Star and Rosette
+32. Serpent, Dragon, Braid and World Boundary
+33. Water at the Threshold
+34. Crossing Worlds
+35. Creation, Destruction and Renewal
+36. Revelation as a World-Cycle Vision
+37. Yggdrasil and the Door Through Time
 
 # Part VI — Land, Sky and the Waking Environment
-37. The Land Is Not the Lattice
-38. Bends, Arcs and the Moving Surface
-39. The Sky Is Part of the Machine
-40. The Breathing Sky
-41. The Waking Atmosphere
-42. Life Under Different Conditions
+38. The Land Rides the Lattice
+39. Bends, Arcs and the Moving Surface
+40. Meltology: The Material Memory of Reset
+41. The Sky Is Part of the Machine
+42. The Breathing Sky
+43. The Waking Atmosphere
+44. Life Under Different Conditions
 
 # Part VII — Time, World Succession and the Moving Door
-43. Previous, Present and Next
-44. The Time Door
-45. When People and Lands Move
-46. The World Tree as a Woven Time Structure
+45. Previous, Present and Next
+46. The Time Door
+47. When People and Lands Move
+48. The World Tree as a Woven Time Structure
 
-# Part VIII — The Current Vardath Cosmology
-47. The Full Cycle
-48. One World Becoming the Next
-49. What I Think the Myths Are Remembering
-50. What Remains Open
+# Part VIII — The Integrated Vardath Cosmology
+49. The Full Cycle
+50. One World Becoming the Next
+51. What I Think the Myths May Be Remembering
+52. What I Am Still Exploring
 
 # Appendices
 A. Working Glossary
-B. Research Chronology
+B. Research Journey
 C. Motif and Role Atlas
-D. Source Traditions and Boundaries
+D. Source Traditions
 E. Index
 
 ---
 
 ## Current manuscript files
 
-- Preface — drafted
+- Preface — drafted; philosophy revision in progress
 - Introduction — drafted
-- Chapter 1 — drafted
-- Chapter 2 — drafted
-- Chapter 3 — drafted
-- Chapter 4 — drafted
-- Chapter 5 — drafted
-- Chapter 6 — drafted
-- Chapter 7 onward — to follow in chapter batches
+- Chapters 1–6 — drafted
+- Chapter 7 — next: **The World-Disc and the Lattice Dome**
 
-The chapter files under `book/chapters/` are the canonical working manuscript during drafting. This assembled file is the living contents and assembly guide.
+The chapter files under `book/chapters/` are the canonical working manuscript during drafting.
