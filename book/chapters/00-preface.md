@@ -4,162 +4,260 @@ I did not begin with a cosmology.
 
 I began with a question about a serpent.
 
-That matters, because this project did not arrive as one complete theory that I then went looking for evidence to decorate. It grew in pieces. Some pieces survived. Some broke. Some looked important for months and then turned out to be dead ends. Some of the strongest parts of the present model appeared only after an older interpretation failed badly enough that I had to change the question.
+That matters to me because Vardath Cosmology was never one complete picture that arrived all at once. It grew by following one idea into another until the pieces stopped looking like separate curiosities and began behaving like parts of the same world.
 
-The result is what I now call **Vardath Cosmology**.
+At first there was the serpent: something long, moving and powerful enough to shape land and water. Then came the figure in the current, the possibility that a large energetic structure could look human from one angle and geometric from another. Then came the axis, the enclosure, the world above and below, the paired winding channels, the gate, the woven field, the upper water, the carrier and finally the idea that the world itself might be one turn of a much larger living structure.
 
-It is a speculative model of a world that is not isolated, not static, and not simply created once and left to run. In the model, the world we inhabit is one stabilised turn of a larger growing structure. Older and newer world-turns remain part of the same total body. A persistent current and woven lattice connect that body internally. Most of the time the system is broad, quiet and stable. At certain phases it can tighten toward an axial state, bringing regions that are normally separate into temporary contact. Water, atmosphere, debris and living material can then move through a finite gate interval before the structure opens again and a new equilibrium settles.
+Some of those early pictures changed almost beyond recognition.
+
+That is part of the story.
+
+I do not want to write this book as though I sat down one morning with the finished model already in my head. I did not. I followed it. Sometimes I followed the wrong branch for a while. Sometimes an image that looked literal turned out to be more useful as a viewpoint. Sometimes an object I thought was one thing became a state of something larger.
+
+The world-machine became clearer every time I stopped forcing the symbols to be objects and began asking what job they were doing.
+
+A serpent could be a current.
+
+A tree could be an axis.
+
+A wheel could be an end-on view of a node.
+
+A mountain could be the landscape image of convergence.
+
+An ark could be a small protected world.
+
+A god could be an operator rather than the apparatus itself.
+
+A flood could be a consequence of a boundary change rather than the original cause.
+
+A gate could be a temporary change in what is next to what.
+
+That last idea changed almost everything.
+
+The cosmology I describe in this book is a speculative model of a world that is not isolated, not static and not created once and then left alone. I picture the world we inhabit as one stable turn of a larger growing body. What came before is not simply gone. What comes next is not simply absent. Previous, present and next belong to the same structure.
+
+A persistent current runs through that structure.
+
+A woven lattice organises it.
+
+Most of the time the lattice is broad. The world is quiet in the sense that its deeper architecture is not forcing itself into ordinary experience. Water remains in familiar reservoirs. The atmosphere behaves like the atmosphere of one world. Land is stable enough for geography to mean something. The sky is broad. Neighbouring turns remain separate enough that each behaves like its own environment.
+
+Then the state can change.
+
+The current strengthens or changes mode. The lattice begins to gather. A broad weave narrows. The same structure that looked like mesh can become strip, ladder, rod and finally throat. At maximum convergence, regions that are normally separated can become temporarily adjacent.
+
+That is the gate.
+
+The gate is not a permanent hole in the sky.
+
+It is a phase.
+
+While that phase lasts, water can move. Air can move. Heat and pressure can move. Fine material can move. Rock and sediment can become cargo. Living things can survive inside protected enclosures or cross through active vehicles. The surface can deform while the larger world-body remains continuous.
+
+Then the gate closes.
+
+The lattice widens again.
+
+The worlds separate.
+
+Water settles into new basins. Sediment becomes new ground. The atmosphere finds a new balance. Life expands from what survived. What looked like catastrophe from inside the old arrangement becomes inheritance from the viewpoint of the next one.
 
 That is the current picture.
 
-But the book is not only about the current picture. It is also about the path that produced it.
+This book is my attempt to explain it as one connected cosmology rather than hundreds of separate notes, posts, comparisons and discoveries.
 
-I want that history left visible because a speculative theory becomes dishonest very quickly if it edits out its own mistakes. It is easy to take the final diagram, remove every failed branch, and write as though the model emerged fully formed. Mine did not. The earlier versions included a literal enclosed room, a flooded upper canopy, Sun and Moon positions at the ends of paired channels, a possible Moon projector, an outward-pressure approach to gravity, a literal polar-geography temptation, a simple three-beat clock and several numerical identifications that did not survive closer inspection.
+The book is not about my number research.
 
-Some of those ideas were wrong in ways that helped.
+It is not about phonetics.
 
-The failed flat-map branch forced me to separate **geographic coordinates** from **shell-state coordinates**. The failed simple clock forced me to separate a full cycle from a gate crossing, a strength class, a growth threshold and a modulation envelope. The failure of two static rods to create a genuine third dimension helped turn a symbolic picture into a dynamic one: phase and movement had to enter. The early caduceus picture did not give me working celestial mechanics, but it did preserve the idea of opposed channels around one axis. That eventually became much more useful when the finger-trap braid appeared.
+It is not a collection of test reports.
 
-So this book is not a claim that every early intuition was secretly correct.
+Those things belong to other branches of my work. They helped shape some of my thinking, but they are not the subject here.
 
-It is a record of selection.
+Here I want to stay with the world itself.
 
-The central ideas that survived did so because they kept finding new mechanical jobs to perform.
+I want to describe the serpent, the lattice, the current, the world-turns, the upper boundary, the gate, the carriers, the moving crust, the waking sky, the reset and the next world. I want to show how those pieces fit together without stopping every few pages to turn the story back into a laboratory notebook.
 
-The **serpent** survived because it could be reinterpreted as a moving line or current rather than a monster category.
+I also want to explain why mythology became so important to me without pretending mythology proves the model.
 
-The **axis** survived because tree, rod, mountain, ladder, cross and pillar could be separated into different cultural images while retaining one spatial role.
+That distinction matters.
 
-The **enclosure** survived because the world, ark, egg, basket, cave and shell all raised the same functional problem: how does an inside remain coherent while the outside changes?
+The Rainbow Serpent belongs to Aboriginal Australian traditions before I compare the serpent with a moving current.
 
-The **gate** survived because it stopped being a fantasy doorway and became a more precise idea: a temporary change in adjacency.
+Yggdrasil belongs to Norse tradition before I compare the world tree with a persistent connector among levels.
 
-The **lattice** survived because it explained how many paths, crossings and nodes could belong to one structure.
+Revelation is Christian apocalyptic literature before I compare its sequence of opening, celestial disturbance, conflict, deformation and renewal with my world cycle.
 
-The **finger trap** survived because it did something the symbols by themselves could not. It supplied a mechanism by which a broad woven field could narrow and lengthen into an axial throat without being cut apart.
+Tiamat, Nut, the Duat, Meru, Oceanus, Janus, Jörmungandr and every other figure or structure discussed in this book belong to their own histories first.
 
-The **reset** survived because it stopped meaning annihilation. It became a handoff.
+My reading comes afterward.
 
-That last change may be the most important.
+I am not trying to prove that every culture secretly had one religion or one hidden technical manual.
 
-I do not picture a sequence in which a world is erased and another is created from nothing. I picture continuity through reorganisation. Material is inherited. Water is redistributed. The old surface becomes cargo and substrate. The next world is not clean. It contains history.
+I am asking a different question.
 
-That same idea is one reason so many carrier stories became important to the project. A child in a basket, a remnant in an ark, life inside an enclosure, a rider on a boundary-crossing mount: all of them compress the same problem to a human scale. Something has to remain itself while the conditions around it change radically.
+What happens if the physical structure of my cosmology is stated first, and then mythology is read by **role, relation and viewpoint**?
 
-I am not claiming that those stories were written as technical descriptions of my cosmology.
+That approach changed the comparative work completely.
 
-That distinction is fundamental to this book.
+A tree is not automatically the same thing as a mountain.
 
-A source tradition has its own history before I compare it with anything. Odin belongs to Norse tradition before he becomes useful to my axis atlas. The Rainbow Serpent belongs to distinct Aboriginal Australian traditions before I add a modern current interpretation. Revelation is Christian apocalyptic literature before I compare its sequence with the phases of my model. The Haudenosaunee creation story, Māori creation traditions, Yoruba origin traditions, the Popol Vuh, Vedic hymns, Egyptian cosmogony, Jain cosmology and every other tradition discussed here remain their own things.
+A mountain is not automatically the same thing as a pillar.
 
-My comparison comes afterward.
+A pillar is not automatically the same thing as a rod.
 
-The question is not: **what did these cultures really mean, secretly?**
+But all of them can occupy the axial family.
 
-The question is: **if I freeze the structure of my model first, which source traditions contain similar roles, relations or event sequences, and what does the comparison actually add?**
+An eye is not a wheel.
 
-Sometimes the answer is “not much.”
+A wheel is not a star.
 
-A tree is easy to find.
+A star is not a rosette.
 
-A flood is easy to find.
+But all of them can be produced by radial geometry viewed end-on.
 
-A serpent is easy to find.
+A serpent wrapped around the world is not the same as two serpents around a staff.
 
-A circle is easy to find.
+A dragon guarding a threshold is not the same as a current moving through the land.
 
-Those are weak comparisons by themselves.
+But all of them can belong to the wider serpent family at different scales and phases.
 
-The stronger cases are relational.
+Once I began thinking like that, the myths became less like a box of clues and more like different camera angles.
 
-A bounded carrier enters a dangerous current, reaches a receiving edge and opens into a changed life.
+That is how I want them treated in this book.
 
-A world begins compressed between sky and earth and becomes habitable through separation.
+The strongest comparisons are not the ones where one symbol happens to resemble another.
 
-A route between levels is guarded and selectively traversed.
+The strongest are the ones where several relationships stay in the same order.
 
-A broad heavenly field rolls or recedes, celestial order is disturbed and the surface is displaced afterward.
+A boundary is closed.
 
-An old body is not discarded but becomes the material of the next order.
+Something activates it.
 
-Those sequences are more useful because they can be wrong in more specific ways.
+A route opens.
 
-The same discipline applies to mathematics.
+A traveller or carrier crosses.
 
-The project called JANUS is important to this history because it was the first place where some of the symbolic material became exact. Within its chosen definitions, certain relations are real mathematics. The rank-one operator, the 3–4–5 decomposition, the determinant results and the finite-state structures can be audited.
+Water or fire accompanies the transition.
 
-But JANUS does **not** derive the physical Vardath cosmology.
+The old arrangement fails.
 
-It does not prove a sky lattice. It does not derive the fine-structure constant. It does not produce the old event chronology. It does not certify a world tree, a serpent or a mythology.
+A remnant survives.
 
-I keep that boundary because without it the exact mathematics would become less valuable, not more.
+The world becomes stable again.
 
-The same goes for the research tests scattered through the archive. Some motif tests produced positive enrichments. Some broad predictions failed. Some results narrowed the model. None of them turns the cosmology into established physics.
+That is much harder to dismiss as mere decoration than a single shared serpent or tree, but I still do not treat it as proof.
 
-The strongest version of this project is not the version that calls every match confirmation.
+It is a comparison.
 
-It is the version that knows what kind of thing each match is.
+The cosmology has to stand as a cosmology.
 
-That is also how I want the reader to approach this book.
+That means I also need to leave the speculative parts visible.
 
-There are several layers here.
+The upper ocean is a proposal.
 
-There is **the model itself**: the world-turns, lattice, braid, current, gate, transfer and reset.
+The exact physical nature of the deep current is unresolved.
 
-There is **the history of the model**: how those ideas developed.
+The support conditions of the world boundary are unresolved.
 
-There is **comparative mythology**: source traditions placed beside the model by role and sequence.
+The way the sky would be organised by the lattice is unresolved.
 
-There is **formal mathematics**: exact statements that have their own limits.
+The scale and energy of a world-level contraction are unresolved.
 
-There are **physical extensions**: proposed geology, water support, atmospheric change, celestial organisation and biology.
+The biological consequences of a waking atmosphere are even more speculative.
 
-And there are **open problems** that the model still owes.
+I am comfortable saying that.
 
-I do not want those layers blurred.
+I would rather have an incomplete model with clear edges than a complete-sounding story that hides its weak points.
 
-I do want them in the same book, because the whole point of Vardath Cosmology is the possibility that things which look separate at first may be different projections of one deeper relationship.
+The book therefore speaks in two voices that are really one voice used carefully.
 
-That is the recurring habit of thought behind the project.
+When I describe **what Vardath Cosmology proposes**, I will explain it directly.
 
-A rod may be a side view of something that looks like a wheel from the end.
+When I reach a place where the physical mechanism is still uncertain, I will say so.
 
-A god may be an operator associated with an apparatus rather than the apparatus itself.
+I do not need to apologise for the model being speculative.
 
-A flood may be a surface response to a boundary change rather than the original cause.
+That is what it is.
 
-A catastrophe may be a transition state inside a continuing system rather than an ending.
+The value, for me, lies in whether the pieces form a coherent structure and whether that structure produces a better way to think about the repeated images that first drew me into the problem.
 
-A future world may already exist as a forming neighbouring turn.
+The most important change in my thinking was learning to see catastrophe as transition.
 
-A gate may be less about opening a hole than changing what is next to what.
+A flood is terrifying if you stand inside the old world.
 
-Once those distinctions are made, the cosmology becomes much simpler than the hundreds of source articles that produced it.
+A gate is dangerous if you are exposed when the boundary opens.
 
-At its centre is one proposition:
+A moving crust destroys familiar geography.
 
-> **The world is a stable phase of a larger changing structure, and the great event is the temporary transformation that allows normally separated parts of that structure to touch.**
+A waking sky can look like the end of everything.
 
-Everything else in the book grows outward from that.
+But from the viewpoint of the larger world-body, those events can also be the mechanism by which continuity moves forward.
 
-The serpent is the moving line.
+The old world gives material to the next.
 
-The lattice is the distributed form.
+Water is redistributed.
 
-The finger-trap rod is the contracted form.
+Life survives inside smaller enclosures.
 
-The gate is the temporary adjacency.
+The next world receives inheritance.
 
-The flood, wind, fire, falling material and moving land are surface consequences.
+The system opens, transfers and closes.
 
-The carrier is continuity inside the transition.
+The catastrophe is real.
 
-The reopened world is the next equilibrium.
+So is the continuity.
 
-And mythology, in my reading, is what human memory does to an event too large, too strange and too perspective-dependent to survive as one technical description.
+That is why the cosmology keeps returning to eggs, shells, caves, baskets, arks, wombs and trees.
 
-This book is my attempt to put that whole structure in one place.
+They are all different ways of solving the same problem:
+
+**how can an inside remain coherent while the outside changes?**
+
+The world itself may be the largest version of that enclosure.
+
+A stable world is an inside.
+
+A gate event disturbs its boundary.
+
+A carrier creates a smaller inside within the unstable larger one.
+
+The renewed world creates a new stable inside afterward.
+
+The pattern repeats across scale.
+
+The same is true of the world tree.
+
+At first I thought mainly in terms of a tree connecting levels.
+
+Later I began to think of the tree as a woven structure through time as well as space. If previous, present and next are neighbouring turns of one larger body, then the tree is not simply a ladder between places. It can become a connector between states of the world itself.
+
+That is where Yggdrasil became more than a mythic parallel for me.
+
+It became a way of thinking about the door.
+
+Not a door that takes someone to a distant planet, but a door that temporarily changes which world-state is adjacent to which.
+
+Past, present and future become a physical relationship inside the larger structure.
+
+That idea belongs later in the book because it only makes sense once the gate has been built carefully.
+
+I mention it here because it captures the direction the whole project has taken.
+
+I began by asking what the serpent was doing.
+
+I ended up asking what the world is doing.
+
+The answer I have built is that the world is growing, breathing, separating, approaching, exchanging and settling.
+
+The ordinary world is one phase of that process.
+
+The great event is another.
+
+Myth, in my reading, is what the event looks like when remembered from inside.
+
+This book is my attempt to put that complete picture in one place.
 
 Not as a final answer.
 
-As the clearest version of the question I have managed to build.
+As the clearest version of the world I have been trying to describe.
