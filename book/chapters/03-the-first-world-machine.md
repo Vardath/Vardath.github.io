@@ -478,13 +478,11 @@ The room was architecture without a complete transformation law.
 
 That missing mechanism would not arrive until much later.
 
-The three-shell branch tried to supply large-scale recurrence.
+The early layered-world branch tried to supply large-scale recurrence.
 
 The ammonite supplied growth.
 
-JANUS supplied a language of polarity and compression.
-
-Exploration of 8 supplied a state-space method.
+Later work gave me a clearer language for polarity, state change and compression.
 
 Then the finger trap connected the pieces.
 
