@@ -44,6 +44,26 @@ Use open language:
 
 Uncertainty is not dismissal.
 
+## Primordial Birkeland-current thesis — CORE
+
+Anthony Peratt's published plasma work is an important physical bridge in the book:
+- Birkeland currents in cosmic plasma;
+- high-current Z-pinch / plasma morphology;
+- the proposed comparison between recurrent ancient petroglyph forms and extreme plasma/auroral configurations;
+- pinched plasmoids and Birkeland-current filamentation in his reconstructed ancient-sky model.
+
+Vardath's cosmological extension goes farther and must remain clearly his:
+- a vast primordial Birkeland-like fire/current may pulse through the entire growing world-set;
+- successive worlds expand in a Fibonacci-like / natural-spiral geometry (this is geometric cosmology here, not a number-research chapter);
+- the primordial current may have created, condensed or organised the physical matter that now encloses the world-space;
+- that accumulated matter may damp, absorb, redistribute or constrain later pulses;
+- later pulses can therefore be smaller visible descendants of the original world-forming fire;
+- Squatter Man in the sky and Mount Meru may be two views/scales of one such later axial pulse;
+- Meltology may preserve the material scars where that current strongly interacted with the surface;
+- how this current/gate structure connects to literal time travel is currently OPEN and must not be invented as solved.
+
+Keep Peratt's documented claims separate from Vardath's extension while allowing the book to integrate them naturally.
+
 ## Core components that must NOT be argued away
 
 ### Flat Earth / world-disc
@@ -113,16 +133,19 @@ Chapter 6 has been revised so stacked levels, flat inhabited discs, lattice dome
 
 ## Next work
 
-Continue with:
-- Chapter 10 — **Two Directions in One Braid**
-- Chapter 11 — **The Boundary Between Worlds**
-- Chapter 12 — **The Quiet World and the Waking World**
+The repository is currently drafted through:
+- Chapter 42 — **The Breathing Sky**
 
-Then proceed into the Gate section.
+Peratt/Squatter-Man material has now been expanded in:
+- Chapter 2 — **The Figure in the Current**
+- Chapter 8 — **The Current Beneath the World**
 
-Continue cleaning any remaining adversarial “failed/wrong/rejected” wording when encountered. Do not stop the writing process to perform tests or audits.
+Continue next with:
+- Chapter 43 — **The Waking Atmosphere**
+- Chapter 44 — **Life Under Different Conditions**
+- then Part VII on time, world succession and the moving door.
 
-Continue in batches and commit each substantial batch to GitHub.
+Do not pause to run tests or audits. Continue in batches and commit each substantial batch to GitHub.
 
 
 ## Latest completed batch
