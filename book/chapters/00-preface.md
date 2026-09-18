@@ -64,7 +64,17 @@ Water settles into new basins. Sediment becomes new ground. The atmosphere finds
 
 That is the current picture.
 
-This book is my attempt to explain it as one connected cosmology rather than hundreds of separate notes, posts, comparisons and discoveries.
+And behind all of it is the idea that finally made the myths, legends and fairy tales feel like parts of one problem rather than unrelated curiosities.
+
+I think the gate is **a natural door through time**.
+
+Not a machine built by one lost civilisation and not a different magical portal for every culture. One recurring event. One world-structure entering the same kind of state at different times in history. Each appearance is seen from a different place, by different people, through different language and belief.
+
+That is why I expect the record to look fragmented.
+
+One witness remembers a shining road. Another remembers a world tree. Another remembers a fairy mound, an underworld passage, a heavenly ladder, a flood, a mountain opening, a serpent, a rider crossing impossible distance, or a meeting across ages. The stories do not need to agree in detail if they are human memories of the same class of event seen from different positions and at different phases.
+
+This book is my attempt to explain that as one connected cosmology rather than hundreds of separate notes, posts, comparisons and discoveries.
 
 Other branches of my work developed alongside this one, but they are not the subject here.
 
