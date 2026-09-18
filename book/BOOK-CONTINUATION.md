@@ -242,4 +242,63 @@ Current writing state:
 Continue next at:
 - Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
 
+
+## CHAPTER-TITLE LOCK — NON-NEGOTIABLE
+
+The main book must contain **exactly 88 numbered chapters, no more and no fewer**.
+
+Chapters 1–52 already exist. The expansion is **exactly Chapters 53–88 below**. Each numbered item below is **one chapter only**.
+
+Do **not**:
+- invent additional numbered chapters;
+- split one planned topic into multiple numbered chapters;
+- turn Greek succession, Norse material, Mesopotamia, Peratt, or any other subject into a run of extra chapters;
+- renumber later chapters to make room for a new idea;
+- exceed Chapter 88.
+
+If a planned chapter needs more depth, expand that chapter internally with sections. Do not create Chapter 60A, a second Greek chapter, Chapter 89, or any other extra numbered chapter unless Stephen explicitly changes this rule.
+
+**Chapter 53 is the single dedicated Peratt/plasma chapter. Chapters 54–88 are mythology, religion, cosmology, legend, fairy tale, story and modern-fiction comparison.**
+
+Canonical Chapters 53–88:
+
+53. **Anthony Peratt and the Primordial Current**  
+54. **Mesopotamia: Tiamat, Atrahasis and Utnapishtim**  
+55. **Egypt: Nun, the First Mound and the Road Through the Duat**  
+56. **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal**  
+57. **Indra and Vritra: Serpent, Thunderbolt and Released Waters**  
+58. **Meru and the Churning of the Cosmic Ocean**  
+59. **Buddhist and Jain Layered Worlds**  
+60. **Greek Succession: Uranus, Cronus and Zeus**  
+61. **Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle**  
+62. **Ragnarök: Boundary Failure, Fire, Survival and the New World**  
+63. **Genesis and Enoch: Firmament, Waters, Ladder and Watchers**  
+64. **The Night Journey and Ascension**  
+65. **Ranginui and Papatūānuku: The World Opened by Separation**  
+66. **Sky Woman and the World Below**  
+67. **The Popol Vuh: Worlds Tried More Than Once**  
+68. **The Five Suns: Worlds That End and Begin Again**  
+69. **Pangu and Nüwa: Egg, Separation and Repair of the Sky**  
+70. **Izanagi and Izanami: Bridge, Descent and the Sealed Return**  
+71. **Oduduwa and the Descent Onto Primordial Water**  
+72. **Ilmatar, the World Egg and the Sampo**  
+73. **Māui: Fishing Up Land, Slowing the Sun and Crossing Limits**  
+74. **Rainbow Serpent: Land, Water and the Living Current**  
+75. **Hopi Emergence: Worlds Below and the Climb Upward**  
+76. **Tír na nÓg: The Otherworld and the Time of Return**  
+77. **Urashima Tarō and the Palace Beneath the Sea**  
+78. **The Seven Sleepers: Enclosure as a Time Carrier**  
+79. **Fairy Time: Thomas the Rhymer, Tam Lin and the Mound**  
+80. **Frau Holle and the Well as a Door**  
+81. **Avalon and the Island Outside Ordinary Reach**  
+82. **Alice: Rabbit Holes, Looking-Glasses and Stopped Time**  
+83. **Narnia and the Wood Between the Worlds**  
+84. **The Wizard of Oz: The Storm as Vehicle**  
+85. **The NeverEnding Story and the Mirror at the Gate**  
+86. **Annihilation: The Shimmer and the Mirror Self**  
+87. **Spirited Away: Tunnel, Threshold and Return**  
+88. **The Same Door Wearing Different Stories**
+
+After Chapter 88, proceed to the planned appendices. Do not create more main chapters.
+
 Appendices now follow Chapter 88 rather than Chapter 52.
