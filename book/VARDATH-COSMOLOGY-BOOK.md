@@ -97,7 +97,9 @@ E. Index
 - Chapter 1 — drafted
 - Chapter 2 — drafted
 - Chapter 3 — drafted
-- Chapter 4 — drafting begins in the current batch
-- Chapter 5 onward — to follow in chapter batches
+- Chapter 4 — drafted
+- Chapter 5 — drafted
+- Chapter 6 — drafted
+- Chapter 7 onward — to follow in chapter batches
 
 The chapter files under `book/chapters/` are the canonical working manuscript during drafting. This assembled file is the living contents and assembly guide.
