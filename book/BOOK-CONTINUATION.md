@@ -178,3 +178,26 @@ Completed and saved:
 - Chapters 27–36, from Projection Grammar through Yggdrasil and the Door Through Time.
 
 Part V now explicitly treats myth, legend, religion and fairy tale as different cultural camera angles on the recurring natural time-door event.
+
+
+## Main body completed — 2026-09-18
+
+The main 52-chapter first draft is now complete and saved through:
+- Chapter 45 — `book/chapters/45-previous-present-and-next.md`
+- Chapter 46 — `book/chapters/46-the-time-door.md`
+- Chapter 47 — `book/chapters/47-when-people-and-lands-move.md`
+- Chapter 48 — `book/chapters/48-the-world-tree-as-a-woven-time-structure.md`
+- Chapter 49 — `book/chapters/49-the-full-cycle.md`
+- Chapter 50 — `book/chapters/50-one-world-becoming-the-next.md`
+- Chapter 51 — `book/chapters/51-what-i-think-the-myths-may-be-remembering.md`
+- Chapter 52 — `book/chapters/52-what-i-am-still-exploring.md`
+
+Next:
+1. Appendix A — Working Glossary
+2. Appendix B — Research Journey
+3. Appendix C — Motif and Role Atlas
+4. Appendix D — Source Traditions
+5. Appendix E — Index
+6. After appendices, do a full chapter-order/duplication/voice continuity pass before assembling export formats.
+
+Important: do not reintroduce JANUS/number research, phonetics or test logs during appendices.
