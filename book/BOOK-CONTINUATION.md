@@ -147,3 +147,11 @@ Completed and saved:
 - Chapter 24 — `book/chapters/24-the-enclosure-principle.md`
 - Chapter 25 — `book/chapters/25-carrier-and-vehicle.md`
 - Chapter 26 — `book/chapters/26-the-handoff.md`
+
+
+## Part V completed
+
+Completed and saved:
+- Chapters 27–36, from Projection Grammar through Yggdrasil and the Door Through Time.
+
+Part V now explicitly treats myth, legend, religion and fairy tale as different cultural camera angles on the recurring natural time-door event.
