@@ -297,7 +297,7 @@ From our world it is above.
 
 From the next turn it is below.
 
-This is another JANUS-like habit of thought that entered the physical model later: one structure can be described differently from opposite sides.
+This introduced a habit of thought that became central to the physical model later: one structure can be described differently from opposite sides.
 
 ## The fourfold world becomes a field
 
@@ -311,15 +311,11 @@ The important relation is no longer that exactly four physical continents sit ab
 
 It is that a transverse surface can be divided around a centre, with flow boundaries between sectors.
 
-Later, as the lattice becomes denser, this broad field can be represented with many directions rather than four.
+Later, as the lattice becomes denser, this broad field can be understood as a higher-resolution directional weave rather than four literal upper lands.
 
-The 32+1 model is a descendant of the same intuition.
+The important thing that survived was not a preferred count. It was the relationship between **a spread field around a centre and a through-route along the centre**.
 
-Four around one was the first crude directional grammar.
-
-Thirty-two around one is the later higher-resolution version.
-
-The +1 remains the axis through the centre.
+Four around one was the first crude picture of that relationship. The mature lattice keeps the same spatial intuition without making the book depend on number-pattern research.
 
 ## From room to shell-turn
 
