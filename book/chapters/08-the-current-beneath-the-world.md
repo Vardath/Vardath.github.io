@@ -58,6 +58,214 @@ The current can remain inside the finished structure like a hidden nervous syste
 
 That is the idea.
 
+## Peratt gave the current a visible anatomy
+
+Anthony Peratt's plasma work gave me a way to picture what an enormous current might actually look like when it becomes visible.
+
+His work on cosmic plasma includes Birkeland currents as a major subject, and his later papers compared high-current Z-pinch forms with ancient petroglyph morphologies. He and his collaborators proposed that some of those images may have recorded an extreme auroral plasma event, and described a reconstructed form containing pinched plasmoids and Birkeland-current filamentation.
+
+I do not treat that as the endpoint.
+
+I treat it as the scale where human witnesses may have seen a **later pulse**.
+
+In Vardath Cosmology, the current may be much older than humanity and much larger than the ancient sky-event.
+
+The Squatter Man may be one appearance of the current after the world has already been built around it.
+
+That changes the entire interpretation.
+
+Peratt's plasma form becomes not only a candidate for an ancient sky phenomenon, but a clue to the visible behaviour of the deeper world-forming fire.
+
+## The first fire
+
+I think the earliest pulse may have been immense.
+
+Before the present worlds were enclosed by all the matter they now contain, the current may have had far less resistance around it.
+
+It could expand through a more open structure.
+
+It could pinch, filament and gather matter.
+
+It could heat.
+
+It could fuse.
+
+It could separate regions.
+
+It could establish the first stable boundaries.
+
+The physical material enclosing the worlds may therefore be, at least partly, **the cooled history of the current itself**.
+
+This is one of the largest ideas in my cosmology.
+
+Matter may not merely sit around the world-tree.
+
+Matter may be what the world-tree's fire left behind.
+
+The enclosure becomes fossilised current-history.
+
+Mountain, shell, dome, crust and boundary can all be later material states built around older energetic pathways.
+
+I do not yet know the exact matter-creation mechanism, and I do not want to invent one merely to make the picture sound complete.
+
+The important idea is the sequence:
+
+**vast current → concentration and heating → matter organised or created around the pathway → enclosure grows → later current moves inside inherited matter**
+
+That sequence gives creation and later catastrophe one common source.
+
+## Fibonacci-like expansion of worlds
+
+The worlds themselves do not appear to me as equal repeated boxes.
+
+I picture them expanding.
+
+Each later world is related to what came before but grows at a larger scale, more like the successive enlargement of a natural spiral than a stack of identical floors.
+
+The Fibonacci spiral is the simplest visual language I have for that growth.
+
+I am not using it here as number research.
+
+I am using it as geometry.
+
+A growing natural structure can preserve earlier turns while increasing the scale of later ones.
+
+That is how I picture the world-set.
+
+One world grows from the previous world.
+
+The next expands beyond the present.
+
+The current continues through them.
+
+The world-tree is therefore not one cylinder with identical rooms.
+
+It is a widening history.
+
+The fire passes through a structure whose dimensions and material load are changing from turn to turn.
+
+That means each pulse can be related without being equal.
+
+## Matter damps the later pulse
+
+If the earliest pulse helped create or organise the physical enclosure, then every later pulse enters a more difficult environment.
+
+There is more matter around the pathway.
+
+More mass to heat.
+
+More boundary to cross.
+
+More structure to absorb, conduct and redistribute the energy.
+
+The world itself becomes a damper.
+
+This may be why the current can remain primordial and immense in origin while later visible manifestations are smaller.
+
+The current has not necessarily become a different phenomenon.
+
+The **enclosure has grown around it**.
+
+The first fire may have formed worlds.
+
+A later fire may form the giant axial sky figure.
+
+Later still, the same inherited pathways may express themselves in smaller local openings, electrical events, heat-altered regions or telluric movements.
+
+Scale decreases as material history increases.
+
+That is the relationship I am now exploring.
+
+## Squatter Man and Meru as a later pulse
+
+This makes the Squatter Man and Mount Meru much more important.
+
+They may represent a later stage of the primordial current.
+
+The current rises through the inherited centre.
+
+It pinches.
+
+It forms lobes, branches and bright nodes.
+
+Seen as a body, it becomes Squatter Man.
+
+Seen as an enormous central rise, it becomes Meru.
+
+Seen as pure geometry, it becomes the rod or axis.
+
+Seen as current, it is Birkeland-like filamentation and pinch structure.
+
+Seen as world architecture, it is the trunk of the tree.
+
+This is the kind of integration I am looking for throughout the book.
+
+Not one symbol replacing another.
+
+One process producing several legitimate descriptions.
+
+## The fires
+
+I increasingly think **the fires** should be treated as a recurring phase of this same current.
+
+The phrase matters because the active world is not only flooded.
+
+It burns.
+
+The current heats.
+
+Plasma glows.
+
+Surfaces can alter.
+
+The sky can become luminous.
+
+The world can be both wet and fiery because water movement and electrical heating belong to different parts of the same transition.
+
+This is where the Peratt branch and Meltology join.
+
+The sky-form tells me what the current may look like in the upper structure.
+
+Meltology asks what the same current may do when its energy reaches material surfaces.
+
+One gives the figure.
+
+The other gives the scar.
+
+## What this may mean for time
+
+I leave the time connection unresolved.
+
+The larger cosmology says previous, present and next are neighbouring regions of one growing world-tree.
+
+The gate can temporarily alter their adjacency.
+
+The current clearly drives or accompanies the contraction that creates the gate.
+
+So the current may be the **physical action that opens a time relationship**.
+
+But that is not yet the same thing as understanding time travel.
+
+Does the current carry travellers through time?
+
+Does it only create the geometry that lets worlds exchange?
+
+Does a person remain in one time while the land around them changes level?
+
+Can whole regions trade positions between turns?
+
+Can the same location appear in different ages depending on which world-state becomes adjacent?
+
+Those questions remain open.
+
+I am not going to pretend the answer is already sitting inside the Peratt material.
+
+Peratt gives me plasma morphology and high-current physical behaviour.
+
+The time-door belongs to my cosmology.
+
+The relationship between them is one of the things still unfolding.
+
 ## The world may have grown around its own current
 
 This reverses the way I first thought about the problem.
