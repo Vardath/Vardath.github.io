@@ -139,8 +139,9 @@ E. Index
 - Preface and Introduction — drafted
 - Chapters 1–52 — drafted
 - Parts I–VIII — complete first draft
-- Chapters 53–88 — planned as the comparative expansion
-- Target main-book length — 88 chapters
+- Chapters 53–59 — drafted and saved
+- Chapters 60–88 — planned sequentially under the locked canonical titles above
+- Target main-book length — **exactly 88 chapters; do not add, split or renumber chapters without Stephen explicitly changing the rule**
 - Appendices — follow Chapter 88
 
 The chapter files under `book/chapters/` are the canonical working manuscript during drafting.
