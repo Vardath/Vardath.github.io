@@ -404,14 +404,17 @@ The 88-chapter list is already written in `book/outline.md`.
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53 and 54 are drafted and saved.**
+**Chapters 53–57 are drafted and saved.**
 
 - Chapter 53 — **Anthony Peratt and the Primordial Current**
 - Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim**
+- Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat**
+- Chapter 56 — **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal**
+- Chapter 57 — **Indra and Vritra: Serpent, Thunderbolt and Released Waters**
 
 Continue sequentially at:
 
-**Chapter 55 — Egypt: Nun, the First Mound and the Road Through the Duat**
+**Chapter 58 — Meru and the Churning of the Cosmic Ocean**
 
 Chapter 53 is the only dedicated plasma/Peratt extra chapter. Chapters 54–88 return to mythology, religion, cosmology, legend, fairy tale and modern-story comparison.
 
