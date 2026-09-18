@@ -1,202 +1,124 @@
 # Vardath Cosmology Book — Continuation Checkpoint
 
-**Created:** 2026-09-18  
+**Updated:** 2026-09-18  
 **Author/project owner:** Stephen Michael Hawton / Vardath  
-**Purpose:** Durable handoff for the long-form Vardath Cosmology book project.
+**Repository:** `Vardath/Vardath.github.io`
 
-## User instruction
+## Current user instruction — OVERRIDES THE EARLIER BOOK SCOPE
 
-Write a substantial book based on the full Vardath Cosmology research archive. Before drafting substantive chapters, read the complete WordPress continuity/staging archive and the complete current Cosmology page. Work in batches. Preserve the development history, abandoned branches, surviving mechanics, mythology, mathematics, current model, and unresolved physical burdens. Do not compress the project into a short summary.
+Write Vardath Cosmology as a real long-form book in Vardath/Stephen's voice.
 
-The book should be readable as a real book rather than as 453 disconnected WordPress posts.
+The book must **not** be a copy-and-paste compilation of the website or WordPress series.
 
-## Canonical source locations
+The following are OUT OF SCOPE for this book:
+- JANUS / number research;
+- numerology and number-pattern material;
+- phonetics;
+- test runs, corpus tests, prediction tests and test logs;
+- assistant commentary;
+- methodological audit sections that interrupt the cosmology.
 
-Repository: `Vardath/Vardath.github.io`
+Ordinary descriptive quantities can appear where the cosmology genuinely needs them, but do not turn them into number research.
 
-Primary WordPress source:
+The book may preserve development history where it helps explain how the current cosmology formed, but it should tell that history as narrative, not as a research log.
+
+## Canonical research sources
+
+Primary live cosmology source:
+- `vardath-cosmology.html`
+- remember that it is an assembly wrapper;
+- full page content is assembled from `cosmology_fragments/` and `cosmology_expansions/`.
+
+Primary WordPress/research reservoir:
 - `wordpress-memory-CHECKPOINT-E342-20260918.md`
 - `wordpress-memory-CONTINUATION-E343-ONWARD.md`
-- Later expanded E-post files / continuations in the repo as applicable.
+- later continuation material where applicable.
 
-Primary Cosmology page:
-- `vardath-cosmology.html`
-- This is an assembly wrapper and must NOT be treated as the complete page by itself.
-- It includes the full page from:
-  - `cosmology_fragments/`
-  - `cosmology_expansions/`
-  - assistant-note fragments at the bottom.
+The GitHub WordPress archive is more complete than the older local copy and should be preferred.
 
-Additional continuity source:
-- `Cosmology memory.md` (ChatGPT Library copy exists; use for continuity/history, not as a replacement for the live assembled page).
+## Book architecture
 
-Authoritative living page:
-- https://vardath.github.io/vardath-cosmology.html
+The revised book design is saved in:
+- `book/outline.md`
+- `book/VARDATH-COSMOLOGY-BOOK.md`
 
-## What was actually completed in the interrupted 2026-09-18 chat
+Current structure:
+1. Finding the Hidden Shape
+2. The Living World Structure
+3. The Gate
+4. What Crosses
+5. Mythology as Camera Angles
+6. Land, Sky and the Waking Environment
+7. Time, World Succession and the Moving Door
+8. The Current Vardath Cosmology
+9. Appendices: glossary, readable research chronology, motif/role atlas, source boundaries, index
 
-The previous chat repeatedly froze while using the GitHub connector to read a very large source file in many small batches.
+There is deliberately no JANUS/numbers part, no phonetics part and no test-report part.
 
-Completed:
-- Located the current WordPress checkpoint and continuation.
-- Confirmed the E342 checkpoint is approximately 1.82 MB.
-- Materialized local Library copies of:
-  - `wordpress-memory-CHECKPOINT-E342-20260918.md`
-  - `Cosmology memory.md`
-- Read the WordPress archive sequentially from E01 through E202 in that chat, including the major early/middle mechanics, comparative mythology, JANUS, carrier, Revelation, projection, world-turn, water, atmosphere, crust and event-cycle material.
-- Read the small E343–E344 continuation file earlier in the session.
-- Read the current `vardath-cosmology.html` wrapper and verified that it assembles the page from many fragments and expansions.
-- Confirmed that the wrapper itself is NOT the complete Cosmology source.
+## Manuscript voice
 
-Not completed:
-- The E342 checkpoint from E203 onward was not fully read in that chat.
-- The complete live contents of every `cosmology_fragments/*` and `cosmology_expansions/*` include were not yet read in that chat.
-- Therefore the substantive book manuscript was NOT yet started. Do not claim otherwise.
+Write in first person as Vardath/Stephen when explaining:
+- what I think;
+- how I came to an idea;
+- what changed in my model;
+- what the current cosmology proposes;
+- what I am uncertain about.
 
-## Source-reading method for the next chat
+Do not write the main book in assistant voice.
 
-Do NOT repeat hundreds of GitHub connector calls against the 1.82 MB file.
+Do not flatten mythologies into one universal religion. Compare:
+- role;
+- relation;
+- sequence;
+- viewpoint;
+- state of the world-machine.
 
-Preferred method:
-1. Use the already saved Library copies when available and materialize them locally once.
-2. Read/process the material locally in large sequential blocks.
-3. Retrieve the current Cosmology fragment/expansion files in bulk or materialize a repository snapshot if possible.
-4. Assemble the live page locally from the wrapper include order.
-5. Verify the final current model against the assembled page.
-6. Only then begin substantive book prose.
+Keep speculation visible as speculation without constantly derailing the prose into audit language.
 
-This is specifically to avoid the repeated connection freezes encountered on 2026-09-18.
+## Completed manuscript files
 
-## Working book concept
+Front matter:
+- `book/chapters/00-preface.md` — revised to cosmology-only scope
+- `book/chapters/00-introduction.md` — revised to remove number/test material
 
-The book should not be a dump of the WordPress series.
+Part I:
+- `book/chapters/01-the-serpent-and-the-question.md` — drafted
+- `book/chapters/02-the-figure-in-the-current.md` — drafted
+- `book/chapters/03-the-first-world-machine.md` — drafted and cleaned of number/JANUS references
+- `book/chapters/04-one-phenomenon-many-gods.md` — drafted
+- `book/chapters/05-what-the-early-world-machine-was-trying-to-become.md` — drafted
 
-Recommended narrative spine:
+Part II:
+- `book/chapters/06-one-growing-body-many-turns.md` — drafted
 
-### Part I — How the Cosmology Began
-- Rainbow Serpent / Squatter-Man / plasma imagery
-- Perspective and anthropomorphic projection
-- Early enclosure geometry
-- Central axis / rods / serpents / crosses
-- What early branches got wrong
+Next chapter:
+- Chapter 7 — **The Current Beneath the World**
 
-### Part II — The Living World Structure
-- Persistent primordial current
-- Broad lattice and counter-wound braid
-- Previous / present / next world-turns
-- Shell thickness and growth
-- Upper ocean as neighbouring-world boundary
-- Quiet world versus waking world
+## Current writing direction
 
-### Part III — The Gate
-- Activation
-- Convergence
-- 32+1 directional geometry
-- Finger-trap contraction
-- Mesh → ladder → rod → throat
-- Gate as temporary change in adjacency
-- Two-way flow
-- Reopening
+Continue directly from Chapter 7 rather than restarting.
 
-### Part IV — Inheritance Between Worlds
-- Water transfer
-- Atmosphere transfer
-- Sediment / crust / debris
-- Seeds, microbes, animals, people
-- Enclosure / carrier principle
-- Ark, basket, chest, drum, tube, guided carrier
-- Population continuity and reseeding
+The next sequence should build the mechanics in reader order:
+- persistent current;
+- broad lattice;
+- counter-wound braid;
+- world boundary;
+- quiet/waking state;
+- activation;
+- convergence;
+- fingertrap;
+- mesh → ladder → rod → throat;
+- gate as changed adjacency;
+- local/global throats;
+- two-way transfer;
+- reopening.
 
-### Part V — Mythology as Multiple Camera Angles
-- Operator versus apparatus
-- Tree / rod / mountain / ladder / cross
-- Eye / wheel / star / rosette
-- Serpent / braid / mesh
-- Comparative world traditions
-- Revelation as a phase sequence
-- Yggdrasil / time-switch / plenum
-- Distinguish shared inheritance/transmission from genuinely independent recurrence
+Then move into material inheritance and comparative mythology.
 
-### Part VI — Mathematics and JANUS
-- 1–3–7 seed
-- 7+1 and eight-state structure
-- 32+1 versus determinant 33
-- 137 and what it does NOT prove
-- polarity, compression and phase
-- exact mathematics kept separate from physical/cultural interpretation
+## Important continuity note
 
-### Part VII — Land, Sky and Environment
-- S-field / land deformation
-- crust as cargo rather than lattice
-- celestial branch and “the sky has to compute”
-- waking-world atmosphere
-- pressure, oxygen, electrical activity
-- giants/longevity branches with their limits
+Earlier versions of this continuation file described a book containing JANUS mathematics, number research, tests and detailed methodological sections. That scope is now superseded.
 
-### Part VIII — Research History, Failures and Burdens
-- superseded cold ceiling
-- abandoned outward-pressure gravity
-- Sun/Moon caduceus endpoint model
-- Moon projector idea
-- old three-shell clock fits
-- chronology fits versus derived mechanisms
-- energy, pressure, mass conservation, counterflow
-- what the Cosmology still owes physically
+The current book is **the cosmology itself**.
 
-### Part IX — The Current Cosmology
-- one clear full event cycle
-- quiet → activation → convergence → adjacency → transfer → deformation/reset → reopening → new quiet world
-- what is hypothesis, what is exact math, what is cultural comparison, what remains unresolved
-
-### Appendices
-- glossary
-- chronology of research development
-- JANUS mathematical notes
-- motif / role atlas
-- source and research boundaries
-- index
-
-## Tone and authorship
-
-Write in Vardath/Stephen's voice where the book is presenting the Cosmology: first-person where appropriate, direct, exploratory, and willing to show how ideas changed.
-
-Do not write as though every mythology proves the model.
-
-Explicitly separate:
-- exact mathematics,
-- physical hypotheses,
-- comparative structural readings,
-- historical source facts,
-- failed/superseded models,
-- unresolved questions.
-
-The research history is an asset, not an embarrassment. Show failed branches and how they improved the current model.
-
-## Storage decision
-
-Best working arrangement:
-
-**Canonical text:** keep the book in this GitHub repository under `book/` as Markdown. Git gives durable version history and makes chapter-by-chapter work easy to audit and recover.
-
-**Backup/checkpoints:** periodically save zipped or Markdown snapshots into ChatGPT Library/local working storage as redundancy.
-
-**Do not** keep the only manuscript in one chat or in one huge unsaved working buffer.
-
-Recommended files:
-- `book/VARDATH-COSMOLOGY-BOOK.md` — assembled manuscript
-- `book/chapters/NN-chapter-name.md` — individual chapter working files
-- `book/BOOK-CONTINUATION.md` — this state file
-- `book/BOOK-SOURCE-MAP.md` — source-to-chapter coverage map
-- `book/BOOK-CHANGELOG.md` — batch checkpoints
-
-## Immediate next action
-
-Resume the source read from the exact unfinished point:
-1. Finish WordPress checkpoint E203–E342.
-2. Read later WordPress continuation material after E342.
-3. Read every current Cosmology fragment and expansion in rendered-page order.
-4. Build a source/coverage map.
-5. Begin Book Batch 1 with front matter + Introduction + first substantive chapter(s).
-6. Save each substantial batch under `book/` and checkpoint it.
-
-Do not restart from E01 unless verification reveals a missing/corrupt local copy.
+Use the research archive to understand and enrich the cosmology, not to reproduce the archive's structure.
