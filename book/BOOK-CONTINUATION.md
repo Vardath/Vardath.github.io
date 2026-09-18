@@ -1,5 +1,7 @@
 # Vardath Cosmology Book — Continuation Checkpoint
 
+> **AUTHORITATIVE HANDOFF:** Before continuing this book, read `book/COSMOLOGY-BOOK-HANDOFF.md` completely. It supersedes any older scope or status statement in this file where they differ.
+
 **Updated:** 2026-09-18  
 **Author/project owner:** Stephen Michael Hawton / Vardath  
 **Repository:** `Vardath/Vardath.github.io`
