@@ -116,11 +116,11 @@ One early retelling pushed the idea into a more dramatic form.
 
 The Serpent interacted with a plasma-like Sun, provoking a dangerous energetic response. Wind and water were involved in restoring a safer condition.
 
-I do not retain that specific story as established celestial mechanics.
+I keep that story as one possible celestial reading rather than locking it into one final mechanism.
 
-The mature cosmology deliberately leaves the physical nature of the Sun, Moon and planets unresolved.
+The physical nature of the Sun, Moon and planets remains open in the cosmology, which means the Sun-biting branch can sit beside later celestial ideas instead of having to be thrown away.
 
-But the branch contributed something that survived.
+What it adds most strongly is **contact**.
 
 It introduced **contact**.
 
@@ -134,19 +134,19 @@ The “bite” can therefore be understood as an early narrative form of couplin
 
 That way of thinking later became much more precise when I started using the language of adjacency.
 
-## Why the serpent survived every revision
+## Why the serpent kept expanding into new roles
 
-Many early ideas were retired.
+Many early ideas changed scale, role or relationship as the cosmology grew.
 
-The serpent was not.
+The serpent kept expanding with them.
 
 That is not because serpent mythology is rare or uniquely mysterious. It is not.
 
 Serpents are extremely common symbolic forms for ordinary reasons: real snakes are visually striking, dangerous, sinuous, renewing through skin-shedding, associated with ground and water, and easy to translate into narrative.
 
-A serpent match by itself proves almost nothing.
+A serpent image becomes most useful to me when it joins other relationships—water, land-shaping, enclosure, axis, current or boundary.
 
-What made the serpent useful inside the model was not frequency.
+What made the serpent especially valuable inside the model was not frequency alone.
 
 It was **mechanical flexibility**.
 
