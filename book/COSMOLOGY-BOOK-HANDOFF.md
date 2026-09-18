@@ -372,7 +372,11 @@ The repo has progressed far beyond that point.
 
 # 11. ACTIVE EXPANSION — CHAPTERS 53–88
 
-Stephen asked for the main book to expand to exactly **88 chapters** by examining additional:
+Stephen asked for the main book to expand to exactly **88 chapters**.
+
+**Critical correction:** Chapter 53 is the one physics-focused extra chapter, devoted to Anthony Peratt, Birkeland currents, high-current Z-pinch / ancient-sky material and Stephen's primordial-current extension. Do not turn the rest of the expansion into plasma cosmology.
+
+Chapters 54–88 examine:
 - mythologies;
 - religions;
 - cosmologies;
@@ -400,13 +404,16 @@ The 88-chapter list is already written in `book/outline.md`.
 
 # 12. EXACT NEXT WRITING POINT
 
-**Continue at Chapter 53.**
+**Chapters 53 and 54 are drafted and saved.**
 
-Next chapter:
+- Chapter 53 — **Anthony Peratt and the Primordial Current**
+- Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim**
 
-**Chapter 53 — Tiamat and the World Made From an Older Body**
+Continue sequentially at:
 
-Then continue sequentially through Chapters 54–88.
+**Chapter 55 — Egypt: Nun, the First Mound and the Road Through the Duat**
+
+Chapter 53 is the only dedicated plasma/Peratt extra chapter. Chapters 54–88 return to mythology, religion, cosmology, legend, fairy tale and modern-story comparison.
 
 Do not jump ahead to appendices.
 
@@ -416,11 +423,11 @@ Do not rewrite completed Chapters 1–52 unless a continuity pass later reveals 
 
 # 13. PARTS IX–XI — PURPOSE
 
-## Part IX — Ancient Cosmologies and Sacred Worlds
+## Part IX — Physical Bridge, then Ancient Cosmologies and Sacred Worlds
 Chapters 53–64.
 
 Purpose:
-expand the comparative atlas through major ancient/religious cosmologies while preserving each source's identity.
+Chapter 53 gives the dedicated Peratt / primordial-current physical bridge. Chapters 54–64 then expand the comparative atlas through major ancient/religious cosmologies while preserving each source's identity.
 
 ## Part X — Worlds Above, Below and Before
 Chapters 65–76.
@@ -530,4 +537,4 @@ Only after the 88 chapters and appendices are complete should the full manuscrip
 
 If nothing else is remembered:
 
-**Read the full handoff, continuation, outline, master manuscript, Chapters 1–52, the complete assembled cosmology page and complete GitHub WordPress archive; then continue at Chapter 53 in Stephen's exploratory first-person voice, preserving Flat Earth, the lattice dome, Meltology, Peratt/Birkeland-current cosmology, moving lands and the recurring natural time-door as core integrated possibilities, while keeping JANUS/numbers, phonetics and tests out of the book.**
+**Read the full handoff, continuation, outline, master manuscript, completed chapters and source archive; preserve Flat Earth, the lattice dome, Meltology, moving lands and the recurring natural time-door as integrated possibilities; keep JANUS/numbers, phonetics and tests out; remember Chapter 53 is the single dedicated Peratt/plasma bridge and Chapters 54–88 return to mythology, religion, legend, fairy tale and story; continue from the first undrafted chapter shown in the continuation file.**
