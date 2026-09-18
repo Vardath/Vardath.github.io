@@ -1,4 +1,4 @@
-# Chapter 5 — What the Early World-Machine Was Trying to Become
+# Chapter 5 — What the Early World-Machine Was Becoming
 
 The first world-machine was too literal.
 
@@ -440,9 +440,9 @@ That three-way viewpoint may be the single most important lesson of the project.
 
 ## What survived
 
-When I look back at the first world-machine now, I do not see a failed diagram.
+When I look back at the first world-machine now, I see an earlier layer of the same exploration.
 
-I see a rough ancestor.
+It is an ancestor, but it is also still present inside the later picture.
 
 The literal room changed.
 
@@ -470,7 +470,7 @@ There was the suggestion of a gate.
 
 There was the feeling that the structure was alive rather than inert.
 
-Those were the right questions even when the first answers were crude.
+Those questions opened relationships that later became larger, more connected and more detailed.
 
 The mature cosmology keeps them in a different form:
 
@@ -490,11 +490,11 @@ The mature cosmology keeps them in a different form:
 
 **catastrophe becomes handoff.**
 
-That is what the early world-machine was trying to become.
+That is what the early world-machine was becoming.
 
-Not a room.
+The room did not have to disappear.
 
-A process.
+It became one view of a larger process.
 
 A world that can remain itself for a long time, gather into a different geometry, open a temporary route through its own layered history, transfer what needs to survive, and then become a stable world again.
 
