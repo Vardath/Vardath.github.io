@@ -1,113 +1,103 @@
-# Vardath Cosmology
+# Vardath Cosmology: The World That Opens
 
 ## A Living Model of Worlds, Gates, Serpents, Lattices and Time
 
 **Stephen Michael Hawton (Vardath)**
 
-> Working manuscript.  
-> Canonical source archive: https://vardath.github.io/vardath-cosmology.html  
-> This book is being written from the complete Vardath Cosmology research archive and its development history. Hypothesis, mathematics, comparative interpretation, failed models and unresolved physical questions are kept distinct throughout.
+> Working manuscript.
+>
+> This is a book about the cosmology itself. The number/JANUS research, phonetics and research-test logs are deliberately outside its scope. Comparative mythology is presented as my structural reading of the sources, not as a replacement for their own cultural meanings.
 
 ---
 
 # Contents
 
-## Preface — Why I Kept Following the Pattern
+## Preface — Why I Am Writing This
+## Introduction — A World That Changes Its Adjacencies
 
-## Introduction — One Event, Many Views
-
-# Part I — How the Cosmology Began
-1. The Serpent Before the System
-2. Squatter Man and the Problem of Perspective
-3. The Axis Family
-4. The First Enclosed World
-5. What the Early Model Got Wrong
+# Part I — Finding the Hidden Shape
+1. The Serpent and the Question
+2. The Figure in the Current
+3. The First World-Machine
+4. One Phenomenon, Many Gods
+5. What the Early World-Machine Was Trying to Become
 
 # Part II — The Living World Structure
-6. The Persistent Current
-7. The Broad Lattice
-8. Two Directions in One Braid
-9. Previous, Present and Next
-10. A World Has Thickness
-11. The Upper Ocean
-12. The Quiet World and the Waking World
+6. One Growing Body, Many Turns
+7. The Current Beneath the World
+8. The Broad Lattice
+9. Two Directions in One Braid
+10. The Boundary Between Worlds
+11. The Quiet World and the Waking World
 
 # Part III — The Gate
-13. Activation
-14. Convergence
-15. Thirty-Two Around, One Through
-16. The Finger-Trap
-17. Mesh, Ladder, Rod and Throat
-18. The Gate as Changed Adjacency
-19. Two-Way Flow
-20. Reopening
+12. Activation
+13. Convergence
+14. Why the Fingertrap Changed Everything
+15. Mesh, Ladder, Rod and Throat
+16. The Gate Is a Change in Adjacency
+17. Many Throats, Not One Pole
+18. Two-Way Transfer
+19. Reopening
 
 # Part IV — What Crosses
-21. Water
-22. Air
-23. Stone
-24. Sediment and the Renewed Surface
-25. Living Cargo
-26. The Enclosure Principle
-27. Ark, Basket, Chest, Drum and Tube
-28. Population Continuity
+20. Water
+21. Air, Vapour, Heat and Pressure
+22. Stone, Crust and Sediment
+23. Living Cargo
+24. The Enclosure Principle
+25. Carrier and Vehicle
+26. The Handoff
 
 # Part V — Mythology as Camera Angles
-29. Operator and Apparatus
-30. Tree, Rod, Mountain, Ladder and Cross
-31. Eye, Wheel, Star and Rosette
-32. Serpent, Braid, Mesh and Net
-33. The Comparative World Atlas
-34. Revelation as an Event Sequence
-35. Yggdrasil, Time and the Door Between Worlds
-36. Inheritance, Transmission and Independent Recurrence
+27. Projection Grammar
+28. Operator, Apparatus, Guide, Guardian and Witness
+29. Tree, Rod, Mountain, Ladder and Pillar
+30. Eye, Wheel, Star and Rosette
+31. Serpent, Dragon, Braid and World Boundary
+32. Water at the Threshold
+33. Crossing Worlds
+34. Creation, Destruction and Renewal
+35. Revelation as a World-Cycle Vision
+36. Yggdrasil and the Door Through Time
 
-# Part VI — JANUS and the Mathematical Skeleton
-37. One, Three and Seven
-38. Seven Plus One
-39. Eleven and the Doorway
-40. Thirty-Three
-41. One Hundred and Thirty-Seven
-42. Polarity, Compression and Phase
-43. What the Mathematics Does—and Does Not—Prove
+# Part VI — Land, Sky and the Waking Environment
+37. The Land Is Not the Lattice
+38. Bends, Arcs and the Moving Surface
+39. The Sky Is Part of the Machine
+40. The Breathing Sky
+41. The Waking Atmosphere
+42. Life Under Different Conditions
 
-# Part VII — Land, Sky and the Waking Environment
-44. The Crust Is Cargo
-45. The Global S-Field
-46. The Sky Has to Compute
-47. The Waking Atmosphere
-48. Pressure and Oxygen
-49. Giants, Longevity and the Biological Branch
+# Part VII — Time, World Succession and the Moving Door
+43. Previous, Present and Next
+44. The Time Door
+45. When People and Lands Move
+46. The World Tree as a Woven Time Structure
 
-# Part VIII — Wrong Turns, Failed Models and Hard Physical Debts
-50. The Cold Ceiling
-51. Gravity Pointed the Wrong Way
-52. When the Sun and Moon Were Serpent Ends
-53. The Moon Projector
-54. The Three-Shell Clock
-55. Timing Is Not Strength
-56. Counterflow, Pressure and Mass Conservation
-57. Energy
-58. What the Model Still Owes
-
-# Part IX — The Current Vardath Cosmology
-59. The Full Cycle
-60. One World Becoming the Next
-61. What I Think the Myths Are Remembering
-62. What Remains Open
+# Part VIII — The Current Vardath Cosmology
+47. The Full Cycle
+48. One World Becoming the Next
+49. What I Think the Myths Are Remembering
+50. What Remains Open
 
 # Appendices
-A. Working Glossary  
-B. Research Chronology  
-C. JANUS Mathematical Notes  
-D. Motif and Role Atlas  
-E. Source Boundaries and Evidence Classes  
-F. Index
+A. Working Glossary
+B. Research Chronology
+C. Motif and Role Atlas
+D. Source Traditions and Boundaries
+E. Index
 
 ---
 
-## Manuscript status
+## Current manuscript files
 
-The substantive prose begins only after the complete source read is finished. The exact continuation point and required source-reading order are recorded in `BOOK-CONTINUATION.md`.
+- Preface — drafted
+- Introduction — drafted
+- Chapter 1 — drafted
+- Chapter 2 — drafted
+- Chapter 3 — drafted
+- Chapter 4 — drafting begins in the current batch
+- Chapter 5 onward — to follow in chapter batches
 
-This file is deliberately created now so that all subsequent batches have one canonical manuscript destination and version history.
+The chapter files under `book/chapters/` are the canonical working manuscript during drafting. This assembled file is the living contents and assembly guide.
