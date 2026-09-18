@@ -236,8 +236,10 @@ Current writing state:
 - Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat** — drafted and saved
 - Chapter 56 — **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal** — drafted and saved
 - Chapter 57 — **Indra and Vritra: Serpent, Thunderbolt and Released Waters** — drafted and saved
+- Chapter 58 — **Meru and the Churning of the Cosmic Ocean** — drafted and saved
+- Chapter 59 — **Buddhist and Jain Layered Worlds** — drafted and saved
 
 Continue next at:
-- Chapter 58 — **Meru and the Churning of the Cosmic Ocean**
+- Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
 
 Appendices now follow Chapter 88 rather than Chapter 52.
