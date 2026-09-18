@@ -2,12 +2,39 @@
 
 ## Working book architecture
 
-This book is a continuous explanation of Vardath Cosmology in Stephen Hawton / Vardath's voice. It is **not** a repackaging of the WordPress article bank.
+This book is a continuous explanation of Vardath Cosmology in Stephen Hawton / Vardath's voice. It is not a repackaging of the WordPress article bank.
 
-The manuscript is about the cosmology itself: how the picture formed, what the world-machine is, how the gate works, what moves through it, how one world becomes the next, and why myths from very different traditions can look like different views of related structural roles.
+The manuscript follows the cosmology itself: how the picture formed, what the world may be, how the lattice/current/world-tree may work, how the gate opens, what crosses, how the land and sky change, how worlds succeed one another, and why myths from very different traditions may preserve strong similarities from different viewpoints.
 
-The following material is deliberately outside the scope of this book:
+## The governing method
 
+I do not build this cosmology by declaring one explored possibility right and another wrong.
+
+I **explore and integrate**.
+
+When two ideas appear to conflict, I first ask whether they may belong to:
+- different scales;
+- different phases;
+- different viewpoints;
+- different parts of the same apparatus;
+- different local expressions of a larger structure.
+
+The book therefore uses language such as **may be, could be, fits with, connects to, strengthens, suggests, belongs beside, can be integrated with**.
+
+Earlier forms are not treated as embarrassing failed theories. They are stages of exploration whose strongest relationships can remain inside a larger picture.
+
+This is especially important for:
+- **flat Earth / world-disc geometry**;
+- **lattice domes / vaulted sky structure**;
+- **the larger shell or ammonite growth architecture**;
+- **Meltology**;
+- land deformation and moving-continent ideas;
+- plasma/electrical reset effects;
+- world-tree and layered-world interpretations.
+
+These are not to be argued away. The book explores how they may fit together.
+
+The following material is outside the scope of this book:
 - JANUS and number research;
 - numerological investigations;
 - phonetics;
@@ -15,199 +42,205 @@ The following material is deliberately outside the scope of this book:
 - assistant commentary;
 - methodological audit write-ups that interrupt the cosmology.
 
-Where an older idea matters to understanding the current model, it can appear as part of the story of how my picture changed. The book does not need to reproduce the experiment or test that changed it.
+The results of exploration may shape the book, but the book does not reproduce the testing process.
 
 ---
 
 # Front Matter
 
 ## Preface — Why I Am Writing This
-How a question about the serpent gradually became a complete world-picture. What I mean by a speculative cosmology, and why I want the uncertainty left visible without turning the book into a laboratory notebook.
+How a question about the serpent gradually became a complete world-picture, and how I build by exploring similarities and integrating possibilities rather than trying to defeat one model with another.
 
 ## Introduction — A World That Changes Its Adjacencies
-A clear tour of the current model before the reader encounters its history: quiet world, growing world-body, current, lattice, contraction, gate, transfer, reset and renewed world.
+A clear tour of the current integrated picture: quiet world, world-disc, lattice dome, larger growth structure, current, contraction, gate, transfer, reset and renewed world.
 
 ---
 
 # Part I — Finding the Hidden Shape
 
 ## Chapter 1 — The Serpent and the Question
-The Rainbow Serpent as my earliest useful intuition: not simply an animal or monster, but a moving line, current and land-shaping form.
+The Rainbow Serpent as my earliest useful intuition: a moving line, current and land-shaping form.
 
 ## Chapter 2 — The Figure in the Current
-Squatter Man, anthropomorphic projection and the discovery that viewpoint can turn one structure into figure, eye, wheel, cross, tree or radiant being.
+Squatter Man, plasma-like morphology, anthropomorphic projection and the discovery that viewpoint can turn one structure into figure, eye, wheel, cross, tree or radiant being.
 
 ## Chapter 3 — The First World-Machine
-The early enclosure, upper region, central axis, paired channels and the moment the separate symbols first became architecture.
+The early enclosure, world-floor, upper region, central axis, paired channels and the moment the separate symbols first became architecture.
 
 ## Chapter 4 — One Phenomenon, Many Gods
-Why I stopped trying to make every god, monster, mount and symbol into the same thing. Operator, apparatus, traveller, vehicle, guardian, guide, medium, witness and manifestation as distinct roles.
+Operator, apparatus, traveller, vehicle, guardian, guide, medium, witness and manifestation as different roles around one larger event.
 
-## Chapter 5 — What the Early World-Machine Was Trying to Become
-The parts of the early cosmology that survived after the literal room, celestial assignments and other early interpretations fell away. The shift from a static enclosure to a living, changing structure.
+## Chapter 5 — What the Early World-Machine Was Becoming
+How the room, canopy, paired channels, central form and living enclosure expanded into the larger world-tree/lattice cosmology without needing the earlier images to be discarded.
 
 ---
 
 # Part II — The Living World Structure
 
 ## Chapter 6 — One Growing Body, Many Turns
-Previous, present and next as neighbouring stages of one continuing world-body rather than unrelated universes.
+Previous, present and next as neighbouring stages of one continuing world-body.
 
-## Chapter 7 — The Current Beneath the World
-The persistent deep current: quiet state, active state and why the world-machine does not need to be rebuilt every time it wakes.
+## Chapter 7 — The World-Disc and the Lattice Dome
+The possibility that each inhabited world is a flat disc-like plane with depth, bounded and supported by a woven lattice dome, while the total world-tree/shell system grows through multiple levels or turns.
 
-## Chapter 8 — The Broad Lattice
-The distributed woven field, crossings, nodes and why a stable world is a broad state rather than an inert one.
+## Chapter 8 — The Current Beneath the World
+The persistent primordial current: quiet state, waking state and the idea that later events reactivate the same inherited world-forming pathways.
 
-## Chapter 9 — Two Directions in One Braid
-Counter-winding, polarity and why upward and downward movement can coexist inside one connected structure.
+## Chapter 9 — The Broad Lattice
+The distributed woven field, crossings, nodes and supporting vault of the quiet world.
 
-## Chapter 10 — The Boundary Between Worlds
-The upper interface, the proposed upper ocean, lower inheritance and the idea that a boundary can belong to both neighbouring worlds.
+## Chapter 10 — Two Directions in One Braid
+Counter-winding and opposed movement inside one connected structure.
 
-## Chapter 11 — The Quiet World and the Waking World
-Dormant nodes, closed boundaries and ordinary life contrasted with the environmental changes that begin when the deeper structure activates.
+## Chapter 11 — The Boundary Between Worlds
+Upper waters, lower inheritance, dome/boundary structure and the possibility that one interface belongs to both neighbouring worlds.
+
+## Chapter 12 — The Quiet World and the Waking World
+Sleeping/frozen and waking/thawed phases of the same world-machine.
 
 ---
 
 # Part III — The Gate
 
-## Chapter 12 — Activation
-The pulse: when the quiet current begins to reorganise the lattice.
+## Chapter 13 — Activation
+The pulse through the inherited current and the first waking of the lattice.
 
-## Chapter 13 — Convergence
-How a many-directional field begins to gather toward one dominant through-route.
+## Chapter 14 — Convergence
+How the broad field gathers toward one or more dominant through-routes.
 
-## Chapter 14 — Why the Fingertrap Changed Everything
-The mechanical image that joined broad lattice and narrow axis without needing two different machines.
+## Chapter 15 — Why the Fingertrap Changed Everything
+The mechanical image joining broad woven dome/lattice and narrow axis without requiring different machines.
 
-## Chapter 15 — Mesh, Ladder, Rod and Throat
+## Chapter 16 — Mesh, Ladder, Rod and Throat
 The continuous transformation from open weave to narrow gate-state.
 
-## Chapter 16 — The Gate Is a Change in Adjacency
-The mature definition of the gate: not a fantasy hole cut into space, but a temporary change in which normally separated regions can interact.
+## Chapter 17 — The Gate Is a Change in Adjacency
+The gate as a temporary condition in which normally separated worlds, levels or times can become neighbours.
 
-## Chapter 17 — Many Throats, Not One Pole
-Local nodes, regional openings and the difference between a small crossing and a world-scale reset.
+## Chapter 18 — Many Throats and the Larger Axis
+Local nodes, regional openings, poles, sacred centres and larger world-scale axial states as possibilities within one network.
 
-## Chapter 18 — Two-Way Transfer
-Why the gate behaves as exchange rather than a one-way lift.
+## Chapter 19 — Two-Way Transfer
+Upward and downward exchange through the same active structure.
 
-## Chapter 19 — Reopening
-How the throat loses dominance, the lattice spreads again and a stable world becomes possible.
+## Chapter 20 — Reopening
+The throat relaxes, the vault/lattice spreads again and a stable world becomes possible.
 
 ---
 
 # Part IV — What Crosses
 
-## Chapter 20 — Water
-The upper boundary, flood, circulation and why water is the clearest large-scale cargo of the transition.
+## Chapter 21 — Water
+Upper waters, lower waters, flood, circulation and transfer between worlds.
 
-## Chapter 21 — Air, Vapour, Heat and Pressure
-Atmosphere as cargo and environment, not empty space around the event.
+## Chapter 22 — Air, Vapour, Heat and Pressure
+Atmosphere as material cargo and part of the waking environment.
 
-## Chapter 22 — Stone, Crust and Sediment
-The land as carried material rather than the lattice itself. Erosion, burial, inheritance and the building of the renewed surface.
+## Chapter 23 — Stone, Crust and Sediment
+Land and built material carried, shifted, buried, transformed and inherited through reset.
 
-## Chapter 23 — Living Cargo
+## Chapter 24 — Living Cargo
 Seeds, eggs, microbes, animals and people as continuity crossing an unstable world-state.
 
-## Chapter 24 — The Enclosure Principle
-Ark, basket, chest, cave, egg, shell and womb as small protected worlds inside a changing larger world.
+## Chapter 25 — The Enclosure Principle
+Ark, basket, chest, cave, egg, shell and womb as protected worlds inside a changing larger world.
 
-## Chapter 25 — Carrier and Vehicle
-The difference between being preserved by an enclosure and actively travelling through the boundary.
+## Chapter 26 — Carrier and Vehicle
+The difference between surviving inside an enclosure and actively travelling through a route.
 
-## Chapter 26 — The Handoff
-Why reset means inheritance rather than erasure, and how the next stable world receives material from what came before.
+## Chapter 27 — The Handoff
+Reset as inheritance rather than erasure: a world gives material and life into what follows.
 
 ---
 
 # Part V — Mythology as Camera Angles
 
-## Chapter 27 — Projection Grammar
-Broadside weave, side-on axis, end-on node and the reason one three-dimensional structure can acquire several symbolic identities.
+## Chapter 28 — Projection Grammar
+Broadside weave, side-on axis, end-on node and changing forms of one deeper structure.
 
-## Chapter 28 — Operator, Apparatus, Guide, Guardian and Witness
-A role grammar for mythology that preserves difference instead of declaring every figure identical.
+## Chapter 29 — Operator, Apparatus, Guide, Guardian and Witness
+A role grammar that lets traditions overlap without forcing them to become identical.
 
-## Chapter 29 — Tree, Rod, Mountain, Ladder and Pillar
+## Chapter 30 — Tree, Rod, Mountain, Ladder and Pillar
 The axial family and the many ways a culture can picture connection between levels.
 
-## Chapter 30 — Eye, Wheel, Star and Rosette
-End-on forms, nodes, openings and the transition from geometry into personified watchers.
+## Chapter 31 — Eye, Wheel, Star and Rosette
+End-on forms, nodes, openings and personified watchers.
 
-## Chapter 31 — Serpent, Dragon, Braid and World Boundary
-The serpent at different scales: current, strand, paired winding, gate creature and world-enclosing ring.
+## Chapter 32 — Serpent, Dragon, Braid and World Boundary
+The serpent at different scales: current, strand, paired winding, guardian and world-enclosing ring.
 
-## Chapter 32 — Water at the Threshold
-World oceans, rivers between realms, flood, upper waters and the distinction between water as boundary and water as catastrophe.
+## Chapter 33 — Water at the Threshold
+World oceans, firmament waters, rivers between realms, flood and water as both separator and route.
 
-## Chapter 33 — Crossing Worlds
+## Chapter 34 — Crossing Worlds
 Ascent, descent, impossible distance, return windows, guides, mounts, bridges and guarded passages.
 
-## Chapter 34 — Creation, Destruction and Renewal
-Older world-body, division, inheritance, first land, renewed world and why apocalypse can be the middle of a cycle rather than its end.
+## Chapter 35 — Creation, Destruction and Renewal
+Older worlds, division, inheritance, first land and renewed worlds as different phases of continuity.
 
-## Chapter 35 — Revelation as a World-Cycle Vision
-A sustained comparison by sequence: opening, celestial disturbance, rolled sky, transfer, conflict, deformation, ordering and renewed world.
+## Chapter 36 — Revelation as a World-Cycle Vision
+Opening, celestial disturbance, rolled sky, transfer, conflict, deformation, ordering and renewed world.
 
-## Chapter 36 — Yggdrasil and the Door Through Time
-The world tree as persistent architecture, the door between levels, Odin meeting himself, and the idea that past, present and future can become physically adjacent during a transition.
+## Chapter 37 — Yggdrasil and the Door Through Time
+The world tree as persistent architecture and a door through levels, worlds and time.
 
 ---
 
 # Part VI — Land, Sky and the Waking Environment
 
-## Chapter 37 — The Land Is Not the Lattice
-Crust as cargo over a deeper organiser and why visible geography is consequence rather than blueprint.
+## Chapter 38 — The Land Rides the Lattice
+The possibility that lands, plates, mountains and built surfaces are material carried by a deeper moving support structure.
 
-## Chapter 38 — Bends, Arcs and the Moving Surface
-The S-shaped intuition, regional shear, continental prows, hinges, arcs and the way water outlines a deformed surface.
+## Chapter 39 — Bends, Arcs and the Moving Surface
+The S-shaped intuition, continental prows, hinges, arcs, world movement and the possibility that lands shift, trade places or move between levels during major events.
 
-## Chapter 39 — The Sky Is Part of the Machine
-The celestial field as structured environment rather than empty background.
+## Chapter 40 — Meltology: The Material Memory of Reset
+Melted or transformed architecture, mountain-like structures, vitrification, fusion, foaming, recrystallisation, enlarged or distorted masonry and plasma/electrical heating as part of the same surface-reset process.
 
-## Chapter 40 — The Breathing Sky
-Distributed lights, moving concentrations, convergence, the temporary rod-body and release back into the broad celestial field.
+## Chapter 41 — The Sky Is Part of the Machine
+The sky as a structured lattice/dome environment rather than empty background.
 
-## Chapter 41 — The Waking Atmosphere
-Moisture, pressure, heat, electrical activity and the environmental difference between a quiet world and an active one.
+## Chapter 42 — The Breathing Sky
+Distributed lights, celestial paths, convergence, temporary rod-body and later release into the broad field.
 
-## Chapter 42 — Life Under Different Conditions
-The more speculative biological branch: scale, fertility, longevity and why these ideas remain extensions rather than the foundation of the cosmology.
+## Chapter 43 — The Waking Atmosphere
+Moisture, pressure, oxygen, heat, electrical activity and the active environmental phase.
+
+## Chapter 44 — Life Under Different Conditions
+Giants, longevity, unusual growth, mutation and strange biological forms as possibilities within the waking world.
 
 ---
 
 # Part VII — Time, World Succession and the Moving Door
 
-## Chapter 43 — Previous, Present and Next
-Why I increasingly came to see the neighbouring turns as past, present and future held inside one larger body.
+## Chapter 45 — Previous, Present and Next
+Neighbouring levels as past, present and future within one larger structure.
 
-## Chapter 44 — The Time Door
-How contraction can make normally separated times or world-states temporarily adjacent without requiring the whole universe to run backward.
+## Chapter 46 — The Time Door
+How changing adjacency may bring normally separated world-times into contact.
 
-## Chapter 45 — When People and Lands Move
-The possibility that the event redistributes not only individuals but regions, material and inherited geography between world-states.
+## Chapter 47 — When People and Lands Move
+The possibility that the event redistributes individuals, populations, built environments and whole regions between levels and times.
 
-## Chapter 46 — The World Tree as a Woven Time Structure
-Yggdrasil, threads, weaving, the fingertrap and the idea of a living connector whose changing geometry can alter where—and when—things belong.
+## Chapter 48 — The World Tree as a Woven Time Structure
+Yggdrasil, threads, weaving, the fingertrap and a living connector whose geometry alters where—and when—things belong.
 
 ---
 
-# Part VIII — The Current Vardath Cosmology
+# Part VIII — The Integrated Vardath Cosmology
 
-## Chapter 47 — The Full Cycle
-Quiet world → activation → convergence → gate → transfer → deformation → reopening → renewed quiet world, explained without shorthand.
+## Chapter 49 — The Full Cycle
+Quiet world → waking → convergence → gate → transfer → deformation/heating → reopening → renewed quiet world.
 
-## Chapter 48 — One World Becoming the Next
-A complete walk through material inheritance, survival and succession from the viewpoint of the larger world-body.
+## Chapter 50 — One World Becoming the Next
+A complete walk through material inheritance, survival, land movement and succession.
 
-## Chapter 49 — What I Think the Myths Are Remembering
-The strongest version of the comparative claim: not one universal religion, but human memories and cultural transformations of recurring structural roles.
+## Chapter 51 — What I Think the Myths May Be Remembering
+The strongest similarities from many traditions assembled without requiring one universal story or one exclusive interpretation.
 
-## Chapter 50 — What Remains Open
-The unresolved physical picture, the places where I am confident about internal structure, the places where I am not, and why I still think the model is worth developing.
+## Chapter 52 — What I Am Still Exploring
+The remaining possibilities, unresolved relationships and branches that may yet fit into the larger structure.
 
 ---
 
@@ -216,13 +249,13 @@ The unresolved physical picture, the places where I am confident about internal 
 ## Appendix A — Working Glossary
 Plain-language definitions of the model's terms.
 
-## Appendix B — Research Chronology
-A readable development history of the cosmology, without test logs, numbers research or phonetics.
+## Appendix B — Research Journey
+A readable chronology of how the cosmology expanded and integrated new possibilities, without test logs, numbers research or phonetics.
 
 ## Appendix C — Motif and Role Atlas
-A compact cross-reference of axis, gate, operator, vehicle, carrier, guide, guardian, witness, medium and renewal roles across traditions.
+Axis, gate, operator, vehicle, carrier, guide, guardian, witness, medium, world-disc, dome, serpent, reset and renewal roles across traditions.
 
-## Appendix D — Source Traditions and Boundaries
-Notes on the original cultural contexts and where my Vardath reading begins.
+## Appendix D — Source Traditions
+Notes on the traditions discussed and the particular similarities that drew my attention.
 
 ## Appendix E — Index
