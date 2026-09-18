@@ -268,43 +268,57 @@ The present is not the final destination.
 
 It is one stage in continuity.
 
-## World-turns are not flat discs
+## The world-turn may be a flat disc supported by a lattice dome
 
-The word *turn* can accidentally make the model sound two-dimensional.
+One of the forms I now keep open is that an inhabited world-turn may be a **flat disc-like world supported by a lattice dome or vaulted lattice structure**.
 
-That is not what I mean.
+That does not make the world infinitely thin.
 
-A world-turn has thickness.
+The inhabited surface can be broadly flat while the world-region still has depth, atmosphere, water, crust, lower material and an upper boundary.
 
-It contains volume.
+The disc is the lived surface.
 
-There is crust beneath the inhabited surface.
+The dome is part of the structure that supports, encloses and relates that surface to the larger world-body.
 
-There is atmosphere above it.
+This fits naturally with the world-tree picture.
 
-There are water reservoirs.
+Each inhabited level can be Earth-like in its own right while remaining part of a larger vertical sequence. A world can have a flat inhabited plane, a structured sky above it, a lattice support around or beneath it, and another world beyond that structure.
 
-There are internal boundaries.
+The shell or ammonite image then belongs to the **growth of the whole system**, not necessarily to the local shape of every inhabited surface.
 
-There is a relation to the lattice below and around it.
+That distinction lets the two ideas work together.
 
-There is a relation to the upper interface.
+At the large scale, the world-body can grow through successive turns or chambers.
 
-The turn is therefore more like a thick band or chamber of a larger growing structure than a single line drawn on paper.
+At the local scale, an inhabited turn can settle as a broad disc supported by a dome-like lattice.
 
-This matters because neighbouring worlds do not need their mathematical centre-lines to collide in order to interact.
+The dome is especially important because the lattice in my cosmology is not only a pathway. It is also support.
 
-Their boundary regions can approach.
+In the quiet state it holds separation.
 
-Their atmospheres can begin affecting one another.
+It carries the sky structure.
 
-Their water interfaces can overlap.
+It helps define the enclosure of the world.
 
-Their field structures can couple.
+During activation that same supporting geometry can tighten, bow, open, roll or contract toward the axial state.
 
-Contact can begin as a zone rather than one perfect point.
+So the dome and the gate do not have to be different machines.
 
-That gives the gate a physically richer setting.
+The quiet lattice can be the supporting vault.
+
+The active lattice can become the route.
+
+This also gives the old firmament and vaulted-sky imagery a direct place in the model without reducing it to metaphor.
+
+A lattice dome can be a real structural possibility inside Vardath Cosmology: the broad state of the same woven architecture that later narrows toward the rod and throat.
+
+Neighbouring worlds therefore do not need two idealised mathematical lines to touch.
+
+Their domes, lower boundaries, atmospheres, water layers and supporting lattice regions can approach and couple.
+
+Contact can begin as a zone.
+
+The gate is what happens when that zone becomes organised into a traversable route.
 
 ## Separation is part of the world
 
