@@ -233,7 +233,7 @@ Yggdrasil, threads, weaving, the fingertrap and a living connector whose geometr
 ## Chapter 49 — The Full Cycle
 Quiet world → waking → convergence → gate → transfer → deformation/heating → reopening → renewed quiet world.
 
-## Chapter 51 — One World Becoming the Next
+## Chapter 50 — One World Becoming the Next
 A complete walk through material inheritance, survival, land movement and succession.
 
 ## Chapter 51 — What I Think the Myths May Be Remembering
@@ -241,6 +241,126 @@ The strongest similarities from many traditions assembled without requiring one 
 
 ## Chapter 52 — What I Am Still Exploring
 The remaining possibilities, unresolved relationships and branches that may yet fit into the larger structure.
+
+---
+
+# Part IX — Ancient Cosmologies and Sacred Worlds
+
+## Chapter 53 — Tiamat and the World Made From an Older Body
+Mesopotamian primordial water, Tiamat, Marduk, division and the striking idea that the material of an older world becomes the architecture of a newer one.
+
+## Chapter 54 — Atrahasis, Utnapishtim and the Flood Carrier
+Mesopotamian flood traditions, warning, enclosure, survival, landing and continuity after a world-level water catastrophe.
+
+## Chapter 55 — Egypt: Nun, the First Mound and the Road Through the Duat
+Primeval water, first land, Nut and Geb, maintained separation, the solar barque, the lower route and return.
+
+## Chapter 56 — Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal
+Hara Berezaiti, Vourukasha, Chinvat Bridge, Gaokerena, fiery purification and Frashokereti as a complete architecture of ordered world, crossing and renewal.
+
+## Chapter 57 — Indra and Vritra: Serpent, Thunderbolt and Released Waters
+The Vedic dragon/serpent conflict, blocked waters, storm force and release beside the Vardath current-and-boundary picture.
+
+## Chapter 58 — Meru and the Churning of the Cosmic Ocean
+Mount Meru, the cosmic ocean and Samudra Manthan as images of axis, rotation, opposed participants, emergence and transformed material.
+
+## Chapter 59 — Buddhist and Jain Layered Worlds
+World mountains, layered heavens and lower regions, cyclical time and the possibility that different religious cosmologies preserve a strongly structured vertical world rather than featureless space.
+
+## Chapter 60 — Greek Succession: Uranus, Cronus and Zeus
+Sky and Earth, compressed generations, containment, release and the handoff from one cosmic order to another.
+
+## Chapter 61 — Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle
+The Norse world tree, bridge, guardian and realm-crossing mount considered as distinct roles around one connected world system.
+
+## Chapter 62 — Ragnarök: Boundary Failure, Fire, Survival and the New World
+Jörmungandr, Fenrir, Surtr, Líf and Lífþrasir as different phases of breakdown, released force, destruction, enclosure and renewed life.
+
+## Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
+Separated waters, flood, vertical passage, heavenly gates and beings associated with the upper realm, read carefully beside the Vardath boundary and gate grammar.
+
+## Chapter 64 — The Night Journey and Ascension
+Al-Isrāʾ and al-Miʿrāj as a religious account of extraordinary travel, layered heavens, guided ascent and return, compared by route and role without collapsing its Islamic meaning into the cosmology.
+
+---
+
+# Part X — Worlds Above, Below and Before
+
+## Chapter 65 — Ranginui and Papatūānuku: The World Opened by Separation
+The Māori sky father and earth mother, darkness between compressed parents, Tāne's separation and the creation of habitable space.
+
+## Chapter 66 — Sky Woman and the World Below
+Haudenosaunee traditions of an upper world, descent through an opening, water below, animal helpers and the making of land.
+
+## Chapter 67 — The Popol Vuh: Worlds Tried More Than Once
+Maya creation sequences, successive attempts at humanity, descent, ordeal and renewal within a cosmos that does not begin with one simple finished world.
+
+## Chapter 68 — The Five Suns: Worlds That End and Begin Again
+Aztec world ages and successive destructions as a particularly clear cultural architecture of repeated world-states.
+
+## Chapter 69 — Pangu and Nüwa: Egg, Separation and Repair of the Sky
+Chinese cosmogonic traditions of enclosure, opening, sky-earth separation, broken supports and restoration.
+
+## Chapter 70 — Izanagi and Izanami: Bridge, Descent and the Sealed Return
+Japanese creation, the floating bridge of heaven, descent to Yomi, the dangerous return and the closing of a boundary.
+
+## Chapter 71 — Oduduwa and the Descent Onto Primordial Water
+Yoruba creation traditions in which land and ordered human space emerge through descent from the upper realm over a water-dominated world.
+
+## Chapter 72 — Ilmatar, the World Egg and the Sampo
+Finnic/Kalevala material: water before land, the egg whose pieces become world structure, and the Sampo as a separate image of ordered abundance and broken cosmic possession.
+
+## Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits
+Polynesian story cycles in which land can be raised, celestial motion can be altered and a culture hero repeatedly tests the boundaries of the ordinary world.
+
+## Chapter 74 — Rainbow Serpent: Land, Water and the Living Current
+Returning to the traditions that helped begin the project, this time with the full mature cosmology available: movement, water, land-shaping, sacred routes and the current beneath the world.
+
+## Chapter 75 — Hopi Emergence: Worlds Below and the Climb Upward
+Hopi emergence traditions considered on their own terms and beside the recurring structure of successive worlds, enclosure, ascent and arrival into another surface.
+
+## Chapter 76 — Tír na nÓg: The Otherworld and the Time of Return
+Oisín's journey to the Irish Otherworld, the changed passage of time and the devastating consequences of returning to ordinary time.
+
+---
+
+# Part XI — Fairy Doors, Time Slips and Modern Echoes
+
+## Chapter 77 — Urashima Tarō and the Palace Beneath the Sea
+A journey across a water boundary into another domain, apparent short duration, return to a vastly changed world and the problem of incompatible times.
+
+## Chapter 78 — The Seven Sleepers: Enclosure as a Time Carrier
+The Christian and Islamic legendary traditions of sleepers preserved inside an enclosure while ordinary historical time moves far ahead outside.
+
+## Chapter 79 — Fairy Time: Thomas the Rhymer, Tam Lin and the Mound
+British and Scottish fairy traditions in which an apparently local boundary opens into another order of time, with special rules governing return.
+
+## Chapter 80 — Frau Holle and the Well as a Door
+A fairy-tale well becomes a route into another domain, turning one of the simplest landscape openings into a complete world-crossing structure.
+
+## Chapter 81 — Avalon and the Island Outside Ordinary Reach
+Arthurian otherworld geography, water crossing, healing, suspended return and the idea of a place that is near the world without remaining ordinarily accessible.
+
+## Chapter 82 — Alice: Rabbit Holes, Looking-Glasses and Stopped Time
+Wonderland and the Looking-Glass world as stories built from threshold objects, impossible adjacency, altered scale, mirror inversion and the Mad Hatter's time locked at tea.
+
+## Chapter 83 — Narnia and the Wood Between the Worlds
+The wardrobe, pools, the Wood Between the Worlds and differential time as a modern story-system in which many worlds remain separate until a local threshold is used.
+
+## Chapter 84 — The Wizard of Oz: The Storm as Vehicle
+A violent atmospheric event carries a house and person out of ordinary geography into another world, followed by a search for the route home.
+
+## Chapter 85 — The NeverEnding Story and the Mirror at the Gate
+Identity, reflection, crossing into a world partly sustained by story and the recurring image of confronting another version of oneself at a threshold.
+
+## Chapter 86 — Annihilation: The Shimmer and the Mirror Self
+A bounded field transforms biology, landscape, memory and identity, culminating in the mirror-self encounter that has repeatedly interested me in stories about passage through altered worlds.
+
+## Chapter 87 — Spirited Away: Tunnel, Threshold and Return
+A seemingly ordinary passage opens into another inhabited order with its own rules, transformations and difficult route back.
+
+## Chapter 88 — The Same Door Wearing Different Stories
+A final comparative chapter bringing together caves, wells, mirrors, trees, bridges, storms, seas, fairy mounds, wardrobes, fields and other thresholds to ask whether stories repeatedly reinvent one deep grammar: ordinary world → boundary → altered adjacency → other world/time → return or succession.
 
 ---
 
