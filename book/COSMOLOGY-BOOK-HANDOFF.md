@@ -16,7 +16,7 @@ Then, before continuing the manuscript, read the following completely:
 1. `book/BOOK-CONTINUATION.md`
 2. `book/outline.md`
 3. `book/VARDATH-COSMOLOGY-BOOK.md`
-4. **Every existing manuscript chapter in `book/chapters/` through Chapter 52**, including Preface and Introduction.
+4. **Every existing manuscript chapter in `book/chapters/` through the latest drafted chapter (currently Chapter 59)**, including Preface and Introduction.
 5. The complete current Vardath Cosmology page source, not merely the HTML wrapper:
    - `vardath-cosmology.html`
    - every included file in `cosmology_fragments/`
@@ -404,7 +404,7 @@ The 88-chapter list is already written in `book/outline.md`.
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53–57 are drafted and saved.**
+**Chapters 53–59 are drafted and saved.**
 
 - Chapter 53 — **Anthony Peratt and the Primordial Current**
 - Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim**
