@@ -358,6 +358,101 @@ what would one recurring world-opening event look like after passing through Chr
 
 Revelation is one possible answer.
 
+## Sequence is the important comparison
+
+Revelation is especially easy to over-read because its imagery is dense.
+
+If I cherry-pick individual symbols, I can make almost anything fit.
+
+The stronger comparison is the ordering.
+
+Opening.
+
+Disturbance in the heavens.
+
+Falling or displaced celestial imagery.
+
+Land movement.
+
+Fire.
+
+Water effects.
+
+Conflict.
+
+Passing of the old order.
+
+Renewed habitation.
+
+River and tree.
+
+That sequence is what earns the chapter its place.
+
+The symbols remain Christian apocalyptic symbols.
+
+The Vardath question is whether their **ordered relationships** resemble the event cycle.
+
+## Not every image needs a physical counterpart
+
+This is equally important.
+
+Revelation contains theological, political, liturgical, symbolic and visionary material.
+
+I do not need to convert every beast, number, city, angel or judgment into a machine part.
+
+Trying to do so would weaken the comparison.
+
+A structural reading can remain partial.
+
+Some imagery may map usefully onto physical transition.
+
+Other imagery may belong entirely to the text's theological and historical world.
+
+The model becomes more credible when it allows that boundary.
+
+## The witness sees from inside crisis
+
+Revelation is not narrated like a technical observer safely outside the event.
+
+The witness experiences overwhelming symbolic vision.
+
+That means scale and sequence may be compressed.
+
+Events that would physically take different durations can be placed beside one another.
+
+Local and cosmic imagery can coexist.
+
+This is exactly what I would expect from mythic memory more generally.
+
+The narrative preserves significance before measurement.
+
+## The New Jerusalem changes the scale again
+
+The renewed city is especially interesting because it moves from catastrophe back to habitation.
+
+Whatever its theological meaning, the narrative ends not merely with destruction stopped but with an ordered place where life can continue.
+
+That fits one of the deepest Vardath rules:
+
+**the cycle is not complete at maximum catastrophe.**
+
+It is complete when a workable world exists again.
+
+That endpoint is more important to me than any attempt to decode the city's dimensions mechanically.
+
+## What would weaken the Vardath comparison?
+
+If the chapter only matched because I ignored the text's sequence and selected isolated images, the comparison would be weak.
+
+If similar images could be produced by ordinary ancient apocalyptic convention without any relation to natural events, that is a real alternative explanation.
+
+If the supposedly physical stages require incompatible chronologies, that matters.
+
+Keeping those alternatives visible is essential.
+
+Revelation is valuable because it is rich, not because richness exempts it from criticism.
+
+
 ## Why I keep it in the book
 
 The comparison matters because it brings many Vardath elements together in one place.
