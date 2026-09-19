@@ -408,11 +408,8 @@ For readers who want to move directly to the large comparative expansion:
 
 # Final indexing note
 
-The next production-stage index should be generated after:
+The continuity and duplication pass, canonical 88-chapter numbering, and master manuscript assembly have now been completed.
 
-1. the full continuity and duplication pass;
-2. canonical chapter numbering is reconciled with all working filenames/headings;
-3. the manuscript is assembled into final chapter order;
-4. print pagination is fixed.
+This appendix remains a **chapter-level working index** for the assembled reading manuscript.
 
-At that point, the thematic entries above can be converted into a conventional page-number index without changing the conceptual structure.
+The remaining indexing step belongs to final publication layout: once trim size, typography, illustrations and print pagination are frozen, the thematic entries above can be converted into a conventional page-number index without changing the conceptual structure.
