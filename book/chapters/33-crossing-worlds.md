@@ -390,6 +390,129 @@ The scale is different.
 
 That is one of the central unifications in Vardath Cosmology.
 
+## A crossing has stages
+
+It helps to slow the event down.
+
+A traveller does not simply disappear from A and appear in B.
+
+There may be:
+
+**approach**
+
+**threshold contact**
+
+**entry**
+
+**transition**
+
+**arrival**
+
+**adaptation**
+
+**return attempt**
+
+**re-entry**
+
+Each stage can fail separately.
+
+That is why stories so often contain warnings and rules around the threshold.
+
+The route may be accessible while return is not.
+
+The traveller may arrive while remaining biologically incompatible.
+
+The gate may close before the traveller is ready.
+
+Thinking in stages makes the time door less magical and more like a transport system with failure points.
+
+## The body is a clock too
+
+Temporal displacement is not only about calendars outside the traveller.
+
+The body ages.
+
+Sleeps.
+
+Needs food.
+
+Repairs cells.
+
+Carries circadian rhythms.
+
+If time genuinely runs differently across the route, the model eventually has to specify which biological processes follow which clock.
+
+Urashima Tarō makes that problem visible through sudden age.
+
+The Seven Sleepers solve it through suspended biology.
+
+Narnia often ignores it for story purposes.
+
+A physical Vardath theory cannot.
+
+The traveller's body becomes one of the most important measuring instruments.
+
+## Return is the harder test
+
+Many stories make departure easy and return dangerous.
+
+That is not merely dramatic convenience.
+
+A changed-adjacency model naturally allows asymmetry.
+
+The world-state can change while the traveller is away.
+
+The pressure gradient can reverse.
+
+The node can close.
+
+The home environment can become historically or biologically different.
+
+A successful outward crossing therefore tells me less than a successful round trip.
+
+The real mechanical test is:
+
+**can identity survive both interfaces?**
+
+## Crossing should leave mismatches
+
+If a traveller really moved between world-states, I would expect mismatches on return.
+
+Time.
+
+Memory.
+
+Biology.
+
+Objects.
+
+Language.
+
+Age.
+
+Environmental residues.
+
+Knowledge that belongs to another historical context.
+
+Stories repeatedly use these mismatches because they are narratively powerful.
+
+The Vardath model treats them as potential categories of evidence rather than automatically accepting any one tale literally.
+
+## Local crossing and global reset should share grammar, not scale
+
+This distinction matters enough to repeat.
+
+A fairy traveller passing through a mound and a world undergoing catastrophic convergence do not have to involve the same energy, duration or cargo.
+
+What they may share is the topology:
+
+**stable region → local changed adjacency → transfer → restored separation.**
+
+The many-throat model works only if scale is allowed to vary enormously.
+
+That is why small folklore belongs beside large cosmology without every fairy story becoming apocalypse.
+
+
 ## One crossing, many interpretations
 
 A traveller might describe the same passage as:
