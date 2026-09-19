@@ -402,6 +402,157 @@ A world-scale event adds:
 
 This sequence is far more useful to me than matching isolated symbols.
 
+## Roles can be drawn as an event map
+
+One way to test a mythic comparison is to remove the names completely.
+
+Write only the functions:
+
+**apparatus exists**
+
+→ **operator changes it**
+
+→ **route opens**
+
+→ **guardian controls threshold**
+
+→ **guide leads traveller**
+
+→ **vehicle carries traveller**
+
+→ **receiver accepts arrival**
+
+→ **witness remembers manifestation**
+
+If the sequence still makes sense after the names are removed, the comparison is structural.
+
+If it collapses because everything depended on one visual pun or one similar name, the comparison is weak.
+
+This is one of the simplest quality tests I now use.
+
+## A single figure can accumulate roles over time
+
+Mythic traditions are not engineering diagrams.
+
+A culturally central figure can absorb many functions.
+
+A god may become creator, traveller, judge, storm, king and guardian across different stories or later interpretations.
+
+That does not mean the physical model needs one component doing all those jobs.
+
+It may mean storytelling has compressed several roles into one personality.
+
+The reverse can also happen.
+
+One physical role may be divided among several mythic figures.
+
+Role grammar lets me compare both situations without forcing one-to-one identity.
+
+## Sequence matters more than status
+
+A powerful god is not automatically the operator.
+
+Sometimes the apparently minor helper actually performs the action that changes the system.
+
+Sometimes the king only witnesses.
+
+Sometimes the monster is the boundary.
+
+Sometimes the hero is cargo.
+
+That is why I increasingly ignore narrative prestige and ask:
+
+**who changes what?**
+
+**who moves?**
+
+**who stays?**
+
+**who controls the threshold?**
+
+**what exists before the character arrives?**
+
+Those questions reveal the event structure much more reliably than divine rank.
+
+## Roles can switch during one story
+
+Dorothy's house begins as ordinary shelter and becomes carrier.
+
+Arthur begins as king/operator and becomes wounded cargo carried to Avalon.
+
+A serpent can begin as obstruction and later become released or transformed.
+
+A traveller can become guide for someone else.
+
+This role-switching is important because real systems also change function by phase.
+
+A boundary can become route.
+
+A route can become barrier.
+
+A node can become throat.
+
+The role grammar is therefore dynamic, not a fixed cast list.
+
+## Missing roles are informative
+
+A tradition does not need every role.
+
+If there is no vehicle, perhaps the traveller moves directly.
+
+If there is no operator, the event may be natural or automatic.
+
+If there is no guardian, access may depend only on phase.
+
+If there is no traveller, the story may preserve only the environmental manifestation.
+
+This helps prevent the atlas from forcing a complete Vardath diagram into every culture.
+
+The gaps matter.
+
+They tell me what the story is actually interested in.
+
+## Role combinations can reveal scale
+
+Local fairy stories often emphasise:
+
+traveller,
+
+guide,
+
+threshold,
+
+return.
+
+World-creation stories emphasise:
+
+apparatus,
+
+operator,
+
+material,
+
+receiver,
+
+stabilisation.
+
+Apocalyptic stories emphasise:
+
+boundary failure,
+
+manifestation,
+
+survivor,
+
+successor world.
+
+That difference may reflect genre.
+
+It may also reflect scale.
+
+Either way, role distribution helps me compare stories without pretending they all describe the same event at the same magnitude.
+
+
 ## Why role grammar matters
 
 The role system prevents the book from saying nonsense such as:
