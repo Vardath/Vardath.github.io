@@ -2,6 +2,8 @@ name: Assemble Vardath Cosmology
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '.github/workflows/assemble-book.yml'
 
@@ -12,63 +14,74 @@ jobs:
   assemble:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Assemble canonical manuscript
         shell: bash
         run: |
-          set -euo pipefail
-          OUT="book/BOOK.md"
-          : > "$OUT"
-          cat >> "$OUT" <<'EOF'
-# Vardath Cosmology: The World That Opens
+          python - <<'PY'
+          from pathlib import Path
+          import re
 
-## Stephen Michael Hawton / Vardath
+          root = Path(".")
+          out = root / "book" / "BOOK.md"
 
----
+          parts = [
+              ("Part I — Finding the Hidden Shape", 1, 5),
+              ("Part II — The Living World Structure", 6, 12),
+              ("Part III — The Gate", 13, 20),
+              ("Part IV — What Crosses", 21, 27),
+              ("Part V — Mythology as Camera Angles", 28, 37),
+              ("Part VI — Land, Sky and the Waking Environment", 38, 44),
+              ("Part VII — Time, World Succession and the Moving Door", 45, 48),
+              ("Part VIII — The Integrated Vardath Cosmology", 49, 52),
+              ("Part IX — Ancient Cosmologies and Sacred Worlds", 53, 64),
+              ("Part X — Worlds Above, Below and Before", 65, 76),
+              ("Part XI — Fairy Doors, Time Slips and Modern Echoes", 77, 88),
+          ]
 
-EOF
-          cat book/chapters/00-preface.md >> "$OUT"
-          printf '\n\n---\n\n' >> "$OUT"
-          cat book/chapters/00-introduction.md >> "$OUT"
-          printf '\n\n---\n\n' >> "$OUT"
+          chunks = [
+              "# Vardath Cosmology: The World That Opens\n\n"
+              "## Stephen Michael Hawton / Vardath\n\n---\n\n"
+          ]
 
-          append_part () {
-            local title="$1"; local start="$2"; local end="$3"
-            printf '# %s\n\n' "$title" >> "$OUT"
-            for n in $(seq -w "$start" "$end"); do
-              f=$(find book/chapters -maxdepth 1 -type f -name "$n-*.md" | sort | head -n 1)
-              test -n "$f"
-              cat "$f" >> "$OUT"
-              printf '\n\n---\n\n' >> "$OUT"
-            done
-          }
+          for p in [
+              root / "book" / "chapters" / "00-preface.md",
+              root / "book" / "chapters" / "00-introduction.md",
+          ]:
+              chunks.append(p.read_text(encoding="utf-8").rstrip() + "\n\n---\n\n")
 
-          append_part "Part I — Finding the Hidden Shape" 1 5
-          append_part "Part II — The Living World Structure" 6 12
-          append_part "Part III — The Gate" 13 20
-          append_part "Part IV — What Crosses" 21 27
-          append_part "Part V — Mythology as Camera Angles" 28 37
-          append_part "Part VI — Land, Sky and the Waking Environment" 38 44
-          append_part "Part VII — Time, World Succession and the Moving Door" 45 48
-          append_part "Part VIII — The Integrated Vardath Cosmology" 49 52
-          append_part "Part IX — Ancient Cosmologies and Sacred Worlds" 53 64
-          append_part "Part X — Worlds Above, Below and Before" 65 76
-          append_part "Part XI — Fairy Doors, Time Slips and Modern Echoes" 77 88
+          for part_title, start, end in parts:
+              chunks.append(f"# {part_title}\n\n")
+              for n in range(start, end + 1):
+                  matches = sorted((root / "book" / "chapters").glob(f"{n:02d}-*.md"))
+                  if len(matches) != 1:
+                      raise SystemExit(f"Expected exactly one file for chapter {n}, found {len(matches)}: {matches}")
+                  chunks.append(matches[0].read_text(encoding="utf-8").rstrip() + "\n\n---\n\n")
 
-          printf '# Appendices\n\n' >> "$OUT"
-          for f in             book/appendices/A-working-glossary.md             book/appendices/B-research-journey.md             book/appendices/C-motif-and-role-atlas.md             book/appendices/D-source-traditions.md             book/appendices/E-index.md
-          do
-            cat "$f" >> "$OUT"
-            printf '\n\n---\n\n' >> "$OUT"
-          done
+          chunks.append("# Appendices\n\n")
+          for p in [
+              root / "book" / "appendices" / "A-working-glossary.md",
+              root / "book" / "appendices" / "B-research-journey.md",
+              root / "book" / "appendices" / "C-motif-and-role-atlas.md",
+              root / "book" / "appendices" / "D-source-traditions.md",
+              root / "book" / "appendices" / "E-index.md",
+          ]:
+              chunks.append(p.read_text(encoding="utf-8").rstrip() + "\n\n---\n\n")
 
-          chapters=$(grep -c '^# Chapter [0-9][0-9]* — ' "$OUT")
-          test "$chapters" -eq 88
-          wc -w -c -l "$OUT"
-          echo "chapter_count=$chapters" >> "$GITHUB_ENV"
+          text = "".join(chunks)
+          chapter_numbers = [int(x) for x in re.findall(r"^# Chapter (\d+) — ", text, re.M)]
+          expected = list(range(1, 89))
+          if chapter_numbers != expected:
+              raise SystemExit(f"Chapter order mismatch: {chapter_numbers}")
+
+          out.write_text(text, encoding="utf-8")
+          words = len(re.findall(r"\b\w[\w’'-]*\b", text, re.UNICODE))
+          print(f"Assembled {out}: {words:,} words, {len(text):,} characters")
+          PY
 
       - name: Commit assembled BOOK.md
         shell: bash
