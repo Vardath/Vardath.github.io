@@ -358,6 +358,103 @@ The world is not the same.
 
 That distinction remains important.
 
+## Alignment matters
+
+An end-on projection only appears when the observer is reasonably aligned with the axis or node.
+
+Move sideways and the same structure stops looking circular.
+
+The ring becomes an ellipse.
+
+The eye becomes a slanted opening.
+
+The wheel becomes a bundle or rod.
+
+This is useful because it gives projection grammar a falsifiable geometric expectation:
+
+**radial symbols should belong to a narrower viewing cone than side-on tree or rod symbols.**
+
+I cannot use that rule retrospectively to prove any tradition.
+
+But it helps keep the model mechanically disciplined.
+
+## Rotation can change the radial image
+
+A static radial structure and a rotating radial structure would not look the same.
+
+Rotation can blur spokes.
+
+Create apparent rings.
+
+Produce repeated arcs.
+
+Make separate lights merge into a continuous halo.
+
+If brightness also pulses, an observer could experience the node as alternating between:
+
+star,
+
+wheel,
+
+eye,
+
+ring,
+
+and luminous disc.
+
+That does not mean every such symbol comes from rotation.
+
+It shows how one active geometry can generate a family of related appearances without changing its basic structure.
+
+## The centre and the rim may mean different things
+
+An eye image naturally encourages the observer to focus on the centre.
+
+A wheel encourages attention to both hub and rim.
+
+A rosette emphasises layered radial structure.
+
+Those differences may preserve physically different parts of the same node.
+
+The centre could be the narrowest throat.
+
+The spokes could be incoming or outgoing pathways.
+
+The rim could be the boundary where the local node meets the broader lattice.
+
+That gives the end-on view internal structure rather than treating it as one glowing circle.
+
+## Radial symbols are especially vulnerable to coincidence
+
+Circles, stars, eyes and wheels are among the simplest forms humans draw.
+
+They appear for countless reasons.
+
+That makes them weak evidence by themselves.
+
+A useful Vardath comparison needs more.
+
+Does the radial form occur with:
+
+a route?
+
+a central opening?
+
+movement?
+
+world levels?
+
+a guardian?
+
+a transition?
+
+a before-and-after sequence?
+
+The more of those relations survive, the more interesting the comparison becomes.
+
+The circle alone proves nothing.
+
+
 ## Eye, wheel, star and rosette in one family
 
 The family can therefore be summarised:
