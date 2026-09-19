@@ -463,7 +463,7 @@ After Chapter 88, proceed to the planned appendices. Do not create more main cha
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53–65 are drafted and saved.**
+**Chapters 53–66 are drafted and saved.**
 
 Newly completed in the 2026-09-19 continuation:
 - Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
@@ -472,10 +472,11 @@ Newly completed in the 2026-09-19 continuation:
 - Chapter 63 — **Genesis and Enoch: Firmament, Waters, Ladder and Watchers**
 - Chapter 64 — **The Night Journey and Ascension**
 - Chapter 65 — **Ranginui and Papatūānuku: The World Opened by Separation**
+- Chapter 66 — **Sky Woman and the World Below**
 
 Continue sequentially at:
 
-**Chapter 66 — Sky Woman and the World Below**
+**Chapter 67 — The Popol Vuh: Worlds Tried More Than Once**
 
 The mandated source reread for this continuation has been completed, including the local E001–E342 checkpoint, local cosmology memories, current page includes, and E343–E453 delta. Use `book/SOURCE-MAP.md` and only fetch small source deltas or specific articles as needed; do not repeat the giant source crawl.
 
