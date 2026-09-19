@@ -1,0 +1,76 @@
+<section class="late-research-block" id="central-spire-fast-time-fountain-section">
+<hr/>
+<h1 id="central-spire-fast-time-fountain">The central spire as the fast-time throat — Fountain of Youth, plasma flow and the open door</h1>
+
+<p>This adds another piece to the Yggdrasil time-switch. If the past, the now and the future are not completely separate places but different positions in the same woven structure, then the central spire may be the place where the distance between those positions becomes shortest. I am not picturing the spire as a clock sitting in the middle of the world. I am picturing it as the <strong>temporal throat of the world-tree</strong>: the place where a small movement through the structure can correspond to a very large movement through history.</p>
+
+<p class="equation"><strong>past + now + future remain separated while the door is closed → the weave opens at Yggdrasil → temporal layers approach one another → the spire becomes a high-throughput route through time → the weave closes → ordinary local time resumes</strong></p>
+
+<h2 id="fast-time-does-not-have-to-mean-fast-aging">Fast time does not have to mean fast aging</h2>
+<p>There are two different things I need to keep separate. One is <strong>how quickly the world advances relative to another layer</strong>. The other is <strong>how much time the traveller personally experiences</strong>. They do not have to be the same.</p>
+
+<p>If the open spire allows a thousand years of world-history to pass while a traveller experiences only a short interval, then from the traveller's point of view the world has moved through time enormously quickly. The traveller has not necessarily aged through those thousand years. This gives the old Fountain of Youth idea a possible place in the same mechanism: the "fountain" may not reverse age at all. It may be a place where <strong>very little personal time is accumulated while a great deal of world-time passes around it</strong>.</p>
+
+<p class="equation"><strong>small traveller-time + enormous world-time = return to a much older world while remaining comparatively young</strong></p>
+
+<p>That would make the Fountain of Youth less like magical water that repairs the body and more like a surviving description of the central temporal current. Someone goes into the fountain, well, spring, tree, cave or central opening and later returns without having aged in proportion to the world outside.</p>
+
+<h2 id="the-spire-as-temporal-gradient">The spire as a temporal gradient</h2>
+<p>The central spire may therefore be the place where time is not simply "faster" or "slower" in one universal sense. It may be where the <strong>difference between temporal rates is greatest</strong>. Far from the door, neighbouring places share roughly the same time relation. Near the door, one step toward the axis could place a traveller beside a part of the weave that is much farther ahead or behind in the larger history.</p>
+
+<figure class="vdiagram">
+<h4>Diagram · The spire as a temporal throat</h4>
+<svg viewbox="0 0 1100 560" role="img" aria-label="Three temporal layers bending toward a central spire, with a traveller taking a short route through the throat while a large span of world time passes outside">
+<rect class="box" x="70" y="60" width="250" height="82" rx="14"></rect>
+<rect class="box" x="70" y="240" width="250" height="82" rx="14"></rect>
+<rect class="box" x="70" y="420" width="250" height="82" rx="14"></rect>
+<text x="105" y="95">future layer</text>
+<text class="muted" x="105" y="120">later world-state</text>
+<text x="105" y="275">now layer</text>
+<text class="muted" x="105" y="300">current world-state</text>
+<text x="105" y="455">past layer</text>
+<text class="muted" x="105" y="480">earlier world-state</text>
+<path class="soft" d="M320 100 C520 105 570 190 660 260"></path>
+<path class="cyan" d="M320 280 C500 280 575 280 660 280"></path>
+<path class="soft" d="M320 460 C520 455 570 370 660 300"></path>
+<path class="violet" d="M700 65 C650 160 650 400 700 495"></path>
+<path class="violet" d="M735 65 C685 160 685 400 735 495"></path>
+<circle class="node" cx="718" cy="280" r="48"></circle>
+<text x="676" y="272">CENTRAL</text>
+<text x="688" y="296">SPIRE</text>
+<path class="warn" d="M775 280 C865 250 925 185 1010 125"></path>
+<path class="warn" d="M775 280 C865 310 925 375 1010 435"></path>
+<text class="muted" x="820" y="175">large world-time separation</text>
+<text class="muted" x="815" y="405">short route through throat</text>
+</svg>
+<figcaption>In this version of the model, Yggdrasil does not merely connect locations. It compresses temporal separation near the central axis. A short experienced passage through the throat could correspond to a much larger interval in the surrounding world.</figcaption>
+</figure>
+
+<h2 id="plasma-as-visible-current-not-the-clock">The plasma may be the visible current, not the clock</h2>
+<p>This also changes how I interpret the intense plasma flow I associate with the open door. I do not need the plasma itself to be the thing that magically speeds time up. The more coherent possibility is that <strong>the door changes the geometry first, and the plasma is what matter and electromagnetic energy do while being forced through that changed geometry</strong>.</p>
+
+<p>When the door is closed, the temporal layers are separated and the local world follows its ordinary rhythm. When the door opens, the central path is established and the plasma fountain becomes the visible current through it. The flow may therefore mark the period in which the different layers are coupled. While that coupling remains open, time here could advance very differently relative to another layer. When the structure closes again, the ordinary relationship is restored.</p>
+
+<p class="equation"><strong>door closed → ordinary temporal relation<br/>door opens → temporal throat + intense current → different layers accumulate different amounts of elapsed time<br/>door closes → ordinary relation resumes, but the layers now contain different amounts of history</strong></p>
+
+<h2 id="why-fountain-tree-well-and-spire-may-be-one-thing">Why fountain, tree, well and spire may be one thing</h2>
+<p>This gives me a reason that the old images keep overlapping. The tree is the vertical structure. The well or fountain is the opening at its root. The spire is the same axis seen as a rising column. The flowing water is the human-scale image of a current through that axis. In the physical version I am exploring, that current may instead be plasma, charged matter or another energetic flow associated with the opening.</p>
+
+<p>The names then describe different views of one structure:</p>
+<table><thead><tr><th>image</th><th>Vardath interpretation</th></tr></thead><tbody>
+<tr><td><strong>Yggdrasil / world-tree</strong></td><td>the full woven architecture connecting the layers</td></tr>
+<tr><td><strong>central spire / world-axis</strong></td><td>the narrowest and strongest temporal-gradient region</td></tr>
+<tr><td><strong>well / fountain</strong></td><td>the accessible mouth of the central route</td></tr>
+<tr><td><strong>water / plasma fountain</strong></td><td>the visible flow through the active route</td></tr>
+<tr><td><strong>Fountain of Youth</strong></td><td>a possible memory of travellers accumulating little personal time while much more world-time passes</td></tr>
+</tbody></table>
+
+<h2 id="past-present-future-interacting-at-now">Past, present and future interacting with the now</h2>
+<p>The most important change is that the present is no longer a razor-thin line isolated from everything else. In this model the present is the part of the weave I currently occupy. The past still exists as the route the weave has already taken and the future exists as routes available farther along it. Normally they are separated by the structure itself. During the opening, that separation can collapse locally.</p>
+
+<p>That means the strange effects around the central spire would not have to be "time travel" in the simple machine sense. Past, present and future can become <strong>neighbours at the same junction</strong>. A person, a population or even a piece of land can continue moving forward locally while the route under it is switched to a different temporal address.</p>
+
+<p class="equation"><strong>the traveller does not need to run through a thousand years → the door can change which thousand-years-apart part of the weave is next to the traveller</strong></p>
+
+<p>This fits the larger model better than treating the spire as an engine that merely accelerates clocks. <strong>Yggdrasil is the structure, the door is its temporary switching state, the central spire is the temporal throat, and the fountain is the current through that throat.</strong> If the opening lasts long enough, enormous differences in elapsed history could build up between connected layers. When it closes, everybody again experiences ordinary local time, but they may now be standing in a world whose history has advanced by a radically different amount.</p>
+</section>
