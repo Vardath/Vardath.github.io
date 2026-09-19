@@ -244,15 +244,11 @@ Could the same interface be a ceiling from one side and floor from another?
 
 Those questions survived every later version.
 
-The simple canopy changed.
+The simple canopy picture expanded.
 
-The **shared boundary between world-levels** remained.
+The **vapour canopy remained**, while the **shared boundary between world-levels** gave it a larger structural role. The canopy became both an atmospheric pressure system for the inhabited world and one face of the upper-water boundary between turns.
 
-That is a good example of how the research actually developed.
-
-An early picture did not have to remain literally correct for one of its relationships to survive.
-
-The relationship became part of the mature model even after the picture around it changed.
+That is a good example of how the research actually developed: an early component survived, but its place in the larger architecture became clearer.
 
 ## August 2026 — one event, many roles
 
@@ -484,7 +480,7 @@ The scales can coexist.
 
 The sky also changed during this period.
 
-Instead of a simple canopy, it became more like a broad woven vault.
+The canopy did not disappear when the sky became more like a broad woven vault. It became integrated with that vault.
 
 A quiet lattice.
 
@@ -1156,7 +1152,7 @@ That would be dishonest.
 
 The Moon-projector idea mattered.
 
-The early canopy mattered.
+The early canopy formulation mattered, and the vapour canopy itself remains a central component of the mature cosmology.
 
 The caduceus room mattered.
 
