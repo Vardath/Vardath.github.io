@@ -497,3 +497,23 @@ Post-freeze verification completed.
 - Yggdrasil recurrence across Chapters 37, 48 and 61 was clarified so each chapter has a distinct purpose.
 
 **Continuity cleanup is complete. Next task: assemble `book/BOOK.md`.**
+
+
+## MASTER ASSEMBLY COMPLETE — 2026-09-19
+
+Canonical assembled manuscript:
+- `book/BOOK.md`
+- exactly 88 numbered chapters;
+- 11 parts;
+- Appendices A–E;
+- exact assembled word count: **204,663 words**.
+
+A readable 7×10 PDF edition was generated from the assembled master:
+- **874 PDF pages** including title page, contents and front matter;
+- font/render pass clean;
+- long Markdown comparison tables converted to readable bullet blocks in the PDF edition to prevent clipping;
+- the canonical repository Markdown remains unchanged by that presentation-only conversion.
+
+Final Appendix E production note was updated after assembly so it no longer describes continuity/assembly as future work.
+
+**Next production work is optional final-publication design: cover integration, illustrations/figures, final page-number index, print typography, EPUB and/or print-ready PDF.**
