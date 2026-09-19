@@ -101,7 +101,7 @@ Saved 2026-09-19:
 - Chapter 65 — `book/chapters/65-ranginui-and-papatuanuku-the-world-opened-by-separation.md`
 
 Next writing point:
-- Chapter 66 — **Sky Woman and the World Below**
+- Chapter 67 — **The Popol Vuh: Worlds Tried More Than Once**
 
 
 ### Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
@@ -126,3 +126,14 @@ Primary reservoir:
 - Earlier E70/current-page Māori separation material.
 Core relation:
 **compressed layers → operator acts → forceful separation → light/air/space → stable related regions**
+
+
+### Chapter 66 — Sky Woman and the World Below
+Primary reservoir:
+- E406 — Sky Woman descent from the Sky World.
+- E407 — Turtle Island as receiving support.
+- E408 — earth-diver / upward material recovery.
+- E409 — paired world-shaping forces.
+- E410 — consolidated Haudenosaunee sequence.
+Core relation:
+**upper world → opening → descent → water world → reception/support → upward material recovery → surface expansion → differentiated world**
