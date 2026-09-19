@@ -320,7 +320,7 @@ But the overlap is strong enough to keep.
 
 ## Meru and Squatter Man again
 
-This is where I return to the Peratt chapter.
+This is where the Peratt branch introduced in Chapter 53 comes back into the comparison.
 
 The later reduced axial pulse may appear differently depending on scale and viewpoint.
 
