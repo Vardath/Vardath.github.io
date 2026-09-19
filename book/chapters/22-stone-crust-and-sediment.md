@@ -402,6 +402,131 @@ Human memory then becomes more important because the physical evidence is no lon
 
 The myth survives above the buried world.
 
+## The physical record needs ordinary geology as the control case
+
+This chapter can only be useful if ordinary geological explanations remain the default comparison.
+
+Folding.
+
+Faulting.
+
+Volcanism.
+
+Impact.
+
+Metamorphism.
+
+Erosion.
+
+Sedimentation.
+
+Human quarrying and construction.
+
+All of those can create strange forms without any Vardath event.
+
+The research question is therefore not:
+
+**does this rock look melted or moved?**
+
+It is:
+
+**does the full mineralogical, structural and chronological evidence require something beyond known processes?**
+
+That is a much harder standard, and it should be.
+
+## Melted-looking is not the same as melted
+
+Visual appearance is especially unreliable.
+
+Weathering can round stone.
+
+Mineral crusts can look glazed.
+
+Natural breccia can resemble rubble.
+
+Tufa and sinter can look artificial.
+
+Metamorphism can create textures that resemble flowed material.
+
+A credible Meltology case would need laboratory evidence:
+
+mineral phases;
+
+glass chemistry;
+
+temperature indicators;
+
+microscopy;
+
+stratigraphic context;
+
+and dates where possible.
+
+This is one of the places where the model most needs conventional geology rather than opposition to it.
+
+## Coherent transport should leave directional damage
+
+If a larger piece of crust or built landscape moved relative to deeper support, I would expect more than random breakage.
+
+There should be patterns.
+
+Shear.
+
+Preferred fracture directions.
+
+Drag.
+
+Compression on one side.
+
+Extension on another.
+
+Sediment piled against obstacles.
+
+Water channels responding to the same motion.
+
+That gives moving-land research a stronger target than visual resemblance.
+
+A transported surface should carry a **vector history**.
+
+## Buried architecture needs stratigraphy
+
+The Tartaria and displaced-civilisation branch also becomes testable at this point.
+
+If buildings or cities are deeply buried because of one unusual event, their stratigraphy should differ from ordinary gradual urban accumulation.
+
+The sediments should tell a coherent story.
+
+Grain size.
+
+Source.
+
+Depositional direction.
+
+Organic inclusions.
+
+Dating.
+
+Relationship to walls and foundations.
+
+This is much stronger than assuming any partly buried window proves one catastrophe.
+
+The cosmology benefits from setting that higher bar.
+
+## Stone and myth can disagree
+
+The cultural record may say flood while the stone says fire.
+
+Or the stone may show slow processes while the myth is dramatic.
+
+That disagreement has to be allowed.
+
+Myth is not a substitute for geology.
+
+Geology is not a substitute for cultural meaning.
+
+The Vardath model becomes interesting only where independent records begin to converge without being forced.
+
+
 ## Stone as witness
 
 Stone feels mute, but in this cosmology it is one of the best witnesses.
