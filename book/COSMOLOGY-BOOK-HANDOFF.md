@@ -463,7 +463,7 @@ After Chapter 88, proceed to the planned appendices. Do not create more main cha
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53–84 are drafted and saved.**
+**Chapters 53–88 are drafted and saved. The main 88-chapter manuscript is complete.**
 
 Newly completed in the 2026-09-19 continuation:
 - Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
@@ -476,7 +476,7 @@ Newly completed in the 2026-09-19 continuation:
 
 Continue sequentially at:
 
-**Chapter 85 — The NeverEnding Story and the Mirror at the Gate**
+**Appendix A — Working Glossary**
 
 The mandated source reread for this continuation has been completed, including the local E001–E342 checkpoint, local cosmology memories, current page includes, and E343–E453 delta. Use `book/SOURCE-MAP.md` and only fetch small source deltas or specific articles as needed; do not repeat the giant source crawl.
 
@@ -628,3 +628,20 @@ Chapters 73–76 are now drafted and saved. Part X — **Worlds Above, Below and
 ## Part XI checkpoint — through Chapter 84 — 2026-09-19
 Chapters 77–84 are drafted and saved.
 **Continue at Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
+
+
+## MAIN MANUSCRIPT COMPLETED — 2026-09-19
+
+Chapters 85–88 are drafted and saved. The main body now contains **exactly 88 numbered chapters** under the locked chapter-title rule.
+
+Do not create Chapter 89.
+
+Next work:
+- Appendix A — Working Glossary
+- Appendix B — Research Journey
+- Appendix C — Motif and Role Atlas
+- Appendix D — Source Traditions
+- Appendix E — Index
+- then the full continuity/duplication/voice pass and final assembly.
+
+**Exact next writing point: Appendix A — Working Glossary.**
