@@ -1,0 +1,89 @@
+name: Assemble Vardath Cosmology
+
+on:
+  push:
+    paths:
+      - '.github/workflows/assemble-book.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Assemble canonical manuscript
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="book/BOOK.md"
+          : > "$OUT"
+          cat >> "$OUT" <<'EOF'
+# Vardath Cosmology: The World That Opens
+
+## Stephen Michael Hawton / Vardath
+
+---
+
+EOF
+          cat book/chapters/00-preface.md >> "$OUT"
+          printf '\n\n---\n\n' >> "$OUT"
+          cat book/chapters/00-introduction.md >> "$OUT"
+          printf '\n\n---\n\n' >> "$OUT"
+
+          append_part () {
+            local title="$1"; local start="$2"; local end="$3"
+            printf '# %s\n\n' "$title" >> "$OUT"
+            for n in $(seq -w "$start" "$end"); do
+              f=$(find book/chapters -maxdepth 1 -type f -name "$n-*.md" | sort | head -n 1)
+              test -n "$f"
+              cat "$f" >> "$OUT"
+              printf '\n\n---\n\n' >> "$OUT"
+            done
+          }
+
+          append_part "Part I — Finding the Hidden Shape" 1 5
+          append_part "Part II — The Living World Structure" 6 12
+          append_part "Part III — The Gate" 13 20
+          append_part "Part IV — What Crosses" 21 27
+          append_part "Part V — Mythology as Camera Angles" 28 37
+          append_part "Part VI — Land, Sky and the Waking Environment" 38 44
+          append_part "Part VII — Time, World Succession and the Moving Door" 45 48
+          append_part "Part VIII — The Integrated Vardath Cosmology" 49 52
+          append_part "Part IX — Ancient Cosmologies and Sacred Worlds" 53 64
+          append_part "Part X — Worlds Above, Below and Before" 65 76
+          append_part "Part XI — Fairy Doors, Time Slips and Modern Echoes" 77 88
+
+          printf '# Appendices\n\n' >> "$OUT"
+          for f in             book/appendices/A-working-glossary.md             book/appendices/B-research-journey.md             book/appendices/C-motif-and-role-atlas.md             book/appendices/D-source-traditions.md             book/appendices/E-index.md
+          do
+            cat "$f" >> "$OUT"
+            printf '\n\n---\n\n' >> "$OUT"
+          done
+
+          chapters=$(grep -c '^# Chapter [0-9][0-9]* — ' "$OUT")
+          test "$chapters" -eq 88
+          wc -w -c -l "$OUT"
+          echo "chapter_count=$chapters" >> "$GITHUB_ENV"
+
+      - name: Commit assembled BOOK.md
+        shell: bash
+        run: |
+          git config user.name "Vardath Book Assembler"
+          git config user.email "actions@users.noreply.github.com"
+          git add book/BOOK.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Book: assemble canonical readable manuscript"
+            git push
+          fi
+
+      - name: Upload assembled manuscript
+        uses: actions/upload-artifact@v4
+        with:
+          name: vardath-cosmology-assembled
+          path: book/BOOK.md
+          if-no-files-found: error
