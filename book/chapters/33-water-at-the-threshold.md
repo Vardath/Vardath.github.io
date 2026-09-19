@@ -1,4 +1,4 @@
-# Chapter 32 — Water at the Threshold
+# Chapter 33 — Water at the Threshold
 
 Water belongs to the gate so naturally that it appears in almost every scale of the cosmology.
 

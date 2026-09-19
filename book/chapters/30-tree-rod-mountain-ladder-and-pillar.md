@@ -1,4 +1,4 @@
-# Chapter 29 — Tree, Rod, Mountain, Ladder and Pillar
+# Chapter 30 — Tree, Rod, Mountain, Ladder and Pillar
 
 The axis is one of the oldest structures in cosmology because vertical connection is one of the oldest human experiences.
 

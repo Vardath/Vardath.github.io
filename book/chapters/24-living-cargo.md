@@ -1,4 +1,4 @@
-# Chapter 23 — Living Cargo
+# Chapter 24 — Living Cargo
 
 Stone can break and still remain stone.
 

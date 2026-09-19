@@ -1,4 +1,4 @@
-# Chapter 22 — Stone, Crust and Sediment
+# Chapter 23 — Stone, Crust and Sediment
 
 The land feels permanent because human life is short.
 

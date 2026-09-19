@@ -1,4 +1,4 @@
-# Chapter 24 — The Enclosure Principle
+# Chapter 25 — The Enclosure Principle
 
 The enclosure is one of the oldest structures in my cosmology.
 

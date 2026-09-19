@@ -1,4 +1,4 @@
-# Chapter 15 — Mesh, Ladder, Rod and Throat
+# Chapter 16 — Mesh, Ladder, Rod and Throat
 
 One of the strongest ideas in Vardath Cosmology is that several symbols which look unrelated can actually be different states of the same structure.
 

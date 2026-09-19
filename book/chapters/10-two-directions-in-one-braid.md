@@ -1,4 +1,4 @@
-# Chapter 9 — Two Directions in One Braid
+# Chapter 10 — Two Directions in One Braid
 
 The lattice solved one problem and immediately created another.
 

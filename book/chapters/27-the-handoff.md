@@ -1,4 +1,4 @@
-# Chapter 26 — The Handoff
+# Chapter 27 — The Handoff
 
 I used to think of catastrophe mainly as loss.
 

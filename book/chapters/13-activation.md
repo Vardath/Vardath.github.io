@@ -1,4 +1,4 @@
-# Chapter 12 — Activation
+# Chapter 13 — Activation
 
 The gate does not begin with the gate.
 

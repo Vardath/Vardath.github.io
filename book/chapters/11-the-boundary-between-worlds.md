@@ -1,4 +1,4 @@
-# Chapter 10 — The Boundary Between Worlds
+# Chapter 11 — The Boundary Between Worlds
 
 A layered cosmology only works if the layers can remain separate.
 

@@ -1,4 +1,4 @@
-# Chapter 34 — Creation, Destruction and Renewal
+# Chapter 35 — Creation, Destruction and Renewal
 
 One of the deepest changes in my cosmology was realising that creation stories and destruction stories may describe opposite sides of the same event.
 

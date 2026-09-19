@@ -1,4 +1,4 @@
-# Chapter 35 — Revelation as a World-Cycle Vision
+# Chapter 36 — Revelation as a World-Cycle Vision
 
 Revelation became important to Vardath Cosmology not because I think it is a hidden engineering manual.
 

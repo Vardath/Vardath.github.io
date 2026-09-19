@@ -1,4 +1,4 @@
-# Chapter 31 — Serpent, Dragon, Braid and World Boundary
+# Chapter 32 — Serpent, Dragon, Braid and World Boundary
 
 The serpent is where this whole cosmology began.
 

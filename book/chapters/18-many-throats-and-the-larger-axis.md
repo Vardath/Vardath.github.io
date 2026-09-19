@@ -1,4 +1,4 @@
-# Chapter 17 — Many Throats, Not One Pole
+# Chapter 18 — Many Throats and the Larger Axis
 
 Once I stopped treating the gate as one permanent place, the geography of the cosmology changed.
 

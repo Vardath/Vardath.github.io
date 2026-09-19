@@ -1,4 +1,4 @@
-# Chapter 14 — Why the Fingertrap Changed Everything
+# Chapter 15 — Why the Fingertrap Changed Everything
 
 For a long time I had two pictures that refused to become one.
 

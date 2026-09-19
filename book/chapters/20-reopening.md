@@ -1,4 +1,4 @@
-# Chapter 19 — Reopening
+# Chapter 20 — Reopening
 
 A door only makes sense if it can close.
 

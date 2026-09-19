@@ -1,4 +1,4 @@
-# Chapter 28 — Operator, Apparatus, Guide, Guardian and Witness
+# Chapter 29 — Operator, Apparatus, Guide, Guardian and Witness
 
 The mythology became much easier to understand once I stopped asking who each god “really was.”
 

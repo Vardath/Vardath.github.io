@@ -1,4 +1,4 @@
-# Chapter 33 — Crossing Worlds
+# Chapter 34 — Crossing Worlds
 
 A gate only becomes meaningful when something crosses it.
 

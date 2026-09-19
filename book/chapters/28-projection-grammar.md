@@ -1,4 +1,4 @@
-# Chapter 27 — Projection Grammar
+# Chapter 28 — Projection Grammar
 
 One of the most important things I learned while building Vardath Cosmology is that a structure does not have one appearance.
 

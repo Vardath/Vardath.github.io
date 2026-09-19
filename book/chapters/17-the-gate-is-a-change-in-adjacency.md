@@ -1,4 +1,4 @@
-# Chapter 16 — The Gate Is a Change in Adjacency
+# Chapter 17 — The Gate Is a Change in Adjacency
 
 For a long time, the word **gate** was doing too much work.
 

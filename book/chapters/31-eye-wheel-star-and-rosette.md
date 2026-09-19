@@ -1,4 +1,4 @@
-# Chapter 30 — Eye, Wheel, Star and Rosette
+# Chapter 31 — Eye, Wheel, Star and Rosette
 
 Turn the axis toward the observer and the world changes shape.
 
