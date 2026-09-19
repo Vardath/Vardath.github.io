@@ -450,6 +450,71 @@ Memories.
 
 The old world remains inside it.
 
+## Reopening should be slower than peak convergence
+
+The most violent part of an event can be brief while recovery is long.
+
+That asymmetry is important.
+
+A throat may narrow rapidly once a critical threshold is reached.
+
+But after transfer, the world has to dissipate heat, move water, settle sediment and re-establish stable pressure gradients.
+
+Those processes naturally operate on different timescales.
+
+So the event should not be drawn as a neat symmetric pulse.
+
+A more realistic shape is:
+
+**slow build → rapid critical transition → uneven long recovery.**
+
+## Closure can trap disequilibrium
+
+The gate closing does not instantly solve every problem it created.
+
+Water may now be on the wrong side of a basin.
+
+Atmosphere may be over-pressurised locally.
+
+Hot material may remain molten.
+
+Land can continue sliding after the deeper driver weakens.
+
+This is why reopening and recovery have to remain separate concepts.
+
+The geometry can return toward normal while the surface is still in crisis.
+
+## Some nodes may close before others
+
+A many-throat network should reopen unevenly.
+
+Local routes may stop transferring while regional ones remain active.
+
+This could produce repeated waves of environmental disturbance rather than one clean ending.
+
+It also offers a possible structural reason for stories in which catastrophe comes in stages.
+
+Again, the comparison is speculative, but the mechanics make staged closure more plausible than perfect simultaneity.
+
+## The post-event world can look calm while still changing deeply
+
+Once the most visible sky and water effects end, the world may appear safe before it is fully stabilised.
+
+Groundwater moves.
+
+Sediment compacts.
+
+Coasts migrate.
+
+Ecosystems reorganise.
+
+Population centres relocate.
+
+The quiet world therefore has a **young quiet phase** before mature stability.
+
+That is another reason I expect the successor world to carry a long recovery history after the dramatic mythology has ended.
+
+
 ## Reopening completes the handoff
 
 Without reopening, the reset never finishes.
