@@ -518,6 +518,16 @@ That is why water is so valuable to the Vardath model.
 
 It shows what deeper relationships are doing.
 
+## The atmosphere is not scenery
+
+The vapour canopy became one of the places where I had to stop treating atmosphere as background.
+
+In the full model, the canopy is a major part of the world-machine. It creates a high-pressure, oxygen-rich, water-rich environment beneath the upper boundary, while the stronger current makes the air more electrically and plasma active. That package produces a biological regime unlike the quiet world.
+
+This is where giant plants, giant animals, giant people, extreme longevity, telomere maintenance or regrowth, increased mutation and persistent abnormal tissue all belong. They are different consequences of the same environmental state. When the canopy regime weakens, the world does not merely get drier. The biological rules experienced by life change with it.
+
+That is why the old world can be remembered as an age of giants, impossible lifespans and strange creatures while the present world looks smaller, shorter-lived and more tightly constrained.
+
 ## Fire and water can belong to one event
 
 Ragnarök, Nüwa, Revelation and Meltology all helped me get past the idea that catastrophe must be one element.
