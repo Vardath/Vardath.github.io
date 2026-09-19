@@ -114,17 +114,13 @@ That is a much more satisfying architecture than the old room.
 
 ## The canopy becomes an interface
 
-The upper-water idea also changed in this transition.
+The upper-water idea became larger in this transition.
 
-Early on, I was effectively asking how a watery canopy could sit above the world.
+Early on, I was asking how a watery vapour canopy could sit above the world and maintain the pressure-rich environment beneath it. That atmospheric role remains part of the model.
 
-That picture created more problems than it solved.
+The mature version adds a second question rather than replacing the first:
 
-It treated the upper water as an object placed in our enclosure for no deeper reason.
-
-The mature version asks a different question.
-
-What if the upper water belongs to the **boundary between turns**?
+What if the upper water and vapour canopy also belong to the **boundary between turns**?
 
 From our side, it is above.
 
