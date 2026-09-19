@@ -282,6 +282,57 @@ The past remains culturally present without remaining politically active.
 
 That is how worlds become legends.
 
+## Islands naturally create threshold psychology
+
+An island can be seen from the mainland or imagined beyond the horizon while remaining separated by a medium that ordinary walking cannot cross.
+
+That makes it a natural container for Otherworld ideas.
+
+The sea hides approach.
+
+Weather can erase visibility.
+
+Tides and currents change access.
+
+A boat journey removes the traveller from ordinary landmarks.
+
+None of that requires supernatural geography.
+
+It explains why islands are such powerful cultural forms for places that are near and unreachable at the same time.
+
+## Healing makes Avalon different from fairy-time stories
+
+Tír na nÓg and Urashima Tarō emphasise altered duration.
+
+Avalon emphasises withdrawal and restoration.
+
+That gives it a different place in the Vardath atlas.
+
+Its strongest comparison is not necessarily a region where clocks run differently.
+
+It may be a **recovery enclosure outside ordinary historical participation**.
+
+That distinction matters.
+
+The Otherworld category contains several different functions and should not be reduced to time dilation alone.
+
+## Future return is a continuity claim
+
+The expectation that Arthur may return preserves identity across historical discontinuity.
+
+The kingdom changes.
+
+The king is absent.
+
+Yet cultural memory treats the relationship as unfinished.
+
+Structurally, that is a powerful version of handoff:
+
+the old order is no longer active, but it is not erased from the successor order.
+
+The future can still define itself in relation to the past.
+
+
 ## The Vardath mapping
 
 The Avalon sequence becomes:
