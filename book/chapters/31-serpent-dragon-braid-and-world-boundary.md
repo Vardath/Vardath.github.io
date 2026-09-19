@@ -354,6 +354,117 @@ The deeper cosmology may be long forgotten.
 
 The role survives.
 
+## Serpent geometry can encode direction
+
+A winding line does not merely tell me that something is curved.
+
+It can also preserve direction.
+
+Head and tail.
+
+Ascent and descent.
+
+Coiling inward.
+
+Uncoiling outward.
+
+Two opposed serpents can therefore represent more than visual symmetry.
+
+They can give the braid orientation.
+
+That is one reason paired-serpent imagery became so important to the early Vardath model.
+
+The mature version does not require the old caduceus-like picture literally.
+
+But it keeps the useful idea:
+
+**neighbouring strands can carry different directional roles inside one connected structure.**
+
+## Branching serpent and single serpent are different problems
+
+A single long serpent suggests one dominant path.
+
+A many-headed or many-branched serpent suggests network behaviour.
+
+That difference matters.
+
+The early Vardath model began with one current.
+
+The later model became many paths.
+
+Yamata no Orochi is useful to the comparison precisely because multiplicity is built into the body.
+
+The Australian path material later pushes the same correction even farther.
+
+The world may be better understood as **many serpent-like routes** than one universal serpent.
+
+## Coiling is a storage geometry
+
+A coil stores length inside a smaller area.
+
+That is mechanically interesting even without assigning ancient people engineering knowledge.
+
+A long path can be compacted by winding.
+
+A spring stores energy through deformation.
+
+A serpent at rest coils; in motion it extends.
+
+That makes coiling another natural visual analogue for the Vardath relationship between:
+
+**distributed length**
+
+and
+
+**concentrated state.**
+
+The fingertrap solves the problem through a weave rather than a simple coil, but the visual family remains related.
+
+## The world serpent creates an outside and inside
+
+An encircling serpent does something different from an axial serpent.
+
+It defines a boundary.
+
+Inside the ring is one ordered region.
+
+Beyond it is something else.
+
+That is why world-serpent imagery belongs to the boundary family rather than automatically to the gate family.
+
+A boundary can become active at one point without the entire circumference opening.
+
+This fits the many-throat model well.
+
+The world can be enclosed globally and crossed locally.
+
+## Serpent comparisons need the strongest restraint
+
+No symbol family is easier to overuse.
+
+Serpents are common because real snakes are common, dangerous, striking, liminal and culturally powerful.
+
+So serpent resemblance alone is particularly weak evidence.
+
+The comparison becomes meaningful only when the serpent participates in a larger sequence involving:
+
+water,
+
+route,
+
+boundary,
+
+world formation,
+
+release,
+
+axis,
+
+or cyclical return.
+
+That is why this book keeps the serpent central while refusing to make it universal proof.
+
+
 ## The serpent family in one line
 
 The Vardath serpent family can therefore be read as:
