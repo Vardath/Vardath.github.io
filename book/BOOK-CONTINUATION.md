@@ -388,3 +388,18 @@ Next work, in order:
 6. Then full manuscript continuity/order/duplication/voice pass and assembly/export work.
 
 The giant source reread remains complete. Do not repeat it unless new source material is added.
+
+
+## APPENDICES A–E DRAFTED — 2026-09-19
+
+Saved:
+- `book/appendices/A-working-glossary.md`
+- `book/appendices/B-research-journey.md`
+- `book/appendices/C-motif-and-role-atlas.md`
+- `book/appendices/D-source-traditions.md`
+- `book/appendices/E-index.md`
+
+All planned appendices now have first drafts.
+
+**Next required stage: full manuscript chapter-order / numbering / duplication / voice-continuity pass, then assemble `book/BOOK.md`.**
+Do not create Chapter 89.
