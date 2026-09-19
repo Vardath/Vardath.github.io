@@ -231,16 +231,16 @@ The full current chapter list is authoritative in:
 - `book/VARDATH-COSMOLOGY-BOOK.md`
 
 Current writing state:
-- Chapter 53 — **Anthony Peratt and the Primordial Current** — drafted and saved
-- Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim** — drafted and saved
-- Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat** — drafted and saved
-- Chapter 56 — **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal** — drafted and saved
-- Chapter 57 — **Indra and Vritra: Serpent, Thunderbolt and Released Waters** — drafted and saved
-- Chapter 58 — **Meru and the Churning of the Cosmic Ocean** — drafted and saved
-- Chapter 59 — **Buddhist and Jain Layered Worlds** — drafted and saved
+- Chapters 53–65 — drafted and saved
+- Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
+- Chapter 61 — **Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle**
+- Chapter 62 — **Ragnarök: Boundary Failure, Fire, Survival and the New World**
+- Chapter 63 — **Genesis and Enoch: Firmament, Waters, Ladder and Watchers**
+- Chapter 64 — **The Night Journey and Ascension**
+- Chapter 65 — **Ranginui and Papatūānuku: The World Opened by Separation**
 
 Continue next at:
-- Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
+- Chapter 66 — **Sky Woman and the World Below**
 
 
 ## CHAPTER-TITLE LOCK — NON-NEGOTIABLE
@@ -302,3 +302,25 @@ Canonical Chapters 53–88:
 After Chapter 88, proceed to the planned appendices. Do not create more main chapters.
 
 Appendices now follow Chapter 88 rather than Chapter 52.
+
+
+## Latest durable writing checkpoint — 2026-09-19
+
+The full mandated local/source read has been completed for the current continuation:
+- local complete reads of `wordpress-memory-CHECKPOINT-E342-20260918.md`, `Cosmology memory.md`, and `vardath-cosmology-reconstructed.md`;
+- current page wrapper and all 49 included fragment/expansion files read;
+- WordPress continuation plus E343–E453 article delta ingested;
+- manuscript continuity pass completed through Chapter 59 before new drafting;
+- `book/SOURCE-MAP.md` created to preserve the source/chapter mapping.
+
+New chapters saved in this continuation:
+- 60 — Greek Succession: Uranus, Cronus and Zeus
+- 61 — Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle
+- 62 — Ragnarök: Boundary Failure, Fire, Survival and the New World
+- 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
+- 64 — The Night Journey and Ascension
+- 65 — Ranginui and Papatūānuku: The World Opened by Separation
+
+**Exact next writing point: Chapter 66 — Sky Woman and the World Below.**
+
+Do not redo the giant source read unless a future source changes. Continue using the local/source map and fetch only small new deltas or specific source articles when needed.
