@@ -403,3 +403,48 @@ All planned appendices now have first drafts.
 
 **Next required stage: full manuscript chapter-order / numbering / duplication / voice-continuity pass, then assemble `book/BOOK.md`.**
 Do not create Chapter 89.
+
+
+## PRE-CONTINUITY EXPANSION PASS — 2026-09-19
+
+User requested a fill-out pass before continuity cleanup.
+
+Completed a size/density audit of the current chapter directory and expanded the genuinely thin explanatory sections rather than padding already-large chapters.
+
+Expanded and saved 23 chapter files:
+- 17-many-throats-not-one-pole.md
+- 18-two-way-transfer.md
+- 19-reopening.md
+- 22-stone-crust-and-sediment.md
+- 23-living-cargo.md
+- 24-the-enclosure-principle.md
+- 25-carrier-and-vehicle.md
+- 26-the-handoff.md
+- 27-projection-grammar.md
+- 28-operator-apparatus-guide-guardian-and-witness.md
+- 29-tree-rod-mountain-ladder-and-pillar.md
+- 30-eye-wheel-star-and-rosette.md
+- 31-serpent-dragon-braid-and-world-boundary.md
+- 32-water-at-the-threshold.md
+- 33-crossing-worlds.md
+- 34-creation-destruction-and-renewal.md
+- 35-revelation-as-a-world-cycle-vision.md
+- 36-yggdrasil-and-the-door-through-time.md
+- 75-hopi-emergence-worlds-below-and-the-climb-upward.md
+- 77-urashima-taro-and-the-palace-beneath-the-sea.md
+- 78-the-seven-sleepers-enclosure-as-a-time-carrier.md
+- 80-frau-holle-and-the-well-as-a-door.md
+- 81-avalon-and-the-island-outside-ordinary-reach.md
+
+Expansion focused on mechanics, constraints, failure modes, scale, biological viability, evidence standards, temporal measurement, and boundary behaviour. Approximate net addition: ~64.6k Markdown characters / ~10k words.
+
+The known old numbering/merge problem around 07/08/09 and the two land/lattice working files was deliberately NOT cleaned or expanded as obsolete/canonical status belongs to the continuity pass.
+
+Current raw storage:
+- chapter directory: 1,245,652 bytes across 93 markdown files including preface/introduction and obsolete duplicate working files;
+- appendices: 108,220 bytes;
+- raw combined Markdown: 1,353,872 bytes.
+
+Estimated canonical manuscript after duplicate cleanup: about 203k–206k words including appendices and front matter.
+
+**Next work remains continuity cleanup: reconcile canonical 88 chapters, merge/preserve useful material from drifted files, remove duplication, then voice/flow pass and assembly.**
