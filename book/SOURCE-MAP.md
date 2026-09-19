@@ -96,6 +96,33 @@ Saved 2026-09-19:
 - Chapter 60 — `book/chapters/60-greek-succession-uranus-cronus-and-zeus.md`
 - Chapter 61 — `book/chapters/61-yggdrasil-bifrost-and-sleipnir-architecture-road-and-vehicle.md`
 - Chapter 62 — `book/chapters/62-ragnarok-boundary-failure-fire-survival-and-the-new-world.md`
+- Chapter 63 — `book/chapters/63-genesis-and-enoch-firmament-waters-ladder-and-watchers.md`
+- Chapter 64 — `book/chapters/64-the-night-journey-and-ascension.md`
+- Chapter 65 — `book/chapters/65-ranginui-and-papatuanuku-the-world-opened-by-separation.md`
 
 Next writing point:
-- Chapter 63 — **Genesis and Enoch: Firmament, Waters, Ladder and Watchers**
+- Chapter 66 — **Sky Woman and the World Below**
+
+
+### Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
+Primary reservoir:
+- E22 — Watchers / 1 Enoch / Book of Giants contact-phase material.
+- E75 — Jacob's ladder / Bethel / gate-of-Heaven sequence.
+- Genesis waters-above, flood, ark/enclosure and tēvāh scale material in the E001–E342 checkpoint.
+Core relation:
+**separated waters → boundary → vertical route → descent/contact → catastrophe → enclosure → renewed continuity**
+
+### Chapter 64 — The Night Journey and Ascension
+Primary reservoir:
+- E76 — Israʾ/Miʿrāj layered-ascent article.
+- Existing role chapters on vehicle, guide, guardian, route, return and changed adjacency.
+Core relation:
+**approach → extraordinary vehicle → guide → guarded ascent → differentiated levels → ultimate boundary → return/information transfer**
+
+### Chapter 65 — Ranginui and Papatūānuku: The World Opened by Separation
+Primary reservoir:
+- E362 — Rangi and Papa.
+- E363 — Tāne raises the sky.
+- Earlier E70/current-page Māori separation material.
+Core relation:
+**compressed layers → operator acts → forceful separation → light/air/space → stable related regions**
