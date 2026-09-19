@@ -321,6 +321,12 @@ New chapters saved in this continuation:
 - 64 — The Night Journey and Ascension
 - 65 — Ranginui and Papatūānuku: The World Opened by Separation
 
-**Exact next writing point: Chapter 66 — Sky Woman and the World Below.**
+**Exact next writing point: Chapter 67 — The Popol Vuh: Worlds Tried More Than Once.**
 
 Do not redo the giant source read unless a future source changes. Continue using the local/source map and fetch only small new deltas or specific source articles when needed.
+
+
+### Chapter 66 saved — 2026-09-19
+- `book/chapters/66-sky-woman-and-the-world-below.md`
+- Source reservoir: E406–E410 Haudenosaunee sequence.
+- Next: Chapter 67 — **The Popol Vuh: Worlds Tried More Than Once**.
