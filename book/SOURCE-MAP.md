@@ -21,6 +21,7 @@ This file is a working map from manuscript chapters to the source reservoir. It 
 - All 49 files currently included by the wrapper from `cosmology_fragments/` and `cosmology_expansions/` — read in rendered-page order/bulk groups.
 - `book/COSMOLOGY-BOOK-HANDOFF.md`, `book/BOOK-CONTINUATION.md`, `book/outline.md`, `book/VARDATH-COSMOLOGY-BOOK.md` — current continuity controls read.
 - Existing manuscript through Chapter 59 — continuity pass completed before drafting Chapter 60.
+- Full canonical manuscript Chapters 1–88 — numbering/duplication/transition continuity pass completed 2026-09-19.
 
 ## Governing source rules
 
@@ -211,3 +212,12 @@ Core relation:
 ## Main-book status
 All **88 numbered chapters are drafted and saved**.
 Next source-map work belongs to appendices and final continuity/indexing, not new numbered chapters.
+
+
+## Post-cleanup canonical manuscript state — 2026-09-19
+
+- `book/chapters/` contains Preface, Introduction and exactly Chapters 1–88.
+- Chapter 38 is now `book/chapters/38-the-land-rides-the-lattice.md`, integrating the organiser/cargo distinction with the flat-world-surface geometry.
+- Superseded duplicate/drift chapter files have been removed.
+- The source reservoir does not need to be reread for assembly.
+- Next source work is only targeted verification if later editing introduces a specific factual question.
