@@ -394,6 +394,91 @@ The rod opens.
 
 The pillar holds.
 
+## The axis can change function during the same event
+
+The same vertical form can do different work at different times.
+
+Before full convergence, it may be only a preferred direction.
+
+During maximum activation, it can become the dominant transport path.
+
+After reopening, the same region may remain culturally important as a mountain, pillar, sacred centre or remembered road even though the intense through-flow is gone.
+
+This gives one possible progression:
+
+**preferred line → active axis → transport throat → post-event centre**
+
+That sequence is more useful than saying one object "is" the axis forever.
+
+It also helps explain why peaceful sacred pillars and catastrophic sky-rods can belong to the same structural family without describing the same phase.
+
+## There can be more than one axis scale
+
+The mature model does not require every axis image to refer to the centre of the entire world.
+
+A local throat can have its own axis.
+
+A mountain valley can define a local up/down route.
+
+A regional node can become strongly vertical.
+
+A larger world-scale convergence can then organise many local routes into one dominant direction.
+
+This gives the axis a hierarchy:
+
+**local axis**
+
+**regional axis**
+
+**global active axis**
+
+That is important because otherwise every sacred mountain would have to compete to be the one true centre.
+
+The network model avoids that problem.
+
+Many places can be locally central while belonging to one larger structure.
+
+## Mountains add mass to the axis problem
+
+A tree or ladder can be imagined as mostly route.
+
+A mountain cannot.
+
+A mountain is material.
+
+That forces the Vardath comparison to ask what a visible mountain actually represents.
+
+It may mark a deep node.
+
+It may be land raised over a node.
+
+It may preserve material deformed during an older transition.
+
+It may simply be a cultural centre unrelated to the physical model.
+
+Those possibilities should remain separate.
+
+The fact that a mountain is sacred is not evidence that it is a gate.
+
+The stronger comparison begins only when route, boundary, world-level and transition functions also appear.
+
+## The axis has a stability problem
+
+A world dominated permanently by one narrow route would not look like the quiet world described earlier.
+
+The broad lattice would have failed to reopen.
+
+That means an active axis has to be temporary if the ordinary world is to return.
+
+The Finnish great-oak material later makes this especially clear: a central form can become too dominant and block normal function.
+
+Mechanically, the same principle applies here.
+
+The axis is useful when transfer requires concentration.
+
+It becomes dangerous if concentration does not relax.
+
+
 ## The axis family in one line
 
 The family can therefore be read as:
