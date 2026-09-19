@@ -101,7 +101,7 @@ Saved 2026-09-19:
 - Chapter 65 — `book/chapters/65-ranginui-and-papatuanuku-the-world-opened-by-separation.md`
 
 Next writing point:
-- Chapter 73 — **Māui: Fishing Up Land, Slowing the Sun and Crossing Limits**
+- Chapter 77 — **Urashima Tarō and the Palace Beneath the Sea**
 
 
 ### Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
@@ -168,3 +168,24 @@ Core relation:
 Primary reservoir: E387–E392.
 Core relation:
 **formative water → enclosure → rupture → differentiation → overconcentration → reduction → fragmentation → reconnection**
+
+
+### Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits
+Primary reservoir: E364, E366–E369.
+Core relation:
+**hidden land → emergence; excessive celestial rate → regulation; attempted reversal → irreversible limit**
+
+### Chapter 74 — Rainbow Serpent: Land, Water and the Living Current
+Primary reservoir: E399–E405.
+Core relation:
+**moving serpent/path → water response → landscape memory → route network → nodes/field**
+
+### Chapter 75 — Hopi Emergence: Worlds Below and the Climb Upward
+Primary reservoir: E422–E424.
+Core relation:
+**earlier world → emergence → present world → memorial threshold → stable order**
+
+### Chapter 76 — Tír na nÓg: The Otherworld and the Time of Return
+Primary reservoir: local E330 in `wordpress-memory-CHECKPOINT-E342-20260918.md`.
+Core relation:
+**ordinary world → guided water crossing → Otherworld → altered time → attempted return → temporal mismatch**
