@@ -463,7 +463,7 @@ After Chapter 88, proceed to the planned appendices. Do not create more main cha
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53–76 are drafted and saved.**
+**Chapters 53–84 are drafted and saved.**
 
 Newly completed in the 2026-09-19 continuation:
 - Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
@@ -476,7 +476,7 @@ Newly completed in the 2026-09-19 continuation:
 
 Continue sequentially at:
 
-**Chapter 77 — Urashima Tarō and the Palace Beneath the Sea**
+**Chapter 85 — The NeverEnding Story and the Mirror at the Gate**
 
 The mandated source reread for this continuation has been completed, including the local E001–E342 checkpoint, local cosmology memories, current page includes, and E343–E453 delta. Use `book/SOURCE-MAP.md` and only fetch small source deltas or specific articles as needed; do not repeat the giant source crawl.
 
@@ -623,3 +623,8 @@ Saved and verified:
 Chapters 73–76 are now drafted and saved. Part X — **Worlds Above, Below and Before** — is complete.
 
 **Continue at Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
+
+
+## Part XI checkpoint — through Chapter 84 — 2026-09-19
+Chapters 77–84 are drafted and saved.
+**Continue at Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
