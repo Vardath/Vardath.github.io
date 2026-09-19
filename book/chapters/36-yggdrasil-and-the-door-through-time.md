@@ -412,6 +412,129 @@ The language changes because the age changes.
 
 The event is the same class of event.
 
+## A temporal tree still needs physics
+
+The time-tree idea is one of the most attractive parts of the model, which means it deserves the strongest restraint.
+
+Calling roots "past" and branches "future" is easy.
+
+Explaining how matter moves between them is not.
+
+A physical time door would need to answer at least four questions:
+
+**What defines the different time-states?**
+
+**What causes them to become adjacent?**
+
+**What preserves a traveller's continuity?**
+
+**Why does ordinary causality return after the gate closes?**
+
+Yggdrasil gives me an architecture for imagining the problem.
+
+It does not solve those equations.
+
+That distinction has to remain explicit.
+
+## Branching future and layered future are not the same thing
+
+A tree naturally suggests branching possibilities.
+
+The shell model, by contrast, often suggests successive world-turns with a stronger previous-present-next order.
+
+Those are not identical pictures.
+
+The mature Vardath model leaves this unresolved.
+
+The branches could represent:
+
+literal alternative futures;
+
+multiple regions of one future world;
+
+different routes through the same successor state;
+
+or simply the visual spread of a structure that later reconverges.
+
+I do not need to decide before the physical mechanism exists.
+
+## Knots may matter more than branches
+
+If the tree is really a woven structure, the most important places may not be the branch tips.
+
+They may be crossings.
+
+Knots.
+
+Junctions.
+
+Points where normally separate strands come close enough to exchange.
+
+That moves the time-door idea back toward the lattice.
+
+A local gate could then be understood as a temporary knot in a much larger temporal weave.
+
+This is one of the cleanest ways the world-tree and many-throat models can coexist.
+
+## Meeting oneself is the strongest constraint
+
+The mirror-self idea is fascinating, but it is also dangerous for the model.
+
+If a traveller can meet a past or future version of themselves, causality problems appear immediately.
+
+Information loops.
+
+Duplicate matter.
+
+Conflicting memories.
+
+Intervention in the conditions that created the journey.
+
+I do not solve those paradoxes by calling them myth.
+
+They are real conceptual constraints.
+
+Possible answers may involve limited interaction, branching histories, self-consistency or something I have not yet considered.
+
+For now, the model only earns the right to ask the question.
+
+## The tree can persist while temporal access closes
+
+This is another reason Yggdrasil remains such a strong comparison.
+
+A permanent architecture does not imply permanent time travel.
+
+The tree can remain.
+
+The knot can loosen.
+
+The throat can broaden.
+
+The local relation between time-states can disappear.
+
+That gives the model a way to restore ordinary causality after an event.
+
+The larger structure persists.
+
+The extraordinary adjacency does not.
+
+## Time may be the last layer, not the first explanation
+
+It is tempting to reinterpret every old underworld, fairyland or ascent story as time travel once the idea appears.
+
+I do not want to do that.
+
+Many are adequately explained as religious, symbolic, social or literary Otherworlds.
+
+The time-door hypothesis becomes interesting where **time mismatch itself** is central to the story.
+
+That is why Tír na nÓg, Urashima Tarō and the Seven Sleepers matter so much later.
+
+They do not merely provide another place.
+
+They make elapsed time part of the threshold.
+
+
 ## The world tree is the memory of the machine
 
 This may be why Yggdrasil sits so close to the centre of my cosmology now.
