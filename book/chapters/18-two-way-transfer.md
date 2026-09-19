@@ -422,6 +422,83 @@ Another may recur because the natural door appeared again.
 
 The world-machine allows both.
 
+## Counterflow needs separate channels or stable gradients
+
+Two-way transfer sounds simple until I imagine the fluids.
+
+If water rushes one way through a narrow throat while gas or other material moves the other way, turbulence becomes extreme.
+
+A stable exchange may therefore require:
+
+different strands;
+
+different parts of the throat;
+
+different times within the same event;
+
+or strong density and pressure sorting.
+
+That makes the braid useful mechanically.
+
+Two opposed pathways are easier to imagine than one narrow pipe carrying everything both ways at once.
+
+## Transfer should separate cargo by response
+
+Different materials react differently to acceleration, pressure and heat.
+
+Gas follows pressure rapidly.
+
+Water has much greater density.
+
+Sediment can be entrained only above certain flow conditions.
+
+Large rock needs far greater force.
+
+Living cargo is limited by survivability.
+
+This means the gate should behave like a crude sorter even without an engineered filter.
+
+The order of arrival may therefore preserve information about the mechanics.
+
+Atmosphere first.
+
+Fine material next.
+
+Larger material only during stronger phases.
+
+That is a question worth testing against the physical record.
+
+## Exchange does not have to balance locally
+
+Two-way transfer also does not require every local throat to exchange equal mass.
+
+One node may be dominated by outflow.
+
+Another by inflow.
+
+The larger world-system can still conserve material across several routes.
+
+This is important because mythology often preserves strongly one-directional journeys.
+
+A descent story does not disprove two-way architecture.
+
+It may simply describe one active branch of a larger exchange.
+
+## Transfer has an energy budget
+
+Moving mass costs energy.
+
+This becomes enormous when the model moves from people to water, rock and land.
+
+The larger the proposed cargo, the more serious the energy question becomes.
+
+That is one of the main reasons the primordial-current branch matters.
+
+If the current cannot plausibly supply or mediate the required work, the moving-land version of the model fails.
+
+I keep that constraint visible rather than hiding it behind mythology.
+
+
 ## Transfer is the heart of succession
 
 Without transfer, the next world would be disconnected from the present.
