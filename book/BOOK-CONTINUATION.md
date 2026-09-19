@@ -321,7 +321,7 @@ New chapters saved in this continuation:
 - 64 — The Night Journey and Ascension
 - 65 — Ranginui and Papatūānuku: The World Opened by Separation
 
-**Exact next writing point: Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
+**Main 88-chapter manuscript complete. Exact next writing point: Appendix A — Working Glossary.**
 
 Do not redo the giant source read unless a future source changes. Continue using the local/source map and fetch only small new deltas or specific source articles when needed.
 
@@ -341,7 +341,7 @@ Do not redo the giant source read unless a future source changes. Continue using
 - Chapter 71 — `book/chapters/71-oduduwa-and-the-descent-onto-primordial-water.md`
 - Chapter 72 — `book/chapters/72-ilmatar-the-world-egg-and-the-sampo.md`
 
-**Exact next writing point: Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
+**Main 88-chapter manuscript complete. Exact next writing point: Appendix A — Working Glossary.**
 
 
 ## Part X complete — Chapters 73–76 — 2026-09-19
@@ -366,4 +366,25 @@ Saved:
 - 83 — Narnia and the Wood Between the Worlds
 - 84 — The Wizard of Oz: The Storm as Vehicle
 
-**Exact next writing point: Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
+**Main 88-chapter manuscript complete. Exact next writing point: Appendix A — Working Glossary.**
+
+
+## MAIN 88-CHAPTER MANUSCRIPT COMPLETE — 2026-09-19
+
+Final saved Part XI chapters:
+- 85 — `book/chapters/85-the-neverending-story-and-the-mirror-at-the-gate.md`
+- 86 — `book/chapters/86-annihilation-the-shimmer-and-the-mirror-self.md`
+- 87 — `book/chapters/87-spirited-away-tunnel-threshold-and-return.md`
+- 88 — `book/chapters/88-the-same-door-wearing-different-stories.md`
+
+**The main book now contains exactly 88 numbered chapters. Do not create Chapter 89.**
+
+Next work, in order:
+1. Appendix A — Working Glossary
+2. Appendix B — Research Journey
+3. Appendix C — Motif and Role Atlas
+4. Appendix D — Source Traditions
+5. Appendix E — Index
+6. Then full manuscript continuity/order/duplication/voice pass and assembly/export work.
+
+The giant source reread remains complete. Do not repeat it unless new source material is added.
