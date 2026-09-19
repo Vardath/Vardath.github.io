@@ -143,6 +143,7 @@ E. Index
 - Chapters 60–88 — drafted and saved
 - Target main-book length — **exactly 88 chapters; do not add, split or renumber chapters without Stephen explicitly changing the rule**
 - Main body — **all 88 chapters drafted and saved**
-- Appendices — next: A through E
+- Appendices A–E — drafted and saved
+- Next — full numbering/continuity/duplication pass and master assembly
 
 The chapter files under `book/chapters/` are the canonical working manuscript during drafting.
