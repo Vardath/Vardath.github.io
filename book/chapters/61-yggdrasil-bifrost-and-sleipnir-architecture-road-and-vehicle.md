@@ -1,5 +1,11 @@
 # Chapter 61 — Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle
 
+Yggdrasil has already appeared twice in the book: first as a major mythic camera angle on the gate, and later as the woven time structure of the integrated Vardath model.
+
+Here I narrow the lens back to the Norse material itself.
+
+The question is no longer simply what Yggdrasil means to my cosmology. It is how the tree, bridge, guardian, rider and extraordinary horse divide the work inside the tradition before I compare those roles with the model.
+
 Norse mythology has been one of the most useful traditions in the development of Vardath Cosmology because it does not give me one object doing every job.
 
 It gives me a tree.
