@@ -101,7 +101,7 @@ Saved 2026-09-19:
 - Chapter 65 — `book/chapters/65-ranginui-and-papatuanuku-the-world-opened-by-separation.md`
 
 Next writing point:
-- Chapter 85 — **The NeverEnding Story and the Mirror at the Gate**
+- Appendix A — **Working Glossary**
 
 
 ### Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
@@ -200,3 +200,14 @@ Core relation:
 82 Alice — rabbit-hole throat, scale compatibility, local stopped-time image, looking-glass boundary.
 83 Narnia — local portals, Wood Between the Worlds, many worlds/pools, asynchronous world histories.
 84 Oz — cyclone as temporary event-vehicle, house as carrier, separate return mechanism.
+
+
+### Chapters 85–88 — final main-book batch
+85 The NeverEnding Story — gate trials, Magic Mirror Gate, observer/character relation, self at threshold.
+86 Annihilation — expanding transition field, refraction/mixing, identity instability, mirror self, residual change.
+87 Spirited Away — tunnel, phase-dependent activation, transformed identity/name, conditional return, ordinary tunnel after closure.
+88 The Same Door Wearing Different Stories — comparative synthesis of gate-as-state, role grammar, broad→narrow→broad geometry, world succession, altered time, mirror self and natural-door hypothesis.
+
+## Main-book status
+All **88 numbered chapters are drafted and saved**.
+Next source-map work belongs to appendices and final continuity/indexing, not new numbered chapters.
