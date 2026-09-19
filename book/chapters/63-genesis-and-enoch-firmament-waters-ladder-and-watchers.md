@@ -66,7 +66,7 @@ Water is the tracer.
 
 It moves because something about slope, pressure, boundary, channel or adjacency has changed.
 
-That is why the Genesis image of waters separated by the expanse remains useful even after my early canopy ideas changed.
+That is why the Genesis image of waters separated by the expanse remains useful as the canopy model becomes more detailed. The vapour canopy still belongs to the separated upper-water system; the later model simply gives that system a larger place in the world-machine.
 
 The strongest relationship is not:
 
