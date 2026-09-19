@@ -463,21 +463,23 @@ After Chapter 88, proceed to the planned appendices. Do not create more main cha
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53–59 are drafted and saved.**
+**Chapters 53–65 are drafted and saved.**
 
-- Chapter 53 — **Anthony Peratt and the Primordial Current**
-- Chapter 54 — **Mesopotamia: Tiamat, Atrahasis and Utnapishtim**
-- Chapter 55 — **Egypt: Nun, the First Mound and the Road Through the Duat**
-- Chapter 56 — **Zoroastrian Worlds: Mountain, Sea, Bridge and Renewal**
-- Chapter 57 — **Indra and Vritra: Serpent, Thunderbolt and Released Waters**
-- Chapter 58 — **Meru and the Churning of the Cosmic Ocean**
-- Chapter 59 — **Buddhist and Jain Layered Worlds**
+Newly completed in the 2026-09-19 continuation:
+- Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
+- Chapter 61 — **Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle**
+- Chapter 62 — **Ragnarök: Boundary Failure, Fire, Survival and the New World**
+- Chapter 63 — **Genesis and Enoch: Firmament, Waters, Ladder and Watchers**
+- Chapter 64 — **The Night Journey and Ascension**
+- Chapter 65 — **Ranginui and Papatūānuku: The World Opened by Separation**
 
 Continue sequentially at:
 
-**Chapter 60 — Greek Succession: Uranus, Cronus and Zeus**
+**Chapter 66 — Sky Woman and the World Below**
 
-Chapter 53 is the only dedicated plasma/Peratt extra chapter. Chapters 54–88 return to mythology, religion, cosmology, legend, fairy tale and modern-story comparison.
+The mandated source reread for this continuation has been completed, including the local E001–E342 checkpoint, local cosmology memories, current page includes, and E343–E453 delta. Use `book/SOURCE-MAP.md` and only fetch small source deltas or specific articles as needed; do not repeat the giant source crawl.
+
+Chapter 53 remains the only dedicated plasma/Peratt extra chapter. Chapters 54–88 remain mythology, religion, cosmology, legend, fairy tale and modern-story comparison.
 
 Do not jump ahead to appendices.
 
