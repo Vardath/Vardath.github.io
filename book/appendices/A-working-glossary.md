@@ -584,13 +584,17 @@ Sleipnir, al-Burāq and other extraordinary mounts occupy this role in the compa
 
 A vehicle is distinct from the gate itself.
 
+## Vapour canopy
+
+A major environmental component of Vardath Cosmology: the water-rich upper atmospheric boundary associated with the upper waters and lattice enclosure. In its strong form it creates a high-pressure, high-oxygen, moisture-rich atmosphere beneath it and participates in the more active electrical/plasma regime of the waking world.
+
+The canopy is central to the model's giant-life, longevity, telomere-regrowth, mutation and persistent-tissue branches.
+
 ## Waking atmosphere
 
-The proposed atmospheric regime associated with the active world.
+The atmospheric regime of the active or canopy world. It is characterised in the model by higher pressure, higher oxygen availability, heavy moisture, strong electrical/plasma activity, heat and rapid movement of water and gases.
 
-Moisture, pressure, electrical activity, heat, oxygen conditions and other environmental variables may differ from the quiet phase.
-
-This remains speculative.
+This atmosphere is one of the main mechanisms connecting the world-machine to giant biological scale, extreme longevity, mutation and unusual tissue persistence.
 
 ## Waking world
 
