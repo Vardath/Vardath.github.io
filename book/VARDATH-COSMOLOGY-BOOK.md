@@ -144,6 +144,19 @@ E. Index
 - Target main-book length — **exactly 88 chapters; do not add, split or renumber chapters without Stephen explicitly changing the rule**
 - Main body — **all 88 chapters drafted and saved**
 - Appendices A–E — drafted and saved
-- Next — full numbering/continuity/duplication pass and master assembly
+- Continuity/numbering/duplication pass — **complete**
+- Canonical chapter directory — **exactly 88 numbered chapters, one file each**
+- Next — assemble `book/BOOK.md`, verify exact word count, then prepare export/layout
 
 The chapter files under `book/chapters/` are the canonical working manuscript during drafting.
+
+
+## Canonical continuity state — 2026-09-19
+
+The chapter directory has been reconciled to this locked Contents list.
+
+- Chapters 1–88: exactly one canonical file each.
+- Chapter 38: `The Land Rides the Lattice`, merged from the former split land/lattice and flat-surface drafts.
+- Old numbering drift and duplicate drafts: removed.
+- Continuity and adjacent-duplication pass: complete.
+- Next production step: assemble `book/BOOK.md`.
