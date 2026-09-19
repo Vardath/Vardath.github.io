@@ -645,3 +645,17 @@ Next work:
 - then the full continuity/duplication/voice pass and final assembly.
 
 **Exact next writing point: Appendix A — Working Glossary.**
+
+
+## APPENDICES DRAFTED — 2026-09-19
+
+Appendices A–E are now drafted and saved under `book/appendices/`.
+
+**Next work is the full manuscript continuity pass and assembly.**
+Priority:
+1. reconcile old chapter-number/file-name drift and duplicate working drafts;
+2. preserve canonical 88-chapter title lock;
+3. remove/relocate obsolete chapter drafts from the canonical chapter set only after useful material is preserved;
+4. audit voice/duplication/contradictions;
+5. assemble `book/BOOK.md`;
+6. then prepare export formats.
