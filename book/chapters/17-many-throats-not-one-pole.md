@@ -374,6 +374,71 @@ The geography survives longer than the event.
 
 The story becomes the warning label.
 
+## A throat needs a local trigger
+
+If many places are capable of becoming throats, the model has to explain why most of them are quiet almost all the time.
+
+That means location cannot be enough.
+
+A node needs a trigger condition.
+
+Possible variables could include:
+
+current intensity;
+
+pressure;
+
+alignment within the wider braid;
+
+regional load;
+
+water or atmospheric state;
+
+or the phase of a larger pulse.
+
+I do not yet know which of those is primary.
+
+The important point is that **many potential gates do not imply many permanently open gates**.
+
+The network can contain capacity without continuously using it.
+
+## Nodes can compete
+
+A distributed system may also divide flow among several active nodes.
+
+If one throat strengthens, neighbouring routes may weaken.
+
+If several activate together, the event may spread rather than concentrating into one global axis.
+
+That gives the model a way to produce local, regional and world-scale events from the same architecture.
+
+It also means the strongest node in one event does not have to be the strongest node in another.
+
+The centre can migrate.
+
+## Geography may preserve old node preference
+
+If some places activate more easily than others, their surface geography may accumulate unusual cultural importance.
+
+Repeated stories.
+
+Repeated settlement avoidance.
+
+Sacred wells.
+
+Mountains.
+
+Caves.
+
+Odd local weather.
+
+That possibility is interesting, but it is also easy to abuse.
+
+A place being sacred does not establish repeated gate activity.
+
+The model would need independent physical evidence before cultural recurrence becomes more than a clue.
+
+
 ## Why this matters
 
 The many-throat model gives Vardath Cosmology a way to connect the tiny and the enormous.
