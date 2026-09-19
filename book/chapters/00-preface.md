@@ -184,6 +184,10 @@ I do not need to apologise for the model being speculative.
 
 That is what it is.
 
+Everything that follows should be read under one standing rule: **this entire book is speculative cosmology**. Unless I explicitly identify a source fact, measurement or established observation, I am describing possibilities inside my model. I do not want to stop every few pages to repeat that the cosmology is a maybe. The maybe applies to the whole structure.
+
+That means the stranger branches are not to be quietly pushed to the edge simply because they are stranger. The vapour canopy, the high-pressure and high-oxygen atmosphere, the giant-life regime, extreme longevity, plasma-driven mutation, moving lands, time doors and every other part of the model are all being explored under the same speculative umbrella. They can be stated clearly as parts of Vardath Cosmology without pretending they are established science.
+
 The value, for me, lies in whether the pieces can be integrated into a coherent structure and whether that structure gives me a stronger way to understand the repeated images and relationships that first drew me into the problem.
 
 The most important change in my thinking was learning to see catastrophe as transition.
