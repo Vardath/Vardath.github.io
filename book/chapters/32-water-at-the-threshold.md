@@ -320,6 +320,115 @@ That is exactly what water does physically.
 
 Its symbolic flexibility grows from its material flexibility.
 
+## Water changes phase during the event
+
+The same water can appear as liquid, vapour, cloud, ice, spray or steam depending on pressure and temperature.
+
+That matters because different witnesses could describe apparently different substances while observing one water system in different phases.
+
+A hot transfer can produce vapour.
+
+Rapid expansion can produce cooling and condensation.
+
+Electrical activity can produce intense local heating without warming every region equally.
+
+This gives the Vardath water cycle more complexity than simply:
+
+**reservoir → flood.**
+
+There may be repeated transitions among liquid and atmospheric states before the world settles.
+
+## Large water movement is a pressure problem
+
+The upper-water idea becomes mechanically difficult very quickly.
+
+A large volume of water has mass.
+
+If it is truly above the inhabited world, something must support it or keep it dynamically separated.
+
+If that support changes, pressure and flow become central questions.
+
+How fast can water cross?
+
+Through what area?
+
+What limits discharge?
+
+Does vapour move before bulk liquid?
+
+Does pressure equalise gradually or catastrophically?
+
+These are not solved questions.
+
+They are exactly the questions the model has to answer before upper-water transfer can become a physical theory rather than a mythic analogy.
+
+## Rivers and shorelines are moving boundaries
+
+A river is not only a line between territories.
+
+It is a boundary that moves material while remaining recognisably a boundary.
+
+A shoreline moves too.
+
+Tides.
+
+Storms.
+
+Erosion.
+
+Sedimentation.
+
+This is useful because it shows that boundaries do not have to be fixed to remain real.
+
+The Vardath world boundary may likewise be dynamic in the quiet phase without being open as a gate.
+
+Small exchange can coexist with large-scale separation.
+
+## Ordinary flood must remain ordinary flood
+
+The model also needs an important negative rule.
+
+Most floods should be explained by ordinary hydrology unless there is strong evidence otherwise.
+
+Rainfall.
+
+Storm surge.
+
+River overflow.
+
+Dam failure.
+
+Tsunami.
+
+Local subsidence.
+
+These are powerful enough to create devastating flood traditions without any world gate.
+
+The Vardath hypothesis becomes useful only when a flood belongs to a larger pattern that ordinary hydrology does not explain by itself.
+
+This keeps water from becoming a universal escape hatch for the model.
+
+## Water records the shape after the event
+
+Once the transition ends, water keeps tracing the new geometry.
+
+It fills new basins.
+
+Abandons old channels.
+
+Cuts through fresh sediment.
+
+Defines coastlines around uplifted or subsided land.
+
+That means the water story can continue long after the gate has closed.
+
+The flood may be brief.
+
+The drainage history may last centuries.
+
+This is one reason a cultural memory could preserve water as the dominant event even if the deeper cause was structural.
+
+
 ## Threshold water in one line
 
 The roles can be summarised:
