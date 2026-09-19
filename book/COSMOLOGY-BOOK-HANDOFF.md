@@ -463,7 +463,7 @@ After Chapter 88, proceed to the planned appendices. Do not create more main cha
 
 # 12. EXACT NEXT WRITING POINT
 
-**Chapters 53–66 are drafted and saved.**
+**Chapters 53–72 are drafted and saved.**
 
 Newly completed in the 2026-09-19 continuation:
 - Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
@@ -476,7 +476,7 @@ Newly completed in the 2026-09-19 continuation:
 
 Continue sequentially at:
 
-**Chapter 67 — The Popol Vuh: Worlds Tried More Than Once**
+**Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits**
 
 The mandated source reread for this continuation has been completed, including the local E001–E342 checkpoint, local cosmology memories, current page includes, and E343–E453 delta. Use `book/SOURCE-MAP.md` and only fetch small source deltas or specific articles as needed; do not repeat the giant source crawl.
 
@@ -605,3 +605,15 @@ Only after the 88 chapters and appendices are complete should the full manuscrip
 If nothing else is remembered:
 
 **Read the full handoff, continuation, outline, master manuscript, completed chapters and source archive; preserve Flat Earth, the lattice dome, Meltology, moving lands and the recurring natural time-door as integrated possibilities; keep JANUS/numbers, phonetics and tests out; remember Chapter 53 is the single dedicated Peratt/plasma bridge and Chapters 54–88 return to mythology, religion, legend, fairy tale and story; continue from the first undrafted chapter shown in the continuation file.**
+
+
+## Continuation update — Chapters 67–72 complete — 2026-09-19
+Saved and verified:
+- 67 — The Popol Vuh: Worlds Tried More Than Once
+- 68 — The Five Suns: Worlds That End and Begin Again
+- 69 — Pangu and Nüwa: Egg, Separation and Repair of the Sky
+- 70 — Izanagi and Izanami: Bridge, Descent and the Sealed Return
+- 71 — Oduduwa and the Descent Onto Primordial Water
+- 72 — Ilmatar, the World Egg and the Sampo
+
+**Continue at Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits.**
