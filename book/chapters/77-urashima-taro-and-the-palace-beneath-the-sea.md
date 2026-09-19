@@ -298,6 +298,59 @@ Then a guide or carrier opens the relation.
 
 That is much more coherent with the Vardath gate than simple space travel.
 
+## The story gives no stable conversion rate
+
+This is important for the physical comparison.
+
+Urashima's tale gives a dramatic mismatch between experienced duration and elapsed human history, but it does not supply a reliable universal ratio that I can turn into physics.
+
+Other fairy-time stories give different relationships.
+
+That diversity argues against pretending the folklore already contains one hidden equation.
+
+The useful category is broader:
+
+**the clocks are not synchronised.**
+
+A physical Vardath model would have to derive the rate from the geometry or state of the gate rather than borrowing it from story.
+
+## The box is a portable boundary
+
+The tamatebako becomes even more interesting if I treat it as an enclosure carrying a condition from the Otherworld into ordinary space.
+
+The box is closed.
+
+The consequence is deferred.
+
+Opening changes the traveller's state.
+
+Again, this is narrative logic, not a proposed time battery.
+
+But structurally it extends the enclosure principle:
+
+a boundary can carry not only material but a **delayed relationship**.
+
+That makes the box one of the smallest threshold forms in the book.
+
+## Return exposes the measurement problem
+
+If Urashima had never returned, the time mismatch would never become visible to him.
+
+The anomaly is discovered only by comparing:
+
+his memory,
+
+his body,
+
+and the changed human world.
+
+That gives the natural time-door hypothesis a practical lesson.
+
+Time displacement needs **two clocks that reunite** before it can be measured.
+
+Without reunion, there is only disappearance.
+
+
 ## The full sequence
 
 The Urashima Tarō pattern becomes:
