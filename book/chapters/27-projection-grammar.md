@@ -370,6 +370,187 @@ A blueprint is only one way to record structure, and probably not the most durab
 
 Projection grammar explains how the same event can fracture into many traditions without requiring those traditions to share one vocabulary.
 
+## Projection is a pipeline, not one distortion
+
+The image preserved in tradition may have passed through several transformations before it reaches us.
+
+First there is the event.
+
+Then the observer's position.
+
+Then weather, darkness, water, cloud or fire between observer and event.
+
+Then human perception.
+
+Then memory.
+
+Then oral retelling.
+
+Then artistic convention.
+
+Then copying.
+
+Then translation.
+
+Then modern interpretation.
+
+That means the final symbol can be many steps removed from the original stimulus.
+
+Projection grammar is therefore not merely geometry.
+
+It is a **distortion pipeline**.
+
+That is why I treat exact visual matches cautiously.
+
+## Distance changes what survives
+
+Close to an event, an observer may see texture, motion and multiple strands.
+
+Far away, those details merge.
+
+Many paths become one luminous band.
+
+A complex structure becomes a rod.
+
+Several moving points become one "eye."
+
+At still greater distance, only brightness or darkness may remain.
+
+This gives the model a practical rule:
+
+**simpler symbols may come from greater distance rather than simpler phenomena.**
+
+That is one possible reason traditions can preserve different levels of detail.
+
+## Duration changes the remembered object
+
+A structure that changes over hours may be remembered as several different things by witnesses observing different phases.
+
+Broad net in the morning.
+
+Ladder later.
+
+Rod at maximum convergence.
+
+Wheel or eye from another angle.
+
+Then darkness.
+
+Later storytellers may treat those as separate actors or objects.
+
+The actual event could have been one changing form.
+
+This is one of the strongest reasons the fingertrap matters to the comparative model.
+
+It supplies a physical analogy for a shape that genuinely changes category as its geometry changes.
+
+## Human perception looks for living forms
+
+People are extremely good at seeing faces, bodies and animals in ambiguous patterns.
+
+That is not a flaw to be ignored.
+
+It is part of the projection process.
+
+A branching current can become limbs.
+
+Two bright regions can become eyes.
+
+A central column with lateral extensions can become a giant person.
+
+A winding luminous path can become serpent.
+
+The Vardath comparison therefore does not require ancient observers to have misunderstood something stupidly.
+
+They may have described a difficult phenomenon using the most efficient visual categories available to human perception.
+
+## Art adds another layer
+
+A petroglyph, icon, textile or manuscript image is not a photograph.
+
+Artists simplify.
+
+Repeat conventions.
+
+Emphasise culturally important features.
+
+Combine episodes.
+
+Turn motion into static form.
+
+That means I should be most interested in **relationships that survive stylisation**:
+
+central versus peripheral;
+
+above versus below;
+
+inside versus outside;
+
+many versus one;
+
+open versus closed;
+
+traveller versus route;
+
+before versus after.
+
+Those relations are more durable than exact shape.
+
+## Projection grammar also creates false positives
+
+This method can easily become too powerful.
+
+Almost anything can be made to resemble something else if enough rotation, distortion and symbolism are allowed.
+
+So I need limits.
+
+A useful comparison should normally preserve more than silhouette.
+
+It should preserve some combination of:
+
+role,
+
+sequence,
+
+orientation,
+
+transition,
+
+and consequence.
+
+A tree that merely looks branching is weak evidence.
+
+A story in which that tree joins levels, changes state, enables crossing and later closes is much more interesting.
+
+Projection grammar should narrow interpretation, not excuse every resemblance.
+
+## The best comparisons survive several views
+
+The strongest candidate structures are those that explain multiple image families at once.
+
+If one changing geometry can plausibly account for:
+
+net,
+
+braid,
+
+ladder,
+
+rod,
+
+eye,
+
+wheel,
+
+and humanlike axial figure
+
+under different states and viewpoints, then it earns attention.
+
+That does not make the interpretation historical fact.
+
+It means the geometry is doing useful explanatory work.
+
+
 ## One event, many images
 
 The natural time door can therefore appear as:
