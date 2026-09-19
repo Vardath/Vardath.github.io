@@ -266,6 +266,71 @@ That is why the Seven Sleepers belong in Part XI.
 
 The enclosure principle has moved from survival through catastrophe to survival through time.
 
+## Sleep and time dilation are not the same explanation
+
+The story can be compared with temporal decoupling without pretending that sleep itself changes physical time.
+
+Ordinary deep sleep already compresses subjective duration.
+
+A person can wake after hours with little felt passage of time.
+
+The legend magnifies that familiar human experience across centuries.
+
+That gives at least two layers of interpretation:
+
+**subjective time loss through sleep**
+
+and
+
+**extraordinary outside-world duration in the story.**
+
+A physical Vardath hypothesis would need evidence for the second, not merely the first.
+
+## The biological clock creates a hard problem
+
+If centuries pass outside while the sleepers remain biologically intact, what happens to metabolism?
+
+Food.
+
+Water.
+
+Cell repair.
+
+Ageing.
+
+Waste.
+
+Temperature.
+
+The story resolves these through divine preservation.
+
+A physical model cannot simply skip them.
+
+That makes the Seven Sleepers useful precisely because they expose how demanding a true time-carrier enclosure would be.
+
+Either biological processes slow with the traveller's local time, or the enclosure has to preserve the body by some entirely different mechanism.
+
+## Social time is part of the displacement
+
+The sleepers do not merely wake in a later year.
+
+They wake into a different society.
+
+Different authorities.
+
+Different assumptions.
+
+Their old danger has become history.
+
+This is the same social problem seen in Urashima Tarō.
+
+A time door displaces relationships, not only clocks.
+
+The traveller's identity was embedded in one community, and that community no longer exists in the same form.
+
+That social discontinuity may be the most humanly important part of temporal transfer.
+
+
 ## The Vardath mapping
 
 The structure becomes:
