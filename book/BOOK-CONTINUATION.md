@@ -2,9 +2,27 @@
 
 > **AUTHORITATIVE HANDOFF:** Before continuing this book, read `book/COSMOLOGY-BOOK-HANDOFF.md` completely. It supersedes any older scope or status statement in this file where they differ.
 
-**Updated:** 2026-09-18  
+**Updated:** 2026-09-19  
 **Author/project owner:** Stephen Michael Hawton / Vardath  
 **Repository:** `Vardath/Vardath.github.io`
+
+## CURRENT STATUS — CONTINUITY CLEANUP COMPLETE — 2026-09-19
+
+The canonical manuscript structure is now clean.
+
+- `book/chapters/` contains **Preface + Introduction + exactly 88 numbered chapters**.
+- There are no missing chapter numbers and no duplicate chapter numbers.
+- The old 07/08/09 duplicate drafts were resolved; the fuller Chapter 8 current and Chapter 9 lattice drafts were retained.
+- The former one-number-behind run was renumbered to canonical Chapters 10–37 with locked headings/titles.
+- Old `37-the-land-is-not-the-lattice.md` and `38-the-flat-world-surface.md` were merged into canonical **Chapter 38 — The Land Rides the Lattice** at `book/chapters/38-the-land-rides-the-lattice.md`.
+- Chapter 5's filename was normalised to `05-what-the-early-world-machine-was-becoming.md`.
+- The chapter-to-chapter transition sweep found the Part I–XI flow intact after renumbering.
+- Adjacent-paragraph similarity checks found no accidental copy/paste duplication requiring deletion.
+- Repeated Yggdrasil treatments were differentiated: Chapter 37 = camera-angle/time-door comparison; Chapter 48 = integrated woven-time mechanics; Chapter 61 = source-specific Norse architecture/route/vehicle roles.
+- **Next task: assemble the canonical manuscript into `book/BOOK.md`, then do export/layout work.**
+- Do not recreate deleted drift files or renumber the locked 88 chapters.
+
+The complete large source read is already recorded in `book/SOURCE-MAP.md`; do not repeat the giant archive crawl unless sources materially change.
 
 ## Current instruction — authoritative
 
@@ -153,12 +171,12 @@ Do not pause to run tests or audits. Continue in batches and commit each substan
 ## Latest completed batch
 
 Completed and saved:
-- Chapter 15 — `book/chapters/15-mesh-ladder-rod-and-throat.md`
-- Chapter 16 — `book/chapters/16-the-gate-is-a-change-in-adjacency.md`
-- Chapter 17 — `book/chapters/17-many-throats-not-one-pole.md`
-- Chapter 18 — `book/chapters/18-two-way-transfer.md`
-- Chapter 19 — `book/chapters/19-reopening.md`
-- Chapter 20 — `book/chapters/20-water.md`
+- Chapter 15 — `book/chapters/16-mesh-ladder-rod-and-throat.md`
+- Chapter 16 — `book/chapters/17-the-gate-is-a-change-in-adjacency.md`
+- Chapter 17 — `book/chapters/18-many-throats-and-the-larger-axis.md`
+- Chapter 18 — `book/chapters/19-two-way-transfer.md`
+- Chapter 19 — `book/chapters/20-reopening.md`
+- Chapter 20 — `book/chapters/21-water.md`
 
 The recurring-natural-time-door thesis is now explicit in the Preface, Introduction, convergence/gate chapters and Part VII architecture.
 
@@ -166,12 +184,12 @@ The recurring-natural-time-door thesis is now explicit in the Preface, Introduct
 ## Part IV completed
 
 Completed and saved:
-- Chapter 21 — `book/chapters/21-air-vapour-heat-and-pressure.md`
-- Chapter 22 — `book/chapters/22-stone-crust-and-sediment.md`
-- Chapter 23 — `book/chapters/23-living-cargo.md`
-- Chapter 24 — `book/chapters/24-the-enclosure-principle.md`
-- Chapter 25 — `book/chapters/25-carrier-and-vehicle.md`
-- Chapter 26 — `book/chapters/26-the-handoff.md`
+- Chapter 21 — `book/chapters/22-air-vapour-heat-and-pressure.md`
+- Chapter 22 — `book/chapters/23-stone-crust-and-sediment.md`
+- Chapter 23 — `book/chapters/24-living-cargo.md`
+- Chapter 24 — `book/chapters/25-the-enclosure-principle.md`
+- Chapter 25 — `book/chapters/26-carrier-and-vehicle.md`
+- Chapter 26 — `book/chapters/27-the-handoff.md`
 
 
 ## Part V completed
@@ -438,13 +456,28 @@ Expanded and saved 23 chapter files:
 
 Expansion focused on mechanics, constraints, failure modes, scale, biological viability, evidence standards, temporal measurement, and boundary behaviour. Approximate net addition: ~64.6k Markdown characters / ~10k words.
 
-The known old numbering/merge problem around 07/08/09 and the two land/lattice working files was deliberately NOT cleaned or expanded as obsolete/canonical status belongs to the continuity pass.
+The old numbering/merge problem around 07/08/09 and the land/lattice working files was subsequently resolved during the continuity pass; see the current-status block at the top of this file.
 
 Current raw storage:
 - chapter directory: 1,245,652 bytes across 93 markdown files including preface/introduction and obsolete duplicate working files;
 - appendices: 108,220 bytes;
 - raw combined Markdown: 1,353,872 bytes.
 
-Estimated canonical manuscript after duplicate cleanup: about 203k–206k words including appendices and front matter.
+The duplicate cleanup is now complete; the manuscript remains in the roughly 200k+ word range including appendices and front matter.
 
 **Next work remains continuity cleanup: reconcile canonical 88 chapters, merge/preserve useful material from drifted files, remove duplication, then voice/flow pass and assembly.**
+
+
+## CONTINUITY CLEANUP COMPLETED — 2026-09-19
+
+Structural commit: `232c72f56d027bb93245a588ffe88d7ac61df0d2`.
+
+Canonical result:
+- 88/88 numbered chapters, exactly one file each;
+- Chapter 38 merged and rewritten from both land/surface drafts;
+- obsolete duplicate/drift files removed;
+- headings and locked contents reconciled;
+- transition and adjacent-duplication sweep completed;
+- recurring Yggdrasil treatments explicitly differentiated for continuity.
+
+**Next exact task: build `book/BOOK.md` from Preface, Introduction, Parts I–XI, Chapters 1–88 and Appendices A–E in locked order.**
