@@ -1,12 +1,16 @@
 # Chapter 48 — The World Tree as a Woven Time Structure
 
-Yggdrasil began in this project as a world tree.
+Yggdrasil has already appeared in this book as one of the strongest mythic camera angles on the gate.
 
-That sounds obvious.
+I am returning to it here for a different reason.
 
-But the meaning of the tree kept changing as the cosmology grew.
+Chapters 45–47 have now made previous, present and next explicitly temporal, treated the gate as a possible time door, and asked what happens if people and lands can move through it.
 
-At first it was mainly vertical.
+With those mechanics in place, the question is no longer only what the tree resembles in mythology.
+
+It is what the tree **does inside the integrated time model**.
+
+At first, Yggdrasil was mainly vertical for me.
 
 Roots below.
 
@@ -16,17 +20,13 @@ Branches above.
 
 A structure joining levels.
 
-That already made it useful as an image of the axis.
-
 Later, once the lattice, braid, shell-turns and time door had become part of the model, the tree stopped being only vertical.
 
 It became **woven**.
 
-That is the version of Yggdrasil that now sits at the centre of my time cosmology.
+That is the version of the world tree that now sits at the centre of my time cosmology:
 
-Not simply a tree standing between worlds.
-
-A living woven structure whose changing geometry can alter which world-state touches which.
+not simply a tree standing between worlds, but a living woven structure whose changing geometry can alter which world-state touches which.
 
 ## The tree is not one straight pole
 
