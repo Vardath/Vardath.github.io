@@ -285,7 +285,7 @@
 <li><strong>Outward-pressure gravity:</strong> an early buoyancy-like alternative in which apparent gravity was linked to pressure inside the enclosure. This branch did not survive the later model.</li>
 <li><strong>Sun and Moon at serpent ends:</strong> a February-era caduceus interpretation in which paired channel ends were assigned to Sun and Moon. The mature braid no longer requires that identification.</li>
 <li><strong>Moon as star projector:</strong> an attractive enclosed-sky story that was later retired because it was not required and had no adequate observational derivation.</li>
-<li><strong>Literal polar flat geography:</strong> rejected when direct distance and shape tests failed, especially at southern latitudes.</li>
+<li><strong>One literal polar-map implementation:</strong> rejected when its direct distance and shape predictions failed, especially at southern latitudes. This retired a specific map construction, <em>not</em> the broader flat world-disc premise retained in the present cosmology.</li>
 <li><strong>Spiral angle as longitude:</strong> rejected because a logarithmic spiral does not close after one full turn, making ordinary geography discontinuous.</li>
 </ul>
 <p>The surviving lesson from these failures is methodological: a visual idea can contribute a useful structural intuition without its literal first interpretation surviving.</p>
