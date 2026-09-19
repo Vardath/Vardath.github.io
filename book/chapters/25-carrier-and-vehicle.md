@@ -340,6 +340,161 @@ Travellers, vehicles and carriers exploit it.
 
 The event can therefore occur with or without human control.
 
+## A crossing is a chain of systems
+
+A successful crossing is rarely one thing.
+
+There is a sequence:
+
+**approach → entry → protection → motion → arrival → exit → adaptation**
+
+Different structures can dominate different stages.
+
+A bridge may solve approach.
+
+A vehicle may solve movement.
+
+A sealed cabin may solve protection.
+
+A guide may solve route choice.
+
+A receiver may solve arrival.
+
+This means stories that contain several extraordinary objects do not need to be redundant.
+
+They may be remembering different parts of the transport chain.
+
+## Vehicle compatibility matters
+
+A vehicle that works in one environment may fail immediately in another.
+
+A boat needs water.
+
+A horse needs footing and air.
+
+A chariot needs a surface.
+
+A flying vehicle needs lift or some other means of support.
+
+A carrier crossing a Vardath throat would have to remain compatible with whatever the route actually is.
+
+That is why I resist literalising every mythic vehicle.
+
+The horse may preserve the role of **directed transport** without implying that an ordinary animal physically ran between world-turns.
+
+The role can survive while the mechanism is transformed by storytelling.
+
+## Protected motion is different from exposed motion
+
+The distinction between carrier and vehicle becomes clearest when I imagine two travellers.
+
+One crosses exposed.
+
+One crosses inside a protected enclosure.
+
+If the route contains extreme wind, pressure change, heat, electrical activity or debris, the second traveller has a radically different chance of survival.
+
+That means the most important "vehicle" in a real event may be the protective environment around the traveller rather than the thing providing locomotion.
+
+Modern transport works the same way.
+
+The engine moves the aircraft.
+
+The pressurised cabin keeps the passenger alive.
+
+Those are different systems.
+
+## Scaling from person to settlement
+
+The transport problem changes sharply with scale.
+
+Moving one body requires one set of conditions.
+
+Moving a family requires more.
+
+Moving animals adds containment and food.
+
+Moving a building adds structural stress.
+
+Moving a city adds ground coherence, water, atmosphere and infrastructure.
+
+Moving a land mass turns the carrier into a piece of world.
+
+This is why the moving-land branch cannot simply be an enlarged fairy portal.
+
+At some scale, vehicle, carrier and destination begin to overlap.
+
+The transported region becomes its own temporary world.
+
+## The route can do part of the moving
+
+There is also another possibility.
+
+Perhaps the vehicle does not supply most of the energy.
+
+A river carries a boat.
+
+A current carries a swimmer.
+
+A conveyor moves cargo that is almost passive.
+
+If the gate itself has a strong directional flow, the "vehicle" may mainly keep the traveller coherent and steerable.
+
+That changes how I read extraordinary mounts and boats.
+
+They may be cultural ways of expressing control within a larger flow.
+
+The current moves.
+
+The vehicle keeps the traveller from being helpless inside it.
+
+## Entry and exit may need different vehicles
+
+Many stories already imply this.
+
+A traveller enters through one route and returns through another.
+
+Falls into a well and walks out a door.
+
+Is carried away by a storm and returns through magical shoes.
+
+Crosses by horse and returns by boat.
+
+That asymmetry makes sense in a state-dependent network.
+
+The pressure, geometry or route may not reverse cleanly.
+
+So the model should not assume:
+
+**same gate + same vehicle + opposite direction = return.**
+
+Return may be a separate transport problem.
+
+## Failure can occur at every stage
+
+A crossing can fail because:
+
+the traveller cannot reach the node;
+
+the route opens too briefly;
+
+the vehicle cannot enter;
+
+the carrier ruptures;
+
+the traveller survives transit but not arrival;
+
+the return window closes;
+
+or the destination is biologically incompatible.
+
+That list is useful because it turns extraordinary travel into a set of physical questions.
+
+The mythology gives success stories because failed crossings leave fewer storytellers.
+
+The mechanism, if real, would contain far more failure than legend usually preserves.
+
+
 ## The carrier becomes history
 
 A carrier can also become a cultural symbol long after its physical purpose is forgotten.
