@@ -321,7 +321,7 @@ New chapters saved in this continuation:
 - 64 — The Night Journey and Ascension
 - 65 — Ranginui and Papatūānuku: The World Opened by Separation
 
-**Exact next writing point: Chapter 67 — The Popol Vuh: Worlds Tried More Than Once.**
+**Exact next writing point: Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits.**
 
 Do not redo the giant source read unless a future source changes. Continue using the local/source map and fetch only small new deltas or specific source articles when needed.
 
@@ -330,3 +330,15 @@ Do not redo the giant source read unless a future source changes. Continue using
 - `book/chapters/66-sky-woman-and-the-world-below.md`
 - Source reservoir: E406–E410 Haudenosaunee sequence.
 - Next: Chapter 67 — **The Popol Vuh: Worlds Tried More Than Once**.
+
+
+## Writing batch saved — Chapters 67–72 — 2026-09-19
+
+- Chapter 67 — `book/chapters/67-the-popol-vuh-worlds-tried-more-than-once.md`
+- Chapter 68 — `book/chapters/68-the-five-suns-worlds-that-end-and-begin-again.md`
+- Chapter 69 — `book/chapters/69-pangu-and-nuwa-egg-separation-and-repair-of-the-sky.md`
+- Chapter 70 — `book/chapters/70-izanagi-and-izanami-bridge-descent-and-the-sealed-return.md`
+- Chapter 71 — `book/chapters/71-oduduwa-and-the-descent-onto-primordial-water.md`
+- Chapter 72 — `book/chapters/72-ilmatar-the-world-egg-and-the-sampo.md`
+
+**Exact next writing point: Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits.**
