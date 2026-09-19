@@ -370,6 +370,125 @@ The body beneath it is not.
 
 That is exactly how a growing shell behaves.
 
+## Destruction is a phase transition in the model
+
+The word destruction can imply disappearance.
+
+That is not what the mature Vardath model requires.
+
+Material changes location.
+
+Structure breaks.
+
+Heat changes phase.
+
+Water changes basin.
+
+Living systems collapse.
+
+But mass and inheritance remain inside the larger world-body.
+
+The important transformation is organisational.
+
+An ordered world becomes disordered relative to its old form and then ordered differently.
+
+That makes reset closer to a phase transition than to magical erasure.
+
+## Renewal has a long middle
+
+Myths often move quickly from catastrophe to renewed world.
+
+A physical world cannot.
+
+Between destruction and renewal there should be an ugly interval.
+
+Waterlogged land.
+
+Unstable slopes.
+
+Poor air.
+
+Temperature swings.
+
+Dead biomass.
+
+Salinity changes.
+
+Food shortage.
+
+Disease.
+
+Migration.
+
+Patchy refuges.
+
+The first stable community may appear long before the wider world has recovered.
+
+That long middle is essential because it gives archaeology, geology and biology time to produce complicated layers rather than one clean event horizon.
+
+## The new world should be geographically uneven
+
+If recovery happens through local stability, then the successor world should not appear everywhere at once.
+
+Higher ground drains first.
+
+Protected basins remain flooded.
+
+Some ecological zones recover quickly.
+
+Others remain barren.
+
+Some old structures remain exposed.
+
+Others disappear beneath sediment.
+
+This is much closer to how a real inherited world would behave.
+
+"Creation" can therefore be a cultural compression of a geographically uneven recovery.
+
+## Renewal selects history
+
+A catastrophe does more than move material.
+
+It decides what later generations can know.
+
+Dry archives burn.
+
+Wet archives rot.
+
+Stone survives.
+
+Metal corrodes.
+
+Oral memory survives only where people survive.
+
+A reset therefore filters history.
+
+The new world does not merely inherit less.
+
+It inherits a **biased sample** of the old world.
+
+That matters whenever I compare later legends with proposed earlier conditions.
+
+Silence in the record is not automatically absence.
+
+But it is also not permission to invent anything.
+
+The filter has to be considered case by case.
+
+## Creation myths may preserve the first stable viewpoint
+
+A people emerging after long disorder may naturally describe the moment stable land, light or seasonal rhythm returned as creation.
+
+From their lived perspective, it was.
+
+That does not require them to know the deep mechanism.
+
+This is one of the most useful ways creation and catastrophe can coexist without contradiction.
+
+The old world's ending and the new world's creation can be two descriptions of the same transition from opposite sides.
+
+
 ## The world creates by inheriting
 
 The mature Vardath creation sequence is therefore:
