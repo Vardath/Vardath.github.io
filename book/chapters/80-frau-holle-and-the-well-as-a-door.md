@@ -314,6 +314,59 @@ People remember the place.
 
 The place looks ordinary until it does not.
 
+## A real well already crosses environmental layers
+
+Part of the power of the well image comes from ordinary reality.
+
+At the surface there is air and light.
+
+Below there is cooler rock.
+
+Then groundwater.
+
+Different pressure.
+
+Different acoustics.
+
+A well is already a vertical route through changing conditions even before fairy tale begins.
+
+That makes it an ideal cultural place to imagine one more impossible transition.
+
+The story takes a real environmental gradient and extends it into another world.
+
+## Wells are stable addresses to hidden movement
+
+Groundwater itself moves while the well remains fixed.
+
+That is another useful analogy for a Vardath node.
+
+The visible structure can stay in the same place while the hidden medium beneath it changes.
+
+Flow rises.
+
+Falls.
+
+Changes chemistry.
+
+Responds to rainfall or pressure.
+
+The gate analogy therefore does not depend on the well physically moving.
+
+The **relationship beneath the address** changes.
+
+## The asymmetric return is mechanically useful
+
+Falling through the well and returning through a door may simply be fairy-tale logic, but it keeps an important Vardath possibility visible.
+
+Networks have directed routes.
+
+A traveller may enter through the nearest opening and exit through a different node because that is where the flow leads.
+
+A true many-throat system should make that possible.
+
+Return does not have to mean retracing the same tunnel backward.
+
+
 ## The Vardath mapping
 
 The *Frau Holle* sequence becomes:
