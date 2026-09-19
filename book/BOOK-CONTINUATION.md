@@ -321,7 +321,7 @@ New chapters saved in this continuation:
 - 64 — The Night Journey and Ascension
 - 65 — Ranginui and Papatūānuku: The World Opened by Separation
 
-**Exact next writing point: Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
+**Exact next writing point: Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
 
 Do not redo the giant source read unless a future source changes. Continue using the local/source map and fetch only small new deltas or specific source articles when needed.
 
@@ -341,7 +341,7 @@ Do not redo the giant source read unless a future source changes. Continue using
 - Chapter 71 — `book/chapters/71-oduduwa-and-the-descent-onto-primordial-water.md`
 - Chapter 72 — `book/chapters/72-ilmatar-the-world-egg-and-the-sampo.md`
 
-**Exact next writing point: Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
+**Exact next writing point: Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
 
 
 ## Part X complete — Chapters 73–76 — 2026-09-19
@@ -352,3 +352,18 @@ Do not redo the giant source read unless a future source changes. Continue using
 - Chapter 76 — `book/chapters/76-tir-na-nog-the-otherworld-and-the-time-of-return.md`
 
 **Part X is complete. Exact next writing point: Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
+
+
+## Part XI checkpoint — Chapters 77–84 — 2026-09-19
+
+Saved:
+- 77 — Urashima Tarō and the Palace Beneath the Sea
+- 78 — The Seven Sleepers: Enclosure as a Time Carrier
+- 79 — Fairy Time: Thomas the Rhymer, Tam Lin and the Mound
+- 80 — Frau Holle and the Well as a Door
+- 81 — Avalon and the Island Outside Ordinary Reach
+- 82 — Alice: Rabbit Holes, Looking-Glasses and Stopped Time
+- 83 — Narnia and the Wood Between the Worlds
+- 84 — The Wizard of Oz: The Storm as Vehicle
+
+**Exact next writing point: Chapter 85 — The NeverEnding Story and the Mirror at the Gate.**
