@@ -659,3 +659,14 @@ Priority:
 4. audit voice/duplication/contradictions;
 5. assemble `book/BOOK.md`;
 6. then prepare export formats.
+
+
+## PRE-CONTINUITY EXPANSION COMPLETE — 2026-09-19
+
+A full size/density audit was performed before continuity cleanup. 23 thin chapters were expanded, adding approximately 10,000 words, principally to the mechanics/transfer/projection block and selected shorter time-door chapters.
+
+The known old numbering and duplicate working files were intentionally left untouched for the continuity merge so no useful material is lost.
+
+Current estimated canonical book length after eventual duplicate cleanup: **~203,000–206,000 words including front matter and Appendices A–E.**
+
+**Next exact task: continuity/numbering/duplicate merge pass, then final voice/flow pass and `book/BOOK.md` assembly.**
