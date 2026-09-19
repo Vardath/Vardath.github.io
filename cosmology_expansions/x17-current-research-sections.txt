@@ -120,17 +120,20 @@
 </div>
 
 <div class="archive-consolidation current-research-section">
-<h1 id="archive-waking-biology">The waking-world biology branch — environmental variables before giants</h1>
-<p>The archive eventually broke the biological hypothesis into separate variables instead of treating “more oxygen” as a complete explanation.</p>
+<h1 id="archive-waking-biology">The vapour-canopy and waking-world biology system — a core environmental regime</h1>
+<p>In the present Vardath model, the biological branch begins with the <strong>vapour canopy itself</strong>. The canopy is the atmospheric face of the upper-water boundary and part of the enclosure that loads the world below it. In its strong state, it is a <strong>high-pressure, high-oxygen, water-rich environment with a stronger electrical/plasma background</strong>. Pressure, oxygen, moisture, warmth and electrical activity are therefore treated as one interacting world-condition rather than unrelated variables.</p>
 <div class="projection-grid">
-<div><b>pressure</b><span>changes gas density, breathing conditions and physiology before size is considered</span></div>
-<div><b>oxygen</b><span>can alter metabolic limits but is not a universal giant-making switch</span></div>
-<div><b>temperature / moisture</b><span>changes growth, metabolism, habitat and decomposition</span></div>
-<div><b>electrical / radiation environment</b><span>could increase stress and mutation as well as any proposed stimulation</span></div>
-<div><b>developmental time</b><span>larger size often requires longer growth, altered maturation or different life history</span></div>
-<div><b>telomere / repair mechanisms</b><span>were explored as a longevity branch but remain speculative and un-derived</span></div>
+<div><b>vapour canopy / pressure vessel</b><span>the water-rich upper boundary contains and loads the atmosphere beneath it</span></div>
+<div><b>high pressure + high oxygen</b><span>define the breathing and growth regime of the waking or earlier world</span></div>
+<div><b>moisture + warmth</b><span>support dense biological productivity, large vegetation and a different heat/water balance</span></div>
+<div><b>plasma / electrical environment</b><span>belongs to the same active world-state and, in the model, increases mutation and developmental variation</span></div>
+<div><b>giant-life regime</b><span>plants, animals and human or humanlike beings can grow to scales that the quiet-world environment does not normally support</span></div>
+<div><b>telomere / repair regime</b><span>the model connects the pressure-and-oxygen environment with maintained or regrown telomeres, continued repair and extreme longevity</span></div>
 </div>
-<p>The mature archive therefore treats giant and long-lived beings as a <strong>hypothesis downstream of a specified environment</strong>, not as evidence that determines the environment. A viable version would have to state pressure, oxygen fraction, temperature, radiation/electrical exposure, developmental mechanism and expected fossil/biological signatures before comparing myths.</p>
+<p>Within this cosmology, giantism is therefore not a decorative mythic branch added afterward. It is a biological consequence of the canopy state. A denser atmosphere changes the physical medium in which organisms breathe, move and fly; higher oxygen changes respiratory availability; heavy moisture and warmth alter growth conditions; and the more active plasma environment changes developmental pressure. The model applies that package across life rather than to one selected species, allowing enormous plants, animals and people. Medieval and older images of outsized ordinary creatures — including giant-snail imagery — remain interesting here as possible cultural memories of such a regime.</p>
+<p>The longevity branch follows the same logic. Vardath Cosmology proposes that under the strong canopy regime, repair does not run under the same limits as in the quiet world. The model links barometric/high-pressure conditions and oxygen availability with the possibility of <strong>telomere maintenance or regrowth</strong>, so organisms can remain alive and growing for extraordinary periods while the regime persists.</p>
+<p>The most extreme biological version goes further. If growth and repair remain strongly supported by the environment, tissue that would normally fail quickly may remain viable. The model therefore allows the possibility that <strong>separated or abnormal living tissue can continue to grow</strong> — for example a severed tissue fragment or removed tumour — rather than automatically dying once separated from the body. This is part of the same speculative biological regime, not a separate claim about present-day medicine.</p>
+<p>The quiet world is the lower-energy state after that regime weakens: atmospheric pressure and oxygen conditions change, the vapour-canopy state recedes, the plasma environment becomes less intense, and biological scale, lifespan and mutation pressure change with it.</p>
 </div>
 
 <div class="archive-consolidation current-research-section">
