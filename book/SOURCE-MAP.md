@@ -101,7 +101,7 @@ Saved 2026-09-19:
 - Chapter 65 — `book/chapters/65-ranginui-and-papatuanuku-the-world-opened-by-separation.md`
 
 Next writing point:
-- Chapter 67 — **The Popol Vuh: Worlds Tried More Than Once**
+- Chapter 73 — **Māui: Fishing Up Land, Slowing the Sun and Crossing Limits**
 
 
 ### Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
@@ -137,3 +137,34 @@ Primary reservoir:
 - E410 — consolidated Haudenosaunee sequence.
 Core relation:
 **upper world → opening → descent → water world → reception/support → upward material recovery → surface expansion → differentiated world**
+
+
+### Chapter 67 — The Popol Vuh: Worlds Tried More Than Once
+Primary reservoir: E370–E374.
+Core relation:
+**layered world → descent → transformation → failed creation → catastrophic clearing → stable humanity**
+
+### Chapter 68 — The Five Suns: Worlds That End and Begin Again
+Primary reservoir: E375, E377, E378.
+Core relation:
+**world age → catastrophe → successor age; previous humanity → lower archive → filtered inheritance**
+
+### Chapter 69 — Pangu and Nüwa: Egg, Separation and Repair of the Sky
+Primary reservoir: E343–E352, especially E343–E346, E351–E352.
+Core relation:
+**enclosure → separation → stable spacing → structural failure → water/disorder → repair → resealing**
+
+### Chapter 70 — Izanagi and Izanami: Bridge, Descent and the Sealed Return
+Primary reservoir: E353–E361.
+Core relation:
+**boundary → axial action → formation → lower-world descent → return → resealing → recovery**
+
+### Chapter 71 — Oduduwa and the Descent Onto Primordial Water
+Primary reservoir: E393–E398.
+Core relation:
+**distinct realms → connector → controlled descent → cargo → land spread → local centre → quiet relation**
+
+### Chapter 72 — Ilmatar, the World Egg and the Sampo
+Primary reservoir: E387–E392.
+Core relation:
+**formative water → enclosure → rupture → differentiation → overconcentration → reduction → fragmentation → reconnection**
