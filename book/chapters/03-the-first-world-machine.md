@@ -249,15 +249,13 @@ That means local gravity and larger lattice support do not have to be the same m
 
 The branch remains open as part of the question of how a world-disc, its water, its atmosphere and its upper boundary are held in their quiet configuration.
 
-## The early canopy
+## The vapour canopy becomes a larger boundary
 
-The flooded or vapour-rich upper region became the ancestor of the later **upper ocean** branch.
+The flooded or vapour-rich upper region was one of the earliest forms of the **vapour canopy** in the model. That canopy remains part of the mature cosmology. What changed was not whether the canopy mattered, but how much of the larger world-machine I thought it belonged to.
 
-The older version imagined it mainly as part of our enclosure.
+The earlier version imagined it mainly as part of our enclosure. The mature version keeps that atmospheric role and also places the canopy at the relation between world-turns, where it can be the atmospheric face of the upper-water boundary.
 
-The newer version places it at the relation between world-turns.
-
-That shift is worth following because it demonstrates how the whole cosmology matured.
+That development is worth following because it shows the canopy becoming more central rather than being discarded.
 
 Early question:
 
