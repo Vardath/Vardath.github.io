@@ -685,3 +685,21 @@ Current canonical state:
 - continuity wording improved where Yggdrasil/Peratt branches re-enter later parts.
 
 **Next: assemble `book/BOOK.md`.**
+
+
+## MASTER ASSEMBLY / READING COPY COMPLETE — 2026-09-19
+
+`book/BOOK.md` is now assembled in canonical reading order and committed to the repository.
+
+Verified assembled structure:
+- Preface
+- Introduction
+- Parts I–XI
+- Chapters 1–88 exactly once and in order
+- Appendices A–E
+
+Exact assembled length: **204,663 words**.
+
+A checked reading PDF was produced at 7×10 trim, **874 pages**, with title page, contents and pagination. The PDF presentation converts wide Markdown tables into prose/bullet blocks so nothing runs outside the page.
+
+**The user has been handed the readable PDF and assembled Markdown master.**
