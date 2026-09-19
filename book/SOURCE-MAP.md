@@ -101,7 +101,7 @@ Saved 2026-09-19:
 - Chapter 65 — `book/chapters/65-ranginui-and-papatuanuku-the-world-opened-by-separation.md`
 
 Next writing point:
-- Chapter 77 — **Urashima Tarō and the Palace Beneath the Sea**
+- Chapter 85 — **The NeverEnding Story and the Mirror at the Gate**
 
 
 ### Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
@@ -189,3 +189,14 @@ Core relation:
 Primary reservoir: local E330 in `wordpress-memory-CHECKPOINT-E342-20260918.md`.
 Core relation:
 **ordinary world → guided water crossing → Otherworld → altered time → attempted return → temporal mismatch**
+
+
+### Chapters 77–84 — Part XI first batch
+77 Urashima Tarō — sea boundary, altered duration, return mismatch, tamatebako/deferred consequence.
+78 Seven Sleepers — enclosure, temporal decoupling, re-entry into later history.
+79 Thomas the Rhymer / Tam Lin — local fairy thresholds, phase timing, transformation and retrieval.
+80 Frau Holle — well/throat, other domain, asymmetric entry/exit.
+81 Avalon — bounded island refuge, removal from ordinary history, healing/suspended return.
+82 Alice — rabbit-hole throat, scale compatibility, local stopped-time image, looking-glass boundary.
+83 Narnia — local portals, Wood Between the Worlds, many worlds/pools, asynchronous world histories.
+84 Oz — cyclone as temporary event-vehicle, house as carrier, separate return mechanism.
