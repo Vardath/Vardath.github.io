@@ -362,6 +362,14 @@ This sequence feels much more physically coherent to me than imagining a dry sky
 
 The atmosphere is the transition layer.
 
+## The canopy is the pressure system
+
+The upper ocean and the vapour canopy are not separate decorative layers in this model. Together they form the loaded upper boundary of the inhabited environment.
+
+When the canopy is strong, I picture the atmosphere beneath it as **compressed, oxygen-rich and heavily water-loaded**. The pressure is not merely something produced for a few minutes when a gate opens. It can be the normal condition of an earlier or fully waking world. The gate and the world-cycle can then raise, lower, mix or break that pressure system during transition.
+
+That distinction matters. A high-pressure canopy world begins from a different biological baseline. Its forests, animals, people, microbes and abnormal growths all develop under conditions unlike the quiet world. When the canopy weakens or the world settles into the present state, the pressure-and-oxygen regime falls with it and the biology changes.
+
 ## The dome and pressure
 
 The flat-world and dome model also gives pressure a structural role.
@@ -396,27 +404,11 @@ The atmosphere is one of the carriers of inheritance.
 
 ## Oxygen and waking life
 
-I keep oxygen open because it may matter to the biological branch.
+The waking atmosphere in my model is not merely different in some unspecified way. The strong canopy state is specifically **higher pressure and higher oxygen** than the quiet world, combined with abundant moisture and stronger electrical/plasma activity.
 
-If the active atmosphere has a different composition or pressure, large organisms may experience conditions very different from those of the quiet world.
+That is why the biology changes so dramatically. More oxygen is available to active tissues. Greater pressure changes gas exchange and the physical medium in which organisms live. Dense humid air changes heat transfer and makes flight easier for larger bodies. The plasma-rich environment increases developmental stress, stimulation and mutation pressure.
 
-More available oxygen is one possibility.
-
-Greater total pressure is another.
-
-Higher humidity and warmth may matter as much.
-
-Electrical activity may alter growth conditions in ways I do not yet understand.
-
-The important point is not one gas percentage.
-
-The important point is that life in the waking world may not be living under the same environmental limits as life now.
-
-That opens the door to the giantism and longevity material later.
-
-I do not need to settle it here.
-
-The atmosphere simply has to be allowed to change enough that biological consequences become possible.
+This is the environmental engine behind the giant-life branch. It is also the environment in which I place radical longevity and continued tissue growth. The atmosphere is not simply allowing those possibilities in the background. It is actively producing the conditions that make them part of the waking world.
 
 ## The atmosphere as bridge
 
