@@ -11,27 +11,23 @@
 
 **Read this file completely before doing any work.**
 
-Then, before continuing the manuscript, read the following completely:
-
+Then read:
 1. `book/BOOK-CONTINUATION.md`
 2. `book/outline.md`
 3. `book/VARDATH-COSMOLOGY-BOOK.md`
-4. **Every existing manuscript chapter in `book/chapters/` through the latest drafted chapter (currently Chapter 59)**, including Preface and Introduction.
-5. The complete current Vardath Cosmology page source, not merely the HTML wrapper:
-   - `vardath-cosmology.html`
-   - every included file in `cosmology_fragments/`
-   - every included file in `cosmology_expansions/`
-   - read them in rendered-page order.
-6. The current WordPress research archive in full:
-   - `wordpress-memory-CHECKPOINT-E342-20260918.md`
-   - `wordpress-memory-CONTINUATION-E343-ONWARD.md`
-   - later WordPress continuation/article files where applicable.
+4. `book/SOURCE-MAP.md`
 
-The GitHub WordPress archive is more complete than the older local copy.
+The giant source read has already been completed and recorded. **Do not repeat the E001–E453 / website / memory crawl merely to resume the book.** Only retrieve small targeted source material if a new factual check or later revision genuinely requires it.
 
-**Do not skim these sources and do not restart the cosmology from memory alone.**
+The canonical manuscript is now structurally clean:
+- Preface;
+- Introduction;
+- exactly 88 numbered chapters in `book/chapters/`;
+- Appendices A–E in `book/appendices/`.
 
-Because the WordPress archive is very large, do not make hundreds of tiny GitHub connector calls. Materialize or fetch large files once and read them locally/sequentially in large blocks if possible. The earlier chats froze repeatedly from too many connector calls.
+The continuity/numbering/duplication pass was completed on 2026-09-19. Do not recreate deleted drift files or renumber the locked chapter sequence.
+
+The next production task is **master assembly**, not more chapter drafting.
 
 ---
 
@@ -461,30 +457,33 @@ Canonical Chapters 53–88:
 
 After Chapter 88, proceed to the planned appendices. Do not create more main chapters.
 
-# 12. EXACT NEXT WRITING POINT
+# 12. EXACT NEXT WORKING POINT
 
-**Chapters 53–88 are drafted and saved. The main 88-chapter manuscript is complete.**
+**The 88-chapter main manuscript, Appendices A–E, pre-continuity expansion, and continuity cleanup are complete.**
 
-Newly completed in the 2026-09-19 continuation:
-- Chapter 60 — **Greek Succession: Uranus, Cronus and Zeus**
-- Chapter 61 — **Yggdrasil, Bifröst and Sleipnir: Architecture, Road and Vehicle**
-- Chapter 62 — **Ragnarök: Boundary Failure, Fire, Survival and the New World**
-- Chapter 63 — **Genesis and Enoch: Firmament, Waters, Ladder and Watchers**
-- Chapter 64 — **The Night Journey and Ascension**
-- Chapter 65 — **Ranginui and Papatūānuku: The World Opened by Separation**
-- Chapter 66 — **Sky Woman and the World Below**
+Canonical chapter structure:
+- `book/chapters/` = Preface + Introduction + exactly Chapters 1–88;
+- no duplicate chapter numbers;
+- no missing chapter numbers;
+- Chapter 38 is canonical `book/chapters/38-the-land-rides-the-lattice.md`;
+- old duplicate/drift drafts have been removed.
 
-Continue sequentially at:
+Continuity checks completed:
+- chapter/part transitions;
+- locked heading/title alignment;
+- adjacent-paragraph duplication scan;
+- repeated Yggdrasil-role clarification across Chapters 37, 48 and 61.
 
-**Appendix A — Working Glossary**
+**Exact next task: assemble `book/BOOK.md` in locked reading order, including Part headings and Appendices A–E.**
 
-The mandated source reread for this continuation has been completed, including the local E001–E342 checkpoint, local cosmology memories, current page includes, and E343–E453 delta. Use `book/SOURCE-MAP.md` and only fetch small source deltas or specific articles as needed; do not repeat the giant source crawl.
+After assembly:
+1. verify assembled chapter count/order;
+2. recalculate exact word count;
+3. perform export/layout preparation;
+4. generate print/PDF/EPUB-ready artifacts as requested.
 
-Chapter 53 remains the only dedicated plasma/Peratt extra chapter. Chapters 54–88 remain mythology, religion, cosmology, legend, fairy tale and modern-story comparison.
-
-Do not jump ahead to appendices.
-
-Do not rewrite completed Chapters 1–52 unless a continuity pass later reveals a real contradiction.
+Do not create Chapter 89.
+Do not repeat the giant source crawl.
 
 ---
 
@@ -670,3 +669,19 @@ The known old numbering and duplicate working files were intentionally left unto
 Current estimated canonical book length after eventual duplicate cleanup: **~203,000–206,000 words including front matter and Appendices A–E.**
 
 **Next exact task: continuity/numbering/duplicate merge pass, then final voice/flow pass and `book/BOOK.md` assembly.**
+
+
+## CONTINUITY CLEANUP COMPLETE — 2026-09-19
+
+The old numbering/file drift has been resolved. Structural repair commit:
+`232c72f56d027bb93245a588ffe88d7ac61df0d2`.
+
+Current canonical state:
+- 90 markdown files in `book/chapters/`: 2 front-matter files + exactly 88 numbered chapters;
+- canonical Chapter 38 merges the former land/lattice and flat-surface drafts;
+- obsolete duplicate chapter files removed;
+- locked contents and chapter headings aligned;
+- flow/transition and adjacent-duplication audit completed;
+- continuity wording improved where Yggdrasil/Peratt branches re-enter later parts.
+
+**Next: assemble `book/BOOK.md`.**
