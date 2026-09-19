@@ -32,6 +32,22 @@ The present world is stable enough to behave like one world.
 
 That distinction is the foundation of everything that follows.
 
+## The vapour canopy is part of the world-machine
+
+One part of the model needs to be stated early because it changes almost everything that comes after it.
+
+The **vapour canopy is not a decorative cloud layer and not an abandoned early idea**. In Vardath Cosmology it is a major environmental component of the enclosed world. It belongs with the upper waters, the lattice boundary and the waking atmosphere.
+
+When that canopy is present in its strong form, I picture the inhabited world beneath it as a **high-pressure, oxygen-rich, water-rich environment**. The canopy helps contain and load the atmosphere. The larger electrical and plasma environment is also more active. Pressure, oxygen, moisture, heat and electrical activity therefore change together rather than as unrelated variables.
+
+That environmental package is central to my biological picture of earlier or waking ages. In the model it supports giant plants, giant animals and giant or giant-like people. It also supports much longer biological persistence. I connect the pressure-and-oxygen regime with continued tissue repair and with the possibility that telomeres are maintained or regrown rather than steadily shortening under quiet-world conditions. Taken to its full consequence inside the model, organisms can remain alive and growing for extraordinary periods while the regime persists.
+
+The same principle makes the biology stranger. A stronger plasma and electrical environment can increase mutation and developmental variation. Tissue that would normally fail quickly may remain viable much longer. In the most extreme version of the model, even separated or abnormal tissue can continue growing: a severed finger, a removed tumour or another fragment of living tissue may persist instead of simply dying because the surrounding environment continues to feed the processes of growth.
+
+That is not a side note to the cosmology. It is one of the ways the atmosphere, the canopy and the world-cycle become biology. It is also why old images of enormous plants, oversized animals and creatures such as giant snails remain interesting to me as possible visual memories of a different environmental regime.
+
+The quiet world is what remains when that regime is no longer dominant. Pressure falls. The atmospheric balance changes. The canopy state changes. The plasma environment becomes less intense. Biological scale, lifespan and mutation pressure change with it.
+
 ## One world inside a larger body
 
 In Vardath Cosmology, the world we inhabit is not the entire structure.
