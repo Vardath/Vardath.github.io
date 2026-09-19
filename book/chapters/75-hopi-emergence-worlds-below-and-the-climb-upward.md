@@ -356,6 +356,49 @@ The current turn is home.
 
 The larger structure continues.
 
+## Emergence is not ordinary migration
+
+One reason this tradition belongs in the comparative atlas is that emergence changes **world-order**, not merely address.
+
+Ordinary migration moves people across one existing landscape.
+
+Emergence stories place movement between qualitatively different stages or worlds.
+
+That is the structural feature I compare.
+
+I do not need to decide whether "below" should be read physically, spiritually, ritually or symbolically inside Hopi tradition.
+
+The Vardath analogy begins only with the larger relationship:
+
+**earlier order → threshold → present order.**
+
+## The memorial opening matters because the active event is absent
+
+The sipapu comparison is strongest precisely when it is not treated as a working portal.
+
+The present world is stable.
+
+The threshold is remembered ritually and architecturally.
+
+That matches a central Vardath expectation:
+
+if world-scale gates are rare, later cultures should preserve **memory of access** more often than active access itself.
+
+The extraordinary event becomes an ordinary feature carrying extraordinary meaning.
+
+## Ethical order and physical order should remain separate
+
+Hopi emergence traditions carry ethical and ceremonial dimensions that cannot be translated into mechanics.
+
+The Vardath model asks a narrower physical question about world succession.
+
+Those should not be confused.
+
+A tradition can teach how people should live in the present world without that teaching being a coded description of pressure, current or geometry.
+
+Preserving that distinction is part of using the material respectfully and accurately.
+
+
 ## The Vardath mapping
 
 The broad Hopi sequence becomes:
