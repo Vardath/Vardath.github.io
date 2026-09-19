@@ -321,7 +321,7 @@ New chapters saved in this continuation:
 - 64 — The Night Journey and Ascension
 - 65 — Ranginui and Papatūānuku: The World Opened by Separation
 
-**Exact next writing point: Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits.**
+**Exact next writing point: Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
 
 Do not redo the giant source read unless a future source changes. Continue using the local/source map and fetch only small new deltas or specific source articles when needed.
 
@@ -341,4 +341,14 @@ Do not redo the giant source read unless a future source changes. Continue using
 - Chapter 71 — `book/chapters/71-oduduwa-and-the-descent-onto-primordial-water.md`
 - Chapter 72 — `book/chapters/72-ilmatar-the-world-egg-and-the-sampo.md`
 
-**Exact next writing point: Chapter 73 — Māui: Fishing Up Land, Slowing the Sun and Crossing Limits.**
+**Exact next writing point: Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
+
+
+## Part X complete — Chapters 73–76 — 2026-09-19
+
+- Chapter 73 — `book/chapters/73-maui-fishing-up-land-slowing-the-sun-and-crossing-limits.md`
+- Chapter 74 — `book/chapters/74-rainbow-serpent-land-water-and-the-living-current.md`
+- Chapter 75 — `book/chapters/75-hopi-emergence-worlds-below-and-the-climb-upward.md`
+- Chapter 76 — `book/chapters/76-tir-na-nog-the-otherworld-and-the-time-of-return.md`
+
+**Part X is complete. Exact next writing point: Chapter 77 — Urashima Tarō and the Palace Beneath the Sea.**
