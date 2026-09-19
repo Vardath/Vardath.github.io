@@ -338,6 +338,229 @@ The smaller inside remains coherent.
 
 That is the mechanical meaning I take from the ark, basket, cave, egg, womb, chest and shell.
 
+## Crossing is an ecological problem, not only a transport problem
+
+A person surviving the geometry of the gate is only the first requirement.
+
+The receiving world also has to support them afterward.
+
+That means living cargo is governed by at least two filters:
+
+**can it survive the crossing?**
+
+and
+
+**can it survive the destination?**
+
+Those are not the same test.
+
+A sealed seed may survive violent pressure and temperature changes but fail because the new soil chemistry is wrong.
+
+A bacterium may survive the crossing perfectly and then find no usable food source.
+
+An animal may arrive alive but be unable to breathe the atmosphere, digest the available plants or reproduce in the new environment.
+
+A human population may have food and air but lack enough genetic diversity to persist for generations.
+
+This makes biological transfer much more selective than moving rubble.
+
+Stone only has to remain stone.
+
+Life has to remain functional.
+
+## A viable biosphere needs packages
+
+This changes the way I think about arks.
+
+A useful biological carrier would rarely preserve one species alone.
+
+Life survives through relationships.
+
+Plant and pollinator.
+
+Animal and gut microbes.
+
+Seed and soil organisms.
+
+Predator and prey.
+
+Human and food species.
+
+Fresh water and the organisms that keep it from becoming biologically dead.
+
+The true cargo is therefore an **ecological package**.
+
+That package can be tiny.
+
+A handful of seeds can carry enormous future biological complexity.
+
+A small microbial community can matter more than a large animal.
+
+This gives the Vardath handoff another scaling rule:
+
+**the most important cargo is not always the largest cargo.**
+
+## Microbes may be the deepest survivors
+
+Microbial life is especially interesting because it can occupy cracks, sediments, digestive systems, water, spores and protected films.
+
+If the world undergoes a violent transition, microbes may cross almost accidentally inside everything else.
+
+That means the biological handoff can begin before visible ecosystems recover.
+
+First microbes.
+
+Then pioneer organisms.
+
+Then plants.
+
+Then larger animals.
+
+Then complex human settlement.
+
+A successor world does not need to wake up biologically all at once.
+
+It can rebuild in layers.
+
+That is much closer to ordinary ecology and much more plausible inside the speculative model.
+
+## Bottlenecks change what survives
+
+A severe transfer event would also act as a filter.
+
+The organisms present after the event would not simply be a miniature copy of the organisms present before it.
+
+They would be the subset that happened to survive the specific conditions of:
+
+temperature,
+
+pressure,
+
+water,
+
+enclosure,
+
+starvation,
+
+transport,
+
+and post-event environment.
+
+That means world succession should produce **bottlenecks**.
+
+A bottleneck can leave later populations looking strangely uniform or strangely specialised.
+
+It can also amplify traits that were previously rare.
+
+I do not claim any particular modern species or human population proves such a transfer.
+
+The point is mechanical.
+
+If the handoff is real, selective survival should be expected.
+
+## One survivor is not enough
+
+This is especially important for humans.
+
+The mythology of one surviving hero is narratively powerful, but one literal person cannot reproduce a population alone.
+
+A physical handoff would require:
+
+groups,
+
+families,
+
+stored reproductive material,
+
+multiple refuges,
+
+or repeated transfer.
+
+That is one reason I treat "one survivor" stories as compressed cultural images rather than demographic records.
+
+The story may preserve the role of the survivor without preserving population size.
+
+The same compression happens everywhere in myth.
+
+A king can stand for a people.
+
+An ark can stand for a refuge system.
+
+A mountain can stand for a region.
+
+The physical model has to expand the symbol back into viable numbers.
+
+## Living cargo carries invisible history
+
+A traveller also carries more than their body.
+
+Microbiome.
+
+Disease.
+
+Immunity.
+
+Seeds caught in clothing.
+
+Parasites.
+
+Food organisms.
+
+Language.
+
+Memory.
+
+Tools.
+
+Techniques.
+
+Beliefs.
+
+A human crossing is therefore a moving ecological and cultural capsule.
+
+That gives the gate much larger consequences than simple transport.
+
+One group arriving in another world-state could alter biology, culture and disease ecology even if the number of travellers were small.
+
+This is another reason I expect real transfer, if it occurs, to leave complicated mixed evidence rather than one clean signature.
+
+## The destination can change the traveller after arrival
+
+Survival does not end at the gate.
+
+If the receiving world has different gravity, pressure, atmosphere, radiation, day length, food chemistry or microbial environment, adaptation continues after arrival.
+
+Some effects could occur within one lifetime.
+
+Others would require generations.
+
+That makes "giants," unusual longevity or other mythic biological differences interesting questions, but not simple conclusions.
+
+A different environment could produce different bodies.
+
+That does not mean every giant tradition records another world.
+
+The model only says biological difference is a reasonable consequence of genuinely different world conditions.
+
+## Living cargo gives the model a hard constraint
+
+This chapter is therefore one of the places where the cosmology can be tested conceptually.
+
+A gate large enough to move a city is not automatically a gate capable of preserving a city alive.
+
+A route capable of moving water is not automatically safe for lungs.
+
+A pressure gradient useful for transferring atmosphere may be fatal to an unprotected animal.
+
+The more living cargo I ask the model to preserve, the more precise the mechanism has to become.
+
+That is useful.
+
+Life stops the gate from being vague.
+
+It forces questions about rate, enclosure, temperature, pressure, duration and destination.
+
+
 ## Life is what makes the handoff matter
 
 Without life, the reset is only geology.
