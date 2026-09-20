@@ -1,0 +1,1018 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "Fixed Man Grid multi-direction alphabet traversal",
+  "source": {
+    "phoible_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362",
+    "wikipron_commit": "d282e848a211ea31cfd730f0ced8bc8cdab9e83d",
+    "alphabet_orders": "data/phonetic-alphabet-orders.json + Unicode modern Hangul Jamo order for Korean probes"
+  },
+  "question": "When alphabet symbols are placed on one frozen PHOIBLE-derived Man Grid solely from pronunciation evidence, do known LTR, RTL and vertical-capable ordered systems preferentially emerge under the matching grid traversal direction?",
+  "design": {
+    "frozen_grid": "Exact 1,074-cell mirrored Man Grid. Phone coordinates are fixed by the existing PHOIBLE projection; no direction label or alphabet rank is used to place phones.",
+    "symbol_placement": "Grapheme-to-phone centroids are learned from WikiPron word/pronunciation pairs by iterative monotonic alignment. Alphabet rank is not used during alignment.",
+    "heldout": "20% deterministic held-out words assess alignment stability; traversal scores use only stable symbols learned from the remaining words.",
+    "directions": {
+      "LR": "row-major left-to-right, allowing top-first or bottom-first rows",
+      "RL": "row-major right-to-left, allowing top-first or bottom-first rows",
+      "TB": "column-major top-to-bottom, allowing left-first or right-first columns",
+      "BT": "column-major bottom-to-top, allowing left-first or right-first columns"
+    },
+    "primary_statistic": "Mean pairwise order-concordance across all 10 exact Man Grid rectangles. Expected direction is compared with its opposite.",
+    "controls": "400 deterministic within-alphabet order permutations per language and per direction group.",
+    "eligibility": ">=8 aligned training tokens per symbol and >=55% of alphabet symbols stably placed.",
+    "boundary": "This tests ordered alphabet/jamo traversal through the phonetic grid. It does not treat Han characters as an alphabet and therefore does not directly test Chinese character order."
+  },
+  "coverage": {
+    "phoible_segments": 3065,
+    "candidate_systems": 26,
+    "scored_systems": 26,
+    "failed_or_low_coverage": 0
+  },
+  "summary": {
+    "scored_systems": 26,
+    "positive_vs_opposite": 15,
+    "expected_class_best": 4,
+    "mean_delta_vs_opposite": 0.023900105962141708,
+    "groups": {
+      "LR": {
+        "languages": 21,
+        "mean_delta_vs_opposite": 0.02755778834295401,
+        "positive_languages": 12,
+        "expected_class_best_languages": 2,
+        "permutation_p": 0.0798004987531172,
+        "null_mean": 1.2345230455811914e-05
+      },
+      "RL": {
+        "languages": 3,
+        "mean_delta_vs_opposite": -0.0171500128392627,
+        "positive_languages": 1,
+        "expected_class_best_languages": 0,
+        "permutation_p": 0.5960099750623441,
+        "null_mean": -0.007907706900209085
+      },
+      "TB": {
+        "languages": 2,
+        "mean_delta_vs_opposite": 0.04706961916571917,
+        "positive_languages": 2,
+        "expected_class_best_languages": 2,
+        "permutation_p": 0.04987531172069826,
+        "null_mean": 0.0016824777332607528
+      }
+    }
+  },
+  "layer_groups": {
+    "U1": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.04324389069351356,
+        "positive": 11
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.002872160400070878,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.013182712257160556,
+        "positive": 1
+      }
+    },
+    "U2": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.020452371701171427,
+        "positive": 11
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.038723490804724314,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.08708938120702825,
+        "positive": 2
+      }
+    },
+    "U3": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.03091885653679657,
+        "positive": 12
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.022287409971203643,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.06753233387080174,
+        "positive": 2
+      }
+    },
+    "U4": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.02646382696213647,
+        "positive": 11
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.006060606060606072,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.01766304347826081,
+        "positive": 2
+      }
+    },
+    "U5": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.019494514661764214,
+        "positive": 11
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.005112995100180438,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.11526413762115667,
+        "positive": 2
+      }
+    },
+    "D1": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.014927917750193462,
+        "positive": 11
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.03386008952810572,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.09822064931553987,
+        "positive": 2
+      }
+    },
+    "D2": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.03789841416372218,
+        "positive": 12
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.009617524879270138,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.05246743716749222,
+        "positive": 2
+      }
+    },
+    "D3": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.021520845789504032,
+        "positive": 11
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.011362088246329146,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": -0.022500614099729754,
+        "positive": 0
+      }
+    },
+    "D4": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.03277753118795269,
+        "positive": 12
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.01839055500538097,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.019109395954785557,
+        "positive": 2
+      }
+    },
+    "D5": {
+      "LR": {
+        "n": 21,
+        "mean_delta": 0.02787971398278551,
+        "positive": 12
+      },
+      "RL": {
+        "n": 3,
+        "mean_delta": -0.023213208396755638,
+        "positive": 1
+      },
+      "TB": {
+        "n": 2,
+        "mean_delta": 0.022667714884696044,
+        "positive": 2
+      }
+    }
+  },
+  "languages": [
+    {
+      "iso": "ara",
+      "name": "Arabic",
+      "script": "Arabic",
+      "family": "Unclassified",
+      "direction": "RL",
+      "alphabet_source": "Arabic alphabet",
+      "alphabet_size": 28,
+      "stable_symbols": 28,
+      "symbol_fraction": 1.0,
+      "train_words": 2382,
+      "test_alignment": {
+        "words": 617,
+        "grapheme_tokens": 2743,
+        "matched_tokens": 2724,
+        "match_rate": 0.993073277433467,
+        "mean_coordinate_error": 0.022320184077659472
+      },
+      "train_mean_coordinate_error": 0.02279609416719081,
+      "classes": {
+        "LR": 0.15872407157424145,
+        "RL": 0.07843134232526497,
+        "TB": 0.22708932960153175,
+        "BT": 0.18530180310664338
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": -0.08029272924897649,
+      "permutation_p": 0.8204488778054863,
+      "null_mean_delta": -0.011904008216038632
+    },
+    {
+      "iso": "ces",
+      "name": "Czech",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Czech alphabet; ch treated as one ordered letter",
+      "alphabet_size": 42,
+      "stable_symbols": 39,
+      "symbol_fraction": 0.9285714285714286,
+      "train_words": 2367,
+      "test_alignment": {
+        "words": 633,
+        "grapheme_tokens": 4481,
+        "matched_tokens": 4310,
+        "match_rate": 0.96183887525106,
+        "mean_coordinate_error": 0.022449361663350126
+      },
+      "train_mean_coordinate_error": 0.02085352045209998,
+      "classes": {
+        "LR": 0.020368515599962243,
+        "RL": 0.06982559247891643,
+        "TB": 0.12523078318462189,
+        "BT": 0.0849525850286259
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": -0.04945707687895418,
+      "permutation_p": 0.7955112219451371,
+      "null_mean_delta": -0.0005372672592745907
+    },
+    {
+      "iso": "cym",
+      "name": "Welsh",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Welsh alphabet; traditional digraph letters retained",
+      "alphabet_size": 28,
+      "stable_symbols": 28,
+      "symbol_fraction": 1.0,
+      "train_words": 2378,
+      "test_alignment": {
+        "words": 610,
+        "grapheme_tokens": 3945,
+        "matched_tokens": 3811,
+        "match_rate": 0.9660329531051964,
+        "mean_coordinate_error": 0.021724365233288825
+      },
+      "train_mean_coordinate_error": 0.02130724753122576,
+      "classes": {
+        "LR": 0.1482610994031221,
+        "RL": 0.07924171834527045,
+        "TB": 0.015866988414282863,
+        "BT": 0.08347228003561057
+      },
+      "best_class": "LR",
+      "delta_vs_opposite": 0.06901938105785164,
+      "permutation_p": 0.17206982543640897,
+      "null_mean_delta": 0.0048937509540210485
+    },
+    {
+      "iso": "dan",
+      "name": "Danish",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Danish alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 26,
+      "symbol_fraction": 0.896551724137931,
+      "train_words": 2435,
+      "test_alignment": {
+        "words": 565,
+        "grapheme_tokens": 3486,
+        "matched_tokens": 3162,
+        "match_rate": 0.9070567986230637,
+        "mean_coordinate_error": 0.027397137529714937
+      },
+      "train_mean_coordinate_error": 0.027325775097343828,
+      "classes": {
+        "LR": 0.0987183531213969,
+        "RL": -0.05662347629047582,
+        "TB": 0.2247336628034496,
+        "BT": 0.23891590978892469
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.15534182941187272,
+      "permutation_p": 0.0798004987531172,
+      "null_mean_delta": 0.008765827888698704
+    },
+    {
+      "iso": "ell",
+      "name": "Modern Greek (1453-)",
+      "script": "Greek",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Modern Greek alphabet",
+      "alphabet_size": 24,
+      "stable_symbols": 24,
+      "symbol_fraction": 1.0,
+      "train_words": 2388,
+      "test_alignment": {
+        "words": 612,
+        "grapheme_tokens": 4644,
+        "matched_tokens": 4426,
+        "match_rate": 0.9530577088716624,
+        "mean_coordinate_error": 0.02487058417878906
+      },
+      "train_mean_coordinate_error": 0.024648834945042154,
+      "classes": {
+        "LR": 0.17600600182707019,
+        "RL": 0.21136809696353828,
+        "TB": 0.19976079407677408,
+        "BT": 0.08085322612057601
+      },
+      "best_class": "RL",
+      "delta_vs_opposite": -0.0353620951364681,
+      "permutation_p": 0.6109725685785536,
+      "null_mean_delta": 0.0042848010237322
+    },
+    {
+      "iso": "eng",
+      "name": "English",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Modern English alphabet",
+      "alphabet_size": 26,
+      "stable_symbols": 26,
+      "symbol_fraction": 1.0,
+      "train_words": 2397,
+      "test_alignment": {
+        "words": 599,
+        "grapheme_tokens": 4680,
+        "matched_tokens": 4018,
+        "match_rate": 0.8585470085470085,
+        "mean_coordinate_error": 0.049080938219871785
+      },
+      "train_mean_coordinate_error": 0.04710943583319827,
+      "classes": {
+        "LR": 0.05505111306876487,
+        "RL": 0.04086223476353639,
+        "TB": 0.02699889317470382,
+        "BT": 0.05712903899824025
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.014188878305228476,
+      "permutation_p": 0.4139650872817955,
+      "null_mean_delta": -0.008974199423082148
+    },
+    {
+      "iso": "fas",
+      "name": "Persian",
+      "script": "Arabic",
+      "family": "Unclassified",
+      "direction": "RL",
+      "alphabet_source": "Persian alphabet",
+      "alphabet_size": 32,
+      "stable_symbols": 32,
+      "symbol_fraction": 1.0,
+      "train_words": 2364,
+      "test_alignment": {
+        "words": 634,
+        "grapheme_tokens": 3007,
+        "matched_tokens": 2967,
+        "match_rate": 0.9866977053541736,
+        "mean_coordinate_error": 0.02920603897355809
+      },
+      "train_mean_coordinate_error": 0.02823950333719012,
+      "classes": {
+        "LR": 0.09239628586302973,
+        "RL": 0.05110558670530759,
+        "TB": 0.17651913592952026,
+        "BT": 0.11267438680634195
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": -0.041290699157722134,
+      "permutation_p": 0.7356608478802993,
+      "null_mean_delta": -0.007548401550603347
+    },
+    {
+      "iso": "fin",
+      "name": "Finnish",
+      "script": "Latin",
+      "family": "Uralic",
+      "direction": "LR",
+      "alphabet_source": "Finnish alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 25,
+      "symbol_fraction": 0.8620689655172413,
+      "train_words": 2370,
+      "test_alignment": {
+        "words": 627,
+        "grapheme_tokens": 6988,
+        "matched_tokens": 6362,
+        "match_rate": 0.910417859187178,
+        "mean_coordinate_error": 0.011193765852624049
+      },
+      "train_mean_coordinate_error": 0.01155136841708352,
+      "classes": {
+        "LR": 0.11236794260703253,
+        "RL": -0.015106096550397439,
+        "TB": 0.20243251323852418,
+        "BT": 0.21494894101234915
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.12747403915742997,
+      "permutation_p": 0.16708229426433915,
+      "null_mean_delta": 0.015859256698456916
+    },
+    {
+      "iso": "grc",
+      "name": "Ancient Greek (to 1453)",
+      "script": "Greek",
+      "family": "Unclassified",
+      "direction": "LR",
+      "alphabet_source": "Greek alphabet",
+      "alphabet_size": 24,
+      "stable_symbols": 24,
+      "symbol_fraction": 1.0,
+      "train_words": 2383,
+      "test_alignment": {
+        "words": 606,
+        "grapheme_tokens": 3784,
+        "matched_tokens": 3633,
+        "match_rate": 0.9600951374207188,
+        "mean_coordinate_error": 0.028699570205043757
+      },
+      "train_mean_coordinate_error": 0.02821349975289607,
+      "classes": {
+        "LR": 0.18213177196322028,
+        "RL": 0.21248125425562175,
+        "TB": 0.18051259816641557,
+        "BT": 0.04837598959134255
+      },
+      "best_class": "RL",
+      "delta_vs_opposite": -0.030349482292401475,
+      "permutation_p": 0.7082294264339152,
+      "null_mean_delta": 0.022631171512603805
+    },
+    {
+      "iso": "heb",
+      "name": "Hebrew",
+      "script": "Hebrew",
+      "family": "Afro-Asiatic",
+      "direction": "RL",
+      "alphabet_source": "Hebrew alphabet; final forms are not separate ordinal letters",
+      "alphabet_size": 22,
+      "stable_symbols": 22,
+      "symbol_fraction": 1.0,
+      "train_words": 2422,
+      "test_alignment": {
+        "words": 578,
+        "grapheme_tokens": 2399,
+        "matched_tokens": 2325,
+        "match_rate": 0.9691538140892039,
+        "mean_coordinate_error": 0.06859475426823061
+      },
+      "train_mean_coordinate_error": 0.06686241591007329,
+      "classes": {
+        "LR": 0.04254352335590159,
+        "RL": 0.1126769132448121,
+        "TB": 0.2065695646670365,
+        "BT": 0.16443070157014822
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": 0.07013338988891052,
+      "permutation_p": 0.24438902743142144,
+      "null_mean_delta": -0.002174329461762758
+    },
+    {
+      "iso": "hun",
+      "name": "Hungarian",
+      "script": "Latin",
+      "family": "Uralic",
+      "direction": "LR",
+      "alphabet_source": "Hungarian alphabet; digraphs/trigraph treated as letters",
+      "alphabet_size": 44,
+      "stable_symbols": 39,
+      "symbol_fraction": 0.8863636363636364,
+      "train_words": 2405,
+      "test_alignment": {
+        "words": 595,
+        "grapheme_tokens": 4868,
+        "matched_tokens": 4640,
+        "match_rate": 0.9531635168447001,
+        "mean_coordinate_error": 0.009529100569922653
+      },
+      "train_mean_coordinate_error": 0.009365569248168072,
+      "classes": {
+        "LR": 0.04352153545116319,
+        "RL": 0.1019016865197127,
+        "TB": 0.1958142772669743,
+        "BT": 0.09533075097709125
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": -0.058380151068549505,
+      "permutation_p": 0.7905236907730673,
+      "null_mean_delta": -0.005453898048671237
+    },
+    {
+      "iso": "isl",
+      "name": "Icelandic",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Icelandic alphabet",
+      "alphabet_size": 32,
+      "stable_symbols": 32,
+      "symbol_fraction": 1.0,
+      "train_words": 2387,
+      "test_alignment": {
+        "words": 613,
+        "grapheme_tokens": 4330,
+        "matched_tokens": 4217,
+        "match_rate": 0.9739030023094688,
+        "mean_coordinate_error": 0.043309712496053615
+      },
+      "train_mean_coordinate_error": 0.04121943928631264,
+      "classes": {
+        "LR": 0.10759517300246926,
+        "RL": 0.061035409032371056,
+        "TB": 0.08832322771278725,
+        "BT": 0.0069483273826891085
+      },
+      "best_class": "LR",
+      "delta_vs_opposite": 0.04655976397009821,
+      "permutation_p": 0.314214463840399,
+      "null_mean_delta": 0.0034007308128920152
+    },
+    {
+      "iso": "kat",
+      "name": "Georgian",
+      "script": "Georgian",
+      "family": "Kartvelian",
+      "direction": "LR",
+      "alphabet_source": "Modern Georgian Mkhedruli alphabet",
+      "alphabet_size": 33,
+      "stable_symbols": 27,
+      "symbol_fraction": 0.8181818181818182,
+      "train_words": 2399,
+      "test_alignment": {
+        "words": 598,
+        "grapheme_tokens": 4825,
+        "matched_tokens": 4573,
+        "match_rate": 0.9477720207253886,
+        "mean_coordinate_error": 0.013135109941679388
+      },
+      "train_mean_coordinate_error": 0.013580279872303373,
+      "classes": {
+        "LR": 0.1190925912255219,
+        "RL": 0.14360693884899625,
+        "TB": 0.058268953030821906,
+        "BT": 0.008958015881817426
+      },
+      "best_class": "RL",
+      "delta_vs_opposite": -0.024514347623474347,
+      "permutation_p": 0.6359102244389028,
+      "null_mean_delta": 0.00022315825686344183
+    },
+    {
+      "iso": "kor",
+      "name": "Korean",
+      "script": "Hangul",
+      "family": "Koreanic",
+      "direction": "TB",
+      "alphabet_source": "Unicode modern Hangul Jamo order (compatibility forms)",
+      "alphabet_size": 40,
+      "stable_symbols": 37,
+      "symbol_fraction": 0.925,
+      "train_words": 2405,
+      "test_alignment": {
+        "words": 595,
+        "grapheme_tokens": 4160,
+        "matched_tokens": 3455,
+        "match_rate": 0.8305288461538461,
+        "mean_coordinate_error": 0.03754388438434292
+      },
+      "train_mean_coordinate_error": 0.03926894512382845,
+      "classes": {
+        "LR": 0.14695932069655493,
+        "RL": -0.14240052355432184,
+        "TB": 0.5923909122116122,
+        "BT": 0.5266879055278941
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": 0.06570300668371809,
+      "permutation_p": 0.13466334164588528,
+      "null_mean_delta": 0.00617411262224938
+    },
+    {
+      "iso": "nno",
+      "name": "Norwegian Nynorsk",
+      "script": "Latin",
+      "family": "Unclassified",
+      "direction": "LR",
+      "alphabet_source": "Norwegian alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 25,
+      "symbol_fraction": 0.8620689655172413,
+      "train_words": 2429,
+      "test_alignment": {
+        "words": 571,
+        "grapheme_tokens": 3308,
+        "matched_tokens": 2959,
+        "match_rate": 0.8944981862152358,
+        "mean_coordinate_error": 0.041598185431179414
+      },
+      "train_mean_coordinate_error": 0.04046280416556659,
+      "classes": {
+        "LR": 0.09463670050322191,
+        "RL": -0.033719001425843484,
+        "TB": 0.2098270100124047,
+        "BT": 0.2309830601107646
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.1283557019290654,
+      "permutation_p": 0.11970074812967581,
+      "null_mean_delta": 0.01267763348733203
+    },
+    {
+      "iso": "nob",
+      "name": "Norwegian Bokmål",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Norwegian alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 25,
+      "symbol_fraction": 0.8620689655172413,
+      "train_words": 2338,
+      "test_alignment": {
+        "words": 533,
+        "grapheme_tokens": 4452,
+        "matched_tokens": 4048,
+        "match_rate": 0.9092542677448338,
+        "mean_coordinate_error": 0.02993685692476336
+      },
+      "train_mean_coordinate_error": 0.030567658747924255,
+      "classes": {
+        "LR": 0.07031402572232605,
+        "RL": -0.0617091079571504,
+        "TB": 0.22469983908017663,
+        "BT": 0.24998439784328969
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.13202313367947643,
+      "permutation_p": 0.10972568578553615,
+      "null_mean_delta": 0.008955369298387817
+    },
+    {
+      "iso": "nor",
+      "name": "Norwegian",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Norwegian alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 24,
+      "symbol_fraction": 0.8275862068965517,
+      "train_words": 1074,
+      "test_alignment": {
+        "words": 257,
+        "grapheme_tokens": 1382,
+        "matched_tokens": 1257,
+        "match_rate": 0.9095513748191028,
+        "mean_coordinate_error": 0.022793907100521784
+      },
+      "train_mean_coordinate_error": 0.023567394252323116,
+      "classes": {
+        "LR": 0.06404063336314288,
+        "RL": -0.046716521824986854,
+        "TB": 0.18146473378120287,
+        "BT": 0.21527352884348067
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.11075715518812973,
+      "permutation_p": 0.14962593516209477,
+      "null_mean_delta": -0.005289658334950503
+    },
+    {
+      "iso": "okm",
+      "name": "Middle Korean (10th-16th cent.)",
+      "script": "Hangul",
+      "family": "Unclassified",
+      "direction": "TB",
+      "alphabet_source": "Unicode modern Hangul Jamo order used as a restricted historical-Hangul probe",
+      "alphabet_size": 40,
+      "stable_symbols": 25,
+      "symbol_fraction": 0.625,
+      "train_words": 396,
+      "test_alignment": {
+        "words": 80,
+        "grapheme_tokens": 351,
+        "matched_tokens": 271,
+        "match_rate": 0.7720797720797721,
+        "mean_coordinate_error": 0.037618653531679126
+      },
+      "train_mean_coordinate_error": 0.03606531992887238,
+      "classes": {
+        "LR": 0.31278406434329564,
+        "RL": -0.07375884652161482,
+        "TB": 0.5895962863857713,
+        "BT": 0.5611600547380511
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": 0.028436231647720245,
+      "permutation_p": 0.18703241895261846,
+      "null_mean_delta": -0.002335446279755098
+    },
+    {
+      "iso": "pol",
+      "name": "Polish",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Polish alphabet",
+      "alphabet_size": 32,
+      "stable_symbols": 32,
+      "symbol_fraction": 1.0,
+      "train_words": 2409,
+      "test_alignment": {
+        "words": 591,
+        "grapheme_tokens": 5040,
+        "matched_tokens": 4441,
+        "match_rate": 0.8811507936507936,
+        "mean_coordinate_error": 0.028308631207819877
+      },
+      "train_mean_coordinate_error": 0.027919891709796637,
+      "classes": {
+        "LR": 0.07534117176331656,
+        "RL": 0.14129004983389962,
+        "TB": 0.12769367503979673,
+        "BT": 0.20794224111128487
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": -0.06594887807058306,
+      "permutation_p": 0.7905236907730673,
+      "null_mean_delta": -0.008549557245297329
+    },
+    {
+      "iso": "rus",
+      "name": "Russian",
+      "script": "Cyrillic",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Russian alphabet",
+      "alphabet_size": 33,
+      "stable_symbols": 33,
+      "symbol_fraction": 1.0,
+      "train_words": 2401,
+      "test_alignment": {
+        "words": 599,
+        "grapheme_tokens": 5544,
+        "matched_tokens": 5305,
+        "match_rate": 0.9568903318903319,
+        "mean_coordinate_error": 0.05799253503505944
+      },
+      "train_mean_coordinate_error": 0.05802668067459378,
+      "classes": {
+        "LR": 0.021134345416507744,
+        "RL": -0.00998717425075836,
+        "TB": 0.12253723130463383,
+        "BT": 0.12166783075182225
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": 0.031121519667266104,
+      "permutation_p": 0.32418952618453867,
+      "null_mean_delta": 0.002049623600786782
+    },
+    {
+      "iso": "spa",
+      "name": "Spanish",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Modern Spanish alphabet (ñ distinct; ch/ll not separate letters)",
+      "alphabet_size": 27,
+      "stable_symbols": 27,
+      "symbol_fraction": 1.0,
+      "train_words": 2382,
+      "test_alignment": {
+        "words": 617,
+        "grapheme_tokens": 5476,
+        "matched_tokens": 5360,
+        "match_rate": 0.9788166544923301,
+        "mean_coordinate_error": 0.02552328050967213
+      },
+      "train_mean_coordinate_error": 0.023692678355269,
+      "classes": {
+        "LR": 0.05253202973557978,
+        "RL": 0.02372655458492667,
+        "TB": 0.10838651882364254,
+        "BT": 0.08994569455332108
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": 0.02880547515065311,
+      "permutation_p": 0.456359102244389,
+      "null_mean_delta": 0.020498399259217603
+    },
+    {
+      "iso": "swe",
+      "name": "Swedish",
+      "script": "Latin",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Swedish alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 28,
+      "symbol_fraction": 0.9655172413793104,
+      "train_words": 2394,
+      "test_alignment": {
+        "words": 598,
+        "grapheme_tokens": 3944,
+        "matched_tokens": 3605,
+        "match_rate": 0.9140466531440162,
+        "mean_coordinate_error": 0.028228141894844582
+      },
+      "train_mean_coordinate_error": 0.02562193236768463,
+      "classes": {
+        "LR": 0.0761521943164391,
+        "RL": -0.05315048675850714,
+        "TB": 0.0844227211362165,
+        "BT": 0.12743898572843587
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.12930268107494625,
+      "permutation_p": 0.10224438902743142,
+      "null_mean_delta": -0.0013648780719249494
+    },
+    {
+      "iso": "tur",
+      "name": "Turkish",
+      "script": "Latin",
+      "family": "Turkic",
+      "direction": "LR",
+      "alphabet_source": "Turkish alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 29,
+      "symbol_fraction": 1.0,
+      "train_words": 2366,
+      "test_alignment": {
+        "words": 633,
+        "grapheme_tokens": 4252,
+        "matched_tokens": 4123,
+        "match_rate": 0.9696613358419567,
+        "mean_coordinate_error": 0.016612210078004223
+      },
+      "train_mean_coordinate_error": 0.01797185677222365,
+      "classes": {
+        "LR": -0.012237084941498206,
+        "RL": 0.015575974245520286,
+        "TB": 0.006565569556155798,
+        "BT": 0.0029456009184580943
+      },
+      "best_class": "RL",
+      "delta_vs_opposite": -0.027813059187018492,
+      "permutation_p": 0.6159600997506235,
+      "null_mean_delta": -0.013339972901336624
+    },
+    {
+      "iso": "ukr",
+      "name": "Ukrainian",
+      "script": "Cyrillic",
+      "family": "Indo-European",
+      "direction": "LR",
+      "alphabet_source": "Ukrainian alphabet",
+      "alphabet_size": 33,
+      "stable_symbols": 33,
+      "symbol_fraction": 1.0,
+      "train_words": 2351,
+      "test_alignment": {
+        "words": 649,
+        "grapheme_tokens": 5398,
+        "matched_tokens": 5139,
+        "match_rate": 0.9520192663949612,
+        "mean_coordinate_error": 0.04775981815792836
+      },
+      "train_mean_coordinate_error": 0.046706100485538866,
+      "classes": {
+        "LR": 0.021046255102313165,
+        "RL": 0.12456936370380266,
+        "TB": 0.08057329075398639,
+        "BT": 0.03653676423993544
+      },
+      "best_class": "RL",
+      "delta_vs_opposite": -0.1035231086014895,
+      "permutation_p": 0.885286783042394,
+      "null_mean_delta": -0.005307990604619341
+    },
+    {
+      "iso": "vie",
+      "name": "Vietnamese",
+      "script": "Latin",
+      "family": "Austroasiatic",
+      "direction": "LR",
+      "alphabet_source": "Vietnamese alphabet",
+      "alphabet_size": 29,
+      "stable_symbols": 29,
+      "symbol_fraction": 1.0,
+      "train_words": 2371,
+      "test_alignment": {
+        "words": 615,
+        "grapheme_tokens": 3368,
+        "matched_tokens": 2927,
+        "match_rate": 0.869061757719715,
+        "mean_coordinate_error": 0.10479821998178274
+      },
+      "train_mean_coordinate_error": 0.10294118282343696,
+      "classes": {
+        "LR": -0.00039215097001931646,
+        "RL": 0.12004493585179182,
+        "TB": 0.16675147424980968,
+        "BT": 0.08976006200072068
+      },
+      "best_class": "TB",
+      "delta_vs_opposite": -0.12043708682181115,
+      "permutation_p": 0.7581047381546134,
+      "null_mean_delta": -0.033733123752242127
+    },
+    {
+      "iso": "yor",
+      "name": "Yoruba",
+      "script": "Latin",
+      "family": "Atlantic-Congo",
+      "direction": "LR",
+      "alphabet_source": "Yorùbá alphabet; gb treated as one ordered letter",
+      "alphabet_size": 25,
+      "stable_symbols": 17,
+      "symbol_fraction": 0.68,
+      "train_words": 2187,
+      "test_alignment": {
+        "words": 578,
+        "grapheme_tokens": 3113,
+        "matched_tokens": 1121,
+        "match_rate": 0.36010279473177,
+        "mean_coordinate_error": 0.0023230448971542353
+      },
+      "train_mean_coordinate_error": 0.0010534905316111527,
+      "classes": {
+        "LR": 0.18872544441240383,
+        "RL": 0.06717616212163788,
+        "TB": 0.10984178457906299,
+        "BT": 0.19544400376752352
+      },
+      "best_class": "BT",
+      "delta_vs_opposite": 0.12154928229076595,
+      "permutation_p": 0.0773067331670823,
+      "null_mean_delta": 0.00895873263989726
+    }
+  ]
+}
