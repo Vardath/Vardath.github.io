@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# workflow-trigger: v1
 # Focused Abraham/Brahma/Bharata/Mahabharata mirror test against empirical phonetic nulls.
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
