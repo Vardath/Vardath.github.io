@@ -1,0 +1,49 @@
+name: Phonetic D4 orientation test
+
+on:
+  push:
+    paths:
+      - 'tools/test_phonetic_orientation_d4_v1.py'
+      - '.github/workflows/phonetic-orientation-d4-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile research code
+        run: python -m py_compile tools/man_grid_exact_engine.py tools/man_grid_exact_data.py tools/test_phonetic_square_sequence_v2.py tools/test_phonetic_orientation_d4_v1.py
+      - name: Run cross-validated D4 orientation test
+        run: python tools/test_phonetic_orientation_d4_v1.py
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/phonetic-orientation-d4-v1.json',encoding='utf8'))
+          assert p['status']=='complete'
+          assert p['coverage']['folds']==20
+          assert len(p['resolutions'])==19
+          assert set(p['transforms'])=={'identity','mirror_lr','mirror_tb','rot180','transpose','anti_diagonal','rot90_cw','rot270_cw'}
+          print(json.dumps(p['summary'],indent=2))
+          PY
+      - name: Commit reproducible result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git pull --rebase origin main
+          git add data/phonetic-orientation-d4-v1.json
+          if git diff --cached --quiet; then
+            echo 'No result changes.'
+          else
+            git commit -m 'Add D4 phonetic orientation test results'
+            git push
+          fi
