@@ -1,0 +1,5553 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "Independent same-meaning word trajectories for directional language trios",
+  "source": {
+    "NorthEuraLex_commit": "e9a8119f25cf6078299132d8c4e7db338d46ff23",
+    "PHOIBLE_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "question": "Do independently defined same-meaning words reveal one linked LR/RL/TB phonetic geometry, and which eligible trio fits it best?",
+  "design": {
+    "language_selection": "Only languages that already passed the previous alphabet-direction stability gate are eligible. This word test does not choose languages from spelling look-alikes.",
+    "concepts": "NorthEuraLex concept IDs define meaning before phonetic comparison. Only concepts attested in all three languages of a candidate trio are used.",
+    "phonetics": "NorthEuraLex segmented pronunciations are projected into the frozen PHOIBLE continuous phonetic plane.",
+    "sequence_rule": "Speech order is never reversed. The fixed alphabet-direction transform acts only on phonetic coordinates: LR identity, RTL horizontal reflection, TB quarter-turn into the common frame.",
+    "primary_score": "For every shared concept, each word trajectory is resampled to 16 positions and the mean of the three pairwise Euclidean trajectory distances is computed. Lower same-meaning distance than mismatched concepts is the semantic linkage signal.",
+    "null": "400 deterministic concept-label shuffles independently mismatch the RTL and TB meanings while preserving each language vocabulary and phonotactics.",
+    "search_correction": "Every shuffled universe repeats the candidate-trio search. The final p-value compares the observed best trio with the best accidental trio in each null universe.",
+    "pairwise_requirement": "LR-RL, LR-TB and RL-TB pairs must each independently beat their mismatched-meaning null.",
+    "orientation_requirement": "All 8 expected/opposite orientation combinations are checked. A directional three-way link requires the documented LR/RL/TB combination to be the best."
+  },
+  "coverage": {
+    "phoible_segments": 3065,
+    "resolved_eligible_languages": [
+      {
+        "iso": "cym",
+        "wanted_name": "Welsh",
+        "direction": "LR",
+        "name": "Welsh",
+        "family": "Indo-European",
+        "subfamily": "Celtic"
+      },
+      {
+        "iso": "dan",
+        "wanted_name": "Danish",
+        "direction": "LR",
+        "name": "Danish",
+        "family": "Indo-European",
+        "subfamily": "Germanic"
+      },
+      {
+        "iso": "fin",
+        "wanted_name": "Finnish",
+        "direction": "LR",
+        "name": "Finnish",
+        "family": "Uralic",
+        "subfamily": "Finnic"
+      },
+      {
+        "iso": "heb",
+        "wanted_name": "Hebrew",
+        "direction": "RL",
+        "name": "Modern Hebrew",
+        "family": "Afro-Asiatic",
+        "subfamily": "Semitic"
+      },
+      {
+        "iso": "isl",
+        "wanted_name": "Icelandic",
+        "direction": "LR",
+        "name": "Icelandic",
+        "family": "Indo-European",
+        "subfamily": "Germanic"
+      },
+      {
+        "iso": "kor",
+        "wanted_name": "Korean",
+        "direction": "TB",
+        "name": "Korean",
+        "family": "Koreanic",
+        "subfamily": "Korean"
+      },
+      {
+        "iso": "nob",
+        "wanted_name": "Norwegian Bokmål",
+        "direction": "LR",
+        "name": "Norwegian (Bokmål)",
+        "family": "Indo-European",
+        "subfamily": "Germanic"
+      },
+      {
+        "iso": "nor",
+        "wanted_name": "Norwegian",
+        "direction": "LR",
+        "name": "Norwegian (Bokmål)",
+        "family": "Indo-European",
+        "subfamily": "Germanic"
+      },
+      {
+        "iso": "swe",
+        "wanted_name": "Swedish",
+        "direction": "LR",
+        "name": "Swedish",
+        "family": "Indo-European",
+        "subfamily": "Germanic"
+      }
+    ],
+    "resolved_counts": {
+      "LR": 7,
+      "RL": 1,
+      "TB": 1
+    },
+    "candidate_triples": 6,
+    "minimum_shared_concepts": 150,
+    "permutations": 400
+  },
+  "selected_trio": {
+    "LR": "fin",
+    "RL": "heb",
+    "TB": "kor",
+    "shared_concepts": 889,
+    "same_meaning_distance": 0.4459669501315014,
+    "null_mean_distance": 0.44455378884446084,
+    "semantic_advantage": -0.001413161287040554,
+    "pairwise": {
+      "LR_RL": {
+        "same_meaning_distance": 0.42379316265147243,
+        "mismatched_meaning_null": 0.42341242998222606,
+        "advantage": -0.0003807326692463753,
+        "permutation_p": 0.6034912718204489
+      },
+      "LR_TB": {
+        "same_meaning_distance": 0.4978688798862423,
+        "mismatched_meaning_null": 0.493993293009213,
+        "advantage": -0.003875586877029269,
+        "permutation_p": 0.9825436408977556
+      },
+      "RL_TB": {
+        "same_meaning_distance": 0.41623880785678946,
+        "mismatched_meaning_null": 0.4162556435419435,
+        "advantage": 1.683568515403744e-05,
+        "permutation_p": 0.49875311720698257
+      }
+    },
+    "orientation_rank": 5,
+    "orientation_table": [
+      {
+        "LR_member": "LR",
+        "RL_member": "LR",
+        "TB_member": "BT",
+        "distance": 0.41587561643742066,
+        "is_expected": false
+      },
+      {
+        "LR_member": "RL",
+        "RL_member": "RL",
+        "TB_member": "TB",
+        "distance": 0.41587561643742066,
+        "is_expected": false
+      },
+      {
+        "LR_member": "LR",
+        "RL_member": "RL",
+        "TB_member": "BT",
+        "distance": 0.4419728080352058,
+        "is_expected": false
+      },
+      {
+        "LR_member": "RL",
+        "RL_member": "LR",
+        "TB_member": "TB",
+        "distance": 0.4419728080352058,
+        "is_expected": false
+      },
+      {
+        "LR_member": "LR",
+        "RL_member": "RL",
+        "TB_member": "TB",
+        "distance": 0.4459669501315014,
+        "is_expected": true
+      },
+      {
+        "LR_member": "RL",
+        "RL_member": "LR",
+        "TB_member": "BT",
+        "distance": 0.4459669501315014,
+        "is_expected": false
+      },
+      {
+        "LR_member": "LR",
+        "RL_member": "LR",
+        "TB_member": "TB",
+        "distance": 0.45107287537646,
+        "is_expected": false
+      },
+      {
+        "LR_member": "RL",
+        "RL_member": "RL",
+        "TB_member": "BT",
+        "distance": 0.45107287537646,
+        "is_expected": false
+      }
+    ],
+    "fixed_trio_permutation_p": 0.9351620947630923,
+    "languages": {
+      "LR": "Finnish",
+      "RL": "Modern Hebrew",
+      "TB": "Korean"
+    },
+    "top_same_meaning_examples": [
+      {
+        "concept_id": "617_above",
+        "concept": "HIGH",
+        "distance": 0.2689184221902262,
+        "Finnish": {
+          "form": "ʏlhæːlːæ",
+          "segments": "ʏ l h æː lː æ"
+        },
+        "Modern Hebrew": {
+          "form": "mɛʔal",
+          "segments": "m ɛ ʔ a l"
+        },
+        "Korean": {
+          "form": "wie",
+          "segments": "w i e"
+        }
+      },
+      {
+        "concept_id": "504_cold",
+        "concept": "COLD",
+        "distance": 0.27938449961432416,
+        "Finnish": {
+          "form": "kʏlmæ",
+          "segments": "k ʏ l m æ"
+        },
+        "Modern Hebrew": {
+          "form": "kaʁ",
+          "segments": "k a ʁ"
+        },
+        "Korean": {
+          "form": "can",
+          "segments": "c a n"
+        }
+      },
+      {
+        "concept_id": "112_tree",
+        "concept": "TREE",
+        "distance": 0.28708946704856964,
+        "Finnish": {
+          "form": "puː",
+          "segments": "p uː"
+        },
+        "Modern Hebrew": {
+          "form": "ɛt͡s",
+          "segments": "ɛ ts"
+        },
+        "Korean": {
+          "form": "namu",
+          "segments": "n a m u"
+        }
+      },
+      {
+        "concept_id": "74_fog",
+        "concept": "FOG",
+        "distance": 0.2929783775124139,
+        "Finnish": {
+          "form": "sʊmʊ",
+          "segments": "s ʊ m ʊ"
+        },
+        "Modern Hebrew": {
+          "form": "aʁafɛl",
+          "segments": "a ʁ a f ɛ l"
+        },
+        "Korean": {
+          "form": "aŋɛ",
+          "segments": "a ŋ ɛ"
+        }
+      },
+      {
+        "concept_id": "284_amount",
+        "concept": "AMOUNT",
+        "distance": 0.29367228313558397,
+        "Finnish": {
+          "form": "mæːræ",
+          "segments": "m æː r æ"
+        },
+        "Modern Hebrew": {
+          "form": "kamut",
+          "segments": "k a m u t"
+        },
+        "Korean": {
+          "form": "sʰujaŋ",
+          "segments": "sʰ u j a ŋ"
+        }
+      },
+      {
+        "concept_id": "590_now",
+        "concept": "NOW",
+        "distance": 0.2997849694418508,
+        "Finnish": {
+          "form": "nʏt",
+          "segments": "n ʏ t"
+        },
+        "Modern Hebrew": {
+          "form": "aχʃav",
+          "segments": "a χ ʃ a v"
+        },
+        "Korean": {
+          "form": "mokha",
+          "segments": "m o k h a"
+        }
+      },
+      {
+        "concept_id": "5_tooth",
+        "concept": "TOOTH",
+        "distance": 0.3001112228849688,
+        "Finnish": {
+          "form": "hɑmːɑs",
+          "segments": "h ɑ mː ɑ s"
+        },
+        "Modern Hebrew": {
+          "form": "ʃɛn",
+          "segments": "ʃ ɛ n"
+        },
+        "Korean": {
+          "form": "i",
+          "segments": "i"
+        }
+      },
+      {
+        "concept_id": "203_mother",
+        "concept": "MOTHER",
+        "distance": 0.30227484754341455,
+        "Finnish": {
+          "form": "æi̯ti",
+          "segments": "æi t i"
+        },
+        "Modern Hebrew": {
+          "form": "ɛm",
+          "segments": "ɛ m"
+        },
+        "Korean": {
+          "form": "ʌmʌni",
+          "segments": "ʌ m ʌ n i"
+        }
+      },
+      {
+        "concept_id": "172_apple",
+        "concept": "APPLE",
+        "distance": 0.3059419885994014,
+        "Finnish": {
+          "form": "ɔmɛnɑ",
+          "segments": "ɔ m ɛ n ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "tapuaχ",
+          "segments": "t a p ua χ"
+        },
+        "Korean": {
+          "form": "sʰaɡwa",
+          "segments": "sʰ a g w a"
+        }
+      },
+      {
+        "concept_id": "152_goose",
+        "concept": "GOOSE",
+        "distance": 0.3095383875821489,
+        "Finnish": {
+          "form": "hɑnhi",
+          "segments": "h ɑ n h i"
+        },
+        "Modern Hebrew": {
+          "form": "avaz",
+          "segments": "a v a z"
+        },
+        "Korean": {
+          "form": "kʌwi",
+          "segments": "k ʌ w i"
+        }
+      },
+      {
+        "concept_id": "630_infrontof",
+        "concept": "IN FRONT OF",
+        "distance": 0.31078330301651097,
+        "Finnish": {
+          "form": "ɛdɛsːæ",
+          "segments": "ɛ d ɛ sː æ"
+        },
+        "Modern Hebrew": {
+          "form": "mul",
+          "segments": "m u l"
+        },
+        "Korean": {
+          "form": "apʰe",
+          "segments": "a pʰ e"
+        }
+      },
+      {
+        "concept_id": "202_father",
+        "concept": "FATHER",
+        "distance": 0.3112393812759558,
+        "Finnish": {
+          "form": "isæ",
+          "segments": "i s æ"
+        },
+        "Modern Hebrew": {
+          "form": "av",
+          "segments": "a v"
+        },
+        "Korean": {
+          "form": "abʌd͡ʑi",
+          "segments": "a b ʌ dʑ i"
+        }
+      },
+      {
+        "concept_id": "141_bear",
+        "concept": "BEAR",
+        "distance": 0.3121820487873675,
+        "Finnish": {
+          "form": "kɑrhʊ",
+          "segments": "k ɑ r h ʊ"
+        },
+        "Modern Hebrew": {
+          "form": "dov",
+          "segments": "d o v"
+        },
+        "Korean": {
+          "form": "kʰom",
+          "segments": "kʰ o m"
+        }
+      },
+      {
+        "concept_id": "19_head",
+        "concept": "HEAD",
+        "distance": 0.3133055667665494,
+        "Finnish": {
+          "form": "pæː",
+          "segments": "p æː"
+        },
+        "Modern Hebrew": {
+          "form": "ʁoʃ",
+          "segments": "ʁ o ʃ"
+        },
+        "Korean": {
+          "form": "mʌɾi",
+          "segments": "m ʌ ɾ i"
+        }
+      },
+      {
+        "concept_id": "637_this",
+        "concept": "THIS",
+        "distance": 0.3220359684837671,
+        "Finnish": {
+          "form": "tæmæ",
+          "segments": "t æ m æ"
+        },
+        "Modern Hebrew": {
+          "form": "zɛ",
+          "segments": "z ɛ"
+        },
+        "Korean": {
+          "form": "i",
+          "segments": "i"
+        }
+      },
+      {
+        "concept_id": "988_convey",
+        "concept": "CONVEY (A MESSAGE)",
+        "distance": 0.3273135841958057,
+        "Finnish": {
+          "form": "ilmɔi̯tːɑː",
+          "segments": "i l m ɔi tː ɑː"
+        },
+        "Modern Hebrew": {
+          "form": "masaʁ",
+          "segments": "m a s a ʁ"
+        },
+        "Korean": {
+          "form": "ijaɡiɦada",
+          "segments": "i j a g i ɦ a d a"
+        }
+      },
+      {
+        "concept_id": "163_snake",
+        "concept": "SNAKE",
+        "distance": 0.33032723405763664,
+        "Finnish": {
+          "form": "kæːrmɛ",
+          "segments": "k æː r m ɛ"
+        },
+        "Modern Hebrew": {
+          "form": "naχaʃ",
+          "segments": "n a χ a ʃ"
+        },
+        "Korean": {
+          "form": "pɛm",
+          "segments": "p ɛ m"
+        }
+      },
+      {
+        "concept_id": "146_mouse",
+        "concept": "MOUSE",
+        "distance": 0.3311941860704116,
+        "Finnish": {
+          "form": "hiːri",
+          "segments": "h iː r i"
+        },
+        "Modern Hebrew": {
+          "form": "aχbaʁ",
+          "segments": "a χ b a ʁ"
+        },
+        "Korean": {
+          "form": "t͡ɕwi",
+          "segments": "tɕ w i"
+        }
+      },
+      {
+        "concept_id": "859_break",
+        "concept": "BREAK (DESTROY OR GET DESTROYED)",
+        "distance": 0.33334682510770985,
+        "Finnish": {
+          "form": "mʊrtɑː",
+          "segments": "m ʊ r t ɑː"
+        },
+        "Modern Hebrew": {
+          "form": "ʃavaʁ",
+          "segments": "ʃ a v a ʁ"
+        },
+        "Korean": {
+          "form": "kɯm",
+          "segments": "k ɯ m"
+        }
+      },
+      {
+        "concept_id": "2_ear",
+        "concept": "EAR",
+        "distance": 0.33371296507544296,
+        "Finnish": {
+          "form": "kɔrʋɑ",
+          "segments": "k ɔ r ʋ ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "ozɛn",
+          "segments": "o z ɛ n"
+        },
+        "Korean": {
+          "form": "kwi",
+          "segments": "k w i"
+        }
+      },
+      {
+        "concept_id": "84_thunder",
+        "concept": "THUNDER",
+        "distance": 0.3338179008907711,
+        "Finnish": {
+          "form": "jʏrinæ",
+          "segments": "j ʏ r i n æ"
+        },
+        "Modern Hebrew": {
+          "form": "ʁaʔam",
+          "segments": "ʁ a ʔ a m"
+        },
+        "Korean": {
+          "form": "nwemjʌŋ",
+          "segments": "n w e m j ʌ ŋ"
+        }
+      },
+      {
+        "concept_id": "153_eagle",
+        "concept": "EAGLE",
+        "distance": 0.33437801420595314,
+        "Finnish": {
+          "form": "kɔtkɑ",
+          "segments": "k ɔ t k ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "ajit",
+          "segments": "a j i t"
+        },
+        "Korean": {
+          "form": "sʰuɾi",
+          "segments": "sʰ u ɾ i"
+        }
+      },
+      {
+        "concept_id": "18_nape",
+        "concept": "NAPE (OF NECK)",
+        "distance": 0.33583531786642595,
+        "Finnish": {
+          "form": "niskɑ",
+          "segments": "n i s k ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "oʁɛf",
+          "segments": "o ʁ ɛ f"
+        },
+        "Korean": {
+          "form": "mʌkt͈͈ʌli",
+          "segments": "m ʌ k t͈ ʌ l i"
+        }
+      },
+      {
+        "concept_id": "55_dream",
+        "concept": "DREAM",
+        "distance": 0.33805321601382077,
+        "Finnish": {
+          "form": "ʊni",
+          "segments": "ʊ n i"
+        },
+        "Modern Hebrew": {
+          "form": "χalom",
+          "segments": "χ a l o m"
+        },
+        "Korean": {
+          "form": "kʰum",
+          "segments": "kʰ u m"
+        }
+      },
+      {
+        "concept_id": "404_road",
+        "concept": "ROAD",
+        "distance": 0.3409690733280613,
+        "Finnish": {
+          "form": "kɑtʊ",
+          "segments": "k ɑ t ʊ"
+        },
+        "Modern Hebrew": {
+          "form": "kviʃ",
+          "segments": "k v i ʃ"
+        },
+        "Korean": {
+          "form": "kil",
+          "segments": "k i l"
+        }
+      },
+      {
+        "concept_id": "582_last",
+        "concept": "LAST (FINAL)",
+        "distance": 0.34237960922873284,
+        "Finnish": {
+          "form": "ʋiːmɛi̯nɛn",
+          "segments": "ʋ iː m ɛi n ɛ n"
+        },
+        "Modern Hebrew": {
+          "form": "aχaʁon",
+          "segments": "a χ a ʁ o n"
+        },
+        "Korean": {
+          "form": "jiβud͡ʑaji",
+          "segments": "j i β u dʑ a j i"
+        }
+      },
+      {
+        "concept_id": "998_understand",
+        "concept": "UNDERSTAND",
+        "distance": 0.342912272805685,
+        "Finnish": {
+          "form": "ʏmːærtæː",
+          "segments": "ʏ mː æ r t æː"
+        },
+        "Modern Hebrew": {
+          "form": "hɛvin",
+          "segments": "h ɛ v i n"
+        },
+        "Korean": {
+          "form": "iɦɛɦada",
+          "segments": "i ɦ ɛ ɦ a d a"
+        }
+      },
+      {
+        "concept_id": "947_gather",
+        "concept": "GATHER",
+        "distance": 0.3434374337014822,
+        "Finnish": {
+          "form": "koːtɑ",
+          "segments": "k oː t ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "asaf",
+          "segments": "a s a f"
+        },
+        "Korean": {
+          "form": "mweuda",
+          "segments": "m w e u d a"
+        }
+      },
+      {
+        "concept_id": "68_smoke",
+        "concept": "SMOKE (EXHAUST)",
+        "distance": 0.3435351074461676,
+        "Finnish": {
+          "form": "sɑʋʊ",
+          "segments": "s ɑ ʋ ʊ"
+        },
+        "Modern Hebrew": {
+          "form": "aʃan",
+          "segments": "a ʃ a n"
+        },
+        "Korean": {
+          "form": "jʌŋi",
+          "segments": "j ʌ ŋ i"
+        }
+      },
+      {
+        "concept_id": "230_name",
+        "concept": "NAME",
+        "distance": 0.34537977614111526,
+        "Finnish": {
+          "form": "nimi",
+          "segments": "n i m i"
+        },
+        "Modern Hebrew": {
+          "form": "ʃɛm",
+          "segments": "ʃ ɛ m"
+        },
+        "Korean": {
+          "form": "iɾɯm",
+          "segments": "i ɾ ɯ m"
+        }
+      },
+      {
+        "concept_id": "650_how",
+        "concept": "HOW",
+        "distance": 0.3468779296659854,
+        "Finnish": {
+          "form": "mitɛn",
+          "segments": "m i t ɛ n"
+        },
+        "Modern Hebrew": {
+          "form": "ɛiχ",
+          "segments": "ɛi χ"
+        },
+        "Korean": {
+          "form": "ʌtt͈͈ʌkʰːe",
+          "segments": "ʌ t t͈ ʌ kʰː e"
+        }
+      },
+      {
+        "concept_id": "565_former",
+        "concept": "FORMER",
+        "distance": 0.3470582026528289,
+        "Finnish": {
+          "form": "ɛntinɛn",
+          "segments": "ɛ n t i n ɛ n"
+        },
+        "Modern Hebrew": {
+          "form": "ləʃɛʔavaʁ",
+          "segments": "l ə ʃ ɛ ʔ a v a ʁ"
+        },
+        "Korean": {
+          "form": "t͡ɕʌnji",
+          "segments": "tɕ ʌ n j i"
+        }
+      },
+      {
+        "concept_id": "395_pain",
+        "concept": "PAIN",
+        "distance": 0.3480541843777525,
+        "Finnish": {
+          "form": "kipʊ",
+          "segments": "k i p ʊ"
+        },
+        "Modern Hebrew": {
+          "form": "kəʔɛv",
+          "segments": "k ə ʔ ɛ v"
+        },
+        "Korean": {
+          "form": "apʰɯmɡotʰoŋ",
+          "segments": "a pʰ ɯ m g o tʰ o ŋ"
+        }
+      },
+      {
+        "concept_id": "139_dog",
+        "concept": "DOG",
+        "distance": 0.3495929585980532,
+        "Finnish": {
+          "form": "kɔi̯rɑ",
+          "segments": "k ɔi r ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "kɛlɛv",
+          "segments": "k ɛ l ɛ v"
+        },
+        "Korean": {
+          "form": "kɛ",
+          "segments": "k ɛ"
+        }
+      },
+      {
+        "concept_id": "911_instruct",
+        "concept": "instruct",
+        "distance": 0.3499106219010768,
+        "Finnish": {
+          "form": "ɔpɛtːɑː",
+          "segments": "ɔ p ɛ tː ɑː"
+        },
+        "Modern Hebrew": {
+          "form": "limɛd",
+          "segments": "l i m ɛ d"
+        },
+        "Korean": {
+          "form": "kaɾɯd͡ʑida",
+          "segments": "k a ɾ ɯ dʑ i d a"
+        }
+      },
+      {
+        "concept_id": "271_thing",
+        "concept": "THING",
+        "distance": 0.3503197402615666,
+        "Finnish": {
+          "form": "ɑsiɑ",
+          "segments": "ɑ s i ɑ"
+        },
+        "Modern Hebrew": {
+          "form": "davaʁ",
+          "segments": "d a v a ʁ"
+        },
+        "Korean": {
+          "form": "muŋe",
+          "segments": "m u ŋ e"
+        }
+      },
+      {
+        "concept_id": "353_bread",
+        "concept": "BREAD",
+        "distance": 0.3507418471927733,
+        "Finnish": {
+          "form": "lɛi̯pæ",
+          "segments": "l ɛi p æ"
+        },
+        "Modern Hebrew": {
+          "form": "lɛχɛm",
+          "segments": "l ɛ χ ɛ m"
+        },
+        "Korean": {
+          "form": "pp͈͈aŋ",
+          "segments": "p p͈ a ŋ"
+        }
+      },
+      {
+        "concept_id": "612_forward",
+        "concept": "FORWARD",
+        "distance": 0.35295342374610367,
+        "Finnish": {
+          "form": "ɛtɛːnpæi̯n",
+          "segments": "ɛ t ɛː n p æi n"
+        },
+        "Modern Hebrew": {
+          "form": "kadima",
+          "segments": "k a d i m a"
+        },
+        "Korean": {
+          "form": "apʰɯɾo",
+          "segments": "a pʰ ɯ ɾ o"
+        }
+      },
+      {
+        "concept_id": "790_like",
+        "concept": "LIKE",
+        "distance": 0.35347256717867254,
+        "Finnish": {
+          "form": "pitæː",
+          "segments": "p i t æː"
+        },
+        "Modern Hebrew": {
+          "form": "ahav",
+          "segments": "a h a v"
+        },
+        "Korean": {
+          "form": "t͡ɕuɦaɦada",
+          "segments": "tɕ u ɦ a ɦ a d a"
+        }
+      },
+      {
+        "concept_id": "3_nose",
+        "concept": "NOSE",
+        "distance": 0.3537544141262831,
+        "Finnish": {
+          "form": "nɛnæ",
+          "segments": "n ɛ n æ"
+        },
+        "Modern Hebrew": {
+          "form": "af",
+          "segments": "a f"
+        },
+        "Korean": {
+          "form": "kʰo",
+          "segments": "kʰ o"
+        }
+      }
+    ],
+    "search_corrected_permutation_p": 1.0,
+    "all_three_pairwise_links_significant": false,
+    "expected_orientation_is_best": false,
+    "linked_three_way_supported": false
+  },
+  "ranking": [
+    {
+      "LR": "fin",
+      "RL": "heb",
+      "TB": "kor",
+      "shared_concepts": 889,
+      "same_meaning_distance": 0.4459669501315014,
+      "null_mean_distance": 0.44455378884446084,
+      "semantic_advantage": -0.001413161287040554,
+      "pairwise": {
+        "LR_RL": {
+          "same_meaning_distance": 0.42379316265147243,
+          "mismatched_meaning_null": 0.42341242998222606,
+          "advantage": -0.0003807326692463753,
+          "permutation_p": 0.6034912718204489
+        },
+        "LR_TB": {
+          "same_meaning_distance": 0.4978688798862423,
+          "mismatched_meaning_null": 0.493993293009213,
+          "advantage": -0.003875586877029269,
+          "permutation_p": 0.9825436408977556
+        },
+        "RL_TB": {
+          "same_meaning_distance": 0.41623880785678946,
+          "mismatched_meaning_null": 0.4162556435419435,
+          "advantage": 1.683568515403744e-05,
+          "permutation_p": 0.49875311720698257
+        }
+      },
+      "orientation_rank": 5,
+      "orientation_table": [
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.41587561643742066,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.41587561643742066,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4419728080352058,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4419728080352058,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.4459669501315014,
+          "is_expected": true
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.4459669501315014,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.45107287537646,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.45107287537646,
+          "is_expected": false
+        }
+      ],
+      "fixed_trio_permutation_p": 0.9351620947630923,
+      "languages": {
+        "LR": "Finnish",
+        "RL": "Modern Hebrew",
+        "TB": "Korean"
+      },
+      "top_same_meaning_examples": [
+        {
+          "concept_id": "617_above",
+          "concept": "HIGH",
+          "distance": 0.2689184221902262,
+          "Finnish": {
+            "form": "ʏlhæːlːæ",
+            "segments": "ʏ l h æː lː æ"
+          },
+          "Modern Hebrew": {
+            "form": "mɛʔal",
+            "segments": "m ɛ ʔ a l"
+          },
+          "Korean": {
+            "form": "wie",
+            "segments": "w i e"
+          }
+        },
+        {
+          "concept_id": "504_cold",
+          "concept": "COLD",
+          "distance": 0.27938449961432416,
+          "Finnish": {
+            "form": "kʏlmæ",
+            "segments": "k ʏ l m æ"
+          },
+          "Modern Hebrew": {
+            "form": "kaʁ",
+            "segments": "k a ʁ"
+          },
+          "Korean": {
+            "form": "can",
+            "segments": "c a n"
+          }
+        },
+        {
+          "concept_id": "112_tree",
+          "concept": "TREE",
+          "distance": 0.28708946704856964,
+          "Finnish": {
+            "form": "puː",
+            "segments": "p uː"
+          },
+          "Modern Hebrew": {
+            "form": "ɛt͡s",
+            "segments": "ɛ ts"
+          },
+          "Korean": {
+            "form": "namu",
+            "segments": "n a m u"
+          }
+        },
+        {
+          "concept_id": "74_fog",
+          "concept": "FOG",
+          "distance": 0.2929783775124139,
+          "Finnish": {
+            "form": "sʊmʊ",
+            "segments": "s ʊ m ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "aʁafɛl",
+            "segments": "a ʁ a f ɛ l"
+          },
+          "Korean": {
+            "form": "aŋɛ",
+            "segments": "a ŋ ɛ"
+          }
+        },
+        {
+          "concept_id": "284_amount",
+          "concept": "AMOUNT",
+          "distance": 0.29367228313558397,
+          "Finnish": {
+            "form": "mæːræ",
+            "segments": "m æː r æ"
+          },
+          "Modern Hebrew": {
+            "form": "kamut",
+            "segments": "k a m u t"
+          },
+          "Korean": {
+            "form": "sʰujaŋ",
+            "segments": "sʰ u j a ŋ"
+          }
+        },
+        {
+          "concept_id": "590_now",
+          "concept": "NOW",
+          "distance": 0.2997849694418508,
+          "Finnish": {
+            "form": "nʏt",
+            "segments": "n ʏ t"
+          },
+          "Modern Hebrew": {
+            "form": "aχʃav",
+            "segments": "a χ ʃ a v"
+          },
+          "Korean": {
+            "form": "mokha",
+            "segments": "m o k h a"
+          }
+        },
+        {
+          "concept_id": "5_tooth",
+          "concept": "TOOTH",
+          "distance": 0.3001112228849688,
+          "Finnish": {
+            "form": "hɑmːɑs",
+            "segments": "h ɑ mː ɑ s"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛn",
+            "segments": "ʃ ɛ n"
+          },
+          "Korean": {
+            "form": "i",
+            "segments": "i"
+          }
+        },
+        {
+          "concept_id": "203_mother",
+          "concept": "MOTHER",
+          "distance": 0.30227484754341455,
+          "Finnish": {
+            "form": "æi̯ti",
+            "segments": "æi t i"
+          },
+          "Modern Hebrew": {
+            "form": "ɛm",
+            "segments": "ɛ m"
+          },
+          "Korean": {
+            "form": "ʌmʌni",
+            "segments": "ʌ m ʌ n i"
+          }
+        },
+        {
+          "concept_id": "172_apple",
+          "concept": "APPLE",
+          "distance": 0.3059419885994014,
+          "Finnish": {
+            "form": "ɔmɛnɑ",
+            "segments": "ɔ m ɛ n ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "tapuaχ",
+            "segments": "t a p ua χ"
+          },
+          "Korean": {
+            "form": "sʰaɡwa",
+            "segments": "sʰ a g w a"
+          }
+        },
+        {
+          "concept_id": "152_goose",
+          "concept": "GOOSE",
+          "distance": 0.3095383875821489,
+          "Finnish": {
+            "form": "hɑnhi",
+            "segments": "h ɑ n h i"
+          },
+          "Modern Hebrew": {
+            "form": "avaz",
+            "segments": "a v a z"
+          },
+          "Korean": {
+            "form": "kʌwi",
+            "segments": "k ʌ w i"
+          }
+        },
+        {
+          "concept_id": "630_infrontof",
+          "concept": "IN FRONT OF",
+          "distance": 0.31078330301651097,
+          "Finnish": {
+            "form": "ɛdɛsːæ",
+            "segments": "ɛ d ɛ sː æ"
+          },
+          "Modern Hebrew": {
+            "form": "mul",
+            "segments": "m u l"
+          },
+          "Korean": {
+            "form": "apʰe",
+            "segments": "a pʰ e"
+          }
+        },
+        {
+          "concept_id": "202_father",
+          "concept": "FATHER",
+          "distance": 0.3112393812759558,
+          "Finnish": {
+            "form": "isæ",
+            "segments": "i s æ"
+          },
+          "Modern Hebrew": {
+            "form": "av",
+            "segments": "a v"
+          },
+          "Korean": {
+            "form": "abʌd͡ʑi",
+            "segments": "a b ʌ dʑ i"
+          }
+        },
+        {
+          "concept_id": "141_bear",
+          "concept": "BEAR",
+          "distance": 0.3121820487873675,
+          "Finnish": {
+            "form": "kɑrhʊ",
+            "segments": "k ɑ r h ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "dov",
+            "segments": "d o v"
+          },
+          "Korean": {
+            "form": "kʰom",
+            "segments": "kʰ o m"
+          }
+        },
+        {
+          "concept_id": "19_head",
+          "concept": "HEAD",
+          "distance": 0.3133055667665494,
+          "Finnish": {
+            "form": "pæː",
+            "segments": "p æː"
+          },
+          "Modern Hebrew": {
+            "form": "ʁoʃ",
+            "segments": "ʁ o ʃ"
+          },
+          "Korean": {
+            "form": "mʌɾi",
+            "segments": "m ʌ ɾ i"
+          }
+        },
+        {
+          "concept_id": "637_this",
+          "concept": "THIS",
+          "distance": 0.3220359684837671,
+          "Finnish": {
+            "form": "tæmæ",
+            "segments": "t æ m æ"
+          },
+          "Modern Hebrew": {
+            "form": "zɛ",
+            "segments": "z ɛ"
+          },
+          "Korean": {
+            "form": "i",
+            "segments": "i"
+          }
+        },
+        {
+          "concept_id": "988_convey",
+          "concept": "CONVEY (A MESSAGE)",
+          "distance": 0.3273135841958057,
+          "Finnish": {
+            "form": "ilmɔi̯tːɑː",
+            "segments": "i l m ɔi tː ɑː"
+          },
+          "Modern Hebrew": {
+            "form": "masaʁ",
+            "segments": "m a s a ʁ"
+          },
+          "Korean": {
+            "form": "ijaɡiɦada",
+            "segments": "i j a g i ɦ a d a"
+          }
+        },
+        {
+          "concept_id": "163_snake",
+          "concept": "SNAKE",
+          "distance": 0.33032723405763664,
+          "Finnish": {
+            "form": "kæːrmɛ",
+            "segments": "k æː r m ɛ"
+          },
+          "Modern Hebrew": {
+            "form": "naχaʃ",
+            "segments": "n a χ a ʃ"
+          },
+          "Korean": {
+            "form": "pɛm",
+            "segments": "p ɛ m"
+          }
+        },
+        {
+          "concept_id": "146_mouse",
+          "concept": "MOUSE",
+          "distance": 0.3311941860704116,
+          "Finnish": {
+            "form": "hiːri",
+            "segments": "h iː r i"
+          },
+          "Modern Hebrew": {
+            "form": "aχbaʁ",
+            "segments": "a χ b a ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕwi",
+            "segments": "tɕ w i"
+          }
+        },
+        {
+          "concept_id": "859_break",
+          "concept": "BREAK (DESTROY OR GET DESTROYED)",
+          "distance": 0.33334682510770985,
+          "Finnish": {
+            "form": "mʊrtɑː",
+            "segments": "m ʊ r t ɑː"
+          },
+          "Modern Hebrew": {
+            "form": "ʃavaʁ",
+            "segments": "ʃ a v a ʁ"
+          },
+          "Korean": {
+            "form": "kɯm",
+            "segments": "k ɯ m"
+          }
+        },
+        {
+          "concept_id": "2_ear",
+          "concept": "EAR",
+          "distance": 0.33371296507544296,
+          "Finnish": {
+            "form": "kɔrʋɑ",
+            "segments": "k ɔ r ʋ ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "ozɛn",
+            "segments": "o z ɛ n"
+          },
+          "Korean": {
+            "form": "kwi",
+            "segments": "k w i"
+          }
+        },
+        {
+          "concept_id": "84_thunder",
+          "concept": "THUNDER",
+          "distance": 0.3338179008907711,
+          "Finnish": {
+            "form": "jʏrinæ",
+            "segments": "j ʏ r i n æ"
+          },
+          "Modern Hebrew": {
+            "form": "ʁaʔam",
+            "segments": "ʁ a ʔ a m"
+          },
+          "Korean": {
+            "form": "nwemjʌŋ",
+            "segments": "n w e m j ʌ ŋ"
+          }
+        },
+        {
+          "concept_id": "153_eagle",
+          "concept": "EAGLE",
+          "distance": 0.33437801420595314,
+          "Finnish": {
+            "form": "kɔtkɑ",
+            "segments": "k ɔ t k ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "ajit",
+            "segments": "a j i t"
+          },
+          "Korean": {
+            "form": "sʰuɾi",
+            "segments": "sʰ u ɾ i"
+          }
+        },
+        {
+          "concept_id": "18_nape",
+          "concept": "NAPE (OF NECK)",
+          "distance": 0.33583531786642595,
+          "Finnish": {
+            "form": "niskɑ",
+            "segments": "n i s k ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "oʁɛf",
+            "segments": "o ʁ ɛ f"
+          },
+          "Korean": {
+            "form": "mʌkt͈͈ʌli",
+            "segments": "m ʌ k t͈ ʌ l i"
+          }
+        },
+        {
+          "concept_id": "55_dream",
+          "concept": "DREAM",
+          "distance": 0.33805321601382077,
+          "Finnish": {
+            "form": "ʊni",
+            "segments": "ʊ n i"
+          },
+          "Modern Hebrew": {
+            "form": "χalom",
+            "segments": "χ a l o m"
+          },
+          "Korean": {
+            "form": "kʰum",
+            "segments": "kʰ u m"
+          }
+        },
+        {
+          "concept_id": "404_road",
+          "concept": "ROAD",
+          "distance": 0.3409690733280613,
+          "Finnish": {
+            "form": "kɑtʊ",
+            "segments": "k ɑ t ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "kviʃ",
+            "segments": "k v i ʃ"
+          },
+          "Korean": {
+            "form": "kil",
+            "segments": "k i l"
+          }
+        },
+        {
+          "concept_id": "582_last",
+          "concept": "LAST (FINAL)",
+          "distance": 0.34237960922873284,
+          "Finnish": {
+            "form": "ʋiːmɛi̯nɛn",
+            "segments": "ʋ iː m ɛi n ɛ n"
+          },
+          "Modern Hebrew": {
+            "form": "aχaʁon",
+            "segments": "a χ a ʁ o n"
+          },
+          "Korean": {
+            "form": "jiβud͡ʑaji",
+            "segments": "j i β u dʑ a j i"
+          }
+        },
+        {
+          "concept_id": "998_understand",
+          "concept": "UNDERSTAND",
+          "distance": 0.342912272805685,
+          "Finnish": {
+            "form": "ʏmːærtæː",
+            "segments": "ʏ mː æ r t æː"
+          },
+          "Modern Hebrew": {
+            "form": "hɛvin",
+            "segments": "h ɛ v i n"
+          },
+          "Korean": {
+            "form": "iɦɛɦada",
+            "segments": "i ɦ ɛ ɦ a d a"
+          }
+        },
+        {
+          "concept_id": "947_gather",
+          "concept": "GATHER",
+          "distance": 0.3434374337014822,
+          "Finnish": {
+            "form": "koːtɑ",
+            "segments": "k oː t ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "asaf",
+            "segments": "a s a f"
+          },
+          "Korean": {
+            "form": "mweuda",
+            "segments": "m w e u d a"
+          }
+        },
+        {
+          "concept_id": "68_smoke",
+          "concept": "SMOKE (EXHAUST)",
+          "distance": 0.3435351074461676,
+          "Finnish": {
+            "form": "sɑʋʊ",
+            "segments": "s ɑ ʋ ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "aʃan",
+            "segments": "a ʃ a n"
+          },
+          "Korean": {
+            "form": "jʌŋi",
+            "segments": "j ʌ ŋ i"
+          }
+        },
+        {
+          "concept_id": "230_name",
+          "concept": "NAME",
+          "distance": 0.34537977614111526,
+          "Finnish": {
+            "form": "nimi",
+            "segments": "n i m i"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛm",
+            "segments": "ʃ ɛ m"
+          },
+          "Korean": {
+            "form": "iɾɯm",
+            "segments": "i ɾ ɯ m"
+          }
+        },
+        {
+          "concept_id": "650_how",
+          "concept": "HOW",
+          "distance": 0.3468779296659854,
+          "Finnish": {
+            "form": "mitɛn",
+            "segments": "m i t ɛ n"
+          },
+          "Modern Hebrew": {
+            "form": "ɛiχ",
+            "segments": "ɛi χ"
+          },
+          "Korean": {
+            "form": "ʌtt͈͈ʌkʰːe",
+            "segments": "ʌ t t͈ ʌ kʰː e"
+          }
+        },
+        {
+          "concept_id": "565_former",
+          "concept": "FORMER",
+          "distance": 0.3470582026528289,
+          "Finnish": {
+            "form": "ɛntinɛn",
+            "segments": "ɛ n t i n ɛ n"
+          },
+          "Modern Hebrew": {
+            "form": "ləʃɛʔavaʁ",
+            "segments": "l ə ʃ ɛ ʔ a v a ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕʌnji",
+            "segments": "tɕ ʌ n j i"
+          }
+        },
+        {
+          "concept_id": "395_pain",
+          "concept": "PAIN",
+          "distance": 0.3480541843777525,
+          "Finnish": {
+            "form": "kipʊ",
+            "segments": "k i p ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "kəʔɛv",
+            "segments": "k ə ʔ ɛ v"
+          },
+          "Korean": {
+            "form": "apʰɯmɡotʰoŋ",
+            "segments": "a pʰ ɯ m g o tʰ o ŋ"
+          }
+        },
+        {
+          "concept_id": "139_dog",
+          "concept": "DOG",
+          "distance": 0.3495929585980532,
+          "Finnish": {
+            "form": "kɔi̯rɑ",
+            "segments": "k ɔi r ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "kɛlɛv",
+            "segments": "k ɛ l ɛ v"
+          },
+          "Korean": {
+            "form": "kɛ",
+            "segments": "k ɛ"
+          }
+        },
+        {
+          "concept_id": "911_instruct",
+          "concept": "instruct",
+          "distance": 0.3499106219010768,
+          "Finnish": {
+            "form": "ɔpɛtːɑː",
+            "segments": "ɔ p ɛ tː ɑː"
+          },
+          "Modern Hebrew": {
+            "form": "limɛd",
+            "segments": "l i m ɛ d"
+          },
+          "Korean": {
+            "form": "kaɾɯd͡ʑida",
+            "segments": "k a ɾ ɯ dʑ i d a"
+          }
+        },
+        {
+          "concept_id": "271_thing",
+          "concept": "THING",
+          "distance": 0.3503197402615666,
+          "Finnish": {
+            "form": "ɑsiɑ",
+            "segments": "ɑ s i ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "davaʁ",
+            "segments": "d a v a ʁ"
+          },
+          "Korean": {
+            "form": "muŋe",
+            "segments": "m u ŋ e"
+          }
+        },
+        {
+          "concept_id": "353_bread",
+          "concept": "BREAD",
+          "distance": 0.3507418471927733,
+          "Finnish": {
+            "form": "lɛi̯pæ",
+            "segments": "l ɛi p æ"
+          },
+          "Modern Hebrew": {
+            "form": "lɛχɛm",
+            "segments": "l ɛ χ ɛ m"
+          },
+          "Korean": {
+            "form": "pp͈͈aŋ",
+            "segments": "p p͈ a ŋ"
+          }
+        },
+        {
+          "concept_id": "612_forward",
+          "concept": "FORWARD",
+          "distance": 0.35295342374610367,
+          "Finnish": {
+            "form": "ɛtɛːnpæi̯n",
+            "segments": "ɛ t ɛː n p æi n"
+          },
+          "Modern Hebrew": {
+            "form": "kadima",
+            "segments": "k a d i m a"
+          },
+          "Korean": {
+            "form": "apʰɯɾo",
+            "segments": "a pʰ ɯ ɾ o"
+          }
+        },
+        {
+          "concept_id": "790_like",
+          "concept": "LIKE",
+          "distance": 0.35347256717867254,
+          "Finnish": {
+            "form": "pitæː",
+            "segments": "p i t æː"
+          },
+          "Modern Hebrew": {
+            "form": "ahav",
+            "segments": "a h a v"
+          },
+          "Korean": {
+            "form": "t͡ɕuɦaɦada",
+            "segments": "tɕ u ɦ a ɦ a d a"
+          }
+        },
+        {
+          "concept_id": "3_nose",
+          "concept": "NOSE",
+          "distance": 0.3537544141262831,
+          "Finnish": {
+            "form": "nɛnæ",
+            "segments": "n ɛ n æ"
+          },
+          "Modern Hebrew": {
+            "form": "af",
+            "segments": "a f"
+          },
+          "Korean": {
+            "form": "kʰo",
+            "segments": "kʰ o"
+          }
+        }
+      ],
+      "search_corrected_permutation_p": 1.0,
+      "all_three_pairwise_links_significant": false,
+      "expected_orientation_is_best": false,
+      "linked_three_way_supported": false
+    },
+    {
+      "LR": "nor",
+      "RL": "heb",
+      "TB": "kor",
+      "shared_concepts": 850,
+      "same_meaning_distance": 0.43381695805728443,
+      "null_mean_distance": 0.43231064555626253,
+      "semantic_advantage": -0.0015063125010219003,
+      "pairwise": {
+        "LR_RL": {
+          "same_meaning_distance": 0.4158444938706057,
+          "mismatched_meaning_null": 0.41098005187677833,
+          "advantage": -0.004864441993827351,
+          "permutation_p": 0.9850374064837906
+        },
+        "LR_TB": {
+          "same_meaning_distance": 0.47103258841415857,
+          "mismatched_meaning_null": 0.4712069682137055,
+          "advantage": 0.00017437979954693095,
+          "permutation_p": 0.47381546134663344
+        },
+        "RL_TB": {
+          "same_meaning_distance": 0.41457379188708904,
+          "mismatched_meaning_null": 0.41474491657830376,
+          "advantage": 0.00017112469121471907,
+          "permutation_p": 0.4613466334164589
+        }
+      },
+      "orientation_rank": 3,
+      "orientation_table": [
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.4124900592497598,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.4124900592497598,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.43381695805728443,
+          "is_expected": true
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.43381695805728443,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.43860473642881365,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.43860473642881365,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4396177592428932,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4396177592428932,
+          "is_expected": false
+        }
+      ],
+      "fixed_trio_permutation_p": 0.8927680798004988,
+      "languages": {
+        "LR": "Norwegian (Bokmål)",
+        "RL": "Modern Hebrew",
+        "TB": "Korean"
+      },
+      "top_same_meaning_examples": [
+        {
+          "concept_id": "651_why",
+          "concept": "WHY",
+          "distance": 0.2655117230492529,
+          "Norwegian (Bokmål)": {
+            "form": "ˈvurfɔr",
+            "segments": "v u r f ɔ r"
+          },
+          "Modern Hebrew": {
+            "form": "lama",
+            "segments": "l a m a"
+          },
+          "Korean": {
+            "form": "wɛ",
+            "segments": "w ɛ"
+          }
+        },
+        {
+          "concept_id": "102_river",
+          "concept": "RIVER",
+          "distance": 0.27441912406722246,
+          "Norwegian (Bokmål)": {
+            "form": "ɛlv",
+            "segments": "ɛ l v"
+          },
+          "Modern Hebrew": {
+            "form": "nahaʁ",
+            "segments": "n a h a ʁ"
+          },
+          "Korean": {
+            "form": "kaŋ",
+            "segments": "k a ŋ"
+          }
+        },
+        {
+          "concept_id": "138_pig",
+          "concept": "PIG",
+          "distance": 0.2978980899290225,
+          "Norwegian (Bokmål)": {
+            "form": "ɡriːs",
+            "segments": "g r iː s"
+          },
+          "Modern Hebrew": {
+            "form": "χaziʁ",
+            "segments": "χ a z i ʁ"
+          },
+          "Korean": {
+            "form": "twɛd͡ʑi",
+            "segments": "t w ɛ dʑ i"
+          }
+        },
+        {
+          "concept_id": "406_town",
+          "concept": "TOWN",
+          "distance": 0.30196433569023234,
+          "Norwegian (Bokmål)": {
+            "form": "byː",
+            "segments": "b yː"
+          },
+          "Modern Hebrew": {
+            "form": "iʁ",
+            "segments": "i ʁ"
+          },
+          "Korean": {
+            "form": "toɕʰi",
+            "segments": "t o ɕʰ i"
+          }
+        },
+        {
+          "concept_id": "607_hither",
+          "concept": "HITHER (HERE TO)",
+          "distance": 0.30461788684200447,
+          "Norwegian (Bokmål)": {
+            "form": "hiːt",
+            "segments": "h iː t"
+          },
+          "Modern Hebrew": {
+            "form": "po",
+            "segments": "p o"
+          },
+          "Korean": {
+            "form": "jʌɡiɾo",
+            "segments": "j ʌ g i ɾ o"
+          }
+        },
+        {
+          "concept_id": "538_strong",
+          "concept": "STRONG",
+          "distance": 0.3130199427708698,
+          "Norwegian (Bokmål)": {
+            "form": "stærk",
+            "segments": "s t æ r k"
+          },
+          "Modern Hebrew": {
+            "form": "χazak",
+            "segments": "χ a z a k"
+          },
+          "Korean": {
+            "form": "kaŋɦan",
+            "segments": "k a ŋ ɦ a n"
+          }
+        },
+        {
+          "concept_id": "404_road",
+          "concept": "ROAD",
+          "distance": 0.31662463557489245,
+          "Norwegian (Bokmål)": {
+            "form": "ˈɡaːtə",
+            "segments": "g aː t ə"
+          },
+          "Modern Hebrew": {
+            "form": "kviʃ",
+            "segments": "k v i ʃ"
+          },
+          "Korean": {
+            "form": "kil",
+            "segments": "k i l"
+          }
+        },
+        {
+          "concept_id": "242_calm",
+          "concept": "SILENCE",
+          "distance": 0.3166711628711127,
+          "Norwegian (Bokmål)": {
+            "form": "ruː",
+            "segments": "r uː"
+          },
+          "Modern Hebrew": {
+            "form": "ʃalva",
+            "segments": "ʃ a l v a"
+          },
+          "Korean": {
+            "form": "sʰwim",
+            "segments": "sʰ w i m"
+          }
+        },
+        {
+          "concept_id": "947_gather",
+          "concept": "GATHER",
+          "distance": 0.316894244569547,
+          "Norwegian (Bokmål)": {
+            "form": "ˈsɑmlə",
+            "segments": "s ɑ m l ə"
+          },
+          "Modern Hebrew": {
+            "form": "asaf",
+            "segments": "a s a f"
+          },
+          "Korean": {
+            "form": "mweuda",
+            "segments": "m w e u d a"
+          }
+        },
+        {
+          "concept_id": "2_ear",
+          "concept": "EAR",
+          "distance": 0.3228759928098091,
+          "Norwegian (Bokmål)": {
+            "form": "ˈøːrə",
+            "segments": "øː r ə"
+          },
+          "Modern Hebrew": {
+            "form": "ozɛn",
+            "segments": "o z ɛ n"
+          },
+          "Korean": {
+            "form": "kwi",
+            "segments": "k w i"
+          }
+        },
+        {
+          "concept_id": "460_autumn",
+          "concept": "AUTUMN",
+          "distance": 0.3233748202435731,
+          "Norwegian (Bokmål)": {
+            "form": "hœst",
+            "segments": "h œ s t"
+          },
+          "Modern Hebrew": {
+            "form": "stav",
+            "segments": "s t a v"
+          },
+          "Korean": {
+            "form": "kɛul",
+            "segments": "k ɛ u l"
+          }
+        },
+        {
+          "concept_id": "171_berry",
+          "concept": "BERRY",
+          "distance": 0.32564724297207004,
+          "Norwegian (Bokmål)": {
+            "form": "bæːr",
+            "segments": "b æː r"
+          },
+          "Modern Hebrew": {
+            "form": "anava",
+            "segments": "a n a v a"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɡwa",
+            "segments": "tɕ a ŋ g w a"
+          }
+        },
+        {
+          "concept_id": "446_fault",
+          "concept": "FAULT",
+          "distance": 0.326103037631094,
+          "Norwegian (Bokmål)": {
+            "form": "ʃʏl",
+            "segments": "ʃ ʏ l"
+          },
+          "Modern Hebrew": {
+            "form": "aʃma",
+            "segments": "a ʃ m a"
+          },
+          "Korean": {
+            "form": "pucɛ",
+            "segments": "p u c ɛ"
+          }
+        },
+        {
+          "concept_id": "405_village",
+          "concept": "VILLAGE",
+          "distance": 0.3283199981492628,
+          "Norwegian (Bokmål)": {
+            "form": "ˈlɑnsbyː",
+            "segments": "l ɑ n s b yː"
+          },
+          "Modern Hebrew": {
+            "form": "kfaʁ",
+            "segments": "k f a ʁ"
+          },
+          "Korean": {
+            "form": "con",
+            "segments": "c o n"
+          }
+        },
+        {
+          "concept_id": "112_tree",
+          "concept": "TREE",
+          "distance": 0.33070348472359656,
+          "Norwegian (Bokmål)": {
+            "form": "treː",
+            "segments": "t r eː"
+          },
+          "Modern Hebrew": {
+            "form": "ɛt͡s",
+            "segments": "ɛ ts"
+          },
+          "Korean": {
+            "form": "namu",
+            "segments": "n a m u"
+          }
+        },
+        {
+          "concept_id": "571_famous",
+          "concept": "famous",
+          "distance": 0.33089562822510543,
+          "Norwegian (Bokmål)": {
+            "form": "bəˈrœmt",
+            "segments": "b ə r œ m t"
+          },
+          "Modern Hebrew": {
+            "form": "məfuʁsam",
+            "segments": "m ə f u ʁ s a m"
+          },
+          "Korean": {
+            "form": "jumjʌŋɦan",
+            "segments": "j u m j ʌ ŋ ɦ a n"
+          }
+        },
+        {
+          "concept_id": "57_sun",
+          "concept": "SUN",
+          "distance": 0.33282948161776477,
+          "Norwegian (Bokmål)": {
+            "form": "suːl",
+            "segments": "s uː l"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛmɛʃ",
+            "segments": "ʃ ɛ m ɛ ʃ"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "163_snake",
+          "concept": "SNAKE",
+          "distance": 0.3331269226539368,
+          "Norwegian (Bokmål)": {
+            "form": "ɔrm",
+            "segments": "ɔ r m"
+          },
+          "Modern Hebrew": {
+            "form": "naχaʃ",
+            "segments": "n a χ a ʃ"
+          },
+          "Korean": {
+            "form": "pɛm",
+            "segments": "p ɛ m"
+          }
+        },
+        {
+          "concept_id": "393_health",
+          "concept": "HEALTHY",
+          "distance": 0.333783217465432,
+          "Norwegian (Bokmål)": {
+            "form": "ˈhɛlsə",
+            "segments": "h ɛ l s ə"
+          },
+          "Modern Hebrew": {
+            "form": "bʁiʔut",
+            "segments": "b ʁ i ʔ u t"
+          },
+          "Korean": {
+            "form": "wisʰɛŋ",
+            "segments": "w i sʰ ɛ ŋ"
+          }
+        },
+        {
+          "concept_id": "356_butter",
+          "concept": "BUTTER",
+          "distance": 0.33545566759322387,
+          "Norwegian (Bokmål)": {
+            "form": "smœr",
+            "segments": "s m œ r"
+          },
+          "Modern Hebrew": {
+            "form": "χɛmʔa",
+            "segments": "χ ɛ m ʔ a"
+          },
+          "Korean": {
+            "form": "pʌtʰʌ",
+            "segments": "p ʌ tʰ ʌ"
+          }
+        },
+        {
+          "concept_id": "395_pain",
+          "concept": "PAIN",
+          "distance": 0.337351061052809,
+          "Norwegian (Bokmål)": {
+            "form": "ˈsmærtə",
+            "segments": "s m æ r t ə"
+          },
+          "Modern Hebrew": {
+            "form": "kəʔɛv",
+            "segments": "k ə ʔ ɛ v"
+          },
+          "Korean": {
+            "form": "apʰɯmɡotʰoŋ",
+            "segments": "a pʰ ɯ m g o tʰ o ŋ"
+          }
+        },
+        {
+          "concept_id": "146_mouse",
+          "concept": "MOUSE",
+          "distance": 0.3375885399891083,
+          "Norwegian (Bokmål)": {
+            "form": "mʉːs",
+            "segments": "m ʉː s"
+          },
+          "Modern Hebrew": {
+            "form": "aχbaʁ",
+            "segments": "a χ b a ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕwi",
+            "segments": "tɕ w i"
+          }
+        },
+        {
+          "concept_id": "379_boot",
+          "concept": "BOOT",
+          "distance": 0.33836572814126936,
+          "Norwegian (Bokmål)": {
+            "form": "ˈstœvəl",
+            "segments": "s t œ v ə l"
+          },
+          "Modern Hebrew": {
+            "form": "maɡaf",
+            "segments": "m a g a f"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɦwa",
+            "segments": "tɕ a ŋ ɦ w a"
+          }
+        },
+        {
+          "concept_id": "45_brain",
+          "concept": "BRAIN",
+          "distance": 0.33934532182460225,
+          "Norwegian (Bokmål)": {
+            "form": "ˈjæːrnə",
+            "segments": "j æː r n ə"
+          },
+          "Modern Hebrew": {
+            "form": "moaχ",
+            "segments": "m oa χ"
+          },
+          "Korean": {
+            "form": "nwe",
+            "segments": "n w e"
+          }
+        },
+        {
+          "concept_id": "284_amount",
+          "concept": "AMOUNT",
+          "distance": 0.33976183162910817,
+          "Norwegian (Bokmål)": {
+            "form": "ˈmɛŋdə",
+            "segments": "m ɛ ŋ d ə"
+          },
+          "Modern Hebrew": {
+            "form": "kamut",
+            "segments": "k a m u t"
+          },
+          "Korean": {
+            "form": "sʰujaŋ",
+            "segments": "sʰ u j a ŋ"
+          }
+        },
+        {
+          "concept_id": "866_cut",
+          "concept": "CUT",
+          "distance": 0.341201950348304,
+          "Norwegian (Bokmål)": {
+            "form": "ˈklɪpə",
+            "segments": "k l ɪ p ə"
+          },
+          "Modern Hebrew": {
+            "form": "ɡazaʁ",
+            "segments": "g a z a ʁ"
+          },
+          "Korean": {
+            "form": "peda",
+            "segments": "p e d a"
+          }
+        },
+        {
+          "concept_id": "80_chill",
+          "concept": "COLD (CHILL)",
+          "distance": 0.341552699078129,
+          "Norwegian (Bokmål)": {
+            "form": "ˈkʉlə",
+            "segments": "k ʉ l ə"
+          },
+          "Modern Hebrew": {
+            "form": "koʁ",
+            "segments": "k o ʁ"
+          },
+          "Korean": {
+            "form": "cuwi",
+            "segments": "c u w i"
+          }
+        },
+        {
+          "concept_id": "599_before",
+          "concept": "BEFORE",
+          "distance": 0.34321086522625993,
+          "Norwegian (Bokmål)": {
+            "form": "føːr",
+            "segments": "f øː r"
+          },
+          "Modern Hebrew": {
+            "form": "lifnɛjzɛ",
+            "segments": "l i f n ɛ j z ɛ"
+          },
+          "Korean": {
+            "form": "miɾi",
+            "segments": "m i ɾ i"
+          }
+        },
+        {
+          "concept_id": "159_swan",
+          "concept": "SWAN",
+          "distance": 0.34552627584070406,
+          "Norwegian (Bokmål)": {
+            "form": "ˈsvaːnə",
+            "segments": "s v aː n ə"
+          },
+          "Modern Hebrew": {
+            "form": "baʁbuʁ",
+            "segments": "b a ʁ b u ʁ"
+          },
+          "Korean": {
+            "form": "pɛd͡ʑo",
+            "segments": "p ɛ dʑ o"
+          }
+        },
+        {
+          "concept_id": "523_dark",
+          "concept": "DARK",
+          "distance": 0.3457691003552584,
+          "Norwegian (Bokmål)": {
+            "form": "mœrk",
+            "segments": "m œ r k"
+          },
+          "Modern Hebrew": {
+            "form": "amum",
+            "segments": "a m u m"
+          },
+          "Korean": {
+            "form": "ʌduun",
+            "segments": "ʌ d u u n"
+          }
+        },
+        {
+          "concept_id": "457_year",
+          "concept": "YEAR",
+          "distance": 0.3460615626096921,
+          "Norwegian (Bokmål)": {
+            "form": "oːr",
+            "segments": "oː r"
+          },
+          "Modern Hebrew": {
+            "form": "ʃana",
+            "segments": "ʃ a n a"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "250_help",
+          "concept": "HELP (ASSISTANCE)",
+          "distance": 0.3490056526531508,
+          "Norwegian (Bokmål)": {
+            "form": "jɛlp",
+            "segments": "j ɛ l p"
+          },
+          "Modern Hebrew": {
+            "form": "ɛzʁa",
+            "segments": "ɛ z ʁ a"
+          },
+          "Korean": {
+            "form": "pod͡ʑwa",
+            "segments": "p o dʑ w a"
+          }
+        },
+        {
+          "concept_id": "216_wish",
+          "concept": "wish",
+          "distance": 0.3496869957838982,
+          "Norwegian (Bokmål)": {
+            "form": "ˈœnskə",
+            "segments": "œ n s k ə"
+          },
+          "Modern Hebrew": {
+            "form": "iχul",
+            "segments": "i χ u l"
+          },
+          "Korean": {
+            "form": "sʰomaŋ",
+            "segments": "sʰ o m a ŋ"
+          }
+        },
+        {
+          "concept_id": "671_eighty",
+          "concept": "EIGHTY",
+          "distance": 0.3501622596851568,
+          "Norwegian (Bokmål)": {
+            "form": "ˈɔtɪ",
+            "segments": "ɔ t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "ʃmonim",
+            "segments": "ʃ m o n i m"
+          },
+          "Korean": {
+            "form": "jʌdɯn",
+            "segments": "j ʌ d ɯ n"
+          }
+        },
+        {
+          "concept_id": "617_above",
+          "concept": "HIGH",
+          "distance": 0.350168442642761,
+          "Norwegian (Bokmål)": {
+            "form": "ˈɔpə",
+            "segments": "ɔ p ə"
+          },
+          "Modern Hebrew": {
+            "form": "mɛʔal",
+            "segments": "m ɛ ʔ a l"
+          },
+          "Korean": {
+            "form": "wie",
+            "segments": "w i e"
+          }
+        },
+        {
+          "concept_id": "508_wet",
+          "concept": "WET",
+          "distance": 0.35028534329233135,
+          "Norwegian (Bokmål)": {
+            "form": "voːt",
+            "segments": "v oː t"
+          },
+          "Modern Hebrew": {
+            "form": "ʁatuv",
+            "segments": "ʁ a t u v"
+          },
+          "Korean": {
+            "form": "t͡ɕʌd͡ʑɯn",
+            "segments": "tɕ ʌ dʑ ɯ n"
+          }
+        },
+        {
+          "concept_id": "144_fox",
+          "concept": "FOX",
+          "distance": 0.350436052759234,
+          "Norwegian (Bokmål)": {
+            "form": "reːv",
+            "segments": "r eː v"
+          },
+          "Modern Hebrew": {
+            "form": "ʃuʔal",
+            "segments": "ʃ u ʔ a l"
+          },
+          "Korean": {
+            "form": "jʌu",
+            "segments": "j ʌ u"
+          }
+        },
+        {
+          "concept_id": "546_diligent",
+          "concept": "DILIGENT",
+          "distance": 0.3512251268970818,
+          "Norwegian (Bokmål)": {
+            "form": "ˈflɪtɪ",
+            "segments": "f l ɪ t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "χaʁut͡s",
+            "segments": "χ a ʁ u ts"
+          },
+          "Korean": {
+            "form": "kɯnmjʌnɦan",
+            "segments": "k ɯ n m j ʌ n ɦ a n"
+          }
+        },
+        {
+          "concept_id": "206_brother",
+          "concept": "BROTHER",
+          "distance": 0.351701800216688,
+          "Norwegian (Bokmål)": {
+            "form": "bruːr",
+            "segments": "b r uː r"
+          },
+          "Modern Hebrew": {
+            "form": "aχ",
+            "segments": "a χ"
+          },
+          "Korean": {
+            "form": "çjʌŋd͡ʑe",
+            "segments": "ç j ʌ ŋ dʑ e"
+          }
+        },
+        {
+          "concept_id": "492_flat",
+          "concept": "FLAT",
+          "distance": 0.3518140263542289,
+          "Norwegian (Bokmål)": {
+            "form": "flaːt",
+            "segments": "f l aː t"
+          },
+          "Modern Hebrew": {
+            "form": "ʃatuaχ",
+            "segments": "ʃ a t ua χ"
+          },
+          "Korean": {
+            "form": "jatʰɯn",
+            "segments": "j a tʰ ɯ n"
+          }
+        }
+      ]
+    },
+    {
+      "LR": "dan",
+      "RL": "heb",
+      "TB": "kor",
+      "shared_concepts": 810,
+      "same_meaning_distance": 0.43031394134348366,
+      "null_mean_distance": 0.42865436168970483,
+      "semantic_advantage": -0.001659579653778831,
+      "pairwise": {
+        "LR_RL": {
+          "same_meaning_distance": 0.40661018731867216,
+          "mismatched_meaning_null": 0.40288728948057934,
+          "advantage": -0.00372289783809282,
+          "permutation_p": 0.9650872817955112
+        },
+        "LR_TB": {
+          "same_meaning_distance": 0.4689048633227196,
+          "mismatched_meaning_null": 0.46763337996978316,
+          "advantage": -0.00127148335293642,
+          "permutation_p": 0.7506234413965087
+        },
+        "RL_TB": {
+          "same_meaning_distance": 0.4154267733890592,
+          "mismatched_meaning_null": 0.415442415618752,
+          "advantage": 1.564222969280271e-05,
+          "permutation_p": 0.5211970074812967
+        }
+      },
+      "orientation_rank": 3,
+      "orientation_table": [
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.4096236556263919,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.4096236556263919,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.43031394134348366,
+          "is_expected": true
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.43031394134348366,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4353064047971304,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4353064047971304,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4358363272107141,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4358363272107141,
+          "is_expected": false
+        }
+      ],
+      "fixed_trio_permutation_p": 0.9326683291770573,
+      "languages": {
+        "LR": "Danish",
+        "RL": "Modern Hebrew",
+        "TB": "Korean"
+      },
+      "top_same_meaning_examples": [
+        {
+          "concept_id": "599_before",
+          "concept": "BEFORE",
+          "distance": 0.27270987169376676,
+          "Danish": {
+            "form": "fɐːˀʁ",
+            "segments": "f ɐː ʔ ʁ"
+          },
+          "Modern Hebrew": {
+            "form": "lifnɛjzɛ",
+            "segments": "l i f n ɛ j z ɛ"
+          },
+          "Korean": {
+            "form": "miɾi",
+            "segments": "m i ɾ i"
+          }
+        },
+        {
+          "concept_id": "651_why",
+          "concept": "WHY",
+          "distance": 0.3007558718356704,
+          "Danish": {
+            "form": "ˈvɔfɒ",
+            "segments": "v ɔ f ɒ"
+          },
+          "Modern Hebrew": {
+            "form": "lama",
+            "segments": "l a m a"
+          },
+          "Korean": {
+            "form": "wɛ",
+            "segments": "w ɛ"
+          }
+        },
+        {
+          "concept_id": "492_flat",
+          "concept": "FLAT",
+          "distance": 0.3031031294044982,
+          "Danish": {
+            "form": "flaːˀð",
+            "segments": "f l aː ʔ ð"
+          },
+          "Modern Hebrew": {
+            "form": "ʃatuaχ",
+            "segments": "ʃ a t ua χ"
+          },
+          "Korean": {
+            "form": "jatʰɯn",
+            "segments": "j a tʰ ɯ n"
+          }
+        },
+        {
+          "concept_id": "405_village",
+          "concept": "VILLAGE",
+          "distance": 0.3065508841950929,
+          "Danish": {
+            "form": "ˈlanˀsbyː",
+            "segments": "l a nˀ s b yː"
+          },
+          "Modern Hebrew": {
+            "form": "kfaʁ",
+            "segments": "k f a ʁ"
+          },
+          "Korean": {
+            "form": "con",
+            "segments": "c o n"
+          }
+        },
+        {
+          "concept_id": "395_pain",
+          "concept": "PAIN",
+          "distance": 0.30920127755903065,
+          "Danish": {
+            "form": "ˈsmɛʀdə",
+            "segments": "s m ɛ ʀ d ə"
+          },
+          "Modern Hebrew": {
+            "form": "kəʔɛv",
+            "segments": "k ə ʔ ɛ v"
+          },
+          "Korean": {
+            "form": "apʰɯmɡotʰoŋ",
+            "segments": "a pʰ ɯ m g o tʰ o ŋ"
+          }
+        },
+        {
+          "concept_id": "607_hither",
+          "concept": "HITHER (HERE TO)",
+          "distance": 0.31024706620369874,
+          "Danish": {
+            "form": "hið",
+            "segments": "h i ð"
+          },
+          "Modern Hebrew": {
+            "form": "po",
+            "segments": "p o"
+          },
+          "Korean": {
+            "form": "jʌɡiɾo",
+            "segments": "j ʌ g i ɾ o"
+          }
+        },
+        {
+          "concept_id": "242_calm",
+          "concept": "SILENCE",
+          "distance": 0.3106618887404781,
+          "Danish": {
+            "form": "ʀoːˀ",
+            "segments": "ʀ oː ʔ"
+          },
+          "Modern Hebrew": {
+            "form": "ʃalva",
+            "segments": "ʃ a l v a"
+          },
+          "Korean": {
+            "form": "sʰwim",
+            "segments": "sʰ w i m"
+          }
+        },
+        {
+          "concept_id": "171_berry",
+          "concept": "BERRY",
+          "distance": 0.31559942829863474,
+          "Danish": {
+            "form": "bɛr",
+            "segments": "b ɛ r"
+          },
+          "Modern Hebrew": {
+            "form": "anava",
+            "segments": "a n a v a"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɡwa",
+            "segments": "tɕ a ŋ g w a"
+          }
+        },
+        {
+          "concept_id": "947_gather",
+          "concept": "GATHER",
+          "distance": 0.316894244569547,
+          "Danish": {
+            "form": "ˈsɑmlə",
+            "segments": "s ɑ m l ə"
+          },
+          "Modern Hebrew": {
+            "form": "asaf",
+            "segments": "a s a f"
+          },
+          "Korean": {
+            "form": "mweuda",
+            "segments": "m w e u d a"
+          }
+        },
+        {
+          "concept_id": "57_sun",
+          "concept": "SUN",
+          "distance": 0.3206116464820635,
+          "Danish": {
+            "form": "ˈsoːˀl",
+            "segments": "s oː ʔ l"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛmɛʃ",
+            "segments": "ʃ ɛ m ɛ ʃ"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "144_fox",
+          "concept": "FOX",
+          "distance": 0.3218005523658339,
+          "Danish": {
+            "form": "ʀɛːˀv",
+            "segments": "ʀ ɛː ʔ v"
+          },
+          "Modern Hebrew": {
+            "form": "ʃuʔal",
+            "segments": "ʃ u ʔ a l"
+          },
+          "Korean": {
+            "form": "jʌu",
+            "segments": "j ʌ u"
+          }
+        },
+        {
+          "concept_id": "26_arm",
+          "concept": "ARM",
+          "distance": 0.3224056815276363,
+          "Danish": {
+            "form": "ɑːˀʁm",
+            "segments": "ɑː ʔ ʁ m"
+          },
+          "Modern Hebrew": {
+            "form": "zʁoʔa",
+            "segments": "z ʁ o ʔ a"
+          },
+          "Korean": {
+            "form": "pʰal",
+            "segments": "pʰ a l"
+          }
+        },
+        {
+          "concept_id": "80_chill",
+          "concept": "COLD (CHILL)",
+          "distance": 0.32275311083749464,
+          "Danish": {
+            "form": "ˈkulə",
+            "segments": "k u l ə"
+          },
+          "Modern Hebrew": {
+            "form": "koʁ",
+            "segments": "k o ʁ"
+          },
+          "Korean": {
+            "form": "cuwi",
+            "segments": "c u w i"
+          }
+        },
+        {
+          "concept_id": "582_last",
+          "concept": "LAST (FINAL)",
+          "distance": 0.3242873731986045,
+          "Danish": {
+            "form": "ˈsisdə",
+            "segments": "s i s d ə"
+          },
+          "Modern Hebrew": {
+            "form": "aχaʁon",
+            "segments": "a χ a ʁ o n"
+          },
+          "Korean": {
+            "form": "jiβud͡ʑaji",
+            "segments": "j i β u dʑ a j i"
+          }
+        },
+        {
+          "concept_id": "349_dish",
+          "concept": "dish",
+          "distance": 0.3288485937542747,
+          "Danish": {
+            "form": "ʁəð",
+            "segments": "ʁ ə ð"
+          },
+          "Modern Hebrew": {
+            "form": "aʁuχa",
+            "segments": "a ʁ u χ a"
+          },
+          "Korean": {
+            "form": "ɯmɕʰiŋmul",
+            "segments": "ɯ m ɕʰ i ŋ m u l"
+          }
+        },
+        {
+          "concept_id": "404_road",
+          "concept": "ROAD",
+          "distance": 0.32962083870568465,
+          "Danish": {
+            "form": "ˈɡaːðə",
+            "segments": "g aː ð ə"
+          },
+          "Modern Hebrew": {
+            "form": "kviʃ",
+            "segments": "k v i ʃ"
+          },
+          "Korean": {
+            "form": "kil",
+            "segments": "k i l"
+          }
+        },
+        {
+          "concept_id": "78_ice",
+          "concept": "ICE",
+          "distance": 0.33084707401306895,
+          "Danish": {
+            "form": "ˈiːˀs",
+            "segments": "iː ʔ s"
+          },
+          "Modern Hebrew": {
+            "form": "kɛʁaχ",
+            "segments": "k ɛ ʁ a χ"
+          },
+          "Korean": {
+            "form": "ʌlɯm",
+            "segments": "ʌ l ɯ m"
+          }
+        },
+        {
+          "concept_id": "571_famous",
+          "concept": "famous",
+          "distance": 0.33141041670954335,
+          "Danish": {
+            "form": "beˈʁœmˀd",
+            "segments": "b e ʁ œ mˀ d"
+          },
+          "Modern Hebrew": {
+            "form": "məfuʁsam",
+            "segments": "m ə f u ʁ s a m"
+          },
+          "Korean": {
+            "form": "jumjʌŋɦan",
+            "segments": "j u m j ʌ ŋ ɦ a n"
+          }
+        },
+        {
+          "concept_id": "379_boot",
+          "concept": "BOOT",
+          "distance": 0.33230013893294674,
+          "Danish": {
+            "form": "ˈsdœwlə",
+            "segments": "s d œ w l ə"
+          },
+          "Modern Hebrew": {
+            "form": "maɡaf",
+            "segments": "m a g a f"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɦwa",
+            "segments": "tɕ a ŋ ɦ w a"
+          }
+        },
+        {
+          "concept_id": "271_thing",
+          "concept": "THING",
+          "distance": 0.33234193604057743,
+          "Danish": {
+            "form": "saːˀ",
+            "segments": "s aː ʔ"
+          },
+          "Modern Hebrew": {
+            "form": "davaʁ",
+            "segments": "d a v a ʁ"
+          },
+          "Korean": {
+            "form": "muŋe",
+            "segments": "m u ŋ e"
+          }
+        },
+        {
+          "concept_id": "146_mouse",
+          "concept": "MOUSE",
+          "distance": 0.3327888165055176,
+          "Danish": {
+            "form": "muːˀs",
+            "segments": "m uː ʔ s"
+          },
+          "Modern Hebrew": {
+            "form": "aχbaʁ",
+            "segments": "a χ b a ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕwi",
+            "segments": "tɕ w i"
+          }
+        },
+        {
+          "concept_id": "207_sister",
+          "concept": "SISTER",
+          "distance": 0.3329260188366067,
+          "Danish": {
+            "form": "ˈsøsdə",
+            "segments": "s ø s d ə"
+          },
+          "Modern Hebrew": {
+            "form": "aχot",
+            "segments": "a χ o t"
+          },
+          "Korean": {
+            "form": "nɯ͡i",
+            "segments": "n ɯi"
+          }
+        },
+        {
+          "concept_id": "44_bone",
+          "concept": "BONE",
+          "distance": 0.3359156317537186,
+          "Danish": {
+            "form": "ˈbeːˀn",
+            "segments": "b eː ʔ n"
+          },
+          "Modern Hebrew": {
+            "form": "ɛt͡sɛm",
+            "segments": "ɛ ts ɛ m"
+          },
+          "Korean": {
+            "form": "pp͈͈jʌ",
+            "segments": "p p͈ j ʌ"
+          }
+        },
+        {
+          "concept_id": "74_fog",
+          "concept": "FOG",
+          "distance": 0.33616919943178786,
+          "Danish": {
+            "form": "ˈtɔːwə",
+            "segments": "t ɔː w ə"
+          },
+          "Modern Hebrew": {
+            "form": "aʁafɛl",
+            "segments": "a ʁ a f ɛ l"
+          },
+          "Korean": {
+            "form": "aŋɛ",
+            "segments": "a ŋ ɛ"
+          }
+        },
+        {
+          "concept_id": "272_fringe",
+          "concept": "FRINGE",
+          "distance": 0.33962852899780477,
+          "Danish": {
+            "form": "ʀɑnˀ",
+            "segments": "ʀ ɑ nˀ"
+          },
+          "Modern Hebrew": {
+            "form": "paʁvaʁ",
+            "segments": "p a ʁ v a ʁ"
+          },
+          "Korean": {
+            "form": "ka",
+            "segments": "k a"
+          }
+        },
+        {
+          "concept_id": "284_amount",
+          "concept": "AMOUNT",
+          "distance": 0.33976183162910817,
+          "Danish": {
+            "form": "ˈmɛŋˀdə",
+            "segments": "m ɛ ŋˀ d ə"
+          },
+          "Modern Hebrew": {
+            "form": "kamut",
+            "segments": "k a m u t"
+          },
+          "Korean": {
+            "form": "sʰujaŋ",
+            "segments": "sʰ u j a ŋ"
+          }
+        },
+        {
+          "concept_id": "2_ear",
+          "concept": "EAR",
+          "distance": 0.34004330124606996,
+          "Danish": {
+            "form": "ˈøːʀə",
+            "segments": "øː ʀ ə"
+          },
+          "Modern Hebrew": {
+            "form": "ozɛn",
+            "segments": "o z ɛ n"
+          },
+          "Korean": {
+            "form": "kwi",
+            "segments": "k w i"
+          }
+        },
+        {
+          "concept_id": "536_deaf",
+          "concept": "DEAF",
+          "distance": 0.34013388140045836,
+          "Danish": {
+            "form": "døːˀv",
+            "segments": "d øː ʔ v"
+          },
+          "Modern Hebrew": {
+            "form": "χɛʁɛʃ",
+            "segments": "χ ɛ ʁ ɛ ʃ"
+          },
+          "Korean": {
+            "form": "muɡamɡanɦan",
+            "segments": "m u g a m g a n ɦ a n"
+          }
+        },
+        {
+          "concept_id": "21_belly",
+          "concept": "BELLY",
+          "distance": 0.34068974357143716,
+          "Danish": {
+            "form": "ˈmaːvə",
+            "segments": "m aː v ə"
+          },
+          "Modern Hebrew": {
+            "form": "bɛtɛn",
+            "segments": "b ɛ t ɛ n"
+          },
+          "Korean": {
+            "form": "pɛ",
+            "segments": "p ɛ"
+          }
+        },
+        {
+          "concept_id": "413_grave",
+          "concept": "GRAVE",
+          "distance": 0.3411272076313046,
+          "Danish": {
+            "form": "ɡʀɑːˀv",
+            "segments": "g ʀ ɑː ʔ v"
+          },
+          "Modern Hebrew": {
+            "form": "kɛvɛʁ",
+            "segments": "k ɛ v ɛ ʁ"
+          },
+          "Korean": {
+            "form": "mudʌm",
+            "segments": "m u d ʌ m"
+          }
+        },
+        {
+          "concept_id": "550_dear",
+          "concept": "DEAR",
+          "distance": 0.34135265196213815,
+          "Danish": {
+            "form": "ʀɑːˀʀ",
+            "segments": "ʀ ɑː ʔ ʀ"
+          },
+          "Modern Hebrew": {
+            "form": "ahuv",
+            "segments": "a h u v"
+          },
+          "Korean": {
+            "form": "cinɛɦanɯn",
+            "segments": "c i n ɛ ɦ a n ɯ n"
+          }
+        },
+        {
+          "concept_id": "348_food",
+          "concept": "FOOD",
+          "distance": 0.34230946364702497,
+          "Danish": {
+            "form": "mað",
+            "segments": "m a ð"
+          },
+          "Modern Hebrew": {
+            "form": "tzuna",
+            "segments": "t z u n a"
+          },
+          "Korean": {
+            "form": "ɕʰiŋljo",
+            "segments": "ɕʰ i ŋ l j o"
+          }
+        },
+        {
+          "concept_id": "148_bird",
+          "concept": "BIRD",
+          "distance": 0.343227544769871,
+          "Danish": {
+            "form": "fuːˀl",
+            "segments": "f uː ʔ l"
+          },
+          "Modern Hebrew": {
+            "form": "t͡sipoʁ",
+            "segments": "ts i p o ʁ"
+          },
+          "Korean": {
+            "form": "sʰɛ",
+            "segments": "sʰ ɛ"
+          }
+        },
+        {
+          "concept_id": "987_tell",
+          "concept": "TELL",
+          "distance": 0.3435500576433394,
+          "Danish": {
+            "form": "beˈʁɛdə",
+            "segments": "b e ʁ ɛ d ə"
+          },
+          "Modern Hebrew": {
+            "form": "sipɛʁ",
+            "segments": "s i p ɛ ʁ"
+          },
+          "Korean": {
+            "form": "ijaɡiɦada",
+            "segments": "i j a g i ɦ a d a"
+          }
+        },
+        {
+          "concept_id": "457_year",
+          "concept": "YEAR",
+          "distance": 0.3448924991821008,
+          "Danish": {
+            "form": "ˈɒːˀ",
+            "segments": "ɒː ʔ"
+          },
+          "Modern Hebrew": {
+            "form": "ʃana",
+            "segments": "ʃ a n a"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "362_tea",
+          "concept": "TEA",
+          "distance": 0.3452380304932565,
+          "Danish": {
+            "form": "ˈteːˀ",
+            "segments": "t eː ʔ"
+          },
+          "Modern Hebrew": {
+            "form": "tɛ",
+            "segments": "t ɛ"
+          },
+          "Korean": {
+            "form": "ca",
+            "segments": "c a"
+          }
+        },
+        {
+          "concept_id": "159_swan",
+          "concept": "SWAN",
+          "distance": 0.34552627584070406,
+          "Danish": {
+            "form": "ˈsvaːnə",
+            "segments": "s v aː n ə"
+          },
+          "Modern Hebrew": {
+            "form": "baʁbuʁ",
+            "segments": "b a ʁ b u ʁ"
+          },
+          "Korean": {
+            "form": "pɛd͡ʑo",
+            "segments": "p ɛ dʑ o"
+          }
+        },
+        {
+          "concept_id": "434_border",
+          "concept": "BORDER",
+          "distance": 0.34609586389866315,
+          "Danish": {
+            "form": "ˈɡʀɛnsə",
+            "segments": "g ʀ ɛ n s ə"
+          },
+          "Modern Hebrew": {
+            "form": "ɡvul",
+            "segments": "g v u l"
+          },
+          "Korean": {
+            "form": "kukk͈͈jʌŋ",
+            "segments": "k u k k͈ j ʌ ŋ"
+          }
+        },
+        {
+          "concept_id": "988_convey",
+          "concept": "CONVEY (A MESSAGE)",
+          "distance": 0.34680935442130906,
+          "Danish": {
+            "form": "ˈmɛðdeːˀlə",
+            "segments": "m ɛ ð d eː ʔ l ə"
+          },
+          "Modern Hebrew": {
+            "form": "masaʁ",
+            "segments": "m a s a ʁ"
+          },
+          "Korean": {
+            "form": "ijaɡiɦada",
+            "segments": "i j a g i ɦ a d a"
+          }
+        },
+        {
+          "concept_id": "631_behind",
+          "concept": "BEHIND",
+          "distance": 0.3471477481197747,
+          "Danish": {
+            "form": "baːˀ",
+            "segments": "b aː ʔ"
+          },
+          "Modern Hebrew": {
+            "form": "mɛʔaχoʁɛj",
+            "segments": "m ɛ ʔ a χ o ʁ ɛ j"
+          },
+          "Korean": {
+            "form": "twie",
+            "segments": "t w i e"
+          }
+        }
+      ]
+    },
+    {
+      "LR": "swe",
+      "RL": "heb",
+      "TB": "kor",
+      "shared_concepts": 855,
+      "same_meaning_distance": 0.43402578328340125,
+      "null_mean_distance": 0.4315227821703441,
+      "semantic_advantage": -0.002503001113057124,
+      "pairwise": {
+        "LR_RL": {
+          "same_meaning_distance": 0.41455442910828305,
+          "mismatched_meaning_null": 0.4094811949826084,
+          "advantage": -0.005073234125674675,
+          "permutation_p": 0.9850374064837906
+        },
+        "LR_TB": {
+          "same_meaning_distance": 0.47230930828212786,
+          "mismatched_meaning_null": 0.46952150751002736,
+          "advantage": -0.0027878007721005016,
+          "permutation_p": 0.9152119700748129
+        },
+        "RL_TB": {
+          "same_meaning_distance": 0.41521361245979277,
+          "mismatched_meaning_null": 0.41556564401839663,
+          "advantage": 0.00035203155860386026,
+          "permutation_p": 0.42144638403990026
+        }
+      },
+      "orientation_rank": 3,
+      "orientation_table": [
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.4131501532828826,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.4131501532828826,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.43402578328340125,
+          "is_expected": true
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.43402578328340125,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4384629890829407,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4384629890829407,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4403586641925426,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4403586641925426,
+          "is_expected": false
+        }
+      ],
+      "fixed_trio_permutation_p": 0.9775561097256857,
+      "languages": {
+        "LR": "Swedish",
+        "RL": "Modern Hebrew",
+        "TB": "Korean"
+      },
+      "top_same_meaning_examples": [
+        {
+          "concept_id": "651_why",
+          "concept": "WHY",
+          "distance": 0.2590456356227288,
+          "Swedish": {
+            "form": "varːfœr",
+            "segments": "v a rː f œ r"
+          },
+          "Modern Hebrew": {
+            "form": "lama",
+            "segments": "l a m a"
+          },
+          "Korean": {
+            "form": "wɛ",
+            "segments": "w ɛ"
+          }
+        },
+        {
+          "concept_id": "102_river",
+          "concept": "RIVER",
+          "distance": 0.27441912406722246,
+          "Swedish": {
+            "form": "ɛlːv",
+            "segments": "ɛ lː v"
+          },
+          "Modern Hebrew": {
+            "form": "nahaʁ",
+            "segments": "n a h a ʁ"
+          },
+          "Korean": {
+            "form": "kaŋ",
+            "segments": "k a ŋ"
+          }
+        },
+        {
+          "concept_id": "617_above",
+          "concept": "HIGH",
+          "distance": 0.2886278113847672,
+          "Swedish": {
+            "form": "uːvan",
+            "segments": "uː v a n"
+          },
+          "Modern Hebrew": {
+            "form": "mɛʔal",
+            "segments": "m ɛ ʔ a l"
+          },
+          "Korean": {
+            "form": "wie",
+            "segments": "w i e"
+          }
+        },
+        {
+          "concept_id": "59_star",
+          "concept": "STAR",
+          "distance": 0.300988519567625,
+          "Swedish": {
+            "form": "ɧæːɳa",
+            "segments": "ɧ æː ɳ a"
+          },
+          "Modern Hebrew": {
+            "form": "koχav",
+            "segments": "k o χ a v"
+          },
+          "Korean": {
+            "form": "pjʌl",
+            "segments": "p j ʌ l"
+          }
+        },
+        {
+          "concept_id": "395_pain",
+          "concept": "PAIN",
+          "distance": 0.30115747970666423,
+          "Swedish": {
+            "form": "smæːʈa",
+            "segments": "s m æː ʈ a"
+          },
+          "Modern Hebrew": {
+            "form": "kəʔɛv",
+            "segments": "k ə ʔ ɛ v"
+          },
+          "Korean": {
+            "form": "apʰɯmɡotʰoŋ",
+            "segments": "a pʰ ɯ m g o tʰ o ŋ"
+          }
+        },
+        {
+          "concept_id": "74_fog",
+          "concept": "FOG",
+          "distance": 0.3021578827751634,
+          "Swedish": {
+            "form": "dɪmːa",
+            "segments": "d ɪ mː a"
+          },
+          "Modern Hebrew": {
+            "form": "aʁafɛl",
+            "segments": "a ʁ a f ɛ l"
+          },
+          "Korean": {
+            "form": "aŋɛ",
+            "segments": "a ŋ ɛ"
+          }
+        },
+        {
+          "concept_id": "607_hither",
+          "concept": "HITHER (HERE TO)",
+          "distance": 0.30461788684200447,
+          "Swedish": {
+            "form": "hiːt",
+            "segments": "h iː t"
+          },
+          "Modern Hebrew": {
+            "form": "po",
+            "segments": "p o"
+          },
+          "Korean": {
+            "form": "jʌɡiɾo",
+            "segments": "j ʌ g i ɾ o"
+          }
+        },
+        {
+          "concept_id": "947_gather",
+          "concept": "GATHER",
+          "distance": 0.31416311610339887,
+          "Swedish": {
+            "form": "samːla",
+            "segments": "s a mː l a"
+          },
+          "Modern Hebrew": {
+            "form": "asaf",
+            "segments": "a s a f"
+          },
+          "Korean": {
+            "form": "mweuda",
+            "segments": "m w e u d a"
+          }
+        },
+        {
+          "concept_id": "538_strong",
+          "concept": "STRONG",
+          "distance": 0.3145773007102391,
+          "Swedish": {
+            "form": "starːk",
+            "segments": "s t a rː k"
+          },
+          "Modern Hebrew": {
+            "form": "χazak",
+            "segments": "χ a z a k"
+          },
+          "Korean": {
+            "form": "kaŋɦan",
+            "segments": "k a ŋ ɦ a n"
+          }
+        },
+        {
+          "concept_id": "2_ear",
+          "concept": "EAR",
+          "distance": 0.31511780787209326,
+          "Swedish": {
+            "form": "œːra",
+            "segments": "œː r a"
+          },
+          "Modern Hebrew": {
+            "form": "ozɛn",
+            "segments": "o z ɛ n"
+          },
+          "Korean": {
+            "form": "kwi",
+            "segments": "k w i"
+          }
+        },
+        {
+          "concept_id": "242_calm",
+          "concept": "SILENCE",
+          "distance": 0.3166711628711127,
+          "Swedish": {
+            "form": "ruː",
+            "segments": "r uː"
+          },
+          "Modern Hebrew": {
+            "form": "ʃalva",
+            "segments": "ʃ a l v a"
+          },
+          "Korean": {
+            "form": "sʰwim",
+            "segments": "sʰ w i m"
+          }
+        },
+        {
+          "concept_id": "269_middle",
+          "concept": "MIDDLE",
+          "distance": 0.32038626220565813,
+          "Swedish": {
+            "form": "mɪtː",
+            "segments": "m ɪ tː"
+          },
+          "Modern Hebrew": {
+            "form": "ɛmt͡sa",
+            "segments": "ɛ m ts a"
+          },
+          "Korean": {
+            "form": "kuŋɡan",
+            "segments": "k u ŋ g a n"
+          }
+        },
+        {
+          "concept_id": "843_spin",
+          "concept": "spin",
+          "distance": 0.3229281554812395,
+          "Swedish": {
+            "form": "vriːda",
+            "segments": "v r iː d a"
+          },
+          "Modern Hebrew": {
+            "form": "sovɛv",
+            "segments": "s o v ɛ v"
+          },
+          "Korean": {
+            "form": "ɸʷwed͡ʑʌn",
+            "segments": "ɸʷ w e dʑ ʌ n"
+          }
+        },
+        {
+          "concept_id": "460_autumn",
+          "concept": "AUTUMN",
+          "distance": 0.3233748202435731,
+          "Swedish": {
+            "form": "høsːt",
+            "segments": "h ø sː t"
+          },
+          "Modern Hebrew": {
+            "form": "stav",
+            "segments": "s t a v"
+          },
+          "Korean": {
+            "form": "kɛul",
+            "segments": "k ɛ u l"
+          }
+        },
+        {
+          "concept_id": "171_berry",
+          "concept": "BERRY",
+          "distance": 0.32564724297207004,
+          "Swedish": {
+            "form": "bæːr",
+            "segments": "b æː r"
+          },
+          "Modern Hebrew": {
+            "form": "anava",
+            "segments": "a n a v a"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɡwa",
+            "segments": "tɕ a ŋ g w a"
+          }
+        },
+        {
+          "concept_id": "266_space",
+          "concept": "SPACE (AVAILABLE)",
+          "distance": 0.3261256585090356,
+          "Swedish": {
+            "form": "platːs",
+            "segments": "p l a tː s"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛtaχ",
+            "segments": "ʃ ɛ t a χ"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋsʰo",
+            "segments": "tɕ a ŋ sʰ o"
+          }
+        },
+        {
+          "concept_id": "138_pig",
+          "concept": "PIG",
+          "distance": 0.3288056867126932,
+          "Swedish": {
+            "form": "sviːn",
+            "segments": "s v iː n"
+          },
+          "Modern Hebrew": {
+            "form": "χaziʁ",
+            "segments": "χ a z i ʁ"
+          },
+          "Korean": {
+            "form": "twɛd͡ʑi",
+            "segments": "t w ɛ dʑ i"
+          }
+        },
+        {
+          "concept_id": "218_spirit",
+          "concept": "SPIRIT",
+          "distance": 0.32907858678026175,
+          "Swedish": {
+            "form": "anːdə",
+            "segments": "a nː d ə"
+          },
+          "Modern Hebrew": {
+            "form": "ʁuaχ",
+            "segments": "ʁ ua χ"
+          },
+          "Korean": {
+            "form": "halɡi",
+            "segments": "h a l g i"
+          }
+        },
+        {
+          "concept_id": "571_famous",
+          "concept": "famous",
+          "distance": 0.33089562822510543,
+          "Swedish": {
+            "form": "bərømːd",
+            "segments": "b ə r ø mː d"
+          },
+          "Modern Hebrew": {
+            "form": "məfuʁsam",
+            "segments": "m ə f u ʁ s a m"
+          },
+          "Korean": {
+            "form": "jumjʌŋɦan",
+            "segments": "j u m j ʌ ŋ ɦ a n"
+          }
+        },
+        {
+          "concept_id": "57_sun",
+          "concept": "SUN",
+          "distance": 0.33282948161776477,
+          "Swedish": {
+            "form": "suːl",
+            "segments": "s uː l"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛmɛʃ",
+            "segments": "ʃ ɛ m ɛ ʃ"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "163_snake",
+          "concept": "SNAKE",
+          "distance": 0.3331269226539368,
+          "Swedish": {
+            "form": "ɔrːm",
+            "segments": "ɔ rː m"
+          },
+          "Modern Hebrew": {
+            "form": "naχaʃ",
+            "segments": "n a χ a ʃ"
+          },
+          "Korean": {
+            "form": "pɛm",
+            "segments": "p ɛ m"
+          }
+        },
+        {
+          "concept_id": "356_butter",
+          "concept": "BUTTER",
+          "distance": 0.33545566759322387,
+          "Swedish": {
+            "form": "smœːr",
+            "segments": "s m œː r"
+          },
+          "Modern Hebrew": {
+            "form": "χɛmʔa",
+            "segments": "χ ɛ m ʔ a"
+          },
+          "Korean": {
+            "form": "pʌtʰʌ",
+            "segments": "p ʌ tʰ ʌ"
+          }
+        },
+        {
+          "concept_id": "535_blind",
+          "concept": "BLIND",
+          "distance": 0.336047396794686,
+          "Swedish": {
+            "form": "blɪnːd",
+            "segments": "b l ɪ nː d"
+          },
+          "Modern Hebrew": {
+            "form": "ivɛʁ",
+            "segments": "i v ɛ ʁ"
+          },
+          "Korean": {
+            "form": "nunmʌn",
+            "segments": "n u n m ʌ n"
+          }
+        },
+        {
+          "concept_id": "424_shop",
+          "concept": "SHOP",
+          "distance": 0.3361009356257718,
+          "Swedish": {
+            "form": "affːær",
+            "segments": "a f fː æ r"
+          },
+          "Modern Hebrew": {
+            "form": "χanut",
+            "segments": "χ a n u t"
+          },
+          "Korean": {
+            "form": "kaɡe",
+            "segments": "k a g e"
+          }
+        },
+        {
+          "concept_id": "61_wind",
+          "concept": "WIND",
+          "distance": 0.336234195236404,
+          "Swedish": {
+            "form": "vɪnːd",
+            "segments": "v ɪ nː d"
+          },
+          "Modern Hebrew": {
+            "form": "ʁuaχ",
+            "segments": "ʁ ua χ"
+          },
+          "Korean": {
+            "form": "paɾam",
+            "segments": "p a ɾ a m"
+          }
+        },
+        {
+          "concept_id": "146_mouse",
+          "concept": "MOUSE",
+          "distance": 0.3375885399891083,
+          "Swedish": {
+            "form": "mʉːs",
+            "segments": "m ʉː s"
+          },
+          "Modern Hebrew": {
+            "form": "aχbaʁ",
+            "segments": "a χ b a ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕwi",
+            "segments": "tɕ w i"
+          }
+        },
+        {
+          "concept_id": "630_infrontof",
+          "concept": "IN FRONT OF",
+          "distance": 0.3381081645731796,
+          "Swedish": {
+            "form": "ʉːtanfœr",
+            "segments": "ʉː t a n f œ r"
+          },
+          "Modern Hebrew": {
+            "form": "mul",
+            "segments": "m u l"
+          },
+          "Korean": {
+            "form": "apʰe",
+            "segments": "a pʰ e"
+          }
+        },
+        {
+          "concept_id": "379_boot",
+          "concept": "BOOT",
+          "distance": 0.33836572814126936,
+          "Swedish": {
+            "form": "støːvəl",
+            "segments": "s t øː v ə l"
+          },
+          "Modern Hebrew": {
+            "form": "maɡaf",
+            "segments": "m a g a f"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɦwa",
+            "segments": "tɕ a ŋ ɦ w a"
+          }
+        },
+        {
+          "concept_id": "276_end",
+          "concept": "END (OF SPACE)",
+          "distance": 0.33855183948454703,
+          "Swedish": {
+            "form": "ɛnːda",
+            "segments": "ɛ nː d a"
+          },
+          "Modern Hebrew": {
+            "form": "sof",
+            "segments": "s o f"
+          },
+          "Korean": {
+            "form": "maldaŋ",
+            "segments": "m a l d a ŋ"
+          }
+        },
+        {
+          "concept_id": "599_before",
+          "concept": "BEFORE",
+          "distance": 0.338804974022767,
+          "Swedish": {
+            "form": "fœːrə",
+            "segments": "f œː r ə"
+          },
+          "Modern Hebrew": {
+            "form": "lifnɛjzɛ",
+            "segments": "l i f n ɛ j z ɛ"
+          },
+          "Korean": {
+            "form": "miɾi",
+            "segments": "m i ɾ i"
+          }
+        },
+        {
+          "concept_id": "26_arm",
+          "concept": "ARM",
+          "distance": 0.3397527942716341,
+          "Swedish": {
+            "form": "arːm",
+            "segments": "a rː m"
+          },
+          "Modern Hebrew": {
+            "form": "zʁoʔa",
+            "segments": "z ʁ o ʔ a"
+          },
+          "Korean": {
+            "form": "pʰal",
+            "segments": "pʰ a l"
+          }
+        },
+        {
+          "concept_id": "44_bone",
+          "concept": "BONE",
+          "distance": 0.3417471803099445,
+          "Swedish": {
+            "form": "beːn",
+            "segments": "b eː n"
+          },
+          "Modern Hebrew": {
+            "form": "ɛt͡sɛm",
+            "segments": "ɛ ts ɛ m"
+          },
+          "Korean": {
+            "form": "pp͈͈jʌ",
+            "segments": "p p͈ j ʌ"
+          }
+        },
+        {
+          "concept_id": "404_road",
+          "concept": "ROAD",
+          "distance": 0.3445040207990693,
+          "Swedish": {
+            "form": "ɡɑːta",
+            "segments": "g ɑː t a"
+          },
+          "Modern Hebrew": {
+            "form": "kviʃ",
+            "segments": "k v i ʃ"
+          },
+          "Korean": {
+            "form": "kil",
+            "segments": "k i l"
+          }
+        },
+        {
+          "concept_id": "393_health",
+          "concept": "HEALTHY",
+          "distance": 0.34474973425061856,
+          "Swedish": {
+            "form": "hɛlːsa",
+            "segments": "h ɛ lː s a"
+          },
+          "Modern Hebrew": {
+            "form": "bʁiʔut",
+            "segments": "b ʁ i ʔ u t"
+          },
+          "Korean": {
+            "form": "wisʰɛŋ",
+            "segments": "w i sʰ ɛ ŋ"
+          }
+        },
+        {
+          "concept_id": "523_dark",
+          "concept": "DARK",
+          "distance": 0.3457691003552584,
+          "Swedish": {
+            "form": "mœrːk",
+            "segments": "m œ rː k"
+          },
+          "Modern Hebrew": {
+            "form": "amum",
+            "segments": "a m u m"
+          },
+          "Korean": {
+            "form": "ʌduun",
+            "segments": "ʌ d u u n"
+          }
+        },
+        {
+          "concept_id": "457_year",
+          "concept": "YEAR",
+          "distance": 0.3460615626096921,
+          "Swedish": {
+            "form": "oːr",
+            "segments": "oː r"
+          },
+          "Modern Hebrew": {
+            "form": "ʃana",
+            "segments": "ʃ a n a"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "272_fringe",
+          "concept": "FRINGE",
+          "distance": 0.3475738936957084,
+          "Swedish": {
+            "form": "ranːd",
+            "segments": "r a nː d"
+          },
+          "Modern Hebrew": {
+            "form": "paʁvaʁ",
+            "segments": "p a ʁ v a ʁ"
+          },
+          "Korean": {
+            "form": "ka",
+            "segments": "k a"
+          }
+        },
+        {
+          "concept_id": "45_brain",
+          "concept": "BRAIN",
+          "distance": 0.3478640389563628,
+          "Swedish": {
+            "form": "jæːɳa",
+            "segments": "j æː ɳ a"
+          },
+          "Modern Hebrew": {
+            "form": "moaχ",
+            "segments": "m oa χ"
+          },
+          "Korean": {
+            "form": "nwe",
+            "segments": "n w e"
+          }
+        },
+        {
+          "concept_id": "124_fur",
+          "concept": "FUR",
+          "distance": 0.34831354543700055,
+          "Swedish": {
+            "form": "fɛlː",
+            "segments": "f ɛ lː"
+          },
+          "Modern Hebrew": {
+            "form": "paʁva",
+            "segments": "p a ʁ v a"
+          },
+          "Korean": {
+            "form": "pʰiʝjʌŋmopʰi",
+            "segments": "pʰ i ʝ j ʌ ŋ m o pʰ i"
+          }
+        },
+        {
+          "concept_id": "250_help",
+          "concept": "HELP (ASSISTANCE)",
+          "distance": 0.3490056526531508,
+          "Swedish": {
+            "form": "jɛlːp",
+            "segments": "j ɛ lː p"
+          },
+          "Modern Hebrew": {
+            "form": "ɛzʁa",
+            "segments": "ɛ z ʁ a"
+          },
+          "Korean": {
+            "form": "pod͡ʑwa",
+            "segments": "p o dʑ w a"
+          }
+        }
+      ]
+    },
+    {
+      "LR": "isl",
+      "RL": "heb",
+      "TB": "kor",
+      "shared_concepts": 836,
+      "same_meaning_distance": 0.44583445084643525,
+      "null_mean_distance": 0.4429148314695304,
+      "semantic_advantage": -0.002919619376904825,
+      "pairwise": {
+        "LR_RL": {
+          "same_meaning_distance": 0.4295562273269551,
+          "mismatched_meaning_null": 0.42916415739955643,
+          "advantage": -0.00039206992739865276,
+          "permutation_p": 0.5860349127182045
+        },
+        "LR_TB": {
+          "same_meaning_distance": 0.4924100145197711,
+          "mismatched_meaning_null": 0.483299549218525,
+          "advantage": -0.009110465301246096,
+          "permutation_p": 1.0
+        },
+        "RL_TB": {
+          "same_meaning_distance": 0.41553711069257954,
+          "mismatched_meaning_null": 0.41628078779050975,
+          "advantage": 0.0007436770979302176,
+          "permutation_p": 0.33665835411471323
+        }
+      },
+      "orientation_rank": 3,
+      "orientation_table": [
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.4246410759376229,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.4246410759376229,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.44583445084643525,
+          "is_expected": true
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.44583445084643525,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.45052884780351926,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.45052884780351926,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.45148435638268436,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.45148435638268436,
+          "is_expected": false
+        }
+      ],
+      "fixed_trio_permutation_p": 0.9950124688279302,
+      "languages": {
+        "LR": "Icelandic",
+        "RL": "Modern Hebrew",
+        "TB": "Korean"
+      },
+      "top_same_meaning_examples": [
+        {
+          "concept_id": "84_thunder",
+          "concept": "THUNDER",
+          "distance": 0.2987423667491988,
+          "Icelandic": {
+            "form": "θrʏmɑ",
+            "segments": "θ r ʏ m ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "ʁaʔam",
+            "segments": "ʁ a ʔ a m"
+          },
+          "Korean": {
+            "form": "nwemjʌŋ",
+            "segments": "n w e m j ʌ ŋ"
+          }
+        },
+        {
+          "concept_id": "250_help",
+          "concept": "HELP (ASSISTANCE)",
+          "distance": 0.2996596344452774,
+          "Icelandic": {
+            "form": "çɑuʰl̥p",
+            "segments": "ç ɑ u h l̥ p"
+          },
+          "Modern Hebrew": {
+            "form": "ɛzʁa",
+            "segments": "ɛ z ʁ a"
+          },
+          "Korean": {
+            "form": "pod͡ʑwa",
+            "segments": "p o dʑ w a"
+          }
+        },
+        {
+          "concept_id": "146_mouse",
+          "concept": "MOUSE",
+          "distance": 0.31372458705077394,
+          "Icelandic": {
+            "form": "mus",
+            "segments": "m u s"
+          },
+          "Modern Hebrew": {
+            "form": "aχbaʁ",
+            "segments": "a χ b a ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕwi",
+            "segments": "tɕ w i"
+          }
+        },
+        {
+          "concept_id": "242_calm",
+          "concept": "SILENCE",
+          "distance": 0.3153771386563223,
+          "Icelandic": {
+            "form": "rou",
+            "segments": "r ou"
+          },
+          "Modern Hebrew": {
+            "form": "ʃalva",
+            "segments": "ʃ a l v a"
+          },
+          "Korean": {
+            "form": "sʰwim",
+            "segments": "sʰ w i m"
+          }
+        },
+        {
+          "concept_id": "171_berry",
+          "concept": "BERRY",
+          "distance": 0.31559942829863474,
+          "Icelandic": {
+            "form": "pɛr̥",
+            "segments": "p ɛ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "anava",
+            "segments": "a n a v a"
+          },
+          "Korean": {
+            "form": "t͡ɕaŋɡwa",
+            "segments": "tɕ a ŋ g w a"
+          }
+        },
+        {
+          "concept_id": "202_father",
+          "concept": "FATHER",
+          "distance": 0.31942821241367275,
+          "Icelandic": {
+            "form": "fɑðɪr̥",
+            "segments": "f ɑ ð ɪ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "av",
+            "segments": "a v"
+          },
+          "Korean": {
+            "form": "abʌd͡ʑi",
+            "segments": "a b ʌ dʑ i"
+          }
+        },
+        {
+          "concept_id": "61_wind",
+          "concept": "WIND",
+          "distance": 0.32388796234468625,
+          "Icelandic": {
+            "form": "vɪntʏr̥",
+            "segments": "v ɪ n t ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "ʁuaχ",
+            "segments": "ʁ ua χ"
+          },
+          "Korean": {
+            "form": "paɾam",
+            "segments": "p a ɾ a m"
+          }
+        },
+        {
+          "concept_id": "947_gather",
+          "concept": "GATHER",
+          "distance": 0.32590364483170303,
+          "Icelandic": {
+            "form": "sɑpnɑ",
+            "segments": "s ɑ p n ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "asaf",
+            "segments": "a s a f"
+          },
+          "Korean": {
+            "form": "mweuda",
+            "segments": "m w e u d a"
+          }
+        },
+        {
+          "concept_id": "203_mother",
+          "concept": "MOTHER",
+          "distance": 0.32765953574688256,
+          "Icelandic": {
+            "form": "mouðɪr̥",
+            "segments": "m ou ð ɪ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "ɛm",
+            "segments": "ɛ m"
+          },
+          "Korean": {
+            "form": "ʌmʌni",
+            "segments": "ʌ m ʌ n i"
+          }
+        },
+        {
+          "concept_id": "80_chill",
+          "concept": "COLD (CHILL)",
+          "distance": 0.3277437649280102,
+          "Icelandic": {
+            "form": "kʰʏltɪ",
+            "segments": "kʰ ʏ l t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "koʁ",
+            "segments": "k o ʁ"
+          },
+          "Korean": {
+            "form": "cuwi",
+            "segments": "c u w i"
+          }
+        },
+        {
+          "concept_id": "2_ear",
+          "concept": "EAR",
+          "distance": 0.32818787131025084,
+          "Icelandic": {
+            "form": "ɛirɑ",
+            "segments": "ɛi r ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "ozɛn",
+            "segments": "o z ɛ n"
+          },
+          "Korean": {
+            "form": "kwi",
+            "segments": "k w i"
+          }
+        },
+        {
+          "concept_id": "138_pig",
+          "concept": "PIG",
+          "distance": 0.3288056867126932,
+          "Icelandic": {
+            "form": "svin",
+            "segments": "s v i n"
+          },
+          "Modern Hebrew": {
+            "form": "χaziʁ",
+            "segments": "χ a z i ʁ"
+          },
+          "Korean": {
+            "form": "twɛd͡ʑi",
+            "segments": "t w ɛ dʑ i"
+          }
+        },
+        {
+          "concept_id": "637_this",
+          "concept": "THIS",
+          "distance": 0.3320956432779742,
+          "Icelandic": {
+            "form": "θɛhtɑ",
+            "segments": "θ ɛ h t ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "zɛ",
+            "segments": "z ɛ"
+          },
+          "Korean": {
+            "form": "i",
+            "segments": "i"
+          }
+        },
+        {
+          "concept_id": "168_gnat",
+          "concept": "MOSQUITO",
+          "distance": 0.33392171219591416,
+          "Icelandic": {
+            "form": "mi",
+            "segments": "m i"
+          },
+          "Modern Hebrew": {
+            "form": "jatuʃ",
+            "segments": "j a t u ʃ"
+          },
+          "Korean": {
+            "form": "moɡi",
+            "segments": "m o g i"
+          }
+        },
+        {
+          "concept_id": "21_belly",
+          "concept": "BELLY",
+          "distance": 0.3343121333679065,
+          "Icelandic": {
+            "form": "kvɪðʏr̥",
+            "segments": "k v ɪ ð ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "bɛtɛn",
+            "segments": "b ɛ t ɛ n"
+          },
+          "Korean": {
+            "form": "pɛ",
+            "segments": "p ɛ"
+          }
+        },
+        {
+          "concept_id": "628_again",
+          "concept": "AGAIN",
+          "distance": 0.33466217685803334,
+          "Icelandic": {
+            "form": "ɑvtʏr̥",
+            "segments": "ɑ v t ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "ʃuv",
+            "segments": "ʃ u v"
+          },
+          "Korean": {
+            "form": "taɕʰi",
+            "segments": "t a ɕʰ i"
+          }
+        },
+        {
+          "concept_id": "504_cold",
+          "concept": "COLD",
+          "distance": 0.3351913334536636,
+          "Icelandic": {
+            "form": "kʰɑltʏr̥",
+            "segments": "kʰ ɑ l t ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "kaʁ",
+            "segments": "k a ʁ"
+          },
+          "Korean": {
+            "form": "can",
+            "segments": "c a n"
+          }
+        },
+        {
+          "concept_id": "582_last",
+          "concept": "LAST (FINAL)",
+          "distance": 0.33695379247199525,
+          "Icelandic": {
+            "form": "siðɑstɪ",
+            "segments": "s i ð ɑ s t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "aχaʁon",
+            "segments": "a χ a ʁ o n"
+          },
+          "Korean": {
+            "form": "jiβud͡ʑaji",
+            "segments": "j i β u dʑ a j i"
+          }
+        },
+        {
+          "concept_id": "54_sleep",
+          "concept": "SLEEP (STATE)",
+          "distance": 0.33854831382739,
+          "Icelandic": {
+            "form": "svɛpn",
+            "segments": "s v ɛ p n"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛna",
+            "segments": "ʃ ɛ n a"
+          },
+          "Korean": {
+            "form": "sʰumjʌn",
+            "segments": "sʰ u m j ʌ n"
+          }
+        },
+        {
+          "concept_id": "74_fog",
+          "concept": "FOG",
+          "distance": 0.3387078004266539,
+          "Icelandic": {
+            "form": "θɔkɑ",
+            "segments": "θ ɔ k ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "aʁafɛl",
+            "segments": "a ʁ a f ɛ l"
+          },
+          "Korean": {
+            "form": "aŋɛ",
+            "segments": "a ŋ ɛ"
+          }
+        },
+        {
+          "concept_id": "112_tree",
+          "concept": "TREE",
+          "distance": 0.340877442311518,
+          "Icelandic": {
+            "form": "tʰrjɛ",
+            "segments": "tʰ r j ɛ"
+          },
+          "Modern Hebrew": {
+            "form": "ɛt͡s",
+            "segments": "ɛ ts"
+          },
+          "Korean": {
+            "form": "namu",
+            "segments": "n a m u"
+          }
+        },
+        {
+          "concept_id": "191_sand",
+          "concept": "SAND",
+          "distance": 0.34152817570728294,
+          "Icelandic": {
+            "form": "sɑntʏr̥",
+            "segments": "s ɑ n t ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "χol",
+            "segments": "χ o l"
+          },
+          "Korean": {
+            "form": "moɾɛ",
+            "segments": "m o ɾ ɛ"
+          }
+        },
+        {
+          "concept_id": "44_bone",
+          "concept": "BONE",
+          "distance": 0.3438797423029452,
+          "Icelandic": {
+            "form": "pɛin",
+            "segments": "p ɛi n"
+          },
+          "Modern Hebrew": {
+            "form": "ɛt͡sɛm",
+            "segments": "ɛ ts ɛ m"
+          },
+          "Korean": {
+            "form": "pp͈͈jʌ",
+            "segments": "p p͈ j ʌ"
+          }
+        },
+        {
+          "concept_id": "57_sun",
+          "concept": "SUN",
+          "distance": 0.3459805799723068,
+          "Icelandic": {
+            "form": "soul",
+            "segments": "s ou l"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛmɛʃ",
+            "segments": "ʃ ɛ m ɛ ʃ"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "788_prepare",
+          "concept": "PREPARE",
+          "distance": 0.3460646169126935,
+          "Icelandic": {
+            "form": "ʏntɪrpuɑ",
+            "segments": "ʏ n t ɪ r p u ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "hɛχin",
+            "segments": "h ɛ χ i n"
+          },
+          "Korean": {
+            "form": "t͡ɕɛbiɦada",
+            "segments": "tɕ ɛ b i ɦ a d a"
+          }
+        },
+        {
+          "concept_id": "178_peelhusk",
+          "concept": "SKIN (OF FRUIT)",
+          "distance": 0.3496083276216581,
+          "Icelandic": {
+            "form": "hiðɪ",
+            "segments": "h i ð ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "klipa",
+            "segments": "k l i p a"
+          },
+          "Korean": {
+            "form": "pʰisʰaŋ",
+            "segments": "pʰ i sʰ a ŋ"
+          }
+        },
+        {
+          "concept_id": "335_figure",
+          "concept": "IDOL",
+          "distance": 0.3496662895133104,
+          "Icelandic": {
+            "form": "stɪhtɑ",
+            "segments": "s t ɪ h t ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "pesɛl",
+            "segments": "p e s ɛ l"
+          },
+          "Korean": {
+            "form": "momme",
+            "segments": "m o m m e"
+          }
+        },
+        {
+          "concept_id": "272_fringe",
+          "concept": "FRINGE",
+          "distance": 0.35153870191800624,
+          "Icelandic": {
+            "form": "prun",
+            "segments": "p r u n"
+          },
+          "Modern Hebrew": {
+            "form": "paʁvaʁ",
+            "segments": "p a ʁ v a ʁ"
+          },
+          "Korean": {
+            "form": "ka",
+            "segments": "k a"
+          }
+        },
+        {
+          "concept_id": "630_infrontof",
+          "concept": "IN FRONT OF",
+          "distance": 0.35243443293873145,
+          "Icelandic": {
+            "form": "fɪrɪr̥",
+            "segments": "f ɪ r ɪ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "mul",
+            "segments": "m u l"
+          },
+          "Korean": {
+            "form": "apʰe",
+            "segments": "a pʰ e"
+          }
+        },
+        {
+          "concept_id": "590_now",
+          "concept": "NOW",
+          "distance": 0.3533249268561644,
+          "Icelandic": {
+            "form": "nu",
+            "segments": "n u"
+          },
+          "Modern Hebrew": {
+            "form": "aχʃav",
+            "segments": "a χ ʃ a v"
+          },
+          "Korean": {
+            "form": "mokha",
+            "segments": "m o k h a"
+          }
+        },
+        {
+          "concept_id": "78_ice",
+          "concept": "ICE",
+          "distance": 0.3572505099970968,
+          "Icelandic": {
+            "form": "is",
+            "segments": "i s"
+          },
+          "Modern Hebrew": {
+            "form": "kɛʁaχ",
+            "segments": "k ɛ ʁ a χ"
+          },
+          "Korean": {
+            "form": "ʌlɯm",
+            "segments": "ʌ l ɯ m"
+          }
+        },
+        {
+          "concept_id": "405_village",
+          "concept": "VILLAGE",
+          "distance": 0.35750282593726973,
+          "Icelandic": {
+            "form": "θɔrp",
+            "segments": "θ ɔ r p"
+          },
+          "Modern Hebrew": {
+            "form": "kfaʁ",
+            "segments": "k f a ʁ"
+          },
+          "Korean": {
+            "form": "con",
+            "segments": "c o n"
+          }
+        },
+        {
+          "concept_id": "276_end",
+          "concept": "END (OF SPACE)",
+          "distance": 0.35778476544070253,
+          "Icelandic": {
+            "form": "ɛntɪ",
+            "segments": "ɛ n t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "sof",
+            "segments": "s o f"
+          },
+          "Korean": {
+            "form": "maldaŋ",
+            "segments": "m a l d a ŋ"
+          }
+        },
+        {
+          "concept_id": "218_spirit",
+          "concept": "SPIRIT",
+          "distance": 0.3578540096231108,
+          "Icelandic": {
+            "form": "ɑntɪ",
+            "segments": "ɑ n t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "ʁuaχ",
+            "segments": "ʁ ua χ"
+          },
+          "Korean": {
+            "form": "halɡi",
+            "segments": "h a l g i"
+          }
+        },
+        {
+          "concept_id": "10_forehead",
+          "concept": "FOREHEAD",
+          "distance": 0.3594038187538688,
+          "Icelandic": {
+            "form": "ɛnːɪ",
+            "segments": "ɛ nː ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "mɛt͡saχ",
+            "segments": "m ɛ ts a χ"
+          },
+          "Korean": {
+            "form": "ima",
+            "segments": "i m a"
+          }
+        },
+        {
+          "concept_id": "170_butterfly",
+          "concept": "BUTTERFLY",
+          "distance": 0.35959750062496704,
+          "Icelandic": {
+            "form": "fɪðrɪltɪ",
+            "segments": "f ɪ ð r ɪ l t ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "paʁpaʁ",
+            "segments": "p a ʁ p a ʁ"
+          },
+          "Korean": {
+            "form": "nabi",
+            "segments": "n a b i"
+          }
+        },
+        {
+          "concept_id": "647_who",
+          "concept": "WHO",
+          "distance": 0.36166793946194,
+          "Icelandic": {
+            "form": "kʰvɛr̥",
+            "segments": "kʰ v ɛ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "mi",
+            "segments": "m i"
+          },
+          "Korean": {
+            "form": "nuɡu",
+            "segments": "n u g u"
+          }
+        },
+        {
+          "concept_id": "614_back",
+          "concept": "BACK (DIRECTION)",
+          "distance": 0.36189812002218047,
+          "Icelandic": {
+            "form": "ɑvtʏr̥",
+            "segments": "ɑ v t ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "baχazaʁa",
+            "segments": "b a χ a z a ʁ a"
+          },
+          "Korean": {
+            "form": "t͡ɕed͡ʑaɾiɾo",
+            "segments": "tɕ e dʑ a ɾ i ɾ o"
+          }
+        },
+        {
+          "concept_id": "404_road",
+          "concept": "ROAD",
+          "distance": 0.36195970612442424,
+          "Icelandic": {
+            "form": "kɑtɑ",
+            "segments": "k ɑ t ɑ"
+          },
+          "Modern Hebrew": {
+            "form": "kviʃ",
+            "segments": "k v i ʃ"
+          },
+          "Korean": {
+            "form": "kil",
+            "segments": "k i l"
+          }
+        },
+        {
+          "concept_id": "599_before",
+          "concept": "BEFORE",
+          "distance": 0.3621898387182742,
+          "Icelandic": {
+            "form": "ɑuðʏr̥",
+            "segments": "ɑ u ð ʏ r̥"
+          },
+          "Modern Hebrew": {
+            "form": "lifnɛjzɛ",
+            "segments": "l i f n ɛ j z ɛ"
+          },
+          "Korean": {
+            "form": "miɾi",
+            "segments": "m i ɾ i"
+          }
+        }
+      ]
+    },
+    {
+      "LR": "cym",
+      "RL": "heb",
+      "TB": "kor",
+      "shared_concepts": 815,
+      "same_meaning_distance": 0.43336868528373296,
+      "null_mean_distance": 0.4302306168845974,
+      "semantic_advantage": -0.003138068399135552,
+      "pairwise": {
+        "LR_RL": {
+          "same_meaning_distance": 0.4140981044015558,
+          "mismatched_meaning_null": 0.41168350180680213,
+          "advantage": -0.0024146025947536787,
+          "permutation_p": 0.8802992518703242
+        },
+        "LR_TB": {
+          "same_meaning_distance": 0.46854655950610546,
+          "mismatched_meaning_null": 0.462489200996257,
+          "advantage": -0.006057358509848454,
+          "permutation_p": 1.0
+        },
+        "RL_TB": {
+          "same_meaning_distance": 0.4174613919435375,
+          "mismatched_meaning_null": 0.41651914785073296,
+          "advantage": -0.0009422440928045228,
+          "permutation_p": 0.7206982543640897
+        }
+      },
+      "orientation_rank": 3,
+      "orientation_table": [
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.40762159825781735,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.40762159825781735,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "TB",
+          "distance": 0.43336868528373296,
+          "is_expected": true
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "BT",
+          "distance": 0.43336868528373296,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.4337247655097772,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.4337247655097772,
+          "is_expected": false
+        },
+        {
+          "LR_member": "LR",
+          "RL_member": "RL",
+          "TB_member": "BT",
+          "distance": 0.43697345787612674,
+          "is_expected": false
+        },
+        {
+          "LR_member": "RL",
+          "RL_member": "LR",
+          "TB_member": "TB",
+          "distance": 0.43697345787612674,
+          "is_expected": false
+        }
+      ],
+      "fixed_trio_permutation_p": 0.9950124688279302,
+      "languages": {
+        "LR": "Welsh",
+        "RL": "Modern Hebrew",
+        "TB": "Korean"
+      },
+      "top_same_meaning_examples": [
+        {
+          "concept_id": "141_bear",
+          "concept": "BEAR",
+          "distance": 0.2509574792660609,
+          "Welsh": {
+            "form": "arθ",
+            "segments": "a r θ"
+          },
+          "Modern Hebrew": {
+            "form": "dov",
+            "segments": "d o v"
+          },
+          "Korean": {
+            "form": "kʰom",
+            "segments": "kʰ o m"
+          }
+        },
+        {
+          "concept_id": "651_why",
+          "concept": "WHY",
+          "distance": 0.27283175997262615,
+          "Welsh": {
+            "form": "pam",
+            "segments": "p a m"
+          },
+          "Modern Hebrew": {
+            "form": "lama",
+            "segments": "l a m a"
+          },
+          "Korean": {
+            "form": "wɛ",
+            "segments": "w ɛ"
+          }
+        },
+        {
+          "concept_id": "230_name",
+          "concept": "NAME",
+          "distance": 0.2746255204491157,
+          "Welsh": {
+            "form": "ɛnʊ",
+            "segments": "ɛ n ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛm",
+            "segments": "ʃ ɛ m"
+          },
+          "Korean": {
+            "form": "iɾɯm",
+            "segments": "i ɾ ɯ m"
+          }
+        },
+        {
+          "concept_id": "76_rain",
+          "concept": "RAIN (PRECIPITATION)",
+          "distance": 0.2802652478133337,
+          "Welsh": {
+            "form": "ɡla͡ʊ",
+            "segments": "g l aʊ"
+          },
+          "Modern Hebrew": {
+            "form": "ɡɛʃɛm",
+            "segments": "g ɛ ʃ ɛ m"
+          },
+          "Korean": {
+            "form": "pi",
+            "segments": "p i"
+          }
+        },
+        {
+          "concept_id": "80_chill",
+          "concept": "COLD (CHILL)",
+          "distance": 0.2988772093330255,
+          "Welsh": {
+            "form": "ɔ͡ɪrnɪ",
+            "segments": "ɔɪ r n ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "koʁ",
+            "segments": "k o ʁ"
+          },
+          "Korean": {
+            "form": "cuwi",
+            "segments": "c u w i"
+          }
+        },
+        {
+          "concept_id": "482_little",
+          "concept": "SMALL",
+          "distance": 0.3100050064478634,
+          "Welsh": {
+            "form": "baχ",
+            "segments": "b a χ"
+          },
+          "Modern Hebrew": {
+            "form": "katan",
+            "segments": "k a t a n"
+          },
+          "Korean": {
+            "form": "t͡ɕaɡɯn",
+            "segments": "tɕ a g ɯ n"
+          }
+        },
+        {
+          "concept_id": "441_gun",
+          "concept": "GUN",
+          "distance": 0.31597636104307036,
+          "Welsh": {
+            "form": "drɪɬ",
+            "segments": "d r ɪ ɬ"
+          },
+          "Modern Hebrew": {
+            "form": "ʁovɛ",
+            "segments": "ʁ o v ɛ"
+          },
+          "Korean": {
+            "form": "muɡi",
+            "segments": "m u g i"
+          }
+        },
+        {
+          "concept_id": "250_help",
+          "concept": "HELP (ASSISTANCE)",
+          "distance": 0.3161015806320598,
+          "Welsh": {
+            "form": "kəmɔrθ",
+            "segments": "k ə m ɔ r θ"
+          },
+          "Modern Hebrew": {
+            "form": "ɛzʁa",
+            "segments": "ɛ z ʁ a"
+          },
+          "Korean": {
+            "form": "pod͡ʑwa",
+            "segments": "p o dʑ w a"
+          }
+        },
+        {
+          "concept_id": "282_height",
+          "concept": "HEIGHT",
+          "distance": 0.31804395927784324,
+          "Welsh": {
+            "form": "ɪχdɛr",
+            "segments": "ɪ χ d ɛ r"
+          },
+          "Modern Hebrew": {
+            "form": "koma",
+            "segments": "k o m a"
+          },
+          "Korean": {
+            "form": "nopʰi",
+            "segments": "n o pʰ i"
+          }
+        },
+        {
+          "concept_id": "84_thunder",
+          "concept": "THUNDER",
+          "distance": 0.3205603003488058,
+          "Welsh": {
+            "form": "tərva͡ɪ",
+            "segments": "t ə r v aɪ"
+          },
+          "Modern Hebrew": {
+            "form": "ʁaʔam",
+            "segments": "ʁ a ʔ a m"
+          },
+          "Korean": {
+            "form": "nwemjʌŋ",
+            "segments": "n w e m j ʌ ŋ"
+          }
+        },
+        {
+          "concept_id": "405_village",
+          "concept": "VILLAGE",
+          "distance": 0.3207973130628697,
+          "Welsh": {
+            "form": "pɛntrɛv",
+            "segments": "p ɛ n t r ɛ v"
+          },
+          "Modern Hebrew": {
+            "form": "kfaʁ",
+            "segments": "k f a ʁ"
+          },
+          "Korean": {
+            "form": "con",
+            "segments": "c o n"
+          }
+        },
+        {
+          "concept_id": "247_gift",
+          "concept": "GIFT",
+          "distance": 0.321836007513204,
+          "Welsh": {
+            "form": "r̥ɔð",
+            "segments": "r̥ ɔ ð"
+          },
+          "Modern Hebrew": {
+            "form": "matana",
+            "segments": "m a t a n a"
+          },
+          "Korean": {
+            "form": "hɛŋɦa",
+            "segments": "h ɛ ŋ ɦ a"
+          }
+        },
+        {
+          "concept_id": "406_town",
+          "concept": "TOWN",
+          "distance": 0.32347285632977135,
+          "Welsh": {
+            "form": "trɛv",
+            "segments": "t r ɛ v"
+          },
+          "Modern Hebrew": {
+            "form": "iʁ",
+            "segments": "i ʁ"
+          },
+          "Korean": {
+            "form": "toɕʰi",
+            "segments": "t o ɕʰ i"
+          }
+        },
+        {
+          "concept_id": "20_back",
+          "concept": "BACK",
+          "distance": 0.3245843852291593,
+          "Welsh": {
+            "form": "kɛvn",
+            "segments": "k ɛ v n"
+          },
+          "Modern Hebrew": {
+            "form": "ɡav",
+            "segments": "g a v"
+          },
+          "Korean": {
+            "form": "tɯn",
+            "segments": "t ɯ n"
+          }
+        },
+        {
+          "concept_id": "37_thigh",
+          "concept": "UPPER LEG (THIGH)",
+          "distance": 0.32624465216761944,
+          "Welsh": {
+            "form": "klɪn",
+            "segments": "k l ɪ n"
+          },
+          "Modern Hebrew": {
+            "form": "jaʁɛχ",
+            "segments": "j a ʁ ɛ χ"
+          },
+          "Korean": {
+            "form": "hʌbʌkt͈͈aɾi",
+            "segments": "h ʌ b ʌ k t͈ a ɾ i"
+          }
+        },
+        {
+          "concept_id": "183_ash",
+          "concept": "ASH",
+          "distance": 0.3275226988881774,
+          "Welsh": {
+            "form": "ɬɪdʊ",
+            "segments": "ɬ ɪ d ʊ"
+          },
+          "Modern Hebrew": {
+            "form": "ɛfɛʁ",
+            "segments": "ɛ f ɛ ʁ"
+          },
+          "Korean": {
+            "form": "t͡ɕɛ",
+            "segments": "tɕ ɛ"
+          }
+        },
+        {
+          "concept_id": "57_sun",
+          "concept": "SUN",
+          "distance": 0.32783040360051857,
+          "Welsh": {
+            "form": "ha͡ɪl",
+            "segments": "h aɪ l"
+          },
+          "Modern Hebrew": {
+            "form": "ʃɛmɛʃ",
+            "segments": "ʃ ɛ m ɛ ʃ"
+          },
+          "Korean": {
+            "form": "hɛ",
+            "segments": "h ɛ"
+          }
+        },
+        {
+          "concept_id": "218_spirit",
+          "concept": "SPIRIT",
+          "distance": 0.32926072805561973,
+          "Welsh": {
+            "form": "əsbrɪd",
+            "segments": "ə s b r ɪ d"
+          },
+          "Modern Hebrew": {
+            "form": "ʁuaχ",
+            "segments": "ʁ ua χ"
+          },
+          "Korean": {
+            "form": "halɡi",
+            "segments": "h a l g i"
+          }
+        },
+        {
+          "concept_id": "271_thing",
+          "concept": "THING",
+          "distance": 0.3317087836553327,
+          "Welsh": {
+            "form": "pɛθ",
+            "segments": "p ɛ θ"
+          },
+          "Modern Hebrew": {
+            "form": "davaʁ",
+            "segments": "d a v a ʁ"
+          },
+          "Korean": {
+            "form": "muŋe",
+            "segments": "m u ŋ e"
+          }
+        },
+        {
+          "concept_id": "351_corn",
+          "concept": "corn",
+          "distance": 0.33171762713857283,
+          "Welsh": {
+            "form": "iːd",
+            "segments": "iː d"
+          },
+          "Modern Hebrew": {
+            "form": "daɡan",
+            "segments": "d a g a n"
+          },
+          "Korean": {
+            "form": "koŋmul",
+            "segments": "k o ŋ m u l"
+          }
+        },
+        {
+          "concept_id": "736_drink",
+          "concept": "DRINK",
+          "distance": 0.3329710698465867,
+          "Welsh": {
+            "form": "əvɛd",
+            "segments": "ə v ɛ d"
+          },
+          "Modern Hebrew": {
+            "form": "ʃata",
+            "segments": "ʃ a t a"
+          },
+          "Korean": {
+            "form": "maɕʰida",
+            "segments": "m a ɕʰ i d a"
+          }
+        },
+        {
+          "concept_id": "159_swan",
+          "concept": "SWAN",
+          "distance": 0.3331385227767561,
+          "Welsh": {
+            "form": "alarχ",
+            "segments": "a l a r χ"
+          },
+          "Modern Hebrew": {
+            "form": "baʁbuʁ",
+            "segments": "b a ʁ b u ʁ"
+          },
+          "Korean": {
+            "form": "pɛd͡ʑo",
+            "segments": "p ɛ dʑ o"
+          }
+        },
+        {
+          "concept_id": "45_brain",
+          "concept": "BRAIN",
+          "distance": 0.3333723332404574,
+          "Welsh": {
+            "form": "əmɛnnɪð",
+            "segments": "ə m ɛ n n ɪ ð"
+          },
+          "Modern Hebrew": {
+            "form": "moaχ",
+            "segments": "m oa χ"
+          },
+          "Korean": {
+            "form": "nwe",
+            "segments": "n w e"
+          }
+        },
+        {
+          "concept_id": "237_call",
+          "concept": "CALL (APPEAL)",
+          "distance": 0.3352452913576367,
+          "Welsh": {
+            "form": "ɡalwad",
+            "segments": "g a l w a d"
+          },
+          "Modern Hebrew": {
+            "form": "kʁiʔa",
+            "segments": "k ʁ i ʔ a"
+          },
+          "Korean": {
+            "form": "puɾɯm",
+            "segments": "p u ɾ ɯ m"
+          }
+        },
+        {
+          "concept_id": "172_apple",
+          "concept": "APPLE",
+          "distance": 0.3378260744036912,
+          "Welsh": {
+            "form": "aval",
+            "segments": "a v a l"
+          },
+          "Modern Hebrew": {
+            "form": "tapuaχ",
+            "segments": "t a p ua χ"
+          },
+          "Korean": {
+            "form": "sʰaɡwa",
+            "segments": "sʰ a g w a"
+          }
+        },
+        {
+          "concept_id": "395_pain",
+          "concept": "PAIN",
+          "distance": 0.3379776841040129,
+          "Welsh": {
+            "form": "pɔ͡ɪn",
+            "segments": "p ɔɪ n"
+          },
+          "Modern Hebrew": {
+            "form": "kəʔɛv",
+            "segments": "k ə ʔ ɛ v"
+          },
+          "Korean": {
+            "form": "apʰɯmɡotʰoŋ",
+            "segments": "a pʰ ɯ m g o tʰ o ŋ"
+          }
+        },
+        {
+          "concept_id": "617_above",
+          "concept": "HIGH",
+          "distance": 0.3391674611879301,
+          "Welsh": {
+            "form": "vrɪ",
+            "segments": "v r ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "mɛʔal",
+            "segments": "m ɛ ʔ a l"
+          },
+          "Korean": {
+            "form": "wie",
+            "segments": "w i e"
+          }
+        },
+        {
+          "concept_id": "377_cap",
+          "concept": "CAP",
+          "distance": 0.3413472982641344,
+          "Welsh": {
+            "form": "kap",
+            "segments": "k a p"
+          },
+          "Modern Hebrew": {
+            "form": "kovɛ",
+            "segments": "k o v ɛ"
+          },
+          "Korean": {
+            "form": "mod͡ʑa",
+            "segments": "m o dʑ a"
+          }
+        },
+        {
+          "concept_id": "272_fringe",
+          "concept": "FRINGE",
+          "distance": 0.34159585085855354,
+          "Welsh": {
+            "form": "kʊr",
+            "segments": "k ʊ r"
+          },
+          "Modern Hebrew": {
+            "form": "paʁvaʁ",
+            "segments": "p a ʁ v a ʁ"
+          },
+          "Korean": {
+            "form": "ka",
+            "segments": "k a"
+          }
+        },
+        {
+          "concept_id": "284_amount",
+          "concept": "AMOUNT",
+          "distance": 0.3417443428578628,
+          "Welsh": {
+            "form": "sʊm",
+            "segments": "s ʊ m"
+          },
+          "Modern Hebrew": {
+            "form": "kamut",
+            "segments": "k a m u t"
+          },
+          "Korean": {
+            "form": "sʰujaŋ",
+            "segments": "sʰ u j a ŋ"
+          }
+        },
+        {
+          "concept_id": "367_thread",
+          "concept": "THREAD",
+          "distance": 0.34280143968931626,
+          "Welsh": {
+            "form": "ɛda͡ɪ",
+            "segments": "ɛ d aɪ"
+          },
+          "Modern Hebrew": {
+            "form": "χut",
+            "segments": "χ u t"
+          },
+          "Korean": {
+            "form": "kʰonɕʰil",
+            "segments": "kʰ o n ɕʰ i l"
+          }
+        },
+        {
+          "concept_id": "317_window",
+          "concept": "WINDOW",
+          "distance": 0.3441629561003121,
+          "Welsh": {
+            "form": "fɛnɛstr",
+            "segments": "f ɛ n ɛ s t r"
+          },
+          "Modern Hebrew": {
+            "form": "χalon",
+            "segments": "χ a l o n"
+          },
+          "Korean": {
+            "form": "num",
+            "segments": "n u m"
+          }
+        },
+        {
+          "concept_id": "103_shore",
+          "concept": "SHORE OF LAKE",
+          "distance": 0.3447383200746581,
+          "Welsh": {
+            "form": "ɡlan",
+            "segments": "g l a n"
+          },
+          "Modern Hebrew": {
+            "form": "ɡada",
+            "segments": "g a d a"
+          },
+          "Korean": {
+            "form": "kaŋbjʌn",
+            "segments": "k a ŋ b j ʌ n"
+          }
+        },
+        {
+          "concept_id": "606_here",
+          "concept": "HERE",
+          "distance": 0.34668417295507314,
+          "Welsh": {
+            "form": "əma",
+            "segments": "ə m a"
+          },
+          "Modern Hebrew": {
+            "form": "kan",
+            "segments": "k a n"
+          },
+          "Korean": {
+            "form": "jʌɡi",
+            "segments": "j ʌ g i"
+          }
+        },
+        {
+          "concept_id": "238_noise",
+          "concept": "NOISE",
+          "distance": 0.3468223876634103,
+          "Welsh": {
+            "form": "trʊst",
+            "segments": "t r ʊ s t"
+          },
+          "Modern Hebrew": {
+            "form": "ʁaʔaʃ",
+            "segments": "ʁ a ʔ a ʃ"
+          },
+          "Korean": {
+            "form": "sʰodoŋ",
+            "segments": "sʰ o d o ŋ"
+          }
+        },
+        {
+          "concept_id": "843_spin",
+          "concept": "spin",
+          "distance": 0.3480748680458636,
+          "Welsh": {
+            "form": "trɔ͡ɪɬɪ",
+            "segments": "t r ɔɪ ɬ ɪ"
+          },
+          "Modern Hebrew": {
+            "form": "sovɛv",
+            "segments": "s o v ɛ v"
+          },
+          "Korean": {
+            "form": "ɸʷwed͡ʑʌn",
+            "segments": "ɸʷ w e dʑ ʌ n"
+          }
+        },
+        {
+          "concept_id": "102_river",
+          "concept": "RIVER",
+          "distance": 0.34820459378180013,
+          "Welsh": {
+            "form": "avɔn",
+            "segments": "a v ɔ n"
+          },
+          "Modern Hebrew": {
+            "form": "nahaʁ",
+            "segments": "n a h a ʁ"
+          },
+          "Korean": {
+            "form": "kaŋ",
+            "segments": "k a ŋ"
+          }
+        },
+        {
+          "concept_id": "216_wish",
+          "concept": "wish",
+          "distance": 0.34977902334574956,
+          "Welsh": {
+            "form": "dəmɪnɪad",
+            "segments": "d ə m ɪ n ɪa d"
+          },
+          "Modern Hebrew": {
+            "form": "iχul",
+            "segments": "i χ u l"
+          },
+          "Korean": {
+            "form": "sʰomaŋ",
+            "segments": "sʰ o m a ŋ"
+          }
+        },
+        {
+          "concept_id": "21_belly",
+          "concept": "BELLY",
+          "distance": 0.3502158257536218,
+          "Welsh": {
+            "form": "bɔl",
+            "segments": "b ɔ l"
+          },
+          "Modern Hebrew": {
+            "form": "bɛtɛn",
+            "segments": "b ɛ t ɛ n"
+          },
+          "Korean": {
+            "form": "pɛ",
+            "segments": "p ɛ"
+          }
+        },
+        {
+          "concept_id": "582_last",
+          "concept": "LAST (FINAL)",
+          "distance": 0.35038657883949237,
+          "Welsh": {
+            "form": "ɔlav",
+            "segments": "ɔ l a v"
+          },
+          "Modern Hebrew": {
+            "form": "aχaʁon",
+            "segments": "a χ a ʁ o n"
+          },
+          "Korean": {
+            "form": "jiβud͡ʑaji",
+            "segments": "j i β u dʑ a j i"
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation_rule": {
+    "support": "Search-corrected p<0.05, all three pairwise same-meaning links p<0.05 with positive advantage, and expected orientation ranked first of 8.",
+    "meaning": "Passing would show a reproducible meaning-matched phonetic trajectory correspondence under the pre-existing directional transforms. It would not by itself prove common ancestry or that meaning is intrinsically encoded by sound.",
+    "failure": "Failure means the proposed directional three-way word system is not supported by this independently defined concept test."
+  }
+}
