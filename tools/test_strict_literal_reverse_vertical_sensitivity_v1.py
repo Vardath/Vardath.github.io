@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Strict literal phoneme-reversal search with vertical-language follow-up.
 # sensitivity sweep v1
-# workflow-trigger: sensitivity-v1
+# workflow-trigger: sensitivity-v2
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
 from pathlib import Path
@@ -142,7 +142,7 @@ def main():
                          'a_form':clean[a][c]['form'],'a_segments':clean[a][c]['segments'],
                          'b_form':clean[b][c]['form'],'b_segments':clean[b][c]['segments'],
                          '_controls':ctr})
-        pairs.append({'LR':a,'RL':b,'languages':[resolved[a]['dataset_name'],resolved[b]['dataset_name'],
+        pairs.append({'LR':a,'RL':b,'languages':[resolved[a]['dataset_name'],resolved[b]['dataset_name']],
                       'shared_concepts':len(rows),'_rows':rows})
     if not pairs:raise RuntimeError('No eligible horizontal pairs')
     sweeps=[]
