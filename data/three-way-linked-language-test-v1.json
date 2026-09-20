@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "Linked three-way language traversal search",
+  "question": "Which LTR, RTL and top-to-bottom languages form the strongest linked trio on one frozen phonetic field, rather than merely fitting their directions separately?",
+  "design": {
+    "eligibility": "A language must beat its opposite direction at >= 15/21 resolutions and have positive mean directional advantage. Middle Korean is excluded so the vertical member is a modern independent system.",
+    "no_refitting": "All grapheme positions are learned from pronunciation evidence exactly as in the previous frozen-grid test. No language is translated, rotated freely, rescaled, shifted or re-placed to improve trio fit.",
+    "direction_normalization": "LTR is unchanged; RTL is reflected horizontally; TB is rotated into the same canonical left-to-right frame. These are fixed transforms determined only by documented reading direction.",
+    "primary_linkage": "The full ordered grapheme trajectory of each language is resampled to 64 rank positions. Linkage is mean pairwise Euclidean distance between the three canonical trajectories. Lower is better.",
+    "search_control": "1000 within-language alphabet-order shuffles repeat the entire eligible-triple search. The reported search-corrected p-value asks whether the best observed trio is closer than the best accidental trio produced by each shuffled universe.",
+    "secondary_linkage": "The 21-resolution directional-strength profiles must also rise and fall together. Circular-shift nulls preserve each profile but break common resolution phase.",
+    "wrong_orientation_control": "The selected trio is also scored after applying the opposite direction to each member."
+  },
+  "coverage": {
+    "phoible_segments": 3065,
+    "eligible": {
+      "LR": 9,
+      "RL": 1,
+      "TB": 1
+    },
+    "eligible_members": {
+      "LR": [
+        {
+          "iso": "cym",
+          "name": "Welsh"
+        },
+        {
+          "iso": "dan",
+          "name": "Danish"
+        },
+        {
+          "iso": "fin",
+          "name": "Finnish"
+        },
+        {
+          "iso": "isl",
+          "name": "Icelandic"
+        },
+        {
+          "iso": "nno",
+          "name": "Norwegian Nynorsk"
+        },
+        {
+          "iso": "nob",
+          "name": "Norwegian Bokmål"
+        },
+        {
+          "iso": "nor",
+          "name": "Norwegian"
+        },
+        {
+          "iso": "swe",
+          "name": "Swedish"
+        },
+        {
+          "iso": "yor",
+          "name": "Yoruba"
+        }
+      ],
+      "RL": [
+        {
+          "iso": "heb",
+          "name": "Hebrew"
+        }
+      ],
+      "TB": [
+        {
+          "iso": "kor",
+          "name": "Korean"
+        }
+      ]
+    },
+    "candidate_triples": 9,
+    "permutations": 1000
+  },
+  "selected_trio": {
+    "LR": "fin",
+    "RL": "heb",
+    "TB": "kor",
+    "trajectory_distance": 0.4173285823705623,
+    "trajectory_similarity": 0.7049041294228067,
+    "resolution_profile_correlation": 0.22586174422192073,
+    "mean_directional_delta": 0.06444343876125162,
+    "languages": {
+      "LR": "Finnish",
+      "RL": "Hebrew",
+      "TB": "Korean"
+    },
+    "search_corrected_permutation_p": 0.7282717282717283,
+    "fixed_trio_permutation_p": 0.2827172827172827,
+    "resolution_profile_correlation_p": 0.06493506493506493,
+    "wrong_orientation_distance": 0.4173285823705623,
+    "wrong_orientation_worse": false,
+    "members": {
+      "LR": {
+        "iso": "fin",
+        "name": "Finnish",
+        "family": "Uralic",
+        "script": "Latin",
+        "positive_resolutions": 20,
+        "best_direction_resolutions": 0,
+        "mean_delta": 0.049666569653784014,
+        "stable_symbols": 25,
+        "symbol_fraction": 0.8620689655172413
+      },
+      "RL": {
+        "iso": "heb",
+        "name": "Hebrew",
+        "family": "Afro-Asiatic",
+        "script": "Hebrew",
+        "positive_resolutions": 19,
+        "best_direction_resolutions": 0,
+        "mean_delta": 0.058988499650439535,
+        "stable_symbols": 22,
+        "symbol_fraction": 1.0
+      },
+      "TB": {
+        "iso": "kor",
+        "name": "Korean",
+        "family": "Koreanic",
+        "script": "Hangul",
+        "positive_resolutions": 20,
+        "best_direction_resolutions": 20,
+        "mean_delta": 0.08467524697953133,
+        "stable_symbols": 37,
+        "symbol_fraction": 0.925
+      }
+    }
+  },
+  "ranking": [
+    {
+      "LR": "fin",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.4173285823705623,
+      "trajectory_similarity": 0.7049041294228067,
+      "resolution_profile_correlation": 0.22586174422192073,
+      "mean_directional_delta": 0.06444343876125162,
+      "languages": {
+        "LR": "Finnish",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "nno",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.41964118558860564,
+      "trajectory_similarity": 0.7032688720051345,
+      "resolution_profile_correlation": 0.17130487166499755,
+      "mean_directional_delta": 0.06221491868040143,
+      "languages": {
+        "LR": "Norwegian Nynorsk",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "dan",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.42059864165360533,
+      "trajectory_similarity": 0.702591848328885,
+      "resolution_profile_correlation": 0.1348458933558827,
+      "mean_directional_delta": 0.06930447247733634,
+      "languages": {
+        "LR": "Danish",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "nob",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.4240386658273886,
+      "trajectory_similarity": 0.7001593839081572,
+      "resolution_profile_correlation": 0.15623964189744005,
+      "mean_directional_delta": 0.06853103337911065,
+      "languages": {
+        "LR": "Norwegian Bokmål",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "nor",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.4263551288740372,
+      "trajectory_similarity": 0.6985213971795039,
+      "resolution_profile_correlation": 0.2073572125332116,
+      "mean_directional_delta": 0.06366312534182367,
+      "languages": {
+        "LR": "Norwegian",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "isl",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.4327635278813725,
+      "trajectory_similarity": 0.693989974784868,
+      "resolution_profile_correlation": 0.18427958201017045,
+      "mean_directional_delta": 0.05941490057524951,
+      "languages": {
+        "LR": "Icelandic",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "swe",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.4370838270407627,
+      "trajectory_similarity": 0.6909350619525086,
+      "resolution_profile_correlation": 0.19748028316789418,
+      "mean_directional_delta": 0.06857311111673237,
+      "languages": {
+        "LR": "Swedish",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "yor",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.45237030073801604,
+      "trajectory_similarity": 0.680125892740751,
+      "resolution_profile_correlation": 0.0002488463812917978,
+      "mean_directional_delta": 0.07097697849317156,
+      "languages": {
+        "LR": "Yoruba",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    },
+    {
+      "LR": "cym",
+      "RL": "heb",
+      "TB": "kor",
+      "trajectory_distance": 0.4568598249685709,
+      "trajectory_similarity": 0.6769513197130244,
+      "resolution_profile_correlation": 0.158676114274944,
+      "mean_directional_delta": 0.06146118211237938,
+      "languages": {
+        "LR": "Welsh",
+        "RL": "Hebrew",
+        "TB": "Korean"
+      }
+    }
+  ],
+  "interpretation_rule": {
+    "linked_support": "Strong evidence would require a search-corrected trajectory p<0.05, positive direction stability for all three members, a positive resolution-profile correlation with its own p<0.05, and the correct-orientation trio to beat the wrong-orientation control.",
+    "partial_support": "If only the primary trajectory test passes, the trio is geometrically linked but the shared multiresolution pattern is not independently established.",
+    "not_supported": "If the search-corrected primary test fails, the apparent trio can be explained by selecting the best-looking combination from the available languages."
+  }
+}
