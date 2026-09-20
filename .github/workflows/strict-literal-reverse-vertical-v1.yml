@@ -1,0 +1,44 @@
+name: Strict literal reverse vertical test
+
+on:
+  push:
+    paths:
+      - 'tools/test_strict_literal_reverse_vertical_v1.py'
+      - '.github/workflows/strict-literal-reverse-vertical-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile
+        run: python -m py_compile tools/man_grid_exact_data.py tools/man_grid_exact_engine.py tools/test_strict_literal_reverse_vertical_v1.py
+      - name: Run strict reversal test
+        run: python tools/test_strict_literal_reverse_vertical_v1.py
+      - name: Validate
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/strict-literal-reverse-vertical-v1.json',encoding='utf8'))
+          assert p['status']=='complete'
+          assert p['coverage']['horizontal_pairs']>0
+          print(json.dumps(p['selected_horizontal_pair'],ensure_ascii=False,indent=2))
+          print(json.dumps(p['vertical_followup'],ensure_ascii=False,indent=2))
+          PY
+      - name: Commit result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/strict-literal-reverse-vertical-v1.json
+          git commit -m 'Add strict literal reverse vertical results' || exit 0
+          git pull --rebase origin main
+          git push
