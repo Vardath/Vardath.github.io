@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import csv, json, statistics, unicodedata
-from collections import defaultdict
 from pathlib import Path
 
 import man_grid_exact_data as D
@@ -21,8 +20,84 @@ def bh(rows,pkey='p',qkey='q'):
         q=min(prev,rows[i][pkey]*m/rank)
         rows[i][qkey]=q;prev=q
 
-def square_spec(n):
-    return {'upper':[{'id':f'{n}x{n}','rows':n,'columns':n}],'lower':[]}
+def tau_seq(seq):
+    # Kendall-style pairwise order concordance with tied grid cells excluded.
+    if len(seq)<2:return 0.0
+    vals=sorted(set(seq));rank={v:i+1 for i,v in enumerate(vals)}
+    bit=[0]*(len(vals)+2)
+    def add(i):
+        while i<len(bit):
+            bit[i]+=1;i+=i&-i
+    def qry(i):
+        s=0
+        while i>0:
+            s+=bit[i];i-=i&-i
+        return s
+    con=dis=seen=0
+    for v in seq:
+        r=rank[v];less=qry(r-1);le=qry(r)
+        con+=less;dis+=seen-le
+        add(r);seen+=1
+    den=con+dis
+    return (con-dis)/den if den else 0.0
+
+def traversal_arrays(stable_order,C,n):
+    R=Cn=n
+    out={k:[] for k in (
+      'row_lr_top','row_lr_bottom','row_rl_top','row_rl_bottom',
+      'col_tb_left','col_tb_right','col_bt_left','col_bt_right')}
+    for g in stable_order:
+        x=max(0,min(.999999,C[g][0]));y=max(0,min(.999999,C[g][1]))
+        c=min(n-1,int(x*n));r=min(n-1,int((1-y)*n))
+        vals={
+          'row_lr_top':r*Cn+c,
+          'row_lr_bottom':(R-1-r)*Cn+c,
+          'row_rl_top':r*Cn+(Cn-1-c),
+          'row_rl_bottom':(R-1-r)*Cn+(Cn-1-c),
+          'col_tb_left':c*R+r,
+          'col_tb_right':(Cn-1-c)*R+r,
+          'col_bt_left':c*R+(R-1-r),
+          'col_bt_right':(Cn-1-c)*R+(R-1-r)
+        }
+        for k,v in vals.items():out[k].append(v)
+    return out
+
+def class_scores(arrays,perm=None):
+    if perm is None:
+        def s(k):return tau_seq(arrays[k])
+    else:
+        def s(k):
+            a=arrays[k]
+            return tau_seq([a[i] for i in perm])
+    return {
+      'LR':max(s('row_lr_top'),s('row_lr_bottom')),
+      'RL':max(s('row_rl_top'),s('row_rl_bottom')),
+      'TB':max(s('col_tb_left'),s('col_tb_right')),
+      'BT':max(s('col_bt_left'),s('col_bt_right'))
+    }
+
+def directional_delta(arrays,exp,perm):
+    if exp=='LR':
+        e=max(tau_seq([arrays['row_lr_top'][i] for i in perm]),
+              tau_seq([arrays['row_lr_bottom'][i] for i in perm]))
+        o=max(tau_seq([arrays['row_rl_top'][i] for i in perm]),
+              tau_seq([arrays['row_rl_bottom'][i] for i in perm]))
+    elif exp=='RL':
+        e=max(tau_seq([arrays['row_rl_top'][i] for i in perm]),
+              tau_seq([arrays['row_rl_bottom'][i] for i in perm]))
+        o=max(tau_seq([arrays['row_lr_top'][i] for i in perm]),
+              tau_seq([arrays['row_lr_bottom'][i] for i in perm]))
+    elif exp=='TB':
+        e=max(tau_seq([arrays['col_tb_left'][i] for i in perm]),
+              tau_seq([arrays['col_tb_right'][i] for i in perm]))
+        o=max(tau_seq([arrays['col_bt_left'][i] for i in perm]),
+              tau_seq([arrays['col_bt_right'][i] for i in perm]))
+    else:
+        e=max(tau_seq([arrays['col_bt_left'][i] for i in perm]),
+              tau_seq([arrays['col_bt_right'][i] for i in perm]))
+        o=max(tau_seq([arrays['col_tb_left'][i] for i in perm]),
+              tau_seq([arrays['col_tb_right'][i] for i in perm]))
+    return e-o
 
 def prepare_languages():
     _,params,_,_,cov=D.load_phoible()
@@ -38,8 +113,7 @@ def prepare_languages():
       'kor':{'source':'Unicode modern Hangul Jamo order (compatibility forms)','symbols':T.K_ORDER},
       'okm':{'source':'Unicode modern Hangul Jamo order used as a restricted historical-Hangul probe','symbols':T.K_ORDER}
     }
-    rows=[]
-    failures=[]
+    rows=[];failures=[]
     for iso in sorted(x for x in presets if x in metas):
         meta=metas[iso]
         alphabet=[T.normalizer(iso,x) if iso not in T.VERTICAL else x for x in presets[iso]['symbols']]
@@ -51,126 +125,121 @@ def prepare_languages():
             if len(train)<40:raise RuntimeError('too few mapped training words')
             C,support,trainerr=T.learn_centroids(train,alphabet)
             stable={g:C[g] for g in alphabet if g in C and support.get(g,0)>=T.MIN_SYMBOL_SUPPORT}
-            frac=len(stable)/len(alphabet) if alphabet else 0
+            stable_order=[g for g in alphabet if g in stable]
+            frac=len(stable_order)/len(alphabet) if alphabet else 0
             if frac<T.MIN_SYMBOL_COVERAGE:
                 raise RuntimeError(f'low stable-symbol coverage {frac:.3f}')
+            arrays={n:traversal_arrays(stable_order,stable,n) for n in RESOLUTIONS}
             rows.append({
               'iso':iso,'name':meta['name'],'script':meta['script'],'family':meta['family'],
               'direction':T.expected_class(iso),'alphabet_source':presets[iso]['source'],
-              'alphabet_size':len(alphabet),'stable_symbols':len(stable),'symbol_fraction':frac,
+              'alphabet_size':len(alphabet),'stable_symbols':len(stable_order),'symbol_fraction':frac,
               'train_words':len(train),'test_alignment':T.test_alignment(test,stable),
-              'train_mean_coordinate_error':trainerr,'_alphabet':alphabet,'_centroids':stable
+              'train_mean_coordinate_error':trainerr,'_stable_order':stable_order,'_arrays':arrays
             })
         except Exception as e:
             failures.append({'iso':iso,'name':meta['name'],'error':str(e)})
     return rows,failures,cov
 
-def group_stat(rows,group,n,perm_index=None):
-    spec=square_spec(n);vals=[]
-    for x in rows:
-        if x['direction']!=group:continue
-        alphabet=x['_alphabet']
-        if perm_index is not None:
-            alphabet=T.shuffled(alphabet,T.h64('sq23',group,n,perm_index,x['iso']))
-        s=T.score_order(alphabet,x['_centroids'],spec)
-        vals.append({
-          'iso':x['iso'],'name':x['name'],'classes':s['classes'],
-          'best_class':s['best_class'],
-          'delta':s['classes'][group]-s['classes'][T.opposite(group)]
-        })
-    if not vals:return None,[]
-    return statistics.mean(v['delta'] for v in vals),vals
-
-def resolution_results(rows):
-    allres=[]
+def observed(rows):
+    res=[]
     for n in RESOLUTIONS:
+        langs=[]
+        for x in rows:
+            cls=class_scores(x['_arrays'][n])
+            exp=x['direction'];opp=T.opposite(exp)
+            langs.append({
+              'iso':x['iso'],'name':x['name'],'direction':exp,
+              'classes':cls,'best_class':max(cls,key=cls.get),
+              'delta_vs_opposite':cls[exp]-cls[opp]
+            })
         groups={}
-        langs={}
         for g in ('LR','RL','TB'):
-            obs,detail=group_stat(rows,g,n)
-            if obs is None:
-                groups[g]={'languages':0};continue
-            null=[]
-            for k in range(PERMS):
-                z,_=group_stat(rows,g,n,k);null.append(z)
-            p=(1+sum(v>=obs for v in null))/(PERMS+1)
+            xs=[x for x in langs if x['direction']==g]
             groups[g]={
-              'languages':len(detail),
-              'mean_delta_vs_opposite':obs,
-              'positive_languages':sum(v['delta']>0 for v in detail),
-              'expected_class_best_languages':sum(v['best_class']==g for v in detail),
-              'permutation_p':p,
-              'null_mean':statistics.mean(null)
+              'languages':len(xs),
+              'mean_delta_vs_opposite':statistics.mean(x['delta_vs_opposite'] for x in xs),
+              'positive_languages':sum(x['delta_vs_opposite']>0 for x in xs),
+              'expected_class_best_languages':sum(x['best_class']==g for x in xs)
             }
-            for v in detail:
-                langs.setdefault(v['iso'],{
-                  'iso':v['iso'],'name':v['name'],'direction':g
-                }).update({
-                  'classes':v['classes'],'best_class':v['best_class'],
-                  'delta_vs_opposite':v['delta']
-                })
-        allres.append({'n':n,'groups':groups,'languages':list(langs.values())})
+        res.append({'n':n,'groups':groups,'languages':langs})
+    return res
 
-    for g in ('LR','RL','TB'):
-        tmp=[{'n':z['n'],'p':z['groups'][g]['permutation_p']} for z in allres if z['groups'][g].get('languages',0)]
-        bh(tmp)
-        q={x['n']:x['q'] for x in tmp}
-        for z in allres:
-            if z['n'] in q:z['groups'][g]['bh_q_across_21_resolutions']=q[z['n']]
-    return allres
-
-def global_group_test(rows,group,resolutions):
-    xs=[x for x in rows if x['direction']==group]
-    if not xs:return {'languages':0}
-    obs_by_n=[z['groups'][group]['mean_delta_vs_opposite'] for z in resolutions]
-    obs=statistics.mean(obs_by_n)
-    null=[]
+def permutation_nulls(rows):
+    groups=('LR','RL','TB')
+    null={g:{n:[] for n in RESOLUTIONS} for g in groups}
+    by_group={g:[x for x in rows if x['direction']==g] for g in groups}
     for k in range(PERMS):
-        per=[]
-        for n in RESOLUTIONS:
-            vals=[]
-            spec=square_spec(n)
-            for x in xs:
-                a=T.shuffled(x['_alphabet'],T.h64('sq23-global',group,k,x['iso']))
-                s=T.score_order(a,x['_centroids'],spec)
-                vals.append(s['classes'][group]-s['classes'][T.opposite(group)])
-            per.append(statistics.mean(vals))
-        null.append(statistics.mean(per))
-    return {
-      'languages':len(xs),
-      'resolutions':len(RESOLUTIONS),
-      'mean_delta_across_resolutions':obs,
-      'positive_resolutions':sum(v>0 for v in obs_by_n),
-      'permutation_p':(1+sum(v>=obs for v in null))/(PERMS+1),
-      'null_mean':statistics.mean(null),
-      'significant_raw_p_lt_0_05':sum(z['groups'][group]['permutation_p']<.05 for z in resolutions),
-      'significant_bh_q_lt_0_05':sum(z['groups'][group].get('bh_q_across_21_resolutions',1)<.05 for z in resolutions)
-    }
+        # One independently shuffled alphabet order per language is reused across
+        # every resolution. This preserves the dependence of the 3->23 ladder.
+        perms={x['iso']:T.shuffled(range(len(x['_stable_order'])),T.h64('sq23-shared',k,x['iso']))
+               for x in rows}
+        for g in groups:
+            xs=by_group[g]
+            for n in RESOLUTIONS:
+                ds=[directional_delta(x['_arrays'][n],g,perms[x['iso']]) for x in xs]
+                null[g][n].append(statistics.mean(ds))
+        if (k+1)%100==0:print(f'permutations {k+1}/{PERMS}',flush=True)
+    return null
+
+def attach_significance(resolutions,null):
+    for g in ('LR','RL','TB'):
+        tmp=[]
+        for z in resolutions:
+            n=z['n'];obs=z['groups'][g]['mean_delta_vs_opposite'];ns=null[g][n]
+            p=(1+sum(v>=obs for v in ns))/(PERMS+1)
+            z['groups'][g]['permutation_p']=p
+            z['groups'][g]['null_mean']=statistics.mean(ns)
+            tmp.append({'n':n,'p':p})
+        bh(tmp)
+        qs={x['n']:x['q'] for x in tmp}
+        for z in resolutions:z['groups'][g]['bh_q_across_21_resolutions']=qs[z['n']]
+
+def global_group_tests(rows,resolutions,null):
+    out={}
+    for g in ('LR','RL','TB'):
+        obs_by=[z['groups'][g]['mean_delta_vs_opposite'] for z in resolutions]
+        obs=statistics.mean(obs_by)
+        global_null=[statistics.mean(null[g][n][k] for n in RESOLUTIONS) for k in range(PERMS)]
+        out[g]={
+          'languages':sum(x['direction']==g for x in rows),
+          'resolutions':len(RESOLUTIONS),
+          'mean_delta_across_resolutions':obs,
+          'positive_resolutions':sum(v>0 for v in obs_by),
+          'permutation_p':(1+sum(v>=obs for v in global_null))/(PERMS+1),
+          'null_mean':statistics.mean(global_null),
+          'significant_raw_p_lt_0_05':sum(z['groups'][g]['permutation_p']<.05 for z in resolutions),
+          'significant_bh_q_lt_0_05':sum(z['groups'][g]['bh_q_across_21_resolutions']<.05 for z in resolutions)
+        }
+    return out
 
 def progression(resolutions,group):
     ys=[z['groups'][group]['mean_delta_vs_opposite'] for z in resolutions]
-    ns=RESOLUTIONS
-    mx=statistics.mean(ns);my=statistics.mean(ys)
-    den=sum((x-mx)**2 for x in ns)
-    slope=sum((x-mx)*(y-my) for x,y in zip(ns,ys))/den if den else 0
-    return {'slope_per_grid_step':slope,'first_3x3':ys[0],'last_23x23':ys[-1],
-            'max_delta':max(ys),'max_at_n':ns[ys.index(max(ys))],
-            'min_delta':min(ys),'min_at_n':ns[ys.index(min(ys))]}
+    mx=statistics.mean(RESOLUTIONS);my=statistics.mean(ys)
+    den=sum((x-mx)**2 for x in RESOLUTIONS)
+    slope=sum((x-mx)*(y-my) for x,y in zip(RESOLUTIONS,ys))/den if den else 0
+    return {
+      'slope_per_grid_step':slope,'first_3x3':ys[0],'last_23x23':ys[-1],
+      'max_delta':max(ys),'max_at_n':RESOLUTIONS[ys.index(max(ys))],
+      'min_delta':min(ys),'min_at_n':RESOLUTIONS[ys.index(min(ys))]
+    }
 
 def main():
     rows,failures,cov=prepare_languages()
-    resolutions=resolution_results(rows)
-    global_groups={g:global_group_test(rows,g,resolutions) for g in ('LR','RL','TB')}
+    resolutions=observed(rows)
+    null=permutation_nulls(rows)
+    attach_significance(resolutions,null)
+    global_groups=global_group_tests(rows,resolutions,null)
     trends={g:progression(resolutions,g) for g in ('LR','RL','TB')}
 
-    # Korean detail is surfaced because TB is the hypothesis of greatest interest.
     korean={}
     for iso in ('kor','okm'):
         seq=[]
         for z in resolutions:
             x=next((q for q in z['languages'] if q['iso']==iso),None)
-            if x:seq.append({'n':z['n'],'classes':x['classes'],'best_class':x['best_class'],
-                             'delta_vs_BT':x['delta_vs_opposite']})
+            if x:
+                seq.append({'n':z['n'],'classes':x['classes'],'best_class':x['best_class'],
+                            'delta_vs_BT':x['delta_vs_opposite']})
         if seq:
             korean[iso]={
               'name':next(x['name'] for x in rows if x['iso']==iso),
@@ -198,7 +267,7 @@ def main():
           'BT':'column-major bottom-to-top, best of left-first/right-first'
         },
         'primary_statistic':'Pairwise alphabet-order concordance; expected direction minus its opposite.',
-        'controls':f'{PERMS} deterministic shuffled alphabet orders at each resolution; Benjamini-Hochberg correction across the 21 resolutions; a second global permutation test averages all 21 resolutions while preserving their dependence.',
+        'controls':f'{PERMS} deterministic shuffled alphabet orders. Each shuffled alphabet is reused across all 21 resolutions to preserve ladder dependence; Benjamini-Hochberg correction is applied across resolutions, plus a global full-ladder permutation test.',
         'heldout':'20% deterministic word holdout is retained from the previous test for grapheme-to-pronunciation alignment validation.',
         'boundary':'Han characters remain excluded as an alphabet. Korean probes use ordered Hangul jamo.'
       },
@@ -216,10 +285,8 @@ def main():
     }
     OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf8')
     print(json.dumps(out['coverage'],indent=2))
-    print('GLOBAL')
-    print(json.dumps(global_groups,indent=2))
-    print('TRENDS')
-    print(json.dumps(trends,indent=2))
+    print('GLOBAL',json.dumps(global_groups,indent=2))
+    print('TRENDS',json.dumps(trends,indent=2))
     print('KOREAN')
     for iso,x in korean.items():
         print(iso,x['best_is_TB_count'],x['positive_TB_vs_BT_count'])
@@ -230,7 +297,7 @@ def main():
         print(z['n'],json.dumps({g:{
           'delta':round(z['groups'][g]['mean_delta_vs_opposite'],5),
           'p':round(z['groups'][g]['permutation_p'],5),
-          'q':round(z['groups'][g].get('bh_q_across_21_resolutions',1),5),
+          'q':round(z['groups'][g]['bh_q_across_21_resolutions'],5),
           'best':z['groups'][g]['expected_class_best_languages']
         } for g in ('LR','RL','TB')}))
 
