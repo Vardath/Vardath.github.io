@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# workflow-trigger: v1
 # Discovery/holdout mirror-meaning word search across NorthEuraLex.
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
