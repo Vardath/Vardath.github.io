@@ -5,6 +5,7 @@
 if(window.__VARDATH_SQUARE_SEQUENCE_SECTION__)return;
 window.__VARDATH_SQUARE_SEQUENCE_SECTION__=true;
 const DATA='data/phonetic-square-sequence-v2-summary.json';
+const TRAVERSAL_DATA='data/square-pyramid-alphabet-traversal-3-23-v1.json';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pct=x=>(100*x).toFixed(2)+'%';
 const num=(x,d=4)=>Number(x).toFixed(d);
@@ -41,7 +42,7 @@ function chart(title,rows,key,format){
  return `<div class="sqseq-chart"><h4>${title}</h4><svg class="sqseq-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}"><line class="sqseq-axis" x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}"/><line class="sqseq-axis" x1="${L}" y1="${T}" x2="${L}" y2="${H-B}"/><text class="sqseq-value" x="5" y="${T+4}">${format(hi)}</text><text class="sqseq-value" x="5" y="${H-B}">${format(lo)}</text><polyline class="sqseq-line" points="${pts}"/>${dots}${labels}<text class="sqseq-label" x="${W/2}" y="${H-1}" text-anchor="middle">grid side n</text></svg></div>`;
 }
 
-function render(d){
+function render(d,t){
  styles();if(document.getElementById('square-sequence'))return;
  const r=d.resolutions||{}, candidate=Array.from({length:19},(_,i)=>i+3), rows=candidate.map(n=>({n,...r[String(n)]}));
  const section=document.createElement('section');section.className='section wrap';section.id='square-sequence';
@@ -81,6 +82,15 @@ function render(d){
  <div class="sqseq-boundary"><b>Important boundary result:</b> 9×9 is not a privileged endpoint, and 21×21 is not a privileged endpoint. Extending the test to 22×22 and 23×23 continued the same refinement behaviour. The supported claim is therefore the <b>successive-resolution principle</b>, not a special terminal square.</div>
  <h3>How this changes the earlier 3–4–5 interpretation</h3>
  <p>The earlier 3×3, 4×4 and 5×5 benchmark had already shown a coverage-versus-detail trade-off, and it specifically failed to establish 4×4 as globally optimal. The first 3×3→9×9 follow-up then showed the same broad trend but failed its deliberately strict 9×9 endpoint criterion. The full 3×3→21×21 test resolves those observations: <b>3–4–5 was the beginning of a longer resolution ladder</b>. The evidence supports the ladder as a whole while rejecting the idea that 4×4, 9×9, or 21×21 is uniquely selected by this test.</p>
+
+ <h3>Can the same phonetic grid be read in different directions?</h3>
+ <p>This was the next question. Instead of rotating the sounds themselves, we kept every sound and alphabet symbol in the same phonetic position and simply asked what happens when the finished square is <b>read in different directions</b>: left-to-right, right-to-left, top-to-bottom or bottom-to-top.</p>
+ <div class="sqseq-hero"><h3 style="margin-top:0">Plain-English result</h3><p>The strongest result so far is <b>top-to-bottom</b>. Modern Korean preferred a top-to-bottom reading at <b>${t?.korean?.kor?.best_is_TB_count ?? 20} of the 21 square sizes</b> from 3×3 through 23×23, and top-to-bottom beat bottom-to-top at <b>${t?.korean?.kor?.positive_TB_vs_BT_count ?? 20} of 21</b>. When Modern and Middle Korean were tested together, the top-to-bottom signal stayed positive at <b>${t?.global_groups?.TB?.positive_resolutions ?? 20} of 21 resolutions</b> and the full-ladder shuffle test gave p = <b>${num(t?.global_groups?.TB?.permutation_p ?? 0.017456359102244388,4)}</b>.</p></div>
+ <p>In simpler terms: <b>we did not rearrange the grid to make Korean fit.</b> The symbols were placed from pronunciation evidence first. After that placement was frozen, reading the same phonetic field from top to bottom repeatedly matched Korean alphabet order better than reading it from bottom to top. The effect did not depend on finding one lucky square; it kept reappearing as the grid was made finer.</p>
+ <p>The horizontal results were weaker. Left-to-right alphabets leaned the expected way at ${t?.global_groups?.LR?.positive_resolutions ?? 19} of 21 resolutions, but the full-ladder result did not beat the shuffled controls strongly enough (p = <b>${num(t?.global_groups?.LR?.permutation_p ?? 0.11970074812967581,4)}</b>). Right-to-left alphabets were weaker again (p = <b>${num(t?.global_groups?.RL?.permutation_p ?? 0.3640897755610973,4)}</b>). So the present evidence does <b>not</b> show that every writing direction is already encoded cleanly by the grid.</p>
+ <div class="notice"><b>What this may mean:</b> the square ladder may be more than a set of different-sized boxes. It may be different-resolution views of one underlying phonetic field, and some ordered writing systems may correspond to particular ways of travelling through that field. The top-to-bottom Korean result is the first clear lead. It is not yet proof of a universal multi-direction alphabet system because Modern and Middle Korean are related; an unrelated vertical writing system needs to reproduce the effect.</div>
+ <div class="sqseq-links"><a href="${TRAVERSAL_DATA}" target="_blank" rel="noopener">3×3→23×23 direction-test result JSON ↗</a><a href="https://github.com/Vardath/Vardath.github.io/blob/main/tools/test_square_pyramid_alphabet_traversal_3_23_v1.py" target="_blank" rel="noopener">Direction-test source ↗</a></div>
+
  <div class="notice"><b>Separate hypotheses remain separate:</b> this test supports square-resolution geometry. It does not revive the powers-of-three overlay as a causal phonetic mechanism, does not prove that historical human speech literally evolved one grid at a time, and does not turn cumulative cell counts into attested phonemes. Those require their own independent tests.</div>
  <details class="panel" style="margin-top:16px"><summary><b>Technical protocol and predeclared criteria</b></summary><p>${esc(d.method.support)}</p><p><b>Mapping:</b> ${esc(d.method.mapping)}</p><p><b>Controls:</b> ${esc(d.method.controls)}</p><p><b>Sequence test:</b> ${esc(d.method.sequence)}</p><p><b>Endpoint rule:</b> ${esc(d.method.endpoint)}</p></details>
  <div class="sqseq-links"><a href="${DATA}" target="_blank" rel="noopener">Merged 20-shard result JSON ↗</a><a href="https://github.com/Vardath/Vardath.github.io/blob/main/tools/test_phonetic_square_sequence_v2.py" target="_blank" rel="noopener">Test source ↗</a><a href="https://github.com/Vardath/Vardath.github.io/blob/main/.github/workflows/phonetic-square-sequence-20-shard.yml" target="_blank" rel="noopener">20-shard workflow ↗</a></div>`;
@@ -91,7 +101,13 @@ function render(d){
 }
 
 async function boot(){
- try{const res=await fetch(DATA,{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);const d=await res.json();render(d)}catch(e){console.error('Square-sequence evidence section failed to load',e)}
+ try{
+  const [res,tres]=await Promise.all([fetch(DATA,{cache:'no-store'}),fetch(TRAVERSAL_DATA,{cache:'no-store'})]);
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  const d=await res.json();let t=null;
+  if(tres.ok)t=await tres.json();
+  render(d,t);
+ }catch(e){console.error('Square-sequence evidence section failed to load',e)}
 }
 function start(){if(document.getElementById('resolution345'))boot();else{const o=new MutationObserver(()=>{if(document.getElementById('resolution345')){o.disconnect();boot()}});o.observe(document.body,{childList:true,subtree:true});setTimeout(()=>{o.disconnect();boot()},5000)}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
