@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# workflow-trigger: v1
 # Literal reversed-pronunciation same-meaning search, then vertical-language follow-up.
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
