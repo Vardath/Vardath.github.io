@@ -10,7 +10,7 @@
     "primary_linkage": "The full ordered grapheme trajectory of each language is resampled to 64 rank positions. Linkage is mean pairwise Euclidean distance between the three canonical trajectories. Lower is better.",
     "search_control": "1000 within-language alphabet-order shuffles repeat the entire eligible-triple search. The reported search-corrected p-value asks whether the best observed trio is closer than the best accidental trio produced by each shuffled universe.",
     "secondary_linkage": "The 21-resolution directional-strength profiles must also rise and fall together. Circular-shift nulls preserve each profile but break common resolution phase.",
-    "wrong_orientation_control": "The selected trio is also scored after applying the opposite direction to each member."
+    "wrong_orientation_control": "The selected trio is also rescored after flipping exactly one member at a time to its opposite direction. Flipping all three together is deliberately not used because that is a global reflection symmetry and cannot change pairwise distance."
   },
   "coverage": {
     "phoible_segments": 3065,
@@ -90,8 +90,6 @@
     "search_corrected_permutation_p": 0.7282717282717283,
     "fixed_trio_permutation_p": 0.2827172827172827,
     "resolution_profile_correlation_p": 0.06493506493506493,
-    "wrong_orientation_distance": 0.4173285823705623,
-    "wrong_orientation_worse": false,
     "members": {
       "LR": {
         "iso": "fin",
@@ -113,7 +111,7 @@
         "best_direction_resolutions": 0,
         "mean_delta": 0.058988499650439535,
         "stable_symbols": 22,
-        "symbol_fraction": 1.0
+        "symbol_fraction": 1
       },
       "TB": {
         "iso": "kor",
@@ -126,7 +124,13 @@
         "stable_symbols": 37,
         "symbol_fraction": 0.925
       }
-    }
+    },
+    "single_member_wrong_orientation_distances": {
+      "fin": 0.4542041887468088,
+      "heb": 0.4097497419690551,
+      "kor": 0.4199631435874888
+    },
+    "correct_orientation_beats_every_single_flip": false
   },
   "ranking": [
     {
