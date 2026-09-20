@@ -171,14 +171,18 @@ def main():
         corr_null.append(avg_profile_corr(A,rotate(B,sb),rotate(C,sc)))
     corr_p=(1+sum(x>=obs_corr for x in corr_null))/(PERMS+1)
 
-    # Wrong-orientation control for the selected trio.
+    # Wrong-orientation control for the selected trio. Flipping all three at once
+    # is a global reflection and leaves pairwise distances invariant, so the valid
+    # control flips one member at a time while the other two remain fixed.
     opposite={'LR':'RL','RL':'LR','TB':'BT'}
-    wrong=[]
-    for iso in (best['LR'],best['RL'],best['TB']):
+    selected_isos=[best['LR'],best['RL'],best['TB']]
+    correct_traj=[traj[i] for i in selected_isos]
+    single_flip={}
+    for idx,iso in enumerate(selected_isos):
         row=rows[iso]
         pts=[orient(row['_C'][g],opposite[row['direction']]) for g in row['_order']]
-        wrong.append(resample(pts))
-    wrong_dist=trio_distance(*wrong)
+        alt=list(correct_traj);alt[idx]=resample(pts)
+        single_flip[iso]=trio_distance(*alt)
 
     clean_triples=[]
     for tr in triples:
@@ -194,8 +198,8 @@ def main():
       'search_corrected_permutation_p':best_p,
       'fixed_trio_permutation_p':fixed_p,
       'resolution_profile_correlation_p':corr_p,
-      'wrong_orientation_distance':wrong_dist,
-      'wrong_orientation_worse':wrong_dist>best['trajectory_distance'],
+      'single_member_wrong_orientation_distances':single_flip,
+      'correct_orientation_beats_every_single_flip':all(v>best['trajectory_distance'] for v in single_flip.values()),
       'members':{}
     }
     for g,iso in (('LR',best['LR']),('RL',best['RL']),('TB',best['TB'])):
@@ -219,7 +223,7 @@ def main():
         'primary_linkage':'The full ordered grapheme trajectory of each language is resampled to 64 rank positions. Linkage is mean pairwise Euclidean distance between the three canonical trajectories. Lower is better.',
         'search_control':f'{PERMS} within-language alphabet-order shuffles repeat the entire eligible-triple search. The reported search-corrected p-value asks whether the best observed trio is closer than the best accidental trio produced by each shuffled universe.',
         'secondary_linkage':'The 21-resolution directional-strength profiles must also rise and fall together. Circular-shift nulls preserve each profile but break common resolution phase.',
-        'wrong_orientation_control':'The selected trio is also scored after applying the opposite direction to each member.'
+        'wrong_orientation_control':'The selected trio is also rescored after flipping exactly one member at a time to its opposite direction. Flipping all three together is deliberately not used because that is a global reflection symmetry and cannot change pairwise distance.'
       },
       'coverage':{
         'phoible_segments':cov['research_segments'],
