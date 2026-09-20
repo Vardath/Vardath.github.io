@@ -6,7 +6,7 @@
 
 <p class="equation"><strong>past + now + future remain separated while the door is closed → the weave opens at Yggdrasil → temporal layers approach one another → the spire becomes a high-throughput route through time → the weave closes → ordinary local time resumes</strong></p>
 <figure id="spire-fourfold-symbol-figure" class="hero-art-wrap" style="max-width:560px;margin-top:24px">
-<img class="hero-art" src="/images/cosmology/spire-fourfold-symbol.jpg" width="320" height="511" loading="lazy" alt="Four-armed curved rotating-cross motif centred on a crossing">
+<img class="hero-art" src="/FB_IMG_1789863754873.jpg" loading="eager" alt="Four-armed curved rotating-cross motif centred on a crossing" style="display:block;width:auto;max-width:100%;height:auto;margin:0 auto;object-fit:contain">
 <figcaption><strong>Fourfold rotating-cross motif.</strong> In the Vardath reading, this is a useful end-on visual analogue for four curved flows turning around a central crossing or spire: axis at the centre, circulation around it, and four directional arms. This is a visual comparison, not a claim that the original artist intended the Vardath cosmology. Source image supplied by Vardath; exact publication source is not yet verified, remembered as possibly appearing on a cover of a book titled <em>The Spire</em>.</figcaption>
 </figure>
 
