@@ -1,6 +1,6 @@
 <section class="late-research-block" id="yggdrasil-time-switch-plenum-section">
 <hr/>
-<h1 id="26-yggdrasil-time-switch-plenum">26. Yggdrasil as the time-switch — self-to-self, Norns, moving lands and the plenum</h1>
+<h1 id="yggdrasil-time-switch-plenum">Yggdrasil as the time-switch — self-to-self, Norns, moving lands and the plenum</h1>
 <p>This branch began by returning to Odin’s ordeal on Yggdrasil and asking what the story would look like if the ash tree were not only a world-axis but the <strong>physical door in the Vardath cosmology</strong>. The result sharpened the door model considerably. I am no longer picturing a simple portal that removes a traveller from one place and drops them somewhere else. I am picturing a <strong>temporary switching junction in the woven finger-trap tree</strong>, where normally separated world-layers and times become physically adjacent and exchange what occupies them.</p>
 <p class="equation"><strong>woven world-tree → strands converge → door / switch opens → separated times become adjacent → people and land exchange positions → weave closes → ordinary local time continues</strong></p>
 <div class="callout warn"><strong>Working cosmological interpretation.</strong> The Norse sources establish Yggdrasil, Odin’s self-sacrifice, Mímir’s well and the Norns at Urðarbrunnr. They do not describe the mechanical time-switch proposed here. The switch, layered-land transfer and finger-trap geometry are my interpretation of those motifs inside Vardath Cosmology.</div>
