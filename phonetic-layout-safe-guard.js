@@ -36,7 +36,7 @@
     const seq=document.createElement('script');
     seq.defer=true;
     seq.dataset.vardathSquareSequence='1';
-    seq.src='phonetic-square-sequence-section.js?v=20260920-linked1';
+    seq.src='phonetic-square-sequence-section.js?v=20260920-mirror1';
     document.head.appendChild(seq);
   }
 
