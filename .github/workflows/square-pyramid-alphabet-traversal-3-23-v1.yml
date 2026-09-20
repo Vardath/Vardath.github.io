@@ -1,0 +1,53 @@
+name: Square pyramid alphabet traversal 3x3 to 23x23
+
+on:
+  push:
+    paths:
+      - 'tools/test_square_pyramid_alphabet_traversal_3_23_v1.py'
+      - '.github/workflows/square-pyramid-alphabet-traversal-3-23-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile test
+        run: python -m py_compile tools/man_grid_exact_data.py tools/test_man_grid_alphabet_traversal_v1.py tools/test_square_pyramid_alphabet_traversal_3_23_v1.py
+      - name: Run resolution sweep
+        run: python tools/test_square_pyramid_alphabet_traversal_3_23_v1.py
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/square-pyramid-alphabet-traversal-3-23-v1.json',encoding='utf8'))
+          assert p['status']=='complete'
+          assert p['coverage']['resolutions']==21
+          assert p['coverage']['range']==[3,23]
+          assert [x['n'] for x in p['resolutions']]==list(range(3,24))
+          for g in ('LR','RL','TB'):
+              assert g in p['global_groups']
+          print(json.dumps(p['coverage'],indent=2))
+          print(json.dumps(p['global_groups'],indent=2))
+          print(json.dumps(p['resolution_trends'],indent=2))
+          PY
+      - name: Commit reproducible result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git pull --rebase origin main
+          git add data/square-pyramid-alphabet-traversal-3-23-v1.json
+          if git diff --cached --quiet; then
+            echo 'No result changes.'
+          else
+            git commit -m 'Add 3x3-23x23 alphabet traversal results'
+            git push
+          fi
