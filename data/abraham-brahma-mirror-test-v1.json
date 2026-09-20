@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "Abraham/Brahma/Bharata/Mahabharata focused mirror test",
+  "question": "Are the recalled Abraham/Brahma/Bharata/Mahabharata sound correspondences unusually close under the previously defined phonetic mirror operations?",
+  "sources": {
+    "Abraham": "Biblical Hebrew /ʔabraːhaːm/ (Wiktionary)",
+    "Brahma": "Classical Sanskrit /bɾɐɦ.mɑː/ (Wiktionary/Kaikki)",
+    "Brahman": "Classical Sanskrit /bɾɐɦ.mɐn̪/ (Wiktionary)",
+    "Bharata": "Classical Sanskrit /bʱɐ.ɾɐ.t̪ɐ/ (Wiktionary)",
+    "Mahabharata": "Classical Sanskrit /mɐ.ɦɑː.bʱɑː.ɾɐ.t̪ɐ/ (Wiktionary)",
+    "empirical_null": "NorthEuraLex e9a8119f25cf6078299132d8c4e7db338d46ff23, PHOIBLE 5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "design": {
+    "candidate_freeze": "All four candidate pronunciations and all seven mirror operators are fixed before scoring.",
+    "operators": [
+      "reverse",
+      "reflect_x",
+      "reflect_y",
+      "rotate180",
+      "reverse_reflect_x",
+      "reverse_reflect_y",
+      "reverse_rotate180"
+    ],
+    "distance": "Pronunciations are mapped to the frozen PHOIBLE continuous phonetic field, resampled to 24 rank positions, and compared by mean Euclidean path distance.",
+    "operation_search_control": "Every null pair receives the same privilege as the candidate: its score is the best of all seven non-identity mirror operations.",
+    "null": "For each candidate, 10000 NorthEuraLex word pairs from different language families and different meanings are sampled with each word length matched to within ±1 phones.",
+    "multiple_candidate_control": "The overall p-value compares the best of the four recalled candidates with the best of four matched null strata in each null universe.",
+    "semantic_boundary": "The statistics test phonetic/mirror unusualness only. Historical or semantic relatedness is not inferred from phonetic closeness."
+  },
+  "coverage": {
+    "phoible_segments": 3065,
+    "north_euralex_mapped_pool": 108422,
+    "nulls_per_candidate": 10000,
+    "candidate_pairs": 4
+  },
+  "results": [
+    {
+      "a": "Abraham",
+      "b": "Brahman",
+      "a_ipa": "/ʔabraːhaːm/",
+      "b_ipa": "/bɾɐɦmɐn̪/",
+      "semantic_relation": "broad origin/expansion/progenitor association, not lexical synonymy",
+      "phone_lengths": [
+        8,
+        7
+      ],
+      "direct_distance": 0.29919526735754925,
+      "best_mirror_distance": 0.23315746475402013,
+      "best_mirror_operator": "reverse",
+      "mirror_gain_vs_direct": 0.06603780260352912,
+      "matched_length_null_n": 10000,
+      "null_mean_best_mirror_distance": 0.3545375765700725,
+      "null_median_best_mirror_distance": 0.3576347081225957,
+      "individual_empirical_p": 0.0183981601839816,
+      "null_fraction_as_close_or_closer": 0.0183
+    },
+    {
+      "a": "Abraham",
+      "b": "Brahma",
+      "a_ipa": "/ʔabraːhaːm/",
+      "b_ipa": "/bɾɐɦmɑː/",
+      "semantic_relation": "broad creator/progenitor association, not lexical synonymy",
+      "phone_lengths": [
+        8,
+        6
+      ],
+      "direct_distance": 0.3495512180277489,
+      "best_mirror_distance": 0.26653741286821825,
+      "best_mirror_operator": "reflect_x",
+      "mirror_gain_vs_direct": 0.08301380515953066,
+      "matched_length_null_n": 10000,
+      "null_mean_best_mirror_distance": 0.3576283552271527,
+      "null_median_best_mirror_distance": 0.3596811182168868,
+      "individual_empirical_p": 0.04839516048395161,
+      "null_fraction_as_close_or_closer": 0.0483
+    },
+    {
+      "a": "Abraham",
+      "b": "Bharata",
+      "a_ipa": "/ʔabraːhaːm/",
+      "b_ipa": "/bʱɐɾɐt̪ɐ/",
+      "semantic_relation": "no established same meaning; included because user recalled a Bharata/Mahabharata-like form",
+      "phone_lengths": [
+        8,
+        6
+      ],
+      "direct_distance": 0.23507136242371637,
+      "best_mirror_distance": 0.27837090797480507,
+      "best_mirror_operator": "reverse_reflect_x",
+      "mirror_gain_vs_direct": -0.0432995455510887,
+      "matched_length_null_n": 10000,
+      "null_mean_best_mirror_distance": 0.3588798752180846,
+      "null_median_best_mirror_distance": 0.36074543715401286,
+      "individual_empirical_p": 0.0685931406859314,
+      "null_fraction_as_close_or_closer": 0.0685
+    },
+    {
+      "a": "Abraham",
+      "b": "Mahabharata",
+      "a_ipa": "/ʔabraːhaːm/",
+      "b_ipa": "/mɐɦɑːbʱɑːɾɐt̪ɐ/",
+      "semantic_relation": "no established same meaning; included as the likely Mahabharata/Maharata recollection",
+      "phone_lengths": [
+        8,
+        10
+      ],
+      "direct_distance": 0.2864488411258021,
+      "best_mirror_distance": 0.29350645687726373,
+      "best_mirror_operator": "reverse_reflect_x",
+      "mirror_gain_vs_direct": -0.007057615751461632,
+      "matched_length_null_n": 10000,
+      "null_mean_best_mirror_distance": 0.36492253888587056,
+      "null_median_best_mirror_distance": 0.3661716373554784,
+      "individual_empirical_p": 0.07169283071692831,
+      "null_fraction_as_close_or_closer": 0.0716
+    }
+  ],
+  "best_recalled_candidate": {
+    "a": "Abraham",
+    "b": "Brahman",
+    "a_ipa": "/ʔabraːhaːm/",
+    "b_ipa": "/bɾɐɦmɐn̪/",
+    "semantic_relation": "broad origin/expansion/progenitor association, not lexical synonymy",
+    "phone_lengths": [
+      8,
+      7
+    ],
+    "direct_distance": 0.29919526735754925,
+    "best_mirror_distance": 0.23315746475402013,
+    "best_mirror_operator": "reverse",
+    "mirror_gain_vs_direct": 0.06603780260352912,
+    "matched_length_null_n": 10000,
+    "null_mean_best_mirror_distance": 0.3545375765700725,
+    "null_median_best_mirror_distance": 0.3576347081225957,
+    "individual_empirical_p": 0.0183981601839816,
+    "null_fraction_as_close_or_closer": 0.0183
+  },
+  "familywise_best_of_four_empirical_p": 0.05039496050394961,
+  "interpretation_rule": {
+    "strong": "Family-wise p<0.05 would mean at least one recalled candidate is unusually mirror-close compared with length-matched unrelated cross-family word pairs, after controlling both mirror-operation and four-candidate search.",
+    "weak": "An individual p<0.05 but family-wise p>=0.05 is a candidate-specific lead that does not survive the four-pair search correction.",
+    "negative": "Family-wise p>=0.05 means the remembered resemblance is not unusual enough under this phonetic mirror metric to distinguish it from chance cross-family word pairs."
+  }
+}
