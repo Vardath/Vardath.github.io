@@ -1,0 +1,45 @@
+name: Three-way word meaning linkage test
+
+on:
+  push:
+    paths:
+      - 'tools/test_three_way_word_meaning_link_v1.py'
+      - '.github/workflows/three-way-word-meaning-link-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile
+        run: python -m py_compile tools/man_grid_exact_data.py tools/test_man_grid_alphabet_traversal_v1.py tools/test_phonetic_feature_birth_v1.py tools/test_three_way_word_meaning_link_v1.py
+      - name: Run word-meaning linkage test
+        run: python tools/test_three_way_word_meaning_link_v1.py
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/three-way-word-meaning-link-v1.json',encoding='utf8'))
+          assert p['status']=='complete'
+          assert p['coverage']['candidate_triples']>0
+          assert p['selected_trio']['shared_concepts']>=p['coverage']['minimum_shared_concepts']
+          print(json.dumps(p['coverage'],ensure_ascii=False,indent=2))
+          print(json.dumps(p['selected_trio'],ensure_ascii=False,indent=2))
+          PY
+      - name: Commit result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/three-way-word-meaning-link-v1.json
+          git commit -m 'Add three-way word meaning linkage results' || exit 0
+          git pull --rebase origin main
+          git push
