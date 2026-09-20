@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "Strict literal same-meaning phone reversal with vertical follow-up",
+  "source": {
+    "NorthEuraLex_commit": "e9a8119f25cf6078299132d8c4e7db338d46ff23",
+    "PHOIBLE_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "question": "Do same-meaning LTR and RTL words preserve nearly the same phone skeleton in literal reverse order, and do the same concepts also match in Korean under either vertical direction?",
+  "design": {
+    "phone_equivalence": "Exact normalized phone = cost 0. Phones with identical 11 primary PHOIBLE place/manner feature signatures = cost 0.25. Any other substitution = cost 1. Insert/delete = cost 1.",
+    "strict_reversal": "Reversed LTR vs RTL normalized edit distance <= 0.25, reversal must improve on direct order by >= 0.15, and word lengths may differ by at most one phone.",
+    "semantic_controls": "Each same-meaning comparison uses up to 20 length-matched wrong RTL meanings.",
+    "search_correction": "5000 null universes repeat the best-LTR-language search using the same controls.",
+    "vertical": "Only concepts that pass the strict horizontal reversal rule are frozen. Korean may be read top->bottom or bottom->top and compared with either horizontal orientation; no reflection/rotation or learned transform is allowed.",
+    "vertical_controls": "Korean same-meaning forms are compared with up to 20 length-matched wrong Korean meanings and 5000 null draws."
+  },
+  "coverage": {
+    "phoible_segments": 3065,
+    "resolved_languages": {
+      "cym": {
+        "iso": "cym",
+        "name": "Welsh",
+        "direction": "LR",
+        "id": "cym",
+        "dataset_name": "Welsh",
+        "family": "Indo-European"
+      },
+      "dan": {
+        "iso": "dan",
+        "name": "Danish",
+        "direction": "LR",
+        "id": "dan",
+        "dataset_name": "Danish",
+        "family": "Indo-European"
+      },
+      "fin": {
+        "iso": "fin",
+        "name": "Finnish",
+        "direction": "LR",
+        "id": "fin",
+        "dataset_name": "Finnish",
+        "family": "Uralic"
+      },
+      "isl": {
+        "iso": "isl",
+        "name": "Icelandic",
+        "direction": "LR",
+        "id": "isl",
+        "dataset_name": "Icelandic",
+        "family": "Indo-European"
+      },
+      "nob": {
+        "iso": "nob",
+        "name": "Norwegian Bokmål",
+        "direction": "LR",
+        "id": "nor",
+        "dataset_name": "Norwegian (Bokmål)",
+        "family": "Indo-European"
+      },
+      "nor": {
+        "iso": "nor",
+        "name": "Norwegian",
+        "direction": "LR",
+        "id": "nor",
+        "dataset_name": "Norwegian (Bokmål)",
+        "family": "Indo-European"
+      },
+      "swe": {
+        "iso": "swe",
+        "name": "Swedish",
+        "direction": "LR",
+        "id": "swe",
+        "dataset_name": "Swedish",
+        "family": "Indo-European"
+      },
+      "heb": {
+        "iso": "heb",
+        "name": "Hebrew",
+        "direction": "RL",
+        "id": "heb",
+        "dataset_name": "Modern Hebrew",
+        "family": "Afro-Asiatic"
+      },
+      "kor": {
+        "iso": "kor",
+        "name": "Korean",
+        "direction": "TB",
+        "id": "kor",
+        "dataset_name": "Korean",
+        "family": "Koreanic"
+      }
+    },
+    "horizontal_pairs": 6,
+    "permutations": 5000
+  },
+  "horizontal_ranking": [
+    {
+      "LR": "isl",
+      "RL": "heb",
+      "languages": [
+        "Icelandic",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 953,
+      "strict_hits": 0,
+      "control_expected_hits": 0.0,
+      "hit_excess": 0.0,
+      "strict_examples": [],
+      "search_corrected_p": 1.0,
+      "strict_threshold": {
+        "max_normalized_edit": 0.25,
+        "min_reverse_gain": 0.15,
+        "max_length_difference": 1
+      }
+    },
+    {
+      "LR": "dan",
+      "RL": "heb",
+      "languages": [
+        "Danish",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 918,
+      "strict_hits": 0,
+      "control_expected_hits": 0.05,
+      "hit_excess": -0.05,
+      "strict_examples": []
+    },
+    {
+      "LR": "cym",
+      "RL": "heb",
+      "languages": [
+        "Welsh",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 928,
+      "strict_hits": 0,
+      "control_expected_hits": 0.1,
+      "hit_excess": -0.1,
+      "strict_examples": []
+    },
+    {
+      "LR": "fin",
+      "RL": "heb",
+      "languages": [
+        "Finnish",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 1009,
+      "strict_hits": 0,
+      "control_expected_hits": 0.15000000000000002,
+      "hit_excess": -0.15000000000000002,
+      "strict_examples": []
+    },
+    {
+      "LR": "nor",
+      "RL": "heb",
+      "languages": [
+        "Norwegian (Bokmål)",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 962,
+      "strict_hits": 0,
+      "control_expected_hits": 0.25,
+      "hit_excess": -0.25,
+      "strict_examples": []
+    },
+    {
+      "LR": "swe",
+      "RL": "heb",
+      "languages": [
+        "Swedish",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 971,
+      "strict_hits": 0,
+      "control_expected_hits": 0.35000000000000003,
+      "hit_excess": -0.35000000000000003,
+      "strict_examples": []
+    }
+  ],
+  "selected_horizontal_pair": {
+    "LR": "isl",
+    "RL": "heb",
+    "languages": [
+      "Icelandic",
+      "Modern Hebrew"
+    ],
+    "shared_concepts": 953,
+    "strict_hits": 0,
+    "control_expected_hits": 0.0,
+    "hit_excess": 0.0,
+    "strict_examples": [],
+    "search_corrected_p": 1.0,
+    "strict_threshold": {
+      "max_normalized_edit": 0.25,
+      "min_reverse_gain": 0.15,
+      "max_length_difference": 1
+    }
+  },
+  "vertical_followup": [
+    {
+      "TB": "kor",
+      "language": "Korean",
+      "tested_horizontal_strict_hits": 0,
+      "vertical_strict_matches": 0,
+      "mean_vertical_advantage": null,
+      "advantage_wins": 0,
+      "sign_p": 1.0,
+      "permutation_p": 1.0,
+      "best_examples": []
+    }
+  ],
+  "support_rule": "A three-way result requires search-corrected horizontal p<0.05 plus vertical permutation p<0.05 on the frozen strict reversal concepts."
+}
