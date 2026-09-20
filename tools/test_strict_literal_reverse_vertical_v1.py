@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Strict literal phoneme-reversal search with vertical-language follow-up.
+# workflow-trigger: v1
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
 from pathlib import Path
