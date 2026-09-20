@@ -1,6 +1,6 @@
 <section class="late-research-block" id="waterborne-child-v2-section">
 <hr/>
-<h1 id="25-waterborne-child-travelling-fingertrap-v2-result">Waterborne children — the prediction meets the corpus</h1>
+<h1 id="waterborne-children-the-prediction-meets-the-corpus">Waterborne children — the prediction meets the corpus</h1>
 <p>The baby-in-the-river stories became important to the travelling-fingertrap model for one reason: they gave it a way to be wrong. The idea was no longer simply that many traditions contain a child, a basket and water. The proposed sequence was more specific: <strong>a living child enters a contracted carrier, moves with a current, reaches a boundary or receiver, and emerges into a changed household, identity or world.</strong></p>
 <p>That sequence is close enough to the proposed sky mechanism to test directly:</p>
 <p class="equation"><strong>life / child → contracted fingertrap / basket / ark → current → boundary / gate → reception / reopening → changed household, identity or world</strong></p>
