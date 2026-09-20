@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# workflow-trigger: v1
+# workflow-trigger: v2-100k
 # Focused Abraham/Brahma/Bharata/Mahabharata mirror test against empirical phonetic nulls.
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
@@ -14,7 +14,7 @@ OUT=ROOT/'data/abraham-brahma-mirror-test-v1.json'
 NE_SHA='e9a8119f25cf6078299132d8c4e7db338d46ff23'
 NE_BASE=f'https://raw.githubusercontent.com/lexibank/northeuralex/{NE_SHA}/cldf/'
 K=24
-NULLS=10000
+NULLS=100000
 OPS=['reverse','reflect_x','reflect_y','rotate180','reverse_reflect_x','reverse_reflect_y','reverse_rotate180']
 
 CANDIDATES=[
