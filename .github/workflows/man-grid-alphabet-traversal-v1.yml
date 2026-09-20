@@ -1,0 +1,49 @@
+name: Man Grid alphabet traversal test
+
+on:
+  push:
+    paths:
+      - 'tools/test_man_grid_alphabet_traversal_v1.py'
+      - '.github/workflows/man-grid-alphabet-traversal-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile test
+        run: python -m py_compile tools/man_grid_exact_engine.py tools/man_grid_exact_data.py tools/test_man_grid_alphabet_traversal_v1.py
+      - name: Run fixed-grid traversal test
+        run: python tools/test_man_grid_alphabet_traversal_v1.py
+      - name: Validate result
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/man-grid-alphabet-traversal-v1.json',encoding='utf8'))
+          assert p['status']=='complete'
+          assert 'LR' in p['summary']['groups'] and 'RL' in p['summary']['groups'] and 'TB' in p['summary']['groups']
+          assert len(p['layer_groups'])==10
+          print(json.dumps(p['coverage'],indent=2))
+          print(json.dumps(p['summary'],indent=2))
+          PY
+      - name: Commit reproducible result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git pull --rebase origin main
+          git add data/man-grid-alphabet-traversal-v1.json
+          if git diff --cached --quiet; then
+            echo 'No result changes.'
+          else
+            git commit -m 'Add Man Grid alphabet traversal results'
+            git push
+          fi
