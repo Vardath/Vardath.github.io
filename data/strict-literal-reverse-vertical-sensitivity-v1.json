@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "status": "complete",
+  "test": "Strict literal reversal threshold sensitivity with vertical follow-up",
+  "source": {
+    "NorthEuraLex_commit": "e9a8119f25cf6078299132d8c4e7db338d46ff23",
+    "PHOIBLE_commit": "5c477f1934f57b3c1a16168fadc08e83dbc03362"
+  },
+  "question": "Does the literal same-meaning reversal result appear only at a particular strictness cutoff, or persist as the strict phone-edit threshold is relaxed?",
+  "design": {
+    "phone_equivalence": "Exact normalized phone costs 0; identical 11-primary-feature PHOIBLE class costs 0.25; all other substitutions and insert/delete cost 1.",
+    "thresholds": [
+      0.25,
+      0.3333333333,
+      0.4,
+      0.5
+    ],
+    "min_reverse_gain": 0.15,
+    "controls": "Up to 20 length-matched wrong meanings per concept; 500 search-corrected null universes at every threshold.",
+    "multiple_threshold_control": "Benjamini-Hochberg q-values are reported across the four predeclared thresholds.",
+    "vertical": "At each threshold, only horizontal hits passing that threshold are frozen before Korean is tested; Korean may be direct or reversed but receives no other transform."
+  },
+  "coverage": {
+    "phoible_segments": 3065,
+    "horizontal_pairs": 6,
+    "permutations": 500
+  },
+  "sweeps": [
+    {
+      "threshold": 0.25,
+      "min_reverse_gain": 0.15,
+      "best_pair": [
+        "Icelandic",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 953,
+      "strict_hits": 0,
+      "control_expected_hits": 0.0,
+      "hit_excess": 0.0,
+      "search_corrected_p": 1.0,
+      "examples": [],
+      "vertical_followup": [
+        {
+          "language": "Korean",
+          "tested_hits": 0,
+          "strict_vertical_matches": 0,
+          "mean_advantage": null,
+          "advantage_wins": 0,
+          "permutation_p": 1.0,
+          "best_examples": []
+        }
+      ],
+      "BH_q_across_thresholds": 1.0
+    },
+    {
+      "threshold": 0.3333333333,
+      "min_reverse_gain": 0.15,
+      "best_pair": [
+        "Icelandic",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 953,
+      "strict_hits": 0,
+      "control_expected_hits": 0.05,
+      "hit_excess": -0.05,
+      "search_corrected_p": 1.0,
+      "examples": [],
+      "vertical_followup": [
+        {
+          "language": "Korean",
+          "tested_hits": 0,
+          "strict_vertical_matches": 0,
+          "mean_advantage": null,
+          "advantage_wins": 0,
+          "permutation_p": 1.0,
+          "best_examples": []
+        }
+      ],
+      "BH_q_across_thresholds": 1.0
+    },
+    {
+      "threshold": 0.4,
+      "min_reverse_gain": 0.15,
+      "best_pair": [
+        "Swedish",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 971,
+      "strict_hits": 2,
+      "control_expected_hits": 1.7000000000000008,
+      "hit_excess": 0.29999999999999916,
+      "search_corrected_p": 0.9161676646706587,
+      "examples": [
+        {
+          "concept": "SHIVER",
+          "ltr_form": "darːa",
+          "ltr_segments": "d a rː a",
+          "rtl_form": "ʁaʔad",
+          "rtl_segments": "ʁ a ʔ a d",
+          "reverse_distance": 0.4,
+          "reverse_gain": 0.19999999999999996
+        },
+        {
+          "concept": "DROP (SOMETHING)",
+          "ltr_form": "tapːa",
+          "ltr_segments": "t a pː a",
+          "rtl_form": "ʃamat",
+          "rtl_segments": "ʃ a m a t",
+          "reverse_distance": 0.4,
+          "reverse_gain": 0.19999999999999996
+        }
+      ],
+      "vertical_followup": [
+        {
+          "language": "Korean",
+          "tested_hits": 2,
+          "strict_vertical_matches": 0,
+          "mean_advantage": 0.0005689102564102599,
+          "advantage_wins": 1,
+          "permutation_p": 0.5588822355289421,
+          "best_examples": [
+            {
+              "concept_id": "732_tremble",
+              "concept": "SHIVER",
+              "distance": 0.725,
+              "wrong_meaning_distance": 0.7684090909090909,
+              "advantage": 0.04340909090909095,
+              "strict_vertical_match": false,
+              "vertical_form": "t͡ɕʌnjulɦada",
+              "vertical_segments": "tɕ ʌ n j u l ɦ a d a"
+            },
+            {
+              "concept_id": "833_drop",
+              "concept": "DROP (SOMETHING)",
+              "distance": 0.8333333333333334,
+              "wrong_meaning_distance": 0.7910620629370629,
+              "advantage": -0.04227127039627043,
+              "strict_vertical_match": false,
+              "vertical_form": "tt͈͈ʌlʌtt͈͈ɯɾida",
+              "vertical_segments": "t t͈ ʌ l ʌ t t͈ ɯ ɾ i d a"
+            }
+          ]
+        }
+      ],
+      "BH_q_across_thresholds": 1.0
+    },
+    {
+      "threshold": 0.5,
+      "min_reverse_gain": 0.15,
+      "best_pair": [
+        "Finnish",
+        "Modern Hebrew"
+      ],
+      "shared_concepts": 1009,
+      "strict_hits": 1,
+      "control_expected_hits": 1.2500000000000004,
+      "hit_excess": -0.25000000000000044,
+      "search_corrected_p": 0.998003992015968,
+      "examples": [
+        {
+          "concept": "I",
+          "ltr_form": "minæ",
+          "ltr_segments": "m i n æ",
+          "rtl_form": "ani",
+          "rtl_segments": "a n i",
+          "reverse_distance": 0.5,
+          "reverse_gain": 0.25
+        }
+      ],
+      "vertical_followup": [
+        {
+          "language": "Korean",
+          "tested_hits": 1,
+          "strict_vertical_matches": 1,
+          "mean_advantage": 0.4708333333333334,
+          "advantage_wins": 1,
+          "permutation_p": 0.06187624750499002,
+          "best_examples": [
+            {
+              "concept_id": "640_i",
+              "concept": "I",
+              "distance": 0.3333333333333333,
+              "wrong_meaning_distance": 0.8041666666666667,
+              "advantage": 0.4708333333333334,
+              "strict_vertical_match": true,
+              "vertical_form": "na",
+              "vertical_segments": "n a"
+            }
+          ]
+        }
+      ],
+      "BH_q_across_thresholds": 1.0
+    }
+  ]
+}
