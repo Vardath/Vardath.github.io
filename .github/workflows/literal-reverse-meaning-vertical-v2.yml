@@ -1,0 +1,45 @@
+name: Literal reverse meaning vertical test v2
+
+on:
+  push:
+    paths:
+      - 'tools/test_literal_reverse_meaning_vertical_v2.py'
+      - '.github/workflows/literal-reverse-meaning-vertical-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile
+        run: python -m py_compile tools/man_grid_exact_data.py tools/test_phonetic_feature_birth_v1.py tools/test_literal_reverse_meaning_vertical_v2.py
+      - name: Run optimized literal reverse and vertical test
+        run: python tools/test_literal_reverse_meaning_vertical_v2.py
+      - name: Validate
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('data/literal-reverse-meaning-vertical-v2.json',encoding='utf8'))
+          assert p['status']=='complete'
+          assert p['coverage']['horizontal_pairs']>0
+          assert p['selected_horizontal_pair']['frozen_reverse_hit_count']>0
+          print(json.dumps(p['selected_horizontal_pair'],ensure_ascii=False,indent=2))
+          print(json.dumps(p['vertical_followup'],ensure_ascii=False,indent=2))
+          PY
+      - name: Commit result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+Vardath@users.noreply.github.com'
+          git add data/literal-reverse-meaning-vertical-v2.json
+          git commit -m 'Add optimized literal reverse vertical results' || exit 0
+          git pull --rebase origin main
+          git push
