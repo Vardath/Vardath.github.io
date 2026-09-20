@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Strict literal phoneme-reversal search with vertical-language follow-up.
 # sensitivity sweep v1
-# workflow-trigger: sensitivity-v2
+# workflow-trigger: sensitivity-v3-500
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
 from pathlib import Path
@@ -15,7 +15,7 @@ OUT=ROOT/'data/strict-literal-reverse-vertical-sensitivity-v1.json'
 NE_SHA='e9a8119f25cf6078299132d8c4e7db338d46ff23'
 NE_BASE=f'https://raw.githubusercontent.com/lexibank/northeuralex/{NE_SHA}/cldf/'
 NEG=20
-PERMS=5000
+PERMS=500
 MIN_SHARED=250
 STRICT_MAX=0.25
 THRESHOLDS=[0.25,0.3333333333,0.40,0.50]
