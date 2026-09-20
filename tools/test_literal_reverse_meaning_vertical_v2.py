@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # optimized lookup null: v2
+# workflow-trigger: optimized-v2
 # Literal reversed-pronunciation same-meaning search, then vertical-language follow-up.
 from __future__ import annotations
 import csv, io, json, math, statistics, unicodedata, urllib.request
