@@ -192,7 +192,7 @@ That is one of the clearest examples of the larger Vardath principle:
 
 The flood is not merely removed.
 
-It is redistributed into the new world.
+It is redistributed through the affected present and, where transfer occurs, into neighbouring populated worlds.
 
 ## Sediment settles
 
@@ -274,7 +274,7 @@ Uplift persists in places.
 
 Subsidence persists in others.
 
-The new world does not become quiet in one moment.
+The affected present does not become quiet in one moment.
 
 It recovers.
 
@@ -512,7 +512,7 @@ Population centres relocate.
 
 The quiet world therefore has a **young quiet phase** before mature stability.
 
-That is another reason I expect the successor world to carry a long recovery history after the dramatic mythology has ended.
+That is another reason I expect the new-beginning period on an affected present to carry a long recovery history after the dramatic mythology has ended.
 
 
 ## Reopening completes the handoff
