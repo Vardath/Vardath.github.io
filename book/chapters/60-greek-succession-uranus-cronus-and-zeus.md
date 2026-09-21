@@ -492,7 +492,7 @@ It is this:
 
 That is almost exactly how I picture world succession now.
 
-The next turn remains populated and developing while the present remains the world we currently occupy.
+The next turn remains populated while the present remains the world we currently occupy.
 
 The present world contains material inherited from the previous one.
 
