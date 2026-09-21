@@ -7785,11 +7785,11 @@ A real world catastrophe should be uneven.
 
 The waking-state model allows that.
 
-## The world becomes mythic before it becomes catastrophic
+## The world becomes mythic before local conditions become catastrophic
 
 This is one of the most useful ideas in the current cosmology.
 
-The world can begin looking mythic **before** it becomes completely uninhabitable.
+The world can begin looking mythic **before** ordinary surface conditions become catastrophic for the people living through the event.
 
 A node brightens into an eye.
 
@@ -20009,7 +20009,7 @@ The old state fails.
 
 A transition occurs.
 
-The world becomes inhabitable again.
+The local surface and transferred regions become stable enough for ordinary life again, while the larger worlds remain populated throughout.
 
 ## Creation and destruction are one threshold
 
@@ -25104,7 +25104,7 @@ If accumulated matter damps later Birkeland-like pulses, then the earliest world
 
 That could mean the biological environment also changed progressively.
 
-The first inhabitable worlds may have been very unlike ours.
+Earlier inhabited worlds may have had conditions very unlike ours.
 
 Later worlds may be more enclosed, more shielded and less energetic.
 
@@ -32654,7 +32654,7 @@ The axial route dominates.
 
 Then the system spreads again and distinct regions reappear.
 
-The world becomes inhabitable because things that had been mixing are separated once more.
+Ordinary surface conditions become stable again because things that had been mixing are separated once more; the world itself has remained populated.
 
 Tiamat's division belongs naturally beside that process.
 
@@ -35410,7 +35410,7 @@ A world can be created by **opening an interval**.
 
 That is very close to the geometry I need after a Vardath gate event.
 
-During convergence, levels that are normally separated may become more closely connected. During reopening, the relationship widens again. The world becomes inhabitable not because all neighbouring structure vanishes, but because the proper spacing returns.
+During convergence, levels that are normally separated may become more closely connected. During reopening, the relationship widens again. Ordinary surface conditions become stable again because the proper spacing returns, not because neighbouring populated worlds vanish.
 
 Greek myth gives me a violent version of that transition.
 
