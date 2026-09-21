@@ -678,7 +678,7 @@ The main roles include:
 - **manifestation** — the visible form of the active structure;
 - **medium** — water, wind, cloud, fire, radiance or current surrounding the transition;
 - **witness** — the observer who experiences only one view of the event;
-- **reset** — the reorganisation that turns catastrophe into a successor world.
+- **reset** — the destructive reorganisation caused by gate interaction, followed by a new-beginning period on the affected present world.
 
 Different traditions can preserve different roles.
 
