@@ -346,7 +346,7 @@ All world-turns in Vardath Cosmology are populated in their own right. **Previou
 
 The populated world-state or turn that is next relative to the present one in the larger structure.
 
-It is populated in its own right and may already be developing before it occupies the present position in our sequence.
+It remains populated in its own right before, during and after any change in its relation to the present.
 
 ## Node
 
