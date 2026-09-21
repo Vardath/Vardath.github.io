@@ -66,7 +66,7 @@ That idea is central to Vardath Cosmology.
 
 The old world can still exist as inheritance.
 
-The next can already be forming.
+The next already exists as a populated world.
 
 The present only looks complete because it is the world from which we are looking.
 
