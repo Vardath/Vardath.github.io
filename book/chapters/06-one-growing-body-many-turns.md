@@ -40,7 +40,7 @@ Those words are useful, but each needs care.
 
 **Present** means the stabilised turn we currently inhabit.
 
-**Next** means the later turn already developing beyond the present one.
+**Next** means the populated world-turn that is later relative to the present one.
 
 I also use **lower** and **upper** because the model is layered.
 
