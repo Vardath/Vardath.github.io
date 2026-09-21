@@ -56,19 +56,27 @@ It is one stabilised turn of something larger.
 
 Behind or beneath it is an older turn: the previous world-state retained inside the larger growth.
 
-Beyond or above it is a forming turn: the next world-state, not yet the main inhabited world but already part of the same body.
+Beyond or above it is another populated turn: the next world-state, developing in relation to us but already a world in its own right within the same body.
 
 I use words like *above* and *below* because the model is layered, but the relation is also temporal.
 
 The older turn is the inherited past.
 
-The present turn is the inhabited state.
+The present turn is the world-state we currently inhabit.
 
 The next turn is the developing future.
 
 They are not three unrelated universes.
 
 They are successive parts of one continuing structure.
+
+One point needs to be explicit here: **all of these world-turns are populated**.
+
+Previous, present and next do not mean dead world, inhabited world and unborn world.
+
+They describe the worlds' relationship to the world I am standing in.
+
+A world above or below can have its own inhabitants, ecology, history and stable order while remaining separated from us. The gate changes adjacency between populated worlds. It does not populate an empty one.
 
 The closest ordinary image is a growing shell.
 
