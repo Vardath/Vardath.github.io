@@ -456,7 +456,7 @@ This sits very comfortably beside my previous-world idea.
 
 The previous world-turn is old.
 
-It is no longer the surface occupying our present relation, but it remains populated in its own right.
+It is past-relative to the world above while remaining a populated present to its own inhabitants.
 
 But it is still part of the larger world-body.
 
