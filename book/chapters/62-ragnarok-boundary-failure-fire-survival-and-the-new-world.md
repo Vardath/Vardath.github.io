@@ -604,11 +604,11 @@ If the world tree relates successive world-states, then a Ragnarök-like event i
 
 It may be a rearrangement of temporal adjacency.
 
-The old world becomes previous.
+The world below remains past-relative to the present.
 
-The next becomes present.
+The world above remains future-relative to the present.
 
-Survivors cross the threshold.
+Survivors, material and other parts of those neighbouring worlds can cross the threshold when the gate is open.
 
 Stories of gods and beings from the old order may continue because the separation between ages was once physically traversable.
 
