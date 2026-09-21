@@ -42,7 +42,7 @@ That is very close to the way I use the word in Vardath Cosmology.
 
 The present world-turn is not simply one location in empty space.
 
-It is the currently inhabited stable regime.
+It is the stable regime we currently inhabit.
 
 Its atmosphere behaves a certain way.
 
