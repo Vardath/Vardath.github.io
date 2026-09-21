@@ -176,7 +176,7 @@ That belongs directly beside the Vardath idea of neighbouring world-turns.
 
 The previous world can become hidden from the present without being annihilated.
 
-The next world can exist before it becomes the inhabited present.
+The next world can exist and be populated before it occupies the present position in our sequence.
 
 People, lands or material can become inaccessible because their adjacency has changed.
 
@@ -492,7 +492,7 @@ It is this:
 
 That is almost exactly how I picture world succession now.
 
-The next turn forms while the present world is still inhabited.
+The next turn remains populated and developing while the present remains the world we currently occupy.
 
 The present world contains material inherited from the previous one.
 
