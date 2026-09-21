@@ -244,7 +244,7 @@ The Vardath gate is also a temporary change in access.
 
 I do not imagine that the next world is created at the instant the door opens.
 
-I imagine it already forming as part of the larger world-body.
+I imagine it already existing as a populated part of the larger world-body.
 
 Likewise, the previous world remains inherited below or behind the present relation.
 
@@ -378,7 +378,7 @@ It can become lower, hidden, inaccessible or mythologised.
 
 The present world can stand over inherited structure.
 
-The old order may survive as underworld, buried land, sealed region, ancestral realm or story.
+The old order may become inaccessible from our present relation or survive in memory as underworld, buried land, sealed region, ancestral realm or story, while the previous world itself remains populated.
 
 I do not need every Greek Titan to correspond to a lower world.
 
