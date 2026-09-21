@@ -398,7 +398,7 @@ A complete local crossing can be described as:
 
 A world-scale event adds:
 
-**operator → carrier → reset → successor world**
+**operator → carrier → reset → new-beginning period**
 
 This sequence is far more useful to me than matching isolated symbols.
 
@@ -544,7 +544,7 @@ manifestation,
 
 survivor,
 
-successor world.
+renewed present / new-beginning period.
 
 That difference may reflect genre.
 
