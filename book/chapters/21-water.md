@@ -516,7 +516,7 @@ The upper transfer becomes rainfall, groundwater and basin filling.
 
 The catastrophe becomes hydrology.
 
-That is how the new world becomes ordinary.
+That is how the renewed present becomes ordinary again.
 
 Later generations see seas and assume they have always been where they are.
 
