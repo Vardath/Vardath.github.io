@@ -15554,7 +15554,7 @@ That is how the larger body accumulates history.
 
 ## The new world is not clean
 
-A successor world begins mixed.
+A renewed present begins mixed after the gate event.
 
 It contains old sediment.
 
@@ -15757,7 +15757,7 @@ language, stories, law, ritual, maps, memory.
 **Relational inheritance**  
 the very fact that the new world knows it came from somewhere before.
 
-A successor world can receive some layers and lose others.
+A renewed present can receive some layers from neighbouring worlds and lose others during the destructive interval.
 
 That gives many possible historical outcomes.
 
@@ -15783,7 +15783,7 @@ Possibly its own life.
 
 Its own geography in formation.
 
-The successor world is produced by interaction between what arrives and what is already there.
+The new-beginning period is produced by interaction between what arrives from above and below and what survives locally.
 
 That makes the handoff more like grafting than copying.
 
@@ -15791,7 +15791,7 @@ A branch joins another living system.
 
 The result belongs to both histories.
 
-This idea helps explain why a successor world should not look like a perfect reconstruction of its predecessor.
+This idea helps explain why a renewed present after the gate should not look like a perfect reconstruction of its pre-event state.
 
 ## Most inheritance should be damaged
 
@@ -15883,7 +15883,7 @@ The strongest case would come from **independent layers converging on one sequen
 
 That remains a research goal rather than a completed result.
 
-## The successor world begins before it feels normal
+## The new-beginning period starts before it feels normal
 
 The first people after the transfer would not necessarily experience a clean new beginning.
 
@@ -29472,7 +29472,7 @@ A wall can become cliff-like.
 
 A monumental structure can be distorted beyond easy recognition.
 
-That means the successor world inherits not only material, but the **thermal memory of the gate**.
+That means the renewed present inherits not only material from both directions, but the **thermal memory of the gate**.
 
 The new landscape contains matter that still bears the event inside its form.
 
@@ -29574,7 +29574,7 @@ A city can be a miniature world.
 
 Each preserves an inside while the larger outside becomes unstable.
 
-The successor world can therefore be seeded by smaller worlds.
+The renewed present can therefore be reseeded by protected local enclosures and by living material crossing from neighbouring worlds.
 
 This nesting feels important to me.
 
@@ -29630,7 +29630,7 @@ Another remembers arriving from a mountain or cave.
 
 Over time those memories can become separate traditions even if they belong to one larger world transition.
 
-The successor world therefore inherits **narrative cargo** as well as physical cargo.
+The renewed present therefore inherits **narrative cargo** as well as physical cargo.
 
 ## The new world receives old gods
 
@@ -29706,7 +29706,7 @@ This is one of the most natural ways mythology can grow from succession.
 
 ## The new world believes itself permanent
 
-Eventually the successor world forgets that it was once new.
+Eventually the renewed present forgets that its new-beginning period was once new.
 
 Its coastline becomes the coastline.
 
@@ -30092,7 +30092,7 @@ That is what we actually find.
 
 ## Creation myths may remember arrival
 
-One of the possibilities I find strongest is that some creation stories may be memories of **arrival into a successor world**.
+One of the possibilities I find strongest is that some creation stories may be memories of **arrival into a present world during its new-beginning period after gate contact**.
 
 From the viewpoint of survivors, the world after the reset is genuinely new.
 
@@ -32396,7 +32396,7 @@ The net can belong to containment.
 
 The division can belong to reset.
 
-The resulting sky and earth can belong to the successor world.
+The resulting sky and earth can belong to the renewed present after the gate event.
 
 That is already a complete event sequence without reducing any one character to the whole machine.
 
@@ -32532,7 +32532,7 @@ A buried structure may preserve a previous arrangement.
 
 A sediment blanket may preserve flood.
 
-The successor world is literally built out of catastrophe.
+The renewed present can be materially reshaped by catastrophe and by what crosses through the gate.
 
 Tiamat's body expresses that truth mythically in the most direct possible way.
 
@@ -32651,7 +32651,7 @@ Atrahasis and Utnapishtim give me the other half.
 
 Life survives because some of it is enclosed, carried and released after the water catastrophe.
 
-That matters because a successor world needs more than rock.
+That matters because a renewed present needs more than reshaped rock.
 
 It needs living continuity.
 
@@ -33920,7 +33920,7 @@ Witness.
 
 Reset.
 
-Successor world.
+Renewed present / new-beginning period.
 
 The model becomes stronger when those roles remain distinct.
 
@@ -36912,7 +36912,7 @@ If I compress Ragnarök into Vardath roles, I get something like this:
 
 **Líf and Lífþrasir — protected living continuity.**
 
-**Renewed Earth — successor world.**
+**Renewed Earth — renewed present / new-beginning period.**
 
 That sequence is why Ragnarök matters so much to me.
 
@@ -39656,7 +39656,7 @@ That produces an important principle:
 
 This is useful because some of my more speculative branches can become too focused on transfer between levels.
 
-The *Popol Vuh* reminds me that after all the extraordinary movement, the successor world still has to become local.
+The *Popol Vuh* reminds me that after all the extraordinary movement, the renewed present still has to become local and ordinary again.
 
 Its people have to eat its food.
 
@@ -39912,7 +39912,7 @@ The connection I make is structural.
 
 The Five Suns give me:
 
-**world → catastrophe → successor world → catastrophe → successor world.**
+**present world → catastrophe → renewed present / new beginning → catastrophe → another renewed present / new beginning.**
 
 That is one of the clearest mythic forms of world succession in the entire book.
 
@@ -39996,7 +39996,7 @@ The visible mechanism can vary.
 
 The deeper position in the sequence can remain the same.
 
-**stable world → terminal disruption → successor world.**
+**stable present → terminal disruption → renewed present entering a new-beginning period.**
 
 That is much closer to the Vardath cycle.
 
@@ -43910,7 +43910,7 @@ Some culture survives.
 
 Some things disappear.
 
-The successor world is not a copy.
+The renewed present after emergence is not a copy of its pre-event state.
 
 It is a continuation under new conditions.
 
@@ -44136,7 +44136,7 @@ End.
 
 Crisis.
 
-From the successor world:
+From the renewed present after emergence:
 
 emergence.
 
@@ -50963,7 +50963,7 @@ A reset becomes succession only if something is handed forward.
 
 ## Inheritance
 
-Anything the successor world receives from what came before.
+Anything an affected present retains locally or receives through the gate from its past-relative or future-relative neighbours.
 
 Inheritance does not have to remain intact.
 
@@ -53722,7 +53722,7 @@ Vardath form:
 | Surface response | flood, fire, land emergence, deformation, material change | Ragnarök, Māui land, Nüwa, Meltology |
 | Reopening | separation, widening, restored light, resealing | Tāne, Pangu, Yomi closure, hidden-light release |
 | Recovery | refuge, healing, sedimentation, regulation | Avalon, Sampo/stable production, Māui slowing Sun |
-| Renewed quiet world | successor world, new land, inherited life | Five Suns, Hopi emergence, Ragnarök renewed Earth |
+| Renewed quiet world | new-beginning period, altered land, inherited life | Five Suns, Hopi emergence, Ragnarök renewed Earth |
 | Cultural memory | sacred site, story, memorial opening, mythic role | sipapu, songlines, fairy places, threshold legends |
 
 ---
@@ -53740,7 +53740,7 @@ For example, the Norse comparison can be divided as:
 - **Odin** — traveller/operator/witness depending on episode.
 - **Ragnarök** — active transition.
 - **Líf and Lífþrasir** — surviving continuity.
-- **renewed Earth** — successor world.
+- **renewed Earth** — renewed present / new-beginning period.
 
 The value of the atlas is precisely that these roles are not collapsed.
 
@@ -54294,7 +54294,7 @@ The book does not treat the *Popol Vuh* as interchangeable with Mexica Five Suns
 
 The Five Suns provide one of the clearest world-age structures:
 
-**world order → ending → successor world order.**
+**world order → ending → renewed world order.**
 
 The visible catastrophes differ across the sequence.
 
