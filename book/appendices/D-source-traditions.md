@@ -520,7 +520,7 @@ The book does not treat the *Popol Vuh* as interchangeable with Mexica Five Suns
 
 The Five Suns provide one of the clearest world-age structures:
 
-**world order → ending → successor world order.**
+**world order → ending → renewed world order.**
 
 The visible catastrophes differ across the sequence.
 
