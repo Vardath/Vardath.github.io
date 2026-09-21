@@ -488,7 +488,7 @@ It can already contain boundaries, material, life, inhabitants and its own histo
 
 It can already have a relationship to the current.
 
-It simply has not yet become the world occupying our present position in the sequence.
+It remains the populated world above, future-relative to this present, while being present to its own inhabitants.
 
 Future, in that sense, is not absolute non-existence.
 
