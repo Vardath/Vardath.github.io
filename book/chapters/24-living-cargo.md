@@ -52,9 +52,9 @@ Bodies.
 
 They can be carried without deliberate protection.
 
-That means a new world receiving water and sediment is also likely receiving biology.
+That means any populated world receiving water and sediment through the gate is also likely receiving biology.
 
-The next world does not need to begin sterile.
+No neighbouring world needs to begin sterile; life can already be present before transfer.
 
 Its smallest living inheritance can arrive embedded in ordinary cargo.
 
@@ -418,9 +418,9 @@ Then larger animals.
 
 Then complex human settlement.
 
-A successor world does not need to wake up biologically all at once.
+A renewed present does not need to recover biologically all at once.
 
-It can rebuild in layers.
+Its post-gate ecology can stabilise in layers.
 
 That is much closer to ordinary ecology and much more plausible inside the speculative model.
 
@@ -567,9 +567,9 @@ Without life, the reset is only geology.
 
 With life, it becomes succession.
 
-The new world is not simply a rearranged surface.
+The renewed present is not simply a rearranged surface.
 
-It is an inhabited successor.
+It remains inhabited through a new-beginning period shaped by survival and cross-world inheritance.
 
 That is why living cargo matters so much.
 
