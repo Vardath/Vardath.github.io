@@ -79,7 +79,7 @@
 
 # Part VIII — The Integrated Vardath Cosmology
 49. The Full Cycle
-50. One World Becoming the Next
+50. Past, Present and Future at the Gate
 51. What I Think the Myths May Be Remembering
 52. What I Am Still Exploring
 
