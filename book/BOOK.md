@@ -11306,7 +11306,7 @@ Some may be buried when another layer settles over them.
 
 Some may exchange relative position through the door.
 
-Some may survive as inherited geography in a successor world.
+Some may cross into the worlds above or below and survive as inherited geography there, while material from those worlds can enter this present.
 
 This is where the time-door idea becomes inseparable from the land branch.
 
@@ -11418,7 +11418,7 @@ That does not mean every anomaly has to be explained this way.
 
 The point is that the cosmology predicts **inheritance mixtures**.
 
-A successor world should contain things from more than one stage of the larger body.
+A post-gate present can contain material from its own surviving landscape together with contributions from the relative past below and future above.
 
 ## The door carries culture too
 
@@ -12083,7 +12083,7 @@ Population centres relocate.
 
 The quiet world therefore has a **young quiet phase** before mature stability.
 
-That is another reason I expect the successor world to carry a long recovery history after the dramatic mythology has ended.
+That is another reason I expect the new-beginning period on an affected present to carry a long recovery history after the dramatic mythology has ended.
 
 
 ## Reopening completes the handoff
@@ -13110,7 +13110,7 @@ That makes atmospheric inheritance easy to overlook.
 
 But from the viewpoint of living organisms it may be the most important cargo of all.
 
-A world without breathable air is not a successor world for us.
+A world whose air we cannot breathe may still be populated in its own right, but it would not be a survivable destination for us without protection or atmospheric change.
 
 The gate therefore does more than move matter.
 
@@ -14099,7 +14099,7 @@ Then larger animals.
 
 Then complex human settlement.
 
-A successor world does not need to wake up biologically all at once.
+A renewed present does not need to recover biologically all at once.
 
 It can rebuild in layers.
 
@@ -14797,7 +14797,7 @@ The gate threatens the old inside.
 
 The carrier preserves smaller insides.
 
-The successor world becomes the new large inside.
+The affected present remains the large inhabited inside, but its contents and boundaries can be changed by what crossed during the gate interval.
 
 That is why enclosure imagery survived every stage of the project.
 
@@ -16961,7 +16961,7 @@ A complete local crossing can be described as:
 
 A world-scale event adds:
 
-**operator → carrier → reset → successor world**
+**operator → carrier → reset → new-beginning period**
 
 This sequence is far more useful to me than matching isolated symbols.
 
@@ -20117,9 +20117,9 @@ The first stable community may appear long before the wider world has recovered.
 
 That long middle is essential because it gives archaeology, geology and biology time to produce complicated layers rather than one clean event horizon.
 
-## The new world should be geographically uneven
+## The renewed present should be geographically uneven
 
-If recovery happens through local stability, then the successor world should not appear everywhere at once.
+If recovery happens through local stability, then the new-beginning period should not settle everywhere at once.
 
 Higher ground drains first.
 
@@ -36922,15 +36922,15 @@ It is not one isolated image of destruction.
 
 It is a world cycle.
 
-## The old world becomes the previous world
+## The affected present enters a new beginning
 
-This is where the Norse story joins my previous-present-next model most strongly.
+This is where the Norse story joins my gate, destruction and new-beginning model most strongly.
 
-Before Ragnarök, the world experienced by its inhabitants is simply "the world."
+Before Ragnarök, that world is its inhabitants' present, just as every world is present to its own inhabitants.
 
-After Ragnarök, it is the world that was.
+After Ragnarök, the same affected world enters a new-beginning period; its pre-event order is what has become past.
 
-The renewed Earth becomes the present world for the survivors and successors.
+The renewed Earth remains the survivors' present, now altered by destruction, survival and whatever crossed from the worlds above and below while the gate was open.
 
 That is exactly how a world-turn changes identity in my model.
 
@@ -40412,13 +40412,13 @@ Parts of earlier worlds can still contribute to what follows.
 
 That is almost exactly what I mean when I say:
 
-**one world becomes the previous world while another becomes home.**
+**a present world passes through catastrophe and enters a renewed beginning while the populated worlds above and below remain its future-relative and past-relative neighbours.**
 
 The Five Suns give that thought mythic scale.
 
-They tell me that world-history can be larger than one world.
+They tell me that world-history can involve several populated worlds interacting across destructive thresholds.
 
-And once that possibility is admitted, the present stops looking like the beginning and starts looking like the middle.
+And once that possibility is admitted, each present looks like one level in a continuing chain, with a past-relative world below and a future-relative world above.
 
 ---
 
