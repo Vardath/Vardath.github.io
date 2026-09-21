@@ -33386,11 +33386,11 @@ Vardath Cosmology repeats phases.
 
 But the world does not return to exactly the same state.
 
-The old world becomes previous.
+The world below remains past-relative to this present, and the world above remains future-relative to it.
 
-The new world becomes present.
+The affected present enters a new-beginning period after interaction through the gate.
 
-Continuity survives through transformed roles.
+Continuity survives through transfer, survival and transformed local conditions.
 
 That is why Osiris fits the succession model so well.
 
@@ -35484,7 +35484,7 @@ That belongs directly beside the Vardath idea of neighbouring world-turns.
 
 The previous world can become hidden from the present without being annihilated.
 
-The next world can exist and be populated before it occupies the present position in our sequence.
+The world above can already exist as a populated future-relative world while remaining present to its own inhabitants.
 
 People, lands or material can become inaccessible because their adjacency has changed.
 
@@ -39280,11 +39280,11 @@ This also makes me think again about time.
 
 If world-turns are successive, then "above" and "before" may overlap depending on viewpoint.
 
-A world that was once present can become previous.
+A world below is past-relative to the world above while remaining present to its own inhabitants.
 
-A world that is next can later occupy the present position in our sequence.
+A world above is future-relative to the world below while remaining present to its own inhabitants.
 
-A traveller crossing between levels could therefore also be crossing between world-times.
+A traveller crossing between levels could therefore also be crossing between relative world-times without any world surrendering its own present.
 
 I do not claim Sky Woman is a literal time-travel story.
 
@@ -42156,7 +42156,7 @@ That is how I now picture the transition toward the next turn in our relation: t
 
 The next world does not pop into existence on the day of the reset because it already exists as a populated world.
 
-It is already populated before it becomes present relative to the world we currently inhabit.
+It is already populated and present to its own inhabitants while remaining future-relative to the world we currently inhabit.
 
 That makes the whole cosmology more continuous.
 
@@ -43884,11 +43884,11 @@ Memory continues.
 
 Some relationship with what came before survives.
 
-That is exactly how the Vardath handoff works.
+That comparison helps me picture the Vardath handoff, but the current model is more specific.
 
-The old world becomes previous.
+The lower world remains past-relative to the world above while staying present to its own inhabitants.
 
-The new becomes home.
+A traveller may move upward and make another already populated world their new home, without that world only then becoming "present".
 
 Continuity passes across the threshold.
 
