@@ -444,7 +444,7 @@ Some disappear beneath later layers.
 
 Some re-emerge.
 
-The next world is not produced by the weave. It already exists; after the weave settles, its relationship to us can become the new present relation.
+The next world is not produced by the weave. It already exists as the future-relative world above; after the weave settles, accessibility changes and the affected worlds enter their new-beginning periods.
 
 That may be the deepest meaning of the tree inside Vardath Cosmology.
 
