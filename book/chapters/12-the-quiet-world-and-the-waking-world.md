@@ -372,11 +372,11 @@ A real world catastrophe should be uneven.
 
 The waking-state model allows that.
 
-## The world becomes mythic before it becomes catastrophic
+## The world becomes mythic before local conditions become catastrophic
 
 This is one of the most useful ideas in the current cosmology.
 
-The world can begin looking mythic **before** it becomes completely uninhabitable.
+The world can begin looking mythic **before** ordinary surface conditions become catastrophic for the people living through the event.
 
 A node brightens into an eye.
 
