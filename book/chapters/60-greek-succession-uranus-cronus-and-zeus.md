@@ -434,15 +434,15 @@ The succession pattern already contains time without wordplay.
 
 A generation exists before it can rule.
 
-An old generation contains a future one.
+An old generation can preserve contact with what is past-relative to the present.
 
-A hidden generation returns.
+A hidden generation can return through renewed contact.
 
-The next becomes present.
+But in Vardath Cosmology the next world does not become present and the present does not become old in any absolute sense.
 
-The present becomes old.
+Every world is its own present; above is future-relative and below is past-relative.
 
-That is temporal architecture.
+That is the temporal architecture I mean.
 
 It is close to the way I have begun to picture Yggdrasil and the world-turns.
 
