@@ -535,7 +535,7 @@ The gate threatens the old inside.
 
 The carrier preserves smaller insides.
 
-The successor world becomes the new large inside.
+The affected present remains the large inhabited inside, but its contents and boundaries can be changed by what crossed during the gate interval.
 
 That is why enclosure imagery survived every stage of the project.
 
