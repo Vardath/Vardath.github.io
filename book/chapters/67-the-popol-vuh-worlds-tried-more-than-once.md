@@ -286,7 +286,7 @@ That produces an important principle:
 
 This is useful because some of my more speculative branches can become too focused on transfer between levels.
 
-The *Popol Vuh* reminds me that after all the extraordinary movement, the successor world still has to become local.
+The *Popol Vuh* reminds me that after all the extraordinary movement, the renewed present still has to become local and ordinary again.
 
 Its people have to eat its food.
 
