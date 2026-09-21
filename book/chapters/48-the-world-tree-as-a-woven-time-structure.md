@@ -134,11 +134,11 @@ That is exactly how I picture the larger world-body.
 
 The previous world is not erased.
 
-It becomes inner structure.
+It remains a populated world within the larger structure, even when our access to it changes.
 
-The current world lives around and through it.
+The current world occupies our present relation.
 
-The next world develops outward.
+The next world already exists beyond it as another populated turn.
 
 The larger body therefore becomes a record of its own history.
 
@@ -444,7 +444,7 @@ Some disappear beneath later layers.
 
 Some re-emerge.
 
-The next world is the pattern produced after the weave settles again.
+The next world is not produced by the weave. It already exists; after the weave settles, its relationship to us can become the new present relation.
 
 That may be the deepest meaning of the tree inside Vardath Cosmology.
 
@@ -464,7 +464,7 @@ The lattice dome or vault spreads above it.
 
 The roots continue into the older level.
 
-The branches continue into the forming level.
+The branches continue into the next populated level.
 
 From inside one world, the structure can therefore appear as:
 
