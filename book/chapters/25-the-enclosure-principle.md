@@ -134,7 +134,7 @@ The next generation exists before it is born into the external world.
 
 This is exactly how I think about the next world-turn.
 
-It is already populated while forming, before it becomes the environment occupying our present relation in the sequence.
+It is already a populated world with its own environment before it occupies our present relation in the sequence.
 
 The current world is not waiting for the future to appear from nothing.
 
