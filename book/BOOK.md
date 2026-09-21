@@ -6757,7 +6757,7 @@ The directional opposition becomes even stranger when previous and next are trea
 
 One sense of the braid points toward what came before.
 
-The other points toward what is forming next.
+The other points toward the populated world that is next relative to us.
 
 That does not mean the current itself is literally time.
 
@@ -40006,7 +40006,7 @@ That idea is central to Vardath Cosmology.
 
 The old world can still exist as inheritance.
 
-The next can already be forming.
+The next already exists as a populated world.
 
 The present only looks complete because it is the world from which we are looking.
 
@@ -51107,7 +51107,7 @@ All world-turns in Vardath Cosmology are populated in their own right. **Previou
 
 The populated world-state or turn that is next relative to the present one in the larger structure.
 
-It is populated in its own right and may already be developing before it occupies the present position in our sequence.
+It remains populated in its own right before, during and after any change in its relation to the present.
 
 ## Node
 
