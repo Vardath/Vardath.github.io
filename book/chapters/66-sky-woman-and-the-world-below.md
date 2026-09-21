@@ -48,9 +48,9 @@ In Vardath Cosmology, the neighbouring world-turn does not have to be created at
 
 It can already exist.
 
-The next world can be forming while the present one is inhabited.
+The next world can already be populated while developing in relation to the present one.
 
-The previous world can remain part of the larger body after it ceases to be the dominant home.
+The previous world can remain a populated part of the larger body after it is no longer the world occupying our present relation.
 
 The worlds overlap in structure without having to be equally accessible.
 
@@ -580,7 +580,7 @@ If world-turns are successive, then "above" and "before" may overlap depending o
 
 A world that was once present can become previous.
 
-A world that is next can later become inhabited present.
+A world that is next can later occupy the present position in our sequence.
 
 A traveller crossing between levels could therefore also be crossing between world-times.
 
@@ -608,7 +608,7 @@ It becomes home.
 
 That is world succession.
 
-What looked incomplete from the beginning becomes inhabitable through transfer and assembly.
+What looked incomplete from the arriving humans' viewpoint becomes a new home through transfer and assembly, while the lower world already has its own life and inhabitants.
 
 The upper world becomes ancestral in relation to the new one.
 
