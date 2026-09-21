@@ -106,7 +106,7 @@ The tree therefore becomes a way of imagining not only where worlds are, but **w
 
 Roots can be read as inheritance.
 
-The inhabited middle as present.
+The middle world as present in our relation.
 
 Growing branches as what is becoming.
 
