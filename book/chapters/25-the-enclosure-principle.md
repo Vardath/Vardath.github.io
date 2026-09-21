@@ -128,7 +128,7 @@ That is why cosmic egg traditions fit so naturally beside the shell-turn cosmolo
 
 The womb makes the same relationship biological and relational.
 
-One body contains the developing future of another.
+One living body can contain another living being that already exists before birth.
 
 The next generation exists before it is born into the external world.
 
@@ -138,7 +138,7 @@ It is already a populated world with its own environment before it occupies our 
 
 The current world is not waiting for the future to appear from nothing.
 
-The future is already developing within the larger body.
+The future generation already exists within the larger body before the relationship of birth changes.
 
 The gate is birth-like because it changes the relation between inside and outside.
 
