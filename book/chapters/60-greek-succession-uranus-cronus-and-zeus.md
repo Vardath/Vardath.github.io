@@ -246,7 +246,7 @@ I do not imagine that the next world is created at the instant the door opens.
 
 I imagine it already existing as a populated part of the larger world-body.
 
-Likewise, the previous world remains inherited below or behind the present relation.
+Likewise, the world below remains past-relative to the chosen present while remaining present to itself.
 
 The gate changes which regions can exchange.
 
@@ -378,7 +378,7 @@ It can become lower, hidden, inaccessible or mythologised.
 
 The present world can stand over inherited structure.
 
-The old order may become inaccessible from our present relation or survive in memory as underworld, buried land, sealed region, ancestral realm or story, while the previous world itself remains populated.
+The old order may become inaccessible from our world or survive in memory as underworld, buried land, sealed region, ancestral realm or story, while the world below remains populated and present to its own inhabitants.
 
 I do not need every Greek Titan to correspond to a lower world.
 
@@ -506,7 +506,7 @@ The old arrangement breaks.
 
 The new arrangement stabilises.
 
-Then what had been future becomes ordinary present.
+In the Greek succession story, what was future in the narrative becomes the ordinary ruling order. In Vardath Cosmology, the world above remains future-relative to the world below and does not become its present.
 
 Greek myth expresses that through generations of gods rather than world-shells.
 
