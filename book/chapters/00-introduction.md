@@ -56,7 +56,7 @@ It is one stabilised turn of something larger.
 
 Behind or beneath it is an older turn: the previous world-state retained inside the larger growth.
 
-Beyond or above it is another populated turn: the next world-state, developing in relation to us but already a world in its own right within the same body.
+Beyond or above it is another populated turn: a world-state that is next relative to us, but already a world in its own right within the same body.
 
 I use words like *above* and *below* because the model is layered, but the relation is also temporal.
 
@@ -64,7 +64,7 @@ The older turn is the inherited past.
 
 The present turn is the world-state we currently inhabit.
 
-The next turn is the developing future.
+The next turn is the populated world that is future-relative to us.
 
 They are not three unrelated universes.
 
