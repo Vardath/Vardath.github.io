@@ -76,11 +76,11 @@ Memory continues.
 
 Some relationship with what came before survives.
 
-That is exactly how the Vardath handoff works.
+That comparison helps me picture the Vardath handoff, but the current model is more specific.
 
-The old world becomes previous.
+The lower world remains past-relative to the world above while staying present to its own inhabitants.
 
-The new becomes home.
+A traveller may move upward and make another already populated world their new home, without that world only then becoming "present".
 
 Continuity passes across the threshold.
 
