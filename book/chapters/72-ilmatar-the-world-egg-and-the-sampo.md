@@ -98,7 +98,7 @@ That is how I now picture the transition toward the next turn in our relation: t
 
 The next world does not pop into existence on the day of the reset because it already exists as a populated world.
 
-It can already be populated while developing in relation to the world we currently inhabit.
+It is already populated before it becomes present relative to the world we currently inhabit.
 
 That makes the whole cosmology more continuous.
 
