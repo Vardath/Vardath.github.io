@@ -294,7 +294,7 @@ If accumulated matter damps later Birkeland-like pulses, then the earliest world
 
 That could mean the biological environment also changed progressively.
 
-The first inhabitable worlds may have been very unlike ours.
+Earlier inhabited worlds may have had conditions very unlike ours.
 
 Later worlds may be more enclosed, more shielded and less energetic.
 
