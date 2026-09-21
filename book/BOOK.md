@@ -26026,21 +26026,19 @@ I have not.
 
 It is that the world-turn model changes what time travel means inside Vardath Cosmology.
 
-Previous, present and next are not labels pasted onto three unrelated worlds.
+Previous, present and next are **relative positions in a vertical chain of populated worlds**.
 
-They are three stages of one larger growth.
+Every world is its own present to the beings living there.
 
-The previous world is the preserved past.
+For any given present world, the world immediately above is its future and the world immediately below is its past.
 
-The present world is the active state we currently occupy.
+That same rule continues upward and downward: the world above has its own present, future above and past below; the world below does too.
 
-The next world is the already populated world that is future-relative to us.
+The lattice connects this continuing chain.
 
-The lattice connects them.
+The current runs through it.
 
-The current runs through them.
-
-The gate can change their adjacency.
+When the gate opens, a present can interact with both its relative future and its relative past. The gate changes accessibility and exchange; it does not turn one world into another.
 
 Once I saw that, the time door stopped feeling like an extra idea.
 
@@ -28320,7 +28318,7 @@ The next world lives.
 
 The previous world lives.
 
-Three populated world-states coexist inside one larger body.
+A populated past-world, present-world and future-world coexist relative to any chosen world, and every one of those worlds is simultaneously its own present.
 
 ## 4. Activation begins
 
@@ -29086,9 +29084,9 @@ The world tree still exists.
 
 The previous turns remain.
 
-The new present world is now part of the larger growth.
+The affected world remains its own present, but it has entered a new-beginning period after the gate event.
 
-Beyond it, another already populated world occupies the future-relative position.
+Above it, the already populated neighbouring world remains future-relative to it; below it, another populated world remains past-relative to it.
 
 The machine has not stopped.
 
@@ -29138,7 +29136,7 @@ The sky becomes structured around the rod.
 
 The boundary changes.
 
-Past, present and future become temporarily adjacent.
+The present becomes unusually open to interaction with its relative past below and future above.
 
 Water, air, heat, debris, land and life move.
 
@@ -29152,7 +29150,7 @@ Some people and places cross.
 
 The old world breaks.
 
-The next world receives.
+The future-relative world can receive material from the present while the present can also receive material from both above and below.
 
 The pulse passes.
 
@@ -29168,7 +29166,7 @@ Life spreads.
 
 Memory becomes myth.
 
-The renewed world becomes ordinary.
+The renewed conditions settle into a new-beginning period on the same present world.
 
 Then another already populated turn occupies the next position beyond it.
 
@@ -29178,21 +29176,25 @@ Everything else in this book is a way of looking more closely at one part of tha
 
 ---
 
-# Chapter 50 — One World Becoming the Next
+# Chapter 50 — Past, Present and Future at the Gate
 
-The easiest way to misunderstand Vardath Cosmology is to imagine one world being destroyed and another appearing afterward.
+The easiest way to misunderstand Vardath Cosmology is to imagine one world replacing another.
 
 That is not what I mean.
 
-The world does not end and restart.
+Every populated world is its own present.
 
-Its **relationship changes**: the present world becomes previous to us while an already populated next world becomes present.
+From any one of those presents, the world above is future and the world below is past. The same relationship continues upward and downward through the larger structure.
 
-That distinction has been present in pieces throughout the book, but it deserves one chapter of its own because it is the difference between apocalypse and succession.
+The gate event does not promote one world into present and demote another into past.
 
-The reset is not the destruction of continuity.
+It temporarily opens interaction among worlds that already exist.
 
-It is the mechanism of continuity.
+During the destructive interval, parts of the relative future above and relative past below can interact with the present: water, land, atmosphere, organisms, people, debris, heat, culture and other material can cross or be rearranged.
+
+Afterward, the affected present enters a new-beginning period made from what survived locally and what arrived through the gate.
+
+Continuity therefore comes from **interaction and inheritance between persistent populated worlds**, not replacement.
 
 ## The present world can contribute material to another world
 
@@ -29258,103 +29260,65 @@ Creation and destruction are not separate stories from opposite ends of history.
 
 They can be the same event described from opposite sides of the boundary.
 
-## The previous world becomes the lower world
+## The world below is the relative past
 
-Once another world becomes present in our relation, the old one changes role relative to us.
+The world below is the **relative past** of the world above it.
 
-It does not disappear.
+But to its own inhabitants, that lower world is still their present.
 
-It becomes the previous or lower turn.
+It does not become a dead archive simply because another world stands above it.
 
-That is one of the most important structural transitions in the whole model.
+What may be inherited upward are parts of it: people, land, water, ruins, organisms, stories, technologies or other material carried through the gate.
 
-Yesterday's present becomes today's underworld.
+That is why descent traditions still fit naturally in the cosmology.
 
-The world that was present becomes inherited structure without ceasing to be populated in its own right.
+To move downward is potentially to move toward a world that is past-relative to us while remaining fully present to itself.
 
-Its cities become buried memory.
+## The world above is the relative future
 
-Its water becomes deep water.
+The world above is the **relative future** of the world below it.
 
-Its survivors become ancestors.
+But to its own inhabitants, that upper world is already their present.
 
-Its gods become old gods.
+Its land, water, atmosphere, ecology, history and populations do not wait for our world to arrive.
 
-Its surface becomes substrate.
+When the gate opens, material and life from our present may enter that future-relative world, while material and life from it may also enter ours.
 
-That makes the underworld a historical category as much as a spatial one.
+The same is true downward toward the relative past.
 
-Below is what came before.
+The labels therefore do **not** move from world to world.
 
-This is why descent traditions have such a natural place in the cosmology.
+They are viewpoint labels:
 
-To go down is, potentially, to move into the retained history of the world-body.
+**below = past relative to this present**
 
-## The next world becomes the present
+**here = present to its own inhabitants**
 
-At the same time, the upper turn becomes the new present world in our sequence.
+**above = future relative to this present**
 
-Its boundary is no longer merely a ceiling from below.
+and that pattern repeats continuously upward and downward.
 
-It becomes ground from within.
+## The chain continues in both directions
 
-Its water becomes local water.
+This gives the larger world-body a repeating relational rhythm without requiring any world to surrender its own present.
 
-Its received sediment becomes landscape.
+Each populated world has a past-relative world below and a future-relative world above.
 
-Its transferred life becomes ecology.
+Each of those neighbouring worlds has the same relationship from its own viewpoint.
 
-Its incoming people join, mix with or remain distinct from populations already there.
+The chain therefore continues in both directions.
 
-The future becomes present not because time magically labels it so, but because the world-machine has shifted which turn carries the main stable environment.
+During quiet periods the worlds are comparatively separated.
 
-This is the handoff in its simplest form:
+During a gate event, the boundaries loosen and exchange becomes possible.
 
-**present becomes previous**
+After the destructive interval, transferred material settles and each affected present enters a new-beginning period.
 
-while
-
-**next becomes present**
-
-The labels move because the present relationship moves from one populated world-turn to another.
-
-## The world grows by succession
-
-This gives the larger world-body a developmental rhythm.
-
-A turn exists and develops.
-
-It carries its own population.
-
-It becomes present in the sequence.
-
-It remains stable in that relation.
-
-It reaches a transition.
-
-It donates material.
-
-It becomes inherited.
-
-Another turn takes over.
-
-The larger structure moves through successive present-relations among worlds that are already inhabited.
-
-That is why the shell and tree remain such strong images for me.
-
-The shell adds turns.
-
-The tree adds growth.
-
-Neither requires old structure to vanish.
-
-The world carries its history physically.
-
-Each new present is another stage in one larger organism.
+That is why the shell and tree remain such strong images for me: they let many populated levels remain connected without collapsing them into one universal present.
 
 ## Matter crosses before history can continue
 
-For a new world to become truly continuous with the old one, matter has to cross.
+For a new-beginning period to carry continuity across the event, matter can cross between the present and its relative past and future.
 
 The handoff cannot be symbolic only.
 
@@ -29766,27 +29730,21 @@ That is exactly what should happen during a long quiet phase.
 
 Stability creates amnesia.
 
-## The future world is already doing the same thing
+## Every world is its own present
 
-While the present becomes comfortable enough to feel eternal, another populated turn already exists beyond it.
+The important symmetry is that every world is its own present.
 
-That is the irony of the model.
+The world above us has inhabitants for whom their own world is present, with a future above them and a past below them.
 
-Every world thinks it is the world.
+The world below us has the same structure from its own viewpoint.
 
-But each is only one dominant phase in the larger growth.
+There is no single privileged present travelling up the stack.
 
-The successor already has a successor.
+The cyclic behaviour comes from repeated gate events, destructive intervals and new-beginning periods occurring within this continuing chain.
 
-The future-relative world is living its own history while the present is forgetting how its current relation arose.
+Each affected present can inherit from both directions when the gate is open.
 
-That makes Vardath Cosmology deeply cyclical, but not hopeless.
-
-The process is not endless destruction for its own sake.
-
-Each world creates the conditions for another.
-
-The system survives through inheritance.
+The system survives through continuity, exchange and inheritance.
 
 ## Creation is memory moving forward
 
@@ -29816,33 +29774,29 @@ Even destruction becomes material.
 
 Even catastrophe becomes inheritance.
 
-Even a world that has become previous to us remains populated inside the larger body.
+A world below us is past-relative to us while remaining present to itself, populated inside the larger body.
 
-## One world becoming the next
+## A new beginning after the gate
 
-So when I say one world becomes the next, I mean a change of relation, not one populated world being manufactured out of another.
+The gate event is a period of interaction, not replacement.
 
-The present world can donate water, land, ruins, people, organisms and stories across the gate.
+The present world can exchange water, land, ruins, people, organisms, atmosphere, heat and stories with the future-relative world above and the past-relative world below.
 
-Those transfers enter another world that already has its own water, land, people, organisms and history.
+Those neighbouring worlds already have their own water, land, people, organisms and histories.
 
 The current continues through the world tree.
 
-The lattice changes state and then opens again.
+The lattice changes state, the normally separated worlds interact, destructive effects occur, and then the gate closes again.
 
-The world that was present becomes previous in our relation.
+What follows is a **new beginning period** on each affected present.
 
-The world that was next becomes present in our relation.
+That new beginning can contain local survivors together with material and populations inherited from both relative directions.
 
-Neither stops being a populated world.
+The worlds remain where they are in the chain.
 
-The larger body continues.
+Each remains its own present.
 
-That is succession.
-
-That is the handoff.
-
-And that is why, from the viewpoint of the whole structure, the end of the world and the birth of the world may be the same event.
+What has changed is the composition and history of the present after contact.
 
 ---
 
@@ -33918,13 +33872,13 @@ The event cycle repeats.
 
 But the world advances.
 
-Previous becomes inherited.
+The world below remains past-relative to the present.
 
-Present becomes old.
+The present remains present to its own inhabitants.
 
-Next becomes present.
+The world above remains future-relative to it.
 
-The renewed world is connected to what came before without being identical to it.
+During renewal, material and beings can cross these relationships, so the renewed present is connected to both what is below and what is above without becoming either one.
 
 That is why world-renewal traditions are so important to me.
 
@@ -35788,15 +35742,15 @@ The succession pattern already contains time without wordplay.
 
 A generation exists before it can rule.
 
-An old generation contains a future one.
+An old generation can preserve contact with what is past-relative to the present.
 
-A hidden generation returns.
+A hidden generation can return through renewed contact.
 
-The next becomes present.
+But in Vardath Cosmology the next world does not become present and the present does not become old in any absolute sense.
 
-The present becomes old.
+Every world is its own present; above is future-relative and below is past-relative.
 
-That is temporal architecture.
+That is the temporal architecture I mean.
 
 It is close to the way I have begun to picture Yggdrasil and the world-turns.
 
@@ -37006,11 +36960,11 @@ If the world tree relates successive world-states, then a Ragnarök-like event i
 
 It may be a rearrangement of temporal adjacency.
 
-The old world becomes previous.
+The world below remains past-relative to the present.
 
-The next becomes present.
+The world above remains future-relative to the present.
 
-Survivors cross the threshold.
+Survivors, material and other parts of those neighbouring worlds can cross the threshold when the gate is open.
 
 Stories of gods and beings from the old order may continue because the separation between ages was once physically traversable.
 
@@ -51105,7 +51059,7 @@ All world-turns in Vardath Cosmology are populated in their own right. **Previou
 
 ## Next world
 
-The populated world-state or turn that is next relative to the present one in the larger structure.
+The populated world immediately above a chosen present world; it is future-relative to the world below while remaining present to its own inhabitants.
 
 It remains populated in its own right before, during and after any change in its relation to the present.
 
@@ -51157,7 +51111,7 @@ The plenum remains a developing concept rather than a completed physical theory.
 
 ## Previous world
 
-The predecessor world-state retained within the larger world history.
+The populated world immediately below a chosen present world; it is past-relative to the world above while remaining present to its own inhabitants.
 
 Its route or relation to the present can become lower, hidden, sealed, ancestral or mythologised, while the previous world itself remains populated and ordinary to its own inhabitants.
 
@@ -51389,9 +51343,9 @@ The same larger structure can occupy different world-states without becoming unr
 
 ## World succession
 
-The process by which one populated world-state becomes previous in our relation while another populated world-state takes the present position.
+The recurring pattern in which populated worlds remain in a continuing vertical chain while gate events temporarily increase exchange among a present, its past-relative world below and its future-relative world above.
 
-Succession is the larger principle behind reset, inheritance and handoff.
+No world becomes the one universal present. Each world remains its own present. Succession describes repeated destructive-and-renewal cycles, transfer and inheritance across the chain, followed by new-beginning periods on the affected worlds.
 
 ## World-tree
 
