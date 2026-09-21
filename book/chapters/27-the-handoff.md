@@ -66,7 +66,7 @@ A handoff needs a receiver.
 
 That is why the next world has to exist before the reset is complete.
 
-It may not yet be the main inhabited world.
+It may not yet be the world occupying our present position, but it is already populated in its own right.
 
 It may be unstable.
 
@@ -338,7 +338,7 @@ The waters recede.
 
 The survivors become ancestors.
 
-The new world is populated through continuity.
+The receiving world already has its own population; continuity adds survivors, lineages and culture to what is already there.
 
 The carrier is therefore more than escape.
 
