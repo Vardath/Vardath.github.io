@@ -192,7 +192,7 @@ As the structure opens, its walls bow outward.
 
 That is the arc-state.
 
-At maximum reopening, the same broad woven surface becomes the overhead vault of the new world.
+At maximum reopening, the same broad woven surface returns to the overhead vault of the affected present as the gate closes and ordinary separation returns.
 
 That is the sky-state.
 
@@ -210,17 +210,17 @@ The ark does not have to be only a boat travelling under a separate sky.
 
 At the largest scale, **the carrier can become the next enclosure**.
 
-The structure that preserves life through transition can open into the world that receives it.
+A protected structure that preserves life through transition can open back into the affected present as conditions stabilise.
 
 This sits naturally beside the flat-disc model.
 
-A new world-disc can settle inside or upon the reopened lattice structure.
+The affected world-disc can resettle inside or upon the reopened lattice structure.
 
 The dome becomes its sky and support.
 
-The protected interior becomes the inhabited exterior.
+The protected interior releases its survivors back into the inhabited exterior.
 
-The carrier becomes world.
+The carrier returns its cargo to the world.
 
 ## The world above may stand on our sky
 
