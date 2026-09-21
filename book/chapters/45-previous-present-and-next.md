@@ -44,7 +44,7 @@ Vardath Cosmology increasingly pushes me toward a different picture.
 
 The past can remain physically present as older structure.
 
-The future can already exist as developing structure.
+The future-relative world can already exist as physical, populated structure.
 
 The present is the active world-region we currently occupy between them.
 
