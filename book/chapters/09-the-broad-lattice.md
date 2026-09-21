@@ -582,7 +582,7 @@ The material on top has changed.
 
 The water has changed.
 
-The next world has grown.
+The relationship to the next world has changed while that world itself remains populated.
 
 But the deep skeleton remains related.
 
