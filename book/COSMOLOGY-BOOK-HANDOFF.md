@@ -346,7 +346,7 @@ Important role grammar:
 - witness;
 - receiver;
 - reset;
-- successor world.
+- renewed present / new-beginning period.
 
 Important camera-angle grammar:
 - broad/oblique weave → net, braid, mesh, interlace;
