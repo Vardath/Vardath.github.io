@@ -33374,7 +33374,7 @@ This sits very comfortably beside my previous-world idea.
 
 The previous world-turn is old.
 
-It is no longer the main inhabited surface.
+It is no longer the surface occupying our present relation, but it remains populated in its own right.
 
 But it is still part of the larger world-body.
 
@@ -49311,7 +49311,7 @@ Biology.
 
 Field conditions.
 
-A real other world could be accessible and still uninhabitable.
+A real other world could be accessible and still be uninhabitable **to us**, even while supporting its own inhabitants and conditions.
 
 The film solves the problem magically through food.
 
