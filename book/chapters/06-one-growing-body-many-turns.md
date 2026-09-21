@@ -10,7 +10,7 @@ That larger body has history built into its shape.
 
 What came before is still part of it.
 
-What comes next is already forming.
+What comes next is already there.
 
 The present is therefore not a single isolated platform floating in emptiness. It is the world-region we currently inhabit inside a structure that has grown through earlier states and is continuing into later ones. The other turns are populated too; **present** names our relationship to one world, not the only place where life exists.
 
@@ -164,21 +164,19 @@ The picture I use most often keeps the previous turn as part of the larger body.
 
 It becomes the deeper history of the system.
 
-This does not mean the previous world must remain a perfectly preserved copy of its old inhabited surface.
+This does not mean our access to the previous world remains unchanged.
 
-It can be altered.
+The route to it can be buried.
 
-Buried.
+The interface can be compressed.
 
-Compressed.
+Transferred regions can be flooded.
 
-Flooded.
+The gate can close.
 
-Closed off.
+But the previous world itself remains a populated world and continues to be ordinary life for its own inhabitants.
 
-It can cease to function as the main environment for ordinary life.
-
-But it remains materially relevant.
+What changes is its relationship to us, not whether it is alive or inhabited.
 
 That makes the lower world more interesting than a generic realm of the dead.
 
@@ -198,31 +196,25 @@ A descent can be more than movement downward in ordinary geography.
 
 It can represent movement into the inherited layers of the world-body.
 
-## The next world is already forming
+## The next world is already there
 
 The next world matters just as much.
 
-One possibility is that the new world appears only after the old arrangement has been transformed.
+The next world does not appear only after our present arrangement has been transformed.
 
-Another, which connects strongly with the growing-body picture, is that the next turn is already developing and populated while the present remains the world we currently occupy.
+It already exists as a populated world in its own right.
 
-I keep the second possibility central because it gives the gate a receiving world that already exists, without requiring the first possibility to be impossible.
+It has its own land, water, atmosphere, ecology, inhabitants, history and local order.
 
-It does not need to mirror the environmental conditions of our current surface. It can have its own atmosphere, ecology, inhabitants and history while still developing relative to our place in the larger sequence.
+It does not need to mirror our conditions, because it is not an unfinished copy of our world.
 
-It only needs to exist as a forming region of the larger structure.
+What changes during the gate interval is its adjacency to us.
 
-It can accumulate material.
+Material, water, organisms, people or land can cross into an already inhabited destination without creating that destination.
 
-It can develop boundaries.
+Then, when the gate interval comes, the next turn is already there to receive whatever crosses.
 
-It can hold water.
-
-It can become increasingly coherent.
-
-Then, when the gate interval comes, the next turn is already there to receive inheritance.
-
-That is one of the strongest reasons I often picture world renewal as inheritance into something already forming rather than creation from nothing.
+World renewal is therefore a change of relationship and inheritance between existing populated worlds, not the construction of a new habitable world.
 
 The receiver exists before the handoff.
 
@@ -402,7 +394,7 @@ Another distinction became necessary once the shell began growing.
 
 The world-body can continue developing during long quiet ages.
 
-The next turn can keep forming without the present world entering catastrophe.
+The next world can continue its own history without the present world entering catastrophe.
 
 That means ordinary time is productive.
 
@@ -520,7 +512,7 @@ The old world resembles an earlier stage of the organism.
 
 The present world is the active surface of the current stage.
 
-The next world is developing beyond it.
+The next world already exists beyond it.
 
 The deeper current persists through all three.
 
@@ -558,7 +550,7 @@ The upper water needs somewhere to belong.
 
 The previous world needs somewhere to remain.
 
-The next world needs somewhere to form.
+The next world already occupies its own region of the larger structure.
 
 The carrier needs a destination.
 
