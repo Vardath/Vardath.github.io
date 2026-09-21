@@ -184,7 +184,7 @@ Biology.
 
 Field conditions.
 
-A real other world could be accessible and still uninhabitable.
+A real other world could be accessible and still be uninhabitable **to us**, even while supporting its own inhabitants and conditions.
 
 The film solves the problem magically through food.
 
