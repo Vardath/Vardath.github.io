@@ -4147,7 +4147,7 @@ It can already contain boundaries, material, life, inhabitants and its own histo
 
 It can already have a relationship to the current.
 
-It simply has not yet become the world occupying our present position in the sequence.
+It remains the populated world above, future-relative to this present, while being present to its own inhabitants.
 
 Future, in that sense, is not absolute non-existence.
 
@@ -14396,7 +14396,7 @@ The next generation exists before it is born into the external world.
 
 This is exactly how I think about the next world-turn.
 
-It is already a populated world with its own environment before it occupies our present relation in the sequence.
+It is already a populated world with its own environment and remains future-relative to the present below it; it does not need to become that world's present.
 
 The current world is not waiting for the future to appear from nothing.
 
@@ -15426,7 +15426,7 @@ A handoff needs a receiver.
 
 That is why the next world has to exist before the reset is complete.
 
-It may not yet be the world occupying our present position, but it is already populated in its own right.
+It is the populated world above, future-relative to us while remaining present to its own inhabitants.
 
 It may be unstable.
 
@@ -20793,7 +20793,7 @@ That is how I picture the next world.
 
 The world future-relative to us already exists as a populated structure.
 
-It is already populated, but it is not yet the world occupying our present relation.
+It is already populated and present to its own inhabitants while remaining future-relative to us.
 
 But it is already part of the body.
 
@@ -25536,7 +25536,7 @@ It has already carried a stable world-state.
 
 That state has passed.
 
-Regions transferred out of our present relation may be buried, deformed, flooded or reorganised, while the previous world remains populated in its own right.
+Regions transferred out of our world through the gate may be buried, deformed, flooded or reorganised, while the world below remains populated and present to its own inhabitants.
 
 Life that belonged to it may be gone, transferred or preserved in altered form.
 
@@ -25628,7 +25628,7 @@ A new shell chamber can already contain life before it occupies a later position
 
 A building extension can exist while the older rooms are still occupied.
 
-The next world can therefore exist structurally and be populated in its own right without yet occupying our present position in the sequence.
+The next world therefore exists structurally and is populated in its own right as the future-relative world above, while remaining present to its own inhabitants.
 
 It is future because its stable phase has not yet become ours.
 
@@ -27592,7 +27592,7 @@ The previous world is not erased.
 
 It remains a populated world within the larger structure, even when our access to it changes.
 
-The current world occupies our present relation.
+The current world is our present because we live here; every other world is likewise present to its own inhabitants.
 
 The next world already exists beyond it as another populated turn.
 
@@ -28146,7 +28146,7 @@ Its threads carry continuity.
 
 Its roots preserve earlier worlds.
 
-Its trunk carries the world occupying our present relation.
+Its trunk can be read as the chosen present world from which past-below and future-above are being described.
 
 Its branches develop future worlds.
 
@@ -33300,7 +33300,7 @@ This sits very comfortably beside my previous-world idea.
 
 The previous world-turn is old.
 
-It is no longer the surface occupying our present relation, but it remains populated in its own right.
+It is past-relative to the world above while remaining a populated present to its own inhabitants.
 
 But it is still part of the larger world-body.
 
@@ -35554,7 +35554,7 @@ I do not imagine that the next world is created at the instant the door opens.
 
 I imagine it already existing as a populated part of the larger world-body.
 
-Likewise, the previous world remains inherited below or behind the present relation.
+Likewise, the world below remains past-relative to the chosen present while remaining present to itself.
 
 The gate changes which regions can exchange.
 
@@ -35686,7 +35686,7 @@ It can become lower, hidden, inaccessible or mythologised.
 
 The present world can stand over inherited structure.
 
-The old order may become inaccessible from our present relation or survive in memory as underworld, buried land, sealed region, ancestral realm or story, while the previous world itself remains populated.
+The old order may become inaccessible from our world or survive in memory as underworld, buried land, sealed region, ancestral realm or story, while the world below remains populated and present to its own inhabitants.
 
 I do not need every Greek Titan to correspond to a lower world.
 
@@ -35814,7 +35814,7 @@ The old arrangement breaks.
 
 The new arrangement stabilises.
 
-Then what had been future becomes ordinary present.
+In the Greek succession story, what was future in the narrative becomes the ordinary ruling order. In Vardath Cosmology, the world above remains future-relative to the world below and does not become its present.
 
 Greek myth expresses that through generations of gods rather than world-shells.
 
@@ -38752,7 +38752,7 @@ It can already exist.
 
 The next world already exists as a populated world; what can develop is its relationship to the present one.
 
-The previous world can remain a populated part of the larger body after it is no longer the world occupying our present relation.
+The world below remains a populated part of the larger body, past-relative to us while remaining present to its own inhabitants.
 
 The worlds overlap in structure without having to be equally accessible.
 
