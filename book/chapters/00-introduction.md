@@ -268,7 +268,7 @@ What crosses it?
 
 Water is the most obvious material because water already belongs to the boundary structure of the cosmology.
 
-The mature model proposes that an upper watery region may be the lower boundary of the forming next world-turn. From the present world it appears above. From the next world it would be below.
+The mature model proposes that an upper watery region may be the lower boundary of the already populated next world-turn. From the present world it appears above. From that world's own surface it would be below.
 
 During the quiet phase, the interface is stable.
 
