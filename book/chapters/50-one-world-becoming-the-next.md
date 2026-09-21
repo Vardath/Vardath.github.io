@@ -86,7 +86,7 @@ They can be the same event described from opposite sides of the boundary.
 
 ## The previous world becomes the lower world
 
-Once a new world becomes dominant, the old one changes role.
+Once another world becomes present in our relation, the old one changes role relative to us.
 
 It does not disappear.
 
@@ -96,7 +96,7 @@ That is one of the most important structural transitions in the whole model.
 
 Yesterday's present becomes today's underworld.
 
-The inhabited world becomes inherited structure.
+The world that was present becomes inherited structure without ceasing to be populated in its own right.
 
 Its cities become buried memory.
 
@@ -118,7 +118,7 @@ To go down is, potentially, to move into the retained history of the world-body.
 
 ## The next world becomes the present
 
-At the same time, the forming upper turn becomes the new inhabited world.
+At the same time, the upper turn becomes the new present world in our sequence.
 
 Its boundary is no longer merely a ceiling from below.
 
@@ -130,7 +130,7 @@ Its received sediment becomes landscape.
 
 Its transferred life becomes ecology.
 
-Its incoming people become population.
+Its incoming people join, mix with or remain distinct from populations already there.
 
 The future becomes present not because time magically labels it so, but because the world-machine has shifted which turn carries the main stable environment.
 
@@ -142,17 +142,19 @@ while
 
 **next becomes present**
 
-The labels move because the dominant inhabited state moves.
+The labels move because the present relationship moves from one populated world-turn to another.
 
 ## The world grows by succession
 
 This gives the larger world-body a developmental rhythm.
 
-A turn forms.
+A turn exists and develops.
 
-It becomes inhabited.
+It carries its own population.
 
-It remains stable.
+It becomes present in the sequence.
+
+It remains stable in that relation.
 
 It reaches a transition.
 
