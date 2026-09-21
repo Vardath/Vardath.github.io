@@ -226,9 +226,9 @@ It is **becoming**.
 
 This is one of the ideas that made time travel feel less impossible inside the cosmology.
 
-If the future is structurally related to the present before it becomes dominant, then a gate does not have to create the future.
+If the future-relative world is structurally related to the present before our relation changes, then a gate does not have to create the future.
 
-It only has to make the developing region temporarily accessible.
+It only has to make an already populated neighbouring region temporarily accessible.
 
 That is a much more concrete idea.
 
