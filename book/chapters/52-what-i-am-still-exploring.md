@@ -104,13 +104,13 @@ What I still want to understand better is the exact transition between those sca
 
 How large is one disc relative to one shell-turn?
 
-Does each turn contain one dominant inhabited disc?
+Does each turn contain one principal inhabited disc, several inhabited regions, or some other arrangement?
 
 Can several local discs belong to one larger turn?
 
 How does the dome connect to the wider world-tree?
 
-What does the world look like from outside the inhabited level?
+What does the world look like from a neighbouring world-level outside our present one?
 
 Those are geometric questions still waiting for a fuller picture.
 
