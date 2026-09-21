@@ -73,12 +73,12 @@ dialog::backdrop{background:#000c}
 <div class="wrap">
 <a href="./">← Vardath</a>
 <h1>Wraith &amp; Nanite Gravtech — D141 Art Review</h1>
-<div class="sub">This is the pre-playtest visual QA page for the actual D141 readability-correction game build. It reads the PNG files directly from <strong>Wraith-Nanite-Gravtech-D141-RIMWORLD-READABILITY.zip</strong> in your browser. It does not use or modify the Cosmology gallery.</div>
+<div class="sub">This is the pre-playtest visual QA page for the actual D141 readability-correction game build. It reads <strong>every PNG art file</strong> directly from <strong>Wraith-Nanite-Gravtech-D141-RIMWORLD-READABILITY.zip</strong> in your browser — including the mod icon, preview, abilities, genes, UI, compatibility art, world art, items, apparel, furniture, buildings, ships and other textures. It does not use or modify the Cosmology gallery.</div>
 <div class="heroBadges">
-<span class="badge good"><strong>694</strong> runtime PNGs in D141</span>
-<span class="badge"><strong>30</strong> new since D140</span>
-<span class="badge warn"><strong>218</strong> changed since D140</span>
-<span class="badge"><strong>446</strong> preserved</span>
+<span class="badge good"><strong>696</strong> PNG art files in D141</span>
+<span class="badge"><strong>Everything</strong> in the mod ZIP is shown</span>
+<span class="badge"><strong>About</strong> icon + preview included</span>
+<span class="badge"><strong>Compatibility</strong> art included</span>
 <span class="badge"><strong>D141</strong> readability-correction build</span>
 </div>
 <div class="loader" id="loader">
@@ -100,8 +100,8 @@ dialog::backdrop{background:#000c}
 <input id="q" type="text" placeholder="Search filename or game path…">
 <select id="cat"><option value="">All categories</option></select>
 <select id="change">
-<option value="newchanged" selected>New + changed since D140</option>
-<option value="">All D141 art</option>
+<option value="" selected>All D141 art</option>
+<option value="newchanged">New + changed since D140</option>
 <option value="new">New only</option>
 <option value="changed">Changed only</option>
 <option value="preserved">Preserved only</option>
@@ -117,7 +117,7 @@ dialog::backdrop{background:#000c}
 </div>
 
 <main class="wrap">
-<div class="note"><strong>Review workflow:</strong> click any asset for its original PNG from the D141 ZIP. Mark it <strong>Looks good</strong> or <strong>Needs improvement</strong> and add a note. Your review marks are saved locally in this browser. The default view shows the 248 files that are new or changed since D140: the apparel and furniture correction pass. Replicator art is shown for context but remains preserved unless separately requested.</div>
+<div class="note"><strong>Review workflow:</strong> this page now shows <strong>every PNG art file in the D141 mod ZIP by default</strong> — runtime textures, mod icon, preview art, UI/gene/ability icons, and compatibility art. Click any asset for its original PNG. Mark it <strong>Looks good</strong> or <strong>Needs improvement</strong> and add a note. Use the change filter only when you want to narrow the full gallery. Replicator art is shown for context but remains preserved unless separately requested.</div>
 <section id="grid" class="grid"><div class="empty">Load the D141 ZIP above to inspect the game art.</div></section>
 </main>
 
@@ -163,8 +163,10 @@ const reviews=JSON.parse(localStorage.getItem('wngD141ArtReviews')||'{}');
 function fnv1a(s){let h=0x811c9dc5;const bytes=new TextEncoder().encode(s);for(const b of bytes){h^=b;h=Math.imul(h,0x01000193)>>>0}return h>>>0}
 function changeState(path){const h=fnv1a(path);if(newHashes.has(h))return'new';if(changedHashes.has(h))return'changed';return'preserved'}
 function cleanPath(name){const i=name.indexOf('/');return i>=0?name.slice(i+1):name}
-function isRuntime(path){return path.endsWith('.png')&&(path.startsWith('Textures/')||path==='About/ModIcon.png'||path==='About/Preview.png')}
+function isDisplayableArt(path){return path.toLowerCase().endsWith('.png')}
 function category(p){
+if(p.startsWith('Compatibility/CombatExtended/'))return'Combat Extended compatibility';
+if(p.startsWith('Compatibility/'))return'Compatibility art';
 if(p==='About/ModIcon.png')return'Mod icon';if(p==='About/Preview.png')return'Mod preview';
 if(p.startsWith('Textures/UI/'))return'UI / genes / abilities';
 if(p.startsWith('Textures/Terrain/Goauld/'))return"Goa'uld terrain";if(p.startsWith('Textures/Terrain/Precursor/'))return'Asuran / Precursor terrain';if(p.startsWith('Textures/Terrain/Wraith/'))return'Wraith terrain';if(p.startsWith('Textures/Terrain/'))return'Terrain';
@@ -176,7 +178,7 @@ if(p.startsWith('Textures/Things/Building/Precursor/Gravship/'))return'Asuran gr
 if(p.startsWith('Textures/Things/Building/Goauld/Gravship/'))return"Goa'uld gravship";if(p.startsWith('Textures/Things/Building/Goauld/'))return"Goa'uld buildings / craft";
 if(p.startsWith('Textures/Things/Building/Replicator/'))return'Replicator buildings (preserved)';if(p.startsWith('Textures/Things/Pawn/Replicator/'))return'Replicator pawns (preserved)';
 if(p.startsWith('Textures/Things/Pawn/Animal/Iratus/'))return'Iratus creatures';if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Precursor/'))return'Asuran / Precursor apparel';if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Wraith/'))return'Wraith apparel';if(p.startsWith('Textures/Things/Pawn/Humanlike/'))return'Humanlike / pawn art';if(p.startsWith('Textures/World/'))return'World / faction art';
-return'Other runtime art'}
+return'Other mod art'}
 function reviewState(path){return reviews[path]&&reviews[path].state?reviews[path].state:'unreviewed'}
 function saveReviews(){localStorage.setItem('wngD141ArtReviews',JSON.stringify(reviews))}
 function esc(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
@@ -191,20 +193,20 @@ async function loadBuild(blob,label,shouldCache){
 loadStatus.className='statusline';loadStatus.textContent='Reading and verifying '+label+'…';
 const buffer=await blob.arrayBuffer();const hash=await sha256(buffer);
 if(hash!==EXPECTED_SHA){loadStatus.className='statusline bad';loadStatus.textContent='This is not the exact D141 review build. SHA-256: '+hash;throw Error('D141 hash mismatch')}
-loadStatus.className='statusline ok';loadStatus.textContent='Verified D141 SHA-256. Reading game textures…';
+loadStatus.className='statusline ok';loadStatus.textContent='Verified D141 SHA-256. Reading all mod art…';
 zip=await JSZip.loadAsync(buffer);
 assets=[];
-zip.forEach((name,entry)=>{if(entry.dir)return;const p=cleanPath(name);if(isRuntime(p))assets.push({path:p,name:p.split('/').pop(),cat:category(p),change:changeState(p),entry})});
+zip.forEach((name,entry)=>{if(entry.dir)return;const p=cleanPath(name);if(isDisplayableArt(p))assets.push({path:p,name:p.split('/').pop(),cat:category(p),change:changeState(p),entry})});
 assets.sort((a,b)=>a.cat.localeCompare(b.cat)||a.path.localeCompare(b.path));
-if(shouldCache){const ok=await cacheBlob(blob);loadStatus.textContent='Verified D141. '+assets.length+' runtime PNGs loaded.'+(ok?' Build cached in this browser.':' Browser cache was unavailable; gallery still works for this session.')}
-else loadStatus.textContent='Verified cached D141. '+assets.length+' runtime PNGs loaded.';
+if(shouldCache){const ok=await cacheBlob(blob);loadStatus.textContent='Verified D141. '+assets.length+' PNG art files loaded.'+(ok?' Build cached in this browser.':' Browser cache was unavailable; gallery still works for this session.')}
+else loadStatus.textContent='Verified cached D141. '+assets.length+' PNG art files loaded.';
 populateCats();updateSummary();render();
 }
 
 function populateCats(){cat.innerHTML='<option value="">All categories</option>';[...new Set(assets.map(a=>a.cat))].sort().forEach(c=>cat.add(new Option(c,c)))}
 function updateSummary(){
 const good=assets.filter(a=>reviewState(a.path)==='good').length,bad=assets.filter(a=>reviewState(a.path)==='bad').length,un=assets.length-good-bad;
-summary.innerHTML='<span class="badge good"><strong>'+assets.length+'</strong> D141 runtime PNGs loaded</span><span class="badge"><strong>30</strong> new</span><span class="badge warn"><strong>213</strong> changed</span><span class="badge good"><strong>'+good+'</strong> marked good</span><span class="badge bad"><strong>'+bad+'</strong> need improvement</span><span class="badge"><strong>'+un+'</strong> unreviewed</span>'}
+summary.innerHTML='<span class="badge good"><strong>'+assets.length+'</strong> D141 PNG art files loaded</span><span class="badge"><strong>30</strong> new</span><span class="badge warn"><strong>213</strong> changed</span><span class="badge good"><strong>'+good+'</strong> marked good</span><span class="badge bad"><strong>'+bad+'</strong> need improvement</span><span class="badge"><strong>'+un+'</strong> unreviewed</span>'}
 function passes(a){
 const s=q.value.trim().toLowerCase();if(s&&!(a.path.toLowerCase().includes(s)||a.name.toLowerCase().includes(s)))return false;
 if(cat.value&&a.cat!==cat.value)return false;
