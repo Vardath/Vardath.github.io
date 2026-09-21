@@ -86,13 +86,22 @@ Keep Peratt's documented claims separate from Vardath's extension while allowing
 
 ## World-population invariant — NON-NEGOTIABLE
 
-All world-turns — above, below, previous, present and next — are populated in their own right.
+All world-turns — above, below, past-relative, present and future-relative — are populated in their own right.
 
-**Previous / present / next describe temporal and adjacency relationships to us, not whether a world is inhabited.**
+**Every world is its own present to its own inhabitants.**
 
-The present world is the world we currently occupy. A previous world does not become empty when its relation changes, and a next world is not an uninhabited shell waiting for us. Each world can have its own inhabitants, ecology, history, atmosphere and local order.
+For any chosen present:
+- the world immediately above is its future;
+- the world immediately below is its past;
+- the same relationship continues upward and downward through the entire chain.
 
-The gate changes adjacency, accessibility and transfer among already populated worlds.
+There is no single universal present moving from one world to another.
+
+When the gate opens, a present can interact with both its future-relative world above and its past-relative world below. Parts of both directions can cross or mix with the present: people, land, water, atmosphere, organisms, debris, culture, heat and other material.
+
+The destructive interval is followed by a **new-beginning period** on each affected present, formed from local survivors plus whatever arrived or was rearranged through the gate.
+
+Do not write that one world "becomes present" while another "becomes past." Those are relative positions, not promotions or demotions.
 
 Do not write that:
 - the next world "becomes inhabited";
