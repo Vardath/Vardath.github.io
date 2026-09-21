@@ -240,11 +240,11 @@ Some are alive.
 
 Some are dead.
 
-Some are forming.
+Some are in different environmental or structural phases.
 
 That is exactly what I need from the shell-turn idea.
 
-Related worlds do not have to share one developmental stage.
+Related worlds do not have to share one environmental or structural state, but in the Vardath model all world-turns remain populated.
 
 ## Narnia is born
 
