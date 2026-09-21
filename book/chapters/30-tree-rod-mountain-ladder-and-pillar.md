@@ -294,7 +294,7 @@ It is growing.
 
 The branch exists before it becomes old wood.
 
-The next world exists before it becomes the main inhabited turn.
+The next world exists, populated in its own right, before it becomes the turn we call present.
 
 This is one reason the world tree became such a powerful time image for me.
 
