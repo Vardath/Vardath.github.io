@@ -274,7 +274,7 @@ That solves another Vardath problem.
 
 A next turn can be formative.
 
-A present turn inhabited.
+A present turn as the world we currently occupy.
 
 A previous turn transformed or largely inaccessible.
 
