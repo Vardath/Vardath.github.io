@@ -98,7 +98,7 @@ That is how I now picture the next turn.
 
 The next world does not have to pop into existence on the day of the reset.
 
-It can be forming while the present world is still inhabited.
+It can already be populated while developing in relation to the world we currently inhabit.
 
 That makes the whole cosmology more continuous.
 
