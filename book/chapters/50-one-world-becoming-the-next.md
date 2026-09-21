@@ -294,7 +294,7 @@ A wall can become cliff-like.
 
 A monumental structure can be distorted beyond easy recognition.
 
-That means the successor world inherits not only material, but the **thermal memory of the gate**.
+That means the renewed present inherits not only material from both directions, but the **thermal memory of the gate**.
 
 The new landscape contains matter that still bears the event inside its form.
 
@@ -396,7 +396,7 @@ A city can be a miniature world.
 
 Each preserves an inside while the larger outside becomes unstable.
 
-The successor world can therefore be seeded by smaller worlds.
+The renewed present can therefore be reseeded by protected local enclosures and by living material crossing from neighbouring worlds.
 
 This nesting feels important to me.
 
@@ -452,7 +452,7 @@ Another remembers arriving from a mountain or cave.
 
 Over time those memories can become separate traditions even if they belong to one larger world transition.
 
-The successor world therefore inherits **narrative cargo** as well as physical cargo.
+The renewed present therefore inherits **narrative cargo** as well as physical cargo.
 
 ## The new world receives old gods
 
@@ -528,7 +528,7 @@ This is one of the most natural ways mythology can grow from succession.
 
 ## The new world believes itself permanent
 
-Eventually the successor world forgets that it was once new.
+Eventually the renewed present forgets that its new-beginning period was once new.
 
 Its coastline becomes the coastline.
 
