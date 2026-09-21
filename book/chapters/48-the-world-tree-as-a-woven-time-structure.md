@@ -106,7 +106,7 @@ From my point of view:
 
 **trunk — present world in our relation**
 
-**branches — developing future**
+**branches — populated world future-relative to us**
 
 The whole tree is time made structural.
 
