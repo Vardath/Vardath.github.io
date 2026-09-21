@@ -104,7 +104,7 @@ From my point of view:
 
 **roots — inherited past**
 
-**trunk — inhabited present**
+**trunk — present world in our relation**
 
 **branches — developing future**
 
@@ -690,7 +690,7 @@ Its threads carry continuity.
 
 Its roots preserve earlier worlds.
 
-Its trunk carries the inhabited present.
+Its trunk carries the world occupying our present relation.
 
 Its branches develop future worlds.
 
