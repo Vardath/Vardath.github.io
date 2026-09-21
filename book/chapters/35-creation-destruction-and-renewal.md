@@ -318,7 +318,7 @@ The old state fails.
 
 A transition occurs.
 
-The world becomes inhabitable again.
+The local surface and transferred regions become stable enough for ordinary life again, while the larger worlds remain populated throughout.
 
 ## Creation and destruction are one threshold
 
