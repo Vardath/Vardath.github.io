@@ -614,21 +614,19 @@ I have not.
 
 It is that the world-turn model changes what time travel means inside Vardath Cosmology.
 
-Previous, present and next are not labels pasted onto three unrelated worlds.
+Previous, present and next are **relative positions in a vertical chain of populated worlds**.
 
-They are three stages of one larger growth.
+Every world is its own present to the beings living there.
 
-The previous world is the preserved past.
+For any given present world, the world immediately above is its future and the world immediately below is its past.
 
-The present world is the active state we currently occupy.
+That same rule continues upward and downward: the world above has its own present, future above and past below; the world below does too.
 
-The next world is the already populated world that is future-relative to us.
+The lattice connects this continuing chain.
 
-The lattice connects them.
+The current runs through it.
 
-The current runs through them.
-
-The gate can change their adjacency.
+When the gate opens, a present can interact with both its relative future and its relative past. The gate changes accessibility and exchange; it does not turn one world into another.
 
 Once I saw that, the time door stopped feeling like an extra idea.
 
