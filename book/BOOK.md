@@ -316,7 +316,7 @@ It is one stabilised turn of something larger.
 
 Behind or beneath it is an older turn: the previous world-state retained inside the larger growth.
 
-Beyond or above it is another populated turn: the next world-state, developing in relation to us but already a world in its own right within the same body.
+Beyond or above it is another populated turn: a world-state that is next relative to us, but already a world in its own right within the same body.
 
 I use words like *above* and *below* because the model is layered, but the relation is also temporal.
 
@@ -324,7 +324,7 @@ The older turn is the inherited past.
 
 The present turn is the world-state we currently inhabit.
 
-The next turn is the developing future.
+The next turn is the populated world that is future-relative to us.
 
 They are not three unrelated universes.
 
@@ -4097,7 +4097,7 @@ The old turn becomes substrate.
 
 The present turn becomes active inheritance.
 
-The next turn becomes developing possibility.
+The next turn occupies the future-relative position.
 
 This is one of the reasons geology feels so natural inside the model.
 
@@ -4141,7 +4141,7 @@ The future can be structurally present and populated before it becomes our prese
 
 That is the part of the model that most directly changed how I think about time.
 
-The next turn can already exist as a populated world whose geometry and relation to us are still developing.
+The next turn already exists as a populated world; what can change is its geometry of connection and its relation to us.
 
 It can already contain boundaries, material, life, inhabitants and its own history.
 
@@ -14390,7 +14390,7 @@ That is why cosmic egg traditions fit so naturally beside the shell-turn cosmolo
 
 The womb makes the same relationship biological and relational.
 
-One body contains the developing future of another.
+One living body can contain another living being that already exists before birth.
 
 The next generation exists before it is born into the external world.
 
@@ -14400,7 +14400,7 @@ It is already a populated world with its own environment before it occupies our 
 
 The current world is not waiting for the future to appear from nothing.
 
-The future is already developing within the larger body.
+The future generation already exists within the larger body before the relationship of birth changes.
 
 The gate is birth-like because it changes the relation between inside and outside.
 
@@ -20791,7 +20791,7 @@ The tips exist before they become old wood.
 
 That is how I picture the next world.
 
-Future structure exists while still developing.
+The world future-relative to us already exists as a populated structure.
 
 It is already populated, but it is not yet the world occupying our present relation.
 
@@ -25456,7 +25456,7 @@ Vardath Cosmology increasingly pushes me toward a different picture.
 
 The past can remain physically present as older structure.
 
-The future can already exist as developing structure.
+The future-relative world can already exist as physical, populated structure.
 
 The present is the active world-region we currently occupy between them.
 
@@ -27564,7 +27564,7 @@ From my point of view:
 
 **trunk — present world in our relation**
 
-**branches — developing future**
+**branches — populated world future-relative to us**
 
 The whole tree is time made structural.
 
@@ -35846,7 +35846,7 @@ It is this:
 
 That is almost exactly how I picture world succession now.
 
-The next turn remains populated and developing while the present remains the world we currently occupy.
+The next turn remains populated while the present remains the world we currently occupy.
 
 The present world contains material inherited from the previous one.
 
@@ -42202,7 +42202,7 @@ That is how I now picture the transition toward the next turn in our relation: t
 
 The next world does not pop into existence on the day of the reset because it already exists as a populated world.
 
-It can already be populated while developing in relation to the world we currently inhabit.
+It is already populated before it becomes present relative to the world we currently inhabit.
 
 That makes the whole cosmology more continuous.
 
