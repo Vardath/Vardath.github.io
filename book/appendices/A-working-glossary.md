@@ -248,7 +248,7 @@ A reset becomes succession only if something is handed forward.
 
 ## Inheritance
 
-Anything the successor world receives from what came before.
+Anything an affected present retains locally or receives through the gate from its past-relative or future-relative neighbours.
 
 Inheritance does not have to remain intact.
 
