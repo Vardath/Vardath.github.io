@@ -84,6 +84,22 @@ Vardath's cosmological extension goes farther and must remain clearly his:
 
 Keep Peratt's documented claims separate from Vardath's extension while allowing the book to integrate them naturally.
 
+## World-population invariant — NON-NEGOTIABLE
+
+All world-turns — above, below, previous, present and next — are populated in their own right.
+
+**Previous / present / next describe temporal and adjacency relationships to us, not whether a world is inhabited.**
+
+The present world is the world we currently occupy. A previous world does not become empty when its relation changes, and a next world is not an uninhabited shell waiting for us. Each world can have its own inhabitants, ecology, history, atmosphere and local order.
+
+The gate changes adjacency, accessibility and transfer among already populated worlds.
+
+Do not write that:
+- the next world "becomes inhabited";
+- the previous world stops being inhabited;
+- the present is the only inhabited world;
+- upper or lower worlds are blank, empty or waiting for civilisation.
+
 ## Core components that must NOT be argued away
 
 ### Flat Earth / world-disc
