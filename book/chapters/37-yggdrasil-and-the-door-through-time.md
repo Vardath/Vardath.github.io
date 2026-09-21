@@ -100,7 +100,7 @@ That is how I picture the next world.
 
 Future structure exists while still developing.
 
-It is not yet the dominant inhabited world.
+It is already populated, but it is not yet the world occupying our present relation.
 
 But it is already part of the body.
 
