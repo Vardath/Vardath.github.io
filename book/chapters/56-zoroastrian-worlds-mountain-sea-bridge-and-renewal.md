@@ -418,7 +418,7 @@ Witness.
 
 Reset.
 
-Successor world.
+Renewed present / new-beginning period.
 
 The model becomes stronger when those roles remain distinct.
 
