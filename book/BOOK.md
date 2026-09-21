@@ -2330,7 +2330,7 @@ Early question:
 
 Later question:
 
-**What if the upper watery boundary belongs structurally to the neighbouring forming world?**
+**What if the upper watery boundary belongs structurally to an already populated neighbouring world?**
 
 The second question does not magically solve the physics.
 
@@ -3699,7 +3699,7 @@ Those words are useful, but each needs care.
 
 **Present** means the stabilised turn we currently inhabit.
 
-**Next** means the later turn already developing beyond the present one.
+**Next** means the populated world-turn that is later relative to the present one.
 
 I also use **lower** and **upper** because the model is layered.
 
@@ -12170,13 +12170,13 @@ The world becomes habitable when water and solid structure separate into stable 
 
 That fits my model very well.
 
-A new world-turn does not need to begin as dry finished geography.
+The receiving world does not need transferred material to arrive as dry finished geography.
 
-It can begin as a water-rich developing region receiving material from the previous world.
+A region receiving material from the previous world can be water-rich and unsettled during the handoff.
 
-The stable surface comes later.
+The destination world itself already exists and is populated; what settles later is the transferred region and its local surface.
 
-Water is present first.
+Water can be present throughout the transfer.
 
 Order is what changes.
 
