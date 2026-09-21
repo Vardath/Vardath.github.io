@@ -38,13 +38,13 @@ The world becomes habitable when water and solid structure separate into stable 
 
 That fits my model very well.
 
-A new world-turn does not need to begin as dry finished geography.
+The receiving world does not need transferred material to arrive as dry finished geography.
 
-It can begin as a water-rich developing region receiving material from the previous world.
+A region receiving material from the previous world can be water-rich and unsettled during the handoff.
 
-The stable surface comes later.
+The destination world itself already exists and is populated; what settles later is the transferred region and its local surface.
 
-Water is present first.
+Water can be present throughout the transfer.
 
 Order is what changes.
 
