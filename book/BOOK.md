@@ -528,7 +528,7 @@ What crosses it?
 
 Water is the most obvious material because water already belongs to the boundary structure of the cosmology.
 
-The mature model proposes that an upper watery region may be the lower boundary of the forming next world-turn. From the present world it appears above. From the next world it would be below.
+The mature model proposes that an upper watery region may be the lower boundary of the already populated next world-turn. From the present world it appears above. From that world's own surface it would be below.
 
 During the quiet phase, the interface is stable.
 
@@ -2971,13 +2971,13 @@ Structurally, the receiver represents the destination becoming stable enough to 
 
 The same logic appears at world scale.
 
-A next world cannot receive inheritance if it is not already forming.
+A next world can receive inheritance because it already exists as a populated destination.
 
 The gate can transfer material only because there is somewhere for that material to go.
 
 The receiver therefore exists before the transfer is complete.
 
-That is why I increasingly think of the next world as already present in some form during the quiet age.
+That is why I increasingly think of the next world as already present in full as another populated world during the quiet age.
 
 It is future, but it is not nothing.
 
@@ -3669,7 +3669,7 @@ That larger body has history built into its shape.
 
 What came before is still part of it.
 
-What comes next is already forming.
+What comes next is already there.
 
 The present is therefore not a single isolated platform floating in emptiness. It is the world-region we currently inhabit inside a structure that has grown through earlier states and is continuing into later ones. The other turns are populated too; **present** names our relationship to one world, not the only place where life exists.
 
@@ -3823,21 +3823,19 @@ The picture I use most often keeps the previous turn as part of the larger body.
 
 It becomes the deeper history of the system.
 
-This does not mean the previous world must remain a perfectly preserved copy of its old inhabited surface.
+This does not mean our access to the previous world remains unchanged.
 
-It can be altered.
+The route to it can be buried.
 
-Buried.
+The interface can be compressed.
 
-Compressed.
+Transferred regions can be flooded.
 
-Flooded.
+The gate can close.
 
-Closed off.
+But the previous world itself remains a populated world and continues to be ordinary life for its own inhabitants.
 
-It can cease to function as the main environment for ordinary life.
-
-But it remains materially relevant.
+What changes is its relationship to us, not whether it is alive or inhabited.
 
 That makes the lower world more interesting than a generic realm of the dead.
 
@@ -3857,31 +3855,25 @@ A descent can be more than movement downward in ordinary geography.
 
 It can represent movement into the inherited layers of the world-body.
 
-## The next world is already forming
+## The next world is already there
 
 The next world matters just as much.
 
-One possibility is that the new world appears only after the old arrangement has been transformed.
+The next world does not appear only after our present arrangement has been transformed.
 
-Another, which connects strongly with the growing-body picture, is that the next turn is already developing and populated while the present remains the world we currently occupy.
+It already exists as a populated world in its own right.
 
-I keep the second possibility central because it gives the gate a receiving world that already exists, without requiring the first possibility to be impossible.
+It has its own land, water, atmosphere, ecology, inhabitants, history and local order.
 
-It does not need to mirror the environmental conditions of our current surface. It can have its own atmosphere, ecology, inhabitants and history while still developing relative to our place in the larger sequence.
+It does not need to mirror our conditions, because it is not an unfinished copy of our world.
 
-It only needs to exist as a forming region of the larger structure.
+What changes during the gate interval is its adjacency to us.
 
-It can accumulate material.
+Material, water, organisms, people or land can cross into an already inhabited destination without creating that destination.
 
-It can develop boundaries.
+Then, when the gate interval comes, the next turn is already there to receive whatever crosses.
 
-It can hold water.
-
-It can become increasingly coherent.
-
-Then, when the gate interval comes, the next turn is already there to receive inheritance.
-
-That is one of the strongest reasons I often picture world renewal as inheritance into something already forming rather than creation from nothing.
+World renewal is therefore a change of relationship and inheritance between existing populated worlds, not the construction of a new habitable world.
 
 The receiver exists before the handoff.
 
@@ -4061,7 +4053,7 @@ Another distinction became necessary once the shell began growing.
 
 The world-body can continue developing during long quiet ages.
 
-The next turn can keep forming without the present world entering catastrophe.
+The next world can continue its own history without the present world entering catastrophe.
 
 That means ordinary time is productive.
 
@@ -4179,7 +4171,7 @@ The old world resembles an earlier stage of the organism.
 
 The present world is the active surface of the current stage.
 
-The next world is developing beyond it.
+The next world already exists beyond it.
 
 The deeper current persists through all three.
 
@@ -4217,7 +4209,7 @@ The upper water needs somewhere to belong.
 
 The previous world needs somewhere to remain.
 
-The next world needs somewhere to form.
+The next world already occupies its own region of the larger structure.
 
 The carrier needs a destination.
 
@@ -6945,7 +6937,7 @@ Its own stable surface.
 
 Its own ordinary sky.
 
-The next world can be forming nearby in the larger structure without continuously pouring everything it contains into ours.
+The next world can already exist nearby in the larger structure, fully populated in its own right, without continuously pouring everything it contains into ours.
 
 The previous world can remain part of the body without constantly opening into the present.
 
@@ -12732,9 +12724,9 @@ It is part of the world.
 
 The present turn has an atmospheric state just as it has a surface and water distribution.
 
-The next turn, if it is already forming, can also have gases, vapour and its own pressure conditions.
+The next turn already exists as a populated world and can have gases, vapour and its own pressure conditions.
 
-The previous world can retain atmospheric material inside older enclosed regions.
+The previous world has its own atmosphere and can also retain atmospheric material inside regions no longer directly accessible from ours.
 
 That means the gate can connect not only places but **environments**.
 
@@ -13042,7 +13034,7 @@ The repeated enclosure imagery makes mechanical sense because survival requires 
 
 ## Atmospheric inheritance
 
-The next world also needs air.
+The next world already has its own atmospheric system; transferred life would have to survive the conditions it encounters there.
 
 That means gas transfer is part of world succession.
 
@@ -14404,7 +14396,7 @@ The next generation exists before it is born into the external world.
 
 This is exactly how I think about the next world-turn.
 
-It is already populated while forming, before it becomes the environment occupying our present relation in the sequence.
+It is already a populated world with its own environment before it occupies our present relation in the sequence.
 
 The current world is not waiting for the future to appear from nothing.
 
@@ -25544,7 +25536,7 @@ It has already carried a stable world-state.
 
 That state has passed.
 
-The surface may be buried, deformed, flooded or reorganised.
+Regions transferred out of our present relation may be buried, deformed, flooded or reorganised, while the previous world remains populated in its own right.
 
 Life that belonged to it may be gone, transferred or preserved in altered form.
 
@@ -25616,7 +25608,7 @@ Its stability depends on being separated from neighbouring states.
 
 Its history depends on what it inherited.
 
-Its eventual reset depends on what is already forming beyond it.
+Its eventual reset depends on what already exists beyond it and on how adjacency changes.
 
 The present is the middle of a process.
 
@@ -25930,7 +25922,7 @@ A developing environment can exist without every detail of its later history alr
 
 A seed exists before every branch position of the adult tree is known.
 
-A forming shell turn exists before everything that will happen inside it has happened.
+A populated world-turn can already exist before everything that will later happen in our relationship with it has happened.
 
 So I do not take this model to mean fate is fixed.
 
@@ -26042,7 +26034,7 @@ The previous world is the preserved past.
 
 The present world is the active state we currently occupy.
 
-The next world is the developing future.
+The next world is the already populated world that is future-relative to us.
 
 The lattice connects them.
 
@@ -27148,7 +27140,7 @@ It is being rearranged.
 
 That fits the handoff principle perfectly.
 
-The next world is built not only from new matter but from inherited pieces.
+The next world is not built by the transfer. It already exists; inherited pieces from our world can be added to, embedded within or exchanged with its existing material and populations.
 
 A transferred landmass is simply a very large carrier.
 
@@ -27446,7 +27438,7 @@ People change context.
 
 Past structures can enter later worlds.
 
-Future-forming regions can receive present material.
+Worlds that are future-relative to us can receive present material when adjacency changes.
 
 The map and the chronology are altered in one event.
 
@@ -27600,11 +27592,11 @@ That is exactly how I picture the larger world-body.
 
 The previous world is not erased.
 
-It becomes inner structure.
+It remains a populated world within the larger structure, even when our access to it changes.
 
-The current world lives around and through it.
+The current world occupies our present relation.
 
-The next world develops outward.
+The next world already exists beyond it as another populated turn.
 
 The larger body therefore becomes a record of its own history.
 
@@ -27910,7 +27902,7 @@ Some disappear beneath later layers.
 
 Some re-emerge.
 
-The next world is the pattern produced after the weave settles again.
+The next world is not produced by the weave. It already exists; after the weave settles, its relationship to us can become the new present relation.
 
 That may be the deepest meaning of the tree inside Vardath Cosmology.
 
@@ -27930,7 +27922,7 @@ The lattice dome or vault spreads above it.
 
 The roots continue into the older level.
 
-The branches continue into the forming level.
+The branches continue into the next populated level.
 
 From inside one world, the structure can therefore appear as:
 
@@ -28252,7 +28244,7 @@ The world tree still exists.
 
 The previous turn still lies within the larger world-body.
 
-The next turn is still forming.
+The next turn already exists as a populated world.
 
 Water circulates.
 
@@ -28306,35 +28298,29 @@ That is why the quiet world can look so different from the primordial one while 
 
 The current survives inside its own creation.
 
-## 3. The next world keeps forming
+## 3. The next world is already there
 
-While the present world remains stable, the next turn continues developing.
+While the present world remains stable, the next turn is already living its own history.
 
 This is important.
 
-The future world is not created at the moment of catastrophe.
+The future-relative world is not created at the moment of catastrophe.
 
-It is already forming.
+It already exists as a populated world with its own boundaries, water, atmosphere, land, ecology and inhabitants.
 
-Its boundary develops.
-
-Its lower interface develops.
-
-Water may accumulate there.
-
-Its lattice relationship becomes more coherent.
+What develops is the relationship between worlds and the conditions of transfer across their interface.
 
 The receiving world therefore exists before the transfer begins.
 
-This is what allows the reset to be a handoff rather than creation from nothing.
+This is what allows the reset to be a handoff between worlds rather than creation from nothing.
 
 The present world lives.
 
-The next world grows.
+The next world lives.
 
-The previous world remains.
+The previous world lives.
 
-Three world-states coexist inside one larger body.
+Three populated world-states coexist inside one larger body.
 
 ## 4. Activation begins
 
@@ -29102,7 +29088,7 @@ The previous turns remain.
 
 The new present world is now part of the larger growth.
 
-Beyond it, another future begins forming.
+Beyond it, another already populated world occupies the future-relative position.
 
 The machine has not stopped.
 
@@ -29134,9 +29120,9 @@ If I compress the entire cosmology into one movement, it is this:
 
 The world begins broad and quiet.
 
-A persistent current moves through a woven structure connecting older, present and forming worlds.
+A persistent current moves through a woven structure connecting previous, present and next populated worlds.
 
-The next world grows.
+The next world already lives beyond the boundary.
 
 The current pulses.
 
@@ -29184,7 +29170,7 @@ Memory becomes myth.
 
 The renewed world becomes ordinary.
 
-Then the next turn begins forming beyond it.
+Then another already populated turn occupies the next position beyond it.
 
 That is Vardath Cosmology as one cycle.
 
@@ -29200,7 +29186,7 @@ That is not what I mean.
 
 The world does not end and restart.
 
-It **becomes** the next world.
+Its **relationship changes**: the present world becomes previous to us while an already populated next world becomes present.
 
 That distinction has been present in pieces throughout the book, but it deserves one chapter of its own because it is the difference between apocalypse and succession.
 
@@ -29208,7 +29194,7 @@ The reset is not the destruction of continuity.
 
 It is the mechanism of continuity.
 
-## The old world is material for the new
+## The present world can contribute material to another world
 
 Every stable world is already made from older material.
 
@@ -29246,9 +29232,9 @@ Some is broken apart.
 
 Some remains coherent inside carriers.
 
-The next world is therefore not made from nothing.
+The next world is therefore not made from our world at all.
 
-It is made from **inheritance**.
+It already exists. **Inheritance** is material and memory added to an existing populated world when transfer occurs.
 
 ## The successor already exists
 
@@ -29256,19 +29242,13 @@ This is why the next turn has to exist before the handoff.
 
 A receiver must be there before anything can be received.
 
-The next world may be incomplete.
+The next world is not an incomplete shell waiting for us.
 
-It may be mostly boundary, water, forming land or lattice structure.
+It is already a complete populated world in its own right, with its own land, water, atmosphere, ecology, inhabitants and history.
 
-It may not yet be able to support ordinary life.
+When the gate opens, that world gains access to material from the present.
 
-But it is not absent.
-
-The world-machine is already growing it.
-
-When the gate opens, the new turn gains access to material from the present.
-
-That transfer helps complete the successor.
+The transfer changes both sides without creating or completing either world.
 
 This is one reason I think creation mythology can preserve catastrophe so often.
 
@@ -29358,7 +29338,7 @@ It becomes inherited.
 
 Another turn takes over.
 
-The larger structure grows through successive habitable states.
+The larger structure moves through successive present-relations among worlds that are already inhabited.
 
 That is why the shell and tree remain such strong images for me.
 
@@ -29558,9 +29538,9 @@ The whole piece becomes inheritance.
 
 This is how moving lands fit the successor-world model.
 
-The next world does not need to be built only from fragments.
+The next world does not need to be built from fragments because it already exists.
 
-It can receive large intact pieces from the previous turn.
+It can receive large intact pieces from the previous turn and incorporate them into an already populated landscape.
 
 That produces a world of mixed ages.
 
@@ -29788,7 +29768,7 @@ Stability creates amnesia.
 
 ## The future world is already doing the same thing
 
-While the present becomes comfortable enough to feel eternal, another turn is already forming beyond it.
+While the present becomes comfortable enough to feel eternal, another populated turn already exists beyond it.
 
 That is the irony of the model.
 
@@ -29798,7 +29778,7 @@ But each is only one dominant phase in the larger growth.
 
 The successor already has a successor.
 
-The future is growing while the present is forgetting how it arrived.
+The future-relative world is living its own history while the present is forgetting how its current relation arose.
 
 That makes Vardath Cosmology deeply cyclical, but not hopeless.
 
@@ -29826,7 +29806,7 @@ Architecture remembers old cultures.
 
 The world tree remembers old turns.
 
-The next world is built from those memories.
+Those memories can cross into the next world and become part of its already existing history.
 
 That is why the cosmology does not need creation from nothing.
 
@@ -29836,35 +29816,27 @@ Even destruction becomes material.
 
 Even catastrophe becomes inheritance.
 
-Even the dead world remains inside the larger body.
+Even a world that has become previous to us remains populated inside the larger body.
 
 ## One world becoming the next
 
-So when I say one world becomes the next, I mean something very literal inside the cosmology.
+So when I say one world becomes the next, I mean a change of relation, not one populated world being manufactured out of another.
 
-The present world does not stand aside while another is made.
+The present world can donate water, land, ruins, people, organisms and stories across the gate.
 
-It participates in the making.
+Those transfers enter another world that already has its own water, land, people, organisms and history.
 
-Its water becomes future water.
+The current continues through the world tree.
 
-Its land becomes future land.
+The lattice changes state and then opens again.
 
-Its ruins become future mountains or buried architecture.
+The world that was present becomes previous in our relation.
 
-Its people become future ancestors.
+The world that was next becomes present in our relation.
 
-Its myths become future religion and folklore.
+Neither stops being a populated world.
 
-Its current continues through the world tree.
-
-Its lattice changes state and then opens again around a new stable surface.
-
-The old world becomes the lower world.
-
-The next world becomes the present.
-
-The larger body continues to grow.
+The larger body continues.
 
 That is succession.
 
@@ -30376,13 +30348,13 @@ Again, not every underworld myth has to be a map.
 
 The larger relation is what matters.
 
-## Heavens may remember forming worlds
+## Heavens may remember populated neighbouring worlds
 
 The same applies upward.
 
 The upper world can be both sacred and future.
 
-A next turn already forming above the present naturally acquires the qualities human beings associate with heaven.
+A populated next turn above the present can naturally acquire the qualities human beings associate with heaven, especially when it is normally beyond reach and only becomes adjacent during a gate phase.
 
 Beyond ordinary reach.
 
@@ -35626,7 +35598,7 @@ The Vardath gate is also a temporary change in access.
 
 I do not imagine that the next world is created at the instant the door opens.
 
-I imagine it already forming as part of the larger world-body.
+I imagine it already existing as a populated part of the larger world-body.
 
 Likewise, the previous world remains inherited below or behind the present relation.
 
@@ -35760,7 +35732,7 @@ It can become lower, hidden, inaccessible or mythologised.
 
 The present world can stand over inherited structure.
 
-The old order may survive as underworld, buried land, sealed region, ancestral realm or story.
+The old order may become inaccessible from our present relation or survive in memory as underworld, buried land, sealed region, ancestral realm or story, while the previous world itself remains populated.
 
 I do not need every Greek Titan to correspond to a lower world.
 
@@ -42218,7 +42190,7 @@ Long settlement.
 
 The Finnish creation material fits that beautifully.
 
-The world can be forming long before stable land appears.
+In the source story, local land and boundaries can take shape over time. In Vardath Cosmology, however, the neighbouring worlds already exist and are populated; it is their interface and transferred landscape that can be reorganised.
 
 ## Gestation is not only a metaphor of birth
 
@@ -42228,7 +42200,7 @@ A future state can develop **inside an older condition before it becomes indepen
 
 That is how I now picture the next turn.
 
-The next world does not have to pop into existence on the day of the reset.
+The next world does not pop into existence on the day of the reset because it already exists as a populated world.
 
 It can already be populated while developing in relation to the world we currently inhabit.
 
@@ -47623,11 +47595,11 @@ Some are alive.
 
 Some are dead.
 
-Some are forming.
+Some are in different environmental or structural phases.
 
 That is exactly what I need from the shell-turn idea.
 
-Related worlds do not have to share one developmental stage.
+Related worlds do not have to share one environmental or structural state, but in the Vardath model all world-turns remain populated.
 
 ## Narnia is born
 
@@ -51133,7 +51105,7 @@ All world-turns in Vardath Cosmology are populated in their own right. **Previou
 
 ## Next world
 
-The successor world-state or turn that follows the present one in the larger growth.
+The populated world-state or turn that is next relative to the present one in the larger structure.
 
 It is populated in its own right and may already be developing before it occupies the present position in our sequence.
 
@@ -51187,7 +51159,7 @@ The plenum remains a developing concept rather than a completed physical theory.
 
 The predecessor world-state retained within the larger world history.
 
-It can become lower, buried, hidden, ancestral or mythologised from the viewpoint of the present world.
+Its route or relation to the present can become lower, hidden, sealed, ancestral or mythologised, while the previous world itself remains populated and ordinary to its own inhabitants.
 
 ## Primordial current
 
