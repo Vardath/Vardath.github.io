@@ -86,7 +86,7 @@ Long settlement.
 
 The Finnish creation material fits that beautifully.
 
-The world can be forming long before stable land appears.
+In the source story, local land and boundaries can take shape over time. In Vardath Cosmology, however, the neighbouring worlds already exist and are populated; it is their interface and transferred landscape that can be reorganised.
 
 ## Gestation is not only a metaphor of birth
 
@@ -96,7 +96,7 @@ A future state can develop **inside an older condition before it becomes indepen
 
 That is how I now picture the next turn.
 
-The next world does not have to pop into existence on the day of the reset.
+The next world does not pop into existence on the day of the reset because it already exists as a populated world.
 
 It can already be populated while developing in relation to the world we currently inhabit.
 
