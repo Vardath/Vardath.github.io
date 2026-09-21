@@ -6,7 +6,7 @@ That is not what I mean.
 
 The world does not end and restart.
 
-It **becomes** the next world.
+Its **relationship changes**: the present world becomes previous to us while an already populated next world becomes present.
 
 That distinction has been present in pieces throughout the book, but it deserves one chapter of its own because it is the difference between apocalypse and succession.
 
@@ -14,7 +14,7 @@ The reset is not the destruction of continuity.
 
 It is the mechanism of continuity.
 
-## The old world is material for the new
+## The present world can contribute material to another world
 
 Every stable world is already made from older material.
 
@@ -52,9 +52,9 @@ Some is broken apart.
 
 Some remains coherent inside carriers.
 
-The next world is therefore not made from nothing.
+The next world is therefore not made from our world at all.
 
-It is made from **inheritance**.
+It already exists. **Inheritance** is material and memory added to an existing populated world when transfer occurs.
 
 ## The successor already exists
 
@@ -62,19 +62,13 @@ This is why the next turn has to exist before the handoff.
 
 A receiver must be there before anything can be received.
 
-The next world may be incomplete.
+The next world is not an incomplete shell waiting for us.
 
-It may be mostly boundary, water, forming land or lattice structure.
+It is already a complete populated world in its own right, with its own land, water, atmosphere, ecology, inhabitants and history.
 
-It may not yet be able to support ordinary life.
+When the gate opens, that world gains access to material from the present.
 
-But it is not absent.
-
-The world-machine is already growing it.
-
-When the gate opens, the new turn gains access to material from the present.
-
-That transfer helps complete the successor.
+The transfer changes both sides without creating or completing either world.
 
 This is one reason I think creation mythology can preserve catastrophe so often.
 
@@ -164,7 +158,7 @@ It becomes inherited.
 
 Another turn takes over.
 
-The larger structure grows through successive habitable states.
+The larger structure moves through successive present-relations among worlds that are already inhabited.
 
 That is why the shell and tree remain such strong images for me.
 
@@ -364,9 +358,9 @@ The whole piece becomes inheritance.
 
 This is how moving lands fit the successor-world model.
 
-The next world does not need to be built only from fragments.
+The next world does not need to be built from fragments because it already exists.
 
-It can receive large intact pieces from the previous turn.
+It can receive large intact pieces from the previous turn and incorporate them into an already populated landscape.
 
 That produces a world of mixed ages.
 
@@ -594,7 +588,7 @@ Stability creates amnesia.
 
 ## The future world is already doing the same thing
 
-While the present becomes comfortable enough to feel eternal, another turn is already forming beyond it.
+While the present becomes comfortable enough to feel eternal, another populated turn already exists beyond it.
 
 That is the irony of the model.
 
@@ -604,7 +598,7 @@ But each is only one dominant phase in the larger growth.
 
 The successor already has a successor.
 
-The future is growing while the present is forgetting how it arrived.
+The future-relative world is living its own history while the present is forgetting how its current relation arose.
 
 That makes Vardath Cosmology deeply cyclical, but not hopeless.
 
@@ -632,7 +626,7 @@ Architecture remembers old cultures.
 
 The world tree remembers old turns.
 
-The next world is built from those memories.
+Those memories can cross into the next world and become part of its already existing history.
 
 That is why the cosmology does not need creation from nothing.
 
@@ -642,35 +636,27 @@ Even destruction becomes material.
 
 Even catastrophe becomes inheritance.
 
-Even the dead world remains inside the larger body.
+Even a world that has become previous to us remains populated inside the larger body.
 
 ## One world becoming the next
 
-So when I say one world becomes the next, I mean something very literal inside the cosmology.
+So when I say one world becomes the next, I mean a change of relation, not one populated world being manufactured out of another.
 
-The present world does not stand aside while another is made.
+The present world can donate water, land, ruins, people, organisms and stories across the gate.
 
-It participates in the making.
+Those transfers enter another world that already has its own water, land, people, organisms and history.
 
-Its water becomes future water.
+The current continues through the world tree.
 
-Its land becomes future land.
+The lattice changes state and then opens again.
 
-Its ruins become future mountains or buried architecture.
+The world that was present becomes previous in our relation.
 
-Its people become future ancestors.
+The world that was next becomes present in our relation.
 
-Its myths become future religion and folklore.
+Neither stops being a populated world.
 
-Its current continues through the world tree.
-
-Its lattice changes state and then opens again around a new stable surface.
-
-The old world becomes the lower world.
-
-The next world becomes the present.
-
-The larger body continues to grow.
+The larger body continues.
 
 That is succession.
 
