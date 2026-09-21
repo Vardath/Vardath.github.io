@@ -194,7 +194,7 @@ That is how the larger body accumulates history.
 
 ## The new world is not clean
 
-A successor world begins mixed.
+A renewed present begins mixed after the gate event.
 
 It contains old sediment.
 
@@ -397,7 +397,7 @@ language, stories, law, ritual, maps, memory.
 **Relational inheritance**  
 the very fact that the new world knows it came from somewhere before.
 
-A successor world can receive some layers and lose others.
+A renewed present can receive some layers from neighbouring worlds and lose others during the destructive interval.
 
 That gives many possible historical outcomes.
 
@@ -423,7 +423,7 @@ Possibly its own life.
 
 Its own geography in formation.
 
-The successor world is produced by interaction between what arrives and what is already there.
+The new-beginning period is produced by interaction between what arrives from above and below and what survives locally.
 
 That makes the handoff more like grafting than copying.
 
@@ -431,7 +431,7 @@ A branch joins another living system.
 
 The result belongs to both histories.
 
-This idea helps explain why a successor world should not look like a perfect reconstruction of its predecessor.
+This idea helps explain why a renewed present after the gate should not look like a perfect reconstruction of its pre-event state.
 
 ## Most inheritance should be damaged
 
@@ -523,7 +523,7 @@ The strongest case would come from **independent layers converging on one sequen
 
 That remains a research goal rather than a completed result.
 
-## The successor world begins before it feels normal
+## The new-beginning period starts before it feels normal
 
 The first people after the transfer would not necessarily experience a clean new beginning.
 
