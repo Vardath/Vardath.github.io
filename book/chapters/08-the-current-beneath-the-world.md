@@ -832,13 +832,13 @@ That can make different world ages resemble one another without becoming identic
 
 The same underlying skeleton produces new surface expressions.
 
-This is another reason I think in terms of succession rather than replacement.
+This is another reason I think in terms of continuity and renewal rather than replacement.
 
-The new world is new.
+The post-gate arrangement is new.
 
 But the current is old.
 
-The next world inherits the deep pathways of the previous one.
+Each affected present can retain its deep pathways while also receiving material and influence from the populated worlds above and below.
 
 The world tree grows, but the trunk remains continuous.
 
