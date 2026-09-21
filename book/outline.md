@@ -233,8 +233,8 @@ Yggdrasil, threads, weaving, the fingertrap and a living connector whose geometr
 ## Chapter 49 — The Full Cycle
 Quiet world → waking → convergence → gate → transfer → deformation/heating → reopening → renewed quiet world.
 
-## Chapter 50 — One World Becoming the Next
-A complete walk through material inheritance, survival, land movement and succession.
+## Chapter 50 — Past, Present and Future at the Gate
+A complete walk through the relative vertical chain: every world is its own present, the world above is future-relative, the world below is past-relative, and gate events allow two-way interaction that produces new-beginning periods after destructive transitions.
 
 ## Chapter 51 — What I Think the Myths May Be Remembering
 The strongest similarities from many traditions assembled without requiring one universal story or one exclusive interpretation.
