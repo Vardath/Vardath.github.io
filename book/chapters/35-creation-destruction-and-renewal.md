@@ -40,7 +40,7 @@ From that viewpoint, apocalypse is exactly the right word.
 
 The familiar order is being destroyed.
 
-## Creation from inside the new world
+## Creation from inside the renewed present
 
 Now imagine someone born after the event.
 
@@ -60,7 +60,7 @@ From that viewpoint, the same event belongs to creation.
 
 The primordial water is not the flood that destroyed the old world.
 
-It is the watery beginning before the new world stabilised.
+It is the watery beginning of the post-gate period before the renewed present stabilised.
 
 The first mound is not merely high ground surviving catastrophe.
 
@@ -108,7 +108,7 @@ During renewal, stable separation returns.
 
 Creation is therefore not adding material.
 
-It is **sorting material into a new world**.
+It is **sorting and redistributing material within and between already populated worlds during the gate event**.
 
 ## Sky and Earth separated
 
@@ -154,7 +154,7 @@ The primordial ocean can also be re-read through the cycle.
 
 From the old world’s perspective, it is flood.
 
-From the new world’s perspective, it is the water before land.
+From the renewed present’s perspective, it is the water before the local landscape settles again.
 
 One event.
 
@@ -226,9 +226,9 @@ Survivors remain.
 
 That is reset rather than terminal annihilation.
 
-The old world dies as an arrangement.
+The old local arrangement can be destroyed.
 
-The world-system continues.
+The present world remains populated, and the larger world-system continues.
 
 ## Frashokereti
 
@@ -262,9 +262,9 @@ The preserved remnant becomes the beginning of the new human order.
 
 That is exactly what the handoff requires.
 
-The old world supplies the living seed.
+The relative past, present and future can all contribute living cargo during the gate interval.
 
-The new world receives it.
+The renewed present receives a mixture of what survived locally and what crossed from neighbouring worlds.
 
 ## Creation gods as operators
 
@@ -348,9 +348,9 @@ The gate is the end of one world and the beginning of another at the same time.
 
 I want to keep repeating this because it is essential.
 
-The new world is not blank.
+The renewed present is not blank.
 
-It contains history.
+It contains its own history plus whatever history crossed the gate.
 
 Transferred material.
 
@@ -426,9 +426,9 @@ The first stable community may appear long before the wider world has recovered.
 
 That long middle is essential because it gives archaeology, geology and biology time to produce complicated layers rather than one clean event horizon.
 
-## The new world should be geographically uneven
+## The renewed present should be geographically uneven
 
-If recovery happens through local stability, then the successor world should not appear everywhere at once.
+If recovery happens through local stability, then the new-beginning period should not settle everywhere at once.
 
 Higher ground drains first.
 
@@ -464,7 +464,7 @@ Oral memory survives only where people survive.
 
 A reset therefore filters history.
 
-The new world does not merely inherit less.
+The renewed present does not merely inherit less.
 
 It inherits a **biased sample** of the old world.
 
@@ -486,7 +486,7 @@ That does not require them to know the deep mechanism.
 
 This is one of the most useful ways creation and catastrophe can coexist without contradiction.
 
-The old world's ending and the new world's creation can be two descriptions of the same transition from opposite sides.
+The destructive interval and the new-beginning period can be two descriptions of the same gate transition from opposite sides.
 
 
 ## The world creates by inheriting
