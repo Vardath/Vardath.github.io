@@ -1127,7 +1127,7 @@ Vardath form:
 | Surface response | flood, fire, land emergence, deformation, material change | Ragnarök, Māui land, Nüwa, Meltology |
 | Reopening | separation, widening, restored light, resealing | Tāne, Pangu, Yomi closure, hidden-light release |
 | Recovery | refuge, healing, sedimentation, regulation | Avalon, Sampo/stable production, Māui slowing Sun |
-| Renewed quiet world | successor world, new land, inherited life | Five Suns, Hopi emergence, Ragnarök renewed Earth |
+| Renewed quiet world | new-beginning period, altered land, inherited life | Five Suns, Hopi emergence, Ragnarök renewed Earth |
 | Cultural memory | sacred site, story, memorial opening, mythic role | sipapu, songlines, fairy places, threshold legends |
 
 ---
@@ -1145,7 +1145,7 @@ For example, the Norse comparison can be divided as:
 - **Odin** — traveller/operator/witness depending on episode.
 - **Ragnarök** — active transition.
 - **Líf and Lífþrasir** — surviving continuity.
-- **renewed Earth** — successor world.
+- **renewed Earth** — renewed present / new-beginning period.
 
 The value of the atlas is precisely that these roles are not collapsed.
 
