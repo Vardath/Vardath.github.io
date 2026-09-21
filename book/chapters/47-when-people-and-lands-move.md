@@ -414,7 +414,7 @@ It is being rearranged.
 
 That fits the handoff principle perfectly.
 
-The next world is built not only from new matter but from inherited pieces.
+The next world is not built by the transfer. It already exists; inherited pieces from our world can be added to, embedded within or exchanged with its existing material and populations.
 
 A transferred landmass is simply a very large carrier.
 
@@ -712,7 +712,7 @@ People change context.
 
 Past structures can enter later worlds.
 
-Future-forming regions can receive present material.
+Worlds that are future-relative to us can receive present material when adjacency changes.
 
 The map and the chronology are altered in one event.
 
