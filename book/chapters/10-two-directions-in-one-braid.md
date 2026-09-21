@@ -310,7 +310,7 @@ The directional opposition becomes even stranger when previous and next are trea
 
 One sense of the braid points toward what came before.
 
-The other points toward what is forming next.
+The other points toward the populated world that is next relative to us.
 
 That does not mean the current itself is literally time.
 
