@@ -480,7 +480,7 @@ It is a sequence of constraints on what a habitable world needs.
 
 That is why Māui deserves his own chapter.
 
-He shows that a world is not finished simply because it exists.
+He shows that the local arrangement of a world can keep changing even though the world already exists and is inhabited.
 
 Land has to emerge.
 
