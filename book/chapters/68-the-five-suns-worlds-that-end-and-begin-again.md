@@ -518,10 +518,10 @@ Parts of earlier worlds can still contribute to what follows.
 
 That is almost exactly what I mean when I say:
 
-**one world becomes the previous world while another becomes home.**
+**a present world passes through catastrophe and enters a renewed beginning while the populated worlds above and below remain its future-relative and past-relative neighbours.**
 
 The Five Suns give that thought mythic scale.
 
-They tell me that world-history can be larger than one world.
+They tell me that world-history can involve several populated worlds interacting across destructive thresholds.
 
-And once that possibility is admitted, the present stops looking like the beginning and starts looking like the middle.
+And once that possibility is admitted, each present looks like one level in a continuing chain, with a past-relative world below and a future-relative world above.
