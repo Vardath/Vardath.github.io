@@ -542,11 +542,11 @@ Vardath Cosmology repeats phases.
 
 But the world does not return to exactly the same state.
 
-The old world becomes previous.
+The world below remains past-relative to this present, and the world above remains future-relative to it.
 
-The new world becomes present.
+The affected present enters a new-beginning period after interaction through the gate.
 
-Continuity survives through transformed roles.
+Continuity survives through transfer, survival and transformed local conditions.
 
 That is why Osiris fits the succession model so well.
 
