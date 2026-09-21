@@ -50,7 +50,7 @@ It can already exist.
 
 The next world already exists as a populated world; what can develop is its relationship to the present one.
 
-The previous world can remain a populated part of the larger body after it is no longer the world occupying our present relation.
+The world below remains a populated part of the larger body, past-relative to us while remaining present to its own inhabitants.
 
 The worlds overlap in structure without having to be equally accessible.
 
