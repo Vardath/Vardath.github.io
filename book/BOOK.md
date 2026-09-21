@@ -6369,7 +6369,7 @@ The material on top has changed.
 
 The water has changed.
 
-The next world has grown.
+The relationship to the next world has changed while that world itself remains populated.
 
 But the deep skeleton remains related.
 
@@ -38796,7 +38796,7 @@ In Vardath Cosmology, the neighbouring world-turn does not have to be created at
 
 It can already exist.
 
-The next world can already be populated while developing in relation to the present one.
+The next world already exists as a populated world; what can develop is its relationship to the present one.
 
 The previous world can remain a populated part of the larger body after it is no longer the world occupying our present relation.
 
@@ -43200,7 +43200,7 @@ It is a sequence of constraints on what a habitable world needs.
 
 That is why Māui deserves his own chapter.
 
-He shows that a world is not finished simply because it exists.
+He shows that the local arrangement of a world can keep changing even though the world already exists and is inhabited.
 
 Land has to emerge.
 
