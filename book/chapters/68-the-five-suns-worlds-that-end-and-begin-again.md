@@ -18,7 +18,7 @@ The connection I make is structural.
 
 The Five Suns give me:
 
-**world → catastrophe → successor world → catastrophe → successor world.**
+**present world → catastrophe → renewed present / new beginning → catastrophe → another renewed present / new beginning.**
 
 That is one of the clearest mythic forms of world succession in the entire book.
 
@@ -102,7 +102,7 @@ The visible mechanism can vary.
 
 The deeper position in the sequence can remain the same.
 
-**stable world → terminal disruption → successor world.**
+**stable present → terminal disruption → renewed present entering a new-beginning period.**
 
 That is much closer to the Vardath cycle.
 
