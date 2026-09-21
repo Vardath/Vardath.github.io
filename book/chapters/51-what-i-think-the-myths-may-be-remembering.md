@@ -500,13 +500,13 @@ Again, not every underworld myth has to be a map.
 
 The larger relation is what matters.
 
-## Heavens may remember forming worlds
+## Heavens may remember populated neighbouring worlds
 
 The same applies upward.
 
 The upper world can be both sacred and future.
 
-A next turn already forming above the present naturally acquires the qualities human beings associate with heaven.
+A populated next turn above the present can naturally acquire the qualities human beings associate with heaven, especially when it is normally beyond reach and only becomes adjacent during a gate phase.
 
 Beyond ordinary reach.
 
