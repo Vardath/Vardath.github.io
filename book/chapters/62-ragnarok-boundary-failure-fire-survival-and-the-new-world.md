@@ -556,7 +556,7 @@ If I compress Ragnarök into Vardath roles, I get something like this:
 
 **Líf and Lífþrasir — protected living continuity.**
 
-**Renewed Earth — successor world.**
+**Renewed Earth — renewed present / new-beginning period.**
 
 That sequence is why Ragnarök matters so much to me.
 
