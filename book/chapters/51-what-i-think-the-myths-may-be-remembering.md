@@ -290,7 +290,7 @@ That is what we actually find.
 
 ## Creation myths may remember arrival
 
-One of the possibilities I find strongest is that some creation stories may be memories of **arrival into a successor world**.
+One of the possibilities I find strongest is that some creation stories may be memories of **arrival into a present world during its new-beginning period after gate contact**.
 
 From the viewpoint of survivors, the world after the reset is genuinely new.
 
