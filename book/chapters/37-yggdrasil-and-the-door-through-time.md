@@ -98,7 +98,7 @@ The tips exist before they become old wood.
 
 That is how I picture the next world.
 
-Future structure exists while still developing.
+The world future-relative to us already exists as a populated structure.
 
 It is already populated, but it is not yet the world occupying our present relation.
 
