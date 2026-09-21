@@ -124,7 +124,7 @@ It has already carried a stable world-state.
 
 That state has passed.
 
-The surface may be buried, deformed, flooded or reorganised.
+Regions transferred out of our present relation may be buried, deformed, flooded or reorganised, while the previous world remains populated in its own right.
 
 Life that belonged to it may be gone, transferred or preserved in altered form.
 
@@ -196,7 +196,7 @@ Its stability depends on being separated from neighbouring states.
 
 Its history depends on what it inherited.
 
-Its eventual reset depends on what is already forming beyond it.
+Its eventual reset depends on what already exists beyond it and on how adjacency changes.
 
 The present is the middle of a process.
 
@@ -510,7 +510,7 @@ A developing environment can exist without every detail of its later history alr
 
 A seed exists before every branch position of the adult tree is known.
 
-A forming shell turn exists before everything that will happen inside it has happened.
+A populated world-turn can already exist before everything that will later happen in our relationship with it has happened.
 
 So I do not take this model to mean fate is fixed.
 
@@ -622,7 +622,7 @@ The previous world is the preserved past.
 
 The present world is the active state we currently occupy.
 
-The next world is the developing future.
+The next world is the already populated world that is future-relative to us.
 
 The lattice connects them.
 
