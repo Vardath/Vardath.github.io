@@ -292,7 +292,7 @@ The net can belong to containment.
 
 The division can belong to reset.
 
-The resulting sky and earth can belong to the successor world.
+The resulting sky and earth can belong to the renewed present after the gate event.
 
 That is already a complete event sequence without reducing any one character to the whole machine.
 
@@ -428,7 +428,7 @@ A buried structure may preserve a previous arrangement.
 
 A sediment blanket may preserve flood.
 
-The successor world is literally built out of catastrophe.
+The renewed present can be materially reshaped by catastrophe and by what crosses through the gate.
 
 Tiamat's body expresses that truth mythically in the most direct possible way.
 
@@ -547,7 +547,7 @@ Atrahasis and Utnapishtim give me the other half.
 
 Life survives because some of it is enclosed, carried and released after the water catastrophe.
 
-That matters because a successor world needs more than rock.
+That matters because a renewed present needs more than reshaped rock.
 
 It needs living continuity.
 
