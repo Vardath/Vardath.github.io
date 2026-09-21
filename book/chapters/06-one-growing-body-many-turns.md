@@ -12,7 +12,7 @@ What came before is still part of it.
 
 What comes next is already forming.
 
-The present is therefore not a single isolated platform floating in emptiness. It is the currently inhabited region of a structure that has grown through earlier states and is continuing into later ones.
+The present is therefore not a single isolated platform floating in emptiness. It is the world-region we currently inhabit inside a structure that has grown through earlier states and is continuing into later ones. The other turns are populated too; **present** names our relationship to one world, not the only place where life exists.
 
 This is the point where the old image of stacked worlds began to connect with the idea of a growing body.
 
@@ -38,7 +38,7 @@ Those words are useful, but each needs care.
 
 **Previous** means the older world-turn retained inside the larger structure.
 
-**Present** means the stabilised turn currently carrying the inhabited world.
+**Present** means the stabilised turn we currently inhabit.
 
 **Next** means the later turn already developing beyond the present one.
 
@@ -204,11 +204,11 @@ The next world matters just as much.
 
 One possibility is that the new world appears only after the old arrangement has been transformed.
 
-Another, which connects strongly with the growing-body picture, is that the next turn is already developing while the present world remains inhabited.
+Another, which connects strongly with the growing-body picture, is that the next turn is already developing and populated while the present remains the world we currently occupy.
 
 I keep the second possibility central because it gives the gate a receiving world that already exists, without requiring the first possibility to be impossible.
 
-It does not yet need to be habitable in the way our current surface is habitable.
+It does not need to mirror the environmental conditions of our current surface. It can have its own atmosphere, ecology, inhabitants and history while still developing relative to our place in the larger sequence.
 
 It only needs to exist as a forming region of the larger structure.
 
@@ -240,7 +240,7 @@ But from the viewpoint of the larger structure, it is transitional.
 
 It has inherited from a previous turn.
 
-It is currently inhabited.
+It is the world we currently inhabit.
 
 It is also becoming the donor to what comes next.
 
@@ -482,25 +482,25 @@ It contains what came before.
 
 It is the physical memory of the world.
 
-## The future can exist before it is inhabited
+## The future can exist before it becomes our present
 
 The reverse idea is even stranger.
 
-The future can be structurally present before it becomes inhabited.
+The future can be structurally present and populated before it becomes our present.
 
 That is the part of the model that most directly changed how I think about time.
 
-The next turn can already exist as forming geometry.
+The next turn can already exist as a populated world whose geometry and relation to us are still developing.
 
-It can already contain boundaries and material.
+It can already contain boundaries, material, life, inhabitants and its own history.
 
 It can already have a relationship to the current.
 
-It simply has not yet become the stable world occupied by the main continuity of life.
+It simply has not yet become the world occupying our present position in the sequence.
 
 Future, in that sense, is not absolute non-existence.
 
-It is **a world-state not yet dominant**.
+It is **a populated world-state not yet present to us**.
 
 That distinction later allows the time-door idea to become physical inside the model.
 
