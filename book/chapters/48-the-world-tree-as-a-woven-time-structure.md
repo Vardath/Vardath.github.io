@@ -96,7 +96,7 @@ New twigs appear at the edge.
 
 Buds form before leaves fully open.
 
-Future structure exists in development before it becomes mature.
+Future-relative structure can already exist before it becomes visible from our position.
 
 This gives the tree a temporal reading without forcing the mythology into one simple allegory.
 
