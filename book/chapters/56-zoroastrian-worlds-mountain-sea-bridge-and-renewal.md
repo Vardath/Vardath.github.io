@@ -370,13 +370,13 @@ The event cycle repeats.
 
 But the world advances.
 
-Previous becomes inherited.
+The world below remains past-relative to the present.
 
-Present becomes old.
+The present remains present to its own inhabitants.
 
-Next becomes present.
+The world above remains future-relative to it.
 
-The renewed world is connected to what came before without being identical to it.
+During renewal, material and beings can cross these relationships, so the renewed present is connected to both what is below and what is above without becoming either one.
 
 That is why world-renewal traditions are so important to me.
 
