@@ -263,7 +263,7 @@ Early question:
 
 Later question:
 
-**What if the upper watery boundary belongs structurally to the neighbouring forming world?**
+**What if the upper watery boundary belongs structurally to an already populated neighbouring world?**
 
 The second question does not magically solve the physics.
 
