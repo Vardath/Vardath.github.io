@@ -256,7 +256,7 @@ That is enough for the Vardath world-turn model.
 
 The next turn does not have to be imagined as abstract possibility.
 
-It can be part of the larger architecture already forming.
+It can already exist as part of the larger architecture.
 
 ## Earlier humanity becomes inheritance
 
