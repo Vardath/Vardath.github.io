@@ -344,7 +344,7 @@ All world-turns in Vardath Cosmology are populated in their own right. **Previou
 
 ## Next world
 
-The successor world-state or turn that follows the present one in the larger growth.
+The populated world-state or turn that is next relative to the present one in the larger structure.
 
 It is populated in its own right and may already be developing before it occupies the present position in our sequence.
 
@@ -398,7 +398,7 @@ The plenum remains a developing concept rather than a completed physical theory.
 
 The predecessor world-state retained within the larger world history.
 
-It can become lower, buried, hidden, ancestral or mythologised from the viewpoint of the present world.
+Its route or relation to the present can become lower, hidden, sealed, ancestral or mythologised, while the previous world itself remains populated and ordinary to its own inhabitants.
 
 ## Primordial current
 
