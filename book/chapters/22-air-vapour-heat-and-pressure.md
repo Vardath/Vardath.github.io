@@ -402,7 +402,7 @@ That makes atmospheric inheritance easy to overlook.
 
 But from the viewpoint of living organisms it may be the most important cargo of all.
 
-A world without breathable air is not a successor world for us.
+A world whose air we cannot breathe may still be populated in its own right, but it would not be a survivable destination for us without protection or atmospheric change.
 
 The gate therefore does more than move matter.
 
