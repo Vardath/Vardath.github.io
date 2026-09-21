@@ -566,15 +566,15 @@ It is not one isolated image of destruction.
 
 It is a world cycle.
 
-## The old world becomes the previous world
+## The affected present enters a new beginning
 
-This is where the Norse story joins my previous-present-next model most strongly.
+This is where the Norse story joins my gate, destruction and new-beginning model most strongly.
 
-Before Ragnarök, the world experienced by its inhabitants is simply "the world."
+Before Ragnarök, that world is its inhabitants' present, just as every world is present to its own inhabitants.
 
-After Ragnarök, it is the world that was.
+After Ragnarök, the same affected world enters a new-beginning period; its pre-event order is what has become past.
 
-The renewed Earth becomes the present world for the survivors and successors.
+The renewed Earth remains the survivors' present, now altered by destruction, survival and whatever crossed from the worlds above and below while the gate was open.
 
 That is exactly how a world-turn changes identity in my model.
 
