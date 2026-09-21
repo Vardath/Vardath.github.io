@@ -98,9 +98,9 @@ One medium can serve both directions at different parts of the flow.
 
 Air matters too.
 
-A new world needs atmosphere.
+A renewed present needs a stable atmosphere after the gate interval.
 
-A world reset should therefore involve gas transfer, not only solid material and water.
+A world reset can therefore involve gas transfer, not only solid material and water, even though the neighbouring worlds already have atmospheres of their own.
 
 Pressure differences across the gate can move atmosphere rapidly.
 
@@ -270,7 +270,7 @@ Some may be buried when another layer settles over them.
 
 Some may exchange relative position through the door.
 
-Some may survive as inherited geography in a successor world.
+Some may survive as inherited geography after crossing into a neighbouring world or after being rearranged within the renewed present.
 
 This is where the time-door idea becomes inseparable from the land branch.
 
@@ -382,7 +382,7 @@ That does not mean every anomaly has to be explained this way.
 
 The point is that the cosmology predicts **inheritance mixtures**.
 
-A successor world should contain things from more than one stage of the larger body.
+A post-gate present can contain material from its own surviving landscape together with contributions from the relative past below and future above.
 
 ## The door carries culture too
 
@@ -505,7 +505,7 @@ Without transfer, the next world would be disconnected from the present.
 
 With transfer, succession becomes physical.
 
-The new world receives water.
+The present can receive water from both relative directions when the gate is open.
 
 Air.
 
