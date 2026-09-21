@@ -570,11 +570,11 @@ It is a world cycle.
 
 This is where the Norse story joins my previous-present-next model most strongly.
 
-Before Ragnarök, the inhabited order is simply "the world."
+Before Ragnarök, the world experienced by its inhabitants is simply "the world."
 
 After Ragnarök, it is the world that was.
 
-The renewed Earth becomes the inhabited present for the survivors and successors.
+The renewed Earth becomes the present world for the survivors and successors.
 
 That is exactly how a world-turn changes identity in my model.
 
