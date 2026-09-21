@@ -48,7 +48,7 @@ In Vardath Cosmology, the neighbouring world-turn does not have to be created at
 
 It can already exist.
 
-The next world can already be populated while developing in relation to the present one.
+The next world already exists as a populated world; what can develop is its relationship to the present one.
 
 The previous world can remain a populated part of the larger body after it is no longer the world occupying our present relation.
 
