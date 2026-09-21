@@ -136,7 +136,7 @@ The previous world is not erased.
 
 It remains a populated world within the larger structure, even when our access to it changes.
 
-The current world occupies our present relation.
+The current world is our present because we live here; every other world is likewise present to its own inhabitants.
 
 The next world already exists beyond it as another populated turn.
 
@@ -690,7 +690,7 @@ Its threads carry continuity.
 
 Its roots preserve earlier worlds.
 
-Its trunk carries the world occupying our present relation.
+Its trunk can be read as the chosen present world from which past-below and future-above are being described.
 
 Its branches develop future worlds.
 
