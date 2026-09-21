@@ -17107,7 +17107,7 @@ manifestation,
 
 survivor,
 
-successor world.
+renewed present / new-beginning period.
 
 That difference may reflect genre.
 
