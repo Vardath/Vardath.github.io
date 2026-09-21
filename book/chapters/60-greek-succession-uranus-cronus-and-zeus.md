@@ -56,7 +56,7 @@ A world can be created by **opening an interval**.
 
 That is very close to the geometry I need after a Vardath gate event.
 
-During convergence, levels that are normally separated may become more closely connected. During reopening, the relationship widens again. The world becomes inhabitable not because all neighbouring structure vanishes, but because the proper spacing returns.
+During convergence, levels that are normally separated may become more closely connected. During reopening, the relationship widens again. Ordinary surface conditions become stable again because the proper spacing returns, not because neighbouring populated worlds vanish.
 
 Greek myth gives me a violent version of that transition.
 
