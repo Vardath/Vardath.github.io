@@ -56,7 +56,7 @@ The world tree still exists.
 
 The previous turn still lies within the larger world-body.
 
-The next turn is still forming.
+The next turn already exists as a populated world.
 
 Water circulates.
 
@@ -110,35 +110,29 @@ That is why the quiet world can look so different from the primordial one while 
 
 The current survives inside its own creation.
 
-## 3. The next world keeps forming
+## 3. The next world is already there
 
-While the present world remains stable, the next turn continues developing.
+While the present world remains stable, the next turn is already living its own history.
 
 This is important.
 
-The future world is not created at the moment of catastrophe.
+The future-relative world is not created at the moment of catastrophe.
 
-It is already forming.
+It already exists as a populated world with its own boundaries, water, atmosphere, land, ecology and inhabitants.
 
-Its boundary develops.
-
-Its lower interface develops.
-
-Water may accumulate there.
-
-Its lattice relationship becomes more coherent.
+What develops is the relationship between worlds and the conditions of transfer across their interface.
 
 The receiving world therefore exists before the transfer begins.
 
-This is what allows the reset to be a handoff rather than creation from nothing.
+This is what allows the reset to be a handoff between worlds rather than creation from nothing.
 
 The present world lives.
 
-The next world grows.
+The next world lives.
 
-The previous world remains.
+The previous world lives.
 
-Three world-states coexist inside one larger body.
+Three populated world-states coexist inside one larger body.
 
 ## 4. Activation begins
 
@@ -906,7 +900,7 @@ The previous turns remain.
 
 The new present world is now part of the larger growth.
 
-Beyond it, another future begins forming.
+Beyond it, another already populated world occupies the future-relative position.
 
 The machine has not stopped.
 
@@ -938,9 +932,9 @@ If I compress the entire cosmology into one movement, it is this:
 
 The world begins broad and quiet.
 
-A persistent current moves through a woven structure connecting older, present and forming worlds.
+A persistent current moves through a woven structure connecting previous, present and next populated worlds.
 
-The next world grows.
+The next world already lives beyond the boundary.
 
 The current pulses.
 
@@ -988,7 +982,7 @@ Memory becomes myth.
 
 The renewed world becomes ordinary.
 
-Then the next turn begins forming beyond it.
+Then another already populated turn occupies the next position beyond it.
 
 That is Vardath Cosmology as one cycle.
 
