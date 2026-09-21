@@ -34,9 +34,9 @@ It is part of the world.
 
 The present turn has an atmospheric state just as it has a surface and water distribution.
 
-The next turn, if it is already forming, can also have gases, vapour and its own pressure conditions.
+The next turn already exists as a populated world and can have gases, vapour and its own pressure conditions.
 
-The previous world can retain atmospheric material inside older enclosed regions.
+The previous world has its own atmosphere and can also retain atmospheric material inside regions no longer directly accessible from ours.
 
 That means the gate can connect not only places but **environments**.
 
@@ -326,7 +326,7 @@ The repeated enclosure imagery makes mechanical sense because survival requires 
 
 ## Atmospheric inheritance
 
-The next world also needs air.
+The next world already has its own atmospheric system; transferred life would have to survive the conditions it encounters there.
 
 That means gas transfer is part of world succession.
 
