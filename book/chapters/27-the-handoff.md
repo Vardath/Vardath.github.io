@@ -66,7 +66,7 @@ A handoff needs a receiver.
 
 That is why the next world has to exist before the reset is complete.
 
-It may not yet be the world occupying our present position, but it is already populated in its own right.
+It is the populated world above, future-relative to us while remaining present to its own inhabitants.
 
 It may be unstable.
 
