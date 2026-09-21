@@ -242,7 +242,7 @@ Some are dead.
 
 Some are in different environmental or structural phases.
 
-That is exactly what I need from the shell-turn idea.
+The useful comparison is that connected worlds can have different histories and conditions. Narnia can include dead or newly created worlds; Vardath Cosmology differs here because all of its world-turns remain populated.
 
 Related worlds do not have to share one environmental or structural state, but in the Vardath model all world-turns remain populated.
 
