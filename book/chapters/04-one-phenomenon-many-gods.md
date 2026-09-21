@@ -414,13 +414,13 @@ Structurally, the receiver represents the destination becoming stable enough to 
 
 The same logic appears at world scale.
 
-A next world cannot receive inheritance if it is not already forming.
+A next world can receive inheritance because it already exists as a populated destination.
 
 The gate can transfer material only because there is somewhere for that material to go.
 
 The receiver therefore exists before the transfer is complete.
 
-That is why I increasingly think of the next world as already present in some form during the quiet age.
+That is why I increasingly think of the next world as already present in full as another populated world during the quiet age.
 
 It is future, but it is not nothing.
 
