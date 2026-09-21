@@ -438,7 +438,7 @@ The old turn becomes substrate.
 
 The present turn becomes active inheritance.
 
-The next turn becomes developing possibility.
+The next turn occupies the future-relative position.
 
 This is one of the reasons geology feels so natural inside the model.
 
@@ -482,7 +482,7 @@ The future can be structurally present and populated before it becomes our prese
 
 That is the part of the model that most directly changed how I think about time.
 
-The next turn can already exist as a populated world whose geometry and relation to us are still developing.
+The next turn already exists as a populated world; what can change is its geometry of connection and its relation to us.
 
 It can already contain boundaries, material, life, inhabitants and its own history.
 
