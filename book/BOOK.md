@@ -316,19 +316,27 @@ It is one stabilised turn of something larger.
 
 Behind or beneath it is an older turn: the previous world-state retained inside the larger growth.
 
-Beyond or above it is a forming turn: the next world-state, not yet the main inhabited world but already part of the same body.
+Beyond or above it is another populated turn: the next world-state, developing in relation to us but already a world in its own right within the same body.
 
 I use words like *above* and *below* because the model is layered, but the relation is also temporal.
 
 The older turn is the inherited past.
 
-The present turn is the inhabited state.
+The present turn is the world-state we currently inhabit.
 
 The next turn is the developing future.
 
 They are not three unrelated universes.
 
 They are successive parts of one continuing structure.
+
+One point needs to be explicit here: **all of these world-turns are populated**.
+
+Previous, present and next do not mean dead world, inhabited world and unborn world.
+
+They describe the worlds' relationship to the world I am standing in.
+
+A world above or below can have its own inhabitants, ecology, history and stable order while remaining separated from us. The gate changes adjacency between populated worlds. It does not populate an empty one.
 
 The closest ordinary image is a growing shell.
 
@@ -3663,7 +3671,7 @@ What came before is still part of it.
 
 What comes next is already forming.
 
-The present is therefore not a single isolated platform floating in emptiness. It is the currently inhabited region of a structure that has grown through earlier states and is continuing into later ones.
+The present is therefore not a single isolated platform floating in emptiness. It is the world-region we currently inhabit inside a structure that has grown through earlier states and is continuing into later ones. The other turns are populated too; **present** names our relationship to one world, not the only place where life exists.
 
 This is the point where the old image of stacked worlds began to connect with the idea of a growing body.
 
@@ -3689,7 +3697,7 @@ Those words are useful, but each needs care.
 
 **Previous** means the older world-turn retained inside the larger structure.
 
-**Present** means the stabilised turn currently carrying the inhabited world.
+**Present** means the stabilised turn we currently inhabit.
 
 **Next** means the later turn already developing beyond the present one.
 
@@ -3855,11 +3863,11 @@ The next world matters just as much.
 
 One possibility is that the new world appears only after the old arrangement has been transformed.
 
-Another, which connects strongly with the growing-body picture, is that the next turn is already developing while the present world remains inhabited.
+Another, which connects strongly with the growing-body picture, is that the next turn is already developing and populated while the present remains the world we currently occupy.
 
 I keep the second possibility central because it gives the gate a receiving world that already exists, without requiring the first possibility to be impossible.
 
-It does not yet need to be habitable in the way our current surface is habitable.
+It does not need to mirror the environmental conditions of our current surface. It can have its own atmosphere, ecology, inhabitants and history while still developing relative to our place in the larger sequence.
 
 It only needs to exist as a forming region of the larger structure.
 
@@ -3891,7 +3899,7 @@ But from the viewpoint of the larger structure, it is transitional.
 
 It has inherited from a previous turn.
 
-It is currently inhabited.
+It is the world we currently inhabit.
 
 It is also becoming the donor to what comes next.
 
@@ -4133,25 +4141,25 @@ It contains what came before.
 
 It is the physical memory of the world.
 
-## The future can exist before it is inhabited
+## The future can exist before it becomes our present
 
 The reverse idea is even stranger.
 
-The future can be structurally present before it becomes inhabited.
+The future can be structurally present and populated before it becomes our present.
 
 That is the part of the model that most directly changed how I think about time.
 
-The next turn can already exist as forming geometry.
+The next turn can already exist as a populated world whose geometry and relation to us are still developing.
 
-It can already contain boundaries and material.
+It can already contain boundaries, material, life, inhabitants and its own history.
 
 It can already have a relationship to the current.
 
-It simply has not yet become the stable world occupied by the main continuity of life.
+It simply has not yet become the world occupying our present position in the sequence.
 
 Future, in that sense, is not absolute non-existence.
 
-It is **a world-state not yet dominant**.
+It is **a populated world-state not yet present to us**.
 
 That distinction later allows the time-door idea to become physical inside the model.
 
@@ -14396,7 +14404,7 @@ The next generation exists before it is born into the external world.
 
 This is exactly how I think about the next world-turn.
 
-It is forming before it becomes the main inhabited environment.
+It is already populated while forming, before it becomes the environment occupying our present relation in the sequence.
 
 The current world is not waiting for the future to appear from nothing.
 
@@ -15426,7 +15434,7 @@ A handoff needs a receiver.
 
 That is why the next world has to exist before the reset is complete.
 
-It may not yet be the main inhabited world.
+It may not yet be the world occupying our present position, but it is already populated in its own right.
 
 It may be unstable.
 
@@ -15698,7 +15706,7 @@ The waters recede.
 
 The survivors become ancestors.
 
-The new world is populated through continuity.
+The receiving world already has its own population; continuity adds survivors, lineages and culture to what is already there.
 
 The carrier is therefore more than escape.
 
@@ -17464,7 +17472,7 @@ It is growing.
 
 The branch exists before it becomes old wood.
 
-The next world exists before it becomes the main inhabited turn.
+The next world exists, populated in its own right, before it becomes the turn we call present.
 
 This is one reason the world tree became such a powerful time image for me.
 
@@ -20793,7 +20801,7 @@ That is how I picture the next world.
 
 Future structure exists while still developing.
 
-It is not yet the dominant inhabited world.
+It is already populated, but it is not yet the world occupying our present relation.
 
 But it is already part of the body.
 
@@ -25458,7 +25466,7 @@ The past can remain physically present as older structure.
 
 The future can already exist as developing structure.
 
-The present is the active inhabited region between them.
+The present is the active world-region we currently occupy between them.
 
 That does not mean yesterday is sitting intact in a room below us or tomorrow is waiting fully formed above us.
 
@@ -25473,6 +25481,12 @@ The present turn carries the current stable environment.
 The next turn contains what is becoming.
 
 The three belong to one continuous architecture.
+
+Population is not what separates them.
+
+**Every world-turn is populated in its own right.**
+
+Previous, present and next are relational labels. They describe how a world sits in the larger sequence relative to us, not whether beings live there.
 
 That is why I increasingly describe them as:
 
@@ -25570,7 +25584,7 @@ Descent becomes movement into inheritance.
 
 That is one reason underworld journeys and ancestor journeys sit so comfortably beside the model.
 
-## The present as inhabited interface
+## The present as active interface
 
 The present is not only the middle layer.
 
@@ -25618,11 +25632,11 @@ A seed exists before the tree.
 
 An embryo exists before the adult.
 
-A new shell chamber begins before it becomes the main living chamber.
+A new shell chamber can already contain life before it occupies a later position in the growth.
 
 A building extension can exist while the older rooms are still occupied.
 
-The next world can therefore exist structurally without yet being the main inhabited world.
+The next world can therefore exist structurally and be populated in its own right without yet occupying our present position in the sequence.
 
 It is future because its stable phase has not yet become ours.
 
@@ -25938,7 +25952,7 @@ Not only linearly passing.
 
 Older states become deeper layers.
 
-The current state becomes the inhabited layer.
+The current state becomes the layer we call present.
 
 Later states develop outward or upward.
 
@@ -26026,7 +26040,7 @@ They are three stages of one larger growth.
 
 The previous world is the preserved past.
 
-The present world is the active inhabited state.
+The present world is the active state we currently occupy.
 
 The next world is the developing future.
 
@@ -27556,7 +27570,7 @@ From my point of view:
 
 **roots — inherited past**
 
-**trunk — inhabited present**
+**trunk — present world in our relation**
 
 **branches — developing future**
 
@@ -28142,7 +28156,7 @@ Its threads carry continuity.
 
 Its roots preserve earlier worlds.
 
-Its trunk carries the inhabited present.
+Its trunk carries the world occupying our present relation.
 
 Its branches develop future worlds.
 
@@ -29266,7 +29280,7 @@ They can be the same event described from opposite sides of the boundary.
 
 ## The previous world becomes the lower world
 
-Once a new world becomes dominant, the old one changes role.
+Once another world becomes present in our relation, the old one changes role relative to us.
 
 It does not disappear.
 
@@ -29276,7 +29290,7 @@ That is one of the most important structural transitions in the whole model.
 
 Yesterday's present becomes today's underworld.
 
-The inhabited world becomes inherited structure.
+The world that was present becomes inherited structure without ceasing to be populated in its own right.
 
 Its cities become buried memory.
 
@@ -29298,7 +29312,7 @@ To go down is, potentially, to move into the retained history of the world-body.
 
 ## The next world becomes the present
 
-At the same time, the forming upper turn becomes the new inhabited world.
+At the same time, the upper turn becomes the new present world in our sequence.
 
 Its boundary is no longer merely a ceiling from below.
 
@@ -29310,7 +29324,7 @@ Its received sediment becomes landscape.
 
 Its transferred life becomes ecology.
 
-Its incoming people become population.
+Its incoming people join, mix with or remain distinct from populations already there.
 
 The future becomes present not because time magically labels it so, but because the world-machine has shifted which turn carries the main stable environment.
 
@@ -29322,17 +29336,19 @@ while
 
 **next becomes present**
 
-The labels move because the dominant inhabited state moves.
+The labels move because the present relationship moves from one populated world-turn to another.
 
 ## The world grows by succession
 
 This gives the larger world-body a developmental rhythm.
 
-A turn forms.
+A turn exists and develops.
 
-It becomes inhabited.
+It carries its own population.
 
-It remains stable.
+It becomes present in the sequence.
+
+It remains stable in that relation.
 
 It reaches a transition.
 
@@ -30778,13 +30794,13 @@ What I still want to understand better is the exact transition between those sca
 
 How large is one disc relative to one shell-turn?
 
-Does each turn contain one dominant inhabited disc?
+Does each turn contain one principal inhabited disc, several inhabited regions, or some other arrangement?
 
 Can several local discs belong to one larger turn?
 
 How does the dome connect to the wider world-tree?
 
-What does the world look like from outside the inhabited level?
+What does the world look like from a neighbouring world-level outside our present one?
 
 Those are geometric questions still waiting for a fuller picture.
 
@@ -35542,7 +35558,7 @@ That belongs directly beside the Vardath idea of neighbouring world-turns.
 
 The previous world can become hidden from the present without being annihilated.
 
-The next world can exist before it becomes the inhabited present.
+The next world can exist and be populated before it occupies the present position in our sequence.
 
 People, lands or material can become inaccessible because their adjacency has changed.
 
@@ -35858,7 +35874,7 @@ It is this:
 
 That is almost exactly how I picture world succession now.
 
-The next turn forms while the present world is still inhabited.
+The next turn remains populated and developing while the present remains the world we currently occupy.
 
 The present world contains material inherited from the previous one.
 
@@ -36002,7 +36018,7 @@ The tree therefore becomes a way of imagining not only where worlds are, but **w
 
 Roots can be read as inheritance.
 
-The inhabited middle as present.
+The middle world as present in our relation.
 
 Growing branches as what is becoming.
 
@@ -36984,11 +37000,11 @@ It is a world cycle.
 
 This is where the Norse story joins my previous-present-next model most strongly.
 
-Before Ragnarök, the inhabited order is simply "the world."
+Before Ragnarök, the world experienced by its inhabitants is simply "the world."
 
 After Ragnarök, it is the world that was.
 
-The renewed Earth becomes the inhabited present for the survivors and successors.
+The renewed Earth becomes the present world for the survivors and successors.
 
 That is exactly how a world-turn changes identity in my model.
 
@@ -38808,9 +38824,9 @@ In Vardath Cosmology, the neighbouring world-turn does not have to be created at
 
 It can already exist.
 
-The next world can be forming while the present one is inhabited.
+The next world can already be populated while developing in relation to the present one.
 
-The previous world can remain part of the larger body after it ceases to be the dominant home.
+The previous world can remain a populated part of the larger body after it is no longer the world occupying our present relation.
 
 The worlds overlap in structure without having to be equally accessible.
 
@@ -39340,7 +39356,7 @@ If world-turns are successive, then "above" and "before" may overlap depending o
 
 A world that was once present can become previous.
 
-A world that is next can later become inhabited present.
+A world that is next can later occupy the present position in our sequence.
 
 A traveller crossing between levels could therefore also be crossing between world-times.
 
@@ -39368,7 +39384,7 @@ It becomes home.
 
 That is world succession.
 
-What looked incomplete from the beginning becomes inhabitable through transfer and assembly.
+What looked incomplete from the arriving humans' viewpoint becomes a new home through transfer and assembly, while the lower world already has its own life and inhabitants.
 
 The upper world becomes ancestral in relation to the new one.
 
@@ -39994,7 +40010,7 @@ That is very close to the way I use the word in Vardath Cosmology.
 
 The present world-turn is not simply one location in empty space.
 
-It is the currently inhabited stable regime.
+It is the stable regime we currently inhabit.
 
 Its atmosphere behaves a certain way.
 
@@ -42214,7 +42230,7 @@ That is how I now picture the next turn.
 
 The next world does not have to pop into existence on the day of the reset.
 
-It can be forming while the present world is still inhabited.
+It can already be populated while developing in relation to the world we currently inhabit.
 
 That makes the whole cosmology more continuous.
 
@@ -47641,7 +47657,7 @@ That solves another Vardath problem.
 
 A next turn can be formative.
 
-A present turn inhabited.
+A present turn as the world we currently occupy.
 
 A previous turn transformed or largely inaccessible.
 
@@ -51113,11 +51129,13 @@ A world-turn structurally related to the present one.
 
 A neighbouring world is not necessarily nearby in ordinary surface distance and does not have to be a duplicate of the present world.
 
+All world-turns in Vardath Cosmology are populated in their own right. **Previous, present and next describe relationship and adjacency, not whether a world has inhabitants.**
+
 ## Next world
 
 The successor world-state or turn that follows the present one in the larger growth.
 
-It may already be forming before it becomes the dominant inhabited world.
+It is populated in its own right and may already be developing before it occupies the present position in our sequence.
 
 ## Node
 
@@ -51399,7 +51417,7 @@ The same larger structure can occupy different world-states without becoming unr
 
 ## World succession
 
-The process by which one world-state becomes previous while another becomes the new inhabited present.
+The process by which one populated world-state becomes previous in our relation while another populated world-state takes the present position.
 
 Succession is the larger principle behind reset, inheritance and handoff.
 
