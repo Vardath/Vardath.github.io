@@ -139,13 +139,22 @@ Do not create a numbers-research appendix later.
 
 ## World population / neighbouring worlds — NON-NEGOTIABLE
 
-**All world-turns are populated.**
+**All world-turns are populated, and every world is its own present.**
 
-Worlds above and below, and worlds described as previous, present or next, each have their own inhabitants and can have their own ecology, environment, history and stable order.
+For any world used as the reference point:
+- the world directly above is future-relative to it;
+- the world directly below is past-relative to it;
+- that pattern continues upward and downward through the whole chain.
 
-"Previous", "present" and "next" are relational labels describing time-state, adjacency and our position in the larger world-body. They are **not** population labels.
+The inhabitants of the world above experience their own world as present, with their future above and their past below. The inhabitants of the world below do the same.
 
-The present world is simply the world we currently occupy. The gate changes adjacency and permits transfer between already populated worlds. Do not describe a next world as an empty shell that later becomes inhabited, or a previous/lower world as becoming unpopulated when it ceases to be present to us.
+There is no single present that climbs the stack.
+
+When the gate opens, normally separated worlds interact. Parts of the relative future and relative past can interact with each present, including people, land, water, atmosphere, life, ruins, culture and other material.
+
+The destructive phase is followed by a **new beginning period** on each affected present, produced by survival, rearrangement and cross-world inheritance.
+
+Do not write that the next world becomes present, that the present becomes past, or that one world replaces another. Those are not the current model.
 
 
 
