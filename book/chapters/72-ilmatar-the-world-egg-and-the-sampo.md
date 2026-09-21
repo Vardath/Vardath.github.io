@@ -50,19 +50,19 @@ Stable surface does not.
 
 That is very close to the kind of post-reset phase the Vardath model needs.
 
-After the gate event, the world may exist materially while still being unready for ordinary life.
+After the gate event, a transferred or newly adjacent region may be unstable from the viewpoint of arrivals.
 
-Water is moving.
+Water may be moving.
 
-Sediment is unsettled.
+Sediment may be unsettled.
 
-Boundaries are reforming.
+The local interface may be reforming.
 
-Atmosphere is unstable.
+Atmospheric conditions may be unfamiliar.
 
-The world exists.
+But the destination world itself already exists, populated and functioning for its own inhabitants.
 
-The world is not finished.
+What is unsettled is the transferred region and its new relationship, not the existence or habitability of the whole world.
 
 ## Formation takes time
 
@@ -94,7 +94,7 @@ The bodily image is useful because it expresses something the shell model also n
 
 A future state can develop **inside an older condition before it becomes independently visible**.
 
-That is how I now picture the next turn.
+That is how I now picture the transition toward the next turn in our relation: the next world already exists, while transferred regions and interfaces may take time to settle.
 
 The next world does not pop into existence on the day of the reset because it already exists as a populated world.
 
