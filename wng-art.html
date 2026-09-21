@@ -3,352 +3,237 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WNG Art Gallery — Vardath</title>
+<title>WNG D140 Art Review — Vardath</title>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <style>
-:root{
-  --bg:#080c12;--panel:#111923;--panel2:#0d151f;--line:#26384e;--text:#eef6ff;
-  --muted:#9fb1c5;--cyan:#58d7ff;--green:#72e6a0;--amber:#f1c75b;--red:#ff7272
-}
+:root{--bg:#070b10;--panel:#101923;--panel2:#0b121a;--line:#26384e;--text:#edf6ff;--muted:#9fb1c5;--cyan:#59d8ff;--green:#70e79f;--amber:#f0c75e;--red:#ff7777;--purple:#c49cff}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:1540px;margin:auto;padding:0 16px}
-header{padding:26px 0 18px;border-bottom:1px solid var(--line);background:#0b111a}
+.wrap{max-width:1580px;margin:auto;padding:0 16px}
 a{color:var(--cyan)}
-h1{margin:.2em 0;font-size:clamp(28px,6vw,48px)}
-.sub{color:var(--muted);max-width:1080px}
-.summary{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.badge{border:1px solid var(--line);background:#101a26;border-radius:999px;padding:6px 10px;color:var(--muted)}
+header{padding:24px 0 18px;background:#0a1119;border-bottom:1px solid var(--line)}
+h1{margin:.15em 0;font-size:clamp(28px,5vw,48px)}
+.sub{max-width:1150px;color:var(--muted)}
+.heroBadges,.summary{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.badge{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#0d1721;color:var(--muted)}
 .badge strong{color:var(--text)}
-.badge.ok{border-color:#28583c}.badge.ok strong{color:var(--green)}
-.badge.warn{border-color:#6a5628}.badge.warn strong{color:var(--amber)}
-.badge.bad{border-color:#713838}.badge.bad strong{color:var(--red)}
-.tools{position:sticky;top:0;z-index:5;background:#080c12ee;backdrop-filter:blur(8px);padding:10px 0;border-bottom:1px solid var(--line)}
-.toolrow{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px}
-input,select{width:100%;background:#111923;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px}
+.badge.good{border-color:#285a3c}.badge.good strong{color:var(--green)}
+.badge.warn{border-color:#6b5627}.badge.warn strong{color:var(--amber)}
+.badge.bad{border-color:#75383d}.badge.bad strong{color:var(--red)}
+.loader{margin:18px 0;padding:18px;border:1px solid #34516d;border-radius:14px;background:linear-gradient(135deg,#0d1824,#101722)}
+.loader h2{margin:0 0 6px}
+.loader p{margin:6px 0;color:var(--muted)}
+.loadrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button,.button{appearance:none;border:1px solid var(--line);border-radius:9px;background:#172638;color:#fff;padding:9px 12px;font:inherit;cursor:pointer}
+button:hover,.button:hover{border-color:#4d7398}
+.primary{background:#123b4b;border-color:#28728b}
+.danger{background:#31191d;border-color:#71353b}
+input[type=file]{display:none}
+.statusline{margin-top:10px;color:var(--muted);overflow-wrap:anywhere}
+.statusline.ok{color:var(--green)}.statusline.bad{color:var(--red)}.statusline.warn{color:var(--amber)}
+.tools{position:sticky;top:0;z-index:8;background:#070b10ef;backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:9px 0}
+.toolrow{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:8px}
+input[type=text],select,textarea{width:100%;background:#101923;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px}
 .count{align-self:center;color:var(--muted);white-space:nowrap}
-.note{margin:14px 0 0;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);border-radius:9px;color:var(--muted)}
+.note{margin:14px 0;padding:11px 13px;border:1px solid var(--line);background:var(--panel2);border-radius:10px;color:var(--muted)}
 .note strong{color:var(--text)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;padding:18px 0 50px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0;cursor:pointer}
-.card.missing{border-color:#713838;background:#1a1115}
-.card.unused{border-color:#66572e}
-.thumb{aspect-ratio:1/1;background:repeating-conic-gradient(#1a2532 0 25%,#111923 0 50%) 50%/20px 20px;display:flex;align-items:center;justify-content:center;position:relative}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;padding:16px 0 50px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0;cursor:pointer;position:relative}
+.card:hover{border-color:#496987;transform:translateY(-1px)}
+.card.review-bad{border-color:#773d43}.card.review-good{border-color:#2c6444}
+.thumb{aspect-ratio:1;background:repeating-conic-gradient(#172431 0 25%,#0d161f 0 50%) 50%/18px 18px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .thumb img{display:block;max-width:100%;max-height:100%;object-fit:contain}
-.missingMark{font-size:42px;color:var(--red);font-weight:800}
-.state{position:absolute;right:6px;top:6px;border-radius:999px;padding:3px 6px;font-size:9px;font-weight:700;background:#071019dd;border:1px solid var(--line)}
-.state.ref{color:var(--green);border-color:#28583c}
-.state.unused{color:var(--amber);border-color:#66572e}
-.state.missing{color:var(--red);border-color:#713838}
-.meta{padding:8px}
-.name{font-size:12px;font-weight:700;overflow-wrap:anywhere}
-.path{font-size:9px;color:var(--muted);overflow-wrap:anywhere;margin-top:3px}
-.cat{font-size:9px;color:var(--cyan);margin-top:4px}
-.src{font-size:9px;color:#c6a8ff;margin-top:4px;overflow-wrap:anywhere}
-dialog{width:min(96vw,1200px);max-height:95vh;background:#080c12;color:#fff;border:1px solid var(--line);border-radius:12px;padding:0}
+.thumb .loading{color:#74889d;font-size:11px}
+.tags{position:absolute;left:6px;top:6px;right:6px;display:flex;gap:4px;flex-wrap:wrap;pointer-events:none}
+.tag{font-size:9px;font-weight:800;padding:3px 6px;border-radius:999px;background:#061018dd;border:1px solid var(--line)}
+.tag.new{color:var(--cyan);border-color:#2d7186}.tag.changed{color:var(--amber);border-color:#6f5b2b}.tag.preserved{color:#9eafc1}.tag.good{color:var(--green);border-color:#2b6042}.tag.bad{color:var(--red);border-color:#71363c}
+.meta{padding:8px}.name{font-size:12px;font-weight:700;overflow-wrap:anywhere}.path{font-size:9px;color:var(--muted);overflow-wrap:anywhere;margin-top:3px}.cat{font-size:9px;color:var(--cyan);margin-top:5px}
+.dim{font-size:9px;color:#c6a8ff;margin-top:3px}
+dialog{width:min(97vw,1300px);max-height:96vh;background:#080d13;color:#fff;border:1px solid var(--line);border-radius:12px;padding:0}
 dialog::backdrop{background:#000c}
-.dlgbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px;position:sticky;top:0;background:#0b111a;z-index:2;border-bottom:1px solid var(--line)}
-.dlgactions{display:flex;gap:8px;align-items:center}
-.dlgimg{display:block;max-width:100%;height:auto;margin:auto}
-.dlgmissing{padding:50px;text-align:center;color:var(--red)}
-.close,.rawbtn{background:#172333;border:1px solid var(--line);color:#fff;border-radius:8px;padding:8px 12px;text-decoration:none}
-@media(max-width:760px){
-  .toolrow{grid-template-columns:1fr}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .dlgbar{align-items:flex-start;flex-direction:column}
-}
+.dlgbar{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:10px;position:sticky;top:0;background:#0a1119;z-index:3;border-bottom:1px solid var(--line)}
+.dlgtitle{min-width:0;overflow-wrap:anywhere}.dlgtitle strong{display:block}.dlgtitle span{font-size:10px;color:var(--muted)}
+.dlgactions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.viewerBody{display:grid;grid-template-columns:minmax(0,1fr) 330px;min-height:300px}
+.imagePane{padding:16px;background:repeating-conic-gradient(#172431 0 25%,#0d161f 0 50%) 50%/24px 24px;display:flex;align-items:center;justify-content:center;min-height:420px}
+.imagePane img{max-width:100%;max-height:76vh;object-fit:contain;image-rendering:auto}
+.reviewPane{padding:14px;border-left:1px solid var(--line);background:#0b121a}
+.reviewPane h3{margin:0 0 8px}.reviewPane textarea{min-height:150px;resize:vertical;margin-top:10px}
+.reviewButtons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.reviewButtons button.activeGood{border-color:#3a8a5b;background:#173824}.reviewButtons button.activeBad{border-color:#9b4a52;background:#3b1b20}
+.small{font-size:10px;color:var(--muted);margin-top:10px}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+[hidden]{display:none!important}
+@media(max-width:900px){.toolrow{grid-template-columns:1fr 1fr}.count{grid-column:1/-1}.viewerBody{grid-template-columns:1fr}.reviewPane{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:600px){.toolrow{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dlgbar{flex-direction:column}.dlgactions{justify-content:flex-start}}
 </style>
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <a href="./">← Vardath</a>
-    <h1>Wraith &amp; Nanite Gravtech — Live Mod Art Gallery</h1>
-    <div class="sub">
-      This page is wired directly to the public WNG 1.6 mod repository. It shows every PNG stored in the mod repo,
-      including About/ModIcon, compatibility art and all texture folders. It also reads the mod's XML Defs and
-      flags WNG-owned art references that do not currently resolve to a PNG, so missing art can be fixed in the mod itself.
-      No Cosmology gallery assets are used or changed here.
-    </div>
-    <div class="summary" id="summary">
-      <span class="badge">Loading repository…</span>
-    </div>
-  </div>
+<div class="wrap">
+<a href="./">← Vardath</a>
+<h1>Wraith &amp; Nanite Gravtech — D140 Art Review</h1>
+<div class="sub">This is the pre-playtest visual QA page for the actual D140 game build. It reads the PNG files directly from <strong>Wraith-Nanite-Gravtech-D140-ART-STATIC-GREEN.zip</strong> in your browser. It does not use or modify the Cosmology gallery.</div>
+<div class="heroBadges">
+<span class="badge good"><strong>664</strong> runtime PNGs in D140</span>
+<span class="badge"><strong>134</strong> new since D117</span>
+<span class="badge warn"><strong>304</strong> changed since D117</span>
+<span class="badge"><strong>226</strong> preserved</span>
+<span class="badge"><strong>D140</strong> static-green build</span>
+</div>
+<div class="loader" id="loader">
+<h2>Load the D140 game build</h2>
+<p>Select the D140 ZIP once. The page verifies the exact build hash, reads the original game PNGs, and can cache the ZIP in this browser so the gallery reloads automatically next time. The ZIP stays local to your browser and is not uploaded by this page.</p>
+<div class="loadrow">
+<label class="button primary" for="zipInput">Choose D140 ZIP</label>
+<input id="zipInput" type="file" accept=".zip,application/zip">
+<button id="forgetBtn" class="danger" type="button">Forget cached build</button>
+</div>
+<div id="loadStatus" class="statusline">Looking for a cached D140 build…</div>
+</div>
+<div class="summary" id="summary"></div>
+</div>
 </header>
 
 <div class="tools">
-  <div class="wrap toolrow">
-    <input id="q" placeholder="Search filename, path or source Def…">
-    <select id="cat"><option value="">All categories</option></select>
-    <select id="status">
-      <option value="">All statuses</option>
-      <option value="referenced">Referenced by mod</option>
-      <option value="unreferenced">File present, not directly referenced</option>
-      <option value="missing">Missing WNG art reference</option>
-    </select>
-    <div class="count" id="count">Loading art…</div>
-  </div>
+<div class="wrap toolrow">
+<input id="q" type="text" placeholder="Search filename or game path…">
+<select id="cat"><option value="">All categories</option></select>
+<select id="change">
+<option value="newchanged" selected>New + changed since D117</option>
+<option value="">All D140 art</option>
+<option value="new">New only</option>
+<option value="changed">Changed only</option>
+<option value="preserved">Preserved only</option>
+</select>
+<select id="review">
+<option value="">All review states</option>
+<option value="unreviewed">Unreviewed</option>
+<option value="good">Marked good</option>
+<option value="bad">Needs improvement</option>
+</select>
+<div class="count" id="count">Load D140 to begin</div>
+</div>
 </div>
 
 <main class="wrap">
-  <div class="note">
-    <strong>How to use this page:</strong> green = an art file used by a current WNG XML reference;
-    amber = an art file exists in the mod but is not directly named by an XML art-path tag (this includes many
-    direction/body/link variants); red = a WNG-owned XML art reference has no matching PNG in the public mod repository.
-    Red entries are the art gaps to address in WNG.
-  </div>
-  <section id="grid" class="grid"></section>
+<div class="note"><strong>Review workflow:</strong> click any asset for its original PNG from the D140 ZIP. Mark it <strong>Looks good</strong> or <strong>Needs improvement</strong> and add a note. Your review marks are saved locally in this browser. The default view shows the 438 files that are new or changed since the public D117 baseline. Replicator art is shown for context but remains preserved unless separately requested.</div>
+<section id="grid" class="grid"><div class="empty">Load the D140 ZIP above to inspect the game art.</div></section>
 </main>
 
 <dialog id="viewer">
-  <div class="dlgbar">
-    <span id="vtitle"></span>
-    <div class="dlgactions">
-      <a id="rawlink" class="rawbtn" target="_blank" rel="noopener">Open raw asset</a>
-      <button class="close" onclick="viewer.close()">Close</button>
-    </div>
-  </div>
-  <img id="vimg" class="dlgimg" alt="">
-  <div id="vmissing" class="dlgmissing" hidden></div>
+<div class="dlgbar">
+<div class="dlgtitle"><strong id="vname"></strong><span id="vpath"></span></div>
+<div class="dlgactions">
+<button id="copyPath" type="button">Copy path</button>
+<button id="closeBtn" type="button">Close</button>
+</div>
+</div>
+<div class="viewerBody">
+<div class="imagePane"><img id="vimg" alt=""></div>
+<div class="reviewPane">
+<h3>Pre-playtest art review</h3>
+<div id="vinfo" class="small"></div>
+<div class="reviewButtons">
+<button id="goodBtn" type="button">✓ Looks good</button>
+<button id="badBtn" type="button">! Needs improvement</button>
+</div>
+<textarea id="reviewNote" placeholder="What should be improved? Silhouette, scale, alpha, direction, lore look, readability…"></textarea>
+<button id="saveNote" type="button">Save note</button>
+<div class="small">Marks and notes stay in this browser. They do not edit the mod or Cosmology gallery.</div>
+</div>
+</div>
 </dialog>
 
 <script>
-const REPO='Vardath/Wraith-Nanite-Gravtech-1.6';
-const BRANCH='main';
-const API='https://api.github.com/repos/'+REPO+'/git/trees/'+BRANCH+'?recursive=1';
-const RAW='https://raw.githubusercontent.com/'+REPO+'/'+BRANCH+'/';
+const EXPECTED_NAME='Wraith-Nanite-Gravtech-D140-ART-STATIC-GREEN.zip';
+const EXPECTED_SHA='d3a251fbb19fdcf99b71654221a53cc245172a28b1405e4dc0a93ceb3bf6121a';
+const newHashes=new Set([3447916196,2850154894,3218665600,4214934930,3168351042,2175022768,872825318,4102089524,1436277953,1627338217,3575539139,2970600255,2248677048,1218832562,4059221620,4115614926,3731511607,970001155,1867229745,538714401,3243372189,2167207189,2031321759,2059411891,1759627599,3001583355,1352912025,3876684985,4079330114,1003995421,964724226,3345132564,4221180126,663628336,4278166050,2331641049,3881860481,3816190475,2151463639,394283546,4165452764,4075434675,3311700667,3186086910,2236042498,1788761264,1869539158,3969022364,977205840,27509274,4267397060,3090381100,1764414817,2881766567,2389198222,3895058770,1486603558,3862379828,97155418,4265532752,2408827761,2020591993,554858739,561453583,1432525858,128371600,1715381190,499492372,1627068085,3617226189,3240516103,1887856331,3193152861,2581666593,2699519197,706822485,3465063391,1132574963,660785196,3482464042,3338693560,2294106206,1009299580,3653125430,2920090552,1215535026,4055924084,492061134,3811862933,2158884417,2927450729,580684355,3693206719,494701203,1156112915,3152950159,811896717,986780885,1078150709,3712452169,1850449157,1655393789,3638750871,738266491,4017228868,2957912418,1846392272,3423141126,1085152852,1558793054,3911692096,3468196826,2765951372,1953955510,2052936173,3070991321,1192309377,1126639371,2890813911,3363759163,2173801787,3173574327,2476376741,3668649789,148314108,464301574,3781556274,2287568280,178861385,3957798177,4226732330,1940100630,1640384841,2643409846]);
+const changedHashes=new Set([825262674,3842839780,2349269269,2303811126,1222688200,394117154,3757759620,2094357758,2685706935,1758577498,2385881313,4107634959,4141773783,2366452289,3179509485,3226813475,3156627453,1642975379,1175898095,3334635353,556812007,3935492018,1787924720,3810303119,1475224527,2203778683,555107353,3592281913,2887826315,680922827,3645902119,569365301,3062632173,3338817866,4149866328,1992553086,2710709916,3195573567,1483039627,3384646089,1076952841,1936781362,1101936768,2230754244,3601617500,2420972753,3466066649,2377023983,1411603914,2724240600,783495964,3640006057,1077931697,603900423,296086677,775511418,3880753284,2613564398,2212336114,395772363,399414823,2777481709,998998497,1847511689,3424547299,2172313055,2766482107,3653058359,2955860773,4261330109,1155354622,2707336480,757163450,3087529452,3514521238,3494182450,2276988996,993082286,259127840,1983016114,3723065965,3582588249,3354924801,3289254795,3402410839,931669310,1309787059,2658223023,2247498229,2912501886,1916392684,1731811240,3722240171,2754727980,1644641334,3438561498,3506788587,2801355719,988415629,3820633122,1300789461,2692132077,2632623723,1510720697,2852990069,1553456525,3585183687,3123832715,635671348,3557245081,93828333,4099387165,1794943305,987209297,2105077051,1633309095,801577493,2799560641,1274447593,3222648515,38915647,411444786,3144781892,2821268398,2087313952,2850809010,782480891,4121956962,1514998036,1774462185,2878227329,3456243432,2737753116,3796985665,838206882,984805482,180803806,3796763862,4237666584,4081525906,1236367444,1809740334,2951268829,3841054985,3127359249,2054496251,380491879,3811722527,3130348255,3209640107,3736905449,3905957033,3080939792,2182500654,3438689660,2518681362,158549688,395117754,2730635148,1018580630,498532248,127097658,1514307598,1583137094,2391502536,3274859298,2343534468,3263172094,1209114829,2464923257,2341133089,374148651,3773215095,3136891759,1417016303,1356493979,2560475449,3575753561,1514127744,3683431518,1924300876,1873874754,2873906184,3656029450,588193884,4226368966,845786152,1908306858,23887536,457788906,1393441532,1225608253,42852097,1852027389,1716155509,1723571327,338375315,2861508236,1155155018,307066968,2444721022,527047068,4218630678,516894808,2562493138,2099375252,2342255982,2642019317,247012321,3739760777,1021829091,1420326879,1101783155,3331421491,3480596527,3601169325,4269132661,3675760686,2489563110,2644658728,2964713346,3796478948,2115590494,1913218029,3592114649,751613057,685943051,3411937239,1291828623,2232895183,2602375035,953703705,54985273,1953259808,1055780158,2942464684,2785336866,299650152,2648268970,2103252540,80328358,1376138888,4074532106,3236302002,2942182658,3209414932,1066581982,1803997488,4142448418,3527169833,1553810981,3235645469,2412504503,70359835,3867091203,2353311683,323342687,2693706301,1170373541,2014019420,2654434266,1359216712,3530320206,695456908,1889917582,2796809776,3401438314,42123644,3237223814,4075529156,2102777390,1368822944,799592587,119098192,222718281,1314613851,36300195,3891023342,3840134611,3971384225,2962905651,4224948461,2284206858,2481208849,3930674591,1967064575,2344257716,3096402912,28557074,2734072755,3300696864,566330187,1087348707,1161456376,1865694256,1001077510,376230276,1646126100,2183303292,404996029,3916881425,2035872815,2426590504,3589498118]);
+const q=document.getElementById('q'),cat=document.getElementById('cat'),change=document.getElementById('change'),review=document.getElementById('review');
+const grid=document.getElementById('grid'),count=document.getElementById('count'),summary=document.getElementById('summary'),loadStatus=document.getElementById('loadStatus');
+const zipInput=document.getElementById('zipInput'),forgetBtn=document.getElementById('forgetBtn');
+const viewer=document.getElementById('viewer'),vimg=document.getElementById('vimg'),vname=document.getElementById('vname'),vpath=document.getElementById('vpath'),vinfo=document.getElementById('vinfo');
+const goodBtn=document.getElementById('goodBtn'),badBtn=document.getElementById('badBtn'),reviewNote=document.getElementById('reviewNote'),saveNote=document.getElementById('saveNote');
+const closeBtn=document.getElementById('closeBtn'),copyPath=document.getElementById('copyPath');
+let zip=null,assets=[],current=null,currentUrl=null;
+const thumbUrls=new Map();
+const reviews=JSON.parse(localStorage.getItem('wngD140ArtReviews')||'{}');
 
-const grid=document.getElementById('grid');
-const q=document.getElementById('q');
-const cat=document.getElementById('cat');
-const status=document.getElementById('status');
-const count=document.getElementById('count');
-const summary=document.getElementById('summary');
-const viewer=document.getElementById('viewer');
-const vimg=document.getElementById('vimg');
-const vtitle=document.getElementById('vtitle');
-const rawlink=document.getElementById('rawlink');
-const vmissing=document.getElementById('vmissing');
-
-let cards=[];
-
-function esc(s){
-  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-}
-function raw(p){return RAW+p.split('/').map(encodeURIComponent).join('/')}
+function fnv1a(s){let h=0x811c9dc5;const bytes=new TextEncoder().encode(s);for(const b of bytes){h^=b;h=Math.imul(h,0x01000193)>>>0}return h>>>0}
+function changeState(path){const h=fnv1a(path);if(newHashes.has(h))return'new';if(changedHashes.has(h))return'changed';return'preserved'}
+function cleanPath(name){const i=name.indexOf('/');return i>=0?name.slice(i+1):name}
+function isRuntime(path){return path.endsWith('.png')&&(path.startsWith('Textures/')||path==='About/ModIcon.png'||path==='About/Preview.png')}
 function category(p){
-  if(p==='About/ModIcon.png') return 'Mod icon';
-  if(p==='About/Preview.png') return 'Mod preview';
-  if(p.startsWith('Compatibility/')) return 'Compatibility';
-  if(p.startsWith('Textures/UI/')) return 'UI, genes & abilities';
-  if(p.startsWith('Textures/World/')) return 'World';
-  if(p.startsWith('Textures/Terrain/Goauld/')) return "Goa'uld terrain";
-  if(p.startsWith('Textures/Terrain/Precursor/')) return 'Asuran / Precursor terrain';
-  if(p.startsWith('Textures/Terrain/Wraith/')) return 'Wraith terrain';
-  if(p.startsWith('Textures/Terrain/')) return 'Terrain';
-  if(p.startsWith('Textures/Things/Projectile/Goauld/')) return "Goa'uld projectiles";
-  if(p.startsWith('Textures/Things/Projectile/')) return 'Projectiles';
-  if(p.startsWith('Textures/Things/Item/Weapon/Wraith/')) return 'Wraith weapons';
-  if(p.startsWith('Textures/Things/Item/Weapon/Precursor/')) return 'Asuran / Ancient weapons';
-  if(p.startsWith('Textures/Things/Item/Weapon/Goauld/')) return "Goa'uld weapons";
-  if(p.startsWith('Textures/Things/Item/Implant/')) return 'Implants';
-  if(p.startsWith('Textures/Things/Item/')) return 'Items & resources';
-  if(p.startsWith('Textures/Things/Building/Wraith/Gravship/')) return 'Wraith gravship';
-  if(p.startsWith('Textures/Things/Building/Wraith/')) return 'Wraith buildings';
-  if(p.startsWith('Textures/Things/Building/Precursor/Gravship/')) return 'Asuran gravship';
-  if(p.startsWith('Textures/Things/Building/Precursor/')) return 'Asuran / Precursor buildings';
-  if(p.startsWith('Textures/Things/Building/Goauld/Gravship/')) return "Goa'uld gravship";
-  if(p.startsWith('Textures/Things/Building/Goauld/')) return "Goa'uld WNG buildings";
-  if(p.startsWith('Textures/Things/Building/Replicator/')) return 'Replicator buildings';
-  if(p.startsWith('Textures/Things/Pawn/Replicator/')) return 'Replicator pawns';
-  if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Precursor/')) return 'Asuran / Precursor apparel';
-  if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Wraith/')) return 'Wraith apparel';
-  if(p.startsWith('Textures/Things/Pawn/Humanlike/')) return 'Humanlike';
-  if(p.startsWith('Textures/')) return 'Other mod textures';
-  return 'Other mod art';
+if(p==='About/ModIcon.png')return'Mod icon';if(p==='About/Preview.png')return'Mod preview';
+if(p.startsWith('Textures/UI/'))return'UI / genes / abilities';
+if(p.startsWith('Textures/Terrain/Goauld/'))return"Goa'uld terrain";if(p.startsWith('Textures/Terrain/Precursor/'))return'Asuran / Precursor terrain';if(p.startsWith('Textures/Terrain/Wraith/'))return'Wraith terrain';if(p.startsWith('Textures/Terrain/'))return'Terrain';
+if(p.startsWith('Textures/Things/Projectile/Goauld/'))return"Goa'uld projectiles";if(p.startsWith('Textures/Things/Projectile/'))return'Projectiles';
+if(p.startsWith('Textures/Things/Item/Weapon/Wraith/'))return'Wraith weapons';if(p.startsWith('Textures/Things/Item/Weapon/Precursor/'))return'Asuran / Ancient weapons';if(p.startsWith('Textures/Things/Item/Weapon/Goauld/'))return"Goa'uld weapons";
+if(p.startsWith('Textures/Things/Item/Whispers/'))return'Whispers biology / implants';if(p.startsWith('Textures/Things/Item/WraithMedical/'))return'Wraith / Iratus medical';if(p.startsWith('Textures/Things/Item/Goauld/'))return"Goa'uld items";if(p.startsWith('Textures/Things/Item/Implant/'))return'Implants';if(p.startsWith('Textures/Things/Item/'))return'Items & resources';
+if(p.startsWith('Textures/Things/Building/Wraith/Gravship/'))return'Wraith gravship';if(p.startsWith('Textures/Things/Building/Wraith/Shuttle/'))return'Wraith craft';if(p.startsWith('Textures/Things/Building/Wraith/'))return'Wraith buildings / furniture';
+if(p.startsWith('Textures/Things/Building/Precursor/Gravship/'))return'Asuran gravship';if(p.startsWith('Textures/Things/Building/Precursor/Shuttle/'))return'Asuran craft';if(p.startsWith('Textures/Things/Building/Precursor/'))return'Asuran / Precursor buildings';
+if(p.startsWith('Textures/Things/Building/Goauld/Gravship/'))return"Goa'uld gravship";if(p.startsWith('Textures/Things/Building/Goauld/'))return"Goa'uld buildings / craft";
+if(p.startsWith('Textures/Things/Building/Replicator/'))return'Replicator buildings (preserved)';if(p.startsWith('Textures/Things/Pawn/Replicator/'))return'Replicator pawns (preserved)';
+if(p.startsWith('Textures/Things/Pawn/Animal/Iratus/'))return'Iratus creatures';if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Precursor/'))return'Asuran / Precursor apparel';if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Wraith/'))return'Wraith apparel';if(p.startsWith('Textures/Things/Pawn/Humanlike/'))return'Humanlike / pawn art';if(p.startsWith('Textures/World/'))return'World / faction art';
+return'Other runtime art'}
+function reviewState(path){return reviews[path]&&reviews[path].state?reviews[path].state:'unreviewed'}
+function saveReviews(){localStorage.setItem('wngD140ArtReviews',JSON.stringify(reviews))}
+function esc(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
+
+function openDb(){return new Promise((resolve,reject)=>{const r=indexedDB.open('wngArtReview',1);r.onupgradeneeded=()=>r.result.createObjectStore('builds');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+async function cacheBlob(blob){try{const db=await openDb();await new Promise((resolve,reject)=>{const t=db.transaction('builds','readwrite');t.objectStore('builds').put(blob,'d140');t.oncomplete=resolve;t.onerror=()=>reject(t.error)});db.close();return true}catch(e){return false}}
+async function cachedBlob(){try{const db=await openDb();const v=await new Promise((resolve,reject)=>{const t=db.transaction('builds','readonly');const r=t.objectStore('builds').get('d140');r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error)});db.close();return v}catch(e){return null}}
+async function forgetCache(){try{const db=await openDb();await new Promise((resolve,reject)=>{const t=db.transaction('builds','readwrite');t.objectStore('builds').delete('d140');t.oncomplete=resolve;t.onerror=()=>reject(t.error)});db.close()}catch(e){};location.reload()}
+async function sha256(buffer){const d=await crypto.subtle.digest('SHA-256',buffer);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+
+async function loadBuild(blob,label,shouldCache){
+loadStatus.className='statusline';loadStatus.textContent='Reading and verifying '+label+'…';
+const buffer=await blob.arrayBuffer();const hash=await sha256(buffer);
+if(hash!==EXPECTED_SHA){loadStatus.className='statusline bad';loadStatus.textContent='This is not the exact D140 review build. SHA-256: '+hash;throw Error('D140 hash mismatch')}
+loadStatus.className='statusline ok';loadStatus.textContent='Verified D140 SHA-256. Reading game textures…';
+zip=await JSZip.loadAsync(buffer);
+assets=[];
+zip.forEach((name,entry)=>{if(entry.dir)return;const p=cleanPath(name);if(isRuntime(p))assets.push({path:p,name:p.split('/').pop(),cat:category(p),change:changeState(p),entry})});
+assets.sort((a,b)=>a.cat.localeCompare(b.cat)||a.path.localeCompare(b.path));
+if(shouldCache){const ok=await cacheBlob(blob);loadStatus.textContent='Verified D140. '+assets.length+' runtime PNGs loaded.'+(ok?' Build cached in this browser.':' Browser cache was unavailable; gallery still works for this session.')}
+else loadStatus.textContent='Verified cached D140. '+assets.length+' runtime PNGs loaded.';
+populateCats();updateSummary();render();
 }
 
-function isWngOwnedRef(p){
-  return p.startsWith('UI/WNG/') ||
-    p.includes('WNG_') ||
-    p.includes('/Wraith/') ||
-    p.includes('/Precursor/') ||
-    p.includes('/Goauld/') ||
-    p.includes('/Replicator/');
-}
-
-function refCandidates(ref){
-  const base='Textures/'+ref;
-  return [base+'.png',base+'_north.png',base+'_east.png',base+'_south.png',base+'_west.png'];
-}
-
-async function fetchText(path){
-  const r=await fetch(raw(path),{cache:'no-store'});
-  if(!r.ok) throw Error(path+' '+r.status);
-  return r.text();
-}
-
-async function mapLimit(items,limit,fn){
-  const out=new Array(items.length);
-  let next=0;
-  async function worker(){
-    while(true){
-      const i=next++;
-      if(i>=items.length) return;
-      try{out[i]=await fn(items[i],i)}catch(e){out[i]=null}
-    }
-  }
-  await Promise.all(Array.from({length:Math.min(limit,items.length)},worker));
-  return out;
-}
-
-function extractRefs(xml,source){
-  const refs=[];
-  const re=/<(texPath|iconPath|uiIconPath)>([^<]+)<\/\1>/g;
-  let m;
-  while((m=re.exec(xml))){
-    const p=m[2].trim();
-    if(isWngOwnedRef(p)) refs.push({ref:p,source,tag:m[1]});
-  }
-  return refs;
-}
-
-function addCategories(){
-  const existing=new Set([...cat.options].map(o=>o.value));
-  [...new Set(cards.map(a=>a.c))].sort().forEach(c=>{
-    if(!existing.has(c)) cat.add(new Option(c,c));
-  });
-}
-
+function populateCats(){cat.innerHTML='<option value="">All categories</option>';[...new Set(assets.map(a=>a.cat))].sort().forEach(c=>cat.add(new Option(c,c)))}
+function updateSummary(){
+const good=assets.filter(a=>reviewState(a.path)==='good').length,bad=assets.filter(a=>reviewState(a.path)==='bad').length,un=assets.length-good-bad;
+summary.innerHTML='<span class="badge good"><strong>'+assets.length+'</strong> D140 runtime PNGs loaded</span><span class="badge"><strong>134</strong> new</span><span class="badge warn"><strong>304</strong> changed</span><span class="badge good"><strong>'+good+'</strong> marked good</span><span class="badge bad"><strong>'+bad+'</strong> need improvement</span><span class="badge"><strong>'+un+'</strong> unreviewed</span>'}
+function passes(a){
+const s=q.value.trim().toLowerCase();if(s&&!(a.path.toLowerCase().includes(s)||a.name.toLowerCase().includes(s)))return false;
+if(cat.value&&a.cat!==cat.value)return false;
+if(change.value==='newchanged'&&a.change==='preserved')return false;if(change.value&&change.value!=='newchanged'&&a.change!==change.value)return false;
+const rs=reviewState(a.path);if(review.value&&rs!==review.value)return false;return true}
 function render(){
-  const s=q.value.trim().toLowerCase();
-  const c=cat.value;
-  const st=status.value;
-  const list=cards.filter(a=>{
-    const hay=(a.p+' '+(a.source||'')+' '+a.n).toLowerCase();
-    return (!c||a.c===c)&&(!st||a.status===st)&&(!s||hay.includes(s));
-  });
-  count.textContent=list.length+' / '+cards.length+' entries';
-  grid.innerHTML='';
-  for(const a of list){
-    const card=document.createElement('article');
-    card.className='card '+(a.status==='missing'?'missing':a.status==='unreferenced'?'unused':'');
-    let thumb;
-    if(a.status==='missing'){
-      thumb='<div class="thumb"><div class="missingMark">!</div><span class="state missing">MISSING</span></div>';
-    }else{
-      const url=raw(a.p);
-      const stateLabel=a.status==='referenced'?'REFERENCED':'FILE';
-      const stateClass=a.status==='referenced'?'ref':'unused';
-      thumb='<div class="thumb"><img loading="lazy" src="'+url+'" alt="'+esc(a.n)+'"><span class="state '+stateClass+'">'+stateLabel+'</span></div>';
-    }
-    card.innerHTML=thumb+
-      '<div class="meta"><div class="name">'+esc(a.n)+'</div>'+
-      '<div class="path">'+esc(a.p)+'</div>'+
-      '<div class="cat">'+esc(a.c)+'</div>'+
-      (a.source?'<div class="src">source: '+esc(a.source)+'</div>':'')+
-      '</div>';
-    card.onclick=()=>{
-      vtitle.textContent=a.p;
-      if(a.status==='missing'){
-        vimg.hidden=true;
-        rawlink.hidden=true;
-        vmissing.hidden=false;
-        vmissing.textContent='Missing WNG art reference. Source: '+(a.source||'unknown');
-      }else{
-        const url=raw(a.p);
-        vimg.hidden=false;
-        rawlink.hidden=false;
-        vmissing.hidden=true;
-        vimg.src=url;
-        rawlink.href=url;
-      }
-      viewer.showModal();
-    };
-    grid.appendChild(card);
-  }
+if(!zip){return}
+const list=assets.filter(passes);count.textContent=list.length+' / '+assets.length+' assets';grid.innerHTML='';
+if(!list.length){grid.innerHTML='<div class="empty">No art matches these filters.</div>';return}
+for(const a of list){
+const rs=reviewState(a.path);const card=document.createElement('article');card.className='card '+(rs==='good'?'review-good':rs==='bad'?'review-bad':'');
+card.innerHTML='<div class="thumb"><span class="loading">loading…</span><div class="tags"><span class="tag '+a.change+'">'+a.change.toUpperCase()+'</span>'+(rs==='good'?'<span class="tag good">GOOD</span>':rs==='bad'?'<span class="tag bad">IMPROVE</span>':'')+'</div></div><div class="meta"><div class="name">'+esc(a.name)+'</div><div class="path">'+esc(a.path)+'</div><div class="cat">'+esc(a.cat)+'</div></div>';
+card.onclick=()=>openViewer(a);grid.appendChild(card);thumbObserver.observe(card)}
 }
-
-async function load(){
-  const tr=await fetch(API,{cache:'no-store'});
-  if(!tr.ok) throw Error('GitHub tree '+tr.status);
-  const d=await tr.json();
-  if(d.truncated) throw Error('GitHub returned a truncated repository tree');
-
-  const pngNodes=d.tree.filter(x=>x.type==='blob'&&/\.png$/i.test(x.path));
-  const xmlNodes=d.tree.filter(x=>x.type==='blob'&&/\.xml$/i.test(x.path)&&(x.path.startsWith('Defs/')||x.path.startsWith('Patches/')));
-  const assetPaths=new Set(pngNodes.map(x=>x.path));
-
-  const xmlTexts=await mapLimit(xmlNodes,8,async x=>({path:x.path,text:await fetchText(x.path)}));
-  const refs=[];
-  for(const item of xmlTexts){
-    if(item) refs.push(...extractRefs(item.text,item.path));
-  }
-
-  const refMap=new Map();
-  for(const r of refs){
-    if(!refMap.has(r.ref)) refMap.set(r.ref,[]);
-    refMap.get(r.ref).push(r.source);
-  }
-
-  const referencedAssets=new Set();
-  const missing=[];
-
-  for(const [ref,sources] of refMap){
-    const candidates=refCandidates(ref);
-    const hits=candidates.filter(p=>assetPaths.has(p));
-    if(hits.length){
-      hits.forEach(p=>referencedAssets.add(p));
-      // linked/body/directional families can contain more variants than the four common suffixes
-      const prefix='Textures/'+ref+'_';
-      for(const p of assetPaths) if(p.startsWith(prefix)&&/\.png$/i.test(p)) referencedAssets.add(p);
-    }else{
-      missing.push({
-        p:'Textures/'+ref+'.png',
-        n:ref.split('/').pop()+'.png',
-        c:'Missing WNG references',
-        status:'missing',
-        source:[...new Set(sources)].join(', ')
-      });
-    }
-  }
-
-  cards=pngNodes.map(x=>({
-    p:x.path,
-    n:x.path.split('/').pop(),
-    c:category(x.path),
-    status:referencedAssets.has(x.path)?'referenced':'unreferenced',
-    source:''
-  })).concat(missing)
-    .sort((a,b)=>
-      (a.status==='missing'?0:1)-(b.status==='missing'?0:1) ||
-      a.c.localeCompare(b.c) ||
-      a.p.localeCompare(b.p)
-    );
-
-  const referenced=cards.filter(x=>x.status==='referenced').length;
-  const unreferenced=cards.filter(x=>x.status==='unreferenced').length;
-  const miss=missing.length;
-  summary.innerHTML=
-    '<span class="badge ok"><strong>'+pngNodes.length+'</strong> PNG files in public mod repo</span>'+
-    '<span class="badge ok"><strong>'+referenced+'</strong> directly matched to WNG XML art refs</span>'+
-    '<span class="badge warn"><strong>'+unreferenced+'</strong> additional/variant art files</span>'+
-    '<span class="badge '+(miss?'bad':'ok')+'"><strong>'+miss+'</strong> missing WNG art refs</span>'+
-    '<span class="badge"><strong>'+xmlNodes.length+'</strong> Def/Patch XML files audited live</span>';
-
-  addCategories();
-  render();
-}
-
-q.oninput=render;
-cat.onchange=render;
-status.onchange=render;
-viewer.onclick=e=>{if(e.target===viewer)viewer.close()};
-
-load().catch(e=>{
-  count.textContent='Could not load art';
-  summary.innerHTML='<span class="badge bad"><strong>Gallery load failed</strong></span>';
-  grid.innerHTML='<p>'+esc(String(e))+'</p>';
-});
+const thumbObserver=new IntersectionObserver(entries=>{for(const e of entries){if(!e.isIntersecting)continue;thumbObserver.unobserve(e.target);loadThumb(e.target)}},{rootMargin:'300px'});
+async function loadThumb(card){const path=card.querySelector('.path').textContent;const a=assets.find(x=>x.path===path);if(!a)return;let url=thumbUrls.get(path);if(!url){const blob=await a.entry.async('blob');url=URL.createObjectURL(blob);thumbUrls.set(path,url)}const box=card.querySelector('.thumb');const img=new Image();img.loading='lazy';img.alt=a.name;img.onload=()=>{const old=box.querySelector('.loading');if(old)old.remove()};img.src=url;box.appendChild(img);const blob=await a.entry.async('blob');try{const bmp=await createImageBitmap(blob);card.querySelector('.meta').insertAdjacentHTML('beforeend','<div class="dim">'+bmp.width+' × '+bmp.height+' px</div>');bmp.close()}catch(e){}}
+async function openViewer(a){
+current=a;if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null}
+const blob=await a.entry.async('blob');currentUrl=URL.createObjectURL(blob);vimg.src=currentUrl;vname.textContent=a.name;vpath.textContent=a.path;
+let dims='';try{const bmp=await createImageBitmap(blob);dims=bmp.width+' × '+bmp.height+' px';bmp.close()}catch(e){}
+vinfo.textContent=a.cat+' • '+a.change+' since D117'+(dims?' • '+dims:'');const r=reviews[a.path]||{};reviewNote.value=r.note||'';paintReviewButtons(r.state||'');viewer.showModal()}
+function paintReviewButtons(state){goodBtn.className=state==='good'?'activeGood':'';badBtn.className=state==='bad'?'activeBad':''}
+function setReview(state){if(!current)return;reviews[current.path]=reviews[current.path]||{};reviews[current.path].state=state;reviews[current.path].note=reviewNote.value;reviews[current.path].updated=new Date().toISOString();saveReviews();paintReviewButtons(state);updateSummary();render()}
+goodBtn.onclick=()=>setReview('good');badBtn.onclick=()=>setReview('bad');saveNote.onclick=()=>{if(!current)return;reviews[current.path]=reviews[current.path]||{};reviews[current.path].note=reviewNote.value;reviews[current.path].updated=new Date().toISOString();saveReviews();updateSummary()};
+closeBtn.onclick=()=>viewer.close();viewer.onclick=e=>{if(e.target===viewer)viewer.close()};copyPath.onclick=async()=>{if(current)await navigator.clipboard.writeText(current.path)};
+q.oninput=render;cat.onchange=render;change.onchange=render;review.onchange=render;
+zipInput.onchange=async()=>{const f=zipInput.files&&zipInput.files[0];if(!f)return;try{await loadBuild(f,f.name,true)}catch(e){console.error(e)}};
+forgetBtn.onclick=forgetCache;
+(async()=>{const b=await cachedBlob();if(b){try{await loadBuild(b,'cached D140',false);return}catch(e){}}loadStatus.textContent='No cached D140 build found. Choose '+EXPECTED_NAME+' to begin.'})();
 </script>
 </body>
 </html>
