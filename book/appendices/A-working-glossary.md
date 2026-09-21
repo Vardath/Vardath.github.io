@@ -340,11 +340,13 @@ A world-turn structurally related to the present one.
 
 A neighbouring world is not necessarily nearby in ordinary surface distance and does not have to be a duplicate of the present world.
 
+All world-turns in Vardath Cosmology are populated in their own right. **Previous, present and next describe relationship and adjacency, not whether a world has inhabitants.**
+
 ## Next world
 
 The successor world-state or turn that follows the present one in the larger growth.
 
-It may already be forming before it becomes the dominant inhabited world.
+It is populated in its own right and may already be developing before it occupies the present position in our sequence.
 
 ## Node
 
@@ -630,7 +632,7 @@ The same larger structure can occupy different world-states without becoming unr
 
 ## World succession
 
-The process by which one world-state becomes previous while another becomes the new inhabited present.
+The process by which one populated world-state becomes previous in our relation while another populated world-state takes the present position.
 
 Succession is the larger principle behind reset, inheritance and handoff.
 
