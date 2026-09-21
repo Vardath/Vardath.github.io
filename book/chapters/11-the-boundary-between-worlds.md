@@ -16,7 +16,7 @@ Its own stable surface.
 
 Its own ordinary sky.
 
-The next world can be forming nearby in the larger structure without continuously pouring everything it contains into ours.
+The next world can already exist nearby in the larger structure, fully populated in its own right, without continuously pouring everything it contains into ours.
 
 The previous world can remain part of the body without constantly opening into the present.
 
