@@ -344,7 +344,7 @@ All world-turns in Vardath Cosmology are populated in their own right. **Previou
 
 ## Next world
 
-The populated world-state or turn that is next relative to the present one in the larger structure.
+The populated world immediately above a chosen present world; it is future-relative to the world below while remaining present to its own inhabitants.
 
 It remains populated in its own right before, during and after any change in its relation to the present.
 
@@ -396,7 +396,7 @@ The plenum remains a developing concept rather than a completed physical theory.
 
 ## Previous world
 
-The predecessor world-state retained within the larger world history.
+The populated world immediately below a chosen present world; it is past-relative to the world above while remaining present to its own inhabitants.
 
 Its route or relation to the present can become lower, hidden, sealed, ancestral or mythologised, while the previous world itself remains populated and ordinary to its own inhabitants.
 
@@ -632,9 +632,9 @@ The same larger structure can occupy different world-states without becoming unr
 
 ## World succession
 
-The process by which one populated world-state becomes previous in our relation while another populated world-state takes the present position.
+The recurring pattern in which populated worlds remain in a continuing vertical chain while gate events temporarily increase exchange among a present, its past-relative world below and its future-relative world above.
 
-Succession is the larger principle behind reset, inheritance and handoff.
+No world becomes the one universal present. Each world remains its own present. Succession describes repeated destructive-and-renewal cycles, transfer and inheritance across the chain, followed by new-beginning periods on the affected worlds.
 
 ## World-tree
 
