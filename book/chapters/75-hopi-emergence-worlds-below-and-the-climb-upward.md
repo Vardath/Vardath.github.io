@@ -102,7 +102,7 @@ Some culture survives.
 
 Some things disappear.
 
-The successor world is not a copy.
+The renewed present after emergence is not a copy of its pre-event state.
 
 It is a continuation under new conditions.
 
@@ -328,7 +328,7 @@ End.
 
 Crisis.
 
-From the successor world:
+From the renewed present after emergence:
 
 emergence.
 
