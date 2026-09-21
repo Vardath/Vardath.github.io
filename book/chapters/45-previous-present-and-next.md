@@ -124,7 +124,7 @@ It has already carried a stable world-state.
 
 That state has passed.
 
-Regions transferred out of our present relation may be buried, deformed, flooded or reorganised, while the previous world remains populated in its own right.
+Regions transferred out of our world through the gate may be buried, deformed, flooded or reorganised, while the world below remains populated and present to its own inhabitants.
 
 Life that belonged to it may be gone, transferred or preserved in altered form.
 
@@ -216,7 +216,7 @@ A new shell chamber can already contain life before it occupies a later position
 
 A building extension can exist while the older rooms are still occupied.
 
-The next world can therefore exist structurally and be populated in its own right without yet occupying our present position in the sequence.
+The next world therefore exists structurally and is populated in its own right as the future-relative world above, while remaining present to its own inhabitants.
 
 It is future because its stable phase has not yet become ours.
 
