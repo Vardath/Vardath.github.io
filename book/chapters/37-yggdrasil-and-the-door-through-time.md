@@ -100,7 +100,7 @@ That is how I picture the next world.
 
 The world future-relative to us already exists as a populated structure.
 
-It is already populated, but it is not yet the world occupying our present relation.
+It is already populated and present to its own inhabitants while remaining future-relative to us.
 
 But it is already part of the body.
 
