@@ -418,7 +418,7 @@ The main roles include:
 - **manifestation** — the visible form of the active structure;
 - **medium** — water, wind, cloud, fire, radiance or current surrounding the transition;
 - **witness** — the observer who experiences only one view of the event;
-- **reset** — the reorganisation that turns catastrophe into a successor world.
+- **reset** — the destructive reorganisation caused by gate interaction, followed by a new-beginning period on the affected present world.
 
 Different traditions can preserve different roles.
 
@@ -472,7 +472,7 @@ The world does not return to the exact arrangement it had before.
 
 A reset in Vardath Cosmology is a **handoff**.
 
-The new world inherits material and life from what came before while settling into a different arrangement.
+The affected present can inherit material and life from its relative past below and future above while settling into a different post-gate arrangement.
 
 The world survives by changing.
 
@@ -508,4 +508,4 @@ And the renewed world becomes quiet enough that the event itself can fade into m
 
 Vardath Cosmology is therefore not fundamentally a story about the end of the world.
 
-It is a story about **how one world can become the next without the larger world-body losing continuity**.
+It is a story about **how populated worlds can interact across the gate, survive destructive exchange and enter new-beginning periods without the larger world-body losing continuity**.
