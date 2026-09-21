@@ -3,58 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WNG Art Gallery — Vardath</title>
+<title>WNG Art — Vardath</title>
 <style>
 :root{
-  --bg:#080c12;--panel:#111923;--panel2:#0d151f;--line:#26384e;--text:#eef6ff;
-  --muted:#9fb1c5;--cyan:#58d7ff;--green:#72e6a0;--amber:#f1c75b;--red:#ff7272
+  color-scheme:dark;
+  --bg:#080b10;
+  --panel:#111821;
+  --line:#283544;
+  --text:#eef4fb;
+  --muted:#9cabbc;
+  --link:#70d9ff;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:1540px;margin:auto;padding:0 16px}
-header{padding:26px 0 18px;border-bottom:1px solid var(--line);background:#0b111a}
-a{color:var(--cyan)}
-h1{margin:.2em 0;font-size:clamp(28px,6vw,48px)}
-.sub{color:var(--muted);max-width:1080px}
-.summary{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.badge{border:1px solid var(--line);background:#101a26;border-radius:999px;padding:6px 10px;color:var(--muted)}
-.badge strong{color:var(--text)}
-.badge.ok{border-color:#28583c}.badge.ok strong{color:var(--green)}
-.badge.warn{border-color:#6a5628}.badge.warn strong{color:var(--amber)}
-.badge.bad{border-color:#713838}.badge.bad strong{color:var(--red)}
-.tools{position:sticky;top:0;z-index:5;background:#080c12ee;backdrop-filter:blur(8px);padding:10px 0;border-bottom:1px solid var(--line)}
-.toolrow{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px}
-input,select{width:100%;background:#111923;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px}
-.count{align-self:center;color:var(--muted);white-space:nowrap}
-.note{margin:14px 0 0;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);border-radius:9px;color:var(--muted)}
-.note strong{color:var(--text)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;padding:18px 0 50px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0;cursor:pointer}
-.card.missing{border-color:#713838;background:#1a1115}
-.card.unused{border-color:#66572e}
-.thumb{aspect-ratio:1/1;background:repeating-conic-gradient(#1a2532 0 25%,#111923 0 50%) 50%/20px 20px;display:flex;align-items:center;justify-content:center;position:relative}
-.thumb img{display:block;max-width:100%;max-height:100%;object-fit:contain}
-.missingMark{font-size:42px;color:var(--red);font-weight:800}
-.state{position:absolute;right:6px;top:6px;border-radius:999px;padding:3px 6px;font-size:9px;font-weight:700;background:#071019dd;border:1px solid var(--line)}
-.state.ref{color:var(--green);border-color:#28583c}
-.state.unused{color:var(--amber);border-color:#66572e}
-.state.missing{color:var(--red);border-color:#713838}
-.meta{padding:8px}
-.name{font-size:12px;font-weight:700;overflow-wrap:anywhere}
-.path{font-size:9px;color:var(--muted);overflow-wrap:anywhere;margin-top:3px}
-.cat{font-size:9px;color:var(--cyan);margin-top:4px}
-.src{font-size:9px;color:#c6a8ff;margin-top:4px;overflow-wrap:anywhere}
-dialog{width:min(96vw,1200px);max-height:95vh;background:#080c12;color:#fff;border:1px solid var(--line);border-radius:12px;padding:0}
-dialog::backdrop{background:#000c}
-.dlgbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px;position:sticky;top:0;background:#0b111a;z-index:2;border-bottom:1px solid var(--line)}
-.dlgactions{display:flex;gap:8px;align-items:center}
-.dlgimg{display:block;max-width:100%;height:auto;margin:auto}
-.dlgmissing{padding:50px;text-align:center;color:var(--red)}
-.close,.rawbtn{background:#172333;border:1px solid var(--line);color:#fff;border-radius:8px;padding:8px 12px;text-decoration:none}
-@media(max-width:760px){
-  .toolrow{grid-template-columns:1fr}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .dlgbar{align-items:flex-start;flex-direction:column}
+html{background:var(--bg)}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+header{
+  padding:22px 16px 18px;
+  border-bottom:1px solid var(--line);
+  background:#0b1017;
+}
+.wrap{max-width:1700px;margin:0 auto}
+h1{margin:5px 0 6px;font-size:clamp(30px,6vw,52px)}
+p{margin:0;color:var(--muted)}
+a{color:var(--link)}
+#count{margin-top:10px;font-weight:700;color:var(--text)}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:10px;
+  padding:16px;
+  max-width:1700px;
+  margin:0 auto;
+}
+.card{
+  display:block;
+  min-width:0;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--panel);
+  color:var(--text);
+  text-decoration:none;
+}
+.thumb{
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:
+    linear-gradient(45deg,#141d27 25%,transparent 25%) 0 0/20px 20px,
+    linear-gradient(45deg,transparent 75%,#141d27 75%) 0 0/20px 20px,
+    linear-gradient(45deg,transparent 75%,#141d27 75%) 10px -10px/20px 20px,
+    linear-gradient(45deg,#141d27 25%,#0d141c 25%) 10px -10px/20px 20px;
+}
+.thumb img{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+.meta{padding:8px 9px 10px}
+.name{
+  font-size:12px;
+  font-weight:700;
+  overflow-wrap:anywhere;
+}
+.path{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+.error{
+  max-width:1100px;
+  margin:30px auto;
+  padding:16px;
+  border:1px solid #793b3b;
+  border-radius:10px;
+  background:#1a1111;
+}
+@media(max-width:620px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px}
 }
 </style>
 </head>
@@ -62,292 +98,85 @@ dialog::backdrop{background:#000c}
 <header>
   <div class="wrap">
     <a href="./">← Vardath</a>
-    <h1>Wraith &amp; Nanite Gravtech — Live Mod Art Gallery</h1>
-    <div class="sub">
-      This page is wired directly to the public WNG 1.6 mod repository. It shows every PNG stored in the mod repo,
-      including About/ModIcon, compatibility art and all texture folders. It also reads the mod's XML Defs and
-      flags WNG-owned art references that do not currently resolve to a PNG, so missing art can be fixed in the mod itself.
-      No Cosmology gallery assets are used or changed here.
-    </div>
-    <div class="summary" id="summary">
-      <span class="badge">Loading repository…</span>
-    </div>
+    <h1>Wraith &amp; Nanite Gravtech — Art</h1>
+    <p>Every PNG currently stored in the public WNG 1.6 mod repository. Tap any thumbnail to open that exact art file directly from the mod.</p>
+    <div id="count">Loading all mod art…</div>
   </div>
 </header>
 
-<div class="tools">
-  <div class="wrap toolrow">
-    <input id="q" placeholder="Search filename, path or source Def…">
-    <select id="cat"><option value="">All categories</option></select>
-    <select id="status">
-      <option value="">All statuses</option>
-      <option value="referenced">Referenced by mod</option>
-      <option value="unreferenced">File present, not directly referenced</option>
-      <option value="missing">Missing WNG art reference</option>
-    </select>
-    <div class="count" id="count">Loading art…</div>
-  </div>
-</div>
-
-<main class="wrap">
-  <div class="note">
-    <strong>How to use this page:</strong> green = an art file used by a current WNG XML reference;
-    amber = an art file exists in the mod but is not directly named by an XML art-path tag (this includes many
-    direction/body/link variants); red = a WNG-owned XML art reference has no matching PNG in the public mod repository.
-    Red entries are the art gaps to address in WNG.
-  </div>
-  <section id="grid" class="grid"></section>
-</main>
-
-<dialog id="viewer">
-  <div class="dlgbar">
-    <span id="vtitle"></span>
-    <div class="dlgactions">
-      <a id="rawlink" class="rawbtn" target="_blank" rel="noopener">Open raw asset</a>
-      <button class="close" onclick="viewer.close()">Close</button>
-    </div>
-  </div>
-  <img id="vimg" class="dlgimg" alt="">
-  <div id="vmissing" class="dlgmissing" hidden></div>
-</dialog>
+<main id="gallery" class="grid" aria-live="polite"></main>
 
 <script>
-const REPO='Vardath/Wraith-Nanite-Gravtech-1.6';
+const OWNER='Vardath';
+const REPO='Wraith-Nanite-Gravtech-1.6';
 const BRANCH='main';
-const API='https://api.github.com/repos/'+REPO+'/git/trees/'+BRANCH+'?recursive=1';
-const RAW='https://raw.githubusercontent.com/'+REPO+'/'+BRANCH+'/';
+const TREE='https://api.github.com/repos/'+OWNER+'/'+REPO+'/git/trees/'+BRANCH+'?recursive=1';
+const RAW='https://raw.githubusercontent.com/'+OWNER+'/'+REPO+'/'+BRANCH+'/';
 
-const grid=document.getElementById('grid');
-const q=document.getElementById('q');
-const cat=document.getElementById('cat');
-const status=document.getElementById('status');
+const gallery=document.getElementById('gallery');
 const count=document.getElementById('count');
-const summary=document.getElementById('summary');
-const viewer=document.getElementById('viewer');
-const vimg=document.getElementById('vimg');
-const vtitle=document.getElementById('vtitle');
-const rawlink=document.getElementById('rawlink');
-const vmissing=document.getElementById('vmissing');
-
-let cards=[];
 
 function esc(s){
-  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-}
-function raw(p){return RAW+p.split('/').map(encodeURIComponent).join('/')}
-function category(p){
-  if(p==='About/ModIcon.png') return 'Mod icon';
-  if(p==='About/Preview.png') return 'Mod preview';
-  if(p.startsWith('Compatibility/')) return 'Compatibility';
-  if(p.startsWith('Textures/UI/')) return 'UI, genes & abilities';
-  if(p.startsWith('Textures/World/')) return 'World';
-  if(p.startsWith('Textures/Terrain/Goauld/')) return "Goa'uld terrain";
-  if(p.startsWith('Textures/Terrain/Precursor/')) return 'Asuran / Precursor terrain';
-  if(p.startsWith('Textures/Terrain/Wraith/')) return 'Wraith terrain';
-  if(p.startsWith('Textures/Terrain/')) return 'Terrain';
-  if(p.startsWith('Textures/Things/Projectile/Goauld/')) return "Goa'uld projectiles";
-  if(p.startsWith('Textures/Things/Projectile/')) return 'Projectiles';
-  if(p.startsWith('Textures/Things/Item/Weapon/Wraith/')) return 'Wraith weapons';
-  if(p.startsWith('Textures/Things/Item/Weapon/Precursor/')) return 'Asuran / Ancient weapons';
-  if(p.startsWith('Textures/Things/Item/Weapon/Goauld/')) return "Goa'uld weapons";
-  if(p.startsWith('Textures/Things/Item/Implant/')) return 'Implants';
-  if(p.startsWith('Textures/Things/Item/')) return 'Items & resources';
-  if(p.startsWith('Textures/Things/Building/Wraith/Gravship/')) return 'Wraith gravship';
-  if(p.startsWith('Textures/Things/Building/Wraith/')) return 'Wraith buildings';
-  if(p.startsWith('Textures/Things/Building/Precursor/Gravship/')) return 'Asuran gravship';
-  if(p.startsWith('Textures/Things/Building/Precursor/')) return 'Asuran / Precursor buildings';
-  if(p.startsWith('Textures/Things/Building/Goauld/Gravship/')) return "Goa'uld gravship";
-  if(p.startsWith('Textures/Things/Building/Goauld/')) return "Goa'uld WNG buildings";
-  if(p.startsWith('Textures/Things/Building/Replicator/')) return 'Replicator buildings';
-  if(p.startsWith('Textures/Things/Pawn/Replicator/')) return 'Replicator pawns';
-  if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Precursor/')) return 'Asuran / Precursor apparel';
-  if(p.startsWith('Textures/Things/Pawn/Humanlike/Apparel/Wraith/')) return 'Wraith apparel';
-  if(p.startsWith('Textures/Things/Pawn/Humanlike/')) return 'Humanlike';
-  if(p.startsWith('Textures/')) return 'Other mod textures';
-  return 'Other mod art';
+  return String(s)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;');
 }
 
-function isWngOwnedRef(p){
-  return p.startsWith('UI/WNG/') ||
-    p.includes('WNG_') ||
-    p.includes('/Wraith/') ||
-    p.includes('/Precursor/') ||
-    p.includes('/Goauld/') ||
-    p.includes('/Replicator/');
+function rawUrl(path,sha){
+  const encoded=path.split('/').map(encodeURIComponent).join('/');
+  return RAW+encoded+'?v='+encodeURIComponent(sha);
 }
 
-function refCandidates(ref){
-  const base='Textures/'+ref;
-  return [base+'.png',base+'_north.png',base+'_east.png',base+'_south.png',base+'_west.png'];
-}
+async function loadAllArt(){
+  const response=await fetch(TREE,{cache:'no-store'});
+  if(!response.ok) throw new Error('GitHub tree request failed: '+response.status);
 
-async function fetchText(path){
-  const r=await fetch(raw(path),{cache:'no-store'});
-  if(!r.ok) throw Error(path+' '+r.status);
-  return r.text();
-}
+  const data=await response.json();
+  if(data.truncated) throw new Error('GitHub returned a truncated repository tree.');
 
-async function mapLimit(items,limit,fn){
-  const out=new Array(items.length);
-  let next=0;
-  async function worker(){
-    while(true){
-      const i=next++;
-      if(i>=items.length) return;
-      try{out[i]=await fn(items[i],i)}catch(e){out[i]=null}
-    }
-  }
-  await Promise.all(Array.from({length:Math.min(limit,items.length)},worker));
-  return out;
-}
+  const art=data.tree
+    .filter(item=>item.type==='blob' && /\.png$/i.test(item.path))
+    .sort((a,b)=>a.path.localeCompare(b.path));
 
-function extractRefs(xml,source){
-  const refs=[];
-  const re=/<(texPath|iconPath|uiIconPath)>([^<]+)<\/\1>/g;
-  let m;
-  while((m=re.exec(xml))){
-    const p=m[2].trim();
-    if(isWngOwnedRef(p)) refs.push({ref:p,source,tag:m[1]});
-  }
-  return refs;
-}
+  count.textContent=art.length+' PNG art files — live from WNG main';
 
-function addCategories(){
-  const existing=new Set([...cat.options].map(o=>o.value));
-  [...new Set(cards.map(a=>a.c))].sort().forEach(c=>{
-    if(!existing.has(c)) cat.add(new Option(c,c));
-  });
-}
+  const fragment=document.createDocumentFragment();
 
-function render(){
-  const s=q.value.trim().toLowerCase();
-  const c=cat.value;
-  const st=status.value;
-  const list=cards.filter(a=>{
-    const hay=(a.p+' '+(a.source||'')+' '+a.n).toLowerCase();
-    return (!c||a.c===c)&&(!st||a.status===st)&&(!s||hay.includes(s));
-  });
-  count.textContent=list.length+' / '+cards.length+' entries';
-  grid.innerHTML='';
-  for(const a of list){
-    const card=document.createElement('article');
-    card.className='card '+(a.status==='missing'?'missing':a.status==='unreferenced'?'unused':'');
-    let thumb;
-    if(a.status==='missing'){
-      thumb='<div class="thumb"><div class="missingMark">!</div><span class="state missing">MISSING</span></div>';
-    }else{
-      const url=raw(a.p);
-      const stateLabel=a.status==='referenced'?'REFERENCED':'FILE';
-      const stateClass=a.status==='referenced'?'ref':'unused';
-      thumb='<div class="thumb"><img loading="lazy" src="'+url+'" alt="'+esc(a.n)+'"><span class="state '+stateClass+'">'+stateLabel+'</span></div>';
-    }
-    card.innerHTML=thumb+
-      '<div class="meta"><div class="name">'+esc(a.n)+'</div>'+
-      '<div class="path">'+esc(a.p)+'</div>'+
-      '<div class="cat">'+esc(a.c)+'</div>'+
-      (a.source?'<div class="src">source: '+esc(a.source)+'</div>':'')+
+  for(const item of art){
+    const url=rawUrl(item.path,item.sha);
+    const card=document.createElement('a');
+    card.className='card';
+    card.href=url;
+    card.target='_blank';
+    card.rel='noopener';
+    card.title=item.path;
+
+    const filename=item.path.split('/').pop();
+
+    card.innerHTML=
+      '<div class="thumb">'+
+        '<img loading="lazy" decoding="async" src="'+url+'" alt="'+esc(filename)+'">'+
+      '</div>'+
+      '<div class="meta">'+
+        '<div class="name">'+esc(filename)+'</div>'+
+        '<div class="path">'+esc(item.path)+'</div>'+
       '</div>';
-    card.onclick=()=>{
-      vtitle.textContent=a.p;
-      if(a.status==='missing'){
-        vimg.hidden=true;
-        rawlink.hidden=true;
-        vmissing.hidden=false;
-        vmissing.textContent='Missing WNG art reference. Source: '+(a.source||'unknown');
-      }else{
-        const url=raw(a.p);
-        vimg.hidden=false;
-        rawlink.hidden=false;
-        vmissing.hidden=true;
-        vimg.src=url;
-        rawlink.href=url;
-      }
-      viewer.showModal();
-    };
-    grid.appendChild(card);
+
+    fragment.appendChild(card);
   }
+
+  gallery.replaceChildren(fragment);
 }
 
-async function load(){
-  const tr=await fetch(API,{cache:'no-store'});
-  if(!tr.ok) throw Error('GitHub tree '+tr.status);
-  const d=await tr.json();
-  if(d.truncated) throw Error('GitHub returned a truncated repository tree');
-
-  const pngNodes=d.tree.filter(x=>x.type==='blob'&&/\.png$/i.test(x.path));
-  const xmlNodes=d.tree.filter(x=>x.type==='blob'&&/\.xml$/i.test(x.path)&&(x.path.startsWith('Defs/')||x.path.startsWith('Patches/')));
-  const assetPaths=new Set(pngNodes.map(x=>x.path));
-
-  const xmlTexts=await mapLimit(xmlNodes,8,async x=>({path:x.path,text:await fetchText(x.path)}));
-  const refs=[];
-  for(const item of xmlTexts){
-    if(item) refs.push(...extractRefs(item.text,item.path));
-  }
-
-  const refMap=new Map();
-  for(const r of refs){
-    if(!refMap.has(r.ref)) refMap.set(r.ref,[]);
-    refMap.get(r.ref).push(r.source);
-  }
-
-  const referencedAssets=new Set();
-  const missing=[];
-
-  for(const [ref,sources] of refMap){
-    const candidates=refCandidates(ref);
-    const hits=candidates.filter(p=>assetPaths.has(p));
-    if(hits.length){
-      hits.forEach(p=>referencedAssets.add(p));
-      // linked/body/directional families can contain more variants than the four common suffixes
-      const prefix='Textures/'+ref+'_';
-      for(const p of assetPaths) if(p.startsWith(prefix)&&/\.png$/i.test(p)) referencedAssets.add(p);
-    }else{
-      missing.push({
-        p:'Textures/'+ref+'.png',
-        n:ref.split('/').pop()+'.png',
-        c:'Missing WNG references',
-        status:'missing',
-        source:[...new Set(sources)].join(', ')
-      });
-    }
-  }
-
-  cards=pngNodes.map(x=>({
-    p:x.path,
-    n:x.path.split('/').pop(),
-    c:category(x.path),
-    status:referencedAssets.has(x.path)?'referenced':'unreferenced',
-    source:''
-  })).concat(missing)
-    .sort((a,b)=>
-      (a.status==='missing'?0:1)-(b.status==='missing'?0:1) ||
-      a.c.localeCompare(b.c) ||
-      a.p.localeCompare(b.p)
-    );
-
-  const referenced=cards.filter(x=>x.status==='referenced').length;
-  const unreferenced=cards.filter(x=>x.status==='unreferenced').length;
-  const miss=missing.length;
-  summary.innerHTML=
-    '<span class="badge ok"><strong>'+pngNodes.length+'</strong> PNG files in public mod repo</span>'+
-    '<span class="badge ok"><strong>'+referenced+'</strong> directly matched to WNG XML art refs</span>'+
-    '<span class="badge warn"><strong>'+unreferenced+'</strong> additional/variant art files</span>'+
-    '<span class="badge '+(miss?'bad':'ok')+'"><strong>'+miss+'</strong> missing WNG art refs</span>'+
-    '<span class="badge"><strong>'+xmlNodes.length+'</strong> Def/Patch XML files audited live</span>';
-
-  addCategories();
-  render();
-}
-
-q.oninput=render;
-cat.onchange=render;
-status.onchange=render;
-viewer.onclick=e=>{if(e.target===viewer)viewer.close()};
-
-load().catch(e=>{
-  count.textContent='Could not load art';
-  summary.innerHTML='<span class="badge bad"><strong>Gallery load failed</strong></span>';
-  grid.innerHTML='<p>'+esc(String(e))+'</p>';
+loadAllArt().catch(error=>{
+  count.textContent='Could not load the mod art list.';
+  gallery.className='error';
+  gallery.innerHTML=
+    '<strong>Gallery load failed.</strong><br>'+
+    esc(error.message)+
+    '<br><br><a href="https://github.com/Vardath/Wraith-Nanite-Gravtech-1.6/tree/main/Textures">Open the WNG art in GitHub</a>';
 });
 </script>
 </body>
