@@ -504,7 +504,7 @@ The axial route dominates.
 
 Then the system spreads again and distinct regions reappear.
 
-The world becomes inhabitable because things that had been mixing are separated once more.
+Ordinary surface conditions become stable again because things that had been mixing are separated once more; the world itself has remained populated.
 
 Tiamat's division belongs naturally beside that process.
 
