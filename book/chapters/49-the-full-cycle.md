@@ -132,7 +132,7 @@ The next world lives.
 
 The previous world lives.
 
-Three populated world-states coexist inside one larger body.
+A populated past-world, present-world and future-world coexist relative to any chosen world, and every one of those worlds is simultaneously its own present.
 
 ## 4. Activation begins
 
@@ -898,9 +898,9 @@ The world tree still exists.
 
 The previous turns remain.
 
-The new present world is now part of the larger growth.
+The affected world remains its own present, but it has entered a new-beginning period after the gate event.
 
-Beyond it, another already populated world occupies the future-relative position.
+Above it, the already populated neighbouring world remains future-relative to it; below it, another populated world remains past-relative to it.
 
 The machine has not stopped.
 
@@ -950,7 +950,7 @@ The sky becomes structured around the rod.
 
 The boundary changes.
 
-Past, present and future become temporarily adjacent.
+The present becomes unusually open to interaction with its relative past below and future above.
 
 Water, air, heat, debris, land and life move.
 
@@ -964,7 +964,7 @@ Some people and places cross.
 
 The old world breaks.
 
-The next world receives.
+The future-relative world can receive material from the present while the present can also receive material from both above and below.
 
 The pulse passes.
 
@@ -980,7 +980,7 @@ Life spreads.
 
 Memory becomes myth.
 
-The renewed world becomes ordinary.
+The renewed conditions settle into a new-beginning period on the same present world.
 
 Then another already populated turn occupies the next position beyond it.
 
