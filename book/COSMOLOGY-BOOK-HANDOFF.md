@@ -137,6 +137,18 @@ Do not create a numbers-research appendix later.
 
 # 6. CORE COMPONENTS THAT MUST NOT REGRESS OR BE DISMISSED
 
+## World population / neighbouring worlds — NON-NEGOTIABLE
+
+**All world-turns are populated.**
+
+Worlds above and below, and worlds described as previous, present or next, each have their own inhabitants and can have their own ecology, environment, history and stable order.
+
+"Previous", "present" and "next" are relational labels describing time-state, adjacency and our position in the larger world-body. They are **not** population labels.
+
+The present world is simply the world we currently occupy. The gate changes adjacency and permits transfer between already populated worlds. Do not describe a next world as an empty shell that later becomes inhabited, or a previous/lower world as becoming unpopulated when it ceases to be present to us.
+
+
+
 ## Flat Earth / world-disc
 
 Stephen explicitly corrected the earlier framing.
