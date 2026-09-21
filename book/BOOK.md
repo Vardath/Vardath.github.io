@@ -25638,9 +25638,9 @@ It is **becoming**.
 
 This is one of the ideas that made time travel feel less impossible inside the cosmology.
 
-If the future is structurally related to the present before it becomes dominant, then a gate does not have to create the future.
+If the future-relative world is structurally related to the present before our relation changes, then a gate does not have to create the future.
 
-It only has to make the developing region temporarily accessible.
+It only has to make an already populated neighbouring region temporarily accessible.
 
 That is a much more concrete idea.
 
@@ -27554,7 +27554,7 @@ New twigs appear at the edge.
 
 Buds form before leaves fully open.
 
-Future structure exists in development before it becomes mature.
+Future-relative structure can already exist before it becomes visible from our position.
 
 This gives the tree a temporal reading without forcing the mythology into one simple allegory.
 
@@ -40196,7 +40196,7 @@ That is enough for the Vardath world-turn model.
 
 The next turn does not have to be imagined as abstract possibility.
 
-It can be part of the larger architecture already forming.
+It can already exist as part of the larger architecture.
 
 ## Earlier humanity becomes inheritance
 
