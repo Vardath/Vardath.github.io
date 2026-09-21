@@ -578,11 +578,11 @@ This also makes me think again about time.
 
 If world-turns are successive, then "above" and "before" may overlap depending on viewpoint.
 
-A world that was once present can become previous.
+A world below is past-relative to the world above while remaining present to its own inhabitants.
 
-A world that is next can later occupy the present position in our sequence.
+A world above is future-relative to the world below while remaining present to its own inhabitants.
 
-A traveller crossing between levels could therefore also be crossing between world-times.
+A traveller crossing between levels could therefore also be crossing between relative world-times without any world surrendering its own present.
 
 I do not claim Sky Woman is a literal time-travel story.
 
