@@ -67,6 +67,7 @@ Deliberately excluded:
 8. **Mythologies keep their own identities while their strongest similarities are integrated by role, relation, sequence and viewpoint.**
 9. **No numbers-research or test-report detours.**
 10. **Save substantial work chapter by chapter.**
+11. **All world-turns are populated.** Previous, present and next are relational / adjacency labels, not population status. Never describe upper, lower, previous or next worlds as empty shells waiting to become inhabited; the gate changes relationships and transfer among worlds that already have their own inhabitants, environments and histories.
 
 ## Working files
 
