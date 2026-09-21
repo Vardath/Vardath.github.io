@@ -46,7 +46,7 @@ The past can remain physically present as older structure.
 
 The future can already exist as developing structure.
 
-The present is the active inhabited region between them.
+The present is the active world-region we currently occupy between them.
 
 That does not mean yesterday is sitting intact in a room below us or tomorrow is waiting fully formed above us.
 
@@ -61,6 +61,12 @@ The present turn carries the current stable environment.
 The next turn contains what is becoming.
 
 The three belong to one continuous architecture.
+
+Population is not what separates them.
+
+**Every world-turn is populated in its own right.**
+
+Previous, present and next are relational labels. They describe how a world sits in the larger sequence relative to us, not whether beings live there.
 
 That is why I increasingly describe them as:
 
@@ -158,7 +164,7 @@ Descent becomes movement into inheritance.
 
 That is one reason underworld journeys and ancestor journeys sit so comfortably beside the model.
 
-## The present as inhabited interface
+## The present as active interface
 
 The present is not only the middle layer.
 
@@ -206,11 +212,11 @@ A seed exists before the tree.
 
 An embryo exists before the adult.
 
-A new shell chamber begins before it becomes the main living chamber.
+A new shell chamber can already contain life before it occupies a later position in the growth.
 
 A building extension can exist while the older rooms are still occupied.
 
-The next world can therefore exist structurally without yet being the main inhabited world.
+The next world can therefore exist structurally and be populated in its own right without yet occupying our present position in the sequence.
 
 It is future because its stable phase has not yet become ours.
 
@@ -526,7 +532,7 @@ Not only linearly passing.
 
 Older states become deeper layers.
 
-The current state becomes the inhabited layer.
+The current state becomes the layer we call present.
 
 Later states develop outward or upward.
 
@@ -614,7 +620,7 @@ They are three stages of one larger growth.
 
 The previous world is the preserved past.
 
-The present world is the active inhabited state.
+The present world is the active state we currently occupy.
 
 The next world is the developing future.
 
