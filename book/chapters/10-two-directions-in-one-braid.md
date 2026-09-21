@@ -332,15 +332,15 @@ This is the basis of the time-door branch I return to later.
 
 The braid makes the idea possible because it gives the world-body a reversible route through its own sequence.
 
-## The braid and world succession
+## The braid and cross-world exchange
 
 The world cycle also becomes more coherent with counterflow.
 
-A new world is not assembled by simply pumping the entire present world upward.
+A new-beginning period is not produced by simply pumping the entire present world upward.
 
 That would leave no present structure behind and would make inheritance too crude.
 
-A braided exchange allows subtler handoff.
+A braided exchange allows subtler two-way interaction among the present, the future-relative world above and the past-relative world below.
 
 Some material remains.
 
