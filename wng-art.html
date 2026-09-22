@@ -2,283 +2,262 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WNG Art — Vardath</title>
-<meta name="description" content="Live art gallery for the public Wraith & Nanite Gravtech RimWorld 1.6 mod repository.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WNG Current Mod Art — Vardath</title>
+<meta name="description" content="Current art browser for Vardath's Wraith & Nanite Gravtech RimWorld 1.6 mod.">
 <style>
 :root{
   color-scheme:dark;
-  --bg:#070a0f;
-  --panel:#101720;
-  --panel2:#0b1118;
-  --line:#283747;
-  --text:#f0f6fc;
-  --muted:#9eafc0;
-  --link:#72dcff;
-  --accent:#8de4ff;
-  --good:#7fe2a0;
-  --warn:#ffd479;
-  --bad:#ff8e8e;
-  --shadow:0 14px 38px rgba(0,0,0,.28);
+  --bg:#05070a;
+  --panel:#0d1218;
+  --panel2:#111922;
+  --line:#263442;
+  --line2:#3a5268;
+  --text:#f4f7fa;
+  --muted:#97a7b6;
+  --cyan:#73d9ff;
+  --cyan2:#b9efff;
+  --green:#79e39b;
+  --amber:#ffd275;
+  --red:#ff8b8b;
+  --shadow:0 18px 45px rgba(0,0,0,.38);
 }
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-body{background:radial-gradient(circle at 50% -15%,#172433 0,#0a0f16 34%,var(--bg) 70%)}
-a{color:var(--link)}
-header{border-bottom:1px solid var(--line);background:rgba(8,13,20,.92);backdrop-filter:blur(10px)}
-.wrap{width:min(1760px,100%);margin:0 auto;padding:20px 18px}
-.eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px}
-.back{text-decoration:none;font-weight:700}
-h1{margin:10px 0 6px;font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-.035em}
-.lead{margin:0;max-width:970px;color:var(--muted);font-size:15px;line-height:1.6}
-.statusRow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:14px}
-.pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;background:var(--panel);padding:7px 10px;font-size:12px;color:var(--muted)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 0 3px rgba(255,212,121,.10)}
-.pill.ready .dot{background:var(--good);box-shadow:0 0 0 3px rgba(127,226,160,.10)}
-.pill.error .dot{background:var(--bad);box-shadow:0 0 0 3px rgba(255,142,142,.10)}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;background:
+  radial-gradient(circle at 50% -12%,rgba(70,139,178,.22),transparent 33rem),
+  linear-gradient(#071018 0,#05070a 42rem);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--cyan)}
+button,input,select{font:inherit}
+.top{border-bottom:1px solid var(--line);background:rgba(5,8,12,.86);backdrop-filter:blur(14px)}
+.shell{width:min(1840px,100%);margin:auto;padding:20px 18px}
+.crumbs{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.crumbs a{text-decoration:none;font-weight:800}
+h1{font-size:clamp(35px,6vw,72px);line-height:.98;letter-spacing:-.045em;margin:12px 0 9px}
+.subtitle{margin:0;max-width:1000px;color:#b4c1cc;line-height:1.55;font-size:15px}
+.repoRow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);font-size:12px}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(255,210,117,.1)}
+.badge.good .dot{background:var(--green);box-shadow:0 0 0 3px rgba(121,227,155,.1)}
+.badge.bad .dot{background:var(--red);box-shadow:0 0 0 3px rgba(255,139,139,.1)}
 .commit{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
-.controlsWrap{position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);background:rgba(7,10,15,.94);backdrop-filter:blur(12px)}
-.controls{width:min(1760px,100%);margin:0 auto;padding:11px 18px;display:grid;grid-template-columns:minmax(220px,1fr) minmax(160px,260px) auto;gap:10px;align-items:center}
-input,select,button{font:inherit}
-input,select{width:100%;border:1px solid var(--line);border-radius:9px;background:#0e151e;color:var(--text);padding:10px 12px;outline:none}
-input:focus,select:focus{border-color:#5488a7;box-shadow:0 0 0 3px rgba(114,220,255,.08)}
-.visibleCount{white-space:nowrap;text-align:right;font-size:13px;color:var(--muted)}
-main{width:min(1760px,100%);margin:0 auto;padding:16px 18px 28px}
-.notice{display:none;margin:0 0 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:12px 14px;color:var(--muted);line-height:1.45}
+.toolbarWrap{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(5,7,10,.94);backdrop-filter:blur(14px)}
+.toolbar{width:min(1840px,100%);margin:auto;padding:10px 18px;display:grid;grid-template-columns:minmax(220px,1fr) minmax(170px,260px) minmax(170px,260px) auto;gap:9px;align-items:center}
+input,select{width:100%;border:1px solid var(--line);border-radius:10px;background:#0b1118;color:var(--text);padding:10px 12px;outline:none}
+input:focus,select:focus{border-color:#4e7795;box-shadow:0 0 0 3px rgba(115,217,255,.08)}
+.count{text-align:right;white-space:nowrap;color:var(--muted);font-size:12px}
+main{width:min(1840px,100%);margin:auto;padding:16px 18px 34px}
+.notice{display:none;margin-bottom:14px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);line-height:1.45}
 .notice.show{display:block}
-.notice.error{border-color:#6a3939;color:#ffc0c0;background:#211316}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px}
-.card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:11px;background:linear-gradient(180deg,#111a24,#0d141d);color:var(--text);text-decoration:none;box-shadow:0 1px 0 rgba(255,255,255,.02)}
-.card:hover{border-color:#557c98;transform:translateY(-2px);box-shadow:var(--shadow)}
-.thumb{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#0a0f15,#101923)}
-.thumb img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-.meta{display:flex;flex:1;flex-direction:column;gap:5px;padding:9px 10px 11px}
-.name{font-size:12px;font-weight:800;line-height:1.25;overflow-wrap:anywhere}
-.path{font-size:9px;line-height:1.35;color:var(--muted);overflow-wrap:anywhere}
-.category{margin-top:auto;padding-top:3px;font-size:9px;color:#b9d7e8;text-transform:uppercase;letter-spacing:.08em}
-.empty{grid-column:1/-1;padding:50px 10px;text-align:center;color:var(--muted)}
-footer{border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-footer .wrap{padding-top:15px;padding-bottom:20px}
-@media(max-width:760px){
-  .controls{grid-template-columns:1fr 1fr}
-  .visibleCount{grid-column:1/-1;text-align:left}
-}
-@media(max-width:520px){
-  .wrap,main,.controls{padding-left:10px;padding-right:10px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .controls{grid-template-columns:1fr}
-  .visibleCount{grid-column:auto}
-}
-@media(prefers-reduced-motion:no-preference){.card{transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease}}
+.notice.bad{border-color:#6e3b3b;background:#211316;color:#ffc5c5}
+.section{margin:0 0 26px}
+.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:0 0 10px;padding:0 2px 8px;border-bottom:1px solid var(--line)}
+.sectionHead h2{margin:0;font-size:19px;letter-spacing:-.02em}
+.sectionHead span{color:var(--muted);font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#111923,#0b1118);box-shadow:0 1px 0 rgba(255,255,255,.02);cursor:pointer;transition:border-color .12s ease,transform .12s ease,box-shadow .12s ease}
+.card:hover{border-color:var(--line2);transform:translateY(-2px);box-shadow:var(--shadow)}
+.thumb{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:#10151b;background-image:linear-gradient(45deg,#161d24 25%,transparent 25%),linear-gradient(-45deg,#161d24 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#161d24 75%),linear-gradient(-45deg,transparent 75%,#161d24 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}
+.thumb img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;image-rendering:auto}
+.info{padding:9px 10px 11px}
+.name{font-size:12px;font-weight:850;line-height:1.28;overflow-wrap:anywhere}
+.path{margin-top:5px;color:var(--muted);font-size:9px;line-height:1.35;overflow-wrap:anywhere}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.tag{padding:3px 6px;border:1px solid #2b4050;border-radius:999px;color:#b9d9ea;background:#0b151d;font-size:8px;text-transform:uppercase;letter-spacing:.07em}
+.empty{padding:70px 15px;text-align:center;color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:100;display:none;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);padding:20px}
+.modal.open{display:flex;align-items:center;justify-content:center}
+.viewer{width:min(1100px,100%);max-height:94vh;display:grid;grid-template-rows:minmax(0,1fr) auto;overflow:hidden;border:1px solid var(--line2);border-radius:16px;background:#080c11;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.viewerImage{min-height:260px;display:flex;align-items:center;justify-content:center;overflow:auto;background-color:#10151b;background-image:linear-gradient(45deg,#171f27 25%,transparent 25%),linear-gradient(-45deg,#171f27 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#171f27 75%),linear-gradient(-45deg,transparent 75%,#171f27 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
+.viewerImage img{display:block;max-width:100%;max-height:76vh;object-fit:contain}
+.viewerBar{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 14px;border-top:1px solid var(--line);background:#0c1219}
+.viewerName{font-size:13px;font-weight:800;overflow-wrap:anywhere}
+.viewerPath{margin-top:3px;color:var(--muted);font-size:10px;overflow-wrap:anywhere}
+.actions{display:flex;gap:8px;align-items:center}
+.actions a,.actions button{border:1px solid var(--line);border-radius:9px;background:#111a23;color:var(--text);padding:8px 10px;text-decoration:none;cursor:pointer;font-size:11px}
+.actions a:hover,.actions button:hover{border-color:var(--line2)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:11px}
+footer .shell{padding-top:14px;padding-bottom:20px}
+@media(max-width:860px){.toolbar{grid-template-columns:1fr 1fr}.count{grid-column:1/-1;text-align:left}}
+@media(max-width:560px){.shell,main,.toolbar{padding-left:10px;padding-right:10px}.toolbar{grid-template-columns:1fr}.count{grid-column:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.viewerBar{grid-template-columns:1fr}.actions{justify-content:space-between}.modal{padding:8px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div class="eyebrow"><a class="back" href="./">← Vardath</a><span>RimWorld 1.6 mod gallery</span></div>
-    <h1>Wraith &amp; Nanite Gravtech — Art</h1>
-    <p class="lead">The current public WNG art, loaded directly from the Wraith-Nanite-Gravtech-1.6 repository. Each thumbnail opens the exact source image on GitHub. This gallery follows the current <strong>main</strong> branch automatically rather than being frozen to an old art commit.</p>
-    <div class="statusRow">
-      <div class="pill" id="statusPill"><span class="dot"></span><span id="statusText">Loading current WNG main…</span></div>
-      <div class="commit" id="commitText"></div>
+<header class="top">
+  <div class="shell">
+    <div class="crumbs"><a href="./">← Vardath</a><span>Wraith &amp; Nanite Gravtech</span><span>RimWorld 1.6</span></div>
+    <h1>Current Mod Art</h1>
+    <p class="subtitle">A fresh gallery built from the art that is actually in the current <strong>Wraith-Nanite-Gravtech-1.6</strong> repository. It reads the current <strong>main</strong> tree and displays the mod's live texture files rather than an old gallery snapshot.</p>
+    <div class="repoRow">
+      <div class="badge" id="status"><span class="dot"></span><span id="statusText">Reading current mod…</span></div>
+      <div class="commit" id="commit"></div>
     </div>
   </div>
 </header>
-<section class="controlsWrap" aria-label="Gallery controls">
-  <div class="controls">
-    <input id="search" type="search" placeholder="Search filename or path…" autocomplete="off" aria-label="Search art">
-    <select id="category" aria-label="Filter art category"><option value="all">All art</option></select>
-    <div class="visibleCount" id="visibleCount">Loading…</div>
+
+<div class="toolbarWrap">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search art name or path…" autocomplete="off" aria-label="Search current WNG art">
+    <select id="type" aria-label="Filter by art type"><option value="all">All art types</option></select>
+    <select id="collection" aria-label="Filter by collection"><option value="all">All collections</option></select>
+    <div class="count" id="count">Loading…</div>
   </div>
-</section>
+</div>
+
 <main>
   <div class="notice" id="notice"></div>
-  <div class="grid" id="grid"><div class="empty">Reading the current WNG art tree…</div></div>
+  <div id="gallery"><div class="empty">Building the current WNG art gallery…</div></div>
 </main>
-<footer><div class="wrap">Source repository: <a href="https://github.com/Vardath/Wraith-Nanite-Gravtech-1.6" target="_blank" rel="noopener">Vardath/Wraith-Nanite-Gravtech-1.6</a></div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Art preview">
+  <div class="viewer">
+    <div class="viewerImage"><img id="viewerImg" alt=""></div>
+    <div class="viewerBar">
+      <div><div class="viewerName" id="viewerName"></div><div class="viewerPath" id="viewerPath"></div></div>
+      <div class="actions"><a id="sourceLink" target="_blank" rel="noopener">Open source</a><button id="closeViewer" type="button">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="shell">Gallery source: <a href="https://github.com/Vardath/Wraith-Nanite-Gravtech-1.6" target="_blank" rel="noopener">Vardath/Wraith-Nanite-Gravtech-1.6</a>. This page is separate from the cosmology art page.</div></footer>
+
 <script>
 (() => {
   'use strict';
+  const OWNER='Vardath', REPO='Wraith-Nanite-Gravtech-1.6', BRANCH='main';
+  const API=`https://api.github.com/repos/${OWNER}/${REPO}`;
+  const RAW=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`;
+  const REPO_URL=`https://github.com/${OWNER}/${REPO}`;
 
-  const OWNER = 'Vardath';
-  const REPO = 'Wraith-Nanite-Gravtech-1.6';
-  const BRANCH = 'main';
-  const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
+  const el={
+    status:document.getElementById('status'),statusText:document.getElementById('statusText'),commit:document.getElementById('commit'),
+    search:document.getElementById('search'),type:document.getElementById('type'),collection:document.getElementById('collection'),count:document.getElementById('count'),
+    notice:document.getElementById('notice'),gallery:document.getElementById('gallery'),modal:document.getElementById('modal'),viewerImg:document.getElementById('viewerImg'),
+    viewerName:document.getElementById('viewerName'),viewerPath:document.getElementById('viewerPath'),sourceLink:document.getElementById('sourceLink'),closeViewer:document.getElementById('closeViewer')
+  };
 
-  const grid = document.getElementById('grid');
-  const search = document.getElementById('search');
-  const categorySelect = document.getElementById('category');
-  const visibleCount = document.getElementById('visibleCount');
-  const statusPill = document.getElementById('statusPill');
-  const statusText = document.getElementById('statusText');
-  const commitText = document.getElementById('commitText');
-  const notice = document.getElementById('notice');
+  let items=[], commitSha='';
+  const enc=p=>p.split('/').map(encodeURIComponent).join('/');
+  const pretty=s=>s.replace(/[_-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 
-  let commitSha = '';
-  let art = [];
-
-  const encodePath = path => path.split('/').map(encodeURIComponent).join('/');
-
-  function isGalleryArt(path) {
-    return /\.png$/i.test(path) && (
-      path.startsWith('Textures/') ||
-      path === 'About/ModIcon.png' ||
-      path === 'About/Preview.png'
-    );
+  function isArt(path){
+    if(!/\.(png|jpe?g|webp)$/i.test(path)) return false;
+    return path.startsWith('Textures/') || path==='About/ModIcon.png' || path==='About/Preview.png';
   }
 
-  function categoryFor(path) {
-    const p = path.toLowerCase();
-    if (path.startsWith('About/')) return 'About';
-    if (path.startsWith('Textures/Terrain/')) return 'Terrain';
-    if (p.includes('/apparel/') || p.includes('apparel')) return 'Apparel';
-    if (p.includes('/weapon') || p.includes('/weapons/') || p.includes('gun') || p.includes('rifle') || p.includes('pistol') || p.includes('blade') || p.includes('staff')) return 'Weapons';
-    if (p.includes('/pawn') || p.includes('/pawns/') || p.includes('/humanform/') || p.includes('/replicator/')) return 'Pawns & Replicators';
-    if (p.includes('/ui/') || p.includes('/icon') || p.includes('/command') || p.includes('/ability')) return 'UI & Icons';
-    if (p.includes('/building/') || p.includes('/buildings/')) return 'Buildings';
-    if (p.includes('/item') || p.includes('/items/') || p.includes('/resource') || p.includes('/resources/')) return 'Items & Resources';
+  function typeFor(path){
+    const p=path.toLowerCase();
+    if(path.startsWith('About/')) return 'About';
+    if(p.includes('/pawn')||p.includes('/pawns/')||p.includes('/humanform/')||p.includes('/replicator/')) return 'Pawns & Creatures';
+    if(p.includes('/building')||p.includes('/buildings/')||p.includes('/structure')||p.includes('/structures/')) return 'Buildings & Structures';
+    if(p.includes('/ship')||p.includes('/ships/')||p.includes('/craft')||p.includes('/shuttle')||p.includes('/vehicle')) return 'Ships & Craft';
+    if(p.includes('/weapon')||p.includes('/weapons/')||p.includes('rifle')||p.includes('pistol')||p.includes('blade')||p.includes('staff')||p.includes('gun')) return 'Weapons';
+    if(p.includes('/apparel/')||p.includes('apparel')||p.includes('/armor/')||p.includes('helmet')) return 'Apparel & Armor';
+    if(p.includes('/ui/')||p.includes('/icon')||p.includes('/command')||p.includes('/ability')) return 'UI & Icons';
+    if(p.includes('/terrain/')) return 'Terrain';
+    if(p.includes('/item')||p.includes('/items/')||p.includes('/resource')||p.includes('/resources/')||p.includes('/material')) return 'Items & Resources';
     return 'Other';
   }
 
-  function setStatus(kind, text) {
-    statusPill.classList.remove('ready', 'error');
-    if (kind) statusPill.classList.add(kind);
-    statusText.textContent = text;
+  function collectionFor(path){
+    const p=path.toLowerCase();
+    if(p.includes('replicator')||p.includes('nanite')) return 'Replicators & Nanites';
+    if(p.includes('wraith')) return 'Wraith';
+    if(p.includes('goauld')||p.includes("goa'uld")||p.includes('goa_uld')) return "Goa'uld";
+    if(p.includes('asuran')||p.includes('ancient')||p.includes('lant')||p.includes('precursor')) return 'Ancient / Asuran';
+    if(p.includes('tauri')||p.includes('tau_ri')||p.includes('sgc')) return "Tau'ri";
+    return 'General WNG';
   }
 
-  async function fetchJSON(url) {
-    const response = await fetch(url, {headers:{'Accept':'application/vnd.github+json'}});
-    if (!response.ok) {
-      const rate = response.headers.get('x-ratelimit-remaining');
-      const suffix = rate === '0' ? ' GitHub API rate limit reached.' : '';
-      throw new Error(`GitHub returned ${response.status}.${suffix}`);
+  async function getJSON(url){
+    const r=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});
+    if(!r.ok){
+      const left=r.headers.get('x-ratelimit-remaining');
+      throw new Error(left==='0'?'GitHub API rate limit reached.':`GitHub returned ${r.status}.`);
     }
-    return response.json();
+    return r.json();
   }
 
-  function buildCategoryMenu() {
-    const categories = [...new Set(art.map(x => x.category))].sort((a,b) => a.localeCompare(b));
-    categorySelect.innerHTML = '<option value="all">All art</option>';
-    for (const category of categories) {
-      const option = document.createElement('option');
-      option.value = category;
-      option.textContent = `${category} (${art.filter(x => x.category === category).length})`;
-      categorySelect.appendChild(option);
-    }
+  function setStatus(kind,text){
+    el.status.classList.remove('good','bad');
+    if(kind) el.status.classList.add(kind);
+    el.statusText.textContent=text;
   }
 
-  function makeCard(item) {
-    const encoded = encodePath(item.path);
-    const githubUrl = `https://github.com/${OWNER}/${REPO}/blob/${commitSha}/${encoded}`;
-    const rawUrl = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${commitSha}/${encoded}`;
+  function populate(select, values, label){
+    select.innerHTML=`<option value="all">${label}</option>`;
+    [...new Set(values)].sort((a,b)=>a.localeCompare(b)).forEach(v=>{
+      const o=document.createElement('option'); o.value=v; o.textContent=v; select.appendChild(o);
+    });
+  }
 
-    const card = document.createElement('a');
-    card.className = 'card';
-    card.href = githubUrl;
-    card.target = '_blank';
-    card.rel = 'noopener';
-
-    const thumb = document.createElement('div');
-    thumb.className = 'thumb';
-
-    const img = document.createElement('img');
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.src = rawUrl;
-    img.alt = item.name;
-    thumb.appendChild(img);
-
-    const meta = document.createElement('div');
-    meta.className = 'meta';
-
-    const name = document.createElement('div');
-    name.className = 'name';
-    name.textContent = item.name;
-
-    const path = document.createElement('div');
-    path.className = 'path';
-    path.textContent = item.path;
-
-    const category = document.createElement('div');
-    category.className = 'category';
-    category.textContent = item.category;
-
-    meta.append(name, path, category);
-    card.append(thumb, meta);
+  function cardFor(item){
+    const card=document.createElement('article'); card.className='card'; card.tabIndex=0;
+    const thumb=document.createElement('div'); thumb.className='thumb';
+    const img=document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=RAW+enc(item.path); img.alt=item.name; thumb.appendChild(img);
+    const info=document.createElement('div'); info.className='info';
+    const name=document.createElement('div'); name.className='name'; name.textContent=item.display;
+    const path=document.createElement('div'); path.className='path'; path.textContent=item.path;
+    const tags=document.createElement('div'); tags.className='tags';
+    [item.type,item.collection].forEach(t=>{const s=document.createElement('span');s.className='tag';s.textContent=t;tags.appendChild(s)});
+    info.append(name,path,tags); card.append(thumb,info);
+    const open=()=>openViewer(item); card.addEventListener('click',open); card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
     return card;
   }
 
-  function render() {
-    const q = search.value.trim().toLowerCase();
-    const selected = categorySelect.value;
-    const filtered = art.filter(item => {
-      const matchesText = !q || item.search.includes(q);
-      const matchesCategory = selected === 'all' || item.category === selected;
-      return matchesText && matchesCategory;
+  function render(){
+    const q=el.search.value.trim().toLowerCase(), t=el.type.value, c=el.collection.value;
+    const filtered=items.filter(x=>(!q||x.search.includes(q))&&(t==='all'||x.type===t)&&(c==='all'||x.collection===c));
+    el.count.textContent=`${filtered.length.toLocaleString()} of ${items.length.toLocaleString()} art files`;
+    el.gallery.replaceChildren();
+    if(!filtered.length){const d=document.createElement('div');d.className='empty';d.textContent='No current mod art matches these filters.';el.gallery.appendChild(d);return;}
+    const grouped=new Map();
+    filtered.forEach(x=>{if(!grouped.has(x.type)) grouped.set(x.type,[]); grouped.get(x.type).push(x)});
+    [...grouped.keys()].sort((a,b)=>a.localeCompare(b)).forEach(group=>{
+      const section=document.createElement('section');section.className='section';
+      const head=document.createElement('div');head.className='sectionHead';
+      const h=document.createElement('h2');h.textContent=group;
+      const n=document.createElement('span');n.textContent=`${grouped.get(group).length} files`;
+      head.append(h,n);
+      const grid=document.createElement('div');grid.className='grid';
+      grouped.get(group).forEach(item=>grid.appendChild(cardFor(item)));
+      section.append(head,grid);el.gallery.appendChild(section);
     });
-
-    const fragment = document.createDocumentFragment();
-    for (const item of filtered) fragment.appendChild(makeCard(item));
-
-    grid.replaceChildren();
-    if (filtered.length) {
-      grid.appendChild(fragment);
-    } else {
-      const empty = document.createElement('div');
-      empty.className = 'empty';
-      empty.textContent = 'No art matches this filter.';
-      grid.appendChild(empty);
-    }
-    visibleCount.textContent = `${filtered.length.toLocaleString()} of ${art.length.toLocaleString()} PNGs`;
   }
 
-  async function load() {
-    try {
-      const branch = await fetchJSON(`${API}/branches/${BRANCH}`);
-      commitSha = branch.commit.sha;
-      const treeSha = branch.commit && branch.commit.commit && branch.commit.commit.tree && branch.commit.commit.tree.sha;
-      if (!treeSha) throw new Error('Could not resolve the current WNG tree.');
+  function openViewer(item){
+    el.viewerImg.src=RAW+enc(item.path); el.viewerImg.alt=item.display; el.viewerName.textContent=item.display; el.viewerPath.textContent=item.path;
+    el.sourceLink.href=`${REPO_URL}/blob/${commitSha||BRANCH}/${enc(item.path)}`;
+    el.modal.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function closeViewer(){el.modal.classList.remove('open');document.body.style.overflow='';el.viewerImg.src='';}
 
-      const tree = await fetchJSON(`${API}/git/trees/${treeSha}?recursive=1`);
-      if (!Array.isArray(tree.tree)) throw new Error('GitHub returned no repository tree.');
-
-      art = tree.tree
-        .filter(item => item.type === 'blob' && isGalleryArt(item.path))
-        .map(item => {
-          const name = item.path.split('/').pop();
-          const category = categoryFor(item.path);
-          return {path:item.path, name, category, search:`${name} ${item.path} ${category}`.toLowerCase()};
-        })
-        .sort((a,b) => a.path.localeCompare(b.path, undefined, {numeric:true, sensitivity:'base'}));
-
-      if (!art.length) throw new Error('No WNG PNG art was found in the current repository tree.');
-
-      buildCategoryMenu();
-      setStatus('ready', `${art.length.toLocaleString()} current WNG PNGs loaded`);
-      commitText.innerHTML = `Current WNG main: <a href="https://github.com/${OWNER}/${REPO}/tree/${commitSha}" target="_blank" rel="noopener">${commitSha.slice(0,12)}</a>`;
-
-      if (tree.truncated) {
-        notice.className = 'notice show';
-        notice.textContent = 'GitHub reported a truncated repository tree, so this gallery may not contain every image.';
-      }
-
+  async function load(){
+    try{
+      const [branch,tree]=await Promise.all([getJSON(`${API}/branches/${BRANCH}`),getJSON(`${API}/git/trees/${BRANCH}?recursive=1`)]);
+      commitSha=branch.commit.sha;
+      items=(tree.tree||[]).filter(x=>x.type==='blob'&&isArt(x.path)).map(x=>{
+        const name=x.path.split('/').pop();
+        const display=pretty(name.replace(/\.(png|jpe?g|webp)$/i,''));
+        const type=typeFor(x.path), collection=collectionFor(x.path);
+        return {path:x.path,name,display,type,collection,search:`${name} ${display} ${x.path} ${type} ${collection}`.toLowerCase()};
+      }).sort((a,b)=>a.path.localeCompare(b.path,undefined,{numeric:true,sensitivity:'base'}));
+      if(!items.length) throw new Error('No current WNG art files were found.');
+      populate(el.type,items.map(x=>x.type),'All art types'); populate(el.collection,items.map(x=>x.collection),'All collections');
+      setStatus('good',`${items.length.toLocaleString()} current art files loaded`);
+      el.commit.innerHTML=`Current WNG main: <a href="${REPO_URL}/tree/${commitSha}" target="_blank" rel="noopener">${commitSha.slice(0,12)}</a>`;
+      if(tree.truncated){el.notice.className='notice show';el.notice.textContent='GitHub marked the repository tree as truncated, so a small number of files may be omitted.';}
       render();
-    } catch (error) {
-      console.error(error);
-      setStatus('error', 'Could not load current WNG art');
-      visibleCount.textContent = 'Gallery unavailable';
-      grid.replaceChildren();
-      const empty = document.createElement('div');
-      empty.className = 'empty';
-      empty.textContent = 'The live WNG gallery could not be loaded.';
-      grid.appendChild(empty);
-      notice.className = 'notice show error';
-      notice.innerHTML = `${error.message} <a href="https://github.com/${OWNER}/${REPO}/tree/main/Textures" target="_blank" rel="noopener">Open the current WNG Textures folder on GitHub.</a>`;
+    }catch(err){
+      console.error(err);setStatus('bad','Current mod art could not be loaded');el.count.textContent='Gallery unavailable';
+      el.notice.className='notice show bad';el.notice.innerHTML=`${err.message} <a href="${REPO_URL}/tree/main/Textures" target="_blank" rel="noopener">Open the current Textures folder on GitHub.</a>`;
+      el.gallery.innerHTML='<div class="empty">Unable to build the current WNG gallery.</div>';
     }
   }
 
-  search.addEventListener('input', render);
-  categorySelect.addEventListener('change', render);
+  el.search.addEventListener('input',render); el.type.addEventListener('change',render); el.collection.addEventListener('change',render);
+  el.closeViewer.addEventListener('click',closeViewer); el.modal.addEventListener('click',e=>{if(e.target===el.modal)closeViewer()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&el.modal.classList.contains('open'))closeViewer()});
   load();
 })();
 </script>
