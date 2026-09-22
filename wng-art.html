@@ -3,123 +3,173 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>WNG Current Mod Art — Vardath</title>
-<meta name="description" content="Current art browser for Vardath's Wraith & Nanite Gravtech RimWorld 1.6 mod.">
+<title>WNG Art Browser — Vardath</title>
+<meta name="description" content="Live production-art browser for Vardath's Wraith & Nanite Gravtech RimWorld 1.6 mod.">
 <style>
 :root{
   color-scheme:dark;
   --bg:#05070a;
-  --panel:#0d1218;
-  --panel2:#111922;
-  --line:#263442;
-  --line2:#3a5268;
-  --text:#f4f7fa;
-  --muted:#97a7b6;
-  --cyan:#73d9ff;
-  --cyan2:#b9efff;
-  --green:#79e39b;
-  --amber:#ffd275;
-  --red:#ff8b8b;
-  --shadow:0 18px 45px rgba(0,0,0,.38);
+  --bg2:#091019;
+  --panel:#0c1219;
+  --panel2:#111a24;
+  --panel3:#0a0f15;
+  --line:#22313e;
+  --line2:#38556a;
+  --text:#f1f6f9;
+  --muted:#8fa3b2;
+  --cyan:#72d9ff;
+  --cyan2:#b8eeff;
+  --green:#7ce4a0;
+  --amber:#ffd77f;
+  --red:#ff9090;
+  --shadow:0 24px 60px rgba(0,0,0,.42);
 }
 *{box-sizing:border-box}
-html{background:var(--bg)}
-body{margin:0;min-height:100vh;background:
-  radial-gradient(circle at 50% -12%,rgba(70,139,178,.22),transparent 33rem),
-  linear-gradient(#071018 0,#05070a 42rem);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+  radial-gradient(circle at 50% -12%,rgba(69,153,197,.20),transparent 30rem),
+  radial-gradient(circle at 10% 30%,rgba(38,92,124,.09),transparent 36rem),
+  linear-gradient(180deg,#071018 0,#05070a 46rem)}
 a{color:var(--cyan)}
 button,input,select{font:inherit}
-.top{border-bottom:1px solid var(--line);background:rgba(5,8,12,.86);backdrop-filter:blur(14px)}
-.shell{width:min(1840px,100%);margin:auto;padding:20px 18px}
-.crumbs{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:12px}
-.crumbs a{text-decoration:none;font-weight:800}
-h1{font-size:clamp(35px,6vw,72px);line-height:.98;letter-spacing:-.045em;margin:12px 0 9px}
-.subtitle{margin:0;max-width:1000px;color:#b4c1cc;line-height:1.55;font-size:15px}
-.repoRow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);font-size:12px}
-.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(255,210,117,.1)}
-.badge.good .dot{background:var(--green);box-shadow:0 0 0 3px rgba(121,227,155,.1)}
-.badge.bad .dot{background:var(--red);box-shadow:0 0 0 3px rgba(255,139,139,.1)}
-.commit{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
-.toolbarWrap{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(5,7,10,.94);backdrop-filter:blur(14px)}
-.toolbar{width:min(1840px,100%);margin:auto;padding:10px 18px;display:grid;grid-template-columns:minmax(220px,1fr) minmax(170px,260px) minmax(170px,260px) auto;gap:9px;align-items:center}
-input,select{width:100%;border:1px solid var(--line);border-radius:10px;background:#0b1118;color:var(--text);padding:10px 12px;outline:none}
-input:focus,select:focus{border-color:#4e7795;box-shadow:0 0 0 3px rgba(115,217,255,.08)}
-.count{text-align:right;white-space:nowrap;color:var(--muted);font-size:12px}
-main{width:min(1840px,100%);margin:auto;padding:16px 18px 34px}
-.notice{display:none;margin-bottom:14px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);line-height:1.45}
-.notice.show{display:block}
-.notice.bad{border-color:#6e3b3b;background:#211316;color:#ffc5c5}
-.section{margin:0 0 26px}
-.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:0 0 10px;padding:0 2px 8px;border-bottom:1px solid var(--line)}
-.sectionHead h2{margin:0;font-size:19px;letter-spacing:-.02em}
-.sectionHead span{color:var(--muted);font-size:11px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
-.card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#111923,#0b1118);box-shadow:0 1px 0 rgba(255,255,255,.02);cursor:pointer;transition:border-color .12s ease,transform .12s ease,box-shadow .12s ease}
+button{color:inherit}
+.shell{width:min(1880px,100%);margin:auto;padding-left:18px;padding-right:18px}
+.top{border-bottom:1px solid var(--line);background:rgba(5,8,12,.88);backdrop-filter:blur(16px)}
+.hero{padding-top:22px;padding-bottom:22px}
+.crumbs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.crumbs a{text-decoration:none;font-weight:850}
+.eyebrow{margin-top:20px;color:var(--cyan);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.18em}
+h1{margin:7px 0 10px;font-size:clamp(38px,6vw,76px);line-height:.96;letter-spacing:-.052em}
+.lede{margin:0;max-width:1040px;color:#bac8d2;line-height:1.58;font-size:15px}
+.statusRow{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:17px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:12px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(255,215,127,.09)}
+.badge.good .dot{background:var(--green);box-shadow:0 0 0 3px rgba(124,228,160,.09)}
+.badge.bad .dot{background:var(--red);box-shadow:0 0 0 3px rgba(255,144,144,.10)}
+.commit{color:var(--muted);font-size:11px;overflow-wrap:anywhere}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:16px;max-width:720px}
+.stat{border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(17,27,37,.78),rgba(9,14,20,.82));padding:12px 13px}
+.stat strong{display:block;font-size:21px;line-height:1;letter-spacing:-.025em}
+.stat span{display:block;margin-top:5px;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em}
+.toolbarWrap{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);background:rgba(5,7,10,.95);backdrop-filter:blur(16px)}
+.toolbar{display:grid;grid-template-columns:minmax(220px,1fr) minmax(170px,250px) minmax(170px,250px) auto;gap:9px;align-items:center;padding-top:10px;padding-bottom:10px}
+input,select{width:100%;min-height:42px;border:1px solid var(--line);border-radius:10px;background:#0a1118;color:var(--text);padding:9px 11px;outline:none}
+input:focus,select:focus{border-color:#4f7e9e;box-shadow:0 0 0 3px rgba(114,217,255,.08)}
+.count{text-align:right;color:var(--muted);font-size:11px;white-space:nowrap}
+main{padding-top:18px;padding-bottom:38px}
+.notice{display:none;margin-bottom:15px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);line-height:1.45;font-size:12px}
+.notice.show{display:block}.notice.bad{border-color:#704040;background:#231417;color:#ffc7c7}
+.feature{margin-bottom:30px}
+.featureHead,.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:0 2px 9px;margin-bottom:11px}
+.featureHead h2,.sectionHead h2{margin:0;font-size:20px;letter-spacing:-.025em}
+.featureHead p{margin:3px 0 0;color:var(--muted);font-size:11px;line-height:1.45}
+.sectionHead span{color:var(--muted);font-size:10px}
+.featureGrid{display:grid;grid-template-columns:repeat(9,minmax(118px,1fr));gap:8px}
+.featureCard{min-width:0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:linear-gradient(180deg,#111b25,#0a1118);cursor:pointer;transition:.14s ease}
+.featureCard:hover{border-color:var(--line2);transform:translateY(-2px);box-shadow:var(--shadow)}
+.featureImg,.thumb,.viewerImage{background-color:#10171e;background-image:linear-gradient(45deg,#17212a 25%,transparent 25%),linear-gradient(-45deg,#17212a 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#17212a 75%),linear-gradient(-45deg,transparent 75%,#17212a 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}
+.featureImg{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.featureImg img{max-width:100%;max-height:100%;object-fit:contain}
+.featureMeta{padding:8px 9px 10px}
+.featureName{font-size:11px;font-weight:900;line-height:1.15}
+.featureRole{margin-top:4px;color:var(--muted);font-size:8px;line-height:1.35}
+.featureSize{margin-top:7px;color:#b8d8e8;font-size:8px;text-transform:uppercase;letter-spacing:.06em}
+.gallerySection{margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:10px}
+.card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,#111923,#0a1017);cursor:pointer;transition:.13s ease;box-shadow:0 1px 0 rgba(255,255,255,.02)}
 .card:hover{border-color:var(--line2);transform:translateY(-2px);box-shadow:var(--shadow)}
-.thumb{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:#10151b;background-image:linear-gradient(45deg,#161d24 25%,transparent 25%),linear-gradient(-45deg,#161d24 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#161d24 75%),linear-gradient(-45deg,transparent 75%,#161d24 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0}
-.thumb img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;image-rendering:auto}
+.thumb{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.viewCount{position:absolute;right:7px;bottom:7px;padding:4px 6px;border:1px solid rgba(139,197,225,.28);border-radius:999px;background:rgba(6,12,17,.86);color:#c9eafa;font-size:8px;font-weight:800;backdrop-filter:blur(7px)}
 .info{padding:9px 10px 11px}
-.name{font-size:12px;font-weight:850;line-height:1.28;overflow-wrap:anywhere}
-.path{margin-top:5px;color:var(--muted);font-size:9px;line-height:1.35;overflow-wrap:anywhere}
+.name{font-size:11px;font-weight:900;line-height:1.25;overflow-wrap:anywhere}
+.path{margin-top:4px;color:var(--muted);font-size:8px;line-height:1.35;overflow-wrap:anywhere}
 .tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
-.tag{padding:3px 6px;border:1px solid #2b4050;border-radius:999px;color:#b9d9ea;background:#0b151d;font-size:8px;text-transform:uppercase;letter-spacing:.07em}
-.empty{padding:70px 15px;text-align:center;color:var(--muted)}
-.modal{position:fixed;inset:0;z-index:100;display:none;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);padding:20px}
+.tag{padding:3px 6px;border:1px solid #2a4051;border-radius:999px;color:#bcdcec;background:#0a151d;font-size:7px;text-transform:uppercase;letter-spacing:.075em}
+.empty{padding:72px 16px;text-align:center;color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:100;display:none;padding:18px;background:rgba(0,0,0,.84);backdrop-filter:blur(10px)}
 .modal.open{display:flex;align-items:center;justify-content:center}
-.viewer{width:min(1100px,100%);max-height:94vh;display:grid;grid-template-rows:minmax(0,1fr) auto;overflow:hidden;border:1px solid var(--line2);border-radius:16px;background:#080c11;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.viewerImage{min-height:260px;display:flex;align-items:center;justify-content:center;overflow:auto;background-color:#10151b;background-image:linear-gradient(45deg,#171f27 25%,transparent 25%),linear-gradient(-45deg,#171f27 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#171f27 75%),linear-gradient(-45deg,transparent 75%,#171f27 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
+.viewer{width:min(1180px,100%);max-height:95vh;display:grid;grid-template-rows:minmax(0,1fr) auto;overflow:hidden;border:1px solid var(--line2);border-radius:16px;background:#080c11;box-shadow:0 32px 90px rgba(0,0,0,.66)}
+.viewerImage{min-height:280px;display:flex;align-items:center;justify-content:center;overflow:auto;background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}
 .viewerImage img{display:block;max-width:100%;max-height:76vh;object-fit:contain}
-.viewerBar{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 14px;border-top:1px solid var(--line);background:#0c1219}
-.viewerName{font-size:13px;font-weight:800;overflow-wrap:anywhere}
-.viewerPath{margin-top:3px;color:var(--muted);font-size:10px;overflow-wrap:anywhere}
+.viewerBar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:12px 14px;border-top:1px solid var(--line);background:#0c1219}
+.viewerName{font-size:13px;font-weight:900;overflow-wrap:anywhere}
+.viewerPath{margin-top:3px;color:var(--muted);font-size:9px;overflow-wrap:anywhere}
+.viewButtons{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.viewBtn{border:1px solid var(--line);border-radius:8px;background:#101922;color:#b9cbd7;padding:6px 8px;cursor:pointer;font-size:9px}
+.viewBtn.active{border-color:#4f87a9;background:#102332;color:#e9f9ff}
 .actions{display:flex;gap:8px;align-items:center}
-.actions a,.actions button{border:1px solid var(--line);border-radius:9px;background:#111a23;color:var(--text);padding:8px 10px;text-decoration:none;cursor:pointer;font-size:11px}
+.actions a,.actions button{border:1px solid var(--line);border-radius:9px;background:#111a23;color:var(--text);padding:8px 10px;text-decoration:none;cursor:pointer;font-size:10px;white-space:nowrap}
 .actions a:hover,.actions button:hover{border-color:var(--line2)}
-footer{border-top:1px solid var(--line);color:var(--muted);font-size:11px}
-footer .shell{padding-top:14px;padding-bottom:20px}
-@media(max-width:860px){.toolbar{grid-template-columns:1fr 1fr}.count{grid-column:1/-1;text-align:left}}
-@media(max-width:560px){.shell,main,.toolbar{padding-left:10px;padding-right:10px}.toolbar{grid-template-columns:1fr}.count{grid-column:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.viewerBar{grid-template-columns:1fr}.actions{justify-content:space-between}.modal{padding:8px}}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:10px}
+footer .shell{padding-top:15px;padding-bottom:22px}
+@media(max-width:1320px){.featureGrid{grid-template-columns:repeat(5,minmax(120px,1fr))}}
+@media(max-width:880px){.toolbar{grid-template-columns:1fr 1fr}.count{grid-column:1/-1;text-align:left}.featureGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.shell{padding-left:10px;padding-right:10px}.toolbar{grid-template-columns:1fr}.count{grid-column:auto}.featureGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.viewerBar{grid-template-columns:1fr}.actions{justify-content:space-between}.modal{padding:7px}}
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="shell">
+  <div class="shell hero">
     <div class="crumbs"><a href="./">← Vardath</a><span>Wraith &amp; Nanite Gravtech</span><span>RimWorld 1.6</span></div>
-    <h1>Current Mod Art</h1>
-    <p class="subtitle">A fresh gallery built from the art that is actually in the current <strong>Wraith-Nanite-Gravtech-1.6</strong> repository. It reads the current <strong>main</strong> tree and displays the mod's live texture files rather than an old gallery snapshot.</p>
-    <div class="repoRow">
+    <div class="eyebrow">Production art browser</div>
+    <h1>WNG Art</h1>
+    <p class="lede">The current production textures from <strong>Vardath/Wraith-Nanite-Gravtech-1.6</strong>. Directional RimWorld texture sets are grouped as one art family, so a pawn or object appears once instead of five times. Open a family to inspect every available facing at full size.</p>
+    <div class="statusRow">
       <div class="badge" id="status"><span class="dot"></span><span id="statusText">Reading current mod…</span></div>
       <div class="commit" id="commit"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong id="familyStat">—</strong><span>art families</span></div>
+      <div class="stat"><strong id="fileStat">—</strong><span>texture files</span></div>
+      <div class="stat"><strong id="repStat">9</strong><span>Replicator block forms</span></div>
     </div>
   </div>
 </header>
 
 <div class="toolbarWrap">
-  <div class="toolbar">
-    <input id="search" type="search" placeholder="Search art name or path…" autocomplete="off" aria-label="Search current WNG art">
+  <div class="shell toolbar">
+    <input id="search" type="search" placeholder="Search art, role or path…" autocomplete="off" aria-label="Search WNG art">
     <select id="type" aria-label="Filter by art type"><option value="all">All art types</option></select>
     <select id="collection" aria-label="Filter by collection"><option value="all">All collections</option></select>
     <div class="count" id="count">Loading…</div>
   </div>
 </div>
 
-<main>
+<main class="shell">
   <div class="notice" id="notice"></div>
-  <div id="gallery"><div class="empty">Building the current WNG art gallery…</div></div>
+
+  <section class="feature" id="replicatorFeature">
+    <div class="featureHead">
+      <div><h2>Replicator block forms</h2><p>Current rebuilt Stargate Replicator families, ordered by the live WNG hierarchy and specialist roles.</p></div>
+      <div class="count" id="repFeatureCount">Loading…</div>
+    </div>
+    <div class="featureGrid" id="replicatorGrid"></div>
+  </section>
+
+  <section>
+    <div class="featureHead">
+      <div><h2>All current mod art</h2><p>Live from the current <strong>main</strong> tree. Directional variants are grouped into one family.</p></div>
+    </div>
+    <div id="gallery"><div class="empty">Building current WNG art families…</div></div>
+  </section>
 </main>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Art preview">
   <div class="viewer">
     <div class="viewerImage"><img id="viewerImg" alt=""></div>
     <div class="viewerBar">
-      <div><div class="viewerName" id="viewerName"></div><div class="viewerPath" id="viewerPath"></div></div>
+      <div>
+        <div class="viewerName" id="viewerName"></div>
+        <div class="viewerPath" id="viewerPath"></div>
+        <div class="viewButtons" id="viewButtons"></div>
+      </div>
       <div class="actions"><a id="sourceLink" target="_blank" rel="noopener">Open source</a><button id="closeViewer" type="button">Close</button></div>
     </div>
   </div>
 </div>
 
-<footer><div class="shell">Gallery source: <a href="https://github.com/Vardath/Wraith-Nanite-Gravtech-1.6" target="_blank" rel="noopener">Vardath/Wraith-Nanite-Gravtech-1.6</a>. This page is separate from the cosmology art page.</div></footer>
+<footer><div class="shell">Source: <a href="https://github.com/Vardath/Wraith-Nanite-Gravtech-1.6" target="_blank" rel="noopener">Vardath/Wraith-Nanite-Gravtech-1.6</a>. This page only covers WNG mod art.</div></footer>
 
 <script>
 (() => {
@@ -129,16 +179,30 @@ footer .shell{padding-top:14px;padding-bottom:20px}
   const RAW=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`;
   const REPO_URL=`https://github.com/${OWNER}/${REPO}`;
 
+  const REPLICATORS=[
+    {id:'Drone',label:'Drone',role:'Irreducible basic swarm form',size:'0.55 body · 0.85 draw'},
+    {id:'Hunter',label:'Hunter',role:'Fast pursuit and scything attack form',size:'0.85 body · 1.25 draw'},
+    {id:'Bulwark',label:'Bulwark',role:'Dense armoured crusher',size:'1.45 body · 1.80 draw'},
+    {id:'Titan',label:'Titan',role:'Heavy siege Replicator',size:'2.40 body · 2.60 draw'},
+    {id:'SiegeMass',label:'Siege Mass',role:'Largest standard recombination body',size:'3.80 body · 3.50 draw'},
+    {id:'Controller',label:'Controller',role:'Coordination and command specialist',size:'1.20 body · 1.45 draw'},
+    {id:'Repairer',label:'Repairer',role:'Hunter-mass repair specialist',size:'0.85 body · 1.20 draw'},
+    {id:'Burrower',label:'Burrower',role:'Hunter-mass structural breacher',size:'0.90 body · 1.25 draw'},
+    {id:'Artillery',label:'Artillery',role:'Bulwark-mass long-range support',size:'1.45 body · 1.85 draw'}
+  ];
+
   const el={
     status:document.getElementById('status'),statusText:document.getElementById('statusText'),commit:document.getElementById('commit'),
-    search:document.getElementById('search'),type:document.getElementById('type'),collection:document.getElementById('collection'),count:document.getElementById('count'),
-    notice:document.getElementById('notice'),gallery:document.getElementById('gallery'),modal:document.getElementById('modal'),viewerImg:document.getElementById('viewerImg'),
-    viewerName:document.getElementById('viewerName'),viewerPath:document.getElementById('viewerPath'),sourceLink:document.getElementById('sourceLink'),closeViewer:document.getElementById('closeViewer')
+    familyStat:document.getElementById('familyStat'),fileStat:document.getElementById('fileStat'),search:document.getElementById('search'),
+    type:document.getElementById('type'),collection:document.getElementById('collection'),count:document.getElementById('count'),notice:document.getElementById('notice'),
+    gallery:document.getElementById('gallery'),replicatorGrid:document.getElementById('replicatorGrid'),repFeatureCount:document.getElementById('repFeatureCount'),
+    modal:document.getElementById('modal'),viewerImg:document.getElementById('viewerImg'),viewerName:document.getElementById('viewerName'),viewerPath:document.getElementById('viewerPath'),
+    viewButtons:document.getElementById('viewButtons'),sourceLink:document.getElementById('sourceLink'),closeViewer:document.getElementById('closeViewer')
   };
 
-  let items=[], commitSha='';
+  let files=[],families=[],commitSha='',activeFamily=null,activeView='base';
   const enc=p=>p.split('/').map(encodeURIComponent).join('/');
-  const pretty=s=>s.replace(/[_-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+  const pretty=s=>s.replace(/^WNG_/,'').replace(/[_-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 
   function isArt(path){
     if(!/\.(png|jpe?g|webp)$/i.test(path)) return false;
@@ -148,14 +212,15 @@ footer .shell{padding-top:14px;padding-bottom:20px}
   function typeFor(path){
     const p=path.toLowerCase();
     if(path.startsWith('About/')) return 'About';
-    if(p.includes('/pawn')||p.includes('/pawns/')||p.includes('/humanform/')||p.includes('/replicator/')) return 'Pawns & Creatures';
-    if(p.includes('/building')||p.includes('/buildings/')||p.includes('/structure')||p.includes('/structures/')) return 'Buildings & Structures';
-    if(p.includes('/ship')||p.includes('/ships/')||p.includes('/craft')||p.includes('/shuttle')||p.includes('/vehicle')) return 'Ships & Craft';
-    if(p.includes('/weapon')||p.includes('/weapons/')||p.includes('rifle')||p.includes('pistol')||p.includes('blade')||p.includes('staff')||p.includes('gun')) return 'Weapons';
-    if(p.includes('/apparel/')||p.includes('apparel')||p.includes('/armor/')||p.includes('helmet')) return 'Apparel & Armor';
+    if(p.includes('/pawn/')||p.includes('/pawns/')||p.includes('/humanform/')) return 'Pawns & Creatures';
+    if(p.includes('/building/')||p.includes('/buildings/')||p.includes('/structure/')||p.includes('/structures/')) return 'Buildings & Structures';
+    if(p.includes('/ship/')||p.includes('/ships/')||p.includes('/craft/')||p.includes('/shuttle/')||p.includes('/vehicle/')) return 'Ships & Craft';
+    if(p.includes('/weapon/')||p.includes('/weapons/')||p.includes('rifle')||p.includes('pistol')||p.includes('blade')||p.includes('staff')||p.includes('gun')) return 'Weapons';
+    if(p.includes('/apparel/')||p.includes('/armor/')||p.includes('helmet')) return 'Apparel & Armor';
+    if(p.includes('/projectile/')||p.includes('/mote/')||p.includes('/effect/')) return 'Projectiles & Effects';
     if(p.includes('/ui/')||p.includes('/icon')||p.includes('/command')||p.includes('/ability')) return 'UI & Icons';
     if(p.includes('/terrain/')) return 'Terrain';
-    if(p.includes('/item')||p.includes('/items/')||p.includes('/resource')||p.includes('/resources/')||p.includes('/material')) return 'Items & Resources';
+    if(p.includes('/item/')||p.includes('/items/')||p.includes('/resource')||p.includes('/material')) return 'Items & Resources';
     return 'Other';
   }
 
@@ -169,6 +234,33 @@ footer .shell{padding-top:14px;padding-bottom:20px}
     return 'General WNG';
   }
 
+  function canonicalFor(path){
+    const slash=path.lastIndexOf('/');
+    const dir=slash>=0?path.slice(0,slash+1):'';
+    const file=slash>=0?path.slice(slash+1):path;
+    const m=file.match(/^(.*?)(?:_(north|east|south|west))?(\.(?:png|jpe?g|webp))$/i);
+    if(!m) return {key:path,stem:file,view:'base',ext:''};
+    const stem=m[1], view=(m[2]||'base').toLowerCase(), ext=m[3].toLowerCase();
+    return {key:dir+stem+ext,stem,view,ext,dir};
+  }
+
+  function buildFamilies(paths){
+    const map=new Map();
+    paths.forEach(path=>{
+      const c=canonicalFor(path);
+      if(!map.has(c.key)){
+        const type=typeFor(path),collection=collectionFor(path);
+        map.set(c.key,{key:c.key,stem:c.stem,display:pretty(c.stem),type,collection,variants:{},paths:[],search:''});
+      }
+      const f=map.get(c.key);f.variants[c.view]=path;f.paths.push(path);
+    });
+    return [...map.values()].map(f=>{
+      f.primary=f.variants.base||f.variants.south||f.variants.north||f.variants.east||f.variants.west||f.paths[0];
+      f.search=`${f.display} ${f.stem} ${f.paths.join(' ')} ${f.type} ${f.collection}`.toLowerCase();
+      return f;
+    }).sort((a,b)=>a.primary.localeCompare(b.primary,undefined,{numeric:true,sensitivity:'base'}));
+  }
+
   async function getJSON(url){
     const r=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});
     if(!r.ok){
@@ -180,83 +272,120 @@ footer .shell{padding-top:14px;padding-bottom:20px}
 
   function setStatus(kind,text){
     el.status.classList.remove('good','bad');
-    if(kind) el.status.classList.add(kind);
+    if(kind)el.status.classList.add(kind);
     el.statusText.textContent=text;
   }
 
-  function populate(select, values, label){
+  function populate(select,values,label){
     select.innerHTML=`<option value="all">${label}</option>`;
-    [...new Set(values)].sort((a,b)=>a.localeCompare(b)).forEach(v=>{
-      const o=document.createElement('option'); o.value=v; o.textContent=v; select.appendChild(o);
-    });
+    [...new Set(values)].sort((a,b)=>a.localeCompare(b)).forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o)});
   }
 
-  function cardFor(item){
-    const card=document.createElement('article'); card.className='card'; card.tabIndex=0;
-    const thumb=document.createElement('div'); thumb.className='thumb';
-    const img=document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=RAW+enc(item.path); img.alt=item.name; thumb.appendChild(img);
-    const info=document.createElement('div'); info.className='info';
-    const name=document.createElement('div'); name.className='name'; name.textContent=item.display;
-    const path=document.createElement('div'); path.className='path'; path.textContent=item.path;
-    const tags=document.createElement('div'); tags.className='tags';
-    [item.type,item.collection].forEach(t=>{const s=document.createElement('span');s.className='tag';s.textContent=t;tags.appendChild(s)});
-    info.append(name,path,tags); card.append(thumb,info);
-    const open=()=>openViewer(item); card.addEventListener('click',open); card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
+  function imageElement(src,alt){
+    const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.alt=alt;img.src=RAW+enc(src);
+    img.addEventListener('error',()=>{img.style.opacity='.14';img.alt=`Missing image: ${alt}`});
+    return img;
+  }
+
+  function cardFor(f){
+    const card=document.createElement('article');card.className='card';card.tabIndex=0;
+    const thumb=document.createElement('div');thumb.className='thumb';thumb.appendChild(imageElement(f.primary,f.display));
+    const count=Object.keys(f.variants).length;
+    if(count>1){const v=document.createElement('span');v.className='viewCount';v.textContent=`${count} views`;thumb.appendChild(v)}
+    const info=document.createElement('div');info.className='info';
+    const name=document.createElement('div');name.className='name';name.textContent=f.display;
+    const path=document.createElement('div');path.className='path';path.textContent=f.primary;
+    const tags=document.createElement('div');tags.className='tags';
+    [f.type,f.collection].forEach(t=>{const s=document.createElement('span');s.className='tag';s.textContent=t;tags.appendChild(s)});
+    info.append(name,path,tags);card.append(thumb,info);
+    const open=()=>openViewer(f);card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
     return card;
   }
 
+  function renderReplicators(){
+    el.replicatorGrid.replaceChildren();
+    let found=0;
+    REPLICATORS.forEach(meta=>{
+      const expected=`WNG_Replicator${meta.id}`.toLowerCase();
+      const f=families.find(x=>x.stem.toLowerCase()===expected && x.primary.includes('/Pawn/Replicator/'));
+      const card=document.createElement('article');card.className='featureCard';card.tabIndex=0;
+      const imgWrap=document.createElement('div');imgWrap.className='featureImg';
+      if(f){imgWrap.appendChild(imageElement(f.primary,meta.label));found++}else{const miss=document.createElement('div');miss.className='empty';miss.textContent='Missing';imgWrap.appendChild(miss)}
+      const metaBox=document.createElement('div');metaBox.className='featureMeta';
+      const name=document.createElement('div');name.className='featureName';name.textContent=meta.label;
+      const role=document.createElement('div');role.className='featureRole';role.textContent=meta.role;
+      const size=document.createElement('div');size.className='featureSize';size.textContent=meta.size;
+      metaBox.append(name,role,size);card.append(imgWrap,metaBox);
+      if(f){const open=()=>openViewer(f);card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})}
+      el.replicatorGrid.appendChild(card);
+    });
+    el.repFeatureCount.textContent=`${found} of ${REPLICATORS.length} live families`;
+  }
+
   function render(){
-    const q=el.search.value.trim().toLowerCase(), t=el.type.value, c=el.collection.value;
-    const filtered=items.filter(x=>(!q||x.search.includes(q))&&(t==='all'||x.type===t)&&(c==='all'||x.collection===c));
-    el.count.textContent=`${filtered.length.toLocaleString()} of ${items.length.toLocaleString()} art files`;
+    const q=el.search.value.trim().toLowerCase(),t=el.type.value,c=el.collection.value;
+    const filtered=families.filter(x=>(!q||x.search.includes(q))&&(t==='all'||x.type===t)&&(c==='all'||x.collection===c));
+    const shownFiles=filtered.reduce((n,f)=>n+f.paths.length,0);
+    el.count.textContent=`${filtered.length.toLocaleString()} families · ${shownFiles.toLocaleString()} files`;
     el.gallery.replaceChildren();
-    if(!filtered.length){const d=document.createElement('div');d.className='empty';d.textContent='No current mod art matches these filters.';el.gallery.appendChild(d);return;}
+    if(!filtered.length){const d=document.createElement('div');d.className='empty';d.textContent='No current WNG art matches these filters.';el.gallery.appendChild(d);return}
     const grouped=new Map();
-    filtered.forEach(x=>{if(!grouped.has(x.type)) grouped.set(x.type,[]); grouped.get(x.type).push(x)});
+    filtered.forEach(f=>{if(!grouped.has(f.type))grouped.set(f.type,[]);grouped.get(f.type).push(f)});
     [...grouped.keys()].sort((a,b)=>a.localeCompare(b)).forEach(group=>{
-      const section=document.createElement('section');section.className='section';
+      const section=document.createElement('section');section.className='gallerySection';
       const head=document.createElement('div');head.className='sectionHead';
       const h=document.createElement('h2');h.textContent=group;
-      const n=document.createElement('span');n.textContent=`${grouped.get(group).length} files`;
+      const n=document.createElement('span');n.textContent=`${grouped.get(group).length} families`;
       head.append(h,n);
-      const grid=document.createElement('div');grid.className='grid';
-      grouped.get(group).forEach(item=>grid.appendChild(cardFor(item)));
+      const grid=document.createElement('div');grid.className='grid';grouped.get(group).forEach(f=>grid.appendChild(cardFor(f)));
       section.append(head,grid);el.gallery.appendChild(section);
     });
   }
 
-  function openViewer(item){
-    el.viewerImg.src=RAW+enc(item.path); el.viewerImg.alt=item.display; el.viewerName.textContent=item.display; el.viewerPath.textContent=item.path;
-    el.sourceLink.href=`${REPO_URL}/blob/${commitSha||BRANCH}/${enc(item.path)}`;
-    el.modal.classList.add('open'); document.body.style.overflow='hidden';
+  function setView(view){
+    if(!activeFamily)return;
+    const path=activeFamily.variants[view]||activeFamily.primary;
+    activeView=activeFamily.variants[view]?view:(activeFamily.variants.base?'base':Object.keys(activeFamily.variants)[0]);
+    el.viewerImg.src=RAW+enc(path);el.viewerImg.alt=`${activeFamily.display} ${activeView}`;el.viewerPath.textContent=path;
+    el.sourceLink.href=`${REPO_URL}/blob/${commitSha||BRANCH}/${enc(path)}`;
+    [...el.viewButtons.children].forEach(b=>b.classList.toggle('active',b.dataset.view===activeView));
   }
-  function closeViewer(){el.modal.classList.remove('open');document.body.style.overflow='';el.viewerImg.src='';}
+
+  function openViewer(f){
+    activeFamily=f;el.viewerName.textContent=f.display;el.viewButtons.replaceChildren();
+    const order=['base','north','east','south','west'];
+    order.forEach(view=>{
+      if(!f.variants[view])return;
+      const b=document.createElement('button');b.type='button';b.className='viewBtn';b.dataset.view=view;b.textContent=view==='base'?'Default':pretty(view);b.addEventListener('click',()=>setView(view));el.viewButtons.appendChild(b);
+    });
+    const first=f.variants.base?'base':(f.variants.south?'south':Object.keys(f.variants)[0]);setView(first);
+    el.modal.classList.add('open');document.body.style.overflow='hidden';
+  }
+
+  function closeViewer(){el.modal.classList.remove('open');document.body.style.overflow='';el.viewerImg.src='';activeFamily=null}
 
   async function load(){
     try{
       const [branch,tree]=await Promise.all([getJSON(`${API}/branches/${BRANCH}`),getJSON(`${API}/git/trees/${BRANCH}?recursive=1`)]);
       commitSha=branch.commit.sha;
-      items=(tree.tree||[]).filter(x=>x.type==='blob'&&isArt(x.path)).map(x=>{
-        const name=x.path.split('/').pop();
-        const display=pretty(name.replace(/\.(png|jpe?g|webp)$/i,''));
-        const type=typeFor(x.path), collection=collectionFor(x.path);
-        return {path:x.path,name,display,type,collection,search:`${name} ${display} ${x.path} ${type} ${collection}`.toLowerCase()};
-      }).sort((a,b)=>a.path.localeCompare(b.path,undefined,{numeric:true,sensitivity:'base'}));
-      if(!items.length) throw new Error('No current WNG art files were found.');
-      populate(el.type,items.map(x=>x.type),'All art types'); populate(el.collection,items.map(x=>x.collection),'All collections');
-      setStatus('good',`${items.length.toLocaleString()} current art files loaded`);
-      el.commit.innerHTML=`Current WNG main: <a href="${REPO_URL}/tree/${commitSha}" target="_blank" rel="noopener">${commitSha.slice(0,12)}</a>`;
-      if(tree.truncated){el.notice.className='notice show';el.notice.textContent='GitHub marked the repository tree as truncated, so a small number of files may be omitted.';}
-      render();
+      files=(tree.tree||[]).filter(x=>x.type==='blob'&&isArt(x.path)).map(x=>x.path).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true,sensitivity:'base'}));
+      if(!files.length)throw new Error('No current WNG art files were found.');
+      families=buildFamilies(files);
+      populate(el.type,families.map(x=>x.type),'All art types');populate(el.collection,families.map(x=>x.collection),'All collections');
+      el.familyStat.textContent=families.length.toLocaleString();el.fileStat.textContent=files.length.toLocaleString();
+      setStatus('good','Current WNG main loaded');
+      el.commit.innerHTML=`Main commit: <a href="${REPO_URL}/tree/${commitSha}" target="_blank" rel="noopener">${commitSha.slice(0,12)}</a>`;
+      if(tree.truncated){el.notice.className='notice show';el.notice.textContent='GitHub marked the repository tree as truncated, so some current art may be omitted from the all-art browser.'}
+      renderReplicators();render();
     }catch(err){
       console.error(err);setStatus('bad','Current mod art could not be loaded');el.count.textContent='Gallery unavailable';
-      el.notice.className='notice show bad';el.notice.innerHTML=`${err.message} <a href="${REPO_URL}/tree/main/Textures" target="_blank" rel="noopener">Open the current Textures folder on GitHub.</a>`;
-      el.gallery.innerHTML='<div class="empty">Unable to build the current WNG gallery.</div>';
+      el.notice.className='notice show bad';el.notice.innerHTML=`${err.message} <a href="${REPO_URL}/tree/main/Textures" target="_blank" rel="noopener">Open the live Textures folder on GitHub.</a>`;
+      el.gallery.innerHTML='<div class="empty">Unable to build the current WNG gallery.</div>';el.repFeatureCount.textContent='Unavailable';
     }
   }
 
-  el.search.addEventListener('input',render); el.type.addEventListener('change',render); el.collection.addEventListener('change',render);
-  el.closeViewer.addEventListener('click',closeViewer); el.modal.addEventListener('click',e=>{if(e.target===el.modal)closeViewer()});
+  el.search.addEventListener('input',render);el.type.addEventListener('change',render);el.collection.addEventListener('change',render);
+  el.closeViewer.addEventListener('click',closeViewer);el.modal.addEventListener('click',e=>{if(e.target===el.modal)closeViewer()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&el.modal.classList.contains('open'))closeViewer()});
   load();
 })();
