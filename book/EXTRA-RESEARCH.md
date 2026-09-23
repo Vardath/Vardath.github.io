@@ -24210,3 +24210,121 @@ For file discipline:
 - **108** = “another book” of Enoch / final addendum.
 
 They belong together in the received 1 Enoch, but source layers should not be flattened into one composition.
+
+
+## SECTION 17 progress E — consolidated week/number register and cross-check against the Animal Apocalypse
+
+### Weeks timeline register
+- total measured “weeks”: **10**.
+- conceptual subdivisions: **7 parts per week** → **70 parts** implied.
+- Enoch: week **1**, part **7**.
+- Flood survivor: week **2**.
+- Abraham/plant: week **3**.
+- law + enclosure: week **4**.
+- first great house: week **5**.
+- blindness + ascent + house-burning + dispersion: week **6**.
+- perverse generation / chosen remnant: week **7**.
+- righteous sword + new glorious house: week **8**.
+- worldwide righteous judgment: week **9**.
+- eternal judgment: week **10**, part **7**.
+- afterward: **weeks without number**.
+- final heavenly light: **sevenfold**.
+
+### Other important counts
+- Noah survivor unit again: **1 + 3**.
+- Flood in Ethiopic Noah fragment: **1 year**.
+- Noah birth Latin fragment: Lamech **350** in one witness; difficult **500-year** cataclysm statement — textual variant only.
+- chapter 91 says violence/unrighteousness later grows in a **twofold degree**.
+- chapter 100 uses paired kin ruptures: father/son, brother/brother.
+
+### Apocalypse of Weeks vs Animal Apocalypse
+
+The two historical maps overlap but are not duplicates.
+
+**Apocalypse of Weeks**
+- highly compressed,
+- 10 symbolic periods,
+- strong symmetrical/concentric structure,
+- likely stops near/before Maccabean crisis,
+- no detailed animal identities.
+
+**Animal Apocalypse**
+- continuous allegorical narrative,
+- animals/people/structures,
+- 70 shepherd clock,
+- reaches into Maccabean revolt,
+- then dramatizes final intervention/new house.
+
+The two together are useful because they show the same broad history in **different coordinate systems**:
+- one primarily **temporal/heptadic**,
+- one primarily **visual/animal/geometric**.
+
+This strengthens the project’s rule:
+**different symbolic languages may encode overlapping event sequences.**
+
+### Potential 70 resonance — preserve, do not equate yet
+We now have in 1 Enoch:
+- Watchers bound for **70 generations** in one tradition,
+- Animal Apocalypse **70 shepherds**,
+- Apocalypse of Weeks implying **70 sub-periods**.
+
+This clustering is worth a dedicated later test.
+
+But the units differ:
+- generations,
+- shepherd operators,
+- subdivisions of ten weeks.
+
+No equivalence should be claimed until each system is normalized independently.
+
+## SECTION 17 status
+
+**SECTION 17 — 1 ENOCH 91–108: COMPLETE FIRST PASS.**
+
+Strongest findings:
+1. The Apocalypse of Weeks gives a **10 × 7 / 70-part** historical architecture, but equal durations are not established.
+2. Its history is **concentric**: house-building and house-destruction occupy the centre, followed by remnant, new house, judgment and new heaven.
+3. Same visible bodily death can conceal **different spirit destinations**.
+4. Nature itself functions as an independent witness/record network.
+5. Heavenly portals can close for water and later open for the righteous.
+6. Noah’s angel-like appearance is explicitly **not proof of angelic paternity**.
+7. Noah again forms a **1 + 3** survivor pattern and Flood lasts **one year** in the Ethiopic account.
+8. The Noah-birth material preserves incompatible/difficult Latin numerical variants that must remain separate.
+9. Final chapter gives **darkness → transformation → shining light / enthronement**.
+10. Several source layers are present; 91–105, 106–107 and 108 should not be flattened.
+
+# 1 ENOCH — COMPLETE FIRST PASS
+
+Sections completed:
+- 1–36 Book of Watchers
+- 37–71 Parables
+- 72–82 Astronomical Book
+- 83–90 Dream Visions / Animal Apocalypse
+- 91–108 Epistle / Apocalypse of Weeks / Noahic addenda
+
+This completes **1 Enoch** as one of the 88-text working corpus.
+
+### Corpus count update
+The working corpus tally is now:
+- **9 of the 88 texts complete**
+- plus **Testament/Assumption of Moses** as an additional comparison text outside the original 88.
+
+### Next first unfinished roadmap section
+**SECTION 18 — EXODUS 1–4**
+
+Priority:
+- oppression and birth suppression,
+- midwife pair,
+- Moses basket/river transfer,
+- Hebrew/Egyptian identity,
+- Moses flight and well scene,
+- Moses/Zipporah,
+- mountain/burning bush,
+- divine descent / Moses ascent,
+- name/identity,
+- staff ↔ serpent reversible transformation,
+- hand altered/restored,
+- Moses/Aaron pair,
+- who speaks / who performs,
+- all ages, generations, dates and counts,
+- compare baby-basket, adult Moses, rod, mountain and paired operators as one continuous transformation sequence.
