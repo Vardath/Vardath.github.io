@@ -26209,3 +26209,186 @@ Priority:
 - central human axis geometry,
 - Jethro/Moses delegation structure,
 - all days, dates, counts and directional movements.
+
+
+## SECTION 20 progress A — Exodus 13–14: pillar pair, front→rear inversion and the bilateral sea corridor
+
+### Firstborn memory converts catastrophe into permanent ownership/redemption structure
+
+Exodus 13 immediately converts the tenth plague into a continuing system:
+- every **firstborn / womb-opener** belongs to YHWH,
+- animal firstlings sacrificed/redeemed according to type,
+- human firstborn sons **redeemed**.
+
+So the death/sparing polarity becomes a permanent:
+**first emergence from womb → special status → sacrifice or redemption**.
+
+This continues the birth-boundary theme from Exodus 1.
+
+### Passover/Exodus becomes a body-memory sign
+
+The event is to become:
+- sign on **hand**,
+- memorial/frontlet **between eyes**,
+- law in **mouth**.
+
+That creates a three-location body encoding:
+**hand / forehead-eye region / mouth**.
+
+This is symbolic memory, not literal body geometry in the original command's simplest sense, but it shows the Exodus event being mapped onto the human body.
+
+### Joseph bones — delayed cargo finally moves upward/out
+
+Moses carries **Joseph's bones** out of Egypt because Joseph had predicted divine visitation.
+
+This completes the Genesis delayed-transfer motif:
+**Joseph body dies/stays Egypt**
+→ **bones held as future cargo**
+→ **Moses carries bones during Exodus**.
+
+Classification:
+- Joseph/Moses = **P4/P7 intergenerational carrier handoff**, not same-person identity.
+
+### Route deliberately avoids the nearest path
+
+Israel is not taken by the shortest Philistine route.
+Instead:
+- turned toward wilderness/Sea of Reeds.
+
+This is a deliberate **detour before transition**, preventing immediate reversal to Egypt.
+
+### Pillar of cloud / pillar of fire — two time-states of one guiding presence
+
+Exodus 13 gives:
+- **pillar of cloud by day**
+- **pillar of fire by night**.
+
+Both occupy the same guiding function:
+- go before people,
+- lead route,
+- enable travel day/night.
+
+Pair classification:
+- probably **P3 time-dependent manifestation pair of one guiding phenomenon/presence**, not two independent pillars.
+
+This is one of the clearest “same role, altered visible state according to time” examples in Exodus.
+
+### Pillar shifts from front to rear
+
+At the sea:
+- messenger/divine guide had been **before** Israel.
+- it **moves behind** them.
+- pillar likewise moves from **front → rear**.
+- stands between Egypt and Israel.
+
+This is a direct positional state change:
+
+**leading configuration**
+→ **rear-guard configuration**
+→ **separator between two populations**.
+
+The same structure changes role because the situation changes.
+
+### One pillar produces opposite effects on two sides
+
+The pillar between camps produces:
+- cloud/darkness toward one side,
+- light in the night toward the other in the received text,
+- and prevents the two camps approaching one another **all night**.
+
+Thus one central separator generates:
+**Egypt side = blocked/dark**
+versus
+**Israel side = light/protected**.
+
+This repeats the plague darkness/light division but now around a **moving central barrier**.
+
+Textual/compositional caution:
+Exod 14:20 is syntactically difficult, and versions/scholars disagree over exact cloud/light parsing.
+
+### Staff/hand opens the route
+
+Command:
+- **lift staff**
+- **stretch hand over sea**
+- divide it.
+
+Execution:
+- Moses stretches hand,
+- YHWH drives sea with **strong east wind all night**,
+- water divides,
+- dry ground appears.
+
+The received narrative therefore overlays:
+**human rod/hand gesture**
+and
+**wind-driven environmental mechanism**.
+
+Source critics often separate these as different narrative strands:
+- one emphasizes Moses/hand/divided walls,
+- another YHWH/east wind/dried seabed.
+
+The final text combines both.
+
+### Sea corridor is explicitly bilateral
+
+Israel enters:
+- **middle of sea**
+- on dry ground,
+- water as wall on **right hand**
+- water as wall on **left**.
+
+This is perhaps the clearest literal bilateral corridor in Exodus:
+
+**water wall | central dry passage | water wall**
+with a moving population passing through the middle.
+
+For the Vardath geometry register this is high-value, but it remains a water crossing, not textual evidence of world-discs.
+
+### Same corridor has opposite outcomes by timing/group
+
+Israel:
+- enters first,
+- crosses dry.
+
+Egypt:
+- enters after,
+- becomes trapped/disordered,
+- water returns.
+
+Thus:
+**same open route + different phase/timing = survival vs destruction**.
+
+Gate accessibility is temporal.
+
+### Hand closes what hand opened
+
+At morning:
+- Moses again stretches hand over sea.
+- water returns.
+- route disappears.
+- pursuing force is covered.
+
+This gives the complete reversible environmental cycle:
+
+**closed water**
+→ hand/staff + east wind
+→ **open dry corridor**
+→ population passes
+→ second hand gesture
+→ **water returns / corridor closes**.
+
+### Morning-watch timing
+
+The Egyptian collapse occurs in the **morning watch**.
+Sea returns as **morning appears**.
+
+This directly follows Passover's night→morning enclosure/release sequence.
+
+### 600 chosen chariots
+
+Pharaoh takes:
+- **600 chosen chariots**
+- plus other Egyptian chariots in the final form.
+
+Record **600** beside Exodus 12's ~600,000 men, but do not assume intentional numerical pairing without further evidence.
