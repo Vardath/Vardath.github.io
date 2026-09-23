@@ -10107,3 +10107,13 @@ Priority pair tests:
 
 **Sources logged:** Genesis 38:27–30; scholarship comparing Perez/Zerah with Jacob/Esau twin inversion; Genesis 48; ritual studies of Jacob’s deliberate crossed-hand blessing.
 
+
+
+### Section 9 progress update B — Joseph descent/ascent and garment-carried identity
+
+> Joseph’s storyline is also strongly matching the **state-change-through-descent/ascent** pattern we’ve been tracking. He is stripped of the special garment, lowered into an **empty pit**, sold “down” into Egypt, loses another garment in Potiphar’s house and is pushed down again into prison, then is suddenly brought **up from the pit/prison**, shaved/reclothed, and elevated beside Pharaoh.
+>
+> The garment motif is doing exactly what it did with Jacob/Esau: **identity and status are repeatedly carried by removable outer layers**. Joseph’s coat is used to create a false death-identity; Potiphar’s wife uses a left-behind garment to create a false guilt-identity; Pharaoh then gives Joseph new clothing and insignia to establish a new ruling identity. That gives us a clean **strip → descend → false identity → strip again → descend → reclothe → ascend → new identity** sequence.
+
+**Sources logged:** Genesis 37–41; scholarly studies of clothing/garment motifs in Genesis 37–39 and Joseph’s investiture in Genesis 41.
+
