@@ -5993,3 +5993,11 @@ Priority pair tests:
 - three visitors as segmented function,
 - covenant “cutting” as possible split/passage geometry.
 
+
+
+---
+
+## 138. LIVE PROGRESS LOG — Section 5 begins (Genesis 12–18)
+
+> Section 4 is complete and saved. I’m continuing straight into **Section 5 — Genesis 12–18**, where the geometry changes from world-scale scattering to a **travelling chosen line**: Abram leaves one region, repeatedly crosses boundaries, separates from Lot, meets Melchizedek, passes through the split-covenant pieces, and then the Sarah/Hagar/Isaac/Ishmael pairing begins. I’ll keep logging each progress reply into the file.
+
