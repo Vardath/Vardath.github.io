@@ -13497,3 +13497,13 @@ For this investigation:
 
 This supersedes the earlier primary-after-Revelation placement for 3 Enoch in the active research roadmap.
 
+
+
+## 470. LIVE PROGRESS — natural-order Insert X1 begins: Life of Adam and Eve / Apocalypse of Moses
+
+> The first inserted book confirms that **after Genesis 3 is the right place**, but it also turns out to be textually broader than one simple book: the Greek *Apocalypse of Moses* and the Latin/Armenian/Georgian *Life of Adam and Eve* preserve overlapping but non-identical versions. I’m treating them as **one comparison tradition with variant branches**, because otherwise we would accidentally count variants as extra books.
+>
+> The strongest early clue already is that this tradition explicitly turns the serpent into a **vehicle/instrument for Satan**—in some versions Satan speaks through it and it can take an altered angelic form. That is unusually close to your idea that a “person/creature” may actually be the **visible carrier-form of another agency**.
+
+**Textual-control note:** the surviving Adam/Eve books are a family of recensions, not one perfectly uniform text. The Greek Apocalypse of Moses lacks some penitence/Satan-fall material present in Latin, Armenian and Georgian witnesses. Preserve variant provenance beside every motif.
+
