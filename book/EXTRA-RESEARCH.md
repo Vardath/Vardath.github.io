@@ -28542,3 +28542,113 @@ The Weeks preserve:
 → first heaven itself passes / new heaven appears.
 
 This is structurally compatible with the repeated house/world transition grammar already seen in Animal Apocalypse 90, although the details are not identical.
+
+
+## SECTION 17 progress B — pair/role structures in the Epistle and end-time material
+
+### Righteous / sinner — long-running polarity, not two people
+
+Chs. 91–105 organize humanity into two trajectories:
+- righteous / upright / elect,
+- violent / deceitful / oppressive.
+
+The polarity persists across:
+- earthly life,
+- death,
+- Sheol,
+- judgment,
+- final light/darkness.
+
+This is a **state/class polarity**, not a human double.
+
+### Light / darkness becomes destination geometry
+
+The righteous:
+- rise,
+- shine like heavenly lights,
+- portals of heaven open,
+- become companions of heavenly hosts.
+
+The wicked:
+- descend,
+- darkness becomes dwelling,
+- chains/fire/judgment.
+
+Thus moral identity becomes **vertical/spatial sorting**:
+**light/up/open portal**
+versus
+**dark/down/enclosed punishment**.
+
+### Body / spirit diverge after death
+
+The text repeatedly distinguishes:
+- body may suffer/die unjustly on earth,
+- spirit can later live/rejoice/be recompensed.
+
+This is another **one-person / multiple-state-route** model:
+**earth-body outcome ≠ final spirit outcome**.
+
+### Father / sons transmission chain
+
+Enoch summons:
+- Methuselah,
+- Methuselah's brothers,
+- all descendants/children.
+
+He transmits:
+- words,
+- books,
+- paths,
+- future history.
+
+The information path is:
+**Enoch → Methuselah/family → future generations**.
+
+This is a human preservation system parallel to:
+- Moses→Joshua writings,
+- Enoch→Methuselah Astronomical Book,
+- Noah carrier traditions.
+
+### Written earthly books / heavenly books pair
+
+The Epistle repeatedly distinguishes:
+- books humans write,
+- heavenly tablets/books where deeds and futures are already inscribed.
+
+The text even warns that humans may:
+- alter/pervert words,
+- write false books,
+while truthful copies preserve the revelation.
+
+This creates a useful **source/copy pair**:
+**heavenly record ↔ earthly transmitted record**.
+
+### “I and My Son” in chapter 105
+
+The received Ethiopic conclusion has God say approximately:
+**“I and My Son will be united with them for ever.”**
+
+This is a striking divine/son pair, but because chapter 105 and the textual history of the closing Epistle have attracted redactional/reception discussion, do not use this isolated line to construct a new cosmological pair without deeper textual study.
+
+For now classify:
+- **source/son companionship motif**
+- low priority for Vardath geometry.
+
+### Catastrophe water/weather control
+
+Chs. 100–101 return to regulated natural systems:
+- rain/dew can be **withheld**,
+- windows of heaven can be **closed**,
+- sea has **limits** and is confined by sand,
+- sea can dry at command.
+
+This reinforces a recurring Enochic model:
+environmental catastrophe is often described as **opening/closing/restraining normally bounded reservoirs/routes**.
+
+### Pair register
+- righteousness / violence — ethical polarity.
+- light / darkness — spatialized state polarity.
+- body / spirit — one identity, different routes/states.
+- Enoch / Methuselah — transmitter / successor.
+- heavenly books / earthly books — source / copy.
+- first heaven / new heaven — predecessor / successor state, not simultaneous pair.
