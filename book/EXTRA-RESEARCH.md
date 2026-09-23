@@ -23368,3 +23368,193 @@ After the first shepherd era:
 So the rebuilt structure is explicitly **not equivalent to the former ideal state**.
 
 That becomes crucial because chapter 90 later replaces it entirely with a new house.
+
+
+## SECTION 16 progress D — Maccabean horn, earth-splitting judgment, old/new house and universal species reset
+
+### Lambs opening eyes / great horn
+
+Near the vision's own historical horizon:
+- young lambs begin to open eyes,
+- older sheep remain blind/deaf,
+- ravens attack them,
+- horns arise,
+- a **great horn** grows on one sheep,
+- others gather to it,
+- hostile birds try to break its horn.
+
+Most scholarship identifies this great-horned sheep with **Judas Maccabeus** and the sequence with the Maccabean revolt, one reason the Animal Apocalypse is commonly dated to the **second century BCE, especially the 160s BCE**.
+
+This is historical dating evidence, not a primordial catastrophe marker.
+
+### Great horn as successor in the recurring leader pattern
+
+Structurally:
+**oppressed group → one member develops enlarged horn → sight opens → followers converge → enemies try to break horn → help descends**.
+
+So “horn” functions as an empowerment/leadership marker, not necessarily anatomical cosmology.
+
+### Staff strikes earth → earth splits and swallows hostile groups
+
+At final intervention:
+- Lord of sheep takes **staff of wrath**,
+- strikes earth,
+- **earth cleaves apart**,
+- hostile beasts/birds fall away from sheep,
+- are **swallowed by earth**,
+- earth closes over them.
+
+This strongly echoes:
+- first dream's earth/abyss swallowing,
+- Korah-like earth opening traditions,
+- other rod/staff + land-split scenes.
+
+For Vardath comparison:
+**central rod/staff action → ground opens → selective sorting/downward removal → closure**.
+
+But the text presents divine judicial action, not natural mechanics.
+
+### Judgment separates three classes into abyss
+
+Final judgment:
+1. fallen **stars/Watchers**,
+2. **70 shepherds**,
+3. guilty/blind sheep,
+
+all receive related but distinct judgments into fiery abyss structures.
+
+This continues the corpus-wide **sorting by class/function** pattern.
+
+### Seven first white ones return
+
+At judgment the Lord calls the **seven first white beings** back into the scene.
+
+This closes the earlier 7-agent frame from chapters 87–88.
+
+### Old house is literally folded up and removed
+
+This is one of the most important architectural transitions in the entire Enochic corpus.
+
+The old house:
+- is **folded up**,
+- all **pillars** folded/removed with it,
+- beams/ornaments removed,
+- carried away,
+- placed elsewhere (Charles: **south of the land**).
+
+Then:
+- a **new house** arrives/is brought,
+- **greater and loftier** than first,
+- placed **in the same place**,
+- all pillars new,
+- all ornaments new and larger,
+- all sheep enter it.
+
+This is raw text-level sequence:
+
+**old inhabited structure → whole structure/supports folded → transported away → new larger structure installed in same locus → population regathered inside**.
+
+This is extraordinarily relevant to the mature Vardath model's interest in **old world/support geometry being displaced and a successor stable structure occupying the active locus**.
+
+However, standard scholarship reads this primarily as **Jerusalem/sanctuary eschatology**. The structural parallel should be kept separate from historical-literary meaning.
+
+### Population regathering exceeds enclosure capacity
+
+All previously dispersed/destroyed classes return/assemble:
+- sheep,
+- beasts,
+- birds.
+
+They gather into the new house and it becomes:
+- large,
+- broad,
+- very full,
+- in one wording effectively unable to contain everyone.
+
+This is a **population convergence/regathering** stage after structural replacement.
+
+### Sword is returned and sealed
+
+After conflict:
+- weapon/sword given to sheep is returned to house,
+- **sealed** before Lord.
+
+So military/catastrophic function is explicitly deactivated at stabilization.
+
+### Universal eye-opening
+
+At final state:
+- every eye opens,
+- no one remains unable to see.
+
+This completes the long open/blind state cycle.
+
+### White bull and universal transformation
+
+A final **white bull with great horns** appears.
+
+Then:
+- all animal generations are **transformed**,
+- all become **white bulls/cattle**.
+
+This is a true universal species-state reset:
+many differentiated animals/nations → **one primordial-looking white-bull form**.
+
+Scholarly interpretations of the final white bull vary:
+- often messianic/new-Adam interpretation,
+- Daniel Olson argues for a strong Jacob/Israel/universal-blessing dimension,
+- other scholarship emphasizes restored primordial humanity.
+
+Therefore do not lock the figure to a single identity prematurely.
+
+For the project, the high-value structural point is independent of exact identity:
+
+**many differentiated visible forms → final convergence into one common form.**
+
+### New humanity mirrors the beginning
+
+The vision begins:
+- Adam = **white bull**.
+
+It ends:
+- humanity/nations become **white bulls** again.
+
+This makes the whole Animal Apocalypse a giant state-cycle:
+**primordial white-humanity → differentiation/conflict → history → catastrophe/judgment → renewed white-humanity**.
+
+That is not a literal rewind:
+the final state is **new**, reached after the entire historical sequence.
+
+This aligns closely with the user's rule:
+**reset = handoff/renewal, not time rewinding.**
+
+### Pair / form conclusions from Section 16
+
+Strong pairs:
+- Adam / Eve — primal male/female.
+- Cain / Abel — black/red rivalry.
+- Abel / Seth — lost/replacement branch.
+- Abraham's Ishmael / Isaac — wild-ass / white-bull branches.
+- Isaac's Esau / Jacob — boar / sheep branches.
+- Joseph / eleven brothers — 1 displaced + 11 reunited.
+- Moses / Aaron — paired messengers.
+- likely Joshua / companion conquest leader — successor pair, second identity less secure.
+- Saul / David — predecessor/rival/successor pair.
+- David / Solomon — generational succession.
+- 70 shepherds / recorder — operators versus independent auditor.
+- old house / new house — structural predecessor/successor pair.
+
+Strong form-change controls:
+- stars → bulls,
+- Noah bull → man,
+- Moses sheep → man,
+- sheep → rams,
+- lamb → horned ram,
+- final animals → white bulls.
+
+The text therefore proves within its own symbolic system that:
+**one underlying person can change visible symbolic form when role/state changes**,
+while also proving that:
+**many different people can share one form**.
+
+Both rules must be applied to the wider Bible investigation.
