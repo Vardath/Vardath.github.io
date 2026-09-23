@@ -8806,3 +8806,13 @@ Priority pair tests:
 
 **Sources logged:** Genesis 30:37–43; Genesis 31:44–54; Scott Noegel on the rods/wordplay; scholarship on the Jacob–Laban treaty and stone boundary markers.
 
+
+
+### Section 8 progress update B — Jabbok threshold transformation
+
+> The **Jabbok scene is even closer to your “same figure / same mechanism in another form” idea than I expected**. Just before the wrestling, Jacob encounters divine messengers and names the place **Mahanaim — “two camps.”** He then literally divides his own people into **two camps**, sends everything across the river, and is finally left **alone** at the threshold. There, a “man” appears whose identity is deliberately unstable: human in wording, divine in power, called an angel in Hosea, and identified by Jacob as **God seen face to face**.
+>
+> Then the crucial transformations happen in one sequence: **crossing → isolation → struggle → touch at the hip → bodily alteration/limp → Jacob renamed Israel → dawn → crossing complete → Esau’s face compared to the face of God**. For your cosmology, this reads almost like a humanized **threshold passage in which the traveller and the gate-being become entangled, the old identity is altered, and the person exits the boundary in a new state**.
+
+**Sources logged:** Genesis 32–33; Hosea 12; Bradford Anderson on human/divine intersection in Genesis 32–33; scholarship on Peniel, Jabbok, Mahanaim, and the Jacob/Israel name transition.
+
