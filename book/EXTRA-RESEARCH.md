@@ -23743,3 +23743,157 @@ Priority:
 - important dates/generations/counts,
 - people/pairs and state changes,
 - compare the Weeks timeline directly with the Animal Apocalypse and later Archaix-style cycle claims only after units are normalized.
+
+
+## SECTION 17 progress A — 1 Enoch 91–93: Apocalypse of Weeks as a ten-stage historical clock
+
+### Text-order correction first
+
+The Apocalypse of Weeks is split out of numerical order in the received Ethiopic arrangement:
+- weeks **1–7** occur in 1 Enoch 93,
+- weeks **8–10** occur in 1 Enoch 91.
+
+The Aramaic Qumran witness **4Q212** confirmed that the numerical sequence originally ran continuously.
+
+So the working timeline must read:
+**week 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10**,
+not follow chapter order mechanically.
+
+### Ten weeks, each conceptually divisible by seven
+
+The text explicitly names:
+- Enoch in the **7th part of week 1**,
+- final eternal judgment in the **7th part of week 10**.
+
+Loren Stuckenbruck notes that this implies a larger scheme of:
+**10 weeks × 7 parts = 70 parts**,
+but warns that the text does **not require all periods to be equal duration**.
+
+This is extremely important for later cycle comparison:
+- **70-part structure is real**,
+- **70 equal year-blocks is not established**,
+- a **490-year interpretation** belongs to comparative chronographic discussion, not the plain wording of this text.
+
+### Week-by-week timeline
+
+**Week 1**
+- primordial righteous order,
+- Enoch born in the **7th part**.
+
+**Week 2**
+- wickedness/deceit rise,
+- “first end,”
+- **one man saved** = Noah/Flood survivor,
+- unrighteousness continues afterward.
+
+**Week 3**
+- at close, one man elected as **plant of righteous judgment**,
+- standard identification: **Abraham**,
+- his posterity becomes enduring righteous plant.
+
+**Week 4**
+- holy/righteous visions,
+- **law for all generations**,
+- an **enclosure** made.
+- Standard historical decoding: Moses/Sinai/Torah + wilderness sanctuary/tabernacle.
+
+**Week 5**
+- **house of glory/dominion built**.
+- Standard reading: Solomon's Temple.
+
+**Week 6**
+- blindness/wisdom abandoned,
+- **one man ascends**,
+- house burned,
+- chosen root dispersed.
+- The ascending man is normally identified with **Elijah**.
+- House-burning/dispersal = destruction of First Temple + exile.
+
+**Week 7**
+- apostate/perverse generation,
+- at close, chosen righteous group arises,
+- receives **sevenfold instruction** about creation.
+- Most scholarship places the author's own historical horizon in this week, often shortly before the Maccabean revolt.
+
+**Week 8**
+- “week of righteousness,”
+- sword given for judgment,
+- oppressors judged,
+- righteous acquire houses,
+- **new house for Great King** built in glory.
+
+**Week 9**
+- righteous judgment revealed to whole world,
+- godless works disappear,
+- world written down for destruction/judgment.
+
+**Week 10**
+- in its **7th part**:
+  - great eternal judgment,
+  - vengeance/judgment among angels,
+  - first heaven passes away,
+  - **new heaven appears**,
+  - powers of heaven give **sevenfold light**.
+
+**After week 10**
+- “many weeks without number,”
+- enduring goodness/righteousness.
+
+### Concentric / mirrored history
+
+Scholarly analysis detects a deliberate concentric pattern:
+
+- Week 1 enduring righteousness ↔ post-week-10 enduring righteousness.
+- Week 2 deceit/violence ↔ week 9 removal of godlessness.
+- Week 3 righteous plant ↔ week 8 righteous house.
+- Week 4 law/enclosure ↔ week 7 perverse generation rejecting proper order.
+- Week 5 house built ↔ week 6 house destroyed.
+
+So the centre is:
+**house constructed → house destroyed**.
+
+The second half then moves back outward toward:
+**righteous remnant → new house → world judgment → new heaven → unnumbered stable time**.
+
+This is genuine historical mirror-architecture.
+
+### Vardath comparison
+
+The useful structural sequence is:
+
+**ordered beginning**
+→ corruption
+→ survivor
+→ chosen branch
+→ law/enclosure
+→ stable house
+→ blindness
+→ house destruction + dispersal
+→ remnant/relearning
+→ new house
+→ global judgment
+→ old heaven departs / new heaven
+→ unnumbered stable continuation.
+
+This is strongly compatible with the project's general **state-transition / successor-world** grammar.
+
+But:
+- the text is theological history,
+- it does not specify stacked future/past world-discs,
+- “new heaven” is not automatically the physical upper world moving into place.
+
+### Timing markers
+- **10 weeks**.
+- implied **70 parts**.
+- explicit critical positions: **week 1, part 7** and **week 10, part 7**.
+- **week 7** is the pivotal historical present/future threshold.
+- **week 8** introduces righteous reversal.
+- **week 10** completes measured history.
+- after that: **weeks without number**.
+
+### Dating control
+Modern scholarship often dates the Apocalypse of Weeks to the early/mid second century BCE, plausibly **before 167 BCE** or around **175–170 BCE**, with exact dating debated.
+
+That makes the later Maccabean “great horn” of the Animal Apocalypse a useful comparison:
+- Apocalypse of Weeks may stop just before/open toward the crisis,
+- Animal Apocalypse appears to extend into the revolt itself.
