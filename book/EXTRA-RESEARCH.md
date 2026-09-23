@@ -20950,3 +20950,111 @@ This is a literal **boundary marker + no-hostile-crossing rule**. The site remai
 - Gilead covenant dated month 3, day **15**.
 - Jabbok crossing/reconciliation: month 9, day **11**.
 - Jacob sends support to Isaac/Rebecca **four times a year**, positioned between seasonal phases.
+
+
+## SECTION 12 progress B — Jubilees 30–32: Levi/Judah become a literal right/left functional pair
+
+### Simeon / Levi — allied pair first, then Levi separates into a special role
+
+At Shechem, Simeon and Levi act together as the two sons who attack the city. Jubilees then singles out **Levi**:
+- his deed is written in heaven,
+- his seed is chosen for priesthood,
+- his descendants are assigned sanctuary/judicial/teaching functions.
+
+So the pair begins as a **cooperative two-person unit**, but one member is later extracted into a permanent specialized function.
+
+### Levi / Judah — bilateral geometry around Isaac
+
+This is one of the strongest deliberate pair scenes yet.
+
+Isaac:
+- receives Jacob with **Levi and Judah**,
+- his former eye-darkness leaves,
+- the spirit of prophecy descends into his mouth,
+- he takes **Levi in his right hand**,
+- **Judah in his left**,
+- blesses Levi first,
+- then blesses Judah,
+- later has the two sleep **one at his right and one at his left**.
+
+Their functions divide:
+- **Levi / right** → priesthood, sanctuary, teaching, judging, spiritual leadership.
+- **Judah / left** → strength, prince/kingship, throne, national deliverance.
+
+Pair classification:
+- **P2 polarity pair** — priest / ruler.
+- **P7 complementary-function pair** — two distinct offices supporting one people.
+- Geometrically: **central Isaac → right Levi / left Judah**.
+
+Modern scholarship commonly reads Jubilees 31 as a form of **dual leadership**, with Levi given precedence by right-hand placement and first blessing. A redaction-critical study also warns that some Levi material in Jubilees 30–32 may reflect later editorial development, so preserve the literary geometry while keeping source-growth caution.
+
+### Bethel becomes a much larger time-interface scene
+
+Jubilees 32 adds several things to the earlier ladder/gate episode:
+
+1. Levi dreams he and his descendants have been ordained priests.
+2. Jacob performs tithing and festival sacrifice.
+3. Jacob proposes to make Bethel a permanent sanctuary.
+4. God appears and formally renames him **Israel**.
+5. God then **ascends into heaven while Jacob watches**.
+6. An angel **descends from heaven carrying seven tablets**.
+7. Jacob reads on them everything that will happen to him and his sons **throughout all ages**.
+8. He is told **not** to build the permanent sanctuary there.
+9. The angel promises to restore all the read material to Jacob's memory.
+10. The angel **ascends again**.
+11. Jacob writes the revealed timeline down.
+
+This creates:
+**gate-place → divine ascent → messenger descent → seven tablets / whole future → messenger ascent → written earthly record**.
+
+For Vardath research this is high-value because a location already called a **gate of heaven** becomes an interface where a human receives a compressed record of future history. It still does not say that physical future worlds are touching the present, but the **gate + ascent/descent + all-time information transfer** package is real.
+
+### Seven → eighth-day transition
+
+Jacob's feast:
+- runs **seven days**,
+- then receives an added **eighth day** called **Addition**.
+
+This is another explicit **7 → 8 boundary/extension**. Retain for the master number table without assigning Vardath/JANUS meaning yet.
+
+### Seven-tablet information package
+
+The descending angel carries **seven tablets**. This is a separate seven from the seven-day feast and should be logged independently.
+
+### Sacrifice number cluster
+
+On month 7 day 15:
+- **14 oxen**
+- **28 rams**
+- **49 sheep**
+- **7 lambs**
+- **21 goats**
+
+Every number is a multiple of **7**. Total = **119 = 17×7**.
+
+The text then gives another offering set and says the pattern continued daily for **seven days**.
+
+Do not infer hidden mathematics yet, but this chapter is numerically saturated with sevens.
+
+### Rachel / Benjamin and pillar control
+
+Rachel gives birth to Benjamin:
+- she names him **Son of my sorrow**,
+- Jacob renames him **Benjamin**,
+- Rachel dies,
+- Jacob builds a **pillar over her grave**.
+
+Again, pillar does not automatically mean cosmic axis. Here it plainly marks a grave.
+
+### Dates / numbers from chapters 30–32
+- Dinah: **12 years old**.
+- Shechem episode: **2143 A.M.**, month 4.
+- Levi's righteousness: remembered for **1000 generations**.
+- Bethel return: new moon of **month 7**.
+- Isaac: **165 years old**.
+- Jacob tithe: month 7 day **14**.
+- festival begins day **15**.
+- seven-day festival + added **8th day**.
+- Jacob's second vision: day **22**.
+- Deborah dies night of day **23**.
+- Benjamin born month **8**, day **11**, **2143 A.M.**
