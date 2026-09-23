@@ -29052,3 +29052,113 @@ It becomes central when Moses later goes out to “his brothers” and reacts to
 - Moses hidden before basket placement: **3 months**.
 - Reuel/Jethro's daughters at Midian well: **7**.
 - Moses takes **one**, Zipporah, as wife.
+
+
+## SECTION 18 progress B — Exodus 2–3: well, mountain, fire-without-consumption and approach boundary
+
+### Moses repeats a well-mediated marriage pattern
+
+After fleeing Egypt:
+- Moses sits by a **well**,
+- **7 daughters** of the priest of Midian arrive,
+- hostile shepherds drive them away,
+- Moses intervenes,
+- waters their flock,
+- is invited into household,
+- receives Zipporah.
+
+This continues the Genesis pattern:
+**stranger at well → intervention/assistance → household incorporation → marriage**.
+
+Compare Abraham servant/Rebekah and Jacob/Rachel later, but do not claim one hidden event yet.
+
+### Moses / Zipporah — exile-family pair
+
+Zipporah anchors Moses' Midian state.
+Their son is named **Gershom**, with explanation that Moses has been a stranger/sojourner in a foreign land.
+
+This marks Moses' identity progression:
+**Hebrew infant → Egyptian court child → fugitive → Midianite household husband/father → returning deliverer**.
+
+One body carries multiple social states.
+
+### Burning bush — stable material with active fire but no consumption
+
+At Horeb, “mountain of God”:
+- messenger/angel appears in **flame of fire from within a bush**,
+- bush burns,
+- bush is **not consumed**,
+- Moses turns aside specifically to inspect why the state persists.
+
+This is a strong state anomaly:
+**active high-energy/fire state + material object remains structurally present**.
+
+For Vardath comparison:
+possible analogy to an energized lattice/structure remaining coherent under visible energy.
+
+Control:
+standard literary/theological interpretation is divine theophany/self-disclosure; the text gives no plasma mechanism.
+
+### Angel / YHWH / voice — layered manifestation problem
+
+The scene shifts grammatically among:
+- messenger/angel of YHWH appearing in flame,
+- YHWH seeing Moses approach,
+- God calling from bush.
+
+Ancient and modern interpreters have handled this as mediated divine manifestation in different ways.
+
+For our pair framework:
+do not multiply these automatically into separate physical beings.
+Better provisional classification:
+**visible messenger/manifestation + source voice/presence**.
+
+This is analogous to other “operator/manifestation/source” distinctions already tracked.
+
+### Sacred boundary — approach permitted, then limited
+
+Moses approaches.
+Then:
+- told **do not come closer**,
+- told remove sandals,
+- ground is holy.
+
+This is an explicit **proximity threshold** around an active manifestation.
+
+So Horeb supplies:
+**mountain → anomalous fire/object → approach → boundary command → communication**.
+
+### Up/down language is operational
+
+God says:
+- He has seen suffering below,
+- has **come down** to deliver,
+- will **bring Israel up** from Egypt to another land.
+
+This is theological/geographic “down/up,” not proof of world-layer transfer.
+Still, it establishes the narrative's directional grammar.
+
+### Moses as central mediator at mountain
+
+Moses alone:
+- approaches manifestation,
+- receives command,
+- returns to people,
+- later repeatedly moves between mountain/source and population.
+
+This begins the exact mediator pattern that becomes much stronger at Sinai.
+
+### Three-day journey marker appears in mission instructions
+
+Moses is told that he and elders will request permission for a **three-day journey into wilderness** to sacrifice.
+
+Record **3 days** as an early Exodus interval, but do not yet equate it with Passover/other three-day patterns.
+
+### Three ancestral names
+
+The divine identity is repeatedly anchored to:
+- Abraham
+- Isaac
+- Jacob.
+
+This is a **3-generation ancestor triad**, functioning as identity continuity across time.
