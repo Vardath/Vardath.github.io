@@ -22352,3 +22352,139 @@ Priority:
 - Uriel as guide/operator,
 - whether “gate” means fixed spatial aperture, timed route, or both,
 - exact cycle table for later comparison with Jubilees, 2 Enoch and Archaix claims.
+
+
+## SECTION 15 progress A — 1 Enoch 72–76: gate-routing system, mirrored solar cycle and fourfold year structure
+
+### Six east + six west portals — timed route selection
+
+Chapter 72 is explicit:
+- **6 portals in the east** where sun/moon rise,
+- **6 corresponding portals in the west** where they set,
+- multiple windows beside them,
+- the sun uses different numbered portals during different portions of the year.
+
+The sun's annual gate sequence in Charles' received text is:
+
+**4 → 5 → 6 → 6 → 5 → 4 → 3 → 2 → 1 → 1 → 2 → 3 → back to 4**
+
+This is a mirror-like out-and-back progression rather than a one-way march through twelve unique doors.
+
+The durations attached to the twelve stages are:
+**30, 30, 31, 30, 30, 31, 30, 30, 31, 30, 30, 31 = 364 days.**
+
+This gives a repeating route-state model:
+**same sun → same 6 gate-pairs → different gate selected according to time → yearly return to initial state.**
+
+For Vardath comparison, the useful point is structural:
+a **gate can be a recurring timed interface whose accessibility/selection changes by phase**, not necessarily a one-time hole.
+
+### Hidden return route — west → north → east
+
+The visible path:
+- rise in east,
+- cross heaven,
+- set west.
+
+The return:
+- sun goes down from heaven,
+- turns **through the north**,
+- returns to east,
+- is guided to the appropriate portal.
+
+So the full cycle has:
+**visible east→west traversal + hidden/other-side northward return**.
+
+This resembles the “upper visible path / hidden return path” already logged from 2 Enoch, though the exact cosmologies differ.
+
+### Day/night ratios form a symmetric cycle
+
+The text divides day+night into **18 parts** and gives a mirrored seasonal pattern:
+
+- 10 / 8
+- 11 / 7
+- 12 / 6  ← longest day
+- 11 / 7
+- 10 / 8
+- 9 / 9   ← equality
+- 8 / 10
+- 7 / 11
+- 6 / 12  ← longest night
+- 7 / 11
+- 8 / 10
+- 9 / 9   ← equality / annual closure
+
+This is a true numerical mirror:
+**expansion → extreme → contraction → balance → inversion → opposite extreme → return to balance.**
+
+Do not turn this into a catastrophe cycle; it is the text's normal annual solar law.
+
+### Sun / moon pair — equal size, unequal light
+
+Chapter 72 says:
+- circumference/size of sun and moon is equal,
+- sun's light is **7×** moon's light.
+
+This is a clean P2 pair:
+**same scale / unequal intensity**.
+
+### Wind-driven chariots
+
+Both sun and moon:
+- travel in chariots,
+- chariots are driven by **wind**.
+
+Thus visible celestial body and moving vehicle/medium are distinct roles:
+**luminary ≠ chariot ≠ wind-driver/force**.
+
+This fits the project's mature role distinction:
+operator/object/vehicle/medium need not be one thing.
+
+### Four intercalary days / four quarters
+
+Chapters 75 and 82:
+- **360 ordinary counted days**
+- plus **4 intercalary/quarter-leading days**
+- total **364**.
+- the four special leaders divide the year into **4 parts**.
+
+Each quarter = **91 days = 13 weeks**.
+Therefore:
+**4 × 91 = 364 = 52 weeks**.
+
+The text associates the four special positions with portals:
+**1, 3, 4, 6**.
+
+This is a genuine fourfold temporal skeleton built into the calendar.
+
+### Twelve wind portals = 3 × 4 directions
+
+Chapter 76:
+- **12 wind portals**
+- **3 east**
+- **3 south**
+- **3 north**
+- **3 west**.
+
+Of the twelve:
+- **4** yield blessing/prosperity,
+- **8** are associated with harmful/destructive winds in Charles' wording.
+
+This is explicit:
+**4 directional sectors × 3 portals each = 12**.
+
+Keep separate from the 6 east + 6 west luminary gates: they are related cosmic portal systems, not necessarily the same twelve openings.
+
+### First numerical register
+- east luminary gates: **6**
+- west luminary gates: **6**
+- total paired east/west openings: **12**
+- windows in fourth solar portal: **12**
+- annual solar days: **364**
+- quarter-days: **91 × 4**
+- ordinary days + intercalary: **360 + 4**
+- weeks/year: **52**
+- day/night total units: **18**
+- sun:moon light ratio: **7:1**
+- wind portals: **12 = 3×4**
+- beneficial:harmful wind gates: **4:8** in Charles' text.
