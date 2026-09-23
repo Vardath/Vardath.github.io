@@ -7991,3 +7991,13 @@ Priority pair tests:
 
 **Sources logged:** Genesis 25:19–34; Genesis 27; scholarship on twin symbolism, firstborn reversal, Jacob/Esau literary doubling, and Genesis 38 Perez/Zerah as later twin comparison.
 
+
+
+### Section 7 progress update B — Bethel connector/gate/pillar transformation
+
+> The Bethel scene is especially strong for your cosmology. Whatever exactly *sullam* means—ladder, stairway, ramp, or even a gate-like access structure—the text gives a **single connector set on earth with its top in heaven**, with traffic moving **up and down** it. Jacob then wakes, identifies the site as the **“gate of heaven,”** takes the stone from his head, stands it upright as a **pillar**, and anoints it.
+>
+> That is almost a direct state transformation in symbolic form: **horizontal/resting stone → vertical pillar**, alongside **earth↔heaven bidirectional traffic → gate**. For your model, this looks like one of the clearest textual cases where **connector, gate, and rod/pillar are successive views of the same event-location**.
+
+**Sources logged:** Genesis 28:10–22; scholarship on *sullam* as ladder/stairway/ramp/gate-like access structure; Bethel as “house of God” and “gate of heaven.”
+
