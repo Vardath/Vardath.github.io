@@ -25715,3 +25715,106 @@ Both structures are literarily plausible and need not be mutually exclusive.
 - locust east wind: **day + night**, arrival in morning.
 - darkness: **3 days**.
 - final plague: **midnight**.
+
+
+## SECTION 19 progress E — Passover word test: `ʿavar` is the movement verb; `pasaḥ` is probably protect/spare
+
+### The key lexical distinction
+
+Exodus 12:12/23 describes YHWH moving through Egypt with a normal movement verb from the root:
+
+**ע.ב.ר / ʿ-b-r — “pass/go through.”**
+
+Then a different verb is used at the Israelite houses:
+
+**פ.ס.ח / p-s-ḥ — `pasaḥ`.**
+
+The traditional English festival name “Passover” encourages readers to hear `pasaḥ` as literal motion “passing over” something.
+
+But substantial philological scholarship argues that in Exodus 12 the better sense is:
+
+**spare / protect / shelter**.
+
+Support includes Isaiah 31:5, where the same root occurs in a parallel sequence about divine protection.
+
+The Greek Septuagint itself translates `pasaḥ` in Exod 12:13 and 12:27 with protection/shelter language, though it renders 12:23 differently.
+
+### Consequence for the “pass-over / pass-under” lattice hypothesis
+
+The Hebrew text gives us **two different actions**:
+
+1. YHWH **passes/goes through Egypt** — `ʿavar`.
+2. At the marked Israelite entrance, YHWH **pasaḥs** — probably **protects/spares** the door/house.
+
+Therefore the word **Pesach itself is weak evidence for a physical object passing above another object**.
+
+A literal:
+**one lattice strand goes over / another passes under**
+cannot be derived securely from the Hebrew verb.
+
+This does **not** make the scene geometrically irrelevant.
+It shifts the strongest geometry from **over/under motion** to **boundary protection**.
+
+### Exodus 12:23 is a doorway-blocking scene
+
+The verse's spatial grammar is:
+
+- YHWH moves through Egypt to strike.
+- sees blood on the frame.
+- `pasaḥ`s/protects the **door/entrance**.
+- does **not allow the destroyer to enter** the house to strike.
+
+So the most literal geometry is:
+
+**destructive force outside**
+→ **marked vertical opening**
+→ **protecting/blocking agency at opening**
+→ **entry denied**
+→ **living occupants remain inside**.
+
+This is more like a guarded interface or sealed gateway than a crossing strand.
+
+### Source-layer caution — YHWH and “the destroyer”
+
+Exodus 12 has an agency tension:
+- some verses say **YHWH himself** strikes the firstborn.
+- 12:23 says YHWH prevents **the destroyer** from entering.
+
+Modern source/redaction studies often treat the detailed destroyer/door ritual as a later or distinct literary layer within the Passover complex.
+
+Therefore:
+- do not automatically identify YHWH and destroyer as two equal independent figures,
+- but also do not erase the received text's two-agent grammar.
+
+Working pair classification:
+- **source/protecting authority vs destructive agent**,
+- with compositional uncertainty.
+
+### Strong comparison with the Zipporah episode
+
+Immediately before the Egyptian confrontation:
+- death threat approaches Moses/son-household,
+- Zipporah cuts with flint,
+- blood is applied/touched at the body,
+- death threat ceases.
+
+At Passover:
+- death moves through Egypt,
+- sacrificial blood marks the household entrance,
+- marked household is spared/protected.
+
+The shared grammar is:
+
+**threat of death**
+→ **covenantal blood**
+→ **boundary/contact point**
+→ **death-route altered**.
+
+This is a much stronger textual parallel than a literal “passing over” motion.
+
+The rites are still different:
+- circumcision vs lamb sacrifice,
+- body boundary vs house boundary,
+- family traveller vs national event.
+
+Do not collapse them.
