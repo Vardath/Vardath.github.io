@@ -14190,3 +14190,975 @@ Priority tests:
 
 **Primary/source control:** 2 Enoch 24–33 and 65–66; Andrei Orlov’s work on Adoil and the eschatological “single aeon” explicitly notes the reversal between primordial disintegration and final reintegration.
 
+
+
+---
+
+## 504. COMPARISON INSERT X2 COMPLETE — 2 Enoch / Slavonic Enoch
+
+**Natural placement:** after Genesis 5 and before Genesis 6.
+
+**Textual-control rule:** 2 Enoch survives in longer and shorter Slavonic recensions with significant differences. Chapters 1–67 form the more stable core structure; chapters 68–73, especially some Melchizedek material, have more complicated manuscript distribution. Preserve recension status beside strong claims.
+
+### 504.1 Why this placement is natural
+
+Genesis 5 gives only the compressed statement that:
+- Enoch walked with God,
+- he was not,
+- God took him.
+
+2 Enoch expands exactly that moment into:
+- first ascent,
+- layered heavens,
+- celestial instruction,
+- bodily/visible transformation,
+- temporary return to earth,
+- final ascent.
+
+So the book naturally sits **between Enoch’s Genesis genealogy and the Genesis 6/Flood crisis**.
+
+---
+
+## 505. Enoch begins as a sleeper receiving a threshold summons
+
+The ascent begins while Enoch is at home, asleep/resting.
+
+Two enormous luminous men appear:
+- faces like sun,
+- eyes like burning lamps,
+- fire from mouths,
+- wings brighter than gold.
+
+They tell him he will ascend that day.
+
+Pattern:
+
+**ordinary domestic state**
+→ **sleep/altered threshold**
+→ **luminous messengers**
+→ **vertical extraction.**
+
+This continues the recurring motif that altered consciousness precedes cross-domain access.
+
+---
+
+## 506. First ascent is explicitly bodily/locomotive
+
+The messengers:
+- take Enoch onto their wings,
+- carry him upward,
+- place him on clouds,
+- move him successively through heavens.
+
+The narrative does not present the journey as merely abstract thought.
+
+It is described spatially and sequentially.
+
+For Vardath:
+this gives a strong **traveller-through-layers** analogue.
+
+Control:
+it remains apocalyptic visionary literature.
+
+---
+
+## 507. First heaven — atmospheric storehouses and moving gates
+
+Enoch sees:
+- vast ocean,
+- star-governing angels,
+- snow/ice treasuries,
+- cloud treasuries,
+- dew stores,
+- openings that are shut and opened.
+
+This makes the first heaven a **mechanically regulated environmental layer**.
+
+Important recurring grammar:
+**storehouse**
++ **guardian**
++ **opening/closure**
++ **measured release.**
+
+Later Enoch says rain/clouds/winds are released by scale and measure.
+
+---
+
+## 508. Second heaven — imprisoned fallen beings
+
+The second heaven contains dark imprisoned angels awaiting judgment.
+
+This immediately shows:
+- heavens are not simply ranked by goodness,
+- vertical position ≠ moral status.
+
+Important anti-overfitting control:
+do not assume every “higher” level equals future/better and every lower level equals past/worse.
+
+---
+
+## 509. Third heaven — Paradise between corruptible and incorruptible
+
+2 Enoch places Paradise in a striking intermediate relation:
+**between the corruptible and incorruptible.**
+
+It is open toward upper heaven but closed from the ordinary world.
+
+This is one of the strongest boundary-state descriptions in the text.
+
+For Vardath:
+Paradise behaves like an **intermediate protected domain** between two ontological conditions.
+
+---
+
+## 510. Paradise root / exit / streams
+
+The Tree of Life has its root at the exit leading toward earth.
+
+Streams:
+- emerge,
+- divide,
+- descend,
+- cycle.
+
+This keeps:
+**tree/axis**
++ **water**
++ **boundary**
++ **downward distribution**
+in one image.
+
+Do not yet equate Tree of Life with lattice.
+
+---
+
+## 511. Fourth heaven — explicit celestial machinery
+
+The fourth heaven contains:
+- solar path,
+- lunar path,
+- wheels/chariots,
+- eastern/western gates,
+- attendant beings,
+- measured day/year cycles.
+
+This is not merely “sun in sky.”
+
+The text imagines a **regulated transport system**.
+
+---
+
+## 512. Six east gates / six west gates
+
+The sun exits through six eastern gates and sets through six corresponding western gates.
+
+The path is seasonal and measured.
+
+This gives:
+**multiple aligned openings on one side**
+paired with
+**multiple aligned openings on opposite side.**
+
+For the Vardath comparison:
+this is strong bilateral gate geometry.
+
+---
+
+## 513. Sun loses visible glory at west boundary
+
+At the western gates:
+- the sun’s crown/radiance is removed,
+- angels guard/carry it,
+- the sun continues without its great visible light.
+
+Then:
+- it travels under the earth,
+- approaches east,
+- crown/radiance is restored,
+- it rises again.
+
+This is an explicit same-object/different-state cycle:
+
+**luminous visible state**
+→ **western threshold**
+→ **radiance removed**
+→ **hidden under-earth transit**
+→ **eastern threshold**
+→ **radiance restored**
+→ **visible emergence.**
+
+This is one of the strongest analogues to the user’s “same thing appears different depending on which world/side sees it” idea.
+
+---
+
+## 514. Under-earth route is part of the normal cycle
+
+The sun’s descent below is not catastrophe.
+
+It is ordinary cyclic motion.
+
+Therefore:
+**under/below does not automatically mean destruction.**
+
+Important for Vardath:
+a lower route can be a normal transport phase in a larger loop.
+
+---
+
+## 515. Seven-hour hidden interval / eighth-hour re-crowning
+
+2 Enoch gives a night sequence in which:
+- sun remains under earth for **seven great hours**,
+- in the **eighth hour** it approaches the east,
+- radiance/crown is restored before sunrise.
+
+This produces another:
+**7 hidden/completion**
+→ **8 renewed emergence**
+pattern.
+
+Record for numerical comparison.
+
+---
+
+## 516. Twenty-eight-year solar circuit
+
+The text gives the sun a **28-year circuit** before repeating from the beginning.
+
+Record raw interval:
+**28 years**.
+
+This is likely calendrical, not catastrophic.
+
+---
+
+## 517. Lunar cycle and intercalation
+
+2 Enoch also gives:
+- 12 lunar gates,
+- lunar year shorter than solar,
+- intercalation/reconciliation,
+- 19-year lunar period in one textual form,
+- larger cycle values in some transmission.
+
+This confirms the book’s obsession with **bringing mismatched cycles back into alignment**.
+
+For Vardath:
+synchronization/reconvergence is a real theme.
+
+---
+
+## 518. Fifth heaven — Watchers remain humanlike
+
+The Grigori/Watchers:
+- have humanlike appearance,
+- are gigantic,
+- are associated with descent to earth and union with women.
+
+This bridges:
+**heavenly being**
+and
+**human-shaped visible form.**
+
+Again, visible anthropomorphic shape does not necessarily identify ordinary humanity.
+
+---
+
+## 519. Enoch becomes mediator to fallen beings
+
+Enoch addresses the Watchers and instructs them to resume heavenly liturgy.
+
+So he is no longer only observer.
+
+He becomes:
+**traveller**
+→ **intercessor/mediator**
+→ **organizer within heavenly hierarchy.**
+
+This begins his transition from human visitor to operator.
+
+---
+
+## 520. Sixth/seventh heavens — ordered hierarchy
+
+Higher heavens contain:
+- angelic bands,
+- cosmic administration,
+- thrones/powers,
+- many-eyed beings,
+- ceaseless ordered worship.
+
+The key pattern for this project is:
+**world order is administered by layered functional beings**.
+
+Do not reduce each class to physical machinery.
+
+---
+
+## 521. Tenth heaven / divine face — maximum boundary
+
+In the longer recension Enoch reaches the highest heaven and confronts the divine Face.
+
+This boundary is so intense he cannot endure it normally.
+
+The text uses:
+- fire,
+- incandescent iron,
+- sparks,
+- overwhelming radiance.
+
+This is the climax of the vertical journey.
+
+---
+
+## 522. Earthly clothing removed
+
+Michael is ordered to:
+- take Enoch out of earthly clothing,
+- anoint him,
+- dress him in clothes of glory.
+
+This is explicit **state-equipment substitution**.
+
+Pattern:
+
+**earth-layer appearance**
+→ **outer form removed**
+→ **transition medium/oil**
+→ **upper-layer appearance applied.**
+
+This is one of the clearest “same identity / different layer-compatible form” motifs in the whole comparison corpus.
+
+---
+
+## 523. Glorified but not necessarily ontologically angel
+
+Enoch says he appears like one of the glorious ones with no visible difference.
+
+Modern scholarship disagrees on whether this is literal angelification.
+
+A careful reading:
+- visible form/function becomes angelomorphic,
+- Enoch later insists he remains a human like his sons.
+
+Best current classification:
+**same underlying person, transformed presentation/status.**
+
+This strongly supports the project’s distinction between:
+- underlying identity,
+- visible state.
+
+---
+
+## 524. Divine knowledge transfer takes 30 days + 30 nights
+
+The heavenly scribe Vrevoil teaches Enoch continuously.
+
+Enoch writes.
+
+The instruction spans:
+**30 days and 30 nights**.
+
+This gives a timed knowledge-transmission interval.
+
+Record for timing table.
+
+---
+
+## 525. 366 books
+
+One textual tradition says Enoch writes **366 books**.
+
+This is suggestive beside:
+- 365-year life,
+- 365-ish solar cycle,
+- calendar measurement.
+
+Do not force exact numerology, but preserve:
+**365 life / 366 books** as a textual numerical cluster.
+
+---
+
+## 526. Creation begins as visible emerging from invisible
+
+The divine creation revelation says God intends:
+**visible creation from invisible.**
+
+This is important.
+
+The transition is not:
+nothing → something
+in a simplistic sense.
+
+It is:
+**hidden/unseen potential**
+→ **visible differentiated world.**
+
+That is structurally close to latent lattice → manifest world imagery.
+
+---
+
+## 527. Adoil — one giant primordial entity releases multiplicity
+
+The primordial Adoil:
+- emerges from the invisible,
+- is enormous,
+- contains the great age/creation within,
+- disintegrates,
+- visible creation comes out.
+
+This is perhaps the strongest **one body → many world forms** image yet.
+
+Stripped geometry:
+
+**one enormous undivided container**
+→ **break/disintegration**
+→ **many visible structures emerge.**
+
+This is directly relevant to the user’s “single lattice object changes into many forms” intuition.
+
+---
+
+## 528. Arukhas — lower heavy foundation
+
+A second primordial entity, Arukhas:
+- emerges,
+- is heavy/dark,
+- moves downward,
+- becomes foundation of lower things.
+
+Meanwhile light becomes:
+- higher,
+- foundation of upper things.
+
+Thus the creation account explicitly gives:
+**light/high**
+versus
+**dark/heavy/low**
+as paired foundations.
+
+This is a stronger upper/lower polarity than Genesis alone.
+
+---
+
+## 529. Creation organized around middle waters
+
+2 Enoch places:
+- light,
+- darkness,
+- water,
+- solidification,
+- seven circles,
+- boundaries
+into one cosmogonic sequence.
+
+The world is not a featureless space.
+It is created by **division, placement and measured boundary-making**.
+
+---
+
+## 530. Big stones hardened from water
+
+The text says God hardens large stones from the waters and establishes solid structure above waters.
+
+For Vardath:
+possible analogy to solid world formation from fluid/plasma-like underlying state.
+
+Control:
+this is ancient cosmogony and should not be re-described as modern plasma physics.
+
+---
+
+## 531. Adam created from seven components
+
+In the longer recension Adam is built from seven components drawn from:
+- earth,
+- dew/solar element,
+- deep/water,
+- stone,
+- angel/cloud-like mobility,
+- grass,
+- divine spirit/wind.
+
+This deliberately makes the human body a **microcosm of the larger creation**.
+
+That is important to the user’s idea that a “person” can depict the world structure.
+
+Here the text itself constructs a person out of cosmic components.
+
+---
+
+## 532. Human form as compressed cosmology
+
+Because Adam’s body is assembled from world-elements,
+a human figure can literally function as a **miniature map of creation** in this text.
+
+This is one of the strongest methodological supports for taking anthropomorphic figures seriously as cosmological symbols.
+
+It still does not prove Squatter-Man equivalence.
+
+---
+
+## 533. Sevenfold cosmos / sevenfold human
+
+2 Enoch repeatedly aligns:
+- seven cosmological structures,
+- seven human components/faculties,
+- sevenfold eschatological patterns.
+
+This is deliberate macrocosm/microcosm correspondence.
+
+Record for later number synthesis.
+
+---
+
+## 534. Creation ends in an eighth-day principle
+
+2 Enoch says:
+- sevenfold created time runs its course,
+- the **eighth day** is appointed as a new first,
+- at the beginning of the **eighth thousand** begins uncounted/endless time.
+
+This is one of the strongest **7 → 8 enclosure/renewal transitions** in the entire project.
+
+---
+
+## 535. Seven thousand → eighth thousand
+
+The text gives:
+- world-age of **7000**,
+- **8000th** as beginning of non-counted/endless state.
+
+This is not the user’s 8 gates directly,
+but the structural grammar is unmistakable:
+
+**7 = completed measured order**
+→ **8 = renewed/unbounded order.**
+
+Record as high-priority numerical motif.
+
+---
+
+## 536. End state has no years/months/days/hours
+
+At final transformation:
+- ordinary time units vanish,
+- all time is no longer counted,
+- one age remains.
+
+This is a genuine **collapse of temporal segmentation**.
+
+For Vardath:
+it resembles a boundary condition where separate time-counts cease to apply.
+
+Control:
+it is eschatological eternity, not physical measured time dilation.
+
+---
+
+## 537. Final age reverses original disintegration
+
+Modern scholarship notes the symmetry:
+
+### Beginning
+Adoil disintegrates
+→ multiplicity appears.
+
+### End
+multiplicity/time distinctions collapse
+→ righteous/creation gathered into one great age.
+
+Thus the text itself supports:
+**differentiation followed by reintegration.**
+
+This is one of the strongest one→many→one structures yet.
+
+---
+
+## 538. Enoch returns to earth for exactly 30 days
+
+After transformation:
+- Enoch is sent back down,
+- given **30 days** to instruct family,
+- then must return upward.
+
+This is a literal timed gate/window:
+
+**upper transformation**
+→ **temporary lower-world return**
+→ **30-day communication interval**
+→ **final extraction.**
+
+---
+
+## 539. Enoch’s face must be cooled before human contact
+
+Before return:
+- an angel chills/cools Enoch’s face,
+- because otherwise ordinary humans could not endure looking at him.
+
+This is exceptionally relevant to the layer-compatibility idea.
+
+Pattern:
+
+**upper-state body**
+→ **attenuation/cooling**
+→ **becomes tolerable in lower environment.**
+
+This is not simply clothing.
+It is an adjustment of radiance/intensity before crossing domains.
+
+---
+
+## 540. Same man, different observable intensity
+
+Enoch tells his children:
+- they see a human like themselves,
+- but he has seen the divine Face,
+- he still speaks with human lips.
+
+Thus the text insists on continuity:
+**transformed**
+but
+**still human.**
+
+This is precisely the sort of same-figure/different-state distinction the project needs.
+
+---
+
+## 541. Earthly food no longer fits transformed Enoch
+
+In the return section Enoch says, in one tradition, that after being anointed with divine glory:
+- earthly food no longer suits/attracts him.
+
+This suggests state incompatibility extends beyond appearance to sustenance.
+
+For Vardath:
+possible analogue of a traveller changed by another environment.
+
+Control:
+mystical purity/glorification is the textual meaning.
+
+---
+
+## 542. Enoch knows “beginning to end and end to recommencement”
+
+Enoch describes his knowledge not merely as linear past→future.
+
+He knows:
+**beginning → end**
+and
+**end → recommencement.**
+
+This is explicitly cyclic language.
+
+It is very important for the user’s world-turn model.
+
+---
+
+## 543. Creation is sustained by measure
+
+Enoch repeatedly says he has:
+- measured,
+- counted,
+- weighed,
+- recorded,
+- timed.
+
+Clouds, winds and celestial movements have:
+- measures,
+- scales,
+- gates,
+- keepers.
+
+This suggests the cosmos is maintained as an **ordered measured system**.
+
+At the eschaton:
+measurement/time-counting ceases.
+
+So:
+**order = measured differentiation**
+and
+**final unity = end of measurement.**
+
+---
+
+## 544. Chains regulate upward/downward release
+
+In the meteorological passages,
+cloud/lightning/wind mechanisms are described with:
+- keys,
+- keepers,
+- chains,
+- raising/lowering.
+
+For Vardath:
+this is mechanical-looking boundary regulation.
+
+Do not overread the metaphors as literal engineering.
+
+---
+
+## 545. Paradise open upward, closed downward
+
+Enoch describes Eden/Paradise as:
+- open toward the third heaven,
+- closed from this world.
+
+This is a one-way accessibility asymmetry.
+
+Very important:
+a boundary can be **open from one side / closed from another**.
+
+That aligns strongly with the user’s pass-over/pass-under perspective concept.
+
+---
+
+## 546. Final ascent occurs under darkness cover
+
+At the end of the 30-day return:
+- darkness/gloom covers the people and Enoch,
+- angels take Enoch upward,
+- after he is gone, light returns.
+
+Sequence:
+
+**ordinary light**
+→ **darkness covers threshold**
+→ **traveller removed**
+→ **darkness clears**
+→ **traveller absent.**
+
+This is one of the clearest temporary-transition-window scenes in 2 Enoch.
+
+---
+
+## 547. Enoch’s final ascent is same-date return in one chronology
+
+One manuscript tradition says:
+- Enoch is born on 6 Sivan,
+- final ascent also occurs on 6 Sivan,
+- same hour.
+
+This creates a closed personal cycle:
+**birth date**
+→ **life/journey**
+→ **translation on same date.**
+
+Record as a recension-specific chronology, not universal 2 Enoch data.
+
+---
+
+## 548. Enoch’s second ascent changes his role permanently
+
+After final ascent:
+- Enoch is placed before the divine Face permanently.
+
+Thus:
+**temporary traveller**
+→ **returning teacher**
+→ **permanent heavenly function.**
+
+This is role-state succession inside one identity.
+
+---
+
+## 549. Methuselah inherits priestly function
+
+After Enoch:
+- Methuselah becomes priestly successor in later chapters,
+- altar/sacrifice traditions develop.
+
+This is another explicit:
+**function transfers across person while system continues.**
+
+Compare:
+- Abel→Seth,
+- Sarah→Rebekah,
+- Abraham→Isaac,
+- Jacob→Israel state transition.
+
+---
+
+## 550. Nir bypasses Noah in later priestly succession
+
+Later 2 Enoch gives priesthood:
+- Methuselah,
+- then Nir,
+rather than simply Noah.
+
+This creates an alternate lineage branch.
+
+Scholars read some of this as anti-Noachic priestly polemic.
+
+For the project:
+important reminder that different texts can **redistribute the same sacred role among different figures**.
+
+---
+
+## 551. Melchizedek born from dead mother
+
+The later Melchizedek episode is highly unusual:
+- Sothonim dies,
+- child appears/birth occurs in connection with her corpse,
+- newborn is mature/marked,
+- priestly sign already present.
+
+Structural sequence:
+
+**death**
+→ **unexpected birth**
+→ **fully marked successor appears.**
+
+This is a literal death/birth boundary event.
+
+---
+
+## 552. Melchizedek removed upward before Flood
+
+Gabriel removes Melchizedek to Eden so he can survive the Flood and return as priest after catastrophe.
+
+This is a second preservation route beside Noah.
+
+Thus the same catastrophe can preserve:
+- **population/cargo through ark on water**,
+- **selected mediator through upward removal.**
+
+This is highly relevant to the user’s idea that different materials/cargo may transfer through different parts of one transition.
+
+---
+
+## 553. 2 Enoch current Vardath reconstruction
+
+The cleanest structural sequence is:
+
+### A. Human sleeps
+Threshold state begins.
+
+### B. Luminous beings arrive
+Traveller extracted upward.
+
+### C. Layered heavens
+Different functional domains traversed.
+
+### D. Gate machinery
+Sun/moon use measured east/west openings.
+
+### E. Visible/hidden cycle
+Sun loses crown, travels under earth, regains crown.
+
+### F. Human reaches highest interface
+Earthly form becomes incompatible.
+
+### G. Outer state replaced
+Earthly garment removed, luminous state applied.
+
+### H. Creation secret revealed
+One primordial state disintegrates into visible multiplicity.
+
+### I. Upper/lower foundations separate
+Light up; dark/heavy foundation down.
+
+### J. Measured cosmos established
+Cycles/gates/scales maintain order.
+
+### K. Transformed human returns temporarily
+Face cooled to tolerate lower environment.
+
+### L. 30-day lower-world communication window
+Knowledge transferred.
+
+### M. Darkness covers threshold
+Enoch removed upward.
+
+### N. Final world-cycle
+Measured time collapses.
+
+### O. Multiplicity reintegrates
+One great age replaces divided time.
+
+This is one of the strongest texts in the corpus for:
+**layer traversal + state transformation + cyclic gate mechanics + differentiation/reintegration.**
+
+---
+
+## 554. Strongest X2 findings for the cosmology
+
+1. **Explicit layered-heaven journey.**
+2. **Six east / six west gate system.**
+3. **Normal under-earth return path.**
+4. **Visible glory removed and restored at opposite gates.**
+5. **7 hidden hours → 8th-hour renewed radiance.**
+6. **28-year solar cycle.**
+7. **19-year lunar cycle/intercalation themes.**
+8. **Human changes visible form to match upper domain.**
+9. **Face must be cooled to return to lower domain.**
+10. **Adoil: one giant primordial state disintegrates into many visible forms.**
+11. **Arukhas/light: explicit lower/upper paired foundations.**
+12. **Sevenfold macrocosm/microcosm correspondence.**
+13. **7000 measured years → 8000th unmeasured/eighth-day state.**
+14. **End of time-counting = reintegration into one great age.**
+15. **Paradise open upward but closed from this world.**
+16. **Final ascent hidden by temporary darkness.**
+17. **Different Flood survivors use different preservation routes.**
+
+---
+
+## 555. What X2 does NOT establish
+
+2 Enoch does not establish:
+- that its heavens are inhabited future/past Earth-worlds,
+- that solar under-earth motion is modern astronomy,
+- that Adoil is the Vardath lattice,
+- that Enoch’s anointing is plasma-state conversion,
+- that 7000/8000 maps directly to the user’s 8-gate model,
+- that Melchizedek’s Eden preservation is historical geophysics.
+
+These remain structural comparisons.
+
+---
+
+## 556. X2 timing register
+
+Retain:
+- Enoch lifespan: **365 years**.
+- Heavenly instruction: **30 days + 30 nights**.
+- Temporary return to earth: **30 days**.
+- Solar gates: **6 east / 6 west**.
+- Solar hidden under-earth phase: **7 great hours**, re-crowned in **8th**.
+- Solar circuit: **28 years**.
+- Lunar period: **19 years** in the relevant recension.
+- Solar year: approximately **365¼** in the transmission.
+- Lunar year: **354**.
+- Creation/history scheme: **7000 years**.
+- **8000th/eighth day** begins uncounted/endless time.
+- Final time-state: no years/months/weeks/days/hours.
+- One tradition: **366 books**.
+- One tradition: final ascent on same date as birth.
+
+---
+
+## 557. X2 status
+
+**2 ENOCH — COMPLETE FIRST PASS.**
+
+### Next unfinished natural-order insertion
+
+**X3 — 3 Enoch / Hebrew Book of Enoch.**
+
+Natural story placement:
+- immediately after 2 Enoch for the Enoch→Metatron core,
+- while keeping the much later Rabbi Ishmael frame explicitly marked.
+
+Priority tests:
+- Enoch→Metatron transformation,
+- bodily enlargement,
+- multiple names / one identity,
+- throne/palace/gates,
+- seven heavens,
+- fiery garment/crown,
+- “Prince of the Presence” function,
+- cosmic measurements,
+- relation to Adam,
+- whether 3 Enoch turns the travelling Enoch of 2 Enoch into a permanent anthropomorphic axis/operator.
+
