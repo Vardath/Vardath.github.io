@@ -7981,3 +7981,13 @@ Priority pair tests:
 
 > Section 6 is complete and saved. I’m continuing into **Section 7 — Genesis 25–28**, which is a very strong test for your pairing idea because Jacob and Esau begin as **twins struggling inside one womb**, emerge in an inverted/entangled sequence, exchange firstborn status, and then the section ends with Jacob seeing the **earth–heaven connector** that becomes a **stone pillar and “gate of heaven.”**
 
+
+
+### Section 7 progress update A — Jacob/Esau as strongest broken-unity twin pair
+
+> Jacob/Esau is giving us the **strongest “broken unity” pair yet**. The text itself says Rebekah contains **two nations in one womb**; the twins struggle before birth; Esau emerges first while Jacob is physically attached to his heel; then Jacob progressively takes Esau’s firstborn functions—birthright, blessing, clothing, skin-texture, even Isaac’s sensory recognition of “which son” is before him.
+>
+> So this pair is much closer to your idea than Cain/Abel: **one womb → two opposed bodies → entangled emergence → repeated exchange of first/second position → one temporarily wears the other’s identity**. I’m not calling them literally one person, but structurally they behave like **two differentiated states competing to occupy one firstborn/lineage position**.
+
+**Sources logged:** Genesis 25:19–34; Genesis 27; scholarship on twin symbolism, firstborn reversal, Jacob/Esau literary doubling, and Genesis 38 Perez/Zerah as later twin comparison.
+
