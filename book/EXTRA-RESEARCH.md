@@ -5248,3 +5248,13 @@ Priority pair tests:
 
 > Continuing with **Section 4 — Genesis 10–11**. I’m testing whether Babel is best read as another **axis/gate event**, or as an **attempted human imitation of one**: one people, one language, one city, a tower whose “head” reaches heaven, then divine descent, fragmentation, and scattering. I’ll save this update and each later progress reply into `book/EXTRA-RESEARCH.md`.
 
+
+
+### Section 4 progress update A — Babel as constructed heaven–underworld axis
+
+> This section has produced a much stronger axis result than I expected. The likely Mesopotamian background to Babel, **Etemenanki at Babylon**, was literally named the **“House/Foundation Platform of Heaven and Underworld,”** and a Babylonian royal inscription describes its foundation as secured on the **netherworld** while its summit was made to **rival the heavens**.
+>
+> That is almost the exact vertical geometry we have been testing: **underworld/deep → central built axis → heaven**. Genesis then reverses it narratively: humans concentrate into one place and build upward; **YHWH descends** to inspect it; unified speech is split; the people are driven outward across the earth. The text never says the tower physically falls. So at this stage Babel looks less like the natural lattice opening and more like a **constructed imitation/concentration of the heaven–underworld axis followed by forced de-convergence/scattering**.
+
+**Sources logged:** ORACC entry for Etemenanki; Babylonian royal inscriptions describing its foundation in the netherworld and summit rivaling heaven; Genesis 11:1–9; modern scholarship identifying Babylonian ziggurat background.
+
