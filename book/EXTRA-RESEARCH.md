@@ -28184,3 +28184,54 @@ This is extraordinarily close at the level of **sequence grammar** to the Vardat
 differentiation → boundary contact → catastrophe → enclosure survival → rebuilding → later terminal transition → old structure folded/removed → larger successor structure → population regathering/transformation.
 
 It remains an apocalyptic allegory of sacred history, not a mechanical eyewitness description.
+
+
+## SECTION 16 status
+
+**SECTION 16 — 1 ENOCH 83–90 / DREAM VISIONS & ANIMAL APOCALYPSE: COMPLETE FIRST PASS.**
+
+Strongest results:
+1. The first dream explicitly gives **heaven falling to earth / earth sinking into abyss**.
+2. Animal Apocalypse proves that one underlying person/group can appear in radically different symbolic bodily forms.
+3. Watchers literally transform **star → bull** after descent.
+4. Noah transforms **bull → man** at the carrier-building phase.
+5. Moses transforms **sheep → man** at the Sinai/house-building phase; scholarship reads this as exalted/angelomorphic status.
+6. Moses/Aaron form a clear **two-sheep operating pair**; later two successors replace them.
+7. Flood geometry gives **7 upper torrents + lower fountains**, then new abysses open to drain water away.
+8. Exodus gives bilateral water walls and central crossing corridor.
+9. Saul/David is a textbook **old operator / replacement operator** pair.
+10. Seventy shepherds operate in timed, bounded, externally audited periods.
+11. Final intervention uses a **staff** to split earth and swallow hostile forms.
+12. The old house is **folded up, carried away, and replaced by a greater/loftier house**.
+13. Final populations converge from many animal forms into **one white-bull form**.
+14. The core work is usually dated to the **Maccabean crisis, c. 160s BCE**, with historical horizon around Judas Maccabee; exact 70-shepherd chronology remains debated.
+
+### Numbers / periods retained
+- Dream visions before marriage: **2**
+- heavenly beings: **7 = 4 + 3**
+- Flood upper torrents: **7**
+- ark group: **1 + 3**
+- Israel: **12 sheep**
+- Joseph structure: **1 + 11**
+- shepherds: **70**
+- return/rebuild sheep: **3**
+- one rule block: **12 hours**
+- shepherd blocks: **35**, **23**, stated **58 times**
+- last shepherd subset: **12**
+- final judgment returns to total **70**
+
+### Next first unfinished roadmap section
+
+**SECTION 17 — 1 ENOCH 91–108 / EPISTLE, APOCALYPSE OF WEEKS, BIRTH OF NOAH**
+
+Priority:
+- Apocalypse of Weeks chronology and whether “weeks” are equal or symbolic epochs,
+- 10-week structure, 7th parts, 7-fold judgment language,
+- Enoch/Methuselah descendants,
+- Noah's extraordinary birth body/eyes/hair/light and Lamech's fear that he is angelic,
+- Lamech/Methuselah/Enoch three-generation inquiry chain,
+- Enoch's prediction of Flood survival through Noah,
+- books/transmission across catastrophe,
+- “new heaven” / eternal weeks,
+- all absolute and relative numbers,
+- compare cycle schemes with 364, Jubilees, Daniel and later Archaix chronology only after units are normalized.
