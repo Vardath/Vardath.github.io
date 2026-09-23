@@ -20603,3 +20603,47 @@ Priority tests:
 > This is one of the clearest later Jewish links between **Moses and the cosmic-human / world-body motif**. It does not prove Moses is the Squatter-Man lattice, but it substantially strengthens the possibility that Moses could be read as an anthropomorphic representation of a world-scale structure rather than only as a historical lawgiver.
 
 **Sources logged:** Testament of Moses 11:5–8; Silviu N. Bunta, “Too Vast to Fit in the World: Moses, Adam, and … in the Testament of Moses 11:8,” *Scrinium* 3 (2007), arguing for gigantic/cosmic Moses within Adam-corporeality traditions.
+
+
+### X7 progress D — pair/double matrix: Moses/Joshua is a succession pair, not a literal double
+
+The pair test is now explicit.
+
+#### Moses / Joshua — **P4 successor / replacement**, with a very strong bodily transfer gesture
+- Moses says his own time is fulfilled.
+- Joshua is chosen to become **minister in the same covenant**.
+- Joshua repeatedly falls at Moses' feet.
+- Moses **takes Joshua by the hand and raises him into the seat before him**.
+- Joshua's fear is specifically that the people will lose Moses' functions: guide, feeder, intercessor, judge, mediator.
+- Moses answers by transferring responsibility rather than identity.
+
+For the Vardath comparison, this is a clean **operator-state handoff**:
+**old central operator → bodily hand/raising gesture → seat/office → successor operator**.
+
+Do **not** collapse Moses and Joshua into one literal person. The text works better as **P4 successor/replacement**: the role continues while the body changes.
+
+#### Moses / Adam — cross-text cosmic-human analogue
+The Testament does not pair Moses with Adam in dialogue, but later Jewish interpretation of Moses' world-sized sepulchre has been read as inheritance of **primordial Adam's gigantic/cosmic corporeality**. This makes Adam/Moses a useful **world-body recurrence**, not a narrative twin pair.
+
+#### Michael / devil — **P6 rival pair at the body-threshold** in the later Assumption tradition
+The extant Testament does not preserve this scene. In the later tradition behind Jude 9/patristic witnesses:
+- Michael and the adversary occupy opposed positions around **Moses' body**,
+- one side claims/defends transfer toward God,
+- the other contests it.
+
+This is a strong **threshold polarity pair**, but source layers must remain separate.
+
+#### Two tribes / ten tribes — explicit unequal split of one twelve-part body
+The historical vision repeatedly treats Israel as **twelve → two + ten**:
+- two tribes remain associated with the sanctuary,
+- ten establish separate kingdoms,
+- later both branches suffer and address one another,
+- the ten continue multiplying among the nations.
+
+This is not a human pair, but it is exactly the sort of **one body → two unequal branches → later relational continuation** the pair framework is meant to catch.
+
+#### Taxo / seven sons — 1 + 7 rather than a pair
+Taxo stands as one father with **seven sons**. They act as one preservation/martyr unit and enter one cave together. Record this as a **1|7 collective geometry**, not force it into a two-person pair.
+
+#### Heaven / earth — upper/lower witness pair
+Moses' prophetic role elsewhere in the book is remembered through his having called **heaven and earth as witnesses**. This is a real upper/lower polarity in the narrative grammar, although the witnesses are cosmic regions rather than people.
