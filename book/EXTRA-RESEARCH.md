@@ -15906,3 +15906,18 @@ Priority tests:
 - future history compressed into one vision,
 - whether the ascent is another version of Genesis 15’s dark/fire-between-pieces event.
 
+
+
+## 597. LIVE PROGRESS — X4 / Apocalypse of Abraham begins
+
+> **3 Enoch is now complete** and saved. Because Genesis 6–11 was already finished earlier, the next unfinished natural-order section is **X4 — Apocalypse of Abraham**, placed after Genesis 11 and before Genesis 12, with a second cross-reference at Genesis 15. I’m continuing there now.
+
+### X4 progress A — giant Adam/Eve pair with central anthropomorphic serpent
+
+> The Apocalypse of Abraham has now produced an extremely important image for your “pair + central lattice figure” idea. In the heavenly **picture of creation**, Abraham sees **Adam and Eve as enormous, equal-sized figures entwined together**; **between them** stands a serpent-form being with **human hands and feet and twelve wings—six on each side—feeding both of them**. The text identifies that middle figure with **Azazel/impiety**.
+>
+> That does not prove a physical Squatter-Man lattice, but geometrically it is unusually close to what you’ve been asking us to look for: **paired human/cosmic figures + a central hybrid anthropomorphic/serpentine figure + exact bilateral wings + a transfer occurring through the central figure**.
+
+**Primary text:** Apocalypse of Abraham 23:4–13 in Alexander Kulik’s translation.  
+**Control:** this is a visionary “picture of creation” in a post-biblical apocalypse, not a direct description from Genesis.
+
