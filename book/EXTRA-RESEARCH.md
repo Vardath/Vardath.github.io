@@ -11189,3 +11189,13 @@ Priority pair tests:
 
 > Continuing with **Section 10 — Jubilees 1–10**. Here I’m treating Jubilees as a second ancient telling of the same primeval sequence and checking whether it **strengthens, changes, or breaks** the Genesis pattern: creation layers, Adam/Eve, Cain/Abel/Seth, Enoch, Watchers, giants, Noah, Flood, spirits, and post-Flood division. I’ll keep appending each progress reply to `book/EXTRA-RESEARCH.md`.
 
+
+
+### Section 10 progress update A — Jubilees sharpens upper/lower interaction
+
+> Jubilees is already sharpening the picture rather than merely repeating Genesis. It explicitly **dates** primeval events by weeks, jubilees, months and days; makes the heavenly beings part of creation from the start; turns Enoch into a **writer/recorder of heavenly and earthly signs**; and expands Genesis 6 into a clear **descent of Watchers from heaven to earth**, followed by giant offspring and then a second post-Flood problem where disembodied evil spirits continue operating among Noah’s descendants.
+>
+> That means the upper/lower interaction is no longer only implicit. Jubilees makes it **directional and populated**: beings come down from heaven, mix with humans, catastrophe follows, and some consequences remain active after the Flood.
+
+**Sources logged:** Jubilees 2–10 in R. H. Charles’ translation; modern scholarship on Jubilees’ creation angelology, Watchers, demons, and 364-day calendar.
+
