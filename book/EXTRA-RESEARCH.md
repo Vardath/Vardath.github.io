@@ -15162,3 +15162,18 @@ Priority tests:
 - relation to Adam,
 - whether 3 Enoch turns the travelling Enoch of 2 Enoch into a permanent anthropomorphic axis/operator.
 
+
+
+## 558. LIVE PROGRESS — X3 / 3 Enoch begins
+
+> **2 Enoch is now complete** and saved. I’m moving to the next unfinished natural-order section, **X3 — 3 Enoch**, specifically asking whether the travelling, temporarily transformed Enoch of 2 Enoch becomes in 3 Enoch a **permanent human-shaped heavenly operator/axis figure**.
+
+### X3 progress A — Metatron as world-sized anthropomorphic gate-operator
+
+> 3 Enoch gives the strongest **anthropomorphic axis/operator image so far**. The text explicitly says Metatron is **Enoch**, then enlarges that same former human until his body matches the **length and breadth of the world**, gives him **72 wings—36 on each side—and 365 eyes**, and seats him on a throne **at the door of the seventh heavenly hall**.
+>
+> That is much closer to your Squatter-Man picture than ordinary “angel symbolism”: a **world-scale human-derived central figure, bilaterally expanded, stationed at a gate/door, mediating traffic and commands between levels**. The important control is that 3 Enoch is a much later Hekhalot text, so this may be a developed interpretation of older Enoch traditions rather than evidence that Genesis originally encoded the same picture.
+
+**Primary text logged:** 3 Enoch 1–15 in the Odeberg tradition.  
+**Source-critical control:** 3 Enoch is a late-antique/early-medieval Hekhalot work with composite textual history, even though it deliberately identifies Metatron with Genesis' Enoch.
+
