@@ -23558,3 +23558,188 @@ while also proving that:
 **many different people can share one form**.
 
 Both rules must be applied to the wider Bible investigation.
+
+
+## SECTION 16 progress E — continuous timeline and number register
+
+### Continuous symbolic timeline
+
+The Animal Apocalypse now gives us one of the cleanest continuous event-sequences in the whole project:
+
+**Primordial humanity**
+→ Adam/Eve white bull/heifer
+→ Cain/Abel black/red pair
+→ Abel removed
+→ Seth white replacement
+→ white-line multiplication
+
+**Boundary breach**
+→ star descends
+→ many stars follow
+→ stars become bulls
+→ upper beings pair with terrestrial cows
+→ elephants/camels/asses born
+→ violence/ecological collapse
+
+**Corrective descent**
+→ 7 white beings descend
+→ 4 act on fallen beings
+→ 3 raise Enoch to high observation point
+
+**Flood/reset**
+→ Noah white bull receives secret
+→ becomes man/builder
+→ 1+3 enter vessel
+→ 7 upper torrents + lower fountains
+→ complete inundation
+→ upper inflow stops
+→ new abysses/drains open
+→ waters descend
+→ land/light return
+→ vessel settles
+→ 1+3 emerge
+
+**Post-Flood differentiation**
+→ Shem/Ham/Japheth branches
+→ nations diversify into many animal species
+→ Abraham white bull
+→ Ishmael/Isaac split
+→ Esau/Jacob split
+→ Jacob becomes sheep-line
+→ 12 sons/sheep
+
+**Egypt**
+→ Joseph = 1 separated from 11
+→ 11 rejoin 1
+→ flock multiplies among wolves
+→ oppression/child destruction
+
+**Exodus**
+→ Moses escapes
+→ Moses/Aaron paired mission
+→ Lord descends
+→ sheep depart
+→ sea splits bilateral
+→ central passage
+→ pursuers enter
+→ water closes
+
+**Sinai/wilderness**
+→ Moses ascends rock
+→ descends
+→ ascends again
+→ blindness/deviation
+→ restoration
+→ Moses becomes man/builder
+→ house/tabernacle constructed
+
+**Succession/conquest**
+→ Aaron dies
+→ old generation dies
+→ Moses dies
+→ Jordan crossed
+→ two successor sheep arise
+→ good land entered
+
+**Judges/monarchy**
+→ recurrent blindness/restoration
+→ first ram Saul
+→ second ram David
+→ little ram Solomon
+→ broad house + lofty tower
+
+**Division/prophetic period**
+→ sheep stray
+→ messengers sent
+→ one lifted/preserved
+→ house/tower abandoned
+→ enemies consume
+→ tower/house destroyed
+
+**Foreign domination / 70-shepherd clock**
+→ 70 angelic shepherds receive flock
+→ each has measured period/quota
+→ independent recorder audits excess
+→ four historical shepherd blocks
+→ imperfect house rebuilt
+→ sheep remain blind/dispersed
+
+**Maccabean horizon**
+→ seeing lambs arise
+→ horns arise
+→ great horn/Judas Maccabeus fights
+→ enemies converge
+→ help descends
+
+**Final reset**
+→ staff strikes earth
+→ earth splits
+→ enemies swallowed
+→ 7 white agents return
+→ stars judged
+→ 70 shepherds judged
+→ guilty sheep judged
+→ old house/supports folded and removed
+→ new greater house installed
+→ dispersed populations regather
+→ sword returned/sealed
+→ universal sight restored
+→ great white bull appears
+→ all animal forms transform into white cattle
+→ renewed primordial humanity.
+
+### Number register
+- Enoch pre-marriage visions: **2**.
+- loyal white heavenly agents: **7 = 4 + 3**.
+- upper Flood torrents: **7**.
+- vessel core: **1 Noah + 3 sons**.
+- patriarchal tribe structure: **12**.
+- Joseph configuration: **1 + 11 → 12 reunited**.
+- Exodus messengers: **2**, Moses + Aaron.
+- conquest successors after Moses/Aaron: **2**.
+- shepherd total: **70**.
+- four shepherd blocks in standard reconstruction: **12 + 23 + 23 + 12 = 70**.
+- first restoration group after exile: **3 sheep**.
+- final white agents called at judgment: **7**.
+- Maccabean focal leader: **1 great horn**.
+- final species state: many → **1 common white-cattle class**.
+
+### Timeline caution
+The Animal Apocalypse is historical allegory, not a modern dated chronicle. Its final historical horizon is generally placed around the Maccabean revolt, and most scholars date the work to the **second century BCE, especially the 160s BCE**. The 70 shepherds are a symbolic chronological scheme whose exact mapping to rulers/years remains disputed.
+
+Do not convert “hours,” shepherds, or animal counts into modern year lengths without an explicit reconstruction.
+
+## SECTION 16 status
+
+**SECTION 16 — 1 ENOCH 83–90 / DREAM VISIONS & ANIMAL APOCALYPSE: COMPLETE FIRST PASS.**
+
+Most important results for the larger project:
+
+1. The same catastrophe is shown in two different visual systems: **direct cosmic collapse** and **animal allegory**.
+2. The text itself repeatedly demonstrates **one person changing visible symbolic form when function/state changes**.
+3. It also demonstrates **many separate people sharing the same symbolic form**, preventing simplistic one-to-one identification.
+4. Noah and Moses form a strong builder parallel: **animal → man → divinely ordered enclosure**.
+5. Moses/Aaron, Saul/David, Cain/Abel, Ishmael/Isaac, Esau/Jacob and old/new house all provide distinct pair types.
+6. The Flood gives an unusually precise **inflow → maximum cover → inflow closure → new drainage → land/light return** sequence.
+7. Exodus gives a bilateral **water / corridor / water** passage with a central protecting separator.
+8. The 70 shepherds form a measured historical oversight clock with an independent audit layer.
+9. Final judgment includes **staff → earth split → selective swallowing → closure**.
+10. The old house is explicitly **folded with its supports, removed, and replaced in the same locus by a larger new structure**.
+11. The end is not a rewind: differentiated humanity is **transformed into a renewed common white-bull state** after the entire historical sequence.
+
+### Next first unfinished roadmap section
+
+**SECTION 17 — 1 ENOCH 91–108**
+
+Priority:
+- Apocalypse of Weeks and its chronological heptads,
+- 7/8/9/10 week transitions,
+- righteousness/perversity cycles,
+- heavenly books/tablets,
+- Enoch→Methuselah inheritance,
+- Noahic/birth-sign material,
+- giant or extraordinary-child descriptions,
+- final judgment and renewed creation,
+- important dates/generations/counts,
+- people/pairs and state changes,
+- compare the Weeks timeline directly with the Animal Apocalypse and later Archaix-style cycle claims only after units are normalized.
