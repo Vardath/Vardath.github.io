@@ -8788,3 +8788,11 @@ Priority pair tests:
 > 
 > Next is **Section 8 — Genesis 29–36: Leah/Rachel, Jacob’s rods, Laban, boundary heap/pillar, the Jabbok wrestling figure, Jacob→Israel, Peniel, Esau reunion, and return to Bethel**.
 
+
+
+---
+
+## 255. LIVE PROGRESS LOG — Section 8 begins (Genesis 29–36)
+
+> Continuing with **Section 8 — Genesis 29–36**. This is a major one for your cosmology because it combines **paired women, striped rods/branches, a literal boundary heap/pillar, a night crossing over water, wrestling with a humanlike divine figure, Jacob→Israel state change, bodily alteration, and the twin reunion**. I’ll keep saving each progress update and the final reply into `book/EXTRA-RESEARCH.md`.
+
