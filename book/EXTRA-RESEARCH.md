@@ -26104,3 +26104,108 @@ as separate source claims before harmonization.
 - **Israel firstborn / Egyptian firstborn** — spared/struck polarity.
 - **YHWH / destroyer** — received-text authority/agent pair, source-critically uncertain.
 - **Zipporah blood scene / Passover blood scene** — P9 narrative/covenantal recurrence.
+
+
+## SECTION 19 progress H — Passover hypothesis verdict and controls
+
+### What genuinely fits the Vardath event grammar
+
+Strong structural parallels:
+- environmental escalation across multiple domains,
+- repeated exact timing,
+- territorial differentiation inside one larger land,
+- upward gestures followed by sky effects,
+- paired/opposed winds,
+- fire + water/ice in the same event,
+- darkness/light simultaneous zones,
+- protected enclosures,
+- marked gate/door boundary,
+- death/destruction prevented from crossing selected boundary,
+- nighttime transition followed by mass relocation,
+- calendar reset at the transition,
+- firstborn/lineage sorting,
+- old ruler's holding force becomes expulsion force.
+
+### What does **not** fit strongly
+
+There is no explicit:
+- woven lattice,
+- two world-discs crossing,
+- future world/past world,
+- one structure passing physically above/below another,
+- finger-trap weave,
+- landmass exchange,
+- time dilation.
+
+Most importantly:
+**`pasaḥ` itself probably does not mean physical “pass over.”**
+
+So if Passover belongs in the Vardath comparison, the strongest case is:
+
+**protected threshold during a destructive passage through the land**
+
+rather than:
+
+**lexical proof of one cosmic structure physically passing over another.**
+
+### A possible “under/over” reading must therefore come from geometry, not the word
+
+If a future comparison finds:
+- upper descending force,
+- lower protected enclosure,
+- a structure traversing above/around a boundary,
+
+that would be a **Vardath interpretive reconstruction**.
+
+It should not be presented as the Hebrew meaning of `Pesach`.
+
+### Source controls
+- Exodus 7–12 is widely understood as compositionally layered.
+- plague lists differ in Psalms 78 and 105.
+- finished Exodus supports multiple overlapping literary structures (3+3+3+1 and 7+3).
+- Passover/Pesach and Unleavened Bread traditions were likely combined/redacted over time in many historical-critical reconstructions.
+- Exod 12:21–27's destroyer and blood-door detail may be a distinct/later layer relative to other Passover instructions.
+- 430-year textual traditions differ.
+- 600,000 is a literary/textual figure with major historical-demographic difficulties.
+
+## SECTION 19 status
+
+**SECTION 19 — EXODUS 5–12: COMPLETE FIRST PASS.**
+
+Strongest results:
+1. Moses/Aaron become a formal **God/prophet-like two-person operator chain**.
+2. Aaron's transformed staff **swallows** the rival transformed staffs.
+3. The plagues progressively establish **simultaneous separated environmental zones**.
+4. Hail/fire gives a powerful **rod upward → mixed sky-event downward → bilateral hands spread → event stops** scene.
+5. East/west winds create explicit opposing transport directions.
+6. Darkness produces a **3-day Egypt-dark / Israel-light** split.
+7. Passover is fundamentally a **guarded household-threshold scene**.
+8. `pasaḥ` most likely means **protect/spare**, while `ʿavar` is the verb for the movement through Egypt.
+9. Zipporah's blood intervention and Passover share the grammar **blood + boundary + altered death-route**.
+10. Passover establishes a **new calendar origin**.
+11. The departure sequence closes the 70→~600,000 narrative expansion and introduces the contested **430-year** chronological marker.
+
+### Next first unfinished roadmap section
+
+**SECTION 20 — EXODUS 13–18**
+
+Priority:
+- firstborn consecration and Passover memory,
+- pillar cloud/fire pair,
+- front↔behind movement,
+- Red Sea/Reed Sea route,
+- Moses' hand/staff, sea walls right/left, east wind,
+- Israel/Egypt simultaneous positions,
+- sea closure,
+- Miriam/Moses song pair,
+- bitter→sweet water,
+- twelve springs / seventy palms,
+- manna/dew,
+- Sabbath timing,
+- rock→water,
+- Amalek battle,
+- Moses seated on stone,
+- Aaron/Hur as two lateral arm supports,
+- central human axis geometry,
+- Jethro/Moses delegation structure,
+- all days, dates, counts and directional movements.
