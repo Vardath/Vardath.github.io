@@ -28017,3 +28017,170 @@ This provides an external historical anchor for the symbolic timeline.
 - stated aggregate: **58 times**
 - final shepherd subset mentioned in ch. 90: **12 last shepherds**
 - final judicial group still named: **70 shepherds**.
+
+
+## SECTION 16 progress D — final event: earth split, old house folded, greater house installed, all forms converge
+
+### Final battle — staff → earth cleavage → enemies swallowed
+
+At the climax:
+- Lord takes **staff of wrath** in hand,
+- strikes earth,
+- **earth cleaves apart**,
+- beasts/birds among sheep fall into opening,
+- earth **swallows and covers them**.
+
+This is one of the clearest:
+**central operator + staff/rod → surface split → selective swallowing/enclosure below** scenes in the corpus.
+
+For Vardath comparison this is high-value rod/land geometry.
+Mismatch: the text frames it as divine judgment, not neutral periodic mechanism.
+
+### Judgment order is explicitly layered
+
+At judgment:
+1. throne erected in pleasant land,
+2. sealed books opened,
+3. first fallen stars judged,
+4. seventy shepherds judged,
+5. blinded/apostate sheep judged,
+6. each class assigned abyss/fire.
+
+Again the system **sorts categories into ordered judgment routes**.
+
+### Old house is folded up, not merely destroyed
+
+The final architectural transition is unusually specific:
+- **old house is folded up**
+- pillars, beams, ornaments are folded/carried with it
+- whole old structure is moved to a place in the south
+- Lord brings a **new house**
+- new house is **greater and loftier**
+- placed on the site of the first
+- all pillars/ornaments are new and larger.
+
+This is one of the strongest current-model parallels in the corpus:
+
+**existing world/house structure → compressed/folded state → removed aside → successor structure occupies same functional location**.
+
+Crucially:
+the old house is **not said to vanish into nothing**.
+It is folded and relocated.
+
+That fits the Vardath “reset is not rewind / old material-history persists” idea much better than annihilation imagery.
+
+### New house is initially too full
+
+All survivors/returnees gather:
+- sheep,
+- beasts,
+- birds,
+- dispersed/destroyed groups in the visionary restoration,
+- all return to house,
+- house becomes extremely full,
+- at one point the text says the house **did not hold them all**.
+
+That suggests successor structure is a gathering/recombination site for formerly separated populations.
+
+### Sword is returned and sealed
+
+After final victory:
+- weapon given to sheep is laid down,
+- brought back into house,
+- **sealed before the Lord**.
+
+This marks:
+**active conflict tool → deactivated/stored state**.
+
+A useful end-of-event closure marker.
+
+### Eyes open universally
+
+After restoration:
+- all eyes are opened,
+- no one remains unable to see.
+
+Throughout the Animal Apocalypse:
+**open eyes = correct perception/alignment**
+and
+**blindness = disorder/straying**.
+
+Thus reset is partly described as a **state of restored perception**.
+
+### White bull / universal transformation
+
+Then:
+- a **white bull with large horns** is born/appears,
+- all beasts and birds respond to it,
+- **all their generations are transformed**
+- **all become white bulls**.
+
+This is one of the strongest many→one-form transitions in biblical/apocalyptic literature.
+
+The final state is not:
+“all groups disappear.”
+
+It is:
+**many differentiated species/classes → common white-bull form**.
+
+Scholars often interpret this as a transformed/new humanity under an eschatological/messianic figure, though identity details of the final bull/lamb have generated debate.
+
+For our framework, the structural point is secure:
+**diversity of visible forms created through history is ultimately collapsed back into one common form**.
+
+### Final bull / lamb transformation problem
+
+The text then says:
+- first among them becomes a **lamb**,
+- lamb becomes a **great animal**
+- with **great black horns**.
+
+This is textually/interpretively difficult and should not be forced into a clean identity sequence without critical commentary.
+
+But it reinforces the central rule:
+**symbolic body remains transformable even in final state**.
+
+### Whole Animal Apocalypse event grammar
+
+The complete 85–90 sequence can now be reduced to:
+
+**white primordial humanity**
+→ paired/rival differentiation
+→ heavenly stars descend
+→ star→bull transformation
+→ cross-order mating
+→ hybrid forms
+→ violence
+→ seven heavenly agents arrive
+→ Flood: upper torrents + lower fountains
+→ carrier survival 1+3
+→ water drains into new abysses
+→ post-Flood species/nations diversify
+→ one lineage becomes sheep
+→ 12-part tribal body
+→ 1+11 displacement/reunion
+→ Moses/Aaron two-node mission
+→ divided sea corridor
+→ Moses ascends mountain and becomes man
+→ successor leaders
+→ house + elevated tower
+→ ram/ruler succession
+→ house/tower destroyed
+→ 70 delegated shepherd periods
+→ partial return/rebuild
+→ renewed predation
+→ great horn
+→ final staff strike splits earth
+→ enemies swallowed
+→ judgment/sorting
+→ old house **folded and removed**
+→ larger new house installed
+→ dispersed populations return
+→ weapons sealed
+→ universal sight restored
+→ differentiated animals transformed into **one white-bull form**.
+
+This is extraordinarily close at the level of **sequence grammar** to the Vardath concern with:
+differentiation → boundary contact → catastrophe → enclosure survival → rebuilding → later terminal transition → old structure folded/removed → larger successor structure → population regathering/transformation.
+
+It remains an apocalyptic allegory of sacred history, not a mechanical eyewitness description.
