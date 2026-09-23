@@ -29500,3 +29500,27 @@ Final comparative rules carried into the 88-book Bible project:
 - All world-turns remain populated and are present to their own inhabitants; above/below are future-relative/past-relative relationships to the chosen present.
 
 **Book read-up is complete.** Bible research remains paused until the rendered cosmology-page fragments and the full EXTRA-RESEARCH working record have also been reconciled.
+
+
+### Read-up progress — COMPLETE LIVE COSMOLOGY PAGE READ
+
+The live `vardath-cosmology.html` page has now been read through **all 53 included fragments in rendered include order**, including current-model material, 453-post consolidation, historical-development archive, comparative expansions, visual/glossary material and the full assistant/reality-check appendix.
+
+Working precedence rule after reconciling page generations:
+- The **latest book/current-model corrections override residual historical wording** in older page fragments where they conflict.
+- In particular, older phrases such as “next/upper forming turn,” “new world,” or “successor world” must **not** be read as an empty/uninhabited future being created. The current rule is: every world-turn is populated and has its own present; “future above” and “past below” are relational to the chosen present; gate events change adjacency and exchange between already-existing inhabited turns, followed by a new-beginning phase for the affected present.
+- Later role distinctions also override older symbolic collapses: **gate, route, operator, vehicle, carrier, guardian, witness and destination are analytically separate unless the source itself combines them.**
+- Older historical branches are retained as development history, not automatically treated as current mechanism.
+
+Site-specific mechanisms retained for the Bible comparison:
+- Yggdrasil/time-switch: self-to-self temporal relation, Norns as temporal/routing relations, and local adjacency changes.
+- Central-spire/Fountain branch: hypothetical high-gradient throat; plasma is accompaniment/current, not by itself the clock.
+- Nine-disc simulator: plasma/field response first, then atmosphere/vapour, water, then bulk land/material response.
+- 453-post gate synthesis: finite duration/capacity, cargo sorting, counterflow, local→regional→global scale distinction, and water as tracer.
+- Vapour-canopy sequence: active door/plasma heating → upper ice melt → steam/canopy → cooling → condensation/flood.
+- Cross-cultural projection grammar: broad mesh/braid; axial tree/rod/pillar/mountain; end-on eye/wheel/star/rosette; enclosure ark/egg/cave/basket.
+- Waterborne-child frozen test: enclosure + carried transition + receiving boundary is enriched relative to controls; identity-change alone was not a strong standalone discriminator.
+- Revelation comparison is sequence-based, while its assistant note preserves literary-inheritance/recapitulation controls.
+- Pair/bilateral geometry must be tested by function and sequence, not merely resemblance.
+
+**Book read complete. Live site read complete.** Final catch-up pass now moves through the full EXTRA-RESEARCH working record itself, checking what has already been appended so Section 22 is not started from a stale marker.
