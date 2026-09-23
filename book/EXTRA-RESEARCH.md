@@ -20728,3 +20728,43 @@ This is not identical to the current Vardath event sequence. In particular:
 - and the water goes **away/down**, not across a described layer-gate.
 
 But the **enclosure + world deformation + vertical sorting + body/office transfer** sequence is unusually concentrated.
+
+
+### X7 progress F — timing and number register
+
+Keep the numbers, but separate secure narrative numbers from damaged chronological arithmetic.
+
+#### High-confidence narrative numbers
+- Moses: **120 years old** at the testament.
+- Israel: **12 tribes**.
+- Major split: **2 tribes + 10 tribes**.
+- Wilderness remembered as **40 years**.
+- Captivity: about **77 years** in the surviving Latin/translation.
+- Insolent ruler: **34 years** in the received text.
+- Taxo: **7 sons**.
+- Taxo fast: **3 days**.
+- Cave entry: **4th day**.
+- People under Moses/Joshua: **600,000 men** in Joshua's lament.
+- Moses' intercession: described as occurring **day and night / every hour**.
+
+#### Large chronological markers requiring caution
+- Testament placed in Moses' **120th year**.
+- One chronological heading gives **2500 years from creation**.
+- A variant/secondary reckoning gives **2700**.
+- The same opening also preserves a problematic **400**-year figure connected with the Exodus/departure; this cannot simply be combined with Moses' own 40-year wilderness chronology and should be treated as a textual/chronographic difficulty.
+- From Moses' death/assumption to the final advent: **250 “times.”**
+- R. H. Charles interpreted those “times” as **year-weeks**, giving **250 × 7 = 1750 years**, but the unit is not secure enough to treat 1750 as a plain statement of the surviving text.
+- Chapter 7 contains a damaged reference to a **second course** and **four hours**; the surrounding numerical text is notoriously corrupt.
+
+#### Smaller historical counts in chapter 2
+The text also preserves **5, 18, 19, 20, 7, 9 and 4** in its compressed survey of entry, rulers, tribal division, sacrifices/walls and covenant violation. These are worth retaining for later cycle comparison, but the passage is too textually obscure to force into an exact modern chronology without a critical apparatus.
+
+### Pattern notes
+Several number-patterns are worth carrying forward without claiming significance yet:
+- **12 → 2 + 10** = one ordered whole splitting into two unequal systems.
+- **1 + 7** = Taxo plus seven sons.
+- **3 → 4** = three-day fast followed by fourth-day cave entry.
+- **250 “times”** = a long terminal interval whose exact unit is debated.
+- **120** = completion of Moses' human life and handoff point.
+
+Add all of these to the later master cycle table beside Genesis, Jubilees, 1/2/3 Enoch, biblical chronologies, Archaix intervals and the Vardath cycle. Do **not** claim a match until the units are normalized.
