@@ -11199,3 +11199,13 @@ Priority pair tests:
 
 **Sources logged:** Jubilees 2–10 in R. H. Charles’ translation; modern scholarship on Jubilees’ creation angelology, Watchers, demons, and 364-day calendar.
 
+
+
+### Section 10 progress update B — same date for Eden breach and Flood opening; 7 above / 7 below
+
+> A very strong timing/geometric link just appeared in the primary text. **Jubilees dates both the Eden transgression and the Flood opening to the seventeenth day of the second month.** In the Flood version it then specifies **seven floodgates of heaven above and seven mouths of the great deep below**: water pours **down from heaven** and rises **up from the deep** until the world is filled.
+>
+> That is much sharper than Genesis. It gives us an explicit **7-above / 7-below paired opening**, and it places that world-reset opening on the **same calendar date as the earlier Eden boundary failure**. I’m flagging this as a high-priority cycle result rather than calling it coincidence or proof yet.
+
+**Primary text logged:** Jubilees 3:17; 5:23–29; 6:23–32. Jubilees also fixes the year at 364 days / 52 exact weeks.
+
