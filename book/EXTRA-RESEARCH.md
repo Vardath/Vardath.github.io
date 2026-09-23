@@ -8001,3 +8001,11 @@ Priority pair tests:
 
 **Sources logged:** Genesis 28:10–22; scholarship on *sullam* as ladder/stairway/ramp/gate-like access structure; Bethel as “house of God” and “gate of heaven.”
 
+
+
+### Section 7 progress update C — successor repetition versus identity overlay
+
+> One more major result before I close Section 7: **Isaac is deliberately made to replay Abraham’s life**, almost scene for scene—famine, foreign king Abimelech, wife-sister danger, wells, covenant at Beersheba. Then Jacob does something different: he doesn’t merely inherit Isaac’s role; he **puts on Esau’s outer identity**—clothes, smell, hairy skin—while keeping Jacob’s voice.
+>
+> So Genesis is giving us two different kinds of continuity at once: **successor repetition** (Abraham→Isaac) and **temporary identity overlay** (Jacob→Esau). That is exactly the distinction we need for your theory: sometimes one role repeats in a new person; sometimes one figure literally carries another figure’s visible markers.
+
