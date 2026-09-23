@@ -29465,3 +29465,15 @@ Additional comparison rules reconfirmed:
 - world-tree/time-door remains a persistent woven architecture whose traversability changes by state;
 - land is cargo riding the deeper lattice, not the lattice itself;
 - paired/bilateral forms should be tested as two functional components, counter-directions, mirrored states, or split manifestations before assuming two unrelated actors.
+
+
+### Read-up progress — core manuscript through Chapter 52
+
+The full core/mechanism half of the book (Preface, Introduction, Chapters 1–52) has now been read directly from the canonical chapter files.
+
+Key methodological rule carried into the 88-book Bible investigation: compare **relationship + sequence + role + geometry + phase**, not isolated symbol resemblance. The book itself repeatedly warns that serpent/tree/wheel/eye/flood/etc. alone are weak matches.
+
+Current integrated cycle retained for later section-by-section comparison:
+quiet separation → persistent current → activation → nodes wake → convergence → mesh/fingertrap narrowing → ladder/rod/throat → changed adjacency among populated past-relative/present/future-relative worlds → atmospheric/pressure/water/land/heat/living transfer → enclosure/carrier survival → possible time/world-state displacement → pulse passes → throat widens → separation returns → cooling/water settling/sediment burial → life and cultural memory spread → new-beginning quiet period.
+
+Bible research remains paused until comparative chapters and live site read-up are complete.
