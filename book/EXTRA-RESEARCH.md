@@ -14132,3 +14132,14 @@ Priority tests:
 
 **Primary text logged:** 2 Enoch 3–16 in the Slavonic tradition; six eastern and six western solar gates, 365¼-day reckoning in the translation tradition, and a 28-year solar circuit.
 
+
+
+### Insert X2 progress B — Enoch changes visible state while retaining human identity
+
+> A second strong result: 2 Enoch makes Enoch undergo an explicit **visible state change without necessarily ceasing to be human**. Michael removes his “earthly clothing,” anoints him with luminous oil, clothes him in glory, and Enoch says he became **like one of the glorious ones with no visible difference**. Modern scholarship cautions that this need not mean literal angelification—he can remain human while outwardly taking on the form/status of the heavenly beings.
+>
+> That is almost exactly the distinction we have been trying to make: **underlying identity can remain the same while the visible state changes to match the layer being entered**.
+
+**Primary text:** 2 Enoch 22.  
+**Scholarly control:** recent work argues for Enoch as a glorified/angelomorphic human rather than necessarily ontologically transformed into an angel.
+
