@@ -27879,3 +27879,141 @@ This is a strong architectural distinction:
 **community enclosure below + elevated vertical divine station above**.
 
 Do not collapse house and tower into one object.
+
+
+## SECTION 16 progress C — rulers as rams/horns, seventy shepherds and audited time-periods
+
+### Saul / David — first ram / second ram succession pair
+
+The Animal Apocalypse converts political leadership into ram-form:
+- first ram rises and attacks enemies,
+- then turns wrongly against sheep,
+- another lamb is raised into a ram **instead of the first**,
+- first ram pursues second,
+- second flees,
+- first falls,
+- second becomes leader.
+
+Standard identification:
+- first ram = **Saul**
+- second ram = **David**.
+
+This is a very strong **P4 successor/replacement + P6 rival pair**.
+
+The structure closely resembles several earlier succession pairs:
+**old selected operator → deviation → replacement anointed/raised → old pursues new → old falls → new leads**.
+
+### Ram / horn = office/power state
+
+Scholarly analysis notes that the Animal Apocalypse uses:
+- **ram** for major Israelite leaders,
+- **horn** for power/military authority.
+
+Important examples commonly identified:
+- Jacob as ancestral ram/sheep transition,
+- Saul,
+- David,
+- Solomon,
+- Judas Maccabee as great-horned ram/sheep.
+
+So one person can move:
+**sheep/lamb → ram → horn-bearing leader**.
+
+Again, visible symbolic geometry marks function/status.
+
+### Seventy shepherds — delegated rulers with quantified accountability
+
+The Lord assigns **70 shepherds**:
+- each receives sheep in numbered quantity,
+- each has a period/time,
+- each is permitted a prescribed amount of destruction,
+- an independent heavenly recorder logs:
+  - permitted losses
+  - excess losses
+  - each shepherd individually
+  - day by day.
+
+This is remarkably administrative:
+**delegated operator → bounded quota → timed period → external audit → later judgment**.
+
+For Vardath research this is useful because it distinguishes:
+- system role,
+- permitted capacity,
+- actual excess,
+- and recorded timeline.
+
+### Shepherd / recorder pair
+
+The seventy shepherd system has a built-in counter-role:
+- shepherds act,
+- one heavenly scribe/observer records.
+
+This is a **P7 operator/auditor pair** at the system level.
+
+The recorder later carries the book upward, has it read, sealed, and stored.
+
+### House/tower destruction and rebuilding
+
+During foreign domination:
+- original house/tower are burned/demolished,
+- later **three sheep return** and rebuild what had fallen,
+- tower is raised again,
+- table is restored,
+- but bread is polluted.
+
+Thus:
+**old house destroyed → partial return → same structural site rebuilt → function restored imperfectly**.
+
+This becomes important at the final transition, where the old house is not simply repaired again but is **folded up and replaced by a greater new house**.
+
+### Twelve hours / shepherd periods
+
+After the return:
+- shepherds pasture for **12 hours** in one phase.
+
+Then chapter 90 says:
+- **35 shepherds** complete periods,
+- then **23** more,
+- these are said to complete **58 times** in the received text.
+
+This arithmetic is textually/compositionally difficult because the grand total is supposed to belong to a **70-shepherd scheme**.
+
+Scholarship does not agree on a simple literal conversion of every shepherd/time into a fixed historical year.
+Loren Stuckenbruck notes that the Animal Vision works more securely as a **four-period historical structure**:
+1. exile/Babylonian phase,
+2. Persian,
+3. Ptolemaic,
+4. Seleucid / author's present,
+rather than as seventy equal-duration units.
+
+Antti Laato has argued there is nevertheless deliberate chronological logic behind the seventy-shepherd scheme, but precise correlation remains debated.
+
+Therefore:
+- preserve **70**, **12**, **35**, **23**, **58**
+- do not “repair” them ourselves to make a neat cycle.
+
+### Maccabean horn sequence
+
+Near the writer's own horizon:
+- lambs begin opening their eyes,
+- horns grow,
+- hostile ravens break horns,
+- one **great horn** sprouts,
+- other rams gather to it,
+- enemy birds attack it but cannot bring it down,
+- heavenly recorder descends to assist/show it,
+- Lord intervenes.
+
+Most scholarship associates the great horn with **Judas Maccabee** and dates the core Animal Apocalypse to the Maccabean crisis, generally in the **160s BCE**.
+
+This provides an external historical anchor for the symbolic timeline.
+
+### Number register, governance section
+- shepherds: **70**
+- return/rebuild sheep: **3**
+- one phase: **12 hours**
+- later shepherd count: **35**
+- next: **23**
+- stated aggregate: **58 times**
+- final shepherd subset mentioned in ch. 90: **12 last shepherds**
+- final judicial group still named: **70 shepherds**.
