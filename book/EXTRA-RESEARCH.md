@@ -14180,3 +14180,13 @@ Priority tests:
 > - 2 Enoch’s later Melchizedek tradition gives a second Flood-survival route: **Noah survives in the ark while Melchizedek is removed upward to Eden for preservation**.
 > 
 > I’m now continuing through **2 Enoch** before moving to **3 Enoch**, then back into Genesis 6–11.
+
+
+### Insert X2 progress D — 2 Enoch gives a one→many→one cosmic cycle
+
+> The most important remaining 2 Enoch result is a **one→many→one cosmology**. Creation begins when the enormous primordial Adoil **disintegrates and releases visible creation**; light is established as the foundation of the highest things and the dark/heavy Arukhas as the foundation of the lowest. At the end, 2 Enoch says ordinary time itself—years, months, days and hours—**ceases**, and creation/righteous humanity is gathered back into **one great age**.
+>
+> That gives a remarkable structural arc: **undivided primordial state → differentiation into upper/lower and many forms → measured cyclic time → final collapse of measurement → reintegration into one age**. It is one of the closest texts yet to the “separation and recombination” part of your cosmology, although its language is apocalyptic/theological rather than physical.
+
+**Primary/source control:** 2 Enoch 24–33 and 65–66; Andrei Orlov’s work on Adoil and the eschatological “single aeon” explicitly notes the reversal between primordial disintegration and final reintegration.
+
