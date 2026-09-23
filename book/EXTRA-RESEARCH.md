@@ -24034,3 +24034,117 @@ Therefore pair register:
 Do not use it as a secure Messiah proof or a secure Enoch/Methuselah proof.
 
 This is another useful warning against overconfident pair-identification.
+
+
+## SECTION 17 progress C — Noah's extraordinary birth: angel-like appearance does NOT equal angelic paternity
+
+### Lamech / Noah — father and visually “other” son
+
+Chapter 106 gives an unusually strong appearance/identity test.
+
+Newborn Noah:
+- body **white as snow**,
+- red like rose bloom,
+- hair **white as wool**,
+- eyes like **sun-rays**,
+- opening his eyes illuminates the whole house,
+- rises in the midwife's hands,
+- speaks/blesses God immediately.
+
+Lamech concludes:
+- child looks unlike ordinary humans,
+- resembles **sons of heaven**,
+- may not be biologically his,
+- fears an extraordinary event in the child's days.
+
+This is crucial for our methodology.
+
+### Enoch explicitly corrects the appearance inference
+
+The answer transmitted through Methuselah is:
+- Noah **is truly Lamech's son**,
+- despite angel-like appearance,
+- his difference signals his future role in the Flood transition.
+
+This is one of the strongest anti-overfitting controls in the entire corpus:
+
+**figure looks like another class**
+≠
+**figure is biologically/ontologically from that class**.
+
+Appearance can mark:
+- role,
+- destiny,
+- exceptional state,
+- divine election,
+without changing underlying parentage/identity.
+
+This directly constrains the wider Squatter-Man/personification investigation.
+
+### Three-generation information chain
+
+The question travels:
+**Lamech → Methuselah → Enoch**
+and the answer returns:
+**Enoch → Methuselah → Lamech**.
+
+This is a literal nested ancestor chain with Enoch as remote upper interpreter.
+
+Pair/role structure:
+- Lamech/Noah = anxious father / extraordinary son.
+- Methuselah/Enoch = messenger / interpreter.
+- Enoch/Noah = remote seer / future survivor.
+
+### Flood duration and survivor numbers
+
+Ethiopic chapter 106:
+- flood/destruction lasts **one year**.
+- Noah + **three sons** survive.
+
+So again:
+**1 + 3 survivor core**.
+
+### Latin numerical variants
+
+The Latin fragment preserves additional/different numbers:
+- Lamech around **350 years** at Noah's birth in the fragment,
+- a difficult statement involving **500 years** before the cataclysm,
+- three sons named Shem/Ham/Japheth.
+
+These Latin figures do not align cleanly with the Ethiopic/Biblical chronology and should be logged as **textual variants, not merged into one timeline**.
+
+### Noah's visual pair-colours
+
+Noah himself combines:
+- **white** body/hair,
+- **red** rose colouring,
+- **solar** eyes/light.
+
+This white/red/light cluster is notable because the Animal Apocalypse uses white/red/black animal coding, but chapter 106 does not tell us to equate the newborn's colours with those animal classes.
+
+Record the recurrence; do not force identity equivalence.
+
+### “New thing on earth”
+
+Enoch describes Noah's coming period as a **new thing** on earth:
+- Watcher corruption,
+- giant crisis,
+- Flood,
+- earth cleansed,
+- remnant survives,
+- new righteous continuation.
+
+This reinforces:
+**catastrophe → cleansing → preserved seed → successor population**.
+
+### After the Flood, corruption returns
+
+Chapter 106 explicitly says:
+after that first destruction,
+- **still greater unrighteousness** will occur later.
+
+So Flood is not the final reset.
+It is one world-historical transition inside a larger cycle.
+
+This matters for the user’s repeated-cycle hypothesis:
+the Enochic text itself presents **multiple crises**, not one unique terminal catastrophe.
