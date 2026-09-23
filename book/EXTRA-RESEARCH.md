@@ -26639,3 +26639,191 @@ the verse is retrospective and belongs to the final literary framing; it speaks 
 - melts with sun heat.
 
 Record for environmental comparison without assuming identity with modern/natural tamarisk manna.
+
+
+## SECTION 20 progress D — Exodus 17–18: rock-water axis, Moses/Aaron/Hur bilateral body, Joshua below and 1000/100/50/10 hierarchy
+
+### Rock-water scene reconnects the same staff to Nile
+
+At Rephidim:
+- no water.
+- Moses told to take **staff with which he struck Nile**.
+- pass before people with elders.
+- YHWH will **stand before Moses upon rock at Horeb**.
+- Moses strikes rock.
+- water comes out.
+
+This deliberately links:
+**staff + Nile water transformed/struck**
+to
+**staff + rock → water released**.
+
+Same instrument interacts with opposite water states:
+- existing water made unusable/blood,
+- dry rock made source of drinkable water.
+
+### Source / operator positions invert
+
+The wording says:
+- divine presence **stands before Moses on the rock**,
+- Moses strikes rock below/at that position.
+
+This is a vertical/axial encounter around:
+**standing presence + rock + staff + emerging water**.
+
+### Joshua / Moses — battlefield below versus hilltop operator above
+
+Moses appoints **Joshua** to fight.
+
+Pair structure:
+- Joshua = moving military operator **below**.
+- Moses = stationary ritual/authority operator **above on hill**.
+
+The battle outcome tracks Moses' hand position.
+
+This is a strong **P7 upper/lower paired-function system**.
+
+### Moses / Aaron / Hur — one centre + two lateral supports
+
+Text-level facts:
+- Moses, Aaron, Hur go to hilltop.
+- when Moses' hand raised, Israel prevails.
+- when lowered, Amalek prevails.
+- Moses' **hands** become heavy.
+- **stone placed under him**.
+- Moses **sits on stone**.
+- Aaron and Hur support his hands:
+  - **one on one side**
+  - **one on the other side**.
+- hands remain steady until sunset.
+
+Raw geometry:
+
+**left supporter — raised hand — seated central Moses — raised hand — right supporter**
+over/around
+**stone base**
+on
+**hilltop**.
+
+This is arguably the strongest explicit bilateral human-body scene in Exodus and one of the strongest in the entire corpus.
+
+### Battle state maps directly to central body's posture
+
+The narrative states:
+**hand up → Israel prevails**
+**hand down → Amalek prevails**.
+
+Then supporters mechanically maintain the “up” state until sunset.
+
+Whatever the theological interpretation, the story explicitly makes:
+**macro-event state depend on central figure's bodily configuration**.
+
+That is highly relevant to the user's Squatter-Man hypothesis.
+
+### Was the staff horizontal between the hands?
+
+The text is ambiguous:
+- v. 9 says Moses will stand with **staff of God in my hand**.
+- v. 11 speaks singular **hand**.
+- v. 12 shifts to plural **hands**.
+
+Older source critics have proposed conflated traditions:
+- one with raised staff/one hand,
+- one with both hands raised in prayer.
+
+A 2023 peer-reviewed study by **Tomer Greenberg** argues instead that Moses may be pictured **holding the staff horizontally with both hands**, with Aaron and Hur supporting his hands from the two sides, drawing support from literary analysis and Egyptian iconography.
+
+A 2019 study by **Charlie Trimm** emphasizes the intentional ambiguity between:
+- staff in one raised hand,
+- two raised hands as prayer,
+and sees the scene as a narrative transition in divine-warrior representation.
+
+For Vardath research:
+the **horizontal-staff/two-hand reconstruction is highly relevant**, but it is a scholarly reconstruction, not an uncontested plain-text fact.
+
+### Pharaoh's heavy heart / Moses' heavy hands
+
+Exodus repeatedly used `kaved`/“heavy” for Pharaoh's heart.
+
+Now:
+- Moses' hands are **heavy**.
+
+The resulting effects are inverse:
+- Pharaoh's heavy heart → Israel remains bound.
+- Moses' heavy hands fall → Israel begins losing.
+- Aaron/Hur support hands → Israel wins.
+
+This may be deliberate lexical resonance; retain as a literary possibility.
+
+### Sunset closes the posture event
+
+Hands are maintained:
+- until **sunset**.
+
+Thus the battle-control posture has an exact day-bound terminus.
+
+### Stone as support/base
+
+Moses is not merely standing as a vertical axis:
+- a **stone** is placed underneath,
+- he sits on it,
+- lateral supports stabilize upper limbs.
+
+Geometry becomes:
+**base stone → seated centre → bilateral raised arms/supporters**.
+
+This is unusually close to the project's “central figure + base + two sides” test template.
+
+### Jethro / Moses — central overload replaced by distributed hierarchy
+
+Exodus 18 begins with Moses judging:
+- alone at centre,
+- people standing around,
+- morning→evening.
+
+Jethro says the load is **too heavy**.
+
+Solution:
+- Moses remains highest referral/interface with God.
+- lower judges handle ordinary cases.
+
+Hierarchy:
+- rulers of **1000**
+- **100**
+- **50**
+- **10**.
+
+This is a deliberate decompression of one overloaded centre into nested delegation.
+
+### Moses remains apex, not removed
+
+After delegation:
+**many local nodes**
+→ difficult cases rise upward
+→ Moses handles highest-level matters.
+
+This is a tree/hierarchy architecture:
+**1 apex → graded branches → population**.
+
+Compare later with 70 elders, priestly layers and JANUS/federated structures only as abstract organization; no claim of direct relationship.
+
+### Jethro / Moses pair
+
+Classification:
+- **P7 counsellor / executive pair**.
+- Jethro supplies system architecture.
+- Moses implements it.
+
+This is not rivalry or shared identity.
+
+### Family reunion closes Moses' Midian split
+
+Jethro brings:
+- Zipporah,
+- **2 sons** Gershom and Eliezer,
+back to Moses at mountain of God.
+
+The Midian family branch rejoins Moses after the Exodus mission's first phase.
+
+This closes the Exodus 2/4 separation:
+**Moses departs Midian → wife/sons absent → family reunites at mountain**.
