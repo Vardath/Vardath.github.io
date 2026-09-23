@@ -25818,3 +25818,134 @@ The rites are still different:
 - family traveller vs national event.
 
 Do not collapse them.
+
+
+## SECTION 19 progress F — Passover house geometry: 1 upper lintel + 2 sideposts, sealed interior, morning release
+
+### Calendar is reset at the event
+
+Exodus 12 begins by redefining the month:
+- “this month” becomes **first of the months**.
+
+So Passover is not only a liberation event.
+It becomes a **calendar origin / year-order reset** for ritual time.
+
+This is extremely relevant to the timeline project:
+**world/national transition → new calendrical zero-point**.
+
+### Day 10 → day 14 → day 21
+
+Core dating:
+- month **1**, day **10**: household lamb selected.
+- day **14**, twilight/evening: slaughter.
+- unleavened period extends **7 days**.
+- day **14 evening → day 21 evening** in the received calendar instructions.
+
+This makes the event highly timed rather than a vague night tradition.
+
+### One animal is scaled to one household
+
+The rule begins:
+- **1 lamb/young animal per household**.
+- if household too small, neighboring household shares according to number of eaters.
+
+So the ritual unit is explicitly:
+**household / enclosed domestic group**.
+
+### Doorframe geometry is three-sided
+
+Blood is put on:
+- **2 doorposts**,
+- **1 lintel** above.
+
+The text does **not** instruct blood to be put across the floor/threshold itself.
+
+Visual form:
+**left vertical + right vertical + upper horizontal**,
+with open/uncoded lower edge.
+
+This is a strong **1-over-2 / three-sided gate-frame**.
+
+Do not turn it into a cross unless later tradition adds such imagery; the Exodus instructions themselves specify two sides + top.
+
+### Interior / exterior rule is absolute until morning
+
+Moses says:
+- **no one is to go out through the door of the house until morning**.
+
+This creates a temporary protected state:
+
+**inside marked enclosure = protected**
+**crossing doorway during danger interval = forbidden**.
+
+The door is therefore the operative boundary.
+
+### The meal remains inside one house
+
+Later rules emphasize:
+- eaten in **one house**,
+- flesh is **not carried outside**,
+- no bone broken.
+
+The protected/ritual cargo remains spatially coherent inside the enclosure.
+
+This is another strong house-as-carrier/protected-zone image, not a gate that transports the occupants.
+
+### Eating posture is already a departure state
+
+Inside:
+- loins girded,
+- sandals on feet,
+- **staff in hand**,
+- eaten in haste.
+
+So occupants are simultaneously:
+**sealed inside**
+and
+**prepared to move**.
+
+This is a threshold-state:
+**fully equipped for departure, but forbidden to cross boundary until release time**.
+
+That resembles an event chamber waiting for opening, although conventionally it is simply readiness for rapid Exodus.
+
+### Midnight → morning transition
+
+The lethal event occurs at **midnight**.
+
+The house-seal remains until **morning**.
+
+Then departure follows.
+
+Temporal geometry:
+**twilight preparation**
+→ **night enclosure**
+→ **midnight maximum danger**
+→ **morning release/movement**.
+
+### Hail foreshadowed the same inside/outside logic
+
+Plague 7 had already established:
+- exposed field = danger,
+- bring persons/animals **inside house** = survive hail.
+
+Passover intensifies that pattern:
+- house must be specifically marked,
+- occupants must remain inside,
+- danger specifically attempts/risks entrance.
+
+So the enclosure motif is cumulative across the plague narrative.
+
+### Boundary comparison to user's model
+
+Closest structural analogue:
+**dangerous active external environment**
+→ **temporarily sealed inhabited enclosure**
+→ **boundary marked/guarded**
+→ **transfer across boundary prohibited**
+→ **event passes/completes**
+→ **boundary crossed at morning**
+→ **population relocates**.
+
+Major mismatch:
+The house itself does not move between worlds and does not create world adjacency.
