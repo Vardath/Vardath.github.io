@@ -20812,3 +20812,141 @@ Priority tests already saved:
 - all pair structures,
 - event ordering,
 - dates/years/jubilees/weeks/months/days.
+
+
+## SECTION 12 progress A — Jubilees 24–29: the twin inversion becomes explicit geometry
+
+### Jacob / Esau — strongest pair result so far in this block
+
+Jubilees does more than preserve the Genesis twin rivalry. It repeatedly describes the pair as a **single-origin system whose vertical/status ordering reverses**.
+
+- Jacob and Esau begin as twin brothers from one womb.
+- Esau sells the birthright.
+- Jubilees 24:7 states the inversion bluntly: **Jacob became the elder and Esau was brought down from his dignity**.
+- In the blessing scene Jacob overlays Esau's visible identity:
+  - Esau's clothing on Jacob,
+  - kid skins on Jacob's **hands and neck**,
+  - Jacob's voice + Esau's hands,
+  - Esau's smell carried by the garment.
+- Heaven itself is said to remove Isaac's power of perception so that the transfer succeeds.
+- Jacob receives the upper/dominant role; Esau receives the lower/subordinate role but is promised a later shaking-off of the yoke.
+
+Pair classification:
+- **P1 split-origin pair** — twins from one womb.
+- **P2 polarity pair** — field/domestic, hairy/smooth, elder/younger, dominant/subordinate.
+- **P3 state inversion** — younger takes elder-function; elder is lowered.
+- **P6 rival/double** — identity is literally overlaid so that one brother is perceived through the other's outer markers.
+
+This is unusually relevant to the Vardath possibility that two figures may be **two branches/states of one original structure** rather than merely unrelated characters.
+
+### Isaac and the wells — blocked/open channels as a secondary mechanical sequence
+
+Jubilees 24 expands a useful water sequence:
+1. Abraham's wells are **filled with earth / closed** after his death.
+2. Isaac **reopens** them.
+3. New well: **living water**, but contested.
+4. Second well: contested again.
+5. Third well: uncontested and called **Room**, because space has opened.
+6. At the Well of the Oath another source yields living water.
+7. A further well then yields **no water**, immediately after the oath.
+
+This should be retained as:
+**blocked channel → reopened ancestral channel → contested flow → second conflict → open/roomy flow → oath boundary → dry channel**.
+
+It is not proof of a gate mechanism, but it is more structurally precise than simply “many wells.”
+
+### Vertical no-escape formula
+
+Isaac's curse on the Philistines uses all vertical possibilities:
+- ascend to heaven → brought down,
+- make strong on earth → dragged out,
+- hide among nations → rooted out,
+- descend into Sheol → still judged.
+
+This is a compact **upper / middle / lower** spatial triad.
+
+### Rebecca / Jacob — bilateral hand transmission
+
+Rebecca:
+- raises her face to heaven,
+- extends the fingers of her hands,
+- receives the spirit of righteousness into her mouth,
+- then places **both hands on Jacob's head** and blesses him.
+
+This is another instance of a central person receiving something from above and transmitting it through a bilateral hand posture.
+
+### Bethel — Jubilees preserves the Genesis gate geometry almost intact
+
+Jubilees 27 keeps:
+- stone beneath/near Jacob,
+- a **tree** at the place,
+- ladder set on earth,
+- top reaching heaven,
+- angels **ascending and descending**,
+- divine figure above/on the ladder,
+- four-direction expansion west/east/north/south,
+- place explicitly called **gate of heaven**,
+- stone changed from resting object into upright **pillar**,
+- oil poured on its top.
+
+This is important because Jubilees does **not** flatten the Genesis scene into a generic dream. It preserves the connector/gate/pillar geometry.
+
+### Important control — Jubilees removes the Jabbok wrestling scene
+
+When Jacob later crosses the Jabbok, Jubilees 29 simply dates the crossing and reconciliation with Esau. It omits:
+- the mysterious man,
+- the night wrestling,
+- the hip touch,
+- Peniel,
+- the dawn transformation,
+- and the Jacob→Israel renaming at Jabbok.
+
+That omission matters. The high-value “axis-person” wrestling geometry is therefore **not universal even within ancient rewritten Genesis**. Jubilees relocates Jacob's Israel-renaming to Bethel later in chapter 32.
+
+### Second control — the peeled breeding rods disappear
+
+Genesis' peeled rods/branches at the watering places are absent from Jubilees 28. Jubilees simply says the flocks produced marked offspring according to the wage agreement.
+
+Do not use the rod-breeding image as though every ancient version thought it essential.
+
+### Leah / Rachel — the twin pattern recursively reappears as an elder/younger sister pair
+
+Laban forces Jacob to accept **elder Leah before younger Rachel**, explicitly stating that the younger must not precede the elder.
+
+That directly mirrors Jacob/Esau:
+- Jacob earlier gained elder-function over his older brother.
+- Jacob is then forced into a marriage sequence where **elder-first order is restored**.
+- Leah/Rachel become another paired system:
+  - elder / younger,
+  - less-loved / loved,
+  - womb opened / womb closed,
+  - envy moves first Rachel→Leah, then Leah→Rachel,
+  - each introduces a handmaid, creating a **2 → 4 maternal structure** that generates the twelve-tribe family.
+
+This is likely **P9 narrative recursion/reworking** of the elder/younger inversion theme rather than “same people.”
+
+### Jacob / Laban — boundary pair
+
+At Gilead:
+- two parties meet on a mountain,
+- make a covenant,
+- build a **heap as witness**,
+- and agree that neither will cross the mountain toward the other for evil.
+
+This is a literal **boundary marker + no-hostile-crossing rule**. The site remains traversable in principle; the covenant regulates the direction/purpose of crossing.
+
+### Timing retained from chapters 24–29
+- **2073 A.M.** Isaac at Well of Vision.
+- **2080 A.M.** famine.
+- Isaac in Gerar: **three weeks of years = 21 years**.
+- **2108 A.M.** return to Well of Oath.
+- Jacob describes himself as **nine weeks of years = 63 years** old.
+- Esau has pressed him about marriage for **22 years**.
+- **2114 A.M.** blessing/identity-overlay episode.
+- **2115 A.M.** Bethel gate dream, new moon of month 1.
+- Jacob serves **7 years** for the intended Rachel marriage, receives Leah, then another **7 years** for Rachel.
+- **2135 A.M.** departure from Laban.
+- Laban was **three days' journey** away when Jacob left.
+- Gilead covenant dated month 3, day **15**.
+- Jabbok crossing/reconciliation: month 9, day **11**.
+- Jacob sends support to Isaac/Rebecca **four times a year**, positioned between seasonal phases.
