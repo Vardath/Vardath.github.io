@@ -2882,23 +2882,18 @@ Not narrative-first. Extract structural pair theology:
 
 ---
 
-## 43A. COMPARISON INSERT X7 — 3 Enoch / Hebrew Book of Enoch
+## 43A. 3 Enoch historical-frame cross-reference
 
-**Primary placement:** after Revelation, before the Ethiopian NT Church-Order books.
+**Active story-order placement:** beside 2 Enoch after Genesis 5 and before Genesis 6.
 
-Reason:
-- narrative frame is Rabbi Ishmael's ascent,
-- Metatron recounts his earlier identity as biblical Enoch,
-- the book belongs to the later Hekhalot/merkavah world rather than the antediluvian narrative frame.
+**Historical-frame note:** the surviving work is narrated through Rabbi Ishmael in a later Hekhalot/merkavah setting. Keep that late frame explicit in source criticism.
 
-**Secondary cross-reference:** Genesis 5 / 1 Enoch / 2 Enoch, specifically for:
-- Enoch → Metatron transformation,
-- bodily enlargement/glory,
-- throne/gate/palace material,
-- Flood-generation retrospective,
-- seven-heaven/palace structures.
+Use this later-location note only when analysing:
+- Rabbi Ishmael's ascent frame,
+- reception history,
+- late antique/redactional context.
 
-Do not move the complete book into Genesis chronology merely because Metatron is Enoch.
+Do not use historical composition date to remove the Enoch/Metatron story from the Enoch section of the active narrative read-through.
 
 ---
 
@@ -13433,4 +13428,72 @@ The original historical progress material is retained for provenance, but the **
 > - recorded that there is **no pre-Genesis comparison text to research before continuing**.
 > 
 > So we do **not** need to jump backward before Genesis. The next normal research point remains **Section 12 — Jubilees 24–38**, unless we choose to go back and perform the full deep passes on the newly interleaved comparison texts first.
+
+
+
+---
+
+## 469. Natural story-order correction for the seven comparison books
+
+The user clarified the question as: **where do the seven books naturally fit in the story?**
+
+For the active 88-text read-through, use **narrative subject order**, not composition/redaction date.
+
+### Natural placements
+
+1. **Life of Adam and Eve / Apocalypse of Moses**  
+   **After Genesis 3, before Genesis 4–5.**  
+   It begins after expulsion from Eden and continues Adam/Eve, Cain/Abel, Seth, Adam's final illness, death, burial and resurrection promise.
+
+2. **2 Enoch**  
+   **After Genesis 5, before Genesis 6.**  
+   It expands the antediluvian Enoch story, his ascent, return, final translation, and later material leading toward the Flood.
+
+3. **3 Enoch / Hebrew Book of Enoch**  
+   **Naturally beside 2 Enoch after Genesis 5, before Genesis 6**, because its central subject is the biblical Enoch transformed into Metatron.  
+   **Important frame note:** the book is narrated through the much later Rabbi Ishmael. Preserve that anachronistic/later frame in the source notes, but do not exile the whole book to the end of the story-order reading.
+
+4. **Apocalypse of Abraham**  
+   **After Genesis 11, before Genesis 12**, with a second cross-reference at Genesis 15.  
+   Abraham's youth/idol rejection precedes the canonical call; the ascent develops the covenant/trance material.
+
+5. **Testament of Abraham**  
+   **Immediately after Genesis 25:7–10.**  
+   It is an expanded Abraham-death story.
+
+6. **Testaments of the Twelve Patriarchs**  
+   **After Genesis 50, before Exodus 1.**  
+   The sons of Jacob give final speeches and die in Egypt; their remains anticipate the later Exodus.
+
+7. **Ascension of Isaiah**  
+   **At the Hezekiah → Manasseh transition:** after 2 Kings 20 / 2 Chronicles 32 and before 2 Kings 21 / 2 Chronicles 33.  
+   Isaiah's vision belongs to Hezekiah's period; the martyrdom frame belongs under Manasseh.
+
+### Natural story-order result
+
+**Genesis 1–3**  
+→ **Life of Adam and Eve**  
+→ **Genesis 4–5**  
+→ **2 Enoch**  
+→ **3 Enoch (Enoch/Metatron core; later Rabbi Ishmael frame noted separately)**  
+→ **Genesis 6–11**  
+→ **Apocalypse of Abraham**  
+→ **Genesis 12–25:10**  
+→ **Testament of Abraham**  
+→ **Genesis 25:11–50**  
+→ **Testaments of the Twelve Patriarchs**  
+→ **Exodus onward**  
+→ at Hezekiah/Manasseh: **Ascension of Isaiah**  
+→ continue canonical/Ethiopian sequence.
+
+**Nothing naturally precedes Genesis 1.**
+
+### Working-rule change
+
+For this investigation:
+- **story-order placement** governs where the text is read,
+- **historical composition/redaction date** remains in the scholarly/source notes,
+- later narrative frames are not allowed to displace the older story-subject they are expanding.
+
+This supersedes the earlier primary-after-Revelation placement for 3 Enoch in the active research roadmap.
 
