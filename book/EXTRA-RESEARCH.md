@@ -15177,3 +15177,732 @@ Priority tests:
 **Primary text logged:** 3 Enoch 1–15 in the Odeberg tradition.  
 **Source-critical control:** 3 Enoch is a late-antique/early-medieval Hekhalot work with composite textual history, even though it deliberately identifies Metatron with Genesis' Enoch.
 
+
+
+### X3 progress B — exalted visible operator is still distinct from ultimate source
+
+> 3 Enoch also gives us an important **anti-overfitting control**: Metatron becomes so visually and functionally exalted that another visionary mistakes him for a second divine power. The text then explicitly corrects that mistake—Metatron is struck with **sixty fiery lashes and made to stand**.
+>
+> So the tradition itself says, in effect: **a human-derived figure can become world-sized, fiery, enthroned, gate-positioned, and nearly indistinguishable from divine authority without actually being the supreme deity**. That is highly useful for interpreting Squatter-Man-like anthropomorphic figures without automatically equating the visible figure with the ultimate source behind it.
+
+**Primary text:** 3 Enoch 16; compare b. Hagigah 15a.  
+**Control:** the enthronement/demotion material belongs to later Hekhalot/Talmudic debates about “two powers in heaven,” not to Genesis itself.
+
+---
+
+## 559. COMPARISON INSERT X3 COMPLETE — 3 Enoch / Hebrew Book of Enoch
+
+**Natural story placement for this project:** immediately after 2 Enoch and before Genesis 6, because the book’s central subject is the transformation of biblical Enoch into Metatron.
+
+**Historical-frame warning:** the narrator is Rabbi Ishmael and the work belongs to the much later Hekhalot/Merkavah tradition. It is therefore **not** an independent pre-Flood witness. It is a later interpretive development of Enoch traditions.
+
+### 559.1 Rabbi Ishmael’s frame is itself a gate-ascent narrative
+
+Rabbi Ishmael:
+- ascends through six halls,
+- reaches the door of the seventh,
+- is threatened by gate/guardian beings,
+- prays,
+- Metatron comes out,
+- takes him by the hand,
+- leads him through.
+
+This gives:
+**layered halls**
+→ **dangerous threshold**
+→ **authorized guide**
+→ **hand-led passage.**
+
+This echoes:
+- Lot pulled by hand through a threshold,
+- Enoch carried through heavens,
+- later initiatory gate literature.
+
+---
+
+## 560. Metatron explicitly says: “I am Enoch”
+
+The identity equation is direct.
+
+Metatron is not merely:
+- inspired by Enoch,
+- analogous to Enoch,
+- another angel with similar traits.
+
+He says:
+**I am Enoch son of Jared.**
+
+This is one of the strongest same-being / radically-different-name-and-form controls in the entire corpus.
+
+---
+
+## 561. One identity, seventy names
+
+Metatron says he has **70 names** corresponding to the world’s seventy languages/nations.
+
+Thus:
+**one being**
+→ **many names**
+→ **many relational contexts.**
+
+This is very relevant to the user’s hypothesis that multiple named figures across traditions may sometimes preserve one underlying role or entity.
+
+Control:
+here the multiplicity of names is explicit in one late text; it does not license collapsing unrelated biblical figures automatically.
+
+---
+
+## 562. Enoch removed before the Flood as witness
+
+3 Enoch says Enoch is taken from the generation that will perish in the Flood.
+
+His function becomes:
+- witness,
+- heavenly prince,
+- representative from humanity.
+
+This strengthens Enoch’s role as **pre-catastrophe transfer figure**.
+
+---
+
+## 563. Shekinah itself moves from earth to heaven
+
+A striking feature:
+- divine Presence had dwelt near Eden/earth,
+- human corruption causes it to withdraw,
+- it ascends to high heaven,
+- Enoch is lifted upward with it.
+
+This creates a double movement:
+
+**Presence on earth**
+→ **withdrawal upward**
+and
+**human Enoch**
+→ **lifted upward with Presence.**
+
+For Vardath:
+this resembles an entire **active interface withdrawing from one layer while carrying a selected figure with it**.
+
+---
+
+## 564. Enoch is carried in a fiery chariot
+
+The ascent is not abstract:
+- fiery chariot,
+- fiery horses,
+- glory,
+- wings/wind.
+
+This adds a vehicle-layer to the transfer.
+
+Do not assume technological craft.
+
+---
+
+## 565. Enoch’s human smell exposes cross-layer incompatibility
+
+On arrival, heavenly beings react to:
+- the “smell” of one born of woman,
+- mortal biological origin.
+
+This is another layer-compatibility motif:
+**traveller visibly/physically does not initially belong in upper environment.**
+
+Compare 2 Enoch:
+- face must be cooled for return to earth.
+
+Together:
+- lower-state body is conspicuous above,
+- upper-state body must be attenuated below.
+
+This is a remarkably symmetrical pair.
+
+---
+
+## 566. Hundreds of thousands of “gates” open into capacities
+
+Before Metatron’s full transformation, gates are opened for:
+- understanding,
+- life,
+- mercy,
+- wisdom,
+- strength,
+- Torah,
+- fear,
+- love,
+etc.
+
+Here “gate” means **access to a function/state**, not only a physical doorway.
+
+This is an important semantic control for the entire project.
+
+Some gates in these texts are:
+- spatial,
+- cognitive,
+- ethical,
+- liturgical.
+
+---
+
+## 567. World-sized body
+
+3 Enoch says Enoch/Metatron is enlarged until:
+**length and breadth match the world.**
+
+This is one of the strongest anthropomorphic cosmology statements found.
+
+A human-derived body is made a **world-scale form**.
+
+This is directly relevant to the Squatter-Man hypothesis.
+
+---
+
+## 568. 72 wings split 36 / 36
+
+Metatron receives:
+- **72 wings**,
+- **36 on each side**.
+
+This gives an exact bilateral expansion:
+
+**central body**
++
+**36 left**
++
+**36 right.**
+
+That is highly relevant to the user’s lattice/branch image.
+
+Do not assume the number 72 directly maps to the user’s existing gate counts without quantitative testing.
+
+---
+
+## 569. 365 eyes
+
+Metatron receives **365 eyes**, each compared to a great luminary.
+
+This aligns anthropomorphic anatomy with calendrical/celestial number.
+
+Thus the body becomes a **time-cosmos map**.
+
+This strongly supports the methodological idea:
+**person can encode cosmic order.**
+
+---
+
+## 570. Throne at the door of the seventh hall
+
+Metatron is seated:
+**at the door of the seventh Hall.**
+
+This is perhaps the clearest literal combination yet of:
+- giant anthropomorphic figure,
+- gate,
+- authority,
+- central mediation.
+
+Functionally he regulates:
+- princes,
+- commands,
+- heavenly access.
+
+For Vardath:
+this is a major **gatekeeper/operator** analogue.
+
+---
+
+## 571. Central figure between upper authority and lower hierarchy
+
+Metatron is positioned so that:
+- divine commands come from above/source,
+- angelic/princely hierarchies receive instruction through him,
+- earthly/worldly affairs are also known/pleaded.
+
+This creates:
+**source**
+↓
+**central anthropomorphic mediator**
+↓
+**layered orders/world.**
+
+This is much closer to “axis-person” than a simple messenger story.
+
+---
+
+## 572. Metatron becomes creation-knower
+
+The text says:
+- mysteries of creation,
+- secrets above and below,
+- human thoughts,
+- future actions
+are disclosed to him.
+
+Thus:
+**world-scale body**
+and
+**world-scale knowledge**
+are combined in the same figure.
+
+---
+
+## 573. Garment + crown transformation continues 2 Enoch
+
+3 Enoch intensifies 2 Enoch’s clothing motif:
+- garment of glory,
+- robe of honor,
+- royal crown.
+
+The transformation is therefore not only enlargement.
+
+It includes:
+**outer state**
++
+**insignia**
++
+**office.**
+
+Identity and function become visibly encoded in what the figure wears.
+
+---
+
+## 574. Crown bears creation letters
+
+The crown contains letters described as those by which:
+- heaven,
+- earth,
+- seas,
+- mountains,
+- luminaries,
+- winds,
+- storms,
+etc.
+were created.
+
+Thus the transformed figure literally carries **creation-code imagery** on the head/crown.
+
+For Vardath:
+possible symbolic analogy to a central figure carrying the pattern/information of the world-system.
+
+Do not interpret as literal software/code.
+
+---
+
+## 575. 49 stones in crown
+
+The crown contains **49** precious stones in one textual form.
+
+Record:
+**7 × 7 = 49**.
+
+This joins the wider corpus:
+- 7,
+- 49,
+- 50/Jubilee,
+- sevenfold structures.
+
+Do not derive a physical cycle yet.
+
+---
+
+## 576. Full body converted to fire
+
+3 Enoch 15 says:
+- flesh → flame,
+- sinews → flaming fire,
+- bones → burning coals,
+- eyelids → lightning,
+- eyes → firebrands,
+- hair → flames,
+- limbs → wings of fire,
+- entire body → glowing fire.
+
+This is a complete **human-body → fiery-body state conversion**.
+
+It is one of the strongest transformation passages in the entire 88-text comparison project.
+
+---
+
+## 577. Fiery body is surrounded by storm/earthquake
+
+Metatron’s transformed body is accompanied by:
+- fiery divisions on right,
+- firebrands on left,
+- storm wind,
+- tempest,
+- thunder,
+- earthquake.
+
+This matters enormously for the Squatter-Man/catastrophe hypothesis.
+
+The anthropomorphic figure is not isolated.
+
+It is embedded in an **environmental disturbance field**.
+
+However:
+the source is mystical throne imagery, not observed geophysics.
+
+---
+
+## 578. Human body as environmental center
+
+Stripped geometry:
+
+**central anthropomorphic body**
++
+**left/right fiery structures**
++
+**wind/storm around**
++
+**thunder/earthquake front and rear.**
+
+This is one of the closest narrative descriptions yet to:
+**person-shaped center of a large energetic/catastrophic structure.**
+
+High-priority comparison.
+
+---
+
+## 579. Metatron can be mistaken for the ultimate source
+
+Acher sees:
+- enthroned Metatron,
+- angelic servants,
+- royal presentation,
+and concludes there are two powers.
+
+The text explicitly rejects this.
+
+This is critical.
+
+It means:
+**visual/function similarity does not equal ultimate identity.**
+
+For the user’s theory:
+a giant heavenly “person” might represent:
+- operator,
+- projection,
+- intermediary,
+without being the highest source.
+
+---
+
+## 580. Metatron is forcibly changed from sitting to standing
+
+After the mistaken “two powers” conclusion:
+- Metatron is punished,
+- struck with 60 fiery lashes,
+- made to stand.
+
+This gives another literal body-state transition:
+
+**enthroned/seated**
+→ **punishment**
+→ **standing.**
+
+For Squatter-Man research:
+posture is functionally meaningful in the text.
+
+---
+
+## 581. Standing/sitting changes theological interpretation
+
+The same figure:
+- when seated like king can be mistaken for deity,
+- when standing is visibly subordinate.
+
+Thus **posture encodes hierarchy/function**.
+
+This strongly supports paying attention to posture in anthropomorphic sky/axis imagery.
+
+---
+
+## 582. Seven heavens + seven principal governors
+
+3 Enoch organizes seven heavens with appointed princes.
+
+The layered cosmos is:
+- hierarchical,
+- governed,
+- functionally differentiated.
+
+This continues the layered-heaven architecture from 2 Enoch but in a later palace bureaucracy form.
+
+---
+
+## 583. Seven halls / nested thresholds
+
+The visionary passes halls one within another.
+
+This gives:
+**nested enclosure architecture**.
+
+For Vardath:
+possible analogy to stacked/embedded gate zones.
+
+Control:
+Hekhalot literally means “palaces”; this is mystical temple/palace architecture.
+
+---
+
+## 584. Bridges across fiery/hail rivers
+
+Some 3 Enoch sections describe:
+- bridges,
+- rivers of fire,
+- rivers of hail,
+- controlled passage,
+- guardian beings.
+
+One passage explicitly compares the heavenly bridge to a bridge over a river “so that everyone can pass over it.”
+
+This is a genuine **pass-over structure** in later mystical material.
+
+High priority for comparison with the user’s pass-over/pass-under model.
+
+---
+
+## 585. Above/below symmetrical distributions
+
+One late section distributes:
+- angelic groups,
+- treasuries,
+- wheels,
+in matched quantities **above and below**.
+
+This is another explicit upper/lower symmetry.
+
+Because 3 Enoch is composite, treat exact numbers cautiously.
+
+---
+
+## 586. Fire river seals / permission to cross
+
+Certain princes control:
+- fiery river,
+- seals,
+- permission for other princes to enter/exit.
+
+This gives a very direct gate-control model:
+
+**dangerous energetic boundary**
++
+**seal**
++
+**authorized crossing**
++
+**gatekeeper.**
+
+This is structurally close to the Vardath gate concept.
+
+---
+
+## 587. Metatron as Prince of the World
+
+Later tradition portrays Metatron as:
+- Prince/Governor of the World,
+- mediator,
+- pleader for the world,
+- coordinator of subordinate princes.
+
+This fulfills the trajectory already emerging in 2 Enoch.
+
+Enoch moves from:
+**traveller**
+→ **transformed witness**
+→ **permanent world-governor/mediator.**
+
+---
+
+## 588. Adam → Enoch/Metatron restoration interpretation
+
+Modern scholars have noted that Metatron’s world-sized luminous body may deliberately reverse Adam’s fall.
+
+In some Jewish traditions:
+- primordial Adam originally had cosmic size/glory,
+- fall reduces him.
+
+Enoch/Metatron:
+- begins ordinary human,
+- ascends,
+- becomes luminous,
+- expands to world-size.
+
+Thus:
+
+**Adam**
+world-scale → fall → reduced
+
+mirrors
+
+**Enoch**
+reduced human → ascent → world-scale.
+
+This is an extremely important pair.
+
+---
+
+## 589. Adam / Enoch as opposite-direction states
+
+For the user’s “same figure somehow” method:
+
+Adam and Enoch are not one person in 3 Enoch’s straightforward narrative.
+
+But later mystical interpretation can make them **opposite directional states of one human-cosmic archetype**:
+
+**Adam = cosmic human descending/shrinking**
+**Enoch = human ascending/expanding.**
+
+This is much stronger than simply noting similar symbolism.
+
+---
+
+## 590. Later reincarnation-like traditions exist but must not be back-projected
+
+Some later Jewish mystical texts go even further and explicitly link:
+- Adam,
+- Enoch,
+- Metatron
+through shared/reincarnated divine-human identity traditions.
+
+These are much later developments.
+
+Therefore:
+- record them as reception-history evidence,
+- do **not** use them as proof that Genesis intended Adam = Enoch.
+
+---
+
+## 591. Metatron as possible Squatter-Man analogue — current verdict
+
+This is the strongest candidate so far **at the level of later mystical interpretation**.
+
+Source-level features:
+- formerly human,
+- enlarged to world-size,
+- bilateral 36/36 wings,
+- 365 eyes,
+- body converted to fire,
+- storm/thunder/earthquake around him,
+- enthroned/standing posture matters,
+- stationed at gate of seventh hall,
+- mediates upper/lower orders,
+- controls/receives passage and commands,
+- associated with bridges, fiery rivers and layered heavens.
+
+This is far closer to the user’s visualized **lattice rod / giant anthropomorphic gate-operator** than ordinary biblical patriarch stories.
+
+But:
+**3 Enoch is late.**
+It may represent the *development* of older motifs into exactly this kind of cosmic person, rather than preserving an original physical observation.
+
+---
+
+## 592. 2 Enoch → 3 Enoch developmental sequence
+
+A very clear progression emerges:
+
+### Genesis 5
+Enoch “walks with God” and is taken.
+
+### 1 Enoch / Jubilees
+Enoch = scribe, visionary, cross-domain witness.
+
+### 2 Enoch
+Enoch = bodily traveller, luminous transformed human, measurer, mediator, permanent heavenly servant.
+
+### 3 Enoch
+Enoch = Metatron, world-sized fiery anthropomorphic ruler/gatekeeper.
+
+This is an extraordinary **progressive personification/enlargement of the same figure across traditions**.
+
+For the project this means:
+if a Squatter-Man-like image lies behind some traditions, later literature could progressively make the geometry more explicitly human.
+
+Equally,
+the opposite explanation is possible:
+later mystical imagination may have progressively anthropomorphized older abstract cosmological motifs.
+
+Both possibilities must remain open.
+
+---
+
+## 593. Strongest X3 findings for Vardath Cosmology
+
+1. **Metatron explicitly = Enoch.**
+2. **One identity has 70 names.**
+3. **World-sized human-derived body.**
+4. **72 wings split exactly 36/36.**
+5. **365 eyes = body/calendar correspondence.**
+6. **Body converted completely into fire.**
+7. **Storm, thunder and earthquake surround the body.**
+8. **Throne positioned at door of seventh hall.**
+9. **Posture change sitting→standing alters perceived rank.**
+10. **Figure mediates divine/source authority to layered hierarchies.**
+11. **Bridges span dangerous fiery/hail boundaries.**
+12. **Gatekeepers regulate entry/exit using seals/permission.**
+13. **Adam’s lost cosmic stature may be restored in Enoch/Metatron.**
+14. **Late text turns an old human patriarch into a literal cosmic anthropomorphic operator.**
+
+---
+
+## 594. What X3 does NOT establish
+
+3 Enoch does not establish:
+- that Genesis’ historical Enoch was physically world-sized,
+- that Metatron is a plasma structure,
+- that the Squatter-Man image caused 3 Enoch,
+- that 72 wings equal lattice strands,
+- that 365 eyes equal astronomical apertures,
+- that its palace bridges are literal inter-world tunnels,
+- that Adam and Enoch are originally one biological person.
+
+Its strongest value is **reception history**:
+it shows how Jewish mystical tradition could transform Enoch into exactly the kind of cosmic anthropomorphic gate-figure the project is testing.
+
+---
+
+## 595. X3 timing / number register
+
+Retain:
+- 70 names.
+- 72 wings = 36 + 36.
+- 365 eyes.
+- 49 crown stones = 7×7.
+- 60 fiery lashes in demotion scene.
+- 7 heavens.
+- 7 halls in ascent frame.
+- repeated 365 / world-size / celestial number correspondences.
+- many late cosmographic numbers are symbolic and manuscript-dependent; do not use all of them as clean chronological data.
+
+---
+
+## 596. X3 status
+
+**3 ENOCH — COMPLETE FIRST PASS.**
+
+### Next unfinished natural-order text
+
+Genesis 6–11 has already been examined.
+
+Therefore the next genuinely unfinished inserted text in natural order is:
+
+**X4 — Apocalypse of Abraham**
+- natural position after Genesis 11 and before Genesis 12,
+- secondary cross-reference at Genesis 15.
+
+Priority tests:
+- Abraham and Terah’s idols,
+- fire and collapse/destruction of idol-house,
+- heavenly voice/call,
+- Yahoel as guide/operator,
+- sacrificial pieces,
+- ascent on bird/angelic structure,
+- multiple heavens,
+- picture of creation,
+- abyss,
+- Adam/Eve and serpent figure,
+- future history compressed into one vision,
+- whether the ascent is another version of Genesis 15’s dark/fire-between-pieces event.
+
