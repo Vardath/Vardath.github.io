@@ -25447,3 +25447,132 @@ The sequence progressively touches:
 **water → water/land life → ground → atmosphere/territory → animals → human/animal bodies**.
 
 Do not treat this as a scientific causal chain; it is a narrative expansion of domains.
+
+
+## SECTION 19 progress C — plague 7: hail/fire, inside/outside enclosure and heaven↔earth vertical motion
+
+### Hail is deliberately expanded and structurally prominent
+
+Scholarly analysis has long noted plague 7 as unusually elaborate.
+Scott Noegel argues that the 7th and 10th positions are rhetorically prominent in the ten-plague sequence, while Jonathan Grossman argues the narrative can be read both as:
+- **3 + 3 + 3 + 1**
+and
+- **7 + 3**.
+
+So preserve both structures rather than forcing one.
+
+### Advance warning creates an inside/outside survival test
+
+Before the hail:
+- Pharaoh's people are warned to bring servants/livestock **inside**.
+- anyone/anything left **in the field** will die.
+
+Some Egyptians who fear YHWH's word:
+- move servants/livestock into **houses**.
+
+Others:
+- leave them outside.
+
+This is important because protection is not yet based simply on ethnicity.
+
+The sorting rule becomes:
+**inside enclosure after warning → survival**
+vs
+**outside exposed field → death**.
+
+That anticipates Passover's stronger:
+**inside marked house → survival**
+vs
+**outside → unprotected**.
+
+### Moses' staff points upward
+
+Moses:
+- stretches staff **toward heaven**.
+
+Then:
+- thunder,
+- hail,
+- rain,
+- **fire descends/runs to earth**.
+
+The vertical geometry is explicit:
+
+**rod/hand directed upward**
+→ **heavenly activation**
+→ **ice/water + fire downward**
+→ **earth/field destruction**.
+
+This is one of the strongest rod–sky scenes before the sea.
+
+### Fire and hail coexist
+
+The plague combines:
+- hail/water/ice
+with
+- fire flashing/running amid it.
+
+That is another paired-element state:
+**cold/water-like material + fire**
+coexisting in one descending event.
+
+It should be compared with:
+- Enoch hot/cold house,
+- fire flowing as water,
+- Vardath fire/plasma + atmospheric water.
+
+But no plasma claim should be inserted into Exodus.
+
+### Goshen remains separate
+
+Despite country-wide severity:
+- **no hail in Goshen**.
+
+So two simultaneous environmental regimes persist:
+**Egyptian field catastrophe / Israelite enclave spared**.
+
+### Moses stops event through bilateral hand posture
+
+To stop hail:
+- Moses goes **out of the city**,
+- **spreads out his hands** toward YHWH.
+
+Then:
+- thunder ceases,
+- hail ceases,
+- rain no longer pours.
+
+This is directly relevant to the user's Moses-as-axis investigation:
+
+**central human operator**
+→ **two hands spread**
+→ **sky event ceases**.
+
+It is not as geometrically explicit as Rephidim's supported arms later, but it belongs in the same bodily-control motif.
+
+### Crop-stage time marker
+
+Hail destroys:
+- flax, because **in bloom**,
+- barley, because **in ear**.
+
+But:
+- wheat and spelt survive because **late/deferred in growth**.
+
+This is an agricultural seasonal marker, though it does not by itself yield an exact absolute date.
+
+### Plague 7 sequence
+
+**warning**
+→ move living things inside
+→ Moses/staff upward
+→ hail + fire downward
+→ field destruction
+→ Goshen protected
+→ Moses exits city
+→ hands spread
+→ sky closes/stops.
+
+This is almost a complete:
+**activation → vertical discharge → protected enclosure → deactivation**
+sequence.
