@@ -3100,3 +3100,13 @@ The research should proceed down Sections 1–96 and the pair register above, ap
 
 > Starting **Section 1 — Genesis 1–3** now. I’m treating Adam/Eve as a real test case rather than assuming the answer: first I’ll separate the text into geometry, motion, pairing/splitting, boundary, water/tree/serpent roles, then compare Hebrew/Greek wording and later parallel traditions before deciding whether “two people = one underlying figure” actually fits. I’ll append this update and each subsequent progress reply to `book/EXTRA-RESEARCH.md` as we go.
 
+
+
+### Section 1 progress update A — Adam/Eve split finding
+
+> First strong result: **Adam/Eve is not merely a modern “maybe they were one figure” idea.** Genesis itself says the woman is built from the human’s *ṣēlāʿ*, a word that can mean a **side/flank**, and the pair are described as bone/flesh of one another and becoming “one flesh.” An ancient reading in *Genesis Rabbah 8:1* goes further: the first Adam is described as androgynous/two-faced and then **split into two sides**.
+>
+> That does **not** mean Genesis treats Adam and Eve as one actor after the split—they speak and act separately afterward. But it gives us a much stronger structural model: **one primordial human/axis → division into complementary sides → two differentiated figures → potential reunion into one flesh**. That is exactly the sort of split/rejoin geometry we need to test against your lattice, rather than simply calling them “the same person.”
+
+**Sources logged:** Sefaria, *Bereshit Rabbah* 8:1; modern scholarly discussion of *ha-adam* and *ṣēlāʿ*; Genesis 2:21–24.
+
