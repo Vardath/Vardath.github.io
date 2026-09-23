@@ -16804,3 +16804,32 @@ Priority tests:
 
 **Textual-control note:** the Testament of Abraham survives principally in two Greek recensions, A/long and B/short, with differences in the judgment material. The two-gate/Adam scene is especially developed in the long recension.
 
+
+
+### X5 progress B — Death is one underlying agent expressed through many visible event-forms
+
+> Continuing **X5 — Testament of Abraham** from the exact point already saved. The next piece is unusually useful for your “same underlying thing, different visible figures” idea: **Death is explicitly one being that changes into many radically different forms**, and the text explains those forms as different ways the same transition can reach people.
+
+In the long recension, Death first approaches Abraham in a beautiful/radiant form appropriate to the righteous. At Abraham's insistence, Death then removes that appearance and reveals terrifying forms:
+- **7 fiery serpent heads**,
+- **14 faces/forms** including fire, darkness, viper/serpent, precipice, lion, basilisk, sword, lightning/thunder, raging sea, rushing river, three-headed serpent and poison imagery.
+
+Death then explains that these are not separate beings. They are **different manifestations of one underlying Death**, corresponding to different ways people die:
+- fire,
+- falling,
+- sword/war,
+- drowning/rivers,
+- sea,
+- thunder/lightning,
+- animals/serpents,
+- poison,
+and so on.
+
+This is one of the clearest explicit controls in the entire project for:
+
+**one underlying process/agent → multiple visible forms depending on mode of encounter.**
+
+That does not prove biblical characters are all one lattice mechanism, but it shows the interpretive grammar itself exists inside ancient apocalyptic literature.
+
+**Source control:** this elaborate multi-form Death sequence belongs especially to the long recension; exact form-counts and details vary across recensions.
+
