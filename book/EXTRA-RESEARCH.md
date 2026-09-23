@@ -21662,3 +21662,67 @@ Working geometric register:
 **3 portals per cardinal side → approximately 12 directional outer portals**, while the detailed luminary gate system is developed differently in the later Astronomical Book.
 
 Keep this separate from 1 Enoch 72–82's six east/six west solar gates.
+
+
+## SECTION 13 progress D — number, pair and event registers
+
+### Numbers
+- Watchers descending: **200**.
+- named/chief leaders: **20** in the received roster.
+- pairing rule: approximately **1 Watcher : 1 woman**.
+- giant height: very large number in the Ethiopic/Charles tradition, often rendered **3000 cubits/ells**; textual tradition is unstable, so do not build chronology or physics on it.
+- hoped giant lifespan: **500 years**.
+- Shemihazah group binding: **70 generations**.
+- holy angels listed in chapter 20: **7**.
+- central mountain systems: **7 = 3 + 3 + 1**.
+- transgressing stars: **7**.
+- star-prison interval: **10,000 years** in Charles' text.
+- divine host: **10,000 × 10,000**.
+- soul chambers: **4**; Greek form **3 dark + 1 bright**.
+- directional portal pattern in chs 33–36: **3 per cardinal direction** as a working count.
+- trees retaining old leaves in ch. 3: **14**, with replacement after **2 or 3 years**.
+
+### Pair/double register
+- Watcher / human wife — repeated upper/lower pair.
+- Shemihazah / Asael — dual leadership/transgression strands, not literal twins.
+- Enoch / Watchers — mediator-role reversal.
+- heaven-spirit / earth-flesh — polarity whose improper combination produces hybrid third state.
+- Cain / Abel — rival pair continuing across life/death states.
+- obedient stars / seven transgressing stars — same class, different relation to cosmic order.
+- righteous/bright chamber vs dark/sinner chambers — spatialized state polarity.
+
+### Book-of-Watchers event timeline
+**stable cosmic order**
+→ Watchers descend
+→ oath at Hermon
+→ upper/lower pair formation
+→ knowledge + reproductive transfer
+→ hybrid giants
+→ earth destabilization
+→ cries pass upward through Gate of Heaven
+→ differentiated heavenly response
+→ Noah preservation instruction
+→ Azazel enclosed below
+→ giants destroy one another
+→ Watchers bound below
+→ Enoch becomes mediator
+→ Enoch ascends through nested fiery/crystal gates
+→ fallen Watchers denied re-ascent
+→ hybrid spirits remain earth-side
+→ Enoch surveys cosmic prisons/supports/portals
+→ final judgment
+→ sacred tree relocated / renewed righteous earth.
+
+### Vardath comparison
+The strongest correspondence is not “Enoch proves the cosmology.” It is the **event grammar**:
+
+**inhabited upper region + inhabited lower region → boundary breach → beings cross → matter/knowledge/reproduction transfer → mixed state → ecological catastrophe → routes sort differently → some entities are enclosed below → gate access becomes restricted → successor world promised.**
+
+The major mismatch is equally important:
+- 1 Enoch frames the upper realm as **heaven**, not a future inhabited world-disc.
+- contact is initiated morally by rebellious beings, not mechanically by a periodic lattice opening.
+- no explicit finger-trap weave is described.
+- no landmass exchange is described.
+- no ordinary-world future/past timing relationship is given.
+
+So this is one of the strongest **layer-contact analogues**, but not a direct description of the mature Vardath mechanism.
