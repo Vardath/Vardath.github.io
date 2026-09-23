@@ -28235,3 +28235,180 @@ Priority:
 - “new heaven” / eternal weeks,
 - all absolute and relative numbers,
 - compare cycle schemes with 364, Jubilees, Daniel and later Archaix chronology only after units are normalized.
+
+
+## SECTION 21 progress E — continuous Sinai timeline, pair matrix and Vardath comparison
+
+### Continuous timeline
+
+**Month 3**
+→ Israel reaches Sinai
+→ camps before mountain
+
+**First ascent**
+→ Moses goes up
+→ covenant proposal
+→ comes down to elders/people
+→ people answer one voice
+→ Moses carries response upward
+
+**Preparation**
+→ thick cloud promised
+→ today + tomorrow consecration
+→ mountain bounds established
+→ third day awaited
+
+**Third-day activation**
+→ morning thunder/lightning
+→ thick cloud
+→ trumpet
+→ people tremble
+→ Moses brings people to mountain foot
+→ YHWH descends in fire
+→ smoke rises like furnace
+→ whole mountain trembles
+→ trumpet intensifies
+
+**Vertical shuttling**
+→ YHWH calls Moses to top
+→ Moses ascends
+→ sent down to reinforce boundary
+→ Moses descends
+→ Aaron receives limited ascent permission
+
+**Direct speech / mediation**
+→ divine commandments
+→ people remain afar
+→ ask Moses to mediate
+→ Moses approaches thick darkness/divine zone
+
+**Covenant law**
+→ 6→7 day/year cycles
+→ doorpost status rite
+→ 7→8 firstling transfer
+→ 3 annual appearances
+→ messenger goes before people
+
+**Covenant ratification**
+→ altar at foot
+→ 12 pillars
+→ one blood source split half/half
+→ altar + people joined by ritual
+→ people answer one voice
+
+**Representative ascent**
+→ Moses/Aaron/Nadab/Abihu +70 elders ascend
+→ heaven-like sapphire pavement under divine feet
+→ selected group survives vision
+→ covenant meal
+
+**Deeper ascent**
+→ Moses + Joshua move upward
+→ Aaron/Hur remain as lower dispute leaders
+→ cloud covers summit
+
+**6→7 threshold**
+→ 6 days cloud cover
+→ day7 call from cloud
+→ lower observers see devouring fire
+→ Moses enters cloud
+→ ascends deeper
+
+**40-day enclosure**
+→ Moses remains 40 days / 40 nights
+→ upper information to be embodied in stone tablets.
+
+### Pair matrix
+- **YHWH / Israel** — upper source / lower covenant collective.
+- **Moses / Israel** — mobile vertical mediator / lower stationary body.
+- **Moses / Aaron** — primary / secondary access.
+- **Moses / Joshua** — leader / ascending assistant-successor.
+- **Aaron / Hur** — paired lower executive/support figures.
+- **fire downward / smoke upward** — opposed vertical process pair.
+- **cloud / fire** — complementary manifestation states/perspectives.
+- **mountain top / foot** — upper/lower spatial polarity.
+- **altar / 12 pillars** — one covenant focus / twelve tribal representatives.
+- **half blood / half blood** — one substance split between covenant parties.
+- **people far / Moses near** — graded access polarity.
+
+### Number register
+- arrival: **month 3**.
+- preparation: **3-day structure**.
+- daily/work cycle: **6→7**.
+- servant cycle: **6 years→7th release**.
+- land cycle: **6 years→7th rest**.
+- firstling: **7 days→8th transfer**.
+- annual feasts: **3**.
+- altar: **1**.
+- tribal pillars: **12**.
+- blood: **half + half**.
+- selected elders: **70**.
+- cloud waiting: **6 days**.
+- cloud call: **day 7**.
+- summit stay: **40 days/40 nights**.
+
+### Vardath comparison
+
+High-value structural similarities:
+- fixed central mountain/interface,
+- upper descent + lower/vertical ascent simultaneously,
+- restricted perimeter,
+- tiered access,
+- mediator repeatedly traversing between levels,
+- cloud/fire changing appearance by observer/location,
+- timed activation after preparation,
+- population remains below while one operator enters active zone,
+- upper information returns in physical carrier form.
+
+Major mismatches:
+- no explicit adjacent future/past worlds,
+- no woven lattice,
+- no land transfer,
+- no time dilation,
+- no explicit finger-trap or opposed twine separation.
+
+The closest mature-model analogue is therefore:
+**controlled vertical interface / access ladder**
+rather than
+**full world-turn crossover**.
+
+## SECTION 21 status
+
+**SECTION 21 — EXODUS 19–24: COMPLETE FIRST PASS.**
+
+Strongest results:
+1. Sinai is the clearest **permission-controlled vertical interface** so far in canonical Exodus.
+2. Moses' repeated ascent/descent is itself a major literary structure recognized in scholarship.
+3. Divine fire descends while smoke rises, producing explicit opposed vertical motion.
+4. The people remain at the foot while Moses moves toward the top/inner cloud.
+5. Covenant access becomes graded rather than merely open/closed.
+6. Exodus 24 physically represents Israel by **12 pillars**.
+7. One blood source is split into **two halves** joining altar and people.
+8. **70 elders** form a representative ascent group.
+9. Cloud covers **6 days**, then **day 7** opens deeper access.
+10. The same summit appears as **devouring fire from below** and **enterable cloud to Moses**.
+11. Moses remains inside the active upper zone **40 days/40 nights**.
+12. Upper knowledge is converted into lower-world durable material: **stone tablets**.
+
+### Next first unfinished roadmap section
+
+**SECTION 22 — EXODUS 25–40**
+
+Priority:
+- tabernacle as portable world/house model,
+- ark + cover + paired cherubim,
+- two cherubim facing one another / wings above / central voice-space,
+- table, lampstand/tree geometry,
+- 7 lamps and branch counts,
+- curtain/veil thresholds,
+- inner/outer chambers,
+- altar and basin,
+- priestly garments / stones / paired shoulder stones,
+- breastpiece 12 stones,
+- Urim/Thummim pair,
+- cloud/fire filling completed structure,
+- golden calf as rival visible centre,
+- tablets broken/replaced pair,
+- Moses' face radiance/veil,
+- construction dates and all dimensions/counts,
+- compare mountain interface with portable tabernacle interface.
