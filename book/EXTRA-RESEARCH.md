@@ -6898,3 +6898,11 @@ Priority pair tests:
 
 **Sources logged:** Genesis 21:14–21; Genesis 22:1–19; scholarship comparing Hagar/Ishmael with the Akedah and the repeated seeing/voice-from-heaven motifs.
 
+
+
+### Section 6 progress update D — Isaac/Ishmael branches recombine at Abraham's death
+
+> The end of Abraham’s cycle gives another important **recombination after branch-splitting**. Isaac and Ishmael, who were separated into different covenant/family lines, come back together to **bury Abraham in the cave purchased for Sarah**. Afterward Isaac settles at **Beer-lahai-roi**, the very well associated with Hagar’s earlier divine encounter.
+>
+> That is a strong closure pattern: **Sarah/Hagar and Isaac/Ishmael are separated into parallel lines, but the story does not leave them completely disconnected**. Their paths cross again at death, burial, and the Hagar-associated well. This makes the pair look more like **diverged branches of one ancestral system** than simple “chosen versus rejected” opposites.
+
