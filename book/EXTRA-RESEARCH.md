@@ -25576,3 +25576,142 @@ This is an agricultural seasonal marker, though it does not by itself yield an e
 This is almost a complete:
 **activation → vertical discharge → protected enclosure → deactivation**
 sequence.
+
+
+## SECTION 19 progress D — plagues 8–10: opposed winds, three-day darkness/light split, midnight and final firstborn sorting
+
+### Locusts — east wind brings, west wind removes
+
+Moses stretches staff over land.
+
+YHWH brings:
+- **east wind**
+- all day and all night.
+
+At morning:
+- wind brings locusts.
+
+After Moses intercedes:
+- a **very strong west wind**
+- lifts/removes locusts,
+- drives them into **Sea of Reeds**,
+- none remain in Egypt.
+
+This is an explicit directional reversal:
+
+**east wind → arrival/influx**
+versus
+**west wind → removal/outflow**.
+
+A very clean P2 opposed-flow pair.
+
+### Hail → locust pair
+
+Locusts consume specifically:
+- what **hail left behind**.
+
+So plague 8 is not independent.
+It is the second half of an environmental stripping sequence:
+
+**hail breaks/destroys first layer**
+→ **locust consumes residue**
+→ **no green thing remains**.
+
+### Darkness — 3-day split environment
+
+Moses stretches his **hand toward heaven**.
+
+Then:
+- thick/felt darkness over Egypt for **3 days**.
+- Egyptians do not see one another.
+- they do not rise/move from place for **3 days**.
+- Israelites have **light in their dwellings**.
+
+This is the strongest binary-environment state yet:
+
+**same country / same time**
+→ **Egypt = darkness + immobility**
+→ **Israelite dwellings = light**.
+
+This is much closer to a “two simultaneous world-state” analogy than earlier plagues, although the text presents selective divine judgment rather than separate worlds.
+
+### Pharaoh / Moses visual separation
+
+After darkness:
+- Pharaoh tells Moses never to see his face again.
+- Moses agrees.
+
+The long ruler/opponent pair reaches a formal face-to-face rupture:
+**repeated confrontation → final visual separation**.
+
+Yet chapter 11 preserves the final announcement within the composite narrative; source/redaction questions should remain attached.
+
+### One final plague
+
+Chapter 11 explicitly says:
+**one plague more**.
+
+The final event occurs:
+- **about midnight** in the announcement,
+- **at midnight** in the fulfillment.
+
+This is the most precise clock-time marker in the plague cycle.
+
+### Firstborn structure spans top→bottom society
+
+Deaths are described from:
+- Pharaoh's firstborn / throne,
+- down through servants/captives/slaves,
+- and animal firstborn.
+
+This is a vertical social totality:
+**highest royal position → lowest confined position → livestock**.
+
+### Israel / Egypt distinction reaches sound and death
+
+Egypt:
+- unprecedented **great cry**.
+
+Israel:
+- not even a dog sharpens its tongue/barks in the proverbial statement.
+
+Thus:
+**Egypt = death/noise**
+vs
+**Israel = protected quiet**.
+
+### Pharaoh's servants predicted to “come down” to Moses
+
+Moses says Pharaoh's servants will:
+- **come down to me**,
+- bow,
+- ask Moses + followers to leave,
+- then Moses will go out.
+
+The movement language reverses court hierarchy:
+royal servants descend/bow toward the once-fugitive Moses.
+
+### Plague-cycle macrostructure
+
+Common finished-form reading:
+**3 + 3 + 3 + 1**
+
+Within each triad:
+- first plague often morning/confrontation,
+- second palace warning,
+- third without comparable warning.
+
+Another modern reading:
+**7 + 3**,
+with hail as first climax and final three focusing increasingly on Israel as well as Egypt.
+
+Both structures are literarily plausible and need not be mutually exclusive.
+
+### Numbers / times through plague 10
+- plagues in received sequence: **10**.
+- structural options: **3+3+3+1** and **7+3**.
+- Nile interval: **7 days**.
+- multiple “tomorrow” appointed reversals.
+- locust east wind: **day + night**, arrival in morning.
+- darkness: **3 days**.
+- final plague: **midnight**.
