@@ -27317,3 +27317,171 @@ Exodus contains both:
 - firstling transfer: **7 → 8**.
 - annual festivals: **3**.
 - destination peoples in Exod 23 list: **6**.
+
+
+## SECTION 21 progress C — Exodus 24: 12 pillars, split blood, 70 elders and a graded ascent map
+
+### Twelve pillars physically represent the twelve tribes
+
+At the foot of the mountain Moses builds:
+- **1 altar**
+- **12 pillars**, explicitly according to the **12 tribes**.
+
+This is a direct one-to-many representation:
+**one covenant people → 12 vertical markers around/near one altar**.
+
+Unlike speculative person-as-geometry mappings, the text itself tells us what the 12 pillars represent.
+
+### Altar / twelve pillars — centre and distributed body
+
+The simplest geometry is:
+
+**altar**
++
+**12 tribal pillars**
+at the **foot of mountain**.
+
+The altar conventionally represents the divine side/presence of covenant ritual, while the 12 standing stones represent Israel's tribal body.
+
+That gives:
+**one divine/covenant focus ↔ twelve human collective markers**.
+
+### Blood is divided exactly into two portions
+
+Moses takes sacrificial blood:
+- **half** placed in basins,
+- **half** cast against the altar.
+
+After covenant words:
+- basin blood is cast/sprinkled on the people.
+
+So one source of blood is deliberately split:
+
+**one blood source**
+→ **half to altar**
+→ **half to people**.
+
+Conventional covenant interpretation:
+the two covenant parties are joined through one sacrificial life/blood rite.
+
+For the pair framework:
+this is a real **P1 ritual split of one substance into two relational destinations**.
+
+Do not literalize altar=upper world and people=lower world; that would be Vardath interpretation, not the conventional meaning.
+
+### One voice from the people
+
+The people answer:
+- **“with one voice.”**
+
+This follows the 12-pillar representation:
+**12 tribal divisions → one collective voice**.
+
+That is useful system logic:
+multiplicity retained physically, unity expressed functionally.
+
+### Ascent group expands beyond Moses/Aaron
+
+A selected group goes upward:
+- Moses
+- Aaron
+- Nadab
+- Abihu
+- **70 elders**.
+
+So access broadens from one/two mediators to a representative body.
+
+Yet:
+- earlier instruction says Moses alone comes nearest,
+- others worship at distance.
+
+This suggests **graded vertical access**, not equal arrival.
+
+### Seventy elders — representative collective
+
+The 70 elders are traditionally understood as representative leadership of Israel.
+
+This number now joins the growing cross-corpus 70 register:
+- 70-person Jacob household in MT,
+- 70 palms at Elim,
+- 70 shepherds in Animal Apocalypse,
+- implied 70 subparts in Apocalypse of Weeks,
+- 70 elders here.
+
+Units/functions are different; preserve before equating.
+
+### Sapphire-like pavement under divine feet
+
+The selected group sees the God of Israel, with:
+- something under His feet like **sapphire pavement/work**,
+- like the **heaven itself for clarity**.
+
+Raw geometry:
+**human observers below**
+→ **divine feet**
+→ **heaven-like blue/clear pavement/interface**.
+
+Older scholarship has sometimes connected this imagery with the idea that the mountain summit opens onto or participates in the heavenly realm. That is interpretive reconstruction, not explicit statement that a physical world-disc sits there.
+
+### “He did not stretch out his hand” — permitted vision
+
+The nobles see God yet are not struck:
+- divine hand is **not stretched against** them,
+- they eat and drink.
+
+This reverses the mountain's earlier lethal-access warnings:
+**forbidden general approach**
+→ **selected invited group may ascend and survive**.
+
+Again access is **permission-dependent**.
+
+### Multi-level access map
+
+The final-form narrative can be diagrammed:
+
+**Level 0 — camp / general people**
+- remain below
+- cannot ascend freely.
+
+**Level 1 — foot of mountain**
+- altar
+- 12 pillars
+- covenant blood ritual.
+
+**Level 2 — selected ascent**
+- Aaron
+- Nadab
+- Abihu
+- 70 elders
+- vision/meal.
+
+**Level 3 — Moses / Joshua transition**
+- Moses rises with Joshua as assistant;
+- elders wait below this next ascent stage.
+
+**Level 4 — cloud-covered summit**
+- Moses alone enters deeper cloud/divine zone in the final scene.
+
+This is one of the clearest graded-access architectures in the Pentateuch.
+
+### Aaron / Hur stay as lower executive pair
+
+While Moses/Joshua proceed upward:
+- Aaron and Hur remain available below for disputes.
+
+This repeats their role from Amalek:
+they are support/governance figures associated with maintaining the lower community while Moses handles the upper interface.
+
+Pair classification:
+- **Aaron / Hur = P7 paired lower executive/support function**.
+- Moses/Joshua = ascending leader/assistant pair.
+
+### Moses/Joshua — ascent succession foreshadowing
+
+Joshua accompanies Moses into the mountain zone, though not all the way into the final divine encounter in the same sense as Moses.
+
+This is an early P4/P7 foreshadowing:
+- Joshua accompanies the unique leader upward,
+- later succeeds him nationally.
+
+Do not treat them as same identity.
