@@ -5258,3 +5258,13 @@ Priority pair tests:
 
 **Sources logged:** ORACC entry for Etemenanki; Babylonian royal inscriptions describing its foundation in the netherworld and summit rivaling heaven; Genesis 11:1–9; modern scholarship identifying Babylonian ziggurat background.
 
+
+
+### Section 4 progress update B — duplicated fragmentation / Peleg / Nimrod control
+
+> A second pattern is sharpening: Genesis 10–11 itself seems to preserve **two explanations of the same fragmentation**. Genesis 10 already presents peoples dispersed by lands **and languages**; Genesis 11 then tells a separate story in which one language is broken and humanity is scattered. Peleg is even named because “in his days the earth was divided.”
+>
+> So the text may contain a duplicated event in two modes: **genealogical/geographic branching** and **dramatic axial collapse/scattering**. Nimrod sits between them as the first great kingdom-builder whose realm begins at **Babylon in Shinar**, but Genesis itself never says he built the tower—that identification is later Jewish tradition. This distinction matters because it keeps us from forcing one character into a role the source text does not actually assign.
+
+**Sources logged:** Genesis 10:5, 10:20, 10:25, 10:31–32; Genesis 11:1–9; scholarship on the composite Table of Nations; later Nimrod/Babel tradition distinguished from the biblical source.
+
