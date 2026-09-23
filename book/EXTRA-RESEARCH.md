@@ -6906,3 +6906,1070 @@ Priority pair tests:
 >
 > That is a strong closure pattern: **Sarah/Hagar and Isaac/Ishmael are separated into parallel lines, but the story does not leave them completely disconnected**. Their paths cross again at death, burial, and the Hagar-associated well. This makes the pair look more like **diverged branches of one ancestral system** than simple “chosen versus rejected” opposites.
 
+
+
+---
+
+## 171. SECTION 6 COMPLETE — Genesis 19–25
+
+**Scope:** Genesis 19:1–25:18, including Sodom/Zoar, Lot and his family, Abraham/Abimelech wife-sister repeat, Isaac birth, Hagar/Ishmael expulsion, Beersheba covenant, Binding of Isaac, Sarah’s death and Machpelah, Rebekah at the well, Abraham’s death, Keturah’s lines, and Ishmael’s genealogy.
+
+### 171.1 Genesis 19 — Lot as the inside-threshold mirror of Abraham
+
+Genesis 18 and 19 form a strong paired hospitality unit.
+
+#### Abraham
+- sits at tent entrance,
+- daytime,
+- three visitors,
+- invites them in,
+- feeds them,
+- remains outside Sodom,
+- negotiates concerning destruction.
+
+#### Lot
+- sits at city gate,
+- evening,
+- two visitors,
+- invites them in,
+- feeds them,
+- is inside doomed Sodom,
+- must be physically extracted.
+
+This is one of the clearest **mirrored-role pairs** so far.
+
+Best classification:
+- Abraham/Lot = P2 polarity + P8 inside/outside mirror.
+- not same person.
+- same hospitality/threshold function shown from opposite sides of the doomed boundary.
+
+---
+
+## 172. Door struggle at Lot’s house
+
+The mob surrounds Lot’s house.
+
+Lot:
+- goes out through the doorway,
+- shuts the door behind him,
+- stands between mob and visitors.
+
+Then:
+- the visitors reach out,
+- pull Lot back inside,
+- shut the door,
+- strike those outside with blinding/disorienting light,
+- attackers exhaust themselves trying to find the entrance.
+
+This is a very strong threshold-control scene.
+
+Geometry:
+
+**danger outside**
+↔ **door**
+↔ **protected interior**
+
+with:
+- one figure temporarily outside,
+- hands pulling him back through threshold,
+- door closing,
+- external group unable to locate/use entrance.
+
+Vardath comparison:
+- temporary coupling through a doorway,
+- protected interior,
+- forced recoupling of one exposed figure into the protected state,
+- threshold becomes functionally inaccessible to hostile outsiders.
+
+This is structurally similar to Passover protected-house logic, though later and different in context.
+
+---
+
+## 173. Lot’s extraction by hands
+
+At dawn:
+- Lot hesitates,
+- messengers seize him **by the hand**,
+- seize wife and daughters by their hands,
+- lead them outside the city.
+
+This is important because the rescue is physically depicted as:
+**grasp → extraction → exterior transition.**
+
+Potential Vardath reading:
+- humanized version of a transfer mechanism where a figure is physically moved from one state/zone to another.
+
+Control:
+- ordinary rescue language fully explains it.
+
+---
+
+## 174. Command to flee upward
+
+Once outside:
+- do not stop in the plain,
+- do not look back,
+- flee to the **mountain/hill country**.
+
+This creates:
+**doomed low plain**
+→ **escape path**
+→ **higher refuge.**
+
+Lot resists the mountain refuge and asks instead for Zoar.
+
+Thus the text gives two possible survivor locations:
+1. mountain,
+2. small spared city.
+
+---
+
+## 175. Zoar as temporary protected pocket
+
+Lot asks to flee to a small nearby city.
+
+The divine messenger agrees:
+- Zoar will not be overthrown,
+- destruction cannot proceed until Lot arrives.
+
+This makes Zoar a real **temporary protected pocket inside a larger destruction field**.
+
+Structural sequence:
+**extraction**
+→ **arrival at local refuge**
+→ **destruction begins.**
+
+Within Vardath Cosmology:
+- very similar to the idea that some local zones remain temporarily uncoupled/protected while a larger transition occurs.
+
+---
+
+## 176. Fire/sulfur from heaven and overturned plain
+
+After Lot reaches Zoar:
+- sulfur/fire rains from heaven,
+- cities and the plain are overthrown,
+- vegetation is destroyed,
+- smoke rises like smoke from a furnace.
+
+This adds:
+- upper-origin fire,
+- ground/land overturning,
+- smoke/furnace imagery.
+
+It is not a water-gate story, but it fits the wider catastrophe family:
+**upper energetic event → land-state destruction → smoke/furnace aftermath.**
+
+---
+
+## 177. Lot’s wife — motion reversed into pillar
+
+Lot’s wife:
+- is already part of the extracted group,
+- moves away from the old city,
+- looks back,
+- becomes a **pillar of salt**.
+
+The Hebrew *netziv* means a standing pillar/post/monument-like form.
+
+Structural reduction:
+
+**moving body**
+→ **reversal of orientation toward old state**
+→ **motion ceases**
+→ **fixed vertical pillar.**
+
+This is highly relevant to the rod/pillar theme, but caution is essential.
+
+Do **not** conclude:
+- Lot’s wife is the lattice rod,
+- pillar of salt is a Squatter-Man form.
+
+Best current classification:
+- transformation from mobile survivor to fixed vertical remnant at the boundary between destroyed old state and refuge path.
+
+This is a genuine state-change image.
+
+---
+
+## 178. Abraham’s distant view / Lot’s wife backward view
+
+Immediately after Lot’s wife looks back and becomes fixed, Abraham looks toward Sodom from the place where he had stood before YHWH.
+
+This creates a subtle pair:
+
+**Lot’s wife**
+- within escape route,
+- turns backward,
+- becomes fixed.
+
+**Abraham**
+- outside destruction zone,
+- looks from safe distance,
+- remains unchanged.
+
+Possible structural contrast:
+- same destroyed world viewed from two different positional states.
+
+---
+
+## 179. Lot leaves Zoar and goes to the mountain anyway
+
+After initially refusing the mountain escape, Lot later:
+- leaves Zoar,
+- goes up into the hills,
+- lives in a cave with daughters.
+
+Thus the story eventually completes the original vector:
+**plain → small refuge → mountain/cave.**
+
+This makes Zoar appear explicitly temporary.
+
+---
+
+## 180. Cave as post-catastrophe enclosure
+
+Lot and daughters live in a cave after destruction.
+
+Their interpretation is effectively:
+- outside world/population may be gone,
+- lineage must be restarted.
+
+The resulting Moab/Ammon origin story is ethically difficult but structurally clear:
+
+**catastrophe survivors**
+→ **isolated enclosure**
+→ **belief that world/line has ended**
+→ **new line generated from surviving family.**
+
+This resembles a miniature “new beginning after destructive event” motif.
+
+---
+
+## 181. Genesis 20 — wife-sister story repeats
+
+Genesis 20 repeats major features from Genesis 12:
+- Abraham moves into foreign territory,
+- Sarah is called his sister,
+- foreign king takes Sarah,
+- divine intervention prevents permanent transfer,
+- household is afflicted,
+- Sarah is restored,
+- Abraham receives gifts/permission,
+- order is restored.
+
+This is clearly a repeated narrative type.
+
+Scholars have long treated Genesis 12, 20 and 26 as:
+- doublets/triplets,
+- related traditions,
+- or deliberate literary recurrences.
+
+For this project it proves again that Genesis can retell **one structural problem through multiple character/settings**.
+
+---
+
+## 182. Genesis 20 adds closure/reopening of fertility
+
+A distinctive feature:
+- Abimelech’s household wombs are closed,
+- Abraham intercedes,
+- God heals,
+- women can bear children again.
+
+Immediately afterward:
+- Sarah bears Isaac.
+
+This creates a striking sequence:
+
+**foreign household fertility closed**
+→ **intercession**
+→ **fertility reopened**
+→ **promised womb opens / Isaac born.**
+
+This may be literary framing around the promised child.
+
+Vardath relevance:
+- closed/open reproductive boundary as a human-scale analogue of gate closure/reopening.
+
+Do not physicalize it.
+
+---
+
+## 183. Abraham as prophet/intercessor
+
+Genesis 20 explicitly calls Abraham a **prophet** and has him pray for Abimelech.
+
+This helps define Abraham’s recurring function:
+- traveller,
+- threshold negotiator,
+- mediator,
+- intercessor.
+
+He is still better classified as an **operator/mediator role** than as the lattice itself.
+
+---
+
+## 184. Isaac birth — promise becomes embodied
+
+Isaac’s birth completes the timed return promise.
+
+Key pattern:
+- impossible/barren state,
+- fixed appointed time,
+- birth,
+- laughter-name.
+
+Sarah says God has made laughter for her.
+
+This recombines earlier paired responses:
+- Abraham laughed,
+- Sarah laughed,
+- child receives laughter-name.
+
+Structural pattern:
+**paired parental reaction**
+→ **single child identity.**
+
+This is a useful example of two earlier states collapsing into one later named figure.
+
+---
+
+## 185. Isaac / Ishmael conflict and branch separation
+
+After Isaac’s birth/growth:
+- Sarah sees Ishmael behaving in a way she rejects,
+- demands Hagar and Ishmael be expelled,
+- inheritance is explicitly at issue.
+
+God tells Abraham:
+- Isaac carries the named covenant line,
+- Ishmael is still Abraham’s seed and will become a nation.
+
+Thus:
+**one father**
+→ **two sons**
+→ **two blessed branches**
+→ **one selected covenant line.**
+
+This remains one of the clearest branch-pair structures in Genesis.
+
+---
+
+## 186. Genesis 16 / 21 Hagar stories as doublet/variant pair
+
+Genesis 16 and 21 have long been recognized in scholarship as strongly parallel, and often as doublets or variant traditions.
+
+### Genesis 16
+- Hagar leaves/flees,
+- wilderness,
+- angel finds her at water,
+- divine promise,
+- instructed to return.
+
+### Genesis 21
+- Hagar is expelled,
+- wilderness,
+- water runs out,
+- boy near death,
+- angel/voice from heaven,
+- eyes opened to water,
+- she does **not** return,
+- permanent separation.
+
+This is highly relevant to the project.
+
+The two stories can be read as:
+**first departure → return**
+versus
+**second departure → permanent new branch.**
+
+If they derive from variant traditions of one event, they are another strong example of:
+**same underlying event preserved in two narrative states.**
+
+---
+
+## 187. Hagar’s eyes opened / well revealed
+
+In Genesis 21:
+- Hagar cannot bear to watch Ishmael die,
+- angel calls from heaven,
+- God opens her eyes,
+- she sees a well,
+- water saves the child.
+
+Important distinction:
+the text does not necessarily say the well suddenly appears.
+It says her **perception changes** and she sees it.
+
+Structural sequence:
+**resource unavailable to perception**
+→ **upper voice/intervention**
+→ **eyes open**
+→ **hidden/previously unseen water becomes accessible**
+→ **life continues.**
+
+This is a very useful “state/perception transition” motif.
+
+---
+
+## 188. Ishmael and Isaac — mirrored near-death stories
+
+This is one of Section 6’s strongest findings.
+
+### Ishmael
+- threatened with death,
+- parent distances from child,
+- child/parent cries,
+- voice from heaven intervenes,
+- parent’s eyes change/open,
+- life-saving resource is seen,
+- child survives,
+- promise of nation continues.
+
+### Isaac
+- threatened with death,
+- parent raises killing instrument,
+- voice from heaven intervenes,
+- parent lifts eyes,
+- substitute is seen,
+- child survives,
+- promise of seed continues.
+
+This is not incidental.
+
+Best classification:
+- Isaac/Ishmael = very strong P2/P8 mirrored branch pair.
+- not one literal person.
+- same ancestral “son-in-danger → heavenly rescue → future branch” role played twice.
+
+---
+
+## 189. Beersheba — seven / oath / well nexus
+
+Genesis 21:22–34:
+- Abraham and Abimelech make covenant,
+- dispute concerns a well,
+- Abraham sets aside **seven ewe lambs**,
+- place is named Beersheba.
+
+The Hebrew name supports wordplay on:
+- **seven** (*sheva*),
+- **oath/sworn** (*shava*).
+
+Thus this location combines:
+**water source**
++ **seven**
++ **oath/covenant**
++ **boundary agreement.**
+
+This should be retained for the later cycle-number study.
+
+---
+
+## 190. Tamarisk / tree at covenant well
+
+Abraham plants a tamarisk at Beersheba and invokes YHWH.
+
+Tree + well + covenant appears here together.
+
+Do not over-interpret as Yggdrasil/axis at this stage.
+But log the recurring cluster:
+**tree + water + covenant/place-name.**
+
+---
+
+## 191. Genesis 22 — ascent to mountain
+
+Abraham is commanded to go to the land of Moriah and offer Isaac on a mountain to be shown.
+
+The journey is explicitly upward/mountainward.
+
+Important items:
+- fire,
+- knife,
+- wood,
+- son,
+- altar,
+- mountain.
+
+Isaac carries the wood.
+
+Abraham carries:
+- fire,
+- knife.
+
+The two “go together.”
+
+---
+
+## 192. Isaac / wood role
+
+The wood is placed on Isaac during ascent.
+
+At the altar:
+- Isaac is placed on that same wood.
+
+This inversion is structurally important:
+
+**wood on Isaac**
+→ later
+**Isaac on wood.**
+
+It creates a load/axis reversal.
+
+Later Christian readings connect this typologically with the cross, but that is later interpretation and should not be imported into Genesis itself.
+
+---
+
+## 193. Binding / immobilization
+
+Abraham:
+- builds altar,
+- arranges wood,
+- binds Isaac,
+- places him on altar/wood.
+
+This transforms Isaac from:
+**walking companion**
+to
+**bound stationary offering.**
+
+Again we see:
+**mobile figure → fixed body on structured support.**
+
+This resembles other movement-to-fixed-form transformations but is adequately explained by sacrifice ritual.
+
+---
+
+## 194. Raised hand / interrupted action
+
+Abraham stretches/reaches out his hand and takes the knife to kill Isaac.
+
+Then:
+- angel calls from heaven,
+- action is interrupted.
+
+This is another key **extended-hand operator scene**.
+
+The important pattern is:
+**raised/extended human hand toward transformation/death**
+→ **upper voice interrupts**
+→ **outcome reverses.**
+
+This should be compared later to Moses’ extended-hand operations.
+
+---
+
+## 195. Ram replaces Isaac
+
+Abraham lifts his eyes and sees:
+- ram,
+- caught in thicket by horns.
+
+The ram is sacrificed **instead of Isaac**.
+
+This is explicit substitution.
+
+Pair classification:
+- Isaac/ram = strong P4 replacement pair.
+
+The text directly states:
+**one intended victim**
+→ **substitute occupies sacrificial role.**
+
+This is one of the clearest role-transfer scenes in Genesis.
+
+---
+
+## 196. Thicket / horn entanglement
+
+The ram is caught by its horns in vegetation/thicket.
+
+Potential structural image:
+**branched/entangled structure**
+holding a horned animal at the transition point.
+
+This is visually suggestive for lattice/branch research, but source context is ordinary animal entanglement.
+
+Do not force.
+
+---
+
+## 197. Mountain + seeing / provision
+
+Abraham names the place in relation to YHWH “seeing/providing.”
+
+The Hebrew root *rʾh* connects:
+- seeing,
+- being seen,
+- provision in this wordplay.
+
+Important parallel with Hagar:
+- Hagar’s eyes opened → sees well,
+- Abraham lifts eyes → sees ram.
+
+Both child-rescue scenes turn on **new seeing** after a heavenly intervention.
+
+This substantially strengthens the Isaac/Ishmael mirror.
+
+---
+
+## 198. Genesis 22 central literary symmetry
+
+Literary studies often identify a chiastic structure around:
+- departure,
+- wood,
+- fire/knife,
+- “the two went together,”
+- father/son dialogue,
+- arrival,
+- binding,
+- interruption,
+- replacement/blessing.
+
+For Vardath:
+the strongest geometry is not the entire chiasm but:
+**ascent → binding → hand raised → heaven speaks → eyes lift → substitute appears → descent.**
+
+---
+
+## 199. Section 6 relation to Genesis 15 split corridor
+
+Genesis 15:
+- divided bodies,
+- fire passes between them.
+
+Genesis 22:
+- one son nearly divided/killed,
+- fire is carried up mountain,
+- action stops,
+- substitute replaces him.
+
+Possible progression:
+**covenant enacted through divided substitutes**
+→ later
+**covenant heir himself approaches sacrificial transition**
+→ **replacement prevents division/death.**
+
+This is a useful internal Abraham-cycle pattern.
+
+---
+
+## 200. Sarah’s death and Machpelah
+
+Genesis 23 shifts from near-sacrifice to actual death.
+
+Sarah dies.
+Abraham acquires:
+- field,
+- cave,
+- trees,
+- fixed legal property.
+
+The transaction occurs publicly at the city gate.
+
+This is important because it is Abraham’s first firmly purchased land possession in the story.
+
+Structural sequence:
+**mobile patriarchal life**
+→ **death**
+→ **permanent enclosed burial place**
+→ **fixed territorial anchor.**
+
+The cave becomes a long-term ancestral enclosure.
+
+---
+
+## 201. Gate transaction for cave
+
+The land purchase is negotiated at the city gate.
+
+Thus:
+**gate**
+does not only mean cosmic threshold in the corpus.
+It can be an ordinary legal/public threshold.
+
+This is an important control against over-reading every gate as cosmological.
+
+---
+
+## 202. Cave of Machpelah as paired ancestral enclosure
+
+Sarah is buried there.
+Later:
+- Abraham,
+- Isaac/Rebekah,
+- Jacob/Leah
+are associated with the ancestral burial complex in biblical tradition.
+
+For this project:
+- cave = fixed ancestral enclosure beneath ground,
+- not necessarily world-gate.
+
+Its significance is continuity of the lineage in a stable underground place.
+
+---
+
+## 203. Genesis 24 — Rebekah at the well
+
+Abraham sends servant back toward kin-region to obtain wife for Isaac.
+
+The servant stops at a well/spring outside the city.
+
+A sign is requested.
+
+Rebekah:
+- comes down to water,
+- draws water,
+- gives servant drink,
+- draws repeatedly for camels.
+
+This is the classic biblical betrothal-at-well pattern.
+
+Later parallels:
+- Jacob/Rachel,
+- Moses/Zipporah,
+- later literary echoes.
+
+Thus:
+**well + travelling outsider + woman + water service + marriage transition**
+is a reusable narrative form.
+
+Do not interpret every well as a physical gate.
+
+---
+
+## 204. Rebekah as transferred branch
+
+Rebekah moves:
+**family-of-origin**
+→ **journey**
+→ **Isaac’s region**
+→ **Sarah’s tent.**
+
+This is a lineage-transfer story.
+
+She becomes the new female continuity point after Sarah’s death.
+
+---
+
+## 205. Sarah / Rebekah succession
+
+Genesis 24 ends with:
+- Isaac brings Rebekah into **Sarah his mother’s tent**,
+- marries/loves her,
+- is comforted after Sarah’s death.
+
+This is an explicit role succession:
+
+**Sarah**
+→ death/vacancy
+→ **Rebekah enters Sarah’s tent**
+→ female matriarchal role continues.
+
+Pair classification:
+- Sarah/Rebekah = strong P4 successor pair.
+
+This is another example of “same role across different people.”
+
+---
+
+## 206. Veil / threshold of recognition
+
+Rebekah veils herself when approaching Isaac.
+
+This is a boundary-of-identity/recognition motif.
+
+It becomes much more important later in Jacob/Leah/Rachel narratives, where veiling/identity substitution becomes plot-critical.
+
+For now:
+log but do not over-interpret.
+
+---
+
+## 207. Abraham’s later branches through Keturah
+
+Genesis 25 adds Keturah and multiple sons.
+
+This further multiplies Abraham into several descendant branches.
+
+Important correction:
+Abraham is not simply father of:
+- Isaac,
+- Ishmael.
+
+He also becomes ancestor of multiple Keturah lines.
+
+Therefore Abraham functions as a **branching ancestral hub**.
+
+This matches his renamed role as “father of a multitude of nations.”
+
+---
+
+## 208. Eastward sending of other sons
+
+Abraham gives gifts to sons of concubines and sends them **eastward**, away from Isaac.
+
+This repeats the directional branching pattern:
+**central inheritance line remains**
+while
+**other branches move east.**
+
+Again eastward movement accompanies lineage separation.
+
+---
+
+## 209. Abraham’s death — Isaac and Ishmael reunite
+
+At Abraham’s death:
+- **Isaac and Ishmael together** bury him,
+- in Machpelah,
+- beside Sarah.
+
+This is a major recombination point.
+
+Earlier:
+**one father → sons split.**
+
+Now:
+**split sons return together**
+at the ancestral enclosure.
+
+Best classification:
+- Isaac/Ishmael = diverged branches that remain part of one ancestral system.
+
+---
+
+## 210. Isaac settles at Hagar-associated well
+
+After Abraham’s death:
+- God blesses Isaac,
+- Isaac dwells at **Beer-lahai-roi**.
+
+This is the well associated with Hagar’s encounter in Genesis 16.
+
+That creates a striking cross-line overlap:
+**Hagar’s sacred/wilderness water-site**
+becomes
+**Isaac’s dwelling place.**
+
+This undermines any simplistic reading in which Hagar/Ishmael and Sarah/Isaac become totally disconnected worlds.
+
+Structurally:
+the branches separate but share/reuse nodes.
+
+---
+
+## 211. Ishmael’s twelve princes
+
+Genesis 25 gives Ishmael:
+- twelve sons/princes,
+- territorial settlement,
+- fulfilled multiplication promise.
+
+This is important because the Ishmael line becomes a fully articulated parallel nation structure.
+
+Later Israel also has twelve tribal sons.
+
+Do not conclude automatic identity, but flag:
+**Ishmael 12**
+versus
+**Israel/Jacob 12**
+for later pair-system comparison.
+
+---
+
+## 212. Isaac / Ishmael current verdict
+
+They are one of the strongest **parallel-branch pairs** in Genesis.
+
+Evidence:
+- same father,
+- different mothers,
+- both divinely promised,
+- both threatened,
+- both saved by heavenly intervention,
+- both linked to newly seen life-saving substitute/resource,
+- both receive multiplication/nation promises,
+- separated geographically,
+- later recombine at father’s burial.
+
+Best current model:
+
+> **Isaac and Ishmael are not one literal person, but they are two deliberately mirrored branches of one Abrahamic role-system.**
+
+This is exactly the kind of “same figure somehow” pattern worth retaining:
+not identity of bodies, but **duplicated structural function across separated branches**.
+
+---
+
+## 213. Lot / Lot’s wife current verdict
+
+Not one figure.
+
+But structurally they form:
+- forward-moving survivor,
+- backward-turning arrested counterpart.
+
+Best classification:
+- P2 motion polarity.
+
+Lot:
+**continues toward refuge.**
+
+Wife:
+**reorients toward old world and becomes fixed pillar.**
+
+This is a powerful movement-state contrast.
+
+---
+
+## 214. Hagar story duplication current verdict
+
+Genesis 16 and 21 likely preserve either:
+- related doublet traditions,
+- deliberately repeated episodes,
+- or both.
+
+For Vardath method this matters enormously because it provides another documented way the biblical text can preserve:
+**one underlying story-pattern in two different states/outcomes.**
+
+That means we should remain open to:
+- duplicate “people,”
+- duplicate episodes,
+- mirrored versions,
+without automatically making them physically identical.
+
+---
+
+## 215. Section 6 Vardath reconstruction
+
+This section gives a sequence of **small-scale transition models** rather than one full cosmic event.
+
+### Sodom model
+**inside doomed enclosure**
+→ **threshold struggle**
+→ **physical extraction**
+→ **temporary refuge**
+→ **upper fire**
+→ **land overturning**
+→ **old-world destruction**
+→ **mountain/cave survivor phase.**
+
+### Lot’s wife model
+**escape motion**
+→ **backward orientation**
+→ **fixed vertical pillar.**
+
+### Hagar/Ishmael model
+**expulsion**
+→ **wilderness**
+→ **near death**
+→ **voice from above**
+→ **eyes opened**
+→ **water appears/becomes visible**
+→ **new branch survives.**
+
+### Isaac model
+**mountain ascent**
+→ **binding**
+→ **raised hand/knife**
+→ **voice from above**
+→ **eyes lift**
+→ **substitute appears**
+→ **death reversed**
+→ **descent.**
+
+### Sarah/Rebekah model
+**death/vacancy**
+→ **journeying replacement**
+→ **new woman enters old tent**
+→ **role continues.**
+
+### Isaac/Ishmael line model
+**one father**
+→ **two branches**
+→ **separate ordeals**
+→ **parallel survival**
+→ **reunion at burial**
+→ **continued distinct lines.**
+
+---
+
+## 216. Strongest Section 6 Vardath findings
+
+The strongest are:
+
+1. **Threshold extraction at Sodom** — hand-guided removal through a controlled doorway from a doomed enclosure.
+2. **Zoar** — temporary local refuge whose safety is conditional on survivor arrival.
+3. **Lot’s wife** — motion reversal into fixed vertical pillar.
+4. **Hagar/Isaac mirrored rescues** — voice from heaven + changed seeing + newly available substitute/resource.
+5. **Isaac/ram substitution** — explicit role replacement.
+6. **Sarah/Rebekah succession** — one person occupies predecessor’s tent/role.
+7. **Isaac/Ishmael recombination** — separated branches reunite at the ancestral burial node.
+8. **Genesis 16/21 doublet** — same underlying Hagar pattern preserved in two states.
+
+---
+
+## 217. What Section 6 does NOT establish
+
+Still unsupported:
+- Lot’s wife literally is the lattice rod,
+- Sodom destruction is a Vardath gate event,
+- Zoar is another world layer,
+- Hagar’s opened eyes prove hidden physical water manifestation,
+- Isaac and Ishmael are one biological individual,
+- ram/thicket encodes the finger-trap,
+- Machpelah is a world-gate,
+- Rebekah is Sarah reincarnated.
+
+These remain symbolic/structural comparisons only.
+
+---
+
+## 218. Predictions generated from Section 6
+
+Later texts should be checked for:
+
+1. extraction by hand from doomed zones,
+2. temporary refuges that must be reached before destruction,
+3. motion reversal producing fixed pillar/stone states,
+4. two sibling/branch figures undergoing parallel near-death rescues,
+5. voice from heaven immediately preceding changed perception,
+6. replacement victims/substitutes,
+7. old role/tent/place inherited by a new figure,
+8. separated branches recombining at death/burial/holy nodes,
+9. twelvefold descendant systems in parallel lineages,
+10. repeated well-betrothal scenes as lineage-transfer mechanisms.
+
+---
+
+## 219. Section 6 status
+
+**SECTION 6 — COMPLETE.**
+
+Next roadmap section:
+
+**Section 7 — Genesis 25–28**
+- Jacob/Esau birth,
+- twins struggling,
+- first/second inversion,
+- birthright,
+- Isaac/Abimelech wife-sister repeat,
+- wells,
+- blessing substitution,
+- Jacob departure,
+- ladder/stairway,
+- ascending/descending messengers,
+- stone→pillar,
+- gate of heaven.
+
+Priority pair tests:
+- Jacob/Esau as possible strongest twin polarity yet,
+- Jacob/Israel later before/after state,
+- elder/younger reversal,
+- Isaac/Ishmael versus Jacob/Esau recurrence,
+- ladder/pillar as same structure in two states,
+- heaven/earth traffic.
+
