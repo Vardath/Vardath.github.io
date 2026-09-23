@@ -24148,3 +24148,65 @@ It is one world-historical transition inside a larger cycle.
 
 This matters for the user’s repeated-cycle hypothesis:
 the Enochic text itself presents **multiple crises**, not one unique terminal catastrophe.
+
+
+## SECTION 17 progress D — chapter 108: darkness/light transformation and final state-sorting
+
+### Not heaven, not ordinary earth
+
+Enoch sees:
+- something like an invisible cloud,
+- immense depth,
+- blazing fire,
+- shining mountain-like forms circling/sweeping,
+- a region explicitly described as **not heaven** and with **no earth** in the punishment context.
+
+This resembles the supportless chaos/prison regions previously seen in chapters 18–21.
+
+Keep it distinct from normal inhabited layers.
+
+### Born in darkness → transformed into light
+
+The final promise is striking:
+- a “generation of light” is summoned,
+- those **born in darkness** who were unrewarded in flesh are **transformed**,
+- brought forth into shining light,
+- seated on thrones of honour,
+- become resplendent for times without number.
+
+This gives a final state-change grammar:
+
+**dark birth / earthly humiliation**
+→ **hidden faithful state**
+→ **transformation**
+→ **shining visible state**
+→ **enthronement**.
+
+### Light/dark pair becomes destination sorting
+
+The righteous:
+- shine,
+- enter light,
+- receive enduring honour.
+
+The condemned:
+- go into darkness/fire/chaos.
+
+Again:
+**one human population → state-based sorting into opposite destinations**.
+
+### Days/seasons remain prescribed even after sorting
+
+The final verse says those judged go where **days and seasons are prescribed** for them.
+
+That is worth carrying into the timeline project:
+even eschatological destination is described with **ordered temporal allocation**, not undifferentiated timelessness for every class.
+
+### Source structure of 91–108
+
+For file discipline:
+- **91–105** = Exhortation/Epistle complex containing Apocalypse of Weeks.
+- **106–107** = Noah-birth / Book-of-Noah-related addendum.
+- **108** = “another book” of Enoch / final addendum.
+
+They belong together in the received 1 Enoch, but source layers should not be flattened into one composition.
