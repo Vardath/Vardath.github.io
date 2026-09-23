@@ -17730,3 +17730,29 @@ Priority tests:
 - future-history prophecy,
 - whether the twelve patriarchs behave like multiple branches of one central ancestral structure.
 
+
+
+## 691. LIVE PROGRESS — X6 / Testaments of the Twelve Patriarchs begins
+
+> **Testament of Abraham is now complete** and saved. The next unfinished natural-order section is **X6 — Testaments of the Twelve Patriarchs**, placed after Genesis 50 and before Exodus 1. I’m continuing there now, treating the twelve sons as a possible **twelve-branch decomposition of the single Israel/Jacob body**, while checking Levi/Judah, Joseph/Benjamin, death/bones transfer, ascent scenes, spirits, garments and future-history material.
+
+### X6 progress A — the patriarchs are explicitly mapped onto parts of the cosmos
+
+> A very strong result has appeared almost immediately in the **Twelve Patriarchs**: the text itself assigns the brothers to **parts of the cosmos**. One version of Judah’s testament maps individual patriarchs to **heaven, earth, sea, mountains, tabernacle, luminaries, Eden, sun and moon**.
+>
+> That is unusually direct evidence for the exact methodological possibility we’ve been testing: **named human ancestors can function simultaneously as people and as personified components of a larger world-structure**. This is much stronger than us merely noticing visual resemblance after the fact.
+
+In the Charles tradition of Testament of Judah 26, the revived patriarchs are assigned symbolic cosmic domains/functions:
+- Reuben — heaven,
+- Issachar — earth,
+- Zebulun — sea,
+- Joseph — mountains,
+- Benjamin — tabernacle,
+- Dan — luminaries,
+- Naphtali — Eden,
+- Gad — sun,
+- Asher — moon,
+with Levi/Judah/Joseph/Benjamin also receiving ranked tribal roles.
+
+**Source-critical warning:** the Testaments are textually complicated and underwent substantial Jewish and Christian transmission/redaction. Exact assignments vary across witnesses/editions. The significance here is the explicit *principle* of patriarch↔cosmos correspondence, not the absolute stability of every item.
+
