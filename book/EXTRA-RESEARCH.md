@@ -12453,3 +12453,15 @@ Priority tests:
 
 **Primary text logged:** Jubilees 12:16–27; 14:1–20.
 
+
+
+### Section 11 progress update B — Akedah becomes timed recurring transition; lifespan contraction/re-expansion
+
+> Two especially strong cycle/state findings have now appeared.
+>
+> In the **Binding of Isaac**, Jubilees inserts **Mastema** as the proposer of the test, dates the heavenly challenge, keeps the mountain ascent/raised hand/heavenly interruption/ram substitution, identifies the mountain with **Zion**, and then turns the whole journey into a recurring **seven-day festival**. So the episode becomes not just a sacrifice story but a **timed, repeatable transition pattern**.
+>
+> Then Jubilees 23 gives an explicit long-term **lifespan cycle**: after the Flood, human lifespans progressively contract from near the old patriarchal scale toward roughly **70–80 years**, but in the future restored age they begin increasing again until they approach **1,000 years**. That is a genuine source-level **time/longevity contraction → later re-expansion** scheme.
+
+**Sources logged:** Jubilees 17:15–18:19; Michael Segal on Jubilees’ Akedah/festival chronology; Jubilees 23:8–31; James VanderKam on Psalm 90/Isaiah 65 and restored lifespan in Jubilees 23.
+
