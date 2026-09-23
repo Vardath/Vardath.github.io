@@ -18626,3 +18626,31 @@ Priority tests:
 - whether Moses functions as a temporary human carrier of an office that transfers to Joshua,
 - whether later “Assumption of Moses” traditions preserve an ascent/hidden-body version of the death scene.
 
+
+
+## 731. LIVE PROGRESS — X7 / Testament–Assumption of Moses begins
+
+> **X6 — Testaments of the Twelve Patriarchs is complete and saved.** The next unfinished natural-order section is **X7 — Testament/Assumption of Moses**, around Deuteronomy 31–34. I’m continuing there now, especially on Moses’ death/body ambiguity, Joshua succession, mountain/ascent traditions, and whether Moses’ “office” transfers while his body becomes hidden or removed.
+
+### X7 progress A — world-sized sepulchre + hand-to-seat succession
+
+> The first X7 result is already significant: Joshua describes Moses’ burial in **world-sized terms**—not a normal grave, but a sepulchre stretching **from east to west and south to north, effectively “the whole earth.”** At the same time, Moses takes Joshua by the hand and **raises him into his own seat**.
+>
+> That creates a very clean succession image: **Moses’ personal body/location becomes universalized or hidden, while his functional seat/office transfers bodily to Joshua.**
+
+**Primary text:** Testament of Moses 11–12 in the Latin-preserved tradition.
+
+Key geometry:
+- Joshua asks what place could receive Moses.
+- He asks who could move Moses' body like that of an ordinary man.
+- He says ordinary humans have local tombs, but Moses' sepulchre spans the world.
+- Joshua falls at Moses' feet.
+- Moses takes Joshua's hand.
+- Moses raises Joshua into the seat before him.
+- Joshua is told that God has chosen him as minister in the same covenant.
+
+This is an explicit:
+**person → world-scale burial image**
+plus
+**hand-mediated transfer of seat/function to successor.**
+
