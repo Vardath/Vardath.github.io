@@ -3615,3 +3615,15 @@ Next roadmap section:
 Special user hypothesis to test next:
 > Cain and Abel may somehow be the same figure / paired states of one underlying structure.
 
+
+
+### Section 1 final user-facing reply saved verbatim
+
+> Section 1 — Genesis 1–3 is complete. The strongest result is that Adam/Eve fits much better as **one primordial figure divided into complementary sides** than as “two names for the same actor”: Genesis gives the side/bone/flesh/one-flesh structure, and later Jewish interpretation explicitly preserves both a **two-sided Adam split into male/female** and a **cosmic Adam spanning earth to firmament**.
+> 
+> The larger Genesis 1–3 geometry is now logged as **separate → branch → split → guard**: upper/lower waters separate, land emerges, one Eden river branches into four, the primordial human is divided, then access to the central Tree of Life is closed behind a turning/flaming boundary. I’ve marked this as more like a **world-ordering / post-transition closure phase** than the full destructive gate-opening event.
+> 
+> Everything—including all three live progress replies, source cautions, failures, pair ratings, predictions, and the detailed Section 1 write-up—is appended to `book/EXTRA-RESEARCH.md`.
+> 
+> Next is **Section 2 — Genesis 4–5: Cain / Abel / Seth / Enoch**, with the specific test of whether Cain and Abel are split/opposed states of one underlying figure.
+
