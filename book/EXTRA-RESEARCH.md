@@ -10117,3 +10117,1041 @@ Priority pair tests:
 
 **Sources logged:** Genesis 37–41; scholarly studies of clothing/garment motifs in Genesis 37–39 and Joseph’s investiture in Genesis 41.
 
+
+
+---
+
+## 315. SECTION 9 COMPLETE — Genesis 37–50
+
+**Scope:** Genesis 37:1–50:26, including Joseph’s dreams, garment identity, pit/descent, Judah/Tamar, Perez/Zerah, Potiphar/prison, Pharaoh’s doubled seven-year dreams, Joseph’s elevation, brothers’ descents/returns, Benjamin/Judah substitution, Joseph’s hidden/revealed identity, Jacob’s descent to Egypt, Ephraim/Manasseh crossed blessing, tribal blessings, Jacob’s burial, and Joseph’s bones.
+
+### 315.1 Joseph’s opening dreams — vertical inversion
+
+Joseph dreams:
+- brothers’ sheaves bowing to his,
+- sun/moon/stars bowing to him.
+
+The narrative begins by predicting a reversal:
+**younger/favoured son**
+→ **others lowered/bowing around him.**
+
+This sets the whole Joseph cycle as an elevation story.
+
+---
+
+## 316. Garment as status/identity carrier
+
+Jacob gives Joseph a distinctive garment.
+
+Its precise form is debated, but its narrative function is clear:
+- marks special status,
+- intensifies brotherly hostility.
+
+The brothers strip it from Joseph before putting him in the pit.
+
+Thus:
+**status garment removed**
+→ **status collapses**
+→ **body descends.**
+
+The garment then continues independently of Joseph and is manipulated as evidence of his supposed death.
+
+This is another strong case where:
+**outer object carries identity even when body is elsewhere.**
+
+---
+
+## 317. Coat + blood = false death identity
+
+The brothers dip Joseph’s garment in blood and present it to Jacob.
+
+Jacob recognizes the garment and concludes Joseph is dead.
+
+Thus:
+**real garment**
++
+**false bodily evidence**
+→ **false identity-state accepted by observer.**
+
+This parallels:
+- Jacob wearing Esau’s clothes,
+- garment standing in for absent person,
+- appearance overriding hidden reality.
+
+For the Vardath method, this is a strong narrative control:
+**identity can be projected through an external shell/object.**
+
+---
+
+## 318. Pit as first descent
+
+Joseph is thrown into a pit/cistern.
+
+The text explicitly notes:
+- pit is empty,
+- no water in it.
+
+This is important because the pit is a **dry lower enclosure**.
+
+Structural sequence:
+**favoured upper status**
+→ **stripped**
+→ **lowered into dry pit**
+→ **removed**
+→ **sold down to Egypt.**
+
+This is one of the clearest descent-state transitions in Genesis.
+
+---
+
+## 319. Joseph / Judah narrative split
+
+Immediately after Joseph is carried toward Egypt, Genesis 38 shifts to Judah.
+
+Judah also “goes down” from his brothers.
+
+Thus both lines begin with **descent/separation**:
+- Joseph descends involuntarily toward Egypt,
+- Judah descends/separates from brothers into another family story.
+
+This creates two parallel developing branches.
+
+Best classification:
+- Joseph/Judah = strong P2/P5 parallel leadership branches.
+
+Later:
+- Joseph dominates politically/economically,
+- Judah emerges as spokesman/pledge-bearer within the family.
+
+---
+
+## 320. Judah / Tamar — identity concealment and recognition
+
+Tamar conceals her identity.
+
+Judah fails to recognize her.
+
+She obtains pledge objects:
+- seal/signet,
+- cord,
+- staff.
+
+Later these objects become identity evidence.
+
+Judah recognizes them and acknowledges responsibility.
+
+This repeats the Joseph coat motif:
+**personal object**
+→ **identity concealed**
+→ **object later forces recognition.**
+
+So Genesis 37–39 is saturated with **identity-by-object**.
+
+---
+
+## 321. Staff / cord / seal cluster
+
+Tamar receives:
+- staff,
+- cord,
+- seal/signet.
+
+These are portable identity/status objects.
+
+For Vardath:
+the presence of staff/cord alongside hidden identity is visually relevant,
+but the plain context is legal/personal identification.
+
+Do not identify the staff with the lattice rod.
+
+---
+
+## 322. Perez / Zerah — breach twin sequence
+
+This is one of the strongest crossing scenes in Genesis.
+
+At birth:
+- one twin puts out a hand,
+- midwife ties scarlet thread around it to mark first emergence,
+- hand withdraws,
+- the other twin breaks through,
+- he is named Perez, associated with breach/breakthrough,
+- thread-marked twin emerges afterward and is named Zerah.
+
+Stripped geometry:
+
+**hand A emerges**
+→ **A marked first**
+→ **A withdraws**
+→ **B breaks through same opening**
+→ **B becomes first whole birth**
+→ **A emerges second.**
+
+This is a direct:
+**first → withdrawal → crossover/overtake → second becomes first**
+sequence.
+
+It is arguably an even cleaner crossing inversion than Jacob/Esau.
+
+---
+
+## 323. Perez/Zerah and Jacob/Esau mirror one another
+
+Jacob/Esau:
+- twins,
+- first/second tension,
+- younger eventually takes firstborn role.
+
+Perez/Zerah:
+- twins,
+- first emergence marked,
+- order reverses during birth itself.
+
+Thus Genesis gives the same reversal at two scales/timings:
+- delayed life-long reversal,
+- immediate birth-canal reversal.
+
+This strongly supports deliberate twin-symbol recursion.
+
+---
+
+## 324. Potiphar’s wife — second garment identity event
+
+Joseph flees from Potiphar’s wife and leaves a garment in her hand.
+
+She then uses that garment as evidence against him.
+
+Again:
+
+**true body absent**
++
+**real garment present**
+→ **false identity/narrative assigned to body.**
+
+The Joseph cycle therefore repeats:
+**garment = proxy for person.**
+
+This is one of the clearest recurring identity mechanisms in Genesis.
+
+---
+
+## 325. Second descent — prison / pit language
+
+Joseph moves from:
+- slavery,
+- to prison.
+
+Biblical language later can refer to the prison as a pit/dungeon.
+
+His trajectory is therefore:
+
+**pit**
+→ **Egyptian house**
+→ **prison/pit**
+→ **palace.**
+
+This repeated down/up movement is central to Joseph’s role.
+
+---
+
+## 326. Dreams as hidden-state revelation
+
+Joseph interprets:
+- cupbearer/baker dreams,
+- Pharaoh’s dreams.
+
+The dream mechanism reveals a future state before it occurs.
+
+This is not physical time travel in the text,
+but it repeatedly links Joseph with:
+**future knowledge entering present decision-making.**
+
+Within Vardath Cosmology, this is relevant to future/present interaction only as symbolic analogy.
+
+---
+
+## 327. Pharaoh’s two dreams are explicitly “one”
+
+This is a major methodological control.
+
+Pharaoh dreams:
+1. seven fat cows consumed by seven lean cows,
+2. seven full ears consumed by seven thin/blasted ears.
+
+Joseph explicitly says:
+**the two dreams are one.**
+
+This proves the biblical text itself can present:
+**two different images/stories**
+as
+**one underlying event.**
+
+That is directly relevant to the user’s thesis about apparently different figures/stories encoding the same phenomenon.
+
+---
+
+## 328. Dream doubling = confirmation
+
+Joseph says the dream is doubled because:
+- matter is established,
+- it will happen.
+
+Thus duplication itself is given a literary/theological function:
+**same event shown twice in different symbolic forms = confirmation.**
+
+This is one of the most important methodological findings in the whole project.
+
+It means the idea:
+> “different story-images may describe one event”
+is not merely imposed externally; Genesis 41 explicitly uses that mechanism.
+
+---
+
+## 329. Seven + seven timed cycle
+
+Pharaoh’s dreams encode:
+- 7 years abundance,
+- 7 years famine.
+
+This produces a **14-year paired cycle**:
+**7 good**
+→ **7 destructive/consuming.**
+
+The famine is so strong it erases memory/visibility of the abundance.
+
+Record for later timing table:
+- 7 years,
+- 7 years,
+- 14 total,
+- dream doubled.
+
+Do not yet compare numerically to Archaix/Vardath cycles.
+
+---
+
+## 330. Thin consumes fat without becoming fat
+
+In the dream:
+- lean cows consume fat cows,
+- remain lean.
+
+Likewise thin ears swallow full ears.
+
+This is a striking **absorption without visible integration** image.
+
+Within Vardath:
+possible analogy to one state consuming/overwriting another without retaining its visible abundance.
+
+But this is dream symbolism of famine, and that remains the primary interpretation.
+
+---
+
+## 331. Joseph rises from pit to ruler
+
+When Pharaoh summons Joseph:
+- he is brought quickly from prison/pit,
+- shaves,
+- changes garments,
+- appears before Pharaoh.
+
+Then:
+- receives signet,
+- fine clothing,
+- gold chain,
+- chariot/status,
+- new Egyptian name,
+- authority over land.
+
+This is an extraordinarily explicit state transformation:
+
+**prison identity**
+→ **body prepared**
+→ **garment changed**
+→ **new name**
+→ **new insignia**
+→ **new authority**
+→ **elevation.**
+
+This is one of the strongest before/after state changes in Genesis.
+
+---
+
+## 332. Joseph’s new Egyptian identity overlays old identity
+
+Joseph becomes publicly Egyptianized:
+- new name,
+- new clothing/status,
+- Egyptian wife,
+- Egyptian office.
+
+Yet he remains Joseph internally/narratively.
+
+Later his brothers do not recognize him.
+
+This is another explicit:
+**same underlying person**
++
+**new visible/social state**
+→ **old kin fail to recognize him.**
+
+This is highly relevant to the “same figure somehow” investigation.
+
+---
+
+## 333. Manasseh / Ephraim names encode old/new relation
+
+Joseph names:
+- Manasseh in relation to forgetting hardship/father’s house,
+- Ephraim in relation to fruitfulness in affliction land.
+
+The sons encode Joseph’s transformed state:
+**forgetting/separation**
++
+**fruitfulness/new world.**
+
+They become two branches of his Egyptian phase.
+
+---
+
+## 334. Famine drives brothers downward
+
+When famine reaches Canaan:
+- Jacob’s sons go **down to Egypt** for food.
+
+Joseph has already gone down and risen inside Egypt.
+
+Now the family must follow the same downward route.
+
+Structural sequence:
+**Joseph descends first**
+→ **Joseph rises within lower world**
+→ **brothers later descend**
+→ **meet him in transformed identity.**
+
+This is strongly compatible with a mythic “one goes ahead into another state, others follow later” pattern.
+
+---
+
+## 335. Joseph recognizes; brothers do not
+
+Joseph recognizes his brothers.
+
+They do not recognize Joseph.
+
+This asymmetric recognition is central.
+
+It proves:
+**identity continuity exists despite complete appearance/status transformation.**
+
+For Vardath:
+a useful model for the possibility that the “same figure” may be present in a different state and not recognized by observers.
+
+---
+
+## 336. Bowing fulfills earlier dreams
+
+The brothers bow before Joseph.
+
+Thus the dream-image from the beginning becomes literalized in altered form.
+
+The narrative closes a long cycle:
+**future image**
+→ **years of descent/ascent**
+→ **image realized.**
+
+This is a very strong long-delay pattern.
+
+---
+
+## 337. Benjamin — Joseph’s paired full-brother branch
+
+Benjamin is Joseph’s full brother through Rachel.
+
+Joseph reacts intensely to him.
+
+Structurally:
+- Joseph = removed/exiled Rachel-son,
+- Benjamin = remaining Rachel-son.
+
+This creates a paired branch:
+**one sent away**
+versus
+**one retained at home.**
+
+Joseph’s tests repeatedly center on whether Benjamin will also be lost.
+
+---
+
+## 338. Judah offers himself in Benjamin’s place
+
+Judah ultimately offers himself as substitute/slave instead of Benjamin.
+
+This is another explicit replacement pattern:
+
+**Benjamin threatened**
+→ **Judah offers own body**
+→ **substitution proposed.**
+
+This echoes:
+- Isaac/ram,
+- Abel/Seth,
+- other role-transfer scenes.
+
+Judah’s moral role also shifts dramatically here.
+
+---
+
+## 339. Joseph / Judah dual leadership
+
+By the reconciliation climax:
+- Joseph holds external imperial power,
+- Judah acts as internal family spokesman/protector.
+
+Thus the family has two leadership branches:
+**Joseph = external/world-saving administrator**
+**Judah = internal/kinship leader.**
+
+Later biblical traditions develop both houses/tribes strongly.
+
+For the user’s paired-role theory:
+Joseph/Judah are a strong dual-function pair.
+
+---
+
+## 340. Joseph reveals identity
+
+Joseph finally declares himself.
+
+The transition is:
+**hidden transformed identity**
+→ **revelation**
+→ **brothers shocked**
+→ **family relation restored.**
+
+This is another:
+**same person / different apparent state / eventual recognition**
+template.
+
+---
+
+## 341. “You sold me / God sent me”
+
+Joseph reframes the event:
+
+Brothers:
+- sold him.
+
+Joseph:
+- says God sent him ahead to preserve life.
+
+This is a crucial dual-perspective statement.
+
+Same event:
+**human perspective = betrayal/sale**
+**Joseph’s theological perspective = sending ahead/preservation.**
+
+This is another strong **one event / two interpretive directions** control.
+
+For Vardath:
+it parallels the idea that one physical transition may look different from different world positions.
+
+Do not equate theology with physics.
+
+---
+
+## 342. Jacob/Israel descends to Egypt
+
+Jacob initially fears leaving the promised land.
+
+At Beersheba, divine assurance is given:
+- go down to Egypt,
+- God will go down with him,
+- God will also bring him up again.
+
+This is extremely important.
+
+Source-level vertical sequence:
+**Jacob/Israel ↓ Egypt**
+with divine accompaniment,
+followed by promised
+**↑ return.**
+
+This is one of the clearest explicit down/up migration formulas in Genesis.
+
+---
+
+## 343. “I will go down with you / bring you up”
+
+For Vardath Cosmology this is highly relevant because:
+- descent is not abandonment,
+- the divine presence traverses with the migrant,
+- return upward is promised.
+
+Still:
+Egypt/Canaan are ordinary geography in the narrative.
+
+Treat this as structural analogy only.
+
+---
+
+## 344. Jacob’s household becomes enclosed in Egypt
+
+The family enters Egypt and settles in Goshen.
+
+Thus:
+**famine outside**
+→ **protected food-rich region inside Egypt**
+→ **family survives and multiplies.**
+
+This resembles protected-enclosure logic at a social/geographic scale.
+
+---
+
+## 345. Joseph stores abundance for destructive cycle
+
+Before famine:
+- food accumulated during good phase.
+
+During famine:
+- stored reserves preserve population.
+
+This resembles:
+**pre-transition accumulation**
+→ **closed reserve**
+→ **survival through destructive interval.**
+
+Again:
+ordinary economic administration is the plain reading.
+
+---
+
+## 346. Jacob blesses Ephraim / Manasseh with crossed hands
+
+This is one of the most visually important scenes in Genesis.
+
+Joseph intentionally positions:
+- firstborn Manasseh toward Jacob’s right hand,
+- younger Ephraim toward left.
+
+Jacob deliberately **crosses/intertwines his hands** so:
+- right hand → younger Ephraim,
+- left hand → older Manasseh.
+
+Joseph tries to correct the crossing.
+Jacob refuses.
+
+Thus:
+**normal parallel mapping**
+is intentionally changed into
+**crossed mapping.**
+
+---
+
+## 347. Crossed hands impose younger-over-elder
+
+This scene physically embodies the Genesis reversal theme.
+
+Earlier:
+- Jacob, younger, supplants Esau elder.
+
+Now Jacob uses his own body to reproduce that inversion on Joseph’s sons.
+
+Structural sequence:
+**two recipients**
+→ **arms cross**
+→ **right/priority passes diagonally to younger**
+→ **left passes to elder.**
+
+This is exceptionally close to the user’s lattice crossover imagery.
+
+It is not hidden:
+the gesture itself is the mechanism of reversal.
+
+---
+
+## 348. Jacob literally becomes the crossing operator
+
+At Genesis 48 Jacob is not merely part of a pair.
+
+His own two arms become a **crossing structure** that redirects blessing across the pair.
+
+For the Squatter-Man hypothesis this is very important:
+
+**central human body**
++
+**two arms extending to opposite sides**
++
+**arms cross**
++
+**different outputs transmitted to paired recipients.**
+
+This is one of the clearest anthropomorphic branching/crossover diagrams in Genesis.
+
+It should be retained as a priority Squatter-Man/operator scene.
+
+---
+
+## 349. Jacob’s failing eyes repeat Isaac’s blindness — but outcome differs
+
+Isaac’s poor sight allowed Jacob/Esau identity confusion.
+
+Jacob is also old and visually impaired.
+
+But Jacob’s crossed-hand reversal is intentional.
+
+Thus the older scene is replayed but transformed:
+
+**Isaac**
+- poor vision,
+- deceived into inversion.
+
+**Jacob**
+- poor vision,
+- knowingly creates inversion.
+
+This is a powerful successor-state correction.
+
+---
+
+## 350. Jacob’s final blessings distribute one body into twelve tribal roles
+
+Genesis 49 presents Jacob speaking over his sons.
+
+Each son receives differentiated imagery/function.
+
+Thus the one father/Israel identity is distributed into:
+**twelve named tribal branches.**
+
+This is the culmination of:
+**one → two → four → twelve**
+family segmentation begun earlier.
+
+For Vardath:
+the twelvefold distribution is structurally important, but do not map it automatically onto lattice counts.
+
+---
+
+## 351. Judah / Joseph prominence in blessings
+
+Among the sons:
+- Judah receives royal/lion/scepter prominence,
+- Joseph receives unusually rich fertility/branch imagery.
+
+This reinforces the dual-leadership pattern:
+**Judah**
+and
+**Joseph**
+as two major branches.
+
+Later Israelite history will strongly preserve that north/south division.
+
+Do not project later politics backward as proof of original cosmological duality.
+
+---
+
+## 352. Jacob’s body returns upward/out of Egypt
+
+Jacob dies in Egypt but insists on burial in Canaan.
+
+His body is:
+- embalmed,
+- carried out of Egypt,
+- brought back to ancestral burial cave.
+
+So the narrative gives:
+**living descent into Egypt**
+→ **death**
+→ **body carried back upward/out to ancestral land.**
+
+This completes Jacob’s promised return in bodily/funerary form.
+
+---
+
+## 353. Joseph returns to Egypt after Jacob burial
+
+Joseph accompanies Jacob’s body out,
+then returns to Egypt.
+
+Thus movement remains bidirectional:
+**Egypt → Canaan → Egypt.**
+
+The family remains in Egypt awaiting later Exodus.
+
+---
+
+## 354. Joseph’s bones as delayed-return cargo
+
+Joseph dies in Egypt.
+
+He makes Israelites swear:
+- when God visits/brings them out,
+- carry his bones up from Egypt.
+
+His body is embalmed and placed in a coffin.
+
+Thus Joseph becomes a **future transfer object/cargo**:
+- remains stay in lower/exile location,
+- await later collective ascent/return,
+- are to cross with the population.
+
+This is exceptionally relevant to the user’s protected-cargo / delayed-transfer concept.
+
+---
+
+## 355. Joseph’s coffin as unresolved transition marker
+
+Genesis ends not with return complete,
+but with Joseph in a coffin in Egypt awaiting future movement.
+
+This creates deliberate narrative suspension:
+
+**promise of ascent**
+but
+**body still below/in Egypt.**
+
+The Exodus will reopen the movement.
+
+Within Vardath:
+this resembles a **transition held in pending state**.
+
+---
+
+## 356. Seven/seven cycle and world movement
+
+The 7+7 abundance/famine cycle does more than affect crops.
+
+It causes:
+- Joseph’s elevation,
+- international movement toward Egypt,
+- Jacob family descent,
+- eventual Israelite settlement in Egypt.
+
+Thus a timed environmental cycle reorganizes population geography.
+
+This will be important in the later timing table.
+
+Raw interval:
+**7 years abundance**
++
+**7 years famine**
+with family migration during famine.
+
+---
+
+## 357. Dream duplication as explicit same-event model
+
+This finding deserves repetition because it is methodologically central.
+
+Joseph says Pharaoh’s two dreams:
+**are one.**
+
+This gives a biblical precedent for exactly what the user is asking us to test:
+
+> two different symbolic stories/images may encode one underlying event.
+
+That does not prove all doubles do.
+
+But it means the interpretive possibility is unquestionably native to Genesis itself.
+
+---
+
+## 358. Joseph / Benjamin current verdict
+
+Not same person.
+
+Best classification:
+- P1/P2 paired Rachel branches.
+- Joseph = removed/transformed/external branch.
+- Benjamin = retained/internal branch.
+
+Their reunion helps restore Rachel’s split line.
+
+---
+
+## 359. Joseph / Judah current verdict
+
+Strong dual-leadership pair.
+
+Joseph:
+- dreamer,
+- exile,
+- world administrator,
+- food preserver,
+- external power.
+
+Judah:
+- descends separately,
+- identity/recognition story with Tamar,
+- becomes guarantor/substitute,
+- internal spokesman,
+- royal blessing.
+
+They are complementary branches, not one figure.
+
+---
+
+## 360. Perez / Zerah current verdict
+
+One of the strongest **crossing twins**.
+
+Best classification:
+- P1 broken unity,
+- P2 polarity,
+- P3 order inversion.
+
+This scene should be high priority in the final geometric comparison because the crossing mechanism is explicit and physical.
+
+---
+
+## 361. Ephraim / Manasseh current verdict
+
+Again:
+- two sons,
+- elder/younger,
+- deliberate inversion.
+
+But unlike Jacob/Esau:
+the inversion is produced by **crossed arms of a central third figure**.
+
+This is especially relevant to Squatter-Man geometry.
+
+---
+
+## 362. Section 9 Vardath reconstruction
+
+### A. Future state shown first
+Joseph’s dreams predict later ordering.
+
+### B. Outer identity removed
+Garment stripped.
+
+### C. Descent
+Joseph placed in dry pit, then taken down to Egypt.
+
+### D. False identity shell
+Bloodied garment stands in for dead Joseph.
+
+### E. Parallel Judah branch
+Judah descends into separate identity story.
+
+### F. Twin crossover
+Zerah hand first → withdraws → Perez breaches through.
+
+### G. Second garment-loss
+Joseph garment becomes false guilt evidence.
+
+### H. Second descent
+Prison.
+
+### I. Future cycles revealed
+Paired dreams encode one event: 7 good + 7 famine.
+
+### J. Sudden ascent
+Joseph rises from prison to rule.
+
+### K. Re-clothing / renaming
+New outer/social state.
+
+### L. Unrecognized transformed figure
+Brothers descend and fail to recognize him.
+
+### M. Pair protection
+Benjamin tested; Judah offers substitution.
+
+### N. Identity revealed
+Joseph reconnects with family.
+
+### O. Whole family descends
+Jacob/Israel goes down to Egypt with promised future return.
+
+### P. Crossed-arm redistribution
+Jacob crosses hands over Ephraim/Manasseh, deliberately inverting lines.
+
+### Q. Twelvefold branching
+Final tribal differentiation.
+
+### R. Body return / delayed body return
+Jacob returned to Canaan;
+Joseph’s remains held in Egypt awaiting future Exodus.
+
+This is one of the strongest complete **identity/descent/ascent/crossover** sequences in Genesis.
+
+---
+
+## 363. Strongest Section 9 findings for Vardath Cosmology
+
+1. **Garments repeatedly carry identity independently of body.**
+2. **Joseph’s life is repeated descent/ascent through layered social spaces.**
+3. **Two different Pharaoh dreams are explicitly declared one event.**
+4. **7+7 timed environmental cycle drives population movement.**
+5. **Perez/Zerah gives explicit first/second crossover at one opening.**
+6. **Joseph’s transformed identity is real but unrecognized by kin.**
+7. **“You sold me / God sent me” gives two perspectives on one event.**
+8. **Jacob’s descent to Egypt is paired with promised ascent/return.**
+9. **Crossed hands physically redirect priority from elder to younger.**
+10. **Jacob’s central body with crossed arms is a major anthropomorphic crossover image.**
+11. **Joseph’s bones become delayed-transfer cargo awaiting later collective passage.**
+12. **Genesis ends in an unresolved transition that Exodus must complete.**
+
+---
+
+## 364. What Section 9 does NOT establish
+
+Still unsupported:
+- Joseph literally moved between world layers,
+- Pharaoh’s seven-year cycle equals a Vardath/Archaix interval,
+- garment identity is a literal energetic shell,
+- Perez/Zerah birth is a physical lattice event,
+- crossed arms are consciously a lattice diagram,
+- Egypt literally represents the lower past-world,
+- Joseph’s coffin is an ark/gate.
+
+These remain structural comparisons.
+
+---
+
+## 365. Predictions generated from Section 9
+
+Later texts should be checked for:
+1. two visions explicitly declared one event,
+2. clothing changes accompanying identity transformation,
+3. pit/descent followed by sudden elevation,
+4. unrecognized same-person returns,
+5. first/second inversion created by crossed limbs,
+6. breach/breakthrough twin imagery,
+7. environmental cycles driving mass migration,
+8. protected remains/cargo carried in later exodus,
+9. dual leadership branches like Joseph/Judah,
+10. delayed fulfillment where one book ends with transfer still pending.
+
+---
+
+## 366. Section 9 status
+
+**SECTION 9 — COMPLETE.**
+
+Next roadmap section:
+
+**Section 10 — Jubilees 1–10**
+- Sinai frame,
+- creation,
+- angels/spirits,
+- Adam/Eve,
+- Cain/Abel,
+- Enoch,
+- Watchers,
+- giants,
+- Noah,
+- flood,
+- division of earth.
+
+Priority pair tests:
+- Genesis/Jubilees duplicate-event comparison,
+- Adam/Eve,
+- Cain/Abel/Seth,
+- Enoch/Noah,
+- Watchers/humans,
+- upper/lower flood waters,
+- calendrical ordering of primeval events,
+- whether Jubilees sharpens or contradicts the Genesis geometry.
+
