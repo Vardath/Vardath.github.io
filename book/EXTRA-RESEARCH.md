@@ -1512,3 +1512,1579 @@ Within Vardath Cosmology, the most economical single picture is:
 > **The Squatter-Man is the side-view anthropomorphic projection of the lattice/rod during a temporary gate transition. The “person” may sometimes encode the movement/state of the connector itself rather than merely a separate person standing beside it.**
 
 This remains a structural hypothesis, but Ethiopian and wider apocryphal material—especially **1 Enoch, Jubilees, 4 Baruch and Ascension of Isaiah**—strengthens it enough to justify a rigorous geometry-first test rather than dismissing it as simple motif overlap.
+
+
+---
+
+## 30. MASTER STORY / FIGURE INVESTIGATION ROADMAP
+
+**Purpose:** Work through the entire 88-text research corpus systematically, story by story, without losing the possibility that apparently separate characters may be split, mirrored, paired, successor, upper/lower, positive/negative, or before/after presentations of one underlying lattice role.
+
+This is a **research list, not a conclusion list**.
+
+### Pair / duplication rule
+
+Whenever two or more figures are strongly linked, do not assume either:
+- that they are ordinary separate people only, or
+- that they are definitely one hidden figure.
+
+Instead test the following possibilities:
+
+- **P1 — split halves:** two characters are left/right, upper/lower, male/female, active/passive or over/under halves of one geometry.
+- **P2 — polarity pair:** two characters represent opposed directions or phases of one process.
+- **P3 — state pair:** same underlying role shown before/after transformation.
+- **P4 — successor pair:** one role passes from one figure to another.
+- **P5 — parent/child recurrence:** the same structural role repeats one generation later.
+- **P6 — rival/double:** one figure is the inverted or destructive counterpart of another.
+- **P7 — carrier/operator:** one is the protected cargo/enclosure role and one is the rod/gate/operator role.
+- **P8 — world-turn mirror:** two figures may be the same geometry seen from different world layers or time directions.
+- **P9 — narrative duplication:** later writers may simply be reusing an older literary pattern; always keep this conventional explanation beside the Vardath reading.
+- **P10 — genuinely separate:** the pair may have no hidden unification at all.
+
+For every pair, record which of P1–P10 is actually supported.
+
+### Geometry fields to record for every story
+
+For each episode, record:
+- central figure?
+- bilateral arms/branches/supports?
+- standing / seated / crouched / hanging / stretched?
+- mountain / hill / stone / rock?
+- rod / staff / spear / branch / tree / cross / pillar?
+- serpent / dragon / rope / braid?
+- gate / door / veil / wall / threshold / window?
+- enclosure / ark / basket / house / tent / chamber / city?
+- water above / below / beside?
+- water rising / falling / dividing / draining?
+- ascent / descent / opposed movement?
+- heaven opened / shut / folded / rolled?
+- abyss / pit / deep opened / shut?
+- cloud / smoke / fire / extraordinary light / darkness?
+- earthquake / land movement / mountain split?
+- time anomaly / sleep / missing interval / delayed return?
+- death / rebirth / resurrection / renewal?
+- old structure replaced by new structure?
+- pair / double / twin / successor / mirror?
+- what does the conventional literary reading explain better?
+- what detail does the Vardath reading fail to explain?
+- what new motif would the Vardath interpretation predict?
+
+---
+
+## 31. Handleable work sections
+
+Work through these in order. Each section is deliberately small enough for a focused pass.
+
+### PRIMEVAL / CREATION
+
+**Section 1 — Genesis 1–3**
+- creation ordering,
+- light/dark,
+- waters above/below,
+- firmament,
+- land emerging from water,
+- trees,
+- Adam,
+- Eve,
+- serpent,
+- Tree of Life / Tree of Knowledge,
+- expulsion,
+- cherubim and guarded way.
+
+**Pair tests:** Adam/Eve; Adam/serpent; Eve/serpent; two trees; waters above/waters below; light/dark.
+
+**Section 2 — Genesis 4–5**
+- Cain and Abel,
+- blood/ground,
+- mark of Cain,
+- Cain’s city,
+- Seth replacing Abel,
+- Enoch,
+- genealogical doubling and repeated names.
+
+**Pair tests:** Cain/Abel as possible split or polarity of one figure; Cain/Seth; Abel/Seth replacement; Enoch/earlier Enoch names.
+
+**Section 3 — Genesis 6–9**
+- sons of God / daughters of men,
+- giants,
+- Noah,
+- ark,
+- upper/lower waters,
+- window/door,
+- mountain landing,
+- raven/dove,
+- rainbow/covenant,
+- Noah’s three sons.
+
+**Pair tests:** Enoch/Noah; upper/lower waters; raven/dove; Shem/Japheth around Ham/Canaan; ark/gate distinction.
+
+**Section 4 — Genesis 10–11**
+- division of nations,
+- Nimrod,
+- Babel,
+- tower reaching heaven,
+- unified language split into many,
+- scattering.
+
+**Pair tests:** tower/rod; Babel/Sinai inversion; one language/many languages; ascent/scattering.
+
+### PATRIARCHS
+
+**Section 5 — Genesis 12–18**
+- Abraham’s departure,
+- Egypt episode,
+- Abraham/Lot separation,
+- Melchizedek,
+- covenant cutting,
+- stars,
+- Sarah/Hagar,
+- Ishmael,
+- three visitors,
+- promised child.
+
+**Pair tests:** Abraham/Lot; Sarah/Hagar; Isaac/Ishmael; Abraham/Melchizedek; three visitors as segmented function.
+
+**Section 6 — Genesis 19–25**
+- Sodom and Gomorrah,
+- Lot’s wife,
+- cave,
+- Isaac birth,
+- Hagar/well,
+- binding of Isaac,
+- ram substitute,
+- Sarah’s death,
+- Rebekah at well,
+- Abraham’s death.
+
+**Pair tests:** Isaac/ram; Isaac/Ishmael; Sarah/Hagar; Abraham/Isaac; Sodom/Zoar; Lot/Lot’s wife.
+
+**Section 7 — Genesis 25–28**
+- Jacob/Esau birth,
+- twins struggling,
+- birthright,
+- blessing inversion,
+- Jacob’s departure,
+- ladder,
+- angels ascending/descending,
+- stone made pillar,
+- gate of heaven.
+
+**Pair tests:** Jacob/Esau is a priority same-figure/mirror test; elder/younger reversal; ladder/pillar; ascent/descent.
+
+**Section 8 — Genesis 29–36**
+- Leah/Rachel,
+- two wives / two maidservants,
+- sons/tribes,
+- Jacob’s rods before flocks,
+- flight from Laban,
+- stones/heap boundary,
+- wrestling figure,
+- Jacob renamed Israel,
+- crossing Jabbok,
+- reconciliation with Esau,
+- Dinah,
+- return to Bethel.
+
+**Pair tests:** Leah/Rachel; Jacob/Laban; Jacob/angel; Jacob/Israel before-after state; Jacob/Esau reunion; two camps.
+
+**Section 9 — Genesis 37–50**
+- Joseph’s dreams,
+- pit,
+- coat,
+- descent to Egypt,
+- imprisonment,
+- seven fat/seven lean,
+- elevation,
+- famine,
+- brothers descend and return,
+- Joseph/Benjamin,
+- Judah/Tamar,
+- Perez/Zerah birth with red thread and “breaking through,”
+- Jacob’s blessings,
+- Joseph’s bones.
+
+**Priority pair tests:** Joseph/Judah; Joseph/Benjamin; Perez/Zerah; Jacob/Joseph; pit/elevation; seven/seven.
+
+Perez/Zerah is especially important because one twin puts out a hand, receives a marker, withdraws, and the other “breaks through” first: test as over/under or gate-crossover imagery without assuming it.
+
+---
+
+## 32. Jubilees and Enoch primeval parallel track
+
+These must be compared beside Genesis, not treated as isolated extras.
+
+**Section 10 — Jubilees 1–10**
+- Sinai frame,
+- creation,
+- angels/spirits,
+- Adam/Eve,
+- Cain/Abel,
+- Enoch,
+- Watchers,
+- giants,
+- Noah,
+- flood,
+- division of earth.
+
+**Pair tests:** all Genesis primeval pairs; Enoch/Noah; Watchers/humans; upper/lower water.
+
+**Section 11 — Jubilees 11–25**
+- Abraham cycle,
+- calendrical dating,
+- Lot,
+- Sarah/Hagar,
+- Isaac/Ishmael,
+- binding.
+
+**Section 12 — Jubilees 26–50**
+- Jacob/Esau,
+- Leah/Rachel,
+- Joseph,
+- Exodus prehistory,
+- Passover law,
+- Jubilee/calendar structure.
+
+**Section 13 — 1 Enoch 1–36, Book of Watchers**
+- descent of Watchers,
+- mountain assembly,
+- forbidden unions,
+- giants,
+- Azazel,
+- binding,
+- Enoch’s journeys,
+- mountains,
+- abyss/prison,
+- Tree of Life,
+- gates/ends of earth.
+
+**Pair tests:** Enoch/Watchers; Azazel/other leaders; ascent/descent; bound/unbound; mountain/axis.
+
+**Section 14 — 1 Enoch 37–71, Parables**
+- Son of Man / Chosen One,
+- Head of Days,
+- mountains,
+- luminaries,
+- judgment,
+- Enoch’s transformation/elevation traditions.
+
+**Pair tests:** Enoch/Son of Man; human/heavenly figure; seated/ascending.
+
+**Section 15 — 1 Enoch 72–82, Astronomical Book**
+- six gates,
+- solar/lunar paths,
+- east/west,
+- 364-day calendar,
+- seasonal movement,
+- portals.
+
+**Section 16 — 1 Enoch 83–90, Dream Visions**
+- flood dream,
+- animal history,
+- tower/house,
+- old house folded/removed,
+- new house,
+- stars and animals.
+
+**Pair tests:** old/new house; animal/human identity layers; Enoch/Noah.
+
+**Section 17 — 1 Enoch 91–108**
+- apocalypse of weeks,
+- generations,
+- final judgment,
+- Noahic material,
+- birth signs,
+- time divisions.
+
+---
+
+## 33. Moses / Exodus / wilderness
+
+**Section 18 — Exodus 1–4**
+- oppression,
+- Hebrew midwives,
+- Moses in basket,
+- river transfer,
+- two identities: Hebrew/Egyptian,
+- flight,
+- burning bush,
+- mountain,
+- divine name,
+- staff ↔ serpent,
+- hand altered/restored,
+- Moses/Aaron pairing.
+
+**Priority pair tests:** Moses/Aaron; Moses/Pharaoh; Moses baby/adult; basket/ark; serpent/staff.
+
+**Section 19 — Exodus 5–12**
+- Moses/Aaron before Pharaoh,
+- rod-serpent contest,
+- plagues,
+- water→blood,
+- frogs/insects,
+- hail/fire,
+- darkness/light,
+- firstborn,
+- threshold blood,
+- sealed houses,
+- Passover/pass-under hypothesis.
+
+**Pair tests:** Moses/Aaron; Moses/Pharaoh; Israel/Egypt; light/dark; firstborn/non-firstborn; inside/outside threshold.
+
+**Section 20 — Exodus 13–18**
+- pillar cloud/fire,
+- front→behind movement,
+- Red Sea,
+- dry corridor,
+- waters close,
+- bitter/sweet water,
+- manna,
+- rock→water,
+- Amalek,
+- Moses on hill,
+- stone seat,
+- both arms supported by Aaron/Hur.
+
+**Priority pair tests:** Aaron/Hur as two lateral supports; Moses central axis; sea walls left/right; cloud/fire pair.
+
+**Section 21 — Exodus 19–24**
+- Sinai boundary,
+- Moses ascends / presence descends,
+- cloud/fire/smoke,
+- mountain shaking,
+- voice,
+- sapphire-like pavement beneath upper figure,
+- seventy elders.
+
+**Section 22 — Exodus 25–40**
+- ark,
+- poles,
+- cherubim pair,
+- veil,
+- tabernacle layers,
+- lampstand/tree form,
+- altar,
+- pillar/cloud filling enclosure.
+
+**Pair tests:** two cherubim as bilateral structure; veil/opening; inner/outer sanctuary.
+
+**Section 23 — Leviticus**
+Not mainly narrative. Investigate:
+- two goats on Day of Atonement,
+- inside/outside camp,
+- blood/threshold,
+- clean/unclean polarity,
+- fire consuming Nadab/Abihu,
+- Jubilee cycle.
+
+**Priority pair:** two goats — one sacrificed, one sent away — as a possible polarity pair.
+
+**Section 24 — Numbers 1–20**
+- camp geometry,
+- cloud movement,
+- seventy elders,
+- Miriam/Aaron vs Moses,
+- twelve spies / Joshua-Caleb,
+- Korah and earth opening,
+- fire,
+- Aaron’s rod buds,
+- rock/water.
+
+**Section 25 — Numbers 21–36**
+- bronze serpent on pole,
+- Balaam/Balak,
+- talking donkey,
+- star/sceptre,
+- Phinehas spear,
+- Jordan approach,
+- tribes divided by river,
+- cities of refuge.
+
+**Section 26 — Deuteronomy**
+- retelling of Sinai/Exodus,
+- mountain fire reaching heaven,
+- blessing/curse polarity,
+- two mountains Gerizim/Ebal,
+- Moses/Joshua succession,
+- Moses views land from mountain,
+- Moses death/burial.
+
+**Pair tests:** Moses/Joshua as successor state; Gerizim/Ebal as polarity pair.
+
+---
+
+## 34. Conquest / Judges / Ruth
+
+**Section 27 — Joshua 1–12**
+- Joshua succession,
+- Jordan crossing,
+- ark in water,
+- twelve stones,
+- Rahab/window/cord,
+- Jericho walls,
+- sun/moon standing,
+- battles.
+
+**Pair tests:** Moses/Joshua; Jordan/Red Sea; twelve stones/twelve tribes; sun/moon.
+
+**Section 28 — Joshua 13–24**
+- land division,
+- east/west tribes,
+- altar at Jordan,
+- covenant stone,
+- Joshua farewell.
+
+**Section 29 — Judges 1–8**
+- cyclical falls/restorations,
+- Deborah/Barak,
+- Jael/Sisera,
+- Gideon,
+- fleece wet/dry reversal,
+- 300 men,
+- jars/torches,
+- fire from rock/staff.
+
+**Pair tests:** Deborah/Barak; Jael/Sisera; wet/dry fleece; hidden light/broken jars.
+
+**Section 30 — Judges 9–16**
+- Abimelech,
+- trees choosing king,
+- Jephthah,
+- daughter,
+- Samson birth,
+- lion/honey,
+- gates carried away,
+- Delilah,
+- hair,
+- two pillars,
+- Samson between supports.
+
+**Priority pair tests:** Samson/two pillars; Samson/Delilah; strength/binding; gate-carrier Samson.
+
+**Section 31 — Judges 17–21 + Ruth**
+- idol/Levite stories,
+- civil fracture,
+- women/tribes,
+- Ruth/Naomi/Orpah,
+- Boaz,
+- threshing floor,
+- kinsman-redeemer.
+
+**Pair tests:** Ruth/Orpah; Ruth/Naomi; Boaz/nearer kinsman.
+
+---
+
+## 35. Samuel / Kings / Chronicles
+
+**Section 32 — 1 Samuel 1–15**
+- Hannah/Samuel,
+- Eli’s sons,
+- ark captured/returned,
+- Dagon falls,
+- Saul chosen,
+- Saul’s transformations/signs,
+- Jonathan,
+- Saul rejection.
+
+**Pair tests:** Samuel/Eli; Samuel/Saul; Saul/Jonathan; ark/Dagon.
+
+**Section 33 — 1 Samuel 16–31**
+- David anointed,
+- David/Goliath,
+- Saul/David,
+- David/Jonathan,
+- spear episodes,
+- caves,
+- medium of Endor,
+- Saul’s death.
+
+**Priority pair tests:** Saul/David as displaced king-role; David/Jonathan; David/Goliath as small/giant polarity.
+
+**Section 34 — 2 Samuel**
+- David becomes king,
+- ark brought to Jerusalem,
+- Uzzah,
+- Michal,
+- Bathsheba/Uriah,
+- Amnon/Tamar,
+- Absalom,
+- hair/tree hanging,
+- rebellion,
+- census/plague,
+- threshing floor.
+
+**Pair tests:** David/Absalom; David/Uriah; Tamar/Amnon; king/son inversion.
+
+**Section 35 — 1 Kings 1–11**
+- David/Solomon succession,
+- two women/two infants judgment,
+- temple construction,
+- two pillars Jachin/Boaz,
+- sea on twelve oxen,
+- cloud fills temple,
+- Queen of Sheba,
+- Solomon’s fall.
+
+**Priority pair tests:** the two women and two claimed babies; Jachin/Boaz; Solomon/Queen of Sheba.
+
+**Section 36 — 1 Kings 12–22**
+- kingdom splits north/south,
+- Rehoboam/Jeroboam,
+- two calves,
+- man of God/old prophet,
+- Elijah,
+- widow and child,
+- Mount Carmel,
+- fire,
+- cloud/rain,
+- Ahab/Jezebel.
+
+**Pair tests:** two kingdoms; two calves; Elijah/Ahab; Elijah/Jezebel.
+
+**Section 37 — 2 Kings 1–13**
+- Elijah taken in whirlwind,
+- Jordan divided by mantle,
+- Elijah/Elisha succession,
+- double portion,
+- Elisha miracles,
+- waters healed,
+- floating iron,
+- Naaman.
+
+**Priority pair:** Elijah/Elisha as successor and perhaps same axial role in two states.
+
+**Section 38 — 2 Kings 14–25 + Chronicles parallels**
+- divided kingship,
+- Assyrian crisis,
+- Hezekiah/Isaiah,
+- shadow/time sign,
+- Josiah,
+- temple repair,
+- fall of Jerusalem,
+- exile.
+
+Chronicles must be checked for altered/repeated geometry, not dismissed as duplicate history.
+
+---
+
+## 36. Return / court tales / deuterocanonical narratives
+
+**Section 39 — Ezra + Nehemiah**
+- return,
+- rebuilt temple,
+- rebuilt wall,
+- gates,
+- procession on walls,
+- Ezra reading law,
+- two returning community phases.
+
+**Pair tests:** Ezra/Nehemiah; destroyed/rebuilt city; old/new temple.
+
+**Section 40 — Esther**
+- Esther/Vashti,
+- Mordecai/Haman,
+- hidden identity,
+- reversal of decree,
+- gallows/pole,
+- two banquets,
+- Purim timing.
+
+**Pair tests:** Esther/Vashti; Mordecai/Haman; condemned/exalted reversal.
+
+**Section 41 — Tobit**
+- Tobit/Tobias father-son naming/role,
+- blindness/restoration,
+- Sarah,
+- demon,
+- Raphael disguised as companion,
+- journey,
+- fish,
+- marriage chamber,
+- return/healing.
+
+**Priority pair tests:** Tobit/Tobias as generational same-role possibility; Tobias/Raphael traveller pair; Sarah/Tobias.
+
+**Section 42 — Judith**
+- Judith/Holofernes,
+- city under siege,
+- descent into enemy camp,
+- tent/chamber,
+- beheading,
+- return through gate,
+- liberation.
+
+**Section 43 — Daniel additions**
+- Song of Three / fiery furnace,
+- Susanna and two elders,
+- Bel,
+- dragon,
+- Habakkuk transported to Daniel,
+- lions’ den variants.
+
+**Priority pair tests:** two elders; three youths/one fourth figure; Bel/dragon; Daniel/Habakkuk transport.
+
+---
+
+## 37. Wisdom / poetry / symbolic creatures
+
+These books are less story-driven, but every strong geometric image must still be logged.
+
+**Section 44 — Job**
+- Job/Satan heavenly court,
+- Job/friends,
+- whirlwind,
+- foundations of earth,
+- gates of death,
+- waters,
+- Behemoth,
+- Leviathan,
+- restoration.
+
+**Pair tests:** Job/Satan; Behemoth/Leviathan; above/below chambers.
+
+**Section 45 — Psalms**
+Group by motifs rather than reading as one giant batch:
+- cosmic creation/flood,
+- mountain/Zion,
+- gate/door,
+- rod/sceptre,
+- serpent/dragon/Leviathan,
+- waters/deep,
+- descent/ascent,
+- hand/arm from above,
+- world shaking,
+- king/anointed figure.
+
+**Section 46 — Proverbs + Tegsats/Reproof**
+- Tree of Life,
+- Wisdom personified,
+- two paths,
+- woman Wisdom / woman Folly,
+- gates,
+- depths,
+- pillars of house,
+- Proverbs 25–31 / Tegsats counting issue.
+
+**Pair tests:** Wisdom/Folly as polarity figures; two paths.
+
+**Section 47 — Ecclesiastes + Song of Songs**
+- cycles under sun,
+- return/repetition,
+- paired lovers,
+- garden/fountain,
+- mountain imagery,
+- sealed fountain,
+- rise/descend language.
+
+**Section 48 — Wisdom of Solomon + Sirach**
+- Wisdom as female figure,
+- creation/order,
+- righteous/wicked polarity,
+- ancestral retellings,
+- cosmic elements,
+- pillars, waters, fire,
+- praise of fathers.
+
+---
+
+## 38. Major prophets
+
+**Section 49 — Isaiah 1–23**
+- mountain of Lord,
+- throne/seraphim,
+- coal/fire,
+- Immanuel child,
+- rod/stem/root,
+- Assyria as rod,
+- serpent/flying serpent,
+- fallen morning star,
+- shaking heavens,
+- gates/cities.
+
+**Section 50 — Isaiah 24–39**
+- world overturned,
+- windows from on high,
+- flood-like catastrophe,
+- Leviathan,
+- death swallowed,
+- Hezekiah,
+- sun/shadow sign,
+- Assyrian crisis.
+
+**Section 51 — Isaiah 40–66**
+- highway,
+- valleys lifted/mountains lowered,
+- servant figure,
+- heavens stretched/rolled,
+- waters,
+- new heavens/new earth,
+- Zion/Jerusalem as female figure.
+
+**Pair tests:** old/new creation; servant/Zion; Leviathan/rod.
+
+**Section 52 — Jeremiah 1–29**
+- almond rod,
+- boiling pot,
+- gates,
+- yoke,
+- broken vessel,
+- Jeremiah/Baruch,
+- false/true prophet pairs,
+- siege.
+
+**Section 53 — Jeremiah 30–52 + Lamentations + Baruch cluster**
+- restoration,
+- new covenant,
+- purchased field,
+- scroll destroyed/rewritten,
+- fall of Jerusalem,
+- temple vessels,
+- lamenting city-as-woman,
+- Baruch,
+- extended Jeremiah materials.
+
+**Priority pair tests:** Jeremiah/Baruch; destroyed/rewritten scroll; Jerusalem woman/physical city.
+
+**Section 54 — 4 Baruch / Rest of Words of Jeremiah**
+- Jeremiah/Baruch/Abimelech,
+- gate opening,
+- temple vessels hidden in earth,
+- basket,
+- mountain route,
+- 66-year sleep/time displacement,
+- preserved figs,
+- return,
+- Jeremiah/stone double.
+
+**Priority pair tests:** Jeremiah/stone double; Baruch/Abimelech; old city/new city; subjective/external time.
+
+**Section 55 — Ezekiel 1–11**
+- living creatures,
+- intersecting wheels,
+- firmament,
+- throne/human form,
+- fire/brightness,
+- hand,
+- lifted between earth/heaven,
+- gates,
+- departing glory.
+
+**Section 56 — Ezekiel 12–32**
+- enacted signs,
+- two eagles/vine,
+- sword,
+- boiling pot,
+- Tyre/Egypt cosmic imagery,
+- cherub/guardian figure.
+
+**Section 57 — Ezekiel 33–48**
+- watchman,
+- dry bones,
+- two sticks Joseph/Judah becoming one,
+- Gog/Magog,
+- mountain,
+- temple,
+- river flowing from temple,
+- land redistribution.
+
+**Priority pair tests:** two sticks → one; two nations → one; dead bones/live bodies; old/new temple.
+
+---
+
+## 39. Daniel and the Twelve
+
+**Section 58 — Daniel 1–6**
+- Daniel/three companions,
+- statue of kingdoms,
+- furnace + fourth figure,
+- tree dream,
+- writing on wall,
+- lions’ den.
+
+**Section 59 — Daniel 7–12**
+- four beasts,
+- Ancient of Days,
+- one like son of man,
+- ram/goat,
+- Gabriel,
+- seventy weeks,
+- north/south kings,
+- man in linen above water,
+- two raised hands,
+- time/times/half-time,
+- 1290/1335.
+
+**Priority pair tests:** Ancient of Days/Son of Man; north/south; ram/goat; Daniel/man in linen; two river-side beings.
+
+**Section 60 — Hosea, Joel, Amos**
+- Hosea/Gomer,
+- children with symbolic names,
+- day/night restoration,
+- Joel cosmic darkness/fire,
+- spirit poured out,
+- Amos plumb line,
+- basket of fruit,
+- Lord at altar.
+
+**Section 61 — Obadiah, Jonah, Micah**
+- Edom/Jacob-Esau recurrence,
+- Jonah/fish,
+- descent to deep / ascent,
+- plant/worm,
+- Micah mountain/sea imagery.
+
+**Priority pair:** Jonah/fish as enclosure/cargo; Jacob/Esau national recurrence.
+
+**Section 62 — Nahum, Habakkuk, Zephaniah**
+- storm/mountain melting,
+- waters,
+- divine warrior,
+- Habakkuk rays from hand,
+- pestilence,
+- day of destruction.
+
+**Section 63 — Haggai, Zechariah, Malachi**
+Zechariah gets special depth:
+- horsemen,
+- man among myrtles,
+- horns/craftsmen,
+- measuring line,
+- Joshua high priest,
+- Branch,
+- lampstand + two olive trees,
+- flying scroll,
+- woman in ephah,
+- two winged women,
+- four chariots between two bronze mountains,
+- Joshua/Zerubbabel,
+- pierced figure,
+- Mount of Olives split,
+- opposite-moving mountain halves,
+- living waters splitting east/west.
+
+**Priority pair tests:** Joshua/Zerubbabel; two olive trees; two bronze mountains; two winged women; east/west water.
+
+Malachi:
+- messenger,
+- Elijah return,
+- sun of righteousness.
+
+---
+
+## 40. Ethiopian-specific historical/apocalyptic books
+
+**Section 64 — Ezra Sutuel / 4 Ezra**
+- Ezra mourning ruined Zion,
+- Uriel,
+- riddles about world structure,
+- measured/numbered ages,
+- woman transformed into city,
+- eagle vision,
+- man rising from sea,
+- final revelation,
+- books written/revealed/hidden.
+
+**Priority pair tests:** woman/city as explicit same-figure transformation; Ezra/Uriel; sea-man/axis-person; revealed/hidden books.
+
+**Section 65 — 1 Meqabyan**
+- Tsirtsaydan and idol system,
+- Meqabis,
+- three sons Abiya/Sila/Fentos,
+- mountain refuge,
+- fiery intervention,
+- martyrdom,
+- resurrection/return imagery,
+- king vs faithful.
+
+**Pair tests:** three brothers as segmented one-role possibility; king/faithful polarity; death/rising.
+
+**Section 66 — 2 Meqabyan**
+Read completely before mapping. Record:
+- principal kings/teachers,
+- martyr/faithful figures,
+- resurrection/judgment material,
+- any mountain/rod/gate/water geometry,
+- explicit doublings or counterpart characters.
+
+**Section 67 — 3 Meqabyan**
+Read completely before mapping. Record:
+- repeated Meqabyan identities,
+- teaching/history frames,
+- death/resurrection,
+- paired kings/faithful figures,
+- cosmological passages.
+
+Do not conflate any of the three Meqabyan with Greek 1–4 Maccabees.
+
+**Section 68 — Josippon / Joseph ben Gorion**
+Because the Ethiopian Ge'ez form is not readily available as a complete public English translation, separate:
+- what can be checked from the Hebrew Josippon tradition,
+- what can be verified as specifically Ethiopic,
+- what cannot yet be checked.
+
+Major narrative blocks to investigate:
+- Adam/early geography in expanded forms,
+- Daniel/Zerubbabel material,
+- Babylon/Persia,
+- Alexander,
+- successors,
+- Maccabean/Hasmonean history,
+- Rome,
+- destruction of Jerusalem.
+
+Do not treat reconstructed English material as a direct Ge'ez translation.
+
+---
+
+## 41. Gospel master investigation
+
+**Section 69 — Birth / infancy traditions**
+- Zechariah/Elizabeth,
+- Mary/Joseph,
+- John/Jesus parallel births,
+- annunciations,
+- star,
+- magi,
+- shepherds,
+- Herod,
+- Egypt/return,
+- temple child.
+
+**Priority pair tests:** John/Jesus; Mary/Elizabeth; Zechariah/Joseph; Herod/Pharaoh recurrence; Egypt/Exodus recurrence.
+
+**Section 70 — Baptism / temptation / early ministry**
+- John at Jordan,
+- Jesus baptism,
+- heaven opens,
+- spirit descends,
+- wilderness,
+- Satan,
+- mountain temptation,
+- first disciples.
+
+**Pair tests:** John/Jesus as predecessor/successor; Jesus/Satan polarity; descent of spirit/ascent from water.
+
+**Section 71 — Miracles and boundary episodes**
+Group:
+- water→wine,
+- storms calmed,
+- walking on water,
+- fish/catches,
+- feedings,
+- wells/living water,
+- healings,
+- demons entering/leaving bodies,
+- Jairus/daughter,
+- Lazarus,
+- tomb/cave,
+- transfiguration mountain,
+- Moses/Elijah/Jesus triad.
+
+**Priority pair tests:** Moses/Elijah/Jesus as recurring axis role; death/raising pairs; inside/outside body.
+
+**Section 72 — Jerusalem / Passion**
+- triumphal entry,
+- temple cleansing,
+- fig tree,
+- upper room,
+- bread/wine,
+- Gethsemane,
+- Judas/Peter,
+- arrest,
+- trial,
+- Jesus/Barabbas,
+- crucifixion,
+- two thieves,
+- darkness,
+- veil split,
+- earthquake,
+- spear/water/blood,
+- tomb sealed.
+
+**Priority pair tests:** Jesus/Barabbas requires special study because some manuscript traditions name Barabbas “Jesus Barabbas”; Peter/Judas; two thieves; cross as axis/rod; veil as gate.
+
+**Section 73 — Resurrection / return / ascension**
+- women at tomb,
+- stone moved,
+- angel(s),
+- appearances,
+- Emmaus pair,
+- Thomas,
+- fish meal,
+- ascension,
+- promised return.
+
+**Pair tests:** descent/ascent; death/resurrection same-role state change; two Emmaus disciples; first/second coming.
+
+---
+
+## 42. Acts and epistles
+
+**Section 74 — Acts 1–12**
+- ascension,
+- cloud,
+- two men in white,
+- Pentecost fire,
+- Peter,
+- Stephen vision,
+- Philip/Ethiopian eunuch,
+- Saul/Paul transformation,
+- Peter prison/gates,
+- angel release.
+
+**Pair tests:** Peter/Paul; Philip/eunuch; Saul/Paul explicitly same figure before/after; two men at ascension.
+
+**Section 75 — Acts 13–28**
+- Paul/Barnabas,
+- Paul/Silas,
+- prison earthquake,
+- doors open,
+- journeys by sea,
+- shipwreck,
+- Malta,
+- visions.
+
+**Section 76 — Pauline epistles**
+Not narrative-first. Extract structural pair theology:
+- first Adam / last Adam,
+- old man / new man,
+- flesh / spirit,
+- death / resurrection,
+- earthly / heavenly body,
+- Sarah / Hagar = two covenants,
+- old covenant / new covenant,
+- body / head,
+- grafting/root/tree,
+- caught up to “third heaven.”
+
+**Priority:** Paul himself explicitly supplies an Adam/Christ paired-role framework, which is highly relevant to the user’s idea that paired persons may encode different states of one structural function.
+
+**Section 77 — Hebrews + Catholic epistles**
+- earthly/heavenly sanctuary,
+- veil,
+- Melchizedek,
+- mountain Sinai/Zion polarity,
+- Noah,
+- Rahab,
+- Elijah,
+- Enoch,
+- 2 Peter world by water / world by fire,
+- Jude/Enoch/angels,
+- James mirror imagery.
+
+---
+
+## 43. Revelation
+
+**Section 78 — Revelation 1–5**
+- humanlike figure among seven lamps,
+- sword/mouth,
+- seven stars,
+- doors opened in heaven,
+- throne,
+- four creatures,
+- sealed scroll,
+- Lamb.
+
+**Pair tests:** humanlike figure/Lamb; seven lamps/seven churches; sealed/open scroll.
+
+**Section 79 — Revelation 6–11**
+- seals,
+- riders,
+- earthquake,
+- sky rolled like scroll,
+- abyss opens,
+- smoke,
+- angel with pillar legs,
+- one foot sea/one land,
+- raised hand,
+- seven thunders,
+- two witnesses,
+- ascent in cloud,
+- heavenly temple opens,
+- ark seen.
+
+**Priority pairs:** two witnesses; sea/land feet; heaven/abyss; sealed/open.
+
+**Section 80 — Revelation 12–16**
+- woman clothed with sun,
+- child,
+- dragon,
+- war in heaven,
+- sea beast,
+- land beast,
+- Lamb/144,000,
+- two harvests,
+- sea of glass/fire,
+- bowls.
+
+**Pair tests:** woman/dragon; Lamb/dragon; sea beast/land beast; two harvests.
+
+**Section 81 — Revelation 17–22**
+- Babylon woman/city,
+- beast,
+- fall,
+- rider,
+- dragon bound,
+- abyss locked,
+- thousand years,
+- first/second resurrection/death,
+- old heaven/earth pass,
+- New Jerusalem woman/city,
+- river/tree,
+- gates,
+- no sea,
+- renewed world.
+
+**Priority pair tests:** Babylon/New Jerusalem; old/new world; first/second death; abyss opened/closed; woman/city explicit identity overlap.
+
+---
+
+## 44. Ethiopian New Testament Church Order books
+
+These are canonical in the broader Ethiopian 35-book New Testament reckoning even though many are primarily church-order texts rather than stories.
+
+**Section 82 — Sirate Tsion / Order of Zion**
+- determine exact English text,
+- extract any cosmology, sacred-space geometry, ascent/descent, church-as-body/building imagery,
+- record apostolic figures and any paired offices.
+
+**Section 83 — Tizaz / Te’ezaz**
+- determine exact English witness,
+- extract narrative frames,
+- commands tied to space, thresholds, liturgical cycles, heaven/earth models.
+
+**Section 84 — Gitsew**
+- determine exact text/translation,
+- catalogue any narrative/apocalyptic passages before structural mapping.
+
+**Section 85 — Abtilis**
+- determine exact text/translation,
+- check apostolic-canon frame,
+- do not conflate it with other Sinodos components.
+
+**Section 86 — First Book of Dominos / Testamentum Domini**
+High-value opening section:
+- risen Christ,
+- apostles,
+- Mary, Martha, Salome,
+- end-of-world signs,
+- cosmic distress,
+- antichrist material,
+- then church-building/order,
+- ends with Ascension.
+
+**Pair tests:** risen/earthly Christ state; male apostles/named women; end-world/church-building transition.
+
+**Section 87 — Second Book of Dominos / Covenant-related work**
+- establish precise Ethiopian identity,
+- distinguish from First Dominos and related Testamentum Domini in Galilee,
+- read any resurrection/apocalyptic frame,
+- record Jesus/apostle dialogue.
+
+**Section 88 — Ethiopic Clement / Qalementos**
+- source exact translation where possible,
+- map pseudo-Clementine narrative frames,
+- Peter/Clement succession,
+- revelation/judgment material,
+- any heavenly journeys or paired authority figures.
+
+**Section 89 — Ethiopic Didascalia**
+Mostly order/ethics, but inspect:
+- Christ/apostle frame,
+- church as structured enclosure/body,
+- baptism,
+- death/burial,
+- Easter calendar,
+- resurrection,
+- any cosmic/gate imagery.
+
+---
+
+## 45. Seven comparison apocrypha / pseudepigrapha
+
+These are **comparison texts**, not silently treated as Ethiopian canonical books.
+
+**Section 90 — 2 Enoch**
+- Enoch ascent,
+- layered heavens,
+- eastern/western gates,
+- sun under earth,
+- 365¼-day system in translation tradition,
+- 28-year solar circuit,
+- 19-year lunar course,
+- creation from light/dark/water,
+- upper/lower measures.
+
+**Section 91 — 3 Enoch**
+- Rabbi Ishmael ascent,
+- Enoch → Metatron transformation,
+- bodily enlargement,
+- wings/eyes/throne imagery,
+- gates/levels,
+- test the strongest explicit “human becomes giant heavenly axis-person” material while accounting for the text’s late date.
+
+**Section 92 — Ascension of Isaiah**
+- Isaiah ascent,
+- seven heavens,
+- changing glory/form,
+- descending Christ changes form at each level,
+- gatekeepers/passwords,
+- descent toward Sheol,
+- return ascent.
+
+**Section 93 — Apocalypse of Abraham**
+- Abraham,
+- Yahoel,
+- mountain/ascent,
+- fire,
+- firmament,
+- heavenly view,
+- judgment,
+- creation/abyss imagery.
+
+**Pair test:** Abraham/Yahoel as traveller/guide or operator/axis pair.
+
+**Section 94 — Testament of Abraham**
+- Abraham/Michael,
+- heavenly journey,
+- chariot,
+- gates,
+- judgment,
+- earth viewed from above,
+- return/death.
+
+**Section 95 — Life of Adam and Eve / Apocalypse of Moses**
+- Adam/Eve,
+- serpent/devil form,
+- paradise wall/gate,
+- Seth/Eve journey,
+- oil/tree,
+- Adam carried,
+- third heaven,
+- sealed tomb,
+- later resurrection.
+
+This is the highest-priority comparison text for the user’s Adam/Eve “same figure somehow” hypothesis.
+
+**Section 96 — Testaments of the Twelve Patriarchs**
+Do not treat the collection as one undifferentiated story.
+Investigate each son separately:
+- Reuben,
+- Simeon,
+- Levi,
+- Judah,
+- Issachar,
+- Zebulun,
+- Dan,
+- Naphtali,
+- Gad,
+- Asher,
+- Joseph,
+- Benjamin.
+
+Priority:
+- Levi’s mountain and layered-heaven ascent,
+- Judah’s rod/sceptre/branch material,
+- Joseph/Judah polarity,
+- twelve brothers as possible segmented aspects of Jacob/Israel versus genuinely distinct tribal personifications.
+
+---
+
+## 46. Master pair / mirror register
+
+The following pairings must be actively tested. They are **questions**, not conclusions.
+
+### Primeval
+- heaven / earth
+- waters above / waters below
+- light / darkness
+- Tree of Life / Tree of Knowledge
+- Adam / Eve
+- Eve / serpent
+- Cain / Abel
+- Cain / Seth
+- Abel / Seth
+- Enoch / Noah
+- sons of God / daughters of men
+- raven / dove
+
+### Patriarchal
+- Abraham / Lot
+- Sarah / Hagar
+- Isaac / Ishmael
+- Isaac / ram
+- Jacob / Esau
+- Jacob / Israel
+- Leah / Rachel
+- Rachel / Leah’s line
+- Jacob / angel
+- Joseph / Judah
+- Joseph / Benjamin
+- Perez / Zerah
+- upper dream / lower event
+
+### Exodus
+- Moses / Aaron
+- Moses / Pharaoh
+- Moses / Joshua
+- Moses / Elijah
+- Aaron / Hur as lateral supports
+- cloud / fire
+- Egypt / Israel
+- inside house / outside house
+- sea wall left / sea wall right
+- ascent Moses / descent divine presence
+- two cherubim
+- two goats
+- Gerizim / Ebal
+
+### Conquest / Judges
+- Moses / Joshua
+- Joshua / Caleb
+- Deborah / Barak
+- Jael / Sisera
+- wet fleece / dry fleece
+- Gideon / Abimelech
+- Samson / Delilah
+- Samson / two pillars
+- Ruth / Orpah
+- Ruth / Naomi
+
+### Monarchy
+- Samuel / Eli
+- Samuel / Saul
+- Saul / David
+- David / Jonathan
+- David / Goliath
+- David / Absalom
+- two women / two infants before Solomon
+- Jachin / Boaz
+- Rehoboam / Jeroboam
+- two kingdoms
+- Elijah / Elisha
+- Elijah / Ahab
+- Hezekiah / Isaiah
+
+### Exile / prophecy
+- Jeremiah / Baruch
+- Jeremiah / stone double in 4 Baruch
+- Baruch / Abimelech
+- Ezekiel’s two sticks Joseph / Judah
+- Daniel / man in linen
+- Ancient of Days / Son of Man
+- ram / goat
+- north / south kings
+- two beings by river
+- Hosea / Gomer
+- Jonah / fish
+- Joshua high priest / Zerubbabel
+- two olive trees
+- two bronze mountains
+- old Jerusalem / restored Jerusalem
+
+### Deuterocanonical / Ethiopian
+- Tobit / Tobias
+- Tobias / Raphael
+- Judith / Holofernes
+- Susanna / two elders
+- three youths / fourth figure
+- Ezra / Uriel
+- woman / city in 4 Ezra
+- Enoch / Noah
+- Enoch / Metatron
+- Meqabis / three sons
+- king / martyrs in Meqabyan
+- old house / new house in Enoch
+
+### Gospels / Acts
+- Elizabeth / Mary
+- John the Baptist / Jesus
+- Jesus / Satan
+- Moses / Elijah / Jesus
+- Peter / Judas
+- Jesus / Barabbas
+- two thieves
+- death / resurrection
+- first coming / second coming
+- Peter / Paul
+- Saul / Paul
+- Paul / Barnabas
+- Paul / Silas
+
+### Pauline explicit structural pairs
+- first Adam / last Adam
+- old man / new man
+- flesh / spirit
+- earthly body / heavenly body
+- Sarah / Hagar
+- old covenant / new covenant
+- death / life
+
+### Revelation
+- humanlike figure / Lamb
+- Lamb / dragon
+- woman / dragon
+- sea beast / land beast
+- two witnesses
+- Babylon / New Jerusalem
+- woman / city
+- old heaven-earth / new heaven-earth
+- first death / second death
+- first resurrection / later resurrection
+- open abyss / sealed abyss
+- sea / land
+- above / below
+
+---
+
+## 47. Special hypothesis: paired people may be one underlying figure
+
+The user specifically proposed that pairs such as **Adam/Eve** and **Cain/Abel** may somehow be the same figure.
+
+This deserves a dedicated test rather than an assumption.
+
+For each important pair, ask:
+
+1. Do they appear simultaneously in a way that requires two independent bodies in the story?
+2. Are they created/born by splitting, removal, twin birth, succession, replacement or mirroring?
+3. Do they occupy complementary sides of one geometry?
+4. Does one rise while the other falls?
+5. Does one kill/replace/absorb the other?
+6. Does the surviving figure take over the other’s function?
+7. Are their names/roles later recombined into one figure?
+8. Do later texts explicitly identify them typologically?
+9. Can one be read as the earlier state and one as the later state of the same rod/gate configuration?
+10. Does the same pattern recur with other paired figures?
+
+### Adam / Eve first test
+Possible structural readings to test:
+- one original human differentiated into two sides,
+- central body + lateral extracted branch/rib,
+- active/passive or upper/lower complement,
+- two visible sides of a single world-axis person,
+- ordinary literary account of two humans remains the control.
+
+### Cain / Abel first test
+Possible structural readings to test:
+- active/destructive versus passive/sacrificial state,
+- field/ground versus flock/mobile state,
+- one branch kills/removes the other,
+- blood enters ground,
+- survivor is marked and moves away,
+- Seth later replaces Abel,
+- potential three-stage sequence Abel → Cain → Seth rather than simply two unrelated brothers.
+
+### Jacob / Esau first test
+Possible structural readings:
+- twins struggle before birth,
+- one emerges first while the other grasps heel,
+- smooth/hairy opposition,
+- blessing/birthright cross,
+- separation then reunion,
+- later national Jacob/Edom polarity.
+
+### Perez / Zerah first test
+Especially important:
+- two inside one womb,
+- one hand emerges first,
+- red thread marks it,
+- hand withdraws,
+- other breaks through first,
+- named for breach/breakthrough.
+
+This is a highly constrained **crossing / overtake / gate / first-last inversion** scene and should be tested early.
+
+### John / Jesus first test
+- parallel miraculous births,
+- John earlier / Jesus later,
+- John decreases / Jesus increases,
+- both linked to water/spirit,
+- one prepares gate/path for the other,
+- successor rather than literal identity is the conventional reading.
+
+### Saul / Paul first test
+This provides an explicit control case:
+- unquestionably one narrative person with two name/state identities,
+- blindness/darkness,
+- encounter/light,
+- guided movement,
+- sight restored,
+- role reversed.
+
+Use this as a template for what a real before/after same-figure transformation looks like in the corpus.
+
+### Enoch / Metatron first test
+In 3 Enoch the human Enoch is explicitly transformed into the giant heavenly Metatron figure.
+This is an important comparison because it demonstrates that ancient religious literature can explicitly encode:
+
+**human identity → enlargement/transformation → heavenly superhuman axis-like figure.**
+
+Its late textual date must be retained as a major control.
+
+---
+
+## 48. Order of investigation from next turn
+
+Begin with the earliest and most structurally decisive material instead of jumping randomly.
+
+### Pass A — Primeval identity splitting
+1. Genesis 1–3: Adam/Eve/serpent/two trees.
+2. Genesis 4–5: Cain/Abel/Seth/Enoch.
+3. Genesis 6–9: Enoch/Noah/ark/upper-lower water.
+4. Jubilees parallels.
+5. Life of Adam and Eve parallels.
+6. 1 Enoch primeval material.
+
+### Pass B — Twin / crossing tests
+7. Isaac/Ishmael.
+8. Jacob/Esau.
+9. Leah/Rachel.
+10. Perez/Zerah.
+11. Joseph/Judah/Benjamin.
+
+### Pass C — Moses axis sequence
+12. basket.
+13. staff/serpent.
+14. Moses/Aaron/Pharaoh.
+15. Passover.
+16. Red Sea.
+17. Rephidim bilateral arms.
+18. Sinai.
+19. tabernacle/cherubim.
+20. bronze serpent.
+
+### Pass D — later axis-person recurrences
+21. Samson/two pillars.
+22. Elijah/Elisha.
+23. Ezekiel human/fire figure.
+24. Daniel man over waters.
+25. Zechariah split mountain.
+26. Jesus/John + Transfiguration.
+27. Revelation 10 giant figure.
+
+### Pass E — explicit transformation controls
+28. Saul → Paul.
+29. woman → city in 4 Ezra.
+30. Enoch → Metatron in 3 Enoch.
+31. descending form-changing figure in Ascension of Isaiah.
+32. old house → new house in 1 Enoch.
+
+Only after these passes should the project move into the lower-density books, because these tests will establish what counts as a real structural match.
+
+---
+
+## 49. Completion rule
+
+A section is only marked complete when:
+- the entire relevant text has been read, not just search snippets;
+- every named/unnamed central figure has been logged;
+- every strong pair/double has been logged;
+- geometry and motion are recorded;
+- conventional context is recorded;
+- Vardath mapping is recorded separately;
+- contradictions/mismatches are preserved;
+- cross-text parallels are linked;
+- any timing data are extracted;
+- no “same figure” conclusion is made solely because two characters form a pair.
+
+The research should proceed down Sections 1–96 and the pair register above, appending findings to this file as each manageable section is completed.
