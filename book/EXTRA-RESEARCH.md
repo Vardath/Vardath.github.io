@@ -14116,3 +14116,9 @@ Priority tests:
 - exact cycles/time measures,
 - whether Enoch is traveller, operator, or transformed axis-person.
 
+
+
+## 503. LIVE PROGRESS — natural-order Insert X2 begins: 2 Enoch
+
+> The first inserted book is now fully placed and given a complete first pass. I’m continuing in the **corrected natural order** with **2 Enoch immediately after Genesis 5 and before Genesis 6**. This is the right spot because it expands exactly the moment where canonical Genesis simply says Enoch “walked with God” and was taken.
+
