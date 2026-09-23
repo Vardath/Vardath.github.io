@@ -11241,3 +11241,1195 @@ Priority pair tests:
 
 **Primary text logged:** Jubilees 8:8–11; 10:17–26. Tower construction is assigned a 43-year span in the Charles chronology.
 
+
+
+---
+
+## 368. SECTION 10 COMPLETE — Jubilees 1–10
+
+**Scope:** Jubilees 1:1–10:36, with direct comparison to Genesis 1–11 and to the current Vardath Cosmology model.
+
+### 368.1 Why Jubilees matters methodologically
+
+Jubilees is not an independent primeval history in the same sense as Genesis.
+
+It is an ancient Jewish rewriting/reinterpretation of Genesis–Exodus material, probably composed in the Second Temple period.
+
+That means:
+
+- agreements with Genesis may reflect direct literary reuse,
+- additions show how an ancient interpreter understood or expanded the older stories,
+- contradictions/mismatches are particularly useful controls.
+
+The value for this project is therefore:
+
+> **Does an ancient re-reader of Genesis independently sharpen the same geometries we are seeing, or does it move them in another direction?**
+
+---
+
+## 369. Sinai frame — Moses as mountain/time receiver
+
+Jubilees opens on Sinai.
+
+Moses:
+- goes up the mountain,
+- is covered by cloud for six days,
+- is called from the cloud on the seventh day,
+- sees divine glory like flaming fire at the mountain top,
+- remains there forty days and forty nights.
+
+He is taught:
+- earlier history,
+- later/future history,
+- divisions of days,
+- year-weeks,
+- jubilees,
+- history extending toward renewed creation.
+
+An angel of the presence takes the heavenly chronological tablets and dictates to Moses.
+
+This is extremely important for the user’s Moses hypothesis.
+
+Source-level structure:
+
+**human figure ascends mountain**
+→ **cloud/fire interface**
+→ **heavenly messenger**
+→ **complete historical time-order disclosed**
+→ **record transferred downward in writing.**
+
+Within Vardath Cosmology:
+Moses functions exceptionally well as a **mountain/axis/time-interface operator figure**.
+
+This still does not prove Moses literally *is* the Squatter-Man/lattice.
+
+---
+
+## 370. Past and future held together at Sinai
+
+Jubilees explicitly frames the Sinai revelation as including:
+- beginning/creation,
+- subsequent history,
+- future apostasy,
+- restoration,
+- renewed creation.
+
+Thus one mountain encounter contains:
+**past + present + future** in one revealed structure.
+
+This is one of the strongest literary analogues so far to the user’s model in which different world-times can become mutually accessible at a gate.
+
+Important control:
+this is revelation/prophecy, not physical time transfer.
+
+---
+
+## 371. Creation explicitly includes populated heaven
+
+Jubilees 2 says that on the first day God creates:
+- heavens above,
+- earth,
+- waters,
+- angels of presence,
+- angels of sanctification,
+- spirits/angels connected with fire, wind, clouds, darkness, snow, hail, frost, voices, thunder, lightning, heat/cold, seasons, etc.
+
+This makes the upper realm explicitly **inhabited and active**.
+
+For the Vardath comparison this is more useful than an empty-sky model.
+
+However:
+- Jubilees’ heavenly beings are angels/spirits,
+- not ordinary biological populations in stacked future worlds.
+
+---
+
+## 372. Exact half-up / half-down water division
+
+Jubilees 2:4 is exceptionally important.
+
+On the second day:
+- the firmament is created in the middle of the waters,
+- the waters are divided,
+- **half goes upward above the firmament**,
+- **half goes downward below it**.
+
+This is much more geometrically explicit than Genesis.
+
+Stripped form:
+
+**one water-body**
+→ **central separator**
+→ **upper half**
++
+**lower half.**
+
+This is one of the strongest source-level analogues to the user’s split-world geometry.
+
+It also predicts why a later catastrophe could occur if those two reservoirs were reconnected.
+
+---
+
+## 373. Firmament as middle separator
+
+Jubilees’ wording makes the firmament function as:
+**middle boundary between an upper and lower water domain.**
+
+For Vardath:
+possible analogy to a world-layer or interface plane.
+
+Control:
+ancient cosmography, not evidence of modern physical layers.
+
+---
+
+## 374. 22 works / 22 human heads
+
+Jubilees explicitly counts:
+- 22 created “kinds/works” before Sabbath,
+- 22 “heads of mankind” from Adam to Jacob.
+
+It deliberately aligns cosmic creation count with genealogical count.
+
+This proves again that Jubilees likes **numerical isomorphism between cosmos and human history**.
+
+Record for later number analysis.
+
+Do not assign Vardath significance yet.
+
+---
+
+## 375. Adam/Eve deep-sleep division retained
+
+Jubilees preserves:
+- Adam’s deep sleep,
+- rib/side removed,
+- woman built,
+- two become one flesh.
+
+So the earlier Genesis result remains intact.
+
+It also adds chronological separation:
+- Adam enters Eden after 40 days,
+- Eve after 80 days.
+
+These numbers are explained through purity law.
+
+For the project:
+the important source fact is that **the pair is created through deep-sleep division**.
+
+---
+
+## 376. Seven years in Eden
+
+Jubilees dates Adam and Eve’s Eden period to **seven complete years** before the serpent episode.
+
+This gives a timed pre-fall stable interval:
+**7 years stable Eden**
+→ **boundary/transgression event.**
+
+Record for later cycle table.
+
+---
+
+## 377. Eden breach dated 17th day of second month
+
+Jubilees dates the serpent’s approach/transgression to:
+**month 2, day 17.**
+
+This is highly significant because the biblical Flood begins on the same date:
+**month 2, day 17.**
+
+Modern scholarship explicitly recognizes this recurrence as deliberate chronological/typological linking in Jubilees.
+
+Therefore:
+**first human transgression**
+and
+**world-reset Flood opening**
+share the same anniversary date.
+
+This is one of the strongest timing correspondences yet.
+
+---
+
+## 378. Same date ≠ same event automatically
+
+Important control:
+
+The shared date can mean:
+- typological anniversary,
+- liturgical/calendar structuring,
+- deliberate literary linking.
+
+It does not by itself prove:
+- recurrence of a physical catastrophe,
+- a periodic world-turn opening.
+
+But it is exactly the kind of repeated date we need for the later cycle table.
+
+---
+
+## 379. Animal language fragmentation after Eden
+
+Jubilees adds something Genesis does not say.
+
+Before/at Eden:
+- beasts, cattle, birds, etc. could speak with one another,
+- “one lip and one tongue.”
+
+After the transgression:
+- their mouths/speech are closed,
+- living creatures scatter according to kind.
+
+This is highly important because it creates an Eden-level version of Babel.
+
+---
+
+## 380. Eden / Babel same-event-form
+
+### After Eden
+**one common speech**
+→ **speech closes**
+→ **living creatures scatter.**
+
+### Babel
+**one people / one language**
+→ **language confused**
+→ **people scatter.**
+
+This is a genuine recursive pattern internal to Jubilees.
+
+Best classification:
+**same event-form at two scales**, not same literal incident.
+
+This strongly supports the user’s method of looking for a single process repeated in different stories.
+
+---
+
+## 381. Cain / Abel / Seth sharpened
+
+Jubilees explicitly says Seth is a:
+**“second seed … instead of Abel.”**
+
+That makes the Abel→Seth replacement stronger than in Genesis alone.
+
+Best classification:
+- Abel/Seth = explicit replacement/successor pair.
+- Cain/Abel remain opposing branches.
+
+---
+
+## 382. Cain’s death mirrors Abel’s
+
+Jubilees adds that Cain dies when his house falls on him and stones kill him.
+
+The rationale:
+- Cain killed Abel with a stone,
+- Cain is killed by stones.
+
+Thus:
+**mechanism of harm returns to actor.**
+
+This is an explicit reversal symmetry.
+
+It is ethical/judicial, not cosmological.
+
+---
+
+## 383. Jared — a person-name tied to descent
+
+Jubilees says Jared received his name because in his days the angels/Watchers **descended to earth**.
+
+This is important methodologically.
+
+A human genealogy name is explicitly linked with:
+**a vertical event.**
+
+That supports the project’s broader caution that some people/names may encode event-functions.
+
+---
+
+## 384. Watchers originally descend on a positive mission
+
+Jubilees says the Watchers descend so they can:
+- instruct humanity,
+- promote judgment/uprightness.
+
+Only later do they unite with human women and become corrupt.
+
+This means:
+**descent itself is not initially evil.**
+
+The failure comes from:
+**cross-boundary mixing after descent.**
+
+That distinction fits the Vardath model better than a simple “upper realm is evil” scheme.
+
+---
+
+## 385. Watchers + daughters of men = explicit upper/lower mixing
+
+Jubilees removes much of the ambiguity of Genesis 6.
+
+Here:
+- angels of God descend,
+- take human women,
+- produce giant offspring.
+
+Thus the upper/lower boundary crossing is explicit.
+
+For Vardath:
+very strong structural analogy to populations/beings crossing between levels.
+
+Control:
+they are angelic beings, not confirmed inhabitants of adjacent physical world-turns.
+
+---
+
+## 386. Giant line destabilizes whole creation
+
+Jubilees expands the violence:
+- giant groups differ,
+- groups devour/kill one another,
+- humanity kills,
+- beasts/birds are implicated,
+- the earth fills with blood and disorder.
+
+This makes the boundary-crossing event produce:
+**ecological/systemic corruption**, not just interpersonal sin.
+
+That aligns structurally with a world-transition catastrophe.
+
+---
+
+## 387. Watchers end bound in the depths
+
+The Watchers:
+- descend from heaven,
+- sin on earth,
+- are bound in the depths of the earth.
+
+Vertical trajectory:
+
+**above**
+↓
+**earth**
+↓
+**depth/condemnation.**
+
+This is a complete three-zone movement.
+
+For Vardath:
+interesting layered movement, but theological punishment is the explicit meaning.
+
+---
+
+## 388. Enoch as cross-domain recorder
+
+Enoch:
+- learns writing, knowledge, wisdom,
+- records signs of heaven,
+- orders months/years,
+- recounts jubilee weeks,
+- sees what was and what will be in dream/vision,
+- spends six jubilees with angels,
+- records things on earth and in heaven,
+- testifies against Watchers,
+- is removed from ordinary humanity.
+
+This makes Enoch one of the strongest **cross-domain/time-information figures** in the corpus.
+
+---
+
+## 389. Six jubilees with angels
+
+Jubilees says Enoch is with the angels for **six jubilees of years**.
+
+On a 49-year jubilee reckoning:
+6 × 49 = **294 years**.
+
+Record:
+**294-year angelic association interval**.
+
+Do not assume it represents literal relativistic time.
+
+---
+
+## 390. Enoch sees past and future
+
+The text says Enoch saw:
+- what was,
+- what will be,
+through visions of sleep.
+
+This is another explicit **past/future convergence in altered consciousness**.
+
+Compare:
+- Jacob Bethel dream,
+- Joseph dreams,
+- Moses Sinai revelation.
+
+A pattern is emerging:
+**sleep/vision/mountain states repeatedly compress multiple times into one perceptual event.**
+
+---
+
+## 391. Enoch is taken to Eden, not simply “to heaven”
+
+Important mismatch/control:
+
+Jubilees says Enoch is conducted into the **Garden of Eden** where he continues recording judgments.
+
+Thus Jubilees does not simply portray him as ascending to heaven.
+
+This weakens any interpretation:
+**Enoch = straightforward upward transfer into future-world layer.**
+
+His role is better:
+**removed from ordinary humanity into sacred protected domain.**
+
+---
+
+## 392. Sacred-site network
+
+Jubilees names several uniquely sacred places:
+- Eden,
+- Mount of the East,
+- Sinai,
+- Zion.
+
+Later it describes Eden, Sinai and Zion as holy sites arranged in relation/facing one another.
+
+This suggests a network of **corresponding sacred nodes**.
+
+For Vardath:
+possible analogy to aligned gates/nodes across a larger structure.
+
+Control:
+Jubilees is giving sacred geography, not stacked-world physics.
+
+---
+
+## 393. One heavenly day = 1,000 human years
+
+Jubilees explains Adam’s death at age 930 with:
+**1,000 years = one day in heavenly testimony.**
+
+Adam fails to complete that “day” by 70 years.
+
+This is an explicit source-level difference between:
+**heavenly day-scale**
+and
+**human year-scale.**
+
+That is extremely relevant to the user’s altered-time interest.
+
+But:
+- it is scriptural/theological chronology,
+- not a measured physical time-dilation law.
+
+---
+
+## 394. Flood survivor selected after boundary corruption
+
+Jubilees retains:
+- Noah as righteous survivor,
+- protected ark,
+- total outside destruction.
+
+This preserves the Genesis carrier/enclosure model.
+
+---
+
+## 395. Seven upper gates + seven lower mouths
+
+Jubilees sharply expands Genesis 7:11:
+
+God opens:
+- **seven floodgates of heaven**
+- **seven mouths of the great deep**.
+
+This creates an exact paired geometry:
+
+**7 upper openings**
++
+**7 lower openings.**
+
+The two sets activate together.
+
+This is one of the strongest geometric correspondences in the entire project.
+
+---
+
+## 396. Opposed water flow
+
+Jubilees says:
+- heaven gates pour water **down**,
+- deep fountains send water **up**.
+
+Thus:
+
+**upper ↓**
++
+**lower ↑**
+
+simultaneously across the inhabited world.
+
+This is extremely close to the user’s opposed directional flow model.
+
+No interpretive reconstruction is needed to obtain the directionality; it is explicit in the text.
+
+---
+
+## 397. World fills when upper/lower flows meet
+
+The whole world becomes full of water as:
+- upper and lower reservoirs simultaneously feed the middle world.
+
+Stripped Vardath structure:
+
+**upper source**
+↓
+**middle inhabited domain**
+↑
+**lower source.**
+
+This is perhaps the cleanest primeval source-level analogue to the user’s **future/past interacting with present** geometry, except that Jubilees describes water reservoirs, not inhabited time-worlds.
+
+---
+
+## 398. Ark lifted from earth
+
+As in Genesis:
+- water rises,
+- ark lifts above ground,
+- carrier moves on surface.
+
+The ark remains:
+**protected local cargo container**
+inside
+**larger upper/lower opening event.**
+
+This reinforces the earlier gate ≠ carrier distinction.
+
+---
+
+## 399. Flood gate closure
+
+Jubilees later says:
+- deep fountains are closed,
+- heavenly gates restrained.
+
+Thus:
+**paired opening**
+→ **paired closure.**
+
+---
+
+## 400. Lower openings reverse function and become drains
+
+A particularly important addition:
+
+Later the mouths of the earth’s abysses open again and the waters begin to **descend into the deep below**.
+
+So the lower openings have two phases:
+
+### Opening phase
+deep → water **up**
+
+### Recovery phase
+surface water → **down** into deep.
+
+This is a true **flow reversal through the same lower boundary class**.
+
+This strongly resembles the user’s idea that one structure can carry motion in opposite directions at different stages.
+
+---
+
+## 401. Four quarter-points organize Flood memory
+
+Jubilees 6 uses:
+- new moon month 1,
+- new moon month 4,
+- new moon month 7,
+- new moon month 10,
+
+as memorial/calendar quarter points.
+
+These are separated by **13 weeks**.
+
+They are linked to Flood-related stages:
+- ark/earth opening context,
+- deep closure,
+- abyss reopening/drainage,
+- mountain tops appearing.
+
+This turns the Flood into a **four-phase annual memory cycle**.
+
+Very important for later timing analysis.
+
+---
+
+## 402. 364-day / 52-week year
+
+Jubilees explicitly prescribes:
+- 364 days,
+- 52 weeks,
+- four 13-week quarters.
+
+Advantages in the book’s system:
+- annual dates recur on same weekday,
+- Sabbath/festival ordering stays fixed.
+
+This is one of the most precise ancient cycle systems in the material studied so far.
+
+Record raw structure:
+**364 = 52 × 7 = 4 × 91.**
+
+---
+
+## 403. Calendar correction control
+
+Modern scholarship debates:
+- exact relationship between Jubilees’ calendar and biblical Flood chronology,
+- how the 150 days are counted,
+- whether some dates reflect textual/calendrical harmonization.
+
+Therefore:
+do not treat every bracketed Anno Mundi number in older Charles editions as equally secure.
+
+Use:
+- explicit text dates,
+- modern critical calendar scholarship,
+for later quantitative comparison.
+
+---
+
+## 404. Noah’s covenant renews ordered cycles
+
+After the Flood:
+- seedtime/harvest,
+- cold/heat,
+- summer/winter,
+- day/night
+are promised not to cease/change their order.
+
+Thus catastrophe ends in **restoration of regular cycles**.
+
+This is highly compatible with:
+**gate interval ends → ordinary world-order resumes.**
+
+---
+
+## 405. Bow remains closure/stability sign
+
+Jubilees retains the bow in cloud as covenant sign against another total flood.
+
+Best Vardath role remains:
+**post-event closure/stability marker.**
+
+---
+
+## 406. Noah nakedness pair retained
+
+Jubilees preserves:
+- Noah unconscious/uncovered,
+- Ham observes,
+- Shem/Japheth place garment over both shoulders,
+- move backward together,
+- cover central father.
+
+Thus the bilateral pair geometry noted in Genesis survives the retelling.
+
+This suggests the detail mattered enough to be retained.
+
+---
+
+## 407. Post-Flood evil remains
+
+Jubilees does not portray the Flood as eliminating every consequence of pre-Flood boundary crossing.
+
+The spirits of the giant offspring remain active and attack Noah’s descendants.
+
+This is very important.
+
+Model:
+
+**catastrophe resets world**
+but
+**residual effects cross the reset boundary.**
+
+This is structurally close to the user’s idea that parts of prior/future states may persist into a new beginning.
+
+---
+
+## 408. Nine-tenths down / one-tenth remains
+
+After Noah prays:
+- God orders the evil spirits bound,
+- Mastema asks to retain some,
+- **nine parts descend** to condemnation,
+- **one tenth remains** active on earth.
+
+This creates an explicit partition:
+
+**90% below**
+/
+**10% earth-active.**
+
+Record numerically.
+
+Do not map “nine parts” onto Vardath’s nine world-layers without independent evidence.
+
+---
+
+## 409. Noah receives technical/healing knowledge
+
+An angel teaches Noah:
+- remedies,
+- herbs,
+- ways to counter demon-caused afflictions.
+
+Noah writes this in a book and gives it to Shem.
+
+This creates a strong Enoch/Noah recurrence:
+
+### Enoch
+receives heavenly knowledge → writes → transmits testimony.
+
+### Noah
+receives angelic knowledge → writes → transmits remedies.
+
+Best classification:
+**P5 heavenly-knowledge scribe succession.**
+
+---
+
+## 410. Enoch / Noah become stronger paired roles
+
+Genesis linked them with “walked with God.”
+
+Jubilees strengthens the pair:
+
+### Enoch
+- heavenly/cosmic knowledge,
+- writing,
+- angelic association,
+- survives/remains outside ordinary death pattern.
+
+### Noah
+- survival,
+- angelic medical knowledge,
+- writing,
+- transmits to next generation.
+
+This makes them increasingly look like **successive preservation/knowledge carriers across catastrophe.**
+
+---
+
+## 411. Earth divided into three parts
+
+Noah and descendants divide earth by lot among:
+- Shem,
+- Ham,
+- Japheth.
+
+The geography is horizontal:
+- Shem middle,
+- Ham south,
+- Japheth north.
+
+This is important as a control:
+not every “three-part world” in the texts is vertically stacked.
+
+Do not turn this map into upper/middle/lower world layers.
+
+---
+
+## 412. Peleg marks territorial division in Jubilees
+
+Jubilees explicitly connects Peleg’s birth with the beginning of the **land division**.
+
+This occurs before the Tower of Babel episode.
+
+Therefore:
+
+- Genesis leaves “earth divided” ambiguous,
+- Jubilees interprets it as territorial allotment,
+- **Peleg should not be automatically equated with Babel.**
+
+This is an important correction to an earlier open hypothesis.
+
+---
+
+## 413. Babel explicitly attempts ascent
+
+Jubilees makes the builders’ aim explicit:
+**“let us ascend thereby into heaven.”**
+
+Thus the tower is clearly imagined as:
+**human-built upward connector.**
+
+This substantially strengthens the artificial-axis interpretation.
+
+---
+
+## 414. God + angels descend toward the artificial axis
+
+Jubilees says:
+- God descends,
+- angels descend with him,
+- they inspect/confuse.
+
+So the Babel geometry becomes:
+
+**human structure ↑**
++
+**upper beings ↓**
+
+at one vertical site.
+
+This is an explicit opposed-direction interface.
+
+---
+
+## 415. Language coherence breaks
+
+As in Genesis:
+**one purpose + one language**
+→ **confusion**
+→ **cities/nations/languages separate.**
+
+This remains a clear de-coherence model.
+
+---
+
+## 416. Jubilees says the tower is physically overthrown
+
+This is a major difference from Genesis.
+
+Genesis:
+- building ceases,
+- people scatter,
+- no explicit tower destruction.
+
+Jubilees:
+- a mighty wind is sent,
+- tower is **overthrown onto the earth**.
+
+Thus the ancient retelling turns the de-coherence into an actual physical collapse.
+
+This strengthens the Vardath artificial-axis-collapse analogy.
+
+But it must be labeled:
+**Jubilees addition, not Genesis source fact.**
+
+---
+
+## 417. Tower construction lasts 43 years
+
+Jubilees assigns:
+**43 years** to the tower’s construction.
+
+Record for later timing table.
+
+Do not yet derive a cycle from it.
+
+---
+
+## 418. Canaan violates assigned boundary
+
+After territorial lots:
+- Canaan occupies land assigned elsewhere,
+- family warns him not to remain outside his allotted portion,
+- he refuses.
+
+Thus boundary violation continues as a post-Flood theme.
+
+This is social/geographic covenant logic, not cosmic gate mechanics.
+
+---
+
+## 419. Genesis vs Jubilees — major agreement table
+
+### Both preserve
+- creation water division,
+- Adam/Eve split,
+- serpent/transgression,
+- Cain/Abel/Seth,
+- Enoch exceptional role,
+- heavenly beings + human women,
+- giant violence,
+- Noah carrier,
+- paired upper/lower Flood sources,
+- Flood closure/recreation,
+- Noah nakedness,
+- world division,
+- Babel axis/scattering.
+
+### Jubilees sharpens
+- exact half-up/half-down water split,
+- populated heaven,
+- Watcher descent,
+- Enoch time/calendar role,
+- exact dating,
+- seven upper + seven lower Flood gates,
+- explicit flow directions,
+- lower-flow reversal,
+- 364-day calendar,
+- residual giant spirits,
+- 9/1 spirit partition,
+- Babel ascent intention,
+- divine/angel descent,
+- physical wind-collapse.
+
+### Jubilees corrects/complicates our hypotheses
+- Enoch goes to Eden, not plainly heaven,
+- Peleg division ≠ necessarily Babel,
+- territorial “three parts” are horizontal,
+- not every pillar/mountain/sacred site is a gate.
+
+---
+
+## 420. Jubilees Vardath reconstruction — primeval cycle
+
+The strongest structural sequence is now:
+
+### 1. Initial layered architecture
+One primordial water domain is divided:
+**half above / half below**
+around a middle firmament.
+
+### 2. Upper realm is populated
+Angelic/spiritual beings inhabit and operate from heaven.
+
+### 3. Stable seven-year Eden phase
+A timed ordered state.
+
+### 4. Boundary/transgression anniversary
+Eden transgression occurs on **2/17**.
+
+### 5. Speech coherence breaks at small scale
+Animal common speech closes; creatures scatter.
+
+### 6. Upper beings descend
+Watchers enter earth on instructional mission.
+
+### 7. Boundary mixing
+Watchers unite with human women.
+
+### 8. Hybrid violence destabilizes world
+Giants and humanity corrupt system.
+
+### 9. Survivor carrier prepared
+Noah/ark.
+
+### 10. Same anniversary activates world reset
+Flood opens on **2/17**.
+
+### 11. Symmetric paired gates activate
+**7 above**
++
+**7 below.**
+
+### 12. Opposed flows enter middle world
+**heaven ↓**
+and
+**deep ↑.**
+
+### 13. Protected carrier lifts
+Ark decouples from ground.
+
+### 14. Gate closure
+Upper/lower sources close.
+
+### 15. Lower flow reverses
+Surface water drains **down** into reopened abyss.
+
+### 16. World reappears in timed quarter phases
+Mountain tops / dry land / exit.
+
+### 17. Ordered annual cycle restored
+364-day calendar and seasonal covenant emphasized.
+
+### 18. Residual pre-reset elements remain
+Giant spirits still act after Flood.
+
+### 19. Residuals partitioned
+9/10 below, 1/10 retained on earth.
+
+### 20. Land/populations divide into branches
+Three major territorial portions.
+
+### 21. Artificial vertical reconvergence attempted
+Babel aims to reach heaven.
+
+### 22. Upper realm descends
+God/angels move downward.
+
+### 23. Coherence is broken
+Language fragments.
+
+### 24. Artificial axis collapses
+Wind overthrows tower.
+
+This is an exceptionally close **mythic structural analogue** to major parts of the Vardath event model.
+
+---
+
+## 421. Strongest Jubilees support for the Vardath model
+
+The highest-value correspondences are:
+
+1. **Half of waters above / half below** around a central separator.
+2. **Populated upper realm.**
+3. **Beings explicitly descend from upper realm to earth.**
+4. **Upper/lower crossing produces catastrophic instability.**
+5. **Eden breach and Flood reset share exact calendar date 2/17.**
+6. **Seven gates above + seven mouths below.**
+7. **Upper water down / lower water up simultaneously.**
+8. **Same lower boundary later reverses and drains water down.**
+9. **Flood event is mapped onto a precise repeating calendar.**
+10. **Explicit heavenly-versus-human time ratio: 1 day / 1,000 years.**
+11. **Moses receives past+future history at mountain interface.**
+12. **Enoch records past/future and heavenly/earthly order.**
+13. **Residual beings survive a world reset.**
+14. **Babel becomes explicit attempted ascent + upper descent + collapse.**
+15. **Animal-language and human-language scattering repeat the same event-form.**
+
+---
+
+## 422. What Jubilees still does NOT establish
+
+Jubilees does **not** say:
+
+- the world above is literally our future,
+- the world below is literally our past,
+- each adjacent layer is an inhabited Earth-like present,
+- the firmament is a plasma lattice,
+- the Squatter-Man is the physical gate,
+- time differences are produced by plasma velocity,
+- the Flood transfers land/people between stacked world-discs,
+- Watchers are future humans,
+- demons are past-world inhabitants,
+- the lattice forms a Möbius/finger-trap structure.
+
+Those remain specifically Vardath hypotheses.
+
+---
+
+## 423. Important mismatch: Enoch location
+
+The model might predict an exceptional pre-Flood figure to move upward/out through the gate.
+
+Jubilees instead places Enoch in **Eden**.
+
+Therefore a literal “Enoch ascended to the upper future-world” reading is not supported by this source.
+
+What survives:
+- removal from ordinary humanity,
+- protected sacred domain,
+- access to heavenly information,
+- continued cross-time record.
+
+---
+
+## 424. Important mismatch: three-part earth is geographic
+
+Jubilees’ division into Shem/Ham/Japheth is clearly territorial geography.
+
+Therefore:
+**three-part division alone is insufficient evidence for stacked worlds.**
+
+This is a useful anti-overfitting rule.
+
+---
+
+## 425. Important confirmation: repeated symbolic event forms are intentional
+
+Across Genesis and Jubilees we now have explicit examples of one event/form appearing more than once:
+
+- Pharaoh’s two dreams are explicitly “one.”
+- Eden animal speech fragmentation mirrors Babel human speech fragmentation.
+- Jacob→Israel transformation appears at Jabbok and is reaffirmed at Bethel.
+- Hagar departure/well material appears in repeated variants.
+- wife-sister narratives repeat.
+- Abraham/Isaac role sequences repeat.
+
+So the method of searching for **same process under different characters/images** is textually justified.
+
+The remaining task is to decide case by case whether each proposed match is:
+- explicit,
+- probable literary double,
+- symbolic recurrence,
+- or overreach.
+
+---
+
+## 426. Jubilees timing register — retain for later quantitative test
+
+Raw timing data to preserve:
+
+- Sinai cloud: **6 days**, called on **7th**.
+- Sinai revelation: **40 days + 40 nights**.
+- Adam entry: **40 days** after creation.
+- Eve entry: **80 days**.
+- Eden stable interval: **7 years**.
+- Eden transgression: **month 2, day 17**.
+- Enoch angelic period: **6 jubilees ≈ 294 years** on 49-year reckoning.
+- Heavenly day analogy: **1,000 human years**.
+- Flood opening: **month 2, day 17**.
+- Rain: **40 days + 40 nights**.
+- Waters prevail: **150 days / five months** in Jubilees.
+- Ark/earth cycle tied to quarter beginnings:
+  - month 1,
+  - month 4,
+  - month 7,
+  - month 10.
+- prescribed year: **364 days = 52 weeks = four 91-day quarters**.
+- demon partition: **9/10 below, 1/10 earth-active**.
+- earth territorial division begins in 33rd jubilee.
+- Babel construction: **43 years**.
+- Babel dispersion occurs afterward in 34th jubilee.
+
+These will later be compared numerically to:
+- biblical intervals,
+- 1 Enoch,
+- Ethiopian broader-canon chronology,
+- Vardath numbers,
+- exact sourced Archaix claims.
+
+---
+
+## 427. Section 10 status
+
+**SECTION 10 — COMPLETE.**
+
+Next roadmap section:
+
+**Section 11 — Jubilees 11–23**
+- Abram’s astronomy/sky observation,
+- destruction of idols,
+- migration,
+- covenant,
+- Hagar/Ishmael,
+- circumcision,
+- Sodom,
+- Isaac,
+- Mastema and the binding of Isaac,
+- Sarah,
+- Jacob/Esau,
+- Abraham’s final teaching,
+- Abraham’s death,
+- shrinking lifespans and future renewal.
+
+Priority tests:
+- Abram as observer of heavenly signs,
+- fire against idols versus later fire/catastrophe,
+- covenant chronology,
+- Jubilees’ version of the split-animal passage,
+- Mastema as hidden operator in Isaac binding,
+- Isaac/Ishmael mirror,
+- explicit lifespan decline and future re-expansion,
+- whether Jubilees provides a timed historical cycle.
+
