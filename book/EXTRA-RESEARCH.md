@@ -28652,3 +28652,121 @@ environmental catastrophe is often described as **opening/closing/restraining no
 - Enoch / Methuselah — transmitter / successor.
 - heavenly books / earthly books — source / copy.
 - first heaven / new heaven — predecessor / successor state, not simultaneous pair.
+
+
+## SECTION 17 progress C — Noah's birth: apparent angelic double, three-generation inquiry and catastrophe marker
+
+### Noah appears so unlike ordinary humans that his father doubts paternity
+
+At birth Noah is described:
+- body **white as snow**
+- **red as rose**
+- hair **white as wool**
+- eyes like **rays of the sun**
+- when eyes open, **whole house lights up**
+- infant rises in midwife's hands
+- opens mouth and blesses/speaks to God.
+
+Lamech's immediate interpretation:
+- child is **different from humans**
+- resembles **sons of the God of heaven**
+- may be offspring of angels rather than Lamech.
+
+This is crucial for our person/state work:
+the story intentionally creates an **apparent identity misclassification based on geometry/appearance**.
+
+Noah looks like an upper/heavenly being but Enoch says:
+**he is truly Lamech's own son**.
+
+So visual resemblance does **not** guarantee ontological identity.
+
+That is an important control against over-reading similar figures elsewhere.
+
+### Lamech / Noah — father/son pair with mistaken hidden-origin hypothesis
+
+Classification:
+- **P5 parent/child recurrence**
+- plus false **P9/P10 identity suspicion**:
+  Lamech thinks ordinary fatherhood may be displaced by Watcher paternity.
+
+The text resolves it explicitly:
+**Noah belongs to Lamech**.
+
+### Lamech → Methuselah → Enoch — three-generation inquiry chain
+
+The problem travels upward:
+
+**Lamech**
+→ asks father **Methuselah**
+→ Methuselah travels to remote Enoch
+→ **Enoch** reads/interprets from heavenly knowledge
+→ Methuselah returns downward
+→ reassures **Lamech**.
+
+This is a literal **three-node vertical genealogical information chain**.
+
+Enoch is both:
+- ancestor at far edge/angel-associated location,
+- interpreter of future history.
+
+### Enoch / Noah — separated generations linked by catastrophe function
+
+Enoch explains:
+- Watcher transgression began in Jared's generation,
+- giant violence follows,
+- great destruction/Flood comes,
+- **Noah survives**,
+- Noah + **3 sons** preserve living line,
+- later wrongdoing returns.
+
+Thus Enoch and Noah function as two sides of catastrophe knowledge:
+- **Enoch = foreknower/interpreter**
+- **Noah = embodied survivor/carrier**.
+
+Classification:
+- **P7 predictor / carrier** across generations.
+
+### Noah's body may encode future role rather than foreign parentage
+
+The narrative's own answer is effectively:
+**extraordinary body ≠ angelic father; extraordinary body marks extraordinary destiny**.
+
+This is extremely useful as a control for the user's Squatter-Man/person-as-structure hypothesis:
+unusual anthropomorphic descriptions can signal **role/state/ destiny** without requiring the character to be literally a different species/entity.
+
+### Flood duration — “great destruction for one year”
+
+1 Enoch 106:15 states a deluge/great destruction **for one year** in the Ethiopic received text.
+
+This should be entered into the master interval table as:
+- **1-year catastrophe interval**.
+
+Do not confuse this with Genesis' internal flood chronology unless normalized separately.
+
+### Latin fragment — 500-year notice requires separate treatment
+
+The Latin fragment attached to ch. 106 includes a statement interpreted as:
+- catastrophe **after 500 years**.
+
+This is a different textual witness and should not be silently fused with the Ethiopic “one year” duration.
+
+Record separately:
+- Ethiopic: **destruction/deluge for one year**
+- Latin fragment: **500-year** prospective marker in its textual form.
+
+### Noah survival number
+- Noah = **1**
+- sons = **3**
+- preservation unit = **1 + 3**
+again matching Animal Apocalypse's ark group.
+
+### After the Flood, disorder returns
+
+Enoch explicitly predicts:
+- Noah and sons survive,
+- but afterward **unrighteousness again increases**.
+
+Thus Flood is **reset, not permanent rewind/perfection**.
+
+That is particularly close to current Vardath language:
+a new stable period begins, but history continues and diverges again.
