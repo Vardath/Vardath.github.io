@@ -22488,3 +22488,114 @@ Keep separate from the 6 east + 6 west luminary gates: they are related cosmic p
 - sun:moon light ratio: **7:1**
 - wind portals: **12 = 3×4**
 - beneficial:harmful wind gates: **4:8** in Charles' text.
+
+
+## SECTION 15 progress B — moon/sun pair: phase transfer, 354/364 mismatch and 3–5–8-year arithmetic
+
+### Moon receives measured light from the sun
+
+The moon is not described as an independent equal-light source:
+- light is given/transferred to her in measured portions,
+- waxing proceeds in fractions,
+- full moon occurs opposite the setting sun,
+- waning returns her to darkness.
+
+This makes sun/moon a **coupled but asymmetric pair**:
+**source/greater light ↔ receiver/reflected/lesser light** in the text's model.
+
+### Opposition is part of fullness
+
+At full moon:
+- sun sets west,
+- moon rises east,
+- they stand **opposite** one another.
+
+Again the text uses opposition as a stable, coordinated state rather than hostility.
+
+### 14 / 15 phase arithmetic
+
+The received text uses both:
+- **14-part** descriptions,
+- and a **15th-day/fullness** description.
+
+The moon grows/wanes through counted portions and can be said to complete light on day 14/15 depending on the particular verse/textual scheme.
+
+Treat these as ancient schematic lunar arithmetic, not modern astronomical precision.
+
+### 354-day lunar year versus 364-day schematic solar year
+
+Across chs. 74, 78, 79:
+- lunar months alternate principally **30 / 29 days**,
+- two 177-day half-years give **354 days**,
+- solar/stars complete **364 days**,
+- therefore lunar scheme falls behind by **10 days/year** in the normalized arithmetic.
+
+The text explicitly gives:
+- **177 days = 25 weeks + 2 days**,
+- two such periods = **354**.
+
+### 3–5–8-year comparison
+
+Chapter 74 gives solar totals:
+- **3 × 364 = 1092**
+- **5 × 364 = 1820**
+- **8 × 364 = 2912**
+
+and lunar totals:
+- **3 × 354 = 1062**
+- **5 × 354 = 1770**
+- **8 × 354 = 2832**
+
+differences:
+- **30**
+- **50**
+- **80** days.
+
+This is the clean arithmetic behind the passage.
+
+Important source-control:
+Otto Neugebauer's classic analysis calls 74:10–16 a **garbled description of an octaeteris** and suggests this group may be a later addition influenced by computistical material. Other scholarship has reconstructed coherent moon-gate laws using Qumran fragments 4Q208–4Q209.
+
+Therefore:
+- retain the numbers exactly,
+- do not assume the received Ethiopic calculations represent one untouched original system.
+
+### 7 / 8-day gate movements of the moon
+
+Chapter 74 repeatedly describes:
+- **7 days** outward/return phases,
+- then **8 days** to another portal.
+
+This produces another 7→8 transition, but here it is explicitly lunar-route arithmetic rather than a theological eighth-day festival.
+
+Record beside the Jubilees 7→8 pattern, but do not claim common hidden meaning yet.
+
+### 29 / 30 / occasional 28
+
+Chapter 78:
+- some months = **29 days**
+- some = **30 days**
+- one textual statement mentions **28**.
+
+The 28-day statement is difficult and not enough to reconstruct a separate stable calendar by itself.
+
+### Sun/moon naming asymmetry
+
+Chapter 78:
+- sun has **2 names** in the Ethiopic text.
+- moon has **4 names**.
+
+Low-confidence symbolic observation only; likely lexical/traditional rather than hidden geometry.
+
+### Pair classification
+Sun / Moon:
+- **P2 polarity pair**
+- east/west opposition at fullness,
+- same apparent circumference in text,
+- unequal light,
+- linked gates,
+- different annual arithmetic,
+- recurrent phase relation.
+
+This is a very useful control case for the project:
+**two coordinated bodies can share geometry/routes but accumulate time/count differently.**
