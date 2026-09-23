@@ -22722,3 +22722,111 @@ Thus future research should distinguish:
 - **normal gate-cycle**
 from
 - **gate failure / reset event**.
+
+
+## SECTION 15 progress D — consolidated cycle table and Vardath comparison
+
+### Core solar cycle
+
+**Solar gate sequence**
+4 → 5 → 6 → 6 → 5 → 4 → 3 → 2 → 1 → 1 → 2 → 3 → 4
+
+**Month-block lengths**
+30 + 30 + 31 + 30 + 30 + 31 + 30 + 30 + 31 + 30 + 30 + 31 = **364**
+
+**Quarter structure**
+91 + 91 + 91 + 91 = **364**
+
+**Week structure**
+13 weeks × 4 = **52 weeks**
+52 × 7 = **364**
+
+### Day/night mirror
+10/8 → 11/7 → 12/6 → 11/7 → 10/8 → 9/9
+→ 8/10 → 7/11 → 6/12 → 7/11 → 8/10 → 9/9
+
+This is a reversible-looking annual symmetry around two extremes and two equality points.
+
+### Lunar cycle register
+- schematic lunar year: **354**
+- half: **177 = 25 weeks + 2 days**
+- solar/lunar difference: **10 days/year**
+- 3-year difference: **30**
+- 5-year difference: **50**
+- 8-year difference: **80**
+- lunar month mostly **29/30**
+- full phase around **14/15**
+- frequent **7/8-day** gate intervals.
+
+### Portal systems
+- luminary portals: **6 east + 6 west**
+- wind portals: **3 × 4 cardinal directions = 12**
+- fourth solar portal includes **12 windows**
+- four intercalary/quarter leaders linked to portals **1,3,4,6**
+
+### Seven register
+- sun light = **7×** moon in received text
+- **7** mountains
+- **7** rivers
+- **7** islands
+- **7** holy ones returning Enoch to earth
+- ordinary week = **7 days**
+
+### Four register
+- **4 quarters**
+- **4 intercalary days**
+- **4 seasonal leaders**
+- **4 × 91**
+- wind system in **4 directions**
+
+### 12 register
+- **12** east/west luminary gates as paired total
+- **12** wind gates
+- **12** month leaders in chapter 82
+- **12** windows at one solar portal.
+
+### 1-year / 2nd-year Enoch removal
+After return:
+- Enoch remains **1 year** teaching Methuselah,
+- taken away in **year 2**.
+
+### Vardath comparison — strongest points
+
+1. **Gate as timed route, not merely doorway.**
+   The same luminary uses different gates depending on phase.
+
+2. **Visible route + hidden return route.**
+   Sun traverses east→west visibly and returns west→north→east.
+
+3. **Paired systems can share routes but accumulate different counts.**
+   Sun/solar year 364; moon/lunar year 354.
+
+4. **Normal cosmic stability is dynamic.**
+   Stability = continuous motion that remains synchronized to law.
+
+5. **Disorder is route/timing failure.**
+   Ch. 80 catastrophe language begins when expected cycles stop arriving on time.
+
+6. **Fourfold/quarter organization is structural.**
+   4×91 governs the year.
+
+7. **The 3/5/8 arithmetic is real in the received chapter but source-critically difficult.**
+   Never present it as a pristine ancient master cycle without noting textual/compositional problems.
+
+8. **This is not evidence for nine world-discs.**
+   The astronomical model has its own ancient cosmography. Its value here is the event grammar of gates, returns, timed accessibility and synchronized cycles.
+
+### Cross-corpus cycle candidates to compare later
+Do not yet claim agreement; simply place these in the master table:
+- Jubilees **364**
+- 1 Enoch **364**
+- lunar **354**
+- differences **10/year, 30/3y, 50/5y, 80/8y**
+- quarter **91**
+- 7-day week
+- 52 weeks
+- 3/5/8-year comparison
+- 2 Enoch **365¼**, **28**, **19**, **532** traditions
+- Genesis/Jubilees 7/40/150 etc.
+- Testament Moses 250 “times”
+- later Archaix numbers to be normalized separately before comparison.
