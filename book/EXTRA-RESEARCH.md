@@ -21726,3 +21726,35 @@ The major mismatch is equally important:
 - no ordinary-world future/past timing relationship is given.
 
 So this is one of the strongest **layer-contact analogues**, but not a direct description of the mature Vardath mechanism.
+
+
+## SECTION 13 status
+
+**SECTION 13 — 1 ENOCH 1–36 / BOOK OF WATCHERS: COMPLETE FIRST PASS.**
+
+High-value findings:
+1. **200 upper beings descend and form 200 cross-layer pairings** with humans.
+2. Their children are explicitly **hybrid spirit/flesh beings**, followed by a post-death routing rule.
+3. Shemihazah/Asael preserve two different mechanisms within the same catastrophe: **boundary/reproductive crossing vs forbidden-knowledge transfer**.
+4. Enoch becomes a permitted human mediator while fallen heavenly beings lose re-entry.
+5. Judgment uses **different routes/enclosures for different participants**.
+6. Enoch's ascent has nested enclosures, a blazing open portal, throne, wheels and downward fire streams.
+7. The cosmic tour includes **four support-winds/pillars**, **7 = 3+3+1 mountains**, an abyss outside ordinary above/below support, **four soul chambers**, and directional portals.
+8. Chapter 28 has the useful water cycle **water from above → ground flow → cloud/dew rising**.
+9. Cain/Abel remains an active pair across different post-death states.
+10. The Book of Watchers is composite; literary-strand questions must remain attached to the interpretation.
+
+### Next first unfinished roadmap section
+**SECTION 14 — 1 ENOCH 37–71 / PARABLES**
+
+Priority:
+- Son of Man / Chosen One / Righteous One names and whether they are one underlying figure,
+- Head of Days / Son of Man pair,
+- seated figures and throne geometry,
+- Enoch / Son of Man identity problem near chapter 71,
+- mountains/metals melting,
+- luminary/time material,
+- angels of punishment,
+- hidden/revealed figure,
+- ascent/transformation,
+- all counts and time markers.
