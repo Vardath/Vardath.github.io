@@ -20585,3 +20585,21 @@ Priority tests:
 > That fits the larger research rule we have already found in Testament of Abraham and 2 Enoch: different components or versions of one person can be assigned **different transfer routes** at a transition.
 
 **Source control logged:** Fiona Grierson, "The Testament of Moses" (2008), on the fragment ending before Moses' death; Ryan E. Stokes, "Not over Moses' Dead Body" (2017), on the bodily-ascent interpretation of Jude 9; patristic testimony linking Jude's Michael/devil episode with an Assumption/Ascension of Moses tradition.
+
+
+### X7 progress C — Moses' “whole-world sepulchre” may preserve a cosmic-body tradition
+
+> Joshua's lament is more significant than a poetic way of saying that Moses is famous everywhere. He asks what local place could receive Moses and then says Moses' sepulchre extends **from sunrise to sunset and from south to north — the whole world**.
+>
+> Silviu N. Bunta has argued in a dedicated study of Testament of Moses 11:8 that this wording belongs to an early Jewish tradition in which Moses is imagined with **enormous/cosmic corporeality**, using language also associated with primordial Adam's gigantic body. On that reading, the problem is not merely “where shall we put an honored man's grave?” but **what ordinary place could contain a body/person whose symbolic stature fills the world?**
+>
+> For the Vardath comparison this is high-value:
+>
+> **Adam as cosmic human**
+> → **Moses inherits Adam-like world-scale bodily language**
+> → **Moses' ordinary local grave becomes conceptually inadequate**
+> → **his body/location is universalized across the four directions.**
+>
+> This is one of the clearest later Jewish links between **Moses and the cosmic-human / world-body motif**. It does not prove Moses is the Squatter-Man lattice, but it substantially strengthens the possibility that Moses could be read as an anthropomorphic representation of a world-scale structure rather than only as a historical lawgiver.
+
+**Sources logged:** Testament of Moses 11:5–8; Silviu N. Bunta, “Too Vast to Fit in the World: Moses, Adam, and … in the Testament of Moses 11:8,” *Scrinium* 3 (2007), arguing for gigantic/cosmic Moses within Adam-corporeality traditions.
