@@ -25949,3 +25949,158 @@ Closest structural analogue:
 
 Major mismatch:
 The house itself does not move between worlds and does not create world adjacency.
+
+
+## SECTION 19 progress G — departure numbers, 430-year problem and continuous Passover timeline
+
+### Departure population
+
+Exodus 12 gives:
+- about **600,000 men on foot**, besides children,
+- plus a **mixed multitude**,
+- flocks/herds.
+
+As a literary number it marks the complete change from:
+**70-person entering family**
+to
+**mass nation leaving Egypt**.
+
+Historical control:
+a literal population implied by 600,000 adult males would be in the millions and is widely regarded by historians as implausibly large for the Sinai setting. Some scholars propose different senses or textual histories for `ʾeleph`, while others treat the figure as literary/exaggerated.
+
+For our timeline:
+record the biblical number; do not use it as an unquestioned demographic measurement.
+
+### 70 → ~600,000 narrative expansion
+
+The book's own bookends now make:
+**70 incoming**
+→ oppression/multiplication
+→ **~600,000 adult males outgoing**.
+
+That is a major numerical “small seed → enormous multitude” transformation.
+
+### 430 years — important but textually contested
+
+Masoretic Exodus 12:40 says the Israelite dwelling **in Egypt** lasted:
+**430 years**.
+
+But:
+- Septuagint adds **Egypt and Canaan**,
+- Samaritan Pentateuch likewise includes **Canaan and Egypt**.
+
+Those versions effectively extend the 430-year clock back into the patriarchal period.
+
+A common resulting scheme is:
+- **215 years Canaan**
+- **215 years Egypt**
+= **430**.
+
+Classical rabbinic chronology commonly produces **210 years in Egypt** by a different harmonization.
+
+Meanwhile Exodus 6's short Levi→Kohath→Amram→Moses genealogy sits awkwardly beside a literal 430-year Egyptian residence.
+
+Therefore:
+**430 is a major textual chronology marker, not a secure independently reconstructed duration.**
+
+Do not align Archaix or Vardath cycles to “430 years” without specifying which textual chronology is being used.
+
+### Genesis 15 cross-reference
+
+Genesis 15 gives:
+- **400 years** of strangerhood/oppression language,
+- and a **fourth-generation** return.
+
+Those numbers already create tension with Exodus 12's 430 and short genealogies.
+
+Master timeline should keep:
+- 400
+- 430
+- fourth generation
+as separate source claims before harmonization.
+
+### Continuous plague-to-Exodus timeline
+
+**Moses/Aaron demand release**
+→ Pharaoh increases brick burden
+→ credibility crisis
+
+**authority pair formalized**
+→ Moses as Elohim / Aaron prophet
+→ staff rivals swallowed
+
+**1 blood**
+→ Nile/water transformation
+→ 7-day marker
+
+**2 frogs**
+→ water life rises into houses
+→ “tomorrow” removal
+
+**3 gnats**
+→ dust transforms
+→ magicians fail
+
+**4 swarms**
+→ first explicit Goshen division
+
+**5 livestock**
+→ ownership/group distinction
+→ appointed next day
+
+**6 boils**
+→ furnace soot cast upward
+→ distributed body affliction
+→ magicians cannot stand
+
+**7 hail/fire**
+→ inside/outside warning
+→ staff toward heaven
+→ fire+hail down
+→ Goshen spared
+→ hands spread to stop event
+
+**8 locust**
+→ east wind brings
+→ west wind removes into Sea of Reeds
+
+**9 darkness**
+→ hand to heaven
+→ 3 days dark/immobile Egypt
+→ light in Israelite dwellings
+
+**10 firstborn**
+→ midnight
+→ marked/unmarked household distinction
+→ death throughout Egypt
+→ protected Israelite houses
+
+**Passover enclosure**
+→ month reset
+→ day10 selection
+→ day14 slaughter
+→ blood 2 posts + lintel
+→ everyone inside until morning
+→ staff in hand/readiness
+→ death prevented from entering
+→ morning release
+
+**departure**
+→ Pharaoh now drives them out
+→ dough carried before leavening
+→ Rameses → Succoth
+→ ~600,000 men + mixed group/livestock
+→ 430-year formula closes residence.
+
+### Pair matrix for Exodus 5–12
+- **Moses / Aaron** — P7 hierarchical communication pair.
+- **Moses / Pharaoh** — P6 opposed leaders; status reverses.
+- **Aaron staff / magician staffs** — one-vs-many rival/double system.
+- **Egypt / Goshen** — simultaneous environmental polarity.
+- **Egypt livestock / Israel livestock** — ownership-based polarity.
+- **inside / outside** — recurring survival boundary.
+- **east wind / west wind** — opposed transport pair.
+- **darkness / light** — simultaneous territorial state pair.
+- **Israel firstborn / Egyptian firstborn** — spared/struck polarity.
+- **YHWH / destroyer** — received-text authority/agent pair, source-critically uncertain.
+- **Zipporah blood scene / Passover blood scene** — P9 narrative/covenantal recurrence.
