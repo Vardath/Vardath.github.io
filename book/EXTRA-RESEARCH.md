@@ -16790,3 +16790,17 @@ Priority tests:
 - return to body/death,
 - whether Abraham becomes another cross-domain traveller whose “death” is delayed by celestial transit.
 
+
+
+## 644. LIVE PROGRESS — X5 / Testament of Abraham begins
+
+> **Apocalypse of Abraham is now complete** and saved. The next unfinished natural-order insert is **X5 — Testament of Abraham**, immediately after Genesis 25:7–10. I’m continuing there now, focusing on Michael’s arrival, Abraham’s delayed death, the heavenly/world survey, judgment gates/paths, and whether death itself is treated as another temporary cross-domain passage.
+
+### X5 progress A — Adam as central anthropomorphic junction between two gates
+
+> The Testament of Abraham is giving another very clean **human-at-the-gate** image. During Abraham’s tour of the judgment region, **Adam sits on a golden throne between two gates**—a narrow gate used by relatively few souls and a broad gate used by many. Adam’s own emotional state changes depending on which stream passes.
+>
+> So again we have a **central anthropomorphic ancestor positioned between two divergent pathways**, almost like a humanized switch/junction. That does not make Adam the physical gate, but it is exactly the kind of recurring “person occupies the geometry” pattern we’ve been tracking.
+
+**Textual-control note:** the Testament of Abraham survives principally in two Greek recensions, A/long and B/short, with differences in the judgment material. The two-gate/Adam scene is especially developed in the long recension.
+
