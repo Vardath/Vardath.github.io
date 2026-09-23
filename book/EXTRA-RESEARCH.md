@@ -29436,3 +29436,16 @@ Priority:
 - Book read-up pass has covered Preface, Introduction and Chapters 1–6.
 - Critical model rule reconfirmed from the manuscript: **all world-turns are populated and each has its own present**. “Future above” and “past below” are relational to our present; the gate changes adjacency between already-existing inhabited worlds rather than creating an empty future world.
 - Research remains paused until the manuscript/site read-up is complete.
+
+
+### Read-up progress — book through Chapter 14
+
+Book read-up now covers Preface, Introduction and Chapters 1–14.
+
+Mechanism reconfirmed for Bible comparison:
+- broad lattice = quiet/supporting world state;
+- activation = nodes/pathways wake and become preferential;
+- convergence = many distributed paths gather toward fewer/dominant axial routes;
+- end-on projections can produce eye/wheel/star/rosette families;
+- side/axial projections can produce tree/rod/pillar/mountain/ladder families;
+- the gate is the boundary/interface becoming selectively traversable under convergence, not a separate permanent object.
