@@ -26987,3 +26987,164 @@ Priority:
 - day7 call,
 - Moses enters cloud/fire and remains 40 days + 40 nights,
 - construct exact vertical permission map and event timeline.
+
+
+## SECTION 21 progress A — Exodus 19: Sinai as a controlled vertical interface
+
+### Third-month arrival fixes the next transition in time
+
+Israel reaches the wilderness of Sinai:
+- in the **third month** after leaving Egypt,
+- and camps **before the mountain**.
+
+The transition is therefore no longer a moving sea-corridor. It becomes a fixed mountain-centred event.
+
+### Moses immediately begins vertical shuttling
+
+The chapter repeatedly alternates:
+
+**people below**
+→ Moses **goes up**
+→ divine words given
+→ Moses **comes down**
+→ message delivered
+→ Moses **returns upward**
+→ further instructions
+→ Moses **goes down again**.
+
+This repeated ascent/descent is so conspicuous that modern scholarship has used it as a structural key to the Sinai narrative. Thomas Dozeman's spatial reading of the Sinai pericope emphasizes that the vertical movement of Moses between YHWH and the people functions as the narrative embodiment of mediation/covenant.
+
+For the pair/geometry project:
+Moses is not merely standing near a mountain. He is the **mobile connector between a lower population and an upper divine zone**.
+
+### Three-day preparation before boundary activation
+
+The people are told:
+- consecrate themselves **today and tomorrow**,
+- wash garments,
+- be ready on the **third day**.
+
+On that third day:
+- YHWH will **come down** on the mountain in the sight of all.
+
+So the activation sequence is:
+
+**day 1 preparation**
+→ **day 2 preparation**
+→ **day 3 visible descent/event**.
+
+Record this beside other three-day transitions, but do not assume a universal 3-day mechanism.
+
+### Mountain boundary is explicitly marked
+
+Moses is ordered to:
+- set **bounds around** the mountain,
+- prevent people from going up,
+- prevent even touching its border.
+
+Crossing the boundary without permission carries death.
+
+This is one of the clearest controlled-interface scenes in the Torah:
+
+**ordinary inhabited zone**
+→ **marked perimeter**
+→ **restricted mountain**
+→ **summit/top zone**.
+
+Access is not simply “gate open / gate closed.”
+It is **rank- and timing-dependent permission**.
+
+### Divine descent and smoke ascent occur simultaneously
+
+On the third-day morning:
+- thunder,
+- lightning,
+- thick cloud,
+- very loud trumpet,
+- people tremble.
+
+Then:
+- YHWH **descends** on Sinai **in fire**,
+- the entire mountain smokes,
+- smoke **goes upward** like a furnace,
+- mountain trembles violently.
+
+This gives an explicit opposed vertical flow:
+
+**divine/fire descent ↓**
+paired with
+**smoke ascent ↑**.
+
+For the Vardath comparison this is high-value because the text itself describes opposite vertical motions around the same central mountain.
+
+But:
+- it is theophanic fire/smoke in the biblical text,
+- not a demonstrated plasma current or world-lattice exchange.
+
+### People remain at the lower part
+
+Moses brings the people out:
+- they stand **at the lower part / foot of the mountain**.
+
+YHWH:
+- descends to the **top**.
+
+This makes a clear vertical stack:
+
+**summit — divine presence/fire**
+**mountain — restricted interface**
+**foot — people**.
+
+Moses alone repeatedly traverses between lower and upper zones.
+
+### Trumpet intensity increases toward contact
+
+The trumpet:
+- sounds,
+- grows **louder and louder**,
+- Moses speaks,
+- God answers by voice.
+
+So the event does not appear instantaneously. It builds in intensity as contact/communication develops.
+
+### Moses is called upward, then sent downward again
+
+At the climax:
+- YHWH comes down to mountain-top,
+- calls Moses **up to the top**,
+- Moses ascends,
+- then Moses is immediately told to **go down** and warn the people again.
+
+This repeated reversal is important:
+**upper call → ascent → warning → descent**.
+
+The text emphasizes regulation of the interface more than simple arrival.
+
+### Aaron receives partial/conditional access
+
+Final instruction:
+- Moses is to come up,
+- **Aaron may come with him**,
+- priests and people must not break through.
+
+So the human side itself is stratified:
+- Moses = highest access,
+- Aaron = permitted secondary access,
+- priests = near-status but restricted,
+- people = lower boundary.
+
+This is a genuine graded-access hierarchy, not a binary open/closed gate.
+
+### Pair register, Exodus 19
+- **YHWH / Israel** — upper source / lower covenant people.
+- **Moses / people** — mobile mediator / stationary lower collective.
+- **Moses / Aaron** — primary / secondary ascent-access pair.
+- **fire descending / smoke rising** — opposed vertical process pair.
+- **mountain top / mountain foot** — upper/lower spatial polarity.
+- **cloud / fire** — overlapping manifestation states around the same mountain event.
+
+### Number/time register
+- arrival: **month 3**.
+- preparation: **2 days**, event on **day 3**.
+- major levels in simplest geometry: **foot / mountain / top**.
+- access categories: Moses; Aaron; priests; people.
