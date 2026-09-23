@@ -22599,3 +22599,126 @@ Sun / Moon:
 
 This is a very useful control case for the project:
 **two coordinated bodies can share geometry/routes but accumulate time/count differently.**
+
+
+## SECTION 15 progress C — global geography, inherited books and time going wrong
+
+### Four quarters and a 1|3 subdivision in the north
+
+Chapter 77:
+- world divided into **4 quarters**.
+- north quarter is itself divided into **3 parts**:
+  1. human dwelling,
+  2. seas/abysses/forests/rivers/darkness/clouds,
+  3. garden of righteousness.
+
+This is real nested geographic partitioning:
+**4 overall sectors → one sector split into 3 internal states/regions**.
+
+Do not map directly onto Vardath 1–3–7 mathematics; preserve as textual geometry.
+
+### Sevenfold geography
+
+Chapter 77 counts:
+- **7 high mountains**
+- **7 great rivers**
+- **7 great islands**
+
+Islands split:
+- **2 in mainland**
+- **5 in Great Sea**.
+
+This is a conspicuous repeated seven in one geographical chapter.
+
+### Ordered motion can break
+
+Chapter 80 describes a future corruption of timing:
+- years shortened,
+- rain held back,
+- fruit late,
+- moon changes order,
+- stars alter orbits/tasks,
+- bodies fail to appear at appointed seasons.
+
+This is important because the Astronomical Book defines catastrophe partly as **loss of timing/order**, not merely destruction of physical objects.
+
+In the project's event language:
+**stable world = routes occur at correct times**
+and
+**disordered world = same system fails to meet its appointed temporal positions**.
+
+That is conceptually close to a “clock/gate desynchronization” model, but the text attributes it morally to human sin.
+
+### Heavenly tablets contain the whole human timeline
+
+Chapter 81:
+- Enoch reads heavenly tablets,
+- they contain deeds of humanity,
+- extending to **remote generations**.
+
+This parallels:
+- Jubilees' heavenly tablets,
+- Jacob's seven tablets at Bethel,
+- Enoch's other all-time visions.
+
+Again a human observer at a heavenly interface receives compressed information spanning long earthly history.
+
+### Seven holy ones return Enoch to earth
+
+Chapter 81:
+- **7 holy ones**
+- bring Enoch down,
+- place him before the **door of his house**.
+
+Then:
+- he is allowed **1 year** with Methuselah,
+- in the **2nd year** he will be taken from them.
+
+This is an explicit transition timetable attached to Enoch's removal.
+
+### Enoch / Methuselah — father/son information-carrier pair
+
+Enoch gives Methuselah:
+- books,
+- wisdom,
+- instructions to preserve them,
+- command to pass them onward to children/generations.
+
+Classification:
+- **P5 parent/child recurrence**
+- **P7 carrier/successor role**.
+
+The physical body of Enoch is removed, but the information continues through a genealogical carrier.
+
+Compare:
+- Moses→Joshua writings,
+- Testaments of Patriarchs,
+- Noah/Enoch preservation lines.
+
+### Uriel / Enoch — operator / instructed observer pair
+
+Throughout 72–82:
+- Uriel is guide/leader over luminaries,
+- shows the laws,
+- Enoch observes and writes.
+
+This is not equal polarity:
+- **Uriel = system guide/operator/interpreter**
+- **Enoch = recorder/transmitter**.
+
+A useful P7 functional pair.
+
+### Stable cycle versus event cycle
+
+The Astronomical Book teaches an important methodological control for Vardath research:
+not every gate sequence is catastrophic.
+
+Here the gates describe **normal recurring order**:
+**portal selection → traversal → return → next portal → annual closure**.
+
+The catastrophe only appears when bodies **depart from their appointed timing**.
+
+Thus future research should distinguish:
+- **normal gate-cycle**
+from
+- **gate failure / reset event**.
