@@ -27485,3 +27485,112 @@ This is an early P4/P7 foreshadowing:
 - later succeeds him nationally.
 
 Do not treat them as same identity.
+
+
+## SECTION 21 progress D — cloud 6→7, fire summit and 40-day enclosure
+
+### Cloud covers mountain for six days
+
+After Moses ascends:
+- cloud covers Sinai **6 days**.
+
+During this period:
+- glory dwells on mountain,
+- no call to Moses is narrated until transition point.
+
+### Seventh day = call through boundary
+
+On **day 7**:
+- YHWH calls Moses **from the midst of the cloud**.
+
+This creates another explicit:
+**6 days waiting/covering → day 7 access/call**.
+
+Compare:
+- manna 6 collection + 7th rest,
+- creation 6+7,
+- servant/land 6+7.
+
+Here the 7th day is not cessation from movement; it is **deeper entry into divine interface**.
+
+### Fire appearance outside, cloud entry inside
+
+To Israel below:
+- glory looks like **devouring fire on mountain top**.
+
+Moses:
+- **enters the cloud**
+- goes upward into mountain.
+
+So one event has two perspectives:
+**outside/lower observer = consuming fire appearance**
+versus
+**authorized entrant = cloud interior**.
+
+This is an excellent perspective-control example:
+different observers can describe the same zone differently without requiring two separate phenomena.
+
+### Moses disappears into the active zone
+
+Once he enters:
+- he remains **40 days and 40 nights**.
+
+From below, Moses is effectively absent inside cloud/fire-covered mountain.
+
+This parallels:
+- Enoch hidden/translated periods,
+- 40-day preparation cycles elsewhere,
+- Flood 40,
+but units/context differ.
+
+### 40 + 40 wording
+
+The text explicitly says:
+- **40 days**
+- **40 nights**.
+
+This is one duration described bilaterally, not 80 days.
+
+Record as **40-day/40-night continuous stay**, unless another later text separately doubles it.
+
+### Upper/lower information flow continues
+
+Purpose of ascent:
+- stone tablets,
+- teaching/commandment,
+- divine writing for instruction.
+
+So the mountain interface converts:
+**upper/divine information**
+→ **stone material record**
+→ future lower-community law.
+
+This repeats the corpus-wide “upper record → earthly carrier” pattern:
+- heavenly tablets in Enoch/Jubilees,
+- Jacob's seven tablets,
+- Moses' stone tablets.
+
+### Cloud/fire pair at Sinai
+
+Throughout Exodus:
+- pillar cloud/day + fire/night guided travel.
+At Sinai:
+- thick cloud covers mountain,
+- fire defines divine descent/visible glory.
+
+Thus cloud and fire repeatedly behave as complementary manifestations around divine presence:
+**cloud = concealment/cover/guide**
+**fire = visible intensity/descent/glory**.
+
+Classification:
+- **P3/P2 manifestation polarity**, not automatically two entities.
+
+### Number register, Exodus 24
+- altar: **1**.
+- tribal pillars: **12**.
+- blood portions: **1/2 + 1/2**.
+- named principal ascent group before elders: **4** — Moses, Aaron, Nadab, Abihu.
+- elders: **70**.
+- cloud cover: **6 days**.
+- call: **day 7**.
+- mountain stay: **40 days + 40 nights**.
