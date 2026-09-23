@@ -11155,3 +11155,29 @@ Priority pair tests:
 - calendrical ordering of primeval events,
 - whether Jubilees sharpens or contradicts the Genesis geometry.
 
+
+
+### Sections 8–9 final user-facing reply saved verbatim
+
+> Continued through **Section 8 and Section 9** and saved every progress update plus the full detailed findings.
+> 
+> The biggest new results are:
+> 
+> - **Leah/Rachel recursively mirror Jacob/Esau**: elder/younger inversion repeats, then the pair expands through Bilhah/Zilpah into the twelve-son system.
+> - Jacob’s **peeled rods/branches at the water troughs** give a real rod + patterned differentiation image, but I kept the uncertain breeding/magic interpretation separate.
+> - Jacob and Laban end their entanglement with a **pillar + stone heap + no-crossing boundary**. The same boundary has **two names in two languages**, which is an excellent control for “one thing seen/named differently from opposite sides.”
+> - **Mahanaim = two camps**, followed by Jacob literally splitting his own people into two camps.
+> - At **Jabbok**, the sequence is extremely strong for your cosmology: crossing → isolation → ambiguous man/God/angel struggle → hip alteration → Jacob becomes Israel → dawn → crossing onward. The text fuses **person, place and action** through Jacob/Jabbok/wrestling wordplay.
+> - The next morning Jacob says **Esau’s face is like the face of God**, directly linking the divine/human wrestler scene with the twin-brother encounter.
+> - Jacob/Esau’s whole arc now looks like **one origin → split branches → identity/status exchange → long separation → temporary reconnection → separate again**, which is structurally very close to your world-turn interaction idea.
+> - **Perez/Zerah** is one of the clearest crossover scenes yet: one twin’s hand emerges, is marked, withdraws, then the other twin **breaks through** and becomes first.
+> - Joseph’s story is a repeated **strip → descend → false identity → descend again → reclothe → ascend → new identity** cycle.
+> - Pharaoh’s two dreams are explicitly said by Joseph to be **one dream/event**. That is hugely important methodologically because Genesis itself says two different symbolic presentations can describe one underlying event.
+> - The **7 years plenty + 7 years famine** cycle drives mass movement into Egypt and is logged for the later timing comparison.
+> - Genesis 48 gives perhaps the clearest anthropomorphic crossover image so far: Jacob deliberately **crosses his two arms**, directing the right-hand blessing to younger Ephraim and left-hand blessing to elder Manasseh. So the central human figure literally becomes the crossing mechanism.
+> - Genesis ends with Joseph’s remains in Egypt awaiting a later transfer upward/out during Exodus — a genuine **delayed cargo / unfinished transition** motif.
+> 
+> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
+> 
+> Next is **Section 10 — Jubilees 1–10**, where we can compare Genesis against a second ancient version of the same primeval sequence and see which details sharpen, repeat, or contradict the Vardath geometry.
+
