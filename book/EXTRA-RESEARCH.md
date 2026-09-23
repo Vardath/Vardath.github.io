@@ -14122,3 +14122,13 @@ Priority tests:
 
 > The first inserted book is now fully placed and given a complete first pass. I’m continuing in the **corrected natural order** with **2 Enoch immediately after Genesis 5 and before Genesis 6**. This is the right spot because it expands exactly the moment where canonical Genesis simply says Enoch “walked with God” and was taken.
 
+
+
+### Insert X2 progress A — 2 Enoch is a true gate-cycle text
+
+> 2 Enoch fits extremely naturally after Genesis 5. It takes the single Genesis line “Enoch walked with God… and God took him” and expands it into a **full vertical journey**: first heaven with a vast sea, progressively higher heavens, solar/lunar tracks, eastern and western gates, and then an explicit **under-earth return path** for the sun before it rises again.
+>
+> That gives a clean cycle: **east gate → upper visible passage → west gate → light removed → under-earth return → east approach → light restored → rise again**. This is one of the clearest cyclic above/below gate systems in the seven comparison books.
+
+**Primary text logged:** 2 Enoch 3–16 in the Slavonic tradition; six eastern and six western solar gates, 365¼-day reckoning in the translation tradition, and a 28-year solar circuit.
+
