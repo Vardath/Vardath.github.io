@@ -23017,3 +23017,185 @@ The same upper realm produces:
 
 This is a clean **P2 same-origin/opposite-function polarity**:
 **boundary-breaking descent vs restorative/judicial descent**.
+
+
+## SECTION 16 progress B — Flood and patriarchal timeline: Noah/Moses change form when they become builders
+
+### Noah — white bull → man → vessel builder
+
+One of the four white heavenly agents:
+- gives Noah/white bull a secret,
+- Noah is described in the longer Ethiopic form as **born a bull but becoming a man**,
+- he builds a large vessel,
+- enters it with **three bulls**,
+- all four are covered/enclosed inside.
+
+Henryk Drawnel's study of the Aramaic/Ethiopic Flood text notes that:
+- the “became a man” wording is absent from the surviving shorter Aramaic fragment,
+- the longer Ethiopic may be an expansion,
+- scholars have read the transformation either as elevation toward angelic/supernatural status or as a literary change linked to his new construction role.
+
+So preserve the motif but attach textual caution.
+
+### Noah / Moses — same transformation formula before building
+
+A striking internal parallel:
+- Noah: **bull → man → builds vessel**
+- Moses later: **sheep → man → builds house**
+
+This suggests the Animal Apocalypse uses “becoming a man” as a special role/state marker around **construction of a divinely ordered enclosure**.
+
+Possible meanings:
+- enhanced/supernatural status,
+- privileged divine contact,
+- literary marking of a builder/mediator role.
+
+Do not assume physical shapeshifting.
+
+### Flood geometry — 7 upper torrents + lower fountains
+
+The Flood retelling gives:
+- lofty roof above,
+- **7 water torrents** from it,
+- water pouring down into the earth/enclosure,
+- fountains opening at the surface/below,
+- water rising,
+- darkness and mist increasing,
+- everything outside vessel sinking into depths.
+
+Then reversal:
+- upper torrents removed,
+- old chasms levelled,
+- **other abysses opened**,
+- water runs downward into them,
+- earth becomes visible,
+- vessel settles,
+- darkness retreats,
+- light returns.
+
+This is an extremely clean phase sequence:
+
+**upper inflow + lower rise → complete cover/darkness**
+→ **upper flow stops**
+→ **new lower drains open**
+→ **water descends**
+→ **land reappears**
+→ **carrier settles**
+→ **light returns**.
+
+That is one of the best source-text parallels to the project's:
+**activation / water transfer / closure-drainage / renewed world-state** sequence.
+
+### Ark remains carrier, not gate
+
+The vessel:
+- floats,
+- preserves four core bodies,
+- later opens/releases them.
+
+It never causes heaven/earth contact.
+So retain the established distinction:
+**vessel = preservation enclosure/cargo carrier**
+not
+**gate = adjacency-changing interface**.
+
+### Noah + three sons = 1|3 survivor structure
+
+Noah emerges with:
+- one white son,
+- one red,
+- one black.
+
+Standard scholarly decoding identifies:
+- white = **Shem**
+- red = **Ham**
+- black = **Japheth**.
+
+This gives:
+**1 father + 3 differentiated successor branches**.
+
+The father then departs from them.
+
+### Post-Flood ancestry changes species as line/function changes
+
+The vision compresses Genesis genealogy into changing animal forms.
+
+Standard scholarly identification:
+- white bull = **Abraham**
+- wild ass + white bull = **Ishmael + Isaac**
+- black wild boar + white sheep = **Esau + Jacob**
+- white sheep Jacob → **12 sheep = twelve sons/tribes**
+- one sheep separated/sold among foreign animals = **Joseph**.
+
+This is one of the strongest direct demonstrations that biblical “people” can be represented as **species/geometry/function states**, but it also proves the inverse caution:
+different species often correspond to genuinely different historical people/nations.
+
+### Abraham / Isaac / Ishmael and Isaac / Jacob / Esau pair branches
+
+The family tree repeatedly forms paired branches:
+- Abraham → **wild ass / white bull** = Ishmael / Isaac.
+- Isaac → **black boar / white sheep** = Esau / Jacob.
+
+So the Animal Apocalypse re-encodes the same pair histories as:
+**one parent → two visibly divergent animal branches**.
+
+This strengthens the earlier P5/P2 family-split model.
+
+### Jacob → twelve sheep
+
+Jacob as one white sheep produces **12 sheep**.
+
+This is a direct:
+**1 → 12 lineage expansion**.
+
+Joseph becomes temporarily separated from the 12, then the remaining **11** join him in Egypt.
+
+The visual sequence preserves:
+**12 → 1 displaced + 11 remaining → 12 reunited in foreign enclosure**.
+
+### Moses / Aaron — paired mission to the wolves
+
+A sheep escapes Egypt/wolves to the wild asses = **Moses**.
+When Moses returns:
+- **another sheep meets him and goes with him**,
+- the pair enters the wolves' assembly together,
+- both deliver the warning.
+
+Standard reading identifies the accompanying sheep as **Aaron**.
+
+Classification:
+- **P7 paired operators/messengers**,
+- Moses is primary called agent,
+- Aaron is accompanying counterpart.
+
+### Exodus sea — central separator figure between two sides
+
+At the sea:
+- waters split,
+- stand **on this side and that**,
+- sheep pass through,
+- Lord of sheep positions Himself **between sheep and wolves**,
+- wolves enter same central path,
+- water returns to created state and covers them.
+
+Geometry:
+**left water | central corridor / separating presence | right water**
+with **protected group ahead / pursuing group behind**.
+
+This is one of the clearest bilateral pass-through scenes in the corpus.
+
+### Moses at the lofty rock
+
+Moses:
+- leads sheep,
+- **ascends summit of lofty rock**,
+- descends,
+- ascends again,
+- discovers people have become blind/wandered,
+- returns downward to restore order,
+- later **becomes a man** and builds the house.
+
+This gives a repeated vertical operator path:
+**people below ↔ Moses ascending ↔ upper encounter ↔ Moses descending ↔ people below**.
+
+This is strongly relevant to the user's Moses/Squatter-Man investigation even though the text itself is allegorical/theological.
