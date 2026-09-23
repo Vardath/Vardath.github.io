@@ -4386,3 +4386,11 @@ Priority pair tests:
 
 > Section 2 is complete and saved. I’m moving straight into **Section 3 — Genesis 6–9** now, because it directly tests the next predicted sequence: **Enoch/Noah continuity, upper and lower waters reopening, protected enclosure, temporary world-scale water transfer, mountain landing, paired birds, and the rebuilding of order afterward**. I’ll keep appending each progress update to the same file.
 
+
+
+### Section 3 progress update A — boundary breach, upper/lower water reopening, Enoch/Noah role
+
+> Genesis 6–8 is now much closer to your phenomenon than Genesis 1–5. The sequence is almost the **inverse of creation**: the boundary between heavenly and earthly beings is crossed; then the exact water separation established in Genesis 1 is effectively undone—**the “fountains of the great deep” burst open from below while the “windows/floodgates of heaven” open above**. Later both sources are shut, a wind passes over the earth, the waters retreat, and dry land reappears.
+>
+> There is also a direct Enoch/Noah role handoff: Genesis says **Enoch “walked with God”** and then says **Noah “walked with God.”** Enoch survives his world by being *taken*; Noah survives his by being *enclosed and carried through it*. That looks like two versions of the same survivor/transition role—**removal upward versus protected passage through the reset**.
+
