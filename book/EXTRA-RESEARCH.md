@@ -21758,3 +21758,162 @@ Priority:
 - hidden/revealed figure,
 - ascent/transformation,
 - all counts and time markers.
+
+
+## SECTION 14 progress A — 1 Enoch 37–53: title-pairing, four-sided throne geometry, hidden/revealed figure and state transformation
+
+### Three Parables / one continuing visionary sequence
+
+Chapter 37 explicitly says Enoch receives **three Parables**. Keep that as the major compositional number for this block:
+- First Parable: roughly 38–44.
+- Second: 45–57.
+- Third: 58–69, followed by Enoch's translation/epilogue in 70–71.
+
+This is not yet a cosmological three-world claim. It is the literary architecture of the text.
+
+### Righteous One / Elect One / Son of Man / Anointed One — likely overlapping title cluster, not four separate people
+
+Across chapters 38–52 the same judicial/heavenly role is described under several labels:
+- **Righteous One**
+- **Elect/Chosen One**
+- **Son of Man**
+- **Anointed One**
+
+The functions overlap strongly:
+- righteousness dwells with him,
+- he is chosen by the Lord of Spirits,
+- hidden/preserved before the world's creation,
+- revealed at the appointed time,
+- judges kings/mighty,
+- sits on a throne of glory,
+- supports the righteous,
+- possesses/reveals hidden wisdom.
+
+James VanderKam's dedicated study treats these terms as a central identity problem in the Parables, and modern scholarship generally sees substantial overlap even while debating whether every title is strictly identical in every layer of the composition.
+
+For our pair framework:
+- do **not** count these titles automatically as four people.
+- provisional classification: **P3 multiple names/states/functions of one principal heavenly figure**, pending the Enoch identity problem in chs. 70–71.
+
+This parallels the rule already learned from Pharaoh's “two dreams are one” and 3 Enoch's many names: **multiple narrative labels need not mean multiple underlying entities**.
+
+### Head of Days / Son of Man — explicitly two figures in one scene
+
+Chapter 46 is much clearer:
+- one figure = **Head of Days**, white-haired.
+- **another being** appears with him, humanlike and gracious.
+- Enoch asks who this Son of Man is and why he accompanies the Head of Days.
+
+This is a genuine pair scene, not merely two titles for one figure at this point.
+
+Classification:
+- **P2 authority / representative pair**
+- possibly **source / operator**:
+  - Head of Days = ultimate enthroned authority,
+  - Son of Man/Elect One = chosen visible judicial agent.
+
+Do not merge them.
+
+### Four-sided throne field
+
+Chapter 40:
+- innumerable host around the Lord of Spirits,
+- **four presences on the four sides**,
+- each has a distinct voice/function:
+  1. Michael — blessing/mercy,
+  2. Raphael — healing/wounds,
+  3. Gabriel — powers,
+  4. Phanuel — repentance/hope.
+  
+This gives:
+**central enthroned source → four differentiated surrounding functions**.
+
+This is strong geometric data because the fourfold is explicitly spatial, not numerological inference.
+
+### Enoch's face changes at the boundary
+
+After looking upon the heavenly dwelling, Enoch says his **face was changed** because he could no longer behold.
+
+This is another layer-boundary/state-change marker. It does not yet say his whole identity changes, but visibility/appearance is affected by contact with the upper realm.
+
+### Sun / moon — opposite paired circuits held by oath
+
+Chapter 41 describes:
+- sun and moon with distinct chambers,
+- departure and return,
+- one superior to the other,
+- **one positioned opposite the other**,
+- both keeping faith with one another according to an oath.
+
+Classify as:
+- **P2 cosmic polarity pair**
+- two separate ordered circuits in coordinated opposition.
+
+This is directly useful to the project because the text itself describes a pair whose stability depends on both **opposition and covenant/order**.
+
+### Wisdom / Unrighteousness — inverse descent pair
+
+Chapter 42 personifies two abstractions:
+- **Wisdom** leaves heaven seeking a human dwelling, finds none, and **returns upward** to sit among angels.
+- **Unrighteousness** leaves its chambers and successfully settles among humans.
+
+This is a mirrored movement:
+**upper → lower → failed reception → return**
+versus
+**hidden chamber → lower world → successful occupation**.
+
+Treat as a literary polarity/personification, not literal human pair.
+
+### Stars → lightning: one entity, changed visible form
+
+Chapter 44 says some stars **arise and become lightnings and cannot part with their new form**.
+
+That is high-value for the state model:
+**underlying celestial entity → transformation → new manifestation becomes persistent**.
+
+It is a direct textual example of one thing becoming a radically different visible form without becoming a second independent actor.
+
+### New heaven / new earth as transformation, not annihilation language
+
+Chapter 45 says:
+- heaven will be **transformed** into eternal blessing/light,
+- earth will be **transformed** into blessing,
+- elect dwell there.
+
+For Vardath comparison this fits successor-state language better than simple erasure/replacement:
+**existing heaven/earth → transformed state → new stable habitation**.
+
+The text remains theological/esophageal, not a mechanical description of disc-world resetting.
+
+### Fountain / staff / hidden figure
+
+Chapter 48:
+- inexhaustible **fountain of righteousness** surrounded by fountains of wisdom,
+- thirsty drink and gain wisdom,
+- Son of Man is a **staff** on which righteous lean and do not fall,
+- his name exists before sun/stars,
+- he is **chosen and hidden** before creation, then later revealed.
+
+This bundles:
+**fountain + support/rod + hidden/revealed operator**.
+
+Do not make the staff a literal Vardath rod; the text uses functional support imagery. But record the convergence.
+
+### Mountains become fluid
+
+Chapters 51–53:
+- mountains leap,
+- metal mountains become **like wax before fire**,
+- and like **water streaming down from above**,
+- hills become as a **fountain of water**.
+
+The physical imagery is:
+**solid high structure → heat/judgment → softened/liquefied/flowing state**.
+
+This resembles the project’s recurring solid→fluid transition motif, though no plasma/lattice mechanism is given.
+
+### Number register, first half
+- **3 Parables**.
+- **4 presences / four sides** around central authority.
+- host: **thousands of thousands / 10,000 × 10,000**.
+- metal mountains explicitly listed in ch. 52: iron, copper, silver, gold, soft metal, lead = **6 named metal mountains** in Charles' text, despite some traditional headings calling the passage “seven metal mountains.” Do not silently turn the six-item list into seven.
