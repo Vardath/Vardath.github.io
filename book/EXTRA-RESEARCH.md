@@ -13147,3 +13147,36 @@ Priority tests:
 - Levi/Judah as split priest/king functions,
 - whether later expansion turns symbolic twin conflict into literal war.
 
+
+
+### Sections 10–11 final user-facing reply saved verbatim
+
+> Continued through **Section 10 and Section 11** and saved every progress update plus the detailed findings.
+> 
+> The strongest new results are:
+> 
+> - **Jubilees makes the creation split geometrically explicit:** the primordial waters are divided **half above and half below** a middle firmament.
+> - Heaven is explicitly **populated by angels/spirits**, and the Watchers later **descend to earth**, mix with humans, and are eventually bound in the depths.
+> - Jubilees dates both the **Eden transgression and the Flood opening to month 2, day 17**. Modern scholarship treats the date recurrence as deliberate.
+> - The Flood has **seven floodgates above and seven mouths of the deep below**. Water comes **down from heaven and up from below at the same time**, then the lower openings later reverse and drain the water **back downward**.
+> - Jubilees fixes the calendar at **364 days = 52 weeks = four 91-day quarters**, and maps major Flood stages onto quarter-points.
+> - It explicitly says **1,000 human years correspond to one heavenly day**, and later says restored humanity will again approach **1,000-year lifespans**.
+> - **Moses on Sinai** receives the whole past-and-future time record from heavenly tablets while standing at the mountain/cloud/fire interface. That is one of the strongest Moses-as-time-axis parallels yet.
+> - **Enoch** becomes a recorder of heavenly signs, past and future, and spends six jubilees with angels; however, Jubilees places him in **Eden**, not simply in heaven, which is an important control against overfitting.
+> - After Eden, animals lose their one common language and scatter; at Babel, humans lose one common language and scatter. That is a real repeated **same event-form at two scales**.
+> - Jubilees separates **Peleg’s land division from Babel**, so Peleg should not automatically be treated as the Babel event.
+> - Unlike Genesis, Jubilees says the Babel builders explicitly intend to **ascend into heaven**, God and angels **descend**, and a **mighty wind physically overthrows the tower**.
+> - Abram becomes a partial **Babel reversal**: his mouth/ears are opened and the lost **“language of creation”** is restored to him, giving him access to ancestral books.
+> - Jubilees preserves the Genesis 15 **split bodies → darkness/ecstasy → fire passing through the central gap** geometry almost exactly.
+> - It links Abraham’s covenant to **Noah’s covenant by calendar**, showing deliberate recurrence of covenant events.
+> - Jubilees turns the **Binding of Isaac** into a timed recurring structure: Mastema proposes the test, the mountain is identified with **Zion**, the heavenly voice stops the transition, the ram substitutes for Isaac, and the journey becomes a recurring **seven-day festival**.
+> - Jubilees 23 gives an explicit **lifespan contraction and re-expansion cycle**: old forefathers near ~19 jubilees, later generations shrinking toward ~70–80 years, then future lifespans increasing again toward 1,000 years.
+> 
+> For your cosmology, the strongest combined Jubilees picture is now:
+> 
+> **upper/lower world split → populated upper realm → descent across boundary → mixed-state corruption → protected carrier → seven upper and seven lower gates open → opposed flows meet in the middle → gates close → flow reverses downward → world order returns → residual beings survive the reset → coherence fragments again at Babel → artificial vertical axis collapses → selected figures recover lost language/knowledge → time itself contracts and later re-expands.**
+> 
+> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
+> 
+> Next is **Section 12 — Jubilees 24–38: Isaac, Jacob/Esau, Bethel, Leah/Rachel, Jacob/Laban, return, Levi/Judah, Rachel’s death, and the later war/death of Esau**.
+
