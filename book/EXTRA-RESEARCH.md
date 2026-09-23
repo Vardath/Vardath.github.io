@@ -29477,3 +29477,26 @@ Current integrated cycle retained for later section-by-section comparison:
 quiet separation → persistent current → activation → nodes wake → convergence → mesh/fingertrap narrowing → ladder/rod/throat → changed adjacency among populated past-relative/present/future-relative worlds → atmospheric/pressure/water/land/heat/living transfer → enclosure/carrier survival → possible time/world-state displacement → pulse passes → throat widens → separation returns → cooling/water settling/sediment burial → life and cultural memory spread → new-beginning quiet period.
 
 Bible research remains paused until comparative chapters and live site read-up are complete.
+
+
+### Read-up progress — COMPLETE COSMOLOGY BOOK READ
+
+The canonical cosmology manuscript has now been read directly through **Preface + Introduction + Chapters 1–88**.
+
+Final comparative rules carried into the 88-book Bible project:
+- **Sequence is stronger than isolated symbol.**
+- Gate = temporary state of relationship / changed adjacency; it is not automatically the mountain, tree, ark, person, bridge or route.
+- World tree/lattice = persistent architecture; active throat/gate = temporary phase within it.
+- Route, vehicle, carrier, guide, guardian, operator, witness and destination are separate roles unless the source itself combines them.
+- A pair may encode opposed directions, bilateral structure, different phases, complementary jobs, predecessor/successor states, or two visible manifestations of one deeper process. Record what the pair **does to the geometry/system** before deciding what the pair represents.
+- Relation, coupling and physical transit are not identical. A connector can transmit force/information without being a traversable road.
+- Boundary modes include stable selective coupling, local opening, catastrophic over-opening, information-only transfer, cargo filtering, enclosure/protection and resealing.
+- A successful crossing requires enough connection for transfer and enough separation to preserve identity.
+- Place + phase is a recurring gate-address pattern.
+- Broad → narrow → broad is the recurrent throat topology.
+- Entry and exit routes can be asymmetric.
+- Reset is forward/new-beginning, not rewind or replacement of populated worlds.
+- Local gates, regional transfers and world-scale resets must not be conflated.
+- All world-turns remain populated and are present to their own inhabitants; above/below are future-relative/past-relative relationships to the chosen present.
+
+**Book read-up is complete.** Bible research remains paused until the rendered cosmology-page fragments and the full EXTRA-RESEARCH working record have also been reconciled.
