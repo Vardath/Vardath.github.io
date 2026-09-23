@@ -11219,3 +11219,15 @@ Priority pair tests:
 
 **Primary text logged:** Jubilees 4:17–26, 4:30; 5:24–31. Enoch’s role includes calendrical writing, visions of past/future, angelic instruction, and transfer to Eden. Adam’s 930 years are interpreted against a 1,000-year heavenly “day.”
 
+
+
+### Section 10 progress update D — repeated language fragmentation and Moses as time-axis receiver
+
+> Two more connections are now strong enough to keep.
+>
+> First, **Jubilees repeats the language-fragmentation event twice at different scales**. After Eden, it says the animals had previously spoken “one lip and one tongue”; their speech is closed and all flesh scatters. At Babel, humanity again begins as one people with one language, then speech is confused and people scatter. That is a genuine **same event-form repeated in animal and human stories**.
+>
+> Second, the whole book is framed around **Moses on Sinai receiving the complete record of past and future from heavenly chronological tablets**—from creation through future renewal/new creation. In your model, that makes Moses at the mountain interface not merely a lawgiver but a **human axis figure positioned where the whole time-order is disclosed**.
+
+**Primary text logged:** Jubilees 1:1–28; 3:28–29; 10:18–26.
+
