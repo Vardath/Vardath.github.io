@@ -11181,3 +11181,11 @@ Priority pair tests:
 > 
 > Next is **Section 10 — Jubilees 1–10**, where we can compare Genesis against a second ancient version of the same primeval sequence and see which details sharpen, repeat, or contradict the Vardath geometry.
 
+
+
+---
+
+## 367. LIVE PROGRESS LOG — Section 10 begins (Jubilees 1–10)
+
+> Continuing with **Section 10 — Jubilees 1–10**. Here I’m treating Jubilees as a second ancient telling of the same primeval sequence and checking whether it **strengthens, changes, or breaks** the Genesis pattern: creation layers, Adam/Eve, Cain/Abel/Seth, Enoch, Watchers, giants, Noah, Flood, spirits, and post-Flood division. I’ll keep appending each progress reply to `book/EXTRA-RESEARCH.md`.
+
