@@ -729,3 +729,786 @@ This investigation is a structural comparison inside Vardath Cosmology. It does 
 > Does the biblical corpus repeatedly preserve a constrained combination of enclosure, serpent/rod transformation, vertical axis, upper/lower exchange, temporary gates, water transfer, world deformation and reopening more often and more coherently than expected from broad religious imagery?
 
 That is testable in stages.
+
+
+---
+
+## 14. Canon correction and the 88-text research corpus
+
+Follow-up research established an important counting correction.
+
+The Ethiopian Orthodox Tewahedo Church itself gives the standard figure as **81 canonical books: 46 Old Testament + 35 New Testament**. Academic work also distinguishes narrower and broader Ethiopian canon enumerations, which can arrive at the traditional number differently. Modern claims of an “88-book Ethiopian Bible” do **not** identify one universally fixed historic 88-book Ethiopian canon.
+
+Therefore the Bible/lattice project should not silently relabel seven outside texts as Ethiopian scripture.
+
+For the present structural experiment, use:
+
+- **81 Ethiopian Orthodox canonical books**, preserving the Church’s own canonical identity;
+- plus **7 explicitly labelled comparison apocrypha/pseudepigrapha** where useful;
+- total research corpus: **88 textual units for comparison**, not “the official 88-book Ethiopian Bible.”
+
+Useful canon sources consulted:
+- Ethiopian Orthodox Tewahedo Church canonical list: https://www.ethiopianorthodox.org/english/canonical/books.html
+- G. A. Mikre-Sellassie, *The Bible and its Canon in the Ethiopian Orthodox Church* (1993): https://translation.bible/wp-content/uploads/2024/06/mikre-sellassie-1993-the-bible-and-its-canon-in-the-ethiopian-orthodox-church.pdf
+- supplementary English-canon research hub: https://ethiopiancanon.com/
+
+The Church’s list explicitly includes Jubilees, Enoch, Ethiopian Meqabyan material, Tegsats/Reproof, Ezra-related material, Josippon/Josephas son of Bengorion, and the eight New Testament Church Order works (Sirate Tsion, Tizaz/Te’ezaz, Gitsew, Abtilis, two Books of Dominos/Covenant, Ethiopic Clement and Didascalia).
+
+---
+
+## 15. Major new synthesis: the Squatter-Man may be the transitional lattice itself
+
+The user asked whether biblical “people” may sometimes represent the Squatter-Man lattice/rod and its movement rather than always being ordinary human figures in a one-to-one physical reading.
+
+After comparing the earlier 66-book scan with Ethiopian and wider apocryphal material, the strongest working interpretation is now:
+
+> The recurring anthropomorphic figure may sometimes be the narrative silhouette of the lattice **during its concentrated transitional state**.
+
+Do **not** generalize this to every biblical person. The useful category is a narrower **axis-person / transition-person role** whose scene repeatedly contains constrained geometry:
+- central vertical body,
+- bilateral arms/supports,
+- heaven above,
+- earth/sea/deep below,
+- ascent/descent,
+- gate/opening,
+- mountain or pillar,
+- serpent/rod relation,
+- water displacement,
+- abnormal light/fire/cloud,
+- catastrophe,
+- closure/reopening.
+
+### Composite mechanical picture
+
+The current visual reconstruction is:
+
+1. **Normal spread state**
+   - The sky/dragon lattice is broad, woven and comparatively distributed.
+   - Oppositely oriented strands cross through the larger structure.
+   - In this state it need not look anthropomorphic.
+
+2. **Convergence**
+   - The weave draws inward toward one or more central throats.
+   - A broad mesh becomes a braid/finger-trap/scroll-like concentration.
+   - Side-on, the same geometry can appear as serpent, tree, mountain, ladder, pillar or staff.
+
+3. **Serpent → rod transition**
+   - A flexible woven/braided form under tension straightens into an axial form.
+   - This makes Moses’ staff ↔ serpent transformation structurally important because both states occur in one explicit reversible motif.
+
+4. **Anthropomorphic projection**
+   - The central throat is the torso/axis.
+   - Two lateral diverging branches read as arms.
+   - Lower bifurcating supports read as legs.
+   - A knot/crossover can read as waist/chest/head.
+   - The result, viewed side-on, is the **Squatter-Man silhouette**.
+   - The working proposal is not necessarily “a giant biological man existed,” but “the transition geometry can be narrated/drawn as a man.”
+
+5. **Opposed motion / pass-over-pass-under**
+   - One branch/strand moves one direction while another passes the opposite way.
+   - At a weave crossing, the same motion has both an over-side and an under-side.
+   - From our inhabited layer below, a strand that is actually passing under another upper strand can still appear to us as something **passing over**.
+   - This remains the working spatial form of the Passover/pass-under hypothesis, independent of the Hebrew etymology of *pāsaḥ*.
+
+6. **Gate phase**
+   - Ordinary adjacency changes.
+   - Upper and lower regions become temporarily connected.
+   - Biblical/apocalyptic language often describes heaven opening, a lower deep/abyss opening, a mountain splitting, doors/gates opening, or a temporary corridor forming.
+
+7. **Material transfer**
+   - Water is one of the strongest recurring physical markers.
+   - Upper water can descend while lower water rises.
+   - Elsewhere water is forced aside to make a dry corridor.
+   - Living “cargo” survives inside protected enclosures or passages: ark, basket, house, chamber, tent, marked dwelling, temporary dry path.
+
+8. **Abnormal environmental state**
+   - darkness and extraordinary light,
+   - fire/plasma-like imagery,
+   - cloud/smoke,
+   - thunder/lightning,
+   - earthquake/shaking,
+   - mountain/land displacement,
+   - abnormal celestial appearance,
+   - sometimes abnormal relative time.
+
+9. **Release / closure**
+   - Water withdraws or drains.
+   - Gates close or are sealed.
+   - Dragon/serpent forces are bound.
+   - The concentrated rod/axis ceases to dominate.
+   - The structure can expand/re-establish into a new “house,” “world,” or stable support geometry.
+
+This gives a full working cycle:
+
+**spread lattice → convergence → serpent/braid → rod/axis → anthropomorphic Squatter-Man projection → upper/lower crossover → temporary gate → water/material/cargo transfer → catastrophe/abnormal sky → closure/drainage → reopening/stabilisation of a new world-state.**
+
+---
+
+## 16. High-value axis-person scenes
+
+These scenes are now especially important because they contain **geometry**, not merely generic religious vocabulary.
+
+### Jacob — Genesis 28
+
+Sequence:
+- a vertical connector is set on earth and reaches heaven,
+- traffic moves both upward and downward,
+- Jacob identifies the place as a gate of heaven,
+- the stone at the place is stood upright as a pillar.
+
+Structural reduction:
+
+**vertical connector → opposed traffic → gate → standing stone/pillar.**
+
+Working Vardath implication:
+- ladder/connector and pillar may be different views/states of the same axis geometry.
+
+### Moses — strongest recursive axis-person
+
+Moses repeatedly occupies linked states:
+- infant inside *tebah* enclosure on water,
+- staff ↔ serpent,
+- hand/staff extended toward sky,
+- hand/staff extended over water,
+- sea opens/closes,
+- mountain ascent while upper presence descends,
+- hilltop central figure with arms extended laterally,
+- serpent mounted on pole,
+- rod + rock/mountain → water release.
+
+The Moses sequence is therefore now treated as:
+
+**inside carrier/enclosure → associated with serpent/rod state → operates axial state → becomes/occupies Squatter-Man-like geometry → enters mountain interface between upper and lower.**
+
+### Moses at Rephidim / Amalek
+
+Important stripped geometry:
+- elevated hill,
+- central seated figure,
+- stone beneath,
+- arms held to both sides,
+- two supporting figures,
+- staff association,
+- conditions/events below vary with state of elevated central figure.
+
+This remains one of the closest biblical anthropomorphic projections to a branched axial Squatter-Man.
+
+### Samson — Judges 16
+
+Samson stands centrally between two principal structural pillars:
+- one hand/arm to one side,
+- the other hand/arm to the other,
+- the upper structure is loaded through the supports,
+- collapse follows.
+
+Stripped geometry:
+
+**support ← arm — central man — arm → support**
+
+with the upper structure above.
+
+This is a useful destructive/inverted Squatter-Man candidate, but ordinary narrative context must remain alongside the comparison.
+
+### Daniel 12
+
+A “man clothed in linen” is positioned **above the waters** and raises **both right and left hands toward heaven** while announcing a timed completion interval (“time, times and half a time”).
+
+Stripped side-view:
+
+**heaven**
+**↑ hand — head/body — hand ↑**
+**water below**
+
+This is an unusually clean axis-person image because:
+- the figure spans water-to-heaven,
+- both arms participate,
+- the scene is explicitly associated with timing/completion.
+
+### Ezekiel 8
+
+Ezekiel describes a humanlike figure whose upper and lower portions are different energetic appearances:
+- below the waist: fire-like,
+- above: brightness/glowing appearance,
+- hand/extension,
+- Ezekiel lifted between earth and heaven,
+- brought to a gate.
+
+Working geometry:
+
+**one anthropomorphic axis divided at its midpoint into two regimes → extension/hand → vertical transfer → gate.**
+
+Do not over-identify Ezekiel’s wheels with the lattice, but the shared motion of intersecting/multi-directional structures remains relevant.
+
+### Zechariah 14 — one of the strongest mechanical-looking sequences
+
+Sequence:
+- central figure’s feet stand on a mountain,
+- mountain splits through its middle,
+- one half moves one way and the other half the opposite way,
+- a large passage/corridor appears,
+- normal light/day conditions become abnormal,
+- living waters emerge,
+- waters divide into opposing flows.
+
+Structural reduction:
+
+**central standing figure → contact through feet/base → supporting mass splits → halves move oppositely → corridor opens → light regime changes → water divides into opposed directions.**
+
+This is one of the strongest passages for the proposed opening phase because the interest is in the **sequence of motions**, not just a shared word like “mountain.”
+
+### Revelation 10 — full cosmological Squatter-Man candidate
+
+The giant/mighty figure:
+- descends from heaven,
+- is wrapped/clothed with cloud,
+- face/light associated with sun,
+- legs/feet like pillars of fire,
+- one foot on sea,
+- one foot on land,
+- hand raised toward heaven,
+- thunder accompanies the scene.
+
+Structural reduction:
+
+**HEAVEN**
+**raised hand / upper connection**
+**central luminous/cloud body**
+**pillar leg → SEA**
+**pillar leg → LAND**
+
+This is one of the clearest anthropomorphic three-domain connectors in the corpus:
+**heaven + sea + land united by one giant vertical figure.**
+
+Daniel 12 and Revelation 10 should be directly compared as related axis-person postures.
+
+---
+
+## 17. 1 Enoch — major new evidence for folding/rebuilding and upper/lower water
+
+Reliable public-domain English source consulted:
+- Project Gutenberg R. H. Charles material: https://www.gutenberg.org/files/77935/77935-h/77935-h.htm
+- Wikisource Charles translation where available.
+
+### Upper and lower waters
+
+Enochic flood/catastrophe material explicitly combines:
+- waters above/heavenly sources,
+- waters beneath/from the earth,
+- opening/release associated with destruction.
+
+This is more useful to the Vardath model than a simple “rain causes flood” image because it preserves **two directions of water source**.
+
+Working comparison:
+
+**upper water system opens ↓**
+**lower water/deep opens ↑**
+**the two participate in one catastrophic interval.**
+
+### Folding of the old house and supports
+
+The Animal Apocalypse/house imagery in 1 Enoch 90 includes an especially interesting sequence:
+- an old house/structure is removed,
+- its pillars/beams/ornamentation are included in the folding/removal,
+- a new, larger/higher house is established,
+- new supports/pillars belong to the replacement state.
+
+This is not proof of a physical lattice: the immediate literary setting is symbolic/apocalyptic.
+However, structurally it fits the Vardath sequence unusually well:
+
+**old support geometry → supports folded with structure → old form removed → new larger structure established → new supports → inhabitants enter/remain.**
+
+This should be retained as a high-value “fold/rebuild” comparison rather than a generic heaven motif.
+
+### Enoch’s cosmic gate system
+
+1 Enoch also contains:
+- celestial gates,
+- mountains,
+- luminary paths,
+- cosmic directional geography,
+- ascent/vision through different regions,
+- a 364-day calendrical scheme in the Astronomical Book.
+
+These are especially relevant to the future timing/cycle investigation.
+
+---
+
+## 18. Jubilees — flood mechanics and timed world structure
+
+Public-domain English translation source used in research:
+- R. H. Charles translation (various scans/editions; complete Ethiopic-derived English text).
+
+### Flood mechanics
+
+Jubilees makes the Genesis flood mechanism unusually explicit:
+- **seven floodgates of heaven** open,
+- **seven mouths of the great deep** open,
+- water comes from above and below,
+- the enclosure/ark remains the protected living-cargo state,
+- later the upper/lower sources close,
+- drainage through the deep is described,
+- land re-emerges,
+- protected cargo exits.
+
+Working mechanical sequence:
+
+**upper gates open + lower mouths open**
+→ **opposed water contributions**
+→ **living cargo remains enclosed**
+→ **source gates close**
+→ **lower drainage/release**
+→ **water retreats**
+→ **land/world reappears**
+→ **enclosure opens.**
+
+This is one of the cleanest parallels to the Vardath gate cycle.
+
+### Calendar/timing
+
+Jubilees organizes history into Jubilee structures and strongly emphasizes calendrical order.
+This makes it central to the later cycle comparison:
+- jubilees of 49 years,
+- calendrical ordering,
+- 364-day year tradition,
+- dated primeval events.
+
+Do not compare these numerically with Archaix until the full interval table is constructed.
+
+---
+
+## 19. 4 Baruch / Paralipomena of Jeremiah — gate + basket + mountain route + relative-time anomaly
+
+English source consulted:
+- University of Pennsylvania / R. A. Kraft pseudepigrapha text: https://ccat.sas.upenn.edu/rak/publics/pseudepig/ParJer-Eng.html
+
+This text produced one of the strongest unexpected parallels.
+
+### Gate control
+
+The story explicitly frames Jerusalem’s fall around a gate that cannot be entered until God opens it.
+Angelic action and the opening of the gate mark transition into the destructive phase.
+
+### Basket + mountain route
+
+Abimelech is sent away:
+- carrying a **basket**,
+- travelling by a **mountain route**,
+- during the interval in which the city/world-state changes.
+
+### Relative-time preservation
+
+Abimelech sleeps believing only a short interval has passed.
+Outside his experience, roughly **66 years** pass.
+The basket’s figs remain fresh/preserved, and seasonal discrepancy helps reveal that the external world has advanced far beyond his subjective interval.
+
+Structural comparison:
+
+**gate changes state**
++ **mountain route**
++ **basket/protected cargo**
++ **short subjective interval**
++ **long external interval**
++ **preserved contents**
++ **return to transformed world.**
+
+This should be marked as a very high-value motif for the Vardath relative-time hypothesis.
+
+Important control:
+- in the literary context this is divine/supernatural preservation, not an ancient scientific statement about relativistic physics.
+- its value is structural: it independently combines gate transition, mountain travel, carrier/basket, preservation and time discontinuity.
+
+---
+
+## 20. Ascension of Isaiah — key to “person = moving layer-transition form”
+
+Primary/critical sources surfaced:
+- R. H. Charles, *The Ascension of Isaiah* (1900), Internet Archive: https://archive.org/details/cu31924014590529
+- public English text: https://www.earlychristianwritings.com/text/ascension.html
+- later scholarly Ethiopic work confirms the layered ascent/descent framework.
+
+This text significantly strengthens the user’s personification hypothesis.
+
+### Isaiah’s ascent
+
+Isaiah moves upward through successive heavens:
+- distinct layers,
+- increasingly different/glorious states,
+- gates/permissions,
+- transformation/changed appearance in relation to heavenly levels.
+
+### The descending figure
+
+The central descending figure is instructed to:
+- descend through successive heavens,
+- pass through firmament toward lower regions,
+- assume the likeness/form of beings belonging to different levels while descending,
+- pass gatekeeping/recognition boundaries,
+- later ascend back through the layers,
+- on ascent, no longer conceal itself in the same way.
+
+This gives a striking structural principle:
+
+> A narrative “person” can represent a **mobile state that traverses layered worlds and changes visible form at each interface**.
+
+That is extremely important for the Vardath reading.
+
+It suggests the person is not necessarily merely a traveller separate from the mechanism.
+In mythic/apocalyptic narration, the person **can be the visible form of the traversing state itself**.
+
+This should become one of the main interpretive keys for testing Moses, Daniel, Ezekiel, Revelation figures and other axis-person candidates.
+
+---
+
+## 21. 2 Enoch — directional gate cycles and under-earth return
+
+Public English text consulted:
+- Wikisource 2 Enoch / Book of the Secrets of Enoch
+- Scrollmapper text archive as a cross-reference.
+
+Important features:
+- ascent through multiple heavens,
+- a great sea associated with the first heaven,
+- successive layered heavens,
+- eastern and western solar gates,
+- the sun passes through eastern/western gates,
+- light/sun is described as travelling **under the earth** during part of the cycle,
+- returns toward the eastern approach,
+- gate system is explicitly tied to calendrical/time calculation,
+- 365¼-day solar reckoning appears in this translation tradition,
+- larger astronomical cycles are also named,
+- multiple heavens/circles are spatially measured.
+
+Stripped directional sequence:
+
+**upper/visible east-to-west passage**
+→ **western gate**
+→ **under-earth passage**
+→ **eastern return**
+→ **upper/visible passage again.**
+
+This is useful for the Vardath model because it explicitly joins:
+- directional gates,
+- above/below path,
+- cyclic return,
+- timing/calendrical calculation.
+
+Do not assume 2 Enoch is Ethiopian canon; it belongs in the seven-text comparison corpus unless independently justified otherwise.
+
+---
+
+## 22. Apocalypse/Life of Adam and Eve — carrier bodies, ascent/descent and sealed boundary motifs
+
+The Greek *Apocalypse of Moses* / Life of Adam and Eve tradition includes:
+- Paradise as a bounded/gated region,
+- angels ascending away from Paradise,
+- serpent/devil using altered visible form,
+- Adam being physically carried by angelic agency,
+- washing in a special water/lake,
+- Adam being lifted to Paradise/the third heaven,
+- bodies transferred/prepared and placed,
+- tomb/boundary sealed for a set interval,
+- eventual promised reopening/resurrection.
+
+This material is not as clean a lattice-mechanics match as Zechariah/Jubilees/Enoch, but it strengthens the wider pattern of:
+**boundary → altered form → upward/downward transport → protected body/cargo → sealing → later reopening.**
+
+---
+
+## 23. Testaments of the Twelve Patriarchs — Levi axis/heaven scene
+
+The Testament of Levi contains a useful cluster:
+- Levi on a high mountain,
+- heavens open,
+- ascent through layered heavens,
+- a great sea seen in an upper region,
+- heavenly gates opened,
+- return/descent to earth,
+- staff/branch imagery,
+- later heaven-opening and paradise-gate motifs.
+
+This is a potentially important secondary axis-person case:
+
+**mountain → opened heavens → vertical ascent through layers → upper sea → gate → return → staff/branch role.**
+
+Because this work is composite and textually complex, do not give it the same evidential weight as an early independent witness without discussing dating/transmission.
+
+---
+
+## 24. Current best visual reconstruction
+
+When the user says “I can see the picture in my mind,” the present research synthesis produces the following image:
+
+Imagine the world/lattice **side-on**.
+
+### Stable phase
+The weave is spread broadly across/above the inhabited world.
+Its crossing strands are too distributed to read as a single object.
+
+### Tension/convergence
+Oppositely oriented strands begin sliding relative to one another.
+The broad weave cinches toward a central throat.
+From the side this narrowing looks like a braid or serpent.
+
+### Rod phase
+Under tension the braid straightens.
+The serpent becomes an axial rod/pillar/tree/mountain-like form.
+
+### Squatter-Man phase
+The concentrated crossover thickens.
+Two branches bow/spread outward as lateral “arms.”
+Lower supports separate like “legs.”
+The projection now resembles a giant man/squatting or standing axial figure.
+
+The current hypothesis is:
+
+> The “man” may be the silhouette of the gate/lattice in one particular transitional configuration.
+
+### Upper/lower crossing
+One branch passes one direction while another passes the opposite direction.
+At the weave itself there is an over/under relation.
+From the world below, the crossing is experienced as passing **over**, even if the same strand is passing **under** another upper strand.
+
+### Gate opening
+The throat/axis changes adjacency between inhabited world-turns.
+Future/above and past/below can temporarily interact with each world’s present.
+Mountains/land/support structures can appear to split or move apart.
+The sky can appear opened, folded or rolled.
+
+### Water reaction
+Water responds strongly:
+- upper water can fall,
+- lower water can rise,
+- water can divide around a temporary dry corridor,
+- later lower outlets/deeps can drain the excess.
+
+### Protected pockets / cargo
+During the transition some living cargo survives in locally stable enclosures:
+- ark,
+- basket,
+- house,
+- chamber,
+- marked dwelling,
+- corridor,
+- tent/tabernacle-like protected boundary.
+
+The carrier/enclosure is **not necessarily the rod itself**.
+A cleaner working distinction is:
+
+**rod/gate = changing transport/adjacency geometry**
+**ark/basket/house = protected cargo/local stability state.**
+
+### Relative time
+If different parts of the temporarily connected worlds remain in different temporal relations, a protected region or traveller can experience a short interval while another world/region experiences a long interval.
+4 Baruch’s Abimelech story provides a striking mythic analogue of this structure.
+
+### Maximum deformation
+The sky/support structure can be represented as:
+- rolled like a scroll,
+- folded house/supports,
+- shaking mountain,
+- opened heaven,
+- abyss/deep opening,
+- fire/cloud/plasma-like brightness,
+- darkness and unusual light.
+
+### Closure
+The crossing finishes.
+Flows reverse or terminate.
+Water drains/withdraws.
+Gates close/seal.
+The anthropomorphic rod silhouette disappears as the weave spreads/stabilises.
+A new world/support “house” is established.
+
+### New beginning
+The surviving/transferred inhabitants experience the old world-order as ended and a new one as begun.
+Within Vardath Cosmology this can be compared to past/future material participating in each present during the gate interval, followed by a new stable present.
+
+---
+
+## 25. Where the current hypothesis is strongest
+
+The strongest structural matches now are not isolated words but sequences.
+
+### Tier of especially important sequences for manual analysis
+
+**Moses cycle**
+- basket/water carrier
+- serpent ↔ rod
+- sky-directed arm
+- water-directed arm
+- divided sea
+- hilltop bilateral arms
+- mountain ascent / upper descent
+- serpent on pole
+- rod + rock → water.
+
+**Zechariah 14**
+- central figure
+- feet/base on mountain
+- mountain splits
+- halves move oppositely
+- corridor
+- altered light
+- divided living waters.
+
+**Daniel 12**
+- anthropomorphic central figure
+- over water
+- both arms raised to heaven
+- timed completion interval.
+
+**Revelation 10**
+- figure descends from heaven
+- cloud/light
+- pillar legs
+- one foot sea / one foot land
+- hand to heaven
+- thunder.
+
+**1 Enoch**
+- upper/lower waters
+- cosmic gates/mountains
+- old support-house folded/removed
+- new higher/larger house/supports established.
+
+**Jubilees**
+- upper floodgates + lower deep-mouths
+- simultaneous water contributions
+- enclosure/cargo survival
+- closure
+- drainage
+- re-emergence.
+
+**4 Baruch**
+- gate opening
+- mountain route
+- basket
+- protected contents
+- short subjective time / long external time
+- return into transformed world.
+
+**Ascension of Isaiah**
+- layered heavens
+- descent through them
+- visible form changes according to layer
+- gates/permissions
+- lower reach
+- return ascent.
+
+These should be the principal hand-examined cases for the next stage.
+
+---
+
+## 26. Where caution remains necessary
+
+The research has **not** established that:
+- ancient authors literally described Vardath’s physical lattice,
+- biblical people were not historical people,
+- all human figures are lattice projections,
+- mythic time anomalies are physical relativity,
+- every flood/gate/mountain/serpent motif belongs to one historical event.
+
+Major alternative explanations remain:
+- literary borrowing among biblical/apocalyptic texts,
+- reuse of common ancient Near Eastern cosmic imagery,
+- later authors consciously reworking earlier scriptures,
+- symbolic theology,
+- ordinary narrative/metaphor.
+
+The project is strongest when it predicts **constrained combinations** and **sequences of motion**, not when it merely notices familiar nouns.
+
+---
+
+## 27. Next rigorous test — geometric anonymisation of central-person scenes
+
+The next experiment should not begin with character names.
+
+### Proposed method
+
+1. Collect every scene in the 88-text research corpus containing a central human/humanoid/angelic figure near:
+   - gate,
+   - mountain,
+   - water,
+   - heaven/earth boundary,
+   - pillar/rod/staff/tree,
+   - catastrophe,
+   - opened/closed threshold.
+
+2. Remove the names and theology.
+
+3. Encode only geometry and motion:
+   - central vertical?
+   - one arm/two arms?
+   - arms lateral/upward/downward?
+   - one/two supports?
+   - water under/around?
+   - heaven above?
+   - ascent/descent?
+   - opposed movements?
+   - gate opens/closes?
+   - mountain/support splits?
+   - light/darkness/fire/cloud?
+   - serpent/rod transition?
+   - enclosure/cargo?
+   - relative-time anomaly?
+   - restoration/new structure?
+
+4. Test whether Squatter-Man/rod-like configurations cluster specifically around **world-transition/catastrophe scenes** rather than throughout the corpus generally.
+
+5. Build controls:
+   - ordinary kings/warriors/prophets not involved in world transitions,
+   - ordinary mountain scenes,
+   - ordinary water scenes,
+   - ordinary human gestures.
+
+6. Preserve failures/mismatches.
+
+7. Only restore names after scoring.
+
+### Why this matters
+
+This would distinguish:
+- **prediction:** the geometry really clusters where Vardath says a gate event should occur,
+from
+- **retrofitting:** any dramatic scene can be interpreted as the lattice after the fact.
+
+The current evidence is strong enough that this test is worth running.
+
+---
+
+## 28. Updated research direction
+
+Resume from here by:
+
+1. Finish sourcing/read-through of all distinct Ethiopian 81-book materials available in reliable English.
+2. Maintain a separate label for the 7 non-Ethiopian-canon comparison texts used to form the 88-text research corpus.
+3. Run the geometric-anonymisation test above.
+4. Build a scene-by-scene table of axis-person candidates.
+5. Keep source date, genre and dependence/borrowing notes beside every candidate.
+6. Expand the timing table:
+   - biblical cycles,
+   - Enoch/Jubilees cycles,
+   - 2 Enoch astronomical cycles,
+   - Daniel/Revelation timed intervals,
+   - 4 Baruch relative-time episode,
+   - then compare quantitatively with Archaix/Jason Breshears claims.
+7. Do not say the physical model is proved. State separately:
+   - textual geometry,
+   - Vardath interpretation,
+   - conventional literary reading,
+   - mismatch/control,
+   - prediction/test.
+
+---
+
+## 29. Current concise working conclusion
+
+The present 88-text investigation supports a stronger and more specific hypothesis than the original keyword scan:
+
+> Across biblical, Ethiopian and related apocalyptic texts, there is a recurring **axis-person grammar** in which a central anthropomorphic figure is repeatedly coupled to rods/pillars, mountains, bilateral extensions, opened heavens/deeps, opposed vertical motions, gates, divided or rising/falling water, abnormal light/fire/cloud, catastrophe, enclosure/protected cargo, and later closure/restoration.
+
+Within Vardath Cosmology, the most economical single picture is:
+
+> **The Squatter-Man is the side-view anthropomorphic projection of the lattice/rod during a temporary gate transition. The “person” may sometimes encode the movement/state of the connector itself rather than merely a separate person standing beside it.**
+
+This remains a structural hypothesis, but Ethiopian and wider apocryphal material—especially **1 Enoch, Jubilees, 4 Baruch and Ascension of Isaiah**—strengthens it enough to justify a rigorous geometry-first test rather than dismissing it as simple motif overlap.
