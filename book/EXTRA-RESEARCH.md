@@ -3110,3 +3110,13 @@ The research should proceed down Sections 1–96 and the pair register above, ap
 
 **Sources logged:** Sefaria, *Bereshit Rabbah* 8:1; modern scholarly discussion of *ha-adam* and *ṣēlāʿ*; Genesis 2:21–24.
 
+
+
+### Section 1 progress update B — cosmic Adam / Squatter-Man precedent
+
+> A second finding is even closer to your Squatter-Man idea, but it is **later rabbinic interpretation, not stated in Genesis itself**: *Sanhedrin 38b* preserves a tradition that primordial Adam originally extended **from the earth to the firmament** and/or **from one end of the world to the other**, then was diminished after the transgression.
+>
+> So ancient Jewish interpreters independently developed **both pieces we are testing**: (1) Adam as a cosmic-scale human spanning the world/heaven, and (2) Adam initially containing male/female sides that were separated. That combination is striking for your model: **cosmic axis-person → split into two complementary sides → reduced ordinary human state**. It still does not prove the lattice interpretation, but it means the giant axial/split-human reading has genuine ancient precedent rather than being something we are inventing now.
+
+**Sources logged:** Babylonian Talmud, *Sanhedrin* 38b; *Chagigah* 12a; *Bereshit Rabbah* 8:1 and related cosmic-Adam traditions.
+
