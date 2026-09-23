@@ -12475,3 +12475,675 @@ Priority tests:
 
 **Primary text logged:** Jubilees 19:23–27; 23:8–31. The lifespan restoration toward 1,000 years is treated in modern scholarship as part of Jubilees’ eschatological restoration of sacred time/new creation.
 
+
+
+---
+
+## 429. SECTION 11 COMPLETE — Jubilees 11–23
+
+**Scope:** Jubilees 11:1–23:31, including Abram’s anti-idolatry activity, sky observation, recovery of the primordial language, migration, covenant chronology, divided-animal passage, Hagar/Ishmael, circumcision, Sodom, Isaac, Mastema and the Akedah, Sarah, Jacob/Esau, Abraham’s last teachings, Abraham’s death, lifespan contraction, and future restoration.
+
+### 429.1 Abram begins as a sky-observer — then rejects astrological determinism
+
+Jubilees adds a scene in which Abram:
+- stays awake through the night,
+- observes the stars,
+- tries to determine the year/rains,
+- then concludes that sun, moon and stars remain under divine control.
+
+This is important because Jubilees itself draws a line between:
+**observing celestial order**
+and
+**treating celestial signs as autonomous destiny.**
+
+For the Vardath project:
+- celestial timing can be studied,
+- but Jubilees does not endorse simple astrology as a causal mechanism.
+
+---
+
+## 430. Abram restores what Babel broke
+
+After Babel, Jubilees says the primordial language had disappeared from human mouths.
+
+The angel:
+- opens Abram’s mouth,
+- opens his ears,
+- opens his lips,
+- teaches him Hebrew,
+- calls it the **language/tongue of creation**.
+
+Abram can then read old ancestral books.
+
+This creates a clear Babel reversal:
+
+**primordial language**
+→ **Babel fragmentation**
+→ **language lost**
+→ **one chosen figure reopened to original language.**
+
+This is a major **re-coherence** motif.
+
+---
+
+## 431. Language restoration is also knowledge restoration
+
+The recovered language gives Abram access to:
+- books of his ancestors,
+- material he could not previously understand,
+- a written chain stretching back to Enoch/Noah traditions.
+
+Thus:
+**speech coherence**
+and
+**historical/cosmic memory**
+return together.
+
+This is structurally relevant to the Vardath idea that a gate event may restore access between separated states/information domains.
+
+---
+
+## 432. Abram’s fire against idols — local destructive purification
+
+Abram burns the idol house.
+
+His brother Haran dies in the fire while attempting to save the idols.
+
+This gives:
+**false fixed forms**
+→ **fire**
+→ **destruction**
+→ **migration away from old center.**
+
+The plain meaning is anti-idolatry.
+
+Do not treat this as a cosmic reset.
+
+---
+
+## 433. Abraham covenant dated within recurring sacred calendar
+
+Jubilees dates covenant episodes precisely.
+
+The Genesis 15 covenant begins:
+- new moon of third month,
+- sacrifice in middle of month.
+
+The book explicitly says Abraham’s covenant is made/renewed in the same month as Noah’s covenant.
+
+Therefore:
+**Noah world-reset covenant**
+and
+**Abraham lineage covenant**
+are calendrically linked.
+
+This is important for the later cycle table.
+
+---
+
+## 434. Genesis 15 split geometry survives intact
+
+Jubilees preserves:
+- heifer/goat/ram,
+- bodies divided in the middle,
+- halves laid opposite each other,
+- birds left undivided,
+- birds descend toward pieces,
+- Abram drives them away,
+- altered ecstatic/darkened state,
+- smoking furnace/fire,
+- flame passes between the separated halves.
+
+This strongly confirms that the split-corridor geometry is not an artifact of one English translation.
+
+---
+
+## 435. Ecstasy / darkness + divided corridor
+
+Jubilees describes Abram entering an **ecstasy** with great darkness.
+
+Thus the repeated formula becomes:
+
+**altered consciousness**
++
+**paired division**
++
+**central corridor**
++
+**fire/smoke traversal**
++
+**covenant/state change.**
+
+This remains one of the strongest micro-scale structural analogues to the user’s finger-trap / split-lattice passage idea.
+
+---
+
+## 436. 400 years + fourth generation retained
+
+Jubilees retains:
+- **400 years** of affliction,
+- return in **fourth generation**.
+
+Keep both raw intervals.
+
+Do not assume they are mathematically equivalent.
+
+---
+
+## 437. Circumcision adds an eighth-day transformation marker
+
+Jubilees strongly emphasizes:
+- circumcision on exactly the **eighth day**,
+- no day may be omitted,
+- covenant is marked in the body.
+
+Thus:
+**7-day completion**
+→ **8th-day bodily covenant mark.**
+
+This is structurally relevant because the user’s wider research repeatedly treats 7/8 transitions as boundary/enclosure patterns.
+
+But:
+- this is legal/covenantal chronology,
+- not physical gate mechanics.
+
+---
+
+## 438. Sarah / Hagar / Isaac / Ishmael branch structure remains
+
+Jubilees preserves:
+- Ishmael as real blessed branch,
+- Isaac as covenant line,
+- Hagar wilderness rescue,
+- well revealed after angelic intervention,
+- later separation.
+
+The Genesis pair interpretation remains:
+**two branches of one Abrahamic system**, not one person.
+
+---
+
+## 439. Sodom remains upper-fire destruction
+
+Jubilees retells:
+- Sodom/Gomorrah destroyed by fire/brimstone,
+- Lot removed from overthrow.
+
+It offers less threshold detail than Genesis 19.
+
+Thus Genesis remains the stronger source for doorway/extraction geometry.
+
+---
+
+## 440. Isaac’s birth is tied to festival time
+
+Jubilees dates Isaac’s birth:
+- third month,
+- middle of month,
+- festival/first-fruits timing.
+
+This is characteristic of Jubilees:
+important lineage events are embedded in repeating calendar structure.
+
+---
+
+## 441. Abraham’s seven-day branch ritual
+
+Jubilees adds a seven-day festival in which Abraham:
+- builds booths,
+- uses branches/palm material,
+- circles the altar with branches,
+- does so seven times in the morning.
+
+This is visually relevant to:
+- branch,
+- enclosure,
+- circle,
+- repeated sevenfold movement.
+
+But it is clearly ritual/festival practice.
+
+Do not treat it as hidden lattice mechanics without stronger recurrence.
+
+---
+
+## 442. Binding of Isaac — Mastema becomes hidden instigator
+
+Jubilees changes Genesis substantially.
+
+The idea to test Abraham comes from:
+**Prince Mastema**, not directly from an uncertain divine motive.
+
+God permits the test.
+
+This gives a layered causality:
+**visible command**
++
+**hidden adversarial proposer**
++
+**human actor.**
+
+For the user’s “people may be functions/operators” method:
+Jubilees explicitly introduces an unseen operator behind the visible ordeal.
+
+---
+
+## 443. Akedah is precisely timed
+
+Jubilees dates the heavenly challenge to:
+**first month, day 12.**
+
+The mountain is reached on the third day.
+
+Modern scholarship notes that the chronology brings the central sacrifice into the Passover/Unleavened Bread calendrical zone.
+
+Thus the Akedah becomes a timed sacred pattern rather than an undated story.
+
+---
+
+## 444. Mountain + well + ascent sequence
+
+On the journey:
+- Abraham reaches a well,
+- leaves attendants,
+- father and son continue upward,
+- Isaac bears wood,
+- Abraham bears fire/knife,
+- mountain is reached.
+
+This preserves:
+**water node → separation → ascent → sacrificial threshold.**
+
+---
+
+## 445. Raised hand / upper interruption retained
+
+Abraham:
+- binds Isaac,
+- extends hand to knife,
+- heavenly voice interrupts.
+
+Same operator grammar as Genesis:
+**extended human hand**
+→ **upper command**
+→ **state reverses before irreversible transition.**
+
+---
+
+## 446. Ram substitution retained
+
+Ram appears caught by horns.
+
+Ram replaces Isaac.
+
+This is explicit role substitution:
+**intended body**
+→ **replacement body**
+→ **sacrifice completed without son dying.**
+
+---
+
+## 447. Mount of the Akedah identified with Zion
+
+Jubilees explicitly identifies the mountain with **Mount Zion**.
+
+This is a significant sacred-geography convergence:
+- Abraham/Isaac transition,
+- later sanctuary axis,
+- Zion’s future centrality.
+
+For Vardath:
+one sacred node accumulates multiple transition functions over time.
+
+---
+
+## 448. Akedah converted into seven-day recurring festival
+
+After the event Abraham celebrates a seven-day festival.
+
+Jubilees explains it in relation to the **seven days of going/returning in peace**.
+
+Thus:
+**one transition journey**
+→ **recurring seven-day liturgical cycle.**
+
+This is extremely important for the project’s question:
+**how does a one-time event become a cycle?**
+
+Jubilees gives an explicit answer:
+ritual calendar repetition.
+
+---
+
+## 449. Isaac event is linked with firstborn logic
+
+Modern scholarship notes Jubilees’ Akedah also emphasizes Isaac as firstborn and foreshadows Passover logic.
+
+This links:
+- threatened firstborn,
+- substitution,
+- Passover calendrical zone.
+
+Keep for later Exodus comparison.
+
+---
+
+## 450. Abraham already selects Jacob before Isaac’s later blessing scene
+
+Jubilees strengthens the younger/elder pattern.
+
+Abraham:
+- prefers Jacob,
+- recognizes Jacob as central lineage,
+- blesses Jacob before later Genesis-style blessing deception.
+
+Thus elder/younger reversal is not merely accidental trickery in Jubilees.
+
+It is placed inside a longer predetermined lineage structure.
+
+---
+
+## 451. Jacob is called firstborn son in covenant sense
+
+Abraham’s blessing describes Jacob in language of:
+**first-born son / chosen people.**
+
+This is role-status language rather than biological birth order.
+
+Again:
+**firstborn function can be reassigned independently of physical first birth.**
+
+That is highly relevant to the repeated first/second inversions across Genesis/Jubilees.
+
+---
+
+## 452. Cosmic-renewal language attached to Jacob’s line
+
+Jubilees 19 says of Jacob’s ancestral name/seed complex that “these” will serve:
+- to lay foundations of heaven,
+- strengthen earth,
+- renew luminaries in the firmament.
+
+The exact grammatical referent is difficult in the older translation.
+
+Therefore:
+- flag as high-value cosmological language,
+- do not build a detailed mechanism from it yet.
+
+At minimum, Jacob’s chosen line is linked rhetorically with **cosmic stability and renewal**.
+
+---
+
+## 453. Abraham→Jacob blessing reaches “above the firmament”
+
+Abraham asks blessing for Jacob:
+**from above the firmament**.
+
+This keeps the chosen-line blessing explicitly connected to an upper heavenly source.
+
+---
+
+## 454. Isaac/Ishmael reunite before Abraham’s death
+
+Jubilees preserves a reunion:
+- Isaac and Ishmael come together for the festival,
+- Abraham rejoices,
+- later they bury him together.
+
+This further supports:
+**parallel branches can separate, reconnect, and remain distinct.**
+
+---
+
+## 455. Abraham dies with Jacob physically attached
+
+Jubilees adds a striking death scene:
+- Jacob sleeps in Abraham’s bosom,
+- Abraham kisses/blesses him,
+- Abraham dies while Jacob is still there.
+
+This functions as a direct **generational transfer of continuity**.
+
+Not cosmological by itself.
+
+---
+
+## 456. Post-Flood lifespan contraction is explicit
+
+Jubilees 23 interprets history as a progressive decline in lifespan.
+
+It says:
+- old forefathers lived approximately **19 jubilees**,
+- after Flood lifespans begin shrinking,
+- later generations fail to reach two jubilees,
+- eventually ~70–80 years becomes normal/long.
+
+This is not merely inferred from genealogy.
+The book explicitly theorizes the decline.
+
+---
+
+## 457. Numerical lifespan stages
+
+Using 49-year jubilees:
+
+- **19 jubilees ≈ 931 years** — old patriarchal scale.
+- Abraham = **3 jubilees + 4 weeks of years = 175 years**.
+- “less than 2 jubilees” = under **98 years**.
+- “1.5 jubilees” ≈ **73.5 years**, called a long life.
+- ordinary saying becomes **70 / 80 years**.
+
+This is an unusually explicit staged contraction.
+
+---
+
+## 458. Three-week child / hundred-year appearance
+
+During the period of extreme tribulation:
+- a child of three weeks can appear as old as a person of one hundred years.
+
+This is an explicit literary image of **accelerated aging / compressed life-state**.
+
+It is apocalyptic rhetoric, not measured physiology.
+
+But it is highly relevant to the user’s altered-time motif.
+
+---
+
+## 459. Future lifespan expands toward 1,000 years
+
+When people return to righteousness:
+- days begin increasing,
+- human lives approach **1,000 years**,
+- old age effectively disappears,
+- people are described as youthful,
+- evil destroyer/Satan ceases,
+- healing/blessing dominates.
+
+Thus Jubilees gives:
+
+**long primordial lifespan**
+→ **progressive contraction**
+→ **severe compression**
+→ **future re-expansion toward primordial scale.**
+
+This is a true historical time/longevity cycle.
+
+---
+
+## 460. Restored human lifespan approaches the heavenly-day scale
+
+Earlier Jubilees explained:
+**1,000 human years ≈ one heavenly day**.
+
+In Jubilees 23 the restored human lifespan approaches:
+**1,000 years**.
+
+That creates a notable internal resonance:
+
+**renewed humanity approaches the duration earlier associated with one heavenly day.**
+
+Do not call this physical synchronization.
+But structurally it looks like **human time re-approaching a heavenly scale**.
+
+---
+
+## 461. New creation = restored sacred time
+
+Modern scholarship on Jubilees emphasizes that its eschatology restores:
+- sacred time,
+- sacred space,
+- covenant order,
+- human longevity,
+- divine presence.
+
+This is important for Vardath Cosmology because the “new world” in Jubilees is not merely geographical.
+
+It is a **restored ordering of time and life**.
+
+---
+
+## 462. Abraham cycle and Vardath — strongest mapping
+
+The most economical structural reading is:
+
+### A. Celestial observation
+Abram studies upper signs.
+
+### B. Rejects autonomous star control
+Cosmic order belongs to higher source.
+
+### C. Babel loss partially reversed
+Primordial language is reopened in Abram.
+
+### D. Ancestral knowledge restored
+Old books become readable.
+
+### E. Covenant bodies divided
+Opposed halves create passage.
+
+### F. Altered consciousness
+Darkness/ecstasy.
+
+### G. Fire crosses central gap
+State/covenant is established.
+
+### H. Alternate branches emerge
+Ishmael / Isaac.
+
+### I. Timed mountain ordeal
+Isaac ascends to sacrificial threshold.
+
+### J. Hidden operator revealed
+Mastema stands behind test.
+
+### K. Upper voice interrupts
+Irreversible transition is stopped.
+
+### L. Substitute occupies role
+Ram replaces Isaac.
+
+### M. Event becomes recurring cycle
+Seven-day festival.
+
+### N. Jacob chosen as renewed continuity line
+Elder/younger order reversed again.
+
+### O. History contracts
+Human life becomes shorter.
+
+### P. Restored age expands time again
+Lifespan returns toward 1,000-year scale.
+
+This section strongly supports the idea that **ritual, genealogy and time can all preserve compressed versions of one transition grammar.**
+
+---
+
+## 463. Strongest Section 11 support for Vardath Cosmology
+
+1. **Babel’s lost coherence is partially restored in Abram.**
+2. **Language and ancestral memory return together.**
+3. **Split-animal corridor + fire traversal is confirmed by a second ancient retelling.**
+4. **Noah and Abraham covenants are deliberately tied by calendar.**
+5. **Akedah is explicitly timed and becomes a recurring seven-day cycle.**
+6. **Hidden Mastema adds an unseen operator layer behind visible events.**
+7. **Mount Zion accumulates transition/sacred-axis functions.**
+8. **Firstborn status repeatedly changes carriers independent of birth order.**
+9. **Jubilees explicitly theorizes lifespan/time contraction after the Flood.**
+10. **Future age reverses that contraction toward 1,000 years.**
+11. **Human restored lifespan resonates with the earlier 1,000-year heavenly-day scale.**
+12. **Jacob’s line receives cosmic-renewal language involving heaven, earth and luminaries.**
+
+---
+
+## 464. What Section 11 does NOT establish
+
+Still unsupported:
+- astrology predicts a physical Vardath gate,
+- Hebrew is a literal energetic control code,
+- Genesis 15 fire is plasma,
+- Akedah festival proves a physical seven-day gate cycle,
+- Mastema is a world-layer operator,
+- Zion is literally the Squatter-Man axis,
+- lifespan change comes from plasma flow/time dilation,
+- 1,000-year lifespan is empirically historical.
+
+These remain structural/speculative comparisons.
+
+---
+
+## 465. Timing register added from Jubilees 11–23
+
+Retain:
+
+- Abram star-watch: new moon of **7th month**, whole night.
+- ancestral-language study: **six rainy months**.
+- Abraham covenant: **3rd month**, new moon → midmonth sacrifice.
+- Egypt affliction: **400 years**.
+- return: **4th generation**.
+- circumcision: **8th day**.
+- Isaac birth: **3rd month**, midmonth/first-fruits timing.
+- Abraham tabernacle feast: **7 days**.
+- altar branch circuits: **7 times** each morning in the ritual description.
+- Akedah challenge begins: **1st month day 12**.
+- mountain reached: **3rd day**.
+- Akedah/return festival: **7 days**.
+- Sarah: **127 years**.
+- Abraham: **175 years = 3 jubilees + 4 weeks**.
+- old forefathers: **19 jubilees ≈ 931 years**.
+- late declining age: **<2 jubilees**.
+- long life in bad age: **1.5 jubilees ≈73.5 years**, also **70–80** formula.
+- future restored age: **approaches 1,000 years**.
+
+---
+
+## 466. Section 11 status
+
+**SECTION 11 — COMPLETE.**
+
+Next roadmap section:
+
+**Section 12 — Jubilees 24–38**
+- Isaac at the well,
+- birthright,
+- Jacob blessing,
+- Bethel dream,
+- Leah/Rachel,
+- Jacob/Laban,
+- Jacob/Esau,
+- Dinah/Shechem,
+- Levi/Judah blessing,
+- return to Bethel,
+- Rachel death,
+- war between Jacob and Esau,
+- death of Esau.
+
+Priority tests:
+- whether Jubilees retains or changes Bethel gate/ladder details,
+- Jacob/Esau branch reunion versus later warfare,
+- Jacob/Israel renaming,
+- pillar and boundary motifs,
+- rods/wells,
+- Levi/Judah as split priest/king functions,
+- whether later expansion turns symbolic twin conflict into literal war.
+
