@@ -21917,3 +21917,151 @@ This resembles the project’s recurring solid→fluid transition motif, though 
 - **4 presences / four sides** around central authority.
 - host: **thousands of thousands / 10,000 × 10,000**.
 - metal mountains explicitly listed in ch. 52: iron, copper, silver, gold, soft metal, lead = **6 named metal mountains** in Charles' text, despite some traditional headings calling the passage “seven metal mountains.” Do not silently turn the six-item list into seven.
+
+
+## SECTION 14 progress B — 1 Enoch 54–61: joined upper/lower waters, male/female monster pair, inseparable thunder/lightning and measuring cords
+
+### Upper water / lower water — explicit masculine/feminine pair
+
+The flood fragment in 1 Enoch 54 says:
+- chambers of waters **above the heavens** open,
+- fountains **beneath the earth** open,
+- **all the waters are joined**,
+- upper water is called **masculine**,
+- lower water **feminine**.
+
+This is one of the clearest upper/lower pair formulas in the whole corpus:
+
+**upper masculine water ↓ + lower feminine water ↑ → joining → world-destruction/flood**.
+
+This strongly echoes the dual-direction Flood geometry already logged in Jubilees.
+
+Source-control warning:
+1 Enoch 54:7–55:2 is commonly discussed as **Noahic material embedded/interpolated in the Parables**. Recent work still debates how such Noah traditions were incorporated, so retain the passage as part of the received book while not assuming it originated in the same compositional layer as every Son-of-Man passage.
+
+### Azazel / four archangels — one condemned host versus four-sided enforcement
+
+Michael, Gabriel, Raphael and Phanuel jointly:
+- seize the hostile/Watcher group,
+- cast them into fiery punishment.
+
+This repeats the chapter 40 fourfold but changes its action:
+**four surrounding differentiated presences → coordinated enforcement against one opposing host**.
+
+### Deep valley / open mouths / abyss
+
+Chapters 53–56 repeatedly use:
+- deep valley,
+- **open mouths**,
+- burning fire,
+- chains,
+- abyss/chasm,
+- Sheol opening its **jaws** and swallowing.
+
+These are enclosure/intake geometries. The language is strongly mouth/container-like, but it is punitive underworld imagery rather than a neutral transit gate.
+
+### World-scale motion in one day
+
+Chapter 57:
+- wagons/hosts move on winds from east and west toward south,
+- noise crosses the whole structure,
+- **pillars of the earth move from their place**,
+- sound travels from one end of heaven to the other **in one day**.
+
+This is a genuine cosmic-scale deformation/transport scene, but lacks enough mechanical detail to map a specific Vardath stage confidently.
+
+### Noahic date marker — year 500, month 7, day 14
+
+Chapter 60 begins:
+- **year 500**
+- **seventh month**
+- **fourteenth day**
+and describes a tremendous quaking of the heaven.
+
+The manuscript says “in the life of Enoch” in Charles, but the passage is widely treated as Noahic material and the **500th-year date naturally belongs to Noahic Flood chronology**, not Enoch's 365-year lifetime.
+
+Do not enter this as “Enoch age 500.”
+
+### Leviathan / Behemoth — female/male split pair assigned opposite environments
+
+Chapter 60:
+- two monsters are **parted on one day**.
+- **Leviathan = female**, assigned to ocean abyss/fountains of waters.
+- **Behemoth = male**, assigned to dry wilderness east of Eden.
+- Enoch explicitly asks how the two were divided and placed apart.
+
+This is an unusually clean P1/P2 pair:
+**one named pair → deliberate separation → female/water/depth vs male/dry land/east**.
+
+It should be compared later with:
+- upper/lower water pair,
+- Adam/Eve split,
+- Jacob/Esau twin split,
+- paired branches of the current Vardath lattice.
+
+But there is no reunion of Leviathan/Behemoth in this passage.
+
+### Thunder / lightning — perhaps the best “distinct but one-function” pair yet
+
+Chapter 60 says:
+- thunder and lightning are **inseparable**,
+- yet **not one and undivided**,
+- both go together through the spirit,
+- they do not separate,
+- the spirit inserts a pause/division between their expressions.
+
+This is almost a direct textual definition of the pair category we have been trying to formulate:
+
+**two distinguishable manifestations + one coordinated carrier/force + inseparable operation**.
+
+Classification:
+- **P2 polarity/complementary pair**
+- possibly model example for “two branches, one process.”
+
+Do not identify them physically with the Vardath twines; use them as a conceptual control showing ancient authors could explicitly describe **distinct-yet-coupled** phenomena.
+
+### Sea current controlled by a rein
+
+The “spirit of the sea”:
+- draws sea back with a **rein**,
+- it is driven forward,
+- disperses among mountains.
+
+This produces a regulated:
+**withdrawal ↔ advance** water motion.
+
+Compare later with:
+- Testament of Moses sea withdrawing into abyss,
+- Flood upward/downward water,
+- Vardath active-door counterflow.
+
+### Rain / earth-water joining
+
+Chapter 60 also says:
+- rain is held in chambers,
+- angels open the chamber,
+- rain diffuses over earth,
+- it **unites with water on earth**,
+- the amount is measured.
+
+Another upper/lower joining, but in ordinary regulated weather rather than catastrophe.
+
+### Measuring cords / northward flight
+
+Chapter 61:
+- angels receive **long cords**,
+- take wings,
+- fly north,
+- use cords to **measure**,
+- measures/ropes are associated with righteous dwelling and with recovering those lost in earth/desert/sea.
+
+This is direct geometry:
+**cord → direction → measurement → assigned dwelling/return**.
+
+It is not a “fingertrap,” but it makes heavenly order explicitly spatial and measured.
+
+### Number register, middle block
+- Noahic vision marker: **500th year, month 7, day 14**.
+- monster pair: **2**, female/male.
+- four principal enforcers: **4**.
+- heavenly host again **1000s × 1000s / 10,000 × 10,000**.
