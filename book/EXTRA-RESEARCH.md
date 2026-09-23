@@ -28889,3 +28889,39 @@ Therefore the user's working method — testing whether some biblical “people�
 
 But the control is equally important:
 the Animal Apocalypse **tells us it is allegorical through systematic symbolic substitution**. We cannot assume every ordinary prose narrative elsewhere uses the same encoding without independent evidence.
+
+
+## SECTION 17 status — 1 ENOCH COMPLETE
+
+**SECTION 17 — 1 ENOCH 91–108: COMPLETE FIRST PASS.**
+
+**1 ENOCH — COMPLETE FIRST PASS, CHAPTERS 1–108.**
+
+The entire book has now been covered in the active roadmap:
+- 1–36 Watchers
+- 37–71 Parables
+- 72–82 Astronomical Book
+- 83–90 Dream Visions / Animal Apocalypse
+- 91–108 Apocalypse of Weeks / Epistle / Noah material / final admonition.
+
+### Corpus tally after completion
+This moves the 88-text working corpus from **8 fully completed to 9 fully completed texts**, with Testament/Assumption of Moses still counted separately as an additional comparison text outside the original 88.
+
+### Next first unfinished canonical roadmap section
+
+**SECTION 18 — EXODUS 1–4**
+
+Priority:
+- Moses as infant basket/tebah and woven carrier geometry,
+- Nile/water boundary,
+- Pharaoh/daughter/Miriam/Jochebed role chain,
+- Moses Egyptian/Hebrew split identity,
+- Moses/Aaron pair from the beginning,
+- burning bush as fire-without-consumption state,
+- Horeb/mountain,
+- divine descent/appearance,
+- staff→serpent→staff transformation,
+- hand healthy→diseased→healthy state switching,
+- Zipporah / circumcision / bridegroom-of-blood scene,
+- all explicit ages, generations, distances, signs and repeated numbers,
+- begin continuous Exodus event timeline toward Passover and sea crossing.
