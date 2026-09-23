@@ -13507,3 +13507,14 @@ This supersedes the earlier primary-after-Revelation placement for 3 Enoch in th
 
 **Textual-control note:** the surviving Adam/Eve books are a family of recensions, not one perfectly uniform text. The Greek Apocalypse of Moses lacks some penitence/Satan-fall material present in Latin, Armenian and Georgian witnesses. Preserve variant provenance beside every motif.
 
+
+
+### Insert X1 progress A — Adam/Eve split-body pair returns to one burial enclosure
+
+> This first inserted tradition is already giving a **much stronger Adam/Eve “same figure somehow” result** than Genesis alone.
+>
+> At the end, Eve explicitly asks to be buried with Adam because **she was made from his members** and asks not to be separated from him. The tomb is then sealed for **six days “until his rib should return to him,”** after which Eve dies and is buried where Adam and Abel are. Structurally that is almost a **split-body → separated lives → death-boundary → missing part returns → recombined enclosure** sequence. I’m marking that as one of the strongest pair-reintegration motifs so far, while keeping the theological burial/resurrection reading beside it.
+
+**Primary text:** Greek Apocalypse of Moses 42–43 in the Charles tradition.  
+**Control:** the Adam-book tradition exists in multiple recensions, so exact wording must remain tied to the witness/translation used.
+
