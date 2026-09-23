@@ -20566,3 +20566,22 @@ Priority tests:
 - soul transfer,
 - whether Abraham's death becomes another gate-crossing rather than simple cessation.
 
+
+
+### X7 progress B — the surviving Testament stops before the death/assumption; later traditions split the body-route
+
+> The source-control problem at Moses' death is now important enough to state explicitly. The surviving Latin **Testament of Moses** ends while Moses is still speaking with Joshua; the actual death/burial/assumption scene is missing. Later Jewish/Christian witnesses preserve several reconstructions or related traditions, but they are **not one securely surviving ending**.
+>
+> One major later strand, reflected in Jude 9 and patristic testimony, has **Michael disputing with the devil over Moses' body**. Older reconstructions often treated that as a dispute over burial. A modern scholarly proposal by Ryan Stokes instead argues that the quarrel may have concerned **Moses' bodily ascent into the divine presence**, with the devil objecting to a fleshly human body entering heaven.
+>
+> For the Vardath comparison the important point is therefore not "Moses definitely ascended bodily." It is that the reception tradition itself preserves a **body-route ambiguity at the boundary**:
+>
+> **earthly death / hidden grave**
+> versus
+> **body claimed at threshold**
+> versus
+> **bodily or spiritual ascent.**
+>
+> That fits the larger research rule we have already found in Testament of Abraham and 2 Enoch: different components or versions of one person can be assigned **different transfer routes** at a transition.
+
+**Source control logged:** Fiona Grierson, "The Testament of Moses" (2008), on the fragment ending before Moses' death; Ryan E. Stokes, "Not over Moses' Dead Body" (2017), on the bodily-ascent interpretation of Jude 9; patristic testimony linking Jude's Michael/devil episode with an Assumption/Ascension of Moses tradition.
