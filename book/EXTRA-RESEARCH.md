@@ -27148,3 +27148,172 @@ This is a genuine graded-access hierarchy, not a binary open/closed gate.
 - preparation: **2 days**, event on **day 3**.
 - major levels in simplest geometry: **foot / mountain / top**.
 - access categories: Moses; Aaron; priests; people.
+
+
+## SECTION 21 progress B — Exodus 20–23: mediator boundary, doorpost identity-lock, 6→7 and 7→8 cycles
+
+### People retreat; Moses alone approaches thick darkness
+
+After thunder/lightning/trumpet/smoke:
+- people stand **far off**,
+- ask Moses to speak instead of direct divine speech,
+- Moses moves toward the **thick darkness where God is**.
+
+This produces another direct mediator geometry:
+
+**people at distance**
+→ **Moses moves inward/upward toward obscured divine zone**.
+
+Moses functions as the safe communication interface because direct exposure is feared as lethal.
+
+### Heaven / earth / water-under-earth three-level cosmography
+
+The Decalogue refers to:
+- heaven **above**,
+- earth **beneath**,
+- water **under the earth**.
+
+This is text-level ancient vertical cosmography.
+
+For Vardath comparison:
+it shows explicit layered spatial thinking, but it is **not** evidence for the user's specific nine inhabited discs. Preserve the biblical categories on their own terms.
+
+### Six days → seventh-day cessation
+
+The Sabbath command reiterates:
+- **6 days** work,
+- **7th day** cessation/rest.
+
+It is tied to:
+- six-day creation,
+- seventh-day rest.
+
+This aligns with manna's already-observed 6→7 material clock and prepares the cloud 6→7 sequence in Exodus 24.
+
+### People / Moses becomes a speech pair
+
+The people explicitly request:
+- **Moses speaks to us**
+- let not God speak directly lest we die.
+
+So Moses is not merely physically between zones.
+He becomes the **human voice-interface** between them.
+
+This parallels Moses/Aaron at a different scale:
+- YHWH→Moses→people,
+whereas before:
+- YHWH→Moses→Aaron→Pharaoh.
+
+### Earthen/unhewn altar as a control against overreading every elevation
+
+The altar law says:
+- altar of **earth**,
+- or natural/unhewn stone,
+- no tool-work on stones,
+- no steps upward to it.
+
+This is useful control material.
+Biblical sacred contact need not require:
+- monumental tower,
+- engineered axis,
+- high platform.
+
+Some sacred interfaces are deliberately low/simple/non-engineered.
+
+### Door / doorpost used again as a status boundary
+
+Exodus 21:
+if a Hebrew servant voluntarily chooses permanent attachment:
+- brought to God/judicial authority,
+- brought to **door or doorpost**,
+- ear pierced there,
+- permanent service status established.
+
+This is a second major doorpost ritual soon after Passover.
+
+Passover:
+**blood on doorframe → temporary life-protection / stay inside**.
+
+Servant law:
+**ear/body at doorpost → permanent identity/status binding**.
+
+The threshold therefore repeatedly functions as a place where a person's legal/state relation changes.
+
+Do not assume the two rituals share one origin; the structural recurrence is enough.
+
+### Six years → seventh-year release
+
+Hebrew servant:
+- serves **6 years**,
+- goes free in **7th**.
+
+Land:
+- cultivated **6 years**,
+- rests **7th**.
+
+Work week:
+- **6 days**,
+- rests **7th**.
+
+So Exodus 20–23 reinforces a repeated 6→7 transition at:
+- daily scale,
+- yearly labour scale,
+- multi-year social scale.
+
+### Seven days → eighth-day firstling transfer
+
+Exodus 22:
+- animal firstborn remains with mother **7 days**,
+- given to YHWH on **8th day**.
+
+This is another explicit **7→8 threshold**, now a birth/firstling transfer.
+
+Keep beside:
+- circumcision day 8,
+- Jubilees 7→8 feast,
+- other eighth-day transitions.
+
+### Three annual appearances
+
+Exodus 23:
+- **3 festivals** in year,
+- all males appear before YHWH **3 times**.
+
+This creates a triannual return-to-presence cycle.
+
+### Messenger-before-the-people repeats pillar leadership
+
+A divine messenger is sent:
+- **before** Israel,
+- to guard the route,
+- bring them to prepared place,
+- divine name is “in him.”
+
+This repeats the front-position guide motif from pillar/cloud before the sea.
+
+Again, messenger and YHWH language have theological/compositional complexity; do not automatically split into independent gods.
+
+### “Little by little” transfer instead of one catastrophic displacement
+
+The inhabitants of the land are explicitly not to be removed:
+- **in one year**,
+but
+- **little by little**.
+
+Reason:
+- avoid desolation,
+- avoid wild animals multiplying before Israel grows enough.
+
+This is an important control against making every territorial handoff a sudden reset.
+Exodus contains both:
+- catastrophic rapid transition at Egypt/sea,
+- gradual controlled territorial replacement afterward.
+
+### Number register, Exodus 20–23
+- commandment generations: **3rd and 4th** versus mercy to **thousands**.
+- work/rest: **6 + 1**.
+- servant years: **6 + 1**.
+- land years: **6 + 1**.
+- firstling transfer: **7 → 8**.
+- annual festivals: **3**.
+- destination peoples in Exod 23 list: **6**.
