@@ -3635,3 +3635,9 @@ Special user hypothesis to test next:
 
 > Continuing with **Section 2 — Genesis 4–5**. I’m testing Cain/Abel/Seth as a sequence rather than just a murder story: **paired brothers → one removed → surviving marked/wandering figure → replacement child → two genealogical lines with repeated names → Enoch/Lamech recurrence**. The key question is whether this behaves like **split states of one underlying role**, or whether the text works better as distinct rival/successor figures. I’ll keep saving each progress update into `book/EXTRA-RESEARCH.md`.
 
+
+
+### Section 2 progress update A — crouching-at-the-door threshold image
+
+> The Cain/Abel section has produced a very specific threshold image I don’t want to miss: immediately before the murder, Genesis 4:7 says **“sin is crouching at the door”** and desires Cain, while Cain must master it. That gives us a **crouched entity/state positioned at a threshold** right inside the first brother-pair story. I’m checking the Hebrew and ancient Near Eastern background now, because some scholarship connects the “crouching” language with a threshold-demon concept; if that holds, it could be relevant to the Squatter-Man/gate imagery without needing Cain or Abel themselves to be literally the gate.
+
