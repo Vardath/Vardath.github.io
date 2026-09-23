@@ -6880,3 +6880,11 @@ Priority pair tests:
 >
 > That makes Abraham/Lot look less like “same person” and more like **outside/inside versions of the same hospitality-threshold role**: one stands at the safe side of the boundary; the other is embedded inside the doomed enclosure and has to be extracted.
 
+
+
+### Section 6 progress update B — Sodom extraction / Zoar refuge / Lot's wife fixed pillar
+
+> Sodom itself now looks like a **failed extraction event with a temporary refuge branch**. Lot is pulled by the hands through a shut/opening threshold; he is told to flee to the mountain without stopping or looking back; instead he negotiates for **Zoar**, a “small” city that is temporarily spared **until he arrives**. Only then does fire/sulfur fall from heaven and the plain overturn.
+>
+> Lot’s wife is especially interesting structurally: she is already part of the extracted group but **turns back toward the old state and becomes fixed as a standing pillar**. I’m logging that not as “she is the rod,” but as a striking **motion → reversal → immobilized vertical form** transition at the exact boundary between old world and refuge.
+
