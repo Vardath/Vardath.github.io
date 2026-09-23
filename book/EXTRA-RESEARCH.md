@@ -20647,3 +20647,84 @@ Taxo stands as one father with **seven sons**. They act as one preservation/mart
 
 #### Heaven / earth — upper/lower witness pair
 Moses' prophetic role elsewhere in the book is remembered through his having called **heaven and earth as witnesses**. This is a real upper/lower polarity in the narrative grammar, although the witnesses are cosmic regions rather than people.
+
+
+### X7 progress E — event sequence reconstructed against the Vardath mechanism
+
+The Testament's internal sequence can now be laid out as an event timeline rather than isolated motifs.
+
+1. **Pre-event / old operator**
+   - Moses is said to have been prepared before the foundation of the world as covenant mediator.
+   - At age **120**, his personal term is complete.
+   - He appoints Joshua.
+
+2. **Protected information-cargo**
+   - Moses gives Joshua writings.
+   - They are to be ordered, **anointed with cedar oil, placed in earthen vessels, and hidden** in a specially appointed place until the future visitation/end.
+   - This is a literal **enclosed carrier / time-capsule** motif: information survives a long interval inside a sealed material container.
+
+3. **Twelve-part system divides**
+   - Israel enters the land.
+   - Twelve tribes become structurally **two + ten**.
+   - Sanctuary, kingdom and territorial functions separate.
+
+4. **Eastward removal / exile**
+   - A king from the east burns the sanctuary and carries people and holy vessels away.
+   - The tribes remember Moses' earlier warning.
+   - The captivity is given as roughly **77 years** in the surviving translation.
+
+5. **Partial return / rebuilding**
+   - A ruler permits return.
+   - Some portions **go up** to their appointed place and surround it again with walls.
+   - Other branches remain dispersed and multiply elsewhere.
+
+6. **Corrupt rule / persecution**
+   - Priest-kings, an insolent king, then a powerful western ruler appear in the historical-apocalyptic survey.
+   - The text moves from ordinary political history toward a final extreme visitation.
+
+7. **Taxo + seven sons enter enclosure**
+   - The father and seven sons fast for **three days**.
+   - On the **fourth** they enter a cave in the field, choosing death rather than violation of the covenant.
+   - Structurally: **1+7 → fasting interval → enclosure/cave → transition trigger**.
+
+8. **Cosmic activation / world deformation**
+   - The heavenly king rises from the throne and goes forth from the holy habitation.
+   - Earth shakes to its limits.
+   - High mountains are lowered; hills shake/fall.
+   - The sun is darkened, moon loses light/becomes blood, star-circle is disturbed.
+
+9. **Water reverses away from the inhabited surface**
+   - The **sea retreats into the abyss**.
+   - Springs/fountains fail.
+   - Rivers dry.
+   - This is important: the water signature is **withdrawal/downward loss**, not a Flood surge.
+
+10. **Vertical sorting**
+   - Israel is exalted and brought near the **heaven of the stars**.
+   - The enemies are viewed below in Gehenna.
+   - Whatever its theological meaning, the geometry is an explicit **upper/lower sorting after catastrophe**.
+
+11. **Moses → Joshua handoff**
+   - The narrative returns to Joshua's grief.
+   - Moses' grave/body is universalized to all four directions.
+   - Joshua falls low; Moses takes his hand and **raises him into the seat**.
+   - Role passes while Moses approaches the unresolved death/assumption boundary.
+
+12. **Lost ending / disputed body-route**
+   - The surviving Latin breaks off.
+   - Later witnesses preserve burial/hidden-body and ascent traditions.
+   - Keep the ending unresolved.
+
+### Vardath comparison
+
+The closest structural sequence is:
+
+**old operator → protected cargo → system split → displacement/exile → partial restoration → enclosure → cosmic activation → land/celestial deformation → water withdrawal → upper/lower sorting → operator handoff → unresolved body transfer**
+
+This is not identical to the current Vardath event sequence. In particular:
+- there is no explicit woven lattice,
+- no explicit future-world/past-world exchange,
+- no explicit finger-trap mechanism,
+- and the water goes **away/down**, not across a described layer-gate.
+
+But the **enclosure + world deformation + vertical sorting + body/office transfer** sequence is unusually concentrated.
