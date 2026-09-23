@@ -8763,3 +8763,28 @@ Priority pair tests:
 - hip injury / limping altered body,
 - Peniel face-of-God geometry.
 
+
+
+### Sections 6–7 final user-facing reply saved verbatim
+
+> Continued through **Section 6 and Section 7** and saved every progress update plus the full detailed findings.
+> 
+> The strongest new results are:
+> 
+> - **Sodom** works structurally like an extraction event: Lot is physically pulled through a controlled doorway out of a doomed enclosure, reaches a temporary refuge, and only then does destruction fall.
+> - **Lot’s wife** gives a striking **motion → reversal → fixed vertical pillar** transformation at the old/new boundary.
+> - **Hagar/Ishmael and Abraham/Isaac** are mirrored near-death rescue stories: voice from heaven, changed seeing, newly revealed substitute/resource, child survives.
+> - **Isaac/Ishmael** are best read as parallel branches of one Abrahamic role-system, not merely chosen/rejected opposites; they reunite to bury Abraham.
+> - **Genesis 16 and 21** likely preserve doubled Hagar traditions, another strong example of one underlying story-pattern appearing in two narrative forms.
+> - **Jacob/Esau** is now one of the strongest broken-unity pairs: one womb, prenatal struggle, entangled birth, repeated first/second inversion, and Jacob temporarily wearing Esau’s clothes, smell and hairy outer identity.
+> - **Isaac repeats Abraham’s life**, showing clear successor-role recurrence.
+> - **Bethel** is one of the strongest axis scenes yet: earth-to-heaven connector, movement both up and down, explicit “gate of heaven,” then the sleeping stone is stood upright as a pillar and anointed.
+> 
+> For your cosmology, the key Section 7 picture is:
+> 
+> **one enclosed unity → two opposed branches → position/identity exchange → branch separation → sleep/altered state → two-way earth/heaven connector → gate recognized → stone raised into pillar.**
+> 
+> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
+> 
+> Next is **Section 8 — Genesis 29–36: Leah/Rachel, Jacob’s rods, Laban, boundary heap/pillar, the Jabbok wrestling figure, Jacob→Israel, Peniel, Esau reunion, and return to Bethel**.
+
