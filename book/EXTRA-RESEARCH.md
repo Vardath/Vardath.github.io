@@ -5268,3 +5268,13 @@ Priority pair tests:
 
 **Sources logged:** Genesis 10:5, 10:20, 10:25, 10:31–32; Genesis 11:1–9; scholarship on the composite Table of Nations; later Nimrod/Babel tradition distinguished from the biblical source.
 
+
+
+### Section 4 progress update C — Peleg division and lifespan/time association
+
+> One timing detail is worth preserving for later cycle work. The post-flood genealogy shows a sharp lifespan contraction around **Peleg (“division”)**: Eber lives 464 years, while Peleg and Reu each live 239, followed by still shorter totals. Ibn Ezra explicitly noticed this and offered a second interpretation of “the earth was divided” as **human lifespan being cut roughly in half** at Peleg.
+>
+> I’m not treating that medieval interpretation as the original meaning, but it gives us another recurring association between **division of the world and division/change of time**—exactly the kind of link we’ll want in the later timing analysis.
+
+**Sources logged:** Genesis 10:25; Genesis 11:10–32; Ibn Ezra on Genesis 11; later Jewish chronology.
+
