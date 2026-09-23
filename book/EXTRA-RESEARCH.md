@@ -29524,3 +29524,78 @@ Site-specific mechanisms retained for the Bible comparison:
 - Pair/bilateral geometry must be tested by function and sequence, not merely resemblance.
 
 **Book read complete. Live site read complete.** Final catch-up pass now moves through the full EXTRA-RESEARCH working record itself, checking what has already been appended so Section 22 is not started from a stale marker.
+
+
+---
+
+## READ-UP / RECONCILIATION COMPLETE — 2026-09-24
+
+**Catch-up task completed before resuming new Bible research.**
+
+Verified directly from the current GitHub `main` sources:
+- canonical cosmology manuscript: **Preface + Introduction + Chapters 1–88 — fully read**;
+- live `vardath-cosmology.html`: **all 53 rendered includes — fully read in include order**;
+- `book/EXTRA-RESEARCH.md`: **fully reread through the current end and reconciled chronologically**.
+
+### Duplicate/stale-history result
+
+The research ledger contains duplicated older blocks, including repeated 1 Enoch and Exodus material and a later stale checkpoint that would misleadingly send continuation back to Section 19.
+
+Those duplicated blocks are now explicitly treated as **historical echoes, not current progress**.
+
+Latest genuine canonical completion:
+- **SECTION 21 — EXODUS 19–24: COMPLETE FIRST PASS.**
+
+Search/reconciliation found:
+- the roadmap entry for **SECTION 22 — EXODUS 25–40**;
+- **no Section 22 progress/research block and no Section 22 completion entry anywhere later in the file**.
+
+Therefore the first genuinely unfinished roadmap section is:
+
+## SECTION 22 — EXODUS 25–40
+
+Priority already saved:
+- tabernacle as portable world/house model;
+- ark + cover + paired cherubim;
+- two cherubim facing one another / wings above / central voice-space;
+- table and lampstand/tree geometry;
+- seven lamps and branch counts;
+- curtain/veil thresholds;
+- inner/outer chambers;
+- altar and basin;
+- priestly garments / stones / paired shoulder stones;
+- breastpiece twelve stones;
+- Urim/Thummim pair;
+- golden calf as rival visible centre;
+- first tablets broken / replacement tablets;
+- Moses' radiant face and veil;
+- cloud/fire filling the completed structure;
+- construction dates, dimensions and counts;
+- comparison of the fixed Sinai mountain interface with the portable tabernacle interface.
+
+### Active anti-repeat protocol
+
+Before **every** next section or resumed sub-section:
+1. Search this ledger first for the section/story/text name.
+2. Check detailed progress entries, completion status and saved user-facing/chat-history replies.
+3. Latest genuine completion overrides older “next/unfinished” markers.
+4. Do not repeat research that is already appended.
+5. Append each new research/progress reply as it is produced.
+
+### Current Vardath comparison baseline
+
+Use the mature/current model rather than superseded historical wording:
+- every world-turn is already **populated** and has its own present;
+- above/below are future-relative/past-relative to the selected present;
+- a gate is a **temporary change in adjacency/coupling**, not automatically a tree, mountain, ark, person, bridge or road;
+- world-tree/lattice is persistent architecture; throat/gate is a temporary phase;
+- distinguish **operator, route, guide, guardian, vehicle, carrier, witness, destination and enclosure** unless the source itself combines them;
+- sequence/relationship/role/phase are stronger evidence than isolated symbol resemblance;
+- pairs must be tested by what they **do**: opposed directions, bilateral structure, complementary functions, predecessor/successor, rival/double, split states or multiple manifestations;
+- carrier/enclosure must not be mistaken for gate;
+- compare upper/lower movement, convergence/reopening, water/air/heat/land/living transfer, sorting/capacity, timing and numbers;
+- reset means **forward handoff/new beginning**, not rewind or creation of an empty successor world.
+
+**Section 22 has deliberately NOT been started during this catch-up pass.**
+
+**Assistant reply saved:** The book, live cosmology page and full EXTRA-RESEARCH ledger are now reconciled. Sections 19–21 are already complete despite stale duplicated history. There is no hidden Section 22 work later in the file. The exact continuation point is Section 22 — Exodus 25–40.
