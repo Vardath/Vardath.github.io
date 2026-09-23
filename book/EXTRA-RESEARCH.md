@@ -3627,3 +3627,11 @@ Special user hypothesis to test next:
 > 
 > Next is **Section 2 — Genesis 4–5: Cain / Abel / Seth / Enoch**, with the specific test of whether Cain and Abel are split/opposed states of one underlying figure.
 
+
+
+---
+
+## 57. LIVE PROGRESS LOG — Section 2 begins (Genesis 4–5)
+
+> Continuing with **Section 2 — Genesis 4–5**. I’m testing Cain/Abel/Seth as a sequence rather than just a murder story: **paired brothers → one removed → surviving marked/wandering figure → replacement child → two genealogical lines with repeated names → Enoch/Lamech recurrence**. The key question is whether this behaves like **split states of one underlying role**, or whether the text works better as distinct rival/successor figures. I’ll keep saving each progress update into `book/EXTRA-RESEARCH.md`.
+
