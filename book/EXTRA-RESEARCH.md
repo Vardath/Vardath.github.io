@@ -6888,3 +6888,13 @@ Priority pair tests:
 >
 > Lot’s wife is especially interesting structurally: she is already part of the extracted group but **turns back toward the old state and becomes fixed as a standing pillar**. I’m logging that not as “she is the rod,” but as a striking **motion → reversal → immobilized vertical form** transition at the exact boundary between old world and refuge.
 
+
+
+### Section 6 progress update C — Ishmael/Isaac mirrored near-death rescue sequences
+
+> The **Hagar–Ishmael and Isaac storylines are now clearly paired ordeals**, which is important for your “same figure somehow” idea. Genesis 21 and 22 use remarkably similar rescue mechanics: in the wilderness Hagar puts Ishmael at a distance so she will not watch him die; a **voice from heaven** intervenes, her eyes are opened, and she sees a **well** that saves the child. In the next chapter Abraham raises the knife over Isaac; a **voice from heaven** intervenes, Abraham lifts his eyes, and he sees a **ram** that replaces the child.
+>
+> So Ishmael and Isaac are not simply rival sons. The text gives them mirrored **near-death → heavenly interruption → newly seen substitute/resource → survival → future nation/seed** sequences. That makes them very strong **parallel branch states** of the Abraham line, even though they remain distinct people in the story.
+
+**Sources logged:** Genesis 21:14–21; Genesis 22:1–19; scholarship comparing Hagar/Ishmael with the Akedah and the repeated seeing/voice-from-heaven motifs.
+
