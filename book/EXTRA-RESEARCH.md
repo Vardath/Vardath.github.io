@@ -3088,3 +3088,15 @@ A section is only marked complete when:
 - no “same figure” conclusion is made solely because two characters form a pair.
 
 The research should proceed down Sections 1–96 and the pair register above, appending findings to this file as each manageable section is completed.
+
+
+---
+
+## 50. LIVE PROGRESS LOG — Section 1 begins (Genesis 1–3)
+
+**User instruction:** Begin the roadmap. At each progress update, append the assistant's reply to this file so the conversation/research state is not lost.
+
+**Assistant progress update:**
+
+> Starting **Section 1 — Genesis 1–3** now. I’m treating Adam/Eve as a real test case rather than assuming the answer: first I’ll separate the text into geometry, motion, pairing/splitting, boundary, water/tree/serpent roles, then compare Hebrew/Greek wording and later parallel traditions before deciding whether “two people = one underlying figure” actually fits. I’ll append this update and each subsequent progress reply to `book/EXTRA-RESEARCH.md` as we go.
+
