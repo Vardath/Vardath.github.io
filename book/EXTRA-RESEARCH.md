@@ -22316,3 +22316,39 @@ Do not choose the Vardath time-switch explanation as fact; retain all alternativ
 - Parables 37–71 have no surviving Qumran manuscript witness, unlike other Enochic sections; date and original language/compositional history remain debated.
 - Several Noahic passages in 54–55 and 60, 65–69 are treated by many scholars as embedded Noah traditions or redactional material; exact boundaries and literary history are debated.
 - Chapter 70–71 identity readings depend on Ethiopic textual criticism. Charles's famous third-person 71:14 is a conjectural reconstruction; current scholarship must not be represented as unanimous on every implication, but the manuscript-supported second-person reading is significant.
+
+
+## SECTION 14 status
+
+**SECTION 14 — 1 ENOCH 37–71 / PARABLES: COMPLETE FIRST PASS.**
+
+Strongest new results:
+1. **Head of Days / Son of Man** is an explicit two-person/figure pair, while Righteous One/Elect One/Son of Man/Anointed One substantially overlap as one role-cluster.
+2. **Enoch may ultimately become/be identified with the very Son-of-Man figure he earlier observes** — a remarkable observer/future-state identity convergence.
+3. Four archangels occupy **four sides** around a central divine authority; chapter 71 again gives a **four-sided fiery enclosure**.
+4. Upper and lower Flood waters are explicitly **masculine/feminine and joined**.
+5. **Leviathan/Behemoth** are a female/male pair deliberately separated into water-depth and dry-land domains.
+6. **Thunder/lightning** are explicitly distinct but inseparable — perhaps the cleanest ancient example yet of “two manifestations, one coordinated process.”
+7. Noahic material repeats **carrier → catastrophe/change → living seed → successor inhabited earth**.
+8. Hot/cold spring states change with angelic movement, and water systems are repeatedly shown as restrained/released by chamber/guardian structures.
+9. A cosmic **oath** is described as the stabilizing rule that suspends heaven, founds earth on water, restrains sea and preserves celestial courses.
+10. Enoch's final ascent contains **right-hand raising, two fire streams, four-sided fire, bodily collapse and spiritual transfiguration**.
+
+### Next first unfinished roadmap section
+
+**SECTION 15 — 1 ENOCH 72–82 / ASTRONOMICAL BOOK**
+
+Priority:
+- six eastern / six western gates,
+- sun/moon paired motion,
+- hidden return path,
+- changing day/night proportions,
+- 364-day year,
+- 4 intercalary leaders / 4 quarters,
+- 91-day seasons,
+- 30/31-day sequences,
+- 3/5/8-year comparisons and lunar lag,
+- star leaders / thousands,
+- Uriel as guide/operator,
+- whether “gate” means fixed spatial aperture, timed route, or both,
+- exact cycle table for later comparison with Jubilees, 2 Enoch and Archaix claims.
