@@ -13180,3 +13180,15 @@ Priority tests:
 > 
 > Next is **Section 12 — Jubilees 24–38: Isaac, Jacob/Esau, Bethel, Leah/Rachel, Jacob/Laban, return, Levi/Judah, Rachel’s death, and the later war/death of Esau**.
 
+
+
+---
+
+## 467. LIVE PROGRESS LOG — reordering the seven comparison apocrypha into the 81-book research flow
+
+> I’m going to **rebuild the 88-book working order rather than just bolt the seven extras onto the end**. I’ll first recover exactly which seven apocrypha we chose, then place each by **narrative/chronological setting** against the 81-book Ethiopian sequence, update the master list in `EXTRA-RESEARCH.md`, and if any belong before Genesis I’ll move their existing research/chat log ahead of Genesis and continue from there.
+>
+> I recovered the seven comparison texts: **Life of Adam and Eve/Apocalypse of Moses, 2 Enoch, 3 Enoch, Apocalypse of Abraham, Testament of Abraham, Testaments of the Twelve Patriarchs, and Ascension of Isaiah**. None should simply sit as “Sections 90–96” at the end if we’re reading the corpus as a continuous story-world; several belong inside Genesis-era material, and **none actually precedes the opening creation account of Genesis** in narrative frame. I’m verifying each placement against the texts and scholarship before rewriting the roadmap.
+>
+> The placements are resolving cleanly. The five early extras can be inserted **inside the Genesis→Exodus story flow**, while **Ascension of Isaiah** belongs around the **Hezekiah→Manasseh transition**, not at the end. **3 Enoch is the exception**: its frame is Rabbi Ishmael in the early rabbinic/second-century setting, even though Metatron recounts Enoch’s pre-Flood transformation, so I’m going to give it a **dual cross-reference** rather than falsely pretending its whole narrative occurs in Genesis.
+
