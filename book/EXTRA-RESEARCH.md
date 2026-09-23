@@ -12433,3 +12433,11 @@ Priority tests:
 - explicit lifespan decline and future re-expansion,
 - whether Jubilees provides a timed historical cycle.
 
+
+
+---
+
+## 428. LIVE PROGRESS LOG — Section 11 begins (Jubilees 11–23)
+
+> Section 10 is complete and saved. I’m moving straight into **Section 11 — Jubilees 11–23**. This section should test whether the Abraham cycle preserves the same mechanics we saw in Genesis, and whether Jubilees adds anything stronger about **astronomy, timed covenants, the split-animal passage, Isaac substitution, Mastema as hidden operator, and lifespan/cycle changes**.
+
