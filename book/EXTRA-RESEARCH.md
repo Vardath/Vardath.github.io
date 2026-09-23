@@ -10097,3 +10097,13 @@ Priority pair tests:
 
 > Section 8 is complete and saved. I’m continuing directly into **Section 9 — Genesis 37–50**, which may be even richer for your model: **Joseph repeatedly moves down and up through pits/prisons/palaces, identity is carried by garments, the seven/seven famine cycle controls world movement, Judah/Tamar produces the Perez–Zerah breach-twin scene, and Jacob later literally crosses his hands to reverse Ephraim/Manasseh’s positions**.
 
+
+
+### Section 9 progress update A — Perez/Zerah breach and crossed-hand reversal
+
+> Section 9 has now produced **two exceptionally strong crossing/reversal images**. First, **Perez/Zerah**: one twin’s hand emerges first, is marked with a scarlet thread, then **withdraws**, while the other twin **breaks through the opening** and is born first. That is almost a textbook **first-out → reversal → second crosses through → first becomes second** sequence.
+>
+> Then in Genesis 48 Jacob deliberately **crosses his arms** so his right hand lands on the younger Ephraim and his left on firstborn Manasseh. Joseph tries to uncross them, but Jacob refuses. So Genesis ends the patriarchal cycle with the reversal physically drawn by the body itself: **crossed hands impose younger-over-elder**, repeating Jacob/Esau in explicit geometry.
+
+**Sources logged:** Genesis 38:27–30; scholarship comparing Perez/Zerah with Jacob/Esau twin inversion; Genesis 48; ritual studies of Jacob’s deliberate crossed-hand blessing.
+
