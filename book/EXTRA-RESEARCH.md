@@ -28925,3 +28925,130 @@ Priority:
 - Zipporah / circumcision / bridegroom-of-blood scene,
 - all explicit ages, generations, distances, signs and repeated numbers,
 - begin continuous Exodus event timeline toward Passover and sea crossing.
+
+
+## SECTION 18 progress A — Exodus 1–2: Moses begins inside a miniature Flood-carrier
+
+### Israel begins as a 12→70→multitude expansion
+
+Exodus opens by naming the sons/tribal ancestors of Israel and gives:
+- **12 sons/tribal lines** in the inherited family structure,
+- **70 persons** descending from Jacob in the conventional Exodus count,
+- then rapid multiplication until the land is filled with them.
+
+This is:
+**one ancestor-family → 12 branches → 70-person descent group → numerous population**.
+
+Keep for the master expansion timeline.
+
+### Pharaoh / Israel — source-power versus multiplying body
+
+The new Pharaoh treats Israel as a population whose multiplication threatens Egyptian control.
+His counter-sequence:
+1. hard labour,
+2. increased oppression,
+3. midwife order,
+4. finally command that every Hebrew boy be cast into Nile.
+
+The narrative repeatedly says oppression does **not** stop multiplication.
+
+This is a useful control against a purely geometric reading:
+the first Exodus conflict is explicitly political/social in the narrative.
+
+### Shiphrah / Puah — named female pair controlling the birth-threshold
+
+Two Hebrew midwives are named:
+- **Shiphrah**
+- **Puah**
+
+Their assigned position is at the literal **birth threshold**:
+Pharaoh orders them to distinguish male/female as children emerge and kill sons.
+
+They instead preserve life.
+
+Pair classification:
+- **P7 co-operator pair**
+- threshold role = birth/life/death decision point.
+
+This is a real paired function but not a split-person motif.
+
+### Moses' mother / Pharaoh's daughter — two-mother transfer pair
+
+Moses passes through two maternal domains:
+- Hebrew birth mother creates/places carrier,
+- Pharaoh's daughter finds and adopts him,
+- biological mother is then temporarily reinserted as nurse,
+- child later passes back into royal household.
+
+Sequence:
+**Hebrew mother → water carrier → Egyptian royal woman → Hebrew mother/nurse → Egyptian royal upbringing**.
+
+This is a particularly strong **cross-boundary identity-transfer chain**.
+
+Pair classification:
+- Jochebed / Pharaoh's daughter = **P7 biological carrier / social-adoptive carrier**.
+
+### Moses' tebah — the Noah word is genuinely repeated
+
+The Hebrew noun **תֵּבָה (tebah)** is used in the Hebrew Bible for:
+- Noah's Flood vessel,
+- Moses' infant container/basket.
+
+The Moses vessel is made from **papyrus/rush (gome)** and waterproofed with **bitumen/asphalt and pitch**.
+
+The text does not specify a finger-trap weave or exact shape.
+So record:
+
+**secure textual fact:** Noah carrier and Moses carrier deliberately share the rare tebah word.
+
+**possible Vardath comparison:** a small **basket/container state** preserves the future transition-operator through lethal water, echoing the larger Flood carrier.
+
+**not secure:** exact finger-trap geometry.
+
+Scholarly work on tebah commonly emphasizes that both stories use a life-preserving receptacle in dangerous waters and connect preservation with the opening of a new historical stage.
+
+### Moses / Noah — carrier-role recurrence
+
+Noah:
+- enclosed in tebah,
+- survives destructive water,
+- carries future population through transition.
+
+Moses:
+- enclosed in tebah,
+- survives Pharaoh's lethal-water decree,
+- later becomes agent who carries Israel through another lethal water boundary.
+
+This is a strong **P5/P9 recurrence**:
+not same person, but the same **carrier-survivor role pattern** repeating at different scale.
+
+### Nile placement — carrier is stabilized at edge, not simply launched away
+
+Exodus says Moses' mother places the tebah:
+- among reeds,
+- at the river's edge/bank.
+
+Miriam remains nearby to observe what happens.
+
+Thus the infant scene is not necessarily a free-floating voyage downriver.
+It is better modeled as:
+**waterproof enclosure positioned within boundary vegetation at water/land edge → watched transfer to new custodian**.
+
+### Moses' split social identity begins here
+
+Moses is:
+- biologically Hebrew,
+- identified as a Hebrew child by Pharaoh's daughter,
+- named/raised within Egyptian royal society.
+
+This produces a genuine **dual identity state**:
+**Hebrew origin / Egyptian court identity**.
+
+It becomes central when Moses later goes out to “his brothers” and reacts to Egyptian violence.
+
+### Numbers from Exodus 1–2
+- Jacob/Israel family count: **70** in Exodus tradition.
+- named midwives: **2**.
+- Moses hidden before basket placement: **3 months**.
+- Reuel/Jethro's daughters at Midian well: **7**.
+- Moses takes **one**, Zipporah, as wife.
