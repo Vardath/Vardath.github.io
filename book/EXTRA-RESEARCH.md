@@ -16833,3 +16833,23 @@ That does not prove biblical characters are all one lattice mechanism, but it sh
 
 **Source control:** this elaborate multi-form Death sequence belongs especially to the long recension; exact form-counts and details vary across recensions.
 
+
+
+### X5 progress C — measured left/right judgment with a real middle state
+
+> The judgment scene adds another useful layer to your model: it is built as a **measured sorting system**, not a simple binary. Deeds are recorded on **right and left**, a central balance weighs them, fire tests them, and one soul with exactly equal good and bad is held **in the middle** rather than sent through either outcome. Abraham’s intercession then tips that stalled case toward salvation.
+>
+> So the geometry becomes **left/right records → central weighing point → unresolved middle state → added influence → release into one branch**. That looks more like a dynamic junction or decision node than a simple heaven/hell split.
+
+The long recension's judgment complex includes:
+- Abel as human-born judge,
+- a right-side recorder for righteous deeds,
+- a left-side recorder for sins,
+- Dokiel as the weighing angel,
+- Puriel as the fiery tester,
+- a soul held in the middle when its two sides balance.
+
+Abraham and Michael pray for that balanced soul, after which it is carried into Paradise. The story therefore makes the measured system **responsive to intercession**, not mechanically closed.
+
+**Control:** this is moral/judicial symbolism. Its relevance to a physical gate model is structural, not evidentiary.
+
