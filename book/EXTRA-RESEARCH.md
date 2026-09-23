@@ -12465,3 +12465,13 @@ Priority tests:
 
 **Sources logged:** Jubilees 17:15–18:19; Michael Segal on Jubilees’ Akedah/festival chronology; Jubilees 23:8–31; James VanderKam on Psalm 90/Isaiah 65 and restored lifespan in Jubilees 23.
 
+
+
+### Section 11 progress update C — aging compression/re-expansion and Jacob-line cosmic renewal language
+
+> Jubilees 23 goes even further than a simple lifespan decline. During the bad age it says a **child of three weeks can appear as old as a hundred-year-old person**; in the restored age, human days expand back toward **1,000 years**, with people remaining effectively youthful. Read structurally—not literally as physics—the book is imagining **aging/time-rate compression followed by re-expansion**.
+>
+> There is also a striking Abraham→Jacob blessing in Jubilees 19 saying Jacob’s ancestral line/seed will somehow serve to **“lay the foundations of heaven,” “strengthen the earth,” and “renew the luminaries.”** The exact subject of that line is textually/interpretively awkward, so I’m keeping it flagged rather than building on it yet, but it is unusually cosmological language attached to the Jacob line.
+
+**Primary text logged:** Jubilees 19:23–27; 23:8–31. The lifespan restoration toward 1,000 years is treated in modern scholarship as part of Jubilees’ eschatological restoration of sacred time/new creation.
+
