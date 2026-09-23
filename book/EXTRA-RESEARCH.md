@@ -14153,3 +14153,30 @@ Priority tests:
 
 **Source-control note:** the Melchizedek/Nir material belongs to the later chapters of 2 Enoch and has complicated recension history; chapter 73 in particular is not equally represented across manuscripts. Preserve this as a later 2 Enoch tradition, not as equally secure with every core ascent chapter.
 
+
+
+### Final user-facing reply — natural placement of the seven + continuation
+
+> The **natural story order** for the seven comparison books is now:
+> 
+> 1. **Life of Adam and Eve / Apocalypse of Moses** — **after Genesis 3**, before Genesis 4–5.
+> 2. **2 Enoch** — **after Genesis 5**, before Genesis 6.
+> 3. **3 Enoch** — **beside 2 Enoch after Genesis 5**, before Genesis 6, because its central story is Enoch→Metatron. Its later Rabbi Ishmael frame stays clearly noted as a later frame.
+> 4. **Apocalypse of Abraham** — **after Genesis 11, before Genesis 12**, with another cross-reference at Genesis 15.
+> 5. **Testament of Abraham** — **immediately after Genesis 25:7–10**, expanding Abraham’s death.
+> 6. **Testaments of the Twelve Patriarchs** — **after Genesis 50, before Exodus 1**.
+> 7. **Ascension of Isaiah** — at the **Hezekiah→Manasseh transition**, after 2 Kings 20 / 2 Chronicles 32 and before 2 Kings 21 / 2 Chronicles 33.
+> 
+> **None naturally belongs before Genesis 1.**
+> 
+> I have changed the active roadmap in `book/EXTRA-RESEARCH.md` to use that story-order placement. I also completed the first full pass on **Life of Adam and Eve** and began **2 Enoch** in its proper place.
+> 
+> The strongest new findings so far are:
+> - Adam/Eve become a very strong **split→reintegrated pair**: one body divided, separate lives, then Eve explicitly asks to return to Adam’s burial “tabernacle,” with the tomb sealed until the “rib” returns.
+> - Satan explicitly uses the serpent as a **vessel/carrier**, while the same underlying operator can appear in angelic form.
+> - The Adam tradition has a **timed water transition**: Adam on a stone in the Jordan, Eve in the Tigris; the Jordan’s flow stops around Adam; Eve exits early after a false angelic intervention.
+> - 2 Enoch gives a genuine **east-gate → upper path → west-gate → under-earth return → east-gate** solar cycle.
+> - Enoch changes visible form by losing “earthly clothing” and receiving luminous glory while still plausibly remaining human underneath.
+> - 2 Enoch’s later Melchizedek tradition gives a second Flood-survival route: **Noah survives in the ark while Melchizedek is removed upward to Eden for preservation**.
+> 
+> I’m now continuing through **2 Enoch** before moving to **3 Enoch**, then back into Genesis 6–11.
