@@ -24630,3 +24630,149 @@ This creates the same lower→upper signal structure found in Enoch:
 - Midian priest's daughters: **7**.
 - one central infant + multiple female preservers.
 - water scenes in this chapter: Nile preservation + Midian well rescue = **2 major water thresholds**.
+
+
+## SECTION 18 progress C — Exodus 3: fire-without-consumption, bounded mountain interface and explicit down→up mission
+
+### Bush as an energetic carrier that remains intact
+
+At Horeb:
+- flame/fire appears **in/from the bush**,
+- bush burns,
+- yet is **not consumed**.
+
+The unusual state is therefore:
+**visible intense fire + material carrier remains structurally present**.
+
+For Vardath comparison this is interesting beside plasma/fire imagery:
+energy-like manifestation does not necessarily destroy the supporting structure.
+
+But the text gives no plasma physics and should not be treated as describing plasma.
+
+### “Messenger / YHWH / God” — do not automatically count three beings
+
+The scene begins with:
+- “messenger/angel of YHWH” appearing in flame,
+
+then:
+- YHWH sees Moses turn,
+- God calls from bush,
+- divine first-person speech continues.
+
+Ancient and modern interpreters explain this in several ways:
+- messenger as manifestation/mediator,
+- direct divine appearance expressed through messenger language,
+- compositional/source growth.
+
+Recent scholarship has even argued that “messenger of YHWH” may in some passages be a later scribal way of distancing direct divine embodiment.
+
+For our pair-counting method:
+**do not automatically turn the changing labels into multiple actors**.
+
+This is another label≠person control.
+
+### Moses “turns aside”
+
+Moses sees the anomalous fire and deliberately **turns aside** to inspect it.
+
+The encounter begins through deviation from ordinary route:
+**normal shepherd path → anomalous sight → lateral turn → boundary encounter**.
+
+### Local boundary forms around the bush
+
+Moses is told:
+- **do not come closer**,
+- remove sandals,
+- ground is holy.
+
+So the interface has a controlled radius:
+**outside ordinary terrain → approach → stop-line → transformed/holy local zone**.
+
+This is much closer to a threshold than the ark/basket is.
+
+### Upper/lower language is explicit in the mission statement
+
+God says:
+- Israel's suffering has been seen/heard,
+- **“I have come down”** to deliver,
+- to **bring them up** out of Egypt into another land.
+
+Thus the narrative encodes:
+**upper agent descends**
+→ **lower population brought upward/outward**.
+
+Conventional meaning remains theological + geographical:
+Egypt-to-Canaan “up” is not proof of temporal world layering.
+
+But the down/up polarity is text-level, not imposed by us.
+
+### Mountain functions as return-coordinate
+
+Moses is given a future sign:
+after bringing the people out,
+- they will serve/worship God **at this same mountain**.
+
+The mission therefore makes a loop:
+
+**mountain encounter**
+→ Egypt
+→ extraction
+→ **return to mountain**.
+
+This is a closed event route around one fixed coordinate.
+
+### Divine name / identity transmission
+
+Moses asks what name he should give Israel.
+
+The response moves through:
+- **Ehyeh Asher Ehyeh**
+- **Ehyeh**
+- **YHWH**
+- God of Abraham / Isaac / Jacob.
+
+The narrative therefore stacks:
+**self-description → short designation → covenantal proper name → ancestral relational identity**.
+
+Source criticism regards Exodus 3 as composite, and Exodus 6 preserves another divine-name revelation tradition. So do not treat every naming formula as necessarily a single pristine utterance from one literary layer.
+
+### Moses / Abraham–Isaac–Jacob
+
+Moses is not introduced as a replacement for one patriarch.
+Instead the divine identity links him backward to the **three-person ancestral chain**.
+
+This creates:
+**3 ancestral anchors → 1 current operator Moses**.
+
+### Three-day journey request
+
+Moses is instructed to ask Pharaoh for a **3-day journey** into wilderness to sacrifice.
+
+Record **3** as a narrative time/distance marker.
+Do not yet equate it with resurrection/three-day or other 3 patterns.
+
+### Land-list count
+
+Exodus 3 names six peoples in the destination formula:
+- Canaanites
+- Hittites
+- Amorites
+- Perizzites
+- Hivites
+- Jebusites
+
+So the received list here is **6**, not 7.
+
+### Geometric sequence, chapter 3
+
+**flock**
+→ beyond wilderness
+→ mountain of God
+→ fire inside non-consumed bush
+→ Moses turns aside
+→ approach boundary imposed
+→ voice/name from centre
+→ upper source says “come down”
+→ Moses sent outward
+→ population to be brought “up”
+→ eventual return to same mountain.
