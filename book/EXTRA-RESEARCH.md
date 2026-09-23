@@ -6872,3 +6872,11 @@ Priority pair tests:
 
 > Continuing with **Section 6 — Genesis 19–25**. I’ll test Sodom/Zoar as a destruction-and-escape geometry, Lot/Lot’s wife as a possible split pair, the two Hagar/well scenes as a possible doublet, Isaac/Ishmael as alternate heir states, and the binding of Isaac for **replacement/substitution geometry**. I’ll keep appending each progress reply into `book/EXTRA-RESEARCH.md`.
 
+
+
+### Section 6 progress update A — Abraham/Lot as mirrored threshold roles
+
+> A major pair result is already emerging from Sodom. **Abraham and Lot are deliberately mirrored across Genesis 18–19**: Abraham sits at a tent entrance in daylight and receives **three** visitors; Lot sits at a **city gate in evening** and receives **two**. Both urge the visitors inside, both provide food, and then the stories diverge—Abraham stays outside the destruction zone and negotiates; Lot must be physically pulled **through the doorway and out of the city** before fire falls.
+>
+> That makes Abraham/Lot look less like “same person” and more like **outside/inside versions of the same hospitality-threshold role**: one stands at the safe side of the boundary; the other is embedded inside the doomed enclosure and has to be extracted.
+
