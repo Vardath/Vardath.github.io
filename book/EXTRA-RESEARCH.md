@@ -3649,3 +3649,13 @@ Special user hypothesis to test next:
 >
 > The stronger “same figure somehow” evidence appears one step later: **Seth is explicitly given “instead of Abel.”** That makes **Abel → Seth** a genuine replacement/successor relation. And the two genealogies that follow contain striking doubled names—two Enochs, two Lamechs, and several closely parallel names—so Genesis itself may be preserving **alternative/reworked versions of a lineage**, exactly the sort of duplication we need to track.
 
+
+
+### Section 2 progress update C — mirrored genealogies / duplicated Enoch and Lamech
+
+> The genealogy is giving us a much stronger duplication test than Cain/Abel themselves. **Genesis 4 and Genesis 5 contain what many scholars regard as variant/reworked ancestral lists**: both have an **Enoch** and a **Lamech**, with several other names closely echoing one another. But the duplicated figures are given opposite-looking outcomes: Cain’s Enoch is tied to the **first city/enclosure**, while Seth’s Enoch **walks with God and disappears/is taken**; Cain’s Lamech culminates the violence pattern with **seventy-sevenfold vengeance**, while Seth’s Lamech lives **777 years** and fathers Noah, announcing expected relief from the cursed ground.
+>
+> That is exactly the kind of thing your “same figure somehow” idea should focus on: not necessarily Cain = Abel, but **one traditional figure or lineage may have been split into two mirrored narrative lines—earth/city versus heaven/removal, violence versus renewal**. I’m treating this as one of the strongest duplication findings so far.
+
+**Research context logged:** John Day on the two Enochs and variant genealogical lists; Richard S. Hess on Lamech in both genealogies; David M. Carr on Genesis 4 formation; Genesis 4:17–24 and Genesis 5.
+
