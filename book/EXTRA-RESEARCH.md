@@ -5240,3 +5240,11 @@ Priority pair tests:
 > 
 > Next is **Section 4 — Genesis 10–11: Nimrod, Babel, tower-to-heaven, one language becoming many, and scattering**.
 
+
+
+---
+
+## 110. LIVE PROGRESS LOG — Section 4 begins (Genesis 10–11)
+
+> Continuing with **Section 4 — Genesis 10–11**. I’m testing whether Babel is best read as another **axis/gate event**, or as an **attempted human imitation of one**: one people, one language, one city, a tower whose “head” reaches heaven, then divine descent, fragmentation, and scattering. I’ll save this update and each later progress reply into `book/EXTRA-RESEARCH.md`.
+
