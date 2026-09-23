@@ -20768,3 +20768,47 @@ Several number-patterns are worth carrying forward without claiming significance
 - **120** = completion of Moses' human life and handoff point.
 
 Add all of these to the later master cycle table beside Genesis, Jubilees, 1/2/3 Enoch, biblical chronologies, Archaix intervals and the Vardath cycle. Do **not** claim a match until the units are normalized.
+
+
+### X7 progress G — X7 first-pass status
+
+**X7 — TESTAMENT / ASSUMPTION OF MOSES: COMPLETE FIRST PASS.**
+
+Strongest results:
+- Moses/Joshua is a clear **successor pair** with a bodily hand-to-seat transfer.
+- Moses receives **world-scale/cosmic-body** language.
+- Later tradition creates an opposed **Michael/devil body-threshold pair**.
+- Israel divides **12 → 2 + 10** and later continues as related branches.
+- Taxo forms a **1 + 7** preservation group and enters a cave after **3 days**, on the **4th**.
+- The text contains a literal **sealed information-carrier**: cedar-treated writings inside earthen vessels until the end-time visitation.
+- Its climax produces **earth/mountain deformation, celestial disruption, sea withdrawal into the abyss, drying waters, and upper/lower sorting**.
+- The final Moses body-route is genuinely unresolved because the manuscript breaks off.
+
+### Source-control summary
+Primary working text: surviving Latin Testament of Moses in the R. H. Charles translation tradition, cross-checked against later textual summaries and scholarly discussion.  
+Major cautions: the manuscript is incomplete; several numerical passages are corrupt; the relation between the surviving **Testament** and a lost **Assumption/Ascension** is debated; Jude 9/patristic material must not be silently inserted into the surviving Latin as though it were extant there.
+
+### Next roadmap move
+
+The earliest still-unfinished numbered roadmap block is now:
+
+**SECTION 12 — JUBILEES 24–38**
+
+This must be resumed before jumping ahead into the later canonical sections.
+
+Priority tests already saved:
+- Isaac at the well,
+- Jacob/Esau,
+- birthright/blessing,
+- Bethel dream and whether Jubilees changes the ladder/gate geometry,
+- Leah/Rachel,
+- Jacob/Laban,
+- boundary stones/pillars/wells,
+- Dinah/Shechem,
+- Levi/Judah as possible split priest/king functions,
+- Jacob/Israel naming,
+- Rachel's death/pillar,
+- later Jacob–Esau war and Esau's death,
+- all pair structures,
+- event ordering,
+- dates/years/jubilees/weeks/months/days.
