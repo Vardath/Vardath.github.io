@@ -24421,3 +24421,212 @@ That inversion is more structurally important than treating the basket scene in 
 - imposed birth outcomes: **2** — male/female.
 - first enforcement layer: **2 midwives**.
 - second enforcement layer: **all Pharaoh's people**.
+
+
+## SECTION 18 progress B — Exodus 2: Moses as protected cargo, female rescue-chain, dual identity and seven-daughter well scene
+
+### Moses' `tebah` — Noah's carrier geometry deliberately miniaturized
+
+Moses' mother:
+- hides him **3 months**,
+- can hide him no longer,
+- makes a `tebah` of reeds/papyrus,
+- waterproofs it with **bitumen and pitch**,
+- places Moses inside,
+- puts it **among the reeds by the bank of the Nile**.
+
+The Hebrew noun `tebah` is the same unusual word used for **Noah's ark**.
+
+So the literary parallel is strong:
+
+**Noah**
+→ `tebah`
+→ waterproof enclosure
+→ threatened by world-killing water
+→ living cargo preserved
+→ new continuation.
+
+**Moses**
+→ `tebah`
+→ waterproof enclosure
+→ threatened by state-mandated river death
+→ living cargo preserved
+→ future national continuation.
+
+The scale differs radically, but the carrier logic is the same.
+
+### Important correction — Moses is not simply “sent floating downriver”
+
+Exodus places the `tebah`:
+- **among reeds**
+- **at the bank/edge of the Nile**.
+
+The text does not explicitly narrate a long uncontrolled downstream voyage.
+
+This matters geometrically:
+**protected enclosure positioned at a dangerous boundary**
+rather than
+**boat travelling a long river route**.
+
+### Carrier ≠ gate
+
+The Moses `tebah` is still:
+- container,
+- preservation shell,
+- cargo carrier.
+
+It does not create the boundary transition itself.
+
+Maintain the project rule:
+**ark/basket/house = enclosure**
+while
+**gate = adjacency/threshold mechanism**.
+
+### Female rescue chain reverses Pharaoh's male-death decree
+
+The rescue sequence is dominated by women:
+
+**mother**
+→ constructs enclosure
+
+**sister**
+→ watches from a distance
+
+**Pharaoh's daughter**
+→ descends to Nile, sees enclosure, opens it, pities child
+
+**maid/servant**
+→ physically retrieves it
+
+**sister**
+→ proposes Hebrew nurse
+
+**mother**
+→ is brought back and paid to nurse her own child
+
+**Pharaoh's daughter**
+→ finally adopts him as son.
+
+The irony is structural:
+Pharaoh's own household becomes the mechanism preserving the child targeted by Pharaoh's decree.
+
+This is a distributed P7 preservation network, not one paired figure.
+
+### Mother / Pharaoh's daughter — two maternity roles around one child
+
+Moses has:
+- biological Hebrew mother/nurse,
+- adoptive Egyptian royal mother.
+
+These are two genuinely distinct women occupying different maternal positions around one central child.
+
+Classification:
+- **P7 biological-carrier / social-status-carrier pair**.
+
+The child passes from one household identity into another without ceasing to be the same person.
+
+### Moses — Hebrew body / Egyptian household identity
+
+Pharaoh's daughter recognizes:
+- “one of the Hebrew children,”
+
+yet Moses becomes:
+- **her son** inside Pharaoh's household.
+
+This creates a strong identity-layer control:
+**one body/person**
+with
+**Hebrew descent + Egyptian royal/social identity**.
+
+Do not read this as two Moseses.
+It is a clean **P3 one person / two social states** example.
+
+### Name itself preserves the water transition
+
+The narrative wordplay explains “Moses” from being **drawn out of water**.
+
+TheTorah notes the Hebrew explanation is linguistically unusual for an Egyptian princess and may function as narrative wordplay around an Egyptian-looking name.
+
+For our purposes the literary role is clear:
+Moses' public name is attached to:
+**water → extraction → survival**.
+
+This anticipates the later national role:
+Moses will lead a people **out through water**.
+
+That is literary foreshadowing, not proof that the infant event and sea event are literally the same event.
+
+### Adult Moses — between two communities
+
+Adult Moses sees:
+- Egyptian striking Hebrew,
+- kills Egyptian,
+- later sees **two Hebrews** fighting.
+
+He therefore moves between:
+**Egyptian authority world**
+and
+**Hebrew kin world**,
+without fitting cleanly into either.
+
+His first violent intervention forces a geographical state change:
+**Egypt → flight → Midian**.
+
+### Moses / Pharaoh — first direct polarity
+
+Pharaoh seeks Moses' death.
+Moses flees.
+
+This begins the later P6/P2 ruler-opponent structure:
+**Pharaoh = fixed imperial centre**
+vs
+**Moses = displaced fugitive who later returns as boundary-challenging agent**.
+
+### Seven daughters at the well
+
+In Midian:
+- priest has **7 daughters**,
+- they come to draw water,
+- shepherds drive them away,
+- Moses rises/rescues them,
+- waters their flock.
+
+This is another water-boundary rescue scene:
+Moses, who was rescued from water as infant, now becomes **rescuer at water**.
+
+The seven women act as a group; Zipporah later separates from the seven as Moses' wife.
+
+### Zipporah / Moses
+
+Zipporah becomes:
+- Midianite wife,
+- mother of Gershom,
+- later the active lifesaving figure in the circumcision episode.
+
+So the pair is not passive spouse symbolism. Zipporah will become an independent operator capable of reversing a death-threat against Moses/household.
+
+### Gershom — location encoded as identity
+
+Moses names son **Gershom**, explaining that he has been a sojourner/stranger in a foreign land.
+
+Thus Moses' family carries his geographic state in a name:
+**Egyptian/Hebrew displaced figure → Midian sojourner → returner**.
+
+### Cry rises / response begins
+
+After the king dies:
+- Israelites groan,
+- their cry **rises**,
+- God hears,
+- remembers covenant,
+- sees,
+- knows.
+
+This creates the same lower→upper signal structure found in Enoch:
+**suffering below → cry rises → upper attention → later descent/intervention**.
+
+### Number register, Exodus 2
+- Moses hidden: **3 months**.
+- Midian priest's daughters: **7**.
+- one central infant + multiple female preservers.
+- water scenes in this chapter: Nile preservation + Midian well rescue = **2 major water thresholds**.
