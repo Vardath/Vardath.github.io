@@ -13406,3 +13406,31 @@ Applied anchors:
 
 The original historical progress material is retained for provenance, but the **active roadmap and appendage order now use the corrected placements above**.
 
+
+
+### Final user-facing reply — apocrypha placement correction
+
+> I found the correct **narrative placement** for all seven comparison apocrypha and rebuilt the working order in **`book/EXTRA-RESEARCH.md`**.
+> 
+> The order is:
+> 
+> 1. **Life of Adam and Eve / Apocalypse of Moses** — after **Genesis 3**, because it begins after the expulsion and continues Cain/Abel, Seth, Adam’s death and burial.
+> 2. **2 Enoch** — after **Genesis 5**, before Genesis 6/Flood material. Its core is the antediluvian Enoch; later material continues toward Noah and the Flood.
+> 3. **Apocalypse of Abraham** — after **Genesis 11**, before Genesis 12. Abraham’s idol-rejection precedes his call; its ascent/covenant material is cross-linked again to Genesis 15.
+> 4. **Testament of Abraham** — immediately after **Genesis 25:7–10**, because it expands Abraham’s death.
+> 5. **Testaments of the Twelve Patriarchs** — after **Genesis 50**, before Exodus 1. These are the sons of Jacob giving final speeches/dying in Egypt; several are explicitly after Joseph’s death and their remains await later transfer.
+> 6. **Ascension of Isaiah** — at the **Hezekiah → Manasseh transition**, between 2 Kings 20 / 2 Chronicles 32 and 2 Kings 21 / 2 Chronicles 33. The vision is tied to Hezekiah; the martyrdom frame is under Manasseh.
+> 7. **3 Enoch** — main placement **after Revelation**, because its frame is Rabbi Ishmael’s heavenly ascent in the early rabbinic world. I also put a secondary cross-reference beside Genesis 5 / 1 Enoch / 2 Enoch for the Enoch→Metatron material.
+> 
+> **None of the seven belongs before Genesis 1.** A few reveal or retell creation, but the person receiving that revelation is later—Enoch, Abraham, or Rabbi Ishmael—so moving them ahead of Genesis would scramble the narrative frame.
+> 
+> I also:
+> - preserved the Ethiopian Church’s official **81-book canon** as 46 OT + 35 NT;
+> - retired the old “Sections 90–96” dump-at-the-end arrangement;
+> - inserted all seven at their correct points in the active roadmap;
+> - added the full 81-book baseline with the seven X-inserts;
+> - kept **3 Enoch** deliberately dual-positioned so we don’t pretend Rabbi Ishmael lived before the Flood;
+> - recorded that there is **no pre-Genesis comparison text to research before continuing**.
+> 
+> So we do **not** need to jump backward before Genesis. The next normal research point remains **Section 12 — Jubilees 24–38**, unless we choose to go back and perform the full deep passes on the newly interleaved comparison texts first.
+
