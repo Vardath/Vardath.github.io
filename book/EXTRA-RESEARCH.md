@@ -19925,3 +19925,15 @@ Priority tests:
 
 > **3 Enoch is now complete and saved.** The first unfinished section is now **X4 — Apocalypse of Abraham**, naturally placed after Genesis 11 and before Genesis 12, with a second cross-reference at Genesis 15. I’m continuing there now, focusing on Abraham’s idol break, Yahoel as guide, sacrifice/ascent, the creation-image/abyss, and whether this text makes the split-corridor/fire geometry even clearer.
 
+
+
+### Insert X4 progress A — Yahoel as physical transfer operator; divided sacrifice becomes ascent mechanism
+
+> The Apocalypse of Abraham is reinforcing the same operator pattern we just saw in 3 Enoch, but with a different form. **Yahoel appears “in the likeness of a man,” carries a golden staff, takes Abraham by the right hand, stands him up, guides him to the sacrifice, and then becomes invisible after the threshold event.** So again the guide is not merely a messenger delivering information; he physically **orients, transfers and stabilizes the traveller** at the boundary.
+>
+> The sacrifice then becomes the launch point: the divided animals remain below, the **undivided birds become the ascent supports**, smoke/furnace imagery rises, and Abraham is carried upward into the fiery heavenly region.
+
+**Primary text logged:** Apocalypse of Abraham 9–16 in Alexander Kulik's translation.  
+**Cross-reference:** Genesis 15 split-animal covenant.  
+**Control:** the Apocalypse is an apocalyptic expansion of Genesis 15, not independent proof of a physical ascent mechanism.
+
