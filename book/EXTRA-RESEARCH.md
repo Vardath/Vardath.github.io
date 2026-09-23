@@ -27716,3 +27716,166 @@ Judgment likewise distinguishes:
 - remaining great stars later gathered/bound.
 
 This reproduces a **leader/host** structure parallel to Shemihazah/Azazel traditions without forcing exact one-to-one identity.
+
+
+## SECTION 16 progress B — 1 Enoch 89: Flood, Moses/Aaron and transformation from sheep to man
+
+### Flood geometry — upper seven torrents + lower fountains
+
+The Animal Apocalypse Flood is especially close to the water-routing pattern already found in Genesis/Jubilees:
+
+- a **lofty roof**
+- **7 water torrents above it**
+- water flows downward into an **enclosure**
+- fountains open on the surface/below
+- water rises
+- enclosure is covered
+- vessel floats above
+- later upper torrents are removed
+- earthly chasms are levelled/closed
+- **other abysses open**
+- water drains downward into them
+- earth reappears
+- darkness recedes / light appears.
+
+This gives a full sequence:
+
+**upper inflow ↓ + lower upwelling ↑ → maximum cover → upper supply removed → new lower drains open ↓ → surface re-emerges**.
+
+That is extremely important for the Vardath water-cycle work because the same story contains both:
+- **water entering the surface system from above/below**
+- and later **water being routed away into newly opened lower spaces**.
+
+### Noah — animal→human transformation linked to carrier construction
+
+Noah is:
+- born/represented as a **white bull**,
+- instructed in a secret,
+- **becomes a man**,
+- builds the great vessel,
+- enters it with **3 bulls**,
+- all are covered/enclosed.
+
+This is a state-transition exactly at the preservation phase:
+**animal-symbolic human → anthropomorphic/high-status human → carrier builder/operator**.
+
+The change of form therefore correlates with role change.
+
+### Noah + three sons = 1|3 carrier unit
+
+The ark group begins:
+**Noah + 3 sons**.
+
+After emergence:
+- three sons are color-differentiated:
+  - white
+  - red
+  - black.
+
+This is a clean **1 + 3** survival/enclosure unit followed by differentiation.
+
+### Twelve sheep arise from one white sheep
+
+The lineage compresses dramatically:
+- Abrahamic line produces a white bull,
+- then wild ass / white bull,
+- then black boar / white sheep,
+- that **one white sheep produces 12 sheep**.
+
+The twelve are then treated collectively as Israel.
+
+So the apocalypse repeatedly performs:
+**one ancestor-symbol → many-member collective body**.
+
+This matters for pair/person interpretation: a single animal may represent a historical individual at one point, then a species/flock a population at another.
+
+### Joseph / eleven brothers — 1 + 11 reunion
+
+One of the **12 sheep** is handed over and ends up among wolves.
+Later:
+- Lord brings the **11 sheep** to join it.
+
+This creates:
+**12 → 1 displaced + 11 remaining → reunion among foreign wolves**.
+
+That is a clear fragmentation/recombination structure.
+
+### Moses / Aaron — explicit two-sheep mission pair
+
+One sheep escapes the wolves (Moses).
+Then:
+- another sheep **meets it**,
+- **the two enter together** into the assembly of wolves,
+- jointly deliver the warning.
+
+This is the Moses/Aaron pair.
+
+Classification:
+- **P7 operator/support pair**
+- one is principal escaped/commissioned sheep,
+- the second joins and acts with it,
+- both enter the enemy enclosure together.
+
+This supports our broader pair method: some biblical pairs are not halves of one entity, but a **two-node operating unit**.
+
+### Exodus sea — divided bilateral water with central separator
+
+The sea:
+- divides,
+- water stands **on this side and that side**,
+- Lord places Himself **between sheep and wolves**,
+- sheep cross,
+- wolves enter,
+- sea re-forms “as it had been created,”
+- pursuers are covered.
+
+Geometry:
+**left/right water walls + central passage + central protective figure + closing/recombination**.
+
+This remains one of the strongest literal bilateral corridor scenes in the corpus.
+
+### Moses at the high rock — sheep→man transformation
+
+Moses:
+- ascends the **summit of the lofty rock** twice,
+- encounters divine presence,
+- descends to blinded/straying sheep,
+- restores order,
+- then the vision says the sheep **became a man** and built a house for the Lord.
+
+Andrei Orlov and other scholars interpret this humanization in the Animal Apocalypse's symbolic system as an **angelomorphic/exalted transformation of Moses**, since heavenly beings are represented anthropomorphically while ordinary humans are animals.
+
+This is highly relevant to the user's Squatter-Man hypothesis:
+**Moses changes from animal-person symbol to upright anthropomorphic form precisely at the mountain/theophany/building phase**.
+
+It still does not say “Moses is a lattice rod,” but it confirms that an ancient Enochic author could portray Moses' mountain encounter as a **change of bodily symbolic state**.
+
+### Moses / Aaron deaths and successor pair
+
+The sheep who had met Moses (Aaron) falls asleep first.
+Then Moses, now represented as a man/leader, also withdraws/falls asleep.
+
+After the stream crossing:
+- **two sheep arise as leaders** in place of the earlier pair.
+
+The exact identifications of the two successor sheep are debated in commentary, commonly associated with conquest-era leadership such as **Joshua and Caleb**.
+
+Record as:
+**Moses/Aaron pair → both removed → two-leader successor pair**.
+
+Do not insist on Joshua/Caleb without qualification.
+
+### House / tower distinction
+
+Later:
+- house becomes large/broad for sheep,
+- **tower is built on the house**,
+- house is low,
+- tower is high/lofty,
+- Lord stands on tower,
+- table placed before Him.
+
+This is a strong architectural distinction:
+**community enclosure below + elevated vertical divine station above**.
+
+Do not collapse house and tower into one object.
