@@ -28412,3 +28412,133 @@ Priority:
 - Moses' face radiance/veil,
 - construction dates and all dimensions/counts,
 - compare mountain interface with portable tabernacle interface.
+
+
+## SECTION 17 progress A — 1 Enoch 91–105: Apocalypse of Weeks as a structured but unequal event timeline
+
+### Source-control first: five literary units are combined in 91–108
+
+Modern commentary treats the end of 1 Enoch as a collection of distinct works:
+1. **Apocalypse of Weeks** — 93:1–10 + 91:11–17
+2. **Exhortation** — 91:1–10, 18–19
+3. **Epistle** — 92:1–5; 93:11–105:2
+4. **Birth of Noah** — 106:1–107:3
+5. **Eschatological Admonition** — 108
+
+The Ethiopic order displaced part of the Apocalypse of Weeks; Aramaic 4Q212 confirms that weeks 1–7 in ch. 93 originally continue into weeks 8–10 in ch. 91.
+
+This matters for our timeline: use the reconstructed **1→10 order**, not present chapter order.
+
+### Ten-week master sequence
+
+The text's intended progression is approximately:
+
+**Week 1**
+- primordial righteousness/judgment.
+- Enoch is born in the **seventh part**.
+
+**Week 2**
+- great wickedness/deceit.
+- “first end.”
+- one man saved = Noah/Flood horizon.
+
+**Week 3**
+- at close, a man elected as **plant of righteous judgment**.
+- generally read as Abraham / Abrahamic line.
+
+**Week 4**
+- holy/righteous visions.
+- **law for all generations**.
+- **enclosure** made.
+- standard historical correlation: Moses/Sinai/tabernacle generation.
+
+**Week 5**
+- **house of glory/dominion built**.
+- standard correlation: Solomon/Temple.
+
+**Week 6**
+- people blinded / wisdom abandoned.
+- **a man ascends**.
+- house burned.
+- chosen root dispersed.
+- commonly correlated with prophetic/Elijah trajectory plus First Temple destruction/exile, though details are selective.
+
+**Week 7**
+- apostate generation.
+- at close, chosen righteous remnant selected from eternal plant.
+- receives **sevenfold wisdom/instruction**.
+- this week is generally placed around the real author's own early second-century BCE horizon.
+
+**Week 8**
+- righteousness.
+- sword/judgment against oppressors.
+- righteous acquire houses.
+- **house built for Great King**.
+
+**Week 9**
+- righteous judgment revealed to whole world.
+- godless works vanish.
+- world marked/written for destruction.
+
+**Week 10**
+- specifically **seventh part**:
+  - eternal judgment,
+  - angelic judgment,
+  - **first heaven passes away**,
+  - **new heaven appears**,
+  - heavenly powers give **sevenfold light**.
+
+After week 10:
+- **weeks without number**
+- no further measured terminal count
+- continuing goodness/righteousness.
+
+### The weeks should NOT be forced into equal year lengths
+
+Loren Stuckenbruck's analysis emphasizes:
+- “week” signals predetermined periods structured by seven,
+- but the text does **not clearly assign the same number of ordinary years to every week**.
+- week seven functions as the critical transition from writer's past → present → imminent future.
+
+Therefore:
+do not mechanically calculate:
+**10 weeks × 49 years = 490**
+or
+**10 × 70**
+as though 1 Enoch itself explicitly does that.
+
+There are Second Temple 490-year schemes elsewhere, but they are comparative data, not a licence to overwrite this text.
+
+### Seven as a structural pivot
+
+High-confidence seven pattern:
+- Enoch born in **7th part of week 1**.
+- decisive present = **week 7**.
+- elect receive **sevenfold instruction** in week 7.
+- final judgment = **7th part of week 10**.
+- new-heaven powers shine **sevenfold**.
+
+This is deliberate literary architecture.
+
+### Concentric event shape
+
+Scholars have observed a broad concentric logic:
+- righteousness at beginning ↔ righteousness after final judgment,
+- deceit/wickedness arises early ↔ disappears near end,
+- Abrahamic righteous plant begins ↔ chosen righteous plant reappears,
+- house is built ↔ house destroyed ↔ later greater/final house.
+
+For Vardath timeline work the useful point is:
+history is portrayed as **ordered phases with recurrence/inversion**, not random events.
+
+### House cycle across weeks
+
+The Weeks preserve:
+**enclosure made**
+→ **house of glory built**
+→ **house burned**
+→ dispersion
+→ later **house for Great King**
+→ first heaven itself passes / new heaven appears.
+
+This is structurally compatible with the repeated house/world transition grammar already seen in Animal Apocalypse 90, although the details are not identical.
