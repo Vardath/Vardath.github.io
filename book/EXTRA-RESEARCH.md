@@ -3120,3 +3120,13 @@ The research should proceed down Sections 1–96 and the pair register above, ap
 
 **Sources logged:** Babylonian Talmud, *Sanhedrin* 38b; *Chagigah* 12a; *Bereshit Rabbah* 8:1 and related cosmic-Adam traditions.
 
+
+
+### Section 1 progress update C — Genesis 1–3 structural sequence
+
+> The whole Genesis 1–3 section is now resolving into a repeated **separate → branch → split → guard** pattern. The world begins dark over the deep; waters are divided into **above and below**, then lower waters gather so dry land appears. Genesis 2 adds water that can be read as **welling upward from the earth**, one Eden river that **divides into four**, and one human that is divided into male/female sides.
+>
+> Genesis 3 then changes from opening/division to **closure**: the human reaches/takes at the central tree, loses access to the Tree of Life, is driven outward, and the route back is guarded by a fiery **turning/whirling** sword. So, within your model, Genesis 1–3 looks less like the destructive gate-opening event itself and more like a compressed **world re-ordering / axis-splitting / gate-closing sequence** following or surrounding such a transition. That distinction is important—I don’t want to force a full catastrophe into chapters that do not actually describe one.
+
+**Sources logged:** Genesis 1:1–10; Genesis 2:5–24; Genesis 3:1–24; NET notes on Genesis 2:6; Sefaria/NET notes on Genesis 3:24.
+
