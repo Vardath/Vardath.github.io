@@ -8796,3 +8796,13 @@ Priority pair tests:
 
 > Continuing with **Section 8 — Genesis 29–36**. This is a major one for your cosmology because it combines **paired women, striped rods/branches, a literal boundary heap/pillar, a night crossing over water, wrestling with a humanlike divine figure, Jacob→Israel state change, bodily alteration, and the twin reunion**. I’ll keep saving each progress update and the final reply into `book/EXTRA-RESEARCH.md`.
 
+
+
+### Section 8 progress update A — rods/branches and Jacob-Laban boundary stabilization
+
+> The **Jacob–Laban material is turning into another compressed version of your split-and-boundary mechanics**. Jacob uses **peeled rods/branches** in the flock scene, then when he finally separates from Laban the break is formalized with a **standing pillar plus a heap of stones** that become a witness-boundary neither side is to cross for harm. The same place is even given **two names in two languages**.
+>
+> So the sequence is now: **branch manipulation → wealth/offspring differentiation → family extraction → pursuit → boundary monument → no-crossing rule → permanent separation of two kin-groups**. For your cosmology, that looks much more like a **division/stabilization boundary** than an opening gate.
+
+**Sources logged:** Genesis 30:37–43; Genesis 31:44–54; Scott Noegel on the rods/wordplay; scholarship on the Jacob–Laban treaty and stone boundary markers.
+
