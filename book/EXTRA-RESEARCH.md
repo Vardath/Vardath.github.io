@@ -21191,3 +21191,84 @@ Modern commentary explicitly notes a chronological problem in this war expansion
 - but **do not force a single exact year for the battle without resolving the textual/editorial problem**.
 
 This is exactly the kind of internal inconsistency the master timeline must mark rather than hide.
+
+
+## SECTION 12 progress D — consolidated timing / number register for Jubilees 24–38
+
+### Main A.M. timeline
+- **2073** — Isaac at Well of Vision.
+- **2080** — famine; Isaac at Gerar.
+- **2108** — Isaac at Well of Oath.
+- **2109** — Rebecca/Jacob marriage instruction.
+- **2114** — Jacob receives Isaac's blessing under Esau's outer identity.
+- **2115** — first Bethel ladder/gate/pillar scene.
+- **2122** — Leah marriage / Reuben.
+- **2124** — Simeon.
+- **2127** — Levi; also Dan.
+- **2129** — Judah.
+- **2130** — Naphtali.
+- **2131** — Gad.
+- **2132** — Issachar.
+- **2133** — Asher.
+- **2134** — Zebulun/Dinah and Joseph.
+- **2135** — Jacob leaves Laban; Gilead boundary covenant; Jabbok reconciliation.
+- **2136** — Jordan crossing / settlement.
+- **2143** — Shechem/Dinah episode; Bethel cycle also reaches Benjamin/Rachel material.
+- **2145** — Jacob and sons settle near Isaac/Rebecca.
+- **2148** — Amorite kings conflict.
+- **2149** — Joseph sold/down into Egypt; false death message; annual atonement date anchored.
+- **2157** — Rebecca death at 155.
+- **2162** — Isaac death at 180; chapter 37 also claims war begins this day.
+- **2167** — Leah death, creating the noted contradiction with chapter 37's mourning setting.
+
+### High-value number structures
+- Jacob age: **9 weeks of years = 63**.
+- service marriages: **7 + 7 years**.
+- Israel-family structure: **2 primary sisters + 2 handmaids → 12 sons**.
+- Dinah: **12 years**.
+- Isaac: **165** at Jubilees 31 encounter.
+- Rebecca: **155 = 3 jubilees + 1 week + 1 year**.
+- Isaac: **180 = 25 weeks + 5 years**.
+- Bethel angel: **7 tablets**.
+- feast: **7 days + 8th Addition**.
+- primary sacrifice numbers: **14, 28, 49, 7, 21**.
+- Levi righteousness: remembered **1000 generations**.
+- Amorite attackers: **7 kings**.
+- Jacob battle force in chapter 34: **6000**.
+- Jacob/Esau final battle: **4000** enemy warriors, **4 sides**, **50** attendants in each directional group.
+- Day of Atonement anchor: month **7**, day **10**, repeated **once per year**.
+- Gilead/Jabbok and family events preserve numerous month/day dates, to be kept in the master chronology spreadsheet/table later.
+
+### Pair map for Section 12
+- **Jacob / Esau** — P1 + P2 + P3 + P6; strongest long-duration shared-origin pair.
+- **Leah / Rachel** — P2/P9; elder-younger recursive mirror, open/closed womb, loved/less-loved.
+- **Levi / Judah** — P2/P7; right/left, priest/king dual function.
+- **Simeon / Levi** — cooperative paired action; Levi later separates into priestly office.
+- **Jacob / Laban** — boundary/covenant pair regulated by mountain/heap.
+- **Rebecca / Isaac** — complementary parental channels both transmitting Jacob's selected status.
+- **Joseph / garment-image** — body / external identity-sign separation rather than person/person pair.
+- **Rachel / Leah burial sequence** — sisters rejoined within the same ancestral double-cave complex only after death, but at different times.
+
+### Geometry map
+- stopped/reopened wells,
+- living water vs dry well,
+- Bethel ladder earth→heaven,
+- ascending/descending angels,
+- tree + stone + upright pillar,
+- four cardinal directions,
+- mountain boundary heap,
+- Isaac central with Levi right / Judah left,
+- divine ascent + angel descent + seven tablets,
+- pillar over Rachel's grave,
+- double cave burial,
+- closed tower gates,
+- four-sided deployment around tower,
+- right/left arrow impacts.
+
+### Controls / mismatches retained
+- Jubilees **omits Jacob's Jabbok wrestling figure**.
+- Jubilees **omits the peeled breeding rods**.
+- Rachel's pillar is plainly a grave marker.
+- Gilead heap is plainly a covenant boundary marker.
+- Double cave is a burial enclosure, not automatically a gate.
+- The war chronology has an internal contradiction.
