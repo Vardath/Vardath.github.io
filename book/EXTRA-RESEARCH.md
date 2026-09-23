@@ -29427,3 +29427,12 @@ Priority:
 5. Append each new progress message/research reply as work proceeds so the conversation can be reconstructed from this file.
 
 **Assistant reply saved:** Protocol updated. Before analysing any “next” section, first search the existing EXTRA-RESEARCH record for that section, its progress entries, and saved chat-history/user-facing text; continue only beyond the last completed checkpoint.
+
+
+### Read-up progress log — 2026-09-24
+
+- Reconciliation check found that the file tail repeats an older checkpoint ending at Section 18, but earlier records already contain completed first passes for Sections 19, 20 and 21. Therefore the first genuinely unfinished roadmap block is **Section 22 — Exodus 25–40**; do not restart Sections 19–21.
+- Canonical manuscript source confirmed as Preface + Introduction + exactly Chapters 1–88 under `book/chapters/`.
+- Book read-up pass has covered Preface, Introduction and Chapters 1–6.
+- Critical model rule reconfirmed from the manuscript: **all world-turns are populated and each has its own present**. “Future above” and “past below” are relational to our present; the gate changes adjacency between already-existing inhabited worlds rather than creating an empty future world.
+- Research remains paused until the manuscript/site read-up is complete.
