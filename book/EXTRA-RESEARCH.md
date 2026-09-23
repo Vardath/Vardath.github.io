@@ -6864,3 +6864,11 @@ Priority pair tests:
 > 
 > Next is **Section 6 — Genesis 19–25: Sodom/Zoar, Lot’s wife, Isaac/Ishmael, Hagar’s second well scene, the binding of Isaac, the ram substitute, Sarah’s death, Rebekah at the well, and Abraham’s death**.
 
+
+
+---
+
+## 170. LIVE PROGRESS LOG — Section 6 begins (Genesis 19–25)
+
+> Continuing with **Section 6 — Genesis 19–25**. I’ll test Sodom/Zoar as a destruction-and-escape geometry, Lot/Lot’s wife as a possible split pair, the two Hagar/well scenes as a possible doublet, Isaac/Ishmael as alternate heir states, and the binding of Isaac for **replacement/substitution geometry**. I’ll keep appending each progress reply into `book/EXTRA-RESEARCH.md`.
+
