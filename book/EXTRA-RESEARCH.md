@@ -8816,3 +8816,13 @@ Priority pair tests:
 
 **Sources logged:** Genesis 32–33; Hosea 12; Bradford Anderson on human/divine intersection in Genesis 32–33; scholarship on Peniel, Jabbok, Mahanaim, and the Jacob/Israel name transition.
 
+
+
+### Section 8 progress update C — Leah/Rachel recursively mirror Jacob/Esau
+
+> The **Leah/Rachel pair is also mirroring Jacob/Esau almost deliberately**. Jacob, the younger brother who displaced the elder, arrives and is himself tricked because “the younger cannot be given before the elder”: **Leah the elder is placed where Rachel the younger was expected**. Then the sisters compete over fertility, use their maidservants as additional branches, and Rachel even describes her struggle with Leah using “wrestling” language before Jacob’s own night wrestling scene.
+>
+> So the family structure is behaving recursively: **younger/elder inversion in one generation becomes younger/elder inversion in the next**, and the split pair expands through **four maternal branches into the twelve-son/tribal system**. That recursive duplication is exactly the sort of thing we need to distinguish from coincidence.
+
+**Sources logged:** Genesis 29–30; scholarship on the Jacob/Esau ↔ Leah/Rachel inversion, the four women/twelve sons structure, and Rachel’s “wrestling” language foreshadowing Jacob at Jabbok.
+
