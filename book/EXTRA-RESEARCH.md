@@ -4394,3 +4394,13 @@ Priority pair tests:
 >
 > There is also a direct Enoch/Noah role handoff: Genesis says **Enoch “walked with God”** and then says **Noah “walked with God.”** Enoch survives his world by being *taken*; Noah survives his by being *enclosed and carried through it*. That looks like two versions of the same survivor/transition role—**removal upward versus protected passage through the reset**.
 
+
+
+### Section 3 progress update B — ark is protected cargo, not the gate
+
+> One more important distinction has become clear before I close this section: **the ark is not the gate**. The text makes it a **sealed local enclosure inside the larger gate-like catastrophe**. Noah enters; the door is shut behind him; upper and lower waters open outside; the enclosure is lifted and carried; after the waters close and drain, its window/covering is opened and its occupants emerge onto a renewed dry world.
+>
+> That fits the same role we saw with Moses’ basket and Passover houses: **the lattice/gate changes the world relationship; the *tebah*/house protects cargo during it**. The Hebrew reinforces that—*tebah* is used only for **Noah’s ark and Moses’ basket** in the Hebrew Bible.
+
+**Source logged:** Joshua Joel Spoelstra, studies of the Hebrew *tebah* in Genesis 6–9 and Exodus 2; Genesis 6–8.
+
