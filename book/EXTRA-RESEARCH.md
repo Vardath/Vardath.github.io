@@ -5278,3 +5278,718 @@ Priority pair tests:
 
 **Sources logged:** Genesis 10:25; Genesis 11:10–32; Ibn Ezra on Genesis 11; later Jewish chronology.
 
+
+
+---
+
+## 111. SECTION 4 COMPLETE — Genesis 10–11
+
+**Scope:** Genesis 10:1–11:32, including Table of Nations, Nimrod, Peleg, Babel, post-Babel genealogy, lifespan contraction, and Vardath axis/scattering tests.
+
+### 111.1 Genesis 10 — the world branches after Noah
+
+Genesis 10 presents Noah’s descendants as a segmented genealogy of peoples, territories, languages and nations.
+
+The final-form text repeatedly says peoples are distributed:
+- by clans,
+- by languages,
+- by lands,
+- by nations.
+
+The chapter therefore already describes a world that has **branched outward** from Noah’s three sons.
+
+A common scholarly count gives **70 nations** in the Table of Nations, excluding the inserted Nimrod unit.
+
+Structurally:
+
+**one surviving family**
+→ **three sons**
+→ **many branch-lines**
+→ **many territories/languages/nations.**
+
+This is a large-scale **one → many** pattern.
+
+### 111.2 Three sons as world segmentation
+
+Shem, Ham and Japheth are genealogical sons but also function as broad geographic ancestry categories in the literary map.
+
+This means Noah’s family itself becomes a way of narrating the **division of the inhabited world into regions**.
+
+Working pair/triad classification:
+- Shem/Ham/Japheth = segmented world-distribution triad.
+- do not force them into one Squatter-Man figure.
+- their main relevance is **branching of one surviving lineage into multiple world-regions.**
+
+---
+
+## 112. Nimrod — mighty figure and kingdom concentration
+
+Genesis 10 introduces Nimrod as:
+- descendant of Cush,
+- one who “began to be a mighty one” on earth,
+- a mighty hunter before YHWH,
+- founder/holder of a kingdom whose beginning includes **Babel/Babylon, Erech/Uruk, Akkad and Calneh in Shinar**.
+
+The Hebrew word **gibbor** (“mighty one”) also appears in Genesis 6 for the mighty men of old.
+
+This is a lexical recurrence worth noting, but it does **not** prove Nimrod is a surviving Nephilim or giant.
+
+### Nimrod’s structural role
+
+Nimrod represents:
+- concentration of power,
+- first explicit kingdom,
+- multiple cities,
+- Mesopotamian center.
+
+Within the Vardath investigation he is more naturally a **centralizer / kingdom-node figure** than an axis-person.
+
+### Critical source control
+
+Genesis itself does **not** say:
+- Nimrod built the Tower of Babel,
+- Nimrod rebelled against God,
+- Nimrod tried to reach heaven.
+
+Those ideas belong to later Jewish/Christian interpretive tradition.
+
+Because Babel is in Nimrod’s kingdom and both scenes are set in Shinar, later traditions linked him to the tower.
+
+Keep the distinction:
+
+**Biblical Nimrod**
+= mighty hunter / kingdom-builder.
+
+**Later Nimrod**
+= tower-builder / rebel against God.
+
+---
+
+## 113. Peleg — “division” personified
+
+Genesis 10:25 says:
+- Eber has two sons,
+- one is named **Peleg**,
+- “for in his days the earth was divided.”
+
+The Hebrew deliberately plays on:
+**Peleg ↔ niphlegah (“was divided”).**
+
+This makes Peleg a kind of **named marker/personification of the division event**.
+
+Possible interpretations:
+- geographic division,
+- national dispersion,
+- Babel dispersion,
+- later Jewish interpretation: shortening/division of lifespans.
+
+The text itself does not specify exactly what “earth divided” means.
+
+For Vardath:
+Peleg is a useful example of how a **person-name can encode an event/state rather than only individual biography.**
+
+This directly supports the user’s broader methodological point that some “people” may carry event-functions.
+
+---
+
+## 114. Genesis 10 and 11 preserve duplicated fragmentation
+
+A crucial literary finding:
+
+Genesis 10 already says the nations are separated by:
+- lands,
+- languages,
+- clans,
+- nations.
+
+Then Genesis 11 begins:
+- “the whole earth” has **one language**.
+
+After Babel:
+- language becomes confused,
+- people scatter across the earth.
+
+This tension is commonly explained as the joining of distinct literary traditions.
+
+For this project, the important structural fact is:
+
+> The final Bible preserves **two presentations of world-fragmentation** side by side.
+
+### Mode A — genealogical fragmentation
+Noah’s descendants branch into peoples/languages/territories.
+
+### Mode B — dramatic fragmentation
+One centralized people/language is split and scattered from Babel.
+
+This is highly relevant to the same-event/different-story hypothesis.
+
+It demonstrates that the biblical corpus can preserve:
+**one outcome in multiple narrative forms.**
+
+---
+
+## 115. Babel begins with reconvergence
+
+Genesis 11 starts with:
+- one earth,
+- one language,
+- one set of words,
+- people migrating together,
+- settlement in a plain in Shinar.
+
+The builders explicitly fear being **scattered**.
+
+So the opening movement is:
+
+**many descendants**
+→ **one speech**
+→ **one place**
+→ **one city**
+→ **one tower**
+→ **one name.**
+
+This is a deliberate **convergence / compression** pattern.
+
+Within Vardath terms this resembles:
+**distributed state → concentrated node.**
+
+---
+
+## 116. Brick and bitumen — artificial replacement materials
+
+The people say:
+- make bricks,
+- burn/fire them thoroughly,
+- brick serves as stone,
+- bitumen serves as mortar.
+
+This explicitly emphasizes **constructed/artificial material**.
+
+The Mesopotamian setting is appropriate because large monumental buildings there commonly used baked/mud brick and bitumen rather than abundant building stone.
+
+Possible Vardath implication:
+- Babel is presented as a **human-made imitation of natural cosmic/mountain structure**.
+
+Control:
+- that interpretation is inferred from literary setting; the text does not call the structure artificial cosmology.
+
+---
+
+## 117. The tower’s “head in the heavens”
+
+Genesis 11:4 literally describes a tower whose **head/top is in the heavens**.
+
+This is a strong vertical-axis phrase.
+
+But it should not automatically be read as:
+- literal penetration into another universe,
+- physical touching of heaven.
+
+Ancient languages use “to heaven” for extreme height.
+
+Nevertheless, the Babylonian ziggurat background makes the image more specific.
+
+---
+
+## 118. Etemenanki — major axis parallel
+
+The Babylonian ziggurat most often associated with the Tower of Babel tradition is **Etemenanki**.
+
+ORACC gives its name as:
+
+**“House / Foundation Platform of Heaven and Underworld.”**
+
+Babylonian royal inscriptions describe its construction using explicit vertical totality imagery:
+- foundation secured on/on the breast of the **netherworld**,
+- summit raised to **rival the heavens**.
+
+Ancient Mesopotamian temple/ziggurat ideology more generally uses:
+- foundation in deep/netherworld,
+- summit in heaven,
+- mountain imagery,
+- vertical complementarity between upper and lower cosmic zones.
+
+This is one of the strongest non-biblical contextual parallels yet discovered for the Vardath **rod/axis connecting upper and lower regions**.
+
+Important control:
+- Genesis never names Etemenanki.
+- the exact historical relationship between the Babel story and specific phases of that ziggurat remains debated.
+- safest wording: Genesis evokes a Babylonian ziggurat world in which such vertical heaven–underworld axis imagery was real.
+
+---
+
+## 119. Babel as possible artificial axis imitation
+
+Within the Vardath model, a useful working interpretation is:
+
+> Babel may be a human-built **imitation or attempted stabilization of the world-axis/gate form**.
+
+Reasons:
+- one population converges,
+- builds one central vertical object,
+- tower’s head reaches heaven,
+- Mesopotamian ziggurat ideology explicitly links heaven and underworld,
+- project aims to prevent outward dispersal.
+
+This is different from natural gate episodes:
+- no upper/lower water release,
+- no protective enclosure/cargo,
+- no serpent/rod transformation,
+- no catastrophe in the physical environment.
+
+Therefore Babel is **not currently a full gate-opening match**.
+
+It is closer to:
+**artificial axis / fixed gate imitation / anti-scattering structure.**
+
+---
+
+## 120. Divine descent reverses human ascent
+
+The builders construct upward.
+
+Then YHWH **comes down** to inspect the city and tower.
+
+Stripped geometry:
+
+**human construction ↑**
+while
+**divine movement ↓**
+
+This is another opposed-direction vertical scene.
+
+But unlike Sinai:
+- the upper descent does not meet an ascending human mediator on a mountain,
+- instead it interrupts a collective human upward project.
+
+Possible classification:
+- ascent/descent polarity,
+- failed convergence.
+
+---
+
+## 121. The tower is not destroyed
+
+An important control:
+
+Genesis does **not** say:
+- the tower falls,
+- God knocks it down,
+- lightning destroys it,
+- earthquake destroys it.
+
+The actual mechanism of termination is:
+
+**language fragmentation**
+→ **coordination fails**
+→ **people scatter**
+→ **city-building stops.**
+
+Therefore the event is fundamentally **de-coordination / de-convergence**, not structural collapse.
+
+This is important for Vardath:
+the relevant analogue is **one coherent field/phase becoming multiple non-coherent branches**, not a tower physically breaking.
+
+---
+
+## 122. One language → many languages
+
+This is perhaps the cleanest transformation of the Babel story.
+
+Initial state:
+**one speech / one vocabulary / mutual comprehension.**
+
+Transition:
+YHWH “mixes/confuses” the language.
+
+Final state:
+**multiple non-mutually intelligible speech groups.**
+
+This is:
+**one coherent signal**
+→ **phase/encoding fragmentation**
+→ **multiple populations.**
+
+Vardath comparison:
+If the lattice/gate state requires coherence between layers/parts, Babel could mythically resemble the opposite event:
+**loss of coherence → inability to remain coupled → scattering.**
+
+This is speculative but structurally cleaner than “tower physically reaches heaven.”
+
+---
+
+## 123. Babel / balal wordplay
+
+The Hebrew story explains **Babel/Bavel** through a wordplay on **balal**, “mix/confuse.”
+
+This is an Israelite/Hebrew etiology, not necessarily the historical Akkadian etymology of Babylon’s name.
+
+For this project the important fact is:
+the city’s name is narratively made into a **state-change word**.
+
+Once again a proper name encodes:
+**what happened there.**
+
+This parallels:
+- Peleg = division,
+- later place/person names tied to events.
+
+---
+
+## 124. “Make a name” versus scattering
+
+The builders say:
+- let us make a **name** for ourselves,
+- lest we be scattered.
+
+The tower/city therefore functions to:
+- fix identity,
+- fix location,
+- resist fragmentation.
+
+This gives another structural opposition:
+
+**fixed name / fixed center**
+versus
+**scattered names/languages/lands.**
+
+Potential Vardath analogy:
+- stable singular rod/node versus distributed lattice.
+
+---
+
+## 125. Table of Nations as expansion; Babel as forced expansion
+
+Genesis 10:
+**natural/genealogical branching outward.**
+
+Genesis 11:
+**forced scattering outward after attempted concentration.**
+
+The final narrative therefore contains two complementary models for population distribution:
+1. branching,
+2. explosive scattering.
+
+This is worth comparing later with:
+- river branching from Eden,
+- human split Adam→male/female,
+- genealogical split Cain/Seth,
+- waters divide/rejoin,
+- mountain halves in Zechariah,
+- Revelation world-renewal.
+
+---
+
+## 126. Nimrod / Babel later tradition
+
+Later Jewish and Christian traditions explicitly make Nimrod:
+- tower-builder,
+- rebel,
+- tyrant,
+- organizer of the anti-God project.
+
+Josephus gives a developed version in which Nimrod centralizes people and motivates the tower.
+
+Genesis Rabbah also links Nimrod’s “began to be mighty” with Babel rebellion.
+
+This later tradition is useful as reception history because ancient readers themselves felt:
+**Nimrod = concentrated worldly power**
+and
+**Babel = concentrated human unity/vertical ambition**
+belonged together.
+
+But it must remain clearly labeled:
+**later interpretation, not Genesis source fact.**
+
+---
+
+## 127. Peleg and the possible division of time
+
+The post-flood genealogy shows a striking lifespan contraction.
+
+Raw Masoretic totals:
+- Shem: 600,
+- Arpachshad: 438,
+- Shelah: 433,
+- Eber: 464,
+- Peleg: 239,
+- Reu: 239,
+- Serug: 230,
+- Nahor: 148,
+- Terah: 205.
+
+The sharpest break occurs:
+**Eber 464 → Peleg 239.**
+
+Ibn Ezra noticed this and offered an alternative reading:
+the earth was “divided” in Peleg’s days because **human lifespan was effectively halved**.
+
+This is later interpretation, not certain original meaning.
+
+But for Vardath timing research it is notable:
+
+**spatial/social division**
+becomes associated with
+**time/lifespan division.**
+
+Flag for later time-flow comparison.
+
+---
+
+## 128. Traditional timing of Babel
+
+Using the Masoretic genealogy:
+- Arpachshad is born 2 years after the Flood,
+- Shelah when Arpachshad is 35,
+- Eber when Shelah is 30,
+- Peleg when Eber is 34.
+
+Thus:
+2 + 35 + 30 + 34 = **101 years after the Flood** to Peleg’s birth.
+
+Some traditional Jewish interpreters therefore associate Babel/dispersion with approximately **100 years after the Flood**.
+
+This is not an explicit biblical date for Babel.
+It depends on:
+- equating Peleg’s “division” with Babel,
+- Masoretic chronology,
+- assuming the event coincides with/near his birth.
+
+Record for timing table as:
+**traditional derived interval: ~101 years Flood → Peleg/Babel.**
+
+---
+
+## 129. Post-Babel genealogy narrows the world again
+
+After the Babel scattering story, Genesis immediately returns to one line:
+
+Shem
+→ Arpachshad
+→ Shelah
+→ Eber
+→ Peleg
+→ Reu
+→ Serug
+→ Nahor
+→ Terah
+→ Abram/Nahor/Haran.
+
+Narrative geometry:
+
+**whole world**
+→ **scatter into many**
+→ **text narrows back into one family-line**
+→ **Abram emerges.**
+
+This is a strong literary convergence after fragmentation.
+
+It means Genesis repeatedly alternates:
+**one → many → one → many.**
+
+That oscillation may become important when comparing world-turn/reset patterns.
+
+---
+
+## 130. Terah migration — transition toward Abraham
+
+At the end of Genesis 11:
+- Terah takes Abram, Lot and Sarai,
+- they depart Ur of the Chaldeans,
+- aim toward Canaan,
+- stop/settle in Haran.
+
+This begins another migration sequence.
+
+Unlike Babel:
+- movement is not forced scattering of everyone,
+- it is one narrowed family moving from Mesopotamia toward a new land.
+
+Section 5 will test whether Abraham becomes a new axis/threshold figure or primarily a travelling covenant figure.
+
+---
+
+## 131. Pair/mirror results for Genesis 10–11
+
+### Shem / Ham / Japheth
+Best fit:
+- segmented world triad.
+- P1/P2 only at broad geographic level.
+
+### Peleg / Joktan
+- Peleg associated with division.
+- Joktan heads a major branching line.
+- possible pair:
+  **named division event / actual genealogical branching.**
+
+### Nimrod / collective Babel builders
+- later tradition combines them.
+- source text keeps them separate.
+- best classification: P9 later narrative fusion, not source-level same figure.
+
+### One language / many languages
+- very strong P1/P2 state split.
+
+### One people / many nations
+- very strong P3 before/after state.
+
+### City / scattering
+- fixed center versus distributed population.
+
+### Tower / world-axis
+- strong functional comparison,
+- not identity.
+
+### Human ascent / divine descent
+- strong vertical polarity.
+
+### Genesis 10 / Genesis 11
+- very strong P9 duplicate/alternative explanation of national-linguistic distribution.
+
+---
+
+## 132. Vardath reconstruction of Babel
+
+The cleanest current Vardath-compatible sequence is:
+
+### Phase A — post-reset population branches
+Noah’s descendants spread into many lines.
+
+### Phase B — reconcentration
+One-language humanity settles together in Shinar.
+
+### Phase C — artificial central axis
+One city + one tower are built.
+Tower’s head is oriented to heaven.
+Mesopotamian ziggurat background invokes heaven–underworld linkage.
+
+### Phase D — attempted fixed coherence
+The builders explicitly want:
+- one name,
+- one place,
+- no scattering.
+
+### Phase E — upper descent
+YHWH comes down.
+
+### Phase F — coherence breaks
+One speech becomes mutually unintelligible speech.
+
+### Phase G — center de-couples
+Collective building stops.
+
+### Phase H — radial scattering
+Population spreads across earth.
+
+### Phase I — world line narrows again
+Narrative selects Shem→Terah→Abram.
+
+This is not the full destructive Vardath gate event.
+
+It looks more like:
+
+> **a human/artificial attempt to hold the axis in a permanently concentrated state, followed by a forced return to distributed/branched state.**
+
+---
+
+## 133. Why Babel matters for the Squatter-Man question
+
+No central anthropomorphic Squatter-Man is actually described in Genesis 11.
+
+The axis is **architectural**, not human.
+
+That is important.
+
+If Vardath’s hypothesis is meaningful, the same underlying geometry may be encoded as:
+- a person in one story,
+- a mountain in another,
+- a rod in another,
+- a tower/temple in another.
+
+Babel therefore gives a possible **non-anthropomorphic control version** of the vertical connector.
+
+Later Mesopotamian ziggurat language explicitly combines:
+- underworld foundation,
+- mountain form,
+- heaven-reaching summit.
+
+So Babel supports the idea that **rod/man/mountain/tower can be alternative projections of one vertical-world-axis concept**, even though Genesis does not identify them.
+
+---
+
+## 134. What Section 4 strongly supports
+
+Strong source/context findings:
+- post-Flood one→many world branching,
+- Peleg explicitly tied to “division,”
+- one-language collective concentration,
+- one central city/tower,
+- tower “head in heaven,”
+- divine descent,
+- language split,
+- radial scattering,
+- Babylonian ziggurat ideology connecting heaven and underworld,
+- duplicated world-dispersion accounts,
+- sharp lifespan reduction near Peleg,
+- post-scattering narrowing into Abram’s line.
+
+---
+
+## 135. What Section 4 does NOT establish
+
+Still unsupported:
+- Nimrod literally was the tower,
+- Nimrod literally built the tower in Genesis,
+- tower was physically destroyed,
+- Babel was an actual functioning inter-world gate,
+- languages were caused by a physical plasma event,
+- Etemenanki definitely is the exact historical tower behind every layer of Genesis 11,
+- Peleg proves physical time dilation,
+- Babel chronology proves a Vardath cycle.
+
+---
+
+## 136. Predictions generated from Section 4
+
+Later texts should be checked for:
+1. artificial towers/temples as heaven-earth connectors,
+2. mountain/temple equivalence,
+3. structures with foundations in deep and tops in heaven,
+4. divine descent interrupting human ascent,
+5. one→many language/people fragmentation,
+6. later reversal of Babel through many languages becoming mutually intelligible,
+7. named people functioning as event labels like Peleg,
+8. lifespan/time shifts near world-division events,
+9. repeated Babylon/New Jerusalem polarity,
+10. architectural axis scenes that parallel anthropomorphic axis-person scenes.
+
+The obvious future control is **Pentecost**, where many languages may function as a literary reversal of Babel; leave that for Acts rather than importing it prematurely.
+
+---
+
+## 137. Section 4 status
+
+**SECTION 4 — COMPLETE.**
+
+Next roadmap section:
+
+**Section 5 — Genesis 12–18**
+- Abraham’s departure,
+- Egypt episode,
+- Abraham/Lot separation,
+- Melchizedek,
+- covenant cutting,
+- stars,
+- Sarah/Hagar,
+- Ishmael,
+- three visitors,
+- promised child.
+
+Priority pair tests:
+- Abraham/Lot,
+- Sarah/Hagar,
+- Isaac/Ishmael,
+- Abraham/Melchizedek,
+- three visitors as segmented function,
+- covenant “cutting” as possible split/passage geometry.
+
