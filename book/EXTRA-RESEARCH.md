@@ -21058,3 +21058,136 @@ Again, pillar does not automatically mean cosmic axis. Here it plainly marks a g
 - Jacob's second vision: day **22**.
 - Deborah dies night of day **23**.
 - Benjamin born month **8**, day **11**, **2143 A.M.**
+
+
+## SECTION 12 progress C — Jubilees 33–38: the Jacob/Esau pair completes a full unity→split→reunion→split→death cycle
+
+### Jacob / Esau pair timeline
+
+This is now one of the clearest long-duration pair histories in the entire corpus:
+
+1. **One womb / twin origin.**
+2. Prenatal and early rivalry.
+3. Birthright transfers from elder to younger.
+4. Blessing/function transfers through identity-overlay.
+5. Jacob rises; Esau is lowered.
+6. Physical separation.
+7. Jabbok-era **reconciliation** in Jubilees 29.
+8. Rebecca requires a mutual non-harm/love oath.
+9. Esau says something extraordinarily explicit:
+   - Jacob is his only brother,
+   - **“we were sown together in thy body”**,
+   - they **came forth together from the womb**,
+   - Isaac made Jacob **higher** and Esau **lower**.
+10. Isaac again makes both brothers swear mutual love.
+11. At Isaac's death they are described as having **one mind**.
+12. Esau's sons reactivate the old polarity and force the conflict open again.
+13. Esau breaks the oath and attacks Jacob.
+14. Jacob kills Esau.
+15. Esau's descendants are subjected under Jacob's descendants.
+
+This is not merely P6 rivalry. Across the whole sequence it combines:
+- **P1 split halves / common-origin pair**,
+- **P2 polarity**,
+- **P3 state/status inversion**,
+- temporary **recombination/reconciliation**,
+- then a final irreversible split.
+
+If we are testing whether some paired biblical people preserve the behaviour of two branches of one original structure, **Jacob/Esau in Jubilees is now one of the best narrative test cases** because the text itself insists on shared origin, higher/lower inversion and repeated separation/rejoining.
+
+### Rebecca's death reunites the pair around one enclosed burial place
+
+Rebecca dies at **155**.
+Both Jacob and Esau bury her in the **double cave** near Sarah.
+
+The “double cave” is a literal burial enclosure and should remain distinct from gate imagery, but the two estranged/reconciled sons jointly return the mother-body to one enclosed ancestral location.
+
+### Isaac again closes the pair into unity before death
+
+Isaac tells the brothers to:
+- love one another **as one's own soul**,
+- act together,
+- swear not to seek the other's harm.
+
+At division of property Esau voluntarily confirms that Jacob owns the firstborn portion.
+
+The text then says Isaac rejoices because there is **one mind between them**.
+
+That “one womb → two brothers → one mind” trajectory is important even though Jubilees later deliberately breaks it again.
+
+### Tower-war geometry — central enclosure with four directional deployments
+
+The final Jacob/Esau war contains striking spatial structure.
+
+Before battle:
+- Jacob **closes the gates of the tower**.
+- He stands on the battlements.
+- Esau remains outside with **4000 warriors**.
+
+After Jacob shoots Esau:
+- Jacob's sons divide around **four sides of the tower**.
+- south: Judah + Naphtali + Gad + 50.
+- east: Levi + Dan + Asher + 50.
+- north: Reuben + Issachar + Zebulun + 50.
+- west: Simeon + Benjamin + Enoch son of Reuben + 50.
+
+This gives a literal:
+**central tower / closed gates → four directional companies radiating from the enclosure**.
+
+That is geometrically interesting in its own right and should be compared later with four-direction/cross/axis structures elsewhere.
+
+### Right/left arrow pair
+
+Jacob's first arrow strikes **Esau's right breast** and kills him.
+His next arrow strikes the Aramaean Adoran in the **left breast** and kills him.
+
+This may simply be narrative detail, but because right/left bilateral placement has already become important in Jubilees 31, retain it as a low-confidence geometry note.
+
+### “He is such as thou, and like thee”
+
+Immediately before Jacob kills Esau, Judah says they themselves will not kill Esau because:
+- he is **such as Jacob**,
+- he is **like Jacob**,
+- and should be given that honour.
+
+Then Jacob himself fires the fatal arrow.
+
+That is a remarkably explicit final statement of **likeness between the two poles** immediately before one eliminates the other.
+
+### Fourfold / army numbers
+- Esau force: **4000** chosen warriors.
+- built as roughly **4 × 1000** regional contingents in the surviving account.
+- Jacob's sons deploy on **4 sides**.
+- each directional company includes **50 servants**.
+- western action kills **400**, **600** flee.
+- **4 sons of Esau** flee.
+
+Do not treat this as designed Vardath fourfold mathematics yet, but the spatial fourfold is explicit, not numerological inference.
+
+### Joseph false-death / garment-state continues
+
+Before the Esau-war expansion:
+- Joseph is sold and carried **down into Egypt**.
+- his coat is dipped in blood and sent upward/back to Jacob as a false death-sign.
+- the garment carries a false identity-state while Joseph remains alive elsewhere.
+- Jacob's mourning is tied to month 7 day 10 and becomes Jubilees' explanation for the annual Day of Atonement.
+
+This reinforces the earlier rule: **outer object/garment can carry a person's apparent state independently of the living body**.
+
+### Important chronological contradiction
+
+Jubilees dates:
+- Rebecca death: **2157 A.M.**
+- Isaac death: **2162 A.M.**
+- Leah death: **2167 A.M.**
+
+But chapter 37 says the final Jacob/Esau hostilities begin **on the day Isaac dies**, while also saying Jacob is mourning Leah when Esau's army approaches.
+
+Those two claims cannot both fit the preceding dates because Leah is dated five years after Isaac.
+
+Modern commentary explicitly notes a chronological problem in this war expansion. Therefore:
+- preserve the narrative order,
+- preserve the supplied A.M. dates,
+- but **do not force a single exact year for the battle without resolving the textual/editorial problem**.
+
+This is exactly the kind of internal inconsistency the master timeline must mark rather than hide.
