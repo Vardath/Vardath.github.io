@@ -15921,3 +15921,872 @@ Priority tests:
 **Primary text:** Apocalypse of Abraham 23:4–13 in Alexander Kulik’s translation.  
 **Control:** this is a visionary “picture of creation” in a post-biblical apocalypse, not a direct description from Genesis.
 
+
+
+---
+
+## 598. COMPARISON INSERT X4 COMPLETE — Apocalypse of Abraham
+
+**Natural placement:** after Genesis 11 and before Genesis 12, with a major cross-reference at Genesis 15.
+
+**Source-critical rule:** this is a post-biblical Jewish apocalypse from the early centuries CE, preserved in Slavonic. It deliberately rewrites Abraham traditions and therefore cannot be treated as an independent Bronze/Iron Age eyewitness source.
+
+### 598.1 Why the placement is natural
+
+The narrative begins with Abraham:
+- still in Terah’s household,
+- rejecting idols,
+- reasoning against their power,
+- leaving the paternal house,
+- receiving the divine call.
+
+That places its opening naturally **before canonical Genesis 12**.
+
+Its central sacrifice/ascent section then clearly elaborates **Genesis 15**, so that passage must be cross-read there.
+
+---
+
+## 599. Abraham destroys fixed images before becoming a visionary traveller
+
+The opening repeatedly shows idols:
+- falling,
+- breaking,
+- losing heads,
+- being remade from other material,
+- sinking in water,
+- burning into ash.
+
+This creates a strong contrast:
+
+**fixed manufactured image**
+→ **breaks / burns / disappears**
+
+versus
+
+**living Abraham**
+→ **questions**
+→ **moves**
+→ **ascends**
+→ **sees the real cosmic order.**
+
+For Vardath:
+the text contrasts **dead static forms** with **living moving structure**.
+
+---
+
+## 600. Bar-Eshath — tree becomes idol then ash
+
+One wooden idol is described as having once been:
+- rooted,
+- branched,
+- flowering,
+- alive as a tree.
+
+It is:
+**cut down**
+→ **shaped into human-like religious object**
+→ **burned**
+→ **ash.**
+
+This is an explicit:
+**living branch structure → rigid image → dissolution** sequence.
+
+Do not equate it directly with lattice compression, but retain as a branch/form transformation.
+
+---
+
+## 601. Abraham’s element hierarchy rejects each layer as ultimate
+
+Abraham compares:
+- fire,
+- water,
+- earth,
+- sun,
+- moon/stars.
+
+Each dominates something else but is dominated/limited in turn.
+
+So the text builds a **nested hierarchy of powers**, then says none of those levels is the final source.
+
+This is a useful control:
+**visible cosmic layer/function ≠ ultimate cause.**
+
+That parallels the distinction already seen with:
+- Yahoel,
+- Metatron,
+- Squatter-Man-like intermediary forms.
+
+---
+
+## 602. Divine call descends as voice in a stream of fire
+
+The divine Presence is not shown anthropomorphically.
+
+Instead:
+- a Voice comes down,
+- in a stream of fire.
+
+This is important.
+
+The Apocalypse of Abraham deliberately distinguishes:
+**ultimate source = formless fiery Voice**
+from
+**visible mediator = Yahoel in embodied form.**
+
+That is extremely useful for the user’s model:
+a visible anthropomorphic operator need not be the ultimate power behind the event.
+
+---
+
+## 603. Terah’s house burns as Abraham crosses out
+
+Abraham is told:
+- leave father,
+- leave house,
+- do not remain inside.
+
+He exits.
+
+Before he has gone far beyond the courtyard doors:
+- thunder sounds,
+- fire destroys Terah and house.
+
+Structural sequence:
+
+**warning**
+→ **threshold exit**
+→ **survivor outside**
+→ **old enclosure destroyed by fire.**
+
+This resembles:
+- Lot/Sodom,
+- Passover threshold logic,
+- catastrophe after extraction.
+
+---
+
+## 604. Destruction occurs at the threshold moment
+
+The timing matters.
+
+Abraham is not long gone.
+
+The destruction happens almost immediately after he crosses out of the doomed household.
+
+Thus:
+**crossing boundary**
+and
+**catastrophic destruction**
+are tightly coupled.
+
+This is one of the stronger small-scale old-world/new-world transitions in the Abraham literature.
+
+---
+
+## 605. Forty-day preparation before mountain ascent
+
+Abraham is instructed to abstain for **40 days** before the sacrifice/ascent.
+
+Then:
+- he travels 40 days/nights with Yahoel,
+- reaches Horeb/high mountain.
+
+Thus the revelation is entered through a **timed purification/preparation interval**.
+
+Record:
+**40**.
+
+---
+
+## 606. Yahoel — visible mediator of invisible Name
+
+Yahoel is described as:
+- mediation/name-bearer of the ineffable divine Name,
+- humanlike enough to take Abraham’s hand,
+- composite in appearance,
+- holding golden staff,
+- visible to Abraham until sacrifice,
+- later invisible.
+
+This is a major same-function/multiple-state figure.
+
+---
+
+## 607. Yahoel takes Abraham by the right hand
+
+Abraham collapses like stone.
+
+Yahoel:
+- comes in human likeness,
+- takes him by right hand,
+- stands him upright.
+
+This repeats the corpus-wide pattern:
+**traveller overwhelmed**
+→ **mediator grasps hand**
+→ **body raised**
+→ **journey continues.**
+
+Compare:
+- Lot extraction,
+- angelic guides,
+- later ascent literature.
+
+---
+
+## 608. Yahoel has composite animal/human geometry
+
+His body is compared to a griffin-like form;
+his face has gem-like brilliance;
+his head/garments resemble heavenly color/rainbow;
+he carries a staff.
+
+This is a hybrid mediator:
+**human function**
++
+**nonhuman body symbolism**
++
+**rod/staff**
++
+**gate/ascent role.**
+
+This is relevant to the possibility that “person” figures can be symbolic composite structures.
+
+---
+
+## 609. Yahoel shifts from visible to invisible
+
+He tells Abraham:
+- I will be visible with you until sacrifice,
+- afterward invisible.
+
+Thus:
+**same guide**
+→ **visible state**
+→ **threshold ritual**
+→ **invisible state.**
+
+This is a direct state-switch control.
+
+---
+
+## 610. Genesis 15 split-animal geometry becomes an ascent machine
+
+The Apocalypse of Abraham radically expands the Genesis 15 scene.
+
+Abraham is told:
+- slaughter animals,
+- cut them,
+- put halves opposite one another,
+- do not divide the birds.
+
+Then:
+- divided pieces are given to angels,
+- birds are retained for another purpose,
+- the sacrifice becomes the launch point for ascent.
+
+This is one of the strongest examples of an older covenant scene being reinterpreted as **cosmic transit geometry**.
+
+---
+
+## 611. Two halves face each other
+
+The animals are arranged:
+**half against half.**
+
+This confirms:
+- paired sides,
+- central space/corridor,
+- opposed symmetry.
+
+It strengthens the previous Genesis 15 Vardath reading:
+**split → opposing halves → central passage.**
+
+---
+
+## 612. The two uncut birds become bilateral ascent supports
+
+Yahoel places:
+- Abraham on the right wing of the pigeon,
+- himself on the left wing of the turtledove.
+
+This is remarkable.
+
+The two birds that Genesis leaves undivided become:
+**right support**
++
+**left support**
+for
+**paired ascent.**
+
+Structurally:
+
+**two intact winged bodies**
+→ **right/left positions**
+→ **human + mediator**
+→ **vertical lift.**
+
+This is an extremely strong bilateral transport image.
+
+---
+
+## 613. Sacrificial smoke becomes ascent corridor
+
+At sunset:
+- smoke like a furnace appears,
+- angels with divided pieces ascend from it,
+- Abraham/Yahoel enter the same ascent event.
+
+Thus Genesis 15’s fire/smoke passage is expanded into:
+
+**divided bodies**
+→ **furnace smoke**
+→ **upper movement**
+→ **human ascent.**
+
+This is one of the closest narrative analogues to:
+**split structure + energetic central channel + transfer upward.**
+
+---
+
+## 614. Ascent through fiery edge
+
+Abraham and Yahoel ascend:
+- through/near fiery flame,
+- like great winds,
+- toward heaven fixed on expanses.
+
+The movement is explicitly:
+**windlike**
++
+**fiery**
++
+**vertical.**
+
+For the user’s plasma/lattice comparison this is highly suggestive, while still literary.
+
+---
+
+## 615. “Place of elevation” moves up and down
+
+During the heavenly liturgy Abraham says the place on which he and Yahoel stand:
+- sometimes is high,
+- sometimes rolls downward.
+
+There is no ordinary earth beneath him.
+
+This is a striking unstable vertical platform/interface.
+
+Possible Vardath analogy:
+**moving boundary / oscillating gate position.**
+
+Control:
+mystical throne/vision imagery.
+
+---
+
+## 616. The two stand where there is no earth to fall onto
+
+Abraham instinctively wants to fall prostrate,
+but there is no earth.
+
+This emphasizes:
+- departure from normal ground-reference,
+- altered spatial frame.
+
+Very useful for distinguishing:
+**earth posture**
+from
+**upper-state posture.**
+
+---
+
+## 617. Heaven shown as stacked levels that can open
+
+From the upper firmament:
+- lower expanses open beneath Abraham,
+- he looks downward through levels,
+- sees stars/elements/angels.
+
+This is another explicit:
+**stacked-layer**
++
+**opening**
++
+**downward line-of-sight**
+model.
+
+---
+
+## 618. “Picture of creation” compresses all time into one view
+
+This is one of the strongest findings in the whole project.
+
+Abraham is shown a **picture/design of creation** containing:
+- what existed,
+- what exists,
+- what will exist,
+- future peoples,
+- future destruction,
+- temple,
+- exile,
+- later events.
+
+Thus one upper viewpoint contains multiple times simultaneously.
+
+For Vardath:
+this is a strong literary analogue to:
+**past / present / future becoming simultaneously accessible from a higher interface.**
+
+---
+
+## 619. Creation exists as design before manifest history
+
+The deity says the picture represents:
+- what was determined before beings came into manifest existence,
+- what later comes into being by command.
+
+Thus:
+**pattern/design**
+precedes
+**visible historical manifestation.**
+
+This resembles an underlying structural template generating successive visible states.
+
+---
+
+## 620. Right side / left side divide peoples
+
+The picture is divided:
+- right side,
+- left side.
+
+People appear on both.
+
+This is another strong bilateral polarity image.
+
+The text maps:
+**moral/historical populations**
+onto
+**left/right geometry.**
+
+---
+
+## 621. Adam/Eve are giant and equal in size
+
+Abraham sees:
+- a man very great in height/breadth,
+- a woman equal to him in appearance/size,
+- the two entwined.
+
+This is a very strong **paired giant-human image**.
+
+It further supports reading Adam/Eve as a cosmological pair in later interpretation.
+
+---
+
+## 622. Central serpent has human limbs and twelve wings
+
+Between Adam and Eve stands:
+- serpent-form being,
+- hands,
+- feet,
+- wings,
+- **six right + six left**.
+
+This is extraordinarily relevant to the Squatter-Man/lattice hypothesis.
+
+The figure is:
+**serpentine**
++
+**anthropomorphic**
++
+**bilaterally winged**
++
+**centrally positioned between paired humans.**
+
+This is one of the strongest composite figures found so far.
+
+---
+
+## 623. Central figure transfers fruit to both sides
+
+The serpent/Azazel holds the fruit and feeds the pair.
+
+Thus functionally it is not merely standing between them.
+
+It is a **transfer node**.
+
+Geometry:
+
+**left/right pair**
+← **central hybrid carrier**
+→
+
+This is extremely close to a branching/distribution function.
+
+---
+
+## 624. Azazel as bird at sacrifice and serpent in Eden
+
+Earlier Azazel appears as:
+- impure bird.
+
+Later:
+- serpent/hybrid.
+
+Thus one underlying antagonist takes multiple animal forms.
+
+This is another explicit same-agency/multiple-visible-form control.
+
+---
+
+## 625. Azazel’s heavenly garment is reassigned to Abraham
+
+Yahoel tells Azazel:
+- the garment once yours in heaven is set aside for Abraham,
+- corruption associated with Abraham goes over to Azazel.
+
+This is direct reciprocal transfer:
+
+**glory garment: Azazel → Abraham**
+**corruption: Abraham → Azazel.**
+
+This is one of the cleanest two-way state exchanges in the corpus.
+
+---
+
+## 626. Identity/state can transfer independently of body
+
+The garment/corruption exchange proves the text imagines:
+- status,
+- purity,
+- role
+as things that can move between figures.
+
+This supports the broader project distinction:
+**body/person**
+≠
+**state/function/outer identity.**
+
+---
+
+## 627. Azazel is assigned downward/earthly lot
+
+Yahoel says:
+- Abraham’s portion is heaven,
+- Azazel’s is earth/untrodden regions,
+- Azazel is associated with lower destructive domain.
+
+This sets another explicit vertical polarity:
+**Abraham upward**
+versus
+**Azazel downward/earthbound.**
+
+---
+
+## 628. Do not answer Azazel — interaction itself opens influence
+
+Yahoel repeatedly tells Abraham:
+- do not answer him,
+- if you answer, his will can affect you.
+
+This is structurally similar to:
+**coupling occurs through communication/response.**
+
+For Vardath:
+possible analogue of boundary interaction requiring connection.
+
+Control:
+magical/apocalyptic speech logic.
+
+---
+
+## 629. Yahoel reconciles opposed Living Creatures
+
+Yahoel says one of his functions is to reconcile rivalries among the Living Creatures.
+
+Later Abraham sees them:
+- facing/threatening one another,
+- Yahoel turns their faces so they no longer oppose directly,
+- teaches song of peace.
+
+This is fascinating.
+
+A central mediator regulates:
+**opposed living structures**
+by
+**changing their orientation.**
+
+That is directly relevant to lattice-strand orientation and crossing hypotheses.
+
+---
+
+## 630. Orientation change stops conflict
+
+The Living Creatures do not need to be destroyed.
+
+Their **faces are turned**.
+
+So system stability is restored by:
+**reorientation**
+rather than annihilation.
+
+This is a high-value structural motif.
+
+---
+
+## 631. Heavenly song becomes “one voice”
+
+The Living Creatures/fiery beings produce sacred sound like:
+**one man / one voice** in the translation tradition.
+
+Thus many beings can become **one coherent output**.
+
+This is another:
+**multiplicity → synchronized unity** motif.
+
+Compare:
+- Babel fragmentation,
+- Abram language restoration,
+- final aeon reintegration.
+
+---
+
+## 632. Cosmic picture includes abyss/depth beneath
+
+Abraham’s upper view includes:
+- earth,
+- sea,
+- Eden,
+- rivers,
+- abyss,
+- lower depths,
+- torment.
+
+Thus the upper viewpoint spans:
+**above**
++
+**middle**
++
+**below**
+in one visual field.
+
+Again:
+higher interface = simultaneous access to layered geography.
+
+---
+
+## 633. Future history appears as already-present image
+
+Abraham sees events that have not happened yet as visible scenes.
+
+This is one of the strongest ancient examples in this research of:
+**future represented as spatially inspectable from another level.**
+
+Important:
+it is prophecy/vision, not literal proof of future-world adjacency.
+
+---
+
+## 634. Picture itself moves/sways when history changes
+
+At the temple-destruction scene:
+- the picture sways,
+- invading people emerge from one side,
+- attack people on the other.
+
+This makes the historical image **dynamic**, not a static mural.
+
+It behaves almost like a simulation/map of future history.
+
+---
+
+## 635. Twelve periods of an age
+
+The Apocalypse gives a scheme of:
+**12 periods/hours**
+for the age of impiety/history.
+
+Record this raw cycle.
+
+The exact chronology is interpretively difficult and should not be casually mapped onto modern dates.
+
+---
+
+## 636. Four hosts
+
+Future punishment/exile is also structured through **four hosts**.
+
+Record:
+**4**.
+
+Do not yet connect to four world turns/directions without independent evidence.
+
+---
+
+## 637. Ten plagues recur at end-time scale
+
+The text projects **ten plagues** onto final judgment.
+
+This is another example where:
+**one historical event-pattern (Exodus plagues)**
+is reused at
+**larger eschatological scale.**
+
+That strongly validates the project’s “same event-form repeated at different scales” method.
+
+---
+
+## 638. Abraham returns abruptly to earth
+
+After the vision:
+- Abraham finds himself back on earth,
+- upper glory is gone,
+- he remains with incomplete understanding.
+
+This is another:
+**upper access interval**
+→ **sudden recoupling with ordinary earth**
+→ **memory/knowledge retained.**
+
+---
+
+## 639. X4 Vardath reconstruction
+
+The cleanest sequence is:
+
+### A. Fixed false forms collapse
+Idols break/burn.
+
+### B. Abraham exits doomed old household
+Threshold crossing.
+
+### C. Fire destroys old enclosure
+Immediate state severance.
+
+### D. Invisible source calls
+Voice descends in fire.
+
+### E. Visible mediator appears
+Yahoel takes Abraham by hand.
+
+### F. Forty-day transition preparation
+Purification/journey.
+
+### G. Paired bodies divided
+Sacrificial halves face one another.
+
+### H. Intact bird pair retained
+Right/left supports.
+
+### I. Furnace smoke opens vertical route
+Divided pieces ascend.
+
+### J. Abraham + Yahoel ride bilateral bird wings
+Paired upward transfer.
+
+### K. Fire/wind boundary crossed
+Ordinary ground disappears.
+
+### L. Upper interface moves/rolls
+Vertical instability.
+
+### M. Layered heavens open below
+World inspected from above.
+
+### N. Entire time-order appears as one picture
+Past/future simultaneously visible.
+
+### O. Giant Adam/Eve pair appears
+Equal intertwined forms.
+
+### P. Central winged serpent feeds both
+Hybrid transfer-node.
+
+### Q. Future history unfolds dynamically
+Picture becomes moving sequence.
+
+### R. Abraham returns to earth
+Gate/vision interval closes.
+
+This is an exceptionally strong **split / central transfer / ascent / all-times-visible** sequence.
+
+---
+
+## 640. Strongest X4 correspondences with Vardath Cosmology
+
+1. Old enclosure destroyed immediately after survivor exits.
+2. Ultimate source is formless fiery voice; visible guide is intermediary.
+3. Yahoel physically raises Abraham by hand.
+4. Yahoel switches visible→invisible state.
+5. Genesis 15 divided halves become launch/ascent geometry.
+6. Two intact birds provide right/left ascent supports.
+7. Furnace smoke is the ascent channel.
+8. Fire + wind accompany vertical transfer.
+9. Upper platform/interface moves high/down.
+10. Stacked levels open beneath traveller.
+11. Whole past/future history becomes simultaneously visible as one picture.
+12. Adam/Eve appear as giant equal entwined pair.
+13. Central serpent has human limbs and 6+6 wings.
+14. Central serpent transfers fruit to both paired figures.
+15. Azazel appears in multiple visible forms.
+16. Garment/corruption exchange shows state transfer independent of bodies.
+17. Yahoel stabilizes opposed beings by changing orientation.
+18. Exodus-like plagues recur as a later large-scale pattern.
+
+---
+
+## 641. What X4 does NOT establish
+
+The Apocalypse of Abraham does not establish:
+- that Genesis 15 originally described literal flight,
+- that the two birds are physical lattice arms,
+- that Yahoel is the Squatter-Man,
+- that Azazel’s twelve wings encode a plasma finger-trap,
+- that the “picture of creation” is an actual technological display,
+- that future history physically exists above Abraham.
+
+It is a later apocalyptic reinterpretation.
+
+Its value is that it demonstrates **how ancient interpreters could turn Genesis’ split-body/fire scene into an explicit cosmic ascent and all-time vision.**
+
+---
+
+## 642. X4 timing / number register
+
+Retain:
+- Abraham preparation/journey: **40 days/nights**.
+- Yahoel song function mentions **7th hour**.
+- sacrificial animals in **third year**.
+- serpent/Azazel: **12 wings = 6 + 6**.
+- picture/history: **12 periods/hours** of age.
+- punishment/exile: **4 hosts**.
+- end-time plagues: **10**.
+- specific “100 years + hour” chronology in one section requires later specialist treatment before numeric comparison.
+
+---
+
+## 643. X4 status
+
+**APOCALYPSE OF ABRAHAM — COMPLETE FIRST PASS.**
+
+### Next natural-order status
+
+Genesis 12–25 was already examined.
+
+The next genuinely unfinished inserted text is:
+
+**X5 — Testament of Abraham**
+placed immediately after Genesis 25:7–10.
+
+Priority tests:
+- Michael comes for Abraham,
+- resistance to death,
+- ascent/world survey,
+- Abraham views humanity from above,
+- narrow/broad gates or two ways,
+- judgment scenes,
+- return to body/death,
+- whether Abraham becomes another cross-domain traveller whose “death” is delayed by celestial transit.
+
