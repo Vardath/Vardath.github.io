@@ -23199,3 +23199,172 @@ This gives a repeated vertical operator path:
 **people below ↔ Moses ascending ↔ upper encounter ↔ Moses descending ↔ people below**.
 
 This is strongly relevant to the user's Moses/Squatter-Man investigation even though the text itself is allegorical/theological.
+
+
+## SECTION 16 progress C — Moses succession, king-pairs, house/tower geometry and the 70-shepherd clock
+
+### Moses / Aaron / successor pair sequence
+
+The Moses companion sheep (Aaron) dies first.
+Then the older generation dies.
+Moses — now described as a man — withdraws and dies.
+After mourning, sheep cross the stream/Jordan.
+
+Then **two sheep arise as leaders** in place of the deceased leaders.
+
+The exact identification of both successor sheep is less explicit than the Moses/Aaron pair; standard historical decoding places the scene at the conquest/settlement, with **Joshua** primary and often **Caleb** associated with the second leadership role.
+
+Keep:
+- Moses/Aaron = high confidence.
+- Joshua + second leader = likely conquest pair, second identity less secure.
+
+### Repeated leadership pattern
+
+The narrative repeatedly uses:
+**leader arises → leads/restores sight → leader fails/dies → successor raised**.
+
+This is a strong P4 succession grammar rather than identity-merging.
+
+### First ram / second ram — Saul / David pair
+
+During early monarchy:
+- first ram raised to defend sheep,
+- begins attacking enemies,
+- then “forsakes” proper path/glory and attacks sheep,
+- another sheep is secretly raised into a ram/leader,
+- first ram persecutes second,
+- second flees,
+- first eventually falls,
+- second takes leadership and defeats enemies.
+
+Standard identification:
+- first ram = **Saul**
+- second ram = **David**.
+
+This is a near-perfect P4/P6 pair:
+**appointed predecessor → deviation → divinely selected successor → persecution → replacement**.
+
+It closely parallels earlier:
+- Abel→Seth replacement,
+- Esau/Jacob firstborn reversal,
+- Moses→Joshua handoff.
+
+### David / Solomon succession
+
+The second ram (David):
+- produces many sheep,
+- dies,
+- a **little sheep becomes ram** in his place.
+
+This is generally read as **Solomon**.
+
+The narrative then immediately expands the sanctuary architecture.
+
+### House + lofty tower
+
+The sheep's house becomes:
+- **great and broad**,
+- with a **lofty great tower built upon/with it**,
+- house itself described as lower,
+- tower elevated,
+- Lord of sheep stands on tower,
+- full table offered before Him.
+
+Standard interpretation distinguishes sanctuary/Temple/Jerusalem imagery in this sequence, though details of “house” versus “tower” have been debated.
+
+For Vardath geometry the raw form is:
+**broad lower enclosure + high central/elevated tower + divine presence at height + offering interface below/at structure**.
+
+Do not identify this automatically with the physical central spire.
+
+### Eyes open / eyes blind = state variable
+
+Across the history:
+- sheep open eyes,
+- become blind,
+- are restored,
+- leaders can see while group cannot,
+- final renewed world has **all eyes open**.
+
+James VanderKam has specifically studied this open/closed-eye motif.
+
+This functions almost like a recurring state flag:
+**seeing = alignment/understanding**
+vs
+**blindness = deviation/loss of correct path**.
+
+So not every physical description needs to be structural anatomy; some are clearly **state coding**.
+
+### House/tower abandoned → destroyed
+
+When sheep forsake the house/tower:
+- blindness increases,
+- animals attack,
+- Lord gives house and tower over,
+- tower burned,
+- house demolished.
+
+This provides a first architectural world-state:
+**ordered house+tower → abandonment/blindness → external attack → structure destroyed**.
+
+### Seventy shepherds = delegated time-operators with counted quotas
+
+After destruction:
+- Lord calls **70 shepherds**,
+- each is assigned a period,
+- each receives a **numbered quota** of sheep that may be destroyed,
+- a separate recorder watches them,
+- records **commanded deaths vs excess deaths**,
+- carries book upward,
+- book is read, sealed, stored.
+
+This is effectively a historical clock:
+**70 sequential operators → each has a bounded period/quota → actions are measured → excess recorded → final audit/judgment**.
+
+The shepherds are conventionally read as **angelic overseers**, not 70 ordinary kings.
+
+### Four shepherd periods = 12 + 23 + 23 + 12 = 70
+
+The received chronology is difficult but can be organized into the standard four-part scheme:
+
+1. **12 shepherds/hours** — first period.
+2. next **23** — total reaches **35**.
+3. next **23** — total reaches **58**.
+4. final **12** — total reaches **70**.
+
+Thus:
+**12 + 23 + 23 + 12 = 70**.
+
+This is a symmetrical count:
+**outer 12 / inner 23 / inner 23 / outer 12**.
+
+Scholarly attempts to map each shepherd to exact historical rulers vary, and the chronology is one of the most disputed parts of the Animal Apocalypse.
+
+Do not assign modern-year intervals without a defined reconstruction.
+
+### Book/recorder sits outside the shepherd system
+
+The observing scribe:
+- is not one of the 70 ordinary shepherds,
+- records each operator,
+- carries record to higher authority,
+- later opens it at judgment.
+
+This creates:
+**system actors → independent audit layer → central judge**.
+
+That is worth retaining as an abstract architecture independent of theology.
+
+### Second-Temple rebuilding as imperfect recurrence
+
+After the first shepherd era:
+- **3 sheep turn back**,
+- rebuild fallen house,
+- raise high tower,
+- table restored,
+- but bread is **polluted/not pure**,
+- sheep and shepherds remain blind.
+
+So the rebuilt structure is explicitly **not equivalent to the former ideal state**.
+
+That becomes crucial because chapter 90 later replaces it entirely with a new house.
