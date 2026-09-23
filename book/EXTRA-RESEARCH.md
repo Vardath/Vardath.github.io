@@ -3641,3 +3641,11 @@ Special user hypothesis to test next:
 
 > The Cain/Abel section has produced a very specific threshold image I don’t want to miss: immediately before the murder, Genesis 4:7 says **“sin is crouching at the door”** and desires Cain, while Cain must master it. That gives us a **crouched entity/state positioned at a threshold** right inside the first brother-pair story. I’m checking the Hebrew and ancient Near Eastern background now, because some scholarship connects the “crouching” language with a threshold-demon concept; if that holds, it could be relevant to the Squatter-Man/gate imagery without needing Cain or Abel themselves to be literally the gate.
 
+
+
+### Section 2 progress update B — Cain/Abel polarity, Abel/Seth replacement, doubled genealogies
+
+> The pair test is becoming more precise. **Cain and Abel do not currently look like one figure split in the same way Adam/Eve do.** They look more like **opposed states whose roles partially transfer after the murder**: Cain begins as the fixed **worker of the ground**, Abel as the mobile **keeper of flocks**; once Abel is removed, Cain is cut off from productive ground and condemned to become a **fugitive/wanderer**. So the surviving grounded figure is forced into a mobile state after destroying the mobile brother.
+>
+> The stronger “same figure somehow” evidence appears one step later: **Seth is explicitly given “instead of Abel.”** That makes **Abel → Seth** a genuine replacement/successor relation. And the two genealogies that follow contain striking doubled names—two Enochs, two Lamechs, and several closely parallel names—so Genesis itself may be preserving **alternative/reworked versions of a lineage**, exactly the sort of duplication we need to track.
+
