@@ -11209,3 +11209,13 @@ Priority pair tests:
 
 **Primary text logged:** Jubilees 3:17; 5:23–29; 6:23–32. Jubilees also fixes the year at 364 days / 52 exact weeks.
 
+
+
+### Section 10 progress update C — heavenly/earthly timescale and Flood flow reversal
+
+> Jubilees adds another important layer: it repeatedly turns **time itself into part of the architecture**. Enoch is taught the ordered signs of heaven, records past and future, and spends “six jubilees of years” with the angels; Adam’s 930-year life is explained by the rule that **1,000 human years are as one heavenly day**. That is an explicit **different-timescale comparison between heaven and earth**, even though the text uses it theologically rather than as physics.
+>
+> It also strengthens the flow reversal in the Flood: the seven deep mouths first send water **up**, then later the abyss mouths open again so the water **descends back down into the deep**. So Jubilees gives a complete **below→up / above→down / closure / return-down** cycle.
+
+**Primary text logged:** Jubilees 4:17–26, 4:30; 5:24–31. Enoch’s role includes calendrical writing, visions of past/future, angelic instruction, and transfer to Eden. Adam’s 930 years are interpreted against a 1,000-year heavenly “day.”
+
