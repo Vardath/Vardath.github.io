@@ -22065,3 +22065,125 @@ It is not a “fingertrap,” but it makes heavenly order explicitly spatial and
 - monster pair: **2**, female/male.
 - four principal enforcers: **4**.
 - heavenly host again **1000s × 1000s / 10,000 × 10,000**.
+
+
+## SECTION 14 progress C — 1 Enoch 62–69: hidden figure revealed, birth-mouth image, hot/cold water state, structural oath
+
+### Hidden → revealed Son of Man
+
+Chapter 62 says:
+- Son of Man was **hidden from the beginning**,
+- preserved by the Most High,
+- then **revealed** to the elect.
+- he is seated on the throne.
+- righteous rise from earth and receive **garments of glory/life** that do not decay.
+
+This is another strong:
+**hidden state → revelation/manifestation → enthroned operator → transformed survivors** sequence.
+
+### Womb-mouth geometry
+
+The kings' terror is compared to:
+- a woman in labour,
+- child entering the **mouth of the womb**,
+- painful emergence.
+
+This is metaphorical birth imagery, but the phrase is worth retaining beside:
+- cave/ark/basket enclosure,
+- mouth/gate/chasm,
+- emergence/rebirth motifs.
+
+Do not literalize it into gate mechanics.
+
+### Noah / Enoch — an explicit grandfather/grandson preservation pair in the embedded Flood material
+
+Chapters 65–68 shift to Noah speaking with **his grandfather Enoch**.
+
+Noah:
+- fears the earth will be destroyed,
+- cries to Enoch,
+- Enoch appears,
+- takes Noah **by the hand and raises him up**,
+- explains the coming judgment,
+- assures Noah his seed will be preserved.
+
+This is a strong **P5 ancestor/descendant recurrence + P7 guide/carrier function**:
+- Enoch = prior translated mediator,
+- Noah = coming catastrophe survivor,
+- hand-raising transfers knowledge/security across generations.
+
+It also parallels Moses/Joshua's hand-raising succession gesture, but the relationship is grandfather/grandson rather than office replacement.
+
+### Water powers held closed before release
+
+Chapter 66:
+- punishment angels are prepared to release **waters beneath the earth**,
+- then commanded **not to make them rise yet**,
+- they hold the waters in check.
+
+This implies a staged hydraulic sequence:
+**stored/pressurized lower water → restrained release → future activation**.
+
+### Noah's wooden enclosure is built before the change
+
+Chapter 67:
+- angels are described as making a **wooden building** for Noah,
+- once complete, God preserves it,
+- “seed of life” comes from it,
+- then **a change sets in** so earth does not remain uninhabited.
+
+This is extremely close to our carrier/enclosure rule:
+**protected enclosure → catastrophe/change → living cargo emerges → successor inhabited world**.
+
+Crucially, the ark/building is still **carrier, not gate**.
+
+### Hot/cold waters change when angels ascend
+
+Chapter 67 has a striking state-change:
+- valleys contain fiery/molten material and waters,
+- sulfur/fire associations,
+- same waters function differently for body/spirit,
+- when angels are punished, springs change temperature,
+- **when the angels ascend, the springs change and become cold**.
+
+This is a direct event-coupled environmental state:
+**angelic location/state changes → water temperature/state changes**.
+
+It does not explain mechanism, but it is high-value for the project's interest in heat/cold/water phases around boundary events.
+
+### Michael / Raphael pair as witnesses to severity
+
+Chapter 68 is a direct dialogue pair:
+- Michael speaks to Raphael,
+- both confront the severity of judgment,
+- Michael refuses to advocate for the condemned.
+
+Classification:
+- **P7 co-witness/judicial pair**, not split halves.
+
+### The secret oath binds cosmic architecture
+
+Chapter 69 gives a remarkable “order-maintenance” mechanism:
+through a powerful oath:
+- heaven is **suspended**,
+- earth is founded **upon water**,
+- waters issue from mountain recesses,
+- sea is bounded by sand,
+- depths are made fast,
+- sun/moon/stars keep their courses,
+- wind/water/weather chambers remain ordered.
+
+This is not a Vardath lattice description, but it is a conceptual **binding law** holding multiple cosmic subsystems in fixed relationships.
+
+It offers an important alternative model to “physical support”:
+ancient text can express cosmic stability as **covenant/oath/order**, not necessarily material beams.
+
+### One underlying Son-of-Man figure accumulates functions
+
+By chapter 69 the revealed Son of Man:
+- receives the **sum of judgment**,
+- sits on throne,
+- destroys corrupt order,
+- his word proceeds with power.
+
+This strongly supports treating the Righteous One / Elect One / Son of Man / Anointed One cluster as one principal functional figure in the final literary form, though source-critical questions remain.
