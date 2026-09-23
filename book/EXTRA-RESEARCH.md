@@ -26827,3 +26827,163 @@ The Midian family branch rejoins Moses after the Exodus mission's first phase.
 
 This closes the Exodus 2/4 separation:
 **Moses departs Midian → wife/sons absent → family reunites at mountain**.
+
+
+## SECTION 20 progress E — continuous timeline, pair matrix and number register
+
+### Continuous event timeline
+
+**Passover memory carried forward**
+→ firstborn consecrated/redeemed
+→ event encoded on hand/eyes/mouth
+→ Joseph bones loaded as delayed ancestral cargo
+
+**Route shift**
+→ nearest route rejected
+→ people turned toward wilderness/Sea of Reeds
+→ cloud/fire pillar leads from front
+
+**Pursuit**
+→ Pharaoh reverses release
+→ 600 chosen chariots + army pursue
+→ Israel trapped between land/wilderness/sea
+
+**Separator reconfiguration**
+→ guiding messenger/pillar moves **front → rear**
+→ stands between Egypt/Israel
+→ darkness/light split
+→ camps cannot meet all night
+
+**Sea opening**
+→ staff lifted / hand stretched
+→ east wind all night
+→ sea retreats/divides
+→ dry ground
+→ right/left water walls
+→ Israel passes central corridor
+
+**Sea closure**
+→ Egypt enters same corridor
+→ morning watch disruption
+→ Moses hand stretched again
+→ sea returns at morning
+→ Egyptian route closes/destruction
+
+**Poetic recoding**
+→ water piled/upright
+→ deeps congealed
+→ enemies sink
+→ right hand / earth swallowing imagery
+
+**Water crisis**
+→ 3 days no water
+→ bitter water
+→ tree/wood added
+→ sweet water
+
+**Elim**
+→ 12 springs + 70 palms
+
+**Manna clock**
+→ month2 day15
+→ evening quail
+→ morning dew/manna
+→ days1–5 one daily unit
+→ day6 double/preservable
+→ day7 none/rest
+→ memorial jar
+→ 40-year provisioning period
+
+**Rock water**
+→ staff from Nile reused
+→ divine presence at rock
+→ rock struck
+→ water emerges
+
+**Amalek**
+→ Joshua below fights
+→ Moses/Aaron/Hur ascend hill
+→ raised/lowered posture tracks battle state
+→ stone base placed
+→ central Moses seated
+→ one supporter each side
+→ arms/hands held steady until sunset
+→ Joshua prevails
+
+**Administrative stabilization**
+→ family returns to Moses
+→ Jethro sees overloaded centre
+→ 1 judge replaced by nested hierarchy
+→ 1000 / 100 / 50 / 10 rulers
+→ difficult matters rise to Moses.
+
+### Pair matrix
+- **cloud / fire pillar** — P3 day/night manifestations of one guiding role.
+- **front pillar / rear pillar** — P3 positional role reversal.
+- **Egypt / Israel camps** — P2 opposed sides separated by one pillar.
+- **right water wall / left water wall** — P2 bilateral corridor.
+- **Moses / Miriam** — P7 parallel song leaders.
+- **bitter / sweet water** — P3 material state transformation.
+- **12 springs / 70 palms** — numerical pair, possible Israel genealogy symbolism but not explicit.
+- **evening quail / morning manna** — P2 daypart provisioning pair.
+- **Joshua / Moses** — P7 battlefield-below / ritual-hilltop-above pair.
+- **Aaron / Hur** — P7 literal bilateral supporters around Moses.
+- **Moses / Jethro** — P7 executive/counsellor.
+- **Zipporah family / Moses mission** — separated family branch later reunified.
+
+### Number register
+- Passover memory: **7 days** unleavened.
+- chosen Egyptian chariots: **600**.
+- east wind: **all night**.
+- critical collapse: **morning watch / morning**.
+- waterless travel: **3 days**.
+- Elim: **12 springs + 70 palms**.
+- manna arrival: **month 2, day 15**.
+- manna week: **6 + 1**.
+- ordinary/double/none: **1 / 2 / 0** omers relative to collection phase.
+- manna duration: **40 years**.
+- Amalek posture: held until **sunset**.
+- lateral supporters: **2**.
+- Moses' sons returned: **2**.
+- judiciary tiers: **1000 / 100 / 50 / 10**.
+
+## SECTION 20 status
+
+**SECTION 20 — EXODUS 13–18: COMPLETE FIRST PASS.**
+
+Strongest results:
+1. Cloud/fire is a likely **single guiding presence with paired time-state appearances**.
+2. The guide physically relocates **front→behind** and becomes a central separator.
+3. The sea crossing is explicitly **bilateral walls + central dry corridor**, timed open then closed.
+4. Same corridor yields opposite outcomes according to **phase/order of entry**.
+5. Exodus 15 re-encodes the same event with vertical water heaps and earth-swallowing imagery.
+6. Marah gives **tree/wood-mediated water state change**.
+7. Elim gives the conspicuous **12/70** water/tree pair.
+8. Manna is a literal **6→7 clock-dependent material cycle**.
+9. Rephidim links the same staff from Nile destruction to **rock-water production**.
+10. Moses/Aaron/Hur form the strongest bilateral human geometry yet: **stone base + seated centre + one supporter on each side + sustained arms/hands + hilltop**.
+11. A peer-reviewed 2023 reconstruction proposes a **horizontal staff held with both hands**, supported laterally — high relevance, but interpretive.
+12. Jethro converts an overloaded **one-centre** structure into nested **1000/100/50/10** delegation while retaining Moses at the apex.
+
+### Next first unfinished roadmap section
+
+**SECTION 21 — EXODUS 19–24**
+
+Priority:
+- third-month arrival at Sinai,
+- Moses ascent / divine descent,
+- mountain boundary and death rule,
+- three-day preparation,
+- cloud/fire/smoke/thunder/trumpet,
+- mountain trembling,
+- people below / Moses above,
+- repeated up/down trips,
+- ten words and altar boundary,
+- covenant blood split into halves,
+- 12 pillars,
+- Moses/Aaron/Nadab/Abihu + 70 elders,
+- sapphire-like pavement / vision above,
+- cloud covers mountain 6 days,
+- day7 call,
+- Moses enters cloud/fire and remains 40 days + 40 nights,
+- construct exact vertical permission map and event timeline.
