@@ -12441,3 +12441,15 @@ Priority tests:
 
 > Section 10 is complete and saved. I’m moving straight into **Section 11 — Jubilees 11–23**. This section should test whether the Abraham cycle preserves the same mechanics we saw in Genesis, and whether Jubilees adds anything stronger about **astronomy, timed covenants, the split-animal passage, Isaac substitution, Mastema as hidden operator, and lifespan/cycle changes**.
 
+
+
+### Section 11 progress update A — Abram reverses Babel; split-covenant retained and calendrically linked to Noah
+
+> Section 11 is producing two major additions.
+>
+> First, Jubilees makes **Abram a partial reversal of Babel**. He studies the stars but rejects astrological determinism; then an angel literally **opens his mouth, ears and lips**, restoring to him **Hebrew, “the tongue of creation,”** which the book says had vanished from human mouths since Babel. So the sequence is **one language lost at scattering → one chosen figure has primordial language reopened**. That is a very clear re-coherence motif.
+>
+> Second, Jubilees preserves the Genesis 15 geometry almost exactly: animals are **split and laid opposite each other**, Abram enters an ecstatic/darkened state, and **smoke/fire passes between the pieces**. It also deliberately links that covenant calendar-wise to **Noah’s covenant in the same month**.
+
+**Primary text logged:** Jubilees 12:16–27; 14:1–20.
+
