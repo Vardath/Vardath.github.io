@@ -6842,3 +6842,25 @@ Priority pair tests:
 - two Hagar-well scenes as possible doublet,
 - Abraham’s three-visitors / Lot’s two-angels mirror.
 
+
+
+### Sections 4–5 final user-facing reply saved verbatim
+
+> Continued through **Section 4 and Section 5** and saved every progress update plus the detailed findings.
+> 
+> The strongest new result is **Genesis 15**. Abram falls into the same kind of **deep sleep** used when Adam is divided, animals are cut into opposing halves, darkness descends, and a **smoking/fire form passes through the central corridor between the halves** before the covenant is established. That is one of the closest small-scale textual analogues yet to your **split lattice → central passage → fiery/plasma-like traversal → new state** picture.
+> 
+> Babel also became much more interesting. The likely Babylonian ziggurat background, **Etemenanki**, was literally named the **“House/Foundation Platform of Heaven and Underworld,”** and Babylonian inscriptions describe its foundation in the netherworld and summit rivaling heaven. In Genesis, humans concentrate into one place and build upward, YHWH descends, unified language breaks, and humanity scatters. So Babel currently looks less like the natural gate opening and more like an **artificial fixed axis or attempted imitation of the heaven–underworld connector**, followed by forced de-convergence.
+> 
+> Other important findings:
+> - **Peleg** is literally tied to “division,” and later interpreters noticed that lifespan drops sharply around him, linking world-division with a change in time/lifespan.
+> - Genesis 10 and 11 preserve **two versions of fragmentation**: genealogical/language branching and dramatic Babel scattering.
+> - **Abram→Abraham** and **Sarai→Sarah** are excellent explicit same-figure/state-change controls.
+> - **Sarah/Hagar** are better treated as paired covenant/heir routes than one person.
+> - **Abraham/Lot** are mirrored branches, not one figure.
+> - Genesis 18 gives a real **one→three→two+one** divine/messenger segmentation problem at a tent threshold, which is worth tracking without forcing a Trinity or lattice reading.
+> 
+> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
+> 
+> Next is **Section 6 — Genesis 19–25: Sodom/Zoar, Lot’s wife, Isaac/Ishmael, Hagar’s second well scene, the binding of Isaac, the ram substitute, Sarah’s death, Rebekah at the well, and Abraham’s death**.
+
