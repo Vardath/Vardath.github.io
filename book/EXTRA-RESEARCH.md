@@ -24991,3 +24991,149 @@ Classification:
   - altered/restored hand,
   - Moses/Aaron mouths,
   - Israel/Pharaoh firstborn.
+
+
+## SECTION 18 progress E — continuous Exodus 1–4 timeline, pair matrix and source controls
+
+### Continuous event timeline
+
+**Genesis handoff**
+→ 70-person Jacob household remembered
+→ descendants multiply beyond the original counted family
+
+**Suppression**
+→ new Pharaoh fears the growing people
+→ labour pressure increases
+→ population continues expanding
+→ Pharaoh recruits 2 midwives as covert death-agents
+→ Shiphrah/Puah refuse
+→ decree expands to all Egypt
+→ male infants assigned to Nile / females spared
+
+**Moses preservation**
+→ Levi child born
+→ hidden 3 months
+→ `tebah` constructed/waterproofed
+→ boy placed at Nile-bank reeds
+→ sister watches
+→ Pharaoh's daughter descends
+→ enclosure drawn from water
+→ Hebrew mother restored as nurse
+→ child transferred into Egyptian royal household
+→ Moses receives water/extraction identity-name
+
+**Moses rupture**
+→ adult sees Egyptian/Hebrew violence
+→ kills Egyptian
+→ sees Hebrew/Hebrew conflict
+→ Pharaoh seeks him
+→ Moses exits Egypt
+→ Midian/well
+→ rescues 7 daughters
+→ Zipporah marriage
+→ Gershom/sojourner state
+
+**Call**
+→ Israel's cry rises
+→ God hears/remembers/sees/knows
+→ Moses shepherds flock beyond wilderness
+→ reaches Horeb
+→ fire in non-consumed bush
+→ Moses turns aside
+→ approach boundary imposed
+→ divine call/name
+→ “come down” to deliver / “bring up” Israel
+→ Moses sent back toward Egypt
+
+**Credential transformations**
+→ staff → serpent → staff
+→ hand → white/affected → restored
+→ Nile water → blood on land
+
+**Paired mission**
+→ Moses protests speech
+→ Aaron appointed as mouth
+→ Moses retains source/authority role
+→ ordinary staff becomes mission “staff of God”
+→ Israel firstborn / Pharaoh firstborn polarity declared
+→ lodging death-threat
+→ Zipporah cuts / blood contacts / threat stops
+→ Aaron moves toward Moses
+→ pair converges at mountain of God
+→ Moses transfers words/signs to Aaron
+→ Aaron speaks / Moses signs
+→ Israel believes.
+
+### Pair matrix
+
+- **Shiphrah / Puah** — P7 cooperative life-preserving operators.
+- **male / female infants** — imposed P2 survival polarity.
+- **Moses' mother / Pharaoh's daughter** — P7 biological/adoptive maternal channels.
+- **Hebrew Moses / Egyptian-household Moses** — P3 social identity states of one person.
+- **Moses / Pharaoh** — P2/P6 displaced liberator vs fixed ruler, opening stage.
+- **Moses / Zipporah** — P7 complementary pair; Zipporah becomes lifesaving operator.
+- **Moses / Aaron** — P7 split-function system: revelation/authority vs public speech.
+- **Israel firstborn / Pharaoh firstborn** — collective/dynastic firstborn polarity.
+- **staff / serpent** — P3 reversible form states of one object.
+- **normal / altered hand** — P3 reversible states of one body.
+- **Noah's `tebah` / Moses' `tebah`** — P9 narrative/formal recurrence: same rare carrier word and waterproof-preservation logic at different scales.
+
+### Important numbers
+- Jacob household: **70** in MT; **75** in related Greek textual tradition.
+- midwives: **2**.
+- Moses hidden: **3 months**.
+- Midian daughters: **7**.
+- requested wilderness journey: **3 days**.
+- credential signs: **3**.
+- reversible signs: **2**.
+- Moses/Aaron active pair: **2**.
+- destination peoples named in Exodus 3: **6**.
+
+### Source / interpretation controls
+- Shiphrah/Puah ethnicity is debated.
+- `ʾobnayim` may be birth bricks/birthing equipment; lexical uncertainty remains.
+- Moses' `tebah` is deliberately parallel in vocabulary to Noah's ark, but this is literary recurrence, not evidence that Moses' infancy and Flood are one historical event.
+- Exodus 3's messenger/YHWH/God labels may reflect mediation theology and/or compositional history; do not count them as three separate beings without argument.
+- Exodus 3 is source-critically composite in many modern reconstructions.
+- Staff-serpent Egyptian royal symbolism is plausible context, not explicit identification.
+- Exodus 4:24–26 is genuinely ambiguous in pronouns and ritual meaning; preserve the secure cut/blood/contact/release sequence instead of pretending the target is certain.
+
+## SECTION 18 status
+
+**SECTION 18 — EXODUS 1–4: COMPLETE FIRST PASS.**
+
+Strongest additions:
+1. Pharaoh's death sorting is reversed by a **two-woman life-preserving operator pair**.
+2. Moses' basket is a second `tebah`, making Noah/Moses a deliberate carrier-preservation recurrence.
+3. The Nile is transformed narratively from **death destination → survival boundary**, and later will become a blood/water conflict zone.
+4. Moses passes through multiple genuine one-person state identities without becoming multiple people.
+5. Horeb gives **fire without consumption + controlled approach boundary + upper descent/lower ascent language**.
+6. Staff/serpent and hand/white-hand are explicit reversible state transformations.
+7. Moses/Aaron form a text-defined **split-function communication system**.
+8. Zipporah's blood action stops a death threat immediately before Egypt, creating a direct comparison point for Passover.
+9. The firstborn polarity is announced before the plague cycle begins.
+
+### Next first unfinished roadmap section
+
+**SECTION 19 — EXODUS 5–12**
+
+Priority:
+- Moses/Aaron vs Pharaoh as paired delegations,
+- “let my people go” / increased labour,
+- brick/straw system,
+- Pharaoh's magicians and mirrored signs,
+- staff/serpent contest,
+- Nile blood,
+- frogs/insects/flies,
+- livestock/disease,
+- boils,
+- hail + fire,
+- locust/wind,
+- darkness/light,
+- firstborn,
+- Passover blood at doorposts/lintel,
+- inside/outside house,
+- destroyer / YHWH / passing terminology,
+- exact meaning and spatial grammar of `pesach`,
+- whether anything in the story really resembles one layer passing above/below another,
+- all plague numbers, days, times, directions, wind changes and boundary separations.
