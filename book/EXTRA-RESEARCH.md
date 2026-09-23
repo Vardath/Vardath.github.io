@@ -7973,3 +7973,11 @@ Priority pair tests:
 - ladder/pillar as same structure in two states,
 - heaven/earth traffic.
 
+
+
+---
+
+## 220. LIVE PROGRESS LOG — Section 7 begins (Genesis 25–28)
+
+> Section 6 is complete and saved. I’m continuing into **Section 7 — Genesis 25–28**, which is a very strong test for your pairing idea because Jacob and Esau begin as **twins struggling inside one womb**, emerge in an inverted/entangled sequence, exchange firstborn status, and then the section ends with Jacob seeing the **earth–heaven connector** that becomes a **stone pillar and “gate of heaven.”**
+
