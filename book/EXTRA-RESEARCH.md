@@ -756,6 +756,185 @@ The Church’s list explicitly includes Jubilees, Enoch, Ethiopian Meqabyan mate
 
 ---
 
+
+## 14A. Corrected placement of the seven comparison apocrypha within the Ethiopian 81-book research order
+
+### Canon rule
+
+Do **not** alter the Ethiopian Orthodox Tewahedo Church's own 81-book canon to manufacture an "official 88-book Bible."
+
+The Church's published list gives **46 Old Testament + 35 New Testament = 81 canonical books**. The seven texts below remain explicitly labelled **comparison apocrypha/pseudepigrapha**.
+
+For this project, however, they should no longer be dumped at the end as Sections 90–96. They are now inserted at the point where their **primary narrative frame** belongs.
+
+This is a **research reading order**, not a claim about Ethiopian canonical status.
+
+Sources used for the canonical baseline:
+- Ethiopian Orthodox Tewahedo Church, "Canonical Books": https://www.ethiopianorthodox.org/english/canonical/books.html
+- G. A. Mikre-Sellassie, "The Bible and its Canon in the Ethiopian Orthodox Church," *The Bible Translator* 44.1 (1993).
+- Placement checked against scholarly introductions/critical work on each comparison text.
+
+### The seven comparison texts — corrected narrative placement
+
+| Comparison text | Primary narrative anchor | Correct research placement | Important cross-reference |
+|---|---|---|---|
+| **Life of Adam and Eve / Apocalypse of Moses** | begins after expulsion from Paradise; Cain/Abel, Seth, Adam's final illness/death | **after Genesis 3, alongside/before Genesis 4–5** | Paradise gate, Adam/Eve retelling, burial/resurrection |
+| **2 Enoch** | Enoch son of Jared before the Flood; later recensions continue through Methuselah/Nir/Melchizedek toward Flood | **after Genesis 5, before Genesis 6** | cross-read with canonical 1 Enoch and Jubilees |
+| **Apocalypse of Abraham** | Abraham's youth/idol rejection precedes his call; apocalyptic ascent elaborates the Genesis 15 covenant/trance | **after Genesis 11 and before Genesis 12**, then cross-reference again at Genesis 15 | Abraham/Yahoel, sacrifice, ascent, creation/abyss |
+| **Testament of Abraham** | imaginative expansion of Abraham's death in Genesis 25:7–10 | **immediately after Genesis 25:7–10** | Michael, world-view from above, two gates, judgment |
+| **Testaments of the Twelve Patriarchs** | final speeches/deaths of Jacob's sons in Egypt; several are explicitly after Joseph's death and their bones await later transfer | **after Genesis 50, before Exodus 1** | Levi's heaven ascent; Judah/Joseph polarity; bones/exodus |
+| **Ascension of Isaiah** | vision belongs to Hezekiah's time; martyrdom frame occurs under Manasseh | **between 2 Kings 20 / 2 Chronicles 32 and 2 Kings 21 / 2 Chronicles 33** | also cross-read with Isaiah and the Gospels because the vision contains the Beloved's descent/ascent |
+| **3 Enoch / Hebrew Book of Enoch** | frame is Rabbi Ishmael's heavenly ascent; Metatron retrospectively identifies himself as the transformed biblical Enoch | **primary placement after Revelation, before the later Ethiopian NT Church-Order books** | **secondary cross-reference after Genesis 5 / 1 Enoch / 2 Enoch** for Enoch→Metatron material |
+
+### Important result: nothing goes before Genesis
+
+None of the seven has a primary narrative frame earlier than **Genesis 1**.
+
+Some contain revelations **about creation**, but those revelations are delivered later:
+- 2 Enoch receives a creation revelation as Enoch,
+- Apocalypse of Abraham receives a creation vision as Abraham,
+- 3 Enoch contains retrospective primeval material through Metatron.
+
+Therefore **do not prepend any of the seven before Genesis 1**.
+
+### Official 81-book order with the seven comparison insertions marked
+
+The canonical numbering below follows the Ethiopian Orthodox Church's published 46 + 35 list. The **X-inserts do not change those canonical numbers**.
+
+#### Old Testament — 46 canonical entries
+
+1. Genesis  
+   - **X1 after Genesis 3:** Life of Adam and Eve / Apocalypse of Moses  
+   - **X2 after Genesis 5:** 2 Enoch  
+   - **X3 after Genesis 11:** Apocalypse of Abraham  
+   - **X4 after Genesis 25:7–10:** Testament of Abraham  
+   - **X5 after Genesis 50:** Testaments of the Twelve Patriarchs
+2. Exodus
+3. Leviticus
+4. Numbers
+5. Deuteronomy
+6. Joshua
+7. Judges
+8. Ruth
+9. I and II Samuel
+10. I and II Kings  
+   - **X6 after 2 Kings 20 / before 2 Kings 21:** Ascension of Isaiah
+11. I Chronicles
+12. II Chronicles  
+   - **X6 parallel anchor:** after 2 Chronicles 32 / before 2 Chronicles 33
+13. Jubilees
+14. Enoch
+15. Ezra and Nehemiah
+16. Ezra (2nd) and Ezra Sutuel
+17. Tobit
+18. Judith
+19. Esther
+20. I Maccabees
+21. II and III Maccabees
+22. Job
+23. Psalms
+24. Proverbs
+25. Tegsats / Reproof
+26. Metsihafe Tibeb / Books of Wisdom
+27. Ecclesiastes
+28. Song of Songs
+29. Isaiah  
+   - **X6 prophetic cross-reference:** Ascension of Isaiah
+30. Jeremiah
+31. Ezekiel
+32. Daniel
+33. Hosea
+34. Amos
+35. Micah
+36. Joel
+37. Obadiah
+38. Jonah
+39. Nahum
+40. Habakkuk
+41. Zephaniah
+42. Haggai
+43. Zechariah
+44. Malachi
+45. Joshua son of Sirach
+46. Josephas/Josephas son of Bengorion
+
+#### New Testament — 35 canonical entries
+
+1. Matthew
+2. Mark
+3. Luke
+4. John
+5. Acts
+6. Romans
+7. I Corinthians
+8. II Corinthians
+9. Galatians
+10. Ephesians
+11. Philippians
+12. Colossians
+13. I Thessalonians
+14. II Thessalonians
+15. I Timothy
+16. II Timothy
+17. Titus
+18. Philemon
+19. Hebrews
+20. I Peter
+21. II Peter
+22. I John
+23. II John
+24. III John
+25. James
+26. Jude
+27. Revelation  
+   - **X7 primary frame placement after Revelation:** 3 Enoch / Hebrew Book of Enoch
+28. Sirate Tsion / Order of Zion
+29. Tizaz / Te'ezaz
+30. Gitsew
+31. Abtilis
+32. I Book of Dominos
+33. II Book of Dominos
+34. Clement
+35. Didascalia
+
+### Why 3 Enoch gets two positions
+
+3 Enoch is the one text that cannot honestly be placed by subject alone.
+
+- Its **Enoch/Metatron backstory** belongs beside Genesis 5 / 1 Enoch / 2 Enoch.
+- Its **narrating frame** belongs to Rabbi Ishmael and later Hekhalot tradition; the persona is early second century CE and the surviving work reached its recognizable redaction considerably later.
+
+Therefore:
+- **read its Enoch-transformation chapters as an Enoch cross-reference**, but
+- **keep the complete book's main research position after Revelation**.
+
+This prevents anachronistically treating Rabbi Ishmael as a pre-Flood character.
+
+### Revised comparison-text research order
+
+The old tail-end order "Sections 90–96" is retired.
+
+Use this order instead:
+
+1. Genesis 1–3
+2. **Life of Adam and Eve / Apocalypse of Moses**
+3. Genesis 4–5
+4. **2 Enoch**
+5. Genesis 6–11
+6. **Apocalypse of Abraham**
+7. Genesis 12–25:10
+8. **Testament of Abraham**
+9. Genesis 25:11–50
+10. **Testaments of the Twelve Patriarchs**
+11. Exodus onward
+12. At Hezekiah→Manasseh: **Ascension of Isaiah**
+13. Continue OT/NT through Revelation
+14. **3 Enoch** as its primary frame position, with Enoch-era back-reference
+15. Ethiopian NT Church-Order books
+
+
+---
+
 ## 15. Major new synthesis: the Squatter-Man may be the transitional lattice itself
 
 The user asked whether biblical “people” may sometimes represent the Squatter-Man lattice/rod and its movement rather than always being ordinary human figures in a one-to-one physical reading.
@@ -1593,6 +1772,16 @@ Work through these in order. Each section is deliberately small enough for a foc
 
 **Pair tests:** Adam/Eve; Adam/serpent; Eve/serpent; two trees; waters above/waters below; light/dark.
 
+**COMPARISON INSERT X1 — Life of Adam and Eve / Apocalypse of Moses**
+- place immediately after Genesis 3,
+- post-Eden life of Adam/Eve,
+- Cain/Abel/Seth,
+- Paradise boundary,
+- Adam's death/burial,
+- sealed tomb and promised reopening/resurrection.
+
+**Placement rule:** this comparison text now belongs **between Section 1 and Section 2**. Its earlier preliminary research notes are indexed here rather than treated as an end appendix.
+
 **Section 2 — Genesis 4–5**
 - Cain and Abel,
 - blood/ground,
@@ -1603,6 +1792,17 @@ Work through these in order. Each section is deliberately small enough for a foc
 - genealogical doubling and repeated names.
 
 **Pair tests:** Cain/Abel as possible split or polarity of one figure; Cain/Seth; Abel/Seth replacement; Enoch/earlier Enoch names.
+
+**COMPARISON INSERT X2 — 2 Enoch**
+- place after Genesis 5 and before the Flood narrative,
+- Enoch ascent through layered heavens,
+- transformation,
+- solar/eastern-western gate cycles,
+- return to earth,
+- final ascent,
+- later recension material leading toward Noah/Flood.
+
+**Placement rule:** read the Enoch core **between Section 2 and Section 3**; cross-reference its final chapters again during Noah/Flood work.
 
 **Section 3 — Genesis 6–9**
 - sons of God / daughters of men,
@@ -1629,6 +1829,16 @@ Work through these in order. Each section is deliberately small enough for a foc
 **Pair tests:** tower/rod; Babel/Sinai inversion; one language/many languages; ascent/scattering.
 
 ### PATRIARCHS
+
+**COMPARISON INSERT X3 — Apocalypse of Abraham**
+- place after Genesis 11 and immediately before Abraham's canonical call,
+- Abraham rejects Terah's idols,
+- heavenly voice orders departure,
+- sacrifice/trance material develops Genesis 15,
+- Yahoel guides ascent,
+- firmaments, creation-picture, abyss and future history.
+
+**Placement rule:** begin it **between Section 4 and Section 5**, then cross-reference its ascent again while analysing Genesis 15.
 
 **Section 5 — Genesis 12–18**
 - Abraham’s departure,
@@ -1657,6 +1867,16 @@ Work through these in order. Each section is deliberately small enough for a foc
 - Abraham’s death.
 
 **Pair tests:** Isaac/ram; Isaac/Ishmael; Sarah/Hagar; Abraham/Isaac; Sodom/Zoar; Lot/Lot’s wife.
+
+**COMPARISON INSERT X4 — Testament of Abraham**
+- place immediately after Abraham's death notice in Genesis 25:7–10,
+- Michael comes for Abraham,
+- Abraham surveys the world from above,
+- two roads/two gates,
+- judgment,
+- return and death.
+
+**Placement rule:** this belongs **after the Abraham death material in Section 6 and before the Jacob/Esau cycle in Section 7**.
 
 **Section 7 — Genesis 25–28**
 - Jacob/Esau birth,
@@ -1712,6 +1932,16 @@ Perez/Zerah is especially important because one twin puts out a hand, receives a
 ## 32. Jubilees and Enoch primeval parallel track
 
 These must be compared beside Genesis, not treated as isolated extras.
+
+**COMPARISON INSERT X5 — Testaments of the Twelve Patriarchs**
+- place after Genesis 50 and before Exodus 1,
+- deathbed/final speeches of Jacob's sons in Egypt,
+- several testaments occur after Joseph's death,
+- bodies/bones await later transfer,
+- Levi's mountain/heaven ascent,
+- Judah/Joseph polarity.
+
+**Placement rule:** narratively this is the bridge **between Genesis and Exodus**, even though the current parallel-track research then loops back into Jubilees/Enoch.
 
 **Section 10 — Jubilees 1–10**
 - Sinai frame,
@@ -2052,11 +2282,24 @@ Not mainly narrative. Investigate:
 
 **Priority pair:** Elijah/Elisha as successor and perhaps same axial role in two states.
 
-**Section 38 — 2 Kings 14–25 + Chronicles parallels**
+**Section 38A — 2 Kings 14–20 + Chronicles parallels through Hezekiah**
 - divided kingship,
 - Assyrian crisis,
 - Hezekiah/Isaiah,
-- shadow/time sign,
+- shadow/time sign.
+
+**COMPARISON INSERT X6 — Ascension of Isaiah**
+- vision is anchored in Hezekiah's reign,
+- martyrdom frame belongs under Manasseh,
+- Isaiah ascends through seven heavens,
+- descending figure changes form through levels,
+- return ascent,
+- later Manasseh/Beliar persecution and Isaiah's martyrdom.
+
+**Placement rule:** read it at the **Hezekiah → Manasseh transition**, between 2 Kings 20 / 2 Chronicles 32 and 2 Kings 21 / 2 Chronicles 33. Cross-reference again with Isaiah and the Gospel descent/ascent material.
+
+**Section 38B — 2 Kings 21–25 + Chronicles parallels after Hezekiah**
+- Manasseh,
 - Josiah,
 - temple repair,
 - fall of Jerusalem,
@@ -2639,6 +2882,26 @@ Not narrative-first. Extract structural pair theology:
 
 ---
 
+## 43A. COMPARISON INSERT X7 — 3 Enoch / Hebrew Book of Enoch
+
+**Primary placement:** after Revelation, before the Ethiopian NT Church-Order books.
+
+Reason:
+- narrative frame is Rabbi Ishmael's ascent,
+- Metatron recounts his earlier identity as biblical Enoch,
+- the book belongs to the later Hekhalot/merkavah world rather than the antediluvian narrative frame.
+
+**Secondary cross-reference:** Genesis 5 / 1 Enoch / 2 Enoch, specifically for:
+- Enoch → Metatron transformation,
+- bodily enlargement/glory,
+- throne/gate/palace material,
+- Flood-generation retrospective,
+- seven-heaven/palace structures.
+
+Do not move the complete book into Genesis chronology merely because Metatron is Enoch.
+
+---
+
 ## 44. Ethiopian New Testament Church Order books
 
 These are canonical in the broader Ethiopian 35-book New Testament reckoning even though many are primarily church-order texts rather than stories.
@@ -2700,93 +2963,23 @@ Mostly order/ethics, but inspect:
 
 ---
 
-## 45. Seven comparison apocrypha / pseudepigrapha
+## 45. Seven comparison apocrypha / pseudepigrapha — placement corrected
 
-These are **comparison texts**, not silently treated as Ethiopian canonical books.
+The former **Sections 90–96 tail appendix is retired**.
 
-**Section 90 — 2 Enoch**
-- Enoch ascent,
-- layered heavens,
-- eastern/western gates,
-- sun under earth,
-- 365¼-day system in translation tradition,
-- 28-year solar circuit,
-- 19-year lunar course,
-- creation from light/dark/water,
-- upper/lower measures.
+The seven texts remain non-canonical comparison works, but their research positions are now interleaved according to narrative frame:
 
-**Section 91 — 3 Enoch**
-- Rabbi Ishmael ascent,
-- Enoch → Metatron transformation,
-- bodily enlargement,
-- wings/eyes/throne imagery,
-- gates/levels,
-- test the strongest explicit “human becomes giant heavenly axis-person” material while accounting for the text’s late date.
+1. Life of Adam and Eve / Apocalypse of Moses — after Genesis 3.
+2. 2 Enoch — after Genesis 5, before Genesis 6.
+3. Apocalypse of Abraham — after Genesis 11, before Genesis 12; cross-reference Genesis 15.
+4. Testament of Abraham — after Genesis 25:7–10.
+5. Testaments of the Twelve Patriarchs — after Genesis 50, before Exodus 1.
+6. Ascension of Isaiah — Hezekiah→Manasseh transition.
+7. 3 Enoch — primary frame after Revelation; secondary Enoch-era cross-reference.
 
-**Section 92 — Ascension of Isaiah**
-- Isaiah ascent,
-- seven heavens,
-- changing glory/form,
-- descending Christ changes form at each level,
-- gatekeepers/passwords,
-- descent toward Sheol,
-- return ascent.
+**No comparison text has been placed before Genesis 1.**
 
-**Section 93 — Apocalypse of Abraham**
-- Abraham,
-- Yahoel,
-- mountain/ascent,
-- fire,
-- firmament,
-- heavenly view,
-- judgment,
-- creation/abyss imagery.
-
-**Pair test:** Abraham/Yahoel as traveller/guide or operator/axis pair.
-
-**Section 94 — Testament of Abraham**
-- Abraham/Michael,
-- heavenly journey,
-- chariot,
-- gates,
-- judgment,
-- earth viewed from above,
-- return/death.
-
-**Section 95 — Life of Adam and Eve / Apocalypse of Moses**
-- Adam/Eve,
-- serpent/devil form,
-- paradise wall/gate,
-- Seth/Eve journey,
-- oil/tree,
-- Adam carried,
-- third heaven,
-- sealed tomb,
-- later resurrection.
-
-This is the highest-priority comparison text for the user’s Adam/Eve “same figure somehow” hypothesis.
-
-**Section 96 — Testaments of the Twelve Patriarchs**
-Do not treat the collection as one undifferentiated story.
-Investigate each son separately:
-- Reuben,
-- Simeon,
-- Levi,
-- Judah,
-- Issachar,
-- Zebulun,
-- Dan,
-- Naphtali,
-- Gad,
-- Asher,
-- Joseph,
-- Benjamin.
-
-Priority:
-- Levi’s mountain and layered-heaven ascent,
-- Judah’s rod/sceptre/branch material,
-- Joseph/Judah polarity,
-- twelve brothers as possible segmented aspects of Jacob/Israel versus genuinely distinct tribal personifications.
+See **§14A** for the full 81-book canonical baseline and insertion map.
 
 ---
 
@@ -13191,4 +13384,25 @@ Priority tests:
 > I recovered the seven comparison texts: **Life of Adam and Eve/Apocalypse of Moses, 2 Enoch, 3 Enoch, Apocalypse of Abraham, Testament of Abraham, Testaments of the Twelve Patriarchs, and Ascension of Isaiah**. None should simply sit as “Sections 90–96” at the end if we’re reading the corpus as a continuous story-world; several belong inside Genesis-era material, and **none actually precedes the opening creation account of Genesis** in narrative frame. I’m verifying each placement against the texts and scholarship before rewriting the roadmap.
 >
 > The placements are resolving cleanly. The five early extras can be inserted **inside the Genesis→Exodus story flow**, while **Ascension of Isaiah** belongs around the **Hezekiah→Manasseh transition**, not at the end. **3 Enoch is the exception**: its frame is Rabbi Ishmael in the early rabbinic/second-century setting, even though Metatron recounts Enoch’s pre-Flood transformation, so I’m going to give it a **dual cross-reference** rather than falsely pretending its whole narrative occurs in Genesis.
+
+
+
+---
+
+## 468. Placement correction applied
+
+The file's roadmap has now been revised so the seven comparison apocrypha are **not** treated as one end appendix.
+
+Applied anchors:
+- Life of Adam and Eve → after Genesis 3,
+- 2 Enoch → after Genesis 5,
+- Apocalypse of Abraham → after Genesis 11 / cross-reference Genesis 15,
+- Testament of Abraham → after Genesis 25:7–10,
+- Testaments of the Twelve Patriarchs → after Genesis 50 / before Exodus,
+- Ascension of Isaiah → between Hezekiah and Manasseh,
+- 3 Enoch → after Revelation as the main frame, with an Enoch-era cross-reference.
+
+**Result of the user's pre-Genesis check:** none of the seven belongs before Genesis 1, so no pre-Genesis research section needs to be inserted or run before the Genesis work already completed.
+
+The original historical progress material is retained for provenance, but the **active roadmap and appendage order now use the corrected placements above**.
 
