@@ -26507,3 +26507,135 @@ This 12/70 pair deserves later comparison with:
 - 70 elders,
 - 70 shepherds,
 - 70 Apocalypse-of-Weeks subparts.
+
+
+## SECTION 20 progress C — Exodus 16: manna as a precise 6→7 environmental clock, dew-mediated food layer and preserved sample
+
+### Exact post-Exodus date
+
+Israel reaches Wilderness of Sin:
+- **15th day**
+- **2nd month**
+after leaving Egypt.
+
+This is one of the earliest precise wilderness dates.
+
+### Evening / morning paired supply
+
+Promise:
+- **evening** = flesh/quail.
+- **morning** = bread.
+
+Then:
+- quail covers camp at evening.
+- dew lies around camp in morning.
+- when dew layer goes/lifts, fine manna is visible on ground.
+
+This is an explicit day-part pair:
+**evening animal food / morning bread-like material**.
+
+### Dew acts as interface layer
+
+Sequence:
+**night/morning dew layer**
+→ dew gone/lifted
+→ manna exposed on surface.
+
+Later tradition calls it bread from heaven; in this chapter the visible ground material appears in relation to the dew.
+
+This is interesting for atmospheric deposition, but ordinary literary/natural analogies must be preserved.
+
+### Equalization despite unequal gathering
+
+Each person gathers differing quantities, but when measured:
+- heavy gatherer has no excess,
+- small gatherer no lack.
+
+The system resolves variable acquisition into **need-matched allocation**.
+
+This is a social/economic equalization motif, not cosmological geometry.
+
+### Daily decay rule changes on day 6
+
+Ordinary days:
+- leftover manna until morning → worms/stink.
+
+Day **6**:
+- gather **double**,
+- store overnight,
+- does **not** spoil.
+
+Day **7**:
+- no manna in field,
+- people remain/rest.
+
+Thus the material itself changes behavior according to temporal phase:
+
+**days 1–5: daily-only**
+→ **day 6: double + preservable**
+→ **day 7: no new supply**
+→ cycle repeats.
+
+This is an exceptionally explicit **clock-dependent material rule**.
+
+### 6 → 7 transition
+
+Core:
+- **6 collection days**
+- **7th rest/no appearance**.
+
+Compare later with:
+- creation week,
+- Jubilees sacred calendar,
+- 7→8 boundary traditions.
+
+Do not collapse distinct uses.
+
+### 1 omer / 2 omers
+
+Ordinary:
+- **1 omer per person**.
+
+Sixth day:
+- **2 omers per person**.
+
+Stored memorial:
+- **1 omer** preserved in jar.
+
+So the manna story embeds a simple:
+**1 → 2 → 0**
+daily quantity cycle around Sabbath:
+ordinary / double / none.
+
+### Preserved jar as information/material cargo
+
+Moses tells Aaron:
+- fill a **jar** with an omer,
+- place before YHWH/testimony,
+- preserve for generations.
+
+This is a physical sample carried forward as evidence/memory of an earlier environmental state.
+
+Compare:
+- Moses hidden writings in vessels,
+- patriarch bones,
+- Enoch books,
+- ark cargo.
+
+### Forty-year duration
+
+Exodus states Israelites eat manna **40 years** until reaching inhabited land/Canaan border.
+
+This is a long-duration environmental provisioning clock.
+
+Chronological caution:
+the verse is retrospective and belongs to the final literary framing; it speaks from knowledge of the completed wilderness period.
+
+### Manna visual/material notes
+- fine/flaky,
+- white,
+- like coriander seed,
+- taste like honey wafer,
+- melts with sun heat.
+
+Record for environmental comparison without assuming identity with modern/natural tamarisk manna.
