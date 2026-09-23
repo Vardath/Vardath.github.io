@@ -14143,3 +14143,13 @@ Priority tests:
 **Primary text:** 2 Enoch 22.  
 **Scholarly control:** recent work argues for Enoch as a glorified/angelomorphic human rather than necessarily ontologically transformed into an angel.
 
+
+
+### Insert X2 progress C — two preservation routes across the Flood
+
+> 2 Enoch also gives a second route through catastrophe besides Noah’s ark: in its later Melchizedek material, the miraculous child is **taken upward by Gabriel to Eden so he will survive the Flood and reappear afterward as priest**. So the same world-reset tradition contains **two preservation mechanisms**: one population survives in a carrier on the floodwaters, while another selected figure is removed to a protected upper/sacred domain.
+>
+> That is very useful for your model because it means the texts themselves allow **different cargo to cross the same catastrophe by different routes**.
+
+**Source-control note:** the Melchizedek/Nir material belongs to the later chapters of 2 Enoch and has complicated recension history; chapter 73 in particular is not equally represented across manuscripts. Preserve this as a later 2 Enoch tradition, not as equally secure with every core ascent chapter.
+
