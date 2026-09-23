@@ -29449,3 +29449,19 @@ Mechanism reconfirmed for Bible comparison:
 - end-on projections can produce eye/wheel/star/rosette families;
 - side/axial projections can produce tree/rod/pillar/mountain/ladder families;
 - the gate is the boundary/interface becoming selectively traversable under convergence, not a separate permanent object.
+
+
+### Read-up progress — book through Chapter 38
+
+Book read-up now covers Preface, Introduction and Chapters 1–38.
+
+Continuation point unchanged: **Section 22 — Exodus 25–40** remains the first genuinely unfinished roadmap block after duplicate/stale checkpoint reconciliation.
+
+Additional comparison rules reconfirmed:
+- enclosure and route are distinct functions even when one object can perform both;
+- carrier protects a coherent inside, vehicle moves, route enables passage, guide knows the route, guardian controls/marks threshold, operator governs/activates, witness preserves one projection;
+- threshold water can be separator, route, upper/lower interface, well/throat, mist, flood/transfer medium;
+- creation/destruction can be opposite viewpoints on one handoff;
+- world-tree/time-door remains a persistent woven architecture whose traversability changes by state;
+- land is cargo riding the deeper lattice, not the lattice itself;
+- paired/bilateral forms should be tested as two functional components, counter-directions, mirrored states, or split manifestations before assuming two unrelated actors.
