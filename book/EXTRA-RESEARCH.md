@@ -26392,3 +26392,118 @@ Pharaoh takes:
 - plus other Egyptian chariots in the final form.
 
 Record **600** beside Exodus 12's ~600,000 men, but do not assume intentional numerical pairing without further evidence.
+
+
+## SECTION 20 progress B — Exodus 15: Song retells the sea as vertical piles, right-hand action, earth swallowing, then 3-day water crisis and 12/70 oasis
+
+### Prose and poem retell the same event differently
+
+Exodus 14 = prose crossing:
+- east wind,
+- dry ground,
+- bilateral water walls.
+
+Exodus 15 = poetic re-description:
+- “wind/breath of nostrils,”
+- waters **piled up**,
+- floods stand **upright as a heap**,
+- deeps congeal in **heart of sea**,
+- enemies sink like stone/lead,
+- right hand acts,
+- earth swallows.
+
+This is another strong control:
+**same event → different visual/geometric language**.
+
+Do not multiply events because imagery differs.
+
+### Right-hand repetition
+
+Song emphasizes:
+- YHWH's **right hand** powerful,
+- right hand shatters enemy,
+- right hand later stretched and **earth swallows** them.
+
+This right-side emphasis belongs in the bodily/axis register, but it is divine poetic anatomy rather than Moses' physical hand posture.
+
+### Waters become upright
+
+Poetry says:
+- floods **stood upright**,
+- waters **piled as heap**.
+
+This reinforces the prose's bilateral wall image with verticalized water.
+
+### “Heart of the sea”
+
+The deep is located in the **heart/centre of sea**.
+
+This is a central-zone expression, not a literal anatomical claim.
+
+### Pass-over language in the Song
+
+Exodus 15:16 says:
+- “until your people **pass over/cross**”
+- repeated twice.
+
+This uses ordinary crossing language for Israel's movement and points toward entry into land.
+
+Again, this helps distinguish actual crossing verbs from `pasaḥ` at Passover.
+
+### Moses / Miriam — male/female song leaders
+
+After Moses and Israel's song:
+- **Miriam the prophetess**, sister of Aaron,
+- takes tambourine,
+- women follow,
+- Miriam answers/leads a matching refrain.
+
+Classification:
+- Moses/Miriam = **P7 parallel song/worship leaders**
+- male/female complementary public responses to same event.
+
+Not split halves; two historical persons occupying parallel liturgical functions.
+
+### Three days without water
+
+After sea:
+- journey **3 days** into wilderness,
+- no water found.
+
+This puts a three-day scarcity interval immediately after the water-catastrophe.
+
+### Bitter → sweet water via tree
+
+At Marah:
+- water exists but cannot be drunk because bitter.
+- Moses cries.
+- YHWH shows him a **tree/wood**.
+- Moses throws it into water.
+- water becomes **sweet/drinkable**.
+
+This is another material state-change:
+**water state A → central added wood/tree → water state B**.
+
+Unlike staff/serpent, the wood itself is not said to transform.
+
+### Elim — 12 springs + 70 palms
+
+Next stop:
+- **12 springs of water**
+- **70 palm trees**
+- camp by water.
+
+These numbers are remarkably aligned with Israel's social/genealogical numbers:
+- 12 tribes,
+- 70-person Jacob household.
+
+The text does not explicitly say the springs/palms symbolize tribes/ancestors, so classify that correspondence as **possible literary numerology**, not fact.
+
+Still, preserve:
+**12 water sources + 70 trees** at the first abundant oasis after the sea.
+
+This 12/70 pair deserves later comparison with:
+- 12 tribes,
+- 70 elders,
+- 70 shepherds,
+- 70 Apocalypse-of-Weeks subparts.
