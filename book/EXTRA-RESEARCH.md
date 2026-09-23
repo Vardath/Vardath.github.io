@@ -17756,3 +17756,32 @@ with Levi/Judah/Joseph/Benjamin also receiving ranked tribal roles.
 
 **Source-critical warning:** the Testaments are textually complicated and underwent substantial Jewish and Christian transmission/redaction. Exact assignments vary across witnesses/editions. The significance here is the explicit *principle* of patriarch↔cosmos correspondence, not the absolute stability of every item.
 
+
+
+### X6 progress B — Jacob becomes a ship containing the twelve sons
+
+> A second major Twelve-Patriarchs result: **Jacob is literally represented as a ship containing his sons**. In Naphtali’s vision the ship is named *Jacob*; Jacob holds the helm, then disappears during a storm; the brothers are scattered onto separate boards, Joseph escapes on a small boat, Levi and Judah remain together, and after the storm the vessel reaches land and Jacob reappears.
+>
+> That is a very direct **one body/container → twelve differentiated branches/components → separation under catastrophe → reconvergence/reunion** image. It fits your “the named people may be parts/functions of one larger structure” hypothesis unusually well, because the text itself builds the family into a single transport-body before splitting it apart.
+
+**Primary text:** Testament of Naphtali 6 in the Charles/ANF tradition.
+
+Structural sequence:
+- ship explicitly named **Jacob**,
+- Jacob = helmsman/controller,
+- twelve sons aboard one vessel,
+- storm/wind strikes,
+- Jacob departs/disappears,
+- unified vessel nearly breaks,
+- sons separate onto multiple boards,
+- Joseph uses a separate small boat,
+- Levi and Judah remain paired,
+- dispersion follows,
+- Levi prays,
+- storm ceases,
+- ship reaches land,
+- Jacob appears again,
+- family rejoices together.
+
+**Control:** the vision is interpreted in the text as a prophecy of Israel's future dispersion and restoration. The Vardath relevance is structural: one ancestral “body” can explicitly contain multiple sons/tribes and fragment under catastrophe.
+
