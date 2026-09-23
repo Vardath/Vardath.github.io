@@ -22187,3 +22187,132 @@ By chapter 69 the revealed Son of Man:
 - his word proceeds with power.
 
 This strongly supports treating the Righteous One / Elect One / Son of Man / Anointed One cluster as one principal functional figure in the final literary form, though source-critical questions remain.
+
+
+## SECTION 14 progress D — Enoch / Son of Man: the epilogue deliberately collapses observer and future figure, but the text is disputed
+
+### Chapter 70 — Enoch is raised toward the figure he has been observing
+
+Enoch:
+- is still alive,
+- his **name is raised aloft** to/with the Son of Man and Lord of Spirits in the majority reading represented by Charles,
+- is lifted on **chariots of the spirit**,
+- disappears from those dwelling on earth,
+- is placed **between two winds, north and west**,
+- at the place where angels had taken measuring cords,
+- sees primordial righteous/fathers.
+
+This is a transition from:
+**observer of cosmic figure → translated human approaching/occupying the same heavenly field**.
+
+### Chapter 71 — bodily/spiritual transformation at a four-sided fiery house
+
+Enoch's spirit ascends.
+He sees:
+- **two streams of fire**,
+- Michael seizes his **right hand** and lifts him,
+- crystal/fire house,
+- a **girdle** around the house,
+- streams of living fire on its **four sides**,
+- innumerable angels surrounding it,
+- four named archangels entering/exiting,
+- Head of Days emerges,
+- Enoch falls,
+- his **whole body relaxes** and his **spirit is transfigured**.
+
+This is a dense:
+**right-hand lifting → enclosure → four-sided circulating fire → central authority → bodily collapse → spirit transformation** scene.
+
+### Does Enoch become the Son of Man?
+
+This is the major textual/interpretive problem.
+
+R. H. Charles printed/emended 71:14 as:
+- **“This is the Son of Man…”**
+so Enoch is shown another figure.
+
+But modern textual discussion emphasizes that the surviving Ethiopic naturally reads:
+- **“You are that Son of Man…”**
+addressed to Enoch.
+
+Nickelsburg/VanderKam and Leslie Walck, among others, reject Charles's conjectural emendation as unsupported by the extant manuscripts; VanderKam has proposed that Enoch may be seeing in the preceding Parables **what he himself will become**. Michael Knibb, Daniel Olson and others have debated the related textual problem in 70:1 and how the epilogue should be read.
+
+Therefore the research register should say:
+
+**Final-form Ethiopic strongly supports Enoch ↔ Son-of-Man identification/transformation, but the compositional history and exact relation of chapters 70–71 to the earlier Parables remain debated.**
+
+Pair classification:
+- earlier chapters: Enoch / Son of Man appear **P10 separate observer and observed figure**.
+- epilogue: the distinction may collapse into **P3 same identity across temporal/state transformation**.
+
+This is extremely important for the Vardath hypothesis:
+a text can narrate a human as looking at a seemingly separate cosmic figure and only later reveal that the figure is **his own transformed/future identity**.
+
+That does **not** prove future-world self-contact. But it is one of the strongest literary precedents yet for:
+**person A now ↔ apparently separate cosmic person B ↔ later identity convergence**.
+
+### “Prepared/hidden before creation” versus historical Enoch
+
+If the Son of Man is Enoch, the Parables create a temporal paradox-like literary structure:
+- Enoch is a historical antediluvian human observer,
+- the Son of Man's name is said to be named/hidden before sun/stars/world-order,
+- then Enoch is identified with or transformed into that figure.
+
+Possible readings include:
+- heavenly identity pre-appointed before earthly life,
+- visionary future identity,
+- compositional joining of traditions,
+- representative/typological identification.
+
+Do not choose the Vardath time-switch explanation as fact; retain all alternatives.
+
+### Pair register for Section 14
+- **Head of Days / Son of Man** — explicit two-figure authority/representative pair.
+- **Enoch / Son of Man** — separate in visions, potentially convergent in epilogue.
+- **Righteous One / Elect One / Son of Man / Anointed One** — title/function cluster, probably not separate people in final form.
+- **four archangels around centre** — fourfold functional ring.
+- **Sun / Moon** — opposed oath-bound pair.
+- **Wisdom / Unrighteousness** — inverse descent/settlement pair.
+- **upper masculine / lower feminine water** — joined vertical polarity.
+- **Leviathan / Behemoth** — female-water / male-land separated pair.
+- **thunder / lightning** — distinct but explicitly inseparable pair.
+- **Enoch / Noah** — ancestor/descendant guidance/preservation pair.
+- **Michael / Raphael** — judgment-discussion pair.
+
+### Event sequence for the Parables
+**hidden heavenly order**
+→ Enoch receives three Parables
+→ righteous/elect future revealed
+→ Son-of-Man figure seen beside Head of Days
+→ hidden figure progressively identified/revealed
+→ kings/powers displaced
+→ solid mountains deform/melt
+→ punitive valleys/abysses open
+→ embedded Flood memory joins upper/lower waters
+→ Noah/preservation pattern recurs
+→ cosmic weather/water systems shown as ordered chambers
+→ judgment figure enthroned
+→ righteous resurrect/receive enduring garments
+→ Enoch is translated from earth
+→ measured heavenly location between winds
+→ right-hand ascent through fiery/crystal house
+→ Enoch transfigured
+→ Enoch/Son-of-Man identities potentially converge.
+
+### Timing / number register
+- **3 Parables**.
+- **4 presences / 4 sides** around central throne.
+- innumerable host expressed as **1000×1000 and 10,000×10,000**.
+- **6 named metal mountains** in ch. 52 text as listed by Charles; traditional heading “seven” is not to override the list.
+- Flood/Noahic marker: **year 500, month 7, day 14**.
+- **2 monsters** separated: female Leviathan / male Behemoth.
+- **2 streams of fire** in ch. 71.
+- fiery heavenly house: **4 sides**.
+- major named archangels in the Parables' throne scenes: **4** — Michael, Raphael, Gabriel, Phanuel.
+- chapter 69 Watcher list gives **21 names** in Charles' received wording but contains duplication/corruption (including Azazel twice), followed by organizational chiefs over **hundreds, fifties and tens**; do not normalize this into a clean symbolic count without textual criticism.
+- righteous future: days described as **unending / without number**, not a calculable chronological interval.
+
+### Source-control notes
+- Parables 37–71 have no surviving Qumran manuscript witness, unlike other Enochic sections; date and original language/compositional history remain debated.
+- Several Noahic passages in 54–55 and 60, 65–69 are treated by many scholars as embedded Noah traditions or redactional material; exact boundaries and literary history are debated.
+- Chapter 70–71 identity readings depend on Ethiopic textual criticism. Charles's famous third-person 71:14 is a conjectural reconstruction; current scholarship must not be represented as unanimous on every implication, but the manuscript-supported second-person reading is significant.
