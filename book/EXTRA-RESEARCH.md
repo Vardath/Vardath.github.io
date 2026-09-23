@@ -5218,3 +5218,25 @@ Priority pair tests:
 - ascent / scattering,
 - city enclosure / world filling.
 
+
+
+### Sections 2–3 final user-facing reply saved verbatim
+
+> Continued through **Section 2 and Section 3** and saved everything.
+> 
+> The biggest new findings are:
+> 
+> - **Cain/Abel** look more like a polarity pair than literally one split figure: fixed ground-worker versus mobile shepherd. After Abel is removed, Cain loses his ground-role and is forced into wandering, so some of Abel’s “mobile” state effectively transfers to the survivor.
+> - **Abel → Seth** is much stronger as a same-role sequence because Genesis explicitly says Seth is given **in place of Abel**.
+> - The strongest duplication so far is in the genealogies: **two Enochs, two Lamechs, and several closely parallel names**. A major scholarly line treats Genesis 4 and 5 as variant/reworked ancestral lists. Cain’s Enoch is tied to a **city/enclosure**; Seth’s Enoch is **taken by God**. Cain-line Lamech gives **77-fold vengeance**; Seth-line Lamech lives **777 years** and fathers Noah.
+> - Genesis 4:7 gives a real **“crouching at the door”** threshold image. The Hebrew is difficult and the demon/threshold interpretation is debated, so I logged it as suggestive rather than proven.
+> - **Genesis 6–9 is one of the strongest full-cycle matches yet.** If “sons of God” are heavenly beings, the story begins with an upper/lower boundary crossing. Then the **fountains of the deep open below and the windows of heaven open above**. Later both close, a wind moves over the waters, land reappears, and the world restarts.
+> - **Enoch and Noah explicitly share “walked with God.”** Enoch survives by being taken; Noah survives by being enclosed and carried through the reset.
+> - The ark is clearly **not the gate**. It is the protected local carrier. The Hebrew **tebah** is used only for **Noah’s ark and Moses’ basket**, which strongly links those two survival stories.
+> - Noah functions as a **new Adam**: new-world beginning, ground, fruit, nakedness, covering, curse/blessing.
+> - Shem and Japheth form a striking bilateral pair when they place one garment across both shoulders and move backward together to cover the central exposed Noah.
+> 
+> Everything, including every progress message from this turn, is appended to **`book/EXTRA-RESEARCH.md`**.
+> 
+> Next is **Section 4 — Genesis 10–11: Nimrod, Babel, tower-to-heaven, one language becoming many, and scattering**.
+
