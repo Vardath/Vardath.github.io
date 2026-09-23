@@ -21272,3 +21272,39 @@ This is exactly the kind of internal inconsistency the master timeline must mark
 - Gilead heap is plainly a covenant boundary marker.
 - Double cave is a burial enclosure, not automatically a gate.
 - The war chronology has an internal contradiction.
+
+
+## SECTION 12 status
+
+**SECTION 12 — JUBILEES 24–38: COMPLETE FIRST PASS.**
+
+Strongest additions to the Vardath comparison:
+1. Jacob/Esau becomes an exceptionally explicit **one-origin pair**: same womb, higher/lower inversion, separation, reconciliation, “one mind,” renewed split, final destruction.
+2. Levi/Judah becomes an actual **right/left bilateral pair** around a central elder, with priestly and royal functions divided between the sides.
+3. Bethel remains a real **earth↔heaven gate** and later becomes an information interface involving divine ascent, angelic descent and **seven tablets containing future history**.
+4. The seven-day feast gains an **eighth added day**.
+5. Wells repeatedly move through **closed → reopened → contested → open → dry** states.
+6. The final tower battle uses a literal **closed central enclosure + four directional companies**.
+7. Jubilees' omissions of the Jabbok wrestler and breeding rods are valuable controls against overfitting.
+8. The chronology itself contains at least one important contradiction, so timeline building must preserve uncertainty rather than fabricate precision.
+
+### Next first unfinished roadmap section
+
+**SECTION 13 — 1 ENOCH 1–36 / BOOK OF WATCHERS**
+
+Priority tests:
+- Watcher descent and human pairing,
+- Hermon mountain assembly,
+- leaders/pairs among Watchers,
+- giants,
+- Azazel vs other leaders,
+- Enoch as intermediary,
+- binding in earth/abyss,
+- west/east/north/south journeys,
+- mountains and central/tree structures,
+- prison/chasm geometry,
+- Tree of Life,
+- gates/ends of earth,
+- upper/lower waters,
+- all numbered groups, years, days, generations and directional counts,
+- whether the Watchers' descent is a better model of layer-contact than the human-axis scenes.
