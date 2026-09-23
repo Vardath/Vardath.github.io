@@ -29411,3 +29411,19 @@ Priority:
 - 7-day unleavened interval,
 - 10th/14th/15th dates and all other calendar numbers,
 - whether Passover behaves more like **crossing over a marked boundary**, **skipping a protected enclosure**, or an actual paired crossover.
+
+
+---
+
+## LIVE CHAT PROTOCOL UPDATE — 2026-09-24
+
+**User instruction:** Before continuing each research section, verify whether that research and its chat/progress reply have already been appended to this file. Do not repeat completed material merely because an older roadmap marker still says “unfinished.”
+
+**Working protocol from this point onward:**
+1. Before starting the next roadmap item, search this file for the section/story/text name, its completion status, progress entries, and saved user-facing/chat-history replies.
+2. Treat the latest completed checkpoint in this file as authoritative over older “next/unfinished” markers.
+3. Resume only after the last genuinely completed checkpoint.
+4. Continue comparing every section with Vardath Cosmology: mechanisms/processes, geometry/projection, upper/lower interaction, gate/open/close phases, water/atmosphere/land transfer, timing/numbers, and paired figures or possible split states of one underlying figure.
+5. Append each new progress message/research reply as work proceeds so the conversation can be reconstructed from this file.
+
+**Assistant reply saved:** Protocol updated. Before analysing any “next” section, first search the existing EXTRA-RESEARCH record for that section, its progress entries, and saved chat-history/user-facing text; continue only beyond the last completed checkpoint.
