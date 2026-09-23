@@ -21308,3 +21308,131 @@ Priority tests:
 - upper/lower waters,
 - all numbered groups, years, days, generations and directional counts,
 - whether the Watchers' descent is a better model of layer-contact than the human-axis scenes.
+
+
+## SECTION 13 progress A — 1 Enoch 1–16: upper/lower crossing, 200 pairings and hybrid-state creation
+
+### The Watcher descent is an explicit layer-contact story
+
+The Book of Watchers states the origin/destination distinction unusually clearly:
+
+- the Watchers are **sons/children of heaven**,
+- their proper dwelling is the **high, holy, eternal heaven**,
+- they deliberately **come down** to earth,
+- they gather on the **summit of Mount Hermon**,
+- they bind one another by oath,
+- then each takes a human woman.
+
+This is not merely a symbolic “descent” applied later by interpretation. The received narrative itself is built around **inhabitants of an upper realm leaving their assigned layer and entering the human layer**.
+
+For Vardath comparison this is one of the strongest structural matches yet to:
+**normally separate inhabited levels → temporary/illicit contact → living transfer between levels**.
+
+Critical control:
+The text identifies the upper region theologically as heaven. It does **not** call it a future world or a temporal layer. Do not replace its own cosmology with the Vardath one; record the structural match first.
+
+### 200 Watchers / 200 women — repeated upper/lower pair formation
+
+The group is:
+- **200 Watchers**,
+- organised under **20 named leaders** in the Charles/Ethiopic tradition,
+- each Watcher chooses **one human wife**.
+
+That creates a repeated system of approximately:
+**200 upper-being / lower-human pairs**.
+
+This is not one symbolic pair but a mass pairing event across the boundary.
+
+Their children are giants/hybrids, making the process:
+**upper being + earth human → third mixed state**.
+
+### Chapter 15 states the layer rule explicitly
+
+The judgment explains:
+- heavenly spiritual beings belong in heaven,
+- humans/flesh belong to earth,
+- Watchers violated that arrangement,
+- their hybrid children combine heavenly/spiritual and human/flesh origins,
+- when the giants die, spirits emerge from their bodies and remain active **on earth**.
+
+So the story does not simply say “angels sinned.” It gives a routing logic:
+
+**heaven-origin spirit → improper descent → mixture with earth-flesh → hybrid body → body dies → hybrid spirit remains earth-side**.
+
+That is extremely important for the Vardath project because it distinguishes:
+- origin layer,
+- body/state formed during contact,
+- and destination after separation.
+
+### Shemihazah / Asael(Azazel) — two leadership channels rather than one simple villain
+
+The received text foregrounds two different functions:
+- **Shemihazah** — leader of the descent/oath/marriage group.
+- **Asael/Azazel** — major transmitter of forbidden crafts/knowledge and separately targeted for binding.
+
+Modern scholarship widely treats 1 Enoch 6–11 as combining **Shemihazah and Asael traditions/strands**, though reconstructions of their exact literary history differ.
+
+For pair testing, do not call them twins. Better classification:
+- **P2 functional polarity / dual transgression channels**:
+  - bodily/boundary crossing,
+  - knowledge/technology transfer.
+
+This is valuable because one event can preserve **two distinct mechanisms** in two named figures.
+
+### Enoch / Watchers — mediator-role reversal
+
+The Watchers ask a human, Enoch, to carry their petition upward because they can no longer raise their eyes or speak before heaven.
+
+The divine answer makes the reversal explicit:
+- Watchers should have interceded for humans,
+- **not humans for Watchers**.
+
+Enoch therefore temporarily occupies the vertical intermediary function that the Watchers abandoned.
+
+Pair classification:
+- **P3 role reversal** rather than same-person identity.
+
+### Differentiated routing after the catastrophe begins
+
+The judgment does not send everyone to one place:
+
+- **Noah** — warned to hide/preserve himself and seed before the deluge.
+- **Azazel** — bound **hand and foot**, put through an **opening in the desert**, covered under rough/jagged rocks and darkness.
+- **giant offspring** — driven against one another to self-destruction.
+- **Shemihazah + associates** — bound in **valleys of the earth** for seventy generations.
+- condemned beings later move to a **fiery abyss/prison**.
+- hybrid spirits remain active on **earth**.
+
+This is a strong **sorting-after-contact** model:
+**same crisis → different beings/cargo assigned different routes and containers**.
+
+### Earth→Gate of Heaven signal
+
+Human suffering rises as complaint:
+- earth cries,
+- dead souls cry,
+- the cry reaches the **Gate of Heaven**.
+
+This is a one-way information transfer from lower to upper before the judgment agents descend.
+
+### Relative event sequence, chapters 6–16
+
+1. Human population increases.
+2. Watchers see human women from above.
+3. 200 descend to Hermon.
+4. Oath binds group together.
+5. 200 upper/lower pairs form.
+6. forbidden knowledge transfers downward.
+7. giant/hybrid offspring appear.
+8. ecological/social destruction expands.
+9. earth/human cries reach Gate of Heaven.
+10. loyal heavenly agents look down.
+11. differentiated judgment routes are assigned.
+12. Noah receives preservation warning.
+13. Enoch is hidden/associated with holy ones.
+14. fallen Watchers ask Enoch to carry their petition.
+15. Enoch travels to waters near Hermon, reads petition, sleeps.
+16. vision carries Enoch upward.
+17. petition refused.
+18. Watchers lose right of re-ascent.
+19. hybrid spirits become an ongoing earth-bound after-effect.
