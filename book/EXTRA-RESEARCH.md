@@ -21436,3 +21436,76 @@ This is a one-way information transfer from lower to upper before the judgment a
 17. petition refused.
 18. Watchers lose right of re-ascent.
 19. hybrid spirits become an ongoing earth-bound after-effect.
+
+
+## SECTION 13 progress B — Enoch's ascent: boundary houses, open portal, throne and streams of fire
+
+Enoch's vision in chapter 14 is one of the densest gate/axis scenes in the Book of Watchers.
+
+### Ascent mechanism
+Enoch says:
+- clouds invite,
+- mist summons,
+- stars/lightnings hasten,
+- winds make him fly,
+- he is **lifted upward and borne into heaven**.
+
+The text therefore supplies a moving medium around the traveller rather than simple instantaneous disappearance.
+
+### Nested enclosure sequence
+He encounters:
+1. crystal wall,
+2. tongues of fire,
+3. first large crystal house,
+4. flaming portals,
+5. **second, greater house**,
+6. its entire portal standing open,
+7. inner throne.
+
+This is a true **nested-boundary architecture**:
+**outer wall → first enclosure → open inner gate → greater enclosure → throne/centre**.
+
+### Fire/water and hot/cold paired states
+The first house is:
+- **hot as fire**,
+- **cold as ice**.
+
+Its heaven/ceiling is described as clear **like water** while fire surrounds the structure.
+
+The throne emits **streams of flaming fire**.
+
+Elsewhere in Enoch's journey, a river of fire flows **like water** into the western sea.
+
+These do not prove plasma physics, but they repeatedly blur the imagery of:
+**fire ↔ fluid flow**
+and
+**heat ↔ cold**
+inside the same boundary system.
+
+### Central figure / wheel / stream geometry
+At the inner centre:
+- lofty throne,
+- appearance like crystal,
+- wheels like shining sun,
+- cherubim,
+- streams of fire from beneath,
+- enormous surrounding host,
+- Enoch low/prostrate at the door,
+- then he is made to **rise and approach**.
+
+This gives:
+**traveller below → open portal → central elevated seat → downward flowing fire → commanded approach**.
+
+### Important difference from Squatter-Man
+The central seated figure is not described with the bilateral human posture we are tracking in Moses/Samson/Daniel/Revelation.
+The geometry is strongly axial/gated, but not a good direct anthropomorphic-lattice match.
+
+### Enoch as allowed exception
+The Watchers are told they will **not ascend again**, while Enoch is lifted upward, enters the heavenly structure, receives the judgment, and returns to communicate it.
+
+So the same boundary has:
+- forbidden re-entry for the fallen upper beings,
+- permitted passage for a human messenger.
+
+That strongly supports the mature Vardath distinction:
+**gate exists ≠ every occupant can traverse it**.
