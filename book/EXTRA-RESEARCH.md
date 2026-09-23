@@ -21509,3 +21509,156 @@ So the same boundary has:
 
 That strongly supports the mature Vardath distinction:
 **gate exists ≠ every occupant can traverse it**.
+
+
+## SECTION 13 progress C — 1 Enoch 17–36: cosmic supports, 3+3+1 mountains, prisons, soul chambers and directional portals
+
+### Mountain reaching heaven
+
+Enoch is taken to:
+- darkness,
+- a mountain whose summit reaches heaven,
+- places of stars/luminaries,
+- living waters,
+- western fire,
+- a river of fire flowing like water into the sea,
+- mouths of rivers,
+- mouth of the deep.
+
+This is explicit **mountain/axis + upper/lower water/fire circulation** imagery.
+
+### Four winds as supports / pillars of heaven
+
+Chapter 18 describes:
+- **four winds** bearing earth/firmament,
+- winds stretching the vaults of heaven,
+- standing between heaven and earth,
+- explicitly described as **pillars of heaven** in Charles' text.
+
+This is structurally important:
+**four directional forces → support the upper enclosure over the lower world**.
+
+### Seven mountains = 3 + 3 + 1 central
+
+Enoch sees seven magnificent mountains:
+- **3 toward the east**,
+- **3 toward the south**,
+- **1 middle mountain**,
+- the middle/seventh reaches heaven and resembles a divine throne.
+
+A later seven-mountain scene likewise gives:
+- 3 in one direction,
+- 3 in another,
+- the **seventh in the middle**, tallest, throne-like,
+- fragrant/tree imagery around it.
+
+This is a real **3 + 3 + 1 centre geometry** in the text.
+
+Do not automatically identify it with 1–3–7/JANUS, but preserve it carefully.
+
+### Abyss with no ordinary above/below support
+
+Beyond the mountain system Enoch sees:
+- deep abyss,
+- columns of heavenly fire,
+- fire extending beyond measure upward/downward,
+- then a region with **no firmament above**,
+- **no founded earth below**,
+- no water,
+- no birds.
+
+This is conceptually different from an ordinary stacked inhabited world. It is a **supportless prison/chaos region** outside or at the edge of normal cosmic architecture.
+
+### Seven transgressing stars as imprisoned movers
+
+Seven stars are:
+- bound together,
+- like burning mountains,
+- imprisoned because they left their appointed timing/order.
+
+This parallels the Watchers structurally:
+**normally ordered celestial beings → violation of assigned path/time → removal from ordinary circuit → binding**.
+
+So the text has the same event-form at two scales:
+- Watchers violate dwelling/boundary order.
+- Stars violate movement/time order.
+
+### 10,000-year prison interval
+
+The seven stars are bound until a period rendered in Charles as **10,000 years**.
+Retain with textual caution; ancient textual witnesses and translations can vary.
+
+### Four hollow soul chambers in one mountain
+
+Chapter 22 describes a western mountain containing **four hollow places**.
+The Greek form distinguishes:
+- **three dark**,
+- **one bright**,
+- with a spring/fountain in the bright division.
+
+The chambers separate spirits by state before final judgment.
+
+This is an explicit:
+**one enclosure → four segregated internal destinations**.
+
+That resembles Vardath's sorting principle more than a simple one-door afterlife.
+
+### Cain / Abel pair continues beyond bodily death
+
+Abel's spirit remains active in one of the chambers and sends its complaint upward against Cain.
+
+That means the Cain/Abel pair from Genesis is not narratively finished at Abel's death:
+- one brother lives on earth,
+- one brother's spirit occupies a lower/hidden holding region,
+- the injured side continues to address heaven.
+
+Classify as **P6 rival pair persisting across different states/locations**, not a merged pair.
+
+### Tree of Life / movement after judgment
+
+The fragrant tree beside the throne-like mountain:
+- cannot be touched by mortals before judgment,
+- will later be **transplanted** to the holy place,
+- becomes food for the righteous and linked to long life.
+
+This is a real relocation of a sacred life-giving object across cosmic geography after the transition.
+
+### Central holy land + accursed valley
+
+Enoch later sees:
+- “middle of the earth,”
+- blessed/holy mountain,
+- multiple streams/ravines,
+- an accursed valley for judgment.
+
+The system repeatedly separates:
+**centre / holy height / flowing water**
+from
+**deep valley / confinement / judgment**.
+
+### Water down / vapour up
+
+In chapter 28:
+- water **gushes from above**,
+- flows as a large watercourse,
+- and causes **clouds and dew to ascend** on every side.
+
+This is highly relevant to the current Vardath vapour-cycle branch:
+**water from above → surface/land flow → atmospheric moisture rises**.
+
+But it is a local cosmic-geography description, not an explicit flood/canopy mechanism.
+
+### Directional portal structure at the ends of earth
+
+In chapters 33–36:
+- portals of heaven open at the ends of earth,
+- stars use eastern openings and paths westward,
+- north has **3 portals**,
+- west has the same number,
+- south has **3 portals**,
+- east is likewise represented by **3 major portals**, with smaller openings associated with star paths.
+
+Working geometric register:
+**3 portals per cardinal side → approximately 12 directional outer portals**, while the detailed luminary gate system is developed differently in the later Astronomical Book.
+
+Keep this separate from 1 Enoch 72–82's six east/six west solar gates.
