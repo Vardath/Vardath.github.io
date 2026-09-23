@@ -11231,3 +11231,13 @@ Priority pair tests:
 
 **Primary text logged:** Jubilees 1:1–28; 3:28–29; 10:18–26.
 
+
+
+### Section 10 progress update E — Peleg/Babel separation and wind-overthrown axis
+
+> Jubilees also gives us a useful **failure test**. It separates **Peleg’s “division” from Babel**: Peleg is tied to the earlier territorial division of the earth by lot, while the tower is built later. So our earlier Genesis possibility that Peleg directly marks Babel should stay only as a Genesis ambiguity; **Jubilees does not support collapsing those two events**.
+>
+> At the same time Jubilees strengthens Babel mechanically: the builders explicitly say they will **“ascend thereby into heaven,”** God **and the angels descend**, language coherence breaks, and—unlike Genesis—the book says a **mighty wind actually overthrows the tower**. So Jubilees makes Babel more like an attempted vertical connector that is actively de-coupled.
+
+**Primary text logged:** Jubilees 8:8–11; 10:17–26. Tower construction is assigned a 43-year span in the Charles chronology.
+
