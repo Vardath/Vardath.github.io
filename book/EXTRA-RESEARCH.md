@@ -22830,3 +22830,41 @@ Do not yet claim agreement; simply place these in the master table:
 - Genesis/Jubilees 7/40/150 etc.
 - Testament Moses 250 “times”
 - later Archaix numbers to be normalized separately before comparison.
+
+
+## SECTION 15 status
+
+**SECTION 15 — 1 ENOCH 72–82 / ASTRONOMICAL BOOK: COMPLETE FIRST PASS.**
+
+Strongest results:
+1. The text provides a literal **timed gate-routing system**: 6 east + 6 west.
+2. The sun has a visible east→west route and an unseen **northward return** to the east.
+3. The solar gate sequence is mirror-like and closes annually.
+4. Day/night ratios form an explicit symmetric 18-part cycle.
+5. Sun/moon are a coordinated but unequal pair sharing gates while using different light/time arithmetic.
+6. The calendar is **364 = 4×91 = 52×7 = 360+4**.
+7. The lunar scheme is **354**, creating a 10-day annual gap and the received **30/50/80-day gaps over 3/5/8 years**.
+8. There are separate **12-gate wind** and **12-total east/west luminary** systems.
+9. Chapter 80 defines cosmic breakdown as failure of appointed **timing and routes**.
+10. Enoch→Methuselah preserves information when Enoch's body is removed.
+
+### Next first unfinished roadmap section
+
+**SECTION 16 — 1 ENOCH 83–90 / DREAM VISIONS & ANIMAL APOCALYPSE**
+
+Priority:
+- first Flood dream: earth sinking/destroyed and Enoch's grandfather Mahalalel response,
+- animal identities as people/nations: when a person becomes an animal-symbol and whether multiple people collapse into one class,
+- Adam/Eve and Cain/Abel/Seth animal forms,
+- Noah and sons,
+- stars/Watchers descending among cattle,
+- giants represented as mixed animal offspring,
+- ark/enclosure,
+- waters and land reset,
+- Exodus/Moses/sea/mountain/pillar if represented,
+- twelve sheep / tribes and shepherd figures,
+- 70 shepherds,
+- horned sheep / messianic figure,
+- great house transformation,
+- all dated periods, counted shepherds, animals, horns, stars and event blocks,
+- build a continuous symbolic timeline from Adam to final renewal.
