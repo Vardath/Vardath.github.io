@@ -25292,3 +25292,158 @@ This is the first explicit plague-duration marker in the sequence.
 - Levi/Amram **137**, Kohath **133**.
 - transformed Hebrew staff: **1** versus multiple Egyptian staffs.
 - Nile blood interval: **7 days**.
+
+
+## SECTION 19 progress B — plagues 1–6: repeated transformations and the emergence of a protected Israel/Egypt boundary
+
+### Plague 1 — water → blood
+
+Aaron stretches staff/hand over:
+- rivers,
+- canals,
+- pools,
+- gathered water.
+
+Water becomes blood across the Egyptian water system.
+
+Effects:
+- fish die,
+- Nile stinks,
+- Egyptians dig around Nile for drinkable water.
+
+This takes the Exodus 4 third sign from a small demonstration:
+**cup/quantity of Nile water → blood on dry land**
+into a national-scale:
+**water network → blood**.
+
+Same event-form, larger scale.
+
+### Plague 2 — water produces upward-moving life
+
+Frogs:
+- swarm in Nile,
+- **come up** from water,
+- enter houses, bedrooms, beds, ovens, kneading troughs,
+- cover land.
+
+After intercession:
+- they die on land/inside settlements,
+- are piled in heaps,
+- land stinks,
+- frogs remain only in Nile.
+
+Geometry:
+**water → upward emergence → invasion of enclosure → withdrawal/death → water-only remainder**.
+
+This is an environmental boundary breach, although ordinary amphibian imagery is sufficient conventionally.
+
+### Pharaoh sets “tomorrow” as reversal time
+
+Moses lets Pharaoh choose when frogs end.
+Pharaoh says:
+**tomorrow**.
+
+This establishes a repeated plague-clock feature:
+many effects start/end at **appointed times**, often “tomorrow.”
+
+### Plague 3 — dust → living swarm
+
+Aaron:
+- strikes **dust of earth** with staff,
+- dust becomes gnats/lice-like insects upon humans and animals.
+
+Again:
+**ordinary substrate → living/active state**.
+
+The Egyptian magicians fail to reproduce this sign and say:
+**“finger of God/Elohim.”**
+
+This ends the early symmetrical magician contest.
+
+### Magicians / Moses-Aaron — imitation pair breaks
+
+At first:
+- staffs duplicated,
+- blood duplicated,
+- frogs duplicated.
+
+At dust/gnats:
+- Egyptian counterpart fails.
+
+So the narrative creates:
+**mirrored performance → limit reached → asymmetry exposed**.
+
+Classification:
+- **P6 rival/double system** rather than one identity.
+
+### Plague 4 — first explicit territorial separation
+
+With swarms:
+- Egyptian houses/land afflicted,
+- **Goshen set apart**,
+- no swarm there,
+- explicit “division/distinction” between **my people / your people**.
+
+This is a major change.
+
+Before:
+plagues operate across Egypt with narrative focus on Egyptians.
+
+Now:
+the text marks a **geographic protected zone** inside the same country.
+
+For Vardath comparison this is more useful than generic plague imagery:
+**same larger land → two simultaneously different environmental states separated by group/location**.
+
+### Plague 5 — livestock distinction
+
+A set time is appointed:
+**tomorrow**.
+
+Then:
+- Egyptian livestock struck,
+- Israelite livestock explicitly spared,
+- Pharaoh sends to verify,
+- not one Israelite animal is dead in the narrative.
+
+The boundary is now not only geographic but categorical:
+**Egypt-owned / Israel-owned**.
+
+### Plague 6 — furnace material goes upward, affliction disperses downward/outward
+
+Moses and Aaron:
+- take soot/ashes from a **kiln/furnace**,
+- Moses throws/sprinkles it **toward heaven**,
+- it becomes fine dust over Egypt,
+- produces boils on humans/animals.
+
+Sequence:
+**furnace residue**
+→ **handful**
+→ **cast upward**
+→ **atmospheric/dust dispersion**
+→ **body lesions below**.
+
+This is a real upward→distributed-downstream material path in the text.
+
+### Magicians can no longer stand
+
+The magicians who earlier mirrored signs:
+- are themselves covered in boils,
+- cannot stand before Moses.
+
+The rivalry ends bodily:
+**counter-operators → incapacitated by the system they tried to imitate**.
+
+### First six plague event-forms
+1. **water → blood**
+2. **water → frogs upward**
+3. **dust → insects**
+4. **air/land swarms + protected territory**
+5. **animal death + ownership distinction**
+6. **furnace soot upward → dust/boils**
+
+The sequence progressively touches:
+**water → water/land life → ground → atmosphere/territory → animals → human/animal bodies**.
+
+Do not treat this as a scientific causal chain; it is a narrative expansion of domains.
