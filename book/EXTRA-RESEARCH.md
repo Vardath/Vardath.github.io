@@ -6001,3 +6001,13 @@ Priority pair tests:
 
 > Section 4 is complete and saved. I’m continuing straight into **Section 5 — Genesis 12–18**, where the geometry changes from world-scale scattering to a **travelling chosen line**: Abram leaves one region, repeatedly crosses boundaries, separates from Lot, meets Melchizedek, passes through the split-covenant pieces, and then the Sarah/Hagar/Isaac/Ishmael pairing begins. I’ll keep logging each progress reply into the file.
 
+
+
+### Section 5 progress update A — covenant pieces as split/crossover geometry
+
+> Section 5 has now produced one of the **closest small-scale mechanical analogues to your finger-trap split/crossover idea**: Genesis 15 has Abram place **split animal halves opposite one another**, then he falls into the same kind of **deep sleep** used when Adam is divided, darkness descends, and a **smoking fire-pot plus flaming torch passes between the separated halves**.
+>
+> So we now have two major “deep sleep + division” scenes: **Adam: one body divided into two sides**; **Abram: paired bodies divided into opposed halves with a fiery/smoky presence moving through the central gap**. Conventionally, Genesis 15 is a covenant-oath ritual, and that explanation is strong. But geometrically it is extraordinarily relevant: **split left/right structure → central passage → fire/smoke traverses the passage → covenant/state established**.
+
+**Sources logged:** Genesis 15:9–18; comparative covenant/oath scholarship; ancient Near Eastern split-animal oath parallels.
+
