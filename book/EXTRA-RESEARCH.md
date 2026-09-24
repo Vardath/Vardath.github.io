@@ -126258,3 +126258,1326 @@ Priority pair tests:
 - **two paths**;
 - house/pillars/gates/depths as possible structural field;
 - determine whether Ethiopian **Tegsats/Reproof** should be treated as a separate textual unit beside Proverbs rather than silently equated with a Western Proverbs division.
+
+
+---
+
+# SECTION 46 progress A — Proverbs 1–9 + Ethiopian Messale/Tegsats boundary
+## Ethiopian counting is resolved first: Messale/Proverbs 1–24 and Tegsats/Reproof/Proverbs 25–31 are two canonical book-divisions of the same broader Proverbs anthology, not a lost extra wisdom work. Proverbs 1–9 then produces one of the strongest polarity systems yet: two voices, two women, two houses, two banquets and two routes compete for one inexperienced traveller. Wisdom stands at crossroads and gates, becomes Tree of Life, participates in world-founding, predates depths/mountains and watches the sea receive its boundary; Folly mimics the same invitation from a doorway/high place, but her house descends into the chambers of Sheol.
+
+This pass begins **SECTION 46 — Proverbs + Tegsats/Reproof**.
+
+The first task is textual/canonical control, because the Ethiopian book boundary is essential to the reconstructed corpus.
+
+---
+
+# Ethiopian canon control — Tegsats/Reproof is Proverbs 25–31, not an otherwise lost text
+
+The Ethiopian Orthodox Tewahedo canonical list separately names:
+
+**24. Proverbs**
+and
+**25. Tegsats (Reproof)**.
+
+Academic and Bible-society canon work clarifies the division:
+
+- **Messale / Proverbs = Proverbs 1–24**
+- **Tegsats / Tägsas / Reproof = Proverbs 25–31**
+
+This division makes material that is one “Book of Proverbs” in many Western Bibles count as **two Ethiopian canonical books**.
+
+That means the project should **not** search for a missing hidden book called Tegsats.
+
+The content is already familiar as Proverbs 25–31, but the Ethiopian tradition gives it:
+- a separate canonical boundary;
+- a separate title;
+- separate counting significance.
+
+This is exactly the kind of canonical-boundary issue the 88-text reconstruction must preserve.
+
+---
+
+# Why this matters for the roadmap
+
+The roadmap section “Proverbs + Tegsats/Reproof” should therefore be handled as:
+
+## Ethiopian book 24
+**Messale / Proverbs 1–24**
+
+then
+
+## Ethiopian book 25
+**Tegsats / Reproof / Proverbs 25–31**
+
+The research can analyze them together for literary continuity, but must retain the Ethiopian division in the final 88-text timeline.
+
+---
+
+# Ethiopic Proverbs textual history — neither “pure Greek” nor “pure Hebrew”
+
+Hugh A. W. Pilkington's critical study of **21 Ethiopic Proverbs manuscripts** identifies multiple textual traditions.
+
+Important conclusions:
+
+- Ethiopic Proverbs reflects a deep mixture of **Greek and Semitic/Hebrew features**;
+- book structure/layout is strongly dependent on the **Septuagint/LXX**;
+- the Greek source aligns broadly with the main LXX tradition;
+- substantial Hebraic elements appear deeply embedded in the Ethiopic textual tradition;
+- later manuscripts show editorial clarification/expansion;
+- no one surviving Ethiopic manuscript represents a simple untouched “original Ge'ez Proverbs.”
+
+Therefore the protocol for Section 46 is:
+
+1. preserve Ethiopian Messale/Tegsats book division;
+2. compare Hebrew and LXX when wording/order matters;
+3. do not assume modern English chapter order equals every ancient Ethiopic/Greek internal sequence;
+4. do not treat one Ge'ez witness as the sole ancient Ethiopian text.
+
+---
+
+# Proverbs 1–9 — one central listener is placed inside competing voice-fields
+
+Modern literary work emphasizes that speech saturates these chapters.
+
+The inexperienced/simple listener is addressed by competing voices:
+
+- father/teacher;
+- violent companions;
+- seductive/foreign woman;
+- Woman Wisdom;
+- Woman Folly.
+
+So the first large mechanism is:
+
+**one central decision-node**
+inside
+**multiple competing information fields**.
+
+The listener's future route depends largely on:
+**which voice is accepted**.
+
+This strongly extends the Bible-wide information-topology theme.
+
+---
+
+# Proverbs 1 — the first fork is a route-choice before it becomes a woman-pair
+
+The father's warning says, in effect:
+
+violent companions:
+→ invite the youth to join their path.
+
+The father:
+→ tells him **do not walk in their way**;
+→ hold back foot from their paths.
+
+Thus the book begins with:
+
+**one body**
+→ two possible route instructions.
+
+The wrong path:
+→ ambush/violence;
+→ becomes a trap for the trappers themselves.
+
+This is a direct:
+**route-choice → inversion/trap**
+mechanism.
+
+---
+
+# Wisdom first appears not inside a hidden sanctuary but in public transition spaces
+
+Woman Wisdom cries:
+
+- in streets;
+- squares;
+- at busiest corner;
+- at city gates/entrances.
+
+This is geometrically important.
+
+Wisdom positions herself at **choice points**.
+
+She occupies:
+**crossroad / gate / public transition node**.
+
+Her function is not to hide knowledge behind a secret wall.
+
+It is:
+**broadcast guidance at the points where path decisions occur**.
+
+---
+
+# Gate function in Proverbs 1–9 differs from Psalms
+
+In Psalms 15/24:
+gate/hill access tests the entrant.
+
+In Proverbs:
+Wisdom herself stands at gates and calls outward.
+
+So the centre-to-traveller relation changes:
+
+### Psalmic gate
+traveller → threshold → centre.
+
+### Proverbs gate
+Wisdom/instruction → threshold → broadcasts to traveller.
+
+This is an important directional inversion.
+
+---
+
+# Rejecting Wisdom creates a delayed state reversal
+
+Wisdom warns:
+
+call offered
+→ rejected.
+
+Later:
+distress/calamity arrives
+→ the rejecters call
+→ no response.
+
+That creates a very clean communication inversion:
+
+**Wisdom calls → humans refuse**
+then
+**humans call → Wisdom refuses**.
+
+This is a P2 state/polarity structure.
+
+The communication channel is open at one phase and functionally closed at the later phase.
+
+---
+
+# Proverbs 2 — Wisdom becomes an internalized route-sensor
+
+The learner:
+
+receive words
+→ store commandments
+→ incline ear/heart
+→ seek wisdom like hidden treasure
+→ gain understanding.
+
+Then wisdom:
+→ enters heart;
+→ knowledge becomes pleasant;
+→ discretion guards;
+→ understanding protects.
+
+So the information field moves:
+
+**external speech**
+→ **internal storage**
+→ **internal route guidance**.
+
+This resembles:
+**instruction copied into local operator memory**.
+
+---
+
+# Proverbs 2 — two major route exits are blocked by internalized Wisdom
+
+Wisdom protects against:
+
+### path A
+crooked/violent men
+→ leave straight paths
+→ walk dark ways.
+
+### path B
+seductive/foreign woman
+→ abandons covenantal route
+→ her house sinks toward death.
+
+The listener is therefore a node at a branching network.
+
+Wisdom:
+**narrows permitted routes**.
+
+---
+
+# House of the seductive woman already acts as a downward terminal
+
+Proverbs 2 describes her:
+
+house
+→ sinks toward death;
+paths
+→ toward shades/dead.
+
+Those who enter:
+→ do not readily return to paths of life.
+
+This establishes before chapter 9:
+
+**house entrance**
+→ **downward route**
+→ **loss of return path**.
+
+That makes the later Wisdom/Folly houses much more deliberate.
+
+---
+
+# Proverbs 3 — Wisdom has bilateral hands
+
+Wisdom is personified with:
+
+**right hand**
+→ long life.
+
+**left hand**
+→ riches and honor.
+
+This is one of the strongest genuinely bilateral body images in Proverbs.
+
+A central female figure carries:
+**two differentiated outputs**
+through two sides.
+
+### Squatter-Man / bilateral screen
+central body: strong.
+left/right extensions: explicit.
+opposed forces: weak — the outputs are complementary, not antagonistic.
+weave/rod: absent.
+
+So this is a real bilateral figure,
+but not yet the two-spring geometry.
+
+---
+
+# Wisdom's paths terminate in peace
+
+Her:
+**ways**
+→ pleasantness.
+
+**paths**
+→ peace.
+
+The text again uses route geometry for abstract state transition.
+
+Wisdom is simultaneously:
+- guide;
+- route;
+- destination-state source.
+
+---
+
+# Proverbs 3 — Wisdom is explicitly a Tree of Life
+
+The text says:
+
+**Wisdom**
+→ **Tree of Life**
+for those who seize/hold her.
+
+This is one of the highest-priority cross-text links in the entire wisdom corpus.
+
+It directly connects:
+**personified female Wisdom**
+with
+**tree-axis / life structure**.
+
+This is stronger than a loose tree simile because:
+the text itself identifies Wisdom's function with Tree of Life.
+
+---
+
+# Wisdom / Tree of Life — pair classification
+
+Woman Wisdom:
+human-like speaking figure.
+
+Tree of Life:
+vertical biological/life structure.
+
+The text overlays them functionally.
+
+Classification:
+- **P3 state/form pair: strong**;
+- **P8 body/world/tree projection: moderate to strong**;
+- literal morphological identity: unsupported;
+- literary metaphor/personification: conventional explanation very strong.
+
+This is exactly the kind of source-level person↔structure overlap the project is looking for.
+
+---
+
+# Proverbs 3 — the same Wisdom that guides humans is connected to world-founding
+
+Immediately after Tree of Life:
+
+YHWH:
+**by Wisdom founded earth**.
+
+**by understanding established heavens**.
+
+**by knowledge deeps split/broke open**.
+
+**clouds drop dew**.
+
+So the text moves directly:
+
+**human ethical route**
+→ Wisdom/Tree of Life
+→ **earth foundation / heaven establishment / deep-water opening / upper moisture**.
+
+That is a major scale jump.
+
+---
+
+# Proverbs 3 — one figure/principle spans personal path and cosmic structure
+
+This is one of Section 46A's strongest findings.
+
+Wisdom operates at:
+
+### human scale
+path / life / hand / tree.
+
+### world scale
+earth foundation;
+heaven;
+deep;
+cloud/water.
+
+Thus the same principle is used to explain:
+**local navigation**
+and
+**global ordering**.
+
+That is closer to Vardath's multiscale interest than a single mythic image.
+
+---
+
+# “Deeps broke open” must not be imported automatically into Flood mechanics
+
+The phrase may evoke:
+- subterranean waters;
+- creation-order;
+- possibly language familiar from Flood traditions.
+
+But Proverbs 3 is making a wisdom/cosmogonic argument.
+
+It does not narrate:
+- a new flood event;
+- gate opening;
+- physical world exchange.
+
+Keep it as:
+**deep-water structural ordering language**.
+
+---
+
+# Proverbs 4 — two paths become light versus darkness fields
+
+The text explicitly contrasts:
+
+### righteous path
+→ light of dawn;
+→ grows brighter;
+→ reaches full day.
+
+### wicked path
+→ deep darkness;
+→ users cannot see what makes them stumble.
+
+This is a very strong **state-gradient path pair**.
+
+The route itself changes in perceived luminosity with progress.
+
+---
+
+# Righteous path behaves like a progressive phase transition
+
+Sequence:
+
+**dawn**
+→ brighter
+→ full day.
+
+So Wisdom's path is not merely:
+right/wrong.
+
+It is:
+**increasing light-state over distance/time**.
+
+This is one of the cleanest progressive-state routes in Proverbs.
+
+---
+
+# Wicked route is defined by feedback failure
+
+On dark path:
+
+traveller stumbles
+but
+does not know the obstacle.
+
+Thus:
+**movement**
+continues
+while
+**environmental feedback is missing**.
+
+Compare:
+- Job trackless darkness;
+- Psalm road/light;
+- hidden-route narratives.
+
+This is another information/navigation control.
+
+---
+
+# Heart becomes a central source from which “springs of life” flow
+
+Proverbs 4 says:
+
+guard heart
+because
+**from it flow the springs/sources of life**.
+
+This produces:
+
+**central internal reservoir/source**
+→ outward life-flow.
+
+That closely parallels:
+- Zion as source of blessing;
+- temple river later in Ezekiel;
+- central-spire/fountain imagery.
+
+But immediate context is moral psychology.
+
+---
+
+# Central heart / outward springs is a strong small-scale model
+
+The body itself becomes:
+
+**centre**
+→ channels/flows
+→ outer behavior/life.
+
+This may be more useful to Vardath comparison than treating every external spring as cosmology.
+
+It supplies a **body-scale analogue of central source distribution**.
+
+---
+
+# Proverbs 5 — wrong woman path goes physically downward in the poem
+
+Her:
+
+feet
+→ down toward death.
+
+steps
+→ path to Sheol.
+
+She does not keep straight to:
+**path of life**.
+
+The vertical direction is explicit.
+
+Wisdom-route:
+→ life.
+
+Seductive route:
+→ down.
+
+This prepares the final Wisdom/Folly polarity.
+
+---
+
+# Proverbs 5 — cistern / well / spring imagery is controlled sexuality, not free-flowing cosmology
+
+The teacher says:
+
+drink from own cistern;
+running water from own well;
+do not scatter springs/streams into streets;
+let fountain be blessed.
+
+The conventional meaning is sexual/marital fidelity.
+
+Still, the geometry is worth recording:
+
+**contained private source**
+versus
+**scattered public flow**.
+
+This is a boundary/flow control model.
+
+---
+
+# Same water medium, two relational states
+
+### bounded
+cistern/well/fountain
+→ stable household relation.
+
+### dispersed
+springs in street
+→ boundary violation.
+
+Thus:
+**flow is not automatically good**.
+
+Its correct state depends on:
+**containment / ownership / channel**.
+
+This fits the Psalmic finding that water meaning depends on state.
+
+---
+
+# Proverbs 6–7 — route trapping becomes increasingly mechanical
+
+The warning system includes:
+
+- snare;
+- trap;
+- animal capture;
+- arrow entering body;
+- road to woman's house;
+- descent to death chambers.
+
+The young man in Proverbs 7 is observed:
+
+window/lattice
+→ street
+→ corner
+→ road to her house
+→ twilight/darkness
+→ seizure/seductive speech
+→ follows
+→ trap/slaughter
+→ arrow
+→ death.
+
+That is one of the book's clearest full route-failure sequences.
+
+---
+
+# Proverbs 7 — the “lattice” is architectural, not cosmic
+
+The narrator looks through a **window/lattice**.
+
+Because the project studies lattice forms, this requires a hard control.
+
+This is ordinary architectural screening/window work.
+
+The source does not connect it to:
+- sky mesh;
+- dragon lattice;
+- world support.
+
+Record the lexical/visual occurrence,
+do not promote it.
+
+---
+
+# Proverbs 7 — one straight traveller can be diverted at a corner
+
+The youth is moving through city space.
+
+The woman's route:
+→ intersects him at a corner.
+
+Speech:
+→ changes his trajectory.
+
+This gives a clean information-topology event:
+
+**original route**
+→ encounter at transition node
+→ persuasive signal
+→ route diverted
+→ terminal house.
+
+The physical city need not change.
+
+Only the traveller's **chosen adjacency** changes.
+
+---
+
+# Proverbs 7 — Folly-like house is explicitly a multi-chamber underworld route
+
+The final statement:
+
+**her house**
+→ way/highway to Sheol
+→ goes down to **chambers of death**.
+
+This is very strong enclosure/topology imagery.
+
+The house is simultaneously:
+- normal-looking social interior;
+- terminal gateway in moral narrative.
+
+That is exactly why Proverbs 9's paired houses matter.
+
+---
+
+# Proverbs 8 — Wisdom stands at heights, road, crossroads, gates, portals
+
+Wisdom's location list is unusually complete:
+
+- heights;
+- beside the way;
+- crossroads;
+- gates;
+- entrances/portals.
+
+She occupies **all major transition nodes**.
+
+This confirms Wisdom's function as:
+**route-selection operator**.
+
+---
+
+# Wisdom at the gate is a broadcaster, not gatekeeper alone
+
+She does not merely decide who enters.
+
+She actively:
+**calls to all**.
+
+This is a different topology from:
+- temple guardian;
+- royal sentry;
+- sealed gate.
+
+It resembles a signal node placed where network branches meet.
+
+---
+
+# Proverbs 8 — Wisdom's origin precedes major world structures
+
+The creation poem places Wisdom before:
+
+- earth;
+- depths;
+- springs;
+- mountains;
+- hills;
+- fields.
+
+Then Wisdom is present when:
+
+- heavens established;
+- **circle drawn on face of deep**;
+- skies made firm;
+- **fountains of deep established**;
+- **sea assigned limit**;
+- waters ordered not to cross command;
+- earth foundations marked.
+
+This is one of the densest cosmographic clusters since Job 26.
+
+---
+
+# Proverbs 8 / Job 26 — important cross-text geometry
+
+Job 26:
+- north over void;
+- earth suspended;
+- waters/clouds;
+- circle on water;
+- pillars;
+- Sea/Rahab/serpent.
+
+Proverbs 8:
+- heavens;
+- circle on deep;
+- fountains of deep;
+- sea limit;
+- earth foundations.
+
+The overlap is strong:
+**circle + deep/water + foundations + upper structure**.
+
+But Proverbs replaces Job's monster/war imagery with:
+**Wisdom present beside ordered creation**.
+
+This is an important state contrast.
+
+---
+
+# Proverbs 8 — the sea is stabilized by a command-boundary
+
+Sequence:
+
+sea exists
+→ limit assigned
+→ waters commanded not to transgress.
+
+This repeats:
+- Job 38;
+- Psalm 104;
+- other water-order texts.
+
+The recurrence is now strong across multiple genres.
+
+A stable world repeatedly requires:
+**powerful water held inside assigned bounds**.
+
+That is one of the most robust process findings in the whole project.
+
+---
+
+# Proverbs 8:22 textual control — Wisdom's beginning cannot be reduced to one uncontested verb
+
+Hebrew **qanani** has been translated:
+- created me;
+- acquired me;
+- possessed me;
+- begot/brought me forth;
+depending on interpreter/version.
+
+The Greek LXX famously uses:
+**ektisen — “created.”**
+
+The passage also uses birth-like language later:
+**“I was brought forth.”**
+
+The lexical and theological history is heavily disputed.
+
+Therefore:
+do not build a physical chronology on:
+**“Wisdom was created at exact time X.”**
+
+The secure process fact is:
+**Wisdom is poetically located before major world structures and present during their ordering**.
+
+---
+
+# Wisdom in Proverbs 8 is personification first; later Christological readings are reception history
+
+The source-level literary figure is:
+**personified Wisdom**.
+
+Later Jewish and Christian interpretations developed this figure differently, including:
+- divine hypostasis readings;
+- Logos/Christ readings;
+- theological debates over creation/begottenness.
+
+These are important reception histories,
+but they should not replace the Proverbs-level geometry.
+
+---
+
+# Proverbs 8 — Wisdom's final threshold is again a gate/door
+
+After cosmic creation imagery, Wisdom returns to human scale:
+
+happy person:
+→ listens;
+→ **watches daily at Wisdom's gates**;
+→ waits beside **doors**;
+→ finds Wisdom;
+→ finds **life**.
+
+This is an extraordinary scale loop:
+
+**gate/crossroad on earth**
+→ cosmic creation/deeps
+→ **gate/door on earth**
+→ life.
+
+The same chapter begins and ends at thresholds.
+
+---
+
+# Proverbs 8 gives a full local→cosmic→local loop
+
+Process:
+
+Wisdom at crossroads/gates
+→ speaks
+→ identifies pre-world position
+→ describes cosmic boundaries
+→ returns listener to gates/doors
+→ life/death choice.
+
+This is one of the strongest examples where cosmology is embedded inside a **route-choice teaching system**.
+
+---
+
+# Proverbs 9 — Woman Wisdom and Woman Folly become an explicit mirror pair
+
+This is the strongest pair in Section 46A.
+
+### Woman Wisdom
+- builds house;
+- **hews seven pillars**;
+- prepares meat/wine/table;
+- sends female servants;
+- calls from high places;
+- says:
+  **simple one, turn in here**;
+- invites bread + mixed wine;
+- tells entrant:
+  leave immaturity;
+  live;
+  walk way of insight.
+
+### Woman Folly
+- has a house;
+- sits at **door**;
+- at high places;
+- calls to passersby going straight;
+- says:
+  **simple one, turn in here**;
+- offers stolen water + secret bread;
+- hidden endpoint:
+  dead/shades;
+  depths of Sheol.
+
+This is not our inferred pairing.
+
+The chapter deliberately constructs them as mirror invitations.
+
+---
+
+# Woman Wisdom / Woman Folly pair classification
+
+This is one of the strongest P2/P6 pairs in the corpus.
+
+- **P1 split alternatives around one chooser: strong at abstract route level**;
+- **P2 polarity pair: extremely strong**;
+- **P3 state pair: moderate — alternative end states rather than same person changing**;
+- **P6 rival/double: extremely strong**;
+- **P9 deliberate literary mirror: certain**;
+- **P10 separate literary personifications: secure at narrative level**.
+
+They should not be collapsed into one hidden woman.
+
+Their value is precisely:
+**two almost-identical interfaces producing opposite destinations**.
+
+---
+
+# Identical invitation / opposite backend is the key mechanism
+
+Both say:
+**“You who are simple, turn in here.”**
+
+From the outside:
+interfaces look similar.
+
+But:
+
+### Wisdom backend
+food/wine
+→ maturity
+→ insight
+→ life.
+
+### Folly backend
+stolen water/secret bread
+→ hidden dead
+→ Sheol.
+
+This is an exceptional example of:
+**same visible gateway command**
+→ radically different hidden system state.
+
+That is highly relevant to the project's interest in:
+**apparent geometry vs actual adjacency/function**.
+
+---
+
+# Proverbs 9 — Wisdom's house has seven pillars
+
+Source fact:
+**Wisdom built house**
+→ **hewed seven pillars**.
+
+This is geometrically high priority.
+
+But the meaning of seven pillars is not secure.
+
+Scholarly suggestions include:
+- literal grand architecture;
+- completeness/perfection symbolism;
+- literary representation of Wisdom's ordered house;
+- attempts to map seven pillars to various cosmological or textual systems.
+
+No archaeological or textual consensus securely proves:
+**seven cosmic support columns**.
+
+Therefore:
+record the number,
+do not force a seven-layer world structure.
+
+---
+
+# Seven pillars / Squatter-Man screen
+
+Possible geometry:
+
+**house/roof**
+supported by
+**seven vertical members**.
+
+That is a real support architecture.
+
+But:
+- no central single pillar is singled out;
+- no two opposing side strands;
+- no braid;
+- no movement;
+- no gate opening.
+
+Thus:
+**world-support analogy moderate**
+but
+**Squatter-Man match weak**.
+
+---
+
+# Wisdom's house / Folly's house — same social object, opposite vertical destination
+
+Wisdom's house:
+→ life.
+
+Folly's house:
+→ **depths of Sheol**.
+
+This produces:
+
+**house A**
+= stable elevated banquet/life centre.
+
+**house B**
+= deceptive surface entrance with downward terminal chamber.
+
+This is one of the book's strongest P2 structure pairs.
+
+---
+
+# Wisdom's high-place call versus Folly's high-place call
+
+Both occupy:
+**high places of town**.
+
+So vertical elevation alone does not identify the good route.
+
+This is an important control.
+
+**high position ≠ correct function**.
+
+The chooser must discriminate by:
+- speech;
+- offer;
+- route outcome.
+
+That strongly limits simplistic:
+“upper = good / lower = bad”
+mapping.
+
+---
+
+# Bread/wine versus stolen water/bread
+
+The two banquets also form a food/liquid pair.
+
+### Wisdom
+prepared/slaughtered meal;
+mixed wine;
+open table.
+
+### Folly
+stolen water;
+secret bread.
+
+Difference:
+**ordered/owned/prepared distribution**
+versus
+**illicit/hidden acquisition**.
+
+Again the material itself is not the moral variable.
+**relational topology and channel legitimacy** are.
+
+---
+
+# Section 46A pair / geometry matrix
+
+## Woman Wisdom / Woman Folly
+Strongest pair.
+P2 + P6 + P9 exceptionally strong.
+
+---
+
+## wisdom path / wicked path
+Light-progressing route
+↔ dark/stumbling route.
+
+P2 very strong.
+
+---
+
+## Wisdom / Tree of Life
+Personified body
+↔ vertical life structure.
+
+P3/P8 strong metaphorical overlay.
+
+---
+
+## contained spring / scattered spring
+Household-contained flow
+↔ public-dispersed flow.
+
+P2 boundary-state strong.
+
+---
+
+## Wisdom house / Folly house
+Life-centre
+↔ hidden downward Sheol terminal.
+
+P2 structural polarity extremely strong.
+
+---
+
+## right hand / left hand of Wisdom
+Long life
+↔ riches/honor.
+
+P1 bilateral complementary outputs moderate/strong.
+
+Not antagonistic.
+
+---
+
+# SECTION 46A continuous transformation timeline
+
+## Phase A — central simple listener begins uncommitted
+
+one youth/node
+→ multiple voices.
+
+---
+
+## Phase B — competing route invitations arrive
+
+father/Wisdom
+versus
+gang/seductress/Folly.
+
+---
+
+## Phase C — decision occurs at transition nodes
+
+street;
+corner;
+crossroad;
+gate;
+door.
+
+---
+
+## Phase D — accepted instruction moves inside
+
+external word
+→ ear
+→ heart
+→ stored command.
+
+---
+
+## Phase E — internalized information becomes route control
+
+discretion/understanding
+→ guard path.
+
+---
+
+## Phase F — Wisdom becomes life structure
+
+Wisdom
+→ Tree of Life.
+
+---
+
+## Phase G — human route expands to cosmic order
+
+Wisdom
+→ earth foundation;
+heavens;
+deep;
+cloud/dew.
+
+---
+
+## Phase H — Wisdom predates and accompanies world-boundary construction
+
+depths/springs/mountains
+→ heavens/circle
+→ sea limit
+→ earth foundations.
+
+---
+
+## Phase I — cosmic loop returns to local gate
+
+listener
+→ waits at Wisdom's gates/doors.
+
+---
+
+## Phase J — paired houses present near-identical invitations
+
+Wisdom:
+“turn in.”
+
+Folly:
+“turn in.”
+
+---
+
+## Phase K — hidden destination differs
+
+Wisdom route
+→ insight/life.
+
+Folly route
+→ Sheol/death chambers.
+
+---
+
+# What Section 46A adds to the master Bible/Vardath timeline
+
+1. **The Ethiopian Proverbs/Tegsats boundary is now resolved:** Proverbs 1–24 and Proverbs 25–31 are counted separately in Ethiopian tradition.
+2. Tegsats is not missing content; it is a distinct canonical partition.
+3. **Proverbs 1–9 is fundamentally a branching-route system.**
+4. The central person is shaped by competing information rather than forced movement.
+5. **Wisdom occupies crossroads, gates and portals**, making her a transition-node broadcaster.
+6. Rejecting Wisdom produces a later communication-channel inversion.
+7. **External instruction becomes internal operator memory**, one of the clearest information-topology transitions so far.
+8. Woman Wisdom's **right and left hands** form a genuine bilateral figure, though not opposing springs.
+9. **Wisdom is explicitly a Tree of Life**, a major person↔vertical-structure overlap.
+10. The Tree-of-Life statement is immediately followed by **earth/heaven/deep/water cosmology**, creating a strong multiscale link.
+11. **Proverbs 4 gives a true progressive route-state:** dawn → brighter → full day.
+12. The opposite route is deep darkness with failed obstacle detection.
+13. **The heart becomes a central spring-source of life**, an important body-scale fountain/centre analogue.
+14. Proverbs 5 proves again that **water effect depends on containment/channel**, not one fixed symbol.
+15. **Proverbs 7 is a complete route-diversion-to-underworld sequence**, triggered by persuasive speech at a city transition point.
+16. Its window “lattice” is ordinary architecture and should not be promoted into cosmic-lattice evidence.
+17. **Proverbs 8 contains one of the strongest creation-boundary clusters after Job/Psalms:** circle on deep, fountains, sea limit, earth foundations.
+18. Stable world order again depends on **waters obeying a boundary**.
+19. Proverbs 8 begins and ends with Wisdom at gates, embedding cosmic order inside local threshold choice.
+20. **Wisdom/Folly in Proverbs 9 are one of the corpus's strongest explicitly constructed polarity pairs.**
+21. Their invitations are almost identical while their hidden destinations are opposite.
+22. **Wisdom's seven-pillar house is real source-level support geometry**, but no secure cosmological identity for the seven pillars is established.
+23. High location alone does not determine positive/negative function because both women call from high places.
+24. The strongest Vardath-relevant idea is not “Wisdom is the lattice.” It is:
+   **one central chooser faces two nearly identical gateways whose true topology is only revealed by where each route leads.**
+25. No full finger-trap/world-turn mechanism appears in Proverbs 1–9.
+
+---
+
+# Section 46A number / textual register
+
+- Wisdom's house:
+  **7 pillars**.
+- Do not equate automatically with:
+  seven worlds,
+  seven evaluators,
+  seven planets,
+  or seven lattice arms.
+- Proverbs 1–9 is commonly treated as a distinct introductory instructional corpus.
+- Greek/LXX Proverbs contains additions, omissions and reordering relative to MT.
+- LXX Proverbs 9 contains expansions not present in MT, including stronger warnings around Folly.
+- Ethiopic internal structure is strongly LXX-influenced while also preserving deep Hebraic/Semitic features.
+
+---
+
+# Section 46A textual / literary controls
+
+- Proverbs is an anthology with multiple named collections and a long compositional history.
+- Proverbs 1–9 is stylistically distinct from the short sayings that dominate chapters 10 onward.
+- Woman Wisdom and Woman Folly are literary personifications.
+- The “foreign/adulterous woman” material has substantial social/gender/religious interpretive history; it should not be reduced to a mechanical negative pole.
+- Proverbs 8:22's Hebrew **qanani** is disputed; translations “created/acquired/possessed/begot” are interpretive choices.
+- The LXX's “created me” became important in later Christian Christological controversies; that reception history is later than Proverbs itself.
+- “Circle on face of deep” is ancient poetic cosmography, not enough to establish modern world shape.
+- “Seven pillars” has no one securely proven cosmological referent.
+- Tree of Life is a real textual identification of Wisdom's life function, but not a description of literal botanical anatomy.
+- Sheol/death-house imagery is moral/wisdom instruction and can describe life trajectory rather than a literal mapped underworld route.
+
+### Sources logged for Section 46A
+
+Ethiopian canon / textual identity:
+- Ethiopian Orthodox Tewahedo Church canonical list:
+  http://ethiopianorthodox.org/english/canonical/books.html
+- Neil Rees, **Ethiopian Canon and Paratext**, identifying:
+  **Proverbs 1–24 / Reproof Proverbs 25–31**.
+- R. W. Cowley / Ethiopian canon studies summarized in modern canon research:
+  Messale = Proverbs 1–24;
+  Tägsas = Proverbs 25–31.
+- Hugh A. W. Pilkington, **A Critical Edition of the Book of Proverbs in Ethiopic** (Oxford, 1978):
+  https://ora.ox.ac.uk/objects/uuid:e7c60bb3-3fc4-4b10-941f-8065617acbfa
+
+Primary Proverbs:
+- Proverbs 1–9 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Proverbs+1-9&version=NRSVUE
+- Proverbs 3:
+  https://www.bible.com/bible/3523/PRO.3.NRSVUE
+- Proverbs 4:
+  https://www.biblegateway.com/passage/?search=Proverbs+4&version=NRSVUE
+- Proverbs 5:
+  https://www.biblegateway.com/passage/?search=Proverbs+5&version=NRSVUE
+- Proverbs 7:
+  https://www.biblegateway.com/passage/?search=Proverbs+7&version=NRSVUE
+- Proverbs 8:
+  https://www.bible.com/bible/3523/PRO.8.NRSVUE
+- Proverbs 9:
+  https://www.biblegateway.com/passage/?search=Proverbs+9&version=NRSVUE
+
+Scholarship:
+- Wendy L. Widder, **“The Peti and the Power of Speech in Proverbs 1–9,” Old Testament Essays** 35 (2022), on competing speech fields and discernment.
+- Michael V. Fox, **Proverbs 1–9**, Anchor Yale Bible, for literary/textual analysis.
+- modern scholarship on Woman Wisdom / Woman Folly as paired invitation figures and Proverbs 9 as a diptych.
+- modern lexical scholarship on **qanah/qanani** in Proverbs 8:22 and the divergent Hebrew/LXX interpretation.
+- studies of LXX Proverbs noting additions, transpositions and the distinct Greek literary shaping of the book.
+
+---
+
+# SECTION 46A COMPLETE — Proverbs 1–9 + Ethiopian boundary control
+
+### Current transformation point
+
+**uncommitted listener**
+→ competing voices
+→ route choice at gate/crossroad
+→ instruction internalized
+→ heart becomes route-control source
+→ Wisdom becomes Tree of Life
+→ Wisdom expands into world-founding/deep/water-boundary context
+→ cosmic order contracts back to Wisdom's gates
+→ Wisdom/Folly present mirror houses and identical invitations
+→ one route terminates in life
+→ other descends into Sheol.
+
+### Next research block
+
+**SECTION 46B — Proverbs 10–24 (remainder of Messale)**
+
+Priority:
+- tree-of-life occurrences in 11:30, 13:12, 15:4;
+- fountain/well/source of life;
+- tongue/speech as life/death operator;
+- paths, snares, boundary stones and gates;
+- house/roof/pillars/threshold structures;
+- king/ruler/scale/measure imagery;
+- paired sayings and reversal architecture;
+- 22:17–24 “words of the wise” and ancient Egyptian Amenemope parallels;
+- close **Messale / Proverbs 1–24** as Ethiopian book 24 before entering separate **Tegsats / Proverbs 25–31**.
