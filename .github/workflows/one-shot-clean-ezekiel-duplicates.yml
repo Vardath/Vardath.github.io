@@ -1,0 +1,202 @@
+name: One-shot clean duplicate Ezekiel research
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-shot-clean-ezekiel-duplicates.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove duplicate tail and keep only new delta
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("book/EXTRA-RESEARCH.md")
+          text = path.read_text(encoding="utf-8")
+          marker = "# SECTION 53 progress B2A — Ezekiel 21–24"
+          count = text.count(marker)
+          if count != 1:
+              raise SystemExit(f"Expected exactly one duplicate marker, found {count}")
+
+          cut = text.index(marker)
+          while cut > 0 and text[cut-1] == "\n":
+              cut -= 1
+
+          delta = r'''
+
+---
+
+# 2026-09-25 DELTA — duplicate-aware additions to Ezekiel 21–32
+## Preserve only what today's re-check added beyond the already-complete live research
+
+A live-tail audit during continuation showed that the previous research session had already completed:
+
+- Ezekiel 21–24;
+- Ezekiel 25–28;
+- Ezekiel 29–32;
+- SECTION 53B2 integration;
+- Ezekiel 33–36;
+- Ezekiel 37;
+- Ezekiel 38–39;
+- SECTION 53C2 integration.
+
+The three large 2026-09-25 restatement blocks for Ezekiel 21–32 were therefore removed rather than retained as duplicate research.
+
+Only genuinely additive observations from the re-check are preserved below.
+
+---
+
+## DELTA 1 — Ezekiel 23:14–17 adds a representation → orientation → message → physical-arrival chain
+
+The earlier Ezekiel 23 work correctly preserved:
+
+**two related city-systems**
+→ branch 1 fails
+→ branch 2 observes
+→ branch 2 takes the same route.
+
+One additional process in 23:14–17 is worth recording separately.
+
+Sequence:
+
+**figures/images of Chaldeans represented on a wall**
+→ Oholibah sees the representation
+→ desire/orientation changes
+→ messengers are sent to the distant represented people
+→ the Babylonians physically come to her.
+
+### Information-system significance
+
+This creates a clean distinction among:
+
+1. **representation / encoded image**;
+2. **receiver perception**;
+3. **internal orientation change**;
+4. **outgoing message**;
+5. **distant physical response/arrival**.
+
+For the Vardath process model this reinforces a recurring rule:
+
+> **information can change later material routing before physical coupling occurs.**
+
+This belongs beside:
+- Ezekiel 21's decision at the road fork;
+- Ezekiel 24's survivor/report channel;
+- Ezekiel 33's watchman/signal system.
+
+### Control
+
+Ezekiel 23 explicitly presents Samaria/Jerusalem through sexualized political allegory.
+
+The information-chain abstraction is useful;
+the gendered/sexual violence must not be converted into physical cosmology.
+
+Primary:
+- Ezekiel 23:14–17 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+23%3A14-17&version=NRSVUE
+
+---
+
+## DELTA 2 — 2026 critical-source update for Ezekiel 29–32
+
+A current scholarly control was added during this re-check:
+
+**Meike J. Röhrig, _Die Ägyptenworte im Ezechielbuch: Eine literarhistorische und religionsgeschichtliche Analyse von Ez 29–32_ (Mohr Siebeck, 2026), 348 pp., Open Access, CC BY-SA 4.0.**
+
+DOI:
+https://doi.org/10.1628/978-3-16-200201-3
+
+Publisher page:
+https://www.mohrsiebeck.com/en/book/die-aegyptenworte-im-ezechielbuch-9783162002013/
+
+Röhrig's analysis is useful to this project because it explicitly treats the Egypt material as a layered textual complex and distinguishes units including:
+
+- Ezekiel 29:1–16;
+- 29:17–21;
+- 30:1–19;
+- 30:20–26;
+- 31;
+- 32:1–16;
+- 32:17–32.
+
+Her literary-historical method combines text-critical and redaction-critical analysis and reconstructs development from earlier 7th–6th century material through later scribal additions into the Hellenistic period.
+
+### Method consequence for the Vardath timeline
+
+The existing rule is strengthened:
+
+**received literary order**
+≠ automatically
+**dated event order**
+≠ automatically
+**one original compositional layer**.
+
+Therefore the final transformation timeline should preserve:
+- local oracle/unit boundaries;
+- explicit dates;
+- received book order;
+- major textual witnesses;
+- and only then compare process sequences across units.
+
+This is especially important for Ezekiel 29:17–21, whose 27th-year date interrupts the surrounding chronological progression.
+
+---
+
+# Correct live continuation endpoint after duplicate cleanup
+
+The actual previous-session endpoint is:
+
+**SECTION 53C2 — Ezekiel 37–39 COMPLETE**
+
+The next unfinished research block is:
+
+**SECTION 53C3 — Ezekiel 40–48**
+
+First manageable pass:
+
+**Ezekiel 40–43**
+
+Priority:
+- very high mountain / city-like structure;
+- bronze-like measuring figure;
+- line + reed;
+- measurement as information/control;
+- outer wall;
+- east/north/south gate symmetry;
+- repeated dimensions;
+- inner/outer courts;
+- threshold and chamber topology;
+- temple axis;
+- holy/common boundary;
+- glory returning from the east;
+- sound like many waters;
+- earth shining;
+- glory entering through east gate;
+- house filling;
+- altar geometry;
+- direct comparison with the glory-departure route in Ezekiel 10–11.
+
+'''
+          cleaned = text[:cut].rstrip() + delta
+          path.write_text(cleaned, encoding="utf-8")
+          PY
+
+          rm .github/workflows/one-shot-clean-ezekiel-duplicates.yml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add book/EXTRA-RESEARCH.md .github/workflows/one-shot-clean-ezekiel-duplicates.yml
+          git commit -m "Clean duplicate Ezekiel research and preserve new delta"
+          git push
