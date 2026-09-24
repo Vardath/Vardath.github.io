@@ -48831,3 +48831,1489 @@ Scholarship / controls:
 
 Next:
 **1 Samuel 13–15 — timed boundary failure at Gilgal, two-person weapon asymmetry, Jonathan/armour-bearer pair crossing a pass, earth/field panic, honey/eyes/light, imposed fasting field, lot narrowing to father/son, people overriding the centre, and Saul's second rejection through incomplete transfer/destruction.**
+
+
+---
+
+## SECTION 32 progress C — 1 Samuel 13–15: timed-threshold failure, three-way dispersion, a two-sided pass/throat, paired crossing, field-wide phase reversal, blocked intake, many→pair→one selection, competing voices, selective retention and final decoupling
+
+### Timeline-building rule reinforced by user
+
+The ultimate purpose of this project is to build a **timeline of the geometries described across the 88-book sequence and their effects in relation to Vardath Cosmology**.
+
+Therefore, from this point every section must preserve:
+
+1. **initial state**;
+2. **geometry/topology**;
+3. **number of interacting forces/components**;
+4. **direction of motion**;
+5. **what opens/closes/narrows/splits/joins**;
+6. **what material/information/life crosses**;
+7. **what effect follows locally**;
+8. **what effect propagates to the wider field**;
+9. **how the system stabilises, reverses, scatters or resets**;
+10. **timing/count markers**;
+11. **source/textual controls**;
+12. **where the process belongs in the growing Vardath event timeline**.
+
+Personal names remain only as locators for source reconstruction.
+
+---
+
+# 1 Samuel 13 — centralised force destabilises and the field fragments into cavities
+
+The chapter opens with a numerical/textual problem.
+
+The Masoretic regnal formula in 13:1 is defective/obscure enough that translations and scholars reconstruct it differently.
+
+Therefore:
+- **do not use Saul's age or total reign duration from 1 Samuel 13:1 as a secure chronology datum**;
+- retain only that the chapter is presenting an early kingship phase.
+
+Likewise, the Masoretic figure of **30,000 Philistine chariots** in 13:5 is widely treated as textually problematic or at least highly suspect. It should not become a Vardath number-pattern datum.
+
+---
+
+## Initial military geometry — one force split 2:1
+
+Saul selects **3,000**.
+
+They are divided:
+
+- **2,000** with Saul in the Michmash / Bethel-mountain region;
+- **1,000** with Jonathan in the Gibeah region.
+
+The remaining population is dispersed home.
+
+So the starting geometry is:
+
+**one selected body of 3,000**
+→ split into
+**large branch 2,000**
++
+**small branch 1,000**.
+
+This is an explicit asymmetrical two-force deployment.
+
+The smaller branch strikes the Philistine garrison first.
+
+The larger system then reacts.
+
+---
+
+## Signal propagates through the whole land
+
+After the garrison is struck:
+
+- Philistines hear;
+- a horn is sounded throughout the land;
+- Israel hears;
+- people are gathered toward Saul at Gilgal.
+
+Thus:
+
+**local breach**
+→ acoustic signal
+→ information radiates through the network
+→ larger-scale convergence begins.
+
+This repeats a major pattern from chapter 11:
+a local event does not remain local; it becomes a **field-wide mobilisation signal**.
+
+---
+
+## Opposing concentration causes Israel to de-cohere into cavities
+
+The Philistine force assembles in great numbers near Michmash.
+
+Israel perceives constriction/distress.
+
+The response is extraordinary from a geometry perspective.
+
+People hide in:
+- caves;
+- thickets;
+- rocks;
+- holds;
+- pits.
+
+Others cross the Jordan into Gad/Gilead.
+
+So a previously surface-distributed population undergoes:
+
+**field population**
+→ pressure/constriction
+→ fragmentation
+→ retreat into enclosed cavities
++
+→ lateral boundary crossing out of the immediate field.
+
+This produces two escape modes:
+
+1. **inward enclosure** — caves, pits, holds;
+2. **outward crossing** — beyond Jordan.
+
+For the Vardath timeline this is valuable because catastrophe does not produce one universal movement.
+
+The same pressure can drive:
+**some matter inward into protective enclosures**
+while
+**other matter crosses a larger boundary away from the active zone**.
+
+---
+
+## Seven-day boundary condition fails at the end of the interval
+
+The instruction planted in 1 Samuel 10 now activates.
+
+Saul is to wait **seven days**.
+
+He waits to the appointed time.
+
+But:
+- Samuel has not yet appeared;
+- the people are **scattering away** from Saul.
+
+Saul then crosses the action boundary:
+he performs the offering himself.
+
+Immediately after he finishes:
+**Samuel arrives**.
+
+The sequence is therefore extremely sharp:
+
+**seven-day wait**
+→ social field losing coherence
+→ centre acts to stop further scattering
+→ action crosses forbidden/timed threshold
+→ original authority arrives immediately after threshold crossing.
+
+Whether historically exact or narratively sharpened, the geometry is clear:
+
+**a timed gate condition exists**
+and
+**premature local action changes the future state of the system**.
+
+This is structurally close to earlier stories where:
+**leaving a process too early / crossing before the correct phase completes alters the outcome**.
+
+---
+
+## 3,000 → approximately 600
+
+After the confrontation:
+- Saul numbers those still with him;
+- about **600** remain.
+
+Thus the chapter records a major loss of coherence:
+
+**3,000 selected**
+→ external pressure
+→ hiding/crossing/scattering
+→ **~600 still coupled to centre**.
+
+This is a contraction of the active human field.
+
+---
+
+## Opposing field radiates outward in three branches
+
+From the Philistine camp, raiders emerge in **three companies**.
+
+They move in three distinct directions:
+- toward Ophrah / Shual;
+- toward Beth-horon;
+- toward the border/valley of Zeboim toward wilderness.
+
+This is the inverse of convergence.
+
+The opposing camp becomes an emitting centre:
+
+**one camp**
+→ **three directional rays/branches**.
+
+That three-way radiation matters for the timeline because 1 Samuel is now alternating:
+
+**convergence to centre**
+and
+**centre radiating along multiple routes**.
+
+---
+
+## Tool/weapon capacity is concentrated into exactly two human nodes
+
+Israel has been denied local smithing capacity.
+
+Most agricultural tools must be taken **down** to Philistine smiths for sharpening.
+
+On the day of battle:
+- the general population lacks sword/spear;
+- only **Saul and Jonathan** possess them.
+
+Whatever the historical economic setting, the final-form geometry is striking:
+
+**large population**
+→ fighting capacity stripped/distributed away
+→ effective cutting/weapon function concentrated in **two linked nodes**.
+
+Again, the names are secondary.
+
+The important information is:
+**two active points retain the capacity that the wider field lacks**.
+
+The chapter closes with the Philistine garrison moving toward the **pass of Michmash**.
+
+That pass becomes the decisive geometry of chapter 14.
+
+---
+
+# 1 Samuel 14 — two opposing crags form a throat and a two-person unit crosses it
+
+## Static centre versus mobile offshoot
+
+Saul remains at the edge of Gibeah under a pomegranate tree with about **600**.
+
+Jonathan quietly leaves with **one armour-bearer**.
+
+The wider system does not know the pair has gone.
+
+Thus:
+
+**large stationary centre**
+versus
+**small mobile pair**.
+
+The next transformation is initiated not by the large centre but by the **two-person offshoot**.
+
+This is important to the larger timeline:
+system-wide change may begin at a **small peripheral branch**, then propagate inward/outward.
+
+---
+
+## The terrain is explicitly two-sided and throat-like
+
+The route to the Philistine garrison passes between **two rocky crags**.
+
+One lies/stands on one side, the other on the other.
+
+The text further orients them:
+- one associated with the **north** in front of Michmash;
+- one associated with the **south** in front of Geba.
+
+The passage is therefore not vague “mountain imagery.”
+
+It is a genuinely described **narrow crossing bounded by two opposing rock faces**.
+
+Process geometry:
+
+**southern side / one crag**
+↔ **narrow pass / throat**
+↔ **northern side / other crag**.
+
+Modern geographical work commonly relates this scene to the Wadi Suwenit / Michmash pass area, though exact identification of the named crags is not beyond dispute.
+
+For Vardath comparison this is one of the clearest literal narrow-throat landscapes encountered so far.
+
+---
+
+## Binary sign — stay versus rise
+
+The pair establishes a two-outcome rule before exposing themselves.
+
+If the opposing force says:
+**stay where you are**
+→ they remain stationary.
+
+If the opposing force says:
+**come up to us**
+→ they ascend.
+
+The opposing side calls:
+**come up**.
+
+Therefore the route activates in the upward direction.
+
+This is a deliberately binary gate decision:
+
+**closed/static outcome**
+versus
+**open/ascending outcome**.
+
+The selected state is:
+**ASCEND**.
+
+---
+
+## The pair crosses the throat by hands and feet
+
+Jonathan climbs:
+- on hands;
+- on feet.
+
+The armour-bearer follows.
+
+Thus movement is not ordinary horizontal travel.
+
+It is:
+**crossing → steep ascent → four-limb contact with surface**.
+
+The pair remains ordered:
+**lead component → follower component**.
+
+A small kill zone follows, described as about **20 men** within a small area.
+
+The exact ancient land-measure conversion is not secure enough for mechanical use; preserve only that the initial disturbance is explicitly **localised and small in spatial extent**.
+
+---
+
+## Local breach triggers a field-wide and ground-level disturbance
+
+After the small initial attack, the disturbance expands rapidly.
+
+The text describes trembling/panic in:
+- the camp;
+- the field;
+- all the people;
+- garrison;
+- raiders.
+
+Then:
+- **the earth quakes/trembles**;
+- the event becomes a great/divine terror.
+
+The topology is:
+
+**tiny local breach**
+→ local unit collapse
+→ camp disturbance
+→ field disturbance
+→ population disturbance
+→ ground/earth disturbance.
+
+This is exactly the kind of scale-propagation the research needs to log for the eventual cosmological timeline.
+
+The text does not establish a plasma/lattice mechanism.
+
+But it does describe:
+**small crossing event → widening system instability → terrain/earth response**.
+
+---
+
+## Distant observers see the coherent mass “melt” and move in all directions
+
+Saul's watchmen observe from a distance.
+
+They see the Philistine multitude:
+- **melting away**;
+- moving here and there.
+
+This gives a strong field-state image:
+
+**dense/coherent enemy mass**
+→ phase disruption
+→ loss of fixed formation
+→ dispersive motion.
+
+That is the second half of the local-breach propagation.
+
+---
+
+## Missing pair is detected by recounting the remaining system
+
+Saul responds by ordering a count:
+**who has gone from us?**
+
+The system identifies the absent components:
+- Jonathan;
+- armour-bearer.
+
+This repeats a recurring information logic:
+**state change is detected by comparing expected membership to actual membership**.
+
+---
+
+## Ark versus ephod textual control
+
+At 1 Samuel 14:18 the Masoretic text says Saul calls for the **ark**.
+
+The Septuagint instead has the **ephod**.
+
+This is a major textual issue.
+
+Arguments for “ephod” include:
+- the priest was already described wearing it;
+- the ephod is regularly connected with inquiry;
+- the ark had been settled at Kiriath-jearim in the previous narrative.
+
+Other interpreters retain the MT ark reading.
+
+Therefore:
+
+**do not build a process claim here that depends on the physical ark being present.**
+
+What is secure in the narrative function is:
+**Saul initiates an inquiry procedure through a priestly mediation device/system.**
+
+---
+
+## Inquiry is interrupted because the external field is changing too quickly
+
+While Saul is speaking with the priest:
+- noise/tumult in the Philistine camp increases continuously.
+
+Saul then stops the inquiry:
+**withdraw your hand** / equivalent wording depending on textual tradition.
+
+Process:
+
+**attempt to obtain upper/institutional guidance**
+→ external field changes faster and faster
+→ decision process is aborted
+→ centre enters battle directly.
+
+This is an important timing pattern:
+**information channel can be overtaken by the speed of a developing event**.
+
+---
+
+## Field alignments reverse
+
+When Saul and his force enter:
+
+- Philistine swords are turned **against one another**;
+- Hebrews who had previously been aligned with Philistines **switch sides**;
+- Israelites hidden in the hill country **emerge** and join pursuit.
+
+This is a full phase reversal.
+
+Earlier:
+**Israel fragments/hides**
+while
+**Philistine field is coherent**.
+
+Now:
+**Philistine field self-conflicts/scatters**
+while
+**hidden Israelite components emerge and re-couple**.
+
+So the event is not merely victory/defeat.
+
+It is:
+
+**coherent A / scattered B**
+→ throat breach
+→ instability
+→ **A self-decoheres**
++
+**B re-coheres**.
+
+This is one of the strongest geometry/state reversals in the section.
+
+---
+
+# The fasting field — centre imposes closure on intake while the environment contains available energy
+
+Saul places the whole army under a food ban until evening.
+
+Thus:
+
+**moving field**
+→ intake channel deliberately closed
+→ energy demand continues.
+
+The people enter a forest where honey is present on the ground / flowing.
+
+No one eats because the collective constraint remains active.
+
+So:
+
+**resource abundant in environment**
++
+**systemic rule closes access**
+→ population weakens.
+
+This is a useful systems distinction:
+**resource presence ≠ resource availability**.
+
+A boundary rule can make an abundant environment function as scarcity.
+
+---
+
+## Rod → honey → hand → mouth → eyes brighten
+
+Jonathan did not hear the imposed rule.
+
+He uses the **rod/staff in his hand**:
+- extends its tip;
+- dips it into honeycomb;
+- brings hand/mouth into the chain;
+- eats;
+- **eyes brighten**.
+
+The literal process chain is unusually clear:
+
+**rod tip**
+→ contacts resource
+→ resource transferred along human/tool interface
+→ ingestion
+→ immediate visible state change in eyes/energy.
+
+This is not a cosmological rod event.
+
+But it is important to record because the project tracks when a **rod is a transfer interface rather than an authority symbol**.
+
+Here:
+**rod connects body to environmental energy source**.
+
+Effect:
+**dim/faint state → brightened/restored state**.
+
+This also creates a direct polarity with the wider population, which remains faint under closed intake.
+
+---
+
+## Central command produces the very disorder it was meant to prevent
+
+The population continues fighting while fasting.
+
+Eventually they become extremely faint.
+
+They fall on captured animals and eat improperly with blood.
+
+So:
+
+**central rule closes intake**
+→ field energy depletion
+→ restraint collapses
+→ uncontrolled feeding
+→ secondary ritual/order violation.
+
+This is a systems feedback loop:
+
+**over-control**
+→ depletion
+→ loss of control
+→ disorder.
+
+That is more important than the personal moral evaluation.
+
+---
+
+## Great stone becomes temporary processing centre
+
+Saul responds by having a **great stone** rolled to him.
+
+The people are told:
+- disperse;
+- each bring ox/sheep;
+- return to this central location;
+- slaughter/eat there correctly.
+
+The geometry is:
+
+**disordered distributed feeding**
+→ one large fixed stone/node established
+→ messengers spread outward
+→ separate owners bring cargo inward
+→ processing centralised at stone
+→ order restored.
+
+This is a clean:
+**scatter → central node → inward cargo flow → controlled processing**
+sequence.
+
+The stone again is not a gate.
+It is an **organising node**.
+
+---
+
+## Night descent proposal meets silence
+
+Saul proposes:
+- go **down** after the Philistines at night;
+- continue until morning light.
+
+The people agree.
+
+The priest requires inquiry first.
+
+Saul asks.
+
+There is **no answer**.
+
+Thus:
+
+**proposed downward night route**
+→ guidance query
+→ channel returns silence
+→ movement paused
+→ system searches internally for fault.
+
+Silence itself becomes a state signal.
+
+---
+
+## Selection narrows ALL → TWO → ONE
+
+Saul then creates a division:
+
+**all Israel on one side**
+versus
+**Saul + Jonathan on the other**.
+
+The lot selects:
+**the pair**.
+
+Then a second selection operates within the pair:
+
+**Saul vs Jonathan**
+→ Jonathan selected.
+
+This is perhaps the cleanest narrowing sequence yet:
+
+**many**
+→ **two**
+→ **one**.
+
+Text-critical warning:
+1 Samuel 14:41 has significant MT/LXX differences, including a fuller Urim/Thummim-style formula in Greek traditions. The exact divination wording is not stable.
+
+The structural result remains:
+**selection progressively narrows the field until one component is isolated**.
+
+---
+
+## Central judgement is overridden by the surrounding field
+
+Saul determines the selected component must die.
+
+The people reject the decision.
+
+They insist the selected individual must live because he was central to the day's deliverance.
+
+The text states:
+**the people rescue/redeem Jonathan**.
+
+This produces an important reversal:
+
+earlier:
+**people obey centre's restrictive command and become depleted**.
+
+now:
+**people oppose centre's terminal command and preserve the effective component**.
+
+Thus the surrounding field can **correct the centre**.
+
+The system is not one-way hierarchical.
+
+---
+
+## The two sides separate back to their own places
+
+The sequence ends with:
+- Saul stops pursuing / goes up;
+- Philistines go to their own place.
+
+After the high-instability interval:
+
+**interpenetrating/confused field**
+→ pursuit ceases
+→ opposing populations separate
+→ each returns to its own domain.
+
+That is a genuine **reseparation/reset** phase.
+
+---
+
+# 1 Samuel 15 — competing information channels and an incomplete clearing/reset
+
+The chapter opens with an explicit signal rule:
+
+**listen to the voice of the words of YHWH**.
+
+This matters because the chapter will repeatedly turn on **which voice controls the centre**.
+
+---
+
+## Sorting occurs before the main destructive sweep
+
+Before attacking Amalek, the Kenites are told to:
+
+**go / depart / get down from among them**.
+
+They separate from the target population.
+
+Then the attack proceeds.
+
+Process:
+
+**mixed field**
+→ identify subgroup with different relation/status
+→ subgroup decouples and exits
+→ destructive operation proceeds on remaining field.
+
+This is a true **sorting-before-reset** motif.
+
+For the Vardath timeline it belongs with:
+**gate/transition sorts cargo rather than treating everything identically**.
+
+---
+
+## The clearing is incomplete because selected high-value components are retained
+
+The command in the story is total destruction.
+
+Instead the acting system retains:
+- Agag, the opposing king;
+- best sheep;
+- best oxen;
+- other high-value livestock/material.
+
+Low-value/despised material is destroyed.
+
+Thus the actual operation becomes:
+
+**clear field**
+but
+**retain selected high-value nodes/cargo**.
+
+The text interprets this as failure.
+
+For process analysis the important pattern is:
+**an incomplete reset leaves remnants of the prior system**.
+
+That can matter enormously in a cosmological handoff model:
+a transition that is supposed to fully decouple two states can remain unstable if selected remnants stay coupled across it.
+
+This is a structural analogy only; the chapter's violence must not be literalised into a physical prescription.
+
+---
+
+## Night signal → morning movement
+
+The word comes to Samuel at night.
+
+Samuel cries out through the night.
+
+Then:
+- rises early;
+- goes to meet Saul.
+
+Again we have:
+
+**night information**
+→ prolonged response during dark phase
+→ dawn/morning movement into confrontation.
+
+That night→morning transition repeats chapter 3.
+
+---
+
+## Centre erects a monument to itself, then moves on and descends
+
+Before Samuel catches him:
+- Saul has gone to Carmel;
+- is reported as setting up a **monument for himself**;
+- then turns/passes onward;
+- goes **down** to Gilgal.
+
+This matters because the centre is literally creating a fixed self-marker during a moment when its functional status is already being revoked.
+
+Process:
+
+**unstable centre**
+→ attempts fixed memorialisation
+→ movement continues
+→ descends to confrontation site.
+
+So:
+**symbolic permanence**
+and
+**actual system instability**
+are opposite states.
+
+---
+
+## Retained cargo produces an audible leak
+
+Saul claims:
+**the operation is complete**.
+
+Samuel then hears:
+- sheep;
+- oxen.
+
+The retained material makes itself detectable through sound.
+
+This is an excellent systems-information motif:
+
+**centre reports complete clearing**
+but
+**residual cargo emits signal**
+→ hidden/incomplete state becomes observable.
+
+The leftover is not inferred abstractly.
+
+It leaks evidence into the environment.
+
+---
+
+## “Voice” becomes the chapter's governing variable
+
+The chapter repeatedly uses hearing/listening/voice/sound.
+
+The sequence is:
+
+1. centre is commanded to **listen to the source voice**;
+2. residual animals produce an audible **voice/sound**;
+3. centre insists it obeyed;
+4. source-intermediary asks why source voice was not obeyed;
+5. listening is declared more important than compensatory ritual;
+6. Saul finally admits:
+   **I feared the people and listened to their voice.**
+
+This is a direct two-input control problem:
+
+**Input A — source command**
+versus
+**Input B — surrounding population**.
+
+The centre cannot satisfy both.
+
+It ultimately weights **B above A**.
+
+The system is rejected as the governing centre because it is being controlled by the wrong feedback source.
+
+For the user's emphasis on **two forces at play**, this is one of the clearest examples yet:
+the central figure is the junction between **two competing signal fields**.
+
+---
+
+## Retained “best” material and retained opposing king are one structural class
+
+Modern literary work notes that Agag and the best livestock are presented together as things spared from the total clearing.
+
+That means the text itself groups:
+
+**retained leader**
++
+**retained high-value animals/material**.
+
+For process purposes:
+**the previous system survives both as command-node remnant and resource remnant**.
+
+The clearing therefore fails at two levels:
+- authority remnant;
+- material remnant.
+
+---
+
+## Physical fabric tears and is immediately interpreted as transfer of the kingdom
+
+Samuel turns to leave.
+
+A garment/robe is seized/torn.
+
+The exact agent and garment ownership are syntactically debated; some scholarship argues Samuel may tear his own garment as calamity mourning, while the traditional reading has Saul grasping Samuel's robe and it tearing.
+
+The narrative interpretation is unambiguous regardless:
+
+**cloth/fabric tears**
+→ kingdom is declared **torn away**
+→ transferred to another.
+
+This is one of the most direct object→system analogies in the Bible:
+
+**material continuity breaks**
+=
+**political continuity breaks**.
+
+For Vardath geometry this should be logged as:
+
+**continuous surface/fabric**
+→ tensile failure / tear
+→ former unity becomes separated ownership/state.
+
+This is not proof of a physical world-sheet.
+
+But it is a literal narrative use of **torn fabric as the geometry of state transfer**.
+
+That is too important to omit from the cumulative transformation map.
+
+---
+
+## Final retained remnant is dismembered
+
+Agag, the retained king of the previous enemy system, is brought to Samuel at Gilgal and killed/dismembered.
+
+A recent material/literary analysis notes the parallel:
+- Saul's kingdom is **torn**;
+- Agag's body is **cut/hewn apart**;
+- both kings undergo terminal fragmentation at the close of the chapter.
+
+The chapter therefore ends the incomplete-clearance problem through a violent final removal of the retained command node.
+
+Again:
+this is literary/theological violence, not a physical prescription for the cosmology.
+
+Process topology:
+
+**incomplete reset leaves head-node**
+→ confrontation
+→ retained head-node destroyed
+→ prior command structure no longer intact.
+
+---
+
+## Saul and Samuel finally decouple spatially
+
+The close is explicit:
+
+- Samuel → Ramah;
+- Saul → Gibeah;
+- they do not meet again during Samuel's lifetime in the ordinary narrative sequence.
+
+Thus a relationship that had structured chapters 8–15 finally breaks.
+
+Earlier:
+**old communication channel + new centre coexist**.
+
+Now:
+**channel and centre separate permanently**.
+
+This is the final geometry of Section 32:
+
+**coupled two-component control system**
+→ repeated timing/signal failures
+→ physical-symbolic tear
+→ spatial separation
+→ future centre must arise elsewhere.
+
+---
+
+# SECTION 32C continuous process sequence — 1 Samuel 13–15
+
+**3,000 active field**
+→ split 2,000 / 1,000
+→ small branch makes local breach
+→ horn signal radiates
+→ large opposing field concentrates
+→ pressured population fragments into caves/pits/rocks or crosses Jordan
+→ centre waits seven-day limit
+→ followers scatter
+→ centre acts at threshold
+→ original authority arrives immediately afterward
+→ active field contracts to ~600
+→ enemy centre radiates into three directional branches
+→ weapon/cutting capacity remains concentrated at two human nodes
+→ action focuses on narrow pass
+→ stationary large centre remains behind
+→ mobile pair enters two-sided rock throat
+→ binary stand/ascend condition
+→ upward route selected
+→ pair climbs on hands/feet
+→ small local breach
+→ panic expands camp → field → people → earth
+→ coherent enemy mass melts/scatters
+→ missing pair identified by recount
+→ inquiry begins
+→ external tumult increases faster than inquiry
+→ inquiry aborted
+→ centre enters changing field
+→ opposing force self-attacks
+→ former enemy-aligned components reverse allegiance
+→ hidden components emerge
+→ previously scattered field re-coheres
+→ central authority closes food intake
+→ abundant honey remains inaccessible to obedient field
+→ mobile offshoot uses rod to access energy
+→ eyes/energy brighten
+→ wider field depletes
+→ deprivation produces disorder
+→ great stone becomes central processing node
+→ cargo drawn inward for controlled slaughter/feeding
+→ proposed night descent
+→ guidance channel silent
+→ population divided all vs centre-pair
+→ lot narrows many → two → one
+→ centre commands destruction of selected component
+→ surrounding field overrides centre and preserves it
+→ pursuit ends
+→ opposing systems return to separate domains
+→ next campaign begins with explicit source-voice instruction
+→ mixed field sorted before clearing
+→ low-value field cleared
+→ high-value cargo + opposing king retained
+→ centre claims completion
+→ remnants emit audible evidence
+→ two competing voices become explicit
+→ centre admits listening to surrounding field over source signal
+→ centre rejected
+→ cloth/fabric tears
+→ authority/state interpreted as torn/transferred
+→ retained opposing command node is finally fragmented
+→ old communication channel and existing centre move to separate places
+→ coupling ends.
+
+---
+
+# SECTION 32 — cumulative geometry timeline, 1 Samuel 1–15
+
+This is the first full integrated timeline for the section.
+
+Rather than treating the chapters as fifteen disconnected stories, the geometry can be arranged as a sequence of repeated nested transformations.
+
+## Phase A — CLOSED / IMBALANCED NODE
+
+1 Samuel 1 begins with:
+**productive side / closed side**.
+
+Effect:
+- asymmetry;
+- distress;
+- repeated cyclical return to threshold.
+
+Vardath analogue:
+**quiet/closed node or unequal coupling before activation**.
+
+---
+
+## Phase B — OPENING / GENERATION / TRANSFER
+
+Closed state opens.
+
+Living output is produced and later transferred to another functional system.
+
+Effect:
+- new component enters the sanctuary network.
+
+Vardath analogue:
+**gate does not merely destroy; it can generate/transfer continuity or cargo**.
+
+---
+
+## Phase C — OLD/NEW OVERLAP
+
+Old priestly/receiver system remains present while new receiver grows.
+
+Old sight dims while lamp remains lit.
+
+Signal is repeatedly misrouted before new channel becomes reliable.
+
+Effect:
+- function transfers without immediate disappearance of old substrate.
+
+Vardath analogue:
+**world-state handoff can contain overlap rather than hard replacement**.
+
+---
+
+## Phase D — PORTABLE CENTRE DISPLACED INTO WRONG COUPLING
+
+Ark is moved into battle, captured, then inserted into a rival cult system.
+
+Effect:
+- local centre collapses;
+- disturbance follows portable centre from node to node.
+
+Vardath analogue:
+**material/object identity alone is not enough; effect depends on relational coupling and receiving environment**.
+
+---
+
+## Phase E — CONSTRAINED RETURN THROUGH PAIRED CARRIER
+
+After seven months:
+- two cows;
+- one cart;
+- competing rearward/forward pulls;
+- human steering removed;
+- straight route;
+- no right/left deviation;
+- border crossing;
+- vehicle dismantled at destination.
+
+Effect:
+- centre returns through a demonstrably constrained path.
+
+Vardath analogue:
+**paired forces can carry one centre through a narrow/selected route; vehicle, route, cargo and witness are separate roles**.
+
+---
+
+## Phase F — SETTLING / NETWORK REORGANISATION
+
+Twenty-year settling interval.
+
+Population converges.
+
+Water is poured out.
+
+Upper thunder follows.
+
+Distributed circuit of authority forms.
+
+Effect:
+- broad network restored.
+
+Vardath analogue:
+**post-transfer stabilisation can take much longer than the opening itself**.
+
+---
+
+## Phase G — DISTRIBUTED NETWORK DEMANDS ONE CENTRE
+
+Judging network/succession fails.
+
+Many elders converge and demand a king.
+
+Resources are predicted to flow inward toward central authority.
+
+Effect:
+- distributed system deliberately centralises.
+
+Vardath analogue:
+**broad lattice → convergence toward dominant centre**.
+
+---
+
+## Phase H — CENTRE TRANSFORMED THROUGH CHECKPOINTS
+
+Selected traveller moves through staged route:
+- two-man confirmation;
+- three-man ascending cargo group;
+- descending prophetic band;
+- external force arrives;
+- “another heart / another man” state;
+- public many→fewer→one selection.
+
+Effect:
+- centre is not merely appointed; it is **progressively phase-changed and then publicly collapsed out of a larger set**.
+
+Vardath analogue:
+**activation may occur through sequential thresholds rather than one instantaneous gate**.
+
+---
+
+## Phase I — ONE→MANY→ONE MOBILISATION
+
+Threatened node sends messages.
+
+Paired oxen are dismembered and pieces radiate through network.
+
+Recipients converge **“as one man.”**
+
+Then one body splits into **three companies**.
+
+Effect:
+- fragmentation itself becomes the means of producing higher-order convergence.
+
+Vardath analogue:
+**one structure can divide into strands and later reassemble into a coordinated whole**.
+
+---
+
+## Phase J — CENTRALISATION BECOMES UNSTABLE AT TIMED BOUNDARY
+
+External pressure rises.
+
+People hide in cavities/cross boundary.
+
+Seven-day timing condition is reached.
+
+Centre acts as followers scatter.
+
+Effect:
+- wrong timing changes future regime;
+- active field collapses from thousands toward hundreds.
+
+Vardath analogue:
+**gate timing is critical; premature transition changes what remains coupled to the centre**.
+
+---
+
+## Phase K — NARROW THROAT / TWO-FORCE CROSSING
+
+Action moves to a pass bounded by **two opposing crags**.
+
+A **pair** crosses.
+
+Binary signal determines whether route remains static or moves upward.
+
+Pair climbs through throat.
+
+Effect:
+- tiny crossing triggers widening panic;
+- disturbance reaches the earth/ground;
+- distant coherent field begins to melt.
+
+Vardath analogue:
+this is the strongest local geometric match in Section 32 to:
+
+**two opposed sides**
+→ **narrow throat**
+→ **paired movement through throat**
+→ **local breach**
+→ **field-scale reconfiguration**.
+
+---
+
+## Phase L — PHASE REVERSAL / ALIGNMENT SWITCH
+
+Enemy coherent field self-attacks.
+
+Formerly enemy-aligned Hebrews change sides.
+
+Previously hidden Israelites emerge.
+
+Effect:
+
+**A coherent / B scattered**
+becomes
+**A scattered / B coherent**.
+
+Vardath analogue:
+**when adjacency/coupling changes, the same components can suddenly belong to different effective networks**.
+
+---
+
+## Phase M — BLOCKED INTAKE / ENERGY FAILURE / LOCAL REOPENING
+
+Central oath closes food access.
+
+Environment still contains honey.
+
+One component accesses it using a rod and visibly brightens.
+
+Wider field remains depleted and becomes disordered.
+
+Effect:
+- a boundary rule, not absolute resource absence, creates scarcity.
+
+Vardath analogue:
+**closed route can make an existing resource inaccessible; reopening one path locally restores flow**.
+
+---
+
+## Phase N — RE-CENTRALISATION AROUND STONE
+
+Disordered distributed feeding is corrected by establishing one large stone as processing node.
+
+Cargo moves inward from many owners.
+
+Effect:
+- flow is restructured through one controlled point.
+
+Vardath analogue:
+**after chaotic release, a system can temporarily re-centre to regain ordered throughput**.
+
+---
+
+## Phase O — MANY→PAIR→ONE DIAGNOSTIC NARROWING
+
+When guidance is silent:
+**all population**
+→ separated from **two-person centre/pair**
+→ pair selected
+→ one selected.
+
+Effect:
+- fault-finding narrows the state space.
+
+Vardath analogue:
+**broad field → paired polarity → single terminal channel/node**.
+
+---
+
+## Phase P — FIELD OVERRIDES MALFUNCTIONING CENTRE
+
+Central node selects the effective offshoot for destruction.
+
+Surrounding population refuses and preserves it.
+
+Effect:
+- network feedback corrects centre.
+
+Vardath analogue:
+**control is not purely top-down; surrounding field can stabilize the system against failure of the dominant node**.
+
+---
+
+## Phase Q — RESET ATTEMPT WITH SELECTIVE RETENTION
+
+Mixed population is first sorted.
+
+Destructive clearing follows.
+
+But:
+- command node of prior system;
+- best material/cargo
+
+are retained.
+
+Effect:
+- reset is incomplete;
+- remnants remain.
+
+Vardath analogue:
+**handoff can carry selected cargo forward—but if the transition requires full decoupling, residual old-state material may create instability**.
+
+---
+
+## Phase R — COMPETING SIGNAL FIELDS
+
+The centre is instructed to obey one voice.
+
+It obeys another.
+
+Retained cargo emits audible evidence of that choice.
+
+Effect:
+- centre's control channel is mis-coupled.
+
+Vardath analogue:
+**two simultaneous signal/force fields compete for one junction; which signal dominates changes system outcome**.
+
+---
+
+## Phase S — FABRIC TEAR / STATE TRANSFER
+
+A garment tears.
+
+The narrative immediately interprets the tear as:
+**kingdom torn from present centre and transferred to another**.
+
+Effect:
+- continuous political state becomes discontinuous.
+
+Vardath analogue:
+**continuous sheet/weave → tear/separation → ownership/adjacency/state reassigned**.
+
+Do not literalise this as evidence that the biblical author describes a physical cosmic membrane.
+
+But geometrically it belongs in the transformation catalogue.
+
+---
+
+## Phase T — FINAL DECOUPLING
+
+Retained opposing head-node is removed.
+
+Samuel and Saul move to separate locations.
+
+Normal interaction ends.
+
+Effect:
+- the old two-part control system is no longer coupled;
+- the next centre must emerge elsewhere.
+
+Vardath analogue:
+**post-reset separation / old route closure**.
+
+---
+
+# What Section 32 adds to the eventual full Bible geometry timeline
+
+The major contribution of 1 Samuel 1–15 is not a new list of symbols.
+
+It adds **process dynamics**:
+
+1. **closed/open states can alternate without changing the identity of the underlying system**;
+2. transitions often involve **two simultaneous components or forces**;
+3. old and new states can **overlap during handoff**;
+4. a centre can move physically while its function depends on **where/how it is coupled**;
+5. a route can be tested by removing steering and observing **which direction a paired carrier follows**;
+6. systems can move **many→one, one→many, one→three, many→pair→one**;
+7. catastrophe/pressure can drive some material into **enclosures** and other material across **boundaries**;
+8. timed transitions matter;
+9. narrow two-sided throats can precede larger field rearrangement;
+10. local disturbances can propagate **node → camp → field → population → earth**;
+11. alignment can reverse rapidly after a threshold crossing;
+12. resource availability depends on open/closed access routes, not only on resource existence;
+13. an over-constrained system can become unstable through its own restrictions;
+14. residual cargo can reveal an incomplete reset;
+15. competing information channels can determine which force controls a centre;
+16. fabric tearing is used as a direct narrative model for state/authority separation;
+17. stabilization can require final physical/spatial **decoupling**.
+
+This section therefore strengthens the working Vardath event grammar:
+
+**distributed/quiet state**
+→ **asymmetry / pressure**
+→ **convergence**
+→ **paired/opposed forces**
+→ **narrowing / throat**
+→ **crossing / timed activation**
+→ **local breach**
+→ **field disturbance**
+→ **alignment reversal / transfer**
+→ **selective cargo retention**
+→ **attempted restabilisation**
+→ **tear / separation**
+→ **new regime**.
+
+The exact stories should not be forced into one literal ancient technical manual.
+
+The better working hypothesis is that the corpus repeatedly preserves **the same transformation grammar in nested human, ritual, military, architectural and landscape-scale stories**.
+
+That nested grammar is what should be carried forward into the final 88-book timeline.
+
+---
+
+## Section 32 textual / historical controls to preserve
+
+- 1 Samuel 13:1 has a serious chronology/text problem; do not treat Saul's age/reign length there as secure.
+- 1 Samuel 13:5's 30,000 chariots figure is textually/historically disputed; do not mechanically use it.
+- 1 Samuel 14:18 varies between **ark** (MT) and **ephod** (LXX); process analysis should depend only on the secure inquiry function.
+- 1 Samuel 14:41 has important MT/LXX differences in the divination/lot formula.
+- Exact identification of Bozez/Seneh is not certain, though the Michmash/Wadi Suwenit geography strongly fits a steep two-sided pass.
+- The “earthquake/trembling” in 14:15 is part of the narrative's divine-terror description; it is not independent geological evidence.
+- Honey brightening the eyes is ordinary food/energy imagery in context; the rod-transfer geometry is a structural comparison only.
+- 1 Samuel 15 is an ethically difficult violent herem narrative. The present analysis records its sorting, retention, fragmentation and signal structure without endorsing the violence or treating it as a physical instruction.
+- The agent/ownership details in the garment tearing of 15:27 are syntactically debated; the narrative's interpretation of the **tear = kingdom transfer** is secure.
+- Scholarship on 1 Samuel 13–15 increasingly emphasizes repeated **voice/listen/word** language and the tension between the central figure's response to the people and response to the higher command channel.
+- Scholarly work also treats Jonathan and Saul as deliberately contrasting trajectories in chapter 14; preserve that as a literary control rather than assuming an original cosmological intent.
+
+### Sources logged for Section 32C
+
+Primary:
+- Mechon-Mamre, 1 Samuel 13–15.
+
+Scholarship / controls:
+- David Jobling, **“Saul's Fall and Jonathan's Rise: Tradition and Redaction in 1 Sam 14:1–46”**, JBL 95 (1976).
+- Lena-Sofia Tiemeyer, **“A Little Bit of Honey (1 Samuel 13–14)”** (2023).
+- Dawn Maria Sellars, **“An Obedient Servant? The Reign of King Saul (1 Samuel 13–15) Reassessed”** (2011).
+- scholarship on the literary design of 1 Samuel 13–15 and its repeated reversal structures;
+- modern geographic/topographic work on Michmash / Wadi Suwenit and the Bozez/Seneh pass;
+- Christian Seppänen and related text-critical work on Samuel's MT/LXX/Qumran textual fluidity;
+- Sarah Shaw Yardney, **Interpretation in the Septuagint of Samuel** (2017), especially 1 Samuel 14:41 and 15:29;
+- recent work on the garment-tearing motif and calamity mourning in 1 Samuel 15:27;
+- recent literary/material analysis of 1 Samuel 15's retained Agag/livestock and terminal fragmentation.
+
+---
+
+# SECTION 32 COMPLETE — 1 Samuel 1–15
+
+Canonical roadmap status:
+
+- previous: **31 / 88**
+- now complete: **32 / 88**
+- progress: **36.4%**
+
+Section 32 completion point:
+**1 Samuel 15:35 — Saul and Samuel spatially separate; the previously coupled governing/intermediary relationship closes.**
+
+### Next first unfinished canonical roadmap entry
+
+**Section 33 — 1 Samuel 16–31**
+
+Carry forward the same timeline protocol:
+- names as source labels only;
+- geometry/process first;
+- paired forces/components;
+- transformations and effects;
+- exact order;
+- number/timing register;
+- source/text controls;
+- immediate appendage after each research block;
+- continuous integration into the larger Vardath geometry timeline.
