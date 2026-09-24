@@ -197855,3 +197855,4 @@ Priority:
   **paired asymmetric horns → directional collision → dominant-axis break → fourfold redistribution**
   as a possible mechanics analogue;
 - explicitly distinguish the very strong political interpretation from any Vardath projection.
+
