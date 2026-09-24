@@ -41505,3 +41505,790 @@ Scholarly/source-critical:
 Next under anti-repeat protocol:
 **Joshua 20–24 — refuge cities and Levite-city implementation, east-Jordan altar crisis as boundary/identity misunderstanding, altar as witness not sacrifice route, Joshua farewell and remaining nations, Shechem covenant, standing witness stone, writing in Torah scroll, Joshua/Joseph/Eleazar deaths, and transition into Judges.**
 
+## SECTION 28 progress B — Joshua 20–24: refuge place+phase implemented, altar-shaped witness is explicitly NOT an altar mechanism, covenant memory becomes stone, and three long-delayed bodies finally reach inherited ground
+
+### Anti-repeat check
+
+Section 28A is already saved.  
+No Joshua 20–24 Section 28 block exists later in the ledger.  
+Continuing only from the Shiloh/seven-part survey checkpoint.
+
+---
+
+## Joshua 20 — the refuge-city place+phase system is implemented
+
+Joshua now executes the earlier Mosaic refuge law.
+
+Six cities are set apart:
+
+**west of Jordan**
+- Kedesh
+- Shechem
+- Hebron
+
+**east of Jordan**
+- Bezer
+- Ramoth-gilead
+- Golan.
+
+So the final network is:
+
+**3 west + 3 east = 6**.
+
+This preserves the bilateral Jordan distribution already anticipated in Numbers.
+
+### The city gate is the legal entry interface
+
+The accidental killer:
+- flees to a refuge city;
+- stands at the **entrance/gate**;
+- states the case to the elders;
+- is admitted into protected status.
+
+Thus the transition is:
+
+**outside / vulnerable**
+→ **gate hearing**
+→ classification
+→ **inside / protected**.
+
+The boundary is not magic.
+
+Its effect depends on:
+- legal status;
+- correct cause of death;
+- adjudication.
+
+### Same geographic boundary has different effect by time-phase
+
+The person must remain:
+- through judgment;
+- until the death of the high priest.
+
+Then:
+- the person may return home.
+
+This confirms the Numbers 35 result in enacted narrative law:
+
+**before high-priest death**
+→ leaving refuge can remove protection.
+
+**after high-priest death**
+→ crossing outward is permitted.
+
+The boundary itself is unchanged.
+
+What changes is:
+**person + phase + legal relation**.
+
+This remains one of the cleanest non-cosmological analogues to the mature Vardath **place + phase** rule.
+
+### Joshua 20 proves law survives the lawgiver
+
+The refuge system was legislated under Moses.
+
+It is instantiated:
+- after Moses' death;
+- under Joshua.
+
+Again:
+
+**source person disappears**
+→ written/institutional rule persists
+→ successor system executes it.
+
+This is another direct continuity-with-body-replacement case.
+
+---
+
+## Joshua 21 — 48 Levitical cities turn the inner service group into a distributed territorial network
+
+The Levites receive:
+- **48 towns total**;
+- with pasturelands.
+
+Within them:
+- the **6 refuge cities** are included.
+
+So the final structure is:
+
+**48 = 42 ordinary Levitical towns + 6 refuge nodes**.
+
+### The previously central/inner Levite function becomes geographically distributed
+
+In Numbers:
+- Levites form an inner guard/service ring around the Tabernacle.
+
+In settled Joshua:
+- they are dispersed through Israelite tribal territory.
+
+This is an important structural transformation:
+
+**central protective/service ring**
+→ **distributed service network across the land**.
+
+Same broad functional group,
+new geography.
+
+This strongly supports:
+**role can persist while spatial topology changes**.
+
+### Six refuge nodes are embedded inside the larger 48-node Levite network
+
+This is a nested functional network:
+
+**48 total service towns**
+contains
+**6 special asylum/judicial nodes**.
+
+Not all nodes perform the same job.
+
+Again:
+same class of location does not imply identical function.
+
+### “Rest on every side” clashes with the incomplete-conquest data just given
+
+Joshua 21 closes with very strong summary language:
+- land given;
+- enemies delivered;
+- **rest on every side**;
+- no promise failed.
+
+Yet Joshua 13–19 repeatedly said:
+- much land remained;
+- Canaanites/Jebusites still lived in important places.
+
+So the book itself juxtaposes:
+
+**ideal completion formula**
+and
+**incomplete local reality**.
+
+This is one of the clearest examples of **macro-state summary versus local-state detail**.
+
+For the Vardath comparison:
+never infer a physically complete world-reset merely from one totalizing summary if surrounding material preserves unfinished states.
+
+---
+
+## Joshua 22 — the east-Jordan tribes cross back after fulfilling the westward obligation
+
+Joshua releases:
+- Reuben;
+- Gad;
+- half-Manasseh.
+
+Their Numbers-era sequence is now completed:
+
+**families/holding remain east**
+→ warriors cross west
+→ help other tribes obtain land
+→ obligation completed
+→ warriors return east.
+
+This is a full:
+**split-location identity → temporary cross-boundary operation → recombination with home component**.
+
+### Jordan becomes a feared identity boundary
+
+The east-side tribes worry that future west-side descendants may say:
+
+**Jordan is a boundary between us and you**
+→ therefore
+**you have no share in YHWH**.
+
+This is extremely important.
+
+A natural geographic divider threatens to become:
+- social boundary;
+- cultic boundary;
+- identity boundary.
+
+So one physical border can acquire multiple relational meanings.
+
+### The east-side tribes build a large altar-form near Jordan
+
+The object is described as:
+- conspicuous/large;
+- altar-like;
+- built near/at the Jordan boundary.
+
+Western Israel interprets it as:
+**rival sacrificial centre**
+→ potential covenant rupture.
+
+The whole assembly gathers at Shiloh and prepares for war.
+
+This shows how **shape/form can trigger mechanism inference**:
+
+**looks like altar**
+→ therefore observers assume
+**functions as altar**.
+
+That inference turns out to be wrong.
+
+### Phinehas + tribal chiefs act as an information-verification delegation
+
+Instead of immediately attacking:
+- Phinehas goes;
+- leaders/chiefs go with him;
+- they ask what the structure means.
+
+This is the opposite of the Gibeonite failure.
+
+Gibeon:
+**appearance accepted without source-check**.
+
+Joshua 22:
+**appearance alarming**
+→ source-check/delegation
+→ interpretation corrected
+→ war avoided.
+
+This is an excellent paired information-control lesson.
+
+### The altar-shaped object is explicitly declared a replica/witness, not a functioning altar
+
+The Transjordanian tribes say the structure is:
+
+- a **copy/replica/pattern** of YHWH's altar;
+- **not** for burnt offering;
+- **not** for sacrifice;
+- built as a **witness** between west/east descendants.
+
+This is one of the single most important controls in the entire project.
+
+> **Same visible geometry / same object-class appearance does NOT imply same function or mechanism.**
+
+The text itself insists on:
+
+**altar-form**
+≠
+**sacrificial altar-function**.
+
+### Representation is deliberately separated from mechanism
+
+The large Jordan structure preserves:
+- identity;
+- memory;
+- relation;
+- proof of participation.
+
+It does **not** perform the central altar's operational role.
+
+Classification:
+
+**real altar**
+→ active cultic mechanism.
+
+**replica altar**
+→ information/witness representation.
+
+This is almost a textbook example of the mature distinction:
+
+**projection / model / witness**
+≠
+**underlying operating system**.
+
+### Boundary object preserves connection across separation
+
+The witness is needed precisely because:
+- east/west groups are separated by Jordan;
+- future descendants may forget shared identity.
+
+Thus the object functions as:
+
+**boundary-adjacent material memory**
+→ preserves relation across geographic separation.
+
+This is closely analogous to:
+- Jordan stones;
+- covenant standing stones;
+- altar plating;
+- preserved rod.
+
+But its explicit purpose is intergenerational identity.
+
+### East / west do not merge
+
+The solution does not erase Jordan.
+
+Both sides remain geographically distinct.
+
+The goal is:
+**separation without identity loss**.
+
+That is highly relevant to Vardath's mature idea:
+successful relation requires enough connection for continuity while preserving distinct states.
+
+### Source-history control — Transjordan status is a real biblical political problem
+
+Modern scholarship reads Joshua 22 alongside:
+- Numbers 32;
+- Judges 5;
+- later Transjordan traditions.
+
+The east-bank tribes' status was politically/theologically contested.
+
+Therefore:
+the altar story may reflect real debates about whether east-Jordan Israel belonged fully to the covenant land/system.
+
+Do not reduce the story to abstract geometry alone.
+
+---
+
+## Joshua 23 — the farewell explicitly admits remaining nations
+
+Joshua says:
+- some nations remain among Israel.
+
+This again contradicts the total conquest rhetoric of Joshua 11–12.
+
+The remaining peoples can become:
+- snare;
+- trap;
+- scourge;
+- thorns.
+
+This continues the revised/incomplete-conquest model.
+
+### Joshua's farewell makes the land-state conditional
+
+The same land that was:
+- promised;
+- allotted;
+- entered;
+
+can still be lost if covenant relation changes.
+
+So territorial possession is not a one-way irreversible state in the book's theology.
+
+This is another:
+**same place + changed relationship = changed occupancy outcome**.
+
+---
+
+## Joshua 24 — Shechem becomes the covenant-centre for the final memory compression
+
+Joshua gathers:
+- tribes;
+- elders;
+- heads;
+- judges;
+- officers;
+at **Shechem**.
+
+This is a new central coordinate.
+
+Compare:
+- Sinai/Horeb;
+- Gilgal;
+- Ebal/Gerizim;
+- Shiloh;
+- now Shechem.
+
+Once again:
+**central covenant/interface role moves between places**.
+
+### Historical recitation compresses the full route into one information sequence
+
+Joshua retells:
+- ancestors beyond the river;
+- Abraham;
+- Canaan;
+- Jacob/Esau;
+- Egypt;
+- Exodus;
+- sea;
+- wilderness;
+- Balak/Balaam;
+- Jordan;
+- Jericho;
+- land settlement.
+
+This is another:
+**many generations / many geographic transitions**
+→ **one spoken sequence at one centre**.
+
+The route is converted into collective memory.
+
+### Balak/Balaam is itself retold differently
+
+Joshua 24 says Balak:
+- “waged war” / rose against Israel;
+- summoned Balaam.
+
+This differs from some emphases in Numbers.
+
+Modern source study sees the Balaam material as composite and Joshua's summary as another stage of tradition.
+
+Again:
+**same event tradition changes shape in later compression**.
+
+### “Choose whom you will serve” creates another explicit state-choice branch
+
+Joshua presents:
+- ancestral gods beyond river;
+- Amorite gods;
+- YHWH.
+
+The people choose covenant allegiance.
+
+This is not a neutral geometric binary.
+
+It is a moral/covenantal decision system.
+
+### Joshua writes the covenant into the book of Torah
+
+After the agreement:
+- Joshua writes the words in the book of God's Torah/instruction.
+
+So the successor does not merely preserve Moses' information.
+
+He **adds a new covenant-state record** to the textual memory system.
+
+This is important:
+**information carrier is updatable across generations**.
+
+### Large standing stone becomes a material witness
+
+Joshua:
+- takes a great stone;
+- sets it up under the oak near sanctuary;
+- declares it a **witness**.
+
+The stone is poetically said to have:
+- “heard” the words.
+
+This gives:
+
+**spoken covenant**
+→ written record
++
+**standing material witness**.
+
+### The stone is not an operator simply because it “hears”
+
+This is another major anthropomorphism control.
+
+The stone:
+- “hears” in covenant rhetoric;
+- “witnesses” against the people.
+
+It is not being described as a conscious technological sensor.
+
+Ancient treaty traditions commonly use:
+- deities;
+- heaven/earth;
+- objects/monuments
+as witnesses.
+
+So:
+**functional personification**
+must not be automatically literalized.
+
+### Material witness persists after participants disperse
+
+Joshua then sends:
+- every person to their inheritance.
+
+The assembly dissolves,
+but:
+- book;
+- stone;
+- covenant memory
+remain.
+
+This is a strong:
+**temporary convergence → durable memory artifact → redistribution outward** cycle.
+
+---
+
+## Joshua dies at 110 — same age as Joseph in Genesis
+
+Joshua dies:
+- age **110**.
+
+Joseph also died:
+- age **110** in Genesis 50.
+
+This numerical recurrence is striking.
+
+It may reflect:
+- Egyptian ideal-age tradition;
+- literary shaping;
+- coincidence within tradition.
+
+Record it as a low-confidence literary-number echo.
+
+Do **not** claim a hidden 110-year Vardath cycle.
+
+### Joshua is buried inside his own inheritance
+
+Joshua:
+- allocator of others' land;
+- finally settled;
+- dies;
+- is buried in **his own inheritance** at Timnath-serah.
+
+His route therefore closes:
+
+**outsider/wilderness successor**
+→ crosser
+→ conqueror/allocator
+→ landholder
+→ **buried within allocated land**.
+
+This is a full land-integration arc.
+
+---
+
+## Joseph's bones complete a centuries-long delayed cargo route
+
+Joseph died in Egypt.
+
+Genesis 50:
+- asks descendants to carry his bones up when Israel leaves.
+
+Exodus 13:
+- Moses takes Joseph's bones out of Egypt.
+
+Joshua 24:
+- the bones are finally buried at **Shechem**;
+- in land associated with Jacob's purchase;
+- inherited by Joseph's descendants.
+
+This is one of the longest explicit cargo-transfer sequences in the Bible:
+
+**Joseph body dies**
+→ remains in Egypt
+→ bones preserved
+→ carried out by Moses
+→ wilderness travel
+→ Jordan/land transition
+→ **final deposition in ancestral/descendant land**.
+
+### Joseph's bones are delayed ancestral information/identity cargo
+
+They are not just biological remains.
+
+Narratively they preserve:
+- promise;
+- ancestry;
+- future land expectation.
+
+Classification:
+**long-duration carrier cargo linking old place to future settlement**.
+
+This is very relevant to Vardath's carrier/handoff framework.
+
+But it is ordinary mortuary/reburial tradition,
+not evidence of time travel.
+
+### Joseph / Joshua 110-year pair closes two different eras
+
+Joseph:
+- dies 110 in Egypt;
+- body/bones await future return.
+
+Joshua:
+- dies 110 after land entry;
+- body buried immediately in inheritance.
+
+This creates an elegant literary contrast:
+
+**Joseph 110**
+→ dies outside land
+→ delayed body return.
+
+**Joshua 110**
+→ dies inside land
+→ immediate local burial.
+
+This is worth preserving as a possible narrative framing pair,
+but not over-claiming.
+
+---
+
+## Eleazar's death closes the priestly succession generation
+
+Eleazar:
+- son of Aaron;
+- dies;
+- buried at Gibeah associated with his son Phinehas.
+
+So the closing verses contain three major end-state deposits:
+
+**Joshua**
+→ leadership line / own inheritance.
+
+**Joseph bones**
+→ ancestral promise line / Shechem.
+
+**Eleazar**
+→ priestly line / Phinehas-associated land.
+
+This is a remarkably concentrated threefold closure.
+
+### Three institutional/genealogical routes terminate locally in the land
+
+The book closes not with another crossing,
+but with **burial/settlement**.
+
+This is an important contrast to the opening:
+
+Joshua 1:
+**Moses dead → cross boundary**.
+
+Joshua 24:
+**Joshua/Joseph/Eleazar deposited inside the land**.
+
+The transition book ends in **stabilization**, not continued transit.
+
+---
+
+## Judges 2 will deliberately repeat Joshua's dismissal/death
+
+Modern redaction analysis notes that:
+- Joshua 24 ends with dismissal/death;
+- Judges 2 repeats part of that sequence.
+
+This kind of **resumptive repetition** is a recognized editorial technique linking blocks/traditions.
+
+That is another critical control:
+repeated narrative does not automatically equal repeated historical event.
+
+Sometimes repetition is literally the seam where editors join sources.
+
+---
+
+## SECTION 28B continuous sequence — Joshua 20–24
+
+**legal implementation**
+→ 6 refuge cities
+→ 3 west +3 east
+→ gate hearing
+→ inside protection
+→ high-priest death changes exit state
+
+**distributed service network**
+→ 48 Levite towns
+→ 6 refuge nodes embedded
+→ “rest on every side” ideal summary despite local incompleteness
+
+**east/west recombination**
+→ 2.5 tribes complete westward duty
+→ fighters return east
+→ Jordan feared as identity boundary
+→ huge altar-form built
+→ west assumes rival mechanism
+→ verification delegation
+→ structure explained as **replica/witness only**
+→ civil war avoided
+→ east/west remain distinct but connected
+
+**farewell**
+→ remaining nations explicitly acknowledged
+→ land possession remains covenant-condition dependent
+
+**Shechem convergence**
+→ all leadership/tribes gather
+→ history compressed into speech
+→ choice/covenant
+→ words written in Torah book
+→ great stone erected as witness
+→ assembly disperses
+
+**threefold closure**
+→ Joshua dies age110 / buried in own inheritance
+→ Joseph's long-carried bones buried at Shechem
+→ Eleazar dies / buried in Phinehas-associated land
+→ transition era stabilizes in the land.
+
+---
+
+## SECTION 28 strongest overall findings
+
+1. Joshua 13–24 is a major correction to the total-conquest picture of Joshua 1–12.
+2. Caleb/Joshua bridge the old failed-entry generation into the settlement generation while taking different roles.
+3. Zelophehad's law shows **rule creation → refinement → implementation** across leadership replacement.
+4. Some person/genealogy traditions plausibly encode real territorial geography, a genuine precedent for person↔place representation.
+5. Shiloh proves sacred central function can move to a new coordinate.
+6. Seven unallocated territories are transformed **land → written model → central decision → land assignment**.
+7. Refuge cities enact the mature **same boundary + different phase = different permitted crossing** rule.
+8. Levite function transforms from central inner ring to distributed 48-node network.
+9. Joshua 22 gives perhaps the strongest project control yet: **same form does not imply same mechanism**.
+10. The east-Jordan altar is explicitly a **replica/witness**, not a functioning sacrificial altar.
+11. Jordan is both real geographic separation and a threatened future identity boundary.
+12. The altar-witness preserves **connection without erasing separation**.
+13. Shechem covenant converts temporary collective convergence into durable text + standing-stone memory.
+14. Witness-stone personification is covenant rhetoric, not proof of conscious material.
+15. Joseph's bones complete a uniquely long **delayed cargo / ancestral promise** route from Egypt to Shechem.
+16. Joshua and Joseph both die at 110, but the recurrence should remain a literary-number observation, not a claimed physical cycle.
+17. Joshua/Joseph/Eleazar burials create a threefold end-of-era stabilization inside the land.
+18. Joshua→Judges repetition is editorial seam evidence, another control against equating repeated story with repeated event.
+
+### Major controls
+
+- refuge cities are legal institutions, not physical safe-field mechanisms.
+- Levite network is social/cultic geography.
+- the Transjordan altar dispute reflects real historical/political identity questions.
+- altar replica explicitly demonstrates representation ≠ operation.
+- Joshua 21's complete-rest language conflicts with Joshua 13/23's remaining populations.
+- stone “hearing” is personification/treaty witness rhetoric.
+- Joseph bone transfer is mortuary/promise tradition, not temporal displacement.
+- resumptive repetition can create duplicated narratives at editorial seams.
+
+### SECTION 28 master pair / geometry register
+
+- east / west Jordan — separated but covenant-linked zones.
+- 3 refuge west / 3 east — bilateral safety network.
+- 42 ordinary Levite towns / 6 refuge towns — nested function network.
+- true central altar / Jordan replica altar — **mechanism / representation** pair.
+- Joshua / Caleb — continuity pair with divergent settlement roles.
+- physical land / written seven-part survey — object / representation pair.
+- Joshua / Joseph age110 — possible literary-age echo.
+- Joshua / Joseph / Eleazar — three closure routes.
+- current participants / future descendants — witness object preserves relation across generations.
+
+### SECTION 28 master number register
+
+- refuge cities: **6 =3+3**.
+- Levitical towns: **48 =42+6**.
+- Transjordan settlement: **2.5 tribes**.
+- remaining unallocated tribes in Joshua 18: **7**.
+- written survey portions: **7**.
+- Zelophehad daughters: **5**.
+- Caleb: 40 +45 = **85** at inheritance claim.
+- Joshua death age: **110**.
+- Joseph death age: **110**.
+- Joseph burial purchase tradition: **100 pieces of money/silver** in Joshua 24's inherited wording.
+
+### Sources logged
+
+Primary:
+- Joshua 20 — six refuge cities, gate admission, residence until high-priest death.
+- Joshua 21 — forty-eight Levitical towns; “rest on every side.”
+- Joshua 22 — Jordan altar replica/witness, explicitly not for sacrifice.
+- Joshua 23 — remaining nations.
+- Joshua 24 — Shechem covenant, Torah writing, witness stone, Joshua/Joseph/Eleazar burials.
+
+Scholarly/source-critical:
+- “How the Jerusalem Temple Was ‘Chosen’ as the Only Place of Worship” — TheTorah.
+- “Redacting the Relationship to the Transjordanian Tribes: Kinship versus Commandment” — TheTorah.
+- “The Settlement of Reuben and Gad: A Rhetorical Case for Transjordan as Part of the Promised Land” — TheTorah.
+- “Israel's Incomplete Conquest of Canaan” — TheTorah.
+- “YHWH's Covenant: Why Moses Calls Heaven and Earth as Witnesses” — comparative witness-object/treaty context.
+- “Deuteronomy's Covenant: Israel's Choice between Obedience and Destruction” — Joshua 24 covenant choice.
+- “The Prehistory of the Balaam Story” — Joshua 24 retelling as tradition layer.
+- resumptive-repetition/Wiederaufnahme scholarship on Joshua 24 → Judges 2.
+
+## SECTION 28 status
+
+**SECTION 28 — JOSHUA 13–24: COMPLETE FIRST PASS.**
+
+### Next first unfinished roadmap section
+
+Locate **Section 29 — Judges 1–8** in the full current ledger and run the anti-repeat search before beginning.
+
+
