@@ -40941,3 +40941,567 @@ Saved priorities:
 
 Before beginning Section 28, apply the anti-repeat search.
 
+---
+
+## SECTION 28 progress A — Joshua 13–19: incomplete conquest corrects the totalizing narrative, old-generation bridge figures persist, and seven remaining tribal territories are converted into a written survey then reallocated from Shiloh
+
+### Anti-repeat check
+
+The full ledger was searched first.
+
+No Section 28 progress existed.
+
+This is genuinely new work.
+
+---
+
+## Joshua 13 immediately reverses the “whole land taken” impression
+
+Joshua 11–12 closed with sweeping victory language.
+
+Joshua 13 opens by saying:
+- Joshua is old;
+- **very much land remains to be possessed**.
+
+This is one of the strongest internal controls in the Deuteronomistic History.
+
+Raw contrast:
+
+**Joshua 11–12**
+→ totalizing conquest summary.
+
+**Joshua 13**
+→ large areas still outside Israelite control.
+
+For the cosmology project this is extremely important:
+
+> **one literary layer can compress a long, incomplete process into a single total event, while another layer re-expands the unfinished reality.**
+
+This must remain a standing anti-overfitting rule.
+
+### Land-state is partial, not binary
+
+The land is not simply:
+**unconquered**
+then
+**fully conquered**.
+
+Instead:
+- some regions controlled;
+- some allocated before control;
+- some populations remain;
+- some territories change later.
+
+That is a much more realistic **graded state transition**.
+
+### East-Jordan 2.5-tribe structure persists
+
+The book confirms the Transjordanian holdings of:
+- Reuben;
+- Gad;
+- half-Manasseh.
+
+So the permanent Israelite territorial body is already asymmetrical:
+
+**2.5 tribes east**
++
+**9.5 west** in the final allocation logic.
+
+This persists from Numbers 32–34.
+
+### Levi remains a non-territorial functional component
+
+Levi does not receive a normal territorial inheritance.
+
+Its inheritance is described through:
+- cultic/service relation;
+- towns later;
+- YHWH/offerings.
+
+So one tribal component belongs to the twelvefold people while operating under a **different spatial ownership rule**.
+
+This is another useful control:
+**belonging to one system does not require identical territorial form for every component**.
+
+---
+
+## Joshua 14 — Caleb becomes a human continuity marker across the 40-year transition
+
+Caleb recalls:
+- he was **40 years old** when sent as scout;
+- **45 years** have passed since;
+- he is now **85**.
+
+This gives one of the clearest internal personal chronologies in Joshua.
+
+### Caleb links old reconnaissance to new land allotment
+
+His sequence is:
+
+**age40**
+→ scout land
+→ wilderness generation fails
+→ decades pass
+→ **age85**
+→ receives Hebron.
+
+So one body carries memory across the entire transition from:
+**failed entry generation**
+to
+**successful inheritance generation**.
+
+Classification:
+- Caleb = continuity/witness node.
+
+### Caleb / Joshua remain the paired old-generation survivors
+
+Numbers/Deuteronomy already isolated:
+- Joshua;
+- Caleb.
+
+Now:
+- Joshua allocates land;
+- Caleb receives promised holding.
+
+The pair's functions diverge:
+
+**Joshua**
+→ national successor / allocator.
+
+**Caleb**
+→ surviving witness / claimant / local recipient.
+
+This is a good example of:
+**same continuity pair → different later roles**.
+
+---
+
+## Joshua 15–17 — conquest remains incomplete inside individual tribal territories
+
+Judah:
+- does not remove Jebusites from Jerusalem in the final text.
+
+Ephraim:
+- does not remove Canaanites from Gezer.
+
+Manasseh:
+- likewise contains remaining Canaanite populations/cities.
+
+This directly conflicts with the sweeping earlier conquest formulas.
+
+Again:
+**macro-summary**
+and
+**local-state detail**
+are not identical.
+
+### Jerusalem becomes an especially strong contradiction
+
+Joshua 10's conquest summary implies southern domination including Jerusalem's king.
+
+Joshua 15 says:
+- Jebusites remain in Jerusalem “to this day.”
+
+Judges will preserve another version.
+
+Therefore:
+do not build a literal exact conquest timeline from Joshua 1–12 alone.
+
+---
+
+## Joshua 17 — Zelophehad's daughters finally receive the routed inheritance
+
+The five daughters:
+- appear before Eleazar;
+- Joshua;
+- leaders;
+- invoke the command through Moses;
+- receive inheritance among father's brothers.
+
+This completes the three-stage legal sequence:
+
+**Numbers 27**
+→ daughters create new inheritance route.
+
+**Numbers 36**
+→ route constrained so land stays in tribe.
+
+**Joshua 17**
+→ rule is executed in actual territorial allocation.
+
+This is a very strong:
+**rule creation → rule refinement → rule implementation**
+chain.
+
+### Legal information survives leadership replacement
+
+The promise was made:
+- under Moses.
+
+It is executed:
+- under Joshua/Eleazar.
+
+Therefore:
+**law outlives original lawgiver's body**.
+
+That strongly parallels Deuteronomy's:
+**Moses → written Torah/institutions → future enactment**.
+
+### Five women may also preserve historical geography
+
+Modern historical-geographic work notes that several daughters' names correspond to known/possible Manassite place names.
+
+This raises a source-history possibility:
+the family genealogy may encode territorial geography.
+
+That is highly relevant to the project because it demonstrates a real scholarly case where:
+
+**persons/genealogy**
+may represent
+**places/territorial units**.
+
+This does **not** prove all biblical people are landscape/cosmic geometry.
+
+But it is an important precedent for the user's person-as-structure hypothesis.
+
+### Manasseh receives ten portions in the final account
+
+The text says:
+- **10 portions** fall to Manasseh,
+because daughters as well as sons inherit.
+
+The precise genealogical/territorial arithmetic is textually complex.
+
+Record the count,
+but do not force it into a 10-node cosmic model.
+
+---
+
+## Joseph tribes complain that one lot is insufficient
+
+Ephraim/Manasseh complain:
+- they are numerous;
+- one lot/allotment is not enough.
+
+Joshua tells them:
+- clear forest/hill country;
+- expand into it;
+- drive out Canaanites despite iron chariots.
+
+This is a useful system principle:
+
+**allocation boundary**
+can be modified by
+**work/capacity**.
+
+The map is not entirely passive destiny.
+
+### Same structural identity can expand its occupied area
+
+The Joseph body:
+- remains one ancestry group;
+- expands practical territory through clearing/conquest.
+
+Again:
+**identity persistence**
+with
+**changing occupied geometry**.
+
+---
+
+## Joshua 18 — Shiloh becomes the new central Tent coordinate
+
+The whole assembly gathers at:
+**Shiloh**.
+
+There:
+- Tent of Meeting is established.
+
+This is a major sacred-coordinate shift.
+
+Earlier important centres include:
+- Sinai/Horeb;
+- Gilgal;
+- Ebal/Gerizim.
+
+Now:
+**Shiloh** becomes the central meeting/allocation site.
+
+### This is a powerful control against one immutable geographic “gate”
+
+The sacred/interface role moves:
+
+**mountain**
+→ portable tent
+→ various camp locations
+→ **Shiloh**.
+
+The role persists,
+the physical coordinate changes.
+
+That is precisely why mature Vardath work must distinguish:
+**interface function**
+from
+**one permanent physical place**.
+
+### “Chosen place” tradition is historically mobile
+
+Modern scholarship notes tension among:
+- Ebal/Gerizim;
+- Shiloh;
+- later Jerusalem;
+as central cultic sites in biblical tradition.
+
+This strongly suggests:
+the central-place concept developed historically.
+
+Do not identify any one biblical sanctuary coordinate as a fixed cosmic axis without independent evidence.
+
+---
+
+## Seven tribes still lack assigned territory
+
+At Shiloh:
+- **7 tribes** remain without fully assigned inheritance.
+
+Joshua challenges them to complete the process.
+
+This makes the land-allotment system temporarily:
+
+**5 already settled/handled tribal units**
++
+**7 remaining**
+in the simplified final narrative accounting.
+
+Do not force 5+7 into hidden cosmology;
+the important point is **incomplete allocation state**.
+
+### Survey transforms physical land into written information
+
+Joshua orders surveyors to:
+- walk through land;
+- describe it;
+- record towns/territory;
+- divide it into **7 portions**;
+- return the description to Joshua at Shiloh.
+
+This is one of the most explicit:
+**world/land → information model**
+sequences in the Bible.
+
+Raw transformation:
+
+**physical territory**
+→ human traversal/measurement
+→ written document/map-description
+→ **7 information units**
+→ brought to central node.
+
+### Central node then converts information back into territorial assignment
+
+At Shiloh:
+- Joshua casts lots before YHWH;
+- seven portions are allocated to seven tribes.
+
+So the full loop is:
+
+**land**
+→ survey
+→ writing
+→ central Shiloh
+→ lot decision
+→ **land assignment**.
+
+This is an exceptionally useful information-processing analogy.
+
+### Map is not territory — source-level distinction
+
+The process itself distinguishes:
+- physical land;
+- written representation of land;
+- legal allocation of land.
+
+This is a powerful control for the entire project:
+
+> **representation/projection is not identical to the underlying physical object.**
+
+The Bible itself can move deliberately between:
+**territory**
+and
+**written model of territory**.
+
+### Seven-part map may be an idealized post-facto construction
+
+Modern scholarship often regards the land-by-lot system as:
+- idealized;
+- retrospective;
+- utopian/post-facto explanation of tribal territories.
+
+The real historical settlement was likely much messier.
+
+Again:
+**clean geometry may belong to literary administration rather than original physical process**.
+
+---
+
+## Three surveyors per unit — distributed sensing before central recombination
+
+Joshua tells the tribes to provide:
+- **3 men** for the survey task in the received wording.
+
+The exact total depends on how the phrase is parsed/applied.
+
+The structural point is secure:
+**multiple field observers**
+→ distributed data collection
+→ written recombination at centre.
+
+This resembles:
+- 12 scouts;
+- 2 spies;
+- survey teams.
+
+The Bible repeatedly models knowledge acquisition as:
+**central question → distributed observers → return information**.
+
+---
+
+## Joshua 19 — seven-part allocation completes at Shiloh
+
+The remaining tribal allotments are assigned.
+
+At the end:
+- Joshua receives his own inheritance.
+
+This ordering matters:
+
+**community allocation first**
+→ **leader receives personal holding last**.
+
+The central allocator is not presented as taking priority.
+
+### Joshua's personal inheritance closes the successor's transition
+
+Joshua:
+- began as Moses' assistant;
+- became crosser/leader;
+- allocated the land;
+- only after distributions receives his own holding.
+
+So his role moves:
+
+**successor/operator**
+→ **allocator**
+→ **settled participant**.
+
+This is a long personal state transition.
+
+### Dan's allotment tradition is not stable
+
+The Dan material includes movement/expansion associated with Leshem/Laish in the final text.
+
+Judges preserves a fuller migration tradition.
+
+This is another reminder:
+tribal maps are products of historical development and textual harmonization.
+
+---
+
+## SECTION 28A continuous sequence — Joshua 13–19
+
+**conquest correction**
+→ Joshua old
+→ much land still remains
+→ eastern holdings confirmed
+→ Levi under different inheritance rule
+
+**old-generation continuity**
+→ Caleb age40 scout
+→ 45-year interval
+→ age85 receives Hebron
+→ Joshua/Caleb bridge old and new phases
+
+**local incompleteness**
+→ Jerusalem/Jebusites remain
+→ Gezer Canaanites remain
+→ Manasseh enclaves remain
+
+**legal continuity**
+→ five Zelophehad daughters return
+→ Mosaic ruling executed under Joshua/Eleazar
+→ genealogy may encode geographic units
+
+**central-coordinate shift**
+→ whole assembly to Shiloh
+→ Tent established there
+
+**incomplete allocation**
+→ 7 tribes still without inheritance
+→ field survey ordered
+→ land traversed
+→ written into 7 portions
+→ information returned to Shiloh
+→ lots cast
+→ territorial assignment issued
+
+**completion**
+→ seven allotments distributed
+→ Joshua receives his own holding last.
+
+---
+
+## SECTION 28A strongest Vardath correspondences
+
+1. “Complete conquest” immediately resolves into **graded/incomplete land state**.
+2. Joshua/Caleb persist as bridge nodes while generation/system changes.
+3. Same territorial system retains identity despite remaining foreign populations and shifting boundaries.
+4. Zelophehad sequence proves a rule can survive the original lawgiver and be enacted by successor institutions.
+5. Some person/genealogy traditions may encode actual geography — a real scholarly precedent for person↔place representation.
+6. Sacred/interface coordinate moves to **Shiloh** while function persists.
+7. Seven remaining tribal territories are converted from **physical land → written seven-part model → central allocation → physical land ownership**.
+8. The text itself sharply distinguishes underlying territory from its written representation.
+9. Distributed field observation is recombined at a central decision node.
+10. Clean land-allotment geometry is likely at least partly idealized/post-facto, a major anti-overfitting control.
+
+### Major controls
+
+- land allotment is legal/territorial, not cosmic world mapping.
+- “seven portions” follows remaining tribal administration, not proof of seven hidden worlds.
+- tribal/person names can represent territories in some contexts, but this cannot be generalized automatically.
+- Shiloh centrality is historical cult geography.
+- post-facto idealized mapping may create cleaner geometry than historical settlement.
+- incomplete conquest traditions contradict a simple total-reset narrative.
+
+### Pair / number register
+
+- Transjordan allocation: **2.5 tribes**.
+- western allocation logic: **9.5 tribes**.
+- Caleb scout age: **40**.
+- elapsed interval: **45 years**.
+- Caleb inheritance age: **85**.
+- Zelophehad daughters: **5**.
+- Manasseh portions in final account: **10**.
+- remaining unallotted tribes at Shiloh: **7**.
+- written survey portions: **7**.
+- survey instruction: **3 men** per specified tribal unit in the received wording.
+- central sacred coordinate: Shiloh/Tent.
+
+### Sources logged
+
+Primary:
+- Joshua 13–19.
+
+Scholarly/source-critical:
+- “Israel's Incomplete Conquest of Canaan” — TheTorah.
+- “The Israelite Conquest of Jerusalem in the Bible: When and Who?” — TheTorah.
+- “The Daughters of Zelophehad: A Historical-Geographical Approach” — TheTorah.
+- “Zelophehad's Daughters Challenge the Law and Moses Is Speechless” — TheTorah.
+- “Dividing the Land by Lot: The Bible's Postfacto, Is Plato's Utopia” — TheTorah.
+- “How the Jerusalem Temple Was ‘Chosen’ as the Only Place of Worship” — Shiloh/central-place development.
+- “Joshua Is Appointed Leader Three Times: But Is He in Charge?” — Joshua/Eleazar redactional tension.
+
+**Section 28 remains in progress.**
+
+Next under anti-repeat protocol:
+**Joshua 20–24 — refuge cities and Levite-city implementation, east-Jordan altar crisis as boundary/identity misunderstanding, altar as witness not sacrifice route, Joshua farewell and remaining nations, Shechem covenant, standing witness stone, writing in Torah scroll, Joshua/Joseph/Eleazar deaths, and transition into Judges.**
+
