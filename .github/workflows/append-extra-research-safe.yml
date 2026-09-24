@@ -1,0 +1,76 @@
+name: Safely append EXTRA research
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research-staging/safe-extra-research-*.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extra-research-append
+  cancel-in-progress: false
+
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Append only if section is still absent
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3 4 5 6 7 8; do
+            echo "safe append attempt $attempt"
+            git fetch origin main
+            git reset --hard origin/main
+            shopt -s nullglob
+            files=(research-staging/safe-extra-research-*.md)
+
+            if [ ${#files[@]} -eq 0 ]; then
+              echo "No safe carriers remain."
+              exit 0
+            fi
+
+            for f in "${files[@]}"; do
+              heading="$(grep -m1 '^# SECTION ' "$f" || true)"
+              if [ -z "$heading" ]; then
+                echo "Refusing unsafe carrier without a unique # SECTION heading: $f"
+                exit 2
+              fi
+
+              if grep -Fqx -- "$heading" book/EXTRA-RESEARCH.md; then
+                echo "Section already exists; dropping redundant carrier: $heading"
+                rm "$f"
+              else
+                echo "Appending new section: $heading"
+                cat "$f" >> book/EXTRA-RESEARCH.md
+                rm "$f"
+              fi
+            done
+
+            git add -A
+            if git diff --cached --quiet; then
+              echo "Nothing to commit."
+              exit 0
+            fi
+
+            git commit -m "Safely append staged EXTRA research"
+            if git push origin main; then
+              echo "safe append push succeeded"
+              exit 0
+            fi
+
+            echo "remote moved; retrying from newest main"
+          done
+
+          echo "safe append could not acquire a clean push window"
+          exit 1
