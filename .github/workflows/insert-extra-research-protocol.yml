@@ -40,58 +40,54 @@ jobs:
                   raise SystemExit("Could not find top-file insertion anchor")
 
               pos += len(insert_after)
-              protocol = r'''
-
----
-
-## READ FIRST — CONTINUATION PROTOCOL
-
-These rules govern every continuation of the 88-text Bible investigation.
-
-1. **There is one authoritative research document:** `book/EXTRA-RESEARCH.md`. Temporary `research-staging/extra-research-*.md` files are only append carriers. They are not separate research documents and must disappear after a successful append.
-
-2. **The reconstructed 88-text order is intentional.** A previous research pass arranged the books/texts in the order that best fits the developing narrative/process sequence. Preserve that order unless the user explicitly asks to revise it. Do not revert to ordinary Protestant, Catholic, Ethiopian-canonical, publication, or guessed chronological order merely because one is more familiar.
-
-3. **The research order is a process-reading order, not a claim that the Ethiopian Orthodox canon itself contains 88 canonical books.** The canonical baseline and comparison insertions remain separately labelled elsewhere in this file.
-
-4. **Do not use checkpoints to determine progress.** Old checkpoint headings may remain as historical archive text, but they are not the authority for what is complete, what was appended, or what comes next.
-
-5. **Actual research content determines progress.** Before continuing, inspect the live tail and relevant earlier research blocks. Determine the last book/chapter/text actually researched in substance, then continue with the next unfinished item in the reconstructed 88-text order.
-
-6. **Do not add new checkpoint sections.** Each research append should contain the actual research, sources, controls, process map, pairs, timing/numbers and the explicit next unfinished block where useful, but not a checkpoint summary used as a progress surrogate.
-
-7. **Repository state outranks chat memory.** Chat limits, freezes and delayed workflow appends can make the conversation appear behind the repository. Before every continuation, verify the live `EXTRA-RESEARCH.md` tail and search the recent archive for overlapping chapter ranges so completed work is not repeated.
-
-8. **Anti-duplication rule:** before appending a new block, search the live file for the same book/chapter range and distinctive section title. If overlapping research already exists, compare the actual research first, preserve only genuinely new findings, and do not append a second full pass.
-
-9. **Append as research is completed.** Do not hold a long session's findings only in chat. Stage each completed manageable block promptly so freezes/chat limits do not lose work.
-
-10. **Every append must go green.** After staging, verify:
-   - the temporary staging carrier has disappeared;
-   - the append workflow/check completed successfully;
-   - the intended research appears in `book/EXTRA-RESEARCH.md` exactly once.
-   If a run is red, inspect the failure, recover any stranded research, retry/repair, and verify green before treating the block as safely stored.
-
-11. **Cancelled Pages deployments caused by rapid successive commits are not research-append failures.** The required green check is the relevant append/cleanup workflow. Still verify the live file contents directly.
-
-12. **Follow the actual reconstructed order even when textual witnesses differ internally.** For books such as Ezekiel, preserve important MT / Septuagint / Papyrus 967 process-order variants inside the book analysis, but do not let those internal variants reorder the 88-text research corpus unless the reconstructed roadmap itself says so.
-
-13. **Primary objective:** build a continuous transformation timeline of the geometries and processes across the 88-text corpus in relation to Vardath Cosmology. Names remain recorded, but the main target is the mechanism: paired forces/figures, projection states, broad lattice/support state, tension/orientation change, convergence, possible throat/gate, differential transfer, catastrophe/failure modes, reopening/reassembly and successor stable state.
-
-14. **Fingertrap control:** do not equate every gathering, net, rod, tree, melting, felling, wall opening or collapse with the fingertrap. The strict physical analogue requires a connected broad weave to change orientation into a narrow axial/throat state while retaining connectivity, followed by reopening/re-expansion. Destructive melting, fracture, felling and disassembly are separate process classes.
-
-15. **All world-layers are inhabited in the working Vardath model.** From our world, the world above corresponds to our future and the world below to our past; each world has its own present. Gate-open intervals allow interaction between neighboring world-turns. Do not describe upper/lower worlds as empty scaffolding.
-
-16. **The spiderweb is the broad state; the fingertrap/rod is the contracted/reoriented state of the same underlying lattice hypothesis.** Track how stories may describe either state, the transition between them, or only surrounding processes.
-
-17. **Paired figures are tested, not assumed.** A pair may be separate historical/literary people, split halves, polarity pair, mirrored state, successor phase, upper/lower presentation, operator/apparatus distinction, or two branches from one source. Preserve alternatives until the process evidence discriminates.
-
-18. **Textual and historical controls stay visible.** Structural correspondence is not physical proof. Record manuscript differences, primary literary meanings, chronology problems and negative controls alongside Vardath-compatible process readings.
-
----
-
-'''
-              text = text[:pos] + protocol + text[pos:]
+              protocol_lines = [
+              "---",
+              "",
+              "## READ FIRST — CONTINUATION PROTOCOL",
+              "",
+              "These rules govern every continuation of the 88-text Bible investigation.",
+              "",
+              "1. **There is one authoritative research document:** `book/EXTRA-RESEARCH.md`. Temporary `research-staging/extra-research-*.md` files are only append carriers. They are not separate research documents and must disappear after a successful append.",
+              "",
+              "2. **The reconstructed 88-text order is intentional.** A previous research pass arranged the books/texts in the order that best fits the developing narrative/process sequence. Preserve that order unless the user explicitly asks to revise it. Do not revert to ordinary Protestant, Catholic, Ethiopian-canonical, publication, or guessed chronological order merely because one is more familiar.",
+              "",
+              "3. **The research order is a process-reading order, not a claim that the Ethiopian Orthodox canon itself contains 88 canonical books.** The canonical baseline and comparison insertions remain separately labelled elsewhere in this file.",
+              "",
+              "4. **Do not use checkpoints to determine progress.** Old checkpoint headings may remain as historical archive text, but they are not the authority for what is complete, what was appended, or what comes next.",
+              "",
+              "5. **Actual research content determines progress.** Before continuing, inspect the live tail and relevant earlier research blocks. Determine the last book/chapter/text actually researched in substance, then continue with the next unfinished item in the reconstructed 88-text order.",
+              "",
+              "6. **Do not add new checkpoint sections.** Each research append should contain the actual research, sources, controls, process map, pairs, timing/numbers and the explicit next unfinished block where useful, but not a checkpoint summary used as a progress surrogate.",
+              "",
+              "7. **Repository state outranks chat memory.** Chat limits, freezes and delayed workflow appends can make the conversation appear behind the repository. Before every continuation, verify the live `EXTRA-RESEARCH.md` tail and search the recent archive for overlapping chapter ranges so completed work is not repeated.",
+              "",
+              "8. **Anti-duplication rule:** before appending a new block, search the live file for the same book/chapter range and distinctive section title. If overlapping research already exists, compare the actual research first, preserve only genuinely new findings, and do not append a second full pass.",
+              "",
+              "9. **Append as research is completed.** Do not hold a long session's findings only in chat. Stage each completed manageable block promptly so freezes/chat limits do not lose work.",
+              "",
+              "10. **Every append must go green.** After staging, verify: the temporary staging carrier has disappeared; the append workflow/check completed successfully; and the intended research appears in `book/EXTRA-RESEARCH.md` exactly once. If a run is red, inspect the failure, recover any stranded research, retry/repair, and verify green before treating the block as safely stored.",
+              "",
+              "11. **Cancelled Pages deployments caused by rapid successive commits are not research-append failures.** The required green check is the relevant append/cleanup workflow. Still verify the live file contents directly.",
+              "",
+              "12. **Follow the actual reconstructed order even when textual witnesses differ internally.** For books such as Ezekiel, preserve important MT / Septuagint / Papyrus 967 process-order variants inside the book analysis, but do not let those internal variants reorder the 88-text research corpus unless the reconstructed roadmap itself says so.",
+              "",
+              "13. **Primary objective:** build a continuous transformation timeline of the geometries and processes across the 88-text corpus in relation to Vardath Cosmology. Names remain recorded, but the main target is the mechanism: paired forces/figures, projection states, broad lattice/support state, tension/orientation change, convergence, possible throat/gate, differential transfer, catastrophe/failure modes, reopening/reassembly and successor stable state.",
+              "",
+              "14. **Fingertrap control:** do not equate every gathering, net, rod, tree, melting, felling, wall opening or collapse with the fingertrap. The strict physical analogue requires a connected broad weave to change orientation into a narrow axial/throat state while retaining connectivity, followed by reopening/re-expansion. Destructive melting, fracture, felling and disassembly are separate process classes.",
+              "",
+              "15. **All world-layers are inhabited in the working Vardath model.** From our world, the world above corresponds to our future and the world below to our past; each world has its own present. Gate-open intervals allow interaction between neighboring world-turns. Do not describe upper/lower worlds as empty scaffolding.",
+              "",
+              "16. **The spiderweb is the broad state; the fingertrap/rod is the contracted/reoriented state of the same underlying lattice hypothesis.** Track how stories may describe either state, the transition between them, or only surrounding processes.",
+              "",
+              "17. **Paired figures are tested, not assumed.** A pair may be separate historical/literary people, split halves, polarity pair, mirrored state, successor phase, upper/lower presentation, operator/apparatus distinction, or two branches from one source. Preserve alternatives until the process evidence discriminates.",
+              "",
+              "18. **Textual and historical controls stay visible.** Structural correspondence is not physical proof. Record manuscript differences, primary literary meanings, chronology problems and negative controls alongside Vardath-compatible process readings.",
+              "",
+              "---",
+              ""
+              ]
+              protocol = "\n".join(protocol_lines)
+              text = text[:pos] + "\n" + protocol + text[pos:]
               path.write_text(text, encoding="utf-8")
 
       - name: Commit protocol insertion
