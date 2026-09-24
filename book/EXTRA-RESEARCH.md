@@ -124259,3 +124259,625 @@ Priority:
 - recurring festival/calendar logic;
 - determine whether any Psalm supplies a timed cosmic recurrence rather than only liturgical/poetic recurrence;
 - compare cautiously with the user's Archaix timing work and do not force numerical matches.
+
+
+---
+
+# SECTION 45 progress G — time / cycle / day-night / generations / memory family
+## The Psalms strongly encode recurring natural, liturgical and memory cycles, but they do not provide one clear cosmic catastrophe recurrence interval. The strongest true cycles are day↔night, moon/seasons, generation↔generation transmission, remember↔forget↔repeat in the historical Psalms, and human morning-flourish→evening-wither. Psalm 90's “thousand years” is a scale-comparison, not a 1,000-year event clock.
+
+This pass continues **Section 45 — Psalms** with the stored **time / cycle / day-night / generations / memory / calendar / recurring-return family**.
+
+Primary targets:
+- Psalms **19, 30, 74, 78, 89, 90, 102, 104, 105, 106, 111, 119, 136, 145**.
+
+The key question is strict:
+
+> Does any Psalm supply a usable timed recurrence interval for a world-reset event?
+
+Current answer after this pass:
+**not securely**.
+
+The Psalms give many cycles.
+They do not give one explicit catastrophic recurrence period comparable to a chronology table.
+
+---
+
+# Psalm 19 — day hands information to day; night hands information to night
+
+The opening sequence is:
+
+**day → day**
+speech/proclamation.
+
+**night → night**
+knowledge.
+
+This is one of the cleanest continuous-cycle formulas in Psalms.
+
+The emphasis is:
+**unbroken succession**.
+
+No catastrophic break is implied.
+
+The solar circuit then gives:
+**rise**
+→ traverse heavens
+→ set
+→ repeat.
+
+This is true recurring cosmological rhythm.
+
+---
+
+# Psalm 30 — night/morning becomes a state-cycle
+
+Psalm 30 gives:
+
+**weeping may remain for night**
+→ **joy comes in morning**.
+
+This is not a literal guaranteed 24-hour rescue law.
+
+But it uses the daily cycle as a transformation template:
+
+dark/low state
+→ morning reversal.
+
+This becomes a recurring Psalmic time metaphor.
+
+---
+
+# Psalm 74 — day/night and sun/moon are fixed-order pairs
+
+Psalm 74 says:
+- day belongs to God;
+- night too;
+- luminaries/sun established;
+- boundaries of earth fixed;
+- summer and winter made.
+
+This is a strong paired-cycle catalogue:
+
+day ↔ night
+sun/moon
+summer ↔ winter.
+
+The emphasis is:
+**ordered alternation**.
+
+Not:
+catastrophic recurrence.
+
+---
+
+# Psalm 78 — failure repeats because memory transmission fails
+
+Psalm 78 is one of the most important time texts because it explicitly addresses:
+**generation → next generation**.
+
+The aim is:
+- tell children;
+- they tell their children;
+- future generation remembers;
+- they do not repeat ancestors' rebellion.
+
+But the historical body repeatedly shows:
+
+divine act
+→ people experience
+→ people forget
+→ rebellion
+→ distress
+→ remember/search
+→ deliverance
+→ forget again.
+
+This is a genuine behavioral cycle.
+
+---
+
+# Psalm 78 — recurrence is memory-driven, not mechanically timed
+
+The cycle does not recur every fixed number of years.
+
+Its trigger is:
+**failure of memory/trust**.
+
+That makes it:
+**state-dependent recurrence**.
+
+This is very important for later comparison.
+
+A repeated pattern does not require a clock period.
+
+---
+
+# Psalms 105 and 106 — paired memory models
+
+These Psalms work almost like opposite historical memories.
+
+### Psalm 105
+emphasizes:
+**remember covenant / divine faithful acts**.
+
+### Psalm 106
+emphasizes:
+**people repeatedly forget / rebel**.
+
+Together:
+
+**divine memory**
+↔
+**human forgetfulness**.
+
+This is one of the strongest two-state memory systems in the Psalter.
+
+---
+
+# Psalm 106 — repeated rebellion/deliverance forms a genuine cycle
+
+The structure repeatedly returns to:
+
+gift/rescue
+→ rebellion
+→ judgment/distress
+→ cry/remember
+→ mercy/deliverance
+→ rebellion again.
+
+This is the closest the historical Psalms come to a “reset cycle.”
+
+But it is:
+**covenantal-historical**
+rather than
+**cosmic-mechanical**.
+
+No fixed interval is supplied.
+
+---
+
+# Psalm 89 — “forever” language collides with historical collapse
+
+Psalm 89 repeatedly uses long-duration covenant language:
+- forever;
+- generations;
+- enduring throne.
+
+Then the lament says the royal state appears cast down.
+
+This creates a very important time tension:
+
+**promised continuity**
+vs
+**experienced interruption**.
+
+So “forever” in Psalmic royal language must be handled as covenantal/theological duration language, not naïve stopwatch chronology.
+
+---
+
+# Psalm 90 — divine time and human time are placed on radically different scales
+
+Psalm 90 says:
+
+**1,000 years**
+in divine sight
+≈
+**yesterday when past**
+or
+**a watch in the night**.
+
+This is a scale comparison.
+
+It means:
+humanly enormous duration
+→ small from divine perspective.
+
+It does **not** establish:
+**1 divine day = exactly 1,000 Earth years**.
+
+The grammar is comparative, not a conversion table.
+
+This must be preserved as a hard control.
+
+---
+
+# Psalm 90 — human life cycle is morning grass
+
+Human life:
+
+morning
+→ grass renewed/flourishing.
+
+evening
+→ fades/withers.
+
+That compresses a lifetime into one day-image.
+
+Again:
+poetic scale compression.
+
+This proves Psalm 90 is comfortable mapping:
+**long process**
+onto
+**short cycle image**.
+
+So numbers in the Psalm cannot be assumed mechanically literal in every layer.
+
+---
+
+# Psalm 90 — seventy/eighty years is an observed human span, not cosmic period
+
+The Psalm gives:
+**70 years**
+or
+**80 if strong**.
+
+This is ordinary lifespan reflection.
+
+It should not be used as:
+- yuga length;
+- catastrophe interval;
+- hidden 80-year cosmic cycle.
+
+The text's own purpose is:
+**human brevity**
+and
+**wisdom through counting days**.
+
+---
+
+# Psalm 90 — “make us glad as many days/years as afflicted” is balancing, not recurrence schedule
+
+The prayer asks for joy corresponding to affliction duration.
+
+This is:
+**symmetry of restoration**.
+
+Not:
+prediction of alternating equal-length world ages.
+
+Still, the idea of:
+**negative duration ↔ compensating positive duration**
+is worth recording as a time-state pair.
+
+---
+
+# Psalm 102 — human generations pass while cosmic order is contrasted with enduring source
+
+Psalm 102 contrasts:
+- human days;
+- generations;
+- heavens/earth wearing out like garment;
+- God enduring.
+
+The heavens and earth can:
+**wear out / be changed like clothing**.
+
+That is a genuine large-scale transformation image.
+
+But no period is supplied.
+
+So:
+**cosmic change**
+is present,
+**cosmic schedule**
+is not.
+
+---
+
+# Psalm 104 — strongest ecological cycle map
+
+Psalm 104 gives:
+
+moon
+→ marks phases/seasons.
+
+sun
+→ knows setting.
+
+darkness/night
+→ nocturnal animals emerge.
+
+sunrise
+→ animals withdraw.
+
+humans
+→ go to work until evening.
+
+This is a very clean **phase-separated ecological cycle**.
+
+Different populations occupy the same world differently depending on the time-state.
+
+---
+
+# Psalm 104 — time-state changes adjacency/activity without moving the world
+
+Night:
+wild animals occupy active field.
+
+Day:
+they withdraw;
+humans occupy work field.
+
+The geography remains.
+
+The **active relational field** changes.
+
+This is another excellent small-scale control for the user's idea that:
+**same place can enter a different state when the temporal phase changes**.
+
+But it remains ordinary day/night ecology.
+
+---
+
+# Psalm 104:19 does not prove a specific lunar cult calendar
+
+Modern scholarship on Psalm 104:19 cautions that:
+**moon marking mo'adim**
+need not mean the Psalm is choosing a particular cultic lunar calendar.
+
+A strong interpretation is:
+**moon marks distinct phases/seasons in natural order**.
+
+This is directly relevant to our method:
+do not turn one “season” word into an undocumented calendar system.
+
+---
+
+# Psalm 119 — recurrence is structured around continuous rule-memory
+
+Psalm 119 repeatedly cycles:
+distress
+→ remember word;
+instruction
+→ path;
+forgetting threat
+→ renewed meditation.
+
+Its famous acrostic structure gives a complete alphabetic frame.
+
+But:
+alphabetic completeness
+is literary architecture,
+not time chronology.
+
+The Psalm is valuable for:
+**recurrent internal recalibration by remembered rule**.
+
+---
+
+# Psalm 136 — repetition creates liturgical periodicity, not chronological periodicity
+
+The repeated refrain:
+**steadfast love endures forever**
+turns historical events into a rhythmic memory structure.
+
+The repeated phrase creates:
+**ritual recurrence**.
+
+This should not be mistaken for:
+**historical events themselves recurring at fixed intervals**.
+
+Important distinction:
+**repeated telling ≠ repeated event**.
+
+---
+
+# Psalm 145 — generation hands praise to generation
+
+Psalm 145 gives:
+
+**one generation**
+→ commends works
+→ **another generation**.
+
+This is successful transmission.
+
+Compare Psalm 78:
+transmission is commanded because failure to remember causes repeated rebellion.
+
+So:
+
+### Psalm 145
+memory chain succeeds.
+
+### Psalm 78/106
+memory chain fails.
+
+That pair is extremely useful.
+
+---
+
+# natural cycles versus historical cycles
+
+The Psalms contain at least four time-process classes:
+
+## Class 1 — astronomical/ecological cycles
+day/night;
+sunrise/sunset;
+moon phases;
+seasons.
+
+## Class 2 — human life cycles
+birth;
+morning-flourish;
+aging;
+dust/death;
+generation replacement.
+
+## Class 3 — historical-memory cycles
+rescue;
+forget;
+rebel;
+distress;
+remember;
+rescue.
+
+## Class 4 — liturgical repetition
+refrain;
+festival;
+daily/ongoing praise;
+retelling.
+
+Only Class 1 is strongly periodic in the physical sense.
+
+Even there, the Psalms do not supply a long catastrophe interval.
+
+---
+
+# SECTION 45G timing matrix
+
+## day / night
+True physical recurrence:
+**very strong**.
+
+---
+
+## moon / seasons
+True natural periodicity:
+**strong**.
+
+Exact ancient calendrical system from Psalms alone:
+**not secure**.
+
+---
+
+## 1,000 years / one day-watch comparison
+Scale metaphor:
+**very strong**.
+
+Conversion formula:
+**unsupported**.
+
+---
+
+## 70 / 80 years
+Human lifespan estimate:
+**strong source fact**.
+
+Cosmic cycle:
+**unsupported**.
+
+---
+
+## generation → generation
+Information recurrence:
+**very strong**.
+
+Fixed time length:
+**not given**.
+
+---
+
+## rebellion → rescue cycle
+Historical/theological recurrence:
+**very strong**.
+
+Fixed interval:
+**absent**.
+
+---
+
+# What Section 45G adds to the master Bible/Vardath timeline
+
+1. **The Psalms contain many real cycles, but not one clear long-period catastrophe clock.**
+2. **Psalm 19 gives continuous day→day and night→night information succession.**
+3. **Psalm 74 explicitly pairs day/night and summer/winter as established alternations.**
+4. **Psalm 78 gives a true repeating historical mechanism:** experience → forget → rebel → distress → remember → rescue.
+5. That recurrence is **state/memory-driven**, not time-period-driven.
+6. **Psalms 105/106 create a strong memory pair:** divine remembering versus human forgetting.
+7. **Psalm 89 proves “forever” language can coexist with apparent historical interruption**, so duration terms must be read in genre.
+8. **Psalm 90's thousand years is a comparison of scale, not a 1,000-year conversion rule.**
+9. **Psalm 90's 70/80 years concerns human lifespan.**
+10. **Psalm 90 compresses a life into morning→evening grass**, demonstrating deliberate poetic time-scaling.
+11. **Psalm 102 allows cosmic-scale wear/change of heavens and earth but gives no recurrence interval.**
+12. **Psalm 104 gives the strongest ordinary phase-cycle model:** moon/seasons + sun/night + alternating animal/human activity.
+13. **Psalm 104 shows the same geography supporting different active populations at different time phases**, a useful small-scale analogy for state-dependent world behavior.
+14. **Psalm 104:19 should not be used to force a specific ancient lunar religious calendar.**
+15. **Psalm 119 is recurrent rule-memory, not clock chronology.**
+16. **Psalm 136 demonstrates liturgical recurrence:** repeated telling must not be confused with repeated event.
+17. **Psalm 145 gives successful generation-to-generation information transfer**, contrasting Psalm 78's memory failure.
+18. The Psalms therefore distinguish:
+   physical cycles,
+   life cycles,
+   historical-behavioral cycles,
+   liturgical cycles.
+19. **None securely supplies an Archaix-style long catastrophe interval by itself.**
+20. Any numerical comparison to Archaix chronology must therefore come from a later cross-text synthesis, not from forcing Psalm 90 or Psalm 104.
+
+---
+
+# SECTION 45G number / timing register
+
+Record with controls:
+
+- Psalm 90:
+  **1,000 years** compared to yesterday / night watch.
+- Psalm 90:
+  ordinary life **70 / 80 years**.
+- Psalm 104:
+  moon phases/seasons;
+  daily sun/night cycle.
+- historical Psalms:
+  many generations, but no standardized generation length supplied.
+- Psalm 136:
+  repeated refrain is liturgical structure, not a chronological count.
+
+No secure long-cycle period found in this block.
+
+---
+
+# SECTION 45G textual / historical controls
+
+- Biblical “forever” language varies by genre and covenant context.
+- Psalm 90's thousand-year image is explicitly comparative.
+- Ancient “watch in the night” length varied historically; the comparison is rhetorical regardless.
+- Psalm 104's **mo'ed** can mean appointed time/phase and should not automatically be read as a technical festival-calendar statement.
+- Historical Psalms reorder and theologize earlier narratives; they are memory texts, not neutral chronological annals.
+- Psalms 78, 105 and 106 should be read as distinct theological retellings, not merged into one sequence.
+- Repetition in liturgy creates communal memory and identity; it does not prove event periodicity.
+- The Archaix comparison must remain a later external test, not a premise used to interpret Psalm numbers.
+
+### Sources logged for Section 45G
+
+Primary:
+- Psalm 90 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+90&version=NRSVUE
+- Psalm 104 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+104&version=NRSVUE
+- related primary texts checked across Psalms 19, 30, 74, 78, 89, 102, 105, 106, 119, 136, 145.
+
+Scholarship:
+- Jonathan Ben-Dov, **“Psalm 104:19, Ben-Sirah and the history of calendars in ancient Israel,”** on mo'ed/lunar-phase interpretation and calendar caution.
+- modern literary/historiographical studies of Psalms **78, 105, 106, 135, 136** as memory-shaping “historical Psalms.”
+- scholarship on Psalm 90's temporal rhetoric, mortality and divine/human scale contrast.
+
+---
+
+# SECTION 45G COMPLETE — time / cycle / day-night / generations / memory family
+
+### Current transformation point
+
+**natural order cycles**
+→ day/night
+→ moon/seasons
+→ activity fields alternate
+→ generations replace generations
+→ memory either transmits or fails
+→ historical behavior can recur when memory fails
+→ liturgy retells events repeatedly
+→ no fixed long catastrophe interval established.
+
+### Next Psalm process family
+
+**SECTION 45H — final Psalter gap audit + Psalm 151 + integrated Psalm geometry timeline**
+
+Priority:
+- verify major unexamined Psalms/motifs;
+- include **Psalm 151** from the Septuagint/Ethiopic Psalter;
+- identify duplicate motifs already covered;
+- ensure no major gate/tree/dragon/water/time/rod/body/process family was missed;
+- create one integrated Psalm transformation timeline;
+- extract strongest Vardath matches and strongest controls/mismatches;
+- close Section 45 only after Psalm 151 and gap audit are complete.
