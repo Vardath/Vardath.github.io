@@ -123524,3 +123524,738 @@ Priority:
   +
   **weave/rod/ladder/tree**
   without forcing ordinary animal metaphor into Squatter-Man.
+
+
+---
+
+# SECTION 45 progress F — body / animal / monster / Squatter-Man screening family
+## Psalms are saturated with bodies and animals, but most images are functional rather than anatomical composites. The strongest partial Squatter-Man candidates are not lions, wings or horns by themselves: they are (1) Psalm 18's storm-theophany body assembled from nostrils/mouth + cherub/wind wings + descending hand, and (2) Psalm 80's nation-vine with deep root, massive central growth and branches spanning from sea to River, followed immediately by a strengthened “man at the right hand.” Even these remain literary/metaphorical combinations rather than one explicit central rod-body with two opposed woven strands.
+
+This pass continues **Section 45 — Psalms** with the stored **body / giant / animal / monster / anthropomorphic-cosmos / Squatter-Man screening family**.
+
+Primary targets:
+- Psalms **8, 17, 18, 22, 36, 57, 58, 68, 74, 80, 91, 104, 144**;
+- related body-part imagery across Books I–V.
+
+The screening rule is deliberately stricter than before.
+
+A high-value Squatter-Man candidate should ideally combine several of:
+
+1. central vertical body/trunk;
+2. bilateral extensions / “arms”;
+3. upper/lower polarity;
+4. paired or opposing forces;
+5. rod/tree/ladder/weave relation;
+6. movement/transformation rather than static posture;
+7. explicit source-level linkage rather than our own shape projection.
+
+Most Psalmic animal/body images fail this stronger test.
+
+---
+
+# General body-language control — Psalms use body parts constantly
+
+Modern scholarship on Psalmic body imagery notes:
+- explicit human/divine body language appears across almost the entire Psalter;
+- head/face/mouth/eyes/ears/arms/hands/feet are especially common;
+- divine body language often emphasizes **communication** and **action**.
+
+This is crucial.
+
+A named body part in Psalms usually tells us:
+**what the actor does**,
+not
+**what shape a hidden cosmic machine has**.
+
+Therefore:
+- hand = agency/support;
+- face = presence/attention;
+- mouth = speech/force;
+- feet = rule/path/position;
+- wings = protection/mobility;
+before any Squatter-Man interpretation is considered.
+
+---
+
+# Psalm 8 — human body becomes a vertical hierarchy centre
+
+Psalm 8 gives humanity:
+
+- crown/glory;
+- rule over works;
+- everything placed **under feet**;
+- animals of land/air/sea below that authority.
+
+This produces a clean hierarchy:
+
+**crowned head/top**
+→ human body/operator
+→ **creatures beneath feet**.
+
+That is a real anthropomorphic cosmos-order image.
+
+But:
+- no bilateral arms;
+- no central rod;
+- no weave;
+- no paired opposing forces.
+
+Squatter-Man fit:
+**low to moderate**, mainly through vertical body hierarchy.
+
+---
+
+# Psalm 18 — strongest anthropomorphic storm-body candidate
+
+Psalm 18's theophany combines:
+
+- smoke from nostrils;
+- fire from mouth;
+- cherub mount;
+- **wings of wind**;
+- dark cloud pavilion around;
+- thunder/voice;
+- **hand sent from above**;
+- speaker drawn from waters.
+
+This is unusually body-rich.
+
+At first glance it resembles:
+**head/fire above**
++
+**lateral wing-field**
++
+**hand reaching downward**.
+
+That is worth taking seriously.
+
+---
+
+# Psalm 18 — but the parts are successive storm metaphors, not one stable anatomy
+
+The text does not say:
+
+- the wings belong to the same anthropomorphic body as the hand;
+- there are two opposed “arms” forming a lattice;
+- the cherub is God's own body;
+- the cloud is one torso;
+- the descending hand is a permanent central rod.
+
+Instead the poem rapidly shifts images:
+**divine warrior**
+→ **storm cloud**
+→ **cherub-rider**
+→ **winged wind**
+→ **thunder/lightning**
+→ **human-like hand**.
+
+Conventional storm-theophany explains the composite imagery very well.
+
+Therefore:
+
+### Squatter-Man screen — Psalm 18
+- central vertical operator: **moderate**;
+- bilateral wing extension: **moderate**;
+- downward arm/hand: **strong**;
+- paired opposing forces: **weak**;
+- weave/rod: **absent**;
+- one coherent anthropomorphic figure: **not securely stated**.
+
+Overall:
+**strong partial visual analogue, weak full-mechanism match**.
+
+---
+
+# Psalm 22 — animals form a ring around a central afflicted body
+
+Psalm 22 describes the speaker surrounded by:
+- bulls of Bashan;
+- lion;
+- dogs;
+- wild oxen.
+
+Modern literary work on Psalmic animal imagery treats these primarily as metaphors/metonyms for hostile human adversaries.
+
+The geometry is:
+
+**central body**
+inside
+**radial animal threat ring**.
+
+This is important as enclosure geometry.
+
+But the animals are not extensions of the central figure.
+
+So:
+**not Squatter-Man**.
+
+Better classification:
+**centre surrounded by multi-animal hostile field**.
+
+---
+
+# Psalm 22 — body itself loses coherent shape
+
+The speaker says:
+- poured out like water;
+- bones disjointed;
+- heart like melted wax;
+- laid in dust.
+
+This is body-state dissolution, already logged in Section 45D.
+
+For Squatter-Man screening it matters negatively:
+
+the body is not becoming a stable rod/axis.
+
+It is **losing structure**.
+
+---
+
+# Psalms 36 / 57 / 61 / 63 / 91 — wings are enclosure/shelter, not literal bilateral anatomy
+
+Repeated refuge language:
+
+**under shadow of wings**
+→ protected.
+
+Psalm 91:
+**pinions/wings**
+→ refuge/cover.
+
+This is strongly avian.
+
+But the primary function is:
+**protective canopy/enclosure**.
+
+No Psalm in this set describes:
+**two wings weaving into a central body/rod**.
+
+Thus:
+wings alone do not qualify as a strong Squatter-Man match.
+
+---
+
+# Psalm 58 — serpent imagery is behavioral, not cosmographic
+
+Psalm 58 compares wicked people to:
+- venomous serpent;
+- deaf adder that closes ear against charmers.
+
+This is moral/behavioral analogy.
+
+No world geometry is attached.
+
+Squatter-Man relevance:
+**none/very low**.
+
+Useful only for the wider serpent catalogue.
+
+---
+
+# Psalm 68 — rider/chariot/procession gives mobile centre, not body-axis
+
+Psalm 68 includes:
+- rider through wilderness;
+- many chariots;
+- mountain field;
+- ascent;
+- sanctuary procession.
+
+The centre is mobile and strongly vertical.
+
+But the geometry is:
+**royal/divine processional vehicle**.
+
+Not:
+**one anthropomorphic central rod with two extensions**.
+
+The chariot host may create visual complexity, but no single Squatter-Man body emerges securely.
+
+---
+
+# Psalm 74 — many-headed dragon/Leviathan imagery is distributed monster geometry
+
+Psalm 74 speaks of:
+- sea divided;
+- heads of sea monsters/dragons broken;
+- heads of Leviathan crushed.
+
+This is a real multi-head monster field.
+
+It is important for monster topology.
+
+But the morphology is:
+**many-headed aquatic adversary**,
+not
+**central vertical body with bilateral arms**.
+
+So this belongs to:
+**dragon/chaos-force family**,
+not Squatter-Man.
+
+---
+
+# Psalm 80 — strongest tree/body-spanning candidate
+
+Psalm 80 gives Israel as a vine:
+
+**brought out of Egypt**
+→ planted
+→ ground cleared
+→ **deep root**
+→ fills land
+→ mountains covered by shade
+→ mighty cedars by branches
+→ branches extend **to Sea**
+→ shoots extend **to River**.
+
+This is the strongest plant-body expansion geometry in Psalms.
+
+It gives:
+
+**root below**
+→ central growth
+→ huge lateral extensions
+→ land-scale span.
+
+That is much closer to a body/tree/lattice form.
+
+---
+
+# Psalm 80 — boundary removal exposes the expanded body
+
+Then:
+
+**walls/hedges broken**
+→ passersby pluck
+→ boar ravages
+→ field creatures consume
+→ vine burned/cut.
+
+This makes the vine function like:
+**large body inside protective boundary**.
+
+Compare Job 1:
+protected central system inside hedge.
+
+Psalm 80:
+expanded organism whose hedge is removed.
+
+This is a strong enclosure/body analogue.
+
+---
+
+# Psalm 80 — “vine” and “man at the right hand” occur side by side but are not securely one figure
+
+After the vine appeal:
+
+**look down from heaven**
+→ regard vine / stock planted by right hand.
+
+Then:
+**let your hand be upon the one/man at your right hand**
+→ one strengthened for yourself.
+
+Some textual traditions/interpretations connect “son” language more closely to vine imagery.
+
+But the Psalm does not securely state:
+**the vine is literally the man-body**.
+
+The images are adjacent and may overlap symbolically at national/royal level.
+
+This is exactly the kind of place where the project must resist forcing a merger.
+
+---
+
+# Psalm 80 — Squatter-Man screen
+
+- vertical trunk/root: **strong**;
+- lateral extensions: **very strong**;
+- upper/lower span: **strong**;
+- body/nation personification: **strong**;
+- central strengthened man nearby: **moderate**;
+- bilateral paired forces: **weak**;
+- weave/finger-trap: **absent**;
+- rod contraction: **absent**.
+
+Overall:
+**strongest Psalmic structural analogue so far, but still tree/nation imagery rather than explicit human lattice**.
+
+---
+
+# Psalm 91 — protective wings above, dangerous animals below
+
+Psalm 91 creates a vertical protective hierarchy:
+
+### above/around
+divine wings/pinions.
+
+### middle
+protected human.
+
+### below/path
+lion + adder/serpent
+→ trampled under foot.
+
+This is a coherent three-level body-field:
+
+**winged shelter**
+→ person
+→ serpent/lion under feet.
+
+Visually it is stronger than a single wing metaphor.
+
+But:
+- wings belong to divine refuge image;
+- feet belong to protected human;
+- animals are external dangers;
+- no single anatomy unifies them.
+
+Therefore:
+**composite field, not one Squatter-Man body**.
+
+---
+
+# Psalm 91 — angel hands support feet
+
+Another body chain appears:
+
+**angel hands**
+→ bear human
+→ protect human **foot** from stone.
+
+This is a literal multi-body support relation.
+
+But it is not bilateral rod geometry.
+
+It is better categorized:
+**external support network around mobile body**.
+
+---
+
+# Psalm 104 — Leviathan is integrated, not central
+
+Psalm 104 contains:
+- vast ecological field;
+- wind messengers;
+- sea;
+- Leviathan.
+
+But Leviathan is simply:
+**one creature in the sea**, integrated into ordered creation.
+
+It is not:
+- central axis;
+- world support;
+- body spanning layers.
+
+This strongly limits attempts to make every dragon a structural sky-body.
+
+---
+
+# Psalm 104 — ecological body is distributed, not anthropomorphic
+
+The Psalm as a whole resembles a living system:
+- water;
+- mountains;
+- plants;
+- animals;
+- humans;
+- breath cycle.
+
+But there is no one central human-shaped figure holding it together.
+
+Thus:
+**systemic organism analogy = possible**.
+
+**Squatter-Man shape = weak**.
+
+---
+
+# Psalm 144 — hand from above + human warrior body
+
+Psalm 144 combines:
+- divine hand reaching from above;
+- human hands trained for war;
+- fingers for battle;
+- rescue from mighty waters.
+
+This produces:
+**upper hand**
+→ strengthens
+**lower human hands**
+→ action in local field.
+
+This is nested agency, already seen in royal Psalms.
+
+But still no:
+- bilateral giant;
+- central rod;
+- weave.
+
+---
+
+# horns / heads / arms / hands / feet across Psalms — functional body map
+
+Across the Psalter:
+
+### head / crown / horn
+high state / status / strength.
+
+### mouth / voice / nostrils
+communication / storm / destructive release.
+
+### arm / hand / right hand
+agency / rescue / support / authority.
+
+### feet / under feet
+path / stability / domination.
+
+### wings
+cover / movement / refuge.
+
+This is a coherent **functional body grammar**.
+
+The Psalms repeatedly map abstract power into the human/animal body because body parts provide intuitive action geometry.
+
+That fact itself may explain many apparent Squatter-Man-like visual correspondences.
+
+---
+
+# Body grammar may be more important than one hidden body
+
+A major result of this screening is:
+
+> The Psalms do not strongly preserve one repeated secret giant form. They preserve a reusable **body grammar** for describing how power moves.
+
+Power:
+- originates high/head;
+- speaks through mouth;
+- extends through hand/arm;
+- stabilizes through feet;
+- spreads/protects through wings;
+- grows through horn/branch.
+
+This body grammar can later be projected onto:
+- kings;
+- mountains;
+- nations;
+- storms;
+- trees;
+- monsters.
+
+That may be the better comparative tool.
+
+---
+
+# SECTION 45F strict Squatter-Man ranking
+
+## Strongest partial — Psalm 80 vine
+Why:
+root + huge vertical/lateral growth + sea/River span + protective wall + adjacent strengthened man.
+
+Missing:
+paired opposing arms/forces, weave, contraction-to-rod.
+
+---
+
+## Strong partial — Psalm 18 storm body
+Why:
+nostrils + mouth/fire + winged motion + descending hand + vertical rescue.
+
+Missing:
+single coherent anatomy, bilateral paired strands, tree/rod/weave.
+
+---
+
+## Moderate composite — Psalm 91
+Why:
+wings above / person centre / serpent-lion beneath + angel hands supporting feet.
+
+Missing:
+single body identity and axis.
+
+---
+
+## Low/moderate — Psalm 8
+Why:
+crowned human + all things under feet.
+
+Missing:
+extensions, weave, paired forces.
+
+---
+
+## Low — Psalm 22 animal ring
+Why:
+clear centre surrounded by animal forces.
+
+Missing:
+animals are enemies, not body extensions.
+
+---
+
+## Low — Psalm 74 Leviathan
+Why:
+large monster / multiple heads.
+
+Missing:
+central human-like axis and bilateral geometry.
+
+---
+
+## Very low — Psalm 104 Leviathan
+Why:
+integrated sea creature, not structural centre.
+
+---
+
+# SECTION 45F continuous morphology process
+
+## Phase 1 — body metaphor supplies action map
+
+head / mouth / hand / feet / wings.
+
+---
+
+## Phase 2 — body map is projected into larger field
+
+king;
+storm;
+nation;
+tree;
+monster;
+city.
+
+---
+
+## Phase 3 — one body part becomes process operator
+
+hand rescues;
+mouth/voice transforms;
+wing shelters;
+foot subdues;
+horn rises.
+
+---
+
+## Phase 4 — in rare cases imagery expands into whole-field form
+
+Psalm 18:
+storm body.
+
+Psalm 80:
+land-filling vine body.
+
+Psalm 91:
+protective composite field.
+
+---
+
+## Phase 5 — strict screening rejects forced unification
+
+No Psalm securely says:
+**all these parts belong to one hidden giant lattice figure**.
+
+---
+
+# What Section 45F adds to the master Bible/Vardath timeline
+
+1. **Psalmic body imagery is pervasive enough that isolated body-part matches have low evidentiary value.**
+2. Modern scholarship confirms over a thousand explicit/implicit body references across nearly the whole Psalter.
+3. The most useful result is a **functional body grammar**:
+   head/crown/horn = high state;
+   mouth/voice = release/communication;
+   hand/arm = force;
+   feet = support/rule;
+   wings = cover/mobility.
+4. **Psalm 18 is the strongest anthropomorphic storm composite**, combining head-like fire/smoke, winged movement and descending hand.
+5. However those elements are successive storm/divine-warrior metaphors, not a securely unified anatomy.
+6. **Psalm 22 creates a radial animal threat ring around one body**, not a body with animal extensions.
+7. **Psalm 80 is the strongest structural analogue to the user's central-spire/body intuition:** deep root, central growth, massive lateral branches spanning Sea↔River.
+8. Psalm 80 also places the great vine immediately beside the “man at the right hand / one made strong,” but does not explicitly identify them as the same physical figure.
+9. **Psalm 80 therefore deserves cross-indexing with Yggdrasil/tree-body/central-spire material**, but with a strong “metaphorical nation-vine” control.
+10. **Psalm 91 gives a three-level composite:** wings above, protected body centre, serpent/lion beneath.
+11. That is visually suggestive but formed from multiple actors, not one giant.
+12. **Psalm 104 is an important anti-overfit control:** Leviathan can be merely one creature in a functioning ecology rather than a sky-support dragon.
+13. **Psalm 144 repeats nested hand agency:** upper hand supports lower human operator.
+14. The strict screen does **not** find a Psalmic text that clearly combines:
+   central vertical rod-body
+   + two opposed physical side forces
+   + actual weave/braid
+   + world-gate transformation.
+15. The strongest conclusion is therefore not “the Psalms depict Squatter-Man directly.”
+16. It is:
+   **the Psalms repeatedly use body/tree/animal geometries that could later be recombined in apocalyptic or mythic imagery into more explicit giant-axis forms.**
+17. Psalm 80 is the best candidate to carry forward into that later comparison.
+
+---
+
+# SECTION 45F textual / iconographic controls
+
+- Animal imagery in Psalms frequently represents human enemies, emotional states or theological claims.
+- Tova Forti's work on animal imagery is a strong methodological control against literalizing Psalmic fauna.
+- Divine anthropomorphism in the Hebrew Bible is a major scholarly field; scholars disagree over how literally to understand divine “body” language.
+- Some approaches treat such language primarily as metaphor/function; others argue ancient Israel could imagine real divine embodiment.
+- Either way, one must not automatically combine body parts from separate verses into one visual diagram.
+- Psalm 18's cherub, wings of wind and divine hand are related storm-theophany images but not necessarily one body.
+- Psalm 80's vine is conventionally Israel/nation imagery.
+- Psalm 80's “man at your right hand / son of man” may be royal, national or otherwise representative; exact relation to vine imagery is debated.
+- Psalm 91 mixes avian refuge, angelic guardians and dangerous animal imagery.
+- Psalm 74's Leviathan/dragon is chaos/enemy imagery, while Psalm 104's Leviathan is integrated creature; monster function is context-dependent.
+- “Horn” in Psalms normally denotes strength/status, not a literal horned body.
+- A strong Squatter-Man identification should require explicit source-level structural convergence, not visual pareidolia.
+
+### Sources logged for Section 45F
+
+Primary:
+- Psalm 80 NRSVUE:
+  https://www.bible.com/bible/3523/PSA.80.NRSVUE
+- Psalm 91 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+91&version=NRSVUE
+- related primary texts checked across Psalms 8, 18, 22, 36, 57, 58, 68, 74, 104, 144.
+
+Body / anthropomorphism:
+- **“Transforming Presence: Seeing God's Body in Books I and II of Psalms”**, on extensive Psalmic body-language and the communication/action functions of divine body parts.
+- Esther J. Hamori, **When Gods Were Men: The Embodied God in Biblical and Near Eastern Literature**.
+- Benjamin D. Sommer, **The Bodies of God and the World of Ancient Israel**.
+- Mark S. Smith, work on spatial dimensions of divine anthropomorphism.
+
+Animal imagery:
+- Tova L. Forti, **Like a Lone Bird on a Roof: Animal Imagery and the Structure of Psalms**, especially animal imagery as rhetorical/literary function and Psalm 22 adversary imagery.
+
+Psalm 80:
+- modern scholarship on the Israel-vine metaphor and the debated relationship between vine/stock and the right-hand man/son-of-man language.
+
+---
+
+# SECTION 45F COMPLETE — body / animal / monster / Squatter-Man screening family
+
+### Current transformation point
+
+**body grammar**
+→ projected into storm/king/nation/tree/monster
+→ individual body parts become process operators
+→ some texts produce large composite forms
+→ strict screening retains Psalm 80 and Psalm 18 as partial analogues
+→ Psalm 91 as secondary composite
+→ other animal/body matches downgraded
+→ no full Psalmic Squatter-Man mechanism established.
+
+### Next Psalm process family
+
+**SECTION 45G — time / cycle / day-night / generations / memory / calendar / recurring-return family**
+
+Priority:
+- Psalms 19, 30, 74, 78, 89, 90, 102, 104, 105, 106, 111, 119, 136, 145 and related texts;
+- day/night;
+- sun/moon/seasons;
+- generation→generation;
+- remembering/forgetting;
+- “thousand years” comparisons;
+- human life cycles;
+- creation cycles;
+- recurring festival/calendar logic;
+- determine whether any Psalm supplies a timed cosmic recurrence rather than only liturgical/poetic recurrence;
+- compare cautiously with the user's Archaix timing work and do not force numerical matches.
