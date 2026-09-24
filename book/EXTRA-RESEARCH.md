@@ -57493,3 +57493,1603 @@ Scholarly controls:
 - woman at wall negotiates severed head as substitute for city destruction;
 - siege dissolves after one target is expelled.
 
+
+
+---
+
+# SECTION 34 progress C — 2 Samuel 13–16
+## Violence moves inside the dynastic house, inner chamber and bolted door become rupture geometry, delayed retaliation opens exile/return loops, gate-interception reroutes the kingdom before rebellion, and the Ark stays behind while the king becomes a distributed wilderness network
+
+### Ethical control before process abstraction
+
+2 Samuel 13 begins with Tamar's rape.
+
+The narrative concerns severe sexual violence, family failure and royal inaction.
+
+Tamar is not “cargo,” a “component,” or an abstract object in the human meaning of the story. Any systems vocabulary below describes **movement, access, enclosure and information structure only**. It must not diminish her personhood or the violence committed against her.
+
+---
+
+# 2 Samuel 13 — Nathan's “sword in the house” prediction becomes literal internal-house violence
+
+The previous block ended with the prediction:
+
+**violence formerly routed through an external enemy field**
+→ will recur **inside David's own house**.
+
+Chapter 13 begins that internal phase.
+
+The conflict is no longer primarily:
+**Israel ↔ foreign army**.
+
+It is:
+**member of royal house ↔ member of royal house**.
+
+The dynastic “house” promised in chapter 7 has become the unstable field.
+
+This is the first major demonstration that:
+**continuity of a structure does not imply harmony among its internal components.**
+
+---
+
+# A false illness is used to create controlled access to an inner enclosure
+
+Amnon's desire is converted by Jonadab into a route plan:
+
+1. lie down;
+2. feign sickness;
+3. have the king visit;
+4. request Tamar;
+5. have her prepare food in his sight.
+
+David unknowingly authorizes the movement.
+
+Tamar is sent:
+**from her location**
+→ **into Amnon's house**.
+
+She prepares the food.
+
+Then Amnon changes the access conditions.
+
+He orders:
+**all men out from me**.
+
+The potential witnesses leave.
+
+Then he instructs Tamar:
+**bring the food into the inner chamber**.
+
+So the spatial sequence is explicit:
+
+**public/household network**
+→ royal command sends Tamar inward
+→ house
+→ witnesses expelled outward
+→ Tamar moved farther inward
+→ **inner chamber isolated**.
+
+Academic spatial readings of the passage emphasize exactly this progressive removal from visible/audible public space.
+
+This is a major process rule:
+**harm becomes easier as witnesses/supporting nodes are progressively decoupled from the target.**
+
+It is the domestic equivalent of Uriah's battlefield geometry:
+
+Chapter 11:
+**place target at dangerous front → withdraw support**.
+
+Chapter 13:
+**move target inward → remove witnesses/support**.
+
+Both use **isolation before violence**.
+
+---
+
+# Tamar's voice remains active even after the space is closed
+
+Tamar:
+- refuses verbally;
+- names the act as wrong;
+- proposes an alternate lawful/social route;
+- warns of consequences.
+
+Amnon:
+**does not listen to her voice**.
+
+So the enclosure is not informationally empty.
+
+The target sends explicit corrective signal.
+
+The aggressor rejects it.
+
+This repeats a long Samuel pattern:
+**communication channel can function while obedience/coupling fails**.
+
+The problem is not absence of information.
+It is refusal to respond to information.
+
+---
+
+# Greater force overrides the smaller body in the isolated chamber
+
+The text explicitly says:
+**he was stronger than she**.
+
+Physical force overrides Tamar's refusal.
+
+The process must be recorded plainly:
+
+**support removed**
++
+**private chamber**
++
+**asymmetric strength**
+→ sexual assault.
+
+This is human violence, not a positive analogy for cosmological “force dominance.”
+
+The relevance to the timeline is only:
+**isolation + unequal capacity changes what one node can do to another inside a bounded system.**
+
+---
+
+# After the assault the directional command reverses violently
+
+Before:
+**come inward**.
+
+After:
+**arise, go away**.
+
+Tamar objects that expelling her compounds the wrong.
+
+Amnon again refuses to listen.
+
+He orders a servant:
+**put her out**
+→ **bolt the door after her**.
+
+The geometry is stark:
+
+**invited/sent inward**
+→ inner chamber violation
+→ expelled outward
+→ boundary closes behind target.
+
+The locked door converts:
+**access**
+into
+**exclusion**.
+
+The same physical boundary that allowed controlled inward passage is now used to prevent return/reconnection.
+
+Recent scholarship on the architecture of 2 Samuel explicitly links Tamar's bolted door to the larger fragmentation that later appears in the Absalom crisis.
+
+---
+
+# Royal garment is torn after social/dynastic violation
+
+Tamar wears the special garment associated in the story with unmarried royal daughters.
+
+After expulsion:
+- ashes on head;
+- garment torn;
+- hand on head;
+- she walks crying openly.
+
+The movement reverses the earlier concealment:
+
+**violence hidden in inner chamber**
+→ survivor moves outward
+→ damaged garment/ashes/cry make hidden event publicly legible.
+
+The garment is therefore again an **information surface**.
+
+Earlier Samuel:
+- torn robe = authority transfer;
+- cut robe corner = proof of access;
+- torn messenger clothes = catastrophe message.
+
+Here:
+**torn royal garment communicates the destruction done to a royal daughter**.
+
+Scholarly work notes the narrative force of the garment as status and damaged identity.
+
+---
+
+# Tamar is moved from one brother's house to another, but the rupture is not repaired
+
+Tamar remains:
+**desolate in Absalom's house**.
+
+David hears and becomes angry.
+
+Absalom:
+- says neither good nor bad to Amnon;
+- maintains silence;
+- hates him.
+
+Thus the household does not return to stable state.
+
+It enters a **latent-pressure interval**.
+
+This is important:
+**absence of outward action ≠ restored equilibrium**.
+
+The system contains stored unresolved force.
+
+---
+
+# Two full years — delayed retaliation remains coupled to the original breach
+
+After **two full years**, Absalom creates a sheep-shearing gathering.
+
+He invites:
+- king;
+- then specifically Amnon;
+- all royal sons.
+
+The event becomes a new enclosed social field.
+
+Amnon is not attacked immediately.
+
+Absalom instructs servants:
+**wait until Amnon's heart is merry with wine**
+→ then, on Absalom's signal,
+→ strike/kill.
+
+This is another **timed threshold**.
+
+The destructive action is not simply:
+**target present → attack**.
+
+It is:
+**target enters altered state**
+→ **signal**
+→ **action**.
+
+---
+
+# One targeted death causes the whole royal-son field to scatter
+
+Amnon is killed.
+
+Immediately:
+- all other king's sons rise;
+- mount mules;
+- flee.
+
+So one targeted node failure causes:
+**entire sibling field → rapid outward dispersion**.
+
+This is the same process family seen repeatedly:
+**local centre/node event → large network state change**.
+
+---
+
+# False information briefly converts one death into total dynastic collapse
+
+Before the fleeing sons arrive, a report reaches David:
+
+**Absalom killed all the king's sons**
+→ **none left**.
+
+David:
+- rises;
+- tears garments;
+- lies on the earth.
+
+His servants:
+- stand with torn clothes.
+
+This is an enormous state change caused by **incorrect information**.
+
+Jonadab then corrects it:
+**Amnon alone is dead**.
+
+This creates a very important information-control sequence:
+
+**one real death**
+→ false network report expands event to total dynastic annihilation
+→ centre enters corresponding grief/collapse state
+→ corrected information contracts event back to one-node death.
+
+For the master timeline:
+**perceived geometry can temporarily be much larger than actual geometry**.
+
+Information quality is itself a state variable.
+
+---
+
+# Watcher sees returning survivors by a roundabout hill route
+
+A watchman:
+- lifts eyes;
+- sees many people coming;
+- they approach by a **roundabout way along the hillside**.
+
+The returning sons physically disprove the total-loss report.
+
+Thus:
+**distant visual signal**
+→ confirms network remains partly intact.
+
+Again the book uses observers at elevated/boundary positions to convert spatial appearance into system information.
+
+---
+
+# Absalom leaves the system and remains outside for three years
+
+After Amnon's killing:
+**Absalom flees**
+→ goes to Geshur
+→ remains **three years**.
+
+The dynastic house now contains:
+- dead Amnon branch;
+- injured/desolate Tamar;
+- absent/exiled Absalom;
+- remaining sons;
+- grieving centre David.
+
+The “house” persists institutionally while its internal branches are fractured.
+
+---
+
+# 2 Samuel 14 — a second indirect simulation is used to reopen a blocked relationship
+
+Joab perceives David's orientation toward Absalom.
+
+Rather than asking directly at first, he constructs an information interface through the woman of Tekoa.
+
+This closely parallels Nathan's method in chapter 12:
+
+**staged/analogical story**
+→ king judges represented case
+→ judgment is redirected back toward king's own situation.
+
+This is now the second time David is reached through a **model before direct mapping**.
+
+---
+
+## The Tekoa model is itself a paired-force collapse story
+
+The woman describes:
+- widow;
+- **two sons**;
+- sons fight **in the field**;
+- no third party is present to separate them;
+- one kills the other.
+
+Now wider family demands:
+- surviving killer be handed over;
+- he be killed too.
+
+That would produce:
+**two sons**
+→ conflict
+→ one dead
+→ revenge kills remaining one
+→ lineage extinguished.
+
+The woman describes the surviving son as the last **coal/ember**.
+
+So the model asks whether justice should complete a total branch extinction.
+
+The king rules:
+**survivor will be protected**.
+
+Then the woman applies his judgment to Absalom.
+
+---
+
+# “Water spilled on the ground” marks irreversible state change
+
+The woman says:
+**we must die**
+and are like
+**water spilled on the ground that cannot be gathered again**.
+
+This is literary mortality imagery, but geometrically exact:
+
+**contained water**
+→ spill/dispersal
+→ cannot be recollected into prior state.
+
+The passage therefore distinguishes:
+**irreversible death**
+from
+**reversible exile/banishment**.
+
+That is why she argues means should be devised so that the banished person does not remain permanently outcast.
+
+For the Vardath timeline:
+**not every separation is terminal**.
+
+Some states:
+- death = one-way in the story;
+- exile = potentially reconnectable.
+
+The system should not confuse them.
+
+---
+
+# David detects the hidden operator behind the interface
+
+After hearing the constructed case David asks:
+**is the hand of Joab with you in all this?**
+
+The woman confirms:
+- Joab instructed her;
+- put words in her mouth;
+- sought to **change the face of the matter**.
+
+This gives another explicit operator/interface distinction:
+
+**visible speaker/interface**
+≠
+**hidden designer/operator of message**.
+
+This is highly relevant to the user's method of distinguishing:
+- visible figure;
+- underlying agency;
+- transmitted information.
+
+The story itself states the two roles separately.
+
+---
+
+# Absalom returns spatially but remains relationally outside
+
+Joab fetches Absalom from Geshur to Jerusalem.
+
+David commands:
+**let him turn to his own house**
+but
+**do not let him see my face**.
+
+This is a powerful adjacency distinction:
+
+**same city**
+≠
+**access to centre**.
+
+Absalom is metrically close but functionally disconnected.
+
+For **two full years**:
+- he lives in Jerusalem;
+- does not see the king's face.
+
+This strongly supports the master rule:
+**effective adjacency is not ordinary distance**.
+
+Two nodes can occupy the same city while the route between them remains closed.
+
+---
+
+# Hair becomes a recurring body-state marker, but number control is needed
+
+The narrative emphasizes Absalom's appearance and hair:
+- cut/polled at yearly intervals;
+- described as heavy;
+- weight given as **200 shekels by the king's weight**.
+
+This detail becomes important when chapter 18 places Absalom in a tree, but the later death text itself does not simply say “his hair caught him” in the Masoretic form.
+
+Therefore:
+- retain the hair/body marker;
+- do not pre-write a hair-entanglement mechanism into chapter 18.
+
+The 200-shekel figure is rhetorically striking and should not be used cosmologically without textual/metrological control.
+
+---
+
+# Blocked communication is reopened by deliberately damaging a neighbouring field
+
+Absalom sends for Joab.
+
+Joab does not come.
+
+He sends a second time.
+
+Joab still does not come.
+
+So the direct communication channel is closed.
+
+Absalom then orders:
+**set Joab's barley field on fire**.
+
+The effect is immediate:
+Joab comes to Absalom's house asking why.
+
+Process:
+
+**message 1 → no response**
+→ **message 2 → no response**
+→ damage to adjacent material/resource field
+→ interface is forced into contact.
+
+This is a sharp systems rule:
+**when low-energy information fails, a high-cost physical disturbance can force a disconnected node to acknowledge the sender**.
+
+Descriptive only—this is destructive coercion, not a recommended method.
+
+---
+
+# Face-to-face access is restored, but underlying instability remains
+
+Joab:
+→ goes to David
+→ transmits Absalom's demand.
+
+Absalom:
+→ called to king
+→ bows face to ground
+→ king kisses him.
+
+The route is reopened:
+
+**exile**
+→ physical return/no access
+→ coercive signal
+→ intermediary reconnects
+→ face-to-face contact.
+
+But reconciliation at the level of access does not resolve the stored ambition/resentment.
+
+The next chapter demonstrates that:
+**reopened route ≠ restored system loyalty**.
+
+---
+
+# 2 Samuel 15 — Absalom inserts himself between the population and the royal gate
+
+Absalom constructs a highly visible mobile status field:
+- chariot;
+- horses;
+- **50 runners before him**.
+
+Then he rises early and stands:
+**beside the way of the gate**.
+
+This location is crucial.
+
+People with cases are trying to travel:
+
+**local city/tribe**
+→ road
+→ gate
+→ king/judgment centre.
+
+Absalom positions himself **before the request reaches the centre**.
+
+He asks:
+- where are you from?
+- what is your case?
+
+Then tells them:
+- your cause is good;
+- no king's deputy will hear you;
+- if only I were judge.
+
+He physically:
+- reaches out hand;
+- takes hold;
+- kisses.
+
+This is a classic **interception/rerouting node**.
+
+---
+
+# Information and allegiance are diverted without moving the palace
+
+The capital remains.
+David remains king.
+
+But incoming social traffic is being captured at the interface.
+
+Process:
+
+**distributed petitioners**
+→ approach royal gate
+→ intermediate node intercepts
+→ validates grievance
+→ undermines confidence in true centre
+→ creates personal bond
+→ petitioner's “heart” shifts.
+
+The text summarizes:
+**Absalom stole the hearts of the men of Israel**.
+
+Thus political centre can weaken even while:
+- palace still stands;
+- king still occupies it;
+- formal route still exists.
+
+Why?
+Because the **interface upstream from the centre has been captured**.
+
+This is one of the strongest network analogies in the entire Bible research.
+
+---
+
+# Critical number control — “forty years” is not secure
+
+The Masoretic Text at 2 Samuel 15:7 reads:
+**after forty years**.
+
+Other ancient witnesses/readings support:
+**four years**,
+including Syriac and parts of Greek tradition/Josephus-related transmission; modern translations often adopt four.
+
+Other proposals exist, including forty days in a small number of later Hebrew manuscripts.
+
+The MT forty creates serious chronological tension with David's total reign and Absalom's life.
+
+Therefore:
+**do not use 40 here as a Vardath timing datum.**
+
+Record the interval as textually unstable.
+
+---
+
+# Hebron — the old accession centre is reused as a rival launch node
+
+Absalom requests permission to go to **Hebron**.
+
+This is the city where:
+- David first became king over Judah;
+- later all Israel anointed David.
+
+Now it becomes the place from which:
+**David's son is proclaimed king in rebellion**.
+
+This is a major place-function reversal.
+
+The same node moves through timeline phases:
+
+**legitimate accession centre**
+→ later
+**rival accession/rebellion centre**.
+
+Again:
+**place identity does not determine process meaning outside time.**
+
+---
+
+# Distributed spies + horn create synchronized remote activation
+
+Absalom sends agents throughout the tribes with an instruction:
+
+**when you hear the horn**
+→ proclaim
+**Absalom is king in Hebron**.
+
+This is a distributed activation network:
+
+**many separated nodes**
+→ wait in inactive state
+→ one agreed acoustic trigger
+→ simultaneous/near-simultaneous state declaration.
+
+This closely parallels Joab's horn stopping pursuit in 2 Samuel 2, but the direction is opposite:
+
+2 Samuel 2:
+**horn → combat field switches OFF**.
+
+2 Samuel 15:
+**horn → rebellion network switches ON**.
+
+Same signal class.
+Opposite state transition.
+
+This is another direct proof that:
+**symbol/signal has no fixed meaning outside phase and instruction.**
+
+---
+
+# Uninformed mass can enlarge a field without sharing its intent
+
+**200 men** go from Jerusalem with Absalom:
+- invited;
+- in innocence/simplicity;
+- know nothing of the plot.
+
+Yet their physical presence enlarges the movement.
+
+So a network can contain:
+**components coupled physically**
+but
+**not coupled informationally**.
+
+This is a major distinction for any systems timeline:
+**participation does not imply awareness of system purpose**.
+
+---
+
+# Conspiracy strengthens by continuous accumulation
+
+Ahithophel joins.
+
+The text says:
+**the conspiracy was strong**
+and
+**people increased continually with Absalom**.
+
+This is a positive-feedback convergence:
+
+**intercepted allegiance**
+→ visible rival centre
+→ more people couple
+→ field strengthens
+→ increased strength attracts/permits more coupling.
+
+---
+
+# One message causes the established centre to abandon its capital
+
+A messenger tells David:
+**the hearts of Israel are after Absalom**.
+
+David immediately chooses evacuation.
+
+His stated concern includes:
+- being overtaken;
+- disaster;
+- city struck with sword.
+
+So he does **not** hold the fixed capital at all costs.
+
+Process:
+
+**centre learns surrounding field has shifted**
+→ capital becomes potential trap/battlefield
+→ king converts from stationary centre back into mobile network
+→ evacuates to preserve people/city.
+
+This is another major reversal:
+**fixed centre → mobile phase**.
+
+The model must allow systems to de-centralise after prior centralisation.
+
+---
+
+# Ten women remain to keep the house
+
+David leaves **ten concubines** to maintain the house.
+
+They become a stationary residual group in the evacuated centre.
+
+Later in chapter 16 they are subjected to Absalom's public sexual/political abuse.
+
+Again:
+these women are people, not “residual components” in an ethical sense.
+
+The process-level fact is:
+**evacuation is selective**
+→ some inhabitants remain assigned to maintain the fixed node
+→ those left behind face a different risk from the mobile evacuees.
+
+---
+
+# Foreign/exile branch chooses to remain coupled to the moving king
+
+David tells Ittai the Gittite:
+- you are foreign;
+- an exile from your own place;
+- recently arrived;
+- return rather than wander with us.
+
+Ittai instead states:
+**wherever the king is, for life or death, there I will be**.
+
+So allegiance is detached from fixed geography:
+
+**king leaves capital**
+but
+**loyal mobile field follows the person rather than the place**.
+
+This is a strong centre-definition question:
+is the centre:
+- the city?
+- the Ark?
+- the king?
+- the loyal network?
+
+The chapter explicitly separates them.
+
+---
+
+# Kidron crossing moves the royal network from city-state into wilderness-state
+
+David and followers:
+- pass over the brook Kidron;
+- move toward the wilderness.
+
+The whole country weeps.
+
+This is a real geographic boundary crossing:
+
+**Jerusalem side**
+→ watercourse
+→ wilderness route.
+
+The king who only chapters earlier pulled the Ark and population toward Jerusalem now moves outward away from it.
+
+---
+
+# David deliberately sends the Ark back to Jerusalem
+
+Priests/Levites bring the Ark with the evacuation.
+
+David refuses to make it his portable guarantee.
+
+He commands:
+**carry the Ark back into the city**.
+
+His logic:
+- if accepted/favoured, he can be brought back to see it again;
+- if not, he accepts the outcome.
+
+This is one of the strongest comparisons with 1 Samuel 4.
+
+1 Samuel 4:
+**army loses**
+→ brings Ark from fixed sanctuary into battle
+→ assumes portable centre will secure victory
+→ catastrophic failure.
+
+2 Samuel 15:
+**king loses political field**
+→ Ark appears with fleeing network
+→ king deliberately sends it **back** rather than using it as mobile guarantee.
+
+That is a major learned/reversed process.
+
+**portable sacred centre is decoupled from the fugitive king's immediate survival strategy.**
+
+---
+
+# Priestly network changes from Ark-carriers into information relays
+
+Zadok/Abiathar return to city with Ark.
+
+Their sons:
+- Ahimaaz;
+- Jonathan
+
+remain available as messengers.
+
+David stays in wilderness/plains waiting for **word**.
+
+Thus the sacred/political network is reconfigured:
+
+**Ark stays at fixed city centre**
+while
+**priests act as information collectors**
+→ sons act as transmission channels
+→ mobile king receives remote state updates.
+
+This is a true distributed communications architecture.
+
+---
+
+# Mount of Olives ascent — grief movement upward away from the city
+
+David:
+- goes **up** Mount of Olives;
+- weeps;
+- head covered;
+- barefoot.
+
+Followers mirror grief.
+
+At the **top**:
+Hushai meets him:
+- coat torn;
+- earth on head.
+
+This imagery echoes catastrophe messengers earlier, but now the information/agent appears at a high transition point during evacuation.
+
+---
+
+# Hushai is more useful inside the hostile centre than beside David
+
+David tells Hushai:
+**if you continue with me, you are a burden**.
+
+Instead:
+**return to city**
+→ appear to serve Absalom
+→ defeat Ahithophel's counsel.
+
+This is highly significant.
+
+A loyal component's optimal position is **inside the opponent's centre**, not beside its own centre.
+
+So the system deliberately distributes itself:
+
+- David = wilderness/mobile command;
+- Ark = Jerusalem fixed sacred centre;
+- Zadok/Abiathar = internal information receivers;
+- Ahimaaz/Jonathan = messenger channels;
+- Hushai = counter-counsel agent inside rival court.
+
+This is the most explicit **distributed hidden network** yet in the historical books.
+
+The centre survives by **decomposing its functions across space**.
+
+---
+
+# 2 Samuel 16 — supply stream reaches the displaced mobile centre
+
+Just beyond the summit Ziba meets David with:
+- two saddled asses;
+- 200 loaves;
+- 100 raisin clusters;
+- 100 summer-fruit portions;
+- wine.
+
+He explicitly assigns functions:
+- animals for household transport;
+- food for young men;
+- wine for faint in wilderness.
+
+So:
+
+**stationary/resource node**
+→ sends mobile carrier + differentiated supplies
+→ wilderness network receives transport/energy support.
+
+This is a practical carrier/cargo system.
+
+---
+
+# Mephibosheth information becomes contested
+
+Ziba tells David that Mephibosheth stayed in Jerusalem expecting restoration of Saul's kingdom.
+
+David immediately transfers Mephibosheth's property to Ziba.
+
+Later, 2 Samuel 19 gives Mephibosheth's contradictory account.
+
+Therefore:
+**do not treat Ziba's report as verified fact**.
+
+This is another major information-control warning:
+**a displaced centre making decisions through remote reports is vulnerable to false or self-interested data.**
+
+---
+
+# Shimei creates a parallel hostile stream on the opposite hillside
+
+At Bahurim, Shimei:
+- comes from Saul's house;
+- curses continuously;
+- throws stones;
+- casts dust.
+
+David's people/mighty men are:
+**on his right hand and left**.
+
+Shimei moves:
+**along the hillside over against David**.
+
+So two tracks proceed in parallel:
+
+**David procession on route**
+↔
+**Shimei on opposite hillside**,
+maintaining distance while projecting:
+- words;
+- stones;
+- dust.
+
+This is a clean **parallel-field harassment geometry**.
+
+---
+
+# David again inhibits retaliatory decapitation
+
+Abishai asks permission to:
+**go over**
+and
+**take off Shimei's head**.
+
+David refuses.
+
+This continues the long hand-control theme:
+
+- does not kill Saul in cave;
+- does not kill Saul in camp;
+- prevents Nabal slaughter;
+- refuses to treat hostile speech as automatic death-trigger here.
+
+The system repeatedly distinguishes:
+**capacity for force**
+from
+**decision to discharge force**.
+
+---
+
+# Rival centre occupies Jerusalem while old centre is mobile outside
+
+Absalom enters Jerusalem with:
+- Israelite following;
+- Ahithophel.
+
+The capital changes political occupant without a siege in this phase.
+
+Thus:
+**spatial centre remains fixed**
+while
+**political centre changes occupant**.
+
+David's body and loyal mobile field are outside.
+
+This further proves:
+**city, king, Ark, dynasty and loyal field can be spatially separated variables**.
+
+---
+
+# Hushai successfully enters the rival centre as hidden counter-channel
+
+Hushai greets Absalom as king.
+
+Absalom questions his loyalty.
+
+Hushai provides an ambiguous justification and remains.
+
+So David's distributed network now has an operative node:
+**inside rival decision space**.
+
+The battle will next become a contest between **advice/information pathways** before it becomes a forest battle.
+
+---
+
+# Rooftop becomes public reversal of David's prior secret use of the palace roof
+
+Ahithophel advises Absalom to have sex with David's concubines left to keep the house.
+
+A **tent is spread on the roof**.
+
+Absalom acts:
+**in the sight of all Israel**.
+
+This is sexual exploitation and political domination of women, not a neutral dynastic “transfer.”
+
+The women are used as instruments in a male power struggle.
+
+That ethical fact must remain primary.
+
+---
+
+## The spatial reversal is nevertheless deliberate and exact
+
+Chapter 11:
+- David on palace **roof**;
+- private gaze/sexual seizure;
+- action concealed;
+- another man's household violated.
+
+Chapter 12 predicts:
+**secret → public before Israel and sun**.
+
+Chapter 16:
+- **roof** again;
+- tent placed there;
+- David's own women publicly taken by his son;
+- “all Israel” can know/see.
+
+The same architectural zone becomes the site of reversal.
+
+So the process timeline is:
+
+**roof/private/hidden outward abuse**
+→ prophetic prediction of inversion
+→ **roof/public/inward dynastic abuse**.
+
+This is one of the clearest spatially mirrored consequence structures in Samuel.
+
+---
+
+# The public act strengthens the rebel field by making separation irreversible
+
+Ahithophel's stated political effect:
+once Israel hears Absalom has made himself abhorrent to his father,
+**the hands of all with Absalom will be strengthened**.
+
+In other words:
+
+**public irreversible break between father/son**
+→ followers become less afraid of reconciliation
+→ rebel field gains commitment/coherence.
+
+The act is designed as a **point-of-no-return signal**.
+
+Again:
+information about relationship state changes field stability.
+
+---
+
+# SECTION 34C continuous geometry/effect timeline — 2 Samuel 13–16
+
+## Phase BS — external sword-state moves into dynastic interior
+
+foreign-war violence recedes from foreground
+→ conflict appears inside royal household.
+
+**Effect:** promised stable “house” becomes internal conflict field.
+
+---
+
+## Phase BT — target is progressively isolated inside nested enclosure
+
+Tamar sent to Amnon's house
+→ witnesses sent out
+→ Tamar moved into inner chamber.
+
+**Effect:** nested boundaries strip away support/observation before violence.
+
+---
+
+## Phase BU — active corrective signal is rejected
+
+Tamar speaks/refuses/proposes alternate route
+→ Amnon does not listen.
+
+**Effect:** functioning information channel cannot stabilise system if dominant node refuses coupling.
+
+---
+
+## Phase BV — unequal force acts after support removal
+
+isolated chamber
++ stronger aggressor
+→ rape.
+
+**Effect:** support geometry and capacity asymmetry combine catastrophically.
+
+Control:
+human sexual violence; not positive physical analogy.
+
+---
+
+## Phase BW — inward invitation flips to outward expulsion and boundary closure
+
+Tamar brought inward
+→ assaulted
+→ expelled
+→ door bolted behind her.
+
+**Effect:** same boundary switches from controlled access to exclusion.
+
+---
+
+## Phase BX — hidden damage becomes visible through body/clothing signal
+
+inner-room violence
+→ Tamar exits
+→ ashes + torn royal garment + crying.
+
+**Effect:** concealed event is projected outward into public-readable signs.
+
+---
+
+## Phase BY — unresolved force remains latent for two years
+
+no immediate settlement/punishment
+→ Absalom silent
+→ stored hostility persists
+→ timed retaliatory event later.
+
+**Effect:** apparent quiet state can conceal accumulated tension.
+
+---
+
+## Phase BZ — timed social enclosure becomes kill-zone
+
+sheep-shearing gathering
+→ target intoxication threshold
+→ signal
+→ one targeted death.
+
+**Effect:** event waits for state/timing condition before activation.
+
+---
+
+## Phase CA — one node death scatters entire sibling field
+
+Amnon killed
+→ remaining royal sons flee outward.
+
+**Effect:** local loss causes network dispersal.
+
+---
+
+## Phase CB — false information temporarily magnifies event scale
+
+one actual death
+→ report says all sons dead
+→ king/household enter total-loss grief state
+→ corrected information contracts perceived event.
+
+**Effect:** system response follows perceived topology, not necessarily real topology.
+
+---
+
+## Phase CC — exile separates retaliatory branch from centre
+
+Absalom flees
+→ Geshur
+→ three-year external state.
+
+**Effect:** dynastic structure persists with one major branch physically absent.
+
+---
+
+## Phase CD — indirect model reopens blocked route
+
+Joab creates Tekoa-woman case
+→ king protects represented surviving son
+→ case mapped onto Absalom.
+
+**Effect:** model/projection again bypasses direct resistance and changes centre's decision.
+
+---
+
+## Phase CE — death and exile separated as different irreversibility classes
+
+death = water spilled, cannot regather.
+banishment = route can be devised for return.
+
+**Effect:** system distinguishes terminal dispersion from recoverable separation.
+
+---
+
+## Phase CF — visible interface and hidden operator separated
+
+woman speaks
+← Joab supplied words/design.
+
+king detects hidden “hand”.
+
+**Effect:** message-carrier identity differs from message-operator identity.
+
+---
+
+## Phase CG — metric return occurs without functional access
+
+Absalom → Jerusalem
+but
+king's face-route closed
+→ two years in same city without direct access.
+
+**Effect:** proximity does not equal adjacency.
+
+---
+
+## Phase CH — low-energy messages fail; physical field damage forces interface response
+
+two requests to Joab → no response
+→ barley field burned
+→ Joab comes.
+
+**Effect:** disturbance to surrounding material can force reconnection when information channel is blocked.
+
+---
+
+## Phase CI — access restored but loyalty not restored
+
+Joab mediates
+→ Absalom sees king
+→ bow/kiss
+→ route reopened.
+
+**Effect:** contact restoration can leave deeper state incompatibility unresolved.
+
+---
+
+## Phase CJ — rival node captures traffic upstream of centre
+
+petitioners move toward gate/king
+→ Absalom intercepts at gate-way
+→ cases/identity collected
+→ king's responsiveness undermined
+→ personal hand/kiss bond substituted.
+
+**Effect:** interface capture diverts information and allegiance before they reach formal centre.
+
+---
+
+## Phase CK — distributed social field shifts while fixed palace remains
+
+hearts of Israel gradually diverted
+→ David physically still king in Jerusalem.
+
+**Effect:** functional centre can weaken before spatial centre moves.
+
+---
+
+## Phase CL — old accession node becomes rival activation node
+
+Hebron:
+David accession history
+→ Absalom uses same place for rival kingship proclamation.
+
+**Effect:** one location changes political polarity across phases.
+
+---
+
+## Phase CM — horn activates distributed rebellion network
+
+spies across tribes wait
+→ horn
+→ simultaneous proclamation.
+
+**Effect:** one signal switches many remote nodes into common declared state.
+
+Contrast:
+earlier horn at Gibeon switched combat **off**.
+
+---
+
+## Phase CN — physically coupled participants need not share information state
+
+200 invited men accompany Absalom unknowingly.
+
+**Effect:** network membership can be physical/social without informational alignment.
+
+---
+
+## Phase CO — positive feedback grows rival field
+
+more hearts/people couple to Absalom
+→ conspiracy strengthens
+→ further coupling increases.
+
+**Effect:** convergence can self-amplify.
+
+---
+
+## Phase CP — centre learns field has flipped and converts from fixed to mobile
+
+message reaches David
+→ Jerusalem judged unsafe/trapping
+→ king/household/followers evacuate.
+
+**Effect:** centralised system can deliberately de-centralise to survive.
+
+---
+
+## Phase CQ — allegiance detaches from place
+
+Ittai chooses king-in-motion over fixed city.
+
+**Effect:** centre may be carried by loyal relational network rather than geography.
+
+---
+
+## Phase CR — water boundary marks exit into wilderness regime
+
+Jerusalem population stream
+→ crosses Kidron
+→ wilderness direction.
+
+**Effect:** fixed capital-state becomes mobile/refuge state.
+
+---
+
+## Phase CS — portable sacred centre is deliberately decoupled from fugitive king
+
+Ark joins evacuation
+→ David sends Ark back to Jerusalem.
+
+**Effect:** sacred centre stays fixed while political body goes mobile.
+
+This reverses the disastrous 1 Samuel 4 strategy.
+
+---
+
+## Phase CT — system decomposes into distributed information roles
+
+Ark + priests → city.
+Hushai → rival court.
+priestly sons → messenger channel.
+David → wilderness receiver.
+
+**Effect:** one loyal system survives through spatially separated functions.
+
+Vardath comparison:
+**coherent network need not be co-located.**
+
+---
+
+## Phase CU — external supply stream maintains mobile network
+
+Ziba/animals/food/wine
+→ wilderness David group.
+
+**Effect:** displaced centre survives through incoming carrier/cargo links.
+
+---
+
+## Phase CV — remote-report vulnerability
+
+Ziba makes claim about absent Mephibosheth
+→ David reallocates property
+→ later source contradicts claim.
+
+**Effect:** distributed centre can make major state changes from unverified information.
+
+---
+
+## Phase CW — hostile parallel track projects force across gap
+
+David moves along route
+↔ Shimei moves on opposite hillside
+→ words/stones/dust cross between paths.
+
+**Effect:** two streams remain separate while one continuously projects disturbance into the other.
+
+---
+
+## Phase CX — retaliatory crossing is inhibited again
+
+Abishai proposes cross-over + decapitation
+→ David refuses.
+
+**Effect:** available destructive route remains closed by centre decision.
+
+---
+
+## Phase CY — rival political centre occupies same city as fixed sacred centre
+
+Absalom → Jerusalem.
+Ark → Jerusalem.
+David → wilderness.
+
+**Effect:** sacred, political, personal and loyal-network centres no longer coincide.
+
+---
+
+## Phase CZ — loyal node enters rival centre as counter-information channel
+
+Hushai remains inside Absalom court.
+
+**Effect:** field conflict shifts into competing advice/information before military contact.
+
+---
+
+## Phase DA — secret rooftop abuse reverses into public rooftop dynastic abuse
+
+David chapter 11:
+roof → private/hidden taking.
+
+Absalom chapter 16:
+roof → public act against David's women in sight of Israel.
+
+**Effect:** hidden action is geometrically mirrored as public consequence at same architectural layer.
+
+Control:
+the women are victims of political sexual exploitation, not symbols.
+
+---
+
+## Phase DB — irreversible public rupture strengthens follower field
+
+father-son break made unmistakable
+→ followers' hands strengthened.
+
+**Effect:** eliminating expectation of reconciliation increases rebel-field cohesion.
+
+---
+
+# What 2 Samuel 13–16 adds to the master Bible/Vardath timeline
+
+38. **A system can shift from external conflict to internal conflict without changing its outer “house” identity.**
+39. **Nested enclosure can be used to progressively remove witnesses/support before a harmful event.**
+40. **The same door can function sequentially as access boundary and exclusion boundary.**
+41. **Clothing/body-state can project information about violence hidden inside an enclosure.**
+42. **Quiet intervals can store unresolved force that activates much later.**
+43. **False information can temporarily enlarge the perceived scale of a catastrophe and drive a correspondingly oversized response.**
+44. **Death and exile are different separation classes: terminal versus potentially recoverable.**
+45. **A visible messenger/interface can be operated by a hidden information designer.**
+46. **Two nodes can share one city while effective adjacency remains closed for years.**
+47. **Physical disturbance can force a blocked communication route to reopen.**
+48. **A gate-interface captured upstream of the centre can redirect a whole population's information and allegiance without taking the capital first.**
+49. **Distributed acoustic activation can switch many remote nodes into a synchronized political state.**
+50. **One network can contain uninformed components physically participating in a movement they do not understand.**
+51. **A fixed centre can deliberately become mobile again when the surrounding field changes polarity.**
+52. **Sacred centre, political occupant, legitimate king and loyal field can all occupy different places simultaneously.**
+53. **A coherent system can survive by spatially distributing its functions into hidden communication nodes.**
+54. **Remote centres are vulnerable to manipulated reports; information quality changes material/legal outcomes.**
+55. **Two moving streams can remain separated while exchanging projected disturbance across a hillside gap.**
+56. **The same architectural location can mirror an earlier hidden act as a later public consequence.**
+57. **A public point-of-no-return can increase cohesion by removing ambiguity about whether two rival centres may reconcile.**
+
+---
+
+## Section 34C number / timing register
+
+Record without forcing:
+- Amnon asks for **two cakes** in MT/JPS-style rendering;
+- Absalom waits **two full years** before killing Amnon;
+- Absalom remains in Geshur **three years**;
+- after return, he remains **two full years** in Jerusalem without seeing David;
+- hair weight given as **200 shekels by king's weight** — no cosmological use without metrological/textual control;
+- Absalom has chariot/horses + **50 runners**;
+- 2 Samuel 15:7 **forty years / four years** is textually unstable and must not be used as a timing datum;
+- **200 invited men** accompany Absalom without knowing plot;
+- David's Gittite contingent described as **600**;
+- ten concubines remain to keep the house;
+- Ziba brings two asses, 200 loaves, 100 raisin clusters, 100 summer-fruit portions and wine.
+
+---
+
+## Section 34C textual / scholarly controls
+
+- 2 Samuel 13 is a rape narrative. Spatial analysis must never soften or aestheticize the assault.
+- The exact kinship/legal possibilities invoked by Tamar's appeal to speak to the king are debated; her explicit refusal and Amnon's use of force are not ambiguous.
+- Textual witnesses differ in places around David's response to Amnon; some traditions add explanatory material. Do not use David's lack of immediate punishment as if every textual layer frames it identically.
+- Scholarship has identified deliberate spatial staging in Tamar's movement **house → inner chamber → outside bolted door**.
+- Tamar's royal garment has literary/status significance; details beyond the text should not be invented.
+- The **all-sons-dead** report is explicitly false in the narrative; it is valuable as information-process evidence precisely because it is corrected.
+- The woman of Tekoa's speech is a crafted/feigned case directed by Joab. It should not be treated as independent historical law.
+- “Water spilled on the ground cannot be gathered” is mortality metaphor, not evidence about physical water cycles.
+- Absalom's hair notice must be kept separate from later popular retellings that say his hair explicitly caught in the tree; the Masoretic text in chapter 18 requires fresh reading when reached.
+- Burning Joab's barley is coercive property destruction, not a recommended communication mechanism.
+- **2 Samuel 15:7 has a major number problem.** MT “forty years” conflicts with the narrative chronology; “four years” has substantial ancient versional support and is widely adopted. Do not use either as cosmological recurrence without explicit textual qualification.
+- Hebron's significance as David's earlier accession site makes its reuse narratively potent, but do not assume a physical “charged node.”
+- David's return of the Ark is a theological/political narrative decision; it is a strong contrast to 1 Samuel 4 but not proof of a technical theory of sacred-object transport.
+- Ziba's allegation against Mephibosheth is contested later by Mephibosheth himself; preserve both versions.
+- Shimei's interpretation of David as receiving bloodguilt from Saul's house is an attributed claim inside the story, not an established narrator verdict.
+- The concubines in 2 Samuel 16 are women subjected to political sexual exploitation. Do not reduce them to transfer tokens even though the act has dynastic/political signaling effects.
+- The rooftop reversal strongly matches Nathan's secret/public oracle, but later redactional/literary shaping is a possible explanation and must remain open.
+- Charles Conroy's **Absalom Absalom! Narrative and Language in 2 Sam 13–20**, Ilse Müllner's work on violence in David's house, and recent architecture/space scholarship are important controls for this section.
+
+### Sources logged for Section 34C
+
+Primary:
+- Mechon-Mamre, **2 Samuel 13–16**.
+
+Scholarly controls:
+- Ilse Müllner, **Gewalt im Hause Davids: Die Erzählungen von Tamar und Amnon (2 Sam 13,1–22)**.
+- Esther Brownsmith, **“Getting Steamy in Amnon's Chamber: Philological and Metaphorical Observations on 2 Samuel 13.”**
+- legal/narrative scholarship on Tamar's rape and Deuteronomic juridical traditions.
+- Ekaterina E. Kozlova, **“2 Samuel and the Architecture of Poetic Justice”** (2023), especially bolted door / gate architecture.
+- Charles Conroy, **Absalom Absalom! Narrative and Language in 2 Sam 13–20**.
+- studies of royal power, geography and gate space in the Absalom narrative.
+- text-critical discussion of **2 Samuel 15:7** and the forty/four-year variants.
+- scholarship on Absalom's revolt and David's flight/intelligence network.
+- literary readings of Ziba/Mephibosheth, Shimei and the rooftop fulfilment scene, with contested narrator/character claims kept separate.
+
+**Section 34 remains in progress.**
+
+### Next process block
+
+**2 Samuel 17–20**:
+- competing counsel as rival future-route simulations;
+- Hushai's delay strategy versus Ahithophel's immediate strike;
+- hidden priests' sons discovered at En-rogel and concealed in a well;
+- woman covers well-mouth and spreads grain as proxy surface;
+- information escapes to David;
+- whole mobile network crosses Jordan before closure;
+- Ahithophel recognizes rejected route, returns home, orders house, dies;
+- two armies form in forest;
+- David remains at city gate while three field divisions go out;
+- forest “devours” more than sword;
+- Absalom suspended between heaven and earth in tree;
+- Joab ignores centre's preservation order and kills suspended rival;
+- stones/pit close the body while horn ends pursuit;
+- competing runners carry result back;
+- David's grief above gate reverses victory into mourning;
+- Joab forces king back to gate/public centre;
+- return across Jordan and contested north/south reintegration;
+- Sheba's horn splits Israel from David again;
+- siege of Abel;
+- wise woman speaks across wall;
+- one head expelled as substitute for whole-city destruction;
+- horn dissolves siege and field redistributes.
+
