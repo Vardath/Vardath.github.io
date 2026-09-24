@@ -44147,3 +44147,791 @@ Priority pair tests:
 
 Before beginning Section 30, apply the anti-repeat search to the full current ledger.
 
+---
+
+## SECTION 30 progress A — Judges 9–12: humans become trees in political geometry, Gerizim changes function, repeated tower-fire tactic reverses at Thebez, and Jephthah turns speech into an irreversible boundary-state
+
+### Anti-repeat check
+
+The full current ledger was searched first.
+
+No Section 30 progress existed.
+
+An older preliminary Samson note was found near the front of the file and will be treated as prior work when Judges 13–16 is reached rather than repeated.
+
+This block therefore begins with genuinely unfinished Judges 9–12.
+
+---
+
+## Judges 9 — Gideon's quasi-dynastic aftermath becomes literal fratricidal kingship
+
+Abimelech:
+- son of Jerubbaal/Gideon through a concubine;
+- appeals to his mother's Shechemite relatives;
+- asks whether **70 brothers** or **one man** should rule.
+
+This converts Gideon's unresolved kingship tension into a stark:
+
+**many potential rulers**
+→ **one self-selected ruler**.
+
+### Seventy silver pieces fund destruction of the seventy-brother house
+
+The Shechemite leaders give Abimelech:
+- **70 pieces/shekel-units of silver** from Baal-berith's temple.
+
+He then:
+- hires violent followers;
+- kills the sons of Jerubbaal on **one stone**.
+
+The final text repeatedly uses **70** around:
+- Gideon's sons;
+- funding;
+- fratricide.
+
+Jotham survives by hiding.
+
+The arithmetic/literary use of “seventy” is conventional enough that we should not force a literal exact 70→70 mechanism.
+
+### One stone becomes a concentrated death-site
+
+The brothers are killed:
+- “on one stone.”
+
+Raw reduction:
+
+**many bodies**
+→ brought to
+**one central stone**
+→ killed there.
+
+This is a violent **many→one centre** image.
+
+It belongs in the geometry register,
+but not as a neutral axis/gate analogue.
+
+---
+
+## Jotham stands on Gerizim — the blessing mountain now carries a curse-warning
+
+Jotham:
+- escapes;
+- stands at the **top of Mount Gerizim**;
+- speaks to Shechem.
+
+Earlier Deuteronomy/Joshua:
+**Gerizim = blessing side**.
+
+Judges 9:
+Jotham uses Gerizim to pronounce a warning/curse logic against Abimelech and Shechem.
+
+This is a major **same place / different phase-function** control:
+
+> **a sacred/geographic location does not possess one invariant narrative polarity forever.**
+
+The same mountain can be:
+- blessing coordinate in one ritual system;
+- warning/judgment platform in another story.
+
+### Gerizim's prior function is therefore not a permanent physical property
+
+This is important for Vardath mapping.
+
+If a place changes symbolic function across texts,
+we must not assume its earlier role describes a fixed physical mechanism.
+
+---
+
+## Jotham's fable explicitly transforms human political roles into trees
+
+The trees seek a king.
+
+They ask:
+- olive;
+- fig;
+- vine;
+then:
+- bramble/thornbush.
+
+The productive trees refuse because ruling would mean abandoning:
+- oil;
+- sweetness/fruit;
+- wine.
+
+The bramble accepts.
+
+This is direct source-level proof that biblical literature can represent:
+
+**human political actors**
+as
+**tree species with geometric/natural properties**.
+
+### This is one of the clearest person↔tree precedents in the corpus
+
+The mapping is not speculative.
+
+The text itself tells us:
+- trees = political community/leadership choices;
+- bramble = Abimelech-like kingship.
+
+This is very important for the user's broader hypothesis that some apparently human figures may encode structural/natural forms.
+
+Control:
+here the genre is clearly **parable**.
+
+We are told by context to read symbolically.
+
+That does not grant permission to treat every prose person elsewhere as hidden geometry.
+
+### Olive / fig / vine retain productive function rather than seize central rule
+
+The fable's logic is:
+
+**good productive nodes**
+→ refuse centralized domination.
+
+**low bramble**
+→ accepts kingship.
+
+This is almost the inverse of a “highest/strongest centre wins” model.
+
+### Bramble offers impossible/poor shade then threatens fire
+
+The bramble says:
+- take refuge in my shadow;
+- otherwise fire comes out and consumes cedars of Lebanon.
+
+This is deliberately ironic:
+a low thornbush is a poor source of shade,
+yet claims protective centrality.
+
+### Fire prophecy becomes reciprocal system destruction
+
+Jotham applies the fable:
+
+**fire from Abimelech**
+→ devour Shechem/Beth-millo.
+
+**fire from Shechem/Beth-millo**
+→ devour Abimelech.
+
+This is a true **mutual-destruction pair**.
+
+Neither side is stable centre.
+
+---
+
+## Three-year rule ends in internal split
+
+Abimelech rules for:
+**3 years**.
+
+Then the narrative says an evil spirit is sent:
+- between Abimelech;
+- and Shechem's leaders.
+
+The alliance fractures.
+
+So:
+**one political unit**
+→ internal relational split
+→ mutual destruction.
+
+For Vardath:
+this is a social coupling failure,
+not a physical field split.
+
+---
+
+## Abimelech repeats Gideon's branch-cutting leadership pattern in a dark form
+
+At Shechem's tower/stronghold:
+- Abimelech cuts a tree branch/bough;
+- places it on his shoulder;
+- tells followers to imitate him;
+- they pile branches against the enclosure;
+- set it on fire.
+
+About **1,000 men and women** die in the tower.
+
+This gives:
+
+**leader performs one visible action**
+→ followers mirror action
+→ many branches converge at one enclosure
+→ fire
+→ enclosed population dies.
+
+### Same branch/tree material changes from symbol to weapon/fuel
+
+Earlier:
+- Jotham's trees are symbolic people/politics.
+
+Later:
+- literal branches become fuel for destruction.
+
+The chapter therefore uses tree material at several levels:
+**parable**
+and
+**physical action**.
+
+Do not collapse symbolic and literal tree layers.
+
+---
+
+## Thebez — the same tower-burning tactic fails
+
+Abimelech goes to Thebez.
+
+Again:
+- people retreat into a strong tower;
+- Abimelech approaches the entrance;
+- intends to burn it.
+
+This looks like a repetition of Shechem.
+
+But this time:
+- a woman above drops the **upper millstone**;
+- it crushes Abimelech's skull.
+
+### Same operator method / different target-state → opposite outcome
+
+Shechem tower:
+**approach door + fire**
+→ Abimelech succeeds.
+
+Thebez tower:
+**approach door + fire**
+→ Abimelech is killed.
+
+This is an exceptionally clear anti-mechanistic control:
+
+> **same action and similar geometry do not guarantee the same outcome.**
+
+The larger system/context matters.
+
+### Woman above / Abimelech below creates explicit vertical reversal
+
+Raw geometry:
+
+**woman on tower roof**
+↓
+**upper millstone**
+↓
+**Abimelech's head at tower entrance below**.
+
+This is a strong:
+**upper operator / descending stone / lower target** scene.
+
+But it is ordinary gravity/warfare,
+not a cosmic upper-world transfer.
+
+### Upper millstone itself is half of a paired grinding system
+
+The weapon is specifically:
+- the **upper** millstone.
+
+Its normal function depends on:
+- upper stone;
+- lower base stone.
+
+Here:
+the upper component is removed from its ordinary paired system and becomes a projectile.
+
+This is another:
+**component leaves original mechanism → acquires different role**.
+
+### Abimelech tries to rewrite the interpretation of his own death
+
+He asks his armor-bearer to kill him:
+- so people will not say **a woman killed him**.
+
+Thus:
+physical cause
+and
+socially remembered cause
+are deliberately separated.
+
+The text preserves both:
+- woman mortally wounds him;
+- armor-bearer delivers final stroke.
+
+This is another **event / memory-framing** distinction.
+
+---
+
+## Judges 10 — short judge notices become numerical/kinship state markers
+
+Tola judges:
+**23 years**.
+
+Jair judges:
+**22 years**.
+
+Jair has:
+- **30 sons**;
+- riding **30 donkeys**;
+- associated with **30 towns**.
+
+This is an unusually neat:
+**30 people / 30 vehicles / 30 settlements**
+correspondence.
+
+The immediate context is elite/status geography,
+not cosmological numerology.
+
+### Israel's cycle degrades further
+
+Israel serves multiple foreign gods.
+
+Oppression lasts:
+**18 years** in the Transjordan/Gilead region.
+
+The Ammonites also cross Jordan to attack western tribes.
+
+So the crisis itself crosses the same boundary that earlier structured:
+- 2.5 east tribes;
+- 9.5 west tribes.
+
+The Jordan is again:
+**geographic divider**
+but not impermeable barrier.
+
+---
+
+## Jephthah begins as rejected component, then returns as required head
+
+Jephthah is:
+- son of Gilead and a prostitute/outsider woman in the final story;
+- rejected by his brothers;
+- driven away;
+- gathers a band around himself.
+
+Later,
+when Ammon threatens:
+- Gilead's elders ask him to return;
+- promise he will become **head**.
+
+This is a strong status inversion:
+
+**expelled marginal component**
+→ crisis
+→ recalled
+→ **central leader/head**.
+
+### System expels the very component it later needs
+
+This is a recurring Judges pattern:
+local society produces its own future repair operator by first marginalizing him.
+
+For Vardath:
+useful as a social feedback structure,
+not a physical gate process.
+
+---
+
+## Jephthah retells the Transjordan history as a territorial argument
+
+Before battle he sends a long historical claim:
+- Israel did not take Moab/Ammon land improperly;
+- conflicts with Sihon;
+- territory held since Moses.
+
+He says Israel has occupied the relevant towns for:
+**300 years**.
+
+This is an important chronological marker in the final narrative.
+
+But:
+- biblical chronology is compositionally complex;
+- the 300-year figure creates well-known difficulties when harmonized with other chronological schemes.
+
+Record it as a **textual claim**,
+not a verified absolute date.
+
+### Historical memory becomes a diplomatic weapon
+
+Like Deuteronomy 26/Joshua 24:
+long history is compressed into:
+**one speech**
+used to determine present land rights.
+
+Again:
+**past route → information packet → present boundary claim**.
+
+---
+
+## Jephthah's vow turns speech into an irreversible future-state condition
+
+Before battle Jephthah vows:
+
+if victory and safe return,
+then:
+- whatever/whoever comes out of his house door to meet him
+will belong to YHWH
+and is described with burnt-offering language.
+
+The syntax has interpretive ambiguity,
+but the narrative clearly treats the vow as binding.
+
+### Spoken output creates a future boundary trap
+
+Before the battle:
+the identity of the future greeter is unknown.
+
+Jephthah's speech establishes:
+
+**future first-exit event**
+→ determines the greeter's fate.
+
+This is an unusually strong:
+**information now → state assignment later**
+structure.
+
+### The house door becomes the trigger boundary
+
+After victory:
+Jephthah returns.
+
+His daughter:
+- comes **out through/from the house door**;
+- with timbrels/dancing.
+
+The very act specified in the vow activates the crisis.
+
+So:
+
+**inside house**
+→ crosses door outward
+→ becomes the identified vow-object/person.
+
+This is one of the strongest literal:
+**boundary crossing triggers pre-existing rule**
+stories in Judges.
+
+### Same joyful victory-return motif becomes tragedy
+
+Compare:
+- Miriam/women greet victory with song/dance;
+- Jephthah's daughter greets with timbrel/dance.
+
+But here:
+the familiar victory form triggers disaster.
+
+Again:
+**same visible pattern**
+can have opposite narrative outcome.
+
+---
+
+## Jephthah / daughter is a devastating parent-child pair
+
+The daughter is:
+- his only child;
+- no son or other daughter.
+
+Therefore her loss/dedication means:
+**Jephthah's future lineage closes**.
+
+This gives:
+
+**Jephthah's rise as head**
+→ victory
+→ vow
+→ **dynastic/family future collapses**.
+
+The would-be central leader cannot transmit his own branch forward.
+
+### Two-month interval before vow fulfillment
+
+She asks for:
+**2 months**.
+
+She goes with female companions to the mountains,
+mourning her virginity/future.
+
+Then returns.
+
+This is a timed:
+**sentence known**
+→ temporary release
+→ return to fixed outcome.
+
+### Was she literally killed? The text has real ambiguity
+
+The simplest/common reading:
+- Jephthah sacrificed his daughter.
+
+But the text says only that:
+- he fulfilled the vow;
+- she had not known a man.
+
+Some interpreters, ancient and modern,
+argue:
+- permanent dedication/celibacy rather than death.
+
+Modern scholarship remains divided enough that the first pass should preserve:
+
+**secure:** irreversible loss of ordinary marriage/lineage future.
+
+**probable/simple reading for many scholars:** sacrifice/death.
+
+**alternative:** permanent consecration/virginity.
+
+Do not pretend the physical outcome is textually uncontested.
+
+### Four-day annual women's commemoration
+
+The text gives:
+- **4 days per year**
+for daughters/women of Israel to commemorate/lament/meet in relation to Jephthah's daughter depending on translation.
+
+This turns one family catastrophe into a repeated female memory cycle.
+
+Again:
+event
+→ ritualized periodic remembrance.
+
+---
+
+## Judges 12 — Jordan fords become identity-testing choke points
+
+Ephraim quarrels with Jephthah/Gilead.
+
+Gilead controls:
+- **Jordan crossing points/fords**.
+
+Fugitives asking to cross are tested.
+
+This is a literal:
+**boundary + checkpoint + classification** system.
+
+### One spoken word becomes the key
+
+The test:
+- say **Shibboleth**.
+
+Ephraimites pronounce:
+- **Sibboleth** in the story.
+
+Pronunciation reveals group identity.
+
+This is one of the most exact **information-key at a boundary** scenes in the Bible.
+
+### Same body / same route / different phonetic output = different passage outcome
+
+Raw state machine:
+
+**arrive at ford**
+→ asked identity
+→ speech test
+→ correct/local pronunciation
+= pass/identified as Gileadite
+
+or
+
+→ alternate pronunciation
+= identified as Ephraimite
+→ death.
+
+For Vardath:
+this is a brilliant non-physical analogue of:
+**route access depends on information/state**, not geography alone.
+
+It is violent ethnic conflict,
+not a mystical password gate.
+
+### “Shibboleth” becomes a real-world concept because of this story
+
+The modern word “shibboleth” for:
+- a word/custom revealing group membership
+comes directly from this boundary-identification scene.
+
+This confirms the story's core function is:
+**information-based classification**.
+
+### 42,000 death count
+
+The final text gives:
+**42,000 Ephraimites** killed.
+
+Record as narrative count.
+
+Do not connect to the traditional **42 wilderness stations** merely because the number recurs.
+
+Different unit/context.
+
+### Jephthah judges six years
+
+Jephthah:
+**6 years**.
+
+His story therefore produces:
+- major victory;
+- family catastrophe;
+- internal Israelite civil bloodshed;
+- short judgeship.
+
+The Judges degradation pattern continues.
+
+---
+
+## Minor judges continue highly structured family-number notices
+
+Ibzan:
+- **30 sons**
+- **30 daughters**
+- daughters sent outward for marriage
+- **30 women brought inward** for sons
+- judges **7 years**.
+
+This is a literal marriage exchange:
+
+**30 female members outward**
++
+**30 female members inward**.
+
+Same household expands kinship through balanced external exchange.
+
+### Elon judges 10 years
+
+Elon:
+**10 years**.
+
+### Abdon's descendants and mounts make 70
+
+Abdon:
+- **40 sons**
+- **30 grandsons**
+- riding **70 donkeys**;
+- judges **8 years**.
+
+This is:
+**40 +30 =70 male descendants**
+paired with
+**70 mounts**.
+
+Again:
+likely elite/status formula,
+not hidden cosmology.
+
+---
+
+## SECTION 30A continuous sequence — Judges 9–12
+
+**Gideon's legacy**
+→ Abimelech appeals to Shechem kin
+→ 70 silver
+→ brothers killed on one stone
+→ one-man kingship
+
+**Jotham**
+→ climbs Gerizim
+→ people represented as trees
+→ productive olive/fig/vine refuse rule
+→ bramble accepts
+→ fire-warning
+→ mutual destruction prophecy
+
+**Abimelech system fracture**
+→ 3-year rule
+→ alliance splits
+→ branches cut and carried
+→ Shechem tower burned / ~1,000 die
+→ same tactic at Thebez
+→ woman above drops upper millstone
+→ Abimelech mortally crushed
+→ armor-bearer finalizes death
+→ system disperses
+
+**Jephthah**
+→ rejected son driven out
+→ crisis
+→ recalled as head
+→ 300-year territorial memory claim
+→ spirit/battle
+→ vow establishes unknown future greeter as bound outcome
+→ daughter crosses house threshold
+→ only-child future branch closes
+→ 2-month interval
+→ vow fulfilled
+→ annual 4-day female commemoration
+
+**civil fracture**
+→ Ephraim/Gilead conflict
+→ Jordan fords controlled
+→ one word/pronunciation used as identity key
+→ 42,000 death count
+→ Jephthah judges 6 years
+
+**minor-judge kinship numbers**
+→ Ibzan 30 sons/30 daughters/30 incoming wives
+→ Elon 10 years
+→ Abdon 40 sons +30 grandsons =70 riders/mounts.
+
+---
+
+## SECTION 30A strongest Vardath correspondences
+
+1. Jotham's fable explicitly maps human political actors into **tree forms**, a direct source-level person↔tree symbolic precedent.
+2. Gerizim changes from blessing mountain to warning/curse platform: same place, different function.
+3. Bramble-fire prophecy creates a reciprocal **centre↔population mutual-destruction** pair.
+4. Same tower-burning tactic succeeds at Shechem and fails at Thebez: same geometry/action does not guarantee same output.
+5. Thebez gives a strong **upper woman → descending millstone → lower Abimelech** vertical scene.
+6. An upper millstone removed from its normal paired mechanism becomes a different-purpose projectile.
+7. Abimelech's death separates physical cause from remembered/socially desired cause.
+8. Jephthah is an expelled component later recalled as the required head.
+9. Jephthah compresses 300 years of territorial history into an information argument for present boundaries.
+10. His vow creates **future state through speech** before the future participant is known.
+11. His daughter's crossing of the house door activates the prior speech-condition.
+12. Shibboleth is one of the clearest **information-key + boundary + access outcome** systems in the Bible.
+13. Minor-judge notices repeatedly map kinship bodies onto neat vehicle/marriage counts, but these are status/genealogical structures, not cosmological proof.
+
+### Major controls
+
+- Jotham is explicitly using a fable; tree↔human mapping is genre-marked.
+- Gerizim's changing function cautions against assigning one permanent physical polarity to sacred geography.
+- tower fire/millstone scenes are ordinary warfare.
+- Jephthah's 300 years is a literary chronological claim with harmonization problems.
+- daughter's exact final fate is textually/interpre­tively debated.
+- Shibboleth is linguistic/ethnic classification, not a supernatural password mechanism.
+- recurring 70/42/30 numbers must not be cross-matched without normalized units and source analysis.
+
+### Pair / number register
+
+- Abimelech funding: **70 silver units**.
+- Gideon sons in final tradition: **70**; Jotham survives.
+- Abimelech rule: **3 years**.
+- Shechem tower deaths: about **1,000 men/women**.
+- Jotham tree sequence: olive / fig / vine / bramble.
+- Jephthah territorial claim: **300 years**.
+- daughter interval: **2 months**.
+- female commemoration: **4 days/year**.
+- Ephraim death count: **42,000**.
+- Jephthah judges: **6 years**.
+- Ibzan: **30 sons +30 daughters +30 incoming wives**, **7 years**.
+- Elon: **10 years**.
+- Abdon: **40 sons +30 grandsons =70**, **70 mounts**, **8 years**.
+
+### Sources logged
+
+Primary:
+- Judges 9–12.
+- Judges 9: Abimelech, seventy silver, one stone, Jotham/Gerizim/tree fable, Shechem/Thebez towers, woman/millstone.
+- Judges 11: Jephthah's 300-year claim, vow, daughter.
+- Judges 12: Jordan fords/Shibboleth, 42,000, minor judge numbers.
+
+Scholarly/source-critical:
+- “Are Trees of the Field Human?” — TheTorah: Jotham's trees as human/political symbolism.
+- “The Story of Jephthah: The Urge to Manipulate” — TheTorah.
+- “Did Jephthah Actually Kill His Daughter?” — TheTorah.
+- “Biblical and Greek Ambivalence Towards Child Sacrifice” — TheTorah.
+- “Why Can Women's Vows Be Vetoed?” — TheTorah.
+- “Seila, Jephthah's Daughter: A Sacrifice Like Isaac” — TheTorah.
+- critical commentary on Abimelech's tower death / upper millstone.
+
+**Section 30 remains in progress.**
+
+Next under anti-repeat protocol:
+**Judges 13–16 — Samson birth/annunciation, Nazirite body-state, lion→honey transformation, riddle/information asymmetry, fox/fire episode, jawbone/water, Gaza gate carried to hill, binding/escape cycles, Samson/Delilah information extraction, hair/strength-state relation, blinded prisoner/turning mill, two central pillars, Samson placed between supports, bilateral hands, collapse, and comparison with the older preliminary Samson note without repeating it.**
+
