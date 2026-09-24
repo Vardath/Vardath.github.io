@@ -43158,3 +43158,992 @@ Scholarly/source-critical:
 Next under anti-repeat protocol:
 **Judges 6–8 — Gideon's Moses-like call and anti-Moses divergences, fire emerging from rock after staff contact, two fleece wet/dry reversals, force reduction 32,000→10,000→300, three-company geometry, concealed torches inside jars, synchronized jar-breaking/trumpets/light release, Midian panic/self-destruction, Jordan crossing pursuit, two kings Zebah/Zalmunna, and Gideon's ephod as post-victory system failure.**
 
+## SECTION 29 progress B — Judges 6–8: staff→rock→fire, wet/dry state inversion, 32,000→300 filtering, concealed light released by broken vessels, and victory generating its own new failure-centre
+
+### Anti-repeat check
+
+Section 29A is saved.  
+No Judges 6–8 Section 29 block exists later in the ledger.  
+Continuing only from the Deborah/Barak/Yael checkpoint.
+
+---
+
+## Judges 6 — Midianite pressure is described as repeated loss of surface produce
+
+The Midianites repeatedly:
+- enter the land;
+- destroy produce;
+- take livestock;
+- leave Israel impoverished.
+
+Israel responds by making/using:
+- dens;
+- caves;
+- mountain strongholds.
+
+This produces a simple environmental/social geometry:
+
+**surface/agricultural zone becomes unsafe**
+→ population retreats into
+**rock/cave/hidden spaces**.
+
+For Vardath:
+the hiding places are ordinary defensive refuges,
+not underworld gates.
+
+### The Midianite invasion is cyclical in the narrative frame
+
+The oppression lasts:
+**7 years**.
+
+Again:
+this belongs first in the Judges theological cycle,
+not a natural catastrophe interval.
+
+### Gideon begins by threshing in a concealed location
+
+Gideon is threshing wheat in/at a winepress:
+- to hide produce from Midian.
+
+This is another **function displaced into the wrong enclosure because of external pressure**.
+
+A winepress,
+normally for grapes,
+becomes a hidden grain-processing site.
+
+This is a strong example of:
+**same structure → different use under changed system state**.
+
+---
+
+## Gideon's call deliberately echoes Moses
+
+The messenger calls Gideon to deliver Israel.
+
+Gideon:
+- questions;
+- protests low status/weakness;
+- asks for signs.
+
+Modern literary comparison has long noted similarities with Moses:
+- reluctant/questioning deliverer;
+- divine commission;
+- reassurance;
+- sign;
+- fear after divine encounter.
+
+Classification:
+**P5 role-pattern recurrence**.
+
+Do not merge Gideon and Moses into one identity.
+
+### Gideon and Moses diverge as well as repeat
+
+The book of Judges increasingly portrays later judges as imperfect/degenerating leaders.
+
+Gideon can imitate Moses at his call,
+yet later:
+- acts harshly toward Israelites;
+- creates the ephod that becomes a snare.
+
+This is a crucial control:
+
+> **role-pattern recurrence does not guarantee equivalent later state or moral function.**
+
+---
+
+## Angel / YHWH wording shifts inside the call scene
+
+As with the burning bush,
+the narrative moves between:
+- messenger/angel of YHWH;
+- YHWH speaking directly.
+
+Modern scholarship treats the “angel of YHWH” complex as a form of mediated divine manifestation whose literary/theological development is complicated.
+
+For the pair method:
+do not automatically split:
+**messenger**
+and
+**source**
+into two independent physical beings.
+
+---
+
+## Staff → rock → fire is explicit
+
+Gideon prepares:
+- meat;
+- unleavened bread/cakes;
+- broth.
+
+He places the food:
+- on a **rock**;
+- pours broth.
+
+The messenger:
+- reaches out the **tip of the staff** in his hand;
+- touches the offering.
+
+Then:
+- **fire rises/springs from the rock**;
+- consumes the offering;
+- messenger vanishes.
+
+This is one of the strongest literal rod/rock/fire sequences yet:
+
+**staff tip**
+→ contact
+→ **rock**
+→ **fire rises**
+→ offering consumed.
+
+### Compare rock-water stories without merging them
+
+Exodus/Numbers:
+**staff/rock**
+→ water.
+
+Judges 6:
+**staff/rock**
+→ fire.
+
+This is extremely important.
+
+The same broad geometry:
+**rod + rock**
+can produce
+**opposite elemental outcomes**
+in different stories.
+
+Therefore:
+rod/rock resemblance alone cannot identify one physical mechanism.
+
+### Water is present immediately before fire
+
+The offering has broth poured over/on it.
+
+Then:
+fire rises from rock and consumes the food.
+
+That produces a striking local sequence:
+
+**wet offering / rock**
+→ staff contact
+→ **fire**.
+
+This resembles later Elijah/Carmel fire-over-water narrative grammar.
+
+But the immediate source meaning is miraculous sacrificial acceptance,
+not a known physical ignition mechanism.
+
+### Messenger vanishes after activation
+
+Once fire consumes the offering:
+- the messenger disappears from Gideon's sight.
+
+Again:
+**visible operator state**
+changes after the sign.
+
+Do not infer physical dematerialization mechanism from literary theophany.
+
+---
+
+## Gideon destroys one cultic centre and builds another
+
+That night Gideon is told to:
+- tear down Baal's altar;
+- cut down the Asherah beside it;
+- build an altar to YHWH;
+- use the cut Asherah wood as fuel.
+
+This is an extremely explicit **centre replacement** sequence:
+
+**old altar**
+→ dismantled
+
+**old sacred pole/tree**
+→ cut
+→ transformed into fuel
+
+**new altar**
+→ built in ordered form
+→ sacrifice burned using old pole material.
+
+### One system's vertical object becomes another system's consumable material
+
+Asherah:
+**standing cultic pole/tree**
+→ cut down
+→ **firewood**.
+
+This is a vivid object-role transition.
+
+The material persists,
+but its function is reversed/destroyed.
+
+### Ten servants + night operation
+
+Gideon uses:
+**10 servants**.
+
+He acts:
+**at night**
+because of fear of household/town response.
+
+This is another:
+**hidden phase operation**
+→ morning reveals changed system.
+
+### Gideon / Jerubbaal — one person receives a second name from the event
+
+Gideon is called:
+**Jerubbaal**.
+
+The story gives a folk-etymological explanation connected with Baal “contending.”
+
+This is another:
+**one body / multiple names according to event-state**.
+
+Source-critical studies have long suspected that:
+- Gideon;
+- Jerubbaal
+may reflect different traditions later combined.
+
+This is a major control for the user's paired-name/person work:
+two names in one corpus can represent
+**one merged literary figure**
+rather than two hidden physical states.
+
+---
+
+## Fleece test 1 — wet centre / dry surroundings
+
+Gideon places:
+- one fleece of wool
+on:
+- threshing floor.
+
+He requests:
+
+**fleece**
+→ dew/wet
+
+**all surrounding ground**
+→ dry.
+
+The next morning:
+- fleece is wet enough to wring a bowlful of water;
+- surroundings are dry in the requested sign logic.
+
+This is a clean central/peripheral state contrast.
+
+### Fleece test 2 — exact reversal
+
+Gideon requests the inverse:
+
+**fleece alone**
+→ dry
+
+**all surrounding ground**
+→ dew/wet.
+
+And the narrative says it occurs.
+
+This is one of the strongest explicit **state inversion pairs** in the Bible:
+
+**Test A**
+centre = wet
+surroundings = dry
+
+**Test B**
+centre = dry
+surroundings = wet.
+
+### Same object / same place / opposite environmental relation
+
+Nothing about:
+- fleece identity;
+- ground identity
+needs to change.
+
+Only their **state relation** reverses.
+
+For Vardath:
+this is very useful evidence that biblical signs can encode:
+**same geometry → inverted state assignment**.
+
+It is not evidence of a literal atmospheric gate.
+
+### Wet/dry is explicitly an information test
+
+The purpose is:
+- Gideon wants confirmation.
+
+So the environmental inversion is **signal/information**, not itself the battle mechanism.
+
+This distinction matters enormously:
+**sign**
+≠
+**cause of later event**.
+
+---
+
+## Judges 7 — the army is progressively filtered from 32,000 to 300
+
+Initial force:
+**32,000**.
+
+First filter:
+- fearful leave;
+- **22,000 depart**;
+- **10,000 remain**.
+
+Second filter at water:
+- final selected group = **300**.
+
+Raw narrowing:
+
+**32,000**
+→ **10,000**
+→ **300**.
+
+This is one of the cleanest **broad → narrow → highly selected** population filters in Judges.
+
+### Selection criterion is bodily behavior at water
+
+The men are differentiated by:
+- how they drink/lap/kneel at water.
+
+The exact interpretation of the drinking categories has been debated,
+but the final narrative uses water behavior as the selection interface.
+
+This is another:
+**water boundary → sorting event**.
+
+Do not assume the physical posture has a hidden cosmological meaning.
+
+### The narrative explicitly explains why the force is reduced
+
+Purpose:
+- Israel must not attribute victory to its own large force.
+
+So the narrowing is theological demonstration,
+not tactical optimization alone.
+
+This is a very strong anti-overfitting control.
+
+---
+
+## Gideon / Purah — leader + attendant pair enters the enemy boundary
+
+Gideon is still afraid.
+
+YHWH tells him:
+- go down to Midianite camp;
+- if afraid, take **Purah his servant/attendant**.
+
+So the reconnaissance unit becomes:
+**1 +1**.
+
+Classification:
+- **P7 leader / support-witness pair**.
+
+### Enemy dream becomes external confirmation
+
+Gideon overhears:
+- one Midianite tells a dream;
+- another interprets it.
+
+Dream image:
+- a **barley loaf/cake**
+rolls/tumbles into camp;
+- strikes a tent;
+- overturns it.
+
+The interpreter says:
+- this is Gideon's sword/victory.
+
+This is another:
+**object-image → interpretation → system decision**.
+
+### Rolling bread destroys a tent in symbolic dream-space
+
+Raw dream geometry:
+
+**round/rolling food object**
+→ moves through space
+→ strikes enclosure
+→ enclosure overturns.
+
+This is dream symbolism,
+not physical event.
+
+But it is useful for the person/object projection register:
+Gideon's military action is represented by a completely different visible object.
+
+---
+
+## 300 are divided into three groups
+
+Gideon divides:
+**300**
+into
+**3 companies**.
+
+Simplest equal interpretation:
+**100 +100 +100**.
+
+Each person receives:
+- trumpet/horn;
+- empty jar;
+- torch **inside** the jar.
+
+This creates one of the most remarkable paired concealment systems in the Bible.
+
+### Light exists before it becomes visible
+
+The torch is:
+- already burning/present;
+- hidden inside vessel.
+
+So:
+
+**light present**
+≠
+**light externally visible**.
+
+This is a strong state/visibility control.
+
+### Vessel is not the light source
+
+The jar:
+- contains/conceals the torch;
+- does not generate it.
+
+This is another crucial mature-model distinction:
+
+**enclosure**
+≠
+**contents**
+≠
+**source**.
+
+### Breaking the vessel changes visibility, not the torch's identity
+
+At the coordinated signal:
+- jars are smashed;
+- torches become exposed.
+
+So:
+
+**intact enclosure**
+→ hidden light.
+
+**broken enclosure**
+→ visible light.
+
+The light itself did not need to be created at the break moment.
+
+This is highly relevant to Vardath's:
+**boundary failure/opening makes an already-existing state visible/accessible**
+idea.
+
+But it is ordinary military deception in the story.
+
+### Synchronized reveal occurs at a phase boundary in the night
+
+The attack occurs:
+- at beginning of **middle watch**;
+- just after sentries change.
+
+This is deliberate timing at a system transition.
+
+Again:
+**place + phase**.
+
+### Left/right body polarity is explicit in the final formation
+
+The men hold:
+- torches in **left hands**;
+- trumpets in **right hands**.
+
+This gives:
+**left = light**
+**right = signal/sound**.
+
+It is a literal bilateral functional split across the body.
+
+Do not infer universal cosmic left/right meanings.
+
+### Three surrounding groups + simultaneous light/sound produce apparent multiplicity
+
+The 300:
+- surround the camp;
+- smash vessels;
+- reveal lights;
+- sound horns;
+- shout.
+
+To the enemy,
+this may create the appearance of a much larger force.
+
+So:
+**small actual system**
+→ carefully distributed projection/signals
+→ **large apparent system**.
+
+This is another strong representation-versus-underlying-size control.
+
+### Midian's camp destroys itself
+
+The narrative says YHWH causes:
+- each Midianite's sword to turn against another;
+- panic/flight.
+
+So the small outer force triggers:
+**internal self-destruction** of the much larger system.
+
+The decisive mechanism in the story is not direct 300-vs-multitude combat.
+
+It is:
+**signal shock → internal disorder**.
+
+---
+
+## Oreb / Zeeb and Zebah / Zalmunna form two paired enemy-leader sets
+
+The Midianite command structure is represented by two paired sets:
+
+- **Oreb / Zeeb** — princes/leaders captured by Ephraim.
+- **Zebah / Zalmunna** — kings pursued by Gideon.
+
+This is another possible sign of compositional layering.
+
+Source critics have long noted:
+- multiple enemy leader pairs;
+- multiple Gideon/Jerubbaal strands;
+- multiple call/sign episodes.
+
+Judges 6–8 is widely treated by many critical scholars as a composite cycle.
+
+Do not force every paired leader into one original historical organization.
+
+---
+
+## Judges 8 — Jordan crossing reverses direction from Joshua's entry
+
+Gideon and the 300:
+- come to Jordan;
+- **cross over**;
+- “exhausted yet pursuing.”
+
+Earlier Joshua:
+**east → west**
+to enter land.
+
+Gideon:
+moves across Jordan during outward pursuit.
+
+This is ordinary military crossing,
+but another reminder:
+**same boundary can be crossed for opposite purposes/directions**.
+
+### The 300 remain functionally coherent despite exhaustion
+
+The narrative explicitly says:
+- exhausted;
+- yet pursuing.
+
+That gives:
+**reduced energy/state**
+while
+**mission continuity persists**.
+
+This is a useful control:
+state change need not equal function loss.
+
+---
+
+## Succoth / Penuel refuse support until outcome is certain
+
+Gideon asks:
+- bread.
+
+They refuse because:
+- Zebah/Zalmunna are not yet captured.
+
+This is an information/confidence problem:
+**future outcome uncertain**
+→ local nodes withhold support.
+
+After victory Gideon returns and punishes them.
+
+The story becomes morally harsher,
+which fits the broader Judges pattern of declining leadership quality.
+
+### Penuel tower is explicitly destroyed
+
+Gideon had threatened:
+- “when I return in peace, I will break down this tower.”
+
+He does so.
+
+For geometry register:
+**tower / elevated defensive structure**
+→ destroyed after route reversal/return.
+
+No gate implication.
+
+---
+
+## Zebah / Zalmunna — Gideon links them to his slain brothers
+
+Gideon learns/declares:
+- these kings killed men like his brothers;
+- he describes those men as resembling royal sons.
+
+Then:
+- Gideon tells his young son Jether to kill them;
+- Jether is afraid;
+- Gideon kills them himself.
+
+This shifts Gideon from:
+**national deliverer**
+toward
+**personal avenger**.
+
+Another role-state degradation.
+
+### Gideon / Jether is failed succession-in-action
+
+Gideon tries to make the boy perform the execution.
+
+The son:
+- cannot.
+
+So unlike Moses/Joshua or Aaron/Eleazar:
+**role transfer attempt fails**.
+
+This is a useful succession control:
+not every father/son transition succeeds.
+
+---
+
+## Gideon refuses kingship verbally but creates quasi-dynastic conditions
+
+Israel asks Gideon:
+- rule over us;
+- you;
+- your son;
+- your grandson.
+
+That is an explicit:
+**3-generation hereditary rule proposal**.
+
+Gideon replies:
+- neither I nor my son;
+- YHWH will rule.
+
+Yet the narrative then describes:
+- great wealth;
+- many wives;
+- **70 sons**;
+- son Abimelech through a concubine;
+- a cultic object that draws Israel.
+
+This creates a deliberate tension:
+
+**verbal anti-kingship**
+versus
+**king-like household and legacy**.
+
+The next section's Abimelech story will exploit that tension.
+
+---
+
+## 1,700 shekels of gold → one ephod → new system failure
+
+Gideon asks warriors for earrings from booty.
+
+Gold total:
+**1,700 shekels**,
+excluding other royal ornaments.
+
+He makes:
+- an **ephod**;
+- sets it in Ophrah.
+
+Then:
+- Israel “goes astray” after it;
+- it becomes a **snare** to Gideon and his house.
+
+### Victory cargo is concentrated into one visible centre
+
+Sequence:
+
+**distributed battlefield booty**
+→ individuals donate gold
+→ **centralized 1,700-shekel mass**
+→ one crafted sacred/cult object
+→ one local cultic centre.
+
+This is a classic:
+**many → one centre** transformation.
+
+### The new centre reproduces the very failure pattern Gideon fought earlier
+
+Early Gideon:
+- destroys Baal altar / Asherah;
+- builds YHWH altar.
+
+Late Gideon:
+- creates ephod;
+- it becomes a snare.
+
+So his story is structurally circular:
+
+**remove problematic cult centre**
+→ become deliverer
+→ victory
+→ **create new problematic cult centre**.
+
+This is an extraordinarily strong **operator becomes source of next failure** cycle.
+
+### Ephod's physical form/function is uncertain
+
+Outside Priestly Torah,
+“ephod” can refer to objects whose form/function is obscure and may not be identical to high-priest clothing.
+
+Modern scholars caution that we cannot confidently reconstruct Gideon's ephod.
+
+Therefore:
+do not project the Exodus high-priest ephod geometry onto Judges 8 automatically.
+
+### Gideon's body/system succeeds; Gideon's legacy destabilizes it
+
+This is one of the clearest Judges patterns:
+
+**deliverer solves external crisis**
+but
+**creates internal conditions for next crisis**.
+
+For Vardath:
+useful as a feedback/cycle structure,
+not natural catastrophe mechanics.
+
+### Land rests 40 years in Gideon's days
+
+The cycle closes:
+**40 years**.
+
+Then Gideon dies.
+
+Immediately afterward:
+- Israel turns again toward Baals.
+
+This makes the Judges editorial reset explicit once more:
+
+**operator alive**
+→ stabilized period.
+
+**operator dies**
+→ relapse.
+
+Again:
+this is narrative theology.
+
+---
+
+## SECTION 29B continuous sequence — Judges 6–8
+
+**Midian pressure**
+→ 7-year oppression
+→ surface produce raided
+→ people hide in caves/strongholds
+→ Gideon threshes grain in winepress
+
+**call/sign**
+→ messenger/YHWH commissions Gideon
+→ Gideon questions like Moses
+→ offering on rock + broth
+→ staff tip touches
+→ **fire rises from rock**
+→ offering consumed
+→ messenger vanishes
+
+**cult-centre replacement**
+→ Baal altar destroyed
+→ Asherah cut
+→ old pole becomes fuel
+→ new altar built
+→ Jerubbaal name emerges
+
+**wet/dry information inversion**
+→ fleece wet / ground dry
+→ bowlful wrung out
+→ second night
+→ fleece dry / ground wet
+
+**population narrowing**
+→ 32,000
+→ 22,000 leave
+→ 10,000
+→ water sorting
+→ **300**
+
+**enemy confirmation**
+→ Gideon + Purah enter edge of camp
+→ barley-loaf dream
+→ tent overturned in dream
+→ interpretation = Gideon's victory
+
+**concealed-light operation**
+→ 300 split into 3 companies
+→ each has trumpet + jar + torch inside
+→ middle-watch phase
+→ jars broken
+→ pre-existing light becomes visible
+→ left hand torch / right hand trumpet
+→ synchronized sound/light
+→ enemy system panics and self-destroys
+
+**pursuit**
+→ Oreb/Zeeb captured
+→ Gideon +300 cross Jordan exhausted
+→ Succoth/Penuel deny support
+→ Zebah/Zalmunna captured
+→ failed Jether execution handoff
+→ Gideon kills kings
+→ returns/punishes local towns
+
+**post-victory failure**
+→ hereditary rule proposed across Gideon/son/grandson
+→ Gideon verbally refuses
+→ 70-son quasi-dynastic household
+→ 1,700 shekels gold centralized
+→ ephod created
+→ new local cult centre becomes snare
+→ 40-year rest
+→ Gideon dies
+→ relapse.
+
+---
+
+## SECTION 29 strongest overall findings
+
+1. Judges' repeated rise/fall/rest cycles are explicit literary-theological architecture, not evidence of a natural catastrophe clock.
+2. Ehud gives strong right/left inversion but demonstrates tactical asymmetry rather than cosmic chirality.
+3. Deborah/Barak is a real distributed leadership pair: stationary source/judge + mobile field operator.
+4. Yael's tent proves enclosure can switch from refuge appearance to lethal trap.
+5. Judges 4/5 provides another same-event prose/poem multi-projection.
+6. Judges 5's tribal map is not standard twelve, proving visible collective geometry can change by tradition/context.
+7. Gideon's sign gives literal **staff → rock → fire** sequence, while earlier staff/rock stories produced water; geometry alone cannot establish mechanism.
+8. Gideon's fleece signs are an exact **wet-centre/dry-surroundings ↔ dry-centre/wet-surroundings** state inversion.
+9. Gideon's army uses explicit **32,000→10,000→300** narrowing/filtering.
+10. The 300 divide into **3 ×100** distributed units around one camp.
+11. Torches already exist inside vessels; breaking jars changes **visibility/access**, not light identity/source.
+12. Left/right roles are explicit: left hand light, right hand sound.
+13. Small actual force projects a much larger apparent surrounding threat.
+14. Enemy defeat emerges from internal system panic/self-destruction.
+15. Gideon/Jerubbaal and multiple paired enemy leaders support source-composite caution.
+16. Gideon's story closes in a powerful feedback loop: destroy old false centre → victory → build new problematic centre.
+17. Gideon's attempted father→son execution handoff fails, a useful control against assuming all succession pairs transmit function successfully.
+18. Ephod's form is uncertain, so it must not be equated mechanically with the Priestly ephod.
+
+### Major controls
+
+- staff/rock/fire is miraculous sacrificial sign, not demonstrated plasma ignition.
+- fleece reversal is a confirmation sign, not the battle mechanism.
+- 300-man filtering is explicitly theological.
+- jar/torch tactic is military deception and synchronized signaling.
+- source critics commonly see Judges 6–8 as composite; paired episodes may reflect compilation.
+- Gideon's late violence and ephod deliberately complicate hero interpretation.
+- “ephod” outside Priestly Torah is physically/functionally uncertain.
+- recurring 40-year rests are part of the Judges framework and need independent chronology before cycle comparison.
+
+### SECTION 29 master pair / geometry register
+
+- Judah / Simeon — reciprocal tribal pair.
+- upper / lower springs.
+- Ehud left hand / right-side dagger.
+- Deborah / Barak — source/field pair.
+- Yael / Sisera — host/guest → killer/victim inversion.
+- stars above / Kishon below — poetic upper/lower pair.
+- Gideon / Moses — role-pattern recurrence with later divergence.
+- messenger / YHWH — mediated source language, not automatically two beings.
+- fleece / surrounding ground — reciprocal wet/dry state pair.
+- Gideon / Purah — leader/support pair.
+- Oreb / Zeeb — enemy leader pair.
+- Zebah / Zalmunna — second enemy king pair.
+- torch / jar — content/enclosure distinction.
+- left hand / right hand — light/signal split.
+- Gideon / Jether — failed succession transfer.
+- YHWH rule claim / Gideon's quasi-dynastic household — narrative tension pair.
+
+### SECTION 29 master number register
+
+- Midian oppression: **7 years**.
+- Gideon Baal-pole operation servants: **10**.
+- fleece tests: **2 inverse states**.
+- army: **32,000 →10,000 →300**.
+- fearful departure: **22,000**.
+- 300 formation: **3 companies**, approximately **100 each**.
+- Shamgar compressed kill count: **600**.
+- Deborah/Barak force: **10,000**.
+- Sisera chariots: **900**.
+- Canaanite oppression: **20 years**.
+- Othniel rest: **40 years**.
+- Ehud oppression/rest: **18 /80 years**.
+- Deborah rest: **40 years**.
+- Gideon gold: **1,700 shekels**.
+- Gideon sons: **70**.
+- Gideon rest: **40 years**.
+
+### Sources logged
+
+Primary:
+- Judges 6–8.
+- Judges 6: staff tip/rock/fire; Baal/Asherah replacement; wet/dry fleece.
+- Judges 7: 32,000→10,000→300; dream; three companies; jars/torches/trumpets.
+- Judges 8: exhausted 300 crossing Jordan; Zebah/Zalmunna; hereditary rule proposal; 1,700-shekel ephod.
+
+Scholarly/source-critical:
+- “Questioning God's Call: Moses Versus Gideon” — TheTorah.
+- “Deborah: A Prophetess Like Moses” — Gideon as later Moses-pattern / anti-Moses trajectory.
+- “The Angel of YHWH” — TheTorah.
+- source-critical work on paired/composite Gideon traditions in Judges 6–8.
+- Cambridge critical commentary on Judges 6:25–32 as a distinct Jerubbaal/Baal-altar tradition.
+- “The Obscure Ephod of the High Priest” — caution that non-Priestly ephod references need not describe the same object as Exodus.
+- “The Precursors of the Ark” — alternative scholarly proposals about ephod/ark traditions, retained as speculative controls.
+
+## SECTION 29 status
+
+**SECTION 29 — JUDGES 1–8: COMPLETE FIRST PASS.**
+
+### Next first unfinished roadmap section
+
+**SECTION 30 — JUDGES 9–16**
+
+Saved priorities:
+- Abimelech;
+- trees choosing king;
+- Jephthah;
+- daughter;
+- Samson birth;
+- lion/honey;
+- gates carried away;
+- Delilah;
+- hair;
+- two pillars;
+- Samson between supports.
+
+Priority pair tests:
+- Samson / two pillars;
+- Samson / Delilah;
+- strength / binding;
+- gate-carrier Samson.
+
+Before beginning Section 30, apply the anti-repeat search to the full current ledger.
+
