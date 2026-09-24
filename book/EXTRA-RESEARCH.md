@@ -81671,3 +81671,2071 @@ Scholarly controls:
 - Hazael reads king's future/death state through Elisha and then suffocates Ben-hadad;
 - Judah/Israel dynastic coupling intensifies before Jehu cycle.
 
+
+
+---
+
+# SECTION 37 progress B — 2 Kings 5–8
+## Descent through a low-status water route, transferred skin-state, exact-point recovery from water, visible/invisible encircling fields, perception reversal, siege-shell abandonment, gate-mediated abundance reversal, timed remnant restitution, and dynastic over-coupling before the Jehu rupture
+
+---
+
+# 2 Kings 5 — the “great man” must accept a small/simple route before transformation occurs
+
+Naaman is introduced as:
+- army commander;
+- great/high-status man;
+- honored by king;
+- military victor;
+- yet afflicted by a skin condition traditionally translated “leprosy.”
+
+The narrative then places beside him:
+**a little captive Israelite girl**.
+
+This is already a deliberate scale inversion:
+
+**great military man**
+← healing-route information comes from
+**small captive servant girl**.
+
+The decisive information does not begin at royal centre.
+
+It begins at the lowest-status node in the household.
+
+---
+
+# Information climbs upward through multiple social levels before the body moves
+
+The chain is:
+
+**captive girl**
+→ Naaman's wife
+→ Naaman
+→ king of Aram
+→ letter/gifts
+→ king of Israel
+→ Elisha.
+
+This is a long **information ascent through hierarchy**.
+
+But the king of Israel misreads the request as a political trap.
+
+So the message reaches a high centre without correct interpretation.
+
+Elisha then reroutes the problem away from monarchy to prophecy.
+
+Important process rule:
+**moving information upward does not guarantee increasing accuracy.**
+
+---
+
+# High-status arrival stops at a low domestic threshold
+
+Naaman arrives with:
+- horses;
+- chariots;
+- wealth;
+- royal letter.
+
+He stands:
+**at Elisha's door**.
+
+Elisha does **not come out**.
+
+Instead:
+**messenger exits**
+→ gives simple instruction.
+
+This creates a sharp status/interface contrast:
+
+**large military/royal display outside**
+versus
+**prophet remains inside**
+→ only a message crosses threshold.
+
+The expected face-to-face ceremonial encounter never occurs.
+
+---
+
+# Naaman's imagined healing geometry is rejected
+
+Naaman expected:
+- prophet comes out;
+- stands before him;
+- calls on deity;
+- waves hand over diseased place;
+- performs visible high-status ritual.
+
+Instead he receives:
+**go → wash in Jordan seven times**.
+
+So the narrative opposes:
+
+### expected route
+high-status direct operator
+→ visible hand motion
+→ local body-site treatment.
+
+### actual route
+messenger instruction
+→ travel away
+→ descent into river
+→ repeated whole-body immersion.
+
+The transformation route is therefore **more indirect, lower and simpler** than expected.
+
+---
+
+# Pride initially blocks the route because the water appears inferior
+
+Naaman compares:
+- Abana/Amanah;
+- Pharpar;
+- Jordan.
+
+He judges Damascus rivers “better.”
+
+He turns away in anger.
+
+Thus:
+**route exists**
+but
+**centre refuses it because it does not match expected status/value model**.
+
+This is a familiar Kings pattern:
+the correct future geometry can be available but rejected because the actor evaluates it through the wrong hierarchy.
+
+---
+
+# Servants reverse the great man's direction
+
+Naaman's servants approach and reason:
+
+**if asked to do a great thing → you would do it**
+therefore
+**why refuse a small/simple thing?**
+
+The lower-status network again supplies the corrective signal.
+
+Sequence:
+
+**great man rejects route**
+→ servants intervene
+→ route reclassified
+→ Naaman turns back toward Jordan.
+
+The chapter repeatedly places successful information in socially “lower” nodes.
+
+---
+
+# Transformation requires actual descent
+
+The text says Naaman:
+**went down**
+and dipped seven times in Jordan.
+
+This is a genuine:
+**high-status mounted commander**
+→ **down into river**
+→ repeated immersion
+→ emerges changed.
+
+The change is described:
+**flesh returns/restores**
+like
+**flesh of a little child**.
+
+This is one of the clearest body-state reversals in the Elijah–Elisha cycle:
+
+**diseased adult body**
+→ descent/water/repetition
+→ **childlike restored flesh**.
+
+Jean Louis Ska explicitly reads the scene as a reversal/peripeteia and change of knowledge, with Jordan functioning as a crucial boundary in the story.
+
+---
+
+# Transformation is both bodily and informational
+
+After the water sequence:
+- body state changes;
+- knowledge state changes.
+
+Before:
+**Aramean commander evaluating rivers/ritual by rank**.
+
+After:
+**returns to Elisha**
+→ confesses new theological understanding.
+
+So the Jordan scene produces:
+**body transformation**
++
+**interpretive/worldview transformation**.
+
+The two changes are coupled in the narrative.
+
+---
+
+# The gift-stream is refused
+
+Naaman tries to transfer:
+- wealth/present
+toward Elisha.
+
+Elisha refuses.
+
+This prevents:
+**healing**
+from being represented as
+**purchased exchange**.
+
+Process:
+
+**large reward stream offered inward**
+→ prophet blocks inflow.
+
+The healing remains detached from price.
+
+---
+
+# Naaman then asks to carry earth outward
+
+Instead of money moving inward,
+Naaman requests:
+**two mule-loads of Israelite earth**
+to take back to Aram.
+
+This reverses the direction:
+
+**gift wealth toward prophet = refused**.
+
+**earth from land toward healed foreigner = requested**.
+
+Academic work on 2 Kings 5:17 shows that transporting earth from a sacred territory for worship elsewhere has ancient Near Eastern parallels.
+
+So the process is not merely strange private symbolism.
+
+It reflects a **territory-interface idea**:
+material from one sacred land is carried into another land to preserve cultic connection.
+
+---
+
+# The same person will remain embedded in a foreign ritual system
+
+Naaman explains that his king will lean on his hand in Rimmon's temple and he will bow there as part of service.
+
+So the healed man returns to a system in which:
+- his body belongs politically to Aram;
+- his new religious commitment points toward YHWH;
+- his official role keeps him physically participating in another temple setting.
+
+Elisha says:
+**go in peace**.
+
+This creates a complex **dual-context** rather than a clean physical relocation into Israel.
+
+Functional orientation and geographic residence remain separated.
+
+---
+
+# Gehazi diverts the blocked gift-stream behind the operator's back
+
+Gehazi decides:
+**the wealth that Elisha refused should still be taken**.
+
+He runs after Naaman.
+
+He fabricates:
+- two young prophetic visitors;
+- need for silver;
+- garments.
+
+Naaman gives:
+- two talents;
+- two changes of clothing;
+- carried by two servants.
+
+Thus a stream deliberately blocked by the primary operator is secretly reopened by a subordinate.
+
+Process:
+
+**centre refuses inflow**
+→ subordinate bypasses decision
+→ chases departing source
+→ constructs false need
+→ diverts cargo into hidden side-channel.
+
+---
+
+# Cargo is hidden before the subordinate re-enters the centre
+
+At the hill:
+- Gehazi takes goods from carriers;
+- stores them in house;
+- dismisses carriers;
+- re-enters Elisha's presence.
+
+Visible state:
+**servant returns apparently empty**.
+
+Actual state:
+**hidden material now stored elsewhere**.
+
+Again:
+**surface state ≠ actual cargo state**.
+
+---
+
+# Disease-state transfers in the opposite direction from wealth
+
+Naaman:
+**diseased → healed**.
+
+Gehazi:
+**healthy → afflicted**.
+
+Wealth:
+**Naaman → Gehazi**.
+
+Skin-state:
+**Naaman → removed**
+then narratively
+**Gehazi receives Naaman's condition**.
+
+The story explicitly frames the second as transfer:
+**Naaman's ṣaraʿat will cling to you**.
+
+This is a striking paired inversion:
+
+**foreign outsider loses diseased state and departs clean**
+while
+**Israelite insider gains diseased state and departs white as snow**.
+
+Academic work specifically treats Naaman/Gehazi as a reversal pair.
+
+---
+
+# 2 Kings 6:1–7 — too-small enclosure generates outward expansion to Jordan
+
+The prophetic group says:
+**the place where we live is too narrow/strait for us**.
+
+Solution:
+**go to Jordan**
+→ each person takes a beam
+→ build a larger place.
+
+This is a simple but useful expansion grammar:
+
+**capacity pressure inside enclosure**
+→ move to resource boundary
+→ distributed gathering
+→ new enclosure construction.
+
+It is almost the positive counterpart to overcrowded systems elsewhere:
+capacity problem is solved by **expansion rather than compression**.
+
+---
+
+# Each participant carries one structural element
+
+At Jordan:
+**each person → one beam**.
+
+So building is decomposed:
+
+**many workers**
+→ each acquires one unit
+→ units combine into larger communal structure.
+
+This is a distributed assembly model.
+
+---
+
+# Heavy iron detaches from carrier and disappears into water
+
+During cutting:
+- axe head separates from handle;
+- falls into water.
+
+This creates:
+**tool = carrier/handle + functional iron head**.
+
+Then:
+**functional component decouples**
+→ enters opaque lower medium
+→ becomes unavailable.
+
+The owner emphasizes:
+**it was borrowed**.
+
+So the problem is both:
+- functional loss;
+- debt/obligation.
+
+---
+
+# Recovery begins by identifying the exact fall-point
+
+Elisha asks:
+**where did it fall?**
+
+The location is shown.
+
+Then:
+- stick is cut;
+- cast into that exact area;
+- iron rises/floats;
+- owner reaches out hand and takes it.
+
+The text gives no physical mechanism.
+
+Its value to the process map is:
+
+**lost component beneath surface**
+→ exact transition point identified
+→ intervention applied at transition point
+→ hidden component becomes surface-accessible
+→ hand recovers it.
+
+This is a very clean **event-location memory** pattern.
+
+---
+
+# Do not convert the axe scene into demonstrated material physics
+
+The narrative is miracle-story.
+
+There is no secure natural mechanism in the text for making iron float.
+
+For Vardath:
+the useful correspondence is **exact fall-point → recovery interface**, not a claim about electromagnetic buoyancy or density inversion.
+
+---
+
+# 2 Kings 6:8–23 — information repeatedly destroys an enemy's planned geometry before it forms
+
+The king of Aram chooses ambush/camp locations.
+
+Elisha sends warnings to Israel's king:
+**do not pass that place**.
+
+The king checks/guards.
+
+This happens:
+**not once or twice**.
+
+So:
+
+**enemy chooses future trap-location**
+→ information leaks before trap closes
+→ target changes route/guarding
+→ planned geometry repeatedly fails.
+
+This is the same process class as:
+- David/Keilah;
+- Hushai/Ahithophel;
+- other pre-emptive information rerouting.
+
+---
+
+# The Aramean king first assumes an internal information leak
+
+Because his private plans keep failing,
+he asks:
+**which of us is for Israel?**
+
+His servants answer:
+**none**
+→ Elisha knows even words in the bedchamber.
+
+So the king's state model shifts:
+
+**internal traitor hypothesis**
+→ **external extraordinary information source**.
+
+Again:
+better diagnosis changes target selection.
+
+He stops hunting a suspected insider and sends a field against Elisha.
+
+---
+
+# Dothan — one visible encircling army and one normally invisible encircling army
+
+Aram sends:
+- horses;
+- chariots;
+- great force;
+- by night.
+
+They surround Dothan.
+
+In morning:
+Elisha's servant sees:
+**enemy force around city**.
+
+He believes the geometry is:
+**small centre enclosed by larger hostile ring**.
+
+Elisha says:
+**those with us are more**.
+
+Then the servant's eyes are “opened.”
+
+He sees:
+**mountain full of horses and chariots of fire around Elisha**.
+
+The scene therefore has **two simultaneously asserted fields**:
+
+### visible field
+Aramean horses/chariots surrounding city.
+
+### newly perceived field
+fiery horses/chariots surrounding Elisha.
+
+Academic work in ZAW emphasizes that the fire-horse/chariot scene is structurally integrated with the story's theme of seeing.
+
+---
+
+# Perception changes without the outer military positions changing
+
+Before eye-opening:
+**servant experiences enclosure/fear**.
+
+After eye-opening:
+**same landscape**
+→ newly perceived surrounding protection
+→ fear-state can reverse.
+
+This is a crucial process distinction:
+**geometry as perceived**
+can differ from
+**geometry asserted by the narrative to exist**.
+
+The visible enemy ring does not move when the servant's state changes.
+
+The change is in **access to information/perception**.
+
+---
+
+# Hostile field then loses reliable orientation
+
+As Arameans descend toward Elisha,
+he asks that they be struck with **sanwerim**.
+
+The word is rare and traditionally rendered:
+- blindness;
+- dazzling;
+- disorientation.
+
+Its exact sensory/medical mechanism is uncertain.
+
+Do not treat it as ordinary total ocular blindness unless qualified.
+
+The secure function:
+**the army can no longer correctly identify route/place/person**.
+
+---
+
+# Elisha becomes guide for the field sent to capture him
+
+He tells them:
+**this is not the way/city**
+→ follow me.
+
+The target becomes **route-controller** for the hostile force.
+
+This is an extraordinary inversion:
+
+**army comes to capture guide**
+→ loses orientation
+→ guide leads captors
+→ captors become guided group.
+
+---
+
+# Enemy field crosses into the middle of Samaria before perception is restored
+
+Elisha leads them to Samaria.
+
+Only when they are **inside**:
+**eyes/perception restored**.
+
+They discover:
+**they are in the midst of opposing capital**.
+
+Process:
+
+**hostile encircling field outside**
+→ disoriented
+→ led across route
+→ enters enemy centre
+→ orientation restored only after enclosure has reversed.
+
+Their geometry flips from:
+**we surround target**
+to
+**we are surrounded inside target's political centre**.
+
+This is one of the strongest enclosure inversions in Kings.
+
+---
+
+# The expected kill is refused
+
+Israel's king asks twice:
+**shall I strike them?**
+
+Elisha refuses.
+
+Instead:
+**bread + water**
+→ eat/drink
+→ return to master.
+
+So:
+
+**captured hostile field**
+does not produce
+**destruction**.
+
+It produces:
+**feeding**
+→ **release**.
+
+Recent scholarship highlights the unusual political imagination of provisioning enemy captives in this scene.
+
+---
+
+# Food transfer temporarily deactivates raiding
+
+After the great meal:
+- captives return;
+- Aramean raiding bands cease for a period.
+
+Thus:
+**hostile field captured**
+→ fed
+→ released
+→ immediate cycle of raids stops.
+
+The text does not claim permanent peace, since a later full siege follows.
+
+Still:
+**feeding functions here as de-escalatory release**, not central consumption.
+
+---
+
+# 2 Kings 6:24–7:20 — the whole city becomes an enclosure under pressure
+
+Ben-hadad gathers the full force and besieges Samaria.
+
+The geometry is now:
+
+**city population inside fortified shell**
+versus
+**enemy field outside**
+→ movement/resources blocked
+→ internal scarcity escalates.
+
+The same Samaria that previously contained disoriented Aramean troops now becomes the **contained system**.
+
+Another exact reversal.
+
+---
+
+# Siege converts ordinary materials into extreme scarcity values
+
+Prices become grotesquely high for otherwise low-value/inedible items.
+
+The market reflects:
+**supply route closure**.
+
+The material does not disappear from the universe.
+
+The issue is:
+**outside resources cannot cross boundary into enclosed city**.
+
+This is a pure **network-cutoff scarcity**.
+
+---
+
+# Human collapse appears inside the enclosure before wall breach
+
+The king hears a woman's account of cannibalism during famine.
+
+This is severe human catastrophe.
+
+It should not be aestheticized into “resource conversion.”
+
+The process-level point is:
+**the boundary has not physically fallen, but the social system inside has already collapsed into extreme violence and desperation**.
+
+A shell can remain intact while its internal human order fails.
+
+---
+
+# The king is literally walking on the wall when the interior crisis reaches him
+
+The woman calls to the king as he passes:
+**on the wall**.
+
+So the centre is positioned on the **boundary surface** between:
+- besieged interior;
+- hostile exterior.
+
+He hears the internal crisis while standing on the physical perimeter.
+
+This is one of the most exact centre/interface placements in the book.
+
+---
+
+# Sackcloth is hidden beneath royal clothing
+
+When the king tears his outer clothing,
+people see:
+**sackcloth underneath against his body**.
+
+Visible royal layer:
+**outer garment**.
+
+Hidden state:
+**mourning/penitential sackcloth beneath**.
+
+Again:
+**surface role**
+and
+**inner state**
+differ until the outer layer opens.
+
+---
+
+# The king tries to remove the prophetic node instead of the siege field
+
+He vows:
+**Elisha's head will be removed**.
+
+So the centre responds to systemic failure by targeting:
+**information/prophetic node inside the city**,
+not the army outside.
+
+This is another misdirected-causation pattern.
+
+---
+
+# Elisha's house becomes a defended micro-enclosure inside the besieged enclosure
+
+Elisha:
+- sits in house;
+- elders sit with him.
+
+He knows the execution messenger is coming.
+
+Instruction:
+**shut door**
+→ **hold it fast against him**.
+
+So within:
+
+**city shell under siege**
+there is
+**smaller house shell under threat from king's agent**.
+
+Nested enclosure:
+**Aram around Samaria**
+→ **king's force against Elisha house**.
+
+---
+
+# 2 Kings 7 begins with a predicted total market reversal at the gate
+
+Elisha says:
+**tomorrow about this time**
+grain will be abundant/cheap
+**at the gate of Samaria**.
+
+The gate is the correct node because it is where:
+- goods enter;
+- market exchange occurs;
+- outside and inside meet.
+
+The prophecy predicts:
+**siege-closed interface**
+→ within one day
+→ **high-flow market interface**.
+
+This is a dramatic gate-state inversion.
+
+---
+
+# “Windows in heaven” appears as skeptical counter-image
+
+The officer says:
+even if YHWH made **windows in heaven**,
+could this happen?
+
+This is a rhetorical impossibility image.
+
+Do not treat it as literal biblical claim that heavenly windows actually open in the episode.
+
+The officer's statement imagines:
+**upper openings pouring provision**
+as the only scale of event that could reverse famine this fast.
+
+But the actual narrative mechanism is elsewhere:
+**enemy camp abandonment**.
+
+Important:
+the text itself contrasts imagined **vertical provision**
+with actual **horizontal field collapse**.
+
+---
+
+# Four excluded men occupy the exact threshold between death-options
+
+Four men with skin disease sit:
+**at the entrance of the gate**.
+
+They reason:
+
+**inside city**
+→ famine → death.
+
+**stay at gate**
+→ death.
+
+**go outward toward enemy**
+→ perhaps life / perhaps death.
+
+So the threshold group has no safe branch except:
+**cross outward**.
+
+This is a textbook **forced-boundary transition**.
+
+---
+
+# Marginal/outside nodes become the first scouts of the new state
+
+The four rise at **twilight** and go to the outer edge of the Aramean camp.
+
+They find:
+**no people**.
+
+The socially excluded people at the city boundary are the first to discover that the outside hostile field has already vanished.
+
+This is a powerful reversal:
+**the nodes least integrated into the besieged city become its first information link to release.**
+
+---
+
+# A sound-event collapses the entire besieging field before the scouts arrive
+
+The narrative explanation:
+Arameans hear:
+- chariots;
+- horses;
+- great army.
+
+They infer:
+**Israel hired Hittite/Egyptian kings**.
+
+They flee at twilight.
+
+They abandon:
+- tents;
+- horses;
+- donkeys;
+- material.
+
+So:
+
+**stable besieging field**
+→ perceived acoustic signal
+→ false/assumed external-threat model
+→ total panic
+→ field abandons shell/cargo
+→ bodies leave.
+
+No opposing army is actually shown entering.
+
+The besieging system collapses because of **perceived incoming geometry**.
+
+This is one of the strongest information→mass-motion events in Kings.
+
+---
+
+# The army-shell remains while the army itself is absent
+
+The four men find:
+- intact tents;
+- tethered animals;
+- food/material;
+- no human force.
+
+This is a clean:
+**shell/cargo present**
+but
+**active population absent**.
+
+Exactly the distinction the Vardath work has repeatedly emphasized:
+**structure is not state**.
+
+---
+
+# Four scouts initially convert abandoned enemy cargo into private hidden stores
+
+They:
+- eat/drink;
+- carry silver/gold/clothing;
+- hide it;
+- repeat.
+
+Then they reclassify their action:
+**this is a day of good news**
+→ silence is wrong.
+
+So:
+**private extraction**
+changes into
+**public information duty**.
+
+This mirrors Gehazi in chapter 5:
+- Gehazi receives hidden wealth and keeps it hidden;
+- the four initially do similarly but then reverse course and report.
+
+The literary juxtaposition is striking.
+
+---
+
+# Information enters the city through gatekeepers before reaching king
+
+The return path is:
+
+**four men outside**
+→ gatekeepers/porters
+→ king's household inside
+→ king.
+
+Again:
+**boundary nodes mediate information between outside and centre**.
+
+The gate is simultaneously:
+- social exclusion boundary;
+- defense boundary;
+- market boundary;
+- information interface.
+
+---
+
+# The centre initially distrusts release-information because trap geometry seems more plausible
+
+The king interprets the empty camp as:
+**enemy hiding in field**
+→ lure starving city out
+→ capture them
+→ enter city.
+
+This is an alternative future simulation.
+
+The king's skepticism is strategically reasonable.
+
+So the system does not immediately flood outward.
+
+It sends a small test force.
+
+---
+
+# Small remaining carrier set verifies the route before mass crossing
+
+A servant proposes using surviving horses.
+
+They send:
+**two chariots** in the received text.
+
+They follow the route toward Jordan.
+
+Along the path:
+- garments;
+- vessels/equipment
+
+lie discarded.
+
+So the scouts establish:
+**flight trace continues away from city**.
+
+Then they return and report.
+
+This converts:
+**uncertain information**
+into
+**verified route evidence**.
+
+Only after that does mass movement begin.
+
+---
+
+# The gate flips from scarcity barrier to high-flow release point
+
+People pour out.
+
+They plunder the camp.
+
+Market prices fall exactly as forecast.
+
+So the same interface changes function:
+
+**closed gate / scarcity / death**
+→ **open gate / movement / abundance**.
+
+This is one of the clearest boundary-state reversals in the historical books.
+
+---
+
+# The skeptical officer dies at the exact interface he was assigned to control
+
+The king appoints the officer:
+**over the gate**.
+
+The mass of people:
+- passes through;
+- tramples him;
+- he dies there.
+
+He had said:
+**you will not see this kind of provision unless heaven opens**.
+
+He does see the reversal,
+but does not consume it.
+
+The text deliberately binds:
+**skepticism**
+→ **gate oversight**
+→ **gate overflow**
+→ **death at gate**.
+
+For the geometry:
+the same node that could not imagine the transition is placed at the transition point and overwhelmed by the throughput.
+
+---
+
+# 2 Kings 8:1–6 — a prior life-restored household now undergoes a seven-year land exile
+
+Elisha warns the Shunammite woman:
+**famine is coming seven years**.
+
+She:
+- rises;
+- leaves with household;
+- sojourns in Philistine land.
+
+This is a pre-emptive transfer based on future information:
+
+**coming environmental failure**
+→ warning before event
+→ household relocates
+→ survives outside land.
+
+This is another:
+**future branch knowledge changes actual route**.
+
+---
+
+# After the interval, the remnant returns and requests restoration of house and land
+
+At seven-year end:
+- she returns;
+- approaches king;
+- cries for:
+  - house;
+  - land.
+
+The household survived,
+but the property relation did not automatically remain intact.
+
+Thus:
+**living remnant preserved**
+≠
+**territorial/economic continuity preserved**.
+
+Return requires **reconnection to property network**.
+
+---
+
+# Her arrival coincides exactly with her own old story being retold
+
+The king is talking with Gehazi:
+**tell me the great things Elisha has done**.
+
+At the exact point Gehazi recounts:
+**the dead son restored to life**,
+
+the woman herself appears with that son.
+
+This is one of the most striking timing/intersection scenes in Kings.
+
+**memory/narrative representation of past event**
+→ intersects
+**living embodied evidence entering present court**.
+
+The report becomes self-verifying in real time.
+
+---
+
+# Story, witness and surviving body converge on one centre
+
+The king now has:
+- narrator/witness Gehazi;
+- woman;
+- restored son;
+- claim for land.
+
+So:
+**past miracle story**
++ **living participants**
++ **current legal claim**
+converge simultaneously.
+
+The result:
+**king restores all property**
++
+**all produce/income from fields since departure**.
+
+This is not only return of shell/land.
+
+It includes accumulated output for the absent interval.
+
+---
+
+# The restoration exceeds simple reset
+
+The order is:
+**restore all that was hers**
+and
+**all fruits from field from departure until now**.
+
+So the system does not merely return to:
+**state at exile beginning**.
+
+It restores:
+**principal + accumulated yield through missing years**.
+
+This is a powerful **remnant restitution with time-compensation** model.
+
+---
+
+# Gehazi chronology remains difficult
+
+The story presents Gehazi conversing with king after chapter 5 had ended with his skin affliction.
+
+Interpreters debate:
+- whether these Elisha stories are arranged nonchronologically;
+- whether the disease allowed court contact;
+- textual/literary sequencing.
+
+Therefore:
+**do not assume 2 Kings 8 occurs chronologically after every chapter-5 detail simply because it is later in book order**.
+
+This reinforces the master rule:
+**literary sequence ≠ guaranteed clock sequence**.
+
+---
+
+# 2 Kings 8:7–15 — a sick foreign centre sends an enormous cargo to acquire future-state information
+
+Ben-hadad is ill.
+
+On hearing Elisha is in Damascus,
+he sends Hazael with:
+**forty camel-loads of good things**.
+
+This is an extreme:
+**material cargo → information request**
+exchange attempt.
+
+Question:
+**will I recover?**
+
+Again the foreign king treats prophetic information as strategically valuable.
+
+---
+
+# The answer contains two apparently opposite future statements
+
+Elisha's response is textually/interpre­tively difficult:
+
+**tell him he will recover**
+yet
+**YHWH has shown me he will surely die**.
+
+Possible readings include:
+- illness itself is survivable, but another cause will kill him;
+- Hazael is being told what he will in fact report;
+- irony/deception issues;
+- textual nuance.
+
+The narrative itself does not fully resolve the syntax for us.
+
+Therefore:
+**do not flatten the two statements into one certainty about the illness mechanism**.
+
+Secure:
+**recovery-from-illness state and actual-death outcome are distinguished/tensioned**.
+
+---
+
+# Elisha's sustained gaze opens a future violence field before it exists
+
+Elisha fixes his face/gaze on Hazael until discomfort.
+
+Then he weeps.
+
+Hazael asks why.
+
+Elisha describes future violence against Israel:
+- strongholds burned;
+- young men killed;
+- children killed;
+- pregnant women mutilated.
+
+This is severe warfare atrocity.
+
+Do not neutralize it as “field disruption.”
+
+The process-level fact is:
+**one present individual is recognized as a future centre whose later rule will project extreme violence across another population**.
+
+Elisha's emotion is caused by **future-state knowledge before material manifestation**.
+
+---
+
+# Hazael cannot reconcile current self-image with projected future capacity
+
+Hazael responds approximately:
+**what is your servant, a dog, that he should do this great thing?**
+
+Then Elisha states:
+**you will be king of Aram**.
+
+This identifies the missing variable:
+**change in role/power**.
+
+Current Hazael evaluates future acts using current status.
+
+Elisha's projection depends on:
+**future central authority**.
+
+Another key timeline rule:
+**capacity changes when a peripheral/subordinate node becomes a centre**.
+
+---
+
+# Hazael selectively transmits only the recovery side of the message
+
+He returns to Ben-hadad.
+
+Question:
+**what did Elisha say?**
+
+Hazael reports:
+**you will surely recover**.
+
+The death-side is omitted.
+
+Thus:
+
+**full information**
+→ messenger
+→ **partial information**
+→ sick centre.
+
+The message is not simply false/true.
+It is selectively incomplete.
+
+This reduces the old centre's awareness of imminent regime change.
+
+---
+
+# A wet covering converts a soft domestic object into a lethal boundary
+
+The next day Hazael:
+- takes the covering/cloth;
+- dips it in water;
+- spreads it over Ben-hadad's face;
+- king dies;
+- Hazael reigns.
+
+The rare Hebrew noun for the covering is uncertain:
+- thick cloth;
+- coverlet;
+- netted cloth;
+- blanket-like object.
+
+Most interpreters read Hazael as intentionally causing death, probably by suffocation, though alternative readings have existed.
+
+Process:
+
+**soft porous covering**
+→ saturated with water
+→ applied over face/breath boundary
+→ ordinary covering becomes occlusive lethal layer.
+
+This is a stark material-state inversion:
+**water + fabric**
+changes the function of the covering.
+
+---
+
+# Political succession follows immediately after controlled enclosure of breath
+
+The narrative sequence is:
+**message**
+→ next day
+→ wet covering
+→ death
+→ Hazael reigns.
+
+So the old centre is removed not by open battle but by **close domestic enclosure**.
+
+This is the opposite scale from the giant military violence Elisha forecasts.
+
+One quiet boundary act creates the ruler who will later command large-field violence.
+
+---
+
+# 2 Kings 8:16–29 — the previously separate Israel/Judah dynastic fields become dangerously over-coupled
+
+Jehoram of Judah is described as walking in the way of Israel's kings because:
+**a daughter of Ahab is his wife**.
+
+Ahaziah likewise is tied to Ahab's house through marriage/family connection.
+
+So the once-separated north/south political systems are now connected not merely by military alliance but by **dynastic blood/marriage network**.
+
+This is a form of strong cross-field coupling.
+
+---
+
+# “Lamp for David” preserves a remnant despite destructive internal coupling
+
+The narrator says Judah is not destroyed:
+**for David's sake**
+→ a lamp remains for him/descendants.
+
+This is another remnant-preservation rule:
+**system becomes deeply coupled to unstable rival house**
+but
+**one continuity line remains protected in the narrative logic**.
+
+This sets up Athaliah's later near-destruction of that line.
+
+---
+
+# Over-coupling does not create stronger territorial control
+
+During Jehoram of Judah:
+- Edom revolts;
+- sets its own king;
+- Libnah also revolts.
+
+So while Judah is becoming more tightly linked to Israel's Omride house,
+its own peripheral territories are **decoupling**.
+
+This is an important network inversion:
+
+**more coupling at one elite/dynastic level**
+does not imply
+**more coherence at territorial level**.
+
+In fact:
+**centre-centre coupling**
+and
+**peripheral retention**
+move in opposite directions.
+
+---
+
+# Night breakout escapes encirclement but does not restore sovereignty
+
+Jehoram crosses with chariots.
+
+At night:
+- Edomites surround him/chariot captains;
+- he strikes through them;
+- people flee to tents.
+
+He escapes local enclosure.
+
+But:
+**Edom remains in revolt**.
+
+This is a key distinction:
+**winning a local breakout**
+≠
+**restoring larger political field**.
+
+A temporary tactical reversal can fail to reverse macro-state change.
+
+---
+
+# Israel and Judah royal houses converge physically at the moment Hazael pressure rises
+
+Ahaziah of Judah goes with Joram of Israel to fight Hazael at Ramoth-gilead.
+
+Joram is wounded.
+
+He returns to Jezreel to heal.
+
+Ahaziah goes **down** to visit the wounded Joram.
+
+This creates the exact convergence that the next Jehu sequence will exploit:
+
+**northern king wounded at Jezreel**
++
+**southern king visits him**
+→ both dynastic centres occupy one accessible zone.
+
+The two royal houses have become so tightly coupled that a coming purge can strike them together.
+
+This is the critical transition into 2 Kings 9.
+
+---
+
+# SECTION 37B continuous geometry/effect timeline — 2 Kings 5–8
+
+## Phase A — low-status information initiates high-status transformation
+
+captive girl
+→ household
+→ commander
+→ kings
+→ prophet.
+
+**Effect:** decisive route knowledge originates at system margin.
+
+---
+
+## Phase B — expected high-status ritual is replaced by message-only threshold interaction
+
+Naaman/chariots at prophet's door
+→ prophet remains inside
+→ messenger gives simple river instruction.
+
+**Effect:** power/status display does not control transformation interface.
+
+---
+
+## Phase C — value hierarchy initially blocks valid route
+
+Damascus rivers judged superior
+→ Jordan instruction rejected
+→ servants reframe simple route
+→ Naaman reverses decision.
+
+**Effect:** perception of route value can be the main obstruction.
+
+---
+
+## Phase D — descent into water produces dual state change
+
+go down
+→ seven immersions
+→ restored childlike flesh
+→ new knowledge/confession.
+
+**Effect:** body-state and information-state change together.
+
+---
+
+## Phase E — inward payment blocked, outward earth transfer requested
+
+gift wealth → prophet = refused.
+Israelite earth → Naaman/Aram = requested.
+
+**Effect:** transformation is detached from purchase while territorial material becomes portable religious interface.
+
+---
+
+## Phase F — healed node returns to foreign system with split geographic/functional allegiance
+
+Naaman remains servant in Aram
+but
+worship orientation changes.
+
+**Effect:** functional coupling can change without permanent geographic relocation.
+
+---
+
+## Phase G — subordinate secretly reopens a blocked cargo stream
+
+Elisha refuses gifts
+→ Gehazi chases
+→ false need
+→ wealth diverted/hidden.
+
+**Effect:** subordinate can create unauthorized side-channel around centre decision.
+
+---
+
+## Phase H — body-state and wealth-state reverse across Naaman/Gehazi pair
+
+Naaman diseased → clean.
+Gehazi clean → diseased.
+wealth moves opposite direction.
+
+**Effect:** outsider/insider states invert.
+
+---
+
+## Phase I — capacity pressure causes community expansion
+
+dwelling too narrow
+→ move to Jordan
+→ each gathers beam
+→ larger dwelling built.
+
+**Effect:** enclosure pressure can be solved by distributed expansion.
+
+---
+
+## Phase J — tool component detaches into opaque lower medium
+
+axe head
+→ handle separation
+→ water
+→ hidden/inaccessible.
+
+**Effect:** functional system fails through carrier/component decoupling.
+
+---
+
+## Phase K — exact transition point becomes recovery interface
+
+“where did it fall?”
+→ point identified
+→ intervention at point
+→ iron rises
+→ hand retrieves.
+
+**Effect:** event-location memory enables recovery.
+
+---
+
+## Phase L — future trap locations repeatedly fail because information arrives first
+
+Aramean ambush plan
+→ Elisha warning
+→ Israel avoids/guards
+→ trap never closes.
+
+**Effect:** information can destroy future geometry before it materializes.
+
+---
+
+## Phase M — visible enclosure is revealed as nested inside larger protective field
+
+Aram visibly surrounds Dothan
+→ servant's perception opens
+→ fiery horses/chariots seen around Elisha.
+
+**Effect:** perceived geometry changes without visible enemy field moving.
+
+Control:
+narrative/theophanic vision, not measurable field evidence.
+
+---
+
+## Phase N — target becomes guide of captors after orientation failure
+
+Arameans descend
+→ sanwerim/disorientation
+→ Elisha leads them.
+
+**Effect:** force sent to capture a node becomes dependent on that node for route.
+
+---
+
+## Phase O — outside encircling army becomes inside-encircled army
+
+Dothan threat
+→ guided movement
+→ Samaria centre
+→ perception restored.
+
+**Effect:** enclosure polarity reverses.
+
+---
+
+## Phase P — captured hostile field is fed and released rather than destroyed
+
+king wants to strike
+→ Elisha refuses
+→ food/water
+→ return.
+
+**Effect:** de-escalatory provisioning replaces expected slaughter.
+
+---
+
+## Phase Q — same capital later becomes besieged shell
+
+Samaria
+→ full Aramean siege
+→ supply cutoff
+→ famine.
+
+**Effect:** former containing centre becomes contained centre.
+
+---
+
+## Phase R — shell can remain intact while social order collapses internally
+
+wall stands
+but
+famine/cannibalism occurs.
+
+**Effect:** material boundary integrity does not guarantee living-system integrity.
+
+---
+
+## Phase S — king stands on wall between exterior war and interior collapse
+
+woman calls from inside
+→ king on wall hears.
+
+**Effect:** political centre occupies literal system interface.
+
+---
+
+## Phase T — hidden inner state becomes visible when outer royal layer tears
+
+outer clothes torn
+→ sackcloth beneath.
+
+**Effect:** public surface and inner system state diverge until boundary opens.
+
+---
+
+## Phase U — threatened prophetic micro-enclosure appears inside besieged macro-enclosure
+
+Aram around Samaria
+→ king's execution messenger toward Elisha house
+→ door shut.
+
+**Effect:** nested siege relations appear at different scales.
+
+---
+
+## Phase V — gate predicted to invert from scarcity barrier into abundance market
+
+today:
+siege/famine.
+
+tomorrow:
+cheap grain at gate.
+
+**Effect:** same boundary node can reverse throughput state rapidly.
+
+---
+
+## Phase W — imagined vertical opening contrasts with actual horizontal enemy-field collapse
+
+officer imagines “windows in heaven”
+versus
+actual narrative:
+Arameans hear threat and flee.
+
+**Effect:** expected source of change differs from actual route.
+
+---
+
+## Phase X — four marginalized boundary nodes cross because every stationary branch equals death
+
+inside = death.
+stay = death.
+outward = possible life/death.
+
+→ four leave gate.
+
+**Effect:** no-safe-state pressure forces boundary crossing.
+
+---
+
+## Phase Y — acoustic threat model empties entire enemy field
+
+Arameans hear chariots/horses/army
+→ infer encirclement
+→ abandon camp
+→ flee.
+
+**Effect:** perceived incoming geometry causes mass exodus before physical contact.
+
+---
+
+## Phase Z — active population disappears while field shell/cargo remains
+
+tents
++ animals
++ food
++ valuables remain
+but
+army absent.
+
+**Effect:** structure and active population separate.
+
+---
+
+## Phase AA — marginal scouts change from private extraction to public information carriers
+
+four men loot/hide
+→ ethical reclassification
+→ report to city.
+
+**Effect:** fringe nodes become national release-information channel.
+
+---
+
+## Phase AB — centre distrusts release-state and tests it with small probe
+
+empty camp report
+→ trap hypothesis
+→ two chariots test route
+→ discarded material confirms flight
+→ report returns.
+
+**Effect:** uncertain topology is verified before mass movement.
+
+---
+
+## Phase AC — gate reverses from closed scarcity node to high-throughput abundance node
+
+verification
+→ population pours outward
+→ camp resources flow inward
+→ market prices collapse.
+
+**Effect:** boundary state changes from starvation to abundance.
+
+---
+
+## Phase AD — gate controller is overwhelmed by transition throughput
+
+skeptical officer placed at gate
+→ crowd crosses
+→ trampled
+→ sees but does not consume abundance.
+
+**Effect:** node controlling interface is destroyed by the very state change it doubted.
+
+---
+
+## Phase AE — future famine information sends a preserved household outside land before crisis
+
+warning
+→ Shunammite household leaves
+→ seven-year sojourn.
+
+**Effect:** pre-event information protects living remnant through relocation.
+
+---
+
+## Phase AF — preserved household returns without automatic property continuity
+
+family survives
+→ returns
+→ house/land claim required.
+
+**Effect:** living continuity and property continuity are distinct variables.
+
+---
+
+## Phase AG — memory-story and embodied evidence converge at one exact moment
+
+Gehazi narrates resurrection
+→ woman + revived son enter court.
+
+**Effect:** representation of past event intersects living proof and present legal need.
+
+---
+
+## Phase AH — restitution includes lost interval output
+
+house/land restored
++ produce from absent years.
+
+**Effect:** restoration can exceed simple reset and include accumulated time-value.
+
+---
+
+## Phase AI — sick foreign king seeks future information through massive cargo intermediary
+
+40 camel-loads
+→ Hazael
+→ Elisha
+→ recovery question.
+
+**Effect:** wealth and messenger are routed toward information source.
+
+---
+
+## Phase AJ — illness prognosis and actual death outcome separate
+
+“recover”
+yet
+“surely die.”
+
+**Effect:** local bodily trajectory can differ from total political/life trajectory.
+
+Control:
+wording/interpre­tation remains debated.
+
+---
+
+## Phase AK — future violence is perceived before role change gives actor capacity
+
+Hazael currently subordinate
+→ Elisha sees future king/violence
+→ Hazael cannot reconcile current self with future scale.
+
+**Effect:** node capacity changes when role changes.
+
+---
+
+## Phase AL — full information becomes selective report
+
+Elisha's two-part message
+→ Hazael reports recovery only.
+
+**Effect:** messenger can reshape centre's future model by omission.
+
+---
+
+## Phase AM — wet fabric inverts from covering into occlusive death boundary
+
+coverlet
+→ saturated
+→ placed on face
+→ old king dies
+→ Hazael becomes centre.
+
+**Effect:** same material type changes function radically by state and placement.
+
+---
+
+## Phase AN — north/south dynasties become strongly cross-coupled
+
+Judah's royal line
+↔ Ahab/Omride house by marriage/alliance.
+
+**Effect:** previously rival systems become biologically/politically entangled.
+
+---
+
+## Phase AO — stronger elite coupling coincides with peripheral territorial decoupling
+
+dynastic alliance intensifies
+while
+Edom + Libnah revolt.
+
+**Effect:** coherence at one network scale can decrease coherence at another.
+
+---
+
+## Phase AP — local breakout does not reverse macro-secession
+
+Jehoram escapes Edomite encirclement at night
+but
+Edom remains independent.
+
+**Effect:** tactical success ≠ restoration of larger field.
+
+---
+
+## Phase AQ — both royal centres converge into one vulnerable zone before purge
+
+Joram wounded
+→ withdraws Jezreel.
+Ahaziah goes down to visit.
+
+**Effect:** dynastic coupling spatially co-locates two centres, enabling one coming Jehu strike to hit both.
+
+---
+
+# What 2 Kings 5–8 adds to the master Bible/Vardath timeline
+
+165. **Critical transformation information can originate at the lowest-status edge of a system and climb upward through multiple hierarchies.**
+166. **High-status expectation can itself obstruct the effective route when the valid path is simple, indirect or socially “lower.”**
+167. **2 Kings 5 gives a strong descent→water→restoration sequence in which body-state and knowledge-state change together.**
+168. **A blocked inward wealth stream can be secretly reopened by a subordinate side-channel.**
+169. **Naaman/Gehazi form an unusually explicit state inversion: outsider diseased→clean, insider clean→diseased.**
+170. **A capacity problem can produce distributed outward expansion rather than collapse.**
+171. **The exact location where a component leaves a system can become the point through which recovery is later achieved.**
+172. **Future traps can be repeatedly defeated by information before bodies enter the trap geometry.**
+173. **The Dothan scene distinguishes visible field geometry from a second field accessible only after perception changes.**
+174. **A force sent to capture a node can become route-dependent on that node after orientation failure.**
+175. **The same army can move from surrounding a target to discovering itself surrounded in the opponent's centre.**
+176. **Feeding and release can replace destruction after enclosure reversal, temporarily deactivating conflict.**
+177. **A fortified shell can remain materially intact while its internal human system collapses through supply cutoff.**
+178. **Gate, wall and house can form nested boundary interfaces at different scales inside one siege event.**
+179. **An acoustic/rumor event can collapse a whole besieging field, leaving infrastructure and cargo behind while the active population disappears.**
+180. **Marginalized gate-dwellers can become the first scouts and information carriers of a new system state.**
+181. **A large population can rationally test a miraculous-looking release with a small probe before committing to mass crossing.**
+182. **The same gate can move from exclusion/scarcity to maximum throughput/abundance almost instantaneously once the outer field changes.**
+183. **A boundary controller can be overwhelmed by the throughput of the transition itself.**
+184. **A preserved living remnant can return after crisis yet still require separate restoration of territory and accumulated economic output.**
+185. **A remembered past event, its living witness and a current legal claim can converge synchronously and alter present distribution.**
+186. **Recovery from an illness and survival from the total event are separate state variables; 2 Kings 8 exploits that distinction around Ben-hadad.**
+187. **A messenger can selectively transmit one branch of a two-part future message, reshaping the old centre's model of what is coming.**
+188. **A soft covering can become a lethal boundary when its material state and placement change.**
+189. **Node capacity changes radically when subordinate becomes king; projected future behaviour cannot be inferred solely from current status.**
+190. **Strong coupling between two ruling centres can coincide with increasing decoupling at territorial edges.**
+191. **A local breakout from encirclement can fail to restore the larger political system.**
+192. **By 2 Kings 8 the northern and southern royal houses have become physically and dynastically co-located enough that the coming Jehu rupture can strike both together.**
+
+---
+
+## Section 37B high-priority pair / force register
+
+### Naaman / captive girl
+Great military centre receives decisive route-information from tiny captive edge-node.
+
+### Naaman / servants
+High-status rejection reversed by lower-status reasoning.
+
+### Naaman / Gehazi
+Most important pair of chapter 5:
+- foreigner → clean + new allegiance;
+- insider → diseased after illicit wealth capture.
+
+### Jordan / Damascus rivers
+Not “good water vs bad water” physically.
+Narrative contrast is:
+**specified route**
+versus
+**self-selected supposedly superior route**.
+
+### visible army / fiery army
+Two simultaneously asserted surrounding fields at Dothan:
+- one ordinarily visible;
+- one visible only after eye-opening.
+
+### blindness / sight
+Perception-state toggled twice:
+- servant opened to hidden field;
+- Arameans lose orientation;
+- Arameans regain perception inside Samaria.
+
+### Samaria as container / Samaria as contained
+chapter 6 first:
+Arameans led inside Samaria.
+
+later:
+Samaria itself enclosed by Arameans.
+
+### four gate-lepers / king
+Marginal cooperative scouts discover real outside state.
+Central king initially constructs false trap model.
+
+### Ben-hadad / Hazael
+old sick centre / subordinate future centre.
+
+### Judah / Israel royal houses
+Two previously divided systems becoming increasingly cross-coupled before simultaneous Jehu crisis.
+
+---
+
+## Section 37B number / timing register
+
+Record without forcing:
+- Naaman brings **10 talents silver**, **6,000 gold pieces**, **10 garments**;
+- washes **7 times**;
+- requests **2 mule-loads of earth**;
+- Gehazi invents **2 young prophets** and receives **2 talents + 2 garments**;
+- Samaria siege prices: **80 silver** for ass's head and **5 silver** for quarter-kab of disputed “dove's dung” term;
+- **4** leprous men at gate;
+- test dispatch described with **2 chariots** in MT narrative;
+- Shunammite famine exile **7 years**;
+- Hazael gift **40 camel-loads**;
+- Judah's Jehoram reign **8 years** in MT;
+- Ahaziah reign **1 year**.
+
+These remain narrative/time markers, not cosmological periodicities.
+
+---
+
+## Section 37B textual / literary / historical controls
+
+- Biblical **ṣaraʿat** is not identical to modern Hansen's disease; translate cautiously as a skin disease/ritual condition where needed.
+- Naaman's healing is miracle narrative. Do not turn seven immersions into a demonstrated hydrotherapy mechanism.
+- Jean Louis Ska reads Jordan as a narrative reversal/boundary and draws broader biblical crossing resonances; those are literary/theological interpretations, not physical proof.
+- Academic work on Naaman's earth request documents ancient Near Eastern transport of sacred soil; exact theology behind Naaman's request remains interpreted differently.
+- Gehazi's affliction is narratively described as Naaman's condition transferring to him; do not infer a medical contagion mechanism from that literary statement.
+- The axe-head episode gives no natural mechanism for iron floating. Preserve exact fall-point/recovery geometry only.
+- The rare **sanwerim** in 2 Kings 6 is often translated “blindness,” but dazzling/disorientation remains possible; functional route-loss is safer than claiming ordinary blindness.
+- The horses/chariots of fire belong to prophetic vision/theophanic narrative. Their integration with the seeing motif is academically discussed, but they are not evidence of an objectively measured invisible military layer.
+- Recent scholarship on 2 Kings 6:8–23 highlights the unusual feeding/release of enemy captives; do not flatten it into a permanent peace settlement because full-scale war resumes.
+- The cannibalism scene in the siege is a severe human catastrophe. Some recent scholarship proposes provocative sacrificial/polemical readings; these remain interpretations and should not replace the explicit famine/siege context.
+- “Dove's dung” is lexically debated and should not be used to infer exact famine diet.
+- The phantom-sound episode in 2 Kings 7 is narrative divine intervention; no physical source of the sound is supplied.
+- The Arameans' mention of Hittite/Egyptian kings may reflect plausible geopolitical imagination, but the story does not narrate such armies actually arriving.
+- The four men are described with the same skin-condition category used elsewhere; “lepers” is traditional shorthand but modern disease identification is uncertain.
+- 2 Kings 8's placement of Gehazi before the king after chapter 5's affliction is one reason the Elisha stories are often treated as non-linear or separately collected; do not force strict chapter chronology.
+- Hazael's 40-camel gift is narrative magnitude; “every good thing of Damascus” should not be treated as literal exhaustive cargo inventory.
+- Elisha's “recover / surely die” statement in 8:10 is interpretively difficult. Illness-recovery versus other-cause death is plausible, but not the only reading.
+- The unique Hebrew word for Ben-hadad's covering is uncertain. Most interpretation sees Hazael as the killer, likely by suffocation, but precise cloth type/mechanics are not secure.
+- Elisha's prediction of Hazael's atrocities is graphic war violence and should remain morally explicit.
+- Athaliah's exact genealogy is textually/genealogically debated: Kings calls her daughter of Omri in one place and links her to Ahab's house elsewhere. The secure structural point is the strong dynastic tie between Judah and the Omride/Ahab house.
+- Edom's revolt has independent regional/historical complexity; the text's theological evaluation is not a substitute for full political reconstruction.
+- The Tel Dan inscription, Mesha Stele and Assyrian sources provide external context for the ninth-century conflict network but do not reproduce the prophetic narratives.
+
+### Sources logged for Section 37B
+
+Primary:
+- Mechon-Mamre, **2 Kings 5–8**.
+
+Scholarly controls:
+- Jean Louis Ska, **“Where Does Salvation Come From? A Reading of 2 Kings 5:1–27”** (2023).
+- **“An Altar for Yhwh in the Land of Aram (2 Kings 5:17)”**, Journal of Ancient Near Eastern Religions 18 (2018).
+- **“Naaman's Healing and Gehazi's Affliction: The Magical Background of 2 Kgs 5”**, Vetus Testamentum 68 (2018).
+- **“A Note on the Horses and Chariots of Fire at Dothan,”** Zeitschrift für die alttestamentliche Wissenschaft 125 (2013).
+- Samantha J. Scott, **“Provisioning the Persians and the Prophetic Imagination: Reconceiving Subversion and Sovereignty in 2 Kings 6.8–23”** (2026), used as a recent compositional/political reading.
+- R. James Goldstein, **“The Provision of Food to the Aramaean Captives in II Reg 6,22–23.”**
+- Itamar Kisleṿ, **“The Vow to Kill Elisha: Function and Meaning in 2 Kings 6:31–33.”**
+- recent scholarship on 2 Kings 6:24–7:20's siege/cannibalism/reversal structure and the four gate-dwellers as agents of change.
+- translation/textual commentary on the rare covering term and agency in 2 Kings 8:15.
+- historical/literary studies of the Omride–Judah dynastic alliance and Athaliah's genealogy, with the Ahab/Omri wording problem retained.
+
+**Section 37 remains in progress.**
+
+### Next process block
+
+**2 Kings 9–13**:
+- prophetic messenger runs to Ramoth-gilead and privately anoints Jehu;
+- oil-on-head immediately turns one military commander into king;
+- fellow commanders convert garments into a stair/footing under him and horn/acclamation activates the new centre;
+- Jehu's chariot movement is recognized at distance by driving style before identity is verbally confirmed;
+- repeated messengers sent from Jezreel are absorbed into Jehu's moving field rather than returning;
+- Joram/Ahaziah ride out together and meet Jehu at Naboth's field;
+- two dynastic centres are struck in one convergence;
+- Joram's body is thrown onto Naboth's field, closing the earlier land/blood cycle;
+- Jezebel appears at window, is thrown downward by insiders, and body is fragmented/scavenged;
+- letters convert Samaria's guardians into executioners of Ahab's seventy sons;
+- seventy heads arrive in baskets at Jezreel and are placed in two heaps at gate;
+- Jehu gathers Baal worshippers into one house using deceptive information, closes exits and destroys the concentrated field;
+- Baal temple becomes latrine/refuse state;
+- Jehu's purge centralizes one regime while territorial losses to Hazael increase;
+- Athaliah then attempts total destruction of Davidic royal seed in Judah;
+- one infant Joash is hidden with nurse in temple for six years;
+- destruction field above continues while one remnant survives in nested sacred enclosure;
+- seventh-year public reveal activates guards, crown/testimony, acclamation;
+- Athaliah is routed out past horse entrance before execution so temple is not polluted;
+- covenant re-centres king/people/YHWH;
+- Baal temple in Judah is destroyed;
+- Joash repairs breaches in temple through changed finance routing;
+- Hazael threatens Jerusalem and receives accumulated sacred/royal treasure;
+- Elisha's final illness includes king's body over prophet, arrow through east window, three ground strikes versus expected five/six, death/burial;
+- dead man contacting Elisha's bones revives;
+- Hazael pressure eases after his death;
+- Jehoash recovers cities three times, matching the limited arrow-strike action.
+
