@@ -96807,3 +96807,580 @@ Scholarly controls:
 - prolonged household sorting around foreign marriages;
 - difficult ethics of women/children separated from households.
 
+
+
+---
+
+# PERMANENT MASTER COMPARISON PROTOCOL UPDATE — 2026-09-24
+## Geometry-first reading of every figure, pair, theme and transformation against the Vardath lattice / Squatter-Man mechanism
+
+This section makes the user's working instructions from the September 23–24 research chats explicit so they are not diluted or lost in later sections.
+
+It **supplements and governs** the earlier pair protocol, geometry checklist and section roadmap.
+
+It is a **test framework, not a conclusion framework**.
+
+---
+
+## A. Names are source labels; the process is the primary object of study
+
+Continue recording:
+- person names;
+- place names;
+- titles;
+- kinship;
+- source/book/chapter;
+- sequence position.
+
+But do **not** let names dominate the comparison.
+
+The primary questions are:
+
+- What shape is present?
+- What is moving?
+- What is stationary?
+- What splits?
+- What joins?
+- What stretches?
+- What crosses?
+- What passes over/under?
+- What goes up while something else goes down?
+- What becomes a gate/throat/rod/axis?
+- What is woven or enclosed?
+- What opens and closes?
+- What is transferred through it?
+- What changes state afterward?
+- What is preserved as remnant?
+- What is destroyed, rebuilt or born into the next phase?
+
+A biblical “person” may be:
+1. an ordinary narrative person;
+2. a personification of one structural role;
+3. one visible state of the Squatter-Man / rod / gate;
+4. one strand of the lattice;
+5. one side of a paired up/down interaction;
+6. one phase of the same underlying figure before/after transition;
+7. a carrier, enclosure, operator, guide, witness or cargo role;
+8. a literary reuse of an older pattern with no hidden physical identity.
+
+Always keep the conventional reading beside the Vardath comparison.
+
+---
+
+## B. New explicit master hypothesis — paired figures may be the two spring-like lattice strands
+
+The user has clarified the intended mechanical comparison:
+
+> The lattice can be imagined as **two spring-like structures stretching in opposite directions — one upward and one downward — then interacting, crossing and weaving together through the middle**.
+
+The woven central interaction can tighten into:
+- a braid;
+- finger-trap;
+- basket;
+- rod;
+- throat;
+- mountain;
+- world-tree/axis;
+- Squatter-Man-like side projection.
+
+Therefore, **every important pair must now also be tested against this two-spring model**.
+
+For any pair, ask whether the two figures could represent:
+
+### Spring A
+- upward stretch;
+- future-relative side;
+- expanding/ascending strand;
+- one polarity/direction;
+- one half of a left/right or over/under weave.
+
+### Spring B
+- downward stretch;
+- past-relative side;
+- contracting/descending strand;
+- opposite polarity/direction;
+- the complementary half of the weave.
+
+Then ask whether their interaction produces:
+- crossing;
+- over/under relation;
+- twisting;
+- weaving;
+- mutual stretching;
+- separation;
+- convergence;
+- a central throat;
+- a rod;
+- a mountain/axis;
+- an anthropomorphic Squatter-Man projection;
+- a temporary gate where different layers/worlds become adjacent.
+
+Do **not** assume every pair is this mechanism.
+Test it explicitly.
+
+---
+
+## C. A pair of people may be one underlying figure shown as two strands, states or views
+
+The user does not want “two named people = automatically two unrelated geometric actors.”
+
+For every strong pair, test whether they may be:
+
+- left/right sides of one structure;
+- upper/lower parts of one structure;
+- one rising while one falls;
+- one extending while the other contracts;
+- one past-facing and one future-facing state;
+- one over-crossing and one under-crossing strand;
+- one inside and one outside view of the same transition;
+- one before-state and one after-state;
+- one active and one passive phase;
+- one carrier/enclosure and one rod/operator;
+- one old-world role and one next-world role;
+- one figure split into two narrative people;
+- two people later recombined into one successor role;
+- one role handed from one body/name to another;
+- two simultaneous projections of the same Squatter-Man/lattice event at different scales.
+
+This extends the existing P1–P10 pair protocol rather than replacing it.
+
+---
+
+## D. Every person can be tested as a Squatter-Man / lattice-state candidate
+
+The instruction is now broader than only obvious “axis people” like Moses.
+
+For **every major figure**, ask:
+
+1. Is the figure positioned centrally?
+2. Is the figure elevated, lowered, suspended, stretched, crouched, seated on stone, hanging, standing on mountain or fixed at a threshold?
+3. Are arms, branches, rods, staffs, spears, crosses, pillars, trees or supports extending laterally or vertically?
+4. Does the figure move between upper/lower zones?
+5. Does something descend while the figure ascends?
+6. Does the figure operate water, sky, darkness, fire, cloud, earthquake or land-state changes?
+7. Is the figure carried inside an enclosure earlier in the story and later become the apparent operator/axis?
+8. Does the figure split, pair, duplicate, mirror or hand its role to another?
+9. Does the figure become a mountain, tree, pillar, rod, serpent, ladder, gate, city, woman, beast, star, angel or other non-human form in another text or phase?
+10. Could the “person” be the side-view anthropomorphic projection of the woven central lattice rather than merely somebody standing beside it?
+
+Do not force a positive answer.
+Record:
+- strong fit;
+- partial fit;
+- weak fit;
+- no fit;
+- textually unsupported.
+
+---
+
+## E. Recurring themes can also be projections of the same geometry
+
+Do not restrict the comparison to people.
+
+A **theme or story-form** may encode the same mechanism at another scale.
+
+Priority recurring themes include:
+
+- two siblings;
+- twins;
+- husband/wife;
+- parent/child;
+- king/successor;
+- prophet/king;
+- two women;
+- two animals;
+- two witnesses;
+- two trees;
+- two pillars;
+- two mountains;
+- two cities;
+- two kingdoms;
+- old/new covenant;
+- old/new creation;
+- death/resurrection;
+- exile/return;
+- upper/lower waters;
+- light/dark;
+- fire/water;
+- inside/outside;
+- sealed/open;
+- hidden/revealed;
+- barren/fertile;
+- firstborn/younger;
+- elder/younger;
+- sacrifice/remnant;
+- destroyer/protector;
+- carrier/operator;
+- body/garment;
+- city/woman;
+- person/land;
+- serpent/rod;
+- branch/tree;
+- mountain/cloud;
+- ark/basket/house/tent;
+- fall/rise;
+- sleep/waking;
+- burial/emergence;
+- scattering/gathering;
+- division/recombination;
+- two opposing camps/fields.
+
+For each recurrence ask:
+**Is this simply a literary/theological motif, or is it repeatedly describing one transformation grammar at different scales?**
+
+---
+
+## F. The two-force model is now a permanent comparison target
+
+The user repeatedly instructed that there are **two forces at play**.
+
+Each section must identify, where present:
+
+- Force A / Force B;
+- direction of each;
+- whether they attract, oppose, braid, pass, exchange, merge, separate or reverse;
+- whether one is above while one is below;
+- whether one is inside while one is outside;
+- whether one is future-relative and one past-relative;
+- whether one pushes while the other pulls;
+- whether one descends while the other ascends;
+- whether the two create a third central form or throat when they interact.
+
+The two forces may be personified by:
+- two people;
+- two groups;
+- two animals;
+- two mountains;
+- two rivers/waters;
+- two armies;
+- two angels;
+- two divine/hostile figures;
+- two cities/kingdoms;
+- two halves of one body;
+- two sides of one object.
+
+Names are secondary to the relationship.
+
+---
+
+## G. Core Vardath cosmology comparison target — use this exact current model
+
+The comparison must use the user's current cosmology, not an older simplified version.
+
+### World structure
+- Multiple **inhabited** world-turns exist above and below.
+- Every world has its **own present**.
+- From our world's perspective:
+  - world above = our future-relative world;
+  - world below = our past-relative world.
+- From those worlds' own perspective, each is simply its present.
+- Do **not** describe the worlds above/below as empty shells.
+
+### Gate event
+- The worlds interact when the gate opens.
+- Gate opening changes **adjacency**, not just ordinary physical distance.
+- Parts of a future-relative world and a past-relative world can interact with a present.
+- Those interactions contribute to the **new beginning** after the destructive transition.
+
+### Lattice / dragon structure
+- The sky/dragon lattice is a broad woven structure.
+- It can separate into two opposed spring-like directional strands.
+- One strand may stretch upward while the other stretches downward.
+- They can cross, weave and reconnect through the middle without being imagined as simply cutting through one another.
+- Under tension the weave can tighten into a throat / finger-trap / basket / scroll / rod-like form.
+- Seen side-on, the converged structure can resemble the **Squatter-Man**.
+- Tree, pillar, mountain, rod, staff, ladder, serpent, dragon, cross, braid and similar images may be different views/states of this same structure, but must be tested rather than assumed identical.
+
+### Transfer effects
+Track separately:
+- atmosphere;
+- water;
+- debris;
+- land;
+- heat/fire;
+- light/darkness;
+- living populations/cargo;
+- time experience;
+- local versus large-scale effects.
+
+Different materials may transfer differently through the same gate geometry.
+
+---
+
+## H. Finger-trap / basket / weave target
+
+The **finger-trap** is not decorative metaphor in this research.
+
+It is a mechanical comparison target.
+
+For each candidate scene, ask whether it describes:
+
+**broad/open weave**
+→ tension/stretching
+→ two directions pull apart
+→ crossing strands tighten
+→ central tube/throat/rod forms
+→ enclosure/corridor carries or constrains cargo
+→ tension changes
+→ weave loosens/reopens.
+
+Relevant images may include:
+- baskets;
+- woven arks;
+- nets;
+- braids;
+- cords;
+- ropes;
+- serpents;
+- staffs;
+- scrolls;
+- tents;
+- veils;
+- lattices;
+- woven garments;
+- cages;
+- ribs;
+- ladders;
+- branches;
+- fingers/hands;
+- paired limbs.
+
+The comparison should focus on **process**, not superficial visual resemblance.
+
+---
+
+## I. Squatter-Man target
+
+The Squatter-Man should be treated as:
+
+> **the anthropomorphic side-view projection of the converged lattice/rod during a temporary world-transition/gate state.**
+
+Candidate clues include:
+- central upright body;
+- branches/arms;
+- supported arms;
+- crouched/squatting posture;
+- head/upper node;
+- mountain/rock seat;
+- vertical rod;
+- bilateral supports;
+- upper/lower extension;
+- body stretched between domains;
+- suspended figure;
+- figure whose movement changes the environment below;
+- figure combined with serpent/rod/tree/mountain imagery.
+
+A named biblical character can represent:
+- the whole Squatter-Man figure;
+- one limb;
+- one strand;
+- the central throat;
+- the operator role;
+- the cargo carried by the structure;
+- a before/after projection.
+
+---
+
+## J. Passover / pass-under remains a permanent geometry test
+
+Do not rely on the English pun.
+
+The working geometry to test is:
+
+**two lattice strands cross**
+→ one passes under the other from the upper structure's perspective
+while
+→ from the inhabited world below the moving strand is still “over” the observers.
+
+Thus the same crossing may be described as:
+- under from one reference frame;
+- over from another.
+
+For every crossing narrative, test:
+- reference frame;
+- which strand is above/below;
+- which is moving;
+- whether protected enclosures remain uncoupled;
+- whether the relationship reverses after the event.
+
+---
+
+## K. Moses remains the clearest calibration figure, but not the only one
+
+Use Moses as a calibration case because the existing research found a strong recursive sequence:
+
+**baby in woven basket**
+→ living cargo in enclosure on water
+→ staff ↔ serpent
+→ rod/arm to sky
+→ environmental state change
+→ Passover/threshold enclosure
+→ sea opens/closes
+→ central figure on mountain
+→ upper descends while lower ascends
+→ central elevated figure with bilateral supported arms
+→ serpent displayed on pole.
+
+The new instruction is:
+**test every other major figure against this same process family without assuming they must match Moses.**
+
+---
+
+## L. Build the final product as a timeline of geometries and effects
+
+The end goal is not a concordance of names.
+
+It is a **timeline of transformations** across the whole 88-entry corpus.
+
+For every manageable section, append a sequence in the form:
+
+**starting geometry**
+→ **force interaction**
+→ **boundary change**
+→ **movement / crossing / transfer**
+→ **environmental effects**
+→ **population/cargo effects**
+→ **collapse or stabilization**
+→ **remnant**
+→ **next geometry/new beginning**.
+
+Where possible also record:
+- scale: body / household / city / kingdom / world / heaven;
+- two-force direction;
+- pair classification;
+- what is transferred;
+- what remains;
+- what returns;
+- what becomes the next centre.
+
+The final synthesis should be able to align many stories by **process order**, not merely by book order.
+
+---
+
+## M. Track numbers, dates, intervals and cycles — but only after textual control
+
+Keep recording:
+- years;
+- days;
+- months;
+- generations;
+- counts;
+- repeated numbers;
+- reign lengths;
+- distances;
+- weights;
+- dimensions;
+- seven/seven;
+- twelve;
+- forty;
+- three;
+- ten;
+- 144/144,000;
+- 231;
+- 729;
+- 360/365;
+- other recurring values.
+
+But for each number:
+1. check textual variants;
+2. check whether it is literal, schematic, rhetorical or symbolic;
+3. distinguish source count from later harmonization;
+4. do not force it into the Vardath chronology unless recurrence and mechanism support it.
+
+The ultimate aim includes testing whether the transformation timeline produces **cycles or intervals that can be compared with Archaix chronology and the wider Vardath timeline**, but only after the biblical sequence is mapped first.
+
+---
+
+## N. Track effects, not just shapes
+
+For every geometry, ask **what it does**.
+
+Examples:
+- Does water rise, divide, drain or return?
+- Does darkness appear?
+- Does fire descend?
+- Does atmosphere change?
+- Does a mountain tremble/split?
+- Does land emerge/submerge?
+- Does a city empty/fill?
+- Does a population cross?
+- Does living cargo survive while a shell is destroyed?
+- Does one world/field exchange material with another?
+- Does time seem delayed, compressed or anomalous?
+- Does a centre gain/lose information?
+- Does an enclosure protect, imprison or transform?
+- Does the same geometry reverse effect in a later phase?
+
+A shape with no process/effect is weaker evidence than a repeated **shape + action + consequence** sequence.
+
+---
+
+## O. Track pairs across scales, not only within one story
+
+A pair in one story may recur as:
+- another human pair;
+- two kingdoms;
+- two cities;
+- two world layers;
+- two divine/hostile figures;
+- two objects;
+- two animals;
+- two pillars;
+- two mountains;
+- two witnesses.
+
+Therefore maintain cross-scale comparison.
+
+Ask whether:
+**the same two-spring interaction is being projected into different narrative scales**.
+
+---
+
+## P. Preserve conventional explanations, contradictions and failures
+
+For every strong Vardath comparison, keep beside it:
+- normal literary reading;
+- historical setting;
+- genre;
+- source-critical issue;
+- archaeological control;
+- textual variant;
+- alternative explanation;
+- mismatch;
+- unexplained detail.
+
+Do not remove a Vardath match merely because a conventional explanation exists.
+
+Do not remove a conventional explanation merely because a Vardath match is striking.
+
+Record both.
+
+The strongest evidence will be:
+**the same ordered process recurring across unrelated texts while surviving textual and conventional controls**.
+
+---
+
+## Q. Append protocol — do not lose research again
+
+Permanent rule from the user's repeated instruction:
+
+1. Before starting a new roadmap section, search this file for:
+   - section name;
+   - completion marker;
+   - prior research;
+   - saved progress replies.
+2. Do not repeat already-completed work because of stale roadmap notes.
+3. Break each unfinished section into manageable blocks.
+4. **Append every substantive research block to this file immediately when completed.**
+5. Append important chat/progress instructions that materially change the method.
+6. Preserve source controls and unresolved questions.
+7. Continue from the first genuinely unfinished block after every interruption or memory refresh.
+
+---
+
+# One-line master test to apply to every future section
+
+> **Could the people, pair, object or theme in this scene be a narrative projection of the same two-directional lattice event—two spring-like strands stretching up and down, crossing/weaving into the finger-trap/rod/Squatter-Man gate, transferring material or populations between temporarily adjacent inhabited world-turns, and then separating into a new stable state—and if so, what exact textual sequence supports that reading, what does it cause, and what conventional explanation or mismatch remains?**
+
+This question is now a mandatory comparison target for all remaining roadmap work.
+
