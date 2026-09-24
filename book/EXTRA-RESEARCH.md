@@ -120533,3 +120533,854 @@ Priority:
 - crown / horn / lamp;
 - test whether royal verticality adds genuine Squatter-Man/rod geometry or remains social-political metaphor;
 - preserve overlap with already completed storm/Zion blocks without duplicating them.
+
+
+---
+
+# SECTION 45 progress C — rod / sceptre / king / anointed / hand-arm / throne-footstool Psalms
+## A heavenly throne installs a king on Zion, authority is projected outward through a rod/sceptre, enemies are spatially lowered beneath throne/feet, the royal right hand and divine arm repeatedly become directional force channels, crown/horn/lamp mark continuity of the central operator, and several Psalms show the same authority-axis changing hands or collapsing—strong social-political verticality, but still not a literal Squatter-Man lattice rod
+
+This pass continues **Section 45 — Psalms** with the stored royal/anointed family.
+
+Primary cluster:
+- Psalms **2, 18, 20–21, 45, 72, 89, 110, 132, 144**;
+- cross-links to Zion and storm work already completed in Sections 45A–B.
+
+The research question is:
+
+> When the Psalms use **rod, sceptre, right hand, arm, throne, crown, horn, lamp, footstool**, do they describe a genuine physical central-axis mechanism, or a political/theological authority system represented vertically?
+
+The answer is now fairly clear:
+the geometry is real in the poetry,
+but its primary source-level function is **royal authority, enthronement and victory**.
+
+---
+
+# Psalm 2 — upper throne → Zion king → iron rod → nations
+
+Psalm 2 has a highly compressed authority chain:
+
+**nations/rulers below**
+→ rebel.
+
+**YHWH sits in heavens**
+→ speaks.
+
+**king installed on Zion / holy hill**
+→ receives decree.
+
+**nations/end of earth**
+→ assigned as inheritance.
+
+**iron rod**
+→ projected outward as enforcement.
+
+The process is:
+
+**upper sovereign centre**
+→ **local Zion operator**
+→ **rod/sceptre**
+→ **outer nations**.
+
+This is one of the clearest **authority-axis cascades** in the Psalter.
+
+---
+
+# Psalm 2 — rod is a force-extension, not merely a badge
+
+The iron rod is not passive regalia.
+
+It is associated with:
+- breaking/subduing opposition;
+- potter-vessel shattering imagery.
+
+Thus the rod functions as:
+
+**central authority**
+→ extended through
+**linear object**
+→ changes external field.
+
+That makes it more mechanically relevant than a decorative sceptre.
+
+However:
+the source context is royal domination.
+
+No physical gate or lattice transformation is stated.
+
+---
+
+# Psalm 2 — “son” language is enthronement/adoption language before later messianic reception
+
+The decree:
+**“You are my son; today I have begotten you”**
+is widely read in ancient royal ideology as coronation/adoption language for the installed king.
+
+Later Jewish and Christian traditions develop messianic readings.
+
+For this geometry research:
+do not let later reception erase the primary process:
+
+**candidate/king**
+→ divine decree
+→ installed royal-son state
+→ authority over outer field.
+
+This is a **state installation**, not biological transformation.
+
+---
+
+# Psalm 2 — the centre exists in two levels
+
+The poem keeps:
+- divine ruler **in heavens**;
+- installed king **on Zion**.
+
+Authority is coupled across levels.
+
+This resembles a two-tier control architecture:
+
+**upper throne**
+↕
+**earthly mountain-throne/operator**.
+
+The relationship is strong enough to log.
+
+But:
+it is political/theological mediation,
+not evidence for physically inhabited adjacent world-turns.
+
+---
+
+# Psalms 20–21 — king moves from petition target to crowned victor
+
+Psalm 20 presents:
+- king facing crisis;
+- sanctuary/Zion as support-source;
+- community petitions for answer/strength;
+- chariots/horses contrasted with trust;
+- king preserved.
+
+Psalm 21 presents:
+- king rejoicing in strength;
+- desire granted;
+- **crown of fine gold placed on his head**;
+- long life;
+- glory/honour;
+- divine **right hand** finding enemies.
+
+Together they form:
+
+**king under threat**
+→ help requested from sanctuary
+→ survival/victory
+→ crown/high state
+→ outward suppression of enemies.
+
+This is a small royal state-transition pair.
+
+---
+
+# Crown marks successful state stabilization
+
+Across royal Psalms the crown is a visible state flag.
+
+Job 19:
+**crown removed**
+→ degradation.
+
+Psalm 21:
+**crown placed**
+→ stabilized victory/high status.
+
+Psalm 132:
+crown of anointed figure will flourish.
+
+So crown is a recurring **high-state marker**.
+
+It is not itself the force mechanism.
+
+It indicates successful occupancy of the central office.
+
+---
+
+# Psalm 45 — sceptre defines the character of the throne
+
+Psalm 45 links:
+
+**throne**
++
+**sceptre of equity/uprightness**
++
+**anointing oil**
++
+**royal procession/court**.
+
+The sceptre is not described primarily as destructive here.
+
+It is the extension of:
+**just rule**.
+
+Thus Psalms 2 and 45 give two rod states:
+
+### Psalm 2
+rod
+→ breaks external resistance.
+
+### Psalm 45
+sceptre
+→ encodes/orderly rule.
+
+The same basic object-type can therefore be:
+**coercive**
+or
+**stabilizing**.
+
+---
+
+# Psalm 45 — centre is surrounded by ordered human arrangement
+
+The royal figure occupies:
+- throne;
+- weapon/authority state;
+- anointed state;
+- palace;
+- queen at right hand;
+- procession inward.
+
+This is not a Squatter-Man diagram.
+
+But the court is strongly organized around one central royal body.
+
+The surrounding figures define **relational geometry**:
+centre / right side / approaching procession.
+
+---
+
+# Psalm 72 — ideal royal centre redistributes rather than merely dominates
+
+Psalm 72 expands royal authority away from pure conquest.
+
+The king:
+- judges poor with justice;
+- saves needy;
+- crushes oppressor;
+- has dominion “sea to sea”;
+- receives tribute/gifts;
+- causes abundance and peace.
+
+So a sceptre/king centre can produce:
+
+**outward extraction/control**
+or
+**outward protection/provision**.
+
+This is an important control.
+
+Authority-axis imagery is not automatically destructive.
+
+---
+
+# Psalm 72 — centre-to-edge geometry becomes global
+
+The royal field is imagined as extending:
+**sea → sea**
+and
+**river → ends of earth**.
+
+This is a centre with very large jurisdictional radius.
+
+But again:
+territorial authority ≠ physical energy field.
+
+Keep the distinction.
+
+---
+
+# Psalm 89 — divine arm/hand is the upstream source of royal hand/horn
+
+Psalm 89 is particularly valuable because it explicitly chains divine and royal bodily-force imagery.
+
+### Divine level
+- mighty **arm**;
+- strong **hand**;
+- high **right hand**;
+- righteousness/justice as throne foundation.
+
+### Royal level
+David/anointed king:
+- divine **hand remains with him**;
+- divine **arm strengthens him**;
+- his **horn is exalted**;
+- his **hand set on sea**;
+- his **right hand on rivers**;
+- throne/line established.
+
+This is a clean transfer architecture:
+
+**divine arm/hand**
+→ strengthens
+**royal hand/horn**
+→ extends over
+**sea/river domain**.
+
+This is one of the strongest authority-channel texts in the Psalter.
+
+---
+
+# Psalm 89 — horn is an elevation marker
+
+The “horn” is repeatedly **exalted**.
+
+In ancient royal/animal imagery, horn signifies strength/status.
+
+For process mapping:
+
+**horn low/not active**
+→ **horn exalted**
+= power-state raised.
+
+Do not turn horn automatically into a physical antenna/spire.
+
+Its source-level function is strength/royal dignity.
+
+---
+
+# Psalm 89 — the same royal system can later be dismantled
+
+The Psalm does not remain triumphant.
+
+Later it complains that the king's:
+- right hand of enemies is exalted;
+- splendour removed;
+- throne cast down;
+- days shortened;
+- crown/royal state humiliated.
+
+This is very important.
+
+Psalm 89 itself contains:
+**installation/stabilization**
+→ **collapse/deinstallation**.
+
+So the royal axis is reversible.
+
+The office/system can move from:
+**high**
+to
+**low/broken**.
+
+That makes Psalm 89 a useful internal control against reading throne/sceptre imagery as permanently fixed.
+
+---
+
+# Psalm 110 — the most explicit throne / right-hand / footstool / sceptre stack
+
+Psalm 110 begins:
+
+**YHWH**
+→ addresses “my lord.”
+
+**lord**
+→ sits at divine **right hand**.
+
+**enemies**
+→ made **footstool**.
+
+**sceptre**
+→ sent out from **Zion**.
+
+**rule**
+→ extends amid enemies.
+
+This is probably the densest pure vertical authority geometry in the royal Psalms.
+
+---
+
+# Psalm 110 — vertical rank is literally represented as body position
+
+The system is:
+
+**divine sovereign**
+→ seated centre.
+
+**royal/priestly lord**
+→ right-hand high position.
+
+**enemies**
+→ under feet / footstool.
+
+This is a complete spatial hierarchy.
+
+It is not merely abstract status.
+
+The poem expresses authority through:
+**above / beside / below** body placement.
+
+---
+
+# Psalm 110 — sceptre radiates from Zion
+
+The line:
+**“YHWH sends out from Zion your mighty sceptre”**
+creates a clear source-direction relation.
+
+Process:
+
+**Zion**
+→ sceptre/rod
+→ outward rule.
+
+This is one of the strongest central-spire analogues at the level of shape:
+
+**centre**
+→ linear authority projection.
+
+But the function remains political-military rule.
+
+No weaving/contraction/gate is stated.
+
+### Squatter-Man/rod test
+Visual/axis resemblance:
+**moderate**.
+
+Mechanistic correspondence:
+**weak**.
+
+---
+
+# Psalm 110 — right-hand relation reverses perspective inside the same poem
+
+At first:
+the lord is at **YHWH's right hand**.
+
+Later:
+**the Lord is at your right hand**.
+
+This creates a reciprocal right-hand formula.
+
+It does not necessarily imply two bodies swapping physical positions; Hebrew poetic reference can shift.
+
+But it is a genuine relational reciprocity:
+
+**operator supported by upper centre**
+and
+**upper power positioned as operator's support**.
+
+Worth logging, but not forcing into mirrored geometry.
+
+---
+
+# Psalm 110 — stream/path/head sequence is a small renewal unit
+
+The final line gives:
+**drink from stream by path**
+→ **lift head**.
+
+Whatever exact military/cultic setting,
+the process is straightforward:
+
+route
+→ water intake
+→ renewed/elevated head.
+
+This repeats a wider corpus rule:
+**water/resource contact can restore high-state posture**.
+
+---
+
+# Psalm 132 — horn + lamp + crown emerge from the established centre
+
+Section 45B already established Psalm 132 as:
+**mobile sacred focus → chosen resting place in Zion**.
+
+The royal ending now adds:
+
+**Zion centre stabilized**
+→ Davidic **horn grows/sprouts**
+→ **lamp prepared** for anointed
+→ enemies clothed in shame
+→ **crown flourishes**.
+
+This is one of the best centre→operator continuity sequences.
+
+The centre does not merely house worship.
+
+It produces/maintains:
+- power marker;
+- light marker;
+- crown/state marker.
+
+---
+
+# Horn / lamp / crown form a three-part royal continuity set
+
+These are different functions:
+
+### Horn
+strength/elevation.
+
+### Lamp
+continuing line / visible enduring light.
+
+### Crown
+recognized royal high state.
+
+Together:
+**strength**
++
+**continuity**
++
+**office**.
+
+This trio should be tracked as a royal-state package rather than treated as three unrelated symbols.
+
+---
+
+# Psalm 144 — hand-from-above rescue belongs to the royal operator pattern
+
+Section 45A already logged Psalm 144's storm/rescue reuse of Psalm 18.
+
+In the royal context:
+the speaker is trained for battle;
+divine hand acts from above;
+the king is rescued from hostile waters/foreigners;
+desired endpoint is prosperous stable society with **no breach in walls**.
+
+Thus the royal operator is:
+
+**supported from above**
+→ extracted/protected
+→ then expected to maintain
+**stable unbreached lower centre**.
+
+This closes the authority loop:
+upper help
+→ central king
+→ social stability.
+
+---
+
+# Right hand / arm across royal Psalms — directional force channel
+
+The recurring pattern is too dense to ignore.
+
+Right hand/arm can:
+- save;
+- strengthen;
+- find enemies;
+- support king;
+- hold royal operator;
+- establish reach over sea/rivers.
+
+The body-part language behaves like:
+**force-direction vocabulary**.
+
+The right side is associated with:
+**active authority/support**.
+
+This is culturally conventional royal/theological imagery.
+
+Do not treat it as literal electrical polarity without independent evidence.
+
+---
+
+# Throne / footstool / sceptre create a stable three-level royal architecture
+
+Across Psalms 2, 45, 89, 110:
+
+### throne
+fixed high centre.
+
+### sceptre/rod
+linear extension of centre's command.
+
+### footstool
+subordinated low field.
+
+This is one of the clearest abstract geometries in the Psalter:
+
+**high node**
+→ **axis/rod**
+→ **lower controlled field**.
+
+That resembles a central-spire diagram visually more than many other Psalm motifs.
+
+But the source-level mechanism is:
+**kingship**.
+
+---
+
+# Royal axis can be installed, transferred, strengthened and removed
+
+Across the family:
+
+### Installation
+Psalm 2:
+king set on Zion.
+
+### Strengthening
+Psalm 89:
+divine hand/arm strengthens.
+
+### Projection
+Psalm 110:
+sceptre sent from Zion.
+
+### Stabilization
+Psalm 45:
+sceptre of equity.
+
+### Continuity
+Psalm 132:
+horn/lamp/crown.
+
+### Collapse
+Psalm 89:
+sceptre/throne/crown state removed or cast down.
+
+Therefore the royal axis is not a static object.
+
+It is a **state system**.
+
+That is the strongest transferable process insight.
+
+---
+
+# SECTION 45C rod / king / axis matrix
+
+## heavenly throne / Zion king
+
+Psalms 2, 89, 110.
+
+Upper sovereign
+→ lower installed operator.
+
+P4 delegated-role structure:
+**very strong**.
+
+Literal two-world operator:
+**unsupported**.
+
+---
+
+## king / rod-sceptre
+
+The king's authority becomes linear/portable through rod.
+
+P7 operator/tool relation:
+**very strong**.
+
+Squatter-Man visual fit:
+**moderate**.
+
+Physical lattice mechanism:
+**weak**.
+
+---
+
+## right hand / footstool
+
+High:
+right-hand seat.
+
+Low:
+enemy beneath feet.
+
+P2 vertical polarity:
+**very strong**.
+
+---
+
+## horn / crown / lamp
+
+Royal state markers.
+
+P3 state continuity:
+**strong**.
+
+Not independent physical agents.
+
+---
+
+## divine arm / royal arm-hand
+
+Psalm 89.
+
+Upstream force/source
+→ strengthens downstream operator.
+
+P1 nested agency:
+**strong**.
+
+---
+
+# SECTION 45C continuous master process sequence
+
+## Phase 1 — upper throne remains stable
+
+divine sovereign seated in heavens.
+
+---
+
+## Phase 2 — local operator selected/installed
+
+king
+→ Zion throne/son/anointed state.
+
+---
+
+## Phase 3 — operator receives markers
+
+oil;
+crown;
+horn;
+lamp.
+
+---
+
+## Phase 4 — authority projects linearly
+
+rod/sceptre
+→ outward.
+
+---
+
+## Phase 5 — surrounding field is reordered
+
+foes subdued;
+nations become inheritance/tribute field;
+poor protected in ideal royal form.
+
+---
+
+## Phase 6 — vertical hierarchy stabilizes
+
+upper sovereign;
+right-hand king;
+enemies beneath/footstool.
+
+---
+
+## Phase 7 — support continues from above
+
+divine hand/arm
+→ strengthens royal operator.
+
+---
+
+## Phase 8 — centre radiates continuity
+
+Zion
+→ horn/lamp/crown.
+
+---
+
+## Phase 9 — system can fail or reverse
+
+enemy right hand rises;
+royal throne/crown/sceptre state collapses.
+
+---
+
+## Phase 10 — restoration requires renewed coupling to upper source
+
+prayer/help from sanctuary;
+hand from above;
+royal stability returns.
+
+---
+
+# What Section 45C adds to the master Bible/Vardath timeline
+
+1. **Royal Psalms repeatedly organize authority as a vertical system:** upper throne → Zion king → sceptre/rod → outer field.
+2. **Psalm 2 is the clearest installation sequence:** heavenly decree → king placed on Zion → iron rod acts on nations.
+3. **The rod is functionally active**, not merely ornamental.
+4. **Psalm 45 shows the opposite rod-state:** sceptre as stable just rule rather than destructive force.
+5. **Psalm 89 explicitly transfers divine hand/arm strength into the royal operator's hand/horn.**
+6. **Psalm 89 then reverses the same system**, with royal throne/sceptre/crown state collapsing.
+7. **Psalm 110 gives the densest spatial hierarchy:** right-hand seat above, enemies as footstool below, sceptre sent outward from Zion.
+8. **The sceptre-from-Zion image is one of the strongest visual central-axis analogues so far**, but its source-level function is political authority.
+9. **Right hand and arm act repeatedly as directional force/support language.**
+10. **Horn, lamp and crown form a useful three-part continuity package:** strength, continuing line/light, recognized office.
+11. **Psalm 132 ties those state markers directly to the stabilized Zion centre.**
+12. **Psalm 144 completes the loop:** upper hand rescues the king/operator so the lower social enclosure can return to no-breach stability.
+13. **Royal verticality can therefore be installed, strengthened, projected, stabilized, collapsed and restored.**
+14. **This is much closer to a dynamic operator model than to static symbolism.**
+15. **However, the full Squatter-Man hypothesis remains unproven:** the rod is not described as a body/lattice, the king is not a central woven mountain figure, and no two counter-moving physical strands are present.
+16. **The strongest controlled Vardath comparison is therefore functional:** a high centre delegates force through a central operator and linear axis into the surrounding field.
+
+---
+
+# SECTION 45C textual / historical controls
+
+- Royal Psalms likely arose in contexts of Israelite/Judahite kingship and were later reread messianically.
+- “Messiah/anointed” in the original royal context can refer to an actual anointed king; later Jewish/Christian messianic interpretation is reception history and must be distinguished.
+- Psalm 2's “son” language is widely interpreted as royal adoption/coronation language.
+- Psalm 2's iron-rod/pottery language has ancient royal/conquest analogues; it need not imply a literal iron machine.
+- Psalm 45 is usually read as a royal wedding poem, though some scholarship argues enthronement or broader royal celebration; precise Sitz im Leben remains debated.
+- Psalm 45's throne/sceptre/anointing imagery therefore should be read as royal ideology first.
+- Psalm 72 describes ideal kingship and may be prayer/programmatic royal ideology rather than report of one historical reign.
+- Psalm 89 is a covenant/royal lament whose second half deliberately contrasts promise with apparent dynastic collapse.
+- Psalm 110 is textually difficult in places and has an enormous later reception history.
+- Psalm 110's first-level meaning concerns a royal/priestly figure in relation to YHWH; later Christological readings must not replace source-level reconstruction.
+- “Right hand” is conventional honour/power symbolism in ancient royal language.
+- “Footstool” expresses subordination and rank, not necessarily physical crushing.
+- Horn/crown/lamp are state symbols before they are geometry.
+- Repeated bodily/vertical metaphors are still valuable because the project is mapping **process grammar**, but conventional royal ideology remains the primary explanation.
+
+### Sources logged for Section 45C
+
+Primary:
+- Psalm 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+2&version=NRSVUE
+- Psalm 89 NRSVUE:
+  https://www.bible.com/bible/3523/PSA.89.NRSVUE
+- Psalm 110 NRSVUE:
+  https://www.bible.com/bible/3523/PSA.110.NRSVUE
+- related royal Psalms checked in NRSV/NRSVUE:
+  Psalms 20–21, 45, 72, 132, 144.
+
+Scholarship:
+- modern royal-Psalm scholarship on Psalm 2 as enthronement/coronation text and royal “son” language.
+- modern scholarship on Psalm 45 as royal wedding / royal celebration / possible enthronement context.
+- scholarship on Psalm 89's Davidic covenant and dynastic collapse.
+- scholarship on Psalm 110's royal/priestly enthronement, right-hand position, footstool and Zion-sceptre imagery.
+- ancient Near Eastern royal ideology used as control for sceptre, enthronement and conquest imagery.
+
+---
+
+# SECTION 45C COMPLETE — rod / sceptre / king / anointed / hand-arm / throne-footstool family
+
+### Current transformation point
+
+**upper throne**
+→ king selected
+→ king installed on Zion
+→ anointing/crown/horn/lamp mark state
+→ divine hand/arm strengthens operator
+→ sceptre/rod projects authority outward
+→ outer field reordered
+→ enemies lowered beneath feet
+→ stable royal hierarchy forms
+→ centre radiates continuity
+→ royal coupling can fail
+→ throne/crown/sceptre state collapses
+→ renewed upper support is required for restoration.
+
+### Next Psalm process family
+
+**SECTION 45D — descent / ascent / pit / Sheol / rescue / hand-from-above / resurrection-adjacent Psalms**
+
+Priority:
+- Psalms 16, 18, 22, 30, 40, 49, 69, 71, 86, 88, 103, 116, 118, 139 and related material;
+- pit / miry clay / deep waters;
+- Sheol / grave / death cords;
+- descent below;
+- upward extraction;
+- “you will not abandon my soul to Sheol”;
+- body/earth/pit transitions;
+- hand from above as vertical rescue;
+- rock/high place as post-extraction stable state;
+- distinguish ordinary rescue metaphor from later resurrection interpretation;
+- track whether repeated downward→upward transitions create a genuine gate-cycle family.
