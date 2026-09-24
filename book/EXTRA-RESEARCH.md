@@ -55954,3 +55954,1542 @@ Controls / scholarship:
 - child illness/death and David's abrupt state reversal after death;
 - capture of Rabbah and transfer of crown/material.
 
+
+
+---
+
+# SECTION 34 progress B — 2 Samuel 7–12
+## Mobile enclosure versus permanent house, dynasty as time-axis, imperial inflow, remnant integration, two-front coupling, engineered isolation at a wall, and violence folding back into the king's own house
+
+---
+
+# 2 Samuel 7 — after spatial centralisation, the text refuses to equate permanence with one building
+
+The opening state is unusually stable.
+
+David:
+- dwells in his own **house**;
+- has received **rest from enemies round about**.
+
+The Ark:
+- is now at Jerusalem;
+- but remains inside **curtains/tent** rather than a cedar building.
+
+So the new centre contains an intentional mismatch:
+
+**king = fixed cedar house**
+versus
+**portable sacred centre = fabric/mobile enclosure**.
+
+David identifies the asymmetry and proposes:
+**convert the mobile sacred enclosure into a permanent architectural house**.
+
+This looks at first like the next obvious stage of centralisation.
+
+The narrative then interrupts that logic.
+
+---
+
+## First human interpretation is corrected at night
+
+Nathan initially says:
+**do what is in your heart**.
+
+That same night the message reverses the assumption.
+
+This creates:
+**human interpretation of correct next step**
+→ **night information**
+→ **route correction before construction begins**.
+
+The proposed physical transformation is therefore stopped before materialisation.
+
+This is another case where:
+**information changes the route before the projected branch is entered**.
+
+---
+
+# Sacred mobility is defended as part of the prior operating state
+
+The divine speech emphasizes:
+- no fixed house since Egypt;
+- movement in tent/tabernacle;
+- movement **from place to place** among Israel;
+- no prior demand for cedar house.
+
+So the Ark/YHWH history is described as:
+
+**mobile people**
++
+**mobile enclosure**
++
+**mobile divine presence**
+→ no need for permanent building during that phase.
+
+The key process distinction is:
+
+**mobility is not automatically deficiency**.
+
+A mobile enclosure can be the appropriate geometry for a mobile/distributed stage.
+
+This fits an important Vardath control:
+**convergence into a fixed centre should not be assumed to be superior in every phase.**
+
+---
+
+# “House” changes from spatial architecture into temporal lineage
+
+David asks to build YHWH a **house**.
+
+The response says instead:
+**YHWH will make David a house**.
+
+The same word-family shifts referent:
+
+1. David's cedar **house** = physical residence.
+2. proposed divine **house** = temple/building.
+3. Davidic **house** = family/dynasty extended through time.
+
+This is one of the strongest geometry transformations in the Bible so far.
+
+The proposed permanence is redirected from:
+
+**fixed sacred container in space**
+to
+**successive living line through time**.
+
+Then a future descendant:
+- arises from David's body/seed after David's death;
+- has kingdom established;
+- **builds the physical house**.
+
+So the full sequence is:
+
+**mobile sacred enclosure**
+→ king proposes permanent building
+→ permanent building deferred
+→ dynastic line established first
+→ successor arises later
+→ successor builds sacred house.
+
+This gives a genuine **time-axis before architecture** structure.
+
+---
+
+## Biological succession becomes the carrier of continuity
+
+David's future is described through:
+**seed proceeding from his body**.
+
+The state therefore persists after David through a successor.
+
+This is not immortality of one body.
+
+It is:
+**continuity of function through serial bodies**.
+
+For the master timeline:
+**one centre can persist as a “house” even though individual occupants die and are replaced**.
+
+This is closely analogous at the process level to:
+**structure persists while component identity changes**.
+
+---
+
+## Correction can occur without total state removal
+
+The successor may be disciplined with:
+- rod;
+- human stripes.
+
+But mercy is specifically contrasted with Saul:
+**it will not be removed in the same way it was removed from Saul**.
+
+So the text distinguishes:
+
+**component failure/correction**
+from
+**systemic rejection/decoupling**.
+
+That is another important state variable:
+not every error sends the system back to zero or replaces the whole house.
+
+---
+
+# “Place” and “planting” move permanence to the population as well
+
+The promise also says Israel will be:
+- appointed a **place**;
+- **planted**;
+- dwell in its own place;
+- disturbed less.
+
+Thus chapter 7 separates three kinds of stability:
+
+1. **sacred enclosure stability** — tent versus later temple;
+2. **dynastic stability** — Davidic house through time;
+3. **population/land stability** — people planted in a place.
+
+They interact, but are not identical.
+
+This is extremely useful for the final Vardath timeline:
+**world-shell, governing centre, population continuity and sacred/axial structure must not be collapsed into one variable.**
+
+---
+
+# David then goes inward and sits
+
+After the oracle David:
+- **goes in**;
+- sits before YHWH.
+
+The king who had proposed outward construction instead enters an existing sacred relation and receives information about long-term continuity.
+
+Processually:
+**build outward proposal**
+→ corrected
+→ **go inward**
+→ temporal/dynastic future articulated.
+
+Do not over-symbolise the physical movement, but the inversion is worth retaining.
+
+---
+
+# 2 Samuel 8 — after central stabilisation, force and material flows expand outward and return inward
+
+Chapter 8 changes scale.
+
+David's system moves outward against:
+- Philistines;
+- Moab;
+- Zobah/Aram;
+- Edom;
+- other surrounding polities.
+
+The text presents:
+**central kingdom**
+→ repeated outward military projection
+→ surrounding systems subdued
+→ tribute/material/remnants flow back inward.
+
+This creates a hub-and-spoke political geometry.
+
+---
+
+## Violence is organised by measurement in the Moab episode
+
+The Moabite captives are made to lie on the ground and are **measured with a line**.
+
+The text describes:
+- two lines assigned to death;
+- one full line to life.
+
+This is violent human selection and must not be sanitized into neutral mechanics.
+
+The process abstraction is simply:
+**one defeated population**
+→ physically arranged
+→ measured/partitioned
+→ different outcome classes assigned by spatial measure.
+
+It is a stark case of geometry being used to sort human fates.
+
+It is descriptive, not prescriptive, and should not be used as a positive analogy.
+
+---
+
+# Distributed garrisons convert temporary movement into stationary control nodes
+
+After military movement:
+- garrisons are placed in Aram;
+- garrisons are placed throughout Edom.
+
+So expansion has two phases:
+
+**mobile force crosses outward**
+→ victory
+→ **fixed nodes left behind**.
+
+This is a classic:
+**pulse → anchor**
+pattern.
+
+The central system extends itself by creating distributed stationary control points.
+
+---
+
+## Gold, bronze, silver and tribute move toward Jerusalem
+
+Captured/diplomatic materials include:
+- gold shields;
+- much bronze;
+- silver;
+- gold;
+- bronze vessels;
+- spoil from multiple nations.
+
+These materials are brought toward David/Jerusalem and dedicated.
+
+Thus:
+
+**outward force**
+→ **inward material return**.
+
+This resembles a circulatory system:
+**centre projects force → periphery returns cargo → centre accumulates/dedicates**.
+
+This contrasts with the outward redistribution seen at Ziklag and after the Ark procession.
+
+The Davidic centre therefore performs both:
+- **inward concentration**;
+- **outward distribution**,
+
+depending on phase and material type.
+
+---
+
+# 2 Samuel 9 — remnant of predecessor house is drawn from margin into central table
+
+David actively searches:
+**is anyone left from Saul's house?**
+
+This is significant after chapters 1–5, where surviving Saul-house material might have been treated only as rival residue.
+
+Instead the stated aim is:
+**preserve/show covenant kindness for Jonathan's sake**.
+
+The surviving line is not simply erased.
+
+---
+
+## Mephibosheth moves from peripheral residence to Jerusalem
+
+Mephibosheth is located:
+- in another household;
+- at Lo-debar;
+- away from the royal centre.
+
+David sends and **fetches** him.
+
+He moves:
+**marginal/outlying residence**
+→ **Jerusalem**
+→ **king's table continually**.
+
+This is a deliberate **remnant reintegration** process.
+
+The person whose feet were permanently damaged during the flight caused by Saul/Jonathan's death now becomes a resident at the successor centre.
+
+The long loop is:
+
+**old-centre collapse**
+→ emergency flight
+→ bodily impairment
+→ marginal survival
+→ later successor searches for remnant
+→ remnant drawn inward
+→ protected at central table.
+
+This is one of the clearest **post-reset remnant preservation** sequences in the Samuel material.
+
+---
+
+## Land and table are separated functions
+
+David restores:
+**Saul-family land** to Mephibosheth.
+
+Ziba and his household:
+- work/till the land;
+- bring produce.
+
+Mephibosheth:
+- eats continually at the king's table.
+
+So the system separates:
+**production field**
+from
+**central protected consumption/status node**.
+
+Resources continue to move from distributed land/workers toward the beneficiary while he remains centrally housed.
+
+This is more complex than simple confiscation or simple restoration.
+
+---
+
+## Old house is integrated without becoming the new centre
+
+Mephibosheth is treated:
+**like one of the king's sons**,
+but he does not replace David as king.
+
+Therefore:
+**predecessor remnant preserved**
+≠
+**predecessor regime restored**.
+
+That distinction is critical for the final timeline:
+a successor state can preserve predecessor cargo/lineage without reversing succession.
+
+---
+
+# 2 Samuel 10 — failed diplomatic interpretation creates a two-front trap
+
+David sends servants to comfort Hanun after the death of Hanun's father.
+
+The receiving court interprets them as:
+- surveyors;
+- spies;
+- advance agents for overthrow.
+
+So once again:
+
+**same incoming component**
+→ can be read as **peaceful messenger**
+or **hostile reconnaissance**
+depending on receiving model.
+
+The receiver's interpretation determines the resulting geometry.
+
+---
+
+# Half-state mutilation of beard and garment
+
+Hanun:
+- shaves **half** the beard of each servant;
+- cuts garments **in the middle**;
+- sends them away exposed.
+
+This is a deliberate creation of a **half/partial outward state**.
+
+David does not immediately bring them back to the central court.
+
+He tells them:
+**stay at Jericho until the beard regrows, then return**.
+
+This creates:
+
+**damaged public identity**
+→ temporary side-location/holding node
+→ natural restoration interval
+→ return only after outer state is restored.
+
+The structure strongly resembles other temporary holding phases:
+- Ark at Obed-edom;
+- weakened components at Besor;
+- hidden successor in stronghold.
+
+Different content, same broad process class:
+**component not ready for reintegration → side-state until condition changes**.
+
+---
+
+# Ammon reacts to expected retaliation by building a two-layer defensive field
+
+Ammon hires Aramean forces.
+
+At battle:
+- Ammonites form at the **entrance of the gate**;
+- Aramean allies are **separate in the open field**.
+
+Joab now discovers:
+**enemy before**
+and
+**enemy behind**.
+
+This is one of the clearest literal **two-front geometries** in the corpus.
+
+---
+
+## One Israelite body splits into two mutually supporting components
+
+Joab divides his own force.
+
+Component A:
+- chosen men;
+- faces Arameans.
+
+Component B:
+- remainder under Abishai;
+- faces Ammonites.
+
+The rule is explicitly conditional:
+
+**if A is too strong for me → B helps me**.
+**if B is too strong for you → A helps you**.
+
+This is a true **coupled bilateral support system**.
+
+The two components are independent enough to face opposite directions but remain one system because capacity can transfer between them.
+
+For Vardath:
+this is a particularly clean small-scale model of:
+**two counter-facing branches that remain coupled through reciprocal support**.
+
+---
+
+## Collapse of one enemy branch causes the other to collapse without direct completion
+
+Joab's branch advances.
+Arameans flee.
+
+Ammonites **see** the Aramean flight.
+
+They then:
+- flee from Abishai;
+- retreat into the city.
+
+So:
+
+**front A loses coherence**
+→ information reaches/visible to front B
+→ front B also retreats.
+
+The second collapse is partly **informationally coupled** to the first.
+
+This resembles other network cascades:
+**one node/branch failure changes the state of another branch even before it is independently destroyed**.
+
+---
+
+# Defeated external branch regathers beyond the first field
+
+Arameans later:
+- regroup;
+- draw in forces from beyond the River.
+
+Then David:
+- gathers **all Israel**;
+- crosses the Jordan;
+- enters the renewed confrontation.
+
+Scale expands:
+**local split-force battle**
+→ external network regathers from wider region
+→ central king gathers whole network
+→ water boundary crossed
+→ larger field clash.
+
+After defeat:
+- allied kings make peace;
+- they serve Israel;
+- Arameans fear to help Ammon again.
+
+The prior support-network is therefore **decoupled**.
+
+This closes the chapter as:
+**two-enemy alliance**
+→ two-front battle
+→ first cascade
+→ attempted broader reconvergence
+→ larger defeat
+→ alliance support path severed.
+
+---
+
+# 2 Samuel 11 — centre remains stationary while the field goes out, and the centre begins manipulating remote geometry
+
+The chapter marks the normal phase:
+**the time when kings go out to battle**.
+
+But:
+- David sends Joab/servants/all Israel;
+- David **remains at Jerusalem**.
+
+This is a major change from earlier active-centre geometry.
+
+Previously David often moved with the field.
+
+Now:
+
+**operator/king remains at central enclosure**
+while
+**military body operates remotely at Rabbah**.
+
+That separation enables the rest of the chapter.
+
+---
+
+# Roof gives the centre an elevated observation position
+
+At evening David:
+- rises from bed;
+- walks on the **roof** of the king's house;
+- sees Bathsheba bathing.
+
+Do not assume more exact vertical geometry than the text gives.
+
+The secure relation is:
+**central royal house + elevated roof vantage → visual access to another private human activity**.
+
+The ethical issue is fundamental:
+this is a story of royal power over a woman and her household, not neutral cargo transfer.
+
+Bathsheba must not be reduced to a mechanical component in the human meaning of the narrative.
+
+---
+
+## Observation becomes information query, then exercise of central taking-power
+
+David:
+- sees;
+- sends to inquire;
+- learns she is Bathsheba, wife of Uriah;
+- sends messengers;
+- has her brought/taken to him;
+- she later returns to her house.
+
+The directional chain is:
+
+**visual information enters centre**
+→ centre queries network for identity
+→ identity information returns
+→ centre sends agents outward
+→ woman is brought inward
+→ sexual encounter
+→ she returns outward.
+
+Then:
+**pregnancy state**
+→ message sent back inward to David.
+
+This is an information/material power loop centred on the palace.
+
+The word “take” and the profound power imbalance are central to ethical/literary readings; questions of Bathsheba's consent and agency are heavily debated.
+
+The geometry analysis must not obscure that.
+
+---
+
+# Uriah is pulled from the external field toward the centre
+
+David responds to pregnancy information by:
+**send Uriah to me**.
+
+Joab removes Uriah from siege field and sends him to Jerusalem.
+
+The king then tries repeatedly to route Uriah **down to his house**.
+
+First:
+**go down → wash feet**.
+
+Uriah instead sleeps:
+**at the door/entrance of the king's house with servants**.
+
+So the intended branch:
+**palace → private house**
+is refused.
+
+---
+
+## Uriah explicitly keeps himself coupled to the remote field
+
+His explanation is spatial:
+
+- Ark;
+- Israel;
+- Judah
+
+are in booths/tents.
+
+Joab and servants:
+- camp in the open field.
+
+Therefore he refuses:
+**private house + food + sex**.
+
+His body is physically at Jerusalem, but his operating allegiance remains coupled to the field.
+
+This is a striking example of:
+**metric relocation without functional recoupling**.
+
+---
+
+## Second attempt changes state but not route
+
+David:
+- keeps him another day;
+- feeds him;
+- makes him drunk.
+
+Yet Uriah still:
+**does not go down to his house**.
+
+So altering his physiological state does not produce the desired branch switch.
+
+The route remains closed.
+
+---
+
+# Uriah carries his own hidden routing instruction back to the battlefield
+
+David writes a letter to Joab.
+
+Uriah carries it **in his own hand**.
+
+He therefore acts as:
+**carrier of information that determines his own later placement**
+without being represented as knowing the content.
+
+This is an exceptionally strong information/control pattern:
+
+**central node generates hidden instruction**
+→ target component becomes carrier
+→ instruction reaches remote operator
+→ remote operator rearranges target's geometry.
+
+Again, this is murder by abuse of power, not a neutral systems trick.
+
+---
+
+# The kill-zone is engineered by support withdrawal
+
+David's instruction:
+
+**put Uriah at front of hottest battle**
+→ **withdraw from behind him**
+→ he will be struck and die.
+
+This is one of the clearest engineered geometries in the Bible.
+
+It does not require David's hand to touch Uriah.
+
+Instead:
+
+**target placed at high-pressure boundary**
+→ supporting field deliberately decouples/retreats
+→ opposing field remains
+→ isolated target becomes exposed
+→ opposing force completes killing.
+
+This is the dark inverse of Joab/Abishai's mutual-support geometry in chapter 10.
+
+Chapter 10:
+**if one branch is pressured → other branch moves in to support**.
+
+Chapter 11:
+**target branch placed under pressure → supporting branch moves away deliberately**.
+
+These chapters should be read together in the geometry timeline.
+
+They provide opposite rules:
+
+**support coupling preserves**
+versus
+**support withdrawal exposes/destroys**.
+
+---
+
+# Wall/boundary makes approach dangerous
+
+Joab places Uriah where strong defenders are.
+
+The city's men come out.
+
+Shooters act **from the wall**.
+
+The messenger report later emphasizes:
+- troops approached close to gate/wall;
+- shooters fired from above/on wall;
+- some servants died;
+- Uriah died.
+
+Joab anticipates that David may criticize proximity to the wall and invokes the earlier Abimelech story:
+**a woman above a wall drops a millstone and kills a man below**.
+
+So the text itself marks the wall as a dangerous **vertical defensive boundary**.
+
+Process:
+**approach too near fixed boundary**
+→ defenders can project force outward/downward
+→ exposed attackers suffer.
+
+---
+
+## Uriah's death is the key hidden message inside the battle report
+
+Joab tells messenger:
+give the general battle report;
+if David becomes angry about tactics,
+then add:
+**Uriah is dead**.
+
+That final datum is expected to change David's interpretation of the whole event.
+
+Thus:
+**many battlefield losses**
+→ one specific target-loss
+→ centre reclassifies event as successful enough.
+
+This is another example of:
+**one local state carrying disproportionate information for central decision-making**.
+
+---
+
+# 2 Samuel 12 — indirect model bypasses the king's defensive self-model
+
+Nathan does not begin with:
+**you did this**.
+
+He constructs a miniature model:
+
+**two men in one city**:
+- one rich with many flocks;
+- one poor with one lamb.
+
+A traveller enters the rich man's system.
+
+The rich man:
+- refuses to use abundant own resources;
+- takes the poor man's single beloved lamb.
+
+David judges the represented system before recognizing himself inside it.
+
+Then Nathan collapses model and referent:
+
+**you are the man**.
+
+This is one of the strongest information-interface processes in the Bible.
+
+### Abstracted system → self-judgment → mapping onto real centre
+
+Process:
+
+**indirect analogy/simulation**
+→ centre evaluates it externally
+→ centre declares outcome/penalty
+→ messenger maps centre into offending role
+→ internal self-recognition becomes unavoidable.
+
+For Vardath methodology this is crucial:
+**a model/projection can reveal a process more clearly than naming the historical actor first**.
+
+But it is a moral parable, not evidence of physical geometry.
+
+---
+
+# Violence used externally is predicted to fold back into the king's own house
+
+Nathan's judgment explicitly links:
+
+David:
+- had Uriah killed with the **sword of Ammon**;
+- took another man's wife.
+
+Future consequence:
+- **sword will not depart from David's house**;
+- trouble will arise **from within his own house**;
+- women of his house will be transferred publicly to another;
+- what was secret will become public/before the sun.
+
+This establishes the next major phase of 2 Samuel in advance.
+
+The geometry reverses:
+
+Chapter 8:
+**centre projects violence outward against surrounding peoples**.
+
+Chapter 11:
+**centre manipulates external enemy force to kill one internal subject**.
+
+Chapter 12 onward:
+**violence returns into the centre's own dynastic house**.
+
+That is a major **outside → inside folding** transition.
+
+---
+
+# Secret/private action becomes public/open consequence
+
+The oracle creates another inversion:
+
+**secret**
+→ **before all Israel**.
+
+**private**
+→ **before the sun**.
+
+This is the information-space equivalent of enclosure opening:
+what occurred within hidden palace dynamics will be mirrored in publicly visible dynastic events.
+
+This becomes important in Absalom's later actions and must be tracked when reached.
+
+---
+
+# Child illness — centre moves downward and suspends normal intake while outcome remains open
+
+The first child becomes very sick.
+
+David:
+- seeks/intercedes;
+- fasts;
+- goes in;
+- lies all night **on the earth/ground**;
+- elders stand beside him and try to raise him;
+- he refuses;
+- he refuses food.
+
+The state is:
+
+**uncertain outcome still open**
+→ king lowers body to earth
+→ normal food/social state suspended
+→ surrounding elders cannot restore ordinary posture.
+
+This is a deliberately maintained **liminal state** while change still seems possible.
+
+---
+
+# Seventh-day death causes immediate state reversal
+
+On the **seventh day**:
+- child dies.
+
+Servants fear to tell David.
+They whisper.
+
+David reads their **indirect behaviour** and infers the state change.
+
+Again:
+**surface behaviour of observers**
+→ allows centre to detect hidden information.
+
+Once death is confirmed, David does the opposite of what servants expect.
+
+He:
+- rises from ground;
+- washes;
+- anoints;
+- changes clothes;
+- worships;
+- returns home;
+- requests food;
+- eats.
+
+This is one of the sharpest state transitions in the corpus:
+
+### While outcome is changeable:
+**down**
++ **fasting**
++ **grief**
++ **refusal to rise**.
+
+### Once outcome is irreversible:
+**up**
++ **washing/anointing**
++ **new clothes**
++ **food**
++ **return to function**.
+
+The reason is explicit:
+while child lived, another branch was possible;
+after death, that branch is closed.
+
+This strongly supports the timeline method:
+**behavior depends on whether the state-space still contains a reachable alternative.**
+
+---
+
+# One-way relation replaces reversible expectation
+
+David says:
+**I shall go to him; he will not return to me**.
+
+Whatever theology of death is implied, the process direction is asymmetric:
+
+**living → eventually joins dead**
+but
+**dead child → does not return to living David**.
+
+This is a stated **one-way boundary** in the narrative.
+
+Do not inflate it into a full cosmology of afterlife worlds.
+
+Record the directional rule only.
+
+---
+
+# A new child opens a different dynastic branch
+
+After the first child dies:
+- David comforts Bathsheba;
+- Solomon is born;
+- Nathan is again involved in naming/message.
+
+So the household timeline is:
+
+**illicit taking**
+→ pregnancy
+→ Uriah's engineered death
+→ first child
+→ first child dies
+→ later child Solomon survives and becomes a major future succession branch.
+
+This means the same relationship produces:
+**one terminated branch**
+followed by
+**one future dynastic branch**.
+
+The significance becomes clearer only in later succession material.
+
+---
+
+# Rabbah siege closes after the internal crisis
+
+The external Ammonite war begun in chapter 10 and continued in chapter 11 now returns to the foreground.
+
+Joab has taken:
+- the royal city / “city of waters” language appears.
+
+The exact relation between those designations and the hydraulic/topographic state of Rabbah is debated.
+
+Do not assume a precise “water-gate capture” geometry without further evidence.
+
+The secure process is:
+**Joab reaches a near-final capture state**
+→ sends information to David
+→ asks David to gather remaining people and complete capture
+→ otherwise victory/name may attach to Joab.
+
+This is an explicit **credit/centre ownership** issue.
+
+The military field has done most of the operation, but the political centre is summoned to perform the terminal act so the captured node is assigned to the king's name.
+
+---
+
+# Crown transfer completes the rival-centre capture
+
+After capture:
+- a heavy gold/precious-stone crown is removed from the Ammonite king (or possibly associated in some witnesses/readings with Milcom);
+- placed on David's head;
+- much spoil exits the city.
+
+This is another direct transfer of:
+**head-marker of rival centre**
+→ **head of conquering centre**.
+
+Compare 2 Samuel 1:
+Saul's crown is carried toward David but the messenger's claimed killing route is rejected.
+
+Here:
+**rival city is conquered**
+→ crown physically moves to David.
+
+The two crown transfers occur under very different political/moral conditions.
+
+Do not treat “crown moves to David” as one undifferentiated symbol.
+
+---
+
+# Critical control — 2 Samuel 12:31 is textually/translation-wise difficult
+
+The treatment of the Ammonite population after capture has been translated very differently.
+
+Readings include:
+- brutal torture/execution under saws/iron tools/brickkiln;
+- forced labour with saws, picks/axes and brickmaking;
+- other text-critical reconstructions.
+
+The Hebrew, the Masoretic marginal tradition, and the Chronicles parallel create real difficulties.
+
+Therefore:
+**do not insert a confident geometry of bodies being cut, burned, or passed through a furnace into the master timeline.**
+
+The secure high-level data are:
+- population is brought out under David's control;
+- iron tools / saws / brick-work terminology is involved;
+- the exact action is disputed;
+- similar treatment is said to extend to other Ammonite cities;
+- David's people return to Jerusalem.
+
+This is precisely the kind of violent vivid passage where textual uncertainty must override pattern attraction.
+
+---
+
+# SECTION 34B continuous geometry/effect timeline — 2 Samuel 7–12
+
+## Phase AP — central rest reveals enclosure mismatch
+
+king settled in cedar house
+versus
+Ark inside curtains/tent.
+
+**Effect:** spatial centralisation generates pressure toward fixed sacred architecture.
+
+---
+
+## Phase AQ — projected fixed-house branch is stopped by information
+
+David proposes building
+→ Nathan approves
+→ night message reverses route
+→ construction not initiated.
+
+**Effect:** information prevents entry into projected architectural state.
+
+---
+
+## Phase AR — mobility is preserved as valid prior-state geometry
+
+sacred presence moved with mobile people in tent/tabernacle
+→ no prior fixed-house requirement.
+
+**Effect:** portable enclosure is recognised as phase-appropriate rather than defective.
+
+---
+
+## Phase AS — “house” rotates from space into time
+
+David wants to build divine house
+→ YHWH promises to build David a house/dynasty
+→ seed/successor arises after David
+→ successor later builds physical sacred house.
+
+**Effect:** permanence moves first into temporal succession before returning to architecture.
+
+Vardath comparison:
+**continuity can be carried through serial occupants while structure persists across time.**
+
+---
+
+## Phase AT — people, dynasty and sacred enclosure receive different stability variables
+
+people → planted in place.
+dynasty → established through time.
+sacred house → deferred to successor.
+
+**Effect:** population stability, governance continuity and sacred architecture are decoupled variables.
+
+---
+
+## Phase AU — centre projects force outward and receives tribute/material inward
+
+military expansion
+→ garrisons left in periphery
+→ gold/bronze/silver/tribute flows toward Jerusalem.
+
+**Effect:** mobile projection creates stationary distributed nodes and inward cargo flow.
+
+---
+
+## Phase AV — predecessor remnant drawn from margin into successor centre
+
+Mephibosheth at Lo-debar
+→ fetched to Jerusalem
+→ Saul land restored
+→ continuous seat at king's table.
+
+**Effect:** previous-house remnant preserved/integrated without restoring predecessor regime.
+
+---
+
+## Phase AW — hostile interpretation transforms messenger into threat
+
+peace/comfort delegation
+→ receiving court reads espionage
+→ half-beard / half-garment mutilation
+→ messengers expelled.
+
+**Effect:** receiver's information model changes relation before any actual attack occurs.
+
+---
+
+## Phase AX — damaged component waits in side node before reintegration
+
+humiliated messengers
+→ Jericho
+→ regrowth interval
+→ later return.
+
+**Effect:** temporary holding state permits visible identity restoration before centre re-entry.
+
+---
+
+## Phase AY — enemy geometry forms two opposing fronts
+
+Ammon at city gate
++
+Arameans in open field
+→ Joab caught before/behind.
+
+**Effect:** one moving force becomes enclosed between differently positioned opponent branches.
+
+---
+
+## Phase AZ — one system splits into reciprocal support pair
+
+Joab branch faces Aram.
+Abishai branch faces Ammon.
+If either branch weakens → other transfers support.
+
+**Effect:** two oppositely oriented components remain one system through conditional counter-support.
+
+Vardath comparison:
+**paired counter-facing branches can preserve coherence by exchanging capacity.**
+
+---
+
+## Phase BA — one branch collapse propagates through coupled opponent system
+
+Aram flees
+→ Ammon observes
+→ Ammon retreats into city.
+
+**Effect:** visible/informational state change in one allied branch destabilises the other.
+
+---
+
+## Phase BB — external network regathers; central field crosses water to meet it
+
+Aram draws support from beyond River
+→ David gathers all Israel
+→ crosses Jordan
+→ larger confrontation
+→ alliance defeated
+→ former supporting kings make peace
+→ future help-route to Ammon closes.
+
+**Effect:** failed alliance undergoes wider reconvergence, then permanent support decoupling.
+
+---
+
+## Phase BC — political centre stops moving while military body continues
+
+army + Ark-related field identity remain at siege
+→ king stays Jerusalem.
+
+**Effect:** operator/centre becomes spatially separated from active boundary field.
+
+---
+
+## Phase BD — elevated observation initiates palace-centred information loop
+
+roof sight
+→ inquiry
+→ identity report
+→ messengers
+→ Bathsheba brought inward
+→ she returns home
+→ pregnancy message returns inward.
+
+**Effect:** central power turns observation into remote control of another household.
+
+Control:
+this is human sexual/political abuse context, not neutral cargo mechanics.
+
+---
+
+## Phase BE — remote field component is recalled but refuses intended private branch
+
+Uriah siege field
+→ summoned to palace
+→ told go down home
+→ remains at palace door/servant zone
+→ second manipulated attempt still fails.
+
+**Effect:** metric relocation does not produce functional recoupling; component remains aligned with field state.
+
+---
+
+## Phase BF — target becomes carrier of hidden instruction about itself
+
+death letter
+→ placed in Uriah's hand
+→ carried to Joab
+→ decoded by remote commander.
+
+**Effect:** information can control a component through a channel inaccessible to the component itself.
+
+---
+
+## Phase BG — support coupling is deliberately inverted into support withdrawal
+
+chapter 10:
+pressure on branch → partner helps.
+
+chapter 11:
+target placed under pressure → partners withdraw.
+
+→ enemy force completes kill.
+
+**Effect:** survival/destruction depends less on absolute force than on whether neighbouring support remains coupled.
+
+This is a major Vardath-process comparison.
+
+---
+
+## Phase BH — fortified wall projects force outward onto over-near attackers
+
+target placed near strong defenders
+→ troops close to wall/gate
+→ defenders shoot from wall
+→ losses occur.
+
+**Effect:** fixed boundary gains asymmetric projection advantage over components crossing too near it.
+
+---
+
+## Phase BI — specific local death reclassifies a larger loss-event
+
+messenger carries battle losses
+→ centre's key question resolved by “Uriah is dead”
+→ tactical loss is accepted.
+
+**Effect:** one selected datum dominates interpretation of a distributed event.
+
+---
+
+## Phase BJ — indirect model causes centre to diagnose itself
+
+Nathan's two-men/lamb simulation
+→ David judges externalized case
+→ “you are the man”
+→ model maps onto centre.
+
+**Effect:** representation bypasses self-protective framing and forces state recognition.
+
+---
+
+## Phase BK — externalized violence folds inward into dynastic enclosure
+
+Uriah killed using external Ammonite sword
+→ prediction: sword remains inside David's house
+→ trouble arises from own household.
+
+**Effect:** force previously routed outward/through foreign field is predicted to recur internally.
+
+This sets the geometry of 2 Samuel 13–20.
+
+---
+
+## Phase BL — hidden action is predicted to become open/public
+
+secret palace act
+→ future consequence before Israel/sun.
+
+**Effect:** concealed enclosure state will be projected into public field.
+
+---
+
+## Phase BM — uncertain branch keeps centre low/inactive
+
+child alive but sick
+→ fasting
+→ king on ground
+→ refuses food/rising
+→ elders cannot lift him into normal state.
+
+**Effect:** while alternative outcome remains reachable, centre maintains suspended liminal regime.
+
+---
+
+## Phase BN — terminal information closes branch and reverses behaviour
+
+seventh-day death
+→ servants whisper
+→ David infers state
+→ rises
+→ washes/anoints
+→ changes clothes
+→ worships/eats.
+
+**Effect:** closure of possibility triggers immediate return to active state.
+
+---
+
+## Phase BO — death boundary is described as one-way
+
+David:
+**I go to him**
+but
+**he does not return to me**.
+
+**Effect:** directional asymmetry replaces reversible hope.
+
+---
+
+## Phase BP — terminated child branch followed by new succession branch
+
+first child dies
+→ later Solomon born
+→ new future dynastic line opens.
+
+**Effect:** lineage continuity survives branch loss by another branch.
+
+---
+
+## Phase BQ — remote commander reaches near-capture state and calls political centre in for terminal ownership
+
+Joab takes royal/water-city stage
+→ sends message
+→ David gathers remaining force
+→ completes capture.
+
+**Effect:** military operation transfers final credit/name to political centre.
+
+---
+
+## Phase BR — rival head-marker transfers to victorious centre
+
+Ammonite royal crown
+→ removed
+→ placed on David's head
+→ large spoil moves outward from captured city.
+
+**Effect:** rival centre's status-material is re-centred on victor.
+
+Control:
+identity of prior crown-holder has textual variation.
+
+---
+
+# What 2 Samuel 7–12 adds to the master Bible/Vardath timeline
+
+19. **A mobile enclosure can remain appropriate even after a fixed political centre exists.**
+20. **Permanence can shift from architecture into temporal lineage: “house” becomes dynasty before temple.**
+21. **Population, governing line and sacred enclosure can stabilize on different schedules.**
+22. **A centre can project mobile force outward, leave fixed peripheral nodes, and pull material inward.**
+23. **A predecessor remnant can be integrated into the successor centre without reversing succession.**
+24. **Receiver interpretation alone can change a messenger relation from peaceful to hostile.**
+25. **A visibly damaged component can occupy a temporary side-state until its interface identity is restored.**
+26. **A two-front system can survive by splitting into counter-facing branches with reciprocal support.**
+27. **Failure of one allied branch can trigger collapse in another through observation/information.**
+28. **Support coupling is a decisive state variable: move support in = preservation; remove support = exposure.**
+29. **A centre can manipulate remote boundary geometry while remaining physically separated from it.**
+30. **A component can unknowingly carry hidden routing instructions that determine its own fate.**
+31. **Fortified boundaries can project asymmetric force against components drawn too close.**
+32. **An indirect model can cause a centre to judge its own process before recognising itself as the target.**
+33. **Violence projected outward can fold back inward and become a dynastic/household instability.**
+34. **Secret versus public is another enclosure variable: hidden acts can become field-wide consequences.**
+35. **While an alternative branch remains possible, a system may hold in suspended/liminal state; when possibility closes, it can abruptly return to active mode.**
+36. **A terminal branch can be followed by a new successor branch without restoring the lost branch.**
+37. **Operational control and symbolic credit can be separated: a field commander can approach completion then call the political centre to claim the terminal state.**
+
+---
+
+# Cumulative 2 Samuel timeline through chapter 12
+
+**Saul system collapses**
+→ royal information/remnants reach David
+→ direct killing-handoff rejected
+→ post-Saul territory bifurcates
+→ two forces meet across water
+→ representative-pair collision releases war
+→ long strength gradient
+→ weakening system's internal bridge flips allegiance
+→ bridge tries to transfer field
+→ bridge killed at gate
+→ rival centre loses operative capacity
+→ rival centre killed
+→ all tribes converge on David
+→ new centre relocates to Jerusalem
+→ external enemy counter-field broken
+→ same enemy geometry later requires different route
+→ portable sacred centre transfer fails
+→ centre diverted to temporary house
+→ stable coupling observed
+→ transfer restarted differently
+→ Ark reaches central tent
+→ central resources redistribute outward
+→ fixed-house proposal arises
+→ architecture deferred
+→ dynastic “house” established through future successor
+→ external military/material network expands
+→ predecessor remnant Mephibosheth reintegrated
+→ diplomatic misreading creates new external war
+→ army survives front/back enclosure through paired reciprocal support
+→ central king remains home while field besieges Rabbah
+→ palace centre manipulates peripheral household
+→ field component Uriah recalled but refuses intended recoupling
+→ hidden instruction routes him back to engineered kill-zone
+→ support deliberately withdrawn
+→ external enemy force completes death
+→ Nathan uses model to expose centre's process
+→ predicted violence folds from outside back into dynastic house
+→ first child branch dies after seven-day liminal interval
+→ centre reverses state once death closes alternative
+→ Solomon branch opens
+→ Rabbah capture completes
+→ rival crown/material moves toward David
+→ system returns to Jerusalem.
+
+---
+
+## Section 34B number / timing register
+
+Record without forcing:
+- “house”/bayit is repeated with multiple meanings throughout chapter 7;
+- future seed succeeds after David sleeps with fathers;
+- chapter 8 contains numerous large military casualty/capture totals with known textual variation in Samuel generally;
+- Ziba has **15 sons + 20 servants** in MT;
+- Ammon's hired forces include MT totals of 20,000 + 1,000 + 12,000;
+- David's later Aramean battle totals differ in details from Chronicles and/or textual traditions; do not use them cosmologically without separate control;
+- child dies on **seventh day**;
+- Nathan's parable invokes **fourfold** restoration;
+- crown weight is given as **one talent of gold**, but interpretation of crown-holder and practical meaning requires caution.
+
+---
+
+## Section 34B textual / scholarly controls
+
+- **2 Samuel 7** is textually complex across MT, Greek traditions and 1 Chronicles 17. The house/dynasty wordplay is secure in the received narrative, but reconstruction of the oldest form remains debated.
+- The Davidic promise is theological/political literature; its “forever” language should not be converted directly into physical cosmological duration.
+- Chapter 8's conquest/tribute material contains severe violence and imperial domination. Systems language is analytical only and must not sanitize the human content.
+- Mephibosheth's movement to Jerusalem can be read as covenant loyalty, royal patronage, or political management of a potential rival line; preserve the ambiguity.
+- 2 Samuel 10's two-front geometry is explicit in the narrative; exact troop numbers should not carry cosmological weight.
+- Bathsheba is a human person under a major royal power imbalance. The narrative's verbs of sending/taking are ethically important, and scholarly debate over agency/consent must remain visible. Do not reduce her to “cargo.”
+- Uriah's refusal to go home has multiple scholarly readings: military solidarity/piety, suspicion, combat-furlough dynamics, and others. The secure geometric fact is repeated refusal of the palace→house route.
+- David's letter is a deliberately concealed instruction and Uriah carries it; whether sealed is not stated in the Samuel text and should not be invented.
+- The planned withdrawal around Uriah is explicit and provides one of the strongest support-coupling inversions in the corpus.
+- Nathan's parable is moral/narrative rhetoric, not a physical simulation. Its value to this project is the process by which indirect representation reveals a hidden relation.
+- The predicted “sword in your house” becomes a major literary frame for chapters 13 onward; later events should be compared without assuming every detail was written solely to mechanically fulfil the oracle.
+- The child dies on the seventh day; do not force seven into a recurrence clock.
+- **Rabbah / “royal city” / “city of waters”** terminology has interpretive problems; avoid precise hydraulic reconstruction without stronger archaeological/textual evidence.
+- The identity associated with the crown in 2 Samuel 12:30 varies across witnesses/readings (king versus possible relation to Milcom/Malcam).
+- **2 Samuel 12:31 is highly uncertain in translation.** Readings range from horrific torture/execution to forced labour with saws, iron tools and brickmaking. Do not use the disputed details as secure geometry.
+- The Samuel/Chronicles parallels differ and must be checked later when the Chronicles roadmap section is reached rather than retroactively harmonised here.
+
+### Sources logged for Section 34B
+
+Primary:
+- Mechon-Mamre, **2 Samuel 7–12**.
+
+Scholarly controls:
+- Jan Rückl, **A Sure House: Studies on the Dynastic Promise to David in the Books of Samuel and Kings**.
+- scholarship on **bayit / house** as building, temple, family and dynasty across 2 Samuel 7.
+- family/dynasty studies of the Davidic house and the later Succession Narrative.
+- Marvin A. Sweeney, **1–2 Samuel**, retained for synchronic/literary and geographic framing.
+- Rachelle L. Gilmour, **Representing the Past**, especially causation and Davidic narrative historiography.
+- recent Brill work on **Combat Furlough and the Characterization of Uriah the Hittite** as a control on simplistic motivation claims.
+- literary scholarship treating Uriah/lamb imagery and sovereignty in 2 Samuel 11–12.
+- scholarship on Nathan's parable and its reception/rewriting.
+- textual/translation commentary on **2 Samuel 12:31**, preserving the forced-labour versus torture/execution uncertainty.
+- comparative Samuel/Chronicles controls for Rabbah, crown and population treatment.
+
+**Section 34 remains in progress.**
+
+### Next process block
+
+**2 Samuel 13–20**:
+- Amnon/Tamar: internal-house boundary violation;
+- Absalom as delayed retaliatory branch;
+- sheep-shearing feast as kill-zone;
+- false report that all sons are dead versus actual single-node death;
+- Absalom exile/return without face-to-face access;
+- staged field fire to force contact;
+- gate-side interception of petitioners and gradual diversion of allegiance;
+- Hebron signal network/rebellion;
+- David evacuates Jerusalem;
+- Ark is deliberately sent back rather than used as portable guarantee;
+- two advice channels Ahithophel/Hushai;
+- Jordan/wilderness crossing and support network;
+- forest battle, Absalom caught/suspended in tree;
+- centre orders preservation but field commander kills;
+- public/private grief inversion;
+- return across Jordan;
+- north/south dispute;
+- Sheba splits field again;
+- city of Abel enclosed;
+- woman at wall negotiates severed head as substitute for city destruction;
+- siege dissolves after one target is expelled.
+
