@@ -84935,3 +84935,1402 @@ Scholarly controls:
 - Hazael withdraws, preserving city at cost of centre's stored wealth;
 - Joash is later killed by servants inside royal house.
 
+
+
+---
+
+# SECTION 37 progress C — 2 Kings 9–11
+## Private anointing erupts into public kingship, garment layers become an improvised throne, messengers are absorbed into a moving field, two linked royal centres are struck in one convergence, Naboth's land receives the fallen king, Jezebel moves from window to ground, seventy potential centres become severed heads at a gate, one cult field is deliberately concentrated and annihilated, and one hidden infant preserves the Davidic line inside a nested sacred enclosure until the seventh-year release
+
+---
+
+# 2 Kings 9 — Jehu's new centre-state is created in an inner chamber before anyone outside knows it exists
+
+Elisha does not go personally.
+
+He sends a young prophetic messenger with:
+- oil;
+- a precise target;
+- a precise route;
+- a command to flee immediately afterward.
+
+The instruction is:
+
+**enter Ramoth-gilead**
+→ find Jehu among commanders
+→ remove him from the group
+→ take him into **inner chamber**
+→ oil on head
+→ declare kingship
+→ open door
+→ flee.
+
+So the new political state begins in:
+**maximum privacy / minimum witness field**.
+
+This is the inverse of Solomon's public Gihon activation.
+
+Here:
+**centre-state changes first in hidden enclosure**
+and only afterward propagates outward.
+
+---
+
+# One individual is separated from a peer-field before transformation
+
+Jehu is initially:
+**one commander among commanders**.
+
+The messenger says:
+**to you, commander**.
+
+Then:
+**Jehu leaves the seated military group**
+→ enters inner room
+→ receives new identity/state.
+
+This is a classic:
+**select one node from field**
+→ isolate
+→ transform
+→ reinsert.
+
+---
+
+# Oil-on-head changes role before any throne, capital or population moves
+
+The only physical action is:
+**oil poured on head**.
+
+Yet the declared state becomes:
+**king over Israel**.
+
+This is another example where:
+**symbolic/ritual state transition precedes material control of territory**.
+
+The physical kingdom has not changed yet.
+The role assignment has.
+
+---
+
+# The messenger exits immediately, preventing negotiation at the transformation point
+
+After the message:
+**door opens**
+→ messenger flees.
+
+The commissioning node does not remain to:
+- debate;
+- organize;
+- explain.
+
+That forces the transformed node to carry the state outward himself.
+
+The information packet is therefore deliberately **compressed and non-negotiated**.
+
+---
+
+# Jehu's companions first dismiss the messenger, then instantly build a public centre around Jehu
+
+When Jehu returns,
+the commanders ask what happened.
+
+Once he tells them:
+**anointed king**,
+they respond immediately.
+
+Each:
+- removes garment;
+- places it beneath Jehu;
+- on the steps/platform;
+- horn blown;
+- “Jehu is king.”
+
+This is a striking construction:
+
+**many personal coverings**
+→ layered under one person
+→ improvised elevated royal footing.
+
+The garments change function from:
+**individual clothing**
+to
+**collective support/platform for centre**.
+
+---
+
+# Garment geometry changes again — not torn, but converged beneath one centre
+
+Across Samuel–Kings garments have:
+- torn to signify kingdom loss;
+- cut to show access;
+- transferred as status;
+- torn in mourning;
+- torn into twelve fragments;
+- now laid together beneath one newly declared king.
+
+So the new operation is:
+
+**many intact garments**
+→ **one supporting surface**.
+
+This is the opposite direction from Ahijah's:
+**one garment → many pieces**.
+
+Here:
+**many coverings → one centre platform**.
+
+---
+
+# Horn converts the private inner-room state into public military reality
+
+The horn is blown.
+
+The military peer-field now recognizes:
+**Jehu is king**.
+
+Again:
+**sound = state switch**.
+
+But unlike Absalom's rebellion or Solomon's public anointing,
+this signal follows a hidden transformation and makes it collective.
+
+---
+
+# Jehu immediately closes information leakage from Ramoth-gilead
+
+He says:
+**if this is truly your mind**
+→ let no one leave city to tell Jezreel.
+
+This is a deliberate **information containment shell**.
+
+The coup's success depends on:
+**new centre moving faster than warning information**.
+
+So:
+**bodies are allowed to move inward toward target**
+while
+**news is prevented from moving ahead of them**.
+
+This is one of the clearest speed-vs-information races in Kings.
+
+---
+
+# Watchtower detects the moving field before the centre can identify it
+
+At Jezreel:
+- watchman sees company approaching;
+- identity unknown.
+
+So first information is:
+**shape/motion of field**,
+not
+**who leads it**.
+
+This repeats other watchtower scenes:
+geometry arrives before semantics.
+
+---
+
+# Two outgoing messengers are absorbed into Jehu's incoming field
+
+Joram sends a rider:
+**is it peace?**
+
+Jehu says:
+**turn behind me**.
+
+The rider does not return.
+
+A second is sent.
+
+Same result.
+
+The watchman reports:
+**messenger reached them but is not coming back**.
+
+So each attempt by the stationary centre to query the approaching field results in:
+
+**outgoing information-carrier**
+→ reaches incoming field
+→ becomes part of it
+→ return channel fails.
+
+This is a very strong **messenger absorption** process.
+
+---
+
+# Identity is finally inferred from motion style
+
+Before Jehu is verbally identified,
+the watchman says:
+**the driving is like Jehu's**.
+
+Identity is inferred from:
+**kinematics / behavioral signature**.
+
+This is a useful contrast with:
+- clothing-based recognition;
+- voice/sound recognition;
+- disguise.
+
+Here:
+**movement pattern = identity marker**.
+
+---
+
+# Two already cross-coupled royal centres ride out together
+
+Joram of Israel is recovering at Jezreel.
+
+Ahaziah of Judah has come to visit him.
+
+They each mount a chariot and ride out to Jehu.
+
+Thus the dynastic interweaving described in 2 Kings 8 becomes a physical convergence:
+
+**Israelite king**
++
+**Judean king**
+→ leave city together
+→ meet one incoming rival centre.
+
+This allows one coup-field to strike **both houses in one event chain**.
+
+---
+
+# The meeting occurs at Naboth's field — prior unresolved land/blood geometry returns as the contact point
+
+They meet Jehu:
+**in the portion of Naboth**.
+
+This is highly significant.
+
+1 Kings 21:
+- land refused transfer;
+- owner falsely killed;
+- Ahab went down to possess it;
+- Elijah confronted him there.
+
+2 Kings 9:
+- Ahab's son/house now meets coup-field at same land-node;
+- Joram is killed;
+- his body is thrown into the plot.
+
+The place becomes a long-memory node:
+**earlier unjust acquisition**
+→ later dynastic death deposited on same ground.
+
+Whether this is early tradition or later redactional linking is debated,
+but the literary geometry is explicit.
+
+---
+
+# Joram attempts reversal, but Jehu's arrow crosses the fleeing centre
+
+When Joram recognizes treachery:
+- turns hands;
+- flees.
+
+Jehu:
+- draws bow with full strength;
+- strikes between arms/shoulders;
+- arrow passes through heart;
+- Joram collapses into chariot.
+
+This is:
+**centre begins withdrawal**
+→ projectile crosses open distance
+→ penetrates torso
+→ centre falls inside mobile carrier.
+
+Again:
+**carrier remains**
+while
+**carried centre fails**.
+
+---
+
+# The dead centre is removed from chariot and returned to the contested land-node
+
+Jehu tells Bidkar:
+**lift him**
+→ **throw him into Naboth's plot**.
+
+So:
+**royal mobile platform**
+→ corpse removed
+→ deposited onto fixed ancestral land.
+
+The land that the dynasty absorbed now receives the dynasty's dead body.
+
+This is a strong **territorial return/reversal**.
+
+---
+
+# The second royal centre flees by a different route but remains within the same collapse field
+
+Ahaziah sees Joram fall.
+
+He flees:
+**garden-house route**
+→ pursued
+→ wounded near ascent of Gur/Ibleam
+→ reaches Megiddo
+→ dies.
+
+His body is then:
+**carried back to Jerusalem**
+→ buried with fathers.
+
+Thus the two linked centres split again after contact:
+- Israelite centre dies and remains associated with Naboth/Jezreel.
+- Judean centre dies farther away and is returned to dynastic burial.
+
+Same coup-field.
+Different terminal routing.
+
+---
+
+# Jezebel stays above the approaching field and uses the window as her interface
+
+Jezebel:
+- hears Jehu came;
+- prepares eyes/hair;
+- looks down from window.
+
+The window again functions as:
+**interior/high observer boundary**
+between
+**old regime**
+and
+**new incoming field**.
+
+She does not flee.
+
+She confronts verbally from above.
+
+---
+
+# Jehu converts the old centre's own interior servants into downward force
+
+Jehu looks up and asks:
+**who is on my side?**
+
+Two or three officers/eunuchs look out.
+
+He commands:
+**throw her down**.
+
+So the fatal force is not applied by Jehu entering the building.
+
+It comes from:
+**inside the old household**
+→ against its own queen.
+
+This is a strong **internal polarity reversal**:
+the enclosure's occupants switch allegiance and eject the centre outward/downward.
+
+---
+
+# High window → ground → wall/horses → scavenged fragments
+
+Jezebel's route is dramatically vertical:
+
+**window/high interior**
+→ thrown downward
+→ blood on wall/horses
+→ trampled
+→ later body largely absent.
+
+Only:
+- skull;
+- feet;
+- palms/hands
+
+remain.
+
+The old royal body becomes fragmented/remnant matter rather than a buried whole.
+
+Human violence remains primary and should not be aestheticized.
+
+---
+
+# 2 Kings 10 — Ahab's seventy sons are distributed potential centres held in another city
+
+Ahab's **seventy sons** are in Samaria,
+under:
+- officials;
+- elders;
+- guardians.
+
+Jehu challenges them:
+**choose the best son**
+→ set him on throne
+→ fight for house.
+
+This reveals their structural role:
+they are a **distributed succession reservoir**.
+
+As long as they live,
+the prior house retains possible future centres.
+
+---
+
+# The guardians refuse to activate any replacement centre
+
+They reason:
+**two kings could not stand before Jehu**
+→ how can we?
+
+They tell Jehu:
+**we will make no one king**.
+
+So:
+**potential-centre field**
+remains inactive.
+
+The guardians switch allegiance toward the incoming regime.
+
+---
+
+# Remote letters turn guardians into destroyers of the line they were assigned to preserve
+
+Jehu's second letter says:
+**take the heads of your master's sons**
+→ send them by tomorrow.
+
+The same people whose role was:
+**raise/protect royal children**
+now:
+**kill them**.
+
+This is another extreme internal polarity reversal caused through remote command.
+
+---
+
+# Seventy bodies are converted into portable proof-objects
+
+The sons are killed.
+
+Their heads:
+- placed in baskets;
+- transported to Jezreel.
+
+The former potential kings become:
+**portable severed identity markers**.
+
+This is brutal human political violence.
+Process abstraction must not obscure it.
+
+---
+
+# One distributed lineage is compressed into two heaps at a city gate
+
+Jehu orders:
+**place heads in two heaps**
+at
+**entrance of gate**
+until morning.
+
+So:
+
+**70 distributed potential centres**
+→ decapitation
+→ basket transport
+→ **two concentrated piles**
+→ public threshold display.
+
+This is a severe compression transformation:
+**many living succession branches**
+become
+**two static public proof masses**.
+
+---
+
+# Gate becomes political memory/display interface
+
+In morning Jehu stands at the gate and addresses the people beside the heaps.
+
+The gate therefore functions simultaneously as:
+- traffic threshold;
+- public assembly point;
+- display surface;
+- interpretive stage.
+
+The material display is used to change how the population understands responsibility and legitimacy.
+
+---
+
+# Jehonadab enters Jehu's chariot through a heart/hand test
+
+Jehu meets Jehonadab.
+
+He asks:
+**is your heart right with my heart?**
+
+Answer:
+**yes**.
+
+Then:
+**give me your hand**.
+
+Jehu lifts him into the chariot.
+
+This is unusually clear:
+
+**internal alignment (“heart”)**
+→ confirmed
+→ **hand connection**
+→ physical elevation into mobile centre.
+
+Heart-state precedes hand-coupling.
+
+---
+
+# Jehu's Baal operation deliberately creates maximum concentration before destruction
+
+Jehu publicly claims:
+**I will serve Baal more than Ahab**.
+
+He summons:
+- all prophets;
+- priests;
+- worshippers.
+
+The message is intentionally false.
+
+Result:
+**distributed religious field**
+→ every possible node called inward
+→ house of Baal fills end to end.
+
+This is a deliberately engineered **concentration trap**.
+
+---
+
+# Identity is marked with clothing before the boundary is closed
+
+Vestments are distributed to all Baal worshippers.
+
+Then Jehu orders:
+**verify no YHWH servants are inside**.
+
+So the concentrated field is:
+- gathered;
+- visually marked;
+- purified of non-target identities.
+
+Only then are **80 men outside** assigned to prevent escape.
+
+This is a horrifying but clear systems sequence:
+
+**distributed target population**
+→ concentrate
+→ label/identify
+→ isolate
+→ seal exits
+→ destroy.
+
+It is mass killing through deceptive gathering and must be recorded as such, not celebrated as efficient “field collapse.”
+
+---
+
+# The cult centre changes state after the population is destroyed
+
+After killing worshippers:
+- pillars/images brought out/burned;
+- pillar broken;
+- house broken down;
+- site becomes a latrine/refuse place.
+
+So:
+
+**active sacred institution**
+→ target population removed
+→ cult objects destroyed
+→ building demolished
+→ site reclassified into lowest-status bodily-waste function.
+
+This is an extreme **functional inversion of place**.
+
+---
+
+# Destroying one alternate cult network does not restore single-centre worship
+
+Jehu destroys Baal cult in the narrative.
+
+But he keeps:
+- Bethel calf;
+- Dan calf.
+
+So:
+**one rival sacred network removed**
+while
+**another rival system remains**.
+
+This is an important anti-totalization control:
+**partial reform ≠ full topology restoration**.
+
+---
+
+# Jehu centralizes dynastic power while Israel's territorial field shrinks
+
+During Jehu's reign:
+Hazael cuts Israel's borders,
+especially east of Jordan.
+
+So:
+**internal dynasty stabilizes**
+while
+**external territory contracts**.
+
+This is another key systems distinction:
+**centre stability can coexist with field shrinkage**.
+
+---
+
+# 2 Kings 11 — Judah responds to the Jehu rupture with an attempted total dynastic erasure
+
+Athaliah sees her son Ahaziah is dead.
+
+She acts to destroy:
+**all royal seed**.
+
+The northern Jehu purge therefore propagates southward into a new crisis:
+**linked dynasty collapses**
+→ surviving queen attempts to eliminate every competing Davidic branch.
+
+This is a direct attempt to produce:
+**one surviving centre with no alternative succession nodes**.
+
+---
+
+# One infant remnant is extracted from the death-field
+
+Jehosheba:
+- takes infant Joash;
+- removes him from among doomed royal children;
+- takes nurse;
+- hides him.
+
+So:
+
+**many royal children exposed to destruction**
+→ one child + caregiver extracted
+→ hidden.
+
+This is one of the strongest **single-remnant preservation** sequences in Kings.
+
+---
+
+# The remnant moves through nested concealment
+
+Initial hiding:
+**bed-chamber / chamber of beds**.
+
+Then:
+**house of YHWH / temple precinct**.
+
+He remains hidden there **six years** while Athaliah rules.
+
+Thus:
+
+**public dynastic field appears erased**
+while
+**one living line survives inside sacred nested enclosure**.
+
+This is extremely relevant to the user's recurring “seed preserved inside shell while outer regime changes” process.
+
+---
+
+# Hidden survival means visible political topology is false/incomplete for six years
+
+To the public regime:
+**Athaliah appears sole ruler**.
+
+But inside the temple:
+**alternative legitimate centre exists in latent form**.
+
+Again:
+**visible political field**
+≠
+**full underlying state**.
+
+The system contains a hidden successor seed.
+
+---
+
+# Seventh year — the hidden centre is first shown only to sworn protective nodes
+
+Jehoiada:
+- brings captains into temple;
+- makes covenant/oath;
+- **then shows them the king's son**.
+
+This sequence matters:
+
+**commit protective network**
+→ **reveal hidden centre**.
+
+Information is restricted until the surrounding support structure is ready.
+
+This is another:
+**state disclosure follows security preparation**.
+
+---
+
+# Guard geometry creates a human shell around the hidden king
+
+Jehoiada assigns groups:
+- at royal house;
+- gates;
+- temple;
+- around king.
+
+The command:
+**surround king**
+→ weapons in hand
+→ move with him going out/coming in.
+
+This is explicit **protective enclosure by distributed bodies**.
+
+The hidden centre is moved from:
+**architectural concealment**
+to
+**human defensive shell**.
+
+---
+
+# David's stored weapons become continuity objects in the restoration
+
+The priest gives guards:
+**David's spears/shields/weapons** kept in temple.
+
+Like:
+- David's mule for Solomon;
+- Elijah's mantle for Elisha;
+
+these are **predecessor-associated objects**
+reused to legitimate/protect a later successor.
+
+The new centre is surrounded by material memory of the founding centre.
+
+---
+
+# Right-to-left guard line frames the king around altar/house
+
+Guards stand:
+**from right side to left side**
+along altar and house,
+around king.
+
+This is a broad bilateral protective geometry:
+**right field**
+↔ **king**
+↔ **left field**.
+
+Unlike Jachin/Boaz,
+this is mobile human/military containment,
+not architectural pillars.
+
+---
+
+# Hidden child becomes public king through crown + insignia/testimony + anointing + sound
+
+Jehoiada:
+- brings out child;
+- puts crown on him;
+- gives insignia/testimony;
+- makes/anoints king.
+
+Then:
+- hands clap;
+- acclamation;
+- trumpets/noise.
+
+So the latent state becomes public through multiple channels:
+
+**hidden body**
+→ **visible royal markers**
+→ **ritual state**
+→ **acoustic broadcast**
+→ population recognition.
+
+This resembles Solomon's activation,
+but after a six-year concealment phase.
+
+---
+
+# Athaliah learns the changed state through sound before controlled access
+
+She hears:
+**noise of guard/people**.
+
+Then enters temple area and sees:
+**king on platform**
++
+**captains/trumpets**
++
+**rejoicing field**.
+
+So once again:
+**sound of new centre reaches old centre first**.
+
+This echoes Adonijah hearing Solomon's acclamation.
+
+---
+
+# Garment tearing marks Athaliah's recognition that the field has changed
+
+Athaliah tears clothes and cries:
+**treason**.
+
+The garment tear here is:
+**catastrophe recognition / regime loss**.
+
+No new symbolic interpretation is needed.
+It belongs to the long tear family.
+
+---
+
+# Athaliah is removed from sacred enclosure before execution
+
+Jehoiada explicitly says:
+**do not kill her in YHWH's house**.
+
+She is taken:
+- out of temple precinct;
+- by horse-entry route;
+- toward royal house;
+- killed there.
+
+So:
+**sacred boundary**
+controls
+**where destructive force may be discharged**.
+
+The centre is removed before violence occurs.
+
+This is a strong boundary-purity rule.
+
+---
+
+# After political removal, a three-party covenant reconstructs the system
+
+Jehoiada makes:
+1. covenant YHWH ↔ king ↔ people;
+2. covenant king ↔ people.
+
+This reconnects:
+**sacred**
++
+**political**
++
+**population**.
+
+So the restoration is not merely:
+**replace Athaliah with Joash**.
+
+It attempts to **rebuild relational topology** among the system's major parts.
+
+---
+
+# Baal centre in Judah is then physically dismantled
+
+People:
+- go to Baal house;
+- break it;
+- break altars/images;
+- kill priest.
+
+Again:
+religious violence must remain explicit.
+
+Processually:
+**new royal centre**
+→ covenant field
+→ competing cult architecture destroyed.
+
+The narrative presents political and cultic recentralization as linked.
+
+---
+
+# Hidden centre descends from temple to palace throne
+
+After coronation:
+Joash is brought:
+**down from house of YHWH**
+→ through gate
+→ king's house
+→ sits on throne.
+
+So the full six-year hidden-seed trajectory is:
+
+**royal death-field**
+→ bedchamber concealment
+→ temple concealment
+→ protective human ring
+→ public coronation
+→ **down into palace throne**.
+
+This is a complete:
+**hidden seed → protected emergence → installed centre**
+sequence.
+
+---
+
+# SECTION 37C continuous geometry/effect timeline — 2 Kings 9–11
+
+## Phase PB — one military node is isolated for hidden transformation
+
+Jehu among commanders
+→ inner chamber
+→ oil/anointing
+→ new king-state.
+
+**Effect:** centre-state changes privately before field knows.
+
+---
+
+## Phase PC — transformed node is reinserted and field constructs support beneath him
+
+commanders' garments
+→ placed under Jehu
+→ improvised platform.
+
+**Effect:** many personal coverings become one collective support surface.
+
+---
+
+## Phase PD — horn broadcasts hidden state outward
+
+private anointing
+→ horn/acclamation.
+
+**Effect:** information converts latent centre into collective political reality.
+
+---
+
+## Phase PE — coup tries to outrun warning information
+
+Ramoth sealed from message escape
+while
+Jehu chariot moves toward Jezreel.
+
+**Effect:** success depends on bodies arriving before news.
+
+---
+
+## Phase PF — stationary centre detects geometry before identity
+
+watchtower sees company
+→ sends probes.
+
+**Effect:** shape/motion information precedes semantic identification.
+
+---
+
+## Phase PG — outgoing messengers are absorbed into incoming field
+
+messenger 1 → joins behind.
+messenger 2 → joins behind.
+
+**Effect:** query channels fail to return and instead enlarge approaching force.
+
+---
+
+## Phase PH — motion signature identifies centre
+
+driving style
+→ Jehu inferred.
+
+**Effect:** kinematics can function as identity marker.
+
+---
+
+## Phase PI — two cross-linked royal centres converge on one coup-field
+
+Joram + Ahaziah
+→ separate chariots
+→ one meeting point.
+
+**Effect:** dynastic coupling permits one event to strike both systems.
+
+---
+
+## Phase PJ — long-memory land node receives dynasty's dead centre
+
+Naboth's field
+→ meeting
+→ Joram killed
+→ body deposited there.
+
+**Effect:** previously seized land becomes later reversal/closure site.
+
+---
+
+## Phase PK — internal servants eject old queen from enclosure
+
+Jehu asks who is with him
+→ officers at window switch side
+→ Jezebel thrown down.
+
+**Effect:** enclosure's internal nodes reverse allegiance and expel centre outward.
+
+---
+
+## Phase PL — high old centre becomes fragmented ground remnant
+
+window
+→ fall
+→ trampling
+→ scavenged remains.
+
+**Effect:** vertical fall is followed by loss of bodily integrity/memory marker.
+
+---
+
+## Phase PM — distributed succession reservoir refuses activation
+
+70 sons in Samaria
+→ guardians decline to crown any.
+
+**Effect:** potential centres can remain inactive when support field switches allegiance.
+
+---
+
+## Phase PN — remote command turns protectors into destroyers
+
+letters
+→ guardians kill royal sons
+→ heads transported.
+
+**Effect:** same nodes invert function from preservation to elimination.
+
+---
+
+## Phase PO — many living succession branches compress into two gate-heaps
+
+70 sons
+→ severed heads
+→ baskets
+→ two piles at gate.
+
+**Effect:** distributed dynastic possibility becomes concentrated public proof.
+
+---
+
+## Phase PP — heart alignment becomes hand coupling and chariot inclusion
+
+Jehu/Jehonadab:
+heart right
+→ hand given
+→ lifted into chariot.
+
+**Effect:** internal alignment is translated into physical alliance.
+
+---
+
+## Phase PQ — deceptive broadcast concentrates distributed cult field
+
+Baal worshippers across Israel
+→ summoned
+→ one house fills completely.
+
+**Effect:** distributed network is deliberately concentrated before attack.
+
+---
+
+## Phase PR — identity marking + boundary closure precede mass killing
+
+vestments
+→ target-only verification
+→ 80 guards outside
+→ exits controlled
+→ killing.
+
+**Effect:** concentration, classification and enclosure are weaponized.
+
+Control:
+mass religious killing, not neutral “efficient collapse.”
+
+---
+
+## Phase PS — active cult centre is functionally inverted into refuse site
+
+Baal house
+→ dismantled
+→ latrine/refuse function.
+
+**Effect:** place remains but semantic/function state reverses completely.
+
+---
+
+## Phase PT — one reform removes one rival network while another remains
+
+Baal cult destroyed
+but
+Bethel/Dan calves retained.
+
+**Effect:** partial topology change does not equal full recentralization.
+
+---
+
+## Phase PU — centre stabilizes while territorial field contracts
+
+Jehu dynasty begins
+while
+Hazael cuts Israel's borders.
+
+**Effect:** internal political continuity and external field size move in opposite directions.
+
+---
+
+## Phase PV — southern regime attempts total successor-field erasure
+
+Athaliah
+→ destroys royal seed.
+
+**Effect:** centre tries to eliminate all alternative dynastic nodes.
+
+---
+
+## Phase PW — one infant seed is extracted from destruction field
+
+Joash + nurse
+→ hidden.
+
+**Effect:** single remnant preserves entire future line.
+
+---
+
+## Phase PX — nested sacred enclosure holds latent centre for six years
+
+bedchamber
+→ temple hiding
+while
+Athaliah visible ruler.
+
+**Effect:** underlying succession state differs from visible political state.
+
+---
+
+## Phase PY — support shell is prepared before hidden state is disclosed
+
+captains covenant/oath
+→ child shown.
+
+**Effect:** information release follows security formation.
+
+---
+
+## Phase PZ — human ring replaces architectural concealment
+
+guards surround king
+→ weapons + right/left positions.
+
+**Effect:** hidden centre transitions into mobile protected centre.
+
+---
+
+## Phase QA — predecessor weapons carry continuity into restored regime
+
+Davidic weapons
+→ guards around Joash.
+
+**Effect:** historical material memory reinforces successor legitimacy.
+
+---
+
+## Phase QB — crown + testimony + oil + sound activate public centre
+
+hidden child
+→ royal markers
+→ anointing
+→ trumpets/acclamation.
+
+**Effect:** latent centre becomes network-recognized state through multiple channels.
+
+---
+
+## Phase QC — old ruler hears new field before seeing it
+
+noise
+→ Athaliah enters
+→ sees new king.
+
+**Effect:** acoustic activation again outruns direct visual confirmation.
+
+---
+
+## Phase QD — sacred boundary controls location of destructive discharge
+
+Athaliah removed from temple
+→ killed outside.
+
+**Effect:** enclosure rules determine where force may act.
+
+---
+
+## Phase QE — restoration reconnects sacred/political/population relations
+
+covenant:
+YHWH ↔ king ↔ people
++
+king ↔ people.
+
+**Effect:** regime restoration includes network recoupling, not only personnel replacement.
+
+---
+
+## Phase QF — hidden seed descends into public throne state
+
+temple
+→ gate
+→ palace
+→ throne.
+
+**Effect:** preserved remnant emerges from enclosure and becomes visible governing centre.
+
+---
+
+# What 2 Kings 9–11 adds to the master Bible/Vardath timeline
+
+288. **A political centre can be created privately in an inner chamber before any public institution knows the state has changed.**
+289. **Many individual coverings can converge into a single support/platform beneath a newly activated centre—the inverse of one garment fragmenting into many.**
+290. **A coup can be understood as a race between physical movement and warning-information propagation.**
+291. **Outgoing messengers can be absorbed by an incoming field, causing the information channel itself to strengthen the approaching system.**
+292. **Motion style can act as a reliable identity signal before direct visual or verbal identification.**
+293. **Cross-coupled dynastic systems become vulnerable to a single event striking multiple centres at once.**
+294. **A place can retain long narrative memory and later become the exact reversal/closure node for an earlier injustice.**
+295. **An enclosure can eject its own centre when internal support nodes reverse allegiance.**
+296. **A distributed succession reservoir can be neutralized if the guardians refuse to activate any candidate.**
+297. **Remote written command can invert caretakers into destroyers of those they formerly protected.**
+298. **Many living future branches can be compressed into static public proof objects at a gate, converting potential into irreversible closure.**
+299. **Alignment can move through a sequence of heart-state → hand-contact → inclusion in the centre's vehicle.**
+300. **A distributed network can be deliberately concentrated by false information, then classified and sealed into one enclosure for mass destruction.**
+301. **A sacred/public centre can be reclassified into a waste site after its population, symbols and structure are destroyed.**
+302. **Removing one rival topology does not imply restoration of the original single-centre system if other rival nodes remain.**
+303. **Centre stability and territorial field size can move in opposite directions.**
+304. **A total dynastic purge can fail because one infant remnant is extracted into nested concealment.**
+305. **For years, the visible political topology can be false/incomplete because a latent successor survives inside an inaccessible enclosure.**
+306. **A hidden centre can be disclosed only after a protective network has already been oath-bound around it.**
+307. **Protective geometry can migrate from architecture to a moving human shell.**
+308. **Founding-centre objects can be reused generations later to carry continuity/legitimacy into a restored regime.**
+309. **Hidden remnant emergence can proceed through markers + anointing + sound before descending from sacred enclosure into political throne-space.**
+310. **Sacred boundaries can constrain where destructive force is permitted to act even during regime change.**
+311. **True restoration may require reconnecting relations among source/sacred order, centre/ruler and population—not merely installing a new person.**
+
+---
+
+## Section 37C pair / geometry register
+
+### Inner chamber / public staircase
+Private state creation versus public activation.
+
+### Many garments / one Jehu
+Distributed coverings converging beneath a single centre.
+
+### Joram / Ahaziah
+Two cross-linked royal centres struck in one convergence.
+
+### Jehu / Jezebel
+Incoming mobile centre versus old elevated/window centre.
+
+### Seventy sons / two heaps
+Distributed possible future centres compressed into two public masses.
+
+### Jehu / Jehonadab
+Heart alignment → hand coupling → shared chariot.
+
+### Distributed Baal field / one Baal house
+Many nodes intentionally concentrated into one enclosure.
+
+### Athaliah / hidden Joash
+Visible reigning centre versus latent concealed centre.
+
+### Six years / seventh year
+Long hidden preservation interval followed by public release. Record; do not force into universal cycle.
+
+### Temple / palace
+Joash survives in sacred enclosure, then descends into royal-political enclosure.
+
+---
+
+## Section 37C number / timing register
+
+Record without forcing:
+- Jezebel's window yields **2 or 3** officers/eunuchs;
+- Ahab's sons **70**;
+- heads arranged in **2 heaps**;
+- Ahaziah relatives killed at shearing-house **42**;
+- Baal-house exit guard **80**;
+- Jehu promised dynasty through **4 generations**;
+- Jehu reign **28 years**;
+- Joash hidden **6 years**, revealed in **7th year**;
+- guard organization includes thirds and rotating Sabbath groups.
+
+Numbers remain function-specific.
+
+---
+
+## Section 37C textual / historical / scholarly controls
+
+- The Jehu narrative is heavily shaped by pro-/anti-Jehuide literary and Deuteronomistic interests. Historical reconstruction should use external sources such as the Tel Dan inscription and Black Obelisk alongside Kings, without assuming any one account is transparent.
+- Patrick T. Cronauer and other scholars identify significant redactional linking between Naboth traditions in 1 Kings 21 and Jehu material in 2 Kings 9. The closure at Naboth's field is a secure final-form literary geometry even if source layers differ.
+- Jezebel's preparation at the window has been read as regal defiance, seduction, ritual self-presentation and other possibilities. Do not reduce it to one motive.
+- Her reference to Zimri explicitly compares Jehu with an earlier short-lived regicide, showing the story itself invokes dynastic-cycle memory.
+- The killing of Ahab's sons, Ahaziah's relatives, and Baal worshippers is large-scale political/religious violence. Process analysis must not sanitize it.
+- The “seventy sons” may include broader royal descendants/house members rather than seventy literal direct sons in a modern biological sense.
+- Jehu's deception of Baal worshippers is explicit. The concentration/destruction geometry is narratively deliberate but ethically brutal.
+- The cult-site-to-latrine transformation is a polemical degradation motif as well as a physical state change in the narrative.
+- Jehu's territorial losses under Hazael show Kings can evaluate internal cultic/political action and geopolitical success separately.
+- Athaliah's genealogy is complex across Kings/Chronicles (“daughter” of Omri/Ahab-house language). Preserve the secure Omride/Ahab dynastic connection rather than force a single modern pedigree.
+- 2 Kings 11 and 2 Chronicles 22–23 differ in personnel/details. Chronicles will be compared in its roadmap location rather than harmonized backward.
+- Yigal Levin's recent text-critical work argues 2 Kings 11:15 may originally have instructed Athaliah to be brought **out of the temple precincts**; this strengthens the broad boundary rule while exact wording remains textually debated.
+- Exact identification of Carites/Cherethites and their historical origin is debated, though professional royal guards/mercenaries are a plausible context.
+- Davidic weapons stored in temple are important continuity objects in the narrative, but exact inventory (“spear/spears,” shields, quivers in Chronicles) differs across witnesses.
+- Joash's hiding place within the temple complex is not specified as the Holy of Holies; later tradition should not be imported as primary fact.
+- The six-year concealment/seventh-year reveal is explicit chronology, not by itself proof of a universal seven-cycle.
+
+### Sources logged for Section 37C
+
+Primary:
+- Mechon-Mamre, **2 Kings 9–11**.
+
+Scholarly controls:
+- Patrick T. Cronauer, **The Stories about Naboth the Jezreelite: A Source, Composition and Redaction Investigation of 1 Kings 21 and Passages in 2 Kings 9**.
+- Saul M. Olyan, **“2 Kings 9:31—Jehu as Zimri.”**
+- **The Jehu Revolution** (De Gruyter/Brill), for literary development and historical comparison of 2 Kings 9–10.
+- scholarship on Jehu, the Tel Dan inscription, Omride decline and Jehuide historiography.
+- Yigal Levin, text-critical work on **2 Kings 11:15** and Athaliah's removal from temple precincts.
+- narrative and historical studies of Athaliah/Joash restoration, guard organization and Davidic weapons.
+
+**Section 37 remains in progress.**
+
+### Next process block
+
+**2 Kings 12–13**:
+- Joash's temple repair begins with money routed through priests, but the system fails to repair breaches;
+- finance flow is redesigned into a chest beside altar/entrance, allowing direct accumulation and transparent counting;
+- carpenters/builders/masons receive funds directly and breaches are repaired;
+- one maintenance economy succeeds only after changing the routing architecture;
+- Hazael threatens Jerusalem and Joash diverts sacred/royal treasure outward to make him withdraw;
+- internal servants later kill Joash;
+- northern Israel under Hazael is compressed to only a tiny military residue;
+- Jehoahaz prays and pressure eases through a “saviour/deliverer”;
+- Elisha's deathbed becomes the final prophetic interface;
+- king lays hands/face over dying prophet;
+- east window opens;
+- Elisha's hands over king's hands;
+- arrow shot east becomes enacted future victory;
+- second action—strike ground—produces only three strikes, limiting future victories;
+- Elisha dies/buried;
+- another corpse touching Elisha's bones revives and stands;
+- prophetic effect therefore outlasts living body;
+- Hazael dies, Ben-hadad succeeds;
+- Jehoash recovers lost cities **three times**, materializing the limited three-strike future model;
+- Section 37 closes with the dead prophet's enacted geometry continuing after his death.
+
