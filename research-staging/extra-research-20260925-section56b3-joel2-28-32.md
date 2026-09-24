@@ -785,3 +785,4 @@ Priority:
 - bloodguilt/cleansing textual issue;
 - strict test for **fountain from temple** as source→channel water geometry against the Vardath central-spire/water-transfer model.
 
+
