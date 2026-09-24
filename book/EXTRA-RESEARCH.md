@@ -50392,3 +50392,983 @@ Therefore, for every remaining section:
     **a single chronological/process map of the recurring geometry, transformations, transfer phases, catastrophes, closures and successor states across the whole corpus, compared against the mature Vardath mechanism.**
 
 This protocol supersedes any earlier tendency to prioritise motif collection over chronology/process.
+
+
+---
+
+# SECTION 33 progress A — 1 Samuel 16–20
+## Transfer of active state, opposed heights and compressed battle-pair, old-centre rejection, field-conversion, hidden/visible signalling
+
+### Timeline method reminder
+
+Names remain in this record so the narrative can be reconstructed, but the primary concern is:
+**what geometry/state exists → what force enters → what changes → what effect follows → what stable/unstable state results.**
+
+---
+
+## 1 Samuel 16 — active state transfers from an old centre to a hidden successor
+
+Samuel is still oriented toward the rejected Saul-state.
+
+The first command is effectively:
+**stop remaining coupled to the rejected centre → fill the horn → move to a new location → identify a new centre.**
+
+This is not merely replacement by name.
+
+The geometry is:
+**old centre still physically present**
++
+**new centre not yet publicly identified**
+→ hidden succession phase.
+
+### Seven visible candidates pass; the selected one is outside the visible set
+
+Jesse causes **seven sons** to pass before Samuel.
+
+All seven visible candidates are rejected.
+
+The selected son is:
+- not in the line;
+- outside with the sheep;
+- brought in only after the visible sequence is exhausted.
+
+So the narrowing process is unusual:
+
+**visible ordered set of seven**
+→ none selected
+→ query for missing element
+→ hidden/outlying eighth component is fetched
+→ selection occurs.
+
+The important process is not “eight” by itself.
+
+It is:
+**the functional centre lies outside the currently inspected structure.**
+
+This is relevant to the Vardath timeline because a new operative node may already exist in the surrounding field before the established system recognises it.
+
+### The transfer is immediately expressed as opposite spirit-state movement
+
+After David is anointed:
+- the spirit of YHWH comes powerfully upon David **from that day forward**;
+- immediately afterward the text says the spirit of YHWH has **departed from Saul**;
+- a troubling/evil spirit now terrifies Saul.
+
+Narratively, this is one of the strongest succession inversions in the book:
+
+**active/authorising state leaves old centre**
+while
+**active/authorising state comes upon new centre**.
+
+The text does not describe a measured substance physically moving from one body to another, so do not literalise it.
+
+But the sequence is plainly a **state-transfer polarity**:
+**centre A loses state X → centre B acquires state X → centre A becomes unstable.**
+
+### The new centre is brought back into the old centre as a stabilising regulator
+
+Saul's servants propose a musical intervention.
+
+David is fetched from the sheep and brought into Saul's service.
+
+When the disturbing state comes upon Saul:
+- David plays **with his hand**;
+- Saul experiences relief;
+- the troubling spirit departs.
+
+This is geometrically striking:
+
+**newly selected centre**
+→ brought physically into old centre's chamber/system
+→ local oscillatory/music action
+→ unstable state in old centre temporarily relaxes/departs.
+
+The succession is therefore not yet spatial separation.
+
+It becomes a period of **co-residence and temporary regulation**:
+the rising node stabilises the failing node even while the deeper authorising state has already shifted away from the failing node.
+
+### Cargo transfer into the old centre
+
+Jesse sends David with:
+- an ass;
+- bread;
+- wine;
+- a kid.
+
+The cargo is ordinary hospitality/service material.
+
+But the recurring process is worth tracking:
+**new component enters old centre carrying a bundled load**.
+
+Do not elevate the cargo into cosmological symbolism unless later sequence gives it a stronger role.
+
+---
+
+# 1 Samuel 17 — two opposed heights, a valley/throat between, and whole-army conflict compressed into one pair
+
+The battlefield is explicitly geometric.
+
+- Philistines occupy one height.
+- Israel occupies the opposite height.
+- a valley/ravine lies **between** them.
+
+The text therefore begins with:
+
+**field A on one side**
+↔
+**field B on the other**
+with
+**a lower interspace between**.
+
+This is a genuine opposed-field / central-gap structure.
+
+Older geographic descriptions of the Elah Valley note a broad valley with a deeper stream-bed/ravine forming a natural separator between the opposing slopes.
+
+### One figure stands in the interspace as representative of an entire field
+
+Goliath is the champion.
+
+The Hebrew expression is commonly understood in the sense of a **man of the interval/interspace** between the armies.
+
+His proposal is a compression rule:
+
+**many-versus-many war**
+→ choose **one** from each field
+→ two representatives meet in the middle
+→ outcome of pair determines status of whole populations.
+
+That is one of the cleanest large-field→pair reductions yet found.
+
+Process:
+
+**two distributed armies**
+→ **one representative from side A**
++
+**one representative from side B**
+→ encounter in central gap
+→ result propagates outward to both fields.
+
+### Repetition holds the system in unresolved tension
+
+The challenge is repeated:
+- morning;
+- evening;
+- for **forty days** in the Masoretic narrative.
+
+So the geometry remains:
+**two stable opposed ridges + unresolved centre**
+through a prolonged repeated cycle.
+
+The repetition matters more than the exact number:
+the system is held in a **metastable stand-off** until a new component enters the central space.
+
+### A peripheral carrier enters the battlefield carrying supplies, not as the expected combat node
+
+David travels from flock/household space to battle space carrying food.
+
+He:
+- brings grain/bread/cheese;
+- leaves baggage with a keeper;
+- moves forward into the battle line.
+
+Again the stated function is mundane:
+**supply carrier**.
+
+But after entry the carrier changes role:
+**cargo-delivery component → central combat component**.
+
+This repeats the wider Bible pattern:
+**the thing/person arriving as cargo-carrier or messenger can become the decisive active node after crossing into the field.**
+
+### Borrowed armour is applied, then rejected
+
+Saul attempts to place his military layer onto David:
+- armour;
+- helmet;
+- sword.
+
+David removes it because it is untested.
+
+This is a clear failed coupling:
+
+**old-centre equipment/state**
+→ applied to new component
+→ movement is impaired/not viable
+→ layer removed
+→ new component reverts to its own familiar operating mode.
+
+That is a useful Vardath-control image:
+**successful transition may require shedding an inherited shell that does not match the new state.**
+
+Do not turn literal armour into a cosmic shell; record the process relation only.
+
+### Five stones selected; one projectile crosses the interspace
+
+David chooses **five smooth stones** from the brook and places them in the shepherd's bag.
+
+In the actual encounter:
+- Goliath advances;
+- David runs toward him;
+- one stone is launched across the remaining gap;
+- it strikes the forehead;
+- the opposing representative falls **face-down to the earth**.
+
+The geometry is:
+**opposed approach**
+→ **projectile transfer across gap**
+→ **small concentrated impact at head/front node**
+→ **large body collapses downward**.
+
+### The fallen opponent's own weapon completes the state change
+
+David has no sword in hand.
+
+After Goliath falls:
+- David crosses to the fallen body;
+- takes Goliath's sword;
+- uses the opponent's own weapon to sever the head.
+
+So:
+
+**external component disables centre**
+→ **crosses into opponent's position**
+→ **appropriates opponent's internal tool**
+→ **uses it to complete termination of that centre**.
+
+This is a strong **capture-and-reversal** process.
+
+### One node falls; the whole field reverses direction
+
+Once the Philistines see their champion is dead:
+- they flee;
+- Israel/Judah rise;
+- shout;
+- pursue;
+- the former stationary geometry becomes directional flow.
+
+This is crucial to the eventual Vardath timeline:
+
+**two fields held opposite one another**
+→ **central representative pair resolves**
+→ **one central node collapses**
+→ **entire associated field loses coherence**
+→ **other field advances through the former boundary**
+→ **defeated field reverses into retreat**.
+
+The small central event therefore triggers a **large-scale field inversion**.
+
+### Textual control — Goliath's height is not secure as one exact number
+
+The Masoretic Text gives:
+**six cubits and a span**.
+
+The shorter Greek tradition and important ancient witnesses preserve:
+**four cubits and a span**.
+
+The David-and-Goliath material in 1 Samuel 17–18 exists in substantially different long and short textual forms.
+
+Therefore:
+- record the giant/opposed-scale motif;
+- **do not use “six cubits” as a secure Vardath number datum**;
+- do not assume every detail in the long MT story belongs to one original narrative layer.
+
+---
+
+# 1 Samuel 18 — one-way transfer to the rising node while the old centre attempts ejection
+
+Immediately after the battle, Jonathan's soul is described as **bound/knit** to David.
+
+Jonathan then makes a covenant and gives David:
+- robe;
+- clothing/equipment;
+- sword;
+- bow;
+- belt.
+
+The transfer is notably **one-way**.
+
+### One-way transfer of clothing and weapons
+
+At minimum the gifts signal:
+- covenant;
+- honour;
+- relational bonding.
+
+Many interpreters also read them as politically/successionally significant because Jonathan is the king's son and transfers status-marking clothing/weapons to David.
+
+This interpretation is plausible but not uncontested.
+
+For geometry/process tracking, the safe statement is:
+
+**component linked to old royal centre**
+→ voluntarily removes outer markers/tools
+→ transfers them to rising component
+→ rising component carries functions/material previously associated with royal heir.
+
+This follows directly after Samuel's torn robe in chapter 15 had been used as an image of kingship being transferred away from Saul.
+
+So the material timeline now contains:
+**fabric torn from old order**
+→ later **garment/equipment transferred toward rising order**.
+
+That relationship is literary and structural; it should not be treated as proof of literal hidden mechanics.
+
+### Public feedback changes the relation between the two centres
+
+Women come out from the cities in song and dance.
+
+Their paired refrain assigns:
+- Saul → thousands;
+- David → ten-thousands.
+
+The numbers function as comparative praise, not reliable military statistics.
+
+But the effect is immediate:
+**external field feedback changes the old centre's perception of the new centre.**
+
+Saul begins to watch David continuously.
+
+So:
+**surrounding population amplifies rising node**
+→ old centre detects relative loss of status
+→ coupling becomes hostile.
+
+### Two hands / two functions in one chamber
+
+On the next day:
+- David plays with his **hand**;
+- Saul holds a spear in his **hand**.
+
+One hand regulates through music.
+The other hand projects a weapon.
+
+Saul throws the spear.
+David avoids it **twice**.
+
+This is a clean two-force chamber:
+
+**regulating/soothing action**
+versus
+**penetrating/ejecting action**.
+
+The rising component cannot remain safely near the failing centre.
+
+### Failed local ejection becomes spatial separation
+
+Because David repeatedly escapes:
+- Saul removes him from immediate proximity;
+- makes him commander over a thousand;
+- David now goes **out and comes in before the people**.
+
+Effect:
+
+**failed attempt to eliminate nearby rising node**
+→ node is displaced outward
+→ outward placement increases its contact with larger field
+→ popularity/success increase.
+
+This is a recurring systems effect:
+**trying to expel a node from the centre can strengthen its coupling to the surrounding network.**
+
+### Old centre attempts to route destruction through an external field
+
+Saul decides:
+**my hand need not strike him; let the Philistine hand strike him.**
+
+He tries to use marriage/dowry warfare as the transfer mechanism.
+
+Requested cargo:
+- **100** Philistine foreskins.
+
+Returned:
+- **200** in the Masoretic narrative.
+
+Do not use these numbers mechanically.
+
+The key process is:
+**centre tries to redirect danger through an external hostile field**
+→ target crosses into hostile field
+→ returns with greater-than-requested result
+→ attempted trap instead strengthens target's integration into royal system.
+
+This is another inversion:
+**ejection/trap → increased coupling/status**.
+
+---
+
+# 1 Samuel 19 — repeated ejection fails, then an entire hostile stream is converted by a field
+
+### Intermediate node temporarily restores coupling
+
+Saul orders David's death.
+
+Jonathan stands between the two.
+
+He:
+- warns David;
+- speaks to Saul;
+- obtains an oath;
+- brings David back into Saul's presence.
+
+So:
+
+**old centre ↔ mediator ↔ rising node**.
+
+The mediator temporarily reopens a damaged route.
+
+This is not yet stable.
+
+### Success in the external field re-triggers internal instability
+
+David wins another battle.
+
+Then:
+- Saul sits in house with spear;
+- David again plays;
+- troubling spirit/state is present;
+- spear is thrown;
+- David escapes;
+- spear embeds in wall.
+
+Again:
+**external success**
+→ **internal old-centre instability**
+→ **penetrating ejection attempt**
+→ **target slips away**
+→ **projectile terminates in boundary/wall instead of target**.
+
+### Escape through a window — downward route out of enclosure
+
+Saul's messengers watch David's house to kill him in morning.
+
+Michal lowers David through a **window**.
+
+Process:
+
+**house becomes enclosed/monitored trap**
+→ ordinary ground-level exit is unsafe
+→ alternate aperture used
+→ living component moves downward through boundary
+→ escapes surveillance network.
+
+The aperture is a genuine exit route in the narrative.
+
+It should be recorded as a **local boundary bypass**, not inflated into a world-gate.
+
+### Substitution image occupies the expected body-position
+
+Michal places a teraphim in the bed with covering/hair.
+
+Messengers expect:
+**body present**.
+
+Instead:
+**image/substitute occupies body's position**.
+
+This creates:
+
+**real component leaves enclosure**
+while
+**false/proxy component preserves apparent occupancy**.
+
+The process is useful for the project's projection grammar:
+**visible occupancy can persist after real active component has moved elsewhere.**
+
+### Three successive hostile messenger waves enter a field and are converted to its state
+
+David reaches Samuel/Naioth.
+
+Saul sends messengers to seize him.
+
+First group:
+→ sees prophetic company;
+→ Spirit comes upon them;
+→ they prophesy.
+
+Second group:
+→ same result.
+
+Third group:
+→ same result.
+
+This is a very strong propagation sequence:
+
+**hostile incoming agents**
+→ cross into active field
+→ original mission is interrupted
+→ agents assume the field's local state.
+
+Three independent waves fail in the same way.
+
+Then Saul enters personally.
+
+The same field-state comes upon him before arrival.
+
+He:
+- continues toward Naioth while prophesying;
+- removes garments;
+- lies down;
+- remains there **all that day and all that night**.
+
+Geometrically:
+
+**field is stronger than incoming control signal**.
+
+It repeatedly converts components sent to act against it.
+
+This is one of the strongest “field entrainment” analogues in the research so far.
+
+Use cautiously:
+the source is a religious narrative about divine spirit/prophetic behaviour, not a record of a measurable plasma field.
+
+### 1 Samuel 10 ↔ 19 inversion
+
+Earlier:
+**Spirit-state + prophecy**
+helped mark Saul's rise.
+
+Here:
+the same broad state overtakes Saul during his attempt to suppress David and renders his hostile mission ineffective.
+
+So the same phenomenon has opposite political/narrative effect depending on phase.
+
+That strongly supports the master rule:
+**a geometry/process cannot be interpreted by symbol alone; its effect depends on where in the timeline it occurs.**
+
+---
+
+# 1 Samuel 20 — hidden node, empty seat, timed test, and a binary vector signal across the field
+
+David and Jonathan now need to determine whether Saul's hostility is temporary or fixed.
+
+The test is tied to:
+- **new moon**;
+- royal meal;
+- expected seat;
+- first day;
+- second day;
+- third-day field position.
+
+This is a deliberately timed diagnostic.
+
+### Absence becomes the signal
+
+David's seat at the king's table is empty.
+
+Day 1:
+- absence is noticed but rationalised.
+
+Day 2:
+- absence triggers explicit inquiry.
+
+Thus:
+**nothing/empty position**
+becomes information.
+
+This matters for the wider geometry project:
+**negative space can carry state information.**
+
+The user's cosmology already treats absence/gap/opening as potentially structural rather than simply “nothing.”
+
+Here the literary mechanism is straightforward:
+**the empty node reveals the changed relation among the system's members.**
+
+### Jonathan is the test-interface between two incompatible centres
+
+Jonathan remains physically coupled to Saul while relationally coupled to David.
+
+He therefore functions as a temporary **bridge/interface**.
+
+When Saul attempts to spear Jonathan too, the interface learns that reconciliation has failed.
+
+So:
+
+**old centre attacks rising node indirectly**
+→ mediator tests old centre
+→ old centre attacks mediator
+→ mediator's ambiguous position collapses
+→ mediator now has confirmed binary information.
+
+### Three-arrow field signal
+
+The agreed signal uses:
+- a field;
+- hiding place;
+- stone Ezel;
+- a boy;
+- **three arrows**;
+- a target direction.
+
+The binary code is:
+
+**arrows on this side**
+→ safe / come back.
+
+**arrows beyond**
+→ danger / depart.
+
+This is exceptionally useful for geometry/process analysis because the message is encoded entirely in **relative position**.
+
+Meaning is not in the arrow itself.
+
+Meaning is:
+**which side of the receiver/boundary the arrow occupies**.
+
+That is a pure adjacency/distance code.
+
+### Same visible action, different information for different observers
+
+The lad sees:
+- arrows;
+- running;
+- collection.
+
+But the lad does not know the hidden meaning.
+
+David, concealed elsewhere, does.
+
+Thus one physical event contains two levels:
+
+**surface observable**
+versus
+**encoded relational meaning**.
+
+This is another important methodological warning:
+a witness can accurately describe geometry while misunderstanding its role in the larger system.
+
+### “Beyond” becomes the departure state
+
+Jonathan deliberately shoots beyond the lad and calls:
+- is not the arrow beyond you?
+- hurry;
+- do not stop.
+
+The physical arrow establishes the final diagnosis:
+**the old route is no longer safe**.
+
+Then:
+- weapons are sent back to the city with the lad;
+- David emerges from hiding only after the uninformed carrier leaves;
+- David and Jonathan separate.
+
+The process closes as:
+
+**timed hidden test**
+→ **empty node reveals instability**
+→ **mediator probes centre**
+→ **centre attacks mediator**
+→ **binary spatial signal sent**
+→ **beyond-boundary result**
+→ **weapons return inward**
+→ **rising node moves outward**
+→ **pair separates while covenant remains informationally/relationally coupled**.
+
+---
+
+# SECTION 33A — continuous geometry/effect timeline for 1 Samuel 16–20
+
+## Phase A — hidden successor outside the visible set
+
+**old centre rejected but still present**
+→ seven visible candidates pass
+→ none selected
+→ missing/outlying component fetched
+→ hidden successor identified.
+
+**Effect:** operative future centre exists before the old public system recognizes it.
+
+Vardath comparison:
+**important node may reside outside currently visible/active geometry until phase change draws it inward.**
+
+---
+
+## Phase B — active-state polarity flips
+
+**authorising spirit/state on old centre**
+→ transfer phase
+→ state comes upon new centre
+→ state departs old centre
+→ old centre enters disturbed regime.
+
+**Effect:** identity of structural centre and identity of active state cease to coincide.
+
+Vardath comparison:
+**field/state can migrate before material positions fully reorganise.**
+
+---
+
+## Phase C — new state temporarily regulates old state
+
+new centre enters old centre's chamber
+→ rhythmic/music action
+→ disturbance subsides
+→ unstable state later returns.
+
+**Effect:** replacement process includes overlap and temporary mutual coupling.
+
+Vardath comparison:
+**handoff may pass through a mixed phase in which old and new states coexist.**
+
+---
+
+## Phase D — two opposed fields with lower interspace
+
+**army A on one height**
+↔ valley/ravine ↔
+**army B on opposite height**.
+
+**Effect:** broad conflict is geometrically separated by a central low zone.
+
+Vardath comparison:
+**paired sides + throat/interspace can precede transfer or resolution.**
+
+---
+
+## Phase E — many→pair compression
+
+whole army A + whole army B
+→ one representative from each
+→ pair meets in interspace.
+
+**Effect:** state of large distributed fields is made dependent on one local two-body interaction.
+
+Vardath comparison:
+**large field can collapse functionally into one paired junction.**
+
+---
+
+## Phase F — concentrated transfer across gap collapses one side's node
+
+opposed approach
+→ small projectile crosses space
+→ focused impact
+→ representative falls face-down
+→ opponent's own tool is appropriated
+→ head-node removed.
+
+**Effect:** local failure becomes irreversible.
+
+Vardath comparison:
+**small transfer through a narrowed interaction zone can trigger large-state transition.**
+
+---
+
+## Phase G — local node failure triggers field-wide directional reversal
+
+champion/central representative falls
+→ associated army flees
+→ opposite army advances/pursues.
+
+**Effect:** standing opposed geometry becomes one-way flow.
+
+Vardath comparison:
+**local node collapse can reverse the direction of the surrounding field.**
+
+---
+
+## Phase H — status/tools migrate toward rising node
+
+component attached to old royal structure
+→ removes robe/weapons
+→ gives them to rising component.
+
+**Effect:** material/status functions accumulate around successor state.
+
+Vardath comparison:
+**handoff can include cargo/tool transfer before formal regime change.**
+
+---
+
+## Phase I — external field amplification destabilises old centre
+
+surrounding population praises rising node
+→ old centre compares relative magnitudes
+→ watches rising node
+→ hostility begins.
+
+**Effect:** distributed field feedback changes centre-centre coupling.
+
+Vardath comparison:
+**field response can amplify one node and destabilise another.**
+
+---
+
+## Phase J — soothing hand versus penetrating hand
+
+same chamber:
+**music/regulation**
+versus
+**spear/ejection**.
+
+Attempted penetration fails twice.
+
+**Effect:** old/new centres can no longer remain stably co-located.
+
+Vardath comparison:
+**opposed actions within one enclosure eventually force spatial separation.**
+
+---
+
+## Phase K — ejection strengthens field coupling
+
+rising node moved away from old centre
+→ sent outward among larger population
+→ repeated success
+→ popularity/coupling increase.
+
+**Effect:** expulsion from centre increases distributed connectivity.
+
+Vardath comparison:
+**decentralisation of an active node can enlarge rather than weaken its field influence.**
+
+---
+
+## Phase L — local enclosure breached through secondary aperture
+
+house watched at ordinary exits
+→ window becomes alternate route
+→ living component lowered through boundary
+→ proxy remains inside.
+
+**Effect:** real state leaves while appearance of occupancy persists.
+
+Vardath comparison:
+**carrier/projection can remain after active content has transferred elsewhere.**
+
+---
+
+## Phase M — field entrainment converts incoming hostile agents
+
+hostile wave 1 enters field → adopts field-state.
+hostile wave 2 → same.
+hostile wave 3 → same.
+source centre enters → same state overtakes centre.
+
+**Effect:** local field overrides external command signal repeatedly.
+
+Vardath comparison:
+**a sufficiently dominant state can entrain components crossing into it.**
+
+This is a structural analogy only; the text describes divine/prophetic action.
+
+---
+
+## Phase N — empty position becomes information
+
+expected occupied seat
+→ empty on repeated timed checks
+→ absence confirms broken coupling.
+
+**Effect:** negative space carries state information.
+
+Vardath comparison:
+**gap/absence can be an active diagnostic property of geometry.**
+
+---
+
+## Phase O — interface node tests both sides and is forced out of neutrality
+
+mediator coupled to old centre + rising node
+→ probes old centre
+→ old centre attacks mediator
+→ mediator now knows incompatibility is fixed.
+
+**Effect:** bridge cannot remain fully coupled to both incompatible states.
+
+Vardath comparison:
+**when two regions become mutually unstable, the connecting interface is forced into one branch or the other.**
+
+---
+
+## Phase P — binary positional signal determines routing
+
+three arrows fired
+→ **near side = return**
+versus
+→ **beyond side = depart**.
+
+Actual result = beyond.
+
+**Effect:** a small vector displacement encodes which route the hidden component must take.
+
+Vardath comparison:
+**relative adjacency, not object identity, determines route/state.**
+
+---
+
+# What 1 Samuel 16–20 adds to the master Bible geometry timeline
+
+This block contributes several new transformation rules:
+
+1. **The active state may transfer before public/material succession completes.**
+2. **A hidden/outlying component can become the future centre after the visible ordered set fails.**
+3. **Old and new regimes can coexist in one enclosure during handoff.**
+4. **Two broad opposed fields can compress their conflict into one representative pair at a central interspace.**
+5. **A small concentrated crossing through that interspace can trigger full-field reversal.**
+6. **Tools/status/cargo can migrate toward the successor before formal regime change.**
+7. **Field-level feedback can destabilise the old centre.**
+8. **Repeated failed ejection of the new node tends to increase separation and wider field coupling.**
+9. **An alternate boundary aperture can transfer active content while a proxy preserves surface appearance.**
+10. **Incoming agents can be entrained into a local field-state strongly enough to lose their original function.**
+11. **The same state/process can mean rise in one phase and immobilisation in a later phase — timeline position changes meaning.**
+12. **Negative space/empty position can function as information.**
+13. **A mediator/interface cannot remain neutral indefinitely between increasingly incompatible centres.**
+14. **Relative position can encode a binary route instruction: near/return versus beyond/depart.**
+
+The combined Vardath-style timeline through this block is now:
+
+**old centre rejected**
+→ **successor hidden outside visible set**
+→ **active state shifts to successor**
+→ **old/new overlap**
+→ **two broad fields oppose across a central gap**
+→ **many-to-pair compression**
+→ **small transfer collapses one paired node**
+→ **whole field reverses**
+→ **status/tools accumulate around successor**
+→ **old centre attempts ejection**
+→ **successor moves outward and strengthens**
+→ **local enclosure is escaped through alternate aperture**
+→ **proxy remains behind**
+→ **hostile incoming streams are converted by a stronger local field**
+→ **timed absence reveals final incompatibility**
+→ **interface tests boundary**
+→ **binary positional signal sends successor beyond old centre's safe region**.
+
+This continues directly from Section 32's ending:
+**old route closure → hidden successor activation → separation of old and new regimes**.
+
+---
+
+## Section 33A controls that must remain attached to the timeline
+
+- 1 Samuel 16–18 is textually and compositionally complex.
+- 1 Samuel 17–18 exists in substantially different **long MT** and **short Greek** forms.
+- Scholars disagree over how these versions developed; do not treat every MT detail as one seamless original eyewitness sequence.
+- David appears to be known to Saul in 1 Samuel 16, while 17:55–58 can read as though Saul does not know his identity/family; this is one reason scholars identify multiple narrative strands.
+- Goliath's height is textually variable: **six cubits and a span** in MT versus **four cubits and a span** in the shorter Greek/other ancient textual tradition. Do not use six as a secure cosmological number.
+- Jonathan's gift of robe/weapons can signify covenant/honour and is often interpreted as succession/status transfer, but that political interpretation is not the only possible reading.
+- The prophetic-state episode of 1 Samuel 19 parallels the earlier Saul-prophecy tradition in 1 Samuel 10 and may preserve a second/reshaped tradition. Its placement now gives the same phenomenon a sharply different narrative function.
+- Saul's disrobing in 19:24 does not securely require complete nudity; some interpreters understand removal of outer garments.
+- The Elah topography is real and strongly fits an opposed-slope / central-valley scene, but exact battlefield reconstruction remains inferential.
+- The arrow signal in 1 Samuel 20 is deliberately literary and coded; it is strong process evidence for **position-as-information**, not evidence for a physical cosmic signalling technology.
+
+### Sources logged for Section 33A
+
+Primary:
+- Mechon-Mamre, 1 Samuel 16–20.
+
+Textual/literary controls:
+- Emanuel Tov, **“The Composition of 1 Samuel 16–18 in Light of the Septuagint.”**
+- Benjamin J. M. Johnson, **“Reconsidering 4QSamᵃ and the Textual Support for the Long and Short Versions of the David and Goliath Story.”**
+- Simeon Chavel & Jessie DeGrado, **“Text- and Source-Criticism of 1 Samuel 17–18: A Complete Account.”**
+- Dominique Barthélemy et al., **The Story of David and Goliath: Textual and Literary Criticism**.
+- scholarship on Saul's prophetic representations in 1 Samuel 10 and 19.
+- comparative/literary work on Jonathan's transfer of robe and weapons, with covenant/status-transfer interpretations retained as alternatives.
+- traditional and modern biblical-geography discussion of the Elah Valley's opposed heights and central ravine.
+
+**Section 33 remains in progress.**
+
+Next:
+**1 Samuel 21–24 — weapon recovered from behind ephod, identity masking, cave/enclosure migration, gathering of distressed/debt/outcast material around the displaced centre, priestly node destruction, pursuit through wilderness networks, mountain/rock separation, and the cave encounter where the pursuer enters the hidden centre's enclosure without knowing it.**
