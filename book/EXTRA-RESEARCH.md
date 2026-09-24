@@ -87302,3 +87302,847 @@ Scholarly controls:
 - Jehoash recovers lost cities from Ben-hadad exactly three times;
 - limited territorial recovery mirrors the earlier three strikes.
 
+
+
+---
+
+# SECTION 37 progress E — 2 Kings 13
+## Near-erased military field, restored breathing space, dying prophet as national strength-interface, hand-on-hand projectile sign, limited action constraining future recovery, burial followed by upward revival, and three strikes mirrored by three city recoveries
+
+---
+
+# 2 Kings 13 — Israel's field is reduced almost to residue under Aramean pressure
+
+Jehoahaz's Israel remains under:
+- Hazael;
+- Ben-hadad;
+- repeated/continuous pressure.
+
+The text describes the surviving military field as only:
+- fifty horsemen;
+- ten chariots;
+- ten thousand foot soldiers.
+
+Then uses the image:
+**like dust at threshing**.
+
+The exact totals are not independently externally verified and should not be used numerologically.
+
+The secure process is:
+**once-capable military network**
+→ sustained external pressure
+→ **small residual force**.
+
+This is one of the clearest state reductions in Kings.
+
+---
+
+# Threshing imagery represents field pulverization, not ordinary defeat
+
+The military field is described as:
+**made like dust in threshing**.
+
+This is not literal agricultural processing of the army.
+
+It is an image of:
+**coherent body**
+→ **broken/scattered minute residue**.
+
+For the larger timeline:
+**external pressure can reduce a field without erasing the political centre itself**.
+
+Jehoahaz remains king while his military capacity is heavily depleted.
+
+---
+
+# A “deliverer/saviour” creates breathing space, but identity is uncertain
+
+Jehoahaz calls for help.
+
+The text says Israel receives a **saviour/deliverer**.
+
+Result:
+**Israel goes out from under Aram's hand**
+and
+**people dwell in tents as before**.
+
+But the deliverer is not securely identified.
+
+Scholarly proposals include:
+- Jehoash;
+- Jeroboam II;
+- Elisha;
+- Assyrian pressure on Aram under Adad-nirari III;
+- another regional actor.
+
+Therefore:
+**record the release-effect, not a confident identity**.
+
+Process:
+
+**compressed/subjected field**
+→ external pressure relaxes
+→ ordinary dispersed dwelling becomes possible again.
+
+---
+
+# “Tents as before” is a return to distributed normality
+
+The recovery is not described first as:
+**new monumental centre**.
+
+It is:
+**people dwelling in tents/homes as previously**.
+
+So relief means:
+**field re-expands into ordinary settlement pattern**.
+
+This is a recurring post-pressure signature:
+**concentrated threat**
+→ release
+→ population returns to distributed habitation.
+
+---
+
+# Elisha's final illness reclassifies the prophet as Israel's real military support
+
+Elisha is terminally ill.
+
+King Jehoash comes **down** to him and weeps:
+**my father, my father, the chariots of Israel and its horsemen**.
+
+This repeats Elisha's own cry at Elijah's departure.
+
+The phrase therefore shifts across succession:
+
+### Elijah departure
+Elisha identifies Elijah as Israel's chariot/horse strength.
+
+### Elisha deathbed
+king identifies Elisha similarly.
+
+The “military support” is represented not as hardware alone but as:
+**prophetic/information relation supporting the national field**.
+
+---
+
+# One body is dying while the king seeks future military action through it
+
+This is an unusual transfer phase:
+
+**prophetic centre physically failing**
+while
+**royal centre asks/receives future military direction**.
+
+The old information node is passing away,
+but it still shapes events after its own death.
+
+---
+
+# Bow/arrow becomes a coupled two-person control system
+
+Elisha tells the king:
+- take bow/arrows;
+- put hand on bow.
+
+Then:
+**Elisha places his hands on the king's hands**.
+
+This is an explicit **hand-on-hand coupling**.
+
+The action is neither:
+- prophet shooting alone;
+- king shooting alone.
+
+It is:
+**king's force**
++
+**prophet's hands**
+→ one projectile action.
+
+W. Boyd Barrick's classic study argues that the unusual wording is best understood as the prophet positioning/placing hands over the king's hands, creating symbolic identification of prophetic/divine authorization with the royal action.
+
+---
+
+# The east window turns a wall aperture into directional projection interface
+
+Elisha says:
+**open the window eastward**.
+
+The window changes function from:
+**closed boundary**
+to
+**directional opening**.
+
+Then:
+**shoot**.
+
+One arrow moves:
+**inside royal/prophetic space**
+→ through boundary aperture
+→ outward eastward.
+
+The direction corresponds broadly toward Aramean-held/trans-Jordan areas in the narrative geography.
+
+Do not over-precision-map the exact flight destination.
+
+---
+
+# One projectile is explicitly assigned a future macro-state
+
+Elisha interprets:
+**arrow of victory/deliverance against Aram**.
+
+Thus the text itself maps:
+
+**single projectile**
+→ **future military victory-state**.
+
+This is not our speculative analogy.
+It is an explicit prophetic sign-act inside the story.
+
+This makes it especially important for the master timeline:
+**a tiny enacted geometry is used as model for a later large field outcome**.
+
+---
+
+# Hands separate from bow-action into repeated ground-action
+
+Next:
+**take the arrows**
+→ **strike the ground**.
+
+The exact mechanics are debated:
+- physically strike ground with arrows;
+- shoot arrows into ground;
+- another symbolic action.
+
+Secure:
+**repeated action toward ground**
+with number of repetitions becoming decisive.
+
+---
+
+# The king stops after three
+
+Jehoash performs:
+**1 → 2 → 3**
+then
+**stops**.
+
+Nothing in the narrative says Elisha had specified the desired count beforehand.
+
+This is important.
+
+The action seems open-ended until the king voluntarily ceases.
+
+Then Elisha becomes angry.
+
+---
+
+# Five/six would have represented total defeat; three represents limited defeat
+
+Elisha says:
+- five or six strikes → Aram consumed/decisively defeated;
+- three strikes → only three victories.
+
+This is perhaps the clearest **action-count constrains future-count** mapping in the Bible research so far.
+
+The relationship is explicit:
+
+**micro repeated act count**
+→ **macro military result count**.
+
+Unlike many number correspondences,
+this is not inferred by us.
+
+The text itself states it.
+
+---
+
+# The future is represented as having had a wider possible branch
+
+The prophet's anger means the text imagines:
+
+**possible branch A**
+5/6 strikes
+→ fuller victory.
+
+Actual branch:
+3 strikes
+→ limited victories.
+
+So the scene contains a **missed larger future**.
+
+This is similar in structure to:
+- Keilah branch avoided through information;
+- Hushai/Ahithophel competing futures;
+- Solomon's sword-test;
+but here the future is linked to **performed repetition count**.
+
+---
+
+# Do not infer that three is a magical universal number
+
+The chapter does not teach:
+**three inherently equals limited victory**.
+
+It teaches:
+**the performed count of three in this sign-act**
+was mapped to
+**three later victories**.
+
+Five/six would have mapped differently.
+
+So the important geometry is:
+**count-preserving correspondence**
+rather than “sacred 3.”
+
+---
+
+# Elisha dies immediately after his final predictive intervention
+
+The narrative then says:
+**Elisha died**
+→ **buried**.
+
+So his last active scene is:
+**hands over king's hands**
+→ future victories constrained
+→ prophet exits living system.
+
+This closes the long Elijah→Elisha succession network.
+
+---
+
+# Annual/seasonal raiding bands continue after prophet's death
+
+Moabite bands enter the land:
+**at the coming of the year / season**.
+
+The exact season/translation can vary.
+
+The important point:
+**external border pressure continues cyclically after the prophetic centre is buried**.
+
+The land remains unstable.
+
+---
+
+# A burial procession is interrupted by an incoming hostile field
+
+People are burying another man.
+
+They see:
+**raiding band**.
+
+Urgency changes burial route.
+
+Instead of completing the intended grave placement:
+**corpse is thrown into Elisha's tomb**.
+
+So:
+
+**ordinary burial**
+→ enemy approach
+→ route shortened/altered
+→ wrong/alternate tomb used.
+
+A pressure field again changes handling of a body before transition completes.
+
+---
+
+# Dead body falls downward into the prophet's burial enclosure
+
+The dead man:
+**is cast into Elisha's sepulchre**.
+
+He comes into contact with:
+**Elisha's bones**.
+
+Then:
+**revives**
+and
+**stands on his feet**.
+
+This gives a stark vertical/state sequence:
+
+**dead horizontal body**
+→ **down into tomb**
+→ contact with buried prophetic remnant
+→ life returns
+→ **upright standing body**.
+
+This is one of the cleanest:
+**down/dead → contact → up/alive**
+sequences in the historical books.
+
+---
+
+# The prophet's body remains functionally potent after death within the narrative
+
+The story explicitly places the revival:
+**after Elisha dies**.
+
+Thus the literary message is:
+**prophetic life-giving function outlasts the living prophet's body**.
+
+Scholars discuss this as:
+- final Elisha miracle;
+- saint/prophetic legend;
+- power-over-death motif;
+- possible polemic/tradition concerning life-giving prophetic holiness.
+
+Do not convert it into a scientific relic mechanism.
+
+The process-level datum:
+**buried remnant triggers/mediates reversal from death to life in the story**.
+
+---
+
+# Important textual control — the posthumous miracle has a complicated transmission history
+
+Adrian Schenker's study shows that:
+- MT;
+- LXX;
+- Old Latin
+
+differ significantly in 2 Kings 13:20–21.
+
+Therefore:
+**preserve the broad corpse→bones→life sequence**
+but do not build cosmological claims on fine wording without witness-specific control.
+
+---
+
+# Hazael dies and the external pressure field loses its dominant centre
+
+After the Elisha death scene,
+the narrative returns to Aram.
+
+Hazael dies.
+
+Ben-hadad succeeds.
+
+The major external pressure field therefore also undergoes a **centre transition**.
+
+Israel's opportunity for recovery opens after:
+- prophetic centre dies;
+- enemy king dies.
+
+Two centres disappear in close narrative proximity.
+
+---
+
+# The chapter closes by explicitly matching three victories to the earlier three strikes
+
+Jehoash:
+**strikes Ben-hadad three times**
+and
+**recovers Israelite cities**.
+
+The text thereby closes the sign-action loop:
+
+### symbolic micro-action
+three ground-strikes.
+
+### historical macro-action
+three victories/city recoveries.
+
+This is an unusually direct:
+**model → fulfillment**
+correspondence.
+
+---
+
+# Recovery is real but incomplete
+
+Jehoash recovers cities lost by his father.
+
+But Elisha's rebuke has already framed the outcome as less than possible total defeat.
+
+So:
+
+**previous field loss**
+→ partial restoration
+→ not full elimination of rival.
+
+The system gains back territory but does not reset to an absolute victory state.
+
+This is a strong **limited-repair** ending.
+
+---
+
+# SECTION 37E continuous geometry/effect timeline — 2 Kings 13
+
+## Phase CT — external pressure reduces active field to remnant
+
+Aram continually oppresses Israel
+→ military capacity heavily reduced
+→ “dust in threshing” image.
+
+**Effect:** field nearly pulverized while centre remains.
+
+---
+
+## Phase CU — release allows ordinary distribution to reappear
+
+deliverer/saviour
+→ Aramean hand loosens
+→ people dwell in tents as before.
+
+**Effect:** pressure relief restores dispersed normal habitation.
+
+Control:
+identity of deliverer uncertain.
+
+---
+
+## Phase CV — dying information-centre is treated as national military strength
+
+Jehoash comes down to Elisha
+→ “chariots/horsemen of Israel.”
+
+**Effect:** field strength is narratively located in information/prophetic node as much as in weapons.
+
+---
+
+## Phase CW — prophet and king become one coupled firing system
+
+king hand on bow
+→ prophet hands over king hands.
+
+**Effect:** operator/source and political actuator are physically coupled for sign-action.
+
+---
+
+## Phase CX — window becomes directional opening
+
+closed wall
+→ east window opened
+→ projectile passes outward.
+
+**Effect:** local enclosure is temporarily converted into aimed transfer interface.
+
+---
+
+## Phase CY — one projectile models future field victory
+
+arrow fired
+→ explicitly named arrow of victory against Aram.
+
+**Effect:** micro-action represents macro-future state.
+
+---
+
+## Phase CZ — open-ended repeated action stops at three
+
+arrows/ground action
+→ 1
+→ 2
+→ 3
+→ stop.
+
+**Effect:** voluntary termination of repeated action becomes decisive variable.
+
+---
+
+## Phase DA — action count limits future outcome count
+
+3 strikes
+→ 3 victories.
+
+5/6 strikes
+→ projected fuller defeat.
+
+**Effect:** sign-act repetition count is explicitly mapped onto future military repetition count.
+
+---
+
+## Phase DB — larger future branch is lost when action stops early
+
+possible greater action
+→ not performed
+→ limited future.
+
+**Effect:** system enters narrower branch because actor ends sequence.
+
+---
+
+## Phase DC — prophet exits living system after shaping future
+
+Elisha dies/buried.
+
+**Effect:** source node disappears but prior sign continues to structure future events.
+
+---
+
+## Phase DD — hostile pressure interrupts another burial and reroutes corpse
+
+Moabite band appears
+→ mourners abort normal burial
+→ corpse cast into Elisha tomb.
+
+**Effect:** incoming field changes transition route for dead body.
+
+---
+
+## Phase DE — buried remnant becomes contact point for state reversal
+
+dead body
+→ touches Elisha bones
+→ revives
+→ stands.
+
+**Effect:** down/dead state reverses to upright/living state at buried remnant interface.
+
+Control:
+miracle/prophetic legend, not physical mechanism.
+
+---
+
+## Phase DF — external adversary centre also dies
+
+Hazael
+→ death
+→ Ben-hadad succession.
+
+**Effect:** persistent pressure field changes leadership.
+
+---
+
+## Phase DG — historical recovery mirrors earlier symbolic count
+
+Jehoash defeats Aram **three times**
+→ cities recovered.
+
+**Effect:** macro-sequence closes micro-sign loop.
+
+---
+
+## Phase DH — recovery remains partial
+
+cities restored
+but
+Aram not annihilated.
+
+**Effect:** limited sign produces limited restoration rather than total reset.
+
+---
+
+# What 2 Kings 13 adds to the master Bible/Vardath timeline
+
+227. **A political centre can survive while its active military field is reduced almost to residue.**
+228. **Release from compression may first appear as ordinary distributed habitation returning rather than monumental central growth.**
+229. **The narrative can locate national strength in an information/prophetic node even while that node's body is dying.**
+230. **Two agents can be physically coupled hand-on-hand so one symbolic action represents combined source/actuator agency.**
+231. **A window can be converted from static wall opening into a directional projectile interface.**
+232. **2 Kings 13 gives one of the highest-confidence micro→macro symbolic mappings in the corpus because the text itself names the arrow as future victory.**
+233. **The number of performed repetitions can explicitly constrain the number of future macro-events.**
+234. **The important rule is not “three is sacred,” but that sign-action count and later event count are preserved.**
+235. **The narrative imagines an unrealized larger branch: stopping early produces narrower future outcome.**
+236. **A source node can die while its previously transmitted pattern continues to govern later events.**
+237. **An external threat can reroute even burial handling, causing a body to enter an unintended enclosure.**
+238. **The Elisha-bones story gives a strong down/dead → contact → up/alive reversal, but only within miracle/legendary narrative.**
+239. **A buried remnant can remain functionally active in narrative memory after the living centre disappears.**
+240. **Adversary-centre death can open recovery opportunities even when the local source/prophet has also died.**
+241. **Territorial restoration can be real yet explicitly limited, producing repair rather than total reset.**
+
+---
+
+# SECTION 37 — integrated 2 Kings 1–13 geometry timeline
+
+The Elisha / Omride–Jehu transition arc now reads:
+
+**Ahaziah falls through upper-room lattice**
+→ sends messengers outward instead of turning to Elijah
+→ fire descends twice on hostile captain fields
+→ third captain changes posture and survives
+→ Ahaziah dies
+→ Elijah/Elisha travel through a reverse-geographic succession route
+→ Jordan opens
+→ pair crosses
+→ fire chariot separates pair
+→ whirlwind takes Elijah upward
+→ mantle falls to successor
+→ successor returns across reopened Jordan
+→ polluted Jericho water healed
+→ hostile youth-field disrupted at Bethel
+→ Moab campaign enters waterless region
+→ trench network fills without local rain
+→ water appearance is misread and triggers enemy advance
+→ Moab field collapses until child sacrifice / “great wrath” halts Israelite advance
+→ widow vessel network shows receiving-capacity governs provision
+→ Shunammite hospitality creates upper-room prophet interface
+→ child dies and is laid on prophet's bed
+→ staff transfer fails
+→ prophet body aligns with dead child
+→ body warms/revives
+→ poisoned-pot state is reversed
+→ small bread input feeds larger group
+→ Naaman's high-status body must descend into Jordan
+→ seven immersions produce restored flesh + changed knowledge
+→ refused gift-stream is secretly diverted by Gehazi
+→ Naaman/Gehazi body states invert
+→ overcrowded prophetic dwelling expands toward Jordan
+→ iron tool falls into water and is recovered from exact loss-point
+→ Aramean ambush geometry repeatedly fails because information arrives first
+→ visible Dothan enclosure is reinterpreted after hidden fiery field becomes visible
+→ attacking army loses orientation
+→ target becomes guide
+→ enemy field enters Samaria and discovers itself enclosed
+→ killing is refused; feeding/release temporarily de-escalates conflict
+→ later Samaria becomes besieged shell
+→ interior famine/social collapse while wall remains
+→ four marginalized gate-dwellers cross outward
+→ Aramean field has already evacuated because of perceived sound-threat
+→ enemy shell/cargo remains without active population
+→ scouts report
+→ king tests release with small probe
+→ gate flips from scarcity to abundance
+→ gate controller dies under transition throughput
+→ Shunammite household pre-emptively leaves seven-year famine
+→ returns at exact moment resurrection memory is being told
+→ land + accumulated produce restored
+→ Hazael receives future-king information
+→ selective report reaches Ben-hadad
+→ wet covering kills old Aramean centre
+→ Israel/Judah dynasties become tightly coupled
+→ Jehu is privately activated in inner room
+→ peer garments become footing
+→ horn publicly activates new king
+→ reconnaissance messengers are absorbed into moving coup field
+→ Joram and Ahaziah converge at Naboth's plot
+→ both royal houses struck
+→ Jezebel ejected downward by her own interior officials
+→ Ahabite lineage converted into heads and two gate heaps
+→ distributed Baal network concentrated into one sealed house and destroyed
+→ Jehu dynasty stabilizes while Israel's borders shrink
+→ Athaliah attempts total Davidic seed destruction
+→ one infant remnant hidden inside temple six years
+→ seventh-year guard overlap/ring activates hidden future centre
+→ Athaliah expelled beyond sacred boundary
+→ Joash moves from temple-preserved remnant to royal throne
+→ temple that preserved dynasty later develops breaches
+→ failed funding route is redesigned through one chest + joint checkpoint + direct worker flow
+→ breaches repaired
+→ stored temple/royal treasure released outward to divert Hazael
+→ Joash survives external threat but is killed by internal servants
+→ Israel under Aram reduced toward military residue
+→ deliverance reopens ordinary settlement
+→ dying Elisha couples hands with king's hands
+→ east window opens
+→ one victory-arrow projects outward
+→ three repeated ground-strikes stop early
+→ future recovery limited to three victories
+→ Elisha dies
+→ another corpse is thrown down into his tomb under raid pressure
+→ contact with bones reverses death to upright life
+→ Hazael dies
+→ Jehoash defeats successor three times and recovers cities.
+
+This Section 37 arc is especially important because it repeatedly studies **hidden/visible state, carrier separation, boundary crossing, and partial restoration**:
+
+- Elijah disappears upward while mantle/function returns downward.
+- Naaman enters water and emerges in altered body/knowledge state.
+- Hidden fiery field surrounds a visible hostile field.
+- Samaria moves from container of enemies to contained city.
+- The enemy camp remains materially present after its people vanish.
+- Joash's dynasty remains alive only as one hidden infant within a sacred enclosure.
+- Temple breaches are closed only after information/resource routing changes.
+- Elisha's body loses life but becomes the contact point for another body's return to life.
+- The final recovery is limited rather than absolute.
+
+---
+
+## Section 37E number / timing register
+
+Record without forcing:
+- Jehoahaz reign **17 years**;
+- residual force **50 horsemen / 10 chariots / 10,000 foot**;
+- Jehoash reign **16 years**;
+- king strikes ground **3 times**;
+- Elisha says **5 or 6** would have represented fuller defeat;
+- Jehoash later defeats Aram **3 times**.
+
+The 3→3 correspondence is unusually strong because the narrative explicitly links them.
+
+---
+
+## Section 37E textual / literary / historical controls
+
+- The identity of the “deliverer/saviour” in 2 Kings 13:5 is not named. Proposals include Assyrian pressure on Damascus, Jehoash, Jeroboam II, Elisha and others.
+- Exact military totals in 13:7 should be treated as literary/historical claims, not independently verified census data.
+- “Dust in threshing” is military-destruction imagery; do not literalize it.
+- “Chariots and horsemen of Israel” is a repeated prophetic epithet/metaphor and not proof that prophets were literal military hardware.
+- W. Boyd Barrick's hand-over-hand analysis is influential but still an interpretation of difficult Hebrew.
+- The eastward window is directional in the narrative; do not infer a precise geospatial beam/path beyond the Aram-facing symbolic direction.
+- Scholars debate whether “strike the ground” means physically striking with arrows or shooting arrows into the ground. Preserve repeated ground-directed action and count, not uncertain mechanics.
+- The text does not state why Jehoash stops at three; explanations such as lack of zeal, misunderstanding or hesitation remain inferential.
+- Five/six is an unrealized counterfactual supplied by Elisha, not an observed historical event.
+- The Elisha-bones story has significantly different early textual forms in MT, LXX and Old Latin. Adrian Schenker specifically uses this pericope to illustrate the complex textual history of Kings.
+- Shaul Bar and others discuss resurrection/miraculous-life traditions and possible ancient Near Eastern/Baal-polemic backgrounds; those literary/theological proposals should not be converted into physical resurrection technology.
+- Yael Shemesh cautions against over-reading every Elijah/Elisha shared motif as direct polemic; common human miracle motifs require close literary proof.
+- The “coming of the year” for Moabite raiding bands is a seasonal notice but should not be treated as a precise cosmological interval.
+- 2 Kings 13:12–13 is anomalously duplicated/repositioned in 2 Kings 14:15–16, reflecting compositional complexity.
+- The exact historical sequence of Aramean decline, Assyrian pressure and Israelite recovery is reconstructed through biblical and Assyrian sources with uncertainty; do not reduce the “saviour” to one external king without qualification.
+
+### Sources logged for Section 37E
+
+Primary:
+- Mechon-Mamre, **2 Kings 13**.
+
+Scholarly controls:
+- **“2 Kings 13: A Cluster of Hope in God.”**
+- W. Boyd Barrick, **“Elisha and the Magic Bow: A Note on 2 Kings xiii 15–17,” Vetus Testamentum 35 (1985): 355–363.**
+- Adrian Schenker, **“Elisha's Posthumous Miracle in Textual History (II Kings 13.20–21).”**
+- Shaul Bar, **“Resurrection or Miraculous Cures? The Elijah and Elisha Narrative Against its Ancient Near Eastern Background.”**
+- Keith Bodner, **Postscript: Double Take**, on Elisha's posthumous miracle and narrative legacy.
+- Yael Shemesh, **“The Elisha Stories as Saint's Legends.”**
+- Mordechai Cogan and Hayim Tadmor, **II Kings**, retained for historical/textual control.
+- Marvin A. Sweeney, **I & II Kings**, retained for compositional context.
+- Assyrian historical reconstructions of Adad-nirari III's pressure on Damascus, retained as one possible background to Israel's release but not as a certain identification of the unnamed deliverer.
+
+---
+
+# SECTION 37 COMPLETE — 2 Kings 1–13
+
+Canonical roadmap status:
+
+- previous complete: **36 / 88**
+- now complete: **37 / 88**
+- progress: **42.0%**
+
+Section 37 completion point:
+**2 Kings 13:25 — the three limited victories anticipated by Elisha's three strikes become three historical recoveries of Israelite cities from Ben-hadad.**
+
+The section's long geometry has moved from:
+**prophetic succession**
+through
+**water/body transformations**
+through
+**hidden/visible armies**
+through
+**siege-shell inversion**
+through
+**dynastic purge**
+through
+**hidden remnant restoration**
+to
+**limited territorial repair after the prophet's death**.
+
+### Next roadmap action
+
+Run anti-repeat check before beginning the next canonical entry.
+
+Carry forward especially:
+- hidden state versus visible state;
+- centre versus active field;
+- one remnant preserving future continuity;
+- exact boundary points controlling transitions;
+- information changing routes before physical contact;
+- sign-actions explicitly mapping future macro-events;
+- partial recovery versus full reset;
+- names retained as source labels, while geometry/process/effect remains primary;
+- append every substantive block immediately.
+
