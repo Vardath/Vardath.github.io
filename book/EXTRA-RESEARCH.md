@@ -65122,3 +65122,1606 @@ Scholarly controls:
 - most pieces given outward while one remains for David/Jerusalem;
 - the coming political bifurcation is therefore represented before it occurs as a physical tear in a previously whole covering.
 
+
+
+---
+
+# SECTION 35 progress C — 1 Kings 9–11
+## Conditional permanence, outward trade expansion, question-and-answer convergence, paired ascent imagery, accumulation beyond functional need, heart fragmentation, adversaries emerging from preserved remnants, and one whole garment torn into a future map of the divided kingdom
+
+---
+
+# 1 Kings 9 — the completed fixed house is immediately declared non-permanent if the relational state fails
+
+After Solomon has completed:
+- the house of YHWH;
+- the king's house;
+- the broader building program,
+
+YHWH appears to him **a second time**, explicitly compared with the earlier appearance at Gibeon.
+
+The two appearances frame a major arc:
+
+### First appearance — before mature kingship/building
+Solomon requests:
+**a hearing/discerning heart**.
+
+### Second appearance — after wisdom, temple, palace and centralisation
+Solomon receives:
+**a conditional warning about whether the whole achievement will endure**.
+
+This pair matters.
+
+The first gives the centre a capacity.
+The second tests whether the centre will remain rightly oriented after acquiring enormous capacity.
+
+---
+
+# The temple is hallowed but not self-securing
+
+The house is described as:
+- hallowed;
+- a place for the divine name;
+- watched by divine eyes/heart.
+
+Yet immediately the warning says:
+
+**if king/descendants turn away**
+→ Israel may be cut from land
+→ house may be cast out
+→ the high/conspicuous house may become ruin/astonishment.
+
+This is a direct correction to any model in which:
+**fixed sacred architecture = permanent stability by itself**.
+
+The text explicitly says:
+**material centre can remain physically impressive yet lose its relational function and even become a ruin.**
+
+Therefore:
+**architecture is conditional interface, not indestructible guarantee.**
+
+This extends the warning already inserted during construction in 1 Kings 6.
+
+---
+
+# The “permanent house” phase contains its own possible deconstruction
+
+The progression is:
+
+**mobile tent**
+→ **fixed temple**
+→ dedication/cloud
+→ promise
+→ immediate warning:
+**fixed temple can be abandoned/cast away**.
+
+So the sacred-space trajectory is not one-way:
+
+**mobile → fixed → permanently secure** is **not** the biblical model.
+
+Instead:
+
+**mobile**
+→ **fixed**
+→ fixed state remains contingent
+→ possible **loss/ruin/exile**.
+
+This is crucial for the master Vardath timeline:
+**a system can build an apparently final enclosure and still later revert to dispersal.**
+
+---
+
+# Twenty-year two-house period — sacred and royal architecture mature together
+
+The narrative marks the end of **twenty years** during which Solomon built:
+- YHWH's house;
+- the king's house.
+
+So the political and sacred centres are paired in the same long building phase.
+
+But chapter 9 warns that the sacred house's continued role is not guaranteed by the completion of the royal house beside it.
+
+Physical completion does not equal final state.
+
+---
+
+# Hiram receives twenty cities — transferred territory changes value depending on receiver
+
+Solomon gives Hiram:
+**twenty cities in Galilee**.
+
+Hiram goes to inspect them and is displeased.
+
+This is a useful exchange-process control:
+
+**giver assigns value**
+→ territory transferred
+→ receiver inspects directly
+→ receiver assigns different/lower value.
+
+Like the Queen of Sheba in the next chapter, **direct observation can overturn prior expectation**.
+
+The exact location and meaning of “Cabul” are debated.
+
+Some historical-geographical work places the transfer in relatively marginal western Lower Galilee terrain, but this is not settled enough to treat as fixed.
+
+The secure process is:
+**territorial compensation is not equivalent to shared valuation**.
+
+---
+
+# Centralisation extends through distributed fortified and storage nodes
+
+Solomon's building network includes:
+- Jerusalem wall/Millo;
+- Hazor;
+- Megiddo;
+- Gezer;
+- Lower Beth-horon;
+- Baalath;
+- storage cities;
+- chariot cities;
+- horsemen cities;
+- other desired works.
+
+The centre therefore projects itself spatially through:
+
+**capital**
+→ **distributed fixed nodes**
+→ storage / transport / military functions.
+
+This resembles David's garrisons but is more infrastructural:
+**military occupation nodes become administrative/logistical urban nodes**.
+
+---
+
+# Conquest, marriage and construction intersect at Gezer
+
+The text says Pharaoh:
+- captured Gezer;
+- burned it;
+- killed its Canaanite inhabitants;
+- gave it as dowry with his daughter;
+- Solomon rebuilt it.
+
+The process sequence is:
+
+**existing city**
+→ external conquest/destruction
+→ transfer through royal marriage
+→ incorporation into Solomon's building network.
+
+This is human war and dispossession, not a neutral city-transfer mechanism.
+
+But it shows:
+**one node can change controlling system multiple times while remaining geographically fixed.**
+
+---
+
+# Labour distinctions remain important — rotational service versus permanent subjection
+
+Chapter 9 distinguishes:
+- surviving non-Israelite groups assigned permanent bond-service in the narrator's account;
+- Israelites described as soldiers/servants/officers rather than permanent bondservants.
+
+But 1 Kings 5 already described a **levy from all Israel** with monthly rotational labour.
+
+Therefore the correct distinction is not:
+**Israelites never conscripted / foreigners conscripted**.
+
+It is:
+**different labour classes and durations are being distinguished by the text**.
+
+This matters because 1 Kings 12 will soon present the labour burden as a central political grievance.
+
+Do not allow chapter 9's wording to erase chapter 5's rotational corvée.
+
+---
+
+# Maritime extension creates a mobile long-range extraction network
+
+Solomon builds ships at:
+**Ezion-geber / Eloth**, on the Red Sea/Aqaba zone.
+
+Hiram contributes:
+**experienced sailors**.
+
+The fleet travels to Ophir and returns with gold.
+
+So the previously land-based centre now develops:
+
+**capital**
+→ distant port
+→ cooperative foreign expertise
+→ ships
+→ remote destination
+→ high-density cargo
+→ return to centre.
+
+This is a new scale:
+**Jerusalem's resource field extends across sea routes.**
+
+Ophir's exact location is disputed and should not be forced.
+
+---
+
+# 1 Kings 10 — information leaves Jerusalem before the Queen of Sheba travels toward it
+
+The Queen of Sheba begins with:
+**a report heard at distance**.
+
+So the first movement is not her body or her caravan.
+
+It is:
+**information about Solomon**
+→ travels outward
+→ reaches another sovereign centre.
+
+That report then produces a return flow:
+**distant ruler**
+→ questions + caravan + wealth
+→ moves inward toward Jerusalem.
+
+Thus the encounter begins as an **information-triggered convergence**.
+
+---
+
+# Queen of Sheba and Solomon form a two-centre test/exchange pair
+
+This is a different pair type from:
+- David/Ish-bosheth;
+- Solomon/Adonijah;
+- Jachin/Boaz.
+
+The two rulers are not presented as enemies.
+
+They are:
+**two sovereign knowledge centres**
+that temporarily converge.
+
+The Queen brings:
+- hard questions;
+- “all that was in her heart”;
+- spices;
+- gold;
+- precious stones.
+
+Solomon returns:
+- answers;
+- gifts/desire;
+- royal bounty.
+
+Then the Queen returns to her own land.
+
+The complete sequence is:
+
+**remote report**
+→ skepticism/test
+→ physical convergence
+→ information exchange
+→ direct observation
+→ verification
+→ reciprocal material exchange
+→ separation/return.
+
+This is one of the strongest **temporary convergence without absorption** patterns in the royal narratives.
+
+Neither centre consumes the other.
+
+---
+
+# “All that was in her heart” meets “nothing hidden from the king”
+
+The encounter is described as:
+**all questions / all in heart**
+→ Solomon answers
+→ nothing remains hidden/unanswered in the literary presentation.
+
+At the process level:
+
+**one centre externalizes difficult/hidden information**
+→ second centre processes it
+→ returns structured answers.
+
+This is a very pure information-transfer pair.
+
+Do not inflate “nothing hidden” into literal omniscience.
+
+It is royal-wisdom rhetoric.
+
+---
+
+# Hearing is tested against seeing
+
+The Queen says in effect:
+**I heard**
+→ did not fully believe
+→ came
+→ **my eyes saw**
+→ report was less than reality.
+
+This gives a useful epistemic sequence:
+
+**remote report**
+→ provisional model
+→ direct inspection
+→ model updated.
+
+This mirrors Hiram inspecting the twenty cities, but with opposite result:
+
+### Hiram
+report/transfer expectation
+→ direct inspection
+→ value falls.
+
+### Queen of Sheba
+report
+→ direct inspection
+→ value rises.
+
+Same test structure.
+Opposite update.
+
+This is an important research-method parallel:
+**direct evidence can raise or lower confidence; it should not be used only to confirm prior expectation.**
+
+---
+
+# The Queen inspects not only Solomon but the order around him
+
+She observes:
+- wisdom;
+- house;
+- food;
+- seating;
+- servants/ministers;
+- clothing;
+- cupbearers;
+- offerings.
+
+This is a systems inspection.
+
+The centre's quality is inferred from:
+**how the surrounding network is arranged and provisioned**.
+
+In other words:
+**centre is read through field order**.
+
+That is useful for the final cosmology method:
+do not evaluate a proposed centre only by the centre itself; examine the organization it produces around it.
+
+---
+
+# “No spirit remained in her” marks overload/overwhelm, not literal death
+
+The text describes her response with an expression often rendered:
+**there was no more spirit/breath in her**.
+
+This is an idiom of being overwhelmed/astonished.
+
+Do not turn it into literal soul loss.
+
+Processually:
+**incoming sensory/system evidence exceeds prior model capacity**
+→ observer enters an overwhelmed state.
+
+---
+
+# Gifts move both directions and the foreign centre departs intact
+
+The Queen gives:
+- 120 talents gold;
+- extraordinary spices;
+- precious stones.
+
+Solomon gives:
+**all she desired/asked**
+plus royal bounty.
+
+Then:
+**she returns to her own land with servants**.
+
+So the interaction is not:
+**tribute enters and peripheral ruler is absorbed**.
+
+It is:
+**exchange**
+→ **return**.
+
+This matters because immediately after her departure the text shifts toward **impersonal accumulation**.
+
+---
+
+# Relational exchange is followed by accumulation without a named counterpart
+
+After the Queen scene, the narrative lists wealth arriving from:
+- merchants;
+- traders;
+- rulers;
+- governors;
+- fleets;
+- annual flows.
+
+The human pair dissolves into:
+**centre receiving from many unnamed channels**.
+
+This is a qualitative shift:
+
+**dialogical exchange between two centres**
+→ **mass accumulation into one centre**.
+
+That may be narratively significant even if not intended as a direct critique in every line.
+
+---
+
+# 666 talents — record exactly, do not force a later numerology backward
+
+The annual gold intake is stated as:
+**666 talents**.
+
+This is an unusually memorable number.
+
+Record it exactly.
+
+But:
+**do not assign Revelation's later symbolism backward into Kings at this stage**.
+
+Correct protocol:
+- keep the datum;
+- when Revelation is reached, test whether the later use may deliberately echo royal wealth/empire traditions;
+- do not assume that now.
+
+This is precisely why the number register exists.
+
+---
+
+# Solomon's throne makes ascent itself a paired guardian sequence
+
+The throne has:
+- **six steps**;
+- two lions beside the seat/arms;
+- **twelve lions** on the steps, distributed on one side and the other.
+
+The likely visual pattern is:
+**a paired lion framing each step level**,
+with an additional pair at the throne itself.
+
+At minimum the secure geometry is:
+
+**six-step ascent**
++
+**bilateral lion figures**
+→ elevated central throne.
+
+This produces:
+**progressive ascent through paired lateral markers toward one seated centre**.
+
+Do not claim a zodiac/planetary/cosmic scheme without evidence.
+
+---
+
+# Wealth becomes so abundant that ordinary precious material loses status
+
+Silver is described as:
+**like stones / not counted as valuable**.
+
+Cedar likewise becomes extremely abundant.
+
+The process is:
+**rare resource**
+→ massive inflow
+→ local saturation
+→ relative value collapses.
+
+This is a useful systems rule:
+**value depends partly on scarcity inside the receiving field**.
+
+---
+
+# Long-distance fleet flow becomes periodic
+
+The Tarshish fleet returns:
+**once every three years**
+with exotic/high-value cargo.
+
+So the empire/trade network has its own temporal pulse:
+
+**depart**
+→ long remote interval
+→ return cargo pulse
+→ repeat.
+
+This is different from:
+- monthly district supply;
+- monthly labour rotation;
+- annual gold intake.
+
+Solomon's system now contains **multiple superimposed periodicities**.
+
+---
+
+# Horses and chariots turn prosperity into military/trade accumulation
+
+The text emphasizes:
+- 1,400 chariots;
+- 12,000 horsemen;
+- chariot cities;
+- horses from Egypt/Keveh;
+- resale/export to other kings.
+
+This is important in relation to Deuteronomy 17, which warns the king not to:
+- multiply horses;
+- cause return toward Egypt for horses;
+- multiply wives;
+- greatly multiply silver/gold.
+
+A substantial strand of scholarship reads 1 Kings 10–11 against those royal restrictions.
+
+This intertext is strong enough to record.
+
+But scholarly disagreement remains over how early the narrator expects the reader to feel critique:
+- some see chapters 3–10 as primarily celebratory before chapter 11;
+- others see subtle negative fault-lines throughout.
+
+Correct status:
+**accumulation is both presented as splendour and placed beside textual signals that can make that splendour ominous.**
+
+---
+
+# 1 Kings 11 — the “whole heart” of dedication becomes a divided/turned heart
+
+At the temple dedication Solomon urged:
+**let your heart be whole with YHWH**.
+
+Chapter 11 says Solomon's own heart:
+- is turned after other gods;
+- is **not whole** with YHWH.
+
+This is an explicit internal state reversal.
+
+The most important geometry is not “foreign women = bad.”
+
+It is:
+**one central heart**
+→ multiple attachments
+→ previous whole orientation breaks.
+
+The political split that follows is preceded by an **internal relational split in the king**.
+
+That ordering is highly significant.
+
+---
+
+# External connectivity becomes internal fragmentation
+
+Earlier Solomon's many foreign relations looked like:
+- Hiram alliance;
+- Egyptian marriage;
+- Queen of Sheba;
+- trade networks;
+- fleets;
+- visiting rulers.
+
+The system expanded by adding external links.
+
+Chapter 11 presents a danger-state of the same general connectivity:
+- many royal marriages;
+- many cultic loyalties;
+- multiple high places.
+
+Thus:
+
+**outward network expansion**
+→ reaches a threshold
+→ centre's orientation becomes distributed
+→ internal unity weakens.
+
+This is a major Vardath-process finding:
+
+**more connections do not automatically mean more coherence**.
+
+A centre can become fragmented by the very number of relations it maintains.
+
+---
+
+# Central temple does not prevent multiple cult nodes from appearing around Jerusalem
+
+Solomon builds high places for foreign deities, including on the mountain opposite Jerusalem.
+
+So the landscape changes from:
+
+**one monumental central sanctuary**
+toward
+**central sanctuary + multiple competing cult sites**.
+
+This is not yet the north/south kingdom split.
+
+But it is a **religious spatial precursor**:
+centralisation is already being undermined by a distributed set of alternative nodes.
+
+---
+
+# Twice-appearing deity / twice-warned king pair
+
+Chapter 11 explicitly reminds the reader:
+YHWH had appeared to Solomon **twice**.
+
+That creates another pair marker:
+- Gibeon;
+- post-temple appearance.
+
+Both appearances are now retrospectively linked to a command not to turn after other gods.
+
+Thus:
+**repeated information does not guarantee compliance**.
+
+This is an important systems rule:
+**failure can occur despite multiple clear messages**.
+
+The issue is not lack of signal.
+It is later state change at the receiver.
+
+---
+
+# Judgment is described as tearing the kingdom from the centre
+
+The declared consequence is:
+**I will tear/rend the kingdom from you**
+→ give it to a servant.
+
+But:
+- not during Solomon's own lifetime;
+- not the whole kingdom;
+- a remnant remains for David/Jerusalem.
+
+So the coming break has three variables:
+
+1. **delay** — transition deferred to next generation;
+2. **fragmentation** — kingdom divided;
+3. **remnant preservation** — Davidic/Jerusalem node remains.
+
+This is not total reset.
+
+It is:
+**majority transfer + protected remnant centre**.
+
+---
+
+# The peaceful all-round field reverses — adversaries arise on multiple sides
+
+Earlier:
+**rest on every side** enabled temple construction.
+
+Now:
+**adversaries are raised up**.
+
+This is a direct macro-state reversal:
+
+**surrounding rest**
+→ **surrounding counter-fields**.
+
+The narrative names:
+- Hadad;
+- Rezon;
+- Jeroboam.
+
+They arise from different spatial and historical sources.
+
+So fragmentation pressure is multi-origin.
+
+---
+
+# Hadad — a predecessor-war remnant survives outside the system and returns later as an adversary
+
+Hadad is described as:
+- royal seed in Edom;
+- a child during David/Joab's campaign;
+- escapes with servants;
+- travels through Midian/Paran;
+- reaches Egypt;
+- is given house, food, land;
+- marries into Pharaoh's family;
+- has a child raised in Pharaoh's house.
+
+Then:
+- hears David is dead;
+- hears Joab is dead;
+- asks to return to his own country.
+
+This is an extremely strong delayed-remnant pattern:
+
+**old conquest pressure**
+→ one child/royal remnant escapes
+→ external refuge preserves him
+→ remnant grows inside foreign royal system
+→ old threat nodes die
+→ remnant attempts return
+→ becomes adversarial pressure on successor state.
+
+This resembles many mythic “hidden child returns later” structures, but here it is political history/narrative.
+
+---
+
+# Egypt functions as an external holding/reservoir node
+
+This becomes even more important because Jeroboam will also flee to Egypt later in the same chapter.
+
+Thus Egypt performs a repeated function:
+
+### Hadad
+Davidic violence
+→ child flees to Egypt
+→ protected/grows
+→ returns after David/Joab deaths.
+
+### Jeroboam
+Solomon threatens him
+→ flees to Egypt
+→ remains until Solomon dies
+→ will return into the succession crisis in chapter 12.
+
+This is a remarkable recurrence.
+
+Egypt is not simply “enemy” or “origin of Exodus” here.
+
+It functions as:
+**external preservation reservoir for future adversarial branches that current centre cannot reach**.
+
+That should be tracked carefully across Kings.
+
+---
+
+# Rezon — a defeated-system remnant gathers and becomes a new rival centre
+
+Rezon:
+- flees his former lord Hadadezer;
+- gathers men;
+- becomes captain of a band;
+- moves to Damascus;
+- dwells there;
+- reigns there.
+
+So:
+
+**old defeated network remnant**
+→ escape
+→ recruits/gathers loose components
+→ settles
+→ new political centre emerges.
+
+This is almost a textbook:
+**fragment → aggregation → rival-centre formation** process.
+
+Again:
+a system's destroyed periphery can seed a future centre elsewhere.
+
+---
+
+# Jeroboam — the rival branch grows from inside Solomon's own labour system
+
+Jeroboam is:
+- Solomon's servant;
+- capable/industrious;
+- noticed by Solomon;
+- promoted over labour of the house of Joseph.
+
+So unlike Hadad and Rezon, he is not primarily an external remnant.
+
+He is:
+**a node produced and empowered by Solomon's own administrative system**.
+
+This is critically important.
+
+The same labour network that supports monumental centralisation produces:
+**a high-capacity internal node**
+that later becomes the rival centre of the northern kingdom.
+
+Thus:
+**centralisation can generate its own counter-centre from within its management structure**.
+
+This connects directly to the labour grievance of 1 Kings 12.
+
+---
+
+# Ahijah meets Jeroboam outside Jerusalem in an emptied paired field
+
+The scene is stripped down:
+
+- Jeroboam goes **out of Jerusalem**;
+- Ahijah meets him **on the way**;
+- they are **two alone in the field**;
+- there is a **new garment**.
+
+This is a highly controlled symbolic environment.
+
+The capital is left behind.
+
+The two-person field removes court witnesses and noise.
+
+The future kingdom geometry is then represented with one object.
+
+---
+
+# The new garment begins as one unbroken whole
+
+A **new garment/cloak** is present.
+
+Before the act:
+**one covering**
+→ one integrated object.
+
+This makes it an ideal physical analogue for:
+**one united kingdom**.
+
+The prophecy then does not merely speak of division.
+
+It **performs** division.
+
+---
+
+# One whole covering is torn into twelve discrete pieces
+
+Ahijah takes the garment and:
+**tears it into twelve pieces**.
+
+This is one of the strongest representational transformations in the Bible so far:
+
+**one continuous surface**
+→ violent tear
+→ **twelve discrete units**.
+
+The future political state is made visible before it occurs.
+
+This is a full:
+**representation → future topology**
+interface.
+
+---
+
+# Ten pieces are transferred to Jeroboam
+
+Jeroboam is told:
+**take ten pieces**.
+
+The majority of the torn whole is therefore assigned away from the Davidic line.
+
+Process:
+
+**one system**
+→ fragmentation
+→ majority pieces transferred to new centre
+→ minority/remnant retained around old centre.
+
+This predicts not equal bifurcation but **asymmetric division**.
+
+---
+
+# Critical arithmetic/text control — twelve pieces do not reduce cleanly to ten plus one
+
+The text speaks of:
+- twelve pieces;
+- ten assigned to Jeroboam;
+- “one tribe” retained for Davidic son/Jerusalem.
+
+That superficially leaves an unaccounted piece.
+
+Later tribal-political conventions involving Judah/Benjamin/Levi and the rhetorical use of “one tribe” are debated.
+
+Do **not** erase the tension by silently inventing a perfect 10+2 mapping.
+
+Correct research record:
+
+**12-piece symbolic whole**
+→ **10-piece majority explicitly assigned**
+→ **one-tribe David/Jerusalem remnant explicitly named**
+→ arithmetic/political compression remains textually non-simple.
+
+This is exactly the sort of attractive numerical geometry that requires restraint.
+
+---
+
+# Garment ownership is itself textually/syntactically ambiguous
+
+The Hebrew pronouns make it difficult to know with certainty whether the “new garment” is:
+- Jeroboam's;
+- Ahijah's.
+
+Kerry Sonia argues that Ahijah tears his **own** garment, reading the act through calamity-mourning practice.
+
+Other scholarship has taken the garment differently.
+
+Therefore:
+**the identity of the garment-owner is not secure enough to build symbolism on “Jeroboam's clothing” specifically.**
+
+The secure action is:
+**a new garment present in the two-person field is torn into twelve pieces as symbolic action.**
+
+---
+
+# Garment tearing repeats an older kingship topology with greater resolution
+
+Compare 1 Samuel 15:
+
+Saul grasps Samuel's robe
+→ robe tears
+→ Samuel interprets:
+**kingdom torn from Saul**.
+
+Now 1 Kings 11:
+
+prophetic figure deliberately tears new garment
+→ not just “torn”
+but
+**torn into twelve pieces**
+→ majority physically assigned to future ruler.
+
+This is a major development of the same symbolic grammar:
+
+### Saul
+**tear = kingdom removed**.
+
+### Solomon/Jeroboam
+**tear + piece-count + piece-transfer = kingdom removed and reconfigured**.
+
+The representation becomes more detailed as the political structure becomes more complex.
+
+---
+
+# Compare Tamar's torn garment — same surface action, different process meaning
+
+Tamar:
+**garment torn by victim**
+→ hidden violence becomes publicly visible.
+
+Ahijah:
+**garment intentionally torn by prophet**
+→ future political fragmentation becomes visible before occurrence.
+
+Therefore:
+**torn clothing is not one fixed symbol**.
+
+It can encode:
+- catastrophe already suffered;
+- transfer of authority;
+- future division;
+- mourning.
+
+Again, relationship + phase determine meaning.
+
+---
+
+# Majority split does not eliminate the Davidic “lamp” node
+
+The retained remnant is explained so David will have:
+**a lamp in Jerusalem**.
+
+This carries forward the “lamp of Israel” language applied to David in 2 Samuel 21.
+
+Now the lamp is not simply David's living body.
+
+It becomes:
+**continued Davidic line at Jerusalem**.
+
+This is another shift:
+
+**person as lamp**
+→ **dynastic remnant/city-line as lamp**.
+
+The continuity function survives even after the larger field is torn away.
+
+---
+
+# Jeroboam is offered a parallel “house” structure
+
+Ahijah says that if Jeroboam obeys,
+a **sure/lasting house** will be built for him,
+**as for David**.
+
+This is important.
+
+The coming political structure is not:
+**one real house + one meaningless breakaway fragment**.
+
+The northern branch is offered the possibility of its own durable dynastic structure.
+
+So the future geometry contains:
+**two possible houses**.
+
+That duality becomes the major north/south problem in Section 36.
+
+---
+
+# Solomon attempts to close the rival branch physically
+
+After the prophecy:
+Solomon seeks to kill Jeroboam.
+
+Jeroboam:
+- arises;
+- flees to Egypt;
+- remains there until Solomon dies.
+
+This repeats a long pattern:
+
+**centre detects future rival**
+→ attempts elimination
+→ rival exits field
+→ survives in external refuge
+→ waits for centre transition.
+
+Again:
+**metric separation preserves future political possibility.**
+
+---
+
+# Solomon's reign closes with the future split already represented but not yet executed
+
+Solomon:
+- remains king for forty years in the received chronology;
+- dies;
+- Rehoboam succeeds.
+
+At the moment Section 35 ends:
+
+**political surface still appears one kingdom**
+but
+**future topology has already been revealed as torn**.
+
+This is a crucial timeline distinction:
+
+**represented future state**
+precedes
+**material/political realization**.
+
+Section 36 will begin when the actual field catches up to the representation.
+
+---
+
+# SECTION 35C continuous geometry/effect timeline — 1 Kings 9–11
+
+## Phase HW — completed sacred centre receives conditional permanence warning
+
+temple + palace complete
+→ second divine appearance
+→ fidelity condition
+→ possible throne continuity **or** land/house ruin.
+
+**Effect:** fixed architecture remains reversible/conditional.
+
+---
+
+## Phase HX — physical completion does not equal terminal state
+
+mobile tent
+→ fixed temple
+→ cloud filling
+→ warning that temple may still be cast away.
+
+**Effect:** no built enclosure is automatically final.
+
+---
+
+## Phase HY — transferred territory changes value under receiver inspection
+
+twenty cities assigned to Hiram
+→ Hiram sees them
+→ dislikes them.
+
+**Effect:** value is observer/system-relative, not fixed by transfer.
+
+---
+
+## Phase HZ — central power projects through distributed fixed infrastructure
+
+capital
+→ walls / fortified cities / store cities / chariot cities.
+
+**Effect:** centre extends control through specialized stationary nodes.
+
+---
+
+## Phase IA — one city undergoes destruction → transfer → rebuilding
+
+Gezer:
+Egyptian conquest/burning
+→ royal dowry transfer
+→ Solomon rebuilds.
+
+**Effect:** fixed location can pass through multiple system identities.
+
+---
+
+## Phase IB — labour system contains distinct temporal/status classes
+
+permanent bond-service
+versus
+rotational Israelite levy/offices.
+
+**Effect:** load geometry must be tracked by duration/status, not treated as one category.
+
+---
+
+## Phase IC — centre opens long-range maritime carrier loop
+
+Jerusalem/system
+→ Ezion-geber port
+→ ships + Hiram sailors
+→ Ophir
+→ gold returns.
+
+**Effect:** resource field expands from land network into distant sea loop.
+
+---
+
+## Phase ID — fame moves outward before foreign ruler moves inward
+
+Solomon report
+→ distant Sheba centre
+→ Queen travels to source.
+
+**Effect:** information flow triggers bodily/material convergence.
+
+---
+
+## Phase IE — two sovereign centres converge for testing without merger
+
+Queen + Solomon
+→ questions/answers
+→ observation
+→ reciprocal gifts
+→ Queen returns home.
+
+**Effect:** convergence can be temporary, dialogical and non-assimilative.
+
+---
+
+## Phase IF — remote report is tested by direct observation
+
+heard claim
+→ skepticism
+→ travel
+→ sight
+→ confidence updated upward.
+
+Hiram:
+inspection updated value downward.
+
+**Effect:** direct evidence can revise prior model in either direction.
+
+---
+
+## Phase IG — observer reads centre through surrounding field order
+
+house / table / seating / servants / apparel / service / worship inspected.
+
+**Effect:** centre state is inferred from organization of adjacent network.
+
+---
+
+## Phase IH — dialogical exchange gives way to impersonal accumulation
+
+named Queen exchange ends
+→ anonymous annual gold / merchants / fleets / rulers flow inward.
+
+**Effect:** relational network shifts toward one-way concentration.
+
+---
+
+## Phase II — repeated periodic resource pulses coexist
+
+monthly district supply
++ monthly labour rotation
++ annual gold
++ three-year fleet cycle.
+
+**Effect:** mature centre is sustained by superimposed temporal rhythms.
+
+---
+
+## Phase IJ — ascent to throne is laterally framed
+
+six steps
++ bilateral lion figures
+→ one elevated throne.
+
+**Effect:** central ascent is marked by repeated paired lateral guardians.
+
+---
+
+## Phase IK — abundance changes local value
+
+silver becomes like stones.
+
+**Effect:** resource saturation alters scarcity/value relation.
+
+---
+
+## Phase IL — military/wealth accumulation creates Deuteronomic fault-line
+
+gold + horses + chariots + Egypt trade
+→ prosperity
+but
+parallel royal-law warnings become increasingly relevant.
+
+**Effect:** the same accumulation can be read as capability and as destabilizing overreach.
+
+---
+
+## Phase IM — heart wholeness reverses into multi-directional attachment
+
+dedication ideal:
+whole heart.
+
+late Solomon:
+heart turned / not whole.
+
+**Effect:** political fragmentation is preceded by internal relational fragmentation.
+
+---
+
+## Phase IN — central sanctuary is surrounded by alternative cult nodes
+
+one temple centre
+→ multiple high places around Jerusalem.
+
+**Effect:** centralized sacred topology becomes pluralized before political split.
+
+---
+
+## Phase IO — repeated warning fails at receiver
+
+two divine appearances
++ explicit command
+→ later noncompliance.
+
+**Effect:** signal repetition does not guarantee stable state if receiver orientation changes.
+
+---
+
+## Phase IP — surrounding rest reverses into surrounding adversaries
+
+rest on every side
+→ Hadad / Rezon / Jeroboam counter-fields.
+
+**Effect:** stability field changes polarity from supportive/quiet to oppositional.
+
+---
+
+## Phase IQ — old-war remnant survives in foreign reservoir
+
+Hadad child
+→ escapes Davidic destruction
+→ Egypt
+→ grows under Pharaoh
+→ old rulers die
+→ return impulse/adversary.
+
+**Effect:** defeated-system remnant can survive externally and recur in later phase.
+
+---
+
+## Phase IR — loose remnant aggregates into new centre
+
+Rezon flees
+→ gathers men
+→ occupies Damascus
+→ reigns.
+
+**Effect:** scattered fragment can self-organize into rival centre.
+
+---
+
+## Phase IS — central administration produces its own counter-centre
+
+Jeroboam promoted over Joseph labour
+→ gains capacity/position
+→ later rival king.
+
+**Effect:** internal management network can incubate future system bifurcation.
+
+---
+
+## Phase IT — future topology is represented outside capital in a two-person field
+
+Jeroboam leaves Jerusalem
+→ Ahijah meets him alone
+→ new garment becomes model.
+
+**Effect:** complex national future compressed into simple local representation.
+
+---
+
+## Phase IU — one continuous covering becomes twelve discrete pieces
+
+new garment
+→ tear
+→ 12 pieces.
+
+**Effect:** whole system represented as fragmentable surface.
+
+---
+
+## Phase IV — majority pieces transfer to new centre while remnant is preserved
+
+10 pieces → Jeroboam.
+David/Jerusalem retains one-tribe/lamp language.
+
+**Effect:** asymmetric fragmentation with protected remnant, not total destruction.
+
+---
+
+## Phase IW — number-map remains imperfect and must stay unresolved
+
+12 pieces
+≠ cleanly stated 10 + 1.
+
+**Effect:** symbolic arithmetic cannot be “repaired” merely to fit a preferred model.
+
+---
+
+## Phase IX — older tear grammar becomes a more detailed partition grammar
+
+Saul robe:
+tear = kingdom removed.
+
+Ahijah garment:
+tear + 12 pieces + transfer = kingdom reconfigured.
+
+**Effect:** same symbolic process gains higher representational resolution.
+
+---
+
+## Phase IY — “lamp” shifts from person to remnant dynasty/city
+
+David protected as lamp
+→ later Davidic Jerusalem line kept as lamp.
+
+**Effect:** continuity function can migrate from body to lineage/place.
+
+---
+
+## Phase IZ — rival branch is offered its own durable house
+
+Jeroboam conditional obedience
+→ promised sure house.
+
+**Effect:** one former kingdom is about to support two potential dynastic structures.
+
+---
+
+## Phase JA — Egypt again preserves a future adversarial branch
+
+Solomon threatens Jeroboam
+→ Jeroboam flees Egypt
+→ survives until Solomon dies.
+
+**Effect:** external refuge holds a political branch in latency until centre transition.
+
+---
+
+## Phase JB — represented split precedes realized split
+
+Solomon dies with kingdom still formally whole
+but
+garment model already shows fragmentation.
+
+**Effect:** informational/symbolic future-state can precede material state transition.
+
+---
+
+# What 1 Kings 9–11 adds to the master Bible/Vardath timeline
+
+141. **A fixed sacred centre can be real and functioning yet explicitly conditional and capable of later ruin.**
+142. **Completion of a structure does not make it a terminal state; mature systems can de-centralise or collapse later.**
+143. **Direct observation can revise a remote report either upward or downward; evidence testing must not be confirmation-only.**
+144. **A centre can extend itself through distributed stationary infrastructure and separate long-range mobile carrier networks at the same time.**
+145. **Two sovereign centres can converge temporarily for information/material exchange and then separate without one absorbing the other.**
+146. **A mature central system can run multiple nested periodic cycles simultaneously: monthly, annual and multi-year.**
+147. **The order around a centre can function as evidence of the centre's state.**
+148. **Extreme resource inflow changes local value and can shift a system from exchange toward accumulation.**
+149. **Solomon's narrative explicitly moves from “whole heart” to “turned/not whole heart,” making internal fragmentation precede external political fragmentation.**
+150. **One centralized sacred node can be undermined by proliferation of alternative nearby nodes before political borders change.**
+151. **Repeated accurate signals do not guarantee compliance; receiver-state is a separate variable from message clarity.**
+152. **A field of rest can reverse into a field of adversaries from several spatial and historical directions.**
+153. **A remnant created by an earlier conquest can survive in an external refuge and reappear against a successor regime.**
+154. **A dispersed remnant can recruit, settle and become a new centre elsewhere.**
+155. **A highly centralized administrative/labour system can generate its own internal rival node.**
+156. **Egypt functions repeatedly in this arc as an external preservation/holding node for political branches that later return after a centre transition.**
+157. **A complex future national state can be compressed into one manipulated object before the event occurs.**
+158. **One whole covering can be deliberately partitioned into many discrete pieces to model political fragmentation.**
+159. **The coming kingdom split is asymmetric: majority transfer plus protected remnant rather than equal halving or total reset.**
+160. **The twelve-piece garment must remain text-critically/numerically honest: the explicit 10-piece transfer + one-tribe remnant does not create a simple perfect arithmetic map.**
+161. **The robe/garment tearing grammar recurs across Saul, Tamar and Jeroboam contexts, but the meaning changes by phase: authority loss, damage made visible, mourning, or future partition.**
+162. **The “lamp” continuity function can migrate from a protected individual to a dynastic/city remnant.**
+163. **A former single kingdom can contain the possibility of two parallel “houses,” each conditionally durable.**
+164. **Represented/symbolic future geometry can exist before the material system has actually entered that state.**
+
+---
+
+# SECTION 35 — 1 KINGS 1–11 COMPLETE
+
+## Book-block geometry/effect summary
+
+The Solomon block moves through an especially clear sequence:
+
+**old biological centre weakens**
+→ two rival succession fields form
+→ David's explicit authorization collapses ambiguity
+→ Solomon descends to Gihon
+→ anointing/horn/public response activates new centre
+→ rival field dissolves through sound/information
+→ old liabilities are cleared/reassigned
+→ new centre asks for discrimination capacity
+→ two-women case demonstrates wholeness-preserving diagnosis
+→ administration maps space into monthly cycles
+→ surrounding rest activates temple-building branch
+→ materials and labour converge from distributed zones
+→ noisy transformation occurs outside while sacred assembly occurs inside
+→ nested temple enclosure is constructed
+→ inner mirrored cherub pair spans wall-to-wall and meets in centre
+→ outer named bronze pillar pair frames the threshold
+→ one Sea rests on 12 supports arranged as four directional triples
+→ fixed and mobile water nodes coexist
+→ old portable sacred infrastructure is brought upward into fixed house
+→ cloud fills completed house and blocks normal human service
+→ prayer defines temple as directional interface rather than total container
+→ second divine appearance makes the apparently permanent house explicitly conditional
+→ Solomon's network expands through cities, fleets, merchants and foreign rulers
+→ Queen of Sheba temporarily converges for direct testing/reciprocal exchange
+→ accumulation intensifies
+→ military/wealth/Egypt connections grow
+→ Solomon's heart ceases to be whole
+→ alternative cult nodes proliferate
+→ adversaries arise from old remnants, external regrouping and internal administration
+→ Ahijah models the future by tearing one new garment into twelve pieces
+→ majority pieces are assigned to Jeroboam while a Davidic/Jerusalem lamp-remnant remains
+→ Jeroboam is preserved in Egypt until Solomon's death
+→ the block ends with the kingdom still formally whole but its next geometry already represented as torn.
+
+---
+
+## Section 35 high-level pair / two-force taxonomy
+
+### Rival pair
+**Adonijah / Solomon**  
+Two succession centres competing for one throne.
+
+### Confirming pair
+**Bathsheba / Nathan**  
+Two-message intervention collapses succession ambiguity.
+
+### Diagnostic pair
+**two women / one living child**  
+Two mirrored claims resolved by preserve-whole versus accept-split response.
+
+### Cooperative construction pair
+**Solomon / Hiram**  
+Two centres exchange complementary resources/capabilities.
+
+### Threshold pair
+**Jachin / Boaz**  
+Two separated named verticals frame one central passage.
+
+### Converging inner pair
+**two cherubim**  
+Mirrored equal figures span opposite walls and meet at centre.
+
+### Directional support array
+**four groups of three oxen**  
+Outward-facing 3×4 support under one Sea.
+
+### Static/mobile water pair
+**one Sea / ten wheeled lavers**.
+
+### Sovereign exchange pair
+**Solomon / Queen of Sheba**  
+Question/answer, inspection, reciprocal gifts, separation.
+
+### Fragmentation pair-state
+**whole garment / torn pieces**  
+One surface becomes multiple future political units.
+
+### Emerging dual-house pair
+**Davidic house / potential Jeroboam house**  
+One kingdom prepares to become two dynastic structures.
+
+---
+
+## Section 35C number / timing register
+
+Record without forcing:
+- second divine appearance after temple/palace completion;
+- **20 years** for the two major houses/building phase;
+- **20 cities** given to Hiram;
+- Ophir cargo in Kings: **420 talents gold**;
+- Queen of Sheba gift: **120 talents gold**;
+- annual gold intake: **666 talents**;
+- throne: **6 steps**, **12 lions** on the steps, plus the pair beside the seat;
+- merchant fleet pulse: **once every 3 years**;
+- chariots: **1,400**;
+- horsemen: **12,000**;
+- wives/concubines: **700 + 300** in MT;
+- Hadad/Joab Edom notice: **six months** in the received text;
+- garment: **12 pieces**, **10 given** to Jeroboam;
+- Solomon reign: **40 years** in the received chronology.
+
+Controls:
+- do not read 666 through Revelation until Revelation is actually reached;
+- do not force 12 garment pieces into a clean 10+2 scheme when the received speech explicitly uses 10 + one-tribe remnant language;
+- enormous royal wealth/harem numbers may have literary/rhetorical functions and should not automatically be treated as precise economic statistics.
+
+---
+
+## Section 35C textual / historical / scholarly controls
+
+- The second temple warning may reflect Deuteronomistic theological framing of later destruction/exile; its literary function inside Solomon's story is secure even where compositional dating is debated.
+- The meaning/location of **Cabul** and the historicity of the twenty-city transfer remain debated.
+- Ophir's location is uncertain; suggested regions range widely across Arabia, Africa and beyond.
+- The Queen of Sheba is anonymous in Kings. There is no contemporaneous inscription that securely identifies the specific woman in the story.
+- Sheba/Saba and South Arabian trade connections are historically plausible and later epigraphically attested, but this does not prove the personal visit as described.
+- Later Jewish, Christian, Islamic and Ethiopian Queen-of-Sheba traditions should be studied in their own roadmap contexts rather than imported backward into 1 Kings 10.
+- “No spirit remained in her” is an astonishment idiom, not evidence of literal spirit extraction.
+- 666 talents is textual royal-wealth data here; later symbolic reuse must be tested later rather than presumed.
+- The relationship between 1 Kings 10's horses/gold/Egypt material and Deuteronomy 17 is widely recognized, but scholars differ over whether chapters 3–10 are already strongly critical or only become negative retrospectively through chapter 11.
+- Solomon's many wives are given a theological role by the narrator; the women should not be reduced to mere mechanical “forces.” The process abstraction concerns the centre's multiplied relational/cultic attachments.
+- 1 Kings 11 is compositionally complex; scholarship commonly identifies joined traditions about Solomon's apostasy, Hadad/Rezon, and Jeroboam/Ahijah.
+- Hadad and Rezon preserve memories of counter-political forces whose exact historical reconstruction is uncertain.
+- Ahijah's garment ownership is syntactically ambiguous; Kerry Sonia argues for Ahijah's own cloak and a calamity-mourning dimension.
+- The **twelve pieces / ten tribes / one tribe** language is not arithmetically simple. Preserve the received tension.
+- The “one tribe” retained for David/Jerusalem is rhetorical/political language and must not be silently harmonized with every later Judah/Benjamin/Levi tribal configuration.
+- Jeroboam's conditional “sure house” deliberately echoes Davidic dynasty language and is important to the coming north/south duality.
+
+### Sources logged for Section 35C
+
+Primary:
+- Mechon-Mamre, **1 Kings 9–11**.
+
+Scholarly controls:
+- Kyle H. Keimer, work on **the historical geography of 1 Kings 9:11–14** and Cabul.
+- Sarah Malena, work on interregional exchange, Solomon's building economy and long-distance networks.
+- André Lemaire, work on Sheba/South Arabian trade and the older Queen-of-Sheba tradition.
+- Steven Weitzman, literary treatment of the Queen of Sheba as skeptical/test-bearing visitor.
+- modern scholarship on Arabian queens and the limits of identifying the biblical Queen historically.
+- **“Has the Narrator Come to Praise Solomon or to Bury Him? Narrative Subtlety in 1 Kings 1–11.”**
+- David Jobling, **“Forced Labor: Solomon's Golden Age and the Question of Literary Representation.”**
+- Yutaka Ikeda, work on Solomon's horse and chariot trade.
+- scholarship on Solomon as wisdom-king under Torah / Deuteronomy 17.
+- Sean E. Cook, **Told and Retold: The Solomon Narratives in the Context of Tanak**.
+- Alison Joseph, work on Deuteronomistic historiographical poetics and the compositional shaping of 1 Kings 11.
+- Kerry M. Sonia, **“Torn Garments and Calamity Mourning in 1 Kings 11:30.”**
+- scholarship on Ahijah's symbolic action and the torn-cloak representation of the coming kingdom division.
+- Amos Frisch and related structural studies of 1 Kings 1–12.
+
+**Section 35 complete.**
+
+### Next canonical roadmap section
+
+**Section 36 — 1 Kings 12–22**
+
+Priority process sequence:
+- the garment's represented split becomes actual political split;
+- Rehoboam/Jeroboam as two simultaneous royal centres;
+- labour burden as the trigger at Shechem;
+- one assembly asks for load reduction;
+- harsh answer breaks the field;
+- Adoram/forced-labour interface is stoned;
+- Rehoboam retreats to Jerusalem;
+- military reconnection attempt is stopped by prophetic information;
+- Jeroboam fears return-flow toward Jerusalem;
+- two calves / two sanctuary nodes at Bethel and Dan reroute pilgrimage;
+- one former centralized worship route becomes a two-endpoint northern system;
+- man of God / old prophet tests message fidelity and route obedience;
+- Ahijah's earlier promise turns into house-judgment;
+- repeated north/south dynastic replacement cycles;
+- Elijah/Ahab/Jezebel conflict;
+- drought and upper-flow closure;
+- widow/flour/oil household loop;
+- dead child / ascent / return of life;
+- Carmel as two-offering/two-force test;
+- fire descends, water consumed;
+- small cloud rises from sea and rain returns;
+- Horeb wind/earthquake/fire versus small voice;
+- vineyard seizure;
+- Ramoth-gilead battle and disguised king;
+- competing prophetic message-fields.
+
