@@ -1,0 +1,75 @@
+name: Clean current EXTRA research duplicates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research-staging/cleanup-extra-research-current.trigger'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extra-research-append
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove known duplicate research blocks
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("book/EXTRA-RESEARCH.md")
+          text = path.read_text(encoding="utf-8")
+
+          def remove_earlier_duplicate(text, earlier_marker, later_marker):
+              a = text.find(earlier_marker)
+              b = text.find(later_marker, a + len(earlier_marker)) if a >= 0 else -1
+              if a < 0 or b < 0:
+                  raise SystemExit(f"Expected duplicate markers not found: {earlier_marker!r} / {later_marker!r}")
+              # Keep the later/full block. Remove the earlier block only.
+              return text[:a] + text[b:]
+
+          # Keep the later, more complete Ezekiel 12–20 block.
+          marker_b1 = "# SECTION 53 progress B1 — Ezekiel 12–20"
+          positions = []
+          start = 0
+          while True:
+              i = text.find(marker_b1, start)
+              if i < 0:
+                  break
+              positions.append(i)
+              start = i + len(marker_b1)
+          if len(positions) != 2:
+              raise SystemExit(f"Expected exactly two B1 blocks before cleanup, found {len(positions)}")
+          text = text[:positions[0]] + text[positions[1]:]
+
+          # Keep the fuller Ezekiel 21–24 block; remove the partial 21–22 staging block.
+          partial = "# SECTION 53 progress B2a-1 — Ezekiel 21–22"
+          full = "# SECTION 53 progress B2a — Ezekiel 21–24"
+          a = text.find(partial)
+          b = text.find(full)
+          if a < 0 or b < 0 or not a < b:
+              raise SystemExit("Expected partial and full B2a blocks not found in the expected order")
+          text = text[:a] + text[b:]
+
+          path.write_text(text, encoding="utf-8")
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f research-staging/cleanup-extra-research-current.trigger
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Remove duplicate EXTRA research blocks"
+            git push
+          fi
