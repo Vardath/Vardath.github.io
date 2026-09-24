@@ -60799,3 +60799,1516 @@ Scholarly controls:
 - altar/sacrifice closes plague;
 - book ends at another threshing floor, deliberately echoing the Ark rupture at the earlier threshing floor in chapter 6.
 
+
+
+---
+
+# SECTION 34 progress E — 2 Samuel 21–24
+## The mirrored closing structure: famine/remnant burial ↔ census/plague/threshing-floor halt, warrior remnants around twin poems, and a miniature replay of the whole Samuel geometry
+
+## Critical chronology control — chapters 21–24 are not simply “what happened next”
+
+The final four chapters of 2 Samuel form a special literary conclusion containing six large units:
+
+**A — 21:1–14** famine / Saulide bloodguilt / exposed bodies / reburial / land restored  
+**B — 21:15–22** four Philistine giant-war episodes  
+**C — 22:1–51** David's large deliverance song  
+**C′ — 23:1–7** David's “last words”  
+**B′ — 23:8–39** mighty-men traditions and list  
+**A′ — 24:1–25** census / plague / threshing floor / altar / land restored.
+
+This A–B–C–C′–B′–A′ arrangement is widely recognized in scholarship. Recent work argues that the unit functions not merely as a miscellaneous appendix but as a reflective miniature of Samuel as a whole.
+
+Therefore:
+**do not place every event in chapters 21–24 after chapter 20 in literal clock order.**
+
+For the Vardath timeline, preserve both:
+1. **literary order**, because the mirrored arrangement is itself meaningful;
+2. **event chronology**, where recoverable, without forcing uncertain sequencing.
+
+This is a major methodological point:
+**literary geometry can itself be part of the evidence without being identical to historical chronology.**
+
+---
+
+# 2 Samuel 21:1–14 — unresolved predecessor violence persists into the successor land-state
+
+The opening state is a **three-year famine**.
+
+David seeks the cause and the narrative attributes it to:
+- Saul;
+- Saul's “bloody house”;
+- violence against the Gibeonites protected by an older oath.
+
+The process chain is:
+
+**earlier regime action**
+→ regime ends
+→ obligation remains unresolved
+→ later land/population enters failure state
+→ successor centre investigates predecessor debt.
+
+Succession therefore does **not** erase old obligations.
+
+For the master model:
+**new states can inherit unresolved effects from prior states even after the prior centre is gone.**
+
+---
+
+# A local royal act is represented as a land-wide consequence
+
+The story scales the problem through several levels:
+
+**Saul's act**
+→ **Saul's house**
+→ **broken covenant relation**
+→ **famine across land**.
+
+This is theological-political causation in the text, not a physical mechanism.
+
+Do not translate this directly into “dynastic energy causes weather.”
+
+The secure pattern is:
+**local authority action is narratively linked to distributed environmental/population consequence.**
+
+---
+
+# Gibeonites reject material compensation and demand members of Saul's line
+
+David asks what will make amends.
+
+The Gibeonites reject:
+- silver;
+- gold.
+
+They request:
+**seven male descendants of Saul**.
+
+This is ethically horrific material involving inherited punishment.
+
+The safe process statement is:
+**a historic relational debt is converted into a demanded transfer from the predecessor lineage rather than ordinary wealth transfer.**
+
+---
+
+# One Saul-line branch is spared because an older covenant remains active
+
+David spares Mephibosheth son of Jonathan because of the oath between David and Jonathan.
+
+Two past commitments therefore intersect:
+
+1. Gibeonite covenant/bloodguilt claim;
+2. David–Jonathan oath protecting Jonathan's line.
+
+The current centre is constrained by both.
+
+Important rule:
+**past covenants can remain active long after the original actors' political phase ends.**
+
+---
+
+# Text-critical control — Michal/Merab is not a secure genealogical datum
+
+MT 2 Samuel 21:8 names **Michal** as mother of five sons of Adriel.
+
+That conflicts with:
+- 1 Samuel 18:19, where **Merab** is associated with Adriel;
+- 2 Samuel 6:23, where Michal has no child.
+
+Ancient witnesses vary and scholarship remains divided over the textual history.
+
+Some critical reconstructions prefer **Merab**; other scholars argue the transmission history is more complicated than a simple correction.
+
+Therefore:
+**do not build geometry, lineage theory or number-pattern claims from the mother-name in 21:8.**
+
+Secure datum:
+**five Saulide descendants through the Adriel-related daughter tradition, with mother-name uncertainty flagged.**
+
+---
+
+# Seven descendants are exposed together on a mountain at the opening of barley harvest
+
+The seven are:
+- handed over;
+- killed/exposed on a mountain;
+- fall together;
+- event occurs at the beginning of barley harvest.
+
+Raw geometry:
+
+**selected predecessor-house remnant**
+→ exposed high place
+→ seven bodies remain publicly exposed
+→ agricultural cycle proceeds beneath/around the event.
+
+Human execution remains primary; do not aestheticize it.
+
+---
+
+# Rizpah creates a sustained protective boundary around the dead
+
+Rizpah:
+- spreads sackcloth on a **rock**;
+- remains from harvest opening until water comes from heaven;
+- keeps away:
+  - birds of the air by day;
+  - beasts of the field by night.
+
+Her vigil creates:
+
+**dead/exposed remnant**
+↔ **Rizpah**
+↔ **air/day scavengers + ground/night scavengers**.
+
+Day and night divide threat direction.
+
+Recent scholarship emphasizes that her vigil makes otherwise exposed and politically disposable lives publicly undeniable, forcing attention back onto the bodies and their proper burial.
+
+---
+
+# Water from heaven marks the transition out of exposure
+
+The vigil continues until:
+**water is poured from heaven**.
+
+Whether this was the normal first rain months later or an unusual earlier rain is debated.
+
+Do not force a precise number of months.
+
+The secure transformation is:
+
+**dry/famine/exposure interval**
+→ **water from above**
+→ gathering/burial phase.
+
+---
+
+# Information about Rizpah's vigil changes royal behaviour
+
+David hears what Rizpah has done.
+
+Then he:
+- retrieves Saul and Jonathan's bones from Jabesh-Gilead;
+- gathers the remains of the seven;
+- brings the predecessor-house remains together;
+- buries Saul and Jonathan in the ancestral tomb at Zela.
+
+Thus:
+
+**one woman's sustained vigil**
+→ information reaches centre
+→ centre changes treatment of predecessor remains
+→ scattered/exposed remnants are gathered
+→ ancestral enclosure restored.
+
+This is one of the clearest **remnant-recollection** sequences in Samuel.
+
+---
+
+# Saul and Jonathan undergo a second burial journey
+
+Their earlier route was:
+
+**Gilboa death**
+→ Philistine display at Beth-shan
+→ Jabesh retrieval
+→ Jabesh burial.
+
+Now:
+
+**Jabesh burial**
+→ David retrieves bones
+→ Benjamin/Zela
+→ ancestral tomb of Kish.
+
+So political death does not immediately produce final material closure.
+
+Remains can be:
+**recovered**
+→ **reburied**
+→ **reintegrated into a deeper lineage enclosure**.
+
+---
+
+# The land-state closes only after the burial sequence
+
+The text ends:
+**after that God was entreated for the land**.
+
+The famine is not narratively closed immediately after the seven deaths.
+
+Between execution and land-restoration stand:
+- Rizpah's vigil;
+- recovery of Saul/Jonathan;
+- gathering and burial.
+
+That sequence has generated substantial ethical and theological debate.
+
+But structurally it is secure:
+**remnant treatment is part of the closure process.**
+
+---
+
+# 2 Samuel 21:15–22 — David changes from frontline champion into protected continuity node
+
+In renewed Philistine fighting:
+David goes out and becomes exhausted.
+
+A giant-warrior threatens him.
+
+Abishai rescues him.
+
+David's men then swear:
+**you shall not go out with us again**
+lest
+**the lamp of Israel be quenched**.
+
+This is a major role transformation.
+
+Earlier:
+**David = frontline champion**.
+
+Now:
+**David = continuity/lamp centre whose preservation outweighs direct battlefield contribution**.
+
+This matches chapter 18, where the field keeps David behind because he is worth many ordinary fighters.
+
+---
+
+# Giant-killing capability becomes distributed
+
+The next episodes assign giant-war victories to:
+- Abishai;
+- Sibbecai;
+- Elhanan;
+- Jonathan son of Shimea.
+
+Broad process:
+
+**single heroic centre**
+→ **distributed warrior network**.
+
+A function once concentrated in David is now performed by supporting nodes.
+
+This is a clear example of:
+**capability decentralisation as the centre matures/ages.**
+
+---
+
+# Text-critical control — Elhanan/Goliath/Lahmi is unstable
+
+MT 2 Samuel 21:19 says:
+**Elhanan ... struck Goliath the Gittite**.
+
+1 Samuel 17 assigns Goliath's death to David.
+
+1 Chronicles 20:5 instead has Elhanan strike **Lahmi / the brother of Goliath**, depending on reconstruction.
+
+Scholars propose several textual histories:
+- Samuel preserves an older Elhanan-Goliath tradition;
+- Chronicles harmonized it;
+- Samuel suffered scribal corruption;
+- both passages contain transmission problems involving “Bethlehemite,” “Lahmi,” “brother of,” and “weaver.”
+
+Therefore:
+**do not use the identity of this giant-slayer as a secure chronological anchor.**
+
+Secure process family:
+**multiple giant-war episodes are distributed across David's warrior network.**
+
+---
+
+# Six fingers + six toes is explicit, but not proof of a numerical mechanism
+
+One Gath warrior is described with:
+- six fingers on each hand;
+- six toes on each foot;
+- twenty-four digits total.
+
+Record it as a striking biological/number datum.
+
+But status remains:
+**high-interest marker, low-confidence cosmological correspondence unless repeated function appears elsewhere.**
+
+---
+
+# 2 Samuel 22 — the literary core expands David's rescue into full cosmic storm geometry
+
+The song is framed as a retrospective summary of deliverance from:
+- enemies;
+- Saul.
+
+It is not one literal weather report.
+
+It compresses many life-events into **mythopoetic cosmic rescue imagery**.
+
+Genre control is essential.
+
+---
+
+# Initial state — centre enclosed by death-water/net forces
+
+The speaker describes:
+- waves/breakers of death surrounding;
+- floods overwhelming;
+- cords of Sheol surrounding;
+- snares confronting.
+
+Raw shape:
+
+**centre**
+inside
+**encircling water/death/net field**.
+
+This is the poem's compressed low-state.
+
+---
+
+# Signal travels upward
+
+The trapped speaker calls.
+
+The cry reaches the divine temple/hearing.
+
+Sequence:
+
+**low enclosed centre**
+→ signal upward
+→ upper receiver
+→ macro-scale response.
+
+---
+
+# Earth and upper foundations shake together
+
+The response begins:
+- earth shakes;
+- foundations of heaven tremble in 2 Samuel's form.
+
+Psalm 18 differs at this point with hills/mountains.
+
+The Samuel poem therefore places:
+**lower ground**
+and
+**upper structural foundations**
+into one disturbed field.
+
+This is poetic theophany language, not an engineering description.
+
+---
+
+# The upper domain bends downward
+
+The poem says:
+**he bowed/bent the heavens and came down**.
+
+Darkness is beneath his feet.
+
+This is a literal poetic vertical transformation:
+
+**upper layer**
+→ bends downward
+→ divine warrior descends toward lower conflict field.
+
+It strongly resembles layered-world imagery at the process level, but scholarship places it in ancient storm-theophany/divine-war tradition.
+
+---
+
+# Winged/wind carrier and dark water-cloud enclosure
+
+The divine figure:
+- rides a cherub;
+- flies on wind/wings;
+- makes darkness a pavilion;
+- is surrounded by waters/thick clouds.
+
+Process image:
+
+**descending active centre**
+inside
+**mobile dark atmospheric/watery enclosure**.
+
+This is one of the closest literary matches in Samuel to a moving sky-carrier image.
+
+But it remains poetry.
+
+---
+
+# Sound + luminous projectiles scatter the hostile field
+
+Then:
+- thunder = voice from heaven;
+- arrows are sent;
+- lightning scatters/confuses enemies.
+
+Process:
+
+**upper sound signal**
++
+**directional luminous/projectile release**
+→ **lower field dispersal**.
+
+Peer-reviewed work on Psalm 18/2 Samuel 22 notes that storm imagery, wings, bow/arrows and royal battle empowerment belong to a wider ancient Near Eastern divine-war image complex.
+
+So this is culturally grounded imagery, not uniquely hidden Vardath encoding.
+
+---
+
+# Water cover is displaced and lower foundations become visible
+
+At the rebuke/blast:
+- channels of sea appear;
+- foundations of world are uncovered.
+
+Transformation:
+
+**covered lower structure**
+→ force/wind/breath
+→ water displaced
+→ hidden channels/foundations exposed.
+
+This is important for the Vardath process-map because it is an explicit:
+**covering-water → uncovering-foundation**
+sequence.
+
+But keep the poetic control attached.
+
+---
+
+# Rescue is vertical extraction from many waters into broad space
+
+The poem says:
+**he sent from on high**
+→ **took me**
+→ **drew me out of many waters**
+→ **brought me into a broad place**.
+
+That gives a very clean sequence:
+
+**enclosed/submerged**
+→ reach from above
+→ extraction
+→ expanded/open state.
+
+This is one of the strongest compression→release transformations found so far.
+
+---
+
+# Mobility expands after rescue
+
+Later:
+- lamp lights darkness;
+- troop is run through;
+- wall is scaled;
+- feet become deer-like;
+- speaker stands on high places;
+- steps are enlarged;
+- feet do not slip.
+
+The body-route transformation is consistent:
+
+**dark**
+→ light.
+
+**barrier**
+→ crossed.
+
+**constricted/unstable footing**
+→ widened/stable route.
+
+---
+
+# Pursuit polarity reverses
+
+At first:
+**speaker is surrounded and threatened**.
+
+Later:
+**speaker pursues**
+→ enemies turn backs
+→ enemies fall.
+
+Large-scale reversal:
+
+**target/enclosed field**
+→ intervention
+→ **dominant pursuing field**.
+
+---
+
+# Personal rescue is extended into dynastic time
+
+The song ends with loyalty/steadfast love to:
+**David and his seed forever**.
+
+Thus one body's rescue is projected into:
+**lineage continuity through time**.
+
+This reconnects directly with chapter 7's “house” geometry.
+
+---
+
+# 2 Samuel 23:1–7 — the next central poem is the calm/growth state after the storm
+
+The “last words” describe the ideal ruler through:
+- morning light;
+- sunrise;
+- cloudless morning;
+- brightness after rain;
+- grass springing from earth.
+
+This gives:
+
+**rain**
+→ clearing/light
+→ growth from ground.
+
+Placed beside chapter 22, the central pair reads:
+
+**storm / descent / rescue / battle**
+→
+**clear morning / after-rain growth / ordered house**.
+
+This is highly relevant to the user's catastrophe→new-beginning model.
+
+But again, it is **royal poetic imagery**, not direct physical observation.
+
+---
+
+# Stable post-transition order is represented as an established house
+
+David speaks of:
+**my house**
+as ordered/established by enduring covenant.
+
+So the stable state after the storm is not merely one surviving body.
+
+It is:
+**ordered continuing house through time**.
+
+That is exactly the same temporal “house” transformation established in chapter 7.
+
+---
+
+# Thorn-state is the inverse of growth-state
+
+The poem contrasts healthy growth with thorn-like worthless material:
+- thrust away;
+- unsafe to grasp directly;
+- handled with iron/spear;
+- burned in place.
+
+The contrast is:
+
+**good order → light + rain + growth**.
+
+**hostile thorn state → repulsion + mediated contact + fire**.
+
+Do not convert this literary contrast into a literal reset mechanism.
+
+---
+
+# 2 Samuel 23:8–39 — heroism is stored in a distributed network, not only the king
+
+The mighty-men traditions preserve many separate capability nodes.
+
+The mature system is:
+**centre + distributed high-capacity network**.
+
+This reinforces chapter 21's decentralisation of giant-killing.
+
+---
+
+# One warrior holds the centre of a resource field while the larger group flees
+
+Shammah stands in:
+**the middle of a lentil field**.
+
+Others flee.
+
+He remains and defends the plot.
+
+Process:
+
+**distributed field retreats**
+→ one node occupies local centre
+→ holds resource patch
+→ outcome reverses.
+
+A literal **centre-of-field hold** motif.
+
+---
+
+# Bethlehem water episode — tiny high-value cargo is retrieved through a hostile field
+
+David longs for water from:
+**well of Bethlehem by the gate**.
+
+Three warriors:
+- break through Philistine field;
+- reach well;
+- draw water;
+- return through hostile field.
+
+Geometry:
+
+**centre in stronghold**
+→ desire for small cargo behind enemy boundary
+→ three-person penetration team
+→ gate/well node reached
+→ water extracted
+→ cargo returned.
+
+This is a miniature carrier/raid cycle.
+
+---
+
+# Centre refuses to consume cargo acquired through extreme subordinate risk
+
+David does not drink the water.
+
+He equates it with:
+**blood/lives risked**.
+
+He pours it out to YHWH.
+
+So:
+
+**high-cost cargo reaches centre**
+→ centre refuses private consumption
+→ cargo redirected into offering.
+
+This is the inverse of ordinary central accumulation.
+
+---
+
+# Opponent tools can be reversed locally
+
+Benaiah traditions include:
+- going down into a pit;
+- killing a lion there in snow;
+- taking an Egyptian's spear;
+- killing him with his own spear.
+
+This repeats an existing Samuel pattern:
+
+**enter opponent zone**
+→ seize opponent tool
+→ reverse tool against source.
+
+Compare David and Goliath's sword.
+
+This is a stable warrior-story motif, not unique cosmological evidence.
+
+---
+
+# Uriah closes the list
+
+The mighty-men list ends with:
+**Uriah the Hittite**.
+
+This matters because David engineered Uriah's death in chapter 11.
+
+The final network-memory includes the man the centre betrayed.
+
+That prevents the concluding hero-list from becoming uncomplicated royal glorification.
+
+It reminds us:
+**centre success can hide costs borne by the supporting network.**
+
+---
+
+# 2 Samuel 24 — the whole population is converted into a centralised number
+
+David orders:
+**go through all tribes from Dan to Beer-sheba**
+→ number the people
+→ return the total.
+
+This transforms:
+
+**many living people distributed across land**
+→ traversal
+→ counting
+→ **one abstract numerical representation delivered to centre**.
+
+This is one of the most important information transformations in Samuel.
+
+The king explicitly wants:
+**to know the number/sum**.
+
+---
+
+# Census route forms a land-wide circuit
+
+Joab/captains:
+- leave Jerusalem;
+- cross Jordan;
+- move through Gad/Gilead;
+- northward;
+- around Sidon/Tyre regions;
+- south through Judah;
+- reach Beer-sheba;
+- return Jerusalem.
+
+MT gives:
+**nine months and twenty days**.
+
+Some place-names/readings are difficult.
+
+The secure process is:
+**whole-land traversal → central return**.
+
+---
+
+# Census totals are textually unstable and should not be used numerologically
+
+2 Samuel gives:
+- Israel 800,000;
+- Judah 500,000.
+
+1 Chronicles gives:
+- Israel 1,100,000;
+- Judah 470,000,
+with additional differences/exclusions.
+
+Other witnesses vary further.
+
+Therefore:
+**do not use these totals as cosmological numbers.**
+
+The process is more secure than the figures:
+**living field → counted abstraction → centre.**
+
+---
+
+# The centre becomes internally disturbed after the count is complete
+
+After the count:
+**David's heart smites him**.
+
+Thus:
+
+**field successfully measured**
+→ information received
+→ centre enters guilt/disturbance.
+
+The gain in numerical control produces loss of internal stability.
+
+---
+
+# Three consequence branches are offered
+
+Gad presents:
+1. famine;
+2. fleeing enemies;
+3. plague.
+
+MT Samuel gives **seven years** famine.
+Greek and Chronicles support **three years**.
+
+So the famine number is unstable.
+
+Do not use seven here as a secure cycle datum.
+
+Structurally the branch menu is:
+
+**long environmental scarcity**
+or
+**medium human pursuit**
+or
+**short distributed plague**.
+
+These are three qualitatively different pressure topologies.
+
+---
+
+# Plague traverses the same field that was just counted
+
+The census covers:
+**Dan to Beer-sheba**.
+
+The plague kills across:
+**Dan to Beer-sheba**.
+
+That pairing is narratively powerful:
+
+**count the field**
+→ **judgment traverses the field**.
+
+The population abstracted into a number becomes a population suffering materially.
+
+This is a major distinction:
+**representation of a field is not the same as lived reality within the field.**
+
+---
+
+# The destroying hand approaches Jerusalem and is stopped
+
+The messenger/angel stretches out a hand toward Jerusalem.
+
+Then comes:
+**enough**
+→ **stay your hand**.
+
+The destroying messenger is at:
+**Araunah's threshing floor**.
+
+This creates a striking book-level hand motif closure.
+
+Samuel repeatedly uses hands to:
+- take;
+- kill;
+- grasp;
+- throw;
+- transfer;
+- restrain.
+
+At the end:
+**the destructive hand itself is inhibited.**
+
+---
+
+# David reverses the census logic by offering the centre/house for the field
+
+David says:
+**I sinned**
+→ **these sheep, what have they done?**
+→ let the hand be against **me and my father's house**.
+
+Earlier:
+**centre abstracts field into number**.
+
+Now:
+**centre offers itself/house instead of field**.
+
+This is a major ethical and structural reversal:
+**from control over population**
+to
+**responsibility for population**.
+
+---
+
+# Final crisis occurs at a threshing floor — a strong mirror of chapter 6
+
+Chapter 6:
+**Ark moving inward**
+→ threshing floor
+→ Uzzah reaches hand
+→ death/breach
+→ movement stops.
+
+Chapter 24:
+**destruction moving inward toward Jerusalem**
+→ threshing floor
+→ destroying hand extended
+→ hand is stopped
+→ altar closes plague.
+
+This is one of the strongest spatial reversals in the whole book.
+
+### Early reign
+**sacred centre approaches**
+→ human hand crosses boundary
+→ death.
+
+### Final panel
+**destructive force approaches**
+→ destroying hand is restrained
+→ sacrifice/altar
+→ life-preserving closure.
+
+Same site-type.
+Opposite direction and outcome.
+
+---
+
+# The final sacred node is purchased, not seized
+
+Gad tells David to build an altar at the threshing floor.
+
+Araunah offers:
+- oxen;
+- tools/wood;
+- site/use.
+
+David refuses a costless offering.
+
+He insists on **buying**.
+
+After a book full of:
+- taking;
+- conquest;
+- seizure;
+- forced transfer,
+
+the final sacred-site transition is marked by:
+**explicit compensated exchange**.
+
+That is a meaningful end-state distinction.
+
+---
+
+# Agricultural material is repurposed into crisis-closure material
+
+At the threshing floor:
+- oxen become offerings;
+- threshing tools/yokes become fuel;
+- agricultural node becomes altar-site.
+
+So:
+
+**food-processing place**
+→ **destructive halt point**
+→ **sacrificial closure node**.
+
+Same place/material.
+Different phase/function.
+
+---
+
+# The outer frame closes with the same land-restoration formula as chapter 21
+
+2 Samuel 21 ends:
+**God was entreated for the land**.
+
+2 Samuel 24 ends:
+**YHWH was entreated for the land**
+→ plague stopped.
+
+The A/A′ frame is therefore explicit:
+
+### A
+land afflicted by predecessor-house debt
+→ remnant crisis
+→ gathering/burial
+→ **land restored**.
+
+### A′
+land/population afflicted during current king's crisis
+→ threshing-floor halt
+→ altar
+→ **land restored**.
+
+This is not accidental-looking adjacency.
+It is a deliberate literary enclosure.
+
+---
+
+# The final four chapters as nested geometry
+
+The closing structure can be represented as:
+
+**A — land catastrophe / unresolved kingship**
+→ **B — distributed human defenders**
+→ **C — cosmic storm/rescue**
+→ **C′ — clear-after-rain stable house**
+→ **B′ — distributed human defenders**
+→ **A′ — land catastrophe / kingship crisis resolved at altar**.
+
+For the Vardath project this is important because the literary enclosure itself has a nested transformation:
+
+outer layer:
+**land crisis / atonement / restoration**.
+
+middle layer:
+**distributed force / champions**.
+
+core:
+**cosmic violent transition**
+→ **clear-growth stable order**.
+
+Then the structure unfolds outward in reverse.
+
+This is exactly the kind of nested temporal/process geometry the larger Bible map is looking for.
+
+---
+
+# SECTION 34E continuous geometry/effect timeline — 2 Samuel 21–24
+
+## Phase EK — predecessor debt persists through regime change
+
+Saulite violence/oath breach
+→ Saul regime gone
+→ later famine
+→ David investigates inherited cause.
+
+**Effect:** successor state carries unresolved predecessor obligation.
+
+---
+
+## Phase EL — multiple inherited covenants constrain present routing
+
+Gibeonite claim
++
+David–Jonathan oath
+→ Saul-line descendants transferred
+while Jonathan's Mephibosheth spared.
+
+**Effect:** old commitments remain simultaneously active.
+
+---
+
+## Phase EM — exposed remnant receives sustained boundary protection
+
+seven bodies on mountain
+→ Rizpah on rock
+→ birds repelled by day
+→ beasts repelled by night.
+
+**Effect:** one vigil preserves remnant integrity across upper/lower threat cycles.
+
+---
+
+## Phase EN — water from above opens gathering phase
+
+exposure
+→ water from heaven
+→ royal attention
+→ predecessor bones gathered
+→ ancestral reburial.
+
+**Effect:** scattered remnants re-enter one lineage enclosure.
+
+---
+
+## Phase EO — land restoration follows remnant closure
+
+burial complete
+→ deity entreated for land.
+
+**Effect:** crisis closes only after remnant treatment completes.
+
+---
+
+## Phase EP — ageing centre becomes protected lamp
+
+David weakens in battle
+→ subordinate rescues
+→ field forbids future frontline exposure.
+
+**Effect:** centre shifts from combat role to continuity role.
+
+---
+
+## Phase EQ — capability decentralises
+
+giant-war threats
+→ multiple warriors defeat them.
+
+**Effect:** heroic function distributes across support network.
+
+---
+
+## Phase ER — attractive heroic identity is textually unstable
+
+Elhanan/Goliath/Lahmi traditions conflict.
+
+**Effect:** process survives even when names/event identity cannot be treated as secure.
+
+---
+
+## Phase ES — cosmic poem begins with encircled low centre
+
+death-waves/floods/cords/snares surround speaker.
+
+**Effect:** compressed/enclosed state.
+
+---
+
+## Phase ET — signal moves upward
+
+distress call
+→ upper temple hears.
+
+**Effect:** information crosses vertical separation before force does.
+
+---
+
+## Phase EU — upper and lower structures destabilise and upper domain descends
+
+earth shakes
++ upper foundations tremble
+→ heavens bend
+→ divine warrior comes down.
+
+**Effect:** vertically separated domains become actively coupled.
+
+Control:
+storm-theophany poetry.
+
+---
+
+## Phase EV — moving atmospheric enclosure forms around descending force
+
+cherub/wind flight
++ darkness
++ waters/clouds.
+
+**Effect:** mobile active centre represented inside dark watery sky enclosure.
+
+---
+
+## Phase EW — upper signal/projectile field disperses opponents
+
+thunder
++ arrows
++ lightning
+→ enemies scatter/confuse.
+
+**Effect:** sound/luminous force produces field decoherence in poetic model.
+
+---
+
+## Phase EX — covered channels/foundations are exposed
+
+rebuke/breath
+→ sea channels visible
+→ world foundations uncovered.
+
+**Effect:** overlying cover displaced, hidden lower structure revealed.
+
+---
+
+## Phase EY — centre is extracted from many waters
+
+force from high
+→ reaches down
+→ takes speaker
+→ draws him from waters
+→ releases him into broad place.
+
+**Effect:** enclosure/compression reverses into open expansion.
+
+---
+
+## Phase EZ — post-rescue mobility expands
+
+darkness lit
+→ wall crossed
+→ high places reached
+→ steps enlarged
+→ footing stabilised.
+
+**Effect:** constrained route becomes wide/stable route.
+
+---
+
+## Phase FA — pursuit polarity reverses
+
+surrounded target
+→ pursuing victor.
+
+**Effect:** field direction reverses after intervention.
+
+---
+
+## Phase FB — one-body rescue becomes seed/time continuity
+
+David saved
+→ promise extends to seed.
+
+**Effect:** temporal lineage carries the stable state onward.
+
+---
+
+## Phase FC — storm is followed by clear-after-rain growth
+
+rain
+→ clear morning/light
+→ grass emerges.
+
+**Effect:** violent transition resolves into generative post-event state.
+
+---
+
+## Phase FD — stable state is an ordered house
+
+house/covenant established.
+
+**Effect:** persistence is represented as ordered structure across time rather than immortal individual body.
+
+---
+
+## Phase FE — mature regime stores force in distributed warriors
+
+mighty men hold fields, penetrate enemy lines, reverse weapons.
+
+**Effect:** capability remains distributed around centre.
+
+---
+
+## Phase FF — small carrier group penetrates hostile field for water
+
+stronghold
+→ three warriors
+→ enemy field
+→ Bethlehem gate-well
+→ water retrieved
+→ return.
+
+**Effect:** tiny high-value cargo crosses a large hostile topology.
+
+---
+
+## Phase FG — centre refuses private consumption of high-cost cargo
+
+water reaches David
+→ not consumed
+→ poured out.
+
+**Effect:** centre redirects rather than absorbs resource acquired through extreme subordinate risk.
+
+---
+
+## Phase FH — whole living population becomes an abstract count
+
+land traversed
+→ people counted
+→ totals returned to Jerusalem.
+
+**Effect:** distributed living field compressed into one representation.
+
+---
+
+## Phase FI — representation destabilises centre
+
+count received
+→ David's heart strikes him.
+
+**Effect:** knowledge/control gain produces internal instability.
+
+---
+
+## Phase FJ — three different consequence geometries become selectable branches
+
+scarcity
+or
+pursuit
+or
+plague.
+
+**Effect:** one decision point contains qualitatively different future-pressure topologies.
+
+---
+
+## Phase FK — plague traverses the same field just counted
+
+Dan–Beer-sheba count-space
+→ Dan–Beer-sheba death-space.
+
+**Effect:** abstract field representation is answered by concrete field loss.
+
+---
+
+## Phase FL — destructive hand is inhibited at capital boundary
+
+hand stretches toward Jerusalem
+→ “enough”
+→ hand stops
+→ threshing floor.
+
+**Effect:** book-long hand motif terminates in restraint of destructive transfer.
+
+---
+
+## Phase FM — centre offers itself for field
+
+David accepts guilt
+→ asks that hand fall on him/house instead of people.
+
+**Effect:** population-control logic reverses into centre responsibility/substitution.
+
+---
+
+## Phase FN — final threshing floor mirrors the earlier Ark threshing floor
+
+chapter 6:
+sacred centre moving inward
+→ threshing floor
+→ human hand reaches
+→ death.
+
+chapter 24:
+destructive force moving inward
+→ threshing floor
+→ destructive hand stopped
+→ altar/life.
+
+**Effect:** same site-type carries opposite end-state transitions.
+
+---
+
+## Phase FO — final sacred node is acquired by compensated exchange
+
+Araunah offers
+→ David insists on paying.
+
+**Effect:** terminal sacred-site transfer is negotiated rather than seized.
+
+---
+
+## Phase FP — one material site changes role by phase
+
+threshing floor
+→ crisis boundary
+→ altar.
+
+**Effect:** place identity remains while functional state transforms.
+
+---
+
+## Phase FQ — outer mirror closes
+
+altar/offering
+→ deity entreated for land
+→ plague ends.
+
+**Effect:** chapter 24 closes with the same land-restoration formula that closes chapter 21.
+
+---
+
+# What 2 Samuel 21–24 adds to the master Bible/Vardath timeline
+
+86. **A successor system can inherit unresolved predecessor obligations that later appear at land/population scale.**
+87. **Past covenants can remain simultaneously active constraints after regime change.**
+88. **Exposed or scattered predecessor remnants can undergo later recollection and a second, deeper closure.**
+89. **A mature centre can cease being the main combat node and become the protected continuity/lamp node.**
+90. **Functions first concentrated in a heroic centre can redistribute across a capable network.**
+91. **Textual instability often attaches to exactly the names/numbers most tempting for pattern-building; process must be separated from uncertain identity.**
+92. **2 Samuel 22 gives a complete poetic transformation: water/death enclosure → upward signal → upper-domain descent → storm/projectile field → foundations exposed → extraction from waters → broad-place release.**
+93. **2 Samuel 23:1–7 immediately follows with a contrasting stable state: clear morning after rain → growth from earth → ordered enduring house.**
+94. **The central poem-pair therefore has a strong transition grammar: violent cosmic intervention → cleared/generative successor condition.**
+95. **A living distributed population can be compressed into a central numerical representation by a whole-land traversal.**
+96. **The same field can then be traversed by a destructive process, exposing the difference between numerical abstraction and lived population cost.**
+97. **The final destructive hand is explicitly restrained at the edge of Jerusalem, giving the long Samuel hand motif a closure in inhibition rather than discharge.**
+98. **David's final crisis reverses centre-over-field control into centre-for-field responsibility.**
+99. **The book's two threshing-floor crises form a strong mirror: early sacred approach + human hand + death versus final destructive approach + stopped hand + altar/life.**
+100. **A site's material identity can remain constant while function changes radically by phase: agricultural floor → crisis boundary → altar.**
+101. **The closing four chapters themselves form a nested process geometry: land crisis → distributed warriors → cosmic transition → stable house/growth → distributed warriors → land crisis resolved.**
+102. **Literary sequence and event chronology must be tracked separately; the closing architecture may encode interpretation rather than literal clock order.**
+
+---
+
+# SECTION 34 — 2 SAMUEL COMPLETE
+
+## Book-level geometry/effect summary
+
+Across 2 Samuel, the main process is not simply “David becomes king.”
+
+The deeper transformation is:
+
+**collapsed predecessor centre**
+→ competing successor fields
+→ gradual convergence
+→ fixed political centre
+→ portable sacred centre brought inward
+→ proposed permanent architecture redirected into temporal dynasty
+→ outward expansion and inward material concentration
+→ predecessor remnant integration
+→ remote-centre power abuse
+→ violence folds inward into dynastic house
+→ internal branches fragment
+→ gate/interface is captured
+→ fixed centre evacuates and becomes mobile/distributed
+→ hidden communications preserve the loyal field
+→ rival centre enters terrain and is suspended/killed
+→ centre must reoccupy public gate to restore coherence
+→ national reintegration nearly immediately re-splits
+→ one-city siege is resolved by target discrimination
+→ closing appendix folds whole reign into a mirrored structure of land crisis / distributed force / cosmic transition / ordered house / distributed force / land restoration.
+
+The most important Vardath-process findings from 2 Samuel are therefore:
+
+- **centre and field are separate variables**;
+- **political, sacred, geographic and loyal-network centres can occupy different places**;
+- **adjacency is functional, not merely spatial**;
+- **support coupling versus support withdrawal determines survival**;
+- **gates, walls, roads, wells, rivers and threshing floors repeatedly act as state-transition interfaces**;
+- **information can move a system before bodies move**;
+- **false information can create temporary false topology**;
+- **a system can centralise, fragment, re-centralise and fragment again**;
+- **a stable “house” is repeatedly temporal/dynastic rather than merely architectural**;
+- **violent transition is repeatedly followed by a new configuration rather than simple restoration of the old one**;
+- **the closing poem pair gives the strongest cosmic literary analogue so far to destructive transition followed by clear-after-rain generative order**;
+- **the book ends by stopping a moving destructive hand at a threshing floor and converting that boundary into an altar, mirroring the earlier threshing-floor breach during the Ark's inward movement**.
+
+---
+
+## Section 34E number / timing register
+
+Record without forcing:
+- famine: **three years, year after year**;
+- Gibeonite demand: **seven** Saulide descendants;
+- giant-war weapon weight: **300 shekels bronze** in one notice;
+- unusual warrior: **six fingers + six toes on each side, twenty-four total digits**;
+- mighty-men traditions include **three**, **thirty**, **thirty-seven**, and large heroic kill totals;
+- Bethlehem water retrieval uses **three** warriors;
+- census traversal: **nine months and twenty days** in MT;
+- census totals vary substantially between Samuel, Chronicles and other witnesses;
+- punishment branches: famine duration **seven years MT / three years Greek + Chronicles**, plus **three months** pursuit and **three days** plague;
+- plague loss: **70,000** in Samuel/Chronicles tradition;
+- Araunah purchase: **50 shekels silver** in 2 Samuel versus **600 shekels gold** for the site in 1 Chronicles 21.
+
+Because several of the most striking numbers are textually divergent, the closing chapters are especially strong evidence for the rule:
+**never treat a number as cosmologically significant until its text is stable and its process repeats independently.**
+
+---
+
+## Section 34E textual / scholarly controls
+
+- 2 Samuel 21–24 is best treated as a deliberately arranged conclusion with uncertain internal chronology, not simple post-20 continuation.
+- The execution of Saul's descendants is ethically and legally difficult; scholarship includes readings that see Rizpah's vigil as a critique of royal violence rather than simple ratification.
+- The duration from barley harvest to “water from heaven” cannot be fixed with confidence.
+- 2 Samuel 21:8 has a real **Michal/Merab** textual problem.
+- 2 Samuel 21:19 has a major **Elhanan/Goliath/Lahmi** textual problem.
+- The six-finger/six-toe notice is explicit but should not be inflated into number cosmology.
+- 2 Samuel 22 is virtually parallel to Psalm 18 but with notable wording differences; neither form should automatically be declared secondary in every line.
+- The storm/descent imagery belongs to ancient Near Eastern theophany/divine-war poetic traditions; it is a strong process analogue but weak evidence for literal cosmological mechanics.
+- “Foundations of heaven,” “channels of sea,” “foundations of world,” “many waters,” and “broad place” are poetic cosmic images.
+- 2 Samuel 23's “last words” are a literary royal poem; the clear-after-rain growth sequence is secure imagery but not physical chronology.
+- Mighty-men kill totals and roster counts should not be treated as precise historical population statistics.
+- Census totals in 2 Samuel 24 and 1 Chronicles 21 differ significantly.
+- The identity of the census “sin” is debated; proposals include royal pride, counting taboo, sanctuary/census legislation, temple-related interpretation and broader Israelite guilt.
+- 2 Samuel 24:1 and 1 Chronicles 21:1 differ in how the inciting agency is described.
+- The famine option is **seven years in MT Samuel** but **three years in the Greek and Chronicles**; no cosmological use.
+- Araunah/Ornan naming and purchase-price details differ between Samuel and Chronicles.
+- Chronicles explicitly connects the threshing floor to the future temple site; 2 Samuel itself ends with altar/plague cessation and does not narrate Solomon's temple construction here.
+- The two outer narratives end with closely parallel “entreated for the land” formulas, strongly supporting the literary enclosure.
+
+### Sources logged for Section 34E
+
+Primary:
+- Mechon-Mamre, **2 Samuel 21–24**.
+
+Scholarly controls:
+- Barbara Deutschmann, **“Rizpah: Grieving the Ungrievable (2 Sam. 21:1–14)”**.
+- Ekaterina E. Kozlova, work on maternal grief and Rizpah.
+- scholarship on **God Appeased by Homicide? 2 Samuel 21:1–14** and ancient Near Eastern plague/oath parallels.
+- Jeremy M. Hutton, **“The Nameless Daughter of Saul”**, for Michal/Merab textual complexity.
+- Kaspars Ozolins, **“Killing Goliath? Elhanan the Bethlehemite and the text of 2 Samuel 21:19.”**
+- Beat Weber, work on 2 Samuel 22 / Psalm 18 in their canonical contexts.
+- **“Psalm xviii: theophany, epiphany empowerment”**, for storm, wing and bow imagery in ancient Near Eastern context.
+- scholarship on 2 Samuel 22/Psalm 18's storm-theophany and divine-war imagery.
+- Grace Po-Chee Ko, **“2 Samuel 21–24: A Theological Reflection on Israel's Kingship.”**
+- Herbert H. Klement, work on **structure, context and meaning in the Samuel conclusion**.
+- **2 Samuel 21–24 as Mise en Abyme**, for the closing unit as a miniature/reflection of the whole Samuel narrative.
+- Song-Mi Suzie Park, **“Census and Censure: Sacred Threshing Floors and Counting Taboos in 2 Samuel 24.”**
+- Alexander Rofé, work comparing **2 Samuel 24 and 1 Chronicles 21**.
+- recent scholarship on the Chronicles census reworking and the Araunah/Ornan threshing-floor tradition.
+
+**Section 34 complete.**
+
+### Next roadmap action
+
+Continue with the **first unfinished section after 2 Samuel** in the master 88-book roadmap, preserving the same protocol:
+
+- primary text in manageable blocks;
+- figures/names recorded but not allowed to dominate the geometry;
+- two-force/pair structures tracked;
+- process/transformation mapped against Vardath Cosmology;
+- numbers/dates retained but text-critically controlled;
+- literary geometry separated from literal chronology;
+- every completed block appended immediately so no research is lost.
+
