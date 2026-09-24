@@ -31614,3 +31614,359 @@ Scholarly:
 
 **Section 23 remains in progress.**  
 Next under anti-repeat protocol: **Leviticus 11–15 — clean/unclean state transitions, exclusion/re-entry, two-bird purification pair, washing/waiting cycles, and whether the system behaves more like moral sorting or temporary access-state management.**
+
+
+## SECTION 23 progress B — Leviticus 11–15: clean/unclean as temporary access-state management; two birds split into death/release routes
+
+### Anti-repeat check
+
+Section 23A is saved.  
+No Leviticus 11–15 progress existed elsewhere in the ledger.  
+Continuing only from the saved Nadab/Abihu checkpoint.
+
+### Clean / unclean is not simply good / evil
+
+Leviticus 11–15 repeatedly distinguishes:
+- **clean / pure**
+- **unclean / impure**
+
+But many impurity states arise through ordinary life:
+- contact with carcasses;
+- childbirth;
+- skin/scaly conditions;
+- bodily discharges;
+- menstruation.
+
+Therefore:
+**ritual impurity is not automatically moral guilt**.
+
+This is critical for our comparison method.
+
+The system behaves more like:
+**access/status regulation**
+than
+**permanent moral classification**.
+
+### State transitions are often reversible and timed
+
+A common pattern is:
+
+**clean**
+→ contact/event
+→ **unclean**
+→ wash/bathe
+→ wait until evening or a fixed number of days
+→ **clean again**.
+
+This is a true reversible state machine.
+
+For Vardath comparison:
+the useful analogy is **phase-dependent access status**, not sin/judgment.
+
+### Contact can propagate state
+
+Examples:
+- touching certain carcasses → unclean until evening;
+- carrying them may also require washing clothes;
+- sitting/lying on contaminated surfaces can transfer impurity;
+- bodily discharge can contaminate beds/seats/objects.
+
+So the system treats impurity as something that can:
+- spread through contact;
+- attach to people/objects;
+- require interruption and cleansing before re-entry.
+
+This is very close structurally to a **contagion/state-propagation model**.
+
+It is ritual law, not physical disease theory.
+
+### Time itself can restore eligibility
+
+Several states end:
+- at **evening**;
+- after **7 days**;
+- after washing;
+- after sacrifice.
+
+So access status depends on:
+**event + cleansing + elapsed phase**.
+
+This is important:
+the boundary is not just spatial.
+
+It is **temporal**.
+
+### Childbirth — state period differs by category
+
+Leviticus 12 assigns:
+- one timed impurity/purification sequence after a male birth;
+- a doubled period after a female birth.
+
+The male child is circumcised on **day 8**.
+
+This adds another genuine:
+**7 → 8 transition** around birth/covenant status.
+
+But the unequal postpartum periods are a ritual/legal distinction whose historical rationale remains debated.
+
+Do not derive cosmological polarity from male/female durations.
+
+### Skin/scaly condition — priest diagnoses boundary status, not simply illness
+
+Leviticus 13 repeatedly gives:
+- inspection;
+- possible isolation;
+- **7-day** waiting period;
+- reinspection;
+- clean/unclean decision.
+
+The priest functions as a **status classifier**.
+
+A suspect condition may remain:
+**undetermined**
+for a timed interval before final routing.
+
+This is similar to earlier “middle/holding state” structures:
+not every case is immediately binary.
+
+### Unclean person is moved outside camp
+
+A person declared severely unclean through `tzara'at` is placed:
+- **outside the camp**.
+
+So Leviticus again converts ritual state into geography:
+
+**eligible/clean → inside social-sacred zone**
+**unclean → outside boundary**.
+
+This is temporary exclusion when healing/restoration occurs.
+
+Do not equate outside camp with exile to another world.
+
+### Priest must go outside to inspect restoration
+
+Leviticus 14 reverses the direction:
+- the affected person is outside;
+- the **priest goes outside camp**;
+- priest confirms healing.
+
+Thus the authorized interface operator crosses outward to inspect whether the excluded person is ready for return.
+
+This is a controlled **centre→outside→return** movement.
+
+### Two-bird purification pair — one dies, one leaves alive
+
+For purification of the healed person:
+- **2 live clean birds** are taken;
+- plus cedar wood, crimson material, hyssop;
+- **bird 1 is slaughtered** over fresh/living water in an earthen vessel;
+- **bird 2 remains alive**;
+- the live bird is dipped together with other materials into the blood/water of the slain bird;
+- person is sprinkled **7 times**;
+- live bird is released into the open country.
+
+This is one of the strongest pair rituals in Leviticus.
+
+Raw pair geometry:
+
+**one matched pair begins together**
+→ **bird A = death / blood**
+→ **bird B = remains alive**
+→ B is brought into contact with A's blood + water
+→ purification transfer/sprinkling
+→ **B leaves outward into open land**.
+
+Pair classification:
+- **P1 matched pair from same starting class**
+- **P2 opposite fate pair**
+- **P7 complementary purification functions**.
+
+This strongly anticipates the two-goat structure of Leviticus 16.
+
+### One bird is not a substitute for the other
+
+Important distinction:
+the live bird does not simply “escape” while the other dies.
+
+It participates in the rite by:
+- contacting the blood/water mixture;
+- then being released.
+
+So the pair functions as:
+**death/purgation branch**
++
+**living/removal/release branch**.
+
+That is much more structurally specific than generic “one dies, one lives.”
+
+### Sevenfold sprinkling
+
+The healed person is sprinkled **7 times**.
+
+Then:
+- washes clothes;
+- shaves;
+- bathes;
+- may re-enter camp.
+
+But re-entry is staged rather than complete.
+
+### Camp return is not immediate full home return
+
+After first cleansing:
+- person can enter **camp**;
+- but remains outside own tent/home for **7 days**.
+
+On day 7:
+- shaves again;
+- washes;
+- bathes.
+
+On **day 8**:
+- presents offerings at Tent entrance.
+
+This gives a nested re-entry sequence:
+
+**outside camp**
+→ purification
+→ **inside camp but outside personal tent**
+→ 7-day interval
+→ second cleansing
+→ **day 8 sanctuary-facing completion**.
+
+This is one of the clearest examples yet of **graded re-entry**.
+
+### 7 → 8 restoration sequence
+
+For the healed person:
+
+**day 1 purification**
+→ **7-day transitional stay**
+→ **day 8 offering / restored ritual status**.
+
+This joins the corpus-wide 7→8 register.
+
+Again, do not assume one universal hidden meaning; here it is explicitly purification/re-entry timing.
+
+### House impurity — architecture can acquire status too
+
+Leviticus 14 extends clean/unclean status to a **house**.
+
+The process includes:
+- removing contents before diagnosis;
+- inspection;
+- closing/shutting house for **7 days**;
+- removing affected stones;
+- carrying removed material to an **unclean place outside the city**;
+- replacing stones/plaster;
+- if condition persists, entire house dismantled;
+- materials removed outside.
+
+This is important:
+**built structure itself can move through clean/unclean states**.
+
+The system does not only classify people.
+
+### House can be destroyed and rebuilt in parts
+
+Sequence:
+**suspect house**
+→ quarantine
+→ contaminated components removed
+→ replacement stones/material
+→ reinspection
+→ either restored clean
+or
+→ entire structure dismantled.
+
+This is a genuine **repair-or-decommission** logic.
+
+It is ordinary ritual architecture, not a world reset.
+
+### Two-bird rite repeats for the house
+
+If house is declared clean:
+the same symbolic complex reappears:
+- two birds;
+- one slaughtered;
+- blood + fresh water;
+- cedar/crimson/hyssop;
+- house sprinkled **7 times**;
+- live bird released.
+
+Thus:
+**person purification**
+and
+**house purification**
+use the same paired-death/release grammar.
+
+This is powerful evidence that the ritual represents a **state-processing template**, not a one-off story.
+
+### Bodily discharges — impurity network and timed reset
+
+Leviticus 15 regulates:
+- abnormal male discharge;
+- semen;
+- menstruation;
+- abnormal female bleeding.
+
+The repeated mechanics include:
+- contact-transfer;
+- washing clothes;
+- bathing;
+- waiting until evening;
+- counting **7 days** after some conditions cease;
+- later offering/re-entry.
+
+Again the strongest structural reading is:
+
+**body event**
+→ **temporary expanded contamination field**
+→ **contacts inherit state**
+→ **washing/time collapse field**
+→ **person returns to clean state**.
+
+### Vardath comparison — Leviticus 11–15
+
+Strong structural correspondences:
+1. Access status is **reversible**, not permanent.
+2. Status propagates through contact.
+3. Time/phase is part of the transition rule.
+4. Exclusion from central zone can be temporary.
+5. Re-entry can occur in **graded layers**, not all at once.
+6. Priest/operator crosses outward to inspect a returning participant.
+7. Two-bird rite divides one matched pair into **death branch + living release branch**.
+8. Same pair template can process both a **person** and a **house**.
+
+Controls:
+- impurity ≠ moral evil;
+- ritual impurity ≠ modern infectious disease model;
+- released bird is not a world traveller;
+- camp/outside camp are ritual-social zones, not future/past layers.
+
+### Number / pair register
+
+- common diagnostic interval: **7 days**.
+- healed-person transitional camp interval: **7 days**.
+- sanctuary-facing completion: **day 8**.
+- purification birds: **2**.
+- bird routes: **1 slaughtered / 1 released alive**.
+- sprinkling: **7 times**.
+- house quarantine: **7 days**.
+- male circumcision: **day 8**.
+- many transient contact states end at **evening**.
+
+### Sources logged
+
+Primary:
+- Leviticus 11–15.
+
+Scholarly:
+- “Leviticus' More Priestly Version of the Dietary Laws,” TheTorah.
+- “Biblical Purification: Was It Immersion?” TheTorah.
+- “Scapegoat: The Origins of the Crimson Thread,” TheTorah, for the explicit comparison of the two-bird and two-goat elimination rites.
+- Jacob Milgrom's purity/life-death model as discussed in modern Leviticus scholarship.
+- Sefaria, Leviticus 14.
+
+**Section 23 remains in progress.**  
+Next under anti-repeat protocol: **Leviticus 16–17 — Day of Atonement, two goats, paired lots, one inward sacrificial route versus one outward living route, both hands transferring collective wrongdoing, inner veil crossing, incense cloud, blood routes, outside-camp disposal, and the life/blood principle.**
