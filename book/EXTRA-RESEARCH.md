@@ -3280,48 +3280,6 @@ The research should proceed down Sections 1–96 and the pair register above, ap
 
 ---
 
-## 50. LIVE PROGRESS LOG — Section 1 begins (Genesis 1–3)
-
-**User instruction:** Begin the roadmap. At each progress update, append the assistant's reply to this file so the conversation/research state is not lost.
-
-**Assistant progress update:**
-
-> Starting **Section 1 — Genesis 1–3** now. I’m treating Adam/Eve as a real test case rather than assuming the answer: first I’ll separate the text into geometry, motion, pairing/splitting, boundary, water/tree/serpent roles, then compare Hebrew/Greek wording and later parallel traditions before deciding whether “two people = one underlying figure” actually fits. I’ll append this update and each subsequent progress reply to `book/EXTRA-RESEARCH.md` as we go.
-
-
-
-### Section 1 progress update A — Adam/Eve split finding
-
-> First strong result: **Adam/Eve is not merely a modern “maybe they were one figure” idea.** Genesis itself says the woman is built from the human’s *ṣēlāʿ*, a word that can mean a **side/flank**, and the pair are described as bone/flesh of one another and becoming “one flesh.” An ancient reading in *Genesis Rabbah 8:1* goes further: the first Adam is described as androgynous/two-faced and then **split into two sides**.
->
-> That does **not** mean Genesis treats Adam and Eve as one actor after the split—they speak and act separately afterward. But it gives us a much stronger structural model: **one primordial human/axis → division into complementary sides → two differentiated figures → potential reunion into one flesh**. That is exactly the sort of split/rejoin geometry we need to test against your lattice, rather than simply calling them “the same person.”
-
-**Sources logged:** Sefaria, *Bereshit Rabbah* 8:1; modern scholarly discussion of *ha-adam* and *ṣēlāʿ*; Genesis 2:21–24.
-
-
-
-### Section 1 progress update B — cosmic Adam / Squatter-Man precedent
-
-> A second finding is even closer to your Squatter-Man idea, but it is **later rabbinic interpretation, not stated in Genesis itself**: *Sanhedrin 38b* preserves a tradition that primordial Adam originally extended **from the earth to the firmament** and/or **from one end of the world to the other**, then was diminished after the transgression.
->
-> So ancient Jewish interpreters independently developed **both pieces we are testing**: (1) Adam as a cosmic-scale human spanning the world/heaven, and (2) Adam initially containing male/female sides that were separated. That combination is striking for your model: **cosmic axis-person → split into two complementary sides → reduced ordinary human state**. It still does not prove the lattice interpretation, but it means the giant axial/split-human reading has genuine ancient precedent rather than being something we are inventing now.
-
-**Sources logged:** Babylonian Talmud, *Sanhedrin* 38b; *Chagigah* 12a; *Bereshit Rabbah* 8:1 and related cosmic-Adam traditions.
-
-
-
-### Section 1 progress update C — Genesis 1–3 structural sequence
-
-> The whole Genesis 1–3 section is now resolving into a repeated **separate → branch → split → guard** pattern. The world begins dark over the deep; waters are divided into **above and below**, then lower waters gather so dry land appears. Genesis 2 adds water that can be read as **welling upward from the earth**, one Eden river that **divides into four**, and one human that is divided into male/female sides.
->
-> Genesis 3 then changes from opening/division to **closure**: the human reaches/takes at the central tree, loses access to the Tree of Life, is driven outward, and the route back is guarded by a fiery **turning/whirling** sword. So, within your model, Genesis 1–3 looks less like the destructive gate-opening event itself and more like a compressed **world re-ordering / axis-splitting / gate-closing sequence** following or surrounding such a transition. That distinction is important—I don’t want to force a full catastrophe into chapters that do not actually describe one.
-
-**Sources logged:** Genesis 1:1–10; Genesis 2:5–24; Genesis 3:1–24; NET notes on Genesis 2:6; Sefaria/NET notes on Genesis 3:24.
-
-
-
----
-
 ## 51. SECTION 1 COMPLETE — Genesis 1–3
 
 **Scope:** Genesis 1:1–3:24, with Hebrew-language checks, ancient Jewish interpretation, and the Vardath geometry test.
@@ -3804,52 +3762,6 @@ Special user hypothesis to test next:
 > Cain and Abel may somehow be the same figure / paired states of one underlying structure.
 
 
-
-### Section 1 final user-facing reply saved verbatim
-
-> Section 1 — Genesis 1–3 is complete. The strongest result is that Adam/Eve fits much better as **one primordial figure divided into complementary sides** than as “two names for the same actor”: Genesis gives the side/bone/flesh/one-flesh structure, and later Jewish interpretation explicitly preserves both a **two-sided Adam split into male/female** and a **cosmic Adam spanning earth to firmament**.
-> 
-> The larger Genesis 1–3 geometry is now logged as **separate → branch → split → guard**: upper/lower waters separate, land emerges, one Eden river branches into four, the primordial human is divided, then access to the central Tree of Life is closed behind a turning/flaming boundary. I’ve marked this as more like a **world-ordering / post-transition closure phase** than the full destructive gate-opening event.
-> 
-> Everything—including all three live progress replies, source cautions, failures, pair ratings, predictions, and the detailed Section 1 write-up—is appended to `book/EXTRA-RESEARCH.md`.
-> 
-> Next is **Section 2 — Genesis 4–5: Cain / Abel / Seth / Enoch**, with the specific test of whether Cain and Abel are split/opposed states of one underlying figure.
-
-
-
----
-
-## 57. LIVE PROGRESS LOG — Section 2 begins (Genesis 4–5)
-
-> Continuing with **Section 2 — Genesis 4–5**. I’m testing Cain/Abel/Seth as a sequence rather than just a murder story: **paired brothers → one removed → surviving marked/wandering figure → replacement child → two genealogical lines with repeated names → Enoch/Lamech recurrence**. The key question is whether this behaves like **split states of one underlying role**, or whether the text works better as distinct rival/successor figures. I’ll keep saving each progress update into `book/EXTRA-RESEARCH.md`.
-
-
-
-### Section 2 progress update A — crouching-at-the-door threshold image
-
-> The Cain/Abel section has produced a very specific threshold image I don’t want to miss: immediately before the murder, Genesis 4:7 says **“sin is crouching at the door”** and desires Cain, while Cain must master it. That gives us a **crouched entity/state positioned at a threshold** right inside the first brother-pair story. I’m checking the Hebrew and ancient Near Eastern background now, because some scholarship connects the “crouching” language with a threshold-demon concept; if that holds, it could be relevant to the Squatter-Man/gate imagery without needing Cain or Abel themselves to be literally the gate.
-
-
-
-### Section 2 progress update B — Cain/Abel polarity, Abel/Seth replacement, doubled genealogies
-
-> The pair test is becoming more precise. **Cain and Abel do not currently look like one figure split in the same way Adam/Eve do.** They look more like **opposed states whose roles partially transfer after the murder**: Cain begins as the fixed **worker of the ground**, Abel as the mobile **keeper of flocks**; once Abel is removed, Cain is cut off from productive ground and condemned to become a **fugitive/wanderer**. So the surviving grounded figure is forced into a mobile state after destroying the mobile brother.
->
-> The stronger “same figure somehow” evidence appears one step later: **Seth is explicitly given “instead of Abel.”** That makes **Abel → Seth** a genuine replacement/successor relation. And the two genealogies that follow contain striking doubled names—two Enochs, two Lamechs, and several closely parallel names—so Genesis itself may be preserving **alternative/reworked versions of a lineage**, exactly the sort of duplication we need to track.
-
-
-
-### Section 2 progress update C — mirrored genealogies / duplicated Enoch and Lamech
-
-> The genealogy is giving us a much stronger duplication test than Cain/Abel themselves. **Genesis 4 and Genesis 5 contain what many scholars regard as variant/reworked ancestral lists**: both have an **Enoch** and a **Lamech**, with several other names closely echoing one another. But the duplicated figures are given opposite-looking outcomes: Cain’s Enoch is tied to the **first city/enclosure**, while Seth’s Enoch **walks with God and disappears/is taken**; Cain’s Lamech culminates the violence pattern with **seventy-sevenfold vengeance**, while Seth’s Lamech lives **777 years** and fathers Noah, announcing expected relief from the cursed ground.
->
-> That is exactly the kind of thing your “same figure somehow” idea should focus on: not necessarily Cain = Abel, but **one traditional figure or lineage may have been split into two mirrored narrative lines—earth/city versus heaven/removal, violence versus renewal**. I’m treating this as one of the strongest duplication findings so far.
-
-**Research context logged:** John Day on the two Enochs and variant genealogical lists; Richard S. Hess on Lamech in both genealogies; David M. Carr on Genesis 4 formation; Genesis 4:17–24 and Genesis 5.
-
-
-
----
 
 ## 58. SECTION 2 COMPLETE — Genesis 4–5
 
@@ -4565,32 +4477,6 @@ Priority pair tests:
 - raven / dove,
 - Shem / Japheth around Ham/Canaan,
 - ark / gate distinction.
-
-
-
----
-
-## 78. LIVE PROGRESS LOG — Section 3 begins (Genesis 6–9)
-
-> Section 2 is complete and saved. I’m moving straight into **Section 3 — Genesis 6–9** now, because it directly tests the next predicted sequence: **Enoch/Noah continuity, upper and lower waters reopening, protected enclosure, temporary world-scale water transfer, mountain landing, paired birds, and the rebuilding of order afterward**. I’ll keep appending each progress update to the same file.
-
-
-
-### Section 3 progress update A — boundary breach, upper/lower water reopening, Enoch/Noah role
-
-> Genesis 6–8 is now much closer to your phenomenon than Genesis 1–5. The sequence is almost the **inverse of creation**: the boundary between heavenly and earthly beings is crossed; then the exact water separation established in Genesis 1 is effectively undone—**the “fountains of the great deep” burst open from below while the “windows/floodgates of heaven” open above**. Later both sources are shut, a wind passes over the earth, the waters retreat, and dry land reappears.
->
-> There is also a direct Enoch/Noah role handoff: Genesis says **Enoch “walked with God”** and then says **Noah “walked with God.”** Enoch survives his world by being *taken*; Noah survives his by being *enclosed and carried through it*. That looks like two versions of the same survivor/transition role—**removal upward versus protected passage through the reset**.
-
-
-
-### Section 3 progress update B — ark is protected cargo, not the gate
-
-> One more important distinction has become clear before I close this section: **the ark is not the gate**. The text makes it a **sealed local enclosure inside the larger gate-like catastrophe**. Noah enters; the door is shut behind him; upper and lower waters open outside; the enclosure is lifted and carried; after the waters close and drain, its window/covering is opened and its occupants emerge onto a renewed dry world.
->
-> That fits the same role we saw with Moses’ basket and Passover houses: **the lattice/gate changes the world relationship; the *tebah*/house protects cargo during it**. The Hebrew reinforces that—*tebah* is used only for **Noah’s ark and Moses’ basket** in the Hebrew Bible.
-
-**Source logged:** Joshua Joel Spoelstra, studies of the Hebrew *tebah* in Genesis 6–9 and Exodus 2; Genesis 6–8.
 
 
 
@@ -5408,68 +5294,6 @@ Priority pair tests:
 
 
 
-### Sections 2–3 final user-facing reply saved verbatim
-
-> Continued through **Section 2 and Section 3** and saved everything.
-> 
-> The biggest new findings are:
-> 
-> - **Cain/Abel** look more like a polarity pair than literally one split figure: fixed ground-worker versus mobile shepherd. After Abel is removed, Cain loses his ground-role and is forced into wandering, so some of Abel’s “mobile” state effectively transfers to the survivor.
-> - **Abel → Seth** is much stronger as a same-role sequence because Genesis explicitly says Seth is given **in place of Abel**.
-> - The strongest duplication so far is in the genealogies: **two Enochs, two Lamechs, and several closely parallel names**. A major scholarly line treats Genesis 4 and 5 as variant/reworked ancestral lists. Cain’s Enoch is tied to a **city/enclosure**; Seth’s Enoch is **taken by God**. Cain-line Lamech gives **77-fold vengeance**; Seth-line Lamech lives **777 years** and fathers Noah.
-> - Genesis 4:7 gives a real **“crouching at the door”** threshold image. The Hebrew is difficult and the demon/threshold interpretation is debated, so I logged it as suggestive rather than proven.
-> - **Genesis 6–9 is one of the strongest full-cycle matches yet.** If “sons of God” are heavenly beings, the story begins with an upper/lower boundary crossing. Then the **fountains of the deep open below and the windows of heaven open above**. Later both close, a wind moves over the waters, land reappears, and the world restarts.
-> - **Enoch and Noah explicitly share “walked with God.”** Enoch survives by being taken; Noah survives by being enclosed and carried through the reset.
-> - The ark is clearly **not the gate**. It is the protected local carrier. The Hebrew **tebah** is used only for **Noah’s ark and Moses’ basket**, which strongly links those two survival stories.
-> - Noah functions as a **new Adam**: new-world beginning, ground, fruit, nakedness, covering, curse/blessing.
-> - Shem and Japheth form a striking bilateral pair when they place one garment across both shoulders and move backward together to cover the central exposed Noah.
-> 
-> Everything, including every progress message from this turn, is appended to **`book/EXTRA-RESEARCH.md`**.
-> 
-> Next is **Section 4 — Genesis 10–11: Nimrod, Babel, tower-to-heaven, one language becoming many, and scattering**.
-
-
-
----
-
-## 110. LIVE PROGRESS LOG — Section 4 begins (Genesis 10–11)
-
-> Continuing with **Section 4 — Genesis 10–11**. I’m testing whether Babel is best read as another **axis/gate event**, or as an **attempted human imitation of one**: one people, one language, one city, a tower whose “head” reaches heaven, then divine descent, fragmentation, and scattering. I’ll save this update and each later progress reply into `book/EXTRA-RESEARCH.md`.
-
-
-
-### Section 4 progress update A — Babel as constructed heaven–underworld axis
-
-> This section has produced a much stronger axis result than I expected. The likely Mesopotamian background to Babel, **Etemenanki at Babylon**, was literally named the **“House/Foundation Platform of Heaven and Underworld,”** and a Babylonian royal inscription describes its foundation as secured on the **netherworld** while its summit was made to **rival the heavens**.
->
-> That is almost the exact vertical geometry we have been testing: **underworld/deep → central built axis → heaven**. Genesis then reverses it narratively: humans concentrate into one place and build upward; **YHWH descends** to inspect it; unified speech is split; the people are driven outward across the earth. The text never says the tower physically falls. So at this stage Babel looks less like the natural lattice opening and more like a **constructed imitation/concentration of the heaven–underworld axis followed by forced de-convergence/scattering**.
-
-**Sources logged:** ORACC entry for Etemenanki; Babylonian royal inscriptions describing its foundation in the netherworld and summit rivaling heaven; Genesis 11:1–9; modern scholarship identifying Babylonian ziggurat background.
-
-
-
-### Section 4 progress update B — duplicated fragmentation / Peleg / Nimrod control
-
-> A second pattern is sharpening: Genesis 10–11 itself seems to preserve **two explanations of the same fragmentation**. Genesis 10 already presents peoples dispersed by lands **and languages**; Genesis 11 then tells a separate story in which one language is broken and humanity is scattered. Peleg is even named because “in his days the earth was divided.”
->
-> So the text may contain a duplicated event in two modes: **genealogical/geographic branching** and **dramatic axial collapse/scattering**. Nimrod sits between them as the first great kingdom-builder whose realm begins at **Babylon in Shinar**, but Genesis itself never says he built the tower—that identification is later Jewish tradition. This distinction matters because it keeps us from forcing one character into a role the source text does not actually assign.
-
-**Sources logged:** Genesis 10:5, 10:20, 10:25, 10:31–32; Genesis 11:1–9; scholarship on the composite Table of Nations; later Nimrod/Babel tradition distinguished from the biblical source.
-
-
-
-### Section 4 progress update C — Peleg division and lifespan/time association
-
-> One timing detail is worth preserving for later cycle work. The post-flood genealogy shows a sharp lifespan contraction around **Peleg (“division”)**: Eber lives 464 years, while Peleg and Reu each live 239, followed by still shorter totals. Ibn Ezra explicitly noticed this and offered a second interpretation of “the earth was divided” as **human lifespan being cut roughly in half** at Peleg.
->
-> I’m not treating that medieval interpretation as the original meaning, but it gives us another recurring association between **division of the world and division/change of time**—exactly the kind of link we’ll want in the later timing analysis.
-
-**Sources logged:** Genesis 10:25; Genesis 11:10–32; Ibn Ezra on Genesis 11; later Jewish chronology.
-
-
-
----
-
 ## 111. SECTION 4 COMPLETE — Genesis 10–11
 
 **Scope:** Genesis 10:1–11:32, including Table of Nations, Nimrod, Peleg, Babel, post-Babel genealogy, lifespan contraction, and Vardath axis/scattering tests.
@@ -6180,24 +6004,6 @@ Priority pair tests:
 - Abraham/Melchizedek,
 - three visitors as segmented function,
 - covenant “cutting” as possible split/passage geometry.
-
-
-
----
-
-## 138. LIVE PROGRESS LOG — Section 5 begins (Genesis 12–18)
-
-> Section 4 is complete and saved. I’m continuing straight into **Section 5 — Genesis 12–18**, where the geometry changes from world-scale scattering to a **travelling chosen line**: Abram leaves one region, repeatedly crosses boundaries, separates from Lot, meets Melchizedek, passes through the split-covenant pieces, and then the Sarah/Hagar/Isaac/Ishmael pairing begins. I’ll keep logging each progress reply into the file.
-
-
-
-### Section 5 progress update A — covenant pieces as split/crossover geometry
-
-> Section 5 has now produced one of the **closest small-scale mechanical analogues to your finger-trap split/crossover idea**: Genesis 15 has Abram place **split animal halves opposite one another**, then he falls into the same kind of **deep sleep** used when Adam is divided, darkness descends, and a **smoking fire-pot plus flaming torch passes between the separated halves**.
->
-> So we now have two major “deep sleep + division” scenes: **Adam: one body divided into two sides**; **Abram: paired bodies divided into opposed halves with a fiery/smoky presence moving through the central gap**. Conventionally, Genesis 15 is a covenant-oath ritual, and that explanation is strong. But geometrically it is extraordinarily relevant: **split left/right structure → central passage → fire/smoke traverses the passage → covenant/state established**.
-
-**Sources logged:** Genesis 15:9–18; comparative covenant/oath scholarship; ancient Near Eastern split-animal oath parallels.
 
 
 
@@ -7031,72 +6837,6 @@ Priority pair tests:
 - Abraham’s three-visitors / Lot’s two-angels mirror.
 
 
-
-### Sections 4–5 final user-facing reply saved verbatim
-
-> Continued through **Section 4 and Section 5** and saved every progress update plus the detailed findings.
-> 
-> The strongest new result is **Genesis 15**. Abram falls into the same kind of **deep sleep** used when Adam is divided, animals are cut into opposing halves, darkness descends, and a **smoking/fire form passes through the central corridor between the halves** before the covenant is established. That is one of the closest small-scale textual analogues yet to your **split lattice → central passage → fiery/plasma-like traversal → new state** picture.
-> 
-> Babel also became much more interesting. The likely Babylonian ziggurat background, **Etemenanki**, was literally named the **“House/Foundation Platform of Heaven and Underworld,”** and Babylonian inscriptions describe its foundation in the netherworld and summit rivaling heaven. In Genesis, humans concentrate into one place and build upward, YHWH descends, unified language breaks, and humanity scatters. So Babel currently looks less like the natural gate opening and more like an **artificial fixed axis or attempted imitation of the heaven–underworld connector**, followed by forced de-convergence.
-> 
-> Other important findings:
-> - **Peleg** is literally tied to “division,” and later interpreters noticed that lifespan drops sharply around him, linking world-division with a change in time/lifespan.
-> - Genesis 10 and 11 preserve **two versions of fragmentation**: genealogical/language branching and dramatic Babel scattering.
-> - **Abram→Abraham** and **Sarai→Sarah** are excellent explicit same-figure/state-change controls.
-> - **Sarah/Hagar** are better treated as paired covenant/heir routes than one person.
-> - **Abraham/Lot** are mirrored branches, not one figure.
-> - Genesis 18 gives a real **one→three→two+one** divine/messenger segmentation problem at a tent threshold, which is worth tracking without forcing a Trinity or lattice reading.
-> 
-> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
-> 
-> Next is **Section 6 — Genesis 19–25: Sodom/Zoar, Lot’s wife, Isaac/Ishmael, Hagar’s second well scene, the binding of Isaac, the ram substitute, Sarah’s death, Rebekah at the well, and Abraham’s death**.
-
-
-
----
-
-## 170. LIVE PROGRESS LOG — Section 6 begins (Genesis 19–25)
-
-> Continuing with **Section 6 — Genesis 19–25**. I’ll test Sodom/Zoar as a destruction-and-escape geometry, Lot/Lot’s wife as a possible split pair, the two Hagar/well scenes as a possible doublet, Isaac/Ishmael as alternate heir states, and the binding of Isaac for **replacement/substitution geometry**. I’ll keep appending each progress reply into `book/EXTRA-RESEARCH.md`.
-
-
-
-### Section 6 progress update A — Abraham/Lot as mirrored threshold roles
-
-> A major pair result is already emerging from Sodom. **Abraham and Lot are deliberately mirrored across Genesis 18–19**: Abraham sits at a tent entrance in daylight and receives **three** visitors; Lot sits at a **city gate in evening** and receives **two**. Both urge the visitors inside, both provide food, and then the stories diverge—Abraham stays outside the destruction zone and negotiates; Lot must be physically pulled **through the doorway and out of the city** before fire falls.
->
-> That makes Abraham/Lot look less like “same person” and more like **outside/inside versions of the same hospitality-threshold role**: one stands at the safe side of the boundary; the other is embedded inside the doomed enclosure and has to be extracted.
-
-
-
-### Section 6 progress update B — Sodom extraction / Zoar refuge / Lot's wife fixed pillar
-
-> Sodom itself now looks like a **failed extraction event with a temporary refuge branch**. Lot is pulled by the hands through a shut/opening threshold; he is told to flee to the mountain without stopping or looking back; instead he negotiates for **Zoar**, a “small” city that is temporarily spared **until he arrives**. Only then does fire/sulfur fall from heaven and the plain overturn.
->
-> Lot’s wife is especially interesting structurally: she is already part of the extracted group but **turns back toward the old state and becomes fixed as a standing pillar**. I’m logging that not as “she is the rod,” but as a striking **motion → reversal → immobilized vertical form** transition at the exact boundary between old world and refuge.
-
-
-
-### Section 6 progress update C — Ishmael/Isaac mirrored near-death rescue sequences
-
-> The **Hagar–Ishmael and Isaac storylines are now clearly paired ordeals**, which is important for your “same figure somehow” idea. Genesis 21 and 22 use remarkably similar rescue mechanics: in the wilderness Hagar puts Ishmael at a distance so she will not watch him die; a **voice from heaven** intervenes, her eyes are opened, and she sees a **well** that saves the child. In the next chapter Abraham raises the knife over Isaac; a **voice from heaven** intervenes, Abraham lifts his eyes, and he sees a **ram** that replaces the child.
->
-> So Ishmael and Isaac are not simply rival sons. The text gives them mirrored **near-death → heavenly interruption → newly seen substitute/resource → survival → future nation/seed** sequences. That makes them very strong **parallel branch states** of the Abraham line, even though they remain distinct people in the story.
-
-**Sources logged:** Genesis 21:14–21; Genesis 22:1–19; scholarship comparing Hagar/Ishmael with the Akedah and the repeated seeing/voice-from-heaven motifs.
-
-
-
-### Section 6 progress update D — Isaac/Ishmael branches recombine at Abraham's death
-
-> The end of Abraham’s cycle gives another important **recombination after branch-splitting**. Isaac and Ishmael, who were separated into different covenant/family lines, come back together to **bury Abraham in the cave purchased for Sarah**. Afterward Isaac settles at **Beer-lahai-roi**, the very well associated with Hagar’s earlier divine encounter.
->
-> That is a strong closure pattern: **Sarah/Hagar and Isaac/Ishmael are separated into parallel lines, but the story does not leave them completely disconnected**. Their paths cross again at death, burial, and the Hagar-associated well. This makes the pair look more like **diverged branches of one ancestral system** than simple “chosen versus rejected” opposites.
-
-
-
----
 
 ## 171. SECTION 6 COMPLETE — Genesis 19–25
 
@@ -8165,42 +7905,6 @@ Priority pair tests:
 
 ---
 
-## 220. LIVE PROGRESS LOG — Section 7 begins (Genesis 25–28)
-
-> Section 6 is complete and saved. I’m continuing into **Section 7 — Genesis 25–28**, which is a very strong test for your pairing idea because Jacob and Esau begin as **twins struggling inside one womb**, emerge in an inverted/entangled sequence, exchange firstborn status, and then the section ends with Jacob seeing the **earth–heaven connector** that becomes a **stone pillar and “gate of heaven.”**
-
-
-
-### Section 7 progress update A — Jacob/Esau as strongest broken-unity twin pair
-
-> Jacob/Esau is giving us the **strongest “broken unity” pair yet**. The text itself says Rebekah contains **two nations in one womb**; the twins struggle before birth; Esau emerges first while Jacob is physically attached to his heel; then Jacob progressively takes Esau’s firstborn functions—birthright, blessing, clothing, skin-texture, even Isaac’s sensory recognition of “which son” is before him.
->
-> So this pair is much closer to your idea than Cain/Abel: **one womb → two opposed bodies → entangled emergence → repeated exchange of first/second position → one temporarily wears the other’s identity**. I’m not calling them literally one person, but structurally they behave like **two differentiated states competing to occupy one firstborn/lineage position**.
-
-**Sources logged:** Genesis 25:19–34; Genesis 27; scholarship on twin symbolism, firstborn reversal, Jacob/Esau literary doubling, and Genesis 38 Perez/Zerah as later twin comparison.
-
-
-
-### Section 7 progress update B — Bethel connector/gate/pillar transformation
-
-> The Bethel scene is especially strong for your cosmology. Whatever exactly *sullam* means—ladder, stairway, ramp, or even a gate-like access structure—the text gives a **single connector set on earth with its top in heaven**, with traffic moving **up and down** it. Jacob then wakes, identifies the site as the **“gate of heaven,”** takes the stone from his head, stands it upright as a **pillar**, and anoints it.
->
-> That is almost a direct state transformation in symbolic form: **horizontal/resting stone → vertical pillar**, alongside **earth↔heaven bidirectional traffic → gate**. For your model, this looks like one of the clearest textual cases where **connector, gate, and rod/pillar are successive views of the same event-location**.
-
-**Sources logged:** Genesis 28:10–22; scholarship on *sullam* as ladder/stairway/ramp/gate-like access structure; Bethel as “house of God” and “gate of heaven.”
-
-
-
-### Section 7 progress update C — successor repetition versus identity overlay
-
-> One more major result before I close Section 7: **Isaac is deliberately made to replay Abraham’s life**, almost scene for scene—famine, foreign king Abimelech, wife-sister danger, wells, covenant at Beersheba. Then Jacob does something different: he doesn’t merely inherit Isaac’s role; he **puts on Esau’s outer identity**—clothes, smell, hairy skin—while keeping Jacob’s voice.
->
-> So Genesis is giving us two different kinds of continuity at once: **successor repetition** (Abraham→Isaac) and **temporary identity overlay** (Jacob→Esau). That is exactly the distinction we need for your theory: sometimes one role repeats in a new person; sometimes one figure literally carries another figure’s visible markers.
-
-
-
----
-
 ## 221. SECTION 7 COMPLETE — Genesis 25–28
 
 **Scope:** Genesis 25:19–28:22, including Jacob/Esau twin birth, birthright exchange, Isaac’s repetition of Abraham’s life, well conflicts, blessing substitution, Jacob’s departure, Bethel dream, earth-heaven connector, gate of heaven, and stone-to-pillar transformation.
@@ -8952,71 +8656,6 @@ Priority pair tests:
 - Peniel face-of-God geometry.
 
 
-
-### Sections 6–7 final user-facing reply saved verbatim
-
-> Continued through **Section 6 and Section 7** and saved every progress update plus the full detailed findings.
-> 
-> The strongest new results are:
-> 
-> - **Sodom** works structurally like an extraction event: Lot is physically pulled through a controlled doorway out of a doomed enclosure, reaches a temporary refuge, and only then does destruction fall.
-> - **Lot’s wife** gives a striking **motion → reversal → fixed vertical pillar** transformation at the old/new boundary.
-> - **Hagar/Ishmael and Abraham/Isaac** are mirrored near-death rescue stories: voice from heaven, changed seeing, newly revealed substitute/resource, child survives.
-> - **Isaac/Ishmael** are best read as parallel branches of one Abrahamic role-system, not merely chosen/rejected opposites; they reunite to bury Abraham.
-> - **Genesis 16 and 21** likely preserve doubled Hagar traditions, another strong example of one underlying story-pattern appearing in two narrative forms.
-> - **Jacob/Esau** is now one of the strongest broken-unity pairs: one womb, prenatal struggle, entangled birth, repeated first/second inversion, and Jacob temporarily wearing Esau’s clothes, smell and hairy outer identity.
-> - **Isaac repeats Abraham’s life**, showing clear successor-role recurrence.
-> - **Bethel** is one of the strongest axis scenes yet: earth-to-heaven connector, movement both up and down, explicit “gate of heaven,” then the sleeping stone is stood upright as a pillar and anointed.
-> 
-> For your cosmology, the key Section 7 picture is:
-> 
-> **one enclosed unity → two opposed branches → position/identity exchange → branch separation → sleep/altered state → two-way earth/heaven connector → gate recognized → stone raised into pillar.**
-> 
-> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
-> 
-> Next is **Section 8 — Genesis 29–36: Leah/Rachel, Jacob’s rods, Laban, boundary heap/pillar, the Jabbok wrestling figure, Jacob→Israel, Peniel, Esau reunion, and return to Bethel**.
-
-
-
----
-
-## 255. LIVE PROGRESS LOG — Section 8 begins (Genesis 29–36)
-
-> Continuing with **Section 8 — Genesis 29–36**. This is a major one for your cosmology because it combines **paired women, striped rods/branches, a literal boundary heap/pillar, a night crossing over water, wrestling with a humanlike divine figure, Jacob→Israel state change, bodily alteration, and the twin reunion**. I’ll keep saving each progress update and the final reply into `book/EXTRA-RESEARCH.md`.
-
-
-
-### Section 8 progress update A — rods/branches and Jacob-Laban boundary stabilization
-
-> The **Jacob–Laban material is turning into another compressed version of your split-and-boundary mechanics**. Jacob uses **peeled rods/branches** in the flock scene, then when he finally separates from Laban the break is formalized with a **standing pillar plus a heap of stones** that become a witness-boundary neither side is to cross for harm. The same place is even given **two names in two languages**.
->
-> So the sequence is now: **branch manipulation → wealth/offspring differentiation → family extraction → pursuit → boundary monument → no-crossing rule → permanent separation of two kin-groups**. For your cosmology, that looks much more like a **division/stabilization boundary** than an opening gate.
-
-**Sources logged:** Genesis 30:37–43; Genesis 31:44–54; Scott Noegel on the rods/wordplay; scholarship on the Jacob–Laban treaty and stone boundary markers.
-
-
-
-### Section 8 progress update B — Jabbok threshold transformation
-
-> The **Jabbok scene is even closer to your “same figure / same mechanism in another form” idea than I expected**. Just before the wrestling, Jacob encounters divine messengers and names the place **Mahanaim — “two camps.”** He then literally divides his own people into **two camps**, sends everything across the river, and is finally left **alone** at the threshold. There, a “man” appears whose identity is deliberately unstable: human in wording, divine in power, called an angel in Hosea, and identified by Jacob as **God seen face to face**.
->
-> Then the crucial transformations happen in one sequence: **crossing → isolation → struggle → touch at the hip → bodily alteration/limp → Jacob renamed Israel → dawn → crossing complete → Esau’s face compared to the face of God**. For your cosmology, this reads almost like a humanized **threshold passage in which the traveller and the gate-being become entangled, the old identity is altered, and the person exits the boundary in a new state**.
-
-**Sources logged:** Genesis 32–33; Hosea 12; Bradford Anderson on human/divine intersection in Genesis 32–33; scholarship on Peniel, Jabbok, Mahanaim, and the Jacob/Israel name transition.
-
-
-
-### Section 8 progress update C — Leah/Rachel recursively mirror Jacob/Esau
-
-> The **Leah/Rachel pair is also mirroring Jacob/Esau almost deliberately**. Jacob, the younger brother who displaced the elder, arrives and is himself tricked because “the younger cannot be given before the elder”: **Leah the elder is placed where Rachel the younger was expected**. Then the sisters compete over fertility, use their maidservants as additional branches, and Rachel even describes her struggle with Leah using “wrestling” language before Jacob’s own night wrestling scene.
->
-> So the family structure is behaving recursively: **younger/elder inversion in one generation becomes younger/elder inversion in the next**, and the split pair expands through **four maternal branches into the twelve-son/tribal system**. That recursive duplication is exactly the sort of thing we need to distinguish from coincidence.
-
-**Sources logged:** Genesis 29–30; scholarship on the Jacob/Esau ↔ Leah/Rachel inversion, the four women/twelve sons structure, and Rachel’s “wrestling” language foreshadowing Jacob at Jabbok.
-
-
-
----
 
 ## 256. SECTION 8 COMPLETE — Genesis 29–36
 
@@ -10281,34 +9920,6 @@ Priority pair tests:
 
 ---
 
-## 314. LIVE PROGRESS LOG — Section 9 begins (Genesis 37–50)
-
-> Section 8 is complete and saved. I’m continuing directly into **Section 9 — Genesis 37–50**, which may be even richer for your model: **Joseph repeatedly moves down and up through pits/prisons/palaces, identity is carried by garments, the seven/seven famine cycle controls world movement, Judah/Tamar produces the Perez–Zerah breach-twin scene, and Jacob later literally crosses his hands to reverse Ephraim/Manasseh’s positions**.
-
-
-
-### Section 9 progress update A — Perez/Zerah breach and crossed-hand reversal
-
-> Section 9 has now produced **two exceptionally strong crossing/reversal images**. First, **Perez/Zerah**: one twin’s hand emerges first, is marked with a scarlet thread, then **withdraws**, while the other twin **breaks through the opening** and is born first. That is almost a textbook **first-out → reversal → second crosses through → first becomes second** sequence.
->
-> Then in Genesis 48 Jacob deliberately **crosses his arms** so his right hand lands on the younger Ephraim and his left on firstborn Manasseh. Joseph tries to uncross them, but Jacob refuses. So Genesis ends the patriarchal cycle with the reversal physically drawn by the body itself: **crossed hands impose younger-over-elder**, repeating Jacob/Esau in explicit geometry.
-
-**Sources logged:** Genesis 38:27–30; scholarship comparing Perez/Zerah with Jacob/Esau twin inversion; Genesis 48; ritual studies of Jacob’s deliberate crossed-hand blessing.
-
-
-
-### Section 9 progress update B — Joseph descent/ascent and garment-carried identity
-
-> Joseph’s storyline is also strongly matching the **state-change-through-descent/ascent** pattern we’ve been tracking. He is stripped of the special garment, lowered into an **empty pit**, sold “down” into Egypt, loses another garment in Potiphar’s house and is pushed down again into prison, then is suddenly brought **up from the pit/prison**, shaved/reclothed, and elevated beside Pharaoh.
->
-> The garment motif is doing exactly what it did with Jacob/Esau: **identity and status are repeatedly carried by removable outer layers**. Joseph’s coat is used to create a false death-identity; Potiphar’s wife uses a left-behind garment to create a false guilt-identity; Pharaoh then gives Joseph new clothing and insignia to establish a new ruling identity. That gives us a clean **strip → descend → false identity → strip again → descend → reclothe → ascend → new identity** sequence.
-
-**Sources logged:** Genesis 37–41; scholarly studies of clothing/garment motifs in Genesis 37–39 and Joseph’s investiture in Genesis 41.
-
-
-
----
-
 ## 315. SECTION 9 COMPLETE — Genesis 37–50
 
 **Scope:** Genesis 37:1–50:26, including Joseph’s dreams, garment identity, pit/descent, Judah/Tamar, Perez/Zerah, Potiphar/prison, Pharaoh’s doubled seven-year dreams, Joseph’s elevation, brothers’ descents/returns, Benjamin/Judah substitution, Joseph’s hidden/revealed identity, Jacob’s descent to Egypt, Ephraim/Manasseh crossed blessing, tribal blessings, Jacob’s burial, and Joseph’s bones.
@@ -11344,94 +10955,6 @@ Priority pair tests:
 - whether Jubilees sharpens or contradicts the Genesis geometry.
 
 
-
-### Sections 8–9 final user-facing reply saved verbatim
-
-> Continued through **Section 8 and Section 9** and saved every progress update plus the full detailed findings.
-> 
-> The biggest new results are:
-> 
-> - **Leah/Rachel recursively mirror Jacob/Esau**: elder/younger inversion repeats, then the pair expands through Bilhah/Zilpah into the twelve-son system.
-> - Jacob’s **peeled rods/branches at the water troughs** give a real rod + patterned differentiation image, but I kept the uncertain breeding/magic interpretation separate.
-> - Jacob and Laban end their entanglement with a **pillar + stone heap + no-crossing boundary**. The same boundary has **two names in two languages**, which is an excellent control for “one thing seen/named differently from opposite sides.”
-> - **Mahanaim = two camps**, followed by Jacob literally splitting his own people into two camps.
-> - At **Jabbok**, the sequence is extremely strong for your cosmology: crossing → isolation → ambiguous man/God/angel struggle → hip alteration → Jacob becomes Israel → dawn → crossing onward. The text fuses **person, place and action** through Jacob/Jabbok/wrestling wordplay.
-> - The next morning Jacob says **Esau’s face is like the face of God**, directly linking the divine/human wrestler scene with the twin-brother encounter.
-> - Jacob/Esau’s whole arc now looks like **one origin → split branches → identity/status exchange → long separation → temporary reconnection → separate again**, which is structurally very close to your world-turn interaction idea.
-> - **Perez/Zerah** is one of the clearest crossover scenes yet: one twin’s hand emerges, is marked, withdraws, then the other twin **breaks through** and becomes first.
-> - Joseph’s story is a repeated **strip → descend → false identity → descend again → reclothe → ascend → new identity** cycle.
-> - Pharaoh’s two dreams are explicitly said by Joseph to be **one dream/event**. That is hugely important methodologically because Genesis itself says two different symbolic presentations can describe one underlying event.
-> - The **7 years plenty + 7 years famine** cycle drives mass movement into Egypt and is logged for the later timing comparison.
-> - Genesis 48 gives perhaps the clearest anthropomorphic crossover image so far: Jacob deliberately **crosses his two arms**, directing the right-hand blessing to younger Ephraim and left-hand blessing to elder Manasseh. So the central human figure literally becomes the crossing mechanism.
-> - Genesis ends with Joseph’s remains in Egypt awaiting a later transfer upward/out during Exodus — a genuine **delayed cargo / unfinished transition** motif.
-> 
-> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
-> 
-> Next is **Section 10 — Jubilees 1–10**, where we can compare Genesis against a second ancient version of the same primeval sequence and see which details sharpen, repeat, or contradict the Vardath geometry.
-
-
-
----
-
-## 367. LIVE PROGRESS LOG — Section 10 begins (Jubilees 1–10)
-
-> Continuing with **Section 10 — Jubilees 1–10**. Here I’m treating Jubilees as a second ancient telling of the same primeval sequence and checking whether it **strengthens, changes, or breaks** the Genesis pattern: creation layers, Adam/Eve, Cain/Abel/Seth, Enoch, Watchers, giants, Noah, Flood, spirits, and post-Flood division. I’ll keep appending each progress reply to `book/EXTRA-RESEARCH.md`.
-
-
-
-### Section 10 progress update A — Jubilees sharpens upper/lower interaction
-
-> Jubilees is already sharpening the picture rather than merely repeating Genesis. It explicitly **dates** primeval events by weeks, jubilees, months and days; makes the heavenly beings part of creation from the start; turns Enoch into a **writer/recorder of heavenly and earthly signs**; and expands Genesis 6 into a clear **descent of Watchers from heaven to earth**, followed by giant offspring and then a second post-Flood problem where disembodied evil spirits continue operating among Noah’s descendants.
->
-> That means the upper/lower interaction is no longer only implicit. Jubilees makes it **directional and populated**: beings come down from heaven, mix with humans, catastrophe follows, and some consequences remain active after the Flood.
-
-**Sources logged:** Jubilees 2–10 in R. H. Charles’ translation; modern scholarship on Jubilees’ creation angelology, Watchers, demons, and 364-day calendar.
-
-
-
-### Section 10 progress update B — same date for Eden breach and Flood opening; 7 above / 7 below
-
-> A very strong timing/geometric link just appeared in the primary text. **Jubilees dates both the Eden transgression and the Flood opening to the seventeenth day of the second month.** In the Flood version it then specifies **seven floodgates of heaven above and seven mouths of the great deep below**: water pours **down from heaven** and rises **up from the deep** until the world is filled.
->
-> That is much sharper than Genesis. It gives us an explicit **7-above / 7-below paired opening**, and it places that world-reset opening on the **same calendar date as the earlier Eden boundary failure**. I’m flagging this as a high-priority cycle result rather than calling it coincidence or proof yet.
-
-**Primary text logged:** Jubilees 3:17; 5:23–29; 6:23–32. Jubilees also fixes the year at 364 days / 52 exact weeks.
-
-
-
-### Section 10 progress update C — heavenly/earthly timescale and Flood flow reversal
-
-> Jubilees adds another important layer: it repeatedly turns **time itself into part of the architecture**. Enoch is taught the ordered signs of heaven, records past and future, and spends “six jubilees of years” with the angels; Adam’s 930-year life is explained by the rule that **1,000 human years are as one heavenly day**. That is an explicit **different-timescale comparison between heaven and earth**, even though the text uses it theologically rather than as physics.
->
-> It also strengthens the flow reversal in the Flood: the seven deep mouths first send water **up**, then later the abyss mouths open again so the water **descends back down into the deep**. So Jubilees gives a complete **below→up / above→down / closure / return-down** cycle.
-
-**Primary text logged:** Jubilees 4:17–26, 4:30; 5:24–31. Enoch’s role includes calendrical writing, visions of past/future, angelic instruction, and transfer to Eden. Adam’s 930 years are interpreted against a 1,000-year heavenly “day.”
-
-
-
-### Section 10 progress update D — repeated language fragmentation and Moses as time-axis receiver
-
-> Two more connections are now strong enough to keep.
->
-> First, **Jubilees repeats the language-fragmentation event twice at different scales**. After Eden, it says the animals had previously spoken “one lip and one tongue”; their speech is closed and all flesh scatters. At Babel, humanity again begins as one people with one language, then speech is confused and people scatter. That is a genuine **same event-form repeated in animal and human stories**.
->
-> Second, the whole book is framed around **Moses on Sinai receiving the complete record of past and future from heavenly chronological tablets**—from creation through future renewal/new creation. In your model, that makes Moses at the mountain interface not merely a lawgiver but a **human axis figure positioned where the whole time-order is disclosed**.
-
-**Primary text logged:** Jubilees 1:1–28; 3:28–29; 10:18–26.
-
-
-
-### Section 10 progress update E — Peleg/Babel separation and wind-overthrown axis
-
-> Jubilees also gives us a useful **failure test**. It separates **Peleg’s “division” from Babel**: Peleg is tied to the earlier territorial division of the earth by lot, while the tower is built later. So our earlier Genesis possibility that Peleg directly marks Babel should stay only as a Genesis ambiguity; **Jubilees does not support collapsing those two events**.
->
-> At the same time Jubilees strengthens Babel mechanically: the builders explicitly say they will **“ascend thereby into heaven,”** God **and the angels descend**, language coherence breaks, and—unlike Genesis—the book says a **mighty wind actually overthrows the tower**. So Jubilees makes Babel more like an attempted vertical connector that is actively de-coupled.
-
-**Primary text logged:** Jubilees 8:8–11; 10:17–26. Tower construction is assigned a 43-year span in the Charles chronology.
-
-
-
----
 
 ## 368. SECTION 10 COMPLETE — Jubilees 1–10
 
@@ -12625,48 +12148,6 @@ Priority tests:
 
 ---
 
-## 428. LIVE PROGRESS LOG — Section 11 begins (Jubilees 11–23)
-
-> Section 10 is complete and saved. I’m moving straight into **Section 11 — Jubilees 11–23**. This section should test whether the Abraham cycle preserves the same mechanics we saw in Genesis, and whether Jubilees adds anything stronger about **astronomy, timed covenants, the split-animal passage, Isaac substitution, Mastema as hidden operator, and lifespan/cycle changes**.
-
-
-
-### Section 11 progress update A — Abram reverses Babel; split-covenant retained and calendrically linked to Noah
-
-> Section 11 is producing two major additions.
->
-> First, Jubilees makes **Abram a partial reversal of Babel**. He studies the stars but rejects astrological determinism; then an angel literally **opens his mouth, ears and lips**, restoring to him **Hebrew, “the tongue of creation,”** which the book says had vanished from human mouths since Babel. So the sequence is **one language lost at scattering → one chosen figure has primordial language reopened**. That is a very clear re-coherence motif.
->
-> Second, Jubilees preserves the Genesis 15 geometry almost exactly: animals are **split and laid opposite each other**, Abram enters an ecstatic/darkened state, and **smoke/fire passes between the pieces**. It also deliberately links that covenant calendar-wise to **Noah’s covenant in the same month**.
-
-**Primary text logged:** Jubilees 12:16–27; 14:1–20.
-
-
-
-### Section 11 progress update B — Akedah becomes timed recurring transition; lifespan contraction/re-expansion
-
-> Two especially strong cycle/state findings have now appeared.
->
-> In the **Binding of Isaac**, Jubilees inserts **Mastema** as the proposer of the test, dates the heavenly challenge, keeps the mountain ascent/raised hand/heavenly interruption/ram substitution, identifies the mountain with **Zion**, and then turns the whole journey into a recurring **seven-day festival**. So the episode becomes not just a sacrifice story but a **timed, repeatable transition pattern**.
->
-> Then Jubilees 23 gives an explicit long-term **lifespan cycle**: after the Flood, human lifespans progressively contract from near the old patriarchal scale toward roughly **70–80 years**, but in the future restored age they begin increasing again until they approach **1,000 years**. That is a genuine source-level **time/longevity contraction → later re-expansion** scheme.
-
-**Sources logged:** Jubilees 17:15–18:19; Michael Segal on Jubilees’ Akedah/festival chronology; Jubilees 23:8–31; James VanderKam on Psalm 90/Isaiah 65 and restored lifespan in Jubilees 23.
-
-
-
-### Section 11 progress update C — aging compression/re-expansion and Jacob-line cosmic renewal language
-
-> Jubilees 23 goes even further than a simple lifespan decline. During the bad age it says a **child of three weeks can appear as old as a hundred-year-old person**; in the restored age, human days expand back toward **1,000 years**, with people remaining effectively youthful. Read structurally—not literally as physics—the book is imagining **aging/time-rate compression followed by re-expansion**.
->
-> There is also a striking Abraham→Jacob blessing in Jubilees 19 saying Jacob’s ancestral line/seed will somehow serve to **“lay the foundations of heaven,” “strengthen the earth,” and “renew the luminaries.”** The exact subject of that line is textually/interpretively awkward, so I’m keeping it flagged rather than building on it yet, but it is unusually cosmological language attached to the Jacob line.
-
-**Primary text logged:** Jubilees 19:23–27; 23:8–31. The lifespan restoration toward 1,000 years is treated in modern scholarship as part of Jubilees’ eschatological restoration of sacred time/new creation.
-
-
-
----
-
 ## 429. SECTION 11 COMPLETE — Jubilees 11–23
 
 **Scope:** Jubilees 11:1–23:31, including Abram’s anti-idolatry activity, sky observation, recovery of the primordial language, migration, covenant chronology, divided-animal passage, Hagar/Ishmael, circumcision, Sodom, Isaac, Mastema and the Akedah, Sarah, Jacob/Esau, Abraham’s last teachings, Abraham’s death, lifespan contraction, and future restoration.
@@ -13337,53 +12818,6 @@ Priority tests:
 
 
 
-### Sections 10–11 final user-facing reply saved verbatim
-
-> Continued through **Section 10 and Section 11** and saved every progress update plus the detailed findings.
-> 
-> The strongest new results are:
-> 
-> - **Jubilees makes the creation split geometrically explicit:** the primordial waters are divided **half above and half below** a middle firmament.
-> - Heaven is explicitly **populated by angels/spirits**, and the Watchers later **descend to earth**, mix with humans, and are eventually bound in the depths.
-> - Jubilees dates both the **Eden transgression and the Flood opening to month 2, day 17**. Modern scholarship treats the date recurrence as deliberate.
-> - The Flood has **seven floodgates above and seven mouths of the deep below**. Water comes **down from heaven and up from below at the same time**, then the lower openings later reverse and drain the water **back downward**.
-> - Jubilees fixes the calendar at **364 days = 52 weeks = four 91-day quarters**, and maps major Flood stages onto quarter-points.
-> - It explicitly says **1,000 human years correspond to one heavenly day**, and later says restored humanity will again approach **1,000-year lifespans**.
-> - **Moses on Sinai** receives the whole past-and-future time record from heavenly tablets while standing at the mountain/cloud/fire interface. That is one of the strongest Moses-as-time-axis parallels yet.
-> - **Enoch** becomes a recorder of heavenly signs, past and future, and spends six jubilees with angels; however, Jubilees places him in **Eden**, not simply in heaven, which is an important control against overfitting.
-> - After Eden, animals lose their one common language and scatter; at Babel, humans lose one common language and scatter. That is a real repeated **same event-form at two scales**.
-> - Jubilees separates **Peleg’s land division from Babel**, so Peleg should not automatically be treated as the Babel event.
-> - Unlike Genesis, Jubilees says the Babel builders explicitly intend to **ascend into heaven**, God and angels **descend**, and a **mighty wind physically overthrows the tower**.
-> - Abram becomes a partial **Babel reversal**: his mouth/ears are opened and the lost **“language of creation”** is restored to him, giving him access to ancestral books.
-> - Jubilees preserves the Genesis 15 **split bodies → darkness/ecstasy → fire passing through the central gap** geometry almost exactly.
-> - It links Abraham’s covenant to **Noah’s covenant by calendar**, showing deliberate recurrence of covenant events.
-> - Jubilees turns the **Binding of Isaac** into a timed recurring structure: Mastema proposes the test, the mountain is identified with **Zion**, the heavenly voice stops the transition, the ram substitutes for Isaac, and the journey becomes a recurring **seven-day festival**.
-> - Jubilees 23 gives an explicit **lifespan contraction and re-expansion cycle**: old forefathers near ~19 jubilees, later generations shrinking toward ~70–80 years, then future lifespans increasing again toward 1,000 years.
-> 
-> For your cosmology, the strongest combined Jubilees picture is now:
-> 
-> **upper/lower world split → populated upper realm → descent across boundary → mixed-state corruption → protected carrier → seven upper and seven lower gates open → opposed flows meet in the middle → gates close → flow reverses downward → world order returns → residual beings survive the reset → coherence fragments again at Babel → artificial vertical axis collapses → selected figures recover lost language/knowledge → time itself contracts and later re-expands.**
-> 
-> Everything is appended to **`book/EXTRA-RESEARCH.md`**.
-> 
-> Next is **Section 12 — Jubilees 24–38: Isaac, Jacob/Esau, Bethel, Leah/Rachel, Jacob/Laban, return, Levi/Judah, Rachel’s death, and the later war/death of Esau**.
-
-
-
----
-
-## 467. LIVE PROGRESS LOG — reordering the seven comparison apocrypha into the 81-book research flow
-
-> I’m going to **rebuild the 88-book working order rather than just bolt the seven extras onto the end**. I’ll first recover exactly which seven apocrypha we chose, then place each by **narrative/chronological setting** against the 81-book Ethiopian sequence, update the master list in `EXTRA-RESEARCH.md`, and if any belong before Genesis I’ll move their existing research/chat log ahead of Genesis and continue from there.
->
-> I recovered the seven comparison texts: **Life of Adam and Eve/Apocalypse of Moses, 2 Enoch, 3 Enoch, Apocalypse of Abraham, Testament of Abraham, Testaments of the Twelve Patriarchs, and Ascension of Isaiah**. None should simply sit as “Sections 90–96” at the end if we’re reading the corpus as a continuous story-world; several belong inside Genesis-era material, and **none actually precedes the opening creation account of Genesis** in narrative frame. I’m verifying each placement against the texts and scholarship before rewriting the roadmap.
->
-> The placements are resolving cleanly. The five early extras can be inserted **inside the Genesis→Exodus story flow**, while **Ascension of Isaiah** belongs around the **Hezekiah→Manasseh transition**, not at the end. **3 Enoch is the exception**: its frame is Rabbi Ishmael in the early rabbinic/second-century setting, even though Metatron recounts Enoch’s pre-Flood transformation, so I’m going to give it a **dual cross-reference** rather than falsely pretending its whole narrative occurs in Genesis.
-
-
-
----
-
 ## 468. Placement correction applied
 
 The file's roadmap has now been revised so the seven comparison apocrypha are **not** treated as one end appendix.
@@ -13498,29 +12932,6 @@ For this investigation:
 This supersedes the earlier primary-after-Revelation placement for 3 Enoch in the active research roadmap.
 
 
-
-## 470. LIVE PROGRESS — natural-order Insert X1 begins: Life of Adam and Eve / Apocalypse of Moses
-
-> The first inserted book confirms that **after Genesis 3 is the right place**, but it also turns out to be textually broader than one simple book: the Greek *Apocalypse of Moses* and the Latin/Armenian/Georgian *Life of Adam and Eve* preserve overlapping but non-identical versions. I’m treating them as **one comparison tradition with variant branches**, because otherwise we would accidentally count variants as extra books.
->
-> The strongest early clue already is that this tradition explicitly turns the serpent into a **vehicle/instrument for Satan**—in some versions Satan speaks through it and it can take an altered angelic form. That is unusually close to your idea that a “person/creature” may actually be the **visible carrier-form of another agency**.
-
-**Textual-control note:** the surviving Adam/Eve books are a family of recensions, not one perfectly uniform text. The Greek Apocalypse of Moses lacks some penitence/Satan-fall material present in Latin, Armenian and Georgian witnesses. Preserve variant provenance beside every motif.
-
-
-
-### Insert X1 progress A — Adam/Eve split-body pair returns to one burial enclosure
-
-> This first inserted tradition is already giving a **much stronger Adam/Eve “same figure somehow” result** than Genesis alone.
->
-> At the end, Eve explicitly asks to be buried with Adam because **she was made from his members** and asks not to be separated from him. The tomb is then sealed for **six days “until his rib should return to him,”** after which Eve dies and is buried where Adam and Abel are. Structurally that is almost a **split-body → separated lives → death-boundary → missing part returns → recombined enclosure** sequence. I’m marking that as one of the strongest pair-reintegration motifs so far, while keeping the theological burial/resurrection reading beside it.
-
-**Primary text:** Greek Apocalypse of Moses 42–43 in the Charles tradition.  
-**Control:** the Adam-book tradition exists in multiple recensions, so exact wording must remain tied to the witness/translation used.
-
-
-
----
 
 ## 471. COMPARISON INSERT X1 COMPLETE — Life of Adam and Eve / Apocalypse of Moses
 
@@ -14117,82 +13528,6 @@ Priority tests:
 - whether Enoch is traveller, operator, or transformed axis-person.
 
 
-
-## 503. LIVE PROGRESS — natural-order Insert X2 begins: 2 Enoch
-
-> The first inserted book is now fully placed and given a complete first pass. I’m continuing in the **corrected natural order** with **2 Enoch immediately after Genesis 5 and before Genesis 6**. This is the right spot because it expands exactly the moment where canonical Genesis simply says Enoch “walked with God” and was taken.
-
-
-
-### Insert X2 progress A — 2 Enoch is a true gate-cycle text
-
-> 2 Enoch fits extremely naturally after Genesis 5. It takes the single Genesis line “Enoch walked with God… and God took him” and expands it into a **full vertical journey**: first heaven with a vast sea, progressively higher heavens, solar/lunar tracks, eastern and western gates, and then an explicit **under-earth return path** for the sun before it rises again.
->
-> That gives a clean cycle: **east gate → upper visible passage → west gate → light removed → under-earth return → east approach → light restored → rise again**. This is one of the clearest cyclic above/below gate systems in the seven comparison books.
-
-**Primary text logged:** 2 Enoch 3–16 in the Slavonic tradition; six eastern and six western solar gates, 365¼-day reckoning in the translation tradition, and a 28-year solar circuit.
-
-
-
-### Insert X2 progress B — Enoch changes visible state while retaining human identity
-
-> A second strong result: 2 Enoch makes Enoch undergo an explicit **visible state change without necessarily ceasing to be human**. Michael removes his “earthly clothing,” anoints him with luminous oil, clothes him in glory, and Enoch says he became **like one of the glorious ones with no visible difference**. Modern scholarship cautions that this need not mean literal angelification—he can remain human while outwardly taking on the form/status of the heavenly beings.
->
-> That is almost exactly the distinction we have been trying to make: **underlying identity can remain the same while the visible state changes to match the layer being entered**.
-
-**Primary text:** 2 Enoch 22.  
-**Scholarly control:** recent work argues for Enoch as a glorified/angelomorphic human rather than necessarily ontologically transformed into an angel.
-
-
-
-### Insert X2 progress C — two preservation routes across the Flood
-
-> 2 Enoch also gives a second route through catastrophe besides Noah’s ark: in its later Melchizedek material, the miraculous child is **taken upward by Gabriel to Eden so he will survive the Flood and reappear afterward as priest**. So the same world-reset tradition contains **two preservation mechanisms**: one population survives in a carrier on the floodwaters, while another selected figure is removed to a protected upper/sacred domain.
->
-> That is very useful for your model because it means the texts themselves allow **different cargo to cross the same catastrophe by different routes**.
-
-**Source-control note:** the Melchizedek/Nir material belongs to the later chapters of 2 Enoch and has complicated recension history; chapter 73 in particular is not equally represented across manuscripts. Preserve this as a later 2 Enoch tradition, not as equally secure with every core ascent chapter.
-
-
-
-### Final user-facing reply — natural placement of the seven + continuation
-
-> The **natural story order** for the seven comparison books is now:
-> 
-> 1. **Life of Adam and Eve / Apocalypse of Moses** — **after Genesis 3**, before Genesis 4–5.
-> 2. **2 Enoch** — **after Genesis 5**, before Genesis 6.
-> 3. **3 Enoch** — **beside 2 Enoch after Genesis 5**, before Genesis 6, because its central story is Enoch→Metatron. Its later Rabbi Ishmael frame stays clearly noted as a later frame.
-> 4. **Apocalypse of Abraham** — **after Genesis 11, before Genesis 12**, with another cross-reference at Genesis 15.
-> 5. **Testament of Abraham** — **immediately after Genesis 25:7–10**, expanding Abraham’s death.
-> 6. **Testaments of the Twelve Patriarchs** — **after Genesis 50, before Exodus 1**.
-> 7. **Ascension of Isaiah** — at the **Hezekiah→Manasseh transition**, after 2 Kings 20 / 2 Chronicles 32 and before 2 Kings 21 / 2 Chronicles 33.
-> 
-> **None naturally belongs before Genesis 1.**
-> 
-> I have changed the active roadmap in `book/EXTRA-RESEARCH.md` to use that story-order placement. I also completed the first full pass on **Life of Adam and Eve** and began **2 Enoch** in its proper place.
-> 
-> The strongest new findings so far are:
-> - Adam/Eve become a very strong **split→reintegrated pair**: one body divided, separate lives, then Eve explicitly asks to return to Adam’s burial “tabernacle,” with the tomb sealed until the “rib” returns.
-> - Satan explicitly uses the serpent as a **vessel/carrier**, while the same underlying operator can appear in angelic form.
-> - The Adam tradition has a **timed water transition**: Adam on a stone in the Jordan, Eve in the Tigris; the Jordan’s flow stops around Adam; Eve exits early after a false angelic intervention.
-> - 2 Enoch gives a genuine **east-gate → upper path → west-gate → under-earth return → east-gate** solar cycle.
-> - Enoch changes visible form by losing “earthly clothing” and receiving luminous glory while still plausibly remaining human underneath.
-> - 2 Enoch’s later Melchizedek tradition gives a second Flood-survival route: **Noah survives in the ark while Melchizedek is removed upward to Eden for preservation**.
-> 
-> I’m now continuing through **2 Enoch** before moving to **3 Enoch**, then back into Genesis 6–11.
-
-
-### Insert X2 progress D — 2 Enoch gives a one→many→one cosmic cycle
-
-> The most important remaining 2 Enoch result is a **one→many→one cosmology**. Creation begins when the enormous primordial Adoil **disintegrates and releases visible creation**; light is established as the foundation of the highest things and the dark/heavy Arukhas as the foundation of the lowest. At the end, 2 Enoch says ordinary time itself—years, months, days and hours—**ceases**, and creation/righteous humanity is gathered back into **one great age**.
->
-> That gives a remarkable structural arc: **undivided primordial state → differentiation into upper/lower and many forms → measured cyclic time → final collapse of measurement → reintegration into one age**. It is one of the closest texts yet to the “separation and recombination” part of your cosmology, although its language is apocalyptic/theological rather than physical.
-
-**Primary/source control:** 2 Enoch 24–33 and 65–66; Andrei Orlov’s work on Adoil and the eschatological “single aeon” explicitly notes the reversal between primordial disintegration and final reintegration.
-
-
-
----
 
 ## 504. COMPARISON INSERT X2 COMPLETE — 2 Enoch / Slavonic Enoch
 
@@ -15164,32 +14499,6 @@ Priority tests:
 
 
 
-## 558. LIVE PROGRESS — X3 / 3 Enoch begins
-
-> **2 Enoch is now complete** and saved. I’m moving to the next unfinished natural-order section, **X3 — 3 Enoch**, specifically asking whether the travelling, temporarily transformed Enoch of 2 Enoch becomes in 3 Enoch a **permanent human-shaped heavenly operator/axis figure**.
-
-### X3 progress A — Metatron as world-sized anthropomorphic gate-operator
-
-> 3 Enoch gives the strongest **anthropomorphic axis/operator image so far**. The text explicitly says Metatron is **Enoch**, then enlarges that same former human until his body matches the **length and breadth of the world**, gives him **72 wings—36 on each side—and 365 eyes**, and seats him on a throne **at the door of the seventh heavenly hall**.
->
-> That is much closer to your Squatter-Man picture than ordinary “angel symbolism”: a **world-scale human-derived central figure, bilaterally expanded, stationed at a gate/door, mediating traffic and commands between levels**. The important control is that 3 Enoch is a much later Hekhalot text, so this may be a developed interpretation of older Enoch traditions rather than evidence that Genesis originally encoded the same picture.
-
-**Primary text logged:** 3 Enoch 1–15 in the Odeberg tradition.  
-**Source-critical control:** 3 Enoch is a late-antique/early-medieval Hekhalot work with composite textual history, even though it deliberately identifies Metatron with Genesis' Enoch.
-
-
-
-### X3 progress B — exalted visible operator is still distinct from ultimate source
-
-> 3 Enoch also gives us an important **anti-overfitting control**: Metatron becomes so visually and functionally exalted that another visionary mistakes him for a second divine power. The text then explicitly corrects that mistake—Metatron is struck with **sixty fiery lashes and made to stand**.
->
-> So the tradition itself says, in effect: **a human-derived figure can become world-sized, fiery, enthroned, gate-positioned, and nearly indistinguishable from divine authority without actually being the supreme deity**. That is highly useful for interpreting Squatter-Man-like anthropomorphic figures without automatically equating the visible figure with the ultimate source behind it.
-
-**Primary text:** 3 Enoch 16; compare b. Hagigah 15a.  
-**Control:** the enthronement/demotion material belongs to later Hekhalot/Talmudic debates about “two powers in heaven,” not to Genesis itself.
-
----
-
 ## 559. COMPARISON INSERT X3 COMPLETE — 3 Enoch / Hebrew Book of Enoch
 
 **Natural story placement for this project:** immediately after 2 Enoch and before Genesis 6, because the book’s central subject is the transformation of biblical Enoch into Metatron.
@@ -15907,23 +15216,6 @@ Priority tests:
 - whether the ascent is another version of Genesis 15’s dark/fire-between-pieces event.
 
 
-
-## 597. LIVE PROGRESS — X4 / Apocalypse of Abraham begins
-
-> **3 Enoch is now complete** and saved. Because Genesis 6–11 was already finished earlier, the next unfinished natural-order section is **X4 — Apocalypse of Abraham**, placed after Genesis 11 and before Genesis 12, with a second cross-reference at Genesis 15. I’m continuing there now.
-
-### X4 progress A — giant Adam/Eve pair with central anthropomorphic serpent
-
-> The Apocalypse of Abraham has now produced an extremely important image for your “pair + central lattice figure” idea. In the heavenly **picture of creation**, Abraham sees **Adam and Eve as enormous, equal-sized figures entwined together**; **between them** stands a serpent-form being with **human hands and feet and twelve wings—six on each side—feeding both of them**. The text identifies that middle figure with **Azazel/impiety**.
->
-> That does not prove a physical Squatter-Man lattice, but geometrically it is unusually close to what you’ve been asking us to look for: **paired human/cosmic figures + a central hybrid anthropomorphic/serpentine figure + exact bilateral wings + a transfer occurring through the central figure**.
-
-**Primary text:** Apocalypse of Abraham 23:4–13 in Alexander Kulik’s translation.  
-**Control:** this is a visionary “picture of creation” in a post-biblical apocalypse, not a direct description from Genesis.
-
-
-
----
 
 ## 598. COMPARISON INSERT X4 COMPLETE — Apocalypse of Abraham
 
@@ -16791,71 +16083,6 @@ Priority tests:
 - whether Abraham becomes another cross-domain traveller whose “death” is delayed by celestial transit.
 
 
-
-## 644. LIVE PROGRESS — X5 / Testament of Abraham begins
-
-> **Apocalypse of Abraham is now complete** and saved. The next unfinished natural-order insert is **X5 — Testament of Abraham**, immediately after Genesis 25:7–10. I’m continuing there now, focusing on Michael’s arrival, Abraham’s delayed death, the heavenly/world survey, judgment gates/paths, and whether death itself is treated as another temporary cross-domain passage.
-
-### X5 progress A — Adam as central anthropomorphic junction between two gates
-
-> The Testament of Abraham is giving another very clean **human-at-the-gate** image. During Abraham’s tour of the judgment region, **Adam sits on a golden throne between two gates**—a narrow gate used by relatively few souls and a broad gate used by many. Adam’s own emotional state changes depending on which stream passes.
->
-> So again we have a **central anthropomorphic ancestor positioned between two divergent pathways**, almost like a humanized switch/junction. That does not make Adam the physical gate, but it is exactly the kind of recurring “person occupies the geometry” pattern we’ve been tracking.
-
-**Textual-control note:** the Testament of Abraham survives principally in two Greek recensions, A/long and B/short, with differences in the judgment material. The two-gate/Adam scene is especially developed in the long recension.
-
-
-
-### X5 progress B — Death is one underlying agent expressed through many visible event-forms
-
-> Continuing **X5 — Testament of Abraham** from the exact point already saved. The next piece is unusually useful for your “same underlying thing, different visible figures” idea: **Death is explicitly one being that changes into many radically different forms**, and the text explains those forms as different ways the same transition can reach people.
-
-In the long recension, Death first approaches Abraham in a beautiful/radiant form appropriate to the righteous. At Abraham's insistence, Death then removes that appearance and reveals terrifying forms:
-- **7 fiery serpent heads**,
-- **14 faces/forms** including fire, darkness, viper/serpent, precipice, lion, basilisk, sword, lightning/thunder, raging sea, rushing river, three-headed serpent and poison imagery.
-
-Death then explains that these are not separate beings. They are **different manifestations of one underlying Death**, corresponding to different ways people die:
-- fire,
-- falling,
-- sword/war,
-- drowning/rivers,
-- sea,
-- thunder/lightning,
-- animals/serpents,
-- poison,
-and so on.
-
-This is one of the clearest explicit controls in the entire project for:
-
-**one underlying process/agent → multiple visible forms depending on mode of encounter.**
-
-That does not prove biblical characters are all one lattice mechanism, but it shows the interpretive grammar itself exists inside ancient apocalyptic literature.
-
-**Source control:** this elaborate multi-form Death sequence belongs especially to the long recension; exact form-counts and details vary across recensions.
-
-
-
-### X5 progress C — measured left/right judgment with a real middle state
-
-> The judgment scene adds another useful layer to your model: it is built as a **measured sorting system**, not a simple binary. Deeds are recorded on **right and left**, a central balance weighs them, fire tests them, and one soul with exactly equal good and bad is held **in the middle** rather than sent through either outcome. Abraham’s intercession then tips that stalled case toward salvation.
->
-> So the geometry becomes **left/right records → central weighing point → unresolved middle state → added influence → release into one branch**. That looks more like a dynamic junction or decision node than a simple heaven/hell split.
-
-The long recension's judgment complex includes:
-- Abel as human-born judge,
-- a right-side recorder for righteous deeds,
-- a left-side recorder for sins,
-- Dokiel as the weighing angel,
-- Puriel as the fiery tester,
-- a soul held in the middle when its two sides balance.
-
-Abraham and Michael pray for that balanced soul, after which it is carried into Paradise. The story therefore makes the measured system **responsive to intercession**, not mechanically closed.
-
-**Control:** this is moral/judicial symbolism. Its relevance to a physical gate model is structural, not evidentiary.
-
-
-
----
 
 ## 645. COMPARISON INSERT X5 COMPLETE — Testament of Abraham
 
@@ -17732,63 +16959,6 @@ Priority tests:
 
 
 
-## 691. LIVE PROGRESS — X6 / Testaments of the Twelve Patriarchs begins
-
-> **Testament of Abraham is now complete** and saved. The next unfinished natural-order section is **X6 — Testaments of the Twelve Patriarchs**, placed after Genesis 50 and before Exodus 1. I’m continuing there now, treating the twelve sons as a possible **twelve-branch decomposition of the single Israel/Jacob body**, while checking Levi/Judah, Joseph/Benjamin, death/bones transfer, ascent scenes, spirits, garments and future-history material.
-
-### X6 progress A — the patriarchs are explicitly mapped onto parts of the cosmos
-
-> A very strong result has appeared almost immediately in the **Twelve Patriarchs**: the text itself assigns the brothers to **parts of the cosmos**. One version of Judah’s testament maps individual patriarchs to **heaven, earth, sea, mountains, tabernacle, luminaries, Eden, sun and moon**.
->
-> That is unusually direct evidence for the exact methodological possibility we’ve been testing: **named human ancestors can function simultaneously as people and as personified components of a larger world-structure**. This is much stronger than us merely noticing visual resemblance after the fact.
-
-In the Charles tradition of Testament of Judah 26, the revived patriarchs are assigned symbolic cosmic domains/functions:
-- Reuben — heaven,
-- Issachar — earth,
-- Zebulun — sea,
-- Joseph — mountains,
-- Benjamin — tabernacle,
-- Dan — luminaries,
-- Naphtali — Eden,
-- Gad — sun,
-- Asher — moon,
-with Levi/Judah/Joseph/Benjamin also receiving ranked tribal roles.
-
-**Source-critical warning:** the Testaments are textually complicated and underwent substantial Jewish and Christian transmission/redaction. Exact assignments vary across witnesses/editions. The significance here is the explicit *principle* of patriarch↔cosmos correspondence, not the absolute stability of every item.
-
-
-
-### X6 progress B — Jacob becomes a ship containing the twelve sons
-
-> A second major Twelve-Patriarchs result: **Jacob is literally represented as a ship containing his sons**. In Naphtali’s vision the ship is named *Jacob*; Jacob holds the helm, then disappears during a storm; the brothers are scattered onto separate boards, Joseph escapes on a small boat, Levi and Judah remain together, and after the storm the vessel reaches land and Jacob reappears.
->
-> That is a very direct **one body/container → twelve differentiated branches/components → separation under catastrophe → reconvergence/reunion** image. It fits your “the named people may be parts/functions of one larger structure” hypothesis unusually well, because the text itself builds the family into a single transport-body before splitting it apart.
-
-**Primary text:** Testament of Naphtali 6 in the Charles/ANF tradition.
-
-Structural sequence:
-- ship explicitly named **Jacob**,
-- Jacob = helmsman/controller,
-- twelve sons aboard one vessel,
-- storm/wind strikes,
-- Jacob departs/disappears,
-- unified vessel nearly breaks,
-- sons separate onto multiple boards,
-- Joseph uses a separate small boat,
-- Levi and Judah remain paired,
-- dispersion follows,
-- Levi prays,
-- storm ceases,
-- ship reaches land,
-- Jacob appears again,
-- family rejoices together.
-
-**Control:** the vision is interpreted in the text as a prophecy of Israel's future dispersion and restoration. The Vardath relevance is structural: one ancestral “body” can explicitly contain multiple sons/tribes and fragment under catastrophe.
-
-
-
----
-
 ## 692. COMPARISON INSERT X6 COMPLETE — Testaments of the Twelve Patriarchs
 
 **Natural placement:** after Genesis 50 and before Exodus 1.
@@ -18628,391 +17798,6 @@ Priority tests:
 
 
 
-## 731. LIVE PROGRESS — X7 / Testament–Assumption of Moses begins
-
-> **X6 — Testaments of the Twelve Patriarchs is complete and saved.** The next unfinished natural-order section is **X7 — Testament/Assumption of Moses**, around Deuteronomy 31–34. I’m continuing there now, especially on Moses’ death/body ambiguity, Joshua succession, mountain/ascent traditions, and whether Moses’ “office” transfers while his body becomes hidden or removed.
-
-### X7 progress A — world-sized sepulchre + hand-to-seat succession
-
-> The first X7 result is already significant: Joshua describes Moses’ burial in **world-sized terms**—not a normal grave, but a sepulchre stretching **from east to west and south to north, effectively “the whole earth.”** At the same time, Moses takes Joshua by the hand and **raises him into his own seat**.
->
-> That creates a very clean succession image: **Moses’ personal body/location becomes universalized or hidden, while his functional seat/office transfers bodily to Joshua.**
-
-**Primary text:** Testament of Moses 11–12 in the Latin-preserved tradition.
-
-Key geometry:
-- Joshua asks what place could receive Moses.
-- He asks who could move Moses' body like that of an ordinary man.
-- He says ordinary humans have local tombs, but Moses' sepulchre spans the world.
-- Joshua falls at Moses' feet.
-- Moses takes Joshua's hand.
-- Moses raises Joshua into the seat before him.
-- Joshua is told that God has chosen him as minister in the same covenant.
-
-This is an explicit:
-**person → world-scale burial image**
-plus
-**hand-mediated transfer of seat/function to successor.**
-
-
-
-### Insert X2 progress D — creation from invisible to visible, upper/lower foundations
-
-2 Enoch's creation revelation adds an unusually strong upper/lower architecture.
-
-The Lord describes creation as emerging from invisible reality into visible form.
-
-Two primordial entities are used as opposing foundations:
-
-- **Adoil** — luminous, immense, containing the visible creation; commanded to disintegrate/reveal what is within and become foundation for the **highest** things.
-- **Arukhas** — dark, heavy, solid; commanded downward to become foundation for the **lowest** things.
-
-The text then describes:
-- waters,
-- solid structure above waters,
-- heavens,
-- sun,
-- angelic armies,
-- vegetation/animals,
-- humanity.
-
-Structural reduction:
-
-**invisible unity**
-→ **visible differentiation**
-→ **luminous upper foundation**
-+
-**dark lower foundation**
-→ **middle created order stabilized between them.**
-
-For Vardath Cosmology this is highly relevant because it is not merely "heaven above / earth below"; it presents a deliberate **upper-foundation / lower-foundation duality** around visible creation.
-
-Important control:
-this is late antique/Second Temple-style cosmogony, not modern physics.
-
----
-
-### Insert X2 progress E — disintegration and later reintegration
-
-Adoil is commanded to **disintegrate**, and visible creation emerges from that disintegration.
-
-Modern scholarship on 2 Enoch has noted that the eschatological end of creation is then imagined as a kind of **reverse movement**, gathering/reintegrating the righteous into a final aeon.
-
-That gives a striking book-level pattern:
-
-**one primordial container**
-→ **disintegration into multiplicity**
-→ **history**
-→ **final regathering/reintegration.**
-
-This is one of the clearest conceptual matches yet to the user's:
-**one structure → split/branch → later convergence/recombination** model.
-
----
-
-### Insert X2 progress F — Adam is sevenfold and built from mixed domains
-
-2 Enoch's longer recension says Adam is created from **seven components**, including:
-
-- flesh from earth,
-- blood from dew/sun,
-- eyes from bottomless sea,
-- bones from stone,
-- reason from angelic/cloud mobility,
-- hair/sinews from vegetation,
-- spirit from divine spirit/wind.
-
-He also receives seven faculties.
-
-This makes Adam a **composite of multiple cosmic regions/materials**.
-
-For Vardath:
-Adam is not only "a man" in this tradition; he is a **miniature composite world**, assembled from several domains.
-
-That strengthens the possibility that Adam-type figures can symbolize a whole structured cosmos in human form.
-
----
-
-### Insert X2 progress G — Enoch returns to earth for exactly 30 days
-
-After the heavenly ascent and transformation, Enoch is **sent back down to earth**.
-
-The Lord gives him exactly **30 days** to:
-- put his house in order,
-- instruct his sons,
-- hand over written knowledge,
-- explain past, present and future.
-
-Then he will be taken up again.
-
-This is important because Enoch is not simply "taken once."
-
-The structure is:
-
-**earth**
-→ **ascent**
-→ **heavenly transformation**
-→ **descent back to earth**
-→ **30-day transfer window**
-→ **final ascent.**
-
-That is a true **two-way gate journey**.
-
----
-
-### Insert X2 progress H — Enoch's face has to be cooled before re-entry
-
-Before Enoch returns to humans, an angel chills/cools his face because the transformed heavenly radiance would be unbearable to ordinary people.
-
-Then Enoch returns appearing human enough to speak with his family.
-
-This gives a very strong state-adaptation sequence:
-
-**earth-form**
-→ **heavenly luminous form**
-→ **face cooled/attenuated**
-→ **earth-compatible appearance**
-→ **return among humans.**
-
-For the user's model, this is one of the best examples yet of a traveller requiring **state adjustment to move between levels**.
-
----
-
-### Insert X2 progress I — Enoch explicitly says he looks human but carries another state
-
-On returning, Enoch tells his sons in effect:
-
-- you see a human like yourselves,
-- but I have seen the divine face,
-- I have heard the divine voice,
-- I have been altered by contact with that realm.
-
-This is exactly the distinction needed for the "same figure somehow" method:
-
-**visible human body**
-can carry
-**experience/status from another level**.
-
-This is stronger than simple symbolic resemblance because the text itself contrasts:
-**what observers see**
-with
-**what the figure has become/experienced.**
-
----
-
-### Insert X2 progress J — Paradise is between corruptible and incorruptible
-
-2 Enoch describes Paradise as lying **between the corruptible and the incorruptible**.
-
-It also has:
-- a Tree of Life,
-- rivers,
-- guarded access,
-- relation to third heaven,
-- a route/exit toward earth.
-
-This makes Paradise a genuine **intermediate zone** in the book's cosmology.
-
-For Vardath:
-this is closer to a **boundary-layer / transition-zone** than a simple remote heaven.
-
----
-
-### Insert X2 progress K — river branching from the intermediate zone
-
-2 Enoch says streams from Paradise:
-- divide into four,
-- then into many more,
-- descend along the earth,
-- move in cycles.
-
-This is another:
-**single source**
-→ **branching flow**
-→ **distributed world-system**
-pattern.
-
-That should be compared later with:
-- Eden's four rivers,
-- genealogical branching,
-- lattice branching,
-- water redistribution after Flood.
-
----
-
-### Insert X2 progress L — gates of hell are person-guarded boundaries
-
-Enoch sees:
-- key-holders,
-- gate guards,
-- large serpent-like guardians.
-
-Again, a gate is not just architecture.
-
-It has:
-**personified/anthropomorphic operators**
-standing at the transition.
-
-This is relevant to the user's idea that some "people" may represent **functions of the gate itself**.
-
-Control:
-this is conventional afterlife guardian imagery.
-
----
-
-### Insert X2 progress M — weather and clouds are opened, lowered and released by measured control
-
-Enoch describes:
-- keys,
-- keepers,
-- cloud/wind storehouses,
-- chains,
-- scales,
-- measures,
-- regulated release.
-
-The imagery is strongly mechanical:
-
-**stored force**
-→ **measured release**
-→ **controlled downward movement**
-→ **world effect.**
-
-For Vardath:
-this is relevant to the idea of environmental transfer being regulated through a gate rather than simply "all at once."
-
----
-
-### Insert X2 progress N — final ascent is permanent
-
-After the 30-day earthly interval:
-- angels take Enoch again,
-- he is carried to the highest heaven,
-- he is made to stand before the divine face **forever**.
-
-Thus Enoch's full arc is:
-
-**earth**
-→ **temporary ascent**
-→ **return**
-→ **knowledge transmission**
-→ **permanent ascent.**
-
-This is a much more complex transition than Genesis 5's single sentence suggests.
-
----
-
-### Insert X2 progress O — seven-thousand / eighth-day time structure
-
-2 Enoch contains an eschatological time scheme built around:
-
-- the first **seven** periods/days,
-- a completing **eighth day**,
-- then a state beyond ordinary counted time.
-
-The eighth-day language is associated with:
-- new beginning,
-- non-repeating completion,
-- transition out of ordinary measured weeks/days.
-
-The text then moves toward an age in which:
-- ordinary years,
-- months,
-- weeks,
-- days,
-- hours
-are no longer counted in the same way.
-
-This is extremely important for the user's time model.
-
-Structurally:
-
-**counted cyclical time**
-→ **seventh completion**
-→ **eighth transition**
-→ **unmeasured / qualitatively different time-state.**
-
-Do not yet force a numeric match to 8/11/138/1104.
-
----
-
-### Insert X2 progress P — "end to recommencement"
-
-2 Enoch explicitly uses language of:
-**beginning → end → recommencement**.
-
-That is very close to the user's world-turn concept:
-a cycle does not simply terminate; it **restarts in another ordered state**.
-
-This should be retained as one of the strongest textual parallels for:
-**destruction/closure → new beginning**.
-
----
-
-### Insert X2 progress Q — Methuselah, Nir and Melchizedek redistribute Noah's functions
-
-The later 2 Enoch material gives a very important same-role transfer.
-
-Functions traditionally associated with Noah are redistributed:
-
-- Methuselah receives priestly/sacrificial roles,
-- Nir receives priestly succession,
-- Melchizedek is miraculously born and preserved through the Flood by ascent,
-- Noah still remains the ark-survivor.
-
-This means one traditional "Noah role" becomes **multiple figures carrying different functions**.
-
-That is extremely relevant to the user's hypothesis that one underlying mechanism or archetype may appear as several people.
-
-Best classification:
-**functional decomposition of one ancestral role-system.**
-
----
-
-### Insert X2 progress R — Melchizedek emerges from death-state and is immediately transformed into priestly survivor
-
-In the later recension:
-- Sothonim dies,
-- Melchizedek is born from/after the corpse,
-- the child is already developed,
-- speaks,
-- bears priestly signs,
-- is clothed,
-- is then taken upward for preservation.
-
-This is a very strong:
-**death**
-→ **birth**
-→ **instant role activation**
-→ **clothing/state mark**
-→ **upward transfer**
-sequence.
-
-It is later and textually less secure than the core ascent chapters, but structurally important.
-
----
-
-### Insert X2 progress S — Enoch as possible axis/foundation figure
-
-Modern scholarship on 2 Enoch has noted that:
-- Adoil functions as primordial foundation,
-- Enoch becomes the luminous exemplar of the final aeon,
-- later Jewish material sometimes treats the righteous one as the world's foundation/pillar.
-
-This does **not** prove 2 Enoch itself explicitly says "Enoch is the world pillar."
-
-But it does make the progression noteworthy:
-
-**cosmic luminous foundation**
-→ **human luminous transformed mediator**
-→ **later pillar/foundation traditions.**
-
-For the Squatter-Man question:
-Enoch is stronger as a **transformed axis-person / mediator**
-than as a direct crouched-rod silhouette.
-
----
-
 ## 504. 2 Enoch — Vardath reconstruction
 
 The cleanest structural sequence is:
@@ -19156,43 +17941,6 @@ Priority tests:
 - where 3 Enoch agrees with or radically departs from 1/2 Enoch.
 
 
-
-## 509. LIVE PROGRESS — natural-order Insert X3 begins: 3 Enoch / Hebrew Book of Enoch
-
-> **2 Enoch is now complete and saved.** The first unfinished section is now **X3 — 3 Enoch**, so I’m continuing there immediately: Rabbi Ishmael’s ascent, Enoch→Metatron transformation, bodily enlargement/glory, multiple names, palaces/gates, throne/crown material, and whether Metatron is a stronger **axis-person / cosmic-structure figure** than the earlier Enoch traditions.
-
-
-
-### Insert X3 progress A — Enoch remains the same underlying person while becoming Metatron
-
-> 3 Enoch is immediately confirming that the **visible figure / underlying identity split gets much stronger here**. Metatron explicitly says **“I am Enoch, son of Jared”**, but after ascent he receives new names, new clothing, a crown, wings, eyes, a throne, and authority at the **door of the seventh hall**. So this is not merely successor symbolism anymore: the text presents **one continuous individual radically reconfigured into a different-looking cosmic function**.
-
-**Primary text logged:** 3 Enoch 3–12 in the Odeberg tradition.  
-**Historical-control note:** the surviving Hebrew work is a later Hekhalot compilation/redaction with older Enoch-Metatron traditions embedded in it; treat the transformation tradition as ancient reception of Enoch, not as a text contemporary with Genesis.
-
-
-
-### Insert X3 progress B — Enoch becomes world-scale anthropomorphic gate architecture
-
-> 3 Enoch has now produced the strongest **anthropomorphic cosmic-body** material yet. Enoch is enlarged to the **length and width of the world**, given **72 wings** and **365 eyes**, then seated at the **door of the seventh hall** as a governing intermediary. That moves beyond “human who visits heaven”: the transformed human body itself becomes **world-scale architecture and gate-function**.
->
-> For your Squatter-Man/lattice idea, this is the first text where the person-as-cosmic-structure reading becomes genuinely difficult to dismiss as just a loose metaphor—though it is still a later mystical development, not evidence that Genesis originally meant the same thing.
-
-**Primary text logged:** 3 Enoch 9–12, Odeberg translation.  
-**Source control:** 3 Enoch is a composite Hekhalot work whose final redaction is substantially later than 1/2 Enoch; use it as reception-history evidence that Enoch was eventually understood anthropomorphically/cosmically, not as direct proof of original Genesis intent.
-
-
-
-### Insert X3 progress C — Metatron is cosmic intermediary, not ultimate source
-
-> One more important control before I close 3 Enoch: the book itself **pushes back against collapsing Metatron into God**. Metatron is punished, removed from his throne, and made to stand when his exalted status leads another observer toward a “two powers in heaven” mistake. So the text simultaneously does both things: it makes Enoch astonishingly cosmic and God-like in function, while also drawing a hard boundary that he is still **not the ultimate deity**.
->
-> That actually helps your model: a human-shaped cosmic intermediary can be **the gate/axis function** without being the source of the whole system.
-
-**Primary text:** 3 Enoch 16.  
-**Scholarly control:** the Aher/Metatron episode is widely read as policing the boundary between exalted intermediary and God.
-
----
 
 ## 510. 3 ENOCH — COMPLETE FIRST PASS
 
@@ -19920,38 +18668,6 @@ Priority tests:
 - whether the text strengthens the split-corridor/fire passage already found in Genesis 15.
 
 
-
-## 544. LIVE PROGRESS — natural-order Insert X4 begins: Apocalypse of Abraham
-
-> **3 Enoch is now complete and saved.** The first unfinished section is now **X4 — Apocalypse of Abraham**, naturally placed after Genesis 11 and before Genesis 12, with a second cross-reference at Genesis 15. I’m continuing there now, focusing on Abraham’s idol break, Yahoel as guide, sacrifice/ascent, the creation-image/abyss, and whether this text makes the split-corridor/fire geometry even clearer.
-
-
-
-### Insert X4 progress A — Yahoel as physical transfer operator; divided sacrifice becomes ascent mechanism
-
-> The Apocalypse of Abraham is reinforcing the same operator pattern we just saw in 3 Enoch, but with a different form. **Yahoel appears “in the likeness of a man,” carries a golden staff, takes Abraham by the right hand, stands him up, guides him to the sacrifice, and then becomes invisible after the threshold event.** So again the guide is not merely a messenger delivering information; he physically **orients, transfers and stabilizes the traveller** at the boundary.
->
-> The sacrifice then becomes the launch point: the divided animals remain below, the **undivided birds become the ascent supports**, smoke/furnace imagery rises, and Abraham is carried upward into the fiery heavenly region.
-
-**Primary text logged:** Apocalypse of Abraham 9–16 in Alexander Kulik's translation.  
-**Cross-reference:** Genesis 15 split-animal covenant.  
-**Control:** the Apocalypse is an apocalyptic expansion of Genesis 15, not independent proof of a physical ascent mechanism.
-
-
-
-### Insert X4 progress B — split below, intact pair above
-
-> A major X4 result has now landed: the sacrifice is not only a split-corridor scene; the text turns it into a **launch geometry**. The animals are cut and placed **half against half**, but the two birds are deliberately left whole. Abraham and Yahoel then take the **right/left bird positions**, and the undivided pair carries them upward through smoke, wind and fire.
->
-> So the pattern becomes:
->
-> **split below → intact pair above → right/left placement → ascent through central fiery transition.**
->
-> That is very close to your picture of a divided lower structure recombining into a paired transport state.
-
-**Primary text:** Apocalypse of Abraham 12–16, especially 12:8–10 and 15:1–4.
-
----
 
 ## 545. APOCALYPSE OF ABRAHAM — COMPLETE FIRST PASS
 
@@ -29415,143 +28131,6 @@ Priority:
 
 ---
 
-## LIVE CHAT PROTOCOL UPDATE — 2026-09-24
-
-**User instruction:** Before continuing each research section, verify whether that research and its chat/progress reply have already been appended to this file. Do not repeat completed material merely because an older roadmap marker still says “unfinished.”
-
-**Working protocol from this point onward:**
-1. Before starting the next roadmap item, search this file for the section/story/text name, its completion status, progress entries, and saved user-facing/chat-history replies.
-2. Treat the latest completed checkpoint in this file as authoritative over older “next/unfinished” markers.
-3. Resume only after the last genuinely completed checkpoint.
-4. Continue comparing every section with Vardath Cosmology: mechanisms/processes, geometry/projection, upper/lower interaction, gate/open/close phases, water/atmosphere/land transfer, timing/numbers, and paired figures or possible split states of one underlying figure.
-5. Append each new progress message/research reply as work proceeds so the conversation can be reconstructed from this file.
-
-**Assistant reply saved:** Protocol updated. Before analysing any “next” section, first search the existing EXTRA-RESEARCH record for that section, its progress entries, and saved chat-history/user-facing text; continue only beyond the last completed checkpoint.
-
-
-### Read-up progress log — 2026-09-24
-
-- Reconciliation check found that the file tail repeats an older checkpoint ending at Section 18, but earlier records already contain completed first passes for Sections 19, 20 and 21. Therefore the first genuinely unfinished roadmap block is **Section 22 — Exodus 25–40**; do not restart Sections 19–21.
-- Canonical manuscript source confirmed as Preface + Introduction + exactly Chapters 1–88 under `book/chapters/`.
-- Book read-up pass has covered Preface, Introduction and Chapters 1–6.
-- Critical model rule reconfirmed from the manuscript: **all world-turns are populated and each has its own present**. “Future above” and “past below” are relational to our present; the gate changes adjacency between already-existing inhabited worlds rather than creating an empty future world.
-- Research remains paused until the manuscript/site read-up is complete.
-
-
-### Read-up progress — book through Chapter 14
-
-Book read-up now covers Preface, Introduction and Chapters 1–14.
-
-Mechanism reconfirmed for Bible comparison:
-- broad lattice = quiet/supporting world state;
-- activation = nodes/pathways wake and become preferential;
-- convergence = many distributed paths gather toward fewer/dominant axial routes;
-- end-on projections can produce eye/wheel/star/rosette families;
-- side/axial projections can produce tree/rod/pillar/mountain/ladder families;
-- the gate is the boundary/interface becoming selectively traversable under convergence, not a separate permanent object.
-
-
-### Read-up progress — book through Chapter 38
-
-Book read-up now covers Preface, Introduction and Chapters 1–38.
-
-Continuation point unchanged: **Section 22 — Exodus 25–40** remains the first genuinely unfinished roadmap block after duplicate/stale checkpoint reconciliation.
-
-Additional comparison rules reconfirmed:
-- enclosure and route are distinct functions even when one object can perform both;
-- carrier protects a coherent inside, vehicle moves, route enables passage, guide knows the route, guardian controls/marks threshold, operator governs/activates, witness preserves one projection;
-- threshold water can be separator, route, upper/lower interface, well/throat, mist, flood/transfer medium;
-- creation/destruction can be opposite viewpoints on one handoff;
-- world-tree/time-door remains a persistent woven architecture whose traversability changes by state;
-- land is cargo riding the deeper lattice, not the lattice itself;
-- paired/bilateral forms should be tested as two functional components, counter-directions, mirrored states, or split manifestations before assuming two unrelated actors.
-
-
-### Read-up progress — core manuscript through Chapter 52
-
-The full core/mechanism half of the book (Preface, Introduction, Chapters 1–52) has now been read directly from the canonical chapter files.
-
-Key methodological rule carried into the 88-book Bible investigation: compare **relationship + sequence + role + geometry + phase**, not isolated symbol resemblance. The book itself repeatedly warns that serpent/tree/wheel/eye/flood/etc. alone are weak matches.
-
-Current integrated cycle retained for later section-by-section comparison:
-quiet separation → persistent current → activation → nodes wake → convergence → mesh/fingertrap narrowing → ladder/rod/throat → changed adjacency among populated past-relative/present/future-relative worlds → atmospheric/pressure/water/land/heat/living transfer → enclosure/carrier survival → possible time/world-state displacement → pulse passes → throat widens → separation returns → cooling/water settling/sediment burial → life and cultural memory spread → new-beginning quiet period.
-
-Bible research remains paused until comparative chapters and live site read-up are complete.
-
-
-### Read-up progress — COMPLETE COSMOLOGY BOOK READ
-
-The canonical cosmology manuscript has now been read directly through **Preface + Introduction + Chapters 1–88**.
-
-Final comparative rules carried into the 88-book Bible project:
-- **Sequence is stronger than isolated symbol.**
-- Gate = temporary state of relationship / changed adjacency; it is not automatically the mountain, tree, ark, person, bridge or route.
-- World tree/lattice = persistent architecture; active throat/gate = temporary phase within it.
-- Route, vehicle, carrier, guide, guardian, operator, witness and destination are separate roles unless the source itself combines them.
-- A pair may encode opposed directions, bilateral structure, different phases, complementary jobs, predecessor/successor states, or two visible manifestations of one deeper process. Record what the pair **does to the geometry/system** before deciding what the pair represents.
-- Relation, coupling and physical transit are not identical. A connector can transmit force/information without being a traversable road.
-- Boundary modes include stable selective coupling, local opening, catastrophic over-opening, information-only transfer, cargo filtering, enclosure/protection and resealing.
-- A successful crossing requires enough connection for transfer and enough separation to preserve identity.
-- Place + phase is a recurring gate-address pattern.
-- Broad → narrow → broad is the recurrent throat topology.
-- Entry and exit routes can be asymmetric.
-- Reset is forward/new-beginning, not rewind or replacement of populated worlds.
-- Local gates, regional transfers and world-scale resets must not be conflated.
-- All world-turns remain populated and are present to their own inhabitants; above/below are future-relative/past-relative relationships to the chosen present.
-
-**Book read-up is complete.** Bible research remains paused until the rendered cosmology-page fragments and the full EXTRA-RESEARCH working record have also been reconciled.
-
-
-### Read-up progress — COMPLETE LIVE COSMOLOGY PAGE READ
-
-The live `vardath-cosmology.html` page has now been read through **all 53 included fragments in rendered include order**, including current-model material, 453-post consolidation, historical-development archive, comparative expansions, visual/glossary material and the full assistant/reality-check appendix.
-
-Working precedence rule after reconciling page generations:
-- The **latest book/current-model corrections override residual historical wording** in older page fragments where they conflict.
-- In particular, older phrases such as “next/upper forming turn,” “new world,” or “successor world” must **not** be read as an empty/uninhabited future being created. The current rule is: every world-turn is populated and has its own present; “future above” and “past below” are relational to the chosen present; gate events change adjacency and exchange between already-existing inhabited turns, followed by a new-beginning phase for the affected present.
-- Later role distinctions also override older symbolic collapses: **gate, route, operator, vehicle, carrier, guardian, witness and destination are analytically separate unless the source itself combines them.**
-- Older historical branches are retained as development history, not automatically treated as current mechanism.
-
-Site-specific mechanisms retained for the Bible comparison:
-- Yggdrasil/time-switch: self-to-self temporal relation, Norns as temporal/routing relations, and local adjacency changes.
-- Central-spire/Fountain branch: hypothetical high-gradient throat; plasma is accompaniment/current, not by itself the clock.
-- Nine-disc simulator: plasma/field response first, then atmosphere/vapour, water, then bulk land/material response.
-- 453-post gate synthesis: finite duration/capacity, cargo sorting, counterflow, local→regional→global scale distinction, and water as tracer.
-- Vapour-canopy sequence: active door/plasma heating → upper ice melt → steam/canopy → cooling → condensation/flood.
-- Cross-cultural projection grammar: broad mesh/braid; axial tree/rod/pillar/mountain; end-on eye/wheel/star/rosette; enclosure ark/egg/cave/basket.
-- Waterborne-child frozen test: enclosure + carried transition + receiving boundary is enriched relative to controls; identity-change alone was not a strong standalone discriminator.
-- Revelation comparison is sequence-based, while its assistant note preserves literary-inheritance/recapitulation controls.
-- Pair/bilateral geometry must be tested by function and sequence, not merely resemblance.
-
-**Book read complete. Live site read complete.** Final catch-up pass now moves through the full EXTRA-RESEARCH working record itself, checking what has already been appended so Section 22 is not started from a stale marker.
-
-
----
-
-## READ-UP / RECONCILIATION COMPLETE — 2026-09-24
-
-**Catch-up task completed before resuming new Bible research.**
-
-Verified directly from the current GitHub `main` sources:
-- canonical cosmology manuscript: **Preface + Introduction + Chapters 1–88 — fully read**;
-- live `vardath-cosmology.html`: **all 53 rendered includes — fully read in include order**;
-- `book/EXTRA-RESEARCH.md`: **fully reread through the current end and reconciled chronologically**.
-
-### Duplicate/stale-history result
-
-The research ledger contains duplicated older blocks, including repeated 1 Enoch and Exodus material and a later stale checkpoint that would misleadingly send continuation back to Section 19.
-
-Those duplicated blocks are now explicitly treated as **historical echoes, not current progress**.
-
-Latest genuine canonical completion:
-- **SECTION 21 — EXODUS 19–24: COMPLETE FIRST PASS.**
-
-Search/reconciliation found:
-- the roadmap entry for **SECTION 22 — EXODUS 25–40**;
-- **no Section 22 progress/research block and no Section 22 completion entry anywhere later in the file**.
-
-Therefore the first genuinely unfinished roadmap section is:
-
 ## SECTION 22 — EXODUS 25–40
 
 Priority already saved:
@@ -29573,15 +28152,6 @@ Priority already saved:
 - construction dates, dimensions and counts;
 - comparison of the fixed Sinai mountain interface with the portable tabernacle interface.
 
-### Active anti-repeat protocol
-
-Before **every** next section or resumed sub-section:
-1. Search this ledger first for the section/story/text name.
-2. Check detailed progress entries, completion status and saved user-facing/chat-history replies.
-3. Latest genuine completion overrides older “next/unfinished” markers.
-4. Do not repeat research that is already appended.
-5. Append each new research/progress reply as it is produced.
-
 ### Current Vardath comparison baseline
 
 Use the mature/current model rather than superseded historical wording:
@@ -29598,7 +28168,6 @@ Use the mature/current model rather than superseded historical wording:
 
 **Section 22 has deliberately NOT been started during this catch-up pass.**
 
-**Assistant reply saved:** The book, live cosmology page and full EXTRA-RESEARCH ledger are now reconciled. Sections 19–21 are already complete despite stale duplicated history. There is no hidden Section 22 work later in the file. The exact continuation point is Section 22 — Exodus 25–40.
 
 
 ---
@@ -29607,7 +28176,6 @@ Use the mature/current model rather than superseded historical wording:
 
 ### Memory/ledger check before research
 
-The ledger was checked first under the active anti-repeat protocol.  
 No Section 22 progress existed after the reconciled Section 21 completion.  
 This is therefore genuinely new work.
 
@@ -29940,16 +28508,10 @@ Scholarly controls:
 - “Anchored in the Authority of Sinai,” TheTorah.
 
 **Section 22 remains in progress.**
-Next subsection under the anti-repeat protocol: **Exodus 27–31 — courtyard/altar/basin, priestly garments, paired shoulder stones, twelve-stone breastpiece, Urim/Thummim, consecration, incense and seven-speech/Sabbath closure.**
+Next subsection: **Exodus 27–31 — courtyard/altar/basin, priestly garments, paired shoulder stones, twelve-stone breastpiece, Urim/Thummim, consecration, incense and seven-speech/Sabbath closure.**
 
 
 ## SECTION 22 progress B — Exodus 27–31: outer court, priest-body as Israel map, paired shoulder stones and timed activation
-
-### Anti-repeat check
-
-Section 22A is already appended.  
-No Exodus 27–31 progress existed elsewhere in the ledger.  
-Continuing only beyond the saved 25–26 checkpoint.
 
 ### Courtyard — nested sacred space gains an outer processing zone
 
@@ -30382,16 +28944,10 @@ Scholarly:
 - “The Tabernacle, the Creation, and the Ideal of an Orderly World.”
 
 **Section 22 remains in progress.**  
-Next under the anti-repeat protocol: **Exodus 32–34 — golden calf as rival visible centre; Moses/YHWH/people mediation; tablets broken and replaced; temporary Tent of Meeting outside camp; face-to-face encounter; Moses' transformed/radiant face and veil.**
+Next: **Exodus 32–34 — golden calf as rival visible centre; Moses/YHWH/people mediation; tablets broken and replaced; temporary Tent of Meeting outside camp; face-to-face encounter; Moses' transformed/radiant face and veil.**
 
 
 ## SECTION 22 progress C — Exodus 32–34: rival visible centre, broken/replaced information-carrier, alternate tent and Moses' transformed face
-
-### Anti-repeat check
-
-Section 22A and 22B are already appended.  
-No Exodus 32–34 Section 22 analysis existed elsewhere in the ledger.  
-Continuing from the saved Exodus 31/Sabbath closure.
 
 ### Golden calf appears when the vertical mediator fails to return on schedule
 
@@ -30819,16 +29375,10 @@ Scholarly:
 - “The Golden Calf: A Post-Exilic Message of Forgiveness.”
 
 **Section 22 remains in progress.**  
-Next under the anti-repeat protocol: **Exodus 35–40 — construction repetition, Bezalel/Oholiab execution, mirror-basin, completed furniture geometry, first-month/day-one erection, cloud/glory filling, Moses excluded by intensity, cloud lifting as departure signal, fire by night.**
+Next: **Exodus 35–40 — construction repetition, Bezalel/Oholiab execution, mirror-basin, completed furniture geometry, first-month/day-one erection, cloud/glory filling, Moses excluded by intensity, cloud lifting as departure signal, fire by night.**
 
 
 ## SECTION 22 progress D — Exodus 35–40: command becomes built structure; cloud/fire turns the portable sanctuary into a movement-state controller
-
-### Anti-repeat check
-
-Section 22A–C are already appended.  
-No later Exodus 35–40 progress exists elsewhere in the ledger.  
-Continuing from the restored covenant / radiant-face checkpoint.
 
 ### Sabbath is repeated before construction begins
 
@@ -31307,26 +29857,11 @@ Priority already saved in the master roadmap:
 - Jubilee cycle;
 - pair test: two goats — one sacrificed, one sent away — as a possible polarity pair.
 
-Before Section 23 begins, apply the anti-repeat search again.
 
 
 ---
 
 ## SECTION 23 progress A — Leviticus 1–10: active portable interface, accepted/rejected fire and Nadab/Abihu as a failed operator pair
-
-### Anti-repeat check
-
-The ledger was searched for:
-- Section 23;
-- Leviticus;
-- Day of Atonement/two goats;
-- Nadab/Abihu;
-- Jubilee.
-
-Only roadmap/prior cross-references were found.  
-No completed or partial Section 23 block existed.
-
-This is genuinely new work.
 
 ### Leviticus begins after the portable interface has become active
 
@@ -31613,16 +30148,10 @@ Scholarly:
 - Sefaria text of Leviticus 10.
 
 **Section 23 remains in progress.**  
-Next under anti-repeat protocol: **Leviticus 11–15 — clean/unclean state transitions, exclusion/re-entry, two-bird purification pair, washing/waiting cycles, and whether the system behaves more like moral sorting or temporary access-state management.**
+Next: **Leviticus 11–15 — clean/unclean state transitions, exclusion/re-entry, two-bird purification pair, washing/waiting cycles, and whether the system behaves more like moral sorting or temporary access-state management.**
 
 
 ## SECTION 23 progress B — Leviticus 11–15: clean/unclean as temporary access-state management; two birds split into death/release routes
-
-### Anti-repeat check
-
-Section 23A is saved.  
-No Leviticus 11–15 progress existed elsewhere in the ledger.  
-Continuing only from the saved Nadab/Abihu checkpoint.
 
 ### Clean / unclean is not simply good / evil
 
@@ -31969,16 +30498,10 @@ Scholarly:
 - Sefaria, Leviticus 14.
 
 **Section 23 remains in progress.**  
-Next under anti-repeat protocol: **Leviticus 16–17 — Day of Atonement, two goats, paired lots, one inward sacrificial route versus one outward living route, both hands transferring collective wrongdoing, inner veil crossing, incense cloud, blood routes, outside-camp disposal, and the life/blood principle.**
+Next: **Leviticus 16–17 — Day of Atonement, two goats, paired lots, one inward sacrificial route versus one outward living route, both hands transferring collective wrongdoing, inner veil crossing, incense cloud, blood routes, outside-camp disposal, and the life/blood principle.**
 
 
 ## SECTION 23 progress C — Leviticus 16–17: matched goat pair splits into inward blood-route and outward living-carrier route
-
-### Anti-repeat check
-
-Section 23A–B are already saved.  
-No Leviticus 16–17 progress existed later in the ledger.  
-Continuing only from the two-bird purification checkpoint.
 
 ### The chapter explicitly begins as a correction after Nadab and Abihu
 
@@ -32364,16 +30887,10 @@ Scholarly/source-critical:
 - Milgrom-influenced interpretation of blood as sanctuary-purgation medium.
 
 **Section 23 remains in progress.**  
-Next under anti-repeat protocol: **Leviticus 18–27 — holiness/land expulsion language, sacred times, seven-year sabbatical cycle, 7×7 = 49 years, 50th-year Jubilee, month7/day10 trumpet, return to family/holding, land-restoration, sevenfold punishments, and final comparison of Leviticus' cyclic reset with the Vardath handoff model.**
+Next: **Leviticus 18–27 — holiness/land expulsion language, sacred times, seven-year sabbatical cycle, 7×7 = 49 years, 50th-year Jubilee, month7/day10 trumpet, return to family/holding, land-restoration, sevenfold punishments, and final comparison of Leviticus' cyclic reset with the Vardath handoff model.**
 
 
 ## SECTION 23 progress D — Leviticus 18–24: temporary ritual impurity gives way to land-state, whole-community holiness and sacred-time architecture
-
-### Anti-repeat check
-
-Section 23A–C are saved.  
-No Leviticus 18–24 progress existed elsewhere in the ledger.  
-Continuing from the Day of Atonement / blood-routing block.
 
 ### Source-critical shift — Leviticus 17–26 is commonly treated as the Holiness legislation
 
@@ -32720,12 +31237,6 @@ Next: **Leviticus 25–27 — sabbatical/Jubilee clock, 7×7=49 → 50th year, m
 
 
 ## SECTION 23 progress E — Leviticus 25–27: 7×7 land clock, fiftieth-year return, forced land-rest in exile and Leviticus synthesis
-
-### Anti-repeat check
-
-Section 23A–D are already appended.  
-No Leviticus 25–27 progress existed later in the ledger.  
-Continuing only from the sacred-time / twelve-loaf checkpoint.
 
 ### Leviticus 25 — the land itself receives a 6 → 7 work/rest cycle
 
@@ -33185,30 +31696,11 @@ Priority from the saved roadmap:
 - Aaron's rod buds;
 - rock/water.
 
-Before beginning Section 24, run the anti-repeat search for Numbers 1–20 and its major stories.
 
 
 ---
 
 ## SECTION 24 progress A — Numbers 1–10: four-direction moving camp, double protective ring, twelvefold dedication and cloud/trumpet state controls
-
-### Anti-repeat check
-
-The full ledger was searched for:
-- Section 24;
-- Numbers 1–20;
-- camp geometry;
-- 70 elders;
-- Miriam/Aaron;
-- 12 spies / Joshua-Caleb;
-- Korah;
-- Aaron's rod;
-- rock/water.
-
-Only roadmap and earlier cross-references were found.  
-No Section 24 research block existed.
-
-This is genuinely new work.
 
 ### Census separates the twelve-tribe outer body from the Levite inner body
 
@@ -33656,16 +32148,10 @@ Scholarly/source-critical:
 - source-critical distinction between Priestly central Tabernacle and non-Priestly outside-camp Tent of Meeting.
 
 **Section 24 remains in progress.**  
-Next under anti-repeat protocol: **Numbers 11–14 — seventy elders receiving distributed spirit from Moses, Eldad/Medad outside the expected location, Miriam/Aaron challenge, cloud/pillar judgment, twelve spies, paired fruit carriers, ten-vs-two report split, Joshua/Caleb pair, 40 days → 40 years, and the attempted reversal after the access window has closed.**
+Next: **Numbers 11–14 — seventy elders receiving distributed spirit from Moses, Eldad/Medad outside the expected location, Miriam/Aaron challenge, cloud/pillar judgment, twelve spies, paired fruit carriers, ten-vs-two report split, Joshua/Caleb pair, 40 days → 40 years, and the attempted reversal after the access window has closed.**
 
 
 ## SECTION 24 progress B — Numbers 11–14: one centre distributes function, excluded locations still receive effect, 12 scouts split 10/2, and the entry-window closes
-
-### Anti-repeat check
-
-Section 24A is already saved.  
-No Numbers 11–14 progress existed elsewhere in the ledger.  
-Continuing only from the Numbers 1–10 camp/cloud/trumpet checkpoint.
 
 ### Numbers 11 begins with fire at the camp's edge
 
@@ -34176,15 +32662,9 @@ Scholarly/source-critical:
 - traditional/modern translation discussion of the two-person grape-cluster carrying image.
 
 **Section 24 remains in progress.**  
-Next under anti-repeat protocol: **Numbers 15–20 — Korah/Dathan/Abiram composite rebellion; earth opening/closing; 250 firepans; Aaron standing between dead and living; twelve rods and Aaron's dead-wood→budding branch; red heifer purity inversion; Miriam's death; Meribah rock-water doublet/state failure; Aaron→Eleazar garment/office transfer on Mount Hor.**
+Next: **Numbers 15–20 — Korah/Dathan/Abiram composite rebellion; earth opening/closing; 250 firepans; Aaron standing between dead and living; twelve rods and Aaron's dead-wood→budding branch; red heifer purity inversion; Miriam's death; Meribah rock-water doublet/state failure; Aaron→Eleazar garment/office transfer on Mount Hor.**
 
 ## SECTION 24 progress C — Numbers 15–20: earth-mouth and fire split punishments, Aaron between dead/living, twelve rods with one living branch, purity inversion, and office transfer
-
-### Anti-repeat check
-
-Section 24A–B are saved.  
-No Numbers 15–20 progress existed elsewhere in the ledger.  
-Continuing only beyond the Numbers 11–14 checkpoint.
 
 ### Numbers 15 — another holding-state / outside-camp sequence
 
@@ -34943,17 +33423,10 @@ Saved priorities:
 - east/west Jordan tribal division and return obligations;
 - all pair structures, route states, numbers and chronology.
 
-Before beginning Section 25, apply the anti-repeat search.
 
 ---
 
 ## SECTION 25 progress A — Numbers 21–25: serpent lifted on a standard, route narrowing and perceptual inversion, repeated vantage tests, and spear/plague stoppage
-
-### Anti-repeat check
-
-The full blob-based ledger was checked after the restoration.  
-No Section 25 progress exists after the completed Numbers 1–20 block.  
-This is genuinely new work.
 
 ### Numbers 21 — route refusal and controlled passage remain ordinary geopolitical controls
 
@@ -35546,17 +34019,9 @@ Scholarly/source-critical:
 - modern scholarship on the Balaam/Deir Alla tradition.
 
 **Section 25 remains in progress.**  
-Next under anti-repeat protocol: **Numbers 26–36 — second census and generational replacement, Zelophehad's five daughters and inheritance route, Joshua succession by hand/commission, east-Jordan/west-Jordan tribal split with armed crossing and return, Midian war purification, 42+6 Levitical/refuge cities, refuge-city boundary/time rules, territorial boundaries and the final journey/camp list.**
+Next: **Numbers 26–36 — second census and generational replacement, Zelophehad's five daughters and inheritance route, Joshua succession by hand/commission, east-Jordan/west-Jordan tribal split with armed crossing and return, Midian war purification, 42+6 Levitical/refuge cities, refuge-city boundary/time rules, territorial boundaries and the final journey/camp list.**
 
 ## SECTION 25 progress B — Numbers 26–36: generation replacement with system continuity, succession by hand, property-crossing constraints, material-specific purification and refuge place+phase law
-
-### Anti-repeat check
-
-Section 25A is already saved in the full restored ledger.  
-No Numbers 26–36 Section 25 progress existed elsewhere.  
-Continuing only from the bronze-serpent / Balaam / Peor checkpoint.
-
----
 
 ### Numbers 26 — second census: almost complete body replacement while the twelve-part system persists
 
@@ -36490,27 +34955,10 @@ Scholarly/source-critical:
 
 ### Next first unfinished roadmap section
 
-The next roadmap item must be located from the full ledger under the anti-repeat protocol before new research begins.
 
 ---
 
 ## SECTION 26 progress A — Deuteronomy 1–11: retold history changes the geometry, Horeb burns to heaven but has no visible form, Moses becomes the speech-interface, and Gerizim/Ebal are announced as a polarity pair
-
-### Anti-repeat check
-
-The full restored ledger was searched for:
-- Section 26;
-- Deuteronomy canonical progress;
-- Deuteronomy 31–34;
-- X7 Testament/Assumption of Moses.
-
-No canonical Section 26 research existed.
-
-The earlier **X7 Testament/Assumption of Moses** material around Deuteronomy 31–34 is already complete and will be used later as reception-history comparison rather than re-researched.
-
-This is genuinely new canonical Deuteronomy work.
-
----
 
 ## Source-critical frame — Deuteronomy is a deliberate retelling, not a neutral transcript of Exodus–Numbers
 
@@ -37222,17 +35670,9 @@ Scholarly/source-critical:
 - “Deuteronomy: Rewritten to Reflect on the Exile and Future Redemption.”
 
 **Section 26 remains in progress.**  
-Next under anti-repeat protocol: **Deuteronomy 12–26 — centralization into one chosen place, seven-year release, festivals, king/priest/prophet distributed authority, prophet like Moses, three refuge cities with conditional three-more expansion, camp/boundary purity, unsolved-murder rite, levirate succession, first-fruits historical compression, and the law-code's source/history controls.**
+Next: **Deuteronomy 12–26 — centralization into one chosen place, seven-year release, festivals, king/priest/prophet distributed authority, prophet like Moses, three refuge cities with conditional three-more expansion, camp/boundary purity, unsolved-murder rite, levirate succession, first-fruits historical compression, and the law-code's source/history controls.**
 
 ## SECTION 26 progress B — Deuteronomy 12–26: many local routes collapse into one chosen centre while authority splits across multiple offices
-
-### Anti-repeat check
-
-Section 26A is already appended in the full ledger.  
-No Section 26B block exists later in the file.  
-Continuing only from the saved Deuteronomy 1–11 checkpoint.
-
----
 
 ### Deuteronomy 12 opens the law-code by collapsing many cultic centres into one authorized place
 
@@ -37936,18 +36376,10 @@ Scholarly/source-critical:
 
 **Section 26 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Deuteronomy 27–34 — Gerizim/Ebal full bilateral assembly, tribes split 6+6, plastered stones / written Torah, blessing/curse environmental mirror sequences, covenant renewal, heaven/earth witnesses, Moses/Joshua handoff, song as preserved witness, Moses' four-direction final view, death/burial ambiguity, and reconciliation with already-completed X7 without redoing it.**
 
 ## SECTION 26 progress C — Deuteronomy 27–30: 6+6 mountain polarity, written-stone transfer, mirrored blessing/curse states, exile→return, and life/death as explicit choice pair
-
-### Anti-repeat check
-
-Section 26A–B are saved.  
-No Deuteronomy 27–30 progress exists later in the ledger.  
-Continuing only from the completed Deuteronomic law-code checkpoint.
-
----
 
 ## Deuteronomy 27 — crossing Jordan activates a literal bilateral mountain system
 
@@ -38540,25 +36972,6 @@ Next:
 **Deuteronomy 31–34 — Joshua commissioning, cloud at Tent, Torah/song as durable witnesses, heaven/earth witness invocation, Song of Moses, tribal blessing, final mountain view, death/burial ambiguity, Joshua's spirit-of-wisdom succession, and reconciliation with X7 without repeating the completed Testament/Assumption research.**
 
 ## SECTION 26 progress D — Deuteronomy 31–34: succession at the cloud-tent, written/song witnesses, Rock imagery, final mountain view and unresolved burial traditions
-
-### Anti-repeat / X7 reconciliation
-
-Section 26A–C are saved.
-
-The earlier **X7 — Testament / Assumption of Moses** first pass is already complete.
-
-Therefore this block does **not** redo:
-- the incomplete Latin Testament manuscript;
-- the later Michael/devil body dispute;
-- world-sized sepulchre language;
-- Taxo + seven sons;
-- post-biblical assumption/ascension traditions.
-
-Those remain separate later reception/comparison evidence.
-
-This block focuses only on canonical Deuteronomy 31–34, then notes where X7 later expands the unresolved canonical body-route.
-
----
 
 ## Deuteronomy 31 — Moses' office separates into person, text, successor and institutional memory
 
@@ -39172,21 +37585,10 @@ Saved priorities from the roadmap include:
 - sun/moon standstill tradition;
 - all paired figures, routes, counts and source-critical controls.
 
-Before beginning Section 27, apply the anti-repeat search to the full ledger.
 
 ---
 
 ## SECTION 27 progress A — Joshua 1–5: succession becomes operation, marked-house survival, central ark crossing, two twelve-stone memories and land-entry state change
-
-### Anti-repeat check
-
-The full ledger was searched first.
-
-No Section 27 progress existed.
-
-This is genuinely new work.
-
----
 
 ## Joshua 1 — successor office becomes active
 
@@ -39865,18 +38267,10 @@ Scholarly/source-critical:
 
 **Section 27 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Joshua 6–8 — Jericho's 7-day/7-priest/7-trumpet circuit, ark at moving centre, wall collapse, Rahab enclosure survival, Achan hidden devoted cargo and community-wide failure, lots/sorting, Ai reversal/ambush, and Gerizim/Ebal enactment with written Torah.**
 
 ## SECTION 27 progress B — Joshua 6–8: 6→7→7 circuit clock, marked-house survival fulfilled, hidden cargo contaminates the whole system, narrowing lots, and Gerizim/Ebal enacted
-
-### Anti-repeat check
-
-Section 27A is saved.  
-No Joshua 6–8 progress exists later in the ledger.  
-Continuing only from the Jordan/Gilgal checkpoint.
-
----
 
 ## Joshua 6 — Jericho is treated as a timed encirclement system
 
@@ -40355,18 +38749,10 @@ Scholarly/source-critical:
 
 **Section 27 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Joshua 9–12 — Gibeonite deception and covenant binding, five-king cave enclosure/release/execution, sun/moon standstill pair, hail + battlefield sequence, southern/northern campaign compression, Hazor/fire, and source-critical comparison of conquest summaries with archaeology and later settlement traditions.**
 
 ## SECTION 27 progress C — Joshua 9–12: deceptive input binds the system, five kings move through sealed-cave states, sun/moon form a celestial pair, and the “complete conquest” summary breaks against other traditions
-
-### Anti-repeat check
-
-Section 27A–B are saved.  
-No Joshua 9–12 progress exists later in the ledger.  
-Continuing only from the Gerizim/Ebal enactment checkpoint.
-
----
 
 ## Joshua 9 — Gibeonite deception is an information-validation failure, not a boundary failure
 
@@ -40939,21 +39325,10 @@ Saved priorities:
 - Joshua/Joseph/Eleazar deaths;
 - all pair structures, boundaries, numbers and continuity markers.
 
-Before beginning Section 28, apply the anti-repeat search.
 
 ---
 
 ## SECTION 28 progress A — Joshua 13–19: incomplete conquest corrects the totalizing narrative, old-generation bridge figures persist, and seven remaining tribal territories are converted into a written survey then reallocated from Shiloh
-
-### Anti-repeat check
-
-The full ledger was searched first.
-
-No Section 28 progress existed.
-
-This is genuinely new work.
-
----
 
 ## Joshua 13 immediately reverses the “whole land taken” impression
 
@@ -41502,18 +39877,10 @@ Scholarly/source-critical:
 
 **Section 28 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Joshua 20–24 — refuge cities and Levite-city implementation, east-Jordan altar crisis as boundary/identity misunderstanding, altar as witness not sacrifice route, Joshua farewell and remaining nations, Shechem covenant, standing witness stone, writing in Torah scroll, Joshua/Joseph/Eleazar deaths, and transition into Judges.**
 
 ## SECTION 28 progress B — Joshua 20–24: refuge place+phase implemented, altar-shaped witness is explicitly NOT an altar mechanism, covenant memory becomes stone, and three long-delayed bodies finally reach inherited ground
-
-### Anti-repeat check
-
-Section 28A is already saved.  
-No Joshua 20–24 Section 28 block exists later in the ledger.  
-Continuing only from the Shiloh/seven-part survey checkpoint.
-
----
 
 ## Joshua 20 — the refuge-city place+phase system is implemented
 
@@ -42289,21 +40656,10 @@ Scholarly/source-critical:
 
 ### Next first unfinished roadmap section
 
-Locate **Section 29 — Judges 1–8** in the full current ledger and run the anti-repeat search before beginning.
 
 ---
 
 ## SECTION 29 progress A — Judges 1–5: incomplete conquest becomes cyclic history, right/left inversion in Ehud, Deborah/Barak split command, and Yael's tent turns refuge into terminal enclosure
-
-### Anti-repeat check
-
-The full current ledger was searched first.
-
-No Section 29 progress existed.
-
-This is genuinely new work.
-
----
 
 ## Judges 1 — the book opens by undoing Joshua's clean conquest geometry
 
@@ -43155,18 +41511,10 @@ Scholarly/source-critical:
 
 **Section 29 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Judges 6–8 — Gideon's Moses-like call and anti-Moses divergences, fire emerging from rock after staff contact, two fleece wet/dry reversals, force reduction 32,000→10,000→300, three-company geometry, concealed torches inside jars, synchronized jar-breaking/trumpets/light release, Midian panic/self-destruction, Jordan crossing pursuit, two kings Zebah/Zalmunna, and Gideon's ephod as post-victory system failure.**
 
 ## SECTION 29 progress B — Judges 6–8: staff→rock→fire, wet/dry state inversion, 32,000→300 filtering, concealed light released by broken vessels, and victory generating its own new failure-centre
-
-### Anti-repeat check
-
-Section 29A is saved.  
-No Judges 6–8 Section 29 block exists later in the ledger.  
-Continuing only from the Deborah/Barak/Yael checkpoint.
-
----
 
 ## Judges 6 — Midianite pressure is described as repeated loss of surface produce
 
@@ -44145,23 +42493,10 @@ Priority pair tests:
 - strength / binding;
 - gate-carrier Samson.
 
-Before beginning Section 30, apply the anti-repeat search to the full current ledger.
 
 ---
 
 ## SECTION 30 progress A — Judges 9–12: humans become trees in political geometry, Gerizim changes function, repeated tower-fire tactic reverses at Thebez, and Jephthah turns speech into an irreversible boundary-state
-
-### Anti-repeat check
-
-The full current ledger was searched first.
-
-No Section 30 progress existed.
-
-An older preliminary Samson note was found near the front of the file and will be treated as prior work when Judges 13–16 is reached rather than repeated.
-
-This block therefore begins with genuinely unfinished Judges 9–12.
-
----
 
 ## Judges 9 — Gideon's quasi-dynastic aftermath becomes literal fratricidal kingship
 
@@ -44932,55 +43267,12 @@ Scholarly/source-critical:
 
 **Section 30 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Judges 13–16 — Samson birth/annunciation, Nazirite body-state, lion→honey transformation, riddle/information asymmetry, fox/fire episode, jawbone/water, Gaza gate carried to hill, binding/escape cycles, Samson/Delilah information extraction, hair/strength-state relation, blinded prisoner/turning mill, two central pillars, Samson placed between supports, bilateral hands, collapse, and comparison with the older preliminary Samson note without repeating it.**
 
 ---
 
-## POST-REFRESH VERIFICATION / LIVE PROGRESS CORRECTION — 2026-09-24
-
-User asked whether the conversation after the memory refresh had been appended properly, how much of the 88-entry Bible roadmap is complete, and instructed continuation with immediate appending.
-
-### Append verification
-
-Verified in the current full ledger:
-- Section 22A–D present and Section 22 complete.
-- Section 23A–E present and Section 23 complete.
-- Section 24A–C present and Section 24 complete.
-- Section 25A–B present and Section 25 complete.
-- Section 26A–D present and Section 26 complete.
-- Section 27A–C present and Section 27 complete.
-- Section 28A–B present and Section 28 complete.
-- Section 29A–B present and Section 29 complete.
-- Section 30A is present and Section 30 is currently in progress.
-
-The earlier accidental truncation was repaired; subsequent full-blob verification confirms the substantive post-refresh work is in the file.
-
-### Exact roadmap progress
-
-The master list has **88 actual roadmap entries**. The displayed numbering reaches 89 because **Section 38 is skipped in the numbering**.
-
-Current canonical progress:
-- **Sections 1–29 complete**
-- **Section 30 in progress**
-- completed: **29 / 88 = 33.0%**
-- next live subsection: **Judges 13–16 / Samson (Section 30B)**
-
-Inserted comparison works remain additional research outside this 29/88 figure.
-
-### Active protocol
-
-Continue from the latest genuinely appended checkpoint only. Append every substantive progress block immediately before proceeding to the next block.
-
 ## SECTION 30 progress B — Judges 13–16: birth-state consecration, lion→honey reversal, paired fire-carriers, gate uprooting, hair/strength state loss, blindness, and the two central pillars
-
-### Anti-repeat check
-
-Section 30A is already appended.  
-No Section 30B / Judges 13–16 block existed later in the current full ledger.  
-Continuing only from the saved Judges 9–12 checkpoint.
-
----
 
 ## Judges 13 — Samson begins as a body-state defined before birth
 
@@ -45958,17 +44250,8 @@ Scholarly/source-critical:
 
 ### Next first unfinished roadmap section
 
-Locate the next canonical roadmap entry under the anti-repeat protocol before beginning new research.
 
 ## SECTION 31 progress A — Judges 17–21: household shrine scales to tribal centre, one body becomes twelve national signals, eleven-vs-one fracture, and a nearly severed tribe is forcibly reattached
-
-### Anti-repeat check
-
-Section 30 is complete and appended.  
-The full ledger contains no Section 31 progress block.  
-This is genuinely new work.
-
----
 
 ## Judges 17 — private sacred centre assembled from mixed components
 
@@ -46676,18 +44959,10 @@ Scholarly/source-critical:
 
 **Section 31 remains in progress.**
 
-Next under anti-repeat protocol:
+Next:
 **Ruth 1–4 — famine/outward migration/return, Naomi/Ruth/Orpah three-woman split, Ruth/Orpah opposite routes, Ruth+Naomi paired survival unit, gleaning and field-protection boundary, Boaz/Ruth threshing-floor encounter, nearer-redeemer/Boaz pair, sandal transfer as legal-state marker, land+lineage redemption, child Obed as recombination of Ruth/Naomi/Boaz line, and genealogy into David.**
 
 ## SECTION 31 progress B — Ruth 1–4: two women split at the return-boundary, a protected field integrates the outsider, a nearer route declines and a secondary redeemer preserves land+lineage
-
-### Anti-repeat check
-
-Section 31A — Judges 17–21 is already appended.  
-No Ruth / Section 31B progress existed later in the current full ledger.  
-Continuing only from the saved Judges appendix checkpoint.
-
----
 
 ## Ruth 1 — famine drives one family outward; death leaves a three-woman remnant
 
@@ -47480,48 +45755,10 @@ Priority pair tests:
 - Saul / Jonathan;
 - ark / Dagon.
 
-Before beginning Section 32, apply the anti-repeat search and append the checkpoint.
-
----
-
-## LIVE CHECKPOINT — SECTION 31 COMPLETE / SECTION 32 NEXT
-
-Post-memory-refresh append verification remains good.
-
-Current canonical roadmap:
-- **Sections 1–31 complete**
-- **31 / 88 actual roadmap entries = 35.2% complete**
-- next: **Section 32 — 1 Samuel 1–15**
-
-New work completed in this continuation:
-- Section 30B — Judges 13–16 / Samson
-- Section 30 complete
-- Section 31A — Judges 17–21
-- Section 31B — Ruth 1–4
-- Section 31 complete
-
-All substantive blocks were appended immediately after completion.
-
-Inserted comparison texts remain extra work outside the 31/88 canonical count.
-
-Assistant reply checkpoint: Yes, the post-refresh conversation/progress is properly appended. The project is now at 31 of 88 canonical roadmap entries complete (35.2%), with 1 Samuel 1–15 next.
-
-
 
 ---
 
 ## SECTION 32 progress A — 1 Samuel 1–7: inversion grammar, channel handoff, portable-centre failure, forced relocation and a constrained return path
-
-### Anti-repeat check
-
-The current ledger was checked before beginning.
-
-Latest genuine checkpoint:
-- **Sections 1–31 complete**
-- **31 / 88 canonical roadmap entries complete**
-- **Section 32 — 1 Samuel 1–15** is the first unfinished canonical entry.
-
-No later Section 32 / 1 Samuel 1–15 progress block was found.
 
 ### Geometry-first working rule clarified by user
 
@@ -48142,16 +46379,6 @@ Next:
 ---
 
 ## SECTION 32 progress B — 1 Samuel 8–12: distributed network → demanded single centre, multi-route selection, staged transformation, fragments assembling “as one man,” and a new centre that does not replace the old channel
-
-### Anti-repeat check
-
-Section 32A is already appended through 1 Samuel 7.
-
-No Section 32B / 1 Samuel 8–12 block existed later in the ledger.
-
-Continuing only from the saved 1 Samuel 1–7 checkpoint.
-
----
 
 ## 1 Samuel 8 — distributed judging is deliberately replaced by one visible centre
 
@@ -53969,7 +52196,6 @@ Section 33 completion point:
 
 ### Next first unfinished canonical roadmap entry
 
-Before starting it, run the anti-repeat search against the canonical roadmap and ledger.
 
 Carry forward the master timeline protocol:
 - preserve narrative order;
@@ -53988,15 +52214,6 @@ Carry forward the master timeline protocol:
 
 # SECTION 34 progress A — 2 Samuel 1–6
 ## Reported versus actual handoff, split kingdom geometry, paired combat at a pool, strength-gradient transfer, convergence on one centre, breach-flow warfare, and the Ark's two-stage entry into Jerusalem
-
-### Anti-repeat result
-
-The canonical roadmap was checked before beginning.
-
-- **Section 33 — 1 Samuel 16–31** is complete.
-- **Section 34 — 2 Samuel** is the first unfinished canonical roadmap entry.
-- No completed Section 34 research block occurs later in the ledger.
-- Current canonical progress before this block: **33 / 88 = 37.5%**.
 
 ### Timeline rule
 
@@ -77987,7 +76204,6 @@ Section 36 completion point:
 
 ### Next first unfinished canonical roadmap entry
 
-Run the roadmap/anti-repeat check before beginning.
 
 Carry forward especially from Section 36:
 
@@ -79382,7 +77598,6 @@ Section 36 completion point:
 
 ### Next first unfinished canonical roadmap entry
 
-Run the roadmap anti-repeat check before continuing.
 
 Carry forward:
 - whole-system split versus recursive sub-splits;
@@ -79402,17 +77617,6 @@ Carry forward:
 
 # SECTION 37 progress A — 2 Kings 1–4
 ## Upper-room fall without return, repeated up/down fire confrontations, mantle-mediated Jordan crossing and succession, carrier separation by fire, reversed route back across the river, water healing, three-king desert circuit, false blood perception, capacity-limited oil filling, and a second upper-room death-to-life cycle with exact body alignment
-
-### Anti-repeat result
-
-The canonical roadmap and ledger were checked.
-
-- **Section 36 — 1 Kings 12–22** is complete.
-- **Section 37 — 2 Kings 1–13** is the first unfinished roadmap entry.
-- No later Section 37 progress block was found.
-- Canonical completion before this block: **36 / 88 = 40.9%**.
-
----
 
 # 2 Kings 1 — a royal upper-room fall produces the inverse of the widow-child upper-room revival
 
@@ -88133,7 +86337,6 @@ to
 
 ### Next roadmap action
 
-Run anti-repeat check before beginning the next canonical entry.
 
 Carry forward especially:
 - hidden state versus visible state;
@@ -95799,8 +94002,6 @@ Section 38 sequence is now complete through:
 - X6 — Ascension of Isaiah,
 - 38B — Manasseh through Babylonian destruction/Cyrus opening.
 
-Before beginning the next roadmap entry, run the anti-repeat check against the stored canonical roadmap because the post-exile/apocryphal inserts may not simply follow modern Bible order.
-
 
 
 ---
@@ -96227,7 +94428,7 @@ The chapter telescopes/organizes opposition across Persian reigns rather than na
 
 This is critical.
 
-The anti-repeat/timeline method must preserve:
+The timeline method must preserve:
 **literary thematic grouping**
 separately from
 **chronological order**.
@@ -97357,24 +95558,6 @@ Record both.
 
 The strongest evidence will be:
 **the same ordered process recurring across unrelated texts while surviving textual and conventional controls**.
-
----
-
-## Q. Append protocol — do not lose research again
-
-Permanent rule from the user's repeated instruction:
-
-1. Before starting a new roadmap section, search this file for:
-   - section name;
-   - completion marker;
-   - prior research;
-   - saved progress replies.
-2. Do not repeat already-completed work because of stale roadmap notes.
-3. Break each unfinished section into manageable blocks.
-4. **Append every substantive research block to this file immediately when completed.**
-5. Append important chat/progress instructions that materially change the method.
-6. Preserve source controls and unresolved questions.
-7. Continue from the first genuinely unfinished block after every interruption or memory refresh.
 
 ---
 
