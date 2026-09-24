@@ -36492,3 +36492,735 @@ Scholarly/source-critical:
 
 The next roadmap item must be located from the full ledger under the anti-repeat protocol before new research begins.
 
+---
+
+## SECTION 26 progress A — Deuteronomy 1–11: retold history changes the geometry, Horeb burns to heaven but has no visible form, Moses becomes the speech-interface, and Gerizim/Ebal are announced as a polarity pair
+
+### Anti-repeat check
+
+The full restored ledger was searched for:
+- Section 26;
+- Deuteronomy canonical progress;
+- Deuteronomy 31–34;
+- X7 Testament/Assumption of Moses.
+
+No canonical Section 26 research existed.
+
+The earlier **X7 Testament/Assumption of Moses** material around Deuteronomy 31–34 is already complete and will be used later as reception-history comparison rather than re-researched.
+
+This is genuinely new canonical Deuteronomy work.
+
+---
+
+## Source-critical frame — Deuteronomy is a deliberate retelling, not a neutral transcript of Exodus–Numbers
+
+Deuteronomy presents Moses on the plains east of Jordan:
+- looking backward over the wilderness;
+- restating law;
+- preparing a successor generation for crossing.
+
+Modern scholarship generally treats the book as compositionally layered:
+- a major Deuteronomic law core often associated with the late monarchic / seventh-century BCE period;
+- exilic and later Deuteronomistic expansion;
+- further editorial shaping.
+
+Exact models differ.
+
+For our project the methodological consequence is crucial:
+
+> **Differences between Deuteronomy and Exodus/Numbers should be recorded, not harmonized away.**
+
+The retelling itself can change:
+- who initiates an event;
+- what is visible;
+- which objects matter;
+- how many mediators are present;
+- and what the event is understood to mean.
+
+---
+
+## Deuteronomy 1 — scout story is the same broad event in a different coordinate system
+
+Deuteronomy retells the scout episode differently from the final Numbers 13–14 narrative.
+
+In Deuteronomy:
+- the **people** approach Moses and propose sending scouts;
+- Moses approves;
+- **12 men**, one per tribe, go up;
+- they bring fruit and initially report the land is good;
+- the people refuse to go up;
+- fear focuses on powerful inhabitants / fortified cities;
+- Caleb is singled out;
+- late attempt to go up fails because YHWH is not with them.
+
+Numbers' final form includes Priestly elements in which:
+- YHWH commands Moses to send the scouts;
+- Joshua/Caleb are foregrounded differently;
+- the bad report structure differs.
+
+Modern source criticism commonly explains the discrepancy by different source/tradition strands.
+
+### Important project control — one remembered event can preserve different causal maps
+
+The event identity remains recognizable:
+
+**land approach**
+→ representatives sent
+→ reconnaissance
+→ fruit/report
+→ fear
+→ refusal
+→ judgment
+→ unauthorized late ascent
+→ defeat.
+
+But the **causal assignment** differs.
+
+This is extremely important for the whole Bible/myth comparison:
+
+> Similar sequence can survive while individual roles, causes and emphases move between versions.
+
+Therefore we should not assume every named operator in one recension is present in every other memory of the event.
+
+### “Go up” remains phase-dependent
+
+Deuteronomy retains the same crucial sequence:
+
+First:
+- land is available;
+- Israel is told to **go up**.
+
+Then:
+- they refuse.
+
+Later:
+- after judgment;
+- they decide to **go up** anyway.
+
+Moses warns:
+- YHWH is not in their midst / will not support it.
+
+They go and fail.
+
+So Deuteronomy independently preserves the mature-model control:
+
+**same geographic route**
++
+**same intended direction**
++
+**different relational phase**
+=
+**different result**.
+
+---
+
+## Deuteronomy 2 — generation replacement is described as a completed phase transition
+
+Deuteronomy says the time from Kadesh-barnea until crossing Zered was:
+**38 years**,
+
+until the earlier generation of fighting men was gone from the camp.
+
+This gives the transition:
+
+**old military generation**
+→ wilderness interval
+→ old generation exhausted
+→ new generation reaches next boundary.
+
+Compare Numbers 26:
+- second census;
+- almost total personnel turnover;
+- Caleb/Joshua continuity.
+
+Deuteronomy therefore frames wilderness time itself as a **generational transition interval**.
+
+### Edom / Moab / Ammon — some boundaries are explicitly not to be crossed by conquest
+
+Israel is told not to seize certain territories because they have been allotted to other peoples.
+
+This is another useful control:
+a boundary can be:
+- recognized;
+- approached;
+- passed around;
+without being a cosmic barrier.
+
+---
+
+## Deuteronomy 3 — Moses is positioned as observer of a future route he cannot personally traverse
+
+Moses asks to cross into the land.
+
+He is refused.
+
+Instead he is told to:
+- ascend a height;
+- look in multiple directions;
+- **see** the land;
+- but not cross the Jordan.
+
+Joshua will cross and lead the people.
+
+This creates a very strong observer/successor geometry:
+
+**old leader**
+→ elevated viewpoint
+→ sees destination
+→ does not enter
+
+**successor**
+→ physically crosses
+→ carries population onward.
+
+This should be kept distinct from later X7 reception traditions where Moses' own body-route becomes ambiguous.
+
+Canonical Deuteronomy's basic division is clear:
+**Moses sees / Joshua enters.**
+
+---
+
+## Deuteronomy 4 — mountain fire reaches “the heart of heaven”
+
+The Horeb memory is one of the strongest cosmic-scale fire descriptions in the Torah.
+
+Israel:
+- stands at mountain foot;
+- mountain burns with fire **to the heart of heaven / very skies**;
+- darkness;
+- cloud;
+- thick gloom.
+
+Raw vertical structure:
+
+**people below**
+→ mountain
+→ enormous upward fire
+→ sky/heaven region
+with
+**dark cloud/gloom around it**.
+
+This is highly relevant to the Vardath plasma/axis visual comparison at the level of **appearance**.
+
+But Deuteronomy then supplies an equally strong anti-overfitting control.
+
+### No visible form
+
+The text insists:
+- Israel heard the **voice/sound of words**;
+- but saw **no form/shape**.
+
+This is repeated specifically as the reason not to make:
+- male image;
+- female image;
+- animal;
+- bird;
+- crawling creature;
+- fish;
+- celestial-image cult.
+
+This is one of the most important controls in the whole anthropomorphic-lattice investigation.
+
+> **Intense mountain/fire/cloud imagery does not automatically imply that the source itself understood the phenomenon as a visible human-shaped figure.**
+
+Deuteronomy intentionally separates:
+**auditory revelation**
+from
+**visible form**.
+
+### Strong implication for Squatter-Man testing
+
+If a later tradition:
+- makes the Sinai/Horeb phenomenon anthropomorphic,
+that may represent:
+- later personification;
+- a different source;
+- a different viewpoint;
+rather than something Deuteronomy itself saw.
+
+This does not disprove the user's visual hypothesis globally.
+It constrains what can honestly be claimed **from Deuteronomy**.
+
+### Voice is the information channel
+
+At Horeb:
+
+**fire/cloud**
+= environment/interface manifestation.
+
+**voice/words**
+= information transmission.
+
+No visible body is required.
+
+This is a very clean example of:
+**relation/coupling/information without bodily transit or visible operator form**.
+
+### Two tablets as durable output
+
+The Ten Words are:
+- spoken from fire;
+- then inscribed on **2 stone tablets**.
+
+So the information sequence is:
+
+**invisible source / voice**
+→ spoken information
+→ **paired durable stone carrier**.
+
+Again:
+communication can be converted from transient signal into persistent material record.
+
+### Upper / middle / lower cosmography explicitly appears
+
+The image ban mentions:
+- heaven above;
+- earth;
+- waters beneath earth.
+
+This is ancient layered cosmography.
+
+It is relevant as a vertical imagination system,
+but does **not** establish populated temporal discs.
+
+---
+
+## Deuteronomy 4 — exile/return works as dispersal and reconvergence, not annihilation
+
+The warning says covenant breach can lead to:
+- scattering among nations;
+- reduced/remnant population.
+
+But later:
+- seeking;
+- returning;
+- covenant remembrance remain possible.
+
+This gives:
+
+**coherent people/land relation**
+→ dispersion
+→ identity persists among foreign populations
+→ possible return/reconvergence.
+
+This is strongly consistent with the project's:
+**displacement ≠ erasure**.
+
+---
+
+## Deuteronomy 5 — same mountain becomes fire + cloud + darkness + voice
+
+The Decalogue retelling says the divine words are spoken:
+- from the fire;
+- cloud;
+- dense/dark gloom.
+
+The people say:
+- they heard the voice of a living God from fire;
+- survived;
+- but fear continued exposure will kill them.
+
+### People deliberately create a mediator layer
+
+The people ask Moses:
+
+**you go near**
+→ hear source
+→ return
+→ tell us.
+
+This is a source-level mediation architecture:
+
+**source/fire**
+→ **Moses**
+→ **population**.
+
+Moses is the **speech interface**.
+
+This reinforces the mature distinction:
+- interface/operator does not need to be the ultimate source.
+
+### Direct access is possible but not sustainable for the collective
+
+The people already heard the divine voice and lived.
+
+Their concern is:
+continued exposure may kill them.
+
+So the story's logic is not:
+**humans absolutely cannot couple to source**.
+
+It is:
+**direct coupling is dangerous / unsustainable**, so a mediator is introduced.
+
+That is closer to a **capacity/intensity problem** than an absolute sealed wall.
+
+Do not physicalize the danger into radiation without evidence.
+
+---
+
+## Deuteronomy 6 — unity is asserted at source level
+
+The Shema states:
+**YHWH … one** / “YHWH alone,” depending translation/interpretive handling.
+
+The exact syntax of the Hebrew has generated long discussion.
+
+For this project the safest point is:
+Deuteronomy strongly centralizes ultimate allegiance/source identity.
+
+That is important when later texts contain:
+- messengers;
+- prophets;
+- angels;
+- anthropomorphic operators.
+
+Deuteronomy's own theology resists treating those intermediaries as rival ultimate sources.
+
+### Words move onto body and household boundaries
+
+The commandments are to be:
+- on the heart;
+- taught to children;
+- spoken at home/on route;
+- bound on hand;
+- as frontlets between eyes;
+- written on **doorposts/gates**.
+
+This again maps information across:
+**body + household threshold + public gate**.
+
+The doorway/gate can therefore be an **information-marker surface** without being a physical transit mechanism.
+
+---
+
+## Deuteronomy 7 — small population chosen, not largest
+
+Israel is described as:
+- not selected because it was the most numerous;
+- indeed among the smaller peoples.
+
+This is another control against reading numerical size as proof of sacred/cosmic importance.
+
+The text explicitly disconnects:
+**selection/function**
+from
+**large quantity**.
+
+---
+
+## Deuteronomy 8 — wilderness as controlled deprivation / testing interval
+
+Moses says the **40-year** wilderness interval involved:
+- humbling;
+- hunger;
+- manna;
+- testing;
+- preservation;
+- clothing/feet traditions.
+
+The event is explained pedagogically:
+**deprivation → dependence → learning → future abundance**.
+
+This is not a neutral physical transition description.
+
+For Vardath:
+keep the environmental sequence,
+but also keep the source's own stated theological interpretation.
+
+### Manna is retold as information/lesson, not only material anomaly
+
+The famous line:
+humans do not live by bread alone,
+but by what proceeds from YHWH's mouth.
+
+So Deuteronomy turns the material manna event into a **speech/dependence lesson**.
+
+This is another example of the same event being recoded at a different interpretive layer.
+
+---
+
+## Deuteronomy 9 — golden calf retelling changes responsibility and sequence
+
+Deuteronomy's golden-calf version differs substantially from Exodus 32.
+
+It:
+- emphasizes national sin;
+- omits several Exodus narrative details;
+- does not narrate Aaron constructing the calf in the same developed way;
+- adds/foregrounds Moses' prolonged fasting/intercession;
+- includes prayer for Aaron;
+- omits the Levite slaughter of ~3,000 in the retelling.
+
+Modern scholarship therefore often treats Deuteronomy and Exodus as **distinct versions/perspectives**.
+
+### First 40-day mountain interval
+
+Moses says he remained:
+- **40 days**
+- **40 nights**
+- no bread/water
+when receiving tablets.
+
+Then he descends and breaks them.
+
+### Intercessory 40-day interval
+
+After the calf:
+Moses describes another:
+- **40 days**
+- **40 nights**
+of prostration/fasting/intercession.
+
+The Deuteronomic retelling strongly amplifies Moses as the figure who preserves the population through sustained mediation.
+
+Do not simply merge every 40-day mention into one hidden physical cycle.
+
+---
+
+## Deuteronomy 10 — simple wooden ark differs sharply from Exodus' golden cherubim ark
+
+The retelling says YHWH commands Moses:
+- cut two replacement stone tablets;
+- come up mountain;
+- make an **ark/chest of wood**.
+
+Moses says:
+- **he** made an acacia-wood ark;
+- carried the two tablets up;
+- brought them down;
+- placed them in the ark.
+
+This differs sharply from Priestly Exodus:
+- Bezalel makes the elaborate ark;
+- gold inside/outside;
+- rings/poles;
+- gold cover;
+- paired cherubim.
+
+### This difference is crucial for the Vardath comparison
+
+We cannot treat:
+**every ark reference**
+as proof of the full cherubim/bilateral architecture.
+
+Deuteronomy's memory of the tablet-container is much simpler.
+
+This is an excellent anti-overfitting control:
+**same named sacred object can have substantially different remembered description across source traditions.**
+
+### Carrier function remains stable despite architectural difference
+
+What remains common:
+
+**stone information carriers**
+→ placed in
+**portable chest/ark**.
+
+So the robust cross-source role is:
+**information container/carrier**.
+
+The elaborate geometry belongs specifically to the Priestly Tabernacle tradition.
+
+### Levi is assigned transport/interface service
+
+The Levites are set apart:
+- to carry the ark;
+- stand before YHWH;
+- serve/bless.
+
+This preserves the mobile sacred-carrier system,
+but in a much simpler Deuteronomic frame.
+
+---
+
+## Deuteronomy 10–11 — rain/land dependence tied to covenant state
+
+The land Israel enters is contrasted with Egypt:
+- not irrigated in the same way;
+- depends on rain from heaven.
+
+Obedience:
+→ rain in proper seasons;
+→ produce.
+
+Disobedience:
+→ heavens shut;
+→ no rain;
+→ land fails;
+→ rapid loss from land.
+
+This is another:
+**human/social state ↔ environmental timing/productivity** coupling.
+
+It parallels Leviticus 26,
+but should remain covenant theology rather than literal meteorological technology.
+
+---
+
+## Gerizim / Ebal — blessing/curse mapped onto two actual mountains
+
+Deuteronomy 11 closes with:
+
+**blessing**
+→ Mount **Gerizim**
+
+**curse**
+→ Mount **Ebal**.
+
+This is a genuine P2 spatial polarity pair.
+
+The abstract two-way choice is physically mapped onto:
+**two distinct landscape elevations**.
+
+This is one of the strongest canonical examples of:
+**conceptual polarity → paired geography**.
+
+### The mountains do not merge into one figure
+
+Important:
+Gerizim and Ebal remain:
+- two mountains;
+- different locations/functions.
+
+Do not treat them as two projections of one physical object unless later source evidence demands it.
+
+Best initial classification:
+- **P2 polarity pair**
+- possibly **P7 paired ritual stations** in Deut 27.
+
+### Jordan crossing is the trigger for activating the mountain polarity
+
+The blessing/curse placement is to occur:
+- after Israel crosses Jordan;
+- enters/possesses the land.
+
+So:
+
+**boundary crossing**
+→ **paired mountain system activated/used**.
+
+This will become much more explicit in Deuteronomy 27.
+
+---
+
+## SECTION 26A continuous sequence — Deuteronomy 1–11
+
+**retelling begins**
+→ old wilderness history reinterpreted
+→ scout initiative assigned to people/Moses
+→ refusal to go up
+→ phase closes
+→ late ascent fails
+
+**generational transition**
+→ 38-year interval
+→ old fighting generation disappears
+→ new generation reaches boundary
+
+**Moses/Joshua split**
+→ Moses views future land from height
+→ Moses cannot cross
+→ Joshua will lead crossing
+
+**Horeb memory**
+→ people at mountain foot
+→ fire rises to heart of heaven
+→ darkness/cloud/gloom
+→ voice from fire
+→ **no visible form**
+→ Ten Words
+→ 2 stone tablets
+
+**mediation**
+→ population fears sustained direct exposure
+→ Moses becomes near-source speech interface
+
+**information distribution**
+→ words mapped to heart/body/doorposts/gates
+
+**wilderness interpretation**
+→ 40 years
+→ hunger/manna/testing
+→ material history recoded as teaching
+
+**calf/tablets retold**
+→ first 40-day mountain period
+→ tablets broken
+→ prolonged intercession
+→ replacement tablets
+→ simple acacia-wood ark
+→ tablets stored
+
+**land/environment**
+→ covenant state affects rain/fruitfulness
+→ entry route approaches Jordan
+
+**binary future**
+→ blessing / curse
+→ mapped onto Gerizim / Ebal
+→ crossing Jordan will activate ritual geography.
+
+---
+
+## SECTION 26A strongest Vardath correspondences
+
+1. Same event can survive across traditions while **causal roles change**.
+2. Same route can succeed/fail according to **phase**, independently confirmed in Deuteronomy's scout retelling.
+3. Old generation can be exhausted while larger tribal/system continuity persists.
+4. Moses becomes an **observer of the next phase without being its bodily traveller**; Joshua carries the population across.
+5. Horeb gives a massive **mountain → fire to heaven → cloud/darkness** axis image.
+6. Deuteronomy explicitly says **no visible form** was seen — major control against automatic anthropomorphic interpretation.
+7. Information transfer can occur through **voice without visible/body traversal**.
+8. Population intentionally inserts Moses as a sustainable **mediator/interface**.
+9. Durable paired tablets convert transient voice into material information carrier.
+10. Deuteronomy's simple wooden ark shows that **carrier role survives even when geometry differs by source**.
+11. Human covenant state is linked to environmental rain/productivity in the book's theology.
+12. Gerizim/Ebal convert blessing/curse polarity into a literal **two-mountain spatial pair**.
+13. Boundary crossing (Jordan) is the trigger before that paired geography is ritually enacted.
+
+### Major controls
+
+- Deuteronomy is a later retelling/compositional layer, not a neutral duplicate of Exodus/Numbers.
+- no-form theology directly resists simple “visible Squatter-Man at Horeb” claims.
+- 40-year/40-day numbers are theological/narrative periods, not automatic physical cycles.
+- simple Deuteronomic ark ≠ Priestly golden cherubim ark.
+- rain/land obedience coupling is covenant theology.
+- Gerizim/Ebal are two actual ritual mountains, not established twines/world branches.
+
+---
+
+## SECTION 26A pair / number register
+
+- scouts: **12**.
+- old-generation explicit continuity pair: Caleb/Joshua.
+- wilderness generation-transition interval from Kadesh to Zered: **38 years** in Deuteronomic reckoning.
+- Horeb tablets: **2**.
+- Horeb visual form seen: **0** (voice, no form).
+- wilderness period: **40 years**.
+- first mountain tablet interval: **40 days +40 nights**.
+- intercession interval: **40 days +40 nights**.
+- replacement tablets: **2**.
+- blessing/curse mountains: **2** — Gerizim/Ebal.
+- foundational opposition: blessing/curse.
+
+### Sources logged
+
+Primary:
+- Deuteronomy 1–11.
+- Deut 4: mountain fire to sky/heaven, voice but no form.
+- Deut 5: people ask Moses to mediate direct fire-voice exposure.
+- Deut 10: Moses makes simple acacia-wood ark for replacement tablets.
+- Deut 11: blessing on Gerizim / curse on Ebal.
+
+Scholarly/source-critical:
+- “Using Deuteronomy to Fill in the Lacunae of Numbers’ Spies Story.”
+- “Whose Idea Was It to Send Scouts?”
+- “What Really Happened at Mount Sinai?”
+- “The Golden Calf: Comparing the Two Versions.”
+- source-critical discussion of the simple Deuteronomic ark versus Priestly Exodus ark.
+- “Deuteronomy: Rewritten to Reflect on the Exile and Future Redemption.”
+
+**Section 26 remains in progress.**  
+Next under anti-repeat protocol: **Deuteronomy 12–26 — centralization into one chosen place, seven-year release, festivals, king/priest/prophet distributed authority, prophet like Moses, three refuge cities with conditional three-more expansion, camp/boundary purity, unsolved-murder rite, levirate succession, first-fruits historical compression, and the law-code's source/history controls.**
+
