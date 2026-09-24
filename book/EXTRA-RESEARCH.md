@@ -46679,3 +46679,806 @@ Scholarly/source-critical:
 Next under anti-repeat protocol:
 **Ruth 1–4 — famine/outward migration/return, Naomi/Ruth/Orpah three-woman split, Ruth/Orpah opposite routes, Ruth+Naomi paired survival unit, gleaning and field-protection boundary, Boaz/Ruth threshing-floor encounter, nearer-redeemer/Boaz pair, sandal transfer as legal-state marker, land+lineage redemption, child Obed as recombination of Ruth/Naomi/Boaz line, and genealogy into David.**
 
+## SECTION 31 progress B — Ruth 1–4: two women split at the return-boundary, a protected field integrates the outsider, a nearer route declines and a secondary redeemer preserves land+lineage
+
+### Anti-repeat check
+
+Section 31A — Judges 17–21 is already appended.  
+No Ruth / Section 31B progress existed later in the current full ledger.  
+Continuing only from the saved Judges appendix checkpoint.
+
+---
+
+## Ruth 1 — famine drives one family outward; death leaves a three-woman remnant
+
+The story opens:
+- **in the days of the judges**;
+- famine in Judah;
+- Elimelech;
+- Naomi;
+- their **2 sons**
+move from Bethlehem to Moab.
+
+This is an ordinary survival migration:
+
+**home land with no food**
+→ boundary crossed
+→ foreign land with food/life possibility.
+
+### The family progressively loses its male branches
+
+Sequence:
+- Elimelech dies;
+- two sons marry Moabite women:
+  - Orpah
+  - Ruth;
+- family remains there about **10 years**;
+- both sons die.
+
+The surviving unit is now:
+**Naomi + Orpah + Ruth**.
+
+So the original:
+**husband + wife + two sons**
+has collapsed into
+**three widowed women**.
+
+### News of food reverses the original migration direction
+
+Naomi hears:
+- YHWH has visited/provided for Judah;
+- there is bread/food again.
+
+So:
+
+**famine → outward migration**
+later becomes
+**restored food → return migration**.
+
+The same route reverses because the state of the origin region has changed.
+
+This is a clean **same path / changed phase / reversed direction** pattern.
+
+### Naomi / Ruth / Orpah begin as a three-node travelling unit
+
+All three start the return.
+
+Naomi then repeatedly tells the two younger women:
+- return to their mothers' houses;
+- rebuild life in Moab.
+
+At first:
+**Ruth and Orpah give the same answer**:
+they intend to return with Naomi.
+
+Then the pair splits.
+
+### Ruth / Orpah — matched starting pair, opposite routes
+
+Orpah:
+- kisses Naomi;
+- turns back toward:
+  - her people;
+  - her previous social/religious world.
+
+Ruth:
+- **clings** to Naomi;
+- refuses separation.
+
+Her famous commitment aligns multiple identity layers:
+
+**your path → my path**
+**your lodging → my lodging**
+**your people → my people**
+**your God → my God**
+**your death/place of burial → my death/place of burial**.
+
+This is one of the strongest paired-route divergences in biblical narrative.
+
+Classification:
+- **P2 matched starting pair → opposite direction/outcome**
+- not good/evil cosmic halves.
+
+Important control:
+the biblical narrator does not condemn Orpah for accepting Naomi's repeated instruction.
+Later hostile traditions about Orpah are reception history, not the plain book.
+
+### Ruth's identity transition is relational before it is institutional
+
+Ruth does not undergo a formal conversion ceremony in the book.
+
+Instead her new identity develops through:
+- loyalty to Naomi;
+- migration;
+- residence;
+- labor;
+- food;
+- kinship;
+- marriage;
+- childbirth;
+- communal recognition.
+
+Modern scholarship emphasizes this **processual incorporation**.
+
+For the Vardath state model:
+this is a useful example of:
+**identity changed by accumulated relations/actions over time**
+rather than one instantaneous switch.
+
+### Naomi / Ruth become a two-person survival unit
+
+After Orpah returns:
+
+**Naomi + Ruth**
+continue together to Bethlehem.
+
+Their roles are complementary:
+- Naomi = local kinship/social knowledge;
+- Ruth = younger labor/mobility/care.
+
+Neither alone has the same pathway to restoration.
+
+This is a true **P7 complementary survival pair**.
+
+### “Full → empty” is Naomi's own explicit state language
+
+Naomi tells Bethlehem:
+- she went away **full**;
+- YHWH brought her back **empty**.
+
+This is emotionally/socially true from her viewpoint:
+- husband/sons gone;
+- property/lineage precarious.
+
+Yet Ruth is standing with her.
+
+That tension matters:
+**observer's state-description can omit a component that is objectively present**.
+
+This is another perspective-control example.
+
+### Return occurs at beginning of barley harvest
+
+The chapter closes:
+- Naomi and Ruth arrive
+- at beginning of **barley harvest**.
+
+The whole book therefore pivots from:
+**famine**
+to
+**harvest**.
+
+This is the material/environmental background to Naomi's:
+**empty → filled/restored**
+arc.
+
+---
+
+## Ruth 2 — Boaz's field becomes a protected inclusion zone
+
+Ruth goes to glean behind harvesters.
+
+By apparent chance/providence:
+- she enters a field belonging to Boaz;
+- a relative/kinsman of Elimelech.
+
+### Field boundary changes outsider risk
+
+Boaz tells Ruth:
+- do not go to another field;
+- stay close to his young women/workers;
+- his men are commanded **not to touch/molest her**;
+- she may drink from water drawn by workers.
+
+This creates a real local protective zone:
+
+**outside / other fields**
+→ uncertain vulnerability
+
+**inside Boaz's field**
+→ explicit protection + food + water + controlled access.
+
+For Vardath comparison:
+this is a good example of **local boundary conditions changing outcome**.
+
+But it is social protection, not a supernatural enclosure.
+
+### Ruth asks why a foreigner receives favor
+
+Ruth explicitly identifies herself as:
+- outsider/foreigner.
+
+Boaz answers in terms of:
+- what she did for Naomi;
+- leaving father/mother/native land;
+- coming to a people previously unknown to her.
+
+So her **route history** is the evidence used to reassess her status.
+
+This is highly relevant:
+identity is not assigned only by birthplace;
+**trajectory/action changes relational status**.
+
+### Boaz uses wing/refuge imagery
+
+Boaz blesses Ruth for coming to seek refuge under YHWH's “wings.”
+
+Later at the threshing floor Ruth asks Boaz to spread his own wing/garment over her.
+
+That creates an elegant role transfer:
+
+**divine wing/refuge invoked by Boaz**
+→ later
+**Ruth asks Boaz to embody/provide that covering as redeemer**.
+
+This is a source-level:
+**abstract protection → human enacted protection** relation.
+
+### Gleaning converts distributed leftovers into concentrated survival cargo
+
+Ruth gathers from the field:
+- beats/threshes what she has gleaned;
+- carries grain back to Naomi;
+- also shares leftover prepared food.
+
+The text gives about:
+**one ephah of barley** in the received translation.
+
+Sequence:
+
+**distributed edge-remnants**
+→ gathered by one outsider
+→ concentrated cargo
+→ carried home
+→ supports two-person household.
+
+This is a very grounded material survival mechanism.
+
+### Naomi identifies the hidden kinship route
+
+Ruth does not initially know Boaz's full significance.
+
+Naomi recognizes:
+- Boaz is one of their `go'el` / redeemer-kin.
+
+Again the pair splits knowledge:
+- Ruth has **field encounter data**;
+- Naomi has **kinship-map knowledge**.
+
+Combined:
+**experience + map**
+reveals a new route.
+
+### Ruth stays through barley and wheat harvests
+
+The field protection is not one encounter.
+
+Ruth remains associated with Boaz's workers through:
+- barley harvest;
+- wheat harvest.
+
+So the safe inclusion state persists over a season.
+
+---
+
+## Ruth 3 — Naomi routes Ruth to the threshing floor; Ruth asks Boaz to convert protection into kinship
+
+Naomi seeks:
+- “rest/security” / a settled future for Ruth.
+
+She instructs Ruth to:
+- wash;
+- anoint;
+- dress;
+- go to threshing floor;
+- wait until Boaz has eaten/drunk and lies down;
+- uncover his feet;
+- lie down.
+
+The episode is intentionally sexually suggestive/ambiguous in language and setting.
+
+Scholars disagree over whether intercourse occurs.
+
+Do **not** turn ambiguity into certainty.
+
+### Night threshing floor becomes a hidden negotiation zone
+
+At midnight:
+- Boaz is startled;
+- discovers a woman at his feet;
+- asks identity.
+
+Ruth identifies herself and asks:
+- spread your wing/garment over your servant;
+- because you are a redeemer.
+
+This is a direct request to transform:
+**field protector**
+into
+**kinship/household protector**.
+
+### Ruth actively changes the plan
+
+Naomi had said:
+- Boaz will tell Ruth what to do.
+
+Instead Ruth:
+- articulates the redemption/marriage request herself.
+
+So Ruth is not merely passive cargo routed by Naomi.
+
+She becomes an active operator inside the plan.
+
+### Boaz / nearer redeemer — two eligible routes with priority ordering
+
+Boaz reveals:
+- he is a redeemer;
+- but there is a **nearer redeemer**.
+
+This creates a legal route hierarchy:
+
+**route A / nearer kin = first priority**
+→ if accepted, Boaz cannot take the role.
+
+**route B / Boaz = secondary priority**
+→ activates only if route A declines.
+
+This is one of the cleanest **primary-route / fallback-route** pairs in narrative law.
+
+### Ruth remains until near morning but leaves before public recognition
+
+Boaz protects the encounter's social reputation:
+- Ruth remains until early morning;
+- departs before one person can identify another clearly.
+
+So the threshing-floor event has a **limited-time hidden phase**.
+
+Again:
+not cosmic darkness;
+ordinary social secrecy.
+
+### Six measures of barley become a material pledge to Naomi
+
+Before Ruth leaves:
+- Boaz loads **six measures of barley** into her cloak/wrap in the MT narrative.
+
+Exact unit is not specified in the Hebrew.
+
+The cargo travels:
+**Boaz**
+→ Ruth's garment
+→ **Naomi**.
+
+The gift is both:
+- food/material support;
+- evidence that the negotiation is active.
+
+Naomi interprets the event and expects resolution that day.
+
+---
+
+## Ruth 4 — city gate becomes a legal-state transition interface
+
+Boaz goes to:
+- the **city gate**;
+- sits there.
+
+The nearer redeemer passes by.
+
+Boaz calls him over and gathers:
+- **10 elders**.
+
+This gives a completely different gate function from Samson's Gaza scene.
+
+### Compare Gaza gate / Bethlehem gate
+
+Judges 16:
+**gate = physical barrier**
+→ Samson uproots it.
+
+Ruth 4:
+**gate = public legal decision node**
+→ Boaz uses it to change land/kinship status.
+
+Same object-class:
+**gate**.
+
+Different function:
+- barrier;
+- court/forum.
+
+This strongly reinforces:
+**symbol/object ≠ fixed mechanism**.
+
+### Nearer redeemer initially says yes to land
+
+Boaz presents Naomi's land/redemption matter.
+
+The nearer redeemer first says:
+**I will redeem**.
+
+Then Boaz introduces the Ruth/dead-lineage consequence.
+
+The nearer redeemer declines, fearing damage to his own inheritance.
+
+So:
+
+**first route opens**
+→ added condition changes cost/state
+→ first route closes
+→ **second route becomes active**.
+
+This is a textbook fallback transition.
+
+### Boaz / nearer redeemer — function passes without identity merge
+
+The unnamed nearer kinsman:
+- has first legal priority;
+- relinquishes it.
+
+Boaz:
+- assumes the right/duty.
+
+Classification:
+- **P4/P7 predecessor-priority / replacement-redeemer pair**.
+
+They are two distinct people in an ordered role chain.
+
+### Sandal removal marks legal transfer
+
+The text explains an older Israelite custom:
+- to confirm redemption/exchange;
+- one party removes a sandal and gives it to the other.
+
+Thus:
+**ordinary wearable object**
+→ removed
+→ becomes **public transfer token**.
+
+Like:
+- garments carrying office;
+- tablets carrying covenant;
+- body pieces carrying message.
+
+Here:
+**sandal carries legal-state information**.
+
+### Ruth's redemption is not identical to Deuteronomic levirate marriage
+
+The story combines:
+- land redemption;
+- preservation of the dead man's name;
+- kinship marriage.
+
+But its mechanism is not simply the Deuteronomy 25 brother-in-law law:
+- Boaz is not the dead man's brother;
+- land redemption is central;
+- a nearer redeemer hierarchy is involved.
+
+Scholars debate the legal background and the difficult wording of Ruth 4:5.
+
+Therefore:
+treat Ruth's system as a distinctive **kinsman-redemption / lineage-preservation construction**, not a clean execution of one Pentateuchal statute.
+
+### Land + lineage are coupled into one transaction
+
+Boaz publicly acquires:
+- Elimelech/Mahlon family holding in the story's legal framework;
+- Ruth as wife;
+- with purpose of maintaining the dead man's name on his inheritance.
+
+This is a strong paired system:
+
+**land continuity**
++
+**lineage/name continuity**
+must be restored together.
+
+For Vardath comparison:
+the important concept is:
+**material place and identity-line are coupled**.
+
+Not literal land/world transfer.
+
+### Community invokes Rachel/Leah and Perez/Tamar
+
+The witnesses bless Ruth:
+- like Rachel and Leah who built Israel;
+- house like Perez, born to Tamar/Judah.
+
+This explicitly inserts Ruth into older female-lineage/breach traditions.
+
+The book's repair is therefore narrated through **genealogical recombination**, not tribal purity.
+
+### Ruth conceives; child becomes Naomi's restoration
+
+Ruth and Boaz have a son:
+**Obed**.
+
+The women say in relation to Naomi:
+- a redeemer/continuity has been born;
+- Ruth is better to her than seven sons in their praise language.
+
+Naomi:
+- takes child to her bosom;
+- becomes nurse/caregiver.
+
+Neighbors say:
+**“a son is born to Naomi.”**
+
+Biologically:
+- Obed is Ruth's son.
+
+Socially/narratively:
+- Obed restores Naomi's line/household state.
+
+This is a very strong **one body / multiple relational identities** example.
+
+### Naomi's arc completes full → empty → filled
+
+Book-level sequence:
+
+**Naomi full**
+→ famine/migration
+→ husband + sons die
+→ **empty**
+→ returns with Ruth
+→ harvest
+→ grain
+→ kinship route
+→ Boaz
+→ child
+→ **restored household/line**.
+
+This is forward restoration.
+
+The dead husband/sons do not return.
+
+So Ruth supplies another very strong:
+**reset/restoration ≠ rewind** example.
+
+### Ruth's identity likewise changes without erasing origin
+
+Ruth remains called:
+- “Ruth the Moabite”
+even deep into the story.
+
+Yet she becomes:
+- daughter-like to Naomi;
+- protected member of Boaz's field;
+- wife;
+- mother inside Judahite genealogy;
+- ancestor of David.
+
+So integration is:
+**new relational identity added**
+rather than
+**past origin deleted**.
+
+This closely matches the mature Vardath emphasis on continuity through state change.
+
+### Ten-generation genealogy closes on David
+
+The book ends:
+
+Perez
+→ Hezron
+→ Ram
+→ Amminadab
+→ Nahshon
+→ Salmon
+→ Boaz
+→ Obed
+→ Jesse
+→ **David**.
+
+This is a **10-name line from Perez to David** in the final genealogy.
+
+The story therefore turns a local widow/field/redemption narrative into a royal-line origin story.
+
+### Dating/purpose control
+
+Many scholars date Ruth to the post-exilic period and read it in dialogue with:
+- Deuteronomic restrictions concerning Moab;
+- Ezra-Nehemiah's anti-intermarriage policies.
+
+Others assign different dates/purposes.
+
+The post-exilic counter-voice interpretation is influential, not certain.
+
+For our project:
+this is another warning that:
+**pairing/kinship narratives can be constructed as arguments in later social debates**.
+
+### Ruth as a corrective contrast to Judges 19–21
+
+In canonical/LXX-style narrative order, Ruth can be read directly after Judges.
+
+The contrast is powerful:
+
+**Judges 19–21**
+- women betrayed, killed, abducted;
+- tribe repaired through coercive female transfer;
+- social system remains broken.
+
+**Ruth**
+- foreign widow chooses attachment;
+- is protected in field;
+- acts strategically;
+- public legal process resolves competing claims;
+- lineage restored through consensual/recognized kinship.
+
+Modern literary readings explicitly explore Ruth as a counterpoint to the violent female treatment at Judges' end.
+
+This comparison is highly useful,
+but should remain literary/thematic rather than claimed as certain authorial design.
+
+---
+
+## SECTION 31B continuous Ruth sequence
+
+**famine**
+→ Bethlehem family exits to Moab
+→ Elimelech dies
+→ two sons marry Ruth/Orpah
+→ about 10 years
+→ sons die
+→ three-woman remnant
+
+**return trigger**
+→ Naomi hears bread restored
+→ three begin return
+→ Naomi urges two to turn back
+→ **Orpah returns**
+→ **Ruth clings**
+→ Ruth/Naomi two-person unit crosses to Bethlehem
+→ arrival at barley harvest
+→ Naomi “full→empty”
+
+**field integration**
+→ Ruth gleans
+→ enters Boaz field
+→ Boaz creates protected zone
+→ Ruth receives food/water
+→ carries grain to Naomi
+→ Naomi recognizes redeemer route
+→ Ruth remains through barley/wheat harvest
+
+**threshing-floor negotiation**
+→ Naomi seeks rest/security
+→ Ruth washes/dresses
+→ night approach
+→ Ruth asks Boaz to spread wing/garment
+→ Boaz reveals nearer redeemer
+→ Ruth receives six-measure grain pledge
+→ returns to Naomi
+
+**gate/legal transfer**
+→ Boaz sits at city gate
+→ nearer redeemer arrives
+→ 10 elders witness
+→ nearer first accepts land
+→ Ruth/lineage condition changes decision
+→ nearer declines
+→ sandal marks right-transfer
+→ Boaz becomes redeemer/husband
+
+**restoration**
+→ land + dead name linked
+→ Ruth conceives Obed
+→ child socially restores Naomi
+→ Naomi empty→filled
+→ genealogy runs to David.
+
+---
+
+## SECTION 31B strongest Vardath correspondences
+
+1. Original migration route reverses when the origin-region changes state: **famine outward / food restored inward**.
+2. Ruth/Orpah are a clean matched pair that **splits at one decision boundary into opposite routes**.
+3. Ruth/Naomi become a complementary two-person survival system.
+4. Ruth's identity changes gradually through relation/action; state transition is **processual**, not instantaneous.
+5. Boaz's field is a real **local protected zone** whose rules change Ruth's safety/access.
+6. Ruth's trajectory itself becomes identity evidence.
+7. Naomi's kinship map + Ruth's field experience combine to reveal the hidden redeemer route.
+8. Boaz/nearer redeemer form an explicit **priority-route / fallback-route pair**.
+9. Same gate object-class changes completely by context: Gaza physical barrier vs Bethlehem legal interface.
+10. Sandal becomes a legal-state information token.
+11. Land continuity + lineage/name continuity are coupled.
+12. Obed is biologically Ruth's but narratively/socially “born to Naomi,” showing **one body with multiple relational identities**.
+13. Naomi's **full→empty→restored** arc is another reset≠rewind model.
+14. Ruth remains Moabite by origin while gaining Judahite kinship/lineage roles: transformation adds identity without erasing history.
+15. Ruth gives a constructive repair-counterpoint to Judges 19–21's coercive “repair.”
+
+### Major controls
+
+- Ruth's return/marriage is human social movement, not world crossing.
+- the field's protection is social, not a force enclosure.
+- threshing-floor sexuality is deliberately/linguistically ambiguous; do not assert intercourse as fact.
+- `go'el` redemption in Ruth is not identical to Deuteronomy 25 levirate marriage.
+- Ruth 4:5 is textually/grammatically difficult.
+- post-exilic dating / anti-Ezra-Nehemiah reading is influential but debated.
+- Ruth-after-Judges as deliberate corrective design is a literary interpretation.
+- the David genealogy is ideological/genealogical framing, not a physical timeline mechanism.
+
+---
+
+## SECTION 31 master pair / number register
+
+### Pairs
+- Ruth / Orpah — matched daughters-in-law → opposite routes.
+- Ruth / Naomi — complementary migration/survival/restoration pair.
+- Boaz / nearer redeemer — priority/fallback legal pair.
+- land / lineage — coupled continuity system.
+- Judges women / Ruth — literary contrast, not in-story pair.
+
+### Numbers
+- Naomi sons: **2**.
+- daughters-in-law: **2**.
+- Moab residence: about **10 years**.
+- three-woman remnant: **3** before Orpah/Ruth split.
+- Ruth grain in ch.2: about **1 ephah barley**.
+- threshing-floor gift: **6 measures** barley, unit unspecified in Hebrew.
+- gate witnesses: **10 elders**.
+- final genealogy Perez→David: **10 named generations/persons** in the displayed chain.
+
+---
+
+## Sources logged
+
+Primary:
+- Ruth 1–4, Sefaria.
+- Ruth 1: famine, Moab migration, 10 years, three widows, Ruth/Orpah split, Ruth's attachment vow, barley-harvest return.
+- Ruth 2: protected field, gleaning, Boaz/Naomi kinship recognition.
+- Ruth 3: threshing floor, wing/garment request, nearer redeemer, six measures.
+- Ruth 4: city gate, ten elders, nearer redeemer declines, sandal transfer, Boaz/Ruth, Obed, David genealogy.
+
+Scholarly/source-critical:
+- “The Book of Ruth? It's Naomi's Story” — Naomi full/empty/restoration focus.
+- “The Substance of Kinship: How Ruth the Moabite Became a Daughter in Judah” — gradual/processual integration.
+- “Book of Ruth: Recasting David's Foreign Origins” — Davidic genealogy/purpose.
+- “Contrasting Pictures of Intermarriage in Ruth and Nehemiah” — Ruth in post-exilic social debate.
+- “Kinship over Covenant: The Book of Ruth's Traditional Challenge to Deuteronomy.”
+- “Boaz Married Ruth at the Threshing Floor: A Grammatical Solution to Ruth 4:5” — legal/textual difficulty and redeemer hierarchy.
+- “The Dark Side of the Book of Ruth: Sexual Harassment in the Field” — Ruth read after Judges as contrast in treatment/protection of women.
+- modern scholarship commonly dating Ruth to the post-exilic period, while acknowledging continued dating/purpose debate.
+
+## SECTION 31 status
+
+**SECTION 31 — JUDGES 17–21 + RUTH: COMPLETE FIRST PASS.**
+
+### Strongest additions from Section 31
+
+1. A household cult system scales into a tribal cult system while operator and objects migrate.
+2. Most important: **one woman's body → 12 physical pieces → twelvefold national distribution → Israel assembles “as one man.”**
+3. The national body then fractures around Benjamin; one branch is nearly severed and forcibly reattached.
+4. Ruth/Orpah give a clean opposite-route pair from one starting position.
+5. Ruth/Naomi show constructive two-person survival and gradual identity integration.
+6. Boaz/nearer redeemer give explicit primary-route/fallback-route logic.
+7. Gate symbolism is radically context-dependent: barrier, failure-point, or legal transition node.
+8. Ruth's restoration preserves continuity without reversing history.
+9. One child, Obed, simultaneously occupies biological and socially restorative identities.
+10. Judges' coercive structural repair and Ruth's relational/legal repair provide a powerful contrast: **numerical wholeness and healthy integration are not the same thing**.
+
+### Next first unfinished roadmap section
+
+**SECTION 32 — 1 SAMUEL 1–15**
+
+Saved priorities:
+- Hannah / Samuel;
+- Eli and sons;
+- ark captured / returned;
+- Dagon falls;
+- Saul chosen;
+- Saul transformations/signs;
+- Jonathan;
+- Saul rejection.
+
+Priority pair tests:
+- Samuel / Eli;
+- Samuel / Saul;
+- Saul / Jonathan;
+- ark / Dagon.
+
+Before beginning Section 32, apply the anti-repeat search and append the checkpoint.
+
