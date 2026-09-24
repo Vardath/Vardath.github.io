@@ -32365,3 +32365,355 @@ Scholarly/source-critical:
 
 **Section 23 remains in progress.**  
 Next under anti-repeat protocol: **Leviticus 18–27 — holiness/land expulsion language, sacred times, seven-year sabbatical cycle, 7×7 = 49 years, 50th-year Jubilee, month7/day10 trumpet, return to family/holding, land-restoration, sevenfold punishments, and final comparison of Leviticus' cyclic reset with the Vardath handoff model.**
+
+
+## SECTION 23 progress D — Leviticus 18–24: temporary ritual impurity gives way to land-state, whole-community holiness and sacred-time architecture
+
+### Anti-repeat check
+
+Section 23A–C are saved.  
+No Leviticus 18–24 progress existed elsewhere in the ledger.  
+Continuing from the Day of Atonement / blood-routing block.
+
+### Source-critical shift — Leviticus 17–26 is commonly treated as the Holiness legislation
+
+Modern scholarship commonly distinguishes:
+- much of Leviticus 1–16 as earlier Priestly material (P);
+- Leviticus 17–26 as **Holiness legislation / H**, often treated as a later Priestly supplement/redaction.
+
+A major conceptual difference:
+- earlier Priestly material concentrates holiness strongly in sanctuary/priestly structures;
+- H repeatedly tells the **whole Israelite community** to become/be holy.
+
+For our project this matters because the system expands:
+
+**specialized operator/sanctuary holiness**
+→
+**whole-population behavioral/land holiness**.
+
+Do not flatten all Leviticus into one compositional voice.
+
+### Ritual impurity and moral/land contamination are not the same state
+
+Leviticus 15:
+- bodily impurity is often temporary;
+- washing + elapsed time can restore clean status.
+
+Leviticus 18:
+- certain prohibited actions are said to **defile people and the land**;
+- the land itself is personified as “vomiting out” its inhabitants.
+
+Modern scholarship explicitly distinguishes these concepts:
+the impurity language of Leviticus 18 is not simply the same temporary ritual state as Leviticus 15.
+
+This is an important methodological control.
+
+### Land as an active system-state participant
+
+Leviticus 18 says:
+- prior inhabitants defiled the land;
+- the land became defiled;
+- land “vomited out” those inhabitants;
+- Israel is warned the land can do the same to them.
+
+The raw event grammar is:
+
+**population behavior**
+→ **land-state changes**
+→ **land no longer tolerates occupants**
+→ **population expelled**.
+
+This is unusually strong personification of territory as an active participant in the covenant system.
+
+For Vardath:
+it is structurally interesting because **land and population state are coupled**.
+
+But:
+- this is moral/covenantal land theology;
+- not evidence that the terrain physically moves between world layers.
+
+### Population/land pair
+
+The relationship functions as a reciprocal pair:
+- people affect land;
+- land affects whether people remain.
+
+Classification:
+- **P7 environment/population feedback pair**.
+
+This is not a person-pair, but it is a tightly coupled two-part system.
+
+### Leviticus 19 — holiness moves out into ordinary social life
+
+Leviticus 19 opens:
+**“You shall be holy…”**
+
+It then mixes:
+- parents;
+- Sabbath;
+- sacrifice;
+- harvest gleaning;
+- treatment of poor/stranger;
+- theft;
+- wages;
+- disability;
+- justice;
+- hatred/revenge;
+- mixtures;
+- sexuality;
+- divination;
+- age;
+- resident alien;
+- weights/measures.
+
+This broadens “interface correctness” into everyday social order.
+
+For our model this is mostly a **control**:
+not every holiness law maps to geometry or cosmic mechanics.
+
+### Boundaries can be conceptual, not spatial
+
+The Holiness laws repeatedly distinguish:
+- Israel / other peoples;
+- holy / common;
+- permitted / forbidden;
+- correct / mixed/improper.
+
+Thus Leviticus uses boundary logic abstractly as well as physically.
+
+That means:
+**boundary language itself is insufficient evidence for a physical gate**.
+
+This should remain a standing anti-overfitting rule.
+
+### Leviticus 20 — state can be assigned to whole population categories
+
+Chapter 20 repeats many prohibitions with punishments and ends by emphasizing separation/distinction among peoples/animals.
+
+The text's conceptual motion is:
+**classification → separation → distinct communal identity**.
+
+Again:
+this is social/cultic differentiation, not mechanical layer separation.
+
+### Priests themselves remain graded by role/state
+
+Leviticus 21 differentiates:
+- ordinary priests;
+- high priest;
+- bodily/family status;
+- sanctuary approach conditions.
+
+So even within the sanctified operator group, access remains **graded**.
+
+This continues Exodus/Leviticus's strongest access principle:
+**authorization is layered rather than binary**.
+
+### Sacred food has its own access rules
+
+Leviticus 22 regulates:
+- who may eat sacred food;
+- when temporary impurity blocks eating;
+- when cleanliness restores access;
+- which animals are acceptable.
+
+Again:
+**same object/food + different person-state = different accessibility**.
+
+This strengthens the phase/status model.
+
+### Leviticus 23 turns the year into an access/timing map
+
+The festival chapter explicitly calls its festivals **appointed/fixed times**.
+
+It begins:
+- **6 days work**
+- **7th day Sabbath**.
+
+Then annual sacred periods are tied to dates/phases.
+
+The system is therefore not merely spatial:
+**time itself is organized into sacred/open/cessation phases**.
+
+### Passover/Unleavened Bread timing
+
+The calendar fixes:
+- month 1, day **14**: Passover at twilight;
+- day **15**: Unleavened Bread begins;
+- **7 days**;
+- first and seventh days are sacred occasions.
+
+This preserves the Exodus transition as a repeating annual temporal coordinate.
+
+### Counting produces another 7 × 7 structure
+
+The first-fruits/Weeks sequence counts:
+- **7 complete weeks**;
+- then reaches the next/fiftieth-day festival count in the received calendar tradition.
+
+This is a smaller-scale precursor to Leviticus 25's:
+**7 sabbatical year-cycles → 49 → Jubilee**.
+
+Do not assume the two counts originally formed one numerological system without source criticism, but the final book clearly juxtaposes them.
+
+### Seventh month is densely structured
+
+Leviticus 23 places in month **7**:
+- day 1 — horn/blast sacred occasion;
+- day 10 — Day of Atonement;
+- day 15 — Sukkot/Booths begins.
+
+This makes month seven a concentrated transition/calendar zone.
+
+Day 10 will also trigger the Jubilee proclamation in Leviticus 25.
+
+### Sukkot — 7 days + 8th-day assembly
+
+The Feast of Booths:
+- begins seventh month, day 15;
+- runs **7 days**;
+- has an **8th day** sacred assembly.
+
+So Leviticus contains another explicit:
+**7 → 8 transition**.
+
+Again:
+do not equate every eighth-day motif automatically.
+
+Here it belongs to the festival calendar.
+
+### Source-growth control in Leviticus 23
+
+Modern source criticism sees the festival chapter as layered:
+- Priestly and Holiness materials;
+- later glosses/additions;
+- Sukkot branch/booth instructions may reflect separate additions.
+
+Therefore:
+the final calendar is a compiled temporal system, not necessarily one pristine original design.
+
+### Leviticus 24 — lamp + twelve loaves preserve the Tabernacle's light/population geometry
+
+The chapter returns to sanctuary operation.
+
+#### Lamp
+- clear oil;
+- lamps maintained **evening → morning**;
+- outside the inner veil;
+- continuous/repeated service.
+
+This retains the daily two-phase service clock.
+
+#### Bread
+- **12 loaves**;
+- arranged in **2 rows**;
+- **6 per row**;
+- renewed each Sabbath.
+
+This is another representation of Israel's twelvefold collective as:
+
+**6 + 6**
+
+Compare:
+- Aaron's two shoulder stones = 6 + 6 names;
+- here table bread = 6 + 6 loaves.
+
+This repetition is significant.
+
+The twelve-part Israel body can be represented:
+- on a human mediator;
+- on sanctuary furniture.
+
+### Twelve-part system appears in multiple substrates
+
+We now have:
+
+**Aaron's shoulders**
+→ 6 + 6 tribal names
+
+**Aaron's breastpiece**
+→ 4 × 3 tribal stones
+
+**sanctuary bread table**
+→ 6 + 6 loaves.
+
+This is exceptionally strong evidence for the project's **multiple projections of one underlying counted collective**.
+
+The text itself varies the geometry while preserving twelve.
+
+### Blasphemer episode — holding state before decision
+
+A man blasphemes.
+The community:
+- puts him in custody;
+- waits until YHWH's decision is clarified.
+
+This is another explicit **undetermined holding state**:
+not immediate judgment,
+but
+**temporary enclosure pending information**.
+
+### Witnesses lay hands on the condemned person
+
+After ruling:
+- the man is taken **outside the camp**;
+- those who heard place their **hands on his head**;
+- community executes judgment.
+
+This resembles the transfer/identification gesture used in sacrifice, but the precise ritual meaning here is debated.
+
+Do not assume “sin is transferred back” unless a source explicitly argues it.
+
+The secure structural sequence is:
+
+**inside community**
+→ custody/holding
+→ decision received
+→ witnesses make bodily contact
+→ **outside camp**
+→ terminal judgment.
+
+### Vardath comparison — Leviticus 18–24
+
+Strong useful correspondences:
+1. Land/population can be portrayed as a coupled system.
+2. Same broad vocabulary of impurity can describe **different kinds of state**; labels alone cannot prove identical mechanism.
+3. Boundaries can be social/ethical rather than physical.
+4. Access remains graded among priests and sacred food consumers.
+5. Calendar converts time into **appointed state windows**.
+6. Twelvefold Israel is rendered through several geometries/substrates.
+7. Custody can create a temporary **holding state pending new information**.
+8. Outside-camp routing remains a consistent removal endpoint.
+
+Controls:
+- land “vomiting” is covenant metaphor/personification, not literal geophysics;
+- Holiness distinctions are not world-layer mechanics;
+- festival numbers do not automatically encode Vardath event dates;
+- Leviticus 23 is compositionally layered.
+
+### Number / geometry register, Leviticus 18–24
+
+- weekly cycle: **6 → 7**.
+- Passover: month 1 day **14**.
+- Unleavened Bread: day **15**, **7 days**.
+- Weeks count: **7 weeks** then fiftieth-day endpoint in final calendar.
+- seventh month: days **1 / 10 / 15** major sacred markers.
+- Sukkot: **7 days + day 8 assembly**.
+- sanctuary loaves: **12 = 6 + 6**.
+- bread renewed every **Sabbath/7th day**.
+- lamp service: **evening → morning**.
+
+### Sources logged
+
+Primary:
+- Leviticus 18–24, Sefaria.
+
+Scholarly/source-critical:
+- Julia Rhyder, “Israel, Be Holy! A Command for Religious Conformity.”
+- “Sex During Menstruation: From Impurity to Prohibition.”
+- “The Origins of Sukkot.”
+- scholarship distinguishing Leviticus 17–26 as Holiness legislation.
+- source-critical studies of Leviticus 23's layered festival calendar.
+
+**Section 23 remains in progress.**  
+Next: **Leviticus 25–27 — sabbatical/Jubilee clock, 7×7=49 → 50th year, month7/day10 horn, release/return to land/family, land as non-permanent property, sevenfold covenant escalations, exile/land-rest logic, vows/redemption appendix, and final Section 23 synthesis.**
