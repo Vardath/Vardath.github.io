@@ -92666,3 +92666,853 @@ Research priorities:
 
 Append X6 before beginning **Section 38B — 2 Kings 21–25 + Chronicles parallels**.
 
+
+
+---
+
+# COMPARISON INSERT X6 — ASCENSION OF ISAIAH
+## Hezekiah → Manasseh bridge: layered heavens, graded transformation, disguised descent through gates, ascent without disguise, and a martyrdom frame around the vertical cosmology
+
+### Placement
+
+This insert belongs immediately after the Hezekiah material and before the canonical Manasseh sequence in 2 Kings 21.
+
+Reason:
+the work explicitly links:
+- Hezekiah;
+- Manasseh;
+- Isaiah's persecution/death;
+- a vision of ascent through seven heavens;
+- descent/ascent of the Beloved.
+
+It therefore provides a non-canonical but highly relevant bridge between:
+**Hezekiah's “wonder/sign” phase**
+and
+**Manasseh's apostasy/persecution phase**.
+
+### Textual/compositional control
+
+The **Ascension of Isaiah** survives completely in Ethiopic (Geʿez), while only portions survive in Greek, Latin, Coptic and Slavonic witnesses.
+
+Modern scholarship does **not** agree on one simple date or composition history.
+
+Two major scholarly models remain active:
+
+1. **Composite model** — often separates:
+   - Martyrdom of Isaiah material in chapters 1–5;
+   - a Christian apocalypse/testament layer in 3:13–4:22;
+   - Vision/Ascension material in chapters 6–11.
+
+2. **Greater-unity model** — argues the work should be read as a more integrated second-century Christian apocalypse/martyrdom narrative.
+
+Cambridge's recent edition explicitly states there is **no consensus** on date, composition or provenance, while noting a strong scholarly case for a second-century setting, possibly Syria.
+
+Therefore:
+**do not treat every verse as one historical layer or as direct evidence from the time of Hezekiah/Manasseh.**
+
+The work is much later than the kings it narrates.
+
+---
+
+# X6-A — Hezekiah's attempt to transmit a stable state fails at the next succession
+
+The opening frame is already a succession-failure story.
+
+Hezekiah:
+- calls Manasseh;
+- transmits written commands/visions;
+- attempts to hand forward a preserved body of teaching.
+
+Isaiah predicts:
+**the transfer will fail**.
+
+Manasseh:
+- forgets;
+- turns the house away from Hezekiah's wisdom;
+- becomes aligned with Beliar/Sammael;
+- persecutes the prophetic network.
+
+So the process is:
+
+**stable predecessor knowledge**
+→ deliberately packaged/transmitted
+→ successor receives inheritance
+→ internal orientation reverses
+→ inherited information loses control
+→ persecution of former information network.
+
+This strongly matches the master timeline rule:
+**information transfer does not guarantee state transfer**.
+
+A successor can inherit the same records while reversing the operating orientation.
+
+---
+
+# X6-B — prophetic network retreats from centre to mountain/desert
+
+Isaiah and other prophets:
+- leave Jerusalem;
+- leave Bethlehem;
+- move to mountain/desert locations;
+- live with minimal material support.
+
+The geometry is:
+
+**corrupted political centre**
+→ information/prophetic network withdraws outward
+→ mountain/desert refuge
+→ small distributed remnant persists outside centre.
+
+This repeats:
+- David wilderness network;
+- Elijah/prophet refuge traditions;
+- later apocalyptic remnant patterns.
+
+For Vardath comparison:
+**when centre becomes hostile, continuity can migrate to peripheral high/desert zones rather than disappear.**
+
+---
+
+# X6-C — martyrdom literally splits the body while the vision-state remains internally continuous
+
+Isaiah is eventually:
+**sawn in two**.
+
+The text emphasizes:
+- bodily division;
+- no crying/weeping;
+- inward visionary/spiritual state continuing while the body is being split.
+
+This is one of the strongest body/identity separations in the whole corpus.
+
+Process:
+
+**one body**
+→ external physical division
+while
+**internal visionary/identity continuity persists until death**.
+
+Do not convert the martyrdom into a cosmological mechanism.
+
+But as process grammar it sharply distinguishes:
+**material integrity**
+from
+**continuity of experienced/claimed spiritual identity**.
+
+---
+
+# X6-D — the vision begins with a door opened in an “alien world”
+
+During the Hezekiah court scene:
+- a door is heard opening;
+- voice of the Spirit is heard;
+- Isaiah becomes silent;
+- eyes remain open;
+- breath remains;
+- awareness of surrounding people disappears;
+- vision is said to be from a world hidden from flesh.
+
+This is a very explicit transition state:
+
+**ordinary embodied awareness**
+→ door/voice event
+→ body remains present/breathing
+→ ordinary social perception shuts down
+→ awareness is redirected into hidden-world vision.
+
+Important control:
+this is **visionary/apocalyptic literature**.
+
+It is not evidence that Isaiah's body physically traveled through a measurable portal.
+
+Still, the text itself distinguishes:
+**body location**
+from
+**perceived world-location**.
+
+---
+
+# X6-E — firmament is a conflict layer that mirrors earthly conflict
+
+The first ascent reaches the **firmament**.
+
+There Isaiah sees:
+- Sammael;
+- hostile hosts;
+- fighting/envy.
+
+The guide explains:
+**as above, so also on earth** in the sense that the upper conflict is mirrored below.
+
+This is especially relevant to the user's cosmology work because it explicitly links:
+**upper conflict pattern**
+with
+**lower-world conflict pattern**.
+
+But the correct reading is:
+**cosmic-political mirroring inside apocalyptic theology**,
+not proof of physical plasma geometry.
+
+---
+
+# X6-F — the first five heavens share one repeated bilateral architecture
+
+Heavens 1–5 repeat a common form:
+
+- throne in the middle;
+- angels on the right;
+- angels on the left;
+- right side more glorious than left;
+- praise directed upward;
+- each higher heaven has greater glory than the one below.
+
+This gives a strong repeated geometry:
+
+**left field**
+↔ **central throne**
+↔ **right field**,
+
+repeated vertically through successive layers.
+
+The key point is not the personal identities of angels.
+
+It is:
+**bilateral arrangement + central node + increasing vertical gradient**.
+
+---
+
+# X6-G — ascent changes Isaiah's appearance progressively
+
+The text explicitly says Isaiah's appearance/glory is **transformed as he ascends each heaven**.
+
+So the route is not:
+
+**same observer passes unchanged through identical spaces**.
+
+It is:
+
+**layer 1**
+→ observer state changes
+→ **layer 2**
+→ state changes again
+→ progressively greater compatibility/glory.
+
+This is one of the strongest layered-world correspondences in the research so far.
+
+For Vardath comparison:
+**movement between levels requires or produces state adaptation**.
+
+That is much closer to a genuine process mechanism than a simple “seven floors” image.
+
+---
+
+# X6-H — each level has its own local population and centre
+
+This point matters for the user's model.
+
+The heavens are **not empty shells**.
+
+Each lower heaven contains:
+- angels;
+- throne;
+- praise;
+- local hierarchy.
+
+The seventh contains:
+- angels;
+- righteous dead;
+- stored garments/thrones/crowns;
+- central divine figures.
+
+So the text's cosmology is explicitly **populated at every level**.
+
+That makes it a stronger structural analogue to Vardath's populated world-turns than models where only one world is inhabited.
+
+Control:
+the populations are angelic/righteous spiritual beings in an apocalyptic heaven-model, not ordinary parallel human civilizations.
+
+---
+
+# X6-I — the sixth heaven is a phase change, not merely “one more layer”
+
+At heaven six the repeated 1–5 architecture changes.
+
+The text explicitly says:
+- no left-side angels;
+- no throne in the middle;
+- all have one appearance;
+- praise is equal;
+- much greater light;
+- lower five heavens seem like darkness by comparison.
+
+So the vertical sequence has a **phase boundary**:
+
+### Heavens 1–5
+bilateral:
+**right / centre / left**
+with asymmetry.
+
+### Heaven 6
+bilateral asymmetry disappears:
+**one appearance / equal praise / no middle throne**.
+
+This is extremely important.
+
+The layered system does not simply increase quantitatively.
+
+It **changes topology** at the sixth level.
+
+Recent scholarship has proposed three broad zones:
+- earth + firmament;
+- intermediate heavens 1–5;
+- higher divine zone 6–7.
+
+That model fits this sharp structural change.
+
+---
+
+# X6-J — Isaiah requests not to return after experiencing the higher state
+
+Once in heaven six:
+- lower levels now appear dark by comparison;
+- Isaiah asks not to return to the bodily world.
+
+The guide says:
+**your days are not complete; return is still required**.
+
+So:
+
+**higher-state compatibility**
+→ lower state becomes comparatively degraded
+→ subject desires permanent transition
+→ route is denied because timeline condition is incomplete.
+
+This is a clear:
+**state suitability ≠ permission to remain** distinction.
+
+---
+
+# X6-K — the seventh-heaven boundary has an explicit permission gate
+
+Approaching the seventh heaven:
+- a voice challenges how far a flesh-dweller may ascend;
+- Isaiah fears;
+- another voice permits entry because “his garment” is there.
+
+This is one of the strongest explicit gate/pass conditions in the corpus.
+
+Process:
+
+**ascending subject reaches highest boundary**
+→ local authority blocks transition
+→ higher authorization overrides
+→ stored compatibility marker/garment is cited
+→ entry opens.
+
+That is directly comparable to:
+**gate access determined by state/authorization rather than mere proximity**.
+
+---
+
+# X6-L — the seventh heaven contains stored future forms
+
+Isaiah sees:
+- garments;
+- thrones;
+- crowns;
+- associated with righteous persons who have not yet fully received them.
+
+This is a fascinating temporal geometry.
+
+The upper world stores **future-state forms** before the lower-world persons fully enter them.
+
+So:
+
+**future transformed identity-state**
+exists “above”
+before
+**lower embodied subject reaches that state**.
+
+For Vardath comparison:
+this resembles a model where adjacent/future world-state already exists rather than being created only when the transition occurs.
+
+This is a strong structural resonance with the user's:
+**future world above already populated/existing in its own present**.
+
+Control:
+in the Ascension of Isaiah these are eschatological heavenly garments/statuses, not ordinary future Earth-civilizations.
+
+---
+
+# X6-M — embodiment is explicitly called a garment that can be left and resumed
+
+The text uses garment language at multiple scales:
+- fleshly body as a garment;
+- upper-world garment;
+- future crown/throne.
+
+Isaiah is told:
+**you will return into your garment of flesh until your days are complete**.
+
+So body-state is modeled as:
+**wearable envelope**
+rather than exhaustive identity.
+
+This is one of the closest literary analogues to a **carrier/shell versus persistent identity** distinction.
+
+Again:
+theological anthropology, not physical proof.
+
+---
+
+# X6-N — knowledge flows upward more completely than downward
+
+Isaiah asks how events in the lower world are known above.
+
+He is shown a heavenly book recording:
+- deeds of Israel;
+- other deeds.
+
+He concludes:
+**nothing done below is hidden in the seventh heaven**.
+
+So information topology is asymmetric:
+
+**lower world actions**
+→ fully visible/recorded above.
+
+But:
+**upper-world structure**
+→ hidden from ordinary lower-world flesh.
+
+This is a strong **one-way observability asymmetry**.
+
+---
+
+# X6-O — the Beloved's descent is the inverse of Isaiah's ascent
+
+Isaiah ascends:
+**lower → higher**
+and becomes progressively transformed toward greater glory.
+
+The Beloved descends:
+**seventh → sixth → fifth → fourth → third → second → first → firmament → air/world**
+and progressively changes form **downward** to resemble the inhabitants of each lower level.
+
+This is an almost exact inverse path.
+
+So the work contains a deliberate pair:
+
+### Isaiah
+**upward route**
+→ increasing transformation/glory/compatibility.
+
+### Beloved
+**downward route**
+→ decreasing/disguised form/compatibility with lower layers.
+
+This is one of the strongest paired-process geometries in the 88-book research.
+
+---
+
+# X6-P — descent requires local disguise/compatibility at each layer
+
+The Beloved:
+- does not remain visually identical across descent;
+- takes the form of angels at each lower heaven;
+- is therefore not recognized.
+
+At some heaven gates:
+- password is demanded;
+- password is supplied;
+- passage continues.
+
+This gives a remarkably mechanical narrative sequence:
+
+**approach layer**
+→ change outward form to local type
+→ satisfy gate information condition
+→ cross boundary
+→ remain unrecognized
+→ repeat at next lower layer.
+
+For Vardath comparison:
+**cross-layer travel requires both state compatibility and boundary authorization**.
+
+This is perhaps the clearest such analogue in the corpus so far.
+
+---
+
+# X6-Q — the sixth-to-fifth transition is again a special boundary
+
+At heaven six:
+- Beloved remains recognizable/glorious.
+
+On entering heaven five:
+- begins disguising himself as local inhabitants.
+
+That mirrors the earlier Isaiah pattern where heaven six marked a structural phase change.
+
+So heaven six is again a **transition layer**:
+
+**highest divine zone**
+→ crossing below six
+→ local disguise regime begins.
+
+This independently reinforces the 1–5 versus 6–7 zonal interpretation.
+
+---
+
+# X6-R — gatekeepers and passwords make the layered structure explicitly controlled
+
+In the descent:
+- third heaven gatekeepers demand password;
+- second likewise;
+- first likewise;
+- firmament also has local powers.
+
+The boundaries are therefore not passive.
+
+They are:
+**controlled interfaces with local operators and authentication conditions**.
+
+This is a very strong gate model.
+
+But it belongs to ancient apocalyptic cosmology.
+
+Do not claim it describes literal technology.
+
+---
+
+# X6-S — lowest layers contain active conflict and identity masking
+
+At the firmament:
+- hostile rulers/powers exist;
+- conflict continues;
+- Beloved resembles them and passes unnoticed.
+
+At the air:
+- violence/plundering is described;
+- no password is required in the same way.
+
+This creates a strong gradient:
+
+**higher ordered layers**
+→ progressively lower conflict/disorder
+→ earthly/air layer as high-noise low-coherence zone.
+
+This is broadly compatible with the Ascension's own moral cosmology.
+
+---
+
+# X6-T — descent to the human world preserves hidden identity
+
+In the vision:
+- the Beloved enters ordinary human life in a form others do not recognize;
+- the same broad disguise rule continues from heaven to earth.
+
+The text repeatedly emphasizes:
+**they did not know who he was / where he came from**.
+
+So the full descent is a **continuity-under-changing-form** process.
+
+---
+
+# X6-U — return/ascent reverses the disguise rule
+
+After death/resurrection in the vision:
+the Beloved ascends.
+
+Crucially:
+**he no longer transforms at each heaven**.
+
+Instead:
+- lower powers recognize him;
+- they realize he passed them unnoticed during descent;
+- worship/praise increases upward;
+- he returns to seventh heaven.
+
+So:
+
+### descent
+**identity hidden**
+→ local form matching
+→ gated passage.
+
+### ascent
+**identity revealed**
+→ no local disguise
+→ layers recognize him
+→ increasing praise.
+
+This is a very strong **downward concealment / upward disclosure** pair.
+
+---
+
+# X6-V — the same route behaves differently depending on direction
+
+This is perhaps the most important Vardath-process result in X6.
+
+One vertical pathway is traversed twice:
+
+## Downward
+- transformation at each layer;
+- passwords;
+- concealed identity;
+- local powers fail to recognize traveler.
+
+## Upward
+- no repeated disguise;
+- one glory retained;
+- local beings recognize traveler;
+- praise increases.
+
+Therefore:
+**route ≠ process**.
+
+Direction and state determine how the same boundaries behave.
+
+This directly matches the project's repeated finding that:
+**same geometry can produce opposite effects in different timeline directions**.
+
+---
+
+# X6-W — “as above, so below” is explicit, but not simple identity
+
+The firmament conflict is said to correspond to conflict on earth.
+
+That does not mean the two layers are the same place.
+
+It means:
+**patterns in one layer are mirrored in another**.
+
+This is very close to the user's recurring idea that myths/human stories may be projections or lower-scale representations of a larger geometry.
+
+The text itself provides a literary model for:
+**cross-scale mirroring**.
+
+Control:
+the Ascension explains the mirroring through angelic/cosmic conflict, not through Vardath plasma mechanics.
+
+---
+
+# X6-X — Manasseh's political persecution and the cosmic conflict are nested versions of one opposition
+
+At the frame level:
+**Manasseh/Belchira versus Isaiah**.
+
+At the firmament level:
+**Sammael/Beliar powers versus higher divine order**.
+
+At the eschatological level:
+**Beloved versus rulers/powers of world**.
+
+The same antagonistic pattern repeats at:
+- human court scale;
+- firmament scale;
+- world-completion scale.
+
+This makes the work unusually strong for the user's **same-process-across-scales** research method.
+
+---
+
+# X6-Y — the text gives one of the clearest layered-populated-space sequences yet
+
+Stripped of names and doctrine, the ascent route is:
+
+**embodied lower-world observer**
+→ visionary door/transition
+→ firmament conflict layer
+→ first heaven: bilateral population + central throne
+→ second: same form, greater glory
+→ third: same form, greater glory
+→ fourth: larger separation/greater glory
+→ fifth: same bilateral architecture
+→ sixth: topology changes; no left/right asymmetry, no central throne, equal appearance
+→ seventh boundary: explicit permission check
+→ seventh: vast populated high world with righteous, angels, garments, thrones/crowns
+→ return required to body.
+
+This is a much more explicit layered-space map than canonical Kings supplies.
+
+---
+
+# X6-Z — Vardath comparison: strongest correspondences
+
+The strongest process correspondences are:
+
+1. **Multiple populated levels** rather than one inhabited layer plus empty shells.
+2. **Sequential ascent through discrete boundaries**.
+3. **Progressive state transformation as levels are crossed**.
+4. **A real topology change at higher layers**, not just more of the same.
+5. **Boundary authorization** at the highest transition.
+6. **Local populations/operators at each level**.
+7. **Right/left paired structures around central nodes in intermediate layers**.
+8. **Future-state garments/forms already present above before lower-world completion**.
+9. **Body described as a garment/carrier that can be resumed**.
+10. **Information asymmetry between lower and higher levels**.
+11. **Downward traveler changes form to match each local layer**.
+12. **Passwords/gatekeepers explicitly regulate cross-layer passage**.
+13. **The same path has different process rules in descent versus ascent**.
+14. **Upper conflict mirrors lower-world conflict across scale**.
+15. **A lower embodied observer can experience a hidden-world route while body remains present below**.
+
+These are structural correspondences only.
+
+They do **not** establish that the Ascension of Isaiah preserves an eyewitness map of literal stacked future/past Earth worlds.
+
+---
+
+# X6-AA — strongest difference from mature Vardath Cosmology
+
+Important differences must remain explicit.
+
+### Vardath
+- each world-turn is an inhabited world with its own present;
+- future-relative world above / past-relative world below;
+- interaction occurs during gate opening;
+- physical/material transfer may involve atmosphere, water, heat, life and terrain;
+- worlds remain real populated domains before/after interaction.
+
+### Ascension of Isaiah
+- levels are heavens/firmament in an apocalyptic Christian cosmology;
+- inhabitants are angels, righteous dead and divine figures;
+- moral/glory hierarchy increases upward;
+- lower firmament is explicitly conflict-ridden;
+- body and heavenly garment are treated spiritually/eschatologically;
+- descent/ascent serves Christological concealment/revelation.
+
+So the correspondence is strongest in:
+**layering, population, transformation, gated transition, directionality and state compatibility**.
+
+It is weakest in:
+**identifying the layers as the same kind of physical world-turns as Vardath's model**.
+
+---
+
+# X6-AB — master geometry sequence for the final timeline
+
+**Hezekiah attempts information handoff**
+→ successor reverses orientation
+→ prophetic remnant withdraws from centre
+→ visionary door opens while body remains below
+→ observer enters hidden vertical route
+→ firmament conflict mirrors earthly conflict
+→ heavens 1–5 repeat right/centre/left architecture with increasing glory
+→ observer appearance transforms at each ascent
+→ heaven 6 changes topology and equalizes inhabitants
+→ observer seeks permanent higher state but is told to return
+→ seventh boundary blocks fleshly ascent
+→ higher permission opens boundary because compatible garment/state exists there
+→ seventh world contains populated future-state forms
+→ macro-information below is fully visible above
+→ descending divine traveler moves down same route
+→ changes form at each lower layer
+→ gives passwords at guarded boundaries
+→ remains unrecognized
+→ enters lower conflict/world
+→ later reverses direction
+→ ascends same route without disguise
+→ local layers recognize traveler
+→ praise/glory increases upward
+→ returns to seventh heaven
+→ Isaiah returns to fleshly body
+→ later political/cosmic opposition culminates in bodily martyrdom.
+
+This insert therefore contributes a highly explicit:
+**UPWARD TRANSFORMATION / DOWNWARD ADAPTATION / GATED LAYERING / DIRECTION-DEPENDENT RETURN**
+module to the global Bible/apocrypha timeline.
+
+---
+
+## X6 number / structural register
+
+Record without forcing:
+- **seven heavens**;
+- firmament below first heaven;
+- repeated right/left/throne structure across **five** heavens;
+- topology shift at **sixth**;
+- highest divine layer = **seventh**;
+- Hezekiah frame references 15th, 20th, 26th regnal-year traditions in the received text;
+- 40 prophets in the court vision;
+- two years in mountain refuge;
+- apocalyptic rule period of Beliar given as 3 years + 7 months + 27 days in this textual tradition;
+- 12 disciples/apostles;
+- third-day ascent/resurrection motif;
+- later manuscripts include a 545-day phrase in some textual tradition.
+
+These numbers belong to a complex transmission history.
+Do not use them as cosmological clock values without textual study.
+
+---
+
+## X6 textual / scholarly controls
+
+- Complete text survives only in Ethiopic; Greek survives only fragmentarily, with additional Latin, Coptic and Slavonic witnesses.
+- The Ethiopic translation probably derives from Greek but is separated from the presumed Greek original by a substantial transmission gap.
+- Composition is debated: three-source/composite theories and more unified readings both remain scholarly options.
+- A broad second-century Christian date is common but not universally settled for every layer.
+- The martyrdom of Isaiah tradition may contain older Jewish material incorporated into a Christian work.
+- The Vision/Ascension chapters 6–11 are overtly Christian and should not be retrojected into eighth/seventh-century BCE Judah.
+- “Seven heavens” is part of ancient apocalyptic cosmology with parallels elsewhere; it is not unique evidence for Vardath.
+- The **1–5 / 6–7 structural difference** is real in the text and has been emphasized in recent scholarship.
+- “Body as garment” and upper garments/crowns are eschatological anthropology, not proof of literal removable biological shells.
+- Passwords/gatekeepers belong to apocalyptic cosmological imagery; do not redescribe them as ancient technology.
+- Isaiah's ascent is a vision while his body remains breathing below; the text does not straightforwardly describe normal bodily transport to another physical planet/world.
+- The Beloved's hidden descent through heavens is a Christological narrative of concealment and incarnation.
+- Chapter 11's birth narrative differs substantially from canonical Matthew/Luke traditions and reflects its own theological/literary development.
+- The work's explicit “as above, so on earth” relation is a cross-scale mirroring claim, but the mechanism supplied by the text is spiritual/angelic conflict.
+- Ascension of Isaiah is unusually useful to the Vardath project because it gives **process-rich layered geometry**, but its genre makes it weaker as literal physical evidence than as a comparative cosmological model.
+
+### Sources logged for X6
+
+Primary text:
+- R. H. Charles translation tradition, checked through the Scrollmapper/Fellowshipbook full-text presentation of **Ascension of Isaiah 1–11**.
+
+Scholarly controls:
+- Dexter Brown and Aaron Michael Butts, **Ascension of Isaiah 6–11 (Ethiopic Version)** in *The Cambridge Edition of Early Christian Writings* (2022).
+- Michael A. Knibb / Marinus de Jonge discussions of the **Martyrdom of Isaiah** and composite-source model.
+- recent Cambridge scholarship summarizing the work as martyrdom chapters 1–5 + vision chapters 6–11 while stressing unresolved date/composition/provenance.
+- NASSCAL **e-Clavis: Ascension of Isaiah**, especially the chapter-by-chapter ascent/descent summary.
+- recent scholarship on layered heaven models in the Ascension of Isaiah, including the proposed broad zoning:
+  **earth/firmament → heavens 1–5 → heavens 6–7**.
+- Richard Kalmin, work on Manasseh sawing Isaiah in Ascension/rabbinic traditions.
+- New Testament Studies work on later reception/polemical layers and Isaiah's martyrdom tradition.
+
+---
+
+# COMPARISON INSERT X6 COMPLETE — ASCENSION OF ISAIAH
+
+### Placement state
+
+Insert completed between:
+**Section 38A — Hezekiah**
+and
+**Section 38B — 2 Kings 21–25 + Chronicles parallels**.
+
+### Main timeline contribution
+
+The work adds the clearest explicit process sequence yet for:
+
+**populated stacked layers**
+→ **progressive transformation on ascent**
+→ **topological phase change at higher levels**
+→ **permission-controlled boundary**
+→ **stored future-state forms**
+→ **reverse descent requiring local disguise/passwords**
+→ **same-route return without disguise**
+→ **direction-dependent boundary behavior**.
+
+### Next
+
+Proceed to:
+**Section 38B — 2 Kings 21–25 + Chronicles parallels**,
+starting with Manasseh and preserving the X6 bridge:
+
+**Hezekiah stable/wonder phase**
+→ **transmitted knowledge**
+→ **Manasseh reversal**
+→ **persecution / centre corruption**
+→ **later reform attempts**
+→ **Babylonian extraction and final Jerusalem/temple collapse**.
+
