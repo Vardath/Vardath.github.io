@@ -74385,3 +74385,1710 @@ Scholarly controls:
 - death dissolves command centre; wash at Samaria pool;
 - Section 36 then completes at 1 Kings 22.
 
+
+
+---
+
+# SECTION 36 progress B — 1 Kings 16–19
+## Rapid dynastic cycling, self-burning centre, temporary two-centre civil division, purchased hill-capital, closed upper-water flow, distributed subsistence, upper-room revival, repaired twelve-stone altar saturated three times, fire-before-rain reversal, cloud-hand growth, and Horeb's wind/earthquake/fire giving way to a thin voice and mantle transfer
+
+---
+
+# 1 Kings 16 — the northern kingdom enters accelerated centre replacement
+
+The dynasty founded by Baasha repeats the pattern that destroyed Jeroboam's house.
+
+Baasha:
+→ son Elah
+→ internal servant/official Zimri kills Elah
+→ Zimri immediately destroys Baasha's house.
+
+The northern centre therefore enters a recursive regime:
+
+**new dynasty**
+→ short continuation
+→ internal coup
+→ predecessor line erased.
+
+The system is not merely divided north/south.
+The northern half is now **internally unstable in time**.
+
+---
+
+# Zimri — one internal military node captures the centre but cannot capture the field
+
+Zimri is captain over half the chariots.
+
+He kills Elah while the king is:
+- in Tirzah;
+- drinking;
+- inside another official's house.
+
+Zimri then sits on the throne.
+
+But the field army is away at Gibbethon.
+
+When the camp hears what happened,
+it immediately makes **Omri** king.
+
+So the coup creates:
+
+**palace centre = Zimri**
+versus
+**military field centre = Omri**.
+
+This is a major distinction:
+**capturing the physical throne does not guarantee control of the distributed force network**.
+
+---
+
+# News from the centre activates a competing centre in the field
+
+The soldiers hear:
+- Zimri conspired;
+- king is dead.
+
+Then:
+**camp network**
+→ selects Omri
+→ turns away from Philistine siege
+→ marches back toward Tirzah.
+
+This is another:
+**information changes field orientation before direct contact**.
+
+The army's external war is abandoned because the internal centre has changed.
+
+---
+
+# Seven-day centre collapses by self-burning of the royal enclosure
+
+Zimri reigns only **seven days**.
+
+When he sees Tirzah is taken:
+- goes into the citadel/inner royal house;
+- burns the king's house over himself;
+- dies.
+
+The path is:
+
+**seizes centre**
+→ external field rejects him
+→ siege closes
+→ centre retreats deeper into royal enclosure
+→ destroys enclosure and self together.
+
+This is a stark:
+**centre + container self-collapse**.
+
+Unlike earlier palace capture where the ruler flees,
+here:
+**centre and royal shell terminate in one fire event**.
+
+---
+
+# The northern population then literally divides into two halves
+
+After Zimri:
+
+**half follow Tibni**
+and
+**half follow Omri**.
+
+This is not metaphorical.
+
+The northern kingdom itself bifurcates again.
+
+So the system now has multiple scales of division:
+
+1. united monarchy → Judah / Israel;
+2. Israel → Omri field / Tibni field.
+
+The split kingdom contains a **split inside the split**.
+
+This is a valuable model rule:
+**fragmented systems can recursively fragment**.
+
+---
+
+# One half eventually overpowers the other and recentralizes
+
+Omri's field prevails.
+
+Tibni dies/disappears from the active political scene.
+
+Omri becomes sole king.
+
+Thus the northern sequence is:
+
+**one centre**
+→ coup
+→ competing centres
+→ population halves
+→ one half prevails
+→ one centre restored.
+
+This is a complete:
+**centre → bifurcation → competition → recombination under winner**
+cycle.
+
+---
+
+# Omri purchases rather than conquers the hill that becomes Samaria
+
+Omri buys the hill of Samaria from Shemer for two talents of silver.
+
+Then:
+- builds on it;
+- names the city after the former owner.
+
+This is important because the new capital arises through:
+
+**compensated transfer of land**
+→ construction
+→ naming continuity.
+
+Compare David's Jerusalem:
+- captured.
+
+Compare Araunah's threshing floor:
+- purchased.
+
+Samaria belongs to the **purchase→new centre** class.
+
+---
+
+# The centre physically relocates from Tirzah to a newly constructed hill-capital
+
+Omri reigns first from Tirzah,
+then builds Samaria.
+
+So the northern political system undergoes:
+
+**old capital**
+→ purchased hill
+→ constructed fortified centre
+→ dynastic burial/continuity at new site.
+
+Archaeology and external inscriptions make Omri historically important even though Kings gives him little narrative space.
+
+Assyrian sources later call Israel “land/house of Omri,”
+showing the centre he established had long external memory.
+
+---
+
+# Ahab intensifies the multi-centre sacred fragmentation
+
+Ahab:
+- marries Jezebel;
+- serves Baal;
+- builds a Baal temple/altar in Samaria;
+- makes Asherah.
+
+The northern political capital now also contains:
+**an alternative major cult centre**.
+
+This extends Jeroboam's earlier Bethel/Dan dual system into:
+**Samaria court + Baal institutional centre**.
+
+The sacred topology becomes increasingly layered and contested.
+
+---
+
+# Jericho rebuilding closes a long-delayed earlier curse sequence
+
+Hiel rebuilds Jericho.
+
+The text connects:
+- laying foundation with loss of firstborn;
+- setting gates with loss of youngest.
+
+This is a long-delay fulfilment tied back to Joshua.
+
+For the master timeline:
+**old boundary words can remain narratively active across many generations**.
+
+Do not treat this as archaeological proof of a magical construction curse.
+
+The literary process is:
+**past utterance → delayed rebuilding event → present loss interpreted through old word**.
+
+---
+
+# 1 Kings 17 — upper-water flow is shut, and survival reorganizes into small distributed supply nodes
+
+Elijah announces:
+**no dew or rain**
+except according to his word.
+
+The land enters:
+**closed upper-water input state**.
+
+This is the reverse of:
+- rain returning after prayer in Solomon's temple prayer;
+- water-from-heaven opening burial closure in 2 Samuel 21.
+
+The upper-lower exchange is now narratively **shut**.
+
+---
+
+# Elijah himself is routed away from the centre into a hidden edge-node
+
+He is told:
+- leave;
+- turn east;
+- hide by brook Cherith near Jordan.
+
+So the prophet moves:
+
+**royal centre confrontation**
+→ **edge/wilderness concealment**
+→ local water source.
+
+Again:
+**system pressure drives active node away from capital into hidden boundary terrain**.
+
+---
+
+# Survival becomes a two-source supply system
+
+At Cherith:
+- brook supplies water;
+- ravens supply bread/meat morning and evening.
+
+So one isolated person is sustained by:
+
+**fixed natural node**
++
+**mobile carrier nodes**.
+
+This is a clean distributed survival network.
+
+---
+
+# The supply network changes when one node dries up
+
+The brook eventually dries because rain remains absent.
+
+The system must reroute.
+
+Elijah is sent to:
+**Zarephath in Sidonian territory**.
+
+This is striking because:
+- drought conflict is associated with Ahab/Jezebel/Baal;
+- Elijah survives in the wider Phoenician sphere itself.
+
+The support node is a widow at a city gate.
+
+So:
+**local supply failure**
+→ route change
+→ new foreign support node.
+
+---
+
+# Widow encounter occurs at the city gate — threshold becomes subsistence interface
+
+Elijah meets the widow:
+**at the gate of the city**.
+
+She is gathering sticks.
+
+He asks first:
+- water;
+then
+- bread.
+
+The gate here is not military/political.
+
+It is where:
+**incoming fugitive prophet**
+meets
+**local household's final subsistence state**.
+
+Again:
+same architecture, different process.
+
+---
+
+# Two sticks / one last meal / expected death — the household is at terminal depletion
+
+The widow describes:
+- handful of meal;
+- little oil;
+- two sticks;
+- one final meal for herself and son;
+- then death.
+
+The household state is:
+**resource almost zero**.
+
+Elijah asks that a small portion be routed to him first.
+
+Then the promise is:
+**meal jar does not empty**
+and
+**oil container does not fail**
+until rain returns.
+
+---
+
+# Container level remains above zero despite repeated output
+
+This is a notable supply geometry:
+
+**small fixed containers**
+→ repeated extraction/output
+→ contents do not reach zero during drought interval.
+
+The text presents a **non-exhausting local reservoir**.
+
+For the Vardath project:
+this is an interesting process analogue of:
+**bounded container sustaining output without observed depletion**.
+
+But it is miracle narrative, not evidence of a physical energy reservoir mechanism.
+
+---
+
+# Small household becomes a stable survival island inside regional scarcity
+
+The wider field:
+**drought/famine**.
+
+Inside the widow's house:
+**food continues**.
+
+Thus:
+**regional collapse**
+coexists with
+**local protected supply pocket**.
+
+This is a recurring pattern:
+one enclosure can maintain a different state from its surrounding field.
+
+---
+
+# Child death breaks the stable local state
+
+After the food miracle,
+the widow's son becomes ill until:
+**no breath remains**.
+
+The protected household is not immune from all failure.
+
+This is important:
+**one stabilized variable (food)**
+does not stabilize
+**all system variables (life/health)**.
+
+---
+
+# The dead child is carried upward into the prophet's upper chamber
+
+Elijah takes the child:
+- from mother's bosom;
+- carries him **up**;
+- to upper room;
+- lays him on his own bed.
+
+So the movement is:
+
+**mother/lower household**
+→ **upper chamber**
+→ prophet's personal resting surface.
+
+The crisis is moved into a separated elevated enclosure.
+
+---
+
+# Threefold bodily contact precedes revival
+
+Elijah stretches himself over/upon the child **three times**.
+
+He asks for the child's life/soul to return.
+
+Then:
+**life returns**
+→ child revives.
+
+The sequence is:
+**dead lower-house child**
+→ carried upward
+→ three repeated contacts/prayers
+→ life returns.
+
+Record the threefold repetition,
+but do not force it into a universal 3-pattern without broader recurrence.
+
+---
+
+# The restored child is carried downward and returned to the mother
+
+Elijah then:
+- takes child;
+- brings him **down** from upper room;
+- delivers him to mother.
+
+So the complete vertical cycle is:
+
+**lower living household**
+→ death
+→ **up to upper chamber**
+→ revival
+→ **down to household**
+→ restored relation.
+
+This is a very clean:
+**up → transformation → down**
+cycle.
+
+Compare Solomon's:
+**down to Gihon → anointing → up to throne**.
+
+Same broad transform class,
+opposite vertical direction ordering.
+
+---
+
+# 1 Kings 18 — drought pushes the royal system into a search for surviving water nodes
+
+The famine becomes severe in Samaria.
+
+Ahab and Obadiah divide the land between them:
+- one goes one way;
+- one the other;
+looking for:
+- springs;
+- brooks;
+- grass.
+
+This is a **field-splitting search algorithm**.
+
+The king and steward divide territory to increase coverage.
+
+Again:
+**one system → two search branches**.
+
+---
+
+# Hidden prophets are preserved in two cave groups of fifty
+
+Obadiah earlier hid:
+**100 prophets**
+as
+**50 + 50**
+in caves.
+
+He supplied:
+- bread;
+- water.
+
+This is another:
+**distributed hidden remnant network**.
+
+The prophets are not kept in one large enclosure.
+
+They are split into **two protected groups**.
+
+Potential reason may be resilience:
+if one cave is discovered,
+the other may remain.
+
+The text does not state that rationale,
+so record structure without asserting purpose.
+
+---
+
+# Ahab and Obadiah themselves split into two search paths
+
+Ahab:
+→ one way.
+
+Obadiah:
+→ another way.
+
+This repeats the 50/50 cave structure at a different scale:
+**one resource search**
+→ two spatial branches.
+
+The chapter is full of paired/divided routing before Carmel reunifies the people.
+
+---
+
+# Carmel begins with a two-way allegiance problem
+
+Elijah asks:
+**how long will you limp between two opinions?**
+
+If YHWH is God:
+→ follow.
+
+If Baal:
+→ follow.
+
+The people answer nothing.
+
+The system state is:
+**undecided / oscillating between two centres**.
+
+This is the central geometry of Carmel.
+
+The contest is designed to collapse ambiguity.
+
+---
+
+# Two bulls / two altars / two invocation fields create a controlled comparison
+
+Elijah creates a paired test:
+
+- two bulls;
+- one for Baal prophets;
+- one for Elijah;
+- wood under each;
+- **no fire placed under either**.
+
+Then:
+**each side calls its claimed source**.
+
+The answer condition is standardized:
+**the source that answers by fire**.
+
+This is almost experimental structure inside the narrative:
+same broad material setup,
+different invoked source.
+
+Do not call it a modern scientific experiment,
+but the comparative symmetry is deliberate.
+
+---
+
+# One field produces maximal activity with zero external response
+
+Baal prophets:
+- call from morning to noon and beyond;
+- dance/limp;
+- shout;
+- cut themselves;
+- bleed.
+
+The repeated narrative refrain:
+**no voice**
+→ **no answer**
+→ **no attention**.
+
+This is a striking:
+**high internal activity / zero external coupling**
+state.
+
+The system expends energy without receiving the expected signal.
+
+---
+
+# Elijah repairs a broken altar before invoking fire
+
+Elijah calls people near.
+
+He repairs:
+**the broken-down altar of YHWH**.
+
+So the successful sequence does not begin with fire.
+
+It begins with:
+**restoring a damaged centre/interface**.
+
+This is important.
+
+The altar must first return from:
+**fragmented/broken**
+to
+**integrated structure**.
+
+---
+
+# Twelve stones represent the whole Israel that is politically divided
+
+Elijah uses:
+**twelve stones**
+“according to the number of the tribes.”
+
+This occurs after the monarchy has already split.
+
+Therefore:
+**politically divided Israel**
+is represented ritually as
+**twelve stones recombined into one altar**.
+
+This is one of the most important reunification symbols in the divided-monarchy section.
+
+The structure says:
+**fragmented political field**
+→ stones representing all tribes
+→ one rebuilt sacred centre.
+
+Unlike Ahijah's garment:
+**one → twelve pieces**.
+
+Carmel reverses the direction:
+**twelve separate stones → one altar**.
+
+This is an extremely strong transformation pair.
+
+---
+
+# Ahijah garment and Elijah altar form opposite 12-processes
+
+Section 35:
+**one garment**
+→ **12 pieces**
+→ political split.
+
+Section 36:
+**12 stones**
+→ **one altar**
+→ attempted religious recoupling.
+
+So the same number serves opposite geometries:
+
+**1 → 12**
+versus
+**12 → 1**.
+
+This is exactly the kind of transformation the final timeline should capture.
+
+---
+
+# Water saturation deliberately opposes the expected fire result
+
+Elijah orders:
+**four jars of water**.
+
+They are poured:
+- first time;
+- second time;
+- third time.
+
+Thus:
+**4 × 3 = 12 jar-pour actions**,
+assuming the same four jars each round.
+
+Water:
+- saturates offering;
+- saturates wood;
+- runs around altar;
+- fills trench.
+
+This is a high-interest 4×3 pattern.
+
+It directly parallels the temple Sea's:
+**four directions × three oxen = twelve**.
+
+But function is completely different.
+
+Temple:
+**4×3 supports water**.
+
+Carmel:
+**4 jars × 3 pours saturate altar before fire**.
+
+Same decomposition.
+Different process.
+
+Record, do not unify prematurely.
+
+---
+
+# Water and fire are deliberately brought into maximum opposition
+
+The altar is not merely damp.
+
+It is saturated until:
+**trench is full**.
+
+Then fire falls.
+
+It consumes:
+- offering;
+- wood;
+- stones;
+- dust;
+- water in trench.
+
+This is a totalizing transfer:
+**fire crosses through ordinary fuel**
+and
+**extends into normally noncombustible/wet components**.
+
+Again:
+miracle/theophany narrative,
+not physical plasma evidence.
+
+But processually:
+**water-saturated centre**
+→ descending fire
+→ all local materials altered/consumed.
+
+---
+
+# People fall downward when ambiguity collapses
+
+When fire appears,
+the people:
+- fall on faces;
+- declare one allegiance.
+
+So:
+
+**two-opinion oscillation**
+→ visible sign
+→ bodily downward collapse
+→ verbal state unifies.
+
+This is:
+**ambiguity → signal → whole-field state change**.
+
+---
+
+# Violent aftermath must remain ethically explicit
+
+The prophets of Baal are seized and killed at Kishon.
+
+This is religious violence.
+
+Do not turn it into a neutral “purge mechanic.”
+
+For the process map,
+the secure sequence is:
+**rival field loses legitimacy**
+→ rival human agents are physically eliminated.
+
+The ethical/historical layer must remain separate from geometric abstraction.
+
+---
+
+# Rain return begins as sound before visible cloud
+
+Elijah tells Ahab:
+**there is sound of abundance of rain**.
+
+But visible sky still has no cloud.
+
+Then Elijah:
+- goes to top of Carmel;
+- bows to earth;
+- face between knees.
+
+So the next transition begins with:
+**anticipated acoustic/informational state**
+before
+**visual confirmation**.
+
+---
+
+# Seven observation cycles produce “nothing” until the final one
+
+Servant is told:
+**go look toward sea**.
+
+Returns:
+**nothing**.
+
+Elijah says:
+**go again seven times**.
+
+At the seventh:
+**small cloud appears**.
+
+This is a repeated sampling process:
+**observe → no signal**
+repeated until
+**threshold signal appears**.
+
+Do not interpret it as measured meteorology.
+But it is clearly **iterative observation before activation**.
+
+---
+
+# Cloud begins “like a man's hand” and grows into sky-covering storm
+
+The first visible cloud is:
+**small as a man's hand**,
+rising from sea.
+
+Then rapidly:
+- heaven darkens with clouds;
+- wind rises;
+- heavy rain.
+
+This is a striking growth sequence:
+
+**tiny hand-sized upper-water sign**
+→ expanding cloud field
+→ sky darkening
+→ large rain release.
+
+The hand motif returns in atmospheric form.
+
+Do not literalize cloud morphology beyond the simile.
+
+---
+
+# Closed upper-water flow is reopened after the altar event
+
+Chapter 17:
+**no dew/rain**.
+
+Chapter 18:
+**fire event / allegiance resolution**
+→ small cloud
+→ great rain.
+
+So the macro sequence is:
+
+**upper flow closed**
+→ drought/famine
+→ divided allegiance confronted
+→ broken altar rebuilt
+→ water deliberately brought to altar
+→ fire descends
+→ sky-water flow reopens.
+
+This is one of the strongest complete environmental transition arcs in Kings.
+
+But the text interprets it theologically.
+It is not empirical climate mechanics.
+
+---
+
+# Elijah runs before the royal chariot to Jezreel
+
+After the rain begins:
+- Ahab rides;
+- Elijah is empowered;
+- Elijah runs ahead to Jezreel.
+
+This returns the prophet from:
+**mountaintop/fire/rain interface**
+to
+**political centre route**.
+
+It visually reverses the earlier hidden/wilderness phase.
+
+---
+
+# 1 Kings 19 — maximum public victory is followed immediately by private collapse
+
+Ahab reports events to Jezebel.
+
+Jezebel sends a death threat with a time limit:
+**by tomorrow**.
+
+Elijah flees for his life.
+
+This is a major inversion:
+
+**Carmel = public victory / unified crowd**
+→ next chapter
+**Elijah = isolated fugitive / death wish**.
+
+So:
+**system-level success**
+does not guarantee
+**operator-level psychological or political security**.
+
+---
+
+# Elijah separates from servant and enters a deeper solitary wilderness state
+
+He reaches Beer-sheba.
+
+Leaves servant there.
+
+Then goes:
+**one day's journey farther**
+into wilderness.
+
+This is:
+**mobile pair**
+→ one node left behind
+→ active prophet moves alone into deeper isolation.
+
+The geometry mirrors nested enclosure:
+**civilized zone**
+→ frontier city
+→ servant stop
+→ deeper wilderness
+→ broom tree.
+
+---
+
+# Collapse point becomes a sleep/feed/restart node
+
+Elijah sits under broom tree and asks to die.
+
+Then:
+- sleeps;
+- touched by messenger/angel;
+- told to rise/eat;
+- food + water at head;
+- eats/drinks;
+- sleeps again;
+- second touch;
+- rises/eats.
+
+This is a two-stage restoration cycle:
+
+**collapse**
+→ sleep
+→ touch 1
+→ food/water
+→ sleep
+→ touch 2
+→ food/water
+→ long journey.
+
+The body is not restored by one input.
+It receives **two cycles** before extended movement.
+
+---
+
+# Food is converted into forty-day journey capacity
+
+The text says:
+**in the strength of that food**
+he travels
+**forty days and forty nights**
+to Horeb.
+
+The number strongly evokes Moses/Exodus traditions,
+and scholarship widely reads the chapter in Mosaic resonance.
+
+Do not use forty as a physical timing cycle without wider controls.
+
+Process:
+**local nourishment**
+→ prolonged traversal
+→ arrival at foundational mountain.
+
+---
+
+# Cave at Horeb becomes temporary closed state before re-entry to exposed mountain
+
+Elijah lodges in a cave.
+
+He is asked:
+**what are you doing here?**
+
+Then told:
+**go out**
+and
+**stand on mountain**.
+
+So:
+**cave enclosure**
+→ commanded exit
+→ exposed high-place encounter.
+
+Again:
+**enclosure is temporary holding state, not endpoint**.
+
+---
+
+# Three high-energy phenomena pass without carrying the decisive presence
+
+The sequence:
+
+1. great wind
+   - tears mountains;
+   - breaks rocks;
+   - YHWH not “in” it.
+
+2. earthquake
+   - YHWH not “in” it.
+
+3. fire
+   - YHWH not “in” it.
+
+Then:
+**qol demamah daqqah**,
+variously translated:
+- still small voice;
+- thin quiet sound;
+- sound of sheer silence;
+- other nuanced possibilities.
+
+This is textually/semantically difficult.
+
+The secure contrast is:
+**three large-force phenomena**
+are explicitly distinguished from
+**the subsequent subtle sound/voice**.
+
+---
+
+# This is an important control against equating force magnitude with source identity
+
+After Carmel,
+one might expect:
+**fire = definitive divine presence**.
+
+But Horeb refuses that simple equation.
+
+The text explicitly says:
+- not in wind;
+- not in earthquake;
+- not in fire.
+
+Then Elijah responds to the quieter signal.
+
+This is one of the strongest anti-symbol-fixity controls in the whole project:
+
+**same phenomenon can function differently by phase**.
+
+Carmel:
+**fire = answering sign**.
+
+Horeb:
+**fire passes, but source is not identified as “in” it**.
+
+Therefore:
+**FIRE ≠ one fixed meaning**.
+
+This is exactly the methodology we have been preserving.
+
+---
+
+# Elijah covers his face with mantle and stands at cave entrance
+
+At the subtle sound:
+- he wraps face in mantle;
+- goes out;
+- stands at cave entrance.
+
+The mantle becomes:
+**boundary between face and overwhelming/holy encounter**.
+
+Later in the same chapter,
+the mantle becomes:
+**transfer marker toward Elisha**.
+
+So one object shifts from:
+**protective covering**
+to
+**succession/commission interface**.
+
+---
+
+# Elijah's “I alone am left” is corrected by hidden remnant information
+
+Elijah says:
+**I alone remain**.
+
+The response says:
+**7,000 remain in Israel**
+who have not bowed/kissed Baal.
+
+Thus the prophet's state model is incomplete.
+
+He experiences:
+**apparent singleton survival**.
+
+But the actual network contains:
+**a hidden distributed remnant**.
+
+This is a critical epistemic lesson:
+
+**absence from the observer's local view ≠ absence from the system**.
+
+---
+
+# Three future agents are assigned as a serial pressure chain
+
+Elijah is told to anoint/commission:
+- Hazael over Aram;
+- Jehu over Israel;
+- Elisha as prophet after him.
+
+The text describes a sequence:
+**escape one sword**
+→ another agent;
+**escape second**
+→ third.
+
+This creates a multi-stage pressure network across:
+- foreign kingdom;
+- Israelite kingdom;
+- prophetic succession.
+
+The current prophet's work will continue through **distributed successor agents**.
+
+---
+
+# Elisha is found inside a twelve-yoke agricultural array
+
+Elisha is plowing with:
+**twelve yoke of oxen**,
+and he is with the twelfth.
+
+This is another explicit twelve-structure.
+
+Unlike:
+- garment 1→12;
+- altar 12→1;
+- Sea 4×3;
+- throne 6×2;
+
+here:
+**12 paired yokes** are arranged in an agricultural work formation.
+
+The exact physical layout is not fully described,
+but “twelve yoke” means **twelve pairs of oxen**.
+
+So this is:
+**12 × 2 animals**,
+with Elisha associated with the twelfth pair.
+
+Record as another distinct twelve decomposition.
+
+---
+
+# Mantle is thrown across the successor rather than verbally explained first
+
+Elijah:
+- passes by;
+- casts mantle on Elisha.
+
+This is an object-mediated transfer signal.
+
+The action precedes a long formal explanation.
+
+Elisha understands enough to:
+- leave oxen;
+- run after Elijah;
+- ask leave to farewell parents.
+
+So the mantle functions as:
+**compressed commission message**.
+
+---
+
+# Elisha destroys his old work apparatus before entering the new role
+
+Elisha:
+- returns;
+- takes oxen;
+- slaughters them;
+- uses the yoke/equipment as fuel;
+- feeds people;
+- rises;
+- follows Elijah;
+- ministers to him.
+
+This is a striking irreversible transition:
+
+**old livelihood animals + tools**
+→ converted into food + fuel
+→ old apparatus cannot simply be resumed
+→ successor enters new network.
+
+The carrier/tool of the old role is consumed during the transition.
+
+---
+
+# SECTION 36B continuous geometry/effect timeline — 1 Kings 16–19
+
+## Phase KE — capturing throne does not capture field
+
+Zimri controls palace
+while
+army at Gibbethon selects Omri.
+
+**Effect:** spatial centre and distributed force-centre can diverge.
+
+---
+
+## Phase KF — field news reverses army direction
+
+external siege
+→ coup news
+→ army abandons outer target
+→ returns inward against new palace occupant.
+
+**Effect:** information reorients whole field.
+
+---
+
+## Phase KG — centre and container self-collapse together
+
+Zimri retreats into royal citadel
+→ burns palace over himself.
+
+**Effect:** ruler and royal enclosure terminate in one fire event.
+
+---
+
+## Phase KH — fragmented system fragments again
+
+Israel
+→ Omri half + Tibni half.
+
+**Effect:** division can recurse inside a previously divided field.
+
+---
+
+## Phase KI — rival halves reconverge under one surviving centre
+
+Omri field prevails
+→ Tibni disappears/dies
+→ one northern centre restored.
+
+**Effect:** bifurcation can recombine after internal contest.
+
+---
+
+## Phase KJ — purchased hill becomes constructed new capital
+
+hill of Samaria
+→ compensated transfer
+→ building
+→ new centre.
+
+**Effect:** centres can be created through purchase + construction rather than conquest.
+
+---
+
+## Phase KK — closed upper-water flow drives hidden-node survival
+
+no rain/dew
+→ Elijah hidden by brook.
+
+**Effect:** field-wide environmental closure forces active node into edge refuge.
+
+---
+
+## Phase KL — isolated node survives through fixed + mobile supply sources
+
+brook
++ ravens
+→ prophet sustained.
+
+**Effect:** distributed supply can maintain one hidden node during regional failure.
+
+---
+
+## Phase KM — dried local source triggers rerouting to foreign support node
+
+brook fails
+→ Zarephath widow.
+
+**Effect:** survival network changes topology when one supplier collapses.
+
+---
+
+## Phase KN — near-empty containers become non-exhausting local reservoirs
+
+meal jar + oil cruse
+→ repeated output
+→ do not reach zero until rain returns.
+
+**Effect:** local household maintains supply state unlike surrounding famine field.
+
+Control:
+miracle narrative.
+
+---
+
+## Phase KO — dead child moves up for transformation and down for reintegration
+
+lower household
+→ upper room
+→ threefold contact/prayer
+→ life returns
+→ child brought down.
+
+**Effect:** crisis passes through elevated temporary enclosure before restored return.
+
+---
+
+## Phase KP — search system splits land into two routes
+
+Ahab one way
++ Obadiah another.
+
+**Effect:** one field improves coverage by bilateral spatial division.
+
+---
+
+## Phase KQ — hidden remnant split into two cave groups
+
+100 prophets
+→ 50 + 50.
+
+**Effect:** one endangered network survives in distributed enclosures.
+
+---
+
+## Phase KR — Carmel begins as unresolved two-centre oscillation
+
+people limp between YHWH/Baal.
+
+**Effect:** field has not committed to either centre.
+
+---
+
+## Phase KS — controlled paired comparison is created
+
+two bulls
++ two invocation systems
++ no pre-set fire.
+
+**Effect:** ambiguity is forced into a common answer condition.
+
+---
+
+## Phase KT — one system expends increasing internal energy with zero external answer
+
+voice/dance/blood
+→ no voice/answer/attention.
+
+**Effect:** high internal activity can coexist with zero successful coupling.
+
+---
+
+## Phase KU — broken interface is repaired from twelve separate stones
+
+12 stones
+→ one altar.
+
+**Effect:** politically fragmented Israel is symbolically recombined into one sacred structure.
+
+---
+
+## Phase KV — garment tear and altar repair are opposite twelve-transformations
+
+1 garment → 12 fragments.
+12 stones → 1 altar.
+
+**Effect:** the same total participates in fragmentation and reunification depending on operation direction.
+
+---
+
+## Phase KW — four-by-three water saturation precedes fire
+
+4 jars
+× 3 pours
+→ altar/trench saturated.
+
+**Effect:** 4×3→12 appears as repeated water-loading rather than support architecture.
+
+---
+
+## Phase KX — descending fire overrides water-saturated material state
+
+fire
+→ offering + wood + stones + dust + trench water consumed.
+
+**Effect:** answer signal alters every local material class in the narrative.
+
+Control:
+theophanic miracle, not physical plasma evidence.
+
+---
+
+## Phase KY — visible sign collapses two-way allegiance into one declared state
+
+people see
+→ fall on faces
+→ one confession.
+
+**Effect:** ambiguous field unifies after decisive signal.
+
+---
+
+## Phase KZ — closed upper-water flow reopens after crisis
+
+drought
+→ Carmel event
+→ cloud
+→ heavy rain.
+
+**Effect:** macro environmental state reverses.
+
+---
+
+## Phase LA — repeated observation detects threshold signal only on seventh cycle
+
+look → nothing
+(repeated)
+→ small cloud at seventh report.
+
+**Effect:** change may begin below visible detection and become apparent only after repeated sampling.
+
+---
+
+## Phase LB — hand-sized cloud expands into full storm
+
+small cloud from sea
+→ blackened sky
+→ wind
+→ great rain.
+
+**Effect:** tiny visible seed-state expands rapidly into field-scale atmospheric state.
+
+---
+
+## Phase LC — public victory does not stabilize operator
+
+Carmel success
+→ threat message
+→ Elijah flees.
+
+**Effect:** field-level success and node-level security can diverge.
+
+---
+
+## Phase LD — mobile pair decomposes into singleton deeper in wilderness
+
+Elijah + servant
+→ servant left
+→ Elijah alone farther in.
+
+**Effect:** crisis produces progressive network thinning/isolation.
+
+---
+
+## Phase LE — two-stage food/touch cycle restores movement
+
+sleep
+→ touch/feed
+→ sleep
+→ second touch/feed
+→ journey.
+
+**Effect:** recovery may require repeated input before sustained motion.
+
+---
+
+## Phase LF — cave is temporary holding enclosure before exposed high-place encounter
+
+Horeb cave
+→ commanded exit
+→ mountain.
+
+**Effect:** enclosure stabilizes but is not final state.
+
+---
+
+## Phase LG — high-energy phenomena are explicitly decoupled from decisive presence
+
+wind
+→ not in it.
+earthquake
+→ not in it.
+fire
+→ not in it.
+subtle voice/sound follows.
+
+**Effect:** magnitude and identity cannot be equated.
+
+This is one of the strongest controls against fixed-symbol interpretation.
+
+---
+
+## Phase LH — mantle changes function within one chapter
+
+mantle covers Elijah's face
+→ later mantle cast over Elisha.
+
+**Effect:** same object shifts from protective boundary to succession interface.
+
+---
+
+## Phase LI — local observer's “only one left” model is corrected by hidden network data
+
+Elijah perceives singleton
+→ 7,000 remnant revealed.
+
+**Effect:** unseen distributed nodes can make the actual field much larger than the observer's model.
+
+---
+
+## Phase LJ — future control is distributed across three successor agents
+
+Hazael
++ Jehu
++ Elisha.
+
+**Effect:** one prophet's unfinished process is delegated across political and prophetic nodes.
+
+---
+
+## Phase LK — twelve-yoke work array receives mantle signal
+
+Elisha among 12 yoke
+→ mantle thrown.
+
+**Effect:** successor is selected inside an ordered agricultural work field.
+
+---
+
+## Phase LL — old livelihood is consumed to make transition irreversible
+
+oxen slaughtered
++ yoke equipment burned
+→ people fed
+→ Elisha follows Elijah.
+
+**Effect:** old role apparatus is converted during entry into new role, reducing reversibility.
+
+---
+
+# What 1 Kings 16–19 adds to the master Bible/Vardath timeline
+
+186. **Control of a palace/throne can diverge from control of the distributed army/field.**
+187. **News of a centre change can cause an entire external military field to reverse direction and reorient inward.**
+188. **A centre may collapse by destroying its own enclosure rather than surrendering it.**
+189. **Fragmentation can recurse: one already-divided kingdom can split internally into competing halves.**
+190. **A split sub-system can later recombine around one surviving centre.**
+191. **A new capital can arise from compensated land transfer followed by construction, preserving memory of the prior owner in the name.**
+192. **Closing upper-water flow can force survival into small distributed local supply nodes.**
+193. **A survival system can combine stationary local resource and mobile carriers, then reroute when the stationary source fails.**
+194. **A local enclosure can maintain a different resource state from the failing regional environment.**
+195. **A crisis can pass through an upper temporary chamber, undergo transformation, then return downward into the ordinary household.**
+196. **Search/resilience networks often split one field into two branches or two hidden enclosures.**
+197. **Carmel explicitly frames Israel as oscillating between two competing centres and creates a paired comparison to collapse that ambiguity.**
+198. **High internal activity can fail to produce external coupling; output intensity is not proof of connection.**
+199. **Twelve separate stones can be recombined into one altar, providing a strong inverse to the earlier one-garment→twelve-pieces fragmentation.**
+200. **The same 4×3→12 decomposition occurs in different media: temple Sea supports versus Carmel water-pour cycles. Identical arithmetic does not imply identical mechanism.**
+201. **A saturated water state can precede a descending fire sign in the narrative, but the scene remains miracle/theophany rather than physics evidence.**
+202. **A system-wide environmental reversal can follow a local centre/interface event in the story's theology.**
+203. **Repeated observations can return “nothing” until a small threshold signal appears and expands rapidly.**
+204. **A tiny “hand”-sized cloud can be the first visible stage of a field-scale storm.**
+205. **Public system success can be followed immediately by private operator collapse and flight.**
+206. **Recovery from collapse can require repeated feed/rest cycles rather than one intervention.**
+207. **Wind, earthquake and fire are explicitly denied a fixed identity-function at Horeb, proving that even major recurring phenomena must be interpreted by phase/context.**
+208. **A subtle signal can carry more decisive information than high-energy events.**
+209. **The local observer's model may radically undercount a hidden distributed remnant.**
+210. **One role can be distributed into multiple successor agents instead of transferred to a single replacement.**
+211. **A mantle can function first as protective covering and then as a compact succession/commission signal.**
+212. **The transition to a new role can consume the material apparatus of the old role, making reversal difficult or impossible.**
+
+---
+
+## Section 36B high-priority transformation pairs
+
+### Zimri / Omri
+Palace seizure versus army recognition.
+
+### Omri / Tibni
+One northern kingdom temporarily becomes two rival halves.
+
+### Tirzah / Samaria
+Inherited capital versus newly purchased/built capital.
+
+### Brook / ravens
+Fixed supply node + mobile supply carriers.
+
+### Lower room / upper room
+Death crisis moves upward, revival returns downward.
+
+### YHWH / Baal at Carmel
+Two competing invoked centres under a deliberately matched test.
+
+### One garment→12 / 12 stones→one altar
+Fragmentation versus recombination.
+
+### 4×3 Sea supports / 4×3 Carmel pours
+Same numerical decomposition, different geometry/function.
+
+### Fire at Carmel / fire at Horeb
+At Carmel fire is answer-sign.
+At Horeb fire is explicitly not where the decisive divine presence is located.
+
+This pair is a critical methodological control.
+
+### Elijah / Elisha
+Current prophet / successor node linked by mantle.
+
+---
+
+## Section 36B number / timing register
+
+Record without forcing:
+- Zimri reign **7 days**;
+- Omri reign **12 years**, with **6 years** at Tirzah in MT;
+- Samaria hill purchased for **2 talents silver**;
+- Ahab reign **22 years**;
+- Obadiah hides **100 prophets as 50 + 50**;
+- Baal prophets **450**; Asherah prophets **400** in the summons;
+- altar rebuilt with **12 stones**;
+- **4 jars × 3 pours = 12** water applications if the same four are refilled each round;
+- servant looks **7 times**;
+- Horeb journey **40 days and 40 nights**;
+- hidden remnant **7,000**;
+- Elisha with **12 yoke of oxen**, himself with the twelfth.
+
+Numbers remain process markers, not cosmological proof.
+
+---
+
+## Section 36B textual / historical / scholarly controls
+
+- Omri is historically far more prominent in external sources than the space Kings gives him. Assyrian texts' “House/Land of Omri” and the Mesha inscription are important controls against assuming narrative space equals historical geopolitical importance.
+- Chronology around Zimri/Omri/Tibni differs across textual traditions and reconstructions; do not use regnal arithmetic casually.
+- Archaeology strongly supports Samaria as a major Iron Age royal centre, but exact attribution of every building phase to Omri/Ahab remains debated.
+- Ahab/Jezebel and Baal material is heavily shaped by Deuteronomistic and prophetic polemic. Historical Phoenician/Israelite religion was more complex than the narrative's binary framing.
+- 1 Kings 17–19 is miracle/theophany literature. Food multiplication, revival, heavenly fire and drought/rain control are not physical evidence for Vardath mechanisms.
+- Zarephath belongs to Phoenician/Sidonian territory; its placement inside “Baal country” has strong literary irony.
+- The child's “soul/life returned” should not be over-systematized into a technical afterlife mechanism.
+- Carmel's exact location/tradition history and relation to later cult geography are debated, though Mount Carmel is secure at broad level.
+- The 12-stone altar explicitly evokes all Israel despite the political split and is therefore a high-confidence reunification symbol.
+- The 4 jars poured three times are explicit; interpreting the resulting 12 as deliberate symbolic arithmetic beyond the action itself remains secondary.
+- The killing of Baal prophets is religious violence and must remain ethically explicit.
+- The “small cloud like a man's hand” is a simile, not a literal hand-shaped plasma object.
+- 1 Kings 19 has extensive Mosaic/Horeb intertextuality. The forty-day journey should first be read within that literary tradition.
+- **qol demamah daqqah** is notoriously difficult to translate. “Still small voice,” “thin quiet sound,” and “sound of sheer silence” are interpretive renderings. The secure fact is the contrast with wind/earthquake/fire.
+- Some scholarship reads Elijah's Horeb encounter as critique/correction of his prophetic stance; other readings emphasize recommission. Preserve disagreement.
+- Elijah's claim “I alone am left” is explicitly corrected by the 7,000-remnant statement; this is a strong source-internal warning against overgeneralizing from a character's limited perspective.
+- The mantle action with Elisha is a succession/commission gesture, but full transfer occurs later in 2 Kings 2.
+
+### Sources logged for Section 36B
+
+Primary:
+- Mechon-Mamre, **1 Kings 16–19**.
+
+Scholarly controls:
+- Robin Gallaher Branch, **“Zimri: Slave or Official? The Strange Story of Israel's Week-long, Suicide King (1 Kings 16:8–20).”**
+- historical/archaeological studies of Omri and Samaria, including external Assyrian/Moabite evidence.
+- scholarship on Elijah narrative composition and Mosaic resonance.
+- Havilah Dharamraj, **A Prophet Like Moses? A Narrative-Theological Reading of the Elijah Narratives**.
+- literary studies of 1 Kings 17's command/compliance and widow/child sequence.
+- scholarship on the Carmel contest and its anti-Baal polemic.
+- **“1 Kings 19: A ‘Departure on a Journey’ Story”** and related studies of Elijah's wilderness/Horeb movement.
+- studies of **qol demamah daqqah**, wind/earthquake/fire contrast and theophany in 1 Kings 19.
+
+**Section 36 remains in progress.**
+
+### Next process block
+
+**1 Kings 20–22**:
+- Aram surrounds Samaria and demands royal household/wealth cargo;
+- first demand accepted, second invasive search demand rejected;
+- two battle rounds framed by “hill god / valley god” spatial theology;
+- small Israelite force versus vast Aramean field;
+- surviving Aramean force retreats into Aphek and a wall falls on **27,000** in the narrative;
+- Ben-hadad shifts from attacking king to sackcloth supplicant and enters Ahab's chariot;
+- release of captured hostile centre produces prophetic judgment through disguised wound;
+- Naboth vineyard: fixed ancestral land refuses transfer into royal vegetable-garden expansion;
+- false accusation uses two witnesses and public stoning outside city;
+- Ahab descends to take possession only after owner removal;
+- Elijah intercepts at possession point;
+- Micaiah scene: many prophets give one synchronized answer, one dissenter gives contrary future;
+- heavenly council presents competing/commissioned lying-spirit plan;
+- battle uses disguise to decouple royal identity from visible position;
+- Aramean chariot commanders seek one centre only;
+- random arrow penetrates armour joint despite disguise;
+- king is held upright in chariot until evening, blood draining into vehicle;
+- death ends Ahab's field and closes Section 36.
+
