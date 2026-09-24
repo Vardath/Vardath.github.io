@@ -40,4 +40,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add book/EXTRA-RESEARCH.md .github/workflows/one-shot-clean-ezekiel-duplicates.yml
           git commit -m "Remove duplicate Ezekiel research tail"
-          git push
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            sleep 5
+          done
+          exit 1
