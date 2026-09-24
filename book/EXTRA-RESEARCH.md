@@ -44972,3 +44972,991 @@ Inserted comparison works remain additional research outside this 29/88 figure.
 
 Continue from the latest genuinely appended checkpoint only. Append every substantive progress block immediately before proceeding to the next block.
 
+## SECTION 30 progress B — Judges 13–16: birth-state consecration, lion→honey reversal, paired fire-carriers, gate uprooting, hair/strength state loss, blindness, and the two central pillars
+
+### Anti-repeat check
+
+Section 30A is already appended.  
+No Section 30B / Judges 13–16 block existed later in the current full ledger.  
+Continuing only from the saved Judges 9–12 checkpoint.
+
+---
+
+## Judges 13 — Samson begins as a body-state defined before birth
+
+The story begins with:
+- Manoah's wife barren;
+- messenger/angel of YHWH appears to her;
+- announces conception;
+- gives restrictions before the child is born;
+- no razor is to pass over the child's head;
+- the child is to be a `nazir`/consecrated person from the womb;
+- he will **begin** to deliver Israel from Philistine power.
+
+This is a very strong state-before-birth narrative:
+
+**ordinary unborn child**
+→ status assigned before birth
+→ maternal behavior modified
+→ body/hair rule fixed
+→ future role attached to that bodily state.
+
+For Vardath comparison:
+this is evidence that biblical narrative can encode **office/function as a bodily state condition**.
+
+It is not evidence of a physical field-state mechanism.
+
+### Samson's Nazirite status differs from Numbers 6
+
+Modern scholarship notes that Samson's Nazirite identity does not simply duplicate Numbers 6:
+- it begins before birth;
+- it is permanent in the story rather than a temporary self-vow;
+- his mother is given food/drink restrictions;
+- Samson repeatedly encounters/kills corpses despite Numbers 6 corpse restrictions.
+
+The strongest common feature is:
+**uncut hair**.
+
+This matters because later Judges 16 makes hair the visible marker of the state relation.
+
+Do not flatten “Nazirite” into one perfectly uniform institution across sources.
+
+### Mother / Manoah — information asymmetry pair
+
+The messenger first appears to the unnamed woman, not Manoah.
+
+She:
+- sees/hears first;
+- reports to Manoah.
+
+Manoah:
+- prays for the messenger to return;
+- asks for instructions.
+
+The messenger returns to the woman again, and she summons Manoah.
+
+This creates:
+
+**woman = primary recipient / first witness**
+**Manoah = secondary recipient seeking clarification**.
+
+Pair classification:
+- **P7 primary witness / secondary verifier**.
+
+### Messenger / “man of God” / divine presence — identity deliberately unstable
+
+The woman describes the visitor as:
+- “man of God”;
+- with frightening/angelic appearance.
+
+The narrator identifies him as:
+- messenger of YHWH.
+
+Manoah initially does not know this.
+
+After the messenger ascends/disappears in the altar flame, Manoah concludes:
+- they have seen God and will die.
+
+This is another source-level warning against simplistic identity mapping:
+**visible form / perceived identity / narrator identity / theological interpretation are not identical categories**.
+
+### Fire ascent — messenger rises in altar flame
+
+Manoah offers sacrifice.
+
+As the flame rises from altar:
+- the messenger ascends in/with the flame;
+- Manoah and wife fall facedown.
+
+Raw geometry:
+
+**altar/fire below**
+→ flame rises
+→ messenger rises upward with it
+→ observers remain below.
+
+This is a genuine upward-motion/fire image.
+
+But:
+it is a theophanic departure scene,
+not a demonstrated plasma transport mechanism.
+
+### Manoah / wife reverse understanding roles
+
+Manoah fears:
+**“we will die.”**
+
+His wife reasons:
+- if YHWH intended to kill them,
+- the offering would not have been accepted,
+- the revelation would not have been given.
+
+So the pair inverts expected authority:
+the unnamed woman supplies the more coherent interpretation of the encounter.
+
+This resembles Balaam/donkey:
+**socially lower/less-authoritative figure can interpret the event more correctly than the expected authority figure**.
+
+### “Between Zorah and Eshtaol” becomes Samson's recurring geographic frame
+
+At the end of ch. 13:
+- the spirit begins to move/stir Samson
+- in the camp of Dan
+- **between Zorah and Eshtaol**.
+
+At the end of ch. 16:
+- Samson is buried
+- **between Zorah and Eshtaol**.
+
+So his cycle is geographically bracketed by the same “between” zone.
+
+This is a clean narrative enclosure:
+**beginning movement between two places**
+→ life-cycle
+→ **body returns to same between-region**.
+
+---
+
+## Judges 14 — sight triggers descent; lion becomes honey-container
+
+Samson:
+- goes **down** to Timnah;
+- sees a Philistine woman;
+- returns **up** to parents;
+- insists she is right in his eyes.
+
+The story repeatedly ties:
+**seeing → desire → action**.
+
+Modern literary analysis has noted that the Samson cycle begins with sight-driven action and ends with Samson physically blind.
+
+That gives the whole cycle a strong:
+**seeing → mis-seeing → blindness → final insight/action**
+arc.
+
+### Lion encounter — one body changes function after death
+
+A young lion attacks.
+
+Then:
+- spirit of YHWH rushes on Samson;
+- Samson tears lion apart barehanded.
+
+Later:
+- he returns;
+- lion carcass now contains:
+  - swarm of bees;
+  - honey.
+
+This is an extraordinary material/narrative inversion:
+
+**predator / eater**
+→ death / empty carcass
+→ enclosure/container
+→ bees/honey
+→ food source.
+
+Samson's riddle captures it:
+**“out of the eater came food; out of the strong came sweetness.”**
+
+For Vardath comparison:
+this is a source-level **role reversal / container transformation**.
+
+But:
+there is no actual bodily metamorphosis of lion into honey.
+The dead body becomes an enclosure for a new living colony.
+
+### Lion / honey is a one-body / different-function sequence
+
+Important control:
+do not describe this as:
+**lion becomes honey**.
+
+More precise:
+**lion-body loses original animal function**
+→ **same carcass-space becomes host/container for bees/honey**.
+
+This fits the project's distinction:
+**substrate continuity can coexist with function/state change**.
+
+### Riddle creates asymmetric information access
+
+Only Samson knows the event that generated the answer.
+
+Wedding companions:
+- hear the symbolic output;
+- lack the hidden source-event;
+- cannot solve it.
+
+They pressure Samson's wife to extract the hidden information.
+
+So the riddle is:
+
+**public encoding**
++
+**private key/event memory**
+→ unequal interpretive access.
+
+This is a useful information-system analogue.
+
+### Samson / wife — trust boundary is breached through information extraction
+
+His wife repeatedly pressures him.
+
+Eventually:
+- Samson reveals the answer;
+- she transmits it to her people;
+- the information returns to Samson's opponents.
+
+This is an early version of the pattern that becomes much stronger with Delilah:
+
+**secret held inside pair**
+→ relational pressure
+→ disclosure
+→ secret crosses boundary
+→ operator loses advantage.
+
+### Seven-day feast / thirty men / thirty garments
+
+The riddle operates over:
+- **7 days** of feast;
+- **30 companions**;
+- wager of **30 linen garments +30 changes of clothing**.
+
+Some textual witnesses differ over when the companions threaten the wife (e.g. seventh/fourth-day variants).
+
+Record the final MT pattern but retain textual variation.
+
+---
+
+## Judges 15 — paired animals carry one central fire
+
+After the marriage dispute:
+- Samson catches **300 foxes/jackals**;
+- turns them **tail to tail**;
+- places **one torch between each pair of tails**;
+- lights torches;
+- releases them through Philistine crops.
+
+Raw geometry:
+
+**animal A ← one central torch → animal B**
+
+repeated many times.
+
+With 300 animals paired:
+- implied **150 paired units**;
+- each pair carries one fire-source in the middle.
+
+This is one of the clearest literal repeated **pair + central element** structures in Judges.
+
+### The pair is mechanically constrained into joint movement
+
+The two animals are not merely standing side by side.
+
+Their tails are linked around/with a central torch.
+
+Thus:
+**two separate carriers**
+→ physically coupled
+→ carry one central active element
+→ spread fire through a larger field.
+
+For the project's pair methodology this is high-value.
+
+Major control:
+it is a violent agricultural sabotage story, not a cosmic braid.
+
+### Fire spreads from local paired carriers into a distributed field
+
+The torches ignite:
+- standing grain;
+- stacked grain;
+- vineyards;
+- olive groves.
+
+So the narrative gives:
+**many small paired mobile fire carriers**
+→ **distributed large-area fire effect**.
+
+This is a real local→field propagation sequence.
+
+### Wife/fire recurrence closes the riddle threat
+
+Earlier the Philistines threatened Samson's wife and her father's house with fire if she did not obtain the riddle answer.
+
+In ch. 15:
+- Philistines actually burn her and her father.
+
+The threatened state becomes realized later.
+
+This is another example where:
+**spoken future threat**
+→ delayed event outcome.
+
+### Judah binds Samson with two new ropes
+
+Three thousand men of Judah come to Samson.
+
+They bind him with:
+- **two new ropes**;
+- bring him up from the rock.
+
+At Lehi:
+- spirit of YHWH comes upon him;
+- ropes become like burned flax;
+- bonds fall/melt from hands.
+
+This is another state-switch:
+
+**bound**
+→ spirit-event
+→ bonds lose effective structure
+→ **unbound**.
+
+The two ropes form a bilateral restraint pair, but the text does not assign left/right roles.
+
+### Jawbone — dead animal part becomes weapon
+
+Samson takes:
+- fresh donkey jawbone;
+- kills **1,000 men**.
+
+Again:
+**dead animal component**
+→ repurposed tool/weapon.
+
+Compare lion carcass:
+- animal body becomes honey enclosure.
+
+Samson stories repeatedly turn **dead biological remains into new functional objects**.
+
+### Jawbone / place-name / water source ambiguity
+
+After victory Samson becomes extremely thirsty.
+
+The text says God splits/open something at Lehi and water emerges; translations differ over whether the source is:
+- a hollow/place at Lehi,
+- or the jawbone-associated locality.
+
+The spring is named **En-hakkore**, “spring of the caller.”
+
+Important:
+do not claim confidently that water literally came from the physical jawbone itself.
+
+The Hebrew/place-name tradition is ambiguous.
+
+### Water restores spirit/life state
+
+Samson drinks:
+- his spirit returns/revives;
+- he lives/recoveries.
+
+So the sequence is:
+
+**victory / exhaustion**
+→ life-threatening thirst
+→ opening/source water
+→ drink
+→ **spirit returns**.
+
+This is another water-mediated restoration state.
+
+### Chapter 15 contains an apparent original ending
+
+The chapter closes:
+- Samson judged Israel **20 years**.
+
+This is the standard judge-cycle ending formula.
+
+Modern scholars therefore often regard Judges 16 as a later supplement/continuation to an earlier Samson cycle.
+
+This compositional control is important before treating chapters 13–16 as one pristine original sequence.
+
+---
+
+## Judges 16A — Gaza gate: boundary itself becomes portable cargo
+
+At Gaza:
+- Philistines plan to trap Samson at the **city gate**;
+- wait all night.
+
+At **midnight**:
+Samson:
+- rises;
+- grasps the city-gate doors;
+- takes the **two gateposts** and bar;
+- uproots the whole gate assembly;
+- puts it on his **shoulders**;
+- carries it up to a hill/mountain facing Hebron.
+
+This is one of the strongest boundary transformations in the entire corpus.
+
+### Gate changes from fixed boundary → carried object
+
+Before:
+**gate = fixed city access-control architecture**.
+
+Samson converts it into:
+**detached object/cargo**
+→ placed on human shoulders
+→ transported upward.
+
+This is source-level evidence that:
+**boundary-object and carrier can exchange roles**:
+a thing that controls movement becomes itself moved.
+
+### Two gateposts + central doors/bar on Samson's shoulders
+
+The scene contains:
+- paired gateposts;
+- door/gate structure;
+- crossbar;
+- Samson as central human carrier.
+
+Raw geometry:
+**left post / gate structure / right post**
+→ whole assembly lifted
+→ rests across/onto human shoulders
+→ moves uphill.
+
+This is high-value for person/structure comparison.
+
+But:
+it is heroic strength narrative, not proof Samson literally is a cosmic mountain.
+
+### City boundary fails without Samson entering through it normally
+
+The Philistines rely on:
+- gate closure;
+- ambush.
+
+Samson does not merely pass the threshold.
+
+He **removes the threshold mechanism itself**.
+
+This is an important distinct boundary mode:
+**not opening gate**
+but
+**detaching the gate from the system**.
+
+That category should remain separate from:
+- authorized opening;
+- crossing;
+- phase change.
+
+---
+
+## Judges 16B — Delilah: repeated false states before true state revelation
+
+Philistine lords offer Delilah payment to discover:
+- source of Samson's great strength;
+- how he may be bound/subdued.
+
+The scene runs through repeated false-state tests.
+
+### Test 1 — seven fresh bowstrings
+
+Samson says:
+- bind with **7 fresh bowstrings**.
+
+Delilah does so.
+
+Philistines are hidden nearby.
+
+Signal:
+**“Philistines upon you.”**
+
+Samson breaks them.
+
+False rule.
+
+### Test 2 — new ropes
+
+He says:
+- bind with **new ropes never used**.
+
+Again:
+- bound;
+- signal;
+- ropes break.
+
+False rule.
+
+### Test 3 — seven hair locks woven into loom/web
+
+He says:
+- weave **seven locks/braids of hair** into the loom/web.
+
+This is especially relevant to your weave/fingertrap investigation.
+
+Raw image:
+**Samson's hair**
+→ divided into **7 locks**
+→ woven into a textile apparatus
+→ fastened/pinned
+→ Samson wakes
+→ pulls free, taking loom-related material with him in final translation traditions.
+
+This is a genuine **human body + woven structure** scene.
+
+But it is:
+- domestic loom imagery;
+- a failed binding test;
+- not a description of cosmic lattice construction.
+
+### Fourth disclosure — actual state relation
+
+After prolonged pressure:
+Samson tells Delilah:
+- no razor has touched his head;
+- he is a Nazirite from the womb;
+- if shaved:
+  - strength will leave;
+  - he will become like ordinary humans.
+
+This is a direct **body marker ↔ role/state** statement.
+
+### Hair is a state marker, but narrative gives multiple strength explanations
+
+The final Delilah story strongly ties:
+**uncut hair / consecration**
+to
+**strength state**.
+
+However other parts of the cycle explain strength differently:
+- spirit of YHWH rushes upon Samson;
+- some scenes imply innate superhuman strength without an explicit spirit event.
+
+Modern source criticism uses these differences as evidence that the Samson cycle combines originally separate traditions.
+
+Therefore:
+do not turn hair into the single mechanical battery explaining every episode.
+
+### Secret crosses pair boundary → power relation flips
+
+Before disclosure:
+**Samson knows**
+→ Delilah does not
+→ Samson cannot be reliably bound.
+
+After disclosure:
+**Delilah knows**
+→ passes information to Philistines
+→ Samson is shaved
+→ strength leaves
+→ capture succeeds.
+
+This is a clean information-state inversion.
+
+### Seven locks cut / shaved
+
+The text associates his head with **seven locks**.
+
+This supplies a striking:
+**one head → seven hair divisions**.
+
+Do not force it into a seven-branch cosmic lattice.
+
+The source function is consecration/strength and narrative vulnerability.
+
+### “YHWH had left him” — bodily marker and source-presence separate
+
+After shaving Samson expects to escape as before,
+but does not know that:
+**YHWH has left him**.
+
+This is crucial.
+
+The narrative does not say:
+**hair alone mechanically generates strength**.
+
+It connects:
+- hair/consecration;
+- divine presence;
+- strength.
+
+So the best source-level model is:
+**hair marks/conditions covenantal state**
+rather than
+**hair is an isolated power device**.
+
+---
+
+## Blindness / mill — the dominant seer becomes lower repetitive machinery
+
+Philistines:
+- seize Samson;
+- gouge out his eyes;
+- take him **down** to Gaza;
+- bind him in bronze shackles;
+- make him grind/mill in prison.
+
+The sight-driven hero becomes:
+**blind**
++
+**bound**
++
+**turning repetitive mill labor**.
+
+This is a complete status inversion.
+
+### Up/down inversion
+
+Earlier Gaza:
+- Samson carries gate **up** to hill.
+
+Later:
+- captured Samson is brought **down** to Gaza.
+
+Same city narrative frame,
+opposite vertical status.
+
+This is worth preserving.
+
+### Hair begins to grow again
+
+The text explicitly notes:
+- hair begins to grow after shaving.
+
+This is the narrative's visible sign that the previous state may not be final.
+
+It introduces:
+**loss**
+→ **regrowth**
+→ possible restoration.
+
+Again:
+not rewind to earlier innocence;
+it is forward regrowth after damage.
+
+---
+
+## Final temple — Samson asks to be placed at the central supports
+
+Philistine lords gather at temple/house of Dagon.
+
+Samson is brought out as spectacle.
+
+He asks the young guide:
+- let him feel the pillars
+- on which the house rests,
+- so he can lean/support himself.
+
+This is a remarkable deliberate repositioning:
+
+**blind prisoner**
+→ guided toward
+→ **structural centre/supports**.
+
+### Two middle/central pillars are explicitly load-bearing
+
+The text identifies:
+- **two middle pillars**
+- the house is established/resting on them.
+
+Samson positions himself against both.
+
+This is not inferred symbolism.
+They are literal structural supports in the narrative.
+
+### Samson becomes the human bridge between the two supports
+
+Verse geometry is explicit:
+
+**one pillar at his right**
+**one pillar at his left**
+
+Samson:
+- reaches/grips/leans on both;
+- right hand/arm to one;
+- left hand/arm to the other.
+
+This may be the strongest explicit **central human + bilateral structural supports** scene in the entire Bible so far.
+
+Raw geometry:
+
+**pillar ← right hand / SAMSON / left hand → pillar**
+
+or viewed spatially:
+
+**pillar A — Samson — pillar B**
+
+with:
+**house load above**.
+
+### This is much stronger than a loose Squatter-Man resemblance
+
+Unlike scenes where body geometry must be reconstructed,
+Judges explicitly supplies:
+- one central person;
+- two load-bearing vertical supports;
+- one on right;
+- one on left;
+- both contacted simultaneously.
+
+That makes it a high-priority pair/person geometry example.
+
+### But direction of causation is opposite to a world-support myth
+
+Samson is not maintaining the structure.
+
+He destabilizes/removes the supports.
+
+The house then collapses.
+
+So if compared with a world-support figure, the sequence is:
+
+**support system intact**
+→ central human couples to both supports
+→ force applied
+→ supports fail
+→ superstructure collapses.
+
+This is **support destruction**, not support maintenance.
+
+### Final prayer restores function briefly
+
+Samson asks YHWH:
+- remember him;
+- strengthen him one more time.
+
+This again separates:
+**hair regrowth**
+from
+**ultimate source of strength**.
+
+The final action requires renewed divine empowerment in the narrative.
+
+### Central collapse kills both operator and surrounding population
+
+Samson says:
+**“Let me die with the Philistines.”**
+
+He leans/pulls with strength.
+
+The house falls:
+- on lords;
+- on people.
+
+The text says:
+- those he kills in death are more than those he killed in life.
+
+Thus the central support failure has:
+**operator self-destruction**
++
+**mass surrounding collapse**.
+
+This is a useful catastrophic-system analogue:
+failure of central supports propagates to the whole superstructure.
+
+### About 3,000 on the roof
+
+The story notes:
+- about **3,000 men and women** on the roof watching.
+
+The building also contains Philistine lords and others below/inside.
+
+This is a large loaded structure around the two central supports.
+
+Do not infer an exact architectural plan beyond the text.
+
+### “Giant/demigod” interpretation is scholarly speculation, not baseline
+
+Some scholars have proposed that:
+- Samson's name relates to `shemesh` (“sun”);
+- the superhuman gate/pillar feats echo giant/demigod traditions;
+- his birth story may preserve traces of divine paternity mythology.
+
+These proposals can explain why:
+- gate dimensions;
+- pillar span;
+- extraordinary strength
+are narratively possible.
+
+But they are interpretive reconstructions, not explicit statements of Judges.
+
+Keep them as comparison material only.
+
+### Source-critical control — chapter 16 likely secondary to an earlier endpoint
+
+The repeated “he judged Israel twenty years” formula:
+- at Judges 15:20;
+- again at 16:31
+supports the widely held view that chapter 15 once ended a Samson cycle and chapter 16 was added/expanded later.
+
+Yet literary studies also find substantial final-form coherence across chapters 13–16.
+
+Therefore:
+- source growth is likely;
+- final-form geometry remains meaningful;
+- do not assume every motif originated together.
+
+---
+
+## Samson cycle as a transformation chain
+
+The complete final-form sequence can be reduced to:
+
+**barren mother**
+→ angelic announcement
+→ consecrated body-state before birth
+→ uncut hair / future role
+→ spirit begins to move him between Zorah/Eshtaol
+
+→ sees Philistine woman
+→ descends
+→ lion attack
+→ spirit empowerment
+→ lion killed
+→ dead lion becomes honey enclosure
+→ riddle encodes hidden event
+→ secret extracted through wife
+→ information crosses relationship boundary
+
+→ wife lost
+→ 300 foxes/jackals
+→ paired tails + central torches
+→ distributed fire
+→ Philistine retaliation
+→ Judah binds Samson with 2 ropes
+→ spirit empowerment
+→ bonds fail
+→ jawbone becomes weapon
+→ water source restores life
+
+→ Gaza city trap
+→ fixed gate uprooted
+→ paired gateposts/doors/bar become shoulder cargo
+→ carried upward to hill
+
+→ Delilah pressure
+→ false binding states 1/2/3
+→ seven hair locks woven into loom
+→ true secret revealed
+→ hair removed
+→ YHWH leaves / strength lost
+→ eyes removed
+→ Samson taken downward
+→ bound / mill labor
+→ hair regrows
+
+→ guided into Dagon house
+→ positioned at **two central load-bearing pillars**
+→ right hand/left hand engage bilateral supports
+→ prayer / final strength
+→ supports fail
+→ house collapses
+→ Samson + enemies die
+→ body carried back
+→ burial **between Zorah and Eshtaol**, where the cycle began.
+
+---
+
+## SECTION 30B strongest Vardath correspondences
+
+1. Samson's role is encoded as a **body-state assigned before birth**.
+2. Same source cycle repeatedly links **body state, divine/spirit state and functional output**.
+3. Lion carcass becomes a **new enclosure/container** for bees/honey without substrate disappearance.
+4. The riddle creates **encoded information requiring a hidden key/event**.
+5. Samson's wife and later Delilah both show **relationship boundary → secret extraction → system vulnerability**.
+6. **300 animals paired tail-to-tail with one torch between each pair** is a literal repeated pair+centre geometry.
+7. Dead biological parts repeatedly become new tools/enclosures: lion carcass, donkey jawbone.
+8. Gaza gives **fixed gate → detached portable cargo**, carried on the human body uphill.
+9. Seven hair locks woven into a loom give a real **human-body + weave** scene, though it is domestic binding, not cosmic lattice description.
+10. Hair removal produces an observable state transition, but the text also says **YHWH leaves**, preventing a simplistic hair-as-battery reading.
+11. Sight is inverted across the cycle: sight-driven action → blindness → final guided positioning.
+12. Samson's final scene is an extraordinarily explicit **central human between two load-bearing pillars, one right and one left**.
+13. The central human couples to both supports and triggers a **whole-superstructure collapse**.
+14. Samson's burial returns him to the same **between Zorah/Eshtaol** geographic frame where his spirit-activation first began.
+
+### Major controls
+
+- Samson's Nazirite state differs materially from Numbers 6.
+- angelic/divine paternity and solar-demigod readings are scholarly hypotheses, not explicit source claims.
+- lion does not literally transform into honey.
+- fox/jackal fire-pairs are ordinary sabotage, not a cosmic braid.
+- jawbone-water wording is geographically/textually ambiguous; do not claim water literally came from the bone.
+- Gaza gate feat is heroic narrative.
+- chapter 16 likely represents a later expansion of the cycle.
+- final pillars are architectural supports; the story describes their destruction, not a stable world-support mechanism.
+- repeating 7/30/300/1000/3000 numbers should not be cross-matched without source/unit controls.
+
+---
+
+## SECTION 30 master number / pair register
+
+### Judges 9–12 retained from Section 30A
+- Abimelech funding: **70 silver**.
+- Gideon sons: **70** in final tradition.
+- Abimelech reign: **3 years**.
+- Shechem tower deaths: about **1,000**.
+- Jephthah territorial claim: **300 years**.
+- daughter interval: **2 months**.
+- commemoration: **4 days/year**.
+- Shibboleth deaths: **42,000**.
+- Jephthah judges: **6 years**.
+- Ibzan: **30 sons +30 daughters +30 incoming wives**, judges 7 years.
+- Elon: **10 years**.
+- Abdon: **40 sons +30 grandsons =70**, 70 mounts, judges 8 years.
+
+### Judges 13–16
+- Philistine oppression before Samson: **40 years**.
+- riddle feast: **7 days**.
+- companions: **30**.
+- garment wager: **30 +30**.
+- foxes/jackals: **300**.
+- implied paired fire-units: **150 pairs**, one torch each.
+- Judah men who bind Samson: **3,000**.
+- new ropes: **2**.
+- jawbone kills: **1,000**.
+- Samson judges: **20 years**.
+- Delilah false tests before truth: **3**, truth on 4th cycle.
+- fresh bowstrings: **7**.
+- hair locks/braids: **7**.
+- final supports: **2 central pillars**.
+- bilateral contact: **right + left**.
+- roof spectators: about **3,000**.
+
+---
+
+## Sources logged
+
+Primary:
+- Judges 13–16, Sefaria.
+- Judges 13: annunciation, Nazirite-from-womb state, altar-flame ascent, between Zorah/Eshtaol.
+- Judges 14: lion/honey, riddle, seven-day feast, thirty companions.
+- Judges 15: 300 foxes/jackals tail-to-tail with central torches, two ropes, jawbone, water restoration, twenty-year closing formula.
+- Judges 16: Gaza gate/2 gateposts/bar on shoulders, Delilah binding cycles, 7 locks, hair cut, blindness/mill, hair regrowth, 2 middle pillars right/left, collapse, burial between Zorah/Eshtaol.
+
+Scholarly/source-critical:
+- “Samson: What Kind of Nazirite Was He?” — differences between Judges 13 and Numbers 6.
+- “What Is a Nazir, and Why the Wild Hair?” — hair as defining Samson-state and comparison with wild-hero traditions.
+- “Who Was Samson's Real Father?” — Samson cycle as composite and multiple strength explanations; divine-paternity reading as hypothesis.
+- “Samson the Demigod?” — solar/demigod and giant-scale interpretations; Gaza gate and final pillars.
+- “Samson's Story Begins with Sight and Ends in Blindness—but with Insight” — sight/blindness literary arc and ch.16 compositional caution.
+- source-critical observation that Judges 15:20 is an earlier-style closing formula and Judges 16 likely supplements the cycle.
+
+## SECTION 30 status
+
+**SECTION 30 — JUDGES 9–16: COMPLETE FIRST PASS.**
+
+### Strongest additions from Judges 9–16
+
+1. Jotham's fable directly proves people can be represented as **trees** in biblical political allegory.
+2. Gerizim changes function across books: same place can host blessing or warning, so symbolic geography is **phase/context dependent**.
+3. Abimelech's tower-fire tactic reverses at Thebez; same geometry/action does not guarantee same result.
+4. Jephthah shows speech creating a binding future state before the future participant is known.
+5. Shibboleth is a clean **information key + boundary + access outcome** system.
+6. Samson's body-state is assigned before birth and later altered through hair/consecration/divine-presence dynamics.
+7. Lion carcass → honey enclosure is a strong **substrate continuity / function change** image.
+8. 300 animals in **paired units with central fire** give explicit pair+centre geometry.
+9. Gaza transforms a **fixed gate into portable shoulder cargo**.
+10. The seven hair locks woven into a loom are a genuine human-body/weave scene, but a failed binding test rather than cosmic lattice description.
+11. Samson's final position is one of the clearest **central human + two bilateral vertical supports** scenes in the Bible: one pillar at right, one at left.
+12. The final collapse shows how failure of two central supports propagates into whole-structure destruction.
+
+### Next first unfinished roadmap section
+
+Locate the next canonical roadmap entry under the anti-repeat protocol before beginning new research.
+
