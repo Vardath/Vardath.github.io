@@ -42291,4 +42291,870 @@ Scholarly/source-critical:
 
 Locate **Section 29 — Judges 1–8** in the full current ledger and run the anti-repeat search before beginning.
 
+---
+
+## SECTION 29 progress A — Judges 1–5: incomplete conquest becomes cyclic history, right/left inversion in Ehud, Deborah/Barak split command, and Yael's tent turns refuge into terminal enclosure
+
+### Anti-repeat check
+
+The full current ledger was searched first.
+
+No Section 29 progress existed.
+
+This is genuinely new work.
+
+---
+
+## Judges 1 — the book opens by undoing Joshua's clean conquest geometry
+
+After Joshua's death, Israel asks:
+- who should go up first against the Canaanites?
+
+Judah is chosen.
+
+Judah then asks Simeon:
+- come with me into **my** allotment;
+- I will go with you into **your** allotment.
+
+This creates a real cooperative pair:
+
+**Judah → Simeon's support in Judah**
+then
+**Simeon → Judah's support in Simeon**.
+
+Classification:
+- **P7 reciprocal tribal operator pair**.
+
+### Judah / Simeon preserve distinct territories while operating jointly
+
+The tribes do not merge.
+
+They retain:
+- separate inheritances;
+- reciprocal military obligations.
+
+This is structurally similar to east/west Jordan cooperation:
+
+**distinct components**
+→ temporary combined operation
+→ distinct territorial identities remain.
+
+### Judges 1 preserves a gradual/incomplete conquest tradition
+
+The chapter repeatedly says certain populations were **not driven out**.
+
+This aligns with:
+- Joshua 13–23's incomplete-conquest strands;
+- and conflicts with Joshua 1–12's totalizing conquest summaries.
+
+Modern historical-critical work commonly treats Judges 1 as preserving or reflecting a more gradual/fragmented settlement picture.
+
+For the Vardath project this is another major control:
+
+> **dramatic total-reset narratives can coexist with slower, patchier process traditions.**
+
+### Achsah asks for upper and lower springs
+
+Achsah receives dry/negev land and asks Caleb for water sources.
+
+Caleb gives:
+- **upper springs**
+- **lower springs**.
+
+This is an explicit upper/lower water pair.
+
+Raw structure:
+
+**dry land**
++
+**upper water source**
++
+**lower water source**.
+
+It belongs in the water-routing register.
+
+But:
+- these are geographic springs;
+- not upper/lower world reservoirs.
+
+### Same Achsah story is repeated from Joshua 15
+
+The story appears essentially in:
+- Joshua 15;
+- Judges 1.
+
+This is a direct reminder that repeated biblical episodes can be:
+- literary reuse;
+- editorial transfer;
+- parallel tradition;
+
+not repeated physical events.
+
+### Adoni-bezek's body is altered at four extremities
+
+Judah/Simeon capture Adoni-bezek and cut off:
+- two thumbs;
+- two big toes.
+
+He interprets this as reciprocal judgment for similar treatment of defeated kings.
+
+For the geometry register:
+- upper limb extremities + lower limb extremities are paired.
+
+But this is punitive mutilation, not a useful cosmological mechanism.
+
+Do not over-map it.
+
+---
+
+## Judges 2 — the book's master cycle is explicitly editorial/theological
+
+The Deuteronomistic framework can be reduced to:
+
+**Israel turns away**
+→ YHWH gives/sells them into enemy hands
+→ oppression/distress
+→ Israel cries out
+→ judge/deliverer raised
+→ enemy defeated
+→ period of rest
+→ judge dies
+→ Israel relapses
+→ cycle restarts.
+
+This is the core Judges state machine.
+
+### The cycle is not evidence of one physical repeating catastrophe
+
+This point is essential.
+
+The cycle is:
+- theological;
+- historiographic;
+- editorial.
+
+Its repetition is deliberately imposed on multiple local traditions.
+
+Therefore:
+**recurrence in Judges cannot automatically be treated as evidence of a periodic natural event**.
+
+The text itself is organizing history into a didactic cycle.
+
+### Remaining nations are reinterpreted as a test
+
+Joshua left nations unconquered.
+
+Judges 2 reframes their continued existence as:
+- punishment;
+- testing mechanism.
+
+So the same historical fact:
+**Canaanites remain**
+receives a different causal explanation.
+
+Again:
+**same state → different explanatory layer**.
+
+---
+
+## Judges 3 — Othniel provides the minimal cycle template
+
+Othniel's story is extremely compressed:
+
+**evil**
+→ foreign oppression
+→ cry
+→ spirit of YHWH on deliverer
+→ victory
+→ land rests **40 years**.
+
+This looks less like independent narrative detail and more like a schematic demonstration of the editorial cycle.
+
+For our project:
+treat Othniel primarily as a **cycle template**, not a geometry-rich event.
+
+---
+
+## Ehud — a deliberate right/left inversion system
+
+Ehud is introduced as:
+- a Benjaminite;
+- a left-handed / right-hand-restricted man in the Hebrew idiom.
+
+This is already a striking verbal inversion because Benjamin's name/traditional identity is associated with **right-hand** language.
+
+### Weapon placement is mirrored against expectation
+
+Ehud:
+- makes a **two-edged dagger**;
+- straps it under clothing;
+- on his **right thigh/side**.
+
+Then:
+- reaches with his **left hand**;
+- draws from the **right side**;
+- strikes Eglon.
+
+Raw body geometry:
+
+**left hand**
+→ crosses/accesses
+**right-side weapon**
+→ central target.
+
+This is one of the clearest source-level right/left inversions in the Bible.
+
+### The whole assassination depends on asymmetric expectation
+
+The concealed weapon works partly because:
+- conventional expectation would look for a weapon where a right-handed person would draw it.
+
+The story exploits:
+**body asymmetry as hidden-route advantage**.
+
+For Vardath:
+this is useful evidence that left/right can encode:
+- inversion;
+- unexpected routing;
+- asymmetrical function.
+
+It does **not** imply cosmic chirality.
+
+### “Secret message” turns information into access
+
+Ehud tells Eglon:
+- he has a secret message.
+
+The king:
+- dismisses attendants;
+- creates a private chamber state.
+
+Thus:
+**information claim**
+→ changes room occupancy/access
+→ permits hidden action.
+
+This is another example where **speech alters spatial configuration**.
+
+### Upper chamber becomes sealed enclosure after the event
+
+After killing Eglon:
+- Ehud exits;
+- shuts/locks the upper chamber doors.
+
+Servants see:
+- closed doors;
+- infer an ordinary private bodily activity;
+- wait.
+
+So:
+**sealed boundary**
+creates
+**false interpretation of interior state**.
+
+The same enclosure hides:
+- death
+behind
+- appearance of privacy.
+
+This is a strong **inside-state unknowable from outside** control.
+
+### Same closed door can represent opposite internal realities
+
+Outside inference:
+**king alive / private**.
+
+Actual inside state:
+**king dead**.
+
+Therefore:
+**boundary appearance ≠ interior truth**.
+
+This parallels:
+- Gibeonite disguise;
+- hidden Achan cargo;
+- Balaam perception;
+- east-Jordan altar form/function.
+
+### Ehud changes from covert operator to public military leader
+
+After escape:
+- he blows a trumpet;
+- gathers Israel;
+- seizes Jordan fords;
+- defeats Moab.
+
+So his role sequence is:
+
+**hidden individual assassin**
+→ **public signaler**
+→ **collective military leader**.
+
+One person moves through sharply different operator modes.
+
+### Jordan fords become controlled choke points
+
+Ehud's forces seize:
+- crossing places/fords of Jordan.
+
+This prevents Moabite escape/return.
+
+Here Jordan functions not as miracle route but as:
+**ordinary strategic bottleneck**.
+
+This is a useful control:
+the same river can be:
+- miraculous crossing boundary in Joshua;
+- political/strategic choke point in Judges.
+
+### 18 → 80 timing
+
+The final narrative gives:
+- Moabite oppression: **18 years**;
+- land rest after victory: **80 years**.
+
+Record the intervals.
+
+Do not yet compare them to Vardath cycle lengths without unit normalization and source analysis.
+
+### Ehud story may contain an older assassination tale inserted into a shorter deliverer framework
+
+One modern source-critical reading argues:
+- the detailed private assassination narrative is a later insertion into a briefer deliverer/war account;
+- a seam exists between Ehud's escape and his sudden public military leadership.
+
+This is a valuable control:
+one figure's apparent multi-phase sequence may itself be created by **combining traditions**.
+
+---
+
+## Shamgar — one operator / unusual tool / mass result
+
+Shamgar:
+- uses an oxgoad;
+- kills **600 Philistines**;
+- “also saved Israel.”
+
+This is a minimal compressed hero notice.
+
+For our rod/staff register:
+the oxgoad is another long implement used by one operator.
+
+But:
+- agricultural weapon improvisation is sufficient explanation;
+- do not classify every long implement as one cosmic axis.
+
+---
+
+## Judges 4 — Deborah / Barak is a deliberately split leadership pair
+
+Deborah is:
+- prophet;
+- judge;
+- seated under her palm between Ramah and Bethel;
+- people come to her for decisions.
+
+Barak is:
+- summoned;
+- military commander.
+
+This creates a very clear role split:
+
+**Deborah**
+→ source interpretation / legal-prophetic authority.
+
+**Barak**
+→ field/military execution.
+
+Classification:
+- **P7 information/command + military operator pair**.
+
+### Deborah's fixed tree-seat and Barak's moving mountain role
+
+Deborah:
+- occupies a stable location under the palm.
+
+Barak:
+- moves to Mount Tabor;
+- gathers troops;
+- descends into battle.
+
+Raw role geometry:
+
+**stationary judgment/source node**
+→ summons
+**mobile field operator**.
+
+This resembles several distributed-control systems already logged.
+
+### Barak refuses to operate without Deborah present
+
+Barak says:
+- if you go with me, I go;
+- if you do not, I do not.
+
+So the pair is not merely complementary in abstract role.
+
+Barak treats Deborah's presence as a necessary operating condition.
+
+This is a strong **coupled-operator pair**.
+
+### Deborah predicts the terminal victory will belong to another woman
+
+Deborah says:
+- the road will not result in Barak's glory;
+- Sisera will be delivered into a woman's hand.
+
+This opens a two-woman sequence:
+
+**Deborah**
+→ initiates/authorizes battle.
+
+**Yael**
+→ performs final killing of Sisera.
+
+So Barak's military role is framed between two female operators.
+
+---
+
+## Tabor / Kishon create an up→down battlefield geometry
+
+Barak:
+- goes **up** Mount Tabor with **10,000** men.
+
+Sisera:
+- draws **900 iron chariots** toward Kishon.
+
+Deborah commands:
+**“Up!”**
+
+Then Barak:
+- comes **down from Mount Tabor** into the battle.
+
+So the movement is:
+
+**mountain concentration**
+→ command
+→ **downward deployment**
+→ valley/river battle.
+
+This is ordinary military terrain,
+but it is source-level vertical movement.
+
+### Heavy chariot system collapses into foot-flight
+
+Sisera begins:
+- commander of 900 iron chariots.
+
+At defeat:
+- he leaves his chariot;
+- flees **on foot**.
+
+This is a strong:
+**vehicle-assisted power**
+→ **vehicle abandoned**
+→ vulnerable body.
+
+The technological advantage collapses.
+
+---
+
+## Yael / Sisera — refuge appearance reverses into terminal enclosure
+
+Sisera flees to Yael's tent because:
+- there is peace between Jabin and Heber's household.
+
+Yael:
+- invites him inward;
+- tells him not to fear;
+- covers him;
+- gives milk when he asks for water;
+- he sleeps.
+
+The tent initially appears as:
+**safe enclosure**.
+
+Then it becomes:
+**terminal trap/enclosure**.
+
+This is an important control:
+**enclosure is not inherently protective**.
+
+Its function depends on:
+- operator;
+- relation;
+- phase.
+
+### Water request → milk response
+
+Sisera asks:
+- water.
+
+Yael gives:
+- milk/curds in prose/poetic traditions.
+
+This is a deliberate substitution in the story.
+
+For Vardath:
+record as **requested medium ≠ received medium**.
+
+Do not infer hidden alchemical transformation.
+
+### Yael stands at/controls the tent threshold
+
+Sisera instructs her:
+- stand at the tent entrance;
+- deny his presence if asked.
+
+So he tries to use Yael as:
+**guardian of enclosure boundary**.
+
+But the guardian is not loyal to the enclosed occupant.
+
+This is a strong boundary-role inversion.
+
+### Tent peg + hammer creates a violent vertical rod-through-body-to-ground image
+
+Yael takes:
+- tent peg;
+- hammer;
+- drives peg through Sisera's temple;
+- into the ground.
+
+Raw geometry:
+
+**hand / hammer**
+↓
+**peg**
+↓
+**head/body**
+↓
+**ground**.
+
+This is an unusually explicit:
+**rod-like implement → body → earth**
+alignment.
+
+It belongs in the geometry register.
+
+But the source context is homicide in warfare.
+
+Do not neutralize or romanticize it into a benign cosmological axis.
+
+### Barak arrives after the terminal action is complete
+
+Yael then shows Barak:
+- the dead Sisera.
+
+Thus the sequence is:
+
+**Deborah predicts**
+→ **Barak battles/pursues**
+→ **Yael terminates Sisera**
+→ **Barak witnesses result**.
+
+This is a distributed multi-operator chain.
+
+---
+
+## Judges 5 — poem/prose doublet proves again that one event can have radically different geometry
+
+Judges 4 gives prose.
+
+Judges 5 gives a victory poem.
+
+They overlap in:
+- Deborah;
+- Barak;
+- Sisera;
+- Yael;
+- battle;
+- Kishon.
+
+But details/emphases differ.
+
+This is another high-value:
+**same remembered conflict → different literary projection**.
+
+### Dating the Song of Deborah is debated
+
+Many scholars have long treated Judges 5 as one of the oldest Hebrew poems.
+
+Other recent linguistic/literary work argues for a later, even Deuteronomistic composition.
+
+Therefore:
+do not use “the oldest biblical eyewitness poem” as an uncontested premise.
+
+The safe statement is:
+**the poem is a distinct poetic rendition whose date remains debated**.
+
+### The poem's tribal map is NOT the standard twelve-tribe system
+
+Judges 5 names:
+- Ephraim;
+- Benjamin;
+- Machir;
+- Zebulun;
+- Issachar;
+- Reuben;
+- Gilead;
+- Dan;
+- Asher;
+- Naphtali.
+
+It omits standard southern units such as:
+- Judah;
+- Simeon;
+- Levi
+(and Gad is not named in the standard way).
+
+Machir and Gilead appear as independent units.
+
+This is an extremely important projection control:
+
+> **“Israel” can be mapped through a non-standard tribal geometry depending on text/date/context.**
+
+Do not assume every tribal list is a damaged version of one eternal 12-node diagram.
+
+### Willing / nonparticipating tribes form a social polarity
+
+The poem praises some groups for joining battle and criticizes others for remaining:
+- among sheepfolds;
+- beyond Jordan;
+- by ships/coast.
+
+This creates:
+**converging participants**
+versus
+**non-converging peripheral groups**.
+
+That is a genuine event-participation polarity.
+
+### Stars fight from heaven
+
+The poem says:
+- stars fought from heaven;
+- from their courses/paths they fought Sisera.
+
+This is striking celestial warfare language.
+
+For Vardath:
+record in the celestial-event register.
+
+But poetry and mythic battle language are sufficient explanations;
+it is not direct evidence of plasma discharge.
+
+### Kishon torrent sweeps the enemy away
+
+The poem says:
+- ancient/torrent Kishon swept them away.
+
+So the poetic battle adds a major water-process absent or muted in prose:
+**watercourse becomes battle agent**.
+
+This may reflect:
+- storm;
+- flood;
+- poetic theophany;
+- battle memory.
+
+Again:
+same event, different environmental emphasis.
+
+### Stars above + torrent below create a vertical environment pair
+
+Poetically:
+
+**stars/heaven above**
+→ fight.
+
+**Kishon water below**
+→ sweeps.
+
+This forms an upper/lower battle environment around the terrestrial conflict.
+
+For the project:
+interesting sequence match,
+but highly poetic.
+
+### Yael's killing is compressed differently in the poem
+
+The poem:
+- foregrounds milk/curds;
+- peg/hammer;
+- repeated fall/collapse language.
+
+It lacks several prose details.
+
+Some scholars argue the prose and poem preserve different stages of the Sisera-death tradition.
+
+One modern reconstruction even proposes an older version in which Barak, not Yael, killed Sisera and Yael's role was added/redacted.
+
+This is a hypothesis, not consensus.
+
+Retain the textual divergence without forcing one original event reconstruction.
+
+### Sisera's mother at a window creates another inside/outside boundary image
+
+The poem ends with:
+- Sisera's mother looking through a **window**;
+- waiting for his chariot;
+- misunderstanding why he has not returned.
+
+This gives another:
+**inside observer**
+→ window boundary
+→ external world
+→ false inference about absent person.
+
+Compare:
+- Rahab's window;
+- Eglon's locked chamber;
+- other boundary/perception scenes.
+
+Again:
+window is information interface, not gate.
+
+### Land rests 40 years
+
+After Deborah/Barak cycle:
+- land rests **40 years**.
+
+This repeats Othniel's 40-year rest.
+
+That recurrence belongs in the Judges editorial-cycle register.
+
+Do not treat two 40s alone as proof of a physical 40-year periodicity.
+
+---
+
+## SECTION 29A continuous sequence — Judges 1–5
+
+**post-Joshua fragmentation**
+→ Judah chosen first
+→ Judah/Simeon reciprocal pair
+→ local victories
+→ multiple Canaanite enclaves remain
+→ Achsah receives upper/lower springs
+
+**editorial cycle established**
+→ apostasy
+→ oppression
+→ cry
+→ deliverer
+→ rest
+→ relapse
+
+**Othniel**
+→ schematic deliverer
+→ 40-year rest
+
+**Ehud**
+→ 18-year Moabite oppression
+→ left-handed Benjaminite
+→ dagger concealed on right
+→ left hand crosses to right-side weapon
+→ “secret message” empties room
+→ assassination
+→ upper chamber locked
+→ false outside inference
+→ public trumpet
+→ Jordan fords seized
+→ 80-year rest
+
+**Deborah/Barak**
+→ stationary judge/prophet under palm
+→ mobile commander summoned
+→ coupled operation
+→ Barak up Tabor with 10,000
+→ descends to Kishon battle
+→ Sisera abandons 900-chariot system
+→ flees on foot
+
+**Yael/Sisera**
+→ apparent refuge tent
+→ milk/cover/sleep
+→ boundary guardian reverses role
+→ peg through body into earth
+→ Barak arrives as witness
+
+**Song of Deborah**
+→ same battle reprojected poetically
+→ non-standard tribal map
+→ participant/nonparticipant polarity
+→ stars fight above
+→ Kishon sweeps below
+→ Sisera's mother misreads world through window
+→ 40-year rest.
+
+---
+
+## SECTION 29A strongest Vardath correspondences
+
+1. Judges itself imposes a repeating state cycle, but this is an editorial/theological cycle and therefore a major control against assuming natural periodicity.
+2. Judah/Simeon are a reciprocal operating pair that retain separate territories.
+3. Achsah's upper/lower springs give explicit geographic paired water sources.
+4. Ehud gives one of the strongest right/left inversion sequences: left hand + right-side hidden weapon.
+5. Closed-room boundary hides a radically different internal state from outside observers.
+6. Deborah/Barak form a real split control system: stationary source/judge + mobile military operator.
+7. Barak treats Deborah's presence as an operational requirement.
+8. Yael's tent proves enclosure can reverse from apparent refuge to trap.
+9. Yael's peg produces a literal rod/body/ground vertical alignment, but in violent narrative context.
+10. Judges 4/5 is another prose/poem multi-projection of one conflict.
+11. Judges 5's tribal system is not the standard twelve, proving collective geometry can change across traditions.
+12. Stars-above + Kishon-below form a poetic upper/lower environmental battle pair.
+13. Sisera's mother/window gives another boundary-as-information-interface with false inference.
+14. 40-year rest recurs, but units should not be normalized into a physical cycle without source control.
+
+### Major controls
+
+- incomplete conquest is historically/literarily more gradual than Joshua's totalizing narrative.
+- Judges cycle is Deuteronomistic theology, not a natural event clock.
+- Ehud assassination story may combine separate literary layers.
+- left/right asymmetry is tactical/body geometry, not proof of cosmic chirality.
+- Yael/Sisera scene is violent warfare, not neutral mechanism.
+- Song of Deborah's date is debated.
+- celestial/star warfare is poetry.
+- non-standard tribal map warns against assuming an invariant visible 12-node arrangement.
+
+### Pair / number register
+
+- Judah / Simeon — reciprocal tribal pair.
+- upper / lower springs — water-source pair.
+- Othniel rest: **40 years**.
+- Moabite oppression: **18 years**.
+- Ehud: left hand / right-side dagger.
+- Ehud rest: **80 years**.
+- Shamgar: **600** Philistines in compressed notice.
+- Deborah / Barak — source/field pair.
+- Barak force: **10,000**.
+- Sisera chariots: **900**.
+- Canaanite oppression: **20 years**.
+- Yael / Sisera — host/guest → killer/victim inversion.
+- Deborah cycle rest: **40 years**.
+- Judges 5 tribal map: non-standard, not simple 12.
+
+### Sources logged
+
+Primary:
+- Judges 1–5.
+- Judges 1: Judah/Simeon and upper/lower springs.
+- Judges 3: Ehud left hand/right-side two-edged dagger and upper chamber.
+- Judges 4: Deborah/Barak, 10,000, 900 chariots, Yael/Sisera.
+- Judges 5: tribal participation map, stars, Kishon, Sisera's mother/window.
+
+Scholarly/source-critical:
+- “Israel's Incomplete Conquest of Canaan” — TheTorah.
+- “Yael and the Subversion of Male Leaders in Judges” — TheTorah.
+- “Deborah: A Prophetess Like Moses” — TheTorah.
+- “Yael, the Kenite, Kills Sisera” — TheTorah.
+- “Deborah, Yael and Sisera's Mother” — TheTorah.
+- “Dating Deborah” — TheTorah.
+- “Composing the Song of Deborah: Empirical Models” — TheTorah.
+- “Did Israel Always Have Twelve Tribes?” — TheTorah.
+
+**Section 29 remains in progress.**
+
+Next under anti-repeat protocol:
+**Judges 6–8 — Gideon's Moses-like call and anti-Moses divergences, fire emerging from rock after staff contact, two fleece wet/dry reversals, force reduction 32,000→10,000→300, three-company geometry, concealed torches inside jars, synchronized jar-breaking/trumpets/light release, Midian panic/self-destruction, Jordan crossing pursuit, two kings Zebah/Zalmunna, and Gideon's ephod as post-victory system failure.**
 
