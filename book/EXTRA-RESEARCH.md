@@ -100876,3 +100876,1794 @@ Priority:
 - Greek Addition F explicit interpretation:
   **Mordecai + Haman = two dragons; Esther = spring/river**;
 - complete the pair-state reversal matrix and integrated Section 40 geometry timeline.
+
+
+---
+
+# SECTION 40 progress B — Esther 6–10 + Greek/Ethiopic Additions E–F
+## Dormant information reactivates at night, Haman is forced to lift the man he came to lower, the two rival trajectories cross, hidden identity becomes explicit, the execution-axis reverses bodies, Haman's authority objects move to Mordecai, one unrevokable command field is countered by its opposite through the same imperial network, the selected destruction-date becomes its contrary, and the Greek/Ethiopic ending finally decodes the pair as two dragons and Esther as the expanding river
+
+This pass completes **Section 40 — Esther** and continues directly from the first banquet / prepared execution-tree at the end of Section 40A.
+
+The most important result is not merely that Esther contains “reversals.”
+
+The book builds a remarkably exact **state-exchange sequence** around the Mordecai/Haman pair:
+
+**Haman high / Mordecai low**
+→ dormant Mordecai-information reactivates
+→ Haman enters to lower Mordecai further
+→ Haman is forced to raise Mordecai instead
+→ Haman begins to fall
+→ hidden Esther/Mordecai relationship becomes explicit
+→ Haman falls physically before Esther
+→ Haman receives the pole built for Mordecai
+→ Haman's house/ring/command-channel transfer away from him
+→ Mordecai receives the ring and royal dress
+→ the same imperial distribution network carries a counter-command
+→ the same date selected for Jewish destruction becomes the date of reversed mastery
+→ the crisis becomes a recurring feast of reversal
+→ Greek Addition F identifies the two opposing human figures as **two dragons** and Esther as the **spring/river** between the catastrophe and restoration imagery.
+
+This is one of the cleanest full pair-state inversions encountered so far.
+
+---
+
+# Esther 6 — the hinge is a failed sleep-state that reopens dormant information
+
+The chapter begins:
+
+- the king cannot sleep;
+- the book of records / royal chronicles is brought;
+- an earlier record concerning Mordecai is found;
+- the court discovers that no honour has yet been given to him.
+
+The information itself is not new.
+
+It entered the palace in Esther 2 and remained inert in the archive.
+
+Therefore the process is:
+
+**peripheral event**
+→ information transferred inward
+→ written/stored
+→ long dormant interval
+→ night disturbance
+→ retrieval
+→ present system state changes.
+
+This is a very important master-timeline category.
+
+Not every causal signal acts when it first crosses a boundary.
+
+Some information can be:
+
+**transferred**
+→ **stored**
+→ **reactivated much later**.
+
+Within Vardath comparison language this is not physical time travel.
+
+The safer analogy is **latent state-memory re-entering the active system**.
+
+The king's lost sleep is a narrative timing mechanism, not evidence of a cosmological time anomaly.
+
+---
+
+# The outer court receives two opposed intended outcomes at the same instant
+
+Haman enters the **outer court** intending to ask the king to put Mordecai on the prepared tree/pole.
+
+But inside the centre the king has just activated the opposite question:
+
+> What honour should be given to Mordecai?
+
+Thus the same court boundary simultaneously holds two incompatible projected states:
+
+### Haman's intended output
+Mordecai:
+**gate**
+→ **pole**
+→ death/degradation.
+
+### King's newly activated output
+Mordecai:
+**gate**
+→ **royal clothing / royal horse / public proclamation**
+→ honour/elevation.
+
+Haman enters the centre carrying the first direction and is made the operator of the second.
+
+This is a particularly strong reversal geometry because the switch occurs **at the threshold between outer court and royal centre**.
+
+---
+
+# Haman designs his own desired elevation and is forced to apply it to Mordecai
+
+Asked what should be done for the man the king delights to honour, Haman assumes the man is himself.
+
+He proposes:
+
+- royal clothing worn by the king;
+- the king's horse;
+- royal insignia/crown language;
+- a high-ranking official to dress and lead the honoured man;
+- public movement through the city;
+- repeated proclamation of royal favour.
+
+The king commands Haman to perform that exact programme for **Mordecai at the king's gate**.
+
+This produces an unusually exact operator inversion:
+
+**Haman imagines self as elevated body**
+→ specifies elevation ritual
+→ king redirects ritual to Mordecai
+→ Haman becomes servant/operator of rival's elevation.
+
+The pair does not merely exchange abstract luck.
+
+One member is made to **carry out the other's rise using the procedure he generated for himself**.
+
+---
+
+# Royal garments function as a temporary state-shell
+
+Mordecai's clothing history now becomes strongly ordered:
+
+**ordinary gate-state**
+→ **sackcloth mourning-state** that cannot cross the gate
+→ **royal clothing** during public honour
+→ return to gate after the parade
+→ later permanent courtly/royal clothing in Esther 8.
+
+The ch. 6 honour is not yet the final role transfer.
+
+After the procession, Mordecai returns to the gate.
+
+So the chapter gives a temporary elevated state before the later durable one.
+
+That distinction matters:
+
+**preview / transient state**
+before
+**stabilized successor state**.
+
+---
+
+# Haman and Mordecai begin to cross vertical trajectories
+
+After the parade:
+
+- Mordecai returns to the king's gate;
+- Haman hurries home mourning;
+- Haman covers his head;
+- Zeresh and his advisers tell him that since he has **begun to fall** before Mordecai, he will not prevail but will surely fall.
+
+The language is explicitly vertical.
+
+Earlier:
+
+**Haman raised**
+↔
+**Mordecai at gate / bowed-to demand / sackcloth**.
+
+Now:
+
+**Mordecai publicly raised**
+while
+**Haman begins to fall**.
+
+This is the most direct two-spring-style comparison in the Masoretic narrative:
+
+**one trajectory rises as the opposed trajectory falls**.
+
+But the text does not describe two physical springs or a weave.
+
+The secure claim is **opposed vertical state motion**.
+
+The Greek/Ethiopic dragon dream makes this state-pair much more interesting, because the two socially opposed trajectories belong to the same two figures that the Greek frame explicitly calls **two dragons**.
+
+---
+
+# Esther 6 is the narrative crossing-point of the two dragon states
+
+At the end of Section 40A:
+
+Haman:
+- elevated;
+- ring-holder;
+- decree-authorizer;
+- banquet insider;
+- pole-builder.
+
+Mordecai:
+- gate figure;
+- sackcloth mourner;
+- target.
+
+After Esther 6:
+
+Mordecai:
+- publicly dressed in royal state;
+- carried through the city;
+- proclaimed as the king's honoured man.
+
+Haman:
+- leads the rival;
+- returns mourning/head-covered;
+- is told his fall has begun.
+
+Thus chapter 6 is best represented as:
+
+**Haman ↑ / Mordecai ↓**
+→ **crossing**
+→ **Mordecai ↑ / Haman ↓**.
+
+That is a very strong P2 polarity exchange.
+
+It remains a literary/social reversal unless independent physical geometry appears.
+
+---
+
+# Greek Esther makes the chapter-6 hinge more explicitly theological
+
+The Greek form adds stronger overt divine causation around the crisis than the Masoretic text.
+
+This belongs with Section 40A's source distinction:
+
+- Masoretic Esther usually leaves divine agency unstated;
+- Greek Esther repeatedly makes it explicit.
+
+Therefore a Vardath process model must not flatten the two witnesses into one.
+
+The Greek version's theological explanation is an ancient interpretive layer in its own right.
+
+---
+
+# Esther 7 — the second banquet becomes the disclosure chamber
+
+The same three-person enclosure reconvenes:
+
+- king;
+- Esther;
+- Haman.
+
+The hidden relation that has structured the book is finally disclosed.
+
+Esther identifies:
+- herself with the threatened people;
+- Haman as the adversary/enemy.
+
+This is a topology change produced by **information revelation**.
+
+Before disclosure, the king's network representation is approximately:
+
+**queen Esther**
+separate from
+**anonymous targeted people**.
+
+After disclosure:
+
+**queen Esther**
+=
+**member of targeted people**.
+
+The physical people and palace have not moved.
+
+What changes is the centre's knowledge of the links.
+
+This is another strong example of:
+
+> **relational adjacency can change when hidden information becomes visible.**
+
+---
+
+# The king leaves, Haman remains, and the pair-state collapses physically
+
+After Esther names Haman:
+
+- the king rises in anger and leaves for the palace garden;
+- Haman remains to plead with Esther;
+- when the king returns, Haman is **fallen / falling / prostrate** on the couch where Esther is;
+- the king interprets the posture as a new offence;
+- Haman's face is covered.
+
+The narrative now converts Haman's social fall into literal bodily geometry.
+
+Sequence:
+
+**highest official / banquet insider**
+→ fear
+→ **fallen body**
+→ face covered
+→ removed for execution.
+
+This is a very tight state-collapse progression.
+
+---
+
+# The execution-tree reverses the body assigned to it
+
+Harbona points out the fifty-cubit \`etz\` / wooden pole-tree Haman prepared for Mordecai.
+
+The king commands Haman to be put on it.
+
+So the same object has two intended/actual body mappings:
+
+**planned:**
+tree/pole ← Mordecai.
+
+**actual:**
+tree/pole ← Haman.
+
+This is one of Esther's most mechanically exact reversal motifs.
+
+The axis itself stays in place.
+
+The body assigned to it changes.
+
+That is important for this project:
+
+**stable structure**
++
+**reversed occupancy/state**
+can generate a new outcome without requiring the structure itself to transform.
+
+The ordinary literary explanation is poetic justice / ironic reversal.
+
+The Vardath usefulness is narrower:
+
+**one vertical carrier can connect to opposite members of a pair in successive projected states**.
+
+It is not a gate in the story.
+
+---
+
+# Esther 8 — Haman's house, ring and functional place are redistributed
+
+Immediately after Haman's death:
+
+- Haman's property/house is given to Esther;
+- Esther reveals Mordecai's relation to her;
+- Mordecai comes before the king;
+- the king removes the signet ring that had been taken from Haman and gives it to Mordecai;
+- Esther appoints Mordecai over Haman's house.
+
+This produces a remarkable transfer chain:
+
+### Property
+**Haman**
+→ **Esther**
+→ **Mordecai as administrator**.
+
+### Authority token
+**king**
+→ **Haman**
+→ removed from Haman
+→ **Mordecai**.
+
+### Court position / command-channel function
+**Haman**
+→ **Mordecai**.
+
+This strongly supports:
+
+- **P4 successor pair** for office/function;
+- **P2 polarity pair**;
+- **P6 rival/double**;
+- **P9 deliberate literary reversal**;
+- **P10 separate persons** remains secure.
+
+It does **not** prove that Haman and Mordecai are literally one person.
+
+The more controlled statement is:
+
+> Mordecai becomes the structural successor to the rival whose power had been directed against him.
+
+---
+
+# The signet ring is more securely a command-authentication device than magical transferred power
+
+Section 40A treated the ring as the small object that couples the central throne to the distributed decree network.
+
+That remains correct.
+
+A useful scholarly control is that the ring should not be over-described as if possession by itself made Haman/Mordecai sovereign.
+
+The royal documents are still:
+- written in the king's name;
+- authenticated/sealed with the ring.
+
+So the ring is best treated as:
+
+**portable authentication / delegated command-channel token**.
+
+Its transfer is nevertheless extremely significant because the same physical token is used under opposite policy regimes.
+
+---
+
+# Esther performs a second rod-mediated state change before the king
+
+Esther again:
+
+- falls at the king's feet;
+- weeps and pleads;
+- the king extends the golden scepter;
+- Esther rises and stands before him;
+- she speaks her petition.
+
+This is not identical to the first unsummoned-entry scene.
+
+But the same rod again accompanies a threshold/status transition:
+
+**prostrate supplicant**
+→ scepter extended
+→ **rises / stands / speaks with authorized access**.
+
+Thus the golden rod repeats as a **state-switching court object**.
+
+That repetition strengthens the analogy from Section 40A.
+
+The effect is functional, not just visual.
+
+---
+
+# The first decree cannot simply be erased
+
+The king states that a document:
+
+- written in the king's name;
+- sealed with the king's signet;
+
+cannot simply be revoked.
+
+This creates a crucial process constraint.
+
+The solution is **not**:
+
+**field A disappears**.
+
+Instead:
+
+**field A persists**
++
+**field B is generated against it**.
+
+That is much closer to a two-force system.
+
+The original destructive command remains in the legal/information environment.
+
+A second command is sent through the same imperial architecture giving the Jews power to assemble and defend themselves.
+
+Therefore the climax is produced by **opposed information fields coexisting until the same activation date**.
+
+This is one of the most valuable new process correspondences in Esther.
+
+---
+
+# One fixed imperial network carries opposite commands
+
+The second decree repeats the first decree's infrastructure:
+
+- royal scribes;
+- king's name;
+- signet;
+- satraps/governors/officials;
+- **127 provinces**;
+- each province in its script;
+- each people in its language;
+- couriers;
+- publication across the empire.
+
+But the command direction is reversed.
+
+So:
+
+**same centre**
+→ **same authentication mechanism**
+→ **same branch network**
+→ **opposite instruction**.
+
+This is stronger than “two messages exist.”
+
+It is:
+
+> **one stable distribution lattice carrying opposite state-information at different phases.**
+
+For the two-spring comparison, this resembles two opposed directional forces occupying one larger structure much more closely than two unrelated networks would.
+
+Still, this is an administrative communication system, not proof of a physical cosmic lattice.
+
+---
+
+# Addition E makes the counter-field into a full textual object
+
+Greek **Addition E** supplies an expanded pro-Jewish/counter-edict.
+
+The Greek additions are architecturally paired:
+
+- **Addition B** = expanded destructive edict;
+- **Addition E** = expanded counter-edict.
+
+That pair is itself a textual polarity.
+
+The Greek book therefore does not merely narrate two commands.
+
+It gives the two opposing information fields substantial document-form.
+
+A particularly striking line in the later Greek/Vulgate-numbered counter-edict explains the changed command as appropriate to changed circumstances rather than royal instability.
+
+The addition also explicitly frames the thirteenth of Adar as the same date that is turned from destruction/mourning toward survival/joy.
+
+Again, the Greek/Ethiopic form intensifies the reversal theology beyond the Masoretic form.
+
+---
+
+# The second decree is written on 23 Sivan but targets the original 13 Adar date
+
+The chronology now has three key dates:
+
+**13 Nisan**
+→ first decree written.
+
+**23 Sivan**
+→ counter-decree written.
+
+**13 Adar**
+→ both fields reach execution date.
+
+So the system contains a long interval during which:
+
+**old command remains valid**
+while
+**new counter-command has also propagated**.
+
+The final event is therefore not created instantaneously at the centre.
+
+The opposing instructions travel, are received and remain pending until the scheduled date.
+
+This gives Esther an unusually clear:
+
+**write**
+→ **propagate**
+→ **wait**
+→ **synchronized activation**
+
+sequence.
+
+---
+
+# Mordecai's final garment-state reverses his sackcloth state
+
+After the counter-decree is sent, Mordecai leaves the king's presence wearing:
+
+- royal blue and white;
+- a large gold crown;
+- fine linen;
+- purple.
+
+Compare directly:
+
+### Earlier
+Mordecai:
+- sackcloth;
+- ashes;
+- cannot cross gate;
+- mourning;
+- destruction decree active.
+
+### Later
+Mordecai:
+- royal garments;
+- gold crown;
+- leaves king's presence;
+- Susa rejoices;
+- counter-decree active.
+
+This is not merely upward rank.
+
+The story uses the body's visible covering to mark a complete system-state inversion.
+
+---
+
+# The city's output flips from confusion to rejoicing
+
+After Haman's first decree the city of Susa is portrayed as disturbed/perplexed while Haman and the king drink.
+
+After Mordecai's counter-decree:
+
+- Susa rejoices;
+- the Jews have light, gladness, joy and honour;
+- the reaction spreads wherever the new decree arrives.
+
+Thus the same network produces opposite distributed effects:
+
+**decree A arrives**
+→ fear/mourning/confusion.
+
+**decree B arrives**
+→ light/joy/feasting/honour.
+
+The field changes not because the cities move, but because the information state arriving through the network changes.
+
+---
+
+# Esther 9 states the master reversal explicitly: \`וְנַהֲפוֹךְ הוּא\`
+
+On **13 Adar**, the date on which the enemies of the Jews expected to gain mastery, the Hebrew text says:
+
+**וְנַהֲפוֹךְ הוּא — v'nahafoch hu**
+
+The sense is:
+
+**it was reversed / the opposite happened**.
+
+This is not an interpretive label imported by later readers.
+
+The narrative itself defines the date by inversion.
+
+Expected state:
+
+**enemies master Jews**.
+
+Actual narrated state:
+
+**Jews master enemies**.
+
+For the final transformation timeline, this should be retained as one of the most explicit state-reversal formulas anywhere in the corpus.
+
+---
+
+# The date remains fixed while the direction of outcome reverses
+
+This is mechanically important.
+
+Haman's lot selected **13 Adar**.
+
+The counter-decree does not choose a new neutral day.
+
+The same date remains the contact point.
+
+So:
+
+**date fixed**
++
+**dominant direction reversed**.
+
+This resembles a phase inversion more closely than simple cancellation.
+
+The same temporal node supports the opposite result.
+
+---
+
+# Violence is part of the reversal and must not be abstracted away
+
+Esther 9 is violent.
+
+The narrative reports:
+
+- killing in Susa;
+- Haman's ten sons killed;
+- a second day of violence in Susa at Esther's request;
+- the dead sons displayed/impaled;
+- mass killing in the provinces.
+
+The research must not turn this into a bloodless diagram.
+
+The text's own framing emphasizes enemies/attackers and self-defence under the counter-decree, but the scope and ethics of the violence remain heavily discussed.
+
+The project's process abstraction can record:
+
+**threatened population**
+→ authorized defence/counter-force
+→ attackers defeated
+→ rest.
+
+It must also preserve:
+
+**large-scale killing is the narrated mechanism by which the reversal is achieved**.
+
+---
+
+# The death-count has a major textual variant — do not use it numerologically without control
+
+Masoretic/Hebrew Esther 9:16 gives:
+
+**75,000** enemies killed in the provinces.
+
+Much of the Greek manuscript tradition gives:
+
+**15,000**.
+
+The Lucianic Greek recension has another figure, approximately **70,100**.
+
+This is exactly the kind of variant the master protocol was designed to catch.
+
+Therefore:
+
+- record **75,000 MT**;
+- record **15,000 much Greek tradition**;
+- record **~70,100 Lucianic**;
+- do **not** use 75,000 as a secure cosmological/chronological number without explaining the textual divergence.
+
+For this Ethiopian/Greek-aware project, the **15,000 Greek reading is especially important**.
+
+---
+
+# Refusal of plunder repeats despite permission to take it
+
+The counter-decree permits plunder.
+
+But the narrative repeatedly states that the Jews **do not lay hands on the spoil**.
+
+This is repeated at key points.
+
+That makes the result structurally different from a simple transfer of enemy property to the surviving group.
+
+The reversal is:
+
+**threatened with destruction/plunder**
+→ **survive and defeat attackers**
+→ **do not complete the symmetrical property seizure**.
+
+This is an important mismatch to a crude “everything simply swaps places” model.
+
+Some fields invert.
+
+Others do not.
+
+That asymmetry is useful.
+
+---
+
+# Haman's ten sons extend the tree/pole motif after Haman's death
+
+Haman's ten sons are killed.
+
+Esther then asks that their bodies be displayed/impaled on the tree/pole.
+
+Thus the vertical execution structure continues to carry the defeated Haman-house after Haman himself.
+
+At the narrative level this is dynastic/public defeat imagery.
+
+Possible structural abstraction:
+
+**one hostile centre**
+→ **centre removed**
+→ **descendant branches also terminated/displayed**.
+
+Do not turn “ten” into a Vardath numerical law without further recurrence/source control.
+
+---
+
+# Susa and the provinces settle on different rest days
+
+The provinces:
+- fight on 13 Adar;
+- rest/feast on 14 Adar.
+
+Susa:
+- fights on 13 and 14;
+- rests/feasts on 15 Adar.
+
+So one empire-wide event produces **locally different stabilization times**.
+
+This is very relevant to the user's emphasis that one large event need not have one identical local timing everywhere.
+
+The safe structural statement is:
+
+**same crisis field**
+→ different local duration
+→ different rest/feast date.
+
+This is a genuine textual example of asynchronous local settling inside a shared event.
+
+---
+
+# Purim converts a selected destruction-date into a recurring memory-cycle
+
+The lot originally selects the dangerous date.
+
+After reversal, the event is memorialized annually.
+
+The month is described as transformed:
+
+**grief**
+→ **gladness**;
+
+**mourning**
+→ **holiday**.
+
+The observance includes:
+- feasting;
+- gladness;
+- gifts/portions to one another;
+- gifts to the poor.
+
+So the timeline performs:
+
+**random/lot date selection**
+→ **future threat**
+→ **reversal on selected date**
+→ **rest**
+→ **date institutionalized as recurring memory**.
+
+The one-time danger-node becomes a repeated cultural clock.
+
+That is a strong process transformation.
+
+---
+
+# The two-day Purim observance preserves the local timing split
+
+Mordecai's letters establish the fourteenth and fifteenth of Adar.
+
+The two days preserve the earlier difference between:
+
+- provincial rest;
+- Susa rest.
+
+Thus the annual memory does not erase local phase difference.
+
+It encodes it.
+
+For the master timeline this is a useful rule:
+
+> **a system can stabilize at different local times and later preserve both stabilization markers in one ritual cycle.**
+
+---
+
+# Esther 10 — Mordecai occupies the high position that Haman previously held
+
+The canonical/Hebrew conclusion presents Mordecai as:
+
+- great/advanced by the king;
+- second to King Ahasuerus;
+- influential among the Jews;
+- seeking the welfare of his people.
+
+Compare Esther 3:
+
+**Haman elevated above officials**.
+
+By Esther 10:
+
+**Haman absent/dead**
+and
+**Mordecai occupies the highest subordinate position**.
+
+This completes the P4 successor relation.
+
+The pair's full status transformation is:
+
+**Haman high / Mordecai gate**
+→
+**trajectories cross**
+→
+**Haman pole / Mordecai second to king**.
+
+That is exceptionally clean.
+
+---
+
+# Addition F closes the whole Greek/Ethiopic book by decoding the opening geometry
+
+The Greek/Ethiopic conclusion returns to Mordecai's opening dream and interprets it.
+
+It states:
+
+- the little spring that became a river is **Esther**;
+- the **two dragons are Haman and Mordecai**;
+- hostile nations correspond to the peoples gathered against the Jews;
+- the threatened people correspond to Israel;
+- the two lots are interpreted as two destinies/lots brought to a decisive hour/day.
+
+This gives the Greek Esther a strong enclosing architecture:
+
+**dream geometry**
+→ narrative event sequence
+→ **decoded dream geometry**.
+
+Addition A and Addition F are therefore a true pair:
+
+**forecast**
+↔
+**interpretation**.
+
+Likewise:
+
+**Addition B**
+↔
+**Addition E**
+
+form a pair of opposed decrees.
+
+The Greek book itself is organized through paired brackets around the same reversal.
+
+---
+
+# The “two lots” interpretation adds a second two-force layer
+
+In the Hebrew story:
+
+**pur**
+= lot used by Haman to choose a date.
+
+In Greek Addition F the symbolism becomes more explicitly dual:
+
+**two lots / two destinies**
+- one for God's people;
+- one for the nations.
+
+This is not the same thing as the user's two physical lattice springs.
+
+But it does mean the Greek interpretive frame organizes the crisis as **two opposed destiny fields converging on one appointed hour/day**.
+
+That is a noteworthy structural parallel.
+
+Again:
+record it;
+do not literalize it.
+
+---
+
+# SECTION 40B pair / two-spring / state-exchange matrix
+
+## Mordecai / Haman — final classification
+
+This is now one of the strongest pairs in the entire project.
+
+### P2 — polarity pair
+**Very strong.**
+
+Their states repeatedly oppose:
+- high/low;
+- honoured/targeted;
+- royal clothes/mourning;
+- ring-holder/excluded target;
+- life/death;
+- centre/gate;
+- rise/fall.
+
+### P4 — successor pair
+**Very strong.**
+
+Haman's command-channel role and ring pass to Mordecai.
+
+Haman's house passes into Esther's possession and Mordecai's administration.
+
+Mordecai ends in the high subordinate position vacated by Haman.
+
+### P6 — rival/double
+**Extremely strong.**
+
+They are direct opponents.
+
+Greek Addition F explicitly makes them **two dragons**.
+
+### P9 — literary/apocalyptic symbolic recoding
+**Secure.**
+
+The Greek dream and interpretation deliberately recode the human pair at cosmic-symbolic scale.
+
+The Hebrew story deliberately builds reversals around them.
+
+### P1 — split halves of one geometry
+**Partial / abstract only.**
+
+The two dragons provide a compelling two-force image.
+
+But the text still treats them as distinct people and opposing agents.
+
+There is no secure textual basis to claim they are literally one person split into two.
+
+### P10 — genuinely separate
+**Secure at narrative level.**
+
+The Vardath value lies in the **relation/process**, not erasing their narrative separateness.
+
+---
+
+## Esther / Vashti — final pair
+
+The earlier result stands:
+
+**Vashti**
+summoned → refuses → removed.
+
+**Esther**
+unsummoned → crosses → accepted → acts.
+
+Queen-role:
+**Vashti → Esther**.
+
+Strong:
+- P3 state-pair;
+- P4 successor;
+- P2 inverse threshold relation.
+
+Weak:
+- literal one-person identity;
+- Squatter-Man reading.
+
+---
+
+## Esther — hidden / revealed identity
+
+Same body:
+
+**identity concealed**
+→ protects court position but leaves dangerous relational ambiguity
+→ **identity disclosed**
+→ rewires king's understanding of decree
+→ makes counter-action possible.
+
+This is a strong **state-pair within one figure**.
+
+It shows again that information can change topology without changing physical location.
+
+---
+
+## First decree / counter-decree
+
+This is one of the strongest non-human polarity pairs in the corpus.
+
+Same:
+- king;
+- signet mechanism;
+- scribal system;
+- provinces;
+- scripts/languages;
+- courier network;
+- activation date.
+
+Opposite:
+- destructive permission/order;
+- defensive/countering permission/order.
+
+This is a very clean:
+
+**one structure**
++
+**opposed directional information states**.
+
+---
+
+## Mordecai-on-tree / Haman-on-tree
+
+One vertical object.
+
+Two body assignments.
+
+Projected:
+**Mordecai**.
+
+Actual:
+**Haman**.
+
+Strong state-reversal object.
+
+Not a gate.
+
+---
+
+## Haman ring / Mordecai ring
+
+Same object / command-authentication token.
+
+First:
+supports destructive field.
+
+Later:
+supports counter-field.
+
+Very strong P4-style object succession.
+
+---
+
+## Haman clothing / Mordecai clothing
+
+Haman imagines royal state for himself.
+
+He must dress Mordecai.
+
+Later Mordecai exits the palace permanently in royal state.
+
+Meanwhile Haman:
+- mourns;
+- covers head;
+- is executed.
+
+Strong visible state exchange.
+
+---
+
+## Susa confusion / Susa rejoicing
+
+Same city.
+
+Opposite output under opposing decree states.
+
+Useful city-scale state pair.
+
+---
+
+## Threatened people / dominant people
+
+Esther 9:1 makes this explicit:
+
+expected:
+enemies dominate Jews.
+
+actual:
+Jews dominate enemies.
+
+This is a population-scale polarity reversal.
+
+---
+
+## Addition A / Addition F
+
+Opening dream
+↔
+closing interpretation.
+
+Greek textual enclosure.
+
+---
+
+## Addition B / Addition E
+
+Destructive decree
+↔
+counter-decree.
+
+Greek textual polarity pair.
+
+---
+
+# Squatter-Man / finger-trap verdict for Esther as a whole
+
+## Strong correspondences
+
+Esther provides unusually strong evidence for:
+
+- **two explicitly identified dragon figures**;
+- one rising as the other falls;
+- repeated gate/threshold scenes;
+- a rod/scepter that changes access/state;
+- central authority and branching network;
+- two opposed information fields in one structure;
+- execution pole / vertical body-axis;
+- hidden/revealed state;
+- fixed date with reversed direction of outcome;
+- water expansion and light/dark/catastrophe in the Greek dream;
+- a third figure, Esther, explicitly symbolized as a small spring becoming a great river;
+- closure by returning to and decoding the opening geometry.
+
+## Partial correspondences
+
+- one stable system carrying opposing directions resembles the two-spring model abstractly;
+- the Mordecai/Haman trajectories cross as one rises and one falls;
+- the same authority objects connect sequentially to the opposed pair;
+- the fixed date carrying opposite outcomes resembles a phase/state inversion.
+
+## Weak / absent correspondences
+
+Esther does **not** securely describe:
+
+- a broad woven sky contracting;
+- two physical spring-strands stretching upward/downward through world layers;
+- a finger-trap narrowing into a throat;
+- a Squatter-Man body with bilateral supported arms;
+- neighbouring inhabited world-turns becoming physically adjacent;
+- large material transfer between worlds;
+- sky rolling/folding;
+- physical gate reopening into a new world surface.
+
+Therefore Esther should not be promoted into a literal Vardath-machine account simply because its pair/reversal grammar is striking.
+
+Its strongest contribution is:
+
+> **a highly controlled narrative model of two opposed forces exchanging elevation, authority, body-placement, information fields and final outcome inside one fixed network, with the Greek/Ethiopic textual frame explicitly representing the pair as two dragons and the mediator as expanding water.**
+
+That is extremely valuable to the larger comparison precisely because the physical mismatches are also clear.
+
+---
+
+# SECTION 40 continuous geometry/effect timeline — whole Esther sequence
+
+## Phase A — paired cosmic opponents appear before their human identities are decoded
+
+two dragons
+→ conflict/noise
+→ wider nations mobilize.
+
+**Effect:** Greek/Ethiopic Esther prefigures Mordecai/Haman as opposed large-scale forces.
+
+---
+
+## Phase B — conflict has environmental/catastrophe imagery
+
+thunder
+→ earthquake/upheaval
+→ darkness/distress.
+
+**Effect:** pair conflict is embedded in an abnormal environment in the Greek dream.
+
+---
+
+## Phase C — small water source scales upward
+
+small spring
+→ great river / abundant water
+→ light/sun.
+
+**Effect:** later decoded as Esther becoming decisive within the crisis.
+
+---
+
+## Phase D — palace contains separated social fields
+
+king's feast
++
+Vashti's feast.
+
+**Effect:** one centre contains multiple bounded sub-enclosures.
+
+---
+
+## Phase E — commanded crossing fails
+
+king summons Vashti
+→ refusal.
+
+**Effect:** boundary command does not produce transfer.
+
+---
+
+## Phase F — queen-state is vacated and replaced
+
+Vashti removed
+→ women gathered/prepared
+→ Esther selected.
+
+**Effect:** office persists while occupant changes.
+
+---
+
+## Phase G — Esther enters centre with hidden relational address
+
+royal identity visible
++
+Jewish kinship hidden.
+
+**Effect:** one person belongs to two networks while the centre perceives only one.
+
+---
+
+## Phase H — peripheral information crosses inward and sleeps in archive
+
+Mordecai discovers plot
+→ Esther relays
+→ chronicle stores.
+
+**Effect:** useful information becomes latent system memory.
+
+---
+
+## Phase I — Haman rises while Mordecai remains gate-side
+
+Haman elevated
+↔
+Mordecai refuses bow.
+
+**Effect:** pair acquires strong high/low polarity.
+
+---
+
+## Phase J — local rivalry expands into population field
+
+Mordecai refusal
+→ all Jews targeted.
+
+**Effect:** pair conflict propagates across empire.
+
+---
+
+## Phase K — lot selects common future activation node
+
+pur
+→ 13 Adar.
+
+**Effect:** threat is synchronized to a future date.
+
+---
+
+## Phase L — ring couples Haman to imperial information network
+
+king → ring → Haman
+→ scribes/languages/provinces/couriers.
+
+**Effect:** destructive command branches through one empire-wide system.
+
+---
+
+## Phase M — Mordecai reaches gate but mourning-state cannot cross
+
+sackcloth
+→ outer limit.
+
+**Effect:** metric proximity remains while functional adjacency closes.
+
+---
+
+## Phase N — Esther/Mordecai communicate through shuttle route
+
+inside
+↔ messenger
+↔ outside.
+
+**Effect:** information crosses enclosure while bodies remain distributed.
+
+---
+
+## Phase O — group synchronizes before representative crossing
+
+three-day fast/prayer
+→ Esther approaches.
+
+**Effect:** distributed population phase-aligns before central action.
+
+---
+
+## Phase P — golden rod switches court boundary
+
+unsummoned Esther
+→ scepter extended
+→ approach/contact permitted.
+
+**Effect:** adjacency/access changes without spatial relocation.
+
+---
+
+## Phase Q — first decision enclosure forms
+
+king + Esther + Haman
+→ banquet
+→ disclosure delayed.
+
+**Effect:** system held in intermediate state.
+
+---
+
+## Phase R — execution-axis constructed for Mordecai
+
+50-cubit tree/pole.
+
+**Effect:** projected terminal state assigned to lower member of pair.
+
+---
+
+## Phase S — night disturbance reactivates dormant memory
+
+king cannot sleep
+→ chronicle opened
+→ Mordecai's unrewarded service found.
+
+**Effect:** old transferred information becomes present causal input.
+
+---
+
+## Phase T — two opposite intentions meet at outer court
+
+Haman arrives to request Mordecai's death
+while
+king seeks Mordecai's honour.
+
+**Effect:** rival future states collide at one threshold.
+
+---
+
+## Phase U — Haman becomes operator of Mordecai's rise
+
+Haman designs honour for himself
+→ king redirects it to Mordecai
+→ Haman dresses/leads/proclaims rival.
+
+**Effect:** one force involuntarily lifts the other.
+
+---
+
+## Phase V — trajectories cross
+
+Mordecai publicly rises
+while
+Haman mourns / “begins to fall.”
+
+**Effect:** high/low polarity reverses direction.
+
+---
+
+## Phase W — second banquet reveals hidden topology
+
+Esther identifies herself with targeted people
+→ names Haman.
+
+**Effect:** concealed relational link becomes visible to centre.
+
+---
+
+## Phase X — Haman's social fall becomes bodily fall
+
+king leaves
+→ Haman pleads
+→ king returns
+→ Haman fallen on couch
+→ face covered.
+
+**Effect:** status collapse becomes physical geometry.
+
+---
+
+## Phase Y — stable vertical object receives opposite body
+
+pole prepared for Mordecai
+→ Haman placed on it.
+
+**Effect:** occupancy reverses while axis remains.
+
+---
+
+## Phase Z — hostile centre's property and command token transfer
+
+Haman house → Esther → Mordecai administration.
+Haman ring → Mordecai.
+
+**Effect:** successor acquires former rival's functional channels.
+
+---
+
+## Phase AA — golden rod mediates second authorized state change
+
+Esther prostrate
+→ scepter extended
+→ Esther rises/stands/speaks.
+
+**Effect:** rod again marks transition into active access.
+
+---
+
+## Phase AB — irreversible command requires opposite field, not deletion
+
+first decree remains
+→ second decree generated.
+
+**Effect:** two opposed information states coexist.
+
+---
+
+## Phase AC — same network carries reverse instruction
+
+Mordecai + ring
+→ scribes
+→ same provinces/scripts/languages
+→ couriers.
+
+**Effect:** fixed infrastructure propagates opposite signal.
+
+---
+
+## Phase AD — opposite fields converge on one fixed date
+
+decree A
++
+decree B
+→ 13 Adar.
+
+**Effect:** temporal node becomes confrontation point of two policy states.
+
+---
+
+## Phase AE — Mordecai's covering stabilizes in royal state
+
+sackcloth excluded figure
+→ royal garments/gold crown
+→ emerges from king's presence.
+
+**Effect:** temporary chapter-6 honour becomes durable successor state.
+
+---
+
+## Phase AF — city/population output reverses before battle
+
+mourning/confusion
+→ light/gladness/joy/honour.
+
+**Effect:** information reversal changes distributed social state.
+
+---
+
+## Phase AG — explicit \`v'nahafoch hu\`
+
+enemies expected mastery
+→ **opposite occurs**
+→ Jews gain mastery.
+
+**Effect:** text itself names the state inversion.
+
+---
+
+## Phase AH — violent counter-force resolves the field
+
+attackers/enemies killed
+→ no plunder repeatedly taken.
+
+**Effect:** survival/dominance reverses, property-transfer symmetry does not fully follow.
+
+---
+
+## Phase AI — local durations diverge
+
+provinces settle after 13th
+→ rest 14th.
+
+Susa continues 14th
+→ rest 15th.
+
+**Effect:** same event stabilizes at different local times.
+
+---
+
+## Phase AJ — one-time danger becomes recurring clock
+
+14/15 Adar
+→ annual Purim.
+
+**Effect:** catastrophe-date is transformed into memory/feast cycle.
+
+---
+
+## Phase AK — Mordecai occupies stable high state
+
+gate figure
+→ second to king.
+
+**Effect:** successor transformation completes.
+
+---
+
+## Phase AL — Greek/Ethiopic ending decodes the entire opening field
+
+river = Esther;
+dragon = Mordecai;
+dragon = Haman;
+two lots = opposed destinies reaching appointed hour/day.
+
+**Effect:** narrative closes by revealing that the opening cosmic pair and water-image were projections of the human reversal story.
+
+---
+
+# What complete Esther adds to the master Bible/Vardath timeline
+
+1. **Greek/Ethiopic Esther explicitly converts Mordecai and Haman into a pair of dragons.** Few texts in the roadmap state a human-pair ↔ serpent/dragon mapping this directly.
+2. **The same Greek frame converts Esther into a small spring that becomes a great river**, adding a third water-process to the two-force conflict.
+3. **The opening dragon dream and closing interpretation form a source-controlled bracket around the whole event.**
+4. **Mordecai/Haman form one of the clearest rise/fall polarity pairs yet:** Haman high/Mordecai low → crossing hinge → Mordecai high/Haman dead on pole.
+5. **Esther 6 is a genuine trajectory-crossing scene:** Haman enters to lower Mordecai but is forced to enact Mordecai's elevation, after which the text explicitly says Haman has begun to fall.
+6. **Stored information can remain dormant and become causal only much later.**
+7. **Hidden identity demonstrates again that relational topology can change independently of physical topology.**
+8. **The golden scepter is a repeated functional rod:** its extension changes access/body-state at the royal centre.
+9. **One vertical pole/tree remains stable while the body assigned to it reverses from Mordecai to Haman.**
+10. **Haman's signet ring transfers to Mordecai**, giving the opposed pair sequential control of the same delegated authentication mechanism.
+11. **Haman's house also changes ownership/control**, reinforcing successor-state transfer.
+12. **The first royal decree is treated as irreversible, so the solution is not deletion but an opposing second field.**
+13. **The same imperial network carries both fields**—same throne, signet logic, scribes, provincial branches, scripts/languages and courier architecture.
+14. **This is one of the cleanest corpus examples of one stable structure carrying opposed directional information at different phases.**
+15. **Both commands converge on the same date**, rather than the first date being replaced.
+16. **Esther 9:1 explicitly calls the result a reversal / opposite state (\`v'nahafoch hu\`).**
+17. **The date selected by hostile lot becomes the date of opposite dominance and then the annual feast date.**
+18. **The system does not reverse every variable symmetrically:** the narrative repeatedly says the Jews do not take plunder even though the counter-decree permits it.
+19. **Local stabilization is asynchronous:** provinces rest on 14 Adar; Susa on 15 Adar.
+20. **Purim preserves both local stabilization markers in a repeating calendar cycle.**
+21. **The violence and textual variants prevent a simplistic symbolic reading.** The MT's 75,000 provincial death count differs sharply from much Greek tradition's 15,000 and Lucianic ~70,100.
+22. **Esther's strongest Vardath relevance is process grammar rather than literal machine description:** two opposed dragon-coded figures, rise/fall, rod-mediated access, one network carrying opposite fields, fixed temporal node with reversed outcome, and an expanding-water third figure.
+23. **The major missing physical steps remain missing:** no broad sky weave, finger-trap contraction, world-turn adjacency, material exchange between inhabited worlds, or reopen-to-new-world geometry is explicitly narrated.
+24. **That makes Esther a strong control text:** it shows how much of the two-force/gate/reversal grammar can exist in an ordinary political-literary narrative without requiring the full Vardath cosmology.
+
+---
+
+# Section 40B number / timing register
+
+Record without forcing:
+
+- royal sleepless night = narrative hinge;
+- first decree: **13 Nisan**;
+- counter-decree: **23 Sivan**;
+- common activation date: **13 Adar**;
+- provinces rest/feast: **14 Adar**;
+- Susa rest/feast: **15 Adar**;
+- Haman's sons: **10**;
+- Susa first-day deaths: **500** in MT;
+- Susa second-day deaths: **300**;
+- provincial deaths:
+  - **75,000** in MT;
+  - **15,000** in much Greek manuscript tradition;
+  - approximately **70,100** in Lucianic Greek recension;
+- Purim retained as **two-day** 14/15 Adar observance;
+- Addition F explicitly speaks of **two lots** reaching an hour/time/day of decision.
+
+The 75,000/15,000/70,100 divergence is a hard stop against unsupported numerology.
+
+---
+
+# Section 40B textual / literary / historical / ethical controls
+
+- The Masoretic/Hebrew and Greek forms must remain distinct.
+- Greek Esther's Addition F explicitly identifies the two dragons and Esther-river; this is not present in the Masoretic conclusion.
+- Greek Addition E supplies an expanded counter-edict; it is paired structurally with Addition B's hostile edict.
+- Greek Esther contains stronger explicit divine causation than Masoretic Esther.
+- Esther 6's sleepless night is a literary turning point; no time anomaly needs to be inferred.
+- Literary scholarship widely recognizes **reversal** as a dominant Esther technique. This conventional explanation is strong and must remain beside the Vardath abstraction.
+- The transfer of Haman's signet ring to Mordecai clearly transfers use of the same royal authentication device, but scholarship cautions against treating the ring as autonomous magical/sovereign power.
+- Haman's \`etz\` is tree/wood/pole/beam language; exact Persian execution mechanics remain debated.
+- Haman falling on Esther's couch is narratively exploited by the king; it should not be over-read as a cosmological fall simply because “fall” is geometrically useful.
+- The ethics of Esther 8–9 are contested. The narrative frames the second decree in terms of defense/counteraction, but the killing totals and Esther's request for an additional day in Susa require direct acknowledgment.
+- “No plunder” is repeated and is an important literary/theological distinction from simple symmetrical retaliation.
+- The **Esther 9:16 number is text-critically unstable**: MT 75,000; much Greek tradition 15,000; Lucianic Greek ~70,100.
+- The Greek textual tradition has multiple forms; do not treat “the Septuagint” as completely uniform.
+- The 14/15 Adar difference arises narratively from different local durations of fighting and should not be turned into a universal cosmological two-day law.
+- Purim's etiology is the book's explicit literary/religious purpose: the lot, reversal and feast-date sequence has a straightforward conventional explanation.
+- The Greek Addition F theological interpretation of the “two lots” is itself an ancient reinterpretation of the Hebrew lot scene, not proof that the Hebrew author intended exactly the same dual-destiny schema.
+- The strongest claim that survives these controls is the **ordered recurrence of opposed-state processes**, not literal identity between Esther's court politics and a physical sky mechanism.
+
+### Sources logged for Section 40B
+
+Primary / text:
+- Sefaria, **Esther 6–10**:
+  - https://www.sefaria.org/Esther.6
+  - https://www.sefaria.org/Esther.7
+  - https://www.sefaria.org/Esther.8
+  - https://www.sefaria.org/Esther.9
+  - https://www.sefaria.org/Esther.10
+- Sefaria, Esther 8:15–17 and Esther 9:1, 9:20–22 for the royal-garment, distributed joy, explicit reversal and feast-state language.
+- Bible Gateway, **Esther 10 / Addition F, NRSVCE/NABRE**, for the Greek dream interpretation:
+  - https://www.biblegateway.com/passage/?search=Esther+10&version=NABRE%3BNRSVCE
+- Bible Gateway, **Esther 16 / Addition E tradition**, for the expanded counter-edict:
+  - https://www.biblegateway.com/passage/?search=Esther+16&version=DRA%3BNRSVCE
+- Bible Gateway / NET textual note, **Esther 9:16**, for the 75,000 / 15,000 / Lucianic 70,100 variant:
+  - https://www.biblegateway.com/passage/?search=Esth.9.16&version=NET
+- OpenLXX, **Esther 9**, for direct Greek/English control of the 15,000 reading:
+  - https://openlxx.com/esther/9/
+
+Greek/Ethiopic/source-history controls retained from Section 40A:
+- Michael G. Wechsler, “The Appellation ΒΟΥΓΑΙΟΣ and Ethnic Contextualization in the Greek Text of Esther,” *Vetus Testamentum* 51 (2001), noting Classical Ethiopic Esther is based on the LXX.
+- Jonathan A. Thambyrajah, “Mordecai's dream in Esther—The Greek and Latin versions, character, and the tradition of interpretation,” *JSOT* 43.3 (2019).
+- F. M. Esteves Pereira, “Le livre d'Esther, version éthiopienne,” *Patrologia Orientalis* 9/1 (1913).
+- Aaron Koller, “A More Religious Megillah: The Jewish-Greek Version of Esther,” TheTorah.com.
+
+Literary / structural controls:
+- Esther scholarship on reversal and writing/decrees, including work emphasizing the ring/decree reversals and the narrative hinge at Esther 6.
+- *Esther: The Outer Narrative and the Hidden Reading*, especially discussion of Haman's house → Esther/Mordecai and Haman's letters ↔ Mordecai's letters as deliberate reversal.
+- scholarly work on writing in Esther noting that Haman's ring-backed decree and Mordecai's ring-backed decree mark opposite turns in plot direction.
+- Joshua Joel Spoelstra, “Surviving the Agagites: A postcolonial reading of Esther 8–9,” *Old Testament Essays* 28.1 (2015), retained for violence/\`etz\`/reversal controls.
+
+---
+
+# SECTION 40 COMPLETE — ESTHER
+
+## Integrated Esther geometry
+
+**two dragons appear in dream**
+→ dragon conflict expands into catastrophe imagery
+→ small spring becomes great river/light
+→ two palace feast-fields form
+→ Vashti refuses commanded threshold crossing
+→ queen-state is vacated
+→ empire-wide information decree follows local dispute
+→ women gathered through controlled enclosure
+→ Esther installed as successor queen
+→ Esther carries hidden relational identity inside centre
+→ Mordecai's information crosses inward and is stored
+→ Haman rises over Mordecai
+→ local refusal expands into population-wide threat
+→ lot selects future activation date
+→ ring couples Haman to branching imperial information lattice
+→ first destructive decree propagates
+→ Mordecai reaches gate but mourning state cannot enter
+→ messenger shuttles between outside and inside
+→ population synchronizes by fasting/prayer
+→ Esther crosses lethal inner threshold
+→ golden rod changes access-state
+→ first banquet delays disclosure
+→ execution-axis built for Mordecai
+→ king's sleep breaks
+→ dormant information reactivates
+→ Haman enters outer court to lower Mordecai
+→ Haman is forced to raise Mordecai
+→ pair trajectories cross
+→ Haman begins to fall
+→ second banquet reveals Esther's hidden topology
+→ Haman falls bodily before Esther
+→ execution-axis occupancy reverses
+→ Haman dies on Mordecai's pole
+→ Haman house/ring/function transfer away from him
+→ Mordecai receives ring and command-channel role
+→ Esther performs second rod-mediated appeal/rise
+→ old decree cannot be deleted
+→ opposite decree is generated through same network
+→ both command fields remain oriented toward same date
+→ Mordecai emerges in royal covering
+→ Susa's output changes to joy
+→ 13 Adar arrives
+→ \`v'nahafoch hu\` / opposite outcome occurs
+→ violent counter-force defeats enemies
+→ plunder symmetry is refused
+→ provinces and Susa stabilize on different days
+→ 14/15 Adar become recurring memory clock
+→ Mordecai stabilizes as second to king
+→ Greek/Ethiopic ending decodes Esther as river and Mordecai/Haman as the two dragons.
+
+### Strongest Vardath comparison
+
+**two explicitly dragon-coded opposed figures**
+→ one rises while the other falls
+→ their state trajectories cross at a central court threshold
+→ a rod changes access-state
+→ the same token/network is handed from one pole of the pair to the other
+→ the same structure carries opposite information fields
+→ both fields converge on one fixed temporal node
+→ the expected direction reverses
+→ one pole disappears and the other stabilizes in the high state
+→ the textual frame closes by identifying the pair and the expanding-water mediator.
+
+This is strong enough to cross-index later against:
+- paired serpents/dragons;
+- Moses/Aaron and Moses/Pharaoh polarity;
+- Korah/Moses or other centre-rival pairs;
+- two pillars;
+- divided kingdoms;
+- two witnesses;
+- dragon/woman/water imagery in Revelation;
+- any future pair where one rises precisely as the other falls and one shared channel transfers between them.
+
+### Hard physical mismatch
+
+Esther still does **not** supply the complete Vardath machine:
+
+**no secure broad lattice**
+→ **no finger-trap contraction**
+→ **no physical world-turn adjacency**
+→ **no large material transfer**
+→ **no reopened world surface**.
+
+Retain that mismatch permanently.
+
+---
+
+### Canonical roadmap status
+
+- Section 39 complete.
+- **Section 40 complete — Esther.**
+
+### Next canonical roadmap entry
+
+**Section 41 — Tobit**
+
+Priority targets from the active roadmap:
+- Tobit / Tobias father-son naming and possible role recurrence;
+- blindness → sight restoration;
+- Sarah and the repeated-death enclosure;
+- Asmodeus/demon as hostile attached force;
+- Raphael disguised as travelling companion;
+- journey / guide / route;
+- fish emerging from water;
+- fish organs used across multiple state changes;
+- binding/expulsion of demon;
+- marriage chamber as dangerous enclosure transformed into protected enclosure;
+- return journey;
+- bile/eyes → blindness reversal;
+- hidden angel identity → revealed angel identity;
+- ascent/disappearance of Raphael;
+- burial / departure / successor generation;
+- test father/son, Sarah/Tobias, Raphael/Asmodeus and blindness/sight as pair/state geometries;
+- preserve Tobit's diaspora/piety/almsgiving/burial theology and textual-version differences beside all Vardath comparisons.
