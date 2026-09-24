@@ -34945,3 +34945,606 @@ Saved priorities:
 
 Before beginning Section 25, apply the anti-repeat search.
 
+---
+
+## SECTION 25 progress A — Numbers 21–25: serpent lifted on a standard, route narrowing and perceptual inversion, repeated vantage tests, and spear/plague stoppage
+
+### Anti-repeat check
+
+The full blob-based ledger was checked after the restoration.  
+No Section 25 progress exists after the completed Numbers 1–20 block.  
+This is genuinely new work.
+
+### Numbers 21 — route refusal and controlled passage remain ordinary geopolitical controls
+
+Israel again asks to pass through another ruler's territory:
+- promises to remain on the king's highway;
+- not turn into fields/vineyards;
+- not use well-water;
+- asks only to cross the boundary.
+
+Sihon refuses and goes to war.
+
+This is useful as another **negative control**:
+“passage,” “boundary,” “road,” and “permission” can be entirely ordinary geopolitical terms.
+
+Do not treat every denied crossing as a hidden world-gate.
+
+### The well song — water rises at a collectively marked/dug source
+
+At Beer:
+- YHWH tells Moses to **assemble the people**;
+- water will be given;
+- Israel sings:
+  **“Spring up, O well.”**
+- the well is associated with princes/nobles digging it;
+- using scepters/staffs in the poetic wording.
+
+Raw structure:
+
+**population assembly**
+→ named water-source
+→ collective song/call
+→ chiefs/staff imagery
+→ water availability
+→ onward route.
+
+This is another source-level connection between:
+- rods/staffs;
+- central water source;
+- collective movement.
+
+But the poem does not say the leaders' rods magically become the well or that a Vardath axis opens it.
+
+Later rabbinic tradition develops a travelling “Miriam's well” much more dramatically; that is reception history, not the plain Numbers 21 story.
+
+### Bronze serpent — important correction to the staff/serpent sequence
+
+After poisonous/“fiery” serpents bite the people:
+- Moses intercedes;
+- YHWH tells him to make a serpent/seraph figure;
+- mount it on a **nes** — a pole/standard/banner;
+- a bitten person who looks at it lives/recovers.
+
+Moses makes:
+- a copper/bronze serpent;
+- puts it on the standard.
+
+This is strongly relevant to the rod/serpent investigation, but it is **not** another staff→serpent transformation.
+
+Exodus 4:
+**one staff → living serpent → same staff restored.**
+
+Numbers 21:
+**serpent image is separately manufactured**
+→ **mounted on an upright standard**.
+
+Keep those mechanisms distinct.
+
+### Serpent + vertical standard becomes a healing sign
+
+The raw image is:
+
+**upright pole/standard**
++
+**serpent form displayed on it**
+→ afflicted observer looks
+→ survives.
+
+This is one of the clearest canonical combinations of:
+**rod/pole + serpent + life/death transition**.
+
+For the projection register it is important.
+
+But the operating mechanism is not explained as physical contact, current, or transfer.
+The action is mediated through:
+- divine instruction;
+- viewing/attention;
+- symbolic object.
+
+### Seeing becomes the state-changing action
+
+The bitten person does not:
+- touch the serpent;
+- enter an enclosure;
+- cross a threshold.
+
+They **look** at the elevated image.
+
+So this is a crucial control:
+not every life/death transition in the corpus involves physical transit.
+
+The text imagines:
+**visual relation to a sign**
+as sufficient for altered outcome.
+
+### Nehushtan source-history control
+
+2 Kings 18 later says:
+- the bronze serpent associated with Moses survived as a cult object;
+- Israelites burned incense to it;
+- Hezekiah destroyed it;
+- it was called **Nehushtan**.
+
+Modern scholarship therefore often reads Numbers 21 as an **etiological/origin story** legitimating/explaining an older serpent object or tradition.
+
+Proposals include:
+- apotropaic/sympathetic healing symbolism;
+- Canaanite serpent imagery;
+- Egyptian protective/healing serpent influence.
+
+No single archaeological reconstruction is certain.
+
+For our project:
+the most important control is that the story may explain a real cultic symbol rather than encode a hidden astronomical machine.
+
+### Aaron's flowering staff / bronze serpent as two cult-object etiologies
+
+Recent scholarship has compared:
+- Aaron's flowering almond staff;
+- Moses' bronze serpent.
+
+Both can be read as Priestly/non-Priestly origin stories for sacred objects remembered in later Israelite cult.
+
+This is useful because both also happen to overlap our:
+**tree/rod/serpent**
+projection grammar.
+
+Therefore we must be especially careful:
+a symbolic/cult-history explanation may be sufficient without invoking Vardath mechanism.
+
+---
+
+## Numbers 22 — Balaam's road compresses in three stages
+
+The donkey episode contains an unusually exact narrowing sequence.
+
+### Stage 1 — broad road with lateral escape
+
+Angel stands in the road.
+
+The donkey:
+- sees the angel;
+- can still turn away;
+- leaves road into the **field**.
+
+Geometry:
+**blocked centre**
++
+**lateral escape available**.
+
+### Stage 2 — bounded lane with two side walls
+
+Angel moves ahead.
+
+Now:
+- route runs between vineyards;
+- **wall/fence on one side**
+- **wall/fence on the other**.
+
+Donkey:
+- can no longer freely leave;
+- presses against one wall;
+- crushes Balaam's foot.
+
+Geometry:
+**wall | narrowed route | wall**.
+
+### Stage 3 — complete lateral closure
+
+Angel moves ahead again.
+
+Now:
+- place is so **narrow**;
+- there is **no way to turn right or left**.
+
+Donkey:
+- stops/lies down.
+
+This is a precise:
+
+**broad**
+→ **bilaterally bounded**
+→ **no lateral escape / terminal throat**
+
+sequence.
+
+It is one of the clearest textual examples yet of the project's **convergence/narrowing topology**.
+
+### Important mismatch — there is no reopening phase in the donkey episode
+
+The road does not itself:
+- contract then widen;
+- form a physical gate;
+- connect two worlds.
+
+Instead:
+- obstruction is revealed;
+- Balaam's perception changes;
+- he is permitted to continue.
+
+So the structural match is **narrowing/convergence**, not the entire Vardath throat cycle.
+
+### Donkey / Balaam — carrier sees what seer cannot
+
+Before Balaam's eyes are opened:
+- donkey sees the angel three times;
+- Balaam sees nothing;
+- Balaam interprets the donkey's route changes as disobedience.
+
+This reverses normal hierarchy:
+
+**animal carrier = correct perception**
+**professional seer = blind to immediate hidden obstruction**.
+
+Classification:
+- **P3/P7 role reversal / carrier-guide pair**.
+
+The carrier temporarily knows the route better than the rider/operator.
+
+### Same place, different perceptual access
+
+The angel occupies the road regardless of Balaam's awareness.
+
+Thus:
+
+**physical relation exists**
+while
+**observer access/perception differs**.
+
+This is a powerful control for the project:
+**visibility ≠ existence**
+inside the story's own logic.
+
+It still does not prove an invisible physical lattice.
+
+### Mouth opened / eyes uncovered
+
+YHWH first:
+- opens the donkey's **mouth**.
+
+Then:
+- uncovers/opens Balaam's **eyes**.
+
+This forms a paired sensory transformation:
+
+**animal gains speech**
+→ **human gains sight**.
+
+The same journey is reinterpreted when communication/perception channels change.
+
+### Three beatings
+
+Balaam strikes the donkey **three times**.
+
+The angel likewise obstructs/repositions through the three-stage road sequence.
+
+Later Balak complains Balaam has blessed Israel **three times**.
+
+There is therefore a strong threefold literary repetition across the Balaam cycle.
+
+Do not turn this into a three-world structure automatically.
+
+### Source-critical control — the donkey episode may be secondary
+
+Many critical scholars regard Numbers 22:22–35 as:
+- a distinct/secondary insertion into an older Balaam narrative;
+- partly because 22:20 permits Balaam to go, while 22:22 says divine anger burns because he goes;
+- the episode then ends by again permitting him to go.
+
+Other literary scholars argue the role reversal is integral to the final story and deliberately anticipates Balaam's later relationship with Balak.
+
+Therefore:
+- **compositional independence is plausible and widely held**;
+- **literary integration in the final form is also strong**.
+
+Do not present one reconstruction as certain.
+
+---
+
+## Balaam / Balak — commissioner and constrained mouth
+
+Balak wants:
+**curse Israel**.
+
+Balaam repeatedly insists:
+- he cannot independently produce the requested result;
+- he must say what God/YHWH gives him.
+
+This makes the pair:
+
+**Balak = desired-output commissioner**
+**Balaam = constrained information interface**.
+
+The operator cannot simply manufacture the commander's requested output.
+
+### “Word in Balaam's mouth” echoes Moses/Aaron communication architecture
+
+The text repeatedly says a divine word is put in Balaam's mouth.
+
+This is structurally similar to:
+- Moses putting words in Aaron's mouth;
+- prophet receiving source speech.
+
+Again:
+**human mouth = interface/output channel**.
+
+### Vantage point is repeatedly changed to try to change the output
+
+Balak moves Balaam among elevated viewing positions.
+
+At one stage Balak explicitly says:
+- see only **part** of Israel rather than all.
+
+The implied strategy is:
+**change place / projection / visible portion**
+→ perhaps change the curse outcome.
+
+But the result remains blessing.
+
+This is extremely useful for the projection method:
+
+> **Changing viewpoint can change what part of a system is visible without changing the underlying target/state.**
+
+### Seven altars / seven bulls / seven rams repeated
+
+At repeated oracle sites:
+- Balaam asks for **7 altars**;
+- **7 bulls**;
+- **7 rams**;
+- one bull + ram on each altar.
+
+The sevenfold array is rebuilt at different high places.
+
+This is a repeated **site + ritual pattern**.
+
+The site changes;
+the sevenfold preparation is recreated.
+
+### Three attempted curse-sites / three blessings
+
+The final narrative uses successive viewpoints;
+Balak later says Balaam blessed Israel **three times**.
+
+So the cycle is approximately:
+
+**site 1**
+→ sevenfold preparation
+→ blessing
+
+**site 2**
+→ changed visual position
+→ sevenfold preparation
+→ blessing
+
+**site 3**
+→ another summit
+→ sevenfold preparation
+→ Israel seen tribe-by-tribe
+→ spirit comes upon Balaam
+→ blessing.
+
+This is a striking failed attempt to alter outcome by changing spatial projection.
+
+### At final viewpoint Balaam sees the organized twelve-part camp
+
+Numbers 24 says Balaam looks up and sees:
+- Israel camped **tribe by tribe**;
+- spirit of God comes upon him.
+
+This cross-links directly with Numbers 2's four-direction tribal camp geometry.
+
+The seer is now observing the **organized population projection from above/outside**.
+
+### Star / sceptre oracle — axial imagery but royal/prophetic context
+
+Later oracle imagery says:
+- a **star** comes from Jacob;
+- a **sceptre/rod** rises from Israel.
+
+This is relevant to the project's star/rod projection family.
+
+But standard context is:
+- royal;
+- military;
+- prophetic.
+
+Do not convert it into literal sky-lattice mechanics without stronger sequence evidence.
+
+### Deir Alla control
+
+An Iron Age inscription from Deir Alla independently knows a seer named **Balaam son of Beor**.
+
+This confirms a Balaam tradition existed outside the biblical text.
+
+It does not verify:
+- the talking donkey;
+- the specific Numbers itinerary;
+- or Vardath cosmology.
+
+---
+
+## Numbers 25 — coupled male/female pair pierced by one spear and plague stops
+
+At Peor:
+- plague is underway;
+- an Israelite man brings a Midianite woman into the scene;
+- later identified as **Zimri and Cozbi**.
+
+Phinehas:
+- rises from assembly;
+- takes **one spear**;
+- follows the pair into the chamber;
+- pierces **both**;
+- plague stops.
+
+### One rod-like weapon passes through a coupled pair
+
+The raw geometry is unusually explicit:
+
+**Zimri + Cozbi**
+as one paired bodily unit/scene
+→ **single spear**
+→ both pierced
+→ plague ceases.
+
+For the rod/body register this is worth recording.
+
+But the narrative is a violent zeal/judgment story.
+It should **not** be romanticized into neutral cosmic mechanics.
+
+### Phinehas repeats Aaron's plague-stopper function in a different form
+
+Earlier Numbers 16/17:
+- Aaron runs with incense;
+- stands between dead/living;
+- plague stops.
+
+Numbers 25:
+- Aaron's grandson Phinehas acts with spear;
+- kills paired offenders;
+- plague stops.
+
+This creates a generational functional recurrence:
+
+**Aaron**
+→ incense/interposition
+→ plague stop.
+
+**Phinehas**
+→ spear/intervention
+→ plague stop.
+
+Same broad result;
+very different operator method.
+
+This strongly reinforces:
+**same outcome ≠ same mechanism**.
+
+### Zimri / Cozbi — cross-population pair
+
+The two are:
+- Israelite man;
+- Midianite woman;
+- both socially prominent by later naming.
+
+They form a cross-group pair at the centre of the crisis.
+
+Classification:
+- **P7 cross-boundary human pair** in final narrative;
+- not evidence they are two states of one being.
+
+### 24,000 deaths
+
+The plague count is:
+**24,000**.
+
+Record as textual number.
+
+### Phinehas receives continuing priestly role
+
+After the act:
+- Phinehas receives a covenant/pact of priesthood for his descendants.
+
+So a single crisis action modifies **future office lineage**.
+
+This adds another:
+**event → role-state / hereditary succession change** pattern.
+
+---
+
+## SECTION 25A continuous sequence — Numbers 21–25
+
+**route pressure**
+→ Israel denied ordinary territorial crossing
+→ conflict / new routes
+→ venomous serpents
+→ Moses intercedes
+→ serpent image manufactured
+→ image lifted on standard
+→ bitten people look and live
+
+**water**
+→ people assembled at Beer
+→ well song
+→ water-source associated with princes/staffs
+→ itinerary continues
+
+**Balaam summons**
+→ Balak hires external seer
+→ Balaam travels on donkey
+→ angel blocks route
+→ broad road with side escape
+→ walled narrow lane
+→ terminal narrow point/no right-left turn
+→ donkey speaks
+→ Balaam's eyes opened
+→ route continues under speech constraint
+
+**vantage testing**
+→ Balak changes high viewing locations
+→ seven altars/bulls/rams rebuilt
+→ blessing repeats
+→ third viewpoint sees Israel tribe-by-tribe
+→ spatial projection changes but source-output does not
+
+**Peor crisis**
+→ Israel/Moab-Midian boundary entanglement
+→ plague
+→ Zimri/Cozbi paired at centre
+→ Phinehas uses single spear through both
+→ plague stops
+→ priestly line/status reinforced.
+
+### SECTION 25A strongest Vardath correspondences
+
+1. Bronze serpent gives a real **serpent + upright standard + life/death** image.
+2. It is distinct from Exodus 4's staff↔serpent transformation.
+3. Seeing/relationship alone changes outcome; physical crossing is absent.
+4. Balaam road gives exceptionally clean **broad → bilateral walls → no right/left escape** narrowing.
+5. Same route exists while different beings have different perceptual access.
+6. Carrier/donkey temporarily functions as better guide than seer/rider.
+7. Changing viewpoint exposes different projections/portions but does not change underlying source-output.
+8. Repeated sevenfold ritual is recreated at multiple sites.
+9. Israel is finally seen in its ordered tribe-by-tribe spatial form from an external elevated viewpoint.
+10. Aaron→Phinehas shows the same broad plague-stopping role recurring through different mechanisms.
+11. Zimri/Cozbi + one spear is a real paired-body / central-rod geometry, but its source context is violent judgment.
+
+### Major controls
+
+- Nehushtan may be a cultic-object etiology.
+- Serpent-on-standard is not a transforming staff.
+- Balaam donkey episode may be a later literary insertion, though final-form integration is strong.
+- route narrowing is literal travel obstruction, not a world-throat.
+- repeated seven altars are divinatory/cultic, not gate nodes.
+- star/sceptre imagery is royal-prophetic.
+- spear violence is not evidence of a benign structural mechanism.
+
+### Number / pair register
+
+- Balaam road obstructions: **3**.
+- donkey beatings: **3**.
+- major curse/blessing attempts summarized by Balak: **3**.
+- repeated altars per site: **7**.
+- bulls per site: **7**.
+- rams per site: **7**.
+- Phinehas weapon: **1 spear** through **2 people**.
+- Peor plague deaths: **24,000**.
+- bronze healing sign: **1 serpent image + 1 standard**.
+
+### Sources logged
+
+Primary:
+- Numbers 21–25, Sefaria.
+
+Scholarly/source-critical:
+- “Nehushtan, the Copper Serpent: Its Origins and Fate,” TheTorah.
+- “Preparing for Sinai: God and Israel Test Each Other,” on `nes` as standard/banner.
+- Raanan Eichler, “Aaron's Flowering Staff: A Priestly Asherah?” for comparison of staff/serpent cult-object etiologies.
+- “The Account of Balaam's Donkey: A Late Polemical Burlesque,” presenting the secondary-insertion model.
+- Clinton J. Moyer, “Who Is the Prophet, and Who the Ass?” for final-form role-reversal integration.
+- modern scholarship on the Balaam/Deir Alla tradition.
+
+**Section 25 remains in progress.**  
+Next under anti-repeat protocol: **Numbers 26–36 — second census and generational replacement, Zelophehad's five daughters and inheritance route, Joshua succession by hand/commission, east-Jordan/west-Jordan tribal split with armed crossing and return, Midian war purification, 42+6 Levitical/refuge cities, refuge-city boundary/time rules, territorial boundaries and the final journey/camp list.**
+
