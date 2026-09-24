@@ -124881,3 +124881,1380 @@ Priority:
 - create one integrated Psalm transformation timeline;
 - extract strongest Vardath matches and strongest controls/mismatches;
 - close Section 45 only after Psalm 151 and gap audit are complete.
+
+
+---
+
+# SECTION 45 progress H — final Psalter gap audit + Psalm 151 + integrated geometry timeline
+## The audit does not reveal a missing eighth mechanism family: the remaining high-value Psalms strengthen mechanisms already established. Psalm 151 does add one necessary Ethiopian/Septuagintal transformation: the smallest shepherd is selected over taller brothers, drawn from the flock, anointed and elevated, then reverses the giant-enemy relation by using the opponent's own sword. The complete Psalter now yields a coherent transformation grammar—centre/periphery, upper/lower, water boundary, temporary route, gate state, rod/authority, pit/extraction, breath/word field switching, tree/body expansion, memory cycles—but still never states the full Vardath two-strand finger-trap/world-turn mechanism.
+
+This pass closes **Section 45 — Psalms** only after:
+1. checking likely motif gaps;
+2. integrating **Psalm 151**, required by the Septuagint/Ethiopic Psalter;
+3. constructing one cross-family Psalmic process map;
+4. identifying the strongest Vardath correspondences;
+5. retaining the strongest mismatches/negative controls.
+
+---
+
+# Final gap audit — Psalm 1 does not create a new family, but it strengthens the tree + water + time mechanism
+
+Psalm 1 gives:
+
+**person/righteous way**
+→ tree planted by **streams of water**
+→ fruit in **season**
+→ leaf does not wither.
+
+Opposite state:
+
+**wicked**
+→ chaff
+→ **wind carries away**.
+
+This is a compact three-variable system:
+
+- source connection: water;
+- timed output: season;
+- structural stability: leaf remains.
+
+Opposed state:
+- no rooted connection;
+- wind dispersal;
+- no stable standing.
+
+This strongly reinforces:
+- Job 14 root + water → regeneration;
+- Psalm 80 vine/root/branches;
+- Psalm 104 routed water/ecological stability;
+- Psalm 147 word/wind/water state changes.
+
+It does **not** require a separate Section 45I.
+
+---
+
+# Psalm 1 also provides a two-path introduction to the whole Psalter
+
+The opening opposition is:
+
+**way/path of righteous**
+↔
+**way/path of wicked**.
+
+One:
+watched/known
+→ stable/tree-like.
+
+The other:
+perishes
+→ chaff-like.
+
+This anticipates the later:
+- gate;
+- road;
+- ascent;
+- trap;
+- pilgrimage;
+- right path;
+- trackless waste
+families.
+
+Thus the Psalter begins with **route selection**.
+
+That is structurally important for the entire collection.
+
+---
+
+# Psalm 23 — rod/staff, water and valley all fit previously established route-support logic
+
+Psalm 23 gives:
+
+**green pasture**
+→ **waters of rest**
+→ restoration
+→ **right paths**
+→ dark valley
+→ **rod + staff**
+→ table/anointing
+→ house/dwelling.
+
+This is a complete guided-route sequence.
+
+The rod/staff do not function as a cosmic axis.
+
+Their immediate source function is:
+**shepherd guidance/protection**.
+
+Therefore Psalm 23 strengthens:
+- Section 45B route-to-centre;
+- Section 45C rod-as-operator/control;
+- Section 45D walking/restoration;
+without introducing a new mechanism.
+
+---
+
+# Psalm 23 is a useful rod control against over-reading every staff as world-axis
+
+The rod/staff are significant because they change the traveller's safety/state.
+
+But the source context is ordinary shepherd metaphor.
+
+This gives a strong rule:
+
+> A rod can be a process-control object without being a literal sky connector.
+
+Keep this beside:
+- Moses rod;
+- royal sceptre;
+- Esther golden sceptre;
+- later prophetic staffs.
+
+---
+
+# Psalm 65 — centre-fed water becomes distributed fertility
+
+Psalm 65 gives:
+
+**Zion / prayer-centre**
+→ divine visitation of earth
+→ “river of God” full of water
+→ furrows watered
+→ ridges settled/softened
+→ grain
+→ pasture
+→ hills/meadows/valleys become productive.
+
+This is an excellent **centre → distributed water/fertility** model.
+
+But it fits the already established:
+- Psalm 104 water-routing;
+- Psalm 84 spring-route;
+- Psalm 133 downward blessing;
+- Psalm 147 thaw/flow
+family.
+
+---
+
+# Psalm 65 — year is “crowned” by hydrological abundance
+
+The Psalm says:
+**year**
+→ crowned with bounty.
+
+This is seasonal-cycle language.
+
+Again:
+ordinary annual cycle,
+not long catastrophe recurrence.
+
+It therefore strengthens Section 45G rather than requiring a new timing family.
+
+---
+
+# Psalm 82 — divine council adds an upper judicial network, but not a new gate mechanism
+
+Psalm 82 begins:
+
+**God**
+→ stands/takes place in divine council
+→ judges “gods.”
+
+Then:
+failure of justice / walking in darkness
+→ **foundations of earth shaken**.
+
+Finally:
+the divine/council figures
+→ die/fall like mortals/princes.
+
+This is a strong upper-governance ↔ lower-world-effect structure.
+
+It parallels:
+- Job 1–2 heavenly council;
+- royal throne/operator Psalms;
+- upper witness/legal topology.
+
+But no route between council and earth is narrated here.
+
+So it strengthens:
+**upper decision network / lower state**
+without adding a new physical world-transition process.
+
+---
+
+# Psalm 82 — ethical failure and structural shaking are deliberately juxtaposed
+
+The Psalm places:
+
+**failed justice / no understanding / darkness**
+beside
+**earth foundations shaken**.
+
+This may be theological metaphor:
+social disorder
+→ cosmic-order language.
+
+It is useful because it shows the Psalter often projects:
+**social state**
+onto
+**world structure**.
+
+That is another control against automatically reading structural language as geophysical observation.
+
+---
+
+# Psalm 137 — exile proves centre can persist as memory when physical access is broken
+
+By Babylon's rivers:
+
+- exiles sit;
+- remember Zion;
+- weep;
+- hang instruments on trees;
+- refuse Zion song as captors' entertainment.
+
+Physical topology:
+
+**people**
+far from
+**Zion centre**.
+
+Information topology:
+
+**Zion**
+remains dominant internal centre through memory.
+
+This is a clean:
+**metric separation ≠ relational severance**
+example.
+
+---
+
+# Psalm 137 — forgetting the centre is mapped onto body-function loss
+
+The self-curse says:
+
+if Jerusalem forgotten
+→ **right hand loses function**
+and
+→ **tongue loses function**.
+
+That is extraordinary under the body/information protocol.
+
+Memory of centre is tied to:
+- instrumental hand;
+- singing tongue.
+
+So:
+
+**memory-state**
+→ controls
+**operator/signal body functions**.
+
+This bridges:
+Section 45E sound/voice
++
+Section 45F body grammar
++
+Section 45G memory.
+
+Still no new separate family is required.
+
+---
+
+# Psalm 137 — violent ending is ethical/historical memory, not process geometry to normalize
+
+The final retaliatory violence belongs to:
+- trauma;
+- exile;
+- ancient war vengeance rhetoric.
+
+It should not be converted into a neutral mechanical “reset” motif.
+
+This remains an important ethical control in any geometry abstraction.
+
+---
+
+# Gap-audit conclusion
+
+The high-value missed candidates resolve into already established families:
+
+### Psalm 1
+tree / water / route / season.
+
+### Psalm 23
+route / rod / water / valley / dwelling.
+
+### Psalm 65
+centre / river / annual fertility.
+
+### Psalm 82
+upper council / lower foundations / social-cosmic projection.
+
+### Psalm 137
+remote centre / memory / hand-tongue function.
+
+Therefore the seven main Psalm-process families already developed are sufficient:
+- 45A storm/water/dragon/world-shaking;
+- 45B mountain/Zion/gate/ascent-centre;
+- 45C rod/sceptre/king/hand/enthronement;
+- 45D pit/Sheol/descent/extraction;
+- 45E word/breath/voice/sound field-control;
+- 45F body/animal/tree/Squatter-Man screening;
+- 45G time/cycle/memory.
+
+No missing eighth family is required before closing Psalms.
+
+---
+
+# Psalm 151 — mandatory Ethiopic/Septuagintal control
+
+The Ethiopian Psalter does **not** simply end with the Western 150-Psalm collection.
+
+Ethiopic manuscripts include **Psalm 151**.
+
+Manuscript evidence and Ethiopian Psalter scholarship confirm:
+- Greek/Septuagint numbering governs the Ethiopic Psalter;
+- Psalm 151 appears in Ge'ez Psalters;
+- at least some Ethiopian witnesses preserve the **short form** corresponding closely to the Greek tradition;
+- Psalm 151 has a distinctive Ethiopian reception history, including use in royal/coronation context.
+
+Therefore Psalm 151 must be included in this Section 45 rather than treated as optional Western apocrypha.
+
+---
+
+# Psalm 151 textual history — Greek short form and Hebrew Qumran forms must be separated
+
+Psalm 151 has unusually important textual history.
+
+The Greek Septuagint gives one short Psalm 151.
+
+The Cave 11 Psalms Scroll from Qumran preserves:
+- **Psalm 151A**;
+- a fragmentary **Psalm 151B**.
+
+Scholars disagree about the exact developmental relation between:
+- Qumran Hebrew forms;
+- the Greek combined/shortened recension.
+
+The safest source-control statement is:
+
+> The Greek Psalm 151 and Hebrew 151A/151B represent related but non-identical textual forms. The Greek should not simply be described as a word-for-word translation of the surviving Qumran text.
+
+For the Ethiopian corpus:
+the short Greek-related form is especially important,
+while the Hebrew witnesses preserve additional comparative evidence.
+
+---
+
+# Greek/Ethiopic Psalm 151 — smallest figure begins at outer pastoral margin
+
+The Greek/NRSVUE sequence begins:
+
+David:
+- **small among brothers**;
+- **youngest** in father's house;
+- tends sheep.
+
+This establishes a low-status / peripheral starting state.
+
+He is:
+**not court centre**
+and
+**not visually dominant family member**.
+
+He occupies:
+**field / flock / youngest / small**.
+
+---
+
+# Hands and fingers first operate as music-makers
+
+David says:
+
+**hands**
+→ make harp.
+
+**fingers**
+→ fashion lyre.
+
+This is important because the Psalm's same protagonist later becomes warrior.
+
+So his operator-body begins as:
+
+**hand/fingers**
+→ music / ordered sound.
+
+Later:
+**hand**
+→ enemy weapon.
+
+This produces a notable:
+**music operator → combat operator**
+state transition.
+
+---
+
+# Hidden merit has no obvious human witness
+
+The Greek form asks:
+**who will tell my Lord?**
+
+Then answers:
+**the Lord himself hears**.
+
+The fuller Hebrew/Qumran 151A contains difficult lines involving:
+- mountains;
+- hills;
+- trees;
+- flock;
+- who can tell/proclaim.
+
+The textual syntax is disputed enough that we should **not** state as secure fact:
+“David's music literally causes mountains and trees to move.”
+
+That interpretation has appeared in scholarly discussion, including debate about alleged “Orphic” imagery.
+
+Other scholars reject that reading.
+
+Therefore:
+**nature-witness/music-field idea = low confidence / disputed**.
+
+---
+
+# The selection event is a vertical/status inversion
+
+God sends:
+**messenger / prophet**
+→ takes David **from the sheep**
+→ anoints him.
+
+His brothers are:
+- handsome;
+- tall.
+
+But:
+**not selected**.
+
+David is:
+- small;
+- youngest.
+
+But:
+**selected**.
+
+This is an exceptionally clean inversion:
+
+**visually high/tall**
+→ passed over.
+
+**visually low/small**
+→ raised.
+
+This belongs directly in the pair/polarity register.
+
+---
+
+# David / tall brothers — P3/P4 selection-state pair
+
+### Brothers
+high appearance
+→ not chosen.
+
+### David
+low appearance/status
+→ anointed / raised.
+
+Classification:
+- **P2 polarity pair: strong** — tall/high-status appearance vs small/low-status;
+- **P3 state contrast: strong**;
+- **P4 successor/selection transfer: moderate**, because the role is conferred on one among siblings;
+- **P9 literary inversion: very strong**;
+- **P10 separate persons: secure**.
+
+No evidence they are one hidden person.
+
+The important process is:
+**selection inverts expected vertical status**.
+
+---
+
+# Shepherd → anointed ruler is another centre-transfer
+
+The fuller Hebrew 151A makes the endpoint especially clear:
+David is made:
+- leader;
+- ruler over covenant people.
+
+So:
+
+**field/periphery**
+→ messenger reaches
+→ anointing
+→ **centre/operator role**.
+
+This strongly echoes:
+- Psalm 2 king installed;
+- Psalm 89 hand/horn strengthened;
+- Psalm 132 horn/lamp continuity.
+
+Psalm 151 therefore acts almost like an autobiographical origin story for the royal-axis family.
+
+---
+
+# David / Goliath — small/large adversarial pair becomes a reversal through weapon transfer
+
+The Greek Psalm continues:
+
+David
+→ goes out to meet foreigner/Philistine.
+
+Goliath
+→ curses by idols.
+
+Then David:
+→ draws **Goliath's own sword**
+→ beheads him
+→ removes Israel's disgrace.
+
+This is mechanically significant.
+
+The victory object originates with the enemy.
+
+Process:
+
+**enemy weapon**
+→ transferred into David's control
+→ direction/function reverses
+→ weapon returns against original owner.
+
+This is a strong **reversal carrier**.
+
+Compare:
+- Haman's execution pole prepared for Mordecai → Haman receives it;
+- later biblical “enemy device turns back” motifs.
+
+---
+
+# David / Goliath pair test
+
+### David
+small / youngest / shepherd / chosen.
+
+### Goliath
+the great foreign warrior in the source story behind the Psalm.
+
+The Psalm therefore culminates the earlier low/high inversion in combat.
+
+Classification:
+- **P2 polarity: very strong**;
+- **P6 rival/double: very strong**;
+- **P9 conventional hero-vs-giant literary pattern: strong**;
+- **P10 separate figures: secure**.
+
+Squatter-Man significance:
+low.
+
+The pair is about:
+**status/scale inversion**
+rather than
+**two sides of one body geometry**.
+
+---
+
+# Psalm 151 — small body defeats large body by control inversion, not matching force
+
+The mechanism is not:
+
+small figure becomes physically as large.
+
+It is:
+
+**selection**
++
+**operator competence**
++
+**weapon reversal**
+→ large opponent falls.
+
+This reinforces a recurring corpus principle:
+
+> A lower/smaller node can become systemically dominant if control/authority changes, even without geometric growth.
+
+That is highly relevant to:
+- Joseph;
+- Davidic kingship;
+- Esther;
+- Mordecai;
+- Daniel/Judith;
+- other low→high reversals.
+
+---
+
+# Ethiopic Psalm 151 control
+
+Steve Delamarter's specific work on:
+**11Q5 and the textual history of Ethiopic Psalm 151**
+is especially important here.
+
+The Ethiopic reception appears to remember David not only as:
+- shepherd;
+- musician;
+but also as:
+- **anointed warrior**.
+
+That makes Psalm 151 unusually well suited to the project's process approach:
+the same figure changes role while continuity of identity remains.
+
+Do not treat the Ethiopic text as a frozen copy of either one Qumran or one modern Greek edition.
+The Ethiopic tradition has its own transmission history.
+
+---
+
+# Psalm 151 continuous process timeline
+
+## Phase 1 — lowest family position
+
+youngest/smallest
+→ outside with flock.
+
+---
+
+## Phase 2 — hands create ordered sound
+
+hands/fingers
+→ instrument/music.
+
+---
+
+## Phase 3 — human recognition is absent/uncertain
+
+no obvious witness
+→ divine hearing remains.
+
+---
+
+## Phase 4 — centre sends messenger outward
+
+messenger/prophet
+→ reaches field.
+
+---
+
+## Phase 5 — peripheral figure is extracted
+
+David
+→ taken from sheep.
+
+---
+
+## Phase 6 — oil changes role-state
+
+anointing
+→ low shepherd
+becomes
+chosen operator.
+
+---
+
+## Phase 7 — expected tall candidates are rejected
+
+high appearance
+→ no selection.
+
+---
+
+## Phase 8 — selected small figure confronts larger hostile pole
+
+David
+↔
+Goliath.
+
+---
+
+## Phase 9 — enemy's control-object changes hands
+
+Goliath sword
+→ David.
+
+---
+
+## Phase 10 — direction reverses
+
+enemy weapon
+→ acts against enemy.
+
+---
+
+## Phase 11 — local victory changes group state
+
+disgrace
+→ removed from Israel.
+
+---
+
+# Psalm 151 contribution to Vardath timeline
+
+1. Low/small → high/selected is explicit.
+2. Centre sends a messenger to retrieve the peripheral figure.
+3. Anointing is the threshold object/state-change event.
+4. Hands/fingers shift from musical creation to combat control across the story.
+5. The tall/visually dominant figures are rejected.
+6. The smaller figure becomes the systemically dominant operator.
+7. The enemy's own weapon becomes the reversal carrier.
+8. This is a powerful **state inversion** but a weak physical lattice analogue.
+9. The Qumran nature/music lines are too textually disputed to use as strong environmental-response evidence.
+10. Psalm 151 adds no new world-gate mechanism, but it strongly reinforces the low↔high / outsider→centre / control-reversal grammar.
+
+---
+
+# Integrated Psalter geometry — strongest recurring mechanism families
+
+After the gap audit and Psalm 151, the Psalter's most persistent transformation grammar can be summarized without forcing every Psalm into one event.
+
+---
+
+## I. Stable world / centre begins inside boundaries
+
+Examples:
+- earth founded / waters bounded;
+- Zion stable;
+- city/ramparts;
+- tree rooted by water;
+- individual on rock/path.
+
+Core process:
+**stability = correct relationship between centre, support, boundary and flow.**
+
+---
+
+## II. An upper or external field activates
+
+Examples:
+- storm;
+- thunder;
+- voice;
+- word;
+- divine hand;
+- wind/breath;
+- hostile army;
+- water rise.
+
+Core process:
+**disturbance often begins outside the local centre.**
+
+---
+
+## III. Multiple media respond together
+
+Examples:
+- atmosphere;
+- sea;
+- deep;
+- earth;
+- mountain;
+- trees;
+- body.
+
+Strongest Psalms:
+18, 29, 46, 77, 97, 104.
+
+Core process:
+**event is coupled, not single-domain.**
+
+---
+
+## IV. Support/boundary conditions change
+
+Examples:
+- earth/foundations exposed;
+- pillars tremble;
+- gates open;
+- roads close;
+- hedge removed;
+- pit threatens to seal;
+- water receives boundary;
+- tree root loses/receives source.
+
+Core process:
+**state change often appears first as topology/support change.**
+
+---
+
+## V. Temporary routes may appear
+
+Strongest:
+Psalm 77:
+**path through sea**
+with
+**no visible footprints**.
+
+Related:
+Psalm 18 extraction through deep waters;
+Psalm 114 sea/river reversal;
+ascent routes to Zion.
+
+Core process:
+**barrier becomes temporarily traversable.**
+
+---
+
+## VI. Central operator / axis organizes the field
+
+Examples:
+- Zion;
+- holy mountain;
+- throne;
+- king/anointed;
+- sceptre/rod;
+- right hand;
+- temple;
+- great vine;
+- right-hand man.
+
+Core process:
+**distributed field becomes organized around a privileged centre.**
+
+---
+
+## VII. Up/down reciprocity appears repeatedly
+
+Examples:
+- human ascent → Zion;
+- blessing/oil/dew descends;
+- pit → extraction upward;
+- hand from above → person below;
+- Psalm 69 water rises while body sinks;
+- storm upper field → lower earth/water response.
+
+Core process:
+**vertical exchange is real and frequent.**
+
+But:
+no explicit counter-wound two-strand braid.
+
+---
+
+## VIII. The body/tree supplies process geometry
+
+Examples:
+- hand/arm = transfer/force;
+- mouth/voice = release;
+- feet = support/rule;
+- wings = protection/mobility;
+- horn = elevated strength;
+- root/branch = continuity;
+- Psalm 80 vine = large spanning organism;
+- Psalm 139 body = woven in hidden depth.
+
+Core process:
+**body grammar converts invisible relations into understandable motion/structure.**
+
+---
+
+## IX. Information can act like a moving force
+
+Examples:
+- word sent;
+- word runs;
+- light/truth sent;
+- decree/command;
+- remembered Zion;
+- generation-to-generation transmission.
+
+Core process:
+**information topology repeatedly controls material/social behavior.**
+
+---
+
+## X. Successful reset ends in stabilization, not endless motion
+
+Examples:
+- calm sea;
+- harbor;
+- rock under feet;
+- land of living;
+- Zion “resting place”;
+- no breach;
+- blessing/provision;
+- walking again.
+
+Core process:
+**event resolves when support, route and centre stabilize.**
+
+This strongly resembles the user's intuition that:
+**gate-open phase is transient**
+and
+**ordinary world-state resumes after closure**.
+
+The Psalmic text itself, however, does not identify that with world-turn adjacency.
+
+---
+
+# Integrated Psalm transformation chain
+
+The most economical Psalmic process chain is:
+
+**stable ordered field**
+→ **upper/external force activates**
+→ **water/earth/mountain/body respond**
+→ **supports/boundaries destabilize**
+→ **route or gate state changes**
+→ **central operator/hand/rod acts**
+→ **transfer/extraction/ascent occurs**
+→ **hostile/chaotic field is bounded or subdued**
+→ **water/flow becomes controlled**
+→ **support restored**
+→ **centre stabilized**
+→ **life/voice/movement restored**
+→ **memory/praise transmits new state to next generation**.
+
+This is not one Psalm.
+
+It is the best cross-Psalter composite process grammar.
+
+---
+
+# Strongest Psalmic matches to Vardath Cosmology
+
+## 1. Psalm 77 — temporary adjacency through water
+Best source-level analogue to:
+**normally blocked domain becomes traversable during event**.
+
+Strength:
+very high structural analogy.
+
+Mismatch:
+Exodus poetry; no world-turn statement.
+
+---
+
+## 2. Psalm 18 — coupled storm + foundation exposure + upper hand extraction
+Best compound event:
+upper activation
+→ earth/foundation response
+→ water exposure
+→ high-to-low hand
+→ extraction.
+
+Strength:
+very high effect-sequence analogy.
+
+Mismatch:
+divine-warrior rescue poetry.
+
+---
+
+## 3. Psalm 104 — water-boundary world stabilization
+Best:
+**world becomes habitable when water is routed and prevented from re-covering earth**.
+
+Strength:
+very high boundary/process analogy.
+
+Mismatch:
+creation hymn; no finger-trap/world gate.
+
+---
+
+## 4. Psalm 24 — state-dependent threshold + reciprocal approach
+Best:
+human ascends to centre;
+divine King enters gate.
+
+Strength:
+high adjacency/gate analogy.
+
+Mismatch:
+temple entrance liturgy.
+
+---
+
+## 5. Psalms 48 / 125 / 132 — stable central mountain/resting place
+Best:
+centre / mountain / perimeter / rest.
+
+Strength:
+high central-spire analogy.
+
+Mismatch:
+Zion theology.
+
+---
+
+## 6. Psalm 110 — throne/right-hand/footstool/sceptre axis
+Best:
+upper throne
+→ right-hand operator
+→ sceptre from Zion
+→ lower enemies.
+
+Strength:
+high vertical authority-axis analogy.
+
+Mismatch:
+royal enthronement language.
+
+---
+
+## 7. Psalm 80 — root/trunk/branch spanning field
+Best partial body/tree lattice:
+deep root
+→ land-filling growth
+→ branch Sea↔River.
+
+Strength:
+high Yggdrasil/tree-body analogy.
+
+Mismatch:
+Israel-vine metaphor; no weave or world connector.
+
+---
+
+## 8. Psalm 139 — body woven in hidden/deep-earth imagery
+Best direct:
+**weaving + body + depths of earth**.
+
+Strength:
+high motif convergence.
+
+Mismatch:
+embryonic formation metaphor, not sky lattice.
+
+---
+
+## 9. Psalm 147 — field state changed by mobile command
+Best:
+word runs
+→ freeze
+→ word/breath
+→ thaw/water flow.
+
+Strength:
+high operator/state-switch analogy.
+
+Mismatch:
+weather under divine command; no technological carrier stated.
+
+---
+
+## 10. Psalm 69 — opposed movement
+water rises
+while
+body sinks.
+
+Strength:
+strong local two-direction process.
+
+Mismatch:
+lament metaphor; no crossing weave.
+
+---
+
+## 11. Psalm 88 — necessary negative control
+pit/enclosure/darkness
+→ no narrated exit.
+
+Strength:
+very high falsification/control value.
+
+It prevents:
+**all pits = temporary gates**.
+
+---
+
+## 12. Psalm 151 — low/high selection + weapon reversal
+small shepherd
+→ anointed centre
+→ tall candidates bypassed
+→ enemy weapon reverses.
+
+Strength:
+high state-inversion analogy.
+
+Mismatch:
+heroic/royal narrative; no cosmological geometry.
+
+---
+
+# Strongest mismatches with Vardath Cosmology
+
+The gap audit makes these absences more important, not less.
+
+Across Psalms 1–151 there is **no explicit description of**:
+
+1. multiple inhabited disc-worlds stacked above/below one another;
+2. present world positioned physically between populated future/past world-turns;
+3. two counter-wound dragon/lattice strands separating up/down;
+4. those strands reconnecting in the middle as a woven finger-trap;
+5. the finger-trap contracting into a rod/Squatter-Man axis;
+6. a gate event making two populated time-worlds physically adjacent;
+7. material/people from future and past worlds entering the current world during that opening;
+8. a precise repeating long-cycle interval for such an event;
+9. acoustic frequency as proven physical cause of the gate;
+10. Leviathan/dragon consistently functioning as world-support lattice.
+
+This must remain in the record.
+
+The Psalms provide **process analogues**,
+not a complete encoded engineering diagram.
+
+---
+
+# Important internal controls established by the Psalms
+
+## Dragon is not one fixed function
+Psalm 74:
+hostile/defeated.
+
+Psalm 104:
+integrated creature.
+
+Therefore:
+**dragon ≠ automatically destructive lattice**.
+
+---
+
+## Water is not one fixed symbol
+Water:
+- threatens;
+- carries route;
+- is bounded;
+- nourishes;
+- erodes;
+- rises;
+- freezes;
+- melts;
+- becomes spring.
+
+Therefore:
+**effect depends on state/context**.
+
+---
+
+## Gate is not always portal mechanics
+Gate can be:
+- cultic access;
+- social boundary;
+- city defense;
+- post-rescue reintegration;
+- personified entrance.
+
+---
+
+## Rod is not always axis
+Rod can be:
+- shepherd tool;
+- royal sceptre;
+- operator/authority symbol.
+
+---
+
+## Pit is not always temporary
+Psalm 88 prevents automatic return assumption.
+
+---
+
+## Sound is not always causal
+Trumpet/shout can accompany action rather than cause it.
+
+---
+
+## Body is not one hidden giant
+Body parts are a normal poetic grammar for agency.
+
+---
+
+## Repetition is not always chronology
+Liturgical refrain and historical memory recurrence are not event periodicity.
+
+---
+
+# Psalter-level macrostructure control
+
+Modern scholarship increasingly treats the Psalter as more than a random anthology, but no single macrostructural model commands universal agreement.
+
+Commonly identified large-scale themes include:
+- Torah / path;
+- Davidic kingship;
+- Zion/temple;
+- lament;
+- collapse/restoration;
+- YHWH's kingship;
+- final praise.
+
+One influential canonical reading sees:
+Psalms 1–2
+→ programmatic tree/path + king/Zion opening;
+
+middle books
+→ royal/Zion crisis;
+
+later books
+→ renewed Zion/kingship/praise.
+
+This broad architecture is compatible with the process result found here:
+
+**stable ideal**
+→ disruption/lament
+→ re-centering
+→ restored praise.
+
+But the macrostructure itself is a literary/redactional phenomenon.
+
+Do not turn book arrangement directly into physical cosmic chronology.
+
+---
+
+# SECTION 45 integrated pair / polarity register
+
+## stable centre / unstable periphery
+Strong:
+Psalms 46, 48, 125.
+
+---
+
+## upper field / lower field
+Strong:
+Psalms 18, 29, 77, 104, 139.
+
+---
+
+## ascent / descent
+Strong:
+Psalms 24, 68, Songs of Ascents, 133, pit-rescue Psalms.
+
+---
+
+## rooted / uprooted
+Strong:
+Psalms 1, 80; Job cross-links.
+
+---
+
+## bounded water / overwhelming water
+Very strong:
+Psalms 18, 46, 69, 74, 77, 89, 93, 104, 107, 114.
+
+---
+
+## voice/word / material field
+Strong poetic causation:
+29, 33, 46, 104, 107, 147.
+
+---
+
+## king/operator / enemy underfoot
+Strong:
+2, 45, 89, 110, 132.
+
+---
+
+## remembered centre / physical distance
+Strong:
+42–43, 137.
+
+---
+
+## small/low / tall/high
+Strong in Psalm 151.
+
+---
+
+# Psalm 151 number / textual register
+
+- Psalm number **151** is conventional within the Greek/Ethiopic extended Psalter.
+- Greek title says it is **“outside the number”** of the 150.
+- Qumran witness preserves **151A + fragmentary 151B** rather than simply the Greek seven-verse form.
+- Greek short form has **7 verses** in modern numbering; do not map that seven to a cosmological seven without mechanism.
+- Ethiopian Psalters can preserve the **short form**.
+- No timing cycle is encoded in Psalm 151.
+
+---
+
+# SECTION 45 final sources added in gap audit
+
+Primary:
+- Psalm 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+1&version=NRSVUE
+- Psalm 23 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+23&version=NRSVUE
+- Psalm 65 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+65&version=NRSVUE
+- Psalm 82 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+82&version=NRSVUE
+- Psalm 137 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+137&version=NRSVUE
+- Psalm 151 NRSVUE / Septuagintal form:
+  https://www.biblegateway.com/passage/?search=Psalm+151+1&version=NRSVUE
+
+Psalm 151 textual history:
+- Mika S. Pajunen, **“Psalms 151–155,” Oxford Handbook** (2021), on Hebrew/Greek textual forms and wider non-MT Psalm collections.
+- John Strugnell, **“Notes on the Text and Transmission of the Apocryphal Psalms 151, 154 (= Syr. II) and 155 (= Syr. III),” Harvard Theological Review** 59 (1966).
+- Michael Segal, **“The Literary Development of Psalm 151: A New Look at the Septuagint Version,” Textus** 21 (2002).
+- Mark S. Smith, **“How to Write a Poem: The Case of Psalm 151A (11QPsᵃ 28.3–12)”**.
+- Steve Delamarter, **“The Cave 11 Psalm Scroll (11Q5) and the Textual History of Ethiopic Psalm 151: Memory and Interpretation of David as Anointed Warrior”** (2015).
+- J. Bjornar Storfjell, work on the chiastic structure and debated interpretation of 11QPsᵃ Psalm 151.
+
+Ethiopic manuscript controls:
+- Yale Beinecke Ethiopic Psalter **Ethiopic MSS 26**, catalogue explicitly noting:
+  **“Psalm 151 contains the short version.”**
+- modern Ethiopian Psalter manuscript descriptions documenting:
+  Septuagint numbering
+  + additional Psalm 151.
+- Textual History of the Ethiopic Old Testament / Psalms high-resolution manuscript work.
+
+Gap audit / whole-Psalter:
+- modern sanctuary/Zion macrostructural studies linking tree/water, path, Zion and final sanctuary/praise motifs.
+- modern Psalter macrostructure research emphasizing kingship, Zion, Torah/path and supplication/restoration, while retaining scholarly disagreement over one total design.
+
+---
+
+# SECTION 45 — PSALMS COMPLETE
+
+### Full transformation grammar recovered from Psalms
+
+**rooted/stable life**
+→ external/upper activation
+→ storm/voice/water/hostile field
+→ supports/boundaries destabilize
+→ centre/periphery relation changes
+→ gate/path may open or close
+→ operator/hand/rod/word acts
+→ descent or transfer occurs
+→ extraction/ascent/reversal may occur
+→ water/flow becomes bounded
+→ rock/Zion/resting place stabilizes
+→ life/movement/voice returns
+→ blessing moves outward
+→ memory carries the event into the next generation.
+
+### Best Vardath-correspondence sentence after the full audit
+
+> The Psalter does not contain the complete Vardath world-turn mechanism, but it repeatedly preserves the same *process grammar* the model is testing for: a stable centre surrounded by bounded flows; an upper/external disturbance coupling atmosphere, water and solid world; support/boundary failure; temporary paths or threshold changes; vertical hand/rod/operator action; descent/ascent reversal; re-bounding of water; restoration of stable support; and later transmission of the event through memory, song and ritual.
+
+### Strongest caution after the full audit
+
+> These are poetic, liturgical, royal, wisdom and mythic structures with known ancient literary contexts. Their structural convergence justifies continued comparison, but the Psalms alone do not demonstrate a literal finger-trap lattice, populated time-world exchange, or a dated recurrence schedule.
+
+---
+
+# Next roadmap section
+
+**SECTION 46 — Proverbs + Tegsats / Reproof**
+
+Roadmap priorities:
+- Tree of Life;
+- Wisdom personified;
+- two paths;
+- Woman Wisdom / Woman Folly;
+- gates;
+- depths;
+- pillars of house;
+- Proverbs 25–31 / Tegsats counting issue.
+
+Priority pair tests:
+- **Wisdom / Folly** as polarity figures;
+- **two paths**;
+- house/pillars/gates/depths as possible structural field;
+- determine whether Ethiopian **Tegsats/Reproof** should be treated as a separate textual unit beside Proverbs rather than silently equated with a Western Proverbs division.
