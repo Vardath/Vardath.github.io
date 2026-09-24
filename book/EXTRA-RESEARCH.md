@@ -39868,3 +39868,493 @@ Scholarly/source-critical:
 Next under anti-repeat protocol:
 **Joshua 6–8 — Jericho's 7-day/7-priest/7-trumpet circuit, ark at moving centre, wall collapse, Rahab enclosure survival, Achan hidden devoted cargo and community-wide failure, lots/sorting, Ai reversal/ambush, and Gerizim/Ebal enactment with written Torah.**
 
+## SECTION 27 progress B — Joshua 6–8: 6→7→7 circuit clock, marked-house survival fulfilled, hidden cargo contaminates the whole system, narrowing lots, and Gerizim/Ebal enacted
+
+### Anti-repeat check
+
+Section 27A is saved.  
+No Joshua 6–8 progress exists later in the ledger.  
+Continuing only from the Jordan/Gilgal checkpoint.
+
+---
+
+## Joshua 6 — Jericho is treated as a timed encirclement system
+
+The prescribed sequence is unusually exact:
+
+**days 1–6**
+- one circuit around the city per day.
+
+**day 7**
+- **7 circuits**.
+
+The moving formation includes:
+- armed guard;
+- **7 priests**;
+- **7 ram-horn trumpets**;
+- ark;
+- rear guard.
+
+This gives a repeated ordered ring around one central target.
+
+### The ritual has a 6 → 7 → 7 structure
+
+Raw clock:
+
+**6 days × 1 circuit**
+→ **day 7 × 7 circuits**
+→ long horn blast
+→ mass shout
+→ wall collapse.
+
+This is one of the most explicit timed action sequences yet in the conquest material.
+
+Do not assume it encodes a physical 6/7 gate cycle.
+The source meaning is ritualized siege/theological warfare.
+
+### Ark is a moving centre inside the encircling formation
+
+Unlike the Jordan:
+- where ark/priest group stood still in the middle of the river,
+
+at Jericho:
+- the ark moves with the procession;
+- priests and trumpets are positioned in relation to it.
+
+So the same sacred object changes operational mode:
+
+**Jordan**
+→ stationary crossing centre.
+
+**Jericho**
+→ mobile centre inside a circulating formation.
+
+This is an excellent source-level example of:
+**same object / different system role by phase**.
+
+### Seven priests / seven trumpets form a synchronized signal layer
+
+The priests:
+- carry seven horns;
+- sound them while circuit continues.
+
+The final long blast:
+- functions as a trigger;
+- population then shouts.
+
+Thus the wall event is preceded by an explicit **signal cascade**:
+
+**ritual time complete**
+→ horn signal
+→ collective sound response
+→ wall collapse.
+
+This resembles Numbers 10's trumpet-control logic at a narrative/ritual level.
+
+It is acoustic signaling, not evidence that sound physically destroyed Jericho.
+
+### Archaeological/historical control
+
+The Jericho conquest story has long been debated archaeologically.
+
+The biblical account should not be treated as a direct engineering report of wall failure.
+
+For this project:
+preserve the literary sequence and geometry,
+not an unsupported physical mechanism for the collapse.
+
+---
+
+## Rahab's marked enclosure survives exactly as promised
+
+The two spies are sent to:
+- Rahab's house;
+- bring out Rahab;
+- family;
+- all belonging to her.
+
+Thus the earlier scarlet-cord / stay-inside rule is fulfilled.
+
+The final contrast is:
+
+**city system**
+→ destroyed.
+
+**one marked household**
+→ extracted alive.
+
+This is a very strong recurring biblical pattern:
+**localized protected enclosure inside a larger doomed environment**.
+
+### Marked boundary survives while surrounding wall fails
+
+Rahab's house is associated with the city wall,
+yet her household survives the city's destruction in the story.
+
+So the protection logic is **selective**, not simply:
+“all wall structures collapse identically.”
+
+For Vardath comparison:
+this is a strong **cargo/enclosure selection** motif.
+
+It remains a literary salvation story,
+not proof of a physical shielding mechanism.
+
+---
+
+## Jericho's devoted property creates a sorting rule
+
+Joshua distinguishes:
+- people/living city under destruction;
+- silver/gold/bronze/iron reserved for YHWH's treasury;
+- Rahab household spared.
+
+So Jericho is not processed through one uniform route.
+
+The city is **sorted**.
+
+This continues the mature project rule:
+**catastrophe does not imply identical treatment of all cargo/material**.
+
+---
+
+## Joshua 7 — one hidden object's route alters the state of the whole population
+
+Achan secretly takes:
+- a Shinar/Babylonian mantle;
+- **200 shekels of silver**;
+- a gold bar/wedge of **50 shekels**.
+
+He hides them:
+- in the ground;
+- inside his tent;
+- silver beneath.
+
+This is a literal **hidden cargo inside a household enclosure**.
+
+### One local hidden state produces a collective system effect
+
+Although one person takes the prohibited goods,
+the narrative says:
+**Israel has sinned / violated the devoted thing**.
+
+Then:
+- Israel attacks Ai;
+- is defeated;
+- about **36 men** die;
+- collective morale collapses.
+
+This is one of the strongest **local fault → system-wide consequence** stories in the Bible.
+
+For Vardath:
+it is useful as a systems analogy:
+one hidden node can change global operating state.
+
+It is covenant theology,
+not evidence of literal energetic contamination.
+
+### Same route that should work now fails because system state is wrong
+
+Before Achan is identified:
+- Israel's military route toward Ai fails.
+
+The problem is not presented as:
+- terrain changed;
+- enemy route inaccessible.
+
+Instead:
+**internal hidden state**
+makes the whole group unable to stand.
+
+Again:
+**external route alone is insufficient**.
+
+### Achan identification narrows step by step
+
+The selection process moves through nested categories:
+
+**Israel**
+→ tribe
+→ clan
+→ household
+→ individual.
+
+This is a precise **broad → narrow** identification algorithm.
+
+The hidden fault is localized by progressive partitioning.
+
+That is highly relevant to the project's convergence logic,
+though here it is judicial lot-selection.
+
+### Hidden cargo is excavated and brought to the centre
+
+Messengers:
+- run to tent;
+- find goods hidden;
+- bring them out;
+- spread/place them before YHWH/Joshua.
+
+So the process becomes:
+
+**hidden private cargo**
+→ exposed
+→ removed from household
+→ brought to central public node.
+
+This reverses concealment.
+
+### The Achan story presents collective responsibility in extreme form
+
+Modern interpretation has long wrestled with:
+- one person's act;
+- community-wide punishment;
+- Achan's household/family destruction in final narrative.
+
+This is ethically and compositionally difficult.
+
+For our structural mapping,
+record only:
+**local violation is narrated as whole-system contamination**.
+
+Do not endorse collective punishment as a general principle.
+
+### Valley-of-Achor heap becomes material memory
+
+After judgment:
+- a great heap of stones is raised over Achan.
+
+Again:
+event becomes **landscape memory**.
+
+Compare:
+- Jordan stones;
+- altar plating;
+- preserved rod;
+- Deuteronomic plastered stones.
+
+The Bible repeatedly externalizes narrative memory into durable material markers.
+
+---
+
+## Joshua 8 — Ai victory uses a deliberately split force
+
+For the second Ai operation:
+- one force approaches visibly;
+- an ambush force hides behind the city.
+
+The visible group:
+- retreats/flees deliberately;
+- draws defenders outward.
+
+The hidden group:
+- enters city from rear;
+- burns it.
+
+This is a strong **two-component tactical system**:
+
+**visible moving component**
+↔
+**hidden stationary component**.
+
+The two roles are complementary,
+not duplicate.
+
+### Apparent retreat is a state inversion used as signal
+
+Joshua and visible force reproduce:
+- the earlier failure-looking movement,
+but now intentionally.
+
+So:
+**same visible behavior**
+can mean different things by plan/state.
+
+Earlier:
+retreat = actual defeat.
+
+Now:
+retreat = deliberate lure.
+
+This is another critical project control:
+**appearance alone does not identify system state**.
+
+### Joshua's raised weapon/hand functions as operation signal
+
+Joshua extends:
+- javelin/spear in hand toward Ai;
+- keeps it extended during the operation in the final narrative.
+
+This strongly recalls:
+- Moses' raised hand/staff during Amalek;
+- rod/hand as visible coordination signal.
+
+Again:
+operator body + extended implement becomes **macro-operation signal**.
+
+Do not infer hidden energetic mechanics.
+
+---
+
+## Joshua 8 enacts the Deuteronomic Gerizim/Ebal polarity
+
+After the military episode,
+Joshua:
+- builds altar at the named mountain in the Masoretic tradition;
+- writes/copies Torah on stones;
+- gathers Israel;
+- places half before Gerizim;
+- half before Ebal;
+- reads blessing and curse.
+
+This is direct fulfilment of Deuteronomy 27 in the final Deuteronomistic narrative.
+
+### Twelvefold collective again becomes two halves across paired mountains
+
+Joshua 8 says:
+- half the people toward one mountain;
+- half toward the other.
+
+The precise tribal 6+6 list comes from Deuteronomy 27.
+
+So the final canonical sequence is:
+
+**12-part people**
+→ cross Jordan
+→ **6 + 6 polarity**
+→ Torah read across the paired landscape.
+
+This is one of the clearest **projected bilateral collective-body** scenes yet.
+
+### Ark / priests occupy the central ritual relationship
+
+The assembly stands:
+- around/in relation to ark;
+- priests/Levites;
+- two mountains.
+
+This creates a broad geometry:
+
+**Gerizim / blessing side**
+← **ark / priestly covenant centre** →
+**Ebal / curse side**.
+
+This is extremely relevant to the project.
+
+But it is covenant liturgy,
+not a literal cosmic machine.
+
+### Textual-site control remains
+
+As already logged:
+- Masoretic tradition points to Ebal for altar;
+- Samaritan tradition points to Gerizim;
+- early textual evidence complicates priority.
+
+Joshua's final form follows the received Deuteronomic geography in its own textual tradition.
+
+So again:
+**paired system stable**
+while
+**specific central cult site can vary across textual traditions**.
+
+---
+
+## SECTION 27B continuous sequence — Joshua 6–8
+
+**Jericho clock**
+→ 6 days one circuit
+→ day7 seven circuits
+→ 7 priests /7 horns /ark procession
+→ long blast
+→ collective shout
+→ wall collapse
+
+**sorting**
+→ Rahab marked household extracted
+→ treasury materials reserved
+→ rest devoted/destroyed
+
+**hidden fault**
+→ Achan hides prohibited cargo
+→ one household fault attributed to whole system
+→ Ai route fails
+→ 36 die
+→ broad→narrow lot sequence
+→ tribe→clan→house→individual
+→ hidden cargo exposed
+→ public removal
+→ stone heap memory
+
+**operation reset**
+→ Ai attacked again
+→ visible force + hidden ambush
+→ intentional retreat
+→ Joshua's extended javelin signal
+→ city taken
+
+**covenant enactment**
+→ altar
+→ Torah on stones
+→ Israel divided across Gerizim/Ebal
+→ blessing/curse read
+→ Deuteronomic 6+6 polarity embodied in land.
+
+---
+
+## SECTION 27B strongest Vardath correspondences
+
+1. Jericho gives an explicit **6→7→7 timed cycle** around one bounded centre.
+2. Ark shifts from stationary river-centre to mobile circuit-centre.
+3. Seven horns create a clear synchronized control/signal layer.
+4. Rahab fulfils the **marked enclosure survives while surrounding system fails** pattern.
+5. Jericho cargo is explicitly sorted into different outcome routes.
+6. Achan gives a strong **local hidden state → whole-system failure** model.
+7. Achan localization is an exact **broad → narrow** partition sequence.
+8. Material memory is created again through a stone heap.
+9. Ai shows **same visible movement can encode opposite underlying state**: retreat can be failure or deliberate lure.
+10. A two-component force uses visible/front and hidden/rear roles.
+11. Joshua's extended weapon repeats operator-body + rod/spear signaling.
+12. Gerizim/Ebal finally becomes a full **bilateral landscape polarity around a covenant centre**.
+
+### Major controls
+
+- Jericho sequence is ritual/theological conquest narrative, not a physical resonance experiment.
+- archaeology does not justify assuming the wall-collapse mechanism in the story occurred literally as described.
+- Achan's communal punishment is ethical/theological narrative, not evidence of literal contamination.
+- lot selection is judicial divination, not a physical convergence process.
+- Ai tactics are ordinary military deception.
+- Ebal/Gerizim textual location remains disputed across traditions.
+
+### Pair / number register
+
+- Jericho ordinary circuits: **6 days ×1**.
+- final day: **day7 ×7 circuits**.
+- priests: **7**.
+- ram horns: **7**.
+- Achan silver: **200 shekels**.
+- Achan gold: **50 shekels**.
+- Ai first defeat deaths: about **36**.
+- Achan narrowing: nation → tribe → clan → household → individual.
+- Gerizim/Ebal: **2 mountains**.
+- tribal arrangement inherited from Deuteronomy: **6 +6**.
+
+### Sources logged
+
+Primary:
+- Joshua 6–8.
+
+Scholarly/source-critical:
+- “The Mystical Ritual of Hoshana Rabbah: Summoning God” — for Jericho's 6/7/7 circuit pattern.
+- “Counting the Omer Began at Harvest...” — for the seven-day-unit control.
+- “Land or Torah: What Binds Israel as a Nation?” — for Achan/collective responsibility.
+- “Obliterating Cherem” — for the devoted-property system.
+- “Do Not Covet: Is It a Feeling or an Action?” — for Achan's seeing/coveting/taking sequence.
+- “Joshua's Altar on Mount Ebal: Israel's Holy Site Before Shiloh” — TheTorah.
+- “An Altar on Mt Ebal or Mt Gerizim?” — textual-site control.
+- “Mount Gerizim and the Polemic against the Samaritans” — textual-history control.
+
+**Section 27 remains in progress.**
+
+Next under anti-repeat protocol:
+**Joshua 9–12 — Gibeonite deception and covenant binding, five-king cave enclosure/release/execution, sun/moon standstill pair, hail + battlefield sequence, southern/northern campaign compression, Hazor/fire, and source-critical comparison of conquest summaries with archaeology and later settlement traditions.**
+
