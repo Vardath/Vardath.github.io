@@ -37939,3 +37939,603 @@ Scholarly/source-critical:
 Next under anti-repeat protocol:
 **Deuteronomy 27–34 — Gerizim/Ebal full bilateral assembly, tribes split 6+6, plastered stones / written Torah, blessing/curse environmental mirror sequences, covenant renewal, heaven/earth witnesses, Moses/Joshua handoff, song as preserved witness, Moses' four-direction final view, death/burial ambiguity, and reconciliation with already-completed X7 without redoing it.**
 
+## SECTION 26 progress C — Deuteronomy 27–30: 6+6 mountain polarity, written-stone transfer, mirrored blessing/curse states, exile→return, and life/death as explicit choice pair
+
+### Anti-repeat check
+
+Section 26A–B are saved.  
+No Deuteronomy 27–30 progress exists later in the ledger.  
+Continuing only from the completed Deuteronomic law-code checkpoint.
+
+---
+
+## Deuteronomy 27 — crossing Jordan activates a literal bilateral mountain system
+
+Moses commands that after crossing the Jordan:
+- stones are set up;
+- plastered;
+- words of this Torah written on them;
+- altar built;
+- covenant ritual performed.
+
+Then Israel is divided between:
+- **Mount Gerizim** for blessing;
+- **Mount Ebal** for curse.
+
+This is no longer merely an announced future polarity from Deuteronomy 11.
+
+It becomes an enacted geographic system.
+
+### Twelve tribes split exactly 6 + 6
+
+The final-form allocation is:
+
+**Gerizim / blessing**
+- Simeon
+- Levi
+- Judah
+- Issachar
+- Joseph
+- Benjamin
+
+= **6 tribes**
+
+**Ebal / curse**
+- Reuben
+- Gad
+- Asher
+- Zebulun
+- Dan
+- Naphtali
+
+= **6 tribes**.
+
+Raw geometry:
+
+**6 tribes**
+← one valley/ritual field →
+**6 tribes**
+
+with
+**blessing / curse** assigned to opposite mountains.
+
+This is one of the strongest literal bilateral population geometries in the Torah.
+
+### Same twelve-part collective appears yet again in a different projection
+
+We now have Israel as:
+
+- **4 × 3** camp sectors;
+- **4 × 3** breastpiece stones;
+- **6 + 6** shoulder-stone names;
+- **6 + 6** sanctuary loaves;
+- **12 rods**;
+- now **6 + 6 mountain-side tribal groups**.
+
+This is extremely strong evidence for the project's **multiple-projection method**:
+
+> one underlying twelve-part collective can be rendered through several geometries according to function.
+
+That is source-level, not inferred from outside the text.
+
+### The pair is functional polarity, not one split object
+
+Gerizim and Ebal are:
+- two actual mountains;
+- separate locations;
+- assigned opposed covenant functions.
+
+So the best pair classification is:
+
+**P2 opposed functional/spatial pair**.
+
+Do not claim:
+- one hidden mountain split in two;
+- two strands of one physical lattice;
+- past/future worlds.
+
+### Crossing is the trigger before polarity becomes active
+
+The command is specifically tied to:
+**“when you cross the Jordan.”**
+
+So the state sequence is:
+
+**pre-crossing**
+→ polarity announced but not enacted.
+
+**post-crossing**
+→ stones/altar/Torah
+→ tribes arranged
+→ blessing/curse polarity performed.
+
+This is another clean **phase-triggered geography**.
+
+### Plastered stones externalize the law into landscape
+
+The Torah/instruction is:
+- spoken;
+- written;
+- carried;
+- now written onto **plastered stones** after crossing.
+
+Thus information moves from:
+**Moses / scroll / speech**
+→ **landmark stone surface**.
+
+This is a powerful:
+**information becomes environmental marker** sequence.
+
+Compare:
+- firepans hammered into altar memory;
+- Aaron's rod preserved;
+- doorpost inscriptions;
+- sanctuary bread/stones.
+
+Ancient texts repeatedly convert memory/authority into durable material surfaces.
+
+### Ebal / Gerizim textual tradition is itself unstable
+
+The Masoretic Text places the altar/inscribed stones on **Ebal**.
+
+The Samaritan Pentateuch reads **Gerizim** at the crucial location.
+
+Other textual witnesses complicate the question, and modern scholarship remains divided over which reading is earlier.
+
+This is vital for the project:
+
+> even when the **paired mountain system is stable**, the exact assignment of the central inscription/altar node can vary across textual traditions.
+
+Again:
+**role structure can persist while local placement changes**.
+
+---
+
+## Deuteronomy 28 — blessing and curse are deliberately mirrored system states
+
+The chapter creates two large outcome fields.
+
+### Blessing state
+
+If covenant obedience:
+- blessed in city;
+- blessed in field;
+- fruit of womb;
+- fruit of land;
+- animals;
+- basket/kneading bowl;
+- going in;
+- going out;
+- enemies defeated;
+- rain/storehouses/productivity;
+- lending;
+- status as **head not tail**;
+- **above and not beneath**.
+
+### Curse state
+
+If disobedience:
+- cursed city;
+- cursed field;
+- womb;
+- soil;
+- animals;
+- basket;
+- going in;
+- going out;
+- defeat;
+- disease;
+- drought;
+- failed crops;
+- exile;
+- foreign domination;
+- borrower status;
+- **tail not head**;
+- lower status.
+
+This is an explicit **state inversion architecture**.
+
+The same domains are revisited with opposite values.
+
+### Blessing / curse functions like a system-wide state flip
+
+The text does not merely list unrelated rewards and punishments.
+
+It repeatedly reverses the same axes:
+
+**productive / unproductive**
+**secure / defeated**
+**lend / borrow**
+**head / tail**
+**above / below**
+**gathered / scattered**
+**landed / exiled**.
+
+This is highly relevant to the pair framework:
+the polarity is **systemic**, not merely two isolated symbols.
+
+### “Head / tail” and “above / beneath” are explicit social-state inversions
+
+Blessing:
+- head;
+- not tail;
+- above;
+- not beneath.
+
+Curse:
+- resident alien rises higher;
+- Israel sinks lower;
+- foreigner becomes head;
+- Israel tail.
+
+This is a clear **vertical/status reversal pair**.
+
+Do not automatically interpret “above/below” as literal world layers.
+
+The immediate context is social/economic dominance.
+
+### Sky / earth become a coupled environmental pair
+
+The curse says:
+- sky over your head will be **bronze/copper**;
+- earth beneath you **iron**.
+
+This is directly relevant to the project's upper/lower environmental pair register.
+
+But the most important control is comparative:
+
+**Leviticus 26**
+- sky = iron;
+- earth = copper/bronze.
+
+**Deuteronomy 28**
+- sky = bronze/copper;
+- earth = iron.
+
+The metal assignments are **reversed**.
+
+That strongly argues against treating the two texts as straightforward eyewitness descriptions of one literal metallic atmospheric event.
+
+They are covenantal agricultural metaphors/traditional curse imagery.
+
+### Rain-state inversion
+
+Blessing:
+- rain in season;
+- productive land.
+
+Curse:
+- rain becomes dust/powder;
+- drought.
+
+This is another complete environmental polarity:
+
+**water from above**
+↔
+**dry particulate fall / failed water cycle**.
+
+The mechanism is covenant theology,
+not meteorological modelling.
+
+### Gathering / scattering polarity
+
+Blessing:
+- enemies scatter before Israel;
+- Israel remains established.
+
+Curse:
+- Israel itself is scattered among peoples.
+
+So the same spatial operation:
+**dispersion**
+is assigned to different sides depending on system state.
+
+This is a clean example of:
+**same process + different target = opposite meaning**.
+
+---
+
+## Deuteronomy 29 — covenant includes present bodies and absent/future bodies
+
+The Moab covenant explicitly includes:
+- leaders;
+- tribes;
+- elders;
+- officials;
+- men;
+- children;
+- women;
+- resident foreigners;
+- woodcutter;
+- water-drawer.
+
+Then it extends beyond those physically present:
+- those standing there;
+- and those **not there**.
+
+This is a remarkable collective-identity statement.
+
+The covenant body exceeds the current visible population.
+
+For Vardath:
+this is strong evidence that a textual “people” can represent a **trans-generational system identity**, not merely current bodies.
+
+### One covenant body spans present and future membership
+
+Raw structure:
+
+**current members**
++
+**absent/future members**
+→ one covenant collective.
+
+Compare Numbers 26:
+almost all physical adults replaced,
+but Israel's twelvefold structure persists.
+
+This strengthens:
+**collective identity ≠ exact current occupants**.
+
+### Secret / revealed pair
+
+Deuteronomy 29 ends with:
+- hidden/secret things belong to YHWH;
+- revealed things belong to Israel and descendants.
+
+This is an explicit information-domain polarity:
+
+**hidden**
+↔
+**revealed**.
+
+It is theological epistemology,
+not evidence of physically hidden dimensions.
+
+---
+
+## Deuteronomy 30 — exile / return is a forward restoration cycle
+
+The chapter assumes:
+- blessing and curse have occurred;
+- Israel is dispersed among nations;
+- later returns/turns back;
+- YHWH gathers the scattered;
+- returns them to land;
+- restores prosperity.
+
+This is one of Deuteronomy's clearest reset sequences:
+
+**stable land-state**
+→ failure
+→ curse
+→ dispersal
+→ remembrance/return
+→ regathering
+→ restored land-state.
+
+### This is explicitly not rewind
+
+The history is not erased.
+
+The restored people:
+- are descendants after exile;
+- return after consequences;
+- continue forward.
+
+So again:
+**reset = restoration/re-entry**
+not
+**undoing elapsed history**.
+
+This strongly matches the mature Vardath rule at a structural level.
+
+### Heart transformation makes the restored state internal as well as geographic
+
+The text says YHWH will “circumcise” the heart so the people can love/obey.
+
+Thus return is not only:
+**outside → inside land**.
+
+It is:
+**external relocation**
++
+**internal state change**.
+
+This is another warning:
+a biblical transition can combine geography with moral/internal transformation.
+
+### “Not in heaven” — information access is explicitly de-verticalized
+
+The command is said to be:
+- not in heaven requiring someone to ascend;
+- not beyond the sea requiring someone to cross;
+- but **very near**:
+  - in mouth;
+  - in heart;
+  - to do it.
+
+This is exceptionally important for the project.
+
+The text itself rejects the need for:
+**vertical ascent**
+or
+**remote crossing**
+to obtain this information.
+
+It says the relevant access path has been **localized/internalized**.
+
+This is a major anti-overfitting control:
+not every later spiritual truth in the Bible is imagined as requiring a gate or ascent.
+
+### Information route collapses from remote to immediate
+
+Raw transformation:
+
+**imagined remote source**
+- heaven
+- beyond sea
+
+is denied.
+
+Instead:
+
+**mouth**
++
+**heart**
+=
+immediate accessible information location.
+
+This is almost the inverse of Sinai's external mountain interface.
+
+### Life / death and blessing / curse become explicit paired choices
+
+Moses says he sets before Israel:
+
+**life**
+and
+**good**
+
+versus
+
+**death**
+and
+**evil**,
+
+then:
+
+**life and death**
+**blessing and curse**.
+
+This is the most explicit final polarity statement yet in Deuteronomy.
+
+The pair is not hidden:
+the text names the alternatives.
+
+### Heaven / earth called as witnesses
+
+The choice is witnessed by:
+- heaven;
+- earth.
+
+This draws on ancient treaty rhetoric, where cosmic entities can function as covenant witnesses.
+
+Modern scholarship compares this with ancient Near Eastern treaty traditions.
+
+For the Vardath project:
+do not literalize heaven/earth as active mechanical observers.
+
+Their function is covenantal/legal witness.
+
+### “Choose life” resolves the polarity normatively
+
+Unlike neutral paired geometry,
+Deuteronomy does not leave the two states equivalent.
+
+It explicitly urges:
+**choose life**.
+
+So this is a directional moral polarity, not a balanced duality.
+
+That distinction matters:
+not every pair in the Bible represents equal complementary halves.
+
+---
+
+## SECTION 26C continuous sequence — Deuteronomy 27–30
+
+**Jordan crossing**
+→ stones erected
+→ Torah written on plaster
+→ altar/ritual
+→ 12 tribes split **6 + 6**
+→ Gerizim blessing / Ebal curse
+
+**covenant state field**
+→ obedience
+→ productive land / rain / security / head / above
+
+or
+
+→ disobedience
+→ drought / disease / defeat / tail / beneath / exile
+
+**collective covenant expansion**
+→ current population
+→ future/absent generations included
+→ one trans-generational identity
+
+**failure/restoration**
+→ curse experienced
+→ people dispersed
+→ return
+→ regathering
+→ internal heart-state changed
+→ land restored
+
+**information localization**
+→ command not in heaven
+→ not beyond sea
+→ near in mouth/heart
+
+**final polarity**
+→ life/death
+→ blessing/curse
+→ heaven/earth witnesses
+→ choose life.
+
+---
+
+## SECTION 26C strongest Vardath correspondences
+
+1. Israel's twelvefold body is rendered as an exact **6 + 6 bilateral mountain arrangement**.
+2. Crossing the Jordan is the phase trigger that activates the paired mountain ritual.
+3. One underlying collective continues to appear in multiple projections: 4×3, 6+6, 12 rods, etc.
+4. Blessing/curse creates a full **system-state inversion** across the same domains.
+5. Head/tail and above/below provide explicit status reversal pairs.
+6. Gathering/scattering is the same spatial operation applied to different targets/states.
+7. Exile→return is a strong **forward reset/restoration**, not rewind.
+8. Collective identity spans present and absent/future members.
+9. Deuteronomy 30 explicitly rejects necessary ascent/crossing for Torah access: information becomes local in mouth/heart.
+10. Life/death and blessing/curse are explicit named polarity pairs.
+
+### Major controls
+
+- Gerizim/Ebal are distinct real mountains, not one split object.
+- altar/stone location differs among textual traditions.
+- Leviticus/Deuteronomy reverse the iron/bronze sky-earth assignments.
+- blessing/curse language is covenant theology and ancient curse rhetoric.
+- above/below is primarily status language in Deuteronomy 28.
+- exile/return is political/theological restoration, not world-layer travel.
+- “not in heaven” is actually a control against unnecessary vertical-gate interpretation.
+- life/death is a moral choice polarity, not a neutral physical duality.
+
+### Pair / number register
+
+- Gerizim tribes: **6**.
+- Ebal tribes: **6**.
+- total: **12 = 6 + 6**.
+- paired mountains: **2**.
+- major state pair: blessing / curse.
+- major final pair: life / death.
+- witness pair: heaven / earth.
+- environmental pair:
+  - Deut sky bronze / earth iron;
+  - Leviticus reverses these metals.
+
+### Sources logged
+
+Primary:
+- Deuteronomy 27–30.
+
+Scholarly/source-critical:
+- “Israel Enters the Land in Worship or War?” — TheTorah.
+- “The Place(s) that YHWH Will Choose: Ebal, Shiloh, and Jerusalem” — TheTorah.
+- “The Ten Lost Tribes: A Myth to Delegitimize the Samarians” — for textual Gerizim/Ebal discussion.
+- “YHWH's Covenant: Why Moses Calls Heaven and Earth as Witnesses” — TheTorah.
+- comparative scholarship on ancient Near Eastern treaty blessing/curse and witness formulas.
+
+**Section 26 remains in progress.**
+
+Next:
+**Deuteronomy 31–34 — Joshua commissioning, cloud at Tent, Torah/song as durable witnesses, heaven/earth witness invocation, Song of Moses, tribal blessing, final mountain view, death/burial ambiguity, Joshua's spirit-of-wisdom succession, and reconciliation with X7 without repeating the completed Testament/Assumption research.**
+
