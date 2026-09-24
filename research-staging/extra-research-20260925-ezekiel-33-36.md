@@ -2,7 +2,7 @@
 ---
 
 # SECTION 53 progress C1 — Ezekiel 33–36
-## Watchman/signal mechanics reopen the restoration half of the book; an escaped survivor physically carries confirmation of Jerusalem’s fall to Ezekiel and his previously closed mouth-channel opens when the message arrives; failed shepherds produce a globally scattered flock, then one searching/sorting operator reverses the topology by finding, separating, gathering and routing the sheep back through countries to mountains, watercourses and inhabited land; the flock itself can degrade its shared environment by trampling pasture and fouling clear water, while stronger members use flank, shoulder and horns to push weaker members outward; bars of the yoke are broken, seasonal showers resume and productive land returns; Mount Seir then acts as a negative paired-land control, while the mountains of Israel reverse from desolate/claimed terrain into branch-producing, fruit-bearing, cultivated, repopulated support; in the Masoretic form the sequence continues into gathering from nations, clean-water washing, removal of a stone heart, insertion of a flesh heart/new spirit, rebuilt towns, tilled land, “Eden” reversal and population filling—but Papyrus 967 lacks most of this MT expansion and instead carries the earlier restoration problem forward into Gog/Magog before dry-bones/unification, radically affecting the transformation timeline
+## Watchman/signal mechanics reopen the restoration half of the book; an escaped survivor physically carries confirmation of Jerusalem’s fall to Ezekiel while his previously closed mouth-channel is opened the evening before the messenger arrives; failed shepherds produce a globally scattered flock, then one searching/sorting operator reverses the topology by finding, separating, gathering and routing the sheep back through countries to mountains, watercourses and inhabited land; the flock itself can degrade its shared environment by trampling pasture and fouling clear water, while stronger members use flank, shoulder and horns to push weaker members outward; bars of the yoke are broken, seasonal showers resume and productive land returns; Mount Seir then acts as a negative paired-land control, while the mountains of Israel reverse from desolate/claimed terrain into branch-producing, fruit-bearing, cultivated, repopulated support; in the Masoretic form the sequence continues into gathering from nations, clean-water washing, removal of a stone heart, insertion of a flesh heart/new spirit, rebuilt towns, tilled land, “Eden” reversal and population filling—but Papyrus 967 lacks most of this MT expansion and instead carries the earlier restoration problem forward into Gog/Magog before dry-bones/unification, radically affecting the transformation timeline
 
 This begins **SECTION 53C — Ezekiel 33–39** with **Ezekiel 33–36**.
 
@@ -107,6 +107,9 @@ This reinforces:
 
 Date:
 **12th year / 10th month / 5th day** in MT/NRSVUE.
+
+### Chronology/textual control
+The received MT/NRSV reading produces a long interval after Jerusalem’s fall. The Syriac and some manuscript evidence discussed in critical commentary support an **11th-year** reading, while Greek dating traditions also vary. Therefore the exact travel interval is text-critically unstable and must not be used as a Vardath cycle-period anchor.
 
 Sequence:
 
@@ -1075,7 +1078,8 @@ Papyrus 967 / textual editions:
 - Mª Victoria Spottorno, study of the Ezekiel 36 omission and chapter transposition in Papyrus 967.
 - Tracy McKenzie, **Composition, Order, and Motivation in Ezekiel’s Two Editions** (2025), DOI:
   https://doi.org/10.2478/perc-2025-0004
-- Karin Finsterbusch, **Traditional Textual Criticism Reconsidered: MT L-Ezek 35, LXX 967-Ezek 35 and its Hebrew Vorlage as Variant Editions**, retained for chapter-35 textual variation.
+- Karin Finsterbusch, **Traditional Textual Criticism Reconsidered: MT (codex L)-Ezek 35, LXX (papyrus 967)-Ezek 35 and its Hebrew Vorlage as Variant Editions and the Implications for the Search for the “Original” Text**, *Hebrew Bible and Ancient Israel* (2020), DOI:
+  https://doi.org/10.1628/hebai-2020-0020
 
 Ezekiel 33–36:
 - scholarly work on Ezekiel’s watchman role, shepherd/governance metaphors, land restoration and the new-heart/spirit passage retained from critical-commentary and textual-history literature.
