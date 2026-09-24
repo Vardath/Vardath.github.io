@@ -86334,3 +86334,971 @@ Scholarly controls:
 - Jehoash recovers lost cities **three times**, materializing the limited three-strike future model;
 - Section 37 closes with the dead prophet's enacted geometry continuing after his death.
 
+
+
+---
+
+# SECTION 37 progress D — 2 Kings 11–12
+## One hidden dynastic remnant inside a sacred enclosure, six-year concealment, seventh-year reactivation through guard-ring geometry, rival centre expelled outside the temple, then physical temple breaches repaired only after the money-routing system itself is redesigned
+
+---
+
+# 2 Kings 11 — Athaliah responds to one royal death by attempting total dynastic erasure
+
+When Ahaziah dies,
+Athaliah sees the succession opening.
+
+She rises and attempts to destroy:
+**all royal seed**.
+
+This is a maximal centralization move:
+
+**multiple potential Davidic successor nodes**
+→ targeted for elimination
+→ one ruler intends to remain.
+
+The process is not merely succession.
+It is:
+**whole lineage field → near-total deletion**.
+
+---
+
+# One infant is removed from the kill-field before the purge closes
+
+Jehosheba takes Joash:
+- from among the royal sons being killed;
+- with his nurse;
+- hides them first in a bedchamber/room;
+- then in the house of YHWH.
+
+So the preservation route is:
+
+**public dynastic kill-field**
+→ one infant extracted
+→ small domestic concealment
+→ deeper sacred enclosure.
+
+This is one of the strongest **single-remnant rescue** sequences in the historical books.
+
+---
+
+# The preserved future centre survives because the destroyer believes the field is empty
+
+Athaliah rules the land.
+
+But the true Davidic successor remains alive,
+hidden inside the temple.
+
+So the visible political state is:
+
+**royal seed = apparently gone**.
+
+Actual state:
+**one living remnant survives inside nested enclosure**.
+
+This is a direct:
+**surface extinction / hidden continuity**
+structure.
+
+---
+
+# Six-year hidden phase and one public ruling phase coexist
+
+For six years:
+
+### outside
+Athaliah = visible ruler.
+
+### inside temple
+Joash = hidden successor.
+
+The two centres coexist without public contact.
+
+Thus:
+**effective political centre**
+and
+**latent dynastic centre**
+occupy different spaces simultaneously.
+
+This is highly relevant to the Vardath model's distinction between:
+- visible present state;
+- hidden carrier of future state.
+
+---
+
+# Seventh-year transition begins by bringing military nodes inside the sacred enclosure
+
+Jehoiada:
+- sends for captains over hundreds;
+- Carites/guards;
+- brings them into temple;
+- makes covenant/oath;
+- only then **shows them the king's son**.
+
+The order matters:
+
+**guards enter hidden-centre enclosure**
+→ loyalty secured
+→ hidden remnant revealed.
+
+So access to the future centre is **gated by prior commitment**.
+
+---
+
+# The coup is constructed out of rotational guard geometry
+
+Jehoiada divides guard roles around:
+- king's house;
+- gate Sur;
+- rear gate/guard;
+- temple;
+- king.
+
+The Sabbath shift change becomes tactically useful.
+
+Those:
+- coming on duty;
+- going off duty
+
+are both incorporated.
+
+Thus the ordinary **rotation boundary**
+between two work shifts becomes a moment of **temporary force doubling/convergence**.
+
+This is a very strong systems pattern:
+
+**handoff interval**
+→ instead of one group replacing another,
+→ both groups overlap
+→ overlap becomes protection field.
+
+---
+
+# One-third / one-third / one-third creates a three-part guarding distribution
+
+The incoming group is described in thirds at key posts.
+
+Other outgoing groups remain around temple/king.
+
+The exact textual reconstruction differs between Kings and Chronicles,
+but the narrative securely emphasizes **distributed guard sectors**.
+
+So hidden remnant reactivation depends on:
+**multi-node perimeter control**.
+
+---
+
+# Old Davidic weapons are reactivated as continuity material
+
+Jehoiada gives captains:
+- spears/shields associated with David and stored in temple.
+
+This is another **residual-tool reactivation** sequence.
+
+Earlier:
+- Goliath's sword was captured, stored and later reused.
+Here:
+- Davidic weapons are preserved in temple and reissued during dynasty restoration.
+
+Benjamin Scolnic argues that whatever the exact weapon count or historical reconstruction, the literary-symbolic effect is strong:
+**the guards are not founding a new alien regime; they are restoring the Davidic line using material linked to Davidic memory.**
+
+---
+
+# Guards form a literal armed ring around the hidden child
+
+The text says:
+**compass the king round about**
+with weapons in hand.
+
+Then guards stand:
+- right side of house;
+- left side;
+- altar/house;
+- around king.
+
+This is a direct **protective ring geometry**.
+
+The child-centre is:
+**inside armed perimeter**.
+
+The same kind of encircling geometry that elsewhere traps or besieges a centre here **preserves** it.
+
+Again:
+**ring/enclosure meaning depends on which force occupies which side**.
+
+---
+
+# Hidden remnant is converted into public centre through multiple activation markers
+
+Jehoiada brings out the child.
+
+Sequence:
+- crown;
+- “testimony/insignia”;
+- kingship declaration;
+- anointing;
+- clapping/acclamation;
+- “Long live the king.”
+
+The state change is cumulative:
+
+**hidden child**
+→ marked
+→ crowned
+→ anointed
+→ publicly acclaimed
+→ political centre.
+
+Like Solomon:
+**private/hidden successor state**
+→ public acoustic activation.
+
+---
+
+# The former ruler detects the transition first through sound
+
+Athaliah hears:
+**noise of guard and people**.
+
+She enters temple/public space.
+
+Then she sees:
+**king standing at his station/platform**
+with captains/trumpets and rejoicing people.
+
+So again:
+**sound reaches old centre before complete visual understanding**.
+
+This recurs repeatedly across Samuel–Kings:
+new political state often travels first as **noise/horn/acclamation**.
+
+---
+
+# Athaliah tears her garment when the hidden future becomes visible present
+
+She sees Joash and tears clothes,
+crying:
+**treason**.
+
+This adds another garment rupture at regime transition.
+
+But unlike Samuel/Ahijah:
+- no prophet explains the tear as kingdom symbolism;
+- Athaliah herself tears in shock/distress.
+
+So keep it in the garment register,
+but at lower interpretive confidence.
+
+---
+
+# The old centre is deliberately routed out of sacred enclosure before death
+
+Jehoiada commands:
+**bring her out**
+and
+**do not kill her in the house of YHWH**.
+
+Recent text-critical work argues that the exact phrase may more originally mean:
+**bring her out of the temple precincts**
+rather than the traditional “between the ranks” wording.
+
+Secure process:
+**rival centre must cross outward from sacred zone**
+before lethal force is applied.
+
+This is a deliberate boundary purity rule.
+
+---
+
+# Athaliah exits by horse-entry route and is killed outside
+
+She is taken:
+**from temple**
+→ toward king's house
+→ via horse entrance
+→ killed there.
+
+So her trajectory is:
+**visible ruler outside temple**
+→ enters after hearing acclamation
+→ sees hidden successor revealed
+→ expelled outward
+→ removed outside sacred space.
+
+This is almost the mirror of Joash:
+
+Joash:
+**hidden inside**
+→ brought out into public kingship.
+
+Athaliah:
+**public ruler enters**
+→ pushed out and destroyed.
+
+---
+
+# Covenant re-links three system levels after rival centre removal
+
+Jehoiada makes covenant:
+- YHWH ↔ king ↔ people;
+- king ↔ people.
+
+So regime restoration is not treated as complete merely by removing Athaliah.
+
+The network is explicitly **re-coupled**.
+
+This adds a relational layer after the violent transfer:
+**new centre must be integrated into wider system through covenantal links**.
+
+---
+
+# Baal temple in Judah is then destroyed
+
+People:
+- break Baal house;
+- break altars/images;
+- kill priest Mattan.
+
+This resembles Jehu's Baal destruction in Israel,
+but the sequence differs.
+
+Here:
+**dynastic remnant restored first**
+→ covenant
+→ rival cult node dismantled.
+
+Again,
+violent religious suppression remains ethically serious and should not be neutralized.
+
+---
+
+# The restored child moves from temple-centre to royal throne
+
+Joash is brought:
+**down from house of YHWH**
+→ through guard gate
+→ king's house
+→ sits on throne.
+
+So:
+
+**temple enclosure = preservation/reactivation chamber**.
+
+**palace throne = ongoing political operating centre**.
+
+The future king survives in one centre but must migrate to another to rule.
+
+---
+
+# City becomes quiet after rival field is removed
+
+The chapter closes:
+- people rejoice;
+- city is quiet.
+
+So the full transition is:
+
+**near-dynastic extinction**
+→ hidden remnant
+→ six-year latent phase
+→ guard convergence
+→ public reveal
+→ rival expulsion
+→ covenant
+→ competing cult destruction
+→ remnant installed
+→ urban quiet.
+
+This is one of the cleanest:
+**hidden seed → restored system**
+arcs in Kings.
+
+---
+
+# 2 Kings 12 — the preserved king later confronts breaches in the structure that preserved him
+
+Joash had survived in the temple.
+
+Now, as king, he sees:
+**breaches/damage in the house**.
+
+This creates an important paired relationship:
+
+### chapter 11
+temple preserves damaged dynasty.
+
+### chapter 12
+restored dynasty must preserve damaged temple.
+
+The carrier and carried system reverse roles.
+
+This is a very strong reciprocity pattern.
+
+---
+
+# Initial repair system routes funds through priests but fails to close breaches
+
+Joash's first model:
+
+**money from people**
+→ priests collect
+→ priests repair breaches.
+
+But by the king's twenty-third year:
+**breaches remain unrepaired**.
+
+The text does not fully specify whether:
+- priests diverted funds;
+- collection was insufficient;
+- administrative design failed;
+- work proceeded too slowly.
+
+Academic studies caution against simply accusing priests of theft.
+
+Secure:
+**existing money-routing system does not produce intended structural repair**.
+
+---
+
+# The response is not “give more money” but redesign the flow architecture
+
+Joash changes the process:
+
+**priests no longer independently receive/manage repair funds in old way**.
+
+Jehoiada creates:
+**a chest with hole in lid**.
+
+It is placed:
+**beside altar / at right side as one enters**.
+
+Threshold priests deposit incoming money there.
+
+So the new system introduces:
+**fixed visible collection node** at entrance-interface.
+
+This is a major administrative geometry change.
+
+---
+
+# One chest converts many distributed contributions into one transparent pool
+
+Before:
+**many contributors**
+→ many priest relationships/channels.
+
+After:
+**many contributors**
+→ one collection chest.
+
+This is **centralization of money flow** at a controlled node.
+
+But crucially:
+the money is then routed **directly outward to repair workers**.
+
+So the new pattern is:
+
+**distributed people**
+→ one chest
+→ joint counting
+→ work supervisors
+→ builders/materials
+→ breaches closed.
+
+It is not:
+**distributed people → royal hoard**.
+
+The centre is a **routing node**, not final sink.
+
+---
+
+# Royal and priestly administrations jointly count the flow
+
+When chest contains much:
+- king's scribe;
+- high priest
+
+come together.
+
+They:
+- count/weigh/bag funds.
+
+This creates a **two-authority checkpoint**:
+
+**royal administration**
++
+**temple administration**
+→ joint verification.
+
+Academic work on temple restorations emphasizes cooperation between royal and temple administrations while cautioning that exact administrative practice remains incompletely known.
+
+---
+
+# Money bypasses ornamental upgrade and goes to structural repair
+
+The text stresses:
+funds are **not** used for:
+- silver vessels;
+- trumpets;
+- decorative gold/silver items.
+
+They are directed to:
+- carpenters;
+- builders;
+- masons;
+- stonecutters;
+- timber;
+- dressed stone.
+
+So:
+**appearance/enrichment**
+is subordinated to
+**closing structural breaches**.
+
+This is a clear **integrity-before-decoration** principle.
+
+---
+
+# Trusted workers reduce monitoring overhead at the final stage
+
+The text says the workers are not required to give detailed accounting because:
+**they dealt faithfully**.
+
+So the system has:
+- transparent collection/checkpoint;
+- trusted execution layer.
+
+This is not “no accountability at all.”
+
+It is:
+**verification concentrated at transfer node**
+while
+**implementation is delegated under trust**.
+
+---
+
+# Breach repair is literally a closure process
+
+The recurring word/idea is:
+**breaches in the house**.
+
+Material flow is reorganized specifically to:
+**close/repair the openings/damage**.
+
+This is one of the most direct Vardath-compatible structural terms in Kings.
+
+But it is ordinary building repair.
+
+The value is the process grammar:
+**damage/opening**
+→ resource rerouting
+→ repair labour
+→ structural integrity restored.
+
+---
+
+# Hazael turns from conquered Gath toward Jerusalem
+
+After taking Gath,
+Hazael sets face toward Jerusalem.
+
+So external pressure approaches the repaired centre.
+
+This creates a new test:
+
+**house restored internally**
+→ external military field converges.
+
+---
+
+# Joash preserves Jerusalem by transferring accumulated treasure outward
+
+Joash takes:
+- predecessor sacred dedications;
+- his own dedications;
+- temple gold;
+- royal-house gold
+
+and sends it to Hazael.
+
+Hazael withdraws.
+
+So:
+
+**stored centre wealth**
+→ routed outward to threatening field
+→ external pressure decouples.
+
+This is a classic:
+**resource sacrifice/substitution for direct siege contact**.
+
+The city survives at the cost of accumulated central treasure.
+
+---
+
+# This is the inverse of Solomon's peak accumulation
+
+Solomon:
+**wealth flows inward**
+→ centre becomes dense.
+
+Joash:
+**stored sacred/royal wealth flows outward**
+→ centre buys separation from external threat.
+
+So treasury changes from:
+**symbol of accumulated stability**
+to
+**buffer released to preserve physical centre**.
+
+---
+
+# External survival does not prevent internal assassination
+
+After Hazael withdraws,
+Joash's own servants conspire.
+
+They kill him:
+**at Beth-millo / downward road to Silla** in the Kings account.
+
+So:
+
+**external threat diverted successfully**
+but
+**internal support network later becomes lethal**.
+
+Again:
+**boundary security and internal loyalty are separate variables**.
+
+The centre survives Aram but not its own servants.
+
+---
+
+# SECTION 37D continuous geometry/effect timeline — 2 Kings 11–12
+
+## Phase BT — total lineage-destruction attempt leaves one hidden remnant
+
+royal seed attacked
+→ one infant extracted with nurse
+→ hidden.
+
+**Effect:** apparent dynastic extinction contains latent continuity.
+
+---
+
+## Phase BU — preservation route moves inward through nested enclosures
+
+kill-field
+→ bedchamber
+→ temple.
+
+**Effect:** future centre survives by increasing enclosure depth.
+
+---
+
+## Phase BV — visible ruler and hidden successor coexist for six years
+
+Athaliah outside/public rule.
+Joash inside/hidden temple.
+
+**Effect:** operative present and latent future occupy different nodes simultaneously.
+
+---
+
+## Phase BW — guard network is admitted before hidden centre is revealed
+
+captains enter temple
+→ oath/covenant
+→ Joash shown.
+
+**Effect:** access to future centre follows prior network alignment.
+
+---
+
+## Phase BX — shift-change overlap becomes force multiplier
+
+incoming Sabbath guard
++
+outgoing guard
+→ both retained.
+
+**Effect:** handoff interval is converted into temporary protective overcapacity.
+
+---
+
+## Phase BY — old weapons become continuity carriers
+
+Davidic weapons in temple storage
+→ reissued to guards.
+
+**Effect:** material remnant from predecessor regime supports restoration of its line.
+
+---
+
+## Phase BZ — armed ring preserves central child
+
+guards right/left/around
+→ king inside.
+
+**Effect:** encirclement functions protectively when force points outward.
+
+---
+
+## Phase CA — multiple activation markers convert hidden remnant into public centre
+
+crown
++ insignia/testimony
++ anointing
++ clapping
++ acclamation.
+
+**Effect:** latent state becomes publicly recognized regime.
+
+---
+
+## Phase CB — sound reaches displaced ruler before understanding
+
+Athaliah hears noise
+→ enters temple
+→ sees new king.
+
+**Effect:** political state propagates acoustically before visual confirmation.
+
+---
+
+## Phase CC — rival centre must exit sacred boundary before death
+
+Athaliah
+→ routed out of temple precincts
+→ killed outside.
+
+**Effect:** destructive transfer is displaced beyond protected sacred enclosure.
+
+---
+
+## Phase CD — successor descends from sacred preservation node into political throne node
+
+temple
+→ guard gate
+→ royal house
+→ throne.
+
+**Effect:** enclosure that preserves future centre is not same node from which it governs.
+
+---
+
+## Phase CE — covenant re-links source, centre and field
+
+YHWH ↔ king ↔ people.
+
+**Effect:** regime installation is followed by explicit relational recoupling.
+
+---
+
+## Phase CF — structure that preserved dynasty later develops breaches
+
+temple preserved Joash
+→ temple itself damaged.
+
+**Effect:** carrier and carried system reverse preservation roles.
+
+---
+
+## Phase CG — first resource-routing architecture fails
+
+people → priests → intended repair
+but
+breaches persist.
+
+**Effect:** resource availability alone is insufficient if routing does not reach structural target.
+
+---
+
+## Phase CH — fixed chest creates a new transparent collection interface
+
+many contributions
+→ one chest at entrance/altar boundary.
+
+**Effect:** distributed flow is centralized at one observable node.
+
+---
+
+## Phase CI — two authority systems jointly verify flow
+
+royal scribe
++
+high priest
+→ count/bag/weigh.
+
+**Effect:** coupled oversight occurs at transfer checkpoint.
+
+---
+
+## Phase CJ — central pool immediately redistributes to repair network
+
+chest
+→ overseers
+→ builders/materials
+→ breaches.
+
+**Effect:** centre functions as router rather than resource sink.
+
+---
+
+## Phase CK — structural integrity is prioritized over ornament
+
+no decorative vessels from repair fund
+→ all money to workers/material.
+
+**Effect:** closure/integrity precedes embellishment.
+
+---
+
+## Phase CL — repaired centre survives external attack by releasing stored wealth
+
+Hazael approaches
+→ sacred/royal treasure sent outward
+→ Hazael withdraws.
+
+**Effect:** accumulated central cargo becomes sacrificial buffer preventing direct contact.
+
+---
+
+## Phase CM — external separation does not prevent internal collapse
+
+Aram diverted
+→ servants conspire
+→ Joash killed.
+
+**Effect:** external boundary stability and internal network loyalty are independent variables.
+
+---
+
+# What 2 Kings 11–12 adds to the master Bible/Vardath timeline
+
+210. **A nearly erased system can preserve continuity through one hidden remnant inside a deeper enclosure.**
+211. **Visible present state and latent future state can coexist for years in different spaces.**
+212. **A work-shift handoff can become a force-amplifying overlap instead of simple replacement.**
+213. **Residual material from an older regime can be reactivated to legitimize/protect a surviving successor line.**
+214. **An encircling ring can function as protection rather than siege when the force orientation is reversed.**
+215. **Hidden continuity becomes public regime through cumulative activation markers—crown, anointing, insignia and sound.**
+216. **A rival centre can be forced across a sacred boundary before destructive action, separating preserved core from violent transition.**
+217. **The enclosure that preserves a future centre need not be the node from which that centre later governs.**
+218. **Regime restoration is incomplete until source/centre/field relationships are explicitly re-coupled.**
+219. **A structure that once preserves a living remnant may itself later become the object requiring preservation.**
+220. **Resource abundance does not guarantee repair if the flow architecture fails to reach the breach.**
+221. **Changing system routing can matter more than increasing total input.**
+222. **One transparent collection node can gather distributed contributions and immediately redistribute them toward structural closure.**
+223. **Joint oversight can occur at the transfer checkpoint while implementation remains delegated.**
+224. **Structural integrity can be prioritized over decorative expansion during recovery.**
+225. **Stored central wealth can be expelled outward as a buffer to preserve the physical centre from external convergence.**
+226. **A centre may survive a powerful external field yet still fall to its own internal support network.**
+
+---
+
+## Section 37D high-priority pair / force register
+
+### Athaliah / Jehosheba
+destruction of royal seed versus preservation of one seed.
+
+### Athaliah / Joash
+visible ruler versus hidden successor.
+
+### incoming / outgoing guards
+normal rotation pair converted into overlapping protective force.
+
+### Davidic weapons / present guards
+old material continuity supporting current restoration.
+
+### temple / palace
+preservation node versus governing node.
+
+### temple preserves king / king repairs temple
+strong reciprocity pair.
+
+### priests / workers
+initial money-holding network versus eventual direct repair network.
+
+### royal scribe / high priest
+paired oversight checkpoint.
+
+### sacred treasure / Hazael field
+stored centre cargo versus external threat, with cargo released to create distance.
+
+### external Aram / internal servants
+centre survives outer threat but falls to inner betrayal.
+
+---
+
+## Section 37D number / timing register
+
+Record without forcing:
+- Joash hidden **6 years**;
+- transition in **7th year**;
+- guard sectors expressed in **thirds** in Kings;
+- Joash begins reign age **7**;
+- reign **40 years** in MT;
+- by **23rd year** temple breaches still not repaired.
+
+Six→seventh-year reveal is functionally explicit, but should not yet be treated as cosmological periodicity.
+
+---
+
+## Section 37D textual / literary / historical controls
+
+- Athaliah is the only woman presented as sole monarch of Judah in Kings, but the text deliberately denies her the normal regnal formula; scholars debate the ideological reasons.
+- Her exact genealogy remains difficult: “daughter of Omri” / association with Ahab's house should not be flattened into one certain biological relationship.
+- 2 Kings 11 and 2 Chronicles 22–23 differ substantially in personnel, guard organization and cultic framing. Preserve Kings' geometry first; compare Chronicles later.
+- The precise “bedchamber” location of Joash's initial hiding is debated; temple hiding for six years is secure.
+- The Carites/guard identity and historicity are debated. Benjamin Scolnic argues for Carian mercenary plausibility, but other reconstructions exist.
+- The exact wording of David's stored weapons varies across textual witnesses (singular/plural spear(s), shields, etc.). Secure: weapons associated with David are issued from temple storage.
+- 2 Kings 11:15 is text-critically difficult; recent work argues the older sense may be “bring her out of the temple precincts.” Secure: she is not to be killed inside the temple.
+- Athaliah's slaughter of royal seed and her own execution are political violence; the narrative's legitimacy claims should not be automatically adopted as neutral history.
+- The relationship between the Baal cult in Judah and Athaliah's historical court remains debated.
+- 2 Kings 12 and 2 Chronicles 24 give different versions of the repair collection system and Joash's later reign. Do not silently harmonize.
+- Scholarly studies of Jehoash/Josiah temple repairs warn that the descriptions are ideologically shaped and cannot be used as transparent administrative archives.
+- The text does not explicitly say priests stole repair funds; the first system may have failed for several possible administrative reasons.
+- Ancient Judahite building administration remains incompletely known despite comparative legal/epigraphic material.
+- Hazael's historical expansion is externally supported by Aramean/Assyrian context, but the specific Gath→Jerusalem episode remains primarily biblical.
+- Joash's transfer of temple/royal treasure is best treated as tribute/payment to avert attack; the exact political agreement is not narrated.
+- Joash's assassination differs in detail from 2 Chronicles 24, where additional theological causation is supplied. Preserve the Kings sequence separately.
+
+### Sources logged for Section 37D
+
+Primary:
+- Mechon-Mamre, **2 Kings 11–12**.
+
+Scholarly controls:
+- Clayton H. Bench, **The Coup of Jehoiada and the Fall of Athaliah: The Discourses and Textual Production of 2 Kings 11**.
+- **“Athaliah, a Treacherous Queen: A Careful Analysis of Her Story in 2 Kings 11 and 2 Chronicles 22:10–23:21.”**
+- Benjamin Scolnic, **“King David's Spear, the Weapons of the Carians, and the Overthrow of Athaliah in II Kings 11.”**
+- H. J. Katzenstein, **“Who Were the Parents of Athaliah?”**
+- recent text-critical work, **“Athaliah Sentenced to Death: A Text-Critical Analysis of 2 Kings 11:15.”**
+- Tel Aviv University scholarship on **Jehoash's and Josiah's temple repair/cash-box traditions**.
+- **“Notes on the Temple ‘Restorations’ of Jehoash and Josiah.”**
+- historical studies of Hazael's expansion and ninth-century Judah/Aram relations.
+
+**Section 37 remains in progress.**
+
+### Next process block
+
+**2 Kings 13**:
+- Jehoahaz/Israel is reduced under Aram until military field is nearly erased;
+- a “saviour” creates breathing space and people return to tents/homes;
+- Hazael pressure remains through reign;
+- Elisha becomes terminally ill and Jehoash of Israel comes down/weeps over him;
+- prophet places his hands on king's hands;
+- east window opened;
+- arrow fired outward becomes “arrow of victory” toward Aram;
+- king then strikes ground three times;
+- Elisha becomes angry because five/six strikes would have meant complete destruction, while three means limited victories;
+- potential future outcome is explicitly constrained by performed action count;
+- Elisha dies/buried;
+- Moabite raiding bands enter land annually;
+- corpse is thrown into Elisha's tomb during raid;
+- contact with prophet's bones restores dead man to life;
+- Hazael dies;
+- Jehoash recovers lost cities from Ben-hadad exactly three times;
+- limited territorial recovery mirrors the earlier three strikes.
+
