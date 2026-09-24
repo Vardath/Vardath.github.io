@@ -134054,3 +134054,1968 @@ Priority:
 - test whether lover pair genuinely behaves like two interacting forces or remains erotic-poetic reciprocity;
 - integrate Ecclesiastes cycle/succession with Song paired-garden/fountain geometry.
 
+
+
+---
+
+# SECTION 47 progress C — Song of Songs
+## Two lovers repeatedly approach, lose, seek, find and re-separate; seasonal closure changes into spring movement; walls, lattice, doors, city streets and watchmen repeatedly regulate access; the woman is mapped as mountain, tower, garden, vineyard and sealed fountain; the garden then undergoes a true state transition from locked/sealed enclosure to wind-activated fragrant field to invited entry; north and south winds operate as opposite-direction activators rather than hostile forces; love is finally compared directly with Death/Sheol and with an unquenchable fire that “many waters” cannot extinguish; and the poem closes not with one partner absorbing the other but with retained mutuality, ownership and renewed mountain movement
+
+This pass completes **SECTION 47 — Ecclesiastes + Song of Songs**.
+
+The Song is especially relevant to the pair protocol because almost the entire book is organized around **two lovers in reciprocal motion**.
+
+But this is also precisely where over-reading is dangerous.
+
+The strongest first-level reading in modern scholarship is:
+**a collection or carefully arranged sequence of human erotic/love poems**.
+
+Jewish and Christian traditions later built extensive allegorical readings:
+- YHWH / Israel;
+- Christ / Church;
+- Christ / soul;
+- mystical union;
+- Wisdom;
+- cosmic harmony.
+
+Those reception histories are important,
+but they are not automatically the poem's original physical mechanism.
+
+The process-first question is therefore:
+
+> What does the poem actually make the two lovers, bodies, walls, gardens, fountains, winds, mountains and waters **do** before later allegory is added?
+
+---
+
+# Textual / Ethiopic control before geometry
+
+The Song of Songs has:
+- a Hebrew Masoretic form;
+- a Greek Septuagint tradition;
+- Syriac, Latin and other ancient versions;
+- a real Ethiopic / Ge'ez textual tradition.
+
+Ethiopian Psalter manuscripts commonly transmit:
+- Psalms;
+- biblical Canticles;
+- **Song of Songs**;
+- later devotional materials.
+
+The Ge'ez biblical tradition is historically related to Greek translation activity, and Hugh C. Gleave produced a dedicated edition/translation of **The Ethiopic Version of the Song of Songs**.
+
+An Ethiopic manuscript at the Walters Art Museum preserves the Song as **Mäḥalǝyä Mäḥalǝy zǝ-wǝ’ǝtu zä-Sälomon**, copied with Psalter-associated materials.
+
+Therefore:
+- Song of Songs is securely part of the Ethiopian textual/liturgical world;
+- but fine wording should still be checked against Hebrew/Greek;
+- modern English speaker labels (“young woman,” “young man,” “friends”) are editorial aids, not ancient headings.
+
+---
+
+# Structural control — the Song is not securely one continuous narrative
+
+The poem contains recurrent scenes:
+- approach;
+- invitation;
+- absence;
+- search;
+- finding;
+- praise;
+- garden;
+- return;
+- adjuration.
+
+Scholars divide its macrostructure in different ways.
+
+Some see:
+- anthologized love lyrics;
+- a loose dramatic sequence;
+- strong ring/chiasm structures;
+- paired night-search scenes;
+- symmetrical “coming/going” movements.
+
+Richard Davidson, for example, maps strong parallel units around:
+- presence/absence;
+- found/lost/found;
+- mutual possession;
+- garden culmination;
+- repeated gazelle/mountain refrains.
+
+That structural recurrence is real enough to track.
+
+But:
+**repeated scene ≠ one exact historical itinerary**.
+
+---
+
+# The central pair is woman / man — complementary rather than hostile
+
+The lovers are not primarily enemies.
+
+Their recurring pair states are:
+
+**near**
+↔
+**far**
+
+**present**
+↔
+**absent**
+
+**seeking**
+↔
+**being sought**
+
+**inside**
+↔
+**outside**
+
+**speaking**
+↔
+**listening**
+
+**belonging**
+↔
+**belonging reciprocally**
+
+This is a strong P1/P3 pair.
+
+### Pair classification
+
+Woman / beloved:
+- **P1 complementary halves: very strong at literary/relational level**;
+- **P2 polarity pair: moderate in presence/absence, inside/outside, seeker/sought states**;
+- **P3 state pair: strong**;
+- **P6 hostile-double: weak**;
+- **P8 world-turn mirror: unsupported literally**;
+- **P9 literary paired-voice structure: extremely strong**;
+- **P10 separate human lovers: strongest first-level reading**.
+
+This is important.
+
+The Song's two-force pattern is:
+**reciprocal attraction / separation / convergence**,
+not two enemies colliding.
+
+---
+
+# Song 1 — attraction begins as draw/run/chamber movement
+
+The woman says:
+
+**draw me after you**
+→ **let us run**.
+
+Then:
+**king brings into chambers**.
+
+The first process is already:
+**attraction**
+→ **accelerated movement**
+→ **enclosed interior**.
+
+This is relational/erotic movement.
+
+There is no cosmic gate.
+
+But the book begins with:
+**force of attraction producing inward movement**.
+
+---
+
+# Vineyard appears immediately as both labour-field and self-field
+
+The woman says:
+- brothers made her keeper of vineyards;
+- **her own vineyard she did not keep**.
+
+“Vineyard” therefore already operates at two levels:
+
+1. literal labour/agricultural field;
+2. likely self/body/sexual autonomy metaphor.
+
+This dual use becomes crucial in chapter 8 when she says:
+**“my vineyard, my very own, is for myself / before me.”**
+
+The poem therefore builds a long **vineyard-as-self / vineyard-as-resource** system.
+
+---
+
+# Song 2 — lover crosses mountain/hill terrain with animal-like mobility
+
+The beloved comes:
+
+**leaping on mountains**
+→ **bounding over hills**.
+
+He is compared to:
+**gazelle / young stag**.
+
+This is not slow processional ascent.
+
+It is rapid multi-level traversal.
+
+The pair remains separated:
+woman inside/behind house boundary;
+man moving outside.
+
+---
+
+# Wall + window + lattice create a layered visual boundary
+
+The beloved reaches:
+
+**behind our wall**
+→ looks through **windows**
+→ peers through **lattice**.
+
+This is one of the Song's clearest threshold structures.
+
+The boundary is not fully opaque.
+
+It blocks full entry,
+but allows:
+- sight;
+- voice;
+- partial presence.
+
+So this is a **semi-permeable boundary**.
+
+Compare:
+- Esther messenger circuits;
+- Tobit outside/inside;
+- Proverbs city wall;
+- Daniel sensor boundaries.
+
+Song adds:
+**visual/voice contact without full bodily crossing**.
+
+---
+
+# “Arise and come away” is triggered by seasonal field change
+
+The invitation follows:
+
+winter
+→ past.
+
+rain
+→ over/gone.
+
+flowers
+→ appear.
+
+singing/birds
+→ return.
+
+fig/vine
+→ new growth/fragrance.
+
+Then:
+**rise**
+→ **come away**.
+
+This is important.
+
+Movement begins when environmental state changes.
+
+Sequence:
+
+**closed/cold/wet season**
+→ **spring activation**
+→ **biological signalling**
+→ **human movement becomes desirable/possible**.
+
+This is a genuine environment→route activation model.
+
+---
+
+# Seasonal activation is not a gate-opening mechanism by itself
+
+The poem does not say:
+winter physically seals worlds.
+
+The conventional process is:
+**spring transforms the land and invites lovers outdoors**.
+
+Still, it provides a useful control for the cosmology project:
+environmental transformation can make the same terrain functionally different without geography moving.
+
+---
+
+# Cleft rock / hidden body — refuge boundary with voice output
+
+The woman is imagined as a dove:
+
+**in clefts of rock**
+→ hidden/protected.
+
+The beloved asks:
+**show face**
+→ **let me hear voice**.
+
+Thus:
+**body concealed**
+but
+**signal can exit**.
+
+Again:
+physical visibility and communication are separable.
+
+---
+
+# Little foxes — small disturbances can destabilize a productive field
+
+The lovers ask for:
+**little foxes**
+that damage vineyards in bloom
+to be caught.
+
+This is a small-perturbation control.
+
+Large productive field
+→ vulnerable
+to
+small disruptive agents.
+
+Compare:
+- Ecclesiastes dead fly ruining perfume;
+- Proverbs small boundary failures;
+- Song garden/vineyard enclosure.
+
+The system's scale does not determine the minimum disruptive scale.
+
+---
+
+# “My beloved is mine and I am his” — reciprocal ownership rather than one-way possession
+
+Song 2:16 gives:
+**A belongs to B**
+and
+**B belongs to A**.
+
+Later formulations recur:
+- 6:3;
+- 7:10.
+
+The sequence subtly changes emphasis, but reciprocity remains central.
+
+This is one of the strongest P1 relational pair statements in the Bible.
+
+It is not:
+one absorbs the other.
+
+It is:
+**two remain distinct while mutually coupled**.
+
+That is highly relevant to the user's “two forces at play” principle.
+
+---
+
+# Song 3 — first nocturnal search: absence activates outward movement
+
+On bed at night:
+
+beloved absent
+→ desire remains
+→ woman rises
+→ goes through city
+→ streets/squares
+→ seeks.
+
+She encounters watchmen.
+
+Then:
+→ passes them
+→ finds beloved
+→ holds him
+→ brings him into mother's house.
+
+This is a complete:
+**inside**
+→ **outward search**
+→ **public field**
+→ **finding**
+→ **re-entry into private enclosure**.
+
+---
+
+# Search I ends in successful capture/holding
+
+The crucial point:
+finding is not enough.
+
+She says:
+**held him**
+→ would not let go.
+
+Then:
+**mother's house / chamber**
+receives him.
+
+So the first search cycle is:
+absence
+→ movement
+→ detection
+→ capture/holding
+→ enclosure.
+
+This will be contrasted with chapter 5.
+
+---
+
+# City watchmen are threshold/surveillance nodes
+
+The watchmen:
+- patrol city;
+- observe/search public space;
+- encounter woman.
+
+In Song 3 they are neutral/ineffective.
+
+In Song 5 they become violent.
+
+Thus the same public-boundary institution changes function by scene.
+
+This is an important control:
+**same node does not always perform same state transition**.
+
+---
+
+# Song 4 — the woman's body is converted into moving landscape and architecture
+
+The beloved's praise maps body parts to:
+
+- eyes → doves;
+- hair → goats moving down Gilead;
+- teeth → sheep coming up from washing;
+- lips → crimson thread;
+- cheeks → pomegranate halves;
+- neck → **tower of David**;
+- breasts → **twin fawns**;
+- body/sexual space → mountain/hill/garden/fountain.
+
+This is a very strong **body↔landscape/architecture projection**.
+
+It proves that within biblical poetry:
+human anatomy can be described as:
+- mountain;
+- tower;
+- flock;
+- garden;
+- fountain.
+
+Therefore later body-shaped cosmology comparisons need controls.
+
+Anthropomorphic landscape language can be poetic rather than observational.
+
+---
+
+# Opposed vertical motions occur inside one body-praise poem
+
+Song 4 contains:
+
+hair/goats
+→ **moving down** mountain slopes.
+
+teeth/sheep
+→ **coming up** from washing.
+
+This gives genuine paired up/down motion.
+
+But:
+the motions belong to two separate similes inside a body description.
+
+They are not two physical strands.
+
+Still worth cross-indexing:
+**body represented through opposite directional herd flows**.
+
+---
+
+# Twin breasts / twin fawns — paired bodily symmetry is explicit
+
+The two breasts are:
+**two fawns**
+→ **twins of a gazelle**.
+
+This is a genuine bilateral pair.
+
+But it is normal anatomical symmetry in erotic praise.
+
+### Squatter-Man control
+
+Bilateral paired body features:
+**do not automatically equal two cosmic side-strands**.
+
+The Song is an excellent falsification control because it produces abundant body/landscape symmetry through metaphor.
+
+---
+
+# “Mountain of myrrh / hill of frankincense” — body becomes fragrant terrain
+
+The beloved says he will go to:
+**mountain of myrrh**
+and
+**hill of frankincense**.
+
+Interpretations vary:
+- erotic body metaphor;
+- fragrant landscape;
+- poetic double entendre.
+
+The source does not define literal geography.
+
+Record the transformation:
+**body/desire**
+→ **fragrant mountain terrain**.
+
+---
+
+# Song 4:8 — high dangerous mountains → lover-centre movement
+
+The bride is invited:
+
+from Lebanon
+→ from Amana/Senir/Hermon peaks
+→ from lions/leopards mountain zone
+→ toward beloved.
+
+This is a high→lower/nearer movement.
+
+The route leaves:
+**dangerous mountain periphery**
+toward
+**relational centre**.
+
+Again:
+not a world descent,
+but a genuine vertical/social convergence.
+
+---
+
+# The locked garden / sealed fountain is Section 47C's strongest boundary image
+
+The woman is called:
+
+**garden locked**
++
+**fountain sealed**.
+
+This is unusually explicit.
+
+The same person/body is simultaneously mapped as:
+
+**productive enclosed land**
+and
+**contained water source**.
+
+The boundary has two functions:
+
+1. protect/control access to garden;
+2. seal/control release/access to water.
+
+This is one of the strongest **body / enclosure / source** mappings in the corpus.
+
+---
+
+# Garden interior is not empty — it is densely productive before opening
+
+Inside the locked garden are:
+- pomegranates;
+- fruit;
+- henna;
+- nard;
+- saffron;
+- calamus;
+- cinnamon;
+- frankincense;
+- myrrh;
+- aloes;
+- spices.
+
+So:
+
+**closed**
+does not mean
+**dead/unpopulated/empty**.
+
+This is highly relevant to the user's cosmology correction that closed/separated worlds are still inhabited/active.
+
+At small scale:
+
+**enclosure closed**
+while
+**interior remains rich, active and productive**.
+
+Only **access relation** is closed.
+
+That is an excellent gate-topology control.
+
+---
+
+# Sealed fountain + living water creates stored-flow potential
+
+The woman is simultaneously:
+**sealed fountain**
+and
+**well of living/flowing water**
+with
+**streams from Lebanon**.
+
+This may appear contradictory only if “sealed” is assumed to mean no internal water.
+
+Better process:
+
+**source exists**
++
+**flow potential exists**
++
+**access/output is controlled**.
+
+This is precisely a topology distinction:
+resource and field remain active internally even when boundary state is restricted.
+
+---
+
+# North wind + south wind — two opposite-direction forces are called together
+
+The woman calls:
+
+**Awake, north wind**
+and
+**come, south wind**.
+
+Then:
+
+**blow upon garden**
+→ fragrance/spices flow outward.
+
+This is one of the most relevant lines for the two-force search.
+
+Two winds:
+- named by opposite directions;
+- summoned together;
+- act on one central enclosed garden;
+- produce one shared activation effect.
+
+### Important distinction
+
+They are **not fighting**.
+
+They are **co-operating / alternating directional forces** acting on one field.
+
+That is much closer to:
+**two-sided activation**
+than
+**two hostile dragons**.
+
+---
+
+# North/south winds activate output, not garden existence
+
+Before winds:
+garden already contains fruit/spice/water.
+
+After winds:
+**fragrance is released / wafted abroad**.
+
+Thus:
+
+**internal content**
+→ external signal/output.
+
+The winds do not create the garden.
+
+They change:
+**expression/permeability**.
+
+That is a subtle but important mechanism.
+
+---
+
+# Locked garden transitions into invited access
+
+Immediately after the wind activation:
+
+woman:
+**let my beloved come into his garden**
+→ **eat its choice fruits**.
+
+Then 5:1:
+beloved says:
+**I have come into my garden**
+→ gathered myrrh/spice
+→ eaten honeycomb/honey
+→ drunk wine/milk.
+
+This is a true state transition.
+
+### Before
+garden locked;
+fountain sealed.
+
+### Activation
+north + south winds
+→ fragrance released.
+
+### Permission
+beloved invited.
+
+### After
+beloved **inside** garden
+→ consumes/participates in produce.
+
+This is arguably the strongest **closed→activated→opened/entered enclosure** sequence in Song of Songs.
+
+---
+
+# Gate analogy of Song 4:12–5:1
+
+At process level:
+
+**productive interior**
+inside
+**restricted boundary**
+→ opposing-direction winds activate field
+→ signal/fragrance crosses outward
+→ authorized entrant invited
+→ boundary becomes traversable
+→ entrant reaches interior
+→ exchange/consumption occurs.
+
+That resembles:
+**gate = change in adjacency/access**.
+
+### Hard control
+
+The first-level reading is erotic poetry.
+
+Garden/fountain are sexual/body metaphors.
+
+There is no evidence of:
+- literal cosmological world gate;
+- plasma lattice;
+- past/future world exchange.
+
+But the *process grammar* is unusually strong.
+
+---
+
+# Song 5 — second nocturnal cycle begins with failed timing at a door
+
+The second search scene differs sharply.
+
+Beloved:
+→ arrives outside;
+→ knocks / requests entry.
+
+Woman:
+→ hesitates/delays.
+
+By the time:
+**she opens**,
+beloved:
+→ gone.
+
+This is a near-perfect **timing-dependent gate failure**.
+
+Same door.
+Same two people.
+
+But:
+**phase mismatch**
+→ connection lost.
+
+This is extremely useful.
+
+Access is not only:
+open/closed.
+
+It can also fail because:
+**opening occurs too late**.
+
+---
+
+# Door/bolt/myrrh — contact across boundary precedes failed opening
+
+Song 5 includes:
+- beloved's hand at/through latch opening;
+- woman's inner bodily response;
+- woman rises;
+- hands drip myrrh onto bolt/latch;
+- door opens;
+- beloved absent.
+
+The language carries erotic double entendre.
+
+But the boundary sequence is still clear:
+
+**outside agent contacts lock/interface**
+→ inside agent responds
+→ delay
+→ boundary opens
+→ target no longer adjacent.
+
+This is one of the clearest **temporal adjacency** failures in the corpus.
+
+---
+
+# First search vs second search — same topology, opposite outcome
+
+### Song 3
+absence
+→ woman searches city
+→ watchmen encountered
+→ beloved found
+→ held
+→ private enclosure reached.
+
+### Song 5
+beloved at door
+→ delayed opening
+→ absence
+→ woman searches city
+→ watchmen encountered
+→ woman beaten/wounded/stripped
+→ beloved still not immediately recovered.
+
+This is a strong paired experiment.
+
+The same general route does not guarantee the same result.
+
+Variables include:
+- timing;
+- boundary state;
+- public danger;
+- watchmen behavior.
+
+---
+
+# Watchmen violence is not to be geometrized away
+
+In Song 5:
+watchmen:
+- find woman;
+- beat/wound her;
+- remove outer garment/veil.
+
+This is a human violence/vulnerability scene.
+
+Do not turn it into:
+“protective membrane removed by cosmic operators.”
+
+The ordinary social meaning must remain visible.
+
+It does, however, demonstrate:
+**public-space crossing carries different risk for the female body than private enclosure**.
+
+---
+
+# Song 5–6 — verbal description becomes a route back to the absent beloved
+
+When others ask:
+**what is your beloved like?**
+
+the woman constructs him through body-description.
+
+Then in chapter 6:
+**where has he gone?**
+
+She answers:
+**down to his garden**
+→ beds of spices
+→ lilies.
+
+This creates:
+
+**absence**
+→ verbal reconstruction of body
+→ location inferred/recovered
+→ garden relation restored.
+
+Information about the person helps re-establish relational topology.
+
+---
+
+# Mutual possession returns after loss
+
+Song 6:3:
+
+**I am my beloved's**
+and
+**my beloved is mine**.
+
+The pair-state survives temporary separation.
+
+Thus:
+**local disconnection**
+does not destroy
+**relational coupling**.
+
+This is highly relevant to the project's distinction between:
+- physical separation;
+- relational continuity.
+
+---
+
+# Song 6 — woman becomes cosmic/military field through praise
+
+The woman is compared to:
+- dawn;
+- moon;
+- sun;
+- army with banners.
+
+This is strong body→cosmos projection.
+
+Again:
+the Song provides a control example showing that:
+**human beauty can be mapped directly onto celestial and military-scale imagery**.
+
+Do not infer literal solar/lunar identity.
+
+---
+
+# Song 6:11 — descent into garden is inspection of growth state
+
+The speaker goes **down** to:
+- nut orchard/garden;
+- valley blossoms;
+- vine budding;
+- pomegranate bloom.
+
+This is a literal/poetic **inspection descent**.
+
+Process:
+**observer**
+→ down into productive field
+→ checks growth-state.
+
+This resembles:
+- perimeter inspection;
+- field-state monitoring;
+- seasonal readiness check.
+
+No gate mechanism required.
+
+---
+
+# Song 7 — body again becomes terrain, architecture and resource network
+
+The body is mapped to:
+- feet;
+- thighs;
+- navel;
+- belly;
+- breasts;
+- neck as ivory tower;
+- eyes as pools;
+- nose as tower;
+- head as Carmel;
+- hair;
+- palm tree;
+- fruit clusters.
+
+This is one of the Bible's most extreme **human body ↔ landscape/city/resource** mappings.
+
+For Squatter-Man analysis this is critical control data.
+
+A poem can create a monumental human landscape without describing a plasma anthropomorph.
+
+---
+
+# “I am my beloved's, and his desire is for me” reverses ordinary dominance wording
+
+Song 7:10:
+
+**I am my beloved's**
+→ **his desire is toward me**.
+
+Scholars often note the echo/reversal of Genesis 3:16 wording.
+
+Whatever intertextual strength one assigns,
+the Song's pair remains reciprocal.
+
+This is not one force dominating another.
+
+It is a persistent **mutual-attraction coupling**.
+
+---
+
+# Country/vineyard movement reopens the field after city/private enclosure cycles
+
+The woman invites:
+**come, let us go out into fields**
+→ lodge in villages
+→ rise early
+→ inspect vineyards
+→ see whether vines bud / pomegranates bloom
+→ there give love.
+
+Again:
+**relationship state**
+is synchronized to
+**growth-state of landscape**.
+
+The lovers repeatedly move between:
+- room/house;
+- city;
+- mountain;
+- field;
+- vineyard;
+- garden.
+
+Their relational topology is encoded through landscape transitions.
+
+---
+
+# Song 8 — woman comes up from wilderness leaning on beloved
+
+The scene asks:
+**Who is this coming up from wilderness, leaning on her beloved?**
+
+This is one of the clearest pair-ascent images.
+
+Two distinct bodies:
+- coupled/supporting;
+- emerging/upward from wilderness;
+- one leaning on the other.
+
+### Pair geometry
+
+This is stronger than generic “two lovers” imagery because it gives:
+**two-body coupled ascent**.
+
+But it still does not give:
+- two strands;
+- opposite winding;
+- central rod.
+
+The bodies move together in one direction.
+
+---
+
+# Apple tree joins love with conception/birth memory
+
+Immediately around the wilderness ascent:
+- apple tree;
+- awakening;
+- mother conceived/labored/gave birth.
+
+The poem links:
+**present pair**
+to
+**prior generational emergence**.
+
+This introduces:
+**love ↔ lineage/time continuity**.
+
+Compare Ecclesiastes:
+generation leaves / generation comes.
+
+Song:
+present love is explicitly remembered beside maternal conception/birth.
+
+---
+
+# Seal on heart + arm — relationship becomes persistent inscription/token
+
+The woman asks:
+**set me as seal on heart**
+and
+**seal on arm**.
+
+A seal in the ancient world marks:
+- ownership;
+- authentication;
+- identity;
+- authority;
+- durable impression.
+
+So the desired relational state is:
+
+**love**
+→ not merely momentary feeling
+→ **persistent encoded mark on inner + outer person**.
+
+Heart:
+inner/affective centre.
+
+Arm:
+visible/action/strength interface.
+
+This is a strong information/body continuity image.
+
+---
+
+# “Love strong as Death / passion fierce as Sheol” — direct two-force comparison
+
+This is one of the most important pair statements in the Song.
+
+**Love**
+↔
+**Death**.
+
+**Passion/jealousy**
+↔
+**Sheol**.
+
+The comparison does not say love *is* death.
+
+It says love matches death's:
+- strength;
+- relentlessness;
+- inescapability/fierceness.
+
+This is a true P2 comparison between:
+**life-affirming relational force**
+and
+**terminal death force**.
+
+---
+
+# Love / Death pair classification
+
+Love / Death:
+- **P2 polarity pair: extremely strong conceptually**;
+- **P1 literal same force: unsupported**;
+- **P3 state opposition: strong**;
+- **P9 poetic comparison: secure**.
+
+This is one of the most important conceptual two-force statements in the wisdom corpus.
+
+---
+
+# Fire enters as third comparator
+
+Love's flashes:
+→ flashes of fire
+→ **shalhebetyah**.
+
+The difficult Hebrew can be rendered/interpreted as:
+- “flame of Yah”;
+- “mighty/raging flame”;
+- divine-name intensifier.
+
+Ancient Greek did not clearly preserve an explicit divine-name reading.
+
+Therefore:
+do not make this the secure only literal mention of YHWH.
+
+The source-level geometry is:
+
+**love**
+→ fire-like
+→ intense/propagating/burning.
+
+---
+
+# Many waters cannot quench love — fire/water opposition is explicit
+
+Then:
+
+**many waters**
+→ cannot extinguish love.
+
+**floods/rivers**
+→ cannot drown/sweep it away.
+
+This creates a very strong elemental polarity:
+
+**fire-like love**
+↔
+**many waters/flood**.
+
+Normally:
+water quenches fire.
+
+Here:
+the expected material interaction fails.
+
+This is poetic hyperbole asserting love's strength.
+
+But for process mapping it is high-value:
+**one force resists its ordinary counter-force**.
+
+---
+
+# Love / water pair is not the same as the north/south wind pair
+
+Important distinction:
+
+### north/south winds
+cooperate to activate garden output.
+
+### love / many waters
+are opposed:
+waters attempt/are imagined as unable to quench/drown love.
+
+Do not merge all pairs into one mechanism.
+
+The Song itself contains multiple pair types.
+
+---
+
+# Love cannot be purchased — relational force is non-convertible to wealth
+
+The poem adds:
+even all household wealth offered for love
+→ despised/rejected.
+
+This mirrors Ecclesiastes' repeated:
+wealth cannot alter ultimate existential structure.
+
+Here:
+**material resource**
+cannot substitute for
+**relational force**.
+
+This is another system-variable distinction.
+
+---
+
+# Little sister: wall or door — body is explicitly mapped to boundary type
+
+Song 8 asks whether the young sister is:
+**wall**
+or
+**door**.
+
+Interpretation is debated:
+- sexual protection;
+- maturity;
+- decoration;
+- body shape;
+- family control.
+
+Then the woman declares:
+**I am a wall**
+and
+**my breasts are towers**.
+
+This is an unusually explicit:
+**female body = fortified architecture**
+mapping.
+
+For Squatter-Man/body-world research:
+very important control.
+
+---
+
+# Wall versus door represents two different boundary states
+
+Even without deciding the sexual metaphor exactly:
+
+### wall
+continuous barrier.
+
+### door
+selective crossing point.
+
+The poem explicitly juxtaposes:
+**solid boundary**
+versus
+**controlled aperture**.
+
+That is a true topology distinction.
+
+But its first-level field is body/maturity/sexual social control.
+
+---
+
+# “I am a wall” — speaker claims her own boundary state
+
+The woman's declaration matters.
+
+She is not only described by others.
+
+She says:
+**I am a wall**.
+
+Then:
+**breasts like towers**.
+
+This can be read as maturity / integrity / self-possession depending interpretation.
+
+In process terms:
+**boundary identity becomes self-asserted rather than externally assigned**.
+
+---
+
+# Vineyard ownership — Solomon's leased system versus “my vineyard is mine”
+
+Song 8 contrasts:
+
+### Solomon
+vineyard at Baal-hamon
+→ leased to keepers
+→ each owes large silver return.
+
+### woman
+**“my vineyard, my very own, is for myself / before me.”**
+
+This is one of the strongest ownership/topology reversals in the book.
+
+The vineyard that earlier could be:
+- labour burden;
+- erotic/self metaphor;
+
+ends with:
+**self-owned field**.
+
+The woman controls access/value of her vineyard.
+
+---
+
+# External economic network versus self-controlled productive field
+
+Solomon's vineyard:
+**central owner**
+→ distributed keepers
+→ revenue flows inward.
+
+Woman's vineyard:
+**local owner/self**
+→ retains direct control.
+
+This gives two network architectures:
+
+1. hierarchical extraction;
+2. self-governed local ownership.
+
+Again:
+not cosmic.
+
+But a strong centre/periphery control.
+
+---
+
+# Final movement — poem ends open, with beloved again on fragrant mountains
+
+The last instruction:
+
+beloved
+→ make haste
+→ be like gazelle/young stag
+→ mountains of spices.
+
+The poem does not end with:
+- lovers fused;
+- gate permanently closed;
+- movement terminated.
+
+It ends with:
+**renewed motion across mountain field**.
+
+This matters.
+
+The pair's defining state is not static union.
+
+It is:
+**recurring approach / distance / call / movement / return**.
+
+---
+
+# SECTION 47C pair / two-force matrix
+
+## Woman / beloved
+
+Strongest pair.
+
+### recurrent states
+near/far
+inside/outside
+seeker/sought
+speaker/listener
+garden/entrant
+mutual owner/owned.
+
+Classification:
+- P1 very strong relational complementarity;
+- P2 moderate polarity;
+- P3 strong state alternation;
+- P9 extremely strong literary pairing;
+- P10 separate lovers secure.
+
+### Two-spring test
+Partial only.
+
+Strong:
+- recurrent convergence/separation;
+- reciprocal pull;
+- coupled ascent;
+- two-directional searching.
+
+Weak/absent:
+- no counter-wound strands;
+- no one rises while the other descends as a stable mechanical pair;
+- no central rod produced by weaving.
+
+---
+
+## North wind / south wind
+
+Opposite directional pair.
+
+Function:
+both activate one garden.
+
+Classification:
+- P2 directional polarity: very strong;
+- P1 functional cooperation: strong;
+- hostile dualism: absent.
+
+This is one of the best non-hostile **two-force** analogues in the section.
+
+---
+
+## Love / Death-Sheol
+
+Conceptual force pair.
+
+Love:
+life/attraction/union.
+
+Death/Sheol:
+termination/irreversibility.
+
+Classification:
+- P2 extremely strong;
+- literal mechanics uncertain/poetic.
+
+---
+
+## Love-fire / many waters
+
+Elemental opposition.
+
+Expected:
+water quenches fire.
+
+Poem:
+many waters fail.
+
+Classification:
+- P2 very strong;
+- ordinary physical rule deliberately overridden by poetic hyperbole.
+
+---
+
+## Wall / door
+
+Boundary-type pair.
+
+Wall:
+continuous closure.
+
+Door:
+selective aperture.
+
+Classification:
+- P2 topology contrast: strong.
+
+---
+
+## Locked garden / entered garden
+
+State pair.
+
+closed/sealed
+→ wind activation
+→ invitation
+→ authorized entry.
+
+Classification:
+- P3 state transition: extremely strong.
+
+This is the strongest gate analogue in the Song.
+
+---
+
+# SECTION 47C body / landscape / Squatter-Man screen
+
+The Song repeatedly maps body to:
+
+- mountain;
+- hill;
+- tower;
+- wall;
+- door;
+- garden;
+- fountain;
+- vineyard;
+- flocks;
+- celestial objects;
+- military banners.
+
+This is extraordinarily important as a methodological control.
+
+It proves that ancient biblical poetry can create:
+**large-scale landscape/architecture from human anatomy**
+without claiming literal giant bodies in the sky.
+
+Therefore:
+
+### Positive relevance
+The Song supplies a vocabulary for:
+**body ↔ landscape/world** mapping.
+
+### Negative control
+Shape correspondence alone is insufficient to prove:
+**Squatter-Man / plasma anthropomorph**.
+
+To promote another text beyond poetry,
+the project must require:
+- process sequence;
+- environmental effects;
+- repeated independent controls;
+- movement mechanics;
+- body/axis transformations not explainable as ordinary poetic comparison.
+
+Song of Songs raises the evidentiary bar.
+
+---
+
+# SECTION 47C continuous transformation timeline — Song of Songs 1–8
+
+## Phase A — attraction creates inward motion
+
+draw/run
+→ chambers.
+
+**Effect:** relational pull initiates route.
+
+---
+
+## Phase B — vineyard relation is split
+
+external vineyards kept
+↔
+own vineyard neglected.
+
+**Effect:** labour field and self-field separate.
+
+---
+
+## Phase C — mobile beloved traverses mountain terrain
+
+mountains/hills
+→ gazelle-like approach.
+
+**Effect:** outer moving pole nears enclosed partner.
+
+---
+
+## Phase D — wall permits partial signal, blocks full crossing
+
+wall/window/lattice
+→ sight/voice contact.
+
+**Effect:** semi-permeable adjacency.
+
+---
+
+## Phase E — seasonal field flips
+
+winter/rain
+→ spring/flowers/fragrance.
+
+**Effect:** route/social movement becomes active.
+
+---
+
+## Phase F — woman leaves interior to search
+
+bed/house
+→ city streets/squares.
+
+**Effect:** inner node becomes mobile seeker.
+
+---
+
+## Phase G — first search succeeds
+
+watchmen passed
+→ beloved found
+→ held
+→ mother's house.
+
+**Effect:** separation closes into protected enclosure.
+
+---
+
+## Phase H — body expands into landscape/architecture
+
+human features
+→ flocks/tower/mountain/garden.
+
+**Effect:** person becomes multiscale poetic terrain.
+
+---
+
+## Phase I — productive body-field is closed
+
+garden locked
++
+fountain sealed.
+
+**Effect:** interior active, access restricted.
+
+---
+
+## Phase J — opposite winds activate one field
+
+north wind + south wind
+→ fragrance released.
+
+**Effect:** two directional forces increase outward expression.
+
+---
+
+## Phase K — authorization changes boundary state
+
+beloved invited
+→ enters garden
+→ consumes produce.
+
+**Effect:** closed adjacency becomes authorized interior access.
+
+---
+
+## Phase L — second door cycle fails by timing
+
+knock/contact
+→ delayed response
+→ door opens
+→ beloved absent.
+
+**Effect:** phase mismatch destroys adjacency.
+
+---
+
+## Phase M — public search becomes dangerous
+
+woman enters city
+→ watchmen beat/wound/strip.
+
+**Effect:** same route family produces opposite result.
+
+---
+
+## Phase N — relational coupling survives separation
+
+“I am his / he is mine.”
+
+**Effect:** physical distance does not erase relationship state.
+
+---
+
+## Phase O — woman becomes dawn/moon/sun/army field
+
+human
+→ celestial/military projection.
+
+**Effect:** body/person expands symbolically to cosmic scale.
+
+---
+
+## Phase P — garden inspected for growth
+
+observer goes down
+→ bud/bloom state checked.
+
+**Effect:** internal field monitored.
+
+---
+
+## Phase Q — pair moves outward together
+
+fields/villages/vineyards
+→ love synchronized with plant growth.
+
+**Effect:** relationship linked to seasonal productivity.
+
+---
+
+## Phase R — coupled pair ascends from wilderness
+
+woman
+→ comes up
+→ leaning on beloved.
+
+**Effect:** two bodies form temporary support-coupled ascent.
+
+---
+
+## Phase S — present pair connects to birth-memory
+
+apple tree
+→ conception/labor/birth.
+
+**Effect:** erotic pair linked to generational time.
+
+---
+
+## Phase T — love is sealed into body/identity
+
+heart + arm
+→ seal.
+
+**Effect:** relationship becomes persistent mark/token.
+
+---
+
+## Phase U — love confronts death-force
+
+love strong as Death;
+passion fierce as Sheol.
+
+**Effect:** relational force is measured against terminal force.
+
+---
+
+## Phase V — love becomes fire-like
+
+flashes/flame.
+
+**Effect:** relational intensity mapped to energetic field.
+
+---
+
+## Phase W — many waters fail to quench it
+
+water/flood
+→ cannot extinguish/drown love.
+
+**Effect:** expected counter-force fails.
+
+---
+
+## Phase X — body declares boundary architecture
+
+“I am a wall”
+→ breasts/towers.
+
+**Effect:** self defines perimeter/state.
+
+---
+
+## Phase Y — vineyard ownership localizes
+
+Solomon's distributed vineyard economy
+↔
+woman's own vineyard.
+
+**Effect:** productive field becomes self-controlled.
+
+---
+
+## Phase Z — final pair returns to mountain motion
+
+beloved
+→ gazelle-like speed
+→ spice mountains.
+
+**Effect:** system remains dynamically open rather than ending in fixed fusion.
+
+---
+
+# What Song of Songs adds to the master Bible/Vardath timeline
+
+1. **The Song gives one of the strongest sustained human pair systems in the entire corpus.**
+2. The lovers are primarily **complementary and reciprocal**, not hostile dual forces.
+3. Their defining rhythm is:
+   **approach → separation → search → reunion → renewed movement**.
+4. **Physical separation and relational connection repeatedly diverge.**
+5. Wall/window/lattice gives a clean **semi-permeable boundary**: sight/voice cross while body does not.
+6. Seasonal transition changes functional movement through the same land without geography moving.
+7. The two nocturnal search scenes form a controlled pair:
+   - first search succeeds;
+   - second search becomes violent and fails temporarily.
+8. Therefore repeated route geometry does not guarantee identical outcome.
+9. **Timing matters:** in Song 5 the door opens too late.
+10. The Song is one of the strongest biblical controls for **body→landscape/architecture projection**.
+11. That substantially raises the evidentiary threshold for claiming literal Squatter-Man imagery elsewhere.
+12. **Locked garden / sealed fountain does not mean empty/dead interior.** The interior is already rich/productive; only access is restricted.
+13. This is an excellent small-scale analogue for the user's rule that separated/closed worlds can remain inhabited and active.
+14. **North wind + south wind are a true opposite-direction pair acting together on one centre.**
+15. They do not fight; they jointly activate outward fragrance/output.
+16. **The garden's strongest state sequence is:**
+   locked/sealed → wind-activated → fragrance crosses boundary → beloved invited → garden entered.
+17. This is Section 47C's strongest gate-adjacency analogue.
+18. **Signal/output can cross before body entry**, just as fragrance leaves the garden before the beloved enters.
+19. Song 5 gives a temporal-gate control:
+   interface contact → delayed opening → adjacency lost.
+20. **The pair can ascend together** from wilderness, one leaning on the other, but this is same-direction coupled motion, not counter-wound strands.
+21. **Love / Death-Sheol is an explicit conceptual force pair.**
+22. The poem does not narrate resurrection; it measures love's strength against death's relentlessness.
+23. **Love-fire / many waters** creates a second explicit opposition, with water failing to quench the fire-like force.
+24. The difficult **shalhebetyah** should remain open between “flame of Yah” and “mighty/raging flame” readings.
+25. **Wall / door** gives a direct topology contrast between solid boundary and selective crossing aperture.
+26. **Woman's “I am a wall”** makes boundary state self-asserted.
+27. **Vineyard ownership** shifts from externally imposed labour and royal lease systems toward a strongly self-controlled field.
+28. **Literal garden/vineyard/fountain processes coexist with erotic body metaphor**, showing that one image can operate simultaneously at multiple scales.
+29. **The poem's final state is dynamic rather than static**: mountain/gazelle movement resumes.
+30. Song therefore fits the Vardath project best as a model of:
+   **paired attraction + changing access + active enclosed field + bidirectional activation + temporary disconnection + re-entry**.
+31. It does **not** independently supply:
+   - two counter-wound lattice strands;
+   - finger-trap contraction;
+   - world-disc stacking;
+   - populated past/future layers;
+   - a rod/spire formed by braid compression.
+32. The strongest contribution is process grammar, especially the **sealed-yet-living interior** and **two-opposite-winds activating one enclosed source**.
+
+---
+
+# SECTION 47C number / timing register
+
+Record without forcing:
+
+- repeated **two-body / twin** imagery:
+  two breasts / twin fawns;
+- three major “daughters of Jerusalem” adjuration refrains commonly recognized at 2:7, 3:5, 8:4, with 5:8 a related adjuration;
+- Song 6 uses:
+  **60 queens**
+  **80 concubines**
+  and maidens without number;
+- Song 8 vineyard economy:
+  **1,000** silver for Solomon;
+  **200** for keepers in the stated arrangement;
+- Song is **8 chapters** in modern chapter division.
+
+Controls:
+- these numbers belong to poetic/social imagery and literary structure;
+- no secure Vardath cycle should be built from them without independent recurrence/mechanism.
+
+---
+
+# SECTION 47C textual / literary / historical controls
+
+- Speaker assignments in modern Bibles are editorial; Hebrew manuscripts do not label every speaker.
+- The Song may be an anthology, a coherent literary whole, or an arranged sequence of poems; scholarship remains divided over exact macrostructure.
+- Strong symmetrical/refrain patterns do exist, but should not be mistaken for one literal itinerary.
+- Modern scholarship usually begins with **human erotic love poetry** as the first-level sense.
+- Jewish YHWH–Israel and Christian Christ–Church/soul readings are enormously important reception histories but later allegorical constructions.
+- The Song contains no undisputed explicit divine name; **shalhebetyah** in 8:6 is debated.
+- Ancient Greek does not clearly render 8:6 as an explicit “flame of YHWH.”
+- Egyptian and Mesopotamian love poetry supply major comparative controls for:
+  body praise,
+  gardens,
+  fragrance,
+  longing,
+  erotic landscape.
+- Body-landscape “wasf” description is poetic convention, not literal giant-body cosmography.
+- Song 3 and Song 5 night-search scenes are structurally related but materially different.
+- Song 5 watchmen violence must remain a human vulnerability/violence scene, not be abstracted away.
+- Garden/fountain imagery in Song 4 is heavily erotic and sexual in conventional interpretation.
+- North/south winds may be ordinary poetic environmental activation and should not automatically become cosmic counterforces.
+- “Many waters cannot quench love” is poetic hyperbole; ordinary fire/water physics are intentionally transcended by the comparison.
+- Song 8 wall/door imagery is interpretively disputed:
+  protection,
+  maturity,
+  decoration,
+  sexual/body metaphor.
+- Song 8 vineyard interpretation is also debated; retain the secure contrast between Solomon's leased vineyard and the woman's strong declaration of her own vineyard.
+- The Ethiopic Song has a genuine manuscript tradition and is commonly copied with Psalter/Canticle materials; fine textual claims still require Ge'ez/Hebrew/Greek comparison.
+
+### Sources logged for Section 47C
+
+Primary:
+- **Song of Songs 1–8**, modern critical translation checks.
+- NRSVUE Song 1:
+  https://www.bible.com/bible/3523/SNG.1.NRSVUE
+- NRSVUE Song 4:
+  https://www.biblegateway.com/passage/?search=Song+of+Songs+4&version=NRSVUE
+- full Song checked in NRSV/RSV and comparative text presentations.
+
+Literary / structure:
+- J. Cheryl Exum, **The Song of Songs: A Commentary**.
+- Jill M. Munro, **Spikenard and Saffron: The Imagery of the Song of Songs**.
+- Athalya Brenner, modern Song scholarship on gender/body imagery.
+- Richard M. Davidson, **“The Literary Structure of the Song of Songs Redivivus”**, for strong recurrent pairing/refrain structure; retained as one structural proposal, not consensus.
+- Johanna Erzberger, **“I Sought Him, But Found Him Not” — Public Space in the Song of Songs**, for the paired night-search scenes, city/watchmen and private/public boundary analysis.
+
+Love / death / water:
+- Fiona C. Black, **“Love and Death in the Song of Songs,” Bible Odyssey / Society of Biblical Literature**.
+- André LaCocque, **“Love in the Song of Songs,” Bible Odyssey**.
+- modern lexical discussion of **shalhebetyah** as either “flame of Yah” or superlative/raging flame.
+
+Interpretive-history control:
+- Anselm C. Hagedorn, **“Jewish and Christian Interpretation of the Song of Songs,” Bible Odyssey**.
+- modern historical-critical work distinguishing first-level erotic poetry from later allegorical reception.
+
+Ethiopic:
+- Hugh C. Gleave, **The Ethiopic Version of the Song of Songs** (London, 1951).
+- Walters Art Museum Ms. W.768, Ethiopic Psalter with Canticles and Song of Songs.
+- Bridwell Library Ethiopic Psalms and Song of Songs manuscript records.
+- broader Ethiopic Bible translation scholarship, including Michael A. Knibb.
+
+---
+
+# SECTION 47C COMPLETE — SONG OF SONGS
+
+# SECTION 47 COMPLETE — ECCLESIASTES + SONG OF SONGS
+
+### Integrated Section 47 process
+
+**natural fields cycle**
+while
+**human generations replace one another**
+→ human operator builds temporary ordered worlds
+→ paired times define state-space
+→ wealth/work transfer to successors
+→ breath/body return follows one-way mortality path
+→ human love introduces a different persistence system
+→ two lovers remain distinct while repeatedly coupling
+→ walls/lattices/doors regulate partial access
+→ seasonal change activates movement
+→ seeking/finding cycles repeat with different outcomes
+→ body maps into landscape/architecture
+→ garden remains productive while locked
+→ sealed fountain retains living flow
+→ north/south winds activate output
+→ authorized beloved enters
+→ timing failure can break adjacency
+→ relational coupling survives separation
+→ pair ascends together
+→ love is sealed into heart/arm
+→ love is measured against Death/Sheol
+→ many waters fail to extinguish it
+→ self-owned vineyard closes the autonomy arc
+→ movement resumes across mountains.
+
+### Next research block
+
+**SECTION 48 — Wisdom of Solomon + Sirach**
+
+Priority:
+- restore the Ethiopian roadmap's **Mäṣḥafä Ṭibäb / Book(s) of Wisdom** issue explicitly;
+- determine exactly how Wisdom of Solomon maps to Ethiopian book 26 versus project grouping;
+- Wisdom 1–5:
+  soul/body, death/life, righteous/wicked pairs, immortality, fire/refining;
+- Wisdom 6–9:
+  Wisdom as female cosmic/royal partner;
+  Wisdom sought, found, enthroned;
+  cosmic ordering;
+- Wisdom 10–19:
+  Wisdom moving through patriarch/exodus history;
+  elements changing function;
+  creation fighting for righteous;
+  sea/land reversals;
+  manna, fire/water inversions;
+  Exodus transformation sequence;
+- Sirach:
+  Wisdom origin;
+  Wisdom dwelling;
+  Tree/river/garden/fountain imagery;
+  body/health;
+  speech;
+  paired moral states;
+  cosmic order;
+  historical ancestors;
+  temple/high-priest climax;
+- keep Wisdom of Solomon literary dependence on Greek/Hellenistic philosophy visible;
+- keep Sirach Hebrew/Greek/Syriac textual differences visible;
+- investigate Ethiopian placement/order carefully before continuing beyond Section 48.
