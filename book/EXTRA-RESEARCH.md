@@ -35548,3 +35548,947 @@ Scholarly/source-critical:
 **Section 25 remains in progress.**  
 Next under anti-repeat protocol: **Numbers 26–36 — second census and generational replacement, Zelophehad's five daughters and inheritance route, Joshua succession by hand/commission, east-Jordan/west-Jordan tribal split with armed crossing and return, Midian war purification, 42+6 Levitical/refuge cities, refuge-city boundary/time rules, territorial boundaries and the final journey/camp list.**
 
+## SECTION 25 progress B — Numbers 26–36: generation replacement with system continuity, succession by hand, property-crossing constraints, material-specific purification and refuge place+phase law
+
+### Anti-repeat check
+
+Section 25A is already saved in the full restored ledger.  
+No Numbers 26–36 Section 25 progress existed elsewhere.  
+Continuing only from the bronze-serpent / Balaam / Peor checkpoint.
+
+---
+
+### Numbers 26 — second census: almost complete body replacement while the twelve-part system persists
+
+After the Peor plague, Israel is counted again.
+
+The second military-age census totals:
+
+**601,730**.
+
+The first Sinai census in Numbers 1 was:
+
+**603,550**.
+
+So the total fighting population differs by only:
+
+**1,820 fewer**.
+
+Yet Numbers 26 explicitly says that among those now counted:
+- not one man from the earlier Sinai census remains,
+- **except Caleb and Joshua**.
+
+This is one of the strongest state/system controls in the Torah.
+
+Raw structure:
+
+**same named tribal framework**
++
+**approximately same total population scale**
+but
+**almost complete replacement of individual human members**.
+
+For Vardath comparison:
+
+> **system identity can persist through near-total component turnover.**
+
+That is a stronger analogy to “one world-state becomes another without literal rewind” than any simple number match.
+
+### Twelvefold structure survives the generation reset
+
+The census remains organized by:
+- tribes;
+- clans;
+- land allocation logic.
+
+So the enduring object is not the original human membership.
+
+It is the **relational/tribal architecture**.
+
+This is directly relevant to the mature distinction:
+**structure/state pattern ≠ current occupants**.
+
+### Caleb / Joshua as two surviving bridge-nodes
+
+From the earlier adult generation:
+- Caleb;
+- Joshua;
+remain as explicitly named continuity figures.
+
+Classification:
+- **P7 paired continuity/witness nodes across generations**.
+
+They do not become one person.
+They are two bodies carrying continuity from the old generation into the new.
+
+### Levites are again counted separately
+
+Levites:
+- total **23,000 males one month and older**;
+- excluded from the ordinary land-bearing military census.
+
+Again:
+**one national body**
+contains
+**differently counted functional sub-body**.
+
+This repeats the outer/inner system distinction from Numbers 1.
+
+---
+
+## Numbers 27 — five daughters change the inheritance-routing rule
+
+Zelophehad has:
+- no sons;
+- **5 named daughters**:
+  - Mahlah
+  - Noah
+  - Hoglah
+  - Milcah
+  - Tirzah.
+
+They approach:
+- Moses;
+- Eleazar;
+- leaders;
+- whole assembly;
+at the **entrance of the Tent of Meeting**.
+
+This is a legal/interface scene:
+
+**edge case in existing system**
+→ brought to central decision node
+→ Moses does not guess
+→ case passes to YHWH
+→ new rule returned.
+
+### Information goes inward; law comes outward
+
+The daughters' case becomes:
+
+**local family problem**
+→ central interface
+→ Moses brings case inward/upstream
+→ ruling returns
+→ ruling generalizes to all Israel.
+
+This is another:
+**specific input → central processing → system-wide rule update** pattern.
+
+### The ruling changes the route of inheritance
+
+Before the case:
+ordinary assumption privileges sons.
+
+The ruling creates an explicit fallback chain:
+- son;
+- daughter;
+- brothers;
+- father's brothers;
+- nearest clan relative.
+
+The legal system is therefore not destroyed.
+It is **rerouted around a missing branch**.
+
+This is a useful structural analogy:
+**if primary channel absent → alternate route preserves continuity**.
+
+### Five daughters are not a symbolic fivefold cosmic system
+
+Important control:
+the text's concern is:
+- land;
+- family name;
+- inheritance.
+
+Do not treat the five daughters as five worlds, branches or elemental channels.
+
+Their value for this project lies in **routing/continuity law**, not their number by itself.
+
+---
+
+## Moses → Joshua — succession as hand-mediated but incomplete authority transfer
+
+Moses is told:
+- ascend the Abarim mountain;
+- see the land;
+- he will not enter it.
+
+Moses asks for a successor who will:
+- go out before the people;
+- come in before them;
+- lead them out;
+- bring them in;
+so they are not like sheep without a shepherd.
+
+This defines the successor function in explicit **out/in routing language**.
+
+### Joshua is selected as a different body carrying part of Moses' office
+
+Joshua:
+- is identified as a man in whom is spirit;
+- is brought before Eleazar and the congregation;
+- Moses is told to lay **his hand** on him;
+- invest him with **some of Moses' authority/splendour**.
+
+The execution then says Moses lays **his hands** on Joshua.
+
+This singular/plural hand difference is textually interesting.
+
+Do not force it into hidden bilateral mechanics.
+
+The secure function is:
+**bodily contact marks public office transfer**.
+
+### Moses / Joshua is a clean P4 succession pair
+
+Sequence:
+
+**old operator**
+→ cannot complete next phase
+→ successor chosen
+→ hand contact
+→ partial authority transferred
+→ successor takes future route.
+
+Joshua is not a clone of Moses.
+
+Numbers explicitly says:
+- only **some** authority is transferred;
+- Joshua must consult Eleazar through Urim for decisions.
+
+So the replacement is **functional but not identical**.
+
+### Joshua / Eleazar forms a new paired interface
+
+The new structure becomes:
+
+**Joshua**
+→ executive/field leader
+
+paired with
+
+**Eleazar**
+→ priestly decision interface via Urim.
+
+This is a significant shift from the earlier Moses model, where one figure often concentrated:
+- revelation;
+- mediation;
+- leadership.
+
+The successor system is **more distributed**.
+
+---
+
+## Numbers 28–29 — time becomes a nested recurring service grid
+
+These chapters are dominated by scheduled offerings rather than narrative.
+
+They nonetheless matter because the final Numbers system maps sacred activity across nested time scales.
+
+### Daily
+- **2 lambs**:
+  - one morning;
+  - one twilight.
+
+### Weekly
+- Sabbath adds **2 lambs**.
+
+### Monthly
+- new moon has its own added offering set.
+
+### Annual festival cycle
+The chapters reiterate:
+- Passover;
+- Unleavened Bread;
+- Weeks;
+- seventh-month day 1;
+- Day of Atonement day 10;
+- Booths beginning day 15.
+
+The strongest structural point is:
+
+> **the same central sanctuary is serviced by different patterns depending on temporal phase.**
+
+This is another **place + phase** system.
+
+### Numbers 29's Sukkot bulls form a descending count
+
+Across seven days the bull offerings decline:
+
+**13 → 12 → 11 → 10 → 9 → 8 → 7**
+
+then day 8 has a distinct smaller offering.
+
+That is a real numerical staircase.
+
+It is cultic calendar arithmetic.
+Do not turn it into a physical world-contraction sequence without independent evidence.
+
+---
+
+## Numbers 30 — spoken obligation creates state, but some relational positions can cancel it
+
+The vows chapter regulates:
+- a man's vow;
+- daughter's vow under father;
+- wife's vow under husband;
+- widow/divorcee vow.
+
+The interesting system principle:
+
+**spoken commitment**
+→ creates binding state
+
+unless an authorized relational figure:
+- hears it;
+- repudiates/cancels it under the prescribed conditions.
+
+This is a legal/social state machine.
+
+It shows again that:
+**information/speech can alter status without bodily movement**.
+
+No strong cosmological geometry here; retain mainly as a control.
+
+---
+
+## Numbers 31 — twelvefold military extraction and property-based purification routing
+
+The Midian campaign selects:
+
+**1,000 from each tribe**
+×
+**12 tribes**
+=
+**12,000 armed men**.
+
+So once again:
+the twelve-part whole contributes equal branch units to one operation.
+
+### Phinehas carries sanctuary/control objects into the field
+
+Phinehas accompanies them with:
+- sacred vessels/articles;
+- signal trumpets.
+
+The portable cultic-control system extends outside the camp into warfare.
+
+### Seven-day outside-camp purification
+
+Those involved in killing/contact with corpses:
+- remain outside camp **7 days**;
+- purify on days **3 and 7**;
+- garments/objects are cleaned.
+
+This repeats Numbers 19's corpse-state clock.
+
+### Materials are routed by whether they can withstand fire
+
+Eleazar gives a remarkably explicit property-based sorting rule.
+
+Metals listed include:
+- gold;
+- silver;
+- bronze;
+- iron;
+- tin;
+- lead.
+
+Rule:
+
+**anything that can withstand fire**
+→ pass through **fire**
+→ then still purify with purification water.
+
+**anything that cannot withstand fire**
+→ pass through **water**.
+
+This is one of the strongest **cargo/material sorting** analogues in the Torah.
+
+The routing criterion is not:
+- tribe;
+- morality;
+- name.
+
+It is a material property:
+**fire survivability**.
+
+### Same destination-state, different routes according to material capability
+
+Goal:
+**clean/usable state**.
+
+But routes differ:
+
+**fire-resistant material**
+→ fire + water.
+
+**non-fire-resistant material**
+→ water only.
+
+This is exceptionally relevant to the mature Vardath idea that:
+**different cargo/materials may require different transfer conditions/routes**.
+
+Major control:
+this is ritual purification after war,
+not a physical inter-world transfer technology.
+
+### War booty is divided in two
+
+The captured material/population is counted and divided:
+
+**half**
+→ warriors who went out.
+
+**half**
+→ rest of congregation.
+
+Then levies are taken from each half for:
+- priest;
+- Levites.
+
+This is another:
+**one collected mass → 1/2 + 1/2 → smaller routed shares**.
+
+The text is strongly administrative and distributive.
+
+### 12,000 return without reported military loss
+
+The officers report:
+- none of the fighting men under them is missing in the final account.
+
+This idealized total survival belongs to the literary war narrative.
+
+Do not treat it as independently verified military history.
+
+### Source-critical control
+
+Older critical scholarship often regards Numbers 31 as a late Priestly war narrative.
+
+The exact literary history is debated.
+
+Its usefulness here is structural:
+**12-branch extraction + differentiated material purification + equal booty bifurcation**.
+
+---
+
+## Numbers 32 — east-side inheritance with west-side duty
+
+Reuben and Gad see:
+- Transjordan suitable for livestock;
+- ask to remain on the **east** side rather than receive ordinary inheritance west of Jordan.
+
+Moses initially interprets this as refusing shared entry/conquest.
+
+They negotiate a conditional arrangement.
+
+### Family/property stays east; fighting force crosses west
+
+The final pledge is:
+
+**families / children / livestock / holding**
+→ remain **east** of Jordan.
+
+**armed men**
+→ cross Jordan **westward** with the other tribes.
+
+After conquest:
+→ fighters may return to east-side holding.
+
+This is a very strong **component-routing split within one tribe**.
+
+### One community occupies two sides functionally during the transition
+
+During the conquest phase:
+
+**home/property identity**
+remains east
+
+while
+
+**military/operator component**
+moves west.
+
+Thus “tribe location” is not reducible to one coordinate during the transition.
+
+This is structurally useful for Vardath:
+**one identity can have components on both sides of a boundary temporarily**.
+
+### Crossing obligation determines ownership state
+
+Moses says:
+
+**if they cross armed**
+→ Gilead remains their holding.
+
+**if they do not cross**
+→ they receive holding among Israel in Canaan instead.
+
+So inheritance status depends on completing a **future crossing obligation**.
+
+Again:
+**place + action/phase** determine final state.
+
+### Two tribes become two-and-a-half in final form
+
+Initial negotiation focuses on:
+- Reuben;
+- Gad.
+
+Then final allocation includes:
+- **half-tribe of Manasseh**.
+
+Older source criticism has noted this as a compositional difficulty and often treats the Manasseh material as secondary addition.
+
+Therefore:
+final-form geography = **2.5 tribes east**,
+but do not assume every detail belongs to one original narrative layer.
+
+---
+
+## Numbers 33 — the journey is converted into a written sequence of discrete states
+
+Numbers 33 explicitly lists:
+**departures / encampments**
+from Egypt to the plains of Moab.
+
+The repeated formula is:
+
+**set out from X**
+→ **camp at Y**
+→ set out from Y
+→ camp at Z.
+
+This transforms forty-year movement into a **state-transition ledger**.
+
+### Traditional count = 42 stations/stages
+
+The itinerary is traditionally counted as **42 stations**.
+
+However:
+- counting conventions can differ depending on whether start/end are treated as stations;
+- the itinerary differs at points from the continuous narratives in Exodus/Numbers/Deuteronomy.
+
+Older source criticism often treats Numbers 33 as a later compilation drawing on multiple earlier itinerary traditions.
+
+So:
+record **42** as the traditional itinerary count,
+not as an unquestionable physical cycle count.
+
+### The itinerary is not identical to the narrative route elsewhere
+
+Scholarly comparison notes:
+- some locations appear here but not elsewhere;
+- some narrative detours are absent;
+- source/tradition harmonization has occurred.
+
+This is another anti-overfitting control:
+two maps of “the same journey” can encode it differently.
+
+### Aaron death chronology is explicit
+
+Numbers 33 dates Aaron's death:
+- **year 40** after Exodus;
+- **month 5**;
+- **day 1**;
+- age **123**.
+
+This is a high-confidence internal chronological marker in the final text.
+
+---
+
+## Numbers 34 — land is converted into a bounded four-sided allocation field
+
+The promised land is described by:
+- south boundary;
+- west boundary;
+- north boundary;
+- east boundary.
+
+The text explicitly closes with:
+**land with boundaries all around**.
+
+This is another source-level four-sided geographic definition.
+
+It is ordinary territorial cartography,
+not evidence of a square world.
+
+### Nine-and-a-half west / two-and-a-half east
+
+Because:
+- Reuben;
+- Gad;
+- half Manasseh
+already hold land east of Jordan,
+
+the western land is assigned to:
+**9.5 tribes**.
+
+This creates a permanent asymmetric territorial split:
+**2.5 east / 9.5 west**.
+
+### Allocation leadership is also distributed
+
+Eleazar + Joshua supervise.
+
+Then **10 named tribal leaders** assist for the western allotment.
+
+This is correct for the final arrangement because:
+- Reuben/Gad do not need west allotment representatives;
+- Joseph's Manasseh/Ephraim appear separately among the west-side set.
+
+Again:
+central authority delegates to branch representatives.
+
+---
+
+## Numbers 35 — Levite-city grid and refuge as an exact place + phase law
+
+Levites receive:
+- **48 towns total**.
+
+Of these:
+- **6 cities of refuge**;
+- plus **42 other Levitical towns**.
+
+This is a direct:
+**48 = 6 + 42**.
+
+Do not attach hidden numerology before the legal function is understood.
+
+### City/pasture geometry — centre + four equal cardinal measures
+
+The law gives:
+- city in the **middle**;
+- pasture measured on:
+  - east
+  - south
+  - west
+  - north
+- **2,000 cubits** in each direction in the received wording.
+
+Raw geometry:
+
+**central city**
++
+**four equal cardinal radii/edges**.
+
+This is a genuine centre/four-directions layout.
+
+### Six refuge cities split 3 + 3 across Jordan
+
+The six refuge cities are assigned:
+
+**3 east of Jordan**
++
+**3 in Canaan/west**.
+
+That creates a bilateral territorial safety network.
+
+### Refuge city is one of the strongest place+phase systems in the Torah
+
+For an unintentional killer:
+
+**outside refuge**
+→ exposed to avenger.
+
+**inside refuge**
+→ protected after adjudication.
+
+But protection has a time condition:
+
+must remain
+**until the death of the high priest**.
+
+Then:
+→ person may return to ancestral land.
+
+So safety depends on:
+
+**PLACE**
++
+**TIME/PHASE**.
+
+This is extremely important.
+
+### Same body / same city / different legal state after high-priest death
+
+Before high-priest death:
+- leaving city boundary removes protection.
+
+After high-priest death:
+- person may leave and return home safely.
+
+Thus the boundary itself does not physically move.
+
+What changes is the **relational/legal state of the person with respect to it**.
+
+This is perhaps the cleanest legal analogy yet for the mature Vardath “place + phase” idea.
+
+### Crossing the same boundary can mean life or death depending on phase
+
+Before trigger:
+**inside → outside**
+can expose the person to lawful vengeance.
+
+After trigger:
+**inside → outside**
+is permitted return.
+
+This is exactly the kind of control needed for gate research:
+**same location/boundary + different phase = different outcome**.
+
+It is legal/social, not physical spacetime.
+
+### Why high-priest death ends the interval is debated
+
+Modern scholarship offers several explanations:
+- expiation/atonement;
+- institutional reset;
+- social time marker;
+- land/labour consequence.
+
+There is no single uncontested explanation.
+
+Richard Whitekettle's study specifically reviews multiple theories and argues common explanations are insufficient.
+
+Therefore:
+record the rule;
+do not overstate its rationale.
+
+---
+
+## Numbers 36 — five daughters return and inheritance is prevented from crossing tribal boundaries
+
+The Zelophehad case returns because a new systems problem appears.
+
+If the five daughters marry outside their tribe:
+- their inherited land would be transferred into another tribal holding.
+
+Even Jubilee would not restore it to the original tribe under the scenario presented.
+
+So a correction is added:
+
+they may marry whom they choose,
+**provided the marriage remains within their father's tribe/clan**.
+
+### Personal relationship route is constrained to preserve land topology
+
+This is a remarkably clear identity/land coupling rule:
+
+**individual inheritance**
++
+**marriage**
+could cause
+**territorial branch transfer**.
+
+The law therefore constrains the marriage route so:
+**tribal land partition remains invariant**.
+
+For Vardath comparison:
+this is another example of **component movement constrained to preserve larger topology**.
+
+It is social/legal, not cosmic.
+
+### The five daughters obey and land remains in Manasseh
+
+The final chapter names them again:
+- Mahlah
+- Tirzah
+- Hoglah
+- Milcah
+- Noah.
+
+They marry within Manasseh clans.
+
+Result:
+**individual family continuity preserved**
+while
+**tribal boundary continuity preserved**.
+
+### Source-critical control
+
+Modern scholarship often treats Numbers 27/36 as Priestly or post-Priestly legal narratives.
+
+A recent literary-historical proposal argues Numbers 36 may be a later attempt to resolve the tension created by the Numbers 27 inheritance precedent.
+
+So:
+final-form law is coherent,
+but likely reflects legal development over time.
+
+---
+
+## SECTION 25B continuous sequence — Numbers 26–36
+
+**generation reset**
+→ second census 601,730
+→ nearly same population scale
+→ old Sinai adult membership gone except Joshua/Caleb
+→ twelve-part structure persists
+
+**inheritance problem**
+→ five daughters approach central interface
+→ local exception submitted
+→ ruling returns
+→ inheritance routing expanded
+
+**leadership handoff**
+→ Moses sees but cannot enter land
+→ requests shepherd successor
+→ Joshua selected
+→ hand/hands laid
+→ some authority transferred
+→ Joshua paired with Eleazar/Urim
+
+**time-grid maintenance**
+→ daily / weekly / monthly / yearly offerings
+→ seventh-month dense ritual sequence
+→ recurring place+phase service
+
+**speech-state law**
+→ vows create binding status
+→ authorized relational cancellation under specified conditions
+
+**Midian war**
+→ 1,000 from each tribe = 12,000
+→ fighters go out
+→ return requires 7-day purification
+→ materials sorted by fire tolerance
+→ fire-resistant objects: fire + water
+→ others: water
+→ booty split half/half, then redistributed
+
+**Jordan bifurcation**
+→ Reuben/Gad request east-side holding
+→ families/property stay east
+→ fighters cross west
+→ future return east after common task
+→ half-Manasseh added in final form
+
+**journey compression**
+→ forty-year travel written as departure/camp sequence
+→ traditional 42-stage itinerary
+→ Aaron death fixed year40/month5/day1
+
+**territorial stabilization**
+→ west land bounded on four sides
+→ 9.5 tribes west / 2.5 east
+→ Eleazar + Joshua + 10 leaders allocate
+
+**refuge network**
+→ 48 Levite cities
+→ 6 refuge +42
+→ 3 east /3 west
+→ city-centre + four-direction pasture
+→ safety only within boundary until high-priest death
+→ same boundary changes legal effect after temporal trigger
+
+**inheritance topology closure**
+→ five daughters' land could cross tribe through marriage
+→ marriage constrained within tribal branch
+→ inheritance remains attached to Manasseh
+→ book ends with tribal/land topology preserved.
+
+---
+
+## SECTION 25B strongest Vardath correspondences
+
+1. **Nearly complete occupant replacement with structural continuity**: 603,550 → 601,730 while only Joshua/Caleb bridge the earlier adult generation.
+2. Same system identity can persist despite component turnover.
+3. Inheritance law reroutes around missing branches rather than destroying the system.
+4. Moses→Joshua is an explicit hand-mediated office transfer, but Joshua receives **partial**, not identical, authority.
+5. New leadership becomes distributed: Joshua + Eleazar/Urim.
+6. Numbers 31 provides a remarkably clear **material-property sorting rule**: fire-resistant cargo takes fire+water route; other cargo water route.
+7. Reuben/Gad create one identity with **home/property on one side of Jordan and active fighting component on the other** during transition.
+8. Numbers 33 compresses long travel into a state-transition itinerary.
+9. Numbers 35 gives an exceptionally precise **place + phase** law: same refuge boundary is protective before the high-priest death but no longer restrictive afterward.
+10. Refuge network itself is bilateral **3 east +3 west**.
+11. One central city is surrounded by four equal cardinal measures.
+12. Numbers 36 constrains individual movement/relationship so the larger land topology remains stable.
+
+### Major controls
+
+- census numbers are literary/textual counts with historical-demographic problems.
+- succession by laying hands is ritual/public office transfer, not literal energy transfer.
+- material purification by fire/water is cultic law, not inter-world engineering.
+- Numbers 32 contains compositional tension around half-Manasseh.
+- the 42-station itinerary is a traditional count and differs from other journey narratives.
+- refuge law is legal/social, not spacetime physics.
+- land/inheritance topology is property law, not physical land movement.
+- Numbers 27/36 likely reflect Priestly/post-Priestly legal development.
+
+---
+
+## SECTION 25 master pair / route / number register
+
+### Pairs / splits
+- Caleb / Joshua — old-generation continuity pair.
+- Moses / Joshua — predecessor/successor.
+- Joshua / Eleazar — executive/priestly decision pair.
+- Reuben / Gad — negotiated east-side pair; half-Manasseh added in final form.
+- east / west Jordan — paired territorial zones.
+- warriors / congregation — booty halves.
+- fire / water — material-dependent purification routes.
+- 3 refuge east / 3 west — bilateral safety distribution.
+- person / ancestral land — coupled identity relation in Zelophehad laws.
+
+### Numbers
+- second military census: **601,730**.
+- first census comparator: **603,550**.
+- difference: **1,820**.
+- old-generation adult survivors in explicit statement: **2**, Caleb + Joshua.
+- Zelophehad daughters: **5**.
+- Midian force: **12,000 = 1,000 ×12 tribes**.
+- war purification: **7 days**, with days **3 +7**.
+- territorial east holding: final form **2.5 tribes**.
+- west allotment: **9.5 tribes**.
+- west allotment leaders listed: **10**, plus Eleazar/Joshua oversight.
+- itinerary: traditionally **42 stations**.
+- Aaron death: **year40 / month5 / day1 / age123**.
+- Levitical cities: **48 =6+42**.
+- refuge cities: **6 =3 east +3 west**.
+- pasture measure: **2,000 cubits each cardinal side** in received wording.
+
+### Sources logged
+
+Primary:
+- Numbers 26–36.
+- Numbers 26:51 = 601,730.
+- Numbers 26:64–65 = none of earlier census generation left except Caleb/Joshua.
+- Numbers 27 = Zelophehad daughters + Joshua succession.
+- Numbers 31 = 12,000 force + fire/water material purification.
+- Numbers 32 = east-side holding conditional on armed westward crossing.
+- Numbers 33 = itinerary / Aaron chronology.
+- Numbers 34 = four boundaries, 9.5 west /2.5 east, allotment leaders.
+- Numbers 35 = 48 Levitical towns, 6 refuge, 3+3, boundary/high-priest-death rule.
+- Numbers 36 = tribal inheritance non-transfer rule.
+
+Scholarly/source-critical:
+- source-critical reading of Numbers 32's half-Manasseh material as later expansion.
+- Cambridge commentary on Numbers 33 itinerary as a late compilation drawing on multiple traditions.
+- Richard Whitekettle, study of high-priest death and refuge release.
+- modern Priestly/post-Priestly studies of Zelophehad narratives.
+- scholarship on Numbers 31 as a late Priestly war text.
+
+## SECTION 25 status
+
+**SECTION 25 — NUMBERS 21–36: COMPLETE FIRST PASS.**
+
+### Strongest additions from Numbers 21–36
+
+1. Bronze serpent creates an explicit **serpent + upright standard + seeing→life** relation, distinct from staff→serpent transformation.
+2. Balaam's donkey route gives a remarkable **broad → two-wall narrowing → no right/left escape** sequence.
+3. Perception can differ at the same location: carrier sees the obstruction before seer.
+4. Changing vantage changes projection but not the underlying blessing/output.
+5. Almost total generation replacement occurs while the tribal/system architecture remains.
+6. Moses→Joshua transfers office without identity; the successor system becomes more distributed through Eleazar/Urim.
+7. Numbers 31 explicitly routes materials differently according to **fire tolerance**.
+8. Reuben/Gad show one tribal identity operating on both sides of a boundary during a transition.
+9. Refuge cities give a near-perfect **same place + different phase = different permitted boundary crossing** legal model.
+10. Zelophehad's final law constrains component movement to preserve larger topology.
+
+### Next first unfinished roadmap section
+
+The next roadmap item must be located from the full ledger under the anti-repeat protocol before new research begins.
+
