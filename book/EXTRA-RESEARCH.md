@@ -37224,3 +37224,718 @@ Scholarly/source-critical:
 **Section 26 remains in progress.**  
 Next under anti-repeat protocol: **Deuteronomy 12–26 — centralization into one chosen place, seven-year release, festivals, king/priest/prophet distributed authority, prophet like Moses, three refuge cities with conditional three-more expansion, camp/boundary purity, unsolved-murder rite, levirate succession, first-fruits historical compression, and the law-code's source/history controls.**
 
+## SECTION 26 progress B — Deuteronomy 12–26: many local routes collapse into one chosen centre while authority splits across multiple offices
+
+### Anti-repeat check
+
+Section 26A is already appended in the full ledger.  
+No Section 26B block exists later in the file.  
+Continuing only from the saved Deuteronomy 1–11 checkpoint.
+
+---
+
+### Deuteronomy 12 opens the law-code by collapsing many cultic centres into one authorized place
+
+The central command is:
+
+- destroy the many local high places / cult sites of the nations;
+- do not worship YHWH in that distributed way;
+- seek **the place YHWH will choose**;
+- bring sacrifices, vows, tithes and sacred gifts there.
+
+So the spatial transformation is explicit:
+
+**many local sacred nodes**
+→ **one authorized central node**.
+
+This is one of the strongest centralization sequences in the Torah.
+
+For the Vardath comparison, the useful structural analogy is:
+**distributed possible routes are collapsed into one preferred/authorized route**.
+
+This is not evidence for a literal physical throat or world gate.
+
+### The chosen place is functionally central even though ordinary life remains distributed
+
+Deuteronomy does **not** move all religious/social life into the centre.
+
+Ordinary slaughter for meat is allowed locally in “your gates” / towns.
+
+But blood and sacrificial activity are constrained by different rules.
+
+This is a crucial distinction:
+
+**ordinary local function**
+can remain distributed,
+
+while
+
+**special high-intensity / covenantal function**
+is centralized.
+
+That is very useful for our mature model because it prevents the mistake:
+**central interface ≠ all activity must occur at centre**.
+
+### Blood is separated from meat and routed differently
+
+Deuteronomy 12 repeatedly says:
+- do not consume blood;
+- pour it on the earth like water.
+
+So one animal again becomes different components with different permitted routes:
+
+**meat**
+→ local human consumption permitted.
+
+**blood**
+→ not consumed;
+→ returned/poured to earth.
+
+This is consistent with the broader Torah principle:
+**different components of one body can have different destinations**.
+
+### Centralization may itself reflect historical reform rather than primordial geometry
+
+Modern scholarship commonly treats Deuteronomy 12–26 as the core of the Deuteronomic law collection and sees cult centralization as a major ideological program, often associated with monarchic-period reforms and later revisions.
+
+Therefore:
+the move from many sites to one may be best explained historically/politically/theologically.
+
+That is an important alternative to any cosmological reading.
+
+### “The place” may have grown through several historical identifications
+
+Scholars debate whether the chosen place was originally imagined as:
+- Ebal/Gerizim region;
+- Shiloh;
+- Jerusalem;
+- or whether the phrase was deliberately left open and later reinterpreted.
+
+The text itself was revised in stages.
+
+So even the central node's **identity** may shift across textual history while the **centralization function** remains stable.
+
+This directly parallels a recurring project rule:
+
+> **role can remain stable while visible/location identity changes.**
+
+---
+
+## Deuteronomy 13 — miracle output does not validate the operator by itself
+
+A prophet/dreamer may produce:
+- sign;
+- wonder;
+- apparently successful prediction.
+
+Yet if that figure redirects Israel toward other gods, Deuteronomy says:
+- do not follow.
+
+This is an extremely important control for the project:
+
+**successful output**
+≠
+**correct source / authorized operator**.
+
+Compare:
+- Moses striking the rock and still getting water, yet being judged wrong;
+- Balaam capable of divination yet constrained by source;
+- Nadab/Abihu performing cultic action but not authorized correctly.
+
+The Bible repeatedly separates:
+**effect**
+from
+**legitimacy**.
+
+### Close relational channels can be treated as dangerous information routes
+
+Deuteronomy 13 includes:
+- sibling;
+- child;
+- spouse;
+- closest friend;
+as possible enticers.
+
+The point is social loyalty, not geometry.
+
+Still, structurally:
+**high-trust channels** are recognized as potentially powerful routes for system-state change.
+
+---
+
+## Deuteronomy 14–15 — seven-year release produces a repeating social reset
+
+Deuteronomy 15 establishes a **seven-year release**:
+- debts/claims are remitted in the prescribed cycle;
+- economic relations are periodically reset.
+
+This should be compared with Leviticus 25 but not conflated with it.
+
+Leviticus:
+**7×7 → Jubilee**.
+
+Deuteronomy:
+a recurring **7-year release** cycle.
+
+These are related biblical reset concepts, but not identical legislation.
+
+### Six-year service → seventh-year release
+
+A Hebrew slave/servant:
+- serves **6 years**;
+- in the **7th** is released;
+- is not sent out empty-handed.
+
+Again:
+**6 → 7**
+marks a state transition.
+
+### Door / ear ritual returns for voluntary permanent attachment
+
+If the released servant chooses to remain:
+- ear is pierced at the door.
+
+This repeats Exodus 21's threshold/status ritual.
+
+The same door-boundary now again marks:
+**temporary service**
+→ **permanent attached state**.
+
+This is another source-level confirmation that thresholds can encode legal/identity change without being physical gates.
+
+---
+
+## Deuteronomy 16 — one central place, three annual convergence events
+
+Deuteronomy 16 commands pilgrimage/appearance at the chosen place for:
+- Passover/Unleavened Bread;
+- Weeks;
+- Booths.
+
+All males appear there **three times a year**.
+
+Thus the centralization system has a temporal pulse:
+
+**population distributed across land**
+→ at appointed phases
+→ **converges on one chosen centre**
+→ returns outward.
+
+This is a genuine:
+**broad → central convergence → broad**
+social/religious pattern.
+
+For Vardath comparison this is structurally interesting,
+but it is pilgrimage, not world-adjacency.
+
+### The law-code converts place into a phase-dependent central node
+
+The chosen place matters especially at specific times.
+
+So again:
+**place + phase**
+is stronger than place alone.
+
+This recurs across:
+- Passover;
+- Day of Atonement;
+- Jubilee;
+- refuge cities;
+- cloud movement;
+- now pilgrimage centralization.
+
+---
+
+## Deuteronomy 16–18 — Moses' concentrated authority is distributed into offices
+
+The law-code describes:
+- judges;
+- priests/Levites;
+- king;
+- prophet.
+
+Modern scholarship often notices a kind of **distribution of public authority**.
+
+This is extremely important for the Moses succession problem.
+
+Rather than one future figure inheriting every Mosaic function,
+Deuteronomy creates multiple institutions.
+
+### Judges = local/legal decision network
+
+Judges are established throughout the settlements.
+
+Difficult matters may be escalated to a central authority.
+
+This is another:
+**local nodes**
+→ **higher central adjudication**
+architecture.
+
+### Priests / Levites = cultic and interpretive office
+
+Levitical priests:
+- serve;
+- teach;
+- adjudicate some difficult cases.
+
+Their office is not simply the same as royal or prophetic authority.
+
+### King = bounded political operator
+
+The king is constrained:
+- not multiply horses;
+- not send people back toward Egypt for horses;
+- not multiply wives;
+- not excessively accumulate wealth;
+- must write/read a copy of Torah.
+
+This is a major anti-centralization control:
+
+> even the highest political centre is explicitly bounded by the law.
+
+The king is **not** allowed to become an unlimited singular operator.
+
+### Prophet = authorized information channel
+
+Deuteronomy 18 says:
+- YHWH will raise a prophet “like Moses” from among Israel;
+- people are to listen.
+
+This is explicitly linked in the final text to Horeb:
+the people did not want continued direct exposure to the great fire/voice.
+
+So prophecy becomes the institutional solution to the **direct-exposure problem**.
+
+Raw sequence:
+
+**direct source exposure feared**
+→ mediator requested
+→ Moses functions as interface
+→ future prophets institutionalize that mediated channel.
+
+This is an important system-development step.
+
+### “Prophet like Moses” is role recurrence, not identity recurrence
+
+The text says:
+- another prophet can be “like Moses.”
+
+That is strong evidence for:
+**role-pattern repetition across distinct bodies**.
+
+It does **not** imply:
+- reincarnation;
+- same physical person;
+- temporal double.
+
+Classification:
+- **P5/P4 office-pattern recurrence**.
+
+### Authority is now multi-node rather than one-person concentrated
+
+The mature Deuteronomic structure becomes approximately:
+
+**law/Torah**
+→ constrains all
+
+with
+- judges
+- priests
+- king
+- prophets
+
+occupying partially distinct channels.
+
+For the Vardath analogy:
+this resembles a system moving from one overloaded central mediator toward a **distributed control architecture**.
+
+Compare:
+- Jethro's 1000/100/50/10 judges;
+- 70 elders;
+- Joshua + Eleazar;
+- now a constitutional office network.
+
+---
+
+## Deuteronomy 19 — refuge law again gives route + phase + expansion logic
+
+Three refuge cities are to be established.
+
+The text emphasizes:
+- prepare/maintain roads;
+- divide territory;
+- make refuge reachable.
+
+This makes refuge protection dependent on an actual **route network**.
+
+### Three can become six if territory expands
+
+If YHWH enlarges the territory:
+- add **three more cities**.
+
+So the safety network is capacity-scaled:
+
+**territory size A**
+→ **3 nodes**.
+
+**expanded territory**
+→ **+3**
+→ **6 total**.
+
+This is a rare explicit:
+**system expansion → node-count expansion**
+rule.
+
+### Refuge effectiveness depends on route preparation
+
+The text does not merely say “have refuge cities.”
+
+It requires:
+**prepare the road**.
+
+That means:
+destination exists,
+but access quality matters.
+
+This is another strong control for gate/route distinction:
+**destination ≠ route**.
+
+### Boundary markers preserve inherited topology
+
+Deuteronomy warns:
+- do not move a neighbour's boundary marker.
+
+Land identity is stabilized through persistent markers.
+
+This is ordinary property law,
+but structurally it says:
+**component boundaries must remain fixed for the inherited system to remain legible**.
+
+### Two or three witnesses create an evidence threshold
+
+A single witness is insufficient for serious judgment.
+
+Required:
+**2 or 3 witnesses**.
+
+This introduces a formal **redundancy/validation threshold**.
+
+For our research method this is itself instructive:
+one symbolic match is weak;
+multiple independent correspondences are stronger.
+
+The text is legal rather than scientific,
+but the structural principle is useful.
+
+---
+
+## Deuteronomy 20 — military system has selective exemptions before entering the active field
+
+Before battle, people may be released if they:
+- built a house but not dedicated it;
+- planted vineyard but not used fruit;
+- betrothed but not married;
+- are fearful.
+
+So the fighting body is **filtered before entry**.
+
+This is another:
+**population → classification → only eligible subset enters active zone**.
+
+Again:
+sorting precedes high-risk transition.
+
+---
+
+## Deuteronomy 21 — unsolved murder becomes a nearest-node purification problem
+
+If a corpse is found and killer unknown:
+- elders/judges measure distances to surrounding towns;
+- identify the **nearest city**.
+
+This is an explicit nearest-node algorithm.
+
+### Unknown source → assign responsibility by spatial proximity
+
+Because the individual perpetrator is unknown,
+the law maps the unresolved event onto the nearest civic node.
+
+That is structurally:
+
+**unresolved event point**
+→ distance measurement
+→ nearest node selected
+→ node performs corrective ritual.
+
+This is unusually algorithmic spatial reasoning in biblical law.
+
+### Heifer is taken to a flowing/perennial stream/valley site
+
+The elders take a heifer:
+- that has not worked under yoke;
+- to a `naḥal ʼetan`, commonly understood by many modern scholars as a perennial/flowing stream or enduring watercourse;
+- in uncultivated ground;
+- neck is broken there.
+
+The exact meaning of the location term has been debated historically.
+
+### Elders wash hands over the dead heifer at the watercourse
+
+The elders:
+- wash hands;
+- declare they did not shed the blood;
+- ask for removal of bloodguilt.
+
+This produces:
+
+**unresolved human blood/death**
+→ nearest-city representatives
+→ substitute animal death
+→ water-associated hand washing
+→ communal guilt-state addressed.
+
+For Vardath comparison:
+this is a **state-cleaning ritual at a water boundary**,
+not evidence of physical energy transfer.
+
+### Priests appear as authorizing/legal interface
+
+The text also mentions Levitical priests as chosen to serve/bless and adjudicate.
+
+Some source critics see this priestly verse as a later insertion into an older elders-based ritual.
+
+This is another reminder:
+institutional operators can be added by redaction to older boundary rites.
+
+---
+
+## Deuteronomy 21–25 — repeated household and identity routing laws
+
+Several laws concern:
+- firstborn inheritance;
+- captive woman;
+- marriage/divorce;
+- levirate marriage;
+- lost property;
+- escaped slave;
+- bodily/camp exclusions;
+- weights/measures.
+
+Most are poor candidates for cosmological mapping.
+
+Their strongest contribution is a general systems principle:
+
+**identity and property relations are routed by explicit boundary rules**.
+
+Do not overfit each legal case into cosmic geometry.
+
+### Levirate marriage preserves a dead brother's line through a living brother
+
+Deuteronomy 25:
+- if a married man dies childless,
+- brother is expected to marry widow;
+- firstborn child continues deceased brother's name/line.
+
+This is a striking identity-continuity mechanism:
+
+**body A dies**
+→ genealogical branch would terminate
+→ body B acts
+→ child carries **A's lineage/name continuity**.
+
+This is not reincarnation.
+
+It is a legal-social way of preserving a system branch after component loss.
+
+### Refusal is marked by sandal removal
+
+If the brother refuses:
+- woman removes his sandal;
+- public act marks failure to build brother's house.
+
+Again:
+clothing/accessory becomes **status-information surface**.
+
+Compare:
+- Jacob/Esau garments;
+- priestly garments;
+- Moses veil;
+- Aaron→Eleazar vestments.
+
+Different meanings; same broad cultural use of wearable material to encode status.
+
+---
+
+## Deuteronomy 26 — first fruits compress the entire ancestral migration into a spoken sequence
+
+The first-fruits rite requires the participant to recite a historical summary:
+
+**wandering/Aramean ancestor**
+→ descent to Egypt
+→ small group
+→ becomes large nation
+→ oppression
+→ cry
+→ divine deliverance
+→ signs/wonders
+→ arrival in land
+→ fruit now brought to chosen centre.
+
+This is a remarkable **history-as-sequence compression**.
+
+The whole people-history is converted into:
+**spoken information + physical first-fruit cargo**.
+
+### Material cargo and narrative memory arrive together
+
+At the chosen place:
+- first produce is physically carried;
+- history is verbally recited.
+
+So one ritual combines:
+
+**material output of land**
++
+**information describing the route that produced the people in that land**.
+
+For the project:
+this is a clean **cargo + memory packet** analogy.
+
+### Individual body re-enacts collective history
+
+Each participant speaks the collective historical formula in first-person/ancestral terms.
+
+Thus:
+**one individual**
+temporarily represents
+**whole historical collective**.
+
+This is another source-level example that one person can function as a compressed representation of a much larger system.
+
+### Tithe declaration likewise links distributed land output to social redistribution
+
+The triennial tithe is routed locally to:
+- Levite;
+- stranger;
+- orphan;
+- widow.
+
+So Deuteronomy's centralization is balanced by local redistribution.
+
+Again:
+**one centre does not eliminate local nodes**.
+
+---
+
+## SECTION 26B continuous system sequence — Deuteronomy 12–26
+
+**cult geography**
+→ many local cult sites rejected
+→ one chosen place authorized
+→ ordinary meat remains local
+→ sacred sacrifice routed centrally
+
+**social reset**
+→ 6 years service
+→ 7th release
+→ recurring debt-release phase
+→ voluntary permanent attachment marked at door
+
+**calendar convergence**
+→ population distributed
+→ 3 annual pilgrimage phases
+→ convergence on chosen centre
+→ return outward
+
+**authority distribution**
+→ judges
+→ priests/Levites
+→ bounded king
+→ prophet like Moses
+→ direct-fire exposure problem institutionalized into mediated prophecy
+
+**legal routing**
+→ refuge cities
+→ prepared roads
+→ 3 nodes, +3 if territory expands
+→ 2/3 witness validation threshold
+→ boundary markers stabilized
+
+**unresolved blood event**
+→ corpse location
+→ distances measured
+→ nearest city selected
+→ heifer/watercourse/hand-washing rite
+→ communal state addressed
+
+**lineage continuity**
+→ dead branch
+→ levirate substitution
+→ child preserves deceased brother's line
+
+**first fruits**
+→ land cargo carried to centre
+→ ancestral migration compressed into recited sequence
+→ individual temporarily represents collective history.
+
+---
+
+## SECTION 26B strongest Vardath correspondences
+
+1. Many possible sacred nodes are collapsed into **one authorized central route/place**.
+2. Ordinary local life remains distributed while high-order ritual function is centralized.
+3. Blood/meat again demonstrate **component-specific routing**.
+4. Three annual festivals create a real **distributed → central convergence → distributed** cycle.
+5. Future authority is split among multiple offices rather than one total Moses replacement.
+6. Prophet “like Moses” shows **role recurrence without identity recurrence**.
+7. Refuge law distinguishes **destination from route**, explicitly requiring roads to be prepared.
+8. Territory expansion automatically expands safety-node count **3 → 6**.
+9. Two/three-witness law supplies a formal redundancy/validation threshold.
+10. Unsolved murder law uses an explicit **nearest-node spatial selection** process.
+11. Levirate law preserves a system branch after death by transferring continuity through another body.
+12. First-fruits rite combines **material cargo + compressed route-history information**.
+13. Centralization is balanced by distributed local support/tithe systems.
+
+### Major controls
+
+- centralization is plausibly historical/reformist and textually layered.
+- “chosen place” identity likely changed/refracted through textual history.
+- legal/social routing is not physical world routing.
+- prophet like Moses is institutional succession, not reincarnation.
+- refuge roads are literal roads.
+- hand-washing/heifer rite is bloodguilt ritual, not physical contamination transfer.
+- levirate succession is genealogical/legal, not same-person continuity.
+- Deuteronomy 12–26 itself underwent multiple revisions.
+
+### Pair / number register
+
+- one chosen cultic centre vs many local sites.
+- service: **6 years → 7th release**.
+- pilgrimage convergence: **3 times/year**.
+- witness threshold: **2 or 3**.
+- refuge cities: **3**, conditionally **+3 = 6**.
+- authority channels: judge / priest / king / prophet.
+- levirate pair: deceased brother / surviving brother.
+- first-fruits packet: physical produce + spoken ancestral history.
+
+### Sources logged
+
+Primary:
+- Deuteronomy 12–26.
+
+Scholarly/source-critical:
+- “Deuteronomy: Religious Centralization or Decentralization?” — TheTorah.
+- “How the Jerusalem Temple Was ‘Chosen’ as the Only Place of Worship” — TheTorah.
+- “The Place(s) that YHWH Will Choose: Ebal, Shiloh, and Jerusalem” — TheTorah.
+- “Deuteronomy Revamps King Hezekiah’s Failed Reform” — TheTorah.
+- “The Origins of Constitutional Thought—Found in Deuteronomy” — TheTorah.
+- “Revising the Laws of Murder to Accommodate Blood Vengeance” — TheTorah.
+- “Breaking the Heifer’s Neck: A Bloodless Ritual for an Unsolved Murder” — TheTorah.
+- modern compositional studies treating Deuteronomy 12–26 as the law-code core with later revisions.
+
+**Section 26 remains in progress.**
+
+Next under anti-repeat protocol:
+**Deuteronomy 27–34 — Gerizim/Ebal full bilateral assembly, tribes split 6+6, plastered stones / written Torah, blessing/curse environmental mirror sequences, covenant renewal, heaven/earth witnesses, Moses/Joshua handoff, song as preserved witness, Moses' four-direction final view, death/burial ambiguity, and reconciliation with already-completed X7 without redoing it.**
+
