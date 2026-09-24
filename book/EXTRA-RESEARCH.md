@@ -95801,3 +95801,1009 @@ Section 38 sequence is now complete through:
 
 Before beginning the next roadmap entry, run the anti-repeat check against the stored canonical roadmap because the post-exile/apocryphal inserts may not simply follow modern Bible order.
 
+
+
+---
+
+# SECTION 39 progress A — Ezra 1–6
+## Exile flow reverses, temple vessels and people move back toward Jerusalem, lineage records sort who can resume which functions, altar reappears before temple shell, foundation produces simultaneous joy/grief, hostile information stops the work, prophetic signal restarts it, and an archive search reactivates an old imperial permission to complete the centre
+
+---
+
+# Ezra 1 — Chronicles' final “go up” becomes the first active movement of the restoration story
+
+2 Chronicles ended:
+**Cyrus permits return**
+→ “let him go up.”
+
+Ezra opens by repeating and expanding that exact branch.
+
+So the transition is deliberately continuous:
+
+**desolation/exile**
+→ imperial spirit/proclamation
+→ permission
+→ people rise
+→ move upward/back toward Jerusalem
+→ house rebuilding begins.
+
+This is one of the clearest macro-direction reversals in the Bible:
+
+Earlier:
+**Jerusalem → Babylon**
+people + vessels flow outward.
+
+Now:
+**Babylonian/Persian imperial sphere → Jerusalem**
+people + vessels flow back inward/upward.
+
+---
+
+# Imperial centre changes from extractor to enabler
+
+Nebuchadnezzar:
+- removed people;
+- removed vessels;
+- destroyed the house.
+
+Cyrus:
+- authorizes rebuilding;
+- releases vessels;
+- permits population return;
+- asks surrounding communities to support returnees with goods/animals.
+
+Same macro-imperial scale.
+Opposite flow direction.
+
+For the Vardath timeline:
+**one external field can switch from destructive/extractive to restorative/releasing under a regime transition**.
+
+---
+
+# Return begins with stirred internal state before physical movement
+
+The text repeatedly uses:
+**spirit stirred / rose up**.
+
+So:
+
+**internal activation**
+→ **physical ascent/migration**.
+
+This is another:
+**state-change precedes route-change**
+sequence.
+
+The people do not move first and decide later.
+Their movement is framed as response to an internal/imperial information trigger.
+
+---
+
+# Neighbours strengthen the hands of those who leave
+
+Those remaining in place provide:
+- silver;
+- gold;
+- goods;
+- beasts;
+- offerings.
+
+This means the migration field is supported by people who do **not** necessarily migrate.
+
+So the returning system includes:
+
+**mobile return branch**
++
+**stationary support branch**.
+
+This resembles:
+- Besor 400/200 split;
+- Barzillai escort/representative logic;
+- distributed logistical support during David's exile.
+
+The system can function through different roles without every component taking the same route.
+
+---
+
+# Temple vessels reverse the exact Babylonian extraction route
+
+Cyrus brings out the vessels that Nebuchadnezzar had:
+**Jerusalem → Babylonian temple**.
+
+Now:
+**Babylonian storage/temple**
+→ treasurer
+→ Sheshbazzar
+→ Jerusalem.
+
+This is a direct cargo-flow reversal.
+
+The material objects survive the collapse of their original building and later help reconnect the rebuilt centre with the earlier one.
+
+So:
+**destroyed geometry**
+can leave
+**portable remnant components**
+that return into the successor structure.
+
+---
+
+# Vessel counting converts sacred remnants into an inventory before movement
+
+The vessels are:
+- brought out;
+- counted;
+- numbered;
+- handed over.
+
+This is another:
+**material remnant → abstract inventory → controlled transport**
+process.
+
+Compare:
+- census of living population;
+- inventories of temple material;
+- returnee lists.
+
+Post-catastrophe reconstruction depends heavily on **counting/recording identity before redistribution**.
+
+---
+
+# Ezra 2 — population return is represented as a list before it is represented as a building force
+
+The returnees are organized by:
+- families;
+- towns;
+- priests;
+- Levites;
+- singers;
+- gatekeepers;
+- temple servants;
+- Solomon's servants;
+- animals;
+- servants.
+
+The returning population is therefore not just “a crowd.”
+
+It is represented as a **structured network of lineages and functions**.
+
+This is a rebuilding prerequisite:
+**who belongs where / who may do what** must be resolved before full institutional reconstruction.
+
+---
+
+# Identity and function are linked through genealogical proof
+
+Some returnees cannot prove:
+- fathers' houses;
+- Israelite descent.
+
+Some priestly claimants cannot find their genealogical record.
+
+Result:
+- they are excluded from priestly holy-food function;
+- decision deferred until a future priestly oracle mechanism.
+
+This is a very strong post-collapse sorting process:
+
+**person physically present**
+but
+**functional identity not verified**
+→ access to role withheld.
+
+So:
+**presence ≠ authorization**.
+
+This recurs across the entire project:
+entry to a system is one thing;
+permission to perform a high-level function is another.
+
+---
+
+# Genealogical archive becomes a gatekeeper
+
+The missing register performs almost the same systems role as:
+- passwords in Ascension of Isaiah;
+- named boundary conditions;
+- priestly qualification lists.
+
+The “gate” here is informational.
+
+**verified ancestry**
+→ priestly access possible.
+
+**unverified ancestry**
+→ priestly route closes.
+
+This is an important example of:
+**information acting as a non-physical boundary**.
+
+---
+
+# Ezra 2 / Nehemiah 7 numbers are textually unstable
+
+The returnee list later reappears in Nehemiah 7.
+
+Many numbers differ between:
+- Ezra MT;
+- Nehemiah MT;
+- 1 Esdras;
+- Greek witnesses.
+
+Therefore:
+**do not build cosmological number patterns from individual family totals.**
+
+The reliable process is:
+**returning community is classified and counted**.
+
+The exact totals are less secure.
+
+---
+
+# “All Israel” is claimed even when the actual return is partial
+
+The text later uses all-Israel language despite:
+- exile;
+- missing families;
+- uncertain genealogies;
+- many people remaining abroad.
+
+This is important.
+
+**symbolic/social whole**
+can be represented through
+**a remnant subset**.
+
+So:
+**remnant ≠ incomplete identity in narrative terms**.
+
+A reduced population can act as carrier of whole-system identity.
+
+---
+
+# Ezra 3 — altar is restored before temple enclosure exists
+
+When the seventh month arrives:
+the people gather **as one man** to Jerusalem.
+
+First major act:
+**build altar**.
+
+Crucially:
+**temple foundation is not yet laid**.
+
+Thus sacred reconstruction proceeds:
+
+**people return**
+→ **altar/function restored**
+→ regular ritual/calendar resumes
+→ **only later temple foundation**.
+
+This is a strong:
+**function before shell**
+sequence.
+
+It is the inverse of assuming architecture must exist before system operation.
+
+---
+
+# The altar is placed on its old bases/location while the surrounding population fears
+
+The altar is set:
+**upon its bases / former site**.
+
+So:
+**old location-memory**
+→ used to re-establish function
+even without old superstructure.
+
+This is a major Vardath-process analogue:
+**a functional node can reactivate at a known coordinate before the larger enclosure is rebuilt**.
+
+---
+
+# Calendar synchronization resumes before architecture completion
+
+They restore:
+- morning/evening offerings;
+- Tabernacles;
+- new moons;
+- appointed times;
+- freewill offerings.
+
+So the early restored system is primarily:
+**time-ordered**
+rather than
+**fully architecture-ordered**.
+
+The community becomes coherent through shared cycles before monumental shell completion.
+
+---
+
+# Old Phoenician material route is reactivated
+
+As under Solomon:
+- cedar comes from Lebanon;
+- Sidon/Tyre workers;
+- sea route to Joppa;
+- payment in food/drink/oil.
+
+The reconstruction intentionally reconnects to the earlier temple-building logistics.
+
+So:
+**destroyed network**
+→ centuries later
+→ **old material-flow pattern is reactivated**.
+
+This is a form of **infrastructure memory**.
+
+---
+
+# Foundation laying produces two opposite emotional fields at once
+
+When the foundation is laid:
+
+### younger / many people
+→ shout for joy.
+
+### elders who had seen first house
+→ weep loudly.
+
+The sound fields merge.
+
+The text says:
+**people cannot distinguish joy-noise from weeping-noise**.
+
+This is extremely important.
+
+One physical event has two contradictory relational meanings:
+
+**new foundation**
+= restoration/new beginning
+and
+= evidence of what was lost.
+
+So the same geometry produces:
+**joy + grief simultaneously**.
+
+For the master timeline:
+**successor-state formation can be experienced as both return and discontinuity**.
+
+---
+
+# Sound becomes a blended field whose components are no longer separable at distance
+
+The noise is heard far away,
+but its internal components cannot be distinguished.
+
+Thus:
+**different local signals**
+→ merge
+→ one large remote sound-field.
+
+This is a strong information-degradation example:
+distance preserves **magnitude**
+but loses **meaning-resolution**.
+
+---
+
+# Ezra 4 — offered cooperation is rejected, turning neighbouring populations into active opposition
+
+Local populations ask:
+**let us build with you**.
+
+Zerubbabel/Jeshua refuse:
+**you have nothing to do with us in building this house**.
+
+Afterward:
+- local people weaken their hands;
+- frighten them;
+- hire counsellors;
+- work stalls.
+
+This is a major process transition:
+
+**possible mixed network**
+→ boundary of membership drawn sharply
+→ excluded network becomes adversarial
+→ construction capacity decreases.
+
+The text frames this as legitimate boundary protection.
+
+But from a systems viewpoint:
+**identity-boundary decisions can alter surrounding network polarity**.
+
+---
+
+# The restoration narrative is not simple chronological sequence in Ezra 4
+
+Ezra 4 mentions:
+- Cyrus;
+- Darius;
+- Ahasuerus;
+- Artaxerxes.
+
+The chapter telescopes/organizes opposition across Persian reigns rather than narrating every verse as strict continuous chronology.
+
+This is critical.
+
+The anti-repeat/timeline method must preserve:
+**literary thematic grouping**
+separately from
+**chronological order**.
+
+Ezra itself is already doing what 2 Samuel 21–24 did:
+organizing by theme as well as time.
+
+---
+
+# Opposition operates primarily through information channels, not immediate battle
+
+Letters accuse Jerusalem of:
+- rebellion;
+- tax refusal;
+- imperial threat.
+
+The Persian king then:
+- searches records;
+- accepts hostile framing;
+- orders work stopped.
+
+So the work is halted through:
+
+**local opposition**
+→ written report
+→ imperial archive interpretation
+→ royal decree
+→ force/power on the ground.
+
+This is a full **information → policy → physical effect** pipeline.
+
+---
+
+# Old historical memory becomes a weapon against reconstruction
+
+Opponents argue:
+**search the records**
+→ Jerusalem has rebellious history.
+
+So the city's past is used to define its present/future risk.
+
+This is the inverse of Josiah:
+- old text found → reform enabled.
+
+Here:
+- old records found → rebuilding restricted.
+
+Thus:
+**archive memory can either reopen or close a route depending on which past is retrieved and how it is interpreted**.
+
+---
+
+# Ezra 5 — prophetic signal restarts the stopped construction before imperial approval is resolved
+
+Haggai and Zechariah speak.
+
+Then Zerubbabel/Jeshua **rise and begin to build again**.
+
+Important:
+they do not wait for the later Darius archive search result.
+
+Process:
+
+**stopped project**
+→ prophetic/internal authorization
+→ physical work resumes
+→ imperial verification follows afterward.
+
+So:
+**local signal reactivates motion before external bureaucracy finishes processing permission**.
+
+---
+
+# Building resumes under observation rather than immediate shutdown
+
+Tattenai asks:
+**who authorized this?**
+
+But work continues while the question travels to Darius.
+
+This is a different control state from Ezra 4.
+
+Earlier:
+**letter → stop work**.
+
+Now:
+**question/letter → work continues pending decision**.
+
+Same imperial network.
+Different procedural state.
+
+---
+
+# The builders narrate the whole catastrophe/reconstruction sequence as their authorization case
+
+Their answer summarizes:
+
+**old great house**
+→ ancestors' failure
+→ Nebuchadnezzar destroys house/deports people
+→ Cyrus authorizes rebuilding
+→ vessels returned
+→ foundation laid
+→ rebuilding continues.
+
+This is effectively a **compressed process timeline inside the narrative**.
+
+The community justifies its present state by reconstructing the whole prior transformation chain.
+
+That is exactly what this project is doing at larger scale.
+
+---
+
+# Ezra 6 — one archive search reverses the prior bureaucratic uncertainty
+
+Darius orders a search.
+
+The relevant record is found not in the first place named but at:
+**Ecbatana/Ahmetha in Media**.
+
+This is another important information-network fact:
+**authorization survives in remote archive storage even when local memory is contested**.
+
+The record reactivates an old route.
+
+---
+
+# Dormant imperial information has delayed physical force
+
+The Cyrus decree had existed for years.
+
+But rebuilding was blocked because:
+**the operative network no longer had unquestioned access to the permission-state**.
+
+Once the archive is found:
+
+**old authorization**
+→ becomes present-active information
+→ imperial officials instructed not to interfere
+→ funding/support ordered
+→ building completes.
+
+So:
+**stored information can remain causally dormant until retrieved**.
+
+---
+
+# Opposition is converted into support by the higher centre
+
+Darius does more than say “leave them alone.”
+
+He orders:
+- imperial tax revenue to fund construction;
+- animals/wheat/salt/wine/oil supplied daily;
+- project not hindered.
+
+This is a complete polarity reversal:
+
+**regional imperial administration as potential obstacle**
+→ higher decree
+→ same network becomes supply channel.
+
+The field is not replaced.
+Its **instruction state** changes.
+
+---
+
+# The foreign imperial system now strengthens the hands of the builders
+
+Ezra ends chapter 6 saying the king's heart/action was turned to **strengthen their hands**.
+
+Compare Ezra 4:
+local opposition **weakened their hands**.
+
+This creates a direct pair:
+
+**weaken hands**
+↔
+**strengthen hands**.
+
+The construction outcome depends on whether surrounding administrative nodes:
+- inhibit;
+- support.
+
+---
+
+# Temple completion closes the shell-restoration phase
+
+The house is finished.
+
+Then:
+- dedication;
+- priests/Levites assigned divisions;
+- Passover;
+- seven-day unleavened feast.
+
+Thus the reconstruction sequence is:
+
+**return**
+→ altar
+→ time-cycle restoration
+→ foundation
+→ opposition/stoppage
+→ signal/restart
+→ archive authorization
+→ external support
+→ shell completion
+→ role assignment
+→ synchronized feast.
+
+This is one of the cleanest **post-catastrophe rebuilding sequences** in the corpus.
+
+---
+
+# Twelve goats symbolically reconstitute all Israel
+
+At dedication:
+**12 he-goats**
+are offered for **all Israel**, according to the tribes.
+
+This is important because the actual community is a Persian-period remnant, not twelve fully restored tribal kingdoms.
+
+So:
+**small remnant**
+uses
+**12-part ritual representation**
+to claim/perform
+**whole-system identity**.
+
+This is another example of:
+**symbolic totality carried by reduced material population**.
+
+Do not assume all twelve tribal territories/political structures had been literally restored.
+
+---
+
+# Passover again acts as re-synchronization after structural rebuilding
+
+After house completion:
+- priests/Levites purify;
+- returnees + joiners eat together;
+- seven-day feast held.
+
+So the system stabilizes through:
+
+**completed shell**
++
+**verified roles**
++
+**shared purity state**
++
+**shared calendar**
++
+**shared meal**.
+
+Architecture alone is not the terminal state.
+
+**social/time synchronization follows material completion**.
+
+---
+
+# SECTION 39A continuous geometry/effect timeline — Ezra 1–6
+
+## Phase A — exile flow reverses
+
+Babylon/Persia
+→ proclamation
+→ returnees go up
+→ Jerusalem.
+
+**Effect:** population direction reverses without erasing exile history.
+
+---
+
+## Phase B — stationary support nodes strengthen mobile branch
+
+non-returning neighbours
+→ silver/gold/goods/beasts
+→ returnees.
+
+**Effect:** migration can be sustained by components that do not migrate.
+
+---
+
+## Phase C — temple remnants reverse their extraction path
+
+Jerusalem vessels
+→ Babylon
+→ Cyrus release
+→ counted
+→ Sheshbazzar
+→ Jerusalem.
+
+**Effect:** portable remnants reconnect destroyed and successor centres.
+
+---
+
+## Phase D — reconstruction begins with classification
+
+returnees
+→ families/towns/functions
+→ lists.
+
+**Effect:** identity network is mapped before institutions fully resume.
+
+---
+
+## Phase E — informational genealogy gates priestly function
+
+person present
++ lineage unverified
+→ priestly access suspended.
+
+**Effect:** authorization can be informational rather than spatial.
+
+---
+
+## Phase F — remnant represents whole identity
+
+partial return population
+→ “all Israel” framework.
+
+**Effect:** whole-system identity can persist through a reduced carrier population.
+
+---
+
+## Phase G — function returns before shell
+
+people gather as one
+→ altar rebuilt
+→ offerings/calendar resume
+while
+temple foundation absent.
+
+**Effect:** operational centre can restart before architectural centre is complete.
+
+---
+
+## Phase H — old coordinate restores function
+
+altar placed on former bases/site.
+
+**Effect:** location-memory can support reactivation before full reconstruction.
+
+---
+
+## Phase I — time synchronization precedes monumental rebuilding
+
+morning/evening
++ festivals
++ new moons.
+
+**Effect:** shared rhythm reconstitutes system before shell completion.
+
+---
+
+## Phase J — old construction route reactivates
+
+Lebanon
+→ sea/Joppa
+→ cedar inward.
+
+**Effect:** previous infrastructure pattern can be reused after long interruption.
+
+---
+
+## Phase K — one foundation generates opposite emotional states
+
+foundation laid
+→ joy + grief.
+
+**Effect:** successor structure is simultaneously new beginning and memory of lost predecessor.
+
+---
+
+## Phase L — merged sound preserves intensity but loses semantic resolution
+
+weeping + shouting
+→ one distant noise field.
+
+**Effect:** information components can become indistinguishable when aggregated.
+
+---
+
+## Phase M — membership boundary changes neighbour polarity
+
+offered cooperation
+→ refused
+→ excluded network opposes construction.
+
+**Effect:** boundary definition can transform possible partner into adversary.
+
+---
+
+## Phase N — historical archive becomes inhibitory control
+
+opposition letter
+→ imperial record search
+→ Jerusalem classified rebellious
+→ stop decree.
+
+**Effect:** past memory closes present rebuilding route.
+
+---
+
+## Phase O — prophetic/local signal restarts stopped system
+
+Haggai/Zechariah
+→ builders rise
+→ work resumes.
+
+**Effect:** local authorization reactivates motion before external bureaucracy resolves.
+
+---
+
+## Phase P — work continues under observation
+
+official inquiry
+→ letter to Darius
+while
+construction continues.
+
+**Effect:** same imperial system can permit provisional activity under review.
+
+---
+
+## Phase Q — builders use full catastrophe timeline as present identity proof
+
+old temple
+→ destruction
+→ exile
+→ Cyrus authorization
+→ return
+→ current construction.
+
+**Effect:** historical process-memory legitimizes current state.
+
+---
+
+## Phase R — remote archive retrieves dormant permission
+
+search
+→ Ecbatana record found
+→ Cyrus decree reactivated.
+
+**Effect:** stored information regains causal force when recovered.
+
+---
+
+## Phase S — obstacle network flips into support network
+
+imperial officials
+→ ordered not to hinder
+→ taxes/resources redirected to builders.
+
+**Effect:** same surrounding structure changes effect when higher instruction changes.
+
+---
+
+## Phase T — weak-hands / strong-hands polarity
+
+opponents weaken hands
+versus
+imperial support strengthens hands.
+
+**Effect:** surrounding coupling determines rebuilding capacity.
+
+---
+
+## Phase U — shell completion followed by social/time reintegration
+
+temple finished
+→ roles assigned
+→ Passover
+→ feast.
+
+**Effect:** material reconstruction requires subsequent human/calendar synchronization.
+
+---
+
+## Phase V — 12-part symbol reasserts whole-system identity
+
+12 goats
+→ all Israel.
+
+**Effect:** reduced remnant uses structured symbolic total to represent larger historical body.
+
+---
+
+# What Ezra 1–6 adds to the master Bible/Vardath timeline
+
+1. **Catastrophe flow can reverse under a new macro-regime: extraction outward becomes release/return inward.**
+2. **Return systems may be supported by stationary nodes that never cross the boundary themselves.**
+3. **Portable remnants can survive destruction of a structure and later reconnect successor architecture to predecessor identity.**
+4. **Post-catastrophe reconstruction often begins with classification/inventory before physical rebuilding.**
+5. **Informational verification can function as a gate controlling institutional role.**
+6. **A reduced remnant can carry the identity of a whole prior system.**
+7. **Core function can restart before the outer shell is reconstructed.**
+8. **Known location/old bases can reactivate function before architecture returns.**
+9. **Shared timing can restore coherence before monumental space is restored.**
+10. **Old long-distance infrastructure routes can be reactivated after collapse.**
+11. **A successor structure can generate simultaneous joy and grief because restoration and loss coexist.**
+12. **Aggregated signals may retain intensity while losing internal meaning-resolution.**
+13. **Membership-boundary decisions can change neighbouring network polarity.**
+14. **Historical archives can either inhibit or enable reconstruction depending on which records are activated.**
+15. **A stopped physical process can restart from a local/prophetic signal before external approval arrives.**
+16. **Dormant authorization can survive in a remote information store and regain force when found.**
+17. **The same bureaucratic network can flip from obstacle to supply channel when its instruction state changes.**
+18. **Reconstruction ends not with walls/house alone but with restored roles, shared calendar and shared meal.**
+19. **Symbolic full-system geometry can be reasserted before political/geographic full restoration exists.**
+
+---
+
+## Section 39A number / textual register
+
+Record without forcing:
+- vessel totals in Ezra 1 contain internal/translation difficulties;
+- Ezra 2 total congregation **42,360**, while component sums and parallel lists do not align neatly;
+- many family totals differ between Ezra 2, Nehemiah 7 and 1 Esdras;
+- seventh month = altar/festival restart;
+- second year / second month = temple work begins;
+- temple finished in Darius' sixth year;
+- 12 goats for all Israel;
+- Passover on fourteenth day;
+- seven-day unleavened feast.
+
+The returnee numbers are especially unsuitable for cosmological pattern claims because the textual witnesses vary heavily.
+
+---
+
+## Section 39A textual / historical / scholarly controls
+
+- Ezra-Nehemiah has a complex composition history; many scholars date substantial literary shaping well after the early Persian period.
+- The final verses of Chronicles and Ezra 1 overlap, but this does not by itself prove simple single authorship of Chronicles-Ezra-Nehemiah.
+- The biblical “Cyrus decree” should not be equated simplistically with the Cyrus Cylinder. The Cylinder reflects broader Persian imperial restoration rhetoric/policy but does not mention Jerusalem or Judah.
+- Some scholars accept Persian-period royal authorization behind Ezra's decrees; others argue the inserted decree texts are later literary compositions. Preserve that debate.
+- Sheshbazzar / Zerubbabel relationships and leadership chronology are difficult; do not assume every chapter is a simple continuous diary.
+- Ezra 2 / Nehemiah 7 / 1 Esdras contain substantial textual variation, especially numerical.
+- Genealogical exclusion from priesthood reflects the text's community-boundary ideology; it should not be generalized into modern judgments of human worth.
+- Ezra 3's old/young grief-joy contrast is literary memory of First versus Second Temple experience; exact eyewitness demographics cannot be verified.
+- Ezra 4 is famously non-linear: Artaxerxes/Ahasuerus material is inserted within a Cyrus-to-Darius building-opposition framework.
+- Opposition narratives represent the returned community's perspective and should not be treated as neutral accounts of neighbouring populations.
+- The switch between Hebrew and Aramaic is part of Ezra's textual architecture and aligns with official correspondence sections.
+- Ezra 5–6's Persian decrees/letters are literary representations of imperial administration even where they preserve authentic Persian-period forms or concerns.
+- Ecbatana/Ahmetha archive discovery is a narrative datum; the exact historicity of the search/decree copy is debated.
+- The temple's 516/515 BCE completion under Darius I is broadly accepted in historical reconstruction, though exact literary details remain source-dependent.
+- The dedication's 12-goat “all Israel” symbolism reflects an ideological whole and should not be mistaken for restored twelve-tribe political geography.
+
+### Sources logged for Section 39A
+
+Primary:
+- Mechon-Mamre, **Ezra 1–6**.
+
+Scholarly controls:
+- major recent **Ezra** commentary treating Ezra 3–6 as the first “building YHWH's house” action→obstacle→resolution cycle.
+- Ralph W. Klein, **“Old Readings in 1 Esdras: The List of Returnees From Babylon (Ezra 2 // Nehemiah 7).”**
+- **Negotiating Power in Ezra–Nehemiah**, especially studies of Ezra 1–6 and community definition.
+- Sylvie Honigman, **“Antiochus III's Decree for Jerusalem and the Persian Decrees in Ezra-Nehemiah and LXX 1 Esdras,”** representing a skeptical literary-compositional view of the decree documents.
+- comparative scholarship on the Cyrus Cylinder and biblical return traditions.
+- archaeological/historical studies of Persian-period Yehud and Second Temple reconstruction.
+
+**Section 39 remains in progress.**
+
+### Next block
+
+**Ezra 7–10**:
+- Ezra's travel authorization and law-scroll expertise;
+- another Babylon→Jerusalem flow;
+- silver/gold/vessels entrusted by weight;
+- fast at Ahava before boundary crossing;
+- guarded versus unguarded travel;
+- weighed temple cargo at departure and arrival;
+- community “holy seed” language;
+- tearing garments/hair and collapse posture;
+- mass gathering in rain;
+- three-day compulsory convergence;
+- prolonged household sorting around foreign marriages;
+- difficult ethics of women/children separated from households.
+
