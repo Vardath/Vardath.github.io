@@ -117821,3 +117821,1264 @@ Priority families:
 - king/anointed figure;
 - pair/state reversals;
 - identify recurring **ordered process sequences**, not merely keyword frequency.
+
+
+---
+
+# SECTION 45 progress A — Psalms: creation / waters / dragon / storm / world-shaking cluster
+## The densest cosmology Psalms repeatedly describe a stable world interrupted by atmospheric activation, moving waters, mountain/earth response, temporary route opening or exposure, and eventual re-containment; dragon/Leviathan/Rahab imagery is repeatedly embedded inside these water-boundary transformations rather than appearing as an isolated monster motif
+
+This begins **Section 45 — Psalms** using the roadmap method:
+
+> Do not process all 150/151 Psalms as isolated mini-notes. Group them by recurring process family, then build the ordered transformations.
+
+This first family covers the densest:
+- creation;
+- upper/lower waters;
+- sea/deep;
+- storm;
+- earth/mountain shaking;
+- dragon/Leviathan/Rahab;
+- temporary path opening;
+- world-restabilization.
+
+Priority Psalms in this block:
+**18, 29, 46, 74, 77, 89, 93, 97, 104, 107, 114, 144**.
+
+---
+
+# Ethiopic Psalter control — 151 Psalms, Greek numbering tradition
+
+For the Ethiopian corpus, the Psalter requires numbering control.
+
+The Ethiopic Psalter:
+- was probably translated into Ge'ez from Greek in late antiquity;
+- follows the **Septuagint numbering system**, not always the Hebrew/Masoretic numbering;
+- includes an additional **Psalm 151**.
+
+Examples:
+- Hebrew Psalms 9 + 10 correspond to one Septuagint/Ethiopic Psalm 9;
+- Hebrew 114 + 115 correspond to Septuagint/Ethiopic 113;
+- Hebrew 116 is divided in the Greek/Ethiopic system;
+- Ethiopian manuscripts contain Psalm 151.
+
+Therefore throughout Section 45:
+- use standard modern Hebrew/English numbering for cross-reference clarity;
+- note Ethiopic/Greek numbering differences when they affect a specific Psalm;
+- include Psalm 151 in the final Ethiopic corpus pass.
+
+The Ethiopic Psalter tradition is also unusually strong manuscript-wise, with Psalters among the most commonly copied Ethiopian Christian books.
+
+---
+
+# Master sequence emerging across this cluster
+
+Across multiple Psalms, the repeated transformation is:
+
+**stable world**
+→ **upper/storm field activates**
+→ **cloud / thunder / lightning / wind intensify**
+→ **sea/deep/waters become mobile**
+→ **earth / foundations / mountains respond**
+→ **boundary or route changes**
+→ **human or divine passage occurs**
+→ **waters are stilled / confined / returned**
+→ **stable order resumes**.
+
+Not every Psalm contains every step.
+
+But the order recurs often enough to track as a genuine process family.
+
+---
+
+# Psalm 18 — the strongest storm-descent / exposed-foundation / extraction sequence
+
+Psalm 18 is one of the most important Psalms for the Vardath comparison.
+
+The rescue sequence is:
+
+1. speaker surrounded by death/destruction;
+2. cry rises to heavenly temple;
+3. earth rocks/shakes;
+4. mountain foundations tremble;
+5. smoke/fire imagery appears;
+6. heavens are parted/bowed and divine presence descends;
+7. darkness/cloud becomes covering;
+8. wind acts as carrier;
+9. hail/fire/lightning are released;
+10. sea-bed appears;
+11. world foundations become exposed;
+12. storming breath/rebuke drives the exposure;
+13. a hand reaches **from on high**;
+14. speaker is drawn **out of deep waters**;
+15. speaker is placed in open space.
+
+This is a complete:
+**upper activation → structural disturbance → lower exposure → vertical extraction → open-space restoration**
+sequence.
+
+---
+
+# Psalm 18 — heavens physically change relation to the lower field
+
+The text says the heavens are:
+- parted / bowed / inclined;
+- followed by descent;
+- dark cloud beneath the feet.
+
+This is far stronger than a generic “God came.”
+
+The geometry is:
+**upper boundary changes orientation**
+→ **descent becomes possible**.
+
+For Vardath comparison:
+this resembles a temporary changing relationship between upper and lower domains.
+
+Hard control:
+the Psalm is storm-theophany poetry and royal rescue imagery, not a literal world-layer engineering report.
+
+---
+
+# Psalm 18 — exposed sea-bed and world foundations
+
+After lightning/thunder/storm:
+
+**bed/channels of sea appear**
+and
+**foundations of world are laid bare**.
+
+This is one of the strongest temporary-geometry images in the Psalter.
+
+Normal:
+water conceals lower structure.
+
+Event:
+water-state changes
+→ lower geometry becomes visible.
+
+Then rescue occurs.
+
+This is highly relevant to any Vardath process where:
+**normally separated layers become exposed during a transient event**.
+
+But the source-level image remains storm/sea theophany.
+
+---
+
+# Psalm 18 — hand from above performs vertical extraction
+
+The text then gives:
+
+**hand reaches from high**
+→ grasps person in deep waters
+→ draws upward/outward
+→ places in open space.
+
+This should be cross-indexed with:
+- Moses drawn from water;
+- Jonah;
+- later “hand from heaven” traditions;
+- ascent/descent rescue imagery.
+
+This is a true directional transfer:
+**deep/lower dangerous state**
+→ **upper intervention**
+→ **open stable state**.
+
+---
+
+# Psalm 144 is a deliberate reuse of the Psalm 18 process
+
+Psalm 144 explicitly reuses material from Psalm 18.
+
+It requests:
+
+- incline/bow heavens;
+- come down;
+- touch mountains so they smoke;
+- flash lightning;
+- shoot arrows;
+- reach hand from on high;
+- rescue from many waters.
+
+Then the final section asks for:
+- healthy sons/daughters;
+- full barns;
+- multiplying flocks;
+- no breach in walls;
+- no exile/outcry.
+
+This is extremely important.
+
+Psalm 144 uses the cosmic-disturbance rescue sequence as a prelude to:
+**stable enclosed prosperity**.
+
+So:
+
+**upper disturbance**
+→ **rescue**
+→ **no breach / stable household / abundance**.
+
+That matches the larger cycle shape more directly than Psalm 18 alone.
+
+---
+
+# Psalm 29 — storm moves across the land as a coherent field
+
+Psalm 29 presents:
+- voice over mighty waters;
+- thunder;
+- cedar breaking;
+- mountain skipping;
+- fiery flame;
+- wilderness shaking;
+- forest stripping;
+- throne above flood.
+
+Academic work regularly reads the Psalm as a **storm theophany** moving geographically from sea/coast toward inland regions.
+
+This is important because the storm is not merely one point-event.
+
+It behaves as a **traveling field**.
+
+Process:
+**waters/coast**
+→ **mountain/forest zone**
+→ **wilderness**
+→ **cosmic enthronement over flood**.
+
+---
+
+# Psalm 29 — sevenfold voice/thunder structure
+
+The “voice of the LORD” occurs seven times in the core storm section.
+
+This likely serves poetic structure and may reflect older storm-god imagery.
+
+Do not convert the count 7 directly into the Vardath number system.
+
+But note:
+the Psalm deliberately turns the storm into a **seven-stage acoustic field**.
+
+---
+
+# Psalm 29 — water / wood / fire / earth all respond to one moving field
+
+The same voice/storm affects:
+- waters;
+- trees;
+- mountains;
+- fire/lightning;
+- desert;
+- animals/forest.
+
+This is a broad environmental coupling model:
+
+**one field**
+→ multiple media
+→ different local effects.
+
+That is highly relevant to the project because Vardath events are not expected to affect only one material system.
+
+---
+
+# Psalm 46 — stable centre inside moving world
+
+Psalm 46 begins with:
+
+- earth changing/shaking;
+- mountains moving into sea;
+- waters roaring/foaming;
+- mountains trembling at surge.
+
+But at the centre:
+**city of God**
+has a river;
+God is “in its midst”;
+it is **not moved**.
+
+This is a striking stable-centre / unstable-periphery geometry.
+
+Outer field:
+**earth + mountain + sea**
+→ unstable.
+
+Inner centre:
+**city + river**
+→ remains stable.
+
+This is a high-priority Vardath analogue to:
+**protected central region during surrounding world disturbance**.
+
+---
+
+# Psalm 46 — river at centre versus raging sea outside
+
+The Psalm sets two water states against each other:
+
+### outer water
+roaring;
+foaming;
+mountain-destabilizing.
+
+### inner water
+river/streams;
+gladdening;
+life-supporting.
+
+Again:
+**water is not one symbolic substance**.
+
+Same broad medium:
+- destructive at one scale/location;
+- stabilizing at another.
+
+This strongly echoes Job 14's regenerative/erosive dual water behavior.
+
+---
+
+# Psalm 46 — voice can melt earth after waters/mountains destabilize
+
+The sequence later says:
+nations rage / kingdoms totter
+→ divine voice
+→ **earth melts**.
+
+So the Psalm combines:
+- mechanical shaking;
+- water surge;
+- melting.
+
+This broadens the state-change vocabulary.
+
+Do not identify literal crustal melting without evidence.
+
+The secure text is:
+**world stability can shift through several different image-regimes**.
+
+---
+
+# Psalm 74 — sea/dragon/Leviathan conflict is embedded inside creation ordering
+
+Psalm 74 gives one of the clearest creation-via-water-control sequences:
+
+- divine kingship “from old”;
+- sea stirred/divided by might;
+- dragon heads smashed on waters;
+- Leviathan heads crushed;
+- springs/torrents opened;
+- waters/dry land reordered;
+- day/night assigned;
+- sun/moon placed;
+- earth boundaries fixed;
+- seasons established.
+
+The dragon material is not isolated.
+
+It sits inside:
+**water conflict → environmental ordering → temporal/cosmic stabilization**.
+
+This is critical.
+
+The dragon is part of a transformation sequence.
+
+---
+
+# Leviathan in Psalm 74 is many-headed, but the number is not specified
+
+Psalm 74 speaks of:
+- heads of dragons;
+- heads of Leviathan.
+
+This is compatible with broader ancient West Asian multi-headed sea-monster traditions.
+
+But:
+the Psalm does **not** specify “seven heads.”
+
+Some comparative traditions do.
+
+Do not import a number into the source.
+
+---
+
+# Psalm 74 — two-force pattern is strongest as ordered world vs uncontrolled water/monster
+
+The pair is not:
+two equal serpents.
+
+It is more like:
+
+**ordering/containing force**
+↔
+**unbounded aquatic/dragon force**.
+
+This resembles a P2 polarity pair.
+
+But it is asymmetric:
+one side is the victorious controlling power.
+
+Two-spring physical symmetry:
+unsupported.
+
+---
+
+# Psalm 77 — waters see the approaching field and convulse
+
+Psalm 77 is among the strongest ordered-process Psalms.
+
+The sequence:
+
+- waters see divine presence;
+- waters writhe;
+- deep trembles;
+- clouds pour water;
+- thunder resounds;
+- lightning/arrows flash;
+- thunder in whirlwind/chariot;
+- earth trembles/quakes;
+- path opens through sea;
+- route passes through mighty waters;
+- footprints are not visible;
+- people are led through by Moses/Aaron.
+
+This is almost an event log.
+
+---
+
+# Psalm 77 — temporary sea route with no lasting track
+
+The crucial line is:
+
+**path through sea**
++
+**way through mighty waters**
++
+**footprints unseen**.
+
+This gives a strong transient-topology model:
+
+Before:
+sea blocks ordinary passage.
+
+During:
+route exists through sea.
+
+After:
+ordinary track is not visible.
+
+That is highly relevant to the Vardath “gate-open / gate-closed” comparison.
+
+It does not prove a world-gate.
+
+But it is one of the cleanest textual examples of:
+**temporary route through normally impassable medium that leaves no ordinary persistent path**.
+
+---
+
+# Psalm 77 — upper and lower disturbances happen simultaneously
+
+The event couples:
+
+Upper:
+- cloud water;
+- thunder;
+- lightning.
+
+Lower:
+- sea/deep;
+- earth quake.
+
+So:
+**atmosphere + water + ground**
+all respond in one sequence.
+
+This is exactly the kind of multi-medium coupling the current research is seeking.
+
+---
+
+# Psalm 89 — raging sea is stilled, Rahab is crushed, world is founded
+
+Psalm 89 gives:
+
+**raging sea**
+→ waves rise
+→ waves stilled.
+
+Then:
+**Rahab**
+→ crushed/scattered.
+
+Then:
+**heavens + earth**
+→ world founded.
+
+This is a close cousin of Psalm 74.
+
+Again:
+monster defeat / water stabilization
+is coupled to
+**world order**.
+
+---
+
+# Psalm 89 — hand on sea and right hand on rivers
+
+The Davidic king is later said to have:
+- hand set on sea;
+- right hand on rivers.
+
+At the source level this can mean territorial reach and royal dominion.
+
+But because the same Psalm uses Sea/Rahab mythic imagery, it also creates a deliberate ruler↔cosmic-water relation.
+
+Do not literalize it as a giant human straddling waters.
+
+But it is another example of a named human ruler being mapped onto cosmic-domain control language.
+
+---
+
+# Psalm 93 — stable world versus rising flood
+
+Psalm 93 is compact but important.
+
+State A:
+**world established / unmoved**.
+
+Then:
+**flood raises voice / roar / pounding waves**.
+
+Counter-state:
+divine power above waters.
+
+Final:
+decrees/house remain firm.
+
+This is the simplest version of:
+
+**stable world**
+→ **water uprising**
+→ **higher control**
+→ **stability retained**.
+
+---
+
+# Psalm 97 — fire/lightning precede mountain melting
+
+The storm-theophany sequence is:
+
+- cloud/darkness surrounds;
+- fire moves ahead;
+- lightning illuminates world;
+- earth sees and trembles;
+- mountains melt like wax.
+
+This is a very important state-change sequence.
+
+Not just:
+“mountains shake.”
+
+Instead:
+**radiant/electrical event**
+→ **earth reaction**
+→ **mountain melting image**.
+
+For Vardath plasma comparison this is one of the more suggestive Psalmic clusters.
+
+But source control is essential:
+this is poetic theophany language, not direct observation of plasma-induced lithic melting.
+
+---
+
+# Psalm 104 — the most complete creation / water-boundary system in the Psalter
+
+Psalm 104 is a major anchor text.
+
+The opening architecture:
+
+- divine figure clothed in light;
+- heavens stretched like tent;
+- chambers/beams set on waters;
+- clouds become chariot;
+- wind becomes carrier;
+- fire becomes minister.
+
+Then the earth-water phase:
+
+- earth fixed on foundation;
+- deep covers it like garment;
+- waters above mountains;
+- rebuke/thunder causes waters to flee;
+- waters move through mountain/valley topography;
+- a fixed place is assigned;
+- hard boundary is set;
+- waters may not cross it to cover earth again.
+
+This is the clearest Psalmic:
+**water over world → retreat → routed relocation → fixed boundary → stable dry world**
+sequence.
+
+---
+
+# Psalm 104 — upper waters and lower waters are both active parts of the architecture
+
+Upper:
+- chambers/beams upon waters;
+- clouds;
+- wind.
+
+Lower:
+- deep;
+- springs;
+- sea.
+
+This gives a genuinely layered water architecture.
+
+The text does not describe an inhabited world above.
+
+But it clearly distinguishes:
+**water associated with upper divine dwelling**
+from
+**water associated with earth/sea/deep**.
+
+This is directly relevant to the user's layered-world model.
+
+---
+
+# Psalm 104 — water first covers, then flees, then becomes life-distribution network
+
+The sequence is crucial:
+
+### state 1
+deep/water covers earth.
+
+### state 2
+rebuke/thunder
+→ waters flee.
+
+### state 3
+waters settle in assigned locations.
+
+### state 4
+springs flow through valleys.
+
+### state 5
+distributed water sustains animals, birds, vegetation, humans.
+
+So a formerly destructive/enveloping medium becomes:
+**regulated life-support network**.
+
+This is one of the strongest transformation sequences in the Bible for the project.
+
+---
+
+# Psalm 104 — boundary prevents recurrence of global coverage
+
+The text says the waters receive a limit they cannot pass so they do not cover earth again.
+
+This is strongly parallel to Job 38:
+sea
+→ bars/doors
+→ “this far, no farther.”
+
+So the Psalms and Job share:
+
+**powerful water**
+→ boundary
+→ stability.
+
+This is stronger than a shared word; it is a shared mechanism.
+
+---
+
+# Psalm 104 — Leviathan changes function from enemy to integrated creature
+
+This is one of the most important controls in all the dragon research.
+
+Psalm 74:
+Leviathan
+→ crushed.
+
+Psalm 104:
+Leviathan
+→ **formed to play in sea**.
+
+So the same mythic/monster figure changes role:
+
+**chaos enemy**
+→ **integrated creature inside ordered sea**.
+
+This proves that “Leviathan” cannot be assigned one fixed function across all biblical texts.
+
+Context determines role.
+
+For Vardath:
+the dragon motif may represent different phases/states, not one static enemy.
+
+---
+
+# Psalm 104 — breath/spirit controls death and re-creation
+
+The later sequence:
+
+divine face hidden
+→ creatures panic.
+
+breath withdrawn
+→ die
+→ return to dust.
+
+spirit/breath sent
+→ created
+→ face of earth renewed.
+
+This is a true cycle:
+
+**animation**
+→ **withdrawal**
+→ **death**
+→ **return to dust**
+→ **new breath**
+→ **renewed earth**.
+
+This is one of the strongest cyclical state-change sequences in Psalms.
+
+---
+
+# Psalm 104 — earth trembles and mountains smoke under contact
+
+The closing cosmic image:
+look at earth
+→ trembles.
+
+touch mountains
+→ smoke.
+
+This repeats Job/Psalm 144 style:
+**contact from upper/controller**
+→ mountain thermal/visual transformation.
+
+Again:
+highly relevant to the Vardath event map,
+but still poetic.
+
+---
+
+# Psalm 107 — the storm cycle is explicitly reversible
+
+The sea episode is mechanically clear:
+
+- sailors enter deep;
+- storm wind is raised;
+- waves rise;
+- vessels/humans move up toward heavens then down to depths;
+- orientation/skill fails;
+- distress call;
+- storm is hushed;
+- waves still;
+- calm returns;
+- ship reaches desired harbor.
+
+This gives:
+
+**stable sea**
+→ **storm activation**
+→ **high-amplitude oscillation**
+→ **human control failure**
+→ **storm suppression**
+→ **calm**
+→ **safe destination**.
+
+This is one of the best “activation → instability → damping → stable endpoint” models in the corpus.
+
+---
+
+# Psalm 107 — vertical oscillation is explicit
+
+The ship/people:
+**rise to heavens**
+→ **descend to depths**.
+
+This is poetic wave-motion, not literal world-layer travel.
+
+But it is a clean:
+**up/down alternating field**.
+
+Important as a physical-process analogue.
+
+---
+
+# Psalm 107 — water system reverses in both directions
+
+Later:
+
+**rivers**
+→ desert.
+
+**springs**
+→ dry ground.
+
+Then the opposite:
+
+**desert**
+→ pools.
+
+**dry land**
+→ springs.
+
+This is a direct paired transformation:
+
+watered
+↔
+dry.
+
+Again the same world surface can occupy opposite hydrological states.
+
+---
+
+# Psalm 114 — paired cosmic elements recoil together
+
+Psalm 114 gives:
+
+- Sea flees;
+- Jordan turns back;
+- mountains skip;
+- hills skip;
+- earth trembles;
+- rock turns into pool;
+- flint turns into spring.
+
+The Psalm explicitly works with pairs:
+- sea / river;
+- mountain / hill.
+
+This is closer to the user's “paired figures/processes” method than many other Psalms.
+
+---
+
+# Psalm 114 — solid rock becomes water source
+
+The end reverses ordinary material expectation:
+
+**rock**
+→ pool.
+
+**flint**
+→ spring.
+
+This is not ordinary melting language.
+
+It is miraculous source-conversion.
+
+But at process level:
+**solid boundary/body**
+→ **water-producing state**.
+
+This should be cross-indexed with:
+- Moses and rock;
+- Job tree/water;
+- Ezekiel temple river;
+- Revelation river.
+
+---
+
+# Cross-Psalm dragon progression
+
+The major dragon/water Psalms in this block give:
+
+### Psalm 74
+dragon/Leviathan
+→ smashed/crushed during ordering.
+
+### Psalm 89
+Rahab
+→ crushed while sea is stilled and world founded.
+
+### Psalm 104
+Leviathan
+→ no longer enemy;
+→ integrated into stable sea ecology.
+
+This produces a potentially important transformation:
+
+**uncontrolled aquatic power**
+→ **subdued**
+→ **bounded**
+→ **integrated into stable order**.
+
+That may be more useful to Vardath Cosmology than a simple:
+“dragon = destructive object.”
+
+---
+
+# Cross-Psalm storm progression
+
+Psalm 18:
+storm opens/exposes lower structure and enables extraction.
+
+Psalm 29:
+storm traverses landscape.
+
+Psalm 77:
+storm + sea + earthquake coincide with route through water.
+
+Psalm 97:
+storm/lightning precedes mountain melting.
+
+Psalm 107:
+storm creates oscillation then is stilled.
+
+Psalm 144:
+storm-descent sequence is invoked to restore stable prosperity.
+
+This creates a genuine process family:
+
+**storm field**
+can:
+- reveal;
+- route;
+- move;
+- destabilize;
+- rescue;
+- then terminate.
+
+---
+
+# Cross-Psalm water progression
+
+Water can be:
+
+- primordial covering (104);
+- chaotic/hostile sea (74, 89, 93);
+- route medium (77);
+- rescue danger (18, 144);
+- stable city river (46);
+- life distribution network (104);
+- oscillating storm medium (107);
+- solidified/redirected in related Job texts;
+- generated from rock (114).
+
+Therefore:
+**water is a process medium, not a fixed symbol**.
+
+That finding is now very strong across Job + Psalms.
+
+---
+
+# Cross-Psalm mountain progression
+
+Mountains can:
+
+- tremble at foundations (18);
+- skip under storm/divine presence (29, 114);
+- move into sea (46);
+- melt like wax (97);
+- emerge as terrain through which waters route (104);
+- smoke when touched (104, 144).
+
+Again:
+“mountain” is not one static symbol.
+
+It behaves under different force regimes.
+
+---
+
+# Cross-Psalm temporary-route model
+
+The strongest is Psalm 77:
+
+**water barrier**
+→ event field activates
+→ route exists
+→ people pass
+→ no visible footprints remain.
+
+Related:
+Psalm 18:
+deep water
+→ upper hand reaches
+→ extraction.
+
+Psalm 114:
+sea/river reverse.
+
+This is enough to define a Psalmic process class:
+
+**temporary route through normally blocking water-domain**.
+
+It is not enough to prove a physical inter-world gate.
+
+But it is one of the closest literary analogues to gate-open/gate-closed behavior found so far.
+
+---
+
+# SECTION 45A two-force / pair matrix
+
+## ordered world / raging waters
+Strong P2 polarity.
+
+Appears repeatedly:
+- 74;
+- 89;
+- 93;
+- 104.
+
+---
+
+## stable centre / unstable periphery
+Strong in Psalm 46.
+
+Outer:
+earth/mountain/sea disturbance.
+
+Inner:
+city/river remains stable.
+
+P3 state-field contrast:
+strong.
+
+---
+
+## sea / river and mountain / hill
+Psalm 114 intentionally pairs cosmic elements.
+
+P1 complementary pairs:
+strong at poetic structure level.
+
+Two-spring physical symmetry:
+unsupported.
+
+---
+
+## Leviathan destroyed / Leviathan integrated
+Psalm 74 ↔ Psalm 104.
+
+This is a powerful P3 state/role transformation across Psalms.
+
+Same named mythic figure:
+enemy/chaos role
+→ creature in ordered sea.
+
+---
+
+## upper field / lower field
+Repeated:
+- heavens/cloud/storm above;
+- sea/deep/earth below.
+
+Psalm 18 and 77 strongly couple them during event.
+
+P2 vertical polarity:
+strong.
+
+Literal populated world-pair:
+unsupported.
+
+---
+
+# SECTION 45A continuous master process sequence
+
+## Phase 1 — stable world/order exists
+
+earth founded;
+boundaries established;
+city/centre stable.
+
+---
+
+## Phase 2 — upper atmospheric field activates
+
+cloud;
+wind;
+thunder;
+lightning;
+fire.
+
+---
+
+## Phase 3 — waters respond
+
+sea rises;
+deep trembles;
+waves roar;
+primordial water moves.
+
+---
+
+## Phase 4 — solid world responds
+
+earth shakes;
+foundations tremble;
+mountains skip/move/melt/smoke.
+
+---
+
+## Phase 5 — hidden lower structure becomes exposed or route becomes available
+
+sea-bed revealed;
+world foundations exposed;
+path through sea appears;
+sea/river turn back.
+
+---
+
+## Phase 6 — vertical or guided transfer occurs
+
+hand from above extracts;
+people cross sea;
+people are led toward destination.
+
+---
+
+## Phase 7 — destructive/chaotic aquatic force is subdued
+
+sea stilled;
+Rahab/Leviathan crushed in some traditions;
+storm hushed;
+waters flee.
+
+---
+
+## Phase 8 — water receives controlled channels/boundaries
+
+springs;
+valleys;
+fixed place;
+limit not crossed.
+
+---
+
+## Phase 9 — medium becomes life-supporting
+
+river;
+springs;
+rain;
+vegetation;
+animals;
+human food.
+
+---
+
+## Phase 10 — stable ordered world resumes
+
+city unshaken;
+harbor reached;
+no breach;
+prosperity/peace requested.
+
+---
+
+# What Section 45A adds to the master Bible/Vardath timeline
+
+1. The Psalms repeatedly describe **multi-medium events**, not isolated symbolism: atmosphere + water + earth/mountain respond together.
+2. **Psalm 18** provides a full upper activation → earth shaking → sea-bed exposure → high-to-low hand → extraction sequence.
+3. **Psalm 144** explicitly reuses that event sequence and ends with the desired state of **no wall breach + abundance**, creating a disturbance→restoration arc.
+4. **Psalm 29** describes the storm as a moving geographic field, affecting water, trees, mountains, fire and wilderness.
+5. **Psalm 46** gives one of the best stable-centre / unstable-periphery structures in the corpus.
+6. **Psalm 74** embeds Leviathan/dragon destruction within water reordering, day/night assignment, celestial placement and earth-boundary fixing.
+7. **Psalm 77** gives the strongest temporary-route model so far: a path through sea exists during the event but leaves no ordinary visible footprints.
+8. **Psalm 77** also couples rain-clouds, thunder, lightning, sea/deep and earthquake in one event.
+9. **Psalm 89** again links sea-stilling, Rahab defeat and world-founding.
+10. **Psalm 93** reduces the same mechanism to a stable-world / rising-flood / higher-control pattern.
+11. **Psalm 97** adds lightning → earth trembling → mountain melting.
+12. **Psalm 104** gives the most complete water-boundary architecture: upper waters, earth foundations, deep covering, retreat, routing through terrain, fixed limit and later life-distribution.
+13. **Psalm 104 and Job 38 independently use the same broad water-stability mechanism:** powerful water is retained by limit/boundary rather than annihilated.
+14. **Psalm 104 changes Leviathan from enemy to integrated creature**, proving dragon function is state/context dependent.
+15. **Psalm 104 gives a breath/spirit cycle:** withdrawal → death/dust; return → creation/renewed earth.
+16. **Psalm 107** supplies a clean activation → oscillation → damping → harbor sequence.
+17. **Psalm 107** also gives reversible hydrology: river→desert and desert→pool.
+18. **Psalm 114** pairs sea/river and mountain/hill while turning rock/flint into water source.
+19. A strong Psalmic process class now exists: **temporary route through normally blocking water-domain**.
+20. Another strong class exists: **world stability depends on successful water containment after disturbance**.
+21. Another strong class exists: **upper atmospheric activation can coincide with lower structural/water transformation**.
+22. These are substantially closer to the user's event-mechanism research than isolated name matching.
+23. However, none of these Psalms yet explicitly gives the full Vardath mechanism of two counter-wound lattice strands weaving a finger-trap between inhabited world-turns.
+
+---
+
+# SECTION 45A source / textual controls
+
+- Psalms are poetry, liturgy and theological memory; event imagery can compress creation, Exodus, royal rescue and storm theophany into one picture.
+- Several Psalms deliberately reuse older Psalms and older ancient West Asian imagery.
+- Psalm 144 explicitly reuses Psalm 18 material, so those two are not independent corroborations.
+- Psalm 74 and 89 likely draw on shared ancient West Asian sea/dragon conflict imagery.
+- Psalm 77 blends Exodus-memory with storm-theophany language.
+- Psalm 29 is widely discussed as reworking Canaanite/Baal-type storm imagery; direct literary dependence remains debated in detail.
+- Psalm 46's mountain/sea chaos can be read politically/socially as well as cosmically.
+- Psalm 97 is storm-theophany poetry; mountain “melting” should not be treated as geological observation without external evidence.
+- Psalm 104 is often compared with Genesis 1 and wider ancient Near Eastern creation hymns.
+- Psalm 104:8 has translation/syntax disputes affecting whether waters move over mountains/down valleys or mountains/valleys themselves rise/sink; do not build a tectonic theory from one disputed line.
+- Leviathan is not one fixed symbol across Psalms.
+- Rahab and Leviathan belong to wider mythic-sea-monster vocabulary and may function as literary personifications of chaos/enemy powers.
+- “Path through sea” in Psalm 77 refers primarily to Exodus tradition.
+- “Footprints unseen” is poetic/theological invisibility and route-erasure imagery, not direct evidence of a transient physical wormhole.
+- The Ethiopic Psalter uses Greek numbering and contains Psalm 151; numbering differences must be controlled in later passes.
+- Psalm 151 must be included before Section 45 is closed.
+
+### Sources logged for Section 45A
+
+Primary:
+- USCCB/NABRE:
+  - Psalm 18
+  - Psalm 29
+  - Psalm 46
+  - Psalm 74
+  - Psalm 77
+  - Psalm 89
+  - Psalm 93
+  - Psalm 97
+  - Psalm 104
+  - Psalm 107
+  - Psalm 114
+  - Psalm 144
+- NRSVUE text checks across the same Psalms.
+
+Scholarship:
+- **Precreation Discourse in Psalms 74 and 77: Struggling with Chaoskämpfe**, Religion & Theology 18 (2011), on the use of chaos-battle traditions in present crisis.
+- studies of creation/conflict in Psalms 74, 89 and related texts.
+- John Kselman, **“Psalm 77 and the Book of Exodus,”** on the Exodus structure and sea-path theophany.
+- academic work on **Psalm 29** as storm theophany and its relation to Canaanite/Baal imagery.
+- studies of Psalm 104's water/creation structure and its relationship to Genesis and ancient Near Eastern cosmology.
+
+Ethiopic:
+- Marilyn Heldman, **“Psalter,” Encyclopaedia Aethiopica 4 (2010)**.
+- Ethiopian Psalter manuscript catalogues documenting:
+  - Ge'ez Psalter tradition;
+  - Septuagint numbering;
+  - Psalm 151.
+- Yale Beinecke Ethiopic Psalter records confirming Psalm 151 in manuscript tradition.
+
+---
+
+# SECTION 45A COMPLETE — creation / waters / dragon / storm / world-shaking family
+
+### Current transformation point
+
+**stable ordered world**
+→ upper storm field activates
+→ waters rise/tremble/flee
+→ earth/foundations/mountains respond
+→ hidden lower structure or temporary route appears
+→ vertical/guided extraction or crossing occurs
+→ water/dragon force is subdued or bounded
+→ waters become routed life-support system
+→ stable world/centre resumes
+→ in some Psalms prosperity/no-breach state follows.
+
+### Next Psalm process family
+
+**SECTION 45B — mountain / Zion / gate / ascent / descent / temple-centre Psalms**
+
+Priority:
+- Psalms 15, 24, 42–43, 48, 68, 84, 87, 120–134 and related Zion/ascent material;
+- gates/doors;
+- lifting heads;
+- holy mountain;
+- river/temple centre;
+- ascent/descent routes;
+- procession;
+- north/Zion;
+- stairs/degrees/“Songs of Ascents” as literary collection without assuming literal step count;
+- central mountain as vertical access point;
+- distinguish temple pilgrimage from cosmological axis;
+- track whether any paired mountain/gate sequence genuinely resembles the user's central-spire geometry.
