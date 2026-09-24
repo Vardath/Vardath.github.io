@@ -111059,3 +111059,1544 @@ Priority:
   exterior/other agents die;
   same enclosure later receives hostile group;
 - test Bel sealed-door story as one of the strongest hidden-gate/false-closure controls in the corpus.
+
+
+---
+
+# SECTION 43 progress B — Daniel additions: Bel and the Dragon
+## An apparently sealed temple remains permeable through a concealed secondary route, a thin ash layer records otherwise invisible crossings, the false consuming centre is exposed; a literal dragon/serpent is destroyed by material carried into its body rather than by an external weapon; Daniel is then lowered into a lethal den while food and a distant prophet are carried through an impossible route from Judea to a point above him, the carrier is immediately returned, and on the seventh day the same enclosure reverses occupancy so the intended victim comes out and his accusers go in
+
+This pass completes **Section 43 — Daniel additions**.
+
+Bel and the Dragon is especially important for the master gate research because it supplies three distinct boundary mechanisms in one compact narrative:
+
+1. **false closure / hidden adjacency** — the visible temple door is sealed and its seal remains intact, yet people cross through a concealed secondary entrance;
+2. **inside-out destruction** — Daniel does not strike the dragon from outside but feeds it a material mixture that enters the living body and causes rupture from within;
+3. **long-distance transfer into a closed lethal enclosure** — Habakkuk, who does not know Babylon or the den, is physically carried by an angel from Judea to a position above Daniel, transfers food downward, and is immediately carried back.
+
+These three should remain distinct rather than being merged into one “portal” interpretation.
+
+---
+
+# Textual-control — Bel and the Dragon exists in two genuinely different Greek versions
+
+As with Susanna, **Old Greek (OG)** and **Theodotion (θ)** must not be flattened.
+
+Both preserve Bel and the Dragon, but they differ in:
+- framing;
+- identity/title of Daniel;
+- named king;
+- temple-deception details;
+- narrative emphasis;
+- wording/space.
+
+The church-standard Daniel 14 used in the USCCB/NABRE follows Theodotion while its notes preserve important Old Greek variants.
+
+Old Greek begins differently:
+- with a superscription connected to a prophecy of Habakkuk;
+- Daniel is introduced as a priest/son of Abal in that form;
+- the king is not framed in exactly the same way.
+
+Theodotion:
+- links the story to Astyages/Cyrus;
+- integrates Daniel into the familiar court world.
+
+This itself suggests the tale may have had a life before being attached to canonical Daniel.
+
+For geometry:
+use the shared process where possible and mark version-specific mechanics when they matter.
+
+---
+
+# BEL — a centre is classified as “living” because material disappears into its enclosure
+
+The king's argument is simple:
+
+**food placed before Bel**
+→ food disappears
+→ therefore Bel must be alive and consuming it.
+
+Daniel's counterclaim:
+
+**Bel is clay inside / bronze outside**
+→ not living
+→ food disappearance must have another cause.
+
+So the first problem is an **inference from hidden transfer**.
+
+Observed:
+**cargo enters temple**
+→ cargo absent next morning.
+
+Unknown:
+**what path did it take?**
+
+This is almost a textbook hidden-route problem.
+
+---
+
+# The idol itself is an outer shell with a different inner material
+
+Theodotionic wording describes Bel as:
+
+**clay inside**
++
+**bronze outside**.
+
+That is a literal shell/core distinction.
+
+Do not force it into a world-shell model.
+
+Its immediate polemical point is that the idol is manufactured matter rather than living divinity.
+
+But the geometry is still worth recording:
+**outer appearance hides different interior substance**.
+
+---
+
+# The priests propose a sealed-door test because they assume the visible boundary is the only boundary that will be checked
+
+The setup:
+
+- food/wine placed inside;
+- main temple door shut;
+- door sealed with king's ring;
+- everyone visibly leaves.
+
+Expected inference next morning:
+
+**seal intact**
++
+**food gone**
+=
+“Bel consumed it.”
+
+The entire trick depends on equating:
+
+**primary door sealed**
+with
+**enclosure impermeable**.
+
+That equivalence is false.
+
+This is one of the strongest boundary controls in the corpus.
+
+---
+
+# The visible seal authenticates the wrong boundary
+
+The king's seal is not broken.
+
+So it truthfully reports:
+
+> **the main door was not opened.**
+
+But observers incorrectly expand that into:
+
+> **nobody entered the temple.**
+
+The story proves those are different claims.
+
+This gives a permanent gate-analysis rule:
+
+> **A secure primary interface does not prove total isolation if another adjacency/path exists.**
+
+That principle is directly relevant to any model where geometry can create alternate routes.
+
+---
+
+# Secret entrance under/near the table creates hidden adjacency
+
+The priests have made a **secret entrance**.
+
+Through it:
+- priests;
+- wives;
+- children
+
+enter at night and consume the offerings.
+
+So the actual transfer topology is:
+
+**public route**
+= closed/sealed;
+
+**hidden route**
+= open;
+
+**cargo disappearance**
+= human consumption.
+
+This is not supernatural.
+
+It is deliberately a story about defeating a false supernatural inference by discovering hidden ordinary adjacency.
+
+That makes it an excellent control text for the project.
+
+---
+
+# Old Greek makes the hidden-route control even more explicit through “false doors”
+
+The USCCB's Old Greek note says priests enter through **false doors**.
+
+This strengthens the multiple-interface geometry.
+
+Do not overstate exact architecture, because OG and Theodotion differ.
+
+The secure shared result:
+**there is an unobserved route that bypasses the sealed route**.
+
+---
+
+# Daniel does not block the hidden route — he makes its use observable
+
+This is mechanically elegant.
+
+Daniel does not:
+- find the door in advance;
+- lock every passage;
+- place guards everywhere.
+
+Instead he changes the **state of the floor**.
+
+Ashes are spread across the entire temple.
+
+Then any moving body crossing the room changes that layer.
+
+This converts:
+**invisible passage**
+into
+**persistent trace**.
+
+---
+
+# Ash functions as a passive full-field path detector
+
+Before:
+movement leaves no obvious evidence.
+
+After:
+thin ash layer
+→ every footstep writes trajectory.
+
+This is one of the strongest sensing/recording analogies in the research.
+
+The floor becomes:
+
+**surface field**
+→ body crosses
+→ local deformation
+→ pattern remains
+→ later observer reconstructs hidden occupancy.
+
+No active watcher is needed.
+
+The material itself stores the path.
+
+---
+
+# Seals + ash test two different questions
+
+The experiment is stronger than either mechanism alone.
+
+### Seal
+tests:
+**was the main door opened?**
+
+### Ash
+tests:
+**did bodies move inside?**
+
+Result:
+
+**seal intact**
+AND
+**footprints present**.
+
+Therefore:
+
+**main route closed**
+while
+**internal crossing occurred**.
+
+That contradiction forces discovery of another route.
+
+This is almost an ideal empirical gate test.
+
+---
+
+# Men, women and children footprints reveal a whole hidden population
+
+The king sees tracks of:
+- men;
+- women;
+- children.
+
+Thus the consumption is not one secret priest.
+
+It is a distributed household population moving through the hidden interface.
+
+This turns the temple from:
+**supposed idol-only enclosure**
+into
+**secretly inhabited/visited enclosure**.
+
+The concealed population is critical to the deception.
+
+---
+
+# Hidden movement becomes visible only after the event
+
+The crossing happens at night.
+
+Detection happens later.
+
+This is:
+**event**
+→ **trace storage**
+→ **later reading**.
+
+That should be cross-indexed with:
+- chronicles in Esther;
+- written witness records;
+- footprints/tracks;
+- sediment/deformation records;
+- any proposed physical traces of a transient gate event.
+
+The strongest analogy is epistemic:
+a temporary event can disappear while leaving recoverable path evidence.
+
+---
+
+# The false centre collapses once hidden route is exposed
+
+After the route is revealed:
+- priests/families are exposed;
+- Bel is handed over to Daniel;
+- idol and temple are destroyed.
+
+So the false centre depends on:
+**unseen transfer + wrong interpretation**.
+
+Once the path is mapped:
+**centre loses authority**
+→ **structure removed**.
+
+This is a strong information→structure collapse sequence.
+
+---
+
+# Bel section pair/state matrix
+
+## Visible door / hidden door
+Very strong P2 interface pair:
+- one watched/sealed;
+- one unobserved/open.
+
+Not opposed forces; complementary routes.
+
+## Seal / ash
+P7-like diagnostic pair:
+- seal monitors one boundary;
+- ash monitors interior movement.
+
+Together they reveal hidden topology.
+
+## Bel / priests
+False apparent consumer vs actual consumers.
+
+This is a state/identity inversion:
+**imagined centre**
+→ **distributed human agents**.
+
+## King / Daniel
+competing interpretations of same material evidence.
+
+Not one hidden figure.
+
+---
+
+# BEL continuous geometry/effect timeline
+
+## Phase A — material enters sacred enclosure
+
+food/wine
+→ temple.
+
+**Effect:** visible cargo deposited.
+
+---
+
+## Phase B — primary interface closes
+
+main door shut
+→ king's seal applied.
+
+**Effect:** public route authenticated closed.
+
+---
+
+## Phase C — sensing layer deployed
+
+ash
+→ whole floor.
+
+**Effect:** future crossings become recordable.
+
+---
+
+## Phase D — hidden interface remains active
+
+priests/families
+→ secret route
+→ temple interior.
+
+**Effect:** closure is bypassed.
+
+---
+
+## Phase E — cargo removed
+
+food/wine consumed.
+
+**Effect:** apparent miracle condition created.
+
+---
+
+## Phase F — hidden population exits
+
+secret route.
+
+**Effect:** room appears empty again.
+
+---
+
+## Phase G — visible seal remains intact
+
+**Effect:** primary-boundary evidence still supports false inference.
+
+---
+
+## Phase H — floor trace contradicts boundary inference
+
+footprints found.
+
+**Effect:** unseen traversal demonstrated.
+
+---
+
+## Phase I — secondary route exposed
+
+secret/false doors revealed.
+
+**Effect:** true adjacency map replaces false one.
+
+---
+
+## Phase J — false centre destroyed
+
+Bel/temple removed.
+
+**Effect:** information correction collapses old sacred node.
+
+---
+
+# Bel's strongest Vardath relevance
+
+The value is methodological rather than cosmological:
+
+> **sealed visible boundary does not prove no transfer; instrument the whole field, compare independent indicators, and infer hidden adjacency only when the data require it.**
+
+This is precisely the kind of standard the Vardath research should apply to itself.
+
+A gate hypothesis is strongest when it explains:
+- observed transfer;
+- intact ordinary route;
+- independent traces;
+- recoverable hidden path.
+
+Bel therefore belongs in the final research not merely as a motif match but as a **methodological warning against false inference**.
+
+---
+
+# THE DRAGON — the story now gives an actual dragon/serpent rather than metaphorical dragon coding
+
+The next object is called a **great dragon**, with the Greek term also allowing **serpent**.
+
+Unlike Esther's dream dragons:
+- this one is presented as a living creature in the narrative;
+- the king uses its life as proof that it deserves worship.
+
+This is a direct source-level dragon/serpent figure.
+
+That makes it high priority for the user's dragon-lattice catalogue.
+
+But the immediate literary function is anti-idolatry polemic.
+
+The creature is not described as a sky lattice.
+
+---
+
+# King shifts from artificial “living god” to biologically living “god”
+
+Bel was:
+- manufactured;
+- not actually eating.
+
+The king responds with a stronger test:
+**the dragon is visibly alive**.
+
+So the argument shifts:
+
+**false life inferred from consumption**
+→
+**actual biological life visible**.
+
+Daniel's response is still:
+living organism ≠ ultimate divine centre.
+
+This is a conceptual progression:
+**idol shell**
+→ **living dragon**.
+
+---
+
+# Daniel explicitly refuses external weapon logic
+
+He asks to kill the dragon:
+
+**without sword or club**.
+
+That is important.
+
+The dragon will not be defeated by:
+**outside cutting/blunt force**.
+
+Instead the attack becomes:
+**material ingestion**
+→ **internal rupture**.
+
+This is a completely different damage topology.
+
+---
+
+# Pitch + fat + hair are converted into carried internal cargo
+
+Daniel:
+- takes pitch;
+- fat;
+- hair;
+- boils them together;
+- forms cakes/lumps.
+
+So multiple materials become:
+
+**3 ingredients**
+→ heat/mixing
+→ **one ingestible composite**.
+
+This is a small transformation pipeline.
+
+Do not infer special chemistry beyond the story.
+
+---
+
+# The dragon opens its own boundary and receives the destructive material
+
+Daniel places/gives the cakes into the dragon's mouth.
+
+The creature eats.
+
+So:
+
+**external material**
+→ mouth
+→ inside body.
+
+Unlike Holofernes, whose neck is attacked externally, this hostile centre is penetrated through its normal intake channel.
+
+That is a strong contrast.
+
+---
+
+# Destruction proceeds from inside outward
+
+After ingestion:
+**dragon bursts**.
+
+Thus:
+
+**boundary admits cargo**
+→ cargo changes internal state
+→ body/enclosure ruptures.
+
+This is one of the corpus's cleanest:
+**ordinary input channel becomes vulnerability**
+sequences.
+
+Compare Judith's spring:
+the vulnerable channel is not necessarily the defended gate.
+
+---
+
+# Dragon throat/mouth vs Bethulia spring — two different functional gates
+
+Cross-index:
+
+### Bethulia
+body-gate protected
+but
+water-channel vulnerable.
+
+### Dragon
+skin/body not attacked
+but
+feeding-channel used.
+
+Both demonstrate:
+> **The decisive route may be the flow interface rather than the obvious defensive shell.**
+
+That is a strong general mechanism.
+
+---
+
+# Do not identify this dragon with the Vardath sky dragon simply because the word matches
+
+Necessary hard control:
+
+The story provides:
+- a revered living serpent/dragon;
+- eating;
+- internal rupture.
+
+It does **not** provide:
+- sky span;
+- lattice;
+- two strands;
+- upper/lower world support;
+- world gate;
+- coiling around shells.
+
+So:
+**dragon-name match = real motif**
+but
+**physical identity = unsupported**.
+
+---
+
+# Dragon continuous geometry/effect timeline
+
+## Phase A — living creature becomes sacred centre
+
+dragon revered.
+
+**Effect:** biological life used as divine proof.
+
+---
+
+## Phase B — external weapon route rejected
+
+no sword/club.
+
+**Effect:** attack channel shifts.
+
+---
+
+## Phase C — materials transformed
+
+pitch + fat + hair
+→ boiled
+→ cakes.
+
+**Effect:** multiple substances become one cargo.
+
+---
+
+## Phase D — normal intake boundary opens
+
+mouth
+→ cargo enters.
+
+**Effect:** hostile centre admits damaging material itself.
+
+---
+
+## Phase E — internal state fails
+
+dragon eats
+→ bursts.
+
+**Effect:** inside-out structural collapse.
+
+---
+
+# LIONS' DEN — public backlash transfers Daniel into another lethal enclosure
+
+After Bel and dragon are destroyed:
+- Babylonian population turns against king;
+- threatens king/family;
+- Daniel is handed over;
+- Daniel is thrown into lions' den.
+
+So Daniel moves:
+
+**favored court figure**
+→ **sacrificial body transferred into public-demand enclosure**.
+
+This repeats Daniel 6 structurally but with a different causal story.
+
+Do not silently merge Daniel 6 and Daniel 14 as one event.
+
+The addition is a second lions-den tradition.
+
+---
+
+# The den is made more dangerous by withholding normal inputs
+
+There are **seven lions**.
+
+Normally they receive:
+- two human bodies/carcasses;
+- two sheep per day.
+
+Those inputs are stopped.
+
+Purpose:
+**increase hunger**
+→ make Daniel the target.
+
+So the enclosure is not simply inherently lethal.
+
+Its state is deliberately altered by **changing resource flow**.
+
+Again the book emphasizes:
+**input control changes boundary/environment behaviour**.
+
+---
+
+# Six days inside creates a prolonged closed-state interval
+
+Daniel remains in the den:
+**six days**.
+
+This is unlike an immediate drop-and-rescue.
+
+The story establishes:
+**extended survival inside hostile enclosure**
+before day-seven observation.
+
+This is important for the 6→7 timing register.
+
+---
+
+# Habakkuk begins in a completely different land and route
+
+Habakkuk is in **Judea**.
+
+He has:
+- stew/food;
+- bread in a bowl;
+- intended destination = reapers in a field.
+
+Original route:
+
+**food**
+→ local field workers.
+
+Then an angel changes the route:
+
+**food**
+→ Daniel in Babylon.
+
+This is an abrupt redirection of cargo from a local ordinary path to a remote impossible one.
+
+---
+
+# Habakkuk explicitly lacks route knowledge
+
+Habakkuk says:
+- he has never seen Babylon;
+- he does not know the den.
+
+So he lacks:
+- destination familiarity;
+- route knowledge.
+
+This is exactly like Tobias before Raphael in Tobit.
+
+But here the angel does not merely guide him step-by-step.
+
+The route is collapsed by direct transport.
+
+---
+
+# Angel grips Habakkuk at the crown/hair — carrier/operator relation becomes physical
+
+The text says the angel:
+- seizes him by the crown of the head;
+- carries him by the hair;
+- with the speed/gust of wind;
+- sets him down in Babylon **above the den**.
+
+This is one of the most explicit transport scenes in the entire corpus.
+
+A human body is:
+**picked up**
+→ **carried through long distance**
+→ **set at destination**.
+
+The traveller does not know the road.
+
+That makes it a very strong transfer candidate.
+
+---
+
+# Judea → Babylon is a genuine long-distance relocation, but the text gives miraculous transport rather than changed adjacency
+
+For Vardath comparison:
+
+**starting node: Judea**
+→ angelic carrier
+→ wind-like rapid transfer
+→ **Babylon above den**.
+
+This resembles:
+- route shortening;
+- impossible travel;
+- carrier-mediated transport.
+
+But the text's own explanation is:
+**angelic miraculous movement**.
+
+It does not say:
+- the lands become adjacent;
+- a gate opens;
+- Habakkuk walks through a throat.
+
+Therefore:
+**strong phenomenological analogy**
+but
+**mechanism mismatch remains**.
+
+---
+
+# Habakkuk is placed above while Daniel remains below
+
+This creates a clean vertical pair:
+
+**Habakkuk + food**
+= above den.
+
+**Daniel**
+= below in pit/den.
+
+Then Habakkuk calls downward and transfers food.
+
+This is a real:
+**upper supply node**
+→ **lower enclosed recipient**
+geometry.
+
+---
+
+# Food crosses the final vertical boundary even though Daniel does not
+
+The angel does not lift Daniel out at this stage.
+
+Instead:
+- Habakkuk reaches above the den;
+- Daniel receives/eats the meal;
+- remains in the den.
+
+So rescue support is:
+
+**resource transfer into enclosure**
+rather than
+**body extraction from enclosure**.
+
+This parallels furnace logic:
+the protected body stays inside while the condition/resources around it change.
+
+---
+
+# One food payload is rerouted across a huge distance to sustain one enclosed body
+
+Original cargo:
+meal for reapers.
+
+New cargo:
+meal for Daniel.
+
+So:
+
+**ordinary local distribution**
+→ higher-order rerouting
+→ remote enclosed survival.
+
+This is a strong logistics transformation.
+
+---
+
+# Angel immediately returns Habakkuk to his own place
+
+After Daniel eats:
+
+**Babylon**
+→ angel
+→ **Habakkuk's own place**.
+
+So the transport is explicitly bidirectional.
+
+Route cycle:
+
+**Judea**
+→ Babylon
+→ Judea.
+
+The carrier returns, while Daniel remains at the remote node.
+
+That makes the episode more than one-way disappearance.
+
+---
+
+# Transport duration is narratively compressed to almost nothing
+
+The wording gives:
+- speed/gust of wind;
+- immediate return.
+
+No elapsed travel itinerary is narrated.
+
+This is the closest section yet to the user's interest in a route whose effective distance becomes extremely short.
+
+Still:
+the story attributes it to angelic power.
+
+Do not translate “wind-speed” into measured relativistic travel.
+
+---
+
+# Day seven reverses Daniel's enclosure state
+
+On the **seventh day**:
+- king comes to mourn;
+- expects death;
+- looks in;
+- Daniel is sitting alive.
+
+Then:
+**Daniel comes out**.
+
+So:
+**days 1–6**
+= enclosed survival.
+
+**day 7**
+= observation + release.
+
+This is a very clear 6→7 phase transition.
+
+Different from Tobit's 7→8, but worth cross-indexing.
+
+---
+
+# Same enclosure reverses occupancy
+
+After Daniel is brought out:
+
+**accusers**
+→ thrown into den.
+
+They are:
+**immediately devoured**.
+
+Thus:
+
+### Occupant A
+Daniel
+→ 6 days inside
+→ fed
+→ survives
+→ exits.
+
+### Occupants B
+destroyers/accusers
+→ enter same enclosure
+→ die immediately.
+
+This is one of the corpus's strongest **same enclosure / opposite occupant outcome** tests.
+
+---
+
+# Lions' den mirrors furnace at structural level
+
+Cross-index strongly:
+
+### Furnace
+intended victims:
+- inserted;
+- survive.
+
+Insertion agents:
+- killed by fire.
+
+### Lions' den addition
+intended victim:
+- inserted;
+- survives.
+
+Accusers:
+- later inserted;
+- killed.
+
+In both:
+**lethal enclosure**
+does not produce one universal effect.
+
+Outcome depends on:
+- occupant;
+- intervention/protection;
+- medium/resource state.
+
+This is very important for the user's “same gate, different cargo/effects” model.
+
+---
+
+# Habakkuk / angel / Daniel forms a vertical three-node transfer chain
+
+The transfer is:
+
+**angel**
+→ carries Habakkuk
+→ Habakkuk carries food
+→ food goes to Daniel below.
+
+So operator layers:
+
+1. angel = route operator;
+2. Habakkuk = human carrier;
+3. food = cargo;
+4. Daniel = enclosed receiver.
+
+This is an excellent P7 nested carrier chain.
+
+---
+
+# Hair/crown grip is a literal top-of-body attachment point
+
+The angel takes Habakkuk:
+- by crown/head;
+- by hair.
+
+This is a top-node attachment.
+
+It should be recorded because the project tracks:
+- head;
+- crown;
+- upper node;
+- lifting.
+
+But do not convert it into a Squatter-Man head node unless other geometry supports it.
+
+---
+
+# Bel/Dragon/Habakkuk pair and state matrix
+
+## Visible door / secret door
+Strong paired interfaces.
+Primary watched gate closed; hidden route open.
+
+## Seal / footprints
+Strong diagnostic pair.
+One says main route unchanged; one says bodies moved.
+
+## Bel / actual eaters
+Apparent centre vs distributed hidden population.
+
+## Daniel / dragon
+P6 opponent pair only.
+Dragon opens its own intake boundary; Daniel supplies destructive cargo.
+
+## Dragon outer body / inner cargo
+Strong P3 structural state:
+intact/living
+→ cargo enters
+→ internal rupture.
+
+## Daniel / lions
+Not a pair identity.
+Protected occupant vs lethal environment.
+
+## Daniel / accusers
+Strong P2/P6 fate reversal:
+target survives enclosure;
+accusers die in same enclosure.
+
+## Habakkuk / Daniel
+P7 carrier/receiver.
+Upper/lower positions at den.
+
+## Angel / Habakkuk
+P7 operator/carrier.
+Angel supplies route; Habakkuk supplies food.
+
+## Judea / Babylon
+Two distant nodes temporarily bridged by angelic transport.
+Strong spatial transfer, but not textually a world-turn pair.
+
+---
+
+# Bel + Dragon + den continuous geometry/effect timeline
+
+## Phase A — food deposited into Bel temple
+
+**Effect:** cargo enters enclosure.
+
+---
+
+## Phase B — visible boundary sealed
+
+main door
+→ king's ring.
+
+**Effect:** watched route closes.
+
+---
+
+## Phase C — ash instruments interior
+
+floor covered.
+
+**Effect:** hidden motion becomes recordable.
+
+---
+
+## Phase D — secret route remains open
+
+priests/families
+→ hidden entrance.
+
+**Effect:** alternate adjacency bypasses sealed interface.
+
+---
+
+## Phase E — food disappears
+
+**Effect:** false living-centre inference created.
+
+---
+
+## Phase F — seal remains intact
+
+**Effect:** primary route evidence supports deception.
+
+---
+
+## Phase G — footprints reveal hidden traversal
+
+men/women/children tracks.
+
+**Effect:** hidden population/path inferred.
+
+---
+
+## Phase H — secret doors exposed
+
+**Effect:** true topology recovered.
+
+---
+
+## Phase I — false centre destroyed
+
+Bel + temple.
+
+**Effect:** old node collapses.
+
+---
+
+## Phase J — living dragon becomes second sacred centre
+
+**Effect:** polemic shifts from artificial life to biological life.
+
+---
+
+## Phase K — external weapon path refused
+
+no sword/club.
+
+**Effect:** attack moves to intake channel.
+
+---
+
+## Phase L — three materials become one cargo
+
+pitch/fat/hair
+→ heated cakes.
+
+**Effect:** composite payload formed.
+
+---
+
+## Phase M — dragon opens mouth/intake
+
+cargo
+→ body interior.
+
+**Effect:** normal resource channel becomes penetration path.
+
+---
+
+## Phase N — dragon ruptures from inside
+
+**Effect:** living hostile centre collapses.
+
+---
+
+## Phase O — public field reverses against Daniel
+
+population pressure
+→ king yields
+→ Daniel enters lions' den.
+
+**Effect:** successful operator becomes enclosed target.
+
+---
+
+## Phase P — den resource state altered
+
+food withheld from seven lions.
+
+**Effect:** enclosure made maximally predatory.
+
+---
+
+## Phase Q — Daniel remains six days
+
+**Effect:** prolonged protected interior state.
+
+---
+
+## Phase R — remote meal prepared in Judea
+
+Habakkuk
+→ local food route.
+
+**Effect:** cargo exists at distant node.
+
+---
+
+## Phase S — angel redirects route
+
+Habakkuk told Babylon/Daniel.
+
+**Effect:** local destination replaced by remote enclosure.
+
+---
+
+## Phase T — traveller declares no route knowledge
+
+**Effect:** ordinary navigation unavailable.
+
+---
+
+## Phase U — angel physically lifts carrier
+
+crown/hair
+→ wind-speed transfer.
+
+**Effect:** long distance collapsed by miraculous transport.
+
+---
+
+## Phase V — Habakkuk set above den
+
+**Effect:** upper supply node established over lower receiver.
+
+---
+
+## Phase W — food passes to Daniel
+
+upper carrier
+→ lower enclosed body.
+
+**Effect:** survival resource crosses final boundary.
+
+---
+
+## Phase X — Habakkuk returns immediately
+
+Babylon
+→ own place.
+
+**Effect:** bidirectional route closes for carrier.
+
+---
+
+## Phase Y — seventh day inspection
+
+king
+→ den
+→ Daniel alive.
+
+**Effect:** presumed death state overturned.
+
+---
+
+## Phase Z — Daniel exits
+
+**Effect:** protected occupant leaves lethal enclosure.
+
+---
+
+## Phase AA — accusers enter same enclosure
+
+**Effect:** occupancy reverses.
+
+---
+
+## Phase AB — lions kill immediately
+
+**Effect:** same enclosure produces opposite result for new cargo/occupants.
+
+---
+
+# What Bel and the Dragon adds to the master Bible/Vardath timeline
+
+1. **A sealed visible interface does not prove an enclosure is isolated.**
+2. **The main temple seal remains intact while a concealed secondary route carries an entire hidden population.**
+3. **This is one of the strongest source-level examples of hidden adjacency in the corpus.**
+4. **Daniel's ash is a passive full-field detector:** crossings physically write themselves into the environment.
+5. **Seal + ash create two independent measurements whose contradiction reveals the missing route.**
+6. **This is methodological guidance for Vardath research:** do not infer extraordinary transfer merely because the obvious door stayed shut; test for ordinary hidden channels first.
+7. **Bel's apparent single consuming centre resolves into a distributed population of real consumers.**
+8. **The literal dragon/serpent is important to the dragon catalogue but lacks sky-lattice/world-support features.**
+9. **The dragon is destroyed through its normal intake channel rather than through the outer shell.**
+10. **Three materials are transformed into one internal cargo, and the body ruptures from inside.**
+11. **This repeats Judith's broader lesson that the decisive vulnerability can be a flow channel rather than the defended surface.**
+12. **The lions' den is made more dangerous by changing its resource inputs**, another example of environment state depending on flow.
+13. **Daniel survives six days inside and exits on the seventh**, a genuine 6→7 transition.
+14. **Habakkuk's route is one of the strongest anomalous-transport scenes yet:** he has never seen Babylon and does not know the den, yet is physically carried there by an angel.
+15. **The transport is described through the crown/hair and speed/gust of wind.**
+16. **Habakkuk is placed above the den while Daniel is below**, forming a clear upper/lower supply geometry.
+17. **Food crosses into the enclosure while Daniel stays inside**, paralleling furnace rescue by changing conditions rather than immediately extracting the protected body.
+18. **The angel immediately returns Habakkuk to his own place**, giving a complete Judea→Babylon→Judea carrier cycle.
+19. **Phenomenologically this resembles a radically shortened route**, but the text attributes it to angelic transport rather than changed world adjacency.
+20. **The same den then reverses occupancy:** Daniel out, accusers in.
+21. **The intended victim survives; hostile replacements die immediately**, creating a strong same-enclosure/opposite-outcome test.
+22. **Furnace and den should be cross-indexed as paired enclosure stories:** lethal medium does not act uniformly on every occupant.
+23. **The full Section 43 adds a new hierarchy of gate tests:**
+    - hidden route behind a sealed visible gate;
+    - internal medium transformed while occupants stay;
+    - pair coherence destroyed by separation;
+    - external cargo destroying a body from within;
+    - impossible long-distance carrier transfer into a closed enclosure;
+    - same enclosure producing opposite effects under different occupant/protection states.
+
+---
+
+# Section 43B number / timing register
+
+Record with version control:
+
+### Bel
+- **70 priests** in the Theodotionic/church text, apart from wives and children;
+- daily offering:
+  - **6** bushels/measures of flour in the NABRE wording;
+  - **40 sheep**;
+  - **6 measures of wine**.
+
+### Dragon
+- composite formed from **3 materials**:
+  pitch + fat + hair.
+
+### Lions
+- Daniel remains **6 days**;
+- den contains **7 lions**;
+- normal daily feeding:
+  **2 human bodies/carcasses + 2 sheep**;
+- king checks on **day 7**.
+
+These are literary/textual data.
+Do not combine 6/7/70 into a numerical system without recension control and independent recurrence.
+
+---
+
+# Section 43B textual / literary / historical controls
+
+- Bel and the Dragon survives in Old Greek and Theodotionic forms that differ materially in narration.
+- USCCB/NABRE Daniel 14 follows Theodotion while preserving OG notes.
+- The OG opening may reflect an earlier independent tale before attachment to Daniel.
+- Bel/Dragon stories are strongly anti-idolatry/polemical and folkloric; this conventional genre explains the sequence well.
+- Evidence for sacred snakes exists in the ancient Mediterranean, but evidence for exactly this Babylonian dragon cult is doubtful.
+- The secret-door mechanism is explicitly ordinary deception; it should be used as a control against unnecessary supernatural inference.
+- The ash experiment is an ordinary forensic trick within the story.
+- The dragon's death is literary/folkloric and should not be turned into a demonstrated chemical mechanism; do not specify chemistry the source does not provide.
+- “Dragon” can also mean serpent; do not assume morphology.
+- Daniel 14's lions' den is a second tradition distinct from Daniel 6.
+- Habakkuk transport is miracle narrative. It is a strong phenomenological analogue to impossible route-shortening, but the text does not supply Vardath adjacency physics.
+- “Speed/gust of wind” is descriptive narrative language, not a measured velocity.
+- OG/Theodotion details of space, character and sequence differ; any fine geometric argument should specify its textual witness.
+- The deaths of priests/families/accusers belong to violent polemical narrative; the geometry should not erase those ethical features.
+- Bel's strongest contribution to the research is methodological: **hidden routes must be ruled out before extraordinary adjacency is claimed.**
+
+### Sources logged for Section 43B
+
+Primary:
+- USCCB/NABRE **Daniel 14 — Bel and the Dragon**:
+  - https://bible.usccb.org/bible/daniel/14
+  - includes extensive Old Greek comparison notes.
+- NRSV/NRSVUE **Bel and the Dragon 31–42** for Habakkuk/lions wording and “gust/speed of wind” comparison.
+
+Scholarly:
+- Olivier Munnich, **“Daniel, Susanna, Bel and the Dragon: Old Greek and Theodotion,”** *Oxford Handbook of the Septuagint*.
+- Ronald H. van der Bergh, **“Reading ‘Bel and the Dragon’ as narrative: a comparison between the Old Greek and Theodotion”** (2009).
+- Joseph J. de Bruyn, **“Dining in the lions' den — Bel and the dragon, verses 28–42 (Old Greek/Theodotion)”** (2015).
+- NETS critical translation introduction to **Bel and the Dragon**, based on Göttingen Old Greek and Theodotion editions.
+- Lorenzo DiTommaso, **“The Additions to Daniel,”** retained from 43A.
+
+---
+
+# SECTION 43 COMPLETE — DANIEL ADDITIONS
+
+## Integrated Daniel-additions geometry
+
+### Furnace
+**one vertical idol**
+→ broadcast signal
+→ mass falls
+→ three refuse
+→ three bound/cast down
+→ external carriers killed by boundary fire
+→ bound bodies become mobile
+→ flames rise/spread outside
+→ angel descends into centre
+→ fire driven outward
+→ inner environment becomes dew-breeze
+→ three synchronize one voice
+→ cosmic opposites/waters-above invoked
+→ king sees four unbound
+→ three emerge unchanged
+→ outer policy reverses.
+
+### Susanna
+**two elders operate separately**
+→ trajectories reconverge
+→ hidden states couple
+→ two maids leave
+→ garden gates close
+→ hostile pair remains inside
+→ two-path death trap
+→ false paired testimony
+→ Susanna condemned
+→ death procession outward
+→ Daniel interrupts
+→ route reverses to court
+→ pair separated
+→ independent outputs contradict
+→ false field collapses
+→ planned fate returns to planners
+→ young Daniel's authority rises.
+
+### Bel
+**cargo placed in temple**
+→ visible door sealed
+→ ash sensing field laid
+→ hidden route remains open
+→ concealed population crosses
+→ cargo disappears
+→ seal stays intact
+→ footprints expose hidden crossing
+→ secret route found
+→ false centre destroyed.
+
+### Dragon
+**living dragon**
+→ external weapon route refused
+→ pitch/fat/hair transformed
+→ cargo enters mouth
+→ body ruptures from inside.
+
+### Lions/Habakkuk
+**Daniel transferred into den**
+→ lion food withheld
+→ six-day lethal interval
+→ meal exists far away in Judea
+→ Habakkuk lacks route knowledge
+→ angel lifts him by crown/hair
+→ wind-like long-distance transfer
+→ Habakkuk positioned above den
+→ food passed to Daniel below
+→ carrier immediately returned home
+→ day seven
+→ Daniel alive/out
+→ accusers in
+→ same enclosure kills them immediately.
+
+---
+
+# Strongest Section 43 Vardath-process comparison
+
+The Daniel additions collectively supply a remarkably useful **boundary laboratory**:
+
+### Boundary type 1 — lethal enclosure whose internal medium changes
+furnace.
+
+### Boundary type 2 — enclosure made dangerous by hostile occupants already inside
+Susanna's garden.
+
+### Boundary type 3 — apparently sealed enclosure secretly permeable through another route
+Bel temple.
+
+### Boundary type 4 — living body whose ordinary input channel becomes penetration path
+dragon.
+
+### Boundary type 5 — lethal pit supplied from a distant node by extraordinary carrier transport
+lions' den.
+
+This is a major advance for the final geometry timeline.
+
+The additions show that “gate” cannot be reduced to one open/closed switch.
+
+A boundary can fail or transform because:
+- the **medium** changes;
+- the **occupants** were misidentified;
+- a **secondary route** exists;
+- an **input channel** is exploited;
+- an **operator/carrier** crosses an otherwise impossible distance;
+- the **same enclosure** responds differently to different occupants.
+
+That is directly useful to the mature Vardath model.
+
+---
+
+# Hard mismatch retained
+
+Even with these unusually rich boundary stories, Section 43 does **not** securely give the complete physical Vardath mechanism:
+
+**no explicit broad two-strand sky lattice**
+→ **no counter-wound springs**
+→ **no finger-trap tightening into world throat**
+→ **no Squatter-Man projection**
+→ **no explicit neighboring inhabited past/present/future world-turns**
+→ **no documented world-scale transfer of atmosphere/ocean/land/population**.
+
+The Habakkuk transport is the closest direct phenomenological analogue to distance collapse, but the source calls it angelic transport.
+
+The furnace is the closest local environmental-state analogue.
+
+Bel is the strongest methodological hidden-route control.
+
+Susanna is the strongest pair-decoupling test.
+
+---
+
+### Canonical roadmap status
+
+- Section 40 complete — Esther.
+- Section 41 complete — Tobit.
+- Section 42 complete — Judith.
+- **Section 43 complete — Daniel additions.**
+
+### Next canonical roadmap entry
+
+Read the stored master roadmap before proceeding; do not infer the next item from ordinary Protestant/Catholic book order.
