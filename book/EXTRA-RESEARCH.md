@@ -112600,3 +112600,1235 @@ Susanna is the strongest pair-decoupling test.
 ### Next canonical roadmap entry
 
 Read the stored master roadmap before proceeding; do not infer the next item from ordinary Protestant/Catholic book order.
+
+
+---
+
+# SECTION 41 progress A — Tobit 1–7
+## Two remote crises are synchronized, two death-prayers are heard at one instant, one hidden guide is sent to solve both, a twenty-year-old bond exists as separated matching halves, the journey branches through a river encounter, one fish is divided into different healing functions, and two only-child household lines are brought toward one dangerous marriage enclosure
+
+This pass begins **Section 41 — Tobit** directly after the completed Esther research.
+
+The geometry-first protocol remains in force:
+names are retained as source labels, but the primary object is the ordered process.
+
+---
+
+# Textual-control preface — Tobit cannot be read responsibly from one late form alone
+
+Tobit survives in materially different textual forms.
+
+The main Greek witnesses are conventionally grouped as:
+
+- **GI — Greek I**, the shorter form;
+- **GII — Greek II**, the longer form, preserved most fully in **Codex Sinaiticus**;
+- **GIII — Greek III**, a partial secondary form in manuscripts 106–107.
+
+The Qumran discoveries changed the textual picture substantially.
+
+Fragments survive from:
+- **four Aramaic manuscripts** of Tobit;
+- **one Hebrew manuscript**.
+
+These Semitic fragments agree in general with the **long Greek GII / Sinaiticus form**.
+
+Modern scholarship therefore commonly treats GII as preserving the older/closer form of the story, even though:
+- Sinaiticus has copying errors;
+- it has important lacunae;
+- the exact original language remains debated, with Aramaic often favored but not absolutely settled.
+
+This matters for the present project because several strong structural details are fuller in GII.
+
+### Ethiopic control
+
+The Ethiopian Orthodox canon includes Tobit.
+
+However, the **extant Ethiopic/Ge'ez Tobit is generally classed among versions secondarily derived from the shorter Greek recension**, rather than being an independent witness to the oldest Semitic form.
+
+Therefore the research protocol for this book will be:
+
+1. retain Tobit as part of the Ethiopian canonical corpus;
+2. use the **GII/long-form reconstruction** as the main textual control where possible because of its relationship to Qumran;
+3. note when a detail is recension-dependent;
+4. do not claim that every GII wording is necessarily the exact Ethiopic wording.
+
+This is another case where **canonical membership and textual-form priority are separate questions**.
+
+---
+
+# Tobit 1 — the story begins with exile, broken routes, stored wealth and burial continuity
+
+Tobit presents himself as a northern Israelite exiled to Nineveh.
+
+The first major process field includes:
+
+- homeland → exile;
+- Jerusalem-oriented religious practice maintained while physically displaced;
+- repeated travel to Media under one Assyrian king;
+- **ten talents of silver deposited remotely with Gabael at Rages**;
+- a regime change after which the Median roads become unsafe and Tobit can no longer travel there;
+- secret burial of executed Israelites;
+- Tobit's own flight/hiding when threatened;
+- confiscation of property;
+- later return when political conditions change and Ahiqar intercedes.
+
+The useful geometry is not a world-gate.
+
+It is:
+
+**route open**
+→ value transferred/stored far away
+→ route becomes unsafe/closed
+→ stored value remains beyond the inaccessible route
+→ later a new traveller must recover it.
+
+That stored remote deposit becomes one of the causes that launches Tobias's journey after Tobit's crisis.
+
+This gives Tobit an early **delayed-transfer / remote-reserve** structure.
+
+---
+
+# Burial repeatedly preserves relational continuity after bodily separation
+
+Tobit's signature act is burying exposed dead members of his people.
+
+He repeatedly moves bodies:
+
+**publicly discarded / exposed**
+→ **retrieved**
+→ **covered/buried**.
+
+The text treats this as piety and communal obligation.
+
+For Vardath comparison, burial should not be turned automatically into a gate.
+
+The stronger process category is:
+
+**a separated body is deliberately reattached to communal/ancestral order through enclosure in the earth**.
+
+That may become relevant when Tobit later insists:
+- his own burial be proper;
+- Anna be buried beside him;
+- Tobias continue the same intergenerational obligations.
+
+---
+
+# Tobit 2 — an act of burial is followed by bodily closure of sight
+
+After burying a murdered Israelite:
+
+- Tobit sleeps by the courtyard wall;
+- bird droppings fall into his eyes;
+- white films form;
+- physicians treat him unsuccessfully;
+- his sight deteriorates until he is completely blind.
+
+Secure physical sequence:
+
+**eyes open / sight**
+→ foreign material contacts eyes
+→ white covering/film forms
+→ treatment fails
+→ **light inaccessible**.
+
+This is a literal body-boundary closure.
+
+Do not overread it as cosmic darkness.
+
+Its later reversal matters because the narrative makes the healing equally physical:
+the films/scales will later be peeled away and light returns.
+
+So the book establishes a complete:
+
+**open sight**
+→ **covering**
+→ **darkness**
+→ later **medicine**
+→ **covering removed**
+→ **light restored**
+
+cycle.
+
+---
+
+# Anna/Tobit — the righteous man's judgment misfires inside his own household
+
+Anna works to sustain the household.
+
+A goat is given in addition to her wages.
+
+Blind Tobit hears it and assumes theft.
+
+Anna's reply challenges him:
+where are his charity and righteous deeds now?
+
+This is a useful control against treating Tobit as a flawless operator.
+
+The story's righteous central figure can:
+- preserve correct principles in exile;
+- yet misread information available to him in his blinded state.
+
+Thus physical loss of sight is paired with a **judgment/information error**.
+
+That is literary characterization, not evidence that blindness literally means moral ignorance.
+
+---
+
+# Tobit 3 — the first major pair is Tobit / Sarah, not father / son
+
+The narrative abruptly shifts from Tobit's despair in Nineveh to Sarah's despair in Ecbatana.
+
+This is not accidental sequencing.
+
+Scholarly analysis repeatedly emphasizes the parallel construction.
+
+### Tobit
+- suffers undeserved reproach;
+- asks God for release/death.
+
+### Sarah
+- suffers undeserved reproach;
+- has lost seven husbands to Asmodeus;
+- considers death;
+- rejects suicide because of what it would do to her father;
+- asks God for release/death.
+
+The text repeatedly marks the simultaneity:
+
+**same day**
+→ **same time**
+→ both prayers
+→ **at that very moment** both are heard.
+
+This is one of the clearest deliberate P2/P1-style paired constructions encountered so far.
+
+---
+
+# Tobit / Sarah — two remote nodes generate one combined answer
+
+The two sufferers are physically far apart:
+
+**Tobit — Nineveh**
+and
+**Sarah — Ecbatana/Media**.
+
+Neither knows the other is praying.
+
+Yet the narrative moves above both local perspectives and states:
+
+**prayer A**
++
+**prayer B**
+→ heard together in divine presence
+→ **one agent, Raphael, is sent to heal both**.
+
+The solution is not two independent interventions.
+
+The text explicitly says Raphael is sent:
+- to remove Tobit's white films;
+- to free Sarah from Asmodeus;
+- and to bring Sarah into marriage with Tobias.
+
+So the two plots are intentionally **interwoven into one route**.
+
+This is a very strong process result.
+
+Conventional literary/theological reading:
+**divine providence joins two simultaneous but independent crises into one redemptive plot**.
+
+Vardath abstraction:
+**two remote problem-fields become functionally adjacent through one mediating route/agent**.
+
+Do not confuse the second statement with proof of a physical cosmological gate.
+
+---
+
+# The end of Tobit 3 contains an unusually direct opposed-motion pair
+
+After Raphael is commissioned, the long-form story says, at the same time:
+
+- **Tobit returns from the courtyard into his house**;
+- **Sarah comes down from her upper room**.
+
+This deserves explicit geometry logging.
+
+The pair has just:
+- prayed simultaneously;
+- been heard simultaneously;
+- received one coordinated answer.
+
+Then their bodies perform different movements at the same narrative instant:
+
+**Tobit: outer/courtyard → inner/house**
+while
+**Sarah: upper room → down**.
+
+This is not yet the user's full two-spring mechanism.
+
+There is:
+- no physical braid;
+- no crossing of the two bodies;
+- no shared local axis.
+
+But the text does give a controlled paired-motion image immediately after the simultaneous prayer pair.
+
+### Pair classification — Tobit / Sarah
+
+- **P2 polarity/parallel pair: very strong**;
+- **P1 split complementary halves: moderate as narrative structure, weak as literal geometry**;
+- **P8 world-turn mirror: unsupported literally**;
+- **P9 deliberate literary parallelism: very strong / conventional explanation**;
+- **P10 separate people: secure**.
+
+This pair should be cross-indexed later with other texts where two distant actors move in opposite vertical/interior directions at the same marked time.
+
+---
+
+# Sarah's upper room is both refuge and threatened death enclosure
+
+Sarah goes **up** to her father's upper room after being mocked.
+
+There she considers hanging herself.
+
+She rejects it because her father's grief would be unbearable.
+
+Thus:
+
+**upper private enclosure**
+→ contemplated death
+→ prayer instead
+→ **descent from upper room** after prayer.
+
+The room changes function within minutes:
+
+**possible death chamber**
+→ **prayer chamber**
+→ **departed/left chamber**.
+
+Later the dangerous enclosure shifts to the marriage chamber, where her husbands have died.
+
+Tobit repeatedly makes enclosed rooms change state depending on what force enters them.
+
+---
+
+# Tobit 4 — despair activates an old remote connection
+
+After asking for death, Tobit remembers the money deposited at Rages.
+
+That is narratively important.
+
+An old unresolved connection suddenly becomes active because of present crisis.
+
+Process:
+
+**remote wealth stored years earlier**
+→ forgotten/inactive in current household crisis
+→ death expectation triggers memory
+→ Tobias is told
+→ journey becomes necessary.
+
+Again the story turns **stored past information/property** into present route activation.
+
+---
+
+# The twenty-year bond is literally divided into two matching pieces
+
+Tobit explains the deposit mechanism to Tobias.
+
+The long-form story says, in effect:
+
+- Gabael gave Tobit a bond;
+- Tobit gave Gabael a bond;
+- **one was divided in two**;
+- each man retained a part;
+- the money remained in trust for about **twenty years**.
+
+This is one of the clearest ordinary-life **split-token** structures in the roadmap.
+
+Geometry:
+
+**one agreement/object**
+→ divided
+→ half A travels with one party
+→ half B remains with the other
+→ long separation
+→ later identity/claim can be reconnected.
+
+This is a genuine P1-like object process.
+
+It does not mean the contract is a cosmic lattice.
+
+But it is valuable as a control example of:
+
+> **separation can preserve a latent relation when complementary parts retain the information needed for later reconnection.**
+
+That is exactly the kind of small-scale mechanism the larger project is trying to distinguish from mere visual similarity.
+
+---
+
+# Father / son — Tobit hands route, memory and obligation to Tobias
+
+Tobit believes he may die.
+
+He therefore transfers to Tobias:
+
+- burial obligations;
+- care for Anna;
+- ethical instruction;
+- endogamous marriage instruction;
+- knowledge of the remote silver;
+- knowledge of the bond;
+- the requirement to find a guide.
+
+The son becomes the **mobile extension** of the now-blind/stationary father.
+
+### Pair classification — Tobit / Tobias
+
+- **P4 successor pair: strong**;
+- **P5 parent/child recurrence: very strong**;
+- **P7 stationary source / mobile carrier-operator: strong**;
+- **P3 state pair: possible in inherited role, not literal identity**;
+- **P10 separate persons: secure**.
+
+The similar names matter less than the functional handoff.
+
+Tobit cannot travel.
+
+Tobias becomes the route-taking body carrying:
+- father's information;
+- father's claim;
+- father's future household continuity.
+
+---
+
+# Tobit 5 — the route requires a guide who already knows the whole field
+
+Tobias says he does not know:
+- Gabael;
+- the road;
+- how to reach Media.
+
+He goes out seeking someone who knows the way.
+
+Raphael appears standing before him.
+
+Tobias does **not** perceive that he is an angel.
+
+Raphael/Azariah claims:
+- repeated travel in Media;
+- knowledge of all the roads;
+- knowledge of plains and mountains;
+- knowledge of Gabael.
+
+The hidden angel therefore enters the story as a **route-memory / guide function**.
+
+That is stronger than “angel = winged being.”
+
+The process role is:
+
+**traveller lacks path-information**
+→ guide appears
+→ guide already knows network
+→ guide escorts traveller through it.
+
+---
+
+# Raphael / Azariah — hidden identity creates a double-state guide
+
+Raphael is simultaneously:
+
+**what Tobias/Tobit perceive:**
+Azariah, Israelite kinsman, paid guide.
+
+**what narrator/reader knows:**
+Raphael, commissioned angel solving both remote crises.
+
+This is a very clean hidden/revealed identity structure.
+
+Unlike Esther's hidden ethnic identity, here the hidden identity is **ontological** within the story.
+
+### Pair/state classification
+
+Raphael / Azariah is not a normal two-person pair.
+
+It is:
+- **P3 state/identity pair: extremely strong**;
+- **P9 literary disguise motif: secure**.
+
+Later, chapter 12 will explicitly collapse the two identities into one revealed figure and then remove him from ordinary sight.
+
+---
+
+# Raphael's name/function is itself relevant but should not replace process analysis
+
+“Raphael” is commonly understood as **God heals**.
+
+The role matches the mission.
+
+But names are secondary under the current protocol.
+
+The more important fact is:
+**one hidden guide carries route knowledge plus the exact procedures needed to resolve both illnesses/crises.**
+
+---
+
+# The journey begins as a three-body road unit: Tobias + Raphael + dog
+
+The narrative explicitly notes:
+- Tobias departs;
+- the angel goes with him;
+- the dog goes with them.
+
+The dog recurs on the return.
+
+It should be recorded, but not forced into a third-force cosmology.
+
+No strong structural role is yet assigned to the dog beyond companion/route continuity.
+
+---
+
+# Tobit 6 — the first night brings the traveller to a water boundary
+
+Tobias and Raphael camp by the **Tigris River**.
+
+Tobias goes down to the water to wash his feet.
+
+A large fish:
+- leaps from the water;
+- attacks/attempts to seize or swallow his foot, depending on textual form/translation.
+
+Raphael tells Tobias:
+- catch it;
+- hold on;
+- draw it up onto land.
+
+Secure geometry:
+
+**human approaches water**
+→ creature crosses water boundary toward human
+→ human seizes creature
+→ **fish transferred water → land**.
+
+This is a genuine medium-crossing scene.
+
+It is small-scale and ordinary-folkloric, not a world transfer.
+
+But it is much stronger than merely “there is water in the story.”
+
+---
+
+# The attacking water-creature becomes the medicine for both remote crises
+
+Raphael tells Tobias to open the fish and retain:
+
+- gall;
+- heart;
+- liver.
+
+Different parts receive different future functions.
+
+### Heart + liver
+burned as smoke/fumigation
+→ hostile spirit/demon flees.
+
+### Gall
+applied to eyes with white films
+→ sight restored.
+
+Thus:
+
+**one creature**
+→ captured at water boundary
+→ opened/divided into components
+→ components carried along route
+→ one component-set resolves **Sarah's problem**
+→ another component resolves **Tobit's problem**.
+
+This is one of Tobit's strongest process correspondences.
+
+The same single encounter provides the material solution for the **paired crises introduced simultaneously in chapter 3**.
+
+The story is therefore very tightly constructed:
+
+**two problems**
+→ **one agent**
+→ **one journey**
+→ **one fish**
+→ **two functional medicines**
+→ later **two healings**.
+
+---
+
+# Fish division is functional differentiation, not simple destruction
+
+The fish is not merely killed and eaten.
+
+Its material is sorted:
+
+- some eaten;
+- some salted/carried;
+- entrails discarded;
+- heart/liver retained for one purpose;
+- gall retained for another.
+
+This belongs in the master transfer grammar as:
+
+**whole object**
+→ **opened**
+→ **parts sorted by future function**
+→ **different parts routed to different endpoints**.
+
+That is a much more precise mechanism than generic symbolism.
+
+---
+
+# Conventional medical/ritual control — fish organs were not invented by the Vardath comparison
+
+Ancient-context scholarship matters here.
+
+Fish gall was used in ancient medicine for eye complaints.
+
+Scholarly discussion notes parallels in:
+- Assyrian remedies;
+- Greco-Roman medical material.
+
+Fumigation/smoke as a way of repelling harmful spiritual forces also belongs to wider ancient ritual practice.
+
+Recent scholarship on Tobit treats the fish episode as a mix of:
+- medicine;
+- ritual/exorcistic practice;
+- folklore;
+- Jewish theological framing in which Raphael's instruction ultimately comes from God.
+
+Therefore the fish cannot be claimed as uniquely encoding a hidden lattice mechanism.
+
+The stronger Vardath relevance lies in the **ordered reuse of one divided object to reverse two paired states**.
+
+---
+
+# Raphael redirects the journey before its original financial destination
+
+The stated goal was:
+**Nineveh → Rages → recover money**.
+
+But approaching Media, Raphael tells Tobias they must first stay at **Raguel's house in Ecbatana**.
+
+So the route branches:
+
+**original goal: remote money**
+becomes
+**intermediate goal: Sarah / marriage / healing**.
+
+Later Raphael himself completes the money-recovery branch while Tobias remains at the wedding.
+
+This is a true route bifurcation in the narrative.
+
+One guided journey solves more than the traveller initially knows it is for.
+
+---
+
+# Sarah's seven dead bridegrooms make the marriage chamber a repeating lethal enclosure
+
+Tobias has heard:
+- Sarah has had **seven husbands**;
+- each died in the bridal chamber;
+- the demon kills the man who approaches her.
+
+So before Tobias enters the house, the story has already defined a repeating local state:
+
+**new husband enters chamber**
+→ **husband dies**
+→ Sarah remains.
+
+The dangerous variable is not simple geographic location.
+
+It is:
+**specific relational crossing into marriage/consummation**.
+
+The same room/role can repeatedly produce death.
+
+Chapter 8 will test whether one changed protocol can switch that enclosure from lethal to survivable.
+
+---
+
+# Tobias fears becoming the eighth dead bridegroom because he is the only son
+
+Tobias's fear is not only personal death.
+
+He says:
+- he is his parents' only son;
+- his death would bring them to the grave in grief;
+- no other son exists to bury them.
+
+Thus his body carries an entire continuity line.
+
+This mirrors Sarah's position as her father's only child.
+
+That creates another deliberate pair:
+
+**only son Tobias**
+↔
+**only daughter Sarah**.
+
+Their union is not merely romantic.
+
+It joins two threatened household continuities.
+
+---
+
+# Tobias / Sarah — two only-child lines are directed toward one marriage node
+
+Raphael tells Tobias Sarah is his kinswoman and rightful spouse under the story's kinship logic.
+
+Raguel later confirms:
+- Sarah is the only eligible daughter/heir;
+- Tobias is the closest eligible relative in the narrative's legal scheme.
+
+So:
+
+**household line A**
+→ Tobias, only son.
+
+**household line B**
+→ Sarah, only daughter.
+
+The two lines converge through one marriage.
+
+The text later explicitly blesses them as **“two only children.”**
+
+This is a strong P1/P4 continuity pair without requiring them to be one hidden person.
+
+---
+
+# Tobit 7 — recognition at Raguel's house reconnects separated kin networks
+
+When Tobias enters Raguel's household, resemblance and genealogy trigger recognition.
+
+The hosts learn:
+**Tobias = Tobit's son**.
+
+Emotion follows immediately.
+
+This is another **hidden relation becoming visible** scene.
+
+The traveller does not physically change.
+
+The household's understanding of his network position changes.
+
+Then his eligibility to marry Sarah becomes actionable.
+
+---
+
+# Sarah is transferred by hand and by written contract
+
+Raguel gives Sarah to Tobias by:
+
+- taking her by the hand;
+- verbally assigning the marriage;
+- having a written marriage contract made.
+
+This is important because Tobit repeatedly combines:
+**body transfer**
+with
+**information/document transfer**.
+
+The marriage is not represented by movement alone.
+
+It is stabilized by a written legal object.
+
+Compare:
+- split bond for remote money;
+- marriage contract for household union.
+
+Documents in Tobit repeatedly preserve relationships across time/space.
+
+---
+
+# SECTION 41A pair / two-spring / Squatter-Man matrix
+
+## Tobit / Sarah
+
+The strongest pair in the first half.
+
+### Secure textual structure
+- separate cities;
+- matching reproach;
+- matching death-wishes;
+- prayers on same day/same time;
+- prayers heard simultaneously;
+- one angel sent to heal both;
+- their plots joined through Tobias.
+
+### Opposed-motion detail
+After prayer:
+- Tobit moves inward from courtyard;
+- Sarah moves downward from upper room.
+
+### Classification
+- P2 very strong;
+- P1 moderate as literary/complementary structure;
+- P9 extremely strong conventional literary parallelism;
+- P10 secure.
+
+### Two-spring test
+Strong as **two remote states brought into one mediating route**.
+
+Weak as literal physical spring/weave:
+the pair never locally crosses or braids.
+
+---
+
+## Tobit / Tobias
+
+Father becomes stationary/blind source.
+Son becomes mobile route/body.
+
+### Classification
+- P4 strong;
+- P5 very strong;
+- P7 strong;
+- P10 secure.
+
+Potential master process:
+**centre unable to move**
+→ **instruction/inheritance handed to successor**
+→ successor carries route outward
+→ returns with repair for centre.
+
+---
+
+## Tobias / Sarah
+
+Two only children / two threatened lineage endpoints.
+
+### Classification
+- P1 moderate as complementary household lines;
+- P2 not strongly opposed;
+- P4 union creates successor household;
+- P10 secure.
+
+The key is **convergence**, not antagonism.
+
+---
+
+## Raphael / Azariah
+
+One figure, hidden/revealed identity.
+
+### Classification
+- P3 exceptionally strong;
+- P9 secure disguise/angelophany motif.
+
+Raphael is also the route mediator linking the remote pair.
+
+---
+
+## Raphael / Asmodeus
+
+Not fully resolved in chapters 1–7.
+
+But the story has already positioned:
+- Raphael = commissioned healing agent;
+- Asmodeus = attached destructive force around Sarah.
+
+This is likely a strong P2 hostile/healing pair in Section 41B when Raphael pursues and binds the demon.
+
+Do not pre-complete that mapping before chapter 8.
+
+---
+
+## Split bond halves
+
+Not persons, but a strong P1 object analogue.
+
+One legal relation becomes:
+**two separated matching tokens**.
+
+Their separation preserves rather than destroys connection.
+
+---
+
+## Fish organs
+
+One body becomes **different routed functions**.
+
+Not a pair of people.
+
+But the mechanism is strong:
+**one source object → differentiated components → paired repairs**.
+
+---
+
+# SECTION 41A continuous geometry/effect timeline — Tobit 1–7
+
+## Phase A — homeland relation persists during exile
+
+Israel/Jerusalem orientation
+→ Tobit displaced to Nineveh
+→ practice/identity retained.
+
+**Effect:** relational centre survives physical displacement.
+
+---
+
+## Phase B — open route stores value beyond future closure
+
+Tobit travels to Media
+→ deposits silver at Rages.
+
+**Effect:** resource is moved into remote reserve.
+
+---
+
+## Phase C — route closes after regime change
+
+Median roads become unsafe.
+
+**Effect:** stored value remains separated from owner by inaccessible route.
+
+---
+
+## Phase D — exposed dead are repeatedly moved into burial enclosure
+
+discarded bodies
+→ retrieval
+→ burial.
+
+**Effect:** communal continuity is asserted after death.
+
+---
+
+## Phase E — Tobit himself moves hidden/outside then returns
+
+threat
+→ flight/hiding
+→ political change/intercession
+→ return.
+
+**Effect:** person survives by temporary separation from centre.
+
+---
+
+## Phase F — eye boundary closes
+
+foreign material on eyes
+→ white films
+→ failed treatment
+→ blindness.
+
+**Effect:** visual access to light is lost.
+
+---
+
+## Phase G — judgment error occurs inside closed-sight state
+
+goat heard
+→ theft assumed
+→ Anna rebukes Tobit.
+
+**Effect:** incomplete sensory information generates false relational inference.
+
+---
+
+## Phase H — Tobit reaches death-prayer state
+
+reproach/blindness
+→ prayer for release.
+
+**Effect:** first crisis node reaches terminal wish.
+
+---
+
+## Phase I — Sarah reaches matching state at same marked time
+
+seven dead husbands/reproach
+→ upper room
+→ suicide rejected
+→ prayer for release.
+
+**Effect:** second remote crisis node mirrors first.
+
+---
+
+## Phase J — two prayers become one heavenly problem-set
+
+prayer A + prayer B
+→ heard simultaneously
+→ Raphael commissioned to heal both.
+
+**Effect:** separated plots become one coordinated system.
+
+---
+
+## Phase K — paired bodies leave prayer states in different directions
+
+Tobit courtyard → house/interior
+while
+Sarah upper room → down.
+
+**Effect:** simultaneous pair closes with opposed local motion.
+
+---
+
+## Phase L — stored past resource becomes future route trigger
+
+Tobit remembers silver.
+
+**Effect:** old remote connection activates because of present crisis.
+
+---
+
+## Phase M — one legal token is split and remains meaningful over decades
+
+bond
+→ two halves
+→ separated holders.
+
+**Effect:** relationship persists across distance/time through complementary information.
+
+---
+
+## Phase N — father hands continuity to son
+
+instruction + burial duty + kinship rule + bond knowledge
+→ Tobias.
+
+**Effect:** stationary/blind source creates mobile successor vector.
+
+---
+
+## Phase O — traveller lacks route-information
+
+Tobias does not know Media roads.
+
+**Effect:** mission exists without path.
+
+---
+
+## Phase P — hidden guide enters
+
+Raphael/Azariah appears
+→ knows roads/mountains/kin.
+
+**Effect:** path-information becomes embodied companion.
+
+---
+
+## Phase Q — route reaches water boundary
+
+Tobias goes down to Tigris
+→ fish leaps upward/out.
+
+**Effect:** water creature crosses toward traveller.
+
+---
+
+## Phase R — hostile water encounter is inverted
+
+fish attacks
+→ Tobias seizes
+→ fish drawn onto land.
+
+**Effect:** threatened traveller gains control of crossing object.
+
+---
+
+## Phase S — one body is opened and sorted into future functions
+
+fish
+→ heart/liver/gall retained
+→ other parts eaten/discarded/carried.
+
+**Effect:** one source becomes multiple routed repair materials.
+
+---
+
+## Phase T — future paired healings are encoded before either occurs
+
+heart/liver → demon expulsion;
+gall → eye healing.
+
+**Effect:** one encounter contains solutions for both chapter-3 crises.
+
+---
+
+## Phase U — journey branches before original destination
+
+Rages-money mission
+→ Ecbatana/Raguel detour.
+
+**Effect:** apparent financial route becomes household/healing route.
+
+---
+
+## Phase V — Tobias/Sarah lines converge
+
+only son
++
+only daughter
+→ kinship marriage claim.
+
+**Effect:** two threatened family continuities are joined.
+
+---
+
+## Phase W — dangerous chamber state is approached with new protocol pending
+
+seven former bridegrooms dead
+→ Tobias agrees to marriage
+→ fish medicine + prayer instructions carried toward same enclosure.
+
+**Effect:** repeating lethal state is set up for controlled reversal in Section 41B.
+
+---
+
+# What Tobit 1–7 adds to the master Bible/Vardath timeline
+
+1. **Tobit and Sarah form an exceptionally deliberate remote pair:** parallel suffering, parallel death-prayers, repeated simultaneity markers, one jointly commissioned healer.
+2. **The book solves two distant crises through one route rather than two separate interventions.**
+3. **Immediately after the paired prayers, Tobit moves inward while Sarah moves downward from an upper room.** This is worth retaining as a rare explicit opposed-motion detail attached to a strong pair.
+4. **Tobit/Tobias form a stationary-centre → mobile-successor handoff:** blindness stops the father; the son becomes his travelling extension.
+5. **A remote money deposit survives route closure and later reactivates the plot**, giving another stored-state / delayed-transfer structure.
+6. **The divided bond is a literal two-half relation:** one agreement split into separated complementary pieces that preserve later reconnection.
+7. **Raphael/Azariah is a very strong hidden/revealed state pair in one body.**
+8. **Raphael embodies route knowledge**; the guide function is as important as the angel form.
+9. **The Tigris fish is a genuine water→land crossing object** that moves from threat to controlled resource.
+10. **One fish is divided into different functional components** whose future destinations correspond exactly to the two simultaneous crises.
+11. **The same source object repairs two different systems by different mechanisms:** fumigation for Sarah's demon problem; gall for Tobit's eye films.
+12. **Ancient medical/ritual parallels strongly constrain interpretation:** fish gall and fumigation belong to known ancient therapeutic/ritual worlds, so the episode is not unique evidence of Vardath mechanics.
+13. **Tobias/Sarah are two only-child continuity lines brought into one household junction.**
+14. **Documents preserve relationships across separation:** split bond for money, written contract for marriage.
+15. **The strongest Vardath relevance so far is route/mediation/interweaving rather than physical world-transition:** two remote nodes → one guide-route → one divided source object → two repairs.
+16. **The full finger-trap/Squatter-Man mechanism is not present yet:** no broad weave contracts into a rod, no inhabited world-turns become adjacent, and no macro-scale material transfer occurs.
+
+---
+
+# Section 41A number / timing register
+
+Record without forcing:
+
+- remote deposit: **10 talents of silver**;
+- elapsed deposit interval in the long-form narrative: about **20 years**;
+- Tobit's blindness: **4 years** in the NRSVUE long-form presentation;
+- Sarah's dead husbands: **7**;
+- Tobias and Sarah are both framed as **only children** in their respective lines;
+- Tobit gives extensive intergenerational instruction before the journey;
+- Tobit 5 gives differing travel-duration/geographical details across textual forms;
+- fish provides **three named retained organs/materials**: gall, heart, liver;
+- marriage threat creates an implicit prospective **eighth** bridegroom in Tobias.
+
+The seven husbands and possible “eighth” transition are narratively important but should not be mapped into Vardath number systems without independent recurrence/mechanism.
+
+---
+
+# Section 41A textual / literary / historical / ethical controls
+
+- GII / Codex Sinaiticus is longer than GI by roughly 1,700 Greek words and is widely treated in modern scholarship as closer to the older textual form.
+- Four Aramaic and one Hebrew Tobit manuscripts from Qumran generally support the long form.
+- The Qumran remains are fragmentary, so they do not simply reproduce the entire GII text.
+- The original language is often argued to have been Aramaic, but this remains a scholarly question rather than absolute certainty.
+- The extant Ethiopic version belongs to the reception history of Tobit but is generally classed as secondarily derived from the short Greek tradition; Ethiopian canonical status does not itself settle textual priority.
+- Tobit's chronology/geography contains historical difficulties and deliberate literary setting; do not treat every Assyrian/Median itinerary detail as archival history.
+- The book is commonly dated to the Hellenistic/Second Temple period even though its story is set centuries earlier.
+- Tobit/Sarah parallelism is a recognized literary feature; the conventional explanation is deliberate providential narrative design.
+- Sarah's contemplated suicide must be handled as part of severe distress in the story, not romanticized as a geometric motif.
+- The marriage/endogamy assumptions reflect the book's ancient social world and should not be converted into modern ethnic prescriptions.
+- The fish's medicinal and apotropaic uses have ancient medical/ritual comparanda.
+- Raphael's instructions theologically authorize the healing/exorcistic procedure within the story; that does not make it modern medicine.
+- Sarah's seven husbands and Asmodeus belong to ancient demonological/folkloric narrative traditions.
+- “Same time” and paired scene construction are strong source facts; a literal physical connection between Nineveh and Ecbatana is not stated.
+- The split bond is a real narrative object-process but remains commercial/legal technology, not a cosmic split lattice.
+- The strongest controlled claim is **two remote crises intentionally interwoven through one guided journey and one differentiated healing resource**.
+
+### Sources logged for Section 41A
+
+Primary / textual:
+- NRSVUE integrated **Tobit 1–14**, Bible Gateway:
+  https://www.biblegateway.com/passage/?search=Tobit+1-14&version=NRSVUE
+- USCCB **Book of Tobit** introduction and chapter notes:
+  https://bible.usccb.org/bible/tobit/0
+- Alexander A. Di Lella, trans., **NETS Tobit**, with synoptic GI/GII introduction:
+  https://ccat.sas.upenn.edu/nets/edition/19-tobit-nets.pdf
+
+Textual history:
+- Joseph A. Fitzmyer, work on **4Q196–200 / Aramaic and Hebrew Tobit fragments**, as summarized and cited in NETS and subsequent Qumran scholarship.
+- discussion of the Qumran manuscripts and their relation to the Greek recensions in modern Tobit textual scholarship.
+- USCCB introduction for the practical summary of GI/GII/GIII, Old Latin, Qumran and secondary ancient versions.
+
+Literary / structural:
+- Stuart Weeks, **Tobit — Narrative Description**, Durham repository, on the double plot and the linked Tobit/Sarah crises:
+  https://durham-repository.worktribe.com/OutputFile/1668601
+- Ryan Schellenberg, study of **simultaneity and providence in Tobit**, emphasizing the repeated “same day / same time” structure and the narrative interweaving of Tobit and Sarah:
+  https://www.mtso.edu/site/assets/files/1980/tobit.pdf
+- Beate Ego, modern Tobit commentary introduction, on the parallel plot and GII as the base textual form.
+
+Medical / ritual:
+- Lindsey A. Askin, **“Binding Asmodeus: A Lexical Analysis of the Ritual and Medical Use of Fish in Tobit”** (2022):
+  https://research-information.bris.ac.uk/en/publications/binding-asmodeus-a-lexical-analysis-of-the-ritual-and-medical-use/
+- Nigel Allan, **“The Physician in Ancient Israel: His Status and Function”**, for ancient medical context and fish-gall/fumigation parallels.
+
+---
+
+# SECTION 41A COMPLETE — Tobit through the marriage arrangement
+
+### Current transformation point
+
+**exiled Tobit retains distant ties**
+→ route to Media closes
+→ remote value remains stored
+→ Tobit's sight closes
+→ Tobit asks for death
+→ Sarah, far away, reaches matching death-prayer
+→ both prayers are heard simultaneously
+→ one hidden guide is commissioned for both
+→ Tobit moves inward while Sarah descends
+→ old silver-memory activates route
+→ split bond preserves remote claim
+→ father hands mission to son
+→ hidden angel becomes guide
+→ journey reaches Tigris
+→ fish crosses water boundary and attacks
+→ Tobias reverses encounter and draws fish onto land
+→ fish is divided into functional parts
+→ one part-set is assigned to Sarah's crisis
+→ another to Tobit's blindness
+→ route branches through Ecbatana
+→ two only-child lines converge
+→ Sarah is transferred by hand + written contract
+→ the previously lethal marriage chamber is about to be entered under a new protocol.
+
+### Next research block
+
+**SECTION 41B — Tobit 8–14**
+
+Priority:
+- bridal chamber as repeating death enclosure changed into survivable enclosure;
+- fish heart/liver → smoke;
+- Asmodeus leaves Sarah / flees toward upper Egypt;
+- Raphael pursues and **binds** the hostile force;
+- Tobias/Sarah prayer as paired standing action;
+- grave dug in expectation of death → filled back in after survival;
+- fourteen-day wedding delay versus anxious parents counting route time;
+- Raphael separately completes the Rages-money branch;
+- return route with Sarah/property;
+- Tobias/Raphael run ahead of main caravan;
+- fish gall in hand;
+- Tobit stumbles through courtyard gate;
+- Tobias uses **both hands** to peel films from father's eyes;
+- blindness → sight / darkness → light reversal;
+- Tobit then goes outward to Nineveh gate to receive Sarah;
+- seven-day second wedding feast;
+- Raphael wages offer / half wealth;
+- hidden guide reveals identity;
+- Tobit + Tobias fall prostrate while Raphael tells them to rise;
+- Raphael states he presented **both prayers** and was sent to heal both;
+- Raphael ascends / disappears from sight;
+- writing command: “write down all that happened”;
+- Tobit's Jerusalem song: cast down / brought up; scattered / gathered; destroyed/rebuilt gates/walls;
+- Tobit's final prophecy: leave Nineveh;
+- Tobit → Tobias → seven sons continuity;
+- parent burials followed by family migration to Media;
+- Nineveh destruction heard/seen;
+- Ahiqar/Nadin trap reversal as embedded mirror-story;
+- complete Raphael/Asmodeus and blindness/sight pair matrices;
+- integrate whole-book geometry.
