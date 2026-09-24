@@ -45960,3 +45960,722 @@ Scholarly/source-critical:
 
 Locate the next canonical roadmap entry under the anti-repeat protocol before beginning new research.
 
+## SECTION 31 progress A — Judges 17–21: household shrine scales to tribal centre, one body becomes twelve national signals, eleven-vs-one fracture, and a nearly severed tribe is forcibly reattached
+
+### Anti-repeat check
+
+Section 30 is complete and appended.  
+The full ledger contains no Section 31 progress block.  
+This is genuinely new work.
+
+---
+
+## Judges 17 — private sacred centre assembled from mixed components
+
+Micah's story begins with:
+- **1,100 pieces of silver** taken from his mother;
+- returned after her curse/blessing speech;
+- she dedicates silver to YHWH;
+- **200 silver pieces** are given to a smith;
+- a sculptured/graven image and cast/molten image are produced;
+- Micah has a house/shrine of gods;
+- ephod;
+- teraphim;
+- first installs one of his sons as priest.
+
+This is a small household religious system built from:
+**money**
+→ transformed material
+→ image/object
+→ shrine
+→ priest.
+
+### The household centre later recruits a mobile specialist
+
+A young Levite from Bethlehem in Judah travels looking for a place to live.
+
+Micah offers:
+- room/place;
+- food;
+- clothing;
+- **10 silver pieces per year**;
+- priestly role.
+
+Micah says the Levite can be:
+**“father and priest”** to him.
+
+The Levite becomes:
+- household priest;
+- effectively incorporated as son/family in the narrative.
+
+This is a clean role/state conversion through relocation and contract.
+
+### Same person can scale from household node to tribal node
+
+This becomes explicit in Judges 18.
+
+The Danites later ask the Levite:
+
+Would it be better to be:
+- priest to **one man's household**
+or
+- priest to **a tribe and clan in Israel**?
+
+The Levite prefers the larger-scale role.
+
+This is extremely relevant structurally:
+
+**same operator**
++
+**same cultic apparatus**
+moves from
+**local/private node**
+→
+**tribal/public node**.
+
+The underlying role persists while the scale expands.
+
+### Source-critical control — the story is probably polemical origin-history for Dan's shrine
+
+Modern scholarship widely reads Judges 17–18 as an origin/polemic story explaining the northern shrine at Dan.
+
+The final verse compares:
+- Micah's transferred image at Dan;
+with
+- the House of God at Shiloh.
+
+The text therefore has an ideological agenda.
+
+Its geometry is real within the story,
+but it should not be treated as an objective field report of ancient cult practice.
+
+---
+
+## Judges 18 — five scouts, six hundred warriors, portable shrine migration
+
+Dan has not secured enough territory.
+
+The tribe sends:
+- **5 scouts**.
+
+They encounter Micah's Levite and recognize his **voice/speech/dialect**.
+
+Again:
+**voice functions as identity information**.
+
+Compare Shibboleth:
+spoken form reveals group origin.
+
+### Five scouts become route/information nodes
+
+The scouts:
+- ask priest for divine guidance;
+- continue to Laish;
+- see a secure/isolated population;
+- return with report;
+- recommend attack/migration.
+
+Sequence:
+
+**tribe**
+→ **5 sensing nodes sent outward**
+→ observation
+→ return
+→ information drives collective movement.
+
+This echoes the twelve scouts at a smaller tribal scale.
+
+### Six hundred armed Danites move with households/cargo
+
+Then:
+- **600 armed men** set out;
+- household members/livestock/property accompany the migration.
+
+At Micah's house:
+- the five scouts enter;
+- take sacred objects;
+- the priest stands at the gate with the 600;
+- the priest is persuaded to join the larger system.
+
+This is a literal:
+**household centre disassembled**
+→ sacred objects removed
+→ operator recruited
+→ whole apparatus travels
+→ rebuilt at a new territorial centre.
+
+### Sacred centre becomes portable cargo
+
+Objects moved include:
+- image;
+- ephod;
+- teraphim;
+- molten image in the received composite wording.
+
+This is analogous to the Tabernacle only at the very abstract level:
+**cult centre can move**.
+
+Major difference:
+the narrative presents this as theft/illicit shrine formation.
+
+Do not merge the two systems.
+
+### Micah loses the very system he built
+
+Micah pursues and protests.
+
+The Danites effectively tell him:
+- they are stronger;
+- turn back.
+
+Thus:
+**creator/owner of local centre**
+is separated from
+**centre + priest**,
+which are absorbed into a larger collective.
+
+This is a strong control:
+system continuity can continue **without original owner/operator**.
+
+### Laish → Dan — place identity changes while population/centre changes
+
+The Danites attack Laish:
+- kill inhabitants;
+- burn city;
+- rebuild it;
+- rename it **Dan**;
+- install the transferred cult.
+
+Raw sequence:
+
+**place A / population A**
+→ conquest/destruction
+→ population A removed
+→ **same geographic site**
+→ population B
+→ new name
+→ new shrine/system.
+
+This is another:
+**same substrate/place + new occupants + new identity label**.
+
+Compare Numbers 26:
+same tribal system + new generation occupants.
+
+### Jonathan son of Gershom son of Moses/Manasseh textual issue
+
+Judges 18:30 has a famous scribal feature:
+- the name can be read as “Moses” with a suspended `nun`;
+- Masoretic presentation yields “Manasseh.”
+
+Many scholars understand this as scribal discomfort with connecting a Mosaic descendant to Dan's condemned shrine.
+
+This is a source-history point, not a Vardath mechanism.
+
+It does reinforce:
+**text transmission itself can alter visible identity while preserving an older underlying reading**.
+
+---
+
+## Judges 17–18 refrain — “no king” / local rightness
+
+The appendix repeatedly says:
+- there was **no king in Israel**;
+- people did what was right in their own eyes.
+
+This frames the stories as political/social critique.
+
+For the project:
+it is an important control against over-physicalizing the material.
+
+The editor wants the audience thinking about:
+**fragmented authority / decentralized order / failed coordination**.
+
+---
+
+## Judges 19 — pair separates, reunites, travels, and one body becomes twelve national messages
+
+A Levite living in Ephraim has a concubine from Bethlehem.
+
+The woman:
+- leaves him / is estranged;
+- returns to her father's house;
+- remains about **4 months**.
+
+The Levite travels to retrieve/reconcile with her.
+
+So the pair begins:
+
+**together**
+→ **separation**
+→ attempted **reunion**
+→ joint journey.
+
+This could superficially resemble a split/rejoin pair,
+but the narrative's focus is social violence and hospitality failure.
+
+Do not project cosmic twines onto it.
+
+### Father delays departure through repeated day-cycle
+
+The woman's father repeatedly persuades them to stay:
+- eating/drinking;
+- delaying departure.
+
+The eventual departure happens late enough that night approaches before safe lodging is found.
+
+This creates a timing failure:
+**delayed departure**
+→ **night travel**
+→ high-risk destination choice.
+
+### Israelite city chosen over foreign city
+
+The Levite refuses to stay in a non-Israelite/Jebusite city.
+
+He chooses:
+- Gibeah of Benjamin,
+because it is Israelite.
+
+The result is an intentional reversal:
+**inside-group space**
+proves more dangerous than
+**outside-group space**.
+
+This is a strong moral-boundary control:
+group membership/boundary does not guarantee safety.
+
+### Door/house threshold becomes failed sanctuary
+
+An old man takes the travelers into his house.
+
+A violent crowd surrounds the house and demands the male guest.
+
+The scene deliberately echoes Genesis 19/Sodom in language and structure:
+- night arrival;
+- outsider host;
+- mob at house;
+- sexual violence demand;
+- women offered.
+
+Many scholars regard Judges 19 as deliberately dependent on/evoking Genesis 19.
+
+That literary dependence is important:
+similar geometry may come from **intertextual reuse**, not repeated hidden event.
+
+### Concubine ends at the doorway
+
+The woman is abused through the night.
+
+She returns:
+- to the house entrance;
+- falls/collapses there;
+- hands at/on the threshold in the traditional image/reading.
+
+The doorway that should separate:
+**unsafe outside**
+from
+**protected inside**
+fails as a protective boundary.
+
+This is a devastating inversion of earlier marked/protected thresholds such as Passover.
+
+Same broad object:
+**door**
+can function:
+- protection;
+- status marker;
+- legal transition;
+- failed refuge.
+
+Therefore:
+**door symbolism is context-dependent**, not one fixed mechanism.
+
+### One human body → twelve pieces → twelve-part national signal
+
+The Levite:
+- takes the woman's body;
+- cuts/dismembers it into **12 pieces**;
+- sends the pieces throughout Israel.
+
+This is one of the strongest source-level mappings in the entire project:
+
+**one human body**
+→ **12 physical parts**
+→ distributed across
+**12-tribe national body**.
+
+The body itself becomes an information/message carrier.
+
+The text does not need us to infer anthropomorphic national geometry;
+it directly converts a human body into a twelvefold distributed signal.
+
+### No verbal message accompanies the pieces
+
+Unlike Saul's later dismembered oxen message in 1 Samuel 11,
+Judges 19 gives no explicit accompanying verbal instruction.
+
+Yet Israel understands enough to assemble.
+
+That means:
+**physical fragments themselves function as communication**.
+
+This is a very strong nonverbal information-carrier example.
+
+### Scholarly control — Judges 19 may deliberately parody/allude to Saul traditions
+
+Recent literary analysis argues Judges 19–21 contains anti-Saul/pro-David polemic:
+- Gibeah;
+- Jabesh-Gilead;
+- Shiloh;
+- Levite from Ephraim;
+- dismemberment call resembling Saul's oxen in 1 Samuel 11.
+
+This is one plausible literary-historical reading, not universally settled fact.
+
+For our method:
+the important control is broader:
+**story geometry can be constructed by rewriting/polemical inversion of other stories**.
+
+---
+
+## Judges 20 — twelve-part body fractures into eleven-vs-one civil geometry
+
+After receiving the body-pieces:
+Israel gathers:
+- from Dan to Beersheba and Gilead;
+- described as **“one man.”**
+
+This creates an astonishing sequence:
+
+**one woman's body**
+→ **12 pieces**
+→ distributed to twelve-part Israel
+→ Israel reassembles **“as one man.”**
+
+That is direct:
+**one → 12 → one** anthropomorphic-political mapping.
+
+This is one of the most important findings in the entire pair/person project.
+
+### But Benjamin breaks the reconstructed unity
+
+Israel demands Benjamin surrender the perpetrators.
+
+Benjamin refuses and instead mobilizes.
+
+So:
+**one national body**
+→ one tribal component refuses integration
+→ **11-ish collective vs Benjamin**.
+
+The twelvefold body becomes civilly fractured.
+
+### 400,000 against Benjamin
+
+The other Israelites muster:
+**400,000 sword-bearing men** in the final text.
+
+Benjamin musters:
+- **26,000** from towns;
+- plus **700 chosen men** associated with Gibeah in the received counting;
+- with a famous **700 left-handed sling specialists** notice.
+
+The exact relation of the two 700 notices is discussed in textual/commentary traditions.
+
+Do not double-count automatically.
+
+### Left-handed precision recalls Ehud but at group scale
+
+The 700 elite fighters:
+- left-handed;
+- can sling at a hair and not miss.
+
+Earlier:
+- Ehud = one left-handed Benjaminite operator.
+
+Now:
+- Benjamin contains a whole elite group marked by left-handed precision.
+
+This is a nice example of:
+**individual trait motif**
+→ **collective/group trait motif**.
+
+It need not imply direct source dependence.
+
+### Central oracle does not guarantee immediate success
+
+Israel asks:
+- who goes first?
+
+Answer:
+- Judah.
+
+Yet Israel loses:
+- **22,000** first battle;
+- **18,000** second battle.
+
+Only after:
+- weeping;
+- fasting;
+- offerings;
+- inquiry involving Phinehas;
+does the third battle succeed.
+
+This is another important control:
+
+**correct oracle/authorization**
+does not guarantee
+**instant success**.
+
+Process/sequence matters.
+
+### Benjamin is nearly severed from Israel
+
+The final battle leaves:
+- massive Benjaminite losses;
+- **600 men** flee to Rock Rimmon;
+- remain there **4 months**.
+
+The tribe is nearly extinguished.
+
+So the national body moves from:
+**12 tribes**
+→ civil fracture
+→ one branch nearly cut off.
+
+---
+
+## Judges 21 — the system tries to reattach the endangered branch but creates more violence
+
+Israel has sworn:
+- not to give daughters to Benjamin as wives.
+
+After nearly destroying Benjamin,
+Israel regrets the possibility that:
+- one tribe will disappear from Israel.
+
+This is explicit system language:
+
+**twelve-part body should not lose one branch**.
+
+### Oath creates a self-made routing lock
+
+The community needs:
+**women/wives → Benjamin**
+to preserve the branch.
+
+But its own oath blocks:
+**our daughters → Benjamin**.
+
+This is a legal/information constraint preventing desired recombination.
+
+The system must find alternate routes.
+
+### Jabesh-Gilead becomes first workaround
+
+Israel asks:
+which group failed to attend the assembly/oath?
+
+Answer:
+- Jabesh-Gilead.
+
+A force of:
+- **12,000 warriors**
+is sent.
+
+The city is destroyed in the final narrative.
+
+Only:
+- **400 young virgin women**
+are preserved and brought for Benjaminite survivors.
+
+This is a horrific “routing solution”:
+**another population is destroyed**
+to provide
+**400 women**
+for the endangered tribe.
+
+The moral contradiction is deliberate/central to modern readings.
+
+### 400 + 200 reconstructs 600 male survivors
+
+There are:
+- **600 Benjaminite survivors** at Rock Rimmon.
+- 400 women from Jabesh-Gilead.
+
+That leaves:
+**200 men without wives**.
+
+A second workaround is created:
+- Benjaminite men are permitted to abduct women dancing at Shiloh.
+
+So the final repair arithmetic is:
+
+**600 surviving Benjamin men**
+=
+**400 supplied women**
++
+**200 abducted Shiloh women**.
+
+This is one of the starkest numerical reconstruction sequences in the narrative.
+
+### One branch preserved by taking women from two source populations
+
+The endangered Benjamin branch is repopulated through:
+- Jabesh-Gilead women;
+- Shiloh women.
+
+So:
+**one damaged branch**
+is restored by
+**two incoming female streams**.
+
+This is not a benign “recombination” model.
+It is a narrative of patriarchal violence and forced transfer.
+
+That moral context must remain explicit.
+
+### The book ends without genuine repair
+
+Final refrain:
+- no king in Israel;
+- everyone does what is right in own eyes.
+
+The system has preserved Benjamin numerically,
+but not produced ethical/social harmony.
+
+This is an important mature-model control:
+**structural survival ≠ healthy state**.
+
+A system can remain numerically whole while becoming morally dysfunctional.
+
+---
+
+## Judges 17–21 continuous system sequence
+
+**Micah**
+→ household silver
+→ image/shrine
+→ son priest
+→ travelling Levite recruited
+→ local operator becomes household priest
+
+**Dan**
+→ territorial lack
+→ 5 scouts
+→ voice identifies Levite
+→ Laish observed
+→ 600 armed migration
+→ Micah shrine stripped
+→ Levite scales from household priest to tribal priest
+→ Laish destroyed/rebuilt/renamed Dan
+→ portable cult becomes tribal centre
+
+**Levite/concubine**
+→ pair separates
+→ attempted reunion
+→ delayed departure
+→ Gibeah selected as in-group refuge
+→ house threshold fails
+→ woman dies/returns to doorway
+→ body divided **12 ways**
+→ pieces become national messages
+
+**civil fracture**
+→ Israel assembles “as one man”
+→ Benjamin refuses surrender
+→ national body splits
+→ 400,000 vs Benjamin
+→ two failed assaults
+→ third assault
+→ Benjamin nearly destroyed
+→ **600** survive at Rock Rimmon for **4 months**
+
+**forced repair**
+→ oath blocks direct marriage route
+→ Jabesh-Gilead identified as oath-exception
+→ 12,000 attack
+→ 400 women transferred
+→ 200 still missing
+→ Shiloh women abducted
+→ Benjamin numerically preserved
+→ book ends with “no king / own eyes” refrain.
+
+---
+
+## SECTION 31A strongest Vardath correspondences
+
+1. Same priest/operator can scale from **one household → entire tribe** while preserving role identity.
+2. A sacred centre can be **disassembled, carried, relocated and reinstalled**, though here it is illicit/theft rather than sanctioned Tabernacle portability.
+3. Same geographic place can undergo **population replacement + renaming + new centre installation**.
+4. Voice/dialect again functions as an identity key.
+5. Most important: **one human body → 12 physical pieces → distributed to the twelvefold national body → Israel assembles “as one man.”**
+6. This is direct source-level anthropomorphic mapping of individual body to collective body.
+7. House/door threshold can reverse from refuge to failed boundary, proving threshold meaning is contextual.
+8. Twelvefold unity can fracture when one branch refuses integration.
+9. Benjamin becomes a nearly severed branch with only **600** surviving males.
+10. The system explicitly worries about losing **one tribe** from the larger body.
+11. Self-imposed oath creates a routing lock that prevents direct repair.
+12. Benjamin's numerical restoration comes through **two incoming female streams (400 +200)**.
+13. Structural/numerical restoration does not equal healthy state.
+
+### Major controls
+
+- Judges 17–18 is probably cultic/political polemic about Dan.
+- Judges 19 deliberately reuses Genesis 19/Sodom motifs; geometry may come from literary imitation.
+- Judges 19–21 may include anti-Saul/pro-David satire/polemic; this is a scholarly interpretation.
+- the concubine story is extreme gendered violence and should not be neutralized into abstract geometry.
+- “one man” is political unity language, not literal bodily fusion.
+- Benjamin repair involves killing/abduction, not consensual or benign recombination.
+- the “no king” refrain frames the appendix as political/moral critique.
+
+---
+
+## Pair / number register — Judges 17–21
+
+### Judges 17–18
+- Micah's stolen/returned silver: **1,100**.
+- silver given to smith in final wording: **200**.
+- Levite wage: **10 silver/year** + clothing/food.
+- Dan scouts: **5**.
+- armed Danites: **600**.
+
+### Judges 19–21
+- concubine absent at father house: about **4 months**.
+- body divisions: **12 pieces**.
+- Israel muster excluding Benjamin: **400,000**.
+- Benjamin military count: **26,000** plus the Gibeah/chosen **700** notice.
+- elite left-handed sling notice: **700**.
+- Israel first-battle deaths: **22,000**.
+- second-battle deaths: **18,000**.
+- surviving Benjamin men: **600**.
+- Rock Rimmon interval: **4 months**.
+- Jabesh-Gilead attacking force: **12,000**.
+- women preserved there: **400**.
+- remaining wife deficit: **200**.
+- final repair arithmetic: **400 +200 =600**.
+
+---
+
+## Sources logged
+
+Primary:
+- Judges 17–21, Sefaria.
+- Judges 17–18: Micah shrine, travelling Levite, five scouts, 600 Danites, shrine transfer, Dan installation.
+- Judges 19: estrangement/reunion, Gibeah threshold failure, concubine death, twelve-piece distribution.
+- Judges 20: Israel “as one man,” Benjamin fracture, battle counts, 600 survivors.
+- Judges 21: Jabesh-Gilead, 400 women, 200 Shiloh women, Benjamin preservation.
+
+Scholarly/source-critical:
+- “Rachel's Teraphim: A Critique of the Northern Kingdom” — Micah/Dan story as polemical origin-story for northern shrine.
+- critical scholarship on Judges 17–18 as composite/interpolated traditions.
+- “The Story of the Concubine at Gibeah: A Satire on King Saul” — Genesis 19 intertext and anti-Saul/pro-David reading.
+- “Remedying Biblical Trauma with a Festival of Love” — Judges 19–21 as moral-decline appendix ending in further gender violence.
+- “Was There Ever an Ir Hannidahat (Subverted City)?” — Judges 19–21 and internal Israelite `herem` comparison.
+
+**Section 31 remains in progress.**
+
+Next under anti-repeat protocol:
+**Ruth 1–4 — famine/outward migration/return, Naomi/Ruth/Orpah three-woman split, Ruth/Orpah opposite routes, Ruth+Naomi paired survival unit, gleaning and field-protection boundary, Boaz/Ruth threshing-floor encounter, nearer-redeemer/Boaz pair, sandal transfer as legal-state marker, land+lineage redemption, child Obed as recombination of Ruth/Naomi/Boaz line, and genealogy into David.**
+
