@@ -1,0 +1,42 @@
+name: Append staged EXTRA research
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research-staging/extra-research-*.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extra-research-append
+  cancel-in-progress: false
+
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Append staged research blocks
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(research-staging/extra-research-*.md)
+          if [ ${#files[@]} -eq 0 ]; then
+            exit 0
+          fi
+          for f in "${files[@]}"; do
+            cat "$f" >> book/EXTRA-RESEARCH.md
+            rm "$f"
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add book/EXTRA-RESEARCH.md research-staging
+          if ! git diff --cached --quiet; then
+            git commit -m "Append staged EXTRA research"
+            git push
+          fi
