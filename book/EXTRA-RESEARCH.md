@@ -107322,3 +107322,2018 @@ Priority:
 - Judith song: mountains/waters/voice/fire and hand imagery;
 - Judith remains widow, frees maid, property redistribution, final rest;
 - compare descent→entry→decapitation→return→elevation of head with Vardath gate/axis sequence while preserving Jael/Exodus literary models and historical-fiction control.
+
+
+---
+
+# SECTION 42 progress B — Judith 9–16
+## The small inner operator transforms state, descends through the defended gate, is carried inward through successive enemy boundaries, establishes a repeated route to the enemy-controlled spring, reaches the commander's innermost tent, severs the head of the hostile field with its own sword, transfers that head out inside the same provisions-bag that entered the camp, reverses the route uphill, calls the city gate open from outside, elevates the removed command-head on the wall, and converts the surrounding army from an organized enclosure into radial flight
+
+This pass completes **Section 42 — Judith**.
+
+The second half strongly confirms the first-half geometry.
+
+The whole book contracts:
+
+**two imperial kingdoms**
+→ a vast western campaign
+→ Judea
+→ Bethulia
+→ narrow mountain passes
+→ captured spring
+→ Judith + maid
+→ enemy camp
+→ Holofernes' tent
+→ bedchamber
+→ one neck/head.
+
+Then it expands again:
+
+**head**
+→ bag
+→ outward through camp
+→ valley
+→ up mountain
+→ Bethulia gate
+→ city assembly
+→ head on wall
+→ enemy command network discovers the missing centre
+→ ranks dissolve
+→ flight spreads through valleys/hills
+→ Israel pours outward
+→ regional pursuit
+→ Jerusalem celebration.
+
+That contraction/expansion sequence is one of Judith's strongest contributions to the master geometry.
+
+---
+
+# Judith 9 — her prayer defines the intended reversal before she crosses the gate
+
+Judith's prayer asks for:
+
+- a strong hand;
+- deception/words that will wound the enemy;
+- the proud enemy to be struck down;
+- deliverance through the hand of a female;
+- protection of Jerusalem/temple/covenant.
+
+The book repeatedly makes **hand** the interface by which the larger power acts.
+
+This is important because the hand motif moves from:
+
+**metaphorical agency**
+to
+**literal hand-on-sword / hand-on-head**.
+
+The process is therefore source-level:
+
+**larger intention**
+→ **human hand/operator**
+→ **physical intervention at enemy centre**.
+
+---
+
+# The prayer deliberately recalls an earlier sexual-violence/revenge story
+
+Judith invokes Simeon and the Dinah/Shechem episode.
+
+That literary choice supplies:
+- violated woman;
+- deceit;
+- male enemies rendered vulnerable;
+- sudden killing.
+
+This is a conventional literary precedent for Judith's plan.
+
+It must remain visible beside any Vardath comparison.
+
+The text is consciously building Judith from older scriptural patterns rather than simply preserving raw event geometry.
+
+---
+
+# Judith explicitly says strength does not depend on numbers
+
+Her prayer contrasts:
+
+**vast/powerful force**
+with
+**lowly/weak/small agent**.
+
+The enemy has:
+- huge troop numbers;
+- cavalry;
+- camp spread across land.
+
+Judith has:
+- herself;
+- one maid;
+- a hidden plan.
+
+This prepares one of the book's central scale inversions:
+
+**largest field**
+→ disabled by
+**smallest successful penetrating operator**.
+
+---
+
+# Judith's clothing state is intentionally transformed before boundary crossing
+
+After praying:
+
+**roof-tent / sackcloth / widow state**
+→ she rises
+→ goes down into her house
+→ removes sackcloth/widow clothing
+→ washes with water
+→ anoints herself
+→ arranges hair
+→ diadem
+→ festive clothing/jewelry/sandals.
+
+This is a very strong P3 visible state transition.
+
+The same woman changes from:
+
+**withdrawn ascetic widow**
+to
+**mobile attractive infiltrator**.
+
+Her underlying allegiance/identity does not change.
+
+Her **interface state** changes so the enemy will read her differently.
+
+---
+
+# The transformation begins with vertical movement: roof → house → gate → mountain descent
+
+Her route is explicit:
+
+**roof-tent**
+→ down into house
+→ city gate
+→ gate opened
+→ out of city
+→ down mountain
+→ across valley
+→ enemy patrol.
+
+This is an unusually clean descending traversal through nested boundaries.
+
+The operator starts **above/inside** and moves **down/out**.
+
+Later the route will reverse:
+
+**enemy tent**
+→ camp
+→ valley
+→ up mountain
+→ city gate
+→ inside/high centre.
+
+That makes Judith's mission a genuine **down/out → inner-enemy → out/up/back** cycle.
+
+---
+
+# Judith and maid form a two-person mobile unit through the narrow gate
+
+Bethulia's mountain approach was earlier said to admit only two at a time.
+
+Judith now leaves with exactly:
+
+**Judith + maid**.
+
+Do not claim the author explicitly links these two details.
+
+But the spatial fit is notable:
+
+**two-person unit**
+moves through
+**two-person throat**.
+
+This is a high-priority structural coincidence worth retaining with a caution flag.
+
+It may be literary convenience rather than deliberate geometry.
+
+---
+
+# The maid carries the material payload while Judith carries the information payload
+
+Judith:
+- speaks;
+- deceives;
+- negotiates;
+- directs the operation.
+
+Maid:
+- carries food/wine/oil/dishes;
+- later receives and carries Holofernes' head.
+
+This is a strong operator/carrier pair.
+
+Classification:
+
+**Judith = control/information operator**  
+**maid = material carrier**.
+
+P7 is very strong.
+
+The maid is not merely decorative accompaniment.
+
+---
+
+# The provisions bag becomes a bidirectional container
+
+At departure:
+- bag carries Judith's permitted food **into** hostile territory.
+
+At return:
+- same functional provisions-container carries Holofernes' severed head **out**.
+
+Thus one container reverses cargo:
+
+**food inward**
+→
+**enemy command-head outward**.
+
+This is one of Judith's strongest carrier reversals.
+
+The bag itself crosses both directions.
+
+---
+
+# Enemy patrol converts self-directed descent into escorted penetration
+
+Judith descends voluntarily until she meets the Assyrian patrol.
+
+Then:
+
+**free traveller**
+→ questioned/seized into enemy custody
+→ story accepted
+→ given escort
+→ carried/conducted toward Holofernes.
+
+The enemy's own security apparatus becomes the mechanism that moves the hostile operator deeper inside.
+
+This is a very strong reversal of boundary logic.
+
+**defensive screening**
+becomes
+**penetration assistance**.
+
+---
+
+# Judith tells the enemy she will show the route upward into the hill country
+
+Her deception promises:
+
+**I can show Holofernes the way to ascend and take the hill country without loss**.
+
+That statement is deliberately ironic.
+
+What actually happens is:
+
+**Judith descends to Holofernes**
+→ Holofernes' **head** later ascends to Bethulia.
+
+The USCCB introduction explicitly notes the irony:
+Judith says she will lead Holofernes through Judea toward Jerusalem, and in one sense **his head** makes the journey.
+
+That is a remarkable route inversion.
+
+---
+
+# Holofernes' tent is itself an ornate enclosure around the command centre
+
+Judith is successively moved:
+
+**camp edge**
+→ crowd around tent
+→ tent entrance/front
+→ Holofernes
+→ later her own tent/room
+→ banquet space
+→ finally bedchamber.
+
+The narrative keeps narrowing the enclosure.
+
+Holofernes reclines under:
+- woven canopy/netting;
+- purple;
+- gold;
+- precious stones.
+
+This is a literal textile enclosure around the hostile human centre.
+
+Do not automatically equate the canopy with the cosmic weave.
+
+But note the geometry:
+**central body under suspended woven covering inside nested tent boundaries**.
+
+---
+
+# Holofernes / Judith state inversion begins with posture
+
+Judith initially:
+- falls prostrate before Holofernes;
+- is raised by his servants.
+
+Later Holofernes:
+- lies unconscious/drunk;
+- then is rolled from the bed;
+- finally lies headless on the floor when discovered.
+
+So early apparent hierarchy:
+
+**Judith down**
+↔
+**Holofernes elevated/reclining as commander**.
+
+Final hierarchy:
+
+**Judith alive/returned/honoured**
+↔
+**Holofernes down/headless**.
+
+This is a very strong P2 state reversal.
+
+---
+
+# Judith's speech creates a false map inside Holofernes' mind
+
+Judith tells Holofernes:
+
+- Bethulia is near collapse;
+- the people will sin;
+- she will receive divine timing information;
+- she will tell him exactly when to attack;
+- she will guide him through Judea;
+- he will reach Jerusalem and install his throne.
+
+So the hostile centre receives a **false future topology**.
+
+Holofernes believes:
+**Judith = guide into Israel**.
+
+Actual:
+**Judith = guide of Holofernes' head out of his own camp**.
+
+This is one of the strongest information-reversal structures in the corpus.
+
+---
+
+# Hidden plan / public plan polarity
+
+Nebuchadnezzar openly issues a massive imperial plan.
+
+Judith refuses to reveal her plan to Bethulia's elders and misdescribes it to Holofernes.
+
+So:
+
+### Imperial field
+large
+→ explicit
+→ announced
+→ many agents.
+
+### Judith field
+tiny
+→ hidden
+→ encoded through ambiguity/deception
+→ one operator + one carrier.
+
+The small hidden plan defeats the large declared plan.
+
+---
+
+# The enemy camp becomes repeatedly permeable to Judith
+
+Holofernes orders his guards to let Judith go out for prayer.
+
+For three nights:
+
+**Judith inside camp**
+→ leaves through guarded boundary
+→ goes to valley/spring
+→ bathes
+→ prays
+→ returns
+→ remains in tent.
+
+This repeated movement is extremely important.
+
+She establishes a **licensed oscillating route** across the enemy perimeter before using it for escape.
+
+Thus the final exit does not look like a new boundary event.
+
+It imitates an already-normalized cycle.
+
+---
+
+# The captured spring changes function when Judith uses it
+
+Earlier:
+
+**spring**
+→ enemy-controlled choke on Bethulia's life.
+
+Now:
+
+**same spring/valley**
+→ Judith's nightly purification/prayer node.
+
+So the enemy's siege interface becomes the infiltrator's ritual route.
+
+This is a true functional reversal of the same place.
+
+The spring changes from:
+**blockade device**
+to
+**preparation/route-stabilization point**.
+
+---
+
+# The repeated camp↔spring cycle preconditions the final extraction route
+
+Three days/nights establish:
+
+**camp → spring → camp**.
+
+On the fourth decisive night:
+
+**camp → valley → mountain → Bethulia**.
+
+So the escape extends a previously permitted oscillation rather than inventing an unknown path.
+
+This is operationally sophisticated and mechanically important.
+
+---
+
+# Fourth-day banquet is the phase transition
+
+Judith remains in camp for three days.
+
+On the **fourth day**:
+- Holofernes arranges banquet;
+- Judith puts on festive state;
+- Holofernes drinks more than ever before;
+- commander's alertness collapses.
+
+Thus:
+
+**days 1–3**
+= route-conditioning / repetition.
+
+**day 4**
+= decisive state transition.
+
+Record the 3→4 sequence without forcing it into 3-4-5 numerology.
+
+The ordinary narrative function is clear.
+
+---
+
+# Holofernes' internal state collapses before his command role does
+
+At banquet:
+
+**commander**
+→ passion/arousal
+→ excessive wine
+→ incapacitation.
+
+The army outside still exists in full force.
+
+But the central operator has become functionally inert.
+
+This creates a moment where:
+
+**field remains massive**
+while
+**centre is offline**.
+
+Judith attacks precisely then.
+
+---
+
+# Bagoas closes the tent from outside, accidentally sealing Judith with the target
+
+At night:
+- attendants leave;
+- Bagoas closes the tent from the outside;
+- Judith remains inside with Holofernes;
+- maid is stationed outside the bedchamber.
+
+Enemy protocol therefore creates:
+
+**sealed inner chamber**
+containing
+**target + infiltrator**.
+
+The same enclosure that should protect the commander isolates him from his protection.
+
+That is a powerful boundary inversion.
+
+---
+
+# The maid occupies the interface while Judith enters the terminal inner enclosure
+
+Final penetration geometry:
+
+**camp**
+→ tent
+→ bedchamber.
+
+Positions:
+- Holofernes = innermost target;
+- Judith = inside with target;
+- maid = just outside;
+- guards/servants = farther outside.
+
+This is almost a nested-shell cross-section.
+
+The operator enters deepest.
+
+The carrier waits one layer out.
+
+---
+
+# Holofernes' own weapon becomes the reversal instrument
+
+Judith takes the sword from near his bed/head.
+
+So:
+
+**hostile centre's weapon**
+→ seized by penetrating operator
+→ turned against hostile centre.
+
+This parallels the earlier security reversal:
+the enemy repeatedly supplies the means of its own defeat.
+
+---
+
+# Two blows sever the command head from the body
+
+Judith:
+
+- grips Holofernes by the hair/head;
+- strikes the neck **twice**;
+- removes the head.
+
+The physical sequence is brutally direct.
+
+For geometry:
+
+**one integrated command body**
+→ neck/throat interface struck
+→ **head separated from body**.
+
+The neck is literally the narrow connection between command/head and body.
+
+This is one of the strongest **throat severance** images in the 88-text research so far.
+
+But its ordinary meaning is assassination/beheading.
+
+Do not convert it automatically into a cosmic finger-trap throat.
+
+---
+
+# The neck is a physical bottleneck whose severing disables the larger field
+
+This is particularly important in Judith because the effect scales upward.
+
+The army is enormous.
+
+Judith does not destroy:
+- every soldier;
+- every tent;
+- every horse.
+
+She removes the **head**.
+
+When the loss is discovered:
+
+**headless commander**
+→ command hierarchy panics
+→ ranks dissolve
+→ force scatters.
+
+So the story's macro-effect is literally produced by severing a biological **head/body connector**.
+
+That is a powerful scale analogy:
+
+**small central bottleneck failure**
+→ **large distributed field loses coherence**.
+
+---
+
+# Judith removes both head and canopy from the inner centre
+
+She:
+- removes Holofernes' head;
+- takes down/removes the canopy from its posts.
+
+Thus the innermost enemy scene loses:
+
+**central body/head**
++
+**covering/enclosure object**.
+
+Later both become proof of victory.
+
+This is another shell/centre disassembly image.
+
+Again:
+ordinary trophy logic is primary.
+
+---
+
+# The head transfers through a two-person handoff
+
+Judith:
+**head in hand**
+→ exits bed area
+→ gives head to maid.
+
+Maid:
+**receives head**
+→ puts it in food bag.
+
+So:
+
+**operator**
+→ **carrier**
+→ **container**.
+
+This is a very clean material handoff.
+
+The material object that represents the enemy centre is converted into portable cargo.
+
+---
+
+# The final escape uses the rehearsed prayer-route
+
+Judith + maid:
+- leave as though for prayer;
+- pass through camp;
+- skirt valley;
+- climb mountain;
+- reach Bethulia gate.
+
+The hostile field does not stop them because their repeated route has been normalized.
+
+This means:
+
+**repetition creates permeability**.
+
+A boundary that would ordinarily stop movement becomes traversable because the movement pattern has been made expected.
+
+That is a new gate principle worth retaining.
+
+---
+
+# The entire descent route reverses
+
+Outbound:
+
+**Bethulia high**
+→ gate
+→ mountain down
+→ valley
+→ enemy camp
+→ Holofernes inner tent.
+
+Return:
+
+**inner tent**
+→ enemy camp
+→ valley
+→ mountain up
+→ Bethulia gate
+→ city.
+
+This is one of the cleanest route inversions in the corpus.
+
+Same endpoints.
+Opposite direction.
+Different cargo.
+
+Outbound cargo:
+- provisions;
+- living Judith/maid;
+- hidden plan.
+
+Return cargo:
+- living Judith/maid;
+- severed command-head;
+- canopy/proof;
+- revealed victory information.
+
+---
+
+# Judith calls the gate open from the outside
+
+At the start the elders stand at the gate and open it for her to leave.
+
+At return Judith approaches from outside and calls:
+
+**“Open the gate.”**
+
+The gate therefore brackets the entire operation:
+
+**open → operator exits**
+...
+**open → operator returns**.
+
+Between those two gate events, the enemy's command state reverses.
+
+This is a very strong enclosure-cycle structure.
+
+---
+
+# Light is created at the return assembly
+
+After Judith's return:
+- citizens hurry to gate;
+- open it;
+- make a **fire for light**;
+- gather around;
+- head is produced from the bag.
+
+So the successful return transition is accompanied by:
+
+**dark/night**
+→ gate opening
+→ **artificial light/fire**
+→ revelation of removed enemy head.
+
+This is a small-scale light/revelation transition.
+
+---
+
+# The head changes from hidden cargo to elevated public signal
+
+Sequence:
+
+**head attached to Holofernes**
+→ severed
+→ hand
+→ maid
+→ bag/hidden
+→ Bethulia
+→ displayed to assembly
+→ next day **hung/elevated on wall/parapet**.
+
+The object's state changes repeatedly.
+
+Its final elevation broadcasts the enemy centre's destruction outward.
+
+This is a strong:
+
+**inner hidden centre**
+→ **portable cargo**
+→ **elevated signal**.
+
+---
+
+# Achior completes his boundary-witness function by identifying the removed centre
+
+Achior was:
+- expelled from Holofernes' camp;
+- deposited at Bethulia boundary;
+- unbound and incorporated.
+
+Now he sees Holofernes' head.
+
+He:
+- collapses/faints;
+- is raised;
+- acknowledges Judith's act;
+- hears the full route account;
+- changes religious/community allegiance.
+
+Thus the living-information carrier from the enemy field becomes the **verification witness** for the enemy centre's destruction.
+
+That completes his arc beautifully.
+
+---
+
+# Achior's own state is another outside→inside transformation
+
+Initial:
+foreign military adviser / Ammonite.
+
+Transfer:
+enemy council
+→ bound boundary body
+→ protected city.
+
+Final:
+witness
+→ belief
+→ circumcision
+→ joined to Israel.
+
+This is not merely geographic transfer.
+
+It becomes an **identity/community transition**.
+
+P3/P4-style state shift is strong.
+
+---
+
+# Holofernes' head is elevated before the city's army moves outward
+
+Judith tells the defenders to:
+- hang/display the head on the parapet;
+- form ranks;
+- move outward at dawn.
+
+Sequence:
+
+**proof/signal elevated**
+→ defenders see/know centre is gone
+→ gates/pass interface shifts
+→ formerly besieged force goes outward.
+
+The displayed head functions as both:
+- information to Bethulia/Israel;
+- psychological disruption signal to Assyria.
+
+---
+
+# The enemy initially misreads the outward movement
+
+Assyrians see Israelites coming down and assume the “slaves” are foolishly attacking toward their own destruction.
+
+They still believe:
+**Holofernes centre intact**.
+
+Only after entering the bedchamber do they update the field state.
+
+This repeats the book's information-topology theme:
+
+**physical movement can begin before all nodes know the central state has changed**.
+
+---
+
+# Bagoas traverses the nested enclosures in reverse and discovers the missing centre
+
+Bagoas:
+
+**outer command network**
+→ tent entrance
+→ curtain parted
+→ bedchamber
+→ body on floor
+→ head absent.
+
+His discovery path mirrors Judith's earlier penetration path.
+
+But he arrives after the transformation.
+
+So one route has two meanings:
+
+**Judith inward**
+→ causes state change.
+
+**Bagoas inward**
+→ discovers state change.
+
+This is a strong operator/witness route pair.
+
+---
+
+# Removal of one centre turns ordered army into radial scattering
+
+Before discovery:
+- ranks;
+- officers;
+- commanders;
+- hierarchical reporting.
+
+After discovery:
+- distress;
+- panic;
+- ranks abandoned;
+- people scatter in every direction;
+- flee by every path through valley/hills.
+
+This is almost a textbook **coherence → decoherence** transition.
+
+One centralized field loses its organizing node.
+
+Then movement becomes radial/disordered.
+
+For Vardath comparison:
+
+**one centre removed**
+→ **broad structured field breaks apart**.
+
+That is a strong process analogue.
+
+---
+
+# Bethulia's population now surges down the mountain in the opposite direction
+
+Earlier:
+**Assyrian field surrounds**
+while
+**Israel trapped high**.
+
+After head removal:
+**Assyrians flee outward**
+while
+**Israelites charge downward/outward**.
+
+This produces a clean global direction reversal.
+
+The city that was about to surrender now becomes the emitting centre.
+
+---
+
+# Siege geometry turns inside out
+
+Before:
+
+**Assyria outside**
+→ compresses Bethulia
+→ controls water
+→ prevents exit.
+
+After:
+
+**Bethulia opens**
+→ sends fighters outward
+→ Assyrian camp empties/scatters
+→ supplies flow toward Israel as plunder.
+
+This is the complete inversion of the siege.
+
+Especially notable:
+
+### Before
+Assyrian camp = resource-rich outside.
+Bethulia = depleted inside.
+
+### After
+Assyrian camp = abandoned resource field.
+Bethulia/Israel = receives supplies/spoils.
+
+The direction of material flow reverses.
+
+---
+
+# Judith receives Holofernes' tent and inner furnishings
+
+The camp is plundered.
+
+Judith specifically receives:
+- Holofernes' tent;
+- silver;
+- beds;
+- dishes;
+- furniture.
+
+Later she dedicates his possessions/canopy.
+
+Thus the enemy command enclosure itself changes ownership.
+
+This resembles Esther's:
+**Haman house/ring → Esther/Mordecai**.
+
+Cross-index this as another:
+**hostile centre's material apparatus transfers to the successful opposing operator/community**.
+
+---
+
+# The campaign's central timing forms a deliberate 34 ↔ 4 + 30 structure
+
+The text says Bethulia is surrounded for **34 days** and its water fails.
+
+Then:
+- Judith spends **4 days** in enemy camp;
+- Israel plunders the camp for **30 days**.
+
+The USCCB notes this literary balance explicitly:
+
+**34 days of deprivation**
+↔
+**4 + 30 days of reversal/victory phase**.
+
+This is one of the stronger source-controlled numerical structures because the literary commentary recognizes the deliberate compositional balance.
+
+Still:
+do not convert 34 into an external chronological cycle without further evidence.
+
+---
+
+# Judith becomes the centre of a reversed procession
+
+After victory:
+
+- women gather around Judith;
+- she gives them branches;
+- women crown themselves with olive;
+- Judith leads the women's dance;
+- men follow with weapons/garlands/songs.
+
+Compare the opening campaign:
+
+**Nebuchadnezzar**
+→ Holofernes
+→ army outward.
+
+Ending:
+
+**Judith**
+→ women
+→ Israelite men
+→ thanksgiving procession.
+
+The book replaces the imperial military procession with a communal victory procession.
+
+---
+
+# Judith's hymn explicitly contrasts giant/massive power with the small female operator
+
+The hymn insists Holofernes was not brought down by:
+- youths;
+- Titans;
+- tall giants.
+
+Instead:
+- Judith's beauty disarms him;
+- sword cuts his neck.
+
+This makes the scale inversion explicit within the source.
+
+The book itself says:
+**large/giant-scale force was not the winning mechanism**.
+
+The decisive action was small, indirect and central.
+
+---
+
+# Judith's hymn contains major mountain/water/melting imagery
+
+The hymn declares that before God:
+
+- mountains are tossed/shaken to their bases **with the waters**;
+- rocks melt like wax;
+- spirit/voice has creative power;
+- fire appears in judgment imagery.
+
+This belongs to poetic/theological cosmic language.
+
+It should be recorded because it overlaps directly with:
+- mountain destabilization;
+- water movement;
+- rock melting;
+- voice/field action;
+- fire.
+
+But it is hymn/poetry after the battle.
+
+It is not a prose eyewitness report that the mountains physically melted during Judith's mission.
+
+This genre distinction is essential.
+
+---
+
+# “By the hand of a female” is the book's master operator formula
+
+The hand motif appears repeatedly across:
+- Judith's plan;
+- prayer;
+- camp speech;
+- execution;
+- return declaration;
+- praise;
+- hymn.
+
+The book intentionally states the same process at multiple scales:
+
+**God / larger agency**
+→ **Judith's hand**
+→ **enemy centre falls**
+→ **population field changes**.
+
+This is perhaps Judith's single strongest operator structure.
+
+---
+
+# Judith returns to widow-state rather than becoming queen/ruler
+
+After victory:
+- she returns to Bethulia;
+- remains on estate;
+- refuses remarriage;
+- lives long;
+- frees her maid;
+- distributes property;
+- dies and is buried with husband.
+
+This is important because the successful operator **does not occupy Holofernes' political office**.
+
+Unlike Esther/Mordecai's successor transfer, Judith's reversal does not become:
+**Holofernes position → Judith position**.
+
+Instead:
+
+**hostile centre removed**
+→ Judith returns to prior independent state.
+
+That is a meaningful mismatch to simple state-swap models.
+
+---
+
+# The maid's final liberation completes the carrier's arc
+
+The unnamed maid:
+- begins as Judith's servant/carrier;
+- moves through both fields;
+- carries provisions;
+- carries enemy head;
+- returns;
+- eventually is set free.
+
+This gives a subtle P3 state transition:
+
+**servant/carrier**
+→ **free person**.
+
+Do not overstate it.
+
+But it means the material carrier's end-state is also transformed by the story.
+
+---
+
+# Judith's death closes the operator without destabilizing the new peace-state
+
+Judith dies at an advanced age.
+
+She is buried in her husband's cave.
+
+The narrative says:
+- Israel mourns seven days;
+- for a long period no one again spreads terror among Israel.
+
+Thus the system remains stable after the operator is removed.
+
+This matters.
+
+Judith is not a permanent central support whose death collapses the structure.
+
+She creates a changed state that persists after her departure.
+
+---
+
+# SECTION 42B pair / two-force / state matrix
+
+## Judith / Holofernes — final classification
+
+This is one of the strongest operator polarity pairs so far.
+
+### P2 — polarity pair
+**Very strong.**
+
+Holofernes:
+- outside;
+- mass;
+- male military power;
+- controls spring;
+- attempts inward conquest;
+- high command centre;
+- intoxicated/disabled;
+- head removed;
+- body down.
+
+Judith:
+- inside;
+- one maid;
+- low-status widow in social terms;
+- crosses outward;
+- uses spring;
+- penetrates centre;
+- remains alert;
+- returns alive;
+- rises back to Bethulia;
+- is elevated in honour.
+
+### P6 — rival/double
+Strong.
+
+They are direct strategic opponents even before Holofernes understands it.
+
+### P7 — opposing operators
+**Extremely strong.**
+
+Holofernes operates for Nebuchadnezzar.
+Judith operates for Israel/God in the story.
+
+### P3 — state inversion pair
+Strong at outcome level:
+commander→headless corpse
+versus
+widow→victorious honoured figure.
+
+### P4 — successor
+Weak/no.
+
+Judith does **not** become Holofernes' successor.
+
+### P1 — one hidden split figure
+Unsupported.
+
+### P10
+Secure as separate persons.
+
+---
+
+## Judith / maid
+
+Strong P7 operator/carrier pair.
+
+Judith:
+- information;
+- deception;
+- sword action;
+- command decisions.
+
+Maid:
+- food/container;
+- material transport;
+- head transfer.
+
+They function as a two-person mobile system.
+
+This is perhaps more useful mechanically than trying to make Judith/Holofernes one body.
+
+---
+
+## Achior / Holofernes
+
+Holofernes rejects and ejects Achior.
+
+Achior later identifies the removed Holofernes head and joins the opposing community.
+
+Strong witness/reversal relation.
+
+---
+
+## Achior / Bagoas
+
+Interesting witness symmetry:
+
+Achior:
+**leaves hostile centre before collapse**
+→ enters Bethulia
+→ later verifies head.
+
+Bagoas:
+**remains hostile centre**
+→ enters inner tent after collapse
+→ verifies headless body.
+
+Both become state-confirmation witnesses from opposite sides.
+
+This is a useful P2/P7 witness pair at a secondary level.
+
+---
+
+## City gate / spring
+
+The two principal interfaces of Bethulia:
+
+### Gate/pass
+body throughput.
+
+### Spring
+life-resource throughput.
+
+Enemy cannot efficiently cross first,
+so captures second.
+
+Judith later uses both:
+- gate for outbound/inbound body passage;
+- spring for repeated purification/prayer route.
+
+This is a very strong paired-interface structure.
+
+---
+
+## Holofernes head / Assyrian body-army
+
+The biological head/body split becomes a macro command metaphor.
+
+**head severed**
+→ **army body loses order**.
+
+This is one of the strongest literal-to-systemic scaling relations in the book.
+
+---
+
+## Judith widow clothes / festive clothes
+
+Strong P3 interface-state pair.
+
+Same underlying person.
+Different visible reading by different fields.
+
+---
+
+## Enemy camp ordered / enemy camp scattered
+
+Strong P3 field-state pair.
+
+**hierarchical/coherent**
+→ head removed/discovered
+→ **radially scattered**.
+
+---
+
+## Bethulia trapped / Bethulia emitting
+
+Strong P3 enclosure-state pair.
+
+Before:
+closed / dehydrating / surrender countdown.
+
+After:
+gate opens / fighters pour out / resources flow inward.
+
+---
+
+# Squatter-Man / finger-trap verdict for Judith as a whole
+
+## Strong correspondences
+
+Judith strongly supplies:
+
+- broad field narrowing to a two-body choke-point;
+- high enclosure and low resource source;
+- resource flow as true system gate;
+- two opposing centre/operator chains;
+- one small operator crossing in reverse direction;
+- nested enemy enclosures narrowing to a single command body;
+- repeated normalized boundary crossing;
+- central woven canopy/tent around the target;
+- neck/throat as literal narrow connector;
+- removal of head causes large field coherence collapse;
+- portable cargo transferred through a bag/container;
+- exact outbound route reversed on return;
+- head elevated as signal;
+- trapped population then pours outward;
+- large structured field becomes radial scatter;
+- material flow reverses from depletion to plunder;
+- hymn includes mountains + waters + melting rock;
+- “hand” as repeated operator interface.
+
+## Partial correspondences
+
+- two-person Judith/maid unit passing through a two-person-width approach is intriguing but not explicitly linked by the author;
+- tent/canopy provides weave/enclosure imagery but has ordinary military/luxury function;
+- head/neck severance resembles throat failure but is literal assassination;
+- down/out and up/back route resembles directional pair cycle;
+- same spring changes from blockade node to Judith's route node;
+- same gate opens for controlled exit and controlled return.
+
+## Weak / absent correspondences
+
+Judith does not securely describe:
+
+- two counter-wound physical spring strands;
+- sky-lattice contraction;
+- finger-trap braid narrowing through tension;
+- Squatter-Man body as a projection of the gate;
+- inhabited future/past world-turn adjacency;
+- atmosphere/ocean/land transfer between worlds;
+- cosmic gate closure/reopening cycle.
+
+Therefore Judith's strongest contribution is:
+
+> **throat-and-command topology** — a vast field is stopped by a narrow pass, attacks the system through its life-flow instead, is penetrated in reverse by a tiny two-person operator/carrier unit, and loses coherence when its innermost command head is severed and carried back through the same route.
+
+That is a very strong process analogue without being a literal world-gate account.
+
+---
+
+# SECTION 42 continuous geometry/effect timeline — whole Judith sequence
+
+## Phase A — huge fortified centre is built
+
+Ecbatana
+→ massive wall/gates/towers.
+
+**Effect:** strong shell.
+
+---
+
+## Phase B — shell falls
+
+Nebuchadnezzar
+→ Ecbatana breached
+→ Arphaxad killed.
+
+**Effect:** shell strength proves insufficient.
+
+---
+
+## Phase C — imperial centre sends mobile operator
+
+Nineveh
+→ Holofernes.
+
+**Effect:** central intent becomes travelling destructive field.
+
+---
+
+## Phase D — field expands and overwrites nodes
+
+territories/cults/cities
+→ garrisons/destruction.
+
+**Effect:** network centralization.
+
+---
+
+## Phase E — field narrows toward Judea
+
+regions
+→ ridge
+→ Bethulia.
+
+**Effect:** scale contraction begins.
+
+---
+
+## Phase F — defenders compress interface
+
+mountain pass
+→ two-person throughput.
+
+**Effect:** army mass cannot directly penetrate.
+
+---
+
+## Phase G — rejected witness crosses fields
+
+Achior
+→ enemy camp
+→ bound at hill
+→ retrieved/unbound
+→ Bethulia.
+
+**Effect:** living information transferred.
+
+---
+
+## Phase H — attack switches from body-gate to flow-gate
+
+direct assault avoided
+→ spring seized.
+
+**Effect:** water rather than soldiers becomes decisive transfer.
+
+---
+
+## Phase I — high enclosure loses internal viability
+
+spring blocked
+→ cisterns dry
+→ bodies faint.
+
+**Effect:** intact shell / failing life field.
+
+---
+
+## Phase J — surrender clock forms
+
+34-day siege
+→ five-day final threshold.
+
+**Effect:** future opening scheduled.
+
+---
+
+## Phase K — hidden elevated counter-node activates
+
+Judith roof-tent
+→ elders summoned.
+
+**Effect:** small internal operator emerges.
+
+---
+
+## Phase L — collapse timer rejected
+
+five-day test
+→ active hidden plan.
+
+**Effect:** passive waiting becomes intervention.
+
+---
+
+## Phase M — operator changes visible state
+
+sackcloth/widow
+→ wash/anoint/diadem/festive dress.
+
+**Effect:** interface identity transformed.
+
+---
+
+## Phase N — selective gate opens
+
+Judith + maid
+→ out.
+
+**Effect:** mass inward blocked; small outward allowed.
+
+---
+
+## Phase O — route descends
+
+gate
+→ mountain down
+→ valley.
+
+**Effect:** operator leaves high protected state.
+
+---
+
+## Phase P — enemy boundary captures then assists operator
+
+patrol
+→ custody
+→ escort
+→ Holofernes tent.
+
+**Effect:** enemy security becomes penetration mechanism.
+
+---
+
+## Phase Q — false topology installed at hostile centre
+
+Judith claims she will guide Holofernes upward to Judea/Jerusalem.
+
+**Effect:** hostile centre adopts wrong future map.
+
+---
+
+## Phase R — nested enclosures narrow
+
+camp
+→ tent
+→ private quarters
+→ banquet
+→ bedchamber.
+
+**Effect:** operation approaches command nucleus.
+
+---
+
+## Phase S — repeated oscillation normalizes permeability
+
+for three days:
+camp
+↔ spring/valley
+↔ camp.
+
+**Effect:** future escape route becomes routine.
+
+---
+
+## Phase T — captured spring changes function
+
+blockade resource node
+→ Judith purification/prayer node.
+
+**Effect:** siege interface repurposed.
+
+---
+
+## Phase U — fourth-day state transition
+
+banquet
+→ excess wine
+→ Holofernes incapacitated.
+
+**Effect:** command centre goes offline.
+
+---
+
+## Phase V — enemy closes protective enclosure around infiltrator + target
+
+Bagoas closes tent
+→ attendants leave.
+
+**Effect:** target isolated with operator.
+
+---
+
+## Phase W — operator reaches narrow biological throat
+
+Judith seizes Holofernes' own sword/head
+→ two neck blows.
+
+**Effect:** head/body connection severed.
+
+---
+
+## Phase X — hostile centre becomes portable cargo
+
+head
+→ Judith
+→ maid
+→ food bag.
+
+**Effect:** command node transferred into container.
+
+---
+
+## Phase Y — inner route reverses
+
+bedchamber
+→ tent
+→ camp
+→ valley.
+
+**Effect:** extraction begins.
+
+---
+
+## Phase Z — route turns upward
+
+valley
+→ mountain ascent
+→ Bethulia gate.
+
+**Effect:** outbound descent reversed.
+
+---
+
+## Phase AA — gate opens from outside
+
+Judith calls
+→ gate opens
+→ operator/carrier re-enter.
+
+**Effect:** mission loop closes.
+
+---
+
+## Phase AB — hidden cargo becomes visible proof
+
+bag
+→ head displayed
+→ canopy displayed.
+
+**Effect:** internal victory information becomes communal knowledge.
+
+---
+
+## Phase AC — proof is elevated
+
+head
+→ wall/parapet.
+
+**Effect:** removed hostile centre becomes broadcast signal.
+
+---
+
+## Phase AD — Achior verifies transformation
+
+head seen
+→ faint
+→ raised
+→ belief/community transition.
+
+**Effect:** expelled enemy witness confirms outcome.
+
+---
+
+## Phase AE — defenders move outward before enemy understands
+
+Israelites descend/form ranks.
+
+**Effect:** trapped field becomes emitting field.
+
+---
+
+## Phase AF — enemy witness penetrates inner tent
+
+Bagoas
+→ curtains
+→ bedchamber
+→ headless body.
+
+**Effect:** hostile network receives central state update.
+
+---
+
+## Phase AG — organized field loses coherence
+
+news propagates
+→ ranks dissolve
+→ radial flight.
+
+**Effect:** head removal scales to army-wide collapse.
+
+---
+
+## Phase AH — movement vectors reverse
+
+Assyrians:
+surrounding/advancing
+→ fleeing outward.
+
+Israel:
+trapped/high
+→ charging downward/outward.
+
+**Effect:** siege turns inside out.
+
+---
+
+## Phase AI — material flow reverses
+
+Bethulia:
+depleted
+→ receives plunder/resources.
+
+Assyrian camp:
+resource-rich
+→ emptied/stripped.
+
+**Effect:** cargo direction changes.
+
+---
+
+## Phase AJ — hostile enclosure transfers ownership
+
+Holofernes' tent/furnishings
+→ Judith.
+
+**Effect:** command-shell becomes victory property.
+
+---
+
+## Phase AK — deprivation interval is mirrored by victory interval
+
+34-day siege
+↔
+4-day infiltration + 30-day plunder.
+
+**Effect:** literary timing balance.
+
+---
+
+## Phase AL — new procession replaces imperial procession
+
+Judith/women
+→ olive branches/dance/song
+→ men follow armed.
+
+**Effect:** communal centre reorganized around thanksgiving rather than imperial conquest.
+
+---
+
+## Phase AM — hymn cosmicizes the victory
+
+mountains + waters tossed
+→ rocks melt
+→ voice/spirit/fire imagery.
+
+**Effect:** local victory is projected into cosmic-theological scale.
+
+---
+
+## Phase AN — operator returns to prior stable life-state
+
+Judith
+→ Bethulia estate
+→ remains widow
+→ frees maid
+→ distributes property
+→ dies/buried.
+
+**Effect:** successful operator does not seize enemy office.
+
+---
+
+## Phase AO — new system remains stable after operator death
+
+Judith dies
+→ mourning
+→ terror does not immediately return.
+
+**Effect:** changed state persists beyond operator.
+
+---
+
+# What complete Judith adds to the master Bible/Vardath timeline
+
+1. **A huge defensive shell can fail, while a tiny choke-point can successfully constrain a vast field.**
+2. **Ecbatana's enormous military gate and Bethulia's two-person pass form one of the corpus's clearest wide/narrow access contrasts.**
+3. **A broad imperial campaign progressively narrows to one mountain pass, one spring, one woman, one tent, one neck.**
+4. **Bethulia demonstrates that the effective gate of a system may be its resource flow rather than its doorway.**
+5. **The high city survives direct penetration but fails when lower water flow is cut.**
+6. **Achior is a clean cross-field living-information relay: expelled/bound/deposited/retrieved/unbound/integrated.**
+7. **Judith/Holofernes are a strong opposing-operator pair attached to two larger centres.**
+8. **Judith and her maid form a compact operator/carrier pair.**
+9. **The same provisions bag carries food inward and the hostile command-head outward.**
+10. **The enemy security system escorts the hostile operator through its own boundary.**
+11. **Judith installs a false route-map in Holofernes' mind: he thinks she will guide him upward into Israel; in the book's irony, his head is what makes that journey.**
+12. **Repeated permitted camp→spring→camp crossings precondition the final escape.**
+13. **The captured spring is repurposed from blockade mechanism into Judith's purification/prayer route node.**
+14. **The narrative explicitly builds a 3-day repetition → 4th-day decisive transition.**
+15. **The enemy itself closes the innermost enclosure around infiltrator and target.**
+16. **Holofernes' neck is a literal narrow connector; severing it disables the command head.**
+17. **Removal of one human head produces collapse of a vastly larger hierarchical field**, one of the corpus's strongest centre/coherence analogies.
+18. **The entire route reverses exactly: high city→down→valley→camp→inner tent, then inner tent→camp→valley→up→city.**
+19. **The city gate brackets the mission with two controlled openings: exit and return.**
+20. **The severed head moves attached→hand→carrier→bag→assembly→elevated wall signal.**
+21. **Bagoas and Achior become opposed confirmation witnesses of the same transformed centre.**
+22. **The siege reverses globally: Assyria from surrounding field to radial flight; Bethulia from trapped centre to outward surge.**
+23. **Material flow also reverses: Bethulia from depletion to incoming enemy resources/spoils.**
+24. **The enemy command tent itself transfers to Judith, paralleling other hostile-centre property reversals such as Haman's house in Esther.**
+25. **34 days of siege are compositionally balanced by 4 days in camp + 30 days of plunder**, a source-controlled literary number structure.
+26. **Judith's hymn adds mountains disturbed with waters and rocks melting like wax**, but only at poetic/theological scale.
+27. **Judith returns to her earlier widow/estate state instead of replacing Holofernes politically**, a hard mismatch to simple “opposite pole takes same office” models.
+28. **The maid is freed at the end**, giving the material carrier a final state change.
+29. **The strongest Vardath relevance is throat/command topology, selective boundary permeability and direction reversal—not the complete sky-lattice/finger-trap machine.**
+
+---
+
+# Section 42B number / timing register
+
+Record with literary controls:
+
+- Bethulia surrounded **34 days** before the collapse crisis;
+- elders set **5 additional days**;
+- Judith remains in enemy camp **3 days** before the **4th-day** banquet/action phase;
+- Holofernes' neck struck **2 times**;
+- camp plunder lasts **30 days**;
+- literary balance noted by USCCB:
+  **34 = 4 + 30** around the book's central deprivation/victory actions;
+- Jerusalem victory celebration lasts **3 months**;
+- Judith lives to **105**;
+- Israel mourns Judith **7 days**.
+
+The possible relation of Judith's 105 years to the approximate Maccabean-period span is a modern scholarly suggestion, not a secure internal chronological key.
+
+---
+
+# Section 42B textual / literary / historical / ethical controls
+
+- Judith's historical-fiction control from 42A remains mandatory.
+- The narrative is saturated with irony, deliberate ambiguity and intertextual reuse.
+- The “by the hand of a female” motif consciously recalls Exodus hand-language and Jael/Deborah traditions.
+- Judith's use of deception is explicit and is part of the literary/theological strategy; it is not hidden by the text.
+- The prayer's Dinah/Simeon reference provides a conventional scriptural model for sex/deception/violent reversal.
+- Judith's beauty/clothing transformation has a clear infiltration function.
+- The repeated spring visits have ordinary ritual/purity and escape-preconditioning explanations.
+- The woven canopy is an insect-net/luxury bed covering in the immediate story; its weave should not be treated as a cosmic lattice without independent support.
+- The head/neck sequence is literal decapitation and participates in Jael/David/Goliath-style victory motifs.
+- The collapse of the Assyrian army after Holofernes' death is both military-literary logic and a useful system/coherence analogy.
+- Judith 16's mountain/water/melting imagery is hymnic poetry. Do not write as though rocks physically melted during the prose action.
+- Violence, deception, sexual threat and the gendered humiliation logic of the story must remain visible rather than being flattened into neutral machine language.
+- The precise Ethiopic relation to the Greek recensions requires dedicated textual study before any variant-specific claim is assigned to Geʿez.
+- Judith's post-victory return to widowhood/estate life is a meaningful narrative fact that resists a simple office-succession interpretation.
+
+### Sources logged for Section 42B
+
+Primary / literary:
+- USCCB/NABRE **Judith 9–16**:
+  - https://bible.usccb.org/bible/judith/9
+  - https://bible.usccb.org/bible/judith/10
+  - https://bible.usccb.org/bible/judith/11
+  - https://bible.usccb.org/bible/judith/12
+  - https://bible.usccb.org/bible/judith/13
+  - https://bible.usccb.org/bible/judith/14
+  - https://bible.usccb.org/bible/judith/15
+  - https://bible.usccb.org/bible/judith/16
+- USCCB **Book of Judith introduction**, especially:
+  - “by the hand of a female” motif;
+  - Jael/Deborah/Exodus intertextual controls;
+  - historical-fiction chronology;
+  - irony that Judith promises to lead Holofernes into Judea while his head ultimately makes the journey.
+- Judith 7:20 / 12:10 / 15:11 literary timing balance:
+  34 days deprivation ↔ 4-day infiltration + 30-day plunder.
+
+---
+
+# SECTION 42 COMPLETE — JUDITH
+
+## Integrated Judith geometry
+
+**massive walled Ecbatana**
+→ falls
+→ victorious imperial centre sends Holofernes west
+→ broad field overwrites local nodes
+→ campaign contracts toward Judean ridge
+→ remnant fortifies high places
+→ access narrows to a two-body throat
+→ Achior crosses from enemy council to city as bound/unbound information carrier
+→ enemy abandons direct gate penetration
+→ captures spring below mountain
+→ high enclosure loses life-flow
+→ 34-day siege drains internal reserves
+→ five-day surrender threshold forms
+→ Judith activates from roof-tent
+→ rejects passive countdown
+→ changes visible state
+→ Judith + maid pass selectively outward
+→ descend mountain
+→ cross valley
+→ enemy patrol converts interception into escort
+→ operator penetrates camp
+→ false future route installed in Holofernes' mind
+→ repeated camp/spring oscillation normalizes boundary permeability
+→ fourth-day banquet collapses commander's alertness
+→ enemy protocol seals Judith alone with target
+→ Holofernes' own sword is taken
+→ neck/throat struck twice
+→ head separated from body
+→ canopy/enclosure removed
+→ head handed operator→carrier→bag
+→ prayer-route becomes extraction route
+→ camp crossed
+→ valley crossed
+→ mountain climbed
+→ Bethulia gate called open from outside
+→ operator/carrier re-enter
+→ hidden cargo becomes public proof
+→ head elevated on wall
+→ Achior verifies/transforms allegiance
+→ Bethulia sends force outward
+→ Bagoas enters inner tent and updates enemy network
+→ command loss propagates
+→ organized army becomes radial flight
+→ movement vectors reverse
+→ material flow reverses into plunder
+→ Holofernes' tent transfers to Judith
+→ victory procession/hymn replaces imperial procession
+→ Judith returns to estate/widow state
+→ maid freed
+→ operator dies later
+→ stable peace-state persists.
+
+### Strongest Vardath comparison
+
+**broad field**
+→ **narrow two-body throat blocks mass**
+→ attack shifts to lower flow-channel
+→ inner system approaches collapse
+→ small two-person counter-system exits in reverse direction
+→ repeatedly crosses hostile boundary
+→ penetrates nested shells
+→ reaches narrow command connector
+→ severs centre
+→ extracts central cargo
+→ reverses full route
+→ re-enters original enclosure
+→ elevates extracted centre as signal
+→ large opposing field decoheres/scatters
+→ trapped system opens and emits outward
+→ resource flow reverses.
+
+That is a remarkably coherent mechanical sequence.
+
+### Hard physical mismatch
+
+Judith still does not provide:
+
+**two physical counter-wound springs**
+→ **sky lattice tension**
+→ **finger-trap contraction**
+→ **Squatter-Man gate projection**
+→ **temporarily adjacent inhabited world-turns**
+→ **large inter-world atmospheric/water/land/population transfer**.
+
+So Judith belongs in the final map as a very strong **throat / flow / centre-removal / route-reversal analogue**, not as a complete physical gate description.
+
+---
+
+### Canonical roadmap status
+
+- Section 40 complete — Esther.
+- Section 41 complete — Tobit.
+- **Section 42 complete — Judith.**
+
+### Next canonical roadmap entry
+
+**Section 43 — Daniel additions**
+
+Stored roadmap targets:
+- Song of the Three / fiery furnace;
+- Susanna and the two elders;
+- Bel;
+- the dragon;
+- test each as geometry/state pair rather than treating the additions as one undifferentiated appendix;
+- preserve Greek textual distinctions (Old Greek/Theodotion where relevant) and Ethiopian-corpus ordering before comparison.
