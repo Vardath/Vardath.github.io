@@ -31308,3 +31308,309 @@ Priority already saved in the master roadmap:
 - pair test: two goats — one sacrificed, one sent away — as a possible polarity pair.
 
 Before Section 23 begins, apply the anti-repeat search again.
+
+
+---
+
+## SECTION 23 progress A — Leviticus 1–10: active portable interface, accepted/rejected fire and Nadab/Abihu as a failed operator pair
+
+### Anti-repeat check
+
+The ledger was searched for:
+- Section 23;
+- Leviticus;
+- Day of Atonement/two goats;
+- Nadab/Abihu;
+- Jubilee.
+
+Only roadmap/prior cross-references were found.  
+No completed or partial Section 23 block existed.
+
+This is genuinely new work.
+
+### Leviticus begins after the portable interface has become active
+
+Exodus ended:
+- Tabernacle completed;
+- cloud covers it;
+- Glory fills it;
+- Moses cannot enter.
+
+Leviticus opens with:
+- YHWH **calling to Moses from the Tent of Meeting**;
+- sacrificial instructions now issued from the portable sanctuary itself.
+
+This is a major architectural transition:
+
+**Sinai = source of pattern**
+→
+**Tabernacle = continuing source of instruction**.
+
+The portable structure has therefore fully inherited the mountain's communication role.
+
+### Offerings are routed through specific approach zones
+
+Leviticus 1–7 repeatedly regulates:
+- what comes to the **entrance**;
+- what is slaughtered in courtyard space;
+- what blood reaches altar;
+- what portions burn;
+- what priests eat;
+- what material is removed **outside the camp**.
+
+This is not random sacrifice.
+
+It is a controlled routing system:
+**person/animal/material**
+→ correct approach point
+→ classification
+→ blood/fat/meat route
+→ inner/outer destination.
+
+For Vardath comparison:
+this is strong evidence for **sorting and routing**, but cultic rather than cosmological.
+
+### Blood functions as transferred life/purgation material in the Priestly system
+
+Leviticus' purification offerings repeatedly manipulate blood at sacred points.
+
+Jacob Milgrom's influential interpretation describes blood in these rites as a kind of ritual “detergent” that purges sanctuary contamination rather than simply paying a penalty.
+
+Whether every detail of Milgrom's reconstruction is accepted or not, the text clearly treats blood as:
+- life-associated;
+- transferable;
+- applied to specific sacred surfaces;
+- capable of altering ritual status.
+
+This reinforces a recurring corpus rule:
+**state can be carried/applied through material media without identity itself moving bodily**.
+
+### Inside / outside camp becomes a formal routing distinction
+
+Certain remains:
+- are taken **outside the camp**;
+- burned/disposed there.
+
+Other sacred portions:
+- remain in court/sanctuary system.
+
+The camp therefore becomes another nested boundary:
+
+**inner sanctuary**
+→ courtyard
+→ camp
+→ **outside camp**.
+
+Leviticus will repeatedly use this outer region for:
+- disposal;
+- temporary exclusion;
+- purification stages;
+- later scapegoat removal.
+
+For the mature model:
+**outside camp = externalized/removed zone**,
+not automatically a lower world.
+
+### Priestly inauguration completes the operator-state transformation
+
+Leviticus 8 executes the seven-day ordination commanded in Exodus.
+
+Aaron and sons are:
+- washed;
+- vested;
+- anointed;
+- blood-marked;
+- kept at entrance;
+- consecrated through repeated rites.
+
+This confirms Section 22's interpretation:
+priesthood is not merely appointment but an **embodied state-conversion process**.
+
+### Eighth day = activation into live service
+
+Leviticus 9 begins:
+- **on the eighth day** after the seven-day consecration.
+
+Aaron now performs inaugural offerings.
+
+This is another real:
+**7 preparation → 8 operational emergence**
+sequence.
+
+The number pattern is source-level.
+
+Do not equate automatically with every other 7→8 motif.
+
+### Fire from YHWH accepts the altar offering
+
+At climax:
+- divine Glory appears;
+- **fire comes out from before YHWH**;
+- consumes the burnt offering/fat on altar;
+- people see;
+- shout;
+- fall on their faces.
+
+The active sanctuary now produces an outward fire event that signifies accepted ritual.
+
+Sequence:
+
+**correctly prepared operators**
+→ **correctly ordered offerings**
+→ **divine appearance**
+→ **fire exits centre**
+→ **offering consumed**
+→ **population reacts**.
+
+### Nadab / Abihu — paired priests repeat the fire action incorrectly
+
+Immediately afterward:
+- Nadab and Abihu each take **his own firepan**;
+- each places fire/incense in it;
+- together bring “strange/alien fire” before YHWH;
+- it is described as something **not commanded**.
+
+They are therefore a genuine two-person parallel pair:
+
+**Nadab — firepan / fire / incense**
+||
+**Abihu — firepan / fire / incense**
+
+Classification:
+- **P7 cooperative operator pair**
+- failed/unauthorized operator state.
+
+### Same fire formula accepts sacrifice then consumes operators
+
+The literary juxtaposition is striking.
+
+Leviticus 9:
+**fire comes from before YHWH → consumes offering**.
+
+Leviticus 10:
+**fire comes from before YHWH → consumes Nadab and Abihu**.
+
+So the same source/process has opposite results depending on what occupies the interface and whether the action is authorized.
+
+This is extremely important for Vardath method:
+
+> **same energetic event ≠ same outcome; route/state/authorization matters.**
+
+### Exact nature of the “strange fire” remains uncertain
+
+The text does not explain precisely what made their act wrong beyond:
+**“which he had not commanded them.”**
+
+Interpretations include:
+- wrong fire source;
+- wrong timing;
+- unauthorized incense;
+- intrusion into restricted space;
+- intoxication;
+- inappropriate private service.
+
+Modern scholarship remains divided.
+
+Therefore:
+do **not** claim we know the physical cause.
+
+The secure structural point is:
+**unauthorized interface action → lethal feedback**.
+
+### Nadab/Abihu are carried outward
+
+After death:
+- relatives carry their bodies away from before sanctuary;
+- they are taken **outside the camp**.
+
+So the pair's route is:
+
+**authorized priestly family**
+→ unauthorized approach
+→ consumed within sacred-front zone
+→ bodies removed outward beyond camp boundary.
+
+This is a strong inside→outside routing event.
+
+### Aaron / remaining sons must stay in role despite family rupture
+
+Aaron, Eleazar and Ithamar:
+- are restricted in mourning behavior;
+- must remain connected to sanctuary service;
+- warned about entry/service conditions.
+
+This highlights the institutional principle:
+**office/system continuity outranks individual family disruption**.
+
+### Wine warning adds another state prerequisite
+
+Immediately after Nadab/Abihu:
+- priests are forbidden wine/intoxicants when entering Tent of Meeting;
+- death warning attached;
+- priests must distinguish:
+  - holy / common;
+  - unclean / clean.
+
+Whether intoxication explains the preceding deaths is debated.
+
+But the law clearly adds:
+**operator internal state matters before crossing**.
+
+### Clean/unclean classification is explicitly named as priestly function
+
+Leviticus 10:10 gives a key binary:
+- holy / common;
+- unclean / clean.
+
+This becomes the conceptual bridge into chapters 11–15.
+
+Important:
+these are ritual-access categories, not simply:
+- good/bad;
+- healthy/sick;
+- moral/immoral.
+
+A person can be ritually unclean without being sinful.
+
+### Vardath comparison — Leviticus 1–10
+
+Strong structural correspondences:
+1. Portable interface now becomes continuing communication source.
+2. Approach is routed through nested zones.
+3. Operator bodies require prior state transformation.
+4. Seven-day preparation produces eighth-day operational activation.
+5. Fire can emerge from the same centre with radically different outcomes.
+6. Unauthorized entry/action can convert interface from beneficial to lethal.
+7. Outside-camp removal is a genuine externalization route.
+8. Operator internal condition/access rules matter.
+
+Controls:
+- sacrificial fire is cultic/theological, not evidence of plasma;
+- “strange fire” cause is uncertain;
+- Nadab/Abihu are two historical/narrative brothers, not halves of one person;
+- outside camp is social/sacred geography, not another world.
+
+### Pair / number register
+
+- Aaron's first operator generation: Aaron + sons.
+- Nadab / Abihu: **2 parallel failed operators**.
+- Their firepans: **2**.
+- ordination: **7 days**.
+- operational inauguration: **day 8**.
+- core binary categories introduced: holy/common; unclean/clean.
+
+### Sources logged
+
+Primary:
+- Leviticus 1–10.
+
+Scholarly:
+- “The Incident of Nadav and Avihu,” TheTorah.
+- “How God was Sanctified through Nadav and Avihu's Death,” TheTorah.
+- “The Cause of Nadav and Avihu's Death: Incense Smoke?” TheTorah.
+- “Nadav and Avihu Diminish YHWH's Glory at the Tabernacle's Inauguration,” TheTorah.
+- Jacob Milgrom's Leviticus work as summarized in scholarship on ritual purgation.
+- Sefaria text of Leviticus 10.
+
+**Section 23 remains in progress.**  
+Next under anti-repeat protocol: **Leviticus 11–15 — clean/unclean state transitions, exclusion/re-entry, two-bird purification pair, washing/waiting cycles, and whether the system behaves more like moral sorting or temporary access-state management.**
