@@ -53982,3 +53982,1975 @@ Carry forward the master timeline protocol:
 - keep number/timing register;
 - keep source/text controls;
 - append every substantive block immediately.
+
+
+---
+
+# SECTION 34 progress A — 2 Samuel 1–6
+## Reported versus actual handoff, split kingdom geometry, paired combat at a pool, strength-gradient transfer, convergence on one centre, breach-flow warfare, and the Ark's two-stage entry into Jerusalem
+
+### Anti-repeat result
+
+The canonical roadmap was checked before beginning.
+
+- **Section 33 — 1 Samuel 16–31** is complete.
+- **Section 34 — 2 Samuel** is the first unfinished canonical roadmap entry.
+- No completed Section 34 research block occurs later in the ledger.
+- Current canonical progress before this block: **33 / 88 = 37.5%**.
+
+### Timeline rule
+
+This section continues directly from 1 Samuel 31.
+
+The key question is no longer merely:
+**who becomes king?**
+
+It is:
+**how does a system with a dead old centre, surviving fragments, two claimant-centres, divided territory, mobile military fields and a displaced sacred object become one new centred system—and what breaks, transfers, converges or remains outside during that process?**
+
+Names are retained for source reconstruction. Geometry/process remains primary.
+
+---
+
+# 2 Samuel 1 — royal-state information and royal tokens reach the successor, but the successor refuses the messenger's claimed transfer mechanism
+
+The book begins by explicitly synchronising the two tracks left open at the end of 1 Samuel.
+
+David:
+- has returned from striking Amalek;
+- remains at Ziklag for **two days**.
+
+On the **third day**:
+- a man comes from Saul's camp;
+- clothes torn;
+- earth on head;
+- falls to the ground before David.
+
+So the first movement of 2 Samuel is:
+
+**northern old-centre collapse**
+→ messenger escapes field
+→ travels south
+→ reaches successor network on third day
+→ information about terminal event crosses between the previously separated tracks.
+
+The repeated third-day language around Ziklag is an important narrative synchronisation marker.
+
+Do not convert it into a cosmological cycle number without wider evidence.
+
+---
+
+## The messenger presents a different terminal sequence from 1 Samuel 31
+
+1 Samuel 31 gave the narrator's sequence:
+
+**Philistine pressure**
+→ Saul critically wounded
+→ armour-bearer refuses to kill him
+→ Saul falls on his own sword
+→ armour-bearer follows.
+
+The Amalekite in 2 Samuel 1 claims:
+
+**Saul already fallen / unable to survive**
+→ Saul asks Amalekite to stand beside him
+→ Amalekite delivers final blow
+→ removes crown from head + bracelet from arm
+→ carries both to David.
+
+This discrepancy must remain visible in the master timeline.
+
+Possible readings in scholarship include:
+- the Amalekite lies for hoped-for reward;
+- he gives a compatible completion of the prior scene;
+- the narratives preserve differing traditions.
+
+The text itself does not give us permission to erase the difference.
+
+For the geometry project, the secure fact is:
+**the old centre's royal markers are physically carried from the collapsed northern field to the rising southern centre by an intermediary who claims to have completed the old centre's death.**
+
+### Head-marker and arm-marker move separately from the old body
+
+The messenger brings:
+- **crown/diadem from the head**;
+- **bracelet/armlet from the arm**.
+
+This is another post-collapse disassembly/transfer process.
+
+At the end of 1 Samuel:
+- head;
+- armour;
+- body
+
+were routed separately by Philistines.
+
+Now another tradition/report adds:
+- head-associated royal marker;
+- arm-associated royal marker
+
+moving toward David.
+
+The old regime's material identity is being **distributed into separate channels** after the centre collapses.
+
+---
+
+## David refuses to accept direct predecessor-killing as legitimate handoff
+
+The messenger appears to expect the death report and royal tokens to create a favourable transfer.
+
+Instead David focuses on:
+**you put forth your hand to destroy the anointed centre.**
+
+The messenger is killed on the basis of his own claim.
+
+This continues the strongest rule from 1 Samuel 24 and 26:
+
+**successor refuses direct hand-removal of predecessor**.
+
+Even after the predecessor is dead, a messenger who claims that transfer mechanism is rejected.
+
+Thus the handoff is narratively protected from becoming:
+
+**David or David's agent kills Saul → takes crown**.
+
+The intended succession route is instead:
+
+**old system collapses elsewhere**
+→ **news/tokens arrive**
+→ **successor mourns**
+→ **successor later receives rule through separate regional recognition**.
+
+That distinction is central.
+
+---
+
+## Clothing tears again at a transition boundary
+
+David and his men:
+- seize their garments;
+- tear them;
+- mourn;
+- weep;
+- fast until evening.
+
+The Samuel narrative has repeatedly used clothing/fabric at transfer points:
+- Samuel's robe tears → kingdom transfer announced;
+- Jonathan transfers garments/weapons → successor gains status material;
+- David cuts Saul's robe edge → access without killing;
+- messenger arrives with torn clothes → failed regime/death information;
+- David and group tear clothes → collective reception of collapse.
+
+The safe process-level pattern is:
+
+**fabric integrity is repeatedly broken or transferred at changes of political/relational state**.
+
+Do not infer literal cosmic fabric mechanics from the literary repetition.
+
+---
+
+# The lament — fallen height, paired figures, directional weapons, and “not divided” in death
+
+David's lament preserves several geometrically useful expressions.
+
+### High place → fall
+
+The repeated cry is:
+**the mighty have fallen**.
+
+Saul/Jonathan are associated with:
+- high places/heights;
+- Mount Gilboa;
+- fallen bodies.
+
+This is a simple:
+**high/status/height**
+→ **down/fall**
+transition.
+
+### Pair remains joined across terminal state
+
+The lament says Saul and Jonathan:
+**were not divided in their death**.
+
+This is important because the prior narrative increasingly separated Jonathan relationally from Saul and coupled him to David.
+
+At terminal battle, however:
+**old centre + linked son/offshoot collapse in same field and are recombined poetically as a pair.**
+
+The pair therefore changes function over the timeline:
+- warrior pair / father-son;
+- politically strained pair;
+- Jonathan-David bridge;
+- terminal Saul-Jonathan paired memory.
+
+Names matter less than the rule:
+**pairing can change through phases and then be reasserted at closure.**
+
+### Bow and sword are described as directional non-returning tools
+
+Jonathan's bow:
+**does not turn back**.
+
+Saul's sword:
+**does not return empty**.
+
+This is conventional warrior praise, but the geometry is explicit:
+**outgoing weapon path → effective contact → no empty return**.
+
+The lament is also designated for teaching the **bow** to Judah.
+
+So the dead old regime's battle-memory becomes **transmitted training/information** into the successor population.
+
+A collapsed system can therefore leave:
+**not only material remnants but procedural memory**.
+
+---
+
+# 2 Samuel 2 — one dead centre becomes two live political centres
+
+David does not simply march into Saul's vacated position.
+
+He first inquires:
+**shall I go up?**
+
+Answer:
+**go up → Hebron**.
+
+David moves:
+- himself;
+- two wives;
+- his men;
+- each man's household
+
+**up into the Hebron region**.
+
+This is not merely one person taking office.
+
+It is a **population/household migration into a new centre**.
+
+At Hebron:
+- Judah anoints David king.
+
+But Abner:
+- takes Ish-bosheth;
+- moves him to Mahanaim;
+- establishes him over much of Israel.
+
+So the immediate post-Saul geometry is:
+
+**one former kingdom**
+→ old centre removed
+→ **two successor-centres emerge**.
+
+One:
+**Hebron / Judah / David**.
+
+Other:
+**Mahanaim / Israel / Ish-bosheth + Abner**.
+
+This is a genuine political bifurcation.
+
+The transition is therefore not:
+**Saul → David**.
+
+It is:
+**Saul collapse → split field → competing centres → prolonged convergence process**.
+
+---
+
+## Jabesh becomes a bridge-memory between old and new centres
+
+David is told that Jabesh-Gilead buried Saul.
+
+He sends messengers:
+- praises their loyalty to Saul;
+- offers kindness;
+- tells them Saul is dead and Judah has anointed David.
+
+This is a deliberate attempt to connect:
+**a node strongly linked to the old centre**
+to
+**the rising Judah centre**.
+
+The important process:
+**memory/loyalty to predecessor is not erased; it is used as a possible bridge into successor allegiance.**
+
+This matches the Vardath rule that successor states may inherit selected continuity rather than requiring total predecessor erasure.
+
+---
+
+# Pool of Gibeon — two political fields become literal opposite-side geometry
+
+The two military networks move out.
+
+Abner/Ish-bosheth's servants:
+→ Gibeon.
+
+Joab/David's servants:
+→ Gibeon.
+
+They meet at the **pool of Gibeon**.
+
+The text explicitly places them:
+
+**one group on one side of the pool**
+↔ **water/pool in between**
+↔ **other group on opposite side**.
+
+This is one of the cleanest literal two-force geometries yet in the Bible pass.
+
+It is not metaphorical:
+**two political fields are spatially arranged on opposite sides of one water node.**
+
+### Large fields compress into matched 12 + 12
+
+Rather than immediately releasing both armies, a smaller set is selected.
+
+- **12** from Benjamin/Ish-bosheth side;
+- **12** from David's side.
+
+They **pass over**.
+
+So:
+
+**two broad forces**
+→ opposed across water
+→ equal-number samples selected
+→ representatives cross boundary
+→ matched pairs engage.
+
+This resembles the 1 Samuel 17 compression:
+**army A + army B → representative encounter in central interspace**.
+
+But here it is not one-versus-one.
+
+It is:
+**12 ↔ 12**.
+
+### Each pair locks head-to-head and falls together
+
+Each combatant:
+- grasps his opponent by the head;
+- drives sword into opponent's side;
+- both sets fall together.
+
+This is almost a mechanical **mutual lock and simultaneous collapse**.
+
+Process:
+
+**paired opponents**
+→ head-level coupling
+→ reciprocal penetration
+→ both sides fall
+→ local matched combat expands into full battle.
+
+This is the opposite of a clean winner-takes-field single combat.
+
+The compressed pair-zone fails catastrophically and releases the larger war.
+
+### Local pair-collapse propagates outward into whole-field battle
+
+After the 12+12 fall:
+- battle becomes severe;
+- Abner/Israel field is beaten by David's servants.
+
+Again:
+
+**small central representative event**
+→ **large surrounding field changes state**.
+
+This is becoming a recurrent narrative process family.
+
+---
+
+## Asahel — straight-line pursuit refuses all lateral branches
+
+Asahel pursues Abner.
+
+The text repeats that he:
+**does not turn right or left**.
+
+Abner explicitly offers lateral alternatives:
+- turn right;
+- turn left;
+- take another target.
+
+Asahel refuses.
+
+This produces a path-choice geometry:
+
+**single pursuer locked on one forward target**
+→ lateral branches offered
+→ branches rejected
+→ direct route maintained.
+
+The result:
+Abner uses the **rear end/butt of the spear**;
+it penetrates Asahel and comes out behind him;
+Asahel falls and dies at that exact place.
+
+The encounter is a strong warning about **over-constrained routing**:
+a component that refuses every available branch remains locked onto a collision path.
+
+### The fall-point becomes a local stop-node
+
+Everyone who reaches the place where Asahel lies:
+**stands still**.
+
+So a body at a path-location changes the movement of later traffic.
+
+Process:
+**moving pursuit route**
+→ death/fall at one point
+→ point acquires memory/obstruction effect
+→ following components halt there.
+
+This resembles the wider project rule:
+**an event can change the later function of a location without moving the location itself.**
+
+---
+
+## Broken field reconverges into one defensive band on a height
+
+Benjamin's survivors:
+- gather behind Abner;
+- become **one band**;
+- stand on top of a hill.
+
+This is:
+**distributed retreating fragments**
+→ converge around surviving commander
+→ form one compact body
+→ occupy high ground.
+
+Joab's pursuing field approaches.
+
+Then speech replaces weapon flow.
+
+### Horn shuts down pursuit across both fields
+
+Abner asks how long the sword will devour.
+
+Joab blows a horn.
+
+Immediately:
+- all the people stand still;
+- pursuit stops;
+- fighting stops.
+
+So one acoustic signal changes the state of a large distributed field:
+
+**active pursuit/combat**
+→ horn signal
+→ field-wide inhibition
+→ separation.
+
+This is an important control/process class:
+**a small information pulse can switch a large moving system from active to inactive without destroying its components.**
+
+### Night separation and water crossing
+
+Abner's group:
+- travels all night through Arabah;
+- **crosses the Jordan**;
+- reaches Mahanaim.
+
+Joab:
+- regathers his people;
+- returns;
+- travels through night;
+- reaches Hebron at daybreak.
+
+Thus the first direct two-centre collision ends:
+
+**opposite sides**
+→ central pair-collapse
+→ broad battle
+→ compact hill-band
+→ signal stop
+→ branches withdraw in opposite directions
+→ water crossing re-establishes political separation.
+
+---
+
+# 2 Samuel 3 — long war becomes a measurable strength gradient between the two houses
+
+The chapter states the process explicitly:
+
+**house of David → stronger and stronger**
+while
+**house of Saul → weaker and weaker**.
+
+This is one of the cleanest **paired gradient** descriptions in the corpus.
+
+The transfer is not instant.
+
+It is a prolonged inverse relationship:
+
+**A ↑ while B ↓**.
+
+This is exactly the kind of state-gradient the final geometry timeline needs to preserve.
+
+---
+
+## Abner becomes the transfer-interface between the weakening and strengthening systems
+
+Abner is strong inside the Saul house.
+
+A dispute with Ish-bosheth causes him to reverse allegiance.
+
+His own language is explicitly:
+**transfer the kingdom from the house of Saul**
+→ **set up David's throne over Israel + Judah**
+→ from **Dan to Beer-sheba**.
+
+This is unusually direct process vocabulary.
+
+Abner shifts from:
+**supporting one centre**
+to
+**acting as bridge that will move the surrounding field to the rival centre**.
+
+The human name matters less than the structural role:
+**a powerful internal component of the weakening system becomes the transfer-interface into the strengthening system.**
+
+---
+
+## Michal becomes transfer-condition / relational cargo between the houses
+
+David will covenant with Abner on one condition:
+**Michal must be brought back**.
+
+She is taken from Paltiel.
+
+Paltiel:
+- follows behind;
+- weeps;
+- continues until Abner orders him to return.
+
+So one person is physically moved between relational/political networks.
+
+Process:
+
+**component attached to one household**
+→ central political covenant makes her transfer a condition
+→ component moved toward successor centre
+→ previous attachment follows
+→ transfer authority commands old attachment to stop/return.
+
+This is coercive human relationship material and must not be romanticized.
+
+For process tracking:
+**political convergence can require prior recovery/reassignment of contested relational cargo.**
+
+---
+
+## Abner propagates convergence through multiple nodes before entering David's centre
+
+Abner speaks with:
+- elders of Israel;
+- Benjamin;
+- then David at Hebron.
+
+He does not simply switch himself.
+
+He attempts to **carry the wider network with him**.
+
+Sequence:
+
+**internal high-capacity node changes alignment**
+→ communicates through surrounding nodes
+→ gains/coordinates support
+→ enters successor centre with 20 men
+→ feast/covenant-like reception
+→ intends to gather all Israel for final covenant.
+
+This is a deliberate **network-convergence operation**.
+
+---
+
+# Gate interruption — convergence interface becomes murder point
+
+David sends Abner away **in peace**.
+
+Joab learns of the visit.
+
+He:
+- sends messengers after Abner;
+- causes him to return;
+- takes him aside into the **middle of the gate**;
+- speaks quietly;
+- kills him there.
+
+This is one of the most important threshold inversions so far.
+
+The gate should have been the place through which:
+**the transfer-interface returns to help unify the fields**.
+
+Instead:
+**the transfer-interface is recalled into the threshold**
+→ **removed at the threshold**.
+
+Thus:
+
+**convergence route**
+→ **gate interception**
+→ **bridge component destroyed**
+→ **peaceful transfer process disrupted**.
+
+The gate itself is not causative.
+It is the location where a transfer process is deliberately broken.
+
+### Private killing forces public information repair
+
+Because the transfer-interface is killed inside David's city/threshold, David must prevent the larger Israelite field from interpreting the death as his action.
+
+He:
+- publicly separates himself from the killing;
+- orders mourning;
+- walks behind the bier;
+- refuses food until sunset.
+
+The people observe this and accept that David did not order Abner's death.
+
+So:
+
+**bridge destroyed**
+→ system risks false causal attribution
+→ public ritual/information broadcast
+→ network state corrected
+→ convergence remains possible despite loss of intermediary.
+
+This is a key information-geometry principle:
+**after a critical node failure, system interpretation can determine whether the larger network fragments or continues converging.**
+
+---
+
+# 2 Samuel 4 — removal of the transfer-interface collapses the rival centre
+
+When Ish-bosheth hears Abner is dead:
+- **his hands become feeble**;
+- all Israel is disturbed/frightened.
+
+This is nearly diagrammatic:
+
+**rival centre depended on strong intermediary**
+→ intermediary removed
+→ centre loses effective “hands” / capacity
+→ surrounding field destabilises.
+
+The process is:
+**node removal → functional paralysis at centre → field-wide alarm**.
+
+Again, “hands” work as the language of operative capacity.
+
+---
+
+## Earlier news of centre-collapse had already injured a surviving branch
+
+The text inserts the history of Mephibosheth.
+
+At age five, news of Saul and Jonathan's death arrives.
+
+His nurse:
+- picks him up;
+- flees;
+- hurries;
+- he falls;
+- becomes lame in the feet.
+
+This is a clean **information → emergency transfer → bodily damage** chain.
+
+The old centre's collapse produces effects far beyond the battlefield:
+
+**news propagates**
+→ protective carrier initiates rapid movement
+→ carried child falls during transfer
+→ permanent mobility impairment.
+
+This is exactly why the final timeline must track **effects**, not just geometry.
+
+---
+
+## Two penetrators enter the rival centre's innermost domestic enclosure
+
+Rechab and Baanah:
+- enter Ish-bosheth's house;
+- do so around the heat/noon rest;
+- penetrate to his bed/chamber;
+- kill him;
+- cut off his head.
+
+The rival centre is no longer protected by a strong surrounding field.
+
+The progression mirrors earlier penetrations of Saul's camp/cave but with the opposite outcome.
+
+David penetrated Saul's protected centre:
+→ **refused to kill**.
+
+These two penetrate Ish-bosheth's centre:
+→ **complete destructive transfer**.
+
+The contrast is processually important.
+
+### Head separated and carried all night to the successor centre
+
+The assassins:
+- take Ish-bosheth's head;
+- travel through Arabah **all night**;
+- bring it to David at Hebron.
+
+Again:
+**old/rival centre**
+→ head removed
+→ head becomes mobile trophy/information object
+→ carried toward successor.
+
+This echoes the crown/bracelet transfer of chapter 1.
+
+But again David rejects this as a legitimate handoff mechanism.
+
+So twice in the first four chapters:
+
+**messenger/assassin brings material proof of rival/old centre's death**
+→ expects reward/integration
+→ successor kills the bearer instead.
+
+This strongly constructs the succession as:
+**not achieved by commissioned decapitation/assassination**.
+
+---
+
+## Killers' hands and feet are cut off; bodies displayed beside the same pool-city
+
+David orders the killers executed.
+
+Their:
+- **hands**
+- **feet**
+
+are cut off.
+
+Their bodies are hung beside the **pool in Hebron**.
+
+The head of Ish-bosheth is instead buried in Abner's grave.
+
+The process creates a deliberate body-part routing contrast:
+
+Assassinated king:
+**head → burial with transfer-interface**.
+
+Assassins:
+**hands/feet removed → bodies publicly displayed by pool**.
+
+At minimum:
+- hands = operative action;
+- feet = locomotion/path.
+
+The agents who used:
+**movement + hands**
+to penetrate/kill/carry the head
+are themselves represented after death by removal of those active extremities.
+
+This resembles the Dagon scene:
+**hands removed from a defeated figure**,
+but here the context is judicial/political display.
+
+Do not flatten them into one meaning.
+
+---
+
+# 2 Samuel 5 — split kingdom converges on one centre
+
+All tribes of Israel come to David at Hebron.
+
+They describe themselves as:
+**your bone and your flesh**.
+
+This is explicit body-integration language.
+
+Previously:
+**Judah centre**
+and
+**Israel centre**
+were separated.
+
+Now:
+**all tribes move toward Hebron**
+→ elders enter covenant
+→ David is anointed king over all Israel.
+
+This is the final convergence of the first post-Saul split.
+
+The sequence is:
+
+**one old centre**
+→ collapse
+→ two competing centres
+→ long strength gradient
+→ bridge attempts field transfer
+→ bridge killed
+→ rival centre loses hands/capacity
+→ rival centre killed
+→ all surrounding fragments converge
+→ one new centre.
+
+This is a textbook **bifurcation → competition → asymmetrical weakening → convergence** process.
+
+---
+
+## Third recognition/anointing phase reinforces gradual lock-in
+
+David's royal state has been established in multiple stages:
+1. anointed by Samuel while Saul still reigns;
+2. anointed by Judah at Hebron;
+3. anointed by all Israel at Hebron.
+
+Like Saul's earlier accession, the final regime is not one instantaneous switch.
+
+It locks in through repeated recognition at increasing scales.
+
+Process:
+**hidden/local selection**
+→ **regional centre**
+→ **whole-network centre**.
+
+This is a highly reusable master-timeline pattern.
+
+---
+
+# Jerusalem — a new centre is acquired after political convergence
+
+After unification, David does not remain in Hebron.
+
+He moves toward Jerusalem/Jebus.
+
+The city is represented as a **stronghold** whose inhabitants consider entry impossible.
+
+David takes the stronghold of Zion and makes it the **city of David**.
+
+Thus:
+**political network converges on David at old regional centre Hebron**
+→ unified centre then acquires a new spatial centre
+→ centre shifts to Jerusalem.
+
+This is important:
+**social/political convergence precedes central-place relocation**.
+
+The new capital is not merely where the convergence happened.
+It is a subsequently acquired node.
+
+---
+
+## Control: the ṣinnôr / “gutter” / “water shaft” must not be treated as secure geometry
+
+2 Samuel 5:8 contains an obscure Hebrew term **ṣinnôr**.
+
+Older interpretations often connect it to a:
+- water shaft;
+- channel;
+- gutter/conduit;
+- possibly a route into the city.
+
+Modern scholarship continues to debate the word and even the nature of the Jerusalem takeover.
+
+Some propose:
+- an assault via a water system;
+- another meaning for ṣinnôr;
+- even non-assault/peaceful-surrender readings of the episode.
+
+Therefore:
+**do not put “David climbs a water shaft into Jerusalem” into the master geometry timeline as a secure fact.**
+
+The secure data are:
+- Jerusalem is presented as difficult/inaccessible;
+- the stronghold changes control;
+- the text contains an obscure ṣinnôr-related instruction;
+- David then occupies/builds the stronghold.
+
+This is exactly the kind of attractive geometric detail that must remain controlled because the translation is uncertain.
+
+---
+
+## Building moves around and inward
+
+David builds:
+**round about from the Millo and inward**.
+
+The new centre therefore undergoes consolidation:
+**captured stronghold**
+→ occupation
+→ perimeter/internal building
+→ royal house construction with imported cedar/craftspeople.
+
+External Tyrian materials/skills now flow into the centre.
+
+So after political convergence:
+**regional network inward**
++
+**foreign material/technical flow inward**
+→ fortified/constructed capital centre.
+
+---
+
+# Philistine response — new centralisation triggers external field convergence
+
+When Philistines hear David has been anointed king over all Israel:
+- they mobilise to seek him;
+- spread themselves in the **Valley of Rephaim**.
+
+The new centre immediately creates a new external pressure geometry.
+
+### First encounter — direct ascent produces “breach of waters”
+
+David inquires:
+**shall I go up?**
+
+Answer:
+**go up**.
+
+The result is described:
+YHWH has **broken/breached** the enemies before David
+**like a breach of waters**.
+
+The site becomes Baal-perazim.
+
+This is one of the most directly Vardath-relevant images in this block, but it remains a battle simile.
+
+Raw geometry:
+
+**opposing field spread across valley**
+→ directed attack
+→ field boundary breaks
+→ comparison to water bursting through a containment boundary
+→ enemy field loses coherence.
+
+The wording is especially important because **perez/breach** recurs in the next chapter at Uzzah.
+
+Record the process word before interpreting it.
+
+### Enemy images are left behind
+
+Philistines leave their images/idols.
+
+David's men take them away.
+
+So the broken field leaves **residual symbolic cargo** behind.
+
+Again:
+**field defeat does not erase all material**
+→ remnants transfer to victor.
+
+---
+
+# Second Philistine encounter — same field shape, different route instruction
+
+Philistines return.
+
+They again:
+**spread themselves in the Valley of Rephaim**.
+
+The visible geometry is almost the same.
+
+But the instruction is explicitly different:
+
+**do not go directly up**.
+
+Instead:
+- make a **circuit** around/behind;
+- approach opposite the trees;
+- wait for an auditory signal;
+- when sound of marching/movement is heard in tree tops, then act.
+
+This is one of the strongest timeline controls yet:
+
+**same apparent external geometry**
+does **not**
+mean
+**same correct response**.
+
+First encounter:
+**direct ascent**.
+
+Second encounter:
+**indirect circuit → rear approach → wait for signal → movement**.
+
+This directly supports the user's geometry-first method while preventing simplistic pattern matching.
+
+The state variables must include:
+- phase;
+- orientation;
+- timing;
+- signal;
+- route.
+
+### Information precedes activation
+
+The second battle has a threshold signal:
+**sound in the tops of the trees**.
+
+Only after it appears does David move.
+
+Thus:
+**position acquired**
+→ **wait**
+→ **remote/upper auditory signal**
+→ **activation**
+→ enemy defeat.
+
+We should record this as a literary divine-war signal, not physical evidence of a plasma canopy.
+
+---
+
+# 2 Samuel 6 — the portable sacred centre is moved toward the new political centre
+
+Now that:
+- the kingdom is unified;
+- Jerusalem is taken;
+- external Philistine pressure has been beaten back,
+
+David gathers chosen Israelite manpower and attempts to bring the Ark toward Jerusalem.
+
+This matters in the macro-timeline:
+
+**political centre established**
+→ **spatial capital established**
+→ **portable sacred centre is then relocated into that capital**.
+
+The forms of centralisation are sequential, not simultaneous.
+
+---
+
+## First Ark movement reconstructs the cart-carrier system from 1 Samuel 6
+
+The Ark is placed on a **new cart**.
+
+This strongly recalls 1 Samuel 6, where:
+- Philistines used a new cart;
+- two cows carried the Ark toward Israel.
+
+Now:
+- oxen are involved;
+- Uzzah/Ahio guide the transport.
+
+The broader process is:
+
+**portable centre resting in house/hill**
+→ loaded onto wheeled carrier
+→ accompanied by celebration
+→ moved toward new capital.
+
+But unlike the straight successful return of 1 Samuel 6, this transfer destabilises at a threshing floor.
+
+---
+
+## Threshing floor becomes an instability point
+
+At the threshing floor:
+- the oxen stumble, release, shift, or otherwise destabilise the load—the Hebrew phrase is debated;
+- Uzzah extends his **hand** to the Ark and takes hold;
+- Uzzah is struck dead.
+
+The exact mechanics and exact nature of his “error” are textually/interpre­tively uncertain.
+
+Scholarly proposals include:
+- prohibited touch;
+- improper transport;
+- ritual error;
+- uncertain meaning of the Hebrew phrase attached to his death;
+- later priestly interpretation made clearer in Chronicles.
+
+Therefore the secure geometry is:
+
+**moving centre on cart**
+→ reaches threshing-floor node
+→ carrier/load becomes unstable
+→ human hand couples directly to sacred centre
+→ fatal rupture/break occurs
+→ procession stops.
+
+Do not claim more precise causation than the Samuel text securely supports.
+
+---
+
+# “Breach” turns inward — same process-word, different target
+
+David names the event **Perez-uzzah** because YHWH “broke out / made a breach” against Uzzah.
+
+This is immediately after chapter 5's:
+**Baal-perazim — enemies broken before David like a breach of waters**.
+
+This adjacency is extremely important to the master timeline.
+
+Chapter 5:
+**breach-force directed outward against enemy field**
+→ victory.
+
+Chapter 6:
+**breach-force erupts inside David's own transfer procession**
+→ fatal interruption.
+
+Therefore:
+
+**BREACH ≠ automatically good or bad**
+and
+**BREACH ≠ one fixed object**.
+
+Its effect depends on:
+- coupling;
+- target;
+- boundary condition;
+- transport state;
+- phase.
+
+This is precisely the user's cosmology methodology:
+**same process under different geometry can produce radically different effects.**
+
+---
+
+## Failed transfer causes immediate diversion into a side enclosure
+
+David becomes afraid and asks:
+**how can the Ark come to me?**
+
+He aborts the direct Jerusalem route.
+
+The Ark is diverted into:
+**house of Obed-edom**.
+
+It remains there **three months**.
+
+So the failed path becomes:
+
+**origin**
+→ attempted direct transfer
+→ breach/fatality
+→ route aborted
+→ centre diverted laterally into temporary house/enclosure
+→ observation interval.
+
+This is almost a textbook **failed gate/transport → temporary holding state** sequence.
+
+---
+
+## Same centre produces opposite local effect in the holding state
+
+At Obed-edom's house:
+- the Ark remains;
+- the household is blessed/prospers.
+
+The object has not changed identity.
+
+The relation/effect has:
+
+**moving/cart transfer state**
+→ lethal rupture.
+
+**stationary/house coupling**
+→ blessing.
+
+This repeats one of Section 32's strongest rules:
+**context/coupling matters more than object identity alone.**
+
+---
+
+## Information about the stable state triggers the second transfer attempt
+
+David is told:
+**Obed-edom's house is being blessed because of the Ark**.
+
+That information changes his decision.
+
+So:
+
+**failed transfer**
+→ temporary side-state
+→ observed positive effect
+→ information returns to centre
+→ centre reclassifies risk
+→ transfer restarted.
+
+Again:
+**information changes route/state**.
+
+---
+
+# Second Ark transfer uses a changed carrier relation
+
+The text now refers to:
+**those bearing/carrying the Ark**.
+
+After they have gone **six paces**:
+- sacrifice occurs.
+
+This differs visibly from the first cart-centred description.
+
+Later Chronicles makes priestly/Levitical transport rules far more explicit, and some scholars use that later account to explain the difference.
+
+For our timeline the safe statement is:
+
+**first attempt foregrounds new cart + oxen**
+versus
+**second attempt foregrounds human bearers + sacrifice**.
+
+That is a genuine change in the transport assemblage.
+
+Do not overstate exactly why the second succeeds using later texts alone.
+
+### Small initial interval is tested before full procession continues
+
+The six-paces note can be read processually as:
+
+**restart**
+→ short initial movement
+→ sacrifice/ritual checkpoint
+→ full joyful procession continues.
+
+Do not assume sacrifice happened every six steps; the text gives the six-step threshold once.
+
+---
+
+## Successful centralisation includes intense motion around the centre
+
+David:
+- dances/leaps;
+- wears linen ephod.
+
+The whole house of Israel:
+- brings the Ark up;
+- shouts;
+- horn sounds.
+
+Thus the successfully transferred centre is not surrounded by stillness.
+
+It is surrounded by:
+**rhythm + bodily movement + sound + collective procession**.
+
+At Jerusalem:
+- Ark is placed **in the midst** of the tent David prepared.
+
+So the journey completes as:
+
+**portable centre**
+→ movement
+→ interruption
+→ side enclosure
+→ restarted transfer
+→ collective activation
+→ **central placement inside new enclosure**.
+
+This is a major centralisation event in the master timeline.
+
+---
+
+# Central placement is followed by outward redistribution
+
+After sacrifices/blessing:
+David distributes food to:
+- all the people;
+- men and women;
+- each receives a portion/cakes.
+
+Then:
+**everyone departs to his/her house**.
+
+This is the same network geometry seen at the end of 1 Samuel 30:
+
+**central success**
+→ resources distributed outward
+→ people radiate back to many household nodes.
+
+So the new capital does not only pull inward.
+
+It also:
+**gathers → centres → blesses/distributes → releases outward**.
+
+That broad→centre→broad rhythm is highly relevant to the mature Vardath model.
+
+---
+
+# Michal at the window — old dynastic line becomes separated observer of the new centre's procession
+
+As the Ark enters:
+Michal, daughter of Saul:
+- looks **through a window**;
+- sees David leaping/dancing;
+- despises him.
+
+The window motif has changed role.
+
+1 Samuel 19:
+**window = escape aperture**
+through which David leaves Saul's threatened enclosure.
+
+2 Samuel 6:
+**window = observation boundary**
+through which Saul's daughter watches the new king/new sacred centre enter Jerusalem.
+
+Same architectural geometry.
+Different phase/function.
+
+This is another direct proof for the method:
+**symbol/object cannot be interpreted without timeline position.**
+
+### Old-line observer remains outside the collective movement
+
+The people are:
+- outside/in procession;
+- moving with centre;
+- shouting/dancing.
+
+Michal is:
+- inside;
+- behind window;
+- observing;
+- not participating.
+
+So the scene creates:
+
+**new centre + moving collective field**
+versus
+**old dynastic remnant + separated interior observer**.
+
+This is a final social/dynastic split at the moment of sacred centralisation.
+
+### Childlessness closes one dynastic transfer route
+
+The chapter ends:
+**Michal had no child to the day of her death**.
+
+The text does not explicitly state the biological mechanism or assign a direct cause beyond narrative placement.
+
+Do not invent one.
+
+But dynastically the effect is clear:
+**David + Saul's daughter do not generate a continuing child-line in this narrative**.
+
+Therefore one possible route for joining the Saul and David houses terminates.
+
+This is important later when the book becomes increasingly concerned with David's sons from other lines.
+
+---
+
+# SECTION 34A continuous geometry/effect timeline — 2 Samuel 1–6
+
+## Phase A — collapse information crosses from predecessor field to successor field
+
+old centre falls in north
+→ southern successor remains at restored Ziklag
+→ messenger crosses between tracks on third day
+→ death-state information reaches successor.
+
+**Effect:** previously separated event tracks reconnect informationally.
+
+---
+
+## Phase B — predecessor markers separate from predecessor body
+
+crown/head-marker + bracelet/arm-marker
+→ removed from dead/dying old centre
+→ carried toward successor.
+
+**Effect:** royal identity becomes mobile cargo after centre collapse.
+
+---
+
+## Phase C — successor rejects killing-as-handoff mechanism
+
+messenger claims direct final strike
+→ brings royal tokens
+→ successor rejects claimed act
+→ messenger killed
+→ successor mourns predecessor.
+
+**Effect:** regime transfer is prevented from being narratively defined as successor-directed predecessor killing.
+
+---
+
+## Phase D — old pair preserved as terminal memory
+
+Saul/Jonathan
+→ fall in same terminal field
+→ lament says not divided in death.
+
+**Effect:** pair that had changed alignment through prior phases is recombined at closure.
+
+---
+
+## Phase E — one old kingdom bifurcates into two live centres
+
+David/households → up to Hebron → Judah anoints.
+Abner/Ish-bosheth → Mahanaim → Israelite kingship.
+
+**Effect:** predecessor collapse initially increases political multiplicity rather than producing immediate unity.
+
+Vardath comparison:
+**reset/handoff can pass through a bifurcated intermediate state.**
+
+---
+
+## Phase F — old-loyalty node becomes possible bridge
+
+Jabesh burial loyalty to Saul
+→ David sends recognition + invitation signal.
+
+**Effect:** continuity with predecessor can become input to successor integration.
+
+---
+
+## Phase G — two fields occupy opposite sides of one water node
+
+David field
+↔ pool of Gibeon ↔
+Ish-bosheth field.
+
+**Effect:** political duality becomes literal spatial bilateral geometry.
+
+---
+
+## Phase H — broad fields compress into matched paired set
+
+12 from one side
+→ cross.
+12 from other side
+→ meet.
+pairs seize heads
+→ reciprocal sword penetration
+→ all matched combatants fall.
+
+**Effect:** equal compressed pair-interface fails and releases full-scale conflict.
+
+---
+
+## Phase I — straight path refuses branch and terminates in collision
+
+Asahel follows one target
+→ right/left alternatives offered
+→ no deviation
+→ reverse spear penetration
+→ fall.
+
+**Effect:** over-constrained routing removes escape alternatives.
+
+---
+
+## Phase J — fall-point changes later traffic state
+
+body falls at precise location
+→ later arrivals stop there.
+
+**Effect:** event creates functional memory in place.
+
+---
+
+## Phase K — fragmented force reconverges on height
+
+Benjaminite remnants
+→ gather behind Abner
+→ become one band
+→ occupy hilltop.
+
+**Effect:** scattered material reconstitutes into compact defensive node.
+
+---
+
+## Phase L — acoustic signal switches whole field off
+
+ongoing pursuit
+→ horn
+→ all stop
+→ fighting ceases
+→ groups separate.
+
+**Effect:** information pulse changes system state without destroying structure.
+
+---
+
+## Phase M — separation restored through night routes/water crossing
+
+Abner branch → all-night movement → Jordan crossing → Mahanaim.
+Joab branch → regroup → all-night return → Hebron.
+
+**Effect:** field contact ends by re-establishing geographic separation.
+
+---
+
+## Phase N — long inverse strength gradient
+
+house of David:
+**stronger → stronger**.
+
+house of Saul:
+**weaker → weaker**.
+
+**Effect:** transfer emerges as prolonged asymmetrical gradient rather than instantaneous replacement.
+
+---
+
+## Phase O — powerful component flips alignment and becomes transfer-interface
+
+Abner inside weakening house
+→ conflict
+→ reverses allegiance
+→ proposes transfer of whole kingdom
+→ contacts elders/Benjamin/David.
+
+**Effect:** internal component becomes bridge pulling surrounding network toward stronger centre.
+
+---
+
+## Phase P — contested relational component transferred before field convergence
+
+Michal
+→ taken from current household
+→ moved toward David
+→ former husband follows
+→ ordered to return.
+
+**Effect:** network merger includes forced reassignment of a human relationship.
+
+Control:
+this is coercive human action, not a neutral mechanical process.
+
+---
+
+## Phase Q — gate destroys bridge before merger completes
+
+Abner sent away in peace
+→ recalled
+→ drawn into gate
+→ killed there.
+
+**Effect:** the convergence path is interrupted exactly at a threshold.
+
+Vardath comparison:
+**bridge/gate phase can fail if transfer-interface is destroyed before fields finish coupling.**
+
+---
+
+## Phase R — public information repairs causal interpretation
+
+bridge killed
+→ network may blame successor
+→ public mourning/fasting
+→ wider field accepts successor did not order death.
+
+**Effect:** information coherence preserves political convergence after node failure.
+
+---
+
+## Phase S — loss of intermediary removes rival centre's operative capacity
+
+Abner dead
+→ Ish-bosheth's hands feeble
+→ surrounding Israel disturbed.
+
+**Effect:** centre collapses functionally when its effective “hands” are removed.
+
+---
+
+## Phase T — collapse-news damages a carried surviving branch
+
+Saul/Jonathan death news
+→ nurse lifts young Mephibosheth
+→ hurried flight
+→ fall
+→ permanent foot impairment.
+
+**Effect:** remote centre failure can produce bodily change through emergency transfer far from original event.
+
+---
+
+## Phase U — rival centre penetrated and head exported
+
+two assassins enter house/bedchamber
+→ centre killed
+→ head removed
+→ all-night transport to Hebron.
+
+**Effect:** rival centre converted into trophy/information cargo.
+
+---
+
+## Phase V — successor again rejects assassination as transfer route
+
+head delivered
+→ bearers expect reward
+→ successor executes them.
+
+**Effect:** destructive intermediary does not become authorised bridge into new system.
+
+---
+
+## Phase W — action extremities removed and displayed
+
+assassins' hands + feet cut off
+→ bodies displayed by Hebron pool
+while
+Ish-bosheth's head → burial with Abner.
+
+**Effect:** active-path components are decomposed and routed into different memory/display states.
+
+---
+
+## Phase X — divided fields finally converge on one biological/political body metaphor
+
+all tribes → Hebron
+→ “bone and flesh”
+→ covenant
+→ anointing
+→ one king over all Israel.
+
+**Effect:** bifurcated post-Saul system reconverges into one recognised centre.
+
+---
+
+## Phase Y — centre recognition expands in stages
+
+hidden anointing
+→ Judah regional anointing
+→ all-Israel anointing.
+
+**Effect:** regime lock-in occurs across increasing spatial/social scales.
+
+---
+
+## Phase Z — unified field acquires a new central location
+
+Hebron-centred unified kingship
+→ Jerusalem stronghold changes control
+→ David occupies/builds
+→ capital shifts.
+
+**Effect:** social centre and spatial centre become aligned only after separate stages.
+
+---
+
+## Phase AA — new centre draws construction material/skill inward
+
+Tyrian cedar/craftspeople
+→ move toward Jerusalem
+→ royal house built.
+
+**Effect:** established centre attracts external material/technical flows.
+
+---
+
+## Phase AB — external field spreads in valley in response to centralisation
+
+Philistines hear one Israelite king installed
+→ gather/spread in Rephaim.
+
+**Effect:** internal convergence triggers external counter-convergence.
+
+---
+
+## Phase AC — first engagement produces water-breach image
+
+direct ascent
+→ opposing field broken
+→ described as breach/burst of waters
+→ enemy residual images left behind.
+
+**Effect:** boundary rupture disperses field and transfers remnants.
+
+---
+
+## Phase AD — repeated visible geometry requires different path
+
+Philistines spread in same valley again
+→ direct route forbidden
+→ circuit behind
+→ position near trees
+→ wait
+→ upper/auditory signal
+→ activation.
+
+**Effect:** same form does not imply same process state.
+
+Vardath comparison:
+**orientation + timing + phase determine route through recurring geometry.**
+
+---
+
+## Phase AE — political/spatial centre pulls portable sacred centre inward
+
+unified kingdom + Jerusalem capital
+→ chosen population gathers
+→ Ark leaves hill-house
+→ moves toward Jerusalem.
+
+**Effect:** multiple forms of centralisation begin aligning.
+
+---
+
+## Phase AF — first transport state destabilises at threshing-floor node
+
+new cart + oxen + human guides
+→ threshing floor
+→ load/carrier instability
+→ hand couples to Ark
+→ fatal breach.
+
+**Effect:** attempted transfer aborts.
+
+---
+
+## Phase AG — same “breach” process changes target between phases
+
+Baal-perazim:
+**breach → enemy field breaks**.
+
+Perez-uzzah:
+**breach → internal transporter dies**.
+
+**Effect:** process direction/coupling determines whether rupture is external victory or internal catastrophe.
+
+This is a major Vardath-comparison rule.
+
+---
+
+## Phase AH — failed route diverts centre into temporary side enclosure
+
+Jerusalem route aborted
+→ Ark moved laterally to Obed-edom house
+→ three-month holding interval.
+
+**Effect:** failed transfer produces temporary stabilisation state rather than forced continuation.
+
+---
+
+## Phase AI — same centre changes effect under different coupling
+
+moving/cart coupling
+→ fatal disruption.
+
+stationary household coupling
+→ blessing/prosperity.
+
+**Effect:** object identity alone does not determine outcome.
+
+---
+
+## Phase AJ — observed stable state changes decision
+
+positive effect reported
+→ David reassesses
+→ second transfer attempt begins.
+
+**Effect:** feedback/information controls routing.
+
+---
+
+## Phase AK — carrier relation changes before successful transfer
+
+first attempt:
+**cart/oxen foregrounded**.
+
+second:
+**bearers + sacrifice foregrounded**.
+
+→ six-pace initial threshold
+→ continued procession.
+
+**Effect:** successful path follows a changed transport configuration.
+
+Control:
+the Samuel text does not by itself fully explain the causal difference; Chronicles elaborates later.
+
+---
+
+## Phase AL — portable centre reaches central enclosure
+
+collective motion/sound/dance
+→ Ark enters Jerusalem
+→ placed **in the midst** of prepared tent.
+
+**Effect:** portable sacred centre and political/spatial centre become co-located.
+
+---
+
+## Phase AM — centralisation followed by outward release
+
+central sacrifice/blessing
+→ food portions distributed to all
+→ population returns to individual houses.
+
+**Effect:** one centre redistributes resources back through many nodes.
+
+Vardath comparison:
+**broad field → centre → broad field**.
+
+---
+
+## Phase AN — old dynastic remnant watches through boundary instead of joining flow
+
+Michal behind window
+↔ David/Ark/people in moving procession.
+
+**Effect:** Saul-house remnant is spatially and affectively decoupled from new-centre activation.
+
+---
+
+## Phase AO — one dynastic merger route terminates
+
+David + Michal
+→ no child-line in narrative.
+
+**Effect:** biological continuation linking Saul's daughter to David does not produce successor branch.
+
+---
+
+# Section 34A — effect map for the global Bible/Vardath timeline
+
+2 Samuel 1–6 adds several especially important mechanisms:
+
+1. **Old-centre collapse can first produce bifurcation rather than unity.**
+2. **Political handoff may require a long inverse strength gradient between two successor systems.**
+3. **A transfer-interface can flip allegiance and try to pull an entire field across with it.**
+4. **Destroying the bridge at a gate can interrupt but not necessarily prevent eventual convergence.**
+5. **Information about who caused a node failure can determine whether the wider field accepts or rejects the new centre.**
+6. **A field can be literally bilateral across a water node before compressing into matched representative pairs.**
+7. **Matched pairs can mutually collapse and release a larger conflict instead of resolving it cleanly.**
+8. **Refusal to take a lateral branch can lock a component onto a terminal collision route.**
+9. **An acoustic pulse can switch an active field into a stopped state without dismantling it.**
+10. **The surviving system can converge socially first, then relocate its spatial centre afterward.**
+11. **A newly centralised field can provoke an external counter-field to spread/converge.**
+12. **“Breach” language can describe both outward field disruption and inward catastrophic rupture.**
+13. **The same recurring battlefield geometry can require opposite routing on a second pass.**
+14. **A portable centre can fail during transfer, stabilize in a side enclosure, and later resume movement under a changed carrier configuration.**
+15. **Temporary side-state observation can supply the feedback required to restart a failed transfer.**
+16. **A central node can gather material inward and later release food/resources outward to the field.**
+17. **An architectural boundary can shift function across the timeline: window as escape route earlier, window as separated observation boundary here.**
+18. **Dynastic integration and political integration are not identical; one can succeed while a particular biological merger route terminates.**
+
+---
+
+# Cumulative handoff timeline — from 1 Samuel 16 through 2 Samuel 6
+
+The longer sequence is now:
+
+**old centre still installed**
+→ active state shifts to hidden successor
+→ mixed overlap
+→ successor demonstrates field-reversal capacity
+→ old centre repeatedly tries to eject successor
+→ successor moves outside old centre
+→ successor nucleates mobile distributed network
+→ functional remnants of old institutions migrate toward successor
+→ predecessor/successor repeatedly approach without successor killing predecessor
+→ predecessor loses information connectivity
+→ successor diverted away from predecessor's terminal battle
+→ predecessor and dynastic branch collapse
+→ old material/remains distributed and re-enclosed
+→ collapse information + royal tokens reach successor
+→ successor rejects direct-killing handoff
+→ successor moves up with households to regional centre
+→ old kingdom bifurcates into Judah-centre + Israel-centre
+→ two fields meet across water
+→ matched pair-zone collapses into wider war
+→ long strength gradient develops
+→ internal bridge from weaker field flips alignment toward stronger
+→ bridge begins transferring network
+→ bridge killed at gate
+→ weaker centre loses operative capacity
+→ weaker centre assassinated
+→ whole tribal field converges on surviving centre
+→ one king recognised at increasing scales
+→ unified system captures/occupies new capital
+→ external field counter-converges
+→ breach disperses external field
+→ repeated external geometry is defeated by changed route
+→ portable sacred centre moves toward new capital
+→ first transfer ruptures internally
+→ sacred centre diverted to temporary holding enclosure
+→ stable local coupling observed
+→ transfer restarted with changed carrier relation
+→ sacred centre reaches middle of prepared central tent
+→ resources distribute outward
+→ old Saul-line observer remains separated at window.
+
+This is the clearest continuous sequence yet of:
+
+**state transfer → bifurcation → competition → bridge formation → bridge failure → asymmetrical collapse → convergence → centre relocation → external boundary testing → sacred-centre integration → outward redistribution.**
+
+---
+
+## Section 34A number / timing register
+
+Record without forcing:
+- two days at Ziklag;
+- messenger arrives third day;
+- David goes up with **two wives**;
+- Ish-bosheth age/reign figures in MT require chronological caution;
+- David at Hebron: **7 years 6 months**;
+- **12 + 12** paired combatants at Gibeon;
+- David loses 19 + Asahel; Abner/Benjamin losses given as 360 in MT;
+- David has six sons listed at Hebron in chapter 3;
+- Abner enters Hebron with **20 men**;
+- David age **30**, total reign **40** in MT;
+- Jerusalem reign **33 years**;
+- chosen Ark procession force **30,000**;
+- Ark at Obed-edom **3 months**;
+- second movement reaches **6 paces** before sacrifice.
+
+Do not build recurrence claims from these numbers until cross-corpus repetition is established and textual stability checked.
+
+---
+
+## Section 34A textual / scholarly controls
+
+- **2 Samuel 1 versus 1 Samuel 31:** the Amalekite's report differs from the preceding narrator's account. Preserve the discrepancy. Scholarship offers multiple explanations; do not silently harmonise.
+- The Samuel material across this transition has a complex compositional history. Literary coherence does not prove every episode derives from one historical layer.
+- The ages/reign lengths around Ish-bosheth and David create chronological problems in the received text and should not be treated as a precise universal clock without textual study.
+- The Gibeon pool scene is a literary account of internecine war; its 12+12 compression is strong geometry but not a claim of ritual cosmic enactment.
+- Human beings forcibly moved, killed, or displayed in these chapters are persons in violent political stories, not mechanical “components” in any ethical sense. Process terminology is only analytical abstraction.
+- 2 Samuel 4:6 has its own text-critical problem; do not overbuild a geometric reading on fine details of the entry mechanism.
+- **Jerusalem capture / ṣinnôr:** the Hebrew is obscure. “Water shaft” is not a secure translation, and modern scholarship contains substantially different reconstructions of the city's takeover.
+- Baal-perazim's “breach like waters” is a literary battle image. It is highly relevant as process grammar but not physical evidence for Vardath hydraulics/plasma behavior.
+- The second Rephaim battle's sound in tree tops is presented as divine-war guidance. Record signal→activation structure without recasting it as measured atmospheric physics.
+- **2 Samuel 6 has textual variation** among MT, 4QSamᵃ, Greek witnesses and the later parallel in 1 Chronicles.
+- The Ark's first transport failure is causally ambiguous at several points: exact oxen action, Uzzah's error, and relationship to later priestly transport law are interpreted differently.
+- The second attempt clearly foregrounds “bearers” and sacrifice, but the detailed Levitical explanation is much more explicit in Chronicles; do not import all Chronicles details backward as though 2 Samuel states them.
+- The threshing-floor name varies across textual traditions (Nacon/Nodan/Nodab; Chronicles has Chidon), so do not attach cosmological significance to the proper name.
+- Michal's childlessness is explicit; a specific biological cause is not.
+- Recent scholarship has also read the Michal material as part of political/historiographic rhetoric surrounding the David/Saul houses; retain that possibility beside straightforward narrative reading.
+
+### Sources logged for Section 34A
+
+Primary:
+- Mechon-Mamre, **2 Samuel 1–6**.
+
+Controls / scholarship:
+- David G. Firth, **“The Accession Narrative (1 Samuel 27–2 Samuel 1)”**, retained from Section 33 for the tiled chronology crossing the book boundary.
+- Bill T. Arnold, **“The Amalekite's Report of Saul's Death: Political Intrigue or Incompatible Sources?”**
+- J. P. Fokkelman, **Narrative Art and Poetry in the Books of Samuel**, especially the crossing-fates treatment of Saul's demise and David's rise.
+- Christian Vogel, **The Nature of David's Kingship at Hebron: An Exegetical and Theological Study of 2 Samuel 2:1–5:5**.
+- Marvin A. Sweeney, **1–2 Samuel**, for literary/geographic framing.
+- Rachelle L. Gilmour, **Representing the Past: A Literary Analysis of Narrative Historiography in the Book of Samuel**.
+- Takamitsu Muraoka, text-critical work on **2 Samuel 4:6**.
+- scholarly studies of 2 Samuel 5:6–9 as an interpretive crux shaped by oral/scribal tradition.
+- Edward D. Herbert, work on **2 Samuel 5:6** in light of 4QSamᵃ.
+- recent Vetus Testamentum work questioning conventional readings of Jerusalem's conquest and the **ṣinnôr**.
+- recent materiality analysis of the Ark Narrative, including the two-procession structure of 2 Samuel 6 and textual instability across MT/4QSamᵃ/LXX/Chronicles.
+- **“Rereading the Ark Narrative: An Exilic Word of Hope and Warning”** for redactional comparison.
+- Hebrew-style/literary analysis of **2 Samuel 6**, while preserving disagreement over why the second procession succeeds.
+- scholarship on political rhetoric in the Abner/Michal material retained as a control against naive biographical reading.
+
+**Section 34 remains in progress.**
+
+### Next process block
+
+**2 Samuel 7–12**:
+- proposed permanent house for Ark versus promised “house”/dynasty for David;
+- stationary enclosure versus mobile tent history;
+- David's expansion and tribute/cargo flows;
+- Mephibosheth brought from marginal location to king's table;
+- Ammon/Aram two-front war geometry and Joab/Abishai split-force cooperation;
+- Bathsheba/Uriah and the rooftop/downward information chain;
+- attempted placement of Uriah into kill-zone;
+- Nathan's story as indirect information interface;
+- child illness/death and David's abrupt state reversal after death;
+- capture of Rabbah and transfer of crown/material.
+
