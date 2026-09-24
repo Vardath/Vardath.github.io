@@ -40358,3 +40358,586 @@ Scholarly/source-critical:
 Next under anti-repeat protocol:
 **Joshua 9–12 — Gibeonite deception and covenant binding, five-king cave enclosure/release/execution, sun/moon standstill pair, hail + battlefield sequence, southern/northern campaign compression, Hazor/fire, and source-critical comparison of conquest summaries with archaeology and later settlement traditions.**
 
+## SECTION 27 progress C — Joshua 9–12: deceptive input binds the system, five kings move through sealed-cave states, sun/moon form a celestial pair, and the “complete conquest” summary breaks against other traditions
+
+### Anti-repeat check
+
+Section 27A–B are saved.  
+No Joshua 9–12 progress exists later in the ledger.  
+Continuing only from the Gerizim/Ebal enactment checkpoint.
+
+---
+
+## Joshua 9 — Gibeonite deception is an information-validation failure, not a boundary failure
+
+The Gibeonites:
+- live nearby;
+- disguise themselves as distant travelers;
+- use worn sacks;
+- worn wineskins;
+- patched sandals;
+- stale/dry bread.
+
+Their goal is to create a **false origin-state**.
+
+### The system accepts appearance without consulting the source
+
+Israel's leaders:
+- inspect/taste their provisions;
+- but **do not ask YHWH**;
+- accept the story;
+- make covenant/oath.
+
+This is an extremely important systems control:
+
+**observable data appears consistent**
+→ central actors accept it
+→ source-check omitted
+→ wrong classification enters system.
+
+The failure is not:
+- bad route;
+- wrong geography.
+
+It is **input validation**.
+
+### External appearance successfully masks true location
+
+The Gibeonites are:
+**near**
+while presenting as
+**far**.
+
+So:
+**visible state ≠ underlying state**.
+
+This strongly reinforces earlier controls:
+- Balaam cannot initially see angel;
+- Ai retreat can be real or feigned;
+- one form can conceal another status.
+
+### Covenant remains binding after deception is discovered
+
+After **3 days**:
+- Israel discovers Gibeonites are nearby.
+
+Yet leaders refuse to kill them because:
+- an oath has already been sworn.
+
+So the system-state change caused by the covenant **persists after input correction**.
+
+This is very important:
+
+**bad data**
+can still create
+**real downstream state**
+if a binding action has already been executed.
+
+### Gibeonites are rerouted into a service function
+
+Instead of destruction:
+- they become woodcutters;
+- water drawers;
+- for congregation/altar/house of God in the final tradition.
+
+So the outcome becomes:
+
+**targeted enemy population**
+→ deception
+→ covenant protection
+→ discovered
+→ not restored to original “enemy” state
+→ assigned new service role.
+
+This is another:
+**state transition is not rewindable simply by learning the truth**.
+
+### Three-day delay repeats as an information-discovery interval
+
+The truth becomes known:
+- after **3 days**.
+
+Again:
+three-day periods occur frequently,
+but units/functions differ.
+
+Do not normalize them into one hidden timer.
+
+---
+
+## Joshua 10 — covenant state forces Joshua to defend former outsiders
+
+When five Amorite kings attack Gibeon:
+- Gibeon calls Joshua for help;
+- Joshua responds.
+
+So the earlier covenant has converted:
+**former target**
+into
+**protected ally/client**.
+
+This proves the legal relational state has practical consequences.
+
+### Night movement precedes battle
+
+Joshua:
+- comes up from Gilgal;
+- marches **all night**.
+
+This places the attack transition at:
+**night movement → battle/day phase**.
+
+Record timing without forcing symbolism.
+
+### Hail and sword create two kill-routes in the final narrative
+
+Enemies flee.
+
+The text says:
+- large stones/hail from heaven strike them;
+- more die from hail than from Israelite sword.
+
+So the final narrative overlays:
+
+**human battlefield route**
++
+**vertical sky-to-ground projectile route**.
+
+This is a real two-process description.
+
+It is storm/theophanic warfare imagery,
+not evidence of plasma bombardment.
+
+---
+
+## Five kings — one matched leadership group moves through a full enclosure-state cycle
+
+The five kings:
+- flee;
+- hide in a cave at Makkedah.
+
+Joshua is told where they are.
+
+He commands:
+- roll **large stones** against cave mouth;
+- station guards;
+- do **not** stop pursuit.
+
+So the cave becomes a temporary holding enclosure.
+
+### Cave state 1 — open / entered
+
+Kings:
+→ enter cave voluntarily while fleeing.
+
+### Cave state 2 — sealed / occupants retained
+
+Large stones:
+→ cover mouth.
+
+Guards:
+→ maintain seal.
+
+Main army:
+→ continues external operation.
+
+This is a clean:
+**local containment while wider system continues moving**.
+
+### Cave state 3 — reopened / occupants extracted
+
+After pursuit:
+- Joshua orders cave opened;
+- five kings brought out.
+
+### Cave state 4 — public state change
+
+They are:
+- brought before Joshua;
+- commanders place feet on their necks;
+- executed;
+- hanged until evening.
+
+### Cave state 5 — resealed as tomb
+
+Bodies:
+- placed back into cave;
+- large stones placed again at entrance;
+- remain as memorial marker “to this day” in final narrative.
+
+Thus one location moves through:
+
+**open refuge**
+→ **sealed prison**
+→ **opened extraction point**
+→ **resealed tomb/memory site**.
+
+This is one of the strongest **same-place / multiple-phase** sequences yet.
+
+### Cave is not a gate
+
+Important control:
+nothing travels to another world.
+
+The cave is:
+- hiding place;
+- holding enclosure;
+- tomb.
+
+Its value is purely structural:
+**opening state and function change through time**.
+
+---
+
+## Sun / moon — paired celestial command in an older poetic fragment
+
+Joshua 10 contains a short poem:
+
+**Sun**
+→ Gibeon
+
+**Moon**
+→ Valley of Aijalon
+
+both commanded to:
+- be still / halt.
+
+The text then says:
+- sun stood still;
+- moon stopped;
+- until vengeance was completed.
+
+This is one of the clearest celestial pairs in the biblical narrative.
+
+### Sun / moon are coordinated but spatially distinct
+
+The pair is not:
+- one body split in two.
+
+They occupy:
+- different named locations/regions;
+- coordinated temporal action.
+
+Classification:
+- **P7/P2 coordinated celestial pair**.
+
+### The poem is cited from the Book of Jashar/Upright
+
+The text explicitly says the material is written in:
+**Book of Jashar / Book of the Upright**.
+
+This strongly suggests Joshua's prose narrative incorporates an older poetic source/tradition.
+
+Therefore:
+the sun/moon passage should not be treated automatically as a literal prose astronomical observation.
+
+### Final prose interprets the poem as prolonged battle-time
+
+The canonical narrative reads the event as:
+- an unusually long day / delayed sunset;
+- enough time to complete battle.
+
+But ancient poetry can use cosmic imagery rhetorically.
+
+Scholars debate the original sense.
+
+For Vardath:
+the safe result is:
+
+**paired celestial bodies are poetically held in coordinated suspension**.
+
+Not:
+**physical proof of time dilation or halted planetary rotation**.
+
+### This is not the Vardath fast-time mechanism
+
+Your current model's time effects concern:
+- changed adjacency;
+- differing world-relative temporal relation;
+- high-gradient throat possibilities.
+
+Joshua 10 instead presents:
+- battle needing more usable day;
+- sun/moon halted in poetic/theological narrative.
+
+The mechanisms are not the same.
+
+Keep the resemblance limited to:
+**abnormal perceived/celestial time-state imagery**.
+
+---
+
+## Southern campaign compression — many events become one sweeping success formula
+
+Joshua 10 later summarizes:
+- many kings/cities taken;
+- broad southern region defeated;
+- “all at one time” / one campaign framing.
+
+This is a literary compression.
+
+Compare Numbers/Deuteronomy:
+complex travel traditions repeatedly become shorter rhetorical summaries.
+
+Again:
+**summary sequence ≠ full historical mechanism**.
+
+---
+
+## Joshua 11 — northern coalition becomes another many→one battle aggregation
+
+Northern kings:
+- gather a very large coalition;
+- described as numerous as sand by sea;
+- with horses/chariots.
+
+Joshua attacks at waters of Merom.
+
+This forms:
+**many political nodes**
+→ one coalition concentration
+→ one battle collapse.
+
+### Horses / chariots are deliberately deactivated
+
+Joshua is told to:
+- hamstring horses;
+- burn chariots.
+
+Thus enemy movement technology is intentionally removed from future use.
+
+This is:
+**vehicle/network deactivation after capture**.
+
+Ordinary military logic,
+not cosmological symbolism.
+
+### Hazor alone is burned among mound-cities in the narrative
+
+Joshua 11 says:
+- Hazor is burned;
+- other mound cities are not burned in the same way.
+
+So even the conquest summary contains **differentiated city outcomes**.
+
+Again:
+catastrophic campaign ≠ identical processing of every location.
+
+### Hazor creates a major cross-book contradiction
+
+Judges 4–5 later depicts:
+- King Jabin of Hazor;
+- Hazorite domination;
+- Deborah/Barak conflict.
+
+This is difficult to harmonize with Joshua 11's claim that:
+- Joshua killed Jabin;
+- destroyed Hazor.
+
+Modern scholarship sees these as competing/overlapping traditions about Hazor's importance and defeat.
+
+This is an important source-history control:
+the Bible can preserve **multiple conquest memories for the same centre**.
+
+---
+
+## Joshua 11–12 — total-conquest rhetoric conflicts with incomplete-conquest traditions
+
+Joshua 11 concludes in sweeping terms:
+- Joshua took whole land;
+- gave it as inheritance;
+- land had rest from war.
+
+Joshua 12 catalogs defeated kings.
+
+But Joshua 13 immediately says:
+- **very much land remains to be possessed**.
+
+Joshua 15 and Judges 1 preserve:
+- Canaanite populations/cities not expelled.
+
+Modern archaeology also does not support a simple single-wave total conquest exactly matching Joshua 1–12.
+
+Therefore:
+the first half of Joshua is best treated as a strongly shaped conquest narrative,
+not a neutral campaign log.
+
+### This matters enormously for the cosmology project
+
+The text itself can transform:
+**partial / uneven / long-term processes**
+into
+**one totalizing event narrative**.
+
+That means mythic/biblical compression may be doing the same thing elsewhere.
+
+We must test:
+**sequence and source layers**
+before interpreting one dramatic passage as one literal global event.
+
+### King list = many nodes converted into counted memory
+
+Joshua 12 lists:
+- Sihon;
+- Og;
+- then western kings;
+- final western total **31 kings**.
+
+This is another:
+**complex campaign geography**
+→ **counted list/archive**.
+
+Useful for chronology/register,
+not hidden cycle arithmetic.
+
+---
+
+## SECTION 27C continuous sequence — Joshua 9–12
+
+**Gibeon**
+→ nearby people disguise as distant
+→ leaders inspect appearance
+→ fail source-check
+→ oath/covenant made
+→ 3 days later truth discovered
+→ state cannot simply rewind
+→ Gibeon rerouted into protected service role
+
+**five-king attack**
+→ covenant obligates Joshua to defend Gibeon
+→ all-night march
+→ battle
+→ hail + sword dual destruction routes
+
+**five kings**
+→ flee into cave
+→ cave sealed with great stones
+→ pursuit continues
+→ cave reopened
+→ kings removed
+→ executed
+→ returned to cave
+→ cave resealed as tomb/memory
+
+**celestial poem**
+→ sun at Gibeon
+→ moon at Aijalon
+→ both halted in coordinated poetic state
+→ battle completed
+
+**campaign compression**
+→ southern victories summarized
+→ northern coalition concentrated
+→ Hazor burned
+→ total-conquest formula
+
+**source correction**
+→ later Joshua/Judges traditions show land/populations remaining
+→ Hazor/Jabin tradition reappears
+→ “complete conquest” is not one uncontested historical layer.
+
+---
+
+## SECTION 27 strongest overall findings
+
+1. Joshua's succession repeatedly mirrors Moses while remaining distinct identity.
+2. Rahab's scarlet-window household strongly repeats the **marked enclosure / stay inside / destruction outside** grammar.
+3. Jordan crossing gives a central ark/priest station with upstream/downstream water differentiation.
+4. Two twelve-stone systems convert crossing into internal + external material memory.
+5. Land-entry phase switches provisioning from manna to local land food.
+6. Jericho gives an exact **6→7→7** timed encirclement sequence.
+7. Ark shifts roles across phases: guide / stationary crossing centre / mobile ritual centre.
+8. Achan gives a strong **hidden local fault → whole-system failure** model.
+9. Achan localization uses a precise **broad→narrow** selection cascade.
+10. Gerizim/Ebal becomes an enacted bilateral covenant landscape.
+11. Gibeon shows **false visible state can create irreversible downstream covenant state**.
+12. Five-kings cave gives a real **open→sealed→opened→resealed** place-phase cycle.
+13. Sun/moon are a coordinated celestial pair, but the passage is poetic/source-layered and does not establish physical time dilation.
+14. Joshua's conquest summaries show how complex histories can be compressed into one totalizing sequence.
+15. Hazor and incomplete-conquest traditions are major controls against reading Joshua 1–12 as a single literal campaign log.
+
+### Major controls
+
+- conquest violence is literary/theological and ethically serious; structural mapping does not validate the violence.
+- archaeology and internal biblical contradictions challenge a simple total-conquest historicization.
+- Gibeonite disguise is social deception, not shapeshifting.
+- cave enclosure is prison/tomb, not transit gate.
+- hail is storm/theophany imagery.
+- sun/moon passage incorporates older poetry and should not be treated as a modern astronomical measurement.
+- king totals are textual registers, not cycle proof.
+
+### SECTION 27 master pair / geometry register
+
+- Moses / Joshua — predecessor / successor.
+- Rahab / two spies — reciprocal rescue relation.
+- inside Rahab house / outside city — survival polarity.
+- Jordan banks — crossing sides.
+- ark/priest centre — stationary route centre.
+- 12 tribes / 12 stones — collective-to-material projection.
+- Gerizim / Ebal — blessing/curse landscape pair.
+- visible force / hidden ambush — complementary tactical pair.
+- five kings — matched leadership group within cave enclosure.
+- sun / moon — coordinated celestial pair.
+- Gibeon / Israel — deception→covenant state shift.
+- Joshua complete-conquest rhetoric / later incomplete-conquest traditions — narrative-history tension pair.
+
+### SECTION 27 master number register
+
+- Joshua crossing preparation: **3 days**.
+- spies: **2**.
+- Rahab hiding interval: **3 days**.
+- ark distance: about **2,000 cubits**.
+- Jordan memory representatives: **12**.
+- stone sets: **12 +12** in final narrative.
+- Jordan emergence: **month1/day10**.
+- Passover: **month1/day14**.
+- Jericho: **6 days ×1 circuit**, then **day7 ×7 circuits**.
+- priests/horns: **7 /7**.
+- Achan first-Ai deaths: about **36**.
+- Achan silver/gold: **200 /50 shekels**.
+- Gibeon discovery interval: **3 days**.
+- Amorite kings in cave: **5**.
+- sun/moon pair: **2**.
+- western defeated kings in Joshua 12: **31**.
+
+### Sources logged
+
+Primary:
+- Joshua 9–12.
+
+Scholarly/source-critical:
+- “Israel's Wood Choppers and Water Drawers” — TheTorah.
+- “Joshua's Altar on Mount Ebal: Israel's Holy Site Before Shiloh” — TheTorah.
+- “What Was the Book of the Wars of the Lord?” — for the Book of Jashar/Joshua 10 poem.
+- “Anything You Can Do, I Can Do Better — Joshua as Moses” — TheTorah.
+- “Israel's Incomplete Conquest of Canaan” — TheTorah.
+- “The Israelite Conquest of Jerusalem in the Bible: When and Who?” — TheTorah.
+- “Joshua's Conquest: A Cultural and Pedagogical Dilemma in Modern Israel” — TheTorah.
+- “Hazor's Standing Stones: What Do They Commemorate?” — Hazor/Jabin contradiction.
+
+## SECTION 27 status
+
+**SECTION 27 — JOSHUA 1–12: COMPLETE FIRST PASS.**
+
+### Next first unfinished roadmap section
+
+**SECTION 28 — JOSHUA 13–24**
+
+Saved priorities:
+- incomplete conquest as correction to chapters 1–12;
+- land-allotment geometry;
+- Caleb/Joshua continuity;
+- Zelophehad daughters' inheritance enactment;
+- Shiloh/Tent centralization;
+- remaining **7 tribes** and land survey;
+- east-Jordan altar crisis / boundary misunderstanding;
+- cities of refuge;
+- Levite cities;
+- Joshua farewell;
+- covenant at Shechem;
+- witness stone;
+- Joshua/Joseph/Eleazar deaths;
+- all pair structures, boundaries, numbers and continuity markers.
+
+Before beginning Section 28, apply the anti-repeat search.
+
