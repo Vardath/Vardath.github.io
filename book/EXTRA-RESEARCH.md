@@ -32717,3 +32717,472 @@ Scholarly/source-critical:
 
 **Section 23 remains in progress.**  
 Next: **Leviticus 25–27 — sabbatical/Jubilee clock, 7×7=49 → 50th year, month7/day10 horn, release/return to land/family, land as non-permanent property, sevenfold covenant escalations, exile/land-rest logic, vows/redemption appendix, and final Section 23 synthesis.**
+
+
+## SECTION 23 progress E — Leviticus 25–27: 7×7 land clock, fiftieth-year return, forced land-rest in exile and Leviticus synthesis
+
+### Anti-repeat check
+
+Section 23A–D are already appended.  
+No Leviticus 25–27 progress existed later in the ledger.  
+Continuing only from the sacred-time / twelve-loaf checkpoint.
+
+### Leviticus 25 — the land itself receives a 6 → 7 work/rest cycle
+
+The land law repeats the weekly pattern at a larger scale:
+
+**years 1–6**
+- sow;
+- prune;
+- gather.
+
+**year 7**
+- complete rest for land;
+- no ordinary sowing/pruning;
+- spontaneous produce remains available for food.
+
+This is a genuine **scale transformation of one time pattern**:
+
+**6 days + 7th-day Sabbath**
+becomes
+**6 years + 7th-year land Sabbath**.
+
+For the project this is useful evidence that biblical law deliberately reuses one temporal form at multiple scales.
+
+It does not make the year-cycle a physical catastrophe cycle.
+
+### Seven sabbatical cycles → 49 years
+
+Leviticus explicitly says:
+
+**7 sabbaths of years**
+=
+**7 × 7 years**
+=
+**49 years**.
+
+This is one of the clearest explicit multiplication structures in the Torah.
+
+Unlike many number correspondences elsewhere, no inference is needed.
+
+### Month 7 / day 10 triggers the Jubilee proclamation
+
+After the 49-year count:
+- a loud horn is sounded;
+- throughout the land;
+- **month 7**;
+- **day 10**;
+- explicitly the Day of Atonement.
+
+This links the individual/sanctuary purification date of Leviticus 16 to a society/land reset proclamation.
+
+That is extremely important structurally:
+
+**Day of Atonement**
+- removes/purges accumulated ritual/moral burden annually.
+
+**Jubilee proclamation**
+- on the same calendar date;
+- after 7×7 years;
+- announces release/return across the land.
+
+So the final-form book connects:
+**purification/reset of sanctuary/community**
+with
+**long-cycle restoration of social/land relations**.
+
+### Fiftieth year = release / return / non-cultivation
+
+The fiftieth year is:
+- hallowed;
+- release/liberty proclaimed;
+- each person returns to hereditary holding;
+- each returns to family;
+- land not conventionally sown/reaped.
+
+This is one of the strongest explicit **return-to-assigned-origin** cycles in the Pentateuch.
+
+Raw structure:
+
+**ordinary ownership/labour/history**
+→ accumulated displacement over decades
+→ fixed terminal phase
+→ public signal
+→ **release**
+→ **return**
+→ land rest
+→ new cycle.
+
+### Jubilee is not rewind
+
+This is important for the mature Vardath rule.
+
+The law does not say:
+- the previous 49 years never happened;
+- all memory/history vanishes;
+- people become their ancestors.
+
+Instead:
+- changed economic relations are reset;
+- ancestral holding/family relations are restored;
+- society continues forward.
+
+So Jubilee is a particularly good textual analogy for:
+
+**reset = forward restoration/handoff**
+rather than
+**time rewind**.
+
+### Land cannot be sold permanently
+
+Leviticus 25 gives the theological reason:
+- land ultimately belongs to YHWH;
+- Israelites are resident aliens/tenants relative to that ownership;
+- land sales therefore cannot be absolute forever;
+- redemption/return remains built into the system.
+
+This means property transfer is **time-limited**.
+
+The long-term cycle contains an invariant:
+**original allotted relation can reassert itself after temporary transfers**.
+
+### Property value is calculated by remaining time to Jubilee
+
+Sale price varies according to:
+- number of harvest years remaining before Jubilee.
+
+Thus the future reset point actively determines **present value**.
+
+This is a sophisticated time-state rule:
+
+**known future phase boundary**
+→ changes the meaning/value of every temporary transfer before it.
+
+For the Vardath timeline project, this is a useful conceptual model:
+a periodic endpoint can structure the entire preceding interval.
+
+### Person/land/family all return together
+
+The Jubilee is not only:
+- land return.
+
+It also includes:
+- release from Israelite debt-servitude in the relevant law;
+- return to family;
+- return to ancestral holding.
+
+So three relational systems are synchronized:
+
+**person**
++
+**kinship**
++
+**land**.
+
+This is a genuine multi-domain reset.
+
+### Historical-control: Jubilee may be ideal legislation
+
+A major scholarly caution:
+there is no clear biblical/historical evidence that the full nationwide Jubilee system was actually implemented as described.
+
+Some scholars interpret Leviticus 25 as **ideal/utopian social legislation**.
+
+Practical problems include:
+- the 49th year is already a sabbatical year;
+- the 50th is also non-cultivation in the final wording;
+- this appears to create consecutive fallow years;
+- the text answers food anxiety with promised extraordinary sixth-year yield.
+
+Therefore:
+record the cycle as **textually explicit**,
+but do not treat it as independently verified historical chronology.
+
+### 49 / 50 problem
+
+The final text clearly states:
+- 49 years are counted;
+- **50th year** is Jubilee.
+
+Later Jewish calendrical interpretation developed complex rules around whether Jubilee stands outside or overlaps sabbatical counting.
+
+For our current first pass:
+keep the final text's explicit scheme:
+**7×7 = 49 → fiftieth year Jubilee**.
+
+Do not invent a 49-year or 50-year physical catastrophe cycle from it.
+
+### Leviticus 26 — ordered environment as covenant response
+
+The blessing side says:
+- rains come **in their season**;
+- land yields produce;
+- trees fruit;
+- peace/security;
+- divine dwelling remains among people.
+
+This is another stable-world definition:
+**proper timing + environmental productivity + secure habitation + divine presence**.
+
+### Sevenfold escalation appears repeatedly in the curse sequence
+
+If covenant breach continues:
+the text repeatedly threatens punishment **sevenfold**.
+
+The sequence includes:
+- disease/fear;
+- enemy defeat;
+- skies like iron;
+- earth like copper;
+- failed yield;
+- wild animals;
+- pestilence;
+- famine;
+- city/sanctuary destruction;
+- dispersion among nations.
+
+“Sevenfold” may function idiomatically as intensified/full punishment rather than seven mathematically equal cycles.
+
+Therefore:
+record repeated **7× escalation language**,
+but do not convert it into a timed seven-stage physical clock without further evidence.
+
+### Sky iron / earth copper — locked environmental pair
+
+One curse image gives:
+
+**sky = iron**
+**earth = copper/bronze**
+
+with:
+- no useful productivity;
+- land failing.
+
+This is a paired upper/lower environmental closure image.
+
+For Vardath:
+it is structurally interesting as:
+**upper boundary unyielding + lower surface unproductive**.
+
+But it is agricultural curse imagery, not evidence of literal metal sky/earth layers.
+
+### Population removed → land finally receives its missed rest
+
+The most important chapter-26 connection to Jubilee:
+
+When people are scattered/exiled:
+- land becomes desolate;
+- **then the land rests**;
+- land “enjoys/makes up” its missed Sabbaths.
+
+This gives a striking feedback sequence:
+
+**population refuses scheduled land-rest**
+→ escalating disorder
+→ population removed
+→ land becomes empty/desolate
+→ **land receives rest automatically**.
+
+That is almost an enforced system reset.
+
+### Land / people can become decoupled
+
+Earlier:
+**people + land** are one covenant system.
+
+Under sanction:
+- people live in enemy lands;
+- ancestral land lies desolate.
+
+The coupling is broken.
+
+Then later covenant remembrance leaves open restoration.
+
+For Vardath:
+this is a useful **separation/reconnection** analogy,
+but not literal adjacent-world motion.
+
+### Exile is not total annihilation
+
+Leviticus 26 explicitly says that even in enemy lands:
+- Israel is not utterly rejected/destroyed;
+- covenant remains remembered.
+
+Thus:
+
+**system rupture**
+≠
+**identity annihilation**.
+
+This closely matches the project's preference for:
+**displacement + retained identity + possible restoration**
+over
+**total erasure**.
+
+### Chapter 26 closes the Holiness legislation
+
+Modern scholarship generally treats Leviticus 17–26 as a distinct Holiness corpus, with chapter 26 functioning as covenant sanctions/conclusion.
+
+Leviticus 27 is commonly treated as a later appendix.
+
+This source structure matters for our roadmap:
+Jubilee + sanctions form the natural climax of the Holiness system.
+
+### Leviticus 27 — valuation/redemption appendix
+
+Chapter 27 regulates:
+- vowed persons;
+- animals;
+- houses;
+- fields;
+- sanctuary dedications;
+- monetary valuations;
+- redemption with added value in some cases;
+- tithe rules.
+
+It returns repeatedly to the idea that a dedicated object/person/property can sometimes be **redeemed/substituted through valuation**.
+
+This is useful as another state/legal transformation:
+**ordinary ownership**
+→ **dedicated state**
+→ sometimes **redeemable back** through specified exchange.
+
+But it contributes relatively little to the physical Vardath geometry.
+
+### Whole Leviticus event/system grammar
+
+Leviticus is not primarily a travel narrative, so its strongest contribution is **state-processing architecture** rather than a single cosmic event story.
+
+The cleanest system sequence is:
+
+**portable sanctuary activated**
+→ offerings routed through controlled zones
+→ priests undergo embodied operator conversion
+→ day 8 operational activation
+→ correct fire consumes offering
+→ Nadab/Abihu unauthorized action
+→ same source-fire consumes operators
+→ access rules tightened
+→ clean/unclean states classified
+→ contact can propagate temporary status
+→ outside-camp exclusion
+→ timed cleansing/re-entry
+→ two birds split into death/release functions
+→ Day of Atonement restricts deepest access
+→ incense cloud shields entrant
+→ matched goat pair split by lots
+→ blood/life travels inward
+→ live burden-carrier travels outward
+→ handlers reset before re-entry
+→ holiness expands from sanctuary to whole community/land
+→ calendar fixes repeated sacred phases
+→ twelvefold Israel appears as 6+6 sanctuary bread
+→ 6-year land work / 7th-year rest
+→ 7×7 =49
+→ month7/day10 horn
+→ 50th-year release/return
+→ if land-rest/order refused, sevenfold sanctions escalate
+→ population expelled/scattered
+→ land takes forced rest
+→ covenant identity remains
+→ restoration remains possible.
+
+### Strongest Section 23 findings for Vardath comparison
+
+1. **Clean/unclean often behaves as a reversible access-state machine.**
+2. Same state can propagate through contact and collapse through washing/time.
+3. Re-entry is often **graded**, not instantaneous.
+4. Two-bird rite gives a matched pair split into **death + living-release** branches.
+5. Day of Atonement intensifies this into a two-goat pair split into **inward blood route + outward living-carrier route**.
+6. Aaron's **two hands** transfer collective burden to the outward carrier.
+7. Incense cloud is explicitly required as a **protective screen** during deepest entry.
+8. Blood and carcass from one organism can take **opposite spatial routes**.
+9. Handlers who move contamination outward must **wash/reset before re-entry**.
+10. Holiness legislation couples **population behavior and land state**.
+11. Sacred calendar makes time itself an access/order architecture.
+12. Twelvefold Israel appears in another projection: **12 loaves = 6+6**.
+13. Jubilee is an explicit **7×7 → 50th-year release/return cycle**.
+14. Jubilee is a particularly clean **reset≠rewind** control.
+15. Leviticus 26 gives **failed voluntary rest → population removal → forced land rest**.
+16. Even exile does not erase collective identity/covenant.
+
+### What Leviticus does NOT establish
+
+Leviticus does not establish:
+- future/past populated discs;
+- physical temporal adjacency;
+- plasma or Birkeland currents;
+- finger-trap lattice;
+- land physically transferred between worlds;
+- two goats as cosmic strands;
+- blood as an energy conduit in a modern physics sense;
+- Jubilee as a real 49/50-year catastrophe clock;
+- ritual impurity as infection or electromagnetic state.
+
+### SECTION 23 master pair register
+
+- **Nadab / Abihu** — cooperative failed operator pair.
+- **clean / unclean** — reversible status polarity in many contexts.
+- **two purification birds** — matched pair → death/release.
+- **two Day-of-Atonement goats** — matched pair → inward-death/blood vs outward-living carrier.
+- **two lots** — assignment mechanism creating divergent roles.
+- **blood / carcass** — components of one body routed inward/outward.
+- **people / land** — coupled feedback pair.
+- **holy / common** — status distinction.
+- **Aaron's shoulders 6+6 / table bread 6+6 / breastpiece 4×3** — multiple geometries for one twelvefold collective.
+- **49 / 50** — completion count / release year transition.
+- **population present / land inhabited** vs **population exiled / land resting** — coupling/decoupling states.
+
+### SECTION 23 master number/time register
+
+- priest ordination: **7 days**.
+- first operation: **day 8**.
+- impurity inspections: frequently **7 days**.
+- re-entry completion: often **day 8**.
+- two birds: **2**.
+- bird sprinkling: **7**.
+- two goats: **2**.
+- lots: **2**.
+- goat transfer hands: **2**.
+- Day of Atonement: **month 7 / day 10 / yearly**.
+- sanctuary bread: **12 = 6+6**.
+- Passover: **month1/day14**.
+- Unleavened Bread: **7 days**.
+- Sukkot: **7 days + day8**.
+- land work/rest: **6 years + 7th rest**.
+- Jubilee count: **7×7 =49 → 50th year**.
+- Jubilee horn: **month7/day10**.
+- covenant sanctions: repeated **sevenfold** escalation language.
+
+### Sources logged
+
+Primary:
+- Leviticus 25–27, Sefaria.
+
+Scholarly/source-critical:
+- Yairah Amit, “The Jubilee Law: Ideal Legislation.”
+- Julia Rhyder and modern scholarship on Leviticus 17–26 as Holiness legislation.
+- “Israel Redeemed or Rejected: Why the End of Leviticus Is Framed by Sinai.”
+- scholarship noting chapter 27 as a later appendix.
+- source discussions of Jubilee release/land restoration and the 49/50 problem.
+
+## SECTION 23 status
+
+**SECTION 23 — LEVITICUS: COMPLETE FIRST PASS.**
+
+### Next first unfinished roadmap section
+
+**SECTION 24 — NUMBERS 1–20**
+
+Priority from the saved roadmap:
+- camp geometry;
+- cloud movement;
+- seventy elders;
+- Miriam/Aaron vs Moses;
+- twelve spies / Joshua-Caleb;
+- Korah and earth opening;
+- fire;
+- Aaron's rod buds;
+- rock/water.
+
+Before beginning Section 24, run the anti-repeat search for Numbers 1–20 and its major stories.
