@@ -1,0 +1,106 @@
+name: One-off remove duplicate Joel 3 EXTRA block
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research-staging/cleanup-joel3-duplicate.trigger'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extra-research-append
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove verified second Joel 3 block with remote-race retry
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3 4 5 6 7 8; do
+            echo "cleanup attempt $attempt"
+            git fetch origin main
+            git reset --hard origin/main
+
+            python <<'PY'
+          from pathlib import Path
+
+          path = Path("book/EXTRA-RESEARCH.md")
+          text = path.read_text(encoding="utf-8")
+          marker = "# SECTION 56B4 — Joel 3:1–21"
+
+          occ = []
+          pos = 0
+          while True:
+              pos = text.find(marker, pos)
+              if pos < 0:
+                  break
+              occ.append(pos)
+              pos += len(marker)
+
+          if len(occ) == 1:
+              print("Duplicate already absent; only trigger removal needed.")
+          elif len(occ) == 2:
+              start = occ[1]
+              sep = "\n\n---\n\n"
+              prev_sep = text.rfind(sep, 0, start)
+              if prev_sep >= 0 and start - prev_sep < 20:
+                  start = prev_sep
+
+              # Preserve any Amos research that may have landed after the duplicate.
+              candidates = []
+              for heading in ["\n# SECTION 56C1", "\n# SECTION 56C", "\n# SECTION 57"]:
+                  p = text.find(heading, occ[1] + len(marker))
+                  if p >= 0:
+                      candidates.append(p)
+              end = (min(candidates) + 1) if candidates else len(text)
+
+              removed = text[start:end]
+              required = [
+                  "M56B4-23 — SUCCESSOR STABILITY CAN BE MARKED BY CONTINUED SOURCE PRESENCE AFTER SYSTEM TRANSITION",
+                  "Bradford A. Anderson, “Joel 3,”",
+                  "**Joel is now researched in substance inside SECTION 56B1–B4.**",
+                  "Before moving to Amos:"
+              ]
+              if not all(x in removed for x in required):
+                  raise SystemExit("Second Joel 3 block signatures do not match staged duplicate; refusing cleanup")
+
+              corrected = text[:start] + text[end:]
+              if corrected.count(marker) != 1:
+                  raise SystemExit("Cleanup did not leave exactly one Joel 3 heading")
+              path.write_text(corrected, encoding="utf-8")
+          else:
+              raise SystemExit(f"Expected one or two Joel 3 headings, found {len(occ)}")
+          PY
+
+            rm -f research-staging/cleanup-joel3-duplicate.trigger
+            git add -A
+
+            if git diff --cached --quiet; then
+              echo "Nothing to commit."
+              exit 0
+            fi
+
+            git commit -m "Remove duplicate Joel 3 EXTRA research block"
+
+            if git push origin main; then
+              echo "cleanup push succeeded"
+              exit 0
+            fi
+
+            echo "remote moved during cleanup; retrying from latest main"
+          done
+
+          echo "cleanup could not acquire a clean push window"
+          exit 1
