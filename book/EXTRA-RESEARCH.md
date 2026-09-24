@@ -149139,3 +149139,128 @@ Priority:
   treasury exposure / future transfer to Babylon;
 - determine whether **rolled-scroll heaven + reversed sun-shadow + desert/water/highway** adds stronger time/geometry material.
 
+
+
+---
+
+# CONTINUATION INTEGRITY CHECK — 2026-09-24 — before SECTION 49C
+
+This checkpoint was made against the **actual live `book/EXTRA-RESEARCH.md` body**, not against chat-history checkpoints.
+
+## Verified live endpoint
+
+The last genuinely completed research block is:
+
+**SECTION 49B — Isaiah 13–27**
+
+The first genuinely unfinished block is:
+
+**SECTION 49C — Isaiah 28–39**
+
+Therefore continuation must begin at **Isaiah 28**, not at an earlier checkpoint.
+
+## Repeated-append audit
+
+A heading-level audit of the live research archive found genuine older duplicated/overlapping append history, especially in parts of the **1 Kings / early 2 Kings** research. Examples include duplicated Section 35C / 1 Kings 9–11 material and overlapping later 1 Kings blocks.
+
+These older repetitions are **archive-history duplicates, not additional progress**.
+
+By contrast, the recent sequence from:
+- Proverbs / Tegsats;
+- Ecclesiastes;
+- Song of Songs;
+- Wisdom of Solomon;
+- Sirach / Ben Sira;
+- Isaiah 1–12;
+- Isaiah 13–27
+
+does **not** show a second appended copy of the completed section blocks.
+
+Do not restart or recount those recent sections.
+
+Do not automatically delete the older duplicate research during active continuation, because some overlapping passes contain additions that are not byte-for-byte identical. Treat them as duplicated research history until a separate controlled archive-cleanup pass can reconcile them without losing unique observations.
+
+## Current comparison target reverified against the book and living cosmology page
+
+Continue using the mature Vardath mechanism, not older simplified versions:
+
+**broad inhabited world-turn / distributed lattice**
+→ **activation**
+→ **two opposed spring-like strands stretch in opposite directions**
+→ **crossing / weaving / counterflow**
+→ **many-to-one convergence**
+→ **finger-trap / scroll / ladder / rod / throat**
+→ **temporary change in adjacency among inhabited world-turns**
+→ **capacity-limited and potentially two-directional transfer of atmosphere, water, heat, sediment, debris, land, life and information**
+→ **surface / atmosphere / population effects**
+→ **reopening**
+→ **world-turns become separated again**
+→ **successor equilibrium / new-beginning period**.
+
+From the present world's frame:
+- lower/previous world = **past-relative**;
+- present world = **our current interface**;
+- upper/next world = **future-relative**.
+
+But every world-turn is **inhabited and its own present to its inhabitants**.
+
+### Mandatory geometry questions remain
+
+For every scene:
+- what moves?
+- what stays fixed?
+- what rises while something falls?
+- what crosses over/under?
+- what splits and what rejoins?
+- what opens/closes?
+- what becomes rod / tree / mountain / ladder / pillar / serpent / woven enclosure?
+- what is transferred?
+- what changes state afterward?
+- what is the remnant?
+- what becomes the next stable centre?
+
+For every significant pair, continue testing whether the pair is:
+- ordinary distinct actors;
+- opposed directions;
+- two strands of one geometry;
+- before/after states;
+- successor carriers of one role;
+- upper/lower or past/future-relative projections;
+- carrier/operator;
+- literary duplication;
+- or no useful Vardath correspondence.
+
+### Evidence discipline
+
+The working aim remains a **timeline of geometries, transformations and effects**, not a list of matching names.
+
+Preserve:
+- source-level meaning;
+- textual variants;
+- literary structure;
+- historical setting;
+- conventional explanations;
+- negative controls;
+- hard mismatches.
+
+A Vardath correspondence becomes stronger when the **ordered mechanism** recurs, not merely when one image resembles another.
+
+## Resume now
+
+Proceed directly with:
+
+**SECTION 49C — Isaiah 28–39**
+
+in two safe append blocks:
+1. Isaiah 28–33;
+2. Isaiah 34–39;
+
+then integrate:
+- pair / two-force matrix;
+- Squatter-Man / central-axis screen;
+- continuous transformation timeline;
+- number/timing register;
+- textual/historical controls;
+- master Bible/Vardath additions;
+- next first unfinished research block.
+
