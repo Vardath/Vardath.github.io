@@ -62312,3 +62312,1367 @@ Continue with the **first unfinished section after 2 Samuel** in the master 88-b
 - literary geometry separated from literal chronology;
 - every completed block appended immediately so no research is lost.
 
+
+
+---
+
+# SECTION 35 progress A — 1 Kings 1–4
+## Two rival succession centres, water-adjacent acclamations, horn-triggered collapse of one field, altar-horn asylum, explicit boundary confinement, dream-to-judgment transfer, and two claimants resolved by preserving the whole living body
+
+---
+
+# 1 Kings 1 — David's centre still exists, but its bodily heat and active control are failing
+
+The opening image is not simply “David is old.”
+
+It emphasizes:
+- David is covered;
+- external coverings do not restore warmth;
+- a living attendant is sought to provide bodily heat;
+- Abishag is brought from across Israel to the king;
+- she serves him, but the text explicitly says he does not sexually “know” her.
+
+Processually:
+
+**old political centre remains in place**
+while
+**its biological capacity is failing**.
+
+The centre can still authorize succession,
+but others begin acting around the vacuum created by its weakness.
+
+This is the transition from:
+**active centre**
+to
+**succession-bearing centre**.
+
+---
+
+# Adonijah constructs a rival royal field before the old king is dead
+
+Adonijah says:
+**I will be king**.
+
+He prepares:
+- chariots;
+- horsemen;
+- fifty runners.
+
+This deliberately resembles Absalom's earlier pre-rebellion royal display.
+
+So the same **visible field-building technology** reappears:
+
+**claimant**
+→ royal transport/status apparatus
+→ runners before him
+→ public appearance precedes formal transfer.
+
+Names matter less here than process:
+**a successor candidate can begin constructing the external geometry of kingship before the central office formally moves.**
+
+---
+
+# The succession field immediately bifurcates into two support networks
+
+Adonijah has:
+- Joab;
+- Abiathar;
+- king's sons / Judahite servants invited to feast.
+
+Solomon's side has:
+- Zadok;
+- Nathan;
+- Benaiah;
+- David's bodyguard/mighty men;
+- Bathsheba;
+- eventually David's explicit order.
+
+So the old Davidic system divides into **two candidate-centred networks**.
+
+This is structurally similar to:
+- David/Ish-bosheth;
+- David/Absalom,
+
+but now the bifurcation occurs **inside the still-living old centre's succession space**.
+
+---
+
+# Two rival centres form near two water sites
+
+Adonijah's feast is at:
+**stone of Zoheleth beside En-rogel**.
+
+Solomon is taken to:
+**Gihon**.
+
+Exact archaeological identifications and route details are debated, but the text clearly gives two distinct named sites associated with water/spring geography around Jerusalem.
+
+The process is striking:
+
+### Rival centre A
+Adonijah:
+- feast;
+- sacrifice;
+- invited elite network;
+- self-claim.
+
+### Rival centre B
+Solomon:
+- royal mule;
+- priest + prophet + military/bodyguard support;
+- oil from Tent;
+- anointing;
+- horn;
+- broad public acclamation.
+
+This is not merely two men competing.
+
+It is:
+**two separately assembled succession fields operating at nearby but distinct nodes.**
+
+---
+
+# The weak old centre is reactivated by a two-stage information intervention
+
+Nathan instructs Bathsheba:
+- go in first;
+- present the succession problem;
+- while she is speaking, Nathan will enter;
+- confirm the report.
+
+Thus:
+
+**message 1**
+→ old centre receives claim.
+
+**message 2**
+→ independent-looking confirmation.
+
+The plan is explicitly designed to move David from passive ignorance to active decision.
+
+This is another example where:
+**information architecture changes political geometry before force does**.
+
+---
+
+# Bathsheba and Nathan frame the problem as a missing declaration from the centre
+
+Their question is essentially:
+**who is supposed to sit on the throne after you?**
+
+All Israel's eyes are said to be on David for the answer.
+
+So the succession crisis exists because:
+**the future centre has not been unambiguously declared by the present centre**.
+
+This is a very clean state-transition rule:
+
+**old centre weakens**
++
+**successor state ambiguous**
+→ competing fields form.
+
+Then:
+
+**old centre declares successor**
+→ ambiguity collapses.
+
+---
+
+# David's own mule functions as an identity/continuity carrier
+
+David orders Solomon to ride:
+**the king's own mule**.
+
+This is more than transport inside the story.
+
+The successor is physically carried by an object/animal associated with the old centre.
+
+Process:
+
+**old centre**
+→ transfers recognized royal carrier
+→ candidate rides it
+→ candidate is publicly moved toward anointing node.
+
+This is a continuity mechanism:
+**identity/status travels through an inherited carrier before throne occupation.**
+
+Do not over-symbolise the mule itself.
+
+The secure datum is that David explicitly specifies his own mount.
+
+---
+
+# Directional sequence — down to Gihon, then up to throne
+
+David's order is:
+
+**bring Solomon down to Gihon**
+→ anoint
+→ blow horn
+→ acclaim
+→ **come up after him**
+→ Solomon sits on David's throne.
+
+So the succession route has a real vertical directional sequence:
+
+**palace/centre**
+→ **down to water/anointing node**
+→ transformed/acclaimed
+→ **up to throne**.
+
+This is highly relevant to the Vardath timeline because it resembles other:
+**descent → transformation → ascent into new state**
+sequences.
+
+But it is ordinary Jerusalem topography and royal ritual, not proof of cosmic mechanics.
+
+---
+
+# Oil + horn + public sound activate the new centre
+
+At Gihon:
+- horn of oil comes from the Tent;
+- Solomon is anointed;
+- horn is blown;
+- people acclaim;
+- people follow upward;
+- music/rejoicing becomes so intense that the earth is described as splitting/rending with sound.
+
+The sequence is:
+
+**material marking**
++
+**acoustic signal**
++
+**mass public response**
+→ new kingship becomes socially active.
+
+The horn again functions as a system-state switch.
+
+Earlier in Samuel:
+- horn stopped battle;
+- horn activated Absalom's rebellion;
+- horn stopped pursuit/siege.
+
+Here:
+**horn activates legitimate succession.**
+
+Same signal class.
+Different programmed transition.
+
+---
+
+# One field's activation is heard inside the rival field and collapses it
+
+Adonijah's feast is ending when his group hears:
+- horn;
+- city uproar.
+
+The sound reaches the rival centre before the messenger does.
+
+Then Jonathan arrives and explains:
+**David has made Solomon king**.
+
+The rival field reacts:
+
+**new-centre sound reaches old rival field**
+→ information is decoded
+→ guests become afraid
+→ each rises
+→ each goes his own way.
+
+This is an exceptionally clear:
+**remote activation of one network → acoustic/informational collapse of competing network**.
+
+No battle is required.
+
+The rival centre loses coherence because the authoritative state has changed elsewhere.
+
+---
+
+# Adonijah moves from would-be centre to altar-bound supplicant
+
+After his field disperses,
+Adonijah:
+- fears Solomon;
+- goes to altar;
+- grasps its horns.
+
+His state flips completely:
+
+**self-proclaimed king**
+→ **isolated claimant**
+→ **grasps sanctuary boundary**
+→ asks for life guarantee from the new king.
+
+This is a centre-to-edge collapse.
+
+The altar-horn acts as an attempted **asylum/interface node** between:
+- royal lethal power;
+- sacred protection.
+
+---
+
+# First altar-horn episode produces conditional release rather than death
+
+Solomon does not immediately kill Adonijah.
+
+He establishes a conditional branch:
+
+**if worthy/loyal**
+→ no hair falls.
+
+**if wickedness found**
+→ death.
+
+Adonijah is:
+- brought **down** from altar;
+- bows to Solomon;
+- sent **to his house**.
+
+So the altar episode ends:
+
+**boundary grasp**
+→ conditional mercy
+→ descent from sanctuary node
+→ private-house containment.
+
+The claim to public centre is reduced to:
+**live privately under condition**.
+
+---
+
+# 1 Kings 2 — David's death transfers the “house” from bodily centre to dynastic successor
+
+David says:
+**I go the way of all the earth**.
+
+He tells Solomon the continuing throne depends on the conduct of his descendants.
+
+Then David dies and is buried.
+
+Solomon sits on David's throne.
+
+The text says:
+**his kingdom was firmly established**.
+
+This completes the transformation first promised in 2 Samuel 7:
+
+**one body dies**
+→ dynastic house persists
+→ next body occupies throne.
+
+This is direct temporal continuity through serial occupants.
+
+---
+
+# David's final instructions reopen unresolved blood/debt nodes
+
+David names:
+- Joab;
+- Barzillai's sons;
+- Shimei.
+
+These are not random names.
+
+They carry unresolved relations from earlier phases:
+- killings done in “peace”;
+- loyal support during exile;
+- curse/reconciliation at Jordan.
+
+So succession includes:
+**inheritance of unfinished relational accounts**.
+
+The new centre does not only inherit land/throne.
+It inherits **stored obligations and stored conflict**.
+
+---
+
+# Adonijah attempts a new route through the queen mother
+
+Adonijah no longer approaches Solomon directly.
+
+He goes to Bathsheba and asks her to request:
+**Abishag as wife**.
+
+Bathsheba then moves:
+**Adonijah**
+→ **queen mother**
+→ **Solomon**.
+
+This is an indirect access route to centre.
+
+The narrative gives Bathsheba a throne at Solomon's **right hand**, showing her elevated court position.
+
+---
+
+# Solomon reads the Abishag request as a kingship claim
+
+Solomon explicitly interprets:
+**ask for Abishag**
+as equivalent to
+**ask for the kingdom**.
+
+Ancient royal-harem/succession politics provide context for why possession of a former king's woman could be politically charged.
+
+But scholarship cautions against pretending every detail of royal succession law is known.
+
+The secure narrative fact is:
+**Solomon himself classifies the request as succession-threatening**.
+
+That reclassification closes the earlier conditional-mercy branch.
+
+Adonijah is killed.
+
+---
+
+# Same claimant, different phase, different outcome
+
+Chapter 1:
+**Adonijah at altar**
+→ conditional preservation.
+
+Chapter 2:
+**new political claim inferred**
+→ execution.
+
+Thus:
+**mercy state was not permanent immunity**.
+
+The branch remained conditional on later behaviour.
+
+---
+
+# Abiathar is removed rather than killed — function can be stripped while body remains
+
+Solomon tells Abiathar:
+- go to his fields at Anathoth;
+- he deserves death;
+- he is spared because he carried the Ark and shared David's afflictions.
+
+But he is removed from priestly office.
+
+This creates:
+
+**person preserved**
+while
+**function/office removed**.
+
+That distinction matters for the geometry timeline:
+**node identity and node role are separate variables**.
+
+A node can remain alive but become decoupled from its former system function.
+
+---
+
+# Joab repeats Adonijah's altar-horn action, but the same interface no longer produces safety
+
+Joab hears what is happening.
+
+He:
+- flees to Tent;
+- catches altar horns.
+
+This is deliberately parallel to Adonijah in chapter 1.
+
+But the outcome differs.
+
+Benaiah orders him out.
+Joab refuses:
+**I will die here**.
+
+Solomon orders the killing anyway.
+
+So the same place/action:
+
+**claimant A grasps altar horns**
+→ released conditionally.
+
+**claimant B grasps altar horns**
+→ killed there/at sanctuary.
+
+This is extremely important methodologically:
+
+**same geometry does not guarantee same outcome**.
+
+The relationship/state carried into the geometry determines the result.
+
+---
+
+# Joab's death is framed as removing stored blood from David's house
+
+The narrative explicitly connects Joab to:
+- Abner;
+- Amasa;
+- blood of war shed in peace.
+
+Solomon frames Joab's death as returning blood to Joab's own head and removing liability from:
+**David / seed / house / throne**.
+
+So the succession consolidation is represented as:
+**stored violent debt**
+→ returned to originating node
+→ dynastic centre declared cleared/stabilised.
+
+This is political/theological narrative framing, not objective legal proof.
+
+Modern scholarship debates whether David/Solomon are being justified, criticized, or both.
+
+---
+
+# Shimei receives an explicit geographic boundary condition
+
+Solomon orders Shimei:
+- build a house in Jerusalem;
+- remain there;
+- do not go elsewhere;
+- specifically, if he crosses the **Kidron**, he will die.
+
+This is one of the clearest literal state-boundary rules in the Bible.
+
+**inside allowed zone**
+→ life.
+
+**cross named boundary**
+→ death condition activates.
+
+The rule is not symbolic.
+It is explicit political confinement.
+
+---
+
+# Three years later, two escaped servants pull Shimei across the boundary
+
+After **three years**:
+- **two servants** flee to Gath;
+- Shimei learns where they are;
+- he saddles donkey;
+- crosses out to retrieve them;
+- returns.
+
+This creates a very clear trigger:
+
+**contained node**
+→ two subordinate components escape
+→ node pursues them outside permitted field
+→ boundary crossed
+→ returns physically
+→ violation information reaches centre
+→ death sentence executed.
+
+The crossing itself becomes the actionable state change.
+
+---
+
+# Important distinction — returning inside does not undo the crossing
+
+Shimei comes back to Jerusalem.
+
+But the condition was triggered when he went out.
+
+So:
+
+**boundary crossing**
+is not erased by
+**later return**.
+
+This is another irreversible-threshold type:
+once the prohibited transition occurs, re-entering the previous location does not restore the old legal state.
+
+---
+
+# Chapter 2 ends with a repeated establishment formula
+
+After Adonijah, Abiathar, Joab and Shimei are removed/repositioned,
+the text says:
+
+**the kingdom was established in Solomon's hand**.
+
+So chapter 2 is structured as:
+**potential rival / old priestly node / old military node / constrained hostile node**
+→ each resolved
+→ central authority consolidated.
+
+But the narrative's moral evaluation is not simple.
+
+Scholarly debate continues over whether these actions are:
+- legitimate consolidation;
+- royal apology;
+- morally troubling bloodshed;
+- or a deliberately ambiguous mixture.
+
+Preserve that ambiguity.
+
+---
+
+# 1 Kings 3 — Solomon's first request is for an information-processing faculty, not more force
+
+At Gibeon, Solomon describes himself as:
+- young/inexperienced;
+- not knowing how to **go out and come in**;
+- positioned in the midst of a people too numerous to count.
+
+He asks for:
+**a hearing/understanding heart**
+to:
+- judge;
+- discern good from evil.
+
+This is highly relevant to the project.
+
+The new centre does not ask primarily for:
+- more territory;
+- more weapons;
+- enemy death.
+
+It asks for better **discrimination between states**.
+
+That becomes immediately demonstrated in the two-women case.
+
+---
+
+# Dream-state information is carried back into waking central practice
+
+The sequence is:
+
+**Solomon at Gibeon**
+→ dream encounter
+→ receives wisdom promise
+→ wakes
+→ goes to Jerusalem
+→ stands before Ark
+→ sacrifices/feasts
+→ then hears difficult case.
+
+So:
+**night/dream information**
+is translated into
+**day/public adjudication**.
+
+The text deliberately puts the judgment story immediately after the wisdom dream as evidence that the new faculty is operative.
+
+---
+
+# Two women / two infants — a perfectly paired information problem inside one house
+
+The case is unusually symmetrical.
+
+Two women:
+- live in **one house**;
+- no outsider is present;
+- each gives birth;
+- births are **three days apart**;
+- one infant dies at night;
+- one infant remains alive.
+
+Then one woman alleges:
+- dead child was moved to her;
+- living child was taken.
+
+The information problem becomes:
+
+**two claimants**
++
+**one living child**
++
+**one dead child**
++
+**no independent witness**.
+
+This is almost a pure paired-state ambiguity.
+
+---
+
+# The claimed night exchange is a position swap
+
+According to the first woman's testimony:
+
+**living child beside mother A**
++
+**dead child beside mother B**
+
+becomes at midnight:
+
+**dead child beside A**
++
+**living child beside B**.
+
+The two infant positions are exchanged while one mother sleeps.
+
+Whether the accusation is historically “true” is only known through the narrator's later framing.
+
+Processually:
+**identity and location are deliberately decoupled**.
+
+Morning observation must distinguish:
+**body at expected position**
+from
+**actual identity**.
+
+---
+
+# Both verbal claims are mirror images
+
+Woman A:
+**living = mine; dead = yours**.
+
+Woman B:
+**living = mine; dead = yours**.
+
+Solomon explicitly repeats the symmetrical claims.
+
+This creates a system with:
+**identical surface statements**
+and
+**no external witness**.
+
+Ordinary verbal comparison cannot resolve it.
+
+So Solomon introduces a new variable.
+
+---
+
+# The sword creates a simulated split future
+
+Solomon orders:
+**bring a sword**.
+
+Then:
+**divide the living child in two**
+→ half to each.
+
+The key mechanism is not actual division.
+It is a **projected future geometry**.
+
+The proposed future is:
+**whole living child**
+→ **two dead halves**
+→ equal possession.
+
+This is a deliberately impossible “fair split” if the actual goal is preservation of life.
+
+The proposal forces each claimant to reveal which variable matters more:
+- possession/equality;
+- continued life of the whole child.
+
+---
+
+# One claimant abandons possession to preserve wholeness
+
+The true mother responds:
+**give her the living child**
+→ **do not kill it**.
+
+She chooses:
+
+**lose relation/possession**
+rather than
+**split the living whole**.
+
+The other accepts division.
+
+Solomon uses that difference as the diagnostic signal.
+
+So the resolution is:
+
+**threatened bifurcation**
+→ one node prefers preservation of undivided life even at personal loss
+→ identity relation becomes visible
+→ split is cancelled
+→ whole living child assigned to preserving claimant.
+
+This is one of the strongest “two forces / preserve versus divide” patterns encountered so far.
+
+---
+
+# Vardath comparison — the test distinguishes a true sustaining relation from a possessive claim
+
+At the abstract process level:
+
+**two claims pull on one living centre**.
+
+A literal split would destroy the centre.
+
+The diagnostic question becomes:
+**which claimant will release its own claim so the centre remains whole?**
+
+That claimant is identified as the genuine life-linked relation.
+
+This could be useful in the final timeline as:
+**wholeness-preserving relation versus division-tolerating relation**.
+
+But do not automatically identify the women with specific cosmic forces.
+
+The text's first-level meaning is judicial/maternal.
+
+---
+
+# Possible two-kingdom foreshadowing — record as secondary, not primary
+
+Some modern scholarship reads the two women/two child claims as potentially resonant with the later **two-kingdom** split.
+
+That is intriguing because 1 Kings itself will soon divide:
+**one kingdom**
+→ **north + south**.
+
+But there is no need to claim the women are straightforward allegories of Israel and Judah.
+
+Correct status:
+
+**primary process:** judicial paired-claim test.
+
+**secondary literary possibility:** later kingdom bifurcation may cause the reader to hear an ironic echo in the threatened division of one living body.
+
+This should be revisited when Section 36 reaches 1 Kings 12.
+
+---
+
+# The judgment creates national information about the centre
+
+After the case:
+**all Israel hears**.
+
+They perceive:
+**divine wisdom in the king to execute justice**.
+
+So a tiny household dispute scales outward:
+
+**two women + one child**
+→ royal diagnostic action
+→ result
+→ information spreads across national network
+→ legitimacy/fear of centre increases.
+
+This mirrors chapter 1:
+a local anointing/acclamation spreads through sound and report to change national political state.
+
+---
+
+# 1 Kings 4 — the now-stable centre becomes an administrative distribution network
+
+The narrative shifts from succession crisis to bureaucracy.
+
+Solomon's system includes specialized roles:
+- priestly;
+- scribal;
+- recorder;
+- military;
+- household;
+- levy;
+- officers.
+
+Thus centrality no longer means:
+**one king personally performs all functions**.
+
+It means:
+**one centre coordinates differentiated roles**.
+
+---
+
+# Twelve provisioning officers convert geographic space into a rotating time-cycle
+
+The text gives:
+**twelve officers over Israel**.
+
+Their function:
+- provision king/household;
+- **each one for one month in the year**.
+
+This creates a clean space-time transformation:
+
+**distributed geographic districts**
+→ twelve provider nodes
+→ each activated for one monthly interval
+→ central household continuously supplied.
+
+So the structure is:
+
+**many places**
+mapped onto
+**rotating time slots**
+feeding
+**one centre**.
+
+This is important for the final geometry timeline:
+**spatial distribution can be converted into temporal rotation.**
+
+---
+
+# Twelve should not automatically be equated with twelve tribes
+
+The districts do not map cleanly and simply onto traditional tribal boundaries.
+
+Scholarship debates:
+- whether the system deliberately cut across tribal structures;
+- whether twelve corresponds principally to twelve months;
+- how historical the list is;
+- how the administrative geography developed.
+
+The secure functional relation is:
+**twelve administrative supply units**
+→ **one month each**.
+
+Therefore:
+**12 = annual provisioning rotation** is stronger here than **12 = tribes**.
+
+---
+
+# Central abundance depends on repeated peripheral inflow
+
+The stable Solomon system now works through:
+
+**district**
+→ goods/provision
+→ central household
+→ next district takes turn.
+
+This is a recurring **inward resource circulation**.
+
+Compare David:
+- conquest materials flowed toward Jerusalem;
+- distributions sometimes flowed outward.
+
+Solomon's administration formalizes inward flow into a scheduled system.
+
+This may later matter when the narrative turns toward:
+- levy;
+- forced labour;
+- taxation;
+- kingdom resentment.
+
+The geometry of stability may contain the seed of later overload.
+
+---
+
+# SECTION 35A continuous geometry/effect timeline — 1 Kings 1–4
+
+## Phase FR — biological centre weakens before political office transfers
+
+David alive/throned
+but
+body cannot maintain heat.
+
+**Effect:** active centre becomes succession-bearing rather than field-active.
+
+---
+
+## Phase FS — successor candidates form two rival support fields
+
+Adonijah network
+versus
+Solomon network.
+
+**Effect:** ambiguity at old centre creates bifurcation.
+
+---
+
+## Phase FT — rival succession nodes occupy distinct water-adjacent sites
+
+Adonijah near En-rogel
+versus
+Solomon at Gihon.
+
+**Effect:** two candidate-centres become physically separate before one is authorized.
+
+---
+
+## Phase FU — two-stage testimony reactivates old centre
+
+Bathsheba message
+→ Nathan confirmation
+→ David decides.
+
+**Effect:** information architecture collapses passive ambiguity into explicit succession.
+
+---
+
+## Phase FV — inherited royal carrier moves successor through transition
+
+Solomon rides David's mule
+→ down to Gihon.
+
+**Effect:** old-centre identity/status is materially carried with candidate.
+
+---
+
+## Phase FW — descent → anointing → acoustic activation → ascent
+
+down to Gihon
+→ oil
+→ horn
+→ public acclaim
+→ up to throne.
+
+**Effect:** candidate passes through marked transition and emerges as functioning centre.
+
+---
+
+## Phase FX — activation of one centre collapses rival field remotely
+
+horn/city noise reaches Adonijah feast
+→ messenger decodes event
+→ guests scatter.
+
+**Effect:** rival system loses coherence through information, without direct combat.
+
+---
+
+## Phase FY — failed claimant moves from centre-claim to sacred-edge supplication
+
+Adonijah
+→ altar horns
+→ conditional mercy
+→ house.
+
+**Effect:** public claimant reduced to private contained node.
+
+---
+
+## Phase FZ — dynastic continuity survives individual death
+
+David dies
+→ Solomon sits throne
+→ kingdom established.
+
+**Effect:** temporal house persists through serial bodies.
+
+---
+
+## Phase GA — inherited unresolved relations transfer to successor
+
+Joab / Barzillai / Shimei obligations
+→ Solomon.
+
+**Effect:** succession transfers liabilities and loyalties as well as office.
+
+---
+
+## Phase GB — indirect queen-mother route carries renewed claim to centre
+
+Adonijah
+→ Bathsheba
+→ Solomon.
+
+**Effect:** blocked direct access is rerouted through high-status intermediary.
+
+---
+
+## Phase GC — centre reclassifies personal request as system-threatening state
+
+Abishag request
+→ interpreted as kingdom claim
+→ Adonijah killed.
+
+**Effect:** outcome follows perceived political meaning, not surface request alone.
+
+---
+
+## Phase GD — person and office separate
+
+Abiathar lives
+but
+priestly role removed.
+
+**Effect:** node survives while function is decoupled.
+
+---
+
+## Phase GE — same altar-horn geometry produces opposite outcome
+
+Adonijah grasps horns → preserved.
+Joab grasps horns → killed.
+
+**Effect:** geometry alone does not determine result; carried state/history matters.
+
+---
+
+## Phase GF — stored violence is narratively returned to origin
+
+Joab killed
+→ old blood framed as removed from Davidic house.
+
+**Effect:** successor consolidation includes attempted clearing of inherited violent debt.
+
+---
+
+## Phase GG — explicit geographic confinement creates life/death boundary
+
+Shimei:
+inside Jerusalem = permitted.
+cross Kidron/outside = death condition.
+
+**Effect:** location itself becomes legal state variable.
+
+---
+
+## Phase GH — two escaped servants pull constrained node across forbidden boundary
+
+two servants flee
+→ Shimei pursues
+→ boundary crossed
+→ returns
+→ violation reported
+→ execution.
+
+**Effect:** subordinate escape induces centre-adjacent node to trigger its own prohibited transition.
+
+---
+
+## Phase GI — returning does not undo irreversible threshold crossing
+
+Shimei re-enters Jerusalem
+but
+legal state remains changed.
+
+**Effect:** some transitions are path-dependent and cannot be reversed by spatial return.
+
+---
+
+## Phase GJ — new centre asks for discrimination capacity
+
+Gibeon dream
+→ hearing/understanding heart requested.
+
+**Effect:** stable rule is framed as correct state discrimination, not merely force accumulation.
+
+---
+
+## Phase GK — dream-state information becomes waking operational faculty
+
+dream
+→ Jerusalem/Ark
+→ first judgment.
+
+**Effect:** information acquired in altered/night state is validated through public daytime action.
+
+---
+
+## Phase GL — two claimants create mirror-symmetric information field
+
+two women
++ one house
++ two births
++ one living child
++ one dead child
++ no witness
+→ opposite identical claims.
+
+**Effect:** ordinary testimony cannot resolve identity.
+
+---
+
+## Phase GM — alleged night swap separates identity from position
+
+living/dead infants exchange locations.
+
+**Effect:** object at expected place may not be expected identity.
+
+---
+
+## Phase GN — projected division is introduced as diagnostic simulation
+
+sword
+→ threaten split living child in two.
+
+**Effect:** imagined future geometry forces hidden priorities into visible response.
+
+---
+
+## Phase GO — preserving claimant releases possession to keep centre whole
+
+true mother gives up claim
+rather than
+permit split/death.
+
+**Effect:** genuine sustaining relation is revealed by preference for living wholeness over ownership.
+
+---
+
+## Phase GP — split branch is cancelled once diagnostic information appears
+
+identity inferred
+→ sword plan halted
+→ living child remains whole
+→ assigned to preserving mother.
+
+**Effect:** simulated division resolves ambiguity without physical division.
+
+---
+
+## Phase GQ — micro-judgment scales into national legitimacy signal
+
+household case
+→ judgment
+→ all Israel hears
+→ wisdom recognized.
+
+**Effect:** local information event changes network-wide perception of centre.
+
+---
+
+## Phase GR — stable centre distributes functions
+
+king
+→ specialized officials.
+
+**Effect:** mature centralization operates through differentiated nodes, not one body doing everything.
+
+---
+
+## Phase GS — twelve geographic supply nodes become twelve rotating time slots
+
+12 officers
+× one month each
+→ continuous annual provision to centre.
+
+**Effect:** spatial distribution is mapped into temporal cycle.
+
+---
+
+## Phase GT — scheduled peripheral inflow sustains centre
+
+districts
+→ monthly provisions
+→ royal household.
+
+**Effect:** central abundance depends on repeated distributed extraction/inflow.
+
+This becomes an important control for later kingdom-split material.
+
+---
+
+# What 1 Kings 1–4 adds to the master Bible/Vardath timeline
+
+103. **A political centre can remain formally alive while biological weakness creates a succession vacuum around it.**
+104. **Two rival centres can form simultaneously inside one still-existing system before formal transfer is complete.**
+105. **Two candidate centres can occupy separate water-adjacent transition nodes and be distinguished by different authorization networks.**
+106. **A two-stage information intervention can reactivate a failing centre and collapse ambiguity before physical conflict.**
+107. **The successor can be carried through transition by an object/vehicle belonging to the old centre, creating continuity without identity collapse.**
+108. **The Solomon accession has an explicit descent→transformation→ascent route: down to Gihon, anointed/acclaimed, up to throne.**
+109. **Activation of one centre can collapse a rival field purely through sound and information before direct contact.**
+110. **The same sacred-boundary action can produce different outcomes for different nodes; geometry must never be interpreted without state/history.**
+111. **Succession transfers unresolved relational debt and loyalty, not merely title or territory.**
+112. **A person's biological presence and institutional function can be separated: the person can remain while office is removed.**
+113. **A named geographic boundary can operate as an explicit state threshold whose crossing changes legal outcome irreversibly.**
+114. **Two subordinate escapees can pull a constrained node across its own forbidden boundary, showing how peripheral motion can trigger central-state change.**
+115. **The new centre's key requested capability is discrimination—correctly distinguishing hidden state from identical surface claims.**
+116. **Two mirror-symmetric claims around one living centre can be resolved by a simulated split that reveals which relation preserves wholeness.**
+117. **A true sustaining relation can be identified by willingness to release possession rather than destroy the shared living centre.**
+118. **The threatened split itself need not occur; projected geometry can act as a diagnostic instrument.**
+119. **A micro-scale household judgment can propagate into system-wide legitimacy information.**
+120. **Twelve spatial supply units can be transformed into a twelve-step annual temporal rotation feeding one centre.**
+121. **Administrative centralization creates recurrent peripheral→centre resource flow, which may later become a stress variable rather than simple prosperity.**
+
+---
+
+## Section 35A pair / two-force register
+
+### Adonijah / Solomon
+Two candidate centres competing for one throne.
+
+Difference is not simply moral identity:
+- one self-assembles court/feast network;
+- one is activated through incumbent king's explicit transfer apparatus.
+
+### En-rogel / Gihon
+Two distinct water-adjacent succession locations.
+
+Record the pair.
+Do not claim a cosmic “two springs” mechanism without broader recurrence.
+
+### Bathsheba / Nathan
+Two-message confirmation sequence that activates David's decision.
+
+### Adonijah / Joab at altar horns
+Same sacred interface, opposite outcomes.
+
+### Two women
+Mirror claimants around one living centre.
+
+### Living child / dead child
+The case depends on distinguishing life-state from position/claim-state.
+
+### Preserve / divide
+The most important abstract two-force distinction in the judgment:
+**preserve whole living centre**
+versus
+**accept equal division even though division destroys it**.
+
+### Twelve districts / twelve months
+Strong administrative mapping:
+**space → time rotation**.
+
+---
+
+## Section 35A number / timing register
+
+Record without forcing:
+- Adonijah has **50 runners**;
+- births in Solomon case separated by **three days**;
+- Shimei crosses confinement after **three years**;
+- Solomon offers **1,000 burnt offerings** at Gibeon in the received text;
+- administrative system uses **12 officers**, **one month each**.
+
+The twelve/month relation is functionally explicit and stronger than an automatic twelve-tribe reading.
+
+---
+
+## Section 35A textual / scholarly controls
+
+- Royal succession practice in early Israel is not securely known. Do not simply assume strict primogeniture made Adonijah the legally automatic heir. Andrew Knapp's comparative work challenges that common assumption.
+- 1 Kings 1–2 has a long and unresolved source/redaction debate over its relationship to the “Succession Narrative.” Do not treat one reconstruction as settled history.
+- David's alleged prior promise to Bathsheba that Solomon would reign is narrated through Bathsheba/Nathan in 1 Kings 1; scholars debate its historical/literary status.
+- The topographic relation of En-rogel, Zoheleth and Gihon is meaningful at broad level but exact ancient identifications/routes remain debated.
+- Solomon's mule/anointing/acclamation are secure narrative data; broader ancient succession parallels help contextualize but do not prove one universal royal protocol.
+- Adonijah's Abishag request is interpreted by Solomon as a kingship claim. The wider harem-succession convention is plausible but should be attributed rather than presented as certain legal law.
+- 1 Kings 2 is morally/politically ambiguous. Some scholarship reads it as legitimating Solomon; other work emphasizes bloodshed, irony or critique.
+- Shimei's Kidron restriction is explicit narrative geography and one of the safest boundary-process observations in this block.
+- Solomon's “hearing heart” is often translated “understanding mind/heart”; its functional emphasis on listening/discerning is secure.
+- The two-women story is often classified as folktale, wisdom tale, riddle-like judgment story or royal legitimation narrative. Exact genre/origin remains debated.
+- Solomon's sword proposal should be treated as a threat/test inside the narrative. Critical scholarship also points out the coercive violence embedded in using such a threat, especially against socially marginal women.
+- Do not reduce the women to cosmic symbols or kingdoms. The “two kingdoms” reading exists in scholarship as a secondary intertextual possibility, not an explicit identification in the story.
+- The twelve administrative districts do not map neatly to twelve tribal territories. The one-month-each annual rotation is textually explicit and should be privileged over speculative tribal numerology.
+- Historical reconstruction of a “Solomonic state” from 1 Kings 4 remains contested archaeologically and historiographically; use the text first as narrative/administrative evidence.
+
+### Sources logged for Section 35A
+
+Primary:
+- Mechon-Mamre, **1 Kings 1–4**.
+
+Scholarly controls:
+- Andrew Knapp, **“The Conflict between Adonijah and Solomon in Light of Succession Practices Near and Far.”**
+- Joseph Blenkinsopp, **“Another Contribution to the Succession Narrative Debate (2 Samuel 11–20; 1 Kings 1–2).”**
+- Burke O. Long, **“A Darkness Between Brothers: Solomon and Adonijah.”**
+- David Shepherd, **“Bring Back His Bloody Deeds: 1 Kgs 1–2.”**
+- David Janzen, **“What he did for me: David's Warning about Joab in 1 Kings 2.5.”**
+- James W. Flanagan and subsequent scholarship on court history / succession narrative.
+- Lewis H. LaRue, **“Solomon's Judgment: A Short Essay on Proof.”**
+- Marie Ashe, **“Abortion of Narrative: A Reading of the Judgment of Solomon.”**
+- Stuart Lasine and related literary work on Solomon's judgment and proof.
+- Hugh S. Pyper, **“Judging the Wisdom of Solomon: the Two-Way Effect of Intertextuality.”**
+- Matthew Michael, **“The Two Prostitutes or the Two Kingdoms? A Critical Reading of King Solomon's Wise Ruling (1 Kgs 3:16–28).”**
+- scholarship on Solomon's administrative districts and southern Levantine interregional exchange.
+- Amos Frisch, **“Structure and Its Significance: the Narrative of Solomon's Reign (1 Kings 1–12.24).”**
+
+**Section 35 remains in progress.**
+
+### Next process block
+
+**1 Kings 5–8**:
+- international material flow from Lebanon/Tyre toward Jerusalem;
+- forced labour / rotational labour;
+- quarry/stone/cedar transport;
+- temple as nested enclosure;
+- measurements and repeated paired structures;
+- two bronze pillars **Jachin / Boaz**;
+- capitals/lily/pomegranate networks;
+- bronze Sea;
+- **twelve oxen in four directional triples**;
+- wheeled stands and basins;
+- Ark brought from City of David upward into temple;
+- priests withdraw;
+- cloud fills house and stops priestly service;
+- Solomon's speech/prayer repeatedly contrasts fixed “house” with heaven that cannot be contained.
+
