@@ -1,1 +1,1 @@
-insert read-first continuation protocol
+insert read-first continuation protocol retry
