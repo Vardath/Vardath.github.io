@@ -47506,3 +47506,634 @@ Inserted comparison texts remain extra work outside the 31/88 canonical count.
 
 Assistant reply checkpoint: Yes, the post-refresh conversation/progress is properly appended. The project is now at 31 of 88 canonical roadmap entries complete (35.2%), with 1 Samuel 1–15 next.
 
+
+
+---
+
+## SECTION 32 progress A — 1 Samuel 1–7: inversion grammar, channel handoff, portable-centre failure, forced relocation and a constrained return path
+
+### Anti-repeat check
+
+The current ledger was checked before beginning.
+
+Latest genuine checkpoint:
+- **Sections 1–31 complete**
+- **31 / 88 canonical roadmap entries complete**
+- **Section 32 — 1 Samuel 1–15** is the first unfinished canonical entry.
+
+No later Section 32 / 1 Samuel 1–15 progress block was found.
+
+### Geometry-first working rule clarified by user
+
+Names are retained as labels so the source can be reconstructed, but the names are **not the primary unit of interpretation**.
+
+From this point the analysis prioritises:
+- how many forces/components are operating;
+- direction of motion;
+- coupling / decoupling;
+- transfer;
+- enclosure;
+- threshold state;
+- convergence / release;
+- replacement / succession;
+- inversion;
+- upper/lower or inward/outward relation;
+- whether two named figures may simply preserve two functional sides of one process.
+
+A named pair matters mainly because the text tells us **there are two roles, two directions, two states or two interacting forces**.
+
+---
+
+## 1 Samuel 1 — closed/open state and living-function transfer
+
+The opening household is built around an explicit two-state pair:
+
+- Peninnah = productive / children present;
+- Hannah = closed / children absent.
+
+The text itself says Hannah's womb is **shut**.
+
+This is initially biological and social, not cosmological. But as process grammar it is very clear:
+
+**closed state**
+→ repeated annual cycle
+→ threshold petition
+→ state change
+→ opening / conception
+→ produced living output
+→ output transferred into another functional system.
+
+The annual movement to Shiloh matters because the change is embedded in a repeating cycle rather than a one-off disconnected event.
+
+### Quiet signal at a threshold is misread
+
+Eli is seated at the **doorpost** of the sanctuary.
+
+Hannah:
+- speaks internally;
+- lips move;
+- audible voice is absent.
+
+Eli sees motion but receives no sound and classifies the state incorrectly.
+
+That gives a useful information pattern:
+
+**real internal signal**
+→ visible surface motion
+→ no ordinary audible output
+→ observer misclassifies state
+→ explanation corrects the interpretation.
+
+This is not a gate mechanism, but it is a clean warning for the wider project:
+**what is visible at a boundary can be a misleading projection of the process occurring inside.**
+
+### Child moves from household to sanctuary function
+
+After weaning:
+- Samuel is taken upward/to Shiloh;
+- handed into sanctuary service;
+- remains there.
+
+The process is:
+
+**generated inside one household**
+→ protected through an early growth interval
+→ carried to a receiving centre
+→ assigned permanently to a different function.
+
+Samuel is not a carrier and is not a gate. He is **living transferred function/cargo** moving from one system into another.
+
+This distinction matters because later biblical figures can represent a mechanism, an operator, a transferred component or simply the product of a transition. Those roles must not be collapsed.
+
+---
+
+## 1 Samuel 2 — the poem gives an explicit state-inversion grammar
+
+Hannah's song is exceptionally important for process analysis because it repeatedly describes **paired reversals**:
+
+- strong bows → broken;
+- stumbling/weak → girded with strength;
+- full → hiring themselves for bread;
+- hungry → no longer hungry;
+- barren → seven;
+- many-child state → languishing;
+- death ↔ life;
+- descent to Sheol ↔ ascent;
+- poverty ↔ wealth;
+- low ↔ raised;
+- dust/dunghill → seat among rulers;
+- earthly pillars → world supported above them;
+- human strength → insufficient;
+- heaven → thunder downward.
+
+The text therefore establishes a master grammar of:
+
+**state A → inversion → state B**
+
+and repeatedly couples **down / up**, **empty / full**, **weak / strong**, **closed / productive**, **collapse / elevation**.
+
+For Vardath comparison, the value is not that every reversal describes the gate. The value is that this book announces from the beginning that its narrative logic will repeatedly use **two opposed states of the same system**.
+
+### Old functional branch and new functional branch overlap
+
+The sanctuary then contains two simultaneous trajectories:
+
+**old priestly line**
+→ taking more than allotted
+→ forceful extraction
+→ loss of function / coming termination
+
+alongside
+
+**Samuel**
+→ small child
+→ repeated growth
+→ increasing recognition / function.
+
+This is not yet a clean instantaneous replacement. It is an **overlap interval**:
+one branch is still physically present while its functional authority is decaying, and another branch is growing inside the same system.
+
+That is close to the model's broader rule that transitions need not be:
+**old disappears, then new appears**.
+
+They can be:
+**old and new coexist while the transfer of function occurs.**
+
+The prediction that Eli's two sons will die **on one day** also turns the paired branches into a synchronized terminal event.
+
+---
+
+## 1 Samuel 3 — old receiver dims while a new communication channel comes online
+
+The scene is constructed with striking transition imagery:
+
+- Eli's eyes are dimming;
+- he is lying in his place;
+- the lamp of God has **not yet gone out**;
+- Samuel is lying near the ark;
+- a call occurs;
+- Samuel repeatedly routes the signal to Eli.
+
+Three times the signal is assigned to the wrong source.
+
+On the third repetition, Eli recognizes what is happening and instructs Samuel how to receive it.
+
+Process:
+
+**old receiver still present but dimming**
++
+**light not yet extinguished**
++
+**new receiver not yet calibrated**
+→ repeated misrouting
+→ old receiver identifies the new channel
+→ new receiver answers source directly
+→ information transfer becomes reliable.
+
+This is one of the clearest **handoff processes** encountered so far.
+
+It is especially important for the user's two-force/process emphasis:
+the story does not require the names to carry the geometry. What matters is that **two receivers overlap during transfer of function**.
+
+### Night information becomes morning boundary action
+
+After the night revelation:
+- Samuel remains until morning;
+- then **opens the doors** of the sanctuary.
+
+That sequence is worth preserving exactly:
+
+**closed/night interior**
+→ information received
+→ morning
+→ doors opened.
+
+It is ordinary sanctuary activity in the story, but the order is highly compatible with a general:
+**hidden-state information → phase boundary → opening**
+grammar.
+
+### "No words fall to the ground"
+
+After the handoff, the text says Samuel's words are not allowed to **fall to the ground**.
+
+Within the narrative this means the prophetic word proves reliable.
+
+For process analysis it gives a useful contrast:
+earlier the signal is repeatedly misrouted;
+after calibration, information reaches its intended effect.
+
+---
+
+## 1 Samuel 4 — moving the portable centre does not mean controlling it
+
+After one battlefield defeat, Israel decides to bring the ark from Shiloh into the camp.
+
+This is a crucial distinction:
+
+**fixed/located centre**
+→ physically relocated into another operating zone
+→ users expect relocation itself to force desired outcome.
+
+That expectation fails.
+
+The ark is therefore not behaving as a simple tool whose effects are controlled by possession.
+
+Process:
+
+**defeat**
+→ central object imported into battle
+→ huge activation response/shout
+→ opposing side detects state change
+→ second battle
+→ larger defeat
+→ ark captured
+→ paired priestly branch terminates.
+
+Numbers recorded:
+- first battle loss: about **4,000**;
+- second battle loss: **30,000** foot soldiers.
+
+The story's logic is strongly anti-mechanical in one sense:
+**having the object nearby is not sufficient to command the force associated with it.**
+
+That is directly useful to Vardath role discipline:
+a visible apparatus, symbol, node or carrier is not automatically the operator.
+
+### Multiple structures fail at once
+
+The news arrives at Shiloh as a bundled state collapse:
+- army defeated;
+- two sons dead;
+- ark removed.
+
+Eli is seated beside the way/gate and is already blind.
+
+When the ark's capture is spoken:
+- he falls **backward** from the seat;
+- beside the gate;
+- neck breaks;
+- he dies.
+
+Immediately another body enters transition:
+- Phinehas' pregnant wife hears;
+- bends/bows into labour;
+- child emerges;
+- mother dies.
+
+So one central loss propagates through several connected structures:
+
+**battle centre removed**
+→ **old authority falls at gate**
+→ **family branch terminates**
+→ **new child emerges while mother dies**.
+
+Again, the geometry is not in the names. It is a **distributed state transition with simultaneous endings and one surviving new output**.
+
+---
+
+## 1 Samuel 5 — captured centre enters an incompatible host system
+
+The ark is moved:
+
+**Ebenezer → Ashdod → Dagon temple**.
+
+It is placed beside the local cult image.
+
+The next morning:
+- Dagon has fallen face-down.
+
+The image is restored to its original position.
+
+The following morning:
+- Dagon has fallen again;
+- head is severed;
+- both hands are severed;
+- head/hands lie at the **threshold**;
+- only the trunk remains.
+
+This is a two-stage failure:
+
+**foreign centre introduced**
+→ local centre collapses
+→ humans manually reset local centre
+→ local centre collapses again
+→ second collapse is irreversible / dismembering
+→ threshold itself acquires altered ritual status.
+
+Modern scholarship notes that the double fall can be read as a staged defeat; recent discussion also points out the important contrast between Dagon losing his **hands** and the repeated statement immediately afterward that the **hand of YHWH** is heavy on the cities.
+
+For our process map, that gives:
+
+**one force loses its active extremities**
+while
+**the opposing force is represented specifically through an active/heavy hand**.
+
+This is an unusually explicit two-force contrast.
+
+### Threshold changes function after the event
+
+The severed pieces are on the threshold.
+
+The text then explains that Dagon's priests no longer step on that threshold.
+
+So:
+
+**ordinary entry boundary**
+→ collision/event occurs there
+→ boundary acquires memory/status
+→ later traffic changes because of the remembered event.
+
+This is not evidence that the threshold physically opened a gate.
+It is strong evidence that **an event can permanently change the use/meaning of a boundary without changing the boundary's location**.
+
+### The transferred centre propagates disturbance through a network
+
+The ark is then routed:
+
+**Ashdod → Gath → Ekron**.
+
+At each receiving node:
+- the disturbance appears again;
+- local population seeks another transfer;
+- the object is pushed onward.
+
+The repeated structure is:
+
+**node receives centre**
+→ system becomes unstable
+→ node rejects centre
+→ centre transferred to next node
+→ instability follows.
+
+This resembles a **moving incompatibility/coupling problem**, not a static geographic property.
+
+The story finally reaches the conclusion:
+**send it back to its own place.**
+
+That line is particularly useful to the Vardath model:
+the same object/force can be survivable or ordered in one relational context and destructive in another.
+
+It is **relationship to the surrounding system**, not object identity alone, that determines the state.
+
+---
+
+## 1 Samuel 6 — the return is set up as a deliberate causal test
+
+The ark remains in Philistine territory for **seven months**.
+
+Five rulers/cities are represented by:
+- five golden tumour-images;
+- five golden mice.
+
+These images accompany the return but are not the transport mechanism.
+
+### Two unguided animals + one constrained route
+
+The return procedure is extremely important process-wise.
+
+They take:
+- a **new cart**;
+- **two milk cows** that have never been yoked;
+- calves are removed and shut at home;
+- cows are harnessed to the cart;
+- ark is placed on it.
+
+The test is explicitly designed to discriminate between two causes.
+
+Expected competing tendencies:
+
+**Force 1 — maternal/ordinary tendency**
+→ cows should turn back toward their calves.
+
+**Force 2 — directed return path**
+→ cows should carry the ark toward Israelite territory.
+
+The humans then release the system and observe it.
+
+The cows:
+- take the road toward Beth-shemesh;
+- keep to **one straight highway**;
+- low while moving;
+- turn **neither right nor left**.
+
+The five Philistine rulers follow behind as witnesses until the border.
+
+This is one of the strongest process scenes in the entire investigation because the narrative itself constructs something close to an **experimental control**:
+
+**create opposing pull**
+→ remove human steering
+→ release system
+→ observe path
+→ infer causation from whether it reaches the specified boundary.
+
+For the current research this matters more than any personal name.
+
+It is literally a story of **two forces acting on one moving coupled system**, with route behavior used to identify which force dominates.
+
+### Border crossing completes one transfer and initiates another
+
+At Beth-shemesh:
+- receiving population sees the approaching object;
+- cart enters a field;
+- stops near a great stone;
+- cart wood is dismantled;
+- cows are sacrificed;
+- ark and accompanying coffer are placed on the stone;
+- the five external witnesses return the same day.
+
+Process:
+
+**autonomous route**
+→ border arrival
+→ receiving system
+→ transport apparatus dismantled
+→ transported centre persists
+→ witnesses reverse direction.
+
+The **vehicle is consumed after delivery** while the transferred object remains.
+
+This is an excellent role distinction:
+**vehicle ≠ cargo/centre ≠ route ≠ witness**.
+
+### Successful arrival does not mean unrestricted compatibility
+
+Beth-shemesh then suffers its own deadly event associated with improper relation to the ark.
+
+So the transfer has not converted the ark into a harmless possession.
+
+The same core rule survives the boundary crossing:
+
+**correct destination does not abolish coupling constraints.**
+
+The receiving population then asks where it can be sent next, and the ark moves again to Kiriath-jearim, to a house on a hill, with a designated keeper.
+
+### Important number control — 1 Samuel 6:19
+
+The Masoretic wording associated with the Beth-shemesh deaths is textually difficult.
+
+The received Hebrew can be read as **70 + 50,000**, but:
+- the number order is unusual;
+- manuscripts/ancient witnesses differ;
+- Josephus has 70;
+- several Hebrew manuscripts omit the 50,000;
+- modern translations handle the passage differently.
+
+Therefore:
+**do not use 50,070 as a secure numerical Vardath datum.**
+
+Record it as a textual problem, not a pattern-confirming number.
+
+---
+
+## 1 Samuel 7 — long settling interval, water release, then upper→lower intervention
+
+The ark remains at Kiriath-jearim through a long interval:
+- **20 years** are stated before the next national sequence.
+
+The people gather at Mizpah.
+
+They:
+- draw water;
+- **pour it out**;
+- fast;
+- confess.
+
+The exact historical/ritual meaning of the water-pouring is uncertain, so it should not be forced into the cosmological mechanism.
+
+But its raw process position is:
+
+**gathering/convergence**
+→ **water drawn and released downward**
+→ fasting/state preparation
+→ opposing force approaches
+→ appeal upward
+→ thunder from above
+→ enemy disorder below
+→ pursuit across the surface.
+
+That is a genuine upper/lower action sequence in the final narrative.
+
+### Stone between two locations becomes memory, not mechanism
+
+After the battle:
+- Samuel sets up a stone **between Mizpah and Shen**;
+- it becomes the Ebenezer witness-marker.
+
+The stone records the transition.
+
+It does not operate the transition.
+
+This reinforces the project's role rule:
+
+**event → witness-object**
+is not the same thing as
+**witness-object → event mechanism**.
+
+### Distributed circuit replaces one exclusive centre
+
+At the end of the chapter Samuel works in a repeated circuit:
+
+**Bethel → Gilgal → Mizpah → return to Ramah**.
+
+The narrative therefore closes not with one immovable sacred node but with a **distributed recurring route** plus a home/reset point.
+
+That is useful against over-centralisation:
+the functioning system can be **network + circuit**, not one permanent world-centre.
+
+---
+
+## SECTION 32A continuous process sequence — 1 Samuel 1–7
+
+Stripped of the character names, the first seven chapters now read:
+
+**closed biological node**
+→ repeated annual cycle
+→ quiet signal at sanctuary threshold
+→ misclassification corrected
+→ closed state opens
+→ living output produced
+→ output transferred to sanctuary system
+→ poem announces paired inversion grammar
+→ old functional branch decays while new branch grows
+→ old receiver dims while lamp remains lit
+→ new receiver repeatedly misroutes incoming signal
+→ old receiver identifies correct source
+→ new communication channel becomes reliable
+→ morning doors open
+→ central sacred object is moved into battle
+→ users mistake proximity for control
+→ system suffers major defeat
+→ central object is captured
+→ old authority falls backward at gate
+→ new child emerges during simultaneous death event
+→ captured centre enters rival host system
+→ rival centre falls once
+→ is manually reset
+→ falls again and is dismembered at threshold
+→ moving centre propagates disturbance node-to-node
+→ host network decides centre must return to its own system
+→ seven-month interval
+→ two animals are coupled to one cart under two opposed pulls
+→ calves remain behind / target boundary lies ahead
+→ human steering removed
+→ coupled pair follows one straight path without right/left deviation
+→ witnesses follow to boundary
+→ vehicle is dismantled at destination
+→ centre persists
+→ receiving side also discovers coupling limits
+→ centre moves to hill enclosure/keeper
+→ twenty-year settling interval
+→ population converges
+→ water is poured out
+→ opposing force approaches
+→ upper thunder disrupts lower battle
+→ witness stone marks transition
+→ functioning authority becomes a recurring multi-node circuit.
+
+---
+
+## Strongest Vardath-process correspondences in 1 Samuel 1–7
+
+1. **Transition by overlap rather than instantaneous replacement** — old receiver and new receiver coexist while function transfers.
+2. **Two-force opposition** — especially explicit in the two milk cows pulled biologically toward calves while the released cart takes the opposite specified route.
+3. **Changed relation matters more than object identity** — the ark produces different consequences depending on the system with which it is coupled.
+4. **A centre can be portable without being controllable.**
+5. **Node-to-node propagation** — disturbance follows the moving centre rather than remaining tied to one geography.
+6. **Boundary state can change after an event** — Dagon's threshold remains physically there but later traffic treats it differently.
+7. **Vehicle / route / cargo / witness are explicitly separable** in the return-cart episode.
+8. **Straight-path behavior is emphasized** — no right/left deviation.
+9. **Upper/lower action appears as a coupled sequence** at Mizpah: terrestrial convergence/water-release → upper thunder → lower disorder.
+10. **Witness structures record events without causing them** — Ebenezer stone.
+11. The book repeatedly uses **state inversion** as its grammar: shut/open, weak/strong, full/empty, down/up, old/new, captured/returning, centre/periphery.
+
+---
+
+## Major controls for Section 32A
+
+- The so-called Ark Narrative has a long and unresolved source/redaction history. Scholars disagree over its original boundaries and how 1 Samuel 1–3 became joined to 4–7.
+- The Dagon episode is theological/literary divine-conflict imagery; it is not evidence for literal Vardath field mechanics.
+- Recent scholarship cautions that the biblical presentation of a Dagon temple/cult at Iron Age Ashdod is not independently secure archaeologically.
+- Dagon should **not** be assumed to be a fish-god merely from the name.
+- The water-pouring at Mizpah has uncertain ritual meaning.
+- 1 Samuel 6:19's 50,070 figure is textually unstable and should not be used as a secure number-pattern datum.
+- The ark must not automatically be called the gate. In these chapters it functions more usefully for our analysis as a **portable centre / presence-bearing object / transferred component** whose relation to surrounding systems changes outcomes.
+- The names remain in the ledger for source tracking, but the strongest result is the **process topology**, not a claim that each named person/object literally is one cosmological component.
+
+### Sources logged for this block
+
+Primary narrative:
+- Mechon-Mamre, 1 Samuel 1–7, Hebrew Bible in English.
+
+Scholarly controls consulted:
+- Jaime A. Myers, **“The Wicked ‘Sons of Eli’ and the Composition of 1 Samuel 1–4”** (2021).
+- Tyndale Bulletin study, **“Why Has Yahweh Defeated Us Today Before the Philistines?”**, surveying Ark Narrative boundary debates and reading 1 Samuel 1–7 as a larger sequence.
+- Benedikt Hensel, recent literary-historical work on the Ark narratives in 1 Samuel 4–7 / 2 Samuel 6.
+- James “Seth” Adcock, **“Rules of Disfigurement: 1 Samuel 5:1–5’s Dagon Idol”** (JANES 36, 2023).
+- Recent scholarship on Dagon cult in Iron I Philistia, used as an archaeological/historical control.
+- Text-critical discussions of 1 Samuel 6:19 and the unstable 70 / 50,000 reading.
+- Study of Levantine libation practice, used only to keep the Mizpah water-pouring interpretation open.
+
+**Section 32 remains in progress.**
+
+Next:
+**1 Samuel 8–12 — demand for a king, competing/overlapping selection routes, lost donkeys as route trigger, private anointing, three signs, “another heart,” Spirit-state change, public lot selection, hiding among baggage, battle confirmation, kingship renewal, storm sign and the tension between distributed rule and one human centre.**
