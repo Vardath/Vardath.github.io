@@ -1,4 +1,4 @@
-name: Clean current EXTRA research duplicates
+name: Maintain current EXTRA research
 
 on:
   push:
@@ -14,49 +14,81 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  cleanup:
+  maintain:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Remove duplicate continuation tail
+      - name: Insert read-first continuation protocol
         shell: python
         run: |
           from pathlib import Path
 
           path = Path("book/EXTRA-RESEARCH.md")
           text = path.read_text(encoding="utf-8")
+          marker = "## READ FIRST — CONTINUATION PROTOCOL"
 
-          good = "# SECTION 53C1 CHECKPOINT — EZEKIEL 33–36 COMPLETE"
-          duplicate = "# SECTION 53 progress B2A — Ezekiel 21–24"
+          if marker not in text:
+              anchor = (
+                  "**Important:** This file preserves the full substance of the current chat and the research state reached before the chat limit. "
+                  "It is a research handoff, not an edit to the book or cosmology page.\n"
+              )
+              pos = text.find(anchor)
+              if pos < 0:
+                  raise SystemExit("Top-file insertion anchor not found")
+              pos += len(anchor)
+              protocol_lines = [
+              "---",
+              "",
+              "## READ FIRST — CONTINUATION PROTOCOL",
+              "",
+              "These rules govern every continuation of the 88-text Bible investigation.",
+              "",
+              "1. **One authoritative research document:** `book/EXTRA-RESEARCH.md`. Temporary `research-staging/extra-research-*.md` files are append carriers only and must disappear after successful append.",
+              "",
+              "2. **The reconstructed 88-text order is intentional.** It was arranged in the order that best fits the developing narrative/process sequence. Preserve that order unless the user explicitly revises it. Do not substitute a familiar canonical or guessed chronological order.",
+              "",
+              "3. **The 88-text order is a research/process reading order, not a claim that the Ethiopian Orthodox canon itself contains 88 canonical books.** Canonical baseline and comparison insertions remain separately labelled below.",
+              "",
+              "4. **Do not use checkpoints to determine progress.** Old checkpoint headings are historical archive text only. They are not authoritative for what is complete or what comes next.",
+              "",
+              "5. **Actual research content determines progress.** Inspect the live tail and relevant earlier blocks, identify the last text/chapter actually researched in substance, then continue with the next unfinished item in the reconstructed 88-text order.",
+              "",
+              "6. **Do not add new checkpoint sections.** Append the research itself: sources, controls, geometry/process analysis, pairs, timing/numbers, transformation sequence and next unfinished block where useful.",
+              "",
+              "7. **Repository state outranks chat memory.** Freezes, chat limits and delayed workflow appends can leave the conversation behind the repository. Verify the live file before every continuation.",
+              "",
+              "8. **Anti-duplication:** search for the same book/chapter range and distinctive headings before appending. If overlap exists, compare the actual research and preserve only genuinely new findings.",
+              "",
+              "9. **Append research as it is completed.** Do not hold long sessions only in chat.",
+              "",
+              "10. **Every append must go green.** Verify the staging carrier disappears, the append/maintenance workflow succeeds, and the intended research appears in `book/EXTRA-RESEARCH.md` exactly once. If red, inspect, recover and retry before treating the block as stored.",
+              "",
+              "11. **Cancelled Pages deployments from rapid commits are not research-append failures.** The relevant append/maintenance workflow and live file state are the required checks.",
+              "",
+              "12. **Preserve internal textual-order variants without reordering the 88-text corpus.** For Ezekiel, MT / Septuagint / Papyrus 967 differences belong inside Ezekiel analysis; they do not change the reconstructed corpus order unless the roadmap itself says so.",
+              "",
+              "13. **Primary objective:** build a continuous transformation timeline of geometries and processes across the 88 texts in relation to Vardath Cosmology. Names remain recorded, but the target is mechanism: paired forces/figures, projection states, broad lattice/support state, tension/orientation change, convergence, possible throat/gate, differential transfer, catastrophe/failure, reopening/reassembly and successor stable state.",
+              "",
+              "14. **Fingertrap control:** gathering, nets, rods, trees, melting, felling, openings and collapse are not automatically fingertrap. The strict analogue requires a connected broad weave to reorient into a narrow axial/throat state while retaining connectivity, then reopen/re-expand.",
+              "",
+              "15. **All world-layers are inhabited in the working Vardath model.** From our world, the world above is our future and the world below our past; each world has its own present. Gate-open intervals allow interaction between neighbouring world-turns.",
+              "",
+              "16. **Spiderweb = broad state; fingertrap/rod = contracted/reoriented state of the same underlying lattice hypothesis.** Track each story's state and transition rather than treating the names as separate objects.",
+              "",
+              "17. **Paired figures are tested, not assumed.** They may be separate people, split halves, polarity pair, mirrored state, successor phase, upper/lower presentation, operator/apparatus distinction, or two branches from one source.",
+              "",
+              "18. **Textual/historical controls remain visible.** Structural correspondence is not physical proof. Preserve manuscript differences, primary literary meanings, chronology problems and negative controls.",
+              "",
+              "---",
+              ""
+              ]
+              protocol = "\n".join(protocol_lines)
+              text = text[:pos] + "\n" + protocol + text[pos:]
+              path.write_text(text, encoding="utf-8")
 
-          good_i = text.find(good)
-          dup_positions = []
-          start = 0
-          while True:
-              i = text.find(duplicate, start)
-              if i < 0:
-                  break
-              dup_positions.append(i)
-              start = i + len(duplicate)
-
-          if good_i < 0:
-              raise SystemExit("Verified Ezekiel 33–36 checkpoint not found")
-          if len(dup_positions) != 1:
-              raise SystemExit(f"Expected exactly one duplicate B2A tail marker, found {len(dup_positions)}")
-
-          dup_i = dup_positions[0]
-          if dup_i <= good_i:
-              raise SystemExit("Duplicate marker is not after the verified C1 checkpoint")
-
-          # The duplicate B2A/B2B/B2C material was appended after the already-complete
-          # C1 endpoint. Remove only that later tail. Unique refinements are appended
-          # separately through the normal staged-research workflow.
-          text = text[:dup_i].rstrip() + "\n"
-          path.write_text(text, encoding="utf-8")
-
-      - name: Commit cleanup
+      - name: Commit maintenance
         shell: bash
         run: |
           set -euo pipefail
@@ -65,6 +97,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Remove duplicate Ezekiel continuation tail"
+            git commit -m "Add EXTRA research read-first protocol"
             git push
           fi
