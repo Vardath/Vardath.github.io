@@ -79396,3 +79396,2278 @@ Carry forward:
 - vulnerability at interfaces/joints;
 - names retained only as source labels while the main objective remains the transformation timeline of geometries and effects.
 
+
+
+---
+
+# SECTION 37 progress A — 2 Kings 1–4
+## Upper-room fall without return, repeated up/down fire confrontations, mantle-mediated Jordan crossing and succession, carrier separation by fire, reversed route back across the river, water healing, three-king desert circuit, false blood perception, capacity-limited oil filling, and a second upper-room death-to-life cycle with exact body alignment
+
+### Anti-repeat result
+
+The canonical roadmap and ledger were checked.
+
+- **Section 36 — 1 Kings 12–22** is complete.
+- **Section 37 — 2 Kings 1–13** is the first unfinished roadmap entry.
+- No later Section 37 progress block was found.
+- Canonical completion before this block: **36 / 88 = 40.9%**.
+
+---
+
+# 2 Kings 1 — a royal upper-room fall produces the inverse of the widow-child upper-room revival
+
+The new book opens with two linked state changes:
+
+**Ahab dies**
+→ **Moab rebels**.
+
+Then Ahab's successor Ahaziah:
+- falls through the lattice of his upper chamber;
+- is seriously injured.
+
+So immediately:
+**old centre death**
+→ external field decouples;
+**new centre**
+→ suffers bodily failure inside an elevated private enclosure.
+
+The king's political and bodily systems destabilize at once.
+
+---
+
+# Upper chamber / lattice becomes a failure boundary
+
+Ahaziah is not described as deliberately descending.
+
+He:
+**falls through the lattice/grating**
+of an upper chamber.
+
+The architectural boundary that ordinarily:
+- admits air/light;
+- protects upper space;
+
+fails to hold the body.
+
+So:
+**elevated enclosure**
+→ boundary breach
+→ uncontrolled downward movement
+→ injury.
+
+This is a genuine **support-surface failure**.
+
+Do not over-read the exact construction; translations/textual witnesses differ in details of the lattice wording.
+
+---
+
+# The king sends information outward because his body cannot travel
+
+Ahaziah sends messengers to Ekron to inquire of Baal-zebub.
+
+Thus:
+
+**immobilized centre**
+→ dispatches information carriers
+→ seeks remote diagnosis/future-state information.
+
+This is another:
+**centre stays fixed while message network moves**.
+
+---
+
+# Elijah intercepts the information route before it reaches the foreign oracle
+
+The messengers leave Samaria.
+
+Elijah is told to:
+**go up to meet them**.
+
+He intercepts the route and sends them **back**.
+
+So:
+
+**centre → messengers → foreign oracle**
+is converted into:
+
+**centre → messengers**
+→ **interception**
+→ **return to centre**.
+
+The question never reaches its intended external destination.
+
+This is a literal **information-route hijack**.
+
+---
+
+# “You went up to bed; you will not come down” reverses the 1 Kings 17 child cycle
+
+The message is repeated:
+
+**you went up onto the bed**
+→ **you will not come down**
+→ you will die.
+
+This is highly important because 1 Kings 17 had:
+
+**dead child**
+→ carried **up** to upper chamber/bed
+→ life restored
+→ carried **down** alive.
+
+Ahaziah gives the inverse:
+
+**living/injured king**
+→ remains **up** on upper bed
+→ will **not come down**
+→ dies.
+
+Gary Yates specifically notes this vertical reversal across the Elijah-Elisha cycle.
+
+Thus the upper-room geometry can produce opposite outcomes by phase:
+
+### 1 Kings 17
+up → life returns → down.
+
+### 2 Kings 1
+up → no return down → death.
+
+This is a very strong timeline pair.
+
+---
+
+# First information carriers are returned before completing their assigned path
+
+The messengers return so quickly the king asks:
+**why have you returned?**
+
+This makes route interruption itself visible.
+
+The king learns:
+**the path was blocked by another information source**.
+
+Then he identifies Elijah by description.
+
+---
+
+# The king escalates from messengers to force
+
+Ahaziah sends:
+- captain of fifty;
+- fifty men.
+
+They go **up** to Elijah,
+who sits at **top of hill**.
+
+The captain commands:
+**come down**.
+
+This chapter deliberately saturates the action with:
+**up / down**.
+
+Scholarship on the chapter notes the hill position helps create the repeated ascent/descent wordplay.
+
+---
+
+# First two military ascent attempts trigger descending fire
+
+Captain 1 + fifty:
+→ go up
+→ command Elijah down
+→ fire comes **down from heaven**
+→ consumes them.
+
+Captain 2 + fifty:
+→ repeats
+→ fire comes down
+→ consumes them.
+
+So the geometry is:
+
+**armed force ascends from below**
+→ issues downward command to elevated prophet
+→ **counter-force descends from above**
+→ ascending force is destroyed.
+
+This is a very clear vertical opposition.
+
+Human deaths remain primary; do not aestheticize the violence.
+
+---
+
+# Third captain changes relation before reaching the same outcome point
+
+Captain 3:
+- goes up;
+- falls on knees;
+- asks that his life and his fifty be precious.
+
+He does **not** issue the same coercive command.
+
+Then the divine message says:
+**go down with him; do not fear**.
+
+Thus:
+
+same route:
+**captain + fifty ascend**.
+
+Different relational state:
+**supplication instead of coercion**.
+
+Different outcome:
+**Elijah descends with them**
+instead of
+**fire descending on them**.
+
+This is a textbook demonstration:
+**same geometry + different interaction state → different result**.
+
+---
+
+# The vertical contest resolves by voluntary descent
+
+The chapter's military sequence ends not with a third fire event,
+but with:
+
+**elevated Elijah**
+→ voluntarily **goes down**
+with the non-coercive third group
+→ reaches king.
+
+The sought descent occurs only after the relationship changes.
+
+---
+
+# The king's terminal state completes the upper-room prediction
+
+Elijah repeats:
+**you will not come down from the bed you went up to**.
+
+Ahaziah dies.
+
+The centre is replaced by another king because:
+**Ahaziah has no son**.
+
+So the opening of 2 Kings combines:
+- failed upper-room boundary;
+- failed external-information route;
+- failed military compulsion;
+- no downward bodily return;
+- dynastic branch termination.
+
+---
+
+# 2 Kings 2 — prophetic succession is non-dynastic and route-based
+
+Richard Hess notes a strong book-level contrast:
+
+1 Kings opens with:
+**royal succession by dynasty/body**.
+
+2 Kings opens with:
+**prophetic succession by spirit/authority transfer**.
+
+Elijah's successor is not his biological son.
+
+The continuity is carried through:
+- shared route;
+- witnessed departure;
+- mantle;
+- repeated actions;
+- recognition by prophetic community.
+
+---
+
+# Elijah and Elisha follow a staged route with repeated separation tests
+
+Route:
+
+**Gilgal**
+→ Bethel
+→ Jericho
+→ Jordan.
+
+At each stage Elijah tells Elisha:
+**stay here**.
+
+Elisha repeatedly says:
+**I will not leave you**.
+
+So the route contains repeated opportunities for the successor candidate to decouple.
+
+He refuses every one.
+
+The succession is therefore tested through:
+**continued accompaniment across successive thresholds**.
+
+---
+
+# Prophetic groups at Bethel/Jericho know a transition is imminent
+
+At both nodes,
+sons of prophets tell Elisha:
+**your master will be taken from over your head today**.
+
+Elisha already knows.
+
+So the wider distributed network has advance information about the transition.
+
+This is not a hidden succession known only to the pair.
+
+---
+
+# Fifty witnesses stand opposite at a distance while the pair reaches the Jordan
+
+At the final geographic boundary:
+- **fifty** prophetic men stand afar/off opposite;
+- Elijah + Elisha stand at Jordan.
+
+This creates:
+
+**observer field**
+→ separated by distance
+→ watches
+**two-person transition pair at river**.
+
+The succession event therefore has:
+**central pair + remote witnesses**.
+
+---
+
+# Mantle changes from face-cover/call-object into water-dividing tool
+
+Elijah:
+- takes mantle;
+- rolls/wraps it;
+- strikes Jordan.
+
+The water:
+**divides here and there**.
+
+The pair crosses:
+**on dry ground**.
+
+This is a major functional transformation of the same garment tracked from 1 Kings 19:
+
+1. face-cover at cave mouth;
+2. call/selection object thrown on Elisha;
+3. now rolled water-boundary tool.
+
+This confirms the method:
+**object meaning lies in action/phase, not one static symbol**.
+
+---
+
+# River boundary is opened before the succession separation occurs
+
+The pair moves:
+
+**same side**
+→ water divides
+→ both cross
+→ only after crossing does Elijah's departure occur.
+
+So the succession event happens:
+**beyond the opened river boundary**.
+
+The return will require the successor to reopen it independently.
+
+This creates a strong:
+**outbound master-led crossing**
+versus
+**inbound successor-led crossing** pair.
+
+---
+
+# Double portion is inheritance language, not necessarily “twice as much power”
+
+Elisha asks for:
+**a double portion of Elijah's spirit**.
+
+Scholarship commonly connects this with firstborn inheritance language:
+a recognized heir's portion,
+not a simple mathematical claim of twice Elijah's power.
+
+Therefore:
+**secure process = inheritance/succession request**.
+
+Do not turn “double” into a literal energy multiplier without textual justification.
+
+---
+
+# Seeing the departure becomes the validation condition
+
+Elijah says:
+**if you see me being taken**
+→ request granted.
+
+So the succession is linked to:
+**witnessed transition**.
+
+The successor must remain perceptually coupled through the separation event.
+
+---
+
+# Fiery chariot/horses separate the pair before Elijah rises
+
+The text says:
+**chariot of fire + horses of fire**
+→ **separate the two of them**.
+
+Then:
+**Elijah goes up in whirlwind/storm toward heaven**.
+
+This distinction matters.
+
+The fiery chariot is not simply stated to be Elijah's passenger vehicle.
+
+Its explicit function is:
+**separation of the pair**.
+
+Then the whirlwind is the carrier/process associated with the upward taking.
+
+Popular retellings often merge these.
+
+The ledger should not.
+
+---
+
+# Carrier/separator and upward motion are separate process roles
+
+Thus:
+
+**two walking figures**
+→ fiery structure appears
+→ pair is split apart
+→ one figure moves upward in whirlwind
+→ other remains below.
+
+This is one of the strongest:
+**two-force separation → vertical removal**
+geometries in the Bible.
+
+But it is supernatural/theological narrative, not physical proof of a world-layer transfer.
+
+---
+
+# Elisha's visual link terminates
+
+Elisha cries out.
+Then:
+**he sees Elijah no more**.
+
+The transition closes by:
+**loss of visual coupling**.
+
+This is important because visual witness was the condition attached to succession.
+
+---
+
+# Elisha tears his own garment, then takes the fallen mantle
+
+Sequence:
+
+**own clothes**
+→ torn in two.
+
+Then:
+**Elijah's mantle**
+→ picked up.
+
+This is a direct old/new clothing transition:
+
+**old personal covering ruptured**
+→ predecessor's transferred object adopted.
+
+The narrative therefore marks succession materially.
+
+---
+
+# The mantle falls downward while Elijah goes upward
+
+This is a particularly useful directional pair:
+
+**Elijah**
+→ upward.
+
+**mantle**
+→ downward / remains accessible.
+
+So the person and the succession object move in opposite directions.
+
+The continuity carrier stays in the lower field after the predecessor disappears.
+
+---
+
+# Elisha returns to the same river boundary from the opposite side
+
+He walks back to Jordan and stands at bank.
+
+Now the question is:
+**can the successor reproduce the predecessor's boundary-opening function?**
+
+He uses the fallen mantle and strikes the water.
+
+The water divides again.
+
+He crosses.
+
+So the same interface is opened twice:
+
+### outward crossing
+predecessor acts
+→ pair crosses.
+
+### return crossing
+successor acts
+→ successor crosses alone.
+
+This is an exceptionally clear **functional transfer test**.
+
+---
+
+# The route is deliberately reversed after succession
+
+O'Brien's literary study notes the chapter is broadly chiastic:
+the outward Gilgal→Bethel→Jericho→Jordan route is followed by Elisha's reverse return through Jericho/Bethel-related encounters.
+
+So unlike 1 Kings 13,
+route reversal here is part of legitimate succession.
+
+Again:
+**same-way/reverse-way has no fixed value outside phase**.
+
+---
+
+# Remote observers infer transfer from repeated function
+
+When Jericho prophets see Elisha return,
+they say:
+**spirit of Elijah rests on Elisha**.
+
+Their recognition is based after the event,
+not merely on a title.
+
+The new centre's identity is confirmed through:
+**repeated boundary action + return**.
+
+---
+
+# Yet the observers still search for the missing predecessor
+
+Despite their declaration,
+they insist:
+**send fifty strong men**
+→ search mountain/valley
+→ perhaps spirit cast Elijah elsewhere.
+
+They search:
+**three days**.
+Find nothing.
+
+This creates a useful information tension:
+
+**functional succession recognized**
+but
+**ontological/location status of predecessor remains uncertain to observers**.
+
+The text itself preserves ambiguity in how onlookers imagine Elijah's removal.
+
+---
+
+# Critical scholarly control — Elijah's exact destination has generated long debate
+
+The received narrative says he went up by whirlwind “to heaven/sky.”
+
+Later Jewish/Christian tradition strongly develops heavenly assumption.
+
+Some scholars emphasize:
+- shamayim can mean sky/heavens;
+- search party imagines possible relocation to mountain/valley;
+- textual/compositional issues around whirlwind/chariot imagery.
+
+O'Brien also notes ambiguity over exactly what Elisha sees.
+
+Therefore:
+**secure raw geometry = upward removal in whirlwind, loss of sight, no body found, mantle remains**.
+
+Do not state more physically than the text securely gives.
+
+---
+
+# Jericho water — pleasant location with unusable local flow
+
+The city says:
+**location is good**
+but:
+**water bad**
+→ land causes miscarriage/unfruitfulness.
+
+So place geometry is favorable,
+resource state is not.
+
+This is another strong:
+**same node / different subsystem quality**
+distinction.
+
+---
+
+# New container + salt are inserted at source, not downstream symptoms
+
+Elisha asks for:
+- **new vessel**;
+- salt.
+
+He goes to:
+**spring/source of waters**.
+
+He throws salt there.
+
+Then water is declared healed.
+
+Process:
+
+**problem distributed downstream**
+→ intervention applied at **source node**
+→ downstream field changes.
+
+This is an important systems rule:
+**act on origin/interface rather than each individual consequence**.
+
+---
+
+# Material agent is not sufficient to explain the claimed healing
+
+Salt ordinarily makes water more saline.
+
+The narrative attributes the change to YHWH/Elisha's word.
+
+Therefore:
+do not treat this as ancient practical water chemistry.
+
+The salt/new vessel function is ritual-symbolic inside a miracle story.
+
+---
+
+# Life-giving water reversal follows Jericho's prior cursed rebuilding memory
+
+1 Kings 16 ended with:
+**Jericho rebuilt under death-associated curse memory**.
+
+2 Kings 2 soon gives:
+**Jericho water healed**
+→ no more death/miscarrying from source.
+
+Richard Hess and others note this life/death reversal.
+
+So the site moves:
+
+**destroyed/cursed**
+→ rebuilt with death-cost notice
+→ water/life problem
+→ water healed.
+
+This is a long multi-phase node transformation.
+
+---
+
+# Bethel bear scene — ascent mockery reverses into violent boundary warning
+
+Elisha goes **up** toward Bethel.
+
+A group of youths/young boys comes out and taunts:
+**go up, baldhead**.
+
+Brian Irwin argues “go up” likely resonates with Elijah's just-described ascent, though exact taunt meaning is debated.
+
+The result:
+- Elisha curses;
+- two female bears come out;
+- **42** youths are mauled/torn.
+
+This is severe violence involving young people.
+
+Do not sanitize or celebrate it.
+
+---
+
+# Critical philological control — age and outcome should not be overstated
+
+Hebrew **ne'arim qetannim** can denote youths/young boys; exact ages are not recoverable.
+
+The verb for what bears do indicates severe tearing/mauling and may imply deaths, but the text does not provide a separate death tally.
+
+Therefore:
+say:
+**42 are mauled/torn**,
+not automatically:
+**42 little children are killed**.
+
+---
+
+# Literary function may establish successor authority through blessing/curse polarity
+
+Some scholarship reads the Jericho-water episode and Bethel-bear episode as paired:
+- life/blessing for receptive Jericho;
+- curse/judgment at hostile Bethel.
+
+Irwin connects the bears with covenant curse imagery.
+
+This is a plausible final-form interpretation,
+but not the only ethical reading.
+
+Record:
+**new prophetic authority is shown through opposite effects in two adjacent nodes**.
+
+---
+
+# 2 Kings 3 — death of a centre immediately destabilizes tribute relations
+
+Moab rebels after Ahab's death.
+
+The text explains Mesha had rendered large sheep/wool tribute.
+
+So:
+**old dominant centre dies**
+→ subordinate external node stops resource flow.
+
+This repeats the exact opening of 2 Kings 1:
+**centre death → peripheral decoupling**.
+
+---
+
+# Three kings form one coalition field
+
+Israel asks Judah to join.
+Judah again says:
+**I am as you; my people as your people; my horses as your horses**.
+
+Edom also joins.
+
+So:
+**three political centres**
+→ one campaign network.
+
+This is broader than the two-king Ramoth coupling.
+
+---
+
+# Route selection creates the crisis
+
+Question:
+**which way shall we go up?**
+
+Answer:
+**way of wilderness of Edom**.
+
+Then:
+**seven-day circuit**
+→ no water
+for:
+- army;
+- animals.
+
+This is an explicit:
+**route decision → resource crisis**.
+
+The coalition is not first defeated by Moab.
+It is endangered by the geometry/logistics of its own path.
+
+---
+
+# The field reaches near-failure because water-carrier planning is insufficient
+
+Three kings and large army are present,
+yet water is absent.
+
+This reinforces:
+**force magnitude does not compensate for missing environmental carrier/resource**.
+
+The larger the field,
+the more severe its demand.
+
+---
+
+# The coalition goes down to the prophet
+
+Three kings:
+→ **go down to Elisha**.
+
+The political/military field descends to the information node rather than summoning him to royal centre.
+
+This reverses normal hierarchy.
+
+---
+
+# Music precedes the information state
+
+Elisha asks for:
+**a musician**.
+
+As music plays:
+**the hand of YHWH comes upon him**.
+
+Again:
+**rhythmic/auditory input**
+precedes
+**changed information/prophetic state**.
+
+Compare David's music regulating Saul.
+
+Different context; same broad sequence:
+**sound/music → altered operative state**.
+
+---
+
+# The solution is to prepare empty capacity before water appears
+
+Elisha commands:
+**make the valley full of trenches/ditches**.
+
+Then says:
+**you will not see wind**
+and
+**you will not see rain**
+yet
+**the valley will fill with water**.
+
+This is a major process:
+
+**dry field**
+→ excavate **empty receiving capacity**
+→ water arrives later from elsewhere
+→ capacity becomes filled.
+
+This is one of the strongest **prepare void before incoming flow** geometries in Kings.
+
+---
+
+# No local atmospheric precursor accompanies the water
+
+The text specifically denies:
+- visible wind;
+- visible rain.
+
+Yet in morning:
+**water comes by way of Edom**
+→ land fills.
+
+So the narrative separates:
+**local atmospheric signal**
+from
+**actual incoming water**.
+
+The water could be represented as distant runoff/flash-flood-like flow in naturalistic readings, but the story frames it prophetically.
+
+Do not claim the precise hydrology.
+
+---
+
+# Water both sustains one field and deceives the opposing field through appearance
+
+To Israelite coalition:
+**water = survival/resource**.
+
+To Moab:
+sunlight on water makes it appear:
+**red like blood**.
+
+Moab infers:
+**coalition kings have killed each other**.
+
+So one material state carries two radically different interpretations depending on observer.
+
+This is a near-perfect:
+**same visible field → different information model** case.
+
+---
+
+# False visual interpretation pulls Moab out of defensive state
+
+Moab assumes:
+**enemy already destroyed itself**
+→ moves to spoil rather than battle.
+
+Then Israel rises and attacks.
+
+Thus:
+**optical appearance**
+→ incorrect causal model
+→ unsafe route choice
+→ field defeat.
+
+This is another major epistemic geometry lesson:
+**observation is not interpretation**.
+
+---
+
+# Coalition destroys environmental/resource infrastructure across Moab
+
+The text describes:
+- cities struck;
+- fields filled with stones;
+- springs stopped;
+- good trees cut.
+
+This is warfare directed not only at soldiers,
+but at:
+**land productivity + water + urban nodes**.
+
+This is ecological devastation.
+
+Do not render it as neutral field optimization or recommend it.
+
+Processually:
+**military victory becomes landscape deactivation**.
+
+---
+
+# Kir-hareseth becomes the final defended enclosure
+
+The coalition reduces resistance until:
+**Kir-hareseth** remains.
+
+Slingers surround/strike it.
+
+So:
+**broad Moabite field**
+→ progressively destroyed
+→ one terminal fortified centre.
+
+Again:
+large field contracts into last enclosure.
+
+---
+
+# Mesha attempts a 700-man breakout toward Edom and fails
+
+Mesha takes:
+**700 sword-bearing men**
+→ tries to break through toward king of Edom.
+
+They cannot.
+
+So the final centre attempts:
+**focused boundary rupture**
+against one side of surrounding coalition.
+
+Failure leaves only a more extreme act.
+
+---
+
+# Heir is sacrificed on the wall — dynastic future is converted into public crisis offering
+
+Mesha takes:
+**eldest son who should reign after him**
+→ offers him as burnt offering
+→ **on the wall**.
+
+This is extreme human violence and child sacrifice.
+
+The process-level fact is:
+**future dynastic carrier**
+is destroyed at
+**the boundary of the besieged city**
+during terminal crisis.
+
+It is the exact opposite of preserving a successor branch.
+
+---
+
+# “Great wrath against Israel” is deliberately/actually ambiguous
+
+After the sacrifice:
+**great wrath / qetsef**
+comes against Israel
+→ coalition withdraws.
+
+Scholars disagree intensely over:
+- whose wrath;
+- whether divine;
+- Chemosh-related older layer;
+- Israelite outrage;
+- military reversal;
+- other disaster;
+- redactional ambiguity.
+
+Do not resolve it.
+
+Secure process:
+**public wall sacrifice**
+→ immediately followed by
+**coalition retreat**.
+
+Causation/agent remains disputed.
+
+---
+
+# Mesha Stele confirms the wider Moab-Israel conflict but does not cleanly harmonize the chapter
+
+The Mesha Inscription independently attests:
+- Mesha;
+- Omride domination;
+- Moabite revolt/victory traditions;
+- Chemosh/YHWH conflict language.
+
+But it differs in:
+- chronology;
+- geography;
+- campaign perspective;
+- outcome emphasis.
+
+Scholars remain divided over how directly 2 Kings 3 and the inscription describe the same campaign.
+
+Therefore:
+**broad historical conflict = independently anchored**.
+
+**exact battle sequence = not independently confirmed point-by-point**.
+
+---
+
+# 2 Kings 4 — debt crisis turns empty capacity into the condition for abundance
+
+A widow says:
+- husband dead;
+- creditor coming;
+- two children may be taken as debt-servants.
+
+Her house has:
+**almost nothing**
+except:
+**one pot/jar of oil**.
+
+So the chapter opens with:
+**economic enclosure failure**
+rather than battlefield failure.
+
+---
+
+# Empty vessels from the surrounding community become receiving capacity
+
+Elisha says:
+**borrow empty vessels from all neighbours**
+→ **not a few**.
+
+Then:
+- go inside;
+- shut door;
+- pour.
+
+This is a striking distributed-capacity process:
+
+**one small oil source**
++
+**many empty external containers**
+→ brought into one private enclosure
+→ sequentially filled.
+
+The miracle's scale depends on:
+**available empty capacity**.
+
+---
+
+# Flow continues until there is no empty vessel
+
+The key termination rule is explicit:
+
+son says:
+**no vessel remains**.
+
+Then:
+**oil stops**.
+
+This is one of the cleanest capacity-limited flow rules in the entire corpus.
+
+Process:
+
+**flowing source**
+→ fills container 1, 2, 3...
+→ as long as empty capacity exists
+→ flow continues.
+
+**empty capacity = 0**
+→ flow ceases.
+
+For the mature Vardath model this is exceptionally relevant:
+**transfer is capacity-limited by available receiving enclosures**.
+
+But it remains miracle narrative.
+
+---
+
+# The door is shut during the filling process
+
+The filling happens:
+**inside closed household boundary**
+with:
+- widow;
+- sons;
+- vessels.
+
+External neighbours supply capacity,
+but the actual transformation occurs after:
+**door closure**.
+
+Thus:
+
+**distributed empty capacity gathered inward**
+→ **boundary closes**
+→ filling occurs
+→ full containers later re-enter economy.
+
+This is a classic:
+**gather → enclose → fill → release/use** cycle.
+
+---
+
+# Filled containers convert debt-threat into survival margin
+
+Afterward:
+- oil sold;
+- debt paid;
+- widow/sons live on remainder.
+
+So:
+**empty containers**
+→ filled commodity
+→ sold
+→ debt field cleared
+→ children preserved from forced transfer
+→ household gains residual support.
+
+The miracle changes:
+**social/legal geometry**
+through
+**material filling**.
+
+---
+
+# Shunammite hospitality creates a purpose-built upper transition chamber before any crisis occurs
+
+A woman at Shunem repeatedly hosts Elisha.
+
+She proposes building:
+**a small upper chamber on the wall/roof**
+with:
+- bed;
+- table;
+- stool;
+- lamp.
+
+This is notable because the upper room exists **before** the child's death.
+
+It is a prepared enclosure for the travelling prophetic node.
+
+Later it becomes the exact place of death-to-life transition.
+
+So:
+**hospitality architecture**
+→ later
+**resurrection chamber**.
+
+The function changes over time.
+
+---
+
+# The woman's first position at the chamber scene is the doorway
+
+When promised a son:
+she stands:
+**in the door**.
+
+Again a major transition message is delivered at an architectural threshold.
+
+She does not ask for the child and warns:
+**do not deceive me**.
+
+The promise opens a future branch she herself had not requested.
+
+---
+
+# Child death begins in open agricultural field and moves inward
+
+The child goes out:
+**to father/reapers**.
+
+He cries:
+**my head, my head**.
+
+A servant carries him:
+**from field**
+→ mother.
+
+He remains on her knees until noon.
+Then dies.
+
+So:
+
+**open productive field**
+→ bodily crisis
+→ carrier transfer inward
+→ mother's body
+→ death.
+
+---
+
+# The mother immediately moves the dead body upward into the previously prepared chamber
+
+She:
+- goes **up**;
+- lays child on **Elisha's bed**;
+- shuts door on him;
+- goes out.
+
+This repeats 1 Kings 17 but with a major difference:
+
+### Zarephath
+prophet carries dead child up.
+
+### Shunem
+mother herself carries/places child up
+before fetching prophet.
+
+Thus the household has learned/instinctively creates a **reserved transition state**:
+dead body is not buried or left downstairs;
+it is placed in the prophet's upper-room space.
+
+---
+
+# The dead child is stored in a closed upper enclosure while the mother travels outward
+
+Door closes.
+
+Mother then:
+- obtains donkey/servant;
+- travels rapidly to Carmel.
+
+This creates a split system:
+
+**dead child**
+→ fixed in sealed upper room.
+
+**mother**
+→ mobile information/request carrier outward.
+
+The body and request occupy separate routes.
+
+---
+
+# “It is well” masks the actual state during the outward information journey
+
+Asked:
+- are you well?
+- husband?
+- child?
+
+She says:
+**it is well / shalom**.
+
+Yet child is dead.
+
+This is another example where:
+**surface report**
+does not equal
+**underlying state**.
+
+Whether this is strategic concealment, conventional response or something else is debated.
+
+The important process:
+**critical information is selectively withheld until reaching target operator**.
+
+---
+
+# Elisha explicitly admits the information is hidden from him
+
+At Carmel:
+the woman grasps his feet.
+
+Elisha says:
+**her soul is bitter**
+and
+**YHWH has hidden it from me; not told me**.
+
+This is extremely important.
+
+The prophetic operator is not omniscient.
+
+He must receive information through:
+**body language + human report**.
+
+This strongly supports the project's epistemic caution:
+**a powerful node can still lack local state information**.
+
+---
+
+# First remote restoration attempt sends a staff ahead through Gehazi
+
+Elisha:
+- gives staff to Gehazi;
+- commands rapid uninterrupted route;
+- lay staff on child's face.
+
+Gehazi goes **ahead**.
+
+This is a classic:
+**operator remains behind**
+→ sends portable object + messenger
+→ attempts remote action at target node.
+
+---
+
+# The staff route is deliberately stripped of social delay
+
+Instruction:
+- meet someone → do not greet;
+- greeted → do not answer.
+
+The messenger must maintain:
+**uninterrupted directed path**.
+
+This resembles the 1 Kings 13 route emphasis,
+but here the goal is speed/focus rather than avoiding a region.
+
+---
+
+# Portable object transfer alone fails
+
+Gehazi places staff on child.
+
+Result:
+**no voice**
+→ **no response/hearing**.
+
+He reports:
+**child did not wake**.
+
+This is very important.
+
+The successor's staff/object does **not** independently reproduce the full life-restoration function.
+
+Remote delegated interface fails.
+
+Direct operator presence becomes necessary.
+
+---
+
+# Mother refuses to decouple from Elisha
+
+She says:
+**I will not leave you**.
+
+This exactly echoes Elisha's words to Elijah in 2 Kings 2.
+
+So a succession loyalty formula is repurposed:
+
+### Elisha to Elijah
+I will not leave you
+→ accompanies master through transition.
+
+### Shunammite to Elisha
+I will not leave you
+→ compels operator to accompany her back to dead child.
+
+Same phrase/function:
+**refusal to accept proxy separation**.
+
+---
+
+# Elisha enters the closed room and reduces the system to two bodies
+
+He arrives.
+
+Child:
+- dead;
+- on his bed.
+
+Elisha:
+- goes in;
+- **shuts door upon the two of them**;
+- prays.
+
+This is the same enclosure form as widow oil:
+**door closed**
+→ process occurs inside.
+
+But here the internal state is:
+**one living operator + one dead child**.
+
+---
+
+# Body alignment is exact and bilateral
+
+Elisha:
+- mouth to mouth;
+- eyes to eyes;
+- hands to hands;
+- stretches himself over child.
+
+This is one of the most explicit body-mapping geometries in the Bible.
+
+The relation is:
+
+**mouth ↔ mouth**
+**eyes ↔ eyes**
+**hands ↔ hands**
+**body ↔ body**.
+
+It is not merely “touch.”
+
+It is an **aligned overlay**.
+
+---
+
+# First contact produces warmth, not full revival
+
+After the first body alignment:
+**child's flesh becomes warm**.
+
+This is highly significant.
+
+The transformation is staged:
+
+**dead/cold body**
+→ contact
+→ **warm body**
+but not yet fully awake.
+
+Richard Hess notes the literary contrast with 1 Kings 1:
+Abishag cannot warm dying David enough to preserve his life,
+while the Shunammite child's body becomes warm in Elisha's life-giving narrative.
+
+---
+
+# Operator disengages, moves through house, then repeats contact
+
+Elisha:
+- returns/steps away;
+- walks once to and fro in house;
+- goes up again;
+- stretches over child again.
+
+So the revival is not one uninterrupted action.
+
+It is:
+
+**contact**
+→ partial state change (warmth)
+→ separation/movement
+→ second contact
+→ full revival.
+
+This is a genuine two-stage transition.
+
+---
+
+# Seven sneezes mark terminal transition to waking state
+
+After second contact:
+**child sneezes seven times**
+→ **opens eyes**.
+
+Do not force seven into cosmology.
+
+Functionally:
+**repeated bodily output**
+precedes
+**restored visual consciousness**.
+
+---
+
+# Revived child is returned to mother through the same enclosure boundary
+
+Mother is called in.
+
+Elisha says:
+**take up your son**.
+
+She:
+- enters;
+- falls at his feet;
+- bows;
+- takes child;
+- goes out.
+
+So the complete Shunem cycle is:
+
+**living child in field**
+→ crisis
+→ carrier to mother
+→ death
+→ mother moves body **up**
+→ sealed upper chamber
+→ mother travels outward
+→ staff/proxy fails
+→ operator returns
+→ door closes
+→ body/body alignment
+→ warmth
+→ second alignment
+→ waking
+→ mother enters
+→ child leaves room alive.
+
+This is an even more detailed upper-room transformation than 1 Kings 17.
+
+---
+
+# 1 Kings 17 / 2 Kings 4 upper-room pair
+
+### Zarephath
+dead child
+→ Elijah carries up
+→ three repeated stretches/prayer
+→ life returns
+→ child carried down.
+
+### Shunem
+dead child
+→ mother places up
+→ staff proxy fails
+→ Elisha enters/closes door
+→ exact mouth/eyes/hands/body alignment
+→ warmth
+→ interval
+→ second stretch
+→ seven sneezes/open eyes
+→ mother takes child out.
+
+The recurring geometry is extremely strong:
+**dead child + upper room + prophet's bed/body contact + restored child**.
+
+But exact mechanics differ,
+so do not collapse them into one formula.
+
+---
+
+# Famine transforms ordinary gathering into contamination risk
+
+Later at Gilgal:
+**famine/dearth**.
+
+A man gathers wild plants without knowing them.
+
+They are cut into communal pot.
+
+Then people cry:
+**death in the pot**.
+
+This is a classic **unknown-input contamination** process:
+
+**resource scarcity**
+→ expands acceptable gathering range
+→ unidentified material enters shared container
+→ whole communal food node becomes unsafe.
+
+---
+
+# One bad input contaminates a shared vessel
+
+The danger is not distributed across separate bowls initially.
+
+It enters:
+**one great communal pot**.
+
+Thus:
+**small unknown field input**
+→ mixed into shared resource
+→ threatens all consumers.
+
+This is an important central-container vulnerability.
+
+---
+
+# Intervention restores usability of the whole shared pot
+
+Elisha adds meal/flour.
+
+Then:
+**no harm** remains in pot.
+
+Again:
+do not treat this as established chemical neutralization.
+
+The story narrates miracle/symbolic healing.
+
+Process:
+**contaminated shared node**
+→ one corrective input
+→ whole node returns to usable state.
+
+---
+
+# Limited bread feeds a much larger group with remainder
+
+A man brings:
+- 20 barley loaves;
+- fresh grain.
+
+Elisha says:
+**give to people**.
+
+Servant objects:
+**how can this feed 100?**
+
+They eat,
+and **leave some**.
+
+This continues the chapter's capacity/provision theme:
+
+1. little oil → many vessels → surplus after debt;
+2. dead child → restored;
+3. poisoned pot → safe communal food;
+4. 20 loaves → 100 people + remainder.
+
+The chapter repeatedly converts:
+**insufficient/deadly state**
+into
+**sufficient/life-supporting state**.
+
+---
+
+# SECTION 37A continuous geometry/effect timeline — 2 Kings 1–4
+
+## Phase OI — old-centre death loosens peripheral field
+
+Ahab dies
+→ Moab rebels.
+
+**Effect:** subordinate flow decouples at succession boundary.
+
+---
+
+## Phase OJ — upper-room support boundary fails
+
+Ahaziah
+→ lattice failure
+→ downward fall
+→ injury.
+
+**Effect:** elevated enclosure becomes bodily failure point.
+
+---
+
+## Phase OK — immobilized centre sends remote information route outward
+
+king fixed in bed
+→ messengers toward Ekron.
+
+**Effect:** bodies may remain fixed while information travels.
+
+---
+
+## Phase OL — information route is intercepted and returned before reaching destination
+
+messengers
+→ Elijah interception
+→ return to king.
+
+**Effect:** route control determines which source reaches centre.
+
+---
+
+## Phase OM — upper-bed state becomes non-return boundary
+
+king went up to bed
+→ will not come down
+→ death.
+
+**Effect:** reverses earlier upper-room revival grammar.
+
+---
+
+## Phase ON — coercive force ascends; fire descends
+
+two captains + fifties
+→ go up
+→ command Elijah down
+→ fire down from heaven.
+
+**Effect:** opposing vertical flows destroy coercive ascending field.
+
+---
+
+## Phase OO — same ascent with changed relational state produces voluntary descent
+
+third captain
+→ ascends
+→ kneels/asks mercy
+→ Elijah commanded to go down with him.
+
+**Effect:** same spatial geometry, different coupling, different outcome.
+
+---
+
+## Phase OP — dynastic branch closes
+
+Ahaziah dies childless
+→ successor is brother/other line.
+
+**Effect:** no son-carrier continues that immediate branch.
+
+---
+
+## Phase OQ — succession pair traverses repeated route tests
+
+Gilgal → Bethel → Jericho → Jordan
+while Elisha repeatedly refuses separation.
+
+**Effect:** successor remains coupled across successive thresholds.
+
+---
+
+## Phase OR — remote witness field observes pair at river
+
+50 prophets stand afar/opposite
+while
+Elijah + Elisha reach Jordan.
+
+**Effect:** central transition pair separated from observer network.
+
+---
+
+## Phase OS — mantle opens water boundary outward
+
+mantle rolled/strikes Jordan
+→ waters divide
+→ pair crosses dry ground.
+
+**Effect:** portable object acts as boundary-opening interface in narrative.
+
+---
+
+## Phase OT — fiery structure separates pair; whirlwind carries one upward
+
+fire chariot/horses
+→ separates two
+→ Elijah rises in whirlwind
+→ Elisha remains.
+
+**Effect:** separation and upward removal are distinct process stages.
+
+---
+
+## Phase OU — predecessor rises while succession object falls/remains
+
+Elijah up
+↔ mantle down/accessible.
+
+**Effect:** person and continuity carrier move in opposite directions.
+
+---
+
+## Phase OV — successor ruptures old covering and adopts predecessor object
+
+Elisha tears own clothes in two
+→ takes Elijah mantle.
+
+**Effect:** old personal state closes as succession carrier is assumed.
+
+---
+
+## Phase OW — return boundary tests transferred function
+
+Elisha at Jordan
+→ mantle strikes water
+→ river divides
+→ Elisha crosses alone.
+
+**Effect:** successor reproduces predecessor's interface action in reverse direction.
+
+---
+
+## Phase OX — distributed observers infer new state from repeated function
+
+prophetic sons see crossing
+→ recognize Elijah's spirit resting on Elisha.
+
+**Effect:** succession becomes externally legible through action.
+
+---
+
+## Phase OY — predecessor location remains uncertain to observers despite functional succession
+
+50 men search 3 days
+→ no Elijah found.
+
+**Effect:** functional handoff can be clear while predecessor's ontological/location status remains unresolved.
+
+---
+
+## Phase OZ — intervention moves to water source
+
+Jericho bad water
+→ salt/new vessel at spring
+→ water healed.
+
+**Effect:** source-node intervention changes distributed downstream effects.
+
+---
+
+## Phase PA — one successor field produces opposite effects at adjacent nodes
+
+Jericho water → life/healing.
+Bethel mockery → bear mauling.
+
+**Effect:** new prophetic authority is represented through blessing/curse polarity.
+
+Control:
+severe violence; age/death details must remain philologically cautious.
+
+---
+
+## Phase PB — three kings merge into one campaign field
+
+Israel + Judah + Edom
+→ shared route.
+
+**Effect:** multiple political centres temporarily couple.
+
+---
+
+## Phase PC — route decision creates environmental near-failure
+
+seven-day desert circuit
+→ no water.
+
+**Effect:** path geometry/logistics can threaten field before enemy contact.
+
+---
+
+## Phase PD — empty capacity is excavated before incoming flow appears
+
+valley
+→ ditches/trenches prepared
+→ no local wind/rain
+→ water later arrives.
+
+**Effect:** receiving void is constructed in advance of transfer.
+
+---
+
+## Phase PE — one material field produces opposite observer interpretations
+
+coalition:
+water = survival.
+
+Moab:
+red reflected water = blood/dead enemy.
+
+**Effect:** same visible state generates incompatible causal models.
+
+---
+
+## Phase PF — false interpretation pulls defender out of safe state
+
+Moab assumes coalition self-destroyed
+→ moves to spoil
+→ Israel attacks.
+
+**Effect:** information error changes route and exposes field.
+
+---
+
+## Phase PG — warfare deactivates landscape infrastructure
+
+cities/fields/springs/trees attacked.
+
+**Effect:** battle extends from bodies into long-term resource topology.
+
+Control:
+ecological/human destruction; not prescriptive.
+
+---
+
+## Phase PH — broad field contracts into final fortified node
+
+Moab resistance
+→ Kir-hareseth.
+
+**Effect:** distributed conflict narrows to last enclosure.
+
+---
+
+## Phase PI — attempted focused breakout fails
+
+700 men
+→ try break toward Edom
+→ fail.
+
+**Effect:** terminal centre cannot reopen surrounding boundary by direct force.
+
+---
+
+## Phase PJ — dynastic successor is destroyed at wall during crisis
+
+Mesha's heir
+→ sacrifice on wall.
+
+**Effect:** future branch is consumed at city boundary rather than preserved.
+
+Control:
+child sacrifice/human violence.
+
+---
+
+## Phase PK — ambiguous “great wrath” precedes coalition withdrawal
+
+sacrifice
+→ qetsef
+→ Israel withdraws.
+
+**Effect:** siege terminates abruptly, but causal agent remains textually/interpre­tively unresolved.
+
+---
+
+## Phase PL — household debt crisis gathers empty capacity inward
+
+widow + tiny oil
+→ borrows many empty vessels
+→ closes door.
+
+**Effect:** distributed unused capacity is concentrated around small source.
+
+---
+
+## Phase PM — flow persists only while empty capacity exists
+
+oil
+→ fills vessel after vessel
+→ last empty vessel gone
+→ flow stops.
+
+**Effect:** one of the corpus's clearest capacity-limited transfer rules.
+
+---
+
+## Phase PN — filled capacity converts material flow into social release
+
+oil sold
+→ debt paid
+→ children remain with mother
+→ household lives on surplus.
+
+**Effect:** filling changes legal/social state as well as material state.
+
+---
+
+## Phase PO — prepared hospitality enclosure later becomes death-to-life chamber
+
+upper room built for Elisha
+→ later receives dead child.
+
+**Effect:** a structure can change function radically across phases.
+
+---
+
+## Phase PP — dead child and mother split into fixed-body/mobile-information branches
+
+child sealed upstairs
+while
+mother rides to Carmel.
+
+**Effect:** target body remains enclosed while request/information travels outward.
+
+---
+
+## Phase PQ — operator lacks hidden state information
+
+Elisha sees distress
+but says event was hidden from him.
+
+**Effect:** high-capacity node is not omniscient; local data must still arrive.
+
+---
+
+## Phase PR — portable proxy is sent ahead on uninterrupted route
+
+Gehazi + staff
+→ no greetings/delay
+→ staff on child.
+
+**Effect:** remote delegated interface attempts restoration.
+
+---
+
+## Phase PS — object/proxy alone fails
+
+staff applied
+→ no voice/hearing.
+
+**Effect:** transferred object does not independently reproduce operator function.
+
+---
+
+## Phase PT — mother refuses proxy separation and brings operator bodily back
+
+“I will not leave you”
+→ Elisha follows.
+
+**Effect:** direct operator presence replaces failed remote interface.
+
+---
+
+## Phase PU — closed room reduces system to one living operator + one dead child
+
+door shut
+→ two bodies inside.
+
+**Effect:** transition takes place in isolated enclosure.
+
+---
+
+## Phase PV — body mapping aligns corresponding nodes
+
+mouth↔mouth
+eyes↔eyes
+hands↔hands
+body↔body.
+
+**Effect:** one of the Bible's clearest mirrored bodily overlays.
+
+---
+
+## Phase PW — first contact yields partial state transition
+
+dead/cold
+→ body alignment
+→ flesh warms.
+
+**Effect:** restoration occurs in stages rather than one instant.
+
+---
+
+## Phase PX — separation/movement precedes second contact
+
+Elisha walks to/fro
+→ returns
+→ second stretch.
+
+**Effect:** process includes contact → interval → contact.
+
+---
+
+## Phase PY — second contact culminates in waking signs
+
+seven sneezes
+→ eyes open.
+
+**Effect:** partial warmth advances to full waking state.
+
+---
+
+## Phase PZ — revived child exits chamber with mother
+
+mother enters
+→ takes son
+→ leaves.
+
+**Effect:** sealed transition phase reopens into household life.
+
+---
+
+## Phase QA — scarcity allows unknown input to contaminate communal container
+
+famine
+→ wild unknown plant
+→ shared pot
+→ “death in pot.”
+
+**Effect:** one uncertain input can threaten whole centralized resource node.
+
+---
+
+## Phase QB — corrective input restores shared container
+
+meal/flour added
+→ pot safe.
+
+**Effect:** communal node returns from harmful to usable state.
+
+---
+
+## Phase QC — limited food becomes sufficient for larger field with remainder
+
+20 loaves
+→ 100 people
+→ leftover.
+
+**Effect:** insufficiency transforms into abundance/surplus in miracle narrative.
+
+---
+
+# What 2 Kings 1–4 adds to the master Bible/Vardath timeline
+
+263. **An elevated enclosure can fail as a support boundary, turning a protected upper room into an uncontrolled downward-fall point.**
+264. **The Ahaziah episode deliberately reverses the earlier widow-child vertical cycle: one goes up to bed and does not come down alive, whereas the child was carried up dead and brought down alive.**
+265. **Information carriers can be intercepted and returned before reaching their intended source, making route control equivalent to source control.**
+266. **The same ascent toward an elevated node can trigger destructive descending force under coercion or safe voluntary descent under supplication; geometry alone does not decide outcome.**
+267. **Prophetic succession is shown as route-based and functional rather than biological, contrasting with dynastic kingship.**
+268. **Repeated opportunities to separate can function as a loyalty/coupling test across successive geographic thresholds.**
+269. **The fiery chariot/horses explicitly separate Elijah and Elisha; the whirlwind is separately associated with Elijah's upward removal. These roles must not be collapsed.**
+270. **A succession object can remain/fall into the lower field while the predecessor moves upward, preserving continuity after visual loss of the person.**
+271. **The same river boundary is opened first by the predecessor outward and then by the successor inward, providing a strong functional-transfer test.**
+272. **Succession can be clear at the level of function while observers remain uncertain about the predecessor's physical/location state.**
+273. **Intervening at a source node can change distributed downstream effects; Jericho's spring story is the clearest early Elisha example.**
+274. **A campaign can fail logistically because of its chosen route before enemy contact; force size cannot compensate for missing water.**
+275. **Digging empty trenches before water arrives is a strong prepare-capacity-before-flow process.**
+276. **The same water surface can be life-support to one field and false “blood” information to another, proving observer interpretation is a major state variable.**
+277. **False visual interpretation can pull a defended field out of safety into defeat.**
+278. **Military violence can deliberately target environmental infrastructure—water, trees, fields, cities—turning warfare into landscape deactivation.**
+279. **A defeated broad system can contract into one terminal fortress and attempt a focused breakout.**
+280. **The Moab ending remains deliberately/actually unresolved in causal terms: sacrifice is followed by 'great wrath' and withdrawal, but the source of the wrath is disputed.**
+281. **The Mesha Stele anchors the wider Moab–Omride conflict independently while strongly warning against naive one-to-one harmonization of chronology, geography and outcome.**
+282. **The widow-oil story gives one of the strongest capacity rules in the corpus: flow continues while empty receiving vessels exist and stops when capacity reaches zero.**
+283. **Distributed empty capacity can be gathered into a closed enclosure, filled, then re-released into the economy to change debt/family status.**
+284. **A purpose-built hospitality upper room can later become a death-to-life transition chamber, showing that architecture can change role completely by phase.**
+285. **The Shunammite story separates the dead body from the mobile information/request channel: child remains sealed upstairs while mother travels outward.**
+286. **A prophetic operator can explicitly lack critical local information, reinforcing that no viewpoint should be treated as complete merely because the node is powerful.**
+287. **A portable object sent by proxy may fail even when it belongs to the correct operator; object identity alone does not guarantee transferred function.**
+288. **Exact mirrored body alignment—mouth, eyes, hands, body—creates one of the strongest paired/overlay geometries in the corpus.**
+289. **Life restoration is staged: dead → warm → interval → renewed contact → waking, rather than a single switch.**
+290. **The Zarephath and Shunem revivals share an upper-room/bed/body-contact geometry but differ significantly in carrier, repetition and transition details; recurring geometry should not erase process variation.**
+291. **Resource scarcity can increase contamination risk because unknown inputs enter shared communal systems.**
+292. **A single shared container can make one bad input system-wide; conversely one corrective input can restore the whole common node.**
+293. **2 Kings 4 repeatedly converts insufficiency/death/debt into sufficiency/life/release, establishing Elisha's early ministry as a repeated state-reversal cluster.**
+
+---
+
+## Section 37A high-priority pair / geometry register
+
+### Upper-room child / upper-room king
+1 Kings 17 child:
+up dead → down alive.
+
+2 Kings 1 Ahaziah:
+up injured/alive → no down → dead.
+
+### Ascending captains / descending fire
+Opposed vertical force flows.
+
+### First two captains / third captain
+Same route, different relational state, opposite outcome.
+
+### Elijah / Elisha
+Predecessor-successor pair with repeated refusal of separation.
+
+### Pair / fifty witnesses
+Central transition dyad watched by remote field.
+
+### Elijah up / mantle down
+Person leaves; portable continuity object remains.
+
+### Outbound Jordan / inbound Jordan
+Same boundary, opposite crossing direction, different operator.
+
+### Jericho / Bethel
+Adjacent successor-authority outcomes:
+healing/life vs violent curse.
+
+### Three kings / no water
+Large political/military coupling defeated by missing environmental carrier.
+
+### Water / blood appearance
+One material state, two observer models.
+
+### Empty vessels / oil flow
+Receiving capacity controls transfer duration.
+
+### Staff / Elisha body
+Portable proxy versus direct operator presence.
+
+### Mouth-eyes-hands / mouth-eyes-hands
+Exact body-pair overlay.
+
+### First stretch / second stretch
+Partial warming then full waking.
+
+---
+
+## Section 37A number / timing register
+
+Record without forcing:
+- three captains, each with **50**;
+- **50** prophetic witnesses/searchers;
+- search **3 days**;
+- **42** youths mauled/torn by bears;
+- three kings in Moab coalition;
+- desert circuit **7 days**;
+- Mesha breakout **700** men;
+- Shunammite child sneezes **7 times**;
+- feeding: **20 loaves → 100 people**.
+
+Do not treat these as one unified number code. Their functions differ radically.
+
+---
+
+## Section 37A textual / literary / historical controls
+
+- 2 Kings 1 has substantial compositional debate; some scholars once treated the captain/fire scenes as secondary, while others argue the chapter is deliberately unified by up/down language.
+- The upper-room lattice wording differs somewhat across textual traditions; preserve fall-through-lattice from an upper private room as the secure core.
+- The two fire destructions involve lethal violence and should not be turned into celebratory “energy discharge” imagery.
+- 2 Kings 2 is structurally sophisticated and widely read as an Elijah-departure/Elisha-succession narrative with reverse-route symmetry.
+- Whether the chariot of fire is Elijah's literal vehicle is not stated; the text explicitly says it separates the pair, while the whirlwind takes Elijah upward.
+- The exact meaning/destination of “heaven” and later traditions about Elijah's bodily immortality remain debated. Preserve the narrative's upward removal and absence rather than asserting a measurable destination.
+- “Double portion” is best controlled by inheritance language; do not read it as a numerical power multiplication.
+- The search-for-Elijah verses themselves may reflect compositional tension with the earlier prophetic knowledge of his taking; retain that uncertainty.
+- Jericho salt/healing is miracle/symbolic narrative, not a known practical desalination procedure.
+- The bear episode is ethically difficult. Hebrew age terms are broader than “little toddlers”; 42 are torn/mauled, while exact fatality count is not separately stated. Brian Irwin reads the episode in covenant-curse/prophetic-authority terms, but that remains interpretation.
+- 2 Kings 3 and the Mesha Stele preserve materially different perspectives on Moab's revolt; historical harmonization remains contested.
+- The coalition's southern/Edom route, capital identification and exact campaign chronology are debated.
+- Water-from-Edom without local rain could be compared to regional runoff/flash-flood behavior, but the text gives no meteorological mechanism and frames it prophetically.
+- The tree/fountain/field destruction is ecologically and humanly violent; do not neutralize it.
+- Mesha's sacrifice is child sacrifice and should be named clearly as such.
+- “Great wrath against Israel” is one of the passage's most debated phrases; possible divine, Chemosh-related, military, psychological and redactional readings exist. Leave causal source unresolved.
+- The widow-oil episode is miracle narrative; its value to this project is the explicit receiving-capacity rule, not proof of physical oil multiplication mechanisms.
+- The Shunammite story is closely related literarily to 1 Kings 17 but is not identical; the differences in carrier, staff failure, body alignment and two-stage warming/revival are important.
+- Elisha's staff fails in this case; avoid magical-object readings of the staff or mantle independent of operator/source.
+- “Seven sneezes” is explicit but should not be medicalized or numerologically forced.
+- “Death in the pot” does not securely identify the plant/toxin. Avoid claiming a specific species or chemical neutralization.
+- The 20-loaves/100-men story is a miracle/provision narrative and should not be translated into demonstrated material conservation physics.
+
+### Sources logged for Section 37A
+
+Primary:
+- Mechon-Mamre, **2 Kings 1–4**.
+
+Scholarly controls:
+- **“Unifying Factors in 2 Kings 1.2–17a.”**
+- Richard S. Hess, **“Purpose for Elijah and Elisha in the Books of Kings”** (2023), especially the king-death / prophet-life and Shunammite-warmth contrasts.
+- Havilah Dharamraj, **A Prophet Like Moses? A Narrative-Theological Reading of the Elijah Narratives**.
+- Peter O'Brien, **“The Portrayal of Prophets in 2 Kings 2.”**
+- Michał Karnawalski, **Heaven for Elijah? A Study of Structure, Style, and Symbolism in 2 Kings 2:1–18**.
+- Brian Irwin, **“The Curious Incident of the Boys and the Bears: 2 Kings 2 and the Prophetic Authority of Elisha.”**
+- Gary E. Yates, **“The Motif of Life and Death in the Elijah-Elisha Narratives...”**, retained especially for the upper-room reversal.
+- Rainer Gass, **“Topographical Considerations and Redaction Criticism in 2 Kings 3.”**
+- Joe M. Sprinkle, **“2 Kings 3: History or Historical Fiction?”**
+- Philippe Stern, **“Of Kings and Moabites: History and Theology in 2 Kings 3 and the Mesha Inscription.”**
+- Juan Manuel Tebes, **“The Mesha Inscription and Relations with Moab and Edom.”**
+- K. A. D. Smelik, **“The Literary Structure of King Mesha's Inscription.”**
+- literary/narrative work on the Shunammite woman and Elisha's revival scene, read alongside the Zarephath narrative without collapsing them.
+- current studies of 2 Kings 4's scarcity/provision cluster.
+
+**Section 37 remains in progress.**
+
+### Next process block
+
+**2 Kings 5–8**:
+- Naaman arrives with wealth/letter and expects high-status direct ritual;
+- Elisha does not come out but sends instruction to wash seven times in Jordan;
+- pride blocks low-status/simple route, servants reverse him;
+- immersion seven times restores flesh “like a little child”;
+- soil/earth is carried back as religious territory-interface;
+- Gehazi secretly chases and diverts gift stream; leprosy transfers to him;
+- axe head falls into water and iron is made to float/recovered at exact fall point;
+- Aramean ambush locations repeatedly exposed by information;
+- invisible fiery horses/chariots around Elisha versus visible encircling army;
+- hostile army struck with disorientation/blindness and led into Samaria;
+- killing is refused; food is given; raiding bands cease temporarily;
+- siege/famine at Samaria;
+- four lepers at gate become accidental scouts when Aramean camp is found empty;
+- sound/rumor causes whole besieging army to abandon tents/horses;
+- information initially disbelieved, then tested;
+- gate crushes doubting officer exactly where he controlled passage;
+- Shunammite leaves seven years for famine, returns and has land restored at exact moment Gehazi recounts her revival story;
+- Hazael reads king's future/death state through Elisha and then suffocates Ben-hadad;
+- Judah/Israel dynastic coupling intensifies before Jehu cycle.
+
