@@ -31970,3 +31970,398 @@ Scholarly:
 
 **Section 23 remains in progress.**  
 Next under anti-repeat protocol: **Leviticus 16–17 — Day of Atonement, two goats, paired lots, one inward sacrificial route versus one outward living route, both hands transferring collective wrongdoing, inner veil crossing, incense cloud, blood routes, outside-camp disposal, and the life/blood principle.**
+
+
+## SECTION 23 progress C — Leviticus 16–17: matched goat pair splits into inward blood-route and outward living-carrier route
+
+### Anti-repeat check
+
+Section 23A–B are already saved.  
+No Leviticus 16–17 progress existed later in the ledger.  
+Continuing only from the two-bird purification checkpoint.
+
+### The chapter explicitly begins as a correction after Nadab and Abihu
+
+Leviticus 16 opens:
+- **after the death of Aaron's two sons**;
+- who died when they drew too near/approached YHWH.
+
+Aaron is then told:
+- **do not enter behind the veil at any time**;
+- unrestricted access risks death.
+
+So the Day of Atonement ritual is framed as the solution to an access problem created by the failed operator pair.
+
+This is crucial:
+
+**Nadab/Abihu**
+→ unauthorized/incorrect approach
+→ death
+
+**Aaron**
+→ restricted/timed/prepared approach
+→ successful entry and return.
+
+The sanctuary is therefore not simply “open” or “closed.”
+Access depends on:
+- person;
+- preparation;
+- time;
+- sequence;
+- protective conditions.
+
+### Incense cloud becomes an explicit protective screen inside the deepest zone
+
+Aaron takes:
+- altar coals;
+- **two handfuls** of incense;
+- carries them behind the veil.
+
+The incense cloud must:
+- cover/screen the ark-cover;
+- so that Aaron **does not die**.
+
+This is extremely important for the mature boundary model.
+
+The cloud is not merely decoration.
+Within the ritual sequence it performs a **shielding/screening function** at the most dangerous interface.
+
+Closest structural classification:
+
+**inner high-intensity zone**
+→ authorized operator enters
+→ **protective cloud generated**
+→ direct exposure reduced/screened
+→ operator survives.
+
+This strongly recalls Exodus 33's rock-cleft/hand-covering episode and the broader cloud-as-concealment role.
+
+It is still ritual/theophanic imagery, not evidence of radiation or plasma shielding.
+
+### Blood travels inward through the strongest boundary
+
+The bull blood and then the people's goat blood are taken:
+- **behind the veil**;
+- to/near the ark-cover;
+- sprinkled there;
+- including **sevenfold** sprinkling.
+
+The text says this purges/atones for:
+- the inner shrine;
+- Tent of Meeting;
+- altar,
+because these sacred spaces exist among Israel's impurities/transgressions.
+
+Thus the Day of Atonement has a clear **inward route**:
+
+**outer community**
+→ animal selected
+→ slaughter
+→ blood/life medium
+→ veil crossed
+→ inner sacred zone
+→ contamination/pollution removed from sanctuary.
+
+This is one of the strongest “material crosses inward while body does not” examples in the corpus.
+
+### The two goats begin as a matched pair
+
+The community provides:
+- **2 male goats** for one purgation-offering complex.
+
+Aaron:
+- takes **both goats**;
+- stands **both before YHWH**;
+- at the **entrance of the Tent of Meeting**;
+- places **two lots** on them.
+
+Before the lots:
+the goats are not assigned different inherent identities/functions in the text.
+
+Only after lot assignment do their paths diverge.
+
+This is a source-level:
+**matched pair → external assignment → opposite functional routes**.
+
+That is a very strong pair test.
+
+### Lot A — “for YHWH”: death, blood, movement inward
+
+The goat assigned to YHWH:
+- is slaughtered;
+- becomes purgation offering;
+- its blood crosses behind the veil;
+- blood is applied to the inner sanctuary.
+
+Route:
+
+**living goat**
+→ death
+→ blood separated from body
+→ **blood moves inward**
+→ deepest sacred centre.
+
+### Lot B — “for Azazel”: remains alive, receives transfer, moves outward
+
+The second goat:
+- remains **alive** before YHWH;
+- is not slaughtered as the YHWH goat is;
+- later stands before Aaron;
+- receives Aaron's **two hands** on its head;
+- all Israel's iniquities/transgressions/sins are confessed over it;
+- those wrongs are explicitly “put” on its head;
+- a designated agent sends it **out into the wilderness**;
+- the goat “bears/carries” them to a cut-off/inaccessible land.
+
+Route:
+
+**living goat**
+→ state/cargo transferred onto it
+→ remains alive
+→ **moves outward**
+→ carries unwanted load away from camp.
+
+This is an exceptionally clean carrier model.
+
+### The pair is not simply “one good / one evil”
+
+The two goats both begin:
+- before YHWH;
+- at the sacred entrance;
+- as one ritual pair.
+
+The Azazel goat is not merely an enemy goat invading from outside.
+
+Scholarly interpretation of **Azazel** remains debated:
+- wilderness being/demon;
+- place;
+- older deity-like figure;
+- ritual destination/personification.
+
+A useful modern source-critical observation is that the Azazel goat is first presented before YHWH and functions as an **elimination rite**, not as a normal sacrifice offered equivalently to a second god.
+
+Therefore:
+do not turn the pair into equal competing deities.
+
+### The two routes are genuinely opposite in spatial direction
+
+The paired goats now give a highly precise directional split:
+
+**Goat A**
+→ dies
+→ blood separated
+→ **moves inward**
+→ behind veil / centre.
+
+**Goat B**
+→ remains alive
+→ receives transferred burden
+→ **moves outward**
+→ wilderness / inaccessible land.
+
+This may be the cleanest paired **inward/outward** ritual geometry yet in the Torah.
+
+For Vardath comparison:
+the value is not “goats = lattice strands.”
+The value is that one matched pair can be assigned:
+- opposite directions;
+- different cargo;
+- different states;
+- complementary functions inside one process.
+
+That directly supports the pair methodology.
+
+### Both hands create a bilateral transfer gesture
+
+Aaron places **both hands** on the live goat.
+
+This differs from many ordinary sacrificial hand-laying scenes that use singular wording.
+
+The text then says the community's wrongs are put upon the goat's head.
+
+For the geometry register:
+
+**left hand + right hand**
+→ one central carrier head
+→ transfer of collective state/cargo
+→ outward route.
+
+This is a genuine bilateral bodily action around one carrier.
+
+Do not infer literal energy flow.
+
+### Two-bird rite and two-goat rite share one elimination grammar
+
+Leviticus 14:
+- two birds begin together;
+- one killed over living water;
+- live bird contacts blood/water;
+- live bird released outward.
+
+Leviticus 16:
+- two goats begin together;
+- one killed;
+- its blood travels inward;
+- live goat receives collective wrongdoing;
+- live goat is sent outward.
+
+The rites are not identical, but their shared grammar is striking:
+
+**matched pair**
+→ **death branch**
++
+**living-release branch**
+→ state purification/removal.
+
+This is strong evidence that the pair-splitting logic is a reusable ritual template.
+
+### Sanctuary contamination moves opposite to community wrongdoing
+
+The chapter effectively uses two cleaning directions:
+
+1. **Blood inward**
+   - cleans/purges sanctuary from accumulated impurity/transgression.
+
+2. **Goat outward**
+   - removes confessed wrongdoing from community/camp.
+
+Thus a single annual ritual performs:
+**centre-directed purification**
+and
+**periphery-directed removal**.
+
+This resembles a system flushing contamination by two complementary routes.
+
+Again: cultic state-processing, not literal fluid mechanics.
+
+### No one else occupies the Tent during inner operation
+
+While Aaron is inside making atonement:
+- no other person is to be in the Tent of Meeting until he exits.
+
+The inner process therefore requires **exclusive access**.
+
+This is another operating-state rule:
+**one authorized operator / sealed working interval / others excluded**.
+
+### Carcasses take a second outward route
+
+The bull and goat whose blood entered the shrine:
+- have their bodies/remains taken **outside the camp**;
+- burned there.
+
+So the sacrificed animals themselves split into:
+**blood inward**
+versus
+**body/remains outward**.
+
+This is an additional component-routing pattern within one organism.
+
+The ritual therefore repeatedly separates:
+**component A → centre**
+**component B → outside**.
+
+### Outward carriers contaminate their handlers temporarily
+
+The person who sends the live goat away:
+- washes clothes;
+- bathes;
+- only afterward may **re-enter camp**.
+
+The person who burns carcasses outside:
+- likewise washes;
+- then returns.
+
+This is a very strong boundary-cycle:
+
+**inside**
+→ outward removal work
+→ contact with exported impurity/material
+→ temporary altered status
+→ washing/reset
+→ **re-entry**.
+
+So the system explicitly prevents the carrier-handler from simply walking straight back inward unchanged.
+
+### Annual timing: month 7, day 10
+
+The rite is fixed:
+- **seventh month**;
+- **tenth day**;
+- once each year.
+
+That date later becomes the trigger-date for the Jubilee trumpet in Leviticus 25.
+
+Record the cross-link now; analyze the Jubilee clock separately.
+
+### Leviticus 17 recenters animal blood at the sanctuary entrance
+
+Leviticus 17 requires sacrificial slaughter to be brought:
+- to the **entrance of the Tent of Meeting**;
+- rather than dispersed among field cults/goat-demon worship.
+
+This turns the portable sanctuary into a central routing node for animal blood.
+
+### “Life of the flesh is in the blood”
+
+Leviticus 17 gives an explicit reason blood is restricted:
+- the life/nephesh of flesh is in the blood;
+- it is assigned to the altar for expiation;
+- animal blood not used there is poured out/covered rather than eaten.
+
+This is important for our component-routing method.
+
+The text itself treats blood as:
+**life-bearing component**
+that has a special authorized route/function distinct from ordinary meat.
+
+So the split seen in Leviticus 16:
+**blood inward / carcass outward**
+fits a wider Priestly principle that different components of one living body have **different permitted destinations**.
+
+### SECTION 23C — Vardath comparison
+
+Strong correspondences:
+1. Access to the deepest interface is **timed, role-specific and condition-specific**.
+2. A cloud acts as a protective/screening layer during entry.
+3. Matched pair begins together and is **differentiated by assignment**, not inherent visible difference.
+4. Pair then moves through **opposite directions**.
+5. One route separates a component and sends it inward.
+6. Other route leaves carrier alive and sends burden outward.
+7. Both hands perform a bilateral state-transfer gesture onto one carrier.
+8. One body can split into components with different destinations: blood inward / carcass outward.
+9. Outward handler must reset/wash before re-entry.
+10. Annual operation has an exact phase/date.
+
+Major controls:
+- the goats are ritual animals, not world strands;
+- Azazel's identity is debated;
+- the live goat is an elimination carrier, not proof of inter-world transport;
+- blood's “life” role is Priestly theology/ritual law, not modern biological fluid theory;
+- inward/outward cultic movement is not automatically upper/lower temporal movement.
+
+### Pair / number register
+
+- Day of Atonement goats: **2**.
+- lots: **2**.
+- routes: **1 inward-death/blood / 1 outward-living carrier**.
+- Aaron's hands on live goat: **2**.
+- inner blood sprinkling: **7 times** in key steps.
+- date: **month 7, day 10**.
+- frequency: **once yearly**.
+- bull/goat body split: blood inward / carcass outward.
+- handler route: outside → wash → re-enter.
+
+### Sources logged
+
+Primary:
+- Leviticus 16–17, Sefaria.
+
+Scholarly/source-critical:
+- “Is Azazel a Goat, Place, Demon, or Deity?” TheTorah.
+- modern discussion of the goat as an **elimination** rather than equivalent sacrifice to Azazel.
+- Leviticus 14 two-bird rite as a close elimination-ritual parallel.
+- Milgrom-influenced interpretation of blood as sanctuary-purgation medium.
+
+**Section 23 remains in progress.**  
+Next under anti-repeat protocol: **Leviticus 18–27 — holiness/land expulsion language, sacred times, seven-year sabbatical cycle, 7×7 = 49 years, 50th-year Jubilee, month7/day10 trumpet, return to family/holding, land-restoration, sevenfold punishments, and final comparison of Leviticus' cyclic reset with the Vardath handoff model.**
