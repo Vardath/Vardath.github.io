@@ -33186,3 +33186,474 @@ Priority from the saved roadmap:
 - rock/water.
 
 Before beginning Section 24, run the anti-repeat search for Numbers 1–20 and its major stories.
+
+
+---
+
+## SECTION 24 progress A — Numbers 1–10: four-direction moving camp, double protective ring, twelvefold dedication and cloud/trumpet state controls
+
+### Anti-repeat check
+
+The full ledger was searched for:
+- Section 24;
+- Numbers 1–20;
+- camp geometry;
+- 70 elders;
+- Miriam/Aaron;
+- 12 spies / Joshua-Caleb;
+- Korah;
+- Aaron's rod;
+- rock/water.
+
+Only roadmap and earlier cross-references were found.  
+No Section 24 research block existed.
+
+This is genuinely new work.
+
+### Census separates the twelve-tribe outer body from the Levite inner body
+
+Numbers 1 counts:
+- Israelite males age 20+ eligible for military service;
+- total **603,550**;
+- Levites explicitly excluded from that census.
+
+The Levites instead receive:
+- responsibility for Tabernacle;
+- transport;
+- setup/takedown;
+- guarding;
+- an inner encampment around it.
+
+So the population is intentionally divided into:
+
+**outer twelve-tribe military/social body**
+and
+**inner sanctuary-service/guard body**.
+
+This is a functional concentric distinction.
+
+### Levites are a protective ring
+
+Numbers 1:53 explicitly says:
+- Levites camp **around** the Tabernacle;
+- so wrath does not fall on the Israelite community;
+- they guard the sacred structure.
+
+This makes the inner ring functionally protective:
+
+**central active structure**
+→ **specialized buffer/guard layer**
+→ **general population outside**.
+
+That is strongly analogous to a graded safety boundary.
+
+It is not evidence of a physical force-field.
+
+### Four outer cardinal camps, each containing three tribes
+
+Numbers 2 arranges the twelve tribes as four larger camp-units:
+
+**East — Judah camp**
+- Judah
+- Issachar
+- Zebulun
+
+**South — Reuben camp**
+- Reuben
+- Simeon
+- Gad
+
+**West — Ephraim camp**
+- Ephraim
+- Manasseh
+- Benjamin
+
+**North — Dan camp**
+- Dan
+- Asher
+- Naphtali
+
+So the raw outer geometry is:
+
+**4 directions × 3 tribes = 12**.
+
+This is one of the clearest source-level 4×3 arrangements in the Pentateuch.
+
+Compare:
+- Aaron breastpiece = **4 rows × 3 stones = 12**;
+- wilderness camp = **4 directional groups × 3 tribes = 12**.
+
+The same twelvefold Israel body is now projected:
+- onto human chest;
+- onto geographic space.
+
+This is extremely high-value for the project's projection method.
+
+### Four inner Levitical/priestly directions
+
+The inner sanctuary ring also has directional placement:
+
+- **East** — Moses, Aaron and priestly line;
+- **South** — Kohath;
+- **West** — Gershon;
+- **North** — Merari.
+
+So the final-form Priestly camp has two nested four-direction systems:
+
+**outer**
+4 tribal camps × 3 tribes
+
+surrounding
+
+**inner**
+4 priest/Levite station groups
+
+surrounding
+
+**centre**
+Tabernacle.
+
+This is one of the most explicit nested cardinal architectures in the Torah.
+
+### Important geometry control — overall camp shape is not specified
+
+Many modern illustrations draw the whole camp as a perfect square or rectangle.
+
+But the biblical description itself:
+- gives cardinal locations;
+- groups;
+- order;
+- centre;
+- distance;
+- does **not** state exact outer camp dimensions or overall shape.
+
+Recent scholarship explicitly warns against assuming an Egyptian-style square camp from the text alone.
+
+Therefore our geometry register should say:
+
+**four-direction organized camp**
+not
+**proven square camp**.
+
+### Possible Persian-period military model
+
+Recent scholarship has proposed that the Priestly wilderness-camp organization reflects Persian imperial/military camp forms:
+- royal tent in centre;
+- specialized inner groups;
+- larger military units on cardinal sides.
+
+Older scholarship compared Egyptian military camps.
+
+The precise historical model remains debated.
+
+For our project:
+this source-critical context is a reminder that geometric order may arise from **military/administrative models**, not hidden cosmology.
+
+### Outer camp and inner ring move as an ordered system
+
+Numbers 2 says the camp moves in organized sequence.
+
+The Tabernacle/Levites are described as travelling **in the midst** of the camps in the overall formation.
+
+Later Numbers 10 elaborates marching order.
+
+This means the geometry is not merely static:
+
+**ordered encampment**
+→ dismantle
+→ ordered movement
+→ reassembly
+→ same central relation restored.
+
+That is a strong mobile-system pattern.
+
+### Sacred objects are wrapped before transport
+
+Numbers 4 gives a crucial state-protection rule:
+- priests first enter and cover sacred furnishings;
+- only after covering may Kohathites carry;
+- Kohathites must not directly touch/see sacred objects in forbidden conditions, lest they die.
+
+So movement requires a transition:
+
+**active/exposed sacred object**
+→ priestly covering/wrapping
+→ transport-compatible state
+→ Levite carrier movement
+→ later reassembly/exposure.
+
+This is directly analogous to a **state adaptation before movement**.
+
+It strongly recalls:
+- Enoch's garment changes;
+- Moses' veil;
+- protective cloud;
+- wrapped soul traditions.
+
+But this is sacred-transport ritual, not environmental physics.
+
+### Different components use different transport modes
+
+Numbers 7 confirms:
+- Gershon receives **2 carts + 4 oxen**;
+- Merari receives **4 carts + 8 oxen**;
+- Kohath gets **no carts**, because most sacred items are carried **on shoulders**.
+
+Thus one portable system is broken into components with different movement requirements.
+
+This is another strong:
+**same structure → differentiated cargo routes/vehicles**.
+
+### Twelve chiefs dedicate the centre one day at a time
+
+Numbers 7:
+- twelve tribal chiefs;
+- each presents an offering;
+- **one chief per day**;
+- over **12 days**;
+- offerings are deliberately repeated in essentially identical form.
+
+This serializes the twelvefold population around one central altar:
+
+**tribe 1 → centre**
+**tribe 2 → centre**
+…
+**tribe 12 → centre**.
+
+Rather than all twelve converging simultaneously, the book creates a **timed sequence through one central node**.
+
+### 6 carts / 12 oxen — pair-sharing among chiefs
+
+Initial transport gift:
+- **6 carts**;
+- **12 oxen**;
+- one cart per **2 chiefs**;
+- one ox per chief.
+
+This gives:
+**12 chiefs → paired into 6 shared cart units**.
+
+Another source-level 12→6 pairing.
+
+### Dedication totals preserve twelvefold symmetry
+
+The summary totals:
+- 12 silver bowls;
+- 12 silver basins;
+- 12 gold ladles;
+- 12 bulls for burnt offerings;
+- 12 rams;
+- 12 yearling lambs;
+- 12 goats for purgation offerings.
+
+The narrative's extreme repetition is intentional.
+
+The twelve tribes remain differentiated by name/day but **equalized in offering pattern**.
+
+This is another:
+**many distinct branches → identical central contribution** architecture.
+
+### After twelvefold dedication, voice again comes from between two cherubim
+
+Numbers 7 ends:
+- Moses enters Tent of Meeting;
+- hears the Voice;
+- from above the ark-cover;
+- **between the two cherubim**.
+
+This directly confirms Section 22's central communication geometry inside the moving camp.
+
+The camp therefore nests:
+
+**12 tribes / 4 directions**
+→ Levite guard ring
+→ Tabernacle
+→ ark
+→ **2 cherubim**
+→ central voice-space.
+
+That is an exceptionally precise multi-scale structure.
+
+### Menorah seven-lamp geometry is reiterated
+
+Numbers 8 repeats:
+- **7 lamps**;
+- lampstand made according to the pattern shown Moses;
+- base-to-flower hammered as one work.
+
+This reaffirms:
+**3 + 1 + 3 branching object / 7 lights**
+inside the larger 4×3 camp.
+
+Do not automatically combine the number systems into hidden mathematics; simply preserve the nested geometries.
+
+### Levites themselves undergo a state-conversion rite
+
+Numbers 8:
+- water sprinkled;
+- whole body shaved;
+- clothes washed;
+- offerings;
+- community places hands upon Levites;
+- Levites are presented/dedicated for service.
+
+This parallels priestly consecration but at a different service level.
+
+So the inner guard/transport ring is not merely genealogical:
+its members undergo **ritual role conversion**.
+
+### Second Passover — timing system can include a controlled alternate window
+
+Numbers 9 addresses people unable to keep Passover at normal time due to impurity/journey.
+
+A second opportunity is established:
+- month **2**;
+- day **14**.
+
+This is important for the phase model:
+an access/participation event can have an **alternate timed window** for those temporarily excluded.
+
+This is not arbitrary flexibility; it is a formally defined secondary phase.
+
+### Cloud state machine is expanded dramatically
+
+Numbers 9 reiterates Exodus 40:
+
+**cloud settled**
+→ camp stays.
+
+**cloud lifted**
+→ camp moves.
+
+But Numbers adds that duration can vary:
+- overnight;
+- two days;
+- a month;
+- a year;
+- many days.
+
+The population does **not** move by its own fixed clock.
+It moves when the interface signal changes state.
+
+This strongly fits the mature Vardath “place + phase” idea:
+**location alone is not enough; state of the interface determines action**.
+
+### Fire by night remains same system
+
+Again:
+- cloud by day;
+- appearance of fire by night.
+
+Best classification remains:
+**one presence/guidance system with time-dependent visible manifestations**.
+
+### Two silver trumpets add an explicit control-signal layer
+
+Numbers 10 commands:
+- **2 silver trumpets**;
+- hammered work.
+
+Their signal patterns distinguish:
+- both long blasts → whole congregation assembles;
+- one trumpet → leaders assemble;
+- short/alarm blasts → camps move.
+
+This is a literal **information/control system**.
+
+Different signals produce different system behaviors.
+
+### Paired trumpets can address whole or subset
+
+The two trumpets form a functional pair:
+- both together = global assembly;
+- one alone = leadership subset;
+- blast type changes from assembly to movement function.
+
+Classification:
+- **P7 paired signalling/control instruments**.
+
+This is much more secure than trying to interpret Urim/Thummim physically, because the signal behavior is explicitly stated.
+
+### Textual lacuna in movement blasts
+
+The Masoretic/Samaritan wording explicitly gives alarm blasts for:
+- east camp;
+- south camp;
+
+but does not clearly specify corresponding third/fourth movement blasts for west/north.
+
+The Septuagint preserves expanded wording.
+
+Modern textual scholarship treats this as a real transmission/textual problem.
+
+Therefore:
+do not invent a perfect four-blast scheme from the MT alone.
+
+### First major departure date
+
+Numbers 10:
+- **year 2**;
+- **month 2**;
+- **day 20**;
+- cloud lifts;
+- Israel leaves Sinai wilderness;
+- cloud settles in Paran.
+
+This is the first dated execution of the cloud state machine after Sinai.
+
+### SECTION 24A — Vardath comparison
+
+Strong correspondences:
+1. One active centre organizes an entire surrounding population.
+2. Same 12-part Israel appears as **4×3 geographic projection**, complementing 4×3 breastpiece.
+3. Four-direction outer system nests around four-direction inner service ring.
+4. Inner Levites act as a **buffer/guard layer**.
+5. Portable structure disassembles, moves, and reassembles while retaining functional identity.
+6. Sacred components require **covering/state adaptation before transport**.
+7. Different components use different carrier modes.
+8. Twelve chiefs access the centre sequentially over 12 days.
+9. Central voice remains between paired cherubim at deepest point.
+10. Cloud state controls stay/move regardless of elapsed duration.
+11. Two trumpets provide an explicit information/control layer.
+12. Alternate Passover provides a formal second timing window after temporary exclusion.
+
+Major controls:
+- camp overall shape is not stated;
+- Persian/Egyptian military analogues are plausible alternative explanations for geometry;
+- Priestly camp organization is literary/cultic/military, not proof of world-disc architecture;
+- cloud/fire remains theological guidance imagery;
+- trumpet signals are ordinary acoustic communication, not hidden energetic frequencies.
+
+### Number / geometry register, Numbers 1–10
+
+- main census: **603,550**.
+- outer tribes: **12**.
+- outer camps: **4 × 3 = 12**.
+- inner service directions: **4**.
+- twelve chiefs: **12**.
+- dedication days: **12**.
+- transport gift: **6 carts + 12 oxen**.
+- pair relation: **1 cart / 2 chiefs**.
+- Gershon: **2 carts / 4 oxen**.
+- Merari: **4 carts / 8 oxen**.
+- Kohath: **0 carts**, shoulder transport.
+- menorah lamps: **7**.
+- alternate Passover: **month2/day14**.
+- cloud duration examples: night / 2 days / month / year.
+- silver trumpets: **2**.
+- dated Sinai departure: **year2/month2/day20**.
+
+### Sources logged
+
+Primary:
+- Numbers 1–10, Sefaria.
+
+Scholarly/source-critical:
+- Jaeyoung Jeon, “Israel's Wilderness Camp Modeled on the Persian Military Formation.”
+- “The Meaning of Degel and the Elusive History of the Levites.”
+- Jonathan Grossman, “The Message of the Non-Chronological Opening of Numbers.”
+- “How Many Trumpet Blasts to Travel? MT+SP=LXX.”
+- source-critical distinction between Priestly central Tabernacle and non-Priestly outside-camp Tent of Meeting.
+
+**Section 24 remains in progress.**  
+Next under anti-repeat protocol: **Numbers 11–14 — seventy elders receiving distributed spirit from Moses, Eldad/Medad outside the expected location, Miriam/Aaron challenge, cloud/pillar judgment, twelve spies, paired fruit carriers, ten-vs-two report split, Joshua/Caleb pair, 40 days → 40 years, and the attempted reversal after the access window has closed.**
