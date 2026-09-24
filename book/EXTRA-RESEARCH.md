@@ -52279,3 +52279,1706 @@ Controls:
 
 Next:
 **1 Samuel 25–31 — intermediary prevents destructive convergence; gift/cargo flow reverses an approaching force; death removes a blocking centre without David acting; second Saul-spared doublet; David crosses into Philistine territory and builds a dual-identity zone; Amalekite raid empties/burns Ziklag and carries population away alive; recovery follows a split at the Besor; Saul seeks information across the forbidden dead/live boundary; final battle collapses the old centre and sons together.**
+
+
+---
+
+# SECTION 33 progress C — 1 Samuel 25–31
+## Interception and reversal, penetration of a ringed centre, border-crossing refuge, closed information channels and lower-boundary inquiry, split pursuit at water, complete cargo recovery, and final old-centre collapse
+
+## Chronology control before reading the geometry
+
+The closing chapters of 1 Samuel do **not** function as a simple one-track modern chronology.
+
+The narrative tiles together at least two concurrent lines:
+
+### Southern/successor line
+David:
+**wilderness → Philistine territory → Philistine army/rejection → Ziklag → Amalekite pursuit/recovery**.
+
+### Northern/old-centre line
+Saul:
+**Philistine threat → closed inquiry channels → Endor → Gilboa → death**.
+
+The book places the Endor scene in chapter 28 and then returns in chapter 29 to the Philistine mustering involving David.
+
+Scholarly literary analysis treats 1 Samuel 27–2 Samuel 1 as an **accession narrative with overlapping/tiled temporal markers**, not necessarily an exact chapter-by-chapter chronology.
+
+Therefore the master timeline must retain two levels:
+1. **narrative order as written**;
+2. **overlapping event tracks where the text indicates simultaneity or backtracking**.
+
+This is essential for the geometry timeline because two different state transformations can be occurring at the same time in different regions.
+
+---
+
+# 1 Samuel 25 — old intermediary dies; a moving cargo-stream intercepts a destructive force before contact
+
+The chapter begins with a major network loss:
+
+**Samuel dies**.
+
+All Israel gathers, mourns and buries him at Ramah.
+
+This matters structurally because Samuel has repeatedly functioned as:
+- old communication channel;
+- mediator;
+- judge;
+- interface between Saul and higher command;
+- anointer/identifier of the successor.
+
+His death removes one of the last stable bridge nodes between the old and new regimes.
+
+The larger succession system is now more directly:
+**Saul-state ↔ David-state**
+without Samuel alive as intermediary.
+
+### David's group had functioned as a protective wall
+
+Nabal's servants describe David's men as:
+**a wall around us by night and by day**.
+
+This is unusually explicit boundary language.
+
+The mobile armed group functioned as:
+**moving protective perimeter**
+around another group's livestock/work.
+
+So the same people who are themselves fugitives can act as an external **boundary layer** for a different local system.
+
+### Refused exchange converts a protective boundary into an approaching destructive force
+
+David sends **ten young men** asking for provisions during sheep-shearing.
+
+Nabal refuses.
+
+The messengers reverse direction and return.
+
+David then arms:
+- about **400** men to move with him;
+- **200** remain with baggage.
+
+So:
+
+**protective boundary**
+→ expected reciprocal cargo transfer refused
+→ information returns
+→ boundary force changes state
+→ 600-body network splits 400 active / 200 rear support
+→ active group moves toward target.
+
+This is a strong example of **state change caused by failed exchange**.
+
+### Abigail creates an opposing cargo-stream
+
+Abigail loads:
+- 200 loaves;
+- wine;
+- five prepared sheep;
+- grain;
+- raisins;
+- 200 fig cakes
+
+onto donkeys.
+
+She sends young men **ahead** and follows behind.
+
+Then:
+- she comes **down** through the mountain cover;
+- David and his men are also coming **down toward her**;
+- the two moving streams meet before David reaches Nabal's household.
+
+This is a clean interception geometry:
+
+**destructive force moving toward target**
+←→
+**gift/cargo + intermediary moving outward from target**
+→ contact occurs in mountain approach zone
+→ destructive force halts/reverses intention before reaching original target.
+
+The intermediary does not merely argue.
+
+She physically inserts:
+- herself;
+- cargo;
+- information
+
+into the path between two incompatible nodes.
+
+### Cargo changes the state of the moving force
+
+Abigail's intervention explicitly prevents David from:
+- shedding blood;
+- taking vengeance with his own **hand**.
+
+David says she has **kept him back** from the act.
+
+So:
+
+**approaching force charged for destructive contact**
+→ intercepting cargo/interface arrives
+→ information + material transfer accepted
+→ force state changes
+→ destructive transfer is inhibited.
+
+This is one of the strongest **intermediate-node stabilization** events in Samuel.
+
+Vardath comparison:
+**a buffer/interface carrying material can absorb or redirect an approaching transition before catastrophic contact completes.**
+
+### “Bundle” versus “sling” — explicit containment/ejection metaphor
+
+Abigail uses a striking paired image:
+
+David's life:
+**bound in the bundle of the living**.
+
+Enemies:
+**slung out from the hollow/pocket of a sling**.
+
+This is literary metaphor, not technical mechanics.
+
+But it is geometrically precise enough to preserve:
+
+**retained/contained state**
+versus
+**ejected/projected state**.
+
+It also deliberately echoes the sling imagery already central to chapter 17.
+
+So the same tool-family has changed function:
+chapter 17:
+**stone retained in pouch → projected outward → opposing centre falls**.
+
+chapter 25 metaphor:
+**one life retained/bound → enemy lives imagined as sling-projectiles expelled outward**.
+
+The geometry is reused at a different scale.
+
+### Blocking node becomes “stone” before being removed without David's hand
+
+After the intercepted force withdraws:
+- Nabal is feasting “like a king”;
+- Abigail waits until morning to tell him;
+- his heart “dies within him”;
+- he becomes **as a stone**;
+- about **ten days** later he dies.
+
+For the master timeline, the safe structural observation is:
+
+**David's hand is withheld**
+→ blocking/hostile node enters inert stone-like state
+→ node is removed without David performing the intended violence.
+
+This is a narrative/theological reversal, not a physical transformation claim.
+
+It strongly reinforces:
+**the successor does not need to force the old/blocking node's removal by direct hand-action.**
+
+### After removal, Abigail transfers into David's household
+
+After Nabal dies:
+- David sends for Abigail;
+- she rises;
+- travels with **five maidens**;
+- becomes David's wife.
+
+Meanwhile the chapter notes that Saul has reassigned Michal to another man.
+
+So two relationship-lines change:
+
+**Abigail: former household → successor household**
+while
+**Michal: successor link → reassigned away by old centre**.
+
+The network is being reconfigured through both attachment and severance.
+
+---
+
+# 1 Samuel 26 — the ringed old centre is penetrated without disturbance; central symbols are removed and displayed from across a gap
+
+This chapter strongly parallels 1 Samuel 24.
+
+Do not silently merge them.
+
+The source-critical relationship is debated:
+- two historical sparing events;
+- literary doublet;
+- related traditions reshaped separately.
+
+For geometry, preserve both because their **spatial mechanisms differ**.
+
+### Saul occupies the centre of a ringed camp
+
+Saul lies:
+- inside the camp/barricade;
+- spear stuck in the ground **at his head**;
+- Abner and the people positioned around him.
+
+The geometry is almost diagrammatic:
+
+**central king node**
+→ spear/head marker
+→ surrounding protective human ring.
+
+This is the inverse of the cave:
+chapter 24:
+**David hidden deep inside enclosure; Saul enters unknowingly**.
+
+chapter 26:
+**Saul openly centred inside defensive ring; David deliberately penetrates inward**.
+
+### Two-person penetration through sleeping rings
+
+David asks who will go down with him.
+
+Abishai joins.
+
+At night:
+
+**two-person penetrating pair**
+→ crosses outer camp
+→ reaches central sleeping node
+→ surrounding ring remains inactive.
+
+Abishai proposes:
+**one spear thrust; no second strike needed**.
+
+David refuses.
+
+Again:
+**full destructive transfer is available**
+but
+**inhibited**.
+
+### Spear and water vessel are removed from beside the head
+
+Instead of life:
+- spear;
+- water cruse/jar
+
+are taken from the central node.
+
+The objects represent at minimum:
+- weapon/authority capacity;
+- sustaining water/personal provision.
+
+Many interpreters see the spear especially as a royal marker.
+
+For geometry, the secure process is:
+
+**protected centre penetrated**
+→ tokens immediately adjacent to head removed
+→ central body left alive
+→ penetrators exit unseen.
+
+This resembles chapter 24's garment fragment:
+**contact proven through removable peripheral token rather than destruction of centre.**
+
+### Whole protective field is asleep
+
+The narrative says no one:
+- saw;
+- knew;
+- awoke.
+
+A deep sleep has fallen on the whole camp.
+
+Thus the surrounding ring has lost its active protective function.
+
+The geometry remains present physically but is **functionally switched off**.
+
+Important Vardath rule:
+**structure and active state are not the same thing**.
+
+A boundary/ring can remain materially intact while ceasing to operate.
+
+### David moves to the opposite height and restores a large gap
+
+After exiting:
+- David crosses to the **other side**;
+- stands on top of a mountain;
+- a **great space** lies between them.
+
+Then he calls across the gap and displays the removed objects.
+
+So:
+
+**deep central penetration**
+→ exit
+→ opposite-side position
+→ wide separation restored
+→ evidence transmitted across distance.
+
+This is a complete:
+**convergence → non-destructive contact → divergence**
+cycle.
+
+Saul again acknowledges David will ultimately prevail.
+
+Then:
+**David goes his way**
+and
+**Saul returns to his place**.
+
+No permanent merger occurs.
+
+---
+
+# 1 Samuel 27 — crossing the political boundary stops the old pursuit and creates a semi-detached enclave
+
+David now concludes that remaining inside Saul's territorial network will eventually get him killed.
+
+He therefore:
+- rises;
+- **passes over** with his **600** men;
+- enters Philistine territory.
+
+Once Saul hears David has crossed:
+**he stops seeking him**.
+
+This is a direct boundary effect.
+
+**same physical person/network**
+but
+**different political territory**
+→ pursuit relation terminates.
+
+The border changes effective connectivity without changing metric distance alone.
+
+### David deliberately moves away from the host centre
+
+David initially lives with Achish at Gath.
+
+Then he requests:
+**a place in a country town rather than the royal city**.
+
+He receives **Ziklag**.
+
+This creates a nested political geometry:
+
+**Philistine macro-domain**
+→ host royal centre at Gath
+→ David placed in separate satellite/enclave at Ziklag.
+
+The successor is protected by the rival field but **not absorbed into its central city**.
+
+This semi-detached location allows a dual operating state.
+
+### Dual-information field
+
+From Ziklag, David raids one set of populations but reports different targets to Achish.
+
+He also prevents surviving witnesses from carrying the true route information back.
+
+This is ethically violent material and must remain controlled as such.
+
+The process significance is:
+
+**actual outward path**
+≠
+**reported outward path**.
+
+The host centre therefore constructs its state estimate from incomplete/false information.
+
+This is a strong warning for the final cosmology method:
+**observed/reported route may not equal actual route**.
+
+Do not infer geometry from testimony without source control.
+
+### Time marker
+
+The Masoretic narrative gives David's Philistine-country residence as:
+**one year and four months**.
+
+Scholarly analysis notes textual/translation issues but accepts a sixteen-month-like extended period as an important narrative time marker.
+
+Record it as a narrative interval, not cosmological recurrence evidence.
+
+---
+
+# 1 Samuel 28 — normal information routes are closed; the old centre seeks a prohibited lower-boundary route
+
+The Philistine army and Israelite army now gather in the north:
+- Philistines at Shunem;
+- Israel at Gilboa.
+
+Saul sees the hostile field and is afraid.
+
+He attempts the established information channels:
+
+- dreams;
+- Urim;
+- prophets.
+
+All are **silent**.
+
+This is a major systems state:
+
+**threat present**
++
+**decision required**
++
+**all authorised communication routes closed**.
+
+The old centre is still physically king but has lost access to its normal information network.
+
+### He searches for a route he previously closed
+
+Saul had removed mediums/necromancers from the land.
+
+Now he asks:
+**find me one**.
+
+This is an inversion:
+
+**centre closes route**
+→ later loses normal routes
+→ tries to reopen the forbidden/removed route for itself.
+
+### Identity masking + night passage
+
+Saul:
+- disguises himself;
+- puts on different clothing;
+- takes **two men**;
+- travels by night to Endor.
+
+This repeats the projection principle from chapter 21:
+**same underlying person → altered outer presentation → access to a system that would reject the known identity.**
+
+### Lower→upper movement is explicit in the story
+
+Saul asks the woman to **bring up** Samuel.
+
+She reports seeing a divine/spirit-like being **coming up out of the earth**.
+
+She describes:
+- an old man;
+- wrapped/covered in a robe.
+
+Saul identifies the figure as Samuel and bows face-down to the ground.
+
+This is one of the clearest vertical boundary narratives in 1 Samuel:
+
+**living surface**
+→ prohibited inquiry interface
+→ dead/interred realm represented below
+→ figure comes **up**
+→ information crosses boundary
+→ living centre bows **down**.
+
+Important control:
+this is ancient necromancy narrative/theology.
+
+It must **not** be treated as evidence that the biblical author witnessed a literal Vardath gate to another populated world.
+
+But the vertical process grammar belongs in the comparative timeline.
+
+### The reopened lower route does not restore the old centre
+
+The message is not a rescue path.
+
+It says the regime transfer is already fixed:
+- kingdom torn away;
+- given to neighbour/successor;
+- next day Saul and sons will be “with” Samuel;
+- Israelite force will fall to Philistines.
+
+The result:
+Saul falls his full length to the earth.
+
+So:
+
+**lower-boundary information sought**
+→ contact occurs
+→ information confirms termination rather than restoring control
+→ old centre collapses downward.
+
+### Food temporarily restores motion after collapse
+
+Saul has not eaten:
+- all day;
+- all night.
+
+The woman asks him to **listen to her voice**, explicitly reminding him that she listened to his.
+
+At first he refuses food.
+
+Then:
+- woman + servants urge him;
+- he listens;
+- sits up from the ground;
+- calf/bread are prepared;
+- he eats;
+- rises;
+- leaves during the night.
+
+Thus:
+
+**information collapse**
+→ ground state/no strength
+→ food transfer
+→ strength sufficient for one final route
+→ departure toward terminal battle.
+
+Food functions here as **temporary restoration of mobility**, not reversal of the larger fate-state.
+
+---
+
+# 1 Samuel 29 — ambiguous dual-coupled component is rejected before the two fields meet
+
+The Philistine force is moving toward battle.
+
+David and his men are positioned in the **rear** with Achish.
+
+Other Philistine commanders object.
+
+Their concern is exactly a polarity-reversal problem:
+
+**if this former Israelite component enters the battle while coupled to us, he may reverse and become our adversary inside the field**.
+
+So they order:
+**send him back before contact.**
+
+This is extremely useful process geometry:
+
+**component coupled to one field but originating from the opposing field**
+→ upcoming high-energy contact
+→ host network identifies reversal risk
+→ component is expelled before full field convergence.
+
+That prevents David from being present in Saul's final battle.
+
+### Light/dawn departure
+
+David is instructed:
+- rise early;
+- when there is light;
+- depart.
+
+Then:
+**David stream moves south/back**
+while
+**Philistine stream continues north/up toward Jezreel**.
+
+The paths bifurcate before catastrophe.
+
+This preserves separation between successor and predecessor at the predecessor's final collapse.
+
+---
+
+# 1 Samuel 30 — home enclosure is burned and emptied, but living cargo remains recoverable
+
+David returns to Ziklag on the **third day**.
+
+He finds:
+- city struck;
+- city burned;
+- wives/sons/daughters absent.
+
+Crucially:
+**the captors killed none of them**.
+
+They have been **carried away alive**.
+
+This is an unusually clean cargo-transfer sequence:
+
+**stable inhabited node**
+→ raid
+→ enclosure burned
+→ living contents removed
+→ shell remains damaged/empty
+→ cargo persists elsewhere.
+
+This fits the Vardath distinction:
+**destruction of local structure does not necessarily equal destruction of transferred living material.**
+
+### Empty/burned home nearly causes internal field collapse
+
+David's own followers:
+- grieve until no strength remains;
+- speak of stoning David.
+
+The successor network nearly turns on its centre.
+
+David then stabilises himself and uses the inherited ephod/inquiry channel.
+
+This confirms the chapter-22 transfer mattered:
+the priestly interface carried by the lone Nob survivor is now functional inside the mobile successor system.
+
+### Inquiry produces a pursuit route and complete-recovery prediction
+
+Question:
+**pursue? overtake?**
+
+Answer:
+**pursue → overtake → recover all.**
+
+The system moves immediately.
+
+---
+
+## Brook Besor — boundary sorts the moving body by capacity
+
+All **600** reach the brook.
+
+At the boundary:
+- **200** are too exhausted to cross;
+- **400** continue.
+
+This is one of the clearest capacity-sorting boundaries in the Bible research so far.
+
+The watercourse does not magically transform anyone.
+
+It acts as a **filter**:
+
+**single moving body of 600**
+→ reaches boundary
+→ capacity difference becomes decisive
+→ 400 cross
+→ 200 remain with baggage.
+
+This maps closely to the mature Vardath rule:
+**gate capacity sorts cargo/components rather than transmitting everything equally.**
+
+The analogy is structural; Besor is an ordinary brook crossing.
+
+### A discarded component is restored, then becomes the route-guide
+
+The pursuers find an Egyptian servant abandoned in the field.
+
+He has had:
+- no bread;
+- no water;
+- for **three days and three nights**.
+
+They give:
+- bread;
+- water;
+- fig cake;
+- raisins.
+
+Then the text says:
+**his spirit returned to him**.
+
+Process:
+
+**discarded/exhausted peripheral component**
+→ nourishment/cargo transfer
+→ functional state restored
+→ component can communicate
+→ becomes guide to otherwise hidden enemy field.
+
+This is a powerful inversion:
+the enemy discarded him as unusable;
+the pursuers preserve him;
+the restored remnant becomes the route by which the pursuers find the enemy.
+
+Again:
+**failed/discarded material can become decisive information carrier in the next system.**
+
+### Hidden enemy field is located through the recovered remnant
+
+The Egyptian agrees to guide them if:
+- he is not killed;
+- he is not returned to old master.
+
+So the guide changes allegiance after being abandoned.
+
+He brings David's group **down** to the raiders.
+
+The raiders are:
+- spread over the ground;
+- eating;
+- drinking;
+- celebrating;
+- surrounded by captured spoil.
+
+Their field is broad and relaxed rather than concentrated/defensive.
+
+The attack then collapses that field.
+
+### Complete cargo recovery
+
+The narrative stresses repeatedly:
+**nothing was missing**.
+
+Recovered:
+- wives;
+- sons;
+- daughters;
+- small;
+- great;
+- spoil;
+- everything taken.
+
+This is a rare full-restoration phase:
+
+**node emptied**
+→ cargo tracked
+→ captor field found
+→ captor field broken
+→ transferred cargo reclaimed
+→ original network reassembled.
+
+Vardath comparison:
+**transfer can be reversible if route remains traceable and cargo remains intact.**
+
+### Four hundred escape on camels
+
+The enemy field is not absolutely erased.
+
+**400 young men on camels escape.**
+
+Record the residual escape branch.
+
+Do not claim a perfect annihilation/reset.
+
+### 400 active + 200 stationary are recombined under equal-share rule
+
+David returns to the **200** who remained at Besor.
+
+Some of the 400 want:
+- recovered family returned to them;
+- no spoil share for non-crossers.
+
+David rejects this.
+
+Rule:
+**the one who went into battle and the one who stayed with baggage share alike.**
+
+This is a major systems statement:
+
+**crossing component**
+and
+**non-crossing support component**
+remain parts of one functional body.
+
+The boundary split did not make the 200 irrelevant.
+
+They retained rear/support function.
+
+So after the mission:
+
+**600**
+→ boundary sorting
+→ **400 forward + 200 rear**
+→ recovery
+→ branches rejoin
+→ resources redistributed across whole body.
+
+That is directly useful to the Vardath model's notion of different components having different roles during gate phases.
+
+### Recovered excess is then distributed outward across many nodes
+
+David sends spoil/gifts to numerous Judahite elders and places where his group had moved.
+
+So the chapter ends:
+
+**concentrated recovered cargo**
+→ distributed across a regional social network.
+
+This is the inverse of chapter 8's predicted monarchy:
+chapter 8:
+**many nodes → resources drawn inward to one king**.
+
+chapter 30:
+**one successful mobile centre → resources sent outward to many nodes**.
+
+That contrast belongs in the timeline.
+
+---
+
+# 1 Samuel 31 — old centre and dynastic branch collapse together; the effect propagates into landscape occupation
+
+The Philistine and Israelite fields finally make full contact.
+
+Israel retreats.
+
+Men fall on Mount Gilboa.
+
+The Philistines press tightly toward:
+- Saul;
+- sons.
+
+The three sons are killed:
+- Jonathan;
+- Abinadab;
+- Malchishua.
+
+The dynastic branch collapses before the central body.
+
+### Remote projectiles penetrate the old centre
+
+Archers overtake/hit Saul.
+
+This matters because the final central collapse begins through **distance transfer** rather than hand-to-hand capture.
+
+**projectiles cross space**
+→ old centre is critically destabilised.
+
+This echoes—but reverses—the David/Goliath structure:
+chapter 17:
+**small projectile from successor side collapses opponent's champion**.
+
+chapter 31:
+**projectile fire from Philistine field critically collapses Saul**.
+
+The motif is the same class of geometry but at different timeline positions.
+
+### Armour-bearer refuses the final hand action
+
+Saul asks his armour-bearer to finish him.
+
+The armour-bearer refuses from fear.
+
+Saul then:
+- takes his own sword;
+- falls upon it.
+
+When the armour-bearer sees Saul dead:
+- he mirrors the action;
+- falls upon his own sword.
+
+So the final old-centre termination is:
+
+**external field critically wounds**
+→ internal subordinate refuses final transfer
+→ centre uses own weapon against itself
+→ subordinate copies centre's fall.
+
+This is a **self-collapse after external destabilisation**.
+
+### Old centre + three sons + armour-bearer fall “that same day together”
+
+The narrative compresses the termination into one phase:
+
+**centre**
++
+**three dynastic offshoots**
++
+**close support node**
+→ same-day collapse.
+
+This completes the handoff trajectory that began with the spirit/state departure in chapter 16.
+
+The successor never kills the predecessor.
+
+The old system collapses through a different field while the successor is elsewhere recovering Ziklag.
+
+That separation is central to the narrative architecture.
+
+---
+
+## Local centre collapse propagates outward into regional abandonment
+
+People:
+- across the valley;
+- beyond the Jordan
+
+see that:
+- Israel fled;
+- Saul and sons are dead.
+
+They abandon their cities.
+
+Philistines move in and occupy them.
+
+So:
+
+**central/dynastic node collapse**
+→ observer populations reclassify security state
+→ local nodes evacuate
+→ opposing population fills vacated nodes.
+
+This is a powerful macro-scale effect:
+
+**centre failure → network withdrawal → empty settlements → replacement occupation**.
+
+The event changes geography without physically moving the cities.
+
+It changes **who occupies which nodes**.
+
+---
+
+## Old centre is disassembled and its material redistributed as trophies
+
+The next day Philistines find the bodies.
+
+Saul:
+- head removed;
+- armour stripped.
+
+The information/material is sent through Philistine territory.
+
+Armour is placed in the house of Ashtaroth.
+
+Body is attached/displayed on the wall of Beth-shan.
+
+This strongly echoes earlier Samuel imagery:
+
+Dagon:
+**head/hands severed at temple threshold after Ark conflict**.
+
+Saul:
+**head severed / armour removed / body displayed after Philistine victory**.
+
+Do not claim deliberate authorial geometric coding without further literary study, but the inversion is too strong to omit from the timeline:
+
+**earlier Philistine sacred centre is dismembered in presence of Israelite sacred object**
+→ much later
+**Israelite old royal centre is dismembered/displayed by Philistine victors and armour enters their cultic space**.
+
+This is a major **reversal symmetry** across the book.
+
+### Jabesh-Gilead closes the loop begun in chapter 11
+
+Jabesh-Gilead hears what happened.
+
+Valiant men:
+- travel **all night**;
+- reach Beth-shan;
+- remove the bodies from the wall;
+- return to Jabesh;
+- burn the bodies in the Samuel version;
+- bury the bones under the tamarisk/tree;
+- fast **seven days**.
+
+This closes a long narrative loop.
+
+Chapter 11:
+- Jabesh is trapped;
+- receives **seven-day** interval;
+- Saul mobilises Israel;
+- Saul rescues Jabesh.
+
+Chapter 31:
+- Saul's body is trapped/displayed in enemy city;
+- Jabesh mobilises;
+- Jabesh rescues/retrieves Saul's remains;
+- Jabesh fasts **seven days**.
+
+The direction has reversed:
+
+**Saul → rescues Jabesh**
+becomes
+**Jabesh → retrieves Saul**.
+
+This is one of the strongest reciprocity/reversal cycles in 1 Samuel.
+
+### Remains are re-enclosed in the ground
+
+After public enemy display:
+**body material**
+→ retrieved
+→ reduced to bones/remains
+→ placed under a known tree at Jabesh.
+
+The old centre returns from:
+**exposed wall**
+to
+**local enclosed burial/memory node**.
+
+This is a terminal closure phase.
+
+---
+
+# Parallel-track reconstruction for 1 Samuel 27–31
+
+For the future master timeline, do not simply write:
+
+27 → 28 → 29 → 30 → 31
+
+as if every chapter follows the previous event in strict clock time.
+
+Use the more accurate two-track form:
+
+### Track A — successor / south
+**cross into Philistine territory**
+→ **Ziklag satellite base**
+→ **moves with Philistine mobilisation**
+→ **rejected from final battle because reversal risk**
+→ **returns toward Ziklag**
+→ **finds Ziklag burned/emptied**
+→ **pursuit split at Besor**
+→ **cargo recovered completely**
+→ **resources redistributed outward**.
+
+### Track B — old centre / north
+**Philistine field converges on Israel**
+→ **normal inquiry channels silent**
+→ **night journey to Endor**
+→ **lower-boundary inquiry**
+→ **termination message**
+→ **final movement toward Gilboa**
+→ **sons fall**
+→ **old centre falls**
+→ **regional network evacuates**
+→ **enemy occupation**
+→ **body dismembered/displayed**
+→ **Jabesh retrieves remains**
+→ **burial closure**.
+
+### Relationship of tracks
+
+The literary structure deliberately keeps David away from Saul's death.
+
+While the old centre is moving toward terminal collapse in the north,
+the successor is occupied with a separate Amalekite crisis in the south.
+
+Scholarly literary work argues that the temporal markers intentionally align these events.
+
+Thus the succession is not:
+**successor attacks predecessor → predecessor falls**.
+
+It is:
+**systems separate**
+→ **successor survives/restores its own network elsewhere**
+while
+**predecessor system collapses under another opposing field**.
+
+This is a very important master-timeline result.
+
+---
+
+# SECTION 33C continuous geometry/effect timeline — 1 Samuel 25–31
+
+## Phase AF — intermediary node disappears
+
+Samuel dies
+→ all-field mourning/gathering
+→ major communication/mediation node removed.
+
+**Effect:** old and new regimes lose a stabilising bridge.
+
+---
+
+## Phase AG — failed exchange charges a boundary force
+
+mobile group protects another system as “wall”
+→ reciprocal resource request refused
+→ active branch arms/moves toward target.
+
+**Effect:** protective perimeter converts into destructive approach after exchange failure.
+
+---
+
+## Phase AH — intermediary cargo-stream intercepts destructive flow
+
+Abigail + loaded animals move outward
+↔ David's armed stream moves inward
+→ meeting before target
+→ cargo/information transfer
+→ destructive state inhibited.
+
+**Effect:** buffer/interface prevents catastrophic contact.
+
+Vardath comparison:
+**intermediate carrier can absorb/redirect an approaching force.**
+
+---
+
+## Phase AI — containment versus ejection metaphor
+
+life bound in bundle
+↔ enemies slung outward.
+
+**Effect:** literary pair contrasts retained state and expelled state.
+
+Vardath comparison:
+**enclosure/retention and projection/ejection form opposite outcomes.**
+
+---
+
+## Phase AJ — blocking node becomes inert and is removed without successor's hand
+
+destructive action withheld
+→ hostile node “becomes as stone”
+→ later dies
+→ successor does not perform direct killing.
+
+**Effect:** obstacle clears while successor remains non-causal in its physical removal.
+
+---
+
+## Phase AK — ringed centre penetrated while protective field is inactive
+
+Saul central in camp
+→ surrounding ring asleep
+→ two-person pair penetrates
+→ spear/water token removed
+→ centre remains alive.
+
+**Effect:** material geometry intact; active defensive state absent.
+
+Vardath comparison:
+**structure can persist after function switches off.**
+
+---
+
+## Phase AL — convergence followed by deliberate divergence
+
+deep penetration to central head-zone
+→ no destructive discharge
+→ tokens removed
+→ penetrators cross to opposite mountain
+→ wide gap restored
+→ signal/evidence transmitted across gap.
+
+**Effect:** close contact need not complete transfer; system can reopen into separation.
+
+---
+
+## Phase AM — crossing external border closes old pursuit relation
+
+successor body crosses into rival territory
+→ old centre ceases pursuit.
+
+**Effect:** boundary changes who can effectively reach whom.
+
+Vardath comparison:
+**adjacency is political/network-dependent here, not merely metric.**
+
+---
+
+## Phase AN — semi-detached enclave inside rival macro-field
+
+successor leaves host capital
+→ receives Ziklag satellite node
+→ operates within host domain but outside host centre.
+
+**Effect:** nested system permits partial coupling and hidden independent activity.
+
+---
+
+## Phase AO — actual path diverges from reported path
+
+raids occur on one route
+→ host centre is told another route
+→ witnesses removed
+→ host maintains incorrect state model.
+
+**Effect:** information layer and physical layer decouple.
+
+Vardath method lesson:
+**map/report ≠ underlying path unless independently controlled.**
+
+---
+
+## Phase AP — authorised information network goes silent
+
+large hostile field approaches
+→ dreams/Urim/prophets provide no output.
+
+**Effect:** old centre retains position but loses guidance connectivity.
+
+---
+
+## Phase AQ — centre reopens prohibited lower-boundary channel
+
+old centre disguises outer identity
+→ travels by night with two companions
+→ asks for dead intermediary to come up
+→ figure represented as rising from earth
+→ message crosses boundary
+→ old centre bows/falls downward.
+
+**Effect:** forbidden channel supplies information but cannot restore regime.
+
+Vardath comparison:
+**lower/upper boundary grammar is explicit, but source context is necromancy and must remain separate from physical cosmology claims.**
+
+---
+
+## Phase AR — temporary food input restores movement, not regime
+
+centre collapsed/no strength
+→ food transferred
+→ body rises
+→ departs into night.
+
+**Effect:** local energy restoration does not reverse global state trajectory.
+
+---
+
+## Phase AS — ambiguous component expelled before field contact
+
+successor embedded in Philistine rear
+→ host commanders detect potential polarity reversal
+→ successor removed before battle
+→ two trajectories diverge.
+
+**Effect:** system protects itself by ejecting a dual-coupled component before high-energy convergence.
+
+---
+
+## Phase AT — inhabited node burned; living cargo carried away intact
+
+Ziklag attacked
+→ local shell burned
+→ people removed alive
+→ damaged empty node remains.
+
+**Effect:** structural destruction separated from cargo survival.
+
+Vardath comparison:
+**world/local shell damage need not imply living cargo destruction.**
+
+---
+
+## Phase AU — inherited inquiry channel reroutes successor network
+
+nearly mutinous field
+→ ephod/inquiry interface activated
+→ pursuit route confirmed.
+
+**Effect:** remnant function transferred from destroyed Nob node continues operating in successor system.
+
+---
+
+## Phase AV — water boundary sorts one body by capacity
+
+600 reach Besor
+→ 200 cannot cross
+→ 400 cross
+→ rear 200 hold baggage.
+
+**Effect:** one system divides into functional branches according to boundary-crossing capacity.
+
+Vardath comparison:
+**gate/boundary throughput can sort components.**
+
+---
+
+## Phase AW — discarded remnant is reactivated and becomes guide
+
+abandoned Egyptian
+→ food/water input
+→ “spirit returns”
+→ information restored
+→ component changes allegiance
+→ leads pursuers to hidden captor field.
+
+**Effect:** material discarded by one system becomes navigation interface for another.
+
+---
+
+## Phase AX — transferred cargo is completely recovered
+
+captor field found
+→ captor field disrupted
+→ living/material cargo recovered
+→ nothing reported missing.
+
+**Effect:** prior transfer is reversed without reconstructing the burned original shell first.
+
+Vardath comparison:
+**cargo restoration and shell restoration are separate operations.**
+
+---
+
+## Phase AY — forward and rear branches reunify
+
+400 return
+→ meet 200
+→ equal-share rule
+→ one body restored despite unequal crossing role.
+
+**Effect:** non-crossers remain functional members of same system.
+
+---
+
+## Phase AZ — concentrated gain redistributed to many nodes
+
+recovered spoil
+→ gifts sent across many Judah locations.
+
+**Effect:** successor centre strengthens network by outward distribution rather than inward concentration.
+
+---
+
+## Phase BA — external projectile pressure collapses old centre
+
+Philistine field engages Israel
+→ sons/offshoots fall
+→ archers penetrate old centre from distance.
+
+**Effect:** dynasty and centre destabilise simultaneously.
+
+---
+
+## Phase BB — self-collapse after subordinate refusal
+
+old centre asks subordinate for final stroke
+→ subordinate refuses
+→ centre falls on own sword
+→ subordinate mirrors fall.
+
+**Effect:** system terminates internally after external destabilisation.
+
+---
+
+## Phase BC — centre collapse propagates to landscape occupancy
+
+nearby populations see defeat/death
+→ cities abandoned
+→ opposing population occupies emptied nodes.
+
+**Effect:** central failure changes regional human geography.
+
+Vardath comparison:
+**node-state change can reorganise occupation of the surrounding field without the physical land itself vanishing.**
+
+---
+
+## Phase BD — defeated centre becomes trophy material
+
+head removed
+→ armour removed
+→ armour enters enemy cultic space
+→ body displayed on wall.
+
+**Effect:** prior active centre is decomposed into separately routed material/signals.
+
+---
+
+## Phase BE — reciprocal rescue closes the Saul/Jabesh loop
+
+earlier:
+Saul → rescues Jabesh after seven-day window.
+
+now:
+Jabesh → travels all night → retrieves Saul remains → seven-day fast.
+
+**Effect:** source/receiver roles reverse across the long timeline.
+
+Vardath comparison:
+**routes and carrier/receiver roles can reverse in later cycle phases.**
+
+---
+
+## Phase BF — remains return to enclosed memory node
+
+public enemy display
+→ retrieval
+→ burning/bone preservation in Samuel account
+→ burial under tree
+→ fasting closure.
+
+**Effect:** exposed active-history object becomes stable enclosed memorial state.
+
+---
+
+# What 1 Samuel 25–31 adds to the master Bible geometry timeline
+
+30. **A mediator/cargo-stream can intercept and reverse an approaching destructive force.**
+31. **Containment and ejection can appear as an explicit paired metaphor: bundle versus sling.**
+32. **A blocking node can be removed without the successor directly discharging force against it.**
+33. **A defensive ring can remain physically present while its protective state is switched off.**
+34. **Deep penetration can be followed by deliberate reopening/separation rather than destruction.**
+35. **Crossing a territorial boundary can terminate a pursuit relation.**
+36. **A successor can occupy a semi-detached enclave inside an opposing macro-system.**
+37. **Information topology can differ from physical topology; reported path may hide actual path.**
+38. **A centre can remain in place while all normal guidance channels close.**
+39. **The text can represent information crossing a living/dead vertical boundary; this must remain controlled as necromancy narrative rather than physical evidence.**
+40. **A dual-coupled component can be expelled before field convergence because it might reverse polarity during contact.**
+41. **A local shell can be destroyed while living cargo is carried away intact.**
+42. **A water boundary can sort one mobile body into crossing and non-crossing branches by capacity.**
+43. **A discarded, nearly dead peripheral component can be restored and become the guide to a hidden field.**
+44. **Transferred cargo can be fully recovered even while the original shell remains damaged.**
+45. **Forward and rear branches can recombine with equal systemic status after different roles at the boundary.**
+46. **A centre can strengthen a distributed network by sending resources outward.**
+47. **Central/dynastic collapse can trigger regional evacuation and replacement occupation.**
+48. **A defeated centre can be broken into separately routed trophy/remnant components.**
+49. **A later receiver can reverse roles and recover the former rescuer, creating a long-cycle reciprocity loop.**
+50. **Terminal closure can move from public exposure back into buried/enclosed memory.**
+
+---
+
+# SECTION 33 — integrated 1 Samuel 16–31 geometry timeline
+
+This entire section now forms one long succession process.
+
+### 1. Old centre loses active state before losing physical office
+old king remains
+→ active spirit/state moves to hidden successor
+→ old centre destabilises.
+
+### 2. Successor initially regulates old centre from inside the same enclosure
+new node enters old court
+→ temporarily calms disturbance.
+
+### 3. Two opposed external fields compress conflict into one pair
+two ridge-fields
+→ valley/interspace
+→ representative pair
+→ local collapse
+→ whole-field reversal.
+
+### 4. Status/material begins migrating to successor
+robe/weapons/covenant
+→ rising node.
+
+### 5. Old centre tries repeated ejection
+spear / distancing / external proxy attack
+→ successor survives
+→ coupling to wider population grows.
+
+### 6. Secondary apertures and proxy states permit escape
+house trap
+→ window exit
+→ dummy/proxy remains.
+
+### 7. Hostile incoming streams are entrained by a stronger local state
+messenger wave 1/2/3
+→ transformed
+→ old centre enters same field and is also overtaken.
+
+### 8. Timed binary signal declares old centre's zone unsafe
+empty seat
+→ mediator test
+→ arrow beyond
+→ successor routed outward.
+
+### 9. Successor recovers old-event residual material
+captured opponent weapon
+→ sacred storage
+→ reactivated in fugitive phase.
+
+### 10. Projection/identity can be altered at a foreign threshold
+same body
+→ different apparent state
+→ receiving system changes classification.
+
+### 11. Displaced successor nucleates a new body inside cave/refuge
+marginal fragments
+→ converge
+→ mobile network forms.
+
+### 12. Old priestly node is destroyed; one remnant carries its function to successor
+fixed sacred node
+→ catastrophic break
+→ single survivor + ephod
+→ mobile successor network.
+
+### 13. Enclosure meaning flips by direction
+gated city:
+refuge against one threat
+→ trap under another.
+
+### 14. Future-branch information changes route
+predicted siege/betrayal
+→ successor departs
+→ branch never actualises.
+
+### 15. Two forces nearly converge around one shared mountain
+opposite faces
+→ encirclement develops
+→ third external force pulls pursuer away.
+
+### 16. Pursuer later enters successor's hidden enclosure
+one cave
+→ opposing forces at different depths
+→ power relation reverses.
+
+### 17. Partial contact demonstrates access without full destructive transfer
+robe fragment cut
+→ body spared
+→ old centre recognizes successor.
+
+### 18. Successor refuses direct hand-removal of predecessor
+contact possible
+→ force inhibited
+→ continuity terms negotiated.
+
+### 19. Mediator dies; direct transition becomes less buffered
+Samuel removed
+→ old/new regimes increasingly operate without common intermediary.
+
+### 20. Gift/intermediary stream blocks destructive successor action elsewhere
+approaching armed force
+→ cargo/interface intercept
+→ hand withheld.
+
+### 21. Ringed old centre is penetrated again without destruction
+sleeping camp
+→ central tokens removed
+→ successor withdraws across wide gap.
+
+### 22. Successor crosses into rival macro-field and old pursuit stops
+border crossing
+→ safe enclave.
+
+### 23. Rival system later ejects successor before final two-field battle
+dual allegiance/reversal risk
+→ successor sent away.
+
+### 24. Old centre loses normal information channels and reaches downward through forbidden route
+silence
+→ disguise/night
+→ lower-boundary inquiry
+→ termination confirmed.
+
+### 25. At the same broad time, successor's home shell is burned and its people carried away alive
+shell destruction
+→ cargo displacement.
+
+### 26. Successor pursuit is sorted at water boundary
+600
+→ Besor
+→ 400 crossing / 200 rear.
+
+### 27. Discarded remnant becomes guide
+abandoned Egyptian
+→ fed/restored
+→ hidden captor field located.
+
+### 28. Cargo is fully recovered and network reunifies
+captors disrupted
+→ all people/material returned
+→ 400+200 recombined
+→ excess distributed outward.
+
+### 29. Meanwhile old centre collapses under Philistine pressure
+sons fall
+→ arrows wound centre
+→ centre self-terminates
+→ close support copies fall.
+
+### 30. Central failure propagates through settlement network
+cities emptied
+→ enemy occupies.
+
+### 31. Old centre is dismembered/displayed
+head/armour/body separated
+→ material routed through enemy cultic/public space.
+
+### 32. Earlier rescued node reverses role and retrieves old centre
+Jabesh
+→ night movement
+→ body recovery
+→ burial/fasting.
+
+### 33. Old regime reaches terminal enclosed memory state
+active king
+→ hunted/failing centre
+→ fallen body
+→ public trophy
+→ recovered bones
+→ burial beneath tree.
+
+---
+
+# Section 33's place in the larger Vardath timeline
+
+1 Samuel 16–31 is the strongest **full-regime handoff sequence** covered so far.
+
+Its broad transformation is:
+
+**old active centre**
+→ **active state shifts to hidden successor**
+→ **mixed overlap**
+→ **successor demonstrates field-reversal capacity**
+→ **old centre ejects successor**
+→ **successor nucleates distributed mobile network**
+→ **old fixed institutions fracture and functional remnants transfer**
+→ **successor survives through changing enclosures/boundaries**
+→ **repeated near-contact does not become direct predecessor-killing**
+→ **successor crosses into external field**
+→ **predecessor loses information connectivity**
+→ **successor is kept away from predecessor's terminal battle**
+→ **successor undergoes its own simultaneous shell/cargo crisis and recovers its network**
+→ **old centre/dynastic branch collapses elsewhere**
+→ **collapse propagates into landscape occupation**
+→ **old centre's remains are recovered and re-enclosed**
+→ **successor regime is now structurally free to emerge in the next section/book phase**.
+
+This is strongly compatible at the level of process grammar with the mature Vardath handoff model:
+
+**old stable regime**
+→ **state asymmetry**
+→ **overlap**
+→ **separation**
+→ **distributed survival network**
+→ **temporary enclosures**
+→ **selective transfer of functional remnants**
+→ **boundary sorting**
+→ **parallel crises**
+→ **old-regime collapse**
+→ **cargo/remnant preservation**
+→ **new regime opening**.
+
+Important:
+this does **not** establish that 1 Samuel encodes a literal cosmological reset.
+The value is that the book preserves a remarkably detailed **handoff topology** that can later be compared with world-scale sequences elsewhere in the 88-book corpus.
+
+---
+
+# Section 33 controls to retain permanently
+
+- 1 Samuel 24 and 26 are highly parallel sparing narratives; scholarship remains divided over separate events versus doublet/related traditions.
+- 1 Samuel 25's bundle/sling and “heart became stone” language is literary/rhetorical imagery; record its geometry without literalising it.
+- David's violence in chapters 25, 27 and 30 is ethically difficult and should never be converted into prescriptive mechanics.
+- The Ziklag/Philistine material deliberately presents information asymmetry and contested allegiance; David's true intended behavior in a Philistine-versus-Israel battle remains a matter of literary interpretation.
+- 1 Samuel 27–2 Samuel 1 is temporally tiled; chapter sequence is not a simple clock.
+- Samuel's Endor appearance has a large history of Jewish/Christian interpretation and ancient Near Eastern necromancy comparison. The received narrative calls the figure Samuel, but later interpreters dispute the nature of the apparition. Preserve the uncertainty about ontology while preserving the text's **up-from-earth / down-to-ground** geometry.
+- Do not interpret Endor as physical proof of the Vardath layered-world mechanism.
+- The **one year + four months** Philistine interval is a textual/narrative datum, not a cosmological cycle number.
+- The **third-day** cluster around Ziklag and the opening of 2 Samuel is an important narrative synchronisation marker but should not be forced into a recurrence model.
+- Brook Besor is an ordinary geographic water boundary; its importance is the clear **capacity-sorting process**, not supernatural gate identity.
+- The Egyptian's “spirit returned” after food is ordinary restoration of vitality in context.
+- 1 Samuel 31 and 1 Chronicles 10 differ in details of Saul's postmortem treatment; scholarship debates which form is earlier.
+- 2 Samuel 1 immediately introduces a different **reported** account of Saul's death from an Amalekite messenger. Scholarship variously reads it as false self-serving report, compatible supplement, or evidence of differing tradition. Do not prematurely resolve that before Section 34 reaches it.
+- The Samuel account's burning of Saul's body at Jabesh is unusual in Israelite burial context and differs from Chronicles.
+- The Saul/Jabesh reversal is especially strong because chapter 11 and chapter 31 deliberately connect the same place across the beginning and end of Saul's reign.
+
+### Sources logged for Section 33C
+
+Primary:
+- Mechon-Mamre, 1 Samuel 25–31.
+
+Scholarly/literary controls:
+- Sarah Schwartz, **“A New Look at Abigail's Wisdom”** (2023).
+- Kenneth D. Mulzac, **“The Role of Abigail in 1 Samuel 25.”**
+- narrative studies of 1 Samuel 25 as the centre of the 24–26 sparing triptych.
+- Christopher T. Begg, **“David's Second Sparing of Saul According to Josephus.”**
+- literary/chiasmic analysis of the spear and water-vessel removal in 1 Samuel 26.
+- David G. Firth, **“The Accession Narrative (1 Samuel 27–2 Samuel 1)”**, especially the tiled/overlapping chronology.
+- studies of David's Philistine service / Ziklag and contested dual allegiance.
+- Brian B. Schmidt, **“The ‘Witch’ of En-Dor, 1 Samuel 28, and Ancient Near Eastern Necromancy.”**
+- history-of-interpretation scholarship on the Endor episode.
+- literary analysis of the Besor split and equal-share rule in 1 Samuel 30.
+- Bill T. Arnold, **“The Amalekite's Report of Saul's Death: Political Intrigue or Incompatible Sources?”**
+- Brian R. Doak, work on heroic bones and the transfer of Saul's remains.
+- recent Brill research on **memorializing Saul's wars in Samuel and Chronicles**, especially the Jabesh/Beth-shan spatial traditions.
+- Christian Seppänen's work on the textual fluidity of Samuel retained as an overarching text-critical control.
+
+---
+
+# SECTION 33 COMPLETE — 1 Samuel 16–31
+
+Canonical roadmap status:
+
+- previous: **32 / 88**
+- now complete: **33 / 88**
+- progress: **37.5%**
+
+Section 33 completion point:
+**1 Samuel 31:13 — the failed old centre has moved from active rule through collapse/public display into retrieved and buried remnant state; the successor remains alive elsewhere with a restored mobile network.**
+
+### Next first unfinished canonical roadmap entry
+
+Before starting it, run the anti-repeat search against the canonical roadmap and ledger.
+
+Carry forward the master timeline protocol:
+- preserve narrative order;
+- distinguish narrative order from event chronology where the text tiles timelines;
+- names as source labels;
+- processes/geometry first;
+- track effects;
+- track scale;
+- pairs as forces/components;
+- keep number/timing register;
+- keep source/text controls;
+- append every substantive block immediately.
