@@ -30383,3 +30383,440 @@ Scholarly:
 
 **Section 22 remains in progress.**  
 Next under the anti-repeat protocol: **Exodus 32–34 — golden calf as rival visible centre; Moses/YHWH/people mediation; tablets broken and replaced; temporary Tent of Meeting outside camp; face-to-face encounter; Moses' transformed/radiant face and veil.**
+
+
+## SECTION 22 progress C — Exodus 32–34: rival visible centre, broken/replaced information-carrier, alternate tent and Moses' transformed face
+
+### Anti-repeat check
+
+Section 22A and 22B are already appended.  
+No Exodus 32–34 Section 22 analysis existed elsewhere in the ledger.  
+Continuing from the saved Exodus 31/Sabbath closure.
+
+### Golden calf appears when the vertical mediator fails to return on schedule
+
+The crisis begins because:
+- Moses remains on the mountain;
+- the people perceive that he is **delayed** coming down;
+- they gather around Aaron;
+- demand a visible divine/cultic figure that will **go before** them.
+
+That timing matters.
+
+The request is not simply:
+“give us a statue.”
+
+Functionally it is:
+**our absent mediator/leader has not returned → give us a visible leading centre.**
+
+This makes the calf a rival solution to the same problem the Tabernacle/pillar system solves legitimately:
+**how does an invisible divine source become locatable, mobile and accessible to a travelling people?**
+
+### Calf as rival visible centre — not a second Vardath gate
+
+Aaron:
+- gathers gold;
+- forms the calf;
+- builds an altar before it;
+- proclaims a feast;
+- the people sacrifice/eat/drink/play around it.
+
+The object becomes the visible focus around which the community reorganizes.
+
+For this project:
+**calf = rival cultic/visible centre**.
+
+It should **not** be called:
+- the gate;
+- a lattice;
+- a world-disc;
+- or a physical replacement for the Tabernacle machinery.
+
+Its value is as a narrative control:
+people can mistake or manufacture a **visible centre** that occupies some of the same social/ritual role as a legitimate interface without actually being the legitimate interface.
+
+### Aaron / Moses — temporary functional split becomes conflict
+
+Earlier:
+- Moses = source-side authority;
+- Aaron = public mouth/priestly counterpart.
+
+During Moses' absence:
+- Aaron becomes the locally available authority;
+- he responds to population pressure by producing the calf.
+
+So the paired operator system destabilizes when:
+**source-side member absent**
+→ **interface-side member acts independently**
+→ **rival centre produced**.
+
+This is a useful P7 failure case:
+a complementary pair does not remain coherent when the upstream/source relation is broken.
+
+### Tablets — upper information embodied in stone, then broken
+
+Moses descends carrying **two tablets**.
+
+The received narrative emphasizes:
+- tablets written on both sides;
+- writing associated with God/divine work;
+- they physically embody the covenant information coming down from the mountain.
+
+At sight of calf/dancing:
+- Moses throws them;
+- they shatter at the foot of the mountain.
+
+This creates an exceptionally clear information-carrier sequence:
+
+**upper instruction**
+→ **durable paired stone carrier**
+→ **descent**
+→ **covenant rupture below**
+→ **carrier physically broken**.
+
+The object state reflects the relationship state.
+
+### Two tablets as pair
+
+The tablets are:
+- explicitly **two**;
+- function together as one covenantal information package.
+
+Pair classification:
+- **P7 two-part information carrier**.
+
+Do not assume one tablet = upper world and one = lower world.
+The text does not assign that polarity.
+
+### Calf is destroyed through several state changes
+
+Moses:
+- burns the calf;
+- grinds it to powder;
+- scatters it on water;
+- makes Israelites drink.
+
+So the rival centre undergoes:
+
+**solid visible image**
+→ **burned**
+→ **powder**
+→ **dispersed into water**
+→ **ingested/distributed through population**.
+
+This is one of the more dramatic material-state sequences in Exodus.
+
+Conventional significance is destruction/degradation of the idol.
+
+For Vardath work:
+record the transformation sequence, but do not treat it as cosmological mechanism.
+
+### About 3,000 killed
+
+The Levite judgment episode reports approximately **3,000 men** killed.
+
+Record numerically.
+Do not turn this into a cycle/gate count.
+
+### Moses returns upward — failed lower state sends mediator back to source
+
+After the rupture:
+- Moses returns upward;
+- intercedes;
+- attempts to restore the relationship.
+
+This is the inverse of the previous information flow:
+
+**upper → tablets → lower**
+becomes
+**lower failure → Moses → upper intercession**.
+
+Moses remains the mobile relational connector.
+
+### Exodus 33's Tent of Meeting is source-critically different from the Priestly Tabernacle
+
+Chapter 33 introduces a tent that Moses pitches:
+- **outside the camp**;
+- far from the camp;
+- called Tent of Meeting;
+- anyone seeking YHWH goes out toward it;
+- Moses enters;
+- pillar of cloud **descends**;
+- cloud stands at the **entrance**;
+- YHWH speaks with Moses;
+- Joshua remains in the tent.
+
+Modern scholarship widely distinguishes this simple outside-camp Tent of Meeting from the elaborate Priestly Tabernacle:
+- different construction;
+- different location;
+- different access pattern;
+- different literary/source setting.
+
+This is crucial for our ledger:
+**do not fuse the two tents into one physical architectural description.**
+
+They are combined in the received book, but likely preserve different traditions.
+
+### Entrance pillar — descending cloud stops at threshold
+
+The chapter 33 geometry is very clear:
+
+**people/camp**
+→ Moses goes outward to tent
+→ Moses enters
+→ **pillar of cloud descends**
+→ pillar **stands at entrance**
+→ communication occurs.
+
+The cloud therefore behaves like a **threshold marker/occupying presence** rather than simply filling the entire local space in this tradition.
+
+### Everyone stands at their own tent entrance
+
+When Moses goes out:
+- people rise;
+- each stands at the **entrance of his own tent**;
+- watches Moses;
+- when pillar appears, each bows at own entrance.
+
+This creates a distributed boundary image:
+
+**many household entrances**
+all oriented observationally toward
+**one remote meeting-tent entrance**.
+
+Interesting system geometry:
+many local nodes → one central communication node.
+
+### Moses / Joshua — central communicator and persistent attendant
+
+Joshua:
+- remains within the tent.
+
+Moses:
+- goes in and out;
+- speaks with YHWH;
+- returns to people.
+
+Pair classification:
+- **P7 primary mediator / resident attendant-successor**.
+
+This strengthens the long Moses→Joshua succession trajectory without merging them.
+
+### “Face to face” versus “you cannot see my face” — retain the tension
+
+Exodus 33 says YHWH speaks to Moses:
+**face to face, as one speaks to a friend**.
+
+Yet shortly afterward:
+- Moses asks to see divine glory;
+- is told a human cannot see YHWH's face and live.
+
+This is a famous internal tension.
+
+Possible explanations include:
+- idiom “face to face” = direct communication;
+- different source traditions;
+- distinction between speech encounter and visual manifestation.
+
+For this project:
+do **not** flatten the contradiction.
+
+It is useful evidence that:
+**different textual layers/perspectives can describe proximity using apparently incompatible spatial language**.
+
+### Rock cleft / hand-covering — protected exposure while presence passes
+
+Moses is told:
+- stand on/near a rock;
+- placed in a **cleft of the rock**;
+- divine hand covers/protects him while presence/glory **passes by**;
+- hand is removed after passage;
+- Moses sees only the receding/back aspect, not the face.
+
+Raw sequence:
+
+**traveller positioned**
+→ **partial enclosure in rock**
+→ **protective covering**
+→ **dangerous presence passes**
+→ **cover removed after passage**
+→ **limited residual view allowed**.
+
+This is a striking boundary-protection scene.
+
+Closest mature-model classification:
+- cleft = **protective enclosure**;
+- hand = **shield/guardian action**;
+- passing glory = **external high-intensity event**;
+- Moses = **protected witness**.
+
+It is not proof of a world passing above/below him.
+
+### Second tablets — broken carrier is replaced, not repaired
+
+Exodus 34 begins:
+- Moses cuts **two new stone tablets**;
+- they are “like the first” in the received redacted narrative;
+- he ascends again.
+
+This is important:
+the original tablets are not glued back together.
+
+The pattern is:
+
+**first information-carrier broken**
+→ **new material substrate prepared**
+→ **information/covenant restored onto replacement carrier**.
+
+This is a **replacement-state**, not rewind.
+
+That is very compatible with the project's mature “reset ≠ rewind” rule.
+
+### Source criticism of the two-tablet stories
+
+Modern literary/source analysis often argues Exodus preserves more than one tablet tradition.
+
+One reconstruction sees Exodus 34's tablet story as originally independent:
+- Moses carves tablets;
+- receives/writes a set of cultic covenant laws;
+- later redaction connects them to the earlier shattered tablets by phrases such as “like the first.”
+
+Therefore:
+- final-form Exodus clearly presents **first tablets / replacement tablets**;
+- historical composition may combine different stories.
+
+Keep both levels visible.
+
+### Forty days / nights again
+
+Moses remains:
+- **40 days**
+- **40 nights**
+- without bread/water in the received account.
+
+Again this is one 40-unit period described through day/night continuity, not 80.
+
+### Moses' face changes after upper-interface contact
+
+When Moses descends:
+- he does not initially know his face/skin has changed;
+- Aaron/Israel see it;
+- they are afraid to approach.
+
+The Hebrew verb `qāran` is notoriously difficult:
+- traditional Jewish/most modern translations: radiance/rays;
+- Vulgate tradition: horned;
+- modern scholarship continues to debate whether “shine/radiate” or “horned/rayed” better captures the image.
+
+For our research the secure result is simpler:
+
+> Moses' visible face is **physically/visually altered** after prolonged divine encounter.
+
+This is a source-level state transformation.
+
+### Veil — mediator's transformed state is selectively exposed
+
+The final-form story says:
+- Moses speaks to people;
+- then places veil over face;
+- when going in to speak with YHWH, removes veil;
+- when coming out, his altered/radiant face is visible in connection with communication;
+- afterward veil returns.
+
+This gives:
+
+**ordinary lower-community contact**
+→ **face covered**
+
+**entry to divine interface**
+→ **cover removed**
+
+**exit from interface**
+→ **transformed face visible / message transmitted**
+→ **cover restored**.
+
+For the Vardath layer-compatibility comparison this is extremely high-value.
+
+It resembles:
+- 2 Enoch: face cooled before human re-entry;
+- Enoch heavenly garments;
+- other cross-domain figures needing altered presentation.
+
+But the biblical text's own meaning is holiness/divine encounter, not environmental physics.
+
+### Important source-control on the veil story
+
+Recent critical work argues the veil/radiant-face account likely belongs originally with the **non-Priestly outside-camp Tent of Meeting**, not with the still-unbuilt Priestly Tabernacle.
+
+Reasons include:
+- the story assumes repeated entry to a tent of meeting before Exodus 40 completes the elaborate Tabernacle;
+- vocabulary/literary features differ;
+- Priestly continuation does not regularly mention Moses' veil afterward.
+
+Therefore:
+do not use the veil as though it were unambiguously part of the same architectural system described in Exodus 25–31.
+
+### Golden calf → outside tent → restored portable sanctuary: event logic
+
+At final-book level the sequence is:
+
+**mountain/tabernacle instructions**
+→ mediator absent/delayed
+→ rival visible centre made
+→ covenant carrier shattered
+→ rival centre destroyed
+→ mediator re-ascends/intercedes
+→ alternate outside-camp meeting tent functions
+→ protected/limited divine encounter
+→ replacement tablets
+→ mediator returns visibly altered
+→ people resume authorized construction.
+
+This creates a compelling system cycle:
+
+**legitimate interface design**
+→ **interface failure/substitute**
+→ **rupture**
+→ **intercession/recalibration**
+→ **information-carrier replacement**
+→ **mediator state transformation**
+→ **construction resumes**.
+
+### Pair matrix, Exodus 32–34
+
+- **Moses / Aaron** — P7 complementary pair that temporarily destabilizes under separation.
+- **legitimate sanctuary / golden calf** — rival-centre pair, not equivalent mechanisms.
+- **first tablets / second tablets** — P4 predecessor/replacement information carriers.
+- **Moses / Joshua** — mediator / attendant-successor.
+- **camp tents / remote Tent of Meeting** — distributed local boundaries / central communication boundary.
+- **visible face / veiled face** — P3 one body, two presentation/access states.
+- **direct speech / impossible full sight** — source-level tension, not a clean pair.
+- **rock cleft / divine hand** — complementary enclosure + shield functions during passage.
+
+### Number register
+
+- covenant tablets: **2**, then replacement **2**.
+- killed in judgment: about **3,000**.
+- renewed mountain stay: **40 days / 40 nights**.
+- principal calf-centre sequence: one idol / one altar / one festival focus.
+- Moses presentation state: **unveiled at interface / veiled in ordinary interval**.
+
+### Sources logged
+
+Primary:
+- Exodus 32–34.
+
+Scholarly:
+- David Frankel, “Moses' Radiant Face: Holiness Unveiled.”
+- Brent A. Strawn, “Moses' Shining or Horned Face?”
+- Zev Farber, “The Other Ohel Moed.”
+- Jaeyoung Jeon, “The Non-Priestly Ohel Moed.”
+- “What Did God Write on the Tablets of Stone?”
+- “Moses Shatters the Tablets – in Anger.”
+- “After the Golden Calf, Is the Covenant Renewed with a Ritual Decalogue?”
+- “YHWH Speaks to Moses Face to Face—But Does Moses Get to Know YHWH?”
+- “Sinai, Tabernacle, Golden Calf, and More Tabernacle: Compiling Exodus.”
+- “The Golden Calf: A Post-Exilic Message of Forgiveness.”
+
+**Section 22 remains in progress.**  
+Next under the anti-repeat protocol: **Exodus 35–40 — construction repetition, Bezalel/Oholiab execution, mirror-basin, completed furniture geometry, first-month/day-one erection, cloud/glory filling, Moses excluded by intensity, cloud lifting as departure signal, fire by night.**
