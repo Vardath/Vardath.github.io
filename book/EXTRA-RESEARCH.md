@@ -119082,3 +119082,1454 @@ Priority:
 - central mountain as vertical access point;
 - distinguish temple pilgrimage from cosmological axis;
 - track whether any paired mountain/gate sequence genuinely resembles the user's central-spire geometry.
+
+
+---
+
+# SECTION 45 progress B — mountain / Zion / gate / ascent / descent / temple-centre Psalms
+## Entrance is controlled by moral state rather than distance alone, humans ascend toward a holy mountain while the divine King enters through personified gates, Zion becomes a defended central mountain surrounded by outer mountain rings, Psalm 68 moves divine presence through wilderness/Sinai toward sanctuary and then “ascends on high,” Psalm 84 turns the road itself into a spring-generating route, and the fifteen Songs of Ascents trace a powerful literary movement from distant distress toward Jerusalem's gates, stable Zion, temple dwelling and blessing flowing outward from Zion—without requiring that “ascents” be a literal fifteen-step cosmological staircase
+
+This pass continues **Section 45 — Psalms** with the stored mountain / Zion / gate / ascent / descent / temple-centre family.
+
+Primary targets:
+- Psalms **15, 24, 42–43, 48, 68, 84, 87**;
+- the collection **Psalms 120–134 — Songs of Ascents**.
+
+The principal question is not simply:
+**“Is Zion a mountain?”**
+
+It is:
+
+> **How does access to the central mountain change, who moves toward whom, what happens at gates/thresholds, what descends from the mountain, and does the centre function as a physical axis or primarily as a cultic/social/theological centre?**
+
+The answer is more structured than a simple “holy mountain = world axis” reading.
+
+---
+
+# Psalms 15 + 24 — access to the holy mountain is state-dependent
+
+Psalm 15 asks:
+
+**Who may dwell in the tent?**
+**Who may live on the holy hill?**
+
+Psalm 24 similarly asks:
+
+**Who may ascend the hill of YHWH?**
+**Who may stand in the holy place?**
+
+Both then give requirements.
+
+The key process is:
+
+**person at outer/profane field**
+→ evaluated by conduct/state
+→ accepted entrant
+→ hill/holy-place access.
+
+The threshold is not described as opening because of mechanical force.
+
+It opens according to:
+- clean hands;
+- pure heart;
+- truthfulness;
+- justice;
+- refusal of corruption.
+
+This is a strong example of:
+**functional adjacency controlled by state rather than distance**.
+
+The hill is physically there for everyone.
+
+But not everyone is considered able to occupy the inner sacred relation.
+
+That is highly relevant to the project's gate definition while remaining clearly cultic/ethical in source context.
+
+---
+
+# Psalm 24 begins with the world founded over waters before narrowing to one hill
+
+The sequence is architecturally important:
+
+**earth/world**
+→ founded on seas/rivers
+→ one particular holy hill
+→ one holy standing-place
+→ entrance requirements
+→ gates/doors
+→ King enters.
+
+So the psalm moves by contraction:
+
+**whole world**
+→ **mountain**
+→ **holy place**
+→ **gate**
+→ **entry**.
+
+This resembles a funnel or narrowing route.
+
+It is one of the clearest Psalmic examples of broad cosmology converging on a local threshold.
+
+---
+
+# Psalm 24 contains two opposed approach movements
+
+The psalm is unusually symmetrical.
+
+### Human movement
+**people**
+→ ascend hill
+→ stand in holy place.
+
+### Divine movement
+**King of glory**
+→ approaches gates
+→ enters.
+
+Thus the temple threshold is where:
+
+**human ascent**
+and
+**divine entrance**
+meet.
+
+This is a strong two-directional access structure.
+
+It does **not** mean two physical worlds are literally colliding.
+
+But it is a genuine:
+**outside→inside from two relational sides**
+pattern.
+
+---
+
+# “Lift up your heads, O gates” is personified gate language, not a portcullis mechanism
+
+Psalm 24 repeats:
+
+**Lift up your heads, O gates**
+and
+**be lifted up, ancient doors**.
+
+A useful interpretive control:
+ancient Jerusalem gates were not vertically rising portcullises in the sense a modern reader might picture.
+
+The language personifies the gates/doors:
+they are told to raise their “heads” in recognition of the entering King.
+
+So:
+- the threshold is real;
+- the gate imagery is strong;
+- the vertical “lifting” is poetic/personified.
+
+Do not build a mechanical rising-door cosmology from this phrase.
+
+### Still important
+The gate changes from:
+**closed/awaiting**
+to
+**receiving passage**.
+
+The functional threshold change remains valid.
+
+---
+
+# Psalms 42–43 — distance from centre produces a layered return desire
+
+Psalms 42–43 form a closely linked unit in much scholarship.
+
+The speaker is away from the sanctuary and remembers:
+- going with the crowd;
+- procession to the house of God;
+- festival movement.
+
+The desired route is:
+
+**distant afflicted state**
+→ divine light/truth sent out
+→ guided movement
+→ **holy hill**
+→ dwelling
+→ altar
+→ restored praise.
+
+This is a clean **return-to-centre sequence**.
+
+---
+
+# “Deep calls to deep” occurs while the speaker is away from the centre
+
+Psalm 42's famous water sequence:
+
+**deep calls to deep**
+at the roar of waterfalls;
+**waves/breakers**
+pass over the speaker.
+
+This is often over-literalized.
+
+In context it is lament imagery:
+the speaker experiences overwhelming waters.
+
+But it creates a strong vertical/field contrast:
+
+**deep ↔ deep**
+→ roaring transfer
+→ waves pass over body.
+
+The centre is not in the deep.
+
+The desired movement is **out of overwhelmed state back toward holy mountain/altar**.
+
+Thus the water sequence is:
+**disorientation**
+rather than
+**gate itself**.
+
+---
+
+# Psalms 42–43 — divine guidance behaves like route-making information
+
+Psalm 43 asks:
+
+**send out your light and truth**
+→ let them lead me
+→ bring me to holy hill / dwelling.
+
+The “light and truth” function as **guides**.
+
+Compare:
+- Raphael knows Tobias's road;
+- Job searches without seeing centre;
+- Psalm 43 asks for a guiding signal from the centre.
+
+This is not physical light-navigation technology.
+
+But structurally:
+**centre emits guidance**
+→ remote traveller follows
+→ centre reached.
+
+That is a useful recurring route grammar.
+
+---
+
+# Psalm 48 — Zion is a central defended mountain whose presence reorganizes the outer field
+
+Psalm 48 presents:
+
+- holy mountain;
+- Zion;
+- “far north / Zaphon” language;
+- citadels;
+- assembled hostile kings;
+- panic/flight;
+- east wind destroying ships;
+- temple interior;
+- towers/ramparts/citadels inspected by walking around them.
+
+The important geometry is **centre/perimeter**.
+
+Zion is not merely high.
+
+It is:
+**central sacred point**
++
+**fortified perimeter**
++
+**outer hostile field**.
+
+---
+
+# Psalm 48 — “far north / Zaphon” is a major mythic-geographic control point
+
+The phrase describing Zion as:
+**“far north” / “Zaphon”**
+has long been debated.
+
+One major interpretation sees deliberate reuse of the ancient divine-mountain concept associated with **Mount Zaphon/Saphon**, especially Baal traditions.
+
+Another interpretation treats the phrase more locally/topographically.
+
+The safest research conclusion is:
+
+> Psalm 48 deliberately gives Zion language associated with extraordinary divine-mountain status, but the exact force of “Zaphon/north” remains debated.
+
+Do not simply read:
+**Zion literally lies at the geographic far north**.
+
+It does not.
+
+This is one of the strongest examples where mythic geography and physical geography diverge.
+
+---
+
+# Psalm 48 — hostile kings approach the centre but reverse direction before penetration
+
+The enemy sequence is:
+
+kings assemble
+→ advance together
+→ **see**
+→ astonishment
+→ panic
+→ flight.
+
+The city remains intact.
+
+So the centre does not defeat them through narrated wall breach/combat.
+
+Instead:
+
+**approach**
+→ perception/contact with centre
+→ state reversal
+→ retreat.
+
+This resembles a field effect more than a siege narrative.
+
+Conventional reading:
+divine protection of Zion.
+
+Vardath-process relevance:
+**approach to central node triggers reversal before boundary crossing**.
+
+---
+
+# Psalm 48 — the city is verified by a perimeter inspection
+
+The community is told:
+
+- walk around Zion;
+- circle it;
+- count towers;
+- inspect ramparts;
+- pass through citadels;
+- tell next generation.
+
+This is unusually practical.
+
+The centre is not merely believed.
+
+Its boundary is **surveyed**.
+
+Process:
+
+**protected centre survives**
+→ observers traverse perimeter
+→ structures counted/verified
+→ condition converted into transmitted memory.
+
+This strongly resembles a post-event inspection protocol.
+
+---
+
+# Psalm 68 — one of the Psalter's most complicated mountain-route texts
+
+Psalm 68 is textually difficult and highly debated.
+
+Its major movement nevertheless includes:
+
+**God rises**
+→ enemies scatter
+→ wilderness march
+→ earth quakes / heavens rain
+→ Sinai association
+→ people receive dwelling
+→ kings scatter
+→ mountain imagery intensifies
+→ chariot host
+→ movement into sanctuary
+→ ascent on high
+→ captives/gifts
+→ formal procession into sanctuary
+→ kingdoms of earth called to praise
+→ rider in ancient heavens / power in skies
+→ power issued from sanctuary.
+
+This is one of the strongest **mobile divine-centre** Psalms.
+
+---
+
+# Psalm 68 links Sinai and sanctuary but does not give one uncontested mountain-transfer mechanism
+
+The line around Psalm 68:17–18 is textually difficult.
+
+Modern translations variously imply:
+- Lord came from Sinai into the holy place;
+- Sinai is now in the sanctuary;
+- divine chariotry accompanies the move.
+
+Scholarship disagrees on:
+- exact mountain referred to in vv. 15–18;
+- whether Zion, Bashan/Hermon, Sinai or a composite tradition dominates;
+- compositional layers;
+- original cultic setting.
+
+Therefore:
+do **not** state as settled fact that a literal mountain physically moved from Sinai to Zion.
+
+What is secure is:
+**the psalm poetically links Sinai/wilderness theophany to the later sanctuary-centre**.
+
+---
+
+# Psalm 68 — divine presence moves before the people
+
+The wilderness sequence gives:
+
+**God goes out before people**
+→ marches through wilderness
+→ earth quakes
+→ heavens pour rain
+→ weakened inheritance restored
+→ people find dwelling.
+
+This is a strong:
+**moving centre / following population**
+pattern.
+
+Unlike many Zion Psalms where centre is fixed,
+Psalm 68 remembers a centre/presence that travels.
+
+That distinction matters.
+
+---
+
+# Psalm 68 — mountain plurality contracts toward chosen dwelling
+
+The poem names:
+- mighty/many-peaked mountain;
+- a mountain desired as abode.
+
+Whatever exact mountain identification one prefers, the process is:
+
+**many peaks / rival high places**
+→ one chosen dwelling focus.
+
+This resembles **selection among possible high centres**.
+
+Again:
+not two springs;
+not world-layer collision.
+
+It is a **centre-selection** mechanism.
+
+---
+
+# Psalm 68 — ascent follows victory/procession
+
+The famous line:
+
+**you ascended on high**
+→ captives in train
+→ gifts received
+→ divine dwelling.
+
+Within Psalm 68 itself this is triumph/procession language.
+
+Later Christian interpretation applies it to Christ's ascension, especially through Ephesians.
+
+For current source-level research:
+the original Psalmic sequence is:
+**victory / procession / ascent / dwelling**.
+
+Do not substitute later reception history for the Psalm's first-level process.
+
+---
+
+# Psalm 68 — movement returns into sanctuary
+
+Later the poem explicitly sees:
+**processions into the sanctuary**.
+
+Order:
+- singers in front;
+- musicians last;
+- women/tambourines between;
+- tribal/princely groups.
+
+This is one of the clearest **ordered multi-part processions through a central route**.
+
+The centre receives a differentiated procession rather than undifferentiated mass.
+
+---
+
+# Psalm 68 — upper and local centre remain linked at the end
+
+The conclusion holds both:
+
+**rider in ancient heavens / power in skies**
+and
+**awesome God in/from sanctuary**.
+
+Thus the psalm does not simply replace heaven with temple or temple with heaven.
+
+It maintains:
+**upper cosmic domain**
+↔
+**local sanctuary centre**.
+
+The relation is theological/presence-based.
+No physical conduit is specified.
+
+---
+
+# Psalm 84 — the route to Zion changes the landscape experienced by the traveller
+
+Psalm 84 is especially relevant to the route protocol.
+
+The traveller has:
+**highways to Zion in the heart**.
+
+Then:
+
+**pass through Valley of Baca**
+→ make it a place of springs
+→ early rain covers it with pools
+→ go from strength to strength
+→ appear before God in Zion.
+
+This is an extraordinary route sequence.
+
+The traveller does not merely traverse landscape.
+
+The route is narrated as though:
+**dry/tearful valley**
+→ spring/pool landscape
+during pilgrimage.
+
+---
+
+# Psalm 84 — route and water transformation coincide
+
+The exact status of “Valley of Baca” is debated:
+- real geographic location;
+- symbolic “valley of weeping” association;
+- difficult place-name.
+
+But the transformation is clear in the poem:
+
+**valley**
+→ **springs**
++
+**rain pools**.
+
+Then:
+**strength → strength**
+→ centre reached.
+
+This resembles a **resource-restoring corridor**.
+
+Conventional reading:
+pilgrimage blessed by divine provision.
+
+Vardath analogy:
+**movement toward centre coincides with environment becoming more traversable/life-supporting**.
+
+---
+
+# Psalm 84 — doorkeeper position is itself prized
+
+The speaker would rather be:
+**at threshold / doorkeeper**
+of God's house
+than inside wicked tents.
+
+This makes the threshold a valued stable position, not only something to cross.
+
+Important control:
+**gate = role/location**
+as well as
+**gate = transition**.
+
+Not every gate motif is about opening.
+
+Sometimes the significance is precisely:
+**remaining at the boundary of the sacred centre**.
+
+---
+
+# Psalm 87 — Zion's gates outrank other dwellings
+
+Psalm 87 says God loves:
+**the gates of Zion**
+more than other dwellings of Jacob.
+
+Then nations are named and people are counted as:
+**“born there.”**
+
+This is extremely interesting for relational topology.
+
+The people do not have to be biologically born in Jerusalem in the ordinary sense for the psalm's theological registration language to work.
+
+The centre can assign:
+**origin/belonging status**
+to people from elsewhere.
+
+---
+
+# Psalm 87 — registration changes relational origin
+
+The sequence is:
+
+nation/person outside Zion
+→ named/recognized
+→ registered
+→ counted as “born in Zion.”
+
+Thus:
+**relational origin**
+changes
+without
+**physical birthplace** necessarily changing.
+
+This is a strong example of:
+**information/registration topology overriding ordinary geography**.
+
+Compare:
+- Esther hidden/revealed identity;
+- moved boundary markers;
+- covenant/genealogy systems.
+
+This is not physical rebirth.
+
+But it is a very powerful centre-membership transformation.
+
+---
+
+# Songs of Ascents 120–134 — title meaning is not settled enough for literal staircase cosmology
+
+There are **15 Songs of Ascents**.
+
+Major historical interpretations include:
+- pilgrim songs sung while going up to Jerusalem;
+- return-from-exile/“Songs of Return” associations;
+- liturgical use at temple festivals;
+- later rabbinic tradition connecting them with **15 temple steps**;
+- literary “step” structures within individual psalms;
+- modern arguments that the collection need not have originated as a pilgrimage songbook at all.
+
+Therefore:
+
+**15 psalms**
+≠
+secure evidence for
+**15 literal cosmic steps**.
+
+The temple-step tradition is real and important as reception history.
+
+It is not enough to reconstruct the original collection's physical mechanism.
+
+---
+
+# Nevertheless, the collection forms a powerful literary ascent from distance to centre
+
+Even if original Sitz im Leben is debated, the canonical sequence itself produces a striking spatial movement.
+
+---
+
+# Psalm 120 — start outside the centre in hostile distance
+
+The speaker is in distress among:
+- Meshech;
+- Kedar imagery;
+- lying/deceitful/violent speech.
+
+The opening state is:
+**far / hostile / not-Zion**.
+
+This is the outermost point of the ascent collection.
+
+---
+
+# Psalm 121 — traveller raises eyes toward mountains and movement becomes protected
+
+The next psalm:
+
+**eyes lift to hills**
+→ help attributed to maker of heaven/earth
+→ foot protected
+→ sun/moon hazards limited
+→ **going out and coming in** guarded.
+
+This is a travel-protection psalm.
+
+It establishes:
+**route active**
+but
+**traveller not yet at centre**.
+
+---
+
+# Psalm 122 — feet arrive inside Jerusalem's gates
+
+Then:
+
+**let us go to house of YHWH**
+→ **our feet are standing within your gates, Jerusalem**.
+
+This is the clearest physical threshold crossing in the collection.
+
+The tribes:
+**go up**.
+
+Jerusalem is described as:
+**firmly bound/knit together**.
+
+The movement becomes:
+
+distance
+→ road
+→ gate
+→ compact city
+→ house/temple orientation.
+
+---
+
+# Psalm 122 — compact city is an anti-fragmentation image
+
+Jerusalem is:
+**built as a city bound firmly together**.
+
+This is a strong centre-cohesion motif.
+
+The ascent journey terminates not in scattered space but in:
+**integrated urban enclosure**.
+
+This should be cross-indexed against:
+- Babel's city/tower;
+- Nehemiah's rebuilt wall;
+- Revelation's New Jerusalem.
+
+---
+
+# Psalm 123 — after arrival language, attention turns upward
+
+Eyes are lifted:
+**to enthroned one in heavens**.
+
+So even after Jerusalem-centred movement,
+the upper relation remains.
+
+Again:
+**Zion centre**
+does not erase
+**heaven above**.
+
+This repeatedly prevents a simplistic:
+“temple literally is heaven”
+collapse.
+
+---
+
+# Psalm 124 — escape is imagined as broken snare
+
+Israel is imagined as:
+- almost swallowed alive;
+- waters sweeping over;
+- torrent over soul;
+- prey in teeth;
+- bird escaping snare.
+
+Then:
+
+**snare broken**
+→ **escape**.
+
+This adds a release mechanism inside the ascent sequence.
+
+The route to centre is not smooth:
+it includes **escape from enclosure/trap**.
+
+---
+
+# Psalm 125 — Zion is the stable centre surrounded by mountains
+
+Those who trust are:
+**like Mount Zion**
+→ cannot be moved.
+
+Then:
+
+**mountains surround Jerusalem**
+as
+**YHWH surrounds people**.
+
+This is one of the clearest nested-ring structures in the Psalter:
+
+**people**
+inside
+**divine protection analogue**
+inside
+**Jerusalem**
+inside
+**mountain surround**.
+
+Do not convert this into literal concentric world shells.
+
+But the centre/ring analogy is explicit.
+
+---
+
+# Psalm 126 — return transforms dream-state and dry southern channels
+
+Return/restoration:
+**captivity/fortunes of Zion restored**
+→ “like dreamers”
+→ laughter/joy.
+
+Then:
+**restore fortunes like watercourses in the Negeb**.
+
+This is another dry→flowing transformation.
+
+The centre's restoration is compared to:
+**seasonally dry channel**
+→ suddenly flowing water.
+
+That is more precise than generic “water = blessing.”
+
+---
+
+# Psalm 127 — house/city security is not self-sufficient
+
+The sequence:
+
+**house built**
+but if divine builder absent
+→ labour vain.
+
+**city watched**
+but if divine guard absent
+→ watch vain.
+
+This is an important centre-control passage.
+
+Visible structure:
+- house;
+- wall/city;
+- watchman;
+
+does not itself guarantee stability.
+
+This parallels Daniel/Bel's warning:
+**visible boundary ≠ actual system state**.
+
+---
+
+# Psalm 128 — household fertility is linked outward to Zion blessing
+
+The psalm moves:
+**individual walk**
+→ household/table
+→ vine/olive-shoot children
+→ blessing from Zion
+→ Jerusalem prosperity
+→ grandchildren
+→ Israel peace.
+
+This is a nested expansion:
+
+person
+→ household
+→ city/centre
+→ generations/nation.
+
+The direction is no longer only:
+**outside → centre**.
+
+Blessing moves:
+**centre → outward through household/time**.
+
+---
+
+# Psalm 129 — the body becomes plowed terrain
+
+Israel says enemies have:
+**plowed upon the back**
+→ made long furrows.
+
+Then cords of wicked are cut.
+
+This is a powerful body/land mapping:
+
+**human/national back**
+→ field surface
+→ linear cuts/furrows
+→ binding cords severed.
+
+It is poetic violence imagery, not actual geomorphology.
+
+But it belongs in the body↔land transformation catalogue.
+
+---
+
+# Psalm 130 — the ascent collection paradoxically descends into “the depths”
+
+The speaker cries:
+
+**out of the depths**
+→ upward appeal.
+
+Then waits:
+**more than watchmen for morning**.
+
+This is important.
+
+“Ascent” does not mean every Psalm moves physically upward.
+
+The collection can descend into:
+**deep distress**
+while still participating in an overall centre-oriented arc.
+
+Thus:
+**spiritual/literary ascent**
+≠
+constant vertical physical ascent.
+
+This is a crucial control.
+
+---
+
+# Psalm 130 — depth to dawn is a timed state transition
+
+Sequence:
+
+deep
+→ cry
+→ waiting
+→ watch
+→ morning.
+
+This resembles:
+**dark lower state**
+→ delayed threshold
+→ light phase.
+
+It is temporal/psychological and theological.
+
+No gate-opening mechanics are specified.
+
+---
+
+# Psalm 131 — motion quiets into stable held-body state
+
+The speaker is like:
+**weaned child with mother**.
+
+This is almost the opposite of the storm/water Psalms.
+
+No crossing.
+No catastrophe.
+
+The desired endpoint becomes:
+**settled equilibrium**.
+
+This matters because the ascent sequence does not culminate in endless upward motion.
+
+It increasingly tends toward:
+**stable dwelling/rest**.
+
+---
+
+# Psalm 132 — the centre must first be found and established
+
+David's vow:
+- no house/bed/sleep;
+- until he finds:
+  **a place for YHWH**
+  / **dwelling for Mighty One of Jacob**.
+
+Then:
+**ark/resting place**
+→ priests
+→ Zion chosen
+→ **“this is my resting place forever”**
+→ provision/blessing
+→ Davidic horn/lamp/crown.
+
+This is one of the strongest **centre-establishment** Psalms.
+
+The key process is:
+
+**mobile/unsettled sacred object/presence**
+→ place sought
+→ centre selected
+→ dwelling stabilized
+→ resources/authority radiate from centre.
+
+---
+
+# Psalm 132 — final state is rest, not continued ascent
+
+This is crucial for the Vardath comparison.
+
+The centre is not defined by infinite vertical movement.
+
+It is defined as:
+**chosen resting place**.
+
+Thus the mountain/temple axis functions as:
+**stabilized centre**
+after movement.
+
+This is closer to:
+**gate closes / world stabilizes**
+than to a permanently open conduit.
+
+But the Psalm itself remains cultic/theological.
+
+---
+
+# Psalm 133 — oil and dew move downward from high points into the unified body
+
+Psalm 133 uses two downward-flow images:
+
+### Oil
+head
+→ beard
+→ garment edge/collar.
+
+### Dew
+Hermon
+→ Zion mountains.
+
+The exact meteorological sense of “dew of Hermon falling on Zion” is poetic.
+
+But the common structure is:
+
+**high source**
+→ **downward flow**
+→ **unity/blessing/life**.
+
+This is one of the clearest **blessing descent** Psalms.
+
+Compare:
+- Psalm 84 upward pilgrimage;
+- Psalm 133 downward life-flow.
+
+Together they create a strong two-directional mountain relation.
+
+---
+
+# Psalm 133 — ascent to centre is answered by descent from centre/high source
+
+This is one of Section 45B's strongest combined findings.
+
+Across the family:
+
+**humans ascend**
+→ holy mountain / gates / sanctuary.
+
+Then:
+
+**blessing / oil / dew**
+→ descends.
+
+The centre participates in:
+**incoming ascent**
+and
+**outgoing descent**.
+
+This is a genuine two-directional process around one central high place.
+
+Still missing:
+- physical intertwined strands;
+- a finger-trap;
+- inter-world material transfer.
+
+But the **directional reciprocity** is strong.
+
+---
+
+# Psalm 134 — collection terminates inside the house and blessing flows outward
+
+The final ascent Psalm begins:
+
+servants
+→ **stand by night in house of YHWH**.
+
+Hands:
+→ lifted toward holy place.
+
+Then:
+
+**YHWH bless you from Zion**.
+
+This is a beautiful structural endpoint to the collection.
+
+Psalm 120:
+**distant distress**.
+
+Psalm 134:
+**standing in centre**
++
+**blessing moving outward from centre**.
+
+Even if the collection was not originally composed as one literal pilgrimage itinerary, its canonical arrangement strongly supports this spatial arc.
+
+---
+
+# SECTION 45B mountain / gate / centre matrix
+
+## Human / divine approach at Psalm 24
+
+Human:
+**ascend hill**.
+
+Divine King:
+**enter gates**.
+
+P1 complementary movement:
+**strong**.
+
+Two-spring physical fit:
+**weak**.
+
+---
+
+## Distant worshiper / Zion centre
+
+Psalms 42–43, 84, 120–134.
+
+Outer:
+distress / distance / valley / road.
+
+Inner:
+hill / gates / courts / house.
+
+P2 spatial polarity:
+**strong**.
+
+---
+
+## Zion / surrounding mountains
+
+Psalm 125.
+
+Centre:
+stable Zion.
+
+Outer:
+mountain ring.
+
+P1 nested enclosure:
+**strong**.
+
+---
+
+## Zion / Zaphon divine-mountain field
+
+Psalm 48.
+
+Mythic/geographic overlap:
+**strong enough to log**.
+
+Literal far-north geography:
+**not secure**.
+
+---
+
+## Sinai / sanctuary
+
+Psalm 68.
+
+The poem links:
+wilderness/Sinai theophany
+→ sanctuary dwelling/procession.
+
+P4 centre-transfer / continuity:
+**strong at theological-literary level**.
+
+Literal mountain relocation:
+**unsupported**.
+
+---
+
+## ascent / descent around Zion
+
+Ascent:
+pilgrim/tribes/person → Zion.
+
+Descent:
+rain / springs / oil / dew / blessing → people/land.
+
+P2 directional reciprocity:
+**strong**.
+
+Physical two-strand braid:
+**not stated**.
+
+---
+
+# SECTION 45B continuous master process sequence
+
+## Phase 1 — outer person/people exist outside centre
+
+distance;
+distress;
+foreign/hostile space.
+
+---
+
+## Phase 2 — centre is identified
+
+holy mountain;
+Zion;
+temple;
+house.
+
+---
+
+## Phase 3 — route becomes active
+
+light/truth guides;
+highways to Zion;
+tribes go up;
+traveller's going out/coming in protected.
+
+---
+
+## Phase 4 — environmental difficulty can transform during approach
+
+valley
+→ springs/pools.
+
+dry southern channels
+→ watercourses.
+
+---
+
+## Phase 5 — gate threshold is reached
+
+feet
+→ inside Jerusalem's gates.
+
+humans
+→ evaluated for holy access.
+
+---
+
+## Phase 6 — centre is crossed/entered
+
+hill
+→ holy place;
+gate
+→ city;
+courts
+→ house/sanctuary.
+
+---
+
+## Phase 7 — divine presence also enters/settles at centre
+
+King of glory
+→ gate entrance.
+
+Sinai/wilderness presence
+→ sanctuary link.
+
+ark/presence
+→ chosen resting place.
+
+---
+
+## Phase 8 — centre stabilizes
+
+Zion unmoved;
+Jerusalem knit together;
+mountains surround;
+resting place established.
+
+---
+
+## Phase 9 — centre is inspected/verified
+
+walk around Zion;
+count towers;
+inspect ramparts.
+
+---
+
+## Phase 10 — centre changes relational identities
+
+nations/persons
+→ registered as born in Zion.
+
+---
+
+## Phase 11 — centre becomes source
+
+blessing;
+oil;
+dew;
+provision;
+light;
+strength.
+
+---
+
+## Phase 12 — flow moves outward/downward
+
+Zion
+→ households;
+→ generations;
+→ people;
+→ life.
+
+---
+
+# What Section 45B adds to the master Bible/Vardath timeline
+
+1. **Psalms 15 and 24 give explicit state-dependent holy-mountain access.** The physical hill exists, but sacred adjacency depends on entrant state.
+2. **Psalm 24 contracts whole-world cosmology into one local threshold:** world over waters → holy hill → holy place → gates → entry.
+3. **Psalm 24 contains complementary movements:** humans ascend toward the holy centre while the divine King enters through its gates.
+4. **The “lift up your heads, O gates” language is personification, not evidence for vertically rising mechanical gates.**
+5. **Psalms 42–43 define a return route:** remote overwhelmed state → guiding light/truth → holy mountain → altar/centre.
+6. **“Deep calls to deep” belongs to overwhelming lament-water imagery, not directly to the temple gate mechanism.**
+7. **Psalm 48 presents Zion as a defended centre inside an outer hostile field.**
+8. **Zion/Zaphon language is one of the strongest divine-mountain crossovers in the Psalter**, but “far north” is mythic/theological or otherwise disputed, not simple Jerusalem geography.
+9. **Psalm 48 gives a perception-triggered reversal:** hostile kings approach, see, panic and retreat before penetrating the centre.
+10. **Psalm 48 includes deliberate perimeter verification:** circle Zion, count towers, inspect ramparts, transmit result.
+11. **Psalm 68 links mobile Sinai/wilderness presence to sanctuary dwelling**, but the exact geography/mountain sequence is textually disputed.
+12. **Psalm 68 is important because the centre is mobile before it becomes settled.**
+13. **Psalm 68 presents mountain-selection / chosen dwelling among high places.**
+14. **Psalm 68's ascent-on-high sequence follows victory/procession and should not be replaced by later Christian reception when reconstructing the source-level mechanism.**
+15. **Psalm 84 makes pilgrimage a transforming route:** difficult valley → springs/pools → increasing strength → Zion.
+16. **Psalm 84 also shows that a threshold may be valued as a permanent role/location, not merely crossed.**
+17. **Psalm 87 changes relational origin through registration:** outsiders can be counted as “born in Zion” without ordinary physical birthplace changing.
+18. **The 15 Songs of Ascents have real temple-step reception history, but that does not prove an original 15-step physical or cosmological staircase.**
+19. **The canonical ascent collection still forms a powerful spatial arc:** distant distress → protected journey → Jerusalem gates → stable Zion → temple/dwelling → blessing from Zion.
+20. **Psalm 125 gives one of the clearest nested centre/ring models:** Zion stable while mountains surround Jerusalem as divine protection surrounds people.
+21. **Psalm 126 adds dry-channel → flowing-channel restoration.**
+22. **Psalm 127 explicitly says visible house/city/watch infrastructure is insufficient without the governing source**, an important structural control.
+23. **Psalm 130 shows “ascent” can include descent into the depths.** Literary ascent is not constant physical upward motion.
+24. **Psalm 132 makes centre-establishment explicit:** a place is sought, chosen, occupied and then called permanent resting place.
+25. **This means the culmination of ascent is stabilization/rest, not perpetual upward movement.**
+26. **Psalm 133 supplies the reverse direction:** oil/dew flow downward from high source toward body/Zion, producing blessing/life.
+27. **Psalm 134 closes the sequence at the centre:** servants stand in the house and blessing flows outward from Zion.
+28. **Together the family gives a real reciprocal pattern: ascent into centre ↔ descent/blessing from centre.**
+29. **That reciprocal directional structure resembles part of the user's central-spire intuition more closely than isolated mountain imagery does.**
+30. **The hard mismatch remains:** no Psalm in this family explicitly describes two counter-wound physical strands weaving through one middle, no world-turns are made adjacent, and no material exchange between populated past/present/future worlds is narrated.
+
+---
+
+# SECTION 45B number / timing register
+
+Record without forcing:
+
+- **15 Songs of Ascents**: Psalms 120–134.
+- Later rabbinic tradition associates them with **15 temple steps**.
+- That one-to-one association is historically important reception evidence but not secure original composition evidence.
+- Psalm 68 uses very large chariot numbers (“twice ten thousand / thousands upon thousands”), poetic military-divine magnitude rather than measured vehicle count.
+- Psalm 84 uses “one day in courts better than a thousand elsewhere,” a value comparison, not a time-conversion law.
+- Do not map 15 / 10,000 / 1,000 into Vardath chronology without independent mechanism.
+
+---
+
+# SECTION 45B textual / literary / historical controls
+
+- Psalms 15 and 24 are widely treated as temple-entrance texts, but the exact historical ritual behind them is reconstructed rather than directly documented.
+- Psalm 24 gate-head lifting is personification; no portcullis mechanism should be inferred.
+- Psalms 42–43 are often read together because of repeated refrain/language and shared sanctuary longing.
+- “Deep calls to deep” is poetic lament imagery and should not automatically be cosmologized.
+- Psalm 48's “Zaphon/far north” is debated between mythic-divine-mountain and topographic readings.
+- The relation between Zion and older Canaanite divine-mountain imagery is significant but does not prove simple borrowing or literal geographic identity.
+- Psalm 68 is one of the most difficult Psalms textually; mountain identifications and internal sequence remain contested.
+- Psalm 68 should not be made into a literal Sinai→Zion mountain-transport event.
+- Psalm 84's Valley of Baca may be real, symbolic, or difficult place-name; the springs/rain transformation is poetic pilgrimage language.
+- Psalm 87's “born there” is theological/civic identity language, not physical rebirth technology.
+- The origin/function of the Songs of Ascents is debated:
+  - pilgrimage;
+  - return from exile;
+  - temple liturgy;
+  - later step tradition;
+  - literary ascent structure;
+  - Zion-centred post-exilic identity.
+- Later Mishnah traditions connecting the 15 Psalms with 15 steps are important but late relative to composition.
+- The Songs of Ascents should therefore be studied as a canonical movement pattern without assuming one original literal performance route.
+- Psalm 133's Hermon→Zion dew image is poetic and geographically nonliteral if taken as direct meteorological transfer.
+- Mountain/temple axis language is strongest as sacred-centre theology; physical world-axis claims need independent evidence.
+
+### Sources logged for Section 45B
+
+Primary:
+- NRSVUE:
+  - Psalm 24:
+    https://www.biblegateway.com/passage/?search=Psalm+24&version=NRSVUE
+  - Psalm 48:
+    https://www.biblegateway.com/passage/?search=Psalm+48&version=NRSVUE
+  - Psalm 68:
+    https://www.biblegateway.com/passage/?search=Psalm+68&version=NRSVUE
+  - Psalm 84:
+    https://www.biblegateway.com/passage/?search=Psalm+84&version=NRSVUE
+  - Psalms 121–123:
+    https://www.biblegateway.com/passage/?search=Psalm+121-123&version=NRSVUE
+  - Psalm 122:
+    https://www.biblegateway.com/passage/?search=Psalm+122&version=NRSVUE
+  - Psalm 133:
+    https://www.biblegateway.com/passage/?search=Psalm+133&version=NRSVUE
+  - Psalm 134:
+    https://www.biblegateway.com/passage/?search=Psalm+134&version=NRSVUE
+- full Songs of Ascents checked across Psalms 120–134 in major modern translations.
+
+Gate / entrance:
+- scholarship on **Psalms 15 and 24 as temple entrance hymns**, including the common question→requirements→blessing structure.
+- Working Preacher / Luther Seminary, **Psalm 24 entrance liturgy**, useful specifically for the personified gate-head control and human-entry/divine-entry structure.
+
+Zion / divine mountain:
+- Mark S. Smith, work on **Psalm 48**, Zion/Saphon and the poetic relationship of God and Zion.
+- broader scholarship on Zion theology and ancient West Asian divine-mountain traditions.
+
+Psalm 68:
+- Mark A. Vincent, **From Sinai to Jerusalem: A Study of the Hebrew Text of Psalm 68**.
+- Phil J. Botha, **“Ascribe Power to God…”**, *Old Testament Essays* 36 (2023), on sanctuary-centred movement and the Sinai/Zion relationship.
+- structural/geographical scholarship on Psalm 68 emphasizing the substantial textual/geographic disputes.
+
+Songs of Ascents:
+- Loren D. Crow, **The Songs of Ascents (Psalms 120–134): Their Place in Israelite History and Religion** (SBL Dissertation Series 148).
+- Thijs Booij, **“Psalms 120–136: Songs for a Great Festival,”** *Biblica* 91 (2010).
+- modern spatial/literary studies of the Songs of Ascents that challenge a simple original pilgrimage-only model.
+- Mishnah **Sukkah 5:4** and **Middot 2:5** retained as later evidence for the fifteen-step association.
+
+---
+
+# SECTION 45B COMPLETE — mountain / Zion / gate / ascent / descent / temple-centre family
+
+### Current transformation point
+
+**remote/distressed population**
+→ holy mountain/centre identified
+→ route activated
+→ guidance/protection supplied
+→ difficult valley can become spring-route
+→ tribes/persons go up
+→ gate reached
+→ state-dependent access
+→ people enter
+→ divine King/presence also enters/settles
+→ centre becomes stable/resting place
+→ surrounding mountains/perimeter define protected field
+→ centre verified
+→ identities registered to centre
+→ oil/dew/blessing flow downward/outward
+→ collection ends with servants standing in house
+→ blessing issued from Zion toward outside world.
+
+### Next Psalm process family
+
+**SECTION 45C — rod / sceptre / king / anointed / hand-arm-from-above / enthronement family**
+
+Priority:
+- Psalms 2, 18, 20–21, 45, 72, 89, 110, 132, 144 and related royal Psalms;
+- rod/sceptre as authority-axis;
+- right hand / arm;
+- enthronement / footstool;
+- king/anointed figure as central operator;
+- enemies under feet / below throne;
+- hand from above extraction;
+- crown / horn / lamp;
+- test whether royal verticality adds genuine Squatter-Man/rod geometry or remains social-political metaphor;
+- preserve overlap with already completed storm/Zion blocks without duplicating them.
