@@ -29941,3 +29941,445 @@ Scholarly controls:
 
 **Section 22 remains in progress.**
 Next subsection under the anti-repeat protocol: **Exodus 27–31 — courtyard/altar/basin, priestly garments, paired shoulder stones, twelve-stone breastpiece, Urim/Thummim, consecration, incense and seven-speech/Sabbath closure.**
+
+
+## SECTION 22 progress B — Exodus 27–31: outer court, priest-body as Israel map, paired shoulder stones and timed activation
+
+### Anti-repeat check
+
+Section 22A is already appended.  
+No Exodus 27–31 progress existed elsewhere in the ledger.  
+Continuing only beyond the saved 25–26 checkpoint.
+
+### Courtyard — nested sacred space gains an outer processing zone
+
+Exodus 27 adds an outer court around the inner tent.
+
+The courtyard is:
+- **100 cubits long**;
+- **50 cubits wide**;
+- linen boundary hangings;
+- entrance screen **20 cubits** wide;
+- overall boundary height **5 cubits** in the received dimensions.
+
+This extends the nested access sequence:
+
+**outside camp**
+→ courtyard boundary
+→ bronze altar / basin processing zone
+→ tent entrance
+→ Holy Place
+→ inner veil
+→ Holy of Holies
+→ ark / between-cherubim communication point.
+
+This is important for the mature Vardath method because the system does not have only one threshold.
+
+It has **multiple boundary modes in series**.
+
+### Bronze altar — square, four corners, four horns
+
+The burnt-offering altar is:
+- **5 × 5 cubits**;
+- **3 cubits high**;
+- explicitly **square**;
+- one horn at each of its **4 corners**;
+- horns made as part of the altar.
+
+Raw geometry:
+**square centre / four corners / four projecting horns**.
+
+This is genuine fourfold spatial structure.
+
+Do not automatically call the horns plasma branches. In the cultic system they are altar architecture with ritual significance.
+
+### Basin — body-state preparation between altar and tent
+
+Exodus 30 later places the bronze basin:
+- between Tent of Meeting and altar;
+- filled with water;
+- priests wash **hands and feet** before entering the tent or approaching altar service;
+- failure to wash carries a death warning.
+
+So the route toward the inner interface requires:
+
+**outer person**
+→ **water/body preparation**
+→ **authorized entry/service**.
+
+The basin is therefore a **state-preparation station at a boundary**, not a vehicle or gate.
+
+This adds another important category:
+**transition preparation can occur before access without itself being the transition mechanism.**
+
+### Lamp timing — evening / morning pair
+
+The lamps are tended in a recurring two-phase cycle:
+- evening;
+- morning.
+
+Likewise later:
+- incense is burned morning/evening;
+- regular lamb offering is morning/evening.
+
+This creates a persistent **two-state daily service clock** around the portable interface.
+
+So the Tabernacle is not only spatially structured.
+It is **phase-timed**.
+
+### Aaron's garments reproduce the sanctuary materials
+
+Exodus 28 clothes the high priest in:
+- gold;
+- blue;
+- purple;
+- crimson;
+- fine linen;
+- precious stones.
+
+These are strongly continuous with the materials/colors of the Tabernacle itself.
+
+Modern scholarship has emphasized that the high priest visually “matches” or extends the sanctuary environment.
+
+For our project this matters enormously:
+
+> the human mediator is deliberately made to **carry the architecture's visual/material identity on his own body**.
+
+That is genuine person/structure correspondence.
+
+It does not mean Aaron literally is the Tabernacle.
+It means the text turns his body into a **mobile representative/interface of the sacred structure**.
+
+### Two shoulder stones = 6 + 6 names
+
+The ephod bears:
+- **2 stones**;
+- one on each shoulder;
+- names of Israel engraved on them;
+- **6 names on one stone**;
+- **6 names on the other**;
+- arranged by birth order.
+
+Aaron therefore enters the sanctuary carrying:
+
+**6 tribes ← body centre → 6 tribes**
+
+on the two shoulders.
+
+This is one of the strongest bilateral body mappings yet.
+
+Classification:
+- **P2 bilateral pair**
+- **P7 representational carrier pair**
+
+The stones are explicitly called **stones of remembrance**.
+
+So twelve separate ancestral names are compressed into **two balanced bodily loads**.
+
+### Breastpiece = 12 individual stones in a 4 × 3 grid
+
+The breastpiece then transforms the same twelvefold people into a different geometry:
+- **12 stones**;
+- **4 rows**;
+- **3 stones per row**;
+- each stone engraved for one tribe;
+- carried **over Aaron's heart**.
+
+This gives two simultaneous representations of the same Israel-body:
+
+**shoulders: 6 + 6**
+and
+**chest/heart: 4 × 3 = 12**.
+
+That is exceptionally valuable for the project's projection method.
+
+The text itself shows that:
+**one underlying twelve-part group can be represented through different geometries depending on function/location.**
+
+This is much stronger evidence for “different projection, same underlying system” than merely finding similar numbers in unrelated stories.
+
+### Aaron as “body politic”
+
+Modern scholarly discussion explicitly recognizes this representational logic.
+
+The high priest bears:
+- Israel's names on shoulders;
+- Israel's names over heart;
+- sacred materials matching the Tabernacle;
+- decision apparatus associated with the breastpiece.
+
+A useful controlled description is:
+
+**Aaron's body becomes a mobile representational map of the twelve-part Israelite collective before YHWH.**
+
+That is a source-grounded anthropomorphic system representation.
+
+### Precious-stone/Garden connection — possible Eden recurrence
+
+Recent scholarship has compared the high priest's gemstone array with the precious stones associated with Eden/divine-garden imagery in Ezekiel 28.
+
+All nine stones named in the Masoretic Ezekiel garden list appear within the twelve-stone breastpiece set.
+
+This may reinforce:
+**sanctuary / divine-garden / priestly-body** symbolic overlap.
+
+But:
+- exact gem identifications are uncertain;
+- Ezekiel's textual traditions differ;
+- this is comparative symbolism, not proof of a physical garden/cosmos apparatus.
+
+### Urim / Thummim — paired decision instruments over the heart
+
+Exodus 28 instructs that:
+- **Urim**
+- and **Thummim**
+be placed with/in the breastpiece of judgment,
+over Aaron's heart when he comes before YHWH.
+
+Their exact physical form is unknown.
+
+Later biblical texts associate Urim/ephod traditions with obtaining divine decisions.
+
+Therefore the secure functional classification is:
+
+**paired named decision/divination apparatus**
++
+**central chest/heart location**
++
+**mediator enters sacred interface**
+→ **information/decision returned**.
+
+Pair classification:
+- **P7 paired information/decision instruments**.
+
+Do not force them into:
+- positive/negative electrical poles,
+- future/past worlds,
+- two lattice strands.
+
+The source does not tell us enough.
+
+### Robe bells — approach becomes audible
+
+The robe has:
+- bells around its hem;
+- alternating with pomegranate decorations.
+
+The sound is heard when Aaron enters/leaves the sacred space, with a warning tied to survival.
+
+This means access is not only:
+- spatial,
+- visual,
+- material.
+
+It is also **signalled acoustically**.
+
+A moving authorized body announces its approach to the interface.
+
+### Forehead plate — office/status becomes visibly encoded on the body
+
+Aaron wears a gold plate/frontlet inscribed:
+**Holy to YHWH**.
+
+So the priestly body carries system information at multiple body positions:
+- shoulders = names of twelve in 6+6;
+- heart/chest = twelve individual stones + Urim/Thummim;
+- forehead = holiness/status inscription;
+- hem = acoustic movement signal.
+
+This is almost a distributed wearable interface.
+
+Again, that is a literary/ritual system, not technology.
+
+### Consecration — ordinary human → staged priestly state
+
+Exodus 29 does not treat priesthood as merely a title.
+
+Aaron and sons undergo:
+- washing;
+- special clothing;
+- anointing;
+- sacrifices;
+- blood application;
+- food/meal;
+- repeated ritual over **7 days**.
+
+This is a full **state-conversion sequence**.
+
+The human body is progressively changed in status:
+**ordinary member of Israel**
+→ **washed**
+→ **clothed**
+→ **anointed**
+→ **blood-marked**
+→ **consecrated**
+→ **authorized priest/operator**.
+
+This strongly supports our recurring rule:
+ancient texts can encode **new office/function as an embodied state transition**.
+
+### Blood marks right-side extremities
+
+In the ordination rite, blood is placed on:
+- tip of **right ear**;
+- thumb of **right hand**;
+- big toe of **right foot**.
+
+This makes a three-point right-side body marking:
+**hearing / action / movement** in common ritual interpretation.
+
+For our geometry register:
+**right upper / right middle / right lower bodily points** are deliberately marked.
+
+Do not infer hidden physical circuitry.
+
+### Seven-day consecration
+
+The priestly/alatar consecration occurs over **7 days**.
+
+So another sevenfold transition appears:
+**repeated preparation → completed sacred function**.
+
+This belongs in the number register but must remain distinct from:
+- creation week;
+- manna week;
+- 7→8 birth/festival structures.
+
+### Daily offering = two-event clock
+
+Regular sacrifice:
+- **one lamb in morning**;
+- **one lamb at twilight/evening**.
+
+So again:
+**1 + 1 across opposite day phases**.
+
+The portable interface is maintained through repeated temporal servicing.
+
+### Incense altar — inner threshold object before the veil
+
+Exodus 30's incense altar is:
+- inside the Holy Place;
+- positioned before the veil / in relation to the ark beyond it;
+- used morning and evening.
+
+Its literary placement is unusual: it appears after priestly ordination rather than beside the other inner furniture.
+
+Scholars have long noted this compositional oddity.
+
+For our structural map, its key role is:
+**a small inner altar immediately before the strongest partition**.
+
+That makes it a threshold-adjacent service object, not itself the inner gate.
+
+### Half-shekel — unequal people normalized to equal unit
+
+The census payment is:
+- **half-shekel per person**;
+- rich may not give more;
+- poor may not give less.
+
+This creates a deliberately equalized unit at the collective level.
+
+Unlike the twelve-stone body map, this is not representational geometry.
+It is a ritual/economic equalization mechanism.
+
+### Anointing oil / incense — fixed mixtures transform ordinary materials into restricted sacred media
+
+Exodus 30 specifies exact compound mixtures for:
+- anointing oil;
+- incense.
+
+They are restricted from ordinary imitation/use.
+
+Thus sacred function can also be created through:
+**ordinary ingredients → measured combination → restricted transformed ritual medium**.
+
+Again, mixture/state change is present without implying chemistry beyond the ritual context.
+
+### Bezalel / Oholiab — paired master-builders
+
+Exodus 31 names:
+- **Bezalel**
+- **Oholiab**.
+
+Bezalel is singled out as specially endowed for skilled work; Oholiab is appointed with him, alongside other skilled workers.
+
+Classification:
+- **P7 primary / complementary builder pair**.
+
+This is not a split cosmic pair.
+It is a paired execution team translating the mountain pattern into physical form.
+
+### Seven speech units close with Sabbath
+
+The larger Exodus 25–31 instruction block is commonly analyzed as **7 divine speech units**, with the last centred on Sabbath.
+
+This links:
+**construction of ordered sacred dwelling**
+with
+**creation/order completed by Sabbath**.
+
+The point is literarily strong even if exact symbolic correspondences of every furnishing remain debated.
+
+### Vardath comparison — strongest new results
+
+1. **Mediator body becomes a representational map of the collective.**
+2. Same 12-part system appears as:
+   - **6 + 6 shoulders**
+   - **4 × 3 chest grid**.
+3. Human body and Tabernacle use matching sacred materials/colors.
+4. Urim/Thummim form a paired information/decision apparatus at the mediator's centre.
+5. Basin shows **state preparation before crossing**.
+6. Priesthood is a multi-step embodied **state transformation**.
+7. Tabernacle operation is phase-timed through morning/evening service.
+8. Courtyard→tent→veil→inner room creates multiple nested boundary levels.
+9. Square altar adds explicit **four-corner/four-horn** geometry.
+10. Seven instruction speeches culminate in Sabbath/order completion.
+
+### Major controls
+
+- Aaron is not the Tabernacle itself; he represents/carries Israel within its system.
+- Shoulder/breastpiece geometries are ritual representation, not evidence of physical lattice arms.
+- Urim/Thummim mechanics are uncertain.
+- Four altar horns are cultic features, not proof of four plasma flows.
+- Seven-day consecration is ritual timing, not automatically the Vardath gate cycle.
+- Exact gemstone identifications are uncertain.
+
+### Number / geometry register, Exodus 27–31
+
+- Courtyard: **100 × 50 cubits**.
+- Court height: **5 cubits**.
+- Entrance: **20 cubits**.
+- Bronze altar: **5 × 5 × 3 cubits**.
+- Altar corners/horns: **4**.
+- Shoulder stones: **2**.
+- Names per shoulder stone: **6 + 6**.
+- Breastpiece stones: **12**.
+- Breastpiece grid: **4 × 3**.
+- Urim/Thummim: **2 named elements**.
+- Priestly consecration: **7 days**.
+- Regular daily lambs: **2 = morning + evening**.
+- Incense service: **morning + evening**.
+- High-priest right-side blood points: **ear + thumb + big toe = 3**.
+- Instruction speech structure: **7**, ending Sabbath.
+- Master named builders: **2**, Bezalel + Oholiab.
+
+### Sources logged
+
+Primary:
+- Exodus 27–31.
+
+Scholarly:
+- Søren Lorenzen, “Colors of Holiness: Clothing the High Priest to Match the Tabernacle.”
+- Raanan Eichler, “The Priestly Garments: Recreating Them Just from the Text.”
+- “Gemstones of the Gods: The Symbolism of the High Priest's Breastpiece.”
+- “The Garments of the High Priest: Anthropomorphism in the Worship of God.”
+- “Ancient Israelite Divination: Urim ve-Tummim, Ephod, and Prophecy.”
+- “The Urim VeTumim.”
+- “The Gold Incense Altar's Two Functions.”
+- “The Gold Incense Altar: Activating the Tabernacle in Meditatio.”
+- “The Tabernacle, the Creation, and the Ideal of an Orderly World.”
+
+**Section 22 remains in progress.**  
+Next under the anti-repeat protocol: **Exodus 32–34 — golden calf as rival visible centre; Moses/YHWH/people mediation; tablets broken and replaced; temporary Tent of Meeting outside camp; face-to-face encounter; Moses' transformed/radiant face and veil.**
