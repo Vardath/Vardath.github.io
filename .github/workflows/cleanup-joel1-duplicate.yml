@@ -20,9 +20,20 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Remove only the second duplicate Joel 1 block
-        shell: python
+
+      - name: Remove verified duplicate with remote-race retry
+        shell: bash
         run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3 4 5 6 7 8; do
+            echo "cleanup attempt $attempt"
+            git fetch origin main
+            git reset --hard origin/main
+
+            python <<'PY'
           from pathlib import Path
 
           path = Path("book/EXTRA-RESEARCH.md")
@@ -38,39 +49,51 @@ jobs:
               occ.append(pos)
               pos += len(marker)
 
-          if len(occ) != 2:
-              raise SystemExit(f"Expected exactly two Joel 1 headings, found {len(occ)}")
+          if len(occ) == 1:
+              print("Duplicate already absent; only trigger removal needed.")
+          elif len(occ) == 2:
+              start = occ[1]
+              sep = "\n\n---\n\n"
+              prev_sep = text.rfind(sep, 0, start)
+              if prev_sep >= 0 and start - prev_sep < 20:
+                  start = prev_sep
 
-          start = occ[1]
-          sep = "\n\n---\n\n"
-          prev_sep = text.rfind(sep, 0, start)
-          if prev_sep >= 0 and start - prev_sep < 20:
-              start = prev_sep
+              next_heading = text.find("\n# SECTION 56B2", occ[1] + len(marker))
+              end = len(text) if next_heading < 0 else next_heading + 1
+              removed = text[start:end]
 
-          next_heading = text.find("\n# SECTION 56B2", occ[1] + len(marker))
-          end = len(text) if next_heading < 0 else next_heading + 1
+              required = [
+                  "M56B1-10 — COUPLED FIRE/HYDRAULIC FAILURE",
+                  "If repository state has not advanced independently",
+              ]
+              if not all(x in removed for x in required):
+                  raise SystemExit("Second block signatures do not match the staged duplicate; refusing cleanup")
 
-          removed = text[start:end]
-          required = [
-              "M56B1-10 — COUPLED FIRE/HYDRAULIC FAILURE",
-              "If repository state has not advanced independently",
-          ]
-          if not all(x in removed for x in required):
-              raise SystemExit("Second block signatures do not match the staged duplicate; refusing cleanup")
+              corrected = text[:start] + text[end:]
+              if corrected.count(marker) != 1:
+                  raise SystemExit("Cleanup did not leave exactly one Joel 1 heading")
+              path.write_text(corrected, encoding="utf-8")
+          else:
+              raise SystemExit(f"Expected one or two Joel 1 headings, found {len(occ)}")
+          PY
 
-          corrected = text[:start] + text[end:]
-          if corrected.count(marker) != 1:
-              raise SystemExit("Cleanup did not leave exactly one Joel 1 heading")
+            rm -f research-staging/cleanup-joel1-duplicate.trigger
+            git add -A
 
-          path.write_text(corrected, encoding="utf-8")
+            if git diff --cached --quiet; then
+              echo "Nothing to commit."
+              exit 0
+            fi
 
-      - name: Commit cleanup
-        shell: bash
-        run: |
-          set -euo pipefail
-          rm -f research-staging/cleanup-joel1-duplicate.trigger
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Remove duplicate Joel 1 EXTRA research block"
-          git push
+            git commit -m "Remove duplicate Joel 1 EXTRA research block"
+
+            if git push origin main; then
+              echo "cleanup push succeeded"
+              exit 0
+            fi
+
+            echo "remote moved during cleanup; retrying from latest main"
+          done
+
+          echo "cleanup could not acquire a clean push window"
+          exit 1
