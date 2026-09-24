@@ -50317,3 +50317,78 @@ Carry forward the same timeline protocol:
 - source/text controls;
 - immediate appendage after each research block;
 - continuous integration into the larger Vardath geometry timeline.
+
+
+---
+
+## MASTER METHOD UPDATE — geometry timeline is the final product
+
+User clarification after Section 32:
+
+The 88-book investigation is ultimately building a **timeline of the geometries/processes described across the books and their effects in relation to Vardath Cosmology**.
+
+Therefore, for every remaining section:
+
+1. **Preserve exact event order.**  
+   Do not reduce a passage to a bag of motifs. Record what state exists first, what force acts, what changes, and what state follows.
+
+2. **Names remain source labels, not the primary geometry.**  
+   Record all figure/place/object names so the source can be reconstructed, but focus interpretation on:
+   - two or more forces/components;
+   - direction;
+   - coupling/decoupling;
+   - convergence/divergence;
+   - enclosure;
+   - throat/gate/boundary;
+   - transfer/cargo;
+   - transformation;
+   - inversion;
+   - opening/closure;
+   - stabilization;
+   - residual material;
+   - feedback;
+   - timing/phase.
+
+3. **Each research block must contribute to the global timeline.**  
+   End each block with a continuous stripped-down process sequence that can later be concatenated with the other 87 sections.
+
+4. **Record effects, not just shapes.**  
+   For every important geometry, ask:
+   - what does it cause?
+   - what crosses?
+   - what is displaced?
+   - what becomes aligned or misaligned?
+   - what becomes enclosed or released?
+   - what remains after the transition?
+   - what new stable state follows?
+
+5. **Track scale explicitly.**  
+   Human/body-scale, household, ritual, architecture, battlefield, landscape, sky/heaven, world-scale may preserve the same process grammar at different scales. Do not assume they are literally identical; record the nested structural similarity.
+
+6. **Pairs mean two forces before they mean two personalities.**  
+   Preserve names, but ask first whether the pair encodes:
+   - opposition;
+   - counterflow;
+   - two sides of a throat;
+   - old/new state;
+   - active/passive component;
+   - carrier/cargo;
+   - centre/field;
+   - ascent/descent;
+   - predecessor/successor;
+   - split/recombined system.
+
+7. **Build cumulative phase vocabulary.**  
+   Reuse compatible phase labels where possible so later sections can be aligned into one master sequence rather than becoming isolated chapter notes.
+
+8. **Append immediately.**  
+   Every substantive research block and its timeline integration is to be written to this ledger before moving on. Do not rely on chat history alone.
+
+9. **Do not lose inconvenient data.**  
+   Keep textual variants, failed correspondences, uncertain numbers, ordinary literary explanations, contradictory sequences, and scholarly controls beside the Vardath comparison.
+
+10. **Final target.**  
+    When all 88 roadmap entries are complete, use these per-section sequences to construct:
+    **a single chronological/process map of the recurring geometry, transformations, transfer phases, catastrophes, closures and successor states across the whole corpus, compared against the mature Vardath mechanism.**
+
+This protocol supersedes any earlier tendency to prioritise motif collection over chronology/process.
