@@ -136019,3 +136019,1679 @@ Priority:
 - keep Wisdom of Solomon literary dependence on Greek/Hellenistic philosophy visible;
 - keep Sirach Hebrew/Greek/Syriac textual differences visible;
 - investigate Ethiopian placement/order carefully before continuing beyond Section 48.
+
+
+---
+
+# SECTION 48 progress A — Wisdom of Solomon 1–9 / Ethiopian Mäṣḥafä Ṭibäb
+## Ethiopian project book 26 is identified directly with the Geʽez Wisdom of Solomon tradition; death is first presented as a relation humans summon rather than an original creative substance, righteous death then becomes an appearance/actual-state split, Wisdom moves more rapidly than motion and penetrates all things while remaining herself, cosmic structure/time/elements become objects of Wisdom's knowledge, creation itself is armed as a fighting field, Wisdom is sought as royal bride/partner, and finally she is sent from the heavenly throne downward to guide earthly paths while the temple is described as a copy of a primordial holy tent
+
+This pass begins **SECTION 48 — Wisdom of Solomon + Sirach**.
+
+The first block covers:
+**Wisdom of Solomon 1–9**.
+
+Before geometry, the Ethiopian book-order issue must be repaired explicitly.
+
+---
+
+# Ethiopian canon correction — Mäṣḥafä Ṭibäb is Wisdom of Solomon
+
+The stored canonical list correctly records:
+
+24. Messale / Proverbs  
+25. Tegsats / Reproof  
+26. **Metsihafe Tibeb / Mäṣḥafä Ṭibäb / Book(s) of Wisdom**  
+27. Ecclesiastes  
+28. Song of Songs.
+
+The research roadmap later grouped:
+**Ecclesiastes + Song** as Section 47
+and postponed:
+**Wisdom + Sirach** to Section 48.
+
+That research grouping should **not** be mistaken for canonical order.
+
+British Library Geʽez manuscript catalogues are especially useful here.
+
+### Add MS 16186
+contains:
+- Proverbs;
+- Tagśāṣa Salomon / Reproof;
+- Ecclesiastes;
+- **Ṭǝbaba Salomon**, catalogued as **Wisdom of Solomon**;
+- Job.
+
+### Add MS 16189
+contains:
+- Proverbs;
+- Ecclesiastes;
+- **Metsihafe Tibeb / the books of wisdom**;
+- Job;
+- Twelve Prophets.
+
+A separate Ethiopic Wisdom text tradition is also catalogued under:
+**መጽሐፈ ጥበበ ሰሎሞን**
+— Book of the Wisdom of Solomon.
+
+Therefore the project can now state securely:
+
+> **Ethiopian book 26, Mäṣḥafä Ṭibäb, is the Geʽez Wisdom of Solomon tradition rather than a lost unrelated wisdom book.**
+
+The earlier research order jumped over it temporarily.
+Section 48 restores it.
+
+---
+
+# Ethiopic textual control
+
+The Wisdom of Solomon was composed in Greek.
+
+The old Geʽez version is an important ancient translation witness.
+
+David Winston's textual survey notes that the Ethiopic translation:
+- follows Greek word order and sentence structure closely;
+- can be very literal even when awkward in Ethiopic;
+- also renders some difficult Greek expressions more freely.
+
+August Dillmann published the Geʽez text in the nineteenth century.
+
+Therefore:
+- Ethiopian canonical identity is secure;
+- but precise lexical claims should still be controlled against Greek;
+- the Geʽez text is a translation witness, not evidence that Wisdom was originally written in Ethiopic.
+
+---
+
+# Historical / philosophical control before geometry
+
+Most modern scholarship places Wisdom of Solomon in:
+**Hellenistic Jewish Greek-speaking culture**, commonly Alexandria.
+
+The exact date is debated, often somewhere in the late Hellenistic / early Roman period.
+
+The author writes in Solomon's voice without being the historical Solomon.
+
+The book combines:
+- Jewish scripture;
+- Exodus traditions;
+- creation theology;
+- wisdom personification;
+- Greek rhetorical/philosophical vocabulary.
+
+Terms involving:
+- soul/body;
+- immortality/incorruption;
+- elements;
+- emanation;
+- cosmos;
+- motion;
+
+must therefore be compared with Hellenistic philosophical language.
+
+Do not read them as if they were modern field physics.
+
+At the same time, they are genuine ancient process-language and belong in the geometry map.
+
+---
+
+# Wisdom 1 — the book begins with a world-filling information field
+
+Wisdom 1 says:
+
+**Spirit of the Lord**
+→ has filled the world.
+
+That which:
+**holds all things together**
+→ knows what is said.
+
+Therefore:
+**secret speech**
+→ is not informationally isolated.
+
+This is one of the strongest world-scale **presence + information** statements in the wisdom corpus.
+
+Compare:
+- Psalm 139;
+- Job's hidden observer;
+- Proverbs 20 lamp searching inner chambers.
+
+The field is not merely spatial.
+
+It is:
+**world-filling + cohesion-producing + information-sensitive**.
+
+---
+
+# World-filled spirit does not mean modern ether/plasma
+
+The text is theological.
+
+It says divine Spirit:
+- fills;
+- contains/holds;
+- knows speech.
+
+This can be compared structurally to a global field.
+
+But it is not evidence by itself for:
+- electromagnetic ether;
+- plasma ocean;
+- literal physical substrate joining worlds.
+
+Keep:
+**field-function**.
+
+Do not import:
+**modern material identity**.
+
+---
+
+# Wisdom cannot dwell in every interior state
+
+Wisdom 1 also says:
+
+Wisdom:
+→ will not enter deceitful soul;
+→ will not dwell in body enslaved to sin.
+
+Thus body/soul is treated as a **possible dwelling enclosure**.
+
+State determines occupancy.
+
+This extends the Bible-wide rule:
+
+**same physical container**
++
+**different internal state**
+→ different relational access.
+
+Compare:
+- Psalm 24 holy-hill access;
+- Song locked garden;
+- Esther court threshold.
+
+---
+
+# Wisdom 1 — death is not original creative output
+
+The author states:
+
+God:
+→ did not make death.
+
+God created:
+**things to exist**.
+
+The generative forces/creatures of the world:
+→ wholesome.
+
+Then:
+**ungodly people summon death**
+through words/deeds
+and
+make a covenant with it.
+
+This creates an unusually strong process distinction:
+
+### original field
+creation
+→ being/life.
+
+### secondary relation
+human action
+→ calls death into relationship.
+
+Death is treated almost as:
+**an invited alliance / acquired state**.
+
+---
+
+# Life / Death pair — one of Section 48's central two-force systems
+
+Life/existence:
+→ aligned with creation/righteousness.
+
+Death:
+→ summoned/covenanted by the ungodly.
+
+Classification:
+- **P2 polarity pair: extremely strong**;
+- **P3 state pair: extremely strong**;
+- literal independent equal deities: unsupported.
+
+The book's theology is asymmetrical:
+life belongs to intended creation;
+death is derivative/invited.
+
+That matters for later cosmic combat imagery.
+
+---
+
+# Wisdom 2 — the ungodly construct a materialist dissolution model
+
+The opposing speakers say:
+
+life
+→ short/sorrowful.
+
+breath
+→ smoke.
+
+reason
+→ spark from heart.
+
+spark extinguished
+→ body becomes ash.
+
+spirit
+→ dispersed like thin air.
+
+name/memory
+→ forgotten.
+
+life
+→ cloud trace / mist under sun.
+
+This is one of the strongest explicitly articulated **material dissolution models** in the corpus.
+
+It should not be taken as the narrator's final view.
+
+It is placed in the mouths/reasoning of the ungodly.
+
+---
+
+# Dissolution sequence deserves its own control entry
+
+Their model is:
+
+**body**
+→ loses internal spark.
+
+**solid**
+→ ash.
+
+**breath/spirit**
+→ dispersed air.
+
+**memory**
+→ disappears.
+
+**person**
+→ trace-free cloud/mist.
+
+This is valuable because it shows:
+ancient texts can deliberately construct physical-sounding models as **positions to be rejected or corrected later**.
+
+Always identify speaker.
+
+---
+
+# Temporary-route imagery returns through cloud/mist
+
+Life is compared to:
+**cloud/mist passing**
+→ leaving no durable trace.
+
+This joins:
+- Psalm 77 unseen sea path;
+- Proverbs eagle/serpent/ship path;
+- Ecclesiastes vapor/hevel.
+
+Again:
+**movement/appearance**
+does not imply
+**persistent structure**.
+
+---
+
+# Wisdom 2 — death enters through envy, not original world design
+
+Near the chapter's end:
+
+God created humans for:
+**incorruption**
+and as image of divine eternity/nature depending translation.
+
+Death:
+→ entered world through envy of the devil.
+
+Those belonging to him:
+→ experience it.
+
+This supplies an explicit **entry event** for death within the book's theology.
+
+Process:
+
+creation/life
+→ hostile envy
+→ death enters human world
+→ relational belonging determines exposure.
+
+This is not Genesis narrative wording itself.
+
+It is later Jewish interpretation.
+
+---
+
+# Wisdom 3 — apparent death and actual state split
+
+The righteous:
+
+**appear**
+to foolish observers
+→ dead/destroyed.
+
+But:
+**actual state**
+→ souls in God's hand;
+→ peace;
+→ hope full of immortality.
+
+This is one of the strongest **observer-dependent state** passages in the corpus.
+
+Local observers:
+**death = destruction**.
+
+Narrator's privileged perspective:
+**departure ≠ annihilation**.
+
+Compare Psalm 139:
+local darkness
+≠
+upper observer darkness.
+
+---
+
+# Wisdom 3 — “departure” becomes transfer rather than annihilation
+
+The righteous are described as:
+**departing / going from us**.
+
+The foolish interpret:
+→ destruction.
+
+Narrator:
+→ peace / divine hand.
+
+This is extremely important for the project.
+
+The same event can be classified as:
+
+### local frame
+loss/disappearance.
+
+### larger frame
+transfer into protected relation.
+
+This is closer to a genuine **change-of-domain interpretation** than many earlier Sheol laments.
+
+But:
+the text still does not describe a physical route through layered worlds.
+
+---
+
+# Furnace test — outer destructive appearance produces refined state
+
+Righteous:
+→ tested like **gold in furnace**.
+
+The apparent process:
+heat/damage.
+
+Interpreted process:
+refining/testing/worthiness.
+
+Then:
+accepted like sacrifice.
+
+This continues:
+- Proverbs silver purification;
+- Job gold testing.
+
+The key variable is:
+**same external pressure can destroy impurity while preserving valued core**.
+
+---
+
+# Sparks through stubble — righteous become fast-moving fire points
+
+At visitation:
+righteous
+→ shine;
+→ **run like sparks through stubble**.
+
+This is a vivid transformation.
+
+Static/dead-seeming righteous
+→ luminous moving points
+→ spread across combustible field.
+
+This may sound plasma-like visually.
+
+But:
+the source is simile and eschatological/judgment poetry.
+
+Keep:
+**light + motion + distributed field**.
+
+Do not claim:
+literal plasma sparks.
+
+---
+
+# Root / fruit reversal — biological lineage is not the only continuity metric
+
+Wisdom 3 challenges ordinary ancient status assumptions.
+
+Barren woman/eunuch can receive:
+- fruit/reward;
+- inheritance/temple place.
+
+Unrighteous biological offspring:
+→ can fail.
+
+Thus:
+**physical reproduction**
+≠
+**secure continuity**.
+
+The book distinguishes:
+- biological branch;
+- wisdom/righteousness branch.
+
+This is important for the user's lineage/timeline work.
+
+---
+
+# Wisdom 4 — chronological age and actual maturity separate
+
+The book says:
+old age is not simply measured by:
+**length of time / number of years**.
+
+Wisdom/understanding:
+→ can constitute maturity.
+
+Then righteous person may die young
+yet be regarded as complete.
+
+Again:
+**clock duration**
+and
+**state maturity**
+are separate variables.
+
+This is a useful time-control.
+
+---
+
+# “Taken away” language creates another observer-frame problem
+
+The righteous person:
+→ is taken away from surrounding wickedness.
+
+Observers:
+→ see death/absence.
+
+Narrative theology:
+→ removal can be protection.
+
+So:
+**loss from local field**
+can equal
+**preservation relative to another frame**.
+
+This becomes highly relevant to later apocalyptic removals/rapture-like readings.
+
+But Wisdom 4 remains theological interpretation, not mechanism description.
+
+---
+
+# Wisdom 5 — final reversal makes hidden state publicly visible
+
+The righteous:
+→ stand with great confidence.
+
+Former oppressors:
+→ astonished.
+
+They realize:
+their earlier judgment of righteous life/death
+→ was wrong.
+
+This completes:
+
+**apparent low state**
+→ **hidden protected state**
+→ **public high-state revelation**.
+
+The chapter is a strong status-reversal engine.
+
+---
+
+# Wisdom 5 — disappearing-path imagery becomes explicit across three media
+
+The ungodly compare their life to:
+
+### ship
+passes through sea
+→ no trace/path left in waves.
+
+### bird
+flies through air
+→ no enduring sign.
+
+### arrow
+passes through air
+→ disturbed air closes again
+→ route not known.
+
+This is one of the strongest **temporary route** clusters in the whole corpus.
+
+Three different media:
+- water;
+- air under self-powered flight;
+- air penetrated by projectile.
+
+Same result:
+**transit occurs**
+but
+**path closes behind mover**.
+
+---
+
+# Temporary route family — major Vardath relevance
+
+This matters because the user's gate model includes:
+**temporary adjacency**.
+
+Wisdom 5 proves the conceptual possibility:
+
+**path exists during transit**
+→ **medium closes/restores**
+→ **later observer cannot see route**.
+
+This is an exceptionally useful ordinary physical analogue.
+
+It does **not** prove a world gate.
+
+But it gives the process grammar almost perfectly.
+
+---
+
+# Wisdom 5 — creation becomes armed fighting field
+
+The chapter then says God/creation takes up weapons:
+
+- righteousness as breastplate;
+- judgment as helmet;
+- holiness as shield;
+- wrath as sword;
+- **creation/world joins battle**;
+- lightning arrows;
+- clouds as bow;
+- hailstones as projectiles;
+- sea raging;
+- rivers flooding;
+- mighty wind opposing enemies.
+
+This is extremely important.
+
+The environmental field itself becomes an active combat system.
+
+---
+
+# Creation-fighting sequence is broader than a storm metaphor
+
+The text distributes one conflict through:
+- sky/lightning;
+- cloud;
+- hail;
+- sea;
+- river;
+- wind.
+
+So:
+**one moral/judgment event**
+→ many environmental subsystems activate.
+
+This is very similar to the project's catastrophe-effect clustering.
+
+### Hard control
+The genre is apocalyptic/poetic judgment rhetoric.
+
+It should not be used as a literal weather report without external control.
+
+---
+
+# Wisdom 5 — environment can behave as coordinated network
+
+The strongest process abstraction is:
+
+**central judgment**
+→ distributed creation nodes
+→ coordinated action.
+
+Compare:
+- Esther imperial information network;
+- Proverbs ruler→official network;
+- Psalms storm field.
+
+Here the network is environmental.
+
+---
+
+# Wisdom 6 — Wisdom actively seeks the seeker
+
+Rulers are told:
+seek Wisdom.
+
+But Wisdom herself:
+- is radiant;
+- does not fade;
+- easily seen by those who love her;
+- found by those who seek;
+- **anticipates those who desire her**;
+- makes herself known.
+
+This reverses ordinary search direction.
+
+Search is not:
+**human → passive object**.
+
+It becomes:
+**human seeks Wisdom**
+while
+**Wisdom moves toward seeker**.
+
+That is a true **reciprocal convergence** model.
+
+---
+
+# Wisdom “sitting at the gate” / threshold-search relation
+
+Traditions/translations of Wisdom 6 describe the early seeker finding Wisdom near or at the gates/door.
+
+The secure process is:
+**seeker rises early**
+→ Wisdom already accessible / anticipates encounter.
+
+This resembles Proverbs Woman Wisdom at gates.
+
+So the Wisdom tradition continues:
+**female Wisdom occupies threshold/public-access position**.
+
+---
+
+# Wisdom 6 — desire generates chain toward kingship
+
+The chapter gives a causal ladder:
+
+desire for Wisdom
+→ love of instruction
+→ keeping laws
+→ incorruption
+→ nearness to God
+→ desire for Wisdom
+→ kingdom.
+
+This is a **linked state ladder**, not a single jump.
+
+Important control:
+the process is staged.
+
+---
+
+# Wisdom 7 — “Solomon” emphasizes common human bodily origin
+
+The speaker says:
+- mortal like all;
+- descendant of first-formed earthling;
+- formed in womb;
+- blood/seed process;
+- after ten months born;
+- breathed same air;
+- fell on same earth;
+- first voice cry;
+- no king has different beginning.
+
+This deliberately grounds the king in ordinary body mechanics.
+
+Before cosmic Wisdom,
+the text says:
+**operator is not biologically exceptional**.
+
+---
+
+# Wisdom 7 — Wisdom preferred over sceptre and wealth
+
+The king prays:
+→ Wisdom comes.
+
+Then:
+sceptres/thrones
+→ counted as nothing beside her.
+
+Gold:
+→ sand.
+
+Silver:
+→ clay.
+
+Health/beauty/light:
+→ secondary.
+
+This is another **material wealth cannot substitute for governing principle** sequence.
+
+Compare:
+- Song love cannot be bought;
+- Ecclesiastes wealth fails permanence.
+
+---
+
+# Wisdom 7 — Wisdom teaches a complete ordered knowledge field
+
+The speaker says Wisdom taught:
+
+- structure of world;
+- activity of elements;
+- beginning/end/middle of times;
+- alternations of solstices;
+- changes of seasons;
+- cycles of year;
+- constellations/stars;
+- animal natures;
+- impulses of wild beasts;
+- powers of spirits;
+- human thoughts;
+- plant varieties;
+- properties/virtues of roots;
+- secret and manifest things.
+
+This is one of the densest ancient **system-knowledge catalogues** in the corpus.
+
+---
+
+# “Beginning / end / middle of times” is classification, not a hidden three-world map
+
+The wording is highly relevant.
+
+But first-level sense:
+Wisdom knows temporal structure.
+
+Do not immediately map:
+beginning / middle / end
+=
+past world / present world / future world.
+
+The verse also lists:
+seasons / solstices / years / stars.
+
+The context is comprehensive learned knowledge.
+
+Still:
+**time is treated as structured, partitionable and knowable**.
+
+---
+
+# Wisdom 7 — cosmic knowledge includes elements and roots
+
+This is unusually multiscale:
+
+**world structure / elements / stars**
+and
+**plants / roots / animals / human thoughts**.
+
+Macro
+↔
+micro.
+
+The same Wisdom spans both.
+
+This is one of the book's strongest **scale-bridging** claims.
+
+---
+
+# Wisdom 7:22–8:1 — one of the strongest “field-like Wisdom” passages in scripture
+
+Wisdom has a spirit described with many qualities:
+- subtle;
+- mobile/agile;
+- clear;
+- penetrating;
+- all-seeing;
+- all-powerful.
+
+Then:
+
+**more mobile than any motion**.
+
+Because of purity:
+→ **pervades and penetrates all things**.
+
+She is:
+- breath of divine power;
+- pure emanation of glory;
+- reflection of eternal light;
+- spotless mirror of divine activity;
+- image of goodness.
+
+Although:
+**one**
+→ she can do all things.
+
+Remaining in herself:
+→ **renews all things**.
+
+Each generation:
+→ passes into holy souls.
+
+Then:
+**reaches mightily from end to end**
+→ **orders all things well**.
+
+This is an extraordinarily important process cluster.
+
+---
+
+# Wisdom as field / carrier / invariant source
+
+The passage gives several simultaneous roles:
+
+### field-like
+pervades / penetrates all.
+
+### carrier-like
+passes into holy souls.
+
+### source-like
+emanation / breath.
+
+### optical
+reflection / mirror / light.
+
+### invariant
+remains herself.
+
+### transformative
+renews all.
+
+### global
+end-to-end ordering.
+
+This is arguably the strongest wisdom-text analogue to a **nonlocal ordering field** yet encountered.
+
+---
+
+# Hard control — philosophical/theological metaphor, not modern field theory
+
+The author is writing sophisticated Greek sapiential/philosophical theology.
+
+Words such as:
+- pneuma;
+- aporrhoia / emanation;
+- motion;
+- penetration;
+- light;
+- mirror;
+
+have ancient philosophical resonance.
+
+Do not translate them directly into:
+- plasma;
+- quantum field;
+- electromagnetic substrate;
+- aether.
+
+The controlled claim is:
+
+> Wisdom is conceptualized as an active, mobile, world-pervading, ordering reality that can remain one while becoming present in many human recipients.
+
+That is already strong enough.
+
+---
+
+# One → many without self-division
+
+Wisdom 7 says:
+
+**one**
+→ does all things.
+
+**remaining in herself**
+→ renews all things.
+
+**passes into many holy souls across generations**.
+
+This is especially important.
+
+The source preserves:
+**identity**
+while
+**distributed instantiation** occurs.
+
+This resembles:
+one pattern/function
+→ many nodes
+without source being consumed.
+
+Compare:
+- Proverbs distributed Tree/Fountain;
+- global JANUS-like pattern analogies;
+- information copied across carriers.
+
+But here it is personified Wisdom.
+
+---
+
+# Wisdom 8 — Wisdom becomes royal spouse / partner
+
+The speaker says:
+he loved Wisdom;
+sought her as bride;
+desired to take her as spouse.
+
+Wisdom:
+→ is closely associated with God;
+→ participant/knower of divine works;
+→ teaches virtues;
+→ gives counsel;
+→ grants reputation/immortality.
+
+This is another strong pair structure.
+
+### Solomon-persona / Wisdom
+
+Human king:
+limited / mortal / earthbound.
+
+Wisdom:
+cosmic / immortal / ordering / throne-associated.
+
+The pair is not equal.
+
+But the king seeks:
+**partnership/cohabitation** with Wisdom.
+
+---
+
+# King / Wisdom pair classification
+
+Solomonic speaker / Wisdom:
+- **P1 complementary pair: strong**;
+- **P2 polarity: moderate** (mortal/immortal, limited/all-knowing);
+- **P3 state-change pair: strong**, because Wisdom's presence transforms king's rule;
+- **P4 succession/transmission: strong**, as Wisdom enters generations;
+- literal erotic female deity: not the safest reading;
+- personification / philosophical-theological Wisdom: strong conventional explanation.
+
+---
+
+# Wisdom 8 — “marriage” externalizes the governing principle
+
+The king does not say:
+“I become Wisdom.”
+
+He seeks:
+**Wisdom beside him**.
+
+This is important.
+
+Two remain distinct:
+- operator;
+- ordering companion.
+
+The result:
+better rule.
+
+This resembles Song's reciprocal pair more than absorption mysticism.
+
+But unlike Song:
+Wisdom is personified cosmic principle, not ordinary human lover.
+
+---
+
+# Wisdom 8:19–20 — pre-existent soul reading is explicitly debated
+
+Some readers have used the passage about:
+good soul / undefiled body
+to infer Platonic soul pre-existence.
+
+Modern notes often caution that:
+the author may instead be reversing wording to emphasize Wisdom as divine gift and harmonious person.
+
+Therefore:
+do not build a reincarnation / pre-birth world mechanism from this passage without stronger textual support.
+
+---
+
+# Wisdom 9 — creation by Word + Wisdom
+
+The prayer begins:
+
+God:
+→ made all things by **word**.
+
+By Wisdom:
+→ formed humanity.
+
+This links:
+**voice/word operator**
++
+**Wisdom ordering/forming operator**.
+
+The two are not presented as rival forces.
+
+They are complementary divine operations.
+
+---
+
+# Wisdom 9 — earthly temple is called a copy of primordial holy tent
+
+The speaker says he was commanded to build:
+- temple on holy mountain;
+- altar in dwelling-city;
+- **copy of holy tent prepared from beginning**.
+
+This is extremely relevant to the project's layered-centre work.
+
+It introduces:
+
+**primordial / heavenly-archetypal sacred pattern**
+→ **earthly copy**
+→ temple.
+
+The exact ontology is debated.
+
+But the text explicitly makes:
+**local sacred architecture**
+a reproduction of
+**prior sacred pattern**.
+
+---
+
+# Temple / primordial tent — pattern transfer rather than physical descent
+
+The passage does not say:
+the heavenly tent physically descends.
+
+It says:
+earthly temple is a **copy/resemblance**.
+
+Thus:
+
+**pattern/information**
+→ transferred
+→ new material instantiation.
+
+This is another strong example where cross-level similarity is explained by:
+**copying**, not world collision.
+
+Very important methodological control.
+
+---
+
+# Wisdom was present when world was made
+
+The prayer says:
+Wisdom:
+→ knows divine works;
+→ **was present when world was made**.
+
+This extends Proverbs 8.
+
+Wisdom is again:
+**pre-human / creation-associated / ordering presence**.
+
+---
+
+# Wisdom 9 — Wisdom is sent from holy heavens / throne downward
+
+The prayer explicitly asks:
+
+**send her from holy heavens**
+and
+**from throne of glory send her**
+→ so she may be present beside king
+→ labor with him
+→ guide actions.
+
+This is a strong vertical dispatch sequence:
+
+**upper throne**
+→ Wisdom sent
+→ **earthly king**
+→ paths/actions corrected.
+
+Unlike Proverbs 30's question:
+“who ascended/descended?”
+
+Here:
+**downward sending is explicitly requested**.
+
+---
+
+# Upper Wisdom / lower human pair
+
+This is one of the strongest vertical pair structures in the wisdom corpus.
+
+Upper:
+Wisdom at divine throne.
+
+Lower:
+mortal king/body on earth.
+
+Channel:
+divine sending.
+
+Result:
+earthly path correction.
+
+Again:
+the text is theological.
+
+But the process is precise.
+
+---
+
+# Body as earthy tent weighing down soul
+
+Wisdom 9 says:
+
+**perishable body**
+→ weighs down soul.
+
+**earthly tent**
+→ burdens thoughtful mind.
+
+This is explicit body/container dual language.
+
+The body is:
+**temporary terrestrial enclosure**.
+
+This has Hellenistic philosophical resonance.
+
+Do not automatically infer:
+soul trapped in a lower physical world awaiting escape.
+
+The book values embodied righteous action elsewhere.
+
+Still:
+body/tent/container geometry is direct.
+
+---
+
+# “Who traced what is in heavens?” — human search boundary
+
+The prayer contrasts:
+
+earthly things:
+→ difficult but partly knowable.
+
+heavenly things:
+→ beyond unaided tracing.
+
+Then:
+Wisdom / holy spirit
+→ must be **sent from on high**.
+
+So knowledge transfer becomes:
+
+**upper inaccessible information**
+→ upper agent descends
+→ lower paths corrected.
+
+This is almost an information-bridge architecture.
+
+---
+
+# Wisdom / holy spirit relation must remain textually open
+
+Wisdom 9 uses both:
+- Wisdom;
+- holy spirit from on high.
+
+Scholarly/theological traditions differ in how tightly to identify them.
+
+Do not collapse:
+Wisdom = later Christian Holy Spirit
+as a source-level certainty.
+
+The process connection is secure:
+**divinely sent upper aid makes earthly path knowable/correct**.
+
+---
+
+# SECTION 48A pair / two-force matrix
+
+## Life / Death
+
+Creation-existence
+↔
+summoned derivative death.
+
+P2:
+**extremely strong**.
+
+---
+
+## righteous appearance / actual state
+
+seen dead/destroyed
+↔
+actually at peace/in divine hand.
+
+P3 observer-frame pair:
+**extremely strong**.
+
+---
+
+## human dissolving worldview / narrator's immortality worldview
+
+ash/air/forgotten trace
+↔
+protected soul/immortality.
+
+P2 competing models:
+**strong**.
+
+---
+
+## Wisdom / mortal king
+
+upper/cosmic ordering partner
+↔
+lower/mortal operator.
+
+P1 complementary:
+**strong**.
+
+P2 scale polarity:
+**strong**.
+
+---
+
+## one Wisdom / many souls
+
+one invariant source
+↔
+distributed recipients.
+
+P1 unity/multiplicity:
+**extremely strong**.
+
+---
+
+## heavenly tent / earthly temple
+
+archetypal/prepared pattern
+↔
+material copy.
+
+P4 copy/transmission:
+**very strong**.
+
+Literal same object:
+**unsupported**.
+
+---
+
+# SECTION 48A continuous transformation timeline — Wisdom 1–9
+
+## Phase A — world begins as filled/coherent information field
+
+Spirit fills world
+→ holds all
+→ speech known.
+
+---
+
+## Phase B — interior state controls Wisdom occupancy
+
+deceitful soul/body
+→ Wisdom absent.
+
+upright state
+→ Wisdom can dwell.
+
+---
+
+## Phase C — creation oriented toward being/life
+
+created things
+→ existence/wholesomeness.
+
+---
+
+## Phase D — humans summon death relation
+
+word/deed
+→ covenant with death.
+
+---
+
+## Phase E — ungodly model person as dissipating carrier
+
+breath smoke;
+reason spark;
+body ash;
+spirit air;
+memory mist.
+
+---
+
+## Phase F — death enters as secondary hostile condition
+
+envy
+→ death enters world.
+
+---
+
+## Phase G — apparent death splits from actual state
+
+local observers:
+destroyed.
+
+larger frame:
+peace / divine hand / immortality.
+
+---
+
+## Phase H — furnace pressure refines
+
+righteous
+→ tested as gold.
+
+---
+
+## Phase I — hidden righteous state becomes luminous/moving
+
+visitation
+→ shine
+→ sparks through stubble.
+
+---
+
+## Phase J — ordinary biological continuity is relativized
+
+barren/eunuch faithful
+→ enduring fruit.
+
+unrighteous offspring
+→ branch fails.
+
+---
+
+## Phase K — chronological duration separates from maturity
+
+young righteous
+→ complete.
+
+long-lived unrighteous
+→ not necessarily mature.
+
+---
+
+## Phase L — final observer-frame reversal
+
+former persecuted
+→ stand in confidence.
+
+former judges
+→ astonished.
+
+---
+
+## Phase M — transit route closes behind mover
+
+ship / bird / arrow
+→ medium crossed
+→ path not retained.
+
+---
+
+## Phase N — creation weapon network activates
+
+lightning/cloud/hail/sea/river/wind
+→ coordinated judgment.
+
+---
+
+## Phase O — seeker and Wisdom move toward each other
+
+human seeks
+→ Wisdom anticipates
+→ encounter.
+
+---
+
+## Phase P — mortal king receives cosmic knowledge
+
+Wisdom
+→ structure/elements/time/stars/animals/plants/roots.
+
+---
+
+## Phase Q — Wisdom becomes global pervading field
+
+one
+→ mobile beyond motion
+→ penetrates all
+→ remains herself
+→ renews all.
+
+---
+
+## Phase R — one pattern enters many generations
+
+Wisdom
+→ holy souls
+→ friends/prophets.
+
+---
+
+## Phase S — king seeks Wisdom as spouse/partner
+
+mortal operator
++ cosmic companion
+→ ordered rule.
+
+---
+
+## Phase T — earthly sacred architecture copies prior pattern
+
+primordial tent
+→ copied
+→ temple on holy mountain.
+
+---
+
+## Phase U — Wisdom descends from throne
+
+holy heavens / glory throne
+→ sent downward
+→ works beside king.
+
+---
+
+## Phase V — upper information corrects lower routes
+
+human paths
+→ straightened
+→ saved through Wisdom.
+
+---
+
+# What Wisdom of Solomon 1–9 adds to the master Bible/Vardath timeline
+
+1. **Ethiopian Mäṣḥafä Ṭibäb is now securely identified with the Geʽez Wisdom of Solomon tradition.**
+2. The research roadmap had postponed book 26; the canonical identity itself was not missing.
+3. **Wisdom 1 gives a genuine world-filling / world-holding / information-aware Spirit model.**
+4. This is field-like theological language, not proof of a modern physical field.
+5. **Wisdom occupancy is state-dependent:** deceitful interior excludes her.
+6. **Life/Death is one of the book's strongest two-force polarities**, but asymmetrical: life belongs to creation's intended order; death is derivative/summoned.
+7. **Wisdom 2 preserves a complete material-dissolution model only to place it inside the ungodly worldview.**
+8. That is a major speaker-control warning for the entire project.
+9. **Death is described as entering the world through a hostile relational cause**, a later interpretive development of Genesis traditions.
+10. **Wisdom 3 creates a strong observer-frame split:** what looks like annihilation locally is presented as protected transfer/peace in the larger frame.
+11. **Furnace testing** continues the purification-through-pressure family.
+12. **Sparks through stubble** gives luminous distributed motion, but remains simile.
+13. **Chronological age and actual maturity are explicitly separated.**
+14. **Wisdom 5's ship/bird/arrow cluster is one of the strongest temporary-route analogues yet found:** transit occurs, then the medium closes and route disappears.
+15. That maps unusually well to the abstract rule:
+    **temporary adjacency/path can exist without leaving permanent visible structure**.
+16. **Creation itself becomes an armed coordinated network** of lightning, cloud, hail, sea, river and wind.
+17. This resembles catastrophe-field clustering, but is judgment poetry rather than weather log.
+18. **Wisdom 6 makes seeking reciprocal:** the seeker moves toward Wisdom while Wisdom anticipates the seeker.
+19. **Wisdom 7 explicitly spans macro and micro knowledge:** world structure/elements/time/stars ↔ animals/thoughts/plants/roots.
+20. **Wisdom 7:22–8:1 is arguably the strongest world-pervading ordering-field description in the wisdom corpus.**
+21. Wisdom:
+    - is more mobile than motion;
+    - pervades;
+    - penetrates;
+    - is one;
+    - renews all;
+    - enters holy souls across generations;
+    - reaches end-to-end;
+    - orders all well.
+22. The text therefore gives a strong **one→many distributed pattern** without source identity being consumed.
+23. Greek philosophical vocabulary is an essential control; this is not modern plasma/quantum physics.
+24. **Wisdom becomes a female cosmic/royal partner**, extending Proverbs Woman Wisdom into a more Hellenistic cosmic form.
+25. The king remains distinct from Wisdom; he seeks her companionship rather than becoming her.
+26. **Wisdom 9 explicitly makes the earthly temple a copy of a prior holy tent**, a major pattern-transfer mechanism.
+27. Cross-level architectural similarity can therefore arise by **copying an archetype**, not literal world collision.
+28. **Wisdom is sent downward from holy heavens/throne to the earthly king**, one of the clearest vertical dispatch sequences in the wisdom books.
+29. **Upper information corrects lower paths**, creating a strong information-bridge model.
+30. **The body is an earthy tent weighing down the soul**, but this must be read in Hellenistic philosophical context rather than converted directly into stacked-world mechanics.
+31. The full Vardath finger-trap mechanism is still absent:
+    no counter-wound material strands;
+    no compressed rod;
+    no explicit populated past/future discs becoming adjacent.
+32. But Wisdom 1–9 contributes three unusually strong components:
+    **temporary route closure, world-pervading ordering presence, and upper-pattern→lower-copy / upper-agent→lower-path transmission.**
+
+---
+
+# SECTION 48A number / timing register
+
+Record without forcing:
+
+- Wisdom 7 lists a large catalogue of Wisdom/spirit qualities; do not turn list-count into cosmology.
+- Wisdom 7 explicitly names:
+  beginning / end / middle of times;
+  solstices;
+  seasons;
+  yearly cycles;
+  constellations.
+- Wisdom 7:27 emphasizes:
+  **every generation** as repeated recipient field.
+- Wisdom 9 refers to:
+  primordial holy tent;
+  present earthly temple copy.
+
+No secure numeric world-layer sequence is supplied in chapters 1–9.
+
+---
+
+# SECTION 48A textual / historical / philosophical controls
+
+- Wisdom of Solomon was composed in Greek and is pseudonymous rather than a work of the historical Solomon.
+- Alexandria is widely proposed as context, but exact place/date should remain somewhat open.
+- Hellenistic philosophical vocabulary materially shapes:
+  soul/body;
+  immortality;
+  motion;
+  emanation;
+  cosmos/elements.
+- The author's use of Greek concepts is not simple surrender to Platonism/Stoicism; the material is heavily reworked inside Jewish scriptural theology.
+- Wisdom 2's dissolution speech belongs to the ungodly speakers, not necessarily the author's final anthropology.
+- Wisdom 2:24's “devil” is later Jewish interpretive language and should not simply be retrojected into Genesis as explicit original wording.
+- Wisdom 3's immortality language is stronger than much earlier Hebrew Bible Sheol language.
+- “Sparks through stubble” is simile/judgment imagery.
+- Wisdom 5's creation-as-warrior sequence is rhetorical/apocalyptic.
+- Wisdom 7's scientific-sounding catalogue is ancient comprehensive knowledge language, not modern natural science.
+- “Emanation,” “penetrates,” “more mobile than motion” and “pervades” require Hellenistic philosophical control.
+- Wisdom 8:19–20 should not be used casually to prove pre-existent souls; modern commentators dispute that reading.
+- Wisdom 9's temple-copy language is pattern/archetype theology; exact heavenly-temple ontology remains debated.
+- Wisdom / holy spirit relations should not be collapsed into later Trinitarian identifications at first-level analysis.
+- The Geʽez translation is an ancient secondary witness from Greek, not an independent original composition.
+- The modern 2026 Ethiopian medico-magical book also titled **Maṣḥafa ṭəbab / Book of Wisdom** is a different Ethiopian work and must not be confused with the canonical Geʽez Wisdom of Solomon.
+
+### Sources logged for Section 48A
+
+Ethiopian identification / manuscripts:
+- Ethiopian Orthodox Tewahedo canonical book list:
+  https://www.ethiopianorthodox.org/english/canonical/books.html
+- British Library, **Add MS 16186**:
+  Geʽez manuscript catalogued with Proverbs, Tagśāṣa, Ecclesiastes, **Ṭǝbaba Salomon / Wisdom of Solomon**, Job.
+- British Library, **Add MS 16189**:
+  Geʽez manuscript catalogued with **Metsihafe Tibeb / the books of wisdom**.
+- Dillmann Geʽez Wisdom of Solomon text, later digitized in the Library of Ethiopic Texts tradition.
+
+Primary:
+- Wisdom 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Wisdom+of+Solomon+1&version=NRSVUE
+- Wisdom 3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Wisdom+of+Solomon+3&version=NRSVUE
+- Wisdom 7:22–8:1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Wisdom+of+Solomon+7%3A22-8%3A1&version=NRSVUE
+- Wisdom 9 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Wisdom+of+Solomon+9&version=NRSVUE
+- USCCB Wisdom 7–9 notes used as translation/history control.
+
+Textual / philosophical:
+- David Winston, **The Wisdom of Solomon**, Anchor Bible, for Greek text, philosophy and ancient-version discussion.
+- Joseph Ziegler's critical Greek Wisdom edition and textual introduction.
+- modern scholarship on Wisdom's Alexandrian/Hellenistic Jewish context and its synthesis of biblical and Greek philosophical vocabulary.
+- Philip Church, work on Middle Jewish temple symbolism, for Wisdom 9's temple as copy of the primordial holy tent.
+
+---
+
+# SECTION 48A COMPLETE — Wisdom of Solomon 1–9
+
+### Current transformation point
+
+**world filled/held by Spirit**
+→ interior state controls Wisdom access
+→ life created as intended state
+→ humans summon/covenant with death
+→ ungodly model body as ash and spirit as dispersed air
+→ death enters as derivative hostile condition
+→ apparent death splits from actual protected state
+→ furnace testing refines
+→ righteous become luminous moving sparks
+→ ordinary lineage loses monopoly on continuity
+→ age/maturity separate
+→ observer-frame reversal becomes public
+→ ship/bird/arrow transit leaves no lasting route
+→ creation arms itself as distributed field
+→ seeker/Wisdom converge
+→ mortal king receives macro/micro ordered knowledge
+→ Wisdom pervades/penetrates all while remaining one
+→ Wisdom passes through generations
+→ king seeks her as spouse/partner
+→ earthly temple copies primordial sacred pattern
+→ Wisdom descends from throne
+→ upper guidance straightens lower paths.
+
+### Next research block
+
+**SECTION 48B — Wisdom of Solomon 10–19**
+
+Priority:
+- Wisdom as travelling protector through Adam/Noah/Abraham/Lot/Jacob/Joseph/Moses traditions;
+- pillar/cloud/fire guidance;
+- Red Sea route;
+- Wisdom entering servant soul / opposing kings;
+- creation's elements changing function;
+- water↔fire inversions;
+- manna / snow / ice / fire paradoxes;
+- plague sequence;
+- animal transformations;
+- darkness that imprisons Egyptians versus light for Israel;
+- sea becoming dry land and waves becoming green field;
+- creation “fashioned anew” / reconfigured;
+- elements interchanging like notes of a harp;
+- test whether Wisdom 19 contains one of the strongest explicit **same matter / changed function / reordered elements** descriptions in the reconstructed Bible.
