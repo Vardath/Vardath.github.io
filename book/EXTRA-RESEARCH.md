@@ -70982,3 +70982,1420 @@ Scholarly controls:
 - Elijah is sent back along route to anoint new centres;
 - Elisha leaves plough and follows.
 
+
+
+---
+
+# SECTION 36 progress A — 1 Kings 12–15
+## The symbolic tear becomes an actual political split; load-bearing failure at succession; one centre becomes two states and two worship networks; false information reverses a commanded route; threshold death, degraded gold→bronze replacement, and a fortified boundary is dismantled and rebuilt into two new defensive nodes
+
+---
+
+# 1 Kings 12 — the pre-enacted garment split becomes political reality
+
+Section 35 ended with:
+
+**one garment**
+→ **twelve pieces**
+→ **ten assigned toward Jeroboam**
+→ **small Davidic/Jerusalem remnant retained**.
+
+Chapter 12 now moves the same geometry from symbol into politics.
+
+The key trigger is not an invading army.
+
+It is a **load question**.
+
+The northern field asks Rehoboam to:
+**lighten the heavy yoke / service inherited from Solomon**.
+
+So the first visible rupture of the kingdom begins as:
+
+**central extraction load**
+→ population asks for reduced pressure
+→ successor chooses whether to decrease or increase the load.
+
+This directly confirms that Section 35's labour/extraction network was not a decorative administrative detail.
+It is part of the mechanism of fracture.
+
+---
+
+# Shechem becomes the succession negotiation interface
+
+Rehoboam goes to **Shechem** because Israel has gathered there to make him king.
+
+This matters structurally.
+
+Jerusalem is the Davidic capital,
+but the northern field does not simply accept succession there.
+
+The new king has to enter a different node and negotiate recognition.
+
+So the system still behaves as though:
+**Judah/Jerusalem**
+and
+**Israel/northern tribes**
+are distinguishable political subfields joined through the person of the king.
+
+Scholarly reconstructions vary over whether this is best described as:
+- division of a formerly unified state;
+- failure to renew a personal union;
+- revival of an older north/south duality.
+
+For the geometry timeline the secure fact is:
+**succession requires renewed coupling at Shechem, and that coupling fails**.
+
+---
+
+# Jeroboam returns from external refuge exactly at the succession boundary
+
+Jeroboam:
+- had fled Solomon;
+- remained in Egypt;
+- hears Solomon is dead;
+- is called back into the northern assembly.
+
+This completes the recurring pattern already tracked:
+
+**future rival identified by old centre**
+→ rival expelled to foreign refuge
+→ old centre dies
+→ succession boundary opens
+→ rival returns
+→ rival becomes alternative centre.
+
+Compare:
+- David under Saul;
+- Hadad after David/Joab;
+- Jeroboam under Solomon.
+
+This is now a stable historical-books process class.
+
+---
+
+# Three-day delay creates a decision chamber before the split
+
+Rehoboam tells the people:
+**depart three days, then return**.
+
+The field temporarily separates.
+
+During the interval:
+- old advisers propose one future;
+- young advisers propose another.
+
+So the three days function as:
+**suspended branch-selection interval**.
+
+The split is not yet material.
+It exists as alternative future states.
+
+---
+
+# Two counsel systems model opposite load geometries
+
+### Older advisers
+Rehoboam should:
+- serve the people;
+- speak good words;
+- reduce pressure.
+
+The predicted result:
+**people become enduring servants/supporters of king**.
+
+This is a counterintuitive load reversal:
+**centre lowers itself / serves field**
+→ field remains coupled to centre.
+
+### Younger advisers
+Rehoboam should:
+- intensify the yoke;
+- declare greater bodily power;
+- replace whips with “scorpions.”
+
+Predicted stance:
+**centre increases pressure**
+→ expects obedience through domination.
+
+These are competing load models:
+
+**reduce load → preserve coupling**
+versus
+**increase load → enforce coupling**.
+
+The second is selected.
+
+---
+
+# The physical split occurs because the centre refuses to listen
+
+When Israel returns on the third day,
+Rehoboam answers harshly.
+
+The narrative repeats:
+**the king did not listen to the people**.
+
+This is a direct information-failure mechanism.
+
+The population has explicitly transmitted:
+**current load exceeds acceptable capacity**.
+
+The centre receives the signal
+but rejects the content.
+
+Result:
+**network disconnects**.
+
+This is one of the clearest examples in the Bible so far of:
+**feedback ignored → system fracture**.
+
+---
+
+# “What share have we in David?” converts grievance into disconnection
+
+Israel responds:
+**what portion have we in David?**
+→ **to your tents**
+→ **look to your own house, David**.
+
+The vocabulary is about:
+- share;
+- inheritance;
+- house;
+- separate tents.
+
+So the split is expressed as:
+**we no longer share one house/centre**.
+
+The earlier whole garment is now functionally torn.
+
+---
+
+# Adoram shows that the old extraction interface cannot simply be reinserted into the broken field
+
+Rehoboam sends **Adoram**, the officer over the levy/corvée.
+
+That is highly significant.
+
+The very office associated with forced labour is sent into the population that has just revolted over the heavy yoke.
+
+Israel stones him.
+
+Rehoboam flees by chariot to Jerusalem.
+
+Process:
+
+**field rejects load**
+→ centre sends load-enforcement interface
+→ interface destroyed
+→ centre withdraws to southern stronghold.
+
+This is almost a textbook failed feedback response.
+
+---
+
+# One king becomes two kings without the land itself moving
+
+Jeroboam is called and made king over Israel.
+
+Rehoboam remains over Judah/associated southern population.
+
+The physical geography remains where it was.
+
+What changes is:
+**which nodes are coupled to which centre**.
+
+This is a major Vardath-relevant principle:
+**world/land structure can remain materially stable while the relational topology of the population reconfigures completely.**
+
+---
+
+# Attempted military re-merger is stopped before contact
+
+Rehoboam assembles a very large Judah/Benjamin force to:
+**fight Israel**
+and
+**bring the kingdom back**.
+
+Then a prophetic message says:
+**do not go up**
+→ **return every man to his house**.
+
+The army obeys.
+
+Thus the first post-split branch is:
+
+**political tear**
+→ proposed violent recompression
+→ information arrives
+→ army disperses before civil-war contact.
+
+This is another case where:
+**future contact is cancelled by information before it occurs**.
+
+---
+
+# Jeroboam builds new political anchors because the old sacred route still points south
+
+Jeroboam fortifies/builds:
+- Shechem;
+- Penuel.
+
+But his deeper problem is not military.
+
+It is **directional loyalty**.
+
+He reasons:
+if people continue to **go up to Jerusalem** for sacrifice,
+their hearts may return to the Davidic king.
+
+This is exactly the functional-adjacency principle identified earlier.
+
+Even though the kingdom is politically split,
+**ritual travel still routes northern people toward the southern centre**.
+
+Jeroboam therefore changes the routing architecture.
+
+---
+
+# One sacred centre is replaced by two northern cult centres
+
+Jeroboam establishes:
+- Bethel;
+- Dan.
+
+He places one calf at each.
+
+So the former structure:
+
+**all Israel**
+→ **one Jerusalem temple**.
+
+becomes:
+
+**northern field**
+→ **two alternative sacred nodes**.
+
+This is a major topology shift:
+**single focal point**
+→ **dual distributed focal system**.
+
+The two sites also bracket the northern kingdom geographically in broad south/north terms.
+
+Do not overstate exact symmetry,
+but the distributed replacement function is explicit.
+
+---
+
+# Jeroboam explicitly changes the travel burden
+
+His statement is:
+**you have gone up to Jerusalem long enough**.
+
+The new system is designed to reduce:
+**southward/upward pilgrimage to rival political centre**.
+
+So the political split is stabilized through:
+**routing control**.
+
+This is not only theology.
+It is also about:
+**where bodies travel and where allegiance is reinforced**.
+
+---
+
+# Calendar is also split from the southern system
+
+Jeroboam creates a feast:
+- in the eighth month;
+- on the fifteenth day;
+- modeled after the Judah festival.
+
+So the division expands from:
+- king;
+- territory;
+- cult centre;
+
+into:
+- **time**.
+
+The northern system now has:
+**its own schedule**.
+
+This is highly important.
+
+The symbolic garment tear becomes:
+**spatial split**
++
+**institutional split**
++
+**temporal/calendar split**.
+
+One system is becoming two parallel systems.
+
+---
+
+# 1 Kings 13 — the altar itself is predicted to split
+
+A man of God comes:
+**from Judah to Bethel**.
+
+He addresses the **altar**.
+
+The sign is:
+**the altar will be torn/rent**
+→ **ashes poured out**.
+
+This is striking immediately after the kingdom tear.
+
+The vocabulary/process family repeats:
+
+**whole kingdom torn**
+then
+**altar torn**.
+
+The new northern cult centre is represented as carrying instability in its own central structure.
+
+---
+
+# Jeroboam's extended hand freezes while the altar splits
+
+Jeroboam stretches out his hand from the altar and orders:
+**seize him**.
+
+The hand:
+- dries/stiffens;
+- cannot be drawn back.
+
+At the same time:
+- altar splits;
+- ashes spill.
+
+So two events occur together:
+
+**kingly hand loses functional return**
++
+**altar loses structural integrity**.
+
+This is another strong hand/boundary pairing.
+
+The king then asks the prophet to intercede.
+
+The hand is restored.
+
+So:
+**operative limb**
+→ disabled
+→ request/information relation changes
+→ restored.
+
+The altar, by contrast, remains the sign of structural judgment.
+
+---
+
+# The man of God is given a strict route protocol
+
+His instructions are unusually explicit:
+
+- eat no bread there;
+- drink no water there;
+- **do not return by the way you came**.
+
+So the mission includes:
+**content constraints**
+and
+**route constraints**.
+
+After delivering the message,
+he chooses a **different way back**.
+
+This is one of the clearest path-dependent commands in the historical books.
+
+---
+
+# The old prophet reconstructs the messenger's route through observers
+
+An old prophet's sons:
+- witness the event;
+- report it;
+- know which way the man of God went.
+
+Their father asks:
+**what way did he go?**
+
+Then:
+- saddles donkey;
+- follows;
+- finds him under a tree/terebinth.
+
+So:
+**observed route**
+→ reported
+→ pursuer reconstructs path
+→ catches messenger.
+
+Again:
+**information reduces distance**.
+
+---
+
+# False higher-authority information reverses the commanded path
+
+The man of God repeats his rule:
+- cannot return;
+- cannot eat/drink there.
+
+The old prophet claims:
+**I also am a prophet**
+and
+**an angel gave me a new word**
+telling him to return and eat.
+
+The narrator explicitly says:
+**he lied**.
+
+This is one of the most important epistemic-control episodes in the project.
+
+The system has:
+
+**clear prior instruction**
+→ later contradictory message claiming equal/higher authority
+→ recipient accepts later message without independent verification
+→ reverses route
+→ enters prohibited state.
+
+The core failure is not lack of information.
+
+It is:
+**unverified override of earlier trusted instruction**.
+
+This is extremely relevant to our research methodology itself.
+
+---
+
+# The wrong route is activated by a convincing source identity
+
+The old prophet's statement works because he claims:
+**I am also a prophet**.
+
+Thus:
+**source credential**
+causes
+**message acceptance**.
+
+But credential alone does not guarantee message truth.
+
+This is a strong warning:
+**authority-label ≠ reliable state information**.
+
+For this project:
+sources, traditions and later retellings must be checked against primary text rather than accepted because they sound authoritative.
+
+---
+
+# The meal marks full entry into the reversed branch
+
+The man of God:
+- goes back;
+- enters the prophet's house;
+- eats;
+- drinks.
+
+Only after he is fully inside the prohibited state does the true oracle arrive.
+
+So:
+
+**false message**
+→ route reversal
+→ house entry
+→ food/water consumption
+→ branch becomes irreversible.
+
+---
+
+# Lion / ass / corpse form a deliberately abnormal tableau
+
+After leaving:
+- a lion kills the man;
+- body lies on road;
+- ass stands beside body;
+- lion stands beside body.
+
+Crucially:
+- lion does not eat body;
+- lion does not attack ass.
+
+Passers-by see the arrangement.
+
+This is not ordinary predator behavior in narrative terms.
+
+The scene is constructed as **sign-like suspension**:
+
+**dead messenger**
++
+**living prey animal**
++
+**living predator**
+all remain together without normal consumption.
+
+This is a highly unusual three-part static configuration.
+
+Do not turn it into literal cosmological animal mechanics.
+
+Its narrative function is demonstrative:
+the death is represented as targeted/judicial rather than random feeding.
+
+---
+
+# The road becomes a display surface again
+
+As with:
+- Asahel;
+- Amasa;
+
+a body lying on the way changes later traffic.
+
+Here passers-by:
+- see;
+- report to city.
+
+So:
+**road event**
+→ observer information
+→ event becomes public.
+
+The route itself becomes part of the message.
+
+---
+
+# The deceiving prophet becomes the burial/recollection node
+
+The old prophet:
+- retrieves the body;
+- places it on the ass;
+- returns it;
+- mourns;
+- buries it in his own grave;
+- orders that his own bones later be placed beside the man's bones.
+
+This produces a strange relational closure:
+
+**deceiver**
+→ causes route reversal indirectly
+→ later recognizes truth of victim's message
+→ gathers victim's body
+→ binds their burial futures together.
+
+The two figures become:
+**separate in action**
+but
+**paired in tomb/remains**.
+
+This is a strong example of later material coupling between previously opposed information roles.
+
+---
+
+# 1 Kings 14 — disguise fails while blindness succeeds
+
+Jeroboam's son becomes sick.
+
+Jeroboam sends his wife to Ahijah:
+- disguised;
+- carrying ordinary-looking food/gift items.
+
+The intended information geometry is:
+
+**known royal identity**
+→ outer appearance altered
+→ observer should classify her as someone else.
+
+But Ahijah is physically blind.
+
+Before she arrives,
+he is given identifying information.
+
+Then he recognizes her by:
+**the sound of her feet at the door**.
+
+This is a striking inversion:
+
+**seeing observer**
+would supposedly be deceived by appearance.
+
+**blind observer**
+recognizes underlying identity through nonvisual information.
+
+The text therefore strongly separates:
+**visible projection**
+from
+**true state**.
+
+---
+
+# Door/threshold is again an information boundary
+
+Ahijah identifies her:
+**as she comes in at the door**.
+
+Later the child's death is tied to:
+**her feet entering the city/house threshold zone**.
+
+So the same chapter uses entry boundaries as:
+- identity-revelation point;
+- terminal-event trigger point.
+
+---
+
+# The returning route carries fixed future information toward the dying child
+
+Ahijah tells her:
+**when your feet enter the city, the child will die**.
+
+She leaves.
+
+As she comes to Tirzah and reaches the threshold,
+the child dies.
+
+This is a very strong:
+**movement toward boundary**
+→ **predicted state change at crossing**.
+
+It resembles Shimei's Kidron boundary,
+but here the event is not a legal punishment activated by the traveler herself.
+
+The threshold is narratively synchronized with a remote child's death.
+
+Do not treat this as physical causal geometry.
+It is prophetic narrative timing.
+
+---
+
+# One child is preserved in burial while the rest of the dynasty is threatened with exposure
+
+The child is described as the one member of Jeroboam's house who will receive proper burial.
+
+The rest are threatened with:
+- dogs in city;
+- birds in field.
+
+This is structurally parallel to Samuel's concern with:
+**burial / exposure / scavenger access**.
+
+Proper burial functions as:
+**remnant dignity/enclosure** amid dynastic destruction.
+
+---
+
+# Rehoboam's Jerusalem loses the gold accumulated under Solomon
+
+Shishak/Shoshenq comes against Jerusalem.
+
+He removes:
+- temple treasures;
+- royal treasures;
+- Solomon's gold shields.
+
+This is one of the clearest **de-centralization / outflow** events after Solomon's accumulation.
+
+Section 35:
+**gold flows inward until silver becomes negligible**.
+
+Section 36:
+**foreign power enters and removes central treasure**.
+
+So the resource polarity reverses:
+
+**global/peripheral → Jerusalem**
+becomes
+**Jerusalem → foreign conqueror**.
+
+---
+
+# Gold shields are replaced by bronze copies
+
+Rehoboam makes:
+**bronze shields in place of gold shields**.
+
+This is a powerful material-degradation sequence:
+
+**gold original**
+→ removed
+→ **bronze substitute**.
+
+The function/display remains:
+guards carry shields when king goes to temple.
+
+But the material quality has changed.
+
+So:
+**form/function continues**
+while
+**substance/value degrades**.
+
+This is a very useful process category:
+**structural continuity can mask material decline**.
+
+---
+
+# Objects move in and out only during royal appearance
+
+The bronze shields:
+- stored in guard chamber;
+- carried out when king goes to temple;
+- returned afterward.
+
+This is a controlled **display cycle**.
+
+Unlike Solomon's permanent gold abundance,
+the replacement objects are:
+**stored → displayed → re-stored**.
+
+It resembles a system maintaining the appearance of former grandeur through managed presentation.
+
+---
+
+# 1 Kings 15 — the southern “lamp” persists through imperfect rulers
+
+Abijam's heart is described as not whole.
+
+Yet for David's sake:
+**a lamp remains in Jerusalem**.
+
+This continues the remnant principle from 1 Kings 11.
+
+The southern system's persistence is represented as:
+**one continuing light/node**
+despite degraded internal conditions.
+
+Again:
+**system continuity ≠ every ruler's full alignment**.
+
+---
+
+# Asa removes one internal high-status node from office
+
+Asa removes Maacah from being queen/mother because of her cult image.
+
+He:
+- cuts down image;
+- burns it at **Kidron**.
+
+So the Kidron boundary appears again,
+now as a disposal/destruction site.
+
+Earlier:
+- David crossed Kidron into wilderness;
+- Shimei was forbidden to cross Kidron;
+- now a cult object is carried/cut/burned at Kidron.
+
+Same geographic node,
+different functions:
+**escape boundary**
+→ **legal confinement boundary**
+→ **purge/disposal boundary**.
+
+This is exactly why location must be mapped by timeline phase.
+
+---
+
+# Baasha turns Ramah into a choke-point
+
+Baasha fortifies **Ramah** with the explicit purpose:
+**not to allow anyone to go out or come in to Asa**.
+
+This is one of the clearest literal boundary-control constructions in Kings.
+
+The fort is not merely defensive.
+
+It is a **movement throttle**.
+
+Process:
+
+**strategic node on route**
+→ fortified
+→ movement between fields constrained
+→ Judah becomes partially enclosed/blocked.
+
+This is a true infrastructure-based adjacency control.
+
+---
+
+# Asa does not attack the choke-point directly
+
+Instead Asa removes:
+- silver/gold from temple treasury;
+- royal treasury;
+
+and sends them to Ben-hadad in Damascus.
+
+He asks:
+**break your covenant with Baasha**.
+
+So Asa changes the geometry by acting on a **third external centre**.
+
+This is strongly parallel to 1 Samuel 23:
+a third force broke Saul's near-encirclement of David.
+
+Here:
+
+**Baasha pressure on Judah**
+→ Judah transfers treasure to Aram
+→ Aram attacks Israel's northern flank
+→ Baasha must disengage from Ramah.
+
+This is a classic **third-force release mechanism**.
+
+---
+
+# Treasure becomes directional force through alliance conversion
+
+The silver/gold does not physically destroy Ramah.
+
+It is converted into:
+**diplomatic incentive**
+→ which becomes
+**military pressure elsewhere**.
+
+So one material flow:
+**Jerusalem treasury → Damascus**
+is transformed into
+**Damascus military force → northern Israel**.
+
+This is a powerful multi-stage conversion:
+**stored value → information/alliance → remote force → local blockade release**.
+
+---
+
+# Baasha abandons Ramah because pressure appears elsewhere
+
+When northern cities are attacked,
+Baasha:
+- stops building Ramah;
+- returns to Tirzah.
+
+Thus:
+
+**local choke-point project**
+is disabled not by direct assault,
+but by
+**reallocation of the builder's attention/resources to another threatened front**.
+
+Same process class as:
+**third-force interruption of local convergence**.
+
+---
+
+# Ramah's materials are not merely destroyed; they are redistributed into two new nodes
+
+Asa mobilizes all Judah.
+
+They remove:
+- Ramah's stones;
+- timber.
+
+Those materials are used to fortify:
+- Geba;
+- Mizpah.
+
+This is an exceptionally clean material transformation:
+
+**one hostile boundary node**
+→ dismantled
+→ construction material split
+→ **two friendly defensive nodes**.
+
+The system does not waste the former barrier.
+
+It **reassigns its material**.
+
+This is highly relevant to the master geometry timeline:
+
+**one structure can be disassembled and its substance redistributed into a new network topology**.
+
+---
+
+# One barrier becomes two anchors
+
+The process can be written:
+
+**Ramah = one choke-point blocking Judah**
+→ external pressure removes builder
+→ Judah dismantles node
+→ material divides
+→ **Geba + Mizpah** strengthened.
+
+So:
+**one hostile concentrated boundary**
+becomes
+**two distributed defensive supports**.
+
+This is a particularly strong transformation.
+
+---
+
+# Northern dynasty now begins its rapid replacement cycle
+
+Nadab succeeds Jeroboam.
+
+While besieging Gibbethon,
+Baasha kills him and takes the throne.
+
+Then Baasha destroys Jeroboam's house.
+
+This is the first major northern dynastic turnover after the split.
+
+The process is:
+
+**new northern house**
+→ only one generation beyond founder
+→ military operation creates exposure
+→ internal rival kills king
+→ rival takes centre
+→ predecessor house erased.
+
+So unlike David's continuing “lamp,”
+the northern centre begins to show:
+**short-lived dynastic replacement**.
+
+That contrast becomes one of the major structures of the rest of Kings.
+
+---
+
+# SECTION 36A continuous geometry/effect timeline — 1 Kings 12–15
+
+## Phase JA — symbolic split becomes load crisis
+
+Solomon's extractive system
+→ heavy-yoke complaint at succession.
+
+**Effect:** internal stress accumulated under prior centre becomes visible at boundary between rulers.
+
+---
+
+## Phase JB — succession requires recoupling at Shechem
+
+northern field
+→ gathers at Shechem
+→ conditions recognition of Rehoboam.
+
+**Effect:** political unity must be renewed, not assumed.
+
+---
+
+## Phase JC — rival returns from external refuge when old centre dies
+
+Jeroboam in Egypt
+→ Solomon dies
+→ Jeroboam called back.
+
+**Effect:** expelled future centre re-enters exactly when succession opens.
+
+---
+
+## Phase JD — three-day separation holds multiple futures open
+
+people depart
+→ two counsel systems operate
+→ return on third day.
+
+**Effect:** split exists first as branch-choice rather than physical fact.
+
+---
+
+## Phase JE — low-load and high-load models compete
+
+serve/lighten
+versus
+intensify yoke.
+
+**Effect:** centre chooses whether coupling is preserved through responsiveness or domination.
+
+---
+
+## Phase JF — feedback ignored causes network fracture
+
+people signal overload
+→ king refuses to listen
+→ northern field disconnects.
+
+**Effect:** system fails at information-response layer before military layer.
+
+---
+
+## Phase JG — extraction interface is destroyed when reinserted into revolting field
+
+Adoram/levy officer sent
+→ stoned
+→ Rehoboam flees.
+
+**Effect:** mechanism associated with the grievance cannot restore broken coupling.
+
+---
+
+## Phase JH — one relational topology becomes two political centres
+
+Jeroboam → Israel.
+Rehoboam → Judah.
+
+**Effect:** land remains while allegiance network rewires.
+
+---
+
+## Phase JI — attempted violent recompression is cancelled before contact
+
+southern army assembles
+→ prophetic information
+→ every man returns home.
+
+**Effect:** political split remains without immediate forced re-merger.
+
+---
+
+## Phase JJ — old sacred route threatens new political topology
+
+north politically separate
+but
+pilgrimage still routes toward Jerusalem.
+
+**Effect:** functional adjacency survives political division.
+
+---
+
+## Phase JK — one sacred focal node is replaced by two northern nodes
+
+Jerusalem monopoly
+→ Bethel + Dan.
+
+**Effect:** political fragmentation produces religious-routing fragmentation.
+
+---
+
+## Phase JL — temporal calendar also splits
+
+Judah festival pattern
+→ northern eighth-month version.
+
+**Effect:** one system becomes two not only in space but in time.
+
+---
+
+## Phase JM — northern altar physically tears
+
+altar at Bethel
+→ rent
+→ ashes spill.
+
+**Effect:** newly established sacred centre is represented as structurally unstable.
+
+---
+
+## Phase JN — attacking hand loses function while altar loses integrity
+
+Jeroboam hand extends
+→ stiffens/cannot retract
+while
+altar splits.
+
+**Effect:** operative power and cultic structure fail together in sign-event.
+
+---
+
+## Phase JO — route protocol explicitly forbids returning by same path
+
+Judah messenger
+→ Bethel
+→ must leave another way.
+
+**Effect:** mission has directional irreversibility built into it.
+
+---
+
+## Phase JP — observer network reconstructs alternate route
+
+sons observe way
+→ old prophet follows
+→ catches messenger.
+
+**Effect:** route secrecy fails when path information propagates.
+
+---
+
+## Phase JQ — false authority-message overrides true prior instruction
+
+old prophet claims angelic update
+→ messenger trusts credential
+→ reverses route.
+
+**Effect:** unverified later message can force system into prohibited branch.
+
+---
+
+## Phase JR — route reversal becomes irreversible at house/meal entry
+
+returns
+→ eats/drinks
+→ judgment branch activated.
+
+**Effect:** physical recoupling completes the information error.
+
+---
+
+## Phase JS — predator/prey tableau freezes into sign-state
+
+lion
++ corpse
++ ass
+remain together
+without ordinary consumption.
+
+**Effect:** moving ecological relations are suspended into a demonstrative static configuration.
+
+---
+
+## Phase JT — deceiver and deceived become paired in burial
+
+old prophet retrieves body
+→ buries in own tomb
+→ requests bones beside him later.
+
+**Effect:** opposed information roles become materially coupled at final enclosure.
+
+---
+
+## Phase JU — visual disguise fails before nonvisual identification
+
+Jeroboam's wife disguises
+→ blind Ahijah recognizes identity by prior information/sound.
+
+**Effect:** appearance and underlying state diverge; lack of sight does not equal lack of recognition.
+
+---
+
+## Phase JV — threshold synchronizes predicted remote state change
+
+wife returns
+→ enters Tirzah/threshold
+→ child dies.
+
+**Effect:** crossing point marks closure of predicted branch.
+
+---
+
+## Phase JW — predecessor wealth leaves the centre
+
+Shishak
+→ removes temple/palace treasures and gold shields.
+
+**Effect:** Solomon's massive inward accumulation reverses into outward extraction.
+
+---
+
+## Phase JX — form persists while material quality degrades
+
+gold shields removed
+→ bronze shields replace them.
+
+**Effect:** visible institutional form can survive while substance/value declines.
+
+---
+
+## Phase JY — Kidron changes function again
+
+earlier:
+escape boundary / legal confinement boundary.
+
+now:
+cult object cut/burned there.
+
+**Effect:** one location takes different process roles across phases.
+
+---
+
+## Phase JZ — one fortified node throttles movement
+
+Baasha builds Ramah
+→ prevents going out/coming in to Asa.
+
+**Effect:** infrastructure directly controls adjacency between political fields.
+
+---
+
+## Phase KA — third centre is activated instead of attacking barrier directly
+
+Judah treasure
+→ Damascus
+→ alliance break
+→ Aram attacks Israel north.
+
+**Effect:** stored material is converted into remote pressure.
+
+---
+
+## Phase KB — third-force pressure releases local choke-point
+
+Baasha hears northern attacks
+→ stops Ramah work
+→ withdraws.
+
+**Effect:** larger network pressure overrides local boundary project.
+
+---
+
+## Phase KC — one hostile barrier is dismantled into two friendly supports
+
+Ramah stones/timber
+→ removed
+→ Geba + Mizpah.
+
+**Effect:** material from one concentrated obstruction is redistributed into two defensive nodes.
+
+---
+
+## Phase KD — northern dynastic centre begins replacement cycling
+
+Jeroboam house
+→ Nadab
+→ Baasha coup
+→ predecessor house erased.
+
+**Effect:** northern continuity shifts from one stable house to repeated centre replacement.
+
+---
+
+# What 1 Kings 12–15 adds to the master Bible/Vardath timeline
+
+165. **A symbolic fracture can become material at a succession boundary when accumulated system load exceeds what a population will continue carrying.**
+166. **Unity may require repeated consent/recoupling; inheritance of the throne alone does not preserve all network links.**
+167. **Ignored feedback can fracture a system before any external enemy acts.**
+168. **The interface associated with the original overload can be destroyed if the centre tries to use it unchanged after the field has rejected it.**
+169. **One geographic land can become two political systems entirely through a change in relational coupling.**
+170. **A political split can be stabilized by rerouting sacred travel away from the former centre.**
+171. **Fragmentation can propagate into time itself through creation of a separate festival calendar.**
+172. **Newly created centres can themselves be marked as unstable by structural rupture imagery.**
+173. **A mission can include an explicit non-return route rule: same destination origin, different return path.**
+174. **A false high-authority message can override correct prior information and cause destructive route reversal.**
+175. **Source identity/credential alone is not sufficient evidence that a new message is reliable.**
+176. **A predator-prey system can be narratively frozen into a sign-state when ordinary ecological behavior is suspended.**
+177. **Deceiver and deceived can later become materially paired in one burial enclosure, showing relational roles can change after the decisive event.**
+178. **Visible disguise can fail while nonvisual information succeeds, strongly separating projection from underlying identity.**
+179. **The great Solomon-era inward resource flow reverses after the split: central gold leaves Jerusalem.**
+180. **Institutional form can continue under inferior material replacement—gold → bronze—creating continuity of appearance with decline of substance.**
+181. **One strategic fortified node can function as a movement choke-point rather than merely as a defensive wall.**
+182. **A local blockage can be removed by activating a third force elsewhere rather than attacking the blockage directly.**
+183. **Stored treasure can be transformed into alliance, alliance into remote force, and remote force into local boundary release.**
+184. **A hostile structure can be dismantled and its same material redistributed into two new supporting structures.**
+185. **The divided monarchy begins to contrast a relatively persistent southern “lamp” with rapid northern dynastic replacement cycles.**
+
+---
+
+## Section 36A pair / force register
+
+### Rehoboam / Jeroboam
+Two actual centres generated from Section 35's symbolic division.
+
+### Old advisers / young advisers
+Two competing future load models:
+**lighten to preserve coupling**
+versus
+**increase pressure to compel coupling**.
+
+### Judah / Israel
+The fundamental divided-monarchy pair.
+
+### Jerusalem / Bethel+Dan
+One former sacred centre versus two northern replacement nodes.
+
+### True instruction / false update
+The central information pair of chapter 13.
+
+### Blind prophet / disguised visitor
+Surface perception is inverted:
+the one without sight recognizes what the visible disguise is designed to hide.
+
+### Gold / bronze
+Same shield form, different material/value state.
+
+### Ramah / Geba+Mizpah
+One hostile choke-point becomes two friendly defensive nodes through material redistribution.
+
+---
+
+## Section 36A number / timing register
+
+Record without forcing:
+- Rehoboam asks for **three days**;
+- assembly force against Israel: **180,000** in MT;
+- Jeroboam creates **two** calf centres;
+- northern feast moves to **eighth month, fifteenth day**;
+- Jeroboam's wife carries **ten loaves** plus food items;
+- Jeroboam reign **22 years**;
+- Rehoboam reign **17 years**;
+- Shishak comes in Rehoboam's **fifth year**;
+- Abijam reign **3 years**;
+- Asa reign **41 years**;
+- Nadab reign **2 years**;
+- Baasha reign **24 years**.
+
+Chronologies in Kings contain well-known accession-year/co-regency/textual complications. Keep reign totals as narrative data unless cross-checked in the later full chronology phase.
+
+---
+
+## Section 36A textual / historical / scholarly controls
+
+- 1 Kings 12 may reflect a literary model of “division,” while some historians reconstruct David/Solomon's realm as a personal union whose northern component simply declined to renew allegiance to Rehoboam. Preserve both frames.
+- Solomon's labour/tax burden is explicitly relevant to the story, but exact historical administrative arrangements remain debated.
+- The old/young counsel scene is literary rhetoric as well as political memory. “Scorpions” may refer metaphorically to harsher punishment or possibly a type of scourge; do not over-literalize it.
+- Jeroboam's Bethel/Dan cult is judged polemically by the Deuteronomistic historian. Archaeology confirms an important cultic site at Dan, but the precise original theology/function of the calves remains debated.
+- The golden calves may have been understood as deities, symbols/pedestals of YHWH, or differently across periods. The narrative's condemnation is secure; original cultic semantics are less so.
+- Jeroboam's calendar innovation is explicit in the text; reconstructing its exact relation to northern agricultural timing remains interpretive.
+- 1 Kings 13 is a highly stylized prophetic tale. The lion/ass/corpse tableau should be read as narrative sign logic, not zoological evidence.
+- The old prophet explicitly lies. Later true inspiration through him does not retroactively make the lie true; the chapter deliberately complicates prophetic authority.
+- The “do not return the same way” command is primary text and a high-confidence routing datum.
+- Jeroboam's wife's disguise scene is structured around dramatic irony: the physically blind prophet knows her identity before she arrives.
+- Shishak is commonly identified with Pharaoh Shoshenq I, whose Levantine campaign is independently attested at Karnak, but the biblical and Egyptian itineraries/details do not line up in a simple one-to-one way.
+- Gold-shield → bronze-shield replacement is secure narrative data and a strong material-degradation motif.
+- The exact identification and archaeological sequence of Ramah/Geba/Mizpah must remain cautious; broad strategic control of the north-south ridge system is plausible, but site-level historical claims vary.
+- Asa's use of temple/royal silver and gold to induce Ben-hadad to attack Baasha is explicit; later Chronicles evaluates the policy more negatively than Kings does.
+- The northern dynastic transitions become increasingly compressed in the narrative; names remain important as source labels, but the project should prioritize the repeated process:
+**coup → house elimination → new short-lived centre**.
+
+### Sources logged for Section 36A
+
+Primary:
+- Mechon-Mamre, **1 Kings 12–15**.
+
+Scholarly controls:
+- Chilkuri Vasantharao, **“The Division of the Kingdom: Its Causes and Consequences.”**
+- Amos Frisch, **“Structure and Its Significance: The Narrative of Solomon's Reign (1 Kings 1–12.24)”**, especially the extension of the Solomon arc into the schism.
+- Moshe Weinfeld, work on the elders' counsel to Rehoboam and its political implications.
+- scholarship on Jeroboam's Bethel/Dan cult and Levitical participation, including Baruch Halpern.
+- literary studies of 1 Kings 13 and prophetic authority/deception.
+- historical/archaeological scholarship identifying Shishak with Shoshenq I while preserving source differences.
+- scholarship on the Asa–Baasha border conflict and the strategic role of Ramah/Geba/Mizpah, with archaeological claims treated cautiously.
+
+**Section 36 remains in progress.**
+
+### Next process block
+
+**1 Kings 16–19**:
+- accelerated northern dynasty turnover: Baasha → Elah → Zimri → divided army → Omri;
+- seven-day Zimri kingship and palace self-burning;
+- northern field temporarily divides between Omri and Tibni;
+- Omri purchases Samaria hill and creates a new capital;
+- Ahab/Jezebel and intensified Baal network;
+- Elijah announces shut heaven/no dew/rain;
+- ravens/stream widow food as distributed survival chain;
+- jar/flour/oil non-exhaustion;
+- child death and upward-room revival;
+- Carmel contest: two cult fields, two altars, one non-answering field versus fire-from-above response;
+- broken altar repaired with **twelve stones** before water saturation;
+- water poured three times;
+- fire consumes sacrifice, wood, stones, dust and water;
+- rain returns after repeated servant observations, **seven** checks;
+- cloud “like a man's hand” expands into storm;
+- Elijah runs before Ahab;
+- wilderness collapse;
+- forty-day Horeb movement;
+- wind / earthquake / fire all pass but revelation comes in the low/quiet voice;
+- Elijah's mantle thrown over Elisha as a new transfer of prophetic function.
+
