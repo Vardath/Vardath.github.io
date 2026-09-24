@@ -88146,3 +88146,1803 @@ Carry forward especially:
 - names retained as source labels, while geometry/process/effect remains primary;
 - append every substantive block immediately.
 
+
+
+---
+
+# SECTION 38A progress A — 2 Kings 14–16 + 2 Chronicles 25–28
+## Chronicles as mechanism-expander: detached auxiliary forces, walls breached and rebuilt, peak-strength boundary violation, northern centre-instability, imperial pressure, captive-flow reversal, and Ahaz physically rewiring Solomon's temple geometry
+
+## Parallel-reading rule
+
+From this point the Kings and Chronicles parallels are not to be collapsed into one harmonized story.
+
+For each overlapping reign:
+- **Kings** is recorded in its own sequence;
+- **Chronicles** is then checked for added, omitted, re-ordered or reinterpreted geometry;
+- where the accounts disagree, the disagreement remains visible;
+- a Chronicler-only mechanism is not silently inserted into Kings as if Kings itself narrated it.
+
+This is essential because Chronicles repeatedly **expands the mechanism** behind a compressed Kings state-change.
+
+---
+
+# 2 Kings 14 / 2 Chronicles 25 — Amaziah: one military body is assembled, deliberately split, and the rejected branch turns back against its former host
+
+Kings begins with a succession-stabilization act:
+Amaziah waits until the kingdom is established in his hand,
+then kills the servants who killed his father,
+but does **not** kill their children.
+
+So the new centre attempts to stop retaliatory violence at one generational boundary:
+
+**old king killed**
+→ killers punished
+→ killers' children deliberately excluded from the punishment.
+
+This is a useful distinction:
+**responsibility is kept attached to the acting node rather than propagated automatically through descendants**.
+
+---
+
+# Chronicles adds a heart-state control before the military expansion
+
+Chronicles says Amaziah does what is right,
+but:
+**not with a whole heart**.
+
+This is important because Section 35 already showed Solomon's decline through:
+**heart no longer whole**.
+
+Chronicles therefore gives Amaziah the same broad internal-coherence variable before the later military pride and cultic reversal.
+
+The outer kingdom can be organized while the centre is already internally incomplete.
+
+---
+
+# Judah is converted into a counted, hierarchical war-field
+
+Chronicles expands the Edom campaign by describing Amaziah:
+- gathering Judah and Benjamin;
+- ordering them by fathers' houses;
+- placing captains over thousands/hundreds;
+- numbering the adult fighting field;
+- identifying spear/shield-capable troops.
+
+Process:
+
+**distributed population**
+→ counted
+→ sorted by kinship/command units
+→ organized into one military field.
+
+Again:
+**living field → abstract count + command hierarchy**.
+
+The exact 300,000 total should not be used as cosmological data.
+
+---
+
+# Amaziah then adds a second military field from Israel
+
+He hires a large northern force for silver.
+
+So the campaign body becomes:
+
+**Judah native field**
++
+**hired Israelite auxiliary field**.
+
+This is a temporary two-force cooperation,
+not a merged political kingdom.
+
+---
+
+# Prophetic information orders the auxiliary field removed before battle
+
+A man of God says:
+**do not let Israel's army go with you**.
+
+Amaziah's first concern is the money already paid.
+
+The answer is effectively:
+**accept the lost input; do not preserve the wrong coupling merely because resources have already been spent**.
+
+That is a strong decision-process rule:
+
+**sunk cost**
+must not determine
+**future coupling**.
+
+Amaziah obeys and separates the hired field.
+
+---
+
+# Separation solves one danger but creates another
+
+The dismissed northern troops return home:
+**in fierce anger**.
+
+On the return route they attack Judahite cities,
+kill inhabitants,
+and take spoil.
+
+So:
+
+**combined field**
+→ prophetic decoupling
+→ one branch dismissed
+→ rejected branch becomes hostile
+→ branch attacks the network it had just been hired to support.
+
+This is a major boundary effect:
+**decoupling can create secondary violence if the separated component retains grievance and capacity**.
+
+The “correct” separation in one dimension does not prevent damaging feedback elsewhere.
+
+---
+
+# Edom victory is followed by extreme vertical violence in Chronicles
+
+Kings says Amaziah:
+- defeats Edom in Valley of Salt;
+- takes Sela/the Rock by war.
+
+Chronicles adds:
+- 10,000 killed in battle;
+- another group captured alive;
+- taken to top of the Rock;
+- cast downward;
+- bodies broken below.
+
+This is human atrocity and must remain explicit.
+
+The geometry is nevertheless stark:
+
+**captured living group**
+→ moved upward to high rock
+→ deliberately expelled downward
+→ terminal fragmentation below.
+
+Do not aestheticize it as “cosmic descent.”
+
+---
+
+# Captured cult objects return with the victor and then reverse the victor's orientation
+
+Chronicles alone says Amaziah brings back the gods of Seir/Edom,
+sets them up,
+bows/sacrifices to them.
+
+So the military victory produces an unexpected cargo reversal:
+
+**enemy field defeated**
+→ enemy cult objects captured
+→ objects move inward with victor
+→ victor reorients himself toward captured objects.
+
+The defeated field therefore exerts influence **after** material capture.
+
+This is another strong rule:
+**capturing an object's shell does not mean the captor controls the relation it will create**.
+
+---
+
+# Warning information is rejected after the centre becomes confident
+
+A prophet asks why Amaziah seeks gods that could not save their own people.
+
+Amaziah threatens the prophet into silence.
+
+The prophet then announces destruction because the king has refused counsel.
+
+The sequence is:
+**victory**
+→ imported defeated-system symbols
+→ reorientation
+→ corrective information
+→ information suppression.
+
+The centre becomes less responsive precisely after successful expansion.
+
+---
+
+# Amaziah asks for face-to-face convergence with the northern king
+
+He sends:
+**come, let us look one another in the face**.
+
+The phrase creates a deliberate two-centre convergence.
+
+Jehoash answers with the thistle/cedar parable:
+- small thistle makes inflated relational claim to great cedar;
+- passing beast crushes thistle.
+
+The model says:
+**do not mistake one victory for equal scale with a larger centre**.
+
+Amaziah refuses the warning.
+
+---
+
+# The two royal centres physically converge at Beth-shemesh
+
+Kings and Chronicles agree:
+**Amaziah/Judah**
+↔
+**Jehoash/Israel**
+meet face-to-face at Beth-shemesh.
+
+Judah loses,
+and:
+**each person flees to his tent**.
+
+So:
+**organized war-field**
+→ defeat
+→ rapid return to distributed household/tent state.
+
+This is another recurring post-collapse signature.
+
+---
+
+# The defeated king becomes captive cargo into his own capital
+
+Jehoash captures Amaziah at Beth-shemesh
+and brings him to Jerusalem.
+
+Thus the reigning centre of Judah enters Jerusalem not as controlling king but as **captive attached to the invading centre**.
+
+That is a sharp inversion of centre status.
+
+---
+
+# Jerusalem's wall is deliberately opened by the victorious rival
+
+Jehoash breaks down:
+**400 cubits of wall**
+between Ephraim Gate and Corner Gate.
+
+Exact ancient wall reconstruction is debated,
+but the process is secure:
+
+**fortified capital boundary**
+→ victor creates long artificial breach
+→ internal sacred/royal treasures become accessible
+→ treasure + hostages move outward to Samaria.
+
+This is a true:
+**boundary rupture → cargo extraction**
+sequence.
+
+---
+
+# A previously stable centre becomes structurally open
+
+The city still exists.
+The throne line continues.
+
+But its protective shell is materially compromised.
+
+This distinction becomes important under Uzziah,
+because Chronicles later describes extensive fortification/tower building that can be read as restoring and extending Judah's defensive envelope.
+
+---
+
+# Amaziah survives the military defeat but later loses internal political support
+
+He lives after Jehoash's death,
+but eventually:
+- conspiracy forms at Jerusalem;
+- he flees to Lachish;
+- pursuers follow;
+- kill him there;
+- body is returned on horses for burial.
+
+So:
+**external defeat does not immediately remove centre**.
+
+Later:
+**internal network rejection**
+forces centre outward,
+then remote pursuit removes it.
+
+Again:
+external and internal stability are separate.
+
+---
+
+# Jeroboam II — a previously compressed Israelite field expands its borders again
+
+Kings then reports Jeroboam II restoring Israel's border:
+**from entrance of Hamath to sea of Arabah**.
+
+The reason given:
+Israel's affliction had become very bitter,
+with neither confined/free helper sufficient.
+
+The narrative says Israel is not erased,
+but saved through Jeroboam.
+
+This follows directly after 2 Kings 13's partial three-city restoration.
+
+So the north's macro-sequence is:
+
+**Aramean compression**
+→ small remnant
+→ three limited recoveries
+→ next reign
+→ much broader territorial re-expansion.
+
+This is an important delayed-recovery pattern:
+**partial repair can precede later field expansion**.
+
+---
+
+# Jonah appears here as an earlier information node tied to border restoration
+
+The restored border is linked to a prior prophetic word through Jonah son of Amittai.
+
+This should be cross-referenced when Jonah's own roadmap section is reached.
+
+Do not import the later Nineveh narrative backward into this verse without control.
+
+Secure:
+**future territorial state is represented as previously announced by an information node**.
+
+---
+
+# 2 Kings 15 / 2 Chronicles 26 — Kings gives the endpoint; Chronicles supplies a whole expansion→overreach→expulsion mechanism
+
+Kings' Uzziah/Azariah account is compressed:
+
+- long reign;
+- skin disease/ṣaraʿat;
+- separate house;
+- son Jotham manages palace and judges people.
+
+Chronicles dramatically expands the process leading to that state.
+
+This is exactly why the parallel must be read separately.
+
+---
+
+# Uzziah first rebuilds the outer field and expands it
+
+Chronicles gives a dense success-network:
+
+- rebuilds/restores Elath;
+- breaks Philistine walls;
+- builds cities in Philistine territory;
+- receives tribute;
+- builds Jerusalem towers at gates/corner/turning points;
+- fortifies them;
+- builds wilderness towers;
+- digs many cisterns;
+- supports cattle/agriculture/vineyards;
+- organizes army by numbered bands;
+- equips troops;
+- installs engineered devices on towers/corners to shoot arrows and large stones.
+
+The process is:
+
+**damaged/limited kingdom**
+→ walls/towers repaired and multiplied
+→ water storage expanded
+→ agriculture intensified
+→ army counted and organized
+→ defensive/projectile technology added
+→ name/strength spreads outward.
+
+This is a classic **network densification** phase.
+
+---
+
+# Towers + cisterns create paired vertical storage/control infrastructure
+
+Chronicles places side by side:
+- towers rising above terrain;
+- cisterns cut downward into ground.
+
+At the process level this is:
+**upper observation/defense nodes**
++
+**lower water-storage nodes**.
+
+Do not turn them into cosmic above/below structures,
+but the paired vertical infrastructure is real.
+
+A stable territorial system needs both:
+**visibility/projection above**
+and
+**resource retention below**.
+
+---
+
+# Uzziah's machines convert the fortified boundary into an active projectile interface
+
+The text says devices/engines are placed:
+**on towers and corners**
+to shoot:
+- arrows;
+- great stones.
+
+Historical reconstruction of these “engines” is debated.
+Some scholars regard the Chronicler's description as later technological imagination or rhetorical elaboration rather than direct tenth/eighth-century documentation.
+
+Secure:
+**Chronicles imagines the wall/tower boundary not merely as passive shell but as active outward-projecting interface**.
+
+---
+
+# Strength becomes the trigger for internal overreach
+
+Chronicles' turning point is explicit:
+
+**when he became strong**
+→ **his heart was lifted up**
+→ he acts corruptly.
+
+This is a major recurring timeline pattern:
+
+Solomon:
+**peak integration/wealth**
+→ heart loses wholeness.
+
+Uzziah:
+**peak fortification/strength**
+→ heart rises
+→ role boundary crossed.
+
+The system destabilizes at maximum apparent success.
+
+---
+
+# The king crosses from royal function into priestly inner function
+
+Uzziah enters the temple to burn incense at the incense altar.
+
+The issue is not merely geographic entry.
+It is **role-boundary crossing**.
+
+He attempts to move from:
+
+**king**
+to
+**priestly incense operator**.
+
+This is a high-confidence functional boundary:
+the priests explicitly say:
+**this does not belong to you**.
+
+---
+
+# Eighty priests form a resisting field inside the sanctuary
+
+Azariah the priest enters after Uzziah with:
+**80 priests**, described as valiant.
+
+They stand against him.
+
+So the temple interior becomes:
+
+**king + censer**
+versus
+**priestly resistance field**.
+
+This is not battle with swords.
+It is a clash over **who may operate the inner interface**.
+
+---
+
+# Skin-state appears at the forehead beside the incense altar
+
+While Uzziah is angry and holding the censer,
+the skin disease breaks out visibly:
+**on his forehead**
+before priests
+beside incense altar.
+
+Again, biblical ṣaraʿat should not be equated automatically with modern Hansen's disease.
+
+The narrative geometry is:
+
+**unauthorized role-crossing**
+→ confrontation at inner altar
+→ visible body-state change on head/forehead.
+
+The body itself becomes an information surface showing altered status.
+
+---
+
+# The priests expel him—and he also hastens out
+
+Once the mark is seen:
+- priests thrust him out quickly;
+- he himself hurries to leave.
+
+So the relation flips:
+
+**king enters inner sacred space asserting access**
+→ body-state changes
+→ king becomes a person who must exit and remain excluded.
+
+This is a complete **access polarity reversal**.
+
+---
+
+# The king remains alive but separated from both temple and ordinary rule
+
+Afterward:
+- Uzziah lives in a separate house;
+- he is cut off from temple;
+- Jotham governs royal household and people.
+
+So one body remains king in dynastic identity,
+but its functions split:
+
+**Uzziah**
+→ isolated living royal remnant.
+
+**Jotham**
+→ active administrative/judicial operator.
+
+This is another case of:
+**office identity and operational function separating between two bodies**.
+
+---
+
+# 2 Kings says the disease explains co-regency; Chronicles turns it into boundary-theology
+
+Academic comparison is especially useful here.
+
+Kings:
+**disease → separate house → Jotham manages**.
+
+Chronicles:
+**strength → pride → inner cultic role-crossing → priestly resistance → disease → expulsion → separation**.
+
+P. C. Beentjes and later studies emphasize that the Chronicler develops the terse Kings motif into a temple-boundary and sacrilege narrative.
+
+Therefore:
+**the expanded causal geometry belongs to Chronicles, not automatically to the earlier Kings source**.
+
+---
+
+# Jotham is explicitly contrasted with his father at the temple boundary
+
+Chronicles says Jotham:
+**does not enter the temple in the way his father did**.
+
+Instead, he:
+- builds the upper gate;
+- builds on Ophel wall;
+- constructs cities, castles, towers;
+- orders his ways.
+
+This is a very clean father/son contrast:
+
+### Uzziah
+strengthens outer boundaries
+→ then crosses forbidden inner boundary.
+
+### Jotham
+strengthens outer boundaries
+→ **does not cross the inner boundary**.
+
+This is one of the strongest architecture/role contrasts in Chronicles.
+
+---
+
+# 2 Kings 15 — the northern kingdom becomes a rapid sequence of unstable centres
+
+While Judah experiences long Uzziah/Jotham continuity,
+Israel enters repeated coups:
+
+**Zechariah**
+→ killed by Shallum.
+
+**Shallum**
+→ killed after about one month by Menahem.
+
+**Menahem**
+→ succeeded by Pekahiah.
+
+**Pekahiah**
+→ killed in palace fortress by Pekah + Gileadites.
+
+**Pekah**
+→ killed by Hoshea after Assyrian territorial losses.
+
+This is a radical **centre-instability cascade**.
+
+The outer state is still “Israel,”
+but the ruling node is repeatedly replaced.
+
+So:
+**system identity persists while central occupant changes rapidly**.
+
+---
+
+# The Jehu four-generation continuity reaches its exact terminal node
+
+Zechariah is identified as the fourth-generation fulfillment of the promise to Jehu.
+
+Then he is killed.
+
+This closes the Jehu line exactly where the earlier narrative said it would end.
+
+Again:
+**temporal house continuity**
+has a finite stated boundary.
+
+---
+
+# A city that refuses to open is violently destroyed under Menahem
+
+Menahem attacks Tiphsah/associated territory because it **did not open to him**.
+
+The account includes horrific violence against pregnant women.
+
+Human atrocity must remain explicit.
+
+Processually:
+**closed city boundary**
+→ centre interprets refusal as opposition
+→ shell attacked
+→ population subjected to extreme violence.
+
+This is the dark inverse of Abel-beth-maacah,
+where communication across wall prevented whole-city destruction.
+
+Here:
+**boundary remains closed / no successful negotiation interface**
+→ violence escalates.
+
+The exact identification/text of Tiphsah is debated and should not carry geographic cosmology.
+
+---
+
+# Assyria turns centre survival into an external-patronage relation
+
+“Pul”/Tiglath-pileser comes against land.
+
+Menahem gives:
+**1,000 talents silver**
+so that the Assyrian king's **hand would be with him**
+to confirm the kingdom in his hand.
+
+This wording is structurally striking:
+
+**weaker local centre's hand**
+is stabilized by
+**larger imperial hand**.
+
+But the support is purchased.
+
+---
+
+# The centre extracts the price of external support from its own wealthy field
+
+Menahem raises:
+**50 shekels from each wealthy man**.
+
+So the flow is:
+
+**Assyrian pressure**
+→ local centre seeks external backing
+→ money extracted from internal field
+→ transferred outward to empire
+→ empire withdraws
+→ local centre remains established.
+
+This is another:
+**field pays to preserve centre** geometry.
+
+It closely parallels Ahaz one chapter later,
+but at different political scale.
+
+---
+
+# External evidence strongly supports the Assyrian-tribute setting
+
+Tiglath-pileser III's inscriptions mention:
+**Menahem of Samaria** among tribute payers.
+
+This is important external anchoring.
+
+It confirms the broad imperial relation,
+not every biblical number or motive.
+
+---
+
+# Pekah's coup penetrates the royal fortress from inside the system
+
+Pekah is an officer/captain under Pekahiah.
+
+He conspires and kills the king:
+**inside Samaria, in the citadel/royal house**
+with a Gileadite support group.
+
+So another centre falls not to outer siege but to:
+**internal military node penetrating/turning within the royal enclosure**.
+
+The north's central shell is repeatedly breached from inside.
+
+---
+
+# Tiglath-pileser then begins removing whole territorial nodes from the northern field
+
+Kings lists:
+- Ijon;
+- Abel-beth-maacah;
+- Janoah;
+- Kedesh;
+- Hazor;
+- Gilead;
+- Galilee/Naphtali
+
+taken by Assyria,
+with inhabitants carried away.
+
+This is no longer merely tribute.
+
+It is:
+**territorial node removal + population transfer**.
+
+The northern field is being physically **cut into provinces/captive streams**.
+
+---
+
+# Assyrian sources independently show the same broad transition from vassalage toward annexation
+
+Tiglath-pileser's inscriptions record campaigns, tribute and political replacement in the western states.
+
+The Iran/summary inscriptions also connect the replacement of Pekah with Hoshea to Assyrian intervention, though exact causation between Assyrian action and the biblical conspiracy account remains debated.
+
+Therefore:
+**biblical coup sequence**
+and
+**Assyrian imperial restructuring**
+should be read as overlapping political fields,
+not as one source simply proving every detail of the other.
+
+---
+
+# 2 Kings 16 / 2 Chronicles 28 — Judah is attacked from north while its own centre reaches outward to a much larger imperial centre
+
+Aram + Israel come up against Jerusalem.
+
+Kings says:
+**they besiege Ahaz but cannot conquer him**.
+
+So the capital shell remains intact.
+
+But surrounding field losses accumulate.
+
+This is important:
+**failure to breach central city**
+does not mean
+**the larger territorial system is healthy**.
+
+---
+
+# Ahaz explicitly changes allegiance scale
+
+He sends to Tiglath-pileser:
+**I am your servant and your son**.
+
+This is a striking relational downgrade.
+
+The Davidic king,
+whose ideology described him as a son/servant under YHWH,
+places himself under the Assyrian imperial king.
+
+Whatever the exact diplomatic idiom,
+the narrative presents a new hierarchy:
+
+**Judah centre**
+→ becomes subordinate to
+**Assyrian macro-centre**.
+
+---
+
+# Sacred and royal treasure flow outward to purchase external intervention
+
+Ahaz takes:
+- silver/gold from temple;
+- royal treasury
+
+and sends it to Assyria.
+
+This repeats the Joash/Hazael pattern:
+
+**threat**
+→ central stored wealth released outward
+→ larger force redirected onto enemy.
+
+But here the recipient is not merely bought off.
+The empire is invited to act **against the other attacking fields**.
+
+---
+
+# Assyria breaks the Aram centre and removes its population
+
+Tiglath-pileser:
+- attacks Damascus;
+- captures it;
+- deportees move to Kir;
+- Rezin dies.
+
+So Ahaz's transfer of wealth/inferior-status allegiance produces a much larger geopolitical rerouting:
+
+**Judah under attack by Aram + Israel**
+→ Judah couples to Assyria
+→ Assyria enters system
+→ Aram centre collapses
+→ population displaced.
+
+This is a classic:
+**third-force intervention breaks two-force pressure geometry**,
+but the third force is much larger than either original actor and creates long-term dependence.
+
+---
+
+# Assyrian evidence externally anchors Ahaz as a tribute-paying Judahite ruler
+
+Tiglath-pileser III's inscriptions list a Judahite king written as **Jehoahaz/Ahaz** among tribute payers.
+
+This strongly supports the broad vassal/tribute context.
+
+It does not prove:
+- biblical motive sequence in every detail;
+- Damascus altar interpretation;
+- Chronicles' theological causation.
+
+---
+
+# Ahaz sees a foreign altar and transmits its geometry remotely before returning home
+
+At Damascus:
+Ahaz sees an altar.
+
+He sends Urijah:
+- pattern/form;
+- plan/specification;
+- workmanship details.
+
+Urijah builds it in Jerusalem **before Ahaz returns**.
+
+This is an exceptionally clear:
+
+**foreign object observed**
+→ geometry converted into information/model
+→ model transmitted across distance
+→ object reproduced at home
+→ original observer later arrives and uses the copy.
+
+This is one of the strongest **geometry-as-information transfer** episodes in the corpus.
+
+---
+
+# Physical structure moves only after its informational pattern arrives
+
+The Damascus altar itself does not travel.
+
+What travels is:
+**description / pattern / likeness**.
+
+Yet the result is:
+**new physical altar at Jerusalem**.
+
+So:
+
+**remote geometry**
+→ encoded representation
+→ transmission
+→ reconstruction.
+
+This is highly relevant to the project's larger interest in projection and repeated form.
+
+But it is ordinary human design copying, not supernatural transmission.
+
+---
+
+# The copied altar displaces the old Solomonic altar from the central axis
+
+When Ahaz returns:
+- he uses the new altar;
+- moves the bronze altar away from its former position before the house;
+- places it on the north side.
+
+Thus:
+**new imported geometry**
+→ inserted into the main operational position
+→ old central object displaced laterally.
+
+This is a true **centre substitution** inside the temple court.
+
+The old object survives,
+but its role/position changes.
+
+---
+
+# Ritual flow is rerouted to the new altar
+
+Ahaz orders:
+- morning;
+- evening;
+- king's offerings;
+- people's offerings;
+- blood
+
+to be routed to the new “great altar.”
+
+So the physical rearrangement causes a **flow rearrangement**.
+
+This is crucial:
+the new geometry is not decorative.
+
+It changes:
+**where recurring ritual/material traffic converges**.
+
+---
+
+# The old altar becomes a secondary/uncertain-use node
+
+Ahaz says the bronze altar will be “for me to inquire/consider,”
+a phrase with interpretive uncertainty.
+
+Secure:
+**it no longer carries the normal central sacrifice load**.
+
+Thus:
+**former primary node**
+→ retained
+→ displaced
+→ function reduced or redefined.
+
+---
+
+# Ahaz dismantles the exact water-support geometry recorded under Solomon
+
+1 Kings 7 gave:
+
+### Bronze Sea
+**one large water body**
+over
+**12 oxen = 4 groups × 3 directions**.
+
+### Ten smaller lavers
+**5 right + 5 left**
+on decorated wheeled bases.
+
+2 Kings 16 says Ahaz:
+- cuts/removes elements of the bases;
+- removes lavers from them;
+- takes the Sea **down from the bronze oxen**;
+- puts the Sea on a **stone base/pavement**.
+
+This is an extremely important architectural transformation for the global geometry timeline.
+
+The same system changes from:
+
+**Sea elevated on twelve directional living-form supports**
+to
+**Sea resting on undifferentiated stone support**.
+
+And:
+
+**mobile/decorated laver stands**
+→ **lavers detached from their carriers**.
+
+---
+
+# Support-geometry changes while water-container identity remains
+
+The Sea is not said to be destroyed.
+
+It is:
+**same container**
+but
+**different support topology**.
+
+So:
+**object identity persists**
+while
+**relationship to its support field changes radically**.
+
+This is one of the strongest real architectural examples for the user’s principle:
+**same object + different coupling/support geometry = different system configuration**.
+
+---
+
+# The 4×3 directional ox arrangement disappears from active architecture
+
+Earlier:
+**four cardinal triples**
+supported one Sea.
+
+After Ahaz:
+**the Sea no longer rests on those oxen**.
+
+Thus an explicit cardinal support geometry that had been active since Solomon is **decommissioned**.
+
+That is timeline-significant.
+
+Do not infer the cosmic meaning of the oxen,
+but do record:
+**one major directional paired/support system is physically removed from use before the Hezekiah reform phase**.
+
+---
+
+# Motivation for the temple alterations is debated
+
+Kings ends the alteration notice with:
+**because of the king of Assyria**.
+
+Scholars disagree about exactly what that means:
+- removal of bronze for tribute;
+- protection/concealment from Assyrian demands;
+- architectural adaptation under vassal pressure;
+- royal/cultic innovation;
+- literary/theological portrayal.
+
+Richard D. Nelson and more recent work caution against automatically identifying the Damascus altar itself as straightforward pagan replacement.
+
+Chronicles gives a much more negative theological portrait and omits the detailed altar-copy story.
+
+Therefore:
+**do not harmonize the motives**.
+
+Secure geometry:
+**altar copied and installed, old altar moved, water supports detached, access structures altered**.
+
+---
+
+# Chronicles expands the war into catastrophic human/captive flows not narrated in Kings
+
+2 Chronicles 28 adds:
+- Aramean captives to Damascus;
+- enormous Judahite casualties under Israel;
+- women/children taken toward Samaria;
+- spoil transported with them.
+
+The MT numbers are huge:
+120,000 killed and 200,000 captives.
+
+Some scholarship suggests the Hebrew 'eleph may in places represent units/contingents rather than literal thousands; others retain the large rhetorical totals.
+
+Therefore:
+**record mass defeat/captive flow**
+without using these totals numerologically.
+
+---
+
+# Captive stream is intercepted before being absorbed into Samaria
+
+Oded goes **out to meet** the returning northern army.
+
+He says:
+- they have exceeded the permitted violence;
+- they must not enslave their Judahite kin;
+- send captives back.
+
+Then Ephraimite leaders stand against the incoming army.
+
+So:
+
+**victorious military/captive stream moving inward toward Samaria**
+→ prophetic + elite resistance field meets it **before integration**
+→ intended slavery/absorption is blocked.
+
+This is one of the strongest **interception-before-boundary-crossing** sequences in Chronicles.
+
+---
+
+# The warriors surrender both captives and spoil before the public/leadership field
+
+The armed men leave:
+- captives;
+- spoil.
+
+The flow is transferred from:
+**combat captors**
+to
+**civil/relief intermediaries**.
+
+This changes the function of the same material:
+**spoils of war**
+become
+**resources for restoration of the captives**.
+
+---
+
+# Spoil is reversed back into the bodies of the people it came from
+
+The named men:
+- take clothing from spoil;
+- clothe naked captives;
+- give footwear;
+- food;
+- water;
+- anoint them;
+- put weak people on donkeys.
+
+This is a remarkable reversal:
+
+**victory strips/transfers material away**
+→ intervention
+→ captured material/spoil is redistributed **back toward damaged bodies**.
+
+The same cargo changes from:
+**extraction**
+to
+**repair/support**.
+
+---
+
+# The weak are carried, not left behind
+
+Those unable to walk are placed on asses.
+
+So the return route is capacity-sensitive:
+
+**strong can walk**
+while
+**weak receive carriers**.
+
+Unlike boundaries where low-capacity components are left behind,
+this network adjusts carrier capacity to keep the whole captive field moving.
+
+---
+
+# Captives are returned to Jericho, then rescuers return to Samaria
+
+The route completes:
+
+**Judah → captured → Samaria-bound**
+→ intercepted
+→ restored
+→ **Jericho / kin**
+→ northern helpers **return to Samaria**.
+
+So the captive flow is almost completely reversed without the rescuing northern nodes permanently migrating south.
+
+This is an exceptional:
+**enemy capture → ethical interception → restorative return → rescuer withdrawal**
+cycle.
+
+---
+
+# Ahaz then seeks Assyrian help while pressure also comes from Edom and Philistia
+
+Chronicles broadens the pressure field:
+- Aram;
+- Israel;
+- Edom;
+- Philistines;
+- Assyria.
+
+Judah is therefore being compressed from multiple sides.
+
+This is more than a simple northern siege.
+
+The system is losing peripheral nodes even though Jerusalem survives.
+
+---
+
+# Chronicles says the Assyrian coupling does not strengthen Ahaz
+
+Where Kings presents Tiglath-pileser as taking Damascus after Ahaz's appeal,
+Chronicles says:
+**the Assyrian king distressed him and did not strengthen him**,
+despite treasure payment.
+
+This is a major interpretive difference.
+
+Kings:
+**external third force solves immediate Aram problem**.
+
+Chronicles:
+**external macro-centre becomes another burden rather than rescue**.
+
+Both views must remain in the ledger.
+
+---
+
+# Chronicles turns Ahaz's temple program into full sacred-network fragmentation
+
+Chronicles does not narrate the copied Damascus altar in detail.
+
+Instead it says Ahaz:
+- gathers temple vessels;
+- cuts/breaks them;
+- **shuts temple doors**;
+- makes altars at every corner of Jerusalem;
+- builds high places in every city of Judah.
+
+So the geometric transformation in Chronicles is:
+
+**one Jerusalem temple-centre**
+→ doors closed
+→ apparatus dismantled
+→ **many distributed alternative cult nodes**.
+
+This is a much stronger **central node shutdown → distributed multi-node replacement** than Kings' detailed court rearrangement.
+
+---
+
+# Kings and Chronicles therefore preserve two different geometry portraits of Ahaz
+
+### Kings
+Temple remains active,
+but its **internal geometry/flow is reconfigured**:
+- new altar copied from Damascus;
+- old bronze altar displaced;
+- Sea support changed;
+- lavers detached;
+- royal/Sabbath access altered.
+
+### Chronicles
+Temple system is portrayed as effectively **shut/down**:
+- vessels broken;
+- doors closed;
+- altars multiply across Jerusalem/Judah.
+
+Both agree on severe religious/political change,
+but their mechanisms differ.
+
+This is precisely why Chronicles must not be treated as a duplicate history.
+
+---
+
+# SECTION 38A-A continuous geometry/effect timeline — 2 Kings 14–16 + 2 Chronicles 25–28
+
+## Phase A — new centre limits inherited revenge propagation
+
+father's killers executed
+→ their children spared.
+
+**Effect:** consequence held to acting generation rather than automatically branching through descendants.
+
+---
+
+## Phase B — military population becomes one counted hierarchy
+
+Judah/Benjamin
+→ numbered
+→ fathers' houses
+→ thousands/hundreds
+→ war-field.
+
+**Effect:** distributed population is compressed into administrative military structure.
+
+---
+
+## Phase C — a second hired field is attached, then deliberately detached
+
+Judah army
++ Israelite mercenaries
+→ prophetic warning
+→ northern branch sent home.
+
+**Effect:** correct strategic decoupling creates a separate angry field.
+
+---
+
+## Phase D — detached branch turns against former host
+
+dismissed troops
+→ return route
+→ raid Judah cities.
+
+**Effect:** decoupling can generate destructive feedback from rejected components.
+
+---
+
+## Phase E — victory creates inward movement of defeated-system symbols
+
+Edom defeated
+→ Edomite gods carried back
+→ victor reorients toward them.
+
+**Effect:** captured material can alter captor rather than merely being controlled by it.
+
+---
+
+## Phase F — corrective information is suppressed after success
+
+prophet warns
+→ king threatens messenger
+→ warning channel closes.
+
+**Effect:** centre becomes less information-responsive as confidence rises.
+
+---
+
+## Phase G — two centres accept/reject a simulated future before meeting
+
+thistle/cedar warning
+→ Amaziah refuses
+→ actual face-to-face convergence proceeds.
+
+**Effect:** ignored model gives way to physical test.
+
+---
+
+## Phase H — face-to-face convergence ends in field dispersal
+
+Beth-shemesh
+→ Judah defeated
+→ each returns to tent.
+
+**Effect:** organized field collapses into distributed domestic state.
+
+---
+
+## Phase I — defeated centre becomes captive attached to victor
+
+Amaziah captured
+→ taken to own capital with Jehoash.
+
+**Effect:** political centre remains bodily present but loses control.
+
+---
+
+## Phase J — city boundary is opened and central cargo extracted
+
+Jerusalem wall
+→ 400-cubit breach
+→ temple/palace treasure + hostages flow outward.
+
+**Effect:** shell rupture permits resource extraction.
+
+---
+
+## Phase K — northern field later expands after prior near-erasure
+
+Aramean compression
+→ limited recoveries
+→ Jeroboam II restores broad border.
+
+**Effect:** partial repair can precede delayed large-scale expansion.
+
+---
+
+## Phase L — Uzziah densifies the outer network
+
+walls/towers
++ wilderness towers
++ cisterns
++ agriculture
++ counted army
++ projectile engines.
+
+**Effect:** territorial system becomes highly connected, supplied and fortified.
+
+---
+
+## Phase M — upper and lower infrastructure pair
+
+towers above
++ cisterns below.
+
+**Effect:** surveillance/projection and stored water/resource systems complement each other.
+
+---
+
+## Phase N — peak strength triggers inner role-boundary crossing
+
+Uzziah strong
+→ heart lifted
+→ enters incense function.
+
+**Effect:** outer success precedes internal overreach.
+
+---
+
+## Phase O — priestly field resists royal entry into inner function
+
+king + censer
+↔ 80 priests.
+
+**Effect:** two institutional forces clash over access to one inner interface.
+
+---
+
+## Phase P — body-state change reverses access polarity
+
+forehead ṣaraʿat appears
+→ king expelled/hastens out
+→ cut off from temple
+→ separate house.
+
+**Effect:** entrant becomes excluded node.
+
+---
+
+## Phase Q — office splits across two bodies
+
+Uzziah remains dynastic king
+while
+Jotham operates palace/judgment.
+
+**Effect:** identity and active function separate.
+
+---
+
+## Phase R — Jotham continues outer strengthening but refuses father's inner crossing
+
+upper temple gate/walls/towers built
+→ no improper temple entry.
+
+**Effect:** successor preserves structural expansion while altering access behavior.
+
+---
+
+## Phase S — northern political centre enters rapid replacement cascade
+
+Zechariah
+→ Shallum
+→ Menahem
+→ Pekahiah
+→ Pekah
+→ Hoshea.
+
+**Effect:** state identity persists while ruling node changes repeatedly.
+
+---
+
+## Phase T — imperial hand stabilizes local hand for a price
+
+Assyria approaches
+→ Menahem pays
+→ internal wealth extraction
+→ Assyrian support confirms local throne.
+
+**Effect:** field resources are exported to preserve centre through external macro-power.
+
+---
+
+## Phase U — internal officer kills centre within royal enclosure
+
+Pekahiah
+→ killed in palace/citadel by Pekah.
+
+**Effect:** fortified centre is vulnerable to internal military polarity reversal.
+
+---
+
+## Phase V — imperial pressure moves from tribute to territorial removal
+
+Tiglath-pileser
+→ captures northern nodes
+→ population deported.
+
+**Effect:** political field is physically cut and redistributed.
+
+---
+
+## Phase W — Jerusalem shell holds while wider Judah field compresses
+
+Aram + Israel besiege
+→ capital not taken
+but
+peripheral losses accumulate.
+
+**Effect:** intact centre-shell can coexist with degrading outer field.
+
+---
+
+## Phase X — Judah centre subordinates itself to larger imperial centre
+
+Ahaz → “servant and son” of Assyria.
+
+**Effect:** local sovereignty exchanged for macro-centre protection.
+
+---
+
+## Phase Y — stored sacred/royal wealth flows outward to redirect external force
+
+temple/palace treasure
+→ Assyria
+→ Assyria strikes Damascus.
+
+**Effect:** central cargo is converted into geopolitical intervention.
+
+---
+
+## Phase Z — third force breaks two-force siege but creates dependency
+
+Aram/Israel pressure on Judah
+→ Assyria enters
+→ Damascus collapses/deports.
+
+**Effect:** larger third field resolves immediate geometry while subordinating protected centre.
+
+---
+
+## Phase AA — remote geometry is copied by information rather than transported materially
+
+Ahaz sees Damascus altar
+→ sends pattern/specification
+→ Urijah builds copy before king returns.
+
+**Effect:** form moves as information; new matter recreates it elsewhere.
+
+---
+
+## Phase AB — imported geometry displaces old primary node
+
+new altar installed
+→ bronze altar moved north.
+
+**Effect:** same sacred enclosure keeps both objects, but operational centre shifts.
+
+---
+
+## Phase AC — recurring ritual flow follows new geometry
+
+daily/royal/population sacrifices
+→ new altar.
+
+**Effect:** physical node replacement reroutes repeated system traffic.
+
+---
+
+## Phase AD — Solomon's water-support geometry is dismantled
+
+Sea
+→ removed from 12 oxen
+→ stone support.
+
+lavers
+→ detached from wheeled/decorated bases.
+
+**Effect:** water containers remain while carrier/support topology changes.
+
+---
+
+## Phase AE — 4×3 cardinal support disappears from active configuration
+
+3 north + 3 west + 3 south + 3 east
+→ no longer bearing Sea.
+
+**Effect:** a major directional support geometry is decommissioned before Hezekiah's later reform.
+
+---
+
+## Phase AF — Chronicles adds a giant captive stream moving toward Samaria
+
+Judah defeat
+→ captives + spoil northward.
+
+**Effect:** human/material flow moves toward absorption by victorious centre.
+
+---
+
+## Phase AG — prophetic/civic interface intercepts stream before absorption
+
+Oded + Ephraimite leaders
+→ confront returning army outside/at approach to Samaria
+→ captives/spoil surrendered.
+
+**Effect:** communication stops a mass transfer before destination-state completes.
+
+---
+
+## Phase AH — war spoil reverses into restorative cargo
+
+captured clothing/spoil
+→ captives clothed/shod/fed/anointed.
+
+**Effect:** extracted material is redirected to repair the people from whom it was taken.
+
+---
+
+## Phase AI — carrier support preserves low-capacity members during reverse transfer
+
+weak captives
+→ placed on donkeys
+→ Jericho.
+
+**Effect:** return network adapts carrier capacity rather than abandoning slower bodies.
+
+---
+
+## Phase AJ — restoring nodes withdraw after completing return
+
+captives → kin at Jericho.
+northern helpers → Samaria.
+
+**Effect:** temporary restorative coupling ends after transfer without political merger.
+
+---
+
+## Phase AK — Chronicles portrays sacred centralization collapsing into distributed cult nodes
+
+temple vessels cut
++ doors shut
+→ altars in every corner/city.
+
+**Effect:** one sacred centre becomes inactive while alternative nodes proliferate.
+
+---
+
+# What 2 Kings 14–16 + 2 Chronicles 25–28 adds to the master Bible/Vardath timeline
+
+242. **A field can be correctly decoupled for one reason yet produce destructive feedback because the separated branch remains active and resentful.**
+243. **Captured material can reverse influence and reorient the victor toward the defeated system.**
+244. **Military success can reduce information receptivity at the centre before physical defeat occurs.**
+245. **A warning-model can be rejected, after which the represented two-centre collision occurs physically.**
+246. **A capital can remain politically inhabited after a deliberate long breach is opened in its protective shell and central cargo removed.**
+247. **Partial territorial repair can be followed by much larger delayed field expansion in a later reign.**
+248. **Chronicles turns Uzziah's reign into a network-densification sequence of towers, cisterns, agriculture, army bands and active projectile boundaries.**
+249. **Upper observation/projection infrastructure and lower water-storage infrastructure can operate as complementary parts of one territorial system.**
+250. **A centre may become unstable at maximum strength rather than maximum weakness.**
+251. **Crossing from one institutional role into another can function as a real access-boundary violation even when the physical building is shared.**
+252. **A resistant inner field can force a political centre back out of a sacred operating layer.**
+253. **A body's visible state can become the marker that changes its permitted spatial/function relation.**
+254. **One kingship identity can persist while active government is transferred to another body.**
+255. **Successor stability can come from preserving outward structural improvements while refusing the predecessor's problematic inner crossing.**
+256. **The northern kingdom demonstrates that a named state can persist through extremely rapid central-node replacement.**
+257. **External imperial support can stabilize a local throne by extracting wealth from the local field and sending it outward.**
+258. **Fortified central shells are vulnerable to internal military nodes that reverse allegiance.**
+259. **Imperial pressure can progress from tribute extraction to removal of territorial nodes and human populations.**
+260. **A central city can remain unconquered while the surrounding territorial field is being stripped away.**
+261. **A local centre can solve two-force pressure by coupling to a much larger third force, at the cost of future dependence.**
+262. **2 Kings 16 gives one of the clearest examples of geometry transferred as information: a foreign altar's form is encoded, sent remotely, and rebuilt before the observer returns.**
+263. **Installing a copied node can reroute repeated system flows and push an older node into a secondary position without destroying it.**
+264. **The Bronze Sea proves that the same container can persist while its support geometry is radically changed.**
+265. **The Solomon 4×3 directional ox support is explicitly removed from active use under Ahaz, making the temple geometry itself historical rather than static.**
+266. **Chronicles adds a mass-transfer reversal absent from Kings: captives moving toward enslavement are intercepted before absorption and returned.**
+267. **Extracted spoil can be transformed into restorative cargo for the extracted population.**
+268. **A return system can preserve low-capacity members by adding carriers rather than sorting them out.**
+269. **Kings and Chronicles preserve genuinely different Ahaz geometries: Kings rearranges the temple's internal nodes and flows; Chronicles portrays central shutdown and distributed replacement altars.**
+270. **Parallel biblical accounts must therefore be treated as separate process maps before any combined cosmological synthesis is attempted.**
+
+---
+
+## Section 38A-A high-priority pair / geometry register
+
+### Judah army / dismissed Israelite auxiliary
+temporary cooperative field → forced separation → hostile feedback branch.
+
+### Amaziah / Jehoash
+two centres invited into face-to-face test after a rejected warning-model.
+
+### Jerusalem wall / extracted treasure
+boundary integrity directly controls cargo accessibility.
+
+### towers / cisterns under Uzziah
+upper projection/visibility versus lower resource retention.
+
+### Uzziah / Azariah + 80 priests
+kingly centre versus priestly access-control field at incense interface.
+
+### Uzziah / Jotham
+isolated nominal king versus active governing son.
+
+### north-Israel kings
+repeated changing centres inside one nominal state.
+
+### Menahem / Assyria
+local centre preserved by coupling to imperial hand via field extraction.
+
+### Aram+Israel / Judah / Assyria
+two-force siege becomes three-force intervention geometry.
+
+### Damascus altar / Jerusalem copy
+source object versus remotely reconstructed form.
+
+### old bronze altar / new altar
+former centre displaced laterally by imported geometry.
+
+### Sea / twelve oxen
+same water-container after its directional support field is removed.
+
+### captors / Oded + Ephraimite leaders
+incoming military-captive stream versus intercepting moral/political resistance field.
+
+### spoil / returned captives
+same material changes from extraction cargo into repair cargo.
+
+---
+
+## Section 38A-A number / timing register
+
+Record without forcing:
+- Amaziah hired northern force: **100,000** men for **100 talents** silver in Chronicles;
+- Edom totals: **10,000 + 10,000** in Chronicles;
+- dismissed troops kill **3,000** in Chronicle's return raid;
+- Jerusalem wall breach **400 cubits**;
+- Uzziah army totals and **80 priests** are Chronicler-specific numerical data and should not be used cosmologically;
+- Jehu dynasty reaches **fourth generation** at Zechariah;
+- Shallum reign **one month**;
+- Menahem tribute **1,000 talents**;
+- levy on wealthy men **50 shekels each**;
+- Pekahiah killed with **50 Gileadites** in MT;
+- Chronicles' Ahaz war totals **120,000 dead / 200,000 captives** are exceptionally large and philologically/historiographically contested.
+
+The important geometry here is not the size of these totals but:
+**whole→split branch; wall→breach; centre→separate house; 12-ox support→stone support; captive stream→reverse return**.
+
+---
+
+## Section 38A-A textual / literary / historical controls
+
+- 2 Chronicles 25 deliberately expands and reshapes the much shorter Kings Amaziah account; Ehud Ben Zvi emphasizes its complex time-construction, memory work and ideology.
+- The Chronicler's 100,000 hired troops and 300,000 Judahite force are not independently verified historical census figures.
+- The cliff-casting of Edomite prisoners is severe violence; do not turn the vertical geometry into an attractive cosmological image.
+- Identification of biblical Sela directly with later Nabataean Petra is commonly proposed but not completely secure in every historical phase.
+- The thistle/cedar story is a political parable/taunt, not botanical cosmology.
+- Exact location and reconstruction of the 400-cubit Jerusalem wall breach remains debated.
+- Jeroboam II's expansion is historically important and should later be compared with Amos/Hosea, who give very different social/theological views of the prosperous north.
+- Kings calls the Judahite king Azariah; Chronicles predominantly Uzziah. Treat them as the same royal figure in the narrative tradition, but preserve source naming.
+- Biblical ṣaraʿat is not simply modern leprosy/Hansen's disease.
+- 2 Kings 15 uses Uzziah's skin condition mainly to explain his separate house and Jotham's governmental role; Chronicles builds a much fuller temple-boundary story around it.
+- P. C. Beentjes and later scholars explicitly study the Chronicler's expansion of Uzziah's disease into a sacrilege narrative.
+- The “engines invented by skilful men” in 2 Chronicles 26 are historically debated; do not assume mechanical artillery in the precise later classical sense.
+- The northern regnal chronology in 2 Kings 15 is notoriously difficult. Pekah's “20 years,” Jotham/Ahaz synchronisms and Hoshea's accession have produced multiple coregency/partisan-dating reconstructions. Do not build precise cosmological chronology from these regnal synchronisms.
+- Tiglath-pileser III's inscriptions independently attest Menahem of Samaria paying tribute and document western campaigns/tribute/deportations. They are crucial controls but do not reproduce the Kings narrative verbatim.
+- Assyrian sources connect Pekah/Hoshea to imperial restructuring, but the exact relation between Assyrian intervention and Hoshea's conspiracy remains debated.
+- The Syro-Ephraimite War has multiple historical reconstructions: anti-Assyrian coalition, Transjordanian struggle, and mixed political motives remain debated.
+- Tiglath-pileser III's inscriptions independently list Ahaz/Jehoahaz of Judah among tribute-paying rulers, strongly anchoring the vassal context.
+- 2 Kings 16 and 2 Chronicles 28 differ sharply in what they emphasize about Ahaz. Kings' Damascus altar story should not be read only through Chronicles' harsher cultic portrait.
+- Richard D. Nelson and Benjamin Scolnic both challenge overly simple assumptions that Ahaz's copied altar can be straightforwardly labeled a pagan/Assyrian cult altar; motive/function remain debated.
+- The reason Ahaz altered the Sea, lavers, bases and royal/Sabbath structures “because of the king of Assyria” is not certain. Proposed tribute, protection, renovation and cultic explanations remain open.
+- The Sea's removal from the twelve oxen is textually secure and is the strongest geometry datum; the motive is not.
+- Chronicles' Oded captive-return story is absent from Kings and may reflect the Chronicler's distinctive theological/social program. Its literal historical status is debated.
+- The Hebrew numerical term in 2 Chronicles 28 may be capable of unit/contingent readings in some scholarship; therefore the huge casualty/captive figures should not be used as precise demographic data.
+- The Oded story's later resemblance to the Good Samaritan has been proposed in scholarship but cannot be proven; retain only as future intertextual note if Luke is reached.
+- Chronicles says Tiglath-pileser distressed Ahaz and did not strengthen him, while Kings presents Assyrian action against Damascus after Ahaz's plea. Keep both emphases rather than forcing a single evaluation.
+- Chronicles' “shut temple doors” / distributed altars is a different process portrait from Kings' continued sacrificial use of a rearranged temple court.
+
+### Sources logged for Section 38A-A
+
+Primary:
+- Mechon-Mamre, **2 Kings 14–16**.
+- Mechon-Mamre, **2 Chronicles 25–28**.
+
+Scholarly controls:
+- Ehud Ben Zvi, **“A House of Treasures: The Account of Amaziah in 2 Chronicles 25—Observations and Implications.”**
+- P. C. Beentjes, **“The Narrative on Uzziah's Leprosy (2 Chronicles 26).”**
+- **“The Motif of Uzziah's ṣāraʿat in the Deuteronomistic History, Chronicles, and Beyond.”**
+- recent work on Uzziah/Jotham portraits and Chronicles' ideological elaboration.
+- Peter Dubovský, **“Why Did the Northern Kingdom Fall According to 2 Kings 15?”**
+- scholarly work on **2 Kings 15–18 as a chronological conundrum** and the last days of Israel.
+- Hayim Tadmor and Shigeo Yamada, **The Royal Inscriptions of Tiglath-pileser III and Shalmaneser V (RINAP 1)**.
+- B. Oded and later scholarship on the historical background of the **Syro-Ephraimite War**.
+- Richard D. Nelson, **“The Altar of Ahaz: A Revisionist View.”**
+- **“Ahaz and the Altar from Damascus (2 Kings 16:10–16): Literary, Theological, and Historical-Political Considerations.”**
+- Benjamin Scolnic, **“The Altar of Ahaz and Monarchical Polytheism.”**
+- scholarship on Oded and the captive-return narrative of **2 Chronicles 28:5–15**.
+
+**Section 38A remains in progress.**
+
+### Next process block
+
+**2 Kings 17–18 + 2 Chronicles 29–31**:
+- Hoshea becomes Assyrian vassal then seeks Egyptian support;
+- tribute flow stops and king is imprisoned;
+- Assyria surrounds Samaria for three years;
+- capital falls and northern population is deported;
+- foreign populations are inserted into emptied northern cities;
+- mixed populations learn local cult practice while maintaining multiple cult nodes;
+- historical/archaeological control on Assyrian deportation scale and continuity of local population;
+- Hezekiah inherits Ahaz's altered/shut temple state;
+- first-year, first-month temple reopening;
+- priests/Levites remove impurity layer-by-layer from inner house to Kidron;
+- temple apparatus is reconsecrated;
+- music/sacrifice are synchronized;
+- Passover summons remnants from both north and south;
+- messengers travel city-to-city and many mock, but some northern remnants come to Jerusalem;
+- one feast expands from seven days to another seven;
+- after central festival, participants move outward and destroy dispersed high places;
+- priestly/Levitical divisions and store-chambers reorganize inflow;
+- 2 Kings 18 then emphasizes Hezekiah removing high places, breaking pillars/Asherah and even Moses' bronze serpent;
+- Assyria takes fortified cities;
+- Hezekiah first sends temple/royal treasure outward, even stripping gold from temple doors/pillars;
+- Sennacherib's field still advances toward Jerusalem, setting up the Hezekiah/Isaiah siege geometry.
+
