@@ -106110,3 +106110,1215 @@ Its value is therefore high for **transition grammar** and **repair topology**, 
 ### Next canonical roadmap entry
 
 Read the stored master roadmap before proceeding to avoid guessing the next ordering.
+
+
+---
+
+# SECTION 42 progress A — Judith 1–8
+## An enormous walled centre falls despite its geometry, one imperial centre sends a mobile destructive operator westward, the threatened remnant compresses into mountain choke-points only two bodies wide, Achior is expelled from the enemy field and transferred uphill into Bethulia as living information, Holofernes avoids the gate and captures the water-source instead, and Judith emerges from a roof-tent as the counter-operator who will deliberately descend through the city gate into the hostile field
+
+This pass begins **Section 42 — Judith** and covers chapters **1–8**.
+
+The strongest geometry so far is extremely clear:
+
+**large imperial field advances**
+→ **small mountain remnant contracts into narrow passes**
+→ **enemy cannot easily penetrate the high enclosure**
+→ **enemy captures the water source below instead**
+→ **internal life-state begins to fail**
+→ **city sets a five-day surrender threshold**
+→ **Judith rejects the timed collapse**
+→ **she appoints herself as a mobile counter-operator**
+→ **she plans to pass outward through the same gate rather than wait for the enemy to pass inward**.
+
+That is a very strong **boundary / choke-point / water-control / direction-reversal** sequence.
+
+---
+
+# Source-control first — Judith is deliberately historically impossible as a literal chronicle
+
+Judith's textual/historical controls are unusually important.
+
+The story calls Nebuchadnezzar:
+- king of the **Assyrians**;
+- ruling in **Nineveh**.
+
+Historically Nebuchadnezzar II was the Neo-Babylonian king, while Nineveh had already been destroyed before his reign.
+
+The book also combines:
+- Assyrian;
+- Babylonian;
+- Persian;
+- postexilic/Second-Temple;
+- Hellenistic features.
+
+The USCCB introduction therefore treats the work as **historical fiction/religious novella**, probably composed around the late Hellenistic period.
+
+This means the project's timeline must distinguish:
+
+**the story's internal event order**
+from
+**real historical chronology**.
+
+Do not use Judith's king/year geography as an external chronological anchor.
+
+---
+
+# Textual control — ancient Ethiopic Judith exists, but do not assume one exact Greek base without proof
+
+Judith survives in:
+- multiple Greek textual forms/recensions;
+- Old Latin;
+- Syriac;
+- Sahidic/Coptic;
+- **Ethiopic/Geʿez**;
+- later Hebrew retellings.
+
+No ancient Hebrew or Aramaic manuscript of Judith has been found.
+
+For this Ethiopian-corpus project:
+- the Geʿez Judith is a legitimate ancient textual witness;
+- the Greek text is essential for comparison;
+- but this pass will **not** claim a precise one-to-one Geʿez dependence on a specific Greek codex unless established by dedicated textual study.
+
+This is different from Tobit, where the Ethiopic dependence on the short Greek tradition can be stated more confidently.
+
+---
+
+# Judith 1 — a massively fortified centre is introduced only to be broken
+
+Arphaxad fortifies Ecbatana with extraordinary dimensions:
+
+- huge hewn stones;
+- enormous walls;
+- towering gates;
+- structures intended to permit his army to pass in formation.
+
+The text emphasizes defensive geometry before describing its failure.
+
+Process:
+
+**centre**
+→ massive wall/thickness/height
+→ huge gates/towers
+→ confidence in fortified state
+→ Nebuchadnezzar attacks
+→ towers/city taken
+→ glory becomes shame
+→ Arphaxad captured and killed.
+
+This is an important control for the project's enclosure logic:
+
+> **a stronger shell is not automatically a safer state.**
+
+A system can be geometrically massive yet fail if the attacking field overcomes it.
+
+---
+
+# Ecbatana's gate is designed for army throughput; Bethulia's pass is the inverse geometry
+
+Judith later presents Bethulia's access as only wide enough for **two at a time**.
+
+So the story gives two strikingly opposed access geometries:
+
+### Ecbatana
+enormous gate
+→ designed to pass mighty forces in formation.
+
+### Bethulia
+narrow mountain approach
+→ only two can advance at once.
+
+That is a very strong large-opening / narrow-throat contrast.
+
+Ecbatana's vast fortified interface does not save it.
+
+Bethulia's tiny choke-point prevents direct mass penetration.
+
+This should be cross-indexed in the final gate geometry map.
+
+---
+
+# Nebuchadnezzar / Arphaxad — two-centre conflict collapses into one centre
+
+At the opening:
+
+**Nineveh / Nebuchadnezzar**
+↔
+**Ecbatana / Arphaxad**.
+
+Two royal centres.
+
+After battle:
+
+**Ecbatana defeated**
+→ Arphaxad removed
+→ Nebuchadnezzar consolidates force
+→ returns to Nineveh.
+
+This is a P2/P6 rival-centre pair at the narrative level.
+
+It is not yet the central Judith/Holofernes pair structure.
+
+---
+
+# One centre then generates a mobile destructive operator
+
+After the first victory, Nebuchadnezzar commissions Holofernes.
+
+The imperial structure becomes:
+
+**stationary royal centre**
+→ command
+→ **mobile general/operator**
+→ army branches westward.
+
+This is extremely important because Judith will later form the opposing version:
+
+**threatened city / divine appeal**
+→ **mobile woman/operator**
+→ enters enemy centre.
+
+So the book is building two operator systems.
+
+---
+
+# Nebuchadnezzar's “by my hand” is later inverted by Judith's “by my hand”
+
+The narrative's hand-language is a major structural marker.
+
+Nebuchadnezzar claims destruction through his own hand/command.
+
+Later Judith declares:
+
+**the Lord will deliver Israel by my hand**.
+
+This is not our imposed geometry.
+
+The book repeatedly foregrounds **hand** as the agent/interface of power.
+
+Therefore the central opposition is not merely:
+
+king vs widow.
+
+It is also:
+
+**imperial destructive hand**
+↔
+**deliverance through Judith's hand**.
+
+This may become important during the beheading, where Judith's literal hand executes the reversal.
+
+---
+
+# Holofernes' campaign converts central command into a spreading field
+
+The campaign proceeds outward over many territories.
+
+Effects include:
+
+- military conquest;
+- fear spreading before the army;
+- garrisons inserted into fortified cities;
+- selected local men absorbed into the army;
+- sacred groves/shrines destroyed;
+- local cults displaced;
+- all peoples directed toward one imposed divine/royal centre.
+
+This is a **network overwrite** process.
+
+The empire does not merely occupy land.
+
+It attempts to replace many local sacred nodes with one central authority.
+
+---
+
+# Submission does not stop the transformation
+
+Several peoples surrender and offer:
+
+- dwellings;
+- fields;
+- flocks;
+- cities;
+- inhabitants.
+
+Yet Holofernes still:
+- devastates territory;
+- cuts down sacred sites;
+- installs garrisons;
+- reorients worship.
+
+So:
+
+**boundary opens voluntarily**
+does not
+**prevent overwrite**.
+
+That is useful in the final transformation grammar.
+
+Some openings are protective.
+
+Others expose the inside to takeover.
+
+---
+
+# The destructive field narrows geographically toward Judea
+
+The story's scale contracts:
+
+**whole western world/regions**
+→ Judea
+→ mountain ridge
+→ Bethulia
+→ springs
+→ city gate
+→ eventually one tent/chamber.
+
+This progressive narrowing is one of Judith's strongest formal structures.
+
+The narrative itself behaves like a funnel.
+
+It begins with vast armies and enormous walls.
+
+It ends its crisis inside one man's sleeping chamber.
+
+That narrowing deserves special tracking.
+
+---
+
+# Judith 4 — the remnant responds by taking high ground and closing narrow passes
+
+Israel hears of Holofernes' destruction.
+
+Response:
+
+- high hilltops secured;
+- villages fortified;
+- provisions stored;
+- mountain passes held;
+- access point to Judea defended.
+
+The approach is said to be only wide enough for **two at a time**.
+
+This is an explicit throat/choke-point.
+
+Process:
+
+**large invading field**
+→ compressed by terrain
+→ cannot enter in mass
+→ defenders control narrow interface.
+
+This is one of the closest ordinary-military analogues yet to a **narrow gate controlling large transfer**.
+
+---
+
+# “Two at a time” is a true mechanical bottleneck, not merely a symbolic pair
+
+This number has an immediate physical explanation.
+
+A large army cannot use its scale effectively if the throat admits only a very small number of bodies.
+
+So:
+
+**wide field**
+→ **narrow throat**
+→ throughput constraint.
+
+That is mechanically relevant to the finger-trap/gate project even without any hidden cosmology.
+
+The conventional terrain/fortification explanation is sufficient.
+
+That makes it a valuable control analogue.
+
+---
+
+# Bethulia may itself encode ascent in the name — but location is deliberately uncertain
+
+Bethulia is unknown outside Judith.
+
+The name has been interpreted as:
+- “House of God”;
+- possibly “House of Ascent.”
+
+The site and its narrow pass cannot be securely identified.
+
+Therefore:
+- record the possible ascent-name;
+- do not construct a real map as though Bethulia's exact historical coordinates were known.
+
+The book's geography is literary/fanciful in several places.
+
+---
+
+# Recently restored Jerusalem stands behind Bethulia as the protected deeper centre
+
+The story says the people have only recently:
+
+- returned from exile;
+- reunited;
+- purified/re-established temple, vessels and altar.
+
+So Bethulia is not the ultimate centre.
+
+It is an **outer mountain gate** protecting access toward the restored sacred centre.
+
+This gives a nested enclosure model:
+
+**outer imperial field**
+→ Bethulia/pass
+→ Judea
+→ Jerusalem/temple.
+
+Holofernes must break the outer throat before the inner sacred centre is exposed.
+
+---
+
+# Population-wide prostration reverses the posture of imperial domination
+
+The invading field forces/receives prostration before imperial power.
+
+Israel instead:
+
+- falls prostrate before God;
+- wears sackcloth;
+- places sackcloth even on altar;
+- fasts;
+- cries out.
+
+This creates competing vertical allegiances.
+
+The same body posture—lowering—can express submission to different centres.
+
+So posture alone does not define the force.
+
+**orientation/target matters**.
+
+---
+
+# Judith 5–6 — Achior becomes information expelled from one field and absorbed by the other
+
+Achior speaks inside Holofernes' council.
+
+He provides:
+- Israel's history;
+- an explanation of Israel's strength/vulnerability;
+- warning that if the people are not guilty, their God may protect them.
+
+Holofernes rejects him.
+
+Then:
+
+**Achior inside enemy command field**
+→ seized
+→ carried out of camp
+→ led across plain
+→ taken upward toward hill country
+→ bound at foot of hill
+→ enemy carriers withdraw
+→ Israelites come down
+→ unbind him
+→ carry him upward into Bethulia
+→ place him at centre of assembly
+→ his information is retold.
+
+This is an exceptionally clear **living-information transfer across hostile fields**.
+
+---
+
+# Achior's route contains a handoff at a boundary
+
+The Assyrian servants do not take him fully into Bethulia.
+
+They leave him:
+- bound;
+- at the foot of the hill;
+- near the springs/below the city.
+
+Then the Israelites:
+- descend;
+- retrieve him;
+- untie him;
+- bring him inside.
+
+So the transfer is:
+
+**enemy carrier**
+→ boundary deposit
+→ **local carrier**
+→ inner centre.
+
+This is almost a relay transfer.
+
+The person and the information he carries cross together.
+
+---
+
+# Bound / unbound state marks field ownership
+
+Achior:
+- free enough to speak in enemy council;
+- then bound and expelled;
+- then unbound by Bethulia;
+- then welcomed/feasted.
+
+So:
+
+**voice**
+→ **constraint**
+→ **boundary transfer**
+→ **release**
+→ **integration**.
+
+Later Achior will serve as a witness to Holofernes' head and convert.
+
+This makes him a strong bridge/witness figure, not merely background character.
+
+---
+
+# Holofernes threatens Achior with future co-destruction
+
+Holofernes deliberately sends Achior to Bethulia so that:
+
+**if city falls**
+→ Achior falls with it.
+
+Thus Achior is attached to the target system before its outcome is known.
+
+His transfer is meant as punishment.
+
+It instead places a future confirming witness inside the system that survives.
+
+This is a classic narrative reversal setup.
+
+---
+
+# Judith 7 — Holofernes avoids the defended throat and captures the water-source
+
+Direct attack is difficult because:
+- city is high;
+- passes are narrow;
+- defenders control mountain access.
+
+Advisers propose a different strategy:
+
+**do not force the gate**
+→ seize the spring at the base of the mountain
+→ surround water source
+→ wait.
+
+This is one of Judith's most important mechanical ideas.
+
+The attacker defeats the enclosure not by crossing its wall but by controlling the **flow that keeps the inside alive**.
+
+---
+
+# The siege turns the spring into the real gate
+
+At this stage the decisive boundary is not the city door.
+
+It is the **water interface**.
+
+Bethulia depends on:
+- external spring;
+- limited internal cisterns.
+
+Holofernes' forces capture the springs.
+
+Then:
+
+**water-flow inward**
+→ cut/restricted
+→ internal reserves fall
+→ bodies weaken
+→ social order destabilizes
+→ surrender becomes likely.
+
+This is an excellent example of a system whose effective gate is a **resource channel**, not an entrance for bodies.
+
+---
+
+# High position becomes a trap when lower water is controlled
+
+Bethulia's mountain elevation protects it from assault.
+
+But the water source lies below.
+
+So the same geometry creates:
+
+**military advantage above**
++
+**resource dependence below**.
+
+The enemy cannot easily rise into the city.
+
+Instead it controls what must rise from below into the city.
+
+This is one of the strongest vertical two-field mechanics in Judith 1–8.
+
+---
+
+# Water depletion converts a stable enclosure into a failing body-field
+
+As the siege continues:
+
+- cisterns empty;
+- water is rationed;
+- inhabitants weaken;
+- women/children faint;
+- people collapse around gates/streets;
+- cries for surrender grow.
+
+So:
+
+**wall/gate intact**
+but
+**internal life-state collapsing**.
+
+Again:
+structural shell integrity is not the same as system survival.
+
+The decisive variable is flow.
+
+---
+
+# The citizens set a five-day collapse timer
+
+The people demand surrender.
+
+Uzziah responds with a time limit:
+
+**wait five days**.
+
+If help does not come:
+→ surrender city.
+
+This creates an explicit future threshold.
+
+The city is no longer simply besieged.
+
+It is operating under a **countdown to boundary opening**.
+
+---
+
+# Judith emerges precisely when the city has converted uncertainty into a countdown
+
+Judith enters the active story after hearing:
+
+- water crisis;
+- people's despair;
+- elders' five-day promise.
+
+She attacks the logic of the countdown.
+
+Her argument is:
+
+**humans cannot impose a deadline on God's plan**.
+
+So the crisis becomes a contest between two temporal protocols:
+
+### Elders
+uncertainty
+→ five-day limit
+→ forced surrender.
+
+### Judith
+uncertainty
+→ no imposed divine deadline
+→ active intervention inside the remaining interval.
+
+This is a strong time/decision-state contrast.
+
+---
+
+# Judith herself begins in an elevated, enclosed, fasting state
+
+Before acting, Judith lives:
+
+- in her own house;
+- with a **tent on the roof**;
+- in widow's clothing;
+- with sackcloth;
+- fasting on most days.
+
+Her starting geometry is therefore:
+
+**private house**
+→ **roof**
+→ **tent/enclosure**
+→ disciplined fasting state.
+
+When the public city-state fails, the counter-operator comes from a small elevated private enclosure.
+
+This is a striking inversion of Holofernes:
+
+**vast mobile public camp**
+versus
+**small fixed roof-tent**.
+
+---
+
+# Judith's dead husband creates another collapse-state background
+
+Manasseh dies during barley harvest after being overcome by heat.
+
+He collapses on his bed and is buried.
+
+This gives Judith a pre-existing:
+
+**paired state**
+→ husband removed by heat/collapse
+→ widow-state
+→ isolated/independent household.
+
+Do not force Manasseh into Holofernes as one hidden male pair.
+
+At present the stronger function is:
+**loss creates the social state from which Judith later acts independently**.
+
+---
+
+# Judith / Holofernes is already the dominant polarity before they meet
+
+### Holofernes
+- male imperial general;
+- huge army;
+- outer field;
+- surrounds city;
+- controls spring;
+- intends inward conquest.
+
+### Judith
+- widow;
+- one maid;
+- inner city;
+- private roof-tent;
+- intends outward crossing;
+- says deliverance will come through her hand.
+
+The pair is structurally opposed before physical contact.
+
+Classification developing:
+- **P2 polarity pair: very strong**;
+- **P6 rival/double: strong**;
+- **P7 opposing operators of larger centres: very strong**;
+- P1 one hidden figure: unsupported so far;
+- P10 separate persons: secure.
+
+---
+
+# The two operators are attached to two larger centres
+
+Holofernes:
+**Nebuchadnezzar's mobile hand/operator**.
+
+Judith:
+**Israel's / God's chosen hand/operator within the story's theology**.
+
+So the deeper pair is:
+
+**imperial centre**
+→ Holofernes
+↔
+Judith ←
+**threatened sacred/community centre**.
+
+This is almost two opposed vectors meeting through human agents.
+
+That is much closer to the two-force framework than simply comparing personalities.
+
+---
+
+# Judith's solution is directional reversal: she will cross outward
+
+The city assumes the main question is:
+
+> Will the enemy get in?
+
+Judith changes it to:
+
+> Can one person deliberately go out?
+
+She tells the elders:
+
+- stand at the gate;
+- let her pass through with her maid;
+- do not ask for the plan;
+- within the remaining interval, deliverance will occur through her hand.
+
+This is one of the strongest direction reversals in the book.
+
+**enemy prevented from moving inward**
+while
+**Judith deliberately moves outward**.
+
+The protected enclosure generates an outbound operator.
+
+---
+
+# The gate becomes a controlled one-way interface
+
+Bethulia's gate is not simply open or shut.
+
+Its state is selective.
+
+For the army:
+- defended;
+- not freely traversable.
+
+For Judith:
+- elders will open it deliberately;
+- she and one maid will exit.
+
+So:
+
+**mass hostile inward transfer = blocked**
+while
+**small authorized outward transfer = allowed**.
+
+This is a highly relevant gate-control pattern.
+
+---
+
+# Judith's plan is intentionally hidden information
+
+She tells the elders they must not inquire.
+
+They know:
+- she will leave;
+- she expects deliverance;
+- she will return/act within the deadline.
+
+They do **not** know the mechanism.
+
+So the city releases a mobile agent while lacking the agent's detailed protocol.
+
+This continues the corpus-wide hidden-information theme.
+
+The operator knows the route/action; the protected population does not.
+
+---
+
+# SECTION 42A pair / two-force / geometry matrix
+
+## Judith / Holofernes
+
+Strong:
+- P2 polarity;
+- P6 rival/double;
+- P7 opposing operators;
+- P10 separate persons secure.
+
+Developing inversion:
+Holofernes outside → wants in.
+Judith inside → deliberately goes out.
+
+Holofernes controls water.
+Judith will attack command centre.
+
+Holofernes commands mass.
+Judith moves with one maid.
+
+This is currently the strongest pair in Judith.
+
+---
+
+## Nebuchadnezzar / Arphaxad
+
+P2/P6 rival royal centres.
+
+One centre absorbs/destroys the other.
+
+Useful opening macro-scale model, but not the book's final pair.
+
+---
+
+## Nebuchadnezzar / God in the book's theology
+
+Two claimed ultimate centres.
+
+Holofernes' campaign tries to erase many gods/nodes into Nebuchadnezzar.
+
+Israel refuses that reorientation.
+
+This theological polarity is explicit.
+
+Do not translate it automatically into physical forces.
+
+---
+
+## Holofernes / Achior
+
+Holofernes:
+rejects warning, expels.
+
+Achior:
+transferred to opposing city, becomes witness.
+
+Strong P6 subordinate/adversarial information pair only after rupture.
+
+---
+
+## Achior / Judith
+
+Not yet a direct pair.
+
+Both challenge Holofernes' totalizing claim from different positions:
+- Achior verbally from inside enemy council;
+- Judith will operationally from inside Bethulia.
+
+Possible parallel witness/operator roles to test later.
+
+---
+
+## Bethulia / Assyrian camp
+
+Strong spatial polarity:
+
+**high enclosed city**
+↔
+**broad surrounding low/plain camp**.
+
+The connection is mediated by:
+- mountain passes;
+- spring;
+- emissaries/operators.
+
+---
+
+## Spring / gate
+
+Not persons, but key interface pair.
+
+Physical gate controls bodies.
+Spring controls water/life.
+
+In chapters 7–8 the **spring is functionally the more important gate**.
+
+---
+
+# SECTION 42A continuous geometry/effect timeline — Judith 1–8
+
+## Phase A — enormous defensive centre is constructed
+
+Ecbatana
+→ huge walls/towers/gates.
+
+**Effect:** maximum shell confidence.
+
+---
+
+## Phase B — rival centre overcomes shell
+
+Nebuchadnezzar
+→ Ecbatana falls
+→ Arphaxad removed.
+
+**Effect:** large enclosure fails.
+
+---
+
+## Phase C — victorious centre launches mobile operator
+
+Nineveh
+→ Holofernes + army.
+
+**Effect:** central intent becomes travelling field.
+
+---
+
+## Phase D — field spreads and overwrites local nodes
+
+cities/peoples submit
+→ garrisons inserted
+→ shrines destroyed
+→ worship reoriented.
+
+**Effect:** one centre attempts network takeover.
+
+---
+
+## Phase E — scale narrows toward Judean ridge
+
+world/regions
+→ Judea
+→ passes.
+
+**Effect:** broad field approaches throat.
+
+---
+
+## Phase F — threatened remnant fortifies high nodes
+
+hilltops/villages
+→ stores provisions
+→ controls mountain approaches.
+
+**Effect:** defensive field contracts.
+
+---
+
+## Phase G — passage compresses to two-body width
+
+large army
+→ narrow pass
+→ throughput constrained.
+
+**Effect:** mass advantage loses direct usefulness.
+
+---
+
+## Phase H — prayers/prostration synchronize protected population
+
+Judea/Jerusalem
+→ fasting/sackcloth/prayer.
+
+**Effect:** dispersed remnant aligns around one sacred centre.
+
+---
+
+## Phase I — Achior carries alternative information inside enemy council
+
+warning/history
+→ rejected.
+
+**Effect:** information node becomes incompatible with host field.
+
+---
+
+## Phase J — enemy ejects information-carrier
+
+Achior
+→ out of camp
+→ across plain
+→ up toward hill
+→ bound at foot.
+
+**Effect:** living information deposited at boundary.
+
+---
+
+## Phase K — city retrieves and reverses Achior's state
+
+Israelites descend
+→ unbind
+→ carry him upward
+→ centre assembly.
+
+**Effect:** rejected enemy-field witness becomes protected-city witness.
+
+---
+
+## Phase L — direct penetration avoided
+
+enemy assesses high city/narrow ascent
+→ chooses siege instead.
+
+**Effect:** attack changes channel.
+
+---
+
+## Phase M — lower water interface captured
+
+spring at mountain base
+→ enemy control.
+
+**Effect:** life-flow to high enclosure constrained.
+
+---
+
+## Phase N — internal reserves fail
+
+cisterns empty
+→ thirst
+→ bodies faint
+→ public order weakens.
+
+**Effect:** shell remains closed while living system collapses.
+
+---
+
+## Phase O — city creates five-day surrender timer
+
+water crisis
+→ countdown
+→ planned future gate opening.
+
+**Effect:** internal despair schedules boundary failure.
+
+---
+
+## Phase P — Judith emerges from private elevated enclosure
+
+roof-tent / fasting widow
+→ summons elders.
+
+**Effect:** small hidden node becomes active counter-operator.
+
+---
+
+## Phase Q — Judith rejects imposed collapse time
+
+five-day divine deadline
+→ challenged.
+
+**Effect:** timer remains socially real but loses theological legitimacy in her analysis.
+
+---
+
+## Phase R — Judith declares outbound operator plan
+
+deliverance “by my hand”
+→ elders stand at gate.
+
+**Effect:** city changes from passive siege state to planned outward action.
+
+---
+
+## Phase S — gate becomes selective interface
+
+hostile mass inward = blocked.
+Judith + maid outward = authorized.
+
+**Effect:** direction of controlled crossing reverses.
+
+---
+
+# What Judith 1–8 adds to the master Bible/Vardath timeline
+
+1. **Judith opens by proving that massive walls/gates do not guarantee system survival.**
+2. **The book juxtaposes an enormous army gate at Ecbatana with Bethulia's pass only two bodies wide**, a very strong wide-interface/narrow-throat contrast.
+3. **A huge mobile field is progressively compressed from world/region scale down to one mountain choke-point.**
+4. **Bethulia functions as an outer gate protecting a deeper restored sacred centre.**
+5. **The two-body-wide pass is a genuine throughput bottleneck**, mechanically relevant without requiring hidden symbolism.
+6. **Achior is one of the clearest living-information transfers yet:** expelled from one field, deposited bound at a boundary, retrieved/unbound, carried upward, and inserted into the opposing centre.
+7. **Holofernes defeats the city's geometry indirectly by controlling flow rather than crossing the gate.**
+8. **The spring becomes the effective life-gate of the city.**
+9. **Bethulia's high position is both protection and vulnerability:** attackers cannot easily rise, but the city depends on water from below.
+10. **The shell remains intact while the inside begins to die**, separating boundary integrity from system viability.
+11. **The five-day surrender oath converts resource depletion into a timed gate-opening condition.**
+12. **Judith rejects the countdown and substitutes active intervention.**
+13. **Judith/Holofernes form a strong opposing-operator pair attached to larger centres.**
+14. **The story itself emphasizes opposed “hand” agency:** imperial destruction versus deliverance through Judith's hand.
+15. **Judith begins in a small elevated roof-tent while Holofernes controls a vast mobile camp**, creating a striking scale inversion.
+16. **The central directional reversal begins before Judith meets Holofernes:** enemy mass cannot move inward, so one authorized figure moves outward.
+17. **The city gate is selective rather than simply open/closed.**
+18. **The strongest Vardath comparison so far is not a physical sky weave but a throat/flow problem:** broad field → narrow pass → alternative resource channel → internal collapse → small counter-agent crosses the boundary in the reverse direction.
+19. **Hard control:** Judith is intentionally historically/geographically composite fiction, so its internal sequence should not be used as literal external chronology.
+
+---
+
+# Section 42A number / timing register
+
+Record without forcing:
+
+- Nebuchadnezzar's story-year labels include **12th** and **17th** year, but the historical frame is deliberately anachronistic;
+- Ecbatana wall/tower/gate dimensions are prodigious and likely literary hyperbole;
+- Nebuchadnezzar's forces feast/rest **120 days** after the Arphaxad victory;
+- Bethulia's approach is said to admit only **2 at a time**;
+- Holofernes' westward movement includes an impossible **3-day** march in one passage;
+- **7 towns** are listed in the terror sequence;
+- Judith has been widowed **3 years and 4 months**;
+- the elders set a **5-day** surrender threshold.
+
+None of these should be moved into the Vardath/Archaix chronology without independent recurrence/source control.
+
+---
+
+# Section 42A textual / literary / historical controls
+
+- Judith's chronology is intentionally/non-historically composite.
+- Nebuchadnezzar was not an Assyrian king ruling at Nineveh; the narrative frame telescopes centuries.
+- Bethulia is unidentified and may be a symbolic/literary place-name.
+- The mountain pass “two at a time” cannot be securely mapped to a known historical defile.
+- Judith is best read as a religious historical novella/fictional deliverance narrative rather than a straightforward chronicle.
+- The book has multiple Greek textual forms and several ancient translations including Ethiopic.
+- No ancient Hebrew/Aramaic Judith manuscript has been found; later Hebrew forms are not evidence for a securely recovered ancient Hebrew original.
+- Do not assume a particular Greek recension lies directly behind the Ethiopic text without dedicated textual evidence.
+- Holofernes' strategy of controlling springs is ordinary siege logic and strongly explains the geometry without cosmological assumptions.
+- “Upper,” “lower,” “high,” “ascent,” and “descent” frequently have normal terrain meanings in Judith.
+- The narrative's “hand” motif is literary/theological agency language; it is still worth tracking because the book repeats it deliberately.
+- Judith's roof-tent is an ordinary ascetic/private space; do not automatically equate it with the world tent/lattice.
+- The water crisis is literal siege deprivation within the story.
+- The pair/force model is strongest when it follows the ordered operational opposition rather than treating every male/female pair as one hidden body.
+
+### Sources logged for Section 42A
+
+Primary / literary-historical control:
+- USCCB/NABRE **Judith 1–8**:
+  - https://bible.usccb.org/bible/judith/1
+  - https://bible.usccb.org/bible/judith/2
+  - https://bible.usccb.org/bible/judith/3
+  - https://bible.usccb.org/bible/judith/4
+  - https://bible.usccb.org/bible/judith/5
+  - https://bible.usccb.org/bible/judith/6
+  - https://bible.usccb.org/bible/judith/7
+  - https://bible.usccb.org/bible/judith/8
+- USCCB **Book of Judith introduction**, for literary genre, chronological/geographic problems and textual witnesses.
+
+Key source controls retained:
+- Judith 4:7 — pass only wide enough for two at a time.
+- Judith 6 — Achior's expulsion/binding/boundary handoff/unbinding.
+- Judith 7 — spring seizure and water-deprivation strategy.
+- Judith 8 — Judith's roof-tent, five-day dispute and gate plan.
+- USCCB thematic note on the repeated **“by my hand”** motif.
+
+---
+
+# SECTION 42A COMPLETE — JUDITH THROUGH THE FIVE-DAY WATER CRISIS / OUTBOUND PLAN
+
+### Current transformation point
+
+**massive Ecbatana enclosure**
+→ falls
+→ victorious centre sends Holofernes outward
+→ imperial field expands/overwrites local nodes
+→ field narrows toward Judea
+→ remnant fortifies heights
+→ access compresses to two-body throat
+→ Achior is expelled from enemy information field
+→ deposited bound at boundary
+→ retrieved/unbound into Bethulia
+→ direct assault abandoned
+→ lower spring captured
+→ water flow to high enclosure fails
+→ internal population weakens
+→ five-day surrender clock begins
+→ Judith emerges from roof-tent
+→ rejects imposed deadline
+→ declares deliverance through her hand
+→ tells elders to open gate selectively
+→ prepares to move outward through the boundary with one maid.
+
+### Next research block
+
+**SECTION 42B — Judith 9–16**
+
+Priority:
+- Judith's prayer and hand/weapon precedent;
+- widow-state → transformed clothing/beauty state;
+- roof-tent → city gate → descent down mountain;
+- crossing valley → enemy patrol interception;
+- Judith entering Holofernes' camp/tent;
+- repeated “by my hand” / deception / hidden plan;
+- daily exiting of camp to wash/pray at spring and return;
+- inner/outer permeability of Holofernes' camp;
+- banquet/intoxication;
+- maid stationed outside;
+- Judith alone with Holofernes inside tent;
+- two blows / beheading sequence;
+- head removed from enemy centre;
+- maid places head in food bag;
+- reverse route back to Bethulia;
+- city gate opened;
+- head elevated/displayed on wall/parapet;
+- Achior identifies head and changes allegiance/converts;
+- enemy field loses centre and collapses into flight;
+- Bethulia opens and population surges outward;
+- plunder/redistribution;
+- Judith/Holofernes final state-pair:
+  Judith returns/alive/highly honoured vs Holofernes headless/dead;
+- Judith song: mountains/waters/voice/fire and hand imagery;
+- Judith remains widow, frees maid, property redistribution, final rest;
+- compare descent→entry→decapitation→return→elevation of head with Vardath gate/axis sequence while preserving Jael/Exodus literary models and historical-fiction control.
