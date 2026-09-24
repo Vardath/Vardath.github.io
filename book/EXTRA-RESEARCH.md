@@ -93516,3 +93516,1075 @@ starting with Manasseh and preserving the X6 bridge:
 → **later reform attempts**
 → **Babylonian extraction and final Jerusalem/temple collapse**.
 
+
+
+---
+
+# SECTION 38B progress A — 2 Kings 21–23 + 2 Chronicles 33–35
+## Hezekiah's centralized state reverses under Manasseh, Chronicles adds captivity→humbling→return, Josiah discovers a buried instruction-set inside the damaged centre, and the reform attempts to collapse many distributed cult nodes back into one covenantal centre before the irreversible Babylonian trajectory resumes
+
+---
+
+# 2 Kings 21 — Manasseh reverses Hezekiah's geometry from one centre back into many competing nodes
+
+The transition from Hezekiah is deliberately sharp.
+
+Hezekiah had:
+- removed high places;
+- centralized worship;
+- defended Jerusalem;
+- survived Assyrian pressure.
+
+Manasseh:
+- rebuilds the high places Hezekiah destroyed;
+- erects Baal altars;
+- makes an Asherah;
+- worships the host of heaven;
+- places new altars **inside the two courts of the temple**;
+- sets an image inside the chosen house.
+
+The process is:
+
+**centralized sacred topology**
+→ successor arrives
+→ removed peripheral nodes are rebuilt
+→ alternate cultic nodes move inward
+→ even the central temple becomes internally multi-centred.
+
+This is stronger than simple “apostasy.”
+
+The centre itself is **occupied by competing systems**.
+
+---
+
+# Central enclosure is no longer merely surrounded — it is internally colonized
+
+In Solomon's dedication phase:
+**one temple**
+acted as a directional interface.
+
+Under Manasseh:
+**other altars/images are installed inside that same interface-space**.
+
+So the transition is:
+
+**one centre with distributed outer alternatives**
+→ **alternatives physically penetrate the centre's own courts/interior**.
+
+That is an important escalation.
+
+The centre loses exclusive orientation without the building itself disappearing.
+
+---
+
+# “Line” and “plummet” turn destruction into a measured inversion
+
+The judgment speech uses:
+- the **line of Samaria**;
+- the **plummet of the house of Ahab**.
+
+Then Jerusalem is compared to:
+**a dish wiped clean and turned upside down**.
+
+This is unusually geometric judgment language.
+
+Process:
+
+**prior northern collapse-measure**
+→ applied as template over Jerusalem
+→ surface cleared
+→ vessel inverted.
+
+This is not Vardath mechanics, but it is a direct:
+**measure → erase → invert**
+sequence.
+
+The old northern disaster becomes the reference geometry for the southern one.
+
+---
+
+# Jerusalem is described as filled “from end to end” with blood
+
+The text says Manasseh sheds innocent blood until Jerusalem is filled from one end to the other.
+
+Again, this is moral-political rhetoric around violence.
+
+But the scale shift is explicit:
+
+**individual acts**
+→ accumulate
+→ **entire city represented as saturated**.
+
+This is another saturation-state image, comparable structurally—but not morally or physically—to:
+- cloud filling temple;
+- plague traversing land;
+- water filling containers.
+
+The process category is:
+**local repeated inputs → whole-volume saturation**.
+
+---
+
+# Kings and Chronicles diverge sharply on Manasseh's later trajectory
+
+## Kings
+Manasseh:
+- does evil;
+- causes Judah to sin;
+- dies;
+- is buried in his garden.
+
+No repentance/restoration arc appears.
+
+## Chronicles
+Manasseh:
+- is seized by Assyrian commanders;
+- taken with hooks/fetters;
+- carried to Babylon;
+- humbled in distress;
+- prays;
+- is returned to Jerusalem and kingship;
+- strengthens walls/defences;
+- removes foreign gods/altars from temple/city;
+- restores the altar.
+
+This is one of the most important parallel-text divergences in the historical books.
+
+Do **not** silently harmonize them.
+
+---
+
+# Chronicles gives Manasseh a full outward→down→return arc
+
+The Chronicler's geometry is:
+
+**king at Jerusalem**
+→ hostile imperial force enters
+→ king physically captured
+→ bound
+→ carried away to Babylon
+→ humbled/distressed outside centre
+→ prayer/information relation reopens
+→ king brought back to Jerusalem
+→ centre repaired/re-fortified
+→ foreign cult objects removed.
+
+That is a complete:
+**expulsion → lower/subordinate state → return → partial restoration**
+cycle.
+
+This is absent from Kings.
+
+For the Vardath timeline, record it as a **Chronicles-specific alternate process branch**.
+
+---
+
+# Captivity in Chronicles turns the hostile external centre into a transformation chamber
+
+Babylon here is not yet the final destroyer of Jerusalem.
+
+Instead:
+**the king is taken there**
+→ undergoes humiliation/recognition
+→ returns changed.
+
+That is striking because later Babylon will:
+- remove king;
+- remove elite;
+- remove temple vessels;
+- destroy Jerusalem.
+
+So the same external macro-node first appears in Chronicles as:
+**temporary corrective exile**
+before later becoming:
+**terminal extraction centre**.
+
+Same destination.
+Different phase/function.
+
+---
+
+# Returned Manasseh rebuilds the outer wall before removing inner competing nodes
+
+Chronicles' order is important:
+
+**return**
+→ fortify outer city
+→ install military commanders
+→ remove foreign gods/idol/altars
+→ restore proper altar.
+
+Thus:
+**outer boundary repair**
+precedes
+**inner symbolic purification**.
+
+That is a complete:
+**shell stabilization → interior reordering**
+sequence.
+
+---
+
+# But Chronicles explicitly says residual high-place practice remains
+
+Even after reform:
+people continue sacrificing at high places, though to YHWH.
+
+So the restoration is incomplete.
+
+The system does not return exactly to Hezekiah's prior centralized geometry.
+
+This is another master rule:
+**return after rupture is usually not reset-to-original**.
+
+A residual distributed topology remains.
+
+---
+
+# Amon — centre collapses inside its own house
+
+Amon continues Manasseh's earlier evil pattern.
+
+His servants conspire and kill him:
+**inside his own house**.
+
+Then:
+**people of the land kill the conspirators**
+and
+**install Josiah**.
+
+Process:
+
+**centre destabilized internally**
+→ close servants remove centre inside enclosure
+→ wider population reacts against inner coup
+→ succession is re-established from outside the immediate household conspiracy.
+
+This is a nested scale reversal:
+**inner network kills king**
+→ **outer population kills inner network**.
+
+---
+
+# 2 Kings 22 / 2 Chronicles 34 — repair work exposes a hidden instruction-set inside the centre
+
+Josiah begins temple repairs.
+
+Money:
+- collected at doors;
+- transferred to supervisors/workmen;
+- used to repair **breaches** in the house.
+
+During this repair:
+Hilkiah finds:
+**the book of the Law / covenant**.
+
+The process is extraordinarily important:
+
+**material centre damaged**
+→ repair crews enter/restore structure
+→ hidden text/information is discovered inside the centre
+→ text is read
+→ whole political/religious system changes course.
+
+This is a literal:
+**repair reveals buried information** sequence.
+
+---
+
+# The rediscovered book is initially just another object inside the house
+
+Hilkiah:
+→ gives book to Shaphan.
+
+Shaphan:
+→ reads it.
+
+Shaphan then reports to king:
+- money/work accomplished;
+- then separately,
+- **a book has been found**.
+
+Once read aloud before Josiah, the book changes from:
+**stored object**
+into
+**active control information**.
+
+So:
+**information exists inertly**
+until
+**decoded/read**.
+
+Then it reorganizes the system.
+
+---
+
+# Reading causes immediate visible state change at the centre
+
+Josiah:
+- hears the words;
+- tears his clothes.
+
+So once again:
+**new information**
+→ **garment integrity breaks**.
+
+The Samuel–Kings garment grammar continues:
+
+- Saul/Samuel robe tear → kingdom transfer.
+- Ahijah garment tear → kingdom partition.
+- Josiah clothes tear → centre recognizes impending catastrophe/covenant breach.
+
+The function has changed:
+this tear is not itself the kingdom split.
+It is the **centre's bodily/material reaction to newly decoded information**.
+
+---
+
+# The king does not trust his own interpretation; he opens a second interpretation channel
+
+Josiah sends a delegation to inquire through Huldah.
+
+This is important.
+
+The book is read,
+but the centre does not simply act from text alone.
+
+Process:
+
+**written signal**
+→ read
+→ produces alarm
+→ **external interpretive/prophetic channel consulted**
+→ future-state meaning returned.
+
+This is a **text + interpreter** two-stage information system.
+
+---
+
+# Huldah distinguishes system fate from king's personal timeline
+
+The answer has two simultaneous states:
+
+### System
+Jerusalem/Judah:
+→ judgment still coming.
+
+### Josiah
+because of humility:
+→ he will not see the disaster.
+
+So:
+**good local centre behavior**
+does not reverse
+**already-committed macro-system trajectory**.
+
+This is a major timeline rule.
+
+A local reform can:
+- change the centre's personal branch;
+- improve current state;
+without cancelling the larger delayed consequence.
+
+This echoes Hezekiah:
+Babylonian exile is predicted beyond his lifetime.
+
+---
+
+# Chronicles places much of Josiah's purge before book discovery
+
+This is a major sequence difference.
+
+## Kings
+book discovery
+→ Huldah
+→ covenant
+→ broad reform.
+
+## Chronicles
+Josiah begins seeking early
+→ starts purging Judah/Jerusalem and northern regions in year 12
+→ later repairs temple and discovers book in year 18
+→ covenant reaffirmation.
+
+Therefore the same broad reform tradition has different **causal order** in the two books.
+
+Do not force one chronology.
+
+For the global timeline:
+- Kings emphasizes **book → reform**.
+- Chronicles emphasizes **prior reform → book deepens/confirms reform**.
+
+---
+
+# 2 Kings 23 — the found information is broadcast from centre to whole field
+
+Josiah gathers:
+- elders;
+- priests;
+- prophets;
+- all people, small and great.
+
+He reads:
+**all words of the covenant book**.
+
+Then king and people stand to covenant.
+
+Process:
+
+**hidden text inside temple**
+→ found
+→ read privately
+→ interpreted
+→ read publicly
+→ collective field adopts shared instruction-set.
+
+This is a full:
+**buried information → national broadcast**
+cycle.
+
+---
+
+# The reform converts multi-centred topology back toward one-centre orientation
+
+Josiah removes:
+- Baal/Asherah/astral cult objects;
+- high-place priests;
+- temple-adjacent cult structures;
+- Topheth;
+- solar horses/chariots;
+- rooftop altars;
+- Manasseh's court altars;
+- Solomonic high places;
+- Bethel altar;
+- northern high places.
+
+The process is:
+**many distributed ritual nodes**
+→ dismantled
+→ burned/powdered/defiled
+→ system pulled back toward Jerusalem/book-defined centre.
+
+This is the most aggressive re-centralization since Hezekiah.
+
+---
+
+# Material from dismantled nodes is repeatedly reduced to dust/ash and relocated
+
+The reform uses a recurring transformation:
+
+**cult object**
+→ removed
+→ burned
+→ crushed/powdered
+→ dust/ash carried elsewhere or placed on graves.
+
+This is not just “destroyed.”
+
+It is a deliberate:
+**structured object → particulate residue**
+transition.
+
+For the Vardath timeline:
+**ordered form can be deconstructed into unstructured residue before removal from the active system**.
+
+---
+
+# Kidron becomes a recurring disposal boundary
+
+Objects/material are:
+- taken out of temple/city;
+- burned at Kidron;
+- dust cast there.
+
+The Kidron previously marked:
+**David's flight out of Jerusalem**.
+
+Now it functions as:
+**centre-to-outside waste/removal channel**.
+
+Same geographic boundary.
+Different phase function.
+
+---
+
+# Josiah reaches backward through the timeline and physically completes 1 Kings 13's prediction
+
+At Bethel:
+- altar/high place destroyed;
+- graves noticed;
+- bones taken and burned on altar;
+- one special prophetic grave identified and preserved.
+
+The text explicitly says this fulfills the earlier word of the “man of God.”
+
+This is a remarkable long-range timeline closure:
+
+**prophecy spoken generations earlier**
+→ site persists
+→ dynasty/history passes
+→ future king arrives
+→ exact site is transformed
+→ older information is recognized as describing present action.
+
+So one place carries a dormant future-state marker across generations.
+
+---
+
+# Most bones are used to defile; one set of bones is deliberately preserved
+
+This creates a strong remnant distinction:
+
+**ordinary surrounding graves**
+→ bones removed/burned.
+
+**prophetic grave**
+→ identified
+→ “let him be”
+→ bones preserved.
+
+So the reform itself contains:
+**destruction + selective remnant preservation**.
+
+This is a recurring pattern throughout the research.
+
+---
+
+# Passover re-synchronizes dispersed people around one centre and one timing rule
+
+Josiah commands Passover in Jerusalem according to the found book.
+
+Chronicles especially emphasizes:
+- priests/Levites in divisions;
+- Ark resting in temple;
+- no longer carried on shoulders;
+- courses by fathers' houses;
+- one coordinated feast.
+
+This is a strong:
+**distributed population**
+→ shared calendar
+→ shared central place
+→ synchronized ritual action.
+
+The Ark is explicitly described in Chronicles as:
+**no longer a shoulder-burden**.
+
+That is a very clear closure of the earlier mobile-carrier phase.
+
+The portable centre has become permanently housed.
+
+---
+
+# Josiah's reform is maximal, yet Kings says the destruction trajectory remains
+
+Kings gives Josiah extraordinarily high praise:
+**no king before/after turned with all heart/soul/might like him**.
+
+Then immediately:
+**nevertheless**, judgment is not reversed because of Manasseh.
+
+This is one of the strongest anti-simplification controls in the corpus:
+
+**maximum local correction**
+≠
+**automatic cancellation of accumulated macro-state consequences**.
+
+The system can be visibly reformed while still approaching collapse.
+
+That matters greatly for the user's timeline:
+**surface restoration can occur inside a deeper irreversible cycle**.
+
+---
+
+# The chosen city and chosen house are themselves now explicitly rejectable
+
+2 Kings 23:27 says:
+- Judah will be removed;
+- Jerusalem, though chosen, will be rejected;
+- the house, though named as divine-name site, will be rejected.
+
+This completes the warning from 1 Kings 9.
+
+Earlier:
+**finished temple can theoretically become ruin**.
+
+Now:
+**rejection is declared as committed future state**.
+
+The centre's sacred status no longer guarantees preservation.
+
+---
+
+# Josiah at Megiddo — Kings and Chronicles again preserve different process narratives
+
+## Kings
+Pharaoh Neco goes toward the Euphrates/Assyrian conflict zone.
+Josiah meets him at Megiddo.
+Neco kills Josiah.
+
+Very compressed.
+
+## Chronicles
+Neco sends a message:
+- he is not attacking Josiah;
+- claims divine commission/urgency.
+Josiah:
+- refuses to turn aside;
+- disguises himself;
+- enters battle;
+- archers wound him;
+- he is transferred to another chariot;
+- returned to Jerusalem;
+- dies/is buried;
+- national lament follows.
+
+Chronicles therefore turns the event into:
+**warning signal rejected → disguise → battle contact → projectile wound → carrier transfer → return home → death**.
+
+Do not collapse the two into one exact sequence.
+
+---
+
+# Josiah's death is another case where a reforming centre cannot prevent the larger geopolitical field from determining outcome
+
+Egypt is moving north.
+Assyria/Babylon conflict lies beyond.
+Josiah enters the route.
+
+The Judahite reform project is therefore intersected by a much larger imperial corridor.
+
+Process:
+
+**internally reorganized small centre**
+→ enters larger inter-imperial flow
+→ centre is removed at boundary/battle node.
+
+This is the transition from:
+**internal reform story**
+to
+**imperial extraction story**.
+
+---
+
+# After Josiah, Judah's centre becomes externally controlled almost immediately
+
+People of the land install Jehoahaz.
+
+Then Pharaoh Neco:
+- binds him at Riblah;
+- removes him;
+- taxes land;
+- installs Eliakim;
+- renames him Jehoiakim;
+- carries Jehoahaz to Egypt.
+
+This is a decisive sovereignty change.
+
+The local population still performs succession,
+but an external imperial centre overrides it.
+
+Process:
+
+**local installation**
+→ external power intervenes
+→ king bound
+→ king removed
+→ replacement king appointed
+→ name changed
+→ tribute extracted from population.
+
+The centre is no longer self-defining.
+
+---
+
+# Naming itself becomes an imperial control surface
+
+Eliakim becomes:
+**Jehoiakim** by Pharaoh's action.
+
+This is not only a personal rename.
+
+It visibly marks:
+**external centre's authority to redefine local ruler identity**.
+
+The king remains on Jerusalem's throne,
+but part of his public identity now comes from the foreign superior.
+
+This is a strong sign of **vassal-state recoupling**.
+
+---
+
+# Tribute extraction moves from ruler to population
+
+Jehoiakim pays Egypt by taxing:
+**the people of the land, each according to assessment**.
+
+So the external imperial demand becomes:
+
+**Egyptian centre**
+← payment
+← Jerusalem king
+← distributed local population.
+
+This is a cascading extraction chain.
+
+The next Babylonian phase will intensify this until objects/people themselves are extracted.
+
+---
+
+# SECTION 38B-A continuous geometry/effect timeline — Manasseh → Josiah → Egyptian override
+
+## Phase A — centralized sacred topology reverses
+
+Hezekiah removes distributed nodes
+→ Manasseh rebuilds them
+→ alternatives enter temple courts/house.
+
+**Effect:** competing topology penetrates centre itself.
+
+---
+
+## Phase B — destruction is represented as measured wipe/inversion
+
+Samaria/Ahab line-plummet
+→ applied to Jerusalem
+→ dish wiped
+→ turned upside down.
+
+**Effect:** earlier collapsed system becomes template for later collapse.
+
+---
+
+## Phase C — repeated violence saturates city
+
+local bloodshed
+→ “from end to end.”
+
+**Effect:** city represented as whole-volume moral saturation.
+
+---
+
+## Phase D — Chronicles adds expulsion/return branch absent from Kings
+
+Manasseh
+→ hooks/fetters
+→ Babylon
+→ distress/humbling
+→ prayer
+→ return Jerusalem.
+
+**Effect:** external hostile centre temporarily functions as transformation/exile chamber.
+
+---
+
+## Phase E — shell repaired before interior reordered
+
+returned Manasseh
+→ outer wall/defences strengthened
+→ foreign objects/altars removed
+→ altar restored.
+
+**Effect:** boundary stabilization precedes interior purification.
+
+---
+
+## Phase F — restoration remains incomplete
+
+high-place worship persists.
+
+**Effect:** returned system does not exactly regain predecessor configuration.
+
+---
+
+## Phase G — inner coup removed by outer population
+
+Amon killed by servants in house
+→ people kill conspirators
+→ Josiah installed.
+
+**Effect:** local inner-network seizure is reversed by broader field.
+
+---
+
+## Phase H — physical repair exposes hidden instruction
+
+damaged temple
+→ repair
+→ hidden book found.
+
+**Effect:** material maintenance reveals dormant information capable of reorganizing whole system.
+
+---
+
+## Phase I — inert information becomes active only when read
+
+book found
+→ handed over
+→ read
+→ centre tears clothing.
+
+**Effect:** stored text changes state only after decoding.
+
+---
+
+## Phase J — written information is checked through interpretive channel
+
+book
+→ king
+→ delegation
+→ Huldah
+→ future-state interpretation.
+
+**Effect:** text + interpreter form a two-stage decision system.
+
+---
+
+## Phase K — local reform and macro-fate split
+
+Josiah responds correctly
+but
+Jerusalem/Judah judgment remains.
+
+**Effect:** local state can improve while global delayed trajectory stays fixed.
+
+---
+
+## Phase L — Kings/Chronicles preserve different causal order
+
+Kings:
+book → reform.
+
+Chronicles:
+reform begins → book found → reform intensified/confirmed.
+
+**Effect:** same event-set has different narrative process order depending source.
+
+---
+
+## Phase M — hidden information is broadcast nationally
+
+temple book
+→ priest/scribe/king
+→ elders/people
+→ public covenant.
+
+**Effect:** localized recovered information becomes system-wide control signal.
+
+---
+
+## Phase N — multi-centred network is deliberately collapsed
+
+distributed cult nodes
+→ removed/burned/powdered/defiled
+→ Jerusalem/book orientation strengthened.
+
+**Effect:** aggressive re-centralization.
+
+---
+
+## Phase O — structured objects reduced to residue before removal
+
+altars/images
+→ burn/crush
+→ powder/ash
+→ relocated outside active centre.
+
+**Effect:** form is dismantled before material leaves system.
+
+---
+
+## Phase P — same Kidron boundary changes function
+
+David:
+Kidron = escape route.
+
+Josiah:
+Kidron = disposal/removal channel.
+
+**Effect:** one boundary carries different direction/function by phase.
+
+---
+
+## Phase Q — ancient prediction closes at same geographic node
+
+1 Kings 13 word
+→ generations
+→ Bethel altar still exists
+→ Josiah arrives
+→ foretold transformation enacted.
+
+**Effect:** dormant future-information marker persists across long timeline.
+
+---
+
+## Phase R — destruction includes selective remnant preservation
+
+many bones disturbed/burned
+but
+prophetic grave preserved.
+
+**Effect:** reset does not erase every remnant equally.
+
+---
+
+## Phase S — central calendar + central place re-synchronize field
+
+Passover
+→ one time
+→ Jerusalem
+→ distributed people/courses align.
+
+**Effect:** synchronization can be temporal and spatial simultaneously.
+
+---
+
+## Phase T — mobile Ark phase declared closed
+
+Chronicles:
+Ark stays in Solomon's house
+→ no more shoulder burden.
+
+**Effect:** formerly portable core has become fixed centre.
+
+---
+
+## Phase U — maximum local reform cannot cancel accumulated macro-state
+
+Josiah's full-turn reform
+→ judgment still stands.
+
+**Effect:** visible restoration can coexist with deeper irreversible trajectory.
+
+---
+
+## Phase V — chosen centre itself becomes rejectable
+
+Jerusalem/temple:
+chosen/name-bearing
+→ future rejection declared.
+
+**Effect:** status is conditional; sacred centre can lose functional relationship without disappearing first.
+
+---
+
+## Phase W — larger imperial corridor intersects local reform
+
+Josiah/Megiddo
+→ Egyptian northward movement
+→ king removed.
+
+**Effect:** external macro-field can override internally coherent local system.
+
+---
+
+## Phase X — local succession becomes subordinate to foreign centre
+
+people install Jehoahaz
+→ Egypt binds/removes him
+→ installs/renames Jehoiakim
+→ tribute imposed.
+
+**Effect:** centre loses sovereignty over its own succession identity.
+
+---
+
+## Phase Y — external extraction reaches through king into distributed population
+
+Egypt
+← tribute
+← Jehoiakim
+← assessed people.
+
+**Effect:** imperial demand propagates down the local network.
+
+---
+
+# What Section 38B-A adds to the master timeline
+
+1. **A centralized sacred system can reverse without architectural destruction by allowing competing nodes into the centre itself.**
+2. **Earlier collapsed systems can become explicit geometric templates for later destruction (“line/plummet”).**
+3. **Chronicles preserves an exile→humbling→return cycle for Manasseh that Kings entirely omits; source-specific timelines must remain separate.**
+4. **A hostile external centre can function as temporary transformation space in one phase and terminal extraction centre in a later phase.**
+5. **Post-exile repair can proceed shell-first, interior-second.**
+6. **Return/reform does not guarantee restoration of prior topology; residual distributed structures remain.**
+7. **Repair of a damaged physical centre can expose hidden information that reorganizes the entire system.**
+8. **Information requires decoding and interpretation before it becomes active control.**
+9. **A good local response can alter personal/local outcomes without cancelling a larger accumulated trajectory.**
+10. **Kings and Chronicles can arrange the same reform material in different causal orders; literary sequence must not be mistaken for one uncontested chronology.**
+11. **A hidden text can move from local object → public broadcast → national covenant state.**
+12. **Reform can act by reducing ordered competing structures to particulate residue, then ejecting them from the active network.**
+13. **One geographic boundary can repeatedly change function across timeline phases.**
+14. **Long-range prophecy can bind a future transformation to a persistent site across generations.**
+15. **Even severe re-centralization preserves selected remnants.**
+16. **Synchronization can operate through both shared time and shared centre.**
+17. **The mobile-carrier phase of the Ark is explicitly closed in Chronicles.**
+18. **Maximum visible restoration can exist inside an already irreversible macro-collapse trajectory.**
+19. **A chosen sacred centre can be explicitly scheduled for rejection, proving that selected status is not material invulnerability.**
+20. **Imperial-scale flows can override a locally coherent/reformed centre.**
+21. **Foreign domination progresses from military intervention → king removal → replacement ruler → renaming → distributed tribute extraction.**
+
+---
+
+## Section 38B-A textual / historical controls
+
+- 2 Kings and 2 Chronicles give **substantially different Manasseh trajectories**. Kings does not narrate captivity, repentance or reform; Chronicles does.
+- The Chronicler's Babylonian captivity of Manasseh is historically debated. Assyria controlled Babylon during parts of Manasseh's reign, making “taken to Babylon by Assyrians” not impossible in geopolitical terms, but no independent source confirms this episode.
+- The **Prayer of Manasseh** is a later separate penitential text and should not be silently inserted into Chronicles' narrative as the exact prayer meant there.
+- The “line of Samaria / plummet of Ahab” and overturned dish are prophetic metaphors, not engineering instructions.
+- Josiah's “book of the law” has famously been linked to Deuteronomy since de Wette; the exact extent/date/history of the discovered book remains debated.
+- Scholars debate how much of Josiah's reform is historical versus Deuteronomistic literary shaping.
+- Chronicles deliberately reorders Josiah's reforms so that purging begins before the book discovery; Kings more strongly makes the book the reform trigger.
+- The temple repair/book-finding narrative may reflect literary theology as well as historical memory.
+- Huldah's oracle separating Josiah's fate from Jerusalem's fate is secure in both Kings and Chronicles.
+- Josiah's Bethel reform has major compositional/redactional discussion; archaeological evidence should not be used to treat every detail as straightforward event reportage.
+- 2 Kings 23:4–20 and 2 Chronicles 34 differ significantly in their geographic/reform details.
+- The extraordinary Passover claims are theological/literary evaluations and exact scale cannot be independently verified.
+- Josiah's death differs sharply between Kings and Chronicles. Kings is terse; Chronicles adds Neco's warning, disguise, archers, chariot transfer and lament.
+- Pharaoh Neco II and the late seventh-century BCE Egyptian campaign toward the Euphrates belong to a historically well-attested imperial struggle, but the biblical motives/details remain literary sources.
+- “Peaceful death” in Huldah's oracle versus Josiah's battle death has generated extensive interpretation; do not force a simple harmonization.
+- After Josiah, Egyptian appointment/renaming of Jehoiakim is a strong narrative indicator of lost Judahite autonomy.
+
+### Sources logged for Section 38B-A
+
+Primary:
+- Mechon-Mamre, **2 Kings 21–23**.
+- Mechon-Mamre, **2 Chronicles 33–35**.
+
+Scholarly controls:
+- Sara Japhet / major Chronicles commentary tradition on **2 Chronicles 33–35**, especially the Chronicler's distinct Manasseh and Josiah sequences.
+- Brent A. Strawn, **“Reading Josiah Reading Deuteronomy.”**
+- Oded Lipschits, **“On Cash-Boxes and Finding or Not Finding Books: Jehoash's and Josiah's Decisions to Repair the Temple.”**
+- Gary N. Knoppers, **“Yhwh's Rejection of the House Built for His Name: On the Significance of Anti-temple Rhetoric in the Deuteronomistic History.”**
+- W. Boyd Barrick, **The King and the Cemeteries: Toward a New Understanding of Josiah's Reform**.
+- scholarship on Hezekiah/Josiah reform traditions and their Deuteronomistic/redactional histories.
+- scholarship on the historical/geopolitical context of Josiah, Neco II and the late Assyrian collapse.
+- Fortress Commentary and related scholarship on Manasseh/Prayer of Manasseh traditions.
+
+**Section 38B remains in progress.**
+
+### Next block
+
+**2 Kings 24–25 + 2 Chronicles 36**:
+- Babylonian vassalage and repeated king replacement;
+- first elite/treasure extraction;
+- Jehoiachin deportation;
+- Zedekiah installed/renamed;
+- rebellion;
+- Jerusalem enclosed by siege wall;
+- famine breaches internal capacity;
+- city wall physically breached;
+- king and army escape by night through double-wall gate;
+- field disperses;
+- king captured;
+- sons killed before his eyes;
+- eyes removed;
+- bound and carried to Babylon;
+- temple, palace and houses burned;
+- walls broken;
+- remaining population sorted into deported/left-behind groups;
+- bronze temple network dismantled and carried away;
+- Gedaliah remnant administration;
+- assassination/re-flight to Egypt;
+- Jehoiachin later lifted from prison and given a seat above other captive kings.
+
