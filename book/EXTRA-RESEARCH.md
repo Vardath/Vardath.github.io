@@ -63676,3 +63676,1449 @@ Scholarly controls:
 - cloud fills house and stops priestly service;
 - Solomon's speech/prayer repeatedly contrasts fixed “house” with heaven that cannot be contained.
 
+
+
+---
+
+# SECTION 35 progress B — 1 Kings 5–8
+## Long-distance material convergence, rotational labour, silent off-site preparation, nested temple enclosure, paired bronze pillars, four-directional twelve-ox support, wheeled water nodes, Ark ascent, cloud saturation, and a fixed earthly focal point that explicitly does not contain the heavenly source
+
+---
+
+# 1 Kings 5 — stable centre becomes a massive intake network
+
+The text presents Solomon's state as:
+- broad territorial dominance;
+- surrounding peace/rest;
+- large daily provisioning;
+- horses/chariots;
+- officials delivering supplies in monthly turns;
+- foreign rulers and peoples coming to hear wisdom.
+
+So the centre is no longer struggling to survive.
+
+It is now **pulling resources, information and visitors inward from a wide field**.
+
+The process is:
+
+**political stability**
+→ **large central demand**
+→ **scheduled peripheral inflow**
+→ **monumental construction becomes possible**.
+
+This continues Section 35A's twelve-district rotation.
+
+---
+
+# “Rest on every side” is the trigger for fixed sacred architecture
+
+Solomon explicitly contrasts:
+- David surrounded by wars;
+- Solomon now having rest;
+- therefore Solomon can build the house.
+
+This completes the delayed branch from 2 Samuel 7:
+
+**mobile/conflict phase**
+→ building deferred
+→ successor obtains surrounding rest
+→ fixed sacred architecture begins.
+
+That is a very clean **phase-dependent construction rule**:
+**permanent enclosure is attempted only after the external field becomes sufficiently stable.**
+
+---
+
+# Material streams converge from different regions through different transport modes
+
+The temple project needs:
+- cedar/cypress from Lebanon;
+- skilled Sidonian/Phoenician labour;
+- quarried stone from mountain zones;
+- food/oil from Solomon's territory;
+- metalworking expertise from Tyre in chapter 7.
+
+Hiram's transport plan is explicitly multi-stage:
+
+**trees in Lebanon**
+→ felled
+→ brought **down** to sea
+→ bound into rafts
+→ floated by sea
+→ broken apart at destination
+→ Solomon receives them
+→ overland/building integration.
+
+This is a very strong carrier/cargo chain.
+
+One material object changes transport mode repeatedly:
+**standing tree**
+→ cut timber
+→ raft-unit
+→ separated timber
+→ building component.
+
+---
+
+# Reciprocal exchange links two centres
+
+Hiram supplies timber.
+
+Solomon supplies:
+- wheat;
+- oil;
+- food for Hiram's household.
+
+So the relation is not only:
+**periphery → Jerusalem**.
+
+It is a bilateral exchange:
+
+**Tyre/Lebanon → construction material**
+↔
+**Solomon's agricultural field → food/oil**.
+
+This is a two-centre exchange network.
+
+The “two forces” here are cooperative rather than oppositional.
+
+---
+
+# Solomon and Hiram form a paired covenantal construction network
+
+The text says:
+- peace between Hiram and Solomon;
+- the two make a covenant/league.
+
+This pair is worth recording because the temple is materially produced through:
+**Israelite royal centre**
++
+**Phoenician maritime/craft centre**.
+
+The sacred centre is therefore built through **cross-border material and technical coupling**.
+
+That fact should remain visible in the Vardath timeline.
+
+---
+
+# Labour is converted into a time-rotation
+
+Solomon levies **30,000** workers.
+
+He sends:
+**10,000 per month to Lebanon**.
+
+Rotation:
+- one month in Lebanon;
+- two months at home.
+
+This is another strong:
+**population → timed rotation**
+pattern.
+
+Compare the twelve district officers:
+- each district supplies centre for one month/year.
+
+Now labour:
+- one third active remotely;
+- two thirds out of that remote phase at any given month.
+
+So Solomon's regime repeatedly converts **space and population into periodic cycles**.
+
+---
+
+# Rotational geometry does not erase the human cost
+
+The text also lists:
+- burden bearers;
+- stonecutters;
+- overseers;
+- forced levy.
+
+Scholarship treats corvée labour as a normal ancient Near Eastern state practice, but “normal” does not mean benign.
+
+The narrative will later connect Solomon's labour burden to political resentment.
+
+Therefore:
+**rotational efficiency**
+must be tracked together with
+**extraction/load imposed on people**.
+
+This is an important Vardath control:
+a geometrically elegant system can still be socially unstable because of what it costs the components.
+
+---
+
+# Large stones are cut away from the sacred site before arrival
+
+The building stones are:
+- quarried;
+- hewn/prepared;
+- then brought to the construction.
+
+1 Kings 6 makes the consequence explicit:
+**no hammer, axe or iron tool is heard at the house while it is being built**.
+
+So there is a strong two-zone construction process:
+
+### noisy transformation zone
+quarry / remote preparation.
+
+### quiet assembly zone
+temple site.
+
+Process:
+
+**raw material**
+→ shaped outside
+→ transported inward
+→ fitted silently.
+
+That is a striking:
+**transformation outside / assembly inside**
+rule.
+
+---
+
+# 1 Kings 6 — temple is a nested enclosure rather than one undifferentiated room
+
+The building is described through progressively inner zones:
+- porch/entrance;
+- main hall/temple;
+- inner sanctuary / most holy place;
+- side chambers around the exterior;
+- inner court outside.
+
+So the sacred architecture is a **nested boundary system**.
+
+Broad process:
+
+**outside**
+→ entrance
+→ main enclosure
+→ inner enclosure
+→ innermost Ark-zone.
+
+This is a much more formalized version of the Tabernacle nesting already encountered in Exodus.
+
+---
+
+# The innermost sanctuary is cubic
+
+The inner sanctuary is described:
+**20 cubits long × 20 wide × 20 high**.
+
+That gives an explicit cube-like volume.
+
+Record the geometry.
+
+Do not infer hidden mathematics beyond the text.
+
+At minimum:
+**the deepest enclosure has equal dimensions in three axes**.
+
+This is one of the strongest perfect-volume geometries in the temple material.
+
+---
+
+# Outer architecture narrows and changes by level
+
+The building includes:
+- side chambers in three levels;
+- lower, middle, upper widths changing;
+- winding stairs upward.
+
+So the outer envelope is not a simple box.
+
+It has:
+**layered wrapping**
++
+**vertical progression**
++
+**changing widths**.
+
+The system is therefore:
+**central nested core**
+inside
+**multi-level surrounding shell**.
+
+That is highly relevant to the user's layered-shell comparison.
+
+But it is ordinary architecture first.
+
+---
+
+# The building is assembled in silence because transformation happened elsewhere
+
+1 Kings 6:7 emphasizes:
+**no hammer / axe / iron tool heard in the house during construction**.
+
+Process:
+
+**violent/noisy material transformation**
+is spatially separated from
+**sacred final assembly**.
+
+This is almost the architectural inverse of battle:
+material arrives **already transformed**.
+
+The centre receives finished components rather than processing them internally.
+
+---
+
+# The house is not sufficient by itself; covenant state still controls indwelling
+
+Midway through the architecture description, the divine word says in effect:
+
+**if Solomon/Israel walks rightly**
+→ divine promise continues
+→ God dwells among Israel.
+
+So the text itself interrupts architectural detail to deny a purely mechanical reading.
+
+**building exists**
+does not automatically mean
+**relationship/presence secured**.
+
+This becomes critical in chapters 9–11.
+
+The state variable is:
+**architecture + covenantal conduct**,
+not architecture alone.
+
+---
+
+# Two giant cherubim form a wall-to-wall paired span over the innermost zone
+
+Inside the sanctuary:
+- two olive-wood cherubim;
+- same dimensions/form;
+- each ten cubits high;
+- each has two five-cubit wings.
+
+Placement:
+- outer wing of one touches one wall;
+- outer wing of the other touches opposite wall;
+- inner wings touch **one another at the centre**.
+
+This is an exceptionally clear bilateral geometry.
+
+The pair creates:
+
+**wall**
+← wing / cherub / wing
+→ **centre contact**
+← wing / cherub / wing
+→ **opposite wall**.
+
+In effect:
+**two mirrored figures bridge the full width of the innermost space and meet at the midpoint.**
+
+This is one of the strongest “two forces meeting in the middle” architectural images encountered so far.
+
+---
+
+# Pair test — two cherubim are symmetric, not antagonistic
+
+Important control:
+the two cherubim are not described as fighting.
+
+They are:
+- same measure;
+- same form;
+- opposite sides;
+- wings meet at centre.
+
+So the relevant two-force class is:
+**paired mirrored supports/guardians converging at centre**,
+not
+**opposing combatants**.
+
+This distinction matters for the Vardath model.
+
+---
+
+# Repeated botanical/winged motifs turn hard enclosure into a carved living surface
+
+Walls and doors carry:
+- cherubim;
+- palm trees;
+- open flowers.
+
+Stone is visually hidden inside by cedar and gold.
+
+So the inner surface becomes:
+**architecture covered by wood/gold and life/wing imagery**.
+
+This gives a material transformation:
+
+**raw stone enclosure**
+→ concealed
+→ **ornamented living/garden-like interior surface**.
+
+Scholars frequently compare temple decoration to wider Levantine sacred/garden traditions.
+
+Do not assume a literal botanical world inside.
+
+---
+
+# Seven-year temple build followed by thirteen-year palace build — record the asymmetry without forcing judgment
+
+Temple:
+**seven years**.
+
+Solomon's palace complex:
+**thirteen years**.
+
+Some scholarship treats the longer palace construction as a narrative signal of Solomon's self-expansion; others emphasize scale and differing projects.
+
+Record:
+**sacred house completed first**
+→ **larger royal complex continues much longer**.
+
+Do not automatically turn 7/13 into cosmological numbers.
+
+---
+
+# 1 Kings 7 — paired entrance pillars Jachin and Boaz
+
+The bronze craftsman Hiram makes:
+**two bronze pillars**.
+
+They are set at the temple porch:
+- right pillar named **Jachin**;
+- left pillar named **Boaz**.
+
+They are decorated with:
+- capitals;
+- networks/chains;
+- lilies;
+- pomegranates.
+
+These are the only temple architectural elements in the passage explicitly given personal names.
+
+This is a high-priority pair for the roadmap.
+
+---
+
+# Jachin / Boaz — secure geometry versus uncertain meaning
+
+Secure:
+- two monumental bronze pillars;
+- paired at the entrance/porch;
+- right/left distinction;
+- individually named;
+- matched decorative system.
+
+Less secure:
+- whether they were free-standing or structurally supported a porch roof;
+- exact orientation from observer perspective;
+- exact symbolic meaning of names;
+- solar/lunar, dynasty, cosmic pillar, cloud/fire and other later interpretations.
+
+Archaeological comparisons show paired entrance columns were a real feature of Levantine temples such as Hazor, Motza, Ain Dara and Tell Tayinat.
+
+Therefore:
+**pair-at-threshold** is robust.
+
+Specific esoteric symbolism is not.
+
+---
+
+# Pair geometry — threshold is framed by two named verticals
+
+The entrance is therefore not merely an opening.
+
+It is:
+**left named vertical**
+→ passage/threshold
+← **right named vertical**.
+
+For the user's two-force geometry:
+this is a genuine architectural:
+**two sides define a central passage**.
+
+Unlike the cherubim:
+- pillars do not meet in the middle;
+- they hold/frame the open route between them.
+
+So we now have two different paired geometries inside one temple:
+
+### inner pair
+cherubim extend inward and **touch at centre**.
+
+### outer pair
+pillars stand apart and **frame passage**.
+
+That distinction is important.
+
+---
+
+# Floral and pomegranate networks wrap the tops of the pillars
+
+The capitals carry:
+- chain/network forms;
+- lilies;
+- pomegranates in rows.
+
+So the vertical pair terminates in:
+**woven/networked + botanical expansion**.
+
+This may be visually relevant to the user's lattice/finger-trap interests.
+
+But there is no textual basis for saying the pillars literally model a finger-trap.
+
+Correct status:
+**network and plant motifs decorate the paired vertical threshold markers**.
+
+---
+
+# Bronze Sea — one circular water body rests above twelve directional animal supports
+
+The Sea is described:
+- circular;
+- ten cubits brim-to-brim;
+- five cubits high;
+- large-volume water container;
+- lily-like rim.
+
+Under it:
+**twelve bovine figures**.
+
+Arrangement:
+- **three north**;
+- **three west**;
+- **three south**;
+- **three east**;
+- hindquarters point inward;
+- Sea rests above them.
+
+This is one of the most explicit cardinal-direction geometries in the Bible.
+
+---
+
+# Twelve becomes 4 × 3 around one central water body
+
+The arrangement is not just “twelve.”
+
+It is explicitly:
+
+**3 north**
++ **3 west**
++ **3 south**
++ **3 east**
+= **12**
+
+with all four groups supporting:
+**one Sea above**.
+
+So the functional geometry is:
+
+**four directional faces**
+× **three supports each**
+→ **one central elevated circular water body**.
+
+This is a strong 3/4/12 structure and should be recorded exactly.
+
+Do not collapse it into the user's 1-3-7 or 3-4-5 schemes without evidence.
+
+---
+
+# All rear parts point inward while faces point outward
+
+This is a particularly interesting orientation rule.
+
+Each group faces outward toward its cardinal direction.
+
+All rear parts are inward beneath the Sea.
+
+Thus:
+
+**outward-facing distributed directions**
+but
+**inward-converging bodies/support base**.
+
+The Sea sits above the convergence.
+
+This is a genuine:
+**outward orientation + inward support**
+geometry.
+
+For the Vardath model this could matter when comparing:
+- worlds/forces projecting outward;
+- shared central load held inward.
+
+But no physical cosmology should yet be claimed.
+
+---
+
+# Sea symbolism is debated
+
+Scholarly interpretations include:
+- giant ritual basin;
+- purification/water source;
+- symbolic sea / primordial waters;
+- cosmological temple imagery.
+
+Other scholarship argues against reading it as a subdued chaos-monster/divine-combat object.
+
+David Shapira argues the Sea may have been primarily symbolic, with practical washing supplied through smaller basins, but this remains debated.
+
+Therefore:
+**large elevated circular water body + twelve four-direction supports**
+is secure.
+
+**primordial ocean / cosmic sea / chaos conquest**
+is interpretive.
+
+---
+
+# Ten mobile stands create a second water system
+
+The temple also has:
+- ten bronze bases/stands;
+- each with wheels;
+- lions, oxen, cherubim, palms;
+- one laver on each.
+
+Arrangement:
+- **five on right**;
+- **five on left**.
+
+This gives another paired distribution:
+
+**5 mobile water nodes**
+↔ house ↔
+**5 mobile water nodes**.
+
+Unlike the one large Sea:
+these are multiple wheeled/local units.
+
+So there are two water architectures:
+
+### one central/static large Sea
+supported by 12 directional figures.
+
+### ten smaller/mobile wheeled basins
+split 5 + 5.
+
+This is worth preserving as a functional contrast.
+
+---
+
+# Wheels turn water nodes into movable service interfaces
+
+The bases have:
+- wheels;
+- axles;
+- spokes;
+- rims;
+- integrated supports.
+
+The biblical description is unusually mechanical.
+
+Process:
+
+**water container**
++
+**wheeled carrier**
+→ mobile ritual/service node.
+
+This is another carrier/cargo architecture:
+**water held above moving wheel system**.
+
+Ancient Near Eastern iconographic parallels exist for wheeled cult stands, though exact function and reconstruction remain debated.
+
+---
+
+# Metal objects are cast away from Jerusalem and then brought inward
+
+The bronze objects are cast:
+**in the Jordan plain between Succoth and Zarethan**.
+
+Then they become furnishings in Jerusalem.
+
+So again:
+
+**material transformation outside sacred centre**
+→ transport
+→ final placement inside centre.
+
+Same pattern as the quarried stones.
+
+The temple repeatedly separates:
+**manufacturing zone**
+from
+**sacred assembly zone**.
+
+---
+
+# 1 Kings 8 — the Ark moves upward from old Davidic city into the completed nested house
+
+The elders/heads assemble.
+
+The purpose:
+**bring up the Ark**
+from:
+**City of David / Zion**
+into:
+**new temple sanctuary**.
+
+So the Ark undergoes another major relocation.
+
+Earlier:
+**outside/mobile Ark**
+→ Jerusalem tent under David.
+
+Now:
+**Davidic tent/city state**
+→ **Solomonic fixed-house state**.
+
+This completes the deferred architecture branch from 2 Samuel 7.
+
+---
+
+# Entire sacred apparatus is moved, not only the Ark
+
+The text includes:
+- Ark;
+- Tent of Meeting;
+- holy vessels.
+
+Priests/Levites bring them up.
+
+This is a system migration:
+**older portable sacred infrastructure**
+→ newer fixed enclosure.
+
+The mobile phase is not simply discarded;
+its objects are **absorbed into the fixed phase**.
+
+---
+
+# Ark passes into deepest enclosure beneath the touching wings
+
+The route is:
+
+**city**
+→ up
+→ temple
+→ sanctuary
+→ most holy place
+→ beneath cherubim wings.
+
+The Ark therefore reaches the deepest nested position under the paired figures whose wings:
+- span to the walls;
+- meet in the centre.
+
+This is a strong:
+**mobile core → fixed central cavity beneath bilateral span**
+transition.
+
+---
+
+# The Ark contains only the two stone tablets in this Kings account
+
+The text explicitly says:
+**nothing in Ark except the two tablets from Horeb**.
+
+This is a textual control against importing every later/other tradition about Ark contents into this scene.
+
+For the geometry:
+**portable covenant core has been reduced in narration to two stone tablets within the innermost container**.
+
+Again a strong pair:
+**two tablets inside one Ark inside one innermost chamber**.
+
+---
+
+# Priests exit before cloud fills the house
+
+Sequence is precise:
+
+**priests place Ark**
+→ priests **come out**
+→ cloud fills house
+→ priests cannot stand to minister.
+
+This is important.
+
+The cloud does not enter while priests are still actively handling the Ark in the text.
+
+The human operators first withdraw.
+
+Then the house becomes saturated.
+
+Process:
+
+**human placement completed**
+→ operators exit
+→ nonhuman presence fills enclosure
+→ ordinary human service becomes impossible.
+
+---
+
+# Cloud changes the house from accessible service-space into saturated presence-space
+
+The priests cannot stand to minister because:
+**glory/cloud fills the house**.
+
+This is almost the opposite of the empty architectural phase.
+
+Before:
+**house built, furnished, operators active**.
+
+After cloud:
+**space becomes so occupied that operators cannot continue normal service**.
+
+For the user's model:
+**filling changes functional accessibility of a volume**.
+
+This is a useful process abstraction.
+
+---
+
+# Direct parallel to Exodus 40
+
+This closely repeats the Tabernacle completion:
+
+Exodus 40:
+- structure completed;
+- cloud covers/fills;
+- Moses cannot enter.
+
+1 Kings 8:
+- fixed temple completed;
+- Ark installed;
+- cloud fills;
+- priests cannot stand to minister.
+
+So:
+**portable sanctuary completion**
+and
+**fixed sanctuary completion**
+share the same terminal signature:
+
+**construction/placement**
+→ **cloud filling**
+→ **human access/function temporarily blocked**.
+
+This is one of the strongest cross-book transformation recurrences so far.
+
+---
+
+# Fixed house is immediately denied the power to contain the source
+
+Solomon says:
+**heaven and heaven of heavens cannot contain You**
+→ how much less this house.
+
+This is crucial.
+
+The text both:
+- calls temple a dwelling/place;
+- explicitly says the deity is not physically containable by it.
+
+Therefore:
+**local focal presence**
+≠
+**total source containment**.
+
+This is highly compatible with the project's distinction between:
+- a local interface/node;
+- a larger system/source beyond it.
+
+But it must remain within the text's theological frame.
+
+---
+
+# Temple becomes directional interface rather than divine prison
+
+Solomon repeatedly asks:
+when people:
+- pray **toward this place**;
+- even from distant land;
+- even from exile;
+
+then:
+**hear in heaven**.
+
+That creates a directional communication system:
+
+**distributed person anywhere**
+→ orient/pray toward temple/city
+→ signal addressed through focal place
+→ hearing occurs in heaven.
+
+So:
+**earthly temple = interface/address**
+while
+**heaven = actual hearing/dwelling domain**.
+
+This is a very strong spatial-information distinction.
+
+---
+
+# Remote orientation preserves coupling across huge distance
+
+Solomon imagines people:
+- at war;
+- in another land;
+- captive far away.
+
+They can remain linked by:
+**turning toward land → city → house**.
+
+This is nested directional addressing:
+
+**foreign location**
+→ **their land**
+→ **chosen city**
+→ **house**.
+
+Then:
+**heaven hears**.
+
+This is almost a hierarchical routing protocol.
+
+The temple functions as a **directional anchor** for distributed nodes.
+
+---
+
+# Prayer explicitly includes shut heaven / rain return
+
+The prayer imagines:
+**heaven shut**
+→ no rain.
+
+Then:
+- people turn/pray;
+- heaven hears;
+- rain returns to land.
+
+This is another:
+**closed upper boundary**
+→ relational/information correction
+→ **upper-lower flow resumes**
+image.
+
+It belongs to covenant theology, not physical weather mechanics.
+
+Still, the process language is relevant.
+
+---
+
+# Exile case is a full long-distance return without bodies returning first
+
+The most striking prayer case:
+
+people carried captive to enemy land
+→ they **turn in heart**
+→ pray toward:
+1. land,
+2. city,
+3. house.
+
+Then divine hearing/forgiveness is requested from heaven.
+
+This means:
+**functional recoupling can begin before metric return**.
+
+That is the same principle already found with Uriah in reverse:
+- body in Jerusalem while functionally coupled to field.
+
+Here:
+- body far away while relationally oriented toward homeland/temple.
+
+Again:
+**functional adjacency ≠ geographic proximity**.
+
+---
+
+# The dedication expands beyond the normal altar capacity
+
+The sacrifice is so large that:
+**the regular bronze altar is too small**.
+
+Solomon sanctifies the middle of the court to extend sacrificial capacity.
+
+Process:
+
+**input/load exceeds designated node**
+→ adjacent space is temporarily reclassified
+→ system expands service area.
+
+This is a practical **capacity overflow** response.
+
+---
+
+# Seven + seven feast structure
+
+The dedication feast is described:
+**seven days + seven days = fourteen days**,
+with departure on the eighth day after the final feast sequence in the received text.
+
+Record the temporal structure.
+
+Do not force it into a cosmic cycle.
+
+The functional pattern is:
+**extended doubled completion interval**
+around the finished house.
+
+---
+
+# SECTION 35B continuous geometry/effect timeline — 1 Kings 5–8
+
+## Phase GU — surrounding rest opens the fixed-building branch
+
+war around David
+→ rest around Solomon
+→ temple project activated.
+
+**Effect:** architecture is phase-dependent on external-field stability.
+
+---
+
+## Phase GV — long-distance materials change carrier form on route inward
+
+Lebanon tree
+→ cut timber
+→ descend to sea
+→ raft
+→ sea transport
+→ raft broken
+→ timber received
+→ building element.
+
+**Effect:** cargo identity persists while transport configuration changes.
+
+---
+
+## Phase GW — two centres exchange complementary resources
+
+Tyre supplies timber/craft.
+Solomon supplies food/oil.
+
+**Effect:** sacred centralisation depends on bilateral external coupling.
+
+---
+
+## Phase GX — labour becomes timed rotation
+
+30,000
+→ 10,000 remote each month
+→ one month away / two home.
+
+**Effect:** population is mapped into repeating time-phase groups.
+
+---
+
+## Phase GY — transformation is externalized from sacred assembly zone
+
+stone/timber shaped outside
+→ transported inward
+→ silent fitting at house.
+
+**Effect:** noisy material transformation and quiet final assembly occupy separate zones.
+
+---
+
+## Phase GZ — sacred house is a nested multi-layer enclosure
+
+outside
+→ porch
+→ hall
+→ inner sanctuary
+with surrounding side layers.
+
+**Effect:** holiness/access is represented through progressive inward nesting.
+
+---
+
+## Phase HA — innermost volume equalizes three dimensions
+
+20 × 20 × 20.
+
+**Effect:** deepest enclosure forms an explicit cubic volume.
+
+---
+
+## Phase HB — paired cherubim bridge opposite walls and meet at centre
+
+wall ← wing/figure/wing → centre ← wing/figure/wing → wall.
+
+**Effect:** two mirrored bodies span the whole interior and touch at midpoint.
+
+---
+
+## Phase HC — mirrored pair is cooperative rather than adversarial
+
+same measure
++ same form
++ centre contact.
+
+**Effect:** two-force geometry can mean bilateral convergence/support, not opposition.
+
+---
+
+## Phase HD — architectural surface is transformed into botanical/winged interior
+
+stone structure
+→ cedar/gold concealment
+→ palm/flower/cherub carving.
+
+**Effect:** hard enclosure acquires living/garden-like visual skin.
+
+---
+
+## Phase HE — entrance is framed by two named vertical nodes
+
+Jachin
+↔ central threshold ↔
+Boaz.
+
+**Effect:** paired verticals define open passage rather than meeting at centre.
+
+---
+
+## Phase HF — two different pair geometries coexist
+
+outer:
+**pillars stand apart and frame passage**.
+
+inner:
+**cherubim extend inward and meet**.
+
+**Effect:** “two forces” must be classified by relation, not just counted as two.
+
+---
+
+## Phase HG — one elevated circular water body rests on four-directional 3×4 support array
+
+3 north
++ 3 west
++ 3 south
++ 3 east
+→ one Sea above.
+
+**Effect:** twelve is explicitly decomposed into four directional triples.
+
+---
+
+## Phase HH — directional supports face outward while structural load converges inward
+
+heads outward
++ rear parts inward
++ Sea above.
+
+**Effect:** outward directional orientation coexists with inward common support.
+
+---
+
+## Phase HI — one static water node contrasts with ten mobile water nodes
+
+Sea:
+one large fixed basin.
+
+Lavers:
+ten smaller wheeled basins
+→ five right / five left.
+
+**Effect:** central/static and distributed/mobile water architectures coexist.
+
+---
+
+## Phase HJ — wheeled carriers make local water service movable
+
+laver
++ bronze stand
++ wheels/axles
+→ mobile service unit.
+
+**Effect:** container and carrier integrate into one movable node.
+
+---
+
+## Phase HK — metal transformation again occurs outside sacred centre
+
+casting in Jordan plain
+→ transport to Jerusalem
+→ installation.
+
+**Effect:** temple repeatedly draws finished components from remote manufacturing zones.
+
+---
+
+## Phase HL — old mobile sacred system migrates into fixed house
+
+Ark + Tent + holy vessels
+→ brought up from City of David
+→ temple.
+
+**Effect:** fixed phase absorbs rather than simply erases mobile predecessor infrastructure.
+
+---
+
+## Phase HM — mobile core reaches deepest nested cavity
+
+Ark
+→ house
+→ inner sanctuary
+→ beneath spanning cherub wings.
+
+**Effect:** former travelling centre becomes fixed core within bilateral enclosure.
+
+---
+
+## Phase HN — pair within pair within one
+
+two tablets
+inside one Ark
+inside one sanctuary
+beneath two cherubim.
+
+**Effect:** multiple nested paired structures converge on one core.
+
+---
+
+## Phase HO — human operators withdraw before saturation
+
+priests place Ark
+→ exit
+→ cloud fills.
+
+**Effect:** active human handling ends before presence saturates volume.
+
+---
+
+## Phase HP — filling changes accessibility/function of enclosure
+
+cloud/glory fills house
+→ priests cannot stand to minister.
+
+**Effect:** occupancy state alters what operations are possible inside same space.
+
+---
+
+## Phase HQ — portable and fixed sanctuary share same completion signature
+
+Exodus Tabernacle:
+completion → cloud → Moses blocked.
+
+Kings Temple:
+completion → cloud → priests blocked.
+
+**Effect:** recurrence across mobile and fixed architectures suggests a stable transformation grammar.
+
+---
+
+## Phase HR — local house is explicitly not total containment
+
+temple called dwelling
+but
+heaven/heaven-of-heavens cannot contain source.
+
+**Effect:** focal node and total source are distinct scales.
+
+---
+
+## Phase HS — temple becomes directional communication interface
+
+remote person
+→ pray toward land/city/house
+→ hearing in heaven.
+
+**Effect:** local earthly node functions as address/interface rather than container.
+
+---
+
+## Phase HT — functional recoupling can precede physical return
+
+exile body remains far away
+→ turns heart/orientation toward centre
+→ communication restored.
+
+**Effect:** adjacency is relational/informational, not merely metric.
+
+---
+
+## Phase HU — closed upper flow can reopen
+
+heaven shut / no rain
+→ turning/prayer
+→ heaven hears
+→ rain returns.
+
+**Effect:** upper-lower exchange is represented as a switchable relation.
+
+---
+
+## Phase HV — overloaded central node causes service-area expansion
+
+bronze altar too small for input
+→ middle court temporarily sanctified for offerings.
+
+**Effect:** system expands active boundary when normal capacity is exceeded.
+
+---
+
+# What 1 Kings 5–8 adds to the master Bible/Vardath timeline
+
+122. **Fixed sacred architecture becomes possible only after a mobile/conflict phase reaches sufficient external stability.**
+123. **One material can preserve identity while repeatedly changing carrier configuration on a long inward route.**
+124. **A central sacred project can depend on a bilateral exchange network between distinct political/craft centres.**
+125. **Solomon repeatedly maps populations and regions into temporal rotations: district-month provision and labour-month deployment.**
+126. **Material transformation can be kept outside a sacred core while final assembly occurs quietly inside it.**
+127. **The temple formalizes progressive nested enclosure around a deepest cubic core.**
+128. **Two mirrored inner figures can span opposite boundaries and meet at the centre, producing cooperative bilateral convergence.**
+129. **Two outer named pillars create a different paired geometry: separated verticals framing a central passage.**
+130. **The same architecture therefore contains multiple “two-force” relations that must not be conflated: meet-at-centre versus frame-open-centre.**
+131. **The bronze Sea gives an explicit 12 = 4×3 cardinal-direction structure supporting one elevated circular water body.**
+132. **Its supports face outward while structurally converging inward, creating simultaneous outward orientation and shared inward load.**
+133. **One large static water node coexists with ten smaller wheeled/mobile water nodes split 5+5.**
+134. **The portable sacred system is absorbed into a fixed house rather than simply discarded.**
+135. **Temple completion repeats the Exodus completion grammar: structure completed → sacred core positioned → cloud fills → human operators cannot continue normal access/service.**
+136. **A local sacred centre can be a real interface without containing the total source; the text explicitly distinguishes temple from the heaven that exceeds it.**
+137. **Directional orientation toward a fixed node can preserve functional coupling across geographic separation and exile.**
+138. **A centre can increase active service area when ordinary capacity is exceeded.**
+139. **Architectural stability does not guarantee relational stability; the text inserts covenant conditions into the middle of construction itself.**
+140. **An elegant central structure can be sustained by heavy extraction from distributed human labour, meaning geometric order and social stability are separate variables.**
+
+---
+
+## Section 35B high-priority pair / geometry register
+
+### Solomon / Hiram
+Two cooperating centres:
+**agricultural/political**
+↔
+**maritime/craft/material**.
+
+### Jachin / Boaz
+Two named bronze verticals at threshold.
+
+Secure:
+- pair;
+- right/left;
+- monumental entrance role.
+
+Uncertain:
+- exact structural function;
+- exact symbolic meaning;
+- observer-relative orientation.
+
+### Two cherubim
+Mirrored equal pair:
+- opposite sides;
+- wings span to walls;
+- inner wings meet at midpoint.
+
+### Sea / twelve oxen
+One elevated water body:
+- 3 north;
+- 3 west;
+- 3 south;
+- 3 east.
+
+### One Sea / ten lavers
+Static central water mass versus distributed wheeled service water.
+
+### Five / five
+Ten stands divided right/left.
+
+### House / heaven
+Fixed focal enclosure versus uncontainable larger domain.
+
+### Earthly orientation / heavenly hearing
+Temple as address/interface, not ultimate receiver-location.
+
+---
+
+## Section 35B number / timing register
+
+Record without forcing:
+- labour levy **30,000**, in **10,000-per-month** courses;
+- one month away / **two months home**;
+- **70,000** burden bearers and **80,000** stonecutters in MT;
+- temple main dimensions **60 × 20 × 30 cubits**;
+- inner sanctuary **20 × 20 × 20**;
+- two cherubim, each **10 cubits** high, wing-span **10 cubits** each;
+- temple build **7 years**;
+- palace complex **13 years**;
+- two pillars **18 cubits** high in Kings tradition, with textual/parallel differences elsewhere;
+- two rows of pomegranates/network decoration; totals vary in related passages/traditions;
+- Sea: **10 cubits diameter**, **5 high**, **30 circumference** as rounded textual figures;
+- Sea capacity **2,000 baths in Kings / 3,000 in Chronicles**;
+- twelve oxen = **4 groups of 3**;
+- ten bases/lavers = **5 right + 5 left**;
+- dedication offerings include enormous totals that should not be used numerologically;
+- feast described **7 days + 7 days = 14**.
+
+The strongest functional number here is not a mysterious total but the explicit directional decomposition:
+**12 = 3 × 4 around one Sea**.
+
+---
+
+## Section 35B textual / archaeological / scholarly controls
+
+- Archaeological reconstruction of a tenth-century Solomonic temple remains contested because the Temple Mount itself is not available for ordinary excavation and the chronology/scale of the United Monarchy remains debated.
+- Iron Age temple parallels at Motza, Ain Dara, Tell Tayinat, Hazor and building models make the broad tripartite/columned architectural description culturally plausible, but do not prove every Solomonic detail historically.
+- Do not add architectural features absent from 1 Kings merely because older reconstructions commonly draw them.
+- Jachin and Boaz may have been free-standing or may have supported a porch roof; both views exist in scholarship.
+- Their names are often connected with roots meaning establishment/strength, but full slogans/theological readings are reconstructed, not written in the narrative.
+- Later Freemasonic, occult and esoteric interpretations are not evidence for the Iron Age meaning of the pillars.
+- The cherubim geometry is unusually secure because the text gives dimensions and contact relations explicitly.
+- The exact form, capacity and practical use of the bronze Sea are debated. Kings and Chronicles differ in capacity.
+- Cosmic/primeval-water interpretations of the Sea exist, but are not consensus. Some recent work specifically rejects older divine-combat readings.
+- The twelve bovines and four-direction arrangement are secure textual geometry even if their symbolism is uncertain.
+- The wheeled stands have archaeological/iconographic parallels, but exact mechanical reconstruction is debated.
+- Corvée labour and massive state extraction are historically plausible ancient practices, but exact Solomonic totals and administrative scale remain debated.
+- Temple materials and craft links with Phoenicia fit broader evidence for Iron Age interregional exchange, but the biblical account should not be treated as a shipping manifest independently verified in every detail.
+- 1 Kings 8's cloud-filling episode strongly echoes Exodus 40 at the literary/canonical level.
+- Solomon simultaneously uses dwelling-house language and insists that heaven cannot contain God; any geometry that treats the temple as a literal container for the total deity contradicts the prayer itself.
+- Prayer “toward” the temple is directional theology. It is a powerful network/interface analogy, not proof that signals physically propagate through a sacred beam or axis.
+- Chronicles expands/changes several dedication details and should be compared when the Chronicles roadmap sections are reached rather than harmonized silently here.
+
+### Sources logged for Section 35B
+
+Primary:
+- Mechon-Mamre, **1 Kings 5–8**.
+
+Scholarly controls:
+- Sarah Malena, **The Growth and Influence of Interregional Exchange in the Southern Levant's Iron Age I–II Transition**, especially Solomon's exchange/building systems.
+- Yosef Garfinkel and Madeleine Mumcuoglu, **“The Temple of Solomon in Iron Age Context.”**
+- Mark S. Smith, **“In Solomon's Temple (1 Kings 6–7): Between Text and Archaeology.”**
+- archaeological work on Motza, Ain Dara, Tell Tayinat, Hazor and Iron Age temple/building-model parallels.
+- Raymond Apple, **“The Pillars of the Temple”**, as a survey of Jachin/Boaz interpretive options.
+- scholarship on paired temple entrance columns and whether Jachin/Boaz were free-standing or load-bearing.
+- David Shapira, **“The Molten Sea Revisited.”**
+- Seung Il Kang, **“The ‘Molten Sea,’ or Is It?”**
+- Madadh P. Richey, work challenging divine-combat readings of the Sea.
+- studies of ancient Near Eastern sacred space and temple architecture, used cautiously for comparative context.
+- scholarship on 1 Kings 8, name theology, temple presence and divine transcendence.
+- Amos Frisch and related structural studies of Solomon's reign.
+
+**Section 35 remains in progress.**
+
+### Next process block
+
+**1 Kings 9–11**:
+- second divine appearance after completed house;
+- conditional permanence and possibility of house becoming ruin;
+- twenty cities transferred to Hiram and rejected/devalued;
+- fortified-node construction;
+- labour/levy distinctions;
+- fleet and Ophir gold;
+- Queen of Sheba as distant information/material stream toward Solomon and back out;
+- paired question/answer exchange;
+- extraordinary wealth accumulation;
+- horses/chariots and Egypt trade;
+- many foreign wives and distributed cult sites;
+- Solomon's heart turns away;
+- adversaries raised on multiple sides;
+- Jeroboam receives torn garment pieces;
+- one kingdom represented by a garment deliberately split into **twelve pieces**;
+- most pieces given outward while one remains for David/Jerusalem;
+- the coming political bifurcation is therefore represented before it occurs as a physical tear in a previously whole covering.
+
