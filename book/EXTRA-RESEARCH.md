@@ -128864,3 +128864,1994 @@ Priority:
 - Lemuel and maternal instruction;
 - Woman of Strength / Proverbs 31 as possible human counterpart to Woman Wisdom;
 - close the Ethiopian Proverbs/Tegsats pair with an integrated Wisdom/Folly / house/tree/path timeline.
+
+
+---
+
+# SECTION 46 progress C — Tegsats / Reproof / Proverbs 25–31
+## The second Ethiopian Proverbs book begins by openly recording a transmission operation—older sayings copied/transferred by Hezekiah's officials—then develops hidden/revealed information, purification, stable versus breached boundaries, oscillation without progress, feedback loops, central-node corruption, cosmic up/down questions, decentralized coordination, and finally a human household operator whose weaving, trade, field-work, lamp, speech and gate-reputation strongly echo Woman Wisdom at a practical scale
+
+This pass completes the working Ethiopian Proverbs pair:
+
+- **Messale / Proverbs 1–24** — project book 24;
+- **Tegsats / Reproof / Proverbs 25–31** — project book 25.
+
+The current task is not to assume that the Ethiopian division itself creates a hidden geometry.
+
+The useful question is:
+
+> Does the second book continue, invert or humanize the process structures developed in Messale?
+
+The answer is yes in several strong ways.
+
+Messale begins with:
+**Woman Wisdom calling at public thresholds**
+and develops:
+**cosmic order → Tree/Fountain → speech/path/house/civic order**.
+
+Tegsats begins with:
+**scribes copying/transferring an older information field**
+and ends with:
+**a human Woman of Strength whose practical actions reproduce many Wisdom functions at household/city-gate scale**.
+
+That creates a strong canonical/process arc even without making the two women literally identical.
+
+---
+
+# Proverbs 25:1 — the book begins by naming its own transmission layer
+
+The heading says these are additional proverbs of Solomon that the officials/men of **Hezekiah king of Judah copied / transmitted / transferred**.
+
+This is exceptionally important for the project because it is not merely modern source criticism imposed from outside.
+
+The received text itself says:
+
+**older sayings**
+→ selected/recovered
+→ copied/transferred by later scribes
+→ inserted into a later collection.
+
+This is a direct information-preservation mechanism.
+
+The Hebrew verb can carry senses of:
+- move/transfer;
+- copy/transcribe;
+- collect into another place.
+
+The exact historical reliability of the notice is debated, but the literary claim is explicit.
+
+### Process relevance
+
+**source tradition**
+→ **scribal carrier**
+→ **new compiled state**
+→ **future readers**.
+
+This is a controlled model for how an old process-pattern can survive:
+not because two cultures independently witnessed the same event,
+but because information was copied and reorganized.
+
+That remains one of the most important controls in the entire comparative project.
+
+---
+
+# Proverbs 25:2–3 — concealed source, searching operator, vertical depth
+
+The next saying gives:
+
+**God**
+→ conceals a matter.
+
+**king**
+→ searches it out.
+
+Then:
+
+**heavens**
+→ height.
+
+**earth**
+→ depth.
+
+**king's heart/mind**
+→ unsearchable.
+
+This establishes three linked dimensions:
+
+1. **hidden information**;
+2. **active search/retrieval**;
+3. **vertical incomparability**.
+
+The king is therefore both:
+- a search operator;
+- himself a hidden/deep information field.
+
+This is a useful small-scale analogue for the project's rule:
+**visible effect does not equal fully visible mechanism**.
+
+---
+
+# Conceal / search is an epistemic gate
+
+The “thing” already exists.
+
+What changes is:
+**access to information**.
+
+Thus:
+
+**matter exists**
+→ concealed/non-adjacent to observer
+→ search/inquiry
+→ recovered/known.
+
+This is not a physical gate.
+
+But it is a true:
+**closed information topology → opened information topology**
+sequence.
+
+Cross-index:
+- Esther hidden identity;
+- Job hidden wisdom;
+- Daniel/Bel passive evidence;
+- royal archives;
+- written records.
+
+---
+
+# Silver purification and royal purification are deliberately parallel
+
+Proverbs 25 compares:
+
+**silver**
+→ dross removed
+→ usable material for vessel.
+
+Then:
+
+**king's court**
+→ wicked removed
+→ throne established in righteousness.
+
+This is a deliberate material/social analogy.
+
+Process:
+
+**mixed system**
+→ impurity separated
+→ structural product stabilizes.
+
+At one scale:
+metal.
+
+At another:
+political centre.
+
+This gives a strong multiscale transformation grammar.
+
+---
+
+# Vessel / throne pair — purification enables stable function
+
+The two outputs differ:
+
+### purified silver
+→ **vessel**.
+
+### purified court
+→ **stable throne**.
+
+Both are containment/centre structures.
+
+The useful abstraction is:
+
+**contaminant removal**
+→ **functional enclosure/centre can hold its role**.
+
+This is stronger than generic moral symbolism because the text itself pairs the processes.
+
+---
+
+# “Come up here” / being put lower — rank is encoded vertically
+
+The royal-court saying advises:
+do not seize the high place;
+better to be called:
+**“Come up here”**
+than
+to be put lower.
+
+Thus social status is mapped:
+
+**promotion**
+→ upward.
+
+**humiliation**
+→ downward.
+
+This is ordinary human verticality.
+
+It should be used as a control whenever later texts use “rise/fall”:
+not every vertical transformation is cosmological.
+
+---
+
+# Fit speech is an inserted object in a prepared setting
+
+A word spoken at the right time is compared with:
+**golden fruit/apples**
+inside
+**silver setting**.
+
+The important process is:
+**information**
+must fit
+**context/container**.
+
+Correct content at wrong time can fail.
+
+This adds a new variable to the word/operator family:
+
+> effectiveness depends on **phase/timing + container**, not content alone.
+
+---
+
+# Faithful messenger is compared to cold/snow at harvest
+
+A faithful messenger:
+→ refreshes the sender/master.
+
+The analogy:
+**cold/snow in harvest heat**
+→ cooling effect.
+
+This makes information delivery function like a **thermal/resource transfer**.
+
+Compare 25:25:
+**good news from far country**
+→ cold water to thirsty soul.
+
+So Tegsats repeatedly maps:
+
+**correct distant information**
+→ **cooling / water-like restoration**.
+
+This continues Messale's information-as-water family.
+
+---
+
+# Cloud + wind without rain = signal without transfer
+
+Proverbs 25:14 describes a person promising a gift but not giving it as:
+
+**clouds**
++
+**wind**
+but
+**no rain**.
+
+This is one of the best control analogues in the whole project.
+
+The environmental precursor signs are present.
+
+The material transfer does not occur.
+
+So:
+
+**field activation signals**
+≠
+**actual payload transfer**.
+
+This is methodologically crucial.
+
+In cosmology comparison:
+- plasma-like light;
+- wind;
+- cloud;
+- thunder;
+- geometry;
+
+cannot by themselves prove that a gate/material-transfer event occurred.
+
+The expected **payload/effect** must also be present.
+
+---
+
+# Soft tongue breaking bone — informational/relational force beats hard structure
+
+The saying says:
+**soft tongue**
+→ can break **bone**.
+
+This is deliberate paradox.
+
+The weak/soft medium
+can alter
+the apparently stronger/hard object.
+
+Source meaning:
+patient persuasion can overcome resistance.
+
+Process abstraction:
+**low-amplitude persistent input**
+→ structural change.
+
+This is more useful than imagining literal acoustic bone fracture.
+
+---
+
+# Enemy food/water — relation is reversed at the point of vulnerability
+
+Enemy:
+hungry/thirsty.
+
+Expected adversarial response:
+withhold or exploit.
+
+Instruction:
+**give bread**
++
+**give water**.
+
+The relation changes:
+
+**hostility**
+→ care at resource boundary.
+
+The “coals on head” phrase has debated meaning:
+- remorse/shame;
+- intensified judgment if reconciliation refused;
+- metaphorical consequence.
+
+Do not use the coals as physical thermal evidence.
+
+The strong process is:
+**hostile relation is attacked by opposite behaviour rather than mirrored hostility**.
+
+---
+
+# Polluted spring — failed righteous node damages downstream life function
+
+Proverbs 25:26:
+
+**righteous person yielding before wicked**
+is like
+**muddied spring / polluted fountain**.
+
+This directly extends the Messale Fountain-of-Life system.
+
+The source node is expected to output:
+**clean life-supporting flow**.
+
+Failure at source:
+→ downstream consumers receive unusable flow.
+
+This is a very strong network analogy.
+
+---
+
+# City without walls = person without self-control
+
+Proverbs 25 ends with one of the book's cleanest body/city mappings:
+
+**person lacking self-control**
+↔
+**city breached / without walls**.
+
+This is not merely a moral comparison.
+
+It explicitly maps:
+
+**inner regulation**
+→ **perimeter integrity**.
+
+No self-control:
+→ inputs/outputs cannot be governed.
+
+No wall:
+→ city cannot regulate entry/attack.
+
+This is a powerful small-scale analogue for the larger boundary research.
+
+---
+
+# Proverbs 26 — dog-return cycle is repetition without learning
+
+**dog**
+→ leaves vomit
+→ returns to it.
+
+Fool:
+→ leaves/repeats folly
+→ returns.
+
+This is a **closed behavioral loop**.
+
+The important distinction:
+**cycle ≠ progress**.
+
+Repeated motion can bring the system back to the same bad state.
+
+This is a strong control against assuming every recurring cycle is evolutionary, regenerative or cosmological.
+
+---
+
+# Door on hinge — perfect example of oscillation without translation
+
+Proverbs 26:14:
+
+**door**
+→ turns on hinges.
+
+**sluggard**
+→ turns on bed.
+
+This is mechanically precise.
+
+The system moves.
+
+But its centre/pivot remains fixed.
+
+No net displacement occurs.
+
+So:
+
+**rotation / oscillation**
+≠
+**translation / travel**.
+
+This is highly valuable for the Vardath geometry project.
+
+A visual motion can look dramatic while producing no change in location/state.
+
+Cross-index with:
+- storm oscillation;
+- repeated cycles;
+- rotating/turning motifs;
+- possible Möbius/strip analogies.
+
+The text itself is mundane satire, but the mechanics are excellent control data.
+
+---
+
+# Fire goes out when fuel source is removed
+
+Proverbs 26:20:
+
+**no wood**
+→ fire ends.
+
+Parallel:
+
+**no whisperer/gossip**
+→ quarrel ends.
+
+This is an explicit source-damping analogy.
+
+Process:
+
+**active field**
+requires
+**continuous fuel/input**.
+
+Remove input:
+→ amplitude decays
+→ system stabilizes.
+
+This is one of the clearest ordinary-world damping mechanisms in Proverbs.
+
+---
+
+# Gossip words “go down” into inner body
+
+Words are compared to desirable morsels:
+
+**speech**
+→ heard/accepted
+→ goes down into inner parts.
+
+This extends the information-as-food/material family.
+
+Information is treated as:
+**ingested payload**.
+
+It can therefore:
+- penetrate;
+- remain inside;
+- alter later behaviour.
+
+The body becomes an information reservoir.
+
+---
+
+# Hidden heart / smooth surface — outer appearance and inner state split
+
+Proverbs 26 contrasts:
+
+**smooth/glowing lips**
+with
+**evil heart**.
+
+It compares this to a surface coating/glaze on an earthen vessel.
+
+So:
+
+**outer layer**
+≠
+**inner material/state**.
+
+This is a direct shell/interior warning.
+
+Visible surface data is insufficient.
+
+---
+
+# Pit and returning stone — self-generated feedback loop
+
+Proverbs 26:27:
+
+**dig pit**
+→ digger falls into it.
+
+**roll stone**
+→ stone returns on roller.
+
+This is a very strong action/rebound pair.
+
+The operator produces:
+**a field intended for another**
+but becomes
+**the target of the same mechanism**.
+
+This is not karma in a technical sense.
+
+It is proverbially framed feedback/reversal.
+
+For the transformation map:
+**outgoing action**
+→ system response
+→ return to source.
+
+---
+
+# Proverbs 27 — trying to restrain wind / grasp oil defines uncontainable media
+
+The contentious-person saying compares restraint to:
+
+**restrain wind**
+or
+**grasp oil in right hand**.
+
+These are two failure modes:
+
+### wind
+escapes because it is diffuse/moving.
+
+### oil
+escapes because it is slippery/fluid.
+
+This is a useful containment control.
+
+Not all media can be enclosed by the same boundary.
+
+Container/interface properties matter.
+
+---
+
+# Water as mirror — external face and internal heart become paired reflective fields
+
+Proverbs 27:19:
+
+**water reflects face**
+as
+**one heart reflects/reveals another human**.
+
+The exact Hebrew/translation nuance is debated.
+
+But the analogy is clearly reflective.
+
+Water is not life-source here.
+
+It is **information surface**.
+
+That adds another water function to the master map:
+
+- source;
+- destroyer;
+- route;
+- boundary;
+- mirror/sensor.
+
+---
+
+# Sheol / Abaddon / eyes — unsatisfied sink family
+
+Proverbs 27 says:
+**Sheol and Abaddon never satisfied**
+and
+**human eyes never satisfied**.
+
+The text compares a cosmic/death sink with human desire.
+
+This gives:
+**continuous intake without saturation**.
+
+A system can receive indefinitely and never reach “full” state.
+
+Cross-index with Proverbs 30's four unsatisfied systems.
+
+---
+
+# Crucible/furnace — external pressure reveals hidden material quality
+
+Silver:
+→ crucible.
+
+Gold:
+→ furnace.
+
+Human:
+→ praise/reputation test.
+
+The process is:
+**input/heat/social pressure**
+→ hidden composition revealed.
+
+This continues the book's purification/testing family.
+
+---
+
+# Grass gone / new growth appears — ordinary regenerative cycle
+
+Proverbs 27 ends with agricultural observation:
+
+grass passes/cut
+→ **new growth appears**
+→ mountain vegetation gathered
+→ animals support household.
+
+This is a small-scale:
+**loss → regrowth → resource cycle**.
+
+Unlike resurrection imagery, it is ordinary seasonal ecology.
+
+Useful as a control for reset/regeneration claims.
+
+---
+
+# Proverbs 28 — path integrity determines destination
+
+The chapter repeatedly pairs:
+
+**straight/integrity path**
+→ safety.
+
+**crooked path**
+→ fall / Pit.
+
+This continues Messale's route logic.
+
+The route itself is a moral state-space.
+
+Again:
+not a physical underworld itinerary.
+
+---
+
+# Hard rain can destroy rather than nourish
+
+A poor oppressor is compared to:
+**beating rain that leaves no food**.
+
+This extends the water-state control:
+
+rain can:
+- bless;
+- restore;
+- destroy crop/resource.
+
+Same medium.
+Different intensity/context.
+Different outcome.
+
+---
+
+# Proverbs 29 — central ruler corrupts or stabilizes the whole administrative field
+
+Several sayings create a clear centre→network model.
+
+### just king
+→ stabilizes land.
+
+### exploitative king
+→ ruins land.
+
+### ruler listens to falsehood
+→ **all officials become wicked**.
+
+This is extremely important.
+
+One corrupted central information filter
+→ propagates error through downstream nodes.
+
+That is a true hierarchical network failure.
+
+---
+
+# Scoffers ignite city; wise turn away wrath
+
+**scoffers**
+→ city aflame.
+
+**wise**
+→ wrath turned away.
+
+This is social fire-control language.
+
+Again:
+activation vs damping.
+
+Compare Proverbs 26:
+fuel removed → fire dies.
+
+Tegsats repeatedly asks:
+**what keeps a destabilizing process supplied?**
+
+---
+
+# “No prophecy/vision” → people cast off restraint
+
+Proverbs 29:18 is often overquoted.
+
+The source-level process is:
+
+**guiding revelation/instruction absent**
+→ communal restraint loosens.
+
+**law/instruction retained**
+→ stable conduct.
+
+This is another information→boundary relation.
+
+No controlling signal:
+→ system de-coheres socially.
+
+Do not turn “vision” into prediction of a cosmological gate.
+
+---
+
+# Pride down / humility up — another social vertical control
+
+Pride:
+→ humiliation/down-state.
+
+Lowly spirit:
+→ honour/up-state.
+
+Again the ordinary social use of vertical language is explicit.
+
+This must remain a comparator whenever prophetic/apocalyptic texts use exaltation/humbling.
+
+---
+
+# Proverbs 30 — Agur begins by denying possession of full knowledge
+
+The chapter opens with:
+- human limitation;
+- lack of wisdom;
+- lack of knowledge of holy things.
+
+Then comes the famous sequence of questions.
+
+This matters.
+
+The cosmic questions are not triumphant cosmography from an all-knowing narrator.
+
+They are a **boundary-of-knowledge challenge**.
+
+---
+
+# Proverbs 30:4 — ascent/descent + wind + water + earth boundaries in one compact cluster
+
+Agur asks:
+
+**Who ascended to heaven and came down?**
+**Who gathered wind in hands/fists?**
+**Who wrapped waters in a garment?**
+**Who established the ends/boundaries of earth?**
+**What is the person's name?**
+**What is the child's name?**
+
+This is one of the densest compact process clusters in Proverbs.
+
+It combines:
+
+- vertical traversal;
+- containment of gas/wind;
+- containment of water;
+- establishment of earth limits;
+- hidden identity.
+
+---
+
+# Ascent / descent here is a knowledge challenge, not a narrated journey
+
+No character in the chapter is actually shown:
+
+going up
+→ returning down.
+
+The question asks:
+**who has done this?**
+
+The conventional answer points toward divine creation/control.
+
+Therefore:
+
+**vertical route concept = explicit**
+but
+**event narration = absent**.
+
+This must not be treated as evidence that Agur watched a gate open.
+
+---
+
+# Wind in fist / waters in garment — containment of difficult media
+
+The pair is especially important because chapter 27 already said:
+wind and oil are hard to restrain.
+
+Now chapter 30 asks who can:
+
+**gather wind**
+and
+**wrap waters**.
+
+So Tegsats itself sets up:
+
+### human containment limit
+wind cannot be restrained by ordinary hand.
+
+### divine/cosmic control question
+who can gather wind in hands and wrap waters?
+
+This is a strong scale contrast.
+
+The same medium that defeats human containment
+is imagined as containable at higher scale.
+
+---
+
+# Earth “ends/boundaries” link containment to world-order
+
+The sequence closes with:
+**earth's ends established**.
+
+So the cluster is:
+
+vertical access
++
+air containment
++
+water containment
++
+land boundary.
+
+That resembles the creation-order field already found in:
+- Job 26/38;
+- Psalms 74/89/104;
+- Proverbs 3/8.
+
+No finger-trap appears.
+But the broad environmental domains are again coordinated.
+
+---
+
+# Name / child-name question must not be forced into later Christological proof
+
+Later Christian readers have often read Proverbs 30:4 through Christological categories.
+
+That reception history is important.
+
+But at source level:
+the rhetorical question is part of Agur's declaration of human epistemic limitation and divine transcendence.
+
+The “child/son” wording is textually and interpretively debated.
+
+It should not be made into a secure physical two-person cosmic mechanism.
+
+---
+
+# Numerical sayings — repeated “three / four” form is literary escalation
+
+Proverbs 30 repeatedly uses:
+
+**three things… four…**
+
+This is a recognized numerical-saying form.
+
+It creates:
+- expectation;
+- escalation;
+- grouping;
+- memorability.
+
+Do not extract a universal 3→4 cosmological transition merely because the number pattern resembles other research numbers.
+
+The form itself is literary technology.
+
+---
+
+# Four unsatisfied systems — different kinds of sink
+
+The chapter gives:
+- Sheol;
+- barren womb;
+- earth never satisfied with water;
+- fire never saying “enough.”
+
+These are four **open-demand systems**.
+
+Each continuously accepts input without reaching ordinary saturation.
+
+But the mechanisms differ:
+
+### Sheol
+death intake.
+
+### barren womb
+unfulfilled reproductive demand.
+
+### dry earth
+water absorption.
+
+### fire
+fuel consumption.
+
+This is an excellent example of:
+**same functional class / different physical mechanisms**.
+
+That is exactly how the larger project should group motifs.
+
+---
+
+# Four “ways” across different media — path leaves little stable trace
+
+Agur says four things are too wonderful:
+
+- eagle's way in sky;
+- serpent's way on rock;
+- ship's way on high sea;
+- man's way with woman.
+
+The first three especially create a path problem.
+
+### eagle
+moves through air
+→ route leaves no permanent road.
+
+### serpent on rock
+moves over hard surface
+→ path can be difficult to read.
+
+### ship on sea
+moves through water
+→ wake closes/disperses.
+
+This is highly relevant to the **temporary-route / disappearing-path** family.
+
+Compare:
+Psalm 77:
+path through sea
+→ footprints unseen.
+
+Proverbs 30:
+movement exists
+→ durable track absent/obscure.
+
+### Control
+The proverb's exact point is “wonder/mystery,” not a claim about portals.
+
+---
+
+# Earth trembles under social inversion — support metaphor, not literal quake report
+
+The next numerical saying says under certain social reversals:
+**earth trembles / cannot bear**.
+
+Examples involve:
+- slave becoming king;
+- fool filled with food;
+- disliked woman married;
+- servant woman supplanting mistress.
+
+This is social-order rhetoric.
+
+It shows:
+**cosmic/earthquake language can represent political/social inversion**.
+
+A crucial control for later prophetic earthquake imagery.
+
+---
+
+# Four small but wise creatures — four different survival technologies
+
+This is one of the richest process sets in Tegsats.
+
+The text explicitly classifies four small/weak beings as:
+**exceedingly wise**.
+
+But each survives differently.
+
+---
+
+## Ant — seasonal timing / storage
+
+small/weak
+→ gathers food in summer.
+
+Mechanism:
+**anticipatory storage across time**.
+
+The ant survives future scarcity by moving resources from:
+**abundant phase**
+→ reserve
+→ **scarce phase**.
+
+This is a temporal-buffer system.
+
+---
+
+## Hyrax / rock badger — weak body uses strong external enclosure
+
+“people without power”
+→ homes in rock.
+
+Mechanism:
+**weak operator**
++ **strong environment**
+→ protection.
+
+The animal does not become strong.
+
+It selects a high-integrity enclosure.
+
+This is one of the clearest:
+**external shell compensates for weak body**
+models.
+
+---
+
+## Locust — no king, yet coordinated ranks
+
+This is particularly important.
+
+The locusts have:
+**no king**
+yet
+**march in rank/order**.
+
+So coordinated field behaviour does **not require a single visible central operator**.
+
+This is a major control against over-centralizing every organized pattern.
+
+Mechanism:
+**distributed coordination / emergent order**.
+
+Within Vardath comparison:
+a coherent lattice-like or swarm-like pattern need not prove:
+- one central intelligence;
+- one king;
+- one human-shaped operator.
+
+This is a valuable falsification/control principle.
+
+---
+
+## Lizard/gecko — physically graspable yet reaches palace
+
+Small/graspable creature
+→ found in king's palace.
+
+Mechanism:
+**boundary penetration / access despite weak status**.
+
+The creature's success is not strength.
+It is **accessibility/infiltration**.
+
+Compare:
+- Judith;
+- hidden corridors;
+- Esther inside/outside;
+- small agents reaching centres.
+
+---
+
+# Four small-wise creatures are not four world layers
+
+They are a deliberate comparative set.
+
+Their value is functional:
+
+1. **time-buffer/storage**;
+2. **use strong enclosure**;
+3. **decentralized coordination**;
+4. **boundary penetration**.
+
+This is much richer than numerology.
+
+---
+
+# Four stately movers — movement style marks state/authority
+
+The next group lists:
+- lion;
+- rooster / possibly another animal depending textual interpretation;
+- he-goat;
+- king with/against whom no resistance.
+
+The function is:
+**gait / stride / movement bearing**.
+
+Authority is visible through motion/posture.
+
+This continues the body-as-state-indicator family.
+
+---
+
+# Pressing produces different state transformations
+
+Proverbs 30 ends with one of the book's most mechanical analogies:
+
+**press milk**
+→ curds.
+
+**press nose**
+→ blood.
+
+**press anger**
+→ conflict.
+
+Same operator:
+**pressure**.
+
+Different substrate:
+→ different output.
+
+This is extremely important.
+
+It explicitly teaches:
+
+> **same force does not imply same result; output depends on material/state of the system being acted upon.**
+
+This is a first-rate control for physical analogy work.
+
+One cannot infer identical mechanisms merely because two stories both contain “pressure,” “heat,” “water,” “wind” or “light.”
+
+---
+
+# Proverbs 31:1–9 — maternal instruction enters the king as upstream control signal
+
+King Lemuel's teaching is explicitly:
+**instruction his mother taught him**.
+
+So political centre receives a prior human information input.
+
+Process:
+
+**mother / older generation**
+→ instruction
+→ **future/current king**
+→ law/justice outcomes.
+
+This is a clean upstream-information model.
+
+The king is not autonomous.
+
+---
+
+# Bodily/appetite regulation preserves justice at centre
+
+The queen mother's concern is not generic asceticism.
+
+She warns:
+- misuse of sexual/royal strength;
+- intoxicants;
+- forgetting decree;
+- perverting rights.
+
+So:
+
+**body/appetite dysregulation at central operator**
+→ memory/judgment failure
+→ network injustice.
+
+This continues Proverbs 29:
+**ruler's input state propagates through whole field**.
+
+---
+
+# King must become voice for those without voice
+
+The instruction ends:
+
+**open your mouth**
+for:
+- mute;
+- destitute;
+- poor;
+- needy.
+
+So royal speech is a compensating channel.
+
+Those whose signal cannot reach centre:
+→ king must relay/represent.
+
+This is a true **information-routing justice mechanism**.
+
+---
+
+# Woman of Strength — the book ends by humanizing Wisdom into an operational household network
+
+Proverbs 31:10–31 is a 22-line Hebrew acrostic poem.
+
+The woman:
+- is more valuable than jewels;
+- trusted;
+- works wool/flax;
+- imports resources from far away;
+- rises at night;
+- distributes food/tasks;
+- buys field;
+- plants vineyard;
+- strengthens arms;
+- trades;
+- keeps lamp burning;
+- spins/weaves;
+- opens hand to poor;
+- protects household against snow;
+- produces clothing;
+- participates in commerce;
+- speaks wisdom;
+- teaches kindness;
+- watches household ways;
+- is praised at city gates.
+
+This is not passive domestic symbolism.
+
+It is a dense **resource-processing / distribution / information / boundary-management system**.
+
+---
+
+# Woman Wisdom / Woman of Strength — strongest controlled comparison
+
+Messale began with **Woman Wisdom**:
+- calls publicly;
+- stands at streets/gates;
+- offers life;
+- builds house;
+- prepares food/wine;
+- sends servants;
+- provides ordered dwelling.
+
+Tegsats ends with **Woman of Strength**:
+- speaks wisdom;
+- operates household;
+- distributes food;
+- acquires field;
+- plants vineyard;
+- keeps lamp;
+- manages textile production/trade;
+- reaches poor;
+- appears indirectly/through works at city gates.
+
+The parallels are strong enough that substantial scholarship reads Proverbs 31 as:
+- a disciple/embodiment of Woman Wisdom;
+- a household ruled by Wisdom;
+- a practical human-scale realization of the virtues personified earlier.
+
+### Classification
+
+Woman Wisdom / Woman of Strength:
+- **P4 successor/embodiment pair: strong**;
+- **P3 abstract→human state pair: strong**;
+- **P1 literal same person: unsupported**;
+- **P9 literary framing/inclusio: strong**.
+
+This is one of the most useful pair relationships in Proverbs.
+
+---
+
+# Gate inclusio — Wisdom begins at gate, wise works end at gate
+
+Early Proverbs:
+**Woman Wisdom cries at gates/entrances**.
+
+Final Proverbs:
+**Woman of Strength's works praise her at city gates**.
+
+That gives the whole Proverbs pair a powerful frame:
+
+**Wisdom enters public system through gate-speech**
+→ internalized and enacted across book
+→ **humanized Wisdom returns to gate as visible works/reputation**.
+
+This is not a physical gate cycle.
+
+It is an information→embodiment→public-verification cycle.
+
+---
+
+# Literal textile weaving appears at the end of the Wisdom book
+
+The Woman of Strength uses:
+- wool/flax;
+- distaff;
+- spindle;
+- hands/fingers;
+- woven textiles.
+
+This is actual weaving technology.
+
+That makes it a useful control for every metaphorical “weave.”
+
+A real weave requires:
+- fibres/threads;
+- tension;
+- repeated crossing/twisting;
+- tool/hand operation;
+- resultant fabric.
+
+Proverbs 31 supplies that literal baseline.
+
+It does **not** map the weaving directly onto cosmology.
+
+But it is useful when evaluating whether another text's “woven” language is technical or only metaphorical.
+
+---
+
+# Merchant-ship comparison — distant resource becomes household supply
+
+The woman is “like merchant ships”:
+→ food/resources brought from far away.
+
+This gives:
+**remote source**
+→ transport channel
+→ household centre.
+
+Compare:
+- Tobit's remote silver;
+- caravan/trade routes;
+- information from far country;
+- temple tribute.
+
+The household is not closed.
+It is a hub in wider network.
+
+---
+
+# Night lamp + future confidence — continuity across time states
+
+Her:
+**lamp does not go out at night**.
+
+She:
+**laughs at days to come**.
+
+This creates:
+- present nocturnal continuity;
+- future preparedness.
+
+The household remains functional across:
+**dark phase**
+and
+**future uncertainty**.
+
+This is a temporal-resilience marker.
+
+---
+
+# Household boundary is maintained by preparation rather than wall
+
+Snow/cold comes.
+
+Household:
+→ already clothed/provisioned.
+
+Unlike Proverbs 25's:
+**city without wall = no self-control**,
+
+Proverbs 31 shows another boundary mode:
+
+**anticipated external stress**
+→ stored/prepared resources
+→ internal population remains protected.
+
+This is soft/logistical boundary resilience rather than masonry.
+
+---
+
+# Field → vineyard — external land converted into managed productive structure
+
+She:
+**considers field**
+→ buys it
+→ plants vineyard.
+
+Process:
+
+**unowned/unconfigured land**
+→ decision
+→ acquisition
+→ cultivation
+→ productive network.
+
+Wisdom therefore does not merely defend existing order.
+
+It **creates new ordered productive space**.
+
+---
+
+# Strength enters body; body enters work; work returns to gate reputation
+
+The poem gives:
+
+**girds with strength**
+→ arms strong
+→ hands work
+→ goods/resources produced
+→ poor supplied
+→ household stabilized
+→ works praise her at gates.
+
+This is a complete:
+**inner state → body → material field → social public field**
+pipeline.
+
+That strongly parallels Messale's:
+**heart → mouth → social world**.
+
+---
+
+# The 22-line acrostic is information-order, not 22-stage cosmology
+
+Each successive Hebrew letter structures the poem.
+
+This is a real ordered sequence.
+
+But its first-level mechanism is:
+**alphabetic acrostic / mnemonic-compositional order**.
+
+Do not turn 22 letters into:
+- 22 worlds;
+- 22 physical steps;
+- 22 gate phases;
+
+without independent evidence.
+
+---
+
+# SECTION 46C geometry / process matrix
+
+## God concealment / king searching
+
+hidden source
+↔
+active retrieval.
+
+P2 epistemic pair:
+**strong**.
+
+---
+
+## silver dross / wicked court element
+
+impurity removed
+→ vessel/throne stabilized.
+
+P1 multiscale process analogy:
+**very strong**.
+
+---
+
+## cloud-wind / no rain
+
+signal
+↔
+missing payload.
+
+Critical methodological control:
+**very strong**.
+
+---
+
+## person without self-control / city without wall
+
+inner regulation
+↔
+perimeter regulation.
+
+Body/city projection:
+**very strong**.
+
+---
+
+## door / hinge
+
+rotation around fixed pivot
+→ no translation.
+
+Mechanical control:
+**extremely strong**.
+
+---
+
+## fire / fuel and quarrel / gossip
+
+continuous input
+→ maintained process.
+
+input removed
+→ damping.
+
+P1 source-process analogue:
+**very strong**.
+
+---
+
+## pit/stone feedback
+
+outgoing harmful operation
+→ returns to source.
+
+P3 reversal loop:
+**strong**.
+
+---
+
+## wind/oil containment failure versus Agur's cosmic containment question
+
+human-scale containment
+↔
+higher-scale imagined containment.
+
+P2 scale contrast:
+**very strong**.
+
+---
+
+## Sheol / womb / dry earth / fire
+
+four unsatisfied sink systems.
+
+Functional class:
+**strong**.
+Identical mechanism:
+**false**.
+
+---
+
+## ant / hyrax / locust / lizard
+
+four small-wise survival mechanisms:
+time-buffer
+/
+strong enclosure
+/
+distributed coordination
+/
+boundary penetration.
+
+High-value process family.
+
+---
+
+## Woman Wisdom / Woman of Strength
+
+personified cosmic/social Wisdom
+→ practical embodied household wisdom.
+
+P4/P3:
+**strong**.
+
+Literal identity:
+**unsupported**.
+
+---
+
+# SECTION 46C continuous transformation timeline — Proverbs 25–31
+
+## Phase A — old information is physically/socially transferred forward
+
+Solomonic sayings
+→ Hezekiah's scribes
+→ later collection.
+
+**Effect:** transmission layer becomes explicit.
+
+---
+
+## Phase B — hidden information is searched
+
+concealment
+→ inquiry
+→ discovery.
+
+**Effect:** knowledge-access topology changes.
+
+---
+
+## Phase C — impurity is removed
+
+silver/court
+→ contaminant separated
+→ vessel/throne stabilized.
+
+**Effect:** purification enables structure.
+
+---
+
+## Phase D — rank moves vertically
+
+low/high court position
+→ external authorization decides transition.
+
+**Effect:** ordinary social verticality established as control.
+
+---
+
+## Phase E — correct information refreshes like cooling/water
+
+faithful messenger / distant good news
+→ receiver restored.
+
+**Effect:** information behaves like resource transfer.
+
+---
+
+## Phase F — false signal lacks payload
+
+cloud + wind
+→ no rain.
+
+**Effect:** precursor signs alone fail mechanism test.
+
+---
+
+## Phase G — inner regulation maps to outer wall integrity
+
+no self-control
+→ breached city analogue.
+
+**Effect:** body/person becomes enclosure model.
+
+---
+
+## Phase H — motion can occur without progress
+
+door
+→ hinge oscillation.
+
+**Effect:** movement ≠ translation.
+
+---
+
+## Phase I — active field loses source and damps
+
+wood/gossip removed
+→ fire/quarrel dies.
+
+**Effect:** sustained process requires input.
+
+---
+
+## Phase J — hidden speech enters body
+
+words
+→ inner parts.
+
+**Effect:** information becomes retained payload.
+
+---
+
+## Phase K — outgoing action rebounds
+
+pit/stone
+→ operator receives effect.
+
+**Effect:** feedback closes loop.
+
+---
+
+## Phase L — central ruler's information quality propagates
+
+ruler believes falsehood
+→ officials corrupted.
+
+**Effect:** centre error spreads downstream.
+
+---
+
+## Phase M — Agur reaches knowledge boundary
+
+human ignorance
+→ questions ascent/descent/wind/water/earth-limit control.
+
+**Effect:** cosmology appears as epistemic challenge.
+
+---
+
+## Phase N — same media show scale-dependent containment
+
+human cannot hold wind
+↔
+cosmic question imagines wind held.
+
+**Effect:** operator scale matters.
+
+---
+
+## Phase O — different systems share one functional class
+
+Sheol/womb/earth/fire
+→ never satisfied.
+
+**Effect:** analogy groups behavior, not physical identity.
+
+---
+
+## Phase P — transient paths cross different media
+
+eagle/serpent/ship
+→ movement without durable ordinary track.
+
+**Effect:** temporary-path family strengthened.
+
+---
+
+## Phase Q — distributed order appears without king
+
+locust swarm
+→ ranks/coherent movement
+→ no king.
+
+**Effect:** coordination can emerge without central visible operator.
+
+---
+
+## Phase R — weak agents survive by different strategies
+
+ant storage;
+hyrax rock;
+lizard access.
+
+**Effect:** resilience is mechanism-specific.
+
+---
+
+## Phase S — pressure yields substrate-dependent output
+
+milk/nose/anger
+→ curds/blood/strife.
+
+**Effect:** same force + different material = different transformation.
+
+---
+
+## Phase T — maternal instruction enters political centre
+
+mother
+→ Lemuel
+→ justice/public voice.
+
+**Effect:** upper/social centre is itself downstream from teaching.
+
+---
+
+## Phase U — Woman Wisdom becomes practical household operation
+
+speech/house/food/light/work/trade
+→ humanized in Woman of Strength.
+
+**Effect:** abstract Wisdom functions instantiated locally.
+
+---
+
+## Phase V — literal weaving converts fibres into fabric
+
+wool/flax
+→ spindle/distaff
+→ textile.
+
+**Effect:** actual weave baseline established.
+
+---
+
+## Phase W — household becomes resilient network
+
+distant supply
+→ storage/work
+→ snow protection
+→ poor supported
+→ future anticipated.
+
+**Effect:** centre survives changing external phases.
+
+---
+
+## Phase X — Wisdom returns to public gate as verified works
+
+household action
+→ reputation
+→ city gates.
+
+**Effect:** information becomes embodiment becomes public evidence.
+
+---
+
+# What Section 46C adds to the master Bible/Vardath timeline
+
+1. **Tegsats opens with explicit textual transmission:** old sayings are copied/transferred into a new collection.
+2. This is a major control for all cross-cultural comparison: similarity can arise by **information inheritance**, not independent observation.
+3. **Conceal/search** creates an information-gate model without physical motion.
+4. **Silver dross removal / wicked-court removal** is one of the clearest multiscale purification analogies in Proverbs.
+5. **Clouds + wind without rain** is a crucial falsification model: environmental signals do not prove payload transfer.
+6. **Good news / faithful messenger behaves like cold water/cooling**, extending information-as-resource.
+7. **Polluted spring** shows source-node corruption damages downstream life function.
+8. **Person without self-control = city without walls** strongly maps internal regulation to perimeter integrity.
+9. **Door on hinges** is an unusually valuable mechanics control: oscillation can occur with zero net translation.
+10. **Fire/quarrel damping** shows active systems require continuing fuel/input.
+11. **Speech can enter and remain in the body** as an ingested payload analogue.
+12. **Pit/rolling-stone sayings encode feedback/rebound** to the source operator.
+13. **Wind/oil containment failure** demonstrates that media demand different boundary strategies.
+14. **A corrupted ruler propagates error to officials**, one of the clearest central-node failure models.
+15. **Agur 30:4 combines ascent/descent, wind containment, water containment and earth boundaries** in one compact cosmological question.
+16. It remains a question about knowledge/divine capacity, not a narrated witnessed gate event.
+17. **Proverbs 30's numerical “three/four” sayings are literary grouping technology**, not secure cosmological arithmetic.
+18. **Sheol / barren womb / thirsty earth / fire** show how one functional category can contain physically different mechanisms.
+19. **Eagle / serpent / ship paths strengthen the temporary/disappearing-route family** across air, rock and sea.
+20. **The earth-trembling social inversion saying is a direct control showing earthquake language can be social rhetoric.**
+21. **The four small-wise creatures encode four distinct survival technologies**, not one symbolic number:
+    - ant = temporal storage;
+    - hyrax = external strong enclosure;
+    - locust = decentralized coordination;
+    - lizard = boundary penetration.
+22. **Locusts are especially important:** coherent ranked movement is explicitly possible **without a king/central visible operator**.
+23. That is a major caution against reading every organized sky/lattice/swarm pattern as proof of one central intelligence.
+24. **Pressure producing curds/blood/strife** states a powerful general rule: same input force produces different outcomes in different substrates.
+25. **Lemuel's mother → king** shows political centres can be downstream from prior instruction.
+26. **Woman of Strength strongly echoes Woman Wisdom at a practical human scale**, especially house, food, speech, trade, light, care and gate reputation.
+27. **Proverbs begins Wisdom at public gates and ends wise works being praised at gates**, a strong literary process frame.
+28. **Proverbs 31 provides literal textile weaving**, giving a baseline for distinguishing real weave mechanics from metaphorical “woven” cosmology.
+29. **The household operates as a resilient network:** distant resources, field production, textile conversion, night lamp, cold-weather preparation, redistribution and future planning.
+30. **The Ethiopian Messale/Tegsats pair therefore closes as a multiscale order model:**
+    cosmic Wisdom
+    → human cognition
+    → speech/path
+    → house/city
+    → copied tradition
+    → political centre
+    → embodied household Wisdom
+    → public gate verification.
+31. **No full Vardath finger-trap mechanism appears.**
+32. The strongest contribution is a toolkit of ordinary mechanisms that helps test later cosmological matches:
+    containment,
+    damping,
+    oscillation,
+    feedback,
+    distributed coordination,
+    purification,
+    information transfer,
+    temporary paths,
+    resilient enclosure,
+    literal weaving.
+
+---
+
+# Section 46C number / timing register
+
+Record without forcing:
+
+- repeated **three / four** numerical sayings in Proverbs 30;
+- **four** unsatisfied systems;
+- **four** wondrous ways;
+- **four** earth-disturbing social states;
+- **four** small-wise creatures;
+- **four** stately movers;
+- **two daughters** of the leech;
+- Proverbs 31:10–31 is a **22-line Hebrew alphabetic acrostic**.
+
+Controls:
+- the 3/4 form is a known wisdom-poetry numerical pattern;
+- the groups are functionally heterogeneous;
+- 22 corresponds directly to the Hebrew alphabet in the acrostic;
+- none should be inserted into Vardath chronology/layer counts without independent process evidence.
+
+---
+
+# Section 46C textual / historical controls
+
+- Proverbs 25:1 is internal evidence for a later collection/transmission layer, but scholars debate how historically literal the Hezekiah notice is.
+- The Hebrew verb translated “copied/transmitted” can imply transfer/copying/collection; it does not by itself reconstruct the scribes' exact method.
+- Proverbs 25–29 is conventionally treated as a distinct Solomonic collection.
+- The wording/order of Proverbs differs substantially between the Masoretic and Septuagint traditions in places; Ethiopic transmission must continue to be version-controlled.
+- Proverbs 25:22 “coals of fire” is interpretively debated and should not be literalized as a thermal mechanism.
+- Proverbs 25:27 is textually difficult.
+- Proverbs 26's door/hinge, dog/vomit, fire/fuel and pit/stone images are ordinary didactic analogies; their mechanical value is as controls.
+- Proverbs 27:19 has translation nuances; retain the clear reflection analogy without over-specifying psychology.
+- Agur and Lemuel are obscure figures; “Massa/oracle” readings and origins are debated.
+- Proverbs 30:4 is a rhetorical creation/knowledge challenge; later Christological reception of “son” should be kept separate from first-level reconstruction.
+- Numerical sayings are literary forms, not observational counts of cosmic layers.
+- Animal identifications in Proverbs 30 are not perfectly stable across translations:
+  “hyrax/badger/rock badger,” “lizard/gecko,” and the stately-animal line vary.
+- The functional processes are more secure than zoological labels.
+- Proverbs 31:1–9 likely reflects a royal/queen-mother instruction tradition with possible non-Israelite/Massa background.
+- Proverbs 31:10–31 is a Hebrew acrostic and its portrait is idealized.
+- Scholarship strongly notes links between Woman of Strength and Woman Wisdom, but this does not require literal identity or one historical woman.
+- The poem reflects an ancient household economy and should not be converted into a universal prescription for modern gender roles.
+- Literal textile operations in Proverbs 31 are real household production, not direct cosmological weaving.
+
+### Sources logged for Section 46C
+
+Primary:
+- **Proverbs 25–31 NRSVUE**:
+  https://www.biblegateway.com/passage/?search=Proverbs+25-31&version=NRSVUE
+- **USCCB Proverbs 25**, including collection/transmission notes:
+  https://bible.usccb.org/bible/proverbs/25
+- **USCCB Proverbs 31**, including Lemuel / acrostic / Woman-Wisdom notes:
+  https://bible.usccb.org/bible/proverbs/31
+- modern text checks for Proverbs 26–30 across NRSV/NRSVUE.
+
+Composition / Hezekiah:
+- modern Proverbs scholarship treating 25:1 as major evidence for collection/transmission history while noting debate over the notice's historical status.
+- R. N. Whybray, James Crenshaw, Michael V. Fox, Roland Murphy and subsequent scholarship retained as major composition-history controls.
+
+Proverbs 30:
+- modern scholarship on Agur and numerical sayings;
+- comparative study of the “three/four” form as wisdom-poetry grouping;
+- zoological identifications kept secondary to secure functional descriptions.
+
+Woman of Strength / Woman Wisdom:
+- Christine Roy Yoder and related scholarship on lexical/thematic links between Proverbs 1–9 and 31:10–31.
+- modern readings treating the Woman of Strength as a practical embodiment/disciple/household realization of Woman Wisdom, alongside critiques emphasizing the poem's ancient patriarchal household setting.
+- the Hebrew acrostic structure retained as compositional control.
+
+---
+
+# SECTION 46C COMPLETE — Tegsats / Reproof / Proverbs 25–31
+
+## ETHIOPIAN BOOK 25 — TEGSATS / REPROOF COMPLETE
+
+## ETHIOPIAN PROVERBS PAIR — MESSALE + TEGSATS COMPLETE
+
+### Integrated Proverbs transformation
+
+**Woman Wisdom calls at gates**
+→ listener chooses path
+→ Wisdom internalized
+→ cosmic order / Tree / Fountain network
+→ speech and teaching carry life/death effects
+→ house/city boundaries stabilize or fail
+→ old Wisdom material is copied into later collection
+→ hidden matters are searched
+→ purification stabilizes vessel/throne
+→ signals are distinguished from actual payload
+→ oscillation is distinguished from translation
+→ feedback and damping mechanisms appear
+→ central rulers propagate good/bad information
+→ Agur reaches cosmic containment/knowledge limits
+→ small creatures demonstrate several decentralized survival mechanisms
+→ pressure reveals substrate-specific outputs
+→ maternal instruction shapes king
+→ Woman of Strength humanizes Wisdom in household economy
+→ literal weaving / trade / field / lamp / provision build resilient centre
+→ wise works are verified again at city gates.
+
+### Resume point
+
+**SECTION 46 is complete.**
+
+Continue from the next canonical roadmap entry after Ethiopian project book 25.
+
