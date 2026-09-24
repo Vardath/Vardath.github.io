@@ -47482,3 +47482,27 @@ Priority pair tests:
 
 Before beginning Section 32, apply the anti-repeat search and append the checkpoint.
 
+---
+
+## LIVE CHECKPOINT — SECTION 31 COMPLETE / SECTION 32 NEXT
+
+Post-memory-refresh append verification remains good.
+
+Current canonical roadmap:
+- **Sections 1–31 complete**
+- **31 / 88 actual roadmap entries = 35.2% complete**
+- next: **Section 32 — 1 Samuel 1–15**
+
+New work completed in this continuation:
+- Section 30B — Judges 13–16 / Samson
+- Section 30 complete
+- Section 31A — Judges 17–21
+- Section 31B — Ruth 1–4
+- Section 31 complete
+
+All substantive blocks were appended immediately after completion.
+
+Inserted comparison texts remain extra work outside the 31/88 canonical count.
+
+Assistant reply checkpoint: Yes, the post-refresh conversation/progress is properly appended. The project is now at 31 of 88 canonical roadmap entries complete (35.2%), with 1 Samuel 1–15 next.
+
