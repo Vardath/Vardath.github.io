@@ -30820,3 +30820,491 @@ Scholarly:
 
 **Section 22 remains in progress.**  
 Next under the anti-repeat protocol: **Exodus 35–40 — construction repetition, Bezalel/Oholiab execution, mirror-basin, completed furniture geometry, first-month/day-one erection, cloud/glory filling, Moses excluded by intensity, cloud lifting as departure signal, fire by night.**
+
+
+## SECTION 22 progress D — Exodus 35–40: command becomes built structure; cloud/fire turns the portable sanctuary into a movement-state controller
+
+### Anti-repeat check
+
+Section 22A–C are already appended.  
+No later Exodus 35–40 progress exists elsewhere in the ledger.  
+Continuing from the restored covenant / radiant-face checkpoint.
+
+### Sabbath is repeated before construction begins
+
+Exodus 35 opens by repeating:
+- **6 days** work;
+- **7th day** Sabbath.
+
+Only then does the collection/building begin.
+
+This reinforces the creation-order framing already noted in Exodus 25–31:
+**ordered work**
+→ **completion/rest boundary**
+→ **sacred construction**.
+
+### Voluntary materials converge from the whole population
+
+The people bring:
+- metals;
+- textiles;
+- skins;
+- wood;
+- oil/spices;
+- stones;
+- skilled labour.
+
+Men and women both participate in the contribution/work tradition.
+
+The donations eventually exceed what is needed, and Moses orders people to stop bringing more.
+
+This creates:
+**distributed many-source input**
+→ **central coordinated construction**
+→ **sufficiency threshold reached**
+→ **input shut off**.
+
+That is a useful capacity-control motif:
+the system has a required amount; more is not automatically better.
+
+### Bezalel / Oholiab translate pattern into matter
+
+The execution narrative repeatedly says the workers made the components **as commanded**.
+
+The two named master craftsmen remain:
+- Bezalel;
+- Oholiab.
+
+Their role is now fully enacted:
+**mountain pattern/instruction**
+→ **skilled human translation**
+→ **physical portable architecture**.
+
+This is a strong **information → material structure** sequence.
+
+### Command / execution doubling
+
+Exodus 35–39 repeats much of Exodus 25–31 almost object-by-object.
+
+This literary doubling creates a built-in pair:
+
+**ideal/instruction**
+↔
+**material/execution**.
+
+That is more than redundancy.
+
+At narrative level the text asks whether the lower material system actually matches the upper/mountain pattern.
+
+The repeated formula:
+**“as YHWH commanded Moses”**
+acts as the comparison rule.
+
+For the Vardath method this is a useful control:
+a model and its physical instantiation are treated as distinct stages whose agreement must be checked.
+
+### The 5 + 5 → one curtain system is actually built
+
+The execution confirms:
+- 10 inner curtains;
+- **5 + 5** coupling;
+- opposed loops;
+- clasps;
+- one completed dwelling.
+
+So Section 22A's structural observation is not merely instruction-level geometry.
+The narrative says it was implemented.
+
+### Paired cherubim and 3 + 1 + 3 lampstand are likewise implemented
+
+Construction repeats:
+- two cherubim on the ark cover;
+- wings above;
+- faces oriented toward the central cover;
+- lampstand with **3 branches one side + central shaft + 3 branches other side**;
+- seven lamps.
+
+Thus the two most Vardath-relevant bilateral/axial forms survive the instruction→execution transition.
+
+### Basin made from women's mirrors — a source-critical complication
+
+Exodus 38 adds a detail absent from the original basin instruction:
+the copper basin and stand are made from mirrors associated with women who served/assembled at the entrance of the Tent of Meeting.
+
+This creates a chronological/source problem:
+the Tabernacle is still being built, yet the women are described as associated with its entrance.
+
+Modern scholarship has proposed that this verse preserves/retrojects a later cultic tradition about women serving at a sanctuary.
+
+Therefore:
+- preserve the mirrors/women/entrance detail;
+- do **not** treat it as a clean chronological event in the wilderness construction sequence without qualification.
+
+### Mirror → basin transformation
+
+At the final-form literary level:
+**reflective personal objects**
+→ **melted/reworked copper**
+→ **communal purification basin**.
+
+This is another object-function transformation.
+
+It may carry symbolic meaning in later interpretation, but the text itself does not explain why mirrors were selected.
+
+### Material inventory is explicitly counted
+
+Exodus 38 records:
+- gold: **29 talents + 730 shekels**;
+- silver: **100 talents + 1,775 shekels**;
+- bronze/copper: **70 talents + 2,400 shekels**.
+
+The silver is linked to:
+- half-shekel census contribution;
+- **603,550 men** age 20+;
+- **100 talents → 100 sockets**, one talent per socket in the narrative accounting.
+
+This is unusually exact material bookkeeping.
+
+For the current project:
+it demonstrates that the Tabernacle description is not purely visionary symbolism.
+The final text deliberately grounds the structure in **quantified material inventory**.
+
+### 603,550 versus ~600,000 Exodus departure figure
+
+Earlier Exodus gave approximately:
+- **600,000** adult males leaving Egypt.
+
+The Tabernacle accounting gives:
+- **603,550** counted men age 20+.
+
+Record both.
+Do not assume perfect historical census precision; the numbers belong to the literary/numerical system of the Pentateuch and create substantial historical-demographic questions.
+
+### Moses inspects the finished work
+
+At the end of Exodus 39:
+- all work is brought to Moses;
+- Moses **sees** the work;
+- sees it has been done according to command;
+- Moses **blesses** them.
+
+This strongly echoes creation language:
+**work completed**
+→ **inspection/seeing**
+→ **recognition of conformity/order**
+→ **blessing**.
+
+This is one of the major reasons scholars compare Tabernacle construction with Genesis creation.
+
+### The portable model passes its conformity test
+
+Narratively:
+
+**pattern shown at mountain**
+→ commands transmitted
+→ materials gathered
+→ parts made
+→ parts assembled
+→ Moses inspects
+→ pattern judged correctly instantiated.
+
+That is an explicit **model → build → verification** sequence.
+
+### Exact erection date — first day of first month, second year
+
+Exodus 40 dates final erection:
+- **year 2** after Exodus;
+- **month 1**;
+- **day 1**.
+
+This creates a striking calendar boundary:
+**new year / first month / first day**
+→ **portable divine dwelling erected**.
+
+The structure is therefore activated at a calendrical beginning.
+
+### Erection sequence reproduces nested spatial order
+
+Moses sets up:
+- outer structural framework/coverings;
+- ark;
+- inner veil screening ark;
+- table;
+- lampstand and lamps;
+- incense altar;
+- entrance screen;
+- burnt-offering altar;
+- basin/water;
+- courtyard and gate screen.
+
+This is effectively a reassembly of the layered system from **inner communication core outward into full operating environment**.
+
+### Completion formula
+
+The chapter states:
+**Moses finished/completed the work.**
+
+This directly parallels the Genesis completion formula noted in scholarship.
+
+Again:
+do not infer identical physical cosmology;
+the literary association is strong.
+
+### Cloud covers; Glory fills
+
+Immediately after completion:
+- cloud covers Tent of Meeting;
+- divine Glory/Presence fills Tabernacle.
+
+This is the activation event.
+
+The structure changes from:
+**completed but merely built**
+to
+**occupied/active sacred interface**.
+
+### Even Moses cannot enter under full activation
+
+Crucially:
+- Moses cannot enter;
+- because cloud has settled on it;
+- Glory fills it.
+
+This is extremely important for the mature Vardath boundary model.
+
+The same mediator who:
+- ascended Sinai;
+- entered cloud;
+- received the pattern;
+- supervised construction,
+
+is now temporarily excluded when the portable interface reaches its fully occupied state.
+
+Thus:
+**interface exists**
+≠
+**interface always traversable**.
+
+And:
+**authorized mediator**
+≠
+**unlimited access at every phase**.
+
+This is one of the strongest biblical examples of **phase-dependent accessibility**.
+
+### Settled cloud / lifted cloud = stop / go state machine
+
+The final verses define a literal movement rule:
+
+**cloud remains on Tabernacle**
+→ Israel **does not depart**.
+
+**cloud lifts**
+→ Israel **sets out**.
+
+This is not metaphorical.
+The entire travelling population's motion is keyed to the state of the cloud over the portable sanctuary.
+
+Raw state machine:
+
+**SETTLED**
+= camp / remain / interface occupied locally
+
+**LIFTED**
+= movement / journey begins
+
+This is one of the cleanest **place + phase** rules in Exodus.
+
+### Cloud by day / fire by night returns as one continuing guidance system
+
+The final verse says:
+- cloud is over the Tabernacle by day;
+- fire is in/visible by night;
+- before all Israel;
+- throughout journeys.
+
+This closes the loop with Exodus 13–14:
+earlier:
+**cloud/day + fire/night** guided from the front and moved behind at the sea.
+
+now:
+the same paired manifestation grammar is associated with the completed portable dwelling.
+
+Best classification remains:
+**P3 time-dependent manifestations of one guiding/presence system**,
+not two independent entities.
+
+### Mountain interface → portable interface
+
+Section 21/22 now gives a coherent architectural transition:
+
+#### Sinai
+- fixed mountain;
+- top/foot polarity;
+- fire/cloud;
+- restricted boundary;
+- Moses shuttles vertically;
+- pattern/information comes down.
+
+#### Tabernacle
+- portable ordered enclosure;
+- outer/inner nested zones;
+- paired cherubim centralize communication;
+- priest-body carries population representation inward;
+- cloud/fire occupy structure;
+- access depends on state;
+- structure itself travels with people.
+
+This is a very strong source-level transformation:
+
+**fixed sacred coordinate**
+→ **portable sacred coordinate**.
+
+### Closest Vardath analogue
+
+The mature-model comparison is not:
+“Tabernacle = world gate.”
+
+It is:
+
+> A **portable interface architecture** preserves a relationship first experienced at a fixed mountain. It contains nested boundaries, bilateral framing, a central information point, timed access, preparation stages, a representational human operator and an externally visible state signal that determines whether the population remains or moves.
+
+That is a sophisticated structural correspondence.
+
+### What Section 22 does NOT establish
+
+Exodus 25–40 does not establish:
+- stacked future/past inhabited worlds;
+- world-discs physically crossing;
+- finger-trap lattice;
+- plasma currents;
+- land transfer;
+- time dilation;
+- a literal cosmic Tree of Life inside the Tabernacle;
+- cherubim as two Vardath twines;
+- Urim/Thummim as physical polarity channels.
+
+### SECTION 22 continuous event sequence
+
+**Sinai pattern received**
+→ portable dwelling commanded
+→ ark/central communication furniture specified
+→ paired cherubim frame central voice-space
+→ 3+1+3 menorah / 7 lights
+→ 5+5 inner curtain fields coupled into one
+→ nested veil/entrance boundaries
+→ courtyard / altar / basin processing zones
+→ priest body configured as 6+6 shoulders and 4×3 twelve-stone chest map
+→ Urim/Thummim decision pair
+→ seven-day priestly state conversion
+→ daily morning/evening service clock
+→ Bezalel/Oholiab builder pair
+→ Sabbath/sevenfold closure of instruction
+→ mediator absence
+→ golden calf rival centre
+→ first tablets broken
+→ intercession / outside-camp meeting tent
+→ protected rock-cleft encounter
+→ replacement tablets
+→ Moses returns visibly transformed
+→ authorized construction begins
+→ command repeated as execution
+→ structure completed
+→ Moses inspects/blesses
+→ year2/month1/day1 erection
+→ cloud covers / Glory fills
+→ Moses excluded at maximum occupation
+→ cloud settled = remain
+→ cloud lifted = travel
+→ cloud by day / fire by night through journeys.
+
+### SECTION 22 consolidated pair/projection register
+
+- **two cherubim** — bilateral framing/guardian pair.
+- **menorah** — one centre + 3/3 branches, seven lights.
+- **inner curtains** — 5+5 coupled to become one.
+- **outer curtains** — 5+6 asymmetry control.
+- **table / menorah** — north/south complementary pair.
+- **two shoulder stones** — 6+6 tribal names.
+- **breastpiece** — 12 names as 4×3 grid.
+- **Urim / Thummim** — paired decision apparatus.
+- **Moses / Aaron** — source-side/interface pair; temporary breakdown at calf.
+- **first / replacement tablets** — predecessor/replacement carriers.
+- **visible / veiled Moses face** — one body, state-dependent presentation.
+- **Bezalel / Oholiab** — builder pair.
+- **cloud / fire** — day/night manifestation pair.
+- **settled / lifted cloud** — stay/move state pair.
+- **Sinai / Tabernacle** — fixed-interface / portable-interface predecessor-successor relationship.
+
+### SECTION 22 consolidated number register
+
+- Ark: **2.5 × 1.5 × 1.5**.
+- Cherubim: **2**.
+- Menorah: **3 + 1 + 3 = 7 lamps**.
+- Inner curtains: **10 = 5 + 5**.
+- Inner loops/clasps: **50 / 50 / 50**.
+- Goat-hair curtains: **11 = 5 + 6**.
+- Inner veil pillars: **4**.
+- Outer tent entrance pillars: **5**.
+- Courtyard: **100 × 50 × 5 cubits**.
+- Courtyard entrance: **20 cubits**.
+- Bronze altar: **5 × 5 × 3**, **4 horns**.
+- Shoulder stones: **2 with 6 + 6 names**.
+- Breastpiece: **12 stones = 4 × 3**.
+- Urim/Thummim: **2 named elements**.
+- Priest consecration: **7 days**.
+- Regular daily offering: **2/day**, morning/evening.
+- Tablets: **2 first + 2 replacement**.
+- calf-judgment deaths: about **3,000**.
+- Moses renewed mountain interval: **40 days/40 nights**.
+- gold: **29 talents + 730 shekels**.
+- silver: **100 talents + 1,775 shekels**.
+- census: **603,550 men age 20+**.
+- sockets from silver: **100 sockets / 100 talents**.
+- bronze/copper: **70 talents + 2,400 shekels**.
+- erection: **year 2 / month 1 / day 1**.
+- instruction block: commonly analysed as **7 divine speeches**, ending Sabbath.
+
+### Source-critical controls retained
+
+- Priestly Tabernacle and Exodus 33 outside-camp Tent of Meeting likely preserve distinct traditions.
+- Moses' radiant-face/veil narrative may originally belong with the non-Priestly tent tradition.
+- Exodus 34's replacement-tablet story contains signs of redaction joining distinct tablet traditions.
+- Exodus 38's ministering-women/mirrors verse may preserve a later sanctuary tradition retrojected into the wilderness setting.
+- Exodus 40 and Leviticus 8–9 create chronological/thematic tensions over consecration and the descent of divine Glory.
+- The Tabernacle/creation parallel is literary-symbolic and does not establish a modern physical cosmology.
+
+## SECTION 22 status
+
+**SECTION 22 — EXODUS 25–40: COMPLETE FIRST PASS.**
+
+Strongest new findings for the project:
+
+1. **Sinai is converted from a fixed interface into a portable one.**
+2. Two cherubim create a literal **bilateral frame around a central voice/communication space**.
+3. The menorah is a source-level **3 + 1 + 3 tree/branch geometry with seven lights**.
+4. Ten inner curtains form **5 + 5 → one** through repeated edge connectors.
+5. Aaron's body carries Israel in two different projections: **6+6 shoulders** and **4×3 chest grid**.
+6. The inner veil is a real physical partition whose access is later controlled by role and phase.
+7. The priest is visually/materially configured to match the sanctuary environment.
+8. Consecration explicitly changes ordinary humans into authorized operators through a staged seven-day process.
+9. First tablets are **broken and replaced**, not repaired — a strong reset≠rewind control.
+10. Moses' face becomes visibly altered after upper-interface contact and is then selectively veiled/unveiled.
+11. The completed Tabernacle reaches a state so intense that **even Moses cannot enter**.
+12. The final cloud rule is a literal state machine: **settled = stay; lifted = travel**.
+13. Cloud/day and fire/night close the Exodus by turning the portable structure into the visible timing/movement centre of the travelling population.
+
+### Next first unfinished roadmap section
+
+**SECTION 23 — LEVITICUS**
+
+Priority already saved in the master roadmap:
+- two goats on Day of Atonement;
+- inside/outside camp;
+- blood/threshold;
+- clean/unclean polarity;
+- fire consuming Nadab/Abihu;
+- Jubilee cycle;
+- pair test: two goats — one sacrificed, one sent away — as a possible polarity pair.
+
+Before Section 23 begins, apply the anti-repeat search again.
