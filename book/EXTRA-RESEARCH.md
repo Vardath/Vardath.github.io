@@ -69796,3 +69796,1189 @@ Scholarly controls:
 - Omri purchases Samaria hill and relocates centre;
 - Ahab intensifies foreign cult coupling and Jericho rebuilding notice closes the section.
 
+
+
+---
+
+# SECTION 36 progress B — 1 Kings 15–16
+## Border choke-points, treasure-for-alliance rerouting, dismantled strongholds rebuilt elsewhere, dynasty-reset cycles, palace-coup collapse, a second two-camp bifurcation, and the creation of a new northern capital at Samaria
+
+---
+
+# 1 Kings 15 — Judah preserves dynastic continuity while Israel cycles through house-destruction
+
+The chapter immediately contrasts two succession geometries.
+
+### Judah
+Abijam dies
+→ Asa succeeds
+→ Davidic “lamp” remains in Jerusalem.
+
+### Israel
+Nadab succeeds Jeroboam
+→ Baasha kills Nadab
+→ Baasha destroys Jeroboam's entire house.
+
+So the divided monarchy now develops **different continuity patterns**:
+
+**south = dynastic persistence through repeated descendants**.
+
+**north = centre replacement through violent dynastic reset**.
+
+This distinction becomes one of the dominant long-term geometries of Kings.
+
+---
+
+# Asa removes distributed cultic nodes but does not complete total centralization
+
+Asa:
+- removes certain cultic personnel/practices;
+- removes idols;
+- deposes Maacah from queen-mother role;
+- cuts down her Asherah-related object;
+- burns it at the Kidron.
+
+But:
+**the high places are not removed**.
+
+So the reform is partial.
+
+Process:
+
+**distributed alternative nodes reduced**
+but
+**not eliminated**.
+
+The centre's sacred topology becomes more Jerusalem-oriented,
+yet remains incompletely centralized.
+
+This is important:
+**recentralization is graded, not binary**.
+
+---
+
+# Royal-family relationship is subordinated to centre policy
+
+Asa removes Maacah from queen-mother status.
+
+The political/religious centre therefore acts against a close dynastic relation.
+
+This is a reversal of the earlier pattern where kinship often redirected policy.
+
+Here:
+**central program overrides familial rank**.
+
+The specific object/cult remains debated in terminology,
+so preserve only the secure process:
+**high-status internal household node loses office because its cultic affiliation conflicts with centre policy**.
+
+---
+
+# Dedicated silver/gold moves inward toward temple before being sent outward again
+
+Asa brings:
+- silver;
+- gold;
+- vessels
+
+into the house of YHWH.
+
+Then shortly afterward,
+under Baasha's pressure,
+Asa removes the remaining silver/gold from:
+- temple treasury;
+- royal treasury
+
+and sends it to Ben-hadad of Damascus.
+
+Thus the same material class undergoes:
+
+**dedicated inward accumulation**
+→ crisis
+→ **outward diplomatic transfer**.
+
+This is another reminder:
+**treasure location is a dynamic state variable**.
+
+---
+
+# Baasha turns Ramah into a choke-point controlling “going out and coming in”
+
+Baasha fortifies **Ramah** specifically so that:
+**no one may go out or come in to Asa**.
+
+This is one of the clearest transport-control nodes in Kings.
+
+Ramah becomes:
+**border stronghold**
++
+**movement valve**.
+
+The goal is not merely military occupation.
+It is to control:
+- migration;
+- trade;
+- pilgrimage;
+- political traffic.
+
+So one fortified node can alter the effective connectivity of an entire kingdom.
+
+---
+
+# Ramah's function parallels Jeroboam's pilgrimage interception, but by force rather than replacement
+
+Jeroboam:
+**creates Bethel/Dan**
+to divert people before they reach Jerusalem.
+
+Baasha:
+**fortifies Ramah**
+to physically constrain people from going out/coming in.
+
+These are two different ways to control the same broad variable:
+**network traffic across the north-south boundary**.
+
+One:
+**alternative-node attraction**.
+
+The other:
+**choke-point obstruction**.
+
+This distinction should remain explicit in the master timeline.
+
+---
+
+# Asa reroutes the conflict through a third centre instead of attacking Ramah directly
+
+Asa sends treasure to Ben-hadad with a request:
+
+**break your alliance with Baasha**
+→ attack Israel
+→ force Baasha away from Ramah.
+
+This is a textbook **third-force diversion**.
+
+Geometry:
+
+**Baasha pressure on Judah south/front**
+→ Asa sends value to Aram north
+→ Aram attacks Baasha's northern field
+→ Baasha must turn away from southern choke-point.
+
+The local two-centre conflict is changed by activating a remote third centre.
+
+This repeats the process seen at Sela-hammahlekoth:
+**third force interrupts a two-force convergence**.
+
+---
+
+# Material treasure becomes alliance-switching signal
+
+Silver/gold do not function here as mere wealth.
+
+They are transferred to change Ben-hadad's alignment.
+
+So:
+
+**treasure**
+→ crosses from Jerusalem to Damascus
+→ changes treaty relation
+→ produces new military direction.
+
+This is a clean:
+**material transfer → political recoupling → field movement**
+chain.
+
+---
+
+# Northern attack causes Baasha to abandon Ramah
+
+Ben-hadad attacks:
+- Ijon;
+- Dan;
+- Abel-beth-maacah;
+- Chinneroth/Naphtali zone.
+
+Baasha hears.
+
+Then:
+**stops building Ramah**
+→ withdraws to Tirzah.
+
+So the pressure transfer works:
+
+**remote northern disturbance**
+→ local southern project abandoned.
+
+This is a direct example of:
+**network stress redistributing attention/resources across a multi-front system**.
+
+---
+
+# Archaeological/historical control — exact Baasha geography remains debated
+
+Recent archaeology has complicated a straightforward literal reading of every place-name and date in the Asa-Baasha account.
+
+Finkelstein and Kleiman argue that parts of the story may preserve later geographical knowledge or editorial reshaping.
+
+Issues include:
+- early Iron IIA occupation at Dan/Abel-beth-maacah;
+- identity/date of the relevant Ben-hadad;
+- possible reuse of later campaign geography.
+
+Therefore:
+**Ramah choke-point → third-force alliance diversion → Baasha abandonment**
+is secure as narrative process.
+
+Exact historical route/chronology should remain qualified.
+
+---
+
+# The abandoned stronghold is not merely destroyed; its material is re-routed into two new strongholds
+
+Asa mobilizes all Judah.
+
+They carry away:
+- Ramah's stones;
+- Ramah's timber.
+
+Then use them to build:
+- **Geba**;
+- **Mizpah**.
+
+This is one of the strongest material-reconfiguration sequences in Kings:
+
+**one northern-controlled choke-point**
+→ abandoned
+→ dismantled
+→ material separated
+→ transported
+→ reassembled into **two Judahite defensive nodes**.
+
+So:
+
+**1 structure**
+→ **material fragments**
+→ **2 replacement structures**.
+
+This is literal architectural transformation, not metaphor.
+
+---
+
+# Enemy structure becomes resource for successor geometry
+
+The material does not disappear.
+
+Its role changes:
+
+**Baasha's blockade material**
+→ Asa's border-defense material.
+
+Thus:
+**same stones/timber**
+serve opposite political fields at different phases.
+
+This is highly relevant to the Vardath method:
+**material identity can persist while functional polarity reverses**.
+
+---
+
+# Asa's foot disease is a local bodily decline inside otherwise long dynastic continuity
+
+The chapter briefly notes Asa becomes diseased in his feet in old age.
+
+Do not force symbolic meaning.
+
+Record only:
+**stable long-reigning centre develops mobility-related bodily impairment late in phase**.
+
+This may become relevant if repeated body/feet motifs accumulate elsewhere, but it is low-confidence here.
+
+---
+
+# Nadab is killed while the whole northern field is besieging another city
+
+Nadab and Israel are besieging **Gibbethon**.
+
+Baasha kills him there.
+
+So the northern centre changes while the army is already in an external military field.
+
+Process:
+
+**king + army focused outward**
+→ internal usurper strike
+→ centre removed
+→ usurper takes centre.
+
+This is a recurring coup geometry:
+**external war creates vulnerability for internal succession violence**.
+
+---
+
+# Baasha immediately destroys the old house once he takes the throne
+
+As soon as he becomes king:
+**all Jeroboam's house is destroyed**.
+
+So the Ahijah house-cutoff prediction becomes actual.
+
+The northern system does not preserve a remnant branch the way Judah repeatedly preserves Davidic continuity.
+
+Instead:
+**dynasty A**
+→ violent total reset
+→ **dynasty B**.
+
+---
+
+# 1 Kings 16 — Baasha reproduces the same process pattern he used against Jeroboam
+
+The prophetic word against Baasha says:
+his house will become like Jeroboam's.
+
+This is a direct **cycle repetition**.
+
+Baasha:
+- destroys Jeroboam house;
+- takes throne;
+- later his own house receives same predicted treatment.
+
+So:
+**usurper becomes new dynasty**
+→ repeats predecessor pathway
+→ becomes target of same reset grammar.
+
+This is one of the clearest recurring-process statements in Kings.
+
+---
+
+# Elah is killed in an interior drinking-house while the army remains outside at siege
+
+Elah:
+- is in Tirzah;
+- drinking himself drunk;
+- inside the house of Arza.
+
+Meanwhile the army is still encamped against Gibbethon.
+
+So again the political centre is separated from the active military field.
+
+This time:
+**centre is relaxed/intoxicated in domestic enclosure**
+while
+**army operates elsewhere**.
+
+Zimri, captain of half the chariots,
+enters and kills him.
+
+This is a classic **interior palace coup**.
+
+---
+
+# Half-chariot commander becomes whole-king claimant
+
+Zimri begins as:
+**commander of half the chariot force**.
+
+After killing Elah:
+**he becomes king**.
+
+This is a notable part→whole transition:
+
+**authority over one military fraction**
+→ seizure of total political centre.
+
+But the transformation lasts only seven days.
+
+---
+
+# Zimri immediately repeats the house-erasure pattern
+
+As soon as he sits on throne:
+**Baasha's whole house**
+→ destroyed.
+
+Thus northern succession has become:
+
+Jeroboam house
+→ annihilated by Baasha.
+
+Baasha house
+→ annihilated by Zimri.
+
+The system is caught in a **dynastic-reset loop**.
+
+---
+
+# News reaches the external army and creates an alternative king immediately
+
+The field army hears:
+**Zimri has conspired and killed the king**.
+
+They respond by making:
+**Omri, commander of army, king in the camp that same day**.
+
+This is extremely important:
+
+**capital centre**
+and
+**field centre**
+now produce competing kings simultaneously.
+
+The army does not wait for Tirzah.
+
+It creates its own political centre **inside the military camp**.
+
+So legitimacy can emerge from:
+**distributed field acclamation**
+rather than palace occupancy.
+
+---
+
+# Field-created centre moves inward and besieges palace-created centre
+
+Omri:
+→ leaves Gibbethon
+→ all Israel with him
+→ besieges Tirzah.
+
+The geometry reverses:
+
+**army at external siege**
+→ learns internal coup
+→ abandons external target
+→ turns inward
+→ besieges its own capital.
+
+This is a dramatic **outside→inside reversal**.
+
+The kingdom's military force is redirected against its own current palace centre.
+
+---
+
+# Zimri collapses the centre on himself by burning the royal house
+
+When Zimri sees Tirzah is taken:
+- he enters the castle/fortified part of king's house;
+- burns the house over himself;
+- dies.
+
+This is a literal:
+**centre → enclosure → self-destruction by fire**.
+
+The royal house ceases to be a shelter.
+It becomes the mechanism of the claimant's terminal closure.
+
+Compare:
+- Davidic house as promised continuity;
+- Zimri's royal house as self-consuming tomb.
+
+Same “house” category.
+Opposite function.
+
+---
+
+# Seven-day reign — extreme instability marker
+
+Zimri reigns **seven days**.
+
+Record it,
+but do not interpret seven cosmologically.
+
+Its primary narrative function is:
+**near-zero stabilization time**.
+
+The centre changes,
+but the new state cannot lock in.
+
+---
+
+# Israel splits into two political fields again
+
+After Zimri:
+
+**half the people**
+→ Tibni.
+
+**half**
+→ Omri.
+
+This is explicitly another **two-part bifurcation**.
+
+The northern kingdom that only recently separated from Judah now divides internally.
+
+This is important for the master timeline:
+
+**large system split**
+does not produce permanent coherence in each daughter system.
+
+A fragment can itself fragment again.
+
+---
+
+# One field becomes stronger than the other
+
+The text says:
+**the people following Omri prevailed / were stronger** than those following Tibni.
+
+Then:
+**Tibni dies**
+→ Omri reigns.
+
+This is a direct strength-gradient resolution:
+
+**field A**
+↗ stronger
+
+**field B**
+↘ weaker
+
+→ weaker rival disappears
+→ system reconverges around A.
+
+This strongly echoes:
+**house of David grew stronger / house of Saul weaker** in 2 Samuel 3.
+
+So the same:
+**two-centre gradient → one centre**
+process repeats at a new scale.
+
+---
+
+# Omri temporarily keeps Tirzah, then creates a completely new centre
+
+Omri reigns first in:
+**Tirzah**.
+
+Then he buys:
+**hill of Samaria** from Shemer
+for:
+**two talents of silver**.
+
+He builds a city there and names it Samaria.
+
+This is a major capital-formation transition:
+
+**inherited old capital**
+→ temporary use
+→ purchase new hill
+→ construct new city
+→ relocate dynastic centre.
+
+Unlike David:
+- David captures Jerusalem.
+
+Omri:
+- **purchases** Samaria.
+
+The narrative itself distinguishes:
+**conquest-centre formation**
+from
+**compensated-purchase centre formation**.
+
+---
+
+# Archaeology strongly supports a major Omride monumental phase at Samaria, but exact building stages remain debated
+
+Lawrence Stager argued the pre-capital summit contained an agricultural estate associated with the Shemer/Shomron property.
+
+Archaeological work identifies:
+- early rock-cut agricultural installations;
+- later monumental palace/royal construction on the hilltop.
+
+Dating of specific building periods and whether all enclosure works belong to Omri/Ahab or later kings remains debated.
+
+Secure broad result:
+**Samaria became the durable royal centre of the northern kingdom in the Omride period**.
+
+This is one of the stronger biblical-archaeological correlations in Kings.
+
+---
+
+# The new capital is created on a pre-existing productive landscape
+
+The summit was not a blank void.
+
+Archaeological interpretations identify:
+- wine/oil processing;
+- agricultural estate activity
+
+before monumental royal construction.
+
+So the transition is:
+
+**productive estate landscape**
+→ purchased
+→ reshaped into elevated royal centre.
+
+This is a clear:
+**economic node → political node**
+transformation.
+
+---
+
+# Omri's capital shift parallels David's but differs in transfer mechanism
+
+David:
+**civil conflict**
+→ Hebron
+→ captures Jerusalem
+→ new capital.
+
+Omri:
+**civil conflict**
+→ Tirzah
+→ buys Samaria
+→ new capital.
+
+Both:
+- rise through military leadership;
+- survive rival king;
+- rule first from an older centre;
+- later shift to a new capital.
+
+Scholarship has noticed these literary parallels.
+
+But the mechanisms differ:
+**capture**
+versus
+**purchase**.
+
+Again, same broad geometry can arise through different processes.
+
+---
+
+# Ahab intensifies external dynastic/religious coupling
+
+Ahab:
+- succeeds Omri;
+- marries Jezebel, daughter of a Sidonian king;
+- serves/worships Baal;
+- builds a Baal house/altar in Samaria;
+- makes an Asherah.
+
+The northern centre now becomes explicitly coupled to a Phoenician royal/religious network.
+
+This is a stronger form of the pattern first seen with Solomon's foreign ties.
+
+The central question for the next Elijah block becomes:
+**which sacred/weather authority controls the northern field?**
+
+---
+
+# Control — Deuteronomistic polemic versus historical Omride power
+
+The biblical narrator evaluates Omri/Ahab extremely negatively.
+
+Extra-biblical evidence, however, shows the Omride state was geopolitically powerful:
+- Mesha inscription;
+- Assyrian records;
+- Tel Dan tradition;
+- monumental architecture.
+
+Therefore:
+**moral/theological evaluation**
+and
+**political capacity**
+must be separated.
+
+The text's “worse than before” judgment does not mean the state was materially weak.
+
+In fact, the opposite may be true.
+
+This is another major method control:
+**narrative negative evaluation ≠ low systemic complexity or low state power**.
+
+---
+
+# Jericho rebuilding notice — beginning and end of a city are linked to firstborn/youngest loss
+
+The chapter ends with Hiel rebuilding Jericho.
+
+The notice says:
+
+**foundation laid**
+→ cost/death associated with firstborn.
+
+**gates set up**
+→ cost/death associated with youngest.
+
+This explicitly mirrors Joshua 6:26.
+
+The building process is bracketed by:
+**eldest at beginning**
+and
+**youngest at completion**.
+
+That is a powerful process image:
+**city reconstruction**
+occurs alongside
+**family-line destruction from first to last**.
+
+---
+
+# Critical control — do not assume child sacrifice mechanism
+
+The text says the rebuilding happens “at the cost of” firstborn/youngest in fulfilment of Joshua's word.
+
+Some interpreters have proposed:
+- child sacrifice/foundation deposits;
+- accidental/decreed deaths;
+- literary curse-fulfilment symbolism.
+
+There is no secure basis for stating:
+**Hiel deliberately sacrificed his sons in the foundations/gates**.
+
+Therefore:
+**secure geometry = foundation ↔ firstborn death; gate completion ↔ youngest death**.
+
+Mechanism remains uncertain.
+
+---
+
+# Jericho rebuilding reverses the old conquest-memory state
+
+Joshua:
+**city destroyed**
+→ rebuilding prohibited/cursed.
+
+Ahab-era notice:
+**city rebuilt**.
+
+So the site transitions:
+**destroyed memory-node**
+→ **reconstructed urban node**.
+
+The narrative frames this as a reversal of conquest order.
+
+Recent scholarship reads it as part of the Deuteronomistic geography leading into Elijah/Elisha.
+
+The old destroyed boundary is reopening into a new city-state condition.
+
+---
+
+# SECTION 36B continuous geometry/effect timeline — 1 Kings 15–16
+
+## Phase KH — southern dynastic continuity contrasts with northern reset cycles
+
+Judah:
+son → son → continuing Davidic lamp.
+
+Israel:
+dynasty → assassination → house destruction → new dynasty.
+
+**Effect:** daughter kingdoms adopt different succession-stability patterns.
+
+---
+
+## Phase KI — sacred recentralization is partial
+
+Asa removes some distributed cult nodes/personnel
+but
+high places remain.
+
+**Effect:** network can move toward centre without fully collapsing peripheral nodes.
+
+---
+
+## Phase KJ — one high-status household node loses office
+
+queen-mother removed
+→ cult object cut/burned.
+
+**Effect:** kinship status can be overridden by centre policy.
+
+---
+
+## Phase KK — Ramah becomes a traffic valve
+
+Baasha builds Ramah
+→ controls going out/coming in to Asa.
+
+**Effect:** one fortified node alters kingdom-scale connectivity.
+
+---
+
+## Phase KL — boundary traffic can be controlled by attraction or obstruction
+
+Jeroboam:
+Bethel/Dan reroute flow by replacement nodes.
+
+Baasha:
+Ramah blocks flow by choke-point.
+
+**Effect:** same network variable can be controlled through opposite mechanisms.
+
+---
+
+## Phase KM — centre activates distant third force through treasure transfer
+
+Jerusalem silver/gold
+→ Damascus
+→ treaty switches
+→ Aram attacks Israel.
+
+**Effect:** material transfer recodes alliance and redirects military field.
+
+---
+
+## Phase KN — remote pressure closes local construction branch
+
+northern cities attacked
+→ Baasha hears
+→ Ramah project abandoned.
+
+**Effect:** stress elsewhere in network causes local stronghold withdrawal.
+
+---
+
+## Phase KO — one stronghold is disassembled into two strongholds
+
+Ramah stones/timber
+→ removed
+→ Geba + Mizpah.
+
+**Effect:** 1 node → fragments → 2 replacement nodes.
+
+---
+
+## Phase KP — material persists while political polarity reverses
+
+Baasha's blockade material
+→ Asa's defensive material.
+
+**Effect:** same physical components can serve opposing systems in different phases.
+
+---
+
+## Phase KQ — external war creates internal coup opportunity
+
+Nadab + Israel siege Gibbethon
+→ Baasha kills Nadab
+→ becomes king.
+
+**Effect:** centre can be replaced while field is focused outward.
+
+---
+
+## Phase KR — northern dynastic reset becomes recursive
+
+Baasha destroys Jeroboam house
+→ later Baasha house receives same predicted fate.
+
+**Effect:** removal grammar repeats across successor dynasties.
+
+---
+
+## Phase KS — centre detaches from active field and is killed in private enclosure
+
+Elah drinks in Tirzah house
+while
+army at Gibbethon
+→ Zimri kills centre.
+
+**Effect:** spatial separation between political centre and military field creates coup vulnerability.
+
+---
+
+## Phase KT — fractional military authority seizes whole political centre
+
+Zimri = commander of half chariots
+→ king.
+
+**Effect:** subfield commander can expand part-control into centre seizure.
+
+---
+
+## Phase KU — new claimant destroys predecessor house immediately
+
+Zimri
+→ Baasha house erased.
+
+**Effect:** centre change includes aggressive removal of competing continuity.
+
+---
+
+## Phase KV — external field creates its own rival king on hearing of palace coup
+
+army hears Zimri coup
+→ acclaims Omri in camp.
+
+**Effect:** political centre can emerge from field network rather than capital.
+
+---
+
+## Phase KW — external siege field turns inward against its own capital
+
+Omri army leaves Gibbethon
+→ besieges Tirzah.
+
+**Effect:** outside-directed force reverses into internal regime-change force.
+
+---
+
+## Phase KX — royal house becomes self-consuming terminal enclosure
+
+Zimri sees city lost
+→ enters palace/castle
+→ burns it over himself.
+
+**Effect:** centre/shelter becomes tomb/destruction mechanism.
+
+---
+
+## Phase KY — seven-day reign represents failed state lock-in
+
+new centre
+→ only seven days
+→ replaced.
+
+**Effect:** political transition can occur without stabilization.
+
+---
+
+## Phase KZ — northern fragment splits into two fragments again
+
+half Israel → Tibni.
+half Israel → Omri.
+
+**Effect:** daughter system can bifurcate recursively.
+
+---
+
+## Phase LA — strength gradient resolves second bifurcation
+
+Omri field grows stronger
+→ Tibni field loses
+→ Tibni dies
+→ one centre remains.
+
+**Effect:** same grow-stronger/grow-weaker convergence grammar repeats from David/Saul.
+
+---
+
+## Phase LB — successful centre uses old capital temporarily then relocates
+
+Omri:
+Tirzah 6 years
+→ purchases Samaria hill
+→ builds new city.
+
+**Effect:** post-conflict stabilization can be followed by deliberate capital migration.
+
+---
+
+## Phase LC — productive landscape is transformed into royal centre
+
+agricultural estate/oil-wine zone
+→ purchased
+→ monumental hilltop capital.
+
+**Effect:** economic node becomes political-symbolic node.
+
+---
+
+## Phase LD — capture and purchase are alternate centre-formation mechanisms
+
+David/Jerusalem:
+capture.
+
+Omri/Samaria:
+purchase.
+
+**Effect:** similar final centre geometry can arise from different transfer processes.
+
+---
+
+## Phase LE — new dynasty increases external religious/political coupling
+
+Ahab + Jezebel/Sidon
+→ Baal house/altar in Samaria.
+
+**Effect:** capital becomes interface with foreign royal-cult network.
+
+---
+
+## Phase LF — negative theological evaluation coexists with high material state power
+
+Kings condemns Omrides
+while
+archaeology/external texts show major polity.
+
+**Effect:** value judgment and system capacity must be tracked separately.
+
+---
+
+## Phase LG — city reconstruction brackets family loss from first to last
+
+Jericho:
+foundation ↔ firstborn loss.
+gates ↔ youngest loss.
+
+**Effect:** whole urban rebuilding process is narratively paired with whole-family boundary from eldest to youngest.
+
+---
+
+## Phase LH — destroyed memory-node returns as built city
+
+Jericho destroyed/cursed
+→ later rebuilt.
+
+**Effect:** spatial node can re-enter active network despite earlier terminal memory-state.
+
+---
+
+# What 1 Kings 15–16 adds to the master Bible/Vardath timeline
+
+189. **After a major split, daughter systems can develop radically different continuity rules—stable dynastic succession versus repeated annihilating coups.**
+190. **Recentralization can be partial; removing some peripheral nodes does not automatically collapse the whole distributed network.**
+191. **A single border stronghold can function as a traffic valve controlling going-out/coming-in across a whole political field.**
+192. **Traffic can be controlled either by attractive replacement nodes or by coercive choke-points.**
+193. **A centre can redirect a local conflict by transferring stored value to activate a distant third force.**
+194. **Alliance state can be changed materially: treasure transfer → treaty reversal → army redirection.**
+195. **Pressure applied to one side of a multi-front system can force abandonment of a stronghold elsewhere.**
+196. **One physical stronghold can be dismantled and reassembled into two new strongholds, preserving material while changing geometry and allegiance.**
+197. **External warfare repeatedly creates opportunities for internal coups because the military field and political centre become separated.**
+198. **Dynastic reset can become recursive: a usurper reproduces the same house-destruction process he used on his predecessor.**
+199. **A military subfield commander can expand fractional control into total centre seizure.**
+200. **A distributed army can create a rival king in the field, producing simultaneous palace-centre and field-centre claimants.**
+201. **An outward-facing military field can reverse direction and become an inward siege against its own capital.**
+202. **A centre can destroy itself when its enclosure changes from refuge to terminal trap.**
+203. **A political state change can fail to lock in at all; Zimri's seven-day reign is an extreme unstable transition.**
+204. **A daughter kingdom can split internally again, proving fragmentation is recursive rather than one-time.**
+205. **The grow-stronger/grow-weaker gradient can reconverge a bifurcated field around one centre.**
+206. **A post-civil-war centre can later relocate deliberately to a newly purchased node.**
+207. **An existing productive/agricultural node can be transformed into a monumental political capital without beginning as an empty site.**
+208. **The same final centre geometry can be produced by conquest, purchase or other transfer modes; process history matters.**
+209. **A materially powerful state can be narratively/theologically condemned; system complexity and value judgment are separate axes.**
+210. **City reconstruction can be narrated as simultaneous family deconstruction, bracketing foundation and gate completion with first/last offspring loss.**
+211. **A node previously treated as destroyed/closed can later be reactivated and rebuilt, though the narrative may frame that reopening negatively.**
+
+---
+
+## Section 36B pair / force register
+
+### Asa / Baasha
+South/north rival centres fighting over the boundary zone.
+
+### Ramah / Geba+Mizpah
+One blockade stronghold converted into two Judahite strongholds.
+
+### Asa / Ben-hadad / Baasha
+Three-centre diversion system:
+Asa activates Ben-hadad to pull Baasha away.
+
+### Jeroboam house / Baasha house
+Successive northern dynasties entering the same annihilation grammar.
+
+### Elah centre / Gibbethon army
+Political centre separated from active military field.
+
+### Zimri / Omri
+Palace-acclaimed usurper versus army-acclaimed rival.
+
+### Omri / Tibni
+Explicit two-part national bifurcation resolved by strength gradient.
+
+### Tirzah / Samaria
+Inherited old capital versus newly purchased/built capital.
+
+### David/Jerusalem / Omri/Samaria
+Parallel new-capital sequences with different acquisition processes:
+capture versus purchase.
+
+### Bethel / Jericho
+Recent scholarship sees Jericho's rebuilding by a Bethelite as narratively meaningful in the Deuteronomistic geography.
+
+---
+
+## Section 36B number / timing register
+
+Record without forcing:
+- Abijam reign **3 years**;
+- Asa reign **41 years**;
+- Nadab **2 years**;
+- Baasha **24 years**;
+- Elah **2 years**;
+- Zimri **7 days**;
+- Omri **12 years**, with **6 years** in Tirzah;
+- Samaria hill purchase **2 talents silver**;
+- Ahab reign **22 years**;
+- Zimri commands **half** the chariot force;
+- Omri/Tibni divide people into **two halves**.
+
+The most important functional numbers here are not mystical:
+- **1 Ramah → 2 rebuilt strongholds**;
+- **half + half** national split;
+- **half chariot command → total throne seizure**.
+
+---
+
+## Section 36B textual / historical / archaeological controls
+
+- The Asa-Baasha narrative may preserve a genuine memory of northern pressure on Judah, but scholars dispute whether all northern place-names and Ben-hadad details belong historically to Baasha's period.
+- Finkelstein and Kleiman specifically caution that parts of 1 Kings 15 may reflect later geographical/campaign traditions.
+- Do not treat unsupported internet claims of exact petrographic transfer from Ramah to Geba/Mizpah as established archaeology without primary publication.
+- The textual process of reusing Ramah stones/timber is explicit and can be analyzed independently of archaeological verification.
+- Northern dynastic annihilation accounts are shaped by Deuteronomistic prophecy-fulfilment ideology as well as possible annalistic coup memories.
+- Historians treat the early northern coups as likely related to military, socio-economic and tribal tensions, but exact motives are not recoverable with certainty.
+- The repeated Gibbethon siege notice may preserve duplicate/reworked traditions; Finkelstein/Kleiman question whether both siege notices should be treated as separate literal historical events.
+- Omri is independently significant outside the Bible: Assyrian sources continue calling Israel “House/Land of Omri” long after his dynasty, and the Mesha/Tel Dan/Assyrian corpus confirms the historical importance of the Omride state.
+- Samaria archaeology supports a major early Iron Age royal transformation of a hilltop/agricultural estate, but exact phasing of Omri versus Ahab versus later construction remains debated.
+- Lawrence Stager's “Shemer's Estate” remains important for interpreting the pre-capital agricultural installations.
+- Recent work on Omride monumental architecture stresses that the palace/capital itself was a visible instrument of state formation and labour mobilization.
+- The biblical narrator's anti-Omride evaluation must not be mistaken for evidence of weak geopolitical power.
+- Jezebel's Phoenician origin and Ahab's marriage are politically plausible in an interregional alliance context; the narrator's presentation of Baal/Asherah is polemical and should be separated from independent reconstruction of ninth-century cult practice.
+- 1 Kings 16:34 deliberately echoes Joshua 6:26. The text does **not** securely establish deliberate foundation sacrifice; several mechanisms have been proposed and none should be asserted as fact.
+- Archaeology at Jericho confirms substantial earlier/later occupation phases, but matching Hiel's rebuilding notice to a specific excavated phase is not straightforward enough to use as precise chronological proof.
+- Recent literary scholarship treats Hiel/Jericho as a Deuteronomistic geographical marker leading into the Elijah-Elisha cycle; keep that as literary interpretation rather than proven original intention.
+
+### Sources logged for Section 36B
+
+Primary:
+- Mechon-Mamre, **1 Kings 15–16**.
+
+Scholarly controls:
+- Israel Finkelstein & Assaf Kleiman, **“The Archaeology of the Days of Baasha?” Revue Biblique 126 (2019): 277–296.**
+- scholarship on coups d'état and prophetic legitimation in the northern kingdom.
+- Cat Quine, work on royal assassination/theopolitics and instability differences between Israel and Judah.
+- Lawrence E. Stager, **“Shemer's Estate,” BASOR 277/278 (1990): 93–107.**
+- archaeological reassessments of Samaria's early building phases and Omride monumental architecture.
+- Israel Finkelstein, **The Forgotten Kingdom**, retained as an archaeology-first counterweight to Judah-centric Kings historiography.
+- David Brewer, **“Counterfeit Davids,”** for literary parallels between David/Omri and the larger nested narrative architecture of Kings.
+- current studies of Omride architecture as state formation and symbolic landscape reshaping.
+- recent literary work on Hiel the Bethelite/Jericho and the relationship to Joshua's curse, with sacrificial reconstruction left open.
+
+**Section 36 remains in progress.**
+
+### Next process block
+
+**1 Kings 17–19**:
+- Elijah moves east beyond Jordan during drought;
+- ravens carry food;
+- brook dries;
+- route redirects to Sidonian widow;
+- last meal becomes replenishing jar/cruse cycle;
+- child dies and is carried upward into Elijah's chamber;
+- body stretched over three times and life returns;
+- three-year drought confrontation;
+- Obadiah hides 100 prophets in two caves/groups of 50 and supplies them;
+- Carmel gathers king/Israel/450 Baal prophets + 400 Asherah prophets;
+- people “limp between two opinions”;
+- two altars / two bulls / no fire;
+- Baal field performs repeated activation attempt from morning to noon;
+- Elijah repairs twelve-stone altar;
+- trench + repeated four-jar water saturation;
+- fire descends and consumes offering, wood, stones, dust and water;
+- rain cloud begins as “a man's hand” from sea;
+- sky darkens and rain returns;
+- Elijah runs ahead;
+- then flees south into wilderness;
+- food/water restores him twice;
+- forty-day journey to Horeb;
+- cave;
+- wind / earthquake / fire pass, but voice is after them;
+- Elijah is sent back along route to anoint new centres;
+- Elisha leaves plough and follows.
+
