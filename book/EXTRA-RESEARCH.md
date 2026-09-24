@@ -39174,3 +39174,697 @@ Saved priorities from the roadmap include:
 
 Before beginning Section 27, apply the anti-repeat search to the full ledger.
 
+---
+
+## SECTION 27 progress A — Joshua 1–5: succession becomes operation, marked-house survival, central ark crossing, two twelve-stone memories and land-entry state change
+
+### Anti-repeat check
+
+The full ledger was searched first.
+
+No Section 27 progress existed.
+
+This is genuinely new work.
+
+---
+
+## Joshua 1 — successor office becomes active
+
+The book opens with:
+- Moses dead;
+- Joshua addressed as the one who must now lead the crossing.
+
+The succession structure from Numbers/Deuteronomy is no longer preparatory.
+
+It is now operational:
+
+**Moses absent**
+→ **Joshua active**
+→ same population continues route.
+
+This is one of the clearest demonstrations that:
+**system function survives body replacement**.
+
+### Joshua receives route authority but remains text-bounded
+
+Joshua is told:
+- be strong/courageous;
+- cross Jordan;
+- lead people into land;
+- keep Torah in mouth;
+- meditate day/night;
+- do not turn right or left from it.
+
+This gives an interesting double geometry:
+
+**geographic crossing freedom**
+is constrained by
+**behavioral non-deviation**.
+
+The leader may move through space,
+but not deviate from the governing information path.
+
+### Three-day preparation before crossing
+
+Officers tell the camp:
+- prepare provisions;
+- in **3 days** cross Jordan.
+
+This gives another real three-day transition interval.
+
+Do not assume universal cosmological significance.
+
+### East-Jordan tribes repeat split-location identity
+
+Reuben, Gad and half-Manasseh:
+- families/property remain east;
+- armed men cross west with brothers;
+- return later.
+
+So Joshua inherits the same:
+**one tribal identity / two-side temporary deployment**
+structure from Numbers 32.
+
+---
+
+## Joshua 2 — two spies replace the earlier twelve-person reconnaissance
+
+Joshua sends:
+- **2 spies** secretly.
+
+This is a major change from:
+- 12 representatives in Numbers/Deuteronomy.
+
+The sensing network contracts:
+
+**12-branch representative reconnaissance**
+→ **2-person covert reconnaissance**.
+
+This is a genuine change of operational architecture under the successor.
+
+### Rahab lives literally in the city wall
+
+Rahab's house is:
+- in/at the city wall;
+- with a window opening outward.
+
+This places her household on the **boundary itself**.
+
+She is not merely inside Jericho.
+
+Her home occupies:
+**inside / wall / outside interface**.
+
+That makes the later window-cord scene especially important.
+
+### Window becomes an escape route through the boundary
+
+Rahab lets the spies down:
+- by rope;
+- through the window;
+- to the outside.
+
+So the same opening functions as:
+
+**inside city**
+→ **window in wall**
+→ **outside escape**.
+
+This is a literal controlled passage through a city boundary.
+
+It is ordinary architecture,
+not a world gate.
+
+### Spies hide for three days
+
+Rahab instructs:
+- go to hills;
+- hide **3 days**;
+- wait until pursuers return;
+- then continue.
+
+This gives:
+**boundary escape**
+→ **3-day concealment interval**
+→ **route resumes**.
+
+Again:
+time/phase matters after crossing.
+
+### Scarlet cord marks the protected boundary node
+
+The spies require Rahab to:
+- tie a **scarlet cord/thread** in the window;
+- gather household into the house.
+
+During attack:
+- those **inside the house** are protected;
+- anyone who goes **outside** bears responsibility for death.
+
+This is an extremely strong structural recurrence with Passover.
+
+### Rahab / Passover comparison
+
+Passover:
+- marked household threshold;
+- people remain inside;
+- destructive event passes through surrounding area;
+- inside marked enclosure = protected.
+
+Rahab:
+- marked window in boundary-wall house;
+- family gathered inside;
+- destructive attack consumes surrounding city;
+- inside marked enclosure = protected.
+
+The specific marker differs:
+- Passover = blood on doorframe.
+- Rahab = scarlet cord at window.
+
+But the survival grammar is strikingly similar:
+
+**marked boundary**
++
+**stay inside**
++
+**destruction outside**
+=
+**protected household**.
+
+This is a strong P9 recurring enclosure pattern.
+
+It does not prove direct literary dependence by itself.
+
+### The same cord participates in both escape and later recognition
+
+The window:
+- first provides spies' outward escape;
+- later bears the scarlet marker for Rahab's inward household protection.
+
+Thus one boundary node has two functions at different phases:
+
+**phase 1**
+→ route outward for spies.
+
+**phase 2**
+→ visible protection marker for household.
+
+Same place,
+different role by phase.
+
+### Rahab / spies form reciprocal rescue pair
+
+Rahab saves:
+- the two spies now.
+
+They promise to save:
+- Rahab's household later.
+
+This creates a delayed reciprocal structure:
+
+**A saves B now**
+→ **B saves A later**.
+
+This is not same-person identity.
+It is reciprocal covenant/action.
+
+---
+
+## Joshua 3 — Jordan crossing uses the ark as a stationary central crossing marker
+
+Before crossing:
+- people are told to follow the ark;
+- keep distance of about **2,000 cubits**;
+- because they have not passed this route before.
+
+This is a strong:
+**central guide object + safety distance** rule.
+
+### Consecration precedes transition
+
+Joshua tells people:
+- consecrate yourselves;
+- next day YHWH will do wonders.
+
+Again:
+**state preparation before crossing**.
+
+This matches:
+- Sinai;
+- priestly access;
+- Levitical purification;
+- other threshold systems.
+
+### Priests carrying ark move into the river first
+
+When priests' feet touch Jordan:
+- upstream water stops;
+- stands in **one heap** far away near Adam;
+- downstream water toward Dead Sea is cut off/drains;
+- people cross opposite Jericho.
+
+This creates a clear water-routing geometry:
+
+**upstream**
+→ stopped / piled
+
+**central crossing zone**
+→ dry
+
+**downstream**
+→ depleted/cut off.
+
+This differs from Red Sea imagery:
+- Red Sea = bilateral left/right water walls in final prose.
+- Jordan = upstream heap + downstream cessation in Joshua.
+
+Do not collapse them into identical hydrodynamics.
+
+### Priests + ark remain stationary in the middle
+
+The priests:
+- stand firm on dry ground;
+- **in the middle of Jordan**;
+- while all Israel crosses.
+
+This is one of the strongest source-level central-axis scenes in Joshua.
+
+Raw geometry:
+
+**bank A**
+→ population route
+→ **priests + ark fixed in middle**
+→ population continues
+→ **bank B**.
+
+The central object/operator remains stationary while the moving collective passes around/through the opened route.
+
+### Ark is not simply a moving vehicle here
+
+In this phase:
+- ark enters first;
+- becomes stationary;
+- population crosses;
+- ark exits last.
+
+So its role changes:
+
+**guide**
+→ **central stationary crossing marker**
+→ **rear completion / exit**.
+
+This is exactly the kind of role-change-by-phase the project tracks.
+
+### Source-critical control — “military ark” and Priestly ritual ark traditions may be layered
+
+Modern scholarship distinguishes:
+- older Ark traditions in which the Ark itself functions almost dynamically in battle/journey;
+- Priestly supplements that regularize divine control and ritual terminology.
+
+Joshua 3–4 contains tensions in:
+- ark naming;
+- who commands;
+- how water return is described.
+
+So do not treat every verse as one seamless mechanical report.
+
+---
+
+## Joshua 4 — twelve representatives extract twelve stones from the crossing centre
+
+One man from each tribe:
+- **12 men**;
+- each takes **1 stone** from the middle of Jordan;
+- from the place where priests' feet stood;
+- carries it to the camp.
+
+This is a powerful transformation:
+
+**12 tribes**
+→ **12 representative men**
+→ **12 stones**
+→ physical memory of the crossing.
+
+### Each representative carries one unit from the centre outward
+
+The stones move:
+
+**crossing centre**
+→ lifted by tribal representative
+→ carried outward
+→ assembled at Gilgal.
+
+This is a source-level:
+**central event → distributed representatives → recombined memory structure**.
+
+### One set outside, one set inside
+
+The final text also says Joshua sets:
+- **12 stones in the middle of Jordan** where priests stood.
+
+So the received book preserves two stone sets:
+
+**12 removed from river**
+→ erected at Gilgal.
+
+**12 placed/standing in river**
+→ remain at crossing centre.
+
+This is remarkably rich geometry:
+
+**external memory**
++
+**internal/site memory**.
+
+### Source-critical caution — two sets may reflect layered traditions
+
+Scholars have long noticed complexity in Joshua 4:
+- different commands;
+- different stone placements;
+- repetitions.
+
+The final form clearly has two sets,
+but their literary prehistory may reflect combined traditions.
+
+Again:
+do not assume one original observer recorded both installations as one seamless act.
+
+### Stones convert event into future question/answer memory
+
+The purpose is explicitly pedagogical:
+
+future children ask:
+**“What do these stones mean?”**
+
+Parents answer:
+- Israel crossed Jordan on dry ground.
+
+Thus material structure acts as:
+**memory trigger**
+→ prompts speech
+→ reconstructs past event.
+
+This parallels:
+- altar-plating memory;
+- preserved rod;
+- doorpost writing;
+- Torah stones.
+
+### Jordan and Red Sea are explicitly linked
+
+Joshua 4 says YHWH dried Jordan:
+- as YHWH dried the Red Sea.
+
+So the text itself creates a recurrence relation.
+
+This is stronger than us merely noticing similarity.
+
+The book deliberately frames Joshua as repeating/continuing Moses-era crossing power.
+
+### Waters return when priests/ark leave
+
+After priests come out:
+- their feet reach dry ground;
+- Jordan waters return to normal course.
+
+This gives a complete state cycle:
+
+**normal river**
+→ central ark/priest entry
+→ water state changes
+→ people cross
+→ ark/priest exit
+→ **river returns to normal**.
+
+This is one of the closest source-level open/close route cycles yet.
+
+### Same centre controls opening and restoration in final narrative
+
+At least in final form,
+the presence/withdrawal of ark-bearing priests correlates with:
+- route opening;
+- route closure.
+
+But source criticism warns that this may combine older “ark effect” tradition with later theological command framing.
+
+So:
+strong narrative correlation,
+uncertain compositional mechanism.
+
+---
+
+## Exact crossing date
+
+Joshua 4 gives:
+- first month;
+- day **10**;
+- Israel comes up from Jordan;
+- camps at Gilgal.
+
+This is four days before Passover day 14.
+
+That creates a tightly staged land-entry clock.
+
+---
+
+## Joshua 5 — circumcision creates a land-entry bodily reset
+
+After crossing:
+- Joshua circumcises the new/entering generation in the final text;
+- people remain in camp until healed.
+
+This gives:
+
+**crossing completed**
+→ **body-state transformation**
+→ **healing pause**
+→ further cultic operation.
+
+Again:
+movement does not simply continue immediately after transition.
+
+### Source-critical problem: who exactly is being circumcised?
+
+Joshua 5 contains tensions about:
+- exodus generation;
+- wilderness-born children;
+- circumcision status in Egypt/wilderness.
+
+Modern redaction analysis sees several layers trying to reconcile different generation models.
+
+Therefore:
+do not treat the final explanation as one historically uniform account.
+
+### “Disgrace of Egypt” is rolled away at Gilgal
+
+The place-name explanation links:
+- bodily rite;
+- national status;
+- geographic location.
+
+So:
+**body-state**
++
+**place-name**
++
+**collective identity**
+become coupled at land entry.
+
+### Passover occurs on day 14 after the crossing/body reset
+
+At Gilgal:
+- Passover is kept on **month 1 / day 14**.
+
+Sequence:
+
+**day10**
+→ Jordan crossing complete.
+
+**circumcision / healing**
+→ transition preparation.
+
+**day14**
+→ Passover in land.
+
+This is a very dense boundary-phase sequence.
+
+### Manna stops when land-food begins
+
+After eating produce of Canaan:
+- manna ceases;
+- Israel eats land produce.
+
+This is a major provisioning handoff:
+
+**wilderness external provision**
+→ land-entry
+→ local land food
+→ old provision stops.
+
+That is a clean **old support mode → new support mode** transition.
+
+It strongly fits the mature reset/handoff concept:
+
+> new phase does not require old supply to continue once replacement system is active.
+
+### Joshua encounters a sword-bearing commander on holy ground
+
+Near Jericho:
+- Joshua sees a man with drawn sword;
+- asks:
+  **for us or for our enemies?**
+- answer:
+  **“No” / neither simple category; commander of YHWH's host**.
+- Joshua bows;
+- is told:
+  remove sandal;
+  ground is holy.
+
+This is a deliberate literary echo of Moses at the burning bush.
+
+### Joshua / Moses succession is expressed through repeated revelation form
+
+Moses:
+- divine/messenger encounter;
+- holy ground;
+- sandals removed;
+- mission begins.
+
+Joshua:
+- divine commander encounter;
+- holy ground;
+- sandal removed;
+- conquest mission begins.
+
+This is an exceptionally strong **P5 role-pattern recurrence**.
+
+It does **not** make Joshua the same person as Moses.
+
+### “For us or against us?” receives a nonbinary answer
+
+Joshua offers a binary:
+**us / enemies**.
+
+The figure answers:
+**No**.
+
+This is another useful control:
+the narrative can reject a proposed pair/polarity rather than choosing one side.
+
+Not every apparent binary is the text's actual structure.
+
+---
+
+## SECTION 27A continuous sequence — Joshua 1–5
+
+**succession activated**
+→ Moses absent
+→ Joshua becomes operational leader
+→ Torah remains governing information
+→ 3-day crossing preparation
+
+**covert sensing**
+→ 2 spies
+→ Rahab at wall-house
+→ boundary window escape
+→ 3-day hiding
+→ scarlet window cord
+→ household must remain inside marked enclosure
+
+**Jordan transition**
+→ consecration
+→ ark leads at distance
+→ priests enter water
+→ upstream heap / downstream cutoff
+→ priests + ark stand fixed in middle
+→ population crosses dry
+
+**memory extraction**
+→ 12 representatives
+→ 12 stones carried from centre to Gilgal
+→ 12 stones also placed in river in final text
+→ future children question stones
+
+**closure**
+→ priests/ark exit
+→ river returns
+
+**land-entry reset**
+→ day10 Gilgal
+→ circumcision / recovery
+→ day14 Passover
+→ eat land produce
+→ manna ceases
+
+**successor revelation**
+→ Joshua meets commander
+→ drawn sword
+→ binary “us/enemy?” rejected
+→ sandal removed
+→ holy ground
+→ Jericho phase begins.
+
+---
+
+## SECTION 27A strongest Vardath correspondences
+
+1. Joshua demonstrates **office continuity after body replacement**.
+2. Rahab's wall-house gives an actual boundary-dwelling enclosure.
+3. Scarlet-marked house + stay-inside survival strongly recurs with Passover marked-house grammar.
+4. Same window functions differently by phase: escape route first, protection marker later.
+5. Jordan crossing differs from Red Sea geometry but repeats a water-route opening tradition.
+6. Priests + ark form a **stationary centre inside the opened river route** while population moves through.
+7. Ark changes role by phase: guide → stationary centre → exit/closure marker.
+8. Crossing centre generates two twelve-stone memory systems: one carried outward, one remaining at site.
+9. Event is converted into durable material memory that triggers future oral explanation.
+10. River returns after central ark/priest withdrawal: full open→cross→close sequence in final narrative.
+11. Crossing/body ritual/Passover/manna cessation form a compact **handoff sequence**.
+12. Joshua repeats Moses' holy-ground/sandal revelation pattern without becoming Moses.
+
+### Major controls
+
+- Rahab's house is ordinary city-wall architecture.
+- scarlet cord symbolism has cultural/literary explanations; direct Passover dependence is not proven merely by similarity.
+- Jordan/Red Sea hydrodynamics differ in the texts.
+- Joshua 3–4 contains layered ark traditions.
+- two twelve-stone sets may reflect compositional complexity.
+- Joshua 5 circumcision account is redactionally layered.
+- manna cessation is theological narrative provisioning, not evidence of material transfer between worlds.
+- Moses/Joshua parallel is literary succession, not same identity.
+
+### Pair / number register
+
+- spies: **2**.
+- hiding interval: **3 days**.
+- crossing preparation: **3 days**.
+- ark safety distance: about **2,000 cubits**.
+- tribal stone representatives: **12**.
+- stones carried out: **12**.
+- stones in river: **12** in final form.
+- crossing emergence date: **month1/day10**.
+- Passover: **month1/day14**.
+- major succession pair: Moses / Joshua.
+- marked-enclosure comparison: Passover door / Rahab window.
+
+### Sources logged
+
+Primary:
+- Joshua 1–5.
+
+Scholarly/source-critical:
+- “The Two Arks: Military and Ritual” — TheTorah.
+- “Hazor's Standing Stones: What Do They Commemorate?” — TheTorah.
+- “The Protective Red Thread” — TheTorah.
+- “Rahab, the Broad, Symbolizes Israel's Conquest of Canaan” — TheTorah.
+- “Were Rahab's Sisters Saved?” — TheTorah.
+- “Why Didn't the Israelites Circumcise in the Wilderness?” — TheTorah.
+- “Joshua Circumcises Israel in Response to Egypt's Scorn” — TheTorah.
+- “The Burning Bush: Why Must Moses Remove His Shoes?” — TheTorah.
+- “Anything You Can Do, I Can Do Better — Joshua as Moses” — TheTorah.
+- “Joshua Is Appointed Leader Three Times: But Is He in Charge?” — TheTorah.
+
+**Section 27 remains in progress.**
+
+Next under anti-repeat protocol:
+**Joshua 6–8 — Jericho's 7-day/7-priest/7-trumpet circuit, ark at moving centre, wall collapse, Rahab enclosure survival, Achan hidden devoted cargo and community-wide failure, lots/sorting, Ai reversal/ambush, and Gerizim/Ebal enactment with written Torah.**
+
