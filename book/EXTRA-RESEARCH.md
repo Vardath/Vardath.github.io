@@ -29599,3 +29599,345 @@ Use the mature/current model rather than superseded historical wording:
 **Section 22 has deliberately NOT been started during this catch-up pass.**
 
 **Assistant reply saved:** The book, live cosmology page and full EXTRA-RESEARCH ledger are now reconciled. Sections 19–21 are already complete despite stale duplicated history. There is no hidden Section 22 work later in the file. The exact continuation point is Section 22 — Exodus 25–40.
+
+
+---
+
+## SECTION 22 progress A — Exodus 25–26: Sinai becomes a portable nested interface
+
+### Memory/ledger check before research
+
+The ledger was checked first under the active anti-repeat protocol.  
+No Section 22 progress existed after the reconciled Section 21 completion.  
+This is therefore genuinely new work.
+
+### “Make me a sanctuary so that I may dwell among them”
+
+Exodus 25 opens by turning the mountain encounter into a constructed, portable dwelling.
+
+The command is:
+- Israel supplies materials voluntarily;
+- a **sanctuary/dwelling** is made;
+- YHWH will dwell among the people;
+- Moses must build it according to the **pattern/form shown to him on the mountain**.
+
+This is an important transition from Section 21:
+
+**Sinai**
+- fixed place;
+- population below;
+- summit cloud/fire above;
+- Moses moves between the zones.
+
+becomes
+
+**Tabernacle**
+- movable place;
+- nested sacred zones;
+- central communication point;
+- priestly/mediator access rules;
+- cloud/fire can later travel with the population.
+
+Modern scholarship has long noticed that the Priestly Tabernacle narrative deliberately echoes creation language and the ordered cosmos. Peter Kearney's well-known analysis divides Exodus 25–31 into **seven divine speech units**, with the seventh culminating in Sabbath (31:12–17), paralleling the seven-day creation pattern. The completion formula in Exodus 40 also strongly resembles Genesis 2's completion language.
+
+For Vardath comparison, the high-value point is therefore not “the tabernacle literally is the universe,” but:
+
+**a fixed mountain interface is translated into an ordered portable model that can reproduce the relationship between outer population, inner sacred space and the central communication zone.**
+
+### Ark — portable carrier and central communication furniture
+
+The ark is:
+- acacia wood;
+- overlaid with gold inside and outside;
+- **2.5 cubits long × 1.5 wide × 1.5 high**;
+- fitted with four rings;
+- carried by poles;
+- and, uniquely, the poles are commanded **not to be removed**.
+
+This makes the ark inherently portable even when stationary.
+
+Important mature-model role distinction:
+
+**Ark = container / sacred carrier / communication furniture.**  
+It is not automatically the gate itself.
+
+The tablets/testimony go **inside** the ark.
+
+So the architecture already separates:
+- information/covenant cargo inside,
+- cover above,
+- paired figures above the cover,
+- communication occurring above/between them.
+
+### Two cherubim — one cover, two ends, one central speaking-space
+
+The cover (`kapporet`) bears:
+- **two cherubim**;
+- one at one end;
+- one at the other end;
+- made as part of/from the same gold cover in the received description;
+- wings spread **upward**;
+- wings overshadowing the cover;
+- faces turned **toward one another**;
+- faces also oriented toward the cover.
+
+Then YHWH says Moses will be met there and spoken to:
+- **above the cover**;
+- **from between the two cherubim**.
+
+This is one of the strongest literal bilateral communication geometries yet:
+
+**cherub A ← central invisible voice-space → cherub B**
+with
+**wings arching/covering above**
+and
+**ark/testimony below**.
+
+Pair classification:
+- **P2 bilateral/mirrored pair**
+- **P7 boundary/communication framing pair**
+
+Do **not** classify them as two halves of God or two independent gods.
+
+Ancient and modern interpretations of the cherubim vary:
+- throne creatures,
+- guardians,
+- throne/podium symbolism,
+- protective/covering figures.
+Raanan Eichler has argued specifically against a simplistic “the wings are literally God's seat” model, noting that the figures face one another and cover the ark rather than obviously supporting a conventional throne.
+
+For this project the safest source-level statement is:
+
+> Two mirrored winged figures define a protected central zone from which communication is said to emerge.
+
+That is much stronger than simply saying “there are two angels.”
+
+### Eden comparison — cherubim recur at controlled sacred boundaries
+
+Cherubim already appear at Eden's boundary in Genesis 3 traditions, guarding the route to the Tree of Life.
+
+Later Jewish interpretation sometimes explicitly links:
+- Eden cherubim,
+- divine dwelling,
+- and YHWH speaking between the two ark cherubim.
+
+This does **not** prove the Tabernacle is literally Eden.
+
+But it strengthens a recurring biblical grammar:
+
+**cherubim = beings/images associated with controlled access to an intensely sacred central region.**
+
+That is directly relevant to our guardian/interface distinction.
+
+### Menorah — one central stem + 3 branches + 3 branches = 7 lamps
+
+The lampstand is especially important for the projection/branch test.
+
+Exodus 25 describes:
+- one lampstand of pure gold;
+- hammered work;
+- base and central shaft;
+- **six side branches**;
+- **three from one side**;
+- **three from the other side**;
+- the central shaft remains the seventh light-bearing axis;
+- total lamps = **7**.
+
+Raw geometry:
+
+**3 branches ← central shaft → 3 branches**
+=
+**3 + 1 + 3**
+with **7 lamps**.
+
+The branches/cups are decorated repeatedly with:
+- almond-shaped cups;
+- bulbs/knops;
+- flowers/blossoms.
+
+Scholarly discussion often recognizes the lampstand's strongly vegetal/tree-like imagery, sometimes comparing it with an ancient Near Eastern sacred/tree-of-life form. Other proposals emphasize cosmic/luminary symbolism. The exact symbolic identification is debated.
+
+For Vardath comparison:
+- this is a real **central-axis + bilateral branching** object;
+- it is a side-view/tree-like projection candidate;
+- it is explicitly one object rather than seven independent objects;
+- its total visible light-points are seven.
+
+But do **not** call it the Vardath lattice merely because 3+1+3 resembles a branched axis. Sequence/function must still match.
+
+### Ten inner curtains become “one” through 5 + 5 coupling
+
+Exodus 26 begins with:
+- **10** fine linen curtains;
+- cherubim woven into them;
+- arranged as **5 curtains joined to 5 curtains**;
+- loops at the opposed edges;
+- **50 loops** on one set;
+- **50 loops** on the other;
+- **50 gold clasps** coupling the two groups;
+- “so that the tabernacle shall be **one**.”
+
+This is extremely interesting mechanically.
+
+The text's own geometry is:
+
+**5-sheet field**
+→ edge loops
+↔
+**5-sheet field**
+→ coupled by 50 connectors
+→ **one dwelling**.
+
+That is not a person-pair but an explicit **two-field recombination into one larger structure**.
+
+Pair classification:
+- **P1/P7 paired structural halves joined into one functional enclosure**.
+
+This is one of the cleanest source-level “two larger fields joined so the whole becomes one” statements yet in canonical Exodus.
+
+### Outer goat-hair layer repeats unequal two-part coupling
+
+The goat-hair covering uses:
+- **11 curtains**;
+- one coupling group of **5**;
+- one group of **6**;
+- loops/clasps joining them.
+
+So the outer layer is not perfectly bilateral:
+**5 + 6**.
+
+This is a valuable control:
+the Tabernacle deliberately uses both:
+- symmetric **5 + 5** coupling,
+- asymmetric **5 + 6** coupling.
+
+Do not force every doubled construction into exact mirror symmetry.
+
+### Inner veil — a real partition, not metaphorical
+
+The `parokhet` veil:
+- blue/purple/crimson/fine linen;
+- cherubim worked into it;
+- hung on **4 pillars** with 4 silver sockets;
+- physically separates:
+  - **Holy**
+  - from **Holy of Holies**.
+
+Ark goes behind it.
+Table and menorah remain outside it.
+
+This is a genuine threshold/boundary object.
+
+Mature-model classification:
+- **veil = boundary/partition**;
+- **not automatically a gate**.
+
+It becomes functionally gate-like only insofar as later access rules regulate who may cross it and when.
+
+The source itself first emphasizes **separation**.
+
+### Outer entrance screen creates another boundary layer
+
+A second screen covers the entrance of the tent.
+
+So the simplest nested architecture is:
+
+**camp / outside**
+→ **courtyard**
+→ **entrance screen**
+→ **Holy Place**
+→ **inner cherubim veil**
+→ **Holy of Holies**
+→ **ark/cover**
+→ **between-the-cherubim communication point**.
+
+This is a true sequence of progressively restricted interfaces.
+
+### North/south paired furniture
+
+Inside the Holy Place:
+- table is placed on the **north** side;
+- lampstand on the **south** side;
+- they stand **opposite one another**.
+
+This gives another bilateral interior pair:
+
+**north — table / bread**
+↔
+**south — lampstand / light**.
+
+Their functions are complementary rather than identical.
+
+### Creation/cosmos comparison — useful but must remain controlled
+
+Scholarly treatments of Exodus 25–40 often read the Tabernacle as a symbolic microcosm because of:
+- creation/completion language;
+- sevenfold speech/Sabbath structure;
+- celestial/vegetal lamp imagery;
+- layered sacred geography;
+- ordered boundaries;
+- divine “dwelling” inside an ordered world.
+
+That is a legitimate ancient-Israelite symbolic reading.
+
+But it does **not** establish:
+- nine inhabited discs;
+- a plasma finger-trap;
+- temporal adjacency;
+- land transfer;
+- literal future/past worlds.
+
+Its strongest use for this project is:
+
+> Exodus itself constructs a **portable ordered world-model / divine-interface model** whose nested geometry reproduces graded separation and controlled communication.
+
+### Vardath comparison — current verdict for Exodus 25–26
+
+**Strong correspondences**
+1. Fixed Sinai interface becomes **portable interface architecture**.
+2. Two cherubim form a real **bilateral pair around a central communication zone**.
+3. Menorah is a real **3 + 1 + 3 branched axial structure** with seven lights.
+4. Ten inner curtains form **5 + 5 → one structure** through many edge connectors.
+5. Outer covering uses **5 + 6**, providing an asymmetry control.
+6. Sacred space is nested through progressively stronger partitions.
+7. Inner veil is a real physical **boundary between two differently accessible states/zones**.
+8. Table/light are opposed north/south complementary furnishings.
+9. Ark remains a **carrier/container/interface furnishing**, not automatically the gate.
+
+**Major mismatches**
+- no actual future/past world adjacency is described;
+- no land/water/air transfer through the veil;
+- no opening/closing of the veil is yet a world-reset mechanism;
+- cherubim are not described as the gate itself;
+- menorah tree imagery is symbolic/cultic, not an explicit physical sky lattice.
+
+### Number/geometry register, Exodus 25–26
+
+- Ark: **2.5 × 1.5 × 1.5 cubits**.
+- Cherubim: **2**, one at each end.
+- Menorah: **1 central + 6 side branches = 7 lamps**.
+- Side branches: **3 + 3**.
+- Inner curtains: **10 = 5 + 5**.
+- Inner coupling: **50 loops + 50 loops + 50 gold clasps**.
+- Goat-hair curtains: **11 = 5 + 6**.
+- Inner veil supports: **4 pillars / 4 sockets**.
+- Outer entrance screen supports: **5 pillars**.
+- Holy Place furnishing polarity: **north table / south menorah**.
+
+### Sources logged for this block
+
+Primary text:
+- Exodus 25–26 (Sefaria / Mechon-Mamre Hebrew-English text).
+
+Scholarly controls:
+- Raanan Eichler, “The Cherubim: Their Role on the Ark in the Holy of Holies.”
+- Raanan Eichler, “What Kind of Creatures Are the Cherubim?”
+- Raanan Eichler, “God Abandons the Garden of Eden and Dwells with the Cherubim.”
+- “Menorah, Its ‘Branches’ and Their Cosmic Significance,” TheTorah.
+- Michael Homan, “The Tabernacle in Its Ancient Near Eastern Context.”
+- “The Tabernacle, the Creation, and the Ideal of an Orderly World,” TheTorah, including Peter Kearney's seven-speech creation comparison.
+- “The Tabernacle's Artistry: Text and Textile,” TheTorah.
+- “Anchored in the Authority of Sinai,” TheTorah.
+
+**Section 22 remains in progress.**
+Next subsection under the anti-repeat protocol: **Exodus 27–31 — courtyard/altar/basin, priestly garments, paired shoulder stones, twelve-stone breastpiece, Urim/Thummim, consecration, incense and seven-speech/Sabbath closure.**
