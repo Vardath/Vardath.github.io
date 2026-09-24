@@ -38539,3 +38539,638 @@ Scholarly/source-critical:
 Next:
 **Deuteronomy 31–34 — Joshua commissioning, cloud at Tent, Torah/song as durable witnesses, heaven/earth witness invocation, Song of Moses, tribal blessing, final mountain view, death/burial ambiguity, Joshua's spirit-of-wisdom succession, and reconciliation with X7 without repeating the completed Testament/Assumption research.**
 
+## SECTION 26 progress D — Deuteronomy 31–34: succession at the cloud-tent, written/song witnesses, Rock imagery, final mountain view and unresolved burial traditions
+
+### Anti-repeat / X7 reconciliation
+
+Section 26A–C are saved.
+
+The earlier **X7 — Testament / Assumption of Moses** first pass is already complete.
+
+Therefore this block does **not** redo:
+- the incomplete Latin Testament manuscript;
+- the later Michael/devil body dispute;
+- world-sized sepulchre language;
+- Taxo + seven sons;
+- post-biblical assumption/ascension traditions.
+
+Those remain separate later reception/comparison evidence.
+
+This block focuses only on canonical Deuteronomy 31–34, then notes where X7 later expands the unresolved canonical body-route.
+
+---
+
+## Deuteronomy 31 — Moses' office separates into person, text, successor and institutional memory
+
+Moses says:
+- he is **120 years old**;
+- he can no longer lead the crossing;
+- YHWH has said he will not cross Jordan.
+
+Joshua is publicly told:
+- be strong/courageous;
+- he will go with/lead Israel into the land.
+
+This continues the succession split:
+
+**Moses**
+= old mediator / writer / teacher / non-crosser
+
+**Joshua**
+= successor / crosser / future field leader.
+
+### Moses writes the Torah and hands it to institutional carriers
+
+Moses writes the teaching and gives it to:
+- Levitical priests who carry the ark;
+- elders of Israel.
+
+So his authority is converted into several post-body carriers:
+
+**spoken Moses**
+→ **written Torah**
+→ priestly/elder custody
+→ future public reading.
+
+This is one of the clearest **person → information artifact → institutional persistence** sequences in the Torah.
+
+### Every seventh year the written teaching is reactivated publicly
+
+At the end of every **7 years**:
+- during the release year;
+- at Sukkot;
+- when Israel gathers at the chosen place;
+- the Torah is read aloud to:
+  - men;
+  - women;
+  - children;
+  - resident foreigners.
+
+This gives a true recurring memory-refresh cycle:
+
+**stored text**
+→ long interval
+→ scheduled collective convergence
+→ text re-read
+→ next generation hears/learns.
+
+For the project:
+this is a strong example of **periodic system memory reactivation**.
+
+It is educational/covenantal, not a physical cosmic reset.
+
+### Joshua commissioning occurs at the Tent under descending cloud
+
+A second commissioning scene has:
+- Moses + Joshua present themselves at Tent of Meeting;
+- YHWH appears in a **pillar of cloud**;
+- cloud stands at the **entrance**;
+- Joshua is commissioned.
+
+This directly echoes:
+- Exodus 33 outside-camp Tent;
+- Numbers 12;
+- other non-Priestly cloud-at-entrance traditions.
+
+Modern source criticism often treats this as belonging to the simpler **Ohel Moed** tradition rather than the elaborate Priestly Tabernacle.
+
+Again:
+do not merge every tent scene into one architectural system.
+
+### Moses/Joshua succession has both public and interface-side forms
+
+The final book preserves:
+- public human commissioning;
+- divine/cloud commissioning.
+
+So office transfer is validated at multiple levels:
+
+**community-facing**
++
+**source-facing**.
+
+This is stronger than a single handoff gesture.
+
+### Future failure is predicted before Moses dies
+
+The text says:
+- Israel will later turn away;
+- covenant trouble follows;
+- divine presence becomes hidden.
+
+Moses therefore creates a **witness system** before his body is removed.
+
+This is crucial:
+the succession problem is not merely “who replaces Moses?”
+
+It is:
+**how is information preserved when both leader and future obedience are unstable?**
+
+### Song becomes a durable memory witness
+
+Moses is told:
+- write a song;
+- teach it to Israel;
+- place it in their mouths;
+- so it can serve as a **witness** later.
+
+This is another information-carrier type:
+
+**scroll**
++
+**memorized song**
+.
+
+Unlike stone tablets, a song can persist through repeated human performance.
+
+### Text and song become partially blurred by redaction
+
+Modern literary analysis notes that Deuteronomy 31 appears to combine:
+- a song-witness tradition;
+- a Torah-writing tradition;
+- Joshua commissioning material.
+
+The final redacted text can blur:
+**“this song”**
+and
+**“this Torah.”**
+
+This is extremely important for our method:
+even “what exactly is the witness object?” can shift during textual growth.
+
+### The Torah scroll is placed beside the ark, not inside it
+
+Deuteronomy 31 says:
+- written Torah is placed **beside** the ark of covenant;
+- as a witness.
+
+Contrast Deuteronomy 10:
+- stone tablets are **inside** the wooden ark.
+
+So one information architecture is:
+
+**inside ark**
+→ paired stone tablets.
+
+**beside ark**
+→ written Torah scroll.
+
+This is a real **inner / adjacent information-storage distinction**.
+
+Do not collapse all covenant texts into one container position.
+
+### Heaven and earth become enduring witness pair
+
+Moses calls:
+- **heaven**
+- **earth**
+as witnesses.
+
+The reason is treaty/covenant rhetoric:
+human generations die, but heaven/earth endure as stable witnesses.
+
+Modern scholarship compares this with ancient Near Eastern treaty witness formulas.
+
+For Vardath:
+this is a **P7 persistent witness pair**,
+not proof of two conscious world-layers.
+
+---
+
+## Deuteronomy 32 — the Song of Moses turns covenant history into an environmental/cosmic poem
+
+The song begins by addressing:
+
+**heaven — listen**
+**earth — hear**.
+
+Then teaching is compared with:
+- rain;
+- dew;
+- showers.
+
+So information is poetically mapped onto **water falling from above**.
+
+This is metaphorical teaching imagery.
+
+Do not convert it into literal atmospheric information transfer.
+
+### “The Rock” becomes a repeated divine title
+
+Deuteronomy 32 repeatedly calls YHWH:
+**the Rock**.
+
+Other “rock” language appears around:
+- honey from crag;
+- oil from flinty rock;
+- rival “rock” powers.
+
+This is a crucial anti-overfitting control for the earlier water-from-rock material:
+
+> **rock can be theological/personified metaphor as well as physical geology.**
+
+Therefore every later “rock” occurrence must be classified before being mapped to the Vardath axial structure.
+
+### Same source claims opposite life/death functions
+
+The song says in divine speech approximately:
+
+**I kill**
+and
+**I make alive**;
+
+**I wound**
+and
+**I heal**.
+
+This is a striking one-source polarity.
+
+Unlike two-goat division,
+the opposite outcomes are assigned to **one operator**.
+
+Classification:
+- **P3 opposite functional states/actions from one source**.
+
+This is valuable for the project:
+opposed outcomes do not always require two opposed entities.
+
+### Fire descends/extends to deepest lower region in curse poetry
+
+The song uses extreme imagery:
+- fire kindled;
+- burning to depths/Sheol;
+- consuming earth/produce;
+- setting mountain foundations ablaze.
+
+This is strong vertical catastrophe language.
+
+But it is poetic covenant judgment,
+not a literal event log.
+
+### Eagle imagery is guide/protection metaphor
+
+The song compares YHWH with an eagle:
+- stirring nest;
+- hovering;
+- spreading wings;
+- carrying young.
+
+This is a carrier/protection image.
+
+It belongs in the carrier-symbol register,
+but not as evidence of a literal flying transport system.
+
+### Song compresses long history into one reusable witness packet
+
+Like Deuteronomy 26's first-fruits recitation,
+Deuteronomy 32 converts:
+- origins;
+- blessing;
+- corruption;
+- judgment;
+- future vindication
+into a memorized sequence.
+
+So Deuteronomy increasingly solves succession through:
+**portable information compression**.
+
+---
+
+## Moses' exclusion explanation changes again inside Deuteronomy itself
+
+Deuteronomy 1 linked Moses' exclusion to:
+- the scout-generation failure / “because of you.”
+
+Deuteronomy 32:51–52 says Moses and Aaron failed at:
+- Meribah-Kadesh;
+- did not uphold YHWH's holiness.
+
+This matches the Numbers 20 explanation much more closely.
+
+So even within Deuteronomy's final form:
+
+**exclusion explanation A**
+≠
+**exclusion explanation B**.
+
+This is another major source/redaction control.
+
+Do not invent one hidden physical event to harmonize them.
+
+---
+
+## Deuteronomy 33 — final tribal blessing is another twelve-part projection, but not a neat twelve-entry grid
+
+Moses gives a final poetic blessing to Israel's tribes before death.
+
+The poem:
+- begins with divine appearance from Sinai/southern regions;
+- then moves through tribal blessings.
+
+However:
+- **Simeon is omitted** as a separate tribal blessing;
+- Joseph receives extended material;
+- Levi is prominent.
+
+Therefore this is an important control against forcing every Israelite twelve-structure into perfect visible twelvefold symmetry.
+
+Underlying Israel remains twelve-tribe tradition,
+but the poem's actual presentation is asymmetric.
+
+### Tribe order can follow geography/function rather than genealogy
+
+Modern scholarship compares Deuteronomy 33 with Genesis 49 and notes:
+- differing tribal orders;
+- differing emphases;
+- different historical horizons.
+
+This supports:
+**same collective → different projection/order according to textual purpose**.
+
+---
+
+## Deuteronomy 34 — final mountain gives vision without crossing one last time
+
+Moses:
+- ascends from plains of Moab to Mount Nebo/Pisgah;
+- sees the land panoramically;
+- is told:
+  **you have seen it with your eyes, but you shall not cross there**.
+
+This completes the visual-access/no-transit motif from Deuteronomy 3.
+
+Final Moses state:
+
+**maximum overview**
++
+**zero crossing permission**.
+
+This is one of the cleanest distinctions in the Pentateuch between:
+**knowledge/vision**
+and
+**physical passage**.
+
+### Moses dies at age 120 without bodily decline in the final description
+
+Deuteronomy says:
+- Moses = **120 years**;
+- eye not dimmed;
+- vigor/freshness not gone.
+
+So death is not narrated as ordinary visible deterioration.
+
+This helped later traditions imagine:
+- exceptional burial;
+- assumption;
+- cosmic-body status.
+
+But canonical Deuteronomy itself still says he **dies**.
+
+Do not import later assumption traditions backward into the Torah.
+
+### Burial tradition is internally unstable
+
+Deuteronomy 34 contains:
+- mountain death setting;
+- burial “in the valley” in Moab;
+- location opposite Beth-peor;
+- statement that **no one knows the grave**.
+
+Modern source-critical analysis identifies multiple burial traditions woven together:
+- mountain;
+- valley;
+- unknown grave.
+
+This directly explains why later traditions proliferated.
+
+For Vardath:
+the correct first-pass conclusion is:
+**body-route ambiguity is real at the textual level**.
+
+But it is generated at least partly by source combination.
+
+### Unknown grave ≠ textual statement of bodily translation
+
+The verse says:
+- no one knows burial place.
+
+It does **not** explicitly say:
+- body ascended;
+- body vanished into another world;
+- Moses crossed a temporal gate.
+
+Later literature develops those possibilities.
+
+Canonical text should remain separate.
+
+### Thirty-day mourning closes Moses' social role
+
+Israel mourns:
+- **30 days**.
+
+Then mourning period ends.
+
+This is a formal community phase transition:
+
+**Moses alive/leader**
+→ death
+→ 30-day mourning interval
+→ successor era.
+
+### Joshua receives “spirit of wisdom” because Moses laid hands on him
+
+Deuteronomy 34 explicitly links:
+- Joshua filled with spirit of wisdom;
+- Moses had laid hands on him;
+- Israel now obeys Joshua.
+
+So Numbers 27's public handoff is remembered as the causal/legitimating succession marker.
+
+This is a strong:
+**body contact → office authorization remembered after predecessor death**.
+
+Again:
+ritual succession,
+not measurable energy transfer.
+
+### Moses remains unmatched even after successful succession
+
+The book closes:
+- no prophet has arisen in Israel like Moses;
+- YHWH knew him face-to-face;
+- unique signs/mighty acts.
+
+This creates a crucial distinction:
+
+**office/function can continue**
+without
+**successor becoming equivalent in every property**.
+
+Joshua succeeds Moses,
+but does not become Moses.
+
+This is one of the strongest anti-double controls in the entire project.
+
+### X7 comparison — later tradition expands, rather than solves, the canonical ambiguity
+
+Already-completed X7 found that later Testament/Assumption traditions add:
+- world-scale sepulchre/cosmic-body language;
+- incomplete manuscript ending before final body-route;
+- later Michael/devil dispute traditions;
+- assumption/ascension possibilities in reception history.
+
+Canonical Deuteronomy 34 supplies the fertile ambiguity:
+- death;
+- burial;
+- unknown grave;
+- multiple geographic traditions.
+
+X7 then shows **later interpretive branching** from that ambiguity.
+
+Therefore:
+do not use X7 to rewrite Deuteronomy;
+use it to document how the unresolved canonical boundary generated later transformations.
+
+---
+
+## SECTION 26D continuous sequence — Deuteronomy 31–34
+
+**succession preparation**
+→ Moses age120 / crossing ends for him
+→ Joshua publicly strengthened
+→ Torah written
+→ priests/elders become textual custodians
+→ every 7 years public reading reactivates memory
+
+**interface commissioning**
+→ Moses + Joshua at Tent
+→ cloud pillar stands at entrance
+→ Joshua commissioned
+
+**future failure anticipated**
+→ song written
+→ song placed in collective mouth
+→ Torah/song function as witnesses
+→ Torah scroll placed beside ark
+→ heaven/earth invoked as durable witnesses
+
+**poetic compression**
+→ teaching as rain/dew
+→ YHWH as Rock
+→ one source kills/makes alive, wounds/heals
+→ judgment/fire imagery
+→ future vindication
+
+**final blessing**
+→ tribes blessed in asymmetrical poetic projection
+
+**Moses terminus**
+→ exclusion explanation returns to Meribah
+→ Moses ascends Nebo
+→ sees land
+→ does not cross
+→ dies age120
+→ burial traditions conflict / grave unknown
+→ 30-day mourning
+→ Joshua's hand-mediated wisdom/authority recognized
+→ succession succeeds
+→ Moses remains unique.
+
+---
+
+## SECTION 26 strongest overall findings
+
+1. Deuteronomy is itself a **retelling machine**, proving that source/perspective can change event geometry and causation.
+2. Same geographic route attempted in the wrong phase fails.
+3. Moses repeatedly has **visual access without crossing access**.
+4. Horeb becomes fire-to-heaven + voice-without-form, explicitly limiting visual anthropomorphism.
+5. Moses literally occupies the **between** position as information mediator.
+6. Direct exposure is treated as finite/dangerous; mediated speech solves the problem.
+7. Deuteronomy's wooden ark versus Priestly golden cherubim ark proves **role can persist while form changes across traditions**.
+8. Gerizim/Ebal gives an exact **6 + 6 bilateral twelve-tribe projection**.
+9. Blessing/curse creates a full mirrored system-state field, but Leviticus and Deuteronomy even reverse their sky/earth metal imagery.
+10. Deuteronomy 30 deliberately **de-verticalizes information access**: Torah is not in heaven or across sea but near in mouth/heart.
+11. Deuteronomy 12–26 turns many cultic sites into one chosen centre while distributing authority across judges/priests/king/prophets.
+12. Prophet “like Moses” demonstrates **role recurrence without identity recurrence**.
+13. Refuge roads distinguish destination from route and scale **3→6** with territorial expansion.
+14. Deuteronomy 31 converts Moses into persistent information carriers: Torah scroll, public reading cycle, song/witness, institutions.
+15. Same system stores different information at different positions: tablets **inside** ark; Torah scroll **beside** ark.
+16. Joshua succession is validated publicly, ritually and textually, but Joshua remains non-identical to Moses.
+17. Moses' exclusion has contradictory explanations inside the received tradition, a major warning against forced harmonization.
+18. Moses' burial/body route is genuinely textually ambiguous, but canonical Deuteronomy does not explicitly describe assumption.
+19. Later X7 traditions expand that ambiguity rather than proving a hidden canonical body-transfer mechanism.
+
+### SECTION 26 master pair / geometry register
+
+- Moses / Joshua — predecessor / successor.
+- source / Moses / people — mediator-between architecture.
+- Gerizim / Ebal — blessing / curse mountains.
+- 6 tribes / 6 tribes — bilateral twelvefold projection.
+- blessing / curse — mirrored system states.
+- life / death — explicit final choice pair.
+- heaven / earth — enduring covenant witness pair.
+- tablets / scroll / song — different information-carrier forms.
+- inside ark / beside ark — information-position distinction.
+- current bodies / future absent members — trans-generational covenant identity.
+- direct exposure / mediated information — access-mode pair.
+- vision / crossing — perception vs transit.
+
+### SECTION 26 master number register
+
+- scouts: **12**.
+- Moses final age: **120**.
+- mountain/view directions in Deut 3: **4**.
+- tablets: **2 + replacement 2**.
+- repeated Moses mountain intervals: **40 days/40 nights** units.
+- Gerizim/Ebal: **2 mountains**.
+- tribal mountain split: **6 + 6 =12**.
+- debt/service release: **7-year / 6→7** cycles.
+- pilgrimage convergence: **3 times/year**.
+- refuge nodes: **3 + conditional 3 =6**.
+- witness legal threshold: **2 or3**.
+- public Torah-reading cycle: **every 7 years**.
+- Moses mourning: **30 days**.
+- burial location certainty: deliberately **unresolved** in final composite.
+
+### Sources logged
+
+Primary:
+- Deuteronomy 31–34.
+
+Scholarly/source-critical:
+- “Moses Wrote Down this Song, Deuteronomy 31:22 — Which Song?” — TheTorah.
+- “The Other Ohel Moed” — TheTorah.
+- “Historical Hakhel Ceremonies and the Origin of Public Torah Reading” — TheTorah.
+- “Was Moses Our Teacher a Good Teacher?” — TheTorah.
+- “YHWH's Covenant: Why Moses Calls Heaven and Earth as Witnesses” — TheTorah.
+- “The Two Blessings of the Twelve Tribes: Varying Perspectives, Similar Function” — TheTorah.
+- “The Unknown Yet Known Place of Moses' Burial” — TheTorah.
+- “Who Wrote the Torah According to the Torah?” — TheTorah.
+- already-completed X7 — Testament / Assumption of Moses — retained only as later comparison evidence.
+
+## SECTION 26 status
+
+**SECTION 26 — DEUTERONOMY: COMPLETE FIRST PASS.**
+
+### Next first unfinished roadmap section
+
+**SECTION 27 — JOSHUA 1–12**
+
+Saved priorities from the roadmap include:
+- Joshua succession in operation;
+- Jordan crossing;
+- ark/priests standing in river;
+- waters cut off and heap;
+- 12 stones from river + 12 stones tradition;
+- Rahab/window/cord and household enclosure;
+- circumcision / Passover at land-entry phase;
+- Jericho circuit clock;
+- priests / ark / seven trumpets;
+- walls collapse;
+- Achan hidden cargo / sorting;
+- Gerizim/Ebal blessing-curse enactment;
+- sun/moon standstill tradition;
+- all paired figures, routes, counts and source-critical controls.
+
+Before beginning Section 27, apply the anti-repeat search to the full ledger.
+
