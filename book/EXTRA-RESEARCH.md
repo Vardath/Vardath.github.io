@@ -121384,3 +121384,1228 @@ Priority:
 - rock/high place as post-extraction stable state;
 - distinguish ordinary rescue metaphor from later resurrection interpretation;
 - track whether repeated downward→upward transitions create a genuine gate-cycle family.
+
+
+---
+
+# SECTION 45 progress D — descent / ascent / pit / Sheol / rescue family
+## Death is repeatedly mapped downward into pit, dust, mire, deep water and Sheol; rescue repeatedly reverses direction through drawing-up, bringing-up, release, broad ground, rock and return to the “land of the living”; yet Psalm 88 deliberately remains trapped below with no reversal, proving the cycle is a recurrent Psalmic process rather than a universal code. Psalm 139 then pushes the geometry farther by making heaven and Sheol opposite reachable extremes while describing the human body as intricately woven in the “depths of the earth.”
+
+This pass continues **Section 45 — Psalms** with the descent / ascent / pit / Sheol / vertical-rescue family.
+
+Primary Psalms:
+- **16**
+- **18** — cross-linked rather than duplicated from Section 45A
+- **22**
+- **30**
+- **40**
+- **49**
+- **69**
+- **71**
+- **86**
+- **88**
+- **103**
+- **116**
+- **118**
+- **139**
+
+The recurring process is not merely “death symbolism.”
+
+It is a surprisingly stable transformation grammar:
+
+**stable life-field**
+→ loss of footing / narrowing / enclosure / descent
+→ deep-water / pit / dust / Sheol state
+→ cry / intervention
+→ upward draw / release / widened ground
+→ feet stabilized
+→ walking / praise / public reintegration.
+
+But the family contains major exceptions and textual ambiguities, so each instance must be kept separate.
+
+---
+
+# Psalm 16 — boundary lines, right-hand stability, Sheol avoidance, path of life
+
+Psalm 16 first establishes a stable bounded field:
+
+- “boundary lines” fall in pleasant places;
+- YHWH remains before the speaker;
+- YHWH is at the speaker's right hand;
+- therefore the speaker is **not moved**.
+
+Then:
+
+**body rests secure**
+because
+**speaker is not given over to Sheol / Pit**.
+
+Finally:
+
+**path of life**
+→ divine presence
+→ fullness of joy.
+
+The process is:
+
+**stable bounded inheritance**
+→ **right-hand support**
+→ **non-descent**
+→ **life-path continues**.
+
+This is important because the first model in this family is not extraction after descent.
+
+It is **prevention of terminal descent**.
+
+---
+
+# Psalm 16:10 is resurrection-adjacent but not mechanically secure
+
+The line:
+**“you will not give me up to Sheol / let your faithful one see the Pit”**
+has major later resurrection reception, especially in Acts.
+
+At source level, however, interpretations include:
+- rescue from premature death;
+- preservation from the realm of the dead;
+- hope extending beyond death;
+- later resurrection reading.
+
+The Hebrew and ancient versions do not allow us to convert the verse into a detailed physical resurrection mechanism.
+
+Therefore:
+
+**high relevance to death-boundary continuity**
+but
+**low confidence for exact postmortem mechanics**.
+
+---
+
+# Psalm 18 — already established vertical extraction from deep waters
+
+Section 45A logged the full Psalm 18 sequence:
+
+**death cords / Sheol**
+→ upper storm field activates
+→ earth/foundations disturbed
+→ lower structure exposed
+→ **hand reaches from above**
+→ speaker drawn from many/deep waters
+→ delivered to broad place.
+
+For Section 45D the important cross-link is:
+
+> Psalm 18 gives the clearest fully narrated **downward danger → upper hand → upward extraction → broad stable state** sequence in the Psalter.
+
+Do not duplicate the storm analysis here.
+
+---
+
+# Psalm 22 — body is driven toward the dust of death, then public life resumes
+
+Psalm 22 contains an intense downward bodily transformation:
+
+- speaker poured out **like water**;
+- bones dislocated;
+- heart melts **like wax**;
+- mouth/body dries;
+- speaker laid in **dust of death**;
+- hostile figures surround.
+
+This is a striking multi-state body collapse:
+
+**solid/organized body**
+→ fluidity / disassembly / drying
+→ dust/death field.
+
+The motion is not a simple physical fall.
+
+It is **loss of bodily coherence**.
+
+---
+
+# Psalm 22 — rescue changes not only location but social field
+
+After the death-near state:
+
+cry
+→ rescue
+→ speaker declares name in congregation
+→ wider community praises
+→ ends of earth turn
+→ future generations receive the record.
+
+Thus the reversal is:
+
+**isolated body near death**
+→ **public voice**
+→ **congregational reintegration**
+→ **world/generational transmission**.
+
+That is a much larger state expansion than simply “person survives.”
+
+---
+
+# Psalm 22 — “those who go down to dust” remain part of the final field
+
+The ending includes:
+- sleepers in earth;
+- those going down to dust;
+- posterity/future generations.
+
+This juxtaposes:
+
+**descending dead**
+and
+**future-born people**
+
+inside one universal worship horizon.
+
+It does not narrate the dead physically rising.
+
+So:
+**death-domain inclusion**
+is stronger than
+**explicit resurrection mechanism**.
+
+---
+
+# Psalm 30 — one of the clearest up/down reversals
+
+Psalm 30 says:
+
+**you drew me up**
+→ **brought my life up from Sheol**
+→ **restored me from among those going down to Pit**.
+
+The vertical language is explicit.
+
+Then the temporal polarity follows:
+
+**night / weeping**
+→ **morning / joy**.
+
+Later:
+
+**mourning**
+→ **dancing**.
+
+**sackcloth**
+→ **joy garment**.
+
+This is a full multi-domain reversal:
+
+vertical
++
+temporal
++
+clothing/state
++
+social/praise.
+
+---
+
+# Psalm 30 — strong mountain → hidden face → descent → renewed stability
+
+The speaker says in prosperity:
+
+**“I shall never be moved.”**
+
+By divine favor:
+**speaker was established like a strong mountain**.
+
+Then:
+divine face hidden
+→ dismay
+→ descent danger.
+
+After rescue:
+mourning/dancing state reverses.
+
+This is a strong example of:
+**high stable mountain-state**
+→ **loss of coupling**
+→ **low/pit state**
+→ **reconnection/restoration**.
+
+The mountain is metaphorical stability, not the central spire itself.
+
+---
+
+# Psalm 40 — pit extraction ends with feet placed on rock
+
+Psalm 40 gives the most mechanically compact rescue formula in the family:
+
+**desolate pit / pit of tumult**
++
+**miry bog**
+→ speaker cannot rely on secure ground
+→ cry heard
+→ **drawn upward**
+→ **feet placed on rock**
+→ **steps made secure**.
+
+This is extremely useful process geometry.
+
+The rescue is not complete when the body is merely removed.
+
+It finishes only when:
+
+**unstable medium**
+→ replaced by
+**solid support**
+and
+**movement becomes reliable**.
+
+So the real endpoint is:
+**restored locomotion**.
+
+---
+
+# Pit / mire / rock form a three-state support system
+
+Psalm 40 can be abstracted:
+
+### State 1 — pit
+lowered/enclosed.
+
+### State 2 — mire
+no stable footing.
+
+### State 3 — rock
+stable support.
+
+This is one of the clearest support-transition models in Psalms.
+
+Vardath comparison:
+strong at the level of **support failure → extraction → support restoration**.
+
+No world-layer transfer is stated.
+
+---
+
+# Psalm 49 — human wealth cannot buy exit from death-domain
+
+Psalm 49 sets up a contrast:
+
+**human wealth**
+→ cannot ransom life
+→ cannot prevent seeing Pit.
+
+Then:
+rich and poor alike
+→ descend toward death/Sheol.
+
+This is important because it removes ordinary human economic force from the mechanism.
+
+No amount of wealth changes the terminal route.
+
+---
+
+# Psalm 49 — only divine action can reverse the hand/power of Sheol
+
+The key line:
+
+**“God will ransom my life from the power/hand of Sheol, for he will receive/take me.”**
+
+This is one of the strongest resurrection-adjacent lines in Psalms.
+
+But scholarship remains divided over whether it implies:
+- rescue from premature death;
+- enduring communion after death;
+- postmortem deliverance;
+- a germ/antecedent of resurrection hope.
+
+What is geometrically secure:
+
+**Sheol = grasping/holding power**
+versus
+**God = stronger receiving/taking power**.
+
+The person is imagined between two competing claims.
+
+That is a true **two-force ownership/transfer model**.
+
+---
+
+# Psalm 49 — “hand of Sheol” versus divine receiving
+
+This is more important than the noun Sheol alone.
+
+Process:
+
+**Sheol hand/power**
+→ takes/holds ordinary mortal.
+
+But:
+**divine ransom/receiving**
+→ interrupts that claim.
+
+This creates a clean pair:
+
+**lower grasp**
+↔
+**higher receiving force**.
+
+It is still theological death-language, not literal two-spring mechanics.
+
+---
+
+# Psalm 69 — water rises upward around the body while the body sinks downward
+
+Psalm 69 gives a particularly strong **opposed-direction water/body process**:
+
+**waters rise to neck**
+while
+**speaker sinks into deep mire**.
+
+Then:
+**deep water**
+→ flood sweeps over.
+
+So:
+
+water field:
+**upward around body**.
+
+body:
+**downward into unstable substrate**.
+
+This is one of the clearest local opposite-motion combinations in Psalms.
+
+It should be cross-indexed with the user's interest in paired movement.
+
+---
+
+# Psalm 69 — no foothold marks a support failure
+
+The phrase:
+**“where there is no foothold”**
+is structurally important.
+
+The danger is not only depth.
+
+It is:
+**loss of support interface**.
+
+Compare Psalm 40:
+mire
+→ rock.
+
+Psalm 69:
+mire/deep
+→ asks for rescue before swallowing/closure.
+
+This creates a recurring support variable:
+**can the body establish contact with stable ground?**
+
+---
+
+# Psalm 69 — the Pit is personified as a closing mouth
+
+The speaker asks:
+
+- do not let flood sweep over;
+- do not let deep swallow;
+- do not let **Pit close its mouth** over me.
+
+This is powerful enclosure language.
+
+The danger sequence is:
+
+**open pit/deep**
+→ body descends
+→ mouth closes
+→ return route sealed.
+
+This is one of the strongest **gate-closing-at-death** images in the Psalter.
+
+But it is personified lament imagery.
+
+---
+
+# Psalm 71 — “depths of the earth” become the lower point of a repeated revival cycle
+
+Psalm 71 says:
+
+**many troubles/calamities**
+→ yet
+**you will revive me again**
+→ **from depths of earth bring me up again**.
+
+This is unusually explicit.
+
+The wording gives:
+
+**down**
+→ **revive**
+→ **up again**.
+
+The repetition marker “again” is important.
+
+It makes the process cyclical rather than one-time in the poem's rhetoric.
+
+---
+
+# Psalm 71 — source-level control
+
+The passage can be read as:
+- recovery from mortal danger;
+- metaphorical restoration from extreme affliction;
+- resurrection-adjacent hope.
+
+It should not be used alone to prove literal return from geological underworld.
+
+Still, as process language it is among the strongest:
+**lowered state → renewed life → vertical return**.
+
+---
+
+# Psalm 86 — rescue from “depths of Sheol”
+
+Psalm 86 states:
+
+**life threatened by ruthless people**
+→ divine steadfast love
+→ **delivered from depths of Sheol**.
+
+The immediate context points strongly toward:
+**rescue from lethal danger**.
+
+Thus this is an important control.
+
+The same Sheol language can describe:
+- actual death-domain;
+- death-near danger experienced while still alive.
+
+Therefore:
+**Sheol references cannot all be read at one literal level**.
+
+---
+
+# Psalm 88 — the critical negative control: descent with no ascent
+
+Psalm 88 is indispensable because it refuses the normal reversal.
+
+The speaker says:
+
+- life draws near Sheol;
+- counted among those descending to Pit;
+- placed in **lowest pit**;
+- darkness/depths;
+- waves press down;
+- companions removed;
+- **shut in, cannot escape**;
+- flood-like terrors surround;
+- final social environment becomes **darkness**.
+
+There is no narrated extraction.
+
+No rock.
+
+No broad place.
+
+No morning turn.
+
+No public thanksgiving.
+
+This is the family's hard negative control.
+
+---
+
+# Psalm 88 — enclosure closes and stays closed
+
+The geometry is exceptionally clear:
+
+**descent**
+→ **lowest pit**
+→ **waves pressure**
+→ **social isolation**
+→ **locked enclosure**
+→ **no exit**.
+
+The speaker even asks whether the dead can rise to praise.
+
+The question is not answered positively within the Psalm.
+
+So any model claiming:
+**pit automatically = temporary gate before return**
+fails against Psalm 88.
+
+---
+
+# Psalm 88 — darkness replaces companion
+
+The final line is especially important.
+
+The social field contracts until:
+**friend/companion removed**
+→ **darkness becomes companion**.
+
+This is not merely visual darkness.
+
+It is:
+**relational field collapse**.
+
+The Psalm ends at the low point.
+
+That makes it a crucial comparator for every successful rescue Psalm.
+
+---
+
+# Psalm 103 — Pit rescue is immediately followed by crown and renewal
+
+Psalm 103 gives:
+
+**life redeemed from Pit**
+→ **crowned with steadfast love/mercy**
+→ satisfied with good
+→ **youth renewed like eagle**.
+
+This is a high-value sequence:
+
+**low death-state**
+→ **royal/high-state marker**
+→ **renewed vitality**.
+
+The crown here is not political kingship in the same sense as Section 45C.
+
+It marks restored honored state.
+
+---
+
+# Psalm 103 — dust-body and wind-removal form the mortality control
+
+The same Psalm says:
+- humans are dust;
+- life like grass/flower;
+- wind passes over;
+- it is gone;
+- its place no longer knows it.
+
+So the poem simultaneously contains:
+
+**Pit rescue / renewal**
+and
+**ordinary mortal disappearance**.
+
+Again:
+restoration language does not erase mortality language.
+
+The Psalter preserves both.
+
+---
+
+# Psalm 116 — death snares are loosened and walking resumes in land of living
+
+Psalm 116 begins:
+
+**snares/cords of death surround**
+→ **Sheol pangs grasp**
+→ cry
+→ divine rescue.
+
+Then:
+
+**brought low**
+→ saved
+→ soul returns to rest
+→ death/tears/stumbling reversed
+→ **walk before YHWH in land of living**.
+
+This is one of the most complete functional restorations.
+
+The final test of rescue is:
+**walking again**.
+
+Compare Psalm 40:
+feet on rock / steps secure.
+
+These two belong to one clear locomotion-restoration family.
+
+---
+
+# Psalm 116 — bonds are explicitly loosened
+
+Later:
+**“you have loosed my bonds.”**
+
+This turns the death danger into an enclosure/restraint problem.
+
+So the process can be described:
+
+**snare**
+→ **grasp**
+→ **low state**
+→ **release**
+→ **rest**
+→ **walking**.
+
+That is nearly a complete gate-cycle without requiring a literal portal.
+
+---
+
+# Psalm 118 — pressure contracts, divine answer creates broad space
+
+Psalm 118 gives:
+
+**distress / narrow pressure**
+→ cry
+→ **answer in a broad place**.
+
+Then:
+- enemies surround “on every side”;
+- speaker is pushed toward falling;
+- divine right hand acts;
+- speaker declares **not death but life**.
+
+This is another clean enclosure reversal.
+
+---
+
+# Psalm 118 — gate access follows successful rescue
+
+After:
+**not dying / living**
+comes:
+
+**open gates of righteousness**
+→ speaker enters
+→ gives thanks.
+
+This is highly important.
+
+The gate is not the route *into death*.
+
+It is the route *after rescue* into reintegration/worship.
+
+Process:
+
+**constricted danger**
+→ survival
+→ gate opens
+→ centre entered.
+
+That strongly links Section 45D to Section 45B.
+
+---
+
+# Psalm 118 — rejected stone becomes cornerstone
+
+The same sequence includes:
+
+**stone rejected by builders**
+→ **chief cornerstone**.
+
+That is a status reversal of a structural object.
+
+Not:
+stone moves from lower world to upper world.
+
+But:
+**excluded structural unit**
+→ **central support/reference unit**.
+
+This is one of the strongest architecture-state reversals in the Psalms.
+
+---
+
+# Psalm 139 — heaven and Sheol are opposite extremes but neither is outside the field
+
+Psalm 139 states:
+
+**ascend to heaven**
+→ divine presence there.
+
+**make bed in Sheol**
+→ divine presence there.
+
+Then:
+**farthest sea**
+→ divine hand still guides/holds.
+
+This changes the geometry.
+
+Unlike Psalms where Sheol seems cut off:
+Psalm 139 says there is **no unreachable domain**.
+
+Thus:
+
+**highest**
+↔
+**lowest**
+↔
+**farthest horizontal**
+all remain inside one presence-field.
+
+This is one of the most powerful total-field statements in the Psalter.
+
+---
+
+# Psalm 139 — divine hand operates at every extreme
+
+The speaker can move:
+- up;
+- down;
+- far across sea.
+
+But:
+**right hand still holds**.
+
+This creates:
+
+**moving human point**
+inside
+**larger invariant field**.
+
+The boundary of presence cannot be crossed.
+
+That is a stronger analogy to a global containing field than to a local gate.
+
+---
+
+# Psalm 139 — darkness/light distinction collapses for the upper observer
+
+The speaker says:
+darkness may cover him.
+
+But to God:
+**darkness is as light**.
+
+So:
+**local observer state**
+and
+**higher observer state**
+do not share the same visibility limits.
+
+Compare:
+- Job 23: Job cannot see God while God sees Job's path;
+- Daniel/Bel: hidden crossing exposed by passive sensing;
+- Psalm 139: darkness does not suppress upper observation.
+
+This is a very strong cross-text epistemic geometry.
+
+---
+
+# Psalm 139 — human body is “intricately woven” in womb / depths-of-earth imagery
+
+This is one of the highest-priority findings for the user's braid/finger-trap investigation.
+
+The Psalm says:
+- inward parts formed;
+- body knit together in womb;
+- frame made in secret;
+- **intricately woven** in **depths of earth**.
+
+The Hebrew verb commonly translated:
+**woven / embroidered / intricately wrought**
+is genuine textile-like construction language.
+
+The poem overlays:
+**womb**
+with
+**depths of earth**.
+
+That creates a direct:
+**body-weaving**
+↔
+**earth-depth**
+comparison.
+
+---
+
+# Psalm 139 — this is stronger for “woven body from deep field” than for a sky lattice
+
+Important control.
+
+What the Psalm actually describes is:
+**embryonic bodily formation**.
+
+The “depths of earth” language is poetic parallelism/metaphor for hidden formation.
+
+It does **not** say:
+- a sky dragon lattice weaves a literal human-shaped plasma rod;
+- the earth itself is woven into a finger-trap;
+- two strands cross between worlds.
+
+Still, among canonical Psalms this is one of the strongest explicit **weaving + deep-earth + body** correspondences.
+
+It absolutely belongs in the cross-text motif map.
+
+---
+
+# Psalm 139 — pre-formed days are stored as information before lived time
+
+The next line says:
+**days are written in a book before any existed/lived**.
+
+Process:
+
+**future sequence**
+→ information already registered
+→ later lived one day at a time.
+
+This is not physical future-world contact.
+
+But it is a clean:
+**future-state information exists prior to local temporal unfolding**
+motif.
+
+That may be useful later when comparing:
+- books/records;
+- world-turn time;
+- prewritten/deferred activation patterns.
+
+Keep it distinct from physical chronology claims.
+
+---
+
+# SECTION 45D descent / ascent matrix
+
+## pit / rock
+
+Psalm 40.
+
+Low unstable enclosure
+↔
+high stable support.
+
+P2 state polarity:
+**very strong**.
+
+---
+
+## Sheol / land of living
+
+Psalm 116 and related texts.
+
+Death-domain
+↔
+walking life-domain.
+
+P2 state polarity:
+**very strong**.
+
+---
+
+## lower grasp / upper receiving force
+
+Psalm 49.
+
+Sheol hand/power
+↔
+divine ransom/receiving.
+
+P2 force polarity:
+**strong**.
+
+---
+
+## rising water / sinking body
+
+Psalm 69.
+
+Water:
+up around neck.
+
+Body:
+down into mire.
+
+P1 paired opposite motion:
+**strong locally**.
+
+No braid/weave:
+**absent**.
+
+---
+
+## heaven / Sheol
+
+Psalm 139.
+
+Highest / lowest.
+Both contained by one presence-field.
+
+P2 vertical extrema:
+**very strong**.
+
+---
+
+## womb / depths of earth
+
+Psalm 139.
+
+Hidden formation domains poetically overlaid.
+
+P8 body/world projection:
+**very strong textually**.
+
+Literal identity:
+**unsupported**.
+
+---
+
+## Psalm 88 versus rescue Psalms
+
+Psalm 88:
+descent remains unresolved.
+
+Psalm 30/40/116:
+descent reverses.
+
+This is the key control pair for the whole family.
+
+---
+
+# SECTION 45D continuous master process sequence
+
+## Phase 1 — stable or ordinary life exists
+
+standing;
+walking;
+bounded inheritance;
+social membership.
+
+---
+
+## Phase 2 — support/space fails
+
+distress narrows;
+mire removes footing;
+enemies surround;
+body disintegrates;
+death snares close.
+
+---
+
+## Phase 3 — downward state intensifies
+
+pit;
+dust;
+deep waters;
+depths of earth;
+Sheol.
+
+---
+
+## Phase 4 — enclosure threatens to seal
+
+Pit mouth closes;
+snares/bonds hold;
+waves press;
+Psalm 88 becomes locked.
+
+---
+
+## Phase 5 — cry / information reaches upper source
+
+lament/prayer
+→ divine hearing.
+
+---
+
+## Phase 6 — intervention may occur
+
+hand from above;
+draw upward;
+bring up;
+ransom;
+loose bonds.
+
+---
+
+## Phase 7 — body leaves unstable medium
+
+mire/deep/Sheol danger
+→ extraction.
+
+---
+
+## Phase 8 — support is restored
+
+rock;
+broad place;
+rest;
+land of living.
+
+---
+
+## Phase 9 — locomotion returns
+
+feet secure;
+steps established;
+walk before YHWH.
+
+---
+
+## Phase 10 — social/centre reintegration occurs
+
+congregation;
+temple courts;
+gates of righteousness;
+public praise.
+
+---
+
+## Phase 11 — restored state expands outward
+
+future generations;
+ends of earth;
+household/community memory.
+
+---
+
+## Negative branch — Psalm 88
+
+Phase 1→4 occur.
+
+Phase 5 cry occurs.
+
+But:
+**no Phase 6–11 resolution is narrated**.
+
+This branch must remain in the master model.
+
+---
+
+# What Section 45D adds to the master Bible/Vardath timeline
+
+1. **The Psalter contains a genuine recurring downward→upward transformation family.**
+2. The low states are materially varied:
+   - pit;
+   - mud/mire;
+   - deep water;
+   - dust;
+   - Sheol;
+   - depths of earth.
+3. **Psalm 18 is the clearest upper-hand extraction sequence**, already logged in Section 45A.
+4. **Psalm 30 explicitly says “brought up from Sheol”** and ties that reversal to night→morning and mourning→dancing.
+5. **Psalm 40 gives the clearest support transition:** pit/mire → upward draw → rock → secure steps.
+6. **Psalm 49 creates a true two-force transfer image:** Sheol's hand/power versus divine ransom/receiving.
+7. **Psalm 69 gives opposite local motions at once:** water rises while body sinks.
+8. **Psalm 69 also imagines the Pit as a mouth that can close**, making terminal descent a gate-sealing image.
+9. **Psalm 71 explicitly gives “revive again” + “bring up again from depths of earth,”** one of the strongest cyclical return formulations in Psalms.
+10. **Psalm 86 demonstrates that Sheol language can describe rescue from mortal danger while the speaker remains alive**, preventing one rigid literal reading.
+11. **Psalm 88 is the decisive negative control:** descent, pressure, enclosure and darkness occur with no narrated ascent.
+12. Therefore **pit/Sheol cannot automatically be decoded as “temporary gate before resurrection.”**
+13. **Psalm 103 links Pit rescue directly to crown + renewed vitality**, a low→high state transition.
+14. **Psalm 116 makes functional recovery explicit:** death snares → release → rest → walking in land of living.
+15. **Psalm 118 links rescue to gate-entry:** constriction → broad place → life → gates open → worship centre.
+16. **Psalm 118's rejected stone → cornerstone is a structural-object status reversal**, not a world transition.
+17. **Psalm 139 makes heaven and Sheol opposite extrema inside one containing field**, while the farthest sea also remains reachable.
+18. **Psalm 139 collapses local darkness as an obstacle to the higher observer**, adding another asymmetric-observation model.
+19. **Psalm 139's “intricately woven in the depths of the earth” is one of the strongest body/weaving/deep-earth correspondences found so far.**
+20. The strongest controlled interpretation is embryonic formation imagery, not a literal sky-lattice mechanism.
+21. **Psalm 139 also introduces prewritten future-day information before local temporal unfolding**, worth cross-indexing with deferred/recorded states elsewhere.
+22. Across the family, the endpoint of successful rescue is rarely merely “up.” It is:
+   **stable support + locomotion + social reintegration + restored voice**.
+23. This makes the Psalmic gate-cycle more functional than spatial:
+   **trapped/nonfunctional → extracted → supported → moving → reintegrated**.
+24. The full Vardath mechanism is still not explicit:
+   no two physical counter-wound strands;
+   no direct adjacency of populated past/present/future worlds;
+   no stated lattice expansion/contraction.
+25. But the Psalms now provide a robust **descent / closure / extraction / stabilization** process family that can be compared against later prophetic and apocalyptic gate imagery.
+
+---
+
+# SECTION 45D textual / literary / resurrection controls
+
+- **Sheol** in Psalms can refer to the realm of the dead, grave/death imagery, or death-near affliction in poetic lament.
+- Therefore not every “deliverance from Sheol” means a corpse literally exited the underworld.
+- Psalm 16:10 has major Christian resurrection reception in Acts, but its first-level Psalmic meaning remains debated.
+- Psalm 22 has major Christian passion/resurrection reception; source-level reconstruction must distinguish that from later application.
+- Psalm 30 is commonly read as thanksgiving for recovery from grave illness; “brought up from Sheol” can function as death-near rescue language.
+- Psalm 40's pit/mire imagery is metaphorical rescue language unless independent evidence suggests an actual physical pit event.
+- Psalm 49:15 is genuinely difficult and important; scholarship ranges from preservation from death to enduring divine communion/postmortem deliverance.
+- Psalm 69's deep-water and Pit-mouth language is lament imagery.
+- Psalm 71's “depths of earth” and “revive again” is resurrection-adjacent but not a mechanical description.
+- Psalm 86's immediate violent-enemy context supports a death-danger reading.
+- Psalm 88 deliberately lacks the normal thanksgiving turn and ends in darkness.
+- The unresolved Psalm 88 branch must not be edited away merely because it fits the cosmology less neatly.
+- Psalm 103's eagle renewal is vitality imagery, not literal bodily metamorphosis.
+- Psalm 116 is thanksgiving for deliverance from mortal danger/illness in many readings; “land of living” is ordinary living-world language.
+- Psalm 118 combines victory thanksgiving with temple/gate procession; the exact historical ritual is debated.
+- Psalm 139's womb/depths-of-earth parallel is poetic anthropology; “woven” is genuine textile language but not evidence by itself for literal cosmic fabric.
+- Psalm 139's ascent-to-heaven / bed-in-Sheol pair expresses divine inescapability and total presence rather than a travel itinerary.
+
+### Sources logged for Section 45D
+
+Primary:
+- Psalm 16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+16&version=NRSVUE
+- Psalm 22 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+22&version=NRSVUE
+- Psalm 30 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+30&version=NRSVUE
+- Psalm 40 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+40%3A1-11&version=NRSVUE
+- Psalm 49 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+49&version=NRSVUE
+- Psalm 69 NRSVUE:
+  https://www.bible.com/bible/3523/PSA.69.NRSVUE
+- Psalm 116 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+116&version=NRSVUE
+- Psalm 118 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+118&version=NRSVUE
+- Psalm 139 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Psalm+139&version=NRSVUE
+
+Death/Sheol scholarship:
+- Seth Cole, **Sheol and Resurrection in the Hebrew Bible** (2019), for the range of Sheol usage and its overlap/tension with later resurrection language.
+- scholarship on Psalms 16, 49 and 116 debating rescue from death, afterlife continuity and resurrection-adjacent readings.
+- scholarly analyses of Psalm 88 emphasizing its locked-space / lowest-pit / no-resolution structure.
+
+Psalm 49:
+- modern exegesis emphasizing the explicit contrast:
+  **human ransom cannot defeat death**
+  versus
+  **God alone can ransom/receive from the power of Sheol**.
+
+Psalm 88:
+- recent literary/canonical work on Psalm 88 as an unresolved lament ending in darkness and refusing the normal praise/rescue turn.
+
+---
+
+# SECTION 45D COMPLETE — descent / ascent / pit / Sheol / rescue family
+
+### Current transformation point
+
+**stable life / movement**
+→ constriction
+→ loss of footing
+→ enclosure / snare / deep water / dust / pit / Sheol
+→ possible sealing
+→ cry upward
+→ upper or divine intervention
+→ hand/drawing/ransom/release
+→ upward movement
+→ rock/broad-place/rest
+→ feet/steps/walking restored
+→ gates/centre/congregation re-entered
+→ public memory expands outward.
+
+### Critical negative branch
+
+**Psalm 88**
+→ descent
+→ enclosure
+→ darkness
+→ cry
+→ **no narrated extraction**.
+
+### Next Psalm process family
+
+**SECTION 45E — breath / spirit / voice / song / sound / thunder / speech-as-force family**
+
+Priority:
+- Psalms 19, 29, 33, 46, 47, 68, 81, 95–100, 104, 107, 135, 147–150 and related texts;
+- divine voice over waters;
+- voice breaking trees / shaking wilderness / birthing effects;
+- breath/spirit creation and death;
+- spoken command as environmental operator;
+- song/trumpet/shout as field-coordination;
+- “word runs swiftly”;
+- frost/snow/wind/water transitions driven by word/breath;
+- distinguish acoustics from personified speech and theological causation;
+- test whether sound/voice behaves as a genuine transformation trigger or mainly announces action.
