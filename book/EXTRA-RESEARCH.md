@@ -89946,3 +89946,1531 @@ Scholarly controls:
 - Hezekiah first sends temple/royal treasure outward, even stripping gold from temple doors/pillars;
 - Sennacherib's field still advances toward Jerusalem, setting up the Hezekiah/Isaiah siege geometry.
 
+
+
+---
+
+# SECTION 38A progress B — 2 Kings 17–18 + 2 Chronicles 29–31
+## Northern centre removal and population redistribution versus southern reopening/recollection: king imprisoned before capital falls, Samaria emptied and repopulated through imperial transfer, Hezekiah reverses Ahaz's closure from inner sanctuary outward, gathers divided remnants inward, then releases a reform wave back across the field
+
+---
+
+# 2 Kings 17 — Hoshea first changes allegiance, then stops the tribute flow that maintained his relation to Assyria
+
+Hoshea begins as an Assyrian vassal:
+- Shalmaneser comes against him;
+- Hoshea serves him;
+- tribute/present moves outward annually.
+
+The relation is therefore:
+
+**Israelite centre**
+→ recurring resource flow
+→ **Assyrian macro-centre**
+→ local kingship tolerated.
+
+This is the same broad imperial coupling already visible under Menahem and Ahaz.
+
+---
+
+# The break occurs first in the information/tribute network
+
+Hoshea:
+- sends messengers toward Egypt;
+- stops the annual tribute to Assyria.
+
+So before armies move,
+the alliance topology changes:
+
+**old Assyrian flow**
+→ interrupted.
+
+**new Egyptian channel**
+→ attempted.
+
+The local centre tries to switch macro-level support fields.
+
+---
+
+# The king is removed before the capital itself is taken
+
+Assyria discovers the conspiracy.
+
+Hoshea is:
+- seized;
+- shut/bound in prison.
+
+Only then does the narrative describe the Assyrian force moving throughout the land and besieging Samaria.
+
+This creates a striking state:
+
+**capital shell remains**
+but
+**its royal centre has already been removed**.
+
+The city can continue resisting for a time without the reigning body that represented it.
+
+Again:
+**centre loss and shell loss are separable events**.
+
+---
+
+# Three-year siege turns the capital into a delayed-failure enclosure
+
+Samaria is besieged for three years.
+
+Unlike the earlier Elisha-era siege,
+this one does not end with enemy abandonment.
+
+It ends with:
+**shell breached/taken**
+→ population transfer outward.
+
+Thus two Samaria siege arcs now give opposite endings:
+
+### Elisha siege
+enclosure
+→ enemy field disappears
+→ gate abundance.
+
+### final Assyrian siege
+enclosure
+→ external field persists
+→ city falls
+→ population deported.
+
+Same broad geometry.
+Different outcome because the outer field state differs.
+
+---
+
+# The northern political field is dismantled by removing people from their land
+
+The king of Assyria takes Samaria and relocates Israelites to:
+- Halah;
+- Habor/Gozan;
+- cities of the Medes.
+
+At the process level:
+
+**population + land relation**
+→ severed.
+
+People remain alive,
+but:
+**home territory**
+and
+**inhabitant network**
+are decoupled.
+
+This is a much larger-scale version of exile processes already encountered for individual households.
+
+---
+
+# Critical historical control — this was not a total emptying of every Israelite
+
+2 Kings' theological rhetoric can sound like Israel was wholly “removed.”
+
+Archaeology and Assyrian evidence indicate a more complex reality:
+- substantial deportation;
+- provincial reorganization;
+- continued local population;
+- later incoming deportee groups;
+- mixing rather than complete demographic replacement.
+
+Sargon II's inscriptions claim deportation of roughly **27,280/27,290** people from Samaria and resettlement/reorganization, but royal inscriptions are ideological sources and exact figures require caution.
+
+Therefore:
+**do not build the geometry as “every northern person vanished.”**
+
+The secure macro-process is:
+**large-scale forced outward transfer + imperial resettlement + surviving local continuity**.
+
+---
+
+# Kings gives a theological retrospective that rewinds the whole northern history
+
+After narrating the fall,
+2 Kings 17 stops ordinary event-sequence and interprets the catastrophe backward through:
+- Exodus;
+- high places;
+- calves;
+- Asherah/Baal;
+- prophetic warnings;
+- refusal to hear;
+- Jeroboam's split from David.
+
+This is a **causal rewind**.
+
+The narrator maps:
+**final collapse**
+back through
+**long accumulated internal states**.
+
+For the master timeline,
+this is important because the book itself distinguishes:
+- immediate political mechanics;
+- long-term theological explanation.
+
+Do not confuse the two layers.
+
+---
+
+# The original kingdom tear is explicitly recalled at the moment of northern extinction
+
+The chapter says:
+**Israel was torn/rent from the house of David**.
+
+That recalls:
+- Samuel's torn robe;
+- Ahijah's twelve-piece garment.
+
+So the earlier symbolic tear is now viewed retrospectively from the endpoint:
+
+**one kingdom**
+→ torn
+→ northern field persists for generations
+→ northern state finally removed by empire.
+
+The garment fracture was not the final catastrophe.
+It created a separate long-lived branch that later undergoes its own terminal transition.
+
+---
+
+# Assyria then moves other populations inward into the northern cities
+
+The text says people from:
+- Babylon;
+- Cuthah;
+- Avva;
+- Hamath;
+- Sepharvaim
+
+are placed into Samaria's cities.
+
+Thus the imperial process is two-directional:
+
+**Israelite population → outward**
+while
+**other imperial populations → inward**.
+
+This is deliberate **population exchange/resettlement topology**.
+
+---
+
+# New inhabitants occupy old shells
+
+The cities remain.
+
+Their population composition changes.
+
+So:
+**settlement shells**
+persist
+while
+**human contents are partially replaced/recombined**.
+
+This is exactly the distinction required by the Vardath project:
+**world/place continuity does not imply population continuity, and population continuity does not require unchanged place relation**.
+
+---
+
+# One deported priest is sent back as a knowledge carrier
+
+The incoming populations report they do not know:
+**the manner/custom of the god of the land**.
+
+The Assyrian king orders:
+**one of the deported priests return**.
+
+He settles at Bethel and teaches.
+
+This is a powerful remnant-carrier pattern:
+
+**old population removed**
+→ one specialist returned
+→ specialist carries local religious knowledge back into repopulated territory.
+
+The returning node is not restoring the old kingdom.
+It is transmitting **function/information** into a new mixed population.
+
+---
+
+# The new population does not become one homogeneous system
+
+Each population maintains its own cult objects/traditions,
+while also adopting local YHWH-related practice.
+
+The chapter summarizes the result as simultaneous:
+**fear YHWH**
+and
+**serve their own gods**.
+
+At the narrator's ideological level this is condemned.
+
+Structurally:
+**one imperial province**
+contains
+**multiple imported cultural/religious subfields**.
+
+The result is **hybrid multi-centred practice**, not full convergence.
+
+---
+
+# Historical control — later Samaritan identity cannot simply be equated with this polemical description
+
+Modern scholarship treats the formation of the Samaritan community as a much longer and more complex process than:
+**foreigners arrive in 2 Kings 17 → Samaritans appear**.
+
+Local Israelite continuity, Assyrian deportees, later Persian/Hellenistic developments and competing Judean/Samaritan identity claims all matter.
+
+Therefore:
+do not use 2 Kings 17 as a simple ethnographic origin statement.
+
+---
+
+# 2 Kings 18 — Hezekiah begins by dismantling distributed sacred nodes and even destroys a formerly legitimate remnant object
+
+Kings says Hezekiah:
+- removes high places;
+- breaks pillars;
+- cuts Asherah;
+- breaks Moses' bronze serpent because people burn incense to it.
+
+This is crucial.
+
+The bronze serpent had an earlier legitimate narrative origin.
+
+Now:
+**old sacred/remnant object**
+→ acquires a new harmful cultic function
+→ centre deliberately destroys it.
+
+This gives another strong rule:
+**ancestral provenance does not permanently fix an object's acceptable state**.
+
+A once-useful remnant can later require removal if its relational function changes.
+
+---
+
+# Hezekiah's centralization is therefore not simple preservation of all ancient objects
+
+Hezekiah preserves:
+- temple;
+- Davidic line;
+- covenant.
+
+But destroys:
+- high places;
+- pillars;
+- Asherah;
+- Nehushtan.
+
+So restoration is selective.
+
+It is:
+**recover chosen central structure**
+while
+**decommissioning inherited/distributed nodes judged incompatible**.
+
+---
+
+# Hezekiah then breaks the Assyrian dependency inherited from Ahaz
+
+Kings says:
+**he rebelled against the king of Assyria and would not serve him**.
+
+This reverses Ahaz's:
+**I am your servant and your son**.
+
+Father:
+**local centre submits upward to imperial centre**.
+
+Son:
+**local centre attempts to decouple**.
+
+This is a major generational polarity reversal.
+
+---
+
+# Samaria's fall is then retold inside Hezekiah's reign
+
+2 Kings 18 repeats:
+- Assyrian siege;
+- three-year fall;
+- deportation.
+
+This positions Hezekiah beside the northern terminal event:
+
+**north branch ends**
+while
+**south branch continues**.
+
+The divided garment has now become:
+**one branch removed**
++
+**one remnant kingdom still operating**.
+
+---
+
+# Sennacherib then strips the southern field down toward Jerusalem
+
+In Hezekiah's fourteenth year:
+Sennacherib attacks and takes:
+**all the fortified cities of Judah** in the narrative formula.
+
+The macro-geometry becomes:
+
+**Jerusalem centre**
+with
+**outer fortified network collapsing one node after another**.
+
+This resembles Samaria's earlier provincial stripping before final siege pressure.
+
+---
+
+# Hezekiah first tries the old treasure-for-distance strategy
+
+Hezekiah sends to Sennacherib at Lachish:
+**I have offended; withdraw; I will bear what you impose**.
+
+Assyria sets tribute.
+
+Hezekiah transfers:
+- temple silver;
+- palace silver;
+- gold;
+- even strips gold from temple doors/posts he himself overlaid.
+
+This is the same broad strategy used by:
+- Joash toward Hazael;
+- Ahaz toward Tiglath-pileser.
+
+**stored centre wealth**
+→ outward
+→ attempt to increase military distance.
+
+---
+
+# But unlike Joash/Hazael, the payment does not end the convergence
+
+After the tribute,
+Assyrian commanders with a great army still move to Jerusalem.
+
+This is important:
+
+**resource release**
+does not reliably produce
+**external decoupling**.
+
+The same strategy can work in one phase and fail in another.
+
+Again:
+**process effect depends on counterpart state, not symbolic action alone**.
+
+---
+
+# The temple that Chronicles has just restored is stripped again under imperial pressure
+
+This creates a painful material cycle:
+
+Ahaz:
+**temple vessels/supports altered, treasure sent outward**.
+
+Hezekiah:
+**temple reopened/cleansed/restored in Chronicles**.
+
+Then in Kings:
+**gold from temple doors/posts is stripped outward to Assyria**.
+
+So restoration does not freeze the sacred structure in a completed state.
+
+It continues to exchange material with geopolitical crisis.
+
+---
+
+# Assyrian field stops at a water/conduit interface outside Jerusalem
+
+The commanders come to:
+**conduit of upper pool**
+on
+**highway of Fuller's Field**.
+
+This is the same broad water-system zone that Isaiah 7 associates with Ahaz.
+
+The site therefore becomes a cross-generational political interface:
+- under Ahaz, prophetic/war crisis;
+- under Hezekiah, Assyrian diplomatic/psychological confrontation.
+
+Keep the repeated location for the later Isaiah comparison.
+
+---
+
+# The battle at first is linguistic, not kinetic
+
+Assyria sends Rabshakeh to speak.
+
+Judah sends:
+- Eliakim;
+- Shebna;
+- Joah.
+
+The two fields remain physically separated.
+
+The immediate contest is:
+**which information model will the population accept?**
+
+This is a **speech siege** before any wall breach.
+
+---
+
+# Judahite officials try to narrow the communication channel to an elite language
+
+They ask Rabshakeh:
+**speak Aramaic**
+because they understand it,
+and do not speak Judean language in hearing of people on wall.
+
+This is an attempted **information filter**:
+
+**enemy message**
+→ elite interpreters only
+→ population protected from direct access.
+
+---
+
+# Rabshakeh deliberately bypasses the elite interface and addresses the field directly
+
+He refuses.
+
+He stands and cries loudly in Judean language.
+
+So:
+
+**official channel restriction**
+→ bypassed
+→ sender addresses ordinary wall population directly.
+
+This closely parallels:
+- Absalom intercepting petitioners before David;
+- propaganda/information nodes elsewhere.
+
+Control of the interface becomes the battleground.
+
+---
+
+# Assyria offers an alternative future route to the population
+
+Rabshakeh says, in effect:
+
+**do not trust Hezekiah**
+→ make terms with Assyria
+→ come out
+→ temporarily eat own vine/fig/cistern
+→ later be transferred to another fertile land.
+
+This is not simply a threat.
+
+It is a **competing future simulation**:
+
+### Hezekiah model
+stay inside / trust / Jerusalem survives.
+
+### Assyrian model
+come out / submit / deportation becomes life in a substitute land.
+
+The wall population is being asked to choose between two projected futures.
+
+---
+
+# The population is ordered to keep the return channel closed
+
+Hezekiah's command:
+**answer him not a word**.
+
+So the wall becomes:
+
+**incoming information crosses**
+but
+**outgoing response is deliberately blocked**.
+
+This is a one-way communication boundary.
+
+The field hears,
+but does not publicly couple back.
+
+---
+
+# Torn garments carry the hostile information inward to the king
+
+The officials return with clothes torn
+and report Rabshakeh's words.
+
+Once again:
+**garment rupture**
+marks reception of regime-threatening information.
+
+Here it is not itself the kingdom tear.
+It is a visible catastrophe signal carried from boundary to centre.
+
+---
+
+# 2 Chronicles 29 — Hezekiah reverses Ahaz's temple closure immediately
+
+Chronicles begins Hezekiah's reign:
+**first year**
+→ **first month**
+→ temple doors opened and repaired.
+
+This is almost the exact inverse of Ahaz's closing:
+
+Ahaz:
+**doors shut**.
+
+Hezekiah:
+**doors opened**.
+
+The new reign begins with a literal **boundary-state reversal**.
+
+---
+
+# Before public worship resumes, the operators themselves are purified
+
+Hezekiah gathers priests/Levites in the broad place to the east.
+
+Instruction:
+1. sanctify yourselves;
+2. sanctify the house;
+3. carry impurity outward.
+
+So:
+**operator state**
+must change before
+**system state** can be repaired.
+
+This is an important restoration rule.
+
+---
+
+# Cleansing moves from the deepest interior outward to Kidron
+
+Chronicles gives a very clear vector:
+
+**priests go into inner part**
+→ remove impurity into temple court
+→ Levites take it
+→ carry it **outside**
+→ deposit/remove it at **Kidron brook**.
+
+This is one of the cleanest **inside→outside cleansing flows** in the Bible.
+
+The restoration is not:
+**bring holiness inward first**.
+
+It begins:
+**extract incompatible material from the core outward across successive boundaries**.
+
+---
+
+# The cleansing reaches the porch on day eight and completes on day sixteen
+
+Chronicles marks the progress by layers/time:
+- day 1 begins;
+- day 8 reaches porch;
+- another eight days complete house;
+- day 16 finish.
+
+Do not convert 8/16 into a cosmological cycle.
+
+The functional point:
+**restoration advances through successive spatial layers over time**.
+
+---
+
+# Ahaz's discarded vessels are not all replaced; some are recovered and reconsecrated
+
+The priests report:
+objects Ahaz cast away
+→ prepared
+→ sanctified
+→ restored before altar.
+
+So:
+**damaged/discarded predecessor material**
+can be reactivated after reconditioning.
+
+This contrasts with Nehushtan:
+some old objects are restored,
+others destroyed.
+
+Again:
+**remnant treatment is selective by present function**.
+
+---
+
+# Sacrifice and music are synchronized
+
+When the burnt offering begins:
+**song begins**
++
+**trumpets**
++
+**Davidic instruments**.
+
+They continue until the offering ends.
+
+This is a deliberately coupled temporal system:
+
+**material ritual process**
+and
+**acoustic process**
+start/stop together.
+
+The service is not merely a set of independent actions.
+It is synchronized.
+
+---
+
+# Capacity shortage is solved by cross-role assistance
+
+There are too few sanctified priests to process all offerings.
+
+Levites help until:
+- work ends;
+- more priests are ready.
+
+So the restored system adapts:
+
+**demand exceeds one role's capacity**
+→ adjacent trained group temporarily takes support function
+→ throughput continues.
+
+This is the positive inverse of systems that collapse under overload.
+
+---
+
+# Chronicles says the service is established “suddenly”
+
+After the long Ahaz disruption,
+the reform is described as happening rapidly.
+
+So:
+**long degradation**
+can be followed by
+**rapid reactivation**
+once:
+- boundary opens;
+- operators align;
+- impurity removed;
+- apparatus restored;
+- roles synchronized.
+
+This is a useful restoration grammar.
+
+---
+
+# 2 Chronicles 30 — the next step is recollection of remnants across the old north/south split
+
+Hezekiah sends letters to:
+- Judah;
+- Ephraim;
+- Manasseh;
+- wider Israel from Beer-sheba to Dan.
+
+The invitation is:
+**come to Jerusalem**.
+
+So after the northern kingdom's fall/deportation,
+Chronicles imagines a surviving/remnant field that can still be called inward.
+
+This is a deliberate **recollection topology**.
+
+---
+
+# The feast is moved to the second month because the system is not ready
+
+They do not keep Passover at the expected first-month time because:
+- too few priests sanctified;
+- people not yet gathered.
+
+Instead:
+**schedule is delayed**.
+
+This is a crucial rule:
+**calendar target yields to operator/population readiness**.
+
+The system waits until enough functional components can participate.
+
+---
+
+# Messengers move city-to-city through the shattered northern field
+
+Posts/runners carry letters:
+**city to city**
+through Ephraim/Manasseh/Zebulun.
+
+Responses divide:
+- many mock;
+- some humble themselves and come.
+
+So the remnant network is **not uniformly receptive**.
+
+The central call creates:
+**selective convergence**, not total recall.
+
+---
+
+# Judah is described as receiving “one heart”
+
+Within Judah,
+the text says a divine hand gives them:
+**one heart**
+to carry out the command.
+
+This is a strong counter-image to Solomon's:
+**heart not whole**.
+
+The restored field is represented as:
+**many people → one internal orientation**.
+
+Again, “heart” is functioning as a system-coherence variable.
+
+---
+
+# Incoming participants first remove rival altar-nodes from Jerusalem
+
+Before Passover,
+people remove:
+- altars;
+- incense altars
+
+and cast them into Kidron.
+
+So the central city is cleansed again before the gathering ritual.
+
+Kidron repeatedly functions as:
+**outward disposal boundary**.
+
+---
+
+# Ritual impurity does not automatically exclude every returning remnant
+
+Many northern participants have not completed normal purification.
+
+Hezekiah prays for those whose:
+**heart is set to seek God**
+even if ritual purification is incomplete.
+
+The text says they are healed/accepted.
+
+This is significant processually:
+
+**functional/internal orientation**
+is temporarily allowed to compensate for
+**incomplete external readiness state**.
+
+The restoration system bends normal access conditions to reintegrate remnants.
+
+---
+
+# Seven-day festival is voluntarily doubled
+
+First:
+**seven days**.
+
+Then congregation decides:
+**another seven days**.
+
+So:
+**scheduled interval**
+→ successful high-coherence gathering
+→ participants extend interval themselves.
+
+This is not forced.
+
+The field chooses to remain converged longer.
+
+Do not treat 7+7 as cosmological proof;
+record it as **self-extended convergence duration**.
+
+---
+
+# The gathered field includes north, south and resident outsiders
+
+Chronicles stresses participation from:
+- Judah;
+- northern Israel;
+- strangers/sojourners.
+
+Thus the Jerusalem centre temporarily gathers people across former political boundaries.
+
+This is not a restored northern monarchy.
+It is **ritual/relational reconvergence after political fragmentation**.
+
+---
+
+# Voice/prayer rises from the earthly gathering to heavenly habitation
+
+At close:
+priests/Levites bless people,
+their voice is heard,
+prayer **comes up to heaven**.
+
+This mirrors 1 Kings 8's routing model:
+
+**earthly central gathering**
+→ voice upward
+→ heavenly source.
+
+The temple remains interface,
+not containment.
+
+---
+
+# 2 Chronicles 31 — central convergence produces an outward dismantling wave
+
+After the festival ends,
+participants do not simply disperse home.
+
+They first go out through:
+- Judah;
+- Benjamin;
+- Ephraim;
+- Manasseh
+
+destroying:
+- pillars;
+- Asherim;
+- high places;
+- altars.
+
+Only after that:
+**each returns to own possession/city**.
+
+So the sequence is:
+
+**distributed remnants**
+→ converge Jerusalem
+→ one-heart festival
+→ **outward reform wave**
+→ distributed return home.
+
+This is a complete:
+**broad → centre → broad**
+cycle.
+
+---
+
+# The centre then formalizes recurring service into courses
+
+Priests/Levites are assigned:
+**courses by service**.
+
+This restores a rotating temporal architecture,
+similar to earlier Solomon administration.
+
+The repaired centre now depends on:
+**scheduled distributed roles**,
+not one permanent undifferentiated priestly mass.
+
+---
+
+# A command released outward causes material abundance to flow back inward
+
+Hezekiah orders support for priests/Levites.
+
+As soon as the command spreads:
+- grain;
+- wine;
+- oil;
+- honey;
+- livestock;
+- holy gifts
+
+flow inward in abundance.
+
+The result is:
+**heaps**.
+
+So:
+**information/command outward**
+→ **material flow inward**.
+
+This is a direct information→resource circulation loop.
+
+---
+
+# Storage capacity is built only after abundance appears
+
+Hezekiah sees the heaps
+and then orders:
+**prepare chambers/store rooms**.
+
+Thus:
+
+**inflow increases**
+→ existing holding capacity becomes insufficient
+→ storage architecture expands.
+
+This is a positive capacity-management sequence:
+**flow generates new container capacity**.
+
+---
+
+# The incoming abundance is then redistributed through a named administrative network
+
+Offerings/tithes:
+→ storage chambers
+→ supervisors
+→ east-gate distributor
+→ city/regional appointed men
+→ priests/Levites/families by courses.
+
+So the temple centre acts as:
+
+**collection**
+→ **storage**
+→ **classification**
+→ **redistribution**.
+
+It is not merely a sink.
+
+This is one of the clearest resource-circulation systems in Chronicles.
+
+---
+
+# 2 Kings 18 and 2 Chronicles 29–31 therefore describe Hezekiah at different scales
+
+### Kings
+Hezekiah:
+- destroys distributed cult nodes;
+- destroys Nehushtan;
+- rebels against Assyria;
+- faces imperial collapse of the outer field.
+
+### Chronicles
+Hezekiah:
+- opens/rebuilds temple;
+- cleanses core outward;
+- restores vessels;
+- gathers remnants inward;
+- synchronizes ritual;
+- sends reform outward;
+- builds a recurring support/distribution network.
+
+The two accounts are complementary but not identical.
+
+Kings foregrounds:
+**exclusive centralization and geopolitical crisis**.
+
+Chronicles foregrounds:
+**repair/recollection/administrative recirculation**.
+
+---
+
+# SECTION 38A-B continuous geometry/effect timeline — 2 Kings 17–18 + 2 Chronicles 29–31
+
+## Phase AL — vassal relation is maintained by recurring outward tribute
+
+Hoshea
+→ annual Assyrian payment.
+
+**Effect:** local centre survives inside imperial hierarchy.
+
+---
+
+## Phase AM — allegiance-switch attempt interrupts old flow
+
+Egyptian message channel opens
+while
+Assyrian tribute stops.
+
+**Effect:** network topology changes before military response.
+
+---
+
+## Phase AN — king removed before city falls
+
+Hoshea imprisoned
+→ Samaria still resists.
+
+**Effect:** royal centre and urban shell fail at separate times.
+
+---
+
+## Phase AO — persistent outer field eventually breaks the enclosed capital
+
+three-year siege
+→ Samaria taken.
+
+**Effect:** unlike earlier miraculous siege release, the shell ultimately loses.
+
+---
+
+## Phase AP — population/land relation is forcibly severed
+
+Israelites
+→ Assyrian imperial destinations.
+
+**Effect:** people persist but are detached from home geography.
+
+---
+
+## Phase AQ — incoming populations occupy surviving settlement shells
+
+Babylon/Cuthah/etc.
+→ Samaria cities.
+
+**Effect:** place shells persist while population composition changes.
+
+---
+
+## Phase AR — one old specialist returns as knowledge carrier
+
+deported priest
+→ Bethel
+→ teaches local cult practice.
+
+**Effect:** function/information survives political extinction through remnant transfer.
+
+---
+
+## Phase AS — imported subfields remain internally plural
+
+one province
+→ multiple populations
+→ YHWH-related practice + own gods.
+
+**Effect:** imperial resettlement creates hybrid multi-centred cultural field, not total homogenization.
+
+---
+
+## Phase AT — earlier symbolic kingdom tear reaches one branch's terminal state
+
+Davidic whole
+→ torn northern field
+→ generations of independent life
+→ Assyrian removal.
+
+**Effect:** symbolic fragmentation can produce long-lived autonomous branch before terminal collapse.
+
+---
+
+## Phase AU — Hezekiah destroys a formerly legitimate ancestral object after its function changes
+
+Moses' bronze serpent
+→ later incense cult
+→ broken.
+
+**Effect:** provenance does not determine permanent acceptability; current relation governs remnant treatment.
+
+---
+
+## Phase AV — father/son imperial relation reverses
+
+Ahaz submits to Assyria.
+Hezekiah rebels.
+
+**Effect:** successor can reverse inherited macro-centre coupling.
+
+---
+
+## Phase AW — fortified outer network collapses inward toward Jerusalem
+
+Sennacherib
+→ Judahite fortified cities fall.
+
+**Effect:** central remnant remains while peripheral defense nodes disappear.
+
+---
+
+## Phase AX — centre releases stored treasure to buy distance
+
+temple/palace silver + door gold
+→ Assyria.
+
+**Effect:** sacred/royal accumulation becomes external buffer cargo.
+
+---
+
+## Phase AY — outward payment fails to stop convergence
+
+tribute paid
+→ Assyrian army still approaches Jerusalem.
+
+**Effect:** same treasure-release strategy has phase-dependent effectiveness.
+
+---
+
+## Phase AZ — water/conduit zone becomes speech interface
+
+Assyrian commanders
+↔ Judah officials
+at upper-pool conduit.
+
+**Effect:** boundary crisis begins as information confrontation before kinetic breach.
+
+---
+
+## Phase BA — elite tries to restrict language channel
+
+Aramaic requested
+→ population on wall to be excluded.
+
+**Effect:** centre attempts to filter hostile information through selected interpreters.
+
+---
+
+## Phase BB — hostile speaker bypasses interface and addresses field directly
+
+Rabshakeh uses Judean loudly.
+
+**Effect:** information penetrates elite filter and targets population-centre coupling.
+
+---
+
+## Phase BC — rival future models compete at the wall
+
+stay/trust Hezekiah
+versus
+come out/submit/deport to substitute land.
+
+**Effect:** siege includes contest over which projected future the population will choose.
+
+---
+
+## Phase BD — wall becomes one-way information membrane
+
+enemy speech enters.
+population response blocked by royal command.
+
+**Effect:** hearing permitted, reciprocal coupling denied.
+
+---
+
+## Phase BE — Hezekiah reverses Ahaz's shut-door state
+
+Ahaz closes temple doors.
+Hezekiah first year/month opens and repairs them.
+
+**Effect:** reign transition begins as literal boundary reopening.
+
+---
+
+## Phase BF — operators are aligned before system cleansing
+
+priests/Levites sanctify themselves
+→ then house.
+
+**Effect:** restoration requires operator-state change before infrastructure-state change.
+
+---
+
+## Phase BG — impurity is moved from inner core outward across successive boundaries
+
+inner house
+→ court
+→ Kidron.
+
+**Effect:** cleansing vector runs centre→outside.
+
+---
+
+## Phase BH — discarded predecessor apparatus is selectively restored
+
+Ahaz-cast-away vessels
+→ prepared
+→ sanctified
+→ reused.
+
+**Effect:** some remnants are repairable/reactivatable rather than replaced.
+
+---
+
+## Phase BI — ritual and acoustic fields are synchronized
+
+offering begins
+→ song/trumpets begin
+→ continue together.
+
+**Effect:** material and information/sound processes share one temporal phase.
+
+---
+
+## Phase BJ — capacity shortage is solved by neighboring role support
+
+priests too few
+→ Levites help.
+
+**Effect:** adaptive cross-role coupling prevents throughput collapse.
+
+---
+
+## Phase BK — restored centre calls scattered remnants inward
+
+letters
+→ Judah + northern remnant
+→ Jerusalem.
+
+**Effect:** political fragmentation does not prevent relational/religious recollection.
+
+---
+
+## Phase BL — calendar gives way to readiness
+
+first-month Passover impossible
+→ second month chosen.
+
+**Effect:** timing adapts to operator/population state rather than forcing unready transition.
+
+---
+
+## Phase BM — selective response produces partial rather than total convergence
+
+many mock
+but
+some north-Israel remnants come.
+
+**Effect:** recall signal gathers receptive nodes while others remain outside.
+
+---
+
+## Phase BN — Judah becomes one-heart field
+
+many people
+→ one heart/orientation.
+
+**Effect:** restored coherence is described internally before outward reform.
+
+---
+
+## Phase BO — incomplete ritual state is tolerated to preserve remnant reintegration
+
+unclean participants
++ heart set toward God
+→ prayer/healing
+→ participation retained.
+
+**Effect:** access rule bends to preserve functional convergence.
+
+---
+
+## Phase BP — successful convergence self-extends in time
+
+7-day feast
+→ voluntary second 7 days.
+
+**Effect:** field chooses prolonged central coupling.
+
+---
+
+## Phase BQ — centre gathering becomes outward reform wave
+
+Jerusalem convergence
+→ participants spread through Judah/Benjamin/Ephraim/Manasseh
+→ dispersed cult nodes dismantled
+→ everyone returns home.
+
+**Effect:** broad→centre→broad cycle changes the distributed field before reset to home positions.
+
+---
+
+## Phase BR — recurring service is stabilized by temporal courses
+
+priests/Levites
+→ scheduled divisions.
+
+**Effect:** long-term centre function depends on periodic rotation.
+
+---
+
+## Phase BS — command moves outward; resources move inward
+
+support decree
+→ agricultural/animal gifts flow to temple.
+
+**Effect:** information and material travel in opposite directions in one circulation loop.
+
+---
+
+## Phase BT — abundance forces container expansion
+
+heaps accumulate
+→ storage chambers prepared.
+
+**Effect:** incoming flow generates new enclosure capacity.
+
+---
+
+## Phase BU — central collection is redistributed back through a supervised network
+
+store
+→ overseers
+→ gates/cities
+→ priestly/Levitical households.
+
+**Effect:** centre acts as router/reservoir, not terminal sink.
+
+---
+
+# What 2 Kings 17–18 + 2 Chronicles 29–31 adds to the master Bible/Vardath timeline
+
+271. **A ruling body can be removed before the city/field it represents is physically conquered.**
+272. **Two outward/inward population transfers can occur through the same imperial system: local deportation outward and foreign resettlement inward.**
+273. **Settlement shells can survive while their human contents are partially removed, mixed and replaced.**
+274. **A specialist remnant can be returned to a former territory as a carrier of lost/local system knowledge without restoring the old political system.**
+275. **The final northern collapse should be modelled as mass displacement plus local continuity, not total emptying.**
+276. **The original kingdom tear produces a long-lived branch whose terminal event occurs generations after the symbolic split.**
+277. **A once-legitimate sacred remnant can later be destroyed when its relational function changes.**
+278. **A successor can reverse a predecessor's macro-political coupling while preserving the same local dynastic centre.**
+279. **The outer fortified field can collapse inward toward a surviving capital remnant.**
+280. **Releasing stored central wealth may or may not successfully increase distance from a threatening external field; the same strategy is not deterministic.**
+281. **A siege can begin as a language/information battle in which elites and attackers compete for direct access to the wall population.**
+282. **A hostile node can bypass an official interface and address distributed field members directly, attempting to decouple them from their centre.**
+283. **A boundary can become a one-way information membrane: hostile input passes inward while response is deliberately blocked.**
+284. **Hezekiah's Chronicle reform reverses Ahaz's literal door state: shut → opened/repaired.**
+285. **Restoration can proceed from the deepest interior outward, exporting incompatible material across successive boundaries to a disposal node.**
+286. **Operator readiness can precede and condition infrastructure restoration.**
+287. **Some predecessor material is reconditioned and reused while other inherited objects are destroyed; remnant handling is selective, not uniform.**
+288. **Material ritual and acoustic signalling can be synchronized into one phase-controlled process.**
+289. **Role shortages can be solved through temporary cross-role assistance rather than letting throughput fail.**
+290. **A shattered political population can still be partially recollected toward one relational centre after its state has fallen.**
+291. **A fixed calendrical transition can be delayed when operator/population readiness is insufficient.**
+292. **Restoration can prioritize internal orientation over perfect external readiness to reintegrate damaged remnants.**
+293. **A highly coherent central gathering can voluntarily extend its own duration.**
+294. **The Hezekiah reform gives a full broad→centre→broad cycle: scattered remnants gather, unify, then move outward to alter distributed nodes before returning home.**
+295. **A central command can send information outward while causing resources to flow inward, forming a circulation loop.**
+296. **Unexpected abundance can require new storage/container capacity to be created after the flow has already increased.**
+297. **A restored centre can gather, store, classify and redistribute rather than simply accumulate.**
+298. **Kings and Chronicles again encode different scales of the same reign: geopolitical centralization in Kings versus inner-to-outer repair and pan-remnant recollection in Chronicles.**
+
+---
+
+## Section 38A-B high-priority pair / geometry register
+
+### Hoshea / Assyria / Egypt
+local centre attempts to switch macro-support from Assyria to Egypt.
+
+### king / capital
+Hoshea imprisoned before Samaria falls:
+centre removed before shell.
+
+### deportees / incoming settlers
+outward population transfer paired with inward imperial resettlement.
+
+### returning priest / mixed population
+single knowledge carrier injected into altered population field.
+
+### Ahaz / Hezekiah
+doors shut versus doors opened;
+imperial submission versus rebellion;
+temple alteration versus cleansing/restoration.
+
+### inner sanctuary / Kidron
+cleansing vector from core outward to disposal boundary.
+
+### north remnant / Jerusalem
+politically shattered branch partially recalled into one ritual centre.
+
+### first month / second month
+ideal schedule versus readiness-adapted schedule.
+
+### seven days / second seven days
+planned duration versus self-extended convergence.
+
+### centre / field
+Jerusalem gathers field inward, then sends reform wave outward, then people return to local possessions.
+
+### command / resource
+instruction travels outward while provisions travel inward.
+
+### storage / distribution
+heaps trigger new chambers, then materials recirculate to regional service nodes.
+
+### Hezekiah / Rabshakeh
+two competing future-model broadcasters addressing the same wall population.
+
+---
+
+## Section 38A-B number / timing register
+
+Record without forcing:
+- Hoshea reign **9 years**;
+- Samaria siege **3 years**;
+- Sargon's inscription claims around **27,280/27,290** deportees, but royal inscription totals need caution;
+- Hezekiah reign **29 years**;
+- Sennacherib tribute in Kings **300 talents silver + 30 gold**; Assyrian annals give a different silver total and much additional cargo;
+- Chronicles temple cleansing reaches porch day **8**, finishes day **16**;
+- initial offerings repeatedly use **7** animals in several categories;
+- Passover **7 days + 7 days**;
+- tithe heaps begin month **3**, finish month **7**.
+
+No precise chronology or number-pattern should be used cosmologically without textual/external control.
+
+---
+
+## Section 38A-B textual / historical / archaeological controls
+
+- The conqueror of Samaria is a major source problem. 2 Kings/Babylonian material associates the fall with Shalmaneser V, while Sargon II's inscriptions claim Samaria's conquest; scholarship considers one conquest, two-stage conquest/rebellion, or Shalmaneser conquest followed by Sargon deportation/reorganization.
+- Sargon's deportation figure is royal inscriptional data and may be ideologically shaped.
+- Assyrian deportation did not necessarily mean slavery or total population replacement; deportees could become soldiers, farmers, craftsmen or contract witnesses elsewhere in the empire.
+- Archaeology supports substantial continuity in parts of the former northern kingdom alongside imperial reorganization/resettlement.
+- The peoples named in 2 Kings 17:24 may reflect more than one Assyrian resettlement episode; the unnamed “king of Assyria” is debated.
+- 2 Kings 17's account of mixed worship is strongly polemical and should not be used as a neutral anthropology of later Samaritans.
+- The historical origins of Samaritan identity are far more complex and later than the chapter's compressed theological narrative.
+- Hezekiah's cult centralization and removal of high places are debated archaeologically; changes at sites such as Beersheba/Arad/Lachish are interpreted in different ways and not all can be securely tied to one reform event.
+- Nehushtan's earlier Mosaic identity is explicit in Kings, but the history of the bronze object as a cult item between Numbers and Hezekiah is not independently recoverable.
+- Chronicles 29–31 has no direct equivalent in Kings and strongly reflects the Chronicler's temple/Levitical/pan-Israel theology.
+- The detailed first-year-first-month Hezekiah temple cleansing may be literary/theological construction even if reform activity has a historical core.
+- The Passover's invitation to northern remnants after Assyrian disruption is especially important to Chronicles' all-Israel ideology; it should not be treated as a census of actual attendance.
+- “One heart” is narrative/theological coherence language, not literal collective mind.
+- Chronicles' enormous sacrificial totals are not useful as population estimates.
+- The Assyrian invasion of 701 BCE is exceptionally well attested compared with many biblical episodes: Sennacherib's annals, Lachish reliefs, archaeology and biblical narratives all matter.
+- Sennacherib's annals boast capture of 46 fortified cities and famously describe Hezekiah as confined in Jerusalem “like a bird in a cage,” while the biblical account emphasizes Jerusalem's survival. Each source is rhetorically interested.
+- Both biblical and Assyrian sources agree that Hezekiah delivered major tribute to Sennacherib; exact totals/details differ.
+- Lachish's destruction and Assyrian capture are strongly supported archaeologically and iconographically.
+- The tribute episode and subsequent Rabshakeh confrontation have generated major source-critical debates about whether 2 Kings 18–19 combines multiple campaign traditions or narrative layers.
+- The upper-pool conduit/Fuller's Field location should be cross-read with Isaiah 7, but exact ancient hydraulic/topographic reconstruction remains debated.
+- Rabshakeh's language choice is a deliberate narrative information strategy; the precise sociolinguistic reach of Aramaic versus Judean among eighth-century Jerusalem inhabitants is historically complex.
+
+### Sources logged for Section 38A-B
+
+Primary:
+- Mechon-Mamre, **2 Kings 17–18**.
+- Mechon-Mamre, **2 Chronicles 29–31**.
+
+Scholarly controls:
+- Bob Becking, **The Fall of Samaria: An Historical and Archaeological Study**.
+- **The Last Days of the Kingdom of Israel**, ed. Shūichi Hasegawa, Christoph Levin and Karen Radner.
+- Nadav Na'aman, work on **Assyrian deportees and provincial archaeology**.
+- scholarship on deportation as a punitive/administrative instrument of Assyrian empire.
+- Marvin A. Sweeney, **“The Regnal Evaluation of Hezekiah in 2 Kings 18–20.”**
+- P. S. Evans, **The Invasion of Sennacherib in the Book of Kings**.
+- Sennacherib's royal inscriptions and Lachish palace reliefs, used as external controls.
+- archaeological studies of Lachish and Judahite destruction layers from the 701 BCE campaign.
+- literary/historical scholarship on Hezekiah's temple reform and Chronicles' pan-Israel Passover/reorganization.
+
+**Section 38A remains in progress.**
+
+### Next process block
+
+**2 Kings 19–20 + 2 Chronicles 32**:
+- boundary speech moves inward to Hezekiah;
+- king tears clothes, enters temple and sends representatives to Isaiah;
+- Isaiah provides counter-future model;
+- Assyrian letter is physically spread before YHWH in temple;
+- Hezekiah's prayer contrasts Assyrian destruction of man-made gods with Jerusalem's living source;
+- the narrative describes Assyrian field loss without Jerusalem wall breach;
+- Sennacherib withdraws home and later dies inside his own god's temple at hands of sons;
+- Chronicles adds Hezekiah stopping upper Gihon flow and diverting water underground/into city so attackers lack access;
+- Hezekiah illness becomes another body-centre terminal threat;
+- prayer/tears reverse death forecast into 15-year extension;
+- fig-cake applied to boil as body-interface;
+- Hezekiah asks for a sign and the shadow on steps/dial moves backward by ten steps;
+- this is the high-priority **time/shadow geometry** for Section 38A;
+- Babylonian envoys arrive after hearing of illness/sign;
+- Hezekiah exposes all stored treasure/armory to them;
+- Isaiah reframes the displayed abundance as future outward deportation;
+- Chronicles adds pride, humbling, wealth/storehouses, Gihon engineering, and Babylonian envoys “to inquire about the wonder/sign in the land”;
+- after this block insert **Ascension of Isaiah (X6)** at the Hezekiah→Manasseh transition before Section 38B.
+
