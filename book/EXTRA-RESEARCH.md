@@ -139690,3 +139690,2213 @@ Priority:
   compare directly with Proverbs Woman Wisdom + Wisdom of Solomon world-pervading field;
 - determine whether Sirach 24 supplies a stronger **upper→cloud→earth→root/tree→river** transformation chain.
 
+
+
+---
+
+# SECTION 48 progress C — Sirach / Ben Sira 1–24
+## Wisdom begins above and before ordinary human access, is poured over creation, enters the faithful from the womb, roots into descendants, tests disciples by disguising and constraining them before straightening their path and revealing secrets, becomes fetter/yoke before becoming ornament/crown, becomes mother/bride/food/water, presents fire/water and life/death as explicit human choice-pairs, then in chapter 24 completes one of the strongest upper→cloud→earth→root→tree→river transformations in the corpus: Wisdom comes from the mouth of the Most High, covers earth like mist, dwells in heights/pillar-cloud, traverses heaven/abyss/sea, seeks a resting place, is commanded to pitch tent in Jacob, takes root in Zion, grows into trees/vine/fragrance/fruit, is identified with Torah, and finally expands from canal→river→sea while instruction flows outward to future generations
+
+This pass begins the Sirach / Ben Sira portion of **SECTION 48 — Wisdom of Solomon + Sirach**.
+
+The first block covers **Sirach 1–24**.
+
+The text is extremely important for the Vardath comparison because it creates a long chain in which one Wisdom principle moves through several scales:
+
+**upper divine source**
+→ **mist/cloud**
+→ **world traversal**
+→ **chosen dwelling**
+→ **root**
+→ **tree/branches/vine**
+→ **fruit/fragrance**
+→ **law/instruction**
+→ **river system**
+→ **garden irrigation**
+→ **sea-scale expansion**
+→ **future generations**.
+
+That is not yet a finger-trap mechanism.
+
+But it is one of the strongest continuous **form/scale transformations of one ordering principle** found so far.
+
+---
+
+# Textual-control preface — Sirach has one of the richest multi-version histories in the canon
+
+Ben Sira / Sirach was originally composed in **Hebrew**.
+
+The author's grandson later translated it into **Greek**, and the Greek prologue explicitly describes that translation project.
+
+The modern textual situation is unusually complex.
+
+Extant witnesses include:
+- substantial **Hebrew** manuscripts from the Cairo Geniza;
+- a **Masada** Hebrew scroll;
+- fragments associated with Qumran/11Q material;
+- the grandson's **Greek** translation;
+- later **Greek expansions/additions**;
+- **Syriac**;
+- **Latin**;
+- **Ethiopic / Geʽez**;
+- other ancient versions.
+
+This creates one of the strongest source-control environments in the whole project.
+
+### Critical implication
+
+A line in Sirach may differ because of:
+- original Hebrew wording;
+- translator interpretation;
+- later expansion;
+- recension;
+- transmission.
+
+Therefore:
+**fine geometry must never be extracted from one English form without witness control.**
+
+---
+
+# Greek I / Greek II distinction is especially important in chapters 1–24
+
+Scholarship commonly distinguishes:
+
+**Gr I**
+→ roughly the grandson's older Greek translation.
+
+**Gr II**
+→ expanded Greek text containing many later additions.
+
+A large proportion of the well-known additions cluster in the **first 24 chapters**.
+
+This is directly relevant to the current block.
+
+The fact that some longer readings appear only in expanded forms means:
+**an especially attractive geometric phrase may be secondary**.
+
+So every major Sirach 1–24 motif should be tagged:
+- secure across main forms;
+- variant;
+- expanded/additional.
+
+---
+
+# Hebrew manuscripts prove the work is not merely a Greek composition
+
+The recovery of Hebrew manuscripts at the Cairo Geniza and Masada was a major scholarly event.
+
+The Hebrew fragments confirm:
+- Ben Sira wrote in Hebrew;
+- medieval Hebrew manuscripts preserve substantial authentic old material, not simply retroversions from Greek.
+
+At the same time:
+the Hebrew witnesses themselves contain variation and glossing.
+
+Thus:
+**“Hebrew” is not automatically identical with one pristine original form.**
+
+This is an essential methodological control.
+
+---
+
+# Ethiopic Sirach is a real and studied tradition
+
+The Geʽez **Wisdom of Sirach** exists in Ethiopian manuscript tradition.
+
+It was edited in the Ethiopic Bible tradition, including Dillmann's work.
+
+Modern scholarship specifically studies:
+- Ethiopian manuscripts;
+- Ethiopic textual tradition;
+- **Andǝmta** commentary on Sirach 1 and 24.
+
+This matters because chapters 1 and 24—the two strongest Wisdom cosmology chapters—are not merely Western-canonical abstractions; they are active in Ethiopian exegetical tradition.
+
+---
+
+# SECTION 48 canonical-control note
+
+The Ethiopian Orthodox canonical list separately names:
+- **Mäṣḥafä Ṭibäb / Book(s) of Wisdom**;
+- Ecclesiastes;
+- Song of Songs;
+- **Book of Joshua son of Sirach** later in the list.
+
+The project roadmap groups:
+**Wisdom of Solomon + Sirach**
+in Section 48 for thematic research.
+
+This is a research grouping,
+not a claim that Ethiopian manuscript tradition treats them as one physical book.
+
+Preserve that distinction.
+
+---
+
+# Sirach 1 — Wisdom exists before ordinary created order is surveyed
+
+The chapter begins:
+
+**all Wisdom**
+→ from the Lord
+→ remains with him forever.
+
+Then asks who can count/explore:
+- sea sand;
+- raindrops;
+- days/eternity;
+- heaven height;
+- earth extent;
+- abyss;
+- Wisdom.
+
+This places Wisdom in the same scale-register as:
+**total cosmographic measurement problems**.
+
+The point is not that Wisdom has a physical size.
+
+The point is:
+**human measurement fails at both cosmic and Wisdom scale**.
+
+---
+
+# Wisdom is “created before all other things”
+
+Sirach 1 says:
+**before all other things Wisdom was created**.
+
+This strongly parallels:
+- Proverbs 8;
+- Wisdom of Solomon's pre-cosmic Wisdom;
+- later Logos/Wisdom traditions.
+
+But Sirach maintains a clear distinction:
+
+**Lord**
+→ creates/measures Wisdom
+→ pours Wisdom over creation.
+
+So the model is not:
+Wisdom = ultimate source.
+
+It is:
+**Wisdom = first/primordial ordering gift from source**.
+
+---
+
+# Wisdom is measured before being poured out
+
+The text gives a significant sequence:
+
+God:
+→ created Wisdom
+→ saw her
+→ **measured her**
+→ **poured her forth upon all works**.
+
+This is unusually process-rich.
+
+The distribution is not chaotic.
+
+Before diffusion:
+**measure/assessment**.
+
+Then:
+**worldwide outpouring**.
+
+Compare Wisdom 11:
+measure / number / weight.
+
+The Wisdom tradition repeatedly links:
+**correct distribution**
+to
+**prior ordering/measure**.
+
+---
+
+# Pouring Wisdom over creation is an early field-distribution model
+
+Wisdom:
+→ poured on all works
+→ every living thing according to divine bounty.
+
+Thus one source-pattern:
+**one**
+→ distributed among
+**many**.
+
+But it is not identical in every recipient.
+
+Distribution is:
+**according to capacity/bounty/state**.
+
+This resembles the earlier:
+one Wisdom
+→ many holy souls
+from Wisdom of Solomon 7.
+
+---
+
+# Wisdom exists in the faithful from the womb
+
+Sirach 1:
+fear/Wisdom
+→ created with faithful **in womb**.
+
+This is important.
+
+The Wisdom relationship is pushed back before:
+- adult schooling;
+- public ritual;
+- conscious searching.
+
+Then:
+**with descendants she remains faithfully**.
+
+So Wisdom becomes:
+**intergenerational continuity pattern**.
+
+---
+
+# Root / branch structure appears immediately
+
+Sirach 1:
+
+**fear of Lord**
+→ root of Wisdom.
+
+**branches**
+→ long life.
+
+This is a true plant topology.
+
+Root:
+hidden/source.
+
+Branch:
+visible/lived extension.
+
+The metaphor is not merely “growth.”
+
+It distinguishes:
+**source level**
+from
+**expression level**.
+
+Cross-index:
+- Job root/branch;
+- Proverbs Tree of Life;
+- Sirach 24 giant tree-growth;
+- prophetic shoot/root traditions.
+
+---
+
+# Wisdom fills house / granaries — abstract order becomes household material abundance
+
+Wisdom:
+→ fills entire house with desirable goods;
+→ granaries with produce.
+
+This is a multiscale transition:
+
+**abstract reverence/Wisdom**
+→ **household resource state**.
+
+Compare Proverbs:
+Wisdom builds house and fills rooms.
+
+Sirach continues that architecture.
+
+---
+
+# Wisdom rains down knowledge
+
+Sirach 1 says:
+Wisdom
+→ **rains down knowledge / understanding**.
+
+This is one of the clearest information-as-precipitation images.
+
+Upper source:
+→ downward distribution
+→ recipients receive cognition.
+
+Compare:
+- Psalms word/water;
+- Proverbs fountain;
+- Wisdom of Solomon field;
+- Sirach 24 river.
+
+The Wisdom books repeatedly render knowledge as **flowing medium**.
+
+---
+
+# Timing control appears early — right time before speech
+
+Sirach 1 emphasizes:
+patient person
+→ waits until right time
+→ then speech becomes recognized.
+
+So:
+**truth/content**
+alone is insufficient.
+
+Phase/timing controls effectiveness.
+
+This continues Proverbs:
+word fitly spoken.
+
+The Wisdom corpus repeatedly treats:
+**timing as part of mechanism**.
+
+---
+
+# Sirach 2 — trial is expected on entry into service
+
+Though the strongest imagery begins in 4,
+Sirach 2 supplies a key transition rule:
+
+person decides to serve
+→ must prepare for testing.
+
+This makes:
+**entry into Wisdom relation**
+not immediate reward
+but
+**stress test**.
+
+That becomes explicit personification in Sirach 4.
+
+---
+
+# Sirach 3 — parent/child relation becomes root continuity
+
+The parent-child instruction says:
+
+father's blessing
+→ gives family **strong root**.
+
+mother's curse
+→ **uproots growing plant**.
+
+This is a strong intergenerational plant model.
+
+Family continuity:
+**not just body reproduction**
+but
+**root integrity**.
+
+Again:
+root functions as persistence mechanism.
+
+---
+
+# Parent care becomes delayed memory storage
+
+Acts toward parents:
+→ “will not be forgotten”
+→ remembered in later distress.
+
+This gives:
+**present action**
+→ stored moral information
+→ future reactivation.
+
+Compare:
+- Esther chronicle;
+- Tobit obligations;
+- written books;
+- Wisdom inheritance.
+
+---
+
+# Sirach 4 — Wisdom behaves like a guide who first obscures herself
+
+This is one of the most interesting Wisdom-process sequences.
+
+Wisdom:
+→ teaches children
+→ rewards seekers.
+
+But then:
+
+**walks with them in disguise**
+→ brings fear/trials/discipline
+→ constrains
+→ waits until hearts are fully committed
+→ **returns them to straight path**
+→ **reveals secrets**.
+
+This is a true **hidden-guide training protocol**.
+
+---
+
+# Disguise → testing → path correction → revelation
+
+The ordered sequence matters:
+
+1. Wisdom present;
+2. appearance obscured;
+3. disciple experiences fear/constraint;
+4. commitment tested;
+5. straight path restored;
+6. hidden information revealed.
+
+This is one of the strongest cases in the Bible where:
+**the guide is present while perceived access to the guide is reduced**.
+
+It resembles:
+- hidden Raphael;
+- Job hidden centre;
+- Esther hidden identity.
+
+---
+
+# Wisdom can remain adjacent while appearing absent
+
+The disciple may experience:
+- uncertainty;
+- constraint;
+- fear.
+
+But Wisdom has not necessarily left.
+
+Only if disciple turns away:
+→ Wisdom abandons.
+
+Thus:
+**perceived distance**
+and
+**actual relational continuity**
+are distinct.
+
+This is a major Vardath-relevant topology distinction.
+
+---
+
+# Wisdom tests through constriction before opening secrets
+
+The disciple experiences:
+**constraint/fetter-like state**.
+
+Then:
+**straight path + secrets**.
+
+So Sirach 4 gives:
+**narrow/constrained training state**
+→ **opened information state**.
+
+This is very similar to a controlled threshold system.
+
+---
+
+# Speech is the externalization channel of hidden Wisdom
+
+Sirach 4 says:
+Wisdom becomes known through:
+**speech**.
+
+Knowledge:
+→ through tongue response.
+
+This is a clear:
+**internal order**
+→ **mouth**
+→ **socially visible information**.
+
+Compare:
+- Proverbs heart/mouth;
+- Wisdom 10 opening mute mouths;
+- Sirach 24 Wisdom emerging from divine mouth.
+
+The mouth is a recurring **information gate**.
+
+---
+
+# Rushing stream — some forces should not be opposed directly
+
+Sirach advises:
+do not struggle against a rushing stream.
+
+This is a mundane fluid-force control.
+
+It reminds us:
+**wise response can be route adjustment rather than direct resistance**.
+
+Not every strong flow is meant to be defeated.
+
+---
+
+# Sirach 5–6 — speech multiplies or destroys relational networks
+
+Sirach repeatedly treats speech as:
+**network operator**.
+
+Pleasant speech:
+→ multiplies friends.
+
+Double tongue:
+→ turns friend into enemy.
+
+Thus:
+**small mouth-level signal**
+→ changes social graph.
+
+This strongly supports the project principle:
+**information can rewire topology without bodies moving**.
+
+---
+
+# Passion as fire destroys tree from inside
+
+Sirach 6 says fierce passion:
+→ consumes strength like fire
+→ eats leaves
+→ destroys fruit
+→ leaves one like dry tree.
+
+This is a body/tree/fire mapping.
+
+Process:
+
+**internal unregulated force**
+→ resource depletion
+→ outer productivity lost
+→ dry remnant.
+
+Compare:
+- Proverbs self-control/walls;
+- Job tree states;
+- Wisdom fire;
+- later Sirach plant growth.
+
+---
+
+# Friend testing — apparent pair relation must survive adversity
+
+A friend:
+→ not validated during prosperity alone.
+
+Testing:
+→ distress/quarrel/misfortune.
+
+Then:
+true friend remains.
+
+So:
+**relationship classification**
+requires
+**state-change test**.
+
+This is methodologically important for the pair protocol.
+
+Two figures appearing together once is insufficient.
+
+A meaningful pair should persist or transform coherently across changing states.
+
+---
+
+# Faithful friend = strong shelter / medicine
+
+The friend is compared to:
+- sturdy shelter;
+- treasure;
+- life-saving medicine.
+
+So relational pair becomes:
+**external protective structure**
+and
+**healing system**.
+
+This is a strong example of a person functioning as environment for another.
+
+---
+
+# Wisdom as agricultural field requires delayed investment
+
+Sirach 6:
+
+seek Wisdom
+as though:
+**plowing / sowing**
+→ wait
+→ harvest.
+
+This gives:
+**input**
+→ delay
+→ output.
+
+Important:
+the return is not instantaneous.
+
+Timing lag is built into wisdom acquisition.
+
+That matters for the project's long-cycle reasoning.
+
+---
+
+# Wisdom first appears as fetters/yoke, later as gold ornament/crown
+
+This is one of Sirach's most powerful state reversals.
+
+At first:
+
+Wisdom:
+→ fetters feet
+→ yoke neck
+→ bonds.
+
+Later:
+
+same fetters:
+→ stronghold/place of strength.
+
+same snare:
+→ robe of gold.
+
+same yoke:
+→ gold ornament.
+
+same bonds:
+→ purple cord.
+
+Then:
+→ robe of glory
+→ crown.
+
+This is an explicit:
+**same constraint / changed experienced function**
+sequence.
+
+---
+
+# This is not object replacement — the meaning/function of the bond changes
+
+The disciple's relation changes.
+
+Early:
+constraint feels restrictive.
+
+Later:
+constraint becomes protection/honor.
+
+Thus:
+**same relation**
+→ different state meaning.
+
+This strongly parallels Wisdom 19:
+same elements → different function.
+
+At human scale,
+Sirach 6 supplies the same logic.
+
+---
+
+# Search / seek / find / hold — Wisdom acquisition is active route behavior
+
+Sirach 6 stacks:
+
+inquire
+→ search
+→ seek
+→ find
+→ hold
+→ do not let go.
+
+This is a complete information-acquisition path.
+
+Compare:
+- Song seeking beloved;
+- Proverbs searching hidden matters;
+- Job searching Wisdom;
+- Wisdom of Solomon reciprocal seeking.
+
+---
+
+# Doorstep erosion — repeated access attempts leave physical trace
+
+The student is told:
+**let your feet wear away the wise person's doorstep**.
+
+This is almost a comic but useful physical control.
+
+Repeated route:
+→ leaves material trace.
+
+Compare:
+- Wisdom ship/bird route that leaves no trace.
+
+Thus the corpus contains both:
+
+### persistent route
+repeated feet
+→ doorstep wears.
+
+### disappearing route
+ship/bird/arrow
+→ no visible path.
+
+That distinction is extremely valuable.
+
+---
+
+# Sirach 10–14 — high/low social reversals remain ordinary controls
+
+Sirach repeatedly warns:
+- pride leads down;
+- humble may be raised;
+- rulers fall;
+- poor may become honored.
+
+These are ordinary status topologies.
+
+They remain necessary controls against cosmologizing every:
+**rise / fall / exalt / humble** phrase.
+
+---
+
+# Sirach 11 — apparent state is unreliable
+
+The text warns against judging:
+- appearance;
+- status;
+- present prosperity.
+
+A poor person can be honored.
+A rich person can fall.
+
+This creates:
+**visible state**
+≠
+**future or true value**.
+
+Again:
+observer-frame control.
+
+---
+
+# Sirach 14 — Wisdom search becomes pursuit/tracking
+
+The seeker:
+→ watches at Wisdom's windows;
+→ listens at doors;
+→ camps near house;
+→ pitches tent beside;
+→ lodges in good dwelling;
+→ places children under shelter;
+→ rests under branches.
+
+This is a remarkable approach sequence.
+
+---
+
+# Wisdom house/tree convergence
+
+Sirach 14 merges architecture and plant imagery.
+
+Seeker:
+**approaches house**
+then
+**rests under branches**.
+
+Wisdom therefore behaves as:
+- house;
+- shelter;
+- tree.
+
+This continues Proverbs:
+house + Tree of Life.
+
+It also anticipates Sirach 24:
+Wisdom takes root and grows branches.
+
+---
+
+# Sirach 15 — Wisdom becomes mother + bride + food + water + support
+
+One of the strongest personification clusters.
+
+The righteous seeker:
+→ comes to Wisdom.
+
+She:
+→ meets him like **mother**;
+→ receives him like **bride**;
+→ feeds **bread of learning**;
+→ gives **water of understanding**;
+→ becomes support so he does not fall;
+→ exalts;
+→ opens eloquent speech;
+→ gives enduring name.
+
+This is a full life-support system embodied as one woman.
+
+---
+
+# Mother / bride pair roles are deliberately layered, not separate women
+
+Wisdom is:
+**mother**
+and
+**bride**.
+
+That is relationally impossible if read as one literal human role.
+
+Therefore the text clearly uses:
+**multi-role personification**.
+
+This is an important control for mythic-figure analysis.
+
+One symbolic figure can occupy mutually different relational roles without representing multiple literal beings.
+
+---
+
+# Wisdom feeds and waters the seeker
+
+Bread + water:
+→ internalize Wisdom.
+
+This is stronger than external teaching.
+
+The seeker **ingests** learning.
+
+Thus:
+information
+→ becomes body-like resource.
+
+Compare:
+- Proverbs words as food;
+- Wisdom manna;
+- Song fruit/garden;
+- Sirach 24 fruit/water.
+
+---
+
+# Wisdom becomes internal support
+
+The seeker:
+→ leans on Wisdom
+→ does not fall.
+
+So Wisdom functions like:
+**structural support / brace**.
+
+This is one of the most explicit support metaphors before chapter 24's rooting.
+
+---
+
+# Sirach 15 — explicit fire/water and life/death choice-pairs
+
+The text says:
+
+**fire**
+and
+**water**
+set before human.
+
+Stretch hand toward whichever chosen.
+
+Then:
+
+**life**
+and
+**death**
+set before everyone.
+
+Whichever chosen:
+→ given.
+
+This is one of the cleanest two-state decision models in the entire wisdom corpus.
+
+---
+
+# Fire / water pair is not environmental cosmology here
+
+Unlike Wisdom 16/19 where fire-water relations change physically,
+Sirach 15 uses:
+fire/water
+as a choice metaphor linked to:
+life/death.
+
+Therefore:
+
+same terms;
+different mechanism.
+
+This is an excellent cross-text control.
+
+---
+
+# Human agency is explicit — not every transition is caused from above
+
+Sirach 15 insists:
+God does not make the human sin.
+
+Instead:
+**human free choice**
+selects path/state.
+
+This is crucial for the entire project.
+
+A state transition may result from:
+- divine action;
+- natural process;
+- human agency;
+- social force;
+- literary metaphor.
+
+Do not collapse all transformations into one cosmic operator.
+
+---
+
+# Sirach 16–18 — creation order and human scale are contrasted
+
+The book repeatedly juxtaposes:
+- stars/creation;
+- human smallness;
+- divine observation;
+- ordered works.
+
+This continues Wisdom/Qoheleth themes:
+large stable order
+versus
+short-lived human carrier.
+
+---
+
+# Sirach 16 — light/darkness additions are textually unstable
+
+Some expanded witnesses contain paired language about:
+**light / darkness**.
+
+But this belongs partly to the complicated expansion history.
+
+Therefore:
+do not construct a major Sirach cosmology from an expansion without witness control.
+
+This is exactly why the textual preface matters.
+
+---
+
+# Sirach 17 — body is given sensory/information interfaces
+
+Human creation includes:
+- tongue;
+- eyes;
+- ears;
+- mind/heart.
+
+These are not merely body parts.
+
+They are:
+**input/output channels**.
+
+Then:
+law/covenant/instruction
+→ enters those channels.
+
+This continues the body-as-information-system model.
+
+---
+
+# Sirach 18 — human life is a tiny interval against vast time
+
+The book contrasts:
+finite human days
+with
+eternity.
+
+This reinforces Ecclesiastes:
+individual carrier duration
+≠
+world/order duration.
+
+The Vardath project should retain that distinction when reading cyclic language.
+
+---
+
+# Sirach 19–23 — speech and desire are repeatedly treated as boundary problems
+
+These chapters repeatedly warn about:
+- gossip;
+- repeating secrets;
+- uncontrolled speech;
+- lust/desire;
+- oath;
+- hidden behavior.
+
+The recurring system model is:
+
+**internal impulse**
+→ mouth/body channel
+→ social consequence.
+
+Boundary control determines whether the system remains ordered.
+
+---
+
+# Secret transmission is a network failure
+
+A secret:
+→ received by one node.
+
+If repeated:
+→ spreads.
+Trust relation collapses.
+
+This is a social analogue of:
+**containment breach**.
+
+Again:
+information has boundary behavior.
+
+---
+
+# Sirach 21 — sinner's path can be level at first but ends in Sheol
+
+The book repeatedly distinguishes:
+**appearance of route**
+from
+**destination**.
+
+A path may seem easy/level
+→ end in death.
+
+This continues Proverbs route logic.
+
+Again:
+route quality cannot be judged only by local smoothness.
+
+---
+
+# Sirach 21 — wise heart and fool mouth reverse information containment
+
+The wise:
+→ store words internally.
+
+The fool:
+→ spills them outward.
+
+So:
+**information reservoir integrity**
+becomes a moral variable.
+
+This is another body/container model.
+
+---
+
+# Sirach 22 — broken relationship is compared to broken vessel/structure
+
+Friendship injury:
+→ can shatter relation.
+
+The text uses structural/object analogies for social fracture.
+
+Again:
+**pair integrity**
+has a threshold.
+
+Once certain boundaries are crossed,
+repair may become difficult.
+
+This is relevant to the pair-classification protocol.
+
+---
+
+# Sirach 23 — body-desire can behave like fire that will not stop until consumed
+
+Lust/passion:
+→ compared with burning fire.
+
+Again:
+internal force
+→ consumes host/system.
+
+This matches Sirach 6.
+
+The book repeatedly treats unregulated desire as:
+**self-fueling destructive field**.
+
+---
+
+# Sirach 24 — Wisdom begins at upper mouth as emitted Word/breath-like field
+
+This is the climax of the first half.
+
+Wisdom says:
+
+**from mouth of Most High**
+→ I came forth.
+
+Immediately:
+→ **covered earth like mist**.
+
+This gives a powerful sequence:
+
+**upper mouth/source**
+→ emission
+→ atmospheric field
+→ earth coverage.
+
+This is one of the closest Wisdom texts to:
+**word/breath → environmental field**.
+
+---
+
+# Mouth → mist is an information-to-medium transformation
+
+The source is:
+**speech/mouth**.
+
+The output is:
+**mist/cloud-like earth-covering presence**.
+
+This merges:
+- information;
+- breath-like emission;
+- atmosphere;
+- global distribution.
+
+It is poetic personification,
+not physical fluid mechanics.
+
+But the process chain is explicit.
+
+---
+
+# Wisdom's throne is in a pillar of cloud
+
+Wisdom says:
+
+**dwelt in highest heavens**
+→ **throne in pillar of cloud**.
+
+This is extremely important for the pillar/axis research.
+
+The pillar is:
+- vertical cloud form;
+- throne-carrier;
+- associated with highest heaven;
+- later connected to Israel's dwelling.
+
+### Squatter-Man relevance
+
+Cloud pillar:
+vertical axis form
++
+upper/lower relation.
+
+But:
+no human limbs or bilateral structure.
+
+Thus:
+**axis relevance strong**
+;
+**Squatter-Man morphology weak**.
+
+---
+
+# Wisdom traverses all major vertical domains before localizing
+
+Wisdom says she:
+
+**compassed vault of heaven**
+→ **traversed depths of abyss**
+→ crossed waves of sea
+→ all earth
+→ peoples/nations.
+
+This is one of the widest domain traversals in the corpus.
+
+The movement spans:
+
+**highest**
+↔
+**deepest**
++
+**sea**
++
+**land**
++
+**human social field**.
+
+Yet she still seeks:
+**resting place**.
+
+This is crucial.
+
+Global mobility does not equal local dwelling.
+
+---
+
+# Universal field → chosen local centre
+
+Wisdom:
+everywhere
+→ searches resting place.
+
+Creator:
+→ commands:
+**pitch tent / dwell in Jacob**.
+
+Then:
+→ Israel inheritance
+→ holy tent
+→ Zion
+→ Jerusalem.
+
+This is a strong:
+**global field**
+→ **localized centre**
+process.
+
+Compare:
+- Psalms mobile presence→Zion rest;
+- Wisdom of Solomon pervading Wisdom→royal/temple guidance;
+- cloud/pillar→sanctuary.
+
+---
+
+# “Pitch tent” explicitly turns Wisdom into dwelling presence
+
+The Creator chooses:
+**spot for tent**.
+
+Wisdom is not merely conceptually linked to Israel.
+
+She becomes:
+**encamped presence**.
+
+This is an extremely strong **field→enclosure** transformation.
+
+---
+
+# Wisdom becomes rooted after becoming tented
+
+The next stage:
+
+Wisdom:
+→ takes **root** in honored people.
+
+This is remarkable.
+
+The same entity has just been:
+- emitted from mouth;
+- mist;
+- cloud throne;
+- world traveller;
+- tent presence.
+
+Now:
+→ **root**.
+
+This is a true multiform transformation chain.
+
+---
+
+# Cloud → tent → root is one of the strongest state sequences yet
+
+Abstracted:
+
+**diffuse atmosphere**
+→ **localized movable enclosure**
+→ **fixed biological anchor**.
+
+This is highly relevant to the user's geometry/process focus.
+
+The text itself moves one principle through:
+**diffuse → localized → rooted** states.
+
+No finger-trap is specified.
+
+But the transformation logic is unusually strong.
+
+---
+
+# Root → multiple high-tree forms
+
+Wisdom then grows like:
+- cedar;
+- cypress;
+- palm;
+- rose;
+- olive;
+- plane tree.
+
+These trees occupy:
+- Lebanon;
+- Hermon;
+- En-gedi;
+- Jericho;
+- field;
+- waterside.
+
+So one rooted Wisdom is described through:
+**multiple ecological/vertical forms**.
+
+This is not one literal species.
+
+It is a composite tree-field.
+
+---
+
+# Wisdom becomes vertical world-tree analogue at literary level
+
+Wisdom:
+root
+→ rises tall
+→ branches
+→ fruit
+→ fragrance.
+
+This is one of the clearest Wisdom-as-tree systems.
+
+It has:
+- hidden source;
+- vertical axis;
+- lateral branches;
+- productive output.
+
+### Vardath relevance
+strong for:
+**central vertical living structure**.
+
+### Control
+the poem explicitly uses multiple tree similes.
+It is not a single observed giant tree.
+
+---
+
+# Fragrance crosses boundary before physical contact
+
+Wisdom:
+→ emits fragrance like incense/myrrh.
+
+This parallels Song of Songs:
+garden fragrance leaves before beloved enters.
+
+Fragrance acts as:
+**signal/output crossing from source to surrounding field**.
+
+Another recurring pattern:
+internal richness
+→ volatile output
+→ distant perception.
+
+---
+
+# Tree branch → vine → fruit — plant morphology itself shifts
+
+Wisdom:
+cedar/cypress/palm/olive/plane
+→ terebinth branches
+→ vine
+→ blossoms/fruit.
+
+The imagery is deliberately composite.
+
+The point is:
+**maximal fertility/beauty/order**,
+not botanical consistency.
+
+That is another control:
+multi-form imagery can describe one concept without one literal hybrid organism.
+
+---
+
+# Wisdom invites consumption of her fruit
+
+**Come to me**
+→ eat fruit
+→ drink.
+
+But:
+eating does not reduce desire.
+
+Those who eat:
+→ hunger more.
+
+Those who drink:
+→ thirst more.
+
+This is an **anti-saturation system**.
+
+Compare:
+- Proverbs unsatisfied sinks;
+- Ecclesiastes non-filling sea;
+- Song love beyond wealth.
+
+Wisdom consumption:
+→ increases demand.
+
+---
+
+# Wisdom is identified with Torah / covenant book
+
+Then the poem makes a major interpretive contraction:
+
+**all this**
+→ “book of covenant”
+→ law of Moses
+→ inheritance of Jacob.
+
+Thus:
+cosmic Wisdom
+→ localized text/law.
+
+This is extraordinarily important.
+
+It gives a direct:
+**cosmos-scale principle**
+→ **information object/book**
+mapping.
+
+---
+
+# Cosmic Wisdom → written law is a pattern compression
+
+The enormous field:
+
+heaven / abyss / sea / nations / cloud / trees
+→ compressed into:
+**Torah / covenant instruction**.
+
+This is a powerful model for:
+**large process encoded in portable information**.
+
+Cross-index:
+- tablets;
+- books;
+- seals;
+- chronicles;
+- copied Proverbs;
+- future-day records.
+
+---
+
+# Torah then becomes river system
+
+Immediately after identification with Law,
+the text shifts into major rivers:
+
+Wisdom/Law:
+→ Pishon;
+→ Tigris;
+→ Euphrates;
+→ Jordan;
+→ Nile/Gihon.
+
+So:
+**text/instruction**
+→ **water network**.
+
+This is one of the strongest:
+**information = distributed hydrological flow**
+systems in Scripture.
+
+---
+
+# River sequence expands scale rather than merely listing symbols
+
+The movement is:
+
+wisdom source
+→ river abundance
+→ overflows understanding
+→ floods/pours instruction.
+
+Then the speaker says:
+
+**I came forth like canal from river**
+→ **water channel into garden**.
+
+This is a clear branching topology.
+
+Main source:
+→ canal
+→ garden channel.
+
+---
+
+# Canal → river → sea is explicit scale amplification
+
+The speaker says:
+
+**I will water garden / flower beds**.
+
+Then:
+
+**my canal became a river**
+→ **my river became a sea**.
+
+This is one of the strongest explicit scale-growth sequences in the entire corpus.
+
+Small:
+**canal/channel**.
+
+Middle:
+**river**.
+
+Large:
+**sea**.
+
+And the medium is:
+**instruction/Wisdom**.
+
+---
+
+# This is not only symbol — it is a branching information-growth model
+
+The process says:
+
+teacher draws from Wisdom
+→ small private channel
+→ waters local garden
+→ teaching expands
+→ becomes river
+→ then sea
+→ reaches future generations.
+
+That is almost a network-growth diagram.
+
+---
+
+# Sirach's teacher becomes secondary channel, not source
+
+This is crucial.
+
+The teacher says:
+**I was like a canal from a river**.
+
+Thus:
+he is not the original spring.
+
+He is:
+**branch channel**.
+
+Source:
+Wisdom/Torah.
+
+Teacher:
+secondary conduit.
+
+Garden:
+local learner field.
+
+River/sea:
+expanded dissemination.
+
+This is one of the clearest source→relay→network models yet.
+
+---
+
+# Dawn/light then becomes a second dissemination medium
+
+The teacher says:
+instruction
+→ shine like dawn
+→ visible far away.
+
+Then:
+→ pour teaching like prophecy
+→ leave to future generations.
+
+So the same information uses:
+- water;
+- light;
+- writing/tradition.
+
+Multiple carrier media.
+One informational pattern.
+
+---
+
+# SECTION 48C pair / geometry matrix
+
+## Lord / Wisdom
+
+Source
+→ first created/ordered Wisdom
+→ measured/poured.
+
+Not equal hostile pair.
+
+Classification:
+- P4 source/emanation relation: strong;
+- P1 literal same being: not Sirach's first-level model.
+
+---
+
+## Wisdom / disciple
+
+Wisdom:
+mother / bride / guide / tester / fetter / crown / food / water / house / tree.
+
+Disciple:
+seeker / child / spouse / eater / drinker / bearer.
+
+This is an extremely strong multi-role pair.
+
+The relationship changes state repeatedly.
+
+---
+
+## fire / water
+
+Sirach 15:
+human choice pair.
+
+P2 polarity:
+strong.
+
+Physical elemental interaction:
+not the point here.
+
+This is a crucial contrast with Wisdom 16/19.
+
+---
+
+## life / death
+
+Explicit choice pair.
+
+P2 polarity:
+extremely strong.
+
+Again:
+human agency controls route.
+
+---
+
+## constraint / ornament
+
+Wisdom's fetter/yoke
+↔
+gold/purple/crown.
+
+Same relation
+→ opposite experienced function.
+
+P3 state-pair:
+extremely strong.
+
+---
+
+## cloud / root
+
+Same Wisdom:
+diffuse upper field
+→ fixed local biological anchor.
+
+This is not a pair of beings.
+
+It is a **state transformation** of one figure.
+
+High-priority Vardath analogue.
+
+---
+
+## canal / river / sea
+
+one information flow
+→ escalating scales.
+
+This is a **growth sequence**, not polarity.
+
+---
+
+# SECTION 48C continuous transformation timeline — Sirach 1–24
+
+## Phase A — Wisdom exists before ordinary human order
+
+Lord
+→ creates Wisdom first.
+
+**Effect:** ordering principle precedes normal human access.
+
+---
+
+## Phase B — Wisdom is measured
+
+Wisdom
+→ observed/measured by source.
+
+**Effect:** distribution preceded by order.
+
+---
+
+## Phase C — Wisdom is poured over creation
+
+one source
+→ all works / living things.
+
+**Effect:** distributed field.
+
+---
+
+## Phase D — Wisdom enters human lineage from womb
+
+womb
+→ descendants.
+
+**Effect:** pattern becomes intergenerational.
+
+---
+
+## Phase E — Wisdom becomes root/branch system
+
+fear
+→ root;
+long life
+→ branches.
+
+**Effect:** hidden source generates visible continuity.
+
+---
+
+## Phase F — Wisdom fills house/material store
+
+house / granary
+→ filled.
+
+**Effect:** abstract order becomes local abundance.
+
+---
+
+## Phase G — Wisdom rains knowledge
+
+upper source
+→ downward cognitive flow.
+
+**Effect:** information behaves as precipitation.
+
+---
+
+## Phase H — Wisdom hides herself during testing
+
+present guide
+→ disguise
+→ fear/constraint.
+
+**Effect:** actual adjacency persists while perceived access falls.
+
+---
+
+## Phase I — successful disciple returns to straight path
+
+trial complete
+→ route straightened
+→ secrets revealed.
+
+**Effect:** constriction becomes orientation/information.
+
+---
+
+## Phase J — speech externalizes Wisdom
+
+hidden knowledge
+→ mouth/tongue
+→ public recognition.
+
+**Effect:** internal pattern crosses social boundary.
+
+---
+
+## Phase K — friend relation is stress-tested
+
+prosperity
+→ adversity
+→ true pair persists or breaks.
+
+**Effect:** pair classification depends on state transition.
+
+---
+
+## Phase L — Wisdom becomes yoke/fetters
+
+disciple
+→ constrained/bound.
+
+**Effect:** training state.
+
+---
+
+## Phase M — same bonds invert into ornament/crown
+
+constraint
+→ strength / robe / gold / purple / crown.
+
+**Effect:** same relation changes function.
+
+---
+
+## Phase N — repeated route leaves physical trace
+
+feet
+→ doorstep wears.
+
+**Effect:** persistent path contrast established.
+
+---
+
+## Phase O — Wisdom meets disciple as mother/bride
+
+seeker
+→ received.
+
+**Effect:** one symbolic operator occupies multiple relation roles.
+
+---
+
+## Phase P — Wisdom enters body as bread/water
+
+eat/drink
+→ internal support.
+
+**Effect:** information becomes life resource.
+
+---
+
+## Phase Q — human chooses between paired states
+
+fire / water;
+life / death.
+
+**Effect:** agency selects branch.
+
+---
+
+## Phase R — Wisdom emerges from upper mouth
+
+Most High mouth
+→ Wisdom emitted.
+
+**Effect:** word/personification begins environmental transformation.
+
+---
+
+## Phase S — Wisdom becomes mist over earth
+
+emission
+→ diffuse atmospheric cover.
+
+**Effect:** global field state.
+
+---
+
+## Phase T — Wisdom occupies pillar-cloud throne
+
+highest heavens
+→ pillar of cloud.
+
+**Effect:** diffuse field becomes vertical axis/throne image.
+
+---
+
+## Phase U — Wisdom traverses highest-to-deepest domains
+
+heaven
+→ abyss
+→ sea
+→ land
+→ nations.
+
+**Effect:** full-domain mobility.
+
+---
+
+## Phase V — Wisdom seeks resting place
+
+global field
+→ searches local centre.
+
+**Effect:** mobility transitions toward anchoring.
+
+---
+
+## Phase W — creator assigns tent/dwelling
+
+Jacob/Israel
+→ tent/holy place.
+
+**Effect:** universal Wisdom localizes.
+
+---
+
+## Phase X — Wisdom roots in people
+
+tent
+→ root.
+
+**Effect:** mobile enclosure becomes fixed biological anchor.
+
+---
+
+## Phase Y — root grows into composite high tree/vine
+
+root
+→ cedar/cypress/palm/olive/terebinth/vine
+→ branches/blossoms/fruit.
+
+**Effect:** centralized growth expands vertically/laterally.
+
+---
+
+## Phase Z — fragrance leaves source
+
+tree/garden/incense field
+→ outward scent.
+
+**Effect:** signal crosses boundary.
+
+---
+
+## Phase AA — Wisdom is compressed into covenant book
+
+cosmic/tree field
+→ Torah/text.
+
+**Effect:** large order becomes portable information.
+
+---
+
+## Phase AB — text becomes river system
+
+Torah/Wisdom
+→ Pishon/Tigris/Euphrates/Jordan/Nile/Gihon imagery.
+
+**Effect:** information becomes distributed flow.
+
+---
+
+## Phase AC — teacher branches from source
+
+river
+→ canal
+→ garden.
+
+**Effect:** secondary relay created.
+
+---
+
+## Phase AD — local channel expands
+
+canal
+→ river
+→ sea.
+
+**Effect:** small teaching network grows to large field.
+
+---
+
+## Phase AE — information changes carrier again
+
+water-flow
+→ dawn/light
+→ prophetic teaching
+→ future generations.
+
+**Effect:** pattern persists while medium changes.
+
+---
+
+# What Sirach 1–24 adds to the master Bible/Vardath timeline
+
+1. **Sirach has one of the richest textual witness systems in the project**, making version control essential.
+2. **The Ethiopic/Geʽez Sirach tradition is real and directly studied, including Ethiopian commentary on chapters 1 and 24.**
+3. **Wisdom is created before ordinary things, measured, then poured across creation.**
+4. This gives:
+   **source → parameterization → distribution**.
+5. **Wisdom enters faithful humans from the womb and persists through descendants**, creating a strong intergenerational pattern.
+6. **Root/branch language appears immediately** and remains central through chapter 24.
+7. **Wisdom rains knowledge**, adding information-as-precipitation to the water family.
+8. **Sirach 4's disguised Wisdom is a strong hidden-guide model:** the guide may remain present while perceived access is reduced.
+9. **Trial → straightened path → revealed secrets** is a true state-transition protocol.
+10. **Speech is repeatedly the output channel by which hidden Wisdom becomes public.**
+11. **Friendship is validated through changing conditions**, a useful methodological rule for identifying meaningful pairs.
+12. **Sirach 6's Wisdom bonds are one of the strongest same-object/different-function examples:** fetter/yoke → strength/ornament/crown.
+13. This human-scale logic closely parallels Wisdom 19's same elements/different roles.
+14. **Repeated physical route can leave trace**, as feet wear away a doorstep—an important contrast to disappearing-path texts.
+15. **Sirach 15 turns Wisdom into mother, bride, food, water and structural support.**
+16. That multi-role personification is a warning not to literalize every relation assigned to one symbolic figure.
+17. **Fire/water and life/death are explicit decision pairs**, but here they are ethical-choice metaphors rather than physical elemental inversions.
+18. **Human agency is explicit:** not every state transition is imposed by an upper force.
+19. **Sirach 24 is one of the strongest continuous transformation chains yet found.**
+20. Wisdom:
+    **mouth → mist → pillar-cloud → world traversal → tent → root → tall tree → branches/vine → fruit/fragrance → Torah → rivers → canal → river → sea → light/prophecy → future generations**.
+21. **Cloud → tent → root** is especially important:
+    diffuse
+    → localized movable dwelling
+    → fixed anchor.
+22. **Pillar-cloud throne** provides a strong vertical-axis motif, though not a full anthropomorphic Squatter-Man.
+23. **Wisdom traverses heaven, abyss, sea, earth and nations before localizing**, one of the widest domain-spanning movements in the corpus.
+24. **Universal field → chosen Zion/Jerusalem centre** strongly parallels Psalms' mobile-presence→resting-centre grammar.
+25. **Wisdom becomes a composite world-tree analogue**, but the multiple species prove the imagery is poetic/composite rather than one literal botanical structure.
+26. **Fragrance crossing outward before bodily access** matches Song's garden-output pattern.
+27. **Cosmic Wisdom being identified with Torah is a major pattern-compression event:** world-scale principle → portable information object.
+28. **Torah then becomes a river network**, creating one of the strongest information→hydrology mappings in Scripture.
+29. **Canal → river → sea is an explicit scale-amplification sequence.**
+30. **The teacher is a branch-channel, not the source**, giving a very clean source→relay→network model.
+31. **Information survives carrier changes:** water-flow → light/dawn → prophecy → future generations.
+32. This is highly relevant to the project's attempt to track one mechanism through many mythic/literary forms.
+33. **The full Vardath geometry is still absent:** no paired counter-wound strands, no finger-trap contraction, no stacked populated world-discs made adjacent.
+34. But Sirach 24 is **high priority** for:
+    upper-to-lower transformation,
+    cloud/pillar axis,
+    anchoring/rooting,
+    tree expansion,
+    water-network expansion,
+    and information continuity across changed forms.
+
+---
+
+# SECTION 48C number / timing register
+
+Record without forcing:
+
+- Sirach 1:11–30 is presented in a 22-line/acrostic-related poetic form in ancient textual discussion;
+- “fear of Lord” repetition is numerically patterned in chapter 1;
+- chapter 24 uses multiple major river names rather than a numbered layer sequence;
+- no secure stacked-world count appears in Sirach 1–24.
+
+Important:
+Sirach's versional additions can change line counts.
+Do not use later verse numbering or expanded-colon counts as cosmological evidence.
+
+---
+
+# SECTION 48C textual / historical controls
+
+- Ben Sira was composed in Hebrew, likely in the early second century BCE.
+- The grandson's Greek translation dates later and is a secondary witness, though ancient and indispensable.
+- The Cairo Geniza Hebrew manuscripts are medieval copies preserving much older Hebrew material.
+- Masada provides an ancient Hebrew witness and confirms pre-medieval Hebrew circulation.
+- Greek I / Greek II distinctions are major; expanded readings are especially important in chapters 1–24.
+- The Syriac version sometimes preserves important Hebrew-like readings but also has its own translation/revision history.
+- Ethiopic Sirach is secondary translation tradition and requires comparison with Greek/Hebrew/Syriac for fine wording.
+- Sirach 1:4–10 and 24 have variant/additional lines across witnesses.
+- Wisdom personification should not be collapsed automatically into later Christian Logos/Christ identifications in first-level analysis.
+- Sirach 15's Wisdom-as-mother/bride is personification, not biography.
+- Fire/water in Sirach 15 functions as moral choice imagery, not physical cosmology.
+- Sirach 24's cloud/tree/river sequence is poetic-theological, not a direct natural-science report.
+- Wisdom's identification with Torah is one of Ben Sira's defining theological moves.
+- The multiple tree species show a composite poetic field, not one literal hybrid tree.
+- River imagery likely draws on Eden and major known river systems; exact geography is symbolic/theological.
+- Ben Sira's self-description as canal→river→sea is a teaching/transmission metaphor.
+- The passage's strongest scientific value is as a **network/process analogy**, not measured hydrology.
+- Ancient and modern commentators differ on exact verse numbering because of textual expansions and dislocations.
+- Any Vardath comparison should retain the distinction:
+  **source process**
+  versus
+  **later textual elaboration**.
+
+### Sources logged for Section 48C
+
+Primary:
+- **Sirach 1 NRSVUE / USCCB**:
+  https://bible.usccb.org/bible/sirach/1
+- **Sirach 4**:
+  https://bible.usccb.org/bible/sirach/4
+- **Sirach 6**:
+  https://bible.usccb.org/bible/sirach/6
+- **Sirach 15**:
+  https://bible.usccb.org/bible/sirach/15
+- **Sirach 24**:
+  https://bible.usccb.org/bible/sirach/24
+- NRSVUE Sirach 24:
+  https://www.biblegateway.com/passage/?search=Sirach+24&version=NRSVUE
+
+Textual history:
+- Pancratius C. Beentjes, **The Book of Ben Sira in Hebrew**.
+- Renate Egger-Wenzel, **A Polyglot Edition of the Book of Ben Sira with a Synopsis of the Hebrew Manuscripts**.
+- Patrick W. Skehan and Alexander A. Di Lella, **The Wisdom of Ben Sira**, Anchor Bible 39.
+- Benjamin G. Wright, work on the grandson's Greek translation and its Hebrew parent text.
+- Jason Gile, **“The Additions to Ben Sira and the Hebrew Textual Tradition”**, on Gr I / Gr II and the complex origin of expansions.
+- Jeremy Corley, annotated Ben Sira bibliography and manuscript resources.
+- Masada Ben Sira scroll editions by Yigael Yadin / Elisha Qimron.
+- Cairo Geniza Hebrew manuscript editions.
+
+Ethiopic:
+- Yonatan Binyam, **“Ben Sira in Ethiopia: The Andǝmta Commentary on Sirach 1 and 24,”** in *Sirach and Its Contexts*.
+- Dillmann's Ethiopic Sirach edition in the Ethiopic Bible tradition.
+- broader Ethiopic Old Testament textual-history scholarship retained as version control.
+
+Wisdom 24:
+- modern scholarship comparing:
+  Proverbs 8;
+  Sirach 24;
+  Wisdom of Solomon 7–9;
+  Torah/Wisdom identification;
+  Zion/Jerusalem dwelling;
+  tree/river imagery.
+
+---
+
+# SECTION 48C COMPLETE — SIRACH / BEN SIRA 1–24
+
+### Current transformation point
+
+**Wisdom with Lord**
+→ created first
+→ measured
+→ poured over creation
+→ enters faithful from womb
+→ becomes root/branches across lineage
+→ fills house
+→ rains knowledge
+→ hides/disguises herself during testing
+→ constrains disciple
+→ straightens path
+→ reveals secrets
+→ passes through speech
+→ becomes tested friendship/shelter
+→ becomes fetter/yoke
+→ same bonds become ornament/crown
+→ seeker wears down doorway through repeated approach
+→ Wisdom becomes mother/bride
+→ becomes bread/water/support
+→ human chooses fire/water and life/death
+→ Wisdom comes from mouth of Most High
+→ covers earth as mist
+→ throne in pillar-cloud
+→ traverses heaven/abyss/sea/earth/nations
+→ seeks resting place
+→ tent pitched in Jacob
+→ established Zion/Jerusalem
+→ takes root
+→ grows tall as composite tree
+→ branches/vine/fruit/fragrance
+→ becomes Torah/covenant book
+→ Torah becomes major river system
+→ teacher becomes canal
+→ canal becomes river
+→ river becomes sea
+→ teaching changes carrier to light/prophecy
+→ pattern passes into future generations.
+
+### Next research block
+
+**SECTION 48D — Sirach 25–51**
+
+Priority:
+- woman/man paired sayings with historical/ethical controls;
+- household/body/health;
+- physician / medicine / plants / healing in Sirach 38;
+- crafts / material transformation;
+- scribe as integrating operator in Sirach 38–39;
+- creation catalogue in Sirach 39–43;
+- paired created things;
+- fire/hail/snow/wind/water;
+- rainbow/celestial cycles;
+- “all things in pairs, one opposite another” if present in textual form;
+- Praise of Ancestors 44–49 as historical memory compression;
+- Moses/Aaron / priestly garment / cosmic symbolism;
+- Elijah ascent/fire/chariot;
+- Ezekiel vision references;
+- Simon high priest in Sirach 50 as central axis/temple figure;
+- Sirach 51 Wisdom search;
+- 11QPs-a / Sirach 51 textual relation;
+- complete Section 48 integrated Wisdom/Sirach process.
+
