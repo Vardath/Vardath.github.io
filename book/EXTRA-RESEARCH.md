@@ -51372,3 +51372,910 @@ Textual/literary controls:
 
 Next:
 **1 Samuel 21–24 — weapon recovered from behind ephod, identity masking, cave/enclosure migration, gathering of distressed/debt/outcast material around the displaced centre, priestly node destruction, pursuit through wilderness networks, mountain/rock separation, and the cave encounter where the pursuer enters the hidden centre's enclosure without knowing it.**
+
+
+---
+
+# SECTION 33 progress B — 1 Samuel 21–24
+## Recovered tool from prior field, identity masking at a gate, cave-centre formation, destruction of an old priestly node, conditional-route avoidance, divided rock geometry, and inverted cave contact
+
+---
+
+## 1 Samuel 21 — prior battlefield tool is recovered from a sacred enclosure
+
+David reaches Nob in flight.
+
+He appears without the normal visible support structure expected around him.
+
+The priest's first reaction is essentially:
+**why are you alone?**
+
+This marks the new phase clearly:
+the rising centre has now been **spatially separated from the old court/system** and is operating with reduced visible infrastructure.
+
+### Sacred food is transferred out of its normal allocation
+
+David asks for food.
+
+The only available bread is holy/showbread that has been removed from before YHWH for replacement.
+
+The process is:
+
+**food held in restricted sacred cycle**
+→ ordinary supply absent
+→ exceptional need
+→ restricted material released to moving fugitive component.
+
+This is a **boundary exception** inside a regulated system.
+
+It should not be turned into gate physics.
+
+But it adds a useful process type:
+**normal allocation rules can be overridden during a transition in order to preserve a moving living component.**
+
+### The weapon from the earlier central-gap victory re-enters the timeline
+
+Goliath's sword has been:
+- retained after the Elah event;
+- wrapped;
+- stored **behind the ephod**.
+
+David now retrieves it.
+
+This is significant for the master timeline because the tool has its own history:
+
+**opposing centre's weapon**
+→ captured at prior field reversal
+→ removed from battlefield
+→ stored/wrapped in sacred enclosure
+→ later recovered by successor while in flight.
+
+This is a clean example of **old-event material being preserved and reactivated in a later phase**.
+
+Vardath comparison:
+**residual cargo from one transition can survive into the next and regain function.**
+
+The object is not the same as the process. Its importance is continuity across phases.
+
+### At Gath, visible identity is deliberately altered to change how the system receives him
+
+David moves into the enemy city associated with Goliath.
+
+He is recognized through the public memory/song associated with his prior identity.
+
+That identity now makes him dangerous to retain.
+
+He responds by:
+- changing his behaviour/demeanour;
+- feigning madness;
+- scratching/marking the **doors of the gate**;
+- letting saliva run onto his beard.
+
+The result is not that the gate physically changes.
+
+The receiving system reclassifies him.
+
+Process:
+
+**recognized dangerous identity**
+→ altered outward presentation
+→ observers recategorize the same body
+→ expected political/military identity is masked
+→ component is rejected as irrelevant rather than retained as threat.
+
+This is a strong **projection/state-recognition** example:
+**same underlying person → different visible state → different network response.**
+
+The gate is important because the altered display occurs at the city's threshold/entry architecture, but the mechanism is social perception, not a physical portal.
+
+---
+
+# 1 Samuel 22 — the displaced centre enters a cave and begins attracting marginal material
+
+David escapes to the **cave of Adullam**.
+
+Then:
+- brothers;
+- father's household;
+- distressed people;
+- debtors;
+- discontented people
+
+**gather to him**.
+
+About **400 men** are said to be with him.
+
+The geometry is direct:
+
+**one displaced node enters enclosure**
+→ separated/marginal elements converge inward
+→ enclosure becomes nucleus of a new mobile body.
+
+This is a major addition to the global timeline.
+
+Earlier:
+**old centre expelled the rising node outward**.
+
+Now:
+**the outward node starts becoming a new centre because disconnected material aggregates around it.**
+
+Vardath comparison:
+**expelled material can re-centre in a protected cavity/enclosure and nucleate a new structure.**
+
+### Vulnerable family cargo is moved into a separate protected domain
+
+David transfers his father and mother to Moab while his own status remains uncertain.
+
+This creates:
+**active mobile component remains in dangerous transition zone**
+while
+**noncombatant/ancestral cargo is moved into a secondary safe enclosure**.
+
+This resembles the carrier/refuge principle at household scale:
+different cargo classes are routed differently according to vulnerability/function.
+
+### The cave/stronghold is not allowed to become the final stationary state
+
+The prophet Gad tells David:
+**do not remain in the stronghold → depart → enter Judah.**
+
+So the enclosure is temporary.
+
+Process:
+**refuge/convergence enclosure**
+→ population gathers
+→ protection achieved
+→ command to reopen/move
+→ new centre re-enters wider field.
+
+This is important:
+**enclosure is a transition state, not necessarily the destination.**
+
+---
+
+## Old centre remains static and spear-centred
+
+Meanwhile Saul is pictured:
+- sitting at Gibeah;
+- under a tamarisk;
+- spear in hand;
+- servants standing around him.
+
+This is almost the inverse geometry of David.
+
+David:
+**mobile centre + gathering displaced network**.
+
+Saul:
+**stationary centre + fixed surrounding attendants + weapon still in hand**.
+
+The contrast is processually strong even if literary:
+**one centre is becoming distributed/mobile**
+while
+**the other is increasingly static/defensive.**
+
+---
+
+## Information from Nob propagates back and destroys the old priestly node
+
+Doeg carries information from the Nob encounter back to Saul.
+
+Saul interprets:
+- bread;
+- weapon;
+- inquiry
+
+as collusion.
+
+The priests are summoned inward to the old centre.
+
+Saul orders surrounding guards to kill them.
+
+The guards **refuse to extend their hand** against the priests.
+
+Doeg then performs the killing.
+
+Process:
+
+**information leaves local node**
+→ reaches hostile central node
+→ local node is summoned/exposed
+→ primary surrounding agents refuse destructive command
+→ alternate outsider executes it
+→ priestly node/city is destroyed.
+
+### One survivor leaves the destroyed node and joins the rising centre
+
+Abiathar escapes.
+
+He later appears with the **ephod in his hand**.
+
+So the destroyed priestly system produces a surviving remnant:
+
+**old sacred node destroyed**
+→ one living survivor exits
+→ survivor carries/retains inquiry interface/tool
+→ joins mobile successor centre.
+
+This is one of the strongest handoff sequences in the entire Samuel material.
+
+The priestly function has effectively moved:
+
+**fixed sanctuary node**
+→ catastrophic break
+→ one remnant carrier
+→ mobile wilderness centre.
+
+Vardath comparison:
+**after node destruction, a surviving carrier can transport functional continuity into the successor network.**
+
+Do not claim the ephod is literally technological equipment.
+The source presents it as a religious inquiry object.
+
+---
+
+# 1 Samuel 23 — information changes the route before the predicted trap closes
+
+### External pressure on Keilah draws the mobile centre into a local rescue event
+
+Philistines attack Keilah and take produce from threshing floors.
+
+David inquires whether to intervene.
+
+He receives an affirmative answer.
+
+His men fear the move.
+
+He inquires again.
+
+Then the group goes **down to Keilah** and defeats the raiders.
+
+The important sequence is:
+
+**mobile centre in open/wilderness condition**
+→ external local node under attack
+→ information query
+→ uncertainty inside moving group
+→ second query
+→ movement into threatened node
+→ threat removed.
+
+This is a two-stage confirmation before transfer into danger.
+
+### Enclosure flips from refuge to trap depending on who is approaching
+
+After David enters Keilah, Saul hears it and interprets the town's geometry explicitly:
+
+David is **shut in**
+because he has entered:
+- a city;
+- with gates;
+- and bars.
+
+This is a crucial Vardath geometry rule:
+
+**enclosure is not inherently protective.**
+
+The same geometry can be:
+- refuge from one threat;
+- trap under another.
+
+Meaning depends on:
+**which force is outside, which is inside, and whether the boundary remains passable.**
+
+This is exactly why the master timeline must record phase and direction rather than symbol alone.
+
+### The ephod provides branch information about a future that is then avoided
+
+David asks:
+- will Saul come down?
+- will Keilah surrender us?
+
+The answers are yes.
+
+David responds by leaving.
+
+Then:
+- Saul does not continue into Keilah;
+- Keilah does not surrender David;
+- the predicted branch does not become the actual branch.
+
+This is extremely important processually.
+
+It means the narrative uses information not merely to describe future state but to **change the route before that state actualises**.
+
+Process:
+
+**current position**
+→ query projected branch
+→ future trap-state identified
+→ moving component changes path
+→ projected branch collapses / is not entered.
+
+For the Vardath timeline this is a major conceptual tool:
+
+**knowledge of a possible adjacency can prevent the system from entering that adjacency.**
+
+This is not the same as saying the biblical text teaches a specific modern theory of branching timelines.
+
+The safe structural observation is:
+**predicted state functions as routing information, and the information causes an alternate actual state.**
+
+### Population around David expands
+
+The mobile group is now described as about **600**.
+
+Record the growth:
+~400 at Adullam
+→ ~600 by Keilah/wilderness.
+
+Do not over-interpret the exact values.
+
+The important effect:
+**the displaced centre continues accumulating material while remaining mobile.**
+
+---
+
+## Wilderness network replaces city enclosure
+
+David leaves Keilah and occupies:
+- wilderness;
+- strongholds;
+- hill country;
+- woods.
+
+Saul searches **daily** but cannot close the route.
+
+This is another spatial-state inversion:
+
+**walled city = trap**
+whereas
+**open broken wilderness network = survivable refuge**.
+
+The successor now persists through:
+**distributed hiding places rather than one fortified enclosure**.
+
+### Jonathan briefly reconnects the successor to the old royal line
+
+Jonathan enters the wood and “strengthens his hand.”
+
+They make a covenant.
+
+Then:
+- David remains;
+- Jonathan returns home.
+
+This is a temporary bridge event:
+**old line's surviving interface node**
+→ enters successor network
+→ reinforces it
+→ withdraws back into old network.
+
+The bridge does not permanently merge the systems.
+
+---
+
+## Ziphites convert hidden geography into information
+
+Local inhabitants report:
+- strongholds;
+- wood;
+- hill;
+- orientation relative to Jeshimon.
+
+Saul requests increasingly precise location data:
+**know → see → verify → map hiding places**.
+
+This is a direct transformation:
+
+**hidden terrain**
+→ observed terrain
+→ communicated coordinates/locations
+→ pursuit becomes more tightly coupled.
+
+This is another reminder:
+**information changes effective geometry.**
+
+A hiding place is only a refuge while its relation to the pursuer remains unknown.
+
+---
+
+## One mountain holds both forces on opposite sides
+
+At Maon:
+
+- Saul goes on one side of the mountain.
+- David and his men go on the other side.
+- Saul's force begins to surround them.
+
+This is one of the most important raw geometries in the block.
+
+**same mountain/body**
+with
+**force A on one face**
+and
+**force B on opposite face**.
+
+The two forces are close spatially but separated by the geometry of the mountain.
+
+Then the pursuit tightens toward encirclement.
+
+This gives:
+
+**opposite-side coexistence**
+→ **relative movement around shared body**
+→ **approaching enclosure/contact**.
+
+### A third external force breaks the closing two-force geometry
+
+At the point where Saul is nearly closing around David:
+a messenger arrives.
+
+Philistines are attacking elsewhere.
+
+Saul breaks pursuit and redirects.
+
+So:
+
+**force A closing around force B**
+→ external force C acts elsewhere on A's larger system
+→ information reaches A
+→ A decouples from B
+→ A reverses route toward C
+→ B escapes.
+
+This is a classic **three-force release**.
+
+It strongly supports the user's instruction not to focus on names:
+the process is what matters.
+
+### Sela-hammahlekoth — the rock/cliff records separation
+
+The site is named **Sela-hammahlekoth**.
+
+The second element is disputed:
+- Rock of Divisions;
+- Rock of Escape;
+- possibly another lexical nuance such as smooth/slippery rock.
+
+The contextual effect is secure:
+**the two forces separate there after near-convergence.**
+
+Do not force one exact etymology.
+
+For the master timeline:
+**geography becomes a memory-marker for interrupted convergence and separation.**
+
+---
+
+# 1 Samuel 24 — pursuer enters the hidden centre's enclosure and the power relation reverses
+
+Saul resumes pursuit with **3,000 selected men**.
+
+David and his men are in the inner parts of a cave.
+
+Saul enters the same cave without knowing they are there.
+
+This completely reverses the expected relation.
+
+Before:
+**Saul outside / David hunted inside landscape**.
+
+Now:
+**pursuer enters prey's enclosure**
+while
+**hidden prey surrounds/observes pursuer from deeper interior**.
+
+The active asymmetry flips without either party intentionally engineering the encounter.
+
+This is a very strong **inside/outside inversion**.
+
+### Inner and outer depth matter
+
+Saul occupies the front/accessible part.
+
+David's group is in the **innermost parts**.
+
+So the cave has layered depth:
+
+**mouth/boundary**
+→ **outer interior occupied by pursuer**
+→ **deeper hidden interior occupied by pursued group**.
+
+One enclosure simultaneously contains both opposing forces in different layers.
+
+That is highly relevant to the Vardath concept of apparently separated states sharing one larger structure.
+
+Again, the scale here is ordinary cave architecture.
+
+### David performs a partial cut rather than total removal
+
+David approaches Saul and cuts a piece from his robe.
+
+He does **not** cut the body.
+
+This produces a proxy effect:
+
+**garment boundary altered**
+while
+**living centre remains intact**.
+
+The fragment becomes portable evidence that total destruction was possible but withheld.
+
+This is similar but not identical to the robe-tear sequence of chapter 15.
+
+Chapter 15:
+**robe tear → kingdom transfer announced**.
+
+Chapter 24:
+**robe edge cut → proof of access/control without killing**.
+
+The repeated fabric motif belongs in the timeline, but its function changes by phase.
+
+### The “hand” is deliberately restrained
+
+David repeatedly states:
+**my hand will not be against you**.
+
+This is a crucial contrast with earlier Samuel chapters where:
+- hand can mean active force;
+- hands are severed from Dagon;
+- one force's hand is heavy;
+- Saul seeks David's life by spear/hand;
+- Philistine hand is invoked as proxy.
+
+Here:
+**potential force is present but deliberately not discharged**.
+
+That adds a new process class:
+**coupled force with inhibited transfer**.
+
+Not every close adjacency produces release.
+
+### After Saul exits, David emerges and restores visible separation
+
+Saul leaves the cave.
+
+Only afterward David comes out and calls from behind him.
+
+So the encounter proceeds:
+
+**hidden co-location**
+→ old centre exits
+→ successor emerges
+→ both become visibly separate nodes again
+→ communication occurs across restored distance.
+
+David displays the cloth fragment.
+
+Saul recognizes:
+- David had him within reach;
+- David did not destroy him;
+- David will become king.
+
+This is a **recognition handoff without immediate regime replacement**.
+
+### Future continuity is negotiated before succession completes
+
+Saul asks David:
+- do not cut off my descendants;
+- do not erase my name/house.
+
+This is extremely important to the master timeline.
+
+The old centre now explicitly anticipates its own replacement and negotiates what cargo/continuity should survive into the next regime.
+
+So:
+
+**old centre recognizes successor**
+→ requests preservation of residual lineage/name
+→ successor swears preservation
+→ systems separate again.
+
+This is a non-destructive handoff condition:
+**successor state need not erase all material from predecessor state.**
+
+### The chapter ends with two different destinations
+
+Saul:
+→ goes home.
+
+David + men:
+→ go up to the stronghold.
+
+So contact does not yet produce merger.
+
+The timeline remains:
+**recognized succession**
+but
+**continued spatial separation**.
+
+---
+
+# SECTION 33B continuous geometry/effect timeline — 1 Samuel 21–24
+
+## Phase Q — residual tool from old field is recovered
+
+prior opponent's weapon
+→ captured
+→ wrapped/stored behind sacred interface
+→ recovered by mobile successor.
+
+**Effect:** material from old transition is reused in later phase.
+
+Vardath comparison:
+**reset does not erase all cargo; remnants can persist and reactivate.**
+
+---
+
+## Phase R — same body changes apparent state at threshold
+
+dangerous recognized identity
+→ altered visible behaviour at gate
+→ receiving system reclassifies body
+→ component escapes retention.
+
+**Effect:** projection changes system response without substrate replacement.
+
+Vardath comparison:
+**observer-facing form can determine coupling.**
+
+---
+
+## Phase S — cave/refuge becomes nucleation chamber
+
+displaced node enters enclosure
+→ fragmented/marginal people converge
+→ new mobile body forms.
+
+**Effect:** expulsion from old centre produces a new centre elsewhere.
+
+Vardath comparison:
+**enclosures can serve as temporary condensation/nucleation zones.**
+
+---
+
+## Phase T — protected enclosure reopens
+
+new body stabilises in cave/stronghold
+→ instruction says leave
+→ mobile centre re-enters wider field.
+
+**Effect:** refuge is temporary, not endpoint.
+
+Vardath comparison:
+**carrier/shell phase must eventually reopen for renewed world participation.**
+
+---
+
+## Phase U — old sacred node destroyed; one remnant carries function forward
+
+fixed priestly node
+→ information leak
+→ central retaliation
+→ node destroyed
+→ single survivor escapes
+→ carries inquiry function/tool into successor network.
+
+**Effect:** catastrophic loss produces continuity through one transferred remnant.
+
+Vardath comparison:
+**functional inheritance can survive node destruction through a carrier.**
+
+---
+
+## Phase V — same enclosure geometry flips from shelter to trap
+
+gated/barred city
+→ successor enters
+→ outside pursuer recognizes closed boundary
+→ enclosure becomes capture geometry.
+
+**Effect:** boundary function depends on directional force relation.
+
+Vardath comparison:
+**shell/cave/gate cannot be assigned one meaning outside timeline phase.**
+
+---
+
+## Phase W — projected branch information reroutes actual history
+
+future capture branch identified
+→ successor leaves before closure
+→ predicted capture state is never entered.
+
+**Effect:** information modifies path through state-space.
+
+Vardath comparison:
+**route knowledge can change which adjacency actually forms.**
+
+---
+
+## Phase X — distributed wilderness beats fixed enclosure
+
+closed city abandoned
+→ open stronghold/wood/hill network used
+→ daily pursuit fails.
+
+**Effect:** distributed topology provides resilience.
+
+Vardath comparison:
+**broad field can be more stable/survivable than concentrated enclosure under some pressure regimes.**
+
+---
+
+## Phase Y — hidden geography converted into targeting information
+
+local observers map hiding network
+→ coordinates/locations transferred
+→ pursuer closes more effectively.
+
+**Effect:** information reduces effective separation.
+
+Vardath comparison:
+**distance is partly informational/connectivity-based, not only metric.**
+
+---
+
+## Phase Z — same mountain, opposite faces
+
+force A on one side
+↔ one mountain/body ↔
+force B on other side
+→ movement tends toward encirclement.
+
+**Effect:** two forces can occupy different faces of one shared structure while remaining temporarily non-contacting.
+
+Vardath comparison:
+**paired forces may be separated by orientation within one body rather than by absolute distance.**
+
+---
+
+## Phase AA — third force breaks convergence
+
+A nearly encloses B
+→ force C attacks A's wider system
+→ message arrives
+→ A disengages from B
+→ route changes
+→ B escapes.
+
+**Effect:** global coupling can override local convergence.
+
+Vardath comparison:
+**local gate/contact geometry may fail to complete when a larger network demand pulls one component away.**
+
+---
+
+## Phase AB — both forces occupy one enclosure at different depths
+
+pursuer enters cave
+→ pursued group already in deeper interior
+→ expected predator/prey relation reverses.
+
+**Effect:** interior layering changes power relation without changing who entered first overall.
+
+Vardath comparison:
+**nested enclosure can bring normally opposed states into temporary adjacency.**
+
+---
+
+## Phase AC — partial boundary cut demonstrates possible total transfer but inhibits it
+
+successor reaches old centre
+→ cuts garment boundary only
+→ body remains intact
+→ fragment becomes evidence.
+
+**Effect:** contact is proven without destructive completion.
+
+Vardath comparison:
+**threshold contact can occur without full rupture.**
+
+---
+
+## Phase AD — active force deliberately held back
+
+successor has access/control
+→ “hand” not released
+→ old centre survives.
+
+**Effect:** proximity does not determine outcome by itself; control state matters.
+
+Vardath comparison:
+**open adjacency can remain non-destructive when transfer is inhibited.**
+
+---
+
+## Phase AE — old centre recognizes successor and negotiates retained cargo
+
+old centre exits enclosure
+→ visible distance restored
+→ successor displays proof
+→ old centre acknowledges future transfer
+→ requests lineage/name preservation
+→ covenant made
+→ nodes separate again.
+
+**Effect:** succession can include selected continuity rather than total erasure.
+
+Vardath comparison:
+**new stable world can inherit chosen material/identity from prior state.**
+
+---
+
+# What 1 Samuel 21–24 adds to the master Bible geometry timeline
+
+15. **Residual objects/functions can survive one phase and become active in a later phase.**
+16. **Visible identity can be altered at a threshold to change how a receiving system couples to the same underlying component.**
+17. **An expelled node can become a new centre by attracting disconnected material inside a temporary enclosure.**
+18. **Refuge/enclosure is phase-dependent and must sometimes reopen.**
+19. **A fixed functional node can be destroyed while continuity survives through one remnant carrier.**
+20. **A boundary can invert from shelter to trap depending on force direction.**
+21. **Information about a future branch can reroute the system before that branch is entered.**
+22. **Distributed terrain/network states can outperform fixed enclosures under pursuit.**
+23. **Information can shrink effective distance by exposing hidden routes/positions.**
+24. **Two forces can occupy opposite faces of one shared body and nearly converge without contact.**
+25. **A third force acting on the wider network can break a local two-force convergence.**
+26. **One enclosure can temporarily contain opposing forces at different depths.**
+27. **Contact can be partial: boundary/fabric altered while central body remains intact.**
+28. **Available force can be deliberately inhibited; adjacency does not guarantee destructive transfer.**
+29. **Old and new regimes can negotiate what predecessor material survives into the successor state.**
+
+The cumulative Section 33 timeline now extends:
+
+**successor driven beyond old centre**
+→ **residual tool recovered**
+→ **identity/projection altered at foreign threshold**
+→ **cave nucleation of new network**
+→ **temporary enclosure reopened**
+→ **old sacred node destroyed**
+→ **one remnant carries function into successor**
+→ **gated refuge becomes trap**
+→ **future-branch information reroutes movement**
+→ **distributed wilderness network**
+→ **hidden geography exposed by information**
+→ **two forces occupy opposite faces of one mountain**
+→ **near-encirclement**
+→ **third force breaks convergence**
+→ **pursuer later enters successor's hidden cave**
+→ **inside/outside relation reverses**
+→ **partial garment cut**
+→ **destructive hand inhibited**
+→ **old centre recognizes future successor**
+→ **selected continuity negotiated**
+→ **nodes separate again**.
+
+---
+
+## Section 33B controls
+
+- The David fugitive traditions may preserve separately developed episodes later woven into the larger rise narrative; do not assume every transition is recoverable as simple modern chronology.
+- The holy-bread episode has legal/ritual interpretive complexity and later reception history; use only the secure transfer sequence.
+- Goliath's sword being stored behind the ephod is explicit in the text; the exact earlier path by which it came there is not narrated.
+- David's feigned madness is a conscious behaviour strategy in the story; do not interpret it as actual altered ontology.
+- Exact location/shape of the cave of Adullam is uncertain.
+- The slaughter at Nob is a violent narrative event; record the transfer/destruction topology without treating it as an instruction or desirable process.
+- The ~400 and ~600 group sizes are useful narrative growth markers but not secure cosmological numbers.
+- The Keilah oracle is structurally a **future condition that is avoided after inquiry**. Later philosophical systems use the passage in debates about counterfactual knowledge, but those later theories should not be retrojected into the ancient narrative as its only meaning.
+- **Sela-hammahlekoth** has disputed etymology/translation: divisions, escape, separations, possibly other nuance. The near-contact followed by separation is secure from context.
+- 1 Samuel 24 and 26 are closely parallel Saul-spared narratives. Scholarship debates whether they are separate historical events, literary doublets, or related traditions. Preserve both when reached rather than silently harmonising them.
+- Robe-corner symbolism is plausible and has ancient interpretive support, especially beside 1 Samuel 15, but the safest primary datum is: **David cuts the garment, not Saul; the fragment proves access without killing.**
+
+### Sources logged for Section 33B
+
+Primary:
+- Mechon-Mamre, 1 Samuel 21–24.
+
+Controls:
+- Pamela Tamarkin Reis, **“Collusion at Nob: A New Reading of 1 Samuel 21–22.”**
+- Samuel commentary/source-critical discussions of the Nob/Gath fugitive episodes.
+- lexical/geographical discussions of **Sela-hammahlekoth** as Rock of Divisions/Escape with uncertainty preserved.
+- scholarship and later philosophical discussion of the unrealised Keilah branch in 1 Samuel 23, used only to identify the secure structural fact that information changes the route.
+- literary/commentary traditions on the robe-corner episode in 1 Samuel 24 and its relation to the chapter-15 garment motif.
+- source-critical discussion of 1 Samuel 24 // 26 parallel traditions.
+
+**Section 33 remains in progress.**
+
+Next:
+**1 Samuel 25–31 — intermediary prevents destructive convergence; gift/cargo flow reverses an approaching force; death removes a blocking centre without David acting; second Saul-spared doublet; David crosses into Philistine territory and builds a dual-identity zone; Amalekite raid empties/burns Ziklag and carries population away alive; recovery follows a split at the Besor; Saul seeks information across the forbidden dead/live boundary; final battle collapses the old centre and sons together.**
