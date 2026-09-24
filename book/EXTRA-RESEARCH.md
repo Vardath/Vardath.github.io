@@ -33657,3 +33657,523 @@ Scholarly/source-critical:
 
 **Section 24 remains in progress.**  
 Next under anti-repeat protocol: **Numbers 11–14 — seventy elders receiving distributed spirit from Moses, Eldad/Medad outside the expected location, Miriam/Aaron challenge, cloud/pillar judgment, twelve spies, paired fruit carriers, ten-vs-two report split, Joshua/Caleb pair, 40 days → 40 years, and the attempted reversal after the access window has closed.**
+
+
+## SECTION 24 progress B — Numbers 11–14: one centre distributes function, excluded locations still receive effect, 12 scouts split 10/2, and the entry-window closes
+
+### Anti-repeat check
+
+Section 24A is already saved.  
+No Numbers 11–14 progress existed elsewhere in the ledger.  
+Continuing only from the Numbers 1–10 camp/cloud/trumpet checkpoint.
+
+### Numbers 11 begins with fire at the camp's edge
+
+At Taberah:
+- YHWH's fire burns among the people;
+- it consumes at the **edge/extremity of the camp**;
+- people cry to Moses;
+- Moses prays;
+- fire subsides.
+
+This is a small but useful boundary event:
+
+**central ordered camp**
+→ disorder/complaint
+→ destructive fire appears at **periphery**
+→ mediator intercedes
+→ event ceases.
+
+Do not convert “edge of camp” into a cosmological perimeter; it is ordinary camp geography.
+
+### Moses as overloaded centre
+
+Moses explicitly says:
+- the burden of the people is too heavy for him alone.
+
+The solution is not replacement.
+
+YHWH commands:
+- gather **70 elders**;
+- bring them to the Tent of Meeting;
+- they will stand there with Moses;
+- the spirit on Moses will be placed on them;
+- they will **share/bear the burden** with him.
+
+This is a direct organizational transformation:
+
+**1 overloaded centre**
+→ **1 centre + 70 distributed support nodes**.
+
+Compare Jethro's 1000/100/50/10 hierarchy:
+- Exodus 18 distributes judicial workload administratively.
+- Numbers 11 distributes charismatic/leadership function through the spirit.
+
+The narrative treats the two as related but not identical systems.
+
+### One source-state → many recipients without loss of central identity
+
+At the Tent:
+- YHWH descends in cloud;
+- speaks with Moses;
+- takes/draws from the spirit that is on Moses;
+- puts it on the **70 elders**;
+- they prophesy when it rests on them.
+
+The important structural point is:
+
+**Moses remains Moses**
+while
+**his leadership-spirit/function becomes shared**.
+
+This is one of the clearest biblical precedents for:
+**one functional state replicated/distributed across many bodies**.
+
+Do not interpret the “spirit” as a measurable physical fluid.
+The text's language is charismatic/theological.
+
+### Eldad / Medad — pair outside the expected central location
+
+Two named men:
+- **Eldad**
+- **Medad**
+
+remain **in the camp** rather than going out to the Tent with the gathered elders.
+
+Yet:
+- they are among those registered/chosen;
+- the spirit rests on them too;
+- they prophesy **inside the camp**.
+
+This is a major control for the project's interface model:
+
+> **physical presence at the central node is not always required for the associated state/effect to occur.**
+
+The narrative distinguishes:
+- central gathering location,
+- distributed effect/function.
+
+This strongly supports the mature rule:
+**relation/coupling ≠ physical transit**.
+
+### Joshua wants central control; Moses permits wider distribution
+
+Joshua asks Moses to stop/restrain Eldad and Medad.
+
+Moses rejects that response and wishes:
+- all YHWH's people could be prophets;
+- all could receive the spirit.
+
+So the text explicitly contrasts:
+
+**centralized exclusive control**
+versus
+**distributed participation**.
+
+Pair classification:
+- Eldad / Medad = **P7 paired distributed recipients**.
+- Moses / Joshua = experienced source-leader / protective-centralizing assistant.
+
+### 70 + 2 textual arithmetic caution
+
+The story names:
+- 70 elders around the Tent,
+- plus Eldad and Medad in camp.
+
+Readers have long asked whether this produces 72 selected elders or whether Eldad/Medad belong within the seventy count.
+
+The wording allows interpretive debate.
+
+Do not silently normalize it.
+
+For the project:
+record:
+**70 at/around central event + 2 named remote recipients**
+without claiming a hidden 72-system unless textual analysis specifically establishes it.
+
+### Quail — wind as transport medium around the whole camp
+
+A wind from YHWH:
+- sweeps quail from the sea;
+- spreads them around the camp;
+- approximately a day's journey on this side and that / all around;
+- the received text gives roughly **2 cubits** above/on the ground in translation;
+- people gather all day, all night, and the next day;
+- the least gatherer gathers **10 homers**.
+
+This is a huge abundance event produced by:
+**wind → transported living cargo → distributed around perimeter**.
+
+### Abundance becomes overload/death
+
+Before the meat is finished:
+- plague strikes the people.
+
+This is an important capacity-control result:
+
+**more supply**
+does not automatically mean
+**better system state**.
+
+The story moves:
+**scarcity complaint**
+→ **extreme abundance**
+→ **harm**.
+
+For Vardath work this is a useful anti-overfitting control against assuming every cross-boundary transfer is beneficial.
+
+### Miriam / Aaron jointly challenge Moses
+
+Numbers 12 begins with:
+- Miriam and Aaron speaking against Moses;
+- challenging his unique prophetic status.
+
+The pair therefore begins as:
+**two siblings / one shared challenge**.
+
+Classification:
+- **P7 cooperative challenger pair** at the opening.
+
+### Three siblings are summoned to the Tent
+
+YHWH calls:
+- Moses,
+- Aaron,
+- Miriam,
+to the Tent of Meeting.
+
+Then:
+- YHWH descends in a **pillar of cloud**;
+- stands at the **entrance**;
+- calls Aaron and Miriam forward.
+
+This repeats the established interface grammar:
+**central tent**
+→ **cloud descends**
+→ **cloud occupies entrance**
+→ **selected figures reposition relative to boundary**.
+
+### Moses is distinguished by communication mode
+
+The speech contrasts:
+- ordinary prophet → vision/dream;
+- Moses → direct/plain “mouth-to-mouth” communication.
+
+Whatever the exact semantics of the phrase,
+the narrative explicitly differentiates **communication channels**.
+
+So “prophet” is not treated as one uniform access class.
+
+Again:
+**same broad role category → different interface mode**.
+
+### Miriam/Aaron pair splits into unequal states
+
+After the cloud withdraws:
+- Miriam becomes white/scaly with `tzara'at`;
+- Aaron does not receive the same visible bodily change;
+- Aaron immediately appeals to Moses;
+- Moses intercedes.
+
+This is important:
+a pair can begin in shared action and then **diverge sharply in outcome/state**.
+
+Do not force symmetry just because two people acted together.
+
+Why Miriam alone receives the bodily punishment is not explicitly explained in the text and has generated extensive interpretation.
+Keep the asymmetry rather than inventing a mechanical reason.
+
+### Miriam's exclusion halts the whole moving camp
+
+Miriam is:
+- shut **outside the camp** for **7 days**;
+- then readmitted.
+
+Crucially:
+- **the people do not journey until Miriam is readmitted**.
+
+This is one of the strongest person/system couplings yet.
+
+Earlier:
+**cloud lifted = journey**.
+
+Here:
+even within the broader movement system,
+the community's movement is held until one excluded member completes her re-entry interval.
+
+Thus the full state rule is more complex than:
+“cloud alone determines motion.”
+
+It can include:
+**individual/community status constraints**.
+
+### Outside → seven-day interval → re-entry → movement resumes
+
+Miriam's sequence is:
+
+**inside camp**
+→ challenge/judgment
+→ body-state changes
+→ **outside camp**
+→ 7 days
+→ **readmitted**
+→ population can journey.
+
+This is exactly the graded exclusion/re-entry grammar already established in Leviticus, now embedded in narrative.
+
+### Source-critical control — the Tent in Numbers 12 resembles the outside-camp Ohel Moed
+
+Modern source criticism notes that:
+- Moses, Aaron and Miriam all enter/wait at the Tent;
+- cloud descends to its entrance;
+- this is easier to reconcile with the simpler non-Priestly Tent of Meeting outside camp than with the strict Priestly Tabernacle access rules.
+
+So once again:
+do not assume every “Tent of Meeting” scene refers to one identical architectural tradition.
+
+### Twelve scouts — distributed sensing network
+
+Numbers 13 sends:
+- **12 men**;
+- one from each tribe;
+- to reconnoitre the land.
+
+This is a direct:
+**one central population**
+→ **12 representative sensing branches**
+→ distributed observation
+→ information/cargo returned to centre.
+
+The 12-part Israel-body becomes an information-gathering network.
+
+### Forty-day reconnaissance
+
+The scouts explore for **40 days**.
+
+That number later becomes the explicit basis for the punishment clock:
+**1 day scouting → 1 year wandering**
+for **40 years**.
+
+This is a textual, not inferred, scale transformation.
+
+### Giant grape cluster — one central cargo carried by two people
+
+At Wadi Eshcol:
+- one cluster of grapes is cut;
+- carried on a pole/frame **by two**;
+- pomegranates and figs also brought.
+
+Raw geometry:
+
+**carrier A**
+— **pole/frame + central heavy fruit cargo** —
+**carrier B**.
+
+This is a literal bilateral carrier image.
+
+It is useful for the project because:
+- two bodies jointly stabilize one central load;
+- the central object is neither carrier.
+
+But it is ordinary transport, not a Squatter-Man/lattice proof.
+
+Traditional interpreters have elaborated more complicated carrying arrangements;
+the received modern translation marks a two-person bearing relationship.
+Do not over-specify beyond that.
+
+### Twelve representatives split into two report-streams
+
+The final-form narrative produces:
+- Caleb initially opposing the negative report;
+- Joshua + Caleb later standing together;
+- the other scouts associated with discouraging the people.
+
+The canonical final-form pattern becomes:
+**12 total**
+→ **10 negative**
++
+**2 faithful/positive**.
+
+Joshua/Caleb classification:
+- **P7 minority witness pair**.
+
+### Source-critical control — Numbers 13–14 is composite
+
+Modern scholarship widely analyzes Numbers 13–14 as combining:
+- Priestly;
+- non-Priestly;
+- redactional/supplemental layers.
+
+In one reconstruction:
+- Caleb is central in an older southern/non-Priestly scout story;
+- Joshua is prominent in Priestly/redactional shaping;
+- the final 12/10/2 architecture reflects the combined text.
+
+Therefore:
+use the final-form pair geometry,
+but do **not** present every detail as one untouched original story.
+
+### Joshua / Caleb — shared function, distinct identities
+
+The two:
+- tear garments;
+- defend the land;
+- urge trust;
+- survive the judgment imposed on the other scouts/generation.
+
+They are a true cooperative pair.
+
+They are not:
+- two halves of one person;
+- mirror selves;
+- temporal versions of one figure.
+
+This is an important control against over-merging prominent pairs.
+
+### Forty days → forty years is explicitly a symbolic conversion
+
+Numbers 14 directly states:
+- according to the **40 days** of reconnaissance,
+- **one year for each day**;
+- total **40 years**.
+
+This is a very strong time-scaling motif.
+
+But it is:
+**judicial symbolic correspondence**.
+
+It is not evidence of physical time dilation.
+
+This distinction must remain explicit in the later Archaix/cycle table.
+
+### The people try to reverse the decision after the authorized phase has closed
+
+After judgment:
+- people mourn;
+- rise early;
+- say they will now go **up** to the promised land.
+
+Moses warns:
+- do not go;
+- YHWH is **not in your midst** for this attempt.
+
+Yet they go upward anyway.
+
+Critically:
+- **Moses does not move**;
+- **Ark of the covenant does not move from camp**.
+
+The people are defeated.
+
+### Same route / different phase = opposite outcome
+
+This is one of the strongest mature-model analogues in Numbers:
+
+Earlier:
+**authorized approach**
+→ divine presence/ark leads or accompanies
+→ route can succeed.
+
+Now:
+**same intended destination**
+→ same “go up” action
+→ but authorized phase/presence withdrawn
+→ Moses + ark remain
+→ route fails.
+
+This is almost a textbook **place + phase** control.
+
+There is no literal gate in the story.
+
+But structurally:
+
+> **geographic route alone is insufficient; correct relational/system state is required.**
+
+That is extremely relevant to the Vardath gate-address concept.
+
+### Numbers 11–14 continuous sequence
+
+**camp begins journey**
+→ peripheral fire event
+→ Moses declares overload
+→ 70 elders gathered at centre
+→ cloud descends
+→ one leadership spirit distributed
+→ Eldad/Medad receive same effect remotely in camp
+→ Joshua objects / Moses accepts wider distribution
+→ sea-wind brings huge quail supply
+→ abundance becomes plague
+
+→ Miriam/Aaron challenge Moses
+→ three siblings summoned
+→ cloud at Tent entrance
+→ communication hierarchy explained
+→ cloud leaves
+→ Miriam state changes
+→ Miriam outside camp 7 days
+→ whole population waits
+→ Miriam returns
+→ journey resumes
+
+→ 12 representatives sent outward
+→ 40-day reconnaissance
+→ giant fruit cargo returned
+→ one cluster borne by 2
+→ report divides
+→ Joshua/Caleb become faithful pair
+→ population refuses entry
+→ 40 days converted to 40 years
+→ judgment fixes new phase
+→ people attempt late reversal
+→ Moses/ark remain
+→ unauthorized ascent fails.
+
+### SECTION 24B — strongest Vardath correspondences
+
+1. **One centre can distribute a functional state to many bodies.**
+2. Distributed effect can occur away from the expected physical central node.
+3. Relation/coupling is therefore not identical to physical presence at the interface.
+4. One person's exclusion/re-entry can block whole-system movement.
+5. Twelvefold Israel can function as a distributed sensor network.
+6. One heavy central cargo can be stabilized by a literal bilateral two-person carrier.
+7. 40 days→40 years is an explicit scale conversion, but symbolic/judicial rather than physical time dilation.
+8. Same route can produce opposite outcome when system phase/authorization changes.
+9. Moses + ark remaining behind is a strong sign that the failed ascent lacks the system's authorized centre/presence.
+10. Abundance can overload rather than benefit the system.
+
+### Major controls
+
+- spirit distribution is theological/charismatic, not a material-fluid transfer.
+- Eldad/Medad do not prove remote physical gate access.
+- Miriam/Aaron's unequal punishment is not explained mechanically.
+- grape pole is ordinary transport.
+- Joshua/Caleb are two distinct people.
+- 40→40 is explicitly judicial symbolism, not evidence of time dilation.
+- Numbers 13–14 is compositionally layered.
+
+### Number / pair register
+
+- elders at central gathering: **70**.
+- remote named recipients: **2**, Eldad + Medad.
+- quail minimum collection: **10 homers**.
+- quail gathering: day + night + next day.
+- Miriam exclusion: **7 days**.
+- scouts: **12**.
+- heavy grape carriers: **2**.
+- reconnaissance: **40 days**.
+- punishment: **40 years**.
+- final-form minority: **2**, Joshua + Caleb.
+- final-form negative majority: **10**.
+
+### Sources logged
+
+Primary:
+- Numbers 11–14, Sefaria.
+
+Scholarly/source-critical:
+- “The Other Ohel Moed,” TheTorah, for Numbers 12 and the outside-camp tent tradition.
+- source-critical scholarship on the composite Numbers 13–14 scout narratives.
+- traditional/modern translation discussion of the two-person grape-cluster carrying image.
+
+**Section 24 remains in progress.**  
+Next under anti-repeat protocol: **Numbers 15–20 — Korah/Dathan/Abiram composite rebellion; earth opening/closing; 250 firepans; Aaron standing between dead and living; twelve rods and Aaron's dead-wood→budding branch; red heifer purity inversion; Miriam's death; Meribah rock-water doublet/state failure; Aaron→Eleazar garment/office transfer on Mount Hor.**
