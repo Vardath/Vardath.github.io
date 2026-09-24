@@ -127581,3 +127581,1286 @@ Priority:
 - paired sayings and reversal architecture;
 - 22:17–24 “words of the wise” and ancient Egyptian Amenemope parallels;
 - close **Messale / Proverbs 1–24** as Ethiopian book 24 before entering separate **Tegsats / Proverbs 25–31**.
+
+
+---
+
+# SECTION 46 progress B — Proverbs 10–24 / remainder of Messale
+## The short sayings turn the large Wisdom/Folly architecture into hundreds of small state-switches. The strongest recurring mechanism is a life-distribution network: righteous mouth → fountain of life; wise teaching → fountain of life → avoidance of death snares; healing tongue → Tree of Life. Life therefore moves from Wisdom as cosmic Tree in Proverbs 3 into human speech, teaching and conduct as distributed branches/sources. Proverbs 15:24 then states the core vertical polarity directly: the path of life leads upward to avoid Sheol below. Proverbs 24 closes Messale with Wisdom building and establishing a house while a neglected field loses its wall and is overrun—ordered interior versus failed boundary.
+
+This pass completes the Ethiopian **Messale / Proverbs 1–24** portion before the separate canonical **Tegsats / Proverbs 25–31**.
+
+The literary form changes sharply after Proverbs 9.
+
+Instead of long speeches and large personifications, chapters 10 onward are dominated by compact paired sayings.
+
+For the present project this is useful:
+the text repeatedly performs tiny **A ↔ B state contrasts**.
+
+---
+
+# Proverbs 10 — speech becomes a literal “fountain of life” in the poetic grammar
+
+Proverbs 10:11:
+
+**mouth of righteous**
+→ **fountain/source of life**.
+
+Opposite:
+**mouth of wicked**
+→ conceals violence.
+
+This is a major development from Proverbs 4.
+
+### Proverbs 4
+heart
+→ springs of life.
+
+### Proverbs 10
+mouth
+→ fountain of life.
+
+So the process chain becomes:
+
+**inner centre / heart**
+→ speech organ / mouth
+→ life-giving flow outward.
+
+That is a very clear body-scale distribution architecture.
+
+---
+
+# The fountain is information, but its effect is represented as life-supporting water
+
+Modern scholarship on Proverbs' water metaphors emphasizes that:
+**teaching / righteous speech**
+is conceptualized as **water** because it sustains life.
+
+This is not vague symbolism.
+
+The metaphor specifies:
+- source;
+- flow;
+- recipient;
+- survival effect.
+
+That makes it a strong ordinary analogue for:
+**information carried in a life-supporting medium**.
+
+---
+
+# Proverbs 10 — tempest tests foundations/stability
+
+The saying:
+
+**tempest passes**
+→ wicked disappears
+→ righteous remains established.
+
+This is a miniature storm-resilience test.
+
+No world catastrophe is implied.
+
+But structurally:
+
+**transient external disturbance**
+→ unstable node removed
+→ stable node remains.
+
+This is almost a one-line control version of the large Psalmic storm/reset pattern.
+
+---
+
+# Proverbs 10 — one “way” can be fortress or destruction depending on the actor
+
+“The way of YHWH” functions as:
+
+for upright:
+→ stronghold.
+
+for evildoer:
+→ destruction.
+
+Same route/system
+→ opposite effect according to entrant state.
+
+This is another strong state-dependent adjacency/control example.
+
+---
+
+# Proverbs 11 — righteousness, wind and Tree of Life form a compact creation-state cluster
+
+Proverbs 11:28–31 includes:
+- trust/wealth versus flourishing righteous;
+- household trouble;
+- **wind**;
+- **fruit**;
+- **Tree of Life**;
+- earth.
+
+The central saying:
+
+**fruit of righteous**
+→ **Tree of Life**.
+
+The second half is textually difficult and translations vary around:
+“the wise capture/win lives.”
+
+The secure first half is enough:
+
+**human conduct**
+→ fruit
+→ Tree of Life.
+
+This extends the earlier Wisdom/Tree identification.
+
+---
+
+# Tree of Life is becoming distributed through human actors
+
+Progression:
+
+### Proverbs 3
+**Wisdom herself**
+= Tree of Life.
+
+### Proverbs 11
+**fruit of righteous**
+= Tree of Life.
+
+### Proverbs 15
+**healing tongue**
+= Tree of Life.
+
+This is one of the strongest mechanisms in Messale.
+
+The vertical life structure does not remain one remote cosmic object.
+
+Its function becomes:
+**replicated through righteous human behavior and speech**.
+
+---
+
+# This is a branching/replication model, not one literal tree moving around
+
+The same phrase applies to:
+- Wisdom;
+- righteous fruit;
+- healing speech.
+
+Therefore the text is clearly using **Tree of Life as transferable function/metaphor**.
+
+That is a crucial control for Vardath/Yggdrasil comparison.
+
+The book does **not** imply three literal Trees of Life.
+
+It shows:
+**one structural life-function can be instantiated at multiple scales/agents**.
+
+That may itself be the more useful pattern.
+
+---
+
+# Proverbs 11 — generosity becomes reciprocal flow
+
+The generous person:
+→ enriched.
+
+one who waters/refreshed others:
+→ is watered/refreshed.
+
+This gives a true circulation model:
+
+**source node distributes**
+→ receiver benefits
+→ source itself replenished.
+
+That is closer to a loop than a one-way pipeline.
+
+---
+
+# Proverbs 12 — house/root stability is contrasted with uprooting
+
+The wicked:
+→ cannot establish themselves.
+
+root of righteous:
+→ cannot be moved.
+
+House of wicked:
+→ overthrown.
+
+House of righteous:
+→ stands.
+
+Again the book reduces large world-support imagery to household/root scale.
+
+Stable state depends on:
+**root + right relation**, not size.
+
+---
+
+# Proverbs 13 — delayed fulfillment turns hope into bodily/tree state
+
+“Hope deferred”:
+→ heart sick.
+
+“desire fulfilled”:
+→ **Tree of Life**.
+
+This is a particularly important temporal transformation.
+
+The trigger is not physical water.
+
+It is:
+**deferred → fulfilled**.
+
+The body-state changes:
+sick heart
+→ Tree-of-Life state.
+
+This is a clear example of:
+**time/expectation altering structural state**.
+
+---
+
+# Proverbs 13 — wise teaching is a fountain that diverts from death traps
+
+Proverbs 13:14:
+
+**teaching/Torah of wise**
+→ **fountain of life**
+→ turns person away from **snares of death**.
+
+This is perhaps the cleanest information-route mechanism in Messale.
+
+Information is:
+**water-source**
+and
+**navigation system**
+at once.
+
+Process:
+
+teaching enters
+→ life-source activates
+→ route changes
+→ trap avoided.
+
+---
+
+# Proverbs 14 — fear of YHWH becomes another “fountain of life”
+
+Proverbs 14:27:
+
+**fear of YHWH**
+→ fountain of life
+→ turning away from death snares.
+
+So the fountain function can be instantiated as:
+- righteous speech;
+- wise teaching;
+- reverent orientation.
+
+This reinforces the distributed-function model.
+
+---
+
+# Proverbs 14 — house of Wisdom-like stability versus tent destruction
+
+The house of wicked:
+→ destroyed.
+
+tent of upright:
+→ flourishes.
+
+The text repeatedly uses architecture as:
+**visible state of internal moral/order relation**.
+
+This is another strong control:
+house geometry is not automatically cosmology.
+
+---
+
+# Proverbs 14 — “way that seems right” proves local perception can mis-map topology
+
+There is a way:
+→ appears right to a person
+but
+→ endpoint is death.
+
+This is almost the prose/saying equivalent of Woman Folly's house.
+
+Visible local route:
+**looks correct**.
+
+True destination:
+**death**.
+
+Thus Proverbs repeatedly insists:
+**local appearance ≠ global route topology**.
+
+This is highly relevant to the project's gate/adjacency work.
+
+---
+
+# Proverbs 15 — healing tongue becomes Tree of Life
+
+Proverbs 15:4:
+
+**healing/gentle tongue**
+→ **Tree of Life**.
+
+Opposite:
+perverse/crooked tongue
+→ breaks/crushes spirit.
+
+This is a direct two-output speech operator.
+
+Same anatomical channel:
+**tongue**
+can:
+- grow/heal life structure;
+- break inner structure.
+
+This strongly resembles a switchable operator.
+
+---
+
+# Speech/tree relation is now source-level, not inferred
+
+The text itself explicitly turns:
+**speech organ**
+into
+**tree**.
+
+That is a strong body↔plant projection.
+
+For the Squatter-Man/Yggdrasil screen:
+higher relevance than a random branch metaphor.
+
+But:
+it still describes speech effect,
+not body shape.
+
+---
+
+# Proverbs 15 — the upward route / downward Sheol polarity is explicit
+
+Proverbs 15:24:
+
+**path of life**
+→ **leads upward** for wise
+→ so as to turn away from
+**Sheol below**.
+
+This is one of the clearest vertical polarity statements in the entire 88-text research so far.
+
+It gives:
+
+**life**
+= up-route.
+
+**Sheol**
+= down-route.
+
+And:
+**route choice**
+determines which domain is approached.
+
+---
+
+# Proverbs 15:24 pair classification
+
+- **P2 vertical polarity: extremely strong**;
+- **P8 world-layer analogue: moderate as literary cosmography**;
+- literal Vardath future/past-world identification: unsupported.
+
+This should be cross-indexed with:
+- Jacob stairway;
+- Job descent/ascent;
+- Psalm pit rescue;
+- Isaiah/Ezekiel later;
+- resurrection/apocalyptic ascent texts.
+
+---
+
+# Proverbs 15 — boundary maintenance has social geometry
+
+YHWH:
+→ tears down proud house
+but
+→ maintains widow's **boundary**.
+
+Again:
+**boundary = justice/stability condition**.
+
+This complements:
+- Job boundary stones;
+- Nehemiah walls;
+- land markers.
+
+The material line remains physically simple,
+but its social function determines world-state for the occupant.
+
+---
+
+# Proverbs 16 — speech and king function as central operators
+
+Several sayings link:
+
+**human plan**
+→ YHWH establishes/directs steps.
+
+**king's lips**
+→ judgment/oracle.
+
+**righteous lips**
+→ king's delight.
+
+This produces:
+**centre / operator / speech**
+again.
+
+But no new rod-axis geometry emerges.
+
+---
+
+# Proverbs 16 — calibrated scales/measures are treated as part of correct world order
+
+Honest balances/scales:
+→ YHWH's concern.
+
+Weights:
+→ his work/order.
+
+This adds a **measurement/calibration** process family.
+
+It is small-scale commercial ethics,
+but structurally important:
+
+**stable exchange**
+requires
+**shared measure**.
+
+In a geometry project this is a useful control:
+not every number/measure is mystical.
+Often the point is simply calibrated fairness.
+
+---
+
+# Proverbs 16 — “lot” converts uncertainty into selected outcome
+
+The lot:
+→ cast into lap
+→ decision attributed to YHWH.
+
+This resembles Esther's **pur** structurally:
+
+**multiple possible outcomes**
+→ random/ritual sorting event
+→ one state selected.
+
+But Proverbs treats the resulting selection as under divine ordering.
+
+This should be cross-indexed with:
+- Esther date-selection;
+- land-allotment lots;
+- Matthias later in Acts.
+
+---
+
+# Proverbs 17–18 — the heart is a deep hidden reservoir requiring extraction
+
+Proverbs 18:4:
+human words
+→ deep waters;
+fountain of wisdom
+→ rushing stream.
+
+Proverbs 20:5 later makes the model clearer:
+purpose/counsel in human heart
+→ **deep water**
+→ person of understanding **draws it out**.
+
+This is a strong body/well analogy.
+
+The inner person is:
+**deep reservoir**.
+
+Understanding is:
+**extraction technology/operator**.
+
+---
+
+# Proverbs 18 — speech directly controls life/death state
+
+“Death and life are in the power of the tongue.”
+
+This is one of the strongest speech-as-operator lines in Scripture.
+
+Unlike Psalm 29:
+the effect is social/ethical, not storm physics.
+
+Still:
+
+**one small body-part/output channel**
+→ two opposite terminal states.
+
+That is a clear P2 switch.
+
+---
+
+# Tongue as two-state operator
+
+### output A
+life.
+
+### output B
+death.
+
+Same interface.
+
+This closely parallels:
+- Wisdom/Folly identical invitations;
+- gate routes with different destinations;
+- Psalm word/voice operators.
+
+The Bible-wide theme is becoming:
+**small signals can control large state outcomes**.
+
+---
+
+# Proverbs 18 — fortified city / barred gate models relationship rupture
+
+A wronged sibling is:
+→ harder to win than strong city;
+quarrels
+→ like barred gates/castle bars.
+
+This is another relational-topology projection onto fortification.
+
+The relationship is not physically a city.
+
+But:
+**social access closes like a gate**.
+
+This strengthens the interpretation of gate imagery as functional adjacency.
+
+---
+
+# Proverbs 19–21 — paths continue to be defined by state, not only geography
+
+Examples across these chapters:
+
+- integrity preserves route;
+- laziness creates blocked life;
+- crooked path reveals internal crookedness;
+- justice produces life;
+- pursuit of violence returns on actor;
+- traps formed by speech catch the speaker.
+
+The short sayings repeatedly use:
+**action → route-state → return effect**.
+
+This is almost a distributed set of micro feedback loops.
+
+---
+
+# Proverbs 20 — deep-water heart extraction deserves its own process entry
+
+Proverbs 20:5:
+
+**plan/purpose in heart**
+→ deep water.
+
+**person of understanding**
+→ draws it out.
+
+This is a true:
+**hidden depth → extraction → surface knowledge**
+sequence.
+
+Compare:
+- Job 28 mining hidden things;
+- wells;
+- Tobit hidden identity;
+- Daniel ash test.
+
+Difference:
+the “deep” is psychological.
+
+Again the text projects:
+**information depth**
+onto
+**physical water depth**.
+
+---
+
+# Proverbs 20 — lamp searches inner chambers
+
+Proverbs 20:27:
+
+human spirit/breath
+→ lamp of YHWH
+→ searches innermost parts.
+
+This creates:
+
+**internal light source**
+→ probes hidden body/interior chambers.
+
+It is an almost diagnostic scan image.
+
+But the source meaning is moral self/ divine scrutiny.
+
+---
+
+# Proverbs 21 — king's heart is a controlled water channel
+
+Proverbs 21:1:
+
+**king's heart**
+→ stream/channel of water
+in YHWH's hand
+→ turned wherever desired.
+
+This is a very high-value body/water/operator metaphor.
+
+It joins:
+- central political operator (king);
+- internal decision-centre (heart);
+- water flow;
+- upper directing hand.
+
+Process:
+
+**higher hand**
+→ controls
+**water-channel heart**
+→ changes
+**king's direction**
+→ affects outer social field.
+
+This is one of the best multiscale operator analogies in Messale.
+
+---
+
+# Proverbs 21:1 / Vardath comparison
+
+Possible mapping:
+
+upper controller
+→ flow channel
+→ central human operator
+→ world/social outputs.
+
+Strength:
+strong process analogue.
+
+Mismatch:
+explicitly political-theological metaphor,
+not literal hydraulic brain/cosmos mechanism.
+
+---
+
+# Proverbs 22 — boundary stones return as inherited topology
+
+“Do not move ancient boundary stone.”
+
+This is a concrete topological rule.
+
+Land remains land.
+
+But changing marker:
+→ changes ownership/relation.
+
+This remains one of the cleanest ordinary examples of:
+**topology/state can change by moving information-bearing boundary rather than physical terrain**.
+
+---
+
+# Proverbs 22–24 — “Words of the Wise” and Amenemope are an essential dependence control
+
+Proverbs 22:17–24:22 has long been compared with the Egyptian **Instruction of Amenemope**.
+
+Modern scholarship broadly recognizes a significant literary relationship/influence, especially in material around:
+**22:17–23:11**.
+
+Michael V. Fox argues directly for Proverbs' dependence on/adaptation of Amenemope.
+
+Other scholars have debated:
+- exact extent;
+- direct versus indirect influence;
+- common-source possibilities;
+- how many individual parallels are secure.
+
+The safest current conclusion:
+
+> The Words of the Wise participate in an international ancient Near Eastern wisdom network, and some Proverbs material was likely adapted from Egyptian instruction rather than generated in isolation.
+
+---
+
+# This dependence does not erase the Proverbs geometry — it locates its transmission route
+
+For the current project, this is crucial.
+
+If a saying resembles Vardath geometry but was adapted from Amenemope,
+then it is not an independent Israelite witness.
+
+It belongs to:
+**shared literary ancestry / transmission**.
+
+That lowers independence as corroboration
+but increases information about:
+**how motifs travel between cultures**.
+
+Exactly the same control was required for:
+- Psalms and Canaanite storm imagery;
+- Esther textual recensions;
+- Daniel additions.
+
+---
+
+# “Thirty sayings” is textually debated
+
+Proverbs 22:20 contains a difficult Hebrew expression.
+
+A famous emendation reads:
+**“thirty sayings”**
+and connects it with Amenemope's **thirty chapters**.
+
+Some translations adopt this.
+
+But:
+- Hebrew textual details are difficult;
+- proposed thirty-saying divisions vary;
+- scholars do not all identify the same thirty units.
+
+Therefore:
+do not use “30” as a secure hidden number pattern without noting the textual reconstruction.
+
+---
+
+# Amenemope / Proverbs — strongest structural relevance to this project
+
+The most important result is not a number.
+
+It is:
+
+**foreign text/tradition**
+→ selected sayings
+→ reordered/adapted
+→ theological framing changes
+→ sayings enter new canonical system.
+
+This is a real **information transformation across cultures**.
+
+The process itself mirrors the project's universal-phonetic/myth comparison work:
+stories/structures can persist while names/context change.
+
+But literary transmission is also the strongest conventional explanation for some cross-cultural similarities.
+
+---
+
+# Proverbs 23 — appetite/body boundaries become state-control problems
+
+The chapter repeatedly deals with:
+- table/ruler;
+- appetite;
+- wealth that “flies away” with wings;
+- alcohol affecting perception;
+- heart/eyes.
+
+These are mostly self-control metaphors.
+
+No new world-axis mechanism emerges.
+
+---
+
+# Proverbs 23 — wealth grows wings and leaves
+
+Riches:
+→ sprout wings like eagle
+→ fly toward heaven.
+
+This is a vivid upward transfer image.
+
+But:
+ordinary poetic warning about unstable wealth.
+
+Do not confuse with ascension.
+
+Useful only as:
+**possession → detachment → upward disappearance**.
+
+---
+
+# Proverbs 24 — Wisdom builds and establishes a house
+
+Proverbs 24:3–4:
+
+**by Wisdom**
+→ house built.
+
+**by understanding**
+→ established.
+
+**by knowledge**
+→ rooms filled.
+
+This directly echoes:
+- Wisdom's seven-pillar house in Proverbs 9;
+- cosmic world-building in Proverbs 3/8.
+
+So:
+**house-building**
+is another scale at which Wisdom manifests ordering.
+
+---
+
+# House / world analogy is now internally supported
+
+Within Messale:
+
+### Wisdom orders
+earth/heavens/deep.
+
+### Wisdom builds
+house.
+
+Thus the book itself permits:
+**house ↔ world**
+structural analogy at the level of ordered construction.
+
+This is highly relevant to:
+- temple/cosmos;
+- body/house;
+- world-support comparisons.
+
+Still:
+analogy ≠ literal identity.
+
+---
+
+# Proverbs 24 — Wisdom at city gate controls public speech competence
+
+“Wisdom is too high for fools;
+at the gate they do not open their mouths.”
+
+The gate here is:
+**public decision/judgment space**.
+
+Thus Wisdom's earlier gate-broadcast role develops into:
+**qualification for speaking at gate**.
+
+Information access and civic authority converge.
+
+---
+
+# Proverbs 24 — seven falls / seven rises is a resilience statement, not a seven-world cycle
+
+The righteous:
+→ falls **seven times**
+→ rises again.
+
+Wicked:
+→ overthrown by calamity.
+
+This is highly relevant to reset/resilience.
+
+But “seven” here is conventionally read as:
+**completeness/repeatedly**.
+
+It should not be mapped automatically to:
+seven world layers.
+
+The strong process is:
+**repeated failure does not terminate the stable identity**.
+
+---
+
+# Proverbs 24 — neglected field shows boundary decay
+
+The observer passes:
+
+field/vineyard
+→ thorns/nettles
+→ **stone wall broken down**.
+
+Then:
+sleep/slumber
+→ poverty arrives like robber/armed man.
+
+This is a superb small-scale entropy/maintenance sequence.
+
+Process:
+
+**operator inaction**
+→ vegetation disorder
+→ boundary failure
+→ resource loss
+→ hostile penetration metaphor.
+
+---
+
+# Ordered Wisdom-house versus neglected broken-wall field
+
+Proverbs 24 itself therefore contains a strong polarity:
+
+### ordered
+Wisdom
+→ house built
+→ established
+→ rooms filled.
+
+### disordered
+sloth
+→ field overgrown
+→ wall broken
+→ poverty invades.
+
+This is a direct:
+**maintenance/order ↔ entropy/boundary failure**
+pair.
+
+That is one of the best control models in Messale.
+
+---
+
+# SECTION 46B Tree/Fountain network
+
+## Wisdom
+→ Tree of Life. (3:18)
+
+## righteous fruit
+→ Tree of Life. (11:30)
+
+## fulfilled desire
+→ Tree of Life. (13:12)
+
+## healing tongue
+→ Tree of Life. (15:4)
+
+Parallel fountain system:
+
+## righteous mouth
+→ fountain of life. (10:11)
+
+## wise teaching
+→ fountain of life. (13:14)
+
+## fear of YHWH
+→ fountain of life. (14:27)
+
+This is not accidental isolated imagery.
+
+It is a distributed **life-network**.
+
+---
+
+# Tree/Fountain network interpretation
+
+The book repeatedly transfers life-source functionality from:
+
+**cosmic/personified Wisdom**
+→ **human conduct**
+→ **speech**
+→ **teaching**
+→ **fulfilled state**
+→ **reverent orientation**.
+
+That is exactly a **function replicated across nodes**.
+
+The strongest Vardath analogy is:
+**the same ordering/life pattern can appear at multiple scales**.
+
+Do not reduce it to one literal tree or fountain.
+
+---
+
+# SECTION 46B speech operator matrix
+
+## righteous mouth
+fountain of life.
+
+## healing tongue
+Tree of Life.
+
+## tongue
+power of life/death.
+
+## speech
+can snare speaker.
+
+## honest answer
+social bond/“kiss.”
+
+The mouth/tongue is repeatedly:
+**a local control interface with nonlocal consequences**.
+
+This strengthens the Bible-wide “voice/word as operator” family.
+
+---
+
+# SECTION 46B geometry/pair matrix
+
+## life path / Sheol path
+Proverbs 15:24:
+**up**
+↔
+**below**.
+
+P2 extremely strong.
+
+---
+
+## fountain / snare
+teaching as life-flow
+↔
+death trap.
+
+P2 strong.
+
+---
+
+## built house / broken field-wall
+order/maintenance
+↔
+entropy/boundary failure.
+
+P2 strong.
+
+---
+
+## contained measure / false measure
+calibrated exchange
+↔
+systemic distortion.
+
+P2 strong.
+
+---
+
+## king's water-heart / directing hand
+carrier/operator relation.
+
+P7 strong as metaphor.
+
+---
+
+## falling/rising righteous / terminally overthrown wicked
+resilience
+↔
+collapse.
+
+P3/P2 strong.
+
+---
+
+# SECTION 46B continuous transformation timeline — Proverbs 10–24
+
+## Phase A — Wisdom leaves large personification and becomes distributed function
+
+Tree/Fountain functions
+→ appear in humans.
+
+---
+
+## Phase B — inner state travels outward through speech
+
+heart
+→ mouth/tongue
+→ social field.
+
+---
+
+## Phase C — speech becomes life/death switch
+
+healing/fountain
+↔
+violence/snare/death.
+
+---
+
+## Phase D — routes become vertically polarized
+
+life path
+→ upward.
+
+Sheol
+→ below.
+
+---
+
+## Phase E — hidden interior is treated as deep water
+
+heart/counsel
+→ deep reservoir.
+
+understanding
+→ draws out.
+
+---
+
+## Phase F — central ruler becomes flow-channel
+
+upper hand
+→ king-heart as water
+→ direction changes.
+
+---
+
+## Phase G — boundaries preserve topology
+
+ancient boundary stone
+→ must remain.
+
+---
+
+## Phase H — wisdom material crosses cultural boundary
+
+Amenemope/Egyptian instruction
+→ adapted/reordered
+→ Proverbs Words of Wise.
+
+---
+
+## Phase I — Wisdom builds local stable enclosure
+
+Wisdom
+→ house built/established/filled.
+
+---
+
+## Phase J — neglected enclosure decays
+
+inaction
+→ thorns
+→ stone wall breaks
+→ resource loss/poverty.
+
+---
+
+# What Section 46B adds to the master Bible/Vardath timeline
+
+1. **Messale distributes Tree-of-Life functionality through several human-scale nodes**, rather than preserving one isolated sacred tree.
+2. **Fountain-of-life imagery forms an equally clear distributed network.**
+3. Speech/teaching becomes a life-carrying flow medium.
+4. This is one of the clearest biblical examples of **information functioning like water**.
+5. **Proverbs 15:24 states upward life / downward Sheol polarity explicitly.**
+6. The line is strong literary verticality but does not identify future/past inhabited worlds.
+7. **The tongue is a two-state life/death operator**, a compact version of the larger voice/word control family.
+8. **Proverbs 20:5 maps hidden mental information to deep water that must be drawn out.**
+9. **Proverbs 21:1 maps the king's heart to a controllable watercourse under a higher hand**, a particularly strong operator/carrier metaphor.
+10. Boundary stones again show that changing a marker changes social topology without moving terrain.
+11. Honest weights/scales show that shared calibration, not mystical number, stabilizes exchange.
+12. **Amenemope provides a major dependence control:** some wisdom motifs traveled cross-culturally by literary adaptation.
+13. Therefore similarities across Egypt/Israel cannot all count as independent observations of one physical event.
+14. At the same time, literary transmission proves these process patterns were portable across cultures.
+15. **Proverbs 24 brings house/world/order imagery together:** Wisdom builds and stabilizes a filled house.
+16. Its broken-wall field gives the opposite: maintenance failure → boundary failure → loss.
+17. Seven falls/seven rises is a resilience pattern, not secure seven-world chronology.
+18. The strongest Messale contribution is a **multiscale life/order network**:
+    cosmic Wisdom
+    → Tree/Fountain
+    → speech/teaching
+    → paths
+    → house
+    → civic/political order.
+19. No counter-wound lattice/finger-trap mechanism appears.
+20. Messale / Ethiopian Proverbs 1–24 is now complete.
+
+---
+
+# Section 46B number / textual register
+
+- “seven times” falling/rising:
+  resilience/completeness expression; not secure literal cycle count.
+- “thirty sayings” in Proverbs 22:20:
+  textually debated/emended reading;
+  possible relationship to Amenemope's thirty chapters;
+  not a safe numerological datum.
+- Proverbs 10–24 contains multiple anthology boundaries:
+  - 10:1 Solomonic sayings;
+  - 22:17 Words of Wise;
+  - 24:23 further sayings of Wise.
+- These internal collection boundaries matter more than modern verse numbering for source history.
+
+---
+
+# Section 46B literary / historical controls
+
+- Compact proverbs often use antithetical parallelism and should not automatically be assembled into one continuous narrative.
+- Tree of Life / fountain language is intentionally reusable metaphorical function.
+- “Death and life in tongue” is social/ethical causation, not literal energy emission.
+- “Path upward / Sheol below” is ancient vertical cosmographic/moral language.
+- Amenemope influence/dependence is widely accepted in modern scholarship for substantial material beginning around Proverbs 22:17, though exact extent and mechanism remain debated.
+- Michael V. Fox argues for direct/adaptive use of Amenemope.
+- Other scholars have proposed common source or more limited influence.
+- Similar ancient wisdom sayings can also arise from shared social experience; dependence must be shown rather than assumed for every parallel.
+- The Ethiopic Proverbs text retains LXX structural influence and deep Hebraic features, so chapter/order comparison needs version control.
+
+### Sources logged for Section 46B
+
+Primary:
+- Proverbs 10 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Proverbs+10&version=NRSVUE
+- Proverbs 15 NRSVUE:
+  https://www.bible.com/bible/3523/PRO.15.NRSVUE
+- Proverbs 24 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Proverbs+24&version=NRSVUE
+- standard NRSVUE text checks across Proverbs 10–24.
+
+Tree/Fountain:
+- modern study **“The Tree of Life in the Book of Proverbs”**, for the four Proverbs Tree-of-Life uses and their literary contexts.
+- water-metaphor scholarship on Proverbs 10:11; 11:25; 13:14; 14:27; 18:4; 20:5, emphasizing wisdom/teaching as life-giving water.
+
+Amenemope:
+- Michael V. Fox, **“From Amenemope to Proverbs,” Zeitschrift für die alttestamentliche Wissenschaft** 126 (2014).
+- Nili Shupak, **“The Instruction of Amenemope and Proverbs 22:17–24:22 from the Perspective of Contemporary Research.”**
+- R. N. Whybray and J. A. Emerton retained as important debate/control voices concerning extent and exact nature of dependence.
+- Nicholas Widdows, work on pedagogy in Proverbs and Amenemope influence.
+
+---
+
+# SECTION 46B COMPLETE — Messale / Proverbs 10–24
+
+## ETHIOPIAN BOOK 24 — MESSALE / PROVERBS 1–24 COMPLETE
+
+### Integrated Messale process
+
+**listener at fork**
+→ competing voices
+→ Wisdom internalized
+→ Tree/Fountain life-network
+→ cosmic boundary/order
+→ information enters heart
+→ speech distributes life/death effects
+→ path moves upward/downward
+→ household/civic boundaries stabilize or fail
+→ Wisdom builds established house
+→ neglected field/wall decays.
+
+### Next research block
+
+**SECTION 46C — Tegsats / Reproof / Proverbs 25–31**
+(Ethiopian canonical book 25)
+
+Priority:
+- 25:1 Hezekiah's men copying Solomon's sayings — explicit transmission/compilation;
+- glory of God concealing / kings searching out;
+- heavens height / earth depth / king-heart unsearchable;
+- silver dross → vessel purification;
+- word fitly spoken / messenger/cold water;
+- enemy food/water reversal;
+- city without walls = person without self-control;
+- repeated fool/animal return cycles;
+- sluggard door/hinge geometry;
+- deep pit;
+- numerical sayings in chapter 30;
+- four small/wise creatures and movement;
+- Agur up-to-heaven / down questions;
+- Lemuel and maternal instruction;
+- Woman of Strength / Proverbs 31 as possible human counterpart to Woman Wisdom;
+- close the Ethiopian Proverbs/Tegsats pair with an integrated Wisdom/Folly / house/tree/path timeline.
