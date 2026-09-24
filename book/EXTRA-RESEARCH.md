@@ -78002,3 +78002,1397 @@ Carry forward especially from Section 36:
 - protective systems can fail at the seam between otherwise strong components;
 - centre death can immediately disperse the surrounding field.
 
+
+
+---
+
+# SECTION 36 progress C — 1 Kings 20–22
+## Siege demand escalates from tribute to invasive search, hills/valleys become competing spatial models, defeated hostile centre enters victor's chariot, fixed ancestral land resists royal absorption, false witnesses remove the owner, one dissenting prophet opposes a synchronized court field, disguise fails to protect the true target, and a chance arrow finds the armour gap
+
+---
+
+# 1 Kings 20 — siege begins as demand for total access to the centre's contents
+
+Ben-hadad surrounds Samaria with:
+- army;
+- horses/chariots;
+- allied kings.
+
+The first demand is:
+**your silver/gold/wives/children are mine**.
+
+Ahab initially submits verbally.
+
+Then the second demand intensifies:
+**servants will enter tomorrow**
+→ **search your house and servants' houses**
+→ **take whatever is pleasing**.
+
+This is a crucial change.
+
+First demand:
+**declared transfer of specified categories**.
+
+Second demand:
+**unrestricted penetration + inspection + seizure**.
+
+The elders advise refusal.
+
+So the breaking point is not simply material loss.
+It is **loss of boundary sovereignty**.
+
+---
+
+# Centre tolerates tribute more than invasive search
+
+Ahab is willing to say:
+**I and all I have are yours**.
+
+But he refuses:
+**your agents may enter every house and personally select whatever they want**.
+
+Process:
+**external pressure**
+→ negotiable tribute state
+→ escalates into boundary-penetration state
+→ centre refuses
+→ battle activates.
+
+This is a useful distinction:
+**resource transfer and access-control are different variables**.
+
+---
+
+# Small forward group exits a heavily surrounded city
+
+A prophet promises victory through:
+**young men of provincial officials**.
+
+The force:
+- 232 young men;
+- followed by 7,000.
+
+They go **out from Samaria** at noon.
+
+Ben-hadad's larger field is encamped around the city.
+
+So:
+**small contained force**
+→ crosses outward through siege boundary
+→ attacks surrounding field.
+
+This is a centre-out breach.
+
+---
+
+# The besieger's information model prevents him from classifying the sortie correctly
+
+Ben-hadad is told:
+**men are coming out from Samaria**.
+
+He orders:
+whether peace or war,
+**take them alive**.
+
+So he refuses to distinguish between two possible states:
+- negotiation;
+- attack.
+
+The same response is assigned to both.
+
+This collapses necessary state discrimination.
+
+Result:
+the smaller force strikes,
+Arameans flee,
+Ben-hadad escapes.
+
+This is a strong counterpart to Solomon's wisdom:
+**correct discrimination preserves control; failure to distinguish states can destroy it**.
+
+---
+
+# First victory does not end the field; the prophet predicts recurrence at the annual boundary
+
+The prophet warns:
+**at the return of the year**
+Aram will come again.
+
+So the battle is:
+**one cycle**
+inside
+**a larger repeating seasonal/annual field**.
+
+The centre is told to strengthen itself during the interval.
+
+This is another example:
+**local victory ≠ system resolution**.
+
+---
+
+# Aramean advisers reinterpret the first defeat spatially
+
+They reason:
+**Israel's God is a god of hills**
+therefore
+**fight in the plain/valley**.
+
+This is a direct attempt to model power as **geographically bounded**.
+
+Their theory is:
+
+**source effective in elevation**
+but
+**ineffective in low/open terrain**.
+
+So the rematch deliberately changes only one major geometric variable:
+**battlefield elevation/topography**.
+
+---
+
+# Same opponents, different terrain, expected opposite result
+
+The proposed experiment is:
+- replace kings with governors;
+- rebuild equivalent army;
+- horse for horse;
+- chariot for chariot;
+- fight on plain.
+
+This is a controlled variable logic inside the narrative:
+
+**force approximately restored**
+while
+**terrain changed**.
+
+They expect:
+**hill loss → valley victory**.
+
+The story then rejects that model.
+
+---
+
+# Tiny Israelite field versus land-filling Aramean field
+
+Israel is described:
+**like two little flocks of goats**.
+
+Arameans:
+**fill the country**.
+
+So the geometry is:
+**two tiny separated clusters**
+versus
+**one vast field occupying visual space**.
+
+The contrast is intentionally extreme.
+
+---
+
+# Two opposed fields remain facing each other seven days before contact
+
+They camp:
+**one opposite the other**
+for **seven days**.
+
+Then battle begins on the seventh.
+
+Thus:
+**potential energy / opposed alignment**
+is maintained before release.
+
+The number seven is explicit,
+but should remain literary/timing data.
+
+---
+
+# Retreating field re-enters an enclosure, then the enclosure itself fails
+
+Survivors flee to:
+**Aphek city**.
+
+Then:
+**wall falls** on 27,000 in the narrative.
+
+Process:
+
+**open-field defeat**
+→ remnant seeks fixed enclosure
+→ enclosure becomes fatal rather than protective.
+
+This repeats the major rule already established:
+**walls/cities can invert between refuge and trap**.
+
+The enormous casualty figure and historicity of the episode are debated.
+Do not use it numerologically.
+
+---
+
+# Ben-hadad retreats deeper into nested enclosure
+
+Ben-hadad:
+- flees into city;
+- then into **inner chamber**.
+
+So the defeated hostile centre moves:
+
+**field**
+→ city
+→ inner room.
+
+This is the same nested retreat pattern seen elsewhere:
+threat increases
+→ centre moves deeper inward.
+
+---
+
+# Sackcloth/ropes change the hostile field's visible state from kingly aggression to supplication
+
+Ben-hadad's servants:
+- wear sackcloth at loins;
+- ropes on heads;
+- approach Ahab;
+- request life.
+
+The prior relationship:
+**besieger → victor**.
+
+Now:
+**supplicant → mercy-seeker**.
+
+Visible outer state is deliberately changed to alter how the receiving centre responds.
+
+Again:
+**projection/interface changes coupling**.
+
+---
+
+# One phrase from Ahab is seized as a state-opening signal
+
+Ahab asks:
+**is he alive? he is my brother**.
+
+The servants immediately seize the wording as favorable.
+
+They repeat:
+**your brother Ben-hadad**.
+
+This is a very clear information event:
+
+**ambiguous/hopeful phrase from centre**
+→ receivers detect it as opening
+→ amplify/repeat it
+→ move interaction into mercy/covenant branch.
+
+---
+
+# Defeated hostile centre is raised into victor's chariot
+
+Ben-hadad comes out.
+
+Ahab:
+**brings him up into the chariot**.
+
+This is symbolically strong:
+the enemy king moves from
+**inner hiding chamber**
+→ **up into Ahab's mobile royal platform**.
+
+The two centres become physically co-located.
+
+This is a temporary **centre-centre coupling** after battle.
+
+---
+
+# Captured centre is released through treaty rather than destroyed
+
+Ben-hadad promises:
+- return cities;
+- grant market/streets rights in Damascus.
+
+Ahab makes covenant and releases him.
+
+So:
+**military victory**
+→ **hostile centre captured**
+→ **economic/political exchange**
+→ **centre released**.
+
+The narrative then problematizes this decision through the wounded-prophet story.
+
+---
+
+# A disguised wounded prophet constructs another self-judgment trap
+
+A prophet:
+- has himself wounded;
+- covers/disguises eyes;
+- waits by road;
+- presents a story to Ahab.
+
+The case:
+**a prisoner was entrusted to me**
+→ I was busy
+→ prisoner escaped
+→ life-for-life or monetary penalty.
+
+Ahab rules:
+**your judgment stands; you decided it yourself**.
+
+Then the prophet removes disguise and maps the case onto Ahab.
+
+This directly parallels:
+- Nathan with David;
+- Tekoa woman with David.
+
+Again:
+**centre judges abstracted case**
+→ model maps back onto centre
+→ self-judgment becomes unavoidable.
+
+---
+
+# Same king is merciful to hostile centre but harsh to disguised ordinary petitioner
+
+Modern scholarship has highlighted the contrast:
+
+Ahab shows mercy to Ben-hadad,
+whose release brings political/economic benefit.
+
+But in the parable,
+he refuses mercy to the apparent soldier.
+
+This may reveal:
+**selective mercy conditioned by advantage**.
+
+That is an ethical/political interpretation,
+not a geometry claim,
+but it matters for how the chapter's final state is understood.
+
+---
+
+# 1 Kings 21 — ancestral land refuses absorption into expanding royal centre
+
+Naboth's vineyard lies:
+**beside Ahab's palace at Jezreel**.
+
+Ahab wants it because it is spatially convenient:
+**near my house**.
+
+He wants to convert:
+**ancestral vineyard**
+→ **royal vegetable garden**.
+
+This is a direct centre-expansion attempt.
+
+The palace seeks to absorb adjacent land into its own functional field.
+
+---
+
+# Naboth refuses both substitution and money because the land is not treated as ordinary exchangeable property
+
+Ahab offers:
+- better vineyard;
+or
+- money.
+
+Naboth refuses because:
+**inheritance of fathers**.
+
+So the two models are:
+
+Ahab:
+**land = transferable asset with equivalent replacement/value**.
+
+Naboth:
+**land = lineage-bound inherited node not reducible to exchange price**.
+
+The conflict is therefore not just about value.
+It is about **whether the node can be detached from ancestral network at all**.
+
+---
+
+# Fixed ancestral attachment blocks royal geometric expansion
+
+This is highly relevant to the timeline.
+
+The royal centre wants:
+**adjacent-space consolidation**.
+
+The inherited land relation says:
+**this boundary is not open for transfer**.
+
+So the vineyard functions as:
+**small fixed node resisting absorption by larger neighbouring centre**.
+
+---
+
+# Ahab collapses inward when direct acquisition fails
+
+He returns home:
+- sullen;
+- lies on bed;
+- turns face away;
+- refuses food.
+
+This repeats his chapter-20 “sullen” state.
+
+The royal centre responds to a blocked transfer by:
+**withdrawal into private enclosure and suspended normal intake**.
+
+---
+
+# Jezebel converts royal identity into remote written force
+
+She writes:
+- in Ahab's name;
+- seals with his seal;
+- sends letters to Naboth's local elders/nobles.
+
+Thus:
+
+**king's name + seal**
+→ transported on letters
+→ local authorities act as though royal centre is present.
+
+This is an important distributed-command mechanism:
+**identity token carries centre authority remotely**.
+
+---
+
+# False witnesses create a fabricated public reality
+
+The instructions:
+- proclaim fast;
+- place Naboth prominently;
+- place **two witnesses** opposite him;
+- accuse him of cursing God and king.
+
+The community then executes the prescribed judgment.
+
+So:
+
+**false information**
+→ duplicated through two witnesses
+→ gains legal/social credibility
+→ produces real physical death.
+
+This is one of the strongest examples of:
+**false representation producing true material consequences**.
+
+---
+
+# Naboth is moved outside the city before execution
+
+He is:
+**carried out**
+→ stoned.
+
+Again:
+**city interior**
+→ expulsion beyond boundary
+→ death.
+
+This repeats a recurring judicial pattern:
+death occurs after target is moved outside the communal enclosure.
+
+---
+
+# Only after owner removal does the centre move downward to possess the land
+
+Jezebel tells Ahab:
+**Naboth is dead**.
+
+Ahab:
+- rises;
+- goes **down** to vineyard;
+- takes possession.
+
+The sequence is:
+**boundary refusal**
+→ owner removed
+→ centre expands into formerly blocked node.
+
+This is a dark version of:
+**support/occupant removal enables territorial recoupling**.
+
+---
+
+# Elijah intercepts exactly at the possession point
+
+Elijah is sent:
+**go down**
+and meet Ahab
+**in Naboth's vineyard**
+where he has gone to possess it.
+
+So the royal centre is confronted:
+**at the newly acquired node**.
+
+The geometry is morally precise:
+judgment arrives where the transfer has just completed.
+
+---
+
+# Ahab again tears clothing after information changes his state
+
+After Elijah's judgment:
+- Ahab tears clothes;
+- sackcloth;
+- fasts;
+- walks softly.
+
+Garment tearing here is not political partition.
+
+It is mourning/humiliation.
+
+This is another reminder:
+**tear motif has multiple functions**.
+
+Context decides:
+- kingdom transfer;
+- grief;
+- repentance;
+- catastrophe.
+
+---
+
+# 1 Kings 22 — after three years of quiet, two southern/northern centres temporarily align against Aram
+
+Ahab and Jehoshaphat sit together.
+
+Jehoshaphat says:
+**I am as you are; my people as your people; my horses as your horses**.
+
+This is a deliberate temporary recoupling of the divided monarchies.
+
+The prior tear is not undone,
+but a **joint military field** forms.
+
+Thus:
+**politically separate systems**
+can temporarily form
+**one operational coalition**.
+
+---
+
+# Four hundred prophets produce one synchronized answer
+
+Ahab gathers about **400 prophets**.
+
+They say:
+**go up and prosper**.
+
+The messenger later tells Micaiah:
+their words are:
+**with one mouth**.
+
+This is an important information geometry:
+**many mouths**
+→ **one identical signal**.
+
+High agreement exists.
+
+But the narrative raises the question:
+**does consensus equal truth?**
+
+---
+
+# Jehoshaphat requests an additional independent channel
+
+Despite the 400,
+he asks:
+**is there not another prophet?**
+
+So:
+**large synchronized field**
+is not treated as sufficient evidence.
+
+An independent channel is sought.
+
+This is methodologically important for our own work:
+**source multiplicity is not source independence if all channels share one court/system**.
+
+---
+
+# Micaiah is pressured to match the consensus before he arrives
+
+The messenger tells him:
+**make your word like theirs**.
+
+So the information environment actively attempts to force:
+**outlier channel → consensus state**.
+
+Micaiah refuses that constraint.
+
+The case is therefore about:
+**institutional pressure toward information uniformity**.
+
+---
+
+# Two kings sit at a gate/threshing-floor interface while the information fields compete
+
+Ahab and Jehoshaphat sit:
+- each on throne;
+- in robes;
+- at threshing floor;
+- entrance of Samaria gate.
+
+This is another combined:
+**gate + threshing floor + royal centre** scene.
+
+The competing prophetic fields operate before them there.
+
+The location is a liminal/public decision node:
+**city boundary**
++
+**processing floor**
++
+**royal judgment platform**.
+
+---
+
+# Iron horns turn verbal prediction into physical model
+
+Zedekiah makes:
+**horns of iron**.
+
+He acts out:
+**with these you will gore Aram**.
+
+So the majority side has:
+- verbal consensus;
+- enacted object-symbol.
+
+This is another **future geometry made material before battle**.
+
+But the outcome will show the model is wrong.
+
+Thus:
+**symbolic enactment itself does not guarantee truth**.
+
+---
+
+# Micaiah first mirrors the consensus, then reveals the opposite field-state
+
+After being pressed,
+Micaiah initially repeats:
+**go up and prosper**.
+
+Ahab recognizes the tone/issue and demands truth.
+
+Then Micaiah describes:
+**all Israel scattered on mountains**
+like
+**sheep without shepherd**.
+
+The future picture is:
+
+**one field with centre**
+→ centre removed
+→ field disperses across terrain
+→ each returns home.
+
+This is a direct **centre-loss → field-scatter** simulation.
+
+---
+
+# Heavenly council mirrors the earthly court structurally
+
+Micaiah's vision shows:
+- YHWH on throne;
+- host of heaven on right and left;
+- multiple proposals;
+- one spirit offers a plan.
+
+This mirrors the earthly scene:
+- kings on thrones;
+- prophets around;
+- competing counsel.
+
+The narrative creates a **court-within-court / above-below governance reflection**.
+
+Interpretations of the lying spirit are heavily debated.
+Do not flatten this into a simple metaphysical mechanism.
+
+---
+
+# One plan is selected from multiple proposed routes
+
+The heavenly council asks:
+**who will entice Ahab?**
+
+One says one way,
+another another.
+
+Then one spirit proposes:
+**be a lying spirit in mouths of prophets**.
+
+The plan is accepted.
+
+So even in the vision:
+**multiple future routes**
+→ deliberation
+→ one route selected
+→ information field below is shaped.
+
+This strongly parallels:
+- Rehoboam's advisers;
+- Ahithophel/Hushai;
+- court prophecy here.
+
+Kings repeatedly represents history as emerging through **competing future models**.
+
+---
+
+# Micaiah makes his prediction falsifiable by the king's return state
+
+Ahab orders:
+- imprison Micaiah;
+- limited bread/water;
+- hold him until king returns in peace.
+
+Micaiah answers:
+**if you return in peace, YHWH has not spoken by me**.
+
+So the competing prophecy is tied to an observable future test.
+
+This is one of the clearest internal verification rules in the Bible narratives:
+**future outcome adjudicates rival claims**.
+
+---
+
+# Ahab attempts to decouple royal identity from visible battlefield position
+
+At battle:
+Ahab disguises himself.
+
+Jehoshaphat remains in royal robes.
+
+So:
+**true king**
+→ ordinary/hidden visual state.
+
+**other king**
+→ visible royal state.
+
+This intentionally separates:
+**underlying identity**
+from
+**surface target marker**.
+
+It is a battlefield version of earlier disguise episodes.
+
+---
+
+# Aramean targeting algorithm seeks one centre only
+
+Aramean chariot captains are ordered:
+**fight neither small nor great**
+→ **only king of Israel**.
+
+This is a centre-targeting strategy,
+almost identical in principle to Ahithophel's proposed David strike:
+
+**remove central node**
+rather than
+**fight every field component**.
+
+---
+
+# Visible royal marker temporarily misroutes the targeting field
+
+Captains see Jehoshaphat's robes.
+
+They conclude:
+**this is Israel's king**.
+
+They turn toward him.
+
+He cries out.
+
+They recognize misclassification and stop pursuit.
+
+So:
+**surface marker**
+→ wrong identity inference
+→ field redirects
+→ corrected information
+→ field redirects again.
+
+This is an exceptionally clean:
+**classification error → route error → correction**
+sequence.
+
+---
+
+# Disguise protects against recognition but not against undirected probability
+
+A man draws bow:
+**at random / without specific target**.
+
+The arrow hits Ahab:
+**between armour sections/joint**.
+
+So Ahab successfully reduces:
+**targeted recognition risk**.
+
+But he cannot eliminate:
+**untargeted field risk**.
+
+This is a major process rule:
+**hiding identity can defeat directed targeting while leaving stochastic/environmental exposure intact**.
+
+---
+
+# The projectile finds a boundary discontinuity in armour
+
+The arrow enters:
+**between armour pieces/joints**.
+
+This is a precise boundary-penetration image:
+
+**protective shell**
+→ small interface/gap
+→ projectile passes through
+→ centre critically wounded.
+
+The system does not fail at its strongest surface.
+It fails at a **connection between protective layers**.
+
+That is highly relevant to the user's geometry:
+**interfaces/joints can be more vulnerable than bulk structure**.
+
+---
+
+# Ahab is mechanically held upright after functional death-state has begun
+
+He tells chariot driver to remove him.
+
+But battle intensifies.
+
+The king is:
+**propped/held upright in chariot**
+against Aram.
+
+Blood:
+- drains into chariot.
+
+He remains visually present through day,
+then dies at evening.
+
+So:
+**biological centre critically failing**
+while
+**external posture/field-presence artificially maintained**.
+
+This is another:
+**form persists temporarily after function is collapsing**.
+
+---
+
+# At sunset, death information dissolves the field
+
+A cry goes through army:
+**every man to his city/country**.
+
+Thus:
+**centre dies**
+→ field receives information
+→ coalition/army disperses.
+
+This directly fulfills Micaiah's:
+**sheep without shepherd → each returns home**.
+
+The future simulation becomes material geometry.
+
+---
+
+# Chariot washing returns blood to public water interface
+
+Ahab's chariot is washed by pool of Samaria.
+
+Dogs lick blood.
+
+The king's royal mobile platform becomes:
+**death residue carrier**
+→ cleaned at public water node.
+
+This closes the chapter with another:
+**centre / vehicle / blood / water**
+transition.
+
+Do not over-symbolize it physically;
+the narrative explicitly links it to prior judgment language.
+
+---
+
+# SECTION 36C continuous geometry/effect timeline — 1 Kings 20–22
+
+## Phase LM — siege demand escalates from transfer to penetration
+
+tribute request
+→ unrestricted household search/seizure demand.
+
+**Effect:** boundary sovereignty, not only resource amount, becomes the breaking point.
+
+---
+
+## Phase LN — small contained force breaks outward through siege field
+
+232 + 7,000
+→ exit Samaria
+→ surrounding Aramean field collapses.
+
+**Effect:** small centre-contained branch can rupture larger encircling field.
+
+---
+
+## Phase LO — failure to distinguish peace/war state produces tactical error
+
+Ben-hadad gives same capture order for both possibilities.
+
+**Effect:** collapsed classification leads to bad response.
+
+---
+
+## Phase LP — enemy rebuilds same force but changes terrain variable
+
+hill defeat
+→ plain rematch.
+
+**Effect:** opponent explicitly models power as geometry-dependent.
+
+---
+
+## Phase LQ — two tiny clusters face one land-filling field
+
+Israel like two small flocks
+versus
+Aram filling country.
+
+**Effect:** visual scale difference does not determine outcome in narrative.
+
+---
+
+## Phase LR — refuge wall becomes trap
+
+Aramean remnant
+→ city
+→ wall collapse.
+
+**Effect:** enclosure reverses from shelter to lethal boundary.
+
+---
+
+## Phase LS — hostile centre retreats through nested depth
+
+field
+→ city
+→ inner chamber.
+
+**Effect:** pressure drives centre progressively inward.
+
+---
+
+## Phase LT — defeated centre changes visible state and enters victor's chariot
+
+sackcloth/ropes
+→ mercy request
+→ Ben-hadad brought up into Ahab's chariot.
+
+**Effect:** formerly opposed centres temporarily co-locate.
+
+---
+
+## Phase LU — captured centre is released through covenant/economic exchange
+
+cities/streets promised
+→ hostile king released.
+
+**Effect:** military capture converts into negotiated network relation instead of destruction.
+
+---
+
+## Phase LV — disguised model causes king to judge himself
+
+wounded prophet's story
+→ Ahab pronounces judgment
+→ disguise removed
+→ judgment mapped onto king.
+
+**Effect:** indirect representation exposes centre's own rule.
+
+---
+
+## Phase LW — adjacent ancestral node blocks palace expansion
+
+Naboth vineyard beside palace
+→ Ahab attempts acquisition
+→ inheritance relation refuses transfer.
+
+**Effect:** small fixed lineage node resists absorption by larger centre.
+
+---
+
+## Phase LX — royal identity token propagates command remotely
+
+Jezebel uses Ahab's name + seal
+→ local elders enact instructions.
+
+**Effect:** centre authority can travel through authenticated symbolic carrier.
+
+---
+
+## Phase LY — duplicated false testimony creates real material consequence
+
+two false witnesses
+→ public legal state changes
+→ Naboth expelled/killed.
+
+**Effect:** false representation can produce true physical outcomes.
+
+---
+
+## Phase LZ — owner removal opens blocked territorial transfer
+
+Naboth dead
+→ Ahab goes down
+→ takes vineyard.
+
+**Effect:** occupation state changes only after previous holder is removed.
+
+---
+
+## Phase MA — judgment intercepts centre at newly acquired node
+
+Elijah meets Ahab in vineyard.
+
+**Effect:** consequence/information arrives at exact point of completed transfer.
+
+---
+
+## Phase MB — separated kingdoms temporarily re-couple operationally
+
+Ahab + Jehoshaphat
+→ shared military campaign.
+
+**Effect:** previously split systems can form temporary coalition without reunifying politically.
+
+---
+
+## Phase MC — many channels collapse into one synchronized message
+
+~400 prophets
+→ “one mouth”
+→ same answer.
+
+**Effect:** apparent source multiplicity may hide information dependence.
+
+---
+
+## Phase MD — independent channel is requested despite consensus
+
+Jehoshaphat asks for another prophet.
+
+**Effect:** consensus is not automatically treated as sufficient verification.
+
+---
+
+## Phase ME — messenger pressures outlier to match field
+
+Micaiah told to say what others say.
+
+**Effect:** information systems can actively suppress divergence.
+
+---
+
+## Phase MF — symbolic future model can be wrong
+
+iron horns
+→ enacted victory prediction
+→ later failure.
+
+**Effect:** vivid physical symbolism does not guarantee underlying truth.
+
+---
+
+## Phase MG — loss of centre scatters field
+
+Micaiah:
+king removed
+→ Israel scattered
+→ each returns home.
+
+**Effect:** centre-targeting predicts field decoherence.
+
+---
+
+## Phase MH — earthly and heavenly courts mirror one another
+
+thrones + surrounding advisers below
+↔
+throne + host/council above.
+
+**Effect:** governance is represented through nested/parallel council structures.
+
+---
+
+## Phase MI — multiple future routes compete before one information strategy is selected
+
+one says this
++ another says that
+→ lying-spirit route chosen.
+
+**Effect:** future outcome again emerges through branch selection at information layer.
+
+---
+
+## Phase MJ — prediction is tied to observable return condition
+
+if Ahab returns in peace
+→ prophecy false.
+if not
+→ prophecy validated.
+
+**Effect:** future state becomes verification criterion.
+
+---
+
+## Phase MK — disguise decouples true identity from visible marker
+
+Ahab hidden.
+Jehoshaphat robed.
+
+**Effect:** surface target information is deliberately reassigned.
+
+---
+
+## Phase ML — centre-only targeting follows visible marker and initially misclassifies
+
+Arameans seek Israel's king only
+→ pursue robed Jehoshaphat
+→ realize error
+→ disengage.
+
+**Effect:** wrong classification produces wrong attack routing.
+
+---
+
+## Phase MM — random projectile bypasses disguise and penetrates armour interface
+
+untargeted arrow
+→ joint between armour pieces
+→ true centre wounded.
+
+**Effect:** identity concealment reduces directed risk but cannot remove stochastic exposure; interfaces remain vulnerable.
+
+---
+
+## Phase MN — external form persists after internal failure begins
+
+Ahab held upright in chariot
+while
+blood drains
+→ dies at evening.
+
+**Effect:** visible centre can be mechanically maintained after functional collapse has begun.
+
+---
+
+## Phase MO — centre death signal disperses field
+
+sunset cry
+→ every man returns city/country.
+
+**Effect:** predicted shepherd-loss geometry becomes actual army dispersal.
+
+---
+
+# What 1 Kings 20–22 adds to the master Bible/Vardath timeline
+
+213. **A system may accept tribute/resource loss yet resist uncontrolled penetration of its internal boundaries.**
+214. **Boundary sovereignty and resource possession are different variables.**
+215. **Small contained branches can break outward through much larger encircling fields.**
+216. **Failure to distinguish two incoming states can cause a field to respond incorrectly to both.**
+217. **Opponent systems can explicitly test whether power depends on terrain by holding forces roughly constant and changing topography.**
+218. **A refuge can become lethal when the containing wall itself fails.**
+219. **Defeated centres often move progressively deeper into nested enclosures.**
+220. **Visible supplication state can transform coupling enough for hostile centres to become temporarily co-located.**
+221. **Captured rival centres can be converted into treaty/economic nodes rather than destroyed.**
+222. **Indirect model/self-judgment remains a repeated mechanism for exposing royal behaviour.**
+223. **Ancestral/inherited attachment can make adjacent land resistant to absorption by an expanding centre even when market exchange is offered.**
+224. **Authenticated identity tokens—name/seal—allow centre authority to act remotely.**
+225. **Two agreeing false witnesses show that duplicated information is not necessarily independent truth.**
+226. **False informational consensus can produce irreversible physical consequences.**
+227. **Previously divided states can temporarily re-couple into a coalition without restoring one centre.**
+228. **Four hundred synchronized voices demonstrate that numerical consensus and information independence are not the same thing.**
+229. **Independent channels may remain essential even when the dominant field speaks “with one mouth.”**
+230. **Institutions can pressure dissenting channels to conform before the evidence is tested.**
+231. **A vivid enacted model—iron horns—can still be false; symbol strength is not truth strength.**
+232. **A centre-only strike strategy can decohere the surrounding field without fighting every component.**
+233. **Disguise can decouple true identity from visible target marker, causing temporary attack misrouting.**
+234. **Undirected/random field interaction can still find the true centre even when directed targeting fails.**
+235. **Protective systems are often most vulnerable at joints/interfaces rather than across their strongest continuous surface.**
+236. **A visible centre can be held in functional-looking posture after underlying viability has already failed.**
+237. **Once centre death becomes known, a distributed field can rapidly disperse exactly as a prior model predicted.**
+
+---
+
+# SECTION 36 — integrated 1 Kings 12–22 geometry timeline
+
+Section 36 now gives the full first phase of the divided monarchy:
+
+**symbolic garment split from Section 35**
+→ heavy-load grievance appears at succession
+→ Shechem recognition fails
+→ Rehoboam increases pressure instead of reducing it
+→ northern field disconnects
+→ corvée interface is destroyed
+→ political system becomes Judah + Israel
+→ attempted military recompression cancelled by information
+→ Jeroboam reroutes worship to Bethel/Dan and creates a separate calendar
+→ altar itself tears
+→ false prophetic update causes forbidden route reversal
+→ northern dynasty begins coup/replacement cycling
+→ Jerusalem wealth degrades from gold to bronze after Shishak outflow
+→ Ramah is built as movement choke-point
+→ third-force Aramean attack frees Judah from blockade
+→ Ramah's material is redistributed into Geba + Mizpah
+→ northern centre cycles Baasha→Elah→Zimri
+→ palace-centre and army-centre separate
+→ Zimri self-burns with royal house
+→ Israel splits internally between Omri/Tibni
+→ Omri recentres north and purchases/builds Samaria
+→ Ahab/Jezebel intensify alternative sacred network
+→ drought closes upper-water flow
+→ Elijah survives through hidden distributed supply
+→ Zarephath household becomes local non-exhausting survival node
+→ dead child moves up / revives / returns down
+→ Carmel assembles divided allegiance
+→ twelve stones rebuild one altar
+→ four jars poured three times saturate it
+→ fire descends
+→ divided allegiance collapses
+→ cloud-hand grows into rain and upper-water flow reopens
+→ Elijah collapses into wilderness despite public victory
+→ Horeb distinguishes subtle signal from wind/earthquake/fire
+→ hidden 7,000 remnant corrects singleton model
+→ mantle begins prophetic succession toward Elisha
+→ Samaria is later besieged
+→ small force breaks outward
+→ hill/valley rematch rejects geographically bounded power model
+→ defeated Ben-hadad moves from inner chamber to Ahab's chariot and is released
+→ disguised prophet causes Ahab to judge himself
+→ Naboth's inherited land resists palace expansion
+→ false dual witnesses remove owner
+→ Ahab takes vineyard
+→ Elijah confronts at possession point
+→ divided kingdoms temporarily form one coalition
+→ 400 prophets produce one synchronized answer
+→ Micaiah supplies dissenting future model
+→ Ahab disguises identity in battle
+→ targeted attack first follows wrong visible king
+→ random arrow penetrates armour joint and wounds true centre
+→ Ahab is held upright while failing
+→ death at evening
+→ field disperses home.
+
+This section therefore moves from:
+**one kingdom torn into two**
+to
+**two systems learning that centres, information, boundaries, signals and distributed fields can all decouple from one another**.
+
+The strongest process families are:
+
+- **feedback/load failure → fracture**;
+- **ritual/political rerouting to stabilize a new split**;
+- **false information causing real movement and death**;
+- **recursive fragmentation and re-centralization**;
+- **twelve as both fragmentation and recombination, depending on direction**;
+- **upper-water closure → local survival pockets → altar/fire transition → rain reopening**;
+- **high-energy symbols changing meaning by phase**;
+- **many sources versus independent sources**;
+- **centre-only targeting**;
+- **disguise/projection versus underlying identity**;
+- **interface/joint vulnerability**.
+
+---
+
+## Section 36C number / timing register
+
+Record without forcing:
+- Ben-hadad has **32** allied kings/captains in the narrative;
+- first sortie **232 + 7,000**;
+- second battle opposed for **7 days**;
+- casualties **100,000 + 27,000** are literary/historical figures requiring caution;
+- three years without war before Ramoth-gilead campaign;
+- Ahab has ~**400 prophets**;
+- Aramean king again has **32 chariot commanders**;
+- Jehoshaphat reign **25 years**;
+- Ahaziah reign **2 years**.
+
+The recurrence of 32 in chapters 20/22 may be literary linkage rather than a cosmological number.
+
+---
+
+## Section 36C textual / historical / scholarly controls
+
+- 1 Kings 20's historical setting is debated. Some scholars question whether the Ben-hadad battle accounts originally belonged to Ahab or to another Israelite king; the chapter has substantial literary shaping.
+- Aphek's exact identification is debated, and the wall-collapse casualty total should not be treated as independently verified history.
+- “God of hills / God of valleys” is Aramean character speech inside the narrative, not a neutral description of ancient Syrian theology.
+- Modern scholarship debates why Ahab is condemned for releasing Ben-hadad; explanations include herem/holy-war logic, failure of prophetic obedience, or narrative exposure of selective/self-interested mercy.
+- Naboth's vineyard has generated major legal debate concerning inheritance law, royal land rights and Jezebel's procedure. The primary text clearly presents Naboth's refusal as grounded in ancestral inheritance and the accusation as fabricated.
+- Jezebel's use of Ahab's seal shows delegated/forged royal authority in the narrative, but the precise legal status of the resulting property transfer remains debated.
+- The two witnesses satisfy the story's legal framing but are explicitly “base/worthless” false witnesses; numerical agreement is not evidentiary reliability.
+- 1 Kings 22's lying-spirit council is one of the Hebrew Bible's most difficult texts on divine deception/inspiration. Scholarly interpretations differ substantially.
+- Zdzisław Pawłowski argues the narrative exposes Ahab's self-confirming court-prophetic system rather than simply depicting God deceiving an innocent king; other scholars read the divine deception more directly. Preserve the disagreement.
+- Micaiah's first seemingly positive reply is often read as sarcasm/irony, but tone is reconstructed by interpreters rather than marked mechanically in the text.
+- The heavenly council should be logged as vision/theological imagery, not a literal map of Vardath worlds.
+- “Random” arrow language means the archer is not specifically aiming at Ahab; it does not imply metaphysical randomness in the narrator's theology.
+- Exact armour construction behind the “between joints” wound is reconstructed from language and comparative equipment; the interface-penetration datum is stronger than any one armour diagram.
+- The Ahab/Jehoshaphat coalition shows political boundaries were permeable to temporary alliances.
+- Jehoshaphat's failed Ophir fleet at Ezion-geber at the chapter end is another reminder that a route previously successful under Solomon can later fail under a new system state.
+
+### Sources logged for Section 36C
+
+Primary:
+- Mechon-Mamre, **1 Kings 20–22**.
+
+Scholarly controls:
+- David Hadjiev, **“The King and the Reader: Hermeneutical Reflections on 1 Kings 20–21.”**
+- **“Victory as Defeat: Narrative Subversion of Omride Strength in 1 Kings 20.”**
+- legal/literary scholarship on Naboth's vineyard, ancestral inheritance and royal power.
+- Zdzisław Pawłowski, **“Inspiration, Truth, and History in 1 Kings 22:1–28: A Narrative Hermeneutics Perspective.”**
+- scholarship on the divine council and prophetic conflict in 1 Kings 22.
+- literary studies of Ahab's disguise, Micaiah's dissent and the Ramoth-gilead battle.
+
+---
+
+# SECTION 36 COMPLETE — 1 Kings 12–22
+
+Canonical roadmap status:
+
+- previous: **35 / 88**
+- now complete: **36 / 88**
+- progress: **40.9%**
+
+Section 36 completion point:
+**1 Kings 22 — Ahab's disguised centre is pierced through an armour interface by an untargeted arrow, held upright until evening, then dies; the army disperses to its homes, exactly materializing Micaiah's scattered-sheep future model.**
+
+### Next first unfinished canonical roadmap entry
+
+Run the roadmap anti-repeat check before continuing.
+
+Carry forward:
+- whole-system split versus recursive sub-splits;
+- centre/field divergence;
+- twelve fragmentation/recombination transformations;
+- route protocols and false rerouting;
+- upper-water closure/reopening;
+- signal meaning changing by phase;
+- independent information versus synchronized consensus;
+- targeted versus untargeted force;
+- vulnerability at interfaces/joints;
+- names retained only as source labels while the main objective remains the transformation timeline of geometries and effects.
+
