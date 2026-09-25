@@ -150909,3 +150909,754 @@ Priority:
 - 39: far-country envoys; complete exposure of stored cargo/treasure; future one-way transfer to Babylon; descendants transferred too; chronological/literary hinge;
 - then integrate 28–39 as one Section 49C transformation map.
 
+
+
+---
+
+# SECTION 49 progress C2A — Isaiah 34–35
+## First-time research pass: rolled upper field → lower-land devastation → inverse watered/restored landscape
+
+This is the first research added after the removal of the automated append system.
+
+Working method remains the one already established in this file:
+- establish the text’s ordinary literary/historical process first;
+- distinguish object, direction, boundary, carrier, observer, and state;
+- compare that process with Vardath Cosmology only after the source mechanics are clear;
+- track paired figures and paired states without assuming every pair is the same two-force mechanism;
+- preserve ordinary explanations and textual uncertainty;
+- require **the same connected support structure** to pass broad/open → narrow/axial → transfer → reopening before calling anything a strict fingertrap match.
+
+Isaiah 34–35 is especially useful because the chapters form a strong paired landscape transformation. Recent literary work treats them as a combined unit whose repeated concepts move through opposing states: dry/burning Edom in Isaiah 34 is balanced by watered/flourishing land in Isaiah 35.
+
+---
+
+# Isaiah 34:1–4 — the upper field changes geometry
+
+The chapter opens at very large scale:
+- nations and peoples are summoned;
+- earth/world and their contents are included;
+- armies are doomed below;
+- the heavenly host decays;
+- the skies **roll up like a scroll**;
+- the host of heaven withers/falls like leaves or figs.
+
+The important structural sequence is:
+
+**extended sky**
+→ **rolled/folded sky image**
+→ **distributed heavenly host loses stable position**
+→ **fall / wither**.
+
+## M49C2A-1 — BROAD FIELD → ROLLED FIELD IS A REAL MORPHOLOGICAL CHANGE IN THE IMAGE
+
+This is closer to Vardath’s changing-sky geometry than a simple “door” motif because the text actually changes the *form* of the upper field.
+
+### Vardath comparison
+
+The mature cosmology treats the quiet sky-lattice as broad and distributed, then asks whether geometry can change before an axial/throat state forms.
+
+Isaiah 34 provides:
+- broad sky;
+- rolling;
+- distributed occupants falling.
+
+It does **not** provide:
+- a braided sleeve;
+- strand-angle change;
+- a narrow tube;
+- an axial throat;
+- transfer through that throat;
+- reopening of the same structure.
+
+### Classification
+
+**Strong broad-field → rolled-field analogue.  
+Strict spiderweb→fingertrap identification: not established.**
+
+This is worth retaining precisely because it is stronger than lexical “gate” matching but still fails the full mechanical test.
+
+---
+
+# Isaiah 34:3–5 — different things move in opposite directions
+
+The catastrophe contains several directional motions:
+
+- corpses are cast out;
+- stench rises;
+- mountain surfaces are overwhelmed by blood imagery;
+- the sword/judgment agency is first located in the heavens and then falls/descends upon Edom.
+
+This gives:
+
+**ground consequence → upward**
+while
+**upper destructive agency → downward**.
+
+## M49C2A-2 — ONE EVENT FIELD CAN CONTAIN SIMULTANEOUS OPPOSITE FLOWS OF DIFFERENT OBJECT CLASSES
+
+This matters for the larger cosmology.
+
+A transition may contain:
+- material moving one way;
+- energy/current another way;
+- water another way;
+- information another way.
+
+The directions cannot be merged merely because they occur in the same event.
+
+---
+
+# Isaiah 34:5 — heaven→Edom is directional transfer, but object identity matters
+
+The sword is described as active/sated in heaven and then falling upon Edom.
+
+Secure process:
+
+**upper-domain imagery**
+→ **destructive agency**
+→ **lower territorial receiver**.
+
+What moves in the verse:
+- sword/judgment imagery.
+
+What the verse does not say moves:
+- a population;
+- an inhabited world layer;
+- an ocean;
+- the rolled sky itself;
+- a lattice.
+
+## M49C2A-3 — DIRECTION MUST BE RECORDED WITH THE THING THAT MOVES
+
+This becomes a permanent rule for the 88-book timeline.
+
+“Something came down”
+is incomplete data.
+
+Record:
+**what came down, from where, to where, and what changed afterward.**
+
+---
+
+# Isaiah 34:6–8 — sacrifice language turns national judgment into processing imagery
+
+The sword is:
+- filled with blood;
+- associated with lambs/goats/rams;
+- linked to a great sacrifice in Edom/Bozrah.
+
+The chapter therefore projects political/national destruction through a sacrificial processing frame.
+
+## M49C2A-4 — ONE HUMAN/POLITICAL EVENT CAN BE PROJECTED THROUGH A SECOND MATERIAL-PROCESS SYSTEM
+
+National defeat
+is represented as
+slaughter/sacrifice.
+
+This is an important projection control.
+
+The image may tell us about:
+- scale;
+- completeness;
+- role;
+- direction;
+
+without making the nation literally livestock or the terrain literally an altar.
+
+---
+
+# Isaiah 34:9–10 — water/soil variables are reassigned to a burning substrate
+
+Edom’s landscape is described through a radical state change:
+
+- streams → pitch;
+- dust/soil → sulfur/brimstone;
+- land → burning pitch;
+- smoke → rises.
+
+The process can be abstracted:
+
+**ordinary ground/water field**
+→ **combustible/destructive field**
+→ **persistent burning**
+→ **upward atmospheric output**.
+
+## M49C2A-5 — LOCATION CAN REMAIN IDENTIFIABLE WHILE ITS ENVIRONMENTAL OPERATING STATE CHANGES COMPLETELY
+
+This is strongly relevant to Vardath Cosmology.
+
+The model does not require a “new world” to mean an empty replacement object.
+A world can be:
+- the same broad region/location relation;
+- but in a radically different state of water, atmosphere, surface and ecology.
+
+### Meltology / plasma control
+
+Isaiah 34 gives prophetic destruction imagery.
+
+It does not by itself establish:
+- literal sulfur conversion;
+- petroleum geology;
+- rock melting;
+- plasma heating.
+
+The Vardath comparison is therefore:
+**state-change morphology**, not physical proof.
+
+---
+
+# Isaiah 34:10–15 — “desolate” does not mean biologically empty
+
+Human civic/political occupation disappears from the picture.
+
+Yet the poem fills the landscape with non-human life that:
+- dwells;
+- nests;
+- lays;
+- hatches;
+- gathers.
+
+The exact English animal names vary because several Hebrew zoological terms are uncertain.
+
+## M49C2A-6 — HUMAN DEPOPULATION ≠ LIFELESS WORLD
+
+This is directly relevant to the Vardath rule that the worlds above and below are inhabited.
+
+Isaiah does not prove stacked populated worlds.
+
+But it gives an important negative control:
+
+**a text can describe human desolation while simultaneously describing an occupied ecology.**
+
+So the research should never translate:
+“desolate”
+into
+“empty of all life”
+without checking the actual text.
+
+---
+
+# Isaiah 34:11 — line / plummet measure a ruined state
+
+The text associates:
+- measuring line;
+- plummet;
+with
+- *tohu*;
+- *bohu*;
+chaos/emptiness/desolation language.
+
+The Genesis-like *tohu wabohu* resonance is striking, but the immediate function is judgment/desolation.
+
+## M49C2A-7 — A MEASURING TOOL IS STATE-NEUTRAL
+
+The same general instrument family can appear in:
+- construction;
+- evaluation;
+- boundary assignment;
+- demolition/judgment.
+
+Therefore:
+
+**line ≠ automatically lattice strand.  
+plummet ≠ automatically world-axis.  
+rod ≠ automatically central plasma column.**
+
+The tool’s local function comes first.
+
+This is one of the most important controls for the coming prophetic books because measuring lines and rods recur constantly.
+
+---
+
+# Isaiah 34:13–15 — human architecture becomes ecological habitat
+
+Former human-built or human-used space is reassigned to:
+- thorn/thistle vegetation;
+- animal habitation;
+- nesting.
+
+## M49C2A-8 — AFTER SYSTEM COLLAPSE, EXISTING SPACE CAN BE REOCCUPIED BY A DIFFERENT ECOLOGICAL NETWORK
+
+This is not “nothingness.”
+
+It is:
+**ownership/function succession**.
+
+That fits Vardath’s “reset not rewind” principle better than a blank-earth model:
+the new state inherits the old location/material history and reorganizes it.
+
+---
+
+# Isaiah 34:16–17 — paired animals + gathering + lot/line allocation form a successor order
+
+The end of the chapter combines:
+- a written/book reference;
+- none missing;
+- each with mate/partner;
+- gathering;
+- lot;
+- line;
+- assigned territory.
+
+Whatever the exact species identifications, the process is clear:
+
+**post-human landscape**
+→ **living occupants gathered**
+→ **paired/reproductive continuity**
+→ **territory allocated**.
+
+## M49C2A-9 — RUIN CAN TERMINATE IN A NEW ORDER RATHER THAN IN PURE ABSENCE
+
+This is a useful successor-state mechanism.
+
+### Pair control
+
+The animal mates are an important negative control:
+a real pair does not automatically represent the cosmology’s two opposed lattice directions.
+
+Pair type here is first:
+**ecological/reproductive pair**.
+
+---
+
+# ISAIAH 34 strict spiderweb → fingertrap screening
+
+## broad field
+Strong:
+sky/heavens.
+
+## change of field geometry
+Strong:
+rolled like scroll.
+
+## connected weave
+Not stated.
+
+## strand continuity
+Not stated.
+
+## narrowing into axis/tube
+Not stated.
+
+## throat
+Absent.
+
+## gate
+Absent.
+
+## matter transfer through same structure
+Absent.
+
+## reopening
+Absent.
+
+### Isaiah 34 verdict
+
+**Strong morphology analogue for a sky field changing shape, but not a strict fingertrap passage.**
+
+The most important Vardath-compatible sequence is:
+
+**broad upper field**
+→ **rolling**
+→ **upper-host destabilization**
+→ **downward destructive agency**
+→ **lower environmental state change**
+→ **successor ecology**.
+
+That sequence is worth comparing later with texts that add:
+- mesh;
+- tube;
+- rod;
+- gate;
+- reopening.
+
+---
+
+# Isaiah 35:1–2 — the inverse chapter begins with ecological regime change
+
+The wilderness / dry land / desert:
+- rejoices;
+- blossoms;
+- becomes abundantly fertile.
+
+Lebanon/Carmel/Sharon imagery transfers fertility/glory into the once-dry field.
+
+The location category remains “wilderness/desert,” but its behavior changes.
+
+## M49C2A-10 — SUCCESSOR ENVIRONMENT CAN BE THE SAME NAMED TERRAIN IN A DIFFERENT PRODUCTIVITY STATE
+
+This is highly compatible with Vardath’s idea that a world-turn is not simply:
+old world disappears
+→ unrelated world appears.
+
+Instead:
+**state changes propagate through the inhabited environment.**
+
+---
+
+# Isaiah 35:3–6 — body restoration and land restoration use the same change grammar
+
+Human bodies:
+- weak hands strengthen;
+- feeble knees firm;
+- blind eyes open;
+- deaf ears open;
+- lame body leaps;
+- speechless tongue sings.
+
+Then landscape:
+- waters break out;
+- streams appear.
+
+## M49C2A-11 — ONE RESTORATION PATTERN CAN BE PROJECTED ACROSS BODY AND LAND WITHOUT BODY=LAND IDENTITY
+
+This is central to the paired-figure / Squatter-Man investigation.
+
+A text can align:
+**body state**
+with
+**land state**
+
+without saying they are literally the same physical structure.
+
+The research should therefore distinguish:
+
+1. **projection correspondence**;
+2. **structural identity**.
+
+Isaiah 35 strongly establishes the first.
+It does not establish the second.
+
+---
+
+# Isaiah 35:6–7 — water breakout is the hinge between dry and productive states
+
+The text moves:
+
+**wilderness**
+→ **water breaks out**
+→ **streams**
+→ **parched ground becomes pool**
+→ **thirsty ground becomes springs**
+→ **wetland vegetation appears**.
+
+## M49C2A-12 — WATER REDISTRIBUTION CAN MEDIATE ENVIRONMENTAL REGIME CHANGE
+
+This maps closely onto a mature Vardath rule already present in the cosmology:
+
+**geometry changes first; water writes the change across the world.**
+
+Isaiah 35 gives strong support for the second half of that process:
+water arrival
+→ ecological transformation.
+
+What Isaiah 35 does **not** provide is the deeper geometry that caused the water to move.
+
+So the comparison is:
+
+**Vardath mechanism hypothesis**
+→ geometry changes;
+→ water follows changed geometry/pressure;
+→ ecology changes.
+
+**Isaiah 35 observed poetic sequence**
+→ dry field;
+→ water breaks out;
+→ ecology changes.
+
+The overlap is therefore in the **effects sequence**, not proof of mechanism.
+
+---
+
+# Isaiah 35:7 — “burning sand” / mirage term control
+
+NRSVUE uses “burning sand” in the transformation to a pool; other translations and lexical discussions can render the Hebrew in terms of parched ground or mirage-like heat shimmer.
+
+The safe variable is:
+
+**hot/dry apparent-waterless ground**
+→ **actual water/pool**.
+
+## M49C2A-13 — TRANSLATION DETAIL SHOULD NOT BE MADE MORE PRECISE THAN THE HEBREW SUPPORTS
+
+Do not build a thermal calculation from one English wording.
+
+The process survives the translation variation:
+**arid/hot field → real water field**.
+
+---
+
+# Isaiah 35:8–10 — the restored landscape contains a controlled transit corridor
+
+A highway / Holy Way appears.
+
+The text assigns:
+- a defined route;
+- rules/categories for users;
+- absence of dangerous animals;
+- a returning/ransomed population;
+- destination toward Zion;
+- joy replacing sorrow.
+
+## M49C2A-14 — ROUTE OPENNESS CAN BE SELECTIVE
+
+This is important for the cosmology.
+
+A gate or corridor does not have to mean:
+everything in both worlds mixes completely.
+
+A route can be:
+- open;
+- directional;
+- protected;
+- selective.
+
+### Control
+
+Isaiah’s selection is theological/identity-based.
+
+The text does not specify physical sorting by:
+- mass;
+- density;
+- phase;
+- charge;
+- geometry.
+
+So this is a **controlled-corridor analogue**, not a physical gate specification.
+
+---
+
+# Isaiah 35:8–10 — restored road links environmental change to population return
+
+The chapter does not stop with:
+“desert gets water.”
+
+It proceeds to:
+**habitable route**
+→ **returning population**
+→ **arrival at Zion**.
+
+## M49C2A-15 — ENVIRONMENTAL RECOVERY AND HUMAN REOCCUPATION ARE SEPARATE BUT CONNECTED PHASES
+
+This is highly useful for the 88-book event timeline.
+
+Possible sequence:
+1. environment changes;
+2. route becomes viable;
+3. population moves;
+4. settlement/order resumes.
+
+Do not compress these into one instant.
+
+---
+
+# ISAIAH 34 ↔ 35 paired transformation map
+
+## Isaiah 34
+upper field destabilizes  
+→ sky rolls  
+→ heavenly host falls/withers  
+→ destructive agency moves downward  
+→ lower land/water becomes burning/destructive  
+→ smoke rises  
+→ human civic use collapses  
+→ non-human ecology occupies the field  
+→ new occupants are gathered/paired/allocated.
+
+## Isaiah 35
+dry field becomes fertile  
+→ bodily functions restore  
+→ water breaks out  
+→ parched ground becomes pool/springs  
+→ vegetation returns  
+→ controlled route becomes viable  
+→ human return proceeds toward Zion.
+
+## M49C2A-16 — THE PAIR DESCRIBES A MULTI-VARIABLE ENVIRONMENTAL STATE REVERSAL
+
+The value is not one shared symbol.
+
+Several variables reverse together:
+- water;
+- vegetation;
+- human occupancy;
+- bodily capability;
+- route viability;
+- emotional/social state.
+
+This is much stronger comparative evidence than isolated motif matching.
+
+---
+
+# SECTION 49C2A pair / process matrix
+
+## heaven / Edom
+upper field / lower receiver of destructive agency.
+
+## falling host / rising smoke
+downward distributed occupants / upward atmospheric consequence.
+
+## human desolation / animal occupation
+failed civic ecology / successor non-human ecology.
+
+## line / ruined field
+measurement operator / devastated state.
+
+## animal + mate
+ordinary reproductive pair.
+
+## Isaiah 34 / Isaiah 35
+destructive environmental regime / restorative environmental regime.
+
+## dry land / water
+resource-deficient state / hydrated state.
+
+## body impairment / body restoration
+failed function / recovered function.
+
+## closed-dangerous landscape / controlled highway
+poor transit state / viable selective route.
+
+---
+
+# SECTION 49C2A continuous transformation timeline
+
+large witness field opens
+→ nations/earth/heavens enter frame
+→ heavenly host destabilizes
+→ sky is rolled like a scroll
+→ host falls/withers
+→ destructive agency moves from upper domain toward Edom
+→ ground and water imagery change to burning pitch/sulfur
+→ smoke rises
+→ normal human civic occupation collapses
+→ vegetation/animal succession occupies the same field
+→ animal pairs gather
+→ territory is allocated by lot/line
+→ paired inverse chapter begins
+→ dry wilderness changes productivity state
+→ human bodily functions are restored in parallel imagery
+→ water breaks out
+→ streams form
+→ parched ground becomes pool/springs
+→ wetland vegetation appears
+→ a protected/selective highway becomes usable
+→ returning population moves toward Zion
+→ sorrow/fear state reverses toward joy.
+
+---
+
+# New master-mechanism additions from Isaiah 34–35
+
+## M49C2A-1 — BROAD FIELD CAN CHANGE TO ROLLED GEOMETRY WITHOUT YET FORMING A THROAT
+
+## M49C2A-2 — ONE EVENT CAN CONTAIN OPPOSITE FLOWS OF DIFFERENT OBJECT TYPES
+
+## M49C2A-3 — DIRECTIONAL CLAIMS MUST PRESERVE OBJECT IDENTITY
+
+## M49C2A-4 — ONE EVENT CAN BE PROJECTED THROUGH A SECOND PROCESS SYSTEM
+
+## M49C2A-5 — LOCATION IDENTITY CAN PERSIST THROUGH EXTREME ENVIRONMENTAL STATE CHANGE
+
+## M49C2A-6 — HUMAN DESOLATION DOES NOT MEAN BIOLOGICAL EMPTINESS
+
+## M49C2A-7 — MEASUREMENT TOOL ≠ FIXED COSMOLOGICAL SYMBOL
+
+## M49C2A-8 — COLLAPSED HUMAN SPACE CAN BECOME SUCCESSOR ECOLOGICAL SPACE
+
+## M49C2A-9 — RUIN CAN TERMINATE IN A NEW ORDERED OCCUPANCY
+
+## M49C2A-10 — SAME TERRAIN CAN MOVE BETWEEN BARREN AND PRODUCTIVE STATES
+
+## M49C2A-11 — BODY/LAND PARALLEL DOES NOT BY ITSELF PROVE BODY/LAND IDENTITY
+
+## M49C2A-12 — WATER REDISTRIBUTION CAN MEDIATE ECOLOGICAL REGIME CHANGE
+
+## M49C2A-13 — TRANSLATION PRECISION MUST NOT EXCEED TEXTUAL PRECISION
+
+## M49C2A-14 — OPEN ROUTE CAN BE SELECTIVE
+
+## M49C2A-15 — ENVIRONMENTAL RECOVERY AND POPULATION RETURN ARE DISTINCT PHASES
+
+## M49C2A-16 — MULTI-VARIABLE REVERSAL IS STRONGER EVIDENCE THAN ISOLATED SYMBOL MATCHING
+
+---
+
+# SECTION 49C2A number / timing register
+
+Record without forcing:
+
+- Isaiah 34 uses “day” of vengeance and “year” of recompense language.
+- Isaiah 34 describes enduring/generational desolation in rhetorical long-duration terms.
+- Isaiah 35 supplies no gate-duration number.
+- no world-layer count appears.
+- no fingertrap dimension appears.
+- the animal pair structure is reproductive/ecological, not numerical cosmology.
+
+No numeric mechanism is established in Isaiah 34–35.
+
+---
+
+# SECTION 49C2A textual / scholarly controls
+
+1. Working primary text: Isaiah 34–35 NRSVUE, compared with NET/NIV where useful.
+2. Isaiah 34–35 is treated in recent literary scholarship as a combined unit with repeated concepts in opposed/transformed states.
+3. “Skies roll up like a scroll” is explicit morphology, but the text gives no braid/throat mechanism.
+4. The heavenly host imagery must not be turned into a technical astronomical model without independent evidence.
+5. Edom is the named lower territorial target in Isaiah 34; the image is not an unnamed world below.
+6. Pitch/sulfur/burning-land language is prophetic destruction imagery, not direct geochemical observation.
+7. Several animal identifications in Isaiah 34 are translation-uncertain; process-level ecological occupation is safer than species-level symbolism.
+8. Line/plummet in 34:11 participates in measuring/judgment language. It should not be pre-labelled as lattice geometry.
+9. Isaiah 35 explicitly links water breakout with transformed dry land and later vegetation.
+10. The Hebrew behind 35:7 supports a dry/hot/mirage-like ground → real water reversal; exact English thermal wording varies.
+11. The Holy Way is a controlled return route; its selection logic is theological, not a stated physical filter.
+12. Strict fingertrap status for Isaiah 34–35: negative, with a strong rolled-field morphology analogue.
+
+---
+
+# Sources logged — SECTION 49C2A
+
+Primary:
+- Isaiah 34 NRSVUE, Bible Gateway:
+  https://www.biblegateway.com/passage/?search=Isaiah+34&version=NRSVUE
+- Isaiah 35 NRSVUE, Bible Gateway:
+  https://search.biblegateway.com/passage/?search=Isaiah+35&version=NRSVUE
+- Isaiah 35 NRSVUE / NET comparison:
+  https://www.biblegateway.com/passage/?search=Isaiah+35&version=NRSVUE%3BNET
+
+Scholarly / literary control:
+- “Transmutational spaces in Isaiah: between picture postcard and void,” *Literature and Theology* 39.1, Oxford Academic — treats Isaiah 34–35 as a combined textual frame and notes the dry-Edom / watered-Israel reversal:
+  https://academic.oup.com/litthe/article/39/1/35/8179668
+
+---
+
+# SECTION 49C2A CHECKPOINT — ISAIAH 34–35 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 34 contains a genuine broad-field → rolled-field morphology.**
+2. **The same catastrophe contains downward destructive movement and upward consequences, so direction must be tracked by object type.**
+3. **Human desolation is followed by non-human ecological occupancy; “desolate” is not “lifeless.”**
+4. **Line/plummet are measurement operators, not fixed lattice symbols.**
+5. **Isaiah 34 ends in a successor ecological order rather than pure absence.**
+6. **Isaiah 35 reverses several environmental variables together: dry→watered, impaired→restored, dangerous/non-transitable→controlled return route.**
+7. **The Vardath overlap is strongest in effects sequence: changed field → water state → ecology → viable population route.**
+8. **Neither chapter yet supplies the same woven support structure narrowing into an axial throat.**
+
+### Next live block
+
+**Isaiah 36–37**
+
+Priority:
+- historical 701 BCE campaign controls;
+- conduit / upper-pool / highway node;
+- defended wall versus sound/language permeability;
+- information warfare;
+- childbirth threshold imagery;
+- rumor/message changing route;
+- threatening letter carried upward and spread open;
+- Assyrian body/landscape-scale hyperbole as Squatter-Man control;
+- same-route reversal;
+- three-stage agricultural recovery;
+- root downward / fruit upward;
+- 185,000 narrative number and chronology control.
