@@ -60181,3 +60181,834 @@ Priority:
 - wall breach, king flight, capture, blinding, burning, deportation;
 - Jeremiah preserved while infrastructure collapses;
 - compare scroll reconstruction and cistern rope extraction with catastrophe information/person recovery systems.
+
+
+---
+
+# SECTION 50I — Jeremiah 36–39
+## First-time research pass: scroll dictation and copy network, temple/public transmission, deliberate cutting and burning, full scroll reconstruction with added material, siege interruption and return, cistern/mud entrapment, rope-and-padding extraction, true city-wall breach, gate occupation, flight, capture, blinding, burning, deportation, and person/information survival through infrastructure collapse
+
+Jeremiah 36–39 is a high-value **information-recovery + person-recovery + boundary-failure** block.
+
+Its strongest process contrast is:
+
+### information system
+spoken corpus
+→ written scroll
+→ public reading
+→ copied/relayed through officials
+→ original scroll cut and burned
+→ text reconstructed from dictation
+→ additional material added.
+
+### human rescue system
+person
+→ lowered into cistern
+→ sinks into mud
+→ cannot self-extract
+→ ropes lowered
+→ cloth padding inserted under load interfaces
+→ group applies upward force
+→ person recovered.
+
+### city system
+siege
+→ boundary breach
+→ hostile control occupies internal gate/node
+→ defenders flee
+→ king captured
+→ walls/buildings destroyed
+→ population redistributed.
+
+These are three different recovery/failure mechanics and should not be merged.
+
+---
+
+# Jeremiah 36:1–4 — oral corpus is converted into written external memory
+
+Jeremiah:
+dictates.
+
+Baruch:
+writes.
+
+## M50I-1 — INFORMATION CAN BE OFFLOADED FROM HUMAN MEMORY INTO DURABLE EXTERNAL STORAGE
+
+This reduces dependence on:
+one biological memory node.
+
+---
+
+# M50I-2 — DICTATION CREATES A SOURCE→SCRIBE→DOCUMENT CHAIN
+
+Source identity matters.
+
+Baruch:
+is not the original message source.
+
+He is:
+copy/encoding node.
+
+This is important for textual dependence analysis.
+
+---
+
+# Jeremiah 36:5–10 — document allows message to travel where source cannot
+
+Jeremiah:
+cannot enter temple.
+
+Baruch:
+carries/reads scroll.
+
+## M50I-3 — WRITTEN INFORMATION CAN EXTEND SOURCE REACH BEYOND SOURCE MOBILITY
+
+This is a major archive/communication advantage.
+
+---
+
+# Jeremiah 36:10–20 — one reading generates a relay network
+
+Baruch reads.
+Micaiah hears.
+Officials are informed.
+Baruch rereads to officials.
+Officials prepare report for king.
+
+## M50I-4 — INFORMATION CAN PROPAGATE THROUGH MULTI-STAGE HUMAN RELAY WITHOUT EACH NODE HEARING ORIGINAL SOURCE
+
+This requires:
+dependence tracking.
+
+Repeated reports:
+may all derive from one scroll.
+
+---
+
+# M50I-5 — DERIVATIVE TRANSMISSION SHOULD NOT BE SCORED AS MULTIPLE INDEPENDENT WITNESSES
+
+This reinforces Jeremiah 23.
+
+---
+
+# Jeremiah 36:21–23 — scroll is cut column-by-column and burned
+
+King:
+hears several columns;
+cuts them;
+throws pieces into fire.
+
+## M50I-6 — INFORMATION DESTRUCTION CAN BE INCREMENTAL AND DELIBERATE
+
+Not:
+accidental loss.
+
+The destruction process is:
+read
+→ cut
+→ burn.
+
+---
+
+# Jeremiah 36:24–26 — institutional control tries to destroy both document and source network
+
+King:
+orders seizure of Jeremiah/Baruch.
+
+## M50I-7 — INFORMATION SUPPRESSION MAY TARGET BOTH STORAGE MEDIUM AND HUMAN REPRODUCTION NODES
+
+Archive resilience must protect:
+documents
+and
+people who can reconstruct them.
+
+---
+
+# Jeremiah 36:27–32 — destroyed scroll is reconstructed
+
+Jeremiah:
+dictates again.
+
+Baruch:
+writes again.
+
+The new scroll includes:
+all former words
+plus many similar/additional words.
+
+## M50I-8 — LOSS OF ONE PHYSICAL COPY DOES NOT DESTROY INFORMATION IF REDUNDANT HUMAN/MENTAL SOURCE REMAINS
+
+This is one of the strongest catastrophe-archive principles in the Bible.
+
+---
+
+# M50I-9 — RECONSTRUCTION CAN PRODUCE VERSION GROWTH RATHER THAN BYTE-FOR-BYTE RESTORATION
+
+The replacement:
+contains former content
++
+added material.
+
+This is extremely important for textual-history research.
+
+A restored corpus can be:
+continuous
+without being identical.
+
+---
+
+# M50I-10 — TEXTUAL EXPANSION AFTER DESTRUCTION CAN BE PART OF PRESERVATION HISTORY
+
+Therefore:
+later longer form
+does not automatically mean:
+fraudulent fabrication.
+
+It may reflect:
+reconstruction/editorial growth.
+
+But exact history must be tested independently.
+
+---
+
+# Jeremiah 36 — Vardath archive comparison
+
+For a catastrophe archive:
+
+one copy:
+fragile.
+
+Better:
+- distributed documents;
+- human memory;
+- multiple storage sites;
+- independent formats.
+
+## M50I-11 — CATASTROPHE INFORMATION SHOULD HAVE MULTIPLE RECONSTRUCTION PATHS
+
+This builds directly on Jeremiah 32’s:
+sealed/open deed redundancy.
+
+---
+
+# Jeremiah 37:1–5 — siege pressure temporarily withdraws
+
+Babylonian army:
+pulls away when Egyptian force approaches.
+
+## M50I-12 — TEMPORARY RELIEF IN EXTERNAL PRESSURE DOES NOT NECESSARILY MEAN SYSTEMIC THREAT HAS ENDED
+
+This is important for Vardath false-all-clear scenarios.
+
+---
+
+# Jeremiah 37:6–10 — withdrawal is predicted to reverse
+
+Chaldeans:
+return;
+capture/burn city.
+
+## M50I-13 — SHORT-TERM HAZARD RETREAT CAN PRECEDE STRONGER RETURN
+
+Do not infer:
+temporary quiet = stable recovery.
+
+---
+
+# Jeremiah 37:11–15 — Jeremiah attempts movement during pressure gap but is detained
+
+He leaves Jerusalem area:
+is accused of deserting;
+seized;
+imprisoned.
+
+## M50I-14 — TEMPORARY ROUTE OPENING CAN STILL FAIL AT HUMAN SECURITY/CHECKPOINT LAYER
+
+Physical path:
+available.
+
+Social-control barrier:
+blocks traveler.
+
+---
+
+# Jeremiah 37:16 — vaulted cell/dungeon becomes containment system
+
+Jeremiah:
+placed in house of cistern / cells,
+held many days.
+
+## M50I-15 — ENCLOSURE FUNCTION DEPENDS ON ACCESS/EXIT CONTROL, NOT ONLY MATERIAL SHAPE
+
+A room can become:
+prison.
+
+---
+
+# Jeremiah 37:20–21 — confinement changes from lethal/harsh to controlled court with bread ration
+
+## M50I-16 — ENCLOSURE SEVERITY CAN BE MODULATED WITHOUT FULL RELEASE
+
+States:
+dungeon
+→ guarded court
+→ food ration.
+
+Not binary:
+free/prisoned.
+
+---
+
+# Jeremiah 38:1–6 — warning message again triggers attempted elimination of messenger
+
+Officials:
+want Jeremiah dead.
+
+He is lowered into:
+cistern.
+
+No water:
+mud.
+
+He sinks.
+
+## M50I-17 — DEEP ENCLOSURE CAN BECOME PASSIVE LETHAL TRAP THROUGH SOFT SUBSTRATE EVEN WITHOUT WATER
+
+Hazard:
+mud;
+immobility;
+starvation.
+
+---
+
+# M50I-18 — “NO WATER” DOES NOT MEAN “SAFE CISTERN”
+
+This is an excellent environment-control rule.
+
+---
+
+# Jeremiah 38:7–9 — Ebed-melech identifies secondary death mechanism
+
+He argues:
+Jeremiah will die from hunger.
+
+## M50I-19 — RESCUE REQUIRES IDENTIFYING THE ACTUAL FAILURE MODE, NOT JUST THE LOCATION OF THE VICTIM
+
+Victim in pit:
+danger is not merely depth.
+
+Also:
+hunger;
+mud;
+pressure;
+injury.
+
+---
+
+# Jeremiah 38:10–13 — rope extraction is a multi-component rescue system
+
+Components:
+
+- rescuers;
+- ropes;
+- rags/worn clothes;
+- body interface under armpits;
+- upward pulling force.
+
+## M50I-20 — SAFE EXTRACTION REQUIRES FORCE-TRANSFER INTERFACE THAT DOES NOT INJURE THE CARGO
+
+This is a major mechanics result.
+
+---
+
+# Jeremiah 38:12 — padding distributes rope pressure
+
+Rags/clothes:
+placed between body and ropes.
+
+Function:
+reduce concentrated pressure / abrasion.
+
+## M50I-21 — LOAD SPREADING AT THE INTERFACE CAN MAKE AN OTHERWISE HARMFUL EXTRACTION VIABLE
+
+This is real mechanical logic.
+
+### Vardath relevance
+
+Any transfer through a constricted environment must consider:
+- support points;
+- pressure;
+- friction;
+- tissue/object damage.
+
+---
+
+# M50I-22 — CARRIER/RESCUE SYSTEM MUST BE DESIGNED AROUND CARGO FRAGILITY
+
+The strongest route is useless
+if transfer destroys the traveler.
+
+---
+
+# Jeremiah 38:13 — Jeremiah is pulled upward out of cistern
+
+low/deep enclosure
+→ upward extraction
+→ guarded surface state.
+
+## M50I-23 — VERTICAL RESCUE CAN BE A TRUE LOWER→UPPER TRANSFER WITHOUT BEING A COSMIC WORLD TRANSITION
+
+Important Vardath control.
+
+---
+
+# Jeremiah 38 — textual control on number of rescuers
+
+MT and versions/manuscripts create discussion over:
+three vs thirty men in modern translation traditions.
+
+## M50I-24 — UNCERTAIN CREW SIZE SHOULD NOT BE USED FOR NUMEROLOGICAL MECHANISM
+
+Secure:
+group rescue.
+
+Exact count:
+textually disputed in translation tradition.
+
+---
+
+# Jeremiah 38:14–28 — secret information channel between king and prophet
+
+Zedekiah:
+meets secretly;
+asks counsel;
+requires secrecy.
+
+## M50I-25 — HIGH-RISK INFORMATION CAN MOVE THROUGH RESTRICTED CHANNEL EVEN INSIDE COLLAPSING SYSTEM
+
+This is a secure-communication analogue.
+
+---
+
+# Jeremiah 39:1–2 — siege culminates in actual city breach
+
+After long siege:
+**a breach is made in the city**.
+
+This is a true structural boundary failure.
+
+## M50I-26 — BREACH IS PHYSICAL LOSS OF PERIMETER CONTINUITY
+
+This strongly confirms Isaiah 58’s:
+breach ≠ controlled gate.
+
+---
+
+# Jeremiah 39:3 — hostile officials occupy Middle Gate
+
+After breach:
+Babylonian command nodes sit at internal gate.
+
+## M50I-27 — ONCE PERIMETER FAILS, CONTROL CAN SHIFT TO INTERNAL INTERFACE NODES
+
+The gate becomes:
+occupation/control point.
+
+---
+
+# Jeremiah 39:4 — defenders/king exit through another gate between two walls
+
+A second boundary interface is used for escape.
+
+## M50I-28 — ONE CITY CAN SIMULTANEOUSLY CONTAIN HOSTILE ENTRY PATH AND DEFENDER EXIT PATH
+
+Boundary state:
+heterogeneous.
+
+Not all gates have same role.
+
+---
+
+# Jeremiah 39:4–5 — escape route fails beyond boundary
+
+Zedekiah exits city
+but is overtaken in plains.
+
+## M50I-29 — CROSSING THE WALL DOES NOT GUARANTEE SUCCESSFUL ESCAPE IF PURSUER NETWORK EXTENDS BEYOND BOUNDARY
+
+This is a major survival-control rule.
+
+---
+
+# Jeremiah 39:6–7 — visual system is destroyed after forced witnessing
+
+Zedekiah:
+sees sons/nobles killed;
+then eyes are put out;
+then fettered.
+
+## M50I-30 — SENSOR CAPABILITY CAN BE DELIBERATELY REMOVED AFTER INFORMATIONAL TRAUMA
+
+This is human cruelty/history,
+not cosmological darkness.
+
+Strong control against:
+blindness = sky event.
+
+---
+
+# Jeremiah 39:8 — buildings burned / walls broken
+
+King’s house;
+houses;
+walls
+→ destroyed.
+
+## M50I-31 — TRUE PERIMETER COLLAPSE INCLUDES BOTH ACCESS FAILURE AND LOSS OF STRUCTURAL BOUNDARY
+
+This is stronger than:
+gate merely open.
+
+---
+
+# Jeremiah 39:9–10 — population is sorted into exile and local landholding
+
+Many:
+deported.
+
+Some poor:
+left;
+given vineyards/fields.
+
+## M50I-32 — SYSTEM COLLAPSE CAN REDISTRIBUTE PROPERTY AND POPULATION DIFFERENTLY BY SOCIAL CLASS
+
+This is a material political consequence.
+
+---
+
+# Jeremiah 39:11–14 — Jeremiah survives while city system collapses
+
+Imperial command:
+protects/releases Jeremiah into Gedaliah’s care.
+
+## M50I-33 — INDIVIDUAL INFORMATION NODE CAN SURVIVE EVEN WHEN HOST INFRASTRUCTURE FAILS
+
+This is essential for:
+catastrophe memory survival.
+
+---
+
+# Jeremiah 39:15–18 — Ebed-melech receives separate survival promise
+
+His earlier rescue action:
+is remembered.
+
+## M50I-34 — RESCUE NETWORK CAN CREATE RECIPROCAL PRESERVATION RELATION
+
+Social continuity matters.
+
+---
+
+# Jeremiah 36–39 — archive/person/city comparison
+
+## scroll
+destroyed medium
+→ information reconstructed.
+
+## Jeremiah in cistern
+trapped body
+→ physical extraction.
+
+## Jerusalem
+breached infrastructure
+→ not restored inside this block.
+
+## M50I-35 — INFORMATION, PERSON AND INFRASTRUCTURE HAVE DIFFERENT RECOVERY THRESHOLDS
+
+One may recover
+while another fails.
+
+This is a major systems principle.
+
+---
+
+# Jeremiah 36–39 — dragon/lattice comparison
+
+No dragon.
+No spiderweb.
+No world-support spring.
+
+But:
+
+### rope
+tension carrier.
+
+### cistern
+vertical enclosure.
+
+### city breach
+boundary failure.
+
+### gates
+control interfaces.
+
+These are useful controls.
+
+## M50I-36 — ROPE TENSION MEMBER ≠ DRAGON LATTICE SPRING UNLESS IT PARTICIPATES IN DISTRIBUTED GROUND SUPPORT
+
+Again:
+shared mechanics
+does not imply identity.
+
+---
+
+# Jeremiah 36–39 strict spiderweb → fingertrap screening
+
+## dragon support lattice
+Absent.
+
+## thread/rope system
+Present in rescue only.
+
+## constricted/deep enclosure
+Strong:
+cistern.
+
+## vertical extraction
+Strong.
+
+## city breach
+Exceptionally strong.
+
+## controlled gate
+Multiple ordinary city gates.
+
+## same support structure narrows/reopens
+Absent.
+
+## information recovery
+Exceptionally strong.
+
+### Strict verdict
+
+**Jeremiah 36–39 is not a fingertrap-mechanism block. It is an exceptional catastrophe-resilience block: information survives deliberate destruction because the human copy network can reconstruct it; a trapped person survives because rescuers create a padded rope-force interface that safely transfers him upward; and the city demonstrates the opposite condition—a real uncontrolled breach in which perimeter continuity fails and hostile control moves inward. These chapters sharpen the distinction between recovery of information, recovery of people and recovery of infrastructure.**
+
+---
+
+# Jeremiah 36–39 pair / process matrix
+
+## Jeremiah / Baruch
+source / scribe-copy node.
+
+## speech / scroll
+biological/oral storage / external written storage.
+
+## scroll / fire
+information medium / destructive process.
+
+## destroyed scroll / rewritten scroll
+lost copy / reconstructed corpus.
+
+## siege withdrawal / siege return
+temporary relief / renewed hazard.
+
+## open route / checkpoint detention
+physical mobility / social barrier.
+
+## cistern / mud
+enclosure / immobilizing substrate.
+
+## rope / rags
+tension extractor / pressure-distribution interface.
+
+## rescuers / Jeremiah
+force system / fragile cargo.
+
+## wall / breach
+perimeter / structural discontinuity.
+
+## Middle Gate / hostile officials
+internal interface / new controller.
+
+## escape gate / plains capture
+boundary exit / failed wider escape.
+
+## city collapse / Jeremiah survival
+infrastructure failure / information-node continuity.
+
+---
+
+# Jeremiah 36–39 continuous transformation timeline
+
+oral prophetic corpus accumulates
+→ Jeremiah dictates
+→ Baruch encodes corpus into scroll
+→ scroll reaches temple audience Jeremiah cannot reach
+→ public reading produces relay network
+→ officials reread and report
+→ king obtains scroll
+→ scroll is cut incrementally
+→ pieces are burned
+→ human sources are targeted
+→ Jeremiah/Baruch remain hidden
+→ source memory/dictation survives
+→ Baruch rewrites corpus
+→ replacement includes additional material
+→ later siege temporarily withdraws
+→ population may misread relief
+→ hostile army returns
+→ Jeremiah attempts movement
+→ social checkpoint detains him
+→ confinement deepens
+→ later court confinement supplies bread
+→ officials lower Jeremiah into empty-water but muddy cistern
+→ he sinks into substrate
+→ starvation/death risk develops
+→ Ebed-melech identifies danger
+→ rescue team acquires ropes
+→ cloth/rags are added at body contact points
+→ Jeremiah is pulled upward
+→ secret king-prophet channel continues
+→ siege reaches terminal point
+→ city perimeter is physically breached
+→ hostile leaders occupy Middle Gate
+→ king/defenders flee through different interface
+→ pursuit continues beyond wall
+→ king is captured
+→ family/nobles are killed
+→ king is blinded/fettered
+→ houses burn
+→ walls are broken down
+→ population is deported/reassigned
+→ Jeremiah is separately protected
+→ Ebed-melech’s prior rescue relation is remembered.
+
+---
+
+# New master-mechanism additions from Jeremiah 36–39
+
+## M50I-1 — INFORMATION CAN BE OFFLOADED INTO DURABLE EXTERNAL STORAGE
+## M50I-2 — DICTATION CREATES SOURCE→SCRIBE→DOCUMENT CHAIN
+## M50I-3 — WRITING EXTENDS SOURCE REACH BEYOND SOURCE MOBILITY
+## M50I-4 — INFORMATION CAN PROPAGATE THROUGH RELAY NETWORK
+## M50I-5 — DERIVATIVE RELAYS ≠ INDEPENDENT WITNESSES
+## M50I-6 — INFORMATION DESTRUCTION CAN BE INCREMENTAL/DELIBERATE
+## M50I-7 — SUPPRESSION MAY TARGET MEDIUM + HUMAN RECONSTRUCTION NODES
+## M50I-8 — ONE COPY LOSS ≠ INFORMATION LOSS IF REDUNDANT SOURCE REMAINS
+## M50I-9 — RECONSTRUCTION CAN INCLUDE VERSION GROWTH
+## M50I-10 — POST-DESTRUCTION EXPANSION CAN BE PART OF PRESERVATION HISTORY
+## M50I-11 — CATASTROPHE ARCHIVE SHOULD HAVE MULTIPLE RECONSTRUCTION PATHS
+## M50I-12 — TEMPORARY PRESSURE WITHDRAWAL ≠ THREAT END
+## M50I-13 — SHORT RELIEF CAN PRECEDE STRONGER RETURN
+## M50I-14 — PHYSICAL ROUTE OPENING CAN FAIL AT SOCIAL CHECKPOINT
+## M50I-15 — ENCLOSURE FUNCTION DEPENDS ON EXIT CONTROL
+## M50I-16 — CONFINEMENT HAS MULTIPLE SEVERITY STATES
+## M50I-17 — DEEP ENCLOSURE CAN KILL THROUGH SOFT SUBSTRATE
+## M50I-18 — NO WATER ≠ SAFE CISTERN
+## M50I-19 — RESCUE MUST IDENTIFY ACTUAL FAILURE MODE
+## M50I-20 — SAFE EXTRACTION REQUIRES NON-INJURING FORCE INTERFACE
+## M50I-21 — PADDING CAN DISTRIBUTE EXTRACTION LOAD
+## M50I-22 — TRANSFER SYSTEM MUST MATCH CARGO FRAGILITY
+## M50I-23 — LOWER→UPPER VERTICAL RESCUE ≠ COSMIC WORLD TRANSIT
+## M50I-24 — UNCERTAIN CREW COUNT SHOULD NOT SUPPORT NUMEROLOGY
+## M50I-25 — HIGH-RISK INFORMATION CAN USE RESTRICTED CHANNEL
+## M50I-26 — BREACH = PHYSICAL PERIMETER DISCONTINUITY
+## M50I-27 — PERIMETER FAILURE CAN SHIFT CONTROL TO INTERNAL INTERFACE
+## M50I-28 — DIFFERENT GATES CAN SIMULTANEOUSLY SERVE ENTRY + ESCAPE
+## M50I-29 — WALL CROSSING ≠ SUCCESSFUL ESCAPE
+## M50I-30 — BLINDNESS CAN BE DELIBERATE SENSOR DESTRUCTION
+## M50I-31 — TRUE COLLAPSE INCLUDES STRUCTURAL BOUNDARY LOSS
+## M50I-32 — COLLAPSE CAN REDISTRIBUTE LAND/POPULATION BY CLASS
+## M50I-33 — INFORMATION NODE CAN SURVIVE HOST-INFRASTRUCTURE FAILURE
+## M50I-34 — RESCUE NETWORK CAN CREATE RECIPROCAL PRESERVATION
+## M50I-35 — INFORMATION/PERSON/INFRASTRUCTURE HAVE DIFFERENT RECOVERY THRESHOLDS
+## M50I-36 — ROPE TENSION MEMBER ≠ DRAGON SUPPORT SPRING WITHOUT LOAD-BEARING WORLD FUNCTION
+
+---
+
+# Number / timing register — Jeremiah 36–39
+
+Record without forcing:
+
+- Jeremiah 36 scroll command begins in Jehoiakim’s **4th year**; public reading follows in **5th year / 9th month**.
+- Jeremiah 39 siege begins in Zedekiah’s **9th year / 10th month** and breach occurs in **11th year / 4th month / 9th day**.
+- Jeremiah 38 rescue crew number is textually/translation disputed in modern versions (three vs thirty); do not use numerologically.
+- no gate-duration number;
+- no world-layer count;
+- no dragon-spring count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 36–39
+
+1. Working primary text: Jeremiah 36–39 NRSVUE, compared with NET/NIV/ESV/NKJV.
+2. Jeremiah 36 is central to discussions of the formation/growth of the Jeremiah corpus because the first scroll is burned and a second is dictated with additional words.
+3. Cambridge commentary explicitly treats the chapter as scroll written, publicly read, burned and rewritten.
+4. The reconstructed scroll demonstrates textual continuity without exact physical-copy continuity.
+5. Jeremiah 37’s temporary Babylonian withdrawal should not be treated as lasting military recovery; the narrative explicitly has them return.
+6. Jeremiah 38’s cistern rescue is mechanically detailed: ropes + old rags/clothes + armpit/body interface + multiple rescuers.
+7. NET and scholarly discussions note textual/translation issues around the rescue crew count; exact number should be treated cautiously.
+8. Ebed-melech is a contrasting protective actor inside a failing political system.
+9. Jeremiah 39 explicitly says a breach was made in the city, then Babylonian officials occupied the Middle Gate.
+10. The precise location/function of the “Middle Gate” is debated in older commentary; its role as an internal occupation/control node is secure.
+11. Zedekiah’s night escape through a gate between walls fails because pursuit continues outside the city.
+12. City walls/buildings fail while Jeremiah is preserved, reinforcing different recovery thresholds.
+13. No dragon/lattice-support or spiderweb→fingertrap mechanism appears.
+14. Strict fingertrap status remains negative; information/person recovery mechanics are exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 36–39
+
+Primary:
+- Jeremiah 36 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+36&version=NRSVUE
+- Jeremiah 38 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+38&version=NRSVUE
+- Jeremiah 39 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+39&version=NRSVUE
+
+Scholarly / contextual:
+- Cambridge Bible for Schools and Colleges, Jeremiah 36, on writing/read/burning/rewriting and corpus formation:
+  https://www.biblehub.com/commentaries/cambridge/jeremiah/36.htm
+- Working Preacher, Jeremiah 36, on Baruch, recording technology and rewritten scroll:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/potter-and-the-clay/commentary-on-jeremiah-181-11-6
+- Ebed-melech rescue study, *In die Skriflig*, on Jeremiah 38’s ropes/rags extraction:
+  https://www.scielo.org.za/scielo.php?pid=S2305-08532019000100030&script=sci_arttext
+- NET Bible, Jeremiah 38:10–13, for rescue mechanics and crew-count textual note:
+  https://www.biblegateway.com/passage/?search=Jeremiah+38%3A10-13&version=NET
+- Jeremiah 39 NRSVUE and commentary tradition retained for breach/Middle Gate/escape sequence.
+
+---
+
+# SECTION 50I CHECKPOINT — JEREMIAH 36–39 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 36 is one of the strongest information-resilience texts in the Bible: the physical scroll is destroyed, but the corpus survives because a human source/scribe network can reconstruct it.**
+2. **The replacement scroll is not merely a physical duplicate; it includes additional material, showing that continuity can coexist with textual growth.**
+3. **Temporary military relief in Jeremiah 37 does not equal system recovery; the threat returns.**
+4. **Jeremiah 38 provides unusually detailed rescue mechanics: a person trapped in a muddy deep enclosure is extracted with ropes plus cloth padding that protects the body at the load interface.**
+5. **This is a genuine vertical lower→upper rescue, but not a cosmic world transition.**
+6. **Jeremiah 39 gives a true uncontrolled breach: wall continuity fails, hostile controllers enter and occupy an internal gate, and city infrastructure collapses.**
+7. **Different gates simultaneously serve hostile entry and defender escape; “gate” function must remain local.**
+8. **Information, people and infrastructure have different recovery thresholds: the text survives, Jeremiah survives, the city fails.**
+9. **No dragon-support lattice or strict spiderweb→fingertrap transformation appears.**
+
+### Next live block
+
+**Jeremiah 40–45**
+
+Priority:
+- Gedaliah remnant governance after city collapse;
+- scattered soldiers/population regroup;
+- assassination destabilizes fragile successor node;
+- Johanan evacuation toward Egypt;
+- refugee group asks for route guidance then rejects answer;
+- “stay in land and build/plant” versus “go to Egypt” competing survival strategies;
+- Tahpanhes buried stones / pavement sign-act;
+- Egypt as attempted refuge becoming hazard node;
+- sword/famine/pestilence follow route choice;
+- women/queen-of-heaven cult and household-level information persistence;
+- Baruch’s personal survival promise in Jeremiah 45;
+- compare fragile post-collapse governance, refugee-route decisions and bad refuge selection with Vardath successor-node planning.
