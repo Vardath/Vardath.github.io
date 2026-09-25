@@ -58347,3 +58347,1001 @@ Priority:
 - rewritten scroll with added words;
 - compare split-calf passage geometry with Vardath two-side opening but preserve covenant-ritual control;
 - compare scroll destruction→reconstruction with redundant event-memory principles.
+
+
+---
+
+# SECTION 50 progress K — Jeremiah 52 + JEREMIAH MASTER SYNTHESIS
+## First-time research pass: siege chronology, breach recap, escape failure, temple destruction, bronze pillars/sea/bases broken into transportable material, paired structural pillars with latticework, precise measurements and deportation counts, and Jehoiachin prison→raised-seat→daily-provision reversal
+
+Jeremiah 52 functions as a historical appendix/review.
+
+It returns to events already narrated in Jeremiah 39 and parallels much of 2 Kings 24:18–25:30, but it adds or preserves several details:
+
+- precise siege chronology;
+- Zedekiah’s failed escape and imprisonment;
+- temple/palace/house burning;
+- city wall destruction;
+- population deportation;
+- poor agricultural workers left in the land;
+- bronze pillars, stands and “Sea” broken into pieces for transport;
+- paired pillars measured in height, circumference and thickness;
+- capitals surrounded by bronze latticework and pomegranates;
+- temple officials removed;
+- specific deportation totals;
+- Jehoiachin released after thirty-seven years of exile;
+- prison clothes removed;
+- seat raised above other captive kings;
+- regular place at royal table;
+- daily allowance for life.
+
+For Vardath Cosmology, this chapter is particularly useful as a **material control**.
+
+Earlier Jeremiah often speaks through:
+dragon;
+mountain;
+sea;
+wind;
+cup;
+yoke;
+labor;
+sheep;
+storm.
+
+Jeremiah 52 shifts toward:
+**what physically broke, what was carried, what was measured, and what population moved.**
+
+That lets the project distinguish:
+metaphorical mechanism
+from
+actual architectural/material inventory.
+
+---
+
+# Jeremiah 52:4–7 — long siege pressure terminates in short boundary breach
+
+City:
+besieged for extended interval.
+
+Food:
+fails.
+
+Then:
+wall breached.
+
+## M50K-1 — LONG ENCLOSURE PRESSURE CAN TERMINATE IN RAPID PERIMETER FAILURE AFTER RESOURCE DEPLETION
+
+This confirms Jeremiah 39.
+
+The sequence is:
+
+external pressure
+→ internal scarcity
+→ boundary failure.
+
+---
+
+# M50K-2 — RESOURCE DEPLETION CAN BE AN INTERMEDIATE CAUSAL LINK BETWEEN ENCLOSURE AND BREACH
+
+A wall need not fail mechanically first.
+
+The population/system can fail from inside.
+
+---
+
+# Jeremiah 52:7–11 — escape corridor is traversed but fails downstream
+
+King:
+passes through gate between walls.
+
+Then:
+pursued;
+captured;
+army scattered;
+sons killed;
+eyes removed;
+fetters;
+prison until death.
+
+## M50K-3 — SUCCESSFUL EXIT FROM ENCLOSURE DOES NOT GUARANTEE SYSTEM ESCAPE
+
+This final repetition makes the rule especially strong.
+
+---
+
+# Jeremiah 52:12–14 — fire + wall destruction decommission the urban system
+
+Temple:
+burned.
+
+Palace:
+burned.
+
+houses:
+burned.
+
+wall:
+broken down.
+
+## M50K-4 — URBAN DECOMMISSIONING CAN COMBINE THERMAL INFRASTRUCTURE LOSS WITH PERIMETER REMOVAL
+
+Different failure modes:
+fire;
+demolition.
+
+---
+
+# Jeremiah 52:15–16 — population is sorted, while agricultural remnant remains
+
+Many:
+deported.
+
+Poor:
+left as vinedressers/farmers.
+
+## M50K-5 — CATASTROPHE CAN PRESERVE A LOW-RESOURCE ON-SITE AGRICULTURAL SUBSYSTEM AFTER ELITE/URBAN REMOVAL
+
+This is a highly practical successor-state pattern.
+
+---
+
+# Jeremiah 52:17 — bronze pillars / stands / bronze Sea are broken into pieces and transported
+
+These objects are too large/valuable to remain intact in the conquered temple system.
+
+Sequence:
+
+large structural/cultic bronze object
+→ broken into smaller pieces
+→ material transported to Babylon.
+
+## M50K-6 — STRUCTURAL OBJECT CAN BE DECOMPOSED INTO MATERIAL CARGO FOR TRANSFER
+
+This is a strong distinction:
+
+object identity:
+lost.
+
+material identity:
+preserved.
+
+---
+
+# M50K-7 — MATERIAL CONTINUITY DOES NOT REQUIRE STRUCTURAL CONTINUITY
+
+This is crucial for Vardath.
+
+A lattice-support mechanism requires:
+structural continuity.
+
+Jeremiah 52 bronze:
+material survives,
+structure does not.
+
+Therefore it is **not** a fingertrap-like transformation.
+
+---
+
+# Jeremiah 52:17–20 — “Sea” is ordinary temple basin, not ocean
+
+The bronze Sea:
+a large cultic basin/laver.
+
+It is broken and carried away as bronze.
+
+## M50K-8 — “SEA” NOUN CAN REFER TO ARCHITECTURAL WATER VESSEL RATHER THAN NATURAL OCEAN
+
+This is a major lexical control.
+
+Never infer:
+sea-level/hydrological event
+from noun alone.
+
+---
+
+# Jeremiah 52:20 — two pillars / one Sea / twelve bronze bulls form a structured temple set
+
+The inventory gives:
+two pillars;
+one Sea;
+twelve bulls/support elements;
+stands.
+
+## M50K-9 — NUMERICALLY ORDERED TEMPLE ARCHITECTURE IS REAL BUT MUST REMAIN LOCAL ARCHITECTURE BEFORE COSMOLOGICAL MAPPING
+
+This is potentially attractive numerically,
+so strict control matters.
+
+---
+
+# Jeremiah 52:21 — one pillar has measurable geometry
+
+One pillar:
+18 cubits high;
+12 cubits circumference;
+hollow;
+four-finger thickness.
+
+## M50K-10 — TRUE STRUCTURAL GEOMETRY SHOULD BE DISTINGUISHED FROM SYMBOLIC GEOMETRY WHEN THE TEXT SUPPLIES DIMENSIONS
+
+This is important.
+
+Here the object:
+really is a column.
+
+Dimensions:
+architectural.
+
+---
+
+# Jeremiah 52:22–23 — capital + latticework + pomegranates encircle pillar top
+
+This is one of the few places in Jeremiah with explicit architectural **latticework**.
+
+Pillar:
+vertical support/decorative architectural member.
+
+Capital:
+top node.
+
+Latticework:
+surrounds capital.
+
+Pomegranates:
+distributed around lattice.
+
+Second pillar:
+similar.
+
+## M50K-11 — JEREMIAH 52 CONTAINS REAL PILLAR + LATTICE ARCHITECTURE
+
+This deserves direct Vardath screening.
+
+---
+
+# Jeremiah 52 pillar/lattice versus Vardath dragon lattice-spring
+
+## Jeremiah temple system
+- two hollow bronze pillars;
+- capitals;
+- surrounding decorative bronze latticework;
+- pomegranates;
+- fixed architecture at temple porch;
+- later broken apart.
+
+## Vardath system
+- distributed dragon lattice springs;
+- support ground/world layer;
+- broad quiet-state web;
+- geometry changes;
+- narrows into fingertrap/throat;
+- support later re-establishes.
+
+### Overlap
+- lattice;
+- vertical support-like members;
+- paired major columns;
+- connected/decorative network around top.
+
+### Mismatch
+- local temple architecture;
+- latticework is not stated as load-bearing ground support;
+- paired pillars are fixed columns, not dragon springs;
+- no geometry transition;
+- structure is destroyed, not reconfigured/reopened.
+
+## M50K-12 — JEREMIAH 52 IS A REAL LATTICE/PAIR ARCHITECTURE TEXT BUT A FUNCTIONAL MISMATCH TO THE VARDATH WORLD-SUPPORT LATTICE
+
+This is a valuable negative/architectural control.
+
+---
+
+# M50K-13 — LOCAL ARCHITECTURAL LATTICE SHOULD NOT BE PROMOTED TO COSMIC LATTICE WITHOUT SCALE/ROLE BRIDGE
+
+This applies to:
+temple;
+wall;
+net;
+tent;
+web.
+
+---
+
+# Jeremiah 52:20 — bronze mass is “beyond weighing”
+
+The total bronze:
+too much for the narrative’s ordinary weight accounting.
+
+## M50K-14 — “BEYOND WEIGHING” IS MASS-SCALE LANGUAGE, NOT INFINITE MASS
+
+Another rhetorical/measurement control.
+
+---
+
+# Jeremiah 52:24–27 — leadership/temple/administrative nodes are selectively removed
+
+Priests;
+door guardians;
+military official;
+royal advisers;
+army secretary;
+local men.
+
+## M50K-15 — CONQUEROR CAN DECAPITATE A SYSTEM BY SELECTIVELY REMOVING CONTROL/INFORMATION NODES
+
+Population collapse:
+not random-only.
+
+---
+
+# Jeremiah 52:28–30 — deportations are explicitly counted
+
+Numbers:
+3023;
+832;
+745;
+total 4600
+in this particular register.
+
+These counts differ in scope/timing from figures preserved in Kings.
+
+Scholarly commentary notes chronological and numerical difficulties.
+
+## M50K-16 — PRECISE NUMBERS CAN COME FROM A SPECIFIC REGISTER/SUBSET AND NEED NOT REPRESENT TOTAL POPULATION TRANSFER
+
+This is extremely important for Vardath number research.
+
+Exact number
+≠
+complete census.
+
+---
+
+# M50K-17 — NUMERICAL DISCREPANCY BETWEEN PARALLEL SOURCES SHOULD TRIGGER GRAIN/SCOPE ANALYSIS BEFORE SYMBOLIC INTERPRETATION
+
+Ask:
+- which deportation?
+- which category?
+- which source?
+- which regnal-year system?
+- total or subset?
+
+Before:
+numerology.
+
+---
+
+# Jeremiah 52 / 2 Kings parallel control
+
+Large portions parallel:
+2 Kings 24:18–25:30.
+
+Jeremiah 52 includes extra details in the temple inventory and deportation list.
+
+## M50K-18 — PARALLEL TEXTS MAY SHARE SOURCE/TRADITION RATHER THAN CONSTITUTE INDEPENDENT WITNESSES
+
+This is essential to the 88-book method.
+
+Repeated wording:
+must not be counted as independent corroboration.
+
+---
+
+# Jeremiah 52:31 — thirty-seven years of exile precede Jehoiachin’s release
+
+Jehoiachin:
+long captive duration.
+
+Then:
+new Babylonian king
+→ lifts him from prison.
+
+## M50K-19 — VERY LONG CONSTRAINT STATE CAN END ABRUPTLY WITH CONTROL-NODE SUCCESSION
+
+Political regime change:
+changes captive state.
+
+---
+
+# Jeremiah 52:32 — Jehoiachin receives seat above other captive kings
+
+Prison:
+→ elevated seat/status.
+
+## M50K-20 — LOW-CONFINEMENT STATE CAN REVERSE INTO HIGHER STATUS WITHOUT RETURN TO ORIGINAL LAND
+
+This is a striking final-state nuance.
+
+Restoration:
+not necessarily geographic return.
+
+---
+
+# Jeremiah 52:33 — prison clothing removed
+
+Prison identity:
+garment removed.
+
+New identity:
+royal-table participant.
+
+## M50K-21 — CLOTHING-STATE CHANGE CAN MARK CONTROL/STATUS TRANSITION
+
+Repeated Isaiah/Jeremiah pattern.
+
+---
+
+# Jeremiah 52:33–34 — daily table access and allowance create stable resource supply
+
+Every day:
+food/table.
+
+Daily allowance:
+through life.
+
+## M50K-22 — SUCCESSOR STABILITY CAN BE DEFINED BY PREDICTABLE RECURRING RESOURCE ACCESS
+
+This is a very concrete endpoint.
+
+Not:
+great imperial restoration.
+
+But:
+stable daily provision.
+
+---
+
+# M50K-23 — BOOK ENDS WITH A SMALL-SCALE STABLE HUMAN SYSTEM AFTER LARGE-SCALE NATIONAL COLLAPSE
+
+This is important.
+
+Jeremiah’s final image is not:
+dragon;
+storm;
+burning city.
+
+It is:
+a captive king
+with:
+clothes;
+seat;
+table;
+daily allowance.
+
+A minimum but durable successor order.
+
+---
+
+# JEREMIAH MASTER SYNTHESIS — SECTION 50
+
+Jeremiah’s overall process architecture is now extraordinarily rich.
+
+It does **not** provide a strict Vardath spiderweb→fingertrap mechanism.
+
+But it supplies many of the surrounding processes the cosmology needs:
+warning;
+thresholds;
+ route selection;
+ restraint;
+ collapse;
+ boundary failure;
+ population transfer;
+ long displacement;
+ water/resource ecology;
+ information survival;
+ successor rebuilding;
+ false causal models;
+ dragon-role controls;
+ stable post-collapse routines.
+
+---
+
+# JEREMIAH MASTER — continuous process timeline
+
+prophetic observer is commissioned
+→ words are stored/transmitted
+→ northern hazard is repeatedly forecast
+→ people fail warning uptake
+→ social/information corruption grows
+→ drought/water stress and war imagery recur
+→ potter/clay shows re-formable system logic
+→ broken vessel shows non-recoverable form loss
+→ yokes/straps/bars model imposed control
+→ Babylon becomes dominant host/control system
+→ some populations are told to leave city to survive
+→ others later must settle and build in Babylon
+→ 23-year warning history accumulates
+→ seventy-year long horizon is announced
+→ competing two-year rapid-restoration forecast appears
+→ wooden yoke is physically broken
+→ represented empire remains
+→ iron yoke replaces wood
+→ exiles receive long-duration build/plant/marry/multiply strategy
+→ distress/labor-pain restoration block begins
+→ yoke finally breaks
+→ wounded system heals
+→ scattered population regathers
+→ marked road enables reverse return
+→ uncertain “woman encompasses man” enclosure image appears
+→ external law moves to heart/internal memory
+→ sun/moon/star order becomes stability clock
+→ heavens-above / foundations-below formula appears
+→ field deed is purchased/sealed during siege
+→ city fall approaches
+→ slave release is reversed
+→ covenant calf is split and participants pass between halves
+→ scroll warning is destroyed
+→ scroll is rewritten/expanded
+→ siege pressure temporarily withdraws
+→ siege returns
+→ Jeremiah descends into cistern
+→ ropes/rags extract him
+→ city boundary breaches
+→ Zedekiah passes through gate between two walls
+→ gate crossing fails to secure escape
+→ city burns and walls collapse
+→ remnant governance forms at Mizpah
+→ scattered refugees return and harvest
+→ internal assassination collapses recovery
+→ captives are rescued
+→ survivors ask route advice
+→ preferred Egypt route is rejected by oracle
+→ survivors reject the oracle and move to Egypt
+→ hidden Tahpanhes stones receive throne/canopy sign above
+→ Egypt enters same Babylonian hazard field
+→ Queen-of-Heaven community and Jeremiah present opposite causal models
+→ Baruch receives life as portable minimum
+→ Egypt is projected as rising Nile military flood
+→ Philistia receives north-water flood projection
+→ Moab remains settled like wine in one vessel
+→ Moab is poured vessel-to-vessel
+→ vessels break
+→ Edom high/eagle security collapses
+→ earth trembles
+→ Damascus becomes unresting sea
+→ Elam is scattered by four winds
+→ Babylon itself becomes target
+→ former host becomes evacuation node
+→ hammer of earth breaks
+→ drought attacks Babylon waters
+→ destructive wind/winnowing empties system
+→ earth-established/heaven-stretched formula returns
+→ atmospheric water/rain/wind processes appear
+→ destroying mountain is rolled down/burned
+→ mountain denied future foundation role
+→ land trembles
+→ bars break / fords seized
+→ Babylon enters threshing-floor phase
+→ Nebuchadnezzar is called tannîn/dragon
+→ dragon role = imperial devourer/swallowing container
+→ Babylon water is dried
+→ later sea/waves cover Babylon
+→ Bel disgorges swallowed contents
+→ inflow to imperial center stops
+→ survivor outflow begins
+→ broad walls/high gates fail
+→ scroll is weighted with stone
+→ scroll sinks into Euphrates
+→ final historical appendix replays breach
+→ temple bronze pillars/Sea/bases are physically broken and transported
+→ paired pillars/latticework are measured and inventoried
+→ population deportations are counted
+→ after thirty-seven years Jehoiachin leaves prison
+→ prison garments removed
+→ seat elevated
+→ stable table/daily allowance closes Jeremiah.
+
+---
+
+# JEREMIAH MASTER — strongest Vardath correspondences
+
+## 1. Phase-dependent safe route
+Exceptionally strong.
+
+During siege:
+leave city.
+
+During Babylon exile:
+settle/build/plant.
+
+When Babylon enters failure:
+leave Babylon.
+
+After Judah’s conquest:
+remain in Judah may be safer than Egypt.
+
+### Master rule
+
+**safe route is phase-dependent, not symbol-dependent.**
+
+---
+
+## 2. Long warning → short breach
+Strong.
+
+Warnings:
+years/decades.
+
+Siege:
+long pressure.
+
+Boundary failure:
+short event.
+
+This strongly supports:
+long precursor
+→ rapid transition
+architecture.
+
+---
+
+## 3. Nested timescales
+Exceptionally strong.
+
+- 23-year warning history;
+- two-year false rapid forecast;
+- seventy-year Babylon horizon;
+- ten-day route-decision latency;
+- multi-generation exile;
+- thirty-seven-year royal captivity;
+- day/night clocks;
+- year-to-year rumors.
+
+### Master rule
+
+**one catastrophe system can operate on many clocks.**
+
+---
+
+## 4. Restraint/load mechanics
+Very strong.
+
+Yoke:
+straps + bar + neck.
+
+Wood:
+broken.
+
+Iron:
+stronger replacement.
+
+Finally:
+yoke broken/removed.
+
+This gives:
+installation
+→ strengthening
+→ release.
+
+But:
+restraint,
+not world support.
+
+---
+
+## 5. Passage geometry
+Very strong ordinary-scale analogues.
+
+- pass between two calf halves;
+- gate between two walls;
+- cistern vertical descent/ascent;
+- roads/signposts;
+- fords;
+- gates/bars;
+- breaches.
+
+Still:
+no same broad lattice narrows and reopens.
+
+---
+
+## 6. Information resilience
+Exceptionally strong.
+
+- oral prophecy;
+- dictated scroll;
+- Baruch;
+- scroll burned;
+- scroll rewritten/expanded;
+- letters between cities;
+- sealed/open deeds;
+- jars/storage;
+- road markers;
+- multi-generational words;
+- messenger chains.
+
+This is one of Jeremiah’s greatest contributions to the Vardath project.
+
+---
+
+## 7. Water/environment dynamics
+Very strong.
+
+- drought;
+- fountains/cisterns;
+- rivers;
+- Nile flood projection;
+- north flood projection;
+- Babylon waters dried;
+- sea/waves covering Babylon;
+- mist/rain/wind;
+- Euphrates sinking sign;
+- springs/pastures/gardens.
+
+But:
+often metaphorical.
+Object type must be preserved.
+
+---
+
+## 8. Dragon
+Explicit but functionally negative for Vardath identification.
+
+Jeremiah 51:34:
+Nebuchadnezzar = tannîn.
+
+Function:
+devours;
+swallows;
+fills belly;
+spews out.
+
+Vardath dragons:
+lattice springs;
+support ground;
+change geometry.
+
+### Master verdict
+
+**lexical dragon ≠ Vardath dragon.**
+
+---
+
+## 9. Ground trembling / foundations
+Strong but disconnected from dragon.
+
+Jeremiah:
+earth trembles;
+foundations below;
+destroying mountain;
+foundation stones;
+walls/pillars.
+
+No line says:
+dragon supports ground
+or causes ground tremor by moving.
+
+---
+
+## 10. Lattice/network
+Real but local/functional mismatch.
+
+Jeremiah 52:
+bronze latticework around pillar capitals.
+
+Jeremiah yoke:
+coupled straps/bars.
+
+Jeremiah covenant:
+split animal creates corridor.
+
+No:
+world-scale elastic web.
+
+---
+
+## 11. Population ecology
+Exceptionally strong.
+
+Long survival requires:
+- houses;
+- gardens;
+- stored harvest;
+- reproduction;
+- host-city welfare;
+- pasture;
+- flocks;
+- agriculture;
+- governance;
+- information.
+
+Jeremiah is one of the best books so far for the **human consequences and recovery side** of Vardath Cosmology.
+
+---
+
+## 12. Successor state
+Exceptionally strong.
+
+Successor indicators include:
+- rebuilt city;
+- replanted population;
+- fields bought;
+- deeds witnessed;
+- weddings;
+- flocks counted;
+- pasture;
+- daily food;
+- new governance;
+- low disturbance/rest.
+
+Restoration:
+not simply rewind.
+
+---
+
+# JEREMIAH MASTER — dragon/lattice-spring test
+
+Vardath core mechanism:
+
+spiderweb quiet-state lattice
+→ dragons as lattice springs support ground
+→ geometry reorients/contracts
+→ fingertrap/throat forms
+→ world interaction/transfer
+→ terrain/water/atmosphere respond
+→ lattice reopens
+→ ground support restabilizes.
+
+Jeremiah provides:
+
+### spiderweb?
+No.
+
+### dragon?
+Yes, Jeremiah 51 tannîn.
+
+### dragon support role?
+No.
+
+### spring behavior?
+No.
+
+### ground support?
+No.
+
+### terrain response?
+Yes:
+trembling;
+mountain collapse;
+walls/boundaries.
+
+### water response?
+Yes:
+drought;
+flood projections;
+sea rise;
+water drying.
+
+### throat/passage?
+Several ordinary corridors:
+between calf halves;
+between two walls;
+roads/gates.
+
+### same structure creates throat?
+No.
+
+### reopening/re-support?
+No.
+
+## JEREMIAH STRICT VERDICT
+
+**Jeremiah is not a strict Vardath fingertrap text. It contains an explicit dragon but assigns it the wrong mechanical role for Vardath identification: imperial devourer rather than ground-support lattice spring. It contains multiple passage geometries, foundation references, ground trembling, hydrological reversals, wind fields and boundary failures, but none are causally joined to the tannîn as one transforming support system.**
+
+That negative result is highly valuable:
+it makes the project’s dragon criterion sharper.
+
+---
+
+# JEREMIAH MASTER — strongest new methodological rules
+
+1. **A repeated symbol can change function by phase.**
+2. **A lexical dragon is not a Vardath dragon unless it supports the ground/lattice.**
+3. **Repeated wording may be literary reuse, not independent observation.**
+4. **Container contents and container structure can fail/transfer at different times.**
+5. **Safe route changes across phases.**
+6. **Crossing a gate does not guarantee survival beyond the gate.**
+7. **Long displacement requires settlement ecology, not permanent evacuation mode.**
+8. **Competing causal models can arise from the same historical sequence.**
+9. **Precise numbers may reflect subsets/registers rather than cosmic codes.**
+10. **Parallel texts sharing source/tradition should not be double-counted.**
+11. **Ground-tremor consequences should be cross-tested against genuine support-role dragon passages elsewhere.**
+12. **A complete Vardath match still requires same-object continuity through broad→narrow→transfer→reopen.**
+
+---
+
+# JEREMIAH MASTER — number/timing register
+
+High-value numbers/times retained without forcing:
+
+- 23 years of Jeremiah warning activity;
+- 70 years Babylon horizon;
+- 2 years Hananiah prediction;
+- 10-day route-answer delay;
+- 17 shekels field purchase;
+- 4 winds / 4 quarters of heaven;
+- precise siege regnal dates;
+- 37 years of Jehoiachin exile before release;
+- deportation register: 3023 + 832 + 745 = 4600 in Jeremiah 52;
+- temple pillar measurements: 18 cubits high, 12 circumference, hollow, four-finger thickness; 5-cubit capitals;
+- 96/100 pomegranate count around latticework in Jeremiah 52 traditions/text;
+- 2 pillars;
+- 1 bronze Sea;
+- 12 bronze bulls in the temple inventory.
+
+### Permanent number control
+
+These numbers come from:
+different process variables,
+different literary units,
+different archival registers.
+
+No internally demonstrated shared 1–3–7 / 8 / 11 mechanism appears across them.
+
+Do not combine them numerologically without an independent structural bridge.
+
+---
+
+# Jeremiah 52 textual / historical controls
+
+1. Jeremiah 52 substantially parallels 2 Kings 24:18–25:30 and likely shares source/tradition with it; it is not an independent eyewitness confirmation of every repeated detail.
+2. Jeremiah 52 also preserves extra details, especially temple inventory and deportation figures.
+3. The large bronze pillars, stands and Sea are physically broken because transporting them intact would be difficult; bronze material is then carried away.
+4. Pillar dimensions and latticework are local temple architecture.
+5. The deportation numbers in Jeremiah 52 differ from totals/timings elsewhere in Kings and create known chronological/scope problems.
+6. Cambridge notes Jeremiah 52:28–30 is absent from the LXX and from 2 Kings 25 and may derive from a separate source/document.
+7. Therefore the exact counts are valuable historical-textual data but unsafe for cosmological numerology.
+8. Jehoiachin’s release scene parallels 2 Kings 25:27–30 and ends the book with status/resource stabilization inside exile rather than full territorial restoration.
+9. No dragon/lattice-support mechanics appear in Jeremiah 52 itself.
+10. Strict fingertrap status for Jeremiah as a whole remains negative.
+
+---
+
+# Sources logged — Jeremiah 52 / master synthesis
+
+Primary:
+- Jeremiah 52 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+52&version=NRSVUE
+
+Historical / textual:
+- Cambridge Bible for Jeremiah 52, for parallels with 2 Kings and the deportation-register textual issues:
+  https://biblehub.com/commentaries/cambridge/jeremiah/52.htm
+- Keil & Delitzsch, Jeremiah 52, retained for comparison of temple inventory and the Jeremiah/2 Kings relationship:
+  https://www.biblehub.com/commentaries/kad/jeremiah/52.htm
+- 2 Kings 25 comparison material retained for the shared destruction/deportation tradition.
+
+---
+
+# SECTION 50 MASTER CHECKPOINT — JEREMIAH COMPLETE
+
+Jeremiah has now been researched through chapter 52.
+
+Most important Vardath conclusions:
+
+1. **Jeremiah gives an explicit dragon/tannîn, but the dragon’s role is imperial devourer, not the ground-support lattice spring.**
+2. **This is a critical negative control that makes the Vardath dragon test role-based rather than word-based.**
+3. **Jeremiah is exceptionally strong for precursor timing, route decisions, collapse mechanics, displacement, survivor ecology, archive preservation and successor rebuilding.**
+4. **Its passage analogues—between calf halves, between two walls, gates/fords/cisterns—are strong bounded-corridor examples but not same-lattice throat formation.**
+5. **Moab’s vessel-to-vessel wine transfer is one of the best analogues for separating contents-transfer from container-breakage.**
+6. **Ground trembling, mountains, foundations, atmospheric water/wind and dragon imagery coexist in Jeremiah, but the text does not causally connect them into the Vardath support mechanism.**
+7. **Jeremiah’s final physical inventory gives a strong material control: real pillars, real latticework, real bronze Sea, real dimensions and real breakage should not be confused with cosmic metaphors.**
+8. **The book ends not with full national restoration but with Jehoiachin’s prison→raised-seat→daily-food reversal, demonstrating a small stable successor state after massive system collapse.**
+9. **Strict spiderweb→fingertrap status for Jeremiah: negative.**
+10. **Research should now move to the next unfinished text in the reconstructed 88-book roadmap, determined from the live EXTRA-RESEARCH roadmap rather than assumed from ordinary canonical order.**
+
+### Next live action
+
+Re-read the live reconstructed roadmap / first unfinished section after Jeremiah.
+
+Do **not** assume canonical order if the 88-book reconstruction places another text between Jeremiah and the familiar next book.
+
+Then continue the same first-time process:
+- primary text;
+- ordinary literary/historical mechanism;
+- pair/set classification;
+- geometry/state transitions;
+- dragon ground-support test where applicable;
+- number/timing register;
+- Vardath comparison;
+- strict same-object fingertrap screening;
+- direct append.
