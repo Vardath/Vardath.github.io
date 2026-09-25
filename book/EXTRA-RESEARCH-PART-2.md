@@ -2881,3 +2881,1437 @@ Priority:
 - dated siege synchronization;
 - Ezekiel's wife as sign and constrained mourning;
 - strict test for whether any route-junction / vessel / wall imagery advances the actual Vardath mechanism.
+
+
+---
+
+# SECTION 52 progress F — Ezekiel 21–24
+## Fresh sequential research: route bifurcation and target selection, destructive gathering into a furnace, person-at-breach boundary repair, paired city-women following the same route, siege-synchronised pot transformation and signal-channel reopening
+
+### Sequential-integrity note
+
+The mandatory three-file anti-duplication check was completed before this block.
+
+- Part 1 contains no Ezekiel 21–24 research.
+- Existing `EXTRA-RESEARCH.md` stops the direct sequential pass at Ezekiel 12–16.
+- Part 2 contains Ezekiel 17–20 and identifies Ezekiel 21–24 as the next live block.
+- English Ezekiel 20:45–49 / Hebrew Ezekiel 21:1–5 was already researched in the preceding block and is **not repeated here**.
+
+Primary text read in full:
+- Ezekiel 21 NRSVUE, beginning with English 21:1;
+- Ezekiel 22 NRSVUE;
+- Ezekiel 23 NRSVUE;
+- Ezekiel 24 NRSVUE.
+
+---
+
+# Ezekiel 21
+## Sword released from sheath, direction commands, one origin splitting into two roads, divinatory route selection, siege at gates, crown removal and high/low inversion
+
+## Versification control
+
+The fire/forest oracle in English Ezekiel 20:45–49 corresponds to Hebrew Ezekiel 21:1–5.
+
+This block therefore begins with the next English unit, where the fire image is decoded/shifted into sword imagery against Jerusalem and Israel.
+
+Do not count the south/forest oracle twice.
+
+---
+
+## 21:1–7 — unsheathed sword and whole-land directional sweep
+
+The sword is:
+- drawn from its sheath;
+- directed against Jerusalem, sanctuaries and the land;
+- described as cutting righteous and wicked;
+- extended from south to north;
+- not immediately returned to its sheath.
+
+The human body then becomes an effects display:
+- heart melts;
+- hands weaken;
+- spirit faints;
+- knees become unstable/"water"-like.
+
+### M52F-1 — RELEASED TOOL AND EFFECT FIELD ARE DISTINCT
+
+The sword:
+**leaves enclosure/sheath**
+→ **moves through a broad target domain**
+→ **produces system-wide effects**.
+
+This is real release/extension imagery, but not a gate.
+
+The sheath contains a weapon; it is not a world boundary.
+
+### M52F-2 — "SOUTH TO NORTH" IS A SWEEP DIRECTION, NOT AN UPPER/LOWER WORLD AXIS
+
+The text supplies a broad geographic directional range.
+
+That should be logged as actual motion language without converting cardinal direction into vertical cosmology.
+
+### Body-state control
+
+The people's bodily reactions are effects of fear/news.
+
+They should not be literalised into physical liquefaction.
+
+"Knees become water" belongs to embodied terror imagery.
+
+---
+
+# 21:8–17 — sharpened/polished sword, rod/scepter contrast, right/left engagement
+
+The sword is repeatedly:
+- sharpened;
+- polished;
+- handed to the slayer;
+- directed against princes and people;
+- associated with gates;
+- told to attack right or left according to direction.
+
+The text also contains difficult/uncertain wording about the "rod"/scepter.
+
+NRSVUE explicitly flags uncertainty in verses 10 and 13.
+
+Therefore no large structural theory should depend on one precise English rendering of the rod/scepter phrases.
+
+### M52F-3 — ROD AND SWORD ARE NOT FUNCTIONALLY INTERCHANGEABLE
+
+Where the rod/scepter appears, it belongs to royal authority/discipline language.
+
+The sword belongs to destruction.
+
+Even when both are stick-like axial objects:
+**same broad shape ≠ same role**.
+
+This reinforces the anti-symbol-dictionary rule already developed.
+
+### Right / left control
+
+The sword can engage right or left.
+
+This is directional targeting.
+
+It does not by itself imply two opposed lattice strands.
+
+---
+
+# 21:18–23 — one source road → junction → two possible targets → one selected route
+
+This is the mechanically strongest section of Ezekiel 21.
+
+The prophet is told to mark out:
+- two roads;
+- both issuing from the same land/source;
+- a signpost at the branching point;
+- one road toward Rabbah of Ammon;
+- one toward fortified Jerusalem.
+
+The Babylonian king stops at the junction and uses multiple divinatory procedures:
+- arrows/lots;
+- teraphim;
+- liver inspection.
+
+The selected result points toward Jerusalem.
+
+Then the route becomes material military action:
+- battering rams;
+- attack command;
+- battle cry;
+- rams against gates;
+- ramp;
+- siegeworks.
+
+### M52F-4 — THIS IS AN EXPLICIT ONE-TO-TWO ROUTE BIFURCATION
+
+Geometry:
+
+**common origin**
+→ **single approach**
+→ **decision node / fork**
+→ **branch A: Rabbah**
+OR
+→ **branch B: Jerusalem**.
+
+This is not a braid.
+
+It is a branching transport/decision network.
+
+### M52F-5 — ROUTE GEOMETRY AND ROUTE SELECTION ARE SEPARATE SYSTEMS
+
+The roads exist before the decision.
+
+The divination does not create the roads.
+
+It selects which pre-existing route the army will use.
+
+So:
+
+**available topology**
+≠
+**selection mechanism**.
+
+This is a valuable rule for future Vardath comparisons.
+
+A gate/branch can exist without determining which branch traffic takes.
+
+### M52F-6 — INFORMATION/DECISION PRECEDES MATERIAL FLOW
+
+The sequence is:
+
+**junction**
+→ **symbolic/information procedure**
+→ **selected destination**
+→ **army moves**
+→ **siege hardware deployed at gates**.
+
+This resembles other cases where information changes later material motion.
+
+It does not require a supernatural transport mechanism.
+
+### M52F-7 — THE RIGHT-HAND RESULT IS FUNCTIONAL, NOT AUTOMATIC COSMIC "RIGHT SIDE"
+
+The omen/lot appears in the king's right hand for Jerusalem.
+
+The important mechanical point is selected branch/destination.
+
+Do not force "right hand" into a permanent right-side cosmological spring.
+
+---
+
+# 21:24–27 — capture, turban/crown removal, high/low reversal, delayed legitimate transfer
+
+The prince is told:
+- turban removed;
+- crown removed;
+- existing order will not remain;
+- low is raised;
+- high is lowered;
+- ruin is repeated;
+- the royal state remains disrupted until a rightful claimant receives it.
+
+### M52F-8 — OFFICE / AUTHORITY CAN BE DETACHED FROM CURRENT HOLDER
+
+This is structurally important.
+
+**holder**
+→ **insignia removed**
+→ **status inverted**
+→ **office/order remains unresolved**
+→ **future transfer to another claimant**.
+
+This parallels earlier throne/office controls:
+the role can persist conceptually while the current person loses it.
+
+### M52F-9 — HIGH/LOW INVERSION RECURS BUT DOES NOT MEAN TIME REVERSAL
+
+Ezekiel 17 already gave:
+- high tree lowered;
+- low tree raised.
+
+Ezekiel 21 applies the same inversion grammar to political status.
+
+Repeated high/low inversion is therefore a general state-change device in Ezekiel, not a unique physical mechanism.
+
+---
+
+# 21:28–32 — Ammonite sword returns to sheath / judgment at origin
+
+The final oracle against Ammon says:
+- sword drawn/polished;
+- false visions/divination operate;
+- sword is told to return to its sheath;
+- judgment occurs in the land/place of origin;
+- fire/wrath follows;
+- blood enters the land/earth.
+
+### M52F-10 — RELEASE AND RETURN CAN CLOSE A WEAPON CYCLE WITHOUT FORMING A GATE CYCLE
+
+There is a genuine:
+
+**sheathed**
+→ **drawn**
+→ **used/threatened**
+→ **returned to sheath**.
+
+But this is the lifecycle of a weapon.
+
+It lacks:
+- changing adjacency;
+- transported world material;
+- support structure;
+- broad→narrow geometry.
+
+Use it as a control for "open/close" language.
+
+---
+
+# Ezekiel 21 process timeline
+
+south/forest fire oracle already given
+→ image shifts to sword
+→ sword drawn from sheath
+→ whole-land south-to-north threat
+→ human fear effects
+→ sword sharpened/polished
+→ rod/scepter contrasted
+→ sword can engage right/left
+→ prophet marks two roads
+→ both roads share one source land
+→ signpost placed at fork
+→ Babylonian king stops at junction
+→ divination selects destination
+→ Jerusalem branch selected
+→ siege force targets gates
+→ prince captured / authority stripped
+→ high/low political inversion
+→ royal order suspended
+→ Ammon oracle
+→ sword eventually returns to sheath
+→ judgment remains at origin.
+
+---
+
+# Ezekiel 21 strict Vardath screening
+
+## Strong
+- explicit route fork;
+- common source with divergent destinations;
+- target-selection node;
+- information → material movement;
+- gates under siege;
+- high/low inversion;
+- release/return cycle of contained tool.
+
+## Partial
+- right/left direction;
+- rod/scepter;
+- sheath/open-close analogy.
+
+## Absent
+- same broad support lattice;
+- strand-angle contraction;
+- narrow throat;
+- world-layer adjacency;
+- two-way traffic between populated worlds;
+- reopening of the same support structure.
+
+### Verdict
+
+**Ezekiel 21 is a strong branching-route and selection-node text, not a strict fingertrap text.**
+
+---
+
+# Ezekiel 22
+## City as internally failing system, scatter then destructive re-gathering, multi-metal furnace, failed distinction logic and the missing person at the breach
+
+## 22:1–16 — city failure from inside
+
+The "bloody city" is described as a system whose own internal practices create its crisis.
+
+The chapter lists failures across:
+- rulers;
+- family relations;
+- treatment of foreigners;
+- orphan/widow protection;
+- holy/common distinctions;
+- sexuality;
+- bribery;
+- money/lending;
+- memory of God.
+
+Then the population is threatened with:
+**scatter among nations / dispersal through countries**.
+
+### M52F-11 — SYSTEM FAILURE CAN BE INTERNALLY GENERATED BEFORE EXTERNAL BREAKDOWN
+
+The city is not presented merely as a passive victim of outside force.
+
+Its internal governance and distinction systems are already failing.
+
+This matters for Vardath comparison:
+not every catastrophe needs an external gate/operator as its first cause.
+
+---
+
+# 22:17–22 — dispersed people are gathered back into Jerusalem as furnace charge
+
+This is one of the most important controls in the whole Ezekiel sequence.
+
+The house of Israel is compared with mixed metallurgical material:
+- silver;
+- bronze/copper;
+- tin;
+- iron;
+- lead;
+- dross.
+
+Then:
+
+**people/material gathered into Jerusalem**
+→ **fire blown**
+→ **heat applied**
+→ **materials melt inside furnace**.
+
+### M52F-12 — "GATHERING" CAN BE DESTRUCTIVE
+
+Ezekiel 20:
+**gather from nations**
+→ **wilderness sorting**
+→ **restored destination**.
+
+Ezekiel 22:
+**gather into Jerusalem**
+→ **furnace**
+→ **melting/judgment**.
+
+Therefore:
+
+> gathering is not inherently restoration.
+
+The function of the receiving enclosure determines the result.
+
+This is a major anti-retrofitting rule.
+
+### M52F-13 — SAME ENCLOSURE CAN CHANGE FROM CITY TO FURNACE IN SYMBOLIC PROJECTION
+
+Jerusalem is:
+- political/social city in one frame;
+- furnace/smelter in another.
+
+This extends the projection grammar from Ezekiel 16/19/23.
+
+One referent can take on a different functional body when the process being emphasized changes.
+
+### M52F-14 — EZEKIEL 22 CONTAINS GENUINE THERMAL / METALLURGICAL TRANSFORMATION IMAGERY
+
+The text explicitly supplies:
+- mixed metals;
+- enclosure/furnace;
+- forced/blown fire;
+- melting.
+
+This is relevant to the user's Meltology comparison at the level of **imagery/process vocabulary**.
+
+But control is essential:
+
+> Ezekiel is using metallurgical smelting as a metaphor for collective judgment. It is not direct geological evidence that cities or mountains physically melted.
+
+The useful comparison is:
+**contained material + intensified heat + phase change / loss of original differentiated state**.
+
+### Mixed-metal control
+
+Different materials are gathered together.
+
+Their presence in one furnace does not mean they become one identical substance in every physical sense.
+
+The metaphor's concern is common judgment, not a technical alloy recipe.
+
+---
+
+# 22:23–29 — distinction system collapses
+
+The chapter moves through different social roles:
+- princes;
+- priests;
+- officials;
+- prophets;
+- people.
+
+The priests specifically fail to distinguish:
+- holy / common;
+- unclean / clean.
+
+The prophets again use whitewash imagery, echoing Ezekiel 13.
+
+### M52F-15 — FAILURE TO PRESERVE BOUNDARIES CAN BE CLASSIFICATION FAILURE, NOT ONLY WALL FAILURE
+
+A functioning system needs conceptual boundaries as well as physical ones.
+
+When distinction collapses:
+- categories merge improperly;
+- access/behavior rules fail;
+- the system loses ordered separation.
+
+This broadens the project's boundary model:
+**boundary = physical + informational + classificatory + social**.
+
+---
+
+# 22:28–30 — whitewash versus actual repair; person sought to stand in breach
+
+Prophets:
+- apply whitewash / false covering.
+
+Then God seeks someone who will:
+- repair/build the wall;
+- stand in the breach/gap;
+- stand "before" God on behalf of the land;
+- prevent destruction.
+
+No such person is found.
+
+### M52F-16 — THIS IS A DIRECT STRUCTURAL CONTRAST: COSMETIC COVERING ≠ BREACH REPAIR
+
+Ezekiel 13:
+whitewashed wall fails under storm.
+
+Ezekiel 22:
+whitewashing appears again, then the text explicitly asks for real wall repair.
+
+This strongly confirms the earlier rule:
+
+**surface appearance**
+≠
+**load-bearing / boundary restoration**.
+
+### M52F-17 — A PERSON CAN BE CAST AS A TEMPORARY BOUNDARY / BREACH-OCCUPYING FIGURE
+
+This is a high-value anthropomorphic comparison.
+
+The desired person would:
+- stand;
+- occupy a breach;
+- mediate between destructive force and land;
+- preserve the larger system.
+
+That gives a stripped geometry:
+
+**force**
+→ **breach**
+→ **standing human mediator**
+→ **land behind**.
+
+This is unusually relevant to the user's axis-person / Squatter-Man hypothesis.
+
+However the conventional meaning is intercessory/moral:
+the "standing in the breach" figure is a person who acts on behalf of the land/community.
+
+The passage does **not** state that the person's biological body literally plugs a giant physical hole in the world structure.
+
+### M52F-18 — ABSENCE OF THE REQUIRED MEDIATOR IS ITSELF CAUSALLY IMPORTANT
+
+The key result is not that a breach-person appears.
+
+It is that none is found.
+
+So the process becomes:
+
+**breach**
+→ **repair/intercessor sought**
+→ **none available**
+→ **destruction proceeds**.
+
+This may be useful when comparing myths where a central operator/bridge is missing or fails.
+
+---
+
+# Ezekiel 22 process timeline
+
+internal social distinctions fail
+→ blood/violence accumulates
+→ population threatened with scattering
+→ same collective reframed as mixed-metal dross
+→ population gathered into Jerusalem/furnace
+→ fire blown
+→ contents melt
+→ land described as uncleansed/unrained
+→ leaders/priests/officials/prophets all fail by role
+→ prophets whitewash
+→ real wall-repair / breach-stander sought
+→ none found
+→ wrath/fire consumes.
+
+---
+
+# Ezekiel 22 strict Vardath screening
+
+## Strong
+- enclosure changes functional projection;
+- actual metallurgy/furnace/melting imagery;
+- gathering into enclosure;
+- wind/blowing + fire + melting;
+- wall/breach;
+- standing human at breach as sought mediator;
+- cosmetic versus structural repair.
+
+## Partial
+- possible person-as-boundary analogue;
+- heat/transformation comparison to Meltology;
+- gather/scatter polarity.
+
+## Absent
+- broad lattice narrowing into rod;
+- two opposed spring strands;
+- physical inter-world throat;
+- living cargo moving between populated layers;
+- reopening after narrowing;
+- dragon-ground spring support.
+
+### Verdict
+
+**Ezekiel 22 is one of the strongest wall/breach and thermal-transformation analogues so far, but its own process is urban, metallurgical and intercessory—not strict Vardath fingertrap mechanics.**
+
+---
+
+# Ezekiel 23
+## Two sister-cities from one mother, repeated route, image-on-wall → messenger → physical arrival, earlier sister as process template, and violent gendered city projection
+
+## Literary / ethical control
+
+The chapter explicitly decodes its women:
+- Oholah = Samaria;
+- Oholibah = Jerusalem.
+
+They are "daughters of one mother."
+
+The chapter uses extremely graphic sexualized and gendered violence to personify political/religious alliances, idolatry, conquest and judgment.
+
+Modern scholarship has emphasized that this rhetoric is not a neutral metaphor:
+- it sexualizes cities as female bodies;
+- it uses humiliation and sexual violence as punitive imagery;
+- feminist readings frequently treat the rhetoric itself as ethically troubling and worthy of critical resistance.
+
+This control must remain beside any structural use of the chapter.
+
+Do not let geometry analysis sanitize the violence of the source metaphor.
+
+---
+
+# 23:1–13 — same mother, two cities, same path
+
+Oholah/Samaria:
+- linked with Assyria;
+- delivered into Assyrian hands;
+- children seized;
+- killed;
+- becomes warning/byword.
+
+Oholibah/Jerusalem:
+- sees what happened to her sister;
+- repeats and intensifies similar behavior.
+
+Verse 13 makes the structural relation explicit:
+**both took the same way**.
+
+### M52F-19 — EZEKIEL ITSELF MARKS TWO DISTINCT FIGURES AS REPEATING THE SAME PROCESS PATH
+
+This is extremely useful for pair analysis.
+
+The text provides:
+- shared origin/mother;
+- elder/younger ordering;
+- separate identities;
+- observed earlier failure;
+- repeated later route;
+- different scale/intensity.
+
+Best pair classifications:
+- P4 successor/repeated historical role;
+- P5 familial recurrence;
+- P6 comparative double;
+- P9 repeated literary/political pattern;
+- P10 genuinely separate cities.
+
+The explicit "same way" language actually argues against needing a hidden same-person theory here:
+two separate systems can intentionally be compared because they traverse analogous paths.
+
+---
+
+# Names / tents
+
+Oholah and Oholibah are both names formed from "tent" language.
+
+NET and NABRE notes explain them approximately as:
+- Oholah: "her tent";
+- Oholibah: "my tent is in her."
+
+The names are commonly connected with the rival sanctuaries / temple issue represented by Samaria and Jerusalem.
+
+### M52F-20 — SHARED TENT VOCABULARY DOES NOT MAKE THE TWO CITIES ONE ENCLOSURE
+
+The pair shares an enclosure/sanctuary semantic field.
+
+But each city remains distinct.
+
+This is another control against collapsing shared structural motifs into identity.
+
+---
+
+# 23:14–17 — representation on a wall → desire → messenger → distant people physically arrive
+
+Oholibah sees:
+- male figures carved/painted on a wall;
+- Chaldeans/Babylonians represented visually.
+
+She then:
+- desires what the representation signifies;
+- sends messengers to Chaldea;
+- Babylonians physically come.
+
+### M52F-21 — THIS IS A CLEAN INFORMATION-TO-CONTACT CHAIN
+
+**remote people absent**
+→ **visual representation present locally**
+→ **receiver state changes**
+→ **messenger sent outward**
+→ **distant people receive communication**
+→ **distant people physically arrive**.
+
+This is a very useful systems analogue.
+
+A picture can create a real future contact without itself being a portal.
+
+### M52F-22 — REPRESENTATION IS NOT PRESENCE
+
+The wall image is not the Babylonian person.
+
+It is information about / representation of him.
+
+This gives an important control for:
+- icons;
+- pictographs;
+- constellation figures;
+- mythic images;
+- maps.
+
+A picture resembling a mechanism does not prove the mechanism is physically present at the picture's location.
+
+---
+
+# 23:22–30 — prior lovers become encircling attackers
+
+The same external groups previously desired/engaged become attacking forces.
+
+They approach:
+- from multiple named regions/groups;
+- "from every side";
+- with military equipment;
+- as agents of judgment.
+
+Children and possessions are seized; survivors die; houses later burn.
+
+### M52F-23 — A CONNECTION CHANNEL CAN REVERSE FUNCTION WITHOUT CHANGING THE CONNECTED PARTIES
+
+Earlier relation:
+**desired ally / partner**.
+
+Later relation:
+**attacker / destroyer**.
+
+Therefore:
+same connection
+≠
+same function.
+
+This parallels earlier source/destination and gate-function controls.
+
+### Surrounding control
+
+"Every side" is encirclement.
+
+It is not automatically a woven supporting lattice.
+
+---
+
+# 23:31–35 — sister's cup transferred
+
+Jerusalem is told:
+- she has gone the way of her sister;
+- she receives/drinks the sister's cup of horror/desolation.
+
+### M52F-24 — PROCESS CONSEQUENCE CAN BE REPRESENTED AS A TRANSFERABLE VESSEL
+
+The cup packages:
+- an outcome/fate;
+- previously experienced by one city;
+- then handed to the other.
+
+This is symbolic transfer of condition, not literal identity transfer.
+
+The pair therefore shows:
+**earlier system provides a template/outcome**
+→ **later system enters analogous state**.
+
+---
+
+# 23:36–49 — two histories compressed into a synchronized pair
+
+The latter unit juxtaposes the sisters more directly:
+- both accused together;
+- both associated with blood/idols;
+- both use messengers;
+- both are judged through an assembled attacking group.
+
+Some scholarship discusses compositional layers and possible later additions in this chapter.
+
+For present process research:
+- preserve the final-form sequence;
+- note that diachronic literary history may be complex;
+- do not assume every repeated line arose in one original oracle.
+
+### M52F-25 — PARALLEL FIGURES CAN BE SYNCHRONIZED AFTER FIRST BEING NARRATED SEQUENTIALLY
+
+The chapter first tells:
+**older sister**
+then
+**younger sister**.
+
+Later it treats them as a paired set.
+
+This is important narrative geometry:
+sequential histories can later be compressed into one comparative frame.
+
+---
+
+# Pair register — Oholah / Oholibah
+
+Supported:
+- P2 polarity/comparison;
+- P4 successive historical analogy;
+- P5 shared-family recurrence;
+- P6 double;
+- P9 literary repetition;
+- P10 distinct referents.
+
+Weak/unsupported:
+- P1 literal split halves of one body;
+- P8 same geometry in different world turns.
+
+The text explicitly says they are two sisters/cities even while stressing common origin and same route.
+
+---
+
+# Ezekiel 23 strict Vardath screening
+
+## Strong
+- paired figures from common source;
+- explicit "same way";
+- visual representation → message → remote physical contact;
+- same external connection changing function;
+- sister-to-sister transfer of fate/cup;
+- city↔woman projection.
+
+## Partial
+- tent/enclosure naming;
+- encirclement from every side;
+- repeated route.
+
+## Absent
+- broad support lattice;
+- throat contraction;
+- opposed strands;
+- physical world adjacency;
+- water routing;
+- support spring/dragon;
+- same structure reopening.
+
+### Verdict
+
+**Ezekiel 23 is very strong for pair-process grammar and information-mediated contact, but not for strict gate mechanics.**
+
+---
+
+# Ezekiel 24
+## Exact siege date, city-as-pot enclosure, contents/container separation, thermal failure to cleanse residue, wife/sanctuary sign projection, messenger arrival and reopening of speech
+
+## 24:1–2 — event synchronization
+
+The chapter gives an exact regnal date:
+- ninth year;
+- tenth month;
+- tenth day.
+
+Ezekiel is instructed to record that day because the Babylonian king begins the siege of Jerusalem "this very day."
+
+2 Kings 25:1 and Jeremiah 52:4 preserve corresponding siege-date language.
+
+NABRE converts this to January 15, 588 BCE in its chronological system.
+
+### M52F-26 — REMOTE EVENTS CAN BE NARRATIVELY SYNCHRONIZED BY DATE WITHOUT PROVING INSTANT PHYSICAL COMMUNICATION
+
+Ezekiel is in exile while the event concerns Jerusalem.
+
+The text intentionally synchronizes:
+**prophetic message date**
+with
+**siege-start date**.
+
+This is important timing evidence.
+
+But the text's theological claim of revealed knowledge is not the same thing as a measured physical transmission speed.
+
+Do not convert "same day" into proof of inter-world or faster-than-light messaging.
+
+---
+
+# 24:3–5 — pot + water + selected contents + heat
+
+The allegory starts as a container system:
+
+**pot**
++ **water**
++ **choice meat/bones**
++ **fuel below**
+→ **boiling**.
+
+The city is the pot/enclosure.
+
+Its inhabitants are represented as contents.
+
+This continues Ezekiel's repeated city-as-another-body/object projection grammar.
+
+### M52F-27 — CONTAINER AND CONTENTS ARE DISTINCT SUBSYSTEMS
+
+The pot:
+- is not the meat;
+- is not the water;
+- can remain after contents are removed.
+
+For Vardath enclosure research this is important:
+
+**world/container**
+≠
+**cargo/inhabitants**.
+
+A process can act differently on each.
+
+---
+
+# 24:6–14 — contents removed, container remains, then empty container is heated directly
+
+The chapter changes mode:
+
+1. pot contains water/meat/bones;
+2. contents are removed piece by piece, without selective lot;
+3. pot is left empty;
+4. empty copper pot is placed directly on coals;
+5. pot becomes hot/glowing;
+6. internal filth/corrosion is supposed to melt/burn away;
+7. residue stubbornly remains;
+8. thermal treatment fails to cleanse it.
+
+### M52F-28 — SAME ENCLOSURE CAN PASS THROUGH MULTIPLE PROCESS STATES
+
+**filled container**
+→ **contents extracted**
+→ **empty shell**
+→ **shell heated**
+→ **material surface transformed/treated**.
+
+This is a much more precise sequence than simply saying "the city burns."
+
+### M52F-29 — CONTENT REMOVAL AND CONTAINER DESTRUCTION/CLEANSING ARE SEPARATE OPERATIONS
+
+People/content can be removed first.
+
+The container then undergoes a different process.
+
+This matters enormously for world-reset comparisons.
+
+A narrative of population transfer cannot automatically be treated as identical to transformation of the supporting world/container.
+
+Track them separately.
+
+### M52F-30 — THERMAL INTENSITY DOES NOT GUARANTEE SUCCESSFUL PURIFICATION
+
+The copper pot is heated strongly enough to glow and melt/burn material, yet the entrenched residue does not successfully disappear.
+
+This gives a strong process rule:
+
+**more heat**
+does not necessarily imply
+**successful cleansing**.
+
+Material history/residue matters.
+
+### Meltology comparison
+
+This is genuine explicit:
+- metal vessel;
+- thermal exposure;
+- glowing;
+- melting/burning residue;
+- failed cleansing.
+
+It is therefore a high-value **metallurgical process image** for the user's broader Meltology motif research.
+
+But again:
+the text is an allegory for Jerusalem's guilt and siege.
+
+It is not direct evidence that a geological mountain/city physically underwent the Vardath Meltology process.
+
+### M52F-31 — "NO LOT" CONTRASTS WITH EZEKIEL 21'S SELECTED ROAD
+
+Ezekiel 21:
+**divination/lot**
+→ **one branch selected**.
+
+Ezekiel 24:
+contents are removed **without lot / without selection**.
+
+So within four chapters Ezekiel supplies:
+- selective branching;
+- nonselective extraction.
+
+This is useful for distinguishing filtered versus indiscriminate transfer.
+
+---
+
+# 24:7–8 — blood kept exposed on bare rock
+
+Blood is not allowed to disappear into covering earth.
+
+It remains exposed.
+
+### M52F-32 — A TRACE CAN BE DELIBERATELY KEPT VISIBLE RATHER THAN ABSORBED INTO SUBSTRATE
+
+This is primarily judicial/memory imagery.
+
+Structurally:
+**event trace**
+→ **not covered**
+→ **remains externally legible**.
+
+Potential later relevance:
+surviving surface traces can function as retained information after a destructive event.
+
+Do not turn blood/rock into geological proof.
+
+---
+
+# 24:15–24 — Ezekiel's wife ↔ sanctuary / collective loss
+
+Ezekiel's wife is called the "delight of your eyes."
+
+Her death is then explicitly mapped onto the loss of:
+- sanctuary;
+- communal pride/stronghold;
+- delight of eyes;
+- sons/daughters.
+
+Ezekiel is made a sign.
+
+### M52F-33 — PERSONAL EVENT IS USED AS A SMALL-SCALE PROJECTION OF COLLECTIVE SYSTEM EVENT
+
+Mapping:
+
+**wife lost to Ezekiel**
+↔
+**sanctuary/children lost to community**.
+
+This is one of the clearest scale-projection controls in the book.
+
+It demonstrates that:
+- one human relationship/event;
+- can intentionally model;
+- a much larger city/temple/community event.
+
+This is methodologically relevant to the user's hypothesis that human figures can sometimes be narrative projections of larger processes.
+
+It does **not** mean the wife is literally the temple.
+
+The text itself tells us it is a sign/analogy.
+
+---
+
+# Mourning channels are selectively shut
+
+Ezekiel experiences loss but is told not to perform normal public mourning signals:
+- no weeping;
+- no flowing tears;
+- quiet groaning;
+- keep turban;
+- keep sandals;
+- do not cover upper lip;
+- do not eat mourner's bread.
+
+### M52F-34 — INTERNAL STATE AND EXTERNAL SIGNAL CHANNEL CAN BE DECOUPLED
+
+Loss/grief occurs.
+
+But normal outputs are constrained.
+
+Thus:
+
+**internal event**
+≠
+**ordinary external signaling**.
+
+This strengthens the project's channel-specific systems model:
+- experience;
+- body state;
+- visible ritual signal;
+- speech;
+- movement
+
+can be independently enabled/disabled.
+
+Modern trauma-oriented scholarship has also read this episode in relation to exile and collective trauma, while the source itself frames Ezekiel's conduct as a sign for the community.
+
+---
+
+# 24:25–27 — fugitive carries news; arrival reopens Ezekiel's mouth
+
+The chapter ends with a tightly ordered signal sequence:
+
+**Jerusalem's stronghold falls / loss occurs**
+→ **a fugitive escapes**
+→ **fugitive travels to Ezekiel**
+→ **news reaches Ezekiel through living carrier**
+→ **Ezekiel's mouth opens**
+→ **speech resumes**.
+
+This later connects explicitly with Ezekiel 33:21–22.
+
+### M52F-35 — A LIVING CARRIER TRANSFERS STATE INFORMATION AND TRIGGERS A CHANNEL CHANGE AT DESTINATION
+
+This is a high-value systems sequence.
+
+The fugitive carries:
+- not the city itself;
+- not all surviving material;
+- **information about the remote event**.
+
+Arrival changes Ezekiel's communicative state.
+
+So:
+
+**material carrier**
+→ **information cargo**
+→ **receiver state transition**.
+
+This is one of the cleanest carrier/information distinctions in the research.
+
+### M52F-36 — SPEECH CHANNEL REOPENING IS EVENT-TRIGGERED, NOT FULL-BODY TRANSFORMATION
+
+Ezekiel remains the same person.
+
+One channel changes:
+**mute/silent constraint**
+→ **speech open**.
+
+This supports the repeated rule:
+do not model all state change as total-system replacement.
+
+---
+
+# Ezekiel 24 process timeline
+
+exact day recorded
+→ siege begins in Jerusalem
+→ city represented as filled pot
+→ water + selected pieces + bones placed inside
+→ heat applied
+→ contents boiled
+→ contents removed piece by piece
+→ no selective lot
+→ pot remains empty
+→ empty metal container heated directly
+→ copper glows
+→ residue resists removal
+→ cleansing fails
+
+parallel sign sequence:
+Ezekiel speaks in morning
+→ wife dies in evening
+→ normal mourning outputs suppressed
+→ personal loss mapped to sanctuary/community loss
+→ Ezekiel becomes sign
+→ future city loss occurs
+→ fugitive escapes
+→ fugitive arrives with news
+→ Ezekiel's mouth opens
+→ speech resumes.
+
+---
+
+# Cross-chapter synthesis — Ezekiel 21–24
+
+## 1. Route selection versus indiscriminate extraction
+
+Ezekiel 21:
+**one source**
+→ **fork**
+→ **selection**
+→ **one destination**.
+
+Ezekiel 24:
+**many contents in one vessel**
+→ **removed piece by piece**
+→ **no lot / no preference**.
+
+This gives a powerful contrast between:
+- selective routing;
+- nonselective removal.
+
+## 2. Gathering can restore or destroy
+
+Ezekiel 20:
+gather → sort → covenant → land.
+
+Ezekiel 22:
+gather → furnace → melt.
+
+Never treat "gathering" itself as evidence of renewal.
+
+## 3. Person / body can project a larger system without literal identity
+
+Ezekiel 22:
+desired person standing in breach on behalf of land.
+
+Ezekiel 23:
+cities projected as sister-women.
+
+Ezekiel 24:
+wife-loss projected as sanctuary/community loss.
+
+This is now a repeated and explicit literary mechanism.
+
+## 4. Boundaries exist at multiple layers
+
+- city gates under siege;
+- route fork/signpost;
+- holy/common classification;
+- wall breach;
+- tents/sanctuaries;
+- pot/container;
+- body ritual signaling;
+- speech channel.
+
+No single "gate" vocabulary is enough.
+
+## 5. Information changes later material state
+
+Ezekiel 21:
+divination result selects army route.
+
+Ezekiel 23:
+wall image → messenger → Babylonians arrive.
+
+Ezekiel 24:
+fugitive → report → speech channel opens.
+
+The corpus is repeatedly distinguishing:
+**information transfer**
+from
+**material transfer**.
+
+## 6. Thermal transformation recurs in different enclosures
+
+Ezekiel 22:
+Jerusalem = furnace containing mixed metal/dross.
+
+Ezekiel 24:
+Jerusalem = copper pot, first filled then emptied/heated.
+
+The same city can support distinct metallurgical/container metaphors.
+
+This is strong projection grammar and useful Meltology motif material, but not literal geology.
+
+---
+
+# Pair / mirror register update — Ezekiel 21–24
+
+## Rabbah road / Jerusalem road
+Best:
+- P2 alternative branch pair;
+- P10 genuinely separate destinations.
+
+Not same place.
+
+## low / high in 21:26
+Best:
+- P2 state polarity;
+- operator-driven inversion.
+
+## scatter / gather in 22
+Best:
+- P2 process polarity;
+- direction reversal with different function.
+
+## wall / breach-person
+Best:
+- carrier/operator or mediator relation;
+- person temporarily mapped to boundary-preservation role.
+
+## Oholah / Oholibah
+Best:
+- P4 repeated historical role;
+- P5 related/sister recurrence;
+- P6 double;
+- P9 narrative/political repetition;
+- P10 distinct city referents.
+
+## wife / sanctuary
+Best:
+- projection analogy, not same hidden identity;
+- personal-scale sign ↔ collective-scale event.
+
+## mute Ezekiel / speaking Ezekiel
+Best:
+- P3 explicit same-person channel-state pair.
+
+---
+
+# Timing / number register — Ezekiel 21–24
+
+Record without forced arithmetic:
+
+- Ezekiel 24:
+  **ninth year, tenth month, tenth day** — siege-start synchronization.
+- NABRE chronological conversion:
+  **January 15, 588 BCE** in that system.
+- Cross-check within biblical corpus:
+  2 Kings 25:1 and Jeremiah 52:4 preserve corresponding siege-date language.
+- Ezekiel 21:
+  sword described as striking twice/three times in poetic imagery; do not treat this automatically as a recurrence interval.
+- Ezekiel 24:
+  morning speech → evening wife death → next-morning sign behavior; short narrative temporal sequence, not cosmological time dilation.
+
+---
+
+# Strict fingertrap test — Ezekiel 21–24
+
+## Ezekiel 21
+Strong branch/fork geometry but:
+- roads do not transform into each other;
+- no broad weave narrows into throat;
+- no reopening.
+
+Fail strict test.
+
+## Ezekiel 22
+Strong:
+- breach;
+- desired standing mediator;
+- furnace;
+- gathering/melting.
+
+But:
+- no continuous support mesh changing geometry;
+- standing figure is intercessory metaphor;
+- no reopening.
+
+Fail strict test.
+
+## Ezekiel 23
+Strong paired-route/process repetition and information-mediated contact.
+
+But:
+- no transforming support structure;
+- no throat;
+- no physical inter-world adjacency.
+
+Fail strict test.
+
+## Ezekiel 24
+Strong enclosure/content separation and thermal container transformation.
+
+But:
+- pot is vessel metaphor;
+- no broad support mesh;
+- no narrowing/rod;
+- no inter-world traffic;
+- no reopen-to-broad state.
+
+Fail strict test.
+
+### Overall verdict
+
+**No strict fingertrap mechanism appears in Ezekiel 21–24.**
+
+The block nevertheless advances the project significantly in five ways:
+
+1. **explicit route topology:** one origin → branch point → two destinations → selected route;
+2. **functional reversal of gathering:** restoration in chapter 20 versus furnace destruction in chapter 22;
+3. **person-as-boundary / person-as-system projection:** breach-stander, sister-cities, wife↔sanctuary;
+4. **true thermal/metallurgical imagery:** multi-metal furnace and glowing copper pot;
+5. **information/carrier/channel separation:** divination selects movement, images trigger messages/contact, fugitive news reopens speech.
+
+---
+
+# Sources logged — Ezekiel 21–24
+
+Primary:
+- Ezekiel 21 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+21&version=NRSVUE
+- Ezekiel 22 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+22&version=NRSVUE
+- Ezekiel 23 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+23&version=NRSVUE
+- Ezekiel 24 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+24&version=NRSVUE
+
+Ezekiel 21 route/divination control:
+- NRSVUE Ezekiel 21:19–23, signpost/fork/divination/selected Jerusalem route:
+  https://www.biblegateway.com/passage/?search=Ezekiel+21%3A19-23&version=NRSVUE
+- Historical study of liver divination referencing Ezekiel 21:
+  E. Lieber, “He looked in the liver (Ezekiel 21:26): the medical origins of liver divination,” *Korot* 9 (1988):
+  https://pubmed.ncbi.nlm.nih.gov/11613870/
+- Comparative ancient-route/divination discussion:
+  https://mc.dlib.nyu.edu/files/books/brill_awdl000091/brill_awdl000091_lo.pdf
+
+Ezekiel 22:
+- NRSVUE Ezekiel 22:17–31, furnace, leaders, whitewash, breach:
+  https://www.biblegateway.com/passage/?search=Ezekiel+22%3A17-31&version=NRSVUE
+
+Ezekiel 23:
+- NET Ezekiel 23:4–6 notes on Oholah/Oholibah tent names and political-alliance metaphor:
+  https://www.biblegateway.com/passage/?search=Ezekiel+23%3A4-6&version=NET
+- NABRE Ezekiel 23 note on Oholah/Oholibah and sanctuary/tent language:
+  https://www.biblegateway.com/passage/?search=Ezekiel+23%3A4-6&version=NABRE
+- Bryan Bibb, “There’s no sex in your violence: Patriarchal translation in Ezekiel 16 and 23,” *Interpretation* 68.4 (2014):
+  https://journals.sagepub.com/doi/10.1177/0034637314554382
+- Bruno Biermann, “Männliche Herrschaft und Körperdiskurse zwischen Feminisierung und Virilität in Ezechiel 23,” *lectio difficilior* 2 (2021):
+  https://lectio.unibe.ch/article/view/13044
+- Johanna Stiebert, “The woman metaphor of Ezekiel 16 and 23: a victim of violence, or a symbol of subversion?” *Old Testament Essays* 15.1 (2002):
+  https://journals.co.za/doi/10.10520/EJC85444
+
+Ezekiel 24:
+- NRSVUE Ezekiel 24:1–14, boiling pot/corrosion:
+  https://www.biblegateway.com/passage/?search=Ezekiel+24%3A1-14&version=NRSVUE
+- NRSVUE Ezekiel 24:15–27, wife/sign/fugitive/speech:
+  https://www.biblegateway.com/passage/?search=Ezekiel+24%3A15-27&version=NRSVUE
+- NABRE Ezekiel 24:1–2 note for siege chronology and pot interpretation:
+  https://www.biblegateway.com/passage/?search=Ezekiel+24%3A1-2&version=NABRE
+- Inchol Yang, “Ezekiel’s Trauma in the Prohibition of the Mourning rites for his wife,” *Korean Journal of Old Testament Studies* 26.2 (2020):
+  https://journal.kci.go.kr/ksots/archive/articleView?artiId=ART002604065
+
+---
+
+# SECTION 52F — EZEKIEL 21–24 COMPLETE
+
+## Strongest new findings
+
+1. **Ezekiel 21 gives the cleanest explicit route bifurcation so far: two roads issue from one source land, a signpost marks the fork, and a separate selection process chooses which branch material traffic follows.**
+2. **This proves topology and routing decision are distinct: the branches exist before the choice.**
+3. **The high/low reversal around the stripped crown repeats Ezekiel 17's state-inversion grammar but applies it to political authority, strengthening the rule that inversion does not imply time reversal.**
+4. **Ezekiel 22 reverses the meaning of “gather”: chapter 20 gathers for covenant/restoration; chapter 22 gathers into a furnace for melting/judgment.**
+5. **Ezekiel 22 contains genuine explicit multi-metal, blown-fire, furnace and melting imagery—high-value Meltology motif material, while remaining a judgment metaphor rather than geological observation.**
+6. **The whitewash/breach sequence now firmly distinguishes cosmetic boundary treatment from real structural repair.**
+7. **The sought figure who would stand in the breach is a strong partial person-as-boundary analogue: a standing human mediator is mapped to preservation of the land behind the breach, though the conventional meaning is intercession.**
+8. **Ezekiel 23 explicitly states that Samaria and Jerusalem, represented as sister-women, “both took the same way.” This is a direct control showing separate figures can follow one repeated process without being secretly one individual.**
+9. **Ezekiel 23's wall-image → messenger → Babylonian arrival sequence cleanly separates representation, information transfer and later physical contact.**
+10. **Ezekiel 24 distinguishes container from contents: the city-pot is filled, contents are extracted, and then the empty metal enclosure undergoes its own separate high-heat treatment.**
+11. **That pot remains contaminated despite extreme heating, showing that higher energy/temperature does not guarantee successful transformation or cleansing.**
+12. **Ezekiel's wife/sanctuary mapping is another explicit proof that a human-scale event can serve as a projection/sign of a much larger system event without literal identity.**
+13. **The fugitive ending gives an unusually clean carrier model: living carrier transports information about the distant event; receipt of that information triggers reopening of Ezekiel's speech channel.**
+14. **No chapter in 21–24 supplies the full continuous broad support → narrowing throat/rod → world transfer → reopening sequence.**
+
+## Next live block
+
+**Ezekiel 25–28**
+
+Priority:
+- oracles against surrounding nations as outside-system responses to Jerusalem's failure;
+- Ammon/Moab/Edom/Philistia and directional/geographic controls;
+- Tyre as island/coastal trade-network and "gateway of the sea" imagery;
+- many-nations-as-waves;
+- scraping bare rock / nets;
+- city/trade network as distributed exchange system;
+- prince of Tyre versus king of Tyre;
+- Eden / guardian cherub / holy mountain / stones of fire in Ezekiel 28;
+- HIGH PRIORITY: test whether the guardian-cherub / mountain / expulsion sequence actually advances the dragon/support hypothesis or remains royal-Eden imagery.
