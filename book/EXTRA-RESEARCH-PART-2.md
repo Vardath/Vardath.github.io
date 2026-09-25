@@ -29637,3 +29637,1068 @@ Required protocol:
 - preserve translation/version uncertainty;
 - apply the strict fingertrap test only after ordinary function is established.
 
+
+
+---
+
+# SECTION 67 — 3 MEQABYAN
+## Direct Ethiopic-canon pass — Satan/Adam paired-state theology, serpent indwelling, wind+fire angelic constitution, Adam formed from earth+water+fire+wind, cherub/seraph wing reference, earth-on-water / heaven-on-wind cosmography, sea/snake/ship/soul path analogies, resurrection by rain/dew/Word, graves opening and soul→flesh return
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for direct 3 Meqabyan completion;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed Section 67 pass existed.
+
+The verified frontier was:
+**Section 67 — 3 Meqabyan**.
+
+All new research is appended only here in Part 2.
+
+---
+
+# Critical text-identity correction
+
+This section uses the **10-chapter Third Meqabyan** text.
+
+It is:
+- Ethiopian **3 Meqabyan**;
+- not Greek 3 Maccabees;
+- not 1 Meqabyan;
+- not the 21-chapter 2 Meqabyan material previously researched.
+
+### TIPs / UBS label mismatch
+
+A significant source-label problem was confirmed.
+
+TIPs pages titled:
+**2Meq 1:1, 2Meq 9:12, etc.**
+
+contain text that matches the **10-chapter Third Meqabyan** English text and themes:
+- Satan's refusal concerning Adam;
+- Adamic material;
+- chapter 9 cosmography;
+- resurrection material.
+
+For example TIPs "2Meq 9:12" gives the Geʽez:
+
+- earth founded upon waters;
+- made firm without supports;
+- heaven pillared upon wind;
+- spread like a garment over waters.
+
+That corresponds to the Third Meqabyan chapter 9 text, not the completed 21-chapter 2 Meqabyan stream used in Section 66.
+
+Therefore this research records:
+
+> **TIPs label = 2Meq**
+> but
+> **content stream = the 10-chapter Third Meqabyan tradition**.
+
+Do not silently use the label as book identity.
+
+### Chapter count / literary identity
+
+Third Meqabyan:
+- 10 chapters;
+- largely exhortative/theological rather than continuous historical narrative;
+- strongly centered on Adam, Satan, repentance, mortality, resurrection, judgment and moral life.
+
+This matches modern reference summaries and manuscript/canon descriptions.
+
+---
+
+# CHAPTERS 1–2
+## Satan's pride / refusal / downward reversal / human replacement
+
+The opening voice describes the Devil as:
+- formerly exalted;
+- arrogant;
+- refusing proper obedience;
+- opposing Adam/humanity;
+- eventually bound/cast down.
+
+He boasts of:
+- entering the midst of sea;
+- ascending toward heaven;
+- seeing depths;
+- seizing Adam's children;
+- misleading through wealth, beauty, signs and omens.
+
+He claims use of:
+- stars;
+- cloud movement;
+- fire flicker;
+- beast/bird cries
+
+as deceptive sign systems.
+
+### M67-1 — SATAN'S BOAST SPANS SEA / HEAVEN / DEPTHS AS ONE VERTICAL-AND-MEDIA RANGE
+
+This is not a literal travel log.
+
+It is a scale/power boast.
+
+But the cosmographic range is explicit:
+**sea-middle ↔ heaven ↔ depths**.
+
+### M67-2 — THE BOOK TREATS CELESTIAL / ATMOSPHERIC / ANIMAL SIGNALS AS INFORMATION CHANNELS
+
+Stars, clouds, fire, animal cries:
+can be interpreted as signs.
+
+The text's function is polemical:
+warning against divination.
+
+For Vardath:
+important control that:
+**environmental signal**
+does not automatically mean
+**physical gate mechanism**.
+
+### M67-3 — SATAN / HUMANITY FORM A REPLACEMENT-ROLE PAIR
+
+The text repeatedly says Adam/humanity receives the praise/role that the fallen angelic power abandoned.
+
+This is:
+**one role lost**
+→ **another class installed**.
+
+Strong succession-state grammar.
+
+---
+
+# Chapter 2:10
+## Satan/angelic state = wind + fire
+
+The adversarial being is described as:
+- subtle/non-fleshly;
+- created from **wind and fire**.
+
+### M67-4 — ANGELIC/DEMONIC FORM IS EXPLICITLY PROJECTED THROUGH WIND + FIRE
+
+This matters strongly to the user's:
+- plasma/current;
+- fiery-winged;
+- environmental-person
+hypothesis.
+
+But:
+source meaning is theological anthropology of angels/demons.
+
+Do not equate:
+wind+fire = literal plasma.
+
+### M67-5 — NON-HUMAN PERSON CAN BE DEFINED BY MEDIA/ENERGY QUALITIES RATHER THAN FLESH
+
+This is a useful projection control.
+
+---
+
+# CHAPTER 3
+## Adam's mind as sea waves / whirlwind / rain; Satan "dwells in snake reasoning"; fall → agricultural world
+
+Adam:
+- receives multiple thought tendencies;
+- thoughts compared to:
+  - sea waves;
+  - whirlwind lifting dust;
+  - rain drops.
+
+The adversary:
+- "lodged in" / worked through snake/serpent reasoning.
+
+Eve hears serpent speech.
+
+Adam/Eve leave Garden and live in:
+- earthly agriculture;
+- crops;
+- children;
+- thorn/nettle world.
+
+### M67-6 — HUMAN MIND IS PROJECTED AS WEATHER/OCEAN DYNAMICS
+
+Thoughts:
+**wave**
+**whirlwind**
+**rain-field**.
+
+This is not physical brain cosmology,
+but reinforces:
+environmental dynamics can represent internal states.
+
+### M67-7 — SERPENT FUNCTIONS AS HOST/MEDIUM FOR ADVERSARIAL AGENCY
+
+The text does not merely say:
+serpent = Satan.
+
+Its language permits:
+**adversarial reasoning/presence working in serpent**.
+
+This is important to the user's serpent/dragon identity work.
+
+Possible categories:
+- independent serpent;
+- indwelt carrier;
+- projected body;
+- instrument.
+
+Do not collapse these categories.
+
+### M67-8 — SAME AGENT MAY OPERATE THROUGH A CREATURE BODY WITHOUT CREATURE BODY BEING THE AGENT'S WHOLE ONTOLOGY
+
+This is directly relevant to:
+Quetzalcoatl / serpent / dragon / cherub comparisons.
+
+---
+
+# CHAPTER 4
+## CHERUB/SERAPH WINGS + FOUR-MEDIUM ADAM + FOUNDATIONAL COSMOGRAPHY
+
+This is one of the strongest chapters.
+
+---
+
+# 3 Meqabyan 4:6
+## Seraphiel + Cherubiel stretch wings
+
+Honored angelic figures:
+- Seraphiel;
+- Cherubiel;
+- stretch forth wings;
+- praise.
+
+### M67-9 — WINGS HERE ARE WORSHIP/ANGELIC-EXTENSION MORPHOLOGY
+
+Role differs from:
+- transport wings;
+- shade wings;
+- radiant/healing wings.
+
+Add to wing taxonomy:
+**ritual/praise extension**.
+
+### M67-10 — CHERUB FORM IS AGAIN CONNECTED TO WINGED HEAVENLY AGENCY
+
+No serpent/tree morphology is supplied.
+
+Therefore:
+cherub ↔ Feathered Serpent remains a candidate only at broad functional/projection level.
+
+---
+
+# 3 Meqabyan 4:10
+## Adam built from earth + water + fire + wind
+
+The text states:
+- earth/dust taken;
+- water added;
+- fire added;
+- wind added;
+- Adam formed.
+
+TIPs/UBS preserves essentially the same combination.
+
+### M67-11 — HUMAN BODY IS EXPLICITLY A FOUR-MEDIUM COMPOSITE
+
+Components:
+
+**earth**
++ **water**
++ **fire**
++ **wind**
+→ **one human body**.
+
+This is very important.
+
+Cross-link:
+1 Meqabyan resurrection decomposition/reassembly.
+
+There:
+body disperses across media.
+
+Here:
+body is originally composed from those media.
+
+### M67-12 — HUMAN FORM CAN BE THE CONVERGED RESULT OF DISTRIBUTED ENVIRONMENTAL MEDIA
+
+This is one of the best source-level controls for:
+**environment → anthropomorphic form**.
+
+It does not imply literal macroscopic Squatter-Man physics.
+
+But the representational grammar is exact.
+
+---
+
+# 3 Meqabyan 4:15–17
+## winds as foundations / mountain foundations / sea bounded by sand
+
+The chapter quotes/reuses wisdom-style creation language:
+
+before:
+- winds that are "foundations" of earth;
+- hills/mountains established;
+- sun/moon/stars;
+- day/night;
+- sea delineated by sand.
+
+### M67-13 — WIND IS AGAIN GIVEN A FOUNDATIONAL / STRUCTURAL ROLE
+
+This directly cross-links:
+1 Meqabyan 27:
+**upper covering pillared by wind**.
+
+And chapter 9 below:
+**heaven pillared by wind**.
+
+This repetition matters.
+
+### M67-14 — SEA BOUNDARY BY SAND IS A REPEATED MEQABYAN COSMOGRAPHIC FORMULA
+
+Cross-link:
+1 Meqabyan 27 sand-bolts.
+
+Likely shared traditional formula.
+
+---
+
+# CHAPTER 5
+## earth→dust→earth cycle; wealth as smoke taken by wind
+
+Human:
+- formed from earth/dust;
+- fed by earth;
+- returns to earth.
+
+Wealth:
+- compared to smoke;
+- wind carries it away.
+
+### M67-15 — HUMAN MATERIAL CYCLE IS EARTH-CLOSED, WHILE POSSESSION/STATUS IS WIND-DISPERSIBLE
+
+This is not gate mechanics,
+but reinforces:
+different state variables have different persistence.
+
+---
+
+# CHAPTER 6
+## death path unknown; angels/demons as distinct carriers/receivers; horizon/tower stability
+
+At death:
+- soul separates from flesh;
+- person goes on a path not known beforehand;
+- righteous souls received by good angels;
+- sinners by evil angels/demons.
+
+A measured/righteous life:
+- compared to horizon;
+- tower with stone fence.
+
+### M67-16 — SOUL, BODY, RECEIVER AND PATH ARE DISTINCT VARIABLES
+
+This fits the project's transport taxonomy.
+
+- body remains;
+- soul travels;
+- angel/demon receives;
+- path/destination distinct.
+
+Do not call receiver = gate.
+
+### M67-17 — STABLE MORAL STATE IS PROJECTED AS HORIZON/TOWER/FORTIFICATION
+
+Architecture again represents internal state.
+
+---
+
+# CHAPTERS 7–8
+## trust / justice / exemplars rather than cosmological mechanics
+
+Chapter 7:
+- trust;
+- justice;
+- widow protection;
+- righteous life.
+
+Chapter 8:
+- Job;
+- Mordecai/Esther;
+- Judith;
+- Gideon;
+- Deborah/Barak;
+- Jephthah;
+- Samson;
+- other exemplars.
+
+### M67-18 — CHAPTERS 7–8 ARE MEMORY/ROLE ARCHIVES, NOT MECHANISM TEXTS
+
+Important not to force geometry where the chapters are primarily didactic.
+
+---
+
+# CHAPTER 9
+# MAJOR COSMOGRAPHY PASSAGE
+## creature-path analogies → soul path → earth on water → heaven on wind → heaven spread like garment/tent over waters → rain → graves open → souls return to flesh
+
+This chapter is the most important Vardath-cosmology section in Third Meqabyan.
+
+---
+
+# 3 Meqabyan 9:1–4
+## ordered paths: vulture in heaven / serpent on rock / ship in sea / soul after death
+
+All creation:
+- stands by divine order.
+
+Examples:
+- vulture/bird path in heaven;
+- serpent path on rock/cave;
+- ship path in sea;
+- soul path after leaving flesh.
+
+### M67-19 — THE TEXT GROUPS AIR / LAND / SEA / SOUL ROUTES INTO ONE PATH-TAXONOMY
+
+This is highly useful.
+
+It distinguishes:
+- medium;
+- traveller;
+- path.
+
+### M67-20 — SERPENT, SHIP AND SOUL SHARE "PATH" FUNCTION BUT ARE NOT SAME ENTITY TYPE
+
+Important anti-overfitting control.
+
+---
+
+# 3 Meqabyan 9:5–10
+## soul-path possibilities projected as bird / mountain dew / deep wind / lightning / stars / sand / sea-edge stone / waterside tree / wind-carried reed
+
+The text asks where a soul goes:
+- wilderness?
+- mountain?
+- like bird?
+- like dew descending mountain crevices?
+- like deep wind?
+- like lightning straightening its path?
+- like stars in abyss/deep?
+- like sand entering depth?
+- like stone at sea's edge?
+- like fruit tree by stream?
+- like plant burned and carried by wind?
+
+### M67-21 — ONE INVISIBLE SOUL-PATH IS EXPLORED THROUGH MULTIPLE ENVIRONMENTAL PROJECTIONS
+
+This is another major projection-grammar example.
+
+No single metaphor is asserted as literal.
+
+The series itself teaches:
+**one unknown process can be represented through many physical forms**.
+
+### M67-22 — "DEEP WIND" + "LIGHTNING PATH" + "STAR IN ABYSS" ADD HIGH-ENERGY / FIELD-LIKE ANALOGUES, BUT AS COMPARISONS
+
+Do not literalize.
+
+---
+
+# 3 Meqabyan 9:12
+## EARTH FOUNDED UPON WATER / HEAVEN PILLARED ON WIND / SPREAD LIKE GARMENT OVER WATERS
+
+TIPs/UBS Geʽez-based rendering:
+
+- earth founded upon waters;
+- made firm without supports/stakes;
+- heaven pillared upon wind;
+- spread out like a garment over waters.
+
+This is a major text.
+
+### M67-23 — THIRD MEQABYAN REPEATS THE BROAD WIND-SUPPORTED HEAVEN / WATER COSMOGRAPHY
+
+Structure:
+
+**heaven**
+spread broad
+**upon/over waters**
+↑
+**wind as pillar/support**
+↓
+**earth**
+founded
+**upon waters**.
+
+This strongly cross-links 1 Meqabyan 27.
+
+### M67-24 — THE REPEATED MEQABYAN FORMULA MAY REFLECT A SHARED ETHIOPIC COSMOGRAPHIC TRADITION
+
+We now have at least two Meqabyan locations with:
+- earth on waters;
+- wind as structural support;
+- broad sky/heaven covering;
+- sand/sea boundary in related passages.
+
+This is more significant than an isolated verse.
+
+### M67-25 — THIS IS VERY CLOSE TO VARDATH'S BROAD SUPPORT PHASE
+
+Strong matches:
+- broad overhead structure;
+- water;
+- wind/current as support;
+- earth/water relation.
+
+Missing:
+- woven strands;
+- opposing braid;
+- contraction;
+- throat;
+- transfer.
+
+Classification:
+**major broad-support analogue**.
+
+---
+
+# 3 Meqabyan 9:13–16
+## clouds→rain→grass/fruit→human nourishment; heavenly prepared dwelling
+
+Clouds:
+- commanded to rain.
+
+Rain:
+- produces grass/fruits.
+
+Humans:
+- fed.
+
+Righteous:
+- receive prepared heavenly house/kingdom.
+
+### M67-26 — SKY→WATER→VEGETATION→POPULATION DEPENDENCY REAPPEARS
+
+Cross-link:
+Hosea;
+Haggai;
+Zechariah.
+
+This is now a very widespread biblical/Ethiopic restoration grammar.
+
+---
+
+# 3 Meqabyan 9:33–36
+## graves open → bodies arise → souls return to flesh → same bodily identity judged
+
+TIPs confirms:
+- all rise from dust;
+- bones had been broken/crushed;
+- righteous souls in houses of light.
+
+Working English continues:
+- graves open;
+- dead arise;
+- souls return to flesh from which separated;
+- persons stand embodied;
+- deeds judged.
+
+### M67-27 — TWO STORAGE DOMAINS RECONNECT:
+**body/dust/grave**
++
+**soul/light-house**
+→ **same person reconstituted**.
+
+Cross-link:
+2 Meqabyan 14;
+1 Meqabyan 8;
+4 Ezra 7.
+
+### M67-28 — IDENTITY CONTINUITY IS EXPLICITLY BODILY
+
+This is not replacement-person resurrection.
+
+---
+
+# CHAPTER 10
+## RAINY-SEASON ANALOGY / WATER AS GENERATIVE MEDIUM / WORD+DEW WORLD-WIDE RESURRECTION SIGNAL
+
+The final chapter argues for resurrection by comparison to:
+- creatures appearing after rain;
+- earth saturated by water;
+- forms/life emerging through divine command.
+
+It says:
+- dead flesh renews;
+- dust rises;
+- divine Word acts;
+- "dew" / pardon-dew imagery participates;
+- Word turns/arouses the world;
+- dead stand bodily;
+- transition from death → life;
+- passing world → Kingdom of Heaven.
+
+### M67-29 — RESURRECTION IS EXPLAINED THROUGH SEASONAL WATER-ACTIVATION OF EARTH
+
+This is very important.
+
+Sequence:
+
+**dry/inert ground**
+→ **rain/water input**
+→ **living forms emerge**.
+
+Then analogy:
+**dead body/dust**
+→ **Word + dew/divine activation**
+→ **living body restored**.
+
+### M67-30 — WATER IS A MEDIUM OF REACTIVATION, NOT MERELY TRANSPORT
+
+This differs from:
+- river crossing;
+- sea boundary;
+- flood.
+
+Here:
+water/dew corresponds to:
+**state activation / life return**.
+
+### M67-31 — WORD / INFORMATION + WATER / DEW OPERATE TOGETHER IN THE RESURRECTION IMAGE
+
+This is a recurring pattern across the project:
+
+**information/signal**
++
+**material/environmental medium**
+→ **state transition**.
+
+Cross-link:
+Ezekiel dry bones:
+word/spirit → body.
+
+1 Meqabyan:
+four-wind gathering.
+
+4 Ezra:
+book/word + world transition.
+
+### M67-32 — "WORD TURNS/AROUSES ALL THE WORLD" IS A GLOBAL ACTIVATION IMAGE
+
+Do not literalize as acoustic shockwave.
+
+Source meaning:
+divine command.
+
+But system form:
+**single command**
+→ **distributed global response**.
+
+---
+
+# SATAN / ADAM / SERPENT TRANSFORMATION FAMILY
+
+Third Meqabyan contributes unusually strong state/body differentiation.
+
+## Satan
+- non-fleshly;
+- wind+fire constitution;
+- formerly exalted;
+- cast down;
+- can influence/operate through serpent.
+
+## Adam
+- earth+water+fire+wind composite;
+- body/flesh;
+- soul;
+- multiple thought states;
+- returns to dust;
+- restored bodily later.
+
+## Serpent
+- animal body / instrument / indwelt reasoning channel.
+
+### M67-33 — THE BOOK CLEARLY DISTINGUISHES:
+**agent**
+**carrier/body**
+**material composition**
+**mental/information channel**
+**destination state**.
+
+This is extremely useful for the user's:
+cherub / serpent / dragon / Squatter-Man
+hypothesis.
+
+A serpent body might be:
+- a host;
+- a symbol;
+- a projection;
+- an instrument.
+
+Identity cannot be assigned from shape alone.
+
+---
+
+# CHERUB / FEATHERED SERPENT / QUETZALCOATL UPDATE
+
+Third Meqabyan adds:
+
+- Cherubiel/Seraphiel with outstretched wings;
+- non-fleshly beings made from wind/fire;
+- serpent as inhabited/instrumental body;
+- human body composed from earth/water/fire/wind;
+- heaven supported by wind over water;
+- soul/path imagery using bird, wind, lightning and stars.
+
+### M67-34 — THIS BOOK MAKES "BODY FORM" AND "SUBSTRATE/MEDIUM" VERY SEPARABLE
+
+That is important.
+
+A winged being:
+may have wind/fire constitution.
+
+A human:
+may be four-media composite.
+
+A serpent:
+may carry another agent's influence.
+
+Therefore:
+**visible form ≠ underlying medium ≠ controlling agency**.
+
+This is probably the cleanest methodological statement yet for the same-phenomenon hypothesis.
+
+### M67-35 — QUETZALCOATL / CHERUB COMPARISON SHOULD NOW TRACK THREE LAYERS
+
+1. **visible morphology**
+   - wing;
+   - serpent;
+   - human;
+   - tree.
+
+2. **substrate/medium**
+   - wind;
+   - fire;
+   - water;
+   - earth.
+
+3. **functional agency**
+   - support;
+   - transport;
+   - communication;
+   - deception;
+   - protection;
+   - opening;
+   - judgment.
+
+Only where all three line up should a strong same-phenomenon comparison be made.
+
+---
+
+# BROAD SUPPORT / THROAT / REOPENING CROSS-TEXT CHAIN UPDATE
+
+The strongest mechanical sequence remains distributed across separate texts:
+
+## BROAD SUPPORT
+**1 Meqabyan 27**
+- upper water;
+- broad cloth/tent-like cover;
+- wind as pillar.
+
+**3 Meqabyan 9:12**
+- earth upon water;
+- heaven pillared on wind;
+- heaven spread like garment over waters.
+
+## STATIC THROAT
+**4 Ezra 7**
+- broad domain;
+- narrow river/path entrance;
+- fire right;
+- deep water left;
+- one-person throughput.
+
+## OPENING / REOPENING
+**Zechariah 14**
+- structure splits;
+- corridor forms;
+- people pass;
+- water divides east/west.
+
+### M67-36 — THIRD MEQABYAN STRENGTHENS THE BROAD-SUPPORT END OF THE CHAIN BY PROVIDING A SECOND INDEPENDENT MEQABYAN FORMULATION
+
+Still missing:
+**same support structure visibly changes from broad wind-supported cover into narrow throat**.
+
+---
+
+# TRIAD / PAIR STATUS
+
+Unlike 1 Meqabyan:
+3 Meqabyan does not center a martyr-brother triad.
+
+Its major paired/opposed structures are:
+
+## Satan / Adam
+rejected exalted spirit ↔ replacement human praise-role.
+
+## Adam / Eve
+paired human origin/fall.
+
+## flesh / soul
+temporarily separated → reunited.
+
+## earth / heaven
+lower material field ↔ upper realm.
+
+## water / wind
+material/support media.
+
+## righteous / sinner
+paired judgment outcomes.
+
+### M67-37 — THE MOST IMPORTANT PAIR IS SATAN/ADAM AS ROLE-SUCCESSION, NOT TWO GEOMETRIC STRANDS
+
+---
+
+# FULL 3 MEQABYAN PROCESS TIMELINE
+
+future judgment over adversarial power
+→ Satan boasts across sea/heaven/depth
+→ environmental signs used as deception channels
+→ fallen angelic role contrasted with future human inheritance
+→ adversary described as wind+fire being
+→ Adam created from earth
+→ serpent becomes deception/influence channel
+→ Adam/Eve fall
+→ exile into agricultural earth-state
+→ cherub/seraph winged praise field
+→ Adam explicitly formed from earth+water+fire+wind
+→ wind foundational language appears
+→ mountain foundations / sea sand boundary recalled
+→ body returns to earth
+→ soul separates at death
+→ angelic/demonic receivers distinguished
+→ moral exhortation
+→ Job/David/etc become exemplar archive
+→ creation/path taxonomy:
+   bird in sky
+   serpent on rock
+   ship in sea
+   soul after death
+→ soul path projected through dew/wind/lightning/star/sand/tree forms
+→ earth founded upon water
+→ heaven pillared upon wind
+→ heaven spread like garment over waters
+→ clouds rain
+→ vegetation feeds humans
+→ graves open
+→ bodies rise
+→ souls return to flesh
+→ seasonal rain analogy explains reanimation
+→ water/dew + divine Word reactivate dead
+→ global command/world arousal
+→ death→life crossing
+→ passing-world→heavenly-kingdom endpoint.
+
+---
+
+# STRICT FINGERTRAP TEST — 3 MEQABYAN
+
+Criteria:
+1. broad/open support structure;
+2. same structure continuity;
+3. geometry/angle change;
+4. narrowing to throat/rod;
+5. transfer through;
+6. reopening.
+
+## Criterion 1 — broad support
+**Very strong**
+
+Heaven:
+- broad/spread;
+- wind-pillared;
+- over waters.
+
+## Criterion 2 — continuity
+Static only.
+
+## Criterion 3 — contraction
+Absent.
+
+## Criterion 4 — throat
+Absent.
+
+## Criterion 5 — transfer
+Soul/body transitions exist,
+but not through a physical cosmic throat.
+
+## Criterion 6 — reopening
+Absent.
+
+### Verdict
+
+**No strict fingertrap.**
+
+### Major contribution
+
+Third Meqabyan is exceptionally important for:
+- broad-support cosmography;
+- element/media composition;
+- agent/body distinction;
+- resurrection reassembly;
+- environmental-field→anthropomorphic possibility.
+
+It does not provide the missing mechanical contraction.
+
+---
+
+# NUMBER / TIMING REGISTER
+
+Record without forcing:
+
+## Chapter 3
+- Adam receives five evil + five good thoughts = ten in one passage.
+
+## Chapter 4
+- fallen angelic group described in relation to a "tenth tribe/rank" in the working translation.
+
+## Resurrection
+- no exact Vardath-style gate duration.
+
+### Control
+
+These numbers are theological/moral structuring devices in an unstable translation environment.
+
+Do not map directly onto:
+- JANUS 1-3-7;
+- 8 enclosure;
+- 10/12 age systems;
+- gate clocks.
+
+---
+
+# TEXTUAL / HISTORICAL CONTROLS
+
+1. Third Meqabyan is a 10-chapter Ethiopic/Geʽez canonical work and is not Greek 3 Maccabees.
+2. The surviving demonstrated textual tradition is Geʽez; no earlier Hebrew/Aramaic/Greek original is securely established.
+3. Exact date and author remain uncertain.
+4. The work is primarily theological/exhortative rather than Hasmonean history.
+5. Its Adam/Satan material belongs to a broader Adamic tradition; similarity does not prove direct dependence on one named source.
+6. Genesis itself does not narrate Satan's refusal to bow to Adam; that is later Adamic reception tradition.
+7. The online Iyaric/modern English texts are useful reading aids but are not critical editions.
+8. TIPs' current "2Meq" label conflicts with the content stream; verses there match the 10-chapter Third Meqabyan text.
+9. Therefore TIPs verse labels must be cited with a content-identity warning.
+10. Chapter 2 describes the adversary as created from wind and fire.
+11. Chapter 4 describes Adam as formed from earth plus water/fire/wind.
+12. Chapter 4 names Cherubiel/Seraphiel and wing-stretching praise.
+13. Chapter 9:12 in TIPs gives earth founded on waters and heaven pillared upon wind / spread like a garment over waters.
+14. Chapter 9's bird/serpent/ship/soul series is analogy/path language, not identity equivalence.
+15. Chapter 9–10 resurrection material strongly affirms bodily return and soul/flesh reunion.
+16. Rain/dew resurrection analogy is theological/natural analogy, not proof of a literal reanimation fluid.
+17. The book contributes no explicit woven-strand contraction or physical inter-world gate.
+
+---
+
+# Sources logged — 3 Meqabyan
+
+## Primary / reading texts
+- Pseudepigrapha, Third Meqabyan full 10-chapter English text:
+  https://www.pseudepigrapha.com/EtheopianBible/Etheopian3Meqabyan.html
+- Wikisource modernized Third Meqabyan translation:
+  https://en.wikisource.org/wiki/Translation:3_Meqabyan
+
+## Geʽez / UBS cross-checks — label mismatch noted
+- TIPs "2Meq 1:1" — content corresponds to Third Meqabyan opening:
+  https://tips.translation.bible/tip_verse/2meq-11/
+- TIPs "2Meq 4:10" — Adam formed with earth/water/fire/wind:
+  https://tips.translation.bible/tip_verse/2meq-410/
+- TIPs "2Meq 9:1":
+  https://tips.translation.bible/tip_verse/2meq-91/
+- TIPs "2Meq 9:3" — serpent/ship path:
+  https://tips.translation.bible/tip_verse/2meq-93/
+- TIPs "2Meq 9:5" — bird/dew/mountain:
+  https://tips.translation.bible/tip_verse/2meq-95/
+- TIPs "2Meq 9:7–9" — star/sand/tree/wind path comparisons:
+  https://tips.translation.bible/tip_verse/2meq-97/
+  https://tips.translation.bible/tip_verse/2meq-98/
+  https://tips.translation.bible/tip_verse/2meq-99/
+- TIPs "2Meq 9:12" — earth/water + heaven/wind cosmography:
+  https://tips.translation.bible/tip_verse/2meq-912/
+- TIPs "2Meq 9:13" — rain/grass/fruit:
+  https://tips.translation.bible/tip_verse/2meq-913/
+- TIPs "2Meq 9:33" — resurrection / houses of light:
+  https://tips.translation.bible/tip_verse/2meq-933/
+
+## Manuscript / canon / structure
+- 3 Meqabyan manuscript/canon page:
+  https://israelite-biblical-canons.neocities.org/pages_for_biblical_texts/3_meqabyan
+- Third Meqabyan study guide with manuscript and canon controls:
+  https://elroidigital.org/book-of-third-meqabyan-study-guide.html
+
+---
+
+# SECTION 67 — 3 MEQABYAN COMPLETE
+
+## Strongest new findings
+
+1. **The verified text is the 10-chapter Third Meqabyan, not Greek 3 Maccabees and not the already-completed 21-chapter 2 Meqabyan.**
+2. **TIPs currently labels a stream "2Meq" whose content matches Third Meqabyan; this mismatch is now explicitly documented so later research does not double-count or misidentify it.**
+3. **The adversary is described as a non-fleshly being created from wind and fire, while Adam is later described as a composite of earth, water, fire and wind.**
+4. **That gives direct source-level support for distinguishing visible body, material/energetic substrate and controlling agency.**
+5. **The serpent functions as a deception/influence channel for the adversarial agent, which is highly relevant to the user's serpent/dragon hypothesis: creature body and underlying agent need not be identical.**
+6. **Cherubiel and Seraphiel are explicitly winged heavenly agents, but the chapter gives no serpent/tree morphology, so cherub↔Feathered-Serpent identity remains unproved.**
+7. **Chapter 4 already uses wind in a foundational cosmographic role and recalls mountains/foundations plus sea bounded by sand.**
+8. **Chapter 9 is the major cosmology section: bird-in-heaven, serpent-on-rock, ship-in-sea and soul-after-death are grouped as distinct path types across different media.**
+9. **The soul's unknown route is then projected through bird, dew, deep wind, lightning, stars, sand, sea-edge stone and waterside tree images, proving one process can be represented through many environmental forms without any one image being literal.**
+10. **TIPs/UBS chapter 9:12 states that earth is founded upon waters, heaven is pillared upon wind, and heaven is spread like a garment over waters.**
+11. **This is a second strong Meqabyan witness to the broad wind-supported upper-cover / water cosmography already found in 1 Meqabyan 27.**
+12. **That repetition substantially strengthens the BROAD/SUPPORT side of the Vardath comparison and suggests a shared Ethiopic cosmographic formula rather than a one-off verse.**
+13. **The chapter immediately connects sky/rain to vegetation and human nourishment, giving another upper-state→water→biology→population chain.**
+14. **Chapters 9–10 give a two-domain resurrection system: bodily material remains in dust/graves while souls occupy separate habitations, then graves open and souls return to the same flesh.**
+15. **Chapter 10 explains resurrection through rainy-season reactivation: water/dew and divine Word/call awaken inert earth/dead bodies, a strong signal+medium→state-change analogy.**
+16. **This is not physical proof of reanimation fluid, but it is a clean source-level system grammar.**
+17. **The book's most important contribution to the cherub / Quetzalcoatl / Feathered-Serpent / Squatter-Man hypothesis is methodological: visible morphology, substrate/medium and functional agency must be tracked separately.**
+18. **No strict fingertrap appears. Third Meqabyan strongly reinforces the broad wind-supported covering end of the chain but supplies no contraction into a throat.**
+19. **The cross-text mechanical chain remains: 1 Meqabyan 27 + 3 Meqabyan 9 = broad wind-supported water/sky architecture; 4 Ezra 7 = static narrow throat; Zechariah 14 = opening/passage/bilateral outflow.**
+20. **The specific missing link is still one text or connected sequence in which the SAME broad support structure visibly contracts into the narrow connector and later reopens.**
+
+## Next live block
+
+**Section 68 — Josippon / Joseph ben Gorion**
+
+Required protocol:
+- re-check all three archives before beginning;
+- distinguish:
+  - Hebrew Josippon tradition;
+  - Ethiopic/Geʽez reception;
+  - later Arabic/Ethiopic forms;
+- do not present reconstructed Hebrew/English Josippon as if it were a direct translation of the Ethiopic witness;
+- identify which portions can be verified specifically as Ethiopic;
+- investigate:
+  - Adam/early geography if present;
+  - Daniel/Zerubbabel;
+  - Babylon/Persia;
+  - Alexander;
+  - successors;
+  - Maccabean/Hasmonean material;
+  - Rome;
+  - destruction of Jerusalem;
+- search specifically for:
+  - world geography;
+  - sea/deep;
+  - mountains;
+  - gates;
+  - rods/standards;
+  - fire/light;
+  - winged/serpent imagery;
+  - paired rulers;
+  - empire-body projection;
+  - city destruction/rebuilding;
+  - upper/lower cosmology;
+- keep historical source criticism especially strong because Josippon is a medieval historiographic compilation, not a contemporary witness to all events it narrates.
+
