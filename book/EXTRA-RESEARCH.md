@@ -3443,3 +3443,920 @@ Scholarly / interpretive:
 - darkness→light and rough→level;
 - servant later called blind/deaf: receiver-role paradox;
 - strict test against conflating “spirit on servant” with physical current.
+
+
+---
+
+# SECTION 49 progress D1C — Isaiah 42
+## First-time research: fragile-state preservation, resilient operator, stretched sky/inhabited earth, release from confinement, distributed witness field, restrained→laboring transition, environmental drying, unknown-route guidance and receiver failure
+
+Isaiah 42 begins with the first poem conventionally called a “Servant Song,” then later in the same chapter calls the servant blind and deaf.
+
+The identity of Isaiah’s servant across chapters 40–55 is a major scholarly debate. Israel is explicitly called the servant in nearby texts, while some servant poems portray an idealised or more individual figure. The research should therefore track **role and behavior first** rather than deciding in advance that every “servant” reference is one literal person.
+
+That is especially important for the user’s paired-figure investigation.
+
+---
+
+# Isaiah 42:1 — spirit is placed on the servant for a defined task
+
+The servant is:
+- upheld;
+- chosen;
+- given spirit;
+- assigned justice toward nations.
+
+The process is:
+
+**source**
+→ **capacity/input placed on agent**
+→ **agent performs distributed social function**.
+
+## M49D1C-1 — INPUT TO AN AGENT SHOULD BE CLASSIFIED BY THE FUNCTION IT ENABLES, NOT BY A PRESET PHYSICAL SUBSTANCE
+
+The text says “spirit.”
+
+It does not say:
+- plasma;
+- atmosphere;
+- electrical current;
+- material cargo.
+
+The secure result is:
+**operator receives enabling capacity from source**.
+
+---
+
+# Isaiah 42:2–4 — low-force treatment of already fragile structures
+
+The servant:
+- does not shout for self-display;
+- does not break a bruised/crushed reed;
+- does not extinguish a dim wick.
+
+NET notes that:
+- “crushed” reed;
+- “dim” wick;
+are images of the weak/oppressed near extinction.
+
+The servant then:
+- does not become dim;
+- does not become crushed
+before completing the task.
+
+The same Hebrew roots are deliberately echoed across:
+**fragile target**
+and
+**resilient operator**.
+
+## M49D1C-2 — A FUNCTIONING OPERATOR CAN PRESERVE FRAGILE SUBSYSTEMS RATHER THAN APPLY MAXIMUM FORCE
+
+This strongly extends Isaiah 28’s farmer principle.
+
+Already-damaged cargo/system:
+requires
+**low-force handling**.
+
+The goal is not:
+crush until nothing remains.
+
+---
+
+# Isaiah 42:3–4 — target fragility and operator resilience are deliberately asymmetric
+
+Target:
+- bruised;
+- dim;
+- near failure.
+
+Operator:
+- does not finish breaking/extinguishing target;
+- does not itself become crushed/dim until the task is completed.
+
+## M49D1C-3 — SUCCESSFUL TRANSFER/RESTORATION MAY REQUIRE AN OPERATOR WHO TOLERATES STRESS BETTER THAN THE CARGO IT PROTECTS
+
+This is highly relevant to Vardath carrier questions.
+
+If living cargo is fragile,
+the supporting structure/process may need:
+- higher tolerance;
+- controlled force;
+- non-destructive handling.
+
+The chapter supplies the systems logic, not physical gate engineering.
+
+---
+
+# Isaiah 42:1–4 — servant/fragile-reed relation is not a two-equal-force pair
+
+The figures are not:
+two opposed strands.
+
+They are:
+operator
+and
+vulnerable target.
+
+## P49D1C-A — SERVANT / BRUISED REED IS AN ASYMMETRIC CARE/PROCESS PAIR
+
+This is another pair-type to keep distinct from:
+- twins;
+- enemies;
+- upper/lower;
+- two directions;
+- husband/wife;
+- rival kings.
+
+---
+
+# Isaiah 42:4 — the task is distributed to earth/coastlands
+
+The servant continues until:
+justice/instruction
+reaches earth/coastlands.
+
+This gives:
+
+local agent
+→ geographically distributed output.
+
+## M49D1C-4 — ONE OPERATOR CAN HAVE A WIDE OUTPUT FIELD WITHOUT PHYSICALLY BECOMING THAT FIELD
+
+Important Squatter-Man control:
+large-scale effect
+does not imply
+large-scale body identity.
+
+---
+
+# Isaiah 42:5 — heavens stretched, earth spread, inhabitants given breath/spirit
+
+The source is described as:
+- creator of heavens;
+- stretcher of heavens;
+- spreader of earth and its products;
+- giver of breath to people on it;
+- giver of spirit to those walking in it.
+
+This creates a layered inhabitation picture:
+
+**stretched upper field**
+→ **spread lower earth**
+→ **things grow/come from earth**
+→ **people inhabit/walk**
+→ **breath/spirit supports living actors**.
+
+## M49D1C-5 — BROAD SKY / BROAD EARTH / LIVING INHABITANTS ARE PRESENTED AS DISTINCT BUT RELATED SYSTEM LAYERS
+
+This is strongly relevant to Vardath’s populated-world emphasis.
+
+The text does not present:
+empty scenery.
+
+It explicitly links:
+world geometry
+and
+inhabitants.
+
+### Vardath comparison
+
+Again the sky is in:
+**stretched/open state**.
+
+No narrowing/throat appears.
+
+---
+
+# Isaiah 42:5 — breath and spirit should not be collapsed automatically
+
+The verse can distinguish:
+- breath to people;
+- spirit to those walking.
+
+Translations and Hebrew semantic ranges overlap, but the poetic parallel does not justify automatically converting both into one material fluid.
+
+## M49D1C-6 — PARALLEL TERMS CAN SHARE FUNCTION WITHOUT BEING ONE MEASURED PHYSICAL SUBSTANCE
+
+This is especially important because the project tracks:
+- air;
+- atmosphere;
+- “spirit” language;
+- current.
+
+Context must decide how far the physical comparison can go.
+
+---
+
+# Isaiah 42:6 — hand-holding appears again as control/support interface
+
+As in Isaiah 41:
+source
+→ takes servant by hand;
+→ keeps/protects;
+→ assigns public function.
+
+## M49D1C-7 — SMALL CONTACT INTERFACE CAN SIGNAL GUIDANCE / STABILISATION / COMMISSIONING
+
+This is repeated imagery,
+but still relational rather than mechanical.
+
+---
+
+# Isaiah 42:6–7 — servant becomes covenant/light and enables access restoration
+
+The servant’s functions include:
+- light to nations;
+- opening blind eyes;
+- bringing prisoners from dungeon;
+- bringing people from prison-darkness.
+
+The process family is:
+
+**sensory closure**
++
+**spatial confinement**
+→ **access restored**
+→ **movement outward**
+→ **light/exposure**.
+
+## M49D1C-8 — RESTORATION CAN COMBINE INFORMATION ACCESS AND MATERIAL RELEASE
+
+Blindness:
+perception channel.
+
+Prison:
+body location/boundary.
+
+Light:
+information/visibility state.
+
+Release:
+material/person movement.
+
+The poem intentionally joins these different channels.
+
+---
+
+# Isaiah 42:7 — enclosure is not automatically protective
+
+Dungeon/prison:
+- boundary;
+- retention;
+- darkness.
+
+But function:
+captivity.
+
+## M49D1C-9 — ENCLOSURE FUNCTION MUST BE CLASSIFIED BEFORE IT IS COMPARED TO ARK / CARRIER / GATE
+
+Same structural category “inside boundary” can mean:
+- refuge;
+- womb;
+- carrier;
+- prison;
+- processing vessel;
+- tomb.
+
+This remains a permanent research rule.
+
+---
+
+# Isaiah 42:8–9 — representation/source distinction leads into former/new-event prediction
+
+The text again rejects giving source-status to carved images.
+
+Then:
+
+former things:
+→ have happened.
+
+new things:
+→ declared before they “spring forth.”
+
+## M49D1C-10 — FUTURE INFORMATION IS PRESENTED AS PRE-EVENT SIGNAL
+
+This extends Isaiah 41’s source-test logic.
+
+The image “spring forth” also projects:
+future event
+as
+biological emergence/growth.
+
+### Control
+
+Prediction claim:
+must still be evaluated with textual dating and historical context.
+
+---
+
+# Isaiah 42:10–12 — sea, coastlands, wilderness, settlements and mountaintops form one distributed witness field
+
+The praise field includes:
+- end of earth;
+- those associated with sea / all in it;
+- coastlands and inhabitants;
+- wilderness and towns;
+- Kedar villages;
+- Sela inhabitants;
+- mountaintops.
+
+The important point for Vardath is not simply:
+“sea and mountain both appear.”
+
+It is:
+
+**many environmental zones**
++
+**many inhabited zones**
+→ **simultaneous participation in one information/output field**.
+
+## M49D1C-11 — A SINGLE EVENT/ANNOUNCEMENT CAN BE OBSERVED ACROSS MULTIPLE INHABITED ENVIRONMENTAL REGIMES
+
+This fits the user’s insistence:
+worlds/environments are inhabited systems, not empty layers.
+
+But Isaiah 42 remains terrestrial/geographical here.
+
+---
+
+# Isaiah 42:13 — source shifts from quiet servant mode to warrior mode
+
+Earlier:
+servant is quiet/gentle.
+
+Now:
+source emerges like warrior;
+shouts;
+acts against enemies.
+
+## M49D1C-12 — ONE NARRATIVE SYSTEM CAN CONTAIN DIFFERENT FORCE REGIMES FOR DIFFERENT TARGET CLASSES
+
+fragile reed:
+preserve.
+
+enemy:
+high-force action.
+
+This repeats the material-specific processing rule.
+
+---
+
+# Isaiah 42:14 — long restraint reverses into labor-woman output
+
+The speaker says:
+- long inactive/quiet;
+- held back/restrained;
+then
+- like woman in labor;
+- groans;
+- pants;
+- gasps.
+
+This is a striking phase change:
+
+**restraint / stored non-output**
+→ **threshold reached**
+→ **intense pressure/output state**.
+
+## M49D1C-13 — QUIET STATE CAN SWITCH INTO HIGH-OUTPUT TRANSITION STATE
+
+This is strongly relevant to the Vardath distinction:
+quiet lattice
+vs
+active gate interval.
+
+### But the control is essential
+
+Childbirth is a common transition metaphor.
+
+The verse does not describe:
+- braid contraction;
+- pressure measurements;
+- a physical throat.
+
+Classification:
+**strong phase-change analogue, not direct gate mechanism.**
+
+---
+
+# Isaiah 37 ↔ Isaiah 42 childbirth pair
+
+Isaiah 37:
+cargo reaches birth threshold
+but
+there is insufficient strength to deliver.
+
+Isaiah 42:
+operator/source has long restrained output
+then
+enters labor-like release.
+
+## M49D1C-14 — THE SAME BIRTH IMAGE CAN MODEL DIFFERENT PARTS OF A TRANSITION SYSTEM
+
+37:
+failed passage capacity.
+
+42:
+activation/release after restraint.
+
+Therefore:
+motif identity
+≠
+mechanism identity.
+
+This is precisely why process-role classification matters.
+
+---
+
+# Isaiah 42:15 — active phase reverses the prior water/ecology direction
+
+The new high-output phase:
+- dries mountain/hill vegetation;
+- changes streams/rivers;
+- dries pools.
+
+NET notes a textual difficulty:
+MT reads rivers/streams becoming “islands/coastlands”; proposed emendations toward “dry places” exist, but ancient versions support the MT enough that the strange reading should be preserved cautiously.
+
+The secure process is:
+
+**vegetated/wet field**
+→ **drying**
+→ **reduced water availability**.
+
+## M49D1C-15 — THE SAME LARGER SOURCE CAN PRODUCE OPPOSITE ENVIRONMENTAL WATER STATES IN DIFFERENT PHASES
+
+Isaiah 41:
+dry
+→ rivers/springs/pools/trees.
+
+Isaiah 42:
+vegetation/water
+→ drying.
+
+This is a genuine state polarity.
+
+### Vardath relevance
+
+A gate cycle may likewise have:
+- loading/flooding phase;
+- draining/drying phase.
+
+But Isaiah does not give the physical cause connecting them.
+
+---
+
+# Isaiah 42:16 — unknown route becomes traversable through active guidance
+
+The blind are led:
+- along road they do not know;
+- through paths unfamiliar.
+
+Then:
+- darkness ahead → light;
+- rough places → level.
+
+The process is:
+
+**receiver lacks route map + visual access**
+→ **external guidance**
+→ **new path traversal**
+→ **visibility improves**
+→ **surface difficulty decreases**.
+
+## M49D1C-16 — GUIDANCE CAN SUBSTITUTE FOR INTERNAL ROUTE KNOWLEDGE DURING TRANSITION
+
+This is highly relevant to controlled passage.
+
+A traveler may survive a route:
+not because it understands the whole system,
+but because a stable guide/operator controls movement.
+
+---
+
+# Isaiah 42:16 — darkness→light and rough→level are two simultaneous access improvements
+
+Information/perception:
+dark → light.
+
+Physical route:
+rough → level.
+
+## M49D1C-17 — MATERIAL ACCESS AND INFORMATION ACCESS CAN IMPROVE TOGETHER
+
+This is the restorative inverse of Isaiah 36:
+wall blocks body while information crosses.
+
+Isaiah 42:
+path and perception both improve.
+
+---
+
+# Isaiah 42:17 — wrong source model produces route reversal
+
+Those trusting manufactured images:
+→ turn back;
+→ are shamed.
+
+## M49D1C-18 — ROUTE REVERSAL CAN RESULT FROM SOURCE-MODEL FAILURE RATHER THAN PATH GEOMETRY
+
+Again:
+direction change
+must be tied to cause.
+
+---
+
+# Isaiah 42:18–20 — the servant identity itself becomes blind/deaf
+
+The text now says:
+- servant blind;
+- messenger deaf;
+- sees many things but does not observe;
+- ears open but does not hear.
+
+This creates a real role tension with 42:1–7.
+
+Scholarship debates the servant’s identity across Isaiah 40–55; the chapter itself is evidence that “servant” can operate differently across adjacent contexts.
+
+## M49D1C-19 — SAME ROLE LABEL DOES NOT GUARANTEE SAME FUNCTIONAL STATE OR EVEN SIMPLE ONE-TO-ONE IDENTITY
+
+This is extremely important for the 88-book person-mapping project.
+
+Do not reason:
+same title/name
+→ same mechanical role
+without checking state/context.
+
+---
+
+# Isaiah 42:18–20 — open sensor does not guarantee information uptake
+
+Eyes:
+functionally present.
+
+Ears:
+open.
+
+Yet:
+observation/hearing fails.
+
+## M49D1C-20 — SENSOR AVAILABILITY ≠ SUCCESSFUL PERCEPTION / INTERPRETATION
+
+This extends Isaiah 29.
+
+Information can fail at:
+- access;
+- sensor;
+- attention;
+- interpretation.
+
+---
+
+# Isaiah 42:22 — holes/prisons are failed-state enclosures
+
+The people are:
+- robbed/plundered;
+- trapped in holes;
+- hidden in prisons;
+- prey/spoil;
+- no rescuer;
+- no one says restore/return.
+
+## M49D1C-21 — ENCLOSURE CAN CHANGE POPULATION FROM MOBILE AGENT INTO RETAINED CARGO/PREY
+
+This is a powerful captivity-state model.
+
+Population:
+free mover
+→ trapped contents.
+
+No protective-carrier interpretation is appropriate.
+
+---
+
+# Isaiah 42:23 — future attention is explicitly requested
+
+The audience is asked:
+who will listen
+for the time to come?
+
+## M49D1C-22 — PAST FAILURE CAN BE STORED AS INPUT FOR FUTURE DECISION-MAKING
+
+This supports the master timeline purpose:
+history becomes predictive/control information if interpreted correctly.
+
+---
+
+# Isaiah 42:24–25 — fire surrounds the population but interpretation still fails
+
+War/anger:
+- poured out;
+- fire all around;
+- burns.
+
+Yet:
+- they do not understand;
+- do not take it to heart.
+
+## M49D1C-23 — DIRECT EXPOSURE TO A PHYSICAL/EXPERIENTIAL EVENT DOES NOT GUARANTEE CORRECT CAUSAL INTERPRETATION
+
+This is one of the strongest controls against:
+“ancient people saw X, therefore their story technically describes X exactly.”
+
+Observers can experience:
+real event
+and
+misunderstand cause/meaning.
+
+Conversely,
+later poetic language may preserve process while changing explanation.
+
+That is precisely why the project must separate:
+observation;
+projection;
+interpretation;
+mechanism.
+
+---
+
+# Isaiah 42 pair / process matrix
+
+## fragile reed / resilient servant
+near-failure target / non-crushed operator.
+
+## dim wick / non-dim servant
+low-output target / persistent operator.
+
+## stretched heavens / spread earth
+upper broad field / lower inhabited field.
+
+## breath / spirit
+parallel life-enabling terms, not automatically one substance.
+
+## blindness / light
+failed information access / restored visibility.
+
+## prison / release
+retained body / restored movement.
+
+## quiet restraint / labor output
+inactive phase / high-output transition phase.
+
+## Isaiah 41 wetting / Isaiah 42 drying
+water restoration / water removal.
+
+## unknown route / guide
+low route knowledge / external navigation control.
+
+## ideal servant / blind servant
+role continuity problem / state or identity tension.
+
+## fire exposure / non-understanding
+event input / failed interpretation.
+
+---
+
+# Isaiah 42 continuous transformation timeline
+
+servant is selected/upheld
+→ enabling spirit is placed on servant
+→ fragile reed/wick are preserved
+→ operator remains uncrushed/undimmed
+→ justice/instruction spreads outward
+→ heavens are stretched
+→ earth is spread and inhabited
+→ breath/spirit support inhabitants
+→ servant is held by hand
+→ blindness/prison/darkness are targeted for release
+→ former events become completed evidence
+→ new events are declared before emergence
+→ sea/coastlands/desert/cities/mountains form distributed witness field
+→ source shifts from restrained state to warrior output
+→ long silence becomes labor-like activation
+→ mountain vegetation dries
+→ water bodies shrink/change
+→ blind travelers enter unknown route
+→ external guide controls passage
+→ darkness becomes light
+→ rough ground becomes level
+→ failed manufactured-source model turns backward
+→ servant is then described as blind/deaf
+→ open sensors fail to produce understanding
+→ population is retained in holes/prisons as spoil
+→ audience is asked to learn for future time
+→ fire/war surrounds population
+→ direct exposure still fails to produce interpretation.
+
+---
+
+# Isaiah 42 strict spiderweb → fingertrap screening
+
+## broad upper field
+Strong:
+heavens stretched.
+
+## inhabited lower field
+Strong:
+earth + inhabitants + breath/spirit.
+
+## quiet→active phase
+Strong analogue:
+long restraint → labor-like output.
+
+## fragile cargo handling
+Strong systems analogue.
+
+## contraction of same sky structure
+Absent.
+
+## braid/strand continuity
+Absent.
+
+## axial throat
+Absent.
+
+## transfer between populated world layers
+Absent.
+
+## route opening
+Strong:
+unknown paths become guided/level/light.
+
+But terrestrial/metaphorical liberation is primary.
+
+### Strict verdict
+
+**Isaiah 42 is highly relevant to the Vardath process model at the level of force control and phase transition. It distinguishes fragile cargo from resilient operator, repeats the stretched broad-sky state, moves from long restraint into labor-like high output, changes environmental water/vegetation state, and guides impaired travelers through an unknown route while improving both visibility and ground conditions. Yet the chapter never shows the stretched heaven itself contracting into a throat. The strongest result is a quiet→active phase analogue plus differential-force/cargo logic, not a strict fingertrap description.**
+
+---
+
+# New master-mechanism additions from Isaiah 42
+
+## M49D1C-1 — ENABLED AGENT FUNCTION SHOULD BE CLASSIFIED BEFORE PHYSICALISING “SPIRIT”
+
+## M49D1C-2 — FUNCTIONING OPERATOR CAN PRESERVE ALREADY-FRAGILE SUBSYSTEMS
+
+## M49D1C-3 — OPERATOR MAY NEED HIGHER STRESS TOLERANCE THAN CARGO
+
+## M49D1C-4 — WIDE OUTPUT FIELD ≠ LARGE PHYSICAL BODY
+
+## M49D1C-5 — BROAD SKY / EARTH / INHABITANTS CAN BE DISTINCT RELATED SYSTEM LAYERS
+
+## M49D1C-6 — PARALLEL BREATH/SPIRIT LANGUAGE ≠ ONE MEASURED SUBSTANCE
+
+## M49D1C-7 — HAND CONTACT CAN REPRESENT GUIDANCE/STABILISATION INTERFACE
+
+## M49D1C-8 — RESTORATION CAN COMBINE INFORMATION ACCESS + MATERIAL RELEASE
+
+## M49D1C-9 — ENCLOSURE FUNCTION MUST BE CLASSIFIED
+
+## M49D1C-10 — FUTURE INFORMATION CAN BE PRESENTED BEFORE EVENT EMERGENCE
+
+## M49D1C-11 — ONE ANNOUNCEMENT CAN SPAN MANY INHABITED ENVIRONMENTAL ZONES
+
+## M49D1C-12 — DIFFERENT TARGET CLASSES CAN RECEIVE DIFFERENT FORCE REGIMES
+
+## M49D1C-13 — QUIET/RESTRAINED STATE CAN SWITCH TO HIGH-OUTPUT TRANSITION STATE
+
+## M49D1C-14 — SAME BIRTH METAPHOR CAN MODEL DIFFERENT TRANSITION ROLES
+
+## M49D1C-15 — SAME SOURCE CAN PRODUCE OPPOSITE WATER STATES IN DIFFERENT PHASES
+
+## M49D1C-16 — EXTERNAL GUIDANCE CAN SUBSTITUTE FOR INTERNAL ROUTE KNOWLEDGE
+
+## M49D1C-17 — PHYSICAL AND INFORMATION ACCESS CAN IMPROVE TOGETHER
+
+## M49D1C-18 — ROUTE REVERSAL MAY COME FROM SOURCE-MODEL FAILURE
+
+## M49D1C-19 — SAME ROLE LABEL ≠ SIMPLE ONE-STATE/ONE-PERSON MECHANICS
+
+## M49D1C-20 — OPEN SENSOR ≠ SUCCESSFUL PERCEPTION
+
+## M49D1C-21 — ENCLOSURE CAN CONVERT MOBILE POPULATION INTO RETAINED PREY/CARGO
+
+## M49D1C-22 — PAST FAILURE CAN BECOME FUTURE DECISION INPUT
+
+## M49D1C-23 — EVENT EXPOSURE ≠ CORRECT CAUSAL INTERPRETATION
+
+---
+
+# Number / timing register — Isaiah 42
+
+- no gate-duration number;
+- “long time” restraint is qualitative;
+- no quantified labor duration;
+- no quantified drying interval;
+- no world-layer count.
+
+The chapter is process-rich but numerically sparse.
+
+---
+
+# Textual / scholarly controls — Isaiah 42
+
+1. Isaiah 42:1–4 is conventionally called the first Servant Song.
+2. Servant identity across Isaiah 40–55 remains debated; Israel is explicitly “servant” in adjacent material, and 42:18–20 describes the servant as blind/deaf.
+3. NET notes the deliberate reuse of the “crushed” and “dim” terms from fragile reed/wick onto the servant in v4.
+4. “Spirit on servant” is theological enabling language; physical-current mapping remains speculative.
+5. Isaiah 42:5 again describes stretched heavens and spread inhabited earth; no narrowing mechanism is stated.
+6. Blindness/prison imagery in vv6–7 is liberation/access language before any portal interpretation.
+7. 42:14 labor-woman imagery is a phase-transition metaphor; no physical birth canal/gate is specified.
+8. 42:15 “streams into islands” is textually odd but supported by ancient versions strongly enough that easy emendation should be avoided; the safe environmental variable is drying/receding water.
+9. 42:16 combines unfamiliar route, guidance, darkness→light and rough→level.
+10. 42:18–25 makes receiver failure explicit even after sensory/event exposure.
+11. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Isaiah 42
+
+Primary:
+- Isaiah 42 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Isaiah+42&version=NRSVUE
+- Isaiah 42 NRSVUE / NET:
+  https://www.biblegateway.com/passage/?search=Isaiah+42&version=NRSVUE%3BNET%3BNKJV
+- Isaiah 42:1–4 NET:
+  https://classic.net.bible.org/passage.php?passage=Isa+42%3A1-4
+- Isaiah 42:15–16 NET textual notes:
+  https://classic.net.bible.org/passage.php?passage=Isa+42%3A15%2C16
+- Isaiah 42:18–25 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Isaiah+42%3A18-25&version=NRSVUE
+
+Scholarly / interpretive:
+- Yale Bible Study, “Vindication and Deliverance — Isaiah 41:1–44:23”:
+  https://yalebiblestudy.org/courses/second-isaiah/lessons/vindication-and-deliverance-study-guide/
+- Mark Gignilliat, “Who is Isaiah’s Servant? Narrative identity and theological potentiality,” *Scottish Journal of Theology* 61.2:
+  https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/abs/who-is-isaiahs-servant-narrative-identity-and-theological-potentiality/AA7056349C36CC87EE69E4AEF07C7A17
+- Bible.org Isaiah 42, retained for lexical repetition in bruised/dim imagery:
+  https://bible.org/seriespage/isaiah-42
+
+---
+
+# SECTION 49D1 — ISAIAH 40–42 INTEGRATED RESULT
+
+Isaiah 40–42 now gives a coherent first cluster:
+
+**prior phase complete**
+→ **terrain normalised for route**
+→ **broad sky spread as inhabitable tent**
+→ **upper host ordered**
+→ **human capacity renewed**
+→ **distant populations converge**
+→ **collective Jacob changes projected role from worm to processing sledge**
+→ **large obstacles become wind-mobile fragments**
+→ **water opens across heights/valleys/desert**
+→ **vegetation follows**
+→ **fragile targets receive low-force preservation**
+→ **servant/operator remains functional**
+→ **broad sky/inhabited earth relation repeats**
+→ **captives move from darkness/enclosure toward release**
+→ **distributed inhabited environments participate**
+→ **long restraint switches into labor-like active phase**
+→ **environment then dries**
+→ **unknown route becomes guided/light/level**
+→ **receiver interpretation can still fail despite direct exposure**.
+
+## Strongest Vardath contributions from Isaiah 40–42
+
+1. **rolled sky (Isa 34) versus stretched tent-sky (Isa 40/42)** creates a powerful opposite-state morphology.
+2. **terrain levelling** shows route formation through high/low convergence.
+3. **water/sky/dust/mountains are separately measurable system variables.**
+4. **deep anchoring versus shallow anchoring** predicts different resilience.
+5. **Jacob-as-worm→sledge** is a definitive control against literalising person→machine projection.
+6. **high/low water restoration → mixed ecology** strongly matches environmental-effects sequencing.
+7. **fragile cargo / resilient operator** strengthens the differential-force rule.
+8. **quiet restraint → labor-like output** is a strong active-phase analogue.
+9. **wetting in Isaiah 41 → drying in Isaiah 42** shows opposite environmental phases under one larger narrative source.
+10. **direct event exposure does not guarantee correct interpretation**, a crucial control for mythic witness claims.
+
+## Strict fingertrap status
+
+Still negative.
+
+The crucial missing bridge remains:
+**the stretched sky itself is never shown changing strand geometry into the narrow axial transfer structure.**
+
+---
+
+## Next live research block
+
+**Isaiah 43–45**
+
+Priority:
+- waters / rivers / fire passage;
+- east/west/north/south population gathering;
+- “bring my sons from far / daughters from ends” transfer;
+- witnesses;
+- new thing / way in wilderness / rivers in desert;
+- sea-path and extinguished army;
+- Jacob formed in womb / Jeshurun;
+- water poured on thirsty ground + spirit on descendants;
+- idol manufacture;
+- Cyrus named/anointed;
+- doors/gates opened before him;
+- mountains/bronze doors/iron bars where applicable;
+- hidden treasures;
+- heavens rain / earth open / salvation spring;
+- potter/clay and parent/child source-role controls;
+- heavens stretched / earth made / human created;
+- strict test whether gate/door material remains political or adds cosmological mechanics.
