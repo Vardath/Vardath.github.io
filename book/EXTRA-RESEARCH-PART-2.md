@@ -4315,3 +4315,1277 @@ Priority:
 - prince of Tyre versus king of Tyre;
 - Eden / guardian cherub / holy mountain / stones of fire in Ezekiel 28;
 - HIGH PRIORITY: test whether the guardian-cherub / mountain / expulsion sequence actually advances the dragon/support hypothesis or remains royal-Eden imagery.
+
+
+---
+
+# SECTION 52 progress G — Ezekiel 25–28
+## Fresh sequential research: surrounding-system reactions, broken gateway and redirected commerce, many-nations-as-waves, city→ship projection, distributed trade network collapse, Eden/holy-mountain cherub imagery, internal fire and restoration after neighbor removal
+
+### Sequential-integrity note
+
+The mandatory three-file anti-duplication check was completed before this block.
+
+- Part 1 contains earlier comparative references to Ezekiel 28's gemstone list in the Exodus priestly-garment research, but **not** a direct sequential Ezekiel 25–28 pass.
+- Existing `EXTRA-RESEARCH.md` contains no direct Ezekiel 25–28 research.
+- Part 2 ends the direct pass at Ezekiel 21–24 and identifies Ezekiel 25–28 as the next live block.
+
+The gemstone/breastpiece relationship already recorded in Part 1 is therefore **cross-linked here rather than re-researched from scratch**.
+
+Primary text read in full:
+- Ezekiel 25 NRSVUE;
+- Ezekiel 26 NRSVUE;
+- Ezekiel 27 NRSVUE;
+- Ezekiel 28 NRSVUE.
+
+---
+
+# Ezekiel 25
+## Neighbor systems react to Jerusalem's collapse; borders exposed; territory changes occupants and function
+
+Ezekiel 25 addresses:
+- Ammon;
+- Moab;
+- Edom;
+- Philistia.
+
+The common trigger is not a new cosmic event.
+
+It is the surrounding peoples' reaction to:
+- sanctuary profanation;
+- Israel's desolation;
+- Judah's exile;
+- Judah's political vulnerability.
+
+This makes the chapter a useful **outside-system response** control.
+
+---
+
+## 25:1–7 — Ammon: one system fails, neighbor celebrates, then neighbor is transferred to new occupants
+
+Ammon celebrates Judah's loss.
+
+The response is:
+- Ammon handed to "people of the East";
+- new encampments and dwellings placed among it;
+- local fruit/milk consumed by incoming occupants;
+- Rabbah's urban function reduced to animal pasture;
+- Ammon cut off from peoples/countries.
+
+### M52G-1 — FAILURE OF ONE REGIONAL NODE CHANGES THE BEHAVIOR OF ADJACENT NODES
+
+Jerusalem/Judah's collapse produces:
+**external observation**
+→ **celebration/opportunism**
+→ **new conflict relation**.
+
+This is a systems principle:
+a central or neighboring failure can reconfigure surrounding behavior without those neighbors being physically part of one object.
+
+### M52G-2 — TERRITORY CAN REMAIN WHILE OCCUPANTS AND FUNCTION CHANGE
+
+Ammon's land does not need to vanish for the narrative to describe a radical state change.
+
+**existing territory**
+→ **new occupants**
+→ **new land use**
+→ **old political identity erased/reduced**.
+
+This reinforces the distinction already developed in 2 Kings 17:
+
+**population/political replacement**
+≠
+**world replacement**.
+
+---
+
+# 25:8–11 — Moab: "lay open the flank" from frontier towns
+
+The image is boundary exposure.
+
+Moab's flank/frontier is opened from named towns.
+
+The result is territorial vulnerability and transfer to eastern peoples.
+
+### M52G-3 — "OPENING" CAN MEAN EXPOSING A DEFENDED SIDE
+
+This is another important gate-language control.
+
+"Open" here does not mean:
+- portal between worlds;
+- sky aperture;
+- dimensional throat.
+
+It means:
+**defensive edge becomes penetrable/exposed**.
+
+---
+
+# 25:12–17 — Edom / Philistia: retaliatory cycles
+
+Edom's offense is framed as revenge.
+
+Philistia is likewise accused of vengeance and longstanding hostility.
+
+### M52G-4 — RECIPROCAL DESTRUCTION CAN BE A FEEDBACK LOOP WITHOUT BEING A COSMIC CYCLE
+
+Sequence:
+**prior injury/conflict**
+→ **retaliation**
+→ **counter-judgment**.
+
+When the Bible repeats conflict in cycles, distinguish:
+- social retaliation loop;
+from
+- cosmological recurrence.
+
+---
+
+# Ezekiel 25 strict Vardath screening
+
+## Strong
+- neighboring-node response;
+- occupant transfer;
+- function change without substrate disappearance;
+- exposed flank / boundary vulnerability.
+
+## Absent
+- support lattice;
+- broad→narrow transition;
+- world throat;
+- upper/lower transfer;
+- dragon support;
+- reopening.
+
+### Verdict
+
+**Ezekiel 25 contributes regional-system and boundary controls, not gate mechanics.**
+
+---
+
+# Ezekiel 26
+## Jerusalem's broken gateway → Tyrian opportunity; many nations as waves; wall/tower failure; city material cast into water; deep covers city; descent into the world below
+
+Ezekiel 26 is one of the richest chapters yet for:
+- gateway economy;
+- network rerouting;
+- repeated wave loading;
+- boundary destruction;
+- material redistribution;
+- upper/living-world versus lower/dead-world contrast.
+
+---
+
+# 26:1–2 — Jerusalem as "gateway of the peoples"
+
+Tyre says of Jerusalem:
+
+**gateway of peoples broken**
+→ **it has swung/opened toward me**
+→ **I will be replenished**
+→ **Jerusalem is wasted**.
+
+The text therefore links:
+- one gateway/hub becoming nonfunctional;
+- another center expecting increased flow.
+
+### M52G-5 — FAILURE OF ONE GATEWAY/HUB CAN REDIRECT FLOW TO ANOTHER HUB
+
+This is extremely important.
+
+Jerusalem's broken gateway does not create Tyre physically.
+
+Instead:
+**network route capacity changes**
+→ **economic traffic/opportunity is expected to move elsewhere**.
+
+This is a much cleaner systems interpretation than treating every "gate of peoples" as a literal cosmic door.
+
+### M52G-6 — "OPEN TO ME" CAN MEAN MARKET ACCESS / NETWORK OPPORTUNITY
+
+The gateway language is relational and commercial.
+
+The chapter itself therefore gives a strong control for Vardath:
+some gates govern **human/economic flows through a network**, not world adjacency.
+
+---
+
+# 26:3–5 — many nations arrive "as waves"
+
+Tyre is attacked by many nations compared to repeated sea waves.
+
+Then:
+- walls destroyed;
+- towers broken;
+- soil scraped;
+- city reduced to bare rock;
+- bare surface becomes place for spreading fishing nets.
+
+### M52G-7 — REPEATED WAVES CAN REPRESENT SERIAL EXTERNAL INPUTS AGAINST ONE TARGET
+
+The important geometry is:
+
+**many external sources**
+→ **successive impacts**
+→ **same central target**.
+
+This is not a woven network.
+
+The wave image encodes:
+- repetition;
+- succession;
+- force;
+- convergence on one coast/city.
+
+### Net control
+
+The fishing nets in 26:5 are ordinary post-destruction coastal use.
+
+They are not:
+- capture net in the Ezekiel 12 sense;
+- supporting lattice;
+- fingertrap.
+
+Again:
+**same object category (net)**
+can have radically different function.
+
+---
+
+# 26:7–14 — siege architecture and material disassembly
+
+Nebuchadrezzar is explicitly named as arriving from the north.
+
+Siege mechanics include:
+- siege wall;
+- ramp;
+- shield cover;
+- battering rams;
+- tower destruction;
+- gate entry after breach.
+
+Then city components are treated separately:
+- riches/merchandise removed;
+- walls/houses broken;
+- stones;
+- timber;
+- soil
+
+are cast into the water.
+
+### M52G-8 — CITY CAN BE DECOMPOSED INTO CARGO/DEBRIS CLASSES
+
+This is structurally important.
+
+"Tyre falls" is not one single physical operation.
+
+Different city components undergo different transitions:
+
+**people**
+→ killed/displaced;
+
+**wealth**
+→ transferred outward;
+
+**walls/houses**
+→ broken;
+
+**stones/timber/soil**
+→ physically moved into water;
+
+**sound/music**
+→ silenced.
+
+This reinforces the research rule:
+never compress all catastrophe channels into one vague "reset."
+
+### M52G-9 — MATERIAL CAN MOVE FROM BUILT STRUCTURE INTO WATER WITHOUT WORLD-LAYER TRANSFER
+
+Stone/timber/soil:
+**city structure**
+→ **debris**
+→ **water deposition**.
+
+That is a direct material-transfer sequence but entirely within ordinary geography.
+
+It is a useful control for later stories where debris appears in water.
+
+---
+
+# 26:15–18 — remote coastlands respond to a central failure
+
+The "princes of the sea" descend from thrones, remove robes and sit on the ground.
+
+Coastlands tremble/dismay at Tyre's fall.
+
+### M52G-10 — FAILURE PROPAGATES THROUGH A DISTRIBUTED NETWORK AS INFORMATION / ECONOMIC SHOCK
+
+Tyre's destruction affects places not physically inside Tyre.
+
+The propagation can be:
+- news;
+- fear;
+- economic consequence;
+- political consequence.
+
+This is a strong network-cascade image.
+
+No physical shockwave between worlds is required.
+
+---
+
+# 26:19–21 — deep rises, city descends, "world below" and people of long ago
+
+The chapter intensifies into mythic/poetic death geography:
+
+- the deep/great waters cover Tyre;
+- Tyre is thrust down with those who descend to the Pit;
+- it is placed among "people of long ago";
+- in the "world below";
+- among primeval ruins;
+- contrasted with the "land of the living."
+
+### M52G-11 — EZEKIEL EXPLICITLY CONTRASTS A LOWER REALM WITH THE LAND OF THE LIVING
+
+This is highly relevant to the Vardath world-layer comparison but is **not the same model**.
+
+The Ezekiel sequence is conventional death/underworld imagery:
+**living-world city**
+→ **destruction/death**
+→ **Pit / world below / ancient dead**.
+
+The user's model instead requires:
+- world below populated by living inhabitants in its own present;
+- relational past-below status;
+- temporary gate interaction;
+- not merely a realm of dead ancestors.
+
+Therefore Ezekiel 26 cannot be used as direct evidence for the mature Vardath "past world below" mechanism.
+
+It is a **lower-world motif with a different ontology/function**.
+
+### M52G-12 — THE DEEP COVERING AND THE DOWNWARD TRANSFER OCCUR TOGETHER, BUT THE TEXT DOES NOT DESCRIBE A REVERSIBLE GATE
+
+Water covers.
+City/personified city descends.
+
+There is no:
+- broad support narrowing;
+- two-way exchange;
+- return/reopening.
+
+---
+
+# Ezekiel 26 process timeline
+
+Jerusalem gateway breaks
+→ Tyre expects redirected benefit
+→ many nations converge like waves
+→ walls/towers fail
+→ surface stripped to rock
+→ future local function becomes net-spreading
+→ Babylonian siege machinery engages
+→ gates breached
+→ valuables removed
+→ structures dismantled
+→ stone/timber/soil cast into water
+→ music/sound ceases
+→ coastlands react
+→ deep/waters cover
+→ Tyre projected downward into Pit/world below
+→ land of living contrasted with lower dead realm.
+
+---
+
+# Ezekiel 26 strict Vardath screening
+
+## Strong
+- gateway/hub rerouting;
+- serial wave impacts;
+- wall/tower failure;
+- actual material movement into water;
+- upper/living versus lower/dead spatial opposition;
+- central-node failure affecting remote network.
+
+## Partial
+- "gateway of peoples";
+- world below;
+- great waters;
+- descent.
+
+## Fails strict test
+No:
+- one support mesh changing shape;
+- broad→narrow throat;
+- opposed spring strands;
+- temporary adjacency between populated co-present worlds;
+- two-way exchange;
+- reopening.
+
+### Verdict
+
+**Ezekiel 26 gives very strong hub/gateway and lower-world imagery, but its "world below" is a death-realm image rather than the Vardath populated past-relative world.**
+
+---
+
+# Ezekiel 27
+## Entire city becomes merchant ship; many lands supply one mobile body; trade network loads carrier; east wind destroys the hub; crew/cargo/network consequences separate
+
+Ezekiel 27 is a direct continuation of the Tyre material but changes projection.
+
+Tyre is no longer merely:
+- city;
+- island/coastal commercial hub.
+
+Tyre becomes an **entire ship**.
+
+This is one of the clearest projection transformations in Ezekiel.
+
+---
+
+# 27:3–11 — city/network projected as one composite vessel
+
+The ship is constructed from resources and people drawn from many places:
+
+- planks from Senir;
+- cedar from Lebanon for mast;
+- Bashan oak for oars;
+- island/coastal timber/ivory for deck;
+- Egyptian linen for sail;
+- coastal purple/blue awning;
+- Sidonian/Arvad rowers;
+- expert pilots;
+- Gebal craftsmen/caulkers;
+- foreign warriors;
+- wall/tower guards.
+
+### M52G-13 — A DISTRIBUTED INTERNATIONAL NETWORK CAN BE COMPRESSED INTO ONE ANTHROPOMORPHIC/VEHICULAR BODY
+
+This is crucial projection grammar.
+
+Tyre as ship is made from:
+**many lands**
++ **many professions**
++ **many materials**
+→ **one functional carrier**.
+
+The unified body is therefore assembled from distributed external contributions.
+
+This provides a strong literary analogue for:
+> one visible figure/object representing an entire distributed system.
+
+It does not prove a physical sky lattice.
+
+### M52G-14 — FUNCTION DEPENDS ON SPECIALIZED PARTS
+
+The vessel has differentiated subsystems:
+- hull/planks;
+- mast;
+- oars;
+- sail;
+- awning;
+- rowers;
+- pilots;
+- caulkers;
+- warriors.
+
+Loss of one subsystem is not identical to loss of another.
+
+This strongly parallels the research's growing "channel/component-specific failure" model.
+
+---
+
+# 27:12–25 — trade network as many-to-one flow
+
+The chapter lists a huge set of regions and commodities.
+
+Trade includes:
+- metals;
+- people/slaves;
+- bronze vessels;
+- horses;
+- ivory/ebony;
+- textiles;
+- precious stones;
+- food;
+- oil;
+- balm;
+- wine;
+- wool;
+- spices;
+- livestock;
+- garments;
+- carpets.
+
+The secure structural picture is:
+
+**many geographically distributed producer/trader nodes**
+→ **many commodity types**
+→ **Tyre hub/carrier**
+→ **redistribution / wealth accumulation**.
+
+### M52G-15 — TYRE IS A HIGH-DEGREE EXCHANGE NODE
+
+This is genuine network architecture.
+
+It has:
+- many incoming edges;
+- different cargo types;
+- specialized external nodes;
+- one central commercial hub.
+
+But it is an economic network.
+
+Do not convert:
+**network**
+into
+**lattice**
+merely because both have nodes and connections.
+
+### Scholarly control
+
+Inchol Yang's 2019 study emphasizes the chapter's ship metaphor and Tyre's role as a center of world trade. Yang also notes the unusual placement of Judah/Israel within the trade list and interprets the chapter against Neo-Babylonian imperial context.
+
+Markus Saur likewise treats Ezekiel 26–28 as important evidence for reconstructing aspects of Tyrian political, economic and religious life while warning that the oracles are literary/prophetic texts with their own rhetorical purposes.
+
+---
+
+# 27:25–27 — network success overloads the carrier
+
+Tyre is:
+- "filled";
+- heavily laden;
+- in the heart of seas.
+
+Then:
+- rowers carry it outward;
+- east wind wrecks it;
+- riches;
+- wares;
+- crew;
+- pilots;
+- caulkers;
+- merchants;
+- warriors;
+- accompanying company
+
+all sink.
+
+### M52G-16 — NETWORK SUCCESS CAN INCREASE SYSTEM LOAD
+
+The same connections that create wealth also load the carrier.
+
+Structural sequence:
+
+**many network inputs**
+→ **increasing cargo/load**
+→ **hub becomes heavily laden**
+→ **external force event**
+→ **carrier failure**
+→ **cargo + operators + security + trade system fail together**.
+
+This is a powerful systems analogy.
+
+It does not require moralizing the physical mechanism:
+centralization creates coupled failure.
+
+### M52G-17 — A SINGLE CARRIER FAILURE CAN COLLAPSE MULTIPLE DEPENDENT SUBSYSTEMS AT ONCE
+
+When the ship sinks, separate functional categories are lost together.
+
+This is different from Ezekiel 24, where contents were removed before the pot was heated.
+
+Compare:
+
+Ezekiel 24:
+**container persists while contents removed**.
+
+Ezekiel 27:
+**container/carrier + contents + crew fail together**.
+
+The same "enclosure/cargo" categories can therefore have very different failure modes.
+
+---
+
+# 27:28–36 — network observers leave vessels and stand on shore
+
+Other sailors/pilots:
+- leave their ships;
+- stand on shore;
+- watch/lament;
+- coastlands and kings react;
+- merchants fear.
+
+### M52G-18 — OBSERVERS CAN EXIT THEIR OWN CARRIERS TO WITNESS ANOTHER CARRIER'S FAILURE
+
+This is a neat carrier-state distinction:
+
+**observer inside carrier**
+→ **observer exits carrier**
+→ **shore / stable substrate**
+→ **witnesses remote wreck**.
+
+Again:
+movement between carrier and shore is ordinary maritime transport, not a world gate.
+
+### M52G-19 — HUB FAILURE PROPAGATES THROUGH DEPENDENT NODES EVEN WHEN THOSE NODES REMAIN INTACT
+
+The coastlands/merchants do not all sink with Tyre.
+
+They survive and react.
+
+Thus:
+**central hub destroyed**
+does not mean
+**entire network substrate ceases to exist**.
+
+This is very important for successor-state modelling.
+
+---
+
+# Ezekiel 27 process timeline
+
+Tyre = city/trade hub
+→ projection changes to ship
+→ many external regions supply construction materials
+→ many peoples become crew/defence
+→ many trade nodes send many commodity classes
+→ Tyre fills/heavily loads
+→ rowers take carrier into deep/high sea
+→ east wind impacts
+→ carrier wrecks
+→ cargo + crew + operators sink
+→ external sailors leave their own ships
+→ shore witnesses gather
+→ distributed network mourns/fears
+→ central hub gone while surrounding nodes remain.
+
+---
+
+# Ezekiel 27 strict Vardath screening
+
+## Strong
+- distributed network;
+- many-to-one flows;
+- composite body/vehicle from distributed components;
+- carrier/cargo/operator distinctions;
+- load accumulation;
+- central hub failure;
+- cascading network effects.
+
+## Partial
+- deep sea / central carrier;
+- east wind;
+- body-like system representation.
+
+## Absent
+- physical support mesh;
+- broad→narrow rod;
+- temporary world adjacency;
+- opposed spring directions;
+- re-expansion/reopening.
+
+### Verdict
+
+**Ezekiel 27 is one of the strongest distributed-system / composite-body texts in the research, but it is an economic-maritime network rather than a sky-support lattice.**
+
+---
+
+# Ezekiel 28
+## Mortal ruler claims divine seat; wealth/trade → pride; Eden/holy-mountain figure; cherub textual uncertainty; stones of fire; expulsion downward; internal fire; Sidon judgment; Israel gathered back to inhabited land
+
+Ezekiel 28 has several distinct units:
+1. oracle against the prince/ruler of Tyre;
+2. lament over the king of Tyre;
+3. oracle against Sidon;
+4. restoration/gathering of Israel.
+
+These must not be collapsed into one undifferentiated myth.
+
+---
+
+# 28:1–10 — prince of Tyre: human ruler imagines divine position in the heart of the seas
+
+The ruler says:
+- "I am a god";
+- "I sit in the seat of the gods";
+- location is "heart of the seas."
+
+The oracle replies:
+- he is mortal, not divine;
+- wisdom/trade accumulated wealth;
+- wealth generated pride;
+- foreign killers bring him down to the Pit;
+- he dies in the seas.
+
+### M52G-20 — CENTRAL LOCATION + WEALTH + KNOWLEDGE CAN PRODUCE FALSE SELF-IDENTIFICATION WITH THE SYSTEM'S HIGHEST ROLE
+
+Tyre's network centrality in chapter 27 becomes ruler self-exaltation in chapter 28.
+
+Sequence:
+
+**high-connectivity hub**
+→ **wealth/information accumulation**
+→ **ruler identifies with divine center**
+→ **external force strips that status**
+→ **downward death transition**.
+
+This is social/theological role inflation, not evidence the ruler is literally a cosmic axis.
+
+### M52G-21 — "HEART OF THE SEAS" IS POSITIONAL/CENTRALIZING LANGUAGE, NOT NECESSARILY A COSMIC CENTER
+
+It continues Tyre's maritime identity.
+
+Do not automatically equate:
+- central sea location;
+with
+- geometric center of all worlds.
+
+---
+
+# 28:11–19 — king of Tyre as Eden / mountain figure
+
+The lament radically changes register.
+
+The king is associated with:
+- perfection/beauty/wisdom;
+- Eden, garden of God;
+- precious stones;
+- gold settings;
+- creation/preparation;
+- cherub imagery;
+- holy mountain of God;
+- stones of fire;
+- blameless state;
+- trade/violence;
+- expulsion from mountain;
+- casting to ground;
+- fire from within;
+- ashes on earth.
+
+This is one of the most mythically dense units in Ezekiel.
+
+---
+
+# Textual-critical control — is the king the cherub, or with the cherub?
+
+This point is mandatory.
+
+The Masoretic tradition, as commonly vocalized/read, can identify the Tyrian king as the anointed/guardian cherub.
+
+But the Greek Septuagint tradition distinguishes the king from a cherub and can be rendered as the king being **with** the cherub.
+
+Modern scholarship remains divided over which form is earlier/better.
+
+- Lydia Lee argues that the Masoretic identification of the king as cherub is syntactically intelligible and conceptually workable.
+- Other scholars have argued for readings where the king is placed **with/beside** the cherub.
+- A 2021 text-critical study by Jong-Hoon Kim and discussion of MT/LXX traditions emphasizes that MT and LXX portray the king/cherub relation differently.
+- The NRSVUE itself notes the Greek/Hebrew difference at verse 14.
+
+### M52G-22 — CHERUB IDENTITY IS TEXTUALLY UNSTABLE ENOUGH THAT THE VARDATH MODEL MUST NOT DEPEND ON ONE READING
+
+Therefore record two legitimate analysis branches:
+
+### Branch A — king = cherub
+Then the figure:
+**royal human/idealized ruler**
+→ **cherubic guardian identity**
+→ **holy mountain**
+→ **expulsion**.
+
+### Branch B — king with cherub
+Then:
+**royal/Adamic figure**
++ **separate guardian cherub**
+→ **holy mountain/garden**
+→ **king expelled / guardian role distinct**.
+
+The dragon/support hypothesis must survive **both** branches to be robust.
+
+It currently does not gain decisive support from either.
+
+---
+
+# Precious stones — cross-link, not duplicate research
+
+Part 1 already recorded that:
+- the Masoretic Ezekiel 28 list contains nine stones;
+- those nine overlap the Exodus high-priest breastpiece set;
+- the Septuagint Ezekiel tradition has twelve stones and shows a stronger correspondence with the priestly list;
+- exact stone identifications and textual forms vary.
+
+That result remains active.
+
+New sequential implication here:
+
+### M52G-23 — GEMSTONE COVERING LINKS ROYAL/GARDEN/SANCTUARY IMAGERY, BUT NOT MECHANICAL SUPPORT
+
+The stones:
+- mark splendour;
+- garden/divine-space imagery;
+- possibly priestly/sanctuary resonance.
+
+They do not by themselves describe:
+- lattice nodes;
+- load-bearing points;
+- conductive crystals;
+- world-support mechanics.
+
+Do not technicalize gemstone symbolism without independent process evidence.
+
+---
+
+# Holy mountain + guardian + stones of fire
+
+The king/cherub scene occupies:
+- Eden/garden;
+- holy mountain of God;
+- fiery stones.
+
+Scholarly interpretations often connect this to broader Ancient Near Eastern divine-garden / cosmic-mountain traditions.
+
+Ilona Rashkow, for example, situates biblical divine-garden imagery within wider ancient Near Eastern "gardens of the gods," often associated with restricted access and guardian figures.
+
+Other scholarship treats the holy mountain as a cosmic-order image.
+
+### M52G-24 — GUARDIAN + SACRED MOUNTAIN + RESTRICTED DIVINE SPACE IS REAL
+
+This is important for Vardath.
+
+The text genuinely contains:
+- elevated sacred center;
+- guardian/cherub relation;
+- privileged access;
+- expulsion after violation.
+
+This strengthens the **guardian-at-boundary / sacred-center** motif.
+
+### M52G-25 — IT DOES NOT YET GIVE DRAGON-GROUND SUPPORT
+
+What is absent:
+- no description of cherub holding the ground up;
+- no broad woven body;
+- no spring-like compression;
+- no two opposed dragon strands;
+- no lower feet/legs supporting an inhabited plane;
+- no broad→rod transition.
+
+Compare Ezekiel 1:
+- living creatures + wheels;
+- expanse above;
+- throne above;
+- coordinated mobility.
+
+Ezekiel 28:
+- guardian/royal figure;
+- mountain;
+- garden;
+- fiery stones;
+- expulsion.
+
+The mechanical support architecture from Ezekiel 1 is **not repeated here**.
+
+Therefore this chapter does **not** close the dragon-support gap.
+
+---
+
+# 28:15–17 — state change and downward expulsion
+
+Sequence:
+
+**created/blameless**
+→ **wrongdoing/violence through trade**
+→ **sacred-space status lost**
+→ **expelled from mountain / fiery-stone region**
+→ **cast to ground**
+→ **displayed before kings**.
+
+### M52G-26 — THIS IS A TRUE HIGH→LOW STATUS/LOCATION TRANSITION
+
+It combines:
+- moral/status fall;
+- spatial downward movement.
+
+But it is one-way expulsion.
+
+It lacks:
+- return;
+- reopening;
+- cyclic gate transfer.
+
+This should be classified as:
+**fall/expulsion**, not fingertrap cycling.
+
+---
+
+# 28:18 — fire comes from within and reduces figure to ashes
+
+This directly parallels a striking motif from Ezekiel 19:
+
+Ezekiel 19:
+**fire comes from a stem**
+→ **consumes vine branches/fruit**.
+
+Ezekiel 28:
+**fire comes from within ruler/figure**
+→ **consumes**
+→ **ashes on earth**.
+
+### M52G-27 — INTERNAL COMPONENT / INTERNAL FIRE CAN DESTROY THE SYSTEM FROM WITHIN
+
+This is now a repeated Ezekiel motif.
+
+It is relevant to the user's Meltology / plasma comparison at the broad process level:
+
+**internal energy/fire**
+→ **destructive transformation**
+→ **ash/residue**.
+
+But the ordinary literary function is judgment through poetic fire imagery.
+
+There is no basis here for claiming literal plasma physics.
+
+---
+
+# 28:20–24 — Sidon and thorn/brier neighbors
+
+Sidon receives:
+- pestilence;
+- bloodshed;
+- sword around it.
+
+Then Israel's neighboring hostile peoples are described as:
+- pricking brier;
+- piercing thorn.
+
+### M52G-28 — NEIGHBORS CAN BE MODELLED AS EXTERNAL HAZARD NODES AROUND A CENTRAL COMMUNITY
+
+The thorn/brier image is:
+- irritation/harm from surrounding relations.
+
+It is not:
+- literal biological lattice;
+- branch support.
+
+---
+
+# 28:25–26 — gather → own soil → houses/vineyards → safety
+
+The Tyre/Sidon judgment sequence closes with a restoration statement for Israel:
+
+**scattered among peoples**
+→ **gathered**
+→ **settled on own soil**
+→ **houses built**
+→ **vineyards planted**
+→ **safety**.
+
+This directly echoes Ezekiel 20:41.
+
+### M52G-29 — GATHERING'S FUNCTION IS DETERMINED BY DESTINATION AND POST-ARRIVAL STATE
+
+Compare:
+
+Ezekiel 20:
+gather → wilderness sorting → covenant → land.
+
+Ezekiel 22:
+gather → furnace → melt.
+
+Ezekiel 28:
+gather → own soil → houses/vineyards → safe habitation.
+
+This gives a three-way control:
+
+**same verb/process family "gather"**
+can lead to:
+1. filtering;
+2. destruction;
+3. stable resettlement.
+
+The destination architecture/process matters more than the verb alone.
+
+### M52G-30 — RESTORED LAND IS EXPLICITLY INHABITED AND PRODUCTIVE
+
+The endpoint includes:
+- people living;
+- houses;
+- vineyards;
+- safety.
+
+This is not an empty replacement world.
+
+That is structurally compatible with the user's insistence that new-beginning states must not be described as uninhabited shells.
+
+But the chapter's immediate meaning is restoration to Israel's land, not inter-world reconstruction.
+
+---
+
+# Cross-chapter synthesis — Ezekiel 25–28
+
+## 1. Gateway loss redirects network flows
+
+Ezekiel 26:
+Jerusalem gateway broken
+→ Tyre expects replenishment.
+
+Strong hub-routing principle.
+
+## 2. City can be projected as vehicle
+
+Ezekiel 27:
+Tyre city/trade network
+→ one merchant ship.
+
+This is one of the strongest "many distributed components → one visible body" examples.
+
+## 3. Hub success increases coupled load
+
+Many suppliers/traders
+→ heavily laden ship
+→ one wind event
+→ carrier + cargo + crew failure.
+
+Strong network fragility model.
+
+## 4. Lower-world imagery does not automatically equal Vardath world-below
+
+Ezekiel 26:
+world below = Pit / ancient dead, contrasted with land of living.
+
+This differs from Vardath's populated co-present world below.
+
+## 5. Guardian/mountain imagery is strong but mechanical support remains absent
+
+Ezekiel 28:
+Eden
++ holy mountain
++ cherub
++ fiery stones
++ expulsion.
+
+Strong:
+**sacred boundary / guardian / elevated center**.
+
+Weak/absent:
+**ground support / dragon spring / lattice contraction**.
+
+## 6. Internal fire motif repeats
+
+Ezekiel 19:
+fire from stem.
+
+Ezekiel 28:
+fire from within.
+
+This supports an internal-failure motif but not literal plasma.
+
+## 7. One object/category keeps changing function across Ezekiel
+
+- net:
+  - capture;
+  - fishing.
+- gate:
+  - physical city entry;
+  - trade/network gateway.
+- mountain:
+  - geographic/sacred/political.
+- tree/branch:
+  - ruler lineage;
+  - habitat;
+  - scepter.
+- gathering:
+  - filtering;
+  - furnace destruction;
+  - resettlement.
+
+The project must continue to infer process from context, not from motif dictionary.
+
+---
+
+# Pair / mirror register update — Ezekiel 25–28
+
+## Judah/Jerusalem / Tyre
+Best:
+- P2 competing network hubs after one gateway fails;
+- P6 political/economic contrast;
+- P10 distinct systems.
+
+## city Tyre / ship Tyre
+Best:
+- P3 same referent in different projected form.
+This is an exceptionally strong explicit projection case.
+
+## prince of Tyre / king of Tyre
+Best:
+- likely related/overlapping royal target traditions within the chapter;
+- do not automatically assume two historical individuals;
+- do not automatically merge every detail into one literal biography.
+Treat as rhetorical units addressed to Tyrian rulership.
+
+## king / cherub
+Textually unstable:
+- MT-oriented reading can identify king as cherub;
+- LXX-oriented reading distinguishes them.
+No final pair classification should ignore this textual split.
+
+## high mountain / ground
+Best:
+- vertical state/location polarity;
+- expulsion down.
+
+## Israel / hostile neighbors
+Best:
+- central community / external hazard ring;
+- not one figure.
+
+---
+
+# Timing / number register — Ezekiel 25–28
+
+Record without forced arithmetic:
+
+- Ezekiel 26 begins in the **twelfth year**.
+- The month reading is textually uncertain:
+  - Hebrew text as transmitted lacks a clear month in some forms;
+  - Greek manuscript evidence contributes to restoration of an eleventh-month reading in NRSVUE.
+- No hidden cycle should be inferred from this date without broader chronological work.
+- Tyre's trade list enumerates many regions and goods but should not be converted into a numerological map merely because it is long/structured.
+- Ezekiel 28 gemstone counts vary by textual tradition:
+  - MT form commonly has nine;
+  - LXX form has twelve aligned more strongly with the priestly stone tradition.
+This is a textual-history issue first, not number-code evidence.
+
+---
+
+# Strict fingertrap test — Ezekiel 25–28
+
+A strict match requires the same connected support structure to:
+1. exist broad/open;
+2. remain materially continuous;
+3. change geometry/strand angle;
+4. narrow into axial throat/rod;
+5. permit transfer/contact;
+6. reopen toward broad state.
+
+## Ezekiel 25
+No candidate structure.
+
+## Ezekiel 26
+Gateway, walls, waves, sea, lower world:
+strong imagery, but no continuous transforming support structure.
+
+## Ezekiel 27
+Large distributed network compressed into ship metaphor:
+very strong systems analogy, but the network does not physically narrow into a throat/rod.
+
+## Ezekiel 28
+Guardian + mountain + Eden + fiery stones:
+strong sacred-boundary image, but:
+- no woven broad support;
+- no strand contraction;
+- no ground-support spring;
+- no reversible gate;
+- no reopen.
+
+### Overall verdict
+
+**No strict Vardath fingertrap mechanism appears in Ezekiel 25–28.**
+
+However, this block contributes major advances in adjacent areas:
+
+1. **hub/gateway rerouting:** one gateway failure can redirect flows to another center;
+2. **distributed-system projection:** an entire international network can be narrated as one ship/body;
+3. **network load and cascading failure:** a central carrier can accumulate dependent subsystems and fail as one coupled package;
+4. **lower-world control:** biblical "world below" here is a dead/Pit realm, not automatically a Vardath populated past-relative world;
+5. **guardian-boundary motif:** Ezekiel 28 strongly links privileged sacred space, mountain and cherub/guardian imagery;
+6. **dragon-support test remains negative:** guardian imagery does not describe the cherub as supporting the inhabited ground;
+7. **internal destructive fire repeats:** fire comes from within the symbolic figure/system;
+8. **restoration endpoint is explicitly inhabited/productive:** gathering culminates in houses, vineyards and safety.
+
+---
+
+# Sources logged — Ezekiel 25–28
+
+Primary:
+- Ezekiel 25 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+25&version=NRSVUE
+- Ezekiel 26 NRSVUE:
+  https://classic.biblegateway.com/passage/?search=Ezekiel+26&version=NRSVUE
+- Ezekiel 27 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+27&version=NRSVUE
+- Ezekiel 28 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+28&version=NRSVUE
+
+Tyre history / trade controls:
+- Markus Saur, “Ezekiel 26–28 and the History of Tyre,” *Scandinavian Journal of the Old Testament* 24.2 (2010), 208–221:
+  https://www.tandfonline.com/doi/abs/10.1080/09018328.2010.527075
+- Inchol Yang, “The Metaphor of Tyre as a ship in Ezekiel 27: Ezekiel’s Resistance against the Neo-Babylonian Empire,” *The Expository Times* 131.3 (2019), 105–114:
+  https://journals.sagepub.com/doi/10.1177/0014524619866061
+
+Ezekiel 28 king/cherub textual control:
+- Lydia Lee, “‘You Were the (Divine) Cherub’: A Potential Challenge to Yhwh's Sole Divinity in Ezekiel 28.14,” *Journal for the Study of the Old Testament* 41.1 (2016):
+  https://journals.sagepub.com/doi/10.1177/0309089216628419
+- “The Tyrian King in MT and LXX Ezekiel 28:12b–15,” *Religions* 12.2 (2021):
+  https://www.mdpi.com/2077-1444/12/2/91
+- TheTorah, “God Abandons the Garden of Eden and Dwells with the Cherubim,” discussion of MT/LXX Ezekiel 28:14:
+  https://www.thetorah.com/article/god-abandons-the-garden-of-eden-and-dwells-with-the-cherubim
+
+Gemstone / priestly-text control already cross-linked from Part 1:
+- Cynthia L. Miller-Naudé and Jacobus A. Naudé, “Textual interrelationships involving the Septuagint translations of the precious stones in the breastpiece of the high priest,” *HTS Teologiese Studies* 76.4 (2020):
+  https://hts.org.za/index.php/hts/article/view/6141
+- NET Ezekiel 28:13–16 notes:
+  https://classic.net.bible.org/passage.php/o/w/passage.php?passage=Eze+28%3A13%2C14%2C16
+
+Garden / cosmic-mountain control:
+- Ilona Rashkow, “The Garden of God,” *Jewish Bible Quarterly* 49.4 (2021):
+  https://www.jewishbible.org/articles/the-garden-of-god/
+- “Boundary and Order: Divine Oracles about the King of Tyre in Ezekiel 28:11–19,” *Jewish Studies* 18 (2021):
+  https://www.jjewishstudies.com/index.php/sdu/article/view/105
+
+Ethical/rhetorical control on Tyre's humiliation:
+- “Rhetoric of Honour and Shame in Understanding the Fate of the King of Tyre in Ezek 28:1–19,” *Old Testament Essays* 34.3 (2021):
+  https://journals.co.za/doi/10.17159/2312-3621/2021/v34n3a11
+
+---
+
+# SECTION 52G — EZEKIEL 25–28 COMPLETE
+
+## Strongest new findings
+
+1. **Ezekiel 25 shows that neighboring systems can change occupants and function after a regional collapse without the underlying territory disappearing.**
+2. **Ezekiel 26 explicitly treats Jerusalem as a broken "gateway of the peoples" whose failure makes Tyre expect redirected flow and replenishment—one of the clearest network-gateway controls yet.**
+3. **Many nations arriving like waves are serial impacts on one target, not a supporting weave.**
+4. **Tyre's destruction is channel-specific: wealth is transferred, structures broken, construction material thrown into water, sound/music silenced, population killed/displaced, and remote coastlands react.**
+5. **Ezekiel 26 explicitly contrasts a lower/Pit realm populated by people of long ago with the land of the living, but this is death-realm imagery and does not match Vardath's populated past-relative world below.**
+6. **Ezekiel 27 projects an entire distributed international trade network as one ship, making it one of the strongest examples yet of many nodes/components compressed into a single visible body/vehicle.**
+7. **The ship's success loads it more heavily; when the east wind wrecks the carrier, cargo, crew, merchants, warriors and operational specialists fail together—strong coupled-network-failure grammar.**
+8. **Tyre's hub failure affects surviving coastlands/merchants, showing that a central network node can collapse while peripheral nodes remain and react.**
+9. **Ezekiel 28 strongly combines sacred garden, mountain, guardian/cherub and restricted-access/expulsion imagery.**
+10. **But the king/cherub relation is textually unstable: MT and LXX traditions differ, so no Vardath conclusion should depend on identifying the king as the cherub.**
+11. **The guardian-cherub / holy-mountain sequence strengthens a guardian-at-boundary motif but does not describe dragon/cherub support of the inhabited ground, a broad web, spring compression or fingertrap geometry.**
+12. **Fire emerging from within the Tyrian figure repeats Ezekiel 19's internal-fire motif and is useful for internal-failure/Meltology comparisons, but it remains poetic judgment imagery.**
+13. **The closing restoration again gives an explicitly inhabited endpoint—people settled on land, houses built, vineyards planted, safety restored—rather than an empty successor shell.**
+14. **No strict fingertrap mechanism appears in Ezekiel 25–28.**
+
+## Next live block
+
+**Ezekiel 29–32**
+
+Priority:
+- Pharaoh as great dragon/monster in the Nile;
+- river ownership claim;
+- hooks in jaws;
+- fish/scales relation;
+- dragon + river system dragged onto land;
+- forty-year Egypt desolation/scattering/gathering interval;
+- Nebuchadnezzar/Tyre compensation oracle;
+- "horn" sprouting for Israel;
+- day/cloud/darkness;
+- waters made clear / rivers made like oil;
+- Assyria as cedar in Eden;
+- roots by abundant waters + branches;
+- deep/waters making tree grow;
+- tree cast down to underworld;
+- repeated descent to Pit among dead nations;
+- HIGH PRIORITY: Ezekiel 29's dragon/Nile relation and Ezekiel 31's cedar/waters/root system should be tested directly against the user's dragon-ground-support and world-tree/lattice hypotheses.
