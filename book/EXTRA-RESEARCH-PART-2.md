@@ -6443,6 +6443,25 @@ deep water
 
 ---
 
+
+
+### USER-MODEL CLARIFICATION — SURROUNDING TREES AS NEIGHBORING NODES
+
+The surrounding trees in Ezekiel 31 should now be tested explicitly in Vardath terms as **possible neighboring local node / axis points of the same distributed support lattice**, rather than treated merely as scenery around one isolated world-tree.
+
+The reason is structural:
+- the dominant cedar is rooted in the same deep/water field;
+- streams are sent outward toward the other trees;
+- the dominant tree rises above the surrounding tree-field;
+- populations occupy its branches/shade;
+- when the dominant tree falls, the deep, rivers, neighboring trees and wider environment all change state.
+
+Vardath hypothesis to retain:
+**shared deep/current field → multiple local tree/node points → one node becomes dominant axial throat/tree → node failure changes the wider connected field**.
+
+Ordinary source control remains:
+Ezekiel 31 is an imperial-tree allegory comparing political power and downfall. The node-network reading is the Vardath structural comparison, not the text's explicit historical meaning.
+
 # Ezekiel 31 strict Vardath screening
 
 ## Exceptionally strong partial match
