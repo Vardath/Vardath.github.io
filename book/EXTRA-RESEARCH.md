@@ -26,6 +26,62 @@ All research completed from this point onward must be appended only to `book/EXT
 
 After every Part 2 append, verify the actual end of Part 2 before continuing.
 
+## YOU SHOULD REALLY KNOW AND BE AWARE OF THIS — FAST CATCH-UP
+
+### Chat-limit / freeze continuation rule
+
+This project regularly reaches the chat limit or appears to freeze while research has already been appended.
+
+When the user says **"continue"** after a chat-limit rollover, freeze, memory refresh, or new chat:
+
+1. **Do not assume the previous assistant's remembered stopping point is correct.**
+2. Check the actual research files in this order:
+   - `book/EXTRA-RESEARCH-PART-1-THROUGH-ISAIAH-35.md`
+   - `book/EXTRA-RESEARCH.md`
+   - `book/EXTRA-RESEARCH-PART-2.md`
+3. Search the relevant book/chapter range and inspect the actual tail of Part 2.
+4. Treat the **files themselves as the progress authority**. Chat memory, checkpoint headings, commit messages and a previous assistant's summary are secondary.
+5. If the next research block was already appended before the freeze, **do not redo it**. Continue from the first genuinely unfinished block.
+6. All new research from the creation of Part 2 onward is appended **only to Part 2**.
+7. After every append, verify the actual Part 2 tail and that the new block occurs once.
+
+A chat ending is therefore a **handoff event, not a research reset**.
+
+### Mature Vardath model that must be carried into comparisons
+
+Use the current model, not older simplified wording:
+
+- every world-turn above and below is already **populated** and has its own present;
+- relative to a chosen present, the world above is future-relative and the world below is past-relative;
+- gate opening changes **adjacency/coupling** between populated worlds rather than opening into empty space;
+- transfer can involve land, water, atmosphere, organisms, debris, heat, light, culture and people;
+- the post-event state is a **new beginning from inherited/transferred material**, not rewind;
+- the sky/dragon structure is a broad woven lattice that also **supports the ground** as a spring/load-bearing system;
+- two opposed directional/spring-like strands can cross/braid through the larger weave;
+- under tension the broad sky can **roll/cinch into a fingertrap / throat / tube / rod**, and viewed side-on that concentrated geometry can appear as the **Squatter-Man**;
+- tree, mountain, pillar, rod, staff, ladder, serpent/dragon, braid, scroll and anthropomorphic figure can be different projections/states of the same apparatus when the source sequence supports it;
+- **the cherub belongs to this same structural family**. Do not treat the cherub as merely an unrelated guardian standing beside the mechanism;
+- in Vardath terms the cherub can be a close/projection view of the activated sky-machine: winged/feathered outer form, serpent/dragon-like body grammar, many eye-like nodes/apertures, fire/radiance and moving support geometry;
+- the user's visual comparison includes **feathery serpent scales and ice-like eye/node points**; keep this as Vardath-model imagery, not as a claim that the biblical text literally says "ice eyes";
+- **Quetzalcoatl / Feathered Serpent** belongs in the comparative visual family: feathered serpent + atmospheric/wind/world-order imagery. Treat it as cross-cultural comparison, not proof of borrowing or identity;
+- surrounding trees should be tested as possible **neighboring local node/axis points of the same distributed support lattice**, especially where they share one deep/current/water field and respond when a dominant tree/node changes state;
+- Ezekiel 31 already produced the working node model:
+  **shared deep/current field → multiple local tree/node points → one node becomes dominant axial tree/throat → node failure changes the wider connected field**;
+- Ezekiel 41 materially strengthens that idea with the repeated internal array:
+  **CHERUB → PALM TREE → CHERUB → PALM TREE**, with cherub faces oriented toward neighboring palms around the sanctuary;
+- therefore, when a text has a central tree/cherub plus surrounding trees, ask whether we are looking at **multiple node points in one field**, not merely decorative trees around a single isolated world-tree;
+- Yggdrasil/world-tree, dragon/lattice, cherub, Squatter-Man and rod/throat are not automatically separate machines in this model; they may be different **scale/viewpoint/phase projections of the same underlying structure**;
+- still preserve source control: ordinary literary/historical meaning, textual variants and alternative explanations must be recorded separately from the Vardath comparison.
+
+### Current research authority
+
+At the time this rule was strengthened, Part 2 had already reached **Ezekiel 40–43 complete** even though the preceding chat appeared to freeze earlier.
+
+That is the exact kind of situation this rule exists to prevent.
+
+Always re-check the files before trusting this sentence, because the files may have advanced again.
+
+
 ### Research method
 
 Proceed through the reconstructed 88-book Bible in the established section order.
