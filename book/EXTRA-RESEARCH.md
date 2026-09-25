@@ -30635,3 +30635,1132 @@ Priority:
 - word like fire in bones / cannot hold it;
 - Magor-missabib “terror all around” and forced transfer;
 - compare Jeremiah 18–19 directly with Vardath reset-not-rewind: same inherited material can be re-formed before hardening, while later brittle structure shatters and cannot simply be restored.
+
+
+---
+
+# SECTION 50 progress D — Jeremiah 16–20
+## First-time direct research pass: removal of ordinary family continuity, old-Exodus→new-north-return template revision, fishers/hunters as distinct population-capture modes, iron-pen engraving and tree-by-water resilience, Sabbath burden through city gates, potter-wheel same-clay reformation, mountain-water reliability contrast, hardened jar smashed beyond repair, Topheth saturation, upper-gate stocks confinement, forced cargo to Babylon, and word-as-fire trapped in bones
+
+Jeremiah 16–20 is one of the most mechanically valuable Jeremiah blocks so far.
+
+Its strongest result is the deliberate material-state contrast between **Jeremiah 18** and **Jeremiah 19**:
+
+### Jeremiah 18
+wet/plastic clay
+→ vessel becomes spoiled/flawed while still in the potter’s hand
+→ same clay remains available
+→ potter reworks it
+→ another vessel emerges.
+
+### Jeremiah 19
+already formed earthenware jar
+→ taken as fixed object
+→ smashed
+→ cannot be repaired.
+
+This distinction is explicitly recognized in modern scholarship on the potter/clay tradition.
+
+For Vardath Cosmology this yields a major rule:
+
+> **A system’s ability to “reset” through reconfiguration depends on material/state regime.  
+> A deformable connected structure can be reshaped while preserving substrate continuity; a hardened brittle structure may instead fracture irreversibly.**
+
+That does not prove the dragon lattice spring.
+
+But it gives one of the clearest biblical analogues yet for the difference between:
+- **elastic/plastic reconfiguration**
+and
+- **brittle catastrophic failure**.
+
+---
+
+# Jeremiah 16:1–4 — ordinary generational continuity is intentionally shut down
+
+Jeremiah is told:
+- do not marry;
+- do not have sons/daughters in this place.
+
+The reason given is:
+the coming population hazard will affect:
+children;
+parents;
+families.
+
+## M50D-1 — SYSTEM CAN INTERRUPT REPRODUCTIVE CONTINUITY AS A PRE-CRISIS SURVIVAL/LOSS CONDITION
+
+This is not:
+sterility.
+
+It is:
+behavioral prohibition against creating new dependents under predicted catastrophe.
+
+---
+
+# Jeremiah 16:4–9 — burial, mourning and celebration subsystems all collapse
+
+Predicted outcomes:
+- death;
+- no burial;
+- no lament;
+- corpses exposed;
+- birds/animals consume remains;
+- mourning houses cease;
+- feasting houses cease;
+- bride/bridegroom voices cease.
+
+## M50D-2 — SOCIAL CONTINUITY FAILURE CAN REMOVE BOTH DEATH-RITUAL AND LIFE-CYCLE-RITUAL NETWORKS
+
+A society is not only:
+living bodies.
+
+It requires:
+burial;
+mourning;
+marriage;
+celebration;
+intergenerational continuity.
+
+---
+
+# Jeremiah 16:14–15 — older Exodus transfer template is replaced by a new return template
+
+The text explicitly says future identity will no longer be framed primarily as:
+
+Egypt
+→ Israel.
+
+Instead:
+north/all lands
+→ return to ancestral land.
+
+## M50D-3 — LATER TRANSFER EVENT CAN REPLACE AN EARLIER FOUNDATIONAL TRANSFER AS THE DOMINANT MEMORY TEMPLATE
+
+This is extremely important for the 88-book timeline.
+
+Repeated “exodus” grammar:
+does not mean
+the same historical/cosmic event is being literally replayed.
+
+The new event:
+can supersede the old memory template.
+
+---
+
+# M50D-4 — EVENT FAMILY CAN PERSIST WHILE ORIGIN VECTOR CHANGES
+
+Old:
+southwest/Egypt-origin return.
+
+New:
+north + dispersed lands
+→ home.
+
+The process class:
+release/return.
+
+The geographic vector:
+changes.
+
+---
+
+# Jeremiah 16:16 — fishers and hunters are sequentially different capture/search systems
+
+First:
+many fishermen
+→ catch.
+
+Afterward:
+many hunters
+→ hunt from mountains/hills/rock clefts.
+
+## M50D-5 — ONE POPULATION CAN BE LOCATED/CAPTURED THROUGH MULTIPLE SEARCH MODES
+
+### fishing
+targets:
+distributed population in one medium.
+
+### hunting
+searches:
+terrain/refuge nodes.
+
+Different:
+sensor/search geometries.
+
+---
+
+# Jeremiah 16:16 — rock clefts are refuge nodes but not secure against active search
+
+Population:
+can hide in clefts.
+
+Hunters:
+extract/search them.
+
+## M50D-6 — GEOLOGICAL ENCLOSURE MAY CONCEAL WITHOUT GUARANTEEING SAFETY
+
+This cross-links:
+Jeremiah 13 loincloth in rock cleft.
+
+A cleft can:
+store;
+hide;
+shelter;
+
+but:
+its function depends on threat/process.
+
+---
+
+# Jeremiah 16:17 — all paths are observable
+
+“All their ways”:
+not hidden.
+
+## M50D-7 — ROUTE NETWORK CAN BE FULLY OBSERVED EVEN WHEN LOCAL AGENTS USE CONCEALMENT
+
+Important surveillance/control distinction.
+
+---
+
+# Jeremiah 16:19 — stronghold/refuge is a different enclosure class from rock cleft
+
+Source is called:
+strength;
+stronghold;
+refuge in trouble.
+
+## M50D-8 — REFUGE FUNCTION REQUIRES ACTIVE PROTECTION, NOT MERELY ENCLOSURE GEOMETRY
+
+Rock cleft:
+passive concealment.
+
+Stronghold:
+defensive support.
+
+---
+
+# Jeremiah 17:1 — iron pen + diamond point engrave information into hard substrate
+
+Sin is described as:
+written with iron stylus;
+diamond point;
+engraved on heart-tablet and altar horns.
+
+## M50D-9 — INFORMATION CAN BE PROJECTED AS PERMANENT PHYSICAL INSCRIPTION INTO RESISTANT SUBSTRATE
+
+This is a durable-memory model.
+
+Contrast:
+spoken message
+vs
+written page
+vs
+engraved hard surface.
+
+---
+
+# M50D-10 — INFORMATION PERSISTENCE CAN DEPEND ON DEPTH/HARDNESS OF ENCODING
+
+This is relevant to:
+stone;
+metal;
+monuments;
+petroglyphs;
+durable catastrophe memory.
+
+---
+
+# Jeremiah 17:5–8 — tree by water is a stable-resource resilience model
+
+The blessed/trusting figure is like:
+
+tree planted by water
+→ roots extend toward stream
+→ heat arrives
+→ no fear
+→ leaves remain green
+→ drought year arrives
+→ no anxiety
+→ fruit production continues.
+
+## M50D-11 — DIRECT ACCESS TO PERSISTENT WATER CAN BUFFER BIOLOGICAL SYSTEM AGAINST HEAT + DROUGHT
+
+This is one of Jeremiah’s strongest habitability models.
+
+---
+
+# M50D-12 — ROOT DEPTH/PROXIMITY TO WATER CAN DECOUPLE LOCAL BIOLOGY FROM SHORT-TERM SURFACE CLIMATE STRESS
+
+This is highly relevant to Vardath survivor ecology.
+
+Post-event refugia may persist because:
+groundwater;
+springs;
+deep roots
+buffer surface extremes.
+
+---
+
+# Jeremiah 17:8 — drought does not equal universal biological failure
+
+One tree with:
+reliable stream access
+continues fruiting.
+
+## M50D-13 — REGIONAL DROUGHT CAN CONTAIN LOCAL RESOURCE REFUGIA
+
+This is a crucial anti-uniformity rule.
+
+---
+
+# Jeremiah 17:11 — partridge/egg image is uncertain natural-history metaphor
+
+The verse compares:
+unjust wealth
+to
+a bird hatching eggs it did not lay,
+depending translation.
+
+## M50D-14 — UNCERTAIN ANIMAL-HISTORY IMAGE SHOULD NOT SUPPORT PRECISE MECHANICAL CLAIM
+
+Use only:
+wrongly acquired output
+→ later loss.
+
+---
+
+# Jeremiah 17:19–27 — city gates become time-regulated cargo interfaces
+
+Jeremiah stands at:
+People’s Gate;
+other Jerusalem gates.
+
+Rule:
+on Sabbath,
+do not carry burdens:
+- through gates;
+- out of houses.
+
+If followed:
+city remains inhabited.
+
+If not:
+fire enters/burns gates and palaces.
+
+## M50D-15 — ACCESS INTERFACE CAN HAVE TIME-DEPENDENT CARGO RULES
+
+This is a very strong gate-control architecture.
+
+Gate state:
+not necessarily open/closed.
+
+Instead:
+cargo permission changes by time phase.
+
+---
+
+# M50D-16 — GATE RULES CAN DEPEND ON TIME + CARGO TYPE, NOT ONLY GEOMETRY
+
+For Vardath:
+a physical gate model should ask:
+- when open?
+- what can pass?
+- what mass/phase?
+- in which direction?
+
+Jeremiah 17 gives a social analogue.
+
+---
+
+# Jeremiah 17:25 — permitted gate traffic supports persistent city occupation
+
+When system rules hold:
+kings;
+officials;
+people;
+chariots;
+horses
+continue entering.
+
+## M50D-17 — CONTROLLED GATE TRAFFIC CAN MAINTAIN A STABLE INHABITED NODE
+
+Again:
+gate ≠ catastrophe.
+
+---
+
+# Jeremiah 17:27 — uncontrolled/forbidden burden flow is linked to fire at gates
+
+## M50D-18 — INTERFACE MISUSE CAN BE PROJECTED AS FAILURE INITIATING AT THE BOUNDARY ITSELF
+
+The gate becomes:
+fire entry/failure node.
+
+---
+
+# Jeremiah 18:1–3 — observer goes to workshop and watches process, not finished object
+
+Jeremiah:
+goes down to potter’s house.
+
+He sees:
+potter actively working at wheel.
+
+## M50D-19 — PROCESS OBSERVATION CAN REVEAL TRANSFORMATION MECHANICS THAT FINISHED-OBJECT INSPECTION CANNOT
+
+This is a major methodology rule for the project.
+
+The question is not only:
+what symbols exist?
+
+It is:
+**what do they do over time?**
+
+---
+
+# Jeremiah 18:4 — same clay remains in the potter’s hand while vessel form fails
+
+The vessel:
+becomes spoiled/marred/flawed
+during formation.
+
+But:
+material is still workable.
+
+The potter:
+reworks it
+into another vessel.
+
+## M50D-20 — FORM FAILURE DOES NOT REQUIRE MATERIAL LOSS IF SUBSTRATE REMAINS DEFORMABLE
+
+This is a major Vardath analogue.
+
+---
+
+# M50D-21 — SAME-MATERIAL CONTINUITY CAN SURVIVE COMPLETE FORM RECONFIGURATION
+
+Old vessel-form:
+lost.
+
+Clay:
+retained.
+
+New vessel-form:
+created from same substrate.
+
+This is nearly an ideal abstract model of:
+**reset, not rewind**.
+
+---
+
+# Jeremiah 18:4 — new vessel is not simply the old vessel restored
+
+The text says:
+“another vessel.”
+
+Therefore:
+
+old geometry
+≠
+repaired identically.
+
+## M50D-22 — RESET CAN PRODUCE A NEW CONFIGURATION RATHER THAN RESTORE THE PRIOR SHAPE
+
+This is central to mature Vardath Cosmology.
+
+---
+
+# Jeremiah 18:5–10 — outcome remains conditional while clay is still in responsive state
+
+The oracle then describes:
+nation threatened with destruction
+→ changes behavior
+→ outcome changes.
+
+Nation promised building/planting
+→ changes behavior negatively
+→ good outcome withdrawn.
+
+## M50D-23 — WHILE SYSTEM REMAINS IN A MALLEABLE PHASE, TRAJECTORY CAN REMAIN CONDITIONAL
+
+This is not deterministic hardening.
+
+---
+
+# M50D-24 — JEREMIAH 18 DESCRIBES A RESPONSIVE/REVERSIBLE REGIME BEFORE FINAL FIXATION
+
+This becomes especially important beside chapter 19.
+
+---
+
+# Jeremiah 18:14 — snow/mountain water is used as expected environmental reliability
+
+The text rhetorically asks whether:
+Lebanon snow;
+cold mountain water/streams
+normally fail.
+
+Exact wording varies across translations.
+
+Secure function:
+normally dependable natural water source
+is contrasted with human unreliability.
+
+## M50D-25 — NATURAL WATER REGULARITY CAN FUNCTION AS BASELINE AGAINST SOCIAL INSTABILITY
+
+---
+
+# Jeremiah 18:15 — ancient roads are abandoned for bypaths
+
+Population:
+stumbles from ancient road
+→ uses side paths/unbuilt roads.
+
+## M50D-26 — NETWORK CAN FAIL THROUGH ROUTE ABANDONMENT RATHER THAN PHYSICAL ROAD DESTRUCTION
+
+Another path-control type.
+
+---
+
+# Jeremiah 18:17 — east wind scatters population
+
+## M50D-27 — ATMOSPHERIC FORCE CAN CONVERT COHERENT POPULATION IMAGE INTO DISPERSED PARTICLES
+
+Repeated chaff/scatter grammar.
+
+---
+
+# Jeremiah 18:18 — institutional information nodes plot against competing messenger
+
+Priest:
+instruction.
+
+Wise:
+counsel.
+
+Prophet:
+word.
+
+They plot:
+attack Jeremiah with tongue/charges;
+ignore his words.
+
+## M50D-28 — INFORMATION ECOSYSTEM CAN CONTAIN COMPETING INSTITUTIONAL CHANNELS WITH ACTIVE SUPPRESSION
+
+This is extremely relevant to textual-history reconstruction.
+
+---
+
+# Jeremiah 18:22 — pit and snare target body movement
+
+Opponents:
+dig pit;
+lay snares for feet.
+
+## M50D-29 — ROUTE HAZARD CAN BE HIDDEN LOCALLY RATHER THAN VISIBLE AT NETWORK SCALE
+
+Important survival/control variable.
+
+---
+
+# Jeremiah 19:1 — material state changes: now the object is a potter’s earthenware jar
+
+Jeremiah is told:
+buy an earthenware jug/flask/jar.
+
+Unlike chapter 18:
+this is no longer wet clay currently being shaped on the wheel.
+
+It is:
+a finished ceramic object.
+
+## M50D-30 — SAME MATERIAL FAMILY CAN ENTER DIFFERENT MECHANICAL REGIMES AFTER HARDENING/FIRING
+
+Clay:
+plastic before firing.
+
+Ceramic:
+rigid/brittle after firing.
+
+---
+
+# Jeremiah 19:2 — Potsherd Gate explicitly links gate node with broken ceramic material
+
+Location:
+entry of Potsherd Gate.
+
+## M50D-31 — PLACE-NAME / MATERIAL ASSOCIATION CAN REINFORCE SIGN-ACT WITHOUT PROVING COSMIC GEOMETRY
+
+Gate:
+ordinary urban access/toponym.
+
+---
+
+# Jeremiah 19:7–9 — siege drives resource/social system into extreme internal consumption
+
+The city:
+isolated;
+pressed;
+food system collapses;
+cannibalism imagery appears.
+
+## M50D-32 — ENCLOSURE UNDER EXTERNAL PRESSURE CAN FAIL THROUGH INTERNAL RESOURCE EXHAUSTION
+
+This is an extreme siege-survival model.
+
+---
+
+# Jeremiah 19:10–11 — finished jar is smashed and cannot be repaired
+
+Jeremiah:
+breaks jar publicly.
+
+Interpretation:
+people/city
+will be broken
+like potter’s vessel
+that cannot be repaired.
+
+## M50D-33 — BRITTLE FIXED STRUCTURE CAN CROSS AN IRREVERSIBLE FRACTURE THRESHOLD
+
+This is one of the clearest material-state rules in the whole project.
+
+---
+
+# M50D-34 — REPAIRABILITY DEPENDS ON MATERIAL PHASE, NOT MERELY MATERIAL IDENTITY
+
+Both chapters:
+clay-derived material.
+
+But:
+
+### chapter 18
+unfired/workable clay
+→ re-formable.
+
+### chapter 19
+hardened vessel
+→ fracture
+→ not re-formable by simple reshaping.
+
+This distinction is mechanically excellent.
+
+---
+
+# M50D-35 — “RESET, NOT REWIND” REQUIRES THE SUBSTRATE TO REMAIN IN A RECONFIGURABLE REGIME OR ELSE REQUIRE A DIFFERENT RECONSTRUCTION PROCESS
+
+Vardath implication:
+
+If dragon/lattice springs are:
+elastic/flexible,
+geometry can reset through deformation.
+
+If they cross:
+brittle fracture/irreversible break,
+simple reopening may be impossible.
+
+This is a strong hypothesis constraint.
+
+---
+
+# Jeremiah 18–19 — direct Vardath spring/fingertrap comparison
+
+A fingertrap:
+depends on:
+flexible connected elements;
+reversible geometry change;
+continuity through deformation.
+
+That aligns more with:
+Jeremiah 18’s **plastic reworking**
+than Jeremiah 19’s brittle smashing.
+
+But:
+potter clay is not a lattice;
+no axial throat;
+no inter-world transfer.
+
+## M50D-36 — JEREMIAH 18–19 SUPPLIES MATERIAL-REGIME ANALOGUE, NOT TOPOLOGICAL GATE IDENTITY
+
+---
+
+# Jeremiah 19:11 — Topheth again reaches burial saturation
+
+Burial:
+continues
+until no room.
+
+## M50D-37 — DESTINATION CAPACITY CAN BECOME A HARD LIMIT DURING MASS-CASUALTY TRANSFER
+
+Cross-link:
+Jeremiah 7.
+
+---
+
+# Jeremiah 19:13 — roof surfaces function as ritual interfaces to heavenly host
+
+Houses/roofs:
+used for offerings to host of heaven.
+
+## M50D-38 — BUILDING SURFACE CAN FUNCTION AS SKY-ORIENTED INTERFACE WITHOUT BECOMING COSMIC BOUNDARY
+
+---
+
+# Jeremiah 20:1–2 — Jeremiah is physically constrained in stocks at upper Benjamin Gate
+
+Jeremiah:
+struck;
+placed in stocks.
+
+Location:
+upper Benjamin Gate of temple.
+
+## M50D-39 — GATE NODE CAN ALSO FUNCTION AS DETENTION/CONTROL SITE
+
+Same gate-class vocabulary:
+different role.
+
+---
+
+# Jeremiah 20:3 — confinement is temporary; next morning release occurs
+
+## M50D-40 — ENCLOSURE/RESTRAINT CAN BE TIME-LIMITED WITHOUT ENDING THE LARGER CONFLICT
+
+Short confinement:
+does not resolve system.
+
+---
+
+# Jeremiah 20:4–6 — person/house/city wealth are transferred to Babylon
+
+Pashhur:
+captivity.
+
+Friends:
+captivity/death.
+
+City:
+wealth;
+gains;
+treasures
+→ enemy hands
+→ carried to Babylon.
+
+## M50D-41 — FORCED TRANSFER CAN MOVE PEOPLE + MATERIAL WEALTH THROUGH SAME POLITICAL ROUTE
+
+Object classes remain distinct.
+
+---
+
+# Jeremiah 20:9 — word becomes fire shut inside bones
+
+Jeremiah attempts:
+stop speaking.
+
+Internal result:
+word
+→ like burning fire
+→ shut up in bones
+→ exhausting to contain
+→ cannot hold it.
+
+## M50D-42 — INFORMATION CAN BE PROJECTED AS INTERNAL THERMAL/ENERGY LOAD THAT FORCES OUTPUT
+
+This is one of Jeremiah’s strongest information-dynamics metaphors.
+
+---
+
+# M50D-43 — SUPPRESSION OF OUTPUT CAN INCREASE INTERNAL LOAD UNTIL RELEASE BECOMES FUNCTIONALLY COMPULSORY
+
+Potential systems analogue:
+pressure accumulation.
+
+But:
+the object is information/compulsion,
+not literal heat.
+
+---
+
+# Jeremiah 20:9 — container hierarchy is body-within-body
+
+Information/fire:
+inside Jeremiah;
+more specifically:
+inside bones.
+
+## M50D-44 — BODY CAN FUNCTION AS NESTED CONTAINMENT MODEL FOR INFORMATION/ENERGY PROJECTION
+
+Do not literalize:
+bones as furnace.
+
+---
+
+# Jeremiah 20:10 — “terror all around” is social surround/encirclement language
+
+Whispers:
+denunciation.
+
+Friends:
+watch for stumble.
+
+## M50D-45 — HUMAN SUBJECT CAN ENTER A DISTRIBUTED OBSERVATION/HOSTILITY FIELD WITHOUT PHYSICAL WALL ENCLOSURE
+
+Encirclement may be:
+social/informational.
+
+---
+
+# Jeremiah 20:14–18 — womb is reversed from birth enclosure to imagined grave
+
+Jeremiah curses birth and wishes:
+mother’s womb
+→ grave;
+never released.
+
+## M50D-46 — SAME WOMB/ENCLOSURE IMAGE CAN REPRESENT DEVELOPMENT OR PERMANENT NON-EMERGENCE DEPENDING ON CONTEXT
+
+This strongly warns against assigning:
+womb = one fixed cosmic mechanism.
+
+---
+
+# Jeremiah 16–20 — Vardath material-state synthesis
+
+This block now supplies a useful hierarchy of structural states:
+
+### living generation
+future biological continuity.
+
+### rock cleft
+concealment enclosure.
+
+### rooted tree by stream
+resource-buffered resilience.
+
+### gate
+time/cargo-regulated interface.
+
+### wet clay
+deformable/reworkable substrate.
+
+### fired jar
+rigid/brittle fixed substrate.
+
+### body/bones
+information/thermal containment projection.
+
+## M50D-47 — STRUCTURAL RESPONSE TO CATASTROPHE DEPENDS ON MATERIAL STATE + CONNECTIVITY + RESOURCE ACCESS + INTERFACE RULES
+
+This is highly useful to the mature cosmology.
+
+---
+
+# Jeremiah 16–20 — Vardath dragon lattice-spring implications
+
+If dragons are:
+lattice springs supporting ground,
+then a viable reversible gate model requires them to behave more like:
+
+- elastic/flexible connected material;
+- capable of large reversible deformation;
+- not crossing irreversible fracture threshold;
+- preserving enough connectivity to re-support ground afterward.
+
+Jeremiah 18–19 gives the clearest literary material-state contrast supporting that constraint.
+
+## M50D-48 — VARDATH DRAGON-SPRING MODEL REQUIRES A REVERSIBLE-DEFORMATION REGIME, NOT BRITTLE FAILURE, IF THE SAME LATTICE IS TO REOPEN AND SUPPORT THE GROUND AGAIN
+
+This is a major model refinement.
+
+---
+
+# Jeremiah 16–20 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## connected lattice/web
+Absent.
+
+## rock cleft
+Present.
+
+## water-buffered rooted system
+Strong.
+
+## time-regulated gates
+Strong.
+
+## same substrate re-forming
+Exceptionally strong:
+Jeremiah 18.
+
+## brittle irreversible fracture
+Exceptionally strong:
+Jeremiah 19.
+
+## axial narrowing/throat
+Absent.
+
+## transfer through same deforming structure
+Absent.
+
+## reopening same support lattice
+Absent.
+
+### Strict verdict
+
+**Jeremiah 16–20 does not describe the Vardath spiderweb→fingertrap topology, but Jeremiah 18–19 provides one of the most important material-state analogues in the corpus. The same clay can be reworked into a new vessel while still plastic, whereas a hardened ceramic vessel can be smashed into an unrecoverable state. For the Vardath dragon lattice to contract into a fingertrap and later reopen to support the ground, its transition must remain in a reversible deformation regime rather than cross into brittle structural failure.**
+
+---
+
+# Jeremiah 16–20 pair / process matrix
+
+## marriage/children / prohibition
+generational continuity / pre-crisis interruption.
+
+## old Exodus / new return
+older transfer template / successor transfer template.
+
+## fishers / hunters
+medium-based capture / terrain-search capture.
+
+## rock cleft / hunter
+passive concealment / active search.
+
+## iron pen / hard tablet
+information tool / durable substrate.
+
+## tree roots / stream
+biological support / persistent water source.
+
+## drought / green leaves
+surface stress / buffered local ecology.
+
+## Sabbath / gate cargo
+time phase / access rule.
+
+## wet clay / vessel form
+deformable substrate / temporary geometry.
+
+## spoiled vessel / another vessel
+failed form / reconfigured successor form.
+
+## mountain snow-water / social unreliability
+natural persistence baseline / human deviation.
+
+## ancient highway / bypath
+stable inherited route / degraded route choice.
+
+## wet clay / fired jar
+re-formable state / brittle fixed state.
+
+## intact jar / smashed jar
+stable object / irreversible fracture.
+
+## gate / stocks
+interface / detention apparatus.
+
+## external speech / fire in bones
+suppressed output / internal pressure projection.
+
+## womb / birth
+developmental enclosure / emergence.
+
+## womb / grave
+same enclosure / non-emergence projection.
+
+---
+
+# Jeremiah 16–20 continuous transformation timeline
+
+ordinary marriage/child continuity is prohibited
+→ population faces death without normal burial/mourning
+→ civic marriage/joy sounds disappear
+→ old Egypt-exodus identity template is superseded by north/dispersed-land return
+→ fishers capture distributed population
+→ hunters search mountains/hills/rock clefts
+→ concealment fails under active search
+→ nations converge from distant earth
+→ hard stylus/diamond inscription projects durable information encoding
+→ tree sends roots to reliable stream
+→ heat/drought arrive
+→ local water access preserves green leaves/fruit
+→ city gates are assigned Sabbath-time cargo rules
+→ compliant traffic sustains inhabited city
+→ prohibited burden flow is linked to gate-fire failure
+→ observer descends to potter’s workshop
+→ clay rotates/works on wheel
+→ vessel form spoils while substrate remains plastic
+→ same clay is reworked
+→ another vessel emerges
+→ destruction/building predictions remain conditional
+→ ancient road is abandoned for bypaths
+→ east wind scatters population
+→ institutional information channels plot against Jeremiah
+→ hidden pits/snares target movement
+→ material regime shifts from wet clay to finished earthenware jar
+→ jar is taken to Potsherd Gate/Topheth
+→ siege pressure drives internal resource collapse
+→ jar is smashed
+→ brittle vessel cannot be repaired
+→ burial capacity saturates again
+→ Jeremiah returns to temple
+→ Jeremiah is placed in stocks at upper gate
+→ next morning restraint is released
+→ people and treasures become forced cargo to Babylon
+→ Jeremiah attempts to stop information output
+→ word becomes internal fire-in-bones projection
+→ containment becomes exhausting
+→ speech resumes
+→ hostile social field surrounds observer
+→ womb image reverses from birth-space to wished-for grave/non-emergence.
+
+---
+
+# New master-mechanism additions from Jeremiah 16–20
+
+## M50D-1 — PRE-CRISIS SYSTEM CAN INTERRUPT REPRODUCTIVE CONTINUITY
+## M50D-2 — COLLAPSE CAN REMOVE BOTH DEATH-RITUAL + LIFE-RITUAL NETWORKS
+## M50D-3 — LATER TRANSFER CAN REPLACE OLDER FOUNDATIONAL MEMORY TEMPLATE
+## M50D-4 — EVENT FAMILY CAN PERSIST WHILE ORIGIN VECTOR CHANGES
+## M50D-5 — POPULATION CAN BE SEARCHED THROUGH MULTIPLE CAPTURE MODES
+## M50D-6 — GEOLOGICAL CONCEALMENT ≠ SAFETY
+## M50D-7 — ROUTE NETWORK CAN BE OBSERVED DESPITE LOCAL CONCEALMENT
+## M50D-8 — ACTIVE REFUGE ≠ PASSIVE ENCLOSURE
+## M50D-9 — INFORMATION CAN BE ENGRAVED INTO HARD SUBSTRATE
+## M50D-10 — INFORMATION DURABILITY CAN DEPEND ON ENCODING DEPTH/HARDNESS
+## M50D-11 — PERSISTENT WATER CAN BUFFER HEAT/DROUGHT
+## M50D-12 — DEEP/STREAM ROOT ACCESS CAN DECOUPLE LOCAL BIOLOGY FROM SURFACE STRESS
+## M50D-13 — REGIONAL DROUGHT CAN CONTAIN LOCAL REFUGIA
+## M50D-14 — UNCERTAIN ANIMAL HISTORY ≠ PRECISE MECHANISM
+## M50D-15 — GATE CAN HAVE TIME-DEPENDENT CARGO RULES
+## M50D-16 — ACCESS RULE CAN DEPEND ON TIME + CARGO TYPE
+## M50D-17 — CONTROLLED TRAFFIC CAN MAINTAIN INHABITED NODE
+## M50D-18 — INTERFACE MISUSE CAN INITIATE BOUNDARY FAILURE
+## M50D-19 — PROCESS OBSERVATION > FINISHED-OBJECT INSPECTION FOR MECHANICS
+## M50D-20 — FORM FAILURE NEED NOT DESTROY DEFORMABLE SUBSTRATE
+## M50D-21 — SAME MATERIAL CAN SURVIVE COMPLETE FORM RECONFIGURATION
+## M50D-22 — RESET CAN PRODUCE NEW CONFIGURATION, NOT PRIOR SHAPE
+## M50D-23 — MALLEABLE-PHASE TRAJECTORY CAN REMAIN CONDITIONAL
+## M50D-24 — RESPONSIVE/REVERSIBLE REGIME PRECEDES FINAL FIXATION
+## M50D-25 — NATURAL WATER REGULARITY CAN SERVE AS BASELINE
+## M50D-26 — ROUTE NETWORK CAN FAIL THROUGH ABANDONMENT
+## M50D-27 — ATMOSPHERIC FORCE CAN DRIVE DISPERSION
+## M50D-28 — INFORMATION ECOSYSTEM CAN CONTAIN COMPETING SUPPRESSION CHANNELS
+## M50D-29 — ROUTE HAZARD CAN BE HIDDEN LOCALLY
+## M50D-30 — FIRING/HARDENING CHANGES MECHANICAL REGIME
+## M50D-31 — MATERIAL PLACE-NAME ASSOCIATION ≠ COSMIC GEOMETRY
+## M50D-32 — PRESSURIZED ENCLOSURE CAN FAIL THROUGH INTERNAL RESOURCE EXHAUSTION
+## M50D-33 — BRITTLE STRUCTURE CAN CROSS IRREVERSIBLE FRACTURE THRESHOLD
+## M50D-34 — REPAIRABILITY DEPENDS ON MATERIAL PHASE
+## M50D-35 — RESET REQUIRES RECONFIGURABLE SUBSTRATE OR DIFFERENT REBUILD PROCESS
+## M50D-36 — POTTER/JAR CONTRAST = MATERIAL-REGIME ANALOGUE, NOT GATE IDENTITY
+## M50D-37 — DESTINATION CAPACITY CAN BECOME HARD LIMIT
+## M50D-38 — ROOF CAN BE SKY-ORIENTED INTERFACE
+## M50D-39 — GATE CAN FUNCTION AS DETENTION/CONTROL NODE
+## M50D-40 — RESTRAINT CAN BE TIME-LIMITED
+## M50D-41 — PEOPLE + WEALTH CAN SHARE FORCED-TRANSFER ROUTE
+## M50D-42 — INFORMATION CAN BE PROJECTED AS INTERNAL THERMAL LOAD
+## M50D-43 — OUTPUT SUPPRESSION CAN INCREASE INTERNAL LOAD
+## M50D-44 — BODY CAN BE NESTED CONTAINMENT MODEL
+## M50D-45 — SOCIAL ENCIRCLEMENT ≠ PHYSICAL ENCLOSURE
+## M50D-46 — WOMB IMAGE CAN REVERSE DEVELOPMENT→NON-EMERGENCE
+## M50D-47 — STRUCTURAL RESPONSE DEPENDS ON MATERIAL STATE/CONNECTIVITY/RESOURCES/INTERFACES
+## M50D-48 — VARDATH LATTICE MUST REMAIN REVERSIBLY DEFORMABLE TO REOPEN
+
+---
+
+# Number / timing register — Jeremiah 16–20
+
+Record without forcing:
+
+- Jeremiah 16 contrasts an older Exodus memory with a future return from north/all lands; no recurrence interval is given;
+- Jeremiah 17 Sabbath gives weekly time-regulated gate behavior;
+- Jeremiah 18 uses “at one moment / at another moment” for conditional pronouncement, not measured physical transition duration;
+- Jeremiah 20 stocks confinement lasts until the **next morning**;
+- no gate-throat duration;
+- no world-layer count;
+- no dragon-spring count;
+- no quantified firing temperature or clay deformation threshold.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 16–20
+
+1. Working primary text: Jeremiah 16–20 NRSVUE, compared with NIV/NRSV/other translations where useful.
+2. Jeremiah 16:14–15 deliberately revises the Exodus-memory formula toward a future return from the north and dispersed lands; this is literary-historical transfer typology, not proof of recurrent identical physics.
+3. Jeremiah 16’s fishers/hunters are capture/search metaphors with ordinary ancient subsistence imagery.
+4. Jeremiah 17’s tree-by-water is resilience imagery and uses a real ecological principle: stable water access buffers drought stress.
+5. Jeremiah 17’s Sabbath gate material regulates burden/cargo by time; it is a social/cultic gate rule, not a physical cosmic gate.
+6. Jeremiah 18:4 securely describes the vessel being spoiled while the clay remains in the potter’s working hand and is reworked into another vessel.
+7. Daniel A. Frese’s *Journal for the Study of the Old Testament* article emphasizes the potter scene’s interpretive complexity and its role in a call to repentance.
+8. Jason A. Staples’s *Harvard Theological Review* study explicitly contrasts Jeremiah 18’s still-workable clay with Jeremiah 19’s later hardened clay vessel and notes that hardening/firing fixes the material into a state no longer simply reshaped.
+9. Jeremiah 18:14 has textual/translation uncertainty around Lebanon snow/mountain waters; use only the secure reliability contrast.
+10. Jeremiah 19 uses a finished potter’s jar/flask and explicitly interprets smashing as damage that cannot be mended.
+11. Topheth/burial-capacity and siege/cannibalism language belongs to historical-prophetic judgment imagery, not a mechanical world-gate description.
+12. Jeremiah 20’s stocks are an ordinary detention device at a temple gate.
+13. “Fire shut up in my bones” is information/compulsion imagery, not evidence of literal internal combustion.
+14. No explicit dragon/lattice-spring or strict spiderweb→fingertrap transformation occurs.
+15. Strict fingertrap status remains negative; material-regime correspondence is exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 16–20
+
+Primary:
+- Jeremiah 16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+16&version=NRSVUE
+- Jeremiah 16:16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+16%3A16&version=NRSVUE
+- Jeremiah 17 NRSVUE:
+  https://www.bible.com/bible/3523/JER.17.NRSVUE
+- Jeremiah 18 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+18&version=NRSVUE
+- Jeremiah 18–19 NIV comparison:
+  https://www.biblegateway.com/passage/?search=Jeremiah+18-19&version=NIV
+- Jeremiah 18–21 NRSV:
+  https://bible.oremus.org/?ql=561761924
+
+Scholarly / material-state controls:
+- Daniel A. Frese, “Lessons from the Potter’s Workshop: A New Look at Jeremiah 18.1–11,” *Journal for the Study of the Old Testament* (2013):
+  https://doi.org/10.1177/0309089213479570
+- Jason A. Staples, “Vessels of Wrath and God’s Pathos: Potter/Clay Imagery in Rom 9:20–23,” *Harvard Theological Review* 115 (2022), with explicit Jeremiah 18–19 material-state contrast:
+  https://doi.org/10.1017/S0017816022000116
+
+---
+
+# SECTION 50D CHECKPOINT — JEREMIAH 16–20 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 16 explicitly revises the foundational transfer memory: the future north/dispersed-land return will overshadow the Egypt Exodus, proving that a recurring transfer grammar can retain process class while changing geographic vector.**
+2. **Fishers and hunters provide distinct population-search/capture geometries; rock clefts conceal but do not guarantee safety.**
+3. **Jeremiah 17’s tree-by-water is a powerful resilience model: persistent water access can keep a local biological system green and productive through heat and drought.**
+4. **Jeremiah 17’s city gates carry time- and cargo-dependent Sabbath rules, a strong analogue for separating gate geometry from access protocol.**
+5. **Jeremiah 18 is one of the strongest “reset, not rewind” material analogues in the entire corpus: vessel form fails while the same clay remains workable and is reconfigured into another vessel.**
+6. **Jeremiah 19 provides the opposite regime: once the clay has become a hardened vessel, smashing crosses an irreversible fracture threshold and the object cannot simply be repaired/reworked.**
+7. **Modern scholarship explicitly recognizes the workable-clay versus hardened-vessel distinction, making this more than a superficial juxtaposition.**
+8. **For Vardath, this strongly constrains the dragon lattice-spring model: if the same lattice contracts and later reopens to support the ground, it must remain in a reversible deformation regime rather than undergo brittle failure.**
+9. **Jeremiah 20’s word-as-fire-in-bones is a high-value information-pressure projection, not literal heat.**
+10. **Strict spiderweb→fingertrap topology remains absent, but the material-mechanics correspondence is exceptionally important.**
+
+### Next live block
+
+**Jeremiah 21–24**
+
+Priority:
+- siege choice between two routes: stay→death / leave→life;
+- “way of life / way of death” as binary route gate;
+- city burned / king transfer;
+- justice at palace gate;
+- cedar/palace height and Lebanon imagery;
+- shepherd failures;
+- exile routes;
+- Jehoiachin/signet-ring removal and one-way transfer;
+- two baskets of figs before temple — good/bad paired populations;
+- good figs sent away then watched/build/plant/return;
+- bad figs remain/are scattered;
+- compare **same fruit class sorted into two baskets with opposite destinies** to paired-world/remnant selection;
+- connect Jeremiah 24 build/plant after exile to Jeremiah 18 reworked clay and Jeremiah 12 uproot-return.
