@@ -18659,3 +18659,1918 @@ High priority:
 - ruler / birth / remnant;
 - strict test for whether Jonah supplies a real enclosure/cargo transfer analogue and whether Micah adds support-field or mountain-axis mechanics.
 
+
+
+---
+
+# SECTION 55 — OBADIAH + JONAH + MICAH
+## Direct Book-of-the-Twelve pass — ancestral pair scaled to nations, vertical height reversal, enclosure-carrier descent and return, deep/mountain-root cosmography, gather→breach→gate passage, melting mountain/valley split, uphill people-flow, birth/exile/return, remnant as dew and lion, rebuilt boundary and sea-depth disposal
+
+### Frontier verification
+
+Before this block:
+- Part 1 was checked for direct Obadiah / Jonah / Micah research headings;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed direct sequential Obadiah + Jonah + Micah pass exists in the three-file archive.
+
+Part 2's verified tail identified this as the next live block.
+
+This research is therefore appended only to Part 2.
+
+---
+
+# Literary / historical control before Vardath comparison
+
+## Obadiah
+
+Obadiah is the shortest book in the Hebrew Bible.
+
+Its subject is Edom / Esau and Judah / Jacob.
+
+Modern scholarship places major weight on:
+- Edom/Judah conflict;
+- the destruction/fall of Jerusalem and later postexilic conflict;
+- the literary relation between Obadiah and Jeremiah 49;
+- vengeance/reversal rhetoric;
+- territorial redistribution.
+
+Bob Becking's Oxford Handbook treatment argues that Obadiah's animosity is best understood against postexilic struggles involving Edomite occupation of southern Judah rather than simply as a transcript of Edom's role during Jerusalem's Babylonian destruction.
+
+Therefore the Esau/Jacob language is:
+**ancestral pair projected onto later national/political bodies**.
+
+That is especially relevant to the project's paired-figure method.
+
+## Jonah
+
+Jonah is predominantly a prose narrative about Jonah son of Amittai rather than a collection of prophetic oracles.
+
+The book deliberately works with:
+- descent/ascent;
+- sea/land;
+- storm/calm;
+- foreign sailors / prophet;
+- city / outside-city;
+- plant / worm / wind;
+- divine preparation/appointment.
+
+The fish is a narrative agent/carrier within that story.
+
+Jonah 2's prayer also uses conventional psalmic death/deep/Sheol language.
+
+Therefore:
+the poem's "roots of mountains," "bars of land" and "belly of Sheol" should be studied as cosmographic/death-language while distinguishing them from a literal mapped submarine itinerary.
+
+## Micah
+
+Micah is traditionally located in the late eighth century BCE around Jotham, Ahaz and Hezekiah.
+
+Modern scholarship sees a long compositional history and highlights the book's oscillation between:
+- doom;
+- hope/restoration;
+- social criticism;
+- Zion;
+- nations;
+- exile/return.
+
+The book contains several unusually strong geometric images:
+- divine descent;
+- mountains melting;
+- valleys splitting;
+- city foundations exposed;
+- gathered flock;
+- breach/gate passage;
+- raised mountain;
+- peoples "streaming" upward;
+- daughter Zion as laboring body;
+- iron horn / bronze hooves;
+- expanded boundary;
+- sea-depth disposal.
+
+These are literary/theological images first.
+
+---
+
+# OBADIAH
+
+# Obadiah 1–4
+## Rock cleft / high dwelling / eagle / stars → forced descent to ground
+
+Edom is addressed as:
+- living in clefts of rock;
+- dwelling high;
+- imagining itself secure.
+
+The vertical boast:
+**who can bring me down to the ground?**
+
+The answer:
+even if Edom:
+- soars like eagle;
+- places its nest among stars;
+
+it will be brought down.
+
+### M55-1 — OBADIAH OPENS WITH AN EXPLICIT HEIGHT→GROUND REVERSAL
+
+The geometry is clear:
+
+**rock height**
+→ **eagle height**
+→ **star/nest height**
+→ **forced descent**
+→ **ground**.
+
+This is not a Vardath world-layer transition by itself.
+
+Ordinary source meaning:
+political pride/security reversed.
+
+But it is an explicit:
+**upper-position security state → lower-position defeat state**.
+
+### M55-2 — EAGLE/STAR LANGUAGE IS A SCALE-PROJECTION OF ONE POLITICAL BODY
+
+Edom is not literally transformed into:
+- eagle;
+- star.
+
+The same political entity is represented through:
+- cliff-dweller;
+- soaring eagle;
+- nest among stars.
+
+This continues the projection grammar already established in Daniel/Hosea.
+
+Different altitude/body imagery can encode one underlying referent.
+
+### Cherub / feathered-serpent control
+
+Obadiah's eagle imagery is:
+**height/security metaphor**.
+
+It is not:
+- cherub;
+- Feathered Serpent;
+- dragon apparatus.
+
+Therefore:
+winged/avian imagery alone remains insufficient to link a symbol to the user's sky-machine family.
+
+Function is decisive.
+
+---
+
+# Obadiah 5–9
+## Search into hidden places; allies push to boundary; mountain-region loses internal capacity
+
+Edom:
+- is searched out;
+- hidden treasures exposed;
+- allies drive it to border;
+- wisdom/understanding removed from Mount Esau;
+- warriors dismayed.
+
+### M55-3 — BOUNDARY CONTROL CAN REVERSE FROM DEFENSIVE SECURITY TO EXPULSION
+
+The same territory whose cliffs/heights seemed protective becomes unable to retain its own population/power.
+
+This is a state change in:
+**boundary function**.
+
+Strong as a political analogy;
+not physical gate mechanics.
+
+---
+
+# Obadiah 10–14
+## Jacob/Esau ancestral pair becomes national pair
+
+Edom's violence is described against:
+**your brother Jacob**.
+
+The ancestral twin relation is projected to:
+- Edom;
+- Judah/Israel.
+
+### M55-4 — ONE ANCESTRAL HUMAN PAIR SCALES INTO A MULTI-GENERATIONAL NATIONAL PAIR
+
+This is highly important for the project's paired-person method.
+
+Jacob/Esau are not only:
+two ancient individuals.
+
+They become:
+**persistent structural identities for later peoples**.
+
+Therefore when paired figures recur across generations, we must ask whether the text is using:
+- literal same persons;
+- descendants;
+- representative roles;
+- nationalized ancestral identities.
+
+Obadiah explicitly demonstrates the last category.
+
+### M55-5 — PAIR IDENTITY CAN PERSIST AFTER THE ORIGINAL BODIES ARE GONE
+
+This gives a strong control against assuming a recurring pair necessarily means:
+**the biological individuals physically reappear**.
+
+The pair may function as:
+**role/archetype/national projection**.
+
+---
+
+# Obadiah 15–16
+## Day reversal — action returns to actor
+
+The Day of YHWH:
+- comes against nations;
+- "as you have done, it shall be done to you";
+- deeds return upon own head.
+
+### M55-6 — OBADIAH USES A RETURN-TO-SOURCE REVERSAL RULE
+
+Process:
+**outgoing action**
+→ **reversal**
+→ **consequence returns to origin**.
+
+This is a strong directional reversal metaphor.
+
+Do not literalize it as closed physical current.
+
+But record:
+**vector reversal / feedback** is explicit.
+
+---
+
+# Obadiah 17–21
+## Zion escape → Jacob fire / Joseph flame / Esau stubble → territorial redistribution → saved figures go UP Mount Zion
+
+Restoration section:
+- escape/survivors on Mount Zion;
+- Jacob takes possession;
+- Jacob = fire;
+- Joseph = flame;
+- Esau = stubble;
+- territories reassigned;
+- exiles regain/possess land;
+- saved/deliverer figures go **up** Mount Zion;
+- Mount Esau ruled;
+- kingdom becomes YHWH's.
+
+### M55-7 — THE SAME NATIONAL PAIR CHANGES MATERIAL FORM IN THE RESTORATION/JUDGMENT PHASE
+
+Jacob/Joseph:
+**fire/flame**.
+
+Esau:
+**stubble**.
+
+This is explicitly process-oriented:
+one side becomes active consuming medium,
+the other consumable medium.
+
+Again:
+identity persists while projected material body changes.
+
+### M55-8 — FINAL STATE IS TERRITORIAL REDISTRIBUTION, NOT A RETURN TO AN UNCHANGED MAP
+
+The ending details:
+- Negeb;
+- Shephelah;
+- Philistine territory;
+- Ephraim;
+- Samaria;
+- Gilead;
+- Zarephath;
+- Negeb towns.
+
+This is:
+**successor geography**.
+
+It is not:
+**blank reset**.
+
+### M55-9 — RESTORATION INCLUDES UPWARD MOVEMENT TO A MOUNTAIN CENTRE
+
+Saved/deliverer figures:
+**go up Mount Zion**.
+
+Record as:
+**population → upward mountain movement → rule/reordered territory**.
+
+Source meaning:
+political/theological restoration.
+
+Not physical world-layer ascent.
+
+---
+
+# OBADIAH continuous process
+
+high rock dwelling
+→ security projected as eagle/star-level nest
+→ forced descent to ground announced
+→ hidden structures/treasures exposed
+→ allies reverse into boundary-expulsion agents
+→ ancestral Jacob/Esau pair scales to nations
+→ violence against brother produces Day-of-YHWH reversal
+→ action returns to actor
+→ Mount Zion becomes survivor zone
+→ Jacob/Joseph become fire/flame projection
+→ Esau becomes stubble
+→ old territorial balance is redistributed
+→ exiles/populations reoccupy named regions
+→ deliverer figures move upward onto Zion
+→ successor political order established.
+
+---
+
+# JONAH
+
+# Jonah 1:1–3
+## Command eastward toward Nineveh; Jonah chooses opposite long-distance route and begins repeated downward movement
+
+Jonah is commanded:
+**rise / go to Nineveh**.
+
+Instead:
+- he goes **down** to Joppa;
+- finds ship to Tarshish;
+- goes aboard/down into ship;
+- moves away from assigned destination.
+
+### M55-10 — JONAH'S STORY IS STRUCTURED BY DIRECTIONAL OPPOSITION FROM THE START
+
+Command:
+**rise/go**.
+
+Jonah:
+**goes down / flees**.
+
+The narrative therefore establishes:
+**intended vector**
+versus
+**counter-vector**.
+
+This is important for the user's opposed-direction analysis.
+
+But it is moral/narrative direction, not two physical lattice strands.
+
+---
+
+# Jonah 1:4–6
+## Wind input → sea storm → ship approaches structural failure → cargo ejected → Jonah descends deeper into ship
+
+YHWH hurls:
+- great wind;
+- onto sea.
+
+Result:
+- great storm;
+- ship threatens to break apart.
+
+Sailors:
+- fear;
+- pray;
+- throw cargo into sea to lighten vessel.
+
+Jonah:
+- has gone down into hold;
+- lies down/asleep.
+
+### M55-11 — ENVIRONMENTAL FORCING CHANGES BOTH CARRIER STABILITY AND CARGO LOAD
+
+Sequence:
+
+**wind**
+→ **sea-state change**
+→ **ship structural danger**
+→ **cargo discarded**
+→ **carrier mass reduced**.
+
+This is an excellent ordinary maritime control for Vardath cargo modelling.
+
+Transport systems have:
+- capacity;
+- environmental limits;
+- selective cargo loss under stress.
+
+### M55-12 — JONAH MOVES DOWNWARD WHILE THE EXTERNAL SYSTEM BECOMES MORE ENERGETIC
+
+Externally:
+storm intensifies.
+
+Internally:
+Jonah is:
+- lower;
+- asleep;
+- passive.
+
+This is a strong:
+**outside activation / inside quiescence**
+contrast.
+
+---
+
+# Jonah 1:7–16
+## Lot identifies one carrier; one person removed → sea-state rapidly calms
+
+The sailors cast lots.
+
+Jonah is identified.
+
+After questioning:
+Jonah says:
+- lift/throw him into sea;
+- storm will cease.
+
+Sailors initially resist and row toward land.
+
+Failure.
+
+Then:
+- Jonah thrown overboard;
+- sea ceases raging.
+
+### M55-13 — ONE HUMAN CARGO UNIT IS TREATED AS THE CRITICAL VARIABLE IN THE CARRIER/ENVIRONMENT SYSTEM
+
+The narrative explicitly links:
+**Jonah aboard**
+with
+**storm condition**,
+
+and:
+**Jonah removed**
+with
+**sea calm**.
+
+This is theological narrative causation.
+
+Do not turn it into literal mass/charge mechanics.
+
+But it provides a strong:
+**carrier contents ↔ environment state**
+relationship.
+
+### M55-14 — CARGO REMOVAL CAN STABILIZE THE TRANSPORT ENVIRONMENT
+
+Ordinary ship control:
+cargo was already thrown out to lighten.
+
+Narrative/theological climax:
+Jonah removed.
+
+Then sea calms.
+
+This is useful distinction:
+- material load management;
+- symbolic causal passenger.
+
+---
+
+# Jonah 1:17
+## Great fish as mobile enclosure / carrier
+
+A great fish is appointed/prepared.
+
+It:
+- swallows Jonah;
+- contains him three days and nights.
+
+### M55-15 — THE FISH IS BEST CLASSIFIED AS A MOBILE ENCLOSED CARRIER, NOT THE GATE ITSELF
+
+Jonah:
+- enters fish enclosure;
+- remains the same person;
+- is transported/maintained through lower/deep environment;
+- later exits to dry land.
+
+This is much closer to:
+**ark / basket / ship / vehicle**
+than
+**portal**.
+
+### M55-16 — ONE CARRIER CAN BE NESTED INSIDE A LARGER ENVIRONMENTAL TRANSPORT SEQUENCE
+
+Earlier:
+**Jonah inside ship**.
+
+Then:
+**Jonah inside sea**.
+
+Then:
+**Jonah inside fish inside sea**.
+
+Nested containment:
+**person → carrier → medium**.
+
+This is a useful Vardath transport distinction.
+
+---
+
+# Jonah 2:1–6
+## Belly of fish / belly of Sheol / deep / waters / weeds / mountain roots / land-bars
+
+Jonah's prayer describes:
+
+- belly of fish;
+- "belly of Sheol";
+- deep;
+- heart of seas;
+- flood/current;
+- waves/billows overhead;
+- waters enclosing;
+- deep surrounding;
+- weeds around head;
+- roots/bases of mountains;
+- land whose bars close;
+- Pit.
+
+### M55-17 — JONAH 2 STACKS MULTIPLE LOWER-REALM ENCLOSURE IMAGES INTO ONE DESCENT EXPERIENCE
+
+The prayer compresses:
+- marine depth;
+- death realm;
+- mountain foundations;
+- barred land;
+- pit
+
+into one experiential map.
+
+This is important cosmographic material.
+
+### M55-18 — "BELLY" FUNCTIONS AS ENCLOSURE GRAMMAR AT MULTIPLE SCALES
+
+Physical narrative:
+**belly of fish**.
+
+Poetic death language:
+**belly of Sheol**.
+
+This is a source-level analogy:
+**one enclosure maps onto another larger/deeper enclosure**.
+
+For Vardath:
+small carrier enclosure can project a larger world-boundary enclosure.
+
+But source meaning is poetic/theological, not engineering identity.
+
+### M55-19 — MOUNTAINS HAVE "ROOTS/BASES" IN THE DEEP COSMOGRAPHY
+
+Jonah reaches:
+**roots of mountains**.
+
+This gives:
+surface mountain
+with
+lower/deep foundational extent.
+
+Cross-link:
+- world-tree roots;
+- mountain axis;
+- under-earth/deep models.
+
+Do not automatically equate:
+mountain roots = lattice supports.
+
+But this is genuine vertical continuation of surface structure downward.
+
+### M55-20 — LAND HAS "BARS" IN THE DEATH/DEEP IMAGE
+
+The land is described as:
+**barred/closed** around Jonah.
+
+This gives boundary/closure imagery at lower-world scale.
+
+It is not a visible mechanical gate.
+
+Still:
+**lower realm = enclosed/barred domain**
+is textually present.
+
+---
+
+# Jonah 2:6–10
+## Direction reverses: "brought up" → fish ejects Jonah onto dry land
+
+At deepest point:
+Jonah says his life is:
+**brought up from Pit**.
+
+Then:
+- prayer reaches temple;
+- YHWH addresses fish;
+- fish ejects/vomits Jonah;
+- destination = dry land.
+
+### M55-21 — JONAH HAS ONE OF THE CLEANEST DOWN→ENCLOSED→UP/OUT TRANSFER SEQUENCES IN THE CORPUS
+
+Narrative abstraction:
+
+**surface land**
+↓
+**port**
+↓
+**ship**
+↓
+**hold**
+↓
+**sea**
+↓
+**fish enclosure**
+↓
+**deep / mountain roots / barred land / Pit imagery**
+then
+↑
+**life brought up**
+→ **carrier opens/ejects**
+→ **dry land**.
+
+This is very strong.
+
+### M55-22 — SAME PERSON CROSSES MULTIPLE MEDIA/ENCLOSURES AND RETURNS WITH IDENTITY CONTINUITY
+
+Jonah remains Jonah across:
+- land;
+- ship;
+- sea;
+- fish;
+- deep imagery;
+- returned land.
+
+This is directly relevant to Vardath's:
+**carrier/cargo identity across boundary states**.
+
+### M55-23 — THE EXIT APERTURE IS THE CARRIER'S BODY, NOT A WORLD GATE
+
+The fish expels Jonah.
+
+Therefore:
+fish-mouth/body is the local exit mechanism.
+
+Do not promote it into a cosmic portal without textual evidence.
+
+### M55-24 — JONAH 2 IS A STRONG ENCLOSURE/CARRIER ANALOGUE BUT NOT A STRICT INTER-WORLD TRANSFER
+
+The prayer uses Sheol/Pit language,
+but the prose narrative keeps Jonah inside the fish and returns him to the same terrestrial mission.
+
+Thus:
+**death-realm projection**
+and
+**physical carrier narrative**
+overlap.
+
+They should not be collapsed.
+
+---
+
+# Jonah 3
+## Re-entry into mission → city-wide state reversal
+
+Command comes again.
+
+Jonah now:
+- goes to Nineveh.
+
+City:
+- receives warning;
+- population responds;
+- king responds;
+- humans and animals fast/wear sackcloth in narrative;
+- behavior changes;
+- announced destruction is not carried out.
+
+### M55-25 — SAME DESTINATION CAN BE RE-ENTERED AFTER FAILED FIRST TRAJECTORY
+
+First mission:
+**command → flight opposite direction**.
+
+Second:
+**command → route completed**.
+
+This is a strong:
+**failed branch → reset instruction → successful branch**
+sequence.
+
+### M55-26 — CITY FUNCTIONS AS A COLLECTIVE BODY CAPABLE OF SYSTEM-WIDE STATE CHANGE
+
+Message enters through one prophet.
+
+Response propagates:
+- people;
+- king;
+- animals;
+- behavior.
+
+This is:
+**one information input → distributed collective state transition**.
+
+---
+
+# Jonah 4
+## City boundary → east-side observation node → shelter → plant canopy → worm → east wind → exposure
+
+Jonah exits city.
+
+He sits:
+- east of city;
+- builds booth/shelter;
+- waits to observe city fate.
+
+Then a plant is appointed/prepared:
+- grows over Jonah;
+- provides shade.
+
+Next:
+- worm damages plant;
+- plant dies/withers.
+
+Then:
+- scorching east wind;
+- sun strikes Jonah;
+- he weakens.
+
+### M55-27 — JONAH 4 PROVIDES A SMALL-SCALE SUPPORT-CANOPY FAILURE EXPERIMENT
+
+Sequence:
+
+**exposed person**
+→ **shelter/plant overhead**
+→ **shade/protection**
+→ **support vegetation attacked**
+→ **canopy fails**
+→ **east wind**
+→ **solar exposure**
+→ **carrier/person weakens**.
+
+This is highly useful as an ordinary-scale control for:
+**canopy/support layer → environmental shielding**.
+
+It is not evidence of a global vapour canopy.
+
+### M55-28 — PROTECTIVE OVERHEAD STRUCTURE AND ATMOSPHERIC FORCING INTERACT
+
+Plant shade:
+reduces exposure.
+
+Plant lost + east wind:
+increases heat stress.
+
+This demonstrates at ordinary biological scale:
+**support/shield state changes how atmospheric/solar input affects occupant**.
+
+### M55-29 — PLANT→WORM→WIND IS A CAUSAL CASCADE, NOT THREE VERSIONS OF ONE ENTITY
+
+Important anti-forcing control.
+
+Different agents have different functions:
+- plant protects;
+- worm disables plant;
+- wind increases stress.
+
+Do not merge every successive symbol into one projection identity.
+
+---
+
+# JONAH continuous transformation timeline
+
+command to rise/go eastward to Nineveh
+→ Jonah chooses opposite route
+→ descends to Joppa
+→ enters ship
+→ descends into hold
+→ wind activates sea
+→ storm threatens carrier
+→ cargo thrown out
+→ Jonah remains passive inside
+→ lot identifies Jonah
+→ sailors attempt alternate route toward land
+→ fail
+→ Jonah removed from ship
+→ sea calms
+→ fish encloses Jonah
+→ three-day/night carrier interval
+→ fish belly maps poetically to Sheol belly
+→ deep/waters close around him
+→ mountain roots / land bars / Pit imagery
+→ life described as brought up
+→ fish expels Jonah to dry land
+→ command repeats
+→ Jonah enters Nineveh
+→ one message changes city-wide behavior
+→ catastrophe branch is cancelled
+→ Jonah exits city eastward
+→ builds shelter
+→ plant expands protective shade
+→ worm disables plant
+→ east wind + sun exposure increase
+→ narrative ends on question of compassion for populated city + animals.
+
+---
+
+# MICAH
+
+# Micah 1:2–4
+## Upper divine place → descent → mountain melting → valley splitting → water downslope
+
+The vision calls:
+- all peoples;
+- earth and inhabitants.
+
+YHWH:
+- comes from holy temple/place;
+- **comes down**;
+- treads high places.
+
+Then:
+- mountains melt;
+- valleys split/burst open;
+- like wax by fire;
+- like water poured down slope.
+
+### M55-30 — MICAH OPENS WITH A TRUE UPPER→LOWER ARRIVAL FOLLOWED BY LARGE-SCALE TERRAIN DEFORMATION
+
+Sequence:
+
+**upper/holy dwelling**
+↓
+**descent**
+→ **high-place contact**
+→ **mountains lose structural integrity**
+→ **valleys open**
+→ **material/water moves downslope**.
+
+This is one of the stronger catastrophe geometries in the Twelve.
+
+Ordinary source:
+divine-theophany judgment language.
+
+### M55-31 — MOUNTAIN MELTING + VALLEY SPLITTING IS NOT MERELY "SHAKING"; IT IS TOPOLOGY CHANGE
+
+The landscape geometry itself changes.
+
+This matters for Vardath:
+event may alter:
+- height;
+- slope;
+- boundary;
+- channels.
+
+But the text does not specify mechanism.
+
+---
+
+# Micah 1:6–7
+## City stones poured into valley → foundations exposed
+
+Samaria:
+- becomes heap;
+- stones poured into valley;
+- foundations laid bare.
+
+### M55-32 — BUILT ENVIRONMENT IS DISASSEMBLED INTO LOWER TERRAIN WHILE SUBSTRUCTURE BECOMES VISIBLE
+
+This is a clean:
+**upper structure removal → foundation exposure**
+sequence.
+
+Cross-link:
+Amos 9 building failure;
+Daniel support failure;
+Vardath interest in buried/exposed strata.
+
+---
+
+# Micah 2:12–13
+## MAJOR GATE SEQUENCE
+## Gathered flock → breaker/opening → breach → gate → population exits → king/head leads
+
+Restoration oracle:
+
+- Jacob/survivors gathered;
+- set together like sheep in fold;
+- enclosure is densely populated/noisy.
+
+Then:
+- "the one who breaks out / opens the breach" goes before them;
+- they break through;
+- pass the gate;
+- go out by it;
+- king passes before;
+- YHWH at head.
+
+### M55-33 — MICAH 2 GIVES A COMPLETE GATHERING→BREACH→GATE-PASSAGE→ORDERED-EMERGENCE PROCESS
+
+This is one of the strongest literal gate/process texts found so far.
+
+State 1:
+**distributed survivors gathered into dense enclosure**.
+
+State 2:
+**breaker/opening action**.
+
+State 3:
+**breach becomes passable**.
+
+State 4:
+**population moves through gate**.
+
+State 5:
+**leader/head organizes outward movement**.
+
+### M55-34 — THE GATE IS CREATED/OPENED BY A "BREAKER" FUNCTION BEFORE THE MASS PASSES
+
+This is very important.
+
+The opening does not merely stand permanently available.
+
+An agent/function:
+**breaks/opens**.
+
+Then:
+others pass.
+
+This fits a general Vardath gate logic:
+**activation/opening precedes transfer**.
+
+### M55-35 — MANY-TO-ONE CONCENTRATION PRECEDES ONE-ROUTE OUTFLOW
+
+The survivors are first:
+**gathered together**.
+
+Then:
+they pass through:
+**a gate/breach**.
+
+This is a genuine:
+**many distributed → concentrated enclosure → narrowed route → outward transfer**
+sequence.
+
+### M55-36 — THIS IS CLOSE TO FINGERTRAP EFFECTS BUT NOT STRICT FINGERTRAP MECHANICS
+
+Why it is strong:
+- broad/distributed population gathers;
+- compact enclosure;
+- local breach;
+- gate;
+- transfer;
+- re-expansion outside implied.
+
+Why strict test still fails:
+- the **same support lattice** is not shown contracting;
+- no strands;
+- no angle change;
+- enclosure itself does not visibly narrow into throat;
+- opening is broken through rather than woven/cinched.
+
+Classification:
+**major gate-concentration analogue**.
+
+### M55-37 — LEADER/HEAD AND GATE ARE DISTINCT FUNCTIONS
+
+The king/YHWH:
+- leads movement.
+
+The breaker:
+- opens route.
+
+The flock:
+- cargo/population.
+
+This is excellent operator/apparatus/cargo differentiation.
+
+Do not collapse:
+- gate;
+- opener;
+- leader;
+- travellers
+
+into one symbol.
+
+---
+
+# Micah 3
+## Zion built with blood/injustice → mountain/temple field later transformed
+
+Micah criticizes rulers/priests/prophets.
+
+Zion:
+- built with blood;
+- Jerusalem with wrong.
+
+Outcome:
+- Zion plowed as field;
+- Jerusalem ruins;
+- temple mountain wooded height.
+
+### M55-38 — CENTRAL SACRED/URBAN NODE CAN LOSE BUILT FORM AND RETURN TO FIELD/FOREST STATE
+
+This is:
+**city/temple architecture**
+→ **ruin**
+→ **field/wooded hill**.
+
+Again:
+material state changes without location disappearing.
+
+---
+
+# Micah 4:1–5
+## Mountain raised → peoples "stream" uphill → instruction flows outward
+
+Future vision:
+
+- mountain of YHWH's house established above other mountains;
+- raised over hills;
+- peoples **stream** to it;
+- nations say **go up** to mountain;
+- instruction goes **out from Zion**;
+- word goes from Jerusalem.
+
+### M55-39 — MICAH 4 CREATES TWO OPPOSITE INFORMATION/POPULATION FLOWS AROUND ONE HIGH CENTRAL NODE
+
+Inbound:
+**peoples/nations → stream/go UP to mountain**.
+
+Outbound:
+**instruction/word → goes OUT from mountain/city**.
+
+This is structurally elegant:
+
+**many-to-one human inflow**
++
+**one-to-many informational outflow**.
+
+### M55-40 — "STREAMING" UPHILL IS DELIBERATELY NON-ORDINARY HYDROLOGIC LANGUAGE
+
+People:
+**stream upward**.
+
+The metaphor reverses normal water flow direction.
+
+Therefore:
+flow vocabulary can encode population movement even against gravity.
+
+This is another anti-literalization control.
+
+### M55-41 — CENTRAL MOUNTAIN FUNCTIONS AS A NETWORK HUB
+
+Inputs:
+many nations.
+
+Outputs:
+instruction/judgment/peace order.
+
+This resembles:
+**central node ↔ distributed field**.
+
+Not a physical gate.
+
+---
+
+# Micah 4:6–8
+## Lame/outcast gathered → remnant becomes strong nation → tower/hill receives former dominion
+
+YHWH:
+- gathers lame;
+- assembles driven away;
+- converts them into remnant/strong nation.
+
+Mount Zion:
+- central rule point.
+
+Tower of flock / hill of daughter Zion:
+- receives former dominion.
+
+### M55-42 — DAMAGED/DISPERSED POPULATION IS NOT DISCARDED; IT BECOMES CORE OF SUCCESSOR ORDER
+
+This strongly supports:
+**successor world built from inherited survivors**.
+
+Not blank slate.
+
+### M55-43 — TOWER / HILL / FLOCK IMAGERY COMPRESSES HUMAN POPULATION INTO A CENTRAL SUPPORT/OBSERVATION NODE
+
+But source meaning:
+restored kingship/security.
+
+Do not make tower automatically world-axis.
+
+---
+
+# Micah 4:9–10
+## Daughter Zion as laboring body → exits city → open country → Babylon → rescue/return
+
+Zion/Jerusalem is personified as a woman in labor.
+
+Sequence:
+- birth pangs;
+- go forth from city;
+- camp open country;
+- go to Babylon;
+- there be rescued/redeemed.
+
+### M55-44 — ONE CITY/PEOPLE BECOMES A FEMALE BODY WHOSE "LABOR" PROJECTS EXILE/TRANSITION
+
+This is a very strong projection control.
+
+City:
+→ woman.
+
+Political exile:
+→ labor/birth.
+
+Destination:
+→ Babylon.
+
+Rescue:
+→ later restoration.
+
+### M55-45 — TRANSITION OUT OF ENCLOSURE IS EXPLICIT
+
+**city**
+→ **go forth**
+→ **open country**
+→ **distant destination**.
+
+This is a literal population movement within metaphorically embodied city.
+
+### M55-46 — BIRTH IMAGE ENCODEs A PAINFUL TRANSITION THAT PRODUCES A SUCCESSOR STATE RATHER THAN SIMPLE DEATH
+
+This is relevant to:
+- womb/gate;
+- enclosure emergence;
+- old/new world transition.
+
+But do not call every birth image a fingertrap.
+
+---
+
+# Micah 4:11–13
+## Many nations gathered against Zion → secretly gathered as sheaves → daughter Zion becomes horned/hoofed threshing body
+
+Many nations:
+- assemble against Zion.
+
+Divine plan:
+- they are actually gathered like sheaves to threshing floor.
+
+Daughter Zion is told:
+- rise/thresh;
+- horn becomes iron;
+- hooves become bronze;
+- breaks nations.
+
+### M55-47 — SAME FEMALE CITY-BODY TRANSFORMS INTO AN ANIMAL/THRESHING COMPOSITE WITH METAL HORN AND HOOVES
+
+This is a striking source-level transformation.
+
+Zion:
+**woman in labor**
+→ later
+**horn/hoof-equipped threshing body**.
+
+Same communal/city referent,
+radically different projected anatomy.
+
+This strongly reinforces the user's:
+**one phenomenon can appear anthropomorphic, animal, metallic, structural**
+method.
+
+### M55-48 — GATHERING CAN BE REINTERPRETED BY FUNCTION
+
+Nations think:
+**we gathered to attack Zion**.
+
+Divine frame:
+**you were gathered as material to thresh**.
+
+Same spatial convergence;
+different process meaning.
+
+This is an excellent warning:
+geometry alone does not identify operator or purpose.
+
+---
+
+# Micah 5:1–4
+## Siege enclosure + rod strike + small Bethlehem node → ruler emerges → birth interval → remnant returns → standing shepherd
+
+Sequence:
+- city walled/besieged;
+- ruler struck by rod;
+- small Bethlehem clan becomes source of future ruler;
+- people given up until laboring woman gives birth;
+- kindred/remnant returns;
+- ruler stands/shepherds;
+- population lives secure.
+
+### M55-49 — SMALL LOCAL NODE CAN BECOME SOURCE OF LARGE-SCALE CENTRAL RULING FUNCTION
+
+Bethlehem:
+small among clans
+→ ruler emerges
+→ greatness extends to ends of earth.
+
+This resembles:
+**small node → large field influence**.
+
+Ordinary source:
+royal restoration oracle.
+
+### M55-50 — BIRTH INTERVAL MARKS TRANSITION BETWEEN ABANDONMENT AND REGATHERING
+
+State:
+**given up**
+until
+**birth event**.
+
+Then:
+**return/gathering**.
+
+This is a clear:
+**waiting interval → emergence → reaggregation** sequence.
+
+---
+
+# Micah 5:5–6
+## Seven shepherds + eight rulers
+
+If Assyria enters:
+- seven shepherds;
+- eight rulers/leaders
+
+are raised against it.
+
+### M55-51 — "SEVEN...EIGHT" IS A HEBREW NUMERICAL PARALLEL FOR SUFFICIENCY/ABUNDANCE, NOT AUTOMATIC 7–8 COSMOLOGY
+
+Record:
+7 / 8.
+
+Do not force:
+- 7 subconscious nodes;
+- 8 enclosure;
+- 1-3-7 JANUS;
+- eight gates
+
+without independent evidence.
+
+Immediate function:
+sufficient/multiple leadership against invasion.
+
+---
+
+# Micah 5:7–9
+## Same remnant becomes dew/shower AND lion
+
+The remnant of Jacob among peoples is compared to:
+
+first:
+- dew from YHWH;
+- showers on grass;
+- independent of human control.
+
+then:
+- lion among forest animals;
+- young lion among sheep;
+- treading/tearing power.
+
+### M55-52 — SAME REMNANT FIELD PROJECTS AS WATER/DEW AND PREDATOR/LION IN CONSECUTIVE VERSES
+
+This is one of the cleanest cross-medium projection examples in the Twelve.
+
+Same referent:
+**remnant of Jacob**.
+
+Projection A:
+**distributed moisture / life-supporting dew**.
+
+Projection B:
+**concentrated mobile predator force**.
+
+Therefore:
+water-like and animal-like imagery can represent different functions of one collective identity.
+
+### M55-53 — ONE REFERENT CAN HAVE BENEFICIAL DISTRIBUTIVE AND DESTRUCTIVE CONCENTRATED MODES
+
+Dew:
+- distributed;
+- noncoercive;
+- sustaining.
+
+Lion:
+- concentrated;
+- kinetic;
+- destructive.
+
+This is highly relevant to the user's phase model:
+**broad supportive state**
+versus
+**active concentrated state**.
+
+But:
+Micah does not say dew physically contracts into lion.
+
+So this is projection analogy,
+not mechanical continuity.
+
+---
+
+# Micah 6
+## Mountains / enduring foundations as witnesses
+
+The legal/covenant scene calls:
+- mountains;
+- enduring foundations of earth
+
+as witnesses/hearers.
+
+### M55-54 — MOUNTAINS/FOUNDATIONS FUNCTION AS STABLE LONG-DURATION RECORD/WITNESS NODES
+
+This is not support mechanics.
+
+But it is a useful semantic role:
+**persistent geology = continuity/witness**.
+
+Again:
+same object type (mountain) can have different functions:
+- melt in Micah 1;
+- elevated hub in Micah 4;
+- witness/foundation in Micah 6.
+
+Do not collapse all mountain references into one apparatus state without sequence evidence.
+
+---
+
+# Micah 7:8–10
+## Fall → rise; darkness → light
+
+Zion/personified speaker:
+- has fallen;
+- will rise;
+- sits in darkness;
+- YHWH becomes light;
+- comes out to light.
+
+### M55-55 — FALL/RISE + DARK/LIGHT IS AN EXPLICIT STATE-REVERSAL PAIR
+
+Strong restoration grammar.
+
+No physical gate needed.
+
+---
+
+# Micah 7:11–12
+## Walls rebuilt → boundary extended → long-distance return across sea/mountain axes
+
+Restoration:
+- walls built;
+- boundary extended.
+
+People come:
+- Assyria ↔ Egypt;
+- Egypt ↔ River;
+- sea to sea;
+- mountain to mountain.
+
+### M55-56 — SUCCESSOR STATE EXPANDS BOUNDARY AND RECONNECTS LONG-DISTANCE ROUTES
+
+This is important.
+
+Restoration is not:
+**seal everyone inside old border**.
+
+It includes:
+- rebuilding;
+- boundary redefinition;
+- return/inflow from multiple axes.
+
+### M55-57 — SEA↔SEA AND MOUNTAIN↔MOUNTAIN FORM PARALLEL GEOGRAPHIC SPANS
+
+These are broad-range route expressions.
+
+Do not convert into literal paired worlds,
+but retain as:
+**horizontal network re-expansion**.
+
+---
+
+# Micah 7:14–17
+## Staff/shepherd + garden/forest + nations become serpent/crawling form exiting fortresses
+
+Restoration prayer:
+- shepherd people with staff;
+- flock in forest/garden land.
+
+Nations:
+- lick dust like serpent;
+- like crawling things;
+- come trembling out of fortresses.
+
+### M55-58 — HUMAN/NATIONAL BODIES AGAIN SHIFT INTO SERPENT/CRAWLING PROJECTION
+
+Here serpent imagery means:
+**humiliation/fear**.
+
+This is another crucial control for the user's dragon/serpent comparison.
+
+Not every serpent:
+- is sky current;
+- is lattice;
+- is Quetzalcoatl-type support form.
+
+Function differs.
+
+### M55-59 — EXIT FROM FORTRESS IS REAL ENCLOSURE→OUTSIDE MOTION BUT NOT COSMIC GATE
+
+Nations come out of fortified places.
+
+Record as:
+local enclosure exit.
+
+---
+
+# Micah 7:18–20
+## Iniquities trodden down → cast into depths of sea
+
+The closing forgiveness image:
+- wrongdoing subdued/trodden underfoot;
+- sins cast into depths of sea.
+
+### M55-60 — SEA DEPTH FUNCTIONS AS TERMINAL REMOVAL/ISOLATION ZONE
+
+This is not a physical cargo claim.
+
+It is moral metaphor:
+**unwanted state → removed into inaccessible depth**.
+
+Still useful because the deep repeatedly functions as:
+- confinement;
+- death;
+- removal;
+- hidden zone.
+
+Compare Jonah's deep:
+carrier/death imagery.
+
+Same space-type,
+different function.
+
+---
+
+# MICAH continuous transformation timeline
+
+divine witness calls earth
+→ upper divine figure descends
+→ high places contacted
+→ mountains melt
+→ valleys split
+→ water/material moves downslope
+→ Samaria structure dismantled
+→ stones move into valley
+→ foundations exposed
+→ survivors gathered densely like flock
+→ breaker opens breach
+→ population passes gate
+→ king/head leads outward
+→ Zion later degraded to field/wooded hill
+→ future mountain raised above hills
+→ peoples stream upward into central node
+→ instruction flows outward
+→ lame/outcasts gathered into successor nation
+→ tower/hill regains dominion
+→ daughter Zion enters labor-state
+→ city population goes out to open field/Babylon
+→ rescue promised at distant destination
+→ hostile nations gather
+→ same convergence reinterpreted as threshing-floor gathering
+→ daughter Zion transforms into iron-horn/bronze-hoof threshing body
+→ siege around city
+→ small Bethlehem node produces ruler
+→ birth interval
+→ remnant returns
+→ same remnant becomes dew/shower projection
+→ same remnant becomes lion projection
+→ mountains/foundations serve as witnesses
+→ fall reverses to rise
+→ darkness reverses to light
+→ walls rebuilt
+→ boundary extends
+→ long-distance routes reconnect sea↔sea and mountain↔mountain
+→ serpent-like nations emerge trembling from fortresses
+→ unwanted moral state cast into deep sea
+→ ancestral covenant continuity closes book.
+
+---
+
+# CROSS-BOOK SYNTHESIS — Obadiah + Jonah + Micah
+
+## 1. Paired identities can scale far beyond the original individual pair
+
+Obadiah:
+**Jacob / Esau**
+→ national identities.
+
+Micah:
+**Jacob / remnant / Zion**
+→ people, woman, flock, dew, lion.
+
+### M55-61 — PAIR/FIGURE CONTINUITY MUST BE TRACKED AT ROLE-SCALE, NOT ONLY PERSON-SCALE
+
+This is now firmly source-supported.
+
+A biblical figure can become:
+- ancestor;
+- nation;
+- city;
+- collective body;
+- animal/material projection.
+
+Therefore the project's paired-person investigation should classify each recurrence by level.
+
+---
+
+# 2. Jonah supplies a strong carrier/enclosure model
+
+Nested sequence:
+
+**Jonah**
+inside
+**ship**
+inside
+**storm sea**
+
+then
+
+**Jonah**
+inside
+**fish**
+inside
+**deep sea**.
+
+Poetic overlay:
+**fish belly**
+↔
+**Sheol belly / barred lower land**.
+
+### M55-62 — CARRIER, ENCLOSURE, MEDIUM AND DESTINATION SHOULD BE TRACKED AS SEPARATE VARIABLES
+
+This is exactly what future Vardath transfer analysis needs.
+
+- cargo = Jonah;
+- carrier 1 = ship;
+- medium 1 = sea surface;
+- carrier 2 = fish;
+- medium 2 = deep sea;
+- symbolic lower-domain overlay = Sheol/Pit;
+- exit = dry land.
+
+Do not call all of these "the gate."
+
+---
+
+# 3. Micah supplies the strongest gate mechanics of this block
+
+Micah 2:
+
+**gathered population**
+→ **dense fold**
+→ **breaker**
+→ **breach**
+→ **gate**
+→ **passage**
+→ **leader**
+→ **outside continuation**.
+
+### M55-63 — THIS IS A TRUE TRANSFER-THROUGH-OPENING SEQUENCE WITH DISTINCT OPENER / GATE / CARGO / LEADER
+
+That is more mechanically useful than many symbolic door references.
+
+But:
+the gate is not produced by contraction of a broad lattice.
+
+---
+
+# 4. Micah 4 supplies a central-node bidirectional network
+
+**nations stream UP/in**
+toward
+**raised mountain**
+
+while
+
+**instruction flows OUT**
+to
+**distributed nations**.
+
+### M55-64 — ONE CENTRAL NODE CAN HAVE DIFFERENT INBOUND AND OUTBOUND CHANNEL TYPES
+
+Population:
+inward/upward.
+
+Information:
+outward.
+
+Cross-link:
+Ezekiel 47:
+human-route ≠ water-route.
+
+This increasingly supports:
+**channel-specific function within one apparatus**.
+
+---
+
+# 5. Same collective identity can alternate between distributed and concentrated projection
+
+Micah 5:
+same remnant =
+**dew/showers**
+then
+**lion**.
+
+Hosea had:
+same agent =
+multiple predators / dew/tree.
+
+Daniel:
+same entity =
+tree / human / animal/avian.
+
+### M55-65 — DISTRIBUTED-MEDIUM FORM ↔ CONCENTRATED-ANIMAL FORM IS NOW AN EXPLICIT RECURRING PROJECTION PATTERN
+
+This is highly relevant to the user's:
+
+**broad sky/feathered/dragon field**
+↔
+**concentrated Squatter-Man/rod form**.
+
+Still:
+the biblical texts do not state those forms are physically transforming through a fingertrap.
+
+But the representational grammar is now very strong.
+
+---
+
+# Cherub / Feathered Serpent / Quetzalcoatl / dragon update
+
+This block adds controls rather than direct cherub evidence.
+
+## Obadiah eagle
+Function:
+height/security.
+
+## Micah serpent
+Function:
+humiliation/fear.
+
+## Micah lion
+Function:
+power/destruction of remnant.
+
+## Micah dew
+Function:
+distributed sustaining presence.
+
+## Jonah fish
+Function:
+mobile enclosed carrier.
+
+Therefore:
+
+### M55-66 — CREATURE TYPE IS LESS IMPORTANT THAN FUNCTION
+
+A bird/serpent/fish/lion may represent:
+- height;
+- fear;
+- force;
+- carrier;
+- state projection.
+
+So the user's Quetzalcoatl / cherub / Feathered Serpent family should be accepted as a candidate only where the process also matches:
+- sky/upper relation;
+- support;
+- wind/current;
+- distributed field;
+- contraction/axis;
+- gate/transfer;
+- reopening.
+
+This makes the comparison stricter, not weaker.
+
+---
+
+# Strict fingertrap test — Obadiah + Jonah + Micah
+
+Criteria:
+1. broad/open distributed support structure;
+2. same structure continuous;
+3. strand-angle change/contraction;
+4. throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Obadiah
+
+Strong:
+- high→low reversal;
+- ancestral pair;
+- territorial redistribution.
+
+Missing:
+all mechanical lattice criteria.
+
+**Strict negative.**
+
+## Jonah
+
+Strong:
+- nested enclosure;
+- downward sequence;
+- lower-domain imagery;
+- mobile carrier;
+- same cargo identity;
+- up/out return.
+
+Missing:
+- broad support lattice;
+- contraction into throat;
+- gate formed by support;
+- reopening.
+
+**Strict negative; major carrier/enclosure analogue.**
+
+## Micah
+
+Strong:
+- gathered many;
+- dense enclosure;
+- breaker opens breach;
+- gate passage;
+- ordered outflow;
+- raised central mountain;
+- inbound/outbound channels;
+- rebuilt/expanded successor field.
+
+Missing:
+- same broad support structure contracts;
+- strands/angle change;
+- woven throat;
+- explicit reopening of same structure.
+
+**Strict negative, but Micah 2 is one of the strongest many→opening→transfer analogues outside an explicit cosmological gate scene.**
+
+---
+
+# Number / timing register
+
+## Obadiah
+No major measured cycle to force.
+
+## Jonah
+- three days + three nights inside fish;
+- forty days warning to Nineveh;
+- city described with >120,000 persons at close.
+
+Controls:
+- "three days and three nights" = narrative confinement interval;
+- "forty days" = warning interval;
+- do not equate automatically with Vardath gate duration.
+
+## Micah
+- 7 shepherds / 8 rulers;
+- use caution: numerical parallelism can mean adequate/many leaders rather than exact hidden geometry.
+
+---
+
+# Textual / scholarly controls — Obadiah + Jonah + Micah
+
+1. Obadiah's Jacob/Esau language maps ancestral identity onto later Edom/Judah national conflict.
+2. Modern scholarship debates the exact historical setting; postexilic Edomite/Judah conflict is important.
+3. Obadiah's eagle/star nest is height/pride/security rhetoric, not direct celestial travel.
+4. Obadiah ends with territorial redistribution and political reversal.
+5. Jonah is primarily narrative prose about Jonah rather than a normal prophetic oracle collection.
+6. Jonah 2's prayer draws on psalmic death/deep/Sheol language; it should not be naively treated as a technical bathymetric log.
+7. The prose narrative nevertheless gives an unambiguous fish enclosure and later dry-land ejection.
+8. Jonah's fish is best classified as carrier/enclosure, not portal.
+9. Jonah 4's kikayon plant identity is uncertain; its narrative function as shade/protective growth is secure.
+10. Micah has a long compositional history; the book's doom/hope alternation is a major structural feature.
+11. Micah 1 explicitly describes divine descent, mountain melting and valley splitting as theophanic judgment.
+12. Micah 2:12–13 explicitly gives gathering, breakout/breach, gate passage and leading king/head.
+13. Translation nuance in Micah 2:13 varies between "breaker," "one who breaks out," and "one who opens the breach"; the process of opening/breakthrough is secure.
+14. Micah 4's "stream to the mountain" is population metaphor, not literal uphill hydrology.
+15. Micah 4 personifies Zion as a laboring woman and later gives her metal horn/hooves; same communal referent receives radically different bodies.
+16. Micah 5:7–8 explicitly compares the same remnant first to dew/showers and then to lion.
+17. Micah 7's serpent imagery is humiliation/fear, not a demonstrated cosmic serpent mechanism.
+18. None of the three books explicitly describes woven sky strands contracting into a fingertrap throat.
+
+---
+
+# Sources logged — Obadiah + Jonah + Micah
+
+## Primary — Obadiah
+- Obadiah NRSVUE:
+  https://www.biblegateway.com/passage/?search=Obadiah&version=NRSVUE
+- Obadiah 15–21 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Obadiah+15-21&version=NRSVUE
+
+## Obadiah scholarship
+- Bob Becking, "Obadiah," The Oxford Handbook of the Minor Prophets:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373312
+
+## Primary — Jonah
+- Jonah 1–4 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jonah+1-4&version=NRSVUE
+- Jonah 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jonah+2&version=NRSVUE
+- Jonah 4 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jonah+4&version=NRSVUE
+
+## Jonah scholarship
+- Vanessa Lovelace, "Jonah," The Oxford Handbook of the Minor Prophets:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373381
+
+## Primary — Micah
+- Micah 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Micah+1&version=NRSVUE
+- Micah 2:12–13 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Micah+2%3A12-13&version=NRSVUE
+- Micah 4 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Micah+4&version=NRSVUE
+- Micah 4:6–13 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Micah+4%3A6-13&version=NRSVUE
+- Micah 5 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Micah+5&version=NRSVUE
+- Micah 7 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Micah+7&version=NRSVUE
+
+## Micah scholarship
+- Rainer Kessler, "Micah," The Oxford Handbook of the Minor Prophets:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373451
+- Julia M. O'Brien (ed.), The Oxford Handbook of the Minor Prophets, collection context:
+  https://academic.oup.com/edited-volume/38566
+
+---
+
+# SECTION 55 — OBADIAH + JONAH + MICAH COMPLETE
+
+## Strongest new findings
+
+1. **Obadiah explicitly projects the ancestral Jacob/Esau twin pair into later national identities, proving that a paired-human pattern can persist at collective/national scale without implying the original bodies physically recur.**
+2. **Edom's high rock/eagle/star security is reversed into forced descent to ground, a clear upper→lower state reversal.**
+3. **Obadiah's Day formula "as you have done, it shall be done to you" gives an explicit return-to-source/reversal rule.**
+4. **The book ends in successor geography: territories are reassigned, exiles reoccupy land, and deliverer figures go up Mount Zion.**
+5. **Jonah contains one of the cleanest sustained descent vectors in the corpus: command to rise/go → down to Joppa → ship → ship hold → sea → fish → deep/mountain roots/barred land/Pit imagery.**
+6. **The great fish is best understood mechanically as a mobile enclosed carrier containing the same cargo/person through the deep environment and later ejecting him onto dry land; it is not the gate itself.**
+7. **Jonah 2 creates nested enclosure grammar: physical fish belly is poetically mapped to the "belly of Sheol," while mountain roots and land-bars give a lower-domain cosmography.**
+8. **The reversal is equally clear: deepest/downward state → life "brought up" → carrier ejection → dry land.**
+9. **Jonah therefore strongly supports separate tracking of cargo, carrier, medium, enclosure and destination.**
+10. **Jonah 4 gives a small-scale canopy/support control: plant overhead creates shade; worm removes the protective structure; east wind and sun then produce heat stress. This is not a global vapour-canopy proof, but it cleanly shows how overhead shielding and atmospheric forcing interact.**
+11. **Micah 1 gives real topology change: upper divine descent → mountains melt → valleys split → water/material runs downward → urban stones are poured into valley and foundations exposed.**
+12. **Micah 2:12–13 is the most important result of the block: survivors are first gathered densely like a flock, then a breaker/opening function creates a breach, the population passes through a gate, and a king/YHWH leads at the head.**
+13. **This is a genuine many→concentration→opening→gate passage→ordered emergence sequence, although the enclosure is not described as a woven lattice contracting into the gate.**
+14. **Micah 2 cleanly distinguishes opener/breaker, gate, cargo/population and leader/head—important operator/apparatus/cargo separation.**
+15. **Micah 4 then gives a raised central mountain with two different channel types: peoples stream upward/inward while instruction flows outward to the distributed nations.**
+16. **This adds another strong example of one central node supporting different inbound and outbound media/functions.**
+17. **Daughter Zion transforms from laboring woman to an iron-horned/bronze-hoofed threshing body, another source-level demonstration that one communal identity can radically change projected body.**
+18. **Micah 5 gives one of the clearest broad/supportive versus concentrated/destructive projection pairs: the same remnant is first dew/showers among peoples and immediately afterward a lion among animals/flocks.**
+19. **That does not say dew physically transforms into lion, but it strongly validates testing distributed and concentrated images as different states/functions of one underlying referent.**
+20. **Micah closes with walls rebuilt, boundaries expanded and routes reopened from sea to sea and mountain to mountain—successor order as reconnection/re-expansion, not rewind.**
+21. **Serpent imagery in Micah 7 functions as humiliation/fear, while Obadiah's eagle functions as height/security and Jonah's fish as carrier; this strongly reinforces that creature identity alone cannot establish membership in the cherub/Feathered-Serpent/dragon apparatus family.**
+22. **No strict fingertrap appears, but Micah 2 is now one of the strongest gate-concentration analogues, while Jonah is one of the strongest carrier/enclosure analogues.**
+
+## Next live block
+
+**Nahum + Habakkuk + Zephaniah**
+
+High priority:
+- Nahum storm/whirlwind/cloud dust;
+- mountains quake / hills melt / earth heaves;
+- sea dried / rivers dried;
+- gates of rivers opened and palace collapses;
+- lion imagery / den;
+- Nineveh as water pool draining away;
+- fire/sword/locust transformations;
+- Habakkuk divine-warrior geometry;
+- light/rays from divine hand;
+- pestilence before / plague behind;
+- standing → earth shakes;
+- mountains shattered / hills sink;
+- sea/deep response;
+- sun/moon halt;
+- waters / horses;
+- "trample sea";
+- waiting/watchtower timing;
+- Zephaniah sweeping humans/animals/birds/fish;
+- Day darkness/cloud/fire;
+- threshold imagery;
+- gathering/remnant;
+- rivers of Cush / dispersed people;
+- restored speech / gathered lame/outcast;
+- strict test for whether Habakkuk's bilateral hand-rays + before/behind hazard + water/earth/sky response materially strengthens the Squatter-Man/current model.
+
