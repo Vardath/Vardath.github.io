@@ -74011,3 +74011,1082 @@ Priority:
 - house closure + cords + speech blockage;
 - mouth later reopened by source;
 - HIGH PRIORITY: compare scroll ingestion with material/info transfer and test whether this is the clearest body-as-information-carrier transformation yet.
+
+
+---
+
+# SECTION 52 progress A2 — Ezekiel 2–3
+## Fresh sequential research: posture changed by entering spirit, sender/receiver channel, scroll ingestion as information embodiment, hard interface against resistant receivers, vertical transport, seven-day processing interval, sentinel relay responsibility and source-controlled speech gating
+
+Ezekiel 2–3 continues directly from the support/throne system of chapter 1.
+
+The chapter sequence changes focus from:
+**large cosmological/throne architecture**
+
+to:
+**one human receiver becoming a message carrier**.
+
+This makes Ezekiel 2–3 a particularly important test for:
+- information transfer;
+- embodiment;
+- receiver resistance;
+- channel opening/closing;
+- relay responsibility.
+
+---
+
+# Ezekiel 2:1–2 — spirit enters body and changes posture
+
+Ezekiel:
+fallen on face.
+
+Command:
+stand.
+
+Then:
+spirit enters him
+→ sets him on his feet
+→ he hears the speaker.
+
+## M52A2-1 — INTERNALIZED/ENTERING FORCE CAN CHANGE BODY CONFIGURATION BEFORE COMMUNICATION CONTINUES
+
+Sequence:
+
+low/prostrate body
+→ entering spirit
+→ upright body
+→ auditory reception.
+
+This is a real state transition.
+
+### Vardath relevance
+
+It resembles:
+external field/coupling
+→ enters receiver
+→ changes orientation/function.
+
+But:
+the text is prophetic/visionary;
+do not turn “spirit” automatically into physical current.
+
+---
+
+# Ezekiel 2:2 — posture and signal access are coupled
+
+The speaker does not merely:
+hear while unchanged.
+
+The same event:
+sets him upright
+and
+enables/continues reception.
+
+## M52A2-2 — RECEIVER STATE CAN AFFECT COMMUNICATION FUNCTION
+
+Receiver configuration matters.
+
+This is useful for Vardath:
+a gate/channel may depend not only on sender output but on receiver state.
+
+---
+
+# Ezekiel 2:3–7 — sender, messenger and resistant receiver are explicitly separated
+
+Source:
+God.
+
+Relay:
+Ezekiel.
+
+Destination:
+house of Israel.
+
+Receiver behavior:
+may hear;
+may refuse.
+
+Ezekiel’s responsibility:
+speak regardless.
+
+## M52A2-3 — TRANSMISSION AND RECEPTION ARE DISTINCT SYSTEM EVENTS
+
+This is one of the clearest communication models in the corpus.
+
+source
+→ relay
+→ signal
+→ receiver
+→ optional response.
+
+The message can be successfully transmitted
+even if the receiver rejects it.
+
+---
+
+# M52A2-4 — FAILED RESPONSE ≠ FAILED TRANSMISSION
+
+This is critical.
+
+A channel should be evaluated at multiple stages:
+
+1. source generated signal?
+2. relay carried signal?
+3. boundary allowed signal?
+4. receiver detected signal?
+5. receiver decoded signal?
+6. receiver acted?
+
+Do not compress all six into:
+“communication worked / failed.”
+
+---
+
+# Ezekiel 2:6 — briers, thorns and scorpions are hostile-environment metaphors
+
+Ezekiel is told:
+do not fear,
+though briers/thorns surround him
+and he lives among scorpions.
+
+## M52A2-5 — SURROUNDING HAZARD FIELD CAN BE SOCIAL/METAPHORICAL RATHER THAN LITERAL VEGETATION/ANIMALS
+
+This is another environment-control rule.
+
+“surrounded by”
+does not automatically indicate:
+physical enclosure architecture.
+
+---
+
+# Ezekiel 2:8–10 — mouth opens; hand extends; scroll arrives already written
+
+Ezekiel is commanded:
+open mouth.
+
+A hand:
+stretches out toward him.
+
+In hand:
+written scroll.
+
+Scroll:
+spread/opened before him.
+
+Writing:
+front and back.
+
+Content:
+lamentation, mourning, woe.
+
+This gives a very clear transfer chain:
+
+**upper/source hand**
+→ **portable written carrier**
+→ **receiver mouth**.
+
+## M52A2-6 — INFORMATION CAN BE PACKAGED INTO A PORTABLE MATERIAL CARRIER BEFORE ENTERING A LIVING RECEIVER
+
+This is exceptionally important.
+
+The message exists:
+outside Ezekiel
+before
+it becomes embodied in him.
+
+---
+
+# Ezekiel 2:9–10 — broad/open scroll state precedes ingestion
+
+The scroll is:
+spread/opened before Ezekiel.
+
+Then in chapter 3:
+he eats it.
+
+This gives:
+
+external/open/readable information object
+→ compact bodily ingestion.
+
+## M52A2-7 — INFORMATION CARRIER CAN CHANGE FROM EXTERNAL DISPLAY STATE TO INTERNAL EMBODIED STATE
+
+This is a real transformation sequence.
+
+However:
+scroll
+does not physically become
+a fingertrap throat.
+
+The relevant process is:
+**display → ingestion → assimilation**.
+
+---
+
+# Ezekiel 3:1–3 — scroll enters mouth and fills stomach
+
+Command:
+eat scroll.
+
+Ezekiel:
+opens mouth.
+
+Scroll:
+given to him.
+
+Instruction:
+fill stomach.
+
+Then:
+he eats.
+
+Taste:
+sweet as honey.
+
+## M52A2-8 — INFORMATION TRANSFER IS PROJECTED AS LITERALIZED INGESTION / INTERNALIZATION
+
+This is perhaps the clearest body-as-information-carrier transformation found so far.
+
+The message is no longer merely:
+heard.
+
+It becomes:
+inside the body.
+
+---
+
+# M52A2-9 — EXTERNAL INFORMATION CAN BECOME PART OF RECEIVER STATE BEFORE BEING RETRANSMITTED
+
+This is crucial.
+
+After ingestion:
+Ezekiel is told
+go and speak.
+
+Thus:
+
+written source
+→ body assimilation
+→ oral output.
+
+The relay is not just a wire.
+
+It becomes a transformed carrier.
+
+---
+
+# Scholarly control — scroll ingestion and written prophecy
+
+Modern scholarship on prophetic textuality treats Ezekiel 2:9–3:3 as a significant development in the relation between written and oral prophecy.
+
+The written divine scroll is presented **before** Ezekiel’s oral proclamation.
+
+Ezekiel receives/ingests the text and then speaks.
+
+Academic discussion has therefore emphasized:
+- written message as prerequisite;
+- embodiment/internalization;
+- later oral proclamation.
+
+## M52A2-10 — EZEKIEL’S RELAY FUNCTION INCLUDES INFORMATION EMBODIMENT, NOT ONLY PASS-THROUGH
+
+This is highly useful for the project.
+
+A carrier can:
+receive;
+transform/store;
+then retransmit.
+
+---
+
+# Ezekiel 3:3 — content valence and carrier taste differ
+
+Scroll content:
+lamentation/mourning/woe.
+
+Taste in mouth:
+sweet as honey.
+
+## M52A2-11 — SIGNAL CONTENT AND CARRIER/RECEIVER EXPERIENCE CAN HAVE DIFFERENT VALENCE
+
+A message can be:
+negative in semantic content
+but
+positive/sweet in receiver experience.
+
+Do not infer physical composition from symbolic taste.
+
+---
+
+# Ezekiel 3:4–7 — language compatibility exists, but receiver willingness fails
+
+Ezekiel is not sent to:
+foreign obscure language.
+
+He is sent to:
+his own people.
+
+The text explicitly says:
+linguistic difficulty is not the primary barrier.
+
+The barrier is:
+refusal/stubbornness.
+
+## M52A2-12 — DECODABILITY AND ACCEPTANCE ARE DISTINCT
+
+A receiver can:
+understand signal
+yet reject it.
+
+This is a major information-channel control.
+
+---
+
+# Ezekiel 3:5–6 — foreign-language contrast shows decoder layer
+
+The text imagines:
+obscure/difficult speech
+versus
+shared language.
+
+## M52A2-13 — COMMUNICATION CHANNEL HAS A DECODER / LANGUAGE-COMPATIBILITY LAYER
+
+This reinforces Isaiah 36.
+
+Transmission chain must track:
+signal propagation
+and
+semantic decoding
+separately.
+
+---
+
+# Ezekiel 3:7–9 — face/forehead is hardened against resistant receivers
+
+Israel:
+hard forehead;
+stubborn heart.
+
+Ezekiel:
+face hardened against faces;
+forehead hardened;
+like hardest stone/flint.
+
+This is a contact-interface image.
+
+## M52A2-14 — INTERFACE HARDNESS CAN BE MATCHED TO OPPOSING RESISTANCE
+
+Receiver resistance:
+high.
+
+Relay interface:
+made comparably/higher resistant.
+
+This resembles:
+impedance matching / structural reinforcement
+at a purely abstract level.
+
+### Control
+
+This is rhetorical toughness,
+not literal mineralization.
+
+---
+
+# M52A2-15 — MATCHED OPPOSITION CAN STABILIZE A RELAY UNDER HOSTILE CONTACT
+
+This is a useful general principle.
+
+A channel node may require:
+mechanical;
+social;
+informational
+resilience appropriate to the receiver environment.
+
+---
+
+# Ezekiel 3:10–11 — heart + ears + mouth form a serial communication path
+
+Instruction:
+receive words in heart;
+hear with ears;
+go to exiles;
+speak.
+
+Sequence:
+
+source word
+→ auditory reception
+→ internal storage/acceptance
+→ movement to destination
+→ oral retransmission.
+
+## M52A2-16 — INFORMATION CAN TRAVEL THROUGH MULTIPLE REPRESENTATIONAL MEDIA IN ONE RELAY
+
+written scroll
+→ taste/body
+→ heart
+→ hearing
+→ spoken word.
+
+The medium changes,
+message identity persists.
+
+This is highly relevant to Vardath’s “same process, different projection” principle.
+
+---
+
+# Ezekiel 3:12–14 — spirit lifts and carries Ezekiel; chariot system sounds behind
+
+The spirit:
+lifts Ezekiel.
+
+He hears:
+wings;
+wheels;
+rumbling.
+
+Then:
+spirit lifts/bears him away.
+
+He goes:
+in bitterness / heat of spirit.
+
+Hand of Lord:
+strong upon him.
+
+## M52A2-17 — HUMAN RECEIVER CAN BECOME CARGO OF THE SAME LARGER SYSTEM THAT DELIVERS THE MESSAGE
+
+This is structurally striking.
+
+Chapter 1:
+large mobile throne/support system.
+
+Chapter 3:
+Ezekiel himself is lifted/born along.
+
+The operator/messenger relation becomes:
+apparatus
+→ human cargo/relay movement.
+
+---
+
+# M52A2-18 — INFORMATION TRANSFER AND BODY TRANSPORT CAN OCCUR IN THE SAME CALL SEQUENCE BUT ARE DISTINCT PROCESSES
+
+Do not collapse:
+scroll ingestion
+and
+spirit transport
+into one mechanism.
+
+One is:
+information embodiment.
+
+The other:
+movement/relocation imagery.
+
+---
+
+# Ezekiel 3:12–13 — wings “brush/touch” with rumbling, wheels remain coordinated
+
+The chapter preserves continuity with Ezekiel 1.
+
+Living-creature wing system:
+still active.
+
+Wheel system:
+still active.
+
+Sound:
+marks movement.
+
+## M52A2-19 — APPARATUS IDENTITY PERSISTS ACROSS SCENE TRANSITION
+
+The chapter does not introduce a new machine.
+
+The same mobility architecture continues.
+
+---
+
+# Ezekiel 3:14–15 — bitterness/heat accompanies arrival; seven-day stunned interval
+
+Ezekiel arrives among exiles.
+
+Then:
+sits stunned/overwhelmed
+for seven days.
+
+## M52A2-20 — TRANSFER/COMMISSION CAN REQUIRE A POST-EVENT PROCESSING OR STABILIZATION INTERVAL
+
+This is interesting for handoff logic.
+
+But:
+seven days here belongs to prophetic-call/ritual/literary context.
+
+Do not convert it into:
+gate recovery duration.
+
+---
+
+# Seven-day control
+
+Seven is important in biblical ritual and narrative.
+
+Some commentators compare Ezekiel’s seven-day period with:
+priestly consecration;
+mourning;
+stunned assimilation.
+
+## M52A2-21 — NUMERIC INTERVAL MUST REMAIN ATTACHED TO ITS LOCAL RITUAL/NARRATIVE FUNCTION
+
+Do not force:
+7
+into
+Vardath 1–3–7
+simply because it appears.
+
+---
+
+# Ezekiel 3:16–17 — sentinel/watchman formalizes relay role
+
+After seven days:
+
+Ezekiel:
+appointed sentinel/watchman.
+
+Task:
+hear word from source
+→ warn people.
+
+This is a clean information-system architecture.
+
+## M52A2-22 — WATCHMAN IS AN EXPLICIT SENSOR/RELAY NODE
+
+Function:
+
+observe/hear hazard information
+→ transmit warning
+→ receivers decide action.
+
+This is one of the clearest relay-node models in scripture.
+
+---
+
+# Ezekiel 3:18–21 — responsibility depends on transmission, not receiver choice
+
+If Ezekiel:
+fails to warn
+→ relay failure is his responsibility.
+
+If Ezekiel:
+warns
+and receiver ignores
+→ receiver failure belongs to receiver.
+
+## M52A2-23 — SYSTEM LIABILITY CAN BE ASSIGNED BY FAILURE STAGE
+
+This is highly useful analytically.
+
+Failure localization:
+
+source available
++
+relay silent
+= relay fault.
+
+relay speaks
++
+receiver refuses
+= receiver/action fault.
+
+This should be added to the general channel model.
+
+---
+
+# M52A2-24 — SUCCESSFUL SIGNAL DELIVERY DOES NOT GUARANTEE SYSTEM-LEVEL SUCCESS
+
+Warning may arrive,
+yet population still fails.
+
+Thus:
+communication success
+≠ behavioral success
+≠ survival success.
+
+---
+
+# Ezekiel 3:20 — stumbling block is inserted into route
+
+The text says:
+a stumbling block can be placed before a person.
+
+This is another route-obstacle image.
+
+## M52A2-25 — ROUTE FAILURE CAN BE PRODUCED BY SMALL LOCAL OBSTACLE WITHOUT GLOBAL PATH COLLAPSE
+
+Compare Lamentations 3:
+cut stone blocks path.
+
+Here:
+single stumbling block.
+
+Scale of obstacle matters.
+
+---
+
+# Ezekiel 3:22–23 — same glory system reappears in valley
+
+Ezekiel:
+moves out to valley.
+
+Glory:
+stands there
+like previous Chebar vision.
+
+He:
+falls again.
+
+## M52A2-26 — SAME APPARATUS/PHENOMENON CAN MANIFEST AT DIFFERENT LOCAL LOCATIONS WITHOUT CHANGING ITS IDENTITY
+
+This is relevant to Vardath’s:
+one mechanism
+many local manifestations
+idea.
+
+But:
+visionary recurrence
+≠ physical roaming world-gate proof.
+
+---
+
+# Ezekiel 3:24 — spirit enters again and raises body
+
+Again:
+spirit enters
+→ sets Ezekiel upright.
+
+This repeats 2:2.
+
+## M52A2-27 — REPEATED STATE-SETTING ACTION CAN RESET RECEIVER POSTURE/READINESS
+
+Repeated process:
+does not necessarily mean
+new world-cycle.
+
+---
+
+# Ezekiel 3:24–25 — house enclosure + cords physically/ritually restrict movement
+
+Command:
+shut inside house.
+
+Then:
+cords/bands placed on him
+→ bound
+→ cannot go among people.
+
+This gives:
+enclosure
++
+restraint
++
+route closure.
+
+## M52A2-28 — COMMUNICATION NODE CAN BE PHYSICALLY ISOLATED FROM ITS RECEIVER NETWORK
+
+The messenger exists.
+
+The message source exists.
+
+But physical/social access is constrained.
+
+---
+
+# Ezekiel 3:26 — speech channel is also closed
+
+Tongue:
+made to cling to roof of mouth.
+
+Result:
+speechless;
+cannot reprove.
+
+This adds a second closure:
+
+### body movement
+house + cords
+→ cannot reach people.
+
+### information output
+tongue immobilized
+→ cannot speak.
+
+## M52A2-29 — ONE RELAY CAN HAVE INDEPENDENT MOBILITY AND OUTPUT CHANNELS BLOCKED
+
+This is exceptionally useful.
+
+A messenger may fail because:
+- cannot reach destination;
+- cannot emit signal;
+- signal blocked;
+- receiver refuses.
+
+These are different faults.
+
+---
+
+# Ezekiel 3:27 — source later opens the mouth
+
+When source speaks:
+Ezekiel’s mouth opens.
+
+Then:
+signal output resumes.
+
+Receivers:
+may hear or refuse.
+
+## M52A2-30 — OUTPUT GATE CAN BE SOURCE-CONTROLLED
+
+The chapter literally frames speech as:
+closed
+→ later opened
+by source permission.
+
+This is a strong gate analogue at the **information-output** level.
+
+Not:
+cosmic material gate.
+
+But:
+state-controlled aperture/function.
+
+---
+
+# Ezekiel 2–3 information-carrier synthesis
+
+This sequence is unusually complete:
+
+external divine source
+→ written scroll carrier
+→ hand presents carrier
+→ mouth opens
+→ scroll enters body
+→ stomach fills
+→ message is internally assimilated
+→ receiver is hardened for hostile environment
+→ body is transported to target population
+→ seven-day processing interval
+→ relay role formalized as sentinel
+→ warning is transmitted
+→ receiver response separated from relay responsibility
+→ later body mobility is blocked
+→ speech output is blocked
+→ source reopens output
+→ message resumes.
+
+## M52A2-31 — EZEKIEL 2–3 IS A COMPLETE INFORMATION-TRANSFER / EMBODIMENT / RELAY / GATING MODEL
+
+This is one of the strongest systems sequences found so far.
+
+Its value to Vardath is not:
+physical proof of world transfer.
+
+Its value is:
+**channel architecture**.
+
+---
+
+# Strict fingertrap test — Ezekiel 2–3
+
+## broad/open structure
+Scroll is spread open, but not a support web.
+
+## same structure narrows
+No.
+
+## connected strand network
+No.
+
+## axial throat
+Mouth is aperture, but not formed by narrowing lattice.
+
+## cargo transfer
+Yes:
+scroll/information enters mouth/body.
+
+## reopening
+Mouth later opens for speech, but not the same structure returning from a broad support state.
+
+### Verdict
+
+**Not a strict fingertrap sequence.**
+
+There is a powerful:
+**aperture → cargo ingestion → internalization → output reopening**
+analogue,
+but it lacks:
+same broad connected support structure
+→ narrowing throat
+→ transfer
+→ reopening.
+
+---
+
+# Strict dragon-ground-support test — Ezekiel 2–3
+
+No new:
+dragon;
+ground support;
+spring network.
+
+The chapter relies on the support/mobility architecture already seen in chapter 1.
+
+### Verdict
+
+No new positive support evidence beyond chapter 1.
+
+---
+
+# Squatter-Man screening — Ezekiel 2–3
+
+## human figure centrally operated
+Yes.
+
+## posture change
+Strong:
+face-down → upright.
+
+## body carries message
+Strong.
+
+## arms/branches
+No distinctive bilateral support.
+
+## rod/serpent
+No.
+
+## upper/lower connector
+Spirit/body relation, but not explicit world bridge.
+
+## environmental control
+No.
+
+### Verdict
+
+**Strong human relay/operator/cargo figure; weak strict Squatter-Man morphology.**
+
+---
+
+# Ezekiel 2–3 pair / process matrix
+
+## source / Ezekiel
+message origin / embodied relay.
+
+## scroll / mouth
+portable written carrier / intake aperture.
+
+## written text / spoken word
+stored representation / emitted representation.
+
+## ears / heart
+sensory reception / internal acceptance-storage.
+
+## sender / receiver
+transmitter / target population.
+
+## hearing / refusing
+signal detection / response rejection.
+
+## hard face / hard face
+reinforced relay / resistant receiver.
+
+## spirit / body
+animating/transferring agency / receiver-cargo.
+
+## living creatures / wheels
+support/mobility subsystems continuing from chapter 1.
+
+## seven-day interval / watchman role
+processing pause / formal relay function.
+
+## relay warning / receiver response
+transmission responsibility / behavioral responsibility.
+
+## house/cords / people
+physical isolation / destination network.
+
+## closed tongue / opened mouth
+output disabled / output enabled.
+
+---
+
+# Ezekiel 1–3 integrated transformation timeline
+
+exile location established
+→ heavens open
+→ storm/fire/cloud field approaches
+→ four living support/mobility nodes appear
+→ wings connect/touch
+→ fire/light field moves among nodes
+→ wheels interface with earth
+→ shared spirit synchronizes movement
+→ system rises from earth
+→ broad expanse appears above nodes
+→ throne/humanlike operator appears above expanse
+→ Ezekiel falls
+→ spirit enters and sets him upright
+→ source commissions him as messenger
+→ receiver population may hear/refuse
+→ hand extends written scroll
+→ scroll opens before Ezekiel
+→ mouth opens
+→ scroll enters body
+→ written information becomes embodied
+→ Ezekiel is sent to speak same message
+→ language is understandable but receiver willingness is poor
+→ relay interface is hardened
+→ spirit lifts/bears Ezekiel
+→ chariot/support apparatus continues moving audibly
+→ Ezekiel reaches exiles
+→ seven-day stunned/processing interval
+→ watchman role formalizes sensing/warning responsibility
+→ warning success is separated from receiver response
+→ vision/glory reappears in valley
+→ spirit again sets body upright
+→ Ezekiel is shut in house
+→ cords restrict movement
+→ tongue/output is blocked
+→ source later opens speech
+→ relay resumes transmission.
+
+---
+
+# New master-mechanism additions from Ezekiel 2–3
+
+## M52A2-1 — ENTERING FORCE CAN CHANGE RECEIVER POSTURE
+## M52A2-2 — RECEIVER CONFIGURATION CAN AFFECT COMMUNICATION FUNCTION
+## M52A2-3 — SOURCE/RELAY/RECEIVER ARE DISTINCT
+## M52A2-4 — FAILED RESPONSE ≠ FAILED TRANSMISSION
+## M52A2-5 — SURROUNDING HAZARD IMAGE MAY BE SOCIAL, NOT PHYSICAL ENCLOSURE
+## M52A2-6 — INFORMATION CAN BE PACKAGED IN MATERIAL CARRIER
+## M52A2-7 — CARRIER CAN CHANGE FROM EXTERNAL DISPLAY TO INTERNAL EMBODIMENT
+## M52A2-8 — INFORMATION TRANSFER CAN BE PROJECTED AS INGESTION
+## M52A2-9 — RECEIVER CAN STORE/TRANSFORM MESSAGE BEFORE RETRANSMISSION
+## M52A2-10 — RELAY FUNCTION CAN INCLUDE EMBODIMENT
+## M52A2-11 — SIGNAL CONTENT AND RECEIVER EXPERIENCE CAN DIFFER
+## M52A2-12 — DECODABILITY ≠ ACCEPTANCE
+## M52A2-13 — COMMUNICATION HAS LANGUAGE/DECODER LAYER
+## M52A2-14 — INTERFACE HARDNESS CAN MATCH RECEIVER RESISTANCE
+## M52A2-15 — RELAY MAY REQUIRE RESILIENCE MATCHED TO ENVIRONMENT
+## M52A2-16 — MESSAGE CAN PERSIST ACROSS MULTIPLE MEDIA
+## M52A2-17 — HUMAN RELAY CAN BECOME CARGO OF LARGER SYSTEM
+## M52A2-18 — INFORMATION TRANSFER ≠ BODY TRANSPORT
+## M52A2-19 — APPARATUS IDENTITY CAN PERSIST ACROSS SCENE TRANSITION
+## M52A2-20 — TRANSFER/COMMISSION CAN HAVE POST-EVENT PROCESSING INTERVAL
+## M52A2-21 — NUMERIC INTERVAL MUST REMAIN ATTACHED TO LOCAL FUNCTION
+## M52A2-22 — WATCHMAN IS EXPLICIT SENSOR/RELAY NODE
+## M52A2-23 — FAILURE LIABILITY CAN BE LOCALIZED BY STAGE
+## M52A2-24 — SIGNAL DELIVERY ≠ BEHAVIORAL/SURVIVAL SUCCESS
+## M52A2-25 — LOCAL OBSTACLE CAN DISRUPT ROUTE WITHOUT GLOBAL COLLAPSE
+## M52A2-26 — SAME PHENOMENON CAN MANIFEST AT MULTIPLE LOCATIONS
+## M52A2-27 — REPEATED STATE-SETTING ACTION ≠ NEW WORLD CYCLE
+## M52A2-28 — RELAY CAN BE PHYSICALLY ISOLATED FROM DESTINATION
+## M52A2-29 — MOBILITY AND OUTPUT CHANNELS CAN BE BLOCKED INDEPENDENTLY
+## M52A2-30 — OUTPUT GATE CAN BE SOURCE-CONTROLLED
+## M52A2-31 — EZEKIEL 2–3 FORMS A COMPLETE INFORMATION EMBODIMENT/RELAY/GATING MODEL
+
+---
+
+# Number / timing register — Ezekiel 2–3
+
+Record without forcing:
+
+- **7 days** stunned among the exiles.
+- watchman commission follows at end of seven days.
+- no physical gate duration.
+- no world-layer count.
+- no fingertrap dimension.
+- no dragon-support count introduced beyond Ezekiel 1.
+
+### Number control
+
+Seven has local prophetic/priestly/ritual resonance.
+
+Do not convert:
+seven-day stunned interval
+into
+world-gate duration.
+
+---
+
+# Textual / scholarly controls — Ezekiel 2–3
+
+1. Working primary text: Ezekiel 2–3 NRSVUE.
+2. Ezekiel 1:1–3:15 is widely treated as the larger prophetic call complex.
+3. Scroll ingestion is visionary/symbolic and conventionally understood as internalization/appropriation of the prophetic message.
+4. Modern scholarship on prophetic textuality emphasizes that Ezekiel receives a written divine scroll before oral proclamation.
+5. The scroll’s negative semantic content and sweet taste are distinct literary variables.
+6. Shared language does not produce acceptance; receiver resistance is ethical/theological, not decoding failure.
+7. The spirit’s lifting/bearing of Ezekiel belongs to the visionary call sequence; do not assume ordinary measured physical flight.
+8. The seven-day interval is local to Ezekiel’s commissioning/processing context.
+9. The watchman metaphor derives from sentinel warning function: responsibility is attached to sounding the warning, not controlling receiver response.
+10. House/cord/speech restriction in 3:24–27 creates both movement and output blockage.
+11. Source-controlled reopening of Ezekiel’s mouth is a strong communication-gate image, not a physical world gate.
+12. Strict fingertrap status: negative.
+13. Strict new dragon-ground-support evidence: none beyond Ezekiel 1.
+
+---
+
+# Sources logged — Ezekiel 2–3
+
+Primary:
+- Ezekiel 1–3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel%201-3&version=NRSVUE
+
+Scholarly/contextual:
+- Harvard Theological Review, discussion of Ezekiel 2:9–3:3 and celestial scroll ingestion:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/gilayon-and-apocalypse-reconsidering-an-early-jewish-concept-and-genre/DACB90C388C2CD98E768379BFED593FA
+- Martti Nissinen, discussion of written prophecy and Ezekiel’s scroll ingestion in scholarship on prophetic writing.
+- Working Preacher, Ezekiel 33:7–11, for the sentinel/watchman role that explicitly repeats Ezekiel 3:16–21:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-23/commentary-on-ezekiel-337-11-5
+- Peake’s commentary on Ezekiel 3, used cautiously for scroll internalization, seven-day stunned state and sentinel function:
+  https://www.studylight.org/commentaries/eng/pfc/ezekiel-3.html
+
+---
+
+# SECTION 52A2 CHECKPOINT — EZEKIEL 2–3 COMPLETE
+# EZEKIEL 1–3 INITIAL CALL BLOCK COMPLETE
+
+Strongest first-time findings:
+
+1. **Ezekiel 2–3 is one of the clearest information-transfer systems in the corpus: source → written carrier → body ingestion → internal storage → oral retransmission.**
+2. **The messenger is transformed into an embodied relay rather than functioning as a passive wire.**
+3. **Language compatibility and receiver willingness are explicitly distinct.**
+4. **The watchman section formalizes sender/relay/receiver failure localization: relay responsibility ends after successful warning; receiver response is separate.**
+5. **Movement and speech-output channels can be independently disabled.**
+6. **Ezekiel’s mouth functions as a source-controlled information aperture: closed, then reopened.**
+7. **The support/mobility apparatus from Ezekiel 1 remains continuous while Ezekiel himself becomes transported cargo/relay.**
+8. **The seven-day interval is important locally but provides no world-cycle timing evidence.**
+9. **No strict fingertrap transformation appears in Ezekiel 2–3.**
+10. **The combined 1–3 block now gives a powerful division of roles: support apparatus, energy/control field, operator, human cargo/relay, information carrier and resistant receiver population.**
+
+### Next live block
+
+**Ezekiel 4–7**
+
+Priority:
+- model city on brick/tablet;
+- siege works / ramps / camps / battering rams;
+- iron plate as wall between prophet and city;
+- body lying on left/right sides for long intervals;
+- bound body unable to turn;
+- measured food/water under siege;
+- fuel/fire contamination controls;
+- hair divided/burned/struck/scattered;
+- sword pursuit;
+- mountain/hill ravine altar destruction;
+- hand-stamping / foot-stamping;
+- “four corners of the land” / end coming;
+- chain imagery;
+- HIGH PRIORITY: distinguish scale-model projection and bounded-body geometry from actual Squatter-Man/lattice mechanics.
