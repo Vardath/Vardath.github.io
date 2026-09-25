@@ -53878,3 +53878,1049 @@ Priority:
 - “fixed order” of sun/moon/stars and sea-roaring;
 - city rebuilding dimensions/boundaries;
 - high priority comparison of fixed celestial order, water-supported return route, broken yoke/bonds, and rebuilt-city geometry with Vardath post-gate stabilization.
+
+
+---
+
+# SECTION 50 progress G1 — Jeremiah 30–31
+## First-time research pass: distress→release, neck-yoke/bonds broken, scattered population regathered, wound→healing, ruined city rebuilt, Rachel/children return, road markers and signposts, “woman surrounds man” textual puzzle, new covenant/internalized law, and sun–moon–stars as stable cosmic-clock benchmark
+
+Jeremiah 30–31 is the heart of the “Book of Consolation.”
+
+Its dominant transformation sequence is:
+
+distress / yoke / foreign domination
+→ yoke broken
+→ population regathered
+→ wounds healed
+→ city rebuilt
+→ mourning turns to joy
+→ scattered children return
+→ roads/signposts preserve route memory
+→ internal information storage replaces repeated external instruction as the ideal
+→ cosmic ordinances of sun/moon/stars become the benchmark for covenant stability.
+
+For Vardath Cosmology this is especially relevant to:
+- release from constraint;
+- return-route marking;
+- memory preservation across displacement;
+- internalized information;
+- stable astronomical timing after catastrophe.
+
+No dragon/lattice-spring mechanism is explicitly named in this block.
+
+---
+
+# Jeremiah 30:3 — restoration begins with population return to land
+
+The opening promise:
+Israel/Judah
+→ brought back
+→ possess land.
+
+## M50G1-1 — RESTORATION CAN REQUIRE BOTH POPULATION TRANSFER AND DESTINATION REATTACHMENT
+
+Return is not complete at:
+movement alone.
+
+It ends with:
+stable land relation.
+
+---
+
+# Jeremiah 30:5–7 — “time of distress” is a compressed crisis phase
+
+The text describes:
+terror;
+trembling;
+labor-like pain;
+faces pale.
+
+Then:
+“that day” / time of Jacob’s distress
+→ deliverance.
+
+## M50G1-2 — LONG HISTORICAL REGIME CAN TERMINATE IN A SHORTER HIGH-INTENSITY TRANSITION PHASE
+
+This continues:
+Jeremiah 25–29 nested timescales.
+
+The acute event:
+not the same timescale
+as the 70-year regime.
+
+---
+
+# Jeremiah 30:6 — male labor-pain image is intentionally impossible/striking
+
+Men are pictured:
+hands on loins
+like woman in labor.
+
+## M50G1-3 — LABOR/BIRTH GEOMETRY CAN BE USED TO PROJECT PRESSURE/TRANSITION EVEN WHEN THE SUBJECT CANNOT LITERALLY GIVE BIRTH
+
+This is a strong control.
+
+Birth imagery:
+does not by itself prove:
+literal biological gate.
+
+---
+
+# Jeremiah 30:8 — yoke and bonds are broken
+
+The source says:
+break yoke from neck;
+burst bonds.
+
+This directly reverses:
+Jeremiah 27–28.
+
+## M50G1-4 — SAME RESTRAINT SYSTEM CAN HAVE INSTALLATION AND REMOVAL PHASES IN DIFFERENT HISTORICAL STATES
+
+Earlier:
+yoke applied.
+
+Now:
+yoke removed.
+
+This gives:
+full restraint lifecycle.
+
+---
+
+# Jeremiah 30:8 — breaking yoke is release from external controller
+
+The political referent:
+foreign domination.
+
+## M50G1-5 — MECHANICAL RESTRAINT IMAGE CAN MODEL POLITICAL DECOUPLING
+
+Again:
+not support-lattice geometry.
+
+---
+
+# Jeremiah 30:10–11 — dispersed population survives across distance
+
+Jacob:
+saved from far away;
+offspring from captivity.
+
+Return:
+quiet/ease/security.
+
+## M50G1-6 — SURVIVAL CAN OCCUR OFF-SITE BEFORE RECONVERGENCE
+
+This reinforces:
+Jeremiah 24/29.
+
+---
+
+# Jeremiah 30:11 — destruction is selective/limited
+
+Nations:
+may be destroyed/ended.
+
+Israel:
+disciplined, not annihilated.
+
+## M50G1-7 — CATASTROPHE CAN APPLY DIFFERENT SURVIVAL FUNCTIONS TO DIFFERENT POPULATIONS
+
+This does not prove:
+literal physical sorting at a world gate.
+
+It establishes:
+selective outcome architecture.
+
+---
+
+# Jeremiah 30:12–17 — incurable wound language reverses into healing
+
+Initial diagnosis:
+wound incurable;
+injury grievous;
+no medicine.
+
+Later:
+health restored;
+wounds healed.
+
+## M50G1-8 — TEXT CAN DELIBERATELY REVERSE AN “INCURABLE” STATE INTO RECOVERY
+
+This is important:
+“incurable”
+can function rhetorically within a phase,
+not always as absolute terminality.
+
+---
+
+# M50G1-9 — SYSTEM-STATE LABELS MAY BE PHASE-RELATIVE RATHER THAN ABSOLUTE
+
+For Vardath:
+“destroyed,”
+“dead,”
+“desolate”
+must be checked against later reversal.
+
+---
+
+# Jeremiah 30:18 — city/settlement is rebuilt on its mound/site
+
+City:
+rebuilt upon ruin/mound.
+
+Palace:
+stands in proper place.
+
+## M50G1-10 — SUCCESSOR SETTLEMENT CAN REUSE THE SAME TOPOGRAPHIC NODE
+
+This is strongly compatible with:
+reset not rewind.
+
+Same location:
+new state.
+
+---
+
+# Jeremiah 30:18 — rebuilding on mound implies inherited substrate
+
+## M50G1-11 — SUCCESSOR INFRASTRUCTURE CAN BE LAYERED DIRECTLY OVER PRIOR DESTRUCTION
+
+This is archaeological as well as literary logic.
+
+---
+
+# Jeremiah 30:19–21 — population grows and internal leadership returns
+
+Thanksgiving;
+population multiplication;
+community restored;
+leader arises from among them.
+
+## M50G1-12 — STABLE SUCCESSOR REQUIRES DEMOGRAPHIC GROWTH + INTERNAL CONTROL NODE
+
+A surviving population without:
+governance
+may remain unstable.
+
+---
+
+# Jeremiah 30:23–24 — whirling storm returns as terminal-process image
+
+The storm:
+whirls;
+falls on wicked;
+continues until purpose accomplished.
+
+## M50G1-13 — ROTATIONAL HIGH-ENERGY PROCESS CAN BE REPRESENTED AS RUNNING UNTIL A TERMINAL CONDITION
+
+This repeats Jeremiah 23.
+
+### Vardath relevance
+
+Whirling/current imagery is structurally interesting,
+but no dragon support geometry is specified.
+
+---
+
+# Jeremiah 31:1–3 — scattered tribes are redefined as one relational population
+
+“All families of Israel”
+→ one people relation.
+
+## M50G1-14 — DISTRIBUTED SUBGROUPS CAN BE REASSEMBLED INTO A SINGLE HIGHER-LEVEL IDENTITY
+
+This is a network-unification process.
+
+---
+
+# Jeremiah 31:4 — rebuilding follows prior dismantling
+
+Virgin Israel:
+built again.
+
+Then:
+ornament/dance return.
+
+## M50G1-15 — RECONSTRUCTION CAN RESTORE SOCIAL/CULTURAL OUTPUT AFTER STRUCTURAL RETURN
+
+---
+
+# Jeremiah 31:5 — vineyards are replanted and used
+
+Plant:
+vineyards.
+
+Planters:
+enjoy fruit.
+
+## M50G1-16 — AGRICULTURAL SUCCESSOR STATE REQUIRES BOTH PRODUCTION AND USER ACCESS
+
+This reverses:
+failed production-use loops in Micah.
+
+---
+
+# Jeremiah 31:6 — watchmen switch from warning role to pilgrimage signal
+
+Watchmen call:
+arise;
+go to Zion.
+
+## M50G1-17 — SAME OBSERVER NODE CLASS CAN CHANGE FROM HAZARD WARNING TO ROUTE-ACTIVATION SIGNAL
+
+Important:
+watchman function is state-dependent.
+
+---
+
+# Jeremiah 31:7–9 — remnant return includes low-mobility people
+
+Gathered group includes:
+blind;
+lame;
+pregnant;
+laboring women.
+
+## M50G1-18 — SUCCESSFUL MASS TRANSFER MUST ACCOUNT FOR LOW-MOBILITY AND HIGH-DEPENDENCY POPULATIONS
+
+This strongly reinforces Isaiah 60.
+
+---
+
+# Jeremiah 31:9 — return route is coupled to water
+
+They are led:
+by streams of water;
+on straight path;
+without stumbling.
+
+## M50G1-19 — SAFE RETURN REQUIRES WATER + ROUTE GEOMETRY + STABILITY
+
+This is an excellent survival corridor.
+
+---
+
+# Jeremiah 31:9 — water and straight path are simultaneous route-support variables
+
+## M50G1-20 — HYDROLOGY AND PATH GEOMETRY CAN BE CO-OPTIMIZED FOR TRANSFER
+
+Vardath relevance:
+after gate opening,
+surface travel conditions matter.
+
+---
+
+# Jeremiah 31:10 — scattering and gathering use shepherd/flock control again
+
+Source:
+scattered Israel;
+gathers him;
+keeps as shepherd keeps flock.
+
+## M50G1-21 — SAME OPERATOR CAN DRIVE DISPERSION AND LATER RECONVERGENCE
+
+This is important:
+opposite processes need not imply different operators.
+
+---
+
+# Jeremiah 31:12 — return creates resource convergence at height
+
+Population:
+streams to goodness;
+grain;
+wine;
+oil;
+young flock/herd.
+
+Life:
+like watered garden.
+
+## M50G1-22 — POPULATION RETURN CAN TERMINATE IN MULTI-RESOURCE ECOLOGICAL ABUNDANCE
+
+Watered-garden imagery repeats Isaiah 58.
+
+---
+
+# Jeremiah 31:13 — mourning→joy is a social-state inversion
+
+Young/old:
+rejoice together.
+
+Mourning:
+turned into joy.
+
+## M50G1-23 — SUCCESSOR STATE CAN REVERSE EMOTIONAL/SOCIAL OUTPUT ACROSS GENERATIONS
+
+---
+
+# Jeremiah 31:15 — Rachel weeps for absent children
+
+Rachel:
+ancestral mother figure.
+
+Children:
+gone/not present.
+
+Ramah:
+location of lament.
+
+## M50G1-24 — ANCESTRAL FIGURE CAN REPRESENT LATER POPULATION LOSS ACROSS GENERATIONS
+
+This is not:
+literal Rachel physically surviving into exile-era history.
+
+It is:
+corporate ancestral personification.
+
+---
+
+# Jeremiah 31:16–17 — children return from enemy land
+
+Weeping:
+stopped.
+
+Children:
+return.
+
+Future:
+has hope.
+
+## M50G1-25 — ABSENT POPULATION CAN BE MODELLED AS RECOVERABLE RATHER THAN TERMINALLY LOST
+
+This strengthens:
+off-site preservation logic.
+
+---
+
+# Jeremiah 31:18–20 — Ephraim is projected as child under discipline
+
+Population/tribal identity:
+becomes child.
+
+## M50G1-26 — COLLECTIVE POLITICAL ENTITY CAN BE PROJECTED AS CHILD WITHOUT LITERAL BODY IDENTITY
+
+Another body-personification control.
+
+---
+
+# Jeremiah 31:21 — road markers / signposts preserve route memory
+
+This is one of the block’s strongest Vardath-relevant verses.
+
+Commands:
+set up road markers;
+make guideposts;
+consider highway/road taken;
+return by same route.
+
+## M50G1-27 — SUCCESSFUL RETURN CAN REQUIRE EXTERNALIZED ROUTE MEMORY
+
+This is a concrete navigation system.
+
+---
+
+# M50G1-28 — ROUTE INFORMATION CAN BE STORED IN PHYSICAL MARKERS IN THE ENVIRONMENT
+
+This is highly relevant to:
+post-catastrophe survival planning.
+
+Markers survive:
+even if memory/visibility/navigation fail.
+
+---
+
+# Jeremiah 31:21 — “set your heart toward the highway” adds internal route memory
+
+External:
+markers/signposts.
+
+Internal:
+attention/memory toward route.
+
+## M50G1-29 — ROBUST NAVIGATION CAN USE REDUNDANT EXTERNAL + INTERNAL MEMORY
+
+This is an excellent systems principle.
+
+---
+
+# Vardath route comparison
+
+A gate event may disrupt:
+- landmarks;
+- sky;
+- magnetic reference;
+- roads.
+
+Jeremiah 31 supplies a practical survivor principle:
+**mark the route before/while leaving so return remains possible.**
+
+## M50G1-30 — RETURNABILITY SHOULD BE DESIGNED BEFORE TRANSFER IF THE ENVIRONMENT MAY CHANGE
+
+This is high-value for the Vardath survival architecture.
+
+---
+
+# Jeremiah 31:22 — “a woman surrounds/encircles a man” is textually famous and difficult
+
+The Hebrew phrase:
+“woman surrounds man”
+has produced many interpretations.
+
+Proposals include:
+- reversal of normal courtship;
+- protective embrace;
+- sexual/reproductive imagery;
+- military imagery;
+- idiomatic/new-creation sign.
+
+No consensus.
+
+## M50G1-31 — HIGHLY OBSCURE GEOMETRIC VERB SHOULD NOT BE PROMOTED INTO A COSMIC ENCIRCLEMENT MECHANISM WITHOUT SUPPORT
+
+This is especially important because:
+“surround/encircle”
+is attractive to the Vardath geometry.
+
+The text is too uncertain.
+
+---
+
+# M50G1-32 — TEXTUAL/SEMANTIC UNCERTAINTY MUST REDUCE CORRESPONDENCE WEIGHT EVEN WHEN THE IMAGE LOOKS GEOMETRICALLY INTERESTING
+
+Permanent rule.
+
+---
+
+# Jeremiah 31:23–26 — restored land is called dwelling of righteousness / holy hill
+
+The land/city returns to:
+stable habitation.
+
+## M50G1-33 — SUCCESSOR LAND CAN RECEIVE NEW IDENTITY AFTER REPOPULATION
+
+---
+
+# Jeremiah 31:27 — house of Israel/Judah is “sown” with humans and animals
+
+The source says:
+sow
+with seed of humans
+and seed of animals.
+
+## M50G1-34 — REPOPULATION CAN BE PROJECTED AS BIOLOGICAL/AGRICULTURAL SEEDING OF BOTH HUMAN AND ANIMAL POPULATIONS
+
+This is highly relevant to:
+world repopulation.
+
+### Control
+
+It is metaphorical seeding,
+not literal human seed dispersal as grain.
+
+---
+
+# Jeremiah 31:28 — destruction verbs reverse into construction verbs
+
+watch over:
+pluck up;
+break down;
+overthrow;
+destroy;
+bring evil.
+
+Then:
+build;
+plant.
+
+## M50G1-35 — SAME HIGH-LEVEL OPERATOR CAN RUN DECONSTRUCTION PHASE AND RECONSTRUCTION PHASE
+
+This is extremely compatible with:
+destructive gate event
+→ successor rebuilding.
+
+But no physical gate is named.
+
+---
+
+# Jeremiah 31:29–30 — responsibility shifts away from inherited-sour-grapes formula
+
+Each:
+dies for own iniquity;
+teeth set on edge by own sour grapes.
+
+## M50G1-36 — SYSTEM MODEL CAN SHIFT FROM INTERGENERATIONAL LOAD TRANSFER TO LOCALIZED RESPONSIBILITY
+
+This is a change in causal attribution.
+
+---
+
+# Jeremiah 31:31–34 — new covenant moves law from external medium into internal memory
+
+The key information transformation:
+
+law/instruction
+→ placed within;
+→ written on heart.
+
+Then:
+less/no need for person-to-person “know YHWH” teaching in the idealized future.
+
+## M50G1-37 — INFORMATION CAN MIGRATE FROM EXTERNAL STORAGE/TEACHING DEPENDENCE TO INTERNALIZED MEMORY
+
+This is one of the strongest information architecture passages in Jeremiah.
+
+---
+
+# “writing on heart” — scribal-memory control
+
+Recent scholarship on ancient oral-written culture argues:
+“writing on the heart”
+can function as an idiom of memorization/internalized text,
+not rejection of writing technology itself.
+
+## M50G1-38 — INTERNAL MEMORY AND EXTERNAL WRITING ARE COMPLEMENTARY INFORMATION STORAGE MODES
+
+This is highly relevant to the project.
+
+For robust catastrophe memory:
+use both:
+- internal cultural memory;
+- durable physical archives.
+
+Jeremiah 32 will immediately add the external sealed-deed side.
+
+---
+
+# M50G1-39 — A ROBUST CIVILIZATION SHOULD STORE CRITICAL INFORMATION IN MULTIPLE MEDIA
+
+Possible Vardath memory system:
+- oral tradition;
+- written book;
+- stone/metal markers;
+- digital copies;
+- distributed locations;
+- internalized teaching.
+
+This is a strong project implication.
+
+---
+
+# Jeremiah 31:34 — knowledge becomes distributed across population
+
+Least→greatest:
+all know.
+
+## M50G1-40 — INFORMATION CAN SHIFT FROM CENTRALIZED SPECIALIST CONTROL TO DISTRIBUTED POPULATION MEMORY
+
+This reduces:
+single-point knowledge failure.
+
+---
+
+# Jeremiah 31:35 — sun/moon/stars become fixed-order timing benchmark
+
+The text invokes:
+sun for day;
+moon/stars for night;
+sea stirring.
+
+These are called:
+ordinances/fixed order.
+
+## M50G1-41 — RECURRING ASTRONOMICAL CYCLES CAN FUNCTION AS STABILITY CLOCKS
+
+This is directly relevant to Vardath timing research.
+
+---
+
+# M50G1-42 — COSMIC CLOCK SHOULD BE DISTINGUISHED FROM CATASTROPHE TRIGGER
+
+Sun/moon/star cycles:
+stable reference.
+
+They are not automatically:
+the gate trigger.
+
+But deviations/interactions might be tested separately.
+
+---
+
+# Jeremiah 31:35 — sea stirring joins astronomical order and fluid dynamics
+
+The same source:
+sets celestial lights
+and
+stirs sea/roaring waves.
+
+## M50G1-43 — ASTRONOMICAL ORDER AND WATER DYNAMICS CAN APPEAR IN ONE COSMIC CONTROL FRAME
+
+This is interesting for Vardath,
+where world geometry and water response are linked.
+
+But causal mechanics are not specified.
+
+---
+
+# Jeremiah 31:36–37 — Israel continuity is compared to persistence of cosmic ordinances and immeasurable dimensions
+
+If fixed order departs:
+Israel ceases.
+
+If heavens can be measured
+and earth foundations searched:
+then rejection possible.
+
+## M50G1-44 — COSMIC REGULARITY CAN BE USED AS A BENCHMARK FOR SOCIAL/IDENTITY CONTINUITY
+
+This is analogy,
+not a technical cosmological measurement claim.
+
+---
+
+# Jeremiah 31:37 — earth foundations are explicitly “searched out”
+
+## M50G1-45 — FOUNDATION LANGUAGE CAN REFER TO DEEP/INACCESSIBLE STRUCTURE WITHOUT IDENTIFYING ITS MECHANISM
+
+### Vardath relevance
+
+Because the dragons are the lattice springs supporting the ground,
+“foundations of earth” is a high-interest phrase.
+
+But Jeremiah 31 does not say:
+dragons = foundations.
+
+So:
+flag for support-structure comparison,
+not identity.
+
+---
+
+# Jeremiah 31:38–40 — city expands/rebuilds across named boundary points
+
+Future city:
+rebuilt;
+measuring line extends;
+named sites incorporated;
+valley/corpses/ashes transformed into holy territory;
+city not uprooted/overthrown again.
+
+## M50G1-46 — SUCCESSOR CITY CAN EXPAND BEYOND PRIOR BOUNDARY AND INCORPORATE FORMER FAILURE/DEATH ZONES
+
+This resembles Micah 7 boundary expansion.
+
+---
+
+# M50G1-47 — MEASURING LINE CAN DEFINE SUCCESSOR BOUNDARY WITHOUT BEING SUPPORT LATTICE
+
+Another line-control rule.
+
+---
+
+# Jeremiah 30–31 — Vardath timing/memory synthesis
+
+The block gives:
+
+acute distress
+→ yoke break
+→ scattered population return
+→ low-mobility-inclusive migration
+→ water-supported straight route
+→ route markers/signposts
+→ city/agriculture rebuilt
+→ population reseeded
+→ internalized law/memory
+→ sun/moon/star fixed order
+→ expanded stable city.
+
+## M50G1-48 — A COMPLETE SUCCESSOR SYSTEM NEEDS RELEASE + ROUTE + WATER + NAVIGATION MEMORY + REPOPULATION + INFORMATION CONTINUITY + STABLE CLOCK
+
+This is one of the most complete non-mechanical Vardath support sequences so far.
+
+---
+
+# Jeremiah 30–31 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## foundation language
+Present:
+earth foundations, but not mechanically defined.
+
+## yoke release
+Strong, but restraint not support.
+
+## route geometry
+Strong:
+straight path.
+
+## route memory
+Exceptionally strong:
+markers/signposts.
+
+## water-supported migration
+Strong.
+
+## astronomical timing order
+Strong.
+
+## gate/throat
+Absent.
+
+## same support lattice transforms
+Absent.
+
+### Strict verdict
+
+**Jeremiah 30–31 is not a fingertrap-mechanism block. It is exceptionally strong for the Vardath recovery architecture: constraint is broken, scattered populations—including low-mobility groups—return by a water-supported straight route, the path is deliberately marked for later navigation, the city and agriculture are rebuilt, population continuity is re-established, and critical information moves toward distributed/internalized memory while stable sun/moon/star cycles serve as the benchmark clock.**
+
+---
+
+# Jeremiah 30–31 pair / process matrix
+
+## distress / deliverance
+acute transition / release.
+
+## yoke-bond / broken yoke
+constraint / decoupling.
+
+## scatter / gather
+dispersion / reconvergence.
+
+## incurable wound / healing
+terminal-looking state / reversal.
+
+## ruined mound / rebuilt city
+failed node / successor node.
+
+## watchman / route call
+observer / migration activation.
+
+## blind-lame-pregnant / return route
+low-mobility population / supported corridor.
+
+## straight path / stumbling
+optimized route / transfer failure.
+
+## Rachel / children
+ancestral mother / displaced population.
+
+## marker-signpost / highway
+external memory / route.
+
+## external marker / heart-memory
+environmental storage / internal storage.
+
+## old covenant / new covenant
+broken relation / reconfigured information relation.
+
+## external teaching / law in heart
+mediated information / internalized information.
+
+## sun / moon-stars
+day clock / night clock.
+
+## celestial ordinances / social continuity
+physical-cycle benchmark / identity persistence.
+
+## measuring line / expanded city
+boundary operator / successor perimeter.
+
+---
+
+# Jeremiah 30–31 continuous transformation timeline
+
+distress phase intensifies
+→ labor-pain projection marks acute transition
+→ yoke is broken from neck
+→ bonds are burst
+→ foreign service/control ends
+→ dispersed population is reassured
+→ far-off offspring survive
+→ terminal-looking wound state is announced
+→ healing reverses wound state
+→ city is rebuilt on former mound
+→ population multiplies
+→ internal leader arises
+→ whirling storm runs toward completion
+→ Israel’s families are reassembled
+→ vineyards and social life return
+→ watchmen activate pilgrimage/return
+→ low-mobility groups are gathered
+→ tears accompany transfer
+→ streams provide water
+→ straight route prevents stumbling
+→ scattered flock is regathered
+→ resource abundance returns
+→ mourning reverses to joy
+→ Rachel personifies ancestral grief
+→ children return from enemy land
+→ road markers/signposts are installed
+→ travelers are told to remember the highway
+→ obscure woman/man reversal image appears
+→ land is restored
+→ human and animal populations are projected as reseeded
+→ destructive oversight reverses into building/planting
+→ causal responsibility is individualized
+→ new covenant is announced
+→ law/information moves into internal memory
+→ knowledge becomes distributed
+→ forgiveness removes remembered failure load
+→ sun/moon/stars are invoked as fixed timing ordinances
+→ sea stirring joins cosmic order frame
+→ earth-foundation depth becomes comparison
+→ city perimeter is measured/rebuilt/expanded
+→ former death/waste zones are incorporated
+→ stable non-uprooted city closes the block.
+
+---
+
+# New master-mechanism additions from Jeremiah 30–31
+
+## M50G1-1 — RESTORATION REQUIRES TRANSFER + DESTINATION REATTACHMENT
+## M50G1-2 — LONG REGIME CAN END IN SHORT HIGH-INTENSITY TRANSITION
+## M50G1-3 — LABOR GEOMETRY CAN PROJECT TRANSITION WITHOUT LITERAL BIRTH
+## M50G1-4 — RESTRAINT SYSTEM CAN HAVE INSTALLATION + REMOVAL PHASES
+## M50G1-5 — YOKE BREAK CAN MODEL POLITICAL DECOUPLING
+## M50G1-6 — OFF-SITE SURVIVAL CAN PRECEDE RECONVERGENCE
+## M50G1-7 — CATASTROPHE CAN HAVE POPULATION-SPECIFIC OUTCOMES
+## M50G1-8 — “INCURABLE” STATE CAN REVERSE
+## M50G1-9 — TERMINAL LABEL MAY BE PHASE-RELATIVE
+## M50G1-10 — SUCCESSOR SETTLEMENT CAN REUSE SAME TOPOGRAPHIC NODE
+## M50G1-11 — NEW INFRASTRUCTURE CAN LAYER OVER PRIOR DESTRUCTION
+## M50G1-12 — SUCCESSOR NEEDS DEMOGRAPHY + INTERNAL GOVERNANCE
+## M50G1-13 — ROTATIONAL PROCESS CAN RUN TO TERMINAL CONDITION
+## M50G1-14 — DISTRIBUTED SUBGROUPS CAN REASSEMBLE INTO HIGHER IDENTITY
+## M50G1-15 — STRUCTURAL RETURN CAN REACTIVATE SOCIAL OUTPUT
+## M50G1-16 — AGRICULTURAL SUCCESS NEEDS PRODUCTION + USER ACCESS
+## M50G1-17 — WATCHMAN CAN SWITCH FROM WARNING TO ROUTE-ACTIVATION
+## M50G1-18 — MASS TRANSFER MUST SUPPORT LOW-MOBILITY POPULATIONS
+## M50G1-19 — SAFE RETURN NEEDS WATER + ROUTE GEOMETRY
+## M50G1-20 — HYDROLOGY + PATH GEOMETRY CAN BE CO-OPTIMIZED
+## M50G1-21 — SAME OPERATOR CAN SCATTER + GATHER
+## M50G1-22 — RETURN CAN TERMINATE IN MULTI-RESOURCE ABUNDANCE
+## M50G1-23 — SOCIAL STATE CAN REVERSE ACROSS GENERATIONS
+## M50G1-24 — ANCESTRAL FIGURE CAN REPRESENT LATER POPULATION LOSS
+## M50G1-25 — ABSENT POPULATION CAN REMAIN RECOVERABLE
+## M50G1-26 — COLLECTIVE ENTITY CAN BE PROJECTED AS CHILD
+## M50G1-27 — RETURN CAN REQUIRE EXTERNALIZED ROUTE MEMORY
+## M50G1-28 — PHYSICAL MARKERS CAN STORE NAVIGATION INFORMATION
+## M50G1-29 — ROBUST NAVIGATION CAN USE INTERNAL + EXTERNAL MEMORY
+## M50G1-30 — RETURNABILITY SHOULD BE DESIGNED BEFORE TRANSFER
+## M50G1-31 — OBSCURE ENCIRCLEMENT VERB ≠ COSMIC MECHANISM WITHOUT SUPPORT
+## M50G1-32 — SEMANTIC UNCERTAINTY LOWERS CORRESPONDENCE WEIGHT
+## M50G1-33 — RESTORED LAND CAN RECEIVE NEW IDENTITY
+## M50G1-34 — REPOPULATION CAN BE PROJECTED AS SEEDING HUMANS + ANIMALS
+## M50G1-35 — SAME OPERATOR CAN RUN DECONSTRUCTION + RECONSTRUCTION PHASES
+## M50G1-36 — CAUSAL RESPONSIBILITY MODEL CAN SHIFT INTERGENERATIONAL→LOCAL
+## M50G1-37 — INFORMATION CAN MOVE EXTERNAL→INTERNAL MEMORY
+## M50G1-38 — INTERNAL MEMORY + EXTERNAL WRITING ARE COMPLEMENTARY
+## M50G1-39 — CRITICAL INFORMATION SHOULD BE STORED IN MULTIPLE MEDIA
+## M50G1-40 — KNOWLEDGE CAN BECOME DISTRIBUTED ACROSS POPULATION
+## M50G1-41 — ASTRONOMICAL CYCLES CAN FUNCTION AS STABILITY CLOCKS
+## M50G1-42 — STABILITY CLOCK ≠ CATASTROPHE TRIGGER BY DEFAULT
+## M50G1-43 — ASTRONOMICAL ORDER + SEA DYNAMICS CAN SHARE CONTROL FRAME
+## M50G1-44 — COSMIC REGULARITY CAN BENCHMARK SOCIAL CONTINUITY
+## M50G1-45 — EARTH FOUNDATION LANGUAGE IS HIGH-INTEREST BUT MECHANISM-UNSPECIFIED
+## M50G1-46 — SUCCESSOR CITY CAN EXPAND INTO FORMER FAILURE ZONES
+## M50G1-47 — MEASURING LINE ≠ SUPPORT LATTICE
+## M50G1-48 — SUCCESSOR SYSTEM NEEDS RELEASE/ROUTE/WATER/MEMORY/REPOPULATION/CLOCK
+
+---
+
+# Number / timing register — Jeremiah 30–31
+
+Record without forcing:
+
+- “that day” / “time of Jacob’s distress” = acute phase marker;
+- “days are coming” = future transition formula;
+- sun/day + moon/stars/night = stable recurring astronomical timing system;
+- no gate-duration number;
+- no world-layer count;
+- no road-marker count;
+- no fixed return-travel duration.
+
+### Timing control
+
+Jeremiah 31’s sun/moon/star ordinances are best treated as:
+**stable reference cycles**.
+
+They are not automatically:
+the gate recurrence itself.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 30–31
+
+1. Working primary text: Jeremiah 30–31 NRSVUE, compared with other major translations where useful.
+2. Jeremiah 30–33 is widely called the Book of Consolation/Comfort in modern scholarship.
+3. Jeremiah 31:15’s Rachel image is ancestral/corporate lament associated with displaced children/population.
+4. Jeremiah 31:21 explicitly names road markers/signposts and the road previously travelled; the return-route memory function is secure.
+5. Jeremiah 31:22 (“a woman surrounds/encircles a man”) is one of the chapter’s most disputed phrases and should not carry precise mechanical weight.
+6. Jeremiah 31:31–34’s “new covenant” has extensive Jewish and Christian reception histories; primary literary function should remain distinct from later doctrinal appropriation.
+7. Recent oral-written interface scholarship argues that “writing on the heart” can be understood through ancient memorization/scribal education rather than a simple opposition between memory and writing.
+8. The sun/moon/star ordinances in 31:35 are used as a durability/stability comparison.
+9. “Foundations of the earth” in 31:37 are not mechanically defined; Vardath dragon-support comparison remains exploratory.
+10. No explicit dragon/lattice-spring or strict fingertrap transformation appears.
+11. Strict fingertrap status remains negative; route-memory and timing architecture are exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 30–31
+
+Primary:
+- Jeremiah 30 NRSVUE, Bible Gateway.
+- Jeremiah 31 NRSVUE, Bible Gateway.
+
+Scholarly / textual:
+- Tiberius Rata, *The Covenant Motif in Jeremiah's Book of Comfort: Textual and Intertextual Studies of Jeremiah 30–33*.
+- “Jeremiah 31:31–34: A prospect of true transformation,” *Acta Theologica* Supplementum 32 (2021):
+  https://journals.ufs.ac.za/index.php/at/article/download/5848/4238
+- Joachim J. Krause, “‘Writing on the Heart’ in Jeremiah 31:31–34 in Light of Recent Insights into the Oral-Written Interface and Scribal Education in Ancient Israel”:
+  https://tst-publikationen.uni-tuebingen.de/xmlui/bitstream/handle/10900/146748/JKrause_020d.pdf
+- Alon Goshen-Gottstein, “The New Covenant – Jeremiah 31:30–33 (31:31–34) in Jewish Interpretation,” retained for reception-history control.
+
+---
+
+# SECTION 50G1 CHECKPOINT — JEREMIAH 30–31 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 30–31 gives a strong acute-transition→release→return→rebuilding sequence.**
+2. **The same yoke system previously imposed is now broken, providing a complete restraint lifecycle but not a support-lattice mechanism.**
+3. **The return corridor explicitly combines low-mobility populations, water and a straight non-stumbling route.**
+4. **Road markers/signposts make this one of the strongest navigation-memory texts in the Bible; returnability is deliberately engineered.**
+5. **The new-covenant passage shifts critical information toward internalized/distributed memory, while modern scholarship cautions that internal memory and writing need not be opposites.**
+6. **Sun/moon/star ordinances form a stable cosmic clock benchmark; this should be distinguished from the catastrophe trigger itself.**
+7. **Earth-foundation language is high-interest for the Vardath dragon-support model, but no dragon/support mechanism is specified.**
+8. **Strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Jeremiah 32–33**
+
+Priority:
+- land purchase while city is under siege;
+- deed/signatures/witnesses;
+- sealed and open copies;
+- earthen jar as long-duration archive;
+- future houses/fields/vineyards;
+- city handed over then restored;
+- impossible/possible relation;
+- one heart/one way;
+- everlasting covenant;
+- planting with all heart/soul;
+- fields bought again;
+- prison/court confinement and information revelation;
+- hidden/unsearchable things;
+- city healing;
+- return from captivity;
+- cleansing/forgiveness;
+- voice of bride/bridegroom and thanksgiving restored;
+- flock counting under shepherd;
+- Davidic/Levitical continuity;
+- day/night covenant and fixed heaven/earth ordinances;
+- compare physical archive redundancy with Jeremiah 31 internal memory and Vardath preservation of event knowledge.
