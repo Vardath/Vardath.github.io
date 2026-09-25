@@ -23759,3 +23759,1003 @@ Priority:
 - serpent dust;
 - no hurt/destroy on holy mountain;
 - compare “new heavens/new earth” to Vardath populated successor world and distinguish replacement, renewal, or state change.
+
+
+---
+
+# SECTION 49 progress D2W — Isaiah 65
+## First-time research pass: remnant preserved inside the cluster, mountain inheritance, servant/non-servant resource-state split, new heavens/new earth as immediately populated successor world, longevity, houses/vineyards, producer-retained labor, children and descendants, near-zero response latency, altered predator-prey ecology, and serpent control under the Vardath dragon-support rule
+
+Isaiah 65 is one of the **highest-priority successor-world texts** in the reconstructed Bible so far because it explicitly says:
+
+**new heavens**
++
+**new earth**
+
+and then immediately describes what life is like within that new creation.
+
+The successor state is not described as an empty shell.
+
+It contains:
+
+- Jerusalem;
+- people;
+- infants;
+- old people;
+- houses;
+- inhabitants;
+- vineyards;
+- fruit;
+- labor;
+- children;
+- descendants;
+- wolves;
+- lambs;
+- lions;
+- oxen;
+- serpent;
+- holy mountain.
+
+This directly supports one of the user’s mature Vardath rules:
+
+> **All world-layers/world-turns above and below are populated in their own present. A successor world is not an empty forming shell.**
+
+Isaiah 65 does **not** prove the Vardath stacked-world model.
+
+But it is a very strong control against reading “new heavens and new earth” as:
+**empty replacement cosmos with no lived continuity.**
+
+The literary successor world is explicitly:
+**inhabited, agricultural, reproductive, ecological, and socially organized.**
+
+---
+
+# Isaiah 65:1 — source is found by those not actively seeking
+
+The chapter opens with an information/access reversal:
+
+not asking
+→ answer available;
+
+not seeking
+→ source found.
+
+## M49D2W-1 — SIGNAL/SOURCE AVAILABILITY CAN EXCEED RECEIVER SEARCH BEHAVIOR
+
+This is the opposite of:
+receiver actively seeks but cannot find.
+
+It reminds us to separate:
+source availability
+from
+observer attention.
+
+---
+
+# Isaiah 65:2 — source continuously extends hands toward resistant population
+
+The image:
+hands extended all day
+→ receiver walks another path.
+
+## M49D2W-2 — AVAILABLE GUIDANCE DOES NOT GUARANTEE ROUTE COMPLIANCE
+
+Information/offer:
+present.
+
+Route choice:
+divergent.
+
+This repeats Jonah/Micah route-control logic.
+
+---
+
+# Isaiah 65:3–5 — gardens, tombs, secret places and ritual food define ordinary local cultic geography
+
+The polemic mentions:
+- gardens;
+- bricks/incense contexts;
+- tombs;
+- secret places;
+- prohibited food;
+- ritual self-separation.
+
+## M49D2W-3 — UNUSUAL RITUAL GEOGRAPHY SHOULD NOT BE PROMOTED TO COSMIC TOPOLOGY WITHOUT STRUCTURAL EVIDENCE
+
+Tomb:
+not automatically underworld gate.
+
+Garden:
+not automatically world layer.
+
+Secret place:
+not automatically hidden cosmic chamber.
+
+---
+
+# Isaiah 65:5 — “smoke in nostrils / fire all day” is persistent irritation/judgment imagery
+
+The offending group becomes:
+smoke/fire-like irritation.
+
+## M49D2W-4 — LONG-DURATION FIRE/SMOKE IMAGE CAN REPRESENT PERSISTENT SYSTEM STRESS RATHER THAN ONE SHORT THERMAL EVENT
+
+Again:
+fire class varies by context.
+
+---
+
+# Isaiah 65:6–7 — recompense is “measured” into the lap
+
+The language contains:
+measurement/payment
+and accumulated prior conduct.
+
+## M49D2W-5 — SYSTEM OUTPUT CAN BE CALCULATED AS ACCUMULATED RESPONSE TO PRIOR INPUT HISTORY
+
+This is a state-memory concept.
+
+Current outcome:
+depends on stored prior history.
+
+---
+
+# Isaiah 65:8 — grape cluster with juice/blessing causes selective preservation
+
+This is an important remnant image.
+
+A grape cluster may contain:
+valuable juice/blessing.
+
+Therefore:
+“do not destroy it.”
+
+## M49D2W-6 — SYSTEM CAN PRESERVE A WHOLE OR PARTIAL STRUCTURE BECAUSE USEFUL VALUE REMAINS INSIDE IT
+
+This is not:
+indiscriminate preservation.
+
+It is:
+value-sensitive remnant retention.
+
+---
+
+# M49D2W-7 — REMNANT PRESERVATION CAN OCCUR INSIDE A DAMAGED LARGER SYSTEM
+
+This is important for Vardath catastrophe survival.
+
+The post-event population may derive from:
+surviving substructures
+rather than a completely separate creation.
+
+---
+
+# Isaiah 65:9–10 — descendants inherit mountains and pasture zones return to use
+
+The chapter promises:
+offspring/descendants;
+mountain inheritance;
+Sharon as pasture;
+Valley of Achor as herd-resting place.
+
+## M49D2W-8 — SUCCESSOR POPULATION IS LINKED TO REOCCUPIED TERRAIN AND FUNCTIONING ANIMAL ECOLOGY
+
+This is already an inhabited-world model before v17.
+
+---
+
+# Isaiah 65:10 — valley becomes resting place for herds
+
+## M49D2W-9 — TERRAIN RESTORATION IS VERIFIED BY RETURN OF STABLE BIOLOGICAL USE
+
+A valley is not merely:
+geometrically intact.
+
+It supports:
+herd rest/pasture.
+
+---
+
+# Isaiah 65:11 — Fortune / Destiny are cultic allocation figures, not Vardath fate mechanics by default
+
+The text refers to:
+Fortune/Gad;
+Destiny/Meni
+in many translations.
+
+Food/drink tables are prepared for them.
+
+## M49D2W-10 — PERSONIFIED FATE/DESTINY TERMS REQUIRE HISTORICAL-CULTIC CONTROL BEFORE NUMERICAL/COSMOLOGICAL MAPPING
+
+Do not extract:
+a hidden cycle
+from deity names alone.
+
+---
+
+# Isaiah 65:13–14 — servants and non-servants occupy opposite resource states simultaneously
+
+One group:
+eats;
+drinks;
+rejoices;
+sings.
+
+Other group:
+hungry;
+thirsty;
+ashamed;
+cries.
+
+## M49D2W-11 — DIFFERENT POPULATION SUBSYSTEMS CAN OCCUPY OPPOSITE RESOURCE/EMOTIONAL STATES IN THE SAME BROAD ENVIRONMENT
+
+This is important.
+
+One “world” need not have:
+uniform conditions for every group.
+
+---
+
+# Isaiah 65:15–16 — old identity/name gives way to new blessing/truth framework
+
+Old name:
+associated with curse/death.
+
+Servants:
+receive another name;
+blessing/oath tied to “God of truth.”
+
+## M49D2W-12 — SUCCESSOR STATE CAN INCLUDE IDENTITY REASSIGNMENT WITHOUT ERASING POPULATION CONTINUITY
+
+Same general human community:
+new social/name relation.
+
+---
+
+# Isaiah 65:16 — former troubles are hidden/forgotten before new-creation declaration
+
+## M49D2W-13 — MEMORY WEIGHT CAN CHANGE BEFORE/AS SUCCESSOR WORLD IDENTITY IS ESTABLISHED
+
+This prepares v17:
+former things no longer dominate cognition.
+
+---
+
+# Isaiah 65:17 — “new heavens and new earth” is explicit
+
+The verb:
+**bara’** — create,
+the same major creation verb used in Genesis 1.
+
+“New”:
+new heavens;
+new earth.
+
+## M49D2W-14 — ISAIAH 65 EXPLICITLY PLACES SUCCESSOR CHANGE AT BOTH UPPER AND LOWER COSMIC DOMAIN LEVELS
+
+This is not merely:
+new city.
+
+The poetic scope is:
+heavens + earth.
+
+---
+
+# Isaiah 65:17 — “new” does not by itself settle material replacement versus radical renewal
+
+The text does not describe:
+old atoms annihilated;
+new matter inserted;
+world discarded into nothing.
+
+Nor does it explicitly say:
+the exact same material is merely repaired.
+
+It says:
+create new heavens/new earth.
+
+Then immediately continues with:
+Jerusalem;
+people;
+houses;
+vineyards;
+children;
+animals.
+
+## M49D2W-15 — ISAIAH 65 SECURELY ESTABLISHES RADICAL SUCCESSOR RECONFIGURATION, BUT NOT THE EXACT MATERIAL-CONTINUITY MECHANISM
+
+This is the correct precision level.
+
+---
+
+# M49D2W-16 — NEW-CREATION LANGUAGE DOES NOT REQUIRE AN EMPTY SUCCESSOR SHELL
+
+This is a direct project rule.
+
+The text’s own elaboration is:
+**inhabited new creation.**
+
+---
+
+# Isaiah 65:17–18 — new heavens/new earth and new Jerusalem are presented in one continuous creation sequence
+
+The source creates:
+new heavens;
+new earth;
+Jerusalem as joy;
+people as delight.
+
+## M49D2W-17 — COSMIC SUCCESSOR STATE AND HUMAN CITY/POPULATION SUCCESSOR STATE ARE COUPLED
+
+The “new earth” is not described independently of human habitation.
+
+---
+
+# Isaiah 65:18–19 — population is part of what makes the new creation meaningful
+
+The source delights:
+in people.
+
+Weeping/distress:
+removed.
+
+## M49D2W-18 — SUCCESSOR WORLD QUALITY IS MEASURED BY INHABITANT CONDITIONS, NOT ONLY GEOMETRIC/PHYSICAL NOVELTY
+
+This is crucial for Vardath.
+
+A successful new world is:
+habitable and lived,
+not merely structurally formed.
+
+---
+
+# Isaiah 65:20 — infant mortality is radically reduced
+
+No infant:
+few days.
+
+Old people:
+fulfill days.
+
+## M49D2W-19 — SUCCESSOR HABITABILITY CAN BE MEASURED THROUGH SURVIVAL CURVE, NOT JUST MAXIMUM LIFESPAN
+
+Important distinction:
+
+longevity
+≠
+only exceptional oldest age.
+
+Population health includes:
+- infant survival;
+- full adult lifespan;
+- aging distribution.
+
+---
+
+# Isaiah 65:20 — one hundred years functions as altered longevity benchmark
+
+Someone dying at 100:
+considered young.
+
+This is one of the clearest explicit longevity changes in the prophetic corpus.
+
+## M49D2W-20 — SUCCESSOR STATE IS PROJECTED AS DRAMATICALLY SHIFTED HUMAN LIFESPAN DISTRIBUTION
+
+### Vardath relevance
+
+The user’s vapour-canopy/high-pressure/oxygen research includes longevity hypotheses.
+
+Isaiah 65 supplies:
+a textual longevity outcome.
+
+It does **not** supply:
+- atmospheric pressure;
+- oxygen concentration;
+- canopy mechanics;
+- biological mechanism.
+
+Therefore:
+**strong outcome correspondence, mechanism absent.**
+
+---
+
+# M49D2W-21 — LONGEVITY TEXT SHOULD BE TESTED AGAINST ENVIRONMENTAL VARIABLES BUT NOT USED TO PROVE THEM
+
+This becomes a permanent control.
+
+---
+
+# Isaiah 65:21–22 — build→inhabit and plant→eat loops become correctly closed
+
+People:
+build houses
+→ live in them.
+
+Plant vineyards
+→ eat fruit.
+
+Unlike prior failed cycles:
+another does not take output.
+
+## M49D2W-22 — SUCCESSOR SYSTEM RESTORES PRODUCER→OUTPUT→BENEFICIARY COUPLING
+
+This is one of the clearest economic stability conditions.
+
+---
+
+# Isaiah 65:22 — days of people compared to days of a tree
+
+Human longevity:
+tree-like.
+
+## M49D2W-23 — TREE-LIFESPAN IMAGE CAN REPRESENT EXTENDED HUMAN DURABILITY WITHOUT PEOPLE BECOMING TREE ENTITIES
+
+Another body/ecology projection control.
+
+---
+
+# Isaiah 65:22 — inhabitants long enjoy work of hands
+
+Time between:
+production
+and
+benefit
+becomes long/stable.
+
+## M49D2W-24 — SUCCESSOR STABILITY INCLUDES TEMPORAL OWNERSHIP OF ONE’S OWN OUTPUT
+
+Not merely:
+one harvest.
+
+Long-term security.
+
+---
+
+# Isaiah 65:23 — labor no longer vain; children no longer born for calamity
+
+Two failed futures are reversed:
+
+work
+→ produces durable benefit;
+
+reproduction
+→ produces survivable next generation.
+
+## M49D2W-25 — SUCCESSOR STABILITY REQUIRES BOTH ECONOMIC AND GENERATIONAL CONTINUITY
+
+This strongly parallels Isaiah 55:
+bread + seed.
+
+---
+
+# Isaiah 65:23 — descendants remain explicitly present
+
+“offspring”
++
+“descendants with them.”
+
+## M49D2W-26 — NEW HEAVENS/NEW EARTH CONTAINS MULTI-GENERATIONAL POPULATION CONTINUITY
+
+This is one of the strongest textual points for the user’s populated-world rule.
+
+---
+
+# Isaiah 65:24 — response latency collapses
+
+Before call:
+answer.
+
+While speaking:
+hearing.
+
+## M49D2W-27 — SUCCESSOR INFORMATION SYSTEM IS PROJECTED AS NEAR-ZERO OR NEGATIVE RESPONSE LATENCY
+
+Earlier Isaiah:
+calls go unanswered;
+watchers fail;
+source hidden.
+
+Now:
+response precedes completed request.
+
+This is an extreme feedback-quality reversal.
+
+---
+
+# Isaiah 65:25 — predator/prey relation changes while animal identities remain
+
+Wolf:
+still wolf.
+
+Lamb:
+still lamb.
+
+Lion:
+still lion.
+
+Ox:
+still ox.
+
+But:
+feeding relation changes.
+
+## M49D2W-28 — ECOLOGICAL RELATION CAN CHANGE WITHOUT SPECIES IDENTITY DISAPPEARING
+
+This is highly important.
+
+Successor ecology:
+not necessarily new species.
+
+It may be:
+same species,
+different behavior/resource network.
+
+---
+
+# Isaiah 65:25 — lion eats straw like ox
+
+Predator diet:
+reconfigured.
+
+## M49D2W-29 — TROPHIC ROLE CAN CHANGE IN SUCCESSOR ECOLOGY
+
+This is a dramatic ecological-state shift.
+
+### Control
+
+This is utopian poetic imagery,
+not zoological mechanism.
+
+---
+
+# Isaiah 65:25 — wolf/lamb feed together
+
+Predator/prey conflict:
+suspended.
+
+## M49D2W-30 — STABLE SUCCESSOR ECOLOGY IS PROJECTED AS LOWER INTERSPECIES VIOLENCE
+
+This parallels:
+human violence removed in Isaiah 60.
+
+The successor world has:
+reduced conflict across human and animal systems.
+
+---
+
+# Isaiah 65:25 — serpent eats dust: apply the Vardath dragon support test
+
+The serpent remains:
+dust-associated.
+
+This echoes Genesis 3 curse imagery.
+
+## M49D2W-31 — SERPENT MUST NOT BE CLASSIFIED AS VARDATH DRAGON WITHOUT LOAD-BEARING SUPPORT FUNCTION
+
+Vardath dragon:
+lattice spring;
+supports ground/world layer;
+part of world-support geometry.
+
+Isaiah 65 serpent:
+feeding/curse image;
+no ground-support function;
+no spring/tension behavior;
+no lattice role.
+
+Therefore:
+**not a Vardath dragon match.**
+
+---
+
+# Isaiah 65:25 — serpent remains distinct while wider predator ecology changes
+
+Most animals:
+peaceful diet/relations.
+
+Serpent:
+retains dust relation.
+
+## M49D2W-32 — SUCCESSOR ECOLOGY CAN CHANGE MANY RELATIONS WITHOUT RESETTING EVERY SYMBOLIC/BEHAVIORAL ROLE
+
+Not everything becomes homogeneous.
+
+---
+
+# Isaiah 65:25 — holy mountain becomes no-harm/no-destruction zone
+
+## M49D2W-33 — SUCCESSOR TERRITORY CAN BE DEFINED BY LOW HAZARD ACROSS MULTIPLE BIOLOGICAL CLASSES
+
+This is an ecological safety metric.
+
+---
+
+# Isaiah 65 — new heavens/new earth and Vardath populated world-turns
+
+Vardath mature rule:
+
+future world above
+→ populated in its own present;
+
+present world
+→ populated;
+
+past world below
+→ populated in its own present;
+
+gate opening
+→ portions of future/past interact with present;
+→ destructive transition;
+→ new beginning period;
+→ all world-turns remain inhabited.
+
+Isaiah 65 does not provide:
+stacked discs;
+future-above/past-below;
+gate mechanics.
+
+But it does provide:
+
+new heavens/new earth
+→ populated immediately;
+→ houses;
+→ agriculture;
+→ families;
+→ descendants;
+→ animals;
+→ long life;
+→ stable labor;
+→ reduced violence.
+
+## M49D2W-34 — ISAIAH 65 STRONGLY SUPPORTS THE PRINCIPLE THAT “NEW WORLD” LANGUAGE CAN REFER TO A FULLY INHABITED SUCCESSOR ORDER
+
+This is a major Vardath-compatible textual finding.
+
+---
+
+# Isaiah 65 — replacement versus renewal screening
+
+### Evidence for radical newness
+- explicit “create”;
+- “new heavens”;
+- “new earth”;
+- former troubles/things lose remembered dominance;
+- ecological/social conditions change radically.
+
+### Evidence for continuity
+- Jerusalem remains;
+- people remain;
+- houses remain a recognizable concept;
+- vineyards/agriculture remain;
+- children/descendants remain;
+- animals retain species names;
+- holy mountain remains;
+- labor and land remain.
+
+## M49D2W-35 — THE TEXT COMBINES RADICAL COSMIC NEWNESS WITH STRONG FUNCTIONAL/IDENTITY CONTINUITY
+
+Therefore the safest process label is:
+
+**re-created / radically reconfigured inhabited successor order**.
+
+Not:
+“obviously total material replacement.”
+
+Not:
+“obviously merely minor repair.”
+
+---
+
+# M49D2W-36 — SUCCESSOR WORLD IS “RESET, NOT REWIND”
+
+This is one of the strongest textual fits to the mature Vardath rule.
+
+The system does not simply return to the old condition.
+
+It retains recognizable:
+- city;
+- people;
+- agriculture;
+- species;
+
+but changes:
+- lifespan;
+- resource security;
+- violence;
+- predator behavior;
+- response latency;
+- social stability.
+
+That is:
+**new configuration with continuity.**
+
+---
+
+# Isaiah 65 — dragon lattice-spring comparison
+
+No dragon is named.
+
+The serpent fails the support test.
+
+No sky-web/fingertrap transition is described in vv17–25.
+
+The chapter belongs after the transition:
+the world is already being described in its new stable configuration.
+
+## M49D2W-37 — ISAIAH 65 IS A SUCCESSOR-WORLD DESCRIPTION, NOT THE MECHANICAL SUPPORT-TRANSITION DESCRIPTION
+
+Use it to model:
+outputs expected after dragon/lattice support restabilizes.
+
+---
+
+# Isaiah 65 — strict spiderweb → fingertrap screening
+
+## new heavens/new earth
+Explicit.
+
+## inhabited successor world
+Exceptionally strong.
+
+## longevity change
+Strong.
+
+## ecological change
+Strong.
+
+## resource stability
+Strong.
+
+## dragon lattice spring
+Absent.
+
+## spiderweb
+Absent.
+
+## transition throat
+Absent.
+
+## geometry change mechanism
+Not described.
+
+### Strict verdict
+
+**Isaiah 65 is one of the strongest Vardath successor-world correspondences in the entire Isaiah corpus, but it is not a fingertrap-mechanism text. Its “new heavens and new earth” are immediately inhabited and retain strong functional continuity while radically changing longevity, ecology, resource security and violence. This strongly supports a “reconfigured populated successor world” model rather than an empty replacement shell.**
+
+---
+
+# Isaiah 65 pair / process matrix
+
+## source availability / receiver seeking
+available signal / observer behavior.
+
+## extended hand / rebellious path
+guidance / route refusal.
+
+## grape cluster / retained blessing
+larger structure / valuable remnant.
+
+## mountain / descendants
+territory / successor population.
+
+## servants / non-servants
+resource-stable group / resource-failed group.
+
+## old troubles / new creation
+trauma-dominated state / successor state.
+
+## old heavens-earth / new heavens-earth
+former cosmic order / re-created order.
+
+## Jerusalem / people
+central city / inhabitants.
+
+## infant / elder
+early-life survival / long-life completion.
+
+## house / inhabitant
+built infrastructure / stable beneficiary.
+
+## vineyard / eater
+production system / retained output.
+
+## human days / tree days
+human longevity / botanical durability projection.
+
+## labor / descendants
+economic continuity / generational continuity.
+
+## call / answer
+request signal / near-zero-latency response.
+
+## wolf / lamb
+predator / prey.
+
+## lion / ox
+predator / herbivore model.
+
+## serpent / dust
+curse-associated animal / retained symbolic relation.
+
+---
+
+# Isaiah 65 continuous transformation timeline
+
+source remains available
+→ rebellious population follows alternate routes
+→ local cultic/ritual failures continue
+→ persistent smoke/fire judgment image develops
+→ accumulated actions receive measured response
+→ grape cluster is preserved because value remains inside
+→ remnant/descendants emerge
+→ mountains and pasture regions return to inhabited use
+→ herd-rest ecology stabilizes
+→ Fortune/Destiny cultic system is rejected
+→ population splits into opposite resource states
+→ old identity/trouble state is superseded
+→ creation scale expands to new heavens/new earth
+→ Jerusalem remains/appears within new creation
+→ people remain/are delighted in
+→ weeping/distress disappear
+→ infant mortality falls radically
+→ adult longevity rises
+→ hundred-year life becomes youth benchmark
+→ people build houses
+→ same builders inhabit them
+→ people plant vineyards
+→ same planters eat fruit
+→ human lifespan becomes tree-like in analogy
+→ labor yields durable benefit
+→ children are not born for calamity
+→ descendants persist
+→ response latency collapses toward immediate answer
+→ wolf/lamb relation changes
+→ lion diet changes
+→ serpent retains dust relation
+→ harm/destruction disappears from holy mountain
+→ inhabited ecological successor order closes chapter.
+
+---
+
+# New master-mechanism additions from Isaiah 65
+
+## M49D2W-1 — SOURCE AVAILABILITY CAN EXCEED RECEIVER SEARCH
+## M49D2W-2 — AVAILABLE GUIDANCE ≠ ROUTE COMPLIANCE
+## M49D2W-3 — LOCAL RITUAL GEOGRAPHY ≠ COSMIC TOPOLOGY
+## M49D2W-4 — PERSISTENT FIRE/SMOKE CAN MODEL LONG-DURATION SYSTEM STRESS
+## M49D2W-5 — CURRENT OUTPUT CAN DEPEND ON ACCUMULATED HISTORY
+## M49D2W-6 — USEFUL VALUE INSIDE STRUCTURE CAN TRIGGER SELECTIVE PRESERVATION
+## M49D2W-7 — REMNANT CAN SURVIVE INSIDE DAMAGED LARGER SYSTEM
+## M49D2W-8 — SUCCESSOR POPULATION REOCCUPIES TERRAIN WITH FUNCTIONING ANIMAL ECOLOGY
+## M49D2W-9 — TERRAIN RESTORATION CAN BE VERIFIED BY BIOLOGICAL USE
+## M49D2W-10 — FATE/DESTINY NAMES REQUIRE CULTIC CONTROL BEFORE COSMOLOGICAL MAPPING
+## M49D2W-11 — POPULATION SUBSYSTEMS CAN OCCUPY OPPOSITE RESOURCE STATES
+## M49D2W-12 — IDENTITY CAN CHANGE WITHOUT POPULATION DISCONTINUITY
+## M49D2W-13 — MEMORY WEIGHT CAN CHANGE AT SUCCESSOR TRANSITION
+## M49D2W-14 — NEW CREATION EXTENDS ACROSS UPPER + LOWER COSMIC DOMAINS
+## M49D2W-15 — RADICAL NEWNESS DOES NOT SPECIFY EXACT MATERIAL-CONTINUITY MECHANISM
+## M49D2W-16 — NEW WORLD LANGUAGE ≠ EMPTY SUCCESSOR SHELL
+## M49D2W-17 — COSMIC SUCCESSOR AND HUMAN POPULATION SUCCESSOR ARE COUPLED
+## M49D2W-18 — WORLD QUALITY IS MEASURED THROUGH INHABITANT CONDITION
+## M49D2W-19 — HABITABILITY CAN BE MEASURED THROUGH SURVIVAL CURVE
+## M49D2W-20 — SUCCESSOR STATE CAN SHIFT HUMAN LIFESPAN DISTRIBUTION
+## M49D2W-21 — LONGEVITY OUTCOME ≠ PROOF OF ATMOSPHERIC MECHANISM
+## M49D2W-22 — SUCCESSOR STABILITY RESTORES PRODUCER→BENEFICIARY LOOP
+## M49D2W-23 — TREE-LIFESPAN IMAGE ≠ HUMAN-TREE IDENTITY
+## M49D2W-24 — STABILITY INCLUDES LONG-TERM OWNERSHIP OF OUTPUT
+## M49D2W-25 — SUCCESSOR STABILITY NEEDS ECONOMIC + GENERATIONAL CONTINUITY
+## M49D2W-26 — NEW CREATION CONTAINS MULTI-GENERATIONAL POPULATION
+## M49D2W-27 — SUCCESSOR INFORMATION SYSTEM CAN HAVE NEAR-ZERO RESPONSE LATENCY
+## M49D2W-28 — ECOLOGICAL RELATION CAN CHANGE WITHOUT SPECIES IDENTITY LOSS
+## M49D2W-29 — TROPHIC ROLE CAN CHANGE IN SUCCESSOR ECOLOGY
+## M49D2W-30 — SUCCESSOR ECOLOGY CAN LOWER PREDATOR/PREY VIOLENCE
+## M49D2W-31 — SERPENT MUST PASS GROUND-SUPPORT TEST BEFORE DRAGON CLASSIFICATION
+## M49D2W-32 — SUCCESSOR CHANGE NEED NOT HOMOGENIZE EVERY ROLE
+## M49D2W-33 — SUCCESSOR TERRITORY CAN BE DEFINED BY LOW MULTI-SPECIES HAZARD
+## M49D2W-34 — “NEW WORLD” CAN MEAN FULLY INHABITED SUCCESSOR ORDER
+## M49D2W-35 — RADICAL NEWNESS CAN COEXIST WITH FUNCTIONAL/IDENTITY CONTINUITY
+## M49D2W-36 — ISAIAH 65 STRONGLY FITS “RESET, NOT REWIND”
+## M49D2W-37 — ISAIAH 65 DESCRIBES SUCCESSOR OUTPUT, NOT LATTICE MECHANISM
+
+---
+
+# Number / timing register — Isaiah 65
+
+Record without forcing:
+
+- **100 years** = explicit longevity benchmark;
+- infant “few days” is rejected as successor norm;
+- old people “fill out days”;
+- human days compared with tree days;
+- descendants continue across generations;
+- “before they call” = response before completed request;
+- no gate-duration number;
+- no world-layer count;
+- no exact lifespan ceiling is given.
+
+### Longevity control
+
+Isaiah 65 does **not** promise immortality.
+
+Death still exists in the poetic world.
+
+The key shift is:
+**dramatically extended and normalized longevity with low infant mortality.**
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 65
+
+1. Working primary text: Isaiah 65 NRSVUE, compared with ESV/NKJV/CEB.
+2. Isaiah 65:17 uses **bara’** (“create”), the major Genesis creation verb, three times across vv17–18 in the new-creation/Jerusalem sequence.
+3. Recent Working Preacher commentary explicitly reads the passage as a “remix” of Genesis 1–3 and emphasizes that the new creation responds to conquest/exile trauma.
+4. Isaiah 65:20 clearly retains death; the vision is extreme longevity, not simple immortality.
+5. Houses/vineyards/children/descendants demonstrate ordinary lived continuity within the “new heavens and new earth.”
+6. Several interpreters emphasize that Isaiah’s hope remains earthly/inhabited rather than abandoning earth for an empty otherworld.
+7. “Former things shall not be remembered” should not be read as literal neurological deletion without qualification; it functions as trauma/suffering losing dominance in the new order.
+8. Isaiah 65:25 deliberately echoes Isaiah 11 and Genesis/Eden themes.
+9. The serpent/dust image is a Genesis-curse echo and lacks the load-bearing ground-support function required for a Vardath dragon match.
+10. Verse 23 has a footnote alternative around “calamity/sudden terror,” but generational safety remains the main process.
+11. No dragon/lattice-spring or fingertrap transition is described.
+12. Strict fingertrap status remains negative; successor-world correspondence is exceptionally strong.
+
+---
+
+# Sources logged — Isaiah 65
+
+Primary:
+- Isaiah 65 NRSVUE:
+  https://classic.biblegateway.com/passage/?search=Isaiah+65&version=NRSVUE
+- Isaiah 65:17–25 NRSVUE:
+  https://www.bible.com/bible/3523/ISA.65.17-25.NRSVUE
+- Isaiah 65 NRSVUE / ESV:
+  https://search.biblegateway.com/passage/?search=Isaiah+65&version=NRSVUE%3BESV
+
+Scholarly / contextual:
+- Kristin J. Wendland, Working Preacher, Isaiah 65:17–25, on new creation as a reworking of Genesis and a response to exile/conquest trauma:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-33-3/commentary-on-isaiah-6517-25-6
+- Carolyn J. Sharp, Working Preacher, Isaiah 65:17–25, on Zion, lived continuity, peaceable ecology and new creation:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-33-3/commentary-on-isaiah-6517-25
+- Patricia Tull, “Isaiah’s Earthly Hopes,” retained as a contextual argument against treating Isaiah’s new heaven/new earth as abandonment of inhabited earth:
+  https://www.workingpreacher.org/theology-and-interpretation/isaiahs-earthly-hopes
+
+---
+
+# SECTION 49D2W CHECKPOINT — ISAIAH 65 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 65 explicitly names new heavens and a new earth and immediately describes that successor order as populated.**
+2. **The new creation contains houses, vineyards, children, descendants, work, animals and a central inhabited Jerusalem—directly contradicting an “empty successor shell” assumption.**
+3. **The text combines radical cosmic newness with strong functional continuity, making “re-created/reconfigured inhabited successor order” the safest process description.**
+4. **This is one of the strongest textual fits to the Vardath rule “reset, not rewind.”**
+5. **Longevity changes dramatically: infant mortality falls and a 100-year-old death is treated as young, but the text does not provide an atmospheric/oxygen mechanism.**
+6. **Producer→output→beneficiary loops are repaired, and children/descendants continue: economic and generational continuity are both required.**
+7. **Predator/prey and dietary relations change while species identities remain, suggesting ecological reconfiguration rather than total biological replacement.**
+8. **The serpent fails the Vardath dragon test: it has no ground-support/lattice-spring role.**
+9. **Isaiah 65 is a successor-world description, not the mechanical dragon/fingertrap transition itself.**
+
+### Next live block
+
+**Isaiah 66**
+
+Priority:
+- heaven as throne / earth as footstool — high/low simultaneous structure;
+- “what house can you build?” scale control;
+- ritual inversion;
+- voice/noise from city/temple;
+- Zion labor before/without normal labor sequence;
+- nation born in one day — HIGH PRIORITY timing;
+- earth/country brought forth in one moment/day;
+- mother/nursing/comfort city-body imagery;
+- hand/power visible / enemies wrath;
+- fire/chariots like whirlwind / flame;
+- judgment by fire/sword;
+- gathering all nations/languages;
+- sign sent, survivors to distant nations;
+- brothers brought by horses/chariots/litters/mules/camels as carriers;
+- new heavens/new earth remain before source → descendants/name remain;
+- monthly/new-moon + Sabbath periodic time system;
+- all flesh comes to worship;
+- final corpse/fire/worm image;
+- synthesize Isaiah 34–66, especially dragon-support, sky boundary, web/tent/lattice analogues, water-route, new populated world.
