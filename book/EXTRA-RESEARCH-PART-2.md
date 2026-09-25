@@ -28256,3 +28256,1384 @@ Required protocol:
 - preserve translation uncertainty;
 - apply strict fingertrap criteria only after ordinary literary/theological function is established.
 
+
+
+---
+
+# SECTION 66 — 2 MEQABYAN
+## Direct Ethiopic-canon pass — enemy→convert state reversal, captive-teacher information transfer, martyr fire/death/return, imperial body projection, narrow-path control, cherub-sanctuary architecture, bodily resurrection through distributed elemental persistence and reassembly, earth-as-womb/storehouse, seed→branch expansion, dual body/soul storage, upper heavenly archetype and inhabited successor kingdom
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for a completed 2 Meqabyan block;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed direct sequential 2 Meqabyan pass exists.
+
+The verified Part 2 frontier was:
+**Section 66 — 2 Meqabyan**.
+
+This section is therefore appended only to Part 2.
+
+---
+
+# CRITICAL TEXT-IDENTITY / SOURCE-CONTROL NOTE
+
+This is **Ethiopian 2 Meqabyan**, not:
+- Greek 2 Maccabees;
+- Ethiopian 1 Meqabyan;
+- Ethiopian 3 Meqabyan.
+
+The actual working 2 Meqabyan text used here has **21 chapters**.
+
+A serious source-label problem was discovered during this pass.
+
+A current TIPs/UBS page labelled **2 Meqabyan** presents:
+- a **10-chapter / 208-verse** corpus;
+- an opening about the islands of Egypt, a good/gentle person, and Sabellianos.
+
+That opening matches the known opening of **3 Meqabyan**, and independent sources describe:
+- 2 Meqabyan = 21 chapters;
+- 3 Meqabyan = 10 chapters.
+
+Therefore the current TIPs stream labelled 2 Meqabyan appears to expose **3 Meqabyan content under the wrong book label**.
+
+### Research rule from this point onward
+
+For Section 66:
+- use the 21-chapter Geʽez-derived Wikisource translation as the working English text;
+- use independent canon/manuscript sources to confirm that 2 Meqabyan is the 21-chapter work;
+- do **not** use the current TIPs "2Meq" verse stream as verse-level confirmation for this book.
+
+This mistake must not be propagated into Section 67, where the 10-chapter text belongs.
+
+---
+
+# SECOND TRANSLATION-CONTROL WARNING
+## Modernized Chapter 14 adds imagery not secure in the underlying translation
+
+A modernized English rendering of 2 Meqabyan 14 introduced unusually Vardath-like language involving:
+- a rope of Sheol;
+- root;
+- branches drawing inward.
+
+The underlying Wikisource translation does **not** contain that rope/root/branch construction in the corresponding passage.
+
+The secure underlying content instead concerns:
+- sin/demon influence;
+- soul;
+- Gehenna;
+- bodily resurrection;
+- constituent natures returning;
+- earth/grave;
+- dew;
+- places where souls dwell opening.
+
+Therefore:
+
+### M66-1 — DO NOT USE MODERNIZED "ROPE/ROOT/BRANCH" WORDING AS FINGERTRAP EVIDENCE
+
+This is exactly the kind of attractive wording that could create a false match if the underlying source is not checked.
+
+The project must prefer:
+**less exciting but source-secure geometry**
+over
+**highly convenient paraphrase drift**.
+
+---
+
+# BOOK STRUCTURE — 21 CHAPTERS
+
+The 21-chapter text is not simply a sequel to 1 Meqabyan.
+
+Broad structure:
+
+## Chapters 1–5
+- Meqabees/Meqabis, a Moabite ruler/warrior;
+- attacks Israel/Jerusalem;
+- prophet Reʽay confronts him;
+- repentance;
+- conversion;
+- adoption of Israelite instruction and sanctuary-pattern objects;
+- death in peace.
+
+## Chapters 6–8
+- descendants/sons under Tseerutsaydan;
+- coercive idolatry;
+- martyrdom in fire;
+- postmortem appearance;
+- imperial/cosmic pride.
+
+## Chapters 9–13
+- narrow/wide path teaching;
+- earthly/heavenly reward;
+- Moses/Korah/tabernacle material;
+- Tseerutsaydan's collapse;
+- bodily resurrection.
+
+## Chapters 14–20
+- detailed resurrection anthropology;
+- constituent nature / body / soul;
+- Day of Judgment;
+- seed/tree analogies;
+- earth as bodily storehouse;
+- postmortem roads/guides.
+
+## Chapter 21
+- refuge-law / heavenly archetype;
+- bodily/soul salvation;
+- final inhabited heavenly kingdom.
+
+This is a strongly theological/resurrection-focused book with an opening conversion narrative.
+
+---
+
+# 2 MEQABYAN 1
+## Enemy ruler → conqueror state
+
+Meqabees/Meqabis:
+- is associated with Moab;
+- gathers forces including hostile peoples;
+- attacks Israel/Jerusalem;
+- causes bloodshed;
+- acts as oppressor.
+
+### M66-2 — THE BOOK BEGINS WITH A HOSTILE EXTERNAL RULER, NOT A FAITHFUL MACCABEAN HERO
+
+This matters because:
+same name-family does not imply same role as Greek Maccabean tradition.
+
+### M66-3 — IDENTITY MUST BE TRACKED THROUGH STATE CHANGE, NOT MORAL LABEL
+
+The narrative is preparing a major reversal:
+enemy
+→ penitent
+→ converted ruler.
+
+That makes Meqabees one of the cleanest moral/state transformation figures in Meqabyan.
+
+---
+
+# 2 MEQABYAN 2–3
+## Prophet Reʽay confronts ruler → ruler descends into pit up to neck → repentance → role reversal
+
+Reʽay:
+- rebukes Meqabees;
+- explains judgment;
+- calls for repentance.
+
+Meqabees:
+- responds;
+- puts on penitential state;
+- enters/digs a pit;
+- is described down in the pit up to the neck;
+- prays;
+- changes allegiance.
+
+### M66-4 — SAME PERSON MOVES FROM ENEMY-KING STATE TO REPENTANT-DISCIPLE STATE
+
+This is source-level identity continuity.
+
+No new ruler replaces him.
+
+The process is:
+**oppressor**
+→ **confronted**
+→ **lowered/enclosed**
+→ **repentant**
+→ **converted**.
+
+This is highly relevant to projection/state logic:
+radical role change does not require identity replacement.
+
+### M66-5 — PIT-UP-TO-NECK IS A REAL PARTIAL-BODY ENCLOSURE, BUT ITS FUNCTION IS PENITENTIAL HUMILIATION
+
+Do not classify it as:
+- world throat;
+- fingertrap;
+- burial gate.
+
+The body is physically lowered into an enclosure for repentance.
+
+### M66-6 — VERTICAL LOWERING ACCOMPANIES STATUS/MORAL LOWERING
+
+High ruler:
+→ physically low in pit.
+
+This is a common symbolic alignment:
+social/moral descent
+↔
+spatial descent.
+
+---
+
+# 2 Meqabyan 3–4
+## captured Israelites become information carriers; conqueror society is reconfigured through received law
+
+After conversion:
+- Meqabees rejects/destroys former idolatrous practices;
+- brings in Israelite teachers/instructors;
+- learns law;
+- restructures worship/practice.
+
+### M66-7 — CAPTURED/TRANSFERRED POPULATION CAN BECOME AN INFORMATION-CARRYING AGENT THAT CHANGES THE RECEIVER SYSTEM
+
+This is significant for Vardath culture-transfer ideas.
+
+Sequence:
+
+**population moved by conquest**
+→ **knowledge retained**
+→ **receiver ruler changes**
+→ **receiver religious/social system changes**.
+
+Ordinary source:
+conversion and teaching.
+
+Vardath comparison:
+human transfer can carry:
+- knowledge;
+- ritual;
+- institutional patterns;
+- cultural information.
+
+### M66-8 — INFORMATION TRANSFER CHANGES SYSTEM IDENTITY WITHOUT REPLACING THE POPULATION
+
+Same polity/ruler,
+new operating rules.
+
+---
+
+# 2 Meqabyan 4
+## sanctuary-pattern construction / Holy-of-Holies imitation
+
+Meqabees:
+- adopts Israelite-style worship;
+- constructs/uses symbolic sacred objects;
+- candlestick/lamp object;
+- bowl;
+- seat;
+- tent;
+- ring/link structures;
+- oil;
+- curtain/veil-like element;
+- Holy-of-Holies patterning.
+
+### M66-9 — EARTHLY RULER REPRODUCES A SACRED ARCHITECTURAL PATTERN AS INFORMATION MADE MATERIAL
+
+This is important.
+
+A known sanctuary pattern:
+→ transmitted through instruction
+→ recreated materially in another political setting.
+
+That is:
+**information → architecture**.
+
+Cross-link:
+4 Ezra woman→city;
+Zechariah temple pattern;
+later 2 Meqabyan heavenly Tent archetype.
+
+### M66-10 — CURTAIN/INNER SANCTUM BOUNDARY IS A RITUAL ACCESS LAYER
+
+Do not treat every veil as cosmological membrane.
+
+Function here:
+sacred-space differentiation.
+
+---
+
+# 2 MEQABYAN 5
+## converted ruler dies; descendants preserve state for five years
+
+The converted order persists after Meqabees's death.
+
+### M66-11 — SYSTEM STATE CAN OUTLIVE THE INDIVIDUAL CENTRAL OPERATOR
+
+This is an important control.
+
+Leader identity:
+ends.
+
+Institutional/cultural state:
+persists temporarily.
+
+Thus:
+central node ≠ whole system.
+
+---
+
+# 2 MEQABYAN 6–7
+## Tseerutsaydan coercion → sons refuse idols → fire/death → same persons appear alive to king → bodies hidden
+
+A hostile king:
+- captures/pressures Meqabees's descendants;
+- demands idolatry.
+
+They refuse.
+
+Then:
+- are burned;
+- die.
+
+Afterward:
+- appear to king at night;
+- alive/standing;
+- with drawn swords;
+- rebuke him.
+
+Later:
+- they disappear;
+- bodies cannot be found because God hides/preserves them in the narrative.
+
+### M66-12 — THE MARTYR FIGURES RETAIN SAME-PERSON IDENTITY ACROSS FIRE→DEATH→POSTMORTEM APPEARANCE
+
+This is similar to 1 Meqabyan but narratively distinct.
+
+### M66-13 — FIRE HERE IS TERMINAL FOR EARTHLY LIFE BUT NOT FOR PERSONAL IDENTITY
+
+This sharpens the fire taxonomy:
+
+- Daniel 3: fire does not kill;
+- 1 Meqabyan: fire kills, bodies remain miraculously preserved;
+- 2 Meqabyan: fire kills, same persons appear afterward;
+- Zechariah/Malachi: fire refines.
+
+Therefore:
+**fire function varies by narrative state**.
+
+### M66-14 — DRAWN-SWORD RETURN IS A ROLE/STATE TRANSFORMATION, NOT BODY-REPLACEMENT EVIDENCE
+
+Martyrs:
+victims
+→ postmortem accusers/warrior-like figures.
+
+Same referents,
+new role.
+
+---
+
+# 2 MEQABYAN 8
+## imperial body projection: Tseerutsaydan as "iron" era, Sun-scale pride, body/geography expansion
+
+Tseerutsaydan's empire/pride is described through:
+- Danielic "iron" kingdom language;
+- comparison with Sun/era;
+- exaggerated extension of reasoning/pride toward sea/heaven;
+- anthropomorphic neck/collar/body language.
+
+### M66-15 — ONE POLITICAL SYSTEM IS PROJECTED AT HUMAN, METAL, GEOGRAPHIC AND CELESTIAL SCALE
+
+Same imperial referent:
+- king;
+- iron kingdom;
+- body/neck pride;
+- Sun-like age/scale;
+- sea/heaven reach.
+
+This is another strong cross-scale projection control.
+
+### M66-16 — COSMIC-SCALE CLAIMS IN ROYAL PRIDE ARE NOT LITERAL ASTRONOMICAL MEASUREMENTS
+
+Important source discipline.
+
+---
+
+# 2 MEQABYAN 9
+## narrow righteous path vs wide destructive path — moral-path control
+
+The text contrasts:
+- a very narrow righteous path;
+- broad/wide way associated with Satan, Gehenna/Sheol and destruction.
+
+### M66-17 — 2 MEQABYAN HAS A NARROW-PATH IMAGE, BUT IT IS NOT 4 EZRA'S BROAD→NARROW→BROAD GATE GEOMETRY
+
+This is a major comparison control.
+
+4 Ezra 7:
+- broad destination;
+- narrow connector;
+- bilateral fire/deep-water sides;
+- finite one-person throughput.
+
+2 Meqabyan 9:
+- narrow moral road;
+- broad bad road.
+
+Therefore:
+do not combine every "narrow path" into one throat mechanism.
+
+### M66-18 — FUNCTIONAL CONTEXT OVERRIDES SHAPE RESEMBLANCE
+
+This is exactly why strict gate criteria are necessary.
+
+---
+
+# 2 MEQABYAN 10
+## righteous receive two kingdoms — earth and heaven
+
+The text speaks of righteous forebears receiving:
+- kingdom/honor on earth;
+- kingdom/honor in heaven.
+
+### M66-19 — EARTHLY AND HEAVENLY DOMAINS CAN BOTH BE POPULATED/HONORED IN THE TEXT
+
+This is relevant to Vardath's populated-world interest.
+
+But:
+source meaning is theological reward/afterlife,
+not adjacent physical world-turns.
+
+### M66-20 — TWO-DOMAIN STATUS DOES NOT ITSELF IMPLY A GATE BETWEEN THEM
+
+Keep domain existence separate from transport mechanism.
+
+---
+
+# 2 MEQABYAN 11
+## Korah / swallowed-earth sequence; censers survive and are repurposed; tabernacle layers; cherub image; mercy seat / divine light
+
+The chapter retells:
+- Moses/Korah conflict;
+- rebellious group swallowed into earth/Sheol;
+- censers survive and enter later sacred use;
+- sanctuary/tabernacle structure;
+- curtains/screens/capitals/hangings;
+- altar/basin;
+- cherubim;
+- divine speech/light at central sacred seat.
+
+### M66-21 — DESTRUCTIVE EVENT CAN PRESERVE MATERIAL THAT IS REUSED IN A SUCCESSOR SACRED SYSTEM
+
+Korah group:
+lost.
+
+Censers/material:
+retained/reassigned.
+
+This is directly relevant to:
+**reset ≠ blank slate**.
+
+Same material:
+old hostile episode
+→ new holy function.
+
+### M66-22 — INHERITED MATERIAL CAN CHANGE FUNCTION WITHOUT LOSING MATERIAL CONTINUITY
+
+Cross-link:
+Daniel 5 vessels;
+Vardath successor-world inherited cargo.
+
+### M66-23 — CHERUBIM HERE BELONG TO SANCTUARY / THRONE / ACCESS ARCHITECTURE
+
+No serpent/feathered morphology is supplied.
+
+Function first:
+**sacred-seat / presence / boundary architecture**.
+
+### M66-24 — INNER SANCTUARY USES MULTIPLE NESTED BOUNDARIES
+
+Screen/curtain/hangings:
+differentiate zones.
+
+Strong access-control analogue,
+not fingertrap.
+
+### M66-25 — LIGHT AT THE CENTRAL SACRED SEAT IS A LOCAL PRESENCE/INFORMATION OUTPUT
+
+Useful for:
+central-node light taxonomy.
+
+---
+
+# 2 MEQABYAN 12
+## fire consumes mountain / whirlwind lifts dust / ruler struck at heart → imperial system collapse
+
+The text uses:
+- fire on mountain;
+- dust lifted/swept by whirlwind;
+- soul/body separation teaching.
+
+Tseerutsaydan:
+- boasts;
+- angel/death agent strikes;
+- heart/central life fails;
+- king dies.
+
+Then:
+- Chaldean attack;
+- kingdom burns/collapses.
+
+### M66-26 — CENTRAL RULER FAILURE IS FOLLOWED BY POLITICAL-SYSTEM COLLAPSE
+
+This is a source-level:
+**head/central operator loss**
+→ **distributed system failure**.
+
+### M66-27 — FIRE + WHIRLWIND IS ENVIRONMENTAL DESTRUCTION IMAGERY, NOT YET A GATE MECHANISM
+
+### M66-28 — HEART FUNCTIONS AS LIFE-CENTER NODE IN THE BODY PROJECTION
+
+Do not automatically translate political "heart" to geometric center.
+
+---
+
+# 2 MEQABYAN 13
+## martyr memory → world passing → future life → luminous resurrected faces
+
+The text emphasizes:
+- present world passing;
+- resurrection;
+- restored bodily identity;
+- faces shining many times brighter than Sun in the working translation.
+
+### M66-29 — HUMAN→SOLAR/LUMINOUS PROJECTION REPEATS
+
+Cross-link:
+Daniel;
+4 Ezra;
+Malachi.
+
+Celestial brightness:
+does not imply literal star/sun identity.
+
+### M66-30 — SUCCESSOR LIFE IS POPULATED BY RESTORED PERSONS
+
+Broadly compatible with user rule at the level of eschatological populated successor state.
+
+But source does not describe already-populated adjacent physical world-turn.
+
+---
+
+# 2 MEQABYAN 14
+# MAJOR RESURRECTION / REASSEMBLY PASSAGE
+## body/soul separation, constituent media persistence, earth-as-womb, dew trigger, flesh returns where corpse fell, soul habitations open, reunification at signal
+
+This is the strongest systems passage in 2 Meqabyan.
+
+---
+
+# 2 Meqabyan 14 — bodily identity debate
+
+The chapter argues strongly against:
+- resurrection as merely another unrelated body;
+- loss of original embodied identity.
+
+The same person/body continuity is central.
+
+### M66-31 — RESURRECTION IS EXPLICITLY SAME-IDENTITY RECONSTITUTION, NOT REPLACEMENT BY A DIFFERENT CARRIER
+
+This is very important for Vardath transfer identity.
+
+If a system disperses material and later reconstitutes it,
+the text insists:
+**same referent returns**.
+
+---
+
+# 2 Meqabyan 14:19
+## wind in wind / water in water / earth in earth / fire in fire
+
+The passage gives constituent "nature" language:
+- wind returns/remains in wind;
+- water in water;
+- earth in earth;
+- fire in fire.
+
+### M66-32 — ONE LIVING BODY IS ANALYZED AS COMPONENT STATES THAT CAN RETURN TO THEIR MATCHING ENVIRONMENTAL DOMAINS
+
+This is strikingly similar to 1 Meqabyan 8.
+
+System:
+**integrated body**
+→ **distributed media**
+→ later
+**reassembly**.
+
+### M66-33 — 1 AND 2 MEQABYAN SHARE A FOUR-MEDIUM REASSEMBLY GRAMMAR
+
+This repetition may be traditional/theological rather than independent evidence.
+
+Still important.
+
+---
+
+# 2 Meqabyan 14:29–33
+## rain/dew/earth/womb analogies → grave cannot retain occupants → flesh gathers where corpse fell → soul habitations open → souls return to flesh
+
+The chapter compares:
+- earth;
+- rain;
+- dew;
+- womb;
+- growth.
+
+Then:
+- grave/earth cannot permanently hold what was placed in it;
+- flesh returns/gathers at bodily location;
+- places/habitations where souls dwell are opened;
+- souls return to flesh.
+
+### M66-34 — EARTH/GRAVE FUNCTIONS AS A BODY-MATERIAL STORAGE DOMAIN
+
+This is a strong:
+**container/storehouse**
+model.
+
+### M66-35 — SOULS AND BODY-MATERIAL ARE STORED IN DIFFERENT DOMAINS AND LATER REUNITED
+
+Two storage layers:
+
+**body material**
+→ earth/grave.
+
+**souls**
+→ separate habitations.
+
+Then:
+both reopen/reconnect.
+
+This is a genuine:
+**multi-domain storage → synchronized reopening → reunification**
+process.
+
+### M66-36 — "PLACES WHERE SOULS LIVE ARE OPENED" IS REAL APERTURE LANGUAGE, BUT IT IS ESCHATOLOGICAL AFTERLIFE ACCESS
+
+Important:
+there is an opening,
+but no physical throat geometry is described.
+
+### M66-37 — DEW FUNCTIONS AS A REACTIVATION INPUT
+
+The chapter uses rain/dew/growth as resurrection analogy.
+
+Cross-link:
+Hosea/Zechariah/1 Meqabyan.
+
+---
+
+# 2 Meqabyan 14:34
+## signal → near-instant resurrection response
+
+Working translation:
+- drum/trumpet-like signal;
+- dead rise quickly.
+
+### M66-38 — ONE SIGNAL TRIGGERS A DISTRIBUTED MULTI-DOMAIN REASSEMBLY
+
+This is a strong:
+**broadcast → synchronized response**
+analogue.
+
+Again:
+source is resurrection theology.
+
+---
+
+# CRITICAL NEGATIVE CONTROL — NO SECURE ROPE/FINGERTRAP IN CHAPTER 14
+
+The modernized derivative's:
+- rope;
+- root;
+- branches pulling inward
+
+is not supported by the underlying working translation.
+
+### M66-39 — SECTION 66 DOES NOT SUPPLY THE MISSING BROAD→CONTRACTING-ROPE→THROAT LINK
+
+This is important enough to state explicitly.
+
+Without source checking,
+we could have falsely claimed the long-sought strict fingertrap.
+
+We did not.
+
+---
+
+# 2 MEQABYAN 15
+## Day of Judgment = darkness, mist, lightning, earthquake, heat/frost, social flattening
+
+The Day includes:
+- darkness;
+- thick mist;
+- flashes/lightning;
+- earth disturbance;
+- temperature extremes;
+- social status collapse.
+
+### M66-40 — JUDGMENT AGAIN COUPLES SKY/LIGHT, GROUND, THERMAL AND SOCIAL SYSTEMS
+
+Cross-link:
+Joel;
+Zephaniah;
+Habakkuk.
+
+### M66-41 — SYSTEM RESET INCLUDES SOCIAL-HIERARCHY STATE CHANGE
+
+Environmental and institutional transitions are linked.
+
+---
+
+# 2 MEQABYAN 16
+## nails/hair regrowth; seed preserves species identity; grave yields same flesh/soul; dew of mercy triggers return
+
+The chapter uses everyday continuity analogies:
+- nails/hair regrow;
+- grape seed remains grape-kind;
+- fig remains fig;
+- wheat/barley preserve identity.
+
+Then:
+- grave gives back same bodily identity;
+- soul and flesh reunite;
+- dew/blessing contributes to restoration.
+
+### M66-42 — SUCCESSOR FORM PRESERVES IDENTITY-TYPE ACROSS DISASSEMBLY/REGROWTH
+
+This is a very strong control for:
+**new state ≠ different entity**.
+
+### M66-43 — SAME-SEED→SAME-SPECIES IS THE TEXT'S OWN ARGUMENT AGAINST REPLACEMENT IDENTITY
+
+For Vardath:
+transferred/reassembled populations/material can remain:
+same identity class
+despite state change.
+
+### M66-44 — DEW AGAIN FUNCTIONS AS ACTIVATION/RENEWAL INPUT
+
+But source:
+resurrection metaphor.
+
+---
+
+# 2 MEQABYAN 17
+# MAJOR PLANT / FIELD DYNAMICS PASSAGE
+## kernel breakdown → one seed→many grains; roots draw water; branch/tip expansion; water+wind+earth+sun/fire feed growth
+
+The chapter returns to agricultural mechanics.
+
+A grain:
+- enters ground;
+- breaks down;
+- sprouts;
+- produces many grains.
+
+Plant/vine:
+- roots draw water;
+- water travels upward;
+- tips/leaves extend;
+- earth supplies material;
+- wind contributes;
+- sun/heat contributes;
+- dew/moisture reaches distant tips;
+- buds/fruit develop.
+
+### M66-45 — ONE CONCENTRATED SEED BECOMES A DISTRIBUTED BRANCHED NETWORK
+
+This is a genuine:
+**one → many**
+growth topology.
+
+### M66-46 — WATER MOVES FROM LOWER ROOT ZONE INTO DISTRIBUTED UPPER BRANCH/TIP FIELD
+
+This is directly useful to:
+tree/current network analysis.
+
+### M66-47 — MULTI-MEDIUM SUPPORT SYSTEM REPEATS
+
+Inputs:
+- water;
+- earth;
+- wind;
+- sun/fire.
+
+One living network integrates all four.
+
+### M66-48 — THIS IS STRONG ON THE REOPENING/DISTRIBUTED SIDE OF VARDATH, NOT THE THROAT SIDE
+
+The plant:
+concentrated seed
+→ growing axis/root
+→ distributed branches/fruit.
+
+It does not show:
+broad lattice contracting.
+
+---
+
+# 2 MEQABYAN 18–19
+## earth as reciprocal body-store; humans consume earth, earth consumes human material; death sorts souls into habitations while earth stores flesh
+
+The text develops a striking reciprocal cycle:
+
+During life:
+- humans eat earth's fruit;
+- drink water;
+- build bodies from earth-derived material.
+
+At death:
+- earth receives flesh/blood;
+- bodily matter dissolves/returns.
+
+Death:
+- gathers souls into assigned places/habitations;
+- light/dark distinctions.
+
+Earth:
+- gathers flesh/body material.
+
+At signal:
+- both stores give back/reconnect.
+
+### M66-49 — EARTH FUNCTIONS AS BOTH MATERIAL SOURCE AND MATERIAL RECEIVER
+
+This is a genuine cycle:
+
+**earth/environment**
+→ **living body**
+→ **death**
+→ **earth/environment**
+→ **resurrection body**.
+
+### M66-50 — BODY AND SOUL HAVE PARALLEL BUT SEPARATE STORAGE NETWORKS
+
+This reinforces M66-35.
+
+### M66-51 — RESURRECTION REQUIRES COORDINATED RELEASE FROM TWO DIFFERENT STORAGE SYSTEMS
+
+This is one of the cleanest multi-channel reassembly concepts in the project.
+
+### M66-52 — "EARTH EATS BODY" IS PERSONIFICATION, NOT LITERAL PREDATORY GROUND
+
+Important projection control.
+
+Environmental medium:
+given biological agency.
+
+Cross-link:
+Habakkuk deep has hands.
+
+---
+
+# 2 MEQABYAN 20
+## postmortem route / guide system — unknown road, possible water/depth/thorn/darkness, no ordinary equipment, light versus dark escorts
+
+The dead traveller:
+- has no ordinary staff/shoes/equipment;
+- faces unknown route;
+- possible slippery/smooth/dark/thorny/watery/deep conditions;
+- cannot rely on ordinary right/left human helper;
+- righteous guided by angels/light;
+- wicked led toward dark punishment.
+
+### M66-53 — AFTERLIFE TRANSIT IS REPRESENTED AS A ROUTE WITH GUIDE/ESCORT REQUIREMENTS
+
+Variables:
+- traveller;
+- path;
+- hazards;
+- guide;
+- destination.
+
+This resembles carrier/route taxonomy.
+
+Source:
+moral eschatology.
+
+### M66-54 — RIGHT/LEFT LANGUAGE HERE IS HELP/ORIENTATION, NOT A BILATERAL COSMIC STRAND SYSTEM
+
+Do not over-map.
+
+### M66-55 — GUIDE IS DISTINCT FROM ROAD
+
+Important operator/apparatus distinction.
+
+---
+
+# 2 MEQABYAN 21
+## city-of-refuge law → earthly sanctuary/pattern tied to heavenly Tent/archetype → body/soul dwelling among righteous
+
+The closing chapter uses:
+- property/greed warnings;
+- refuge/judgment law;
+- sanctuary pattern;
+- correspondence with **Tent/tabernacle in Heaven**;
+- salvation of body/soul;
+- dwelling with righteous forebears;
+- enduring heavenly kingdom.
+
+### M66-56 — EARTHLY RITUAL/LEGAL STRUCTURE IS EXPLICITLY PATTERNED AFTER AN UPPER HEAVENLY STRUCTURE
+
+This is a strong:
+**upper archetype ↔ lower implementation**
+relationship.
+
+Cross-link:
+- Hebrews heavenly/earthly sanctuary;
+- Exodus tabernacle;
+- Ezekiel temple;
+- user's stacked structural analogies.
+
+### M66-57 — UPPER/LOWER CORRESPONDENCE DOES NOT REQUIRE THE TWO STRUCTURES TO BE PHYSICALLY IDENTICAL
+
+The text's logic is:
+pattern/correspondence.
+
+Do not automatically turn it into:
+literal duplicated world-machine.
+
+### M66-58 — HEAVENLY SUCCESSOR DOMAIN IS POPULATED
+
+Righteous predecessors and later faithful:
+share habitation.
+
+Again:
+supports populated other-domain imagery at theological level.
+
+### M66-59 — BODY + SOUL SALVATION IS COORDINATED THROUGH ONE FINAL DWELLING ORDER
+
+The book ends with integrated restored identity,
+not permanent body/soul fragmentation.
+
+---
+
+# 2 MEQABYAN FULL PROCESS TIMELINE
+
+Meqabees attacks Israel/Jerusalem
+→ prophet Reʽay confronts him
+→ ruler lowers himself into pit
+→ repentance
+→ enemy identity reverses into convert
+→ Israelite teachers/information transform ruler's system
+→ sanctuary-pattern material culture reconstructed
+→ converted ruler dies
+→ descendants preserve order
+→ hostile Tseerutsaydan captures descendants
+→ coerced idolatry rejected
+→ sons burned and die
+→ same martyrs appear alive with swords
+→ bodies hidden
+→ empire projected through iron/Sun/body/cosmic pride
+→ narrow righteous path contrasted with broad destructive road
+→ earthly/heavenly reward duality
+→ Korah swallowed / old material censers reused
+→ tabernacle boundaries and cherub-seat recalled
+→ ruler's life-center fails
+→ empire collapses
+→ resurrection identity emphasized
+→ body/soul constituent analysis
+→ wind/water/earth/fire states return to matching domains
+→ earth/grave stores body material
+→ soul habitations store souls
+→ dew/rain/womb analogy
+→ storage domains open
+→ flesh reassembles where body fell
+→ souls return
+→ signal triggers rising
+→ Day darkness/lightning/earth/thermal disruption
+→ same-species seed/nail/hair continuity reinforces bodily identity
+→ kernel breaks down
+→ one seed becomes many grains
+→ roots draw water
+→ branching network expands
+→ earth/wind/sun/water support growth
+→ earth receives bodies it formerly fed
+→ soul/body stores remain separate
+→ signal coordinates release
+→ postmortem traveller follows guided route
+→ earthly refuge/sanctuary law linked to heavenly Tent archetype
+→ body/soul restored into populated heavenly inheritance.
+
+---
+
+# MAJOR FINDING 1
+## Enemy→convert is a complete same-person state reversal
+
+Meqabees is not:
+one evil king replaced by one good king.
+
+He becomes:
+**enemy**
+→ **penitent**
+→ **student**
+→ **law-receiving ruler**.
+
+### M66-60 — MORAL/POLITICAL POLARITY CAN BE TWO STATES OF ONE PERSON
+
+This is relevant to user's repeated-pair/state ideas:
+opposites do not always require two bodies.
+
+---
+
+# MAJOR FINDING 2
+## Cultural information transfer changes the receiving society
+
+Captured/foreign Israelite teachers:
+→ teach ruler
+→ new worship/law pattern
+→ material sanctuary imitation.
+
+### M66-61 — PEOPLE CAN FUNCTION AS INFORMATION CARGO THAT RECONFIGURES THE DESTINATION SYSTEM
+
+Very relevant to Vardath's:
+culture/knowledge transfer between populated worlds.
+
+---
+
+# MAJOR FINDING 3
+## Chapter 14 gives two-storage / one-restoration architecture
+
+**body-material storage**
+= earth/grave.
+
+**soul storage**
+= separate habitations.
+
+Then:
+**both open/release**
+→ **same person reconstituted**.
+
+### M66-62 — MULTI-CHANNEL STORAGE CAN REJOIN INTO ONE IDENTITY
+
+This is one of the most useful abstract mechanisms in 2 Meqabyan.
+
+---
+
+# MAJOR FINDING 4
+## Chapter 17 gives the distributed-growth/reopening side
+
+**one seed**
+→ **rooted axis**
+→ **water rises**
+→ **branches/tips spread**
+→ **many grains/fruit**.
+
+### M66-63 — THIS IS A GOOD ONE→MANY REOPENING ANALOGUE
+
+But no preceding broad→narrow contraction.
+
+---
+
+# MAJOR FINDING 5
+## Chapter 21 gives upper/lower structural correspondence
+
+**earthly Tent/sanctuary/legal order**
+↔
+**Tent in Heaven**.
+
+### M66-64 — LOWER STRUCTURE CAN BE A COPY/PATTERN OF UPPER STRUCTURE WITHOUT BEING THE SAME OBJECT
+
+This becomes essential for evaluating:
+- world-tree duplicates;
+- sanctuary parallels;
+- layered worlds;
+- repeated geometry.
+
+Similarity across layers may mean:
+**pattern correspondence**
+rather than:
+**one object physically spanning them**.
+
+---
+
+# CHERUB / QUETZALCOATL / FEATHERED-SERPENT / DRAGON / SQUATTER-MAN UPDATE
+
+2 Meqabyan is not a major winged-creature book.
+
+Its strongest relevant elements are:
+- cherubim in sanctuary/throne architecture;
+- environment personification;
+- imperial body-scale projection;
+- earth as bodily receiver/store;
+- plant/network reassembly;
+- upper/lower sanctuary correspondence.
+
+### M66-65 — CHERUB FUNCTION HERE REMAINS SACRED-SEAT / ARCHITECTURAL PRESENCE
+
+There is no direct:
+- feathered serpent;
+- dragon transformation;
+- winged anthropomorphic carrier.
+
+Therefore 2 Meqabyan should not be forced into that morphology family.
+
+### M66-66 — ITS MAIN CONTRIBUTION TO THE SAME-PHENOMENON HYPOTHESIS IS STATE/IDENTITY CONTINUITY, NOT CREATURE SHAPE
+
+One identity can remain continuous through:
+- enemy/good ruler;
+- living/dead/appearing;
+- integrated/distributed/reassembled body;
+- earth/heaven domain relation.
+
+---
+
+# PAIR / ROLE REGISTER
+
+## Meqabees / Reʽay
+oppressor/learner ↔ prophet/teacher.
+
+## Meqabees before / after repentance
+same person in opposed system states.
+
+## Tseerutsaydan / martyrs
+coercive ruler ↔ faithful resistance.
+
+## body / soul
+two domains of one person's identity.
+
+## earth store / soul habitation
+parallel storage systems.
+
+## narrow path / broad path
+righteous ↔ destructive moral routes.
+
+## earth kingdom / heaven kingdom
+temporary ↔ enduring honor.
+
+## earthly sanctuary / heavenly Tent
+lower pattern ↔ upper archetype.
+
+## light guides / dark guides
+postmortem route polarity.
+
+---
+
+# NUMBER / TIMING REGISTER
+
+Record without forcing:
+
+- converted household/order persists **five years** before later invasion in working text;
+- martyr intervals and numbers vary by translation context;
+- resurrection discussion repeatedly uses elemental fours;
+- seed multiplication imagery;
+- judgment timings are theological rather than calibrated chronology.
+
+### Source-control warning
+
+Because:
+- accessible critical English work is sparse;
+- online modernizations sometimes paraphrase aggressively;
+- TIPs currently appears to mislabel 3 Meqabyan as 2 Meqabyan;
+
+do not build numerical Vardath correspondences from 2 Meqabyan until the exact Geʽez witness is independently checked.
+
+---
+
+# STRICT FINGERTRAP TEST — 2 MEQABYAN
+
+Criteria:
+1. broad/open support structure;
+2. same structure continuity;
+3. angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Chapter 9 narrow path
+
+Narrow route:
+yes.
+
+Broad bad route:
+yes.
+
+But:
+not broad→narrow→broad same system.
+
+**Not fingertrap.**
+
+## Chapter 14
+
+Distributed components:
+strong.
+
+Reassembly:
+strong.
+
+Opening of soul habitations:
+strong.
+
+Narrow throat:
+absent.
+
+Broad support lattice:
+absent.
+
+**Not fingertrap.**
+
+## Chapter 17
+
+Concentrated seed:
+strong.
+
+Distributed branching:
+strong.
+
+Current through roots/branches:
+strong.
+
+Preceding broad support contraction:
+absent.
+
+**Strong expansion/reopening analogue only.**
+
+## Chapter 21
+
+Upper/lower correspondence:
+strong.
+
+Transfer geometry:
+weak/absent.
+
+### Overall verdict
+
+**2 Meqabyan does not supply the missing strict fingertrap link.**
+
+Most important reason:
+the tempting rope/root/branch wording in a modernized Chapter 14 rendering is not secure in the underlying working translation and therefore cannot be used.
+
+### M66-67 — THE SEARCH REMAINS SOURCE-CLEAN
+
+Current strongest separate phases remain:
+
+**1 Meqabyan 27**
+= broad wind-supported upper-water covering.
+
+**4 Ezra 7**
+= static broad→narrow→broad throat with fire-right/deep-left and finite throughput.
+
+**Zechariah 14**
+= direct topology opening → human passage → bilateral water redistribution.
+
+2 Meqabyan adds:
+**distributed body/media → storage → synchronized reopening/reassembly**
+and
+**seed→distributed branch network**.
+
+But it does not connect the three mechanical phases into one structure.
+
+---
+
+# TEXTUAL / HISTORICAL CONTROLS — 2 MEQABYAN
+
+1. Ethiopian 2 Meqabyan is distinct from Greek 2 Maccabees.
+2. The working 2 Meqabyan has 21 chapters.
+3. Independent English/canon sources identify 2 Meqabyan as the 21-chapter book and 3 Meqabyan as a 10-chapter book.
+4. The current TIPs/UBS page labelled 2 Meqabyan appears to contain the 10-chapter 3 Meqabyan text: its opening matches known 3 Meqabyan material. It was excluded from verse-level control here.
+5. The 21-chapter English working text is a community Geʽez-derived translation hosted on Wikisource and mirrors.
+6. A manuscript/canon resource lists multiple Geʽez manuscript witnesses and an incomplete Horovitz critical edition, confirming the distinct textual tradition.
+7. The modernized Clear Text rendering is useful for readability but sometimes expands wording.
+8. Most importantly, a modernized Chapter 14 rope/root/branch phrase is not present in the underlying Wikisource translation and is not used as evidence.
+9. The opening Meqabees narrative is a conversion story: hostile Moabite ruler repents under prophet Reʽay and adopts Israelite teaching.
+10. Captive/Israelite teachers function as transmitters of law and worship into the converted ruler's system.
+11. The later sons/martyrs episode is distinct from 1 Meqabyan's martyr family even where motifs overlap.
+12. Fire/death/postmortem appearance is resurrection/martyr theology, not demonstrated material gate transfer.
+13. Chapter 9's narrow path is an ethical/eschtological road metaphor and should not be equated with 4 Ezra 7's more explicit spatial throat analogy.
+14. Chapter 11's tabernacle/cherub material belongs to sanctuary tradition.
+15. Reused censers provide an inherited-material continuity example.
+16. Chapter 14 strongly argues bodily resurrection and same-person identity.
+17. Chapter 14's wind/water/earth/fire language gives constituent-domain persistence and reassembly.
+18. The exact wording of some resurrection details should be treated cautiously until a full critical Geʽez edition/translation is available.
+19. Chapter 17's seed/tree process is biological analogy for resurrection, not a literal world-lattice diagram.
+20. Chapters 18–19 personify Earth as source/receiver of bodily matter.
+21. Chapter 20 uses journey/guide language for postmortem moral destiny.
+22. Chapter 21 explicitly relates terrestrial refuge/sanctuary concepts to a Tent in Heaven and an inhabited heavenly inheritance.
+23. No secure passage in the checked 21-chapter text describes a broad woven sky support contracting into a narrow throat and reopening.
+
+---
+
+# Sources logged — 2 Meqabyan
+
+## Primary working English text
+- Wikisource, *Translation:2 Meqabyan*:
+  https://en.wikisource.org/wiki/Translation:2_Meqabyan
+
+## 21-chapter mirror / translation metadata
+- Ethiopian Bible mirror, 2 Meqabyan:
+  https://bible.ertale.com/ethiopiancanon/2meqabyan/
+
+## Geʽez manuscript / edition control
+- Israelite Biblical Canons, 2 Meqabyan:
+  https://israelite-biblical-canons.neocities.org/pages_for_biblical_texts/2_meqabyan
+
+## TIPs mislabel control
+- Current TIPs page labelled 2 Meqabyan:
+  https://tips.translation.bible/story/the-book-of-2-meqabyan/
+- Example current TIPs "2Meq 1:1" page whose content corresponds to the 3 Meqabyan opening:
+  https://tips.translation.bible/tip_verse/2meq-11/
+
+## Book-identity / chapter-count control
+- General Meqabyan overview distinguishing:
+  - 2 Meqabyan = 21 chapters;
+  - 3 Meqabyan = 10 chapters:
+  https://en.wikipedia.org/wiki/Meqabyan
+
+## English publication control
+- *2nd Ethiopian Book of Meqabyan, In Standard English*:
+  https://books.apple.com/us/book/2nd-ethiopian-book-of-meqabyan-in-standard-english/id462819950
+
+---
+
+# SECTION 66 — 2 MEQABYAN COMPLETE
+
+## Strongest new findings
+
+1. **The actual 2 Meqabyan used for this pass is the 21-chapter Ethiopic work, not Greek 2 Maccabees and not the 10-chapter 3 Meqabyan.**
+2. **A serious source-label issue was discovered: the current TIPs stream labelled 2 Meqabyan appears to contain 3 Meqabyan, based on its ten-chapter corpus and its opening text. That stream was excluded from verse-level control for Section 66.**
+3. **A second source issue was caught before it contaminated the research: a modernized Chapter 14 rendering adds rope/root/branch language that is not present in the underlying working translation, so it was not used as fingertrap evidence.**
+4. **Meqabees provides a strong same-person state reversal: hostile ruler → prophetically confronted → lowered into penitential pit → converted student/ruler.**
+5. **Transferred Israelite teachers then function as information cargo that changes the receiving ruler's law, worship and material sanctuary pattern—one of the clearest culture-transfer analogues so far.**
+6. **The converted ruler's death does not immediately erase the transformed system, proving central-operator identity and institutional state are separable.**
+7. **The later martyr sons preserve same-person identity through fire/death/postmortem appearance, expanding the project's state-continuity controls.**
+8. **Tseerutsaydan's empire is projected across human, iron, bodily, geographic and solar/cosmic scales, another strong cross-scale political-body example.**
+9. **Chapter 9 contains a narrow righteous path versus broad destructive path, but it is a moral-road image and is explicitly weaker mechanically than 4 Ezra 7's static throat geometry.**
+10. **Chapter 11 gives a major inherited-material result: material from the Korah episode survives destruction and is repurposed in the sacred system, strongly supporting successor-state reuse rather than blank replacement.**
+11. **The same chapter places cherubim in sanctuary/presence architecture; their secure role here is sacred-seat/support, not serpent/feathered morphology.**
+12. **Chapter 14 is the book's strongest mechanism passage: body and soul separate, constituent wind/water/earth/fire states return to corresponding domains, and later the same person is reconstituted.**
+13. **Body material and souls are stored in different domains—earth/grave versus soul habitations—and the two storage systems later open/release in coordination.**
+14. **The chapter explicitly says places where souls live are opened and souls return to bodily flesh, producing a real multi-domain storage→opening→reunification process.**
+15. **The body that returns is the same identity, not a replacement body; Chapter 16 reinforces this with nails/hair and same-species seed analogies.**
+16. **Chapter 17 gives a strong concentrated→distributed growth model: one kernel breaks down, roots draw water, axis/plant grows, branches/tips spread, and many grains/fruit result.**
+17. **Water, earth, wind and sun/fire jointly support the plant network, paralleling 1 Meqabyan's multi-medium resurrection grammar.**
+18. **Chapters 18–19 personify Earth as both the source of bodily material and the receiver/storehouse of dead bodily matter, while souls occupy separate light/dark habitations until coordinated release.**
+19. **Chapter 20 cleanly separates traveller, hazardous route, guide and destination in afterlife imagery; guide is not the road/gate itself.**
+20. **Chapter 21 explicitly presents an upper heavenly Tent/archetype corresponding to earthly refuge/sanctuary order and ends with an inhabited heavenly inheritance.**
+21. **That upper/lower correspondence is important, but it is pattern correspondence rather than proof that one physical apparatus spans both domains.**
+22. **2 Meqabyan adds little direct wing/feathered-serpent morphology; its strongest contribution to the cherub/Quetzalcoatl/Squatter-Man hypothesis is identity-through-state-change and environment/personification rather than creature shape.**
+23. **No strict fingertrap is present. Crucially, the apparent rope/root/fingertrap wording in a modernized Chapter 14 version was rejected after source checking.**
+24. **The clean cross-text mechanical chain therefore remains: 1 Meqabyan 27 = broad wind-supported upper covering; 4 Ezra 7 = narrow static throat; Zechariah 14 = opening/passage/bilateral outflow. 2 Meqabyan contributes multi-domain storage/reassembly and seed→distributed branching, but not the missing same-structure contraction link.**
+
+## Next live block
+
+**Section 67 — 3 Meqabyan**
+
+Required protocol:
+- re-check all three research archives before beginning;
+- use the **10-chapter** text that the current TIPs stream appears actually to contain;
+- explicitly document the TIPs label mismatch rather than silently treating it as 2 Meqabyan;
+- read all 10 chapters before mapping;
+- identify:
+  - repeated Meqabyan/Meqabis identities;
+  - Sabellianos / ruler-teacher figures;
+  - doctrinal/history frame;
+  - death/resurrection;
+  - judgment;
+  - paired kings/faithful figures;
+  - cosmological passages;
+- search for:
+  - water/deep/sea;
+  - mountain/axis;
+  - gates/doors;
+  - rods/staffs;
+  - wind/fire/light;
+  - wings/cherub/serpent;
+  - upper/lower world correspondence;
+  - distributed→central→distributed processes;
+- do not conflate 3 Meqabyan with 1 or 2 Meqabyan or Greek Maccabees;
+- preserve translation/version uncertainty;
+- apply the strict fingertrap test only after ordinary function is established.
+
