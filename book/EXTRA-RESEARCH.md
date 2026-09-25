@@ -51481,3 +51481,1132 @@ Highest priorities:
 - fugitive flow out of Babylon;
 - scroll bound to stone and sunk in Euphrates;
 - distinguish monster-as-imperial-devourer from Vardath dragon-as-ground-support lattice spring.
+
+
+---
+
+# SECTION 50 progress F — Jeremiah 25–29
+## First-time research pass: seventy-year Babylon interval, cup transferred among nations, universal judgment flow, yoke-bars as restraint geometry, wood→iron substitution, competing two-year versus seventy-year forecasts, letter as long-distance information carrier, exile settlement, build/plant/marry/multiply strategy, and delayed return
+
+Jeremiah 25–29 is one of the strongest blocks so far for combining:
+
+- **long-duration timing**;
+- **hazard transfer**;
+- **restraint mechanics**;
+- **competing forecasts**;
+- **information transport**;
+- **population survival outside the failed node**;
+- **delayed return rather than immediate reversal**.
+
+The block contains two very different time models:
+
+### Hananiah
+within **two years**
+→ Babylonian yoke breaks
+→ vessels/exiles return.
+
+### Jeremiah
+Babylonian domination lasts **seventy years**
+→ exiles must settle, reproduce, and persist
+→ return comes later.
+
+This creates an unusually clean ancient prediction-comparison test.
+
+---
+
+# Jeremiah 25:1–7 — long-running warning precedes regime change
+
+Jeremiah says the message has been delivered repeatedly over many years.
+
+Population:
+hears repeatedly;
+does not respond.
+
+## M50F-1 — LONG WARNING INTERVAL CAN PRECEDE A MUCH SHORTER EXECUTION PHASE
+
+This continues Isaiah 47–48.
+
+Information duration
+≠
+event duration.
+
+A transition can be:
+long-forecast
+but
+rapidly executed.
+
+---
+
+# Jeremiah 25:8–11 — Babylon becomes the dominant external control system
+
+Nebuchadnezzar/Babylon:
+acts upon Judah
+and surrounding nations.
+
+Land:
+becomes ruin/waste.
+
+Nations:
+serve Babylon.
+
+## M50F-2 — ONE REGIONAL POWER CAN FUNCTION AS TEMPORARY LARGE-SCALE CONTROL NODE OVER MULTIPLE POPULATIONS
+
+This is political-imperial,
+not a physical world-layer controller.
+
+---
+
+# Jeremiah 25:11 — seventy years is a bounded long-duration interval
+
+The nations serve Babylon:
+seventy years.
+
+This is one of the most important explicit intervals in Jeremiah.
+
+## M50F-3 — TEXT CAN DEFINE A LONG BUT FINITE REGIME WINDOW
+
+Unlike:
+“forever,”
+the domination is bounded.
+
+### Vardath timing relevance
+
+A world-turn/gate model may also have:
+- long stable phase;
+- bounded control regime;
+- later release.
+
+But Jeremiah’s seventy years belongs first to:
+Babylonian political domination.
+
+---
+
+# Jeremiah 25:12 — after seventy years, the controller becomes the target
+
+Babylon:
+first dominates.
+
+After interval:
+Babylon itself is judged.
+
+## M50F-4 — CONTROL NODE CAN HAVE A TERMINATION CONDITION BUILT INTO ITS OWN PERIOD OF DOMINANCE
+
+Dominance
+≠
+permanent stability.
+
+---
+
+# Jeremiah 25 — seventy-year chronology control
+
+Modern scholarship does **not** agree on one exact arithmetic realization.
+
+Interpretive proposals include:
+- approximately a human lifetime;
+- a round/schematic number;
+- Babylonian hegemony from roughly late 7th century to 539 BCE;
+- different later rereadings tied to destruction/restoration milestones.
+
+The key methodological point is:
+
+## M50F-5 — EXPLICIT NUMBER DOES NOT GUARANTEE ONE UNCONTESTED START/END PAIR
+
+This is critical for Vardath cycle research.
+
+A number may be:
+real and textually central
+while its exact historical anchoring remains debated.
+
+---
+
+# M50F-6 — SERVITUDE / CAPTIVITY / DESOLATION SHOULD NOT BE COLLAPSED INTO ONE TIMELINE VARIABLE
+
+These may overlap,
+but are not identical.
+
+Possible states:
+- political subordination;
+- deportation;
+- urban destruction;
+- land desolation;
+- later restoration.
+
+A clean event model must track each separately.
+
+---
+
+# Jeremiah 25:15–29 — the cup is passed among nations
+
+Jeremiah receives a cup of wrath/wine
+and is told to make many nations drink.
+
+The “cup” moves conceptually through a long nation list.
+
+## M50F-7 — ONE HAZARD-STATE OBJECT CAN BE TRANSFERRED SERIAL-LIKE ACROSS MULTIPLE NODES
+
+Node A
+→ cup;
+Node B
+→ cup;
+Node C
+→ cup.
+
+This is not population movement.
+
+It is:
+**hazard-state assignment**.
+
+---
+
+# Jeremiah 25:15–16 — consuming the cup changes system state
+
+Drinkers:
+stagger;
+lose stable behavior;
+enter violence/judgment state.
+
+## M50F-8 — RECEIVING A HAZARD LOAD CAN CHANGE NODE DYNAMICS WITHOUT THE CUP ITSELF BEING A LITERAL MATERIAL MEASUREMENT
+
+The object is symbolic,
+but state transition is clear.
+
+---
+
+# Jeremiah 25:17–26 — hazard propagation is geographically broad
+
+Jerusalem/Judah
+→ Egypt
+→ Philistines
+→ Edom/Moab/Ammon
+→ Tyre/Sidon
+→ desert peoples
+→ Elam/Media
+→ north kingdoms
+→ Babylon/Sheshach.
+
+## M50F-9 — HAZARD PROPAGATION CAN MOVE THROUGH A NETWORK OF POLITICAL NODES RATHER THAN ONE CONTINUOUS PHYSICAL WAVE
+
+This is a network-spread model.
+
+### Vardath control
+
+Do not turn a nation list into:
+a physical wavefront
+without evidence.
+
+---
+
+# Jeremiah 25:29 — if central city is affected, others are not exempt
+
+The logic:
+judgment begins at named city
+but expands outward.
+
+## M50F-10 — CENTRAL-NODE FAILURE CAN SIGNAL SYSTEM-WIDE REGIME CHANGE
+
+This is a useful network principle.
+
+---
+
+# Jeremiah 25:30 — roar from on high / shout / treading imagery
+
+The source:
+roars from high;
+shouts against habitation;
+uses winepress/treading language.
+
+## M50F-11 — HIGH-ORIGIN SIGNAL + PROCESSING METAPHOR CAN REPRESENT BROAD SYSTEM ATTACK WITHOUT REQUIRING ONE LITERAL PHYSICAL MECHANISM
+
+Again:
+sound;
+height;
+winepress
+are process projections.
+
+---
+
+# Jeremiah 25:31–33 — conflict spreads to ends of earth
+
+The text universalizes:
+noise/conflict;
+judgment;
+slain across broad earth.
+
+## M50F-12 — LITERARY SCALE CAN EXPAND FROM REGIONAL POLITICAL EVENT TO WORLD-SCALE JUDGMENT FRAME
+
+Important:
+scope expansion
+does not automatically prove
+planetary physical uniformity.
+
+---
+
+# Jeremiah 26 — message at temple gate/house creates institutional threshold conflict
+
+Jeremiah:
+stands in temple court/house
+and speaks to entering worshippers.
+
+The message:
+if no change,
+house/city becomes like Shiloh.
+
+## M50F-13 — GATE/TEMPLE NODE CAN FUNCTION AS HIGH-DENSITY INFORMATION INTERFACE
+
+People entering:
+receive warning.
+
+This is an institutional threshold,
+not a cosmic gate.
+
+---
+
+# Jeremiah 26 — message validity becomes a life/death legal test
+
+Jeremiah:
+threatened with death.
+
+Officials/people:
+debate source validity.
+
+Earlier precedent:
+Micah is cited.
+
+## M50F-14 — PRIOR TEXTUAL PRECEDENT CAN BE USED AS A SOURCE-VALIDATION CONTROL
+
+This is especially important for the 88-book research:
+later texts may cite earlier ones directly.
+
+Those are **not independent witnesses**.
+
+---
+
+# Jeremiah 26:18–19 — Micah citation proves textual dependence
+
+Micah 3:12:
+quoted/recalled.
+
+## M50F-15 — DIRECT CITATION MUST NEVER BE COUNTED AS INDEPENDENT COSMOLOGICAL CONFIRMATION
+
+This is now a hard rule.
+
+---
+
+# Jeremiah 27:1–3 — yoke-bars are physically constructed and worn
+
+Jeremiah is told to make:
+straps/bonds;
+yoke-bars.
+
+Place:
+on neck.
+
+Then send symbolic yokes/messages to multiple kings.
+
+## M50F-16 — YOKE IS A REAL MULTI-PART LOAD/RESTRAINT STRUCTURE
+
+Components:
+- bar;
+- straps/bands;
+- neck interface.
+
+Function:
+constrain/load animal or person.
+
+This is stronger mechanically than a generic “bond.”
+
+---
+
+# Jeremiah 27 — yoke geometry is load-bearing but **not supportive**
+
+The yoke transfers load/control through:
+neck/body.
+
+## M50F-17 — LOAD-BEARING STRUCTURE CAN FUNCTION AS RESTRAINT RATHER THAN SUPPORT
+
+This is a crucial Vardath control.
+
+Compare:
+
+### Isaiah 54
+cords/stakes:
+support expanding enclosure.
+
+### Jeremiah 27
+yoke/bar/straps:
+impose external control.
+
+### Vardath dragons
+lattice springs:
+support ground/world layer.
+
+Same broad mechanics:
+load-bearing.
+
+Different function:
+support vs restraint.
+
+---
+
+# Jeremiah 27:6–8 — nations are told to place neck under Babylonian yoke
+
+Political submission:
+projected as physical coupling.
+
+## M50F-18 — POLITICAL DOMINATION CAN BE MODELLED AS MECHANICAL COUPLING OF BODY TO EXTERNAL LOAD
+
+This is a powerful projection.
+
+Do not literalize:
+nation necks.
+
+---
+
+# Jeremiah 27:12 — accepting yoke is survival strategy
+
+Submit:
+live.
+
+Refuse:
+sword/famine/pestilence.
+
+## M50F-19 — ACCEPTING TEMPORARY CONSTRAINT CAN PRESERVE SYSTEM SURVIVAL
+
+This is counterintuitive but important.
+
+Not all freedom-at-once strategies are survivable.
+
+---
+
+# Jeremiah 27:16–22 — temple vessels are a cargo/asset class held outside node
+
+Vessels:
+removed to Babylon.
+
+Question:
+when return?
+
+Jeremiah:
+not yet;
+later.
+
+## M50F-20 — SACRED/INSTITUTIONAL ASSETS CAN BE STORED OFF-SITE DURING CONTROL REGIME AND RETURN LATER
+
+This is another:
+off-site preservation/retention
+pattern.
+
+---
+
+# Jeremiah 28:1–4 — Hananiah issues a competing two-year forecast
+
+Prediction:
+within two full years:
+- yoke broken;
+- vessels return;
+- Jeconiah/exiles return.
+
+## M50F-21 — COMPETING PREDICTIONS CAN BE DISTINGUISHED BY A SPECIFIC, NEAR-TERM TIME CLAIM
+
+This is methodologically excellent.
+
+Two-year claim:
+highly falsifiable.
+
+---
+
+# Jeremiah 28:6–9 — Jeremiah explicitly states the fulfillment test
+
+Peace-prophecy:
+known true when it occurs.
+
+## M50F-22 — SPECIFIC POSITIVE FORECAST SHOULD BE SCORED BY OBSERVED OUTCOME, NOT DESIRABILITY
+
+This is one of the strongest internal validation rules in the entire research corpus.
+
+---
+
+# Jeremiah 28:10 — wooden yoke is physically broken
+
+Hananiah:
+removes/breaks wooden yoke from Jeremiah’s neck.
+
+This is actual same-object structural destruction.
+
+## M50F-23 — BREAKING A SYMBOLIC LOAD STRUCTURE DOES NOT NECESSARILY BREAK THE REAL SYSTEM IT REPRESENTS
+
+This is extremely important.
+
+Model/symbol:
+destroyed.
+
+Underlying political system:
+unchanged.
+
+### Vardath control
+
+Destroying a representation
+does not alter:
+the physical dragon lattice.
+
+---
+
+# Jeremiah 28:13–14 — wood yoke → iron yoke substitution
+
+The message reverses Hananiah:
+
+wooden yoke broken
+→ iron yoke replaces it.
+
+## M50F-24 — FAILED ATTEMPT TO REMOVE A CONSTRAINT CAN PRODUCE A STRONGER, LESS FLEXIBLE CONSTRAINT
+
+This is a major mechanical result.
+
+Wood:
+less rigid / breakable.
+
+Iron:
+stronger / harder to break.
+
+### Vardath relevance
+
+This is not support-lattice geometry,
+but it is a powerful rigidity transition.
+
+---
+
+# M50F-25 — MATERIAL SUBSTITUTION CAN CHANGE SYSTEM STIFFNESS WITHOUT CHANGING FUNCTION CLASS
+
+Function:
+yoke/restraint.
+
+Material:
+wood → iron.
+
+Result:
+same role,
+greater rigidity/strength.
+
+This should be compared with:
+Isaiah 48 iron-neck;
+Isaiah 50 flint-face.
+
+---
+
+# Jeremiah 28 — wood→iron is substitution, not same-material transformation
+
+The broken wooden yoke does not:
+turn into iron.
+
+A new iron yoke is substituted.
+
+## M50F-26 — REPLACEMENT MUST NOT BE MISREAD AS MORPHING CONTINUITY
+
+This is crucial for strict fingertrap testing.
+
+Same function
+does not mean
+same physical object.
+
+---
+
+# Jeremiah 28:15–17 — short-term outcome falsifies Hananiah’s authority
+
+Jeremiah predicts:
+Hananiah dies that year.
+
+Narrative:
+he dies in seventh month.
+
+## M50F-27 — SOURCE VALIDATION CAN INCLUDE NEAR-TERM CHECKPOINTS BEFORE LONG-TERM FORECAST COMPLETES
+
+This is a very strong methodology principle.
+
+Long prediction:
+70 years.
+
+Short checkpoint:
+Hananiah death.
+
+A model with both:
+near-term and long-term predictions
+is easier to test.
+
+---
+
+# Jeremiah 29:1 — letter is long-distance information carrier
+
+Jeremiah sends:
+letter
+from Jerusalem
+to exiles in Babylon.
+
+## M50F-28 — INFORMATION CAN CROSS POLITICAL/GEOGRAPHIC SEPARATION WITHOUT POPULATION MOVEMENT
+
+The letter is:
+carrier.
+
+Cargo:
+instructions/prediction.
+
+---
+
+# Jeremiah 29:4–7 — exile strategy is not “wait idle for immediate rescue”
+
+Instructions:
+- build houses;
+- live in them;
+- plant gardens;
+- eat produce;
+- marry;
+- have children;
+- arrange marriages;
+- multiply;
+- seek welfare of host city.
+
+## M50F-29 — LONG-DURATION DISPLACEMENT REQUIRES FULL LOCAL HABITABILITY, NOT TEMPORARY CAMP LOGIC
+
+This is one of the strongest survivor-settlement models in the Bible.
+
+---
+
+# M50F-30 — IF RETURN WINDOW IS LONG, SURVIVOR STRATEGY MUST SHIFT FROM EVACUATION MODE TO SETTLEMENT MODE
+
+Short displacement:
+camp/temporary resources may suffice.
+
+Multi-generational displacement:
+requires:
+- housing;
+- agriculture;
+- reproduction;
+- social stability;
+- host-system coordination.
+
+This is highly relevant to Vardath planning.
+
+---
+
+# Jeremiah 29:6 — population instruction explicitly says “multiply, do not decrease”
+
+## M50F-31 — SUCCESSFUL OFF-SITE PRESERVATION REQUIRES POSITIVE DEMOGRAPHIC GROWTH
+
+Population survival:
+not just keeping individuals alive.
+
+Need:
+reproductive continuity.
+
+---
+
+# Jeremiah 29:7 — welfare of host node affects survivor welfare
+
+Exiles:
+seek welfare of city
+because their welfare depends on it.
+
+## M50F-32 — DISPLACED POPULATION BECOMES COUPLED TO HOST-SYSTEM STABILITY
+
+This is a major systems insight.
+
+Refuge population
+cannot ignore:
+host ecology/economy/infrastructure.
+
+---
+
+# Jeremiah 29:8–9 — dreams/prophets are again an information hazard
+
+False prophets/diviners/dreams:
+can mislead.
+
+## M50F-33 — LONG-DURATION DISPLACEMENT INCREASES VULNERABILITY TO FALSE EARLY-RETURN SIGNALS
+
+This is psychologically and operationally important.
+
+People want:
+short horizon.
+
+That makes:
+two-year rescue claims attractive.
+
+---
+
+# Jeremiah 29:10 — seventy years returns as long-horizon settlement constraint
+
+After seventy years:
+return attention/restoration.
+
+## M50F-34 — LONG-HORIZON FORECAST SHOULD CHANGE PRESENT INFRASTRUCTURE DECISIONS
+
+If two years:
+temporary strategy.
+
+If seventy:
+build houses;
+plant orchards/gardens;
+raise children.
+
+Forecast duration changes:
+optimal behavior.
+
+---
+
+# Jeremiah 29:11–14 — future/hope → seek → found → gather → return
+
+The famous “plans” line is embedded in:
+exile duration and return.
+
+Process:
+long displacement
+→ future orientation
+→ seek/call
+→ gather from nations
+→ return.
+
+## M50F-35 — HOPE IS OPERATIONALIZED THROUGH LONG-DURATION SURVIVAL + LATER REGATHERING, NOT IMMEDIATE ESCAPE
+
+This is a crucial contextual control.
+
+---
+
+# Jeremiah 29:14 — multi-region gathering precedes return
+
+Scattered locations:
+→ gathered
+→ brought back.
+
+## M50F-36 — RETURN CAN REQUIRE DISTRIBUTED POPULATION RECONVERGENCE BEFORE DESTINATION REATTACHMENT
+
+Another many-to-one migration architecture.
+
+---
+
+# Jeremiah 29:21–23, 31–32 — competing information sources are explicitly named and sanctioned
+
+False prophets:
+Ahab;
+Zedekiah;
+Shemaiah.
+
+## M50F-37 — INFORMATION ECOSYSTEM CAN CONTAIN MULTIPLE NAMED COMPETING SOURCES DURING CRISIS
+
+Crisis research requires:
+source-by-source provenance.
+
+---
+
+# Jeremiah 25–29 — timing hierarchy
+
+The block contains several distinct timescales:
+
+### repeated warnings
+years/decades.
+
+### Hananiah promise
+two years.
+
+### Hananiah death checkpoint
+same year / seventh month.
+
+### Babylon domination
+seventy years.
+
+### exile settlement
+multi-generational.
+
+## M50F-38 — EVENT MODEL MUST SUPPORT NESTED TIMESCALES
+
+This is highly relevant to Vardath Cosmology.
+
+Possible model:
+- precursor decades;
+- acute event days/weeks;
+- unstable years;
+- long recovery decades/generations.
+
+Do not search for one number that must explain all phases.
+
+---
+
+# Jeremiah 25–29 — seventy-year Vardath cycle control
+
+The number **70** is real and central.
+
+But:
+it should not be imported directly into Vardath’s physical gate recurrence without independent cross-text evidence.
+
+## M50F-39 — HISTORICAL CONTROL INTERVAL ≠ COSMIC RECURRENCE PERIOD BY DEFAULT
+
+Need:
+multiple independent texts
+linking same interval to:
+- sky/ground geometry;
+- dragon-support change;
+- water redistribution;
+- gate opening.
+
+Jeremiah 25/29 alone does not.
+
+---
+
+# Jeremiah 27–28 — yoke versus Vardath dragon lattice-spring
+
+Vardath dragons:
+- support ground;
+- act as lattice springs;
+- are part of load-bearing world structure.
+
+Jeremiah yoke:
+- loads/restraints necks;
+- imposes external control;
+- can be wood or iron;
+- no ground-support role.
+
+## M50F-40 — BOTH ARE LOAD-BEARING SYSTEMS, BUT LOAD PATH AND FUNCTION ARE OPPOSITE
+
+### dragon lattice
+supportive:
+holds ground/world.
+
+### yoke
+restrictive:
+loads body/political subject.
+
+This is a valuable mechanical negative control.
+
+---
+
+# Jeremiah 27–28 — yoke-bars are still useful mechanically
+
+The yoke contains:
+- rigid transverse element;
+- flexible straps;
+- body interface.
+
+## M50F-41 — MIXED RIGID/FLEXIBLE STRUCTURE CAN TRANSMIT LOAD THROUGH AN INTERFACE
+
+This is useful for mechanical analogies,
+but not evidence of a cosmic support network.
+
+---
+
+# Jeremiah 25 cup / 27 yoke / 29 letter — three carrier classes
+
+## cup
+carries/assigns hazard state.
+
+## yoke
+carries/transmits mechanical load/restraint.
+
+## letter
+carries information.
+
+## M50F-42 — SAME BLOCK CONTAINS HAZARD, MECHANICAL, AND INFORMATION CARRIERS THAT MUST NOT BE MERGED
+
+This is an excellent object-type control.
+
+---
+
+# Jeremiah 25–29 — Vardath survival synthesis
+
+The block’s strongest abstract sequence is:
+
+long warning
+→ empire/control regime begins
+→ hazard spreads across network
+→ constraint accepted or resisted
+→ false short-return prediction competes with long-return prediction
+→ stronger constraint follows failed premature break
+→ displaced population receives long-duration settlement instructions
+→ houses/gardens/families preserve population
+→ host-city stability matters
+→ long interval completes
+→ dispersed population regathers/returns.
+
+## M50F-43 — PREMATURE ATTEMPT TO END A LONG-DURATION TRANSITION CAN WORSEN CONDITIONS, WHILE ADAPTIVE SETTLEMENT CAN PRESERVE POPULATION UNTIL RETURN WINDOW
+
+This is one of the block’s most important Vardath-compatible survival principles.
+
+---
+
+# Jeremiah 25–29 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## connected support lattice
+Absent.
+
+## load structure
+Strong:
+yoke.
+
+## material stiffness transition
+Strong:
+wood→iron.
+
+## gate
+No strict world gate.
+
+## population transfer
+Strong:
+exile/return.
+
+## long timing interval
+Strong:
+70 years.
+
+## competing forecast
+Exceptionally strong:
+2 vs 70 years.
+
+## same support network narrows/reopens
+Absent.
+
+### Strict verdict
+
+**Jeremiah 25–29 is not a fingertrap-mechanism block. It is one of the strongest timing, prediction-validation, restraint, and long-duration survival blocks. The two-year versus seventy-year forecast conflict demonstrates why timing claims must be tested against outcomes; the wooden yoke broken and replaced by iron shows that destroying a symbol or prematurely resisting a constraint can produce a stronger constraint; and Jeremiah 29 makes long-term off-site survival operational through houses, gardens, reproduction, host-system stability, and eventual regathering.**
+
+---
+
+# Jeremiah 25–29 pair / process matrix
+
+## warning / execution
+long information phase / later event phase.
+
+## Babylon / nations
+temporary controller / controlled network.
+
+## 70 years / later judgment
+bounded regime / termination.
+
+## cup / nations
+hazard-state object / serial receivers.
+
+## temple gate / hearers
+information interface / incoming population.
+
+## prior Micah / Jeremiah
+source precedent / dependent later use.
+
+## wood yoke / iron yoke
+weaker restraint / stronger restraint.
+
+## strap-bar / neck
+mechanical structure / body interface.
+
+## Hananiah / Jeremiah
+short-horizon forecast / long-horizon forecast.
+
+## two years / seventy years
+rapid return model / long displacement model.
+
+## broken symbol / intact political reality
+representation destruction / underlying system persistence.
+
+## letter / exile community
+information carrier / remote receiver.
+
+## house-garden-family / exile
+settlement infrastructure / displaced population.
+
+## exile / host city
+survivor group / coupled host system.
+
+## false dream / long-term plan
+attractive short signal / durable settlement strategy.
+
+## scatter / gather
+distributed population / reconvergence.
+
+---
+
+# Jeremiah 25–29 continuous transformation timeline
+
+warnings accumulate over years
+→ Babylonian control is announced
+→ seventy-year bounded regime is defined
+→ many nations enter service/subordination
+→ hazard cup is serially assigned across nations
+→ system-scale judgment frame expands
+→ temple warning is delivered at dense institutional node
+→ earlier Micah precedent is cited
+→ symbolic yoke-bars are constructed
+→ yoke is worn at neck/body interface
+→ nations are told to accept Babylonian constraint
+→ temple vessels remain off-site
+→ Hananiah predicts yoke break within two years
+→ return of vessels/king/exiles is promised
+→ Jeremiah states fulfillment test
+→ Hananiah physically breaks wooden yoke
+→ symbolic object fails but imperial reality persists
+→ stronger iron-yoke image replaces wooden restraint
+→ Hananiah receives near-term death prediction
+→ near-term checkpoint occurs within same year
+→ letter carries information to distant exile population
+→ exiles are told to build houses
+→ plant gardens
+→ eat produce
+→ marry
+→ produce children
+→ arrange next-generation marriages
+→ multiply rather than decrease
+→ seek host-city welfare
+→ reject false early-return dreams
+→ seventy-year horizon is reaffirmed
+→ future/hope is framed inside long exile
+→ scattered populations are eventually gathered
+→ return to origin node follows.
+
+---
+
+# New master-mechanism additions from Jeremiah 25–29
+
+## M50F-1 — LONG WARNING CAN PRECEDE RAPID EXECUTION
+## M50F-2 — ONE POWER CAN TEMPORARILY CONTROL MULTIPLE POPULATIONS
+## M50F-3 — LONG REGIME CAN BE FINITE/BOUNDED
+## M50F-4 — CONTROL NODE CAN HAVE BUILT-IN TERMINATION CONDITION
+## M50F-5 — EXPLICIT NUMBER MAY HAVE DEBATED HISTORICAL TERMINI
+## M50F-6 — SERVITUDE/CAPTIVITY/DESOLATION ARE DISTINCT VARIABLES
+## M50F-7 — HAZARD STATE CAN TRANSFER SERIAL-LIKE ACROSS NODES
+## M50F-8 — HAZARD LOAD CAN CHANGE RECEIVER DYNAMICS
+## M50F-9 — NETWORK PROPAGATION ≠ CONTINUOUS PHYSICAL WAVE
+## M50F-10 — CENTRAL-NODE FAILURE CAN SIGNAL SYSTEM-WIDE CHANGE
+## M50F-11 — HIGH SIGNAL + PROCESSING METAPHOR ≠ ONE PHYSICAL MECHANISM
+## M50F-12 — LITERARY SCALE EXPANSION ≠ UNIFORM PHYSICAL GLOBALITY
+## M50F-13 — TEMPLE/GATE NODE CAN BE INFORMATION INTERFACE
+## M50F-14 — PRIOR TEXT CAN SERVE AS VALIDATION PRECEDENT
+## M50F-15 — DIRECT CITATION ≠ INDEPENDENT WITNESS
+## M50F-16 — YOKE IS MULTI-PART LOAD/RESTRAINT STRUCTURE
+## M50F-17 — LOAD-BEARING CAN MEAN RESTRAINT RATHER THAN SUPPORT
+## M50F-18 — POLITICAL DOMINATION CAN BE PROJECTED AS MECHANICAL COUPLING
+## M50F-19 — TEMPORARY CONSTRAINT ACCEPTANCE CAN PRESERVE SURVIVAL
+## M50F-20 — INSTITUTIONAL ASSET CAN BE STORED OFF-SITE
+## M50F-21 — SPECIFIC NEAR-TERM FORECAST IS HIGHLY TESTABLE
+## M50F-22 — POSITIVE FORECAST SHOULD BE SCORED BY OUTCOME
+## M50F-23 — BREAKING SYMBOL ≠ BREAKING REPRESENTED SYSTEM
+## M50F-24 — FAILED CONSTRAINT REMOVAL CAN PRODUCE STRONGER CONSTRAINT
+## M50F-25 — MATERIAL SUBSTITUTION CAN ALTER STIFFNESS WITHOUT FUNCTION CHANGE
+## M50F-26 — REPLACEMENT ≠ SAME-OBJECT MORPHING
+## M50F-27 — NEAR-TERM CHECKPOINT CAN TEST LONG-TERM SOURCE CLAIM
+## M50F-28 — LETTER CAN CARRY INFORMATION ACROSS POPULATION SEPARATION
+## M50F-29 — LONG DISPLACEMENT REQUIRES FULL LOCAL HABITABILITY
+## M50F-30 — RETURN HORIZON DETERMINES CAMP VS SETTLEMENT STRATEGY
+## M50F-31 — OFF-SITE PRESERVATION REQUIRES DEMOGRAPHIC CONTINUITY
+## M50F-32 — DISPLACED POPULATION COUPLES TO HOST-SYSTEM STABILITY
+## M50F-33 — LONG DISPLACEMENT INCREASES FALSE-EARLY-RETURN SIGNAL RISK
+## M50F-34 — LONG-HORIZON FORECAST SHOULD CHANGE PRESENT INFRASTRUCTURE
+## M50F-35 — HOPE CAN REQUIRE LONG SURVIVAL BEFORE RETURN
+## M50F-36 — RETURN CAN REQUIRE MULTI-REGION REGATHERING
+## M50F-37 — CRISIS INFORMATION ECOSYSTEM CAN CONTAIN MULTIPLE COMPETING SOURCES
+## M50F-38 — EVENT MODEL MUST SUPPORT NESTED TIMESCALES
+## M50F-39 — HISTORICAL INTERVAL ≠ COSMIC RECURRENCE BY DEFAULT
+## M50F-40 — DRAGON SUPPORT LATTICE AND YOKE HAVE OPPOSITE LOAD FUNCTIONS
+## M50F-41 — MIXED RIGID/FLEXIBLE STRUCTURE CAN TRANSMIT LOAD THROUGH INTERFACE
+## M50F-42 — HAZARD / MECHANICAL / INFORMATION CARRIERS MUST REMAIN DISTINCT
+## M50F-43 — PREMATURE REVERSAL ATTEMPT CAN WORSEN CONDITIONS; ADAPTIVE SETTLEMENT CAN PRESERVE POPULATION
+
+---
+
+# Number / timing register — Jeremiah 25–29
+
+Important:
+
+- **70 years** — Babylonian domination/return horizon in Jeremiah 25:11–12 and 29:10.
+- **2 years** — Hananiah’s competing return forecast in Jeremiah 28.
+- **same year / seventh month** — Hananiah’s death checkpoint in the narrative.
+- multi-generational settlement is implied by:
+  - marriage;
+  - children;
+  - children marrying;
+  - multiplication.
+
+### Timing control
+
+Do not collapse:
+2 years,
+70 years,
+warnings over decades,
+same-year checkpoint,
+and multi-generation exile
+into one cycle variable.
+
+These belong to different layers of the event model.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 25–29
+
+1. Working primary text: Jeremiah 25–29 in NRSVUE, compared with other major English witnesses where useful.
+2. Jeremiah 25’s seventy years are a major chronological crux. Scholarship debates whether the number is exact, schematic, generational, or tied to different historical termini.
+3. The phrase is better handled as a bounded Babylonian domination interval than casually labelled a single undifferentiated “70-year captivity.”
+4. Servitude, captivity/deportation, and land/temple desolation have different historical start/end points.
+5. Jeremiah 26 directly reuses Micah 3:12; that relationship is textual dependence, not independent corroboration.
+6. Jeremiah 27–28’s yoke is a real agricultural/load-bearing restraint object used symbolically for Babylonian rule.
+7. Hananiah’s two-year promise and Jeremiah’s longer horizon create an unusually clear falsifiable forecast conflict.
+8. The narrative’s wooden-yoke→iron-yoke sequence is material substitution, not the same yoke physically becoming iron.
+9. Working Preacher emphasizes the conflict between Hananiah’s attractive short restoration forecast and Jeremiah’s harder long-term reality.
+10. Jeremiah 29 is addressed to the 597 BCE exile community and explicitly instructs long-duration settlement and demographic continuity.
+11. The letter is a concrete long-distance information carrier.
+12. The welfare of the exile community is coupled to the welfare of Babylon, its host city.
+13. False prophets/dreams in exile function as competing information sources.
+14. No dragon/lattice-spring or strict spiderweb→fingertrap transformation occurs.
+15. Strict fingertrap status remains negative; timing/prediction/survival correspondence is exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 25–29
+
+Primary:
+- Jeremiah 25 NRSVUE, Bible Gateway.
+- Jeremiah 26 NRSVUE, Bible Gateway.
+- Jeremiah 27 NRSVUE, Bible Gateway.
+- Jeremiah 28 NRSVUE, Bible Gateway.
+- Jeremiah 29 NRSVUE, Bible Gateway.
+
+Scholarly / contextual:
+- “HOW LONG, O LORD? The Significance of Jeremiah’s Seventy Years” — retained for the distinction between servitude, captivity and desolation and the range of proposed chronological termini.
+- Working Preacher, Jeremiah 28:5–9 — retained for the Jeremiah/Hananiah prediction conflict and yoke symbolism:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-13/commentary-on-jeremiah-285-9-3
+- Historical-literary discussion of Jeremiah 27–29 and the 594/593 BCE conflict context retained as a secondary control, with preference for peer-reviewed sources where available.
+
+---
+
+# SECTION 50F CHECKPOINT — JEREMIAH 25–29 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 25–29 contains one of the cleanest nested-timescale systems in the reconstructed Bible: long warning, two-year forecast, same-year checkpoint, seventy-year regime, and multi-generational settlement.**
+2. **The seventy years are textually important but historically interpreted in multiple ways; they should not be imported directly as a Vardath cosmic recurrence period.**
+3. **The cup is a hazard-state carrier, the yoke a mechanical restraint carrier, and the letter an information carrier—three distinct carrier classes in one block.**
+4. **The yoke is a real mixed rigid/flexible load structure, but its function is restraint rather than the Vardath dragon-lattice’s ground support.**
+5. **Wooden yoke broken → iron yoke substituted shows that premature resistance can lead to a stronger, more rigid constraint.**
+6. **Hananiah’s two-year prediction versus Jeremiah’s long horizon gives an unusually explicit ancient forecast-validation experiment.**
+7. **Jeremiah 29 makes long-duration off-site survival operational: build, plant, marry, multiply, and support the host system.**
+8. **This strongly supports the Vardath principle that survival during a long unstable phase may require settlement and reproduction away from the failing original node rather than waiting for an immediate return.**
+9. **Strict spiderweb→fingertrap mechanism remains absent.**
+
+### Next live block
+
+**Jeremiah 30–33**
+
+Priority:
+- “time of Jacob’s trouble/distress” and sudden transition language;
+- yoke/bonds broken from neck;
+- scattered population regathering;
+- wound/healing and city rebuilding;
+- Rachel weeping / children return;
+- road markers/signposts and return route;
+- woman surrounds man / textual puzzle;
+- new covenant and law written internally;
+- fixed sun/moon/star ordinances as cosmic-clock control;
+- city rebuilt beyond old boundaries;
+- Jeremiah 32 land purchase under siege as future-state investment;
+- sealed deed in earthen jar as long-duration information storage;
+- houses/fields/vineyards return;
+- Jeremiah 33 prison/court → revelation;
+- healing/restoration;
+- Davidic/Levitical continuity;
+- day/night covenant as fixed-cycle comparison;
+- compare road markers, internalized information, sealed archive, and fixed astronomical cycles with Vardath event clock/memory system.
