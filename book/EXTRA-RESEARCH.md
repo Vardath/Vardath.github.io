@@ -6938,3 +6938,829 @@ Priority:
 - prediction → execution compression;
 - salvation brought near / Zion;
 - compare carrier logic directly with Jonah fish/ship and Vardath enclosure-carrier model.
+
+
+---
+
+# SECTION 49 progress D2D — Isaiah 46
+## First-time research pass: carried gods versus carrying source, load-bearing reversal, womb→old-age persistence, immobile manufactured object, east-agent compression, and salvation brought near
+
+Isaiah 46 is one of the cleanest carrier/control chapters encountered so far.
+
+Its entire opening is built around one contrast:
+
+### Babylonian gods/images
+- must be carried;
+- sit on beasts/cattle;
+- become burdens;
+- cannot save the load;
+- themselves go into captivity.
+
+### YHWH’s relation to Israel
+- Israel is carried from birth/womb;
+- remains carried through old age;
+- maker and carrier are the same source;
+- carrying is linked with saving.
+
+This is an unusually strong systems test because it asks:
+**which side of the relation supplies the load-bearing capacity?**
+
+That directly connects with the project’s carrier/enclosure work from:
+- ark;
+- basket;
+- ship;
+- fish;
+- fold;
+- city;
+- world-layer interface.
+
+---
+
+# Isaiah 46:1 — Bel / Nebo are represented as stooping while their images become loads
+
+Bel and Nebo are Babylonian divine names.
+
+Modern scholarship identifies:
+- Bel as a title associated with Marduk;
+- Nabû/Nebo as a major Babylonian deity and son of Marduk in the Mesopotamian system.
+
+The text does not depict independent divine bodies physically climbing onto animals.
+
+It depicts:
+**their cult images/idols**
+as loads placed on beasts/cattle.
+
+## M49D2D-1 — DIVINE NAME / CULT IMAGE / CARRIER MUST BE KEPT AS DISTINCT OBJECT CLASSES
+
+Name:
+Bel/Nebo.
+
+Manufactured representation:
+idol/image.
+
+Carrier:
+animal.
+
+Human interpretation:
+deity represented/present through image.
+
+These are not one thing mechanically.
+
+This is extremely important for Vardath mythology work.
+
+---
+
+# Isaiah 46:1 — bowed god / burdened animal creates an inversion of expected hierarchy
+
+Expected religious hierarchy:
+god
+→ supports/saves worshipper.
+
+Observed polemical image:
+animal
+→ physically supports god-image.
+
+## M49D2D-2 — PHYSICAL LOAD PATH CAN EXPOSE DEPENDENCY DIRECTION
+
+Who bears the weight?
+
+That question is mechanistically powerful.
+
+If:
+A must carry B,
+then for that transport event:
+A is the physical carrier.
+
+The title/status of B does not change the load path.
+
+---
+
+# Isaiah 46:1 — animal carrier has finite capacity
+
+The animals are:
+weary.
+
+The load:
+burdensome.
+
+## M49D2D-3 — CARRIER CAPACITY IS FINITE AND LOAD HAS COST
+
+This is directly comparable to:
+Jonah’s ship jettisoning cargo.
+
+Carrier variables include:
+- mass;
+- endurance;
+- terrain;
+- speed;
+- load distribution;
+- survival margin.
+
+A carrier relationship is not proved merely by enclosure imagery.
+The carrier must actually support/transport the cargo.
+
+---
+
+# Isaiah 46:2 — carrier system fails and cargo is not saved
+
+The gods/images:
+cannot save the burden.
+
+The whole system:
+goes into captivity.
+
+Possible process:
+
+idol
+→ loaded
+→ animal transport
+→ military defeat
+→ image removed/captured.
+
+## M49D2D-4 — TRANSPORTABILITY DOES NOT EQUAL SELF-RESCUE CAPACITY
+
+An object can be:
+portable
+without being:
+autonomous.
+
+This is a strong control against over-reading moving sacred objects as self-propelled mechanisms.
+
+---
+
+# Isaiah 46:1–2 historical/cultic control — transported divine statues were a real ancient practice
+
+Ancient Near Eastern rulers could:
+- remove divine statues from conquered cities;
+- carry them as booty;
+- later return them as part of restoration claims.
+
+Modern scholarship on ancient imperial statuary confirms that:
+capturing and relocating divine images was a known political/religious practice.
+
+The Cyrus Cylinder itself claims restoration of displaced divine images.
+
+## M49D2D-5 — A “GOD GOES INTO CAPTIVITY” IMAGE CAN REFER TO MOVEMENT OF A CULT OBJECT WITHOUT REQUIRING LITERAL CAPTURE OF A COSMIC BEING
+
+This ordinary historical process must be checked first.
+
+---
+
+# Isaiah 46:3 — the carrier relation reverses
+
+House of Jacob / remnant of Israel:
+- borne from birth;
+- carried from womb.
+
+Now the people are the cargo.
+
+The source claims the carrier role.
+
+## M49D2D-6 — SAME VERB CLASS CAN BE USED TO REVERSE CARRIER/CARGO DIRECTION
+
+Babylonian image:
+people/animals carry god-image.
+
+Israel relation:
+source carries people.
+
+This is one of Isaiah 46’s main rhetorical engines.
+
+---
+
+# Isaiah 46:3–4 — womb→old-age defines a full-life carrier interval
+
+The carrying relation spans:
+
+birth/womb
+→ life
+→ old age
+→ gray hair.
+
+## M49D2D-7 — CARRIER RELATION CAN PERSIST ACROSS THE ENTIRE LIFECYCLE OF THE CARGO
+
+This is not a one-time transport event.
+
+It is:
+continuous support.
+
+### Vardath comparison
+
+Different mythic carrier types must be separated:
+
+### transit carrier
+moves cargo between locations.
+
+### sustaining carrier
+supports cargo continuously.
+
+### enclosure carrier
+protects cargo from environment.
+
+### structural carrier
+holds another world/layer.
+
+Isaiah 46’s source→Israel relation is primarily:
+**sustaining carrier**.
+
+---
+
+# Isaiah 46:4 — maker and carrier are the same source
+
+“I have made”
+→ “I will bear”
+→ “I will carry”
+→ “I will save.”
+
+## M49D2D-8 — PRODUCTION, SUPPORT, TRANSPORT, AND RESCUE CAN BE ASSIGNED TO ONE OPERATOR
+
+These are still distinct functions.
+
+Do not flatten them:
+making
+≠ carrying
+≠ saving.
+
+One source may perform all three.
+
+---
+
+# Isaiah 46:3–4 — womb imagery is developmental, not proof of literal divine anatomy
+
+The people are described as:
+carried from womb/birth.
+
+## M49D2D-9 — DEVELOPMENTAL/WOMB PROJECTION CAN EXPRESS CONTINUOUS DEPENDENCE WITHOUT REQUIRING A COSMIC BIOLOGICAL WOMB
+
+This remains a recurring control.
+
+For Vardath:
+basket;
+womb;
+egg;
+fish belly;
+cave;
+fold
+
+may share:
+containment/protection variables
+
+without being one literal structure.
+
+---
+
+# Isaiah 46:5 — comparison itself becomes the subject
+
+“To whom will you liken me?”
+
+The chapter directly challenges:
+analogy
+and
+equivalence.
+
+## M49D2D-10 — SIMILARITY CLAIM MUST DISTINGUISH SHARED VARIABLE FROM TOTAL IDENTITY
+
+This is almost a built-in methodology warning for the entire Vardath project.
+
+Two things can share:
+- shape;
+- motion;
+- role;
+- sequence;
+
+without being equal in all properties.
+
+The research therefore must say:
+**what exactly matches?**
+
+---
+
+# Isaiah 46:6 — gold/silver are measured before manufacture
+
+Sequence:
+- gold from bag;
+- silver weighed in scales;
+- goldsmith hired;
+- object manufactured;
+- object worshipped.
+
+## M49D2D-11 — SACRED OBJECT CAN HAVE TRACEABLE MATERIAL/MEASUREMENT/PRODUCTION HISTORY
+
+This extends Isaiah 44.
+
+Object path:
+
+raw valuable material
+→ measured mass/value
+→ artisan process
+→ formed object
+→ assigned sacred role.
+
+### Vardath control
+
+If a claimed cosmic object has:
+a demonstrable human manufacturing chain,
+that chain must be part of interpretation.
+
+---
+
+# Isaiah 46:7 — shoulder carrying makes the physical dependency explicit
+
+Humans:
+- lift image on shoulder;
+- carry it;
+- set it down.
+
+Once placed:
+it stands.
+
+It does not:
+move itself.
+
+## M49D2D-12 — POSITION CHANGE CAUSED ENTIRELY BY EXTERNAL CARRIER ≠ SELF-PROPELLED MOTION
+
+This is a very strong carrier diagnostic.
+
+Observe:
+- what moves;
+- what causes the motion;
+- what happens when the carrier stops.
+
+---
+
+# Isaiah 46:7 — fixed-location object remains fixed until externally moved
+
+The idol:
+set in place
+→ remains in place.
+
+## M49D2D-13 — STATIC OBJECT CAN HAVE HIGH SYMBOLIC IMPORTANCE WITHOUT DYNAMIC MECHANICAL AGENCY
+
+This is important for:
+pillars;
+stones;
+statues;
+sacred mountains;
+poles.
+
+Symbolic centrality
+≠
+physical mobility.
+
+---
+
+# Isaiah 46:7 — signal/request channel fails
+
+People cry to image.
+
+Image:
+does not answer;
+does not save.
+
+## M49D2D-14 — PHYSICAL PRESENCE OF AN INTERFACE OBJECT DOES NOT GUARANTEE INFORMATION RETURN
+
+This is another:
+input-output test.
+
+Signal:
+sent.
+
+Response:
+zero.
+
+---
+
+# Isaiah 46:8–10 — memory becomes a prediction-control system
+
+The text instructs:
+remember former things.
+
+Then:
+end is declared from beginning;
+future from ancient times.
+
+## M49D2D-15 — HISTORICAL MEMORY + FUTURE PREDICTION FORM A SOURCE-VALIDATION LOOP
+
+Past performance
+→ remembered.
+
+Future claim
+→ announced.
+
+Later outcome
+→ test.
+
+This is an explicit evidence architecture inside the text.
+
+---
+
+# Isaiah 46:10 — beginning / end is temporal scope, not spatial polarity
+
+The chapter links:
+beginning
+→ end.
+
+Ancient time
+→ not-yet-done things.
+
+## M49D2D-16 — TEMPORAL EXTREMES MUST NOT BE AUTOMATICALLY MAPPED TO UPPER/LOWER SPATIAL WORLDS
+
+The Vardath model relates:
+future world above;
+past world below.
+
+That is the project’s hypothesis.
+
+Isaiah 46’s “beginning/end” is first:
+temporal prediction language.
+
+Do not convert it into vertical geometry without further cues.
+
+---
+
+# Isaiah 46:11 — bird from east / man from far country is a dual projection of one agent-role
+
+The verse parallels:
+- bird of prey from east;
+- man of counsel/purpose from far country.
+
+In the Cyrus context,
+the human figure is commonly understood as Cyrus.
+
+## M49D2D-17 — ONE HISTORICAL AGENT CAN BE PROJECTED THROUGH ANIMAL MOTION IMAGERY WITHOUT BECOMING AN ANIMAL ENTITY
+
+This is crucial for the paired-figure work.
+
+Bird imagery may contribute:
+- speed;
+- direction;
+- predatory power;
+- distance.
+
+It does not require:
+literal transformation.
+
+---
+
+# Isaiah 46:11 — east → far-country → target gives long-range vector
+
+The agent originates:
+east/far country
+and is called toward the event zone.
+
+## M49D2D-18 — DIRECTION + DISTANCE CAN DEFINE AN AGENT VECTOR WITHOUT DEFINING A COSMIC AXIS
+
+This is horizontal geopolitical motion.
+
+---
+
+# Isaiah 46:11 — speech → purpose → execution is deliberately compressed
+
+The source says:
+
+spoken
+→ bring to pass.
+
+purposed
+→ do it.
+
+## M49D2D-19 — INFORMATION/INTENT CAN BE LINKED TO MATERIAL EXECUTION THROUGH AN AGENT
+
+This gives:
+plan
+→ command/claim
+→ agent
+→ outcome.
+
+Again:
+information is not the same thing as the moving human.
+
+---
+
+# Isaiah 46:12–13 — righteousness/salvation changes distance state
+
+The audience is described as:
+far from righteousness.
+
+Then:
+righteousness is brought near;
+salvation does not delay;
+salvation is placed in Zion.
+
+## M49D2D-20 — ABSTRACT STATE CAN BE MODELLED THROUGH NEAR/FAR GEOMETRY
+
+far
+→ near.
+
+This is another powerful projection.
+
+But:
+distance language
+does not automatically indicate physical travel.
+
+---
+
+# Isaiah 46:13 — Zion becomes destination/node for salvation
+
+The chapter closes:
+salvation
+→ Zion;
+glory
+→ Israel.
+
+## M49D2D-21 — CENTRAL NODE CAN RECEIVE A NON-MATERIAL STATE ASSIGNMENT WITHOUT THE STATE BEING A PHYSICAL CARGO
+
+This is important when the research sees:
+“X placed in Zion.”
+
+Ask:
+what kind of thing is X?
+
+Here:
+salvation/glory,
+not a transported physical object.
+
+---
+
+# Isaiah 46 — carrier comparison with Jonah
+
+## Jonah ship
+- constructed carrier;
+- multiple occupants;
+- environmental stress;
+- cargo shedding;
+- passenger ejection.
+
+## Jonah fish
+- living enclosure carrier;
+- timed residence;
+- cargo retained;
+- operator-commanded release.
+
+## Isaiah 46 beasts
+- animal load carriers;
+- sacred images as cargo;
+- carriers fatigue;
+- cargo cannot save carrier.
+
+## Isaiah 46 source→Israel
+- sustaining carrier relation;
+- womb→old age;
+- no physical animal/container specified;
+- carrying is relational/theological.
+
+## M49D2D-22 — “CARRY” IS A PROCESS FAMILY, NOT ONE MECHANISM
+
+Possible carrier classes:
+
+1. physical transport carrier;
+2. living enclosure carrier;
+3. structural support carrier;
+4. sustaining/protective relation;
+5. symbolic dependence.
+
+The project should always classify which one is present.
+
+---
+
+# Isaiah 46 — Vardath carrier screening
+
+## Does the chapter contain a real carrier?
+Yes:
+beasts carry idols.
+
+## Does it contain living cargo?
+The idols are objects;
+Israel is metaphorically/relationally “carried.”
+
+## Does it contain an enclosure?
+No strong enclosure geometry.
+
+## Does it contain a boundary crossing?
+Captivity/movement implied,
+but no detailed gate mechanics.
+
+## Does it contain a load-bearing structure?
+Yes at ordinary scale:
+animal shoulder/back.
+
+## Does it contain broad support weave?
+No.
+
+## Does carrier narrow into a throat?
+No.
+
+## Does cargo transfer between stacked worlds?
+No.
+
+### Strict verdict
+
+**Isaiah 46 is a major carrier-dependency text, but not a fingertrap or inter-world carrier text. Its strongest value is methodological: it distinguishes carried object from carrier, shows carrier fatigue and finite load, reverses dependency from humans carrying gods to source carrying people, and distinguishes movement caused by an external carrier from self-propelled agency. This should become a permanent control when assessing every basket, ark, fish, ship, mountain, serpent, or world-support figure in the reconstructed Bible.**
+
+---
+
+# Isaiah 46 pair / process matrix
+
+## Bel / Nebo
+paired Babylonian divine names within one defeated cultic system.
+
+## idol / beast
+cargo / physical carrier.
+
+## burden / weary animal
+load / finite-capacity transport subsystem.
+
+## carried idol / carried Israel
+externally transported object / sustained people.
+
+## womb / old age
+life-course start / late-life endpoint.
+
+## maker / carrier
+production function / sustaining function.
+
+## gold-silver / idol
+raw measured material / manufactured sacred object.
+
+## shoulder / idol
+carrier interface / load.
+
+## fixed idol / moving carrier
+immobile object / motion source.
+
+## cry / no answer
+input signal / failed response.
+
+## beginning / end
+temporal endpoints.
+
+## bird / man
+animal projection / historical agent role.
+
+## east / far country
+direction / distance.
+
+## far righteousness / near righteousness
+abstract state mapped through distance.
+
+---
+
+# Isaiah 46 continuous transformation timeline
+
+Bel/Nebo are named
+→ cult images are loaded onto beasts
+→ animals bear weight
+→ animals tire
+→ images cannot rescue burden
+→ images themselves enter captivity
+→ text reverses carrier relation
+→ Jacob/Israel is described as carried from womb
+→ carrying persists through old age
+→ maker claims ongoing bearing/saving role
+→ comparison/equivalence is challenged
+→ gold and silver are weighed
+→ artisan manufactures image
+→ human shoulders lift image
+→ image changes place only because carrier moves it
+→ image is set down
+→ image becomes immobile
+→ request signal receives no answer
+→ audience is told to remember former history
+→ beginning/end prediction scope is asserted
+→ east/far-country agent is called
+→ bird imagery projects the agent’s speed/predatory role
+→ stated purpose is executed
+→ righteousness distance closes from far to near
+→ salvation is placed/located at Zion
+→ successor identity/glory relation is reaffirmed.
+
+---
+
+# New master-mechanism additions from Isaiah 46
+
+## M49D2D-1 — DIVINE NAME / IMAGE / CARRIER ARE DISTINCT OBJECT CLASSES
+
+## M49D2D-2 — PHYSICAL LOAD PATH REVEALS DEPENDENCY DIRECTION
+
+## M49D2D-3 — CARRIER CAPACITY IS FINITE
+
+## M49D2D-4 — PORTABILITY ≠ SELF-RESCUE CAPACITY
+
+## M49D2D-5 — CULT-OBJECT CAPTIVITY CAN BE ORDINARY STATUE RELOCATION
+
+## M49D2D-6 — SAME VERB CLASS CAN REVERSE CARRIER/CARGO DIRECTION
+
+## M49D2D-7 — CARRIER RELATION CAN SPAN FULL LIFECYCLE
+
+## M49D2D-8 — MAKER / CARRIER / SAVIOR ARE DISTINCT FUNCTIONS EVEN IN ONE SOURCE
+
+## M49D2D-9 — WOMB PROJECTION ≠ LITERAL COSMIC WOMB
+
+## M49D2D-10 — SIMILARITY MUST NAME THE SHARED VARIABLE, NOT ASSUME TOTAL IDENTITY
+
+## M49D2D-11 — SACRED OBJECT CAN HAVE TRACEABLE MATERIAL/METROLOGICAL HISTORY
+
+## M49D2D-12 — EXTERNALLY CAUSED POSITION CHANGE ≠ SELF-PROPELLED MOTION
+
+## M49D2D-13 — SYMBOLIC CENTRALITY ≠ DYNAMIC MECHANICAL AGENCY
+
+## M49D2D-14 — PHYSICAL INTERFACE OBJECT CAN FAIL INFORMATION RETURN
+
+## M49D2D-15 — MEMORY + PREDICTION FORM SOURCE-VALIDATION LOOP
+
+## M49D2D-16 — TEMPORAL BEGINNING/END ≠ AUTOMATIC SPATIAL ABOVE/BELOW
+
+## M49D2D-17 — HISTORICAL AGENT CAN RECEIVE ANIMAL-MOTION PROJECTION
+
+## M49D2D-18 — DIRECTION + DISTANCE ≠ COSMIC AXIS
+
+## M49D2D-19 — PLAN/WORD CAN LINK TO MATERIAL EXECUTION THROUGH AGENT
+
+## M49D2D-20 — ABSTRACT STATE CAN BE MAPPED THROUGH NEAR/FAR GEOMETRY
+
+## M49D2D-21 — NON-MATERIAL STATE ASSIGNED TO NODE ≠ PHYSICAL CARGO
+
+## M49D2D-22 — “CARRY” IS A PROCESS FAMILY WITH MULTIPLE MECHANISMS
+
+---
+
+# Number / timing register — Isaiah 46
+
+Record without forcing:
+
+- no gate-duration number;
+- no world-layer count;
+- womb→old-age is lifecycle range, not a recurrence period;
+- beginning→end is temporal scope;
+- east is direction, not a number;
+- no carrier-capacity magnitude is given.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 46
+
+1. Working primary text: Isaiah 46 NRSVUE.
+2. Bel is associated with Marduk in Babylonian usage; Nabû/Nebo is a major Babylonian deity closely associated with Marduk.
+3. Ancient divine statues could be transported, captured, and restored as political/religious objects; the Cyrus Cylinder itself includes restoration claims for displaced cult images.
+4. Deutero-Isaiah scholarship treats Isaiah 46 as part of Babylon’s deposition/downfall rhetoric; one major commentary specifically describes 46:1–4 as parody of a divine procession.
+5. The beasts/idols scene is therefore strongly intelligible in ordinary cultic-imperial terms before any cosmic reading.
+6. “Carried from womb” is collective Israel/Jacob imagery, not literal divine gestation.
+7. Isaiah 46:6–7 repeats the artisan/material dependency critique from Isaiah 44.
+8. Isaiah 46:10 beginning/end language is prediction rhetoric.
+9. The “bird from east” is commonly linked with the Cyrus agent already established in Isaiah 41–45.
+10. Salvation brought “near” is spatial metaphor for temporal/relational imminence.
+11. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Isaiah 46
+
+Primary:
+- Isaiah 46 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Isaiah+46&version=NRSVUE
+- Isaiah 46 NRSVUE / LEB:
+  https://www.biblegateway.com/passage/?search=Isaiah+46&version=NRSVUE%3BLEB
+- Isaiah 46 NRSVUE / NKJV / KJV:
+  https://www.biblegateway.com/passage/?search=Isaiah+46&version=NRSVUE%3BNKJV%3BKJV
+
+Historical / scholarly:
+- *Deutero-Isaiah: A Commentary*, JSTOR — treats Isaiah 46:1–4 as a parody of the procession of Babylonian gods and the opening of a larger Babylon-deposition section:
+  https://www.jstor.org/stable/j.ctvb936bv
+- Cambridge, *Personal Names in Cuneiform Texts from Babylonia* — identifies Babylonian Marduk/Bēl and Nabû as major Babylonian divine names:
+  https://www.cambridge.org/core/books/personal-names-in-cuneiform-texts-from-babylonia-c-750100-bce/babylonian-names/8FE6DC4D45F3962E918F2E8A62029250
+- Cambridge Companion to Isaiah, Lena-Sofia Tiemeyer, “The Book of Isaiah and the Neo-Babylonian Period” — situates Isaianic Babylon polemic and cautions against simplistic dating inferences:
+  https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-and-the-neobabylonian-period/958412F3E84E228A7A5F5B9069B3089D
+
+---
+
+# SECTION 49D2D CHECKPOINT — ISAIAH 46 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 46 gives one of the cleanest carrier/cargo dependency tests in the Bible.**
+2. **The animal physically carries the idol; the idol does not move itself.**
+3. **Finite carrier capacity is explicit through animal weariness.**
+4. **The chapter deliberately reverses the relation: people carry the idol, but YHWH claims to carry Israel.**
+5. **“Carry” therefore cannot be treated as one mechanism; transport, enclosure, support, and sustaining relations must be separated.**
+6. **Ancient transport/capture of divine statues provides a strong ordinary historical control.**
+7. **The east-bird image is best treated as projection of a human agent-role, not literal animal transformation.**
+8. **Strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Isaiah 47**
+
+Priority:
+- Babylon personified as daughter/queen/woman;
+- throne→ground descent;
+- veil/skirt/nakedness/uncovering as layer-removal imagery;
+- millstones / grinding process;
+- river crossing;
+- mistress/queen status reversal;
+- widowhood/child-loss as paired terminal social states;
+- “in a moment / one day” timing;
+- sorcery/astrology as failed prediction/control network;
+- “stand fast” / fixed system versus catastrophe;
+- fire that cannot be controlled as hearth;
+- merchants wandering each direction;
+- compare female-body personification with Vardath body/squatterman projection controls.
