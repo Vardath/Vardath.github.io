@@ -5641,3 +5641,1421 @@ Priority:
 - tree cast down to underworld;
 - repeated descent to Pit among dead nations;
 - HIGH PRIORITY: Ezekiel 29's dragon/Nile relation and Ezekiel 31's cedar/waters/root system should be tested directly against the user's dragon-ground-support and world-tree/lattice hypotheses.
+
+
+---
+
+# SECTION 52 progress H — Ezekiel 29–32
+## Fresh sequential research: Nile dragon with scales and attached fish, failed reed support, forty-year scatter/gather cycle, transferred sword/arms, world-scale cedar rooted in the deep and crowned in clouds, dragon removal coupled to water and sky disturbance, and populated Pit imagery
+
+### Sequential-integrity note
+
+The mandatory three-file check was completed before this block.
+
+- Part 1 contains no direct sequential Ezekiel 29–32 research.
+- Existing `EXTRA-RESEARCH.md` does not contain this direct block.
+- Part 2 now contains Ezekiel 25–28 and the corrected Vardath cherub mapping.
+- Ezekiel 29–32 is therefore the next fresh sequential block.
+
+Primary text read in full:
+- Ezekiel 29 NRSVUE;
+- Ezekiel 30 NRSVUE;
+- Ezekiel 31 NRSVUE;
+- Ezekiel 32 NRSVUE.
+
+This block must be read together with the corrected Ezekiel 28 result:
+
+> **cherub = one Vardath state/projection of the rolled sky / fingertrap / Squatter-Man apparatus; textual variants affect whether the king is identical with or accompanied by the cherub, not whether the cherub belongs to that structural family.**
+
+That matters because Ezekiel 29–32 immediately supplies the adjacent **dragon / scales / water / tree / deep / cloud / feet / sky-darkening** side of the same comparative picture.
+
+---
+
+# Ezekiel 29
+## Pharaoh as great dragon in the Nile, scales with attached fish, hooks in jaws, failed reed support, forty-year desolation and return
+
+## 29:1–3 — Pharaoh is a great dragon in the river system
+
+The oracle is dated:
+- tenth year;
+- tenth month;
+- twelfth day.
+
+Pharaoh is addressed as a **great dragon / monster** lying in the midst of the Nile channels.
+
+He claims:
+- the Nile is his;
+- he made it for himself.
+
+### Translation / zoological control
+
+The Hebrew term belongs to the *tannîn/tannîm* family, whose translation history includes:
+- dragon;
+- sea monster;
+- monster;
+- crocodile.
+
+A 2025 study by Martin Johnson and Philip Jenson reviews this translation history and argues that many occurrences, including the Nile-context examples in Ezekiel 29 and 32, can plausibly be understood with crocodilian imagery.
+
+Other scholarship still emphasizes the mythic/chaos-monster resonance of the language.
+
+For this research, preserve both levels:
+
+**ordinary Egyptian/Nile image**
+→ crocodile/river monster is plausible;
+
+**literary-mythic image**
+→ Pharaoh is enlarged into a dragon/chaos-monster figure embedded in the river system.
+
+Do not force a choice if the process comparison works at both levels.
+
+---
+
+# 29:4 — hooks, jaws, scales and fish attached to the dragon
+
+The image becomes mechanically dense:
+
+- hooks placed in the dragon's jaws;
+- fish of the Nile channels stick to its scales;
+- dragon pulled up from the channels;
+- attached fish come with it.
+
+### M52H-1 — DRAGON BODY + ATTACHED SMALLER NODES/DEPENDENTS FORM ONE MOVING SYSTEM
+
+The stripped geometry is:
+
+**large scaled body in water**
++
+**many smaller living units attached across its surface**
+→ **central body is hooked**
+→ **whole attached set is drawn out together**.
+
+The ordinary political reading is clear:
+Pharaoh/Egypt is the central power and dependent populations/forces are caught up in its fate.
+
+But for Vardath this is also an unusually close **surface-node** image.
+
+The mature model already includes:
+- serpent/dragon = winding/braided current or active sky geometry;
+- scales/mesh facets = repeated surface divisions;
+- many eyes/nodes = luminous or ice-like apertures in the canopy;
+- winged/feathered cherub = another visible form of the same apparatus;
+- Squatter-Man = anthropomorphic side-view of the contracted structure.
+
+Ezekiel 29 does not call the fish "eyes."
+
+But it does give:
+
+> **scaled dragon surface + multiple attached living points + river system + collective motion when the central body is pulled.**
+
+That belongs in the same comparative family and should be cross-linked to the eye/node work without collapsing fish and eyes into one literal object.
+
+### M52H-2 — REMOVING THE CENTRAL DRAGON ALSO REMOVES ITS ATTACHED SYSTEM
+
+This is stronger than merely killing a ruler.
+
+The metaphor is:
+
+**central carrier/supporting political body moves**
+→ **attached dependents move with it**.
+
+That is a useful systems rule for the Vardath lattice:
+if multiple local structures are attached to a larger moving framework, moving the framework can displace the local nodes without separately moving each one.
+
+Again, this is a structural comparison, not a claim that Ezekiel describes a physical plasma lattice.
+
+---
+
+# 29:5 — water-creature system thrown onto dry land
+
+The dragon and attached fish are:
+- removed from water;
+- thrown into wilderness/open field;
+- left exposed;
+- consumed by land animals and birds.
+
+### M52H-3 — MEDIUM REMOVAL DESTROYS A SYSTEM ADAPTED TO THAT MEDIUM
+
+The sequence is:
+
+**water-embedded system**
+→ **forced extraction**
+→ **dry environment**
+→ **system death/disassembly**.
+
+This is important for environmental-state comparisons.
+
+A structure can fail not because its internal form changes, but because it is removed from the medium that supports its operation.
+
+---
+
+# 29:6–7 — Egypt as a reed staff that breaks under load
+
+The metaphor changes completely.
+
+Egypt is now a reed staff/support used by Israel.
+
+When grasped/leaned upon:
+- the reed breaks;
+- it injures the shoulder;
+- it fails under body load;
+- the user loses bodily stability.
+
+### M52H-4 — SUPPORT CAN FAIL SPECIFICALLY WHEN LOADED
+
+This is one of the strongest support-mechanics controls yet.
+
+A support may:
+- appear staff-like;
+- be graspable;
+- look structurally useful;
+
+yet under actual load:
+- fracture;
+- transfer damage into the user;
+- cause system collapse.
+
+This should be retained alongside:
+- Ezekiel 13 whitewashed wall;
+- Ezekiel 15 useless vine wood;
+- Ezekiel 22 breach repair.
+
+The general rule is now very strong:
+
+> **visual resemblance to a support does not prove support capacity; load behavior matters.**
+
+### Vardath relevance
+
+A true world-support/lattice hypothesis must predict:
+- load path;
+- failure mode;
+- what happens to attached land/water when a support changes.
+
+The reed-staff image is a negative control:
+**rod shape alone is not enough**.
+
+---
+
+# 29:8–16 — forty-year desolation, scattering, gathering and low-state restoration
+
+Egypt is described as:
+- desolated;
+- humans/animals absent from the land;
+- Egyptians scattered among nations;
+- interval of forty years;
+- then gathered back;
+- returned to Pathros/land of origin;
+- restored as a deliberately lowly kingdom.
+
+### M52H-5 — TEMPORARY EMPTYING OF A LAND IS NOT EVIDENCE THAT COSMIC WORLD-LAYERS ARE EMPTY
+
+This is important because the user's cosmology explicitly says all world-turns are populated.
+
+Ezekiel 29 speaks about a **named historical land** under prophetic judgment.
+
+Even if its forty-year desolation is read literally within the oracle, it does not justify a rule that upper/lower world-turns are empty.
+
+Keep scales separate:
+- territorial depopulation;
+- cosmic world habitation.
+
+### M52H-6 — SCATTER → INTERVAL → GATHER → RETURN PRODUCES A LOWERED SUCCESSOR STATE
+
+The restoration is not:
+**Egypt returns exactly to old power**.
+
+It becomes:
+- inhabited again;
+- politically diminished;
+- prevented from former dominance.
+
+This is another strong:
+**renewal ≠ rewind** case.
+
+---
+
+# 29:17–20 — failed Tyre campaign labor is compensated with Egypt
+
+A later-dated oracle says Nebuchadrezzar's army:
+- labored against Tyre;
+- heads made bald;
+- shoulders rubbed bare;
+- received inadequate spoil;
+- is then assigned Egypt as wages/payment.
+
+### M52H-7 — ENERGY/LABOR EXPENDED AT ONE TARGET CAN BE COMPENSATED FROM ANOTHER SYSTEM
+
+This is an unusual systems-transfer image:
+
+**effort spent at node A**
+→ **expected return absent**
+→ **compensation drawn from node B**.
+
+It is political/theological allocation, not conservation physics.
+
+But it is a useful process distinction:
+input and reward need not occur at the same location.
+
+---
+
+# 29:21 — horn sprouts; Ezekiel's mouth opens
+
+The chapter closes with two growth/channel images:
+- horn sprouts for Israel;
+- Ezekiel's mouth/lips open among them.
+
+### M52H-8 — NEW POWER AND NEW COMMUNICATION CAN "SPROUT" AFTER DESTRUCTIVE PHASE
+
+The horn is conventional strength/rulership imagery.
+
+But the sequence is notable:
+
+**destructive regional redistribution**
+→ **new horn grows**
++
+**speech channel opens**.
+
+This cross-links Ezekiel 24's fugitive-triggered mouth opening.
+
+Again:
+one channel/state can change without whole-person replacement.
+
+---
+
+# Ezekiel 29 process timeline
+
+Pharaoh = Nile dragon
+→ dragon claims river ownership
+→ hooks enter jaws
+→ fish attach to scales
+→ dragon + attached fish pulled from channels
+→ entire water-dependent system thrown onto dry land
+→ dragon/fish become exposed food
+
+parallel support image:
+Egypt = reed staff
+→ Israel leans
+→ staff breaks under load
+→ user injured/destabilized
+
+national sequence:
+Egypt desolated
+→ population scattered
+→ forty-year interval
+→ people gathered
+→ return to origin land
+→ restored in deliberately lower political state
+
+later:
+Babylonian labor at Tyre unrewarded
+→ Egypt assigned as compensation
+→ horn sprouts for Israel
+→ prophetic speech channel opens.
+
+---
+
+# Ezekiel 29 strict Vardath screening
+
+## Strong comparative components
+- dragon embedded in water channels;
+- scaled body;
+- many smaller units attached to scales;
+- central-body movement carries attached units;
+- support-staff failure under load;
+- scatter/gather;
+- low-state restoration;
+- growth/sprouting after destruction.
+
+## Important limitation
+The chapter does not describe:
+- broad sky-lattice contracting into this dragon;
+- eye-nodes;
+- wings/feathers;
+- re-expansion after dragon extraction.
+
+### Verdict
+
+**Not a complete fingertrap sequence by itself, but the dragon/scales/attached-fish/water configuration is one of the strongest direct dragon-body analogues yet and becomes substantially more important when cross-linked with Ezekiel 1/10 and the corrected cherub reading in Ezekiel 28.**
+
+---
+
+# Ezekiel 30
+## Day of cloud, network-support failure, foundation destruction, Nile drying and body/arm transfer of military power
+
+Ezekiel 30 contains multiple judgment oracles rather than one continuous mechanical scene.
+
+Still, several process rules are important.
+
+---
+
+# 30:1–5 — day of cloud and multi-nation coupled failure
+
+The "day of the Lord" is described as:
+- near;
+- cloudy;
+- a time affecting nations.
+
+Egypt falls together with:
+- Cush;
+- Put;
+- Lud;
+- mixed populations;
+- allied groups.
+
+### M52H-9 — ONE CENTRAL SYSTEM'S FAILURE CAN PROPAGATE THROUGH ALLIED NODES
+
+This is not one biological body.
+
+It is a political network.
+
+The text explicitly lists multiple attached/allied populations falling in the same crisis.
+
+This complements Ezekiel 29's dragon+fish metaphor at the ordinary political level:
+the "attached fish" have real-network analogues in dependent/allied peoples.
+
+---
+
+# 30:6–9 — supporters fall, foundations torn down, messengers travel outward
+
+Those who support Egypt fall.
+
+Egypt's proud power descends.
+
+Its foundations are torn down.
+
+Messengers travel by ship/outward to alarm other regions.
+
+### M52H-10 — SUPPORT NODES, FOUNDATIONS AND INFORMATION CARRIERS ARE DIFFERENT FAILURE CHANNELS
+
+The chapter distinguishes:
+- supporters/allies;
+- structural "foundations" in metaphor;
+- central military power;
+- messenger/information flow.
+
+This reinforces the project's need to avoid calling every support-like item the same mechanism.
+
+---
+
+# 30:10–12 — channels dry; land transferred to foreign hands
+
+The text describes:
+- population destruction;
+- Nile/channel drying;
+- land handed to outsiders.
+
+### M52H-11 — WATER-SYSTEM FAILURE AND POLITICAL TRANSFER OCCUR TOGETHER BUT ARE NOT IDENTICAL
+
+The oracle couples:
+**hydrological loss**
++
+**human/political conquest**.
+
+In Vardath research these should remain separately tracked variables:
+- water channel state;
+- land-control state;
+- population state.
+
+---
+
+# 30:13–19 — distributed named-node collapse
+
+Egypt is decomposed into named centers:
+- Memphis;
+- Pathros;
+- Zoan;
+- Thebes;
+- Pelusium;
+- Heliopolis;
+- Bubastis;
+- Tahpanhes.
+
+Each receives a different combination of:
+- fire;
+- fear;
+- day-darkening/cloud;
+- captivity;
+- sword;
+- broken yoke.
+
+### M52H-12 — LARGE TERRITORY CAN BE REPRESENTED AS A DISTRIBUTED NODE NETWORK RATHER THAN ONE UNIFORM BODY
+
+This is an important control against over-centralization.
+
+Even when Pharaoh is represented as one dragon, Egypt is also many local nodes.
+
+Both representations can coexist:
+- one body projection;
+- many-node geographic reality.
+
+That is highly compatible with the project's "one event, many camera angles" method.
+
+---
+
+# 30:20–26 — Pharaoh's arms broken; Babylon's arms strengthened; sword transferred
+
+This is one of the cleanest body-as-power-transfer scenes in Ezekiel.
+
+Pharaoh:
+- one arm already broken;
+- not bound/healed;
+- both arms ultimately broken;
+- sword falls from his hand.
+
+King of Babylon:
+- arms strengthened;
+- divine sword placed in his hand;
+- arm extended against Egypt.
+
+### M52H-13 — BODY PARTS CAN REPRESENT SYSTEM CAPACITY RATHER THAN LITERAL GIANT ANATOMY
+
+The mechanics are:
+
+**Egyptian military capacity**
+→ projected as **Pharaoh's arms**;
+
+**Babylonian capacity**
+→ projected as **Nebuchadrezzar's strengthened arms**;
+
+**weapon/control**
+→ transferred as **sword in hand**.
+
+This is highly relevant to Squatter-Man interpretation.
+
+It proves again that:
+> giant-scale arm/hand language can encode the functional capacity of a whole political system.
+
+That does not make every giant arm a metaphor, but it establishes a strong conventional control.
+
+### M52H-14 — CAPACITY CAN TRANSFER BETWEEN COMPETING "BODY" PROJECTIONS
+
+Pharaoh arm weakens/breaks.
+
+Babylonian arm strengthens.
+
+The same scene therefore produces a polarity:
+
+**arm A ↓**
+while
+**arm B ↑**.
+
+This is not one body's left/right pair.
+
+It is rival-system capacity transfer.
+
+---
+
+# Ezekiel 30 strict Vardath screening
+
+Strong:
+- cloud/darkness;
+- supporter/foundation failure;
+- water-channel failure;
+- many-node distributed geography;
+- system projected as body/arms;
+- paired inverse arm capacities.
+
+Absent:
+- cherub/dragon body mechanics;
+- broad lattice;
+- throat;
+- re-expansion.
+
+### Verdict
+
+**Ezekiel 30 is mostly a systems-network/body-projection chapter. Its arm imagery is especially important as a control on Squatter-Man-style anthropomorphism.**
+
+---
+
+# Ezekiel 31
+## Assyria as a world-scale cedar: roots in abundant deep water, top in clouds, broad branches sheltering animals and nations, then cut down and sent below
+
+Ezekiel 31 is one of the strongest **world-tree / support-canopy** passages in the entire sequential research so far.
+
+The chapter addresses Pharaoh by comparison with a prior great tree, identified in the NRSVUE as Assyria.
+
+---
+
+# 31:3–9 — vertical tree joining deep water, earth-life and cloud-height
+
+The cedar has:
+- great height;
+- top/crown among clouds;
+- fair branches;
+- forest shade;
+- deep water feeding it;
+- rivers flowing around planting place;
+- streams going outward to other trees;
+- roots going down to abundant water;
+- large boughs;
+- long branches.
+
+Living populations use it:
+- birds nest in branches;
+- field animals give birth beneath it;
+- great nations live in its shade.
+
+It is compared with trees in Eden/garden of God.
+
+### M52H-15 — THIS IS AN EXPLICIT THREE-LEVEL AXIS/SUPPORT IMAGE
+
+Stripped geometry:
+
+**cloud / upper region**
+↑
+**high crown**
+|
+**central trunk / axis**
+|
+**broad branch canopy**
+→ **birds / animals / nations inhabit its protected field**
+|
+**roots**
+↓
+**abundant water / deep**
+→ **rivers/streams extend outward**.
+
+This is exceptionally close to the Vardath **world-tree view** of the apparatus.
+
+The text itself makes the tree:
+- vertically spanning;
+- water-fed from below/deep;
+- cloud-reaching above;
+- broad enough to shelter populations;
+- connected by outward-flowing streams to other trees.
+
+### M52H-16 — THE TREE IS BOTH AXIS AND DISTRIBUTED HABITAT/SUPPORT FIELD
+
+This is important.
+
+The cedar is not only a thin vertical rod.
+
+It has:
+- central axis/trunk;
+- many branches;
+- shade;
+- nested life;
+- nations under it.
+
+That makes it a particularly useful bridge between two Vardath states/images:
+
+**axis / world-tree**
+and
+**broad distributed support/canopy**.
+
+Unlike some earlier tree texts, the broadness here is functional:
+living populations occupy the region defined by its branches/shade.
+
+### M52H-17 — DEEP WATER FEEDS THE AXIS AND THE AXIS DISTRIBUTES WATER OUTWARD
+
+The hydrology is also unusually explicit:
+
+**deep/waters**
+→ **root zone**
+→ **tree grows upward**
+while
+**rivers/streams**
+→ **flow outward toward other trees**.
+
+This is not the same as the user's two opposed springs.
+
+But it is a real:
+**lower water source → vertical growth → distributed lateral network**
+pattern.
+
+### Vardath implication
+
+The current model proposes:
+- broad sky support;
+- convergence into axial fingertrap/tree/rod;
+- water behavior coupled to geometry;
+- local nodes connected through larger structure.
+
+Ezekiel 31 does not describe the contraction stage.
+
+But it supplies an unusually coherent **expanded world-tree / support-state image**.
+
+That is important because strict Vardath comparison does not require every chapter to narrate every phase if adjacent texts encode different states of the same proposed apparatus.
+
+---
+
+# 31:8–9 — Eden trees as comparison set
+
+The cedar exceeds other named trees in the garden of God.
+
+This cross-links Ezekiel 28:
+- Eden;
+- divine garden;
+- elevated/idealized figure;
+- pride/fall.
+
+### M52H-18 — EZEKIEL 28–31 REUSES ONE SACRED-COSMIC IMAGE FIELD ACROSS DIFFERENT POLITICAL FIGURES
+
+Tyre king:
+- Eden;
+- cherub;
+- holy mountain;
+- stones/fire.
+
+Assyria/Pharaoh comparison:
+- Eden;
+- world-scale cedar;
+- deep waters;
+- clouds;
+- broad shelter.
+
+This adjacency matters.
+
+The texts do not identify cherub = cedar.
+
+But for Vardath the two can reasonably be tested as **different projections/states of the same apparatus family**:
+- cherub/dragon/winged body;
+- tree/axis/canopy body.
+
+That is much stronger than comparing unrelated texts centuries/cultures apart.
+
+---
+
+# 31:10–14 — pride, cutting down, branches across mountains/valleys/watercourses, populations leave shade
+
+The tree grows proud because of height.
+
+It is handed over and cut down.
+
+Then:
+- branches fall on mountains;
+- boughs fill valleys/watercourses;
+- peoples leave its shade;
+- birds and animals settle on fallen remains.
+
+### M52H-19 — FAILURE OF THE AXIS DISASSEMBLES THE BROAD HABITAT FIELD
+
+This sequence is highly relevant:
+
+**standing central tree**
+→ **broad branches support/shelter distributed populations**
+→ **axis cut**
+→ **branches fall across landscape**
+→ **human populations depart**
+→ **non-human occupants remain/reuse debris**.
+
+This resembles a support-system failure more closely than many earlier passages.
+
+It still does not prove a literal sky lattice.
+
+But the structural mechanics are now strong enough to retain as a priority comparison.
+
+### M52H-20 — FALLEN STRUCTURE BECOMES NEW SUBSTRATE/HABITAT
+
+After collapse:
+- birds settle on trunk;
+- animals occupy branches.
+
+So failed structure is not erased.
+
+It becomes substrate for a different ecological state.
+
+This strongly matches the user's recurring:
+**old structure contributes material to successor state**
+principle.
+
+---
+
+# 31:15–18 — tree descends to Sheol; deep closes; rivers restrained; other well-watered trees are below
+
+The tree's descent triggers a larger environmental response:
+- deep is closed/covered;
+- rivers restrained;
+- mighty waters checked;
+- Lebanon darkens;
+- field trees faint;
+- nations quake at sound of fall;
+- tree goes to Sheol/world below;
+- other Eden trees already below respond/are comforted.
+
+### M52H-21 — AXIS REMOVAL IS COUPLED TO WATER-SYSTEM SHUTDOWN
+
+This is one of the strongest mechanistic-looking sequences yet:
+
+**great vertical tree falls/goes down**
+→ **deep closes**
+→ **rivers stop/restrain**
+→ **mighty waters checked**
+→ **wider environment darkens/reacts**.
+
+Within Vardath this is highly significant because the model predicts:
+- water behavior changes with gate/axis state;
+- closing/releasing geometry affects flow between levels.
+
+The ordinary literary context is a cosmic-tree death/fall metaphor for imperial collapse.
+
+Still, the **ordered relation between axis state and water state** is unusually close.
+
+### M52H-22 — POPULATED LOWER REGION FORMALLY RECURS
+
+The tree joins:
+- mortals;
+- fallen warriors;
+- other trees of Eden;
+- nations/figures already in the world below / Sheol.
+
+The user's cosmology insists lower/past-relative worlds are populated.
+
+The source's ordinary meaning is different:
+this is the realm of the dead.
+
+Therefore classify it carefully:
+
+**formal similarity**
+= populated lower domain;
+
+**semantic difference**
+= biblical death-realm, not explicitly a normal inhabited past-relative world.
+
+Do not erase that distinction.
+
+---
+
+# Ezekiel 31 process timeline
+
+deep water
+→ roots drink abundant water
+→ cedar grows upward
+→ top enters clouds
+→ branches spread
+→ birds nest
+→ animals reproduce beneath
+→ nations live in shade
+→ lateral streams water surrounding trees
+→ tree exceeds Eden peers
+→ pride increases with height
+→ tree handed over
+→ axis cut down
+→ branches fall across mountains/valleys/watercourses
+→ people leave shade
+→ birds/animals reuse fallen structure
+→ tree descends to world below
+→ deep closes
+→ rivers restrained
+→ mighty waters checked
+→ wider environment darkens
+→ other trees/nations below receive fallen tree.
+
+---
+
+# Ezekiel 31 strict Vardath screening
+
+## Exceptionally strong partial match
+- world-scale living axis;
+- roots in/dependent on deep water;
+- crown in clouds;
+- broad branches/canopy;
+- living populations sheltered beneath/within;
+- outward hydrological network;
+- collapse scatters structural material across land/water;
+- axis descent coupled to closing deep and restrained rivers;
+- populated lower realm.
+
+## Missing from this chapter
+- explicit broad sky mesh becoming the tree;
+- strand-angle contraction;
+- serpent/dragon form;
+- reopening after collapse.
+
+### Verdict
+
+**Ezekiel 31 is not a complete fingertrap cycle in isolation, but it is one of the strongest world-tree/support-state descriptions in the corpus and materially strengthens the Vardath apparatus when read beside Ezekiel 28–29.**
+
+---
+
+# Ezekiel 32
+## Pharaoh again as dragon in waters: feet disturb streams, net captures the body, dragon becomes landscape debris, heavens darken, then waters become clear and smooth after disturbance ends
+
+Ezekiel 32 revisits Pharaoh's dragon form and adds several components absent from chapter 29.
+
+---
+
+# 32:1–2 — lion claim versus dragon reality; feet in streams
+
+Pharaoh is contrasted:
+- self-image or comparison as lion among nations;
+- actual prophetic image as dragon in seas/waters.
+
+The dragon:
+- thrashes in streams;
+- troubles water with feet;
+- fouls/muddies channels.
+
+### M52H-23 — THE DRAGON HAS CONTACT POINTS/FEET THAT DIRECTLY ALTER THE WATER MEDIUM
+
+This is an important addition to Ezekiel 29.
+
+There:
+- dragon lies in channels;
+- scales carry fish.
+
+Here:
+- dragon has feet/contact with streams;
+- motion physically disturbs/muddies water.
+
+Within Vardath this maps closely to the idea that the dragon/lattice is not merely decorative:
+its position/motion changes the environment.
+
+Again, the ordinary metaphor is Pharaoh disturbing nations/regions.
+
+But the stripped physical grammar is strong:
+**large dragon-body motion**
+→ **water-state disturbance**.
+
+### Squatter-Man cross-link
+
+The user's model identifies:
+- dragon/serpent as winding/active form;
+- Squatter-Man as anthropomorphic side-view of concentrated structure.
+
+Ezekiel 32's "feet" do not prove anthropomorphic transformation.
+
+But they create a bridge:
+the dragon has lower contact points capable of acting on the medium beneath/around it.
+
+Cross-link this to:
+- Ezekiel 1 living-creature/wheel contact with earth;
+- Ezekiel 28 cherub/holy mountain;
+- Vardath Squatter-Man lower supports.
+
+---
+
+# 32:3–6 — many peoples throw a net; dragon hauled up; body redistributed across land and water
+
+The dragon is:
+- netted by many peoples;
+- hauled up;
+- thrown onto open field;
+- eaten by birds/animals;
+- flesh laid on mountains;
+- valleys filled with carcass;
+- blood fills/drenches watercourses.
+
+### M52H-24 — DRAGON BODY BECOMES LANDSCAPE-SCALE DISTRIBUTED MATERIAL
+
+The sequence is:
+
+**coherent water dragon**
+→ **capture**
+→ **extraction**
+→ **body disassembly**
+→ **material distributed over mountains/valleys/watercourses**.
+
+This is much larger than an ordinary crocodile body in the metaphor's scale.
+
+For Vardath this is a meaningful catastrophic analogue:
+a once-coherent support/current form becomes distributed debris/material across the inhabited surface.
+
+Do not claim literal geological deposition from the text.
+
+But retain the body→landscape transformation as a strong projection.
+
+### Net control
+
+The net is a capture mechanism operated by many peoples.
+
+It is not the dragon's own support lattice.
+
+Do not confuse:
+**capture net**
+with
+**sky web**.
+
+---
+
+# 32:7–8 — dragon downfall coupled to darkened heavens
+
+When Pharaoh/dragon is extinguished:
+- heavens are covered;
+- stars darkened;
+- sun covered by cloud;
+- moon stops giving light;
+- shining lights darkened;
+- darkness placed over land.
+
+### M52H-25 — DRAGON FAILURE AND SKY-LIGHT FAILURE ARE COUPLED IN ONE ORACLE
+
+This is one of the strongest cross-domain couplings yet.
+
+Sequence:
+
+**dragon/water disturbance**
+→ **dragon captured/destroyed**
+→ **heavens obscured**
+→ **stars dark**
+→ **sun clouded**
+→ **moon dark**
+→ **land darkened**.
+
+Ordinary prophetic/apocalyptic language uses cosmic darkness to magnify political catastrophe.
+
+But within the Vardath hypothesis this is exactly the kind of coupled effect expected if:
+- dragon is a state of the sky structure;
+- its activation/failure changes atmospheric/upper-boundary conditions.
+
+This does not prove causation physically.
+
+It is nevertheless a much stronger structural match than a dragon image by itself.
+
+---
+
+# 32:13–14 — after disturbance is removed, water becomes clear and streams run "like oil"
+
+After humans/livestock cease disturbing the abundant waters:
+- waters are made clear;
+- streams run like oil.
+
+"Like oil" is best treated as:
+- smooth;
+- quiet;
+- untroubled flow,
+
+not as literal petroleum.
+
+### M52H-26 — ACTIVE DRAGON/FOOT DISTURBANCE → LATER QUIET WATER STATE
+
+Earlier:
+**dragon feet + human/animal traffic**
+→ **muddied/troubled water**.
+
+Later:
+**disturbers removed**
+→ **clear, smooth streams**.
+
+This provides an explicit active/quiet environmental polarity.
+
+For Vardath:
+- active gate/dragon phase changes medium;
+- quiet phase restores ordered flow.
+
+This is a meaningful process analogy.
+
+---
+
+# 32:17–32 — Egypt descends into a populated assembly of prior fallen nations
+
+The second lament maps the Pit/world below as a populated field containing:
+- Assyria;
+- Elam;
+- Meshech and Tubal;
+- Edom;
+- northern princes;
+- Sidonians;
+- other slain groups.
+
+They have:
+- graves;
+- weapons;
+- former reputations/terror;
+- relative placements.
+
+Pharaoh and his multitude join them.
+
+### M52H-27 — THE LOWER REALM IS PRESENTED AS STRUCTURED, POPULATED AND HISTORICALLY LAYERED
+
+This is much more detailed than a vague "nothingness."
+
+The lower realm contains:
+- named groups;
+- prior arrivals;
+- spatial relations around graves;
+- memory of former terrestrial roles.
+
+Formal Vardath comparison:
+**lower domain is populated and differentiated**.
+
+Control:
+this is explicitly funerary/Sheol/Pit imagery, not a normal living civilization in a past-relative world.
+
+The similarity should therefore be logged as:
+**strong formal / weak semantic identity**.
+
+---
+
+# Ezekiel 32 process timeline
+
+Pharaoh compares as lion
+→ oracle casts Pharaoh as dragon
+→ dragon thrashes streams with feet
+→ water becomes troubled/muddy
+→ many peoples throw net
+→ dragon hauled from water
+→ body thrown onto field
+→ flesh/material spread mountains/valleys/watercourses
+→ sky lights darken
+→ nations react/fear
+→ Egyptian hordes fall
+→ livestock/human disturbance ceases
+→ waters clear
+→ streams become smooth like oil
+→ Egypt descends to Pit
+→ Pharaoh joins already-populated lower assembly of fallen nations.
+
+---
+
+# Ezekiel 32 strict Vardath screening
+
+## Strong partial match
+- dragon;
+- water/current disturbance;
+- lower contact/feet;
+- network-scale capture;
+- body→landscape redistribution;
+- coupled sky-darkening;
+- later quiet/clear water state;
+- populated lower domain.
+
+## Missing
+- explicit wings/cherub in this chapter;
+- visible eye/ice nodes;
+- broad web contracting into dragon;
+- reopening of dragon into broad sky;
+- upward/future-world transfer.
+
+### Verdict
+
+**Ezekiel 32 is not a complete fingertrap narrative in isolation, but when read with Ezekiel 28–31 it becomes part of one of the densest adjacent Vardath-comparison clusters yet.**
+
+---
+
+# MAJOR CROSS-CHAPTER SYNTHESIS — EZEKIEL 28–32
+## Cherub → dragon → support network/body → world-tree → dragon/sky-darkening
+
+This is the most important result of the present continuation.
+
+The five-chapter cluster distributes several Vardath apparatus views across adjacent oracles:
+
+### Ezekiel 28 — CHERUB / MOUNTAIN / FIRE
+- cherub identity or cherub association;
+- holy mountain;
+- Eden;
+- precious/luminous stones;
+- internal fire;
+- cast down to earth.
+
+Vardath cross-link:
+**winged/feathered / eye-node / activated-sky / Squatter-Man state family**.
+
+### Ezekiel 29 — DRAGON / SCALES / WATER / ATTACHED NODES
+- great dragon in river channels;
+- scales;
+- fish attached to scales;
+- hooks;
+- dragon + attached fish drawn out together.
+
+Vardath cross-link:
+**scaled serpent/dragon current body with attached surface nodes/dependents**.
+
+### Ezekiel 30 — SYSTEM BODY / ARMS / SUPPORT CAPACITY
+- Egypt and Babylon represented through arms/hands;
+- one body's arms break;
+- rival body's arms strengthen;
+- sword/control shifts.
+
+Vardath control:
+**humanlike body can encode system-scale capacities**.
+
+### Ezekiel 31 — TREE / DEEP / CLOUD / CANOPY / INHABITED SHADE
+- central cedar;
+- roots in deep/abundant water;
+- crown in clouds;
+- broad branches;
+- birds/animals/nations inhabiting its field;
+- streams distributed outward;
+- tree falls;
+- deep closes and rivers are restrained.
+
+Vardath cross-link:
+**world-tree / axis / broad support canopy / water-coupled apparatus state**.
+
+### Ezekiel 32 — DRAGON / FEET / WATER / SKY
+- dragon in waters;
+- feet disturb streams;
+- body removed and distributed across land;
+- heavens/stars/sun/moon darkened;
+- later water becomes clear/quiet;
+- dragon/empire descends into populated lower domain.
+
+Vardath cross-link:
+**active dragon/support state affects medium and upper-light environment; collapse changes land/water/sky together**.
+
+### M52H-28 — THE COMPONENTS OF THE VARDATH APPARATUS CLUSTER IN ADJACENT EZEKIEL MATERIAL
+
+This is stronger than a single-word match.
+
+Across Ezekiel 28–32 the text repeatedly cycles through:
+
+**cherub / mountain / fire**
+→ **dragon / scales / river**
+→ **system-body / arms**
+→ **world-tree / deep / clouds / inhabited shade**
+→ **dragon / feet / disturbed water / darkened sky / lower realm**.
+
+The ordinary literary referents differ:
+- Tyre;
+- Pharaoh/Egypt;
+- Assyria.
+
+Therefore this is **not** a single explicit biblical statement that these images are one physical object.
+
+But the mature Vardath method specifically tests whether different figures can be **different projections/camera angles of one process**.
+
+Under that methodology, Ezekiel 28–32 is now a **high-priority composite match**.
+
+---
+
+# Feathered-serpent / ice-eye cross-cultural cross-link
+
+The Vardath cosmology already treats:
+- Quetzalcoatl as feathered-serpent + wind/atmospheric-motion + world-age imagery;
+- serpent/dragon as braided current;
+- wings/feathers as sky-body/cherub projection;
+- many eyes as luminous or ice-like canopy nodes;
+- frozen/dim eye-nodes as quiet-state upper boundary;
+- waking/thawing eyes as activation/aperture state.
+
+Ezekiel 28–32 itself does not contain every one of those descriptors in one sentence.
+
+The useful structural synthesis is distributed:
+- cherub/winged family from Ezekiel's earlier visions and chapter 28;
+- scale-bearing dragon from chapter 29;
+- many-node/eye model from Ezekiel 1/10 and the Vardath archive;
+- world-tree/cloud/deep architecture from chapter 31;
+- dragon/feet/water/sky coupling from chapter 32.
+
+### M52H-29 — DO NOT REQUIRE ONE CAMERA ANGLE TO SHOW EVERY COMPONENT
+
+The project should distinguish:
+
+**single-text explicit complete mechanism**
+from
+**adjacent multi-view composite mechanism**.
+
+Ezekiel 28–32 is currently in the second category.
+
+It becomes much more relevant once the user's cosmology is read correctly.
+
+---
+
+# Pair / mirror register update — Ezekiel 29–32
+
+## dragon / fish attached to scales
+Best:
+- P7 carrier/attached-dependent relation;
+- large body + subordinate nodes.
+
+## Egypt as dragon / Egypt as reed staff
+Best:
+- P3 projection-state pair;
+- same political system encoded through different bodies/functions.
+
+## Pharaoh / Nebuchadrezzar arms
+Best:
+- P2 rival capacity polarity;
+- P6 opposing systems;
+- not same individual.
+
+## cedar / birds / animals / nations
+Best:
+- central support/habitat relation;
+- not same-figure pair.
+
+## cedar standing / cedar fallen
+Best:
+- P3 same symbolic system before/after failure.
+
+## dragon active-water / waters clear after removal
+Best:
+- P2 active/quiet environmental polarity.
+
+## land of living / world below
+Best:
+- P2 vertical/domain polarity;
+- formal Vardath comparison but death-realm semantic control.
+
+---
+
+# Timing / number register — Ezekiel 29–32
+
+Record without forced arithmetic:
+
+## Ezekiel 29
+- tenth year;
+- tenth month;
+- twelfth day.
+- Egypt desolation/scattering interval: **40 years**.
+- later oracle: twenty-seventh year, first month, first day.
+
+## Ezekiel 30
+- eleventh year;
+- first month;
+- seventh day in the Pharaoh-arm oracle.
+
+## Ezekiel 31
+- eleventh year;
+- third month;
+- first day.
+
+## Ezekiel 32
+- twelfth year;
+- twelfth month;
+- first day for first lament.
+- later lament dated in the same broad year sequence; textual/versification details should be checked again when building the final exact chronology table.
+
+Do not yet equate:
+- 40;
+- 12;
+- 10;
+- 27;
+- 11
+
+with Vardath/Archaix cycles.
+
+They are source chronology data first.
+
+---
+
+# Strict fingertrap test — Ezekiel 29–32
+
+## If each chapter is isolated
+No chapter alone supplies the full strict sequence:
+
+1. broad/open support mesh;
+2. continuity;
+3. strand-angle change;
+4. narrowing into axial throat;
+5. transfer/contact;
+6. reopening.
+
+So the strict single-chapter verdict remains negative.
+
+## If the adjacent Ezekiel apparatus cluster is tested as multiple views/states
+
+The evidence becomes substantially stronger:
+
+### broad/support state
+Ezekiel 31:
+- huge branch canopy;
+- populations/nations under shade;
+- distributed water network.
+
+### axial/tree state
+Ezekiel 31:
+- central trunk;
+- roots in deep;
+- crown in clouds.
+
+### dragon/current state
+Ezekiel 29 and 32:
+- great dragon in channels;
+- scales;
+- attached fish;
+- feet disturbing water.
+
+### winged/cherubic anthropomorphic state
+Ezekiel 28 cross-linked with Ezekiel 1/10:
+- cherub;
+- holy mountain;
+- winged/eyed moving-structure family.
+
+### environmental coupling
+Ezekiel 31–32:
+- axis fall → deep closed / rivers restrained;
+- dragon fall → heavens darkened;
+- later waters clear.
+
+### lower-domain movement
+Ezekiel 31–32:
+- tree/empire descends to populated world below/Pit.
+
+### still missing explicitly
+- the text never says the cedar broadens and then physically twists into the dragon/cherub;
+- no explicit fingertrap strand-angle contraction;
+- no explicit reopening of the same object from rod back to broad mesh;
+- no explicit future-above / past-below populated-world adjacency.
+
+### Corrected overall verdict
+
+**Ezekiel 29–32, especially when joined to the corrected Ezekiel 28 cherub reading and Ezekiel 1/10, is a high-value composite Vardath match. It does not independently prove the physical fingertrap model, but it contains an unusually dense sequence of the model's predicted state-images and environment couplings.**
+
+That is materially stronger than the earlier overly narrow "no dragon-support mechanism" treatment.
+
+---
+
+# Sources logged — Ezekiel 29–32
+
+Primary:
+- Ezekiel 29–32 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+29-32&version=NRSVUE
+- Ezekiel 29 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+29&version=NRSVUE
+
+Dragon / crocodile / *tannîn* control:
+- Martin Johnson and Philip Jenson, “The Curious History of the Translation of the Hebrew Word תַּנִּים tannîm: Dragons, Jackals, or Crocodiles?”, *The Bible Translator* 76.3 (2025):
+  https://journals.sagepub.com/doi/10.1177/20516770251387653
+- “Pharaoh Is a Monster: Ezekiel Decries Judah’s Ties with Egypt,” TheTorah.com:
+  https://www.thetorah.com/article/pharaoh-is-a-monster-ezekiel-decries-judahs-ties-with-egypt
+
+Cherub / Ezekiel 28 cross-link:
+- Lydia Lee, “‘You Were the (Divine) Cherub’: A Potential Challenge to Yhwh's Sole Divinity in Ezekiel 28.14,” *JSOT* 41.1 (2016):
+  https://journals.sagepub.com/doi/10.1177/0309089216628419
+- Lydia Lee, “The Tyrian King in MT and LXX Ezekiel 28:12b–15,” *Religions* 12.2 (2021):
+  https://doi.org/10.3390/rel12020091
+- “God Abandons the Garden of Eden and Dwells with the Cherubim,” TheTorah.com:
+  https://www.thetorah.com/article/god-abandons-the-garden-of-eden-and-dwells-with-the-cherubim
+
+World-tree / cosmic-tree comparison:
+- scholarship discussing Ezekiel 31 as a cosmic-tree tradition and its relation to Eden imagery is cross-linked with the Ezekiel 28 scholarly material above.
+- Ancient Near Eastern comparative tree/water imagery remains a comparative control rather than proof of one physical apparatus.
+
+Vardath internal cross-links:
+- `cosmology_fragments/f00-overview.txt` — quiet broad lattice → convergence → axial fingertrap/scroll rod → gate → reopening;
+- `cosmology_expansions/x08.txt` — Ezekiel/Revelation many-eye model; ice-like/luminous sky nodes; waking/thawing eye state;
+- `cosmology_fragments/f21.txt` — Quetzalcoatl as feathered serpent + wind/atmospheric motion + world-age/reset comparison;
+- `book/chapters/15-why-the-fingertrap-changed-everything.md` — rolled-sky/fingertrap geometry;
+- `book/chapters/31-eye-wheel-star-and-rosette.md` — eye/wheel/node visual grammar.
+
+---
+
+# SECTION 52H — EZEKIEL 29–32 COMPLETE
+
+## Strongest new findings
+
+1. **Ezekiel 29 explicitly depicts Pharaoh as a great dragon embedded in Nile channels, with fish attached to its scales; when the central dragon is pulled out, the attached fish move with it. This is one of the strongest scaled-dragon + attached-node images yet.**
+2. **The dragon/fish system fails when removed from its sustaining water medium, adding an environmental-dependence rule.**
+3. **Egypt as a reed staff supplies a hard mechanical control: rod-like appearance does not equal load-bearing capacity; the support breaks when leaned upon and injures the user.**
+4. **Egypt's forty-year scatter/gather sequence restores an inhabited kingdom in a deliberately diminished state—renewal without rewind.**
+5. **Ezekiel 30 shows whole political systems projected as arms/hands whose capacities can weaken, break, strengthen and transfer weapons, a major Squatter-Man anthropomorphism control.**
+6. **Ezekiel 31 is one of the strongest world-tree/support images in the corpus: roots in abundant/deep water, top in clouds, broad branches sheltering birds, animals and nations, with lateral streams feeding surrounding trees.**
+7. **The cedar is simultaneously central axis and broad inhabited support field, making it an unusually useful bridge between Vardath's axis/tree and distributed-canopy states.**
+8. **When that tree falls, branches spread across mountains/valleys/watercourses, populations leave its shade, and the fallen structure becomes substrate for different occupants.**
+9. **Most important mechanically: the tree's descent is followed by the deep closing, rivers being restrained and mighty waters checked—one of the clearest axis-state ↔ water-state couplings found so far.**
+10. **Ezekiel 32 returns to the dragon image and adds feet that directly disturb/muddy streams, giving the dragon lower contact points that alter the surrounding medium.**
+11. **The captured dragon's body becomes landscape-scale material across mountains, valleys and watercourses.**
+12. **Dragon downfall is coupled to darkened heavens, stars, sun and moon; after the disturbance is removed, waters become clear and streams run smoothly “like oil.”**
+13. **Ezekiel 31–32 repeatedly portrays a populated, differentiated world below/Pit. This is formally compatible with the user's populated-lower-domain intuition but semantically remains biblical death-realm imagery.**
+14. **Across adjacent Ezekiel 28–32, the text clusters cherub/mountain/fire → dragon/scales/water → system-body/arms → world-tree/deep/cloud/canopy → dragon/feet/water/sky-darkening. Under the Vardath many-camera-angles method, this is a high-priority composite apparatus match.**
+15. **The strict fingertrap transition is still not explicitly narrated as one object's broad mesh twisting into a rod and reopening, so the physical model remains speculative; what has strengthened substantially is the state-image and process-sequence correspondence.**
+
+## Next live block
+
+**Ezekiel 33–36**
+
+Priority:
+- watchman / information threshold and receiver responsibility;
+- fugitive arrival and Ezekiel's mouth reopening (cross-check with 24);
+- shepherd / flock system in Ezekiel 34;
+- one shepherd / David role;
+- land/mountains as addressed system;
+- Edom/Seir boundary and possession;
+- mountains of Israel receiving branches/fruit/people in Ezekiel 36;
+- depopulated land → rebuilt/inhabited cities;
+- cleansing water;
+- new heart/new spirit;
+- land becoming like Eden;
+- HIGH PRIORITY: test whether Ezekiel 34–36 gives the **reopening/repopulation side** needed to complement the dragon/tree collapse sequence in 28–32.
