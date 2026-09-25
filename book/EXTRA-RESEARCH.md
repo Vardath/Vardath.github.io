@@ -1636,3 +1636,371 @@ Therefore:
 Integrate **Isaiah 28–39** as SECTION 49C only as far as necessary to preserve the continuous transformation map, then move to the first unfinished text:
 
 **Isaiah 40 onward.**
+
+
+---
+
+# SECTION 49C INTEGRATION — Isaiah 28–39
+## Cross-block process map only; detailed research remains in Part 1 (28–35) and the active file (36–39)
+
+Isaiah 28–39 is best retained as a family of interacting process variables rather than forced into one hidden event narrative.
+
+---
+
+# 1. STRUCTURE / TENSION / FAILURE FAMILY
+
+Isaiah 28:
+- tested foundation;
+- line/plummet;
+- false refuge overwhelmed;
+- enclosure mismatch;
+- material-specific finite processing.
+
+Isaiah 30:
+- high wall bulges before sudden collapse;
+- shattered fragments lose useful carrier function.
+
+Isaiah 33:
+- stable tent = stakes fixed / cords intact;
+- failed ship = rigging loose / mast unsupported / sail cannot spread.
+
+Isaiah 34:
+- broad sky changes to rolled geometry.
+
+Isaiah 38:
+- human life becomes shepherd tent / woven continuity / loom;
+- the death image terminates by cutting the weave.
+
+## M49C-1 — STRUCTURAL FORM IS NOT ENOUGH; STATE OF TENSION / ALIGNMENT / CONNECTIVITY DETERMINES FUNCTION
+
+The same visual family can represent:
+- stable structure;
+- failing structure;
+- collapsed structure;
+- rolled structure;
+- cut structure.
+
+This is crucial for the Vardath lattice.
+
+A fingertrap interpretation requires:
+**connectivity retained while geometry changes**.
+
+Isaiah 38’s cut weave is therefore mechanically different from Vardath contraction.
+
+---
+
+# 2. FORCE / CARGO FAMILY
+
+Isaiah 28 farmer:
+different materials receive different processing; crushing has an end condition.
+
+Isaiah 30:
+treasure successfully moves to Egypt while useful protection does not return.
+
+Isaiah 33:
+broad river imagery explicitly does not allow normal ship passage.
+
+Isaiah 36:
+wall blocks bodies but not sound.
+
+Isaiah 39:
+information exposure precedes later material and human transfer.
+
+## M49C-2 — ROUTE EXISTENCE ≠ UNIVERSAL TRANSFER CAPACITY
+
+For every proposed gate/event track:
+- what is moving;
+- through what interface;
+- under what force;
+- whether the carrier survives;
+- whether destination function is achieved.
+
+This now has multiple independent textual controls inside one Isaiah block.
+
+---
+
+# 3. INFORMATION OPEN/CLOSED FAMILY
+
+Isaiah 29:
+- eyes close;
+- document seals;
+- literate receiver blocked by seal;
+- illiterate receiver blocked by capability.
+
+Isaiah 30:
+- written witness;
+- visible teacher;
+- route-correcting voice.
+
+Isaiah 36:
+- sound crosses material wall;
+- language changes semantic access.
+
+Isaiah 37:
+- rumor redirects movement;
+- message persists across carriers;
+- letter is carried upward and spread open.
+
+Isaiah 39:
+- remote information triggers envoys;
+- hidden inventory becomes externally known before removal.
+
+## M49C-3 — INFORMATION PERMEABILITY IS ITS OWN STATE VARIABLE
+
+A physical boundary can be:
+closed to matter;
+open to signal.
+
+A signal can arrive while:
+meaning remains closed.
+
+Information can also:
+change physical routes;
+prepare later material transfer.
+
+This becomes a permanent field in the 88-book event map.
+
+---
+
+# 4. DIRECTION / ROUTE FAMILY
+
+Isaiah 28:
+overwhelming force repeatedly passes through.
+
+Isaiah 30:
+people travel down to Egypt;
+return/rest is opposed to accelerating flight;
+voice corrects right/left turning.
+
+Isaiah 35:
+controlled highway enables return.
+
+Isaiah 37:
+same incoming route becomes outgoing route;
+root grows downward while fruit grows upward.
+
+Isaiah 38:
+shadow indicator reverses its previous direction.
+
+## M49C-4 — DIRECTIONAL REVERSAL OCCURS AT MULTIPLE SCALES, BUT OBJECT TYPE MUST BE PRESERVED
+
+Examples:
+- army route;
+- plant growth;
+- shadow indicator;
+- human political travel.
+
+The shared variable is reversal.
+
+They are not automatically the same mechanism.
+
+---
+
+# 5. ENVIRONMENTAL STATE FAMILY
+
+Isaiah 30:
+high-place water + tower-fall + amplified light imagery.
+
+Isaiah 32:
+input “from on high”
+→ wilderness → fruitful field → forest
+→ secure habitation.
+
+Isaiah 34:
+streams/soil → burning destructive landscape
+→ successor non-human ecology.
+
+Isaiah 35:
+dry land → water breakout → springs → vegetation → viable return route.
+
+## M49C-5 — ISAIAH 28–39 REPEATEDLY COUPLES SYSTEM CHANGE TO WATER / LAND / BIOLOGY / HABITABILITY
+
+This is one of the strongest broad correspondences with Vardath’s environmental sequence.
+
+But the source does not give one demonstrated underlying physical cause.
+
+The Vardath interpretation remains:
+**possible process comparison**, not source-level physics.
+
+---
+
+# 6. REMNANT / SUCCESSOR FAMILY
+
+Isaiah 28:
+remnant survives failed high-state.
+
+Isaiah 30:
+accelerating escape reduces the system toward a sparse signal/remnant.
+
+Isaiah 34:
+human civic system collapses while successor ecology occupies the field.
+
+Isaiah 35:
+environment changes before returning population uses the road.
+
+Isaiah 37:
+recovery begins with spontaneous/carryover growth;
+remnant roots downward, fruits upward;
+survivors later move outward.
+
+## M49C-6 — SUCCESSOR STATE IS BUILT FROM WHAT REMAINS; IT IS NOT A REWIND
+
+This fits the mature Vardath principle:
+**new world from inherited history/material**, not restoration to an untouched previous state.
+
+---
+
+# 7. PAIR / TWO-DIRECTION SCREEN
+
+Strong useful pairs:
+- stable foundation / overwhelming flow;
+- centre lowered / exterior host dispersed;
+- outward frantic flight / return-rest;
+- flesh / spirit as theological polarity;
+- stable tent / failed rigging;
+- Isaiah 34 destructive field / Isaiah 35 restorative field;
+- wall closed to bodies / open to sound;
+- incoming route / same-route return;
+- root down / fruit up;
+- death prediction / extended life;
+- hidden inventory / exposed inventory;
+- present peace / future transfer.
+
+## Strongest Vardath-compatible pair
+
+**root downward / fruit upward**.
+
+Why:
+- one continuous organism;
+- simultaneous opposed directions;
+- common central continuity.
+
+Why it is still incomplete:
+- no braid;
+- no strand crossing;
+- no contraction;
+- no throat.
+
+---
+
+# 8. SQUATTER-MAN / PERSON-AS-GEOMETRY CONTROL
+
+Positive partial analogues:
+- single signal/flagstaff on a height;
+- central mountain/Zion;
+- root-down / fruit-up organism;
+- tent/cord structure.
+
+Strong negative control:
+- Sennacherib rhetorically operates across mountains, trees and waters, yet ordinary imperial hyperbole explains this without making him a literal landscape-body.
+
+## M49C-7 — LANDSCAPE-SCALE PERSONIFICATION IS NECESSARY BUT NOT SUFFICIENT FOR LATTICE-PERSON IDENTITY
+
+Future candidates should require a fuller chain:
+- body/form;
+- axis;
+- paired directions;
+- boundary operation;
+- transfer;
+- repeated transformation behavior.
+
+---
+
+# SECTION 49C continuous transformation map — Isaiah 28–39
+
+unstable high state
+→ storm/overflow tests structure
+→ true foundation is measured
+→ false refuge is penetrated
+→ processing rule limits force by material
+→ central city is lowered
+→ surrounding host disperses
+→ perception/information seals
+→ landscape and perception reopen
+→ wrong-route cargo moves toward Egypt
+→ high wall deforms and collapses
+→ return/rest is offered against runaway acceleration
+→ guidance corrects branch direction
+→ high-place water/light restoration imagery
+→ human material alliance fails
+→ upper input precedes ecological restoration
+→ road/treaty connectivity fails
+→ stable corded tent appears
+→ failed rigging gives inverse tension state
+→ upper sky rolls
+→ heavenly host destabilizes
+→ destructive agency moves downward
+→ lower landscape enters burning state
+→ successor ecology occupies it
+→ paired inverse landscape becomes watered/productive
+→ controlled return road opens
+→ Assyrian pressure converges on Jerusalem
+→ wall blocks bodies but not speech
+→ language controls information access
+→ birth-threshold metaphor reaches transition without strength
+→ information redirects the enemy route
+→ letter is carried upward and spread open
+→ same path reverses direction
+→ recovery passes through remnant-dependent agricultural stages
+→ one organism roots down / fruits up
+→ death branch is announced
+→ receiver response enters the causal loop
+→ lifespan is extended
+→ shadow indicator reverses ten steps
+→ life is projected as tent/weave then cut
+→ distant information reaches Babylon
+→ envoys arrive
+→ stored system becomes fully visible
+→ future material and human transfer is predicted.
+
+---
+
+# SECTION 49C strict Vardath verdict
+
+Isaiah 28–39 contains an unusually rich set of partial mechanical correspondences:
+- measured structure;
+- tension;
+- deformation;
+- rolled field;
+- weave;
+- opposed direction;
+- threshold;
+- route reversal;
+- selective boundary;
+- water/ecology transition;
+- remnant/successor formation.
+
+But it still never presents the full continuous sequence:
+
+**broad connected support mesh**
+→ **same strands reorient**
+→ **narrow fingertrap / rod / axial throat**
+→ **world/contact transfer**
+→ **same structure reopens**.
+
+Therefore:
+
+> **Isaiah 28–39 strongly enriches the Vardath process grammar, but does not yet supply a strict textual description of the mature gate mechanism.**
+
+---
+
+# Next research
+
+**SECTION 49D — Isaiah 40 onward**
+
+Proceed in manageable blocks and append each block directly.
+
+First block:
+**Isaiah 40–42**.
+
+Priority:
+- levelled terrain / valleys raised / mountains lowered;
+- measured waters / heavens span / dust measure;
+- circle of earth / heavens stretched like curtain / tent;
+- star host brought out and numbered;
+- exhaustion vs renewed upward motion;
+- east/west calling and “ends of earth” gathering;
+- servant / spirit / bruised reed;
+- blind-path guidance / darkness→light;
+- sea / coastlands / wilderness / mountains as simultaneous witness fields;
+- strict distinction between stretched tent-sky and fingertrap narrowing.
