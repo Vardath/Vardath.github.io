@@ -12065,14 +12065,39 @@ not established.
 The monster:
 cut/pierced.
 
-## M49D2I-13 — LINEAR/DRAGON BODY BEING CUT ≠ SAME BODY REORIENTING INTO TRANSIT THROAT
+## M49D2I-13 — DRAGON CUTTING MUST NOW BE TESTED AGAINST THE VARDATH LOAD-BEARING LATTICE-SPRING MODEL
 
-This is a strong negative control.
+Vardath Cosmology clarification:
 
-The structure is:
-destroyed/defeated,
-not:
-temporarily reconfigured and reopened.
+**the dragons are themselves the lattice spring that supports the ground/world layer.**
+
+Therefore a dragon passage cannot be screened only as:
+monster/serpent symbolism.
+
+It now requires two separate tests:
+
+### ordinary textual layer
+Rahab/Dragon is a mythic/chaos opponent being cut or pierced.
+
+### Vardath structural comparison
+dragon/lattice-spring supports ground
+→ dragon is cut/pierced or otherwise disrupted
+→ support geometry may fail/reconfigure
+→ water/deep state changes
+→ a route may open through what was previously impassable.
+
+This makes Isaiah 51:9–10 more relevant to the cosmology than the earlier note allowed.
+
+However, the strict test still requires evidence that:
+- the dragon is functioning as ground support in this text or in a securely linked tradition;
+- the same supporting structure changes geometry rather than simply being destroyed;
+- that change causes the sea/deep route opening;
+- continuity of the support structure is preserved through the transition;
+- and, for a full fingertrap match, the structure later re-expands/re-supports the ground.
+
+So the correct classification is:
+
+**high-priority Vardath support-lattice analogue; strict fingertrap identity not yet demonstrated from Isaiah 51 alone.**
 
 ---
 
