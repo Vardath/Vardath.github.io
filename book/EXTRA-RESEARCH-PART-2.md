@@ -5069,42 +5069,76 @@ This is one of the most mythically dense units in Ezekiel.
 
 # Textual-critical control — is the king the cherub, or with the cherub?
 
-This point is mandatory.
+This point remains mandatory, but the **Vardath implication is corrected here**.
 
 The Masoretic tradition, as commonly vocalized/read, can identify the Tyrian king as the anointed/guardian cherub.
 
-But the Greek Septuagint tradition distinguishes the king from a cherub and can be rendered as the king being **with** the cherub.
+The Greek Septuagint tradition can distinguish the king from the cherub and render the king as being **with** the cherub.
 
-Modern scholarship remains divided over which form is earlier/better.
+Modern scholarship remains divided over which literary/textual form is earlier or preferable. Lydia Lee argues that the Masoretic identification of the Tyrian king as cherub is syntactically intelligible and conceptually coherent; other scholarship has defended the LXX-style distinction between king and guardian cherub.
 
-- Lydia Lee argues that the Masoretic identification of the king as cherub is syntactically intelligible and conceptually workable.
-- Other scholars have argued for readings where the king is placed **with/beside** the cherub.
-- A 2021 text-critical study by Jong-Hoon Kim and discussion of MT/LXX traditions emphasizes that MT and LXX portray the king/cherub relation differently.
-- The NRSVUE itself notes the Greek/Hebrew difference at verse 14.
+### CORRECTION TO THE VARDATH MODEL
 
-### M52G-22 — CHERUB IDENTITY IS TEXTUALLY UNSTABLE ENOUGH THAT THE VARDATH MODEL MUST NOT DEPEND ON ONE READING
+The textual variant changes the **king ↔ cherub relationship**. It does **not** remove the cherub from the Vardath mechanism.
 
-Therefore record two legitimate analysis branches:
+In the mature Vardath Cosmology, the cherub belongs to the same structural family as:
+- the broad sky-lattice;
+- the rolled/contracted sky;
+- the fingertrap/scroll-rod;
+- the Squatter-Man anthropomorphic projection;
+- serpent/dragon/braided-current imagery;
+- wings/feathered outer form;
+- repeated eye/node imagery;
+- frozen or ice-like upper eye-nodes that can thaw/open during activation.
 
-### Branch A — king = cherub
-Then the figure:
-**royal human/idealized ruler**
-→ **cherubic guardian identity**
-→ **holy mountain**
-→ **expulsion**.
+The cosmology archive already treats Ezekiel's living beings, wings, wheels, many eyes, fire, radiance and throne imagery as a close-range view of the **activated moving sky structure**. The "many eyes" are specifically compared in the Vardath model to luminous or ice-like nodes/apertures embedded in the canopy. During the quiet state those nodes can be frozen/dimmed; during activation they can "wake," open or participate in convergence.
 
-### Branch B — king with cherub
+The comparative mythology layer already places **Quetzalcoatl** beside this visual family as a separate cultural comparison:
+**feathered serpent + wind/atmospheric motion + world-age/reset imagery**.
+
+That does not imply borrowing, identity of traditions, or proof of one physical event. It establishes that "feathered/winged serpent-like sky-current form" is already part of the model's comparative vocabulary.
+
+### Branch A — MT-style king = cherub
+
+Then Ezekiel 28 fuses:
+**royal/humanlike figure**
++
+**cherubic guardian identity**
++
+**holy mountain**
++
+**fiery-stone environment**.
+
+For Vardath this is directly compatible with projection grammar:
+the same underlying sky-machine can appear in humanlike, royal, cherubic, serpentine or axial form depending on viewpoint and narrative role.
+
+The king being called a cherub would therefore strengthen, not weaken, the idea that an anthropomorphic figure can be the visible form of the apparatus itself.
+
+### Branch B — LXX-style king with cherub
+
 Then:
 **royal/Adamic figure**
-+ **separate guardian cherub**
-→ **holy mountain/garden**
-→ **king expelled / guardian role distinct**.
++
+**cherub as associated guardian/apparatus**
++
+**holy mountain/garden**.
 
-The dragon/support hypothesis must survive **both** branches to be robust.
+Under this reading the king need not be identical with the apparatus, but the cherub still maps to the same rolled-sky/fingertrap/Squatter-Man structural family.
 
-It currently does not gain decisive support from either.
+The variant therefore changes whether:
+- **operator/occupant = apparatus**, or
+- **operator/occupant is with the apparatus**.
 
----
+It does **not** require treating the cherub as unrelated to the mechanism.
+
+### M52G-22 — TEXTUAL VARIATION CHANGES ROLE RELATION, NOT THE CHERUB'S VARDATH STRUCTURAL IDENTITY
+
+This is the corrected rule.
+
+The Vardath comparison should test:
+- cherub as apparatus/projection in both textual branches;
+- whether the king is fused with it or paired with it;
+- how holy mountain, fiery stones, expulsion and internal fire relate to the apparatus state.
 
 # Precious stones — cross-link, not duplicate research
 
@@ -5160,32 +5194,50 @@ The text genuinely contains:
 
 This strengthens the **guardian-at-boundary / sacred-center** motif.
 
-### M52G-25 — IT DOES NOT YET GIVE DRAGON-GROUND SUPPORT
+### M52G-25 — EZEKIEL 28 IS A STATE-IDENTIFICATION PASSAGE FOR THE CHERUB/SKY-MACHINE, NOT A FULL CONTRACTION SEQUENCE
 
-What is absent:
-- no description of cherub holding the ground up;
-- no broad woven body;
-- no spring-like compression;
-- no two opposed dragon strands;
-- no lower feet/legs supporting an inhabited plane;
-- no broad→rod transition.
+The earlier wording here was too restrictive.
 
-Compare Ezekiel 1:
-- living creatures + wheels;
-- expanse above;
-- throne above;
-- coordinated mobility.
+Ezekiel 28 does not narrate the entire:
+**broad sky → convergence → fingertrap/rod → transfer → reopening**
+sequence inside this one chapter.
 
-Ezekiel 28:
-- guardian/royal figure;
-- mountain;
-- garden;
-- fiery stones;
-- expulsion.
+But under the mature Vardath model that does **not** make the cherub separate from the apparatus.
 
-The mechanical support architecture from Ezekiel 1 is **not repeated here**.
+Instead Ezekiel 28 supplies a **state/view identification**:
+- cherub;
+- holy mountain;
+- Eden/garden;
+- precious/luminous stones;
+- fiery environment;
+- elevated privileged position;
+- downward expulsion;
+- internal fire;
+- fall to earth.
 
-Therefore this chapter does **not** close the dragon-support gap.
+Cross-linked with Ezekiel 1/10 and the Vardath cosmology:
+- wings/feathered form belong to the moving sky-body view;
+- wheels/eyes belong to node/end-on/aperture views;
+- many eyes are compared to luminous or ice-like nodes in the canopy;
+- serpent/dragon describes the braided/winding current;
+- Squatter-Man describes the anthropomorphic side-view of the contracted structure;
+- rolled sky/fingertrap describes the geometry change itself.
+
+So the important question is not "does Ezekiel 28 separately redraw the whole web?"
+
+It is:
+
+> **Does Ezekiel 28 identify the cherub as one visible/guardian state of the same sky structure already described mechanically elsewhere in Ezekiel?**
+
+Within the Vardath hypothesis, the answer is **yes: this is a strong state-identity comparison**, while remaining a speculative physical interpretation rather than the ordinary historical-literary reading.
+
+The chapter alone still does not independently prove:
+- the exact broad→narrow transition;
+- two opposed strands;
+- re-expansion;
+- physical world transfer.
+
+Those mechanics come from the larger cross-text sequence, not from Ezekiel 28 in isolation.
 
 ---
 
@@ -5562,8 +5614,8 @@ Ethical/rhetorical control on Tyre's humiliation:
 7. **The ship's success loads it more heavily; when the east wind wrecks the carrier, cargo, crew, merchants, warriors and operational specialists fail together—strong coupled-network-failure grammar.**
 8. **Tyre's hub failure affects surviving coastlands/merchants, showing that a central network node can collapse while peripheral nodes remain and react.**
 9. **Ezekiel 28 strongly combines sacred garden, mountain, guardian/cherub and restricted-access/expulsion imagery.**
-10. **But the king/cherub relation is textually unstable: MT and LXX traditions differ, so no Vardath conclusion should depend on identifying the king as the cherub.**
-11. **The guardian-cherub / holy-mountain sequence strengthens a guardian-at-boundary motif but does not describe dragon/cherub support of the inhabited ground, a broad web, spring compression or fingertrap geometry.**
+10. **The king/cherub relation is textually unstable: MT can identify the king as cherub while LXX-style readings distinguish the king from the cherub. The corrected Vardath rule is that this changes whether ruler and apparatus are fused or paired; it does not remove the cherub from the rolled-sky/fingertrap/Squatter-Man structural family.**
+11. **Ezekiel 28 is therefore a strong state-identity comparison for the cherub/sky-machine: holy mountain, garden, fiery stones, elevated guardian state, expulsion and internal fire fit the activated/axial visual family already cross-linked with Ezekiel 1/10, the many-eye/ice-node canopy model and feathered-serpent comparisons such as Quetzalcoatl. The chapter does not independently narrate the full contraction/reopening cycle.**
 12. **Fire emerging from within the Tyrian figure repeats Ezekiel 19's internal-fire motif and is useful for internal-failure/Meltology comparisons, but it remains poetic judgment imagery.**
 13. **The closing restoration again gives an explicitly inhabited endpoint—people settled on land, houses built, vineyards planted, safety restored—rather than an empty successor shell.**
 14. **No strict fingertrap mechanism appears in Ezekiel 25–28.**
