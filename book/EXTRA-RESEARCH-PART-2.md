@@ -9463,3 +9463,1244 @@ Priority:
 - glory filling temple;
 - altar geometry;
 - HIGH PRIORITY: test the shift from destructive rod/sword imagery to **measuring reed / geometric rebuilding**, and whether the restored temple functions as a deliberately reconstructed lattice/node system rather than merely another building.
+
+
+---
+
+# SECTION 52 progress K — Ezekiel 40–43
+## Fresh sequential research: high-mountain reset geometry, repeated measured gate-nodes, widening supported structure, alternating cherub-tree array, holy/common boundary field, east-route reversal of the glory apparatus, many-waters return signal and altar activation
+
+### Sequential-integrity note
+
+The mandatory three-file anti-duplication rule was checked before this block.
+
+- Part 1 contains no direct sequential Ezekiel 40–43 pass.
+- Existing `EXTRA-RESEARCH.md` contains only old staged/automation-era Ezekiel 40–48 material and is not counted as the trusted direct pass.
+- Part 2 contains the trusted direct pass through Ezekiel 37–39.
+- Therefore Ezekiel 40–43 is the next fresh direct block.
+
+Primary text read in full:
+- Ezekiel 40 NRSVUE;
+- Ezekiel 41 NRSVUE;
+- Ezekiel 42 NRSVUE;
+- Ezekiel 43 NRSVUE.
+
+Historical/literary control:
+- The final temple vision belongs to Ezekiel 40–48 and is saturated with measurement language.
+- Bennett Simon counts **53 instances of the measure-root** in chapters 40–48 and emphasizes the unusually geometric character of the restoration vision.
+- A recent comparative study argues that the detailed emphasis on gates, courts, walls and passages fits Ezekiel's sixth-century Babylonian architectural environment and should not simply be read as a literal blueprint detached from that context.
+- The vision's ordinary theological purpose is restoration, ordered holiness, divine return and a reconfigured Israelite cultic world.
+
+The Vardath comparison therefore asks what the geometry/process does without replacing the source's temple meaning.
+
+---
+
+# Ezekiel 40
+## Very high mountain → bronze-like measurer at gateway → exact repeated gate modules → nested courts
+
+## 40:1–4 — transport to very high mountain and encounter at a gateway
+
+The vision is dated:
+- twenty-fifth year of exile;
+- beginning of the year;
+- tenth day of the month;
+- fourteenth year after the city was struck.
+
+Ezekiel is:
+- brought in visions to Israel;
+- set on a **very high mountain**;
+- shown a structure like a city;
+- met by a man whose appearance shines like bronze;
+- the man carries a linen cord and measuring reed;
+- the man is **standing in the gateway**.
+
+### M52K-1 — RESTORATION BEGINS WITH POSITION, ORIENTATION AND MEASUREMENT BEFORE OCCUPATION
+
+The sequence is:
+
+**transport**
+→ **elevated observation point**
+→ **gateway encounter**
+→ **measuring tools**
+→ **geometry recorded**
+→ later **glory returns**.
+
+The rebuilt order is not introduced first as population or ritual activity.
+
+It is introduced as **measurable spatial configuration**.
+
+For Vardath this is important:
+a stable/reopened world-state may require geometry to settle before normal traffic resumes.
+
+Ordinary control:
+this is visionary temple planning, not a technical description of a physical world-lattice reset.
+
+---
+
+## 40:5 — wall around the whole field
+
+The first measured object is the surrounding wall.
+
+The wall has measured:
+- thickness;
+- height.
+
+### M52K-2 — BOUNDARY IS DEFINED BEFORE INTERNAL NODES ARE MAPPED
+
+Sequence:
+
+**outer boundary**
+→ **gate**
+→ **court**
+→ **inner gates**
+→ **temple**.
+
+This is a strong systems-design principle:
+define the domain first, then define controlled access and internal zones.
+
+It reverses the failure state seen earlier in Ezekiel:
+- broken walls;
+- breaches;
+- false whitewash;
+- uncontrolled contamination.
+
+The restoration begins by making the boundary exact.
+
+---
+
+# 40:6–37 — three outer gate modules and three inner gate modules
+
+East, north and south gates repeatedly share:
+- thresholds;
+- paired recesses/guardrooms;
+- posts;
+- vestibules;
+- windows;
+- stairs;
+- palm trees;
+- repeated dimensions.
+
+The text repeatedly says one gate has the **same measurements** as another.
+
+Outer gate modules have three recesses on each side.
+
+Inner gate modules repeat the same broad structure.
+
+Gate-to-gate distances are measured.
+
+### M52K-3 — EZEKIEL 40 PRESENTS A DISTRIBUTED ARRAY OF REPEATED ACCESS NODES
+
+This is stronger than merely saying "there are gates."
+
+The architecture is modular:
+
+**node East**
+≈ **node North**
+≈ **node South**
+
+with standardized internal geometry.
+
+For Vardath's local-node model this is a useful analogue:
+
+> one larger bounded field can contain multiple structurally similar access nodes.
+
+This aligns with the cosmology's rule that a fingertrap-like lattice can contain many local nodes and that a local node can become a local throat.
+
+But the source's nodes are literal temple gates.
+
+No claim should be made that Ezekiel meant plasma throats.
+
+---
+
+## M52K-4 — SIMILAR NODE GEOMETRY DOES NOT REQUIRE IDENTICAL NODE FUNCTION
+
+This becomes crucial in chapter 43.
+
+East, north and south gates are geometrically comparable.
+
+But the **east gate** later becomes the route through which the glory returns.
+
+Therefore:
+
+**same architecture**
+≠
+**same active state/function at a given moment**.
+
+This is an excellent Vardath node control.
+
+A distributed lattice may contain many similar potential nodes while only one or some become dominant/active during a particular phase.
+
+---
+
+# Gate structure as narrow controlled transit
+
+Each gate is not a single line in a wall.
+
+It contains:
+- entry;
+- threshold;
+- repeated side recesses;
+- interior passage;
+- vestibule;
+- another threshold/interface;
+- stairs linking levels.
+
+### M52K-5 — A GATE CAN BE A FINITE-LENGTH CONTROLLED CORRIDOR, NOT A ZERO-THICKNESS OPENING
+
+This matters for Vardath's throat model.
+
+The temple gate has:
+**outside**
+→ **threshold**
+→ **bounded passage**
+→ **internal threshold**
+→ **court**.
+
+A real transition zone has width and internal structure.
+
+This does not make it a fingertrap, but it is a useful physical control against imagining every gate as a two-dimensional magical portal.
+
+---
+
+# 40:16 onward — palms at gate posts
+
+Palm trees recur on the posts of the gates.
+
+At this stage they are architectural/iconographic motifs, not surrounding biological trees.
+
+Their repeated placement beside access nodes becomes more important in chapter 41 when cherubim and palms alternate throughout the temple.
+
+### M52K-6 — TREE IMAGERY IS BUILT INTO THE ACCESS-NODE ARCHITECTURE
+
+This is not yet proof that palm = node.
+
+But it means the restored access system is visually marked with repeated tree forms.
+
+That creates a direct bridge to the user's:
+**trees as node/axis points**
+hypothesis.
+
+---
+
+# 40:38–47 — gate zones include transformation/service functions
+
+At the north gate area:
+- sacrifices are washed;
+- tables are placed;
+- objects/offerings move through prepared service zones.
+
+The inner court has measured chambers and a central altar.
+
+### M52K-7 — ACCESS NODE AND PROCESSING ZONE ARE CO-LOCATED
+
+The gateway is not merely for passing bodies.
+
+It participates in:
+- preparation;
+- washing;
+- classification;
+- transfer toward inner sacred space.
+
+This is another real-world example of a node doing more than simple transport.
+
+---
+
+# Ezekiel 40 process timeline
+
+visionary transport
+→ very high mountain
+→ city-like structure seen
+→ bronze-like measurer stands at gateway
+→ outer wall measured
+→ east gate measured
+→ north gate measured
+→ south gate measured
+→ outer court mapped
+→ inner gates mapped
+→ repeated modular dimensions confirmed
+→ steps link successive levels
+→ palm-marked posts repeat at nodes
+→ service chambers/tables attached to gate system
+→ inner court and altar position established.
+
+---
+
+# Ezekiel 40 strict Vardath screening
+
+## Strong partial
+- very high mountain / elevated axis;
+- measuring rod/reed;
+- bounded field;
+- multiple repeated gate-nodes;
+- finite-length thresholds/passages;
+- nested zones;
+- repeated tree motifs at node posts.
+
+## Missing
+- broad woven field visibly narrowing;
+- strand-angle transformation;
+- same gate changing from broad mesh into rod/throat;
+- inter-world material transfer;
+- reopening after contraction.
+
+### Verdict
+
+**Ezekiel 40 is a high-value reconstructed-node-network analogue, not a complete fingertrap event.**
+
+---
+
+# Ezekiel 41
+## Central sanctuary + surrounding support chambers + upward widening + explicit cherub-tree-cherub-tree array
+
+This chapter produces one of the most interesting visual structures since Ezekiel 31.
+
+---
+
+# 41:1–4 — successive narrowing toward inner room
+
+The measurer moves:
+- nave;
+- entrance/posts;
+- inner room;
+- most holy place.
+
+Dimensions change as the route proceeds inward.
+
+### M52K-8 — THE RESTORED TEMPLE HAS A DEPTH AXIS WITH SUCCESSIVE CONTROLLED INTERFACES
+
+This is not merely a square field.
+
+It has directional depth:
+
+**outer court**
+→ **nave**
+→ **inner threshold**
+→ **most holy core**.
+
+That is a centerward access gradient.
+
+For Vardath comparison:
+a node may contain nested permeability states rather than simple open/closed status.
+
+---
+
+# 41:5–11 — three stories of side chambers supported around central structure
+
+The temple has:
+- side chambers around it;
+- three stories;
+- thirty chambers per story;
+- offsets/supports around the wall;
+- a surrounding stairway/passage;
+- structure widening from story to story as one ascends;
+- raised foundation/platform.
+
+### M52K-9 — CENTRAL AXIS WITH DISTRIBUTED SURROUNDING SUPPORT MODULES
+
+Stripped geometry:
+
+**central temple/core**
+surrounded by
+**many repeated chambers**
+arranged in
+**stacked levels**
+with
+**support offsets all around**.
+
+This is structurally closer to:
+**core + surrounding node/support field**
+than a simple isolated pillar.
+
+### M52K-10 — THE STRUCTURE WIDENS UPWARD
+
+This is the opposite of fingertrap narrowing if read as one local architectural form.
+
+So it is an important control.
+
+The text explicitly gives:
+**lower**
+→ **middle**
+→ **upper**
+with increasing width.
+
+Within Vardath's projection grammar this could resemble:
+- trunk/core;
+- branching/re-expanding canopy;
+- a post-throat broadening state.
+
+But the chapter does not narrate the building changing width dynamically.
+
+It describes a static architectural arrangement.
+
+Do not turn static widening into evidence of active reopening.
+
+---
+
+# 41:16–20 — CHERUBIM AND PALM TREES ALTERNATE THROUGHOUT THE TEMPLE
+
+This is the strongest new finding for the user's recent node-tree refinement.
+
+The wall pattern is explicitly:
+
+**cherub**
+→ **palm**
+→ **cherub**
+→ **palm**
+→ repeating around the temple.
+
+Each cherub has two faces:
+- human face oriented toward the palm on one side;
+- lion face oriented toward the palm on the other.
+
+The pattern extends broadly:
+- inner/outer sanctuary walls;
+- from floor upward;
+- around the whole temple.
+
+### M52K-11 — THE TEXT ITSELF CREATES A REPEATING CHERUB–TREE NETWORK PATTERN
+
+This is substantially stronger than merely noticing "trees near a cherub."
+
+The image is a distributed alternating array.
+
+In Vardath terms a serious test is now possible:
+
+**cherub node/state**
+↔ **tree/axis node**
+↔ **cherub node/state**
+↔ **tree/axis node**
+
+repeated around the bounded sacred structure.
+
+This resonates strongly with the model where:
+- cherub = one concentrated/composite projection of the lattice;
+- tree = another axial/node projection;
+- many local nodes can exist in one larger support field.
+
+### M52K-12 — EACH CHERUB IS ORIENTED TOWARD NEIGHBORING TREE FORMS ON BOTH SIDES
+
+The two faces are directionally related to the palms.
+
+Stripped relation:
+
+**palm ← cherub → palm**
+
+or, along the repeating wall:
+
+**cherub ↔ palm ↔ cherub ↔ palm**.
+
+That is unusually node-like relational iconography.
+
+Vardath hypothesis:
+the repeated alternation may be compared to neighboring node/axis expressions of one larger field.
+
+Ordinary control:
+these are carved temple decorations with sacred symbolic meaning. They are not living trees or a technical circuit diagram.
+
+---
+
+# Cross-link: Ezekiel 10 + 28 + 31 + 41
+
+The sequential Ezekiel research now contains four linked forms:
+
+### Ezekiel 10
+cherub:
+- wings;
+- wheels;
+- many eyes;
+- synchronized motion.
+
+### Ezekiel 28
+cherub:
+- Eden;
+- holy mountain;
+- stones of fire;
+- expulsion/internal fire.
+
+### Ezekiel 31
+tree field:
+- dominant cedar;
+- other trees;
+- shared deep/water network;
+- central tree failure changes wider field.
+
+### Ezekiel 41
+architectural pattern:
+- cherub;
+- palm/tree;
+- cherub;
+- palm/tree;
+- repeated around whole sacred structure.
+
+### M52K-13 — EZEKIEL NOW LINKS CHERUB AND TREE FORMS REPEATEDLY ENOUGH TO JUSTIFY A FORMAL VARDATH CROSS-STATE TEST
+
+This does **not** show that the biblical author teaches cherub = tree = lattice.
+
+But within Vardath's many-camera-angles method, the recurrence is now constrained enough to be more than a free association:
+
+- same prophetic book;
+- same temple/divine-presence complex;
+- explicit cherub identity elsewhere;
+- explicit tree network elsewhere;
+- explicit cherub-tree alternating pattern here.
+
+This should be retained as a high-priority apparatus correspondence.
+
+---
+
+# 41:21–26 — square frames, double doors, cherub/tree motifs repeated at doors
+
+The nave/holy-place doorframes are geometric.
+
+Double doors have paired leaves.
+
+Cherubim and palms recur on the doors as on the walls.
+
+### M52K-14 — THE SAME CHERUB–TREE PATTERN IS REPEATED AT THE CONTROLLED OPENINGS
+
+The motif is not only background wall decoration.
+
+It also marks:
+- doors;
+- thresholds/access surfaces.
+
+That strengthens its relationship to boundary/node imagery.
+
+Again, ordinary explanation remains temple ornamentation.
+
+---
+
+# Ezekiel 41 strict Vardath screening
+
+## Exceptionally strong projection/network analogue
+- central core;
+- surrounding repeated support modules;
+- multi-level architecture;
+- upward widening;
+- repeated cherub/tree alternating array;
+- paired orientation of cherub faces toward neighboring trees;
+- motif repeated on doors/access surfaces.
+
+## Still absent
+- literal living lattice deformation;
+- broad mesh visibly rolling;
+- contraction into throat;
+- material crossing between world layers.
+
+### Verdict
+
+**Ezekiel 41 is one of the strongest cherub–tree/node-pattern passages in the entire research corpus, but as static restored-temple iconography rather than an explicit mechanical transformation.**
+
+---
+
+# Ezekiel 42
+## Mirrored chambers, passageways, garment-state boundary and measured square separating holy/common
+
+---
+
+# 42:1–12 — north/south mirrored chamber systems
+
+The north and south sides contain comparable:
+- chambers;
+- galleries;
+- passages;
+- three-story arrangements;
+- walls;
+- entrances.
+
+### M52K-15 — THE RESTORED FIELD IS BILATERALLY / OPPOSITELY ORGANIZED WITHOUT REQUIRING TWO HIDDEN PERSONS
+
+This is true architectural pairing.
+
+North and south systems are distinct but corresponding.
+
+It supplies another control for pair research:
+**mirror geometry can be literal architecture**.
+
+Do not automatically personify every bilateral pair.
+
+---
+
+# 42:13–14 — priestly state-change at boundary
+
+Priests use holy chambers for offerings.
+
+Before going from holy zone into the area open to the people, they:
+- leave sacred vestments behind;
+- change garments.
+
+### M52K-16 — CROSSING A BOUNDARY CAN REQUIRE AN INTERFACE-STATE CHANGE
+
+Sequence:
+
+**inner holy zone**
+→ **change carrier clothing/state**
+→ **cross boundary**
+→ **outer/public zone**.
+
+This is highly relevant to Vardath's permeability model.
+
+A traveller/cargo may need compatible state at an interface.
+
+But the source meaning is ritual holiness, not physical phase matching.
+
+The comparison must remain analogical.
+
+---
+
+# 42:15–20 — whole complex measured as square; wall separates holy/common
+
+After internal measurement:
+- east side measured;
+- north side measured;
+- south side measured;
+- west side measured;
+- four sides define a square field;
+- surrounding wall explicitly exists to **separate holy from common**.
+
+### M52K-17 — GEOMETRY IS FUNCTIONAL: THE WALL CREATES A CLASSIFICATION BOUNDARY
+
+This is not ornament.
+
+The text explicitly gives the wall's role:
+
+**inside category**
+≠
+**outside category**.
+
+So measurement establishes:
+- extent;
+- boundary;
+- access;
+- category.
+
+This is one of the strongest examples in Ezekiel of physical geometry and nonphysical classification being linked.
+
+### M52K-18 — A STABLE SYSTEM CAN REQUIRE SEPARATION, NOT MAXIMUM CONNECTIVITY
+
+This is important for the Vardath model.
+
+The gate-state temporarily increases adjacency.
+
+But the quiet/stable state must restore distinctions.
+
+Ezekiel 42's final wall is therefore structurally closer to:
+**post-event stabilization / controlled separation**
+than to active gate opening.
+
+---
+
+# Ezekiel 42 process timeline
+
+north chambers
+→ three levels/passages
+→ south system mirrors north
+→ holy-service functions assigned
+→ priests change garments before crossing outward
+→ interior measurement ends
+→ east/north/south/west boundaries measured
+→ square field established
+→ wall separates holy/common.
+
+---
+
+# Ezekiel 43
+## Same east route reverses: former departure channel becomes return channel; sound like mighty waters; earth shines; glory fills reconstructed system
+
+This chapter is exceptionally important when cross-linked with Ezekiel 10–11.
+
+---
+
+# Earlier departure sequence — Ezekiel 10–11
+
+The direct research already established:
+
+**glory at temple**
+→ **glory moves above cherubim**
+→ **cherubim + wheels rise**
+→ **stop at east gate**
+→ **glory/cherub apparatus leaves city**
+→ **stops on mountain east of city**.
+
+That is explicit in Ezekiel 10:18–19 and 11:22–23.
+
+---
+
+# 43:1–5 — RETURN THROUGH THE SAME EASTERN CHANNEL
+
+Now:
+
+**Ezekiel brought to east gate**
+→ **glory approaches from east**
+→ **sound like mighty waters**
+→ **earth shines**
+→ **glory enters temple through east gate**
+→ **spirit lifts Ezekiel inward**
+→ **glory fills temple**.
+
+### M52K-19 — THE DEPARTURE ROUTE BECOMES THE RETURN ROUTE
+
+This is one of the strongest route-reversal sequences in the book.
+
+Earlier:
+**inside → east gate → east mountain/outside**.
+
+Now:
+**east/outside → east gate → inside**.
+
+The same directional node supports opposite traffic in different system phases.
+
+This directly reinforces the earlier Ezekiel 8/12 result:
+**aperture geometry alone does not determine traffic direction**.
+
+---
+
+# M52K-20 — THE SAME DIVINE/CHERUB APPARATUS FAMILY CAN APPEAR IN DESTRUCTIVE AND RESTORATIVE PHASES
+
+Ezekiel 43 explicitly says the vision is like:
+- the earlier Chebar vision;
+- the vision associated with destruction of the city.
+
+But the present function is return/filling.
+
+This is crucial for Vardath.
+
+It strongly supports the model rule:
+
+> the same apparatus need not be inherently destructive or restorative; function depends on state/phase.
+
+Within Vardath:
+- cherub/wheel/eye/wing apparatus;
+- departure;
+- catastrophe;
+- later return/reoccupation
+
+can be interpreted as different phases of one world-machine rather than unrelated symbols.
+
+Conventional control:
+the source is describing the departure and restoration of divine glory.
+
+---
+
+# 43:2 — sound like mighty waters + earth shining
+
+The returning glory is associated with:
+- mighty-water sound;
+- broad earth illumination.
+
+### M52K-21 — RETURN SIGNAL SPANS ACOUSTIC AND LIGHT CHANNELS
+
+The event has at least two perceptual channels:
+
+**sound**
+→ like powerful waters;
+
+**light**
+→ earth shines.
+
+This can be compared with the Vardath active-current phase, where:
+- energy concentration;
+- atmospheric effects;
+- extraordinary luminosity;
+- water/noise
+
+may coincide.
+
+But the text says the **sound is like** waters; it does not say a flood physically arrives here.
+
+Keep simile and hydrology separate.
+
+---
+
+# 43:5 — glory fills the temple after entering node
+
+The east gate is route.
+
+The temple becomes receiving enclosure.
+
+### M52K-22 — NODE ENTRY CHANGES STATE OF THE WHOLE RECEIVING ENCLOSURE
+
+Before:
+measured but unfilled structure.
+
+After:
+**glory enters**
+→ **whole temple filled**.
+
+This gives a clean structure/activation distinction:
+
+**geometry assembled**
+→ **active presence enters**
+→ **system becomes occupied/activated**.
+
+This strongly echoes Ezekiel 37:
+**body assembled**
+→ **breath enters**
+→ **living host stands**.
+
+The recurring process is:
+
+> structure and activation are separate stages.
+
+---
+
+# 43:6–12 — throne, soles of feet and threshold-spacing correction
+
+The divine speech identifies the place as:
+- throne location;
+- place for soles of feet;
+- permanent dwelling among Israel.
+
+It criticizes the old condition where:
+- royal thresholds were beside divine threshold;
+- doorposts were beside divine doorposts;
+- only a wall separated inappropriate neighboring domains.
+
+The new temple's plan is to be shown/measured so the people understand the proper arrangement.
+
+### M52K-23 — WRONG ADJACENCY IS ITSELF A FAILURE MODE
+
+This is exceptionally relevant to Vardath's adjacency-based gate model.
+
+The problem is not simply:
+**wall absent**.
+
+The old system can have a wall and still be wrongly configured because incompatible domains are too closely juxtaposed.
+
+So:
+
+**boundary exists**
+but
+**adjacency relation is wrong**.
+
+Restoration requires:
+- greater separation;
+- corrected geometry;
+- proper location of thresholds.
+
+### Vardath implication
+
+This gives a strong general systems principle:
+
+> Stability depends not only on whether boundaries exist, but on **which regions are adjacent and where their thresholds are placed**.
+
+That is directly compatible with the cosmology's focus on changing adjacency during gate events.
+
+The biblical context remains ritual/theological holiness.
+
+---
+
+# 43:10–12 — pattern itself is pedagogical / regulatory
+
+Ezekiel is told:
+- describe the temple;
+- let Israel measure/study its pattern;
+- make known arrangement, exits, entrances, form and laws;
+- write it down;
+- the whole mountain-top territory is most holy.
+
+### M52K-24 — THE GEOMETRIC PATTERN IS PART OF THE RULE SYSTEM
+
+The structure is not neutral scenery.
+
+Its arrangement encodes:
+- permissible access;
+- separation;
+- order;
+- movement.
+
+This aligns with modern scholarship emphasizing Ezekiel 40–48's unusual density of measurement and spatial hierarchy.
+
+For Vardath:
+geometry itself can carry function.
+
+---
+
+# 43:13–17 — layered square altar with four upward horns
+
+The altar has:
+- ground base;
+- lower ledge;
+- upper ledge;
+- hearth;
+- square dimensions;
+- rim/base around;
+- four horns projecting upward;
+- east-facing steps.
+
+### M52K-25 — CENTRAL NODE HAS LAYERED VERTICAL GEOMETRY AND FOUR DIRECTIONAL PROJECTIONS
+
+Stripped form:
+
+**ground/base**
+→ **raised layered platform**
+→ **central square hearth**
+→ **four upward horns**.
+
+This is visually node-like.
+
+It could be compared with:
+- a central active point;
+- four directional projections;
+- raised axial geometry.
+
+But the source is an altar.
+
+Do not convert altar horns into literal lattice filaments without evidence.
+
+---
+
+# 43:18–27 — completed structure requires seven-day consecration before normal operation
+
+The altar is not simply built and instantly used normally.
+
+Sequence:
+- altar geometry specified;
+- purification offerings;
+- blood applied to horns/corners/rim;
+- seven days of purification/consecration;
+- **eighth day onward** normal offerings begin;
+- acceptance follows.
+
+### M52K-26 — STRUCTURAL COMPLETION AND OPERATIONAL READINESS ARE DIFFERENT STATES
+
+This is another clean staged-system principle:
+
+**build**
+→ **purify/calibrate/consecrate**
+→ **activation period**
+→ **normal operation**.
+
+For Vardath comparisons:
+a gate/node or new world-state need not become stable/usable the instant geometry changes.
+
+There can be a settling/qualification interval.
+
+Do not force the seven/eight sequence into a Vardath numeric cycle without independent evidence.
+
+---
+
+# Ezekiel 43 process timeline
+
+measured restored complex already exists
+→ east gate becomes active route
+→ glory approaches from east
+→ mighty-water-like sound
+→ earth shines
+→ prior destructive vision recognized as same apparatus family
+→ glory crosses east gate
+→ spirit moves Ezekiel inward
+→ glory fills temple
+→ corrected threshold/adjacency rules stated
+→ geometric plan becomes regulatory model
+→ altar measured
+→ layered square hearth + four horns established
+→ seven-day purification/consecration
+→ eighth day normal operation begins.
+
+---
+
+# CROSS-CHAPTER SYNTHESIS — EZEKIEL 40–43
+
+## 1. Geometry is rebuilt before active presence returns
+
+40–42:
+**measure**
+→ **wall**
+→ **gates**
+→ **courts**
+→ **inner structure**
+→ **boundary classification**.
+
+43:
+**glory returns**
+→ **structure fills**.
+
+### M52K-27 — RESTORATION SEPARATES ARCHITECTURE FROM ACTIVATION
+
+This is now a recurring Ezekiel pattern:
+- body then breath (37);
+- temple then glory (40–43).
+
+That is structurally important.
+
+---
+
+## 2. Many similar local gates, one active return gate
+
+East/north/south:
+similar modules.
+
+But:
+east becomes the glory route.
+
+### M52K-28 — DISTRIBUTED NODE FIELD + TEMPORARILY DOMINANT NODE
+
+This is unusually compatible with Vardath's local-node idea.
+
+One network can contain many possible nodes.
+
+Only one need dominate a specific transfer phase.
+
+---
+
+## 3. The cherub/tree relation becomes explicit and repetitive
+
+Earlier:
+- cherub eyes/wheels/wings (10);
+- cherub + mountain/fire (28);
+- dominant cedar + neighboring tree field (31).
+
+Now:
+- **cherub / palm / cherub / palm**
+repeated around restored temple and at doors.
+
+### M52K-29 — THE "SURROUNDING TREES AS OTHER NODE POINTS" HYPOTHESIS GAINS A SECOND, DIFFERENT KIND OF SUPPORT
+
+Ezekiel 31:
+living tree network connected by waters.
+
+Ezekiel 41:
+iconographic cherub-tree repeating network.
+
+These are not the same literary image.
+
+But together they support a constrained Vardath test:
+
+> Ezekiel repeatedly organizes sacred/cosmic space using alternating or distributed living-form nodes—cherub forms and tree forms—around a central divine structure.
+
+This should be tracked through the rest of 40–48.
+
+---
+
+## 4. Same route / opposite phase
+
+10–11:
+eastward departure.
+
+43:
+eastward-origin return.
+
+### M52K-30 — A GATE-NODE CAN REVERSE TRAFFIC BETWEEN PHASES
+
+This is one of the clearest state-dependent direction reversals in the whole project.
+
+---
+
+## 5. Stable state restores separation after catastrophic adjacency
+
+42:
+wall separates holy/common.
+
+43:
+wrong threshold-to-threshold adjacency is condemned.
+
+### M52K-31 — RESTORATION IS NOT MAXIMUM OPENNESS; IT IS CORRECTLY CONTROLLED ADJACENCY
+
+This fits the mature Vardath model well:
+
+**active gate phase**
+= increased/changed adjacency;
+
+**stable reopened world**
+= normal boundaries re-established in the correct relationship.
+
+---
+
+## 6. Rod imagery changes role across the book
+
+Earlier Ezekiel:
+- sword;
+- ruling rod/scepter;
+- shepherd's staff;
+- two sticks merging.
+
+Now:
+- **measuring reed**.
+
+Bennett Simon's scholarly title captures the larger literary movement:
+**"From the Rod of His Wrath to the Reed of His Measuring."**
+
+### M52K-32 — AXIAL IMPLEMENT SHIFTS FROM DESTRUCTION / RULE / SORTING TO RECONSTRUCTION / MEASUREMENT
+
+The same broad object-family can carry radically different functions by phase.
+
+For Vardath this is exactly why form cannot be treated as a fixed symbol dictionary.
+
+---
+
+# Pair / role register — Ezekiel 40–43
+
+## east / north / south outer gates
+- repeated node modules;
+- P10 distinct physical gates;
+- same geometry, not same function.
+
+## outer / inner gates
+- nested access pair;
+- increasing controlled depth.
+
+## north / south chamber systems
+- literal mirrored architecture;
+- strong control against unnecessary hidden-person interpretations.
+
+## cherub / palm
+- repeated alternating iconographic pair;
+- Vardath candidate cross-state node pair;
+- ordinary temple-art control.
+
+## departure east / return east
+- P3 same route in opposite system states;
+- strong directional state pair.
+
+## measured structure / glory-filled structure
+- P3 same physical visionary system before/after activation.
+
+## holy / common
+- P2 classificatory polarity maintained by boundary.
+
+## structure / activation
+- architecture vs occupying force/presence;
+- recurring body/breath-style distinction.
+
+---
+
+# Timing / number register — Ezekiel 40–43
+
+Record without forced arithmetic:
+
+- vision date:
+  **25th year of exile**;
+  **beginning of year**;
+  **10th day of month**;
+  **14th year after city struck**.
+- standard scholarly dating often places the vision around **573 BCE**.
+- gate recesses:
+  three on each side in outer gates.
+- repeated gate stair counts:
+  seven steps to outer gates;
+  eight to inner gates in the NRSVUE arrangement.
+- whole outer measured field:
+  four equal sides in Ezekiel 42.
+- altar:
+  four horns;
+  square hearth.
+- altar consecration:
+  seven days;
+  normal operation from eighth day.
+
+Do not yet equate these with:
+- 7/8 Vardath numerology;
+- 8-world closure;
+- JANUS;
+- Archaix chronology.
+
+They should remain source numbers until a separate timing/numeric test is run.
+
+---
+
+# STRICT FINGERTRAP TEST — EZEKIEL 40–43
+
+## What is now unusually strong
+
+Across the direct Ezekiel sequence, we now have:
+
+- broad/distributed cherub-wheel-eye apparatus (1/10);
+- cherub as concentrated sacred-mountain/fire state (28);
+- world-tree + neighboring trees + shared water network (31);
+- collapse and water-system shutdown (31–32);
+- broad reopening/repopulation (33–36);
+- distributed components → convergence into standing body / two sticks → one rod (37);
+- catastrophe/cleanup (38–39);
+- measured reconstructed node/gate field (40–42);
+- cherub-tree repeating array (41);
+- return through same east node used for departure (43);
+- active presence filling the rebuilt enclosure (43).
+
+This composite sequence is now substantially closer to the Vardath many-camera-angles apparatus than any one isolated chapter.
+
+## What is still not literally narrated
+
+No single verse/chapter says:
+
+**broad woven sky**
+→ **rolls into tube**
+→ **strand angles tighten**
+→ **fingertrap narrows**
+→ **becomes cherub/Squatter-Man rod**
+→ **opens inter-world throat**
+→ **material crosses between normally inhabited world-turns**
+→ **same weave broadens back out**.
+
+Therefore strict one-object mechanical proof remains absent.
+
+### Correct verdict
+
+**Ezekiel 40–43 materially strengthens the reconstructed-lattice/node interpretation at the level of state sequence and repeated geometry, especially because the restored field is built as a measured network of gate nodes and cherub/tree motifs before the same glory-apparatus returns through the east node.**
+
+The strongest Vardath-specific new result is:
+
+> **Ezekiel 41 explicitly alternates cherub and tree forms around the sacred structure, while Ezekiel 31 already gave a living tree-node field connected through shared water. Combined with Ezekiel 10's eye-covered cherub apparatus, this makes "cherubs / trees / eyes as different local node projections of one larger lattice" a serious internal-Ezekiel comparison rather than a free cross-cultural association.**
+
+This remains a Vardath interpretation layered on top of the text's ordinary temple/restoration theology.
+
+---
+
+# Sources logged — Ezekiel 40–43
+
+Primary:
+- Ezekiel 40–48 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+40-48&version=NRSVUE
+- Ezekiel 10:18–19 NRSVUE — glory departs to east gate:
+  https://www.biblegateway.com/passage/?search=Ezekiel+10%3A18-19&version=NRSVUE
+- Ezekiel 11:22–23 NRSVUE — glory continues to mountain east of city:
+  https://www.biblegateway.com/passage/?search=Ezekiel+11%3A22-23&version=NRSVUE
+
+Scholarly / historical-literary controls:
+- Bennett Simon, “Ezekiel's Geometric Vision of the Restored Temple: From the Rod of His Wrath to the Reed of His Measuring,” *Harvard Theological Review* 102.4 (2009), 411–438:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/ezekiels-geometric-vision-of-the-restored-temple-from-the-rod-of-his-wrath-to-the-reed-of-his-measuring/17CBAA403706E2E5D59B79CCC1D55C9C
+- “Ezekiel’s Temple Plan Draws on Babylonian Temples,” TheTorah.com — comparative architectural context and emphasis on gates/courts/wall:
+  https://www.thetorah.com/article/ezekiels-temple-plan-draws-on-babylonian-temples
+
+---
+
+# SECTION 52K — EZEKIEL 40–43 COMPLETE
+
+## Strongest new findings
+
+1. **The restoration vision begins by fixing geometry before normal occupation: very high mountain → bronze-like measuring figure → wall → gates → courts → inner sanctuary.**
+2. **Ezekiel 40 gives a genuine distributed array of repeated access nodes: east, north and south gates use strongly standardized internal geometry.**
+3. **The gates are finite-length controlled passages with thresholds, recesses and vestibules rather than zero-thickness holes—a useful physical control for the Vardath throat concept.**
+4. **Identical/similar gate geometry does not mean identical function: the east node later becomes the unique route of the returning glory.**
+5. **Palm/tree forms are repeatedly built into the gate posts, directly associating tree imagery with access-node architecture.**
+6. **Ezekiel 41 places many supporting chamber modules around the central sanctuary in stacked levels, giving a core + distributed-support architecture.**
+7. **The structure widens upward; this is static architecture, not proof of dynamic fingertrap reopening, but it gives a trunk-to-broader-upper-form geometry.**
+8. **Most important for the user's recent refinement: Ezekiel 41 explicitly repeats CHERUB → PALM TREE → CHERUB → PALM TREE around the whole temple, with each two-faced cherub oriented toward neighboring palms.**
+9. **That creates a genuine internal-Ezekiel cherub/tree array and materially strengthens the hypothesis that cherub and tree forms may be alternate local-node/axis projections in the Vardath model.**
+10. **Ezekiel 42 makes geometry functional: the measured outer wall explicitly separates holy from common, showing that stable order requires controlled separation, not maximum connectivity.**
+11. **Priests change garments before crossing from holy to public space, giving a clear state-change-at-boundary analogue while remaining ritual rather than physical phase matching.**
+12. **Ezekiel 43 reverses the earlier route exactly enough to matter: the glory previously departed through the east gate and eastward mountain; now it approaches from the east and enters through the east gate.**
+13. **The same apparatus/vision family that accompanied destruction now returns for restoration, supporting the Vardath principle that one mechanism can have destructive and restorative phases rather than fixed moral/function symbolism.**
+14. **The returning event combines mighty-water-like sound and broad earth illumination, adding multi-channel activation imagery without claiming a literal flood.**
+15. **Measured structure first, glory filling second repeats Ezekiel 37's assembled-body first, breath second: structure and activation are repeatedly separated.**
+16. **Ezekiel 43 identifies improper threshold-to-threshold adjacency as a former failure, an unusually strong conceptual parallel to Vardath's claim that system state depends on which domains are adjacent, not merely whether a wall exists.**
+17. **The layered square altar with four upward horns is a central-node-like geometry but remains an altar in the source context.**
+18. **Seven-day consecration followed by normal operation from the eighth day distinguishes structural completion from operational readiness; log the numbers but do not force them into Vardath/JANUS arithmetic.**
+19. **The full technical fingertrap transformation is still not literally stated, but the 1/10/28/31/37/40–43 sequence now forms a very dense internal-Ezekiel apparatus comparison: eyes/wheels/cherub → mountain/fire → tree network → pair-to-one rod → reconstructed gate-node field → cherub-tree array → same-route return and refilling.**
+
+## Next live block
+
+**Ezekiel 44–46**
+
+Priority:
+- east gate shut after glory entry;
+- gate access becomes state-dependent rather than permanently open;
+- prince and gate threshold rules;
+- foreign/uncircumcised access control;
+- Zadokite vs other Levites as role-filtering;
+- garment-change boundary rules;
+- holy/common and clean/unclean distinction explicitly taught;
+- land/offerings/weights as restored measurement economy;
+- east-facing gate opened only at specified times;
+- movement rules for north/south gates during festivals;
+- HIGH PRIORITY: test whether the shut/open east gate and prescribed one-way festival traffic supply the **closure + controlled later access** phase following the return in chapter 43.
