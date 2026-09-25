@@ -16372,3 +16372,2290 @@ High priority from the master roadmap:
 - rebuilt cities / planted vineyards / gardens;
 - strict testing for whether any of these add genuine support-lattice, gate, current or transformation phases rather than merely catastrophe/restoration imagery.
 
+
+
+---
+
+# SECTION 54 — HOSEA + JOEL + AMOS
+## Direct Book-of-the-Twelve pass — paired identity, renamed states, heaven→earth response chain, drought/rain reversal, east/west army geometry, spirit distribution, sky-darkening, sanctuary fountain, plumb/tin wall, rising/sinking earth, heaven-vault founded on earth and rebuilt inhabited successor land
+
+### Frontier verification
+
+Before this block:
+- Part 1 was checked for Hosea / Joel / Amos direct research headings;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed direct sequential Hosea + Joel + Amos pass exists in the three archives.
+
+Part 2's verified tail identified this as the next live block.
+
+This research is therefore appended only here in Part 2.
+
+---
+
+# Historical / literary control before Vardath comparison
+
+## Hosea
+
+Hosea is set in the northern kingdom of Israel in the eighth century BCE, during the period of growing Neo-Assyrian power.
+
+Modern scholarship emphasizes that Hosea is densely metaphorical:
+- marriage;
+- parent/child;
+- animal imagery;
+- plant/agricultural imagery;
+- weather/water;
+- sickness/healing;
+- political alliances.
+
+The Hosea/Gomer family material functions as a symbolic representation of YHWH/Israel relations, but debates remain over:
+- how biographical the marriage story is;
+- composition/redaction;
+- gendered and violent rhetoric;
+- precise historical referents.
+
+Therefore the research must not assume every family detail is literal biography.
+
+## Joel
+
+Joel transforms:
+**agrarian disaster — especially locust/drought imagery**
+into
+**Day-of-YHWH / cosmic / international judgment and restoration imagery**.
+
+Scholarly work generally treats Joel as relatively late and deeply engaged with earlier prophetic texts.
+
+The locusts may be read:
+- as actual locust devastation;
+- as militarized metaphor;
+- or through intentional overlap between the two.
+
+The text itself deliberately makes the boundary unstable.
+
+## Amos
+
+Amos is conventionally associated with the eighth-century northern kingdom under Jeroboam II, though scholarship distinguishes:
+- a historical Amos;
+- later literary shaping/redaction;
+- the final form of the book.
+
+The book uses:
+- social justice critique;
+- earthquake/shaking;
+- water;
+- fire;
+- architectural imagery;
+- visions;
+- cosmic doxologies;
+- agricultural restoration.
+
+These ordinary historical/literary controls remain primary.
+
+---
+
+# HOSEA
+
+# Hosea 1
+## One family projects the state of a whole people; children's names change from judgment-state to restored-state
+
+Hosea is commanded to marry Gomer.
+
+Their children receive symbolic names:
+
+1. **Jezreel**
+2. **Lo-ruhamah** — "not pitied / no mercy"
+3. **Lo-ammi** — "not my people"
+
+The family becomes a living projection of national/covenantal state.
+
+Then the ending reverses the status:
+
+- "not my people" → "children of the living God";
+- Judah + Israel gathered together;
+- one head;
+- they rise/go up from the land;
+- Jezreel becomes a positive sowing/restoration name.
+
+### M54-1 — ONE LOCAL FAMILY CAN PROJECT THE STATE OF AN ENTIRE DISTRIBUTED PEOPLE
+
+This is explicit representational compression.
+
+**Hosea + Gomer + children**
+encode
+**YHWH + Israel + national condition**.
+
+This is another major source-level projection control.
+
+It resembles Daniel's:
+**one body → many kingdoms**,
+
+but here:
+**one family → national field**.
+
+### M54-2 — NAME/IDENTITY LABEL CAN CHANGE WHILE THE UNDERLYING POPULATION CONTINUES
+
+Lo-ammi:
+**not my people**
+→ later
+**my people**.
+
+Lo-ruhamah:
+**not pitied**
+→ later
+**pitied**.
+
+This is extremely important for successor-state reading.
+
+The population need not be replaced for its:
+- status;
+- name;
+- relational role
+
+to change.
+
+### M54-3 — JEZREEL CARRIES BOTH DESTRUCTION AND SOWING/REPLANTING FUNCTIONS
+
+The same place/name participates in:
+- judgment;
+- later restoration/sowing.
+
+Thus one symbol can invert function across phases.
+
+This is a useful control for Vardath:
+a structure associated with catastrophe in one phase may be associated with renewal in another.
+
+---
+
+# Hosea 1:10–11
+## Judah + Israel gathered under one head
+
+The divided northern/southern people are imagined as:
+- gathered together;
+- appointing one head;
+- rising/going up from the land.
+
+### M54-4 — DISTRIBUTED PAIR → ONE HEAD IS A GENUINE MANY-TO-ONE POLITICAL/RELATIONAL IMAGE
+
+Judah + Israel:
+**two separated political bodies**
+→ **one gathered people**
+→ **one head**.
+
+This should be logged as a real:
+**paired field → one head/node**
+analogue.
+
+It is not a physical fingertrap.
+
+But it reinforces:
+**many distributed elements can be projected into one axial/central representative form**.
+
+---
+
+# Hosea 2
+## Blocked route → wilderness → "door of hope" → heaven/earth/agriculture response chain
+
+The relationship metaphor intensifies.
+
+Routes are blocked:
+- thorn hedge;
+- wall;
+- path obstructed.
+
+Then the restoration sequence moves through:
+- wilderness;
+- vineyards;
+- Valley of Achor becoming a **door of hope**;
+- covenant with animals/birds/creeping things;
+- bow/sword/war broken;
+- renewed relationship.
+
+### M54-5 — "DOOR" HERE IS A TRANSITIONAL OPPORTUNITY, NOT A LITERAL MATERIAL PORTAL
+
+The "door of hope" is strong gate vocabulary.
+
+But immediate source meaning:
+**trouble → restored possibility**.
+
+Do not classify it as a physical inter-world gate.
+
+This is an important anti-forcing control.
+
+---
+
+# Hosea 2:21–23
+## A remarkable chained response network: heavens → earth → grain/wine/oil → Jezreel
+
+The text explicitly gives a response chain:
+
+YHWH answers
+→ **heavens**
+→ heavens answer **earth**
+→ earth answers **grain / wine / oil**
+→ these answer **Jezreel**
+→ Jezreel is sown/planted in the land.
+
+### M54-6 — HOSEA CONTAINS A TRUE LAYERED CAUSAL RESPONSE CHAIN
+
+This is unusually useful.
+
+The system is not:
+"rain happens somewhere."
+
+It is hierarchically expressed:
+
+**upper layer**
+→ **ground layer**
+→ **biological/agricultural output**
+→ **human/national population**.
+
+For Vardath this is a strong formal analogue to:
+**upper-world / sky-state**
+affecting
+**earth/environment**
+affecting
+**food/ecology**
+affecting
+**population state**.
+
+Ordinary source explanation:
+fertility/agricultural restoration under divine blessing.
+
+### M54-7 — THE HEAVEN/EARTH RELATION IS INTERACTIVE LANGUAGE, NOT MERELY STATIC STACKING
+
+The heavens "answer" earth.
+
+Earth "answers" crops.
+
+That gives a connected system.
+
+It does not mean:
+literal speaking worlds.
+
+But it clearly encodes:
+**dependency across layers**.
+
+### M54-8 — JEZREEL = "GOD SOWS" MAKES HUMAN/NATIONAL RESTORATION PART OF THE AGRICULTURAL PROCESS IMAGE
+
+Population restoration is described using:
+**sowing/planting**.
+
+This links:
+- people;
+- land;
+- seed;
+- rain;
+- upper/lower response.
+
+It is one of Hosea's clearest whole-system ecological metaphors.
+
+---
+
+# Hosea 3
+## Long restricted interval → return
+
+Israel is described as spending "many days" without:
+- king;
+- prince;
+- sacrifice;
+- pillar;
+- ephod;
+- household gods.
+
+Then:
+- afterward return/seek.
+
+### M54-9 — RESTORATION CAN INCLUDE A LONG INTERMEDIATE LOW-FUNCTION STATE
+
+The sequence is not:
+**failure → instant restoration**.
+
+It includes:
+**deactivated/restricted interval**
+before reintegration.
+
+That is relevant to Vardath's:
+**post-event settling / transition phase**.
+
+No physical gate mechanics are present.
+
+---
+
+# Hosea 4
+## Land mourns; biological layers fail together
+
+Because of social/covenantal failure:
+- land mourns;
+- inhabitants languish;
+- wild animals;
+- birds;
+- even fish
+
+are swept away/perish in the rhetoric.
+
+### M54-10 — HUMAN SYSTEM FAILURE IS PROJECTED AS MULTI-LAYER ECOLOGICAL FAILURE
+
+The same field includes:
+- people;
+- land;
+- terrestrial animals;
+- aerial animals;
+- aquatic animals.
+
+This matters to Vardath because event damage should be tracked across:
+**air / ground / water / biological systems**,
+not only humans.
+
+Ordinary source meaning:
+prophetic ecological judgment rhetoric.
+
+---
+
+# Hosea 5–6
+## Lion attack → tearing → healing; two-day/third-day raising; dawn/rain restoration
+
+Hosea 5 uses predator imagery:
+YHWH becomes like:
+- lion;
+- young lion;
+- tears/preys;
+- withdraws.
+
+Hosea 6 then voices the return expectation:
+
+**torn**
+→ **healed**
+
+**struck down**
+→ **bound up**
+
+**after two days revived**
+→ **third day raised**
+
+appearance:
+→ **as sure as dawn**
+
+arrival:
+→ **like showers / spring rains watering earth**.
+
+### M54-11 — SAME AGENT CAN PROJECT AS PREDATOR AND HEALER ACROSS PHASE CHANGE
+
+This is crucial to the user's projection family.
+
+YHWH is represented as:
+**lion/destructive animal**
+and then
+**healing/restoring agency**.
+
+Different image/function does not imply different underlying agent.
+
+### M54-12 — HURT→HEAL / DOWN→RAISED IS AN EXPLICIT STATE-REVERSAL GRAMMAR
+
+This is not a geometric gate.
+
+But it is a clean process reversal.
+
+### M54-13 — DAWN AND RAIN ARE RESTORATION-CLOCK ANALOGUES, NOT PRECISE COSMIC TIMERS
+
+Hosea uses:
+- dawn certainty;
+- seasonal rains
+
+as recurrence/reliability images.
+
+Do not convert:
+"two days / third day"
+into a literal Vardath catastrophe recurrence without independent support.
+
+Record the timing because it is explicit.
+
+---
+
+# Hosea 6:4
+## Morning cloud / early dew disappear
+
+Human loyalty is compared to:
+- morning cloud;
+- dew that vanishes.
+
+### M54-14 — SAME WATER/ATMOSPHERE MEDIUM CAN PROJECT EITHER EPHEMERAL LOSS OR LATER RESTORATION
+
+Hosea 6:
+dew = transient/failing.
+
+Hosea 14:
+dew = restorative input.
+
+Therefore:
+**medium alone does not fix meaning**.
+
+This is a very important Vardath control.
+
+Do not say:
+"dew always means canopy water."
+
+Function depends on phase/context.
+
+---
+
+# Hosea 7–8
+## Oven/fire, silly dove, wind/whirlwind, broken calf
+
+Hosea rapidly shifts metaphors.
+
+Israel/Ephraim appears as:
+- heated oven;
+- cake not turned;
+- gray hair;
+- silly dove flying between Egypt/Assyria;
+- wild ass;
+- vessel;
+- wind-sower.
+
+Hosea 8's famous sequence:
+**sow the wind**
+→ **reap the whirlwind**.
+
+Calf image:
+- manufactured;
+- not divine;
+- eventually broken into pieces.
+
+### M54-15 — HOSEA ITSELF WARNS AGAINST TREATING EVERY METAPHOR AS ONE LITERAL MACHINE PART
+
+The same people are represented as:
+- bread;
+- bird;
+- animal;
+- vessel;
+- wind-field;
+- crop.
+
+The purpose changes by verse.
+
+Therefore cross-form identity is real,
+but
+**not every image belongs to one mechanical projection system**.
+
+This is a crucial discipline.
+
+### M54-16 — WIND → WHIRLWIND IS AN INTENSIFICATION SEQUENCE
+
+Small/ordinary input:
+**wind**.
+
+Consequent output:
+**whirlwind**.
+
+This is a process-amplification metaphor.
+
+Do not literalize as a vortex gate.
+
+---
+
+# Hosea 9–10
+## Vine / fruit / roots / plowing / sowing / harvest / broken centres
+
+Israel is described through:
+- grapes in wilderness;
+- early fig fruit;
+- luxuriant vine;
+- multiplied altars;
+- thorn/thistle over altars;
+- plowing/sowing/reaping imagery.
+
+### M54-17 — POPULATION/POLITICAL STATE IS AGAIN PROJECTED AS A PLANT NETWORK
+
+This continues the tree/vine projection grammar.
+
+A people can be rendered as:
+- vine;
+- fruit;
+- root;
+- field.
+
+Cross-link:
+Daniel 4 tree = king;
+Ezekiel trees = rulers/nations;
+Hosea plant = people.
+
+This makes plant-human political projection one of the most recurrent grammars in the corpus.
+
+---
+
+# Hosea 11
+## Parent/child → cords/bands → lion roar → dispersed children return as birds/doves
+
+YHWH/Israel shifts into:
+- parent/child;
+- teaching child to walk;
+- taking arms;
+- cords of human kindness / bands of love;
+- yoke removal/feeding.
+
+Later:
+YHWH roars like a lion.
+
+The children:
+- come trembling from west;
+- like birds from Egypt;
+- like doves from Assyria;
+- are returned to houses.
+
+### M54-18 — SAME RELATIONAL SYSTEM PASSES THROUGH HUMAN, ROPE/BAND, LION AND BIRD PROJECTIONS
+
+This is another strong cross-form sequence.
+
+The agent/people relation is successively expressed through:
+- family body;
+- cords/bands;
+- predator signal;
+- flock/bird return.
+
+Again:
+**identity continuity across radically different image systems**.
+
+### M54-19 — A CENTRAL SIGNAL PRODUCES LONG-DISTANCE RETURN FROM MULTIPLE DIRECTIONS
+
+Lion roar:
+→ dispersed children respond.
+
+Returns occur:
+- from west;
+- Egypt;
+- Assyria.
+
+Then:
+- resettlement in houses.
+
+This is a strong:
+**signal → distributed response → reaggregation → habitation**
+analogue.
+
+No physical gate is stated.
+
+---
+
+# Hosea 12
+## Jacob pair history — heel, struggle, angel, Bethel, return
+
+Hosea recalls Jacob:
+- grabbed brother's heel;
+- struggled with divine/angelic figure;
+- prevailed/wept;
+- encountered at Bethel.
+
+Then Israel is told:
+**return**.
+
+### M54-20 — PAIRED HUMAN STRUGGLE IS USED AS ANCESTRAL PATTERN FOR NATIONAL STATE
+
+Jacob's individual pair/struggle is projected onto later Israel.
+
+This again demonstrates:
+**one ancestral body/pair can encode a later collective process**.
+
+Keep this for paired-figure timeline.
+
+---
+
+# Hosea 13
+## One speaker cycles through lion / leopard / bear; womb-mouth; Death/Sheol; east wind dries spring
+
+The chapter uses rapid transformation grammar.
+
+YHWH says he will become:
+- lion;
+- leopard;
+- bear robbed of cubs;
+- wild beast.
+
+Same agent.
+
+Then Ephraim is compared with:
+- unborn child at the mouth/opening of womb;
+- threatened by Death/Sheol;
+- flourishing plant struck by east wind.
+
+East wind:
+- rises from wilderness;
+- dries fountain;
+- parches spring;
+- strips treasury.
+
+### M54-21 — ONE AGENT EXPLICITLY USES MULTIPLE PREDATOR BODIES
+
+This is very important to the user's cross-creature hypothesis.
+
+The text itself gives:
+
+**one speaker**
+→ lion
+→ leopard
+→ bear
+→ wild animal.
+
+Thus:
+**different animal body ≠ different agent**.
+
+This is a powerful projection control alongside Daniel.
+
+### M54-22 — "MOUTH OF THE WOMB" IS REAL APERTURE/BIRTH LANGUAGE, NOT A COSMIC THROAT BY DEFAULT
+
+The womb has a mouth/opening.
+
+The child fails to emerge at the proper time.
+
+This is an actual:
+**enclosure → aperture → emergence timing**
+image.
+
+But source meaning:
+birth crisis.
+
+Do not automatically map it to world gate.
+
+Still, it is useful as an organic throat/transition analogue.
+
+### M54-23 — EAST WIND CAN SHUT DOWN WATER SOURCE AND PRODUCTIVITY
+
+The process is explicit:
+
+**wind input**
+→ **fountain dries**
+→ **spring fails**
+→ **stored wealth stripped**.
+
+This shows:
+environmental forcing → water-system failure → economic/material consequences.
+
+That is directly useful to Vardath environmental sequencing.
+
+---
+
+# Hosea 14
+## Dew → roots → branches → shade → grain/vine → fruit
+
+Hosea closes with restoration.
+
+YHWH:
+- becomes like dew to Israel.
+
+Israel:
+- blossoms like lily;
+- sends roots like Lebanon;
+- sends out shoots/branches;
+- beauty like olive;
+- fragrance like Lebanon.
+
+Others:
+- return/dwell under shade;
+- revive like grain;
+- blossom like vine.
+
+YHWH also compares himself to:
+- evergreen/cypress tree;
+- source of fruit.
+
+### M54-24 — HOSEA ENDS WITH A DISTRIBUTED PLANT-SUPPORT NETWORK
+
+Sequence:
+
+**dew/current input**
+→ **root establishment**
+→ **branch expansion**
+→ **shade / supported occupants**
+→ **grain/vine productivity**
+→ **fruit**.
+
+This is a strong broad-state restoration analogue.
+
+### M54-25 — RESTORATION IS NOT ONLY CENTRAL AXIS RECOVERY; IT BECOMES LATERAL BRANCHING AND HABITABLE SHADE
+
+This matters to the fingertrap/reopening model.
+
+The end state is:
+**spread branches + people under shade + productive field**.
+
+That resembles:
+**reopened distributed support state**.
+
+But Hosea does not show:
+the same broad tree contracting into a throat first.
+
+Therefore:
+strong end-state analogue,
+not strict fingertrap completion.
+
+---
+
+# HOSEA composite timeline
+
+family pair established
+→ children embody judgment-state names
+→ divided Israel/Judah promised regathering under one head
+→ routes blocked
+→ wilderness transition
+→ trouble-valley becomes "door of hope"
+→ covenant/ecological safety
+→ heavens answer earth
+→ earth answers crops
+→ crops answer Jezreel
+→ people sown into land
+→ long low-function interval
+→ ecological layers mourn/fail
+→ lion tearing / withdrawal
+→ return expectation
+→ healing
+→ two-day/third-day revival language
+→ dawn/rain restoration
+→ rapid metaphor cycling through oven/dove/vine/wind
+→ ancestral Jacob struggle recalled
+→ one agent projects through lion/leopard/bear
+→ east wind dries springs
+→ final return
+→ dew arrives
+→ roots deepen
+→ branches spread
+→ shade becomes habitable
+→ grain/vine/fruit return.
+
+---
+
+# JOEL
+
+# Joel 1
+## Repeated consumption waves + drought + fire + dry watercourses
+
+Joel opens with a disaster remembered across generations.
+
+Four locust terms/stages appear:
+- cutting;
+- swarming;
+- hopping;
+- destroying.
+
+Whatever one makes of entomological precision, the literary structure is:
+**what stage A leaves → B consumes**
+→ **what B leaves → C consumes**
+→ **what C leaves → D consumes**.
+
+Agriculture collapses.
+
+Fire/flame imagery appears.
+
+Animals suffer.
+
+Watercourses dry.
+
+### M54-26 — JOEL 1 DESCRIBES CASCADING FAILURE, NOT ONE INSTANTANEOUS BLOW
+
+The system is progressively stripped.
+
+This is important for event modelling.
+
+Catastrophe can be:
+**serial / multi-stage**
+rather than
+**single reset instant**.
+
+### M54-27 — BIOLOGICAL, WATER AND FIRE SYSTEMS FAIL TOGETHER
+
+The chapter links:
+- crops;
+- animals;
+- water;
+- fire;
+- human economy/ritual.
+
+This is a true coupled environmental failure image.
+
+---
+
+# Joel 2:1–11
+## Darkened sky + fire front/rear + highly ordered moving field + earth/heavens tremble
+
+A trumpet/alarm announces the Day.
+
+Conditions:
+- darkness;
+- cloud;
+- thick darkness.
+
+A vast force moves.
+
+Fire:
+- in front;
+- flame behind.
+
+Land:
+- Eden-like before;
+- wilderness after.
+
+The force:
+- runs in ordered paths;
+- does not jostle;
+- keeps tracks;
+- climbs walls;
+- enters windows.
+
+Then:
+- earth quakes;
+- heavens tremble;
+- sun/moon darken;
+- stars withdraw brightness.
+
+### M54-28 — JOEL GIVES A TRUE BEFORE/AFTER SURFACE-STATE FRONT
+
+This is one of the clearest process images in the Twelve:
+
+**ahead of moving front = productive/Edenic**
+→ **front passes**
+→ **behind = desolate**.
+
+That is a spatially propagating transformation boundary.
+
+### M54-29 — FIRE OCCURS ON BOTH SIDES OF THE MOVING FORCE
+
+Fire before;
+flame behind.
+
+This gives:
+**front-edge heating/destruction**
++
+**rear-edge heating/destruction**.
+
+Do not automatically interpret as plasma sheath.
+
+But record:
+the event has a spatial envelope, not merely one fire point.
+
+### M54-30 — MANY MOVING UNITS RETAIN DISTINCT TRACKS WITHOUT COLLIDING
+
+"They do not jostle one another; each keeps its own track."
+
+This is unusually network-like language.
+
+It describes:
+**distributed parallel trajectories inside one collective moving field**.
+
+Strong Vardath analogue:
+multiple strands/paths can operate simultaneously without becoming one undifferentiated mass.
+
+Strict control:
+source refers to locust/army movement.
+
+### M54-31 — GROUND AND SKY RESPONSE ARE COUPLED AT PEAK EVENT
+
+Earth quakes.
+Heavens tremble.
+Sun/moon/stars alter appearance.
+
+This is exactly the kind of:
+**ground + sky coupled disturbance**
+the Vardath event model expects.
+
+But Joel's apocalyptic rhetoric need not be literal geophysics.
+
+Classification:
+**strong multi-domain catastrophe analogue**.
+
+---
+
+# Joel 2:12–17
+## Event can still change course; gathered population occupies threshold space between vestibule and altar
+
+A call to return interrupts the judgment description.
+
+Population is gathered:
+- old;
+- children;
+- infants;
+- bridegroom;
+- bride.
+
+Priests stand/weeping:
+**between vestibule and altar**.
+
+### M54-32 — JOEL PLACES INTERCESSORY OPERATORS IN A REAL BETWEEN-ZONE
+
+"Between vestibule and altar" is genuine threshold/intermediate geometry.
+
+But function:
+ritual intercession.
+
+Do not call it world gate.
+
+---
+
+# Joel 2:18–27
+## Catastrophe reverses: northern force split toward east/west seas; soil/tree/rain/crops reactivate
+
+Restoration begins.
+
+The "northern" force is removed.
+
+Its geometry is striking:
+- front/face toward **eastern sea**;
+- rear toward **western sea**.
+
+Then:
+- soil rejoices;
+- pastures green;
+- trees fruit;
+- fig/vine yield;
+- early rain;
+- later rain;
+- grain/wine/oil abundance.
+
+### M54-33 — THE REMOVED FORCE IS STRETCHED ACROSS AN EAST↔WEST LAND AXIS
+
+The same body/army has:
+- front toward east sea;
+- rear toward west sea.
+
+Thus its length spans an east-west field.
+
+This is a genuine directional body-axis.
+
+### M54-34 — FRONT/BACK AND EAST/WEST ARE LOCKED TO THE SAME MOVING BODY
+
+This matters for projection analysis.
+
+One collective force can be represented as:
+**one elongated body with front + rear**.
+
+That resembles the project's:
+**one structure carrying opposed directional ends**.
+
+But Joel does not describe:
+- counter-winding strands;
+- braid;
+- central constriction.
+
+So classify:
+**strong axial/directional analogue**
+not strict fingertrap.
+
+### M54-35 — RESTORATION REACTIVATES SYSTEMS IN ORDER: SOIL → PASTURE → TREES → RAIN → STORES
+
+The poem moves through a coherent ecological reactivation:
+- ground;
+- animals/pastures;
+- plants;
+- rain;
+- human food stores.
+
+This supports Vardath's idea that post-event recovery is a system transition, not simply "everything is magically fine."
+
+### M54-36 — "REPAY THE YEARS" DOES NOT MEAN THE PAST IS LITERALLY REWOUND
+
+Joel says the lost years consumed by locusts will be repaid/restored.
+
+This is crucial.
+
+The text's own restoration is:
+**future abundance compensating for past loss**.
+
+It is not:
+**time reversal making the lost years unhappen**.
+
+Excellent control for:
+**reset ≠ rewind**.
+
+---
+
+# Joel 2:28–32
+## Spirit distributed across "all flesh" + cosmic portents + columns of smoke
+
+After agricultural restoration:
+- spirit is "poured out";
+- sons/daughters;
+- old/young;
+- male/female slaves
+
+participate.
+
+Then:
+- portents heavens/earth;
+- blood;
+- fire;
+- columns of smoke;
+- sun darkened;
+- moon blood-like;
+- escape/survivor group in Zion/Jerusalem.
+
+### M54-37 — ONE SOURCE IS DISTRIBUTED ACROSS MANY SOCIAL NODES WITHOUT ERASING THEIR DIFFERENCE
+
+Spirit:
+**one source**
+→ **many recipients across age/sex/status categories**.
+
+This is a strong:
+**one-to-many field distribution**
+analogue.
+
+But "pour out" is theological metaphor.
+
+Do not equate spirit with literal fluid/plasma.
+
+### M54-38 — COLUMNS OF SMOKE ARE VERTICAL EVENT MARKERS, BUT NOT AUTOMATIC SQUATTER-MAN RODS
+
+The image:
+**vertical smoke columns**
+is relevant.
+
+But by itself:
+- no bilateral arms;
+- no throat;
+- no transfer;
+- no support lattice.
+
+Record as:
+**vertical atmospheric column imagery**.
+
+### M54-39 — AGRICULTURAL RESTORATION AND COSMIC PORTENTS OCCUR IN ONE LARGER EVENT FRAME
+
+This is important.
+
+Joel does not isolate:
+- weather restoration;
+- sky event;
+- social/spiritual distribution.
+
+They belong to one extended Day/restoration sequence.
+
+This is a stronger whole-system event analogue than isolated motif matching.
+
+---
+
+# Joel 3
+## Gathered nations → valley → sky darkening → Zion roar → heaven/earth shake → sanctuary fountain → permanently inhabited restored land
+
+Nations are gathered to a valley for judgment.
+
+Sun/moon darken.
+Stars lose brightness.
+
+YHWH roars from Zion.
+
+Heavens and earth shake.
+
+Then restored state:
+
+- Zion inhabited/holy;
+- mountains drip wine;
+- hills flow with milk;
+- streambeds run with water;
+- **fountain comes from house of YHWH**;
+- fountain waters Wadi Shittim;
+- Judah inhabited continuously.
+
+### M54-40 — JOEL ENDS WITH THE SAME SANCTUARY→FOUNTAIN GEOMETRY AS EZEKIEL 47
+
+This is a major cross-link.
+
+Ezekiel 47:
+**water from sanctuary**
+→ **outward ecological restoration**.
+
+Joel 3:
+**fountain from house of YHWH**
+→ **waters valley**.
+
+This is not a vague shared "water of life" theme.
+
+It is:
+**central sacred core → outward water source → restored land**.
+
+### M54-41 — JOEL'S RESTORED WORLD IS EXPLICITLY INHABITED
+
+Judah/Jerusalem remain inhabited.
+
+This fits the user's rule:
+successor/restored world is populated.
+
+Again:
+source meaning is restored Judah, not another physical world-layer.
+
+### M54-42 — JUDGMENT VALLEY AND RESTORATION FOUNTAIN ARE DIFFERENT FUNCTIONS WITHIN THE SAME LANDSCAPE SYSTEM
+
+Do not collapse:
+- valley of judgment;
+- watered valley;
+- mountain;
+- sanctuary
+
+into one literal gate component.
+
+The geography performs different narrative roles.
+
+---
+
+# JOEL continuous timeline
+
+generationally memorable agrarian disaster
+→ repeated consumption waves
+→ crops fail
+→ watercourses dry
+→ fire/drought imagery
+→ alarm from Zion
+→ dark sky
+→ moving ordered force
+→ fire before / flame behind
+→ Eden-like land becomes wilderness behind front
+→ parallel tracks cross wall/city boundaries
+→ earth quakes
+→ heavens tremble
+→ sun/moon/stars darken
+→ population gathers
+→ priests occupy between-zone
+→ event course reverses/relents
+→ northern force removed
+→ body/front toward eastern sea
+→ rear toward western sea
+→ ground/pasture/tree system reactivates
+→ early/later rain return
+→ stores refill
+→ lost years compensated, not rewound
+→ spirit distributed across all social categories
+→ fire/smoke/sky portents
+→ nations gathered to valley
+→ heaven/earth shake again
+→ Zion remains occupied
+→ mountains/hills/streambeds become fluid-rich
+→ fountain issues from sanctuary
+→ restored inhabited land persists.
+
+---
+
+# AMOS
+
+# Amos 1
+## Historical earthquake marker + voice from Zion → landscape dries; gate bars break
+
+The book dates its opening relative to:
+**two years before the earthquake**.
+
+YHWH:
+- roars from Zion;
+- speaks from Jerusalem.
+
+Then:
+- shepherd pastures wither;
+- Carmel top dries.
+
+Against Damascus:
+- gate bars are broken.
+
+### M54-43 — AMOS ANCHORS PROPHETIC MEMORY TO AN EARTHQUAKE
+
+This is important for chronology research.
+
+The earthquake is not itself fully described here.
+
+But it functions as:
+**real remembered temporal marker**.
+
+Do not assign an exact modern date without archaeological/historical qualification.
+
+### M54-44 — SOUND/SIGNAL FROM A CENTRAL NODE IS FOLLOWED BY LANDSCAPE RESPONSE
+
+Roar/voice:
+Zion/Jerusalem
+→ drying/withered landscape.
+
+This resembles:
+**central signal → environmental field response**.
+
+In source context:
+divine judgment poetry.
+
+---
+
+# Amos 4–5
+## Sea-water called and poured over land; darkness/morning reversal; stars; justice as river
+
+Amos 5:8 describes YHWH as:
+- maker of Pleiades and Orion;
+- turning deep darkness into morning;
+- darkening day into night;
+- calling for sea water;
+- pouring it onto earth's surface.
+
+Amos 5 later says:
+justice should roll down like waters,
+righteousness like an ever-flowing stream.
+
+### M54-45 — AMOS REPEATS A SEA→LAND WATER-TRANSFER COSMOLOGY
+
+The formula appears again in Amos 9.
+
+This repetition matters.
+
+**sea water**
+→ **called**
+→ **poured upon land surface**.
+
+At minimum:
+Amos imagines divine control of the hydrological/cosmic water system.
+
+### M54-46 — DAY↔NIGHT REVERSAL IS EXPLICIT BUT FUNCTIONALLY THEOLOGICAL
+
+Darkness → morning.
+Day → night.
+
+This is real light-state inversion language.
+
+Do not treat it as evidence of literal rotation reversal or time-door mechanics without more.
+
+### M54-47 — FLOW LANGUAGE CAN BE ETHICAL RATHER THAN PHYSICAL
+
+Justice = water.
+Righteousness = stream.
+
+This is a critical anti-forcing example.
+
+Not every river in prophetic literature is hydrology or world-current.
+
+---
+
+# Amos 7:1–6
+## Two catastrophic visions are cancelled: locust field failure; fire devours the great deep and begins consuming land
+
+Vision 1:
+- locusts formed;
+- later growth consumed;
+- Amos intercedes;
+- disaster relented/cancelled.
+
+Vision 2:
+- judgment by fire;
+- fire devours **the great deep**;
+- fire begins eating land;
+- Amos intercedes;
+- disaster relented/cancelled.
+
+### M54-48 — FIRE IS SHOWN CROSSING FROM DEEP/WATER DOMAIN INTO LAND DOMAIN
+
+This is one of Amos's strongest Vardath-relevant sequences.
+
+**fire**
+→ **great deep consumed**
+→ **land begins to be consumed**.
+
+It couples:
+- deep water;
+- fire;
+- surface land.
+
+No sky lattice is described.
+
+### M54-49 — PROPHETIC EVENT SEQUENCE CAN CONTAIN ABORTED BRANCHES
+
+The first two visions do not proceed to completion.
+
+This matters to timeline reconstruction.
+
+Not every vision should be treated as a description of what physically happened.
+
+Some are:
+**counterfactual / cancelled judgment possibilities**.
+
+That is an important methodological control.
+
+---
+
+# Amos 7:7–9
+## "Plumb line" vision — but Hebrew term is uncertain
+
+NRSVUE:
+- wall built with a plumb line;
+- YHWH beside wall;
+- plumb line in hand;
+- line placed among Israel.
+
+However the Hebrew word **'anakh** is difficult.
+
+Modern discussion notes:
+- traditional "plumb line" interpretation;
+- Akkadian cognate may point to tin;
+- proposals include tin wall / metal / grief wordplay;
+- exact object/function is debated.
+
+### M54-50 — DO NOT BUILD VARDATH GEOMETRY ON "PLUMB LINE" AS THOUGH THE HEBREW WERE UNAMBIGUOUS
+
+This is a required textual control.
+
+If plumb-line reading is retained:
+- vertical measurement;
+- wall alignment;
+- evaluation.
+
+But because the term is uncertain:
+classification must be:
+**possible vertical alignment/measurement image**.
+
+Not:
+**proved vertical axis instrument**.
+
+### M54-51 — MEASUREMENT/EVALUATION IS STILL THE SECURE LARGER FUNCTION
+
+Regardless of exact object:
+the vision communicates:
+**Israel is being tested/evaluated and will no longer be passed over/spared**.
+
+Do not inflate one uncertain noun into cosmological machinery.
+
+---
+
+# Amos 8
+## Basket/end wordplay → land trembles → whole land rises/sinks like Nile → sun down at noon → directional search failure
+
+Basket of summer fruit:
+Hebrew wordplay connects:
+**summer fruit**
+with
+**end**.
+
+Then:
+- land trembles;
+- everyone mourns;
+- whole land rises like Nile;
+- is tossed;
+- sinks again like Nile.
+
+Then:
+- sun made to go down at noon;
+- earth darkened in daylight.
+
+Later:
+- people wander sea to sea;
+- north to east;
+- seek divine word but fail.
+
+### M54-52 — AMOS GIVES EXPLICIT LARGE-SCALE VERTICAL LAND OSCILLATION LANGUAGE
+
+The land:
+**rises**
+→ **is tossed**
+→ **sinks**.
+
+The Nile comparison has an ordinary flood-cycle basis.
+
+But the geometry is undeniable.
+
+This is relevant to Vardath's:
+- moving land/world-disc;
+- lifting/sinking;
+- current-supported surface.
+
+Still:
+prophetic simile ≠ geophysical mechanism.
+
+### M54-53 — MIDDAY LIGHT STATE CAN INVERT TO DARKNESS DURING JUDGMENT
+
+Cross-link:
+Joel sky-darkening.
+
+This gives recurring:
+**catastrophe ↔ altered sky/light**.
+
+Not enough to infer cause.
+
+### M54-54 — INFORMATION FAMINE CAN MIMIC RESOURCE FAMINE WITHOUT MATERIAL SHORTAGE
+
+The chapter explicitly says:
+not bread/water,
+but hearing the divine word.
+
+This is another anti-forcing control:
+**thirst/famine language can describe information-channel failure**.
+
+---
+
+# Amos 9:1
+## Central figure at altar → strike capitals → thresholds shake → structure collapses onto occupants
+
+Amos sees YHWH:
+- standing beside/on altar depending translation.
+
+Command:
+- strike capitals;
+- thresholds shake;
+- structure shattered on occupants.
+
+### M54-55 — TOP SUPPORT / CAPITAL FAILURE PROPAGATES TO LOWER THRESHOLD
+
+This is genuine building mechanics imagery.
+
+Sequence:
+
+**upper structural element struck**
+→ **threshold/base boundary shakes**
+→ **whole occupied structure becomes lethal**.
+
+This is important to Vardath support-lattice comparisons.
+
+But ordinary source:
+temple/sanctuary destruction.
+
+### M54-56 — ALTAR-ADJACENT ANTHROPOMORPHIC FIGURE IS OPERATOR, NOT NECESSARILY STRUCTURE
+
+This preserves the operator/apparatus distinction.
+
+The figure gives/executes command.
+The building responds.
+
+Do not collapse:
+**standing divine figure**
+into
+**pillar being struck**
+without textual support.
+
+---
+
+# Amos 9:2–4
+## Sheol ↔ heaven vertical extremes + mountain top ↔ sea bottom + serpent at sea floor
+
+Escape routes are denied across:
+- digging into Sheol;
+- climbing to heaven;
+- hiding on Carmel summit;
+- hiding at bottom of sea.
+
+At sea bottom:
+- serpent is commanded to bite.
+
+### M54-57 — AMOS BUILDS A FULL VERTICAL RANGE MAP
+
+The rhetorical system spans:
+**Sheol/deep below**
+↔ **surface/mountain**
+↔ **heaven above**.
+
+This is genuine layered cosmographic language.
+
+### M54-58 — SERPENT IS LOCATED AT THE BOTTOM-OF-SEA EXTREME
+
+This is relevant to dragon/serpent research.
+
+But function here:
+**pursuer/judgment agent**.
+
+It is not:
+- world-support serpent;
+- sky lattice;
+- cherub.
+
+Record function before visual comparison.
+
+---
+
+# Amos 9:5–6
+## One of the strongest cosmographic passages yet: melting earth, rise/sink cycle, upper chambers, vault founded on earth, sea-water poured across earth
+
+The passage describes YHWH as:
+- touching earth so it melts;
+- land/earth rising like Nile;
+- sinking again;
+- building **upper chambers in heavens**;
+- founding **vault / support structure upon earth**;
+- calling sea waters;
+- pouring them over earth's surface.
+
+### Text-critical / lexical control
+
+The Hebrew of Amos 9:6 is not perfectly simple.
+
+NRSVUE:
+**"founds his vault upon the earth."**
+
+NET:
+**"sets its foundation supports on the earth."**
+
+The Hebrew noun **'aguddah** can carry grouped/bound/structural senses; precise architectural meaning here is debated.
+
+NET's note says the verse pictures the cosmos as:
+**a divine palace founded on earth and extending into heaven**.
+
+Older Cambridge commentary interprets:
+- upper chambers above;
+- firmament/vault;
+- earth as supporting/founding relation.
+
+### M54-59 — AMOS 9:6 IS A REAL HEAVEN↔EARTH SUPPORT-STRUCTURE TEXT
+
+This is not merely:
+"God is in heaven."
+
+It states architectural relation:
+
+**upper chambers**
+in heaven
+
++
+**vault/foundation/support**
+upon earth.
+
+This is extremely relevant to the user's:
+**world-disc + overlying lattice/dome/support system**.
+
+### M54-60 — THE PASSAGE CONNECTS SUPPORT GEOMETRY AND WATER TRANSFER IN THE SAME SENTENCE
+
+Sequence:
+
+**heavenly upper structure / earth-founded vault**
++
+**sea water called**
+→ **water poured across earth surface**.
+
+That is one of the strongest source-level structural combinations yet for:
+
+**upper architecture**
++
+**lower earth**
++
+**water redistribution**.
+
+### M54-61 — DO NOT OVERSTATE THE WORD "VAULT"
+
+Because **'aguddah** is lexically difficult,
+the safest statement is:
+
+Amos 9:6 describes:
+- an upper heavenly construction;
+- a structure/support founded on earth;
+- and water transfer from sea to land.
+
+The exact engineering shape of the "vault/support" is uncertain.
+
+### M54-62 — AMOS 9:5–6 COMBINES MOVING LAND + UPPER STRUCTURE + WATER FLOW
+
+Taken together:
+
+**earth touched/melts**
+→ **earth rises**
+→ **earth sinks**
+→ **upper heavenly structure exists**
+→ **support/foundation relation to earth**
+→ **sea waters pour over surface**.
+
+This is unusually close in *component list* to Vardath.
+
+Still missing:
+- woven strands;
+- fingertrap contraction;
+- populated world above/below interacting;
+- transfer through a throat.
+
+Therefore:
+**major cosmographic analogue**,
+not direct proof.
+
+---
+
+# Amos 9:7
+## Multiple peoples have Exodus-like migration histories
+
+YHWH asks whether:
+- Israel came from Egypt;
+- Philistines from Caphtor;
+- Arameans from Kir.
+
+### M54-63 — TRANSFER/MIGRATION IS NOT UNIQUE TO ONE CHOSEN POPULATION IN THE TEXT
+
+Multiple peoples have:
+**origin-place → migration → destination** histories.
+
+This is useful to the Vardath populated-world model because large population movement need not be singular.
+
+Ordinary source:
+ethnic/political migration theology.
+
+---
+
+# Amos 9:9
+## Sieve/shaking image — distributed people shaken while selected unit is retained
+
+House of Israel:
+- shaken among nations like a sieve;
+- but not every pebble falls/lost.
+
+### M54-64 — SHAKING CAN SORT RATHER THAN SIMPLY DESTROY
+
+This is a major process distinction.
+
+**shaking**
+→ **redistribution/filtering**
+rather than
+**total annihilation**.
+
+For Vardath:
+catastrophic motion could sort cargo/populations/material unevenly.
+
+Source meaning:
+judgment/remnant metaphor.
+
+---
+
+# Amos 9:11–15
+## Fallen booth repaired → cities rebuilt and inhabited → mountains flow → people planted permanently
+
+Final restoration:
+
+- fallen booth of David raised;
+- breaches repaired;
+- ruins rebuilt;
+- plowman overtakes reaper;
+- grape treader overtakes sower;
+- mountains drip wine;
+- hills flow;
+- ruined cities rebuilt;
+- people inhabit them;
+- vineyards/gardens planted;
+- population planted in land;
+- no longer uprooted.
+
+### M54-65 — AMOS ENDS WITH REPAIR OF INHERITED RUINS, NOT CREATION FROM NOTHING
+
+This strongly supports:
+**successor state = inherited structure repaired/reconfigured**.
+
+The old system leaves:
+- breaches;
+- ruins;
+- cities.
+
+Restoration uses them.
+
+### M54-66 — RESTORATION IS EXPLICITLY INHABITED AND AGRICULTURALLY PRODUCTIVE
+
+People:
+- rebuild;
+- live;
+- plant;
+- drink;
+- eat.
+
+Again:
+**new/restored state is populated**.
+
+### M54-67 — AGRICULTURAL CYCLES COMPRESS/OVERLAP
+
+Plowing catches reaping.
+Treading grapes catches sowing.
+
+This expresses extraordinary abundance.
+
+Structurally:
+**normally separated seasonal phases overlap**.
+
+That is interesting for Vardath time-overlap comparisons.
+
+But source function:
+hyperbolic fertility/restoration.
+
+Do not call it literal time compression.
+
+---
+
+# AMOS continuous timeline
+
+earthquake used as chronological marker
+→ central voice associated with landscape drying
+→ sea water can be called/poured upon land
+→ light state can reverse
+→ first catastrophic vision: locust consumption
+→ event cancelled
+→ second catastrophic vision: fire consumes deep then land
+→ event cancelled
+→ wall/measurement vision
+→ judgment no longer postponed
+→ basket/end transition
+→ land trembles
+→ land rises and sinks like Nile
+→ midday darkness
+→ information channel fails
+→ central altar figure
+→ capitals struck
+→ thresholds shake
+→ vertical escape map spans Sheol to heaven
+→ serpent occupies sea-depth judgment role
+→ earth melts/rises/sinks
+→ upper chambers in heaven
+→ support/vault founded upon earth
+→ sea water poured across surface
+→ multiple populations recalled as migratory
+→ Israel shaken/sifted among nations
+→ remnant retained
+→ fallen inherited structure repaired
+→ ruins rebuilt
+→ cities reinhabited
+→ agricultural cycles overlap
+→ mountains/hills flow
+→ people planted stably in land.
+
+---
+
+# CROSS-BOOK SYNTHESIS — Hosea + Joel + Amos
+
+These three books strongly reinforce a recurring systems grammar.
+
+## 1. Identity can move through multiple projections
+
+Hosea:
+- family;
+- spouse;
+- child;
+- lion;
+- leopard;
+- bear;
+- dove;
+- vine;
+- tree;
+- dew.
+
+Joel:
+- locust;
+- army;
+- moving field;
+- fire;
+- smoke;
+- distributed spirit.
+
+Amos:
+- wall;
+- basket;
+- water;
+- fire;
+- architectural cosmos;
+- sieve.
+
+### M54-68 — THE BOOK OF THE TWELVE USES PROCESS-PROJECTION MORE OFTEN THAN ONE-IMAGE/ONE-OBJECT LOGIC
+
+This strongly supports the research method:
+ask what role/process an image performs before deciding whether it is a separate entity.
+
+---
+
+# 2. Catastrophe repeatedly couples sky, land, water and biology
+
+Hosea:
+- land/animal/bird/fish failure;
+- east wind dries spring.
+
+Joel:
+- fire;
+- dry watercourses;
+- darkened sky;
+- quake;
+- crop/animal failure.
+
+Amos:
+- fire consumes deep/land;
+- earth rises/sinks;
+- sea-water transfer;
+- darkness at noon;
+- upper cosmic architecture.
+
+### M54-69 — MULTI-DOMAIN EVENT COUPLING IS NOW A REPEATED SOURCE-LEVEL PATTERN
+
+This is much stronger than isolated catastrophe imagery.
+
+Still:
+the prophets can use conventional cosmic rhetoric.
+
+Do not assume every element is a literal observation.
+
+---
+
+# 3. Restoration repeatedly follows through water → vegetation → inhabited land
+
+Hosea:
+**dew**
+→ roots
+→ branches
+→ shade
+→ grain/vine.
+
+Joel:
+**rain + sanctuary fountain**
+→ green pasture
+→ trees
+→ crops
+→ inhabited Judah.
+
+Amos:
+**flowing hills / abundance**
+→ cities rebuilt
+→ vineyards/gardens
+→ stable planting.
+
+### M54-70 — WATER-VEGETATION-HABITATION IS A MAJOR RESTORATION CHAIN
+
+Cross-link:
+Ezekiel 47:
+**sanctuary river → trees → living ecology → inhabited redistributed land**.
+
+This is now a broad prophetic restoration pattern.
+
+---
+
+# 4. Heaven/earth coupling is explicit
+
+Hosea 2:
+**heavens answer earth**.
+
+Joel 2–3:
+**heavens tremble + earth quakes**,
+then restored rainfall/fountain.
+
+Amos 9:
+**upper chambers in heaven + support/vault founded upon earth**,
+plus sea water over earth.
+
+### M54-71 — THE TWELVE ADD THREE DISTINCT HEAVEN↔EARTH RELATION TYPES
+
+1. **causal response** — Hosea;
+2. **coupled disturbance** — Joel;
+3. **architectural support/cosmography** — Amos.
+
+This distinction should be retained.
+
+They are not one identical motif.
+
+---
+
+# 5. The strongest direct Vardath structural analogue in this block is Amos 9:5–6
+
+Component comparison:
+
+### Source
+- earth changes state;
+- rises/sinks;
+- upper chambers;
+- earth-founded support/vault;
+- sea waters;
+- water redistributed over earth.
+
+### Vardath
+- world-disc/land responds to lattice state;
+- upper inhabited layer;
+- support lattice/dome;
+- water follows geometry;
+- gate event redistributes water/material.
+
+### Match
+**component-level strong**.
+
+### Missing
+- populated upper world stated;
+- two opposed lattice strands;
+- fingertrap contraction;
+- throat;
+- same support structure opening/reopening;
+- two-way transfer.
+
+### Classification
+**high-priority cosmographic analogue; strict fingertrap negative**.
+
+---
+
+# 6. Joel adds the strongest moving-front geometry
+
+Joel 2 gives:
+
+**fire ahead**
+→ **ordered moving body**
+→ **flame behind**
+
+and later:
+
+**front → eastern sea**
+**rear → western sea**.
+
+### M54-72 — JOEL DESCRIBES ONE ELONGATED EVENT-BODY WITH DISTINCT FRONT/REAR ENDS ACROSS AN EAST↔WEST FIELD
+
+This should be compared later to:
+- opposed direction strands;
+- dragon-body projection;
+- rod/fingertrap side-view.
+
+But no braid/contraction is stated.
+
+---
+
+# 7. Hosea adds the strongest layered response chain
+
+Hosea 2:
+
+**heavens**
+→ **earth**
+→ **grain/wine/oil**
+→ **Jezreel / people**.
+
+### M54-73 — THIS IS A TRUE MULTI-LAYER DEPENDENCY CHAIN, NOT MERELY A LIST OF BLESSINGS
+
+This is especially useful for:
+**upper-state → environment → biological resources → populated-world state**.
+
+---
+
+# Cherub / Feathered Serpent / Quetzalcoatl / dragon projection update
+
+This block does not contain a cherub or Feathered Serpent.
+
+But it strengthens the projection method in another way.
+
+Hosea explicitly lets one agent move among:
+- human relational figure;
+- lion;
+- leopard;
+- bear;
+- tree;
+- dew.
+
+One population moves among:
+- spouse;
+- child;
+- dove;
+- vine;
+- plant;
+- grain.
+
+Joel lets one collective destructive force move between:
+- locust-like;
+- army-like;
+- fire-associated;
+- elongated east/west front/rear body.
+
+Amos shifts divine/system agency across:
+- voice;
+- fire;
+- water;
+- builder;
+- upper structure;
+- altar-standing anthropomorphic figure.
+
+### M54-74 — CROSS-FORM IDENTITY IS NOW SO COMMON THAT THE IMPORTANT TEST IS FUNCTIONAL SEQUENCE, NOT BODY TYPE
+
+Therefore the user's idea:
+
+**cherub**
+↔ **winged/feathered being**
+↔ **serpent/dragon**
+↔ **Quetzalcoatl comparison**
+↔ **tree**
+↔ **anthropomorphic axis**
+↔ **rod/throat**
+
+should continue to be tested by:
+
+- what activates it;
+- where it sits in sequence;
+- what medium it controls;
+- what direction it moves;
+- whether it supports/encloses;
+- whether it concentrates/expands;
+- whether it transports;
+- what environmental effects follow.
+
+A visual match alone is now clearly insufficient,
+because the prophets themselves use many visual bodies for unrelated functions.
+
+---
+
+# Pair register — Hosea + Joel + Amos
+
+## Hosea / Gomer
+prophet/spouse pair projecting divine/Israel relationship.
+
+## Judah / Israel
+split political pair → future one-head gathering.
+
+## Lo-ruhamah / restored mercy state
+same named status inverted.
+
+## Lo-ammi / "my people"
+same population relational state inverted.
+
+## heavens / earth
+causal response pair.
+
+## Egypt / Assyria
+two external locations from which bird/dove-like return occurs.
+
+## lion/leopard/bear
+not a pair but multiple animal projections of one agent.
+
+## Joel front / rear
+same moving force, opposite ends.
+
+## eastern sea / western sea
+directional endpoints of same force.
+
+## early / later rain
+paired seasonal water inputs.
+
+## sons / daughters
+distributed spirit recipients.
+
+## old / young
+distributed spirit recipients.
+
+## male / female slaves
+distributed spirit recipients.
+
+## Amos heaven / Sheol
+vertical extremes.
+
+## mountain top / sea bottom
+vertical/geographic extremes.
+
+## upper chambers / earth-founded support
+architectural upper/lower relation.
+
+## rise / sink
+paired state of land/Nile simile.
+
+## plow / reap
+normally separated agricultural phases that overlap in restoration.
+
+---
+
+# Number / timing register
+
+## Hosea
+- three symbolic children;
+- "two days" / "third day" revival;
+- many days without king/cult institutions.
+
+Do not force into a cosmic recurrence.
+
+## Joel
+- four locust labels/stages in Joel 1;
+- no safe assumption that these are four physically distinct species;
+- generational memory chain;
+- early/later rain pair.
+
+## Amos
+- "for three transgressions, and for four" rhetorical pattern;
+- two years before earthquake;
+- repeated vision sequence in Amos 7;
+- no precise event duration for earth rise/sink.
+
+---
+
+# Strict fingertrap test — Hosea + Joel + Amos
+
+Criteria:
+1. broad/open distributed support structure;
+2. same structure continuity;
+3. strand-angle change/contraction;
+4. narrow throat/rod;
+5. transfer/contact through it;
+6. same structure reopens broadly.
+
+## Hosea
+
+Strong:
+- broad tree/root/branch/shade restoration;
+- layered heaven→earth response.
+
+Missing:
+- contraction;
+- throat;
+- transfer aperture.
+
+**Strict negative.**
+
+## Joel
+
+Strong:
+- ordered parallel tracks;
+- one elongated front/rear body;
+- east/west endpoints;
+- coupled sky/earth disturbance;
+- sanctuary outflow/fountain;
+- restoration/reopening effects.
+
+Missing:
+- woven support structure;
+- strand-angle contraction;
+- same structure narrows/reopens.
+
+**Strict negative; strong event-front analogue.**
+
+## Amos
+
+Strong:
+- upper heavenly structure;
+- support/vault founded on earth;
+- earth rise/sink;
+- deep/fire interaction;
+- sea→land water transfer;
+- structural capital→threshold collapse;
+- rebuilt successor habitation.
+
+Missing:
+- explicit woven strands;
+- broad→throat contraction;
+- same support opening;
+- two-way material passage through throat;
+- reopening of that support.
+
+**Strict negative; strongest cosmographic support analogue of the three.**
+
+---
+
+# Textual / scholarly controls — Hosea + Joel + Amos
+
+1. Hosea's marriage/family material is metaphorically central; debates remain over biography, composition and the ethics/gendered violence of the rhetoric.
+2. Hosea uses extremely dense networks of metaphors; cross-form identity is therefore source-level but mechanical identity must not be assumed.
+3. Hosea 2:15's "door of hope" is metaphorical transition language, not a technical portal.
+4. Hosea 2:21–23 genuinely contains a layered heaven→earth→crop→Jezreel response chain.
+5. Hosea 6's two-day/third-day language is restoration/revival rhetoric and should not be converted into a cosmic periodicity without evidence.
+6. Hosea 13:14 has important translation/textual nuances; its Death/Sheol language should not be flattened into one simple resurrection claim.
+7. Joel's opening disaster can be read as locust plague, military metaphor or deliberately overlapping imagery.
+8. Joel's final form is commonly treated as relatively late and intertextually dependent on earlier prophetic language.
+9. Joel 2 explicitly gives fire before and behind the moving force and an east/west front/rear disposition during removal.
+10. Joel's "spirit poured out" is theological distribution language, not a literal fluid claim.
+11. Joel 3's sanctuary fountain is a genuine close parallel to Ezekiel 47.
+12. Amos is historically associated with the eighth century but the final literary book has later shaping.
+13. Amos 7's Hebrew **'anakh** is disputed; "plumb line" should not be treated as lexically certain.
+14. Amos 7:4's fire consuming the great deep is visionary judgment, and the event is cancelled after intercession.
+15. Amos 8:8 and 9:5 use Nile rise/sink language for large-scale land disturbance.
+16. Amos 9:6's **'aguddah** is difficult; translations such as "vault" / "foundation supports" are interpretive.
+17. Nevertheless Amos 9:6 securely relates an upper heavenly construction to an earth-founded structure and sea-water transfer.
+18. Amos 5's justice-as-water line demonstrates that flow imagery can be ethical/metaphorical rather than physical.
+19. Amos 9 ends in repaired ruins, rebuilt inhabited cities and productive planted land—restoration from inherited remains, not creation from blank nothingness.
+
+---
+
+# Sources logged — Hosea + Joel + Amos
+
+## Primary — Hosea
+- Hosea 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Hosea+1&version=NRSVUE
+- Hosea 2:14–23 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Hosea+2%3A14-23&version=NRSVUE
+- Hosea 6 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Hosea+6&version=NRSVUE
+- Hosea 11 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Hosea+11&version=NRSVUE
+- Hosea 13 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Hosea+13&version=NRSVUE
+- Hosea 14 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Hosea+14&version=NRSVUE
+
+## Hosea scholarship
+- Brad E. Kelle, "The Book of Hosea," Oxford Research Encyclopedia of Religion:
+  https://academic.oup.com/edited-volume/62249/chapter-abstract/551368896
+- Stuart A. Irvine, "Hosea," The Oxford Handbook of the Minor Prophets:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373123
+- Mason D. Lancaster, "Metaphors in the Book of Hosea," The Oxford Handbook of Hosea:
+  https://academic.oup.com/edited-volume/56211/chapter-abstract/443860228
+
+## Primary — Joel
+- Joel 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Joel+1&version=NRSVUE
+- Joel 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Joel+2&version=NRSVUE
+- Joel 3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Joel+3&version=NRSVUE
+- Joel 3:18 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Joel+3%3A18&version=NRSVUE
+
+## Joel scholarship
+- Anselm C. Hagedorn, "Joel," The Oxford Handbook of the Minor Prophets:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373192
+
+## Primary — Amos
+- Amos 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Amos+1&version=NRSVUE
+- Amos 5:8 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Amos+5%3A8&version=NRSVUE
+- Amos 7 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Amos+7&version=NRSVUE
+- Amos 8 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Amos+8&version=NRSVUE
+- Amos 9 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Amos+9&version=NRSVUE
+
+## Amos scholarship / lexical controls
+- J. Blake Couey, "Amos," The Oxford Handbook of the Minor Prophets:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373262
+- NET Bible note on Amos 7:7–9 / disputed 'anakh:
+  https://classic.net.bible.org/passage.php/xml/xml/passage.php?passage=Amo+7%3A7-9
+- Working Preacher, Amos 7:7–17 discussion of 'anakh / plumb-line difficulty:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-15-3/commentary-on-amos-77-17-5
+- NET Bible note on Amos 9:6 / upper chambers + foundation supports:
+  https://classic.net.bible.org/passage.php?passage=Amo+9%3A6
+- Hebrew text of Amos 9:6:
+  https://biblehub.com/text/amos/9-6.htm
+- Cambridge Bible commentary on Amos 9:6 / firmament-vault tradition:
+  https://biblehub.com/commentaries/cambridge/amos/9.htm
+
+---
+
+# SECTION 54 — HOSEA + JOEL + AMOS COMPLETE
+
+## Strongest new findings
+
+1. **Hosea supplies another source-level case where one small social body projects an entire people: Hosea/Gomer/children embody national covenant states.**
+2. **The symbolic children show identity-state reversal without replacement: "not my people" becomes "my people"; "not pitied" becomes pitied.**
+3. **Judah + Israel gathered under one head gives a real paired/distributed→one-head image.**
+4. **Hosea 2 gives a remarkable layered response chain: heavens → earth → grain/wine/oil → Jezreel/people.**
+5. **That is one of the clearest upper-state→environment→biological-resource→population dependency sequences found so far.**
+6. **Hosea's rapid shifts among human, lion, leopard, bear, dove, vine, dew and tree imagery reinforce that one identity/process can be projected through radically different visible forms.**
+7. **Hosea 13's east wind explicitly dries fountain/spring and produces downstream material/economic loss.**
+8. **Hosea 14 ends in a strong distributed restored-tree state: dew → roots → branches → shade → grain/vine/fruit.**
+9. **Joel 1 describes cascading multi-stage ecological failure rather than one instant reset.**
+10. **Joel 2 gives one of the clearest moving transformation fronts: fire in front, flame behind, Eden-like land before, desolation after.**
+11. **The moving force consists of multiple tracks that do not jostle, a useful distributed-parallel-path analogue.**
+12. **Earthquake/heaven tremor/sun-moon-star darkening couple ground and sky at peak event.**
+13. **Joel's northern force is later represented as one elongated front/rear body spanning east sea ↔ west sea, a strong directional-axis analogue.**
+14. **Restoration reverses through soil → pasture → trees → rain → crops/stores; "repaying the years" is compensation/recovery, not literal rewind.**
+15. **Spirit poured on all flesh is a one-source→many-recipient distribution pattern, while still being theological rather than literal-fluid language.**
+16. **Joel 3 independently repeats Ezekiel's central-sanctuary→outgoing-fountain→restored-land geometry.**
+17. **Amos 7's fire vision links the great deep and land, but it is explicitly an aborted/cancelled vision and must not be put into the event timeline as completed fact.**
+18. **The famous Amos 7 "plumb line" must be treated cautiously because the underlying Hebrew 'anakh is disputed.**
+19. **Amos 8/9 gives explicit large-scale land rise→sink language using the Nile as its simile.**
+20. **Amos 9:1 gives genuine building-failure mechanics: strike capitals → thresholds shake → occupied structure collapses.**
+21. **Amos 9 maps vertical extremes from Sheol below to heaven above and places a serpent at the bottom-of-sea extreme, but that serpent's role is judgment agent, not demonstrated support-dragon.**
+22. **Amos 9:5–6 is the strongest Vardath-relevant result of the block: moving/melting earth + upper chambers in heaven + earth-founded vault/support + sea-water called and poured over the earth occur in one connected cosmographic passage.**
+23. **The exact Hebrew term rendered "vault" is uncertain, so the structural comparison must remain at upper-construction / earth-support / water-transfer level rather than claiming a precise lattice shape.**
+24. **Amos ends with inherited ruins repaired, inhabited cities rebuilt, gardens/vineyards restored and people replanted—another strong successor-state-not-blank-slate sequence.**
+25. **Across Hosea, Joel and Amos the strongest shared pattern is: system failure across sky/land/water/biology → transitional interval/judgment → water/environment reactivation → vegetation/productivity → inhabited restored land.**
+26. **No strict fingertrap occurs in these books, but Amos 9 gives a major cosmographic support analogue, Joel 2 gives a major moving-front/axial-body analogue, and Hosea 2 gives a major layered-response analogue.**
+27. **The cherub / Feathered Serpent / Quetzalcoatl / dragon / Squatter-Man comparison should continue as a functional phase-sequence test rather than a resemblance test; this block reinforces how often one underlying referent is represented through changing animal, plant, atmospheric and anthropomorphic forms.**
+
+## Next live block
+
+**Obadiah + Jonah + Micah**
+
+High priority:
+- Obadiah's Edom/Jacob–Esau national pair;
+- height / stars / rock-cleft imagery;
+- "day" reversal and redistributed land;
+- Jonah's descent sequence:
+  land → ship → ship interior → sea → fish;
+- sea storm;
+- casting/lot;
+- fish as enclosure/carrier;
+- "belly of Sheol";
+- waters/deep;
+- weeds wrapped around head;
+- roots/bars of mountains/earth;
+- upward delivery from fish to dry land;
+- plant → worm → east wind sequence;
+- Micah mountain melting / valleys splitting;
+- sea/deep imagery;
+- Zion/mountain restoration;
+- peoples flowing **up** to mountain;
+- old/new gathering;
+- ruler / birth / remnant;
+- strict test for whether Jonah supplies a real enclosure/cargo transfer analogue and whether Micah adds support-field or mountain-axis mechanics.
+
