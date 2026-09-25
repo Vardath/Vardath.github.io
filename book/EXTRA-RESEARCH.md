@@ -40877,3 +40877,1077 @@ Priority:
 - Kedar/Hazor tents/camels/winds;
 - Elam bow broken / four winds scatter / later restoration;
 - strict dragon-support test for Egypt snake imagery and four-winds dispersal.
+
+
+---
+
+# SECTION 50 progress F8 — Jeremiah 46–49
+## First-time research pass: Egypt/Nile flood-army geometry, serpent/forest/axes negative-control test, north-water torrent propagation, Moab highland/valley escape and broken horn/arm, Chemosh exile, Edom high nest collapse, Damascus restless-sea/labor imagery, Kedar/Hazor tent-network vulnerability, Elam bow failure and four-winds scattering, plus source-dependence controls for Moab/Isaiah and Edom/Obadiah
+
+Jeremiah 46–49 shifts from Judah’s collapse to a wide regional field of nations.
+
+The dominant process classes are:
+
+- **flood-like military propagation**;
+- **river/Nile expansion imagery**;
+- **serpent retreat**;
+- **forest cutting**;
+- **water rising from the north**;
+- **highland-to-lowland escape routes**;
+- **body-part power metaphors** such as horn/arm;
+- **eagle/high nest security failure**;
+- **restless sea / labor-pain imagery**;
+- **tent/mobile infrastructure capture**;
+- **four-direction scattering**;
+- **later restoration of scattered populations**.
+
+For Vardath Cosmology, Jeremiah 46 is especially important as a **dragon/serpent negative control**.
+
+The rule remains:
+
+> A serpent or dragon only becomes a serious Vardath dragon candidate if the text connects it to the ground-support lattice, spring/load-bearing behavior, support failure, or the geometry that turns the spiderweb into the fingertrap.
+
+Jeremiah 46’s serpent does **not** do that.
+
+It is Egypt personified as a retreating/hissing serpent while an invading army is compared to woodcutters.
+
+---
+
+# Jeremiah 46:1–2 — battle context is explicitly historical
+
+The first Egypt oracle is tied to:
+- Pharaoh Neco;
+- Carchemish;
+- Euphrates;
+- Nebuchadrezzar;
+- fourth year of Jehoiakim.
+
+## M50F8-1 — SOME LARGE-SCALE PROPHECY IMAGERY IS ANCHORED TO A SPECIFIC HISTORICAL MILITARY EVENT
+
+This is an important control.
+
+Not every flood/dragon/earth image:
+belongs to the Vardath world-turn event.
+
+---
+
+# Jeremiah 46:3–6 — military system accelerates then collapses into retreat
+
+Initial state:
+shield;
+horse;
+helmet;
+spear;
+armor;
+advance.
+
+Observed state:
+terror;
+fallback;
+stumbling;
+flight;
+no escape.
+
+## M50F8-2 — HIGH-PREPAREDNESS SYSTEM CAN CROSS RAPIDLY FROM OFFENSIVE EXPANSION INTO ROUT FAILURE
+
+Preparation level
+≠
+stability guarantee.
+
+---
+
+# Jeremiah 46:7–8 — Egypt rises like the Nile
+
+The text explicitly identifies:
+
+Egypt
+→ rising like Nile;
+waters surge;
+intention to cover earth/cities.
+
+This is a large-scale fluid analogy.
+
+## M50F8-3 — MILITARY EXPANSION CAN BE PROJECTED AS RIVER-STAGE RISE AND FLOODPLAIN COVERAGE
+
+The army:
+is not literal water.
+
+The Nile gives:
+- rising level;
+- lateral expansion;
+- land coverage;
+- unstoppable-seeming momentum.
+
+---
+
+# M50F8-4 — WATER-LIKE PROPAGATION MUST BE CLASSIFIED BY OBJECT TYPE BEFORE USE IN HYDROLOGICAL COSMOLOGY
+
+Here:
+water geometry
+maps
+army movement.
+
+It is not evidence that:
+literal upper-world water crossed a gate.
+
+---
+
+# Jeremiah 46:8 — “cover the earth” is local-imperial rhetoric, not measured planetary inundation
+
+Egypt’s boast:
+cover earth;
+destroy city/inhabitants.
+
+## M50F8-5 — UNIVERSAL-SOUNDING FLOOD LANGUAGE CAN FUNCTION AS IMPERIAL-SCALE EXPANSION RHETORIC
+
+Global wording
+≠
+global measured event by default.
+
+---
+
+# Jeremiah 46:10 — battle near Euphrates becomes sacrifice/blood-saturation image
+
+Sword:
+devours;
+is sated;
+drinks blood.
+
+## M50F8-6 — WEAPON CAN BE PERSONIFIED AS A CONSUMING FLUID-ABSORBING SYSTEM
+
+This is not literal sword metabolism.
+
+Object type:
+warfare personification.
+
+---
+
+# Jeremiah 46:11 — medicine fails
+
+Egypt is told:
+go obtain balm/medicines.
+
+Result:
+healing fails.
+
+## M50F8-7 — SYSTEM CAN REACH A DAMAGE STATE BEYOND AVAILABLE LOCAL REPAIR CAPACITY
+
+This parallels Jeremiah 30’s:
+incurable wound
+→ later higher-level healing.
+
+---
+
+# Jeremiah 46:13–19 — later Egypt oracle maps conquest into forced relocation
+
+Population:
+prepares baggage for exile.
+
+Memphis:
+desolation.
+
+## M50F8-8 — MAJOR REGIONAL NODE CAN SHIFT FROM INHABITED CENTER TO EVACUATION/DESOLATION STATE
+
+Again:
+population state
+is mutable.
+
+---
+
+# Jeremiah 46:20 — Egypt as beautiful heifer attacked from north
+
+Egypt:
+heifer.
+
+Threat:
+gadfly/attacker from north.
+
+## M50F8-9 — NATION CAN BE PROJECTED INTO ANIMAL BODY WITHOUT THE ANIMAL DEFINING ITS PHYSICAL GEOMETRY
+
+Important Squatter-Man/body control.
+
+---
+
+# Jeremiah 46:21 — hired soldiers compared with fattened calves
+
+They:
+turn;
+flee together.
+
+## M50F8-10 — BODY/ANIMAL IMAGES CAN MARK FUNCTIONAL STATE, NOT SPECIES IDENTITY
+
+Again:
+metaphor domain must remain clear.
+
+---
+
+# Jeremiah 46:22 — Egypt’s voice goes like a serpent
+
+This is the key dragon/serpent screening verse.
+
+Egypt:
+hisses/moves/voices like serpent
+as enemy approaches.
+
+No statement that:
+the serpent supports ground;
+holds up sky;
+forms a mesh;
+acts as spring;
+changes world support geometry.
+
+## M50F8-11 — SERPENT IMAGE WITHOUT SUPPORT FUNCTION DOES NOT QUALIFY AS VARDATH DRAGON-LATTICE EVIDENCE
+
+This is a crucial negative control.
+
+---
+
+# Jeremiah 46:22–23 — serpent sits inside forest-cutting metaphor field
+
+Invaders:
+come with axes;
+like woodcutters.
+
+Egypt:
+forest;
+dense/uncountable.
+
+Enemy:
+cuts forest.
+
+## M50F8-12 — SERPENT + FOREST IN SAME PASSAGE DOES NOT AUTOMATICALLY PRODUCE DRAGON-TREE/LATTICE IDENTITY
+
+The ordinary image:
+retreating Egypt inside a metaphorical forest
+while invading army fells it.
+
+No support mechanics are supplied.
+
+---
+
+# Jeremiah 46:23 — unsearchable forest is still cut down
+
+The forest:
+too dense to count/search.
+
+Invaders:
+more numerous.
+
+## M50F8-13 — LARGE COMPLEX NETWORK CAN FAIL THROUGH OVERWHELMING EXTERNAL REMOVAL WITHOUT INTERNAL GEOMETRIC TRANSFORMATION
+
+This is:
+node destruction,
+not fingertrap contraction.
+
+---
+
+# Jeremiah 46:27–28 — dispersed Israel/Jacob returns to quiet/rest state
+
+After regional catastrophe:
+return from far;
+quiet/ease;
+no fear.
+
+## M50F8-14 — REGIONAL SYSTEM FAILURE CAN COEXIST WITH LATER POPULATION RECONVERGENCE AND LOW-DISTURBANCE STATE
+
+This continues Jeremiah 30–33.
+
+---
+
+# Jeremiah 47:1–2 — waters rise from north as overflowing torrent
+
+Philistine oracle:
+
+waters
+→ rise from north
+→ become overflowing torrent
+→ overflow land
+→ city/inhabitants affected.
+
+## M50F8-15 — NORTHWARD-SOURCED HAZARD PROPAGATION CAN BE PROJECTED AS A RISING WATER FRONT
+
+Again:
+ordinary referent is invading military power.
+
+But the geometry:
+directional advancing front
+is valuable.
+
+---
+
+# M50F8-16 — ADVANCING WATER-FRONT IMAGE CAN MODEL PROPAGATION SPEED/AREA WITHOUT BEING LITERAL FLOOD REPORT
+
+Object type control remains essential.
+
+---
+
+# Jeremiah 47:3 — hoof/chariot/wheel sound precedes social failure
+
+The text uses:
+stamping;
+clatter;
+rumbling.
+
+Parents:
+cannot turn to children.
+
+## M50F8-17 — HIGH-ENERGY APPROACH CAN BE DETECTED ACOUSTICALLY BEFORE FULL SYSTEM CONTACT
+
+This is an early-warning variable.
+
+---
+
+# Jeremiah 47:5–7 — sword is commanded yet cannot rest before terminal condition
+
+The sword:
+continues until assigned purpose.
+
+## M50F8-18 — ACTIVE DESTRUCTIVE PROCESS CAN REMAIN IN MOTION UNTIL A TERMINAL CONDITION IS MET
+
+This parallels:
+Jeremiah storm not turning back.
+
+---
+
+# Jeremiah 48:1–6 — Moab oracle maps catastrophe across many terrain nodes
+
+Named sites:
+Nebo;
+Kiriathaim;
+Heshbon;
+Madmen;
+Horonaim;
+Luhith.
+
+Movement:
+up ascent;
+down descent;
+cry travels through terrain.
+
+## M50F8-19 — CATASTROPHE CAN BE RECONSTRUCTED AS A TOPOGRAPHIC ROUTE NETWORK RATHER THAN ONE POINT EVENT
+
+This is useful for the eventual geographic timeline.
+
+---
+
+# Jeremiah 48:6 — flee into wilderness
+
+Survival:
+leave built nodes
+→ move to wilderness.
+
+## M50F8-20 — OPEN LOW-INFRASTRUCTURE TERRAIN CAN BECOME TEMPORARY SURVIVAL ROUTE WHEN CITIES FAIL
+
+Compare Rechabites.
+
+---
+
+# Jeremiah 48:7 — trust in strongholds/treasures fails
+
+Fortification/resource accumulation:
+does not prevent capture.
+
+## M50F8-21 — STATIC DEFENSIVE CAPACITY CAN FAIL UNDER SYSTEMIC REGIONAL OVERRUN
+
+---
+
+# Jeremiah 48:7 — Chemosh goes into exile with priests/officials
+
+A deity:
+is narrated as moving with defeated institutional network.
+
+## M50F8-22 — DIVINE FIGURE CAN BE PROJECTED AS MOBILE WITH CULTIC/POLITICAL SYSTEM WITHOUT REQUIRING COSMIC BODY MOVEMENT
+
+Important mythology control.
+
+---
+
+# Jeremiah 48:10–13 — trust-object failure creates shame
+
+Moab:
+ashamed of Chemosh
+as Israel had been ashamed of Bethel.
+
+## M50F8-23 — FAILED PROTECTIVE MODEL CAN BECOME POST-EVENT SOURCE-DISCONFIRMATION SIGNAL INSIDE THE TEXT
+
+---
+
+# Jeremiah 48:11–12 — undisturbed wine-vessel image becomes decanting/emptying/shattering process
+
+Moab:
+like wine settled on lees,
+not poured vessel-to-vessel.
+
+Then:
+tilters/pourers come;
+vessels emptied;
+jars broken.
+
+## M50F8-24 — LONG-STABLE SYSTEM CAN BE DISRUPTED THROUGH CONTAINER-TO-CONTAINER TRANSFER AND VESSEL BREAKAGE
+
+This is a strong state-change image.
+
+But:
+population/political identity
+is the referent.
+
+---
+
+# Jeremiah 48:17 / 25 — rod/horn/arm power is broken
+
+Moab’s:
+horn cut off;
+arm broken.
+
+## M50F8-25 — STRUCTURAL POWER CAN BE PROJECTED THROUGH BODY EXTENSIONS SUCH AS HORN/ARM
+
+No literal giant-body dismemberment is required.
+
+---
+
+# Jeremiah 48:28 — dwell in rock / dove at ravine edge
+
+Survival image:
+leave cities;
+occupy rock;
+like dove nesting by chasm.
+
+## M50F8-26 — HIGH/EDGE TERRAIN CAN FUNCTION AS REFUGE AFTER URBAN FAILURE
+
+This is terrain-specific refuge logic.
+
+---
+
+# Jeremiah 48:32–34 — waters and agriculture become casualty indicators
+
+Vineyards;
+Sibmah;
+Jazer;
+springs/waters;
+Heshbon;
+Elealeh;
+Jahaz.
+
+## M50F8-27 — AGRICULTURAL + WATER NODES CAN MAP THE SPREAD OF REGIONAL COLLAPSE
+
+---
+
+# Jeremiah 48:35–38 — rooftops/public spaces and containers become mourning surfaces
+
+Every roof/public square:
+mourning.
+
+Moab:
+broken like unwanted vessel.
+
+## M50F8-28 — CITY-WIDE SOCIAL OUTPUT CAN BE MAPPED ONTO CONTAINER BREAKAGE WITHOUT LITERAL CITY-AS-JAR MECHANICS
+
+---
+
+# Jeremiah 48:40 — eagle spreads wings over Moab
+
+Attacker:
+like eagle;
+wings spread.
+
+## M50F8-29 — WING-SPREAD IMAGE CAN REPRESENT LARGE-AREA COVERAGE/ENCIRCLEMENT
+
+This is an aerial field analogue,
+not proof of a sky-dragon lattice.
+
+---
+
+# Jeremiah 48:43–44 — fear/pit/snare form serial trap sequence
+
+Escape:
+from terror
+→ falls in pit.
+
+Climb out:
+→ caught in snare.
+
+## M50F8-30 — MULTI-STAGE HAZARD FIELD CAN CONTAIN NESTED FAILURE MODES WHERE ESCAPING ONE TRAP ENTERS ANOTHER
+
+Excellent survival-system rule.
+
+---
+
+# Jeremiah 48:47 — later restoration remains after judgment
+
+Moab:
+future fortunes restored.
+
+## M50F8-31 — REGIONAL DESTRUCTION ORACLE CAN TERMINATE IN RESTORATION RATHER THAN ABSOLUTE END
+
+---
+
+# Jeremiah 48 source-dependence control — Isaiah 15–16
+
+Jeremiah 48 and Isaiah 15–16 share substantial wording and Moab material.
+
+Scholarship broadly agrees there is literary/textual relationship,
+while details of:
+- direction of borrowing;
+- shared earlier oracle;
+- mutual textual influence
+remain debated.
+
+## M50F8-32 — MOAB PARALLELS ACROSS ISAIAH/JEREMIAH MUST NOT BE SCORED AS FULLY INDEPENDENT WITNESSES
+
+They increase:
+tradition persistence.
+
+They do not automatically increase:
+independent event count.
+
+---
+
+# Jeremiah 49:1–6 — Ammon/Milcom oracle reverses dispossession
+
+Ammon:
+occupies Gad-related territory.
+
+Future:
+Israel dispossesses those who dispossessed it.
+
+Milcom:
+goes into exile with priests/officials.
+
+## M50F8-33 — TERRITORIAL CONTROL CAN REVERSE DIRECTION ACROSS SUCCESSIVE REGIME STATES
+
+---
+
+# Jeremiah 49:4 — valleys become confidence object
+
+Ammon boasts in:
+valleys;
+flowing valley/wealth.
+
+## M50F8-34 — TERRAIN ADVANTAGE CAN BECOME FALSE SECURITY WHEN LARGER CONTROL FIELD CHANGES
+
+---
+
+# Jeremiah 49:7–11 — Edom’s wisdom/security system fails
+
+Teman wisdom:
+fails.
+
+Fugitives:
+must flee deep.
+
+## M50F8-35 — INFORMATION/STRATEGIC REPUTATION DOES NOT GUARANTEE SURVIVAL UNDER SYSTEMIC OVERRUN
+
+---
+
+# Jeremiah 49:14–16 — high rock dwelling/eagle-height nest fails
+
+Edom:
+dwells in clefts/rock;
+holds height;
+makes nest as high as eagle.
+
+Yet:
+brought down.
+
+## M50F8-36 — HIGH ALTITUDE / DIFFICULT ACCESS DOES NOT GUARANTEE SECURITY AGAINST A HAZARD WITH SUFFICIENT REACH
+
+This is a strong Vardath refuge control.
+
+High ground:
+not universally safe.
+
+---
+
+# M50F8-37 — REFUGE VALUE MUST BE MODELED AGAINST HAZARD TYPE, NOT ELEVATION ALONE
+
+Flood:
+height may help.
+
+Airborne/plasma/warfare:
+height may not.
+
+---
+
+# Jeremiah 49:19–21 — lion/Jordan-thicket attack and earth-shaking fall
+
+A lion:
+comes from Jordan thickets
+against secure habitation.
+
+Fall:
+sound causes earth to quake;
+cry heard far away.
+
+## M50F8-38 — LOCAL SYSTEM COLLAPSE CAN BE PROJECTED AS REGIONALLY DETECTABLE SHOCK/ACOUSTIC EVENT
+
+---
+
+# Jeremiah 49:22 — eagle rises/spreads wings over Bozrah; hearts become laboring-woman state
+
+Aerial attack:
+spread wings.
+
+Defender:
+labor-pain body state.
+
+## M50F8-39 — AERIAL COVERAGE + LABOR-CONTRACTION IMAGERY CAN COEXIST WITHOUT DEFINING A PHYSICAL BIRTH THROAT
+
+---
+
+# Jeremiah 49 Edom source-dependence control — Obadiah
+
+Jeremiah 49:7–22 and Obadiah share extensive wording.
+
+Scholarly options include:
+- Jeremiah uses Obadiah;
+- Obadiah uses Jeremiah;
+- both draw on an earlier common oracle.
+
+No consensus is required for the methodological result.
+
+## M50F8-40 — EDOM PARALLELS ACROSS JEREMIAH/OBADIAH ARE LITERARILY DEPENDENT OR SHARE TRADITION AND MUST NOT BE DOUBLE-COUNTED AS INDEPENDENT GEOMETRY
+
+---
+
+# Jeremiah 49:23–27 — Damascus: restless sea + labor pains + fire
+
+Text:
+bad news;
+melting courage;
+troubled/restless sea;
+no quiet;
+turn to flee;
+labor pains;
+fire consumes walls/palaces.
+
+## M50F8-41 — WATER TURBULENCE, BODY CONTRACTION, AND STRUCTURAL FIRE CAN BE COMBINED IN ONE CATASTROPHE DESCRIPTION WITHOUT SHARING ONE PHYSICAL MECHANISM
+
+This is a strong anti-overfusion control.
+
+---
+
+# Jeremiah 49:23 — “sea cannot be quiet” parallels Isaiah/Jeremiah restless-water states
+
+## M50F8-42 — RESTLESS WATER CAN FUNCTION AS A DYNAMIC-STATE METAPHOR FOR SOCIAL PANIC
+
+Not automatically literal ocean mechanics.
+
+---
+
+# Jeremiah 49:28–33 — Kedar/Hazor: tents/flocks/camels are portable infrastructure
+
+Invader takes:
+tents;
+flocks;
+curtains;
+vessels;
+camels.
+
+## M50F8-43 — MOBILE SOCIETY STILL HAS A CAPTURABLE INFRASTRUCTURE STACK
+
+Mobility:
+does not mean no assets.
+
+---
+
+# Jeremiah 49:31 — Hazor has no gates/bars
+
+The population:
+dwells apart,
+at ease,
+without fortified gate/bar system.
+
+## M50F8-44 — OPEN LOW-FORTIFICATION SYSTEM CAN GAIN MOBILITY/independence BUT LOSE BOUNDARY DEFENSE
+
+Tradeoff:
+mobility versus enclosure.
+
+---
+
+# Jeremiah 49:32 — population is scattered to every wind
+
+## M50F8-45 — “EVERY WIND” CAN FUNCTION AS OMNIDIRECTIONAL DISPERSAL LANGUAGE
+
+This is geographic scattering,
+not proof of literal atmospheric transport.
+
+---
+
+# Jeremiah 49:34–36 — Elam bow is broken, then four winds arrive from four ends of heaven
+
+Bow:
+chief strength.
+
+Four winds:
+from four ends;
+scatter population in all directions.
+
+This is a striking directional system.
+
+## M50F8-46 — CENTRAL CAPABILITY FAILURE CAN PRECEDE FOUR-DIRECTION DISPERSAL
+
+Sequence:
+defense fails
+→ multidirectional scattering.
+
+---
+
+# Jeremiah 49:36 — four winds are a directional-completeness structure
+
+Four winds:
+north/south/east/west type totality.
+
+## M50F8-47 — FOUR-DIRECTION LANGUAGE CAN MODEL COMPLETE DISPERSAL WITHOUT REQUIRING FOUR PHYSICAL WORLD-SUPPORT STREAMS
+
+Important number control.
+
+---
+
+# M50F8-48 — “FOUR ENDS OF HEAVEN” SHOULD BE TREATED FIRST AS TOTAL-DIRECTION IDIOM, NOT LITERAL RECTANGULAR COSMOS
+
+Record geometry;
+do not over-literalize.
+
+---
+
+# Jeremiah 49:38 — throne is set in Elam
+
+The same throne/control image seen at Tahpanhes:
+imperial/divine control node
+is projected onto conquered space.
+
+## M50F8-49 — THRONE IMAGE MARKS CONTROL-STATE REPLACEMENT, NOT NECESSARILY PHYSICAL COSMIC SEAT
+
+---
+
+# Jeremiah 49:39 — Elam later restored
+
+Scatter:
+not terminal.
+
+## M50F8-50 — OMNIDIRECTIONAL DISPERSAL CAN LATER BE FOLLOWED BY RECONVERGENCE/RESTORATION
+
+This matches Jeremiah’s wider:
+scatter→gather architecture.
+
+---
+
+# Jeremiah 46–49 — strict Vardath serpent/dragon screening
+
+## Jeremiah 46 serpent
+Yes:
+Egypt’s voice/retreat compared to serpent.
+
+## ground-support function
+Absent.
+
+## spring/load-bearing function
+Absent.
+
+## broad spiderweb
+Absent.
+
+## support failure caused by serpent movement
+Absent.
+
+## water/terrain geometry caused by serpent
+Absent.
+
+## narrowing into throat
+Absent.
+
+### Strict result
+
+**Jeremiah 46’s serpent is not a Vardath dragon-support candidate.**
+
+It is valuable precisely because:
+it prevents shape-matching from outrunning function.
+
+---
+
+# Jeremiah 46–49 — direct Vardath mechanism comparison
+
+Strong subcomponent analogues:
+
+- Nile-like expansion front;
+- north-sourced water/torrent imagery;
+- long-range propagation;
+- topographic route networks;
+- high-ground refuge failure;
+- wing-spread coverage;
+- serial traps;
+- restless-sea dynamics;
+- four-direction scattering;
+- later regathering.
+
+Missing:
+
+- dragon ground-support spring;
+- spiderweb lattice;
+- same connected support system;
+- geometry change to fingertrap;
+- axial throat;
+- direct inter-world transfer;
+- re-expansion into support state.
+
+## M50F8-51 — JEREMIAH 46–49 EXPANDS PROPAGATION/REFUGE/DISPERSAL VOCABULARY BUT DOES NOT SUPPLY THE CORE FINGERTRAP MECHANISM
+
+---
+
+# Jeremiah 46–49 pair / process matrix
+
+## Egypt / Nile
+nation-army / rising flood analogue.
+
+## army / water front
+military propagation / fluid geometry.
+
+## Egypt serpent / woodcutters
+retreating personified nation / invading removers.
+
+## forest / axes
+dense system / node-removal process.
+
+## north waters / Philistia
+propagating front / target field.
+
+## city / wilderness
+failed fixed node / temporary escape terrain.
+
+## Moab vessel / pourers
+stable container / disruptive transfer operators.
+
+## horn-arm / defeat
+power extensions / broken capability.
+
+## winged eagle / land
+aerial coverage / target region.
+
+## fear-pit-snare
+serial hazard states.
+
+## high nest / Edom
+elevated refuge / failed security.
+
+## sea / Damascus
+restless dynamic field / social panic analogue.
+
+## tents-camels / Kedar
+mobile infrastructure / capturable assets.
+
+## bow / Elam
+primary defense capability / broken capability.
+
+## four winds / Elam
+omnidirectional dispersal field / scattered population.
+
+## scatter / restore
+dispersion / later reconvergence.
+
+---
+
+# Jeremiah 46–49 continuous transformation timeline
+
+Egyptian army prepares at Carchemish
+→ offensive system advances
+→ collapses into retreat
+→ Egypt is projected as rising Nile
+→ expansion aims to cover cities/land
+→ battle reaches terminal defeat near Euphrates
+→ medicine/healing fails
+→ later Egypt oracle shifts to invasion/exile
+→ heifer/calf animal-body metaphors describe national state
+→ Egypt’s voice becomes serpent-like
+→ invaders become axe-bearing woodcutters
+→ dense forest is cut down
+→ Israel/Jacob later returns to quiet
+→ Philistine oracle begins with waters rising from north
+→ torrent overwhelms land/cities
+→ acoustic approach precedes social breakdown
+→ Moab catastrophe propagates through named highland/valley nodes
+→ city refuge gives way to wilderness flight
+→ strongholds/treasures fail
+→ Chemosh/cultic network enters exile
+→ settled wine-vessel state is disturbed by pouring/emptying
+→ horn/arm power is broken
+→ rock/chasm refuge is sought
+→ water/agricultural nodes fail
+→ eagle wings cover Moab
+→ escaping one trap enters pit/snare sequence
+→ Moab later receives restoration clause
+→ Ammon territorial control reverses
+→ Milcom/cultic network enters exile
+→ Edom wisdom/security fails
+→ rock/eagle-height refuge fails
+→ lion attack / earth-shaking fall imagery intensifies
+→ aerial wing-spread and labor pain mark collapse
+→ Damascus becomes restless-sea/labor/fire system
+→ Kedar/Hazor mobile infrastructure is captured
+→ no-gate/no-bar settlement loses protection
+→ populations scatter to winds
+→ Elam’s bow/primary capability breaks
+→ four winds from four directions scatter Elam broadly
+→ throne/control state is imposed
+→ Elam later receives restoration clause.
+
+---
+
+# New master-mechanism additions from Jeremiah 46–49
+
+## M50F8-1 — PROPHECY IMAGERY CAN BE ANCHORED TO SPECIFIC HISTORICAL BATTLE
+## M50F8-2 — HIGH-PREPAREDNESS SYSTEM CAN RAPIDLY ROUT
+## M50F8-3 — MILITARY EXPANSION CAN PROJECT AS RIVER-FLOOD GEOMETRY
+## M50F8-4 — WATER-LIKE PROPAGATION REQUIRES OBJECT-TYPE CONTROL
+## M50F8-5 — “COVER EARTH” CAN BE IMPERIAL RHETORIC
+## M50F8-6 — WEAPON CAN BE PERSONIFIED AS CONSUMING/DRINKING SYSTEM
+## M50F8-7 — DAMAGE CAN EXCEED LOCAL REPAIR CAPACITY
+## M50F8-8 — INHABITED CENTER CAN BECOME EXILE/DESOLATION NODE
+## M50F8-9 — NATION-AS-ANIMAL ≠ LITERAL ANIMAL GEOMETRY
+## M50F8-10 — ANIMAL IMAGE CAN MARK FUNCTIONAL STATE
+## M50F8-11 — SERPENT WITHOUT SUPPORT FUNCTION ≠ VARDATH DRAGON EVIDENCE
+## M50F8-12 — SERPENT+FOREST ≠ DRAGON-TREE/LATTICE IDENTITY
+## M50F8-13 — COMPLEX NETWORK CAN FAIL BY EXTERNAL NODE REMOVAL
+## M50F8-14 — REGIONAL FAILURE CAN END IN RECONVERGENCE/QUIET
+## M50F8-15 — NORTH-SOURCED HAZARD CAN PROJECT AS RISING WATER FRONT
+## M50F8-16 — WATER-FRONT IMAGE ≠ LITERAL FLOOD REPORT BY DEFAULT
+## M50F8-17 — APPROACH CAN BE DETECTED ACOUSTICALLY BEFORE CONTACT
+## M50F8-18 — DESTRUCTIVE PROCESS CAN RUN UNTIL TERMINAL CONDITION
+## M50F8-19 — CATASTROPHE CAN BE MAPPED AS TOPOGRAPHIC ROUTE NETWORK
+## M50F8-20 — WILDERNESS CAN BECOME TEMPORARY SURVIVAL ROUTE
+## M50F8-21 — STATIC STRONGHOLDS CAN FAIL UNDER REGIONAL OVERRUN
+## M50F8-22 — DIVINE FIGURE CAN MOVE WITH CULTIC SYSTEM WITHOUT COSMIC BODY MOVEMENT
+## M50F8-23 — FAILED PROTECTIVE MODEL CAN BECOME SOURCE-DISCONFIRMATION SIGNAL
+## M50F8-24 — LONG-STABLE SYSTEM CAN BE DISRUPTED THROUGH CONTAINER TRANSFER/BREAKAGE
+## M50F8-25 — HORN/ARM CAN PROJECT SYSTEM POWER
+## M50F8-26 — HIGH/EDGE TERRAIN CAN SERVE AS REFUGE
+## M50F8-27 — AGRICULTURAL/WATER NODES CAN MAP REGIONAL COLLAPSE
+## M50F8-28 — CONTAINER BREAKAGE CAN MODEL CITY/SOCIAL FAILURE
+## M50F8-29 — WING-SPREAD CAN MODEL LARGE-AREA COVERAGE
+## M50F8-30 — MULTI-STAGE HAZARD CAN CONTAIN SERIAL TRAPS
+## M50F8-31 — DESTRUCTION ORACLE CAN TERMINATE IN RESTORATION
+## M50F8-32 — ISAIAH/JEREMIAH MOAB PARALLELS REQUIRE DEPENDENCE CONTROL
+## M50F8-33 — TERRITORIAL CONTROL CAN REVERSE
+## M50F8-34 — TERRAIN ADVANTAGE CAN BECOME FALSE SECURITY
+## M50F8-35 — STRATEGIC WISDOM REPUTATION ≠ SURVIVAL GUARANTEE
+## M50F8-36 — HIGH ELEVATION ≠ UNIVERSAL SAFETY
+## M50F8-37 — REFUGE VALUE DEPENDS ON HAZARD TYPE
+## M50F8-38 — LOCAL COLLAPSE CAN BE REGIONALLY DETECTABLE
+## M50F8-39 — WING-SPREAD + LABOR ≠ PHYSICAL BIRTH THROAT
+## M50F8-40 — JEREMIAH/OBADIAH EDOM PARALLELS REQUIRE DEPENDENCE CONTROL
+## M50F8-41 — WATER/BODY/FIRE IMAGES CAN COEXIST WITHOUT ONE PHYSICAL MECHANISM
+## M50F8-42 — RESTLESS WATER CAN MODEL SOCIAL PANIC
+## M50F8-43 — MOBILE SOCIETY STILL HAS CAPTURABLE INFRASTRUCTURE
+## M50F8-44 — LOW-FORTIFICATION MOBILITY TRADES OFF AGAINST BOUNDARY DEFENSE
+## M50F8-45 — “EVERY WIND” CAN BE OMNIDIRECTIONAL DISPERSAL IDIOM
+## M50F8-46 — PRIMARY CAPABILITY FAILURE CAN PRECEDE FOUR-DIRECTION SCATTER
+## M50F8-47 — FOUR-DIRECTION LANGUAGE ≠ FOUR WORLD-SUPPORT STREAMS
+## M50F8-48 — FOUR ENDS OF HEAVEN ≠ LITERAL RECTANGULAR COSMOS BY DEFAULT
+## M50F8-49 — THRONE IMAGE MARKS CONTROL REPLACEMENT
+## M50F8-50 — OMNIDIRECTIONAL DISPERSAL CAN LATER RECONVERGE
+## M50F8-51 — JEREMIAH 46–49 EXPANDS SUBCOMPONENT VOCABULARY, NOT CORE FINGERTRAP MECHANISM
+
+---
+
+# Number / timing register — Jeremiah 46–49
+
+Record without forcing:
+
+- Jeremiah 46 first oracle: **fourth year of Jehoiakim**, tied to Carchemish.
+- Jeremiah 49 Elam oracle: dated to the **beginning of Zedekiah’s reign**.
+- Jeremiah 49 uses **four winds / four ends of heaven** as total-direction scattering language.
+- these four directions are not a demonstrated four-world or four-support-lattice count.
+- no dragon/lattice-spring count.
+- no fingertrap throat duration.
+- no world-layer count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 46–49
+
+1. Working primary texts: Jeremiah 46–49 NRSVUE.
+2. Jeremiah 46:2 explicitly anchors its first Egypt oracle to the Battle of Carchemish and the fourth year of Jehoiakim.
+3. Nile imagery in Jeremiah 46 is a military expansion metaphor; literal hydrological inundation should not be inferred from it.
+4. Jeremiah 46’s serpent image describes/personifies Egypt in retreat and does not supply load-bearing/support mechanics.
+5. Modern scholarship debates the dating and redactional history of the Egypt oracles, especially the second section; some recent work argues for later compositional horizons. Historical correspondence is therefore not uniform across the whole chapter.
+6. Jeremiah 47’s northern “waters” are conventionally understood as military invasion imagery.
+7. Jeremiah 48 shares extensive textual material with Isaiah 15–16. Scholarship recognizes literary/textual relationship, while direction and transmission history remain debated.
+8. Therefore Isaiah/Jeremiah Moab parallels should increase tradition-persistence scoring rather than independent-witness count.
+9. Jeremiah 49:7–22 shares extensive wording with Obadiah. Scholars debate whether Jeremiah borrowed from Obadiah, Obadiah from Jeremiah, or both from a shared earlier oracle.
+10. Therefore Jeremiah/Obadiah Edom parallels are not independent by default.
+11. Jeremiah 49’s “four winds” and “four ends of heaven” are best treated first as total-direction scattering imagery.
+12. No dragon/lattice-spring, broad spiderweb, same-network fingertrap transformation or inter-world throat appears.
+13. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Jeremiah 46–49
+
+Primary:
+- Jeremiah 46 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+46&version=NRSVUE
+- Jeremiah 47 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+47&version=NRSVUE
+- Jeremiah 48 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+48&version=NRSVUE
+- Jeremiah 49 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+49&version=NRSVUE
+
+Scholarly / textual:
+- Gad Barnea, “Why was your bull washed away? (Jer 46:15): The Achaemenid Context of the Oracles against Egypt”:
+  https://doi.org/10.13109/9783666573644.79
+- Richard D. Weis, “Patterns of Mutual Influence in the Textual Transmission of the Oracles Concerning Moab in Isaiah and Jeremiah”:
+  https://doi.org/10.1163/ej.9789004186576.i-468.55
+- Jong-Kyung Lee, comparative work on Isaiah 15–16 and Jeremiah 48:
+  https://doi.org/10.1093/oso/9780198816768.003.0005
+- Cooper Smith, “Inner-Biblical Allusion and the Direction of Dependence: Toward a Comprehensive List of Criteria”:
+  https://doi.org/10.5508/jhs29632
+- De Gruyter study, “The Relationship between Obad 1–7 and Jer 49:7–22 and its Implications for the Study of Obad 1–7”:
+  https://doi.org/10.1515/9783110809633.99
+
+---
+
+# SECTION 50F8 CHECKPOINT — JEREMIAH 46–49 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 46’s Nile/flood language is clearly attached to military propagation, giving a strong object-type control against turning every flood image into literal hydrology.**
+2. **The Egypt serpent is a major negative control: serpent shape alone does not qualify as a Vardath dragon; no ground-support, spring, lattice or terrain-support role appears.**
+3. **Serpent + forest + axes in one scene still does not yield dragon-tree/lattice mechanics; the process is national retreat plus metaphorical forest cutting.**
+4. **Jeremiah 47 adds a north-sourced rising-water-front geometry, again used for invading-force propagation rather than literal gate-water transfer.**
+5. **Jeremiah 48 provides a strong terrain-route catastrophe map, container-transfer imagery, broken horn/arm power, wing-spread coverage and serial fear→pit→snare hazards.**
+6. **Moab material substantially overlaps Isaiah 15–16, so those parallels must be scored as shared/inherited textual tradition rather than separate independent witnesses.**
+7. **Edom’s high eagle-nest security fails, proving that high ground is not universally safe; refuge value depends on hazard type.**
+8. **Jeremiah 49’s Edom oracle substantially overlaps Obadiah, and the direction of dependence is debated; it must not be double-counted.**
+9. **Kedar/Hazor shows that mobile tent societies still possess capturable infrastructure and trade mobility for lower fixed-boundary defense.**
+10. **Elam’s broken bow followed by four-winds scattering gives a clear capability-failure→omnidirectional-dispersal sequence, but “four winds” should not be converted into four physical world-support streams.**
+11. **Scatter→restoration remains a recurring architecture even after very broad dispersal.**
+12. **Strict spiderweb→fingertrap status remains negative; propagation, refuge and dispersal vocabulary is substantially expanded.**
+
+### Next live block
+
+**Jeremiah 50–51 — Babylon**
+
+Priority:
+- enemy from north against Babylon itself;
+- Israel/Judah move together and ask road to Zion — route memory;
+- lost sheep / shepherds leading astray;
+- mountain/hill movement and forgotten resting place;
+- flee from Babylon / be first goats before flock;
+- multi-nation northern attack;
+- Babylon as hammer of whole earth;
+- trap/set snare without awareness;
+- opened storehouses/weapons;
+- drought on waters / waters dry;
+- lion from Jordan thickets repeated from Edom — dependence control;
+- sword across social/institutional classes;
+- fugitives escaping Babylon;
+- sea rises over Babylon / waves cover;
+- maker/stretching heavens / establishing earth / wind from storehouses;
+- “portion of Jacob” not like idols;
+- war-club shatters nations;
+- mountain destroyed / burnt mountain / rolled down from rocks;
+- banner/signal network;
+- walls/gates failure;
+- Euphrates scroll-stone sign-act: scroll read, stone tied to it, thrown into river, sinks and does not rise — VERY HIGH PRIORITY carrier + archive + submersion mechanics;
+- compare sea/waves, mountain roll-down, wall failure, and weighted scroll sinking to Vardath transition mechanics;
+- verify which Babylon sections repeat earlier Jeremiah material and avoid double-counting.
