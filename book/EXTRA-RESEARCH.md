@@ -10,6 +10,22 @@ That archive is the authoritative earlier research and must be read/skimming-foc
 
 This file is the **active continuation** beginning with **Isaiah 36**.
 
+## MANDATORY THREE-FILE ANTI-DUPLICATION RULE
+
+Before starting **any** new research, always check the actual research content in all three files:
+
+1. `book/EXTRA-RESEARCH-PART-1-THROUGH-ISAIAH-35.md` — authoritative Part 1 archive.
+2. `book/EXTRA-RESEARCH.md` — preserved continuation research from Isaiah 36 through the point reached before Part 2 was created.
+3. `book/EXTRA-RESEARCH-PART-2.md` — new append-only continuation from this point onward.
+
+Do not determine progress from memory, old checkpoints, section numbers, commit names, or the tail of only one file. Search the relevant book/chapter range and distinctive headings in **Part 1 and EXTRA-RESEARCH.md first**, then check Part 2. If research already exists in substance, do not repeat it.
+
+**Do not move, duplicate, consolidate, or rewrite the existing research from Part 1 or EXTRA-RESEARCH into Part 2.** They remain separate archives specifically so completed work is remembered without needless duplication.
+
+All research completed from this point onward must be appended only to `book/EXTRA-RESEARCH-PART-2.md`, including recovered omissions from earlier in the reading order.
+
+After every Part 2 append, verify the actual end of Part 2 before continuing.
+
 ### Research method
 
 Proceed through the reconstructed 88-book Bible in the established section order.
