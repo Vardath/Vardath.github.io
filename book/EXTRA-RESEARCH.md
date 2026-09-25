@@ -37358,3 +37358,1312 @@ Priority:
 - rewrite after destruction with added material;
 - compare covenant-cut passage between halves to true split→passage geometry;
 - compare scroll destruction→rewrite with knowledge redundancy and archive resilience.
+
+
+---
+
+# SECTION 50 progress F5 — Jeremiah 34–36
+## First-time research pass: liberty→re-enslavement reversal, covenant-cut calf split into halves with human passage between, ironic “release” of sword/famine/pestilence, Rechabite long-duration rule transmission and mobile tent strategy, emergency relocation into Jerusalem, scroll dictation and public reading, source-provenance interrogation, column-by-column cutting/burning, hiding of messengers, and reconstruction of destroyed text with added material
+
+Jeremiah 34–36 is a high-value **split-passage / cultural-memory / textual-resilience** block.
+
+Its three chapters form striking contrasts:
+
+### Jeremiah 34
+people proclaim release
+→ actually free slaves
+→ reverse decision
+→ recapture them
+→ covenant rite is remembered:
+calf cut in two
+→ participants pass between the separated parts
+→ covenant breakers become subject to the fate symbolized by the split body.
+
+### Jeremiah 35
+one ancestral command
+→ preserved across generations
+→ embodied in a mobile tent-based lifestyle
+→ temporarily modified only because military pressure forces the group into Jerusalem.
+
+### Jeremiah 36
+spoken messages
+→ dictated to Baruch
+→ written on scroll
+→ publicly read
+→ carried into official network
+→ king cuts scroll column by column
+→ burns entire physical copy
+→ messenger pair survives/hides
+→ text is dictated again
+→ second scroll preserves former words
+→ additional material is added.
+
+For Vardath Cosmology, Jeremiah 34 contains a **real divided-object→passage-between-halves geometry**, but it still fails the strict dragon-lattice/fingertrap test because:
+- the object is a sacrificed calf;
+- it is not ground-supporting;
+- the two halves are not a preserved woven lattice;
+- no spring/tension network narrows;
+- no worlds become adjacent;
+- no reopening/rejoining of the same support system is described.
+
+Jeremiah 36, meanwhile, is one of the most important information-resilience texts so far.
+
+---
+
+# Jeremiah 34:1–7 — only two fortified cities remain besides Jerusalem
+
+Babylonian control pressure:
+Jerusalem;
+Lachish;
+Azekah.
+
+These are named as the fortified cities still holding out.
+
+## M50F5-1 — SYSTEM-WIDE COLLAPSE CAN LEAVE A SMALL NUMBER OF LAST FORTIFIED NODES
+
+This is a useful late-stage map variable.
+
+Stronghold count
+shrinks toward:
+few surviving nodes.
+
+---
+
+# Jeremiah 34:1–3 — Zedekiah’s movement is constrained by hostile control network
+
+City:
+falls.
+
+King:
+cannot escape;
+captured;
+transferred to Babylon.
+
+## M50F5-2 — HIGH-STATUS CONTROL NODE CAN LOSE MOBILITY WHEN SURROUNDING NETWORK COLLAPSES
+
+Rank:
+does not guarantee route access.
+
+---
+
+# Jeremiah 34:8–10 — liberty is first proclaimed and enacted
+
+Covenant:
+made.
+
+Male/female Hebrew slaves:
+released.
+
+The text explicitly says:
+they obeyed
+and set them free.
+
+## M50F5-3 — SOCIAL CONTROL SYSTEM CAN ENTER A REAL RELEASE STATE BEFORE LATER REVERSAL
+
+This is not only:
+promised liberation.
+
+The state actually changes.
+
+---
+
+# Jeremiah 34:11 — release is reversed by recapture
+
+Afterward:
+former slaveholders
+→ turn back
+→ take freed people again
+→ force them back into slavery.
+
+## M50F5-4 — SYSTEM CAN REVERSE A SUCCESSFUL LIBERATION AND RE-IMPOSE THE PRIOR CONTROL STATE
+
+This is a genuine:
+A → B → A
+reversal.
+
+### Vardath control
+
+Not every apparent “return” is:
+restoration.
+
+A return can be:
+regression to failed prior state.
+
+---
+
+# M50F5-5 — TEMPORARY RELIEF CAN PRODUCE PREMATURE REVERSION TO THE OLD SYSTEM
+
+Historical reconstruction commonly links the reversal to the temporary withdrawal of Babylonian forces when an Egyptian relief force appeared.
+
+The local elite may have interpreted:
+external pressure ↓
+as
+crisis over.
+
+Then:
+old control practices return.
+
+This is highly relevant to catastrophe recovery.
+
+A temporary lull
+≠
+terminal stability.
+
+---
+
+# Jeremiah 34:13–14 — seven-year release law provides a periodic social clock
+
+The passage recalls:
+six years service
+→ seventh-year release.
+
+## M50F5-6 — PERIODIC RELEASE RULE CAN OPERATE ON A FIXED SOCIAL TIME CYCLE
+
+This is a real **seven-year** interval in the legal tradition.
+
+### Number control
+
+It belongs to:
+debt-servitude law.
+
+It is not evidence that:
+Vardath gate opens every seven years.
+
+---
+
+# Jeremiah 34:15–16 — “turn” occurs twice in opposite directions
+
+First:
+turn/repent toward right action
+→ release.
+
+Then:
+turn back
+→ re-enslave.
+
+## M50F5-7 — DIRECTIONAL REVERSAL WORDING CAN MARK OPPOSITE SOCIAL STATES WITHOUT PHYSICAL GEOMETRIC REVERSAL
+
+Another control for “turning” language.
+
+---
+
+# Jeremiah 34:17 — ironic “liberty/release” is transferred from people to hazards
+
+Because people failed to grant release,
+the text says the source will proclaim “release” to:
+
+- sword;
+- pestilence;
+- famine.
+
+This is a striking semantic inversion.
+
+## M50F5-8 — SAME CONTROL WORD CAN BE REASSIGNED FROM BENEFICIAL HUMAN RELEASE TO HAZARD RELEASE
+
+Earlier:
+release constrained people.
+
+Now:
+release hazards.
+
+The released object class changes.
+
+---
+
+# M50F5-9 — ALWAYS ASK: WHAT EXACTLY IS BEING RELEASED?
+
+“Release/liberty” alone
+does not define system meaning.
+
+Object:
+person?
+hazard?
+fluid?
+pressure?
+information?
+
+must remain explicit.
+
+---
+
+# Jeremiah 34:18 — calf is cut in two
+
+This is one of the strongest literal geometry changes in Jeremiah.
+
+Object:
+one calf.
+
+Action:
+cut/divide.
+
+Result:
+two separated body portions.
+
+## M50F5-10 — ONE WHOLE BODY CAN BE PHYSICALLY DIVIDED INTO TWO SEPARATE BOUNDARY OBJECTS
+
+This is actual material division,
+not metaphorical “splitting” only.
+
+---
+
+# Jeremiah 34:18–19 — people pass between the separated pieces
+
+The covenant participants:
+pass between
+the calf parts.
+
+This gives a real sequence:
+
+whole object
+→ cut
+→ halves separate
+→ corridor exists between halves
+→ humans move through corridor.
+
+## M50F5-11 — JEREMIAH 34 CONTAINS GENUINE SPLIT→PASSAGE-BETWEEN-PARTS GEOMETRY
+
+This is a very high-value Vardath analogue.
+
+It should not be dismissed merely because its ordinary ritual meaning is known.
+
+The process geometry itself is real.
+
+---
+
+# Jeremiah 34 covenant-cut rite — ordinary ritual control
+
+The rite fits a wider ancient covenant/oath pattern:
+the slaughtered animal embodies the fate invoked upon covenant violators.
+
+Genesis 15 preserves a related divided-animal passage tradition.
+
+The likely ritual logic is:
+“may I become like this cut animal if I violate the covenant.”
+
+## M50F5-12 — SPLIT-PASSAGE GEOMETRY CAN SERVE AN OATH/CURSE FUNCTION WITHOUT FUNCTIONING AS A PHYSICAL PORTAL
+
+This is the essential ordinary explanation.
+
+---
+
+# Jeremiah 34 versus Vardath fingertrap — strict comparison
+
+## Vardath
+broad connected spiderweb
+→ dragon/lattice springs support ground
+→ same network reorients
+→ geometry narrows axially
+→ throat forms
+→ transfer between inhabited world-turns
+→ network later re-expands/re-supports ground.
+
+## Jeremiah 34
+single animal body
+→ cut into two pieces
+→ space lies between pieces
+→ covenant participants pass through
+→ body remains divided / curse symbolism follows.
+
+### Shared process variables
+- one prior object;
+- geometry altered;
+- separation creates a passage;
+- humans move through the new passage.
+
+### Missing Vardath variables
+- distributed connected mesh;
+- spring/tension support;
+- ground support;
+- preserved strand continuity;
+- axial narrowing;
+- world-layer adjacency;
+- same structure reopening/re-supporting.
+
+## M50F5-13 — JEREMIAH 34 IS A STRONG SPLIT-AND-PASSAGE ANALOGUE BUT NOT A STRICT SPIDERWEB→FINGERTRAP MATCH
+
+This is more mechanically relevant than a generic city gate,
+but still a different mechanism.
+
+---
+
+# M50F5-14 — “PASS BETWEEN” DOES NOT REQUIRE A NARROW THROAT
+
+The corridor exists because:
+two pieces are separated.
+
+That is:
+gap creation.
+
+Vardath throat:
+network contraction/reorientation.
+
+Different route-generation mechanism.
+
+---
+
+# Jeremiah 34:20 — covenant breakers are mapped onto split-calf fate
+
+Human bodies:
+threatened with death/exposure.
+
+The cut animal:
+functions as fate model.
+
+## M50F5-15 — RITUAL OBJECT CAN SERVE AS PHYSICAL MODEL OF A FUTURE HUMAN STATE
+
+This is an important symbolic mechanics rule.
+
+Model:
+does not cause the state mechanically;
+it represents it.
+
+---
+
+# Jeremiah 34:21–22 — withdrawn Babylonian army returns
+
+Army:
+temporarily withdraws.
+
+Then:
+returns;
+takes city;
+burns it.
+
+## M50F5-16 — TEMPORARY HAZARD RETREAT CAN BE FOLLOWED BY SECOND WAVE RETURN
+
+This is a major catastrophe-timing rule.
+
+Do not equate:
+pressure reduction
+with
+event completion.
+
+---
+
+# Jeremiah 34 — direct dragon/lattice support comparison
+
+No dragon:
+appears.
+
+No ground-support network:
+appears.
+
+No spiderweb:
+appears.
+
+The split calf:
+is not a support structure.
+
+Therefore:
+the passage contributes **split-passage geometry**,
+not support mechanics.
+
+---
+
+# Jeremiah 35:1 — canonical order again differs from chronology
+
+Jeremiah 35 belongs to:
+Jehoiakim’s reign,
+
+while Jeremiah 34 is in:
+Zedekiah’s final siege period.
+
+## M50F5-17 — JEREMIAH’S NARRATIVE ORDER CONTINUES TO BE THEMATIC RATHER THAN STRICTLY CHRONOLOGICAL
+
+This reinforces the timeline reconstruction rule.
+
+---
+
+# Jeremiah 35:2–5 — Rechabite group is brought into temple chamber and offered wine
+
+A controlled test is created:
+
+known ancestral rule
+versus
+immediate offered alternative.
+
+## M50F5-18 — LONG-DURATION RULE FIDELITY CAN BE TESTED BY DIRECT CONFLICTING INPUT
+
+The group’s stored rule:
+is observable through behavior.
+
+---
+
+# Jeremiah 35:6–10 — ancestral command persists across generations
+
+Jonadab’s command includes:
+- no wine;
+- no houses;
+- no sowing;
+- no vineyards;
+- no ownership of vineyards;
+- live in tents.
+
+The descendants state:
+they have obeyed across wives/sons/daughters and generations.
+
+## M50F5-19 — CULTURAL INFORMATION CAN PERSIST ACROSS MANY GENERATIONS WITHOUT A CENTRAL WRITTEN CONTROL NODE BEING NAMED
+
+This is a major transmission result.
+
+---
+
+# M50F5-20 — INTERGENERATIONAL MEMORY CAN BE EMBEDDED IN REPEATED PRACTICE, NOT ONLY IN ARCHIVES
+
+Compare:
+
+Jeremiah 32:
+document archive.
+
+Jeremiah 35:
+lived cultural archive.
+
+Jeremiah 36:
+written + human-memory reconstruction.
+
+Three distinct information-preservation mechanisms.
+
+---
+
+# Jeremiah 35:7–10 — tent dwelling reduces dependence on fixed infrastructure
+
+The Rechabites:
+do not build permanent houses;
+do not depend on fields/vineyards;
+live in tents.
+
+## M50F5-21 — MOBILE LOW-INFRASTRUCTURE LIFESTYLE CAN REDUCE ATTACHMENT TO A SINGLE FIXED NODE
+
+This is a potentially important resilience strategy.
+
+### Vardath comparison
+
+During unstable world/region conditions,
+mobility may improve survival.
+
+But:
+Jeremiah 29 gave the opposite appropriate strategy for exiles:
+build;
+plant;
+settle.
+
+Thus no single survival architecture is universal.
+
+---
+
+# M50F5-22 — RESILIENCE STRATEGY IS PHASE- AND CONTEXT-DEPENDENT
+
+Jeremiah 29:
+long stable exile → settle.
+
+Jeremiah 35:
+ancestral mobile group → retain tents.
+
+Different systems;
+different optimum.
+
+---
+
+# Jeremiah 35:11 — military pressure forces the mobile group into Jerusalem
+
+When Chaldean/Aramean armies approach:
+
+mobile Rechabites
+→ enter city.
+
+## M50F5-23 — MOBILE SYSTEM CAN TEMPORARILY ENTER FORTIFIED NODE WHEN EXTERNAL FIELD BECOMES MORE DANGEROUS THAN ENCLOSURE
+
+This is subtle.
+
+Jeremiah 21:
+city interior can become death trap.
+
+Jeremiah 35:
+earlier phase/circumstance makes city temporary refuge.
+
+### Rule
+
+Enclosure value changes over time.
+
+---
+
+# M50F5-24 — THE SAME CITY CAN SWITCH REFUGE↔TRAP FUNCTION ACROSS EVENT PHASES
+
+This is extremely useful for the Vardath survival timeline.
+
+Location labels alone:
+not enough.
+
+Need phase.
+
+---
+
+# Jeremiah 35:11 — temporary exception does not erase ancestral identity
+
+They live in Jerusalem because:
+hazard forced relocation.
+
+Yet:
+they still identify with ancestral rule.
+
+## M50F5-25 — EMERGENCY LOCATION CHANGE DOES NOT NECESSARILY REQUIRE CORE IDENTITY/RULE LOSS
+
+This is relevant to off-site survival.
+
+---
+
+# Jeremiah 35:12–17 — Rechabites become comparison/control group for Judah
+
+Rechabites:
+obey one ancestor.
+
+Judah:
+ignores repeated prophetic calls.
+
+## M50F5-26 — SAME-ENVIRONMENT COMPARISON GROUP CAN REVEAL THAT FAILURE IS NOT INEVITABLE
+
+This is a useful experimental/control principle.
+
+---
+
+# Jeremiah 35 — pair/set classification
+
+## Jonadab / descendants
+ancestor-rule source / long-term recipient network.
+
+## Rechabites / Judah
+obedient control group / disobedient comparison group.
+
+## tent / city
+mobile enclosure / fixed fortified enclosure.
+
+None:
+is a Vardath two-force pair.
+
+---
+
+# Jeremiah 35 — direct Vardath comparison
+
+No dragon:
+appears.
+
+No lattice:
+appears.
+
+But the chapter contributes:
+- mobile tents;
+- intergenerational rule preservation;
+- emergency relocation;
+- phase-dependent refuge selection.
+
+## M50F5-27 — JEREMIAH 35 IS A CULTURAL-MEMORY AND MOBILITY-RESILIENCE TEXT, NOT A SUPPORT-LATTICE TEXT
+
+---
+
+# Jeremiah 36:1–3 — prior oral messages are commanded into a scroll archive
+
+Scope:
+from Josiah’s days until present.
+
+Goal:
+audience may hear;
+turn;
+future branch may change.
+
+## M50F5-28 — DISTRIBUTED ORAL MESSAGE HISTORY CAN BE CONSOLIDATED INTO ONE WRITTEN ARCHIVE
+
+This is a huge book-formation step.
+
+---
+
+# Jeremiah 36:4 — Jeremiah dictates; Baruch writes with ink
+
+Information path:
+
+source/oracle tradition
+→ Jeremiah speech/memory
+→ Baruch hearing
+→ ink
+→ scroll.
+
+## M50F5-29 — WRITTEN ARCHIVE IS PRODUCED THROUGH A MULTI-NODE TRANSMISSION CHAIN
+
+Each stage is a possible:
+preservation point;
+error point;
+authentication point.
+
+---
+
+# M50F5-30 — SCRIBE IS AN INFORMATION TRANSDUCER, NOT MERELY A PASSIVE CONTAINER
+
+Baruch converts:
+spoken sequence
+→ written sequence.
+
+---
+
+# Jeremiah 36:5–8 — author barred from temple, delegate carries message instead
+
+Jeremiah:
+cannot enter.
+
+Baruch:
+enters;
+reads.
+
+## M50F5-31 — INFORMATION NETWORK CAN ROUTE AROUND BLOCKED PRIMARY MESSENGER THROUGH DELEGATED NODE
+
+This is a strong resilience feature.
+
+---
+
+# Jeremiah 36:9–10 — fast day creates high-density audience; New Gate/upper court locates broadcast interface
+
+Baruch reads:
+temple;
+Gemariah’s chamber;
+upper court;
+entry of New Gate.
+
+## M50F5-32 — EXISTING INSTITUTIONAL/GATE NODE CAN AMPLIFY MESSAGE DISTRIBUTION
+
+Again:
+New Gate is:
+ordinary institutional access/broadcast geography.
+
+Not cosmic throat.
+
+---
+
+# Jeremiah 36:11–13 — oral retransmission begins before scroll moves
+
+Micaiah:
+hears public reading
+→ goes to officials
+→ reports contents.
+
+## M50F5-33 — INFORMATION CAN DUPLICATE INTO HUMAN MEMORY BEFORE ORIGINAL PHYSICAL DOCUMENT CHANGES LOCATION
+
+This is crucial for what happens later.
+
+The scroll is not the only copy of the information anymore.
+
+---
+
+# Jeremiah 36:14–16 — scroll itself is then carried and reread to officials
+
+Physical document:
+moves.
+
+Officials:
+hear primary written source.
+
+## M50F5-34 — INFORMATION NETWORK CAN USE BOTH HUMAN SUMMARY AND ORIGINAL-DOCUMENT VERIFICATION
+
+Excellent provenance architecture.
+
+---
+
+# Jeremiah 36:17–18 — officials explicitly interrogate source-production method
+
+They ask:
+how did you write these words?
+
+Baruch:
+Jeremiah dictated;
+I wrote with ink.
+
+## M50F5-35 — SOURCE-PROVENANCE AUDIT CAN TRACE MESSAGE FROM AUTHORIAL VOICE TO PHYSICAL RECORD
+
+This is one of the best provenance passages in the Bible.
+
+---
+
+# Jeremiah 36:19 — officials protect human information nodes
+
+Baruch/Jeremiah:
+told to hide.
+
+## M50F5-36 — PRESERVING THE PEOPLE WHO HOLD INFORMATION CAN BE AS IMPORTANT AS PRESERVING THE DOCUMENT
+
+This directly anticipates the scroll’s destruction.
+
+---
+
+# Jeremiah 36:20–21 — scroll enters royal control network
+
+Officials:
+leave scroll in secretary’s chamber.
+
+King:
+orders it fetched.
+
+## M50F5-37 — PHYSICAL ARCHIVE CAN CHANGE CUSTODY WHILE INFORMATION ALREADY EXISTS IN MULTIPLE HUMAN NODES
+
+Custody
+≠
+exclusive information ownership.
+
+---
+
+# Jeremiah 36:22 — winter room / brazier creates destructive environment
+
+Cold-season room:
+fire available.
+
+The same useful heat source:
+becomes scroll-destruction tool.
+
+## M50F5-38 — BENIGN ENVIRONMENTAL TOOL CAN BECOME INFORMATION-DESTRUCTION ACTUATOR
+
+Fire class again:
+function-dependent.
+
+---
+
+# Jeremiah 36:23 — three or four columns are read, cut, burned repeatedly
+
+This is a precise iterative destruction process:
+
+read segment
+→ cut segment
+→ burn segment
+→ repeat
+until entire scroll gone.
+
+## M50F5-39 — PHYSICAL INFORMATION MEDIUM CAN BE DESTROYED IN SEQUENTIAL CHUNKS WHILE ITS CONTENT IS BEING CONSUMED/OBSERVED
+
+The king destroys:
+carrier/medium.
+
+But each segment is heard before destruction.
+
+---
+
+# Jeremiah 36:23 — scribe’s knife is information-tool turned destruction-tool
+
+A tool associated with writing/scribal work:
+becomes cutting instrument against text.
+
+## M50F5-40 — SAME TOOL CLASS CAN SUPPORT INFORMATION PRODUCTION OR INFORMATION DESTRUCTION
+
+Function depends on operator/use.
+
+---
+
+# Jeremiah 36:24–25 — no alarm despite content; dissenting officials fail to stop destruction
+
+King/servants:
+not alarmed.
+
+Some officials:
+urge not to burn.
+
+King:
+ignores.
+
+## M50F5-41 — WARNING INFORMATION CAN BE RECEIVED ACCURATELY YET DELIBERATELY REJECTED
+
+This differs from:
+sensor failure;
+channel failure;
+misunderstanding.
+
+Failure mode:
+willful non-response.
+
+---
+
+# Jeremiah 36:26 — arrest order targets Jeremiah and Baruch, but they remain hidden
+
+## M50F5-42 — INFORMATION DESTRUCTION OF MEDIUM CAN BE FOLLOWED BY ATTEMPT TO DESTROY/CONTROL HUMAN SOURCE NODES
+
+This is a full anti-information strategy:
+1. destroy document;
+2. seize people.
+
+---
+
+# Jeremiah 36:27–28 — after physical scroll destruction, information is still recoverable
+
+Command:
+take another scroll;
+write former words.
+
+## M50F5-43 — DESTRUCTION OF ONE PHYSICAL COPY DOES NOT DESTROY INFORMATION IF REDUNDANT SOURCE EXISTS ELSEWHERE
+
+This is one of the strongest information-resilience rules in the entire research.
+
+---
+
+# Jeremiah 36:32 — Baruch rewrites the former words from Jeremiah’s dictation
+
+Recovery path:
+
+physical scroll gone
+→ Jeremiah/source memory remains
+→ Baruch remains
+→ second scroll created.
+
+## M50F5-44 — HUMAN/SOURCE MEMORY CAN FUNCTION AS BACKUP FOR DESTROYED PHYSICAL ARCHIVE
+
+Compare Jeremiah 32:
+physical archive preserved.
+
+Jeremiah 36:
+physical archive destroyed,
+but human/source redundancy preserves content.
+
+---
+
+# Jeremiah 36:32 — many similar/additional words are added
+
+The second edition:
+restores previous material
++
+adds more.
+
+## M50F5-45 — RECOVERY FROM DOCUMENT DESTRUCTION CAN PRODUCE AN EXPANDED SECOND EDITION RATHER THAN A BYTE-FOR-BYTE RESTORATION
+
+This is extraordinarily important for biblical textual history.
+
+---
+
+# M50F5-46 — TEXTUAL EXPANSION DOES NOT AUTOMATICALLY MEAN WHOLESALE FABRICATION
+
+A later/longer edition may contain:
+- recovered old material;
+- clarification;
+- new related material;
+- updated historical reflection.
+
+That must be evaluated case by case.
+
+---
+
+# Jeremiah 36 — relation to MT/LXX Jeremiah edition history
+
+Modern textual criticism widely recognizes:
+- a shorter Jeremiah tradition represented by the Greek and related Hebrew evidence;
+- a longer Masoretic edition with expansions/rearrangements.
+
+Emanuel Tov and others treat these as distinct literary editions.
+
+Jeremiah 36 itself narrates:
+first scroll
+→ destruction
+→ rewritten/expanded scroll.
+
+## M50F5-47 — THE BOOK ITSELF PRESERVES A MODEL OF EDITION GROWTH, MAKING MULTI-EDITION TEXTUAL HISTORY EXPECTABLE RATHER THAN ANOMALOUS
+
+This does not prove:
+the exact MT/LXX relationship is identical to Jeremiah 36’s two scrolls.
+
+But it supplies a native model of:
+authorized textual rewriting/expansion.
+
+---
+
+# Jeremiah 36 — archive resilience compared with Jeremiah 32 and 35
+
+## Jeremiah 32
+physical durable archive:
+sealed/open deeds
+→ earthen jar.
+
+## Jeremiah 35
+embodied cultural archive:
+ancestral commands
+→ repeated practice across generations.
+
+## Jeremiah 36
+distributed redundant archive:
+spoken source/memory
++ scribe
++ public listeners
++ physical scroll
+→ one copy destroyed
+→ reconstructed expanded edition.
+
+## M50F5-48 — JEREMIAH 32/35/36 PROVIDE THREE COMPLEMENTARY CATASTROPHE-MEMORY ARCHITECTURES
+
+1. durable physical preservation;
+2. cultural/practical transmission;
+3. distributed human + textual redundancy.
+
+This is a major Vardath practical result.
+
+---
+
+# Vardath catastrophe-archive synthesis from Jeremiah 32–36
+
+For preserving a map/model through a future gate catastrophe:
+
+### physical layer
+durable multiple copies;
+sealed/authenticated;
+protected container;
+geographically separated storage.
+
+### human layer
+multiple trained people;
+oral/embodied knowledge;
+community practices.
+
+### information layer
+source provenance;
+version history;
+open/readable copy;
+authenticated master;
+ability to reconstruct;
+record additions transparently.
+
+## M50F5-49 — RESILIENT KNOWLEDGE SYSTEM SHOULD NOT HAVE A SINGLE POINT OF FAILURE
+
+This is directly derivable from the Jeremiah sequence.
+
+---
+
+# Jeremiah 34–36 direct dragon/lattice comparison
+
+## Jeremiah 34
+true split-passage geometry:
+one body
+→ two halves
+→ people pass between.
+
+But:
+no support network.
+
+## Jeremiah 35
+mobile tent system:
+flexible enclosure,
+but no dragon/lattice transformation.
+
+## Jeremiah 36
+scroll:
+long flexible sheet,
+cut into pieces,
+but information medium rather than ground-support structure.
+
+## M50F5-50 — SIMILAR GEOMETRIC OPERATIONS ON BODY/TENT/SCROLL MUST NOT BE COLLAPSED INTO ONE ONTOLOGY
+
+Split:
+can occur to animal.
+
+Flexible enclosure:
+can be tent.
+
+Cut flexible sheet:
+can be scroll.
+
+Same geometry vocabulary
+does not prove same cosmic mechanism.
+
+---
+
+# Jeremiah 34–36 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## split object
+Exceptionally strong:
+calf.
+
+## passage between separated parts
+Exceptionally strong.
+
+## connected mesh
+Absent.
+
+## narrowing into axial throat
+Absent.
+
+## same structure continuity through passage
+No:
+body is cut apart.
+
+## reopening/rejoining
+Absent.
+
+## knowledge preservation
+Exceptionally strong.
+
+## survival/mobility strategy
+Strong:
+Rechabites.
+
+### Strict verdict
+
+**Jeremiah 34–36 does not establish the Vardath spiderweb→fingertrap mechanism, but Jeremiah 34 is one of the strongest ordinary-scale split-and-passage analogues yet: a single body is cut into two parts and people physically pass between them. The critical mismatch is that the route is created by separation/destruction of an animal body, not by a connected load-bearing dragon lattice reorienting into an axial throat and later reopening. Jeremiah 35 then supplies long-duration cultural memory and phase-dependent mobility, while Jeremiah 36 demonstrates extraordinary information resilience: the physical scroll can be cut and completely burned without destroying the message, because the human/source network remains and can reconstruct an expanded second edition.**
+
+---
+
+# Jeremiah 34–36 pair / process matrix
+
+## fortified cities / Babylonian field
+last defensive nodes / surrounding pressure.
+
+## free slave / recaptured slave
+release state / regressed control state.
+
+## seventh year / six years
+release phase / service interval.
+
+## liberty to people / liberty to hazards
+beneficial release object / destructive release object.
+
+## whole calf / two halves
+single body / divided boundary objects.
+
+## calf halves / passing people
+split structure / corridor users.
+
+## first Babylonian pressure / temporary withdrawal / return
+hazard / lull / second-wave hazard.
+
+## Jonadab / descendants
+ancestral rule source / long-duration cultural network.
+
+## tents / houses-fields-vineyards
+mobile low-fixed-infrastructure system / settled agricultural system.
+
+## open country / Jerusalem
+normal mobile habitat / emergency refuge node.
+
+## Jeremiah / Baruch
+dictating source / writing-transmission node.
+
+## oral words / scroll
+source information / physical medium.
+
+## public reading / official rereading
+broad broadcast / provenance verification.
+
+## scroll / knife-fire
+information medium / destructive actuators.
+
+## first scroll / second scroll
+destroyed edition / reconstructed-expanded edition.
+
+## physical archive / human memory
+one persistence layer / backup persistence layer.
+
+---
+
+# Jeremiah 34–36 continuous transformation timeline
+
+Babylonian pressure reduces Judah to a few fortified nodes
+→ Zedekiah remains trapped in collapsing network
+→ Jerusalem elites proclaim liberty
+→ slaves are genuinely released
+→ external military pressure temporarily relaxes
+→ elites reverse decision
+→ freed people are recaptured
+→ seven-year release law is recalled
+→ beneficial release is refused
+→ “release” is reassigned to sword/famine/pestilence
+→ covenant calf is cut in two
+→ separated halves create corridor
+→ covenant participants pass between pieces
+→ oath/curse identifies breaker with divided body fate
+→ withdrawn Babylonian army is predicted to return
+→ narrative order jumps back to Jehoiakim period
+→ Rechabites enter temple test
+→ ancestral no-wine/no-house/no-field/no-vineyard command is recited
+→ cultural practice is shown preserved across generations
+→ tent-based mobile lifestyle remains identity norm
+→ military pressure forces temporary movement into Jerusalem
+→ Rechabites retain core rule despite location change
+→ their continuity becomes comparison control for Judah
+→ chronology shifts to fourth year Jehoiakim
+→ Jeremiah consolidates long oral message history into scroll project
+→ Baruch receives dictation
+→ spoken information becomes inked text
+→ Jeremiah’s blocked temple access is routed around through Baruch
+→ fast day creates high-density audience
+→ scroll is read near New Gate/upper court
+→ Micaiah carries oral summary to officials
+→ officials summon original scroll
+→ Baruch rereads it
+→ officials audit dictation/writing provenance
+→ human information nodes are told to hide
+→ scroll enters royal custody
+→ useful brazier fire becomes destruction tool
+→ three/four columns are read
+→ columns cut with scribal knife
+→ segments burned
+→ cycle repeats until physical scroll is gone
+→ king ignores dissent/warning
+→ arrest order targets Jeremiah and Baruch
+→ human source nodes remain hidden
+→ new scroll is commissioned
+→ former information is redictated
+→ Baruch rewrites
+→ additional similar words are added
+→ second edition survives the destruction of first medium.
+
+---
+
+# New master-mechanism additions from Jeremiah 34–36
+
+## M50F5-1 — SYSTEM COLLAPSE CAN LEAVE FEW LAST FORTIFIED NODES
+## M50F5-2 — HIGH-STATUS NODE CAN LOSE MOBILITY WHEN NETWORK COLLAPSES
+## M50F5-3 — SOCIAL SYSTEM CAN ENTER REAL RELEASE BEFORE REVERSAL
+## M50F5-4 — LIBERATION CAN REGRESS INTO PRIOR CONTROL STATE
+## M50F5-5 — TEMPORARY RELIEF CAN CAUSE PREMATURE RETURN TO FAILED SYSTEM
+## M50F5-6 — PERIODIC SOCIAL RELEASE CLOCK ≠ COSMIC EVENT CYCLE
+## M50F5-7 — DIRECTIONAL REVERSAL WORDING CAN MARK SOCIAL STATE, NOT GEOMETRY
+## M50F5-8 — SAME RELEASE WORD CAN CHANGE FROM BENEFICIAL TO HAZARDOUS OBJECT
+## M50F5-9 — RELEASE ANALYSIS MUST PRESERVE RELEASED OBJECT CLASS
+## M50F5-10 — ONE BODY CAN BE PHYSICALLY DIVIDED INTO TWO BOUNDARY OBJECTS
+## M50F5-11 — JEREMIAH 34 HAS REAL SPLIT→PASSAGE-BETWEEN-PARTS GEOMETRY
+## M50F5-12 — SPLIT-PASSAGE GEOMETRY CAN SERVE OATH/CURSE RITUAL
+## M50F5-13 — SPLIT-AND-PASSAGE ANALOGUE ≠ STRICT FINGERTRAP
+## M50F5-14 — PASSAGE BETWEEN SEPARATED HALVES ≠ NARROWED THROAT
+## M50F5-15 — RITUAL OBJECT CAN MODEL FUTURE HUMAN FATE
+## M50F5-16 — TEMPORARY HAZARD RETREAT CAN PRECEDE SECOND WAVE
+## M50F5-17 — JEREMIAH ORDER REMAINS THEMATIC, NOT CHRONOLOGICAL
+## M50F5-18 — LONG-DURATION RULE FIDELITY CAN BE TESTED BY CONFLICTING INPUT
+## M50F5-19 — CULTURAL INFORMATION CAN PERSIST ACROSS GENERATIONS
+## M50F5-20 — REPEATED PRACTICE CAN FUNCTION AS LIVED ARCHIVE
+## M50F5-21 — MOBILE LOW-INFRASTRUCTURE LIFE REDUCES FIXED-NODE DEPENDENCE
+## M50F5-22 — RESILIENCE STRATEGY IS PHASE/CONTEXT DEPENDENT
+## M50F5-23 — MOBILE SYSTEM CAN ENTER FORTIFIED NODE DURING EXTERNAL HAZARD
+## M50F5-24 — SAME CITY CAN SWITCH REFUGE↔TRAP FUNCTION ACROSS PHASES
+## M50F5-25 — EMERGENCY RELOCATION NEED NOT ERASE CORE IDENTITY
+## M50F5-26 — CONTROL GROUP CAN SHOW FAILURE WAS NOT INEVITABLE
+## M50F5-27 — JEREMIAH 35 IS CULTURAL-MEMORY/MOBILITY TEXT, NOT SUPPORT LATTICE
+## M50F5-28 — ORAL MESSAGE HISTORY CAN BE CONSOLIDATED INTO WRITTEN ARCHIVE
+## M50F5-29 — WRITTEN ARCHIVE HAS MULTI-NODE TRANSMISSION CHAIN
+## M50F5-30 — SCRIBE IS INFORMATION TRANSDUCER
+## M50F5-31 — NETWORK CAN ROUTE AROUND BLOCKED PRIMARY MESSENGER
+## M50F5-32 — GATE/INSTITUTIONAL NODE CAN AMPLIFY BROADCAST
+## M50F5-33 — HUMAN MEMORY CAN DUPLICATE CONTENT BEFORE DOCUMENT MOVES
+## M50F5-34 — NETWORK CAN USE SUMMARY + ORIGINAL-DOCUMENT VERIFICATION
+## M50F5-35 — SOURCE-PROVENANCE AUDIT CAN TRACE SPEECH→WRITING
+## M50F5-36 — PRESERVE HUMAN INFORMATION NODES AS WELL AS DOCUMENTS
+## M50F5-37 — ARCHIVE CUSTODY ≠ EXCLUSIVE INFORMATION OWNERSHIP
+## M50F5-38 — USEFUL FIRE CAN BECOME INFORMATION-DESTRUCTION ACTUATOR
+## M50F5-39 — PHYSICAL MEDIUM CAN BE DESTROYED SEQUENTIALLY WHILE READ
+## M50F5-40 — SAME TOOL CAN SUPPORT INFORMATION PRODUCTION OR DESTRUCTION
+## M50F5-41 — ACCURATE WARNING CAN BE DELIBERATELY REJECTED
+## M50F5-42 — ANTI-INFORMATION STRATEGY MAY TARGET DOCUMENT + HUMAN SOURCES
+## M50F5-43 — ONE-COPY DESTRUCTION ≠ INFORMATION DESTRUCTION UNDER REDUNDANCY
+## M50F5-44 — HUMAN/SOURCE MEMORY CAN BACK UP DESTROYED ARCHIVE
+## M50F5-45 — DOCUMENT RECOVERY CAN PRODUCE EXPANDED SECOND EDITION
+## M50F5-46 — TEXTUAL EXPANSION ≠ WHOLESALE FABRICATION BY DEFAULT
+## M50F5-47 — JEREMIAH ITSELF PRESERVES A MODEL OF EDITION GROWTH
+## M50F5-48 — JEREMIAH 32/35/36 GIVE PHYSICAL/CULTURAL/DISTRIBUTED MEMORY ARCHITECTURES
+## M50F5-49 — RESILIENT KNOWLEDGE SYSTEM SHOULD HAVE NO SINGLE POINT OF FAILURE
+## M50F5-50 — SIMILAR GEOMETRIC OPERATIONS ACROSS BODY/TENT/SCROLL ≠ SAME ONTOLOGY
+
+---
+
+# Number / timing register — Jeremiah 34–36
+
+Record without forcing:
+
+- slave-release law recalled as **six years service → release in seventh year**;
+- this is a social/legal cycle, not a Vardath gate period;
+- Jeremiah 35 preserves an ancestral rule across multiple generations but gives no exact generation count;
+- Jeremiah 36 first scroll project begins in the **fourth year of Jehoiakim**;
+- public fast/reading occurs in the **fifth year, ninth month**;
+- the king repeatedly reads/cuts roughly **three or four columns** at a time;
+- no gate-duration number;
+- no world-layer count;
+- no dragon/lattice-spring count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 34–36
+
+1. Working primary texts: Jeremiah 34–36 NRSVUE.
+2. Jeremiah 34:8–22 concerns release and re-enslavement of Hebrew/Judean debt slaves during the final crisis of Jerusalem.
+3. Scholarship links the temporary reversal of the siege to Egyptian intervention and interprets the re-enslavement as opportunistic regression once Babylonian pressure temporarily eased.
+4. The passage reworks/interprets earlier debt-slave release law; scholarship notes scribal and legal tensions between Jeremiah 34 and Deuteronomy 15/Leviticus 25.
+5. Jeremiah 34:18–19 explicitly says the calf was cut in two and covenant participants passed between the parts. This belongs to ancient covenant/oath ritual and is closely comparable to Genesis 15.
+6. The ritual creates real split-and-passage geometry but not a support-lattice throat.
+7. Jeremiah 35 is set in Jehoiakim’s reign, showing once again that canonical chapter order is not strict chronology.
+8. Academic studies treat the Rechabites as a distinctive long-duration group whose ancestral practices include tent dwelling and avoidance of wine/agriculture/permanent houses; exact historical origins and later identifications are debated.
+9. Their movement into Jerusalem is explicitly an emergency response to Babylonian/Aramean military pressure.
+10. Jeremiah 36 dates the initial scroll project to Jehoiakim’s fourth year and gives an unusually detailed internal account of prophetic book production.
+11. Baruch writes from Jeremiah’s dictation; public and official readings create multiple human memory/provenance nodes before the king destroys the scroll.
+12. Jehoiakim cuts the scroll three/four columns at a time with a scribal knife and burns it in the brazier until the physical copy is gone.
+13. The second scroll reproduces the former material and explicitly adds “many similar words,” making textual expansion part of the book’s own narrative of transmission.
+14. Emanuel Tov and other textual critics recognize shorter and longer literary editions of Jeremiah represented broadly by Greek/related Hebrew evidence and the Masoretic tradition; Jeremiah 36’s two-scroll account is relevant as an internal model of textual rewriting, though it should not be simplistically equated with the later MT/LXX relationship.
+15. No dragon/lattice-spring or strict spiderweb→fingertrap transformation appears.
+16. Strict fingertrap status remains negative; split-passage geometry and information resilience are exceptionally important.
+
+---
+
+# Sources logged — Jeremiah 34–36
+
+Primary:
+- Jeremiah 34 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+34&version=NRSVUE
+- Jeremiah 35 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+35&version=NRSVUE
+- Jeremiah 36 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+36&version=NRSVUE
+
+Scholarly / textual:
+- Simeon Chavel, “‘Let My People Go!’ Emancipation, Revelation, and Scribal Activity in Jeremiah 34.8–14,” *Journal for the Study of the Old Testament*:
+  https://doi.org/10.1177/030908929702207605
+- “Jeremiah 34:8–22 — A call for the enactment of distributive justice?”:
+  http://www.scielo.org.za/scielo.php?pid=S1015-87582016000300008&script=sci_arttext
+- Klaas Smelik, “The Inner Coherence of Jeremiah 34:8–22, on the Liberation of the Slaves during the Siege of Jerusalem, and Its Relation to Deuteronomy 15”:
+  https://biblio.ugent.be/publication/8517480
+- “Jeremiah 35 in the Book of Jeremiah,” *Expository Times*:
+  https://journals.sagepub.com/doi/10.1177/001452469810900706
+- Steve Delamarter, “Thus Far the Words of Jeremiah — But Who Gets the Last Word?”, for Jeremiah 36 and the two-scroll/book-formation model:
+  https://digitalcommons.georgefox.edu/gfes/84
+- Emanuel Tov, study of the two literary editions of Jeremiah and expansion/revision in MT:
+  http://www.emanueltov.info/docs/papers/24.jer.1999.pdf
+
+---
+
+# SECTION 50F5 CHECKPOINT — JEREMIAH 34–36 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 34 contains genuine whole→split→corridor→human-passage geometry: the calf is cut in two and participants pass between its parts.**
+2. **That is a high-value Vardath analogue, but the passage is created by destructive separation of an animal body, not reorientation of a connected ground-support lattice into a fingertrap throat.**
+3. **The slave-release episode shows a real release state can be reversed, and a temporary easing of external danger can trigger premature return to the failed old system.**
+4. **The Babylonian army’s withdrawal and return supplies a strong first-wave/lull/second-wave hazard control.**
+5. **The Rechabites show that cultural information can persist for generations through lived practice rather than written archives alone.**
+6. **Their tent-based mobility is a context-specific resilience strategy; Jeremiah 29’s settled exile proves no one survival architecture is universal.**
+7. **Jeremiah 36 gives one of the Bible’s strongest source-provenance chains: Jeremiah dictates, Baruch writes with ink, the text is publicly read, officials interrogate how it was produced, and the physical scroll changes custody.**
+8. **The scroll is cut and completely burned, but the message survives because the information system has redundancy outside the physical document.**
+9. **The second scroll is explicitly reconstructed with additional material, making edition growth part of Jeremiah’s own transmission story.**
+10. **Jeremiah 32/35/36 together yield three catastrophe-memory architectures: durable physical archive, embodied cultural practice, and distributed human/textual redundancy.**
+11. **Strict spiderweb→fingertrap status remains negative, but Jeremiah 34’s split-passage geometry and Jeremiah 36’s information resilience are major results.**
+
+### Next live block
+
+**Jeremiah 37–39**
+
+Priority:
+- Egyptian relief force causes Babylonian siege withdrawal then return;
+- false interpretation of temporary retreat;
+- Jeremiah leaves city to receive/share property and is accused of desertion;
+- gate as security/interrogation node;
+- imprisonment in vaulted cells/cistern-house;
+- paper/message mobility despite physical confinement;
+- Zedekiah secret information requests;
+- cistern lowering by ropes — HIGH PRIORITY vertical carrier geometry;
+- mud/no water inside cistern;
+- Ebed-melech uses rags/cloth under ropes to distribute load and extract Jeremiah;
+- thirty men / manpower control;
+- siege breach of Jerusalem walls;
+- Babylonian officials sit at Middle Gate;
+- Zedekiah escapes by night through gate between walls near king’s garden;
+- route to Arabah then capture;
+- sons/nobles killed, eyes blinded, chains, Babylon transfer;
+- city burned/walls broken;
+- remnant/poor left with vineyards/fields;
+- Jeremiah extracted from court/guard;
+- Ebed-melech survival;
+- compare vertical rope extraction from pit with true carrier/throat mechanics and compare wall breach vs controlled gate.
