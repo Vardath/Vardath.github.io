@@ -15658,3 +15658,839 @@ Priority:
 - thorn→cypress / brier→myrtle ecological succession;
 - compare explicit heaven→water→earth→plant→food cycle with Vardath water/atmosphere redistribution;
 - compare “return” of rain/word with cyclic flow and world-turn interactions.
+
+
+---
+
+# SECTION 49 progress D2M — Isaiah 55
+## First-time research pass: free water/food invitation, failed value-exchange system, listen→eat→live chain, covenant and international attraction, near/far response window, heaven/earth scale separation, rain/snow descent, earth watering, germination→seed→bread chain, successful return, joyful departure, landscape participation, and thorn/brier→cypress/myrtle successor ecology
+
+Isaiah 55 is one of the strongest **vertical water-to-ecology process texts** in Second Isaiah.
+
+The key environmental sequence is explicit:
+
+**rain/snow from heaven**
+↓
+**earth receives water**
+→ **ground brings forth and sprouts**
+→ **seed is produced**
+→ **bread/food is produced**
+→ **the process accomplishes its purpose before return**.
+
+The text then compares:
+**word from the mouth**
+with
+**precipitation from heaven**.
+
+This matters greatly to Vardath Cosmology because the mature model treats:
+- the dragons as lattice springs supporting the ground/world layer;
+- the gate event as a geometry change;
+- water/atmosphere redistribution as a major consequence;
+- ecological and population state changes as downstream effects.
+
+Isaiah 55 does **not** name the dragon/lattice-support mechanism.
+
+But it gives one of the clearest descriptions yet of the downstream chain:
+
+**upper-domain input**
+→ **lower-world water state**
+→ **plant growth**
+→ **seed/food production**
+→ **successful human habitability**.
+
+---
+
+# Isaiah 55:1 — thirst → water is the first survival relation
+
+The chapter begins:
+thirsty population
+→ invited to water.
+
+Also:
+wine;
+milk;
+food.
+
+## M49D2M-1 — BIOLOGICAL NEED IS ADDRESSED THROUGH MULTIPLE RESOURCE CLASSES
+
+water:
+hydration.
+
+milk/wine:
+liquid nourishment/social abundance.
+
+food:
+energy/nutrition.
+
+This is a full biological-resource frame.
+
+### Vardath relevance
+
+A habitable successor world needs:
+- water;
+- calories;
+- nutrition;
+not merely an open gate.
+
+---
+
+# Isaiah 55:1 — resource access is decoupled from money
+
+No money:
+still invited to receive.
+
+## M49D2M-2 — RESOURCE ACCESS CAN BE REASSIGNED FROM MARKET EXCHANGE TO NON-MARKET DISTRIBUTION
+
+This is economic/social,
+not a physical abundance mechanism.
+
+But it is important for successor-state planning:
+resource availability
+≠
+resource accessibility.
+
+---
+
+# Isaiah 55:2 — failed expenditure system is explicitly diagnosed
+
+People spend:
+money/labor
+
+for:
+what is not bread;
+what does not satisfy.
+
+## M49D2M-3 — ENERGY/RESOURCE INPUT CAN BE REAL WHILE OUTPUT FAILS TO MEET BIOLOGICAL NEED
+
+input:
+money;
+labor.
+
+output:
+non-nourishing / unsatisfying.
+
+This continues Micah’s:
+sow→no reap;
+press→no use.
+
+---
+
+# Isaiah 55:2–3 — listen → eat → live links information to resource behavior
+
+The text repeatedly says:
+listen;
+incline ear;
+come;
+eat;
+live.
+
+## M49D2M-4 — INFORMATION INPUT CAN CHANGE RESOURCE-SELECTION BEHAVIOR AND THEREFORE SURVIVAL OUTPUT
+
+The chain is:
+
+correct information
+→ correct resource choice
+→ nourishment
+→ life.
+
+This is a strong systems relation.
+
+---
+
+# Isaiah 55:3 — everlasting covenant links present invitation to long-duration stability
+
+The Davidic covenantal promise is generalized to the audience.
+
+## M49D2M-5 — SUCCESSOR STABILITY CAN BE FRAMED AS LONG-DURATION RELATIONAL ORDER RATHER THAN ONLY SHORT-TERM SURVIVAL
+
+The chapter moves from:
+immediate thirst/food
+to:
+long-range political/social continuity.
+
+---
+
+# Isaiah 55:4–5 — witness/leader role expands into international attraction
+
+Davidic figure:
+witness;
+leader;
+commander.
+
+Then:
+unknown nations
+→ run toward the restored people.
+
+## M49D2M-6 — CENTRAL RESTORED SYSTEM CAN BECOME ATTRACTOR FOR PREVIOUSLY UNCONNECTED POPULATIONS
+
+This is another convergence process.
+
+### Control
+
+The “running” is political/social attraction,
+not gravitational flow.
+
+---
+
+# Isaiah 55:5 — mutual nonknowledge precedes new linkage
+
+Nation A:
+does not know B.
+
+Nation B:
+does not know A.
+
+Then:
+new relationship forms.
+
+## M49D2M-7 — NETWORK CONNECTION CAN FORM BETWEEN PREVIOUSLY DISCONNECTED NODES
+
+This is relevant to:
+world interaction after a gate opens.
+
+But Isaiah’s mechanism is:
+reputation/glory/political attraction,
+not physical adjacency change.
+
+---
+
+# Isaiah 55:6 — “while near” defines a response window
+
+Seek while found;
+call while near.
+
+## M49D2M-8 — SYSTEM ACCESS CAN HAVE A QUALITATIVE TIME WINDOW
+
+Near/access state:
+open now.
+
+Later:
+not assumed permanent.
+
+### Timing control
+
+No duration is supplied.
+
+Do not turn this into:
+a measured gate-open interval.
+
+---
+
+# Isaiah 55:7 — route/behavior change is required
+
+Wicked:
+forsake way.
+
+Unrighteous:
+forsake thoughts.
+
+Return:
+to source.
+
+## M49D2M-9 — RESTORATION CAN REQUIRE BOTH PATH CHANGE AND INTERNAL MODEL CHANGE
+
+behavioral route
++
+thought/model
+→ both reset.
+
+---
+
+# Isaiah 55:8–9 — thought/way scale is projected through vertical distance
+
+Source ways/thoughts:
+higher than human.
+
+Comparison:
+heavens higher than earth.
+
+## M49D2M-10 — VERTICAL DISTANCE CAN MODEL DIFFERENCE IN INFORMATION/CONTROL SCALE
+
+This is not literal:
+thoughts located physically in sky.
+
+The geometry transfers:
+scale separation.
+
+---
+
+# M49D2M-11 — ABOVE/BELOW LANGUAGE CAN REPRESENT INFORMATION-HIERARCHY RATHER THAN WORLD-LAYER LOCATION
+
+This is an important Vardath control.
+
+Not every:
+high = future world;
+low = past world.
+
+Local process first.
+
+---
+
+# Isaiah 55:10 — rain and snow descend from heaven
+
+The process is explicit:
+rain/snow
+→ comes down from heaven.
+
+## M49D2M-12 — UPPER-ATMOSPHERIC WATER INPUT ENTERS LOWER-WORLD ECOLOGICAL SYSTEM
+
+This is one of the strongest direct water-transfer statements in Isaiah.
+
+### Vardath relevance
+
+The cosmology includes:
+atmospheric/water redistribution during world interaction.
+
+This passage gives:
+upper field
+→ water descent
+→ lower earth response.
+
+It does not explain:
+why the atmospheric state changed.
+
+---
+
+# Isaiah 55:10 — precipitation does not “return” before completing earth process
+
+The text says:
+rain/snow do not return there
+until:
+earth watered.
+
+The poem is not a scientific hydrological-cycle description.
+
+It does not mention:
+- evaporation;
+- condensation;
+- cloud formation.
+
+## M49D2M-13 — PROCESS DESCRIPTION CAN CAPTURE FUNCTIONAL CYCLE WITHOUT ENUMERATING EVERY PHYSICAL SUBPROCESS
+
+This is crucial.
+
+Do not overread ancient poetry as:
+complete atmospheric model.
+
+But also do not discard:
+the real directional sequence it preserves.
+
+---
+
+# Isaiah 55:10 — water changes the ground’s productive state
+
+Precipitation:
+waters earth.
+
+Then earth:
+brings forth;
+sprouts.
+
+## M49D2M-14 — WATER INPUT IS THE HINGE BETWEEN BARREN/POTENTIAL GROUND AND ACTIVE BIOLOGICAL PRODUCTION
+
+This strongly matches:
+Isaiah 35;
+Isaiah 41;
+Isaiah 48;
+Isaiah 49.
+
+A repeated Isaiah pattern is now clear:
+
+**water-state change**
+→ **ecological-state change**.
+
+---
+
+# Isaiah 55:10 — germination → seed → bread creates a multi-stage food pipeline
+
+Earth:
+sprouts.
+
+Output A:
+seed for sower.
+
+Output B:
+bread for eater.
+
+## M49D2M-15 — ECOLOGICAL RECOVERY MUST PROCEED THROUGH PRODUCTION CHAIN BEFORE HUMAN FOOD SECURITY IS REALIZED
+
+water
+→ plant growth
+→ reproductive seed
+→ processed/usable food.
+
+This is much more precise than:
+“rain = blessing.”
+
+---
+
+# M49D2M-16 — SUCCESSOR ECOLOGY MUST SUPPORT BOTH REPRODUCTION AND CONSUMPTION
+
+Seed:
+future cycle.
+
+Bread:
+current survival.
+
+A stable system needs both:
+- immediate food;
+- next-generation production.
+
+This is directly relevant to Vardath world-reset survivability.
+
+---
+
+# Isaiah 55:10–11 — word is compared to precipitation as a successful dispatched process
+
+Word:
+goes out from mouth.
+
+Rain/snow:
+go down from heaven.
+
+Both:
+do not return empty.
+
+Both:
+accomplish assigned purpose.
+
+## M49D2M-17 — INFORMATION AND WATER ARE PARALLEL CARRIERS OF CHANGE, NOT THE SAME SUBSTANCE
+
+This is one of the chapter’s strongest controls.
+
+The comparison aligns:
+- origin;
+- outward/downward dispatch;
+- effect;
+- successful completion;
+- return.
+
+But:
+word ≠ water.
+
+---
+
+# Isaiah 55:11 — “sent” word acts as an information agent
+
+The word is:
+sent;
+accomplishes;
+succeeds.
+
+## M49D2M-18 — INFORMATION CAN BE MODELLED AS AN ACTIVE PROCESS AGENT WITHOUT BECOMING MATERIAL CARGO
+
+This is useful for:
+mythic speech;
+names;
+commands;
+magic formulae.
+
+Information may alter behavior/system state
+without being identical to a physical current.
+
+---
+
+# Isaiah 55:10–11 — Vardath vertical-cycle comparison
+
+Vardath:
+dragon lattice springs support ground
+→ geometry changes at gate
+→ atmosphere/water redistribute
+→ land ecology changes
+→ survivor populations adapt/repopulate
+→ stable successor state.
+
+Isaiah 55:
+heaven
+→ precipitation descends
+→ earth waters
+→ plants sprout
+→ seed/food produced
+→ human life supported.
+
+## M49D2M-19 — ISAIAH 55 STRONGLY MATCHES THE DOWNSTREAM HYDROLOGICAL/ECOLOGICAL PART OF THE VARDATH PROCESS
+
+What it does **not** supply:
+- dragon/lattice support;
+- ground-support failure;
+- fingertrap transition;
+- causal geometry change before precipitation.
+
+Therefore:
+strong effects correspondence,
+mechanism still incomplete.
+
+---
+
+# Isaiah 55:10 — snow as well as rain broadens atmospheric state
+
+The verse explicitly includes:
+snow.
+
+## M49D2M-20 — UPPER-WATER INPUT CAN ARRIVE IN MULTIPLE PHASE STATES
+
+liquid:
+rain.
+
+solid:
+snow.
+
+This is an important physical control.
+
+Water redistribution need not occur in only one phase.
+
+### Vardath relevance
+
+The event model should track:
+- vapor;
+- liquid;
+- ice/snow;
+- pressure;
+- temperature.
+
+---
+
+# Isaiah 55:12 — population departure is joyful and guided
+
+“You shall go out”
+→ joy;
+be led back
+→ peace.
+
+## M49D2M-21 — ENVIRONMENTAL RESOURCE RESTORATION IS FOLLOWED BY POPULATION MOVEMENT
+
+This is another:
+resource/ecology
+→ route/population
+sequence.
+
+---
+
+# Isaiah 55:12 — mountains/hills/trees are personified as response field
+
+Mountains/hills:
+sing.
+
+Trees:
+clap.
+
+## M49D2M-22 — LANDSCAPE CAN BE PROJECTED AS PARTICIPATING IN SOCIAL RESPONSE WITHOUT LITERAL SENTIENT GEOLOGY
+
+This is important for:
+dragon;
+mountain;
+tree
+myth interpretation.
+
+Personification alone
+does not prove organismal ontology.
+
+---
+
+# Isaiah 55:13 — thorn/brier → cypress/myrtle is ecological replacement
+
+The wording:
+instead of thorn
+→ cypress;
+instead of brier
+→ myrtle.
+
+## M49D2M-23 — SUCCESSOR ECOLOGY CAN BE REPRESENTED AS SPECIES/VEGETATION-CLASS REPLACEMENT
+
+This is not necessarily:
+one thorn physically transforms into a cypress.
+
+It is:
+ecological succession/substitution.
+
+---
+
+# M49D2M-24 — “INSTEAD OF” SHOULD NOT BE READ AS ONE OBJECT MORPHING UNLESS CONTINUITY IS EXPLICIT
+
+This is a critical strict-transformation rule.
+
+For fingertrap identification:
+same structure continuity must be explicit or strongly demonstrated.
+
+---
+
+# Isaiah 55:13 — new vegetation becomes memorial/sign
+
+Ecological change:
+→ information sign.
+
+## M49D2M-25 — ENVIRONMENTAL STATE CAN FUNCTION AS LONG-DURATION RECORD OF PRIOR TRANSFORMATION
+
+This is highly relevant to the project.
+
+Post-event:
+vegetation;
+geomorphology;
+sediment;
+myth
+may all act as records.
+
+The text explicitly treats successor ecology as:
+memorial/sign.
+
+---
+
+# Isaiah 55 — water-cycle and dragon lattice-spring comparison
+
+The dragons in Vardath:
+**support the ground as lattice springs.**
+
+If that support geometry changes,
+the model predicts downstream effects in:
+- terrain;
+- atmosphere;
+- water;
+- ecology.
+
+Isaiah 55 gives strong downstream evidence pattern:
+
+upper water
+→ lower ground
+→ germination
+→ food
+→ population return.
+
+But it gives no dragon/support-stage.
+
+## M49D2M-26 — DRAGON-LATTICE HYPOTHESIS SHOULD BE TESTED BY WHETHER DRAGON DISRUPTION PRECEDES THE SAME HYDROLOGICAL/ECOLOGICAL CHAIN SEEN HERE
+
+This is now a concrete cross-text research test.
+
+Future high-value sequence would be:
+
+dragon/support change
+→ ground geometry change
+→ atmospheric/water transfer
+→ vegetation change
+→ food/population state change.
+
+If independent texts repeatedly preserve that order,
+the Vardath correspondence becomes much stronger.
+
+---
+
+# Isaiah 55 strict spiderweb → fingertrap screening
+
+## connected tension lattice
+Not named.
+
+## dragon ground-support spring
+Not named.
+
+## upper→lower water flow
+Strong.
+
+## ecological response
+Exceptionally strong.
+
+## population movement after restoration
+Strong.
+
+## throat/narrowing
+Absent.
+
+## transit through same lattice
+Absent.
+
+## reopening
+Absent.
+
+### Strict verdict
+
+**Isaiah 55 is a high-value hydrological/ecological correspondence text, not a strict lattice/fingertrap text. It supplies one of the clearest downstream sequences for testing the Vardath dragon-support mechanism elsewhere.**
+
+---
+
+# Isaiah 55 pair / process matrix
+
+## thirst / water
+biological deficit / survival resource.
+
+## money-labor / unsatisfying output
+input expenditure / failed resource result.
+
+## listening / eating
+information input / corrected resource behavior.
+
+## Davidic witness / nations
+central leader-memory / external populations.
+
+## unknown nations / restored Zion
+disconnected nodes / new attractor relation.
+
+## near / seek-call
+access window / receiver action.
+
+## heaven / earth
+upper source field / lower productive field.
+
+## rain-snow / ground
+water input / receiving substrate.
+
+## water / germination
+environmental input / biological response.
+
+## seed / bread
+future reproduction / current food.
+
+## word / rain-snow
+information process / water process.
+
+## departure / peace
+population movement / stable route state.
+
+## thorn-brier / cypress-myrtle
+failed/hostile vegetation class / successor vegetation class.
+
+## successor ecology / sign
+environment state / memory-information function.
+
+---
+
+# Isaiah 55 continuous transformation timeline
+
+thirsty population is invited to water
+→ food/wine/milk are made accessible outside normal payment
+→ failed expenditure system is exposed
+→ listening is linked to correct nourishment
+→ correct nourishment is linked to life
+→ enduring covenant/social order is offered
+→ witness/leader relation is recalled
+→ previously unknown nations form new network connection
+→ response window is defined while source is near
+→ route/thought change is required
+→ source/human scale difference is projected as heaven/earth height
+→ rain and snow descend from heaven
+→ water reaches earth
+→ ground becomes watered
+→ vegetation germinates/sprouts
+→ seed is generated for future sowing
+→ bread/food is generated for present eating
+→ precipitation is said to complete purpose before return
+→ word is sent from source in analogous way
+→ information accomplishes assigned purpose
+→ population goes out in joy
+→ return is led in peace
+→ mountains/hills/trees become poetic response field
+→ thorn/brier ecological state is replaced
+→ cypress/myrtle successor vegetation appears
+→ environmental transformation becomes enduring sign.
+
+---
+
+# New master-mechanism additions from Isaiah 55
+
+## M49D2M-1 — BIOLOGICAL NEED REQUIRES MULTIPLE RESOURCE CLASSES
+## M49D2M-2 — RESOURCE AVAILABILITY AND MARKET ACCESS ARE DISTINCT
+## M49D2M-3 — REAL INPUT CAN PRODUCE NON-NOURISHING OUTPUT
+## M49D2M-4 — INFORMATION CAN CHANGE RESOURCE SELECTION AND SURVIVAL
+## M49D2M-5 — SUCCESSOR STABILITY EXTENDS BEYOND IMMEDIATE SURVIVAL
+## M49D2M-6 — RESTORED NODE CAN ATTRACT PREVIOUSLY UNCONNECTED POPULATIONS
+## M49D2M-7 — NETWORK CONNECTION CAN FORM BETWEEN PREVIOUSLY DISCONNECTED NODES
+## M49D2M-8 — SYSTEM ACCESS CAN HAVE QUALITATIVE RESPONSE WINDOW
+## M49D2M-9 — RESTORATION MAY REQUIRE PATH + MODEL CHANGE
+## M49D2M-10 — VERTICAL DISTANCE CAN MODEL INFORMATION/CONTROL SCALE
+## M49D2M-11 — ABOVE/BELOW LANGUAGE ≠ AUTOMATIC WORLD-LAYER MAPPING
+## M49D2M-12 — UPPER WATER INPUT CAN ENTER LOWER ECOLOGICAL SYSTEM
+## M49D2M-13 — FUNCTIONAL CYCLE DESCRIPTION MAY OMIT PHYSICAL SUBPROCESSES
+## M49D2M-14 — WATER INPUT CAN HINGE BARREN→PRODUCTIVE GROUND STATE
+## M49D2M-15 — WATER→GERMINATION→SEED→BREAD IS MULTI-STAGE FOOD PIPELINE
+## M49D2M-16 — STABLE ECOLOGY REQUIRES REPRODUCTION + CONSUMPTION OUTPUT
+## M49D2M-17 — INFORMATION AND WATER CAN RUN PARALLEL PROCESS SHAPES WITHOUT SUBSTANCE IDENTITY
+## M49D2M-18 — INFORMATION CAN BE MODELLED AS ACTIVE PROCESS AGENT
+## M49D2M-19 — ISAIAH 55 STRONGLY MATCHES VARDATH DOWNSTREAM HYDROLOGY/ECOLOGY
+## M49D2M-20 — WATER INPUT CAN ARRIVE IN MULTIPLE PHASE STATES
+## M49D2M-21 — RESOURCE RESTORATION CAN PRECEDE POPULATION MOVEMENT
+## M49D2M-22 — LANDSCAPE PERSONIFICATION ≠ LITERAL SENTIENT GEOLOGY
+## M49D2M-23 — SUCCESSOR ECOLOGY CAN BE SPECIES/CLASS REPLACEMENT
+## M49D2M-24 — “INSTEAD OF” ≠ SAME-OBJECT MORPHING WITHOUT CONTINUITY
+## M49D2M-25 — ENVIRONMENTAL STATE CAN BECOME LONG-DURATION TRANSFORMATION RECORD
+## M49D2M-26 — DRAGON-SUPPORT HYPOTHESIS SHOULD PREDICT HYDROLOGY/ECOLOGY AFTER SUPPORT CHANGE
+
+---
+
+# Number / timing register — Isaiah 55
+
+Record without forcing:
+
+- “while near” = qualitative access window;
+- “everlasting covenant/sign” = long-duration stability language;
+- no precipitation quantity;
+- no cycle duration;
+- no gate-duration number;
+- no world-layer count;
+- no number of mountains/trees;
+- no recurrence interval.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 55
+
+1. Working primary text: Isaiah 55 NRSVUE, compared with NET/NIV/ESV/NKJV.
+2. Isaiah 55:1–3 is invitation/resource/covenant language; free water/wine/milk does not specify a physical post-catastrophe economy.
+3. Isaiah 55:8–9 uses heaven/earth height as analogy for thought/way difference, not a technical layered-world diagram.
+4. Isaiah 55:10–11 explicitly compares rain/snow with divine word; the two process shapes are analogous but not materially identical.
+5. The text does not give a full modern hydrological cycle; evaporation/condensation are not described.
+6. Working Preacher treats vv10–11 as an extended creation/nourishment analogy emphasizing the effectiveness of the word.
+7. Rain/snow watering the earth, sprouting, seed, and bread form a clear ecological/agricultural chain.
+8. Isaiah 55:12–13 continues Second Isaiah’s exilic return imagery.
+9. Mountains/trees are personified poetically.
+10. Thorn→cypress and brier→myrtle are best treated as ecological substitution/succession unless continuity is otherwise shown.
+11. No dragon/lattice-support structure is named.
+12. Strict fingertrap status remains negative; downstream hydrological/ecological correspondence is very strong.
+
+---
+
+# Sources logged — Isaiah 55
+
+Primary:
+- Isaiah 55 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Isaiah+55&version=NRSVUE
+- Isaiah 55 NRSVUE / NET:
+  https://www.biblegateway.com/passage/?search=Isaiah+55&version=NRSVUE%3BESV%3BNET
+- Isaiah 55 NRSVUE / NIV:
+  https://www.biblegateway.com/passage/?search=Isaiah+55&version=NRSVUE%3BNIV
+
+Scholarly / contextual:
+- Working Preacher, Isaiah 55:10–13, for the extended rain/snow→earth→life analogy:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-15/commentary-on-isaiah-5510-13-6
+- Working Preacher, Isaiah 55:1–9, for invitation/covenant and response-window context:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/third-sunday-in-lent-3/commentary-on-isaiah-551-9-4
+
+---
+
+# SECTION 49D2M CHECKPOINT — ISAIAH 55 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 55 gives one of the clearest upper-water→earth→plant→seed→food chains in the reconstructed Bible so far.**
+2. **This strongly matches the downstream water/ecology half of Vardath Cosmology.**
+3. **The chapter does not supply the dragon/lattice-support geometry that would cause the water transfer, so mechanism remains incomplete.**
+4. **Rain and snow establish multiple water phase states entering the lower-world ecology.**
+5. **The ecological pipeline supports both current consumption (bread) and future reproduction (seed).**
+6. **The word/rain comparison proves process-shape analogy, not substance identity.**
+7. **Ecological replacement becomes an enduring “sign,” making the transformed environment itself a record of prior change.**
+8. **Strict spiderweb→fingertrap status remains negative, but this chapter is now a key downstream test for future dragon-support passages.**
+
+### Next live block
+
+**Isaiah 56**
+
+Priority:
+- justice/righteousness “near”;
+- Sabbath as periodic time boundary;
+- foreigner/eunuch inclusion and lineage/offspring control;
+- “everlasting name” replacing biological descendants;
+- gathered outcasts + additional gathering;
+- temple/house as multi-population node;
+- prayer/offerings on altar;
+- watchmen as blind/silent dogs;
+- sleeping/dreaming information failure;
+- shepherds lacking understanding / turning own way;
+- wine/strong-drink future-repeat error;
+- compare periodic time boundaries, inclusion/exclusion gates, and failed observer systems with Vardath gate-watch/timing model.
