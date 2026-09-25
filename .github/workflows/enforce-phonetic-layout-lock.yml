@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'phonetic-bridge.html'
+      - 'phonetic-layout-safe-guard.js'
       - 'phonetic-no-autoscroll.js'
       - 'phonetic-original-language-dictionary.js'
       - 'tools/enforce_phonetic_layout_lock.py'

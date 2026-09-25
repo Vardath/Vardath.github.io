@@ -5,13 +5,14 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 html=ROOT/'phonetic-bridge.html'
 loader=ROOT/'phonetic-no-autoscroll.js'
+guard_js=ROOT/'phonetic-layout-safe-guard.js'
 
 text=html.read_text(encoding='utf-8')
 # Collapse every layout/scroll loader reference to one authoritative pair.
 text=re.sub(r'\s*<script\s+defer\s+src="phonetic-layout-safe-guard\.js\?v=[^"]+"></script>','',text)
 text=re.sub(r'\s*<script\s+defer\s+src="phonetic-no-autoscroll\.js\?v=[^"]+"></script>','',text)
 needle='<script defer src="phonetic-numeral-sounds.js?v=20260905-num1"></script>'
-guard='<script defer src="phonetic-layout-safe-guard.js?v=20260925-wngnav2"></script>'
+guard='<script defer src="phonetic-layout-safe-guard.js?v=20260925-site-nav3"></script>'
 tag='<script defer src="phonetic-no-autoscroll.js?v=20260911-sequence3"></script>'
 insert=guard+'\n'+tag
 if needle in text:
@@ -19,6 +20,22 @@ if needle in text:
 else:
     text=text.replace('</head>',insert+'\n</head>',1)
 html.write_text(text,encoding='utf-8')
+
+guard_src=guard_js.read_text(encoding='utf-8')
+nav_required=[
+    'href="index.html">Home</a>',
+    'href="vardath-cosmology.html">Cosmology</a>',
+    'href="phonetic-bridge.html">Phonetic Bridge</a>',
+    'href="art.html">Art Archive</a>',
+    'href="wng-art.html">WNG Art Gallery</a>',
+    'https://paypal.me/vardath',
+    'href="contact.html">Contact / Email me</a>',
+]
+nav_missing=[x for x in nav_required if x not in guard_src]
+if nav_missing:
+    raise SystemExit('Global bubble navigation missing from phonetic layout guard: '+', '.join(nav_missing))
+if "nav.id='vardath-site-nav-bottom'" in guard_src:
+    raise SystemExit('Duplicate bottom global navigation returned to phonetic layout guard')
 
 src=loader.read_text(encoding='utf-8')
 required=[
