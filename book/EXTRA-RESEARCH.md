@@ -48248,3 +48248,1027 @@ Priority:
 - Queen of Heaven offerings and competing causal models;
 - Jeremiah 45 Baruch life-as-prize preservation;
 - compare hidden stones→royal canopy placement and Egypt route choice with support/covering geometry.
+
+
+---
+
+# SECTION 50 progress H — Jeremiah 34–39
+## First-time research pass: slave release reversed into re-enslavement, cut-calf passage between separated halves, covenant/self-curse geometry, Egyptian interruption of siege, scroll writing→cutting→burning→rewriting, Benjamin Gate arrest, layered confinement, rope-lowering into mud cistern, load-distribution padding during rescue, surrender-for-survival logic, literal wall breach, gate occupation, night escape route, capture, and differentiated survival outcomes
+
+Jeremiah 34–39 is one of the most mechanically vivid sections in Jeremiah.
+
+Its strongest process systems are:
+
+- a social release state that is reversed back into bondage;
+- a covenant ritual in which a calf is **cut into two pieces and participants pass between the pieces**;
+- the Babylonian siege pressure temporarily relaxes because Egyptian forces approach, then returns;
+- a scroll is written, publicly read, cut column by column, burned, and later reconstructed with the original words plus additions;
+- Jeremiah attempts to leave through a city gate and is arrested;
+- confinement moves through increasingly restrictive spaces;
+- Jeremiah is lowered by ropes into a cistern and sinks into mud;
+- Ebed-melech engineers a safer rope rescue using cloth/rags as padding under the armpits;
+- Jeremiah again presents surrender as the life-preserving route;
+- the city wall is literally breached;
+- Babylonian officials occupy a gate;
+- Zedekiah uses a night escape route between walls;
+- the escape fails and he is captured.
+
+For Vardath Cosmology, the highest-priority comparisons are:
+
+1. **passage between two halves of one cut body**;
+2. **information redundancy surviving deliberate destruction**;
+3. **vertical rope-carrier mechanics in a confined shaft/cistern**;
+4. **controlled gate vs wall breach vs escape corridor**;
+5. **survival route can still require surrender rather than flight**.
+
+No explicit dragon ground-support lattice appears.
+
+---
+
+# Jeremiah 34:8–10 — release of Hebrew slaves creates a boundary-state change
+
+Zedekiah and the people proclaim:
+liberty.
+
+Previously constrained people:
+→ released.
+
+## M50H-1 — SOCIAL/LEGAL BOUNDARY CAN CHANGE FROM CONSTRAINED TO FREE WITHOUT THE PHYSICAL PERSON CHANGING LOCATION
+
+This is a status/interface change.
+
+---
+
+# Jeremiah 34:11 — released people are taken back and re-enslaved
+
+The direction reverses:
+
+bondage
+→ release
+→ bondage again.
+
+## M50H-2 — A RELEASE STATE CAN BE REVERSED IF THE CONTROL SYSTEM THAT CREATED IT IS NOT STABLE
+
+This is crucial for gate thinking.
+
+An opening/release event:
+does not guarantee
+persistent freedom.
+
+---
+
+# M50H-3 — STABLE TRANSITION REQUIRES THE NEW STATE TO PERSIST AFTER THE INITIAL ACT
+
+This is a general systems rule.
+
+---
+
+# Jeremiah 34:18–19 — calf is cut in two and people pass between the pieces
+
+The covenant ritual is explicit:
+
+calf
+→ cut into two pieces;
+participants
+→ pass between those parts.
+
+This is one of the most important geometric passages encountered so far.
+
+## M50H-4 — ONE BODY CAN BE SPLIT INTO TWO BOUNDING HALVES THAT DEFINE A TRANSIT CORRIDOR BETWEEN THEM
+
+This is genuine:
+separation
+→ central passage
+→ human transit.
+
+### Vardath relevance
+
+The cosmology includes:
+paired dragon/lattice forces;
+separation/reorientation;
+a central gate/throat between transformed parts.
+
+Jeremiah 34 therefore deserves serious structural comparison.
+
+---
+
+# Jeremiah 34 — strict object-function control
+
+The divided object is:
+a slaughtered calf.
+
+The passage is:
+ritual/oath space.
+
+The participants:
+covenant makers.
+
+The function:
+self-curse / treaty ratification symbolism.
+
+Ancient Near Eastern covenant scholarship compares this with:
+treaties and rites where the cut animal represents the fate awaiting covenant breakers.
+
+## M50H-5 — PASSAGE BETWEEN SEPARATED HALVES DOES NOT BY ITSELF ESTABLISH WORLD-SUPPORT OR GATE MECHANICS
+
+The geometry is real.
+
+The ontology/function are different.
+
+---
+
+# M50H-6 — GEOMETRIC CORRESPONDENCE AND MECHANICAL FUNCTION MUST BE SCORED SEPARATELY
+
+Jeremiah 34:
+
+### geometry match
+Strong:
+two halves with passage between.
+
+### support-function match
+Absent.
+
+### load-bearing ground relation
+Absent.
+
+### spring/tension relation
+Absent.
+
+### reopening
+Absent.
+
+Therefore:
+**high-priority geometry analogue, not strict Vardath identity.**
+
+---
+
+# Jeremiah 34:18–20 — passing between pieces enacts potential self-curse
+
+The violators are threatened:
+to become like the calf they cut.
+
+## M50H-7 — RITUAL PATH CAN ENCODE A CONDITIONAL FUTURE STATE FOR THE PARTICIPANT
+
+Movement through space:
+carries information/commitment meaning.
+
+This is a strong example of:
+path itself functioning as message.
+
+---
+
+# Jeremiah 34:21–22 — temporary Babylonian withdrawal does not mean threat ended
+
+The Babylonian army:
+had withdrawn because of Egyptian movement.
+
+Then:
+returns.
+
+## M50H-8 — TEMPORARY RELIEF FROM EXTERNAL PRESSURE CAN BE MISREAD AS FINAL SYSTEM RECOVERY
+
+This is a major hazard-control rule.
+
+---
+
+# M50H-9 — PRESSURE REMOVAL MUST BE DISTINGUISHED FROM THREAT ELIMINATION
+
+For Vardath:
+a temporary lull
+may not mean
+the gate/event is over.
+
+---
+
+# Jeremiah 35 — Rechabite stability through inherited rule
+
+The Rechabites follow ancestral instructions:
+no wine;
+no permanent houses/fields/vineyards;
+live in tents.
+
+## M50H-10 — MOBILE/LOW-INFRASTRUCTURE SOCIAL SYSTEM CAN PRESERVE IDENTITY THROUGH RULE CONTINUITY
+
+This is a different survival strategy from Jeremiah 29.
+
+Jeremiah 29:
+build houses/gardens.
+
+Jeremiah 35:
+maintain mobile/tent lifestyle.
+
+## M50H-11 — NO SINGLE SETTLEMENT STRATEGY IS UNIVERSALLY SAFE; STRATEGY DEPENDS ON GROUP ROLE AND SYSTEM CONDITIONS
+
+This is an important control.
+
+---
+
+# Jeremiah 36:1–4 — spoken information is converted into written archive
+
+Jeremiah:
+dictates.
+
+Baruch:
+writes on scroll.
+
+## M50H-12 — INFORMATION CAN MOVE FROM ORAL MEMORY TO EXTERNAL WRITTEN STORAGE
+
+This continues Jeremiah 30/32.
+
+---
+
+# Jeremiah 36:5–10 — Baruch becomes information carrier/interface
+
+Jeremiah:
+confined/restricted.
+
+Baruch:
+goes publicly;
+reads scroll.
+
+## M50H-13 — WHEN ORIGINAL SOURCE CANNOT ACCESS AUDIENCE, A SECONDARY CARRIER CAN EXTEND MESSAGE RANGE
+
+This is a true human carrier network.
+
+---
+
+# Jeremiah 36:20–23 — scroll is cut column by column and burned
+
+King:
+cuts sections with knife;
+throws them into fire;
+continues until entire scroll is destroyed.
+
+## M50H-14 — INFORMATION STORAGE MEDIUM CAN BE DESTROYED INCREMENTALLY WHILE CONTENT MAY STILL EXIST ELSEWHERE
+
+This is a major catastrophe-memory result.
+
+Physical copy:
+destroyed.
+
+Source memory/network:
+survives.
+
+---
+
+# M50H-15 — DESTRUCTION OF ONE ARCHIVE COPY ≠ DESTRUCTION OF INFORMATION IF REDUNDANT SOURCES EXIST
+
+This is one of the strongest preservation principles in the reconstructed Bible.
+
+---
+
+# Jeremiah 36:27–32 — replacement scroll reconstructs the lost text and adds material
+
+Jeremiah:
+dictates again.
+
+Baruch:
+writes again.
+
+Result:
+former words restored
+plus many similar/additional words.
+
+## M50H-16 — INFORMATION SYSTEM CAN RECOVER FROM MEDIA LOSS THROUGH REDUNDANT HUMAN MEMORY/SOURCE RECONSTRUCTION
+
+This is extremely important.
+
+---
+
+# M50H-17 — RECOVERED RECORD MAY NOT BE IDENTICAL TO DESTROYED RECORD; RESTORATION CAN INCLUDE EXPANSION
+
+This matters directly to textual transmission.
+
+Reconstruction:
+not necessarily byte-for-byte copy.
+
+It may contain:
+original core
++
+new material.
+
+---
+
+# Jeremiah 36 — Vardath memory implication
+
+For catastrophe preservation:
+
+single archive
+→ vulnerable.
+
+distributed memory + scribes + duplicate copies
+→ resilient.
+
+## M50H-18 — CATASTROPHE MEMORY SHOULD BE REDUNDANT ACROSS PEOPLE + MEDIA + LOCATIONS
+
+This repeats and strengthens Jeremiah 32.
+
+---
+
+# Jeremiah 37:5 — Egyptian army temporarily changes Babylonian siege state
+
+Pharaoh’s army:
+comes out.
+
+Chaldeans:
+withdraw from Jerusalem.
+
+## M50H-19 — THIRD-PARTY FORCE CAN TEMPORARILY ALTER PRESSURE ON A BESIEGED NODE
+
+This is network intervention.
+
+---
+
+# Jeremiah 37:7–10 — withdrawal is predicted to reverse
+
+Jeremiah says:
+Egyptian force returns home;
+Chaldeans come back.
+
+## M50H-20 — OBSERVED SHORT-TERM TREND CAN REVERSE; DIRECTIONAL MOMENTUM IS NOT GUARANTEED
+
+This is another anti-stationarity control.
+
+---
+
+# Jeremiah 37:11–13 — Jeremiah attempts exit through Benjamin Gate and is arrested
+
+Jeremiah:
+leaves city toward land of Benjamin.
+
+At gate:
+guard stops/arrests him.
+
+## M50H-21 — GATE CAN FUNCTION AS SURVEILLANCE/INTERCEPTION NODE RATHER THAN SIMPLE OPENING
+
+This is crucial.
+
+Gate functions now include:
+- access;
+- exit;
+- trade;
+- expulsion;
+- security check;
+- capture.
+
+---
+
+# Jeremiah 37:15–16 — confinement has nested layers
+
+Jeremiah is placed:
+in house of scribe
+→ prison
+→ dungeon/cistern cells.
+
+## M50H-22 — ENCLOSURE CAN HAVE MULTIPLE NESTED CONFINEMENT LAYERS
+
+This is a real topology:
+outer building
+→ prison
+→ inner pit/chamber.
+
+---
+
+# Jeremiah 37:16 — long time in confinement changes survival conditions
+
+## M50H-23 — ENCLOSURE HAZARD DEPENDS ON DURATION AS WELL AS GEOMETRY
+
+This echoes:
+dose-duration.
+
+---
+
+# Jeremiah 37:21 — confinement state can be modified without full release
+
+Zedekiah transfers Jeremiah:
+from worse prison
+→ court of guard;
+gives bread while supply remains.
+
+## M50H-24 — SYSTEM CAN IMPROVE CONFINEMENT CONDITIONS WITHOUT REMOVING CONFINEMENT
+
+Binary free/imprisoned model is insufficient.
+
+---
+
+# Jeremiah 38:6 — Jeremiah is lowered by ropes into cistern
+
+Officials:
+take Jeremiah;
+lower him with ropes.
+
+Cistern:
+no water;
+mud at bottom.
+
+Jeremiah:
+sinks into mud.
+
+This is an exceptionally mechanical scene.
+
+## M50H-25 — VERTICAL TRANSFER THROUGH A NARROW ENCLOSURE CAN BE MEDIATED BY TENSION MEMBERS
+
+carrier mechanism:
+ropes.
+
+cargo:
+human body.
+
+path:
+vertical shaft/cistern.
+
+destination:
+muddy bottom.
+
+### Vardath relevance
+
+This is one of the strongest **vertical throat/carrier** analogues in Jeremiah.
+
+But:
+the ropes are external carrier members,
+not the enclosure itself transforming into a throat.
+
+---
+
+# M50H-26 — NARROW VERTICAL PASSAGE + TENSIONED CARRIER ≠ FINGERTRAP UNLESS THE PASSAGE STRUCTURE ITSELF IS THE TRANSFORMING LATTICE
+
+This is a critical distinction.
+
+---
+
+# Jeremiah 38:6 — water absent, mud remains
+
+Cistern:
+no liquid water;
+still wet mud.
+
+## M50H-27 — LOSS OF FREE WATER DOES NOT MEAN ZERO MOISTURE IN A FORMER WATER-HOLDING SYSTEM
+
+This is a useful hydrological control.
+
+---
+
+# Jeremiah 38:7–10 — Ebed-melech identifies enclosure as lethal
+
+Problem:
+Jeremiah will die there,
+especially under famine conditions.
+
+## M50H-28 — CONFINEMENT HAZARD CAN COMBINE LOCAL ENVIRONMENT + SYSTEM-WIDE RESOURCE FAILURE
+
+Pit alone:
+dangerous.
+
+Pit + famine:
+more dangerous.
+
+---
+
+# Jeremiah 38:11–12 — old rags/cloths are placed under arms before rope lift
+
+Ebed-melech provides:
+old rags/clothes;
+padding under armpits;
+then ropes.
+
+This is one of the most mechanically sophisticated rescue details in the Bible.
+
+## M50H-29 — LOAD DISTRIBUTION/PADDING CAN REDUCE LOCAL TISSUE DAMAGE DURING TENSIONED LIFTING
+
+This is literal engineering logic.
+
+Rope force:
+concentrated.
+
+Padding:
+spreads load.
+
+---
+
+# M50H-30 — SAFE CARRIER DESIGN REQUIRES ATTENTION TO INTERFACE PRESSURE, NOT ONLY TOTAL LOAD CAPACITY
+
+This is directly relevant to any Vardath transfer-survival mechanics.
+
+A passage can be open,
+carrier strong enough,
+yet cargo injured at contact points.
+
+---
+
+# Jeremiah 38:13 — Jeremiah is raised by ropes
+
+Direction reverses:
+
+lowered
+→ bottom;
+raised
+→ out.
+
+## M50H-31 — SAME VERTICAL CORRIDOR CAN SUPPORT BIDIRECTIONAL TRANSFER WITH THE SAME CARRIER CLASS
+
+This is a useful route-reversal analogue.
+
+---
+
+# Jeremiah 38:14–23 — surrender remains the life-preserving route
+
+Jeremiah tells Zedekiah:
+go out to Babylonian officials
+→ live;
+city spared from burning.
+
+Refusal:
+city burned;
+king captured.
+
+## M50H-32 — SURVIVAL ROUTE CAN REQUIRE MOVING TOWARD THE APPARENT THREAT RATHER THAN AWAY FROM IT
+
+This repeats Jeremiah 21.
+
+---
+
+# Jeremiah 38:19 — fear of other Judeans affects decision
+
+Zedekiah’s control policy is altered by:
+social fear
+rather than only physical danger.
+
+## M50H-33 — SURVIVAL DECISIONS CAN FAIL BECAUSE SOCIAL/POLITICAL COST IS WEIGHTED ABOVE PHYSICAL RISK
+
+This is highly realistic.
+
+---
+
+# Jeremiah 39:1–2 — prolonged siege ends in literal wall breach
+
+Siege begins:
+ninth year / tenth month.
+
+City breached:
+eleventh year / fourth month.
+
+## M50H-34 — PROLONGED EXTERNAL PRESSURE CAN CULMINATE IN BOUNDARY FAILURE AFTER A LONG DELAY
+
+This is genuine:
+pressure
+→ breach.
+
+---
+
+# M50H-35 — WALL BREACH IS AN UNCONTROLLED ACCESS STATE, DISTINCT FROM A CONTROLLED GATE
+
+This reinforces Isaiah 58.
+
+---
+
+# Jeremiah 39:3 — Babylonian officials occupy Middle Gate
+
+After breach:
+officials sit in gate.
+
+## M50H-36 — AFTER BOUNDARY FAILURE, CONTROL OF AN INTERFACE NODE CAN TRANSFER TO THE INVADING SYSTEM
+
+This is a precise control-state transition.
+
+---
+
+# Jeremiah 39:4 — Zedekiah escapes by night through gate between two walls
+
+Escape route:
+king’s garden;
+gate between two walls;
+toward Arabah.
+
+## M50H-37 — MULTI-WALL SYSTEM CAN CONTAIN A HIDDEN/SECONDARY EXIT CORRIDOR
+
+This is a true:
+nested-boundary escape route.
+
+---
+
+# M50H-38 — EXISTENCE OF AN ESCAPE CORRIDOR DOES NOT GUARANTEE SUCCESSFUL ESCAPE
+
+Route:
+open.
+
+Pursuer:
+faster/more effective.
+
+Outcome:
+capture.
+
+This is another route ≠ safety control.
+
+---
+
+# Jeremiah 39:5 — Zedekiah captured near Jericho
+
+Movement sequence:
+
+city exit
+→ open terrain
+→ pursuit
+→ capture
+→ forced transfer to Riblah.
+
+## M50H-39 — POST-EXIT SURVIVAL DEPENDS ON PURSUER RELATION, NOT ONLY BOUNDARY CROSSING
+
+This echoes Uriah.
+
+---
+
+# Jeremiah 39:6–7 — vision/control/body state is deliberately destroyed
+
+Zedekiah:
+sees sons killed;
+eyes put out;
+bound in fetters;
+taken to Babylon.
+
+## M50H-40 — CAPTURE CAN DISABLE SENSOR FUNCTION BEFORE FORCED TRANSFER
+
+This is a brutal but important systems point.
+
+---
+
+# Jeremiah 39:8 — city buildings burned and walls broken down
+
+## M50H-41 — BREACH CAN BE FOLLOWED BY DELIBERATE REMOVAL OF FUTURE DEFENSIVE CAPACITY
+
+Boundary failure
+→ structural dismantling.
+
+This prevents easy reoccupation/resistance.
+
+---
+
+# Jeremiah 39:9–10 — population sorting after capture
+
+Some:
+deported.
+
+Poor:
+left in land;
+given vineyards/fields.
+
+## M50H-42 — POST-COLLAPSE POPULATION MAY BE SORTED INTO DIFFERENT DESTINATION/RESOURCE TRAJECTORIES
+
+Again:
+one event
+→ multiple outcomes.
+
+---
+
+# Jeremiah 39:11–14 — Jeremiah is protected/released under Babylonian order
+
+The prophet:
+survives because invading authority orders protection.
+
+## M50H-43 — SAME CONTROL SYSTEM THAT DESTROYS CITY CAN PROTECT SPECIFIC INDIVIDUAL NODES
+
+System role
+is not uniformly applied to every person.
+
+---
+
+# Jeremiah 39:15–18 — Ebed-melech receives differentiated survival promise
+
+Ebed-melech:
+survives because of trust/aid role.
+
+## M50H-44 — PRIOR PROTECTIVE ACTION CAN BECOME A LATER SURVIVAL-DIFFERENTIATION VARIABLE
+
+Narrative moral logic,
+not physical selection law.
+
+---
+
+# Jeremiah 34–39 — strict Vardath cut-body passage screening
+
+Jeremiah 34 calf:
+
+single body
+→ cut in two
+→ central gap
+→ humans pass between halves.
+
+### strong correspondence
+- one object separated into two parts;
+- passage lies between;
+- transit occurs through central separation.
+
+### missing Vardath criteria
+- calf not a ground-support lattice;
+- no spring/tension function;
+- no dragon;
+- no world layer supported;
+- no geometry change from spiderweb state;
+- no throat narrowing;
+- no rejoining/reopening as support.
+
+## M50H-45 — JEREMIAH 34 IS A HIGH-PRIORITY SEPARATED-HALVES PASSAGE ANALOGUE, NOT A STRICT SUPPORT-LATTICE GATE
+
+This should stay flagged for later cross-cultural comparison.
+
+---
+
+# Jeremiah 34–39 — rope/cistern Vardath screening
+
+### overlap
+- vertical shaft;
+- tension members;
+- human cargo;
+- down/up transfer;
+- narrow enclosure;
+- survival depends on interface engineering.
+
+### mismatch
+- shaft does not transform;
+- ropes are carrier, not support lattice;
+- no ground-world adjacency change.
+
+## M50H-46 — JEREMIAH 38 IS A STRONG VERTICAL-CARRIER ANALOGUE BUT NOT FINGERTRAP TRANSFORMATION
+
+---
+
+# Jeremiah 34–39 — scroll-memory Vardath screening
+
+scroll 1
+→ written;
+→ read;
+→ cut;
+→ burned.
+
+source/Baruch memory
+→ survives.
+
+scroll 2
+→ reconstructed;
+→ expanded.
+
+## M50H-47 — INFORMATION CAN SURVIVE PHYSICAL DESTRUCTION OF ONE COPY THROUGH DISTRIBUTED HUMAN AND MATERIAL REDUNDANCY
+
+This is one of the strongest catastrophe-memory findings in Jeremiah.
+
+---
+
+# Jeremiah 34–39 pair / process matrix
+
+## slave / freed slave
+constraint / release.
+
+## freed slave / re-enslaved slave
+temporary open state / reversed constraint.
+
+## calf half / calf half
+separated body boundaries.
+
+## central gap / covenant participant
+transit corridor / moving person.
+
+## Babylonian withdrawal / return
+temporary pressure relief / renewed pressure.
+
+## oral source / written scroll
+human memory / external storage.
+
+## scroll / knife-fire
+information medium / destruction tools.
+
+## destroyed scroll / replacement scroll
+media loss / reconstruction.
+
+## Jeremiah / Baruch
+source / scribe-carrier.
+
+## Benjamin Gate / guard
+exit interface / interception node.
+
+## prison / cistern
+outer confinement / deeper confinement.
+
+## rope / Jeremiah
+tension carrier / human cargo.
+
+## cloth padding / armpit
+load spreader / high-pressure contact point.
+
+## lowering / raising
+downward transfer / upward transfer.
+
+## intact wall / breach
+controlled boundary / failed boundary.
+
+## Middle Gate / Babylonian officials
+interface / new controller.
+
+## escape gate / pursuer
+route / dynamic hostile agent.
+
+## deported poor / remaining poor
+different post-collapse population trajectories.
+
+---
+
+# Jeremiah 34–39 continuous transformation timeline
+
+Hebrew slaves are released
+→ liberty state briefly exists
+→ people reverse decision
+→ released population is re-enslaved
+→ covenant violation is recalled
+→ calf is slaughtered
+→ calf is cut into two halves
+→ participants pass between separated pieces
+→ ritual path encodes self-curse
+→ Babylonian siege pressure briefly relaxes under Egyptian intervention
+→ Babylonians return
+→ Rechabite inherited rule becomes obedience comparison
+→ Jeremiah dictates warning material
+→ Baruch converts speech to scroll
+→ Baruch carries/reads message publicly
+→ scroll reaches king
+→ king cuts scroll section by section
+→ pieces are burned
+→ first physical copy is destroyed
+→ Jeremiah redictates
+→ Baruch rewrites
+→ replacement scroll includes previous words plus additions
+→ Egyptian force changes siege state temporarily
+→ Chaldeans return
+→ Jeremiah attempts departure through Benjamin Gate
+→ guard intercepts him
+→ confinement deepens
+→ Jeremiah later is lowered by ropes into cistern
+→ no free water remains
+→ Jeremiah sinks into mud
+→ Ebed-melech identifies lethal condition
+→ cloth padding is prepared
+→ ropes are attached with load distribution
+→ Jeremiah is raised through same vertical corridor
+→ surrender/life route is again proposed
+→ Zedekiah refuses
+→ siege pressure continues
+→ city wall is breached
+→ Babylonian officials occupy gate
+→ Zedekiah exits by night through gate between walls
+→ open route fails to produce safety
+→ pursuers capture him near Jericho
+→ sensor/body control is destroyed
+→ city burns
+→ walls are dismantled
+→ population is sorted into deported/remaining groups
+→ Jeremiah receives protection
+→ Ebed-melech receives differentiated survival outcome.
+
+---
+
+# New master-mechanism additions from Jeremiah 34–39
+
+## M50H-1 — LEGAL BOUNDARY CAN CHANGE WITHOUT LOCATION CHANGE
+## M50H-2 — RELEASE CAN REVERSE IF NEW STATE IS UNSTABLE
+## M50H-3 — STABLE TRANSITION REQUIRES PERSISTENCE
+## M50H-4 — ONE BODY CAN SPLIT INTO TWO HALVES DEFINING CENTRAL PASSAGE
+## M50H-5 — PASSAGE BETWEEN HALVES ≠ SUPPORT-LATTICE GATE BY DEFAULT
+## M50H-6 — GEOMETRY MATCH AND FUNCTION MATCH MUST BE SCORED SEPARATELY
+## M50H-7 — RITUAL PATH CAN ENCODE CONDITIONAL FUTURE STATE
+## M50H-8 — TEMPORARY PRESSURE RELIEF CAN BE MISREAD AS RECOVERY
+## M50H-9 — PRESSURE REMOVAL ≠ THREAT ELIMINATION
+## M50H-10 — MOBILE SOCIAL SYSTEM CAN PRESERVE IDENTITY THROUGH RULE CONTINUITY
+## M50H-11 — NO SINGLE SETTLEMENT STRATEGY IS UNIVERSALLY SAFE
+## M50H-12 — ORAL INFORMATION CAN MOVE TO EXTERNAL ARCHIVE
+## M50H-13 — SECONDARY CARRIER CAN EXTEND SOURCE RANGE
+## M50H-14 — INFORMATION MEDIUM CAN BE DESTROYED INCREMENTALLY
+## M50H-15 — ONE COPY DESTROYED ≠ INFORMATION DESTROYED
+## M50H-16 — REDUNDANT MEMORY CAN RECONSTRUCT LOST ARCHIVE
+## M50H-17 — RECOVERED RECORD CAN INCLUDE EXPANSION
+## M50H-18 — CATASTROPHE MEMORY SHOULD BE REDUNDANT ACROSS PEOPLE/MEDIA/LOCATIONS
+## M50H-19 — THIRD PARTY CAN TEMPORARILY ALTER SIEGE PRESSURE
+## M50H-20 — SHORT-TERM TREND CAN REVERSE
+## M50H-21 — GATE CAN BE SURVEILLANCE/INTERCEPTION NODE
+## M50H-22 — ENCLOSURE CAN HAVE NESTED CONFINEMENT LAYERS
+## M50H-23 — ENCLOSURE HAZARD DEPENDS ON DURATION
+## M50H-24 — CONFINEMENT CAN IMPROVE WITHOUT FULL RELEASE
+## M50H-25 — VERTICAL TRANSFER CAN USE TENSION MEMBERS
+## M50H-26 — NARROW VERTICAL PASSAGE + ROPES ≠ FINGERTRAP WITHOUT STRUCTURAL TRANSFORMATION
+## M50H-27 — NO FREE WATER ≠ ZERO MOISTURE
+## M50H-28 — LOCAL ENCLOSURE HAZARD CAN COUPLE TO SYSTEM-WIDE FAMINE
+## M50H-29 — PADDING CAN DISTRIBUTE LIFTING LOAD
+## M50H-30 — SAFE CARRIER DESIGN REQUIRES INTERFACE-PRESSURE CONTROL
+## M50H-31 — SAME VERTICAL CORRIDOR CAN SUPPORT DOWN/UP TRANSFER
+## M50H-32 — SURVIVAL ROUTE CAN REQUIRE MOVING TOWARD THREAT
+## M50H-33 — SOCIAL FEAR CAN OVERRIDE PHYSICAL SURVIVAL POLICY
+## M50H-34 — PROLONGED PRESSURE CAN CULMINATE IN BOUNDARY BREACH
+## M50H-35 — BREACH ≠ CONTROLLED GATE
+## M50H-36 — CONTROL OF INTERFACE CAN TRANSFER AFTER BREACH
+## M50H-37 — MULTI-WALL SYSTEM CAN CONTAIN SECONDARY EXIT CORRIDOR
+## M50H-38 — ESCAPE CORRIDOR ≠ SUCCESSFUL ESCAPE
+## M50H-39 — POST-EXIT SURVIVAL DEPENDS ON PURSUER RELATION
+## M50H-40 — CAPTURE CAN DISABLE SENSOR FUNCTION BEFORE TRANSFER
+## M50H-41 — BREACH CAN BE FOLLOWED BY DELIBERATE DEFENSIVE DISMANTLING
+## M50H-42 — POST-COLLAPSE POPULATION CAN SPLIT INTO DIFFERENT TRAJECTORIES
+## M50H-43 — DESTRUCTIVE CONTROL SYSTEM CAN PROTECT SELECTED NODES
+## M50H-44 — PRIOR PROTECTIVE ACTION CAN BECOME SURVIVAL-DIFFERENTIATION VARIABLE
+## M50H-45 — CUT-CALF IS HIGH-PRIORITY SEPARATED-HALVES ANALOGUE
+## M50H-46 — CISTERN/ROPE IS STRONG VERTICAL-CARRIER ANALOGUE
+## M50H-47 — INFORMATION CAN SURVIVE COPY DESTRUCTION THROUGH REDUNDANCY
+
+---
+
+# Number / timing register — Jeremiah 34–39
+
+Record without forcing:
+
+- Jeremiah 39 dates siege from **ninth year / tenth month** of Zedekiah to breach in **eleventh year / fourth month**.
+- exact modern year of Jerusalem’s fall is debated between 587/586 BCE depending chronological system.
+- Jeremiah 36 scroll destruction occurs section by section/column by column but no total count is given.
+- no rope length is given.
+- no cistern depth is given.
+- no width of gap between calf halves is given.
+- no gate-duration number.
+- no world-layer count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 34–39
+
+1. Working primary text: Jeremiah 34–39 NRSVUE, compared with MT/LXX-aware scholarship.
+2. Jeremiah 34’s covenant ritual has close ancient Near Eastern parallels in animal-cutting/self-curse treaty symbolism; the exact ritual meaning depends on context.
+3. The fact that participants pass between two calf halves is textually explicit and mechanically important, but the calf is not a support structure.
+4. Jeremiah 34’s Babylonian withdrawal is historically connected to Egyptian intervention; temporary military relief should not be read as final victory.
+5. Jeremiah 35 presents a distinct mobile/tent identity strategy and should not be harmonized into Jeremiah 29’s settle/build model as though only one was legitimate.
+6. Jeremiah 36 is especially important for textual-transmission studies because destruction of the first scroll is followed by rewriting plus additions, illustrating a plausible model of incremental textual expansion.
+7. Modern Jeremiah textual criticism recognizes extensive scribal revision and multiple textual traditions; Jeremiah 36 should not be treated as a simple modern-copying story.
+8. Jeremiah 37’s Benjamin Gate is an ordinary city access/interception point.
+9. Jeremiah 38’s cistern rescue is concrete physical transport: ropes lower and raise a human body, while cloth padding protects contact points.
+10. The cistern contains mud despite lacking standing water; hydrological state should be described carefully.
+11. Jeremiah 39 gives a literal wall breach and post-breach gate occupation; this is a strong controlled-gate versus uncontrolled-breach example.
+12. Zedekiah’s escape route between walls is a terrestrial military escape corridor, not a cosmic passage.
+13. Historical dating of Jerusalem’s final fall commonly falls in 587/586 BCE depending calendar/regnal reconstruction.
+14. No dragon ground-support lattice or strict spiderweb→fingertrap transformation appears.
+15. Strict fingertrap status remains negative, while separated-halves and vertical-carrier analogues are high-value partial correspondences.
+
+---
+
+# Sources logged — Jeremiah 34–39
+
+Primary:
+- Jeremiah 34 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+34&version=NRSVUE
+- Jeremiah 35 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+35&version=NRSVUE
+- Jeremiah 36 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+36&version=NRSVUE
+- Jeremiah 37 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+37&version=NRSVUE
+- Jeremiah 38 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+38&version=NRSVUE
+- Jeremiah 39 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+39&version=NRSVUE
+
+Scholarly / contextual:
+- Brill, *Biblical Covenants in Their Ancient Near Eastern Context*, for animal-cutting/passing-between-pieces covenant ritual:
+  https://brill.com/display/book/9789004503328/BP000010.xml
+- Melammu Project, covenant ritual comparanda:
+  http://www.melammu-project.eu/database/gen_html/a0000618.html
+- “Scribal Revision. A Post-Qumran Perspective on the Formation of Jeremiah,” *Textus* 27 (2018), for revision/expansion controls:
+  https://brill.com/downloadpdf/journals/text/27/1/article-p161_10.pdf
+- Historical/military study of the Babylonian siege of Jerusalem retained for breach/gate/escape-route context:
+  https://journals.charlotte.edu/urj/article/view/2055/1600
+
+---
+
+# SECTION 50H CHECKPOINT — JEREMIAH 34–39 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 34 contains genuine passage-between-separated-halves geometry: a single calf is cut in two and covenant participants walk between the parts.**
+2. **This is a high-priority Vardath analogue for “separated sides with central passage,” but not a strict support-lattice gate because the calf is an oath/self-curse object, not a ground-support structure.**
+3. **Jeremiah 36 provides one of the strongest information-resilience examples yet: one scroll is destroyed piece by piece, but the message is reconstructed from redundant human/source memory and expanded.**
+4. **Jeremiah 38 provides a literal vertical carrier system: ropes lower and raise a person through a confined shaft, and cloth padding is used to distribute load and protect tissue.**
+5. **That is a strong carrier/throat analogue but the cistern does not transform into the passage; the ropes are external carriers.**
+6. **Jeremiah 39 gives a literal uncontrolled wall breach and later occupation of a gate, reinforcing the distinction between breach and controlled interface.**
+7. **A secondary escape gate between walls exists, but route availability does not guarantee successful escape.**
+8. **Temporary relief, open routes, and symbolic model destruction all repeatedly fail to guarantee real system change.**
+9. **No dragon/lattice-spring transformation is directly described; strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Jeremiah 40–45**
+
+Priority:
+- post-collapse remnant governance under Gedaliah;
+- field/wine/oil harvest after city destruction;
+- assassination of Gedaliah and Mizpah massacre;
+- cistern filled with bodies — compare container inversion;
+- Johanan rescue of captives and planned flight to Egypt;
+- ten-day wait for Jeremiah’s answer;
+- people ask for “way we should go / thing we should do” then reject answer;
+- Egypt chosen as perceived safe node despite warning;
+- Tahpanhes stone-burying sign under pavement/brickwork;
+- Nebuchadnezzar throne/canopy over buried stones;
+- Egypt sword/famine/pestilence trajectory;
+- Jeremiah 44 queen-of-heaven dispute and counterfactual causal models;
+- remnant survival and information-model conflict;
+- Baruch personal survival promise in Jeremiah 45;
+- compare post-collapse governance and “safe destination” misclassification with Vardath survivor routing.
