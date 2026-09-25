@@ -59345,3 +59345,839 @@ Then continue the same first-time process:
 - Vardath comparison;
 - strict same-object fingertrap screening;
 - direct append.
+
+
+---
+
+# SECTION 50H — Jeremiah 32–35
+## First-time research pass: field purchase under siege, sealed/open duplicate deeds, clay-jar archival preservation, city destruction versus land-title continuity, day/night covenant stability, slave release→re-enslavement reversal, split-calf covenant passage, and Rechabite mobile survival through portable rules rather than fixed infrastructure
+
+Jeremiah 32–35 contributes two especially important Vardath-survival mechanisms:
+
+### archival continuity
+information survives catastrophe through:
+- duplicate documents;
+- sealed integrity copy;
+- open reference copy;
+- clay/earthen storage container;
+- long-duration retrieval expectation.
+
+### portable cultural continuity
+identity survives through:
+- repeated inherited rule;
+- low dependence on fixed architecture;
+- mobile/tent-based or non-agrarian practice;
+- behavioral memory carried by people rather than land-title alone.
+
+The block therefore broadens the project from:
+**how does the world physically survive?**
+to:
+**how does information, identity, property continuity and social order survive a world-scale disruption?**
+
+---
+
+# Jeremiah 32:1–5 — land purchase occurs while the city is actively under siege
+
+Jerusalem:
+besieged.
+
+Jeremiah:
+confined.
+
+Political expectation:
+city falls;
+king is transferred.
+
+Yet:
+a field purchase is initiated.
+
+## M50H-1 — LONG-TERM OWNERSHIP ACTION CAN BE TAKEN INSIDE A SHORT-TERM SYSTEM FAILURE
+
+This is counterintuitive.
+
+Current state:
+catastrophic.
+
+Future assumption:
+land will again support ordinary ownership/use.
+
+### Vardath relevance
+
+A failed present-world phase does not necessarily erase:
+future relation to place.
+
+---
+
+# Jeremiah 32:6–9 — kinship redemption/right-of-purchase preserves property continuity
+
+The field at Anathoth is offered through kinship/property-right logic.
+
+## M50H-2 — PROPERTY CONTINUITY CAN BE MAINTAINED THROUGH LEGAL RELATION EVEN WHEN PHYSICAL CONTROL IS TEMPORARILY LOST
+
+This separates:
+title
+from
+immediate possession.
+
+---
+
+# Jeremiah 32:9–12 — transaction is measured, written, witnessed and sealed
+
+The purchase includes:
+- weighed silver;
+- written deed;
+- sealing;
+- witnesses.
+
+## M50H-3 — DURABLE PROPERTY CLAIM REQUIRES METROLOGY + DOCUMENTATION + WITNESS NETWORK
+
+This is a complete information-integrity chain.
+
+---
+
+# Jeremiah 32:11–14 — sealed copy and open copy create deliberate redundancy
+
+The deed exists in:
+- sealed version;
+- open version.
+
+Archaeological/legal scholarship recognizes this as a “double deed” type system:
+one protected against alteration;
+one available for reference.
+
+## M50H-4 — REDUNDANT INFORMATION COPIES CAN SERVE DIFFERENT FUNCTIONS: INTEGRITY + ACCESS
+
+### sealed copy
+tamper-resistant authoritative record.
+
+### open copy
+usable/readable reference.
+
+This is one of the strongest archive-design principles in the Bible.
+
+---
+
+# M50H-5 — INFORMATION PRESERVATION IS STRONGER WHEN AUTHENTICITY AND ACCESS ARE SEPARATE SUBSYSTEMS
+
+For Vardath catastrophe archives:
+- one accessible copy;
+- one protected verification copy
+is superior to:
+one exposed record.
+
+---
+
+# Jeremiah 32:14 — both documents are placed in an earthen jar
+
+Purpose:
+“that they may last for a long time.”
+
+## M50H-6 — ARCHIVE SURVIVAL CAN DEPEND ON A PROTECTIVE CONTAINER CHOSEN FOR LONG-DURATION STORAGE
+
+Container function:
+preservation,
+not transport.
+
+Compare:
+- Jonah fish = living carrier;
+- ark = protective carrier;
+- Jeremiah jar = static archive enclosure.
+
+---
+
+# M50H-7 — CONTAINER TYPE MUST BE CLASSIFIED BY FUNCTION: TRANSPORT / REFUGE / PROCESSING / ARCHIVE
+
+This becomes another permanent container rule.
+
+---
+
+# Jeremiah 32:15 — houses, fields, vineyards will again be bought
+
+The stored deed is justified by:
+future normal property transactions.
+
+## M50H-8 — ARCHIVAL PRESERVATION HAS VALUE BECAUSE THE SYSTEM EXPECTS A POST-CATASTROPHE LEGAL/ECONOMIC SUCCESSOR STATE
+
+The archive is:
+future-facing.
+
+---
+
+# Jeremiah 32:16–25 — present military facts and future property act are held together
+
+Jeremiah explicitly recognizes:
+siege ramps;
+sword;
+famine;
+pestilence;
+city transfer.
+
+Yet:
+field has been bought.
+
+## M50H-9 — ACCURATE RECOGNITION OF CURRENT FAILURE DOES NOT REQUIRE ABANDONING LONG-TERM RECOVERY MODEL
+
+This is an excellent anti-denial control.
+
+Hope:
+not based on pretending the siege is absent.
+
+---
+
+# Jeremiah 32:27 — “anything too hard?” is capability claim, not mechanism detail
+
+## M50H-10 — HIGH SOURCE-CAPACITY CLAIM DOES NOT SPECIFY THE PHYSICAL PROCESS BY WHICH RESTORATION OCCURS
+
+Do not turn:
+capability language
+into:
+mechanism evidence.
+
+---
+
+# Jeremiah 32:28–35 — city infrastructure can be destroyed while title/identity continuity persists elsewhere
+
+Jerusalem:
+captured;
+burned.
+
+Field deed:
+preserved.
+
+Population:
+displaced.
+
+## M50H-11 — PHYSICAL INFRASTRUCTURE LOSS AND INFORMATION/LEGAL CONTINUITY CAN DIVERGE
+
+This is highly relevant to catastrophe preservation.
+
+---
+
+# Jeremiah 32:36–44 — restoration rebuilds settlement/property economy
+
+Future sequence:
+gather;
+safe dwelling;
+one heart/way;
+everlasting covenant;
+fields bought;
+deeds signed/sealed/witnessed again.
+
+## M50H-12 — SUCCESSOR STATE REACTIVATES THE SAME INFORMATION/PROPERTY SYSTEM THAT THE ARCHIVE WAS DESIGNED TO PRESERVE
+
+This closes the loop.
+
+---
+
+# Jeremiah 32:39 — “one heart and one way” is network-coherence imagery
+
+Distributed population:
+one coordinated orientation.
+
+## M50H-13 — POPULATION COHERENCE CAN BE PROJECTED AS SHARED INTERNAL STATE + SHARED ROUTE
+
+Not literal one organ.
+
+---
+
+# Jeremiah 33:1–6 — destroyed houses become siege material, then city becomes healing object
+
+Houses/palaces:
+torn down in defense.
+
+City:
+filled with dead.
+
+Then:
+recovery/healing;
+peace/security.
+
+## M50H-14 — BUILT ENVIRONMENT CAN CHANGE FUNCTION FROM HABITAT → DEFENSIVE MATERIAL → DAMAGED SYSTEM → RESTORED HABITAT
+
+This is a strong infrastructure-state chain.
+
+---
+
+# Jeremiah 33:7–13 — towns repopulate; flocks return; counting resumes
+
+Desolate/empty:
+→ inhabited;
+→ joy;
+→ agriculture/pastoral activity.
+
+## M50H-15 — SYSTEM RECOVERY CAN BE VERIFIED THROUGH RETURN OF ROUTINE COUNTABLE OPERATIONS
+
+Shepherd:
+again counts flock.
+
+This is a good operational-stability marker.
+
+---
+
+# Jeremiah 33:14–18 — dynastic/priestly continuity becomes institutional continuity claim
+
+Davidic branch/ruler;
+Levitical priesthood.
+
+## M50H-16 — SUCCESSOR STABILITY CAN INCLUDE CONTINUITY OF GOVERNANCE + RITUAL INSTITUTIONS
+
+Physical rebuilding alone:
+not enough.
+
+---
+
+# Jeremiah 33:20–21 — day/night becomes unbreakable cycle benchmark
+
+The text says:
+if covenant/order of day and night could be broken,
+then institutional covenant could be broken.
+
+## M50H-17 — REGULAR DAY/NIGHT ALTERNATION FUNCTIONS AS A STABILITY REFERENCE, NOT A CATASTROPHE PERIOD
+
+This repeats Jeremiah 31.
+
+### Vardath timing control
+
+The ordinary daily clock
+is a baseline order.
+
+A rare gate event
+must not be inferred from:
+day/night language alone.
+
+---
+
+# Jeremiah 33:22 — stars/sand express uncountable scale
+
+Host of heaven:
+cannot be counted.
+
+Sand:
+cannot be measured.
+
+## M50H-18 — ASTRONOMICAL/GRANULAR MULTITUDE IMAGES EXPRESS SCALE WITHOUT PROVIDING EXACT POPULATION NUMBER
+
+Do not turn metaphorical innumerability into precise numerology.
+
+---
+
+# Jeremiah 33:25–26 — “fixed patterns/order of heaven and earth” repeat stability architecture
+
+## M50H-19 — CELESTIAL/TERRESTRIAL ORDER IS AGAIN USED AS A PERSISTENCE BENCHMARK
+
+Important for Vardath:
+**ordinary order**
+must be separated from
+**transition anomaly**.
+
+---
+
+# Jeremiah 34:1–7 — city/king outcomes separate
+
+City:
+burned.
+
+Zedekiah:
+captured;
+goes Babylon;
+dies by non-sword outcome in oracle.
+
+## M50H-20 — INFRASTRUCTURE FAILURE, POLITICAL CAPTURE AND INDIVIDUAL DEATH MODE CAN FOLLOW DIFFERENT TRAJECTORIES
+
+Do not collapse them.
+
+---
+
+# Jeremiah 34:8–10 — slaves are actually released
+
+A covenant is made:
+Hebrew slaves
+→ freedom.
+
+They obey initially.
+
+## M50H-21 — SOCIAL BOUNDARY CAN ENTER TRUE RELEASE STATE
+
+This is a genuine:
+status/control transition.
+
+---
+
+# Jeremiah 34:11 — freed people are taken back and re-enslaved
+
+Release:
+reversed.
+
+## M50H-22 — FREEDOM STATE CAN BE REVOKED AFTER INITIAL TRANSITION
+
+This is a powerful warning.
+
+A boundary crossing:
+may not be permanent.
+
+---
+
+# M50H-23 — SUCCESSFUL RELEASE REQUIRES STABLE MAINTENANCE OF THE NEW STATE, NOT JUST INITIAL OPENING
+
+This has direct Vardath relevance.
+
+A gate/rescue event:
+is not enough
+if survivors are later recaptured/trapped.
+
+---
+
+# Jeremiah 34:13–16 — present release is compared with Exodus liberation memory
+
+Ancient liberation:
+used as normative precedent.
+
+## M50H-24 — PRIOR TRANSFER/LIBERATION EVENT CAN BECOME RULE MODEL FOR LATER SOCIAL RELEASE
+
+Again:
+historical template reuse
+≠ identical physical mechanism.
+
+---
+
+# Jeremiah 34:18–19 — covenant makers pass between halves of cut calf
+
+The calf:
+split into two parts.
+
+Participants:
+pass between.
+
+This is a striking body/separation/transit image.
+
+## M50H-25 — DIVIDED BODY CAN CREATE A SYMBOLIC TRANSIT CORRIDOR BETWEEN TWO HALVES
+
+This is genuinely geometric.
+
+### Vardath comparison
+
+The Vardath fingertrap involves:
+one support structure reorienting into a throat.
+
+Jeremiah 34:
+animal body is cut into two pieces;
+people pass between pieces.
+
+Therefore:
+
+**passage-between-separated-halves analogue**
+but
+**not same-object elastic throat**.
+
+---
+
+# M50H-26 — CUT-SEPARATION PASSAGE ≠ SPRING-LATTICE NARROWING
+
+This is an important strict control.
+
+---
+
+# Jeremiah 34:18 — passing between parts binds participants to covenant consequence
+
+The route itself:
+is performative/legal.
+
+## M50H-27 — PHYSICAL PASSAGE THROUGH A SYMBOLIC BOUNDARY CAN FUNCTION AS CONTRACT ACTIVATION
+
+This is highly relevant to:
+ritual gates;
+initiation paths;
+threshold symbolism.
+
+---
+
+# Jeremiah 35:1–5 — Rechabites are tested with wine inside temple chamber
+
+The group is brought:
+into a controlled interior room.
+
+Wine:
+offered.
+
+## M50H-28 — CONTROLLED ENVIRONMENT CAN TEST WHETHER AN INHERITED RULE PERSISTS UNDER NEW CONDITIONS
+
+This is a behavioral stress test.
+
+---
+
+# Jeremiah 35:6–10 — inherited rule prohibits wine, houses, fields, vineyards and commands tent/mobile life
+
+The rule-set:
+- no wine;
+- no houses;
+- no sowing;
+- no vineyards/ownership;
+- dwell in tents / maintain non-settled pattern.
+
+## M50H-29 — CULTURAL IDENTITY CAN BE ENCODED IN A PORTABLE LOW-INFRASTRUCTURE RULE SET
+
+This is one of the strongest cultural-survival mechanisms encountered.
+
+---
+
+# Jeremiah 35 — Vardath survival comparison
+
+A post-catastrophe population may have two broad strategies:
+
+### fixed-settlement strategy
+Jeremiah 29:
+build houses;
+plant gardens;
+multiply inside host city.
+
+### mobile/minimal-infrastructure strategy
+Jeremiah 35:
+avoid fixed property;
+retain portable lifestyle;
+move when hazard approaches.
+
+## M50H-30 — DIFFERENT SURVIVAL ENVIRONMENTS CAN FAVOR OPPOSITE INFRASTRUCTURE STRATEGIES
+
+This is very important.
+
+There is no universal:
+“always settle”
+or
+“always stay mobile.”
+
+Context determines.
+
+---
+
+# Jeremiah 35:11 — approaching armies force Rechabites into Jerusalem
+
+Their normal mobile rule:
+is modified by immediate threat.
+
+## M50H-31 — EVEN STRONG LONG-TERM RULE SYSTEMS MAY REQUIRE TEMPORARY EXCEPTION UNDER ACUTE HAZARD
+
+Scholarship debates whether they maintained tent-dwelling inside Jerusalem,
+but all agree the military threat drove relocation.
+
+---
+
+# M50H-32 — SURVIVAL-OPTIMIZED CULTURE MUST DISTINGUISH CORE RULE FROM CONTEXTUAL IMPLEMENTATION
+
+Core identity:
+can persist
+even if one logistical practice temporarily changes.
+
+---
+
+# Jeremiah 35:6–19 — multi-generation obedience becomes evidence of robust cultural memory
+
+Jonadab’s instruction:
+persists across generations.
+
+## M50H-33 — ORAL/BEHAVIORAL RULE CAN SURVIVE FOR GENERATIONS WITHOUT WRITTEN ARCHIVE BEING EXPLICITLY REQUIRED
+
+This complements Jeremiah 32.
+
+### Jeremiah 32
+document-centered continuity.
+
+### Jeremiah 35
+behavior-centered continuity.
+
+---
+
+# M50H-34 — CATASTROPHE MEMORY CAN BE PRESERVED THROUGH REDUNDANT MEDIA: DOCUMENTS, CONTAINERS, RITUALS, HABITS, LINEAGES
+
+This is a major project insight.
+
+For Vardath:
+survival knowledge should ideally exist in:
+- written archive;
+- distributed copies;
+- oral teaching;
+- repeated practice;
+- durable markers;
+- digital/offline storage.
+
+---
+
+# Jeremiah 32–35 — direct dragon/lattice comparison
+
+No dragon appears.
+
+No spiderweb appears.
+
+No world-support spring appears.
+
+But several structural analogues matter:
+
+### sealed/open deed
+redundant information architecture.
+
+### jar
+protective archive enclosure.
+
+### day/night
+stable baseline cycle.
+
+### split calf
+separation + passage corridor.
+
+### Rechabite tents
+portable/flexible shelter.
+
+## M50H-35 — THESE CHAPTERS INFORM PRESERVATION AND BOUNDARY BEHAVIOR, NOT THE PHYSICAL SUPPORT-LATTICE MECHANISM
+
+---
+
+# Jeremiah 32–35 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## connected mesh
+Absent.
+
+## flexible tent/mobile shelter
+Present indirectly in Rechabite rule.
+
+## cut-body passage
+Strong ritual analogue.
+
+## actual narrowing throat
+Absent.
+
+## archive preservation
+Exceptionally strong.
+
+## post-catastrophe property continuity
+Exceptionally strong.
+
+## stable day/night order
+Strong.
+
+## reversible freedom state
+Strong.
+
+### Strict verdict
+
+**Jeremiah 32–35 is not a fingertrap-mechanism block. It is one of the strongest continuity/preservation blocks in the research: Jeremiah 32 deliberately stores duplicate legal information in sealed and open forms inside a clay jar so ownership can survive a siege and later restoration; Jeremiah 33 anchors institutional continuity to ordinary day/night and heaven/earth order; Jeremiah 34 shows that release can be reversed and that passage between divided halves can function as a covenant threshold; Jeremiah 35 shows a second preservation architecture in which identity survives through portable inherited behavior and low dependence on fixed property.**
+
+---
+
+# Jeremiah 32–35 pair / process matrix
+
+## siege / field purchase
+immediate collapse / long-term continuity action.
+
+## possession / title
+physical control / legal identity.
+
+## sealed deed / open deed
+integrity copy / access copy.
+
+## deed / clay jar
+information object / protective archive container.
+
+## burned city / preserved land claim
+infrastructure failure / legal continuity.
+
+## houses-fields-vineyards lost / bought again
+collapsed property economy / restored property economy.
+
+## day / night
+ordinary stable cycle pair.
+
+## stars / sand
+astronomical multitude / granular multitude.
+
+## slave / free person
+controlled status / released status.
+
+## release / re-enslavement
+boundary opening / boundary reversal.
+
+## calf half / calf half
+separated body components.
+
+## passage between halves / covenant
+physical threshold act / legal activation.
+
+## fixed house / tent-mobile rule
+high infrastructure dependence / portable low-infrastructure strategy.
+
+## written deed / inherited behavior
+document memory / embodied cultural memory.
+
+---
+
+# Jeremiah 32–35 continuous transformation timeline
+
+city enters siege
+→ Jeremiah remains confined
+→ future land purchase is initiated
+→ silver is weighed
+→ deed is written
+→ witnesses validate transaction
+→ sealed and open copies are produced
+→ both are placed in clay jar
+→ archive is explicitly intended to last a long time
+→ present city destruction is acknowledged
+→ future houses/fields/vineyards economy is promised
+→ population is regathered
+→ one-heart/one-way coherence is projected
+→ field transactions resume
+→ Jeremiah 33 returns to destroyed houses used in siege defense
+→ healing/security successor state is announced
+→ towns and flocks recover
+→ governance/priestly continuity is asserted
+→ day/night order becomes covenant-stability benchmark
+→ innumerable stars/sand express scale
+→ heaven/earth order repeats permanence frame
+→ Jeremiah 34 separates city destruction from king’s personal trajectory
+→ slave-release covenant is enacted
+→ enslaved people are actually freed
+→ elites reverse decision
+→ freed people are re-enslaved
+→ Exodus liberation precedent is invoked
+→ calf is cut into two
+→ covenant participants pass between halves
+→ broken covenant is judged
+→ Jeremiah 35 moves to Rechabite test
+→ wine is offered
+→ inherited prohibition is retained
+→ low-fixed-infrastructure lifestyle is recalled
+→ approaching army forces relocation to Jerusalem
+→ core rule identity persists through hazard-driven movement
+→ multi-generational obedience becomes evidence of portable cultural continuity.
+
+---
+
+# New master-mechanism additions from Jeremiah 32–35
+
+## M50H-1 — LONG-TERM CONTINUITY ACTION CAN OCCUR DURING SHORT-TERM FAILURE
+## M50H-2 — LEGAL CONTINUITY CAN OUTLIVE PHYSICAL CONTROL
+## M50H-3 — PROPERTY CLAIM REQUIRES METROLOGY + DOCUMENT + WITNESS
+## M50H-4 — REDUNDANT COPIES CAN SPLIT INTEGRITY + ACCESS FUNCTIONS
+## M50H-5 — AUTHENTICITY AND ACCESS SHOULD BE SEPARATE ARCHIVE SUBSYSTEMS
+## M50H-6 — LONG-TERM ARCHIVE MAY REQUIRE PROTECTIVE CONTAINER
+## M50H-7 — CONTAINER FUNCTION MUST BE CLASSIFIED
+## M50H-8 — ARCHIVE VALUE DEPENDS ON EXPECTED SUCCESSOR SYSTEM
+## M50H-9 — REALISTIC FAILURE MODEL CAN COEXIST WITH LONG RECOVERY MODEL
+## M50H-10 — SOURCE-CAPACITY CLAIM ≠ PHYSICAL MECHANISM
+## M50H-11 — INFRASTRUCTURE LOSS ≠ INFORMATION/LEGAL LOSS
+## M50H-12 — SUCCESSOR STATE CAN REACTIVATE PRESERVED PROPERTY SYSTEM
+## M50H-13 — POPULATION COHERENCE CAN PROJECT AS ONE HEART/ONE WAY
+## M50H-14 — BUILT ENVIRONMENT CAN CYCLE HABITAT→DEFENSE MATERIAL→DAMAGE→HABITAT
+## M50H-15 — ROUTINE COUNTABLE OPERATIONS CAN MARK RECOVERY
+## M50H-16 — STABILITY INCLUDES GOVERNANCE + RITUAL CONTINUITY
+## M50H-17 — DAY/NIGHT IS STABILITY BENCHMARK, NOT GATE PERIOD
+## M50H-18 — STARS/SAND EXPRESS SCALE WITHOUT EXACT NUMBER
+## M50H-19 — HEAVEN/EARTH ORDER REPEATS STABILITY BASELINE
+## M50H-20 — CITY / KING / INDIVIDUAL DEATH MODE CAN DIVERGE
+## M50H-21 — SOCIAL CONTROL BOUNDARY CAN ENTER TRUE RELEASE STATE
+## M50H-22 — FREEDOM CAN BE REVOKED
+## M50H-23 — RELEASE MUST BE STABLY MAINTAINED
+## M50H-24 — PRIOR LIBERATION CAN BECOME LATER NORMATIVE TEMPLATE
+## M50H-25 — DIVIDED BODY CAN CREATE SYMBOLIC TRANSIT CORRIDOR
+## M50H-26 — CUT-SEPARATION PASSAGE ≠ SPRING-LATTICE NARROWING
+## M50H-27 — PHYSICAL THRESHOLD PASSAGE CAN ACTIVATE CONTRACT STATE
+## M50H-28 — CONTROLLED ENVIRONMENT CAN TEST RULE PERSISTENCE
+## M50H-29 — CULTURAL IDENTITY CAN LIVE IN PORTABLE RULE SET
+## M50H-30 — DIFFERENT HAZARDS FAVOR DIFFERENT INFRASTRUCTURE STRATEGIES
+## M50H-31 — ACUTE HAZARD CAN FORCE TEMPORARY PRACTICE EXCEPTION
+## M50H-32 — CORE RULE MUST BE SEPARATED FROM CONTEXTUAL IMPLEMENTATION
+## M50H-33 — BEHAVIORAL MEMORY CAN PERSIST MULTI-GENERATIONALLY
+## M50H-34 — CATASTROPHE MEMORY SHOULD USE REDUNDANT MEDIA
+## M50H-35 — PRESERVATION MECHANICS ≠ SUPPORT-LATTICE MECHANICS
+
+---
+
+# Number / timing register — Jeremiah 32–35
+
+Record without forcing:
+
+- Jeremiah 32: Zedekiah’s **10th year** / Nebuchadrezzar’s **18th year** situates the field purchase during the final siege period.
+- deed storage is explicitly intended for **a long time**, without a specified count.
+- Jeremiah 33 uses day/night recurrence as ordinary stability.
+- stars/sand = intentionally uncountable scale imagery.
+- Rechabite rule is multi-generational and long-duration.
+- no gate-duration number.
+- no world-layer count.
+- no dragon-spring count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 32–35
+
+1. Working primary text: Jeremiah 32–35 NRSVUE, compared with NIV/ESV/NKJV/NET.
+2. Jeremiah 32 situates the land purchase inside the Babylonian siege, making the legal transaction a deliberate future-restoration sign.
+3. Ancient double-deed practice is independently attested from Elephantine and discussed in archaeological scholarship: sealed authoritative copy plus accessible open copy.
+4. Jeremiah 32 explicitly places the deeds in an earthen vessel/jar “that they may last a long time.”
+5. Jeremiah 33 reuses ordinary day/night and heaven/earth order as a stability benchmark, not as a hidden catastrophe clock.
+6. Jeremiah 34:8–14 is textually/exegetically complex; Simeon Chavel’s study argues the manumission law material shows inner-biblical scribal reworking.
+7. The release→re-enslavement reversal itself is textually secure.
+8. The cut-calf passage is an ancient covenant ritual image; passage between halves should not be identified with a cosmic throat.
+9. Jeremiah 35 portrays the Rechabites as preserving ancestral prohibitions against wine, houses, sowing and vineyards; the exact question of whether they literally maintained tent-dwelling while inside Jerusalem is debated.
+10. Herbert Migsch argues their war-driven stay in Jerusalem may have involved houses despite the continuing ancestral rule; other interpreters retain literal tent-dwelling.
+11. The secure point is that military danger forces relocation while the inherited identity-rule remains central.
+12. No dragon/lattice-support mechanism appears.
+13. Strict fingertrap status remains negative; information/cultural preservation relevance is exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 32–35
+
+Primary:
+- Jeremiah 32 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+32&version=NRSVUE
+- Jeremiah 33 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+33&version=NRSVUE
+- Jeremiah 34 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+34&version=NRSVUE
+- Jeremiah 35 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+35&version=NRSVUE
+
+Scholarly / contextual:
+- Hershel Shanks, discussion of Jeremiah’s double deed and clay bullae:
+  https://cojs.org/jeremiahs-scribe-and-confidant-speaks-from-a-hoard-of-clay-bullae/
+- Simeon Chavel, “‘Let My People Go!’ Emancipation, Revelation, and Scribal Activity in Jeremiah 34.8–14,” *Journal for the Study of the Old Testament* 22.76 (1997):
+  https://journals.sagepub.com/doi/10.1177/030908929702207605
+- Herbert Migsch, “Wohnten die Rechabiter in Jerusalem in Häusern oder in Zelten?”, *Biblica* 79 (1998): 242–257:
+  https://www.bsw.org/biblica/vol-79-1998/wohnten-die-rechabiter-in-jerusalem-in-haeusern-oder-in-zelten-die-verbformationen-in-jer-35-8-11/352/article-p242.html
+- NET Bible notes on Jeremiah 35 retained for nomadic/non-settled rule description:
+  https://classic.net.bible.org/passage.php?passage=jer+35%3A2-10
+
+---
+
+# SECTION 50H CHECKPOINT — JEREMIAH 32–35 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 32 is one of the strongest catastrophe-archive texts in the Bible: a sealed integrity copy and open reference copy are stored in a clay jar specifically for long-term survival.**
+2. **Physical destruction of the city is allowed to coexist with preserved legal/property continuity and an expected later return to houses, fields and vineyards.**
+3. **Jeremiah 33 again uses day/night and heaven/earth order as baseline stability, not as a gate-period code.**
+4. **Jeremiah 34 shows that release can be reversed; a successful transition must be maintained after the boundary first opens.**
+5. **Passing between the halves of a cut calf is a genuine separation-and-transit ritual image, but it is not an elastic fingertrap throat.**
+6. **Jeremiah 35 preserves identity through portable multi-generational rules and low fixed-infrastructure dependence, complementing Jeremiah 32’s document-centered preservation.**
+7. **The Rechabite war relocation shows that even a durable survival culture may temporarily alter implementation under acute hazard.**
+8. **Together these chapters suggest catastrophe memory should be redundant across documents, containers, habits, oral rules and distributed communities.**
+9. **No dragon-support lattice or strict spiderweb→fingertrap transformation appears.**
+
+### Next live block
+
+**Jeremiah 36–39**
+
+Priority:
+- scroll dictation / Baruch as information copy node;
+- scroll read in temple chamber and royal court;
+- roll cut column-by-column and burned;
+- complete reconstruction of destroyed scroll plus added material — HIGH PRIORITY archive redundancy;
+- prophet hidden while text survives;
+- Jeremiah 37–38 siege interruption/return and unstable prison/mud cistern enclosure;
+- ropes/rags used to extract Jeremiah from cistern — HIGH PRIORITY carrier/rescue mechanics;
+- Ebed-melech as rescue node;
+- Jeremiah 39 city breach / gate of Middle? / princes entering at gate;
+- wall breach, king flight, capture, blinding, burning, deportation;
+- Jeremiah preserved while infrastructure collapses;
+- compare scroll reconstruction and cistern rope extraction with catastrophe information/person recovery systems.
