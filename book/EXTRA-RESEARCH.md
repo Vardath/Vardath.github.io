@@ -8637,3 +8637,877 @@ Priority:
 - water from rock / split rock;
 - no peace closing control;
 - compare water release and path/freeing with Vardath geometry/water sequence.
+
+
+---
+
+# SECTION 49 progress D2F — Isaiah 48
+## First-time research pass: rigidity, prediction→execution, new/hidden information, refining furnace, stretched heaven/earth foundation, river-wave abundance, departure from Babylon, and split-rock water release
+
+Isaiah 48 is a transition chapter.
+
+It connects:
+- prediction;
+- source-attribution;
+- rigidity;
+- refining;
+- creation geometry;
+- historical agent action;
+- path guidance;
+- water imagery;
+- exile departure.
+
+For the Vardath model, its most important sequence is near the end:
+
+**leave Babylon**
+→ **travel through dry regions**
+→ **rock is split**
+→ **water flows out**
+→ **population does not thirst**.
+
+This is highly relevant to the project’s geometry→water→survival sequence,
+but must first be understood as a new-Exodus literary pattern.
+
+---
+
+# Isaiah 48:1–2 — identity labels and actual operating state can diverge
+
+The audience:
+- called Israel;
+- descended from Judah;
+- invokes YHWH;
+- identifies with holy city;
+
+yet:
+not in truth/right.
+
+## M49D2F-1 — SYSTEM LABEL / CLAIMED IDENTITY ≠ CURRENT FUNCTIONAL STATE
+
+This is a repeated methodology warning.
+
+Name,
+symbol,
+title,
+or claimed affiliation
+does not prove:
+actual mechanism
+or condition.
+
+---
+
+# Isaiah 48:3 — declaration precedes sudden execution
+
+Former things:
+- declared;
+- spoken;
+- made known.
+
+Then:
+- suddenly done;
+- came to pass.
+
+## M49D2F-2 — LONG-LEAD INFORMATION CAN PRECEDE SHORT-LEAD MATERIAL EXECUTION
+
+This is highly relevant to catastrophe timing.
+
+Warning/prediction may exist for:
+long interval.
+
+Actual transition:
+rapid.
+
+This parallels Isaiah 47:
+long stable system
+→ “moment / one day” collapse.
+
+---
+
+# M49D2F-3 — INFORMATION TIMING AND EVENT TIMING MUST BE TRACKED SEPARATELY
+
+prediction date
+≠
+event duration.
+
+This is essential for Archaix/cycle comparisons.
+
+---
+
+# Isaiah 48:4 — iron neck / bronze forehead is rigidity imagery
+
+The audience’s obstinacy is mapped onto:
+
+neck
+→ iron sinew;
+
+forehead
+→ bronze.
+
+## M49D2F-4 — MATERIAL-HARDNESS METAPHOR CAN REPRESENT LOW ADAPTABILITY / HIGH RIGIDITY
+
+iron/bronze:
+not literal body material.
+
+Function:
+resistance to bending/change.
+
+### Vardath relevance
+
+A fingertrap mechanism depends on:
+flexibility;
+angle change;
+reorientation.
+
+Isaiah 48 gives the opposite control:
+**rigid system resists change.**
+
+---
+
+# M49D2F-5 — RIGIDITY CAN BE A FAILURE MODE WHEN ADAPTIVE GEOMETRY IS REQUIRED
+
+This is directly useful to the cosmology.
+
+If a structure must:
+- reorient;
+- narrow;
+- flex;
+- reopen;
+
+then excessive rigidity
+would prevent the transition.
+
+Isaiah’s metaphor is moral,
+but the mechanical principle is valid as an analogy.
+
+---
+
+# Isaiah 48:5 — preannouncement is used to block false source attribution
+
+The event is announced beforehand
+so audience cannot say:
+idol caused it.
+
+## M49D2F-6 — PRE-REGISTERED PREDICTION CAN BE USED TO DISTINGUISH COMPETING CAUSAL MODELS
+
+This is very close to modern methodological logic.
+
+Prediction made before outcome:
+stronger than
+post-hoc fit.
+
+### Permanent research rule
+
+For Vardath:
+predictions/alignments found **before** data
+carry more evidential weight
+than patterns selected after seeing outcomes.
+
+---
+
+# Isaiah 48:6–7 — “new things” are created/announced at a later time
+
+The chapter distinguishes:
+former things
+from
+new/hidden things.
+
+Some:
+“created now”
+and not heard before.
+
+## M49D2F-7 — SYSTEM CAN CONTAIN GENUINELY NEW STATE INFORMATION RATHER THAN ONLY REPEATING OLD CYCLE DATA
+
+This is important for cycle research.
+
+Recurrence
+does not require:
+perfect duplication.
+
+New state/configuration may emerge
+within repeated large-scale pattern.
+
+---
+
+# Isaiah 48:8 — closed ear / womb-transgressor language combines information and birth projections
+
+The audience:
+did not hear/know;
+ear not opened;
+called transgressor from womb.
+
+## M49D2F-8 — INFORMATION-BLOCKAGE AND DEVELOPMENTAL-ORIGIN IMAGERY CAN COEXIST WITHOUT BEING ONE MECHANISM
+
+Again:
+womb is projection;
+ear-opening is information access.
+
+Do not merge body metaphors into one literal cosmic anatomy.
+
+---
+
+# Isaiah 48:9–11 — destruction is restrained, not simply absent
+
+Anger:
+deferred/restrained.
+
+Population:
+not cut off.
+
+Then:
+refining/testing.
+
+## M49D2F-9 — HAZARD INTENSITY CAN BE LIMITED WHILE CORRECTIVE PROCESS STILL OCCURS
+
+binary model:
+destroy / do nothing
+is insufficient.
+
+There can be:
+- reduced severity;
+- selective exposure;
+- testing/refining;
+- remnant preservation.
+
+This is relevant to catastrophe survival models.
+
+---
+
+# Isaiah 48:10 — furnace of affliction is a transformation/test environment
+
+The people are:
+refined/tested
+in furnace imagery.
+
+## M49D2F-10 — ENCLOSURE WITH EXTREME HEAT CAN FUNCTION AS PROCESSING/TEST ENVIRONMENT RATHER THAN TRANSPORT CARRIER
+
+Compare:
+- Jonah fish = survival carrier;
+- Micah pot = destructive processing;
+- Isaiah furnace = refining/testing.
+
+Container function varies.
+
+---
+
+# Isaiah 48:10 — “not as silver” limits literal metallurgy
+
+The verse itself qualifies the image.
+
+## M49D2F-11 — TEXT MAY SIGNAL ITS OWN METAPHORICAL LIMIT
+
+This is important.
+
+If text says:
+refined,
+but “not as silver,”
+
+then literal metallurgical reconstruction
+should be resisted.
+
+---
+
+# Isaiah 48:11 — source preserves its own name/glory relation
+
+The motive includes:
+name not profaned;
+glory not given to another.
+
+## M49D2F-12 — SYSTEM OUTPUT CAN BE CONSTRAINED BY SOURCE-IDENTITY PRESERVATION
+
+This belongs to:
+information/attribution layer,
+not physical geometry.
+
+---
+
+# Isaiah 48:12 — first / last repeats temporal-extreme framing
+
+## M49D2F-13 — FIRST/LAST IS TEMPORAL SCOPE UNLESS SPATIAL CUES ADD ANOTHER DIMENSION
+
+Do not force:
+first = upper;
+last = lower.
+
+---
+
+# Isaiah 48:13 — earth founded / heavens spread by right hand
+
+Two different morphology verbs:
+
+earth:
+foundation laid.
+
+heavens:
+spread/stretched.
+
+## M49D2F-14 — UPPER AND LOWER DOMAINS CAN HAVE DIFFERENT CONSTRUCTION GEOMETRIES IN THE SAME COSMOLOGICAL IMAGE
+
+lower:
+founded.
+
+upper:
+spread.
+
+This is highly relevant to Vardath.
+
+It suggests:
+not all cosmic layers/functions need the same topology.
+
+---
+
+# Isaiah 48:13 — when called, heaven and earth “stand together”
+
+The two domains respond simultaneously.
+
+## M49D2F-15 — SEPARATE DOMAINS CAN ENTER A COORDINATED RESPONSE STATE WITHOUT MERGING INTO ONE OBJECT
+
+This fits the project’s interacting-world concept better than simple identity.
+
+Above/below can:
+remain distinct
+yet synchronize
+when the gate/event activates.
+
+### Control
+
+Isaiah’s statement is poetic creator authority,
+not measured coupled dynamics.
+
+---
+
+# Isaiah 48:14–15 — Cyrus/Babylon agent relation continues
+
+Assembly is called.
+The favored agent:
+acts against Babylon/Chaldea.
+Source:
+speaks;
+calls;
+brings;
+makes way succeed.
+
+## M49D2F-16 — OPERATOR→AGENT→TARGET CHAIN REMAINS DISTINCT THROUGH EXECUTION
+
+source
+→ agent
+→ Babylon.
+
+Do not collapse:
+source;
+bird/agent;
+event target.
+
+---
+
+# Isaiah 48:16 — speaker/source/spirit relation is textually and interpretively difficult
+
+The verse says:
+Lord God has sent “me” and his spirit.
+
+Interpreters debate:
+speaker identity and syntactic relation.
+
+## M49D2F-17 — AMBIGUOUS SPEAKER RELATION SHOULD LOWER PAIR/THREE-FORCE CONFIDENCE
+
+This is not safe ground for:
+three-part cosmological mechanism
+without independent support.
+
+---
+
+# Isaiah 48:17 — teaching and path guidance are explicit
+
+The source:
+teaches how to succeed/profit;
+leads in way.
+
+## M49D2F-18 — CORRECT PATH CAN BE INFORMATION-GUIDED RATHER THAN GEOMETRICALLY FORCED
+
+This is another route-control type.
+
+Compare:
+- Cyrus route levelled externally;
+- Jonah wrong/correct target;
+- Isaiah 48 taught path.
+
+Same “way” vocabulary,
+different mechanisms.
+
+---
+
+# Isaiah 48:18 — peace/prosperity as river, righteousness/success as sea waves
+
+The text gives:
+river
+and
+sea-wave
+analogies.
+
+These map:
+continuity;
+abundance;
+repetition;
+movement.
+
+## M49D2F-19 — FLOW ANALOGY CAN DESCRIBE SOCIAL/RELATIONAL OUTPUT WITHOUT LITERAL WATER TRANSFER
+
+This echoes Amos 5.
+
+Water imagery may transfer:
+- continuity;
+- volume;
+- rhythm;
+
+without transferring:
+substance identity.
+
+---
+
+# Isaiah 48:19 — offspring as sand/grains
+
+Population continuity:
+mapped to
+many grains.
+
+## M49D2F-20 — GRANULAR MATERIAL CAN MODEL POPULATION MULTIPLICITY WITHOUT PEOPLE BECOMING PARTICLES
+
+This is another scale/ontology control.
+
+Useful when later texts describe:
+dust;
+sand;
+stars;
+seeds.
+
+---
+
+# Isaiah 48:20 — departure from Babylon is explicit population transfer
+
+Command:
+- go out;
+- flee;
+- proclaim.
+
+## M49D2F-21 — RESTORATION REQUIRES ACTUAL EXIT FROM OLD CONTROL SYSTEM
+
+This is not merely:
+internal spiritual change.
+
+There is:
+population movement.
+
+---
+
+# Isaiah 48:20 — information propagates globally while population moves physically
+
+The departure is:
+physical/geopolitical.
+
+The news:
+sent to end of earth.
+
+## M49D2F-22 — MATERIAL/POPULATION TRANSFER AND INFORMATION TRANSFER CAN OCCUR IN PARALLEL ON DIFFERENT NETWORKS
+
+This is important for the master timeline.
+
+---
+
+# Isaiah 48:21 — desert route requires water support
+
+Population:
+led through dry regions.
+
+Problem:
+thirst.
+
+Solution:
+water flow.
+
+## M49D2F-23 — TRANSFER ROUTE VIABILITY DEPENDS ON ENVIRONMENTAL RESOURCE SUPPORT
+
+A route can be geometrically open
+but biologically unusable.
+
+This is central to Vardath survival logic.
+
+Gate opening alone
+is insufficient.
+
+---
+
+# Isaiah 48:21 — rock is split, then water gushes
+
+The sequence is explicit:
+
+solid rock
+→ split open
+→ water flow/gush.
+
+## M49D2F-24 — BOUNDARY FRACTURE CAN RELEASE STORED/CONFINED FLUID
+
+This is one of the strongest geometry→water sequences in Isaiah.
+
+### Vardath comparison
+
+The mature cosmology proposes:
+geometry changes first;
+water then follows/re-writes the world.
+
+Isaiah 48:21 gives:
+
+**solid boundary**
+→ **fracture/opening**
+→ **water release**
+→ **route survival**.
+
+This is structurally close.
+
+### But ordinary/literary control
+
+The image deliberately recalls the Exodus wilderness rock-water tradition.
+
+Second Isaiah widely reuses Exodus imagery for the return from Babylon.
+
+Therefore:
+**strong Vardath process analogue**
+does not equal
+independent physical proof of a world-gate mechanism.
+
+---
+
+# M49D2F-25 — WATER RELEASE AFTER FRACTURE IS STRONGER MECHANICAL CORRESPONDENCE THAN GENERIC “WATER APPEARS”
+
+This is worth elevating.
+
+Unlike:
+“streams in desert,”
+
+Isaiah 48 specifies an intermediate geometry:
+**rock split**.
+
+That gives:
+container/boundary state change
+before
+fluid movement.
+
+This should be flagged for the master cross-text comparison.
+
+---
+
+# Isaiah 48:21 — carrier / route / resource relation
+
+Population:
+cargo/travelers.
+
+Desert:
+route medium.
+
+Rock:
+resource boundary/reservoir interface.
+
+Water:
+survival resource.
+
+Source:
+operator.
+
+## M49D2F-26 — TRANSFER SYSTEM REQUIRES COORDINATION OF ROUTE + RESOURCE + CARGO
+
+This is highly relevant to Vardath.
+
+A viable inter-world transfer needs:
+- opening;
+- transit;
+- breathable/thermal conditions;
+- water;
+- food;
+- timing;
+- destination stability.
+
+---
+
+# Isaiah 48:22 — “no peace for wicked” closes with a state exclusion
+
+The prior river-like peace is:
+not universally assigned.
+
+## M49D2F-27 — ENVIRONMENTAL/RELATIONAL BENEFIT CAN BE SELECTIVE EVEN WHEN ROUTE/RESOURCE EXISTS
+
+Again:
+opening
+≠
+uniform outcome.
+
+---
+
+# Isaiah 48 — Vardath geometry/water synthesis
+
+## Repeated broad-state geometry
+heavens spread/stretched.
+
+## Lower-domain geometry
+earth founded.
+
+## Coordinated above/below response
+both stand when called.
+
+## Transfer
+leave Babylon.
+
+## Route
+dry regions.
+
+## geometric intervention
+rock split.
+
+## water response
+water gushes.
+
+## biological effect
+no thirst.
+
+This is one of the strongest local chains yet matching:
+
+**geometry change**
+→ **water release**
+→ **population survival in transit**.
+
+### Missing strict fingertrap features
+
+No:
+- broad mesh;
+- braid-angle change;
+- axial narrowing;
+- world-layer throat;
+- same structure reopening.
+
+### Strict verdict
+
+**Isaiah 48 does not independently establish the fingertrap gate, but it contributes a high-value submechanism: a boundary is split before water is released, and that water makes a migration route survivable. In the Vardath comparison, this is a strong geometry→hydrology→survival analogue and should be cross-tested against Exodus, Psalms, prophetic flood/drought texts, and later apocalyptic material.**
+
+---
+
+# Isaiah 48 pair / process matrix
+
+## identity label / actual conduct
+named system / operating state.
+
+## declaration / sudden execution
+long-lead information / rapid material event.
+
+## iron neck / adaptability
+rigid state / change capacity.
+
+## old things / new things
+known prior state / newly revealed/emergent state.
+
+## furnace / population
+processing-test environment / contents.
+
+## earth foundation / stretched heaven
+lower-domain construction / upper-domain spread.
+
+## heaven / earth standing
+separate domains / coordinated response.
+
+## source / Cyrus / Babylon
+operator / agent / target.
+
+## teaching / path
+information input / route behavior.
+
+## river / peace
+flow analogue / social-relational state.
+
+## sea waves / righteousness
+repeated-flow analogue / social-relational state.
+
+## sand grains / descendants
+granular multitude / population multitude.
+
+## Babylon / desert route
+origin-control system / transit environment.
+
+## rock / water
+solid boundary / released resource.
+
+## split / gush
+geometric change / hydrological response.
+
+---
+
+# Isaiah 48 continuous transformation timeline
+
+identity claims are stated
+→ mismatch between label and truth is exposed
+→ former events are declared in advance
+→ material execution occurs suddenly
+→ rigidity is projected as iron neck/bronze forehead
+→ preannouncement blocks false source attribution
+→ new/hidden information is introduced
+→ new state is described as created now
+→ information-access failure is recalled
+→ destructive output is restrained
+→ population is tested/refined in furnace imagery
+→ source-identity constraint preserves remnant
+→ first/last temporal scope is asserted
+→ earth foundation is named
+→ heavens are stretched/spread
+→ heaven and earth respond together
+→ agent is called against Babylon
+→ route success is assigned
+→ teaching/path guidance follows
+→ peace/righteousness is projected as river/waves
+→ population continuity is projected as sand/grains
+→ departure from Babylon is commanded
+→ information about departure is broadcast outward
+→ travelers enter desert/dry-route condition
+→ rock boundary is split
+→ water is released
+→ water flows/gushes
+→ population avoids thirst
+→ chapter closes with selective peace-state exclusion.
+
+---
+
+# New master-mechanism additions from Isaiah 48
+
+## M49D2F-1 — CLAIMED IDENTITY ≠ FUNCTIONAL STATE
+
+## M49D2F-2 — LONG-LEAD INFORMATION CAN PRECEDE RAPID EXECUTION
+
+## M49D2F-3 — PREDICTION TIMING ≠ EVENT DURATION
+
+## M49D2F-4 — HARD-MATERIAL BODY METAPHOR CAN REPRESENT RIGIDITY
+
+## M49D2F-5 — RIGIDITY CAN PREVENT ADAPTIVE GEOMETRIC CHANGE
+
+## M49D2F-6 — PRE-REGISTERED PREDICTION HELPS DISTINGUISH CAUSAL MODELS
+
+## M49D2F-7 — RECURRING SYSTEM CAN STILL PRODUCE NEW STATE INFORMATION
+
+## M49D2F-8 — INFORMATION/BIRTH METAPHORS CAN COEXIST WITHOUT ONE ANATOMY
+
+## M49D2F-9 — CORRECTIVE PROCESS CAN OCCUR UNDER RESTRAINED HAZARD
+
+## M49D2F-10 — HEATED ENCLOSURE CAN BE PROCESSOR/TESTER, NOT CARRIER
+
+## M49D2F-11 — TEXT MAY MARK LIMITS OF ITS OWN METAPHOR
+
+## M49D2F-12 — SOURCE-IDENTITY CONSTRAINT CAN SHAPE OUTPUT
+
+## M49D2F-13 — FIRST/LAST ≠ SPATIAL ABOVE/BELOW WITHOUT ADDED CUES
+
+## M49D2F-14 — UPPER/LOWER DOMAINS CAN HAVE DIFFERENT MORPHOLOGIES
+
+## M49D2F-15 — DISTINCT DOMAINS CAN ENTER COORDINATED RESPONSE
+
+## M49D2F-16 — OPERATOR / AGENT / TARGET REMAIN DISTINCT THROUGH EXECUTION
+
+## M49D2F-17 — AMBIGUOUS SPEAKER RELATION LOWERS MULTI-FORCE CONFIDENCE
+
+## M49D2F-18 — ROUTE CAN BE INFORMATION-GUIDED RATHER THAN FORCED
+
+## M49D2F-19 — WATER-FLOW IMAGE CAN TRANSFER CONTINUITY/RHYTHM WITHOUT SUBSTANCE
+
+## M49D2F-20 — GRANULAR MATERIAL CAN MODEL POPULATION MULTIPLICITY
+
+## M49D2F-21 — RESTORATION CAN REQUIRE EXIT FROM OLD CONTROL SYSTEM
+
+## M49D2F-22 — POPULATION TRANSFER + INFORMATION TRANSFER CAN RUN IN PARALLEL
+
+## M49D2F-23 — OPEN ROUTE ≠ SURVIVABLE ROUTE WITHOUT RESOURCES
+
+## M49D2F-24 — BOUNDARY FRACTURE CAN RELEASE CONFINED FLUID
+
+## M49D2F-25 — GEOMETRY→WATER SEQUENCE IS STRONGER THAN GENERIC WATER MOTIF
+
+## M49D2F-26 — TRANSFER SYSTEM REQUIRES ROUTE + RESOURCE + CARGO COORDINATION
+
+## M49D2F-27 — BENEFIT CAN REMAIN SELECTIVE AFTER ROUTE/RESOURCE OPENS
+
+---
+
+# Number / timing register — Isaiah 48
+
+Record without forcing:
+
+- “suddenly” = rapid execution state;
+- former/new things = temporal categories, not numeric cycle;
+- first/last = temporal scope;
+- no gate-duration number;
+- no world-layer count;
+- no quantity of water is given;
+- no recurrence interval is given.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 48
+
+1. Working primary text: Isaiah 48 NRSVUE, compared with NET/NKJV.
+2. Isaiah 48:1 has a textual issue around Judah “waters/loins”; exact biological wording varies.
+3. Iron-neck/bronze-forehead language is rigidity metaphor.
+4. Isaiah 48:10 includes textual uncertainty around the refining phrase; NRSVUE notes a conjectural reading. The verse itself says “not as silver,” limiting literal metallurgy.
+5. Isaiah 48:13 uses foundation language for earth and spread/stretch language for heaven.
+6. Isaiah 48:16 has a difficult speaker/sending/spirit relation; do not use it as precise multi-agent cosmological proof.
+7. Isaiah 48:18’s river/waves are social-relational flow analogies.
+8. Isaiah 48:20–21 belongs naturally within Second Isaiah’s new-Exodus pattern: leaving Babylon is narrated with wilderness provision imagery recalling Exodus.
+9. The split-rock water image therefore has a strong ordinary literary antecedent.
+10. Nevertheless, as a process abstraction, it clearly specifies fracture before water release.
+11. Strict fingertrap status remains negative; geometry→water→route-survival correspondence is strong.
+
+---
+
+# Sources logged — Isaiah 48
+
+Primary:
+- Isaiah 48 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Isaiah+48&version=NRSVUE
+- Isaiah 48 NRSVUE / NET:
+  https://www.biblegateway.com/passage/?search=Isaiah+48&version=NRSVUE%3BNET
+- Isaiah 48 NRSVUE / NKJV / ESV / NIV:
+  https://www.biblegateway.com/passage/?search=Isaiah+48&version=NRSVUE%3BNKJV%3BESV%3BNIV
+
+Literary / scholarly:
+- Yale Bible Study, Second Isaiah — identifies the Babylonian release as a “new exodus” and emphasizes wilderness-water/new-creation imagery:
+  https://yalebiblestudy.org/courses/second-isaiah/lessons/vindication-and-deliverance-study-guide/
+- Cambridge Companion to Isaiah, C. L. Crouch, “Migration in the Book of Isaiah” — places Isaiah’s exilic/migration material within wider ancient population movements:
+  https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/migration-in-the-book-of-isaiah/4C9BFF7B3BA5ABE66F2EF5100170B206
+- Angela Roskop Erisman, *The Wilderness Narratives in the Hebrew Bible* — notes the parallel between wilderness rock-water traditions and Second Isaiah’s triumphant return-from-exile story:
+  https://www.cambridge.org/core/books/abs/wilderness-narratives-in-the-hebrew-bible/your-god-reigns/5986157768EA5A852A093A08F617AD1E
+
+---
+
+# SECTION 49D2F CHECKPOINT — ISAIAH 48 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 48 explicitly separates long-term prediction from sudden execution.**
+2. **Iron-neck/bronze-forehead imagery supplies a mechanical rigidity control: inflexible systems resist change.**
+3. **Earth is founded while heaven is spread; the two domains remain distinct but can stand/respond together.**
+4. **Leaving Babylon is a real population-transfer command, while the message about it travels on a separate information network.**
+5. **The desert route is not viable merely because it is open; water support is required.**
+6. **The rock is split before the water gushes—one of the strongest geometry→hydrology→survival sequences in Isaiah so far.**
+7. **The image is also clearly embedded in Second Isaiah’s new-Exodus literary framework, so the ordinary explanation remains strong.**
+8. **Strict spiderweb→fingertrap status remains negative, but the water-release submechanism is high-value for later cross-text comparison.**
+
+### Next live block
+
+**Isaiah 49**
+
+Priority:
+- servant formed/called from womb;
+- mouth as sharp sword / hidden in hand-shadow;
+- polished arrow hidden in quiver;
+- servant as Israel vs individual-figure tension;
+- light to nations;
+- prisoners “come out” / darkness→light;
+- road/pasture on bare heights;
+- hunger/thirst/heat control;
+- springs/water route;
+- mountains changed into road / highways raised;
+- far-direction return including Sinim textual/geographic control;
+- Zion-as-woman / forgotten-mother comparison;
+- children returning like ornaments;
+- land too narrow / population expansion;
+- captives rescued from warrior;
+- body/city/mother/weapon projections as controls for Squatter-Man/lattice readings.
