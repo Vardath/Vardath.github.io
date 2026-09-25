@@ -36480,3 +36480,881 @@ Priority:
 - day/night covenant as cosmic-clock stability benchmark;
 - compare sealed archive-in-jar with preservation of event knowledge through catastrophe;
 - compare field purchase with successor land reattachment.
+
+
+---
+
+# SECTION 50 progress F4 — Jeremiah 32–33
+## First-time research pass: field purchase under siege, legal measurement/payment, sealed + open deeds, earthen-jar archival preservation, land reattachment, city destruction→healing, dispersed population regathering, one-heart/one-way stabilization, everlasting covenant, city/social sound restoration, counted flocks, Davidic/Levitical continuity, and day/night as cosmic stability benchmark
+
+Jeremiah 32–33 is one of the strongest **archive-preservation / successor-land continuity** blocks in the book.
+
+Its core process:
+
+city under siege
+→ prophet confined
+→ land purchase executed anyway
+→ price weighed
+→ deed written
+→ deed sealed
+→ open copy retained
+→ witnesses present
+→ records transferred to Baruch
+→ records placed in earthen jar
+→ archive designed to survive “many days”
+→ houses/fields/vineyards later possessed again
+→ ruined city later healed/rebuilt
+→ population regathered
+→ ordinary social sounds return
+→ livestock systems return and are counted
+→ dynastic/priestly continuity is compared to day/night regularity.
+
+For Vardath Cosmology this is exceptionally relevant to:
+**how knowledge, property claims, and population identity survive across catastrophic discontinuity.**
+
+---
+
+# Jeremiah 32:1–5 — prophecy continues from confinement
+
+Jeremiah:
+physically confined in court of guard.
+
+Information output:
+continues.
+
+## M50F4-1 — PHYSICAL CONFINEMENT OF MESSENGER DOES NOT NECESSARILY STOP INFORMATION FLOW
+
+This parallels:
+letter networks;
+prison prophets;
+archived text.
+
+---
+
+# Jeremiah 32:6–8 — predicted land offer arrives
+
+Jeremiah is told:
+relative will offer field.
+
+Then:
+relative arrives as announced.
+
+## M50F4-2 — SHORT-RANGE SPECIFIC EVENT MATCH FUNCTIONS AS INTERNAL SOURCE-CONFIDENCE TEST
+
+Again:
+narrative validation architecture.
+
+Independent external confirmation:
+separate question.
+
+---
+
+# Jeremiah 32:7–8 — land redemption is family-network continuity mechanism
+
+Nearest kin:
+has right/duty to redeem field.
+
+## M50F4-3 — LAND IDENTITY CAN BE PRESERVED THROUGH KINSHIP-BASED TRANSFER RULES DURING SYSTEM INSTABILITY
+
+This is a legal continuity structure.
+
+---
+
+# Jeremiah 32:9 — purchase price is weighed, not coined
+
+Seventeen shekels:
+weight of silver.
+
+## M50F4-4 — ECONOMIC VALUE CAN BE TRANSFERRED THROUGH MEASURED MASS RATHER THAN COINED TOKEN
+
+Important archaeological/economic control.
+
+---
+
+# Jeremiah 32:10–12 — transaction uses writing, sealing, witnesses
+
+Jeremiah:
+signs/writes deed;
+seals;
+gets witnesses;
+weighs silver.
+
+## M50F4-5 — HIGH-INTEGRITY CLAIM PRESERVATION USES MULTIPLE REDUNDANT VALIDATION LAYERS
+
+1. written record;
+2. seal/authentication;
+3. witnesses;
+4. measured payment;
+5. duplicate/open copy.
+
+This is a powerful information-integrity model.
+
+---
+
+# Jeremiah 32:11–14 — sealed deed + open deed form redundant archive
+
+Two document states:
+
+### sealed
+high integrity / dispute authority.
+
+### open/unsealed
+readable/reference copy.
+
+## M50F4-6 — ARCHIVE CAN SEPARATE AUTHENTICATION COPY FROM ACCESS COPY
+
+This is directly analogous to:
+master record + working copy.
+
+---
+
+# Jeremiah 32:14 — records go into earthen vessel “for many days”
+
+The instruction is explicitly preservation-oriented.
+
+## M50F4-7 — KNOWLEDGE CAN BE PACKAGED IN A PHYSICAL CONTAINER SPECIFICALLY TO SURVIVE A LONG INTERRUPTION
+
+This is one of the strongest archive-survival mechanisms in the 88-book research.
+
+### Vardath relevance
+
+If a gate catastrophe destroys normal institutions,
+survival information may need:
+- sealed archive;
+- durable container;
+- redundancy;
+- readable copy;
+- future retrieval.
+
+---
+
+# M50F4-8 — ARCHIVE SURVIVAL REQUIRES BOTH MEDIA DURABILITY AND PROVENANCE AUTHENTICATION
+
+A durable jar with an unauthenticated message:
+insufficient.
+
+A perfect seal on destroyed medium:
+also insufficient.
+
+Both layers matter.
+
+---
+
+# Jeremiah 32:15 — archived deed points beyond current siege to future land use
+
+Promise:
+houses;
+fields;
+vineyards
+will again be bought.
+
+## M50F4-9 — ARCHIVE IS NOT ONLY MEMORY; IT CAN PRESERVE FUTURE REATTACHMENT RIGHTS
+
+This is a very strong Vardath analogue.
+
+A surviving population may preserve:
+- maps;
+- deeds;
+- genealogy;
+- route data;
+- resource locations
+
+for later return.
+
+---
+
+# Jeremiah 32:16–25 — Jeremiah confronts mismatch between purchase and current collapse
+
+Observed:
+siege ramps;
+sword/famine/pestilence;
+city falling.
+
+Command:
+buy field.
+
+## M50F4-10 — LONG-TERM SUCCESSOR ACTION CAN APPEAR IRRATIONAL INSIDE SHORT-TERM COLLAPSE WINDOW
+
+This is important for planning.
+
+Some resilience investments only make sense on:
+long horizon.
+
+---
+
+# Jeremiah 32:17 / 27 — “nothing too hard” brackets human probability limits
+
+Jeremiah:
+nothing too hard.
+
+Then source repeats:
+is anything too hard?
+
+## M50F4-11 — MODEL SHOULD DISTINGUISH LOW PROBABILITY UNDER CURRENT OBSERVED SYSTEM FROM LOGICAL IMPOSSIBILITY
+
+This is theological rhetoric,
+but useful methodological control.
+
+---
+
+# Jeremiah 32:28–35 — city destruction still proceeds
+
+Field purchase:
+does not cancel siege.
+
+## M50F4-12 — FUTURE RESTORATION SIGNAL DOES NOT MEAN CURRENT DESTRUCTIVE PHASE IS SKIPPED
+
+This is critical.
+
+Hope
+≠
+no catastrophe.
+
+---
+
+# Jeremiah 32:36 — land described as falling by sword/famine/pestilence
+
+Multiple hazards converge on:
+same city/land.
+
+## M50F4-13 — SYSTEM FAILURE CAN BE MULTI-HAZARD, NOT SINGLE-CAUSE
+
+For Vardath:
+plasma;
+water;
+atmosphere;
+fire;
+food failure;
+disease
+may interact.
+
+---
+
+# Jeremiah 32:37 — population gathered from all lands after dispersion
+
+Scatter:
+many locations.
+
+Gather:
+one land.
+
+## M50F4-14 — DISTRIBUTED OFF-SITE POPULATIONS CAN RECONVERGE INTO ONE RESTORED NODE
+
+This continues Jeremiah 29–31.
+
+---
+
+# Jeremiah 32:37 — return aims at secure dwelling
+
+## M50F4-15 — REGATHERING IS INCOMPLETE UNTIL DESTINATION BECOMES SAFE ENOUGH FOR DURABLE RESIDENCE
+
+---
+
+# Jeremiah 32:39 — “one heart and one way”
+
+Population:
+many individuals
+→ common internal orientation.
+
+## M50F4-16 — DISTRIBUTED POPULATION CAN STABILIZE THROUGH SHARED CONTROL LOGIC WITHOUT BECOMING ONE PHYSICAL BODY
+
+This is a network-coordination model.
+
+---
+
+# Jeremiah 32:40 — everlasting covenant / persistent non-departure
+
+The future relation:
+designed for durability.
+
+## M50F4-17 — SUCCESSOR SYSTEM CAN INCLUDE FEEDBACK DESIGNED TO PREVENT RECURRENCE OF PRIOR FAILURE MODE
+
+This parallels Jeremiah 31 internal-law logic.
+
+---
+
+# Jeremiah 32:41 — planting “with all heart and soul” returns to land
+
+People:
+planted in land.
+
+## M50F4-18 — RETURNING POPULATION CAN BE PROJECTED AS ROOTED BIOLOGICAL INSTALLATION INTO DESTINATION
+
+Mobile exile
+→ rooted successor.
+
+---
+
+# Jeremiah 32:42–44 — same field once called desolate becomes transaction-active again
+
+People say:
+desolate;
+without human/animal;
+in Chaldean hand.
+
+Future:
+fields bought;
+deeds signed/sealed/witnessed;
+transactions resume across region.
+
+## M50F4-19 — ECONOMIC/LEGAL ACTIVITY IS A HIGH-LEVEL INDICATOR THAT HABITABILITY HAS RETURNED
+
+Not merely:
+people exist.
+
+They have:
+stable property;
+law;
+exchange;
+witness system.
+
+---
+
+# Jeremiah 32 — archive as catastrophe-memory model
+
+## object
+field claim.
+
+## record
+written deed.
+
+## authentication
+seal/witnesses.
+
+## redundancy
+sealed + open copy.
+
+## container
+earthen jar.
+
+## duration
+many days.
+
+## retrieval purpose
+future reoccupation/ownership continuity.
+
+## M50F4-20 — JEREMIAH 32 PROVIDES AN EXPLICIT BLUEPRINT FOR LONG-DURATION KNOWLEDGE PRESERVATION ACROSS CATASTROPHIC INTERRUPTION
+
+This is one of the strongest practical correspondences in the research.
+
+---
+
+# Jeremiah 33:1 — information continues while Jeremiah remains confined
+
+A second word comes:
+in confinement.
+
+## M50F4-21 — PHYSICAL RESTRICTION AND INFORMATION ACCESS CAN REMAIN DECOUPLED
+
+---
+
+# Jeremiah 33:3 — unknown/hidden information can be requested/revealed
+
+Call:
+response;
+great/hidden things.
+
+## M50F4-22 — INFORMATION SYSTEM CAN CONTAIN LATENT STATE NOT ACCESSIBLE TO ORDINARY OBSERVATION
+
+### Control
+
+This is theological revelation language,
+not license for arbitrary hidden-code extraction.
+
+---
+
+# Jeremiah 33:4–5 — city structures are damaged by siege works and filled with dead
+
+Houses/palaces:
+broken down in siege context.
+
+## M50F4-23 — BUILT ENVIRONMENT CAN BE REPURPOSED/DESTROYED AS PART OF DEFENSIVE WARFARE BEFORE SUCCESSOR REBUILDING
+
+---
+
+# Jeremiah 33:6 — damaged city is projected as body requiring bandage/healing
+
+City:
+wound.
+
+Restoration:
+health/cure.
+
+## M50F4-24 — CITY CAN BE PROJECTED AS BIOLOGICAL BODY WITHOUT LITERAL BODY IDENTITY
+
+Another strong Squatter-Man/body control.
+
+---
+
+# Jeremiah 33:6 — healing output includes peace/stability/truth
+
+## M50F4-25 — “HEALING” OF A CITY CAN MEAN MULTI-VARIABLE SOCIAL/INFRASTRUCTURE RECOVERY
+
+---
+
+# Jeremiah 33:7 — Israel/Judah fortunes restored and rebuilt “as at first”
+
+## M50F4-26 — “AS AT FIRST” CAN MEAN FUNCTIONAL RESTORATION WITHOUT EXACT PHYSICAL REWIND
+
+This repeats earlier master rule.
+
+---
+
+# Jeremiah 33:8–9 — restored city becomes information signal to nations
+
+Other peoples:
+hear;
+react.
+
+## M50F4-27 — SUCCESSOR RECOVERY CAN ITSELF BECOME A BROADCAST EVENT
+
+Infrastructure state:
+acts as evidence/sign.
+
+---
+
+# Jeremiah 33:10 — land described as without human and animal
+
+Then later:
+both return.
+
+## M50F4-28 — HUMAN + ANIMAL ABSENCE CAN DEFINE DESOLATION STATE, AND BOTH ARE REQUIRED FOR FULL ECOLOGICAL RESTORATION
+
+This fits Vardath populated-world rule.
+
+---
+
+# Jeremiah 33:11 — voices of bride/bridegroom/joy return
+
+Earlier Jeremiah 25:
+these sounds cease.
+
+Now:
+they return.
+
+## M50F4-29 — SAME LOW-LEVEL SOCIAL OUTPUTS CAN SERVE AS BEFORE/AFTER CIVILIZATION SENSOR
+
+This is an exceptionally clean reversal.
+
+Jeremiah 25:
+silence.
+
+Jeremiah 33:
+voices restored.
+
+---
+
+# Jeremiah 33:12–13 — shepherds/flocks return to formerly empty land
+
+Pastures:
+reoccupied.
+
+Flocks:
+pass under hand of counter.
+
+## M50F4-30 — LIVESTOCK MANAGEMENT SYSTEM IS A STABLE-SUCCESSOR INDICATOR
+
+It implies:
+- pasture;
+- water;
+- animals;
+- shepherds;
+- counting;
+- ownership/management.
+
+---
+
+# Jeremiah 33:13 — passing under hand of counter is measurement/control interface
+
+Each animal:
+passes;
+counted.
+
+## M50F4-31 — POPULATION/LIVESTOCK STABILITY CAN BE MONITORED THROUGH SERIAL COUNTING AT A CONTROLLED PASSAGE POINT
+
+This is interesting mechanically.
+
+A narrow counting interface:
+one by one
+→ measured population.
+
+### Vardath control
+
+This is not a cosmic throat.
+
+It is a livestock-management bottleneck.
+
+---
+
+# Jeremiah 33:14–16 — righteous Branch / safe city continuity
+
+A Davidic branch:
+emerges.
+
+Jerusalem:
+dwells securely.
+
+## M50F4-32 — SUCCESSOR GOVERNANCE AND SAFE HABITATION ARE LINKED
+
+---
+
+# Jeremiah 33:17–18 — royal and priestly continuity are claimed
+
+Davidic ruler line;
+Levitical priestly service.
+
+## M50F4-33 — SUCCESSOR STABILITY INCLUDES CONTINUITY OF GOVERNANCE + RITUAL/INFORMATION INSTITUTIONS
+
+Not just:
+population and buildings.
+
+---
+
+# Jeremiah 33:20–21 — day/night covenant is used as stability benchmark
+
+If humans can break:
+day/night order,
+
+then:
+covenant continuity could fail.
+
+The rhetorical logic:
+day/night is treated as effectively unbreakable regularity.
+
+## M50F4-34 — REPEATED ASTRONOMICAL DAILY CYCLE CAN SERVE AS REFERENCE CLOCK FOR SYSTEM RELIABILITY
+
+This is highly relevant to cycle research.
+
+### Control
+
+Day/night regularity:
+is the benchmark,
+not the gate cycle.
+
+---
+
+# M50F4-35 — STABILITY BENCHMARK SHOULD NOT BE CONFUSED WITH EVENT PERIODICITY
+
+The text says:
+social promise as stable as day/night.
+
+It does not say:
+restoration recurs every day.
+
+---
+
+# Jeremiah 33:22 — stars/sand provide uncountable-scale population analogy
+
+## M50F4-36 — LARGE POPULATION CAN BE PROJECTED THROUGH ASTRONOMICAL/GRANULAR MULTITUDE WITHOUT IDENTITY
+
+---
+
+# Jeremiah 33:23–26 — rejection claim is answered through creation-order argument
+
+People claim:
+two families rejected.
+
+Response:
+as long as day/night / heaven-earth ordinances stand,
+restoration relation stands.
+
+## M50F4-37 — COSMIC-ORDER REFERENCE CAN FUNCTION AS WARRANTY FOR SOCIAL/POPULATION CONTINUITY
+
+---
+
+# Jeremiah 33 — MT/LXX control
+
+The latter portion of Jeremiah 33,
+especially material on Davidic/Levitical continuity,
+is absent from the Greek Jeremiah.
+
+This is a major textual-edition issue.
+
+## M50F4-38 — HIGH-IMPORTANCE SUCCESSOR CLAIM WITH EDITION DIFFERENCE MUST BE SCORED WITH LOWER TEXTUAL-ORIGINALITY CONFIDENCE
+
+Do not erase it.
+
+But do not treat:
+MT-only/expanded material
+as equally textually secure as common-core material.
+
+---
+
+# Jeremiah 32–33 direct Vardath comparison
+
+Strong correspondence:
+- catastrophe underway;
+- information preserved physically;
+- off-site/future return assumed;
+- land identity retained;
+- sealed archive survives;
+- human + animal repopulation;
+- stable social sound/ritual/economic systems return;
+- population/livestock counted;
+- day/night used as stable order;
+- city healed/rebuilt.
+
+Missing:
+- dragon ground-support spring;
+- spiderweb;
+- lattice reorientation;
+- axial throat;
+- direct water/atmosphere transfer through gate.
+
+## M50F4-39 — JEREMIAH 32–33 IS A HIGH-VALUE KNOWLEDGE-PRESERVATION AND SUCCESSOR-CONTINUITY BLOCK, NOT A GATE-MECHANISM BLOCK
+
+---
+
+# Jeremiah 32–33 strict spiderweb → fingertrap screening
+
+## dragon support spring
+Absent.
+
+## archive preservation
+Exceptionally strong.
+
+## land reattachment
+Exceptionally strong.
+
+## human/animal repopulation
+Strong.
+
+## stable successor institutions
+Strong.
+
+## narrow counting interface
+Present but livestock management.
+
+## cosmic timing benchmark
+Strong:
+day/night.
+
+## support-geometry transformation
+Absent.
+
+### Strict verdict
+
+**Jeremiah 32–33 does not describe the Vardath fingertrap mechanism. Its exceptional contribution is preservation across catastrophe: a land claim is authenticated, duplicated, sealed and placed in an earthen jar specifically to survive a long interruption, then tied to the future restoration of houses, fields and vineyards. Jeremiah 33 extends that successor logic into healed city infrastructure, returning human and animal populations, renewed ordinary social sounds, counted flocks, governance/ritual continuity, and day/night regularity as a stability benchmark.**
+
+---
+
+# Jeremiah 32–33 pair / process matrix
+
+## siege / field purchase
+immediate collapse / long-horizon continuity act.
+
+## sealed deed / open deed
+authentication copy / access copy.
+
+## document / earthen jar
+information medium / protective container.
+
+## present desolation / future land transaction
+failed state / restored legal-economic state.
+
+## confinement / continuing prophecy
+physical restriction / information flow.
+
+## city wound / healing
+failed infrastructure / restored stability.
+
+## scattered population / regathered population
+dispersion / convergence.
+
+## one heart / many people
+shared control logic / distributed nodes.
+
+## human / animal
+population classes.
+
+## silence / bride-bridegroom voices
+civilization shutdown / social restoration.
+
+## flock / counter
+managed population / measurement node.
+
+## Davidic / Levitical lines
+governance continuity / ritual continuity.
+
+## day / night
+recurring astronomical states.
+
+## cosmic order / social covenant
+stability benchmark / promised continuity.
+
+---
+
+# Jeremiah 32–33 continuous transformation timeline
+
+city enters siege
+→ Jeremiah is confined
+→ field purchase is predicted
+→ relative arrives
+→ kin-redeemer transaction begins
+→ silver is weighed
+→ deed is written
+→ deed is sealed
+→ open copy is retained
+→ witnesses authenticate
+→ documents transfer to Baruch
+→ documents enter earthen storage vessel
+→ archive is designed for long survival
+→ future houses/fields/vineyards are promised
+→ current siege/destruction still proceeds
+→ multi-hazard city failure is acknowledged
+→ dispersed people are later gathered
+→ secure dwelling is restored
+→ shared internal orientation forms
+→ everlasting-covenant stability is promised
+→ population is planted back in land
+→ field transactions resume across regions
+→ second revelation arrives during confinement
+→ damaged city is projected as wounded body
+→ health/peace/stability are restored
+→ city becomes information signal to nations
+→ land formerly without human/animal repopulates
+→ social voices return
+→ shepherding/pasture returns
+→ flocks pass under counting hand
+→ governance/ritual continuity is asserted
+→ day/night regularity becomes reliability benchmark
+→ uncountable stars/sand model future scale
+→ cosmic-order analogy guarantees successor continuity.
+
+---
+
+# New master-mechanism additions from Jeremiah 32–33
+
+## M50F4-1 — PHYSICAL CONFINEMENT ≠ INFORMATION SILENCE
+## M50F4-2 — SHORT-SPECIFIC EVENT MATCH CAN FUNCTION AS INTERNAL SOURCE TEST
+## M50F4-3 — LAND IDENTITY CAN BE PRESERVED THROUGH LEGAL KINSHIP TRANSFER
+## M50F4-4 — VALUE CAN BE MEASURED BY MASS RATHER THAN TOKEN
+## M50F4-5 — CLAIM PRESERVATION CAN USE REDUNDANT VALIDATION LAYERS
+## M50F4-6 — ARCHIVE CAN SEPARATE AUTHENTICATION COPY FROM ACCESS COPY
+## M50F4-7 — KNOWLEDGE CAN BE CONTAINERIZED FOR LONG INTERRUPTION
+## M50F4-8 — ARCHIVE SURVIVAL NEEDS DURABILITY + PROVENANCE
+## M50F4-9 — ARCHIVE CAN PRESERVE FUTURE REATTACHMENT RIGHTS
+## M50F4-10 — LONG-HORIZON RESILIENCE ACTION MAY LOOK IRRATIONAL DURING COLLAPSE
+## M50F4-11 — LOW CURRENT PROBABILITY ≠ LOGICAL IMPOSSIBILITY
+## M50F4-12 — FUTURE RESTORATION SIGNAL DOES NOT SKIP CURRENT DAMAGE PHASE
+## M50F4-13 — SYSTEM FAILURE CAN BE MULTI-HAZARD
+## M50F4-14 — DISTRIBUTED POPULATIONS CAN RECONVERGE
+## M50F4-15 — REGATHERING REQUIRES SAFE DESTINATION
+## M50F4-16 — DISTRIBUTED PEOPLE CAN STABILIZE THROUGH SHARED INTERNAL CONTROL
+## M50F4-17 — SUCCESSOR FEEDBACK CAN TARGET NONRECURRENCE OF PRIOR FAILURE
+## M50F4-18 — RETURN CAN BE PROJECTED AS ROOTED INSTALLATION
+## M50F4-19 — ECONOMIC/LEGAL ACTIVITY SIGNALS HIGH-LEVEL HABITABILITY
+## M50F4-20 — JEREMIAH 32 IS EXPLICIT CATASTROPHE-ARCHIVE BLUEPRINT
+## M50F4-21 — PHYSICAL RESTRICTION AND INFORMATION ACCESS CAN DECOUPLE
+## M50F4-22 — LATENT INFORMATION CLAIM ≠ LICENSE FOR ARBITRARY HIDDEN CODES
+## M50F4-23 — BUILT ENVIRONMENT CAN BE DESTROYED/REPURPOSED DURING DEFENSE
+## M50F4-24 — CITY CAN BE PROJECTED AS BIOLOGICAL BODY
+## M50F4-25 — CITY HEALING CAN MEAN MULTI-VARIABLE RECOVERY
+## M50F4-26 — “AS AT FIRST” ≠ EXACT PHYSICAL REWIND
+## M50F4-27 — SUCCESSOR RECOVERY CAN BECOME INFORMATION SIGNAL
+## M50F4-28 — FULL ECOLOGICAL RESTORATION INCLUDES HUMAN + ANIMAL
+## M50F4-29 — LOW-LEVEL SOCIAL OUTPUTS CAN SENSOR CIVILIZATION RECOVERY
+## M50F4-30 — LIVESTOCK MANAGEMENT SIGNALS STABLE SUCCESSOR
+## M50F4-31 — NARROW COUNTING BOTTLENECK ≠ COSMIC THROAT
+## M50F4-32 — SUCCESSOR GOVERNANCE AND SAFE HABITATION ARE LINKED
+## M50F4-33 — STABILITY INCLUDES GOVERNANCE + RITUAL/INFORMATION INSTITUTIONS
+## M50F4-34 — DAY/NIGHT CAN SERVE AS RELIABILITY REFERENCE CLOCK
+## M50F4-35 — STABILITY BENCHMARK ≠ EVENT PERIOD
+## M50F4-36 — STARS/SAND MODEL MULTITUDE WITHOUT IDENTITY
+## M50F4-37 — COSMIC ORDER CAN WARRANTY SOCIAL CONTINUITY
+## M50F4-38 — EDITION-DIFFERENT SUCCESSOR CLAIM NEEDS TEXTUAL-CONFIDENCE CONTROL
+## M50F4-39 — JEREMIAH 32–33 IS ARCHIVE/SUCCESSOR BLOCK, NOT GATE MECHANISM
+
+---
+
+# Number / timing register — Jeremiah 32–33
+
+Record without forcing:
+
+- Jeremiah 32 field price: **17 shekels of silver by weight**.
+- documents are stored to endure **many days**.
+- no exact archival duration is stated.
+- day/night regularity is a recurring daily cycle used as a stability analogy.
+- “host of heaven / sand of sea” = uncountable multitude language, not exact population count.
+- no gate-duration number.
+- no world-layer count.
+- no dragon/lattice-spring count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 32–33
+
+1. Working primary texts: Jeremiah 32–33 NRSVUE.
+2. Jeremiah 32 is set during Babylonian siege and Jeremiah’s confinement.
+3. The field purchase is a legal sign-act tied to future reoccupation of the land.
+4. The 17 shekels are weighed silver, not necessarily minted coinage.
+5. Archaeological/legal discussion supports the plausibility of sealed documents, bullae, witnesses and clay-container storage in Iron Age Judah, though specific unprovenanced “Baruch” bullae remain disputed and should not be treated as secure confirmation.
+6. The text explicitly says sealed and open documents were placed in an earthen vessel so they would last many days.
+7. Recent scholarship treats Jeremiah 32 as a literary hinge combining disaster and restoration and recognizes complex redactional history.
+8. Jeremiah 32’s land-purchase sign has been interpreted differently by different textual/redactional layers; final-form use strongly supports future reoccupation after exile.
+9. Jeremiah 33:10–13 deliberately reverses the “without human and animal / silence” condition into social and pastoral activity.
+10. Flocks passing under the hand of a counter is livestock measurement, not a gate throat.
+11. Jeremiah 33:14–26 is absent from the Greek Jeremiah, a major textual-edition control.
+12. Day/night regularity is invoked as stability benchmark, not as a prophecy that restoration cycles daily.
+13. No dragon/lattice-spring or strict spiderweb→fingertrap transformation appears.
+
+---
+
+# Sources logged — Jeremiah 32–33
+
+Primary:
+- Jeremiah 32 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+32&version=NRSVUE
+- Jeremiah 33 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+33&version=NRSVUE
+
+Scholarly / archaeological controls:
+- “Jeremiah 32: A Hinge between Restoration and Disaster,” *Journal of Hebrew Scriptures*:
+  https://jhsonline.org/index.php/jhs/article/view/29604
+- “The Future in the Land belongs to us: Conflicting Perceptions on the Land in Jeremiah 32:1–44”:
+  https://scielo.org.za/scielo.php?pid=S1010-99192020000100006&script=sci_arttext
+- Working Preacher, Jeremiah 32 field-purchase/archival sign-act:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-26-3/commentary-on-jeremiah-321-3a-6-15-8
+- Archaeological background on sealed/unsealed deeds and clay-vessel document storage, used cautiously because some cited unprovenanced bullae are disputed:
+  https://biblearchaeology.org/research-articles/signed-sealed-and-delivered-an-archaeological-exposition-of-jeremiah-32115/
+
+Textual control:
+- Jeremiah 33 academic/commentary tradition notes that 33:14–26 is absent from LXX Jeremiah; this is retained as an edition-history caution.
+
+---
+
+# SECTION 50F4 CHECKPOINT — JEREMIAH 32–33 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 32 gives an explicit catastrophe-archive mechanism: authenticated records, sealed/open redundancy, physical containerization, and long-duration preservation.**
+2. **The archive is tied directly to future reattachment to the same land, not merely remembrance of a lost past.**
+3. **The field purchase occurs while the destructive phase is still real; future restoration does not cancel present catastrophe.**
+4. **Full restoration explicitly includes both human and animal repopulation, legal/economic transactions, houses, fields and vineyards.**
+5. **Jeremiah 33 restores exactly the low-level civilization outputs that Jeremiah 25 removed—bride/bridegroom voices, joy, shepherding and counted flocks.**
+6. **The flock-counting passage creates a narrow controlled measurement interface, but it is livestock management, not a cosmic throat.**
+7. **Day/night regularity functions as a stability benchmark for successor continuity, not as the event’s recurrence period.**
+8. **The MT/LXX difference in Jeremiah 33:14–26 must lower confidence in using that section as an early independent mechanical witness.**
+9. **No dragon/lattice-support mechanism appears; strict fingertrap status remains negative.**
+10. **For the Vardath project, Jeremiah 32 is one of the strongest practical models yet for preserving knowledge, identity and future claims through a catastrophic break in normal civilization.**
+
+### Next live block
+
+**Jeremiah 34–36**
+
+Priority:
+- slave-release covenant then recapture reversal;
+- “liberty” proclaimed then taken back;
+- covenant cut / calf divided / passing between pieces;
+- boundary/process significance of passing between separated body halves;
+- sword/famine/pestilence re-release;
+- Rechabites as long-duration rule-preservation community;
+- no houses/vineyards/fields/seed but tent dwelling;
+- ancestral command transmitted across generations;
+- siege causes temporary city entry;
+- scroll dictation to Baruch;
+- public reading / chamber / gate locations;
+- scroll cut with knife and burned piece by piece;
+- rewrite after destruction with added material;
+- compare covenant-cut passage between halves to true split→passage geometry;
+- compare scroll destruction→rewrite with knowledge redundancy and archive resilience.
