@@ -74862,3 +74862,856 @@ Priority:
 - Jeremiah 52 historical recap: siege dates, breach, gate/corridor repetition, Temple vessels and bronze pillars/bases/sea, deportation counts, Jehoiachin released/elevated;
 - source dependence: Jeremiah 52 and 2 Kings 24–25 are closely related and not independent witnesses;
 - close Jeremiah master synthesis: which passages actually advanced Vardath mechanics vs controls.
+
+
+---
+
+# SECTION 50 progress J2 — Jeremiah 50
+## First-time research pass: Babylon becomes target, Israel/Judah converge toward Zion, lost sheep and failed shepherds, flee-from-Babylon route reversal, hammer-of-earth broken, snare capture, armory/storehouses opened, drought against waters, and imperial center→desolate periphery reversal
+
+Jeremiah 50 begins the long Babylon oracle by reversing several earlier Jeremiah patterns.
+
+Earlier in the book:
+Babylon was the dominant external force;
+Judah was told to submit;
+exiles were told to settle and survive there.
+
+Now:
+Babylon itself becomes the target;
+its own gods are shamed;
+a force comes against it from the north;
+Israel and Judah converge toward Zion;
+the exiles are told to flee Babylon.
+
+This is a major **phase-change in route advice**.
+
+The same geographic node can move from:
+
+**safe-enough refuge / imposed exile center**
+to
+**node that must now be exited**.
+
+For the Vardath survival model, this is one of Jeremiah’s clearest demonstrations that:
+
+> **route value is phase-dependent.**
+
+---
+
+# Jeremiah 50:2–3 — dominant imperial center becomes the desolated target
+
+Babylon:
+captured.
+
+Bel/Marduk:
+shamed.
+
+Land:
+desolated.
+
+Humans/animals:
+leave.
+
+## M50J2-1 — SYSTEM CENTER CAN SWITCH FROM DOMINANT CONTROLLER TO COLLAPSING TARGET
+
+This is a full role reversal.
+
+Earlier:
+Babylon applies pressure outward.
+
+Now:
+pressure converges on Babylon.
+
+---
+
+# M50J2-2 — CONTROL CENTRALITY IS NOT PERMANENT SYSTEM STABILITY
+
+A node can be:
+largest;
+wealthiest;
+militarily dominant;
+symbolic center;
+
+yet still cross into:
+failed state.
+
+This is important for any world-center myth.
+
+---
+
+# Jeremiah 50:4–5 — Israel and Judah converge together toward Zion
+
+Two previously divided population identities:
+Israel;
+Judah.
+
+Movement:
+together.
+
+Affect:
+weeping.
+
+Information/navigation:
+ask the way to Zion.
+
+Orientation:
+faces turned toward it.
+
+## M50J2-3 — DISTRIBUTED POPULATION BRANCHES CAN RECONVERGE TOWARD A SHARED DESTINATION NODE
+
+This is a strong many→one migration pattern.
+
+---
+
+# Jeremiah 50:5 — asking the way proves destination identity does not imply route knowledge
+
+They know:
+destination.
+
+They still need:
+route information.
+
+## M50J2-4 — DESTINATION KNOWLEDGE ≠ ROUTE KNOWLEDGE
+
+This is highly practical.
+
+In a Vardath survival model:
+knowing which world/region is safer
+is not enough.
+
+Need:
+- path;
+- timing;
+- entry point;
+- hazards.
+
+---
+
+# Jeremiah 50:5 — face orientation becomes navigation state
+
+Faces:
+toward Zion.
+
+## M50J2-5 — BODY ORIENTATION CAN PROJECT PERSISTENT NAVIGATIONAL COMMITMENT
+
+This is not world-axis proof.
+
+It is:
+route intention.
+
+---
+
+# Jeremiah 50:6 — failed shepherds scatter sheep across mountain and hill
+
+Population:
+lost sheep.
+
+Control nodes:
+shepherds.
+
+Result:
+led astray;
+mountain→hill wandering;
+fold forgotten.
+
+## M50J2-6 — GOVERNANCE FAILURE CAN CONVERT ORGANIZED POPULATION INTO DISTRIBUTED WANDERING STATE
+
+This continues Jeremiah 23.
+
+---
+
+# Jeremiah 50:6 — movement from mountain to hill is surface wandering, not inter-world transit
+
+## M50J2-7 — ALTITUDE CHANGE WITHIN ONE LANDSCAPE ≠ STACKED-WORLD MOVEMENT
+
+Permanent control.
+
+---
+
+# Jeremiah 50:6–7 — loss of fold increases predation vulnerability
+
+Lost sheep:
+found/devoured by others.
+
+## M50J2-8 — LOSS OF SAFE ENCLOSURE + GUIDANCE INCREASES CAPTURE/PREDATION RISK
+
+For Vardath:
+safe destination needs:
+- route;
+- shelter;
+- group coherence.
+
+---
+
+# Jeremiah 50:8 — flee from Babylon / go out
+
+This directly reverses Jeremiah 29’s earlier instruction to:
+settle;
+build;
+plant;
+multiply
+in Babylon.
+
+## M50J2-9 — SURVIVAL INSTRUCTION CAN REVERSE WHEN SYSTEM PHASE CHANGES
+
+Earlier phase:
+stay.
+
+Later phase:
+leave.
+
+This is one of the strongest phase-dependent survival rules in Jeremiah.
+
+---
+
+# M50J2-10 — STATIC “ALWAYS STAY” OR “ALWAYS FLEE” RULES ARE UNSAFE
+
+Correct action depends on:
+- current hazard;
+- node stability;
+- route state;
+- timing.
+
+This is highly relevant to any proposed gate survival strategy.
+
+---
+
+# Jeremiah 50:8 — leader-goat image adds route-leader function
+
+People are told:
+be like male goats leading flock.
+
+## M50J2-11 — MASS EVACUATION MAY REQUIRE FRONT-NODE ROUTE LEADERS
+
+Compare:
+Isaiah convoy;
+Jeremiah remnant routes.
+
+---
+
+# Jeremiah 50:9 — force from north converges on Babylon
+
+Many nations:
+gather/array
+against one node.
+
+## M50J2-12 — DISTRIBUTED EXTERNAL FORCES CAN CONVERGE ON CENTRAL TARGET
+
+This reverses Babylon’s earlier imperial outflow.
+
+---
+
+# Jeremiah 50:11–13 — resource-rich center becomes abandoned/desolate
+
+Babylon’s former abundance/exultation:
+→ shame/desolation.
+
+## M50J2-13 — RESOURCE-RICH NODE CAN BECOME LOW-OCCUPANCY WASTE AFTER CONTROL COLLAPSE
+
+Again:
+wealth ≠ permanence.
+
+---
+
+# Jeremiah 50:14–16 — siege closes agricultural and labor output
+
+Archers surround.
+
+Walls/defenses fail.
+
+Sower:
+ceases.
+
+Harvester:
+fails.
+
+Foreigners/others:
+flee to own people/land.
+
+## M50J2-14 — MILITARY BOUNDARY FAILURE CAN CASCADE INTO AGRICULTURAL AND MIGRATION FAILURE
+
+Sequence:
+attack
+→ enclosure failure
+→ production loss
+→ population departure.
+
+---
+
+# Jeremiah 50:17 — Israel is sheep driven by successive predators
+
+Assyria:
+first devours.
+
+Babylon:
+later crushes bones.
+
+## M50J2-15 — ONE POPULATION CAN PASS THROUGH MULTIPLE SUCCESSIVE HAZARD REGIMES
+
+The system history is cumulative.
+
+---
+
+# Jeremiah 50:18–20 — predator sequence ends in regathering/pasture restoration
+
+Israel:
+returned to pasture;
+feeds again.
+
+## M50J2-16 — SUCCESSOR STABILITY CAN BE PROJECTED AS RETURN TO FUNCTIONAL FEEDING HABITAT
+
+This is more than:
+not dying.
+
+It is:
+resource sufficiency.
+
+---
+
+# Jeremiah 50:23 — Babylon is “hammer of the whole earth” then broken
+
+Babylon:
+heavy destructive tool.
+
+Then:
+tool itself
+→ cut down/broken.
+
+## M50J2-17 — HIGH-POWER ACTUATOR CAN ITSELF BECOME FAILURE TARGET
+
+A hammer:
+transfers force outward.
+
+Broken hammer:
+cannot continue actuation.
+
+This is a powerful imperial/system control.
+
+---
+
+# M50J2-18 — TOOL FUNCTION DOES NOT GUARANTEE TOOL INVULNERABILITY
+
+For Vardath:
+a load-bearing or destructive subsystem may:
+perform successfully for long period
+yet later fail.
+
+---
+
+# Jeremiah 50:24 — Babylon is caught in a snare without knowing it
+
+Trap:
+set.
+
+Target:
+unaware.
+
+Then:
+caught/discovered/seized.
+
+## M50J2-19 — SYSTEM CAN CROSS INTO CAPTURED STATE BEFORE ITS INTERNAL MODEL RECOGNIZES THE TRANSITION
+
+This is highly relevant to hidden thresholds.
+
+---
+
+# M50J2-20 — EVENT DETECTION CAN LAG BEHIND ACTUAL STATE CHANGE
+
+By the time:
+Babylon recognizes trap,
+capture has already occurred.
+
+This is a strong warning-system principle.
+
+---
+
+# Jeremiah 50:24 — snare is capture apparatus, not world-support web
+
+## M50J2-21 — TRAP/NET LANGUAGE MUST NOT BE RECLASSIFIED AS SUPPORT LATTICE WITHOUT LOAD-BEARING FUNCTION
+
+Another Vardath false-positive control.
+
+---
+
+# Jeremiah 50:25–26 — armory/storehouses/granaries are opened
+
+Two container systems:
+
+### armory
+stores weapons.
+
+### granary/storehouses
+store resources.
+
+Both:
+opened during destructive transition.
+
+## M50J2-22 — COLLAPSE CAN INVOLVE FORCED OPENING OF STORED ENERGY/WEAPON AND FOOD/RESOURCE RESERVOIRS
+
+This is important.
+
+Container opening can:
+release useful or destructive contents.
+
+---
+
+# M50J2-23 — “OPENING” MUST PRESERVE CONTAINER TYPE AND CONTENT TYPE
+
+Armory opening:
+weapons.
+
+Granary opening:
+grain/resources.
+
+Not:
+cosmic gate.
+
+---
+
+# Jeremiah 50:26 — Babylon is piled like grain
+
+City:
+projected as harvested/processed material.
+
+## M50J2-24 — TERRITORIAL SYSTEM CAN BE PROJECTED AS AGRICULTURAL CARGO WITHOUT MATERIAL IDENTITY
+
+Again:
+metaphor type changes rapidly.
+
+---
+
+# Jeremiah 50:28 — escapees become information carriers to Zion
+
+Fugitives from Babylon:
+travel to Zion
+and report what happened.
+
+## M50J2-25 — SURVIVORS CAN CARRY EVENT INFORMATION FROM FAILED NODE TO RESTORED NODE
+
+This is extremely relevant to catastrophe archives.
+
+Physical survivors:
+information carriers.
+
+---
+
+# M50J2-26 — SURVIVOR TESTIMONY IS GEOGRAPHICALLY MOBILE DATA
+
+Route:
+Babylon
+→ Zion.
+
+Information:
+travels with people.
+
+---
+
+# Jeremiah 50:29–32 — pride/overconfidence becomes hazard amplifier
+
+Babylon’s self-position:
+proud.
+
+Outcome:
+stumble/fall;
+none raise.
+
+## M50J2-27 — HIGH SELF-CONFIDENCE CAN REDUCE ADAPTIVE RESPONSE TO APPROACHING FAILURE
+
+Compare:
+Isaiah watchmen stationarity error.
+
+---
+
+# Jeremiah 50:33–34 — captors refuse release; stronger redeemer intervenes
+
+Israel/Judah:
+held tightly.
+
+Captors:
+refuse release.
+
+Then:
+stronger actor takes up case.
+
+## M50J2-28 — POPULATION TRANSFER CAN BE BLOCKED BY ACTIVE CONTROLLER EVEN WHEN DESTINATION/ROUTE EXISTS
+
+This repeats Isaiah 49.
+
+---
+
+# Jeremiah 50:35–38 — sword sequence culminates in drought against waters
+
+The oracle lists:
+sword against:
+Chaldeans;
+inhabitants;
+officials;
+wise;
+diviners;
+warriors;
+horses/chariots;
+foreign troops;
+treasures.
+
+Then:
+**drought against waters**
+→ waters dry.
+
+## M50J2-29 — SYSTEM COLLAPSE CAN BE PROJECTED AS SEQUENTIAL FAILURE OF CONTROL, MILITARY, RESOURCE, AND HYDROLOGICAL SUBSYSTEMS
+
+This is a multi-layer collapse model.
+
+---
+
+# Jeremiah 50:38 — hydrological claim requires textual control
+
+Masoretic/NRSVUE:
+drought against waters.
+
+Some ancient/textual traditions have:
+sword-like reading or omit the line.
+
+Modern scholarship also notes Babylon’s dependence on Euphrates/canal irrigation.
+
+## M50J2-30 — HYDROLOGICAL MECHANISM CLAIM MUST BE LOWER CONFIDENCE WHEN TEXTUAL TRADITIONS DIVERGE
+
+This is important.
+
+Do not use v38 alone as proof of:
+Euphrates diversion;
+gate-induced drying;
+global water redistribution.
+
+---
+
+# Jeremiah 50:38 — if read as drought, water-system failure threatens the imperial center
+
+## M50J2-31 — HIGHLY ENGINEERED CITY CAN REMAIN VULNERABLE TO WATER-SUPPLY FAILURE
+
+Babylon:
+river/canal dependent.
+
+Hydrological infrastructure:
+critical.
+
+This is a useful real systems analogue.
+
+---
+
+# Jeremiah 50:39–40 — human depopulation → wild-animal habitation
+
+Babylon:
+no longer peopled
+→ wild animals/hyenas/ostriches.
+
+## M50J2-32 — HUMAN DESOLATION CAN PRODUCE NON-HUMAN SUCCESSOR ECOLOGY
+
+This repeats Isaiah 34.
+
+Again:
+desolate
+≠
+lifeless.
+
+---
+
+# Jeremiah 50:41–43 — earlier “foe from north” language is reused against Babylon
+
+Scholarship notes that language earlier aimed at Judah/Jerusalem is reapplied to Babylon.
+
+## M50J2-33 — LITERARY TEMPLATE CAN BE REASSIGNED TO A NEW TARGET WITHOUT DESCRIBING A NEW PHYSICAL MECHANISM
+
+This is crucial source-dependence control.
+
+Repeated imagery:
+not independent observation.
+
+---
+
+# Jeremiah 50:44–46 — lion/flock and global crash close the chapter
+
+Predator:
+lion-like.
+
+Target:
+flock/land.
+
+Fall of Babylon:
+cry/noise spreads among nations.
+
+## M50J2-34 — LOCAL CENTRAL-NODE FAILURE CAN HAVE WIDE INFORMATION/NETWORK CONSEQUENCE
+
+Imperial center:
+falls.
+
+Peripheral systems:
+hear/respond.
+
+---
+
+# Jeremiah 50 — Vardath route-phase synthesis
+
+Earlier Jeremiah:
+Jerusalem unsafe
+→ leave.
+
+Then:
+Babylon exile
+→ settle/build/plant.
+
+Now:
+Babylon unsafe
+→ leave
+→ return toward Zion.
+
+## M50J2-35 — ROUTE VALUE IS A FUNCTION OF EVENT PHASE, NOT PERMANENT PLACE IDENTITY
+
+This is one of the strongest Vardath-survival rules so far.
+
+A location can cycle through:
+
+unsafe origin
+→ temporary refuge
+→ future hazard node
+→ exit point.
+
+---
+
+# Jeremiah 50 — dragon/lattice screening
+
+No dragon:
+appears.
+
+No spiderweb:
+appears.
+
+No ground-support spring:
+appears.
+
+Trap/snare:
+capture apparatus only.
+
+Hammer:
+destructive tool only.
+
+Water drying:
+potential environmental subsystem failure,
+but no dragon-support cause.
+
+### Strict verdict
+
+**Jeremiah 50 is not a Vardath support-lattice/fingertrap text. It is exceptionally important for phase-dependent survival routing and imperial-node reversal: Babylon changes from the place where exiles were told to settle into the place they must flee; distributed Israel/Judah populations reconverge toward Zion; the “hammer of the whole earth” becomes broken; a dominant node can be trapped before it knows the transition has happened; and water/infrastructure failure can accompany collapse.**
+
+---
+
+# Jeremiah 50 pair / process matrix
+
+## Babylon controller / Babylon target
+imperial actuator / collapsing node.
+
+## Israel / Judah
+separate population branches / reconverging return.
+
+## destination / route
+Zion / asked-for way.
+
+## sheep / shepherd
+population / failed control node.
+
+## fold / wandering mountains
+safe enclosure / dispersed route state.
+
+## stay-Babylon / flee-Babylon
+earlier phase instruction / later phase instruction.
+
+## hammer / broken hammer
+high-force actuator / disabled actuator.
+
+## snare / unaware target
+capture apparatus / delayed detection.
+
+## armory / weapons
+container / destructive contents.
+
+## granary / grain
+container / survival/economic contents.
+
+## fugitives / report
+survivor carriers / mobile information.
+
+## captor / captive
+active controller / constrained population.
+
+## waters / drought
+critical resource network / failure state.
+
+## human city / wild-animal habitat
+imperial occupancy / successor ecology.
+
+---
+
+# Jeremiah 50 continuous transformation timeline
+
+Babylon is announced as captured
+→ imperial deity/control symbols are shamed
+→ external force approaches from north
+→ Babylon shifts toward desolation
+→ Israel and Judah begin joint return trajectory
+→ population asks route to Zion
+→ navigation orientation stabilizes toward destination
+→ failed shepherd history is recalled
+→ wandering sheep have forgotten fold
+→ instruction reverses to flee Babylon
+→ route leaders are needed
+→ multiple nations converge against Babylon
+→ imperial abundance turns toward plunder/desolation
+→ siege disrupts defense/agriculture
+→ foreign populations flee
+→ Israel’s successive predator history is recalled
+→ remnant/pasture restoration is promised
+→ Babylon is identified as hammer of whole earth
+→ hammer is broken
+→ hidden snare catches Babylon before recognition
+→ armory is opened
+→ weapons are released
+→ storehouses/granaries are opened
+→ city is projected as grain heap
+→ fugitives carry news toward Zion
+→ pride/overconfidence precedes fall
+→ captors refuse to release populations
+→ stronger intervention breaks controller dominance
+→ sword sequence attacks military/control/resource layers
+→ drought/water failure is announced in MT tradition
+→ human population gives way to wild-animal desolation imagery
+→ old foe-from-north language is reversed onto Babylon
+→ final collapse produces wide information shock among nations.
+
+---
+
+# New master-mechanism additions from Jeremiah 50
+
+## M50J2-1 — SYSTEM CENTER CAN SWITCH CONTROLLER→TARGET
+## M50J2-2 — CENTRALITY ≠ PERMANENT STABILITY
+## M50J2-3 — DISTRIBUTED POPULATIONS CAN RECONVERGE
+## M50J2-4 — DESTINATION KNOWLEDGE ≠ ROUTE KNOWLEDGE
+## M50J2-5 — BODY ORIENTATION CAN PROJECT NAVIGATIONAL COMMITMENT
+## M50J2-6 — GOVERNANCE FAILURE CAN CREATE WANDERING POPULATION
+## M50J2-7 — ALTITUDE WANDERING ≠ WORLD TRANSIT
+## M50J2-8 — LOST ENCLOSURE/GUIDANCE INCREASES PREDATION
+## M50J2-9 — SURVIVAL INSTRUCTION CAN REVERSE WITH PHASE
+## M50J2-10 — ALWAYS-STAY / ALWAYS-FLEE RULES ARE UNSAFE
+## M50J2-11 — MASS EVACUATION MAY REQUIRE ROUTE LEADERS
+## M50J2-12 — DISTRIBUTED FORCES CAN CONVERGE ON CENTRAL TARGET
+## M50J2-13 — RESOURCE-RICH CENTER CAN BECOME WASTE
+## M50J2-14 — BOUNDARY FAILURE CAN CASCADE INTO PRODUCTION/MIGRATION FAILURE
+## M50J2-15 — POPULATION CAN PASS THROUGH SUCCESSIVE HAZARD REGIMES
+## M50J2-16 — SUCCESSOR STABILITY REQUIRES FUNCTIONAL FEEDING HABITAT
+## M50J2-17 — HIGH-POWER ACTUATOR CAN BECOME FAILURE TARGET
+## M50J2-18 — TOOL FUNCTION ≠ TOOL INVULNERABILITY
+## M50J2-19 — CAPTURE CAN PRECEDE INTERNAL RECOGNITION
+## M50J2-20 — EVENT DETECTION CAN LAG STATE CHANGE
+## M50J2-21 — SNARE/TRAP ≠ SUPPORT LATTICE
+## M50J2-22 — COLLAPSE CAN OPEN STORED WEAPON/RESOURCE RESERVOIRS
+## M50J2-23 — OPENING ANALYSIS MUST PRESERVE CONTAINER/CONTENT TYPE
+## M50J2-24 — TERRITORIAL SYSTEM CAN PROJECT AS AGRICULTURAL CARGO
+## M50J2-25 — SURVIVORS CAN CARRY EVENT INFORMATION
+## M50J2-26 — SURVIVOR TESTIMONY IS MOBILE DATA
+## M50J2-27 — OVERCONFIDENCE CAN REDUCE ADAPTIVE RESPONSE
+## M50J2-28 — ACTIVE CONTROLLER CAN BLOCK POPULATION TRANSFER
+## M50J2-29 — COLLAPSE CAN CASCADE ACROSS CONTROL/MILITARY/RESOURCE/WATER LAYERS
+## M50J2-30 — TEXTUAL DIVERGENCE LOWERS HYDROLOGICAL-MECHANISM CONFIDENCE
+## M50J2-31 — ENGINEERED CITY CAN FAIL THROUGH WATER-SUPPLY LOSS
+## M50J2-32 — HUMAN DESOLATION CAN PRODUCE NON-HUMAN SUCCESSOR ECOLOGY
+## M50J2-33 — REUSED LITERARY TEMPLATE ≠ INDEPENDENT PHYSICAL OBSERVATION
+## M50J2-34 — CENTRAL-NODE FAILURE CAN PRODUCE WIDE NETWORK SHOCK
+## M50J2-35 — ROUTE VALUE IS EVENT-PHASE DEPENDENT
+
+---
+
+# Number / timing register — Jeremiah 50
+
+Record without forcing:
+
+- “in those days / at that time” = qualitative transition phase.
+- no gate-duration number.
+- no world-layer count.
+- no dragon-spring count.
+- “from north” = direction, not recurrence.
+- no numerical route timing from Babylon to Zion.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 50
+
+1. Working primary text: Jeremiah 50 NRSVUE, compared with NIV/ESV/KJV/NKJV and textual notes where useful.
+2. Jeremiah 50–51 is a distinct Babylon-oracle complex whose compositional/redactional history is debated.
+3. Recent scholarship emphasizes a major reversal within Jeremiah: earlier texts advise accommodation/settlement under Babylon; Jeremiah 50–51 announces Babylon’s demise and calls for departure.
+4. Jeremiah 50:4–5 links Babylon’s fall with Israel/Judah returning together toward Zion and renewing an enduring covenant.
+5. Jeremiah 50:6’s mountain/hill wandering belongs to lost-sheep imagery.
+6. Jeremiah 50:23’s “hammer of the whole earth” is imperial/destructive-tool imagery.
+7. Jeremiah 50:24’s snare/trap is a capture metaphor and does not describe a lattice.
+8. Jeremiah 50:25–26 explicitly distinguishes armory/weapons from granaries/resources.
+9. Jeremiah 50:38 reads “drought against her waters” in MT/NRSVUE, but ancient textual traditions vary; some traditions support or imply a “sword” reading or omit material. Treat precise hydrological mechanics cautiously.
+10. Babylon’s historic canal/river dependence makes water-system vulnerability plausible as ordinary infrastructure context, but the verse is not proof of a Vardath hydrological event.
+11. Jeremiah 50:41–43 substantially reuses earlier foe-from-the-north language formerly aimed at Judah, so repeated wording is not independent evidence.
+12. No dragon/lattice support or strict spiderweb→fingertrap transition appears.
+
+---
+
+# Sources logged — Jeremiah 50
+
+Primary:
+- Jeremiah 50 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+50&version=NRSVUE
+- Jeremiah 50:23–25 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+50%3A23-25&version=NRSVUE
+- Jeremiah 50:24–26 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+50%3A24-26&version=NRSVUE
+- Jeremiah 50:38–40 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+50%3A38-40&version=NRSVUE
+
+Scholarly / historical:
+- “The end of the oppressive empire is at hand: The thrust of the oracles in Jeremiah 50–51 Masoretic text,” *Verbum et Ecclesia* (2024):
+  https://verbumetecclesia.org.za/index.php/ve/article/view/3489/8963
+- “An ‘undervalued’ salvation oracle in the book of Jeremiah,” *Verbum et Ecclesia* (2023), on Jeremiah 50:4–5:
+  https://verbumetecclesia.org.za/index.php/ve/article/view/2901/6826
+- Critical commentaries retained for textual variation in Jeremiah 50:38 and literary reuse of earlier Jeremiah oracles.
+
+---
+
+# SECTION 50J2 CHECKPOINT — JEREMIAH 50 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 50 makes survival-routing explicitly phase-dependent: the same Babylon where exiles were once told to settle becomes the node they must now flee.**
+2. **Israel and Judah converge together toward Zion but still have to ask the route—destination knowledge and route knowledge are distinct.**
+3. **Babylon changes from “hammer of the whole earth” to a broken tool; high actuator power does not guarantee actuator survival.**
+4. **The hidden snare captures Babylon before it recognizes the transition, making detection lag a central hazard variable.**
+5. **Storehouses, armory, agriculture and waters are distinct subsystems; collapse can propagate across them.**
+6. **The drought-against-waters line is high-interest but textually less secure and should not be overused as literal hydrology.**
+7. **Human desolation again produces non-human successor ecology rather than a truly lifeless world.**
+8. **No dragon/lattice-spring or strict fingertrap mechanism appears; this chapter mainly advances route-phase and central-node-collapse mechanics.**
+
+### Next live block
+
+**Jeremiah 51 — Babylon sea/monster/wind/mountain/river sign-act — VERY HIGH PRIORITY**
+
+Priority:
+- destructive wind stirred against Babylon;
+- winnowers/fanners as air-flow separation;
+- bow/armor control;
+- creator stretches heavens / establishes earth;
+- water-noise in heavens, clouds rising, lightning/rain/wind storehouses;
+- idols versus creator;
+- Babylon as hammer/war club;
+- destroying mountain made burned mountain;
+- cornerstone/foundation stone denied;
+- banners/walls/gates/watches;
+- Medes;
+- “sea rises over Babylon / waves cover”;
+- **Nebuchadrezzar swallowed Zion like a dragon/monster, filled belly, cast her out** — highest-priority dragon lexeme/function test;
+- Bel forced to disgorge what swallowed;
+- waters dried;
+- threshing-floor timing;
+- runners/messengers meet;
+- Euphrates scroll tied to stone and sunk;
+- direct Vardath ground-support dragon comparison and source/mythology controls.
