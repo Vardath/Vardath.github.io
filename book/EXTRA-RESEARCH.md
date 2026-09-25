@@ -78268,3 +78268,1221 @@ Priority:
 - Jerusalem as foundling body: cord, water, blood, growth, ornament, covenant;
 - two sisters / paired-city body projection begins approaching in later chapters;
 - HIGH PRIORITY: Ezekiel 12 repeats wall-digging as an actual escape/exile aperture, allowing direct comparison with Ezekiel 8’s hidden-wall opening.
+
+
+---
+
+# SECTION 52 progress D — Ezekiel 12–16
+## Fresh sequential research: wall-aperture escape, carried exile cargo, net capture with sensory loss, latency/time control, false-wall failure, selective survival, partially burned structural material, and Jerusalem as a body/city lifecycle
+
+# Ezekiel 12:1–7 — prophet becomes a visible exile-proxy
+
+Ezekiel is told to:
+- prepare exile baggage;
+- move it publicly;
+- go from one place to another;
+- dig through a wall;
+- carry baggage through the opening;
+- lift the load to his shoulder;
+- move in darkness;
+- cover his face.
+
+The prophet himself is explicitly:
+a **sign**.
+
+## M52D-1 — HUMAN BODY + CARGO + ROUTE CAN FORM A COMPLETE SCALE-MODEL OF POPULATION TRANSFER
+
+This extends Ezekiel 4.
+
+There:
+body represented siege/burden.
+
+Here:
+body performs:
+**departure / cargo carriage / boundary passage**.
+
+The prophet becomes a small-scale moving model of exile.
+
+---
+
+# Ezekiel 12:5–7 — direct comparison with Ezekiel 8 wall opening
+
+## Ezekiel 8
+
+wall
+→ small hole
+→ digging/enlargement
+→ entrance
+→ observer moves inward
+→ hidden chamber is exposed.
+
+## Ezekiel 12
+
+wall
+→ deliberate digging/opening
+→ carried baggage passes through
+→ person follows outward
+→ exile/escape is enacted.
+
+## M52D-2 — SAME APERTURE-FORMATION GEOMETRY CAN SERVE OPPOSITE TRAFFIC DIRECTIONS
+
+Chapter 8:
+outside → inside.
+
+Chapter 12:
+inside → outside.
+
+This is a very important gate rule.
+
+**Gate geometry does not determine traffic direction by itself.**
+
+---
+
+# M52D-3 — APERTURE FUNCTION DEPENDS ON CARGO, DIRECTION AND CONTEXT
+
+A wall-hole can function as:
+- inspection/infiltration route;
+- escape route;
+- exile route;
+- hidden access route.
+
+Therefore a biblical “opening in wall”
+cannot be assigned one universal cosmological meaning.
+
+---
+
+# Ezekiel 12:5–7 — cargo precedes/joins body passage
+
+Baggage:
+is carried through.
+
+Body:
+follows/participates.
+
+This gives:
+**material cargo + living carrier**
+using same aperture.
+
+## M52D-4 — ONE BOUNDARY CAN PASS BOTH OBJECT CARGO AND LIVING CARRIER
+
+This is directly relevant to Vardath transfer analysis.
+
+But:
+this is a sign-act modeling exile,
+not inter-world transport.
+
+---
+
+# Ezekiel 12:6–7 — shoulder is load-bearing interface
+
+Baggage:
+placed on shoulder.
+
+Body:
+becomes carrier.
+
+## M52D-5 — BODY CAN FUNCTION AS LOAD-BEARING TRANSPORT FRAME WITHOUT BEING COSMIC SUPPORT STRUCTURE
+
+This is another support-function control.
+
+Load:
+portable baggage.
+
+Not:
+ground/world.
+
+---
+
+# Ezekiel 12:6,12 — covered face shuts visual channel while movement continues
+
+Face:
+covered.
+
+Effect:
+cannot see land.
+
+Yet:
+body/cargo movement continues.
+
+## M52D-6 — SENSORY CHANNEL CAN BE DISABLED WHILE TRANSPORT CHANNEL REMAINS ACTIVE
+
+This is an excellent channel-specific example.
+
+movement:
+active.
+
+vision:
+inactive/restricted.
+
+---
+
+# Ezekiel 12:10–13 — sign-act maps onto prince’s later transfer
+
+The prince:
+carries baggage;
+passes through wall;
+covers face.
+
+Then:
+net/snare catches him;
+he is brought to Babylon;
+yet will not see it.
+
+The historical referent is conventionally linked with Zedekiah’s flight/capture/blinding.
+
+## M52D-7 — ONE TRANSFER SEQUENCE CAN COMBINE ESCAPE APERTURE → CAPTURE NETWORK → LONG-DISTANCE RELOCATION → SENSORY LOSS
+
+This is unusually process-dense.
+
+---
+
+# Ezekiel 12:13 — net/snare is capture network, not support lattice
+
+The net:
+catches the prince.
+
+Function:
+entanglement/restraint.
+
+It does not:
+support ground;
+open a gate;
+form a throat.
+
+## M52D-8 — NETWORK FUNCTION MUST OVERRIDE SHAPE RESEMBLANCE
+
+Net:
+yes.
+
+Lattice support:
+no.
+
+Fingertrap:
+no.
+
+---
+
+# Ezekiel 12:14–16 — attendants are scattered but small remnant remains as information carrier
+
+Helpers/troops:
+scattered to every wind.
+
+Few:
+escape sword/famine/pestilence.
+
+Purpose:
+they tell what happened among nations.
+
+## M52D-9 — REMNANT CAN FUNCTION AS DISTRIBUTED MEMORY/INFORMATION CARRIER
+
+This directly strengthens the handoff model:
+survivors preserve event information after center collapse.
+
+---
+
+# Ezekiel 12:17–20 — food/water remain but are consumed under fear while land empties
+
+Bread:
+still eaten.
+
+Water:
+still drunk.
+
+Yet:
+social/environmental condition is collapsing.
+
+## M52D-10 — RESOURCE PRESENCE DOES NOT GUARANTEE SECURE RESOURCE SYSTEM
+
+Availability,
+access,
+psychological state,
+political stability
+are separate variables.
+
+---
+
+# Ezekiel 12:21–28 — delay proverb confuses latency with failure
+
+Popular proverb:
+days are prolonged;
+vision fails.
+
+Response:
+fulfillment is near;
+not indefinitely delayed.
+
+## M52D-11 — LONG LATENCY CAN BE MISREAD AS NON-CAUSALITY OR SYSTEM FAILURE
+
+This is a major chronology control.
+
+A prediction/process may have:
+- latency;
+- activation threshold;
+- delayed consequence.
+
+But delay alone does not prove:
+cycle interval.
+
+---
+
+# M52D-12 — “SOON” / “NO LONGER DELAYED” IS RELATIVE EVENT-TIMING LANGUAGE, NOT A NUMERIC CLOCK
+
+Do not convert qualitative imminence into exact period.
+
+---
+
+# Ezekiel 12 strict fingertrap screening
+
+wall aperture:
+strong.
+
+living + material cargo:
+strong.
+
+net:
+present.
+
+narrow passage:
+yes, wall opening.
+
+broad connected mesh contracting:
+absent.
+
+same structure opening/reopening:
+absent.
+
+world-layer adjacency:
+absent.
+
+### Verdict
+
+**Strong gate/cargo analogue, negative strict fingertrap morphology.**
+
+---
+
+# Ezekiel 13:1–9 — false information source is distinguished from true transmission
+
+False prophets:
+follow own spirit;
+have seen nothing;
+claim source authorization anyway.
+
+## M52D-13 — CHANNEL FAILURE CAN BEGIN AT SOURCE AUTHENTICATION
+
+The problem is not:
+receiver noise.
+
+It is:
+false source labeling.
+
+Permanent information model now includes:
+- source identity;
+- authorization;
+- message;
+- relay;
+- receiver.
+
+---
+
+# Ezekiel 13:5 — prophets fail to repair breaches
+
+They do not:
+go up into breaches;
+repair wall;
+prepare defense.
+
+## M52D-14 — BOUNDARY MAINTENANCE IS A DISTINCT SYSTEM FUNCTION
+
+A wall can fail because:
+- attacked;
+- poorly built;
+- unrepaired breach;
+- deceptive cosmetic treatment.
+
+This expands the boundary failure taxonomy.
+
+---
+
+# Ezekiel 13:10–15 — flimsy wall + whitewash gives false appearance of integrity
+
+People:
+build inadequate wall.
+
+Prophets:
+coat/whitewash it.
+
+Result:
+looks secure.
+
+Then:
+storm wind;
+heavy rain;
+hail
+destroy it.
+
+Foundation:
+exposed.
+
+## M52D-15 — SURFACE APPEARANCE CAN MASK STRUCTURAL WEAKNESS UNTIL LOAD/STORM TEST
+
+This is one of the strongest engineering analogues so far.
+
+### Vardath relevance
+
+A proposed support structure should be tested by:
+- load path;
+- material continuity;
+- response to stress;
+- foundation condition.
+
+Visual similarity alone is insufficient.
+
+---
+
+# M52D-16 — FAILURE UNDER STORM CAN REVEAL WHETHER A BOUNDARY WAS STRUCTURAL OR COSMETIC
+
+Whitewash:
+does not increase real capacity.
+
+This is a useful methodological metaphor for the entire cosmology project:
+**surface motif-matching ≠ mechanical support.**
+
+---
+
+# Ezekiel 13:11–14 — multiple environmental loads strike same wall
+
+Rain:
+water load.
+
+Hail:
+impact load.
+
+Storm wind:
+lateral/dynamic load.
+
+Wall:
+fails.
+
+## M52D-17 — ONE STRUCTURE CAN BE TESTED BY MULTIPLE SIMULTANEOUS HAZARD CHANNELS
+
+This fits the project’s separate-effects method.
+
+---
+
+# Ezekiel 13:14 — foundation exposure after wall collapse
+
+Once wall fails:
+foundation becomes visible/exposed.
+
+## M52D-18 — DESTRUCTION CAN REVEAL HIDDEN SUPPORT GEOMETRY
+
+This is highly relevant.
+
+Collapsed surface:
+may expose
+deeper structure.
+
+But:
+the verse is metaphorical judgment architecture,
+not direct world-foundation observation.
+
+---
+
+# Ezekiel 13:17–23 — bands/veils function as capture-control imagery
+
+Women:
+sew bands;
+make veils;
+“hunt lives.”
+
+Later:
+bands torn;
+veils removed;
+lives released like birds.
+
+Exact lexical/practice reconstruction is debated.
+
+## M52D-19 — RESTRAINT/CAPTURE IMAGERY WITH UNCERTAIN MATERIAL DETAILS SHOULD NOT BE OVER-MECHANIZED
+
+Secure process:
+capture/control
+→ restraint
+→ release.
+
+Exact device:
+uncertain.
+
+---
+
+# Ezekiel 13 strict support test
+
+wall:
+yes.
+
+foundation:
+yes.
+
+repair:
+yes.
+
+storm failure:
+yes.
+
+dragon/living support:
+no.
+
+spring lattice:
+no.
+
+### Verdict
+
+**Strong structural-integrity control; not dragon/lattice evidence.**
+
+---
+
+# Ezekiel 14:1–8 — stumbling block moves inside the person
+
+Elders:
+take idols into hearts.
+
+Iniquity:
+placed as stumbling block before them.
+
+Internal allegiance:
+distorts consultation.
+
+## M52D-20 — OBSTACLE CAN BE INTERNAL/CONTROL-STATE RATHER THAN EXTERNAL ROUTE DEBRIS
+
+Earlier:
+stone blocks road.
+
+Here:
+“stumbling block” belongs to internal moral/cognitive system.
+
+Do not literalize every obstacle term.
+
+---
+
+# Ezekiel 14:13–20 — Noah, Danel/Daniel and Job save only themselves
+
+Three exemplary righteous figures:
+cannot transfer survival status to children/population.
+
+## M52D-21 — SURVIVAL QUALIFICATION CAN BE INDIVIDUAL AND NON-TRANSFERABLE
+
+This is important to remnant/gate models.
+
+One protected/qualified individual
+does not automatically confer protection
+on dependents or neighboring nodes.
+
+---
+
+# Danel/Daniel textual-historical control
+
+Many scholars identify Ezekiel’s figure as:
+**Danel**, the ancient wise/righteous hero known from Ugaritic Aqhat tradition,
+rather than the later biblical Daniel.
+
+Others retain canonical Daniel identification.
+
+The spelling/context debate remains important.
+
+## M52D-22 — NAMED EXEMPLAR IDENTITY MUST REMAIN TEXT-CRITICALLY/HISTORICALLY OPEN WHERE DEBATED
+
+Do not use this trio for chronology synchronization without resolving source chronology.
+
+---
+
+# Ezekiel 14:21 — four deadly hazard channels are explicitly enumerated
+
+Jerusalem receives:
+1. sword;
+2. famine;
+3. wild animals;
+4. pestilence.
+
+## M52D-23 — TEXT ITSELF DISTINGUISHES MULTIPLE HAZARD MODES INSIDE ONE JUDGMENT EVENT
+
+This strongly supports Vardath’s effects ledger.
+
+Different outcome channels can coexist
+without one surface mechanism.
+
+---
+
+# Ezekiel 14:22–23 — survivors are physically brought out and become evidence
+
+Sons/daughters:
+survive.
+
+They:
+come out to exiles.
+
+Observers:
+inspect their ways/deeds.
+
+## M52D-24 — SURVIVORS CAN FUNCTION AS POST-EVENT EVIDENCE CARRIERS
+
+Again:
+remnant
+=
+biological survival
++
+information transmission.
+
+---
+
+# Ezekiel 15 — vine wood is tested for structural usefulness
+
+Question:
+can vine wood be used to make anything?
+even a peg/hanger?
+
+Answer:
+no.
+
+After partial burning:
+even less useful.
+
+## M52D-25 — BIOLOGICAL/ORGANIC MATERIAL IS NOT AUTOMATICALLY STRUCTURAL MATERIAL
+
+This is a very useful support-lattice control.
+
+Living/plant-like:
+does not mean
+load-bearing.
+
+Mechanical suitability matters.
+
+---
+
+# Ezekiel 15:4–5 — both ends burned, middle charred
+
+The image gives:
+end A damaged;
+end B damaged;
+middle damaged.
+
+This is geometrically striking.
+
+But:
+the text’s point is reduced usefulness after fire.
+
+## M52D-26 — END/MIDDLE THREE-PART DAMAGE SHOULD NOT BE CONVERTED INTO COSMIC THREE-LAYER GEOMETRY WITHOUT FUNCTIONAL LINK
+
+---
+
+# Ezekiel 15:7 — escape from one fire does not guarantee later survival
+
+People:
+come out from fire;
+another fire consumes.
+
+## M52D-27 — SURVIVING ONE HAZARD PHASE ≠ SURVIVING THE FULL FAILURE SEQUENCE
+
+This is extremely relevant to gate-event survival modeling.
+
+---
+
+# Ezekiel 16:1–7 — Jerusalem becomes a complete human lifecycle from birth
+
+Jerusalem is addressed as:
+newborn girl.
+
+Birth details:
+- umbilical/navel cord not cut;
+- not washed;
+- not salted;
+- not wrapped;
+- abandoned in open field;
+- blood/fluid exposure;
+- command to live;
+- plant-like growth;
+- bodily maturation.
+
+This is much more than isolated body metaphor.
+
+## M52D-28 — CITY CAN BE PROJECTED AS A BIOLOGICAL SYSTEM WITH BIRTH, DEPENDENCY, GROWTH, MATURITY, RELATIONSHIP, FAILURE AND RESTORATION
+
+This is one of the strongest whole-lifecycle personifications found so far.
+
+---
+
+# Ezekiel 16:4 — umbilical cord is a temporary life-support connection
+
+Cord:
+connects newborn to prior biological support system.
+
+After birth:
+it normally must be severed.
+
+## M52D-29 — A SUPPORT CONNECTION CAN BE ESSENTIAL IN ONE PHASE AND REQUIRE SEVERING IN THE NEXT
+
+This is highly interesting for Vardath handoff thinking.
+
+A system may move:
+dependent connection
+→ separation
+→ independent operation.
+
+### Control
+
+This is ordinary birth imagery,
+not a cosmic lattice strand.
+
+---
+
+# Ezekiel 16:4–9 — water and blood belong to birth/care/purification sequence
+
+Modern scholarship compares the foundling narrative with ancient Near Eastern birth/adoption practices and emphasizes the water/blood imagery.
+
+Hannah S. An argues that “water and blood” language belongs to the social/birth/purification world of the foundling story and later restoration rhetoric.
+
+## M52D-30 — WATER IN BODY/BIRTH RITUAL MUST NOT BE ENTERED INTO PHYSICAL FLOOD CHRONOLOGY
+
+Here the water:
+washes a body.
+
+Blood:
+birth/vulnerability/purification imagery.
+
+This is not environmental inundation.
+
+---
+
+# Ezekiel 16:6–7 — command/information is followed by biological growth
+
+“Live”
+→ growth like plant of field
+→ maturity.
+
+## M52D-31 — INFORMATION/COMMAND CAN BE NARRATIVELY POSITIONED AS TRIGGER FOR STATE DEVELOPMENT
+
+But:
+this is theological creation/adoption language.
+
+No biophysical mechanism is specified.
+
+---
+
+# Ezekiel 16:8–14 — covering, washing, clothing and ornament change system status
+
+Sequence:
+naked/exposed
+→ cloak covers
+→ covenant
+→ washing
+→ anointing
+→ clothing
+→ ornaments
+→ crown
+→ food
+→ queenly status.
+
+## M52D-32 — ENCLOSURE/COVERING CAN CHANGE SOCIAL-FUNCTIONAL STATE WITHOUT CHANGING CORE IDENTITY
+
+The same Jerusalem-body persists through:
+abandoned;
+adopted;
+covered;
+covenanted;
+royal
+states.
+
+---
+
+# Ezekiel 16:11–12 — chains/rings/bracelets are adornment here, not restraint
+
+Objects:
+bracelets;
+chain;
+nose ring;
+earrings;
+crown.
+
+## M52D-33 — SAME OBJECT FAMILY CAN SWITCH BETWEEN RESTRAINT AND ORNAMENT FUNCTIONS
+
+Chain in Ezekiel 7:
+captivity.
+
+Chain in Ezekiel 16:
+adornment.
+
+Again:
+function outranks shape/name.
+
+---
+
+# Ezekiel 16:15–34 — resources given to the city are redirected into competing network
+
+Clothes;
+gold;
+silver;
+oil;
+incense;
+food;
+children
+
+are transferred from original relationship
+into alternate cultic/political relationships.
+
+## M52D-34 — SYSTEM FAILURE CAN OCCUR THROUGH RESOURCE RE-ROUTING RATHER THAN RESOURCE ABSENCE
+
+This is a major systems principle.
+
+The city possesses resources,
+but sends them into different channels.
+
+---
+
+# Ezekiel 16:24–25 — elevated nodes are built at every street head/square
+
+Jerusalem builds:
+platforms/high places
+at repeated urban nodes.
+
+## M52D-35 — DISTRIBUTED NODE NETWORK CAN GROW THROUGH REPLICATION AT STREET JUNCTIONS
+
+This is genuine network expansion.
+
+But:
+social/cultic,
+not physical world lattice.
+
+---
+
+# Ezekiel 16:27 — extended hand changes resource flow
+
+Divine hand:
+stretched against Jerusalem.
+
+Effect:
+rations reduced.
+
+## M52D-36 — ACTUATION CAN MODIFY FLOW RATE WITHOUT DESTROYING RECEIVER
+
+This is a strong process abstraction.
+
+---
+
+# Ezekiel 16:37–41 — former relationship network converges against center
+
+Former lovers:
+gathered from all around.
+
+Result:
+exposure;
+stripping;
+platform destruction;
+house burning.
+
+## M52D-37 — RADIAL CONVERGENCE CAN REPRESENT HOSTILE NETWORK REVERSAL
+
+Connections that once brought:
+alliance/resources
+
+become:
+attack vectors.
+
+Again:
+network relation can reverse sign.
+
+---
+
+# Ezekiel 16:44–52 — city-woman system expands into a family of paired/related cities
+
+Jerusalem:
+daughter.
+
+Samaria:
+older/big sister to north.
+
+Sodom:
+younger/little sister to south.
+
+This creates:
+**north sister — Jerusalem — south sister**
+relational geography.
+
+## M52D-38 — RELATED CITIES CAN BE PROJECTED AS A FAMILY WITH GEOGRAPHIC POLARITY
+
+This is highly relevant to pair studies.
+
+But:
+the relation is explicitly moral/political/kinship rhetoric.
+
+Do not immediately reinterpret:
+north/south sisters
+as up/down springs.
+
+---
+
+# Ezekiel 16:53–55 — former state can be restored to several city-systems
+
+Sodom;
+Samaria;
+Jerusalem
+
+all have restoration-to-former-state language.
+
+## M52D-39 — MULTIPLE FAILED CENTERS CAN BE RESTORED IN PARALLEL
+
+This is important.
+
+Successor recovery:
+not exclusive to one central city.
+
+Again:
+restoration ≠ erased history.
+
+---
+
+# Ezekiel 16:60–63 — covenant memory creates continuity across failure
+
+Despite broken covenant:
+earlier covenant is remembered;
+everlasting covenant established.
+
+## M52D-40 — INFORMATION/RELATIONAL CONTINUITY CAN BRIDGE A FAILED SYSTEM INTO A NEW COVENANT STATE
+
+This is directly analogous at abstract level to:
+old-state memory
+→ successor-state reorganization.
+
+---
+
+# Ethical/literary control — Ezekiel 16 uses deliberately shocking gendered/sexual violence rhetoric
+
+Modern scholarship strongly debates the chapter’s:
+- sexualized city-personification;
+- marital ownership;
+- prostitution/adultery metaphor;
+- violent punishment imagery;
+- adoption-to-marriage sequence.
+
+These are not neutral mechanical descriptions.
+
+## M52D-41 — HIGH-INTENSITY BODY METAPHOR MUST BE READ AS RHETORICAL CONSTRUCTION BEFORE MECHANICAL EXTRACTION
+
+The geometry/process can still be mapped,
+but the chapter’s gendered rhetoric and historical context must remain visible.
+
+---
+
+# Ezekiel 12–16 integrated pair / process matrix
+
+## wall / aperture
+boundary / locally created passage.
+
+## inward passage / outward passage
+Ezekiel 8 hidden chamber / Ezekiel 12 exile escape.
+
+## baggage / shoulder
+cargo / living carrier frame.
+
+## movement / covered face
+transport channel / disabled visual channel.
+
+## escape / net
+attempted free transfer / capture network.
+
+## scattered remnant / nations
+distributed survivors / external memory field.
+
+## prediction / latency
+signal / delayed fulfillment.
+
+## wall / whitewash
+real structure / cosmetic confidence.
+
+## storm / wall
+external load / structural test.
+
+## foundation / collapse
+hidden support / exposed failure geometry.
+
+## idol in heart / stumbling block
+internal control state / internalized obstacle.
+
+## Noah-Danel-Job / children
+individual qualification / non-transferable dependent survival.
+
+## sword/famine/beasts/pestilence
+four distinct hazard channels.
+
+## vine intact / vine charred
+poor structural material / degraded structural material.
+
+## newborn / city
+biological dependency / civic origin projection.
+
+## umbilical cord / independence
+temporary support link / post-birth separation.
+
+## blood/water / flood
+body-care medium / environmental hydrology control.
+
+## naked / clothed
+exposed state / enclosed/protected status.
+
+## chain restraint / chain adornment
+same form / opposite function.
+
+## resource abundance / resource rerouting
+stock present / network allocation failure.
+
+## Samaria/Jerusalem/Sodom
+north/center/south city-family projection.
+
+## broken covenant / remembered covenant
+failed relation / successor continuity.
+
+---
+
+# Ezekiel 12–16 continuous transformation timeline
+
+prophet becomes exile proxy
+→ baggage prepared
+→ wall locally opened
+→ cargo passes through aperture
+→ body follows carrying load
+→ visual channel is covered while movement continues
+→ sign maps onto prince’s later escape
+→ capture net interrupts escape
+→ captive relocates to Babylon without sight
+→ attendants scatter to winds
+→ small remnant remains as witness carriers
+→ food/water continue under collapse anxiety
+→ delayed fulfillment is mistaken for failed prophecy
+→ false information sources emerge
+→ real wall breaches are not repaired
+→ cosmetic whitewash creates false security
+→ wind/rain/hail stress wall
+→ wall collapses
+→ foundation becomes exposed
+→ restraint/hunting imagery is broken and lives released
+→ internal idols become cognitive/moral stumbling blocks
+→ individual survival qualification cannot protect dependents
+→ four distinct hazard channels are enumerated
+→ survivors are brought out as evidence
+→ vine material is evaluated for structural usefulness
+→ partial fire damage further reduces usefulness
+→ surviving one fire does not ensure later survival
+→ Jerusalem is recast as abandoned newborn
+→ biological support/care is absent
+→ command to live initiates growth
+→ body matures
+→ covering/washing/clothing transform social state
+→ covenant creates relational enclosure
+→ resources accumulate
+→ resources are rerouted into competing systems
+→ repeated high-place nodes spread through city
+→ ration flow is reduced
+→ former allies/lovers converge as hostile forces
+→ coverings/ornaments are stripped
+→ structures burn
+→ Jerusalem is placed in north/south sister-city family
+→ multiple city-systems receive restoration language
+→ covenant memory bridges into a new/everlasting relational state.
+
+---
+
+# Strict Vardath screening — Ezekiel 12–16
+
+## actual wall aperture
+Strong.
+
+## cargo transfer through aperture
+Strong.
+
+## living carrier through aperture
+Strong.
+
+## net
+Strong capture function.
+
+## multi-hazard effects
+Exceptionally strong.
+
+## structural wall/foundation mechanics
+Exceptionally strong.
+
+## body/city projection
+Exceptionally strong.
+
+## support-link lifecycle
+Interesting via umbilical cord, but biological.
+
+## broad lattice
+Absent.
+
+## two opposed spring strands
+Absent.
+
+## broad→narrow throat
+Absent.
+
+## dragon-ground support
+Absent.
+
+## inter-world adjacency
+Absent.
+
+### Verdict
+
+**Ezekiel 12–16 strongly advances aperture, structural-integrity, hazard, remnant and body/city projection analysis, but still does not produce the strict Vardath fingertrap/dragon-support mechanism.**
+
+---
+
+# New master-mechanism additions from Ezekiel 12–16
+
+## M52D-1 — BODY + CARGO + ROUTE CAN FORM TRANSFER PROXY
+## M52D-2 — SAME APERTURE GEOMETRY CAN SUPPORT OPPOSITE TRAFFIC DIRECTIONS
+## M52D-3 — GATE FUNCTION DEPENDS ON CARGO + DIRECTION + CONTEXT
+## M52D-4 — ONE BOUNDARY CAN PASS OBJECT CARGO + LIVING CARRIER
+## M52D-5 — LOAD-BEARING BODY ≠ COSMIC SUPPORT
+## M52D-6 — SENSORY CHANNEL CAN FAIL WHILE TRANSPORT REMAINS ACTIVE
+## M52D-7 — ESCAPE → CAPTURE → RELOCATION → SENSORY LOSS CAN FORM ONE SEQUENCE
+## M52D-8 — NET SHAPE ≠ LATTICE FUNCTION
+## M52D-9 — REMNANT CAN BE DISTRIBUTED MEMORY CARRIER
+## M52D-10 — RESOURCE PRESENCE ≠ SECURE RESOURCE SYSTEM
+## M52D-11 — LATENCY CAN BE MISREAD AS SYSTEM FAILURE
+## M52D-12 — QUALITATIVE IMMINENCE ≠ NUMERIC CLOCK
+## M52D-13 — INFORMATION FAILURE CAN BEGIN AT SOURCE AUTHENTICATION
+## M52D-14 — BOUNDARY MAINTENANCE IS DISTINCT SYSTEM FUNCTION
+## M52D-15 — COSMETIC SURFACE CAN MASK STRUCTURAL WEAKNESS
+## M52D-16 — STRESS TEST REVEALS REAL VS APPARENT BOUNDARY CAPACITY
+## M52D-17 — MULTIPLE ENVIRONMENTAL LOADS CAN TEST ONE STRUCTURE
+## M52D-18 — COLLAPSE CAN EXPOSE HIDDEN SUPPORT GEOMETRY
+## M52D-19 — UNCERTAIN RESTRAINT DEVICE SHOULD NOT BE OVER-MECHANIZED
+## M52D-20 — OBSTACLE CAN BE INTERNAL CONTROL STATE
+## M52D-21 — SURVIVAL QUALIFICATION CAN BE INDIVIDUAL/NON-TRANSFERABLE
+## M52D-22 — EXEMPLAR IDENTITY MAY REQUIRE TEXTUAL/HISTORICAL CONTROL
+## M52D-23 — ONE EVENT CAN EXPLICITLY CONTAIN FOUR HAZARD CHANNELS
+## M52D-24 — SURVIVORS CAN FUNCTION AS POST-EVENT EVIDENCE
+## M52D-25 — ORGANIC MATERIAL ≠ LOAD-BEARING MATERIAL
+## M52D-26 — END/MIDDLE DAMAGE ≠ COSMIC LAYER GEOMETRY
+## M52D-27 — SURVIVING ONE HAZARD PHASE ≠ SURVIVING FULL SEQUENCE
+## M52D-28 — CITY CAN BE PROJECTED AS COMPLETE BIOLOGICAL LIFECYCLE
+## M52D-29 — SUPPORT CONNECTION CAN BE PHASE-DEPENDENT AND LATER REQUIRE SEVERING
+## M52D-30 — BIRTH/PURIFICATION WATER ≠ FLOOD HYDROLOGY
+## M52D-31 — COMMAND/INFORMATION CAN PRECEDE STATE DEVELOPMENT
+## M52D-32 — COVERING CAN CHANGE FUNCTIONAL STATUS WITHOUT IDENTITY LOSS
+## M52D-33 — SAME OBJECT FORM CAN SWITCH RESTRAINT/ORNAMENT FUNCTION
+## M52D-34 — SYSTEM FAILURE CAN FOLLOW RESOURCE REROUTING
+## M52D-35 — DISTRIBUTED NODE NETWORK CAN GROW THROUGH REPLICATED URBAN SITES
+## M52D-36 — ACTUATION CAN MODIFY FLOW RATE WITHOUT DESTROYING RECEIVER
+## M52D-37 — RELATIONSHIP NETWORK CAN REVERSE FROM SUPPORT TO ATTACK
+## M52D-38 — RELATED CITIES CAN FORM GEOGRAPHIC FAMILY POLARITY
+## M52D-39 — MULTIPLE FAILED CENTERS CAN BE RESTORED IN PARALLEL
+## M52D-40 — MEMORY/RELATIONAL CONTINUITY CAN BRIDGE FAILED AND SUCCESSOR STATES
+## M52D-41 — SHOCK BODY RHETORIC MUST BE CONTROLLED BEFORE MECHANICAL EXTRACTION
+
+---
+
+# Number / timing register — Ezekiel 12–16
+
+Record without forcing:
+
+- exile sign-act has day/evening/dark sequence.
+- “every wind” = dispersal totality idiom, not measured direction count.
+- Ezekiel 14 explicitly lists **four** deadly judgments.
+- Noah / Danel(Daniel) / Job = **three** exemplary righteous figures.
+- Ezekiel 16 creates three major city-women in the comparison: Jerusalem, Samaria, Sodom.
+- no gate duration.
+- no lattice count.
+- no spring count.
+
+### Number control
+
+Three righteous figures,
+four judgments,
+three city-women
+all have local rhetorical functions.
+
+Do not merge them into one hidden number system.
+
+---
+
+# Textual / historical / scholarly controls — Ezekiel 12–16
+
+1. Working primary text: Ezekiel 12–16 NRSVUE.
+2. Ezekiel 12’s exile performance is widely treated as a prophetic sign-act in which Ezekiel’s body/action becomes the prophecy.
+3. The wall-digging sign is conventionally linked with Jerusalem’s breached/secret escape and Zedekiah’s capture; it is not a cosmological portal claim.
+4. Ezekiel 12:13’s Babylon-without-seeing imagery is conventionally related to Zedekiah’s blinding before arrival.
+5. Ezekiel 13’s wall is explicitly a rhetorical model of false security; Janina Hiebel emphasizes that whitewash hides an inadequate wall that fails under storm.
+6. The bands/veils of Ezekiel 13 are textually/culturally difficult; secure claims should remain at the restraint/control/release level.
+7. Ezekiel 14’s Danel/Daniel identification is debated; many scholars compare the figure with Ugaritic Danel of the Aqhat Epic.
+8. Ezekiel 14 explicitly differentiates four hazard channels rather than presenting one undifferentiated destruction.
+9. Ezekiel 15’s vine analogy concerns poor utility of vine wood and worsened condition after fire; it is not a botanical world-tree description.
+10. Ezekiel 16’s foundling/body allegory is illuminated by ancient Near Eastern birth, abandonment, adoption and purification practices.
+11. Hannah S. An’s 2023 study emphasizes water/blood and birth/purification context in Ezekiel 16 and its later reuse in restoration imagery.
+12. Modern scholarship critiques Ezekiel 16’s sexualized and violent rhetoric; mechanical comparison must preserve that literary/ethical context.
+13. Strict fingertrap status: negative.
+14. Strict dragon-ground-support status: negative.
+
+---
+
+# Sources logged — Ezekiel 12–16
+
+Primary:
+- Ezekiel 12–16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel%2012-16&version=NRSVUE
+
+Prophetic sign-act method:
+- Elizabeth Stell, “Beyond Oral and Written Prophecy,” *Dead Sea Discoveries* 29 (2022), for Ezekiel’s enacted exile and prophetic action:
+  https://doi.org/10.1163/15685179-02903007
+
+False wall / hope controls:
+- Janina Maria Hiebel, “Hope in Exile: In Conversation with Ezekiel,” *Religions* 10.8 (2019):
+  https://doi.org/10.3390/rel10080476
+
+Danel/Daniel comparative control:
+- TheTorah, “Laughter! Between Isaac and Aqhat’s Birth Pronouncements,” for Ugaritic Danel and the common scholarly Ezekiel 14 comparison:
+  https://www.thetorah.com/article/laughter-between-isaac-and-aqhats-birth-pronouncements
+
+Ezekiel 16 water/blood / birth context:
+- Hannah S. An, “Water (and Blood) in Ezekiel 16 and 36–37,” *Journal of Biblical Text Research* 52 (2023), 139–166:
+  https://www.bskorea.or.kr/data/pdf/52-06%20Hannah%20S.%20An_Water%20(and%20Blood)%20in%20Ezekiel%2016%20and%2036%E2%80%9337.pdf
+- “Incest as a rhetorical device: The shock effect of the allegory in Ezekiel 16,” *Scottish Journal of Theology*, for adoption/ownership/gendered-rhetoric controls:
+  https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/incest-as-a-rhetorical-device-the-shock-effect-of-the-allegory-in-ezekiel-16/C4B0E869E0D079CABBA42E5AF15C73AB
+
+---
+
+# SECTION 52D CHECKPOINT — EZEKIEL 12–16 COMPLETE
+
+Strongest first-time findings:
+
+1. **Ezekiel 12 repeats Ezekiel 8’s wall-opening geometry but reverses traffic direction: chapter 8 uses the opening to enter a hidden interior; chapter 12 uses it to move living carrier + baggage outward.**
+2. **This proves that aperture geometry alone does not determine direction or meaning.**
+3. **The prince’s sequence combines escape passage, net capture, relocation to Babylon and loss of sight—transport and sensory channels separate cleanly.**
+4. **The few survivors become distributed witnesses, strengthening remnant-as-information-carrier logic.**
+5. **Ezekiel 13’s whitewashed wall is one of the strongest structural-integrity controls found so far: cosmetic appearance does not equal load-bearing capacity, and storm failure exposes the foundation.**
+6. **Ezekiel 14 explicitly separates four hazard channels and makes survival qualification non-transferable from exemplary individual to family.**
+7. **Ezekiel 15 gives a useful material-support test: organic/living-looking material can still be mechanically useless as structural timber, and partial fire damage worsens capacity.**
+8. **Ezekiel 16 projects Jerusalem through an entire biological lifecycle, proving that city/body correspondence can be extended across birth, dependency, growth, maturity, covenant, resource accumulation, failure and restoration.**
+9. **The umbilical cord introduces a useful phase-dependent support-link analogue: a connection can be essential before transition and inappropriate afterward, but it remains biological imagery, not lattice evidence.**
+10. **Jerusalem/Samaria/Sodom create a geographically oriented city-family system, useful for paired-figure studies but not automatically two-spring geometry.**
+11. **Restoration again means reconfiguration/recovered state after history, not rewind.**
+12. **No strict fingertrap or dragon-ground-support mechanism appears in Ezekiel 12–16.**
+
+### Next live block
+
+**Ezekiel 17–20**
+
+Priority:
+- two great eagles + cedar/vine;
+- top/crown of cedar removed and transplanted;
+- seed/vine reaches roots/branches toward one eagle then another;
+- east wind dries vine;
+- high tree brought low / low tree raised;
+- father/son responsibility;
+- lioness + young lions captured with hooks/pits/nets;
+- vine with strong branches/rods uprooted and planted in wilderness;
+- Egypt/Exodus cycle retold;
+- hand raised/oath;
+- wilderness testing;
+- Sabbath as sign;
+- “high place” name;
+- HIGH PRIORITY: Ezekiel 17–19 has unusually strong paired-animal, branch/rod, transplant and root-direction geometry and may be the next serious pair/axis test.
