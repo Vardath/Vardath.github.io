@@ -10718,3 +10718,1081 @@ Priority:
 - east-facing gate opened only at specified times;
 - movement rules for north/south gates during festivals;
 - HIGH PRIORITY: test whether the shut/open east gate and prescribed one-way festival traffic supply the **closure + controlled later access** phase following the return in chapter 43.
+
+
+---
+
+# SECTION 52 progress L — Ezekiel 44–46
+## Fresh sequential research: sealed return gate, state-dependent reopening, role-filtered thresholds, garment phase change, restored measurement economy, opposed north/south through-flow and distributed processing nodes
+
+### Sequential-integrity note
+
+The mandatory three-file check was completed before this block.
+
+- Part 1 contains no Ezekiel 44–46 sequential research.
+- Existing `EXTRA-RESEARCH.md` contains the earlier research archive but does not contain this block.
+- Part 2 ends with **Ezekiel 40–43 complete** and explicitly names **Ezekiel 44–46** as the next live block.
+
+This is therefore genuinely new research and is appended only to Part 2.
+
+The immediate previous process state matters:
+
+**Ezekiel 40–42**
+→ measured/restored spatial system
+
+**Ezekiel 43**
+→ glory approaches from east
+→ enters through east gate
+→ fills the temple
+
+**Ezekiel 44–46**
+→ access is then constrained, classified and routed.
+
+That sequence makes these chapters especially important for the Vardath closure/reopening model.
+
+Primary text read:
+- Ezekiel 44
+- Ezekiel 45
+- Ezekiel 46
+
+---
+
+# Literary / scholarly control before Vardath comparison
+
+Modern scholarship commonly reads Ezekiel 40–48 as a carefully regulated restored-temple vision whose spatial and personnel rules are designed to preserve sanctity and prevent a repeat of the earlier temple failure.
+
+Tova Ganzel's Oxford Handbook study emphasizes that the distinctive roles of:
+- priests;
+- Levites;
+- the `nasi` / prince
+
+are driven by preservation of temple sanctity.
+
+Michael Konkel's study of holiness in Ezekiel 40–48 likewise treats the vision as a system of differentiated sacred zones.
+
+Rosanne Liebermann's recent work describes the restored temple as a highly regulated concentric purity system around the divine presence.
+
+For this research, that conventional framework matters because:
+
+> Ezekiel's restored structure is not presented as maximally open. It is presented as **stable because boundaries, personnel, garments, times and routes are controlled.**
+
+That is highly relevant to Vardath, where a gate event is temporary and ordinary stable operation should not require permanent maximum adjacency.
+
+---
+
+# Ezekiel 44:1–3
+## The outer east gate closes after the glory has entered
+
+The guide brings Ezekiel back to the **outer sanctuary gate facing east**.
+
+It is shut.
+
+The reason is explicit:
+
+**YHWH, the God of Israel, entered through it**
+→ **therefore it remains shut**.
+
+No ordinary person is to pass through it.
+
+The prince has a special relationship to this gate:
+- he may sit/eat ritual bread there before YHWH;
+- he approaches/leaves through the gate's vestibule/porch route;
+- but the divine-entry route itself is not simply reopened as a public thoroughfare.
+
+### M52L-1 — SUCCESSFUL ENTRY CAN BE FOLLOWED BY DELIBERATE CLOSURE OF THE SAME ACCESS ROUTE
+
+This is one of the strongest closure sequences yet:
+
+**route open / usable**
+→ **glory enters**
+→ **destination fills**
+→ **route is sealed**.
+
+For the mature Vardath comparison:
+
+**gate opening**
+does not imply
+**permanent gate state**.
+
+A successful adjacency/entry event can be followed by closure specifically because the transfer has occurred.
+
+This is a strong partial analogue for:
+
+**active gate phase**
+→ **transfer**
+→ **closure**
+→ **stable occupation**.
+
+### M52L-2 — THE ROUTE OF DIVINE ENTRY IS NOT NORMALIZED INTO ORDINARY TRAFFIC
+
+The same gate that carries the exceptional event is not turned into an everyday road.
+
+That supports an important Vardath systems rule:
+
+> extraordinary transition geometry and ordinary stable-world routing need not be the same network state.
+
+### Source-level control
+
+This is sacred-space theology.
+
+The text does not say:
+- sky lattice cinched;
+- worlds touched;
+- fingertrap closed.
+
+The Vardath value is in the **process sequence**, not literal identity.
+
+---
+
+# Critical distinction
+## Outer east gate in Ezekiel 44 ≠ inner east gate in Ezekiel 46
+
+This must be kept explicit.
+
+### Ezekiel 44
+**outer east gate**
+- route of divine glory entry;
+- afterwards shut;
+- no ordinary through-passage.
+
+### Ezekiel 46
+**east gate of the inner court**
+- shut on six working days;
+- opened on Sabbath/new moon;
+- also opened for certain voluntary offerings;
+- used as a controlled worship threshold.
+
+### M52L-3 — MULTIPLE ALIGNED GATES CAN BELONG TO DIFFERENT CONTROL LAYERS
+
+Do not collapse them into one portal.
+
+The restored complex has nested boundaries.
+
+A direction can contain:
+- outer boundary node;
+- inner boundary node;
+- different rules at each.
+
+This strongly parallels the project's growing rule:
+
+**boundary state must be tracked by layer, not just by compass direction.**
+
+---
+
+# Ezekiel 44:4–9
+## Glory-filled house + access violation history + new exclusion rule
+
+Ezekiel is moved to the north gate and sees the glory filling the temple.
+
+Then the text returns to the earlier failure:
+unauthorized foreigners / uncircumcised-in-heart-and-flesh persons had been brought into the sanctuary.
+
+The future rule is stricter:
+they are not to enter.
+
+### M52L-4 — RESTORATION INCLUDES CHANGING THE ACCESS CONTROL POLICY THAT PREVIOUSLY FAILED
+
+The repair is not only:
+- rebuild walls;
+- return glory.
+
+It also changes:
+- who can cross;
+- under what state;
+- into which zone.
+
+So restoration includes **protocol correction**.
+
+### M52L-5 — AN OPENING CAN BE STRUCTURALLY SOUND YET FUNCTIONALLY UNSAFE IF ACCESS CONTROL IS WRONG
+
+A gate does not fail only by breaking physically.
+
+It can fail when:
+- wrong traffic passes;
+- classification fails;
+- authorization fails.
+
+This extends the Vardath gate model:
+physical geometry alone does not determine safe adjacency.
+
+---
+
+# Ezekiel 44:10–16
+## Levites and Zadokites — role filtering after historical failure
+
+Levites who previously strayed are not completely removed from the system.
+
+They remain:
+- temple servants;
+- gatekeepers;
+- sacrificers/slaughterers;
+- attendants.
+
+But they lose close-access functions.
+
+The Zadokite priests are permitted to:
+- approach YHWH;
+- minister at the altar/table;
+- enter the sanctuary.
+
+### M52L-6 — RESTORED SYSTEM CAN PRESERVE A COMPONENT WHILE REDUCING ITS ACCESS LEVEL
+
+This is an important alternative to binary inclusion/exclusion.
+
+A component can move from:
+
+**high-access role**
+→ **lower-access support role**
+
+without disappearing.
+
+That is useful for Vardath successor-state models:
+after a disruptive event, surviving populations/components may persist with changed relation to the core.
+
+### M52L-7 — ROLE IS PARTLY DEFINED BY DISTANCE FROM THE CORE
+
+Ezekiel's restored temple is strongly zoned:
+
+outer/public
+→ gate/service
+→ inner court
+→ altar/sanctuary
+→ divine presence.
+
+Different personnel occupy different permitted distances from the center.
+
+This gives a real **radial access hierarchy**.
+
+It is not itself stacked-world cosmology, but it is useful boundary architecture.
+
+---
+
+# Ezekiel 44:17–19
+## Linen garments and state change at the inner/outer boundary
+
+Priests entering the inner court must wear linen.
+
+Wool is excluded.
+
+They are to avoid garments that induce sweat.
+
+Most importantly:
+
+**inner service garments**
+must be removed
+before the priests enter the outer/public court.
+
+The garments are left in holy chambers.
+
+Other garments are put on.
+
+The stated concern is that the priests should not communicate/sanctify the people through the sacred garments.
+
+Older and modern commentary commonly treats this as guarding the distinction between sacred and common zones/states.
+
+### M52L-8 — BOUNDARY CROSSING REQUIRES A MATERIAL STATE CHANGE OF THE CARRIER
+
+Sequence:
+
+**outer/public state**
+→ **change garments**
+→ **inner/sacred state**
+→ **perform function**
+→ **remove sacred garments**
+→ **change state**
+→ **return to public zone**.
+
+This is one of the clearest phase-matching analogues in the temple vision.
+
+### M52L-9 — THE CARRIER CANNOT SAFELY EXPORT EVERY INNER-STATE PROPERTY INTO THE OUTER FIELD
+
+The priest may cross back out.
+
+The sacred garment does not.
+
+So:
+
+**carrier returns**
+while
+**one state-bearing layer remains behind**.
+
+This is a high-value transfer rule.
+
+For Vardath comparison:
+a traveller/object may cross a boundary while not all environmental/state properties are supposed to cross with it.
+
+### M52L-10 — HOLINESS IS TREATED AS CONTACT-TRANSMISSIBLE IN THE RITUAL MODEL
+
+The concern that clothing could "sanctify" people by contact gives a source-level system in which:
+- state can adhere to material;
+- contact can transmit status;
+- uncontrolled transfer is undesirable.
+
+This is ritual theology, not physics.
+
+But mechanically it is an unusually explicit **state-transfer-by-contact** model.
+
+---
+
+# Ezekiel 44:20–31
+## The priesthood maintains distinctions and acts as an information/control layer
+
+Priests:
+- follow grooming/body rules;
+- avoid wine while entering inner court;
+- follow marriage rules;
+- avoid most corpse contact;
+- adjudicate disputes;
+- keep festivals/Sabbaths;
+- teach the people to distinguish holy/common and clean/unclean.
+
+### M52L-11 — RESTORED BOUNDARY FUNCTION DEPENDS ON A CLASSIFICATION / TEACHING SYSTEM
+
+The temple does not remain ordered by walls alone.
+
+It requires agents who teach:
+- this side / that side;
+- permitted / forbidden;
+- clean / unclean;
+- sacred / common.
+
+That means the stable architecture has a **semantic control layer**.
+
+### M52L-12 — PHYSICAL GATE + ROLE RULES + INFORMATION SYSTEM = COMPLETE ACCESS CONTROL
+
+This is now a recurring Ezekiel principle.
+
+A stable node needs:
+1. geometry;
+2. boundary;
+3. authorized operator;
+4. classification;
+5. timing;
+6. traffic rule.
+
+This is much richer than "door open / door shut."
+
+---
+
+# Ezekiel 45:1–8
+## The land itself is repartitioned around a measured sacred center
+
+The restored land is divided into measured zones:
+- sacred contribution;
+- sanctuary;
+- priestly portion;
+- Levite portion;
+- city/common portion;
+- prince's land on both sides.
+
+The geometry is deliberate and measured.
+
+The prince is also warned not to dispossess/oppress the people.
+
+### M52L-13 — RESTORATION EXTENDS OUTWARD FROM NODE GEOMETRY INTO REGIONAL LAND GEOMETRY
+
+The process is:
+
+**core sanctuary measured**
+→ **surrounding sacred/service zones**
+→ **city/common zone**
+→ **prince's domain**
+→ **tribal/public land beyond**.
+
+This is a nested spatial field.
+
+### M52L-14 — STABLE SUCCESSOR ORDER REQUIRES ALLOCATION, NOT JUST REASSEMBLY
+
+It is not enough for:
+- temple to exist;
+- people to return.
+
+Space/resources must be redistributed so roles do not collapse back into predation.
+
+This is a strong successor-state principle.
+
+### M52L-15 — CENTRAL AUTHORITY IS GIVEN A DEFINED DOMAIN SO IT DOES NOT ABSORB ALL SURROUNDING NODES
+
+The prince receives land.
+
+But boundaries constrain the prince's extraction from others.
+
+For the node model:
+
+> a dominant/control node can be assigned sufficient local field without consuming the whole network.
+
+This is relevant to the earlier dominant-tree / neighboring-tree problem.
+
+A functioning network does not require one node to absorb all neighboring space.
+
+---
+
+# Ezekiel 45:9–12
+## Restored order requires standardized measurements
+
+Rulers are told to stop:
+- violence;
+- oppression;
+- unjust expropriation.
+
+Then the chapter specifies:
+- honest balances;
+- ephah;
+- bath;
+- shekel/mina standards.
+
+### M52L-16 — COMMON MEASUREMENT STANDARD IS PART OF SYSTEM RESTORATION
+
+This is extremely important methodologically.
+
+The restored world is not only mythic/sacred.
+
+It requires:
+**shared scale / calibration**.
+
+For the research project itself this is a useful discipline:
+before comparing quantities or geometries across texts, make sure the units/definitions are actually comparable.
+
+### M52L-17 — DISTRIBUTED NETWORKS REQUIRE COMMON REFERENCE STANDARDS
+
+Without common measures:
+each node can claim incompatible values.
+
+With common measures:
+exchange can be coordinated.
+
+This is a social/economic control example, not evidence of a cosmic metrology.
+
+---
+
+# Ezekiel 45:13–17
+## Distributed population contributions → prince → centralized ritual output
+
+The population supplies standardized contributions.
+
+The prince then bears responsibility for major communal offerings.
+
+Process:
+
+**many households/nodes**
+→ **distributed contribution**
+→ **central administrative receiver**
+→ **organized ritual output for the whole community**.
+
+### M52L-18 — MANY-TO-ONE INPUT CAN FEED ONE CENTRAL OPERATOR WITHOUT ERASING DISTRIBUTED SOURCES
+
+This is a genuine network pattern:
+
+**distributed inputs**
+→ **central aggregation**
+→ **common system function**.
+
+The prince is not the source of everything.
+
+He organizes accumulated inputs.
+
+This resembles the user's node-field interest more than a single isolated world-tree model.
+
+---
+
+# Ezekiel 45:18–25
+## Boundary reconditioning is periodic, not one-time
+
+The sanctuary receives repeated purification/atonement actions.
+
+Blood is applied to:
+- temple doorposts;
+- altar corners/ledge;
+- inner-court gateposts.
+
+The text also retains:
+- Passover;
+- seven-day feast;
+- seventh-month feast cycle.
+
+### M52L-19 — RESTORED BOUNDARIES REQUIRE MAINTENANCE
+
+The system is not:
+
+**purified once**
+→ **safe forever**.
+
+Instead:
+**stable operation**
+→ **periodic reconditioning / recalibration**.
+
+This is a valuable Vardath control.
+
+If a gate/lattice system is cyclic, stable phases may still require repeated boundary maintenance.
+
+### M52L-20 — DOORPOSTS / ALTAR CORNERS / GATEPOSTS ARE SPECIFIC MAINTENANCE NODES
+
+The ritual is not applied vaguely "to the whole world."
+
+It targets named structural points.
+
+That fits a general node logic:
+some points matter disproportionately for preserving system state.
+
+Do not convert ritual blood application into literal energetic node servicing; retain it as ritual control.
+
+---
+
+# Ezekiel 46:1–3
+## Inner east gate — normally shut, periodically reopened
+
+Now the text shifts from the permanently shut **outer east gate** of chapter 44 to the **east gate of the inner court**.
+
+Rule:
+
+**six working days**
+→ gate shut
+
+**Sabbath**
+→ gate opened
+
+**new moon**
+→ gate opened.
+
+The prince:
+- approaches through the vestibule;
+- stands at the gatepost/threshold area;
+- offerings are made;
+- worships at the threshold;
+- exits;
+- gate remains open until evening.
+
+The people worship at the entrance.
+
+### M52L-21 — ACCESS CAN BE TIME-DEPENDENT
+
+Same geometry.
+
+Different temporal state.
+
+**gate closed**
+or
+**gate open**
+
+depends on the operational cycle.
+
+This is a very strong partial analogue for Vardath:
+
+> gate state may be periodic without the underlying structure disappearing.
+
+### M52L-22 — OPENING DOES NOT MEAN UNRESTRICTED PASSAGE TO THE CORE
+
+Even while open:
+- prince has one permitted position;
+- priests perform inner functions;
+- people remain farther out.
+
+So:
+**open gate**
+≠
+**all nodes become mutually adjacent without restriction**.
+
+This is crucial.
+
+---
+
+# Ezekiel 46:4–8
+## Gate opening is coupled to scheduled load/input
+
+Different days require different offerings.
+
+The prince supplies resources according to schedule.
+
+### M52L-23 — OPEN STATE CAN HAVE A DIFFERENT OPERATING LOAD FROM CLOSED STATE
+
+The system does not simply toggle geometrically.
+
+Its input/output regime also changes.
+
+For Vardath:
+if gate opening is a physical phase, the environmental/material loads may differ sharply from quiet-state conditions.
+
+---
+
+# Ezekiel 46:9–10
+## Festival circulation: north-in → south-out; south-in → north-out
+
+This is one of the strongest movement rules in the restored temple.
+
+During appointed festivals:
+
+person entering through **north gate**
+→ must exit through **south gate**.
+
+person entering through **south gate**
+→ must exit through **north gate**.
+
+They may not:
+- turn around;
+- return through the same gate.
+
+They must:
+- continue straight through.
+
+The prince moves in the midst of the people and follows the communal circulation.
+
+### M52L-24 — THE RESTORED SYSTEM REQUIRES THROUGH-FLOW, NOT BACKTRACKING
+
+This is explicit:
+
+**entry**
+→ **crossing**
+→ **opposite exit**.
+
+No U-turn.
+
+### M52L-25 — TWO OPPOSITE TRAFFIC DIRECTIONS SHARE THE SAME CENTRAL FIELD
+
+Potential movement classes:
+
+**north → south**
+and
+**south → north**.
+
+These are genuinely opposed directional flows through one complex.
+
+This is a high-value comparison to the user's two-force model.
+
+But preserve the limit:
+
+the text does not explicitly say the two groups braid around one another or move simultaneously.
+
+So classify as:
+
+**strong opposed-route analogue**
+not
+**demonstrated two-strand fingertrap mechanics**.
+
+### M52L-26 — A STABLE SACRED SYSTEM CAN REQUIRE DIRECTIONAL ASYMMETRY / NO-RETURN TRAFFIC
+
+The same gate is not used for both entry and exit by one traveller during the festival.
+
+That reduces:
+- reversal;
+- collision;
+- congestion;
+- ritual disorder.
+
+Some older commentators explicitly interpret the rule as orderly crowd circulation; the text itself primarily gives the command, not a technical traffic-engineering explanation.
+
+For Vardath:
+a gate/throat may have **directional routing constraints** rather than symmetrical free motion.
+
+---
+
+# User's two-force / node model
+## Important comparison from Ezekiel 46
+
+The research baseline says to actively test:
+- Force A / Force B;
+- opposed directions;
+- braiding/crossing;
+- whether they form a central throat.
+
+Ezekiel 46 now supplies a real source-level geometry:
+
+**A: north → central sacred field → south**
+**B: south → central sacred field → north**.
+
+That is closer to the user's opposed-direction model than many earlier passages.
+
+However three strict elements remain absent:
+1. the routes do not visibly become one woven strand structure;
+2. the architecture does not dynamically contract into a rod/throat;
+3. the two flows are not explicitly said to create the gate by interacting.
+
+### M52L-27 — OPPOSITE THROUGH-FLOWS ARE NOW TEXTUALLY PRESENT, BUT THE FINGERTRAP TRANSFORMATION REMAINS UNSTATED
+
+This should become a high-priority cross-link when the full Ezekiel apparatus is synthesized.
+
+---
+
+# Ezekiel 46:11–15
+## Regular cycles and daily baseline
+
+Festival offerings have one pattern.
+
+Daily offerings have another.
+
+Morning sacrifice is continuous/daily.
+
+### M52L-28 — SYSTEM HAS BASELINE MODE + PERIODIC HIGH-ACTIVITY MODES
+
+This is a useful systems distinction:
+
+**daily baseline**
+vs
+**weekly/monthly/festival activation**.
+
+A cyclic mechanism should not be modeled as if peak-event conditions persist continuously.
+
+---
+
+# Ezekiel 46:12
+## Voluntary prince offering can temporarily open the inner east gate
+
+When the prince makes a voluntary offering:
+- east gate is opened;
+- offering is made;
+- gate is closed after he leaves.
+
+### M52L-29 — EVENT-TRIGGERED OPENING EXISTS IN ADDITION TO SCHEDULED OPENING
+
+The same gate supports two opening triggers:
+
+1. scheduled:
+   - Sabbath;
+   - new moon;
+
+2. event-triggered:
+   - prince's voluntary offering.
+
+This is important.
+
+Gate state can depend on:
+- time cycle;
+- authorized initiating event.
+
+That is closer to an actual control system.
+
+---
+
+# Ezekiel 46:16–18
+## Transfer to son persists; transfer to servant reverts
+
+The prince may give property:
+- to sons → permanent inheritance;
+- to servants → temporary, returns in the year of liberty.
+
+He may not seize the people's inheritance.
+
+### M52L-30 — TRANSFER DURABILITY DEPENDS ON RECEIVER CLASS
+
+Same material/property.
+
+Different receiver relation.
+
+Outcome changes:
+- persistent transfer;
+- temporary transfer;
+- forbidden extraction.
+
+This is another excellent control against treating all transfer as one mechanism.
+
+### M52L-31 — SYSTEM PREVENTS CENTRAL NODE FROM GROWING BY STRIPPING NEIGHBORING NODES
+
+This directly supports the network/node comparison.
+
+The prince's domain is bounded.
+
+He cannot maintain central strength by depopulating/dispossessing surrounding fields.
+
+For the user's "surrounding trees as other node points" question:
+
+> stable network order in these chapters repeatedly protects distinct neighboring allocations rather than allowing one central role to absorb everything.
+
+---
+
+# Ezekiel 46:19–20
+## Inner cooking zone prevents uncontrolled holiness transfer
+
+The guide shows priestly cooking/baking places.
+
+The explanation is explicit:
+holy offerings are processed there so priests do not carry them out through public space and thereby communicate holiness to the people.
+
+This continues chapter 44's garment rule.
+
+### M52L-32 — PROCESSING NODE IS PLACED NEAR THE SOURCE ZONE TO PREVENT UNWANTED STATE EXPORT
+
+This is excellent systems architecture.
+
+Instead of:
+**holy material**
+→ carried through public field
+→ state leaks/transfers,
+
+the system uses:
+**local processing chamber**
+→ output handled within controlled boundary.
+
+That resembles containment engineering.
+
+Again, source meaning is ritual holiness, not literal radiation/contamination.
+
+---
+
+# Ezekiel 46:21–24
+## Four corner courtyards = distributed processing nodes
+
+The guide moves to the four corners of the outer court.
+
+There are enclosed/corner courts with cooking facilities.
+
+Temple servants use them to boil the people's offerings.
+
+### M52L-33 — THE OUTER FIELD HAS FOUR DISTRIBUTED CORNER PROCESSING NODES
+
+This is real network geometry:
+
+**central sanctuary**
++
+**outer court**
++
+**four peripheral corner facilities**.
+
+Do not over-map them to four world-support points automatically.
+
+But they demonstrate:
+- central core;
+- distributed edge/corner nodes;
+- repeated local function.
+
+### M52L-34 — THE SAME COMPLEX USES DIFFERENT PROCESSING NODES FOR DIFFERENT MATERIAL CLASSES
+
+Priestly holy offerings:
+→ controlled inner cooking zone.
+
+People's offerings:
+→ outer corner kitchens.
+
+Thus:
+**material class / holiness state**
+determines
+**processing location**.
+
+The restored network is heterogeneous.
+
+---
+
+# Ezekiel 44–46 full process timeline
+
+glory has entered east in chapter 43
+→ outer east gate is shut because that entry has occurred
+→ ordinary public traffic is excluded from that route
+→ prince receives limited threshold/meal privilege
+→ temple is seen filled with glory
+→ failed historical access rules are identified
+→ foreigners excluded
+→ Levites retained but demoted to outer/service functions
+→ Zadokites receive near-core access
+→ priests change garments at boundary
+→ sacred-state clothing remains in sacred zone
+→ priests teach classification rules
+→ land around sanctuary is measured and allocated
+→ prince receives bounded domain
+→ weights/measures standardized
+→ distributed offerings feed centralized ritual administration
+→ boundary/node purification is periodically maintained
+→ inner east gate normally remains shut
+→ scheduled opening on Sabbath/new moon
+→ prince approaches threshold
+→ people worship from outer position
+→ festival traffic enters north/exits south or enters south/exits north
+→ no backtracking
+→ prince moves with flow
+→ voluntary offering can trigger temporary opening
+→ inheritance rules prevent central expropriation
+→ holy materials processed in contained inner zone
+→ people's offerings processed at four outer corner nodes.
+
+---
+
+# Cross-link to current Vardath node / cherub model
+
+The latest user-model correction says:
+
+**cherub / dragon / rolled sky / Squatter-Man / fingertrap**
+can be projections/phases of the same underlying apparatus.
+
+Surrounding trees can be:
+**neighboring local node/axis points**
+in one distributed field.
+
+Ezekiel 44–46 does not add new cherub/tree imagery.
+
+What it adds is the **operating protocol of a restored node field**:
+
+- core node filled;
+- one exceptional ingress route sealed;
+- nested gate layers;
+- role-filtered distance from core;
+- state-changing carriers;
+- scheduled gate activation;
+- opposite directional through-flow;
+- bounded central authority;
+- standardized shared measures;
+- distributed corner processing nodes.
+
+### M52L-35 — EZEKIEL'S RESTORED SYSTEM IS NOT ONE ISOLATED CENTRAL OBJECT; IT IS A CONTROLLED FIELD OF CORE, GATES, COURTS, ROLE-NODES AND PERIPHERAL PROCESSING NODES
+
+This is consistent with the user's shift from:
+**one world-tree**
+toward
+**distributed lattice with local node points**.
+
+It does not prove the physical Vardath model.
+
+But it supplies a richer structural analogue than a single central pillar.
+
+---
+
+# Strict fingertrap test — Ezekiel 44–46
+
+A strict match requires:
+
+1. same broad/open support structure;
+2. structural continuity;
+3. strand-angle change / contraction;
+4. throat/rod state;
+5. transfer/contact;
+6. reopening toward broad state.
+
+## What these chapters add
+
+### closure after transfer
+**Strong**
+- east divine-entry route sealed after glory entry.
+
+### controlled later reopening
+**Strong but at a different nested gate**
+- inner east gate reopens cyclically/event-triggered.
+
+### opposed traffic
+**Strong partial**
+- north→south / south→north through-flow.
+
+### node field
+**Strong**
+- nested gates/courts;
+- differentiated roles;
+- four peripheral processing courts.
+
+### state-dependent carriers
+**Strong analogue**
+- garment change at boundary.
+
+## Still missing in 44–46 alone
+
+- broad sky mesh visibly contracts;
+- strands visibly braid into one tube;
+- gate is formed by that contraction;
+- cherub/tree support field performs the contraction;
+- after through-flow, same contracted lattice visibly re-expands.
+
+### Verdict
+
+**Ezekiel 44–46 does not independently complete the fingertrap mechanism, but it supplies a major missing operational phase:**
+**return/entry → closure → stable controlled state → scheduled/event-triggered reopening → directional through-flow → reclosing.**
+
+When combined with earlier Ezekiel chapters, the apparatus sequence is becoming substantially denser:
+
+**eyes/wheels/cherub moving field**
+→ **departure**
+→ **mountain/fire/dragon/tree projections**
+→ **surrounding node trees**
+→ **paired sticks become one rod**
+→ **body/structure reconstruction**
+→ **measured distributed gate field**
+→ **cherub–palm node array**
+→ **glory returns by east route**
+→ **outer east route seals**
+→ **inner access becomes periodic**
+→ **north/south opposed through-flow operates under controlled rules**.
+
+The unresolved technical link remains:
+
+> does any later or parallel text explicitly show the broad support field itself contracting into the access throat and then reopening?
+
+That remains the strict test.
+
+---
+
+# Sources logged — Ezekiel 44–46
+
+Primary:
+- Ezekiel 44 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+44&version=NRSVUE
+- Ezekiel 45 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+45&version=NRSVUE
+- Ezekiel 46 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+46&version=NRSVUE
+- Ezekiel 46:9, opposite-gate through-flow:
+  https://www.biblegateway.com/verse/en/Ezekiel%2046%3A9
+
+Temple/personnel/sanctity control:
+- Tova Ganzel, “Priests, Levites, and the Nasi: New Roles in Ezekiel’s Future Temple,” *The Oxford Handbook of Ezekiel*:
+  https://academic.oup.com/edited-volume/35418/chapter-abstract/303165880
+- Michael Konkel, “The System of Holiness in Ezekiel’s Vision of the New Temple (Ezek 40–48),” in *Purity and the Forming of Religious Traditions in the Ancient Mediterranean World and Ancient Judaism*:
+  https://www.jstor.org/content/oa_chapter_edited/10.1163/j.ctv2gjwnr2.20
+- Rosanne Liebermann, “Sublime Bodies,” in *Exile, Incorporated: The Body in the Book of Ezekiel*:
+  https://academic.oup.com/book/57428/chapter/466071691
+
+East-gate control:
+- TheTorah, “Houses Oriented Towards God in the East,” discussion of Ezekiel 44's sealed east gate:
+  https://www.thetorah.com/article/houses-oriented-towards-god-in-the-east
+- Daniel I. Block, *Ezekiel 38–48: A New Translation with Introduction and Commentary*, JSTOR sections on Ezekiel 44–46:
+  https://www.jstor.org/stable/j.ctv7cjvkv
+
+Temple-plan / access hierarchy:
+- TheTorah, “Ezekiel’s Temple Plan Draws on Babylonian Temples”:
+  https://www.thetorah.com/article/ezekiels-temple-plan-draws-on-babylonian-temples
+
+Garment-state control:
+- Cambridge Bible commentary on Ezekiel 44:17–19:
+  https://biblehub.com/commentaries/cambridge/ezekiel/44.htm
+
+Opposite-gate traffic:
+- Bible Gateway, Ezekiel 46:9:
+  https://www.biblegateway.com/verse/EN/Ezekiel%2046%3A9
+
+---
+
+# SECTION 52L — EZEKIEL 44–46 COMPLETE
+
+## Strongest new findings
+
+1. **Ezekiel 44 supplies one of the cleanest post-transfer closure sequences in the corpus: glory enters through the outer east gate in chapter 43, and that route is then deliberately sealed because the entry has occurred.**
+2. **The outer east gate of chapter 44 and the inner east gate of chapter 46 are distinct nested control layers and must never be collapsed into one gate.**
+3. **The restored system corrects not only physical structure but access policy: wrong traffic had previously crossed sacred boundaries, so the successor system changes authorization rules.**
+4. **Levites are preserved but reassigned to lower-access functions, demonstrating that successor-state continuity can retain components while changing their relationship to the core.**
+5. **Priestly garment change is a strong phase-boundary analogue: the living carrier crosses back outward, while the inner-state garment remains behind so its sacred state is not exported uncontrollably.**
+6. **The temple's stable operation depends on a semantic/classification layer—holy/common, clean/unclean—showing that geometry alone is insufficient for boundary control.**
+7. **Ezekiel 45 extends restoration into measured regional geometry and standardized weights, showing that a stable successor system requires common calibration and bounded resource allocation.**
+8. **The prince is deliberately prevented from stripping neighboring inheritances, a useful network rule against one dominant node absorbing the whole field.**
+9. **The inner east gate is time-dependent: shut six working days, opened on Sabbath/new moon, and also temporarily opened for an authorized event.**
+10. **This gives both scheduled and event-triggered gate activation while the underlying architecture remains continuously present.**
+11. **Ezekiel 46:9 gives a major two-direction analogue: north-entry traffic must exit south, while south-entry traffic must exit north; no traveller may reverse through the same gate.**
+12. **This is genuine opposed through-flow across one central field and should now be cross-linked to the user's permanent two-force comparison target, while stopping short of claiming an explicit braid.**
+13. **The prince moves in the midst of that circulation rather than remaining a wholly separate external operator.**
+14. **Four corner cooking courts create genuine repeated peripheral processing nodes around the outer field.**
+15. **The complete 43→46 sequence now supplies: entry → fill → closure → controlled stable state → periodic/event-triggered reopening → directed through-flow → reclosing.**
+16. **The strict missing link remains the actual broad sky/cherub/tree lattice visibly contracting into the throat and then expanding again.**
+
+## Next live block
+
+**Ezekiel 47–48**
+
+HIGH PRIORITY:
+- water emerges from beneath the temple threshold while the east gate is shut;
+- Ezekiel must leave by another gate and circle outside to inspect the eastward flow;
+- stream depth increases with distance rather than decreasing;
+- river converts dead/salty water into living ecological field;
+- trees occur on **both banks**;
+- fruit recurs monthly and leaves heal;
+- marsh/salt exception preserves a non-transformed zone;
+- land is redistributed among tribes;
+- foreigners residing with tribes receive inheritance;
+- city has twelve gates;
+- final city name: YHWH-is-there.
+
+Strict questions:
+1. does water leave the restored core by a route different from human/divine gate traffic?
+2. are the two tree-lined banks another **paired node-field / two-strand** form?
+3. does the chapter supply a reopening/outflow phase after the east-gate closure?
+4. can the river/tree system be connected rigorously to the earlier deep → surrounding trees → dominant node model without forcing it?
