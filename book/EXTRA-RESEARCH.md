@@ -10914,3 +10914,814 @@ Priority:
 - firebrands self-generated light versus source-guided darkness;
 - compare self-made fire/light with Vardath plasma/light controls;
 - strict geometry screening.
+
+
+---
+
+# SECTION 49 progress D2H — Isaiah 50
+## First-time research pass: divorce/debt separation, sea→dry-river collapse, blackened heaven covering, repeated morning information synchronization, tongue/ear coupling, humiliation of the body, flint-face persistence, courtroom proximity, garment/moth decay, and self-generated fire versus source-trusting darkness
+
+Isaiah 50 begins with a legal/relational separation question and then moves immediately to environmental power:
+
+- divorce certificate;
+- creditor/sale;
+- redemption;
+- sea dried;
+- rivers turned to desert;
+- fish die from lack of water;
+- heavens clothed in blackness.
+
+The chapter then shifts to the servant:
+
+- trained tongue;
+- ear awakened morning by morning;
+- ear opened;
+- body exposed to blows/spitting;
+- face set like flint;
+- legal adversaries invited near;
+- opponents wear out like garments;
+- some walk in darkness while trusting;
+- others kindle their own fire/firebrands and are told to walk in the light they made.
+
+The main Vardath value is not a gate.
+
+It is a set of strong controls around:
+- separation;
+- hydrological collapse;
+- covering/darkness;
+- repeated information synchronization;
+- material rigidity/persistence;
+- self-generated versus externally guided light.
+
+---
+
+# Isaiah 50:1 — divorce and creditor-sale are two different separation/dependency models
+
+The source asks:
+
+- where is the mother’s divorce certificate?
+- to which creditor were you sold?
+
+The legal imagery distinguishes:
+
+### divorce
+relationship formally severed/dismissed.
+
+### debt sale
+person transferred under creditor claim.
+
+## M49D2H-1 — SEPARATION CAN OCCUR THROUGH RELATIONAL DISSOLUTION OR OWNERSHIP/CONTROL TRANSFER
+
+These are not the same mechanism.
+
+This matters for the Vardath timeline:
+- displacement;
+- exile;
+- separation;
+- transfer;
+- capture
+
+must not be treated as synonyms.
+
+---
+
+# Isaiah 50:1 — mother / children remains a collective-family projection
+
+The population is addressed as children;
+the corporate entity/community is projected as mother.
+
+## M49D2H-2 — FAMILY STRUCTURE CAN REPRESENT COLLECTIVE POLITICAL RELATION WITHOUT LITERAL BIOLOGICAL FAMILY
+
+This continues:
+Zion-mother;
+Daughter Babylon;
+Jacob/children.
+
+Strong control for body/family over-literalization.
+
+---
+
+# Isaiah 50:1 — “sold” is explained as consequence, not literal creditor transaction with YHWH
+
+The rhetorical question denies that an external creditor forced the sale.
+
+## M49D2H-3 — LEGAL/ECONOMIC METAPHOR CAN MODEL LOSS OF FREEDOM WITHOUT REQUIRING A LITERAL MARKET TRANSACTION
+
+This is important for:
+captivity;
+debt;
+ownership language elsewhere.
+
+---
+
+# Isaiah 50:2 — no response when source arrives/calls creates failed receiver channel
+
+Source:
+comes/calls.
+
+Population:
+no one present;
+no answer.
+
+## M49D2H-4 — COMMUNICATION FAILURE CAN OCCUR BECAUSE RECEIVER NODE IS ABSENT OR NONRESPONSIVE
+
+This differs from:
+- source not speaking;
+- message blocked;
+- receiver misunderstanding.
+
+The failure mode is:
+**no effective answering node**.
+
+---
+
+# Isaiah 50:2 — redemption power is contrasted with receiver failure
+
+The rhetorical question:
+is the arm too short/powerless?
+
+Answer implied:
+no.
+
+## M49D2H-5 — FAILURE TO RECEIVE RESCUE DOES NOT NECESSARILY IMPLY INSUFFICIENT SOURCE CAPACITY
+
+System diagnosis must ask:
+where did the chain fail?
+
+source capacity;
+message;
+receiver;
+route;
+barrier;
+timing
+are separate variables.
+
+---
+
+# Isaiah 50:2 — sea drying / river→desert is complete hydrological state reversal
+
+The chapter gives:
+
+sea
+→ dry;
+
+river
+→ desert;
+
+fish
+→ lack water;
+→ stink/die from thirst.
+
+## M49D2H-6 — HYDROLOGICAL COLLAPSE CAN PROPAGATE DIRECTLY INTO BIOLOGICAL FAILURE
+
+water field ↓
+→ aquatic habitat fails
+→ organism survival fails.
+
+This is one of Isaiah’s clearest ecology chains.
+
+### Vardath relevance
+
+The cosmology strongly emphasizes:
+geometry/water/atmosphere/ecology.
+
+Isaiah 50 contributes the reverse of Isaiah 35/41/49:
+
+### restoration passages
+dry land
+→ water
+→ life/route.
+
+### Isaiah 50
+water
+→ dry land
+→ aquatic death.
+
+The two directions form a useful environmental polarity.
+
+---
+
+# M49D2H-7 — WATER STATE IS NOT A GENERIC “BLESSING” SYMBOL; IT HAS DIRECT HABITAT CONSEQUENCES IN THE IMAGE
+
+Fish die because:
+their medium disappears.
+
+This is a genuine medium-dependent survival rule.
+
+---
+
+# Isaiah 50:3 — heavens receive black covering
+
+“I clothe the heavens with blackness”
+and
+“sackcloth” covering.
+
+This uses:
+upper field
+→ dark covering.
+
+## M49D2H-8 — SKY DARKENING CAN BE PROJECTED AS A COVERING LAYER PLACED OVER THE UPPER FIELD
+
+This is relevant to:
+canopy;
+dust;
+cloud;
+dark-sky phases.
+
+But the verse is poetic divine-power imagery.
+
+No specific material covering is identified.
+
+### Strict control
+
+blackness/sackcloth
+≠
+proof of a vapour canopy,
+dust veil,
+or plasma screen.
+
+Still:
+**covering-state change** is a real textual variable.
+
+---
+
+# Isaiah 50:4 — tongue and ear form a paired information system
+
+The servant has:
+- trained/instructed tongue;
+- awakened ear.
+
+Function:
+- receive/listen;
+- speak/sustain weary.
+
+## M49D2H-9 — EFFECTIVE MESSAGE OUTPUT REQUIRES BOTH INPUT/LEARNING AND OUTPUT/SPEECH SUBSYSTEMS
+
+ear:
+input.
+
+tongue:
+output.
+
+This is a complete information loop.
+
+---
+
+# Isaiah 50:4 — morning-by-morning waking gives repeated synchronization
+
+The ear is awakened:
+morning by morning.
+
+## M49D2H-10 — INFORMATION ACCESS CAN BE PERIODICALLY RESYNCHRONIZED
+
+Each morning:
+receiver returns to alert/listening state.
+
+### Timing control
+
+This is daily discipline imagery,
+not evidence of a cosmic daily gate cycle.
+
+Still:
+it establishes a repeated clocked information process.
+
+---
+
+# Isaiah 50:4 — “trained tongue” has textual nuance
+
+NRSVUE footnotes the Hebrew phrase;
+NET renders the servant as equipped/capable to speak and listen as a disciple.
+
+## M49D2H-11 — TRANSLATION VARIATION CAN PRESERVE FUNCTION EVEN WHEN EXACT LABEL DIFFERS
+
+Secure function:
+- learned/listening receiver;
+- effective speech to weary.
+
+Do not overbuild on one English adjective.
+
+---
+
+# Isaiah 50:5 — opened ear → non-rebellion / non-retreat
+
+Ear opening is followed by:
+not rebelling;
+not turning backward.
+
+## M49D2H-12 — RECEIVED INFORMATION CAN STABILIZE DIRECTIONAL COMMITMENT
+
+input accepted
+→ route/mission retained.
+
+This is information-to-behavior coupling.
+
+---
+
+# Isaiah 50:6 — body surfaces become interfaces for hostile contact
+
+Servant gives:
+- back to strikers;
+- cheeks to beard-pullers;
+- face to insult/spitting.
+
+## M49D2H-13 — BODY-PART LIST CAN MAP CONTACT SURFACES WITHOUT DEFINING A COSMIC BODY
+
+back;
+cheeks;
+face
+are all:
+exposed interfaces.
+
+This is a strong control for Squatter-Man readings.
+
+A detailed body map can exist because:
+the literary subject is embodied/humiliated.
+
+---
+
+# Isaiah 50:7 — face is set “like flint”
+
+The servant’s face:
+flint-like.
+
+Function:
+resolve / refusal to retreat / confidence against shame.
+
+## M49D2H-14 — HARD-MATERIAL PROJECTION CAN REPRESENT DIRECTIONAL PERSISTENCE
+
+Compare Isaiah 48:
+
+iron neck / bronze forehead
+→ stubborn rigidity.
+
+Isaiah 50:
+flint face
+→ purposeful resolve.
+
+## M49D2H-15 — SAME MATERIAL-HARDNESS CLASS CAN ENCODE MALADAPTIVE OR ADAPTIVE RIGIDITY DEPENDING ON FUNCTION
+
+This is mechanically useful.
+
+Rigidity is not always bad.
+
+### maladaptive rigidity
+prevents necessary change.
+
+### adaptive rigidity
+maintains orientation under disruptive force.
+
+For Vardath:
+the structure may need:
+flexibility during transformation
+and
+rigidity/stability after lock-in.
+
+---
+
+# Isaiah 50:8 — vindicator is “near”; adversary is invited to approach
+
+The language becomes legal/spatial:
+
+vindicator
+→ near;
+
+opponent
+→ stand together / approach.
+
+## M49D2H-16 — LEGAL CONFLICT CAN BE MAPPED AS SPATIAL PROXIMITY WITHOUT BEING PHYSICAL COLLISION
+
+Near/far terms again require domain classification.
+
+---
+
+# Isaiah 50:8–9 — courtroom challenge is a test architecture
+
+Questions:
+- who contends?
+- who is adversary?
+- who condemns?
+
+The servant invites:
+approach / stand together.
+
+## M49D2H-17 — ADVERSARIAL CLAIMS CAN BE TESTED IN A CONTROLLED COMPARISON FRAME
+
+This resembles:
+Isaiah prediction trials.
+
+Competing claims:
+brought into one evaluative space.
+
+---
+
+# Isaiah 50:9 — opponents wear out like garment; moth consumes
+
+Adversaries:
+→ garment.
+
+Time/decay agent:
+→ moth.
+
+## M49D2H-18 — APPARENTLY SOLID SOCIAL POWER CAN BE PROJECTED AS DEGRADABLE MATERIAL SUBJECT TO SMALL-AGENT FAILURE
+
+This parallels:
+Jonah’s worm disabling plant.
+
+Small agent:
+moth.
+
+Large/valuable object:
+garment.
+
+Result:
+progressive degradation.
+
+---
+
+# M49D2H-19 — SMALL BIOLOGICAL AGENT CAN MODEL LONG-TERM STRUCTURAL DECAY
+
+worm/moth class
+may act indirectly
+and cumulatively.
+
+This is different from:
+sudden catastrophe.
+
+The master timeline needs:
+fast failure
+and
+slow degradation.
+
+---
+
+# Isaiah 50:10 — darkness does not always mean failure if guidance/trust remains
+
+A person can:
+walk in darkness;
+have no light;
+yet rely on source/name.
+
+## M49D2H-20 — LOW-VISIBILITY STATE CAN BE SURVIVED IF ORIENTATION INFORMATION COMES FROM ANOTHER CHANNEL
+
+This is very relevant to Vardath.
+
+During a dark atmospheric/catastrophe phase:
+visual information may fail.
+
+Survival may depend on:
+- memory;
+- signal;
+- map;
+- guidance;
+- nonvisual reference.
+
+### Control
+
+Here the guidance is theological trust,
+not technical navigation.
+
+But the process abstraction is strong.
+
+---
+
+# Isaiah 50:11 — humans kindle their own fire/light
+
+A second group:
+- kindles fire;
+- lights firebrands;
+- walks by that fire/light.
+
+The outcome is negative.
+
+## M49D2H-21 — SELF-GENERATED LIGHT CAN DIFFER FROM RELIABLE ORIENTATION LIGHT
+
+This is not:
+“all artificial light is bad.”
+
+The literary contrast is:
+trusting guidance in darkness
+versus
+self-created fire as a false security/source.
+
+---
+
+# Isaiah 50:11 — fire is again state-dependent
+
+Isaiah 47:
+destructive fire ≠ hearth fire.
+
+Isaiah 50:
+human-generated fire becomes a misleading/terminal path.
+
+## M49D2H-22 — FIRE/LIGHT MUST BE CLASSIFIED BY SOURCE, SCALE, CONTROL, AND FUNCTION
+
+For Vardath plasma/light research:
+record:
+- source;
+- intensity;
+- containment;
+- purpose;
+- effect.
+
+“Fire” alone is not enough.
+
+---
+
+# Isaiah 50 — legal separation and Vardath world-separation comparison
+
+The chapter starts with:
+divorce;
+sale;
+dismissal.
+
+These are **relational separations**.
+
+The cosmology’s world separation is:
+physical/temporal adjacency separation.
+
+## M49D2H-23 — SEPARATION TYPE MUST BE CLASSIFIED BEFORE MAPPING TO WORLD-LAYER SEPARATION
+
+Possible separation classes:
+- legal;
+- relational;
+- spatial;
+- political;
+- ecological;
+- topological.
+
+Isaiah 50’s divorce image belongs first to:
+legal-relational separation.
+
+---
+
+# Isaiah 50 — hydrology comparison
+
+The chapter’s environmental sequence:
+
+sea dries
+→ rivers become desert
+→ fish lose medium
+→ fish die.
+
+This is the exact inverse of:
+rock split
+→ water flows
+→ travelers survive.
+
+## M49D2H-24 — SAME MASTER SYSTEM CAN SUPPORT OPPOSITE HYDROLOGICAL REGIME CHANGES WITH OPPOSITE BIOLOGICAL OUTPUTS
+
+### wetting branch
+water appears
+→ life/survival.
+
+### drying branch
+water disappears
+→ death.
+
+This should be carried into the Vardath event matrix.
+
+---
+
+# Isaiah 50 — body / material rigidity comparison
+
+Isaiah 48:
+iron neck / bronze forehead
+→ wrong rigidity.
+
+Isaiah 50:
+flint face
+→ useful persistence.
+
+## M49D2H-25 — MATERIAL PROPERTY SHOULD BE MAPPED TO FUNCTION, NOT MORAL CATEGORY
+
+hardness itself:
+neutral.
+
+Its role depends on:
+what must move
+and
+what must stay fixed.
+
+This is very valuable mechanically.
+
+---
+
+# Isaiah 50 strict spiderweb → fingertrap screening
+
+## sky covering
+Strong:
+heavens clothed in blackness.
+
+## hydrological state change
+Strong:
+sea/rivers dry.
+
+## body geometry
+Strong:
+back/cheek/face.
+
+## material rigidity
+Strong:
+flint face.
+
+## broad connected weave
+Absent.
+
+## narrowing into axial throat
+Absent.
+
+## gate/transit corridor
+Absent.
+
+## same structure reopens
+Absent.
+
+### Strict verdict
+
+**Isaiah 50 is not a strict fingertrap text. Its strongest Vardath contributions are environmental polarity and system-control principles: water-medium removal causes biological failure; the upper field can enter a dark-covered state; repeated information input drives directional persistence; and hardness can be either maladaptive or stabilizing depending on function. The chapter’s divorce/debt imagery is relational/legal separation rather than physical world-layer separation.**
+
+---
+
+# Isaiah 50 pair / process matrix
+
+## divorce / sale
+relational separation / ownership-control transfer.
+
+## mother / children
+collective parent projection / population.
+
+## call / no answer
+source signal / failed receiver response.
+
+## sea-river / desert
+water medium / dry state.
+
+## water / fish
+environment / dependent biology.
+
+## heaven / black covering
+upper field / darkened covering state.
+
+## ear / tongue
+information input / information output.
+
+## morning / awakening
+clock phase / receiver synchronization.
+
+## back-cheek-face / hostile contact
+body interfaces / external force.
+
+## iron-neck / flint-face
+maladaptive rigidity / adaptive persistence.
+
+## vindicator / adversary
+supporting legal node / opposing legal node.
+
+## garment / moth
+degradable structure / small decay agent.
+
+## darkness / trust
+low visibility / alternate orientation source.
+
+## self-kindled fire / imposed outcome
+self-generated guidance / failed result.
+
+---
+
+# Isaiah 50 continuous transformation timeline
+
+collective mother/children relation is framed through divorce/debt law
+→ external-creditor explanation is rejected
+→ source calls
+→ receiver fails to answer
+→ rescue capacity is asserted
+→ sea is dried
+→ rivers change to desert
+→ aquatic habitat disappears
+→ fish decay/die from lack of water
+→ heavens receive black covering
+→ servant receives trained tongue
+→ ear is awakened morning by morning
+→ information receiver opens
+→ servant does not turn backward
+→ back/cheeks/face become hostile-contact surfaces
+→ face is set like flint
+→ shame/failure expectation is resisted
+→ vindicator is declared near
+→ adversaries are invited into legal comparison
+→ opponents are projected as aging garments
+→ moth decay consumes them
+→ one group walks in darkness while retaining external orientation
+→ another group produces its own fire/light
+→ self-generated light becomes the path to adverse outcome.
+
+---
+
+# New master-mechanism additions from Isaiah 50
+
+## M49D2H-1 — RELATIONAL DISSOLUTION AND CONTROL TRANSFER ARE DIFFERENT SEPARATION MODES
+## M49D2H-2 — FAMILY STRUCTURE CAN REPRESENT COLLECTIVE POLITICAL RELATION
+## M49D2H-3 — LEGAL/ECONOMIC METAPHOR CAN MODEL LOSS OF FREEDOM WITHOUT LITERAL MARKET SALE
+## M49D2H-4 — COMMUNICATION CAN FAIL THROUGH ABSENT/NONRESPONSIVE RECEIVER
+## M49D2H-5 — FAILED RESCUE RECEPTION ≠ INSUFFICIENT SOURCE CAPACITY
+## M49D2H-6 — HYDROLOGICAL COLLAPSE CAN PROPAGATE TO BIOLOGICAL FAILURE
+## M49D2H-7 — WATER-STATE IMAGE HAS DIRECT MEDIUM-DEPENDENT ECOLOGICAL CONSEQUENCE
+## M49D2H-8 — UPPER FIELD CAN BE PROJECTED AS RECEIVING A DARK COVERING
+## M49D2H-9 — EFFECTIVE MESSAGE OUTPUT REQUIRES INPUT + OUTPUT SUBSYSTEMS
+## M49D2H-10 — INFORMATION ACCESS CAN BE PERIODICALLY RESYNCHRONIZED
+## M49D2H-11 — FUNCTION MAY REMAIN SECURE UNDER TRANSLATION LABEL VARIATION
+## M49D2H-12 — RECEIVED INFORMATION CAN STABILIZE DIRECTIONAL COMMITMENT
+## M49D2H-13 — BODY-PART LIST ≠ COSMIC BODY IDENTITY
+## M49D2H-14 — HARD-MATERIAL PROJECTION CAN REPRESENT DIRECTIONAL PERSISTENCE
+## M49D2H-15 — RIGIDITY CAN BE MALADAPTIVE OR ADAPTIVE
+## M49D2H-16 — LEGAL CONFLICT CAN BE MAPPED THROUGH SPATIAL PROXIMITY
+## M49D2H-17 — ADVERSARIAL CLAIMS CAN BE TESTED IN A COMPARISON FRAME
+## M49D2H-18 — LARGE SOCIAL POWER CAN BE PROJECTED AS DEGRADABLE MATERIAL
+## M49D2H-19 — SMALL BIOLOGICAL AGENT CAN MODEL SLOW STRUCTURAL DECAY
+## M49D2H-20 — LOW-VISIBILITY STATE CAN BE SURVIVED USING ALTERNATE ORIENTATION CHANNEL
+## M49D2H-21 — SELF-GENERATED LIGHT CAN DIFFER FROM RELIABLE ORIENTATION
+## M49D2H-22 — FIRE/LIGHT MUST BE CLASSIFIED BY SOURCE/SCALE/CONTROL/FUNCTION
+## M49D2H-23 — SEPARATION TYPE MUST BE CLASSIFIED BEFORE WORLD-LAYER MAPPING
+## M49D2H-24 — OPPOSITE HYDROLOGICAL REGIMES PRODUCE OPPOSITE BIOLOGICAL OUTCOMES
+## M49D2H-25 — MATERIAL PROPERTY SHOULD BE MAPPED TO FUNCTION, NOT MORAL CATEGORY
+
+---
+
+# Number / timing register — Isaiah 50
+
+Record without forcing:
+
+- “morning by morning” = repeated daily information synchronization;
+- no gate-duration number;
+- no world-layer count;
+- no hydrological timing magnitude;
+- no recurrence interval for sea drying;
+- garment/moth degradation is qualitative slow-decay imagery.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 50
+
+1. Working primary text: Isaiah 50 NRSVUE, compared with NET/NIV/NKJV.
+2. The divorce certificate imagery has an ordinary ancient legal background; Isaiah 50:1 is also cited in modern legal scholarship discussing biblical divorce formulae.
+3. Sale to a creditor implies debt/slavery imagery but the rhetorical question denies an actual external creditor as the cause.
+4. Isaiah 50:2–3 uses Exodus-like sea-drying power and cosmic-darkness imagery.
+5. Fish death explicitly follows habitat-water loss.
+6. Isaiah 50:4–9 is commonly treated as the third of the so-called Servant Songs in modern Christian/critical classification, though the exact boundaries and servant identity remain interpretive questions.
+7. NRSVUE footnotes the “trained tongue” wording; NET emphasizes trained/spokesman capacity. Preserve function over one English label.
+8. Flint-face imagery is resolve/hardness projection, not literal mineral anatomy.
+9. Isaiah 50:8–9 uses courtroom/adversarial language.
+10. The moth/garment image is slow degradation, contrasting with sudden-event imagery elsewhere.
+11. Isaiah 50:10–11 contrasts walking in darkness while relying on God with walking by self-kindled fire; the fire/light should not be literalized into one atmospheric mechanism.
+12. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Isaiah 50
+
+Primary:
+- Isaiah 50 NRSVUE / NET / NKJV / NIV:
+  https://www.biblegateway.com/passage/?search=Isaiah+50&version=NRSVUE%3BNET%3BNKJV%3BNIV
+- Isaiah 50 NRSVUE / NIV:
+  https://search.biblegateway.com/passage/?search=Isaiah+50&version=NRSVUE%3BNIV
+
+Scholarly / contextual:
+- Cambridge Core legal discussion citing Isaiah 50:1 in the context of ancient divorce formulae:
+  https://www.cambridge.org/core/journals/ecclesiastical-law-journal/article/abs/transformative-accommodation-and-religious-law/48A0854A7B7EE6AED2C407880145BBE6
+- John K. Goodrich, “Sold under Sin: Echoes of Exile in Romans 7.14–25,” *New Testament Studies* — discusses Isaiah 49:24–50:2 as a sin/exile/restoration and debt-slavery background:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/sold-under-sin-echoes-of-exile-in-romans-71425/2D0E378062E63B1D425654FCDA9308B9
+- Modern servant-song classification retained as a literary/reception control rather than a fixed identity solution.
+
+---
+
+# SECTION 49D2H CHECKPOINT — ISAIAH 50 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 50 distinguishes legal/relational separation from ownership/control transfer; neither should be confused with physical world separation.**
+2. **Sea/rivers→desert→fish death gives the inverse hydrological/ecological chain to Isaiah’s water-restoration passages.**
+3. **The heavens can enter a black-covered state, but the covering material is not physically specified.**
+4. **Ear→tongue forms a complete information input/output pair, resynchronized morning by morning.**
+5. **Flint-face and iron-neck show that hardness is function-dependent: it can be maladaptive rigidity or adaptive persistence.**
+6. **Darkness can be navigated via another orientation channel; visibility failure does not necessarily equal total guidance failure.**
+7. **Self-generated fire/light is explicitly contrasted with trusted guidance, making source/function critical when classifying light phenomena.**
+8. **Strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Isaiah 51**
+
+Priority:
+- “rock from which you were hewn / quarry from which dug” as source-material genealogy;
+- Abraham/Sarah pair and one→many multiplication;
+- Zion wilderness→Eden/garden environmental reversal;
+- law/instruction as outward information flow;
+- heavens vanish like smoke / earth wear like garment / inhabitants die like gnats;
+- arm awake and Rahab/dragon cutting;
+- sea drying / path through deep for redeemed passage;
+- ransomed return;
+- heaven stretching / earth foundation / Zion identity assignment;
+- fear of mortal oppressor versus creator-scale process;
+- cup of wrath transfer from Zion to oppressors;
+- body/city/population object-role control;
+- strict test of sea-depth passage as possible gate analogue.
