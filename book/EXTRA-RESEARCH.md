@@ -20588,3 +20588,815 @@ Priority:
 - clothing/garment imagery;
 - earth produces shoots / garden seed causes growth;
 - compare year/day timing hierarchy and planted-successor ecology with Vardath event timing.
+
+
+---
+
+# SECTION 49 progress D2S — Isaiah 61
+## First-time research pass: mission activation, captive release, year/day nested timing, ashes→garland and mourning→joy reversals, planted-oak successor population, multi-generation rebuilding, external labor networks, double inheritance, covenant continuity, garment identity, and earth/garden sprouting as a model of public restoration
+
+Isaiah 61 is especially useful for **timing hierarchy** and **post-catastrophe rebuilding**.
+
+Its central sequence is:
+
+spirit/anointing activates messenger
+→ good news reaches oppressed
+→ brokenhearted are bound/healed
+→ captives/prisoners are released
+→ “year of favor” and “day of vengeance” are proclaimed together
+→ mourners exchange ashes/mourning/faintness for garland/oil/praise
+→ restored people become “oaks” / planted stable growth
+→ they rebuild ruins and devastation of many generations
+→ external labor networks support agriculture
+→ shame/disgrace are replaced by double inheritance/joy
+→ everlasting covenant and recognized descendants stabilize identity
+→ speaker is clothed with salvation/righteousness
+→ earth/garden sprouting becomes the final model for public righteousness/praise.
+
+For Vardath Cosmology this chapter is most valuable for:
+
+1. **nested event timescales**;
+2. **release before rebuilding**;
+3. **rooted successor population**;
+4. **long reconstruction after short disruptive phases**;
+5. **ecological growth as an analogy for successor-state emergence**.
+
+No dragon/lattice-spring or fingertrap geometry is described directly.
+
+---
+
+# Isaiah 61:1 — spirit/anointing activates a messenger-agent
+
+The speaker says:
+spirit is upon me;
+source has anointed/sent me.
+
+The sequence is:
+
+source
+→ activation/commission
+→ messenger
+→ target populations.
+
+## M49D2S-1 — AGENT ACTIVATION CAN PRECEDE SYSTEM-WIDE RESTORATION
+
+The messenger is:
+not the whole restoration system.
+
+He is:
+an activated node carrying information/authority into it.
+
+---
+
+# Isaiah 61:1 — message and physical release are coupled but distinct
+
+Mission includes:
+- good news;
+- bind/heal brokenhearted;
+- proclaim liberty;
+- release prisoners.
+
+## M49D2S-2 — INFORMATION ANNOUNCEMENT AND MATERIAL/STATUS RELEASE CAN OCCUR IN THE SAME TRANSITION WITHOUT BEING THE SAME ACT
+
+Message:
+declares.
+
+Release:
+changes actual captivity state.
+
+This distinction remains critical for Vardath:
+knowing a gate is open
+≠
+physically passing through it.
+
+---
+
+# Isaiah 61:1 — “bind up” and “release” deliberately reverse constraint function
+
+Brokenhearted:
+bound up for healing.
+
+Captives:
+unbound/released.
+
+## M49D2S-3 — BINDING CAN BE BENEFICIAL OR HARMFUL DEPENDING ON WHAT IS BEING BOUND
+
+### healing binding
+stabilizes wound.
+
+### captivity binding
+restricts person.
+
+This is another strong control for:
+cord;
+band;
+strap;
+lattice
+imagery.
+
+Binding itself has no fixed meaning.
+
+---
+
+# Isaiah 61:1 — prisoner “opening/release” has textual/translation variation
+
+English traditions render the final phrase variously:
+- release to prisoners;
+- opening of prison;
+- freedom;
+- recovery of sight in Septuagint-influenced reception.
+
+Working Preacher notes that the Hebrew wording and the Septuagint tradition diverge enough to affect later reception.
+
+## M49D2S-4 — TEXTUAL VARIATION AT “OPENING” LANGUAGE LOWERS CONFIDENCE IN PRECISE PHYSICAL BOUNDARY MECHANICS
+
+Secure:
+liberation/restoration.
+
+Less secure:
+exact “door-opening” wording.
+
+Therefore:
+do not make this verse a technical gate diagram.
+
+---
+
+# Isaiah 61:2 — “year of favor” / “day of vengeance” creates nested time scales
+
+The poem pairs:
+
+**year**
+→ favor/liberation;
+
+**day**
+→ vengeance/judgment.
+
+This may draw on Jubilee/liberty traditions and Day-of-YHWH language.
+
+## M49D2S-5 — ONE TRANSFORMATION ERA CAN CONTAIN LONGER BENEFICIAL PHASE AND SHORTER INTENSE DISRUPTIVE PHASE
+
+This is highly relevant to Vardath.
+
+Possible abstract structure:
+
+long stable/recovery window
+containing or adjacent to
+short destructive threshold.
+
+### Critical control
+
+“year” and “day” may be rhetorical/liturgical/typological time units.
+
+Do **not** assume:
+literal 365-day recovery
+and
+literal 24-hour destruction
+without independent evidence.
+
+---
+
+# M49D2S-6 — TIMING TERMS SHOULD FIRST BE CLASSIFIED AS RELATIVE SCALE BEFORE ABSOLUTE DURATION
+
+Here:
+year > day.
+
+That relative hierarchy is secure.
+
+Absolute seconds/hours/days:
+not established.
+
+---
+
+# Isaiah 61:2 — Jubilee/liberty background is relevant but not mechanically complete
+
+Scholarly discussion commonly connects:
+“liberty”
+and
+“year of favor”
+with Jubilee/manumission traditions such as Leviticus 25.
+
+Jubilee in the wider Torah is a periodic release/property-restoration framework.
+
+## M49D2S-7 — A PERIODIC LEGAL RELEASE TEMPLATE CAN BE REUSED TO DESCRIBE A UNIQUE RESTORATION ERA
+
+This is important for cycle research.
+
+A text may borrow:
+a recurring calendar institution
+
+to describe:
+a larger non-identical historical transformation.
+
+Therefore:
+Jubilee resonance
+≠
+proof that the Isaiah 61 event repeats every 50 years.
+
+---
+
+# Isaiah 61:3 — ashes → garland is head-state reversal
+
+Mourners receive:
+garland/crown instead of ashes.
+
+## M49D2S-8 — SAME BODY REGION CAN SHIFT FROM LOSS-SIGNAL TO RESTORATION-SIGNAL
+
+Head:
+same interface.
+
+Covering:
+changes.
+
+Again:
+covering state is symbolic/social before physical atmospheric mapping.
+
+---
+
+# Isaiah 61:3 — mourning oil/garment substitution changes emotional/social operating state
+
+Oil of gladness:
+replaces mourning.
+
+Mantle/garment of praise:
+replaces faint spirit.
+
+## M49D2S-9 — SUCCESSOR STATE CAN BE REPRESENTED BY REPLACING THE SIGNAL/IDENTITY LAYERS WORN BY THE SAME POPULATION
+
+This continues:
+Isaiah 47 stripping;
+Isaiah 52 reclothing;
+Isaiah 60 stable glory.
+
+---
+
+# Isaiah 61:3 — restored people become “oaks of righteousness”
+
+Mourners:
+→ oaks/terebinth-like strong trees in metaphor;
+→ planting of source.
+
+## M49D2S-10 — MOBILE/VULNERABLE POPULATION CAN BE REPROJECTED AS ROOTED, DURABLE LIVING SUPPORT NODES
+
+This is highly relevant to successor-state stability.
+
+Before:
+captives/mourners.
+
+After:
+rooted “trees.”
+
+### Vardath control
+
+The text does not say:
+people literally become load-bearing world trees.
+
+The transferred variables are:
+- rootedness;
+- durability;
+- growth;
+- visible stability.
+
+---
+
+# M49D2S-11 — ROOTEDNESS IS A DIFFERENT STABILITY MODE FROM CARRIED/MIGRATING POPULATION
+
+Transit phase:
+people move.
+
+Successor phase:
+people become rooted.
+
+This echoes Isaiah 60’s:
+returnees → planted shoot.
+
+---
+
+# Isaiah 61:4 — ancient ruins and devastations of many generations are rebuilt
+
+The damage is:
+old;
+multi-generational.
+
+Restoration:
+active construction.
+
+## M49D2S-12 — SHORT RELEASE EVENT CAN BE FOLLOWED BY REPAIR OF DAMAGE ACCUMULATED OVER MUCH LONGER TIME
+
+This gives another timescale hierarchy:
+
+release/proclamation:
+relatively immediate;
+
+ruins:
+many generations old;
+
+rebuilding:
+successor process.
+
+---
+
+# M49D2S-13 — EVENT DURATION, DAMAGE AGE, AND RECOVERY DURATION ARE THREE DIFFERENT CLOCKS
+
+This becomes a permanent chronology rule.
+
+Do not ask only:
+“how long did the catastrophe last?”
+
+Also track:
+- how old was the damage;
+- how long did recovery take;
+- how long did later stability persist.
+
+---
+
+# Isaiah 61:4 — rebuilding reuses old sites rather than erasing history
+
+Ancient ruins:
+rebuilt.
+
+Former devastations:
+raised/restored.
+
+## M49D2S-14 — SUCCESSOR SYSTEM CAN REUSE THE SAME DAMAGED LOCATION WHILE CHANGING ITS FUNCTION
+
+Again:
+reset not blank replacement.
+
+---
+
+# Isaiah 61:5 — strangers/foreigners become agricultural support network
+
+Strangers:
+feed flocks.
+
+Foreigners:
+till land;
+dress vines.
+
+## M49D2S-15 — EXTERNAL POPULATION CAN BECOME PRODUCTIVE RESOURCE-MAINTENANCE SUBSYSTEM IN SUCCESSOR ECONOMY
+
+This extends Isaiah 60:
+foreigners rebuild walls.
+
+External nodes:
+not merely visitors.
+
+They become:
+maintenance workforce.
+
+---
+
+# Isaiah 61:6 — restored population becomes priest/minister class while receiving nations’ wealth
+
+Role specialization changes.
+
+## M49D2S-16 — SUCCESSOR SOCIETY CAN REDISTRIBUTE LABOR FUNCTIONS BETWEEN POPULATION GROUPS
+
+This is social-system restructuring,
+not biological transformation.
+
+---
+
+# Isaiah 61:7 — shame/disgrace → double portion / joy
+
+The language explicitly says:
+instead of X
+→ Y.
+
+## M49D2S-17 — SUCCESSOR STATE MAY NOT MERELY RESTORE PRIOR QUANTITY; IT CAN OVERSHOOT IT
+
+“Double portion”
+is surplus/compensatory imagery.
+
+### Number control
+
+“double” is real rhetoric.
+
+Do not infer:
+two world layers;
+two dragons;
+two currents
+without contextual bridge.
+
+---
+
+# Isaiah 61:7 — durable joy follows inherited land
+
+Land/inheritance
+→ stable social/emotional output.
+
+## M49D2S-18 — TERRITORIAL SECURITY CAN SUPPORT LONG-DURATION SOCIAL STABILITY
+
+Habitable ground alone:
+insufficient.
+
+Ownership/access continuity matters.
+
+---
+
+# Isaiah 61:8 — justice / robbery / recompense define source-side selection rules
+
+The text emphasizes:
+justice;
+hatred of wrongful robbery;
+faithful reward.
+
+## M49D2S-19 — SUCCESSOR DISTRIBUTION IS PRESENTED AS RULE-GOVERNED, NOT RANDOM
+
+This is a governance/control layer.
+
+---
+
+# Isaiah 61:8 — everlasting covenant creates long-memory institutional continuity
+
+## M49D2S-20 — LONG-DURATION SUCCESSOR ORDER CAN BE STORED IN A COVENANT/INFORMATION FRAME
+
+Physical reconstruction
++
+institutional memory
+→ durable system.
+
+---
+
+# Isaiah 61:9 — descendants are recognized among nations
+
+Population continuity becomes externally visible.
+
+## M49D2S-21 — SUCCESSOR IDENTITY CAN PERSIST THROUGH GENERATIONAL TRANSMISSION AND EXTERNAL RECOGNITION
+
+This adds:
+observer validation
+to lineage continuity.
+
+---
+
+# Isaiah 61:10 — speaker is clothed with salvation/righteousness
+
+Garment imagery returns:
+clothed;
+robe;
+bridal adornment.
+
+## M49D2S-22 — ABSTRACT SUCCESSOR STATES CAN BE PROJECTED AS WEARABLE IDENTITY LAYERS
+
+This repeats:
+armor;
+mourning garments;
+beautiful Zion garments.
+
+Clothing:
+signal/state projection.
+
+Not:
+automatic atmospheric membrane.
+
+---
+
+# Isaiah 61:10 — bridegroom/bride imagery adds paired social completion
+
+The restored state uses:
+bridegroom ornament;
+bride jewels.
+
+## M49D2S-23 — PAIRED HUMAN UNION CAN REPRESENT COMPLETION/CELEBRATION WITHOUT IDENTIFYING THE PAIR AS COSMIC OPPOSING FORCES
+
+Another pair-type control.
+
+---
+
+# Isaiah 61:11 — earth produces shoots / garden causes seed to spring
+
+The final analogy is ecological:
+
+earth:
+brings forth shoots.
+
+garden:
+causes seed to spring.
+
+Then:
+righteousness/praise
+→ spring before nations.
+
+## M49D2S-24 — PUBLIC SOCIAL RESTORATION IS MODELLED ON BIOLOGICAL EMERGENCE FROM PREPARED GROUND
+
+This is a strong successor-process analogy.
+
+---
+
+# Isaiah 61:11 — growth follows prepared substrate and planted seed
+
+## M49D2S-25 — EMERGENCE REQUIRES BOTH SUBSTRATE AND PROPAGULE/SEED
+
+For Vardath ecology:
+post-event fertile ground alone
+does not guarantee ecosystem restoration.
+
+Need:
+- viable seeds/organisms;
+- water;
+- temperature;
+- soil;
+- time.
+
+This complements Isaiah 55.
+
+---
+
+# Isaiah 61 — timing hierarchy and Vardath comparison
+
+The chapter contains:
+
+### day
+intense judgment/vindication phase.
+
+### year
+favor/liberation phase.
+
+### many generations
+age of devastation/reconstruction context.
+
+### everlasting
+covenant/joy continuity.
+
+This is an unusually rich hierarchy.
+
+## M49D2S-26 — VARDATH TIMELINE SHOULD TRACK NESTED TIMESCALES INSTEAD OF SEARCHING FOR ONE MASTER DURATION
+
+Possible Vardath variables:
+- precursor phase;
+- gate-opening interval;
+- destructive peak;
+- world-interaction window;
+- hydrological redistribution;
+- biological recovery;
+- infrastructure recovery;
+- long successor stability.
+
+Isaiah 61 does not numerically solve those,
+but strongly supports the need to separate them.
+
+---
+
+# Isaiah 61 — dragon lattice-spring comparison
+
+No dragon appears.
+
+No spiderweb/lattice appears.
+
+No ground-support spring is described.
+
+However, this chapter describes:
+what happens after release and before stable successor civilization:
+
+- freed captives;
+- rooted population;
+- rebuilding old devastation;
+- agricultural labor;
+- inheritance;
+- multi-generational continuity;
+- ecological sprouting.
+
+## M49D2S-27 — ISAIAH 61 IS A SUCCESSOR-RECOVERY/TIMING TEXT, NOT A SUPPORT-LATTICE MECHANISM TEXT
+
+Use it downstream of:
+dragon/lattice transition,
+not as evidence for the mechanical gate itself.
+
+---
+
+# Isaiah 61 strict spiderweb → fingertrap screening
+
+## dragon support lattice
+Absent.
+
+## flexible connected network
+Absent.
+
+## release/opening
+Strong, but captivity/social.
+
+## nested timing
+Exceptionally strong.
+
+## rooted successor ecology
+Strong.
+
+## rebuilding
+Strong.
+
+## axial throat
+Absent.
+
+## ground-support restoration
+Not mechanically stated.
+
+### Strict verdict
+
+**Isaiah 61 does not describe the Vardath spiderweb→fingertrap transition. Its strongest contribution is temporal and successor-state architecture: a shorter vengeance/day phase sits beside a broader favor/year phase, while rebuilding addresses devastation of many generations and covenant/joy extend indefinitely. This strongly supports modelling the Vardath event as nested timescales rather than a single-duration catastrophe.**
+
+---
+
+# Isaiah 61 pair / process matrix
+
+## spirit / messenger
+activation source / commissioned agent.
+
+## brokenhearted / binding
+damaged state / healing stabilization.
+
+## captives / liberty
+constraint / release.
+
+## year / day
+broader favorable phase / sharper judgment phase.
+
+## ashes / garland
+mourning head-state / restored head-state.
+
+## mourning / oil of joy
+loss state / celebratory state.
+
+## faint spirit / mantle of praise
+low-energy state / restored identity signal.
+
+## mourners / oaks
+vulnerable population / rooted stable projection.
+
+## ruins / rebuilders
+old damage / successor repair agents.
+
+## foreigners / fields-flocks
+external population / agricultural maintenance.
+
+## shame / double portion
+loss state / compensatory surplus.
+
+## covenant / generations
+institutional memory / continuity.
+
+## garments / salvation-righteousness
+wearable projection / abstract restored state.
+
+## earth-garden / shoots-seed
+substrate / emergence process.
+
+---
+
+# Isaiah 61 continuous transformation timeline
+
+spirit/anointing activates messenger
+→ oppressed receive good-news signal
+→ brokenhearted are stabilized/healed
+→ liberty is proclaimed
+→ prisoners enter release state
+→ year-of-favor phase is announced
+→ day-of-vengeance phase is announced
+→ mourners are comforted
+→ ashes are replaced by garland
+→ mourning is replaced by gladness
+→ faintness is replaced by praise garment
+→ vulnerable population is projected as rooted oaks
+→ ancient ruins are rebuilt
+→ former devastations are raised/restored
+→ ruined cities recover after many generations
+→ external labor networks support flocks/fields/vines
+→ social labor roles are redistributed
+→ shame/disgrace reverse into inheritance/joy
+→ justice/recompense rules stabilize distribution
+→ everlasting covenant anchors long-duration order
+→ descendants become visible/recognized internationally
+→ speaker is clothed with salvation/righteousness
+→ bridal imagery projects completed restoration
+→ earth/garden growth becomes final model
+→ righteousness/praise emerge publicly like shoots from soil.
+
+---
+
+# New master-mechanism additions from Isaiah 61
+
+## M49D2S-1 — AGENT ACTIVATION CAN PRECEDE SYSTEM-WIDE RESTORATION
+## M49D2S-2 — INFORMATION ANNOUNCEMENT AND ACTUAL RELEASE ARE DISTINCT
+## M49D2S-3 — BINDING CAN HEAL OR CONSTRAIN DEPENDING ON OBJECT/FUNCTION
+## M49D2S-4 — TEXTUAL VARIATION AT OPENING LANGUAGE LOWERS GATE-MECHANISM PRECISION
+## M49D2S-5 — ONE ERA CAN CONTAIN LONGER BENEFICIAL + SHORTER DISRUPTIVE PHASES
+## M49D2S-6 — TIME TERMS SHOULD FIRST BE CLASSIFIED BY RELATIVE SCALE
+## M49D2S-7 — PERIODIC LEGAL TEMPLATE CAN BE REUSED FOR UNIQUE RESTORATION
+## M49D2S-8 — SAME BODY REGION CAN REVERSE SIGNAL STATE
+## M49D2S-9 — SUCCESSOR POPULATION CAN REPLACE WORN IDENTITY LAYERS
+## M49D2S-10 — VULNERABLE POPULATION CAN BE PROJECTED AS ROOTED DURABLE NODES
+## M49D2S-11 — ROOTEDNESS IS DISTINCT FROM MIGRATION
+## M49D2S-12 — SHORT RELEASE EVENT CAN PRECEDE REPAIR OF ANCIENT DAMAGE
+## M49D2S-13 — EVENT / DAMAGE AGE / RECOVERY HAVE DIFFERENT CLOCKS
+## M49D2S-14 — SUCCESSOR SYSTEM CAN REUSE SAME DAMAGED LOCATION
+## M49D2S-15 — EXTERNAL POPULATION CAN BECOME MAINTENANCE SUBSYSTEM
+## M49D2S-16 — SUCCESSOR SOCIETY CAN REDISTRIBUTE LABOR FUNCTIONS
+## M49D2S-17 — RESTORATION CAN OVERSHOOT PRIOR QUANTITY
+## M49D2S-18 — TERRITORIAL SECURITY CAN SUPPORT DURABLE SOCIAL STABILITY
+## M49D2S-19 — SUCCESSOR DISTRIBUTION CAN BE RULE-GOVERNED
+## M49D2S-20 — COVENANT CAN STORE LONG-DURATION INSTITUTIONAL MEMORY
+## M49D2S-21 — SUCCESSOR IDENTITY CAN PERSIST THROUGH GENERATIONS
+## M49D2S-22 — ABSTRACT STATES CAN BE PROJECTED AS WEARABLE IDENTITY
+## M49D2S-23 — HUMAN PAIR COMPLETION ≠ COSMIC TWO-FORCE IDENTITY
+## M49D2S-24 — SOCIAL RESTORATION CAN BE MODELLED AS GROUND→GROWTH EMERGENCE
+## M49D2S-25 — ECOLOGICAL EMERGENCE NEEDS SUBSTRATE + SEED/PROPAGULE
+## M49D2S-26 — VARDATH TIMELINE SHOULD TRACK NESTED TIMESCALES
+## M49D2S-27 — ISAIAH 61 IS SUCCESSOR/TIMING, NOT LATTICE-MECHANISM TEXT
+
+---
+
+# Number / timing register — Isaiah 61
+
+Record without forcing:
+
+- **year of favor**;
+- **day of vengeance**;
+- devastations of **many generations**;
+- **double portion**;
+- **everlasting** joy/covenant.
+
+### Timing control
+
+The secure structural point is:
+day < year < generations < everlasting
+as an ordering of narrative scales.
+
+It does **not** establish exact literal durations for the restoration/judgment event.
+
+### Jubilee control
+
+Jubilee/liberty resonance is important,
+but the wider Torah’s 50-year Jubilee period must not be imported automatically as Isaiah 61’s event recurrence.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 61
+
+1. Working primary text: Isaiah 61 NRSVUE, compared with NIV/ESV/KJV/NKJV.
+2. Isaiah 61 is commonly read as part of the Zion-restoration center of Isaiah 60–62.
+3. Working Preacher notes the chapter’s sequence of messenger commission, release, comfort, rooted “oaks,” and rebuilding.
+4. The prisoner-release clause has a notable Hebrew/Septuagint reception issue; later Christian use in Luke follows Greek wording that includes sight-language.
+5. “Year of favor” is widely connected with Jubilee/manumission language, while “day of vengeance” draws on Day-of-YHWH traditions.
+6. These two time terms should not be forced into literal event durations without independent evidence.
+7. “Oaks of righteousness” is an organic durability/planting metaphor for restored people.
+8. Ancient ruins/former devastations indicate multi-generational reconstruction context.
+9. Verse 8’s justice/robbery wording has translation/textual nuance across traditions, but rule-governed restoration is secure.
+10. Verses 10–11 use clothing and plant-growth metaphors for restoration.
+11. No dragon/lattice-support geometry appears.
+12. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Isaiah 61
+
+Primary:
+- Isaiah 61 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Isaiah+61&version=NRSVUE
+- Isaiah 61 NIV / NRSVUE / KJV:
+  https://www.biblegateway.com/passage/?search=Isaiah+61&version=NIV%3BNRSVUE%3BKJV
+- Isaiah 61:1–7 NRSVUE / NIV:
+  https://www.biblegateway.com/passage/?search=Isaiah+61%3A1-7&version=NRSVUE%3BNIV
+
+Scholarly / contextual:
+- Working Preacher, Isaiah 61:1–11:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/spirit-of-the-lord-upon-me/commentary-on-isaiah-611-11
+- Working Preacher, Isaiah 61:10–62:3:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-christmas-2/commentary-on-isaiah-6110-11-621-3-3
+- Cambridge Core, “Jubilee Laws,” retained for historical/legal discussion of liberty/Jubilee traditions:
+  https://www.cambridge.org/core/journals/israel-law-review/article/abs/jubilee-laws/9E5FB38AA347E2B7F7AA39FC94DA3490
+
+---
+
+# SECTION 49D2S CHECKPOINT — ISAIAH 61 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 61 supplies a highly useful nested-timescale structure: day, year, many generations, everlasting.**
+2. **That supports modelling the Vardath event as multiple clocks—destructive peak, interaction/recovery window, reconstruction, and long successor stability—rather than one duration.**
+3. **The prisoner-release wording has textual/reception complexity, so it should not be made into a precise physical gate mechanism.**
+4. **Binding can heal or constrain; function matters more than the presence of cords/bonds.**
+5. **Restored mourners become rooted “oaks,” clearly shifting from vulnerable/transient to durable/planted population state.**
+6. **Ancient ruins are rebuilt after release, reinforcing the order: liberation first, multi-generation reconstruction later.**
+7. **Earth/garden sprouting again models public restoration as biological emergence from prepared substrate.**
+8. **No dragon/lattice-spring or fingertrap transition appears; strict geometry remains negative.**
+
+### Next live block
+
+**Isaiah 62**
+
+Priority:
+- Zion’s righteousness/light like dawn/torch;
+- new name / identity reassignment;
+- crown/diadem in divine hand;
+- Forsaken/Desolate → Delight/Married land-state renaming;
+- land “married” personification;
+- watchmen on walls never silent day/night;
+- no rest until Zion established;
+- grain/wine producers retain output instead of enemies consuming it;
+- oath by right hand/arm;
+- prepare highway / clear stones;
+- raise signal over peoples;
+- gates / daughter Zion / reward arrives;
+- population renamed Holy/Redeemed/Sought Out/Not Forsaken;
+- compare active watchmen here with blind watchmen Isaiah 56;
+- compare boundary/watch continuity and road clearing with gate-event warning system.
