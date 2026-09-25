@@ -75090,3 +75090,1678 @@ Priority:
 - “four corners of the land” / end coming;
 - chain imagery;
 - HIGH PRIORITY: distinguish scale-model projection and bounded-body geometry from actual Squatter-Man/lattice mechanics.
+
+
+---
+
+# SECTION 52 progress B — Ezekiel 4–7
+## Fresh sequential research: scale-model city, role-switching body, left/right burden geometry, iron barrier, measured survival flows, divided population-cargo, landscape personification, comprehensive land-end imagery and strict Vardath controls
+
+Ezekiel 4–7 shifts from:
+**cosmic support / throne architecture**
+and
+**information-carrier commissioning**
+
+to a series of:
+**acted scale models**
++
+**body enactments**
++
+**landscape oracles**
++
+**whole-land collapse language**.
+
+This block is exceptionally useful for the 88-book project because it demonstrates, very explicitly, how:
+- one human body;
+- one miniature city;
+- one piece of iron;
+- one head of hair;
+- mountains;
+- land;
+- population
+
+can each become a different projection surface for the **same approaching historical catastrophe**.
+
+That is precisely the kind of source behavior that must be understood before making larger Vardath identifications.
+
+---
+
+# Ezekiel 4:1–3 — Jerusalem is deliberately compressed into a physical scale model
+
+Ezekiel is told to take:
+- brick / clay tablet;
+- portray Jerusalem on it;
+- construct siegeworks;
+- ramp;
+- camps;
+- battering rams;
+- surround it.
+
+This is not accidental resemblance.
+
+The text deliberately constructs:
+**large city/system**
+→ **small physical model**.
+
+## M52B-1 — LARGE SYSTEM CAN BE REPRESENTED BY A SMALL PHYSICAL PROXY WITHOUT SIZE IDENTITY
+
+This is one of the cleanest projection controls in the corpus.
+
+The brick/model:
+is not literally Jerusalem.
+
+But actions performed around it:
+represent real processes expected at Jerusalem.
+
+### Vardath consequence
+
+A small:
+person;
+rod;
+basket;
+model;
+animal;
+object
+
+can legitimately stand for a much larger system **within the literary grammar**.
+
+But:
+proxy relation
+≠ physical identity.
+
+---
+
+# Ezekiel 4:1–2 — model preserves process, not exact scale
+
+The sign retains:
+- center;
+- surrounding forces;
+- siege perimeter;
+- ramps;
+- camps;
+- battering nodes.
+
+It does not need:
+full street map;
+actual wall dimensions;
+population count.
+
+## M52B-2 — FUNCTIONAL RELATIONS CAN SURVIVE SCALE REDUCTION BETTER THAN METRIC DETAIL
+
+This is highly important to the project.
+
+When comparing myths/texts to Vardath,
+the strongest surviving information may be:
+
+**what surrounds what**
+→ **what presses inward**
+→ **what blocks exit**
+→ **what breaks boundary**
+
+rather than exact physical scale.
+
+---
+
+# Ezekiel 4:2 — radial military convergence surrounds one center
+
+Siegeworks and camps:
+around city.
+
+Battering rams:
+all around.
+
+## M52B-3 — MANY-TO-ONE RADIAL CONVERGENCE CAN BE REAL WITHOUT BEING AN AXIAL THROAT
+
+This repeats the Lamentations control.
+
+Center-directed vectors:
+yes.
+
+Fingertrap:
+no.
+
+The vectors terminate at:
+city perimeter,
+not a through-axis.
+
+---
+
+# Ezekiel 4:3 — iron plate forms an explicit barrier between source/actor and city
+
+Ezekiel places:
+iron plate/griddle
+
+between:
+himself
+and
+model city.
+
+It acts:
+“as an iron wall.”
+
+This is one of the clearest enacted barrier images yet.
+
+## M52B-4 — BARRIER CAN BE INSERTED BETWEEN TWO ALREADY-ALIGNED NODES WITHOUT MOVING EITHER NODE
+
+source/actor
+→ **iron wall**
+→ city/receiver.
+
+This directly supports the project’s distinction between:
+distance
+and
+coupling/access.
+
+Two systems may remain opposite one another
+while an intervening layer changes their relation.
+
+---
+
+# Scholarly control — the iron griddle has multiple interpretive layers
+
+Scholars have interpreted the iron plate as:
+- impenetrable barrier;
+- divine hostility/severed intercession;
+- symbol of siege;
+- possibly carrying priestly/cultic associations because the same Hebrew object term appears in sacrificial cooking contexts.
+
+Recent sign-act study warns against flattening Ezekiel into one role only.
+
+## M52B-5 — ONE OBJECT IN A SIGN-ACT CAN CARRY BOUNDARY, CULTIC AND ROLE-SWITCHING FUNCTIONS AT ONCE
+
+This is important.
+
+Do not choose:
+“wall”
+or
+“priestly plate”
+or
+“siege symbol”
+prematurely if the enacted sequence can support several controlled functions.
+
+---
+
+# Ezekiel 4:1–8 — Ezekiel changes roles within one enacted system
+
+This is one of the block’s most important findings.
+
+At first:
+Ezekiel faces and presses siege against model Jerusalem.
+
+He therefore occupies:
+**besieger / attacking-source role**.
+
+Then:
+he lies on his side;
+bears Israel/Judah guilt/punishment;
+is bound and unable to turn.
+
+Now he occupies:
+**besieged / burden-bearing receiver role**.
+
+## M52B-6 — ONE HUMAN FIGURE CAN SWITCH BETWEEN OPPOSING SYSTEM ROLES INSIDE THE SAME MODEL
+
+This is a major control for pair/Squatter-Man analysis.
+
+A biblical person may represent:
+- actor in one phase;
+- receiver in another;
+- whole community in another.
+
+Therefore:
+apparent role contradiction
+may be intentional projection switching,
+not evidence of multiple physical beings.
+
+---
+
+# Ezekiel 4:4–6 — left and right body sides encode two historical groups/time burdens
+
+Ezekiel lies:
+left side
+→ house of Israel burden.
+
+Then:
+right side
+→ house of Judah burden.
+
+This is explicit bilateral mapping.
+
+## M52B-7 — LEFT/RIGHT BODY POLARITY CAN ENCODE TWO DIFFERENT GROUPS OR TIME BURDENS
+
+This is genuinely relevant to Vardath’s paired-strand research.
+
+But the text tells us what the sides mean locally:
+Israel / Judah
+and
+assigned time/guilt.
+
+It does **not** say:
+left = past/down;
+right = future/up.
+
+### Verdict
+
+**Strong bilateral projection.  
+No demonstrated two-spring mechanics.**
+
+---
+
+# Ezekiel 4:4–8 — bound body cannot turn from side to side
+
+Cords:
+placed on Ezekiel.
+
+Effect:
+cannot turn
+from one side
+to the other
+until allotted period ends.
+
+This creates:
+**orientation lock**.
+
+## M52B-8 — BODY ORIENTATION CAN BE FIXED BY EXTERNAL CONSTRAINT FOR A FINITE INTERVAL
+
+This is mechanically interesting.
+
+Possible abstract states:
+
+free rotation
+→ external binding
+→ fixed orientation
+→ interval completion
+→ permitted orientation change.
+
+### Vardath relevance
+
+This resembles a **state lock**.
+
+But:
+no lattice contraction;
+no gate opening;
+no transfer through body axis.
+
+---
+
+# Ezekiel 4:6 — one day represents one year
+
+The text explicitly assigns:
+day
+→ year.
+
+This is a source-defined scale transformation.
+
+## M52B-9 — TEXT CAN EXPLICITLY MAP ONE TIME SCALE ONTO ANOTHER
+
+This matters enormously for chronology research.
+
+Unlike speculative numerical mappings,
+this one is actually supplied by the text.
+
+### Permanent number rule
+
+Only elevate a number mapping when:
+the text itself;
+textual tradition;
+or independent mechanism
+
+provides the mapping.
+
+---
+
+# Ezekiel 4:5–6 — 390 / 40 textual-number control
+
+Masoretic Hebrew:
+390 days/years for Israel;
+40 for Judah.
+
+Septuagint traditions:
+significantly different figures occur,
+including 150/190/40 in surviving textual evidence.
+
+Scholarly work by Lust and Hauspie specifically studies the numerical divergence in Ezekiel 4–5.
+
+## M52B-10 — LARGE NUMERIC PATTERN MUST BE TEXT-CRITICALLY STABLE BEFORE CHRONOLOGY BUILDING
+
+This is crucial for Archaix/Vardath interval comparison.
+
+Do not build a 390/430-year cosmic clock
+without carrying:
+- MT/LXX differences;
+- whether periods overlap;
+- what starting point is assumed;
+- whether number is retrospective guilt, prospective punishment, or sign duration.
+
+---
+
+# Ezekiel 4:7 — face + bare arm directed toward model city
+
+Ezekiel:
+faces siege;
+bares arm;
+prophesies toward city.
+
+This is explicit directional body grammar:
+
+face:
+orientation.
+
+arm:
+actuator/force symbol.
+
+voice:
+information output.
+
+## M52B-11 — ONE HUMAN BODY CAN COMBINE ORIENTATION, ACTUATION AND SIGNAL OUTPUT TOWARD A MODEL TARGET
+
+This is highly relevant to the Moses/Squatter-Man calibration.
+
+But:
+here the text itself tells us the figure is **performing a sign-act**.
+
+So body geometry is clearly representational.
+
+That makes this a strong control against treating every extended biblical arm as literal large-scale machinery.
+
+---
+
+# Ezekiel 4:8 — immobilized body is not a fingertrap
+
+External cords:
+bind body.
+
+They do not:
+emerge from a broad weave;
+tighten into body/throat;
+carry cargo;
+reopen as same support structure.
+
+## M52B-12 — BINDING ≠ FINGERTRAP UNLESS STRUCTURAL CONTINUITY IS DEMONSTRATED
+
+---
+
+# Ezekiel 4:9 — many food components enter one vessel
+
+Wheat;
+barley;
+beans;
+lentils;
+millet;
+spelt
+
+→ one vessel
+→ mixed bread.
+
+This is a real:
+many-input → one-container → composite-output
+process.
+
+## M52B-13 — MULTIPLE RESOURCE STREAMS CAN BE COMBINED INTO ONE SURVIVAL CARRIER UNDER SCARCITY
+
+This is relevant to post-gate living-cargo logistics.
+
+But:
+the mixture reflects siege scarcity,
+not cosmic convergence.
+
+---
+
+# Ezekiel 4:10–11 — food and water are metered by weight/volume and time
+
+Food:
+weighed.
+
+Water:
+measured.
+
+Consumption:
+at fixed times.
+
+This is one of the corpus’s clearest **flow-rate constraint** texts.
+
+## M52B-14 — SURVIVAL DEPENDS ON QUANTITY PER UNIT TIME, NOT JUST RESOURCE PRESENCE
+
+For living-cargo modeling,
+track:
+
+resource stock
++
+delivery rate
++
+consumption interval
++
+receiver need.
+
+A gate delivering water
+is not enough.
+
+Rate matters.
+
+---
+
+# Ezekiel 4:12–15 — fuel medium affects purity/status, not caloric goal
+
+Human dung:
+initial fuel instruction.
+
+Ezekiel objects.
+
+Cow dung:
+substituted.
+
+The same broad function remains:
+fuel for baking.
+
+The ritual/purity status changes.
+
+## M52B-15 — FUNCTIONALLY EQUIVALENT INPUTS CAN DIFFER IN SOCIAL/RITUAL ACCEPTABILITY
+
+This is another important systems distinction.
+
+Physical function
+≠ cultural acceptability
+≠ biological safety
+≠ symbolic meaning.
+
+---
+
+# Ezekiel 4:16–17 — “staff of bread” is resource-support metaphor
+
+Bread:
+described as staff/support.
+
+That support is broken.
+
+Result:
+rationing;
+anxiety;
+wasting away.
+
+## M52B-16 — “SUPPORT” LANGUAGE CAN REFER TO RESOURCE DEPENDENCE, NOT STRUCTURAL LOAD-BEARING
+
+This is a direct dragon-support control.
+
+Ask:
+what load is supported?
+
+Here:
+life/sustenance.
+
+Not:
+ground/world layer.
+
+---
+
+# Ezekiel 4 strict Squatter-Man screening
+
+## central human figure
+Yes.
+
+## bilateral left/right roles
+Exceptionally strong.
+
+## fixed/immobilized posture
+Strong.
+
+## extended bare arm
+Strong.
+
+## model/world associated with body
+Strong representationally.
+
+## upper/lower stretch
+Absent.
+
+## two opposed spring strands
+Absent.
+
+## environmental effects directly caused by body geometry
+No — sign enactment predicts/represents siege.
+
+### Verdict
+
+**Very strong human-scale projection grammar; weak strict Squatter-Man mechanics.**
+
+This chapter is a key methodological warning:
+a body can encode a city/system **symbolically and deliberately**.
+
+---
+
+# Ezekiel 4 strict fingertrap screening
+
+broad weave:
+absent.
+
+binding:
+present.
+
+orientation lock:
+present.
+
+narrowing:
+absent.
+
+throat:
+absent.
+
+transfer:
+absent.
+
+reopening:
+only implied end of binding interval, not same web reopening.
+
+### Verdict
+
+**Negative.**
+
+---
+
+# Ezekiel 5:1–4 — body hair becomes population proxy
+
+Ezekiel:
+shaves head/beard.
+
+Hair:
+weighed.
+
+Hair:
+divided into portions.
+
+Then portions undergo different fates.
+
+This is another explicit:
+**body material → population/system proxy**.
+
+## M52B-17 — BODY COMPONENTS CAN REPRESENT POPULATION SUBSETS WITHOUT BIOLOGICAL IDENTITY
+
+This strongly reinforces Lamentations.
+
+A human body can act as:
+map;
+population container;
+state model.
+
+---
+
+# Ezekiel 5:1 — shaving + weighing carries ritual as well as military associations
+
+A recent detailed study of Ezekiel’s sign-acts notes that:
+- razor/barber terminology;
+- head/beard shaving;
+- scales;
+- garment hem
+
+have ritual/priestly analogues in biblical and broader ancient Near Eastern contexts.
+
+This is important because the sword is used:
+as a barber’s razor.
+
+## M52B-18 — ONE TOOL CAN CHANGE FUNCTION INSIDE A SIGN-ACT
+
+Sword:
+weapon
+→ razor.
+
+Then later:
+sword returns as weapon image.
+
+So object name alone does not fix mechanical role.
+
+---
+
+# Ezekiel 5:2–4 — population is divided into multiple fate channels
+
+MT/NRSVUE sequence:
+
+third 1:
+burned inside city.
+
+third 2:
+struck with sword around city.
+
+third 3:
+scattered to wind;
+sword pursues.
+
+small subset:
+retained/bound in garment.
+
+subset of subset:
+also thrown into fire.
+
+This is an exceptionally clear **sorting/distribution tree**.
+
+## M52B-19 — ONE POPULATION CAN SPLIT INTO MULTIPLE DESTINATION/FATE CHANNELS
+
+This is highly relevant to Vardath cargo analysis.
+
+A gate/reset event need not send every particle/person through one outcome.
+
+Possible classes:
+- remains at center;
+- destroyed locally;
+- dispersed;
+- retained/protected;
+- later lost.
+
+---
+
+# M52B-20 — REMNANT CAN BE A NESTED SUBSET, NOT A SINGLE BINARY SURVIVOR CLASS
+
+Hair:
+whole set
+→ small preserved set
+→ some of preserved set still lost.
+
+This makes “remnant” probabilistic/multistage rather than:
+saved / not saved.
+
+Very important for successor-population thinking.
+
+---
+
+# Ezekiel 5 numerical/textual control — three parts vs Greek four-part tradition
+
+Lust/Hauspie’s textual study notes:
+Masoretic tradition:
+three-part division.
+
+Greek tradition:
+a four-part differentiation appears.
+
+## M52B-21 — PARTITION COUNT MUST BE TEXT-CRITICALLY CONTROLLED BEFORE GEOMETRIC INTERPRETATION
+
+Do not turn:
+three;
+four;
+thirds
+
+into hidden Vardath geometry
+without accounting for textual history.
+
+---
+
+# Ezekiel 5:2 — wind dispersion + pursuit are sequential, not identical
+
+Hair:
+scattered to wind.
+
+Then:
+sword follows.
+
+## M52B-22 — DISPERSAL DRIVER AND POST-DISPERSAL HAZARD CAN BE DIFFERENT FORCES
+
+wind:
+distribution.
+
+sword:
+continued threat.
+
+This is useful for catastrophe modeling:
+transport mechanism
+and
+mortality mechanism
+need not be identical.
+
+---
+
+# Ezekiel 5:5 — Jerusalem is defined as central relative to surrounding nations
+
+Jerusalem:
+placed in center/midst.
+
+Countries:
+around.
+
+This is explicit center-periphery grammar.
+
+## M52B-23 — CENTRALITY CAN BE POLITICAL/THEOLOGICAL/SPATIAL WITHOUT BEING A UNIVERSAL PHYSICAL AXIS
+
+This must remain a permanent Meru/Zion/mountain control.
+
+---
+
+# Ezekiel 5:8–17 — center suffers several distinct hazard classes
+
+The chapter explicitly separates:
+- famine;
+- sword;
+- pestilence/plague;
+- wild animals;
+- dispersion.
+
+## M52B-24 — ONE COLLAPSE EVENT CAN CONTAIN MULTIPLE DISTINCT HAZARD CHANNELS
+
+This strongly supports Vardath’s practice of tracking:
+water;
+heat;
+debris;
+atmosphere;
+life;
+violence
+
+separately.
+
+Shared event
+≠ shared physical cause.
+
+---
+
+# Ezekiel 5 strict Vardath screening
+
+population/body projection:
+exceptionally strong.
+
+sorting:
+exceptionally strong.
+
+center/periphery:
+strong.
+
+wind dispersion:
+strong.
+
+remnant:
+strong.
+
+dragon support:
+absent.
+
+broad lattice:
+absent.
+
+throat:
+absent.
+
+world adjacency:
+absent.
+
+### Verdict
+
+**Not a gate mechanism, but one of the strongest population-sorting analogues yet.**
+
+---
+
+# Ezekiel 6:1–3 — mountains, hills, ravines and valleys are addressed as one land-system
+
+Ezekiel is told to address:
+mountains;
+hills;
+ravines;
+valleys.
+
+The oracle then targets:
+high places;
+altars;
+cult sites;
+towns.
+
+This is a full terrain set:
+high
++
+low
++
+channels
++
+settlements.
+
+## M52B-25 — LAND CAN BE ADDRESSED AS AN INTEGRATED MULTI-ELEVATION SYSTEM
+
+This is useful for Vardath landscape analysis.
+
+But:
+the text’s target is cultic geography.
+
+Do not automatically convert:
+mountain;
+ravine;
+valley
+into
+world-axis/throat channels.
+
+---
+
+# Scholarly finding — mountains act as representatives/mediators of land and people
+
+Anja Klein’s study of Ezekiel 6 and 36 argues that in older Ezekiel material the personified “mountains of Israel” can function as:
+**mediators and representatives of people and land alike**.
+
+This is an extremely important projection result.
+
+## M52B-26 — LANDSCAPE FEATURE CAN PERSONIFY BOTH TERRITORY AND POPULATION
+
+This strongly extends the project’s projection grammar:
+
+city ↔ woman ↔ population;
+body ↔ siege;
+mountain ↔ land/population.
+
+### Vardath consequence
+
+A mountain figure may carry:
+territorial;
+social;
+cultic
+identity
+without being a literal axial world-machine.
+
+---
+
+# Ezekiel 6:3–6 — high/low landscape is linked by distributed cult nodes
+
+High places:
+on mountains/hills.
+
+Other sites:
+ravines/valleys.
+
+Altars:
+distributed through land.
+
+Destruction:
+propagates across those nodes.
+
+## M52B-27 — DISTRIBUTED NETWORK CAN BE DEFINED BY FUNCTIONALLY SIMILAR NODES ACROSS DIFFERENT TERRAIN
+
+This resembles a network,
+but not a physical lattice.
+
+Connections are:
+religious/social.
+
+---
+
+# Ezekiel 6:5–6 — bodies/bones scatter around formerly active nodes
+
+Corpses/bones:
+laid/scattered around altars.
+
+Altars:
+broken.
+
+Cities:
+waste.
+
+## M52B-28 — NODE FAILURE CAN LEAVE BOTH STRUCTURAL DEBRIS AND BIOLOGICAL REMAINS DISTRIBUTED AROUND FORMER CENTERS
+
+This is a strong archaeological-process analogue.
+
+But:
+no world-support structure is involved.
+
+---
+
+# Ezekiel 6:8–10 — remnant survives through geographic dispersion
+
+Some:
+escape sword.
+
+They:
+scatter among nations.
+
+They:
+remember.
+
+This gives:
+**survival through dispersion**
+rather than
+survival by remaining at center.
+
+## M52B-29 — REMNANT SURVIVAL MAY REQUIRE LEAVING THE FAILED CENTER
+
+This is highly relevant to living-cargo logic.
+
+Refuge:
+may be distributed.
+
+---
+
+# Ezekiel 6:11 — hand/foot gestures express response, not mechanism
+
+Hand clapping/stamping;
+foot stamping;
+verbal lament.
+
+## M52B-30 — GESTURAL BODY LANGUAGE CAN MARK EMOTIONAL/JUDGMENT RESPONSE WITHOUT OPERATING THE ENVIRONMENT
+
+Another Moses/Squatter-Man control.
+
+Not every:
+hand;
+foot;
+arm
+motion
+is an actuator.
+
+---
+
+# Ezekiel 6:12–14 — hazard classes map by distance/location
+
+Near:
+pestilence.
+
+Far:
+sword.
+
+Remaining/besieged:
+famine.
+
+The exact translations vary somewhat,
+but the passage differentiates outcome by location.
+
+## M52B-31 — HAZARD TYPE CAN DEPEND ON SPATIAL POSITION RELATIVE TO COLLAPSE CENTER
+
+This is important to Vardath.
+
+A single event can produce:
+different experienced catastrophes
+at different locations.
+
+That strongly supports the project’s rule:
+different traditions/regions need not remember identical surface effects.
+
+---
+
+# Ezekiel 6 strict mountain-axis test
+
+mountains:
+explicit.
+
+personified:
+yes.
+
+whole-land representation:
+strong scholarly support.
+
+axis/throat:
+absent.
+
+vertical transfer:
+absent.
+
+ground support:
+absent.
+
+dragon:
+absent.
+
+### Verdict
+
+**Strong land/population personification; weak/negative axial gate mechanics.**
+
+---
+
+# Ezekiel 7:1–2 — “four corners” explicitly belongs to the land of Israel
+
+The oracle is addressed:
+“to the land of Israel.”
+
+Then:
+the end comes upon its “four corners.”
+
+Traditional and modern commentary commonly treats “four corners” as:
+all/extremities/every part of the land.
+
+## M52B-32 — “FOUR CORNERS” HERE IS A TOTALITY EXPRESSION WITH AN EXPLICIT TERRITORIAL REFERENT
+
+This is a decisive cosmography control.
+
+The verse does not require:
+square global earth.
+
+Primary receiver:
+land of Israel.
+
+---
+
+# M52B-33 — GEOMETRIC-SOUNDING IDIOM MUST PRESERVE ITS NAMED SCALE
+
+“four corners”
+can sound cosmological.
+
+But the same verse defines:
+the land being addressed.
+
+Do not inflate local/territorial totality into global geometry without independent support.
+
+---
+
+# Ezekiel 7:5–9 — repeated “end/day/doom” language intensifies imminence
+
+End:
+repeated.
+
+Day:
+near.
+
+Disaster:
+approaches.
+
+This is temporal convergence language.
+
+## M52B-34 — REPETITION CAN INTENSIFY IMMINENCE WITHOUT PROVIDING PERIODIC CYCLE DATA
+
+Do not derive recurrence interval from:
+repeated “day/end.”
+
+---
+
+# Ezekiel 7:10–11 — rod sprouts / pride blossoms / violence rises
+
+This is striking growth imagery:
+
+rod:
+sprouts.
+
+pride:
+blossoms.
+
+violence:
+rises/becomes punitive rod.
+
+Traditional commentary often interprets the rod as:
+the growing instrument of judgment,
+particularly Babylonian power.
+
+## M52B-35 — PLANT-GROWTH MORPHOLOGY CAN PROJECT THE DEVELOPMENT OF POLITICAL/MILITARY FORCE
+
+This is an important rod control.
+
+Rod:
+does not automatically mean axial plasma/lattice state.
+
+Here the local grammar is:
+force/power maturing toward action.
+
+---
+
+# Ezekiel 7:10 — growth image is upward/developmental, not contraction
+
+sprout
+→ blossom.
+
+## M52B-36 — ROD GROWTH ≠ FINGERTRAP NARROWING
+
+The morphological direction is different.
+
+Vardath fingertrap:
+broad → narrow axial state.
+
+Ezekiel 7 rod:
+latent force → grown/mature rod.
+
+Do not merge these.
+
+---
+
+# Ezekiel 7:12–13 — economic ownership becomes functionally meaningless
+
+Buyer:
+should not rejoice.
+
+Seller:
+should not mourn.
+
+Reason:
+system-wide collapse overtakes both.
+
+## M52B-37 — PROPERTY TRANSFER CAN LOSE MEANING WHEN THE LARGER SYSTEM THAT ENFORCES OWNERSHIP FAILS
+
+This extends Lamentations 5.
+
+Ownership is:
+system-dependent.
+
+Material object may remain
+while legal/economic state collapses.
+
+---
+
+# Ezekiel 7:14 — warning/alarm system works, response system fails
+
+Trumpet:
+blown.
+
+Preparations:
+made.
+
+But:
+no one goes to battle.
+
+## M52B-38 — SUCCESSFUL ALARM TRANSMISSION CAN COEXIST WITH FAILED ACTUATION
+
+This is a perfect complement to Ezekiel 3 watchman logic.
+
+signal emitted
+→ detected/preparation possible
+→ action absent.
+
+Again:
+communication success
+≠ behavioral response.
+
+---
+
+# Ezekiel 7:15 — different hazards occupy different spatial zones
+
+Outside:
+sword.
+
+Inside:
+famine/pestilence.
+
+## M52B-39 — BOUNDARY CAN SEPARATE DIFFERENT HAZARD REGIMES WITHOUT EITHER SIDE BEING SAFE
+
+This reinforces Lamentations 1.
+
+Inside/outside:
+different failure mode,
+not
+safe/dangerous.
+
+---
+
+# Ezekiel 7:16 — survivors flee to mountains
+
+Survivors:
+escape;
+go to mountains.
+
+But they:
+mourn/remain distressed.
+
+## M52B-40 — TERRAIN REFUGE CAN PRESERVE LIFE WITHOUT RESTORING SYSTEM FUNCTION
+
+Survival
+≠ recovery.
+
+---
+
+# Ezekiel 7:17–18 — body loses structural capacity
+
+Hands:
+weak/drop.
+
+Knees:
+weak/water-like.
+
+Bodies:
+sackcloth;
+shame.
+
+## M52B-41 — SYSTEM FAILURE CAN PROJECT AS LOSS OF LIMB/JOINT LOAD CAPACITY
+
+This is body mechanics language.
+
+But:
+not cosmic support unless load path is explicit.
+
+---
+
+# Ezekiel 7:19 — silver/gold become unusable for survival
+
+Wealth:
+thrown into streets.
+
+Cannot:
+save;
+satisfy hunger.
+
+## M52B-42 — MATERIAL VALUE CAN COLLAPSE WHEN IT NO LONGER COUPLES TO SURVIVAL NEED
+
+This repeats Lamentations:
+resource hierarchy changes under catastrophe.
+
+---
+
+# Ezekiel 7:20–22 — ornament/sanctuary changes access status
+
+Sacred/beautiful object:
+misused/defiled.
+
+Then:
+foreigners/robbers gain access.
+
+## M52B-43 — SACRED ACCESS POLICY CAN REVERSE UNDER SYSTEM COLLAPSE
+
+This is another boundary-function reversal.
+
+---
+
+# Ezekiel 7:23 — chain explicitly represents captivity/restraint
+
+Command:
+make chain.
+
+Context:
+violence/bloodshed;
+captivity/exile.
+
+Traditional commentary takes the chain as:
+fetters/slavery/captivity sign.
+
+## M52B-44 — CHAIN MUST PASS FUNCTION TEST BEFORE LATTICE/BRAID CLASSIFICATION
+
+Here:
+chain = restraint/captivity.
+
+Not:
+support web;
+spring;
+fingertrap.
+
+---
+
+# Ezekiel 7:24–27 — physical collapse ends in information/governance failure
+
+Foreigners:
+take houses.
+
+Strong:
+lose pride/power.
+
+Sacred places:
+profaned.
+
+Then:
+disaster after disaster;
+rumor after rumor.
+
+People seek:
+vision from prophet;
+instruction from priest;
+counsel from elders.
+
+These fail.
+
+King/prince/common people:
+all collapse into grief/fear.
+
+## M52B-45 — TERMINAL SYSTEM FAILURE CAN COUPLE MATERIAL, POLITICAL, SACRED AND INFORMATION LAYERS
+
+This strongly echoes:
+Jeremiah;
+Lamentations.
+
+But:
+multi-system coupling
+does not prove one physical mechanism.
+
+---
+
+# Ezekiel 4–7 pair / process matrix
+
+## model Jerusalem / actual Jerusalem
+small proxy / large target system.
+
+## Ezekiel besieger / Ezekiel burden-bearer
+source/attacker role / receiver/community role.
+
+## left side / right side
+Israel burden / Judah burden.
+
+## iron plate / city
+inserted barrier / target center.
+
+## face / city
+orientation / receiver.
+
+## bare arm / prophecy
+actuator symbol / signal output.
+
+## cords / body
+external state lock / constrained orientation.
+
+## mixed grains / one vessel
+distributed inputs / combined survival carrier.
+
+## measured food / measured water
+solid resource flow / liquid resource flow.
+
+## sword-as-razor / sword-as-weapon
+ritual/tool role / destructive role.
+
+## hair whole / hair portions
+population total / sorted fate subsets.
+
+## garment-bound remnant / later fire
+protected subset / residual vulnerability.
+
+## mountains / people-land
+landscape proxy / territorial-population system.
+
+## high places / valleys
+upper cult nodes / lower terrain nodes.
+
+## near / far
+different spatial positions / different hazard modes.
+
+## Jerusalem center / nations around
+central political-theological node / surrounding territories.
+
+## four corners / land of Israel
+totality idiom / named territorial receiver.
+
+## rod sprouting / violence rising
+developing image / growing punitive force.
+
+## trumpet / no battle
+successful signal / failed response.
+
+## outside sword / inside famine
+external hazard / internal hazard.
+
+## silver/gold / food
+status wealth / biological requirement.
+
+## chain / captive
+restraint interface / constrained population.
+
+---
+
+# Ezekiel 4–7 continuous transformation timeline
+
+prophetic relay is commissioned
+→ miniature Jerusalem is drawn on brick
+→ siege architecture surrounds model center
+→ iron barrier is inserted between actor and city
+→ Ezekiel initially represents besieger/source
+→ body role changes to burden-bearing besieged population
+→ left/right sides encode Israel/Judah
+→ cords lock body orientation
+→ face/arm/voice remain directed toward city
+→ multiple grains are combined into one survival ration
+→ food and water are metered by quantity and time
+→ fuel/purity constraint is negotiated
+→ resource-support “staff” is broken
+→ human body becomes population proxy through hair
+→ hair is weighed
+→ population proxy is divided into fate channels
+→ one portion burns at center
+→ one is struck around center
+→ one is dispersed by wind
+→ sword follows dispersed population
+→ small remnant is retained in garment
+→ part of remnant remains vulnerable
+→ Jerusalem is named center among surrounding nations
+→ multiple hazard classes are distinguished
+→ oracle turns from city to whole terrain
+→ mountains/hills/ravines/valleys become addressed land-person
+→ distributed cult nodes are destroyed
+→ bodies/bones scatter around failed nodes
+→ remnant survives by dispersion among nations
+→ hazard outcome varies by spatial position
+→ oracle expands to “four corners” of named land
+→ end/day language intensifies
+→ punitive rod/violence grows to maturity
+→ normal property transfer loses meaning
+→ alarm is sounded
+→ response fails
+→ outside and inside become different hazard regimes
+→ survivors flee to mountains
+→ wealth loses survival value
+→ sacred access reverses
+→ chain signifies captivity
+→ physical/political/sacred systems fail
+→ vision/instruction/counsel channels also fail.
+
+---
+
+# Strict Squatter-Man screening — Ezekiel 4–7
+
+## human body as large-system projection
+Exceptionally strong.
+
+## bilateral left/right
+Exceptionally strong.
+
+## fixed posture
+Strong.
+
+## extended bare arm
+Strong.
+
+## centrality
+Strong in sign-act.
+
+## upper/lower spring directions
+Absent.
+
+## actual support of world/ground
+Absent.
+
+## environmental mechanics caused by body motion
+Absent; the actions are prophetic signs.
+
+### Verdict
+
+**One of the strongest body-as-system projection blocks in the Bible, but not a strict Squatter-Man mechanical description.**
+
+This is extremely important:
+Ezekiel itself demonstrates how a body can represent a city, population, burden and attacker **without physical identity**.
+
+---
+
+# Strict fingertrap screening — Ezekiel 4–7
+
+connected broad lattice:
+absent.
+
+binding/cords:
+present.
+
+left/right opposition:
+present.
+
+narrowing:
+absent.
+
+throat:
+absent.
+
+cargo through same structure:
+absent.
+
+reopening:
+absent.
+
+### Verdict
+
+**Negative.**
+
+---
+
+# Strict dragon-ground-support screening — Ezekiel 4–7
+
+dragon:
+absent.
+
+ground-support living network:
+absent.
+
+foundation/support language:
+resource “staff” only.
+
+ground destabilization from supports:
+absent.
+
+### Verdict
+
+**No new dragon-support evidence.**
+
+Ezekiel 1 remains the high-priority support architecture.
+
+---
+
+# New master-mechanism additions from Ezekiel 4–7
+
+## M52B-1 — LARGE SYSTEM CAN BE REPRESENTED BY SMALL PHYSICAL PROXY
+## M52B-2 — FUNCTIONAL RELATIONS CAN SURVIVE SCALE REDUCTION BETTER THAN METRIC DETAIL
+## M52B-3 — RADIAL CONVERGENCE ≠ AXIAL THROAT
+## M52B-4 — INTERVENING BARRIER CAN CHANGE COUPLING WITHOUT MOVING NODES
+## M52B-5 — ONE SIGN OBJECT CAN CARRY MULTIPLE CONTROLLED FUNCTIONS
+## M52B-6 — ONE HUMAN FIGURE CAN SWITCH OPPOSING SYSTEM ROLES
+## M52B-7 — LEFT/RIGHT BODY POLARITY CAN ENCODE DIFFERENT GROUPS/TIME BURDENS
+## M52B-8 — EXTERNAL CONSTRAINT CAN LOCK ORIENTATION FOR FINITE INTERVAL
+## M52B-9 — TEXT CAN EXPLICITLY MAP ONE TIME SCALE TO ANOTHER
+## M52B-10 — CHRONOLOGY NUMBERS REQUIRE TEXT-CRITICAL STABILITY
+## M52B-11 — BODY CAN COMBINE ORIENTATION + ACTUATION + SIGNAL OUTPUT
+## M52B-12 — BINDING ≠ FINGERTRAP WITHOUT STRUCTURAL CONTINUITY
+## M52B-13 — MULTIPLE RESOURCES CAN COMBINE INTO ONE SURVIVAL CARRIER
+## M52B-14 — SURVIVAL REQUIRES RESOURCE FLOW RATE, NOT MERE PRESENCE
+## M52B-15 — FUNCTIONAL EQUIVALENCE ≠ RITUAL/CULTURAL EQUIVALENCE
+## M52B-16 — SUPPORT LANGUAGE CAN REFER TO SUSTENANCE, NOT LOAD-BEARING
+## M52B-17 — BODY COMPONENT CAN REPRESENT POPULATION SUBSET
+## M52B-18 — ONE TOOL CAN CHANGE FUNCTION INSIDE A SIGN-ACT
+## M52B-19 — POPULATION CAN SPLIT INTO MULTIPLE FATE CHANNELS
+## M52B-20 — REMNANT CAN BE NESTED/MULTISTAGE
+## M52B-21 — PARTITION COUNT REQUIRES TEXT-CRITICAL CONTROL
+## M52B-22 — DISPERSAL DRIVER ≠ POST-DISPERSAL HAZARD
+## M52B-23 — CENTRALITY ≠ UNIVERSAL PHYSICAL AXIS
+## M52B-24 — ONE COLLAPSE EVENT CAN CONTAIN MULTIPLE HAZARD CHANNELS
+## M52B-25 — LAND CAN BE ADDRESSED AS INTEGRATED MULTI-ELEVATION SYSTEM
+## M52B-26 — LANDSCAPE FEATURE CAN PERSONIFY TERRITORY + POPULATION
+## M52B-27 — FUNCTIONALLY SIMILAR NODES CAN FORM DISTRIBUTED SOCIAL/CULTIC NETWORK
+## M52B-28 — NODE FAILURE CAN LEAVE STRUCTURAL + BIOLOGICAL DEBRIS
+## M52B-29 — REMNANT SURVIVAL MAY REQUIRE LEAVING FAILED CENTER
+## M52B-30 — HAND/FOOT GESTURE ≠ ENVIRONMENTAL ACTUATOR
+## M52B-31 — HAZARD TYPE CAN VARY BY SPATIAL POSITION
+## M52B-32 — FOUR-CORNERS IDIOM HERE HAS NAMED TERRITORIAL REFERENT
+## M52B-33 — GEOMETRIC IDIOM MUST PRESERVE SOURCE SCALE
+## M52B-34 — REPETITION/IMMINENCE ≠ RECURRENCE PERIOD
+## M52B-35 — PLANT-GROWTH MORPHOLOGY CAN PROJECT MILITARY/POLITICAL FORCE
+## M52B-36 — ROD GROWTH ≠ FINGERTRAP NARROWING
+## M52B-37 — PROPERTY TRANSFER LOSES MEANING WHEN OWNERSHIP SYSTEM FAILS
+## M52B-38 — SUCCESSFUL ALARM ≠ SUCCESSFUL ACTUATION
+## M52B-39 — BOUNDARY CAN SEPARATE DIFFERENT HAZARD REGIMES WITHOUT SAFE SIDE
+## M52B-40 — REFUGE CAN PRESERVE LIFE WITHOUT RESTORING SYSTEM
+## M52B-41 — BODY WEAKNESS CAN PROJECT LOSS OF LOAD CAPACITY
+## M52B-42 — MATERIAL VALUE DEPENDS ON COUPLING TO SURVIVAL NEED
+## M52B-43 — SACRED ACCESS POLICY CAN REVERSE
+## M52B-44 — CHAIN MUST PASS FUNCTION TEST BEFORE LATTICE CLASSIFICATION
+## M52B-45 — TERMINAL FAILURE CAN COUPLE MATERIAL + POLITICAL + SACRED + INFORMATION LAYERS
+
+---
+
+# Number / timing register — Ezekiel 4–7
+
+Record without forcing:
+
+- **390** days/years in MT Ezekiel 4.
+- **40** days/years for Judah.
+- Greek textual traditions preserve significantly different figures including **150 / 190 / 40**.
+- explicit conversion rule: **one day for one year**.
+- food: **20 shekels per day** in MT/NRSVUE.
+- water: **one-sixth hin**.
+- Ezekiel 5 MT: hair divided into **thirds**.
+- Greek Ezekiel has a different partition structure described in scholarship as **four parts**.
+- “small number” retained in garment.
+- Ezekiel 7: “four corners” of the **land of Israel**.
+
+### Number control
+
+This block is a major warning against number harmonization.
+
+Some numbers are:
+- explicitly symbolic;
+- textually variant;
+- generated by partition scheme;
+- tied to rationing.
+
+Therefore no Vardath/Archaix numerical comparison should use them without preserving:
+text tradition
++
+local function
++
+mapping rule.
+
+---
+
+# Textual / historical / scholarly controls — Ezekiel 4–7
+
+1. Working primary text: Ezekiel 4–7 NRSVUE.
+2. Ezekiel 4–5 consists of symbolic/sign acts focused on Jerusalem’s coming siege and destruction.
+3. Sign-act scholarship describes these actions as making a future event symbolically present rather than mechanically reproducing it at scale.
+4. The iron griddle is explicitly used “as an iron wall”; interpretations include impenetrable barrier, judgment/siege barrier and priestly/cultic associations.
+5. Ezekiel alternates between representing besieger/divine agency and representing burden-bearing/besieged population.
+6. Left/right side assignment is explicit Israel/Judah symbolism in the text.
+7. The 390/40 numbers are text-critically unstable across MT/LXX traditions; Lust and Hauspie document major differences.
+8. The mixed-grain bread and measured water primarily represent siege scarcity and exile impurity/deprivation.
+9. “Staff of bread” is sustenance-support language.
+10. Ezekiel 5’s shaved hair represents population fate; the hair is weighed, divided, burned, struck, scattered and partially retained.
+11. The Greek/MT partition difference in Ezekiel 5 prevents overconfident geometry from the number of portions.
+12. Ritual scholarship on shaving warns against reading the razor/sword only as military symbolism.
+13. Anja Klein’s study of Ezekiel 6 argues that personified “mountains of Israel” can represent/mediate both land and people in older material.
+14. Ezekiel 6’s mountains/hills/ravines/valleys are primarily cultic/territorial geography, especially locations of high places.
+15. “Four corners of the land” in Ezekiel 7 occurs inside an oracle explicitly addressed to the land of Israel and is conventionally read as comprehensive territorial extent.
+16. Ezekiel 7’s sprouting rod is commonly interpreted as growing punitive/Babylonian power, not an axial world-rod transformation.
+17. Ezekiel 7’s chain is captivity/restraint imagery.
+18. Strict fingertrap status: negative.
+19. Strict dragon-ground-support evidence: none beyond Ezekiel 1.
+20. Strongest result of this block: **projection and role-switching mechanics**, not gate mechanics.
+
+---
+
+# Sources logged — Ezekiel 4–7
+
+Primary:
+- Ezekiel 4 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+4&version=NRSVUE
+- Ezekiel 5 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+5&version=NRSVUE
+- Ezekiel 6 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+6&version=NRSVUE
+- Ezekiel 7 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+7&version=NRSVUE
+
+Textual / scholarly:
+- J. Lust & K. Hauspie, “Ezekiel 4 and 5 in Hebrew and in Greek: Numbers and Ciphers,” *Ephemerides Theologicae Lovanienses* 77.1 (2001), 132–152:
+  https://poj.peeters-leuven.be/content.php?id=564&url=article
+- Anja Klein, “Ezekiel 6:1–7 and 36:1–15: The Idea of the Mountains in the Book of Ezekiel,” in *Ezekiel: Current Debates and Future Directions* (Mohr Siebeck, 2017):
+  https://www.research.ed.ac.uk/en/publications/ezekiel-61-7-and-361-15-the-idea-of-the-mountains-in-the-book-of-/
+- R. Compton, “The Sign-Acts of Ezekiel 3:22–5:17,” *Mid-America Journal of Theology* (2018), for priestly/sign-act controls on the iron griddle, shaving and weighing:
+  https://www.midamerica.edu/uploads/files/pdf/journal/03comptonjournal2018.pdf
+- Cambridge Bible for Schools and Colleges, Ezekiel 4:
+  https://biblehub.com/commentaries/cambridge/ezekiel/4.htm
+- Cambridge Bible for Schools and Colleges, Ezekiel 6:
+  https://biblehub.com/commentaries/cambridge/ezekiel/6.htm
+- Ellicott, Ezekiel 7, used for the conventional “four corners” totality reading:
+  https://biblehub.com/commentaries/ellicott/ezekiel/7.htm
+
+---
+
+# SECTION 52B CHECKPOINT — EZEKIEL 4–7 COMPLETE
+
+Strongest first-time findings:
+
+1. **Ezekiel 4 deliberately compresses Jerusalem into a physical scale model, proving that functional geometry can be preserved across enormous scale change without object identity.**
+2. **Ezekiel himself switches roles from besieger/source to burden-bearing besieged population, a decisive warning against assigning one fixed physical identity to every human figure.**
+3. **Left/right body polarity is explicit and meaningful, but its local meaning is Israel/Judah, not automatically past/future or up/down spring strands.**
+4. **The iron plate is a true inserted barrier between aligned actor and city; it changes coupling/access without moving either side.**
+5. **Food and water are explicitly rate-limited, strengthening the living-cargo rule that survival depends on delivery rate, not resource presence alone.**
+6. **Ezekiel 5 turns body hair into a population proxy and then sorts that population into multiple fate channels, including a nested remnant.**
+7. **The MT/LXX differences in both the 390/40 chronology and the hair partition make this one of the strongest textual warnings against forced number geometry.**
+8. **Ezekiel 6 provides scholarly support for mountains personifying both land and people, which strongly validates landscape-personification as literary grammar without proving mountain=axis machinery.**
+9. **Hazards vary by spatial position: near/far/inside/outside can experience different failure modes in one catastrophe.**
+10. **Ezekiel 7’s “four corners” belongs to the explicitly named land of Israel and should not be inflated into a global square-world map.**
+11. **The sprouting rod in Ezekiel 7 is growth/maturation of punitive power, not broad lattice contracting into a rod.**
+12. **No strict fingertrap or new dragon-ground-support sequence occurs. The major contribution is projection, sorting, barrier, resource-flow and role-switching mechanics.**
+
+### Next live block
+
+**Ezekiel 8–11**
+
+Priority:
+- transport “between earth and heaven” by spirit/vision;
+- temple threshold/gate architecture;
+- hole in wall → enlargement/opening → hidden chamber;
+- multiple gate orientations;
+- east/north/south directional controls;
+- image at entrance / hidden interior activity;
+- man clothed in linen with writing case;
+- six executioner figures from upper gate;
+- cherubim/wheels reappear;
+- coals/fire transferred from between cherubim to human carrier and scattered over city;
+- glory moves threshold → cherubim → east gate → mountain east of city;
+- HIGH PRIORITY: this may be the first place where Ezekiel’s support/mobility apparatus, threshold architecture, transferable fire cargo and changing divine/glory location are all placed into one continuous sequence.
