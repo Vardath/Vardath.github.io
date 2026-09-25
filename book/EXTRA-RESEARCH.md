@@ -63067,3 +63067,899 @@ Priority:
 - Kedar tents/flocks/camels;
 - Elam bow broken / four winds scatter / throne set;
 - HIGH PRIORITY: multiple fluid/container/wind/scatter geometries and exact historical battle controls.
+
+
+---
+
+# SECTION 51 progress A2 — Ezekiel 2–3
+## First-time research pass: spirit raises fallen prophet, thorn/scorpion threat field, hand→scroll carrier, scroll opened/written both sides, scroll eaten into body, information internalized from mouth→stomach→heart/ear, hardness counter-hardness, vision-system lift/transport, seven-day stunned interval, watchman responsibility, repeated glory-field appearance, house confinement, cords, and speech interface switched off/on
+
+Ezekiel 2–3 shifts from the cosmological support/mobility vision of chapter 1 into a striking **information-transfer system**.
+
+The main sequence is:
+
+Ezekiel falls before the vision
+→ spoken command
+→ spirit enters
+→ body raised to standing
+→ messenger mission assigned
+→ hostile social environment projected as briers/thorns/scorpions
+→ hand presents scroll
+→ scroll is opened
+→ writing fills front and back
+→ scroll is eaten
+→ written information enters mouth/stomach
+→ taste is sweet despite severe content
+→ received words are moved inward to heart/ear
+→ prophet is hardened to survive receiver resistance
+→ spirit lifts/carries him
+→ wings/wheels of chapter 1 move behind him
+→ Ezekiel arrives among exiles
+→ sits stunned seven days
+→ becomes watchman/information-responsibility node
+→ glory reappears in valley
+→ spirit again raises him
+→ he is confined in house
+→ cords restrict movement
+→ tongue is disabled
+→ mouth later opens only at designated speech phase.
+
+For Vardath Cosmology this is not primarily a ground-support chapter.
+
+Its importance is:
+- the vision system can **transport a human observer**;
+- information can be **materialized as a scroll and internalized into a body**;
+- the prophet becomes part of the message-routing system;
+- motion, body state, speech state and enclosure state are all separately controllable.
+
+---
+
+# Ezekiel 2:1–2 — fallen observer is raised by spirit entering the body
+
+End of chapter 1:
+Ezekiel falls on face.
+
+Chapter 2:
+command:
+stand.
+
+Then:
+spirit enters
+→ sets him on feet
+→ hearing becomes active.
+
+## M51A2-1 — BODY ORIENTATION CAN BE CHANGED BY AN INTERNALIZED CONTROL/ANIMATING INPUT
+
+fallen
+→ entered by spirit
+→ upright.
+
+This strongly distinguishes:
+external command
+from
+internal actuation.
+
+---
+
+# M51A2-2 — INFORMATION RECEPTION MAY REQUIRE A DIFFERENT BODY/OPERATING STATE
+
+Ezekiel is first:
+collapsed.
+
+Then:
+raised and able to receive commission.
+
+State preparation
+precedes message function.
+
+---
+
+# Ezekiel 2:3–5 — messenger success is separated from receiver acceptance
+
+Ezekiel must speak whether:
+they hear
+or
+refuse.
+
+## M51A2-3 — MESSAGE DELIVERY SUCCESS AND RECEIVER-COMPLIANCE SUCCESS ARE DIFFERENT VARIABLES
+
+This repeats Jeremiah.
+
+A warning system can:
+function correctly
+even if the receiver refuses.
+
+---
+
+# Ezekiel 2:6 — briers/thorns surround; scorpions are the dwelling environment
+
+The hostile population is projected as:
+briers;
+thorns;
+scorpions.
+
+## M51A2-4 — SOCIAL HOSTILITY CAN BE PROJECTED AS A HAZARDOUS SURROUNDING ENVIRONMENT
+
+This is an enclosure-like threat field:
+messenger
+inside
+hostile surroundings.
+
+### Vardath control
+
+“surrounded by thorns”
+≠
+support lattice.
+
+This is a social-danger projection.
+
+---
+
+# Ezekiel 2:8–10 — hand presents a scroll
+
+A hand:
+extends.
+
+In it:
+scroll.
+
+Scroll:
+unrolled/opened before Ezekiel.
+
+## M51A2-5 — INFORMATION CAN MOVE THROUGH A MATERIAL CARRIER FROM EXTERNAL HAND TO HUMAN RECEIVER
+
+This is a complete carrier chain:
+
+source
+→ hand
+→ scroll
+→ mouth/body.
+
+---
+
+# Ezekiel 2:10 — scroll is written on front and back
+
+Writing:
+both surfaces.
+
+Content:
+lamentation;
+mourning;
+woe.
+
+## M51A2-6 — INFORMATION DENSITY CAN OCCUPY BOTH SIDES OF A FLEXIBLE CARRIER
+
+This is not:
+a blank support medium.
+
+It is:
+fully encoded object.
+
+---
+
+# M51A2-7 — OPENING/UNROLLING CHANGES ACCESS TO INFORMATION WITHOUT CHANGING THE INFORMATION ITSELF
+
+Rolled/held state
+→ open/readable state.
+
+This parallels Isaiah 37’s spread letter.
+
+Again:
+compact→open geometry
+is document handling,
+not world-lattice mechanics.
+
+---
+
+# Ezekiel 3:1–3 — scroll is eaten and fills the stomach
+
+The material carrier is not merely read.
+
+Ezekiel:
+opens mouth;
+receives scroll;
+eats it;
+fills stomach.
+
+## M51A2-8 — INFORMATION CARRIER CAN BE PROJECTED AS PHYSICAL NUTRIENT/CARGO INTERNALIZED INTO THE BODY
+
+This is one of the strongest:
+information→body
+transformations in the corpus.
+
+---
+
+# Ezekiel 3:3 — severe message tastes sweet as honey
+
+Content:
+lamentation/woe.
+
+Sensory input:
+sweet.
+
+## M51A2-9 — CARRIER/INPUT EXPERIENCE AND MESSAGE SEMANTIC CONTENT CAN HAVE OPPOSITE VALENCE
+
+sweet ingestion
+≠
+pleasant message.
+
+This is a crucial interface rule.
+
+---
+
+# Ezekiel 3:4 — internalized scroll is converted back into speech
+
+Sequence:
+
+written word
+→ eaten
+→ internalized
+→ spoken word.
+
+## M51A2-10 — INFORMATION CAN CHANGE CARRIER CLASS WHILE PRESERVING MESSAGE FUNCTION
+
+carrier states:
+written external object
+→ embodied memory
+→ oral speech.
+
+This is highly relevant to the 88-book transmission project.
+
+---
+
+# Ezekiel 3:5–7 — language difficulty is not the main communication barrier
+
+Ezekiel is sent to:
+his own linguistic population.
+
+The problem:
+receiver refusal,
+not decoding.
+
+## M51A2-11 — COMMUNICATION FAILURE CAN OCCUR ABOVE THE LANGUAGE/DECODING LAYER
+
+Channel:
+understandable.
+
+Meaning:
+available.
+
+Acceptance:
+fails.
+
+---
+
+# Ezekiel 3:8–9 — Ezekiel’s face/forehead becomes harder than opposition
+
+Receiver population:
+hard forehead.
+
+Messenger:
+given hard face/forehead;
+harder than flint.
+
+## M51A2-12 — MATCHED OR GREATER MATERIAL-HARDNESS METAPHOR CAN REPRESENT RESISTANCE TO EXTERNAL SOCIAL PRESSURE
+
+This parallels:
+Isaiah iron-neck;
+flint-face.
+
+### Function
+Here hardness is:
+protective persistence.
+
+---
+
+# M51A2-13 — SAME PROPERTY “HARDNESS” CAN EXIST ON BOTH SIDES OF AN ADVERSARIAL INTERFACE
+
+receiver:
+hard/refusing.
+
+messenger:
+hard/resilient.
+
+Same property,
+different function.
+
+---
+
+# Ezekiel 3:10 — words move to heart and ears
+
+Instruction:
+receive words in heart;
+hear with ears.
+
+The scroll already entered the stomach.
+
+The vision therefore layers:
+mouth;
+stomach;
+heart;
+ear.
+
+## M51A2-14 — ONE MESSAGE CAN BE REPRESENTED AS PASSING THROUGH MULTIPLE BODY-INTERNAL INFORMATION LOCATIONS
+
+This is symbolic information anatomy,
+not literal storage mapping.
+
+---
+
+# M51A2-15 — INTERNALIZATION IS REPRESENTED AS BOTH INGESTION AND HEARING
+
+Two input channels:
+oral/material;
+auditory.
+
+One output:
+speech.
+
+This reinforces:
+carrier classes can converge on one internal message state.
+
+---
+
+# Ezekiel 3:12–14 — spirit lifts and carries Ezekiel
+
+This is one of the most important transfer lines.
+
+Spirit:
+lifts Ezekiel;
+bears/carries him away.
+
+Behind:
+wings of living creatures;
+wheels;
+great rumbling.
+
+## M51A2-16 — THE COSMIC MOBILITY SYSTEM OF EZEKIEL 1 IS NOW ASSOCIATED WITH TRANSPORT OF THE HUMAN PROPHET
+
+This materially strengthens the mobility interpretation of chapter 1.
+
+Chapter 1:
+system moves/rises.
+
+Chapter 3:
+prophet is lifted/carried while system sounds/moves.
+
+---
+
+# Important Vardath distinction
+
+The text does not clearly say:
+Ezekiel sits inside a vehicle
+or
+rides a wheel.
+
+It says:
+spirit lifts/bears him;
+he hears the creature/wheel system behind.
+
+## M51A2-17 — HUMAN TRANSPORT AND COSMIC-SYSTEM MOVEMENT ARE CORRELATED BUT THE EXACT PHYSICAL COUPLING IS NOT SPECIFIED
+
+Do not over-engineer the vision.
+
+---
+
+# Ezekiel 3:12–13 — wings touch/brush again while wheels rumble
+
+The connected-wing system from chapter 1 reappears in motion.
+
+## M51A2-18 — CONTACT NETWORK PERSISTS INTO THE TRANSPORT PHASE
+
+This strengthens structural continuity:
+same vision system,
+same wing/wheel signatures.
+
+Still:
+no broad→narrow transition.
+
+---
+
+# Ezekiel 3:14 — transport is involuntary/overpowering rather than self-directed
+
+Ezekiel:
+carried away;
+bitter/hot in spirit;
+strong hand upon him.
+
+## M51A2-19 — TRANSPORTED HUMAN CARGO MAY NOT CONTROL THE TRANSPORT VECTOR
+
+This is highly relevant to:
+carrier/cargo analysis.
+
+---
+
+# Ezekiel 3:15 — destination is exile community at Tel-abib
+
+Transfer:
+vision location
+→ exiles beside Chebar.
+
+Then:
+Ezekiel sits among them.
+
+## M51A2-20 — TRANSPORT TERMINATES IN A POPULATED RECEIVER NODE, NOT AN EMPTY COSMIC REGION
+
+This is ordinary terrestrial/exilic geography in the narrative frame.
+
+---
+
+# Ezekiel 3:15–16 — seven-day stunned interval separates transport from active mission
+
+Ezekiel:
+sits overwhelmed/stunned
+for seven days.
+
+Then:
+new word/role begins.
+
+## M51A2-21 — TRANSFER CAN BE FOLLOWED BY A RECOVERY/PROCESSING INTERVAL BEFORE FUNCTION RESUMES
+
+This is a useful post-transfer phase.
+
+### Number control
+
+Seven days:
+explicit.
+
+Do not automatically map to:
+seven Vardath evaluators;
+seven worlds;
+1–3–7
+without structural bridge.
+
+---
+
+# Ezekiel 3:17 — prophet becomes watchman/sentinel
+
+Input:
+word from source.
+
+Output:
+warning to population.
+
+## M51A2-22 — HUMAN NODE IS FORMALLY REASSIGNED AS SENSOR/ALARM INTERFACE
+
+This directly connects with Isaiah 56 watchman logic.
+
+---
+
+# Ezekiel 3:18–21 — blood responsibility depends on whether warning is transmitted
+
+If warning withheld:
+watchman liable.
+
+If warning delivered:
+receiver outcome belongs to receiver.
+
+## M51A2-23 — INFORMATION SYSTEM RESPONSIBILITY CAN BE ASSIGNED BY WHETHER THE MESSAGE CROSSES THE REQUIRED INTERFACE
+
+This is an unusually explicit routing/accountability rule.
+
+---
+
+# M51A2-24 — WARNING SYSTEM QUALITY MUST BE SCORED SEPARATELY FROM RECEIVER BEHAVIOR
+
+A crucial research principle.
+
+---
+
+# Ezekiel 3:22–23 — glory system reappears in valley/plain
+
+Ezekiel:
+ordered out.
+
+Glory:
+stands there
+like Chebar vision.
+
+He:
+falls again.
+
+## M51A2-25 — SAME VISION SYSTEM CAN RECUR AT A DIFFERENT TERRESTRIAL LOCATION WHILE RETAINING RECOGNIZABLE IDENTITY
+
+This is important.
+
+System is not fixed to one visible ground node in the narrative.
+
+---
+
+# M51A2-26 — REPEATED APPEARANCE AT DIFFERENT LOCATIONS DOES NOT BY ITSELF PROVE THE SYSTEM PHYSICALLY TRAVELLED BETWEEN THEM
+
+Visionary recurrence
+and
+physical relocation
+must remain distinct possibilities.
+
+---
+
+# Ezekiel 3:24 — spirit again enters and raises Ezekiel
+
+The chapter repeats:
+fall
+→ spirit entry
+→ stand.
+
+## M51A2-27 — BODY-STATE CONTROL SEQUENCE IS REPEATABLE
+
+This repetition makes it a real process pattern within Ezekiel.
+
+---
+
+# Ezekiel 3:24–25 — Ezekiel is enclosed in house and bound with cords
+
+Command:
+shut yourself in house.
+
+Then:
+cords placed;
+movement restricted;
+cannot go among people.
+
+## M51A2-28 — ENCLOSURE + FLEXIBLE RESTRAINT CAN DISABLE LOCOMOTION WITHOUT DESTROYING THE BODY
+
+Different from:
+world support.
+
+Again:
+cord
+function = restraint.
+
+---
+
+# M51A2-29 — HOUSE BOUNDARY AND CORD BOUNDARY ARE NESTED CONSTRAINT LAYERS
+
+outer:
+house.
+
+inner/local:
+cords.
+
+A system can have multiple enclosure scales.
+
+---
+
+# Ezekiel 3:26 — tongue clings to palate; speech output shuts down
+
+Prophet:
+speechless.
+
+## M51A2-30 — INFORMATION OUTPUT INTERFACE CAN BE SWITCHED OFF WHILE INFORMATION STORAGE/RECEPTION REMAINS
+
+This is extremely clear.
+
+---
+
+# Ezekiel 3:27 — source later opens mouth
+
+Speech:
+reactivated conditionally
+when new message comes.
+
+## M51A2-31 — SAME OUTPUT INTERFACE CAN BE EXTERNALLY GATED BETWEEN CLOSED AND OPEN STATES
+
+This is a true **gate** at the information/body level.
+
+### closed
+tongue fixed;
+no speech.
+
+### open
+mouth enabled;
+message released.
+
+Not:
+world portal.
+
+---
+
+# Ezekiel 2–3 — information carrier transformation chain
+
+One of the strongest sequences in the corpus:
+
+source word
+→ hand
+→ scroll
+→ written both sides
+→ scroll opened
+→ mouth
+→ stomach
+→ heart/ear
+→ embodied message
+→ oral speech
+→ exile receivers.
+
+## M51A2-32 — INFORMATION CAN PERSIST THROUGH MULTIPLE CARRIER TRANSFORMATIONS
+
+This is very important to myth/transmission research.
+
+Meaning may survive:
+material carrier changes.
+
+---
+
+# M51A2-33 — MESSAGE CONTINUITY SHOULD NOT BE CONFUSED WITH CARRIER CONTINUITY
+
+Scroll:
+destroyed by eating.
+
+Message:
+continues.
+
+This directly parallels:
+Jeremiah scroll burned/recreated.
+
+---
+
+# Ezekiel 2–3 — Vardath body/projection comparison
+
+The prophet’s body becomes:
+- raised by spirit;
+- information container;
+- hardened interface;
+- transported cargo;
+- sensor/watchman;
+- bound prisoner;
+- speech gate.
+
+This is a powerful example of:
+**person = multi-function process node**.
+
+## M51A2-34 — HUMAN FIGURE CAN EMBODY MULTIPLE SYSTEM FUNCTIONS WITHOUT BEING THE COSMIC SUPPORT STRUCTURE
+
+This is central to the Squatter-Man question.
+
+A person may narratively represent:
+carrier;
+interface;
+sensor;
+storage;
+output;
+without being:
+lattice/rod itself.
+
+---
+
+# Ezekiel 2–3 — strict Vardath screening
+
+## chapter-1 support/mobility system persists
+Yes:
+wings/wheels/glory.
+
+## human carried
+Yes.
+
+## connection between living-system motion and human transport
+Strong correlation.
+
+## broad support web
+No new evidence.
+
+## dragon ground support
+Absent.
+
+## throat/narrowing
+Absent.
+
+## information carrier internalization
+Exceptionally strong.
+
+## enclosure/restraint
+Strong.
+
+## output gate
+Strong at mouth/speech level.
+
+### Strict verdict
+
+**Ezekiel 2–3 does not add the missing fingertrap contraction, but it confirms that the Ezekiel 1 mobility/glory system continues into a transport phase in which the prophet is lifted and carried. Its strongest contribution is information mechanics: a written scroll changes carrier from external document to ingested body to speech, while Ezekiel’s body becomes a controlled interface whose locomotion and speech can be independently opened or closed. This is highly relevant to person-as-process projection but not to identifying the prophet himself as the ground-support lattice.**
+
+---
+
+# Ezekiel 2–3 pair / process matrix
+
+## fallen / standing Ezekiel
+collapsed body state / spirit-actuated body state.
+
+## source speech / receiver refusal
+message output / acceptance failure.
+
+## briers-thorns-scorpions / prophet
+hazardous social field / messenger node.
+
+## hand / scroll
+carrier interface / encoded object.
+
+## rolled scroll / opened scroll
+compact carrier / exposed carrier.
+
+## scroll / stomach
+external information object / internal body container.
+
+## sweet taste / severe content
+sensory valence / semantic valence.
+
+## receiver hard forehead / messenger hard forehead
+refusal rigidity / protective rigidity.
+
+## creature-wheel system / Ezekiel
+cosmic mobility system / carried human.
+
+## seven-day silence / watchman role
+processing interval / active information responsibility.
+
+## house / cords
+outer enclosure / local restraint.
+
+## closed tongue / opened mouth
+disabled output / enabled output.
+
+---
+
+# Ezekiel 2–3 continuous transformation timeline
+
+Ezekiel lies fallen
+→ voice commands standing
+→ spirit enters body
+→ prophet rises
+→ hearing interface activates
+→ mission to resistant population is assigned
+→ social threat is projected as thorns/scorpions surrounding him
+→ hand extends scroll
+→ scroll is unrolled/opened
+→ writing covers both sides
+→ scroll enters mouth
+→ scroll fills stomach
+→ severe message tastes sweet
+→ words are transferred to heart/ear
+→ prophet’s face/forehead is hardened
+→ message is prepared for oral transmission
+→ spirit lifts Ezekiel
+→ chapter-1 glory/mobility system rises
+→ wings brush/touch
+→ wheels rumble
+→ spirit bears prophet away
+→ Ezekiel reaches exile settlement
+→ seven-day stunned interval
+→ watchman role activates
+→ warning responsibility is assigned
+→ prophet moves to valley/plain
+→ glory system reappears
+→ Ezekiel falls
+→ spirit re-enters
+→ Ezekiel stands again
+→ he is sent into house enclosure
+→ cords restrict movement
+→ tongue is fixed to palate
+→ speech output closes
+→ later source speech reopens mouth
+→ message can again leave body.
+
+---
+
+# New master-mechanism additions from Ezekiel 2–3
+
+## M51A2-1 — INTERNAL ANIMATING INPUT CAN CHANGE BODY ORIENTATION
+## M51A2-2 — MESSAGE RECEPTION MAY REQUIRE PREPARED OPERATING STATE
+## M51A2-3 — DELIVERY SUCCESS ≠ RECEIVER COMPLIANCE
+## M51A2-4 — SOCIAL HOSTILITY CAN PROJECT AS HAZARDOUS SURROUNDING FIELD
+## M51A2-5 — HAND→SCROLL→BODY CAN FORM INFORMATION-CARRIER CHAIN
+## M51A2-6 — FLEXIBLE CARRIER CAN HOLD DENSE TWO-SIDED INFORMATION
+## M51A2-7 — OPENING CARRIER CHANGES ACCESS, NOT CONTENT
+## M51A2-8 — INFORMATION CAN PROJECT AS INGESTED NUTRIENT/CARGO
+## M51A2-9 — INPUT SENSORY VALENCE ≠ MESSAGE VALENCE
+## M51A2-10 — INFORMATION CAN CHANGE CARRIER CLASS
+## M51A2-11 — COMMUNICATION FAILURE CAN OCCUR ABOVE DECODING LAYER
+## M51A2-12 — HARDNESS CAN REPRESENT RESISTANCE TO SOCIAL PRESSURE
+## M51A2-13 — SAME PROPERTY CAN FUNCTION DIFFERENTLY ACROSS ADVERSARIAL INTERFACE
+## M51A2-14 — MESSAGE CAN BE PROJECTED THROUGH MULTIPLE INTERNAL BODY LOCATIONS
+## M51A2-15 — INGESTION + HEARING CAN CONVERGE ON ONE INTERNAL MESSAGE STATE
+## M51A2-16 — EZEKIEL-1 MOBILITY SYSTEM IS ASSOCIATED WITH HUMAN TRANSPORT
+## M51A2-17 — HUMAN TRANSPORT / SYSTEM MOTION CORRELATION ≠ SPECIFIED MECHANICAL COUPLING
+## M51A2-18 — CONTACT NETWORK PERSISTS INTO TRANSPORT PHASE
+## M51A2-19 — TRANSPORTED HUMAN MAY NOT CONTROL VECTOR
+## M51A2-20 — TRANSPORT TERMINATES IN POPULATED RECEIVER NODE
+## M51A2-21 — TRANSFER CAN REQUIRE RECOVERY/PROCESSING INTERVAL
+## M51A2-22 — HUMAN NODE CAN BECOME SENSOR/ALARM INTERFACE
+## M51A2-23 — INFORMATION RESPONSIBILITY CAN DEPEND ON INTERFACE CROSSING
+## M51A2-24 — WARNING QUALITY ≠ RECEIVER BEHAVIOR
+## M51A2-25 — SAME VISION SYSTEM CAN RECUR AT DIFFERENT TERRESTRIAL NODES
+## M51A2-26 — RECURRING VISION LOCATION ≠ PROVEN PHYSICAL SYSTEM RELOCATION
+## M51A2-27 — BODY-STATE CONTROL SEQUENCE CAN REPEAT
+## M51A2-28 — ENCLOSURE + RESTRAINT CAN INDEPENDENTLY LIMIT LOCOMOTION
+## M51A2-29 — NESTED BOUNDARY LAYERS CAN COEXIST
+## M51A2-30 — INFORMATION OUTPUT CAN CLOSE WHILE STORAGE REMAINS
+## M51A2-31 — SAME OUTPUT INTERFACE CAN BE EXTERNALLY GATED OPEN/CLOSED
+## M51A2-32 — INFORMATION CAN PERSIST THROUGH MULTIPLE CARRIER TRANSFORMATIONS
+## M51A2-33 — MESSAGE CONTINUITY ≠ CARRIER CONTINUITY
+## M51A2-34 — HUMAN FIGURE CAN EMBODY MANY SYSTEM FUNCTIONS WITHOUT BEING SUPPORT LATTICE
+
+---
+
+# Number / timing register — Ezekiel 2–3
+
+Record without forcing:
+
+- scroll written on both sides;
+- seven-day stunned/wait interval;
+- repeated rise/fall body-state cycles;
+- no gate-open duration;
+- no world-layer count;
+- no dragon count.
+
+### Number control
+
+The seven-day interval is a real mission-processing period in Ezekiel 3.
+
+Do not convert it into:
+seven worlds;
+seven evaluators;
+1–3–7
+without independent linkage.
+
+---
+
+# Textual / scholarly controls — Ezekiel 2–3
+
+1. Working primary texts: Ezekiel 2–3 NRSVUE, compared with NIV/NKJV/RSV.
+2. “Mortal / son of man” functions as Ezekiel’s prophetic designation here and should not automatically be imported from later messianic uses.
+3. Ezekiel 2:3 has textual/translation variation around “nation/nations of rebels”; mission to Israel remains clear.
+4. Briers/thorns/scorpions are hostile-population imagery, not cosmic structures.
+5. Scroll ingestion is a prophetic symbolic act of internalizing the message; later Revelation 10 reuses similar imagery.
+6. Ezekiel 3:12 has textual variation: NRSVUE follows a conjectural/variant reading around the glory rising, while MT includes a blessing formula; transport/lifting and rumbling remain secure.
+7. The living-creature/wheel system from chapter 1 explicitly reappears acoustically in 3:12–13.
+8. Ezekiel is said to be lifted and borne by spirit; exact physical/vision mechanics are not specified.
+9. The seven-day stunned period precedes formal watchman responsibility.
+10. House confinement, cords and tongue-silencing are controlled restriction images and should not be read as support-lattice mechanics.
+11. The mouth is explicitly opened/closed as a message-output interface.
+12. Strict fingertrap status remains negative/incomplete.
+
+---
+
+# Sources logged — Ezekiel 2–3
+
+Primary:
+- Ezekiel 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+2&version=NRSVUE
+- Ezekiel 3 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+3&version=NRSVUE
+- Ezekiel 3:12–21 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+3%3A12-21&version=NRSVUE
+- Ezekiel 3:12–27 RSV/NKJV comparison:
+  https://www.biblegateway.com/passage/?search=Ezekiel+3%3A12-27&version=RSV%3BNKJV
+
+---
+
+# SECTION 51A2 CHECKPOINT — EZEKIEL 2–3 COMPLETE
+
+Strongest first-time findings:
+
+1. **Ezekiel’s body becomes part of the information system: spirit raises him, scroll enters him, words move inward, and his mouth later becomes a controlled output gate.**
+2. **The scroll is one of the clearest carrier transformations so far: written external object → ingested body content → remembered/internalized message → spoken output.**
+3. **The chapter-1 living-creature/wheel system reappears while Ezekiel is lifted and carried, strengthening the interpretation of that vision as a mobility system.**
+4. **The exact mechanical coupling between Ezekiel and that system is not specified; the text says spirit carries him and the wheels/wings rumble behind.**
+5. **The seven-day stunned interval provides a distinct post-transfer processing/recovery phase before his watchman function begins.**
+6. **Watchman responsibility is defined by whether information is actually transmitted, not whether the receiver obeys.**
+7. **House, cords, tongue and mouth provide nested locomotion and speech-control boundaries; these are interface/enclosure mechanics, not world-support geometry.**
+8. **Person-as-process-node correspondence is strong; person-as-ground-support-lattice identification remains unsupported.**
+9. **Strict spiderweb→fingertrap transition remains absent.**
+
+### Next live block
+
+**Ezekiel 4–7**
+
+Priority:
+- brick/tablet as model-city projection;
+- siege works as miniature simulation;
+- iron plate/wall between prophet and city;
+- body lying on left/right sides for numbered durations;
+- cords preventing turning;
+- rationed food/water;
+- dung/fire contamination and substitute fuel;
+- bread staff broken;
+- hair shaved/sorted into fire/sword/wind thirds plus remnant in garment;
+- fire from remnant;
+- mountain/valley/city judgment;
+- “four corners of land” / end-state;
+- chain, violence, temple desecration;
+- compare miniature-model action, directional body orientation, constraint and population sorting with Vardath projection/body mechanisms.
