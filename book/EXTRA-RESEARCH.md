@@ -7764,3 +7764,876 @@ Priority:
 - fire that cannot be controlled as hearth;
 - merchants wandering each direction;
 - compare female-body personification with Vardath body/squatterman projection controls.
+
+
+---
+
+# SECTION 49 progress D2E — Isaiah 47
+## First-time research pass: female-city personification, throne→ground reversal, layer removal, forced labor, river crossing, widow/child-loss collapse, failed prediction systems, uncontrolled fire, and merchant-network dispersal
+
+Isaiah 47 turns Babylon into a human-like female figure.
+
+The city/empire is addressed as:
+- virgin daughter Babylon;
+- daughter Chaldea;
+- mistress/queen of kingdoms;
+- pleasure-loving woman;
+- prospective widow;
+- mother who can lose children.
+
+The chapter therefore gives one of the clearest controls for the project’s repeated question:
+
+**When a city/nation is described as a woman, how much of the body imagery is literal structure, and how much is political personification?**
+
+Modern scholarship on Isaiah 47 explicitly treats “Daughter Babylon” as a female anthropomorphization of the city.
+
+That means the body-language is real and important,
+but the first interpretive layer is:
+**city-as-woman projection**.
+
+---
+
+# Isaiah 47:1 — throne→ground is a total status/position reversal
+
+Babylon begins as:
+- tender;
+- delicate;
+- throne-associated;
+- mistress/queen.
+
+Command:
+- come down;
+- sit in dust;
+- sit on ground;
+- no throne.
+
+## M49D2E-1 — HIGH POLITICAL STATUS CAN BE PROJECTED AS HIGH PHYSICAL POSITION, THEN REVERSED DOWNWARD
+
+throne/high rank
+→ ground/dust
+→ no throne.
+
+This is a clean:
+**high→low** transition.
+
+### Vardath comparison
+
+Vertical reversal is common in the cosmology:
+future/above;
+present;
+past/below.
+
+But Isaiah 47’s first layer is social/political humiliation.
+
+Therefore:
+**vertical metaphor is structurally relevant, not automatically world-transfer evidence.**
+
+---
+
+# Isaiah 47:1 — “virgin daughter Babylon” is city-personification, not evidence of a literal giant woman
+
+The city is addressed with:
+female kinship and body language.
+
+## M49D2E-2 — CITY / WOMAN PROJECTION CAN CARRY BODY VARIABLES WITHOUT CITY = BIOLOGICAL BODY
+
+This is one of the strongest controls for Squatter-Man / giant-body readings.
+
+A city can:
+- sit;
+- be naked;
+- lose children;
+- become widowed;
+- wear/remove garments;
+- cross water
+
+in literary personification.
+
+Therefore:
+when another text gives a human-shaped cosmic figure,
+we must ask whether:
+- literal body;
+- personified territory;
+- political body;
+- constellation;
+- plasma/lattice body
+
+best explains the local process.
+
+---
+
+# Isaiah 47:2 — millstones shift the queen into laborer state
+
+Babylon is told:
+- take millstones;
+- grind meal.
+
+This is a labor/status reversal.
+
+## M49D2E-3 — STATUS COLLAPSE CAN BE EXPRESSED BY REASSIGNMENT FROM COMMAND NODE TO MANUAL-PROCESSING NODE
+
+queen/mistress
+→ grinder/laborer.
+
+This is not merely:
+position change.
+
+It is:
+**functional class change**.
+
+---
+
+# Isaiah 47:2 — garment layers are removed in sequence
+
+The text commands:
+- remove veil;
+- strip robe;
+- uncover legs/thigh;
+- pass through rivers.
+
+The sequence moves:
+outer social covering
+→ more exposed body
+→ direct environmental contact.
+
+## M49D2E-4 — PERSONIFICATION CAN BE DECOMPOSED THROUGH LAYER REMOVAL
+
+outer covering
+→ inner body
+→ environmental exposure.
+
+### Vardath relevance
+
+The cosmology tracks:
+canopy;
+atmosphere;
+water;
+world-surface;
+inner/outer layers.
+
+Isaiah 47 gives a **layer-removal process grammar**.
+
+But the layers are:
+garments on a personified city.
+
+No direct atmospheric/cosmic identity is established.
+
+---
+
+# Isaiah 47:2 — pass through rivers adds a transit/environmental phase
+
+After stripping:
+Babylon passes/wades through rivers.
+
+## M49D2E-5 — LOSS OF PROTECTIVE/SOCIAL LAYERS CAN PRECEDE DIRECT CONTACT WITH ENVIRONMENT DURING FORCED TRANSIT
+
+This is a useful sequence:
+
+protected/high-status state
+→ coverings removed
+→ exposed movement through water.
+
+### Vardath comparison
+
+A gate catastrophe may also:
+- strip protection;
+- expose populations to new air/water/temperature;
+- force crossing.
+
+But Isaiah’s immediate scene is deportation/humiliation imagery.
+
+---
+
+# Isaiah 47:3 — hidden body becomes visible
+
+“Nakedness”
+→ uncovered.
+
+“Shame”
+→ seen.
+
+## M49D2E-6 — COVERING LOSS CAN CHANGE INFORMATION VISIBILITY AS WELL AS PHYSICAL EXPOSURE
+
+Before:
+hidden.
+
+After:
+visible.
+
+This is a boundary/information effect.
+
+A covering can control:
+- heat;
+- physical protection;
+- social status;
+- visibility.
+
+Different functions must be tracked separately.
+
+---
+
+# Isaiah 47:5 — light/public status → silence/darkness
+
+Babylon is told:
+- sit in silence;
+- go into darkness;
+- lose title “mistress of kingdoms.”
+
+## M49D2E-7 — SAME SYSTEM CAN UNDERGO SOCIAL, INFORMATIONAL, AND ILLUMINATION-STATE REVERSAL TOGETHER
+
+public/commanding
+→ silent.
+
+visible/exalted
+→ dark.
+
+queen
+→ dethroned.
+
+This is a multi-variable collapse.
+
+### Control
+
+“Darkness” here is strongly linked to:
+humiliation/obscurity.
+
+Do not automatically merge it with:
+physical eclipse;
+plasma darkness;
+dust canopy.
+
+---
+
+# Isaiah 47:6 — transferred population becomes input to Babylonian domination
+
+The source says:
+people/heritage
+→ given into Babylon’s hand.
+
+Babylon:
+→ imposes heavy yoke,
+including on elderly.
+
+## M49D2E-8 — ONE EMPIRE CAN FUNCTION AS A TEMPORARY RECEIVER/CARRIER OF ANOTHER POPULATION WITHOUT BEING A BENEFICIAL REFUGE
+
+This is important for the carrier model.
+
+A containing system can be:
+- refuge;
+- prison;
+- exile host;
+- exploitative receiver.
+
+Container/enclosure function is not inherently positive.
+
+---
+
+# Isaiah 47:7 — “forever mistress” is a stability-model error
+
+Babylon assumes:
+current state
+→ permanent.
+
+The text criticizes failure to remember:
+the end/outcome.
+
+## M49D2E-9 — SYSTEM CAN MISTAKE LONG-LIVED STATE FOR PERMANENT STATE
+
+This is highly relevant to cosmological cycle thinking.
+
+Persistence
+≠
+indefinite stability.
+
+---
+
+# Isaiah 47:8–9 — secure queen model collapses into widowhood + child loss
+
+Babylon predicts:
+- no widowhood;
+- no child loss.
+
+The text predicts:
+both.
+
+These are paired relational losses:
+
+### widowhood
+loss of partner/support relation.
+
+### child-loss
+loss of next-generation/continuity relation.
+
+## M49D2E-10 — SYSTEM COLLAPSE CAN BE PROJECTED AS LOSS OF BOTH LATERAL SUPPORT AND FORWARD CONTINUITY
+
+partner relation
+→ lost.
+
+future generation
+→ lost.
+
+This is deeper than one-body injury.
+
+It describes:
+network and continuity failure.
+
+---
+
+# M49D2E-11 — FEMALE/FAMILY PROJECTION CAN ENCODE POLITICAL DEPENDENCY AND POPULATION LOSS
+
+Do not literalize:
+Babylon as one biological mother.
+
+The city-personification lets:
+empire;
+dependencies;
+population;
+future
+be expressed through family-state collapse.
+
+---
+
+# Isaiah 47:9 — “in a moment, in one day” is a rapid-state-transition marker
+
+The paired losses arrive:
+- in a moment;
+- in one day.
+
+## M49D2E-12 — LONG-STABLE SYSTEM CAN CROSS INTO FAILED STATE ON A SHORTER TIMESCALE THAN ITS BUILD-UP
+
+This is crucial to Vardath catastrophe modeling.
+
+A structure may persist for centuries,
+then shift rapidly.
+
+### Timing control
+
+The verse does not establish:
+a universal 24-hour cosmic gate interval.
+
+It is rapid-collapse rhetoric.
+
+---
+
+# Isaiah 47:9 — sorcery/enchantment fails to prevent state transition
+
+The text says the collapse occurs:
+despite many sorceries/enchantments.
+
+## M49D2E-13 — LARGE CONTROL-TOOL INVENTORY DOES NOT GUARANTEE CONTROL IF MODEL/ACTUATORS DO NOT MATCH THE HAZARD
+
+This is a powerful general systems principle.
+
+More techniques
+≠
+effective intervention.
+
+---
+
+# Isaiah 47:10 — “no one sees me” is an observer-model failure
+
+Babylon assumes:
+unobserved action.
+
+Then:
+wisdom/knowledge itself is said to mislead.
+
+## M49D2E-14 — INFORMATION ASSET CAN INCREASE CONFIDENCE WHILE STILL PRODUCING WRONG GLOBAL MODEL
+
+Knowledge quantity
+≠
+model correctness.
+
+This is a key methodology rule.
+
+---
+
+# Isaiah 47:10 — “I am, and there is no one besides me” is false centrality
+
+Babylon treats itself as:
+unique/absolute center.
+
+## M49D2E-15 — LOCAL DOMINANT NODE CAN MISTAKE ITS NETWORK CENTRALITY FOR TOTAL SYSTEM UNIQUENESS
+
+This is useful when reading:
+world-center myths;
+holy mountains;
+empire capitals.
+
+Central in one network
+≠
+only node in reality.
+
+---
+
+# Isaiah 47:11 — catastrophe cannot be charmed away or predicted/known in time
+
+Translations vary around:
+- source of disaster;
+- how to ward it off;
+- knowledge of arrival.
+
+The secure process is:
+**unexpected/uncontrollable catastrophe defeats the existing predictive-control system.**
+
+## M49D2E-16 — HAZARD CAN EXCEED BOTH PREDICTION AND MITIGATION CAPACITY
+
+Two failures:
+1. forecast/control failure;
+2. response failure.
+
+This is highly relevant to any survival model.
+
+---
+
+# Isaiah 47:12–13 — prediction network is explicitly enumerated
+
+The chapter names:
+- enchantments;
+- sorceries;
+- counsels;
+- astrologers;
+- stargazers;
+- monthly prognosticators.
+
+This is a sophisticated information/prediction subsystem.
+
+Ancient Mesopotamia had a long and highly developed tradition of celestial divination and astronomical observation.
+
+Modern history-of-science scholarship shows that Babylonian celestial prediction:
+- was systematic;
+- used written omen corpora;
+- developed observational/calculational practices over long periods.
+
+## M49D2E-17 — FAILURE OF A PREDICTION SYSTEM DOES NOT MEAN THE SYSTEM WAS UNSOPHISTICATED
+
+This is important.
+
+Ancient astronomy/astrology cannot be dismissed as:
+random guessing.
+
+But sophistication
+does not guarantee:
+correct prediction of every political event.
+
+---
+
+# Isaiah 47:13 — monthly prediction creates repeated time-sampling
+
+The astrologers/prognosticators:
+work month by month.
+
+## M49D2E-18 — PREDICTIVE SYSTEM CAN SAMPLE TIME REGULARLY YET STILL MISS REGIME-CHANGE EVENT
+
+A model calibrated to:
+normal recurring variation
+may fail at:
+rare transition.
+
+This is very relevant to Vardath cycle research.
+
+If seeking a gate-opening cycle:
+regular historical patterns
+must be distinguished from:
+one-off regime change.
+
+---
+
+# Isaiah 47:14 — predictors become stubble consumed by fire
+
+The system that predicted/control-claims the future:
+→ becomes fuel.
+
+## M49D2E-19 — INFORMATION SPECIALISTS CAN BECOME SUBJECT TO THE SAME HAZARD THEY FAILED TO PREDICT
+
+Observer
+does not stand outside system.
+
+This is an important epistemic rule.
+
+---
+
+# Isaiah 47:14 — fire is explicitly *not* usable hearth fire
+
+The chapter says:
+this is not a coal for warmth;
+not a fire to sit before.
+
+## M49D2E-20 — SAME PHYSICAL PROCESS CLASS “FIRE” CAN HAVE CONTROLLED-BENEFICIAL OR UNCONTROLLED-DESTRUCTIVE STATES
+
+### controlled fire
+- localized;
+- useful;
+- heat resource.
+
+### destructive fire
+- consumes;
+- cannot be used safely.
+
+This is highly relevant to Vardath plasma/fire comparisons.
+
+“Fire”
+is not one state.
+
+---
+
+# Isaiah 47:14 — self-rescue fails
+
+The astrologers:
+cannot save themselves from flame.
+
+## M49D2E-21 — INFORMATION CAPABILITY WITHOUT PHYSICAL RESILIENCE DOES NOT ENSURE SURVIVAL
+
+Prediction
+≠
+protection.
+
+A viable survival system needs:
+- information;
+- shelter;
+- resources;
+- route;
+- physiology.
+
+---
+
+# Isaiah 47:15 — merchant network disperses instead of coordinating rescue
+
+Those with whom Babylon traded/labored:
+→ wander each to own quarter/direction.
+
+No one saves.
+
+## M49D2E-22 — DISTRIBUTED ECONOMIC NETWORK CAN FRAGMENT UNDER SYSTEMIC FAILURE
+
+normal:
+trade interconnection.
+
+collapse:
+each node
+→ own direction.
+
+This is opposite of:
+convergence/gathering.
+
+---
+
+# M49D2E-23 — NETWORK CONNECTIVITY IN NORMAL STATE ≠ MUTUAL AID IN CRISIS STATE
+
+Trade relation
+can persist for years
+without guaranteeing:
+rescue relation.
+
+This is a powerful control for:
+mythic alliance networks;
+global systems;
+survival planning.
+
+---
+
+# Isaiah 47 — female-body / Vardath body comparison
+
+The chapter contains:
+- woman;
+- daughter;
+- queen/mistress;
+- veil;
+- robe;
+- legs;
+- nakedness;
+- widowhood;
+- children.
+
+This is dense body/family imagery.
+
+But the referent is:
+**Babylon as city/empire**.
+
+## M49D2E-24 — DENSE ANTHROPOMORPHISM CAN REPRESENT A TERRITORIAL/POLITICAL SYSTEM WITHOUT LITERAL GIANT BODY
+
+This must remain one of the strongest controls against over-reading the Squatter-Man motif.
+
+### What would increase literal-structure confidence elsewhere?
+
+Look for:
+- repeated independent texts;
+- actual geometry;
+- consistent body-part-to-landscape mapping;
+- physical transitions impossible to explain as ordinary personification;
+- same body performing mechanism-critical functions;
+- cross-cultural mechanical continuity.
+
+Isaiah 47 alone demonstrates that:
+**human form is not sufficient.**
+
+---
+
+# Isaiah 47 — Vardath event comparison
+
+## State sequence
+
+queen/throne
+→ ground/dust.
+
+covered
+→ uncovered.
+
+protected/elite labor state
+→ grinding/manual labor.
+
+stable dominion
+→ widow/child-loss.
+
+secure predictive system
+→ unexpected catastrophe.
+
+merchant network
+→ dispersal.
+
+controlled fire concept
+→ destructive non-hearth fire.
+
+This is a very coherent:
+**status / covering / continuity / prediction / network collapse** sequence.
+
+### Vardath overlap
+
+Possible analogues:
+- loss of protective canopy;
+- exposure;
+- rapid system transition;
+- failure of prediction;
+- destructive heat;
+- network fragmentation.
+
+### Strict control
+
+No:
+- broad weave;
+- axial throat;
+- inter-world passage;
+- same lattice reopening.
+
+### Strict verdict
+
+**Isaiah 47 is valuable for body-personification controls and catastrophic system-state reversal, not for strict Vardath gate geometry.**
+
+---
+
+# Isaiah 47 pair / process matrix
+
+## queen / laborer
+high control status / low manual-processing status.
+
+## throne / dust
+elevated authority / ground-level humiliation.
+
+## veil-robe / exposed body
+covering system / exposed state.
+
+## body / river
+personified city / environmental transit medium.
+
+## mistress / darkness-silence
+public centrality / obscured inactive state.
+
+## old people / heavy yoke
+low-resilience population / excessive imposed load.
+
+## widowhood / child loss
+lateral support loss / future-continuity loss.
+
+## wisdom / misdirection
+information asset / model failure.
+
+## astrology / catastrophe
+prediction system / unpredicted/uncontrolled regime change.
+
+## stubble / fire
+low-resistance fuel / consuming hazard.
+
+## hearth fire / destructive fire
+controlled useful state / uncontrolled lethal state.
+
+## merchant network / dispersion
+connected exchange / crisis fragmentation.
+
+---
+
+# Isaiah 47 continuous transformation timeline
+
+Babylon is projected as virgin daughter/queen
+→ high-status throne state is removed
+→ figure descends to ground/dust
+→ manual grinding labor replaces elite role
+→ veil removed
+→ robe removed
+→ legs/body exposed
+→ figure passes through river environment
+→ hidden body becomes visible
+→ public kingdom title is removed
+→ silence/darkness state replaces public centrality
+→ prior captive population relation is recalled
+→ heavy yoke/load imposed on vulnerable elderly
+→ Babylon assumes permanence
+→ model fails to account for end state
+→ secure self-model predicts no widowhood/no child loss
+→ both relational states collapse rapidly
+→ sorcery/control inventory fails
+→ observer-model “no one sees” fails
+→ wisdom/knowledge increases false confidence
+→ catastrophe arrives beyond mitigation capacity
+→ long-used enchantment system is challenged
+→ counsel network exhausts itself
+→ astrologers/stargazers/monthly predictors are called to act
+→ prediction network cannot rescue
+→ specialists become stubble/fuel
+→ fire shifts to non-hearth destructive state
+→ economic/trade partners disperse
+→ no external node rescues Babylon.
+
+---
+
+# New master-mechanism additions from Isaiah 47
+
+## M49D2E-1 — STATUS CAN BE PROJECTED AS VERTICAL POSITION AND REVERSED
+
+## M49D2E-2 — CITY/WOMAN PROJECTION CAN CARRY BODY VARIABLES WITHOUT LITERAL BODY IDENTITY
+
+## M49D2E-3 — SYSTEM COLLAPSE CAN REASSIGN CONTROL NODE TO LABOR NODE
+
+## M49D2E-4 — PERSONIFICATION CAN BE DECOMPOSED THROUGH LAYER REMOVAL
+
+## M49D2E-5 — COVERING LOSS CAN PRECEDE ENVIRONMENTAL TRANSIT
+
+## M49D2E-6 — COVERING CONTROLS INFORMATION VISIBILITY AS WELL AS PHYSICAL EXPOSURE
+
+## M49D2E-7 — SOCIAL / INFORMATION / DARKNESS STATES CAN REVERSE TOGETHER
+
+## M49D2E-8 — CONTAINING EMPIRE CAN BE EXILE HOST RATHER THAN REFUGE
+
+## M49D2E-9 — LONG-LIVED STATE ≠ PERMANENT STATE
+
+## M49D2E-10 — COLLAPSE CAN REMOVE LATERAL SUPPORT + FORWARD CONTINUITY
+
+## M49D2E-11 — FAMILY PROJECTION CAN ENCODE POLITICAL/POPULATION FAILURE
+
+## M49D2E-12 — LONG-STABLE SYSTEM CAN FAIL ON MUCH SHORTER TIMESCALE
+
+## M49D2E-13 — LARGE CONTROL INVENTORY ≠ EFFECTIVE CONTROL
+
+## M49D2E-14 — KNOWLEDGE CAN INCREASE CONFIDENCE WHILE GLOBAL MODEL IS WRONG
+
+## M49D2E-15 — LOCAL CENTRALITY ≠ TOTAL SYSTEM UNIQUENESS
+
+## M49D2E-16 — HAZARD CAN EXCEED PREDICTION + MITIGATION CAPACITY
+
+## M49D2E-17 — FAILED PREDICTION SYSTEM CAN STILL BE SOPHISTICATED
+
+## M49D2E-18 — REGULAR TIME SAMPLING CAN MISS REGIME-CHANGE EVENT
+
+## M49D2E-19 — OBSERVER/PREDICTOR REMAINS INSIDE HAZARD SYSTEM
+
+## M49D2E-20 — FIRE HAS CONTROLLED-BENEFICIAL + UNCONTROLLED-DESTRUCTIVE STATES
+
+## M49D2E-21 — INFORMATION CAPABILITY ≠ PHYSICAL RESILIENCE
+
+## M49D2E-22 — ECONOMIC NETWORK CAN FRAGMENT UNDER SYSTEMIC FAILURE
+
+## M49D2E-23 — NORMAL CONNECTIVITY ≠ CRISIS MUTUAL AID
+
+## M49D2E-24 — DENSE ANTHROPOMORPHISM ≠ LITERAL GIANT-BODY PROOF
+
+---
+
+# Number / timing register — Isaiah 47
+
+Record without forcing:
+
+- “in a moment” = rapid-transition language;
+- “in one day” = compressed collapse interval;
+- monthly prognosticators = regular prediction sampling;
+- no gate-duration number;
+- no world-layer count;
+- no recurrence interval is established.
+
+### Timing control
+
+The “one day” language should be recorded prominently for the catastrophe timeline.
+
+But:
+it is not enough to establish a universal one-day Vardath event.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 47
+
+1. Working primary text: Isaiah 47 NRSVUE.
+2. Daughter Babylon is a recognized female city-personification; modern trauma/literary scholarship explicitly studies the city’s anthropomorphization and symbolic humiliation.
+3. The sexualized stripping/nakedness imagery is violent humiliation rhetoric and should not be sanitized into neutral “layer mechanics”; the structural comparison must preserve that literary function.
+4. Millstone/grinding imagery expresses reduced labor/status.
+5. River crossing belongs to the humiliation/transit sequence, not automatically to a cosmic water boundary.
+6. Widowhood + child loss are relational/social collapse projections.
+7. Babylonian celestial divination was a sophisticated scribal tradition involving systematic omen interpretation and astronomical observation; Isaiah’s critique targets its inability to save Babylon, not the claim that Babylonians never studied the sky seriously.
+8. Monthly prognostication shows regular temporal prediction practices.
+9. Fire in v14 is explicitly distinguished from useful hearth fire.
+10. Merchant dispersal is network fragmentation.
+11. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Isaiah 47
+
+Primary:
+- Isaiah 47 NRSVUE / NKJV:
+  https://www.biblegateway.com/passage/?search=Isaiah+47&version=NRSVUE%3BNKJV
+- Isaiah 47 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Isaiah+47&version=NRSVUE
+- Isaiah 47:1–9 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Isaiah+47%3A1-9&version=NRSVUE
+
+Scholarly / historical:
+- Christopher G. Frechette, “Daughter Babylon Raped and Bereaved (Isaiah 47): Symbolic Violence and Meaning-Making in Recovery from Trauma,” in *Bible through the Lens of Trauma*:
+  https://www.jstor.org/stable/j.ctt1h1htfd.7
+- Francesca Rochberg, *The Heavenly Writing*, Cambridge — history and method of Mesopotamian celestial divination:
+  https://www.cambridge.org/core/books/abs/heavenly-writing/personal-celestial-divination-the-babylonian-horoscopes/481E4E18C78D40097BC8368BC2C859AD
+- Cambridge History of Science, “Science and Ancient Mesopotamia” — observational/predictive astronomy and divinatory traditions:
+  https://www.cambridge.org/core/books/cambridge-history-of-science/science-and-ancient-mesopotamia/C48D6E70188ED938863F479B692D465B
+
+---
+
+# SECTION 49D2E CHECKPOINT — ISAIAH 47 COMPLETE
+
+Strongest first-time findings:
+
+1. **Babylon’s woman-body is an explicit city/empire personification, making Isaiah 47 a major control against literalizing all giant/body imagery.**
+2. **The chapter runs throne→dust, covered→exposed, elite→laborer, secure→bereaved, informed→misled, connected→dispersed.**
+3. **Rapid collapse is emphasized with “in a moment / one day,” but no universal catastrophe duration is established.**
+4. **Babylon’s sophisticated prediction/control systems fail at a regime-change event; sophistication and correctness must be separated.**
+5. **Fire is explicitly divided into useful controlled hearth fire and destructive fire that cannot be used safely.**
+6. **Merchant connectivity fails to become rescue connectivity.**
+7. **Strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Isaiah 48**
+
+Priority:
+- iron neck / bronze forehead as rigidity control;
+- old declaration → sudden execution;
+- “new things / hidden things” timing;
+- formed now, not from of old;
+- furnace/refining imagery;
+- source refuses name/profanation loss;
+- first/last;
+- hand laid earth / right hand spread heavens;
+- heaven/earth “stand” when called;
+- Cyrus/Babylon agent relation;
+- teaching / way;
+- peace like river / righteousness like waves;
+- descendants like sand;
+- leave Babylon / flee Chaldea;
+- water from rock / split rock;
+- no peace closing control;
+- compare water release and path/freeing with Vardath geometry/water sequence.
