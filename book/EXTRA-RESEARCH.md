@@ -76765,3 +76765,1506 @@ Priority:
 - coals/fire transferred from between cherubim to human carrier and scattered over city;
 - glory moves threshold → cherubim → east gate → mountain east of city;
 - HIGH PRIORITY: this may be the first place where Ezekiel’s support/mobility apparatus, threshold architecture, transferable fire cargo and changing divine/glory location are all placed into one continuous sequence.
+
+
+---
+
+# SECTION 52 progress C — Ezekiel 8–11
+## Fresh sequential research: anthropomorphic upper/lower figure, vertical transport to gate, hidden wall aperture, threshold sorting, cherub/wheel fire-cargo handoff, staged eastward glory departure and distributed sanctuary/restoration
+
+### Continuity note
+
+Part 1 already contained preliminary reconnaissance on **Ezekiel 8:1–3**:
+
+- humanlike fiery/bright figure;
+- body divided at the loins into upper/lower energetic appearances;
+- hand/extension;
+- Ezekiel lifted between earth and heaven;
+- transfer to a gate.
+
+That earlier note is retained as valid preliminary insight.
+
+This section is the first full sequential treatment of **Ezekiel 8–11** in the 88-book pass and extends the earlier observation into the whole temple/departure sequence.
+
+---
+
+# Ezekiel 8:1 — event is precisely dated and begins at a stationary social location
+
+Ezekiel:
+sits in his house.
+
+Elders of Judah:
+sit before him.
+
+Then:
+the hand of YHWH falls upon him.
+
+The visionary transition begins while the ordinary social scene remains anchored.
+
+## M52C-1 — LOCAL BODY/SOCIAL LOCATION AND VISIONARY TRANSFER FRAME CAN COEXIST
+
+This is another important state distinction:
+
+ordinary-location frame:
+Ezekiel with elders in exile.
+
+vision frame:
+Ezekiel transported to Jerusalem.
+
+The text itself marks the second as:
+“visions of God.”
+
+Therefore do not flatten:
+visionary relocation
+into
+ordinary measured physical travel.
+
+---
+
+# Ezekiel 8:2 — humanlike figure divided at the loins into two appearance regimes
+
+The figure has:
+
+below loins:
+fire-like appearance.
+
+above loins:
+brightness / gleaming amber-like appearance.
+
+The Hebrew/Greek textual traditions differ in the exact wording around “man/fire,” so the safest claim is:
+**anthropomorphic figure with sharply divided upper/lower appearance**.
+
+## M52C-2 — ONE ANTHROPOMORPHIC AXIS CAN CONTAIN DISTINCT UPPER AND LOWER REGIMES AROUND A CENTRAL BODY BOUNDARY
+
+This confirms the Part 1 observation.
+
+### Vardath relevance
+
+The geometry is highly interesting:
+
+upper regime
+↑
+central loins/midpoint
+↓
+lower regime.
+
+But:
+the text does not state opposed flow directions;
+the upper and lower halves are not identified as two springs;
+no crossing at the midpoint is described.
+
+### Classification
+
+**Strong axis-person morphology.  
+Weak evidence for actual opposed-strand mechanics.**
+
+---
+
+# Ezekiel 8:3 — hand extension initiates vertical transfer
+
+The figure:
+extends a hand-like form.
+
+It:
+takes Ezekiel by a lock of hair.
+
+Spirit:
+lifts Ezekiel between earth and heaven.
+
+Destination:
+Jerusalem gate.
+
+This is one of the strongest body/operator sequences in the corpus:
+
+**upper/lower humanlike figure**
+→ **hand extension**
+→ **receiver/cargo attachment**
+→ **vertical intermediate state**
+→ **gate destination**.
+
+## M52C-3 — HAND/EXTENSION CAN FUNCTION AS TRANSFER COUPLER BETWEEN OPERATOR AND CARGO
+
+This is much stronger than generic hand symbolism.
+
+The hand is attached to a specific process:
+capture/connection
+→ lift
+→ transfer.
+
+---
+
+# M52C-4 — “BETWEEN EARTH AND HEAVEN” DEFINES AN INTERMEDIATE TRANSFER REGION
+
+Ezekiel is not described simply as:
+on earth
+or
+in heaven.
+
+He occupies:
+**between**.
+
+That intermediate relation is highly relevant to Vardath’s temporary-contact/gate model.
+
+### Strict control
+
+The text explicitly frames this as:
+visionary transport by spirit.
+
+Therefore:
+intermediate vertical relation = real narrative geometry;
+literal physical world-layer corridor = unproven.
+
+---
+
+# Ezekiel 8:3 — transfer ends at a threshold/gate
+
+Destination:
+entrance/gateway of inner court facing north.
+
+This produces a complete process skeleton:
+
+**operator/body**
+→ **hand coupling**
+→ **vertical lift**
+→ **intermediate earth/heaven position**
+→ **arrival at gate**.
+
+## M52C-5 — TRANSFER CAN TERMINATE AT A BOUNDARY INTERFACE RATHER THAN AT THE FINAL INTERIOR DESTINATION
+
+This is important.
+
+The gate is:
+transition point,
+not
+ultimate destination.
+
+---
+
+# Ezekiel 8:3–5 — north is a gate orientation, not the same vector as vertical lift
+
+Lift:
+vertical earth↔heaven relation.
+
+Gate:
+faces north.
+
+Later:
+east becomes important.
+
+## M52C-6 — ONE TRANSITION CAN USE MULTIPLE INDEPENDENT DIRECTION AXES
+
+Track separately:
+
+vertical:
+earth/heaven.
+
+north:
+initial temple-gate orientation.
+
+east:
+sun worship / later exit route.
+
+This strongly confirms the permanent direction-control rule from Ezekiel 1.
+
+---
+
+# Ezekiel 8:4 — chapter-1 glory system is already present at destination
+
+The glory of God:
+there at Jerusalem.
+
+Ezekiel recognizes it as:
+same type/identity as earlier vision.
+
+## M52C-7 — APPARATUS/PRESENCE IDENTITY CAN PERSIST WHILE OBSERVER LOCATION CHANGES
+
+The same larger phenomenon is not limited to one geographic scene.
+
+---
+
+# Ezekiel 8:5–6 — boundary violation is relational before physical destruction
+
+The image at entrance:
+occupies sacred threshold.
+
+Its presence is said to:
+drive divine presence far from sanctuary.
+
+This is not yet:
+wall collapse.
+
+It is:
+functional/relational boundary failure.
+
+## M52C-8 — SACRED/CONTROL BOUNDARY CAN FAIL THROUGH INCOMPATIBLE OCCUPANCY BEFORE STRUCTURE BREAKS
+
+This is important for gate analysis:
+boundary failure can be:
+- physical;
+- access-policy;
+- occupancy;
+- relational;
+- informational.
+
+---
+
+# Ezekiel 8:7–9 — hole in wall becomes an entrance
+
+Ezekiel sees:
+small hole in wall.
+
+Command:
+dig through wall.
+
+Result:
+entrance/doorway is exposed or created.
+
+Then:
+he enters hidden interior.
+
+This is one of the clearest aperture-formation sequences in the entire corpus.
+
+## M52C-9 — CLOSED BARRIER CAN BECOME PASSABLE BY LOCAL ENLARGEMENT OF AN EXISTING DEFECT
+
+Sequence:
+
+solid wall
+→ small hole
+→ excavation/enlargement
+→ doorway/entrance
+→ traversal.
+
+This is a genuine gate-opening geometry.
+
+---
+
+# M52C-10 — ENLARGEMENT-OPENING IS THE OPPOSITE GEOMETRIC FAMILY FROM FINGERTRAP CONTRACTION
+
+Vardath fingertrap candidate:
+broad network
+→ narrows
+→ throat.
+
+Ezekiel 8 wall opening:
+barrier
+→ localized hole
+→ larger opening.
+
+Both can produce passage,
+but their geometry is opposite.
+
+This is an excellent control.
+
+---
+
+# Ezekiel 8:9–12 — hidden chamber contains wall imagery “all around”
+
+Inside:
+images of creeping/loathsome animals and idols cover walls.
+
+Seventy elders:
+occupy chamber.
+
+Incense:
+rises.
+
+Darkness:
+conceals activity.
+
+## M52C-11 — HIDDEN INTERIOR SPACE CAN HAVE ITS OWN POPULATION, IMAGERY, ATMOSPHERIC OUTPUT AND INFORMATION ASSUMPTIONS
+
+This is a nested-enclosure system.
+
+Outside wall:
+ordinary visible court.
+
+Inside wall/chamber:
+hidden social/cultic subsystem.
+
+This strengthens the nested-boundary model.
+
+---
+
+# Ezekiel 8:10 — creeping/animal images are not living support creatures
+
+The wall has:
+depictions of creeping/loathsome animals.
+
+They:
+do not support architecture;
+do not move;
+do not carry throne;
+do not alter ground.
+
+## M52C-12 — ANIMAL/REPTILE ICONOGRAPHY MUST NOT BE UPGRADED TO DRAGON-SUPPORT EVIDENCE WITHOUT FUNCTION
+
+This is a direct control against false positives.
+
+---
+
+# Ezekiel 8:11 — incense creates upward flow inside hidden chamber
+
+Each elder:
+holds censer.
+
+Incense cloud:
+ascends.
+
+This is a real upward material-flow image.
+
+## M52C-13 — SMALL-SCALE UPWARD FLOW CAN OCCUR INSIDE A NESTED ENCLOSURE WITHOUT BEING WORLD-LAYER TRANSFER
+
+Source:
+censer.
+
+Carrier:
+smoke/incense.
+
+Direction:
+up.
+
+Cause:
+combustion.
+
+Keep object/cause explicit.
+
+---
+
+# Ezekiel 8:14–16 — movement proceeds deeper through multiple temple thresholds
+
+Sequence:
+north gate
+→ hidden wall/chamber
+→ north gate of temple
+→ inner court
+→ area between porch and altar.
+
+This is progressive movement through nested sacred layers.
+
+## M52C-14 — COMPLEX GATE SYSTEM CAN REQUIRE MULTIPLE SERIAL THRESHOLDS
+
+A “gate” is not necessarily:
+one door in one wall.
+
+Temple access is:
+layered.
+
+This prepares for later Ezekiel 40–48 architecture.
+
+---
+
+# Ezekiel 8:16 — twenty-five men reverse their body orientation relative to temple
+
+Bodies:
+backs to temple.
+
+Faces:
+east.
+
+They worship:
+sun to east.
+
+This is explicit orientation reversal.
+
+## M52C-15 — BODY ORIENTATION CAN EXPRESS SYSTEM ALLEGIANCE / COUPLING DIRECTION
+
+The important variable is not merely:
+where the body is.
+
+It is:
+which way it faces.
+
+This reinforces:
+orientation state can change system relation without changing location.
+
+---
+
+# Ezekiel 8:18 — cry transmission is intentionally rejected at receiver
+
+People:
+cry loudly.
+
+Divine receiver:
+will not listen.
+
+Signal production:
+yes.
+
+Propagation to “ears”:
+rhetorically yes.
+
+Acceptance/response:
+no.
+
+## M52C-16 — DELIBERATE RECEIVER NON-RESPONSE MUST BE DISTINGUISHED FROM PHYSICAL SIGNAL BLOCKAGE
+
+Compare Lamentations 3:
+cloud prevents prayer passage.
+
+Here:
+cry is not answered/listened to.
+
+Different failure layer.
+
+---
+
+# Ezekiel 9:1–2 — execution/marking agents approach from an upper north gate
+
+Command:
+city executioners draw near.
+
+Six armed men:
+come from direction of upper gate facing north.
+
+With them:
+one linen-clad man carrying writing case.
+
+This produces:
+**six destructive agents + one marking/recording agent**.
+
+## M52C-17 — MULTI-AGENT SYSTEM CAN SEPARATE CLASSIFICATION FROM EXECUTION FUNCTIONS
+
+The linen figure:
+marks.
+
+Others:
+act after classification.
+
+This is systemically important.
+
+---
+
+# Number control — six plus one
+
+There are:
+six armed men
++
+one linen-clad recorder.
+
+Total visible group:
+seven.
+
+But their functions are asymmetric:
+6 destructive
++
+1 classificatory/recording.
+
+## M52C-18 — TOTAL NUMBER SHOULD NOT ERASE FUNCTIONAL PARTITION
+
+“Seven figures” is true arithmetically.
+
+But the operative structure is:
+**6 + 1**.
+
+Do not flatten it into a generic sacred seven.
+
+---
+
+# Ezekiel 9:3 — glory moves from cherub to temple threshold
+
+This is the first explicit stage in the departure sequence.
+
+glory/presence:
+associated with cherub
+→ rises/moves to temple entryway/threshold.
+
+## M52C-19 — MOBILE PRESENCE CAN CHANGE SUPPORT/LOCATION STATE IN DISCRETE STAGES
+
+This is much closer to the project’s phase tracking than generic “departure” language.
+
+---
+
+# Ezekiel 9:4–6 — population is classified before hazard by forehead mark
+
+Linen figure:
+passes through city.
+
+He:
+marks specific people.
+
+Execution agents:
+must not touch marked subset.
+
+Thus:
+same urban space
++
+same approaching hazard
++
+different outcome
+based on
+**information/classification state**.
+
+## M52C-20 — HAZARD PERMEABILITY CAN DEPEND ON RECEIVER METADATA RATHER THAN PHYSICAL LOCATION
+
+This is extremely important.
+
+Two people can stand in same region
+while one belongs to:
+protected class
+
+and another:
+unprotected class.
+
+### Vardath relevance
+
+This gives an abstract analogue for:
+selective transfer/protection.
+
+But:
+no physical mechanism for the mark is supplied.
+
+---
+
+# Ezekiel 9 “mark” / taw control
+
+The Hebrew noun is related to:
+*taw* / mark/sign.
+
+Later traditions sometimes connect it with the alphabetic letter and its ancient shape.
+
+But Ezekiel 9 itself does not specify:
+exact geometric form
+in enough detail to make a Vardath cross/axis claim.
+
+## M52C-21 — NAMED MARK ≠ KNOWN GEOMETRIC SHAPE UNLESS SOURCE SPECIFIES FORM
+
+This protects against retrofitting later alphabet shapes.
+
+---
+
+# Ezekiel 9:6 — destruction begins at sanctuary
+
+The most sacred interior:
+does not become safest zone.
+
+Judgment:
+begins there.
+
+## M52C-22 — CENTRAL/SACRED LOCATION CAN BECOME FIRST FAILURE ZONE
+
+This strongly reinforces:
+center ≠ safety.
+
+In some failures,
+centrality increases exposure.
+
+---
+
+# Ezekiel 9:11 — marking agent returns status to source
+
+Linen figure:
+completes mission.
+
+Then:
+reports completion.
+
+This closes a proper control loop:
+
+command
+→ classification task
+→ execution
+→ completion report.
+
+## M52C-23 — CONTROL SYSTEM CAN INCLUDE ACKNOWLEDGED TASK COMPLETION, NOT JUST ONE-WAY COMMAND
+
+This is a clear feedback-loop structure.
+
+---
+
+# Ezekiel 10:1 — chapter-1 support/throne architecture reappears over cherubim
+
+Above:
+dome/expanse.
+
+Above that:
+sapphire-like throne form.
+
+Below:
+cherubim.
+
+This explicitly reconnects:
+Ezekiel 8–11
+with
+Ezekiel 1.
+
+## M52C-24 — SUPPORT/MOBILITY APPARATUS PERSISTS INTO THE TEMPLE-JUDGMENT SEQUENCE
+
+This matters enormously.
+
+The apparatus is not a one-scene curiosity.
+
+It participates in later transition.
+
+---
+
+# Ezekiel 10:2 — human intermediary enters wheelwork beneath cherubim
+
+Command to linen-clad man:
+
+go within:
+wheelwork
+
+under:
+cherubim
+
+take:
+burning coals
+
+scatter:
+over city.
+
+This is one of the strongest mechanical transfer chains yet.
+
+## M52C-25 — EZEKIEL 10 JOINS APPARATUS INTERIOR, CARGO EXTRACTION, HUMAN INTERMEDIARY AND CITY-WIDE DISTRIBUTION
+
+This is far more process-dense than a generic fire symbol.
+
+---
+
+# Ezekiel 10:6–7 — fire cargo is handed through two interfaces
+
+Exact transfer sequence:
+
+fire among/within cherubim-wheel system
+→ cherub reaches hand into fire
+→ cherub places fire into linen-man’s hands
+→ linen man receives
+→ exits
+→ city becomes destination of scattered fire.
+
+## M52C-26 — CARGO CAN PASS THROUGH SERIAL HANDOFF NODES WITHOUT THE WHOLE APPARATUS MOVING TO THE FINAL RECEIVER
+
+This is highly relevant to Vardath transfer theory.
+
+Carrier chain:
+source reservoir
+→ internal node
+→ mobile intermediary
+→ target environment.
+
+---
+
+# M52C-27 — INTERNAL ENERGY/FIRE FIELD CAN BECOME EXTRACTABLE CARGO
+
+In Ezekiel 1:
+fire/lightning field
+moves among living creatures.
+
+In Ezekiel 10:
+fire/coals from within/between cherubim-wheelwork
+is deliberately removed
+and redistributed.
+
+This is a major continuity.
+
+### Vardath relevance
+
+This looks much more like:
+**energy/material generated or stored inside lattice apparatus**
+→ **transferred outward**
+
+than earlier generic fire language.
+
+### Control
+
+It remains visionary/theological fire imagery.
+
+No measured plasma/electric mechanism is supplied.
+
+---
+
+# Ezekiel 10:4–5 — cloud/light/sound expand beyond the apparatus into temple courts
+
+Cloud:
+fills inner court/house.
+
+Brightness:
+fills court.
+
+Wing sound:
+reaches outer court.
+
+Thus different outputs propagate across different boundaries.
+
+## M52C-28 — APPARATUS CAN COUPLE TO SURROUNDING ENVIRONMENT THROUGH MULTIPLE CARRIERS
+
+Carriers:
+cloud;
+light;
+sound.
+
+Each has different range/permeability.
+
+This strongly supports channel-specific modeling.
+
+---
+
+# Ezekiel 10:7–8 — cherubim possess hand-like structures beneath wings
+
+Hand:
+under wing.
+
+That same hand:
+interfaces with fire
+and
+human intermediary.
+
+## M52C-29 — NETWORK NODE CAN COMBINE SUPPORT/MOBILITY MEMBER WITH MANIPULATOR/TRANSFER MEMBER
+
+Wing:
+mobility/network role.
+
+Hand:
+cargo manipulation.
+
+This is a major composite-function insight.
+
+---
+
+# Ezekiel 10:9–17 — wheel/cherub system remains synchronized exactly as in chapter 1
+
+Four wheels.
+One by each cherub.
+Wheel-within-wheel.
+Four-direction movement.
+Eyes.
+Rise/stop coupling.
+Shared living spirit.
+
+## M52C-30 — APPARATUS IDENTITY IS CONFIRMED BY REPEATED KINEMATIC SIGNATURE
+
+This is stronger than visual resemblance alone.
+
+Identity is established through:
+same node count;
+same wheel relation;
+same direction behavior;
+same rise/stop coupling;
+same animating principle.
+
+---
+
+# Ezekiel 10:15,20 — living creatures are explicitly identified as cherubim
+
+Ezekiel recognizes:
+these are the same beings from Chebar.
+
+## M52C-31 — NAME CAN CHANGE / BECOME SPECIFIED WHILE SYSTEM IDENTITY REMAINS
+
+Earlier:
+living creatures.
+
+Later:
+cherubim.
+
+This confirms the project’s role-first method:
+function/process can persist despite naming development.
+
+---
+
+# Ezekiel 10:18–19 — glory transfers from threshold onto/above mobile cherub apparatus
+
+Sequence:
+
+glory:
+threshold
+
+→ departs threshold
+→ stops above cherubim
+
+cherubim:
+lift wings
+→ rise from earth
+
+wheels:
+remain beside them
+
+whole assembly:
+moves to east gate.
+
+This is a genuine **carrier-transfer + relocation** sequence.
+
+## M52C-32 — MOBILE SUPPORT/MOBILITY APPARATUS CAN RECEIVE PRESENCE/CARGO AFTER IT LEAVES FIXED THRESHOLD
+
+This is one of the strongest architecture-to-vehicle transitions in the corpus.
+
+---
+
+# M52C-33 — FIXED SACRED CENTER → MOBILE APPARATUS → GATE IS AN EXPLICIT SEQUENCE
+
+Temple threshold:
+fixed node.
+
+Cherubim/wheels:
+mobile carrier.
+
+East gate:
+boundary node.
+
+This is extremely relevant to the Vardath process grammar.
+
+Still:
+no fingertrap narrowing.
+
+---
+
+# Ezekiel 10:19 — apparatus rises from earth before stopping at east gate
+
+Movement:
+ground-associated state
+→ vertical lift
+→ horizontal relocation
+→ gate stop.
+
+## M52C-34 — VERTICAL LIFT CAN PRECEDE HORIZONTAL GATE TRANSIT
+
+This is a clean multi-axis motion sequence.
+
+---
+
+# Ezekiel 11:1 — spirit independently transports Ezekiel to same east-gate region
+
+Spirit:
+lifts Ezekiel.
+
+Destination:
+east gate.
+
+This parallels the apparatus route.
+
+## M52C-35 — OBSERVER/RELAY TRANSPORT AND APPARATUS TRANSPORT CAN CONVERGE ON SAME BOUNDARY NODE THROUGH DISTINCT CARRIERS
+
+Ezekiel:
+moved by spirit.
+
+Glory:
+carried/associated with cherub/wheel system.
+
+Both:
+east gate.
+
+Do not collapse the carriers into one mechanism automatically.
+
+---
+
+# Ezekiel 11:3–11 — “city as pot / people as meat” is enclosure metaphor and then reversed
+
+Leaders claim:
+city = pot;
+we = meat.
+
+The metaphor implies:
+protected interior/container.
+
+Oracle reverses it:
+the dead are the meat;
+living leaders will be taken out.
+
+## M52C-36 — ENCLOSURE METAPHOR CAN BE REVERSED BY FORCED EXTRACTION
+
+Container:
+assumed protection.
+
+Actual process:
+occupants removed
+→ protection claim fails.
+
+This is very relevant to gate/cargo analysis.
+
+---
+
+# M52C-37 — EXTRACTION FROM ENCLOSURE ≠ VOLUNTARY GATE TRANSFER
+
+People:
+taken out
+and handed to foreigners.
+
+This is capture/judgment.
+
+Do not romanticize all boundary crossings as neutral transitions.
+
+---
+
+# Ezekiel 11:10–11 — border becomes terminal judgment boundary
+
+People:
+removed from city.
+
+Judged:
+at border of Israel.
+
+## M52C-38 — BOUNDARY CAN FUNCTION AS TERMINAL PROCESSING ZONE RATHER THAN ENTRY POINT
+
+Gate/border functions vary:
+entry;
+exit;
+sorting;
+judgment;
+transfer.
+
+---
+
+# Ezekiel 11:15–16 — exiles are geographically scattered but still given sanctuary relation
+
+Jerusalem inhabitants claim:
+exiles are far from YHWH;
+land belongs to those remaining.
+
+Oracle replies:
+though exiles were scattered among nations,
+YHWH has been for them a sanctuary “for a little while” / in some sense among the countries.
+
+This is a major spatial-theological reversal.
+
+## M52C-39 — SACRED FUNCTION CAN BECOME DISTRIBUTED RATHER THAN TIED TO ONE FIXED BUILDING
+
+Temple center:
+no longer exclusive sacred-access node.
+
+Scattered population:
+can retain sanctuary relation remotely.
+
+### Vardath relevance
+
+This supports the idea:
+function/coupling
+can persist after center relocation.
+
+It does not mean:
+physical temple geometry is everywhere.
+
+---
+
+# Ezekiel 11:17 — scattered population is regathered
+
+Sequence:
+
+scatter among countries
+→ gather from peoples
+→ assemble
+→ return to land.
+
+## M52C-40 — DISPERSION CAN BE FOLLOWED BY REASSEMBLY WITHOUT REVERSING HISTORY
+
+This strongly connects with Lamentations 5:
+restoration ≠ rewind.
+
+The same people/system is:
+reorganized after dispersion.
+
+---
+
+# Ezekiel 11:19 — stone heart becomes flesh heart; new spirit inserted
+
+One heart:
+given.
+
+New spirit:
+placed within.
+
+Stone heart:
+removed.
+
+Flesh heart:
+installed.
+
+This is explicit component replacement language.
+
+## M52C-41 — SYSTEM RECOVERY CAN BE PROJECTED AS COMPONENT REMOVAL + REPLACEMENT + NEW INTERNAL CONTROL FIELD
+
+This is much more precise than generic “renewal.”
+
+Sequence:
+old rigid component out
+→ new responsive component in
+→ new spirit/control state
+→ changed behavior.
+
+### Control
+
+This is moral/theological anthropology,
+not literal organ transplantation.
+
+---
+
+# Ezekiel 11:22–23 — glory leaves city in stages and stops on mountain east
+
+cherubim:
+lift wings.
+
+wheels:
+beside them.
+
+glory:
+above.
+
+Then:
+glory ascends from middle of city
+→ stops on mountain east of city.
+
+This completes the departure sequence.
+
+## M52C-42 — CENTRAL PRESENCE DEPARTURE IS STAGED, DIRECTIONAL AND NODE-BASED
+
+Not:
+instant disappearance.
+
+Instead:
+
+cherub
+→ threshold
+→ mobile apparatus
+→ east gate
+→ city exterior
+→ mountain east.
+
+This is one of the most important process sequences found so far.
+
+---
+
+# Ezekiel 8–11 glory-departure route
+
+Stage 0:
+glory present at temple/vision field.
+
+Stage 1:
+glory moves from cherub toward threshold (9:3).
+
+Stage 2:
+glory stands at threshold while fire transfer occurs (10:4).
+
+Stage 3:
+glory leaves threshold and occupies position above cherubim (10:18).
+
+Stage 4:
+cherub/wheel apparatus rises and stops at east gate (10:19).
+
+Stage 5:
+glory ascends from city and stops on mountain east of Jerusalem (11:22–23).
+
+## M52C-43 — EZEKIEL 8–11 PROVIDES A DISCRETE MULTI-STAGE RELOCATION PATH
+
+This is far stronger than:
+“God leaves temple.”
+
+The text tracks:
+successive nodes.
+
+---
+
+# Vardath comparison — apparatus + cargo + threshold + relocation
+
+This block has four features that earlier books often separated:
+
+## 1. support/mobility apparatus
+cherubim + wheels + expanse/throne architecture.
+
+## 2. threshold architecture
+north gates;
+inner court;
+hidden wall entrance;
+east gate;
+city border.
+
+## 3. transferable cargo
+fire/coals;
+marked/unmarked population classes;
+glory/presence position.
+
+## 4. relocation sequence
+earth/heaven transfer of Ezekiel;
+threshold shifts;
+apparatus rises;
+glory exits east;
+mountain stop.
+
+### Result
+
+**Ezekiel 8–11 is one of the most process-dense Vardath comparison blocks so far.**
+
+However:
+the text still does not supply
+**broad lattice → tightening → axial throat → material world transfer → reopening**.
+
+Its importance is:
+**mobile support apparatus + cargo handoff + gates + staged relocation**, not fingertrap contraction.
+
+---
+
+# Ezekiel 8:2–3 strict axis-person / Squatter-Man screening
+
+humanlike central figure:
+yes.
+
+upper/lower differentiated body:
+strong.
+
+hand/extension:
+strong.
+
+vertical relation:
+strong.
+
+cargo attachment:
+strong.
+
+earth↔heaven intermediate position:
+strong.
+
+gate destination:
+strong.
+
+bilateral arm support:
+not described.
+
+support of ground:
+absent.
+
+squatting/seated mountain posture:
+absent.
+
+two opposed spring strands:
+absent.
+
+### Verdict
+
+**One of the strongest axis-person transition sequences in Ezekiel, but still not a strict Squatter-Man support-body.**
+
+The important geometry is:
+
+**upper/lower humanlike operator**
+→ **hand**
+→ **vertical cargo lift**
+→ **between earth/heaven**
+→ **gate**.
+
+---
+
+# Ezekiel 8–11 strict fingertrap screening
+
+broad connected apparatus:
+yes — cherub/wheel system, though not woven web.
+
+network contact:
+yes from chapter 1 continuity.
+
+actual weave:
+not stated.
+
+contraction:
+absent.
+
+narrowing:
+absent.
+
+throat:
+absent.
+
+transfer/cargo:
+yes — fire and presence movement.
+
+gate:
+yes — multiple architectural thresholds.
+
+reopening:
+absent.
+
+### Verdict
+
+**High process similarity in transfer/gate stages; negative strict fingertrap morphology.**
+
+---
+
+# Ezekiel 8–11 strict dragon-ground-support screening
+
+living hybrid support-like beings:
+yes — cherubim.
+
+scholarly support-of-firmament interpretation:
+continues from Ezekiel 1.
+
+ground support:
+still no.
+
+dragons:
+not named.
+
+fire field:
+yes.
+
+mobile carrier role:
+strong.
+
+ground moves with apparatus:
+no.
+
+### Verdict
+
+**Support/mobility analogue remains very strong, but supported plane mismatch remains unresolved.**
+
+---
+
+# Ezekiel 8–11 channel / boundary matrix
+
+## house in exile / Jerusalem
+ordinary observer location / visionary destination.
+
+## earth / heaven
+lower and upper references with intermediate transfer region.
+
+## north gate / east gate
+entry/orientation node / departure node.
+
+## wall / hole
+closed barrier / local defect.
+
+## hole / doorway
+incipient aperture / traversable aperture.
+
+## visible court / hidden chamber
+public enclosure / concealed nested enclosure.
+
+## cry / divine hearing
+signal output / deliberate receiver refusal.
+
+## mark / execution
+classification metadata / hazard action.
+
+## unmarked / marked
+ordinary hazard class / protected class.
+
+## threshold / cherubim
+fixed node / mobile carrier.
+
+## fire reservoir / linen man
+source cargo / intermediary carrier.
+
+## cherub hand / human hand
+internal transfer interface / external transfer interface.
+
+## cherubim / wheels
+living support-mobility nodes / synchronized circular subsystem.
+
+## temple / mountain east
+former fixed sacred center / temporary exterior stopping node.
+
+## scattered exiles / sanctuary relation
+geographic dispersion / preserved functional coupling.
+
+## stone heart / flesh heart
+rigid old state / responsive new state.
+
+---
+
+# Ezekiel 8–11 continuous transformation timeline
+
+Ezekiel sits with elders in exile
+→ divine hand initiates vision
+→ humanlike upper/lower fiery-bright figure appears
+→ hand-like extension takes Ezekiel by hair
+→ spirit lifts him between earth and heaven
+→ visionary transfer terminates at north-facing inner-court gate
+→ previous glory system is present
+→ sacred threshold is occupied incompatibly
+→ Ezekiel moves to court wall
+→ small hole is identified
+→ wall is dug/enlarged
+→ hidden entrance opens
+→ concealed chamber becomes accessible
+→ hidden elders/incense system is observed
+→ Ezekiel moves through further north/inner thresholds
+→ bodies inside temple reverse orientation eastward
+→ warning gives way to judgment
+→ six destructive agents and one marking agent approach from upper north gate
+→ population is classified by mark before hazard
+→ glory shifts from cherub toward temple threshold
+→ marked subset remains selectively protected
+→ task completion is reported
+→ chapter-1 cherub/wheel/throne architecture reappears
+→ linen intermediary enters wheelwork beneath cherubim
+→ fire is taken from within apparatus
+→ cherub hand transfers fire to human hand
+→ intermediary carries fire outward toward city
+→ cloud/light/sound fill surrounding courts
+→ wheel/cherub kinematics remain synchronized
+→ glory leaves fixed threshold
+→ glory positions above mobile cherubim
+→ cherub/wheel apparatus rises from earth
+→ assembly stops at east gate
+→ spirit transports Ezekiel to same east-gate region
+→ city-as-protective-pot metaphor is reversed
+→ occupants are forcibly extracted
+→ border becomes judgment zone
+→ scattered exiles are redefined as retaining sanctuary relation
+→ future gathering/reassembly is promised
+→ rigid heart is replaced by responsive heart/new spirit
+→ cherub/wheel/glory assembly lifts again
+→ glory ascends from central city
+→ glory stops on mountain east of city
+→ spirit returns Ezekiel in vision to Chaldea/exiles
+→ vision closes
+→ Ezekiel retransmits what he saw.
+
+---
+
+# New master-mechanism additions from Ezekiel 8–11
+
+## M52C-1 — ORDINARY LOCATION AND VISIONARY TRANSFER FRAME CAN COEXIST
+## M52C-2 — ANTHROPOMORPHIC AXIS CAN CONTAIN DISTINCT UPPER/LOWER REGIMES
+## M52C-3 — HAND/EXTENSION CAN FUNCTION AS TRANSFER COUPLER
+## M52C-4 — INTERMEDIATE EARTH/HEAVEN REGION CAN BE NARRATIVELY EXPLICIT
+## M52C-5 — TRANSFER CAN TERMINATE AT BOUNDARY INTERFACE
+## M52C-6 — MULTIPLE DIRECTION AXES MUST REMAIN DISTINCT
+## M52C-7 — APPARATUS/PRESENCE IDENTITY CAN PERSIST ACROSS LOCATIONS
+## M52C-8 — BOUNDARY CAN FAIL THROUGH OCCUPANCY/RELATION BEFORE STRUCTURAL BREAK
+## M52C-9 — LOCAL DEFECT CAN BE ENLARGED INTO TRAVERSABLE APERTURE
+## M52C-10 — APERTURE ENLARGEMENT ≠ FINGERTRAP CONTRACTION
+## M52C-11 — NESTED ENCLOSURE CAN CONTAIN ITS OWN SOCIAL/ATMOSPHERIC SYSTEM
+## M52C-12 — ANIMAL/REPTILE ICONOGRAPHY ≠ SUPPORT CREATURE WITHOUT FUNCTION
+## M52C-13 — LOCAL UPWARD SMOKE FLOW ≠ WORLD-LAYER TRANSFER
+## M52C-14 — COMPLEX GATE SYSTEM CAN CONTAIN SERIAL THRESHOLDS
+## M52C-15 — BODY ORIENTATION CAN EXPRESS COUPLING/ALLEGIANCE DIRECTION
+## M52C-16 — DELIBERATE RECEIVER REFUSAL ≠ PHYSICAL SIGNAL BLOCKAGE
+## M52C-17 — CLASSIFICATION AND EXECUTION CAN BE SEPARATE AGENT FUNCTIONS
+## M52C-18 — TOTAL NUMBER SHOULD NOT ERASE FUNCTIONAL PARTITION
+## M52C-19 — MOBILE PRESENCE CAN CHANGE LOCATION IN DISCRETE STAGES
+## M52C-20 — HAZARD PERMEABILITY CAN DEPEND ON METADATA/CLASS
+## M52C-21 — MARK NAME ≠ KNOWN GEOMETRIC FORM
+## M52C-22 — CENTRAL/SACRED LOCATION CAN BE FIRST FAILURE ZONE
+## M52C-23 — CONTROL LOOP CAN INCLUDE COMPLETION FEEDBACK
+## M52C-24 — SUPPORT/MOBILITY APPARATUS PERSISTS INTO JUDGMENT SEQUENCE
+## M52C-25 — APPARATUS INTERIOR + CARGO EXTRACTION + INTERMEDIARY + DISTRIBUTION CAN FORM ONE CHAIN
+## M52C-26 — CARGO CAN MOVE THROUGH SERIAL HANDOFF NODES
+## M52C-27 — INTERNAL ENERGY/FIRE FIELD CAN BECOME EXTRACTABLE CARGO
+## M52C-28 — APPARATUS CAN COUPLE TO ENVIRONMENT THROUGH CLOUD/LIGHT/SOUND CHANNELS
+## M52C-29 — NETWORK NODE CAN COMBINE MOBILITY AND MANIPULATION FUNCTIONS
+## M52C-30 — APPARATUS IDENTITY CAN BE CONFIRMED BY KINEMATIC SIGNATURE
+## M52C-31 — NAME CHANGE DOES NOT REQUIRE SYSTEM IDENTITY CHANGE
+## M52C-32 — MOBILE APPARATUS CAN RECEIVE PRESENCE/CARGO AFTER FIXED-THRESHOLD DEPARTURE
+## M52C-33 — FIXED CENTER → MOBILE APPARATUS → GATE CAN BE EXPLICIT
+## M52C-34 — VERTICAL LIFT CAN PRECEDE HORIZONTAL GATE TRANSIT
+## M52C-35 — OBSERVER AND APPARATUS CAN REACH SAME NODE THROUGH DISTINCT CARRIERS
+## M52C-36 — ENCLOSURE METAPHOR CAN REVERSE THROUGH FORCED EXTRACTION
+## M52C-37 — FORCED EXTRACTION ≠ VOLUNTARY GATE TRANSFER
+## M52C-38 — BOUNDARY CAN FUNCTION AS TERMINAL PROCESSING ZONE
+## M52C-39 — SACRED FUNCTION CAN BECOME DISTRIBUTED AFTER CENTER FAILURE
+## M52C-40 — DISPERSION CAN BE FOLLOWED BY REASSEMBLY WITHOUT REWIND
+## M52C-41 — RECOVERY CAN BE PROJECTED AS COMPONENT REPLACEMENT + NEW INTERNAL CONTROL FIELD
+## M52C-42 — CENTRAL PRESENCE DEPARTURE CAN BE STAGED/DIRECTIONAL/NODE-BASED
+## M52C-43 — EZEKIEL 8–11 PROVIDES DISCRETE MULTI-STAGE RELOCATION PATH
+
+---
+
+# Number / timing register — Ezekiel 8–11
+
+Record without forcing:
+
+- sixth year;
+- sixth month;
+- fifth day.
+- **70 elders** in hidden chamber.
+- about **25 men** between porch/altar in Ezekiel 8.
+- **6 armed executioners + 1 linen-clad marking figure** in Ezekiel 9.
+- **4 cherubim / 4 wheels** continue from Ezekiel 1.
+- **25 men** again at east gate in Ezekiel 11; literary/identity relationship with Ezekiel 8’s 25 requires care.
+- no gate-open duration.
+- no world-layer count.
+- no two-spring count.
+- no contraction interval.
+
+### Number control
+
+The most interesting structural number here is not generic seven but:
+**6 + 1 function partition**.
+
+Likewise:
+four retains its local cherub/wheel/directional role.
+
+Do not convert these into Vardath 1–3–7/8 without independent mechanism.
+
+---
+
+# Textual / historical / scholarly controls — Ezekiel 8–11
+
+1. Working primary text: Ezekiel 8–11 NRSVUE.
+2. The vision is explicitly framed as occurring “in visions of God,” with Ezekiel’s ordinary setting in exile still supplied.
+3. Ezekiel 8:2 has textual variation around whether the humanlike figure is described with “man/fire” wording; upper/lower differentiated appearance is secure enough for comparison, but exact lexical detail must remain qualified.
+4. C.D. Gross’s temple-architecture study emphasizes that Ezekiel’s movements proceed through real temple-style gates, courts and possible gatehouse/wall chambers; the exact reconstruction of some locations remains debated.
+5. The hole → digging → entrance sequence is an actual aperture-opening process but belongs to temple-wall access, not a cosmological gate.
+6. The hidden animal images are representations on walls, not active living creatures.
+7. Ezekiel 9’s mark functions as selective protection metadata. Later alphabetic/cross interpretations of *taw* should not be retrojected as exact original geometry without evidence.
+8. Ezekiel 10 explicitly re-identifies the beings as the same living creatures seen by Chebar and as cherubim.
+9. The coals/fire transfer is unusually explicit: source between/within cherubim-wheelwork → cherub hand → linen-man hand → city.
+10. Scholarship on Ezekiel’s divine presence treats 8–11 as a staged movement of glory out of the Jerusalem temple toward the mountain east of the city.
+11. Malachy Udochukwu Theophilus specifically analyzes divine presence across three spatial settings in Ezekiel’s vision cycles: temple, exile, and mountain east of the city.
+12. Janina Hiebel treats Ezekiel 8–11 as the first temple vision of death/crisis that later contrasts with re-creation imagery in Ezekiel 37.
+13. The eastward departure in 8–11 is later counterbalanced in the book by return/restoration material in Ezekiel 40–48; full comparison should wait until those chapters are reached sequentially.
+14. Strict fingertrap morphology remains negative.
+15. Support/mobility-apparatus analogy remains exceptionally strong.
+16. Strongest new contribution of 8–11: **apparatus + cargo handoff + architectural thresholds + staged relocation in one continuous vision sequence.**
+
+---
+
+# Sources logged — Ezekiel 8–11
+
+Primary:
+- Ezekiel 8–11 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel%208-11&version=NRSVUE
+
+Temple architecture / spatial sequence:
+- C. D. Gross, “Ezekiel and Solomon’s Temple,” *The Bible Translator* 50.2 (1999):
+  https://translation.bible/wp-content/uploads/2024/06/gross-1999-ezekiel-and-solomons-temple.pdf
+- Krijn Stijkel, *Visualising the Vision*, dissertation, for Ezekiel temple spatial/separation architecture and the 8–11 / 40–48 structural relation:
+  https://theoluniv.ub.rug.nl/409/1/Stijkel%2CK.Proefschrift2021.pdf
+
+Divine-presence / departure scholarship:
+- Malachy Udochukwu Theophilus, “kāḇôḏ (Glory), rûaḥ (Spirit) and yaḏ (Hand): Divine Presence and Activity of Ezekiel (Ezek 1–3; 8–11; 40–48),” Santa Clara University dissertation (2020):
+  https://scholarcommons.scu.edu/jst_dissertations/51
+- Janina Maria Hiebel, “Visions of death and re-creation: Ezekiel 8–11, 37:1–14 and the crisis of identity in the Babylonian exile and beyond,” *Pacifica* 28.3:
+  https://journals.sagepub.com/doi/10.1177/1030570X16666304
+
+Textual/mark control:
+- Cambridge excerpt discussing the Ezekiel 9 *taw* mark and Exodus comparison:
+  https://assets.cambridge.org/97811070/48355/excerpt/9781107048355_excerpt.pdf
+
+---
+
+# SECTION 52C CHECKPOINT — EZEKIEL 8–11 COMPLETE
+# EZEKIEL 1–11 COMPLETE IN FRESH SEQUENTIAL PASS
+
+Strongest first-time findings:
+
+1. **Part 1’s earlier Ezekiel 8 insight holds up: an upper/lower anthropomorphic figure extends a hand, couples to Ezekiel, lifts him between earth and heaven and delivers him to a gate.**
+2. **The wall-hole episode is one of the clearest literal aperture-formation sequences in the Bible: closed barrier → small defect → enlargement → entrance → traversal. It is geometrically the opposite of fingertrap contraction.**
+3. **Ezekiel 9 separates classification from hazard: a mark changes who the execution system may touch even though marked and unmarked people occupy the same city.**
+4. **Ezekiel 10 is the strongest cargo-handoff sequence yet involving the chapter-1 apparatus: fire inside/between cherubim-wheelwork → cherub hand → human intermediary → city.**
+5. **The same cherub/wheel system is identified through repeated kinematics and name continuity, so apparatus identity across chapters is unusually secure.**
+6. **The glory’s departure is not instantaneous: cherub → threshold → cherubim/mobile apparatus → east gate → mountain east of city.**
+7. **This produces an explicit fixed-center → mobile-carrier → gate → exterior-node sequence.**
+8. **The apparatus can move vertically from earth and then horizontally to a gate, while Ezekiel can be moved to the same node by spirit through a distinct transport channel.**
+9. **Ezekiel 11 makes sanctuary function partly distributable among scattered exiles, separating sacred coupling from one fixed geographic building.**
+10. **Restoration again means reassembly/reconfiguration after dispersion, not rewind.**
+11. **Ezekiel 8–11 therefore becomes one of the most process-dense Vardath analogues so far, even though strict fingertrap morphology remains absent.**
+12. **The strongest Vardath correspondence is now not “wheel = lattice” by itself, but the integrated system: support/mobility architecture + internal fire field + manipulation interface + intermediary cargo transfer + gate sequence + staged relocation.**
+
+### Next live block
+
+**Ezekiel 12–16**
+
+Priority:
+- baggage/exile through wall opening;
+- shoulder-carried cargo;
+- digging through wall and passage through aperture at dusk;
+- covered face / altered sight;
+- prince caught in net/snare and transported to Babylon;
+- scattered attendants;
+- trembling eating/drinking;
+- proverb about delayed visions and time compression;
+- false prophets building/flimsy wall + whitewash;
+- wind/hail destroying wall;
+- women sewing bands/veils and hunting lives;
+- idolatrous heart/stumbling blocks;
+- Noah/Daniel/Job as survivor-righteousness controls;
+- Jerusalem as foundling body: cord, water, blood, growth, ornament, covenant;
+- two sisters / paired-city body projection begins approaching in later chapters;
+- HIGH PRIORITY: Ezekiel 12 repeats wall-digging as an actual escape/exile aperture, allowing direct comparison with Ezekiel 8’s hidden-wall opening.
