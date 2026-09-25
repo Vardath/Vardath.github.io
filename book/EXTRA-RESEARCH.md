@@ -22962,3 +22962,800 @@ Priority:
 - city wilderness / Jerusalem desolate;
 - temple burned;
 - strict test: heaven opening→descent→mountain reaction against Vardath sky-lattice/dragon-ground-support mechanism.
+
+
+---
+
+# SECTION 49 progress D2V — Isaiah 64
+## First-time research pass: heavens torn open, downward descent, mountain quaking, fire→brushwood/water heating, unexpected prior theophany, waiting/observation, leaf/wind removal, clay/potter formation, wilderness/desolation, burned sanctuary, and strict comparison with the Vardath sky-web + dragon ground-support lattice
+
+Isaiah 64 is a **high-priority structural Vardath comparison**.
+
+It begins with one of the strongest upper-boundary transformation images in the reconstructed Isaiah research so far:
+
+**heavens**
+→ **torn/rent open**
+→ **descent**
+→ **mountains quake below**.
+
+The immediate continuation adds:
+
+fire
+→ ignites brushwood;
+fire
+→ heats/boils water.
+
+This gives a coherent process cluster:
+
+**upper boundary disruption**
+→ **cross-boundary descent**
+→ **lower terrain response**
+→ **high-energy thermal response**.
+
+That is substantially closer to Vardath Cosmology than a generic “gate” noun.
+
+Vardath model:
+
+quiet spiderweb/lattice
+→ dragons as lattice-springs support ground/world layer
+→ same connected structure changes geometry
+→ fingertrap/throat forms
+→ interaction/transfer
+→ terrain/water/atmosphere respond
+→ support later re-establishes.
+
+Isaiah 64 supplies:
+- an upper boundary capable of being rent;
+- cross-boundary descent;
+- mountain reaction;
+- fire/water reaction.
+
+It does **not** explicitly supply:
+- dragons;
+- load-bearing ground springs;
+- woven strand network;
+- axial narrowing;
+- reversible reopening.
+
+Therefore Isaiah 64 is a **major boundary-disruption analogue** but still an incomplete strict fingertrap match.
+
+---
+
+# Isaiah 64:1 — heavens are not merely “opened”; they are torn/rent
+
+The prayer asks:
+
+heavens
+→ tear/rend;
+source
+→ come down.
+
+The Hebrew verb is commonly used for:
+tearing/rending garments.
+
+Recent commentary explicitly notes the garment-rending force of the verb and connects it with ancient ways of imagining heaven as a covering/expanse.
+
+## M49D2V-1 — THE UPPER DOMAIN IS PROJECTED AS A CONTINUOUS BOUNDARY/SHEET THAT CAN BE RUPTURED
+
+This is structurally stronger than:
+“a door in heaven opens.”
+
+The object being changed is:
+**the heavenly boundary itself**.
+
+---
+
+# Isaiah 64:1 — heaven-as-rendable covering and Isaiah’s stretched-heaven motif now interact
+
+Earlier Isaiah repeatedly says:
+heavens are:
+- stretched;
+- spread.
+
+Isaiah 64:
+heavens can be:
+- torn/rent.
+
+## M49D2V-2 — ISAIAH NOW SUPPLIES BOTH EXTENDED AND RUPTURED STATES OF THE UPPER FIELD
+
+Possible sequence at motif level:
+
+stretched/extended heaven
+→ ruptured heaven.
+
+This is important for Vardath.
+
+### But strict control
+
+Vardath requires:
+
+stretched web
+→ strands reorient/narrow
+→ throat.
+
+Isaiah 64 gives:
+**rupture/tearing**,
+not:
+**reversible axial constriction**.
+
+---
+
+# M49D2V-3 — RUPTURE AND FINGERTRAP CONTRACTION ARE DIFFERENT GEOMETRIC OPERATIONS
+
+### rupture
+connectivity breaks.
+
+### fingertrap contraction
+connectivity is preserved while geometry changes.
+
+This is perhaps the most important strict distinction in Isaiah 64.
+
+If heaven is literally “torn,”
+that is mechanically closer to:
+breach
+than
+fingertrap.
+
+---
+
+# Isaiah 64:1 — boundary disruption precedes descent
+
+Order:
+
+heavens torn
+→ source comes down.
+
+## M49D2V-4 — CROSS-LEVEL DESCENT IS PRECEDED BY UPPER-BOUNDARY STATE CHANGE
+
+This is a genuine Vardath-relevant ordering.
+
+The passage does not merely say:
+source is above,
+then appears below.
+
+It asks for:
+the intervening heaven-state to change first.
+
+---
+
+# M49D2V-5 — BOUNDARY CHANGE BEFORE TRANSFER IS A STRONGER GATE ANALOGUE THAN TRANSFER LANGUAGE ALONE
+
+This should be elevated in the master map.
+
+---
+
+# Isaiah 64:1 — mountains quake as the lower-domain response
+
+Heaven boundary changes
+→ descent
+→ mountains quake.
+
+## M49D2V-6 — UPPER-BOUNDARY EVENT CAN BE LINKED TO LOWER-GROUND INSTABILITY IN ONE CONTINUOUS IMAGE
+
+This is highly relevant to the Vardath dragon-support model.
+
+### Vardath hypothesis
+
+dragon/lattice springs support ground
+→ support geometry changes
+→ mountains/ground react.
+
+### Isaiah 64 observation
+
+heaven torn/descent
+→ mountains quake.
+
+The sequence is compatible at the **effect level**.
+
+But:
+the text does not identify a dragon/support lattice as the causal bridge.
+
+---
+
+# M49D2V-7 — MOUNTAIN QUAKING IS A PREDICTED OUTPUT OF SUPPORT INSTABILITY, BUT ISAIAH 64 DOES NOT IDENTIFY THE SUPPORT MECHANISM
+
+This is precisely the kind of partial correspondence to retain without overclaiming.
+
+---
+
+# Isaiah 64:2 — fire kindles brushwood
+
+The comparison invokes:
+combustible vegetation
+→ ignition.
+
+## M49D2V-8 — HIGH-ENERGY INPUT CAN RAPIDLY PROPAGATE THROUGH DRY BIOLOGICAL MATERIAL
+
+This is an ordinary fire process.
+
+### Vardath relevance
+
+If the gate event alters:
+- plasma;
+- atmospheric electricity;
+- heat;
+- dryness,
+
+vegetation ignition could be a downstream hazard.
+
+But Isaiah uses fire as theophanic analogy.
+
+---
+
+# Isaiah 64:2 — fire causes water to boil
+
+Heat input
+→ water temperature rises
+→ boiling/phase-change threshold.
+
+## M49D2V-9 — ENERGY INPUT CAN DRIVE WATER ACROSS A THERMAL PHASE THRESHOLD
+
+This is a real physical process variable.
+
+### Vardath relevance
+
+The model should distinguish:
+- water relocation;
+- pressure change;
+- temperature change;
+- phase change.
+
+Isaiah 64 specifically contributes:
+**thermal water-state change**,
+not geographic water transfer.
+
+---
+
+# M49D2V-10 — BOILING WATER ≠ FLOODING WATER
+
+Same substance:
+different process class.
+
+This remains important when compiling the water timeline.
+
+---
+
+# Isaiah 64:2 — environmental response makes the event informationally visible
+
+Purpose:
+name known;
+nations tremble.
+
+Physical/theophanic outputs:
+become signals.
+
+## M49D2V-11 — ENVIRONMENTAL DISTURBANCE CAN FUNCTION AS AN INFORMATION BROADCAST TO DISTANT OBSERVERS
+
+mountain motion;
+fire;
+water response
+→ interpretable event signature.
+
+This is relevant to Vardath precursor detection.
+
+---
+
+# Isaiah 64:3 — the prayer explicitly remembers an earlier descent with the same mountain response
+
+“When you did awesome deeds...
+you came down;
+mountains quaked.”
+
+This is not merely:
+a future request.
+
+It is:
+a requested replay of remembered process.
+
+## M49D2V-12 — PRESENT GATE-LIKE REQUEST CAN BE BASED ON A STORED PRIOR EVENT TEMPLATE
+
+This strongly links Isaiah 64 to:
+Sinai/theophany memory
+and the broader Exodus-remembrance structure of Isaiah 63.
+
+---
+
+# M49D2V-13 — A REPEATED PROCESS DESCRIPTION MAY BE TYPOLOGICAL MEMORY RATHER THAN LITERAL RECURRENCE OF IDENTICAL PHYSICS
+
+Important cycle control.
+
+The text asks:
+do again
+what was remembered.
+
+That does not prove:
+fixed periodicity.
+
+---
+
+# Isaiah 64:1–3 — Sinai/theophany control
+
+Working Preacher notes the sequence strongly recalls:
+divine descent at Sinai;
+cloud/fire;
+mountain shaking.
+
+The passage belongs to a broader biblical theophany tradition.
+
+## M49D2V-14 — ORDINARY THEOPHANY TRADITION IS A STRONG COMPETING EXPLANATION FOR HEAVEN-RENDING/MOUNTAIN-QUAKING LANGUAGE
+
+Any Vardath comparison must coexist with this.
+
+---
+
+# Isaiah 64:4 — no eye/ear has perceived comparable action
+
+The passage shifts from:
+environmental event
+to
+observer limits.
+
+## M49D2V-15 — EXTREME EVENT MAY LIE OUTSIDE NORMAL OBSERVER EXPERIENCE/REFERENCE CLASS
+
+This can amplify:
+surprise;
+misclassification.
+
+---
+
+# Isaiah 64:4 — waiting becomes the receiver state
+
+The source acts:
+for those who wait.
+
+## M49D2V-16 — LOW-ACTION OBSERVATION PHASE CAN PRECEDE SUDDEN HIGH-ENERGY INTERVENTION
+
+This resembles:
+long quiet period
+→ threshold event.
+
+Again:
+qualitative,
+not quantified.
+
+---
+
+# Isaiah 64:5 — hidden source / continued failure returns
+
+The source hides;
+population transgresses.
+
+## M49D2V-17 — LOW OBSERVABILITY DURING QUIET PHASE CAN DEGRADE MODEL/BEHAVIOR BEFORE TRANSITION
+
+This repeats Isaiah 57’s:
+silence → false confidence.
+
+---
+
+# Isaiah 64:6 — people wither like leaves
+
+Human/social state:
+leaf
+→ dry/withered.
+
+## M49D2V-18 — BIOLOGICAL DRYING/WITHERING CAN MODEL SYSTEM LOSS OF VITALITY
+
+This is a low-energy/failing state.
+
+---
+
+# Isaiah 64:6 — wind carries withered leaves away
+
+withering
+→ reduced attachment
+→ wind dispersal.
+
+## M49D2V-19 — LOSS OF ATTACHMENT/STRENGTH CAN MAKE OBJECTS SUSCEPTIBLE TO ATMOSPHERIC TRANSPORT
+
+Compare Isaiah 57:
+wind removes idols.
+
+### Vardath relevance
+
+A gate-era wind field may mobilize:
+dry vegetation;
+dust;
+debris;
+unanchored objects.
+
+---
+
+# M49D2V-20 — WIND TRANSPORT DEPENDS ON BOTH FORCE AND OBJECT ANCHOR/CONDITION
+
+Dry leaf:
+easy to move.
+
+Ground-supported lattice:
+far different load case.
+
+Do not equate them.
+
+---
+
+# Isaiah 64:7 — face hidden / people “melted” or delivered, textual variation
+
+NRSVUE follows ancient versions for:
+“delivered,”
+while Hebrew can be read with a form interpreted as “melted.”
+
+## M49D2V-21 — TEXTUAL VARIANT AT A POTENTIALLY PHYSICAL VERB MUST NOT BE USED AS FIRM MELTOLOGY EVIDENCE
+
+This is especially important for this project.
+
+Do not cite Isaiah 64:7 as:
+literal melting proof
+without noting the textual issue.
+
+---
+
+# Isaiah 64:8 — clay / potter gives material-forming model
+
+People:
+clay.
+
+Source:
+potter.
+
+## M49D2V-22 — SAME MATERIAL CAN BE RESHAPED BY EXTERNAL FORMING AGENT WHILE MATERIAL CONTINUITY IS PRESERVED
+
+This is a genuine:
+same-material / new-form
+analogue.
+
+### Vardath relevance
+
+Fingertrap:
+same strands / new geometry.
+
+Pottery:
+same clay / new form.
+
+Shared variable:
+material continuity through shape change.
+
+Different mechanism:
+plastic deformation by external maker.
+
+---
+
+# M49D2V-23 — MATERIAL-CONTINUITY TRANSFORMATION IS STRONGER ANALOGUE THAN SIMPLE REPLACEMENT, BUT TOPOLOGY STILL DIFFERS
+
+Clay:
+continuous bulk.
+
+Fingertrap:
+connected tensile lattice.
+
+Do not conflate.
+
+---
+
+# Isaiah 64:10 — holy cities → wilderness; Zion → wilderness; Jerusalem → desolation
+
+Urban system:
+→ failed low-occupancy landscape.
+
+## M49D2V-24 — BUILT/INHABITED SYSTEM CAN COLLAPSE INTO WILDERNESS/DESOLATION WITHOUT LOCATION DISAPPEARING
+
+This repeats:
+Micah;
+Isaiah 34;
+Isaiah 54.
+
+---
+
+# Isaiah 64:11 — temple/beautiful house is burned
+
+Infrastructure:
+fire
+→ destruction.
+
+## M49D2V-25 — THERMAL HAZARD CAN TERMINATE BUILT SACRED/URBAN FUNCTION
+
+This is ordinary destruction,
+not automatically plasma-catastrophe proof.
+
+---
+
+# Isaiah 64:11 — burned temple links the opening cosmic plea to actual ruins
+
+The chapter begins:
+tear heavens;
+shake mountains.
+
+It ends:
+our house is burned;
+places ruined.
+
+## M49D2V-26 — COSMIC-THEOPHANY LANGUAGE CAN BE DEPLOYED FROM WITHIN A CONCRETE POST-DESTRUCTION HUMAN LANDSCAPE
+
+This is a crucial historical control.
+
+The grand geometry is part of a communal lament over real devastation.
+
+---
+
+# Isaiah 64 — direct Vardath sky-web / dragon-support comparison
+
+## Vardath
+
+quiet upper structure:
+spiderweb/lattice.
+
+ground support:
+dragon lattice springs.
+
+transition:
+same network changes geometry
+→ fingertrap/throat
+→ cross-world interaction.
+
+expected outputs:
+- ground/mountain instability;
+- atmospheric/water/heat effects;
+- destructive environment;
+- later stabilization.
+
+## Isaiah 64
+
+upper structure:
+heavens as rendable covering.
+
+transition:
+heavens torn.
+
+cross-level motion:
+source comes down.
+
+lower output:
+mountains quake.
+
+energy analogy:
+brushwood burns;
+water boils.
+
+later landscape:
+cities wilderness;
+temple burned.
+
+### Strong correspondences
+
+1. upper boundary changes before descent;
+2. lower terrain reacts;
+3. thermal/water effects are part of event analogy;
+4. event is remembered as an earlier pattern.
+
+### Critical mismatches
+
+1. tearing breaks continuity rather than preserving it;
+2. no spiderweb/thread network;
+3. no dragon spring supports ground;
+4. no axial narrowing;
+5. no passage of world populations/material through a throat;
+6. no reopening/re-support stage.
+
+## M49D2V-27 — ISAIAH 64 IS A MAJOR BOUNDARY-RUPTURE / GROUND-RESPONSE ANALOGUE, NOT YET A STRICT FINGERTRAP TRANSFORMATION
+
+This should be ranked higher than generic gate imagery,
+but below a text that actually preserves same-network continuity.
+
+---
+
+# Isaiah 64 — breach versus fingertrap distinction
+
+Isaiah 58:
+breach
+= damaged boundary requiring repair.
+
+Isaiah 64:
+heaven
+= intentionally requested tear/rend.
+
+Vardath:
+fingertrap
+= reversible geometry change.
+
+## M49D2V-28 — THREE DIFFERENT BOUNDARY TRANSITIONS MUST REMAIN DISTINCT
+
+### breach
+uncontrolled failure.
+
+### tear/rend
+connectivity broken intentionally/violently.
+
+### fingertrap
+continuity preserved during constriction/reorientation.
+
+This is now a major master distinction.
+
+---
+
+# Isaiah 64 pair / process matrix
+
+## heaven / earth-mountains
+upper boundary / lower terrain.
+
+## tear / descent
+boundary disruption / cross-level movement.
+
+## descent / quake
+input motion / ground response.
+
+## fire / brushwood
+energy input / combustible biological substrate.
+
+## fire / water
+heat source / thermal-response medium.
+
+## remembered descent / requested descent
+past event template / desired replay.
+
+## waiting / sudden intervention
+quiet receiver state / high-energy event.
+
+## leaf / wind
+weakened object / dispersing force.
+
+## clay / potter
+continuous material / external forming operator.
+
+## city / wilderness
+built occupied system / collapsed landscape state.
+
+## temple / fire
+sacred infrastructure / destructive thermal input.
+
+---
+
+# Isaiah 64 continuous transformation timeline
+
+community perceives high/low separation
+→ asks upper boundary to tear open
+→ descent across boundary is requested
+→ lower mountains are expected to quake
+→ fire analogy supplies rapid propagation through brushwood
+→ fire heats water to boiling threshold
+→ environmental reaction becomes public signal
+→ prior unexpected descent is remembered
+→ prior mountains are remembered as quaking
+→ observer limits are acknowledged
+→ waiting state is affirmed
+→ source hiding / community failure are confessed
+→ population is projected as withering leaves
+→ wind disperses weakened leaves
+→ textual uncertainty appears at delivered/melted wording
+→ population is reprojected as clay
+→ source becomes potter/forming agent
+→ identity as one people is reasserted
+→ holy cities are described as wilderness
+→ Zion becomes wilderness
+→ Jerusalem becomes desolation
+→ temple/beautiful house is burned
+→ pleasant places remain ruins
+→ lament ends asking whether silence/restraint will continue.
+
+---
+
+# New master-mechanism additions from Isaiah 64
+
+## M49D2V-1 — UPPER DOMAIN CAN BE PROJECTED AS CONTINUOUS RENDABLE BOUNDARY
+## M49D2V-2 — ISAIAH HAS EXTENDED + RUPTURED STATES OF THE UPPER FIELD
+## M49D2V-3 — RUPTURE ≠ FINGERTRAP CONTRACTION
+## M49D2V-4 — BOUNDARY CHANGE CAN PRECEDE CROSS-LEVEL DESCENT
+## M49D2V-5 — BOUNDARY CHANGE BEFORE TRANSFER IS HIGH-VALUE GATE ANALOGUE
+## M49D2V-6 — UPPER EVENT CAN COINCIDE WITH LOWER TERRAIN INSTABILITY
+## M49D2V-7 — MOUNTAIN QUAKING FITS SUPPORT-FAILURE OUTPUT BUT DOES NOT IDENTIFY SUPPORT
+## M49D2V-8 — HIGH ENERGY CAN PROPAGATE THROUGH DRY BIOLOGICAL MATERIAL
+## M49D2V-9 — ENERGY INPUT CAN DRIVE WATER ACROSS THERMAL THRESHOLD
+## M49D2V-10 — BOILING WATER ≠ FLOOD WATER
+## M49D2V-11 — ENVIRONMENTAL DISTURBANCE CAN FUNCTION AS OBSERVER SIGNAL
+## M49D2V-12 — PRESENT REQUEST CAN REUSE STORED PRIOR-EVENT TEMPLATE
+## M49D2V-13 — TYPOLOGICAL REPLAY ≠ FIXED PHYSICAL RECURRENCE
+## M49D2V-14 — THEOPHANY/SINAI TRADITION IS STRONG ORDINARY CONTROL
+## M49D2V-15 — EXTREME EVENT MAY LIE OUTSIDE NORMAL REFERENCE CLASS
+## M49D2V-16 — WAITING/QUIET PHASE CAN PRECEDE SUDDEN INTERVENTION
+## M49D2V-17 — LOW OBSERVABILITY CAN DEGRADE BEHAVIOR/MODEL
+## M49D2V-18 — WITHERING CAN MODEL LOSS OF SYSTEM VITALITY
+## M49D2V-19 — WEAKENED/UNANCHORED OBJECTS ARE MORE WIND-MOBILE
+## M49D2V-20 — WIND TRANSPORT DEPENDS ON OBJECT CONDITION/ANCHORING
+## M49D2V-21 — TEXTUAL “MELTED” VARIANT CANNOT BE USED AS FIRM MELTOLOGY PROOF
+## M49D2V-22 — SAME MATERIAL CAN CHANGE FORM UNDER EXTERNAL FORMING AGENT
+## M49D2V-23 — MATERIAL CONTINUITY ANALOGUE ≠ SAME LATTICE TOPOLOGY
+## M49D2V-24 — URBAN SYSTEM CAN COLLAPSE TO WILDERNESS WITHOUT LOCATION LOSS
+## M49D2V-25 — THERMAL HAZARD CAN DESTROY BUILT INFRASTRUCTURE
+## M49D2V-26 — COSMIC LANGUAGE CAN ARISE FROM CONCRETE POST-DESTRUCTION LAMENT
+## M49D2V-27 — ISAIAH 64 = MAJOR BOUNDARY-RUPTURE/GROUND-RESPONSE ANALOGUE
+## M49D2V-28 — BREACH / TEAR / FINGERTRAP ARE DISTINCT BOUNDARY TRANSITIONS
+
+---
+
+# Number / timing register — Isaiah 64
+
+Record without forcing:
+
+- “ages past” = deep retrospective time;
+- no tear-open duration;
+- no descent duration;
+- no quake duration;
+- no temperature is specified for boiling beyond ordinary phase-threshold image;
+- no gate-width;
+- no world-layer count;
+- no recurrence interval.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 64
+
+1. Working primary text: Isaiah 64 NRSVUE, compared with LEB/RSV/ESV/NIV/NKJV.
+2. Isaiah 63:7–64:12 is commonly treated as a communal lament.
+3. The opening “tear/rend the heavens and come down” belongs to biblical divine-theophany traditions and likely evokes Sinai/mountain-shaking imagery.
+4. Working Preacher notes the Hebrew verb translated “tear/rend” is commonly used for tearing garments; this strengthens the covering/sheet metaphor but does not make heaven literally cloth.
+5. The mountain quaking is a standard theophanic consequence in biblical poetry and must remain an ordinary competing explanation.
+6. Fire/brushwood and boiling-water language are analogies for intense presence/power.
+7. Verse 5 is textually/semantically difficult in Hebrew.
+8. Verse 7 has ancient-version support for “delivered” where Hebrew can yield wording interpreted as “melted”; this makes it unsuitable as unqualified meltology evidence.
+9. Potter/clay is a maker/material metaphor and supplies same-material reshaping, not lattice mechanics.
+10. The end of the chapter grounds the lament in desolated cities and burned sanctuary.
+11. No dragon/lattice-spring is named.
+12. Strict fingertrap status remains incomplete despite the unusually strong upper-boundary rupture sequence.
+
+---
+
+# Sources logged — Isaiah 64
+
+Primary:
+- Isaiah 64 NRSVUE / LEB:
+  https://www.biblegateway.com/passage/?search=Isaiah+64&version=NRSVUE%3BLEB
+- Isaiah 64 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Isaiah+64&version=NRSVUE
+- Isaiah 64 NRSVUE / NIV / NKJV:
+  https://www.biblegateway.com/passage/?search=Isaiah+64&version=NRSVUE%3BNIV%3BNKJV
+
+Scholarly / contextual:
+- Working Preacher, Isaiah 64:1–9, for communal lament, Sinai/theophany echo and mountain-quaking sequence:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-advent-2/commentary-on-isaiah-641-9
+- Anathea Portier-Young, Working Preacher, Isaiah 64:1–9, for the garment-rending sense of the heaven-tearing verb and heaven/earth spatial division:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-of-advent-2/commentary-on-isaiah-641-9-6
+
+---
+
+# SECTION 49D2V CHECKPOINT — ISAIAH 64 COMPLETE
+
+Strongest first-time findings:
+
+1. **Isaiah 64 explicitly changes the state of the upper boundary before descent: heaven is torn/rent, then the figure comes down.**
+2. **Mountains quake as the lower-domain response, making this a genuine boundary-change→descent→ground-response sequence.**
+3. **The garment-rending verb strengthens the idea of heaven as a continuous covering/sheet, especially alongside Isaiah’s repeated stretched-heaven imagery.**
+4. **However, tearing breaks connectivity, whereas the Vardath fingertrap requires connectivity to remain while the lattice narrows.**
+5. **This makes Isaiah 64 a major boundary-rupture analogue, not a strict fingertrap match.**
+6. **Mountain quaking is compatible with consequences expected from dragon ground-support disruption, but the dragons/lattice springs are not named as the cause.**
+7. **Fire boiling water adds thermal water-state change, distinct from water redistribution/flooding.**
+8. **The chapter’s ending in actual ruined/burned cities is an important control: the cosmic theophany language occurs inside a concrete post-destruction lament.**
+9. **Breaches, tears and fingertrap contractions must now be kept as three distinct boundary-transition classes.**
+
+### Next live block
+
+**Isaiah 65**
+
+Priority:
+- source found by those not seeking / signal availability;
+- rebellious people / gardens / tombs / secret places;
+- smoke in nostrils / fire all day;
+- measure/recompense;
+- cluster of grapes retained because blessing inside → remnant preservation;
+- chosen descendants inherit mountains;
+- Sharon pasture / Valley of Achor herd rest;
+- Fortune/Destiny table/cup control;
+- servants eat/drink/rejoice while others hunger/thirst/shame;
+- new heavens/new earth — EXTREMELY HIGH PRIORITY;
+- former things not remembered;
+- Jerusalem joy;
+- lifespan/100-year language;
+- build houses and inhabit, plant vineyards and eat;
+- tree-like lifespan;
+- labor not in vain / children not for calamity;
+- call-before-answer information latency;
+- wolf/lamb, lion/ox altered predator relations;
+- serpent dust;
+- no hurt/destroy on holy mountain;
+- compare “new heavens/new earth” to Vardath populated successor world and distinguish replacement, renewal, or state change.
