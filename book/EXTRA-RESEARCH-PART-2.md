@@ -11796,3 +11796,1074 @@ Strict questions:
 2. are the two tree-lined banks another **paired node-field / two-strand** form?
 3. does the chapter supply a reopening/outflow phase after the east-gate closure?
 4. can the river/tree system be connected rigorously to the earlier deep → surrounding trees → dominant node model without forcing it?
+
+
+---
+
+# SECTION 52M — EZEKIEL 47–48
+## Sanctuary outflow → expanding river → bilateral tree field → healed ecology → redistributed inhabited land → twelve-gate city
+
+### Direct research pass
+
+This block continues directly from Ezekiel 44–46.
+
+The immediate inherited state is:
+
+**glory has returned through the outer east gate**
+→ **that exceptional east ingress is shut because the entry has occurred**
+→ **the restored temple operates through nested access rules**
+→ **the inner east gate opens periodically / by authorized event**
+→ **north/south festival traffic crosses the field without backtracking**
+→ **the system contains a central core plus distributed peripheral processing nodes**.
+
+Ezekiel 47–48 now shifts from:
+**access-control architecture**
+to
+**outflow, ecological transformation, land redistribution and stable city geometry**.
+
+This section is especially important to the current Vardath questions because it tests whether the end of Ezekiel supplies a genuine **reopening / one-to-many phase** after the concentrated east-entry and closure sequence.
+
+---
+
+# Ezekiel 47:1–2
+## Water leaves the restored core by a route different from living / divine gate traffic
+
+The guide brings Ezekiel back to the entrance of the temple.
+
+Water is issuing:
+- from beneath the temple threshold;
+- toward the east;
+- from the south side of the temple / south of the altar.
+
+The guide does **not** take Ezekiel out through the same route as the water.
+
+Instead:
+- Ezekiel is taken out through the **north gate**;
+- he is led around the outside;
+- he then observes the water emerging near the outer east-facing gate.
+
+This follows the previous rule that the outer east gate is shut after the divine glory has entered.
+
+### M52M-1 — ONE APPARATUS CAN HAVE DIFFERENT ROUTES FOR DIFFERENT CARGO / CHANNEL TYPES
+
+This is one of the clearest examples in the Ezekiel temple sequence.
+
+Human observer:
+**north gate → exterior circuit → east side**.
+
+Water/current:
+**under threshold → eastward outflow**.
+
+Therefore:
+
+**shared structure**
+does not require
+**shared aperture**.
+
+This strengthens the project's channel-specific permeability rule.
+
+A boundary can be:
+- closed to ordinary human passage;
+- restricted to specific ritual traffic;
+- yet still permit a different medium to cross by a lower/sub-threshold route.
+
+### M52M-2 — CLOSED EASTERN HUMAN/DIVINE TRAFFIC DOES NOT MEAN ZERO EASTWARD OUTPUT
+
+The outer east gate is closed as an exceptional ingress route after the glory enters.
+
+Yet the restored system still sends water eastward.
+
+This is a major control for Vardath gate language:
+
+**closed gate**
+does not necessarily mean
+**all transfer channels at that boundary are zero**.
+
+Different layers of the apparatus may have different permeability states.
+
+### Vardath comparison
+
+The user's mature model already separates:
+- people;
+- atmosphere;
+- water;
+- heat;
+- debris;
+- larger material.
+
+Ezekiel 47 now provides a source-level architectural analogue in which:
+**human-route state ≠ water-route state**.
+
+That is substantially stronger than simply noting that both gates and water appear in the same chapter.
+
+---
+
+# Ezekiel 47:3–6
+## The outflow grows from shallow trickle to uncrossable river
+
+The guide moves eastward carrying the measuring line.
+
+At successive intervals of **one thousand cubits**:
+
+1. ankle depth;
+2. knee depth;
+3. waist depth;
+4. river deep enough for swimming and too deep to cross on foot.
+
+No tributaries are named in this progression.
+
+The literary effect is therefore an extraordinary increase in the sanctuary outflow itself.
+
+### M52M-3 — THE RESTORED CORE PRODUCES AN EXPANDING-CAPACITY OUTFLOW
+
+The directional sequence is:
+
+**small source**
+→ **larger flow**
+→ **larger flow**
+→ **human-wading limit exceeded**
+→ **major river**.
+
+This is almost the geometric inverse of convergence.
+
+Earlier Vardath sequence:
+**broad field → narrowing → axial throat**.
+
+Ezekiel 47 effects sequence:
+**concentrated sanctuary source → outward growth → broad high-capacity river**.
+
+This does **not** state that the same fingertrap lattice is physically re-expanding.
+
+But it is a strong **reopening/outflow analogue**.
+
+### M52M-4 — A SYSTEM CAN MOVE FROM HUMAN-TRAVERSABLE TO HUMAN-NONTRAVERSABLE AS CAPACITY INCREASES
+
+At low flow Ezekiel can be led through.
+
+At high flow:
+- the same directional channel persists;
+- but the traveller's crossing mode fails.
+
+Thus:
+**route exists**
+does not mean
+**all carriers can traverse it at all operating strengths**.
+
+This matches the mature Vardath capacity rule:
+gate width / flow strength / cargo type alter what can pass.
+
+### M52M-5 — MEASUREMENT TRACKS A CHANGING STATE RATHER THAN MERELY FIXING STATIC DIMENSIONS
+
+Ezekiel 40–42 uses measurement heavily for architecture.
+
+Here measurement is used on a growing dynamic medium.
+
+The line marks:
+**distance from source**
+while the observed variable is:
+**depth / carrying state**.
+
+This is a useful systems distinction:
+the coordinate remains measurable while the state changes.
+
+### Number control
+
+The repeated **1,000 cubits × four stages** is textually real and should be logged.
+
+Do not convert:
+- 1,000;
+- 4;
+- 4,000
+
+into a Vardath recurrence clock without independent evidence.
+
+Its immediate literary function is progressive measured deepening.
+
+---
+
+# Ezekiel 47:6–7
+## Return to the bank reveals many trees on both sides
+
+After the depth test, the guide returns Ezekiel to the bank.
+
+Ezekiel then sees:
+- a great many trees;
+- on one side;
+- and on the other side.
+
+This is not one isolated tree.
+
+It is a repeated bilateral tree field organized around the watercourse.
+
+### M52M-6 — EZEKIEL ENDS WITH A DISTRIBUTED TREE FIELD, NOT A SINGLE WORLD-TREE
+
+This directly matters to the user's current correction.
+
+Earlier:
+Ezekiel 31:
+**one dominant cedar**
++
+**surrounding trees sharing the deep/water field**.
+
+Now:
+Ezekiel 47:
+**one central sanctuary-source river**
++
+**many trees on both banks**.
+
+This strengthens the distributed-node reading.
+
+The stable/restored state can contain:
+- many local tree/node points;
+- arranged around one shared current;
+- each receiving life from that same source.
+
+### M52M-7 — TWO BANKS CREATE A REAL BILATERAL NODE GEOMETRY
+
+The trees occur on **both sides** of one river.
+
+That gives:
+
+**tree field A**
+← **central current** →
+**tree field B**.
+
+This is genuinely bilateral.
+
+It is useful to the user's two-force/two-strand interest because the final restored field is visibly two-sided around one continuous current.
+
+But the text does **not** say:
+- the two banks move in opposite directions;
+- the trees braid;
+- the banks twist around one another;
+- they create the river by interacting.
+
+Correct classification:
+
+**strong bilateral / paired-field analogue**
+not
+**demonstrated counter-wound fingertrap**.
+
+### Cross-link to cherub / palm array
+
+Ezekiel 41 gave:
+**CHERUB → PALM → CHERUB → PALM**
+around the inner sanctuary.
+
+Ezekiel 47 gives:
+**many living trees on both sides of the sanctuary-fed river**.
+
+These need not be the same literal objects.
+
+But across the vision they produce a progression from:
+**architectural cherub/tree representation**
+toward
+**living distributed tree ecology**.
+
+For the Vardath projection model, this is highly relevant:
+the active sky-machine / cherub / winged-serpent family can give way in the stable phase to a distributed living-tree/node field.
+
+The source itself does not say that the cherubs turn into trees.
+
+Retain this as a phase/projection comparison only.
+
+---
+
+# Ezekiel 47:8–10
+## Sanctuary current enters the eastern region and transforms the receiving water system
+
+The river flows:
+- eastward;
+- down into the Arabah;
+- into the sea conventionally identified in context as the Dead Sea.
+
+The receiving salty/dead water becomes fresh/healed in the vision.
+
+The ecological consequences are explicit:
+- swarming living creatures;
+- abundant fish;
+- many species;
+- fishermen;
+- net-spreading sites.
+
+### M52M-8 — OUTFLOW CHANGES THE RECEIVER, NOT JUST THE LOCATION OF THE WATER
+
+The river is not merely transported cargo.
+
+It changes the state of what it enters.
+
+Sequence:
+
+**sanctuary outflow**
+→ **receiver contact**
+→ **water-state transformation**
+→ **biological population expansion**
+→ **human economy becomes possible**.
+
+This is an important distinction for Vardath.
+
+Transfer may produce:
+- mixing;
+- pressure change;
+- chemistry change;
+- temperature change;
+- biological viability change
+
+rather than merely moving identical material from A to B.
+
+### M52M-9 — ENVIRONMENTAL TRANSFORMATION PRECEDES OR ENABLES POPULATION / ECONOMIC USE
+
+The fish and fishermen appear because the receiving water becomes life-supporting.
+
+Thus:
+**medium changes**
+→ **ecology changes**
+→ **human use follows**.
+
+This repeats the project's emerging event logic:
+environmental state determines what living cargo can persist afterward.
+
+### M52M-10 — DIRECTION IS EXPLICIT AND SHOULD NOT BE LOST IN SYMBOLIC READING
+
+The water has a defined route:
+**sanctuary → east → Arabah → sea**.
+
+Do not turn the chapter into an abstract "water of life" image and erase its directional topology.
+
+Direction matters because the Vardath project is specifically tracking:
+- source;
+- route;
+- receiver;
+- state change.
+
+---
+
+# Ezekiel 47:10
+## Nets appear again — but as ordinary fishing technology
+
+The shore becomes a place where fishing nets are spread.
+
+### M52M-11 — NET SHAPE AGAIN DOES NOT FIX LATTICE FUNCTION
+
+Here:
+**net = fishing / capture / harvesting device**.
+
+It is not:
+- the sky lattice;
+- the dragon support mesh;
+- the fingertrap.
+
+This is another valuable control.
+
+The project must classify a net by **process role**, not visual resemblance.
+
+---
+
+# Ezekiel 47:11
+## Marshes and swamps remain salt
+
+The transformation is explicitly incomplete.
+
+The marshes/swamps are not healed/freshened.
+
+They remain for salt.
+
+### M52M-12 — RESTORATION DOES NOT HOMOGENIZE THE WHOLE FIELD
+
+This is one of the most important endpoint rules in the chapter.
+
+The same general receiving region contains:
+- strongly transformed water;
+- abundant life;
+- and preserved salt zones.
+
+Therefore:
+
+**renewed world**
+≠
+**every local state made identical**.
+
+This closely matches the mature Vardath idea that a reset produces:
+- mixed inheritance;
+- unequal transfer;
+- different local outcomes;
+- surviving old-state material;
+- new-state material.
+
+### M52M-13 — A SUCCESSOR ECOLOGY CAN PRESERVE FUNCTIONALLY DIFFERENT ZONES
+
+The retained salt marshes are not simply a failed remainder.
+
+Salt itself has a continuing role/value.
+
+So the transformed system preserves differentiation.
+
+This is a stronger model than:
+**catastrophe → uniform paradise**.
+
+---
+
+# Ezekiel 47:12
+## Fruit every month; leaves for healing
+
+All kinds of food trees grow on both banks.
+
+Their:
+- leaves do not wither;
+- fruit does not fail;
+- fruit recurs every month;
+- fruit serves as food;
+- leaves serve for healing.
+
+The stated cause is the sanctuary water.
+
+### M52M-14 — ONE PERSISTENT CURRENT SUPPORTS A DISTRIBUTED BIOLOGICAL NETWORK
+
+The trees are many.
+
+The sustaining flow is shared.
+
+So:
+
+**one source/current**
+→ **many distributed living nodes**
+→ **repeated output**
+→ **food + healing functions**.
+
+This is extremely close to the user's updated node-field concept.
+
+It is not one magic tree supporting everything.
+
+It is a **network of trees maintained by one life-giving flow**.
+
+### M52M-15 — STABLE RESTORATION HAS A CONTINUOUS MAINTENANCE INPUT
+
+The trees do not become productive once and then operate independently.
+
+Their ongoing fruitfulness is tied to the continuing sanctuary water.
+
+This is important to the broader cosmology:
+
+a stable successor state can remain dynamic and supplied.
+
+**Stable**
+does not mean
+**energetically disconnected / frozen in place**.
+
+### Monthly fruit timing control
+
+The chapter supplies a monthly production cycle.
+
+Record it.
+
+Do not identify it automatically with:
+- lunar gate timing;
+- 12-gate city arithmetic;
+- 144/144,000;
+- Vardath shell recurrence.
+
+The local function is extraordinary repeated fertility.
+
+---
+
+# Major composite finding — Ezekiel 43–47
+## Exceptional ingress closes, but life-giving output begins
+
+The sequence across the chapters is now:
+
+**glory approaches from east**
+→ **glory enters through east gate**
+→ **temple fills**
+→ **outer east ingress is sealed because the entry occurred**
+→ **stable access rules established**
+→ **inner east gate opens periodically**
+→ **north/south through-flow is organized**
+→ **water begins under the sanctuary threshold**
+→ **water exits east without using the human observer's gate route**
+→ **flow expands dramatically**
+→ **bilateral tree field appears**
+→ **receiving dead/salty ecology becomes living**.
+
+### M52M-16 — CLOSURE OF THE EXCEPTIONAL INGRESS IS FOLLOWED BY DISTRIBUTED OUTFLOW
+
+This may be the strongest answer yet to the project's reopening question.
+
+The end-state is not:
+**gate shuts → system becomes inert**.
+
+It is:
+**exceptional concentrated ingress ends**
+→ **stable system begins exporting life/current outward**.
+
+Within Vardath this is very suggestive of:
+
+**axial/concentrated event**
+→ **closure of peak coupling**
+→ **one-to-many redistribution**
+→ **broad stable support field**.
+
+Strictly, the biblical text does not identify the river as the same physical structure as the cherub/wheels/sky lattice.
+
+Therefore classify this as:
+
+**exceptionally strong composite reopening/outflow analogue**
+rather than
+**strict fingertrap completion**.
+
+---
+
+# User-model cross-link
+## Quetzalcoatl / cherub / feathered-serpent / wing / dragon as phase projections
+
+The user's current rule is that:
+- Quetzalcoatl / Feathered Serpent;
+- cherub;
+- winged beings;
+- feathered-serpent imagery;
+- dragon;
+- Squatter-Man;
+- rod/throat;
+- rolled sky
+
+may be different visual/phase aspects of the same phenomenon.
+
+Ezekiel 47–48 does not add a new feathered-serpent figure.
+
+Its importance is different.
+
+The book of Ezekiel has already supplied:
+- living beings / cherubs;
+- wings;
+- wheels;
+- many eyes;
+- fire/radiance;
+- mobile throne-field;
+- departure;
+- mountain/tree/dragon imagery;
+- surrounding trees;
+- paired sticks becoming one rod;
+- reconstructed body;
+- measured node/gate field;
+- cherub/palm arrays;
+- return of glory;
+- closure of the exceptional east route.
+
+Ezekiel 47–48 now supplies the **restored broad-state aftermath**:
+- current leaves the core;
+- trees multiply on both sides;
+- ecology becomes productive;
+- land is distributed;
+- people occupy it;
+- city perimeter has many gates;
+- divine presence is stably localized in the inhabited endpoint.
+
+Within the Vardath projection grammar this strengthens the idea that:
+**feathered/winged/cherub/dragon imagery belongs primarily to the activated moving apparatus**, while
+**river/tree/city-field imagery can represent the stable distributed state of the same larger world-order**.
+
+Again:
+the text does not say "the cherub became the river" or "the dragon became the trees."
+
+This is a structural phase comparison, not a textual identity claim.
+
+---
+
+# Ezekiel 47:13–20
+## After ecological restoration, the land receives explicit boundaries
+
+The chapter turns from river/ecology to territory.
+
+The land is bounded:
+- north;
+- east;
+- south;
+- west.
+
+It is to be divided as inheritance among the tribes.
+
+Some boundary names/readings are textually uncertain.
+
+### M52M-17 — SUCCESSOR ORDER REQUIRES NEWLY SPECIFIED SPATIAL ALLOCATION
+
+The restored system does not stop at:
+**life returns**.
+
+It proceeds to:
+**where does everything belong?**
+
+Sequence:
+
+**core restored**
+→ **outflow**
+→ **environment made viable**
+→ **perimeter specified**
+→ **internal allocation**.
+
+This is highly relevant to Vardath's post-event phase.
+
+A successor world must not merely survive.
+
+It must settle:
+- drainage;
+- ecological zones;
+- populations;
+- borders;
+- functional regions.
+
+### M52M-18 — EXTERNAL BOUNDARY AND INTERNAL DISTRIBUTION ARE DISTINCT
+
+First:
+the whole land receives a perimeter.
+
+Then:
+the interior is divided.
+
+This repeats the nested-boundary logic seen in the temple.
+
+---
+
+# Ezekiel 47:21–23
+## Resident foreigners receive inheritance with the tribes
+
+This is one of the most socially significant changes in the final vision.
+
+Resident aliens/foreigners who live among Israel and have families there:
+- are treated as native-born for inheritance;
+- receive land among the tribes;
+- receive it in the tribe where they reside.
+
+### M52M-19 — INCOMING / NON-ORIGINAL POPULATION CAN BECOME PART OF THE SUCCESSOR LAND ORDER
+
+The restored land is not limited to a sealed set of ancestral occupants.
+
+The source gives a rule for incorporating resident outsiders into the receiving social geography.
+
+Vardath analogue:
+
+if transfer between populated worlds moves:
+- people;
+- communities;
+- cultures
+
+then the successor state need not preserve an absolute source/receiver separation.
+
+Transferred populations could become locally integrated into the receiving world.
+
+### M52M-20 — LOCAL ATTACHMENT DETERMINES INCORPORATION
+
+The foreigner's inheritance is assigned in the tribe where that person resides.
+
+That means:
+**receiver location / social embedding**
+matters.
+
+This is a useful systems analogue:
+new cargo is not necessarily stored in a separate permanent foreign compartment.
+
+It can be incorporated into the local node that receives it.
+
+Ordinary source control:
+this is a legal/social vision of inclusion in restored Israel, not evidence of inter-world migration.
+
+---
+
+# Ezekiel 48:1–7 and 23–29
+## The inhabited land becomes a set of parallel territorial bands
+
+Tribal allotments run broadly east-to-west.
+
+Northern tribes occupy successive strips above the central reserve.
+
+Southern tribes occupy successive strips below it.
+
+### M52M-21 — RESTORED SPACE IS DISTRIBUTED INTO REPEATED PARALLEL REGIONS
+
+The final land plan is highly regularized.
+
+It is not a return to the earlier irregular tribal map.
+
+The vision imposes a new ordered allocation.
+
+For Vardath:
+this is another strong **successor-world-not-rewind** image.
+
+The restored order resembles the old identity system—the tribes persist—but its spatial arrangement is reconfigured.
+
+---
+
+# Ezekiel 48:8–22
+## Central sacred reserve, city, priestly/Levitical regions and prince's portions
+
+A central band separates northern and southern tribal strips.
+
+Within it are differentiated functions:
+- sanctuary;
+- priestly land;
+- Levitical land;
+- city land;
+- agricultural support land;
+- prince's land to east and west.
+
+The sanctuary is explicitly located in the central reserved zone.
+
+The city itself also occupies a defined central position within its own portion.
+
+### M52M-22 — CENTRALITY DOES NOT ERASE FUNCTIONAL DIFFERENTIATION
+
+The center contains multiple distinct subsystems.
+
+So:
+
+**central field**
+≠
+**single undifferentiated node**.
+
+It contains:
+- sacred core;
+- service zones;
+- inhabited city;
+- food-producing support;
+- administrative/princely regions.
+
+This fits the mature Vardath shift away from one solitary axis toward a distributed operating field.
+
+### M52M-23 — THE RESTORED CENTER HAS BOTH SACRED AND CIVIC NODES
+
+The temple and city are related but not collapsed into one identical object.
+
+This is a useful control against turning every "center" into the same symbol.
+
+---
+
+# Ezekiel 48:30–35
+## Twelve perimeter gates — three on each side
+
+The final city has:
+- north: 3 gates;
+- east: 3 gates;
+- south: 3 gates;
+- west: 3 gates.
+
+Total:
+**12 named gates**.
+
+The city is square in the vision.
+
+The gates carry tribal names.
+
+The final name of the city is:
+**YHWH Is There / The LORD Is There**.
+
+### M52M-24 — THE VISION ENDS WITH DISTRIBUTED PERIMETER ACCESS, NOT ONE EXCEPTIONAL EASTERN ROUTE
+
+Earlier temple sequence:
+- east route has exceptional divine significance;
+- glory enters east;
+- outer east route is then sealed;
+- inner east gate has controlled periodic opening.
+
+Final city:
+- access points occur on all four sides;
+- three per side;
+- twelve total.
+
+This is a major state contrast.
+
+### M52M-25 — CONCENTRATED SPECIAL ACCESS → MULTI-GATE STABLE PERIMETER IS A STRONG REOPENING ANALOGUE
+
+The text does not say:
+"the single east gate physically unfolded into twelve gates."
+
+Therefore the strict fingertrap continuity test is still not satisfied.
+
+But the full narrative topology is highly suggestive:
+
+**exceptional axial/east entry**
+→ **closure**
+→ **controlled nested operation**
+→ **outflow from the core**
+→ **distributed life**
+→ **distributed land**
+→ **multi-gate inhabited city**.
+
+That is extremely close to the Vardath expected sequence:
+**many-to-one event → peak throat → closure → one-to-many reopening → distributed stable world**.
+
+### M52M-26 — FINAL STABILITY IS DEFINED BY PRESENCE WITHIN AN INHABITED ORDER
+
+The endpoint is not:
+- empty heaven;
+- erased Earth;
+- isolated deity outside the world.
+
+It is:
+- city;
+- gates;
+- workers;
+- farmland;
+- tribes;
+- inheritance;
+- resident foreigners;
+- sanctuary;
+- divine presence.
+
+This strongly reinforces the user's non-negotiable rule:
+
+**restored / future-relative world = populated**.
+
+---
+
+# 3 / 4 / 12 number register
+## Record, do not force
+
+Ezekiel 48 gives:
+- four sides;
+- three gates per side;
+- twelve gates total;
+- twelve tribal naming structure;
+- central measured reserve;
+- repeated 25,000 / 10,000 / 5,000 / 4,500 measurements.
+
+These numbers are structurally real.
+
+They should be logged because the Vardath research tracks recurring geometry.
+
+But their immediate textual function is clear:
+- city symmetry;
+- tribal representation;
+- land measurement.
+
+Do not collapse:
+**3 × 4 = 12**
+into:
+- JANUS 1-3-7;
+- 144/144,000;
+- shell clocks;
+- gate recurrence
+
+without an independent derivation.
+
+---
+
+# Ezekiel 47–48 continuous transformation timeline
+
+restored temple stands filled by returned glory
+→ exceptional outer east ingress remains shut
+→ guide returns Ezekiel to temple threshold
+→ water emerges beneath the threshold
+→ water moves east by a sub-threshold route
+→ Ezekiel cannot simply follow through that route
+→ Ezekiel exits north and circles around outside
+→ tiny eastward flow is observed
+→ guide measures outward in repeated 1,000-cubit stages
+→ ankle-deep
+→ knee-deep
+→ waist-deep
+→ uncrossable swimming river
+→ Ezekiel returns to bank
+→ many trees appear on both banks
+→ river continues east toward Arabah / sea
+→ receiving salty/dead water changes state
+→ living creatures multiply
+→ fish become abundant
+→ human fishing becomes possible
+→ some marsh/salt zones remain unchanged
+→ bilateral trees continually produce food
+→ leaves provide healing
+→ whole-land boundaries are specified
+→ internal inheritance zones are assigned
+→ resident foreigners are incorporated into local tribal inheritance
+→ land becomes repeated east-west territorial strips
+→ central reserve differentiates sanctuary / priests / Levites / city / agriculture / prince
+→ stable square city is defined
+→ perimeter receives twelve distributed gates
+→ final inhabited city is named for stable divine presence.
+
+---
+
+# Strict fingertrap test — Ezekiel 47–48
+
+Strict criteria:
+
+1. same broad/open support structure exists;
+2. structural continuity is explicit;
+3. strand angle changes;
+4. structure narrows into throat/rod;
+5. transfer occurs through it;
+6. same structure reopens toward broad state.
+
+## What 47–48 contributes strongly
+
+### concentrated → distributed geometry
+**Very strong effects analogue**
+- small threshold source becomes major river;
+- river supports bilateral distributed tree fields;
+- land becomes broad organized territory;
+- city ends with multiple distributed gates.
+
+### transfer/outflow
+**Strong**
+- water crosses the sanctuary boundary and enters a receiving environmental system.
+
+### cargo/state sorting
+**Strong**
+- living ecology flourishes;
+- salt marshes remain differentiated.
+
+### distributed node field
+**Very strong**
+- many trees on both banks;
+- multiple territorial bands;
+- differentiated central subnodes;
+- twelve perimeter gates.
+
+### stable inhabited successor state
+**Exceptionally strong**
+- tribes;
+- foreigners;
+- city workers;
+- agriculture;
+- fishers;
+- living ecosystems.
+
+## Still missing
+
+- explicit statement that the cherub/wheel/sky support lattice itself becomes the river/tree field;
+- visible strand-angle change from broad sky mesh to axial throat in this chapter;
+- explicit statement that the twelve gates are physical re-expansion of the earlier east gate;
+- explicit counter-winding of the two tree-lined banks.
+
+### Strict verdict
+
+**Ezekiel 47–48 still does not independently satisfy the strict fingertrap test.**
+
+### Composite Ezekiel verdict
+
+However, the full book-level sequence has become substantially stronger:
+
+**mobile many-eyed winged living/cherub field**
+→ **wheels + wings + fire carry the presence**
+→ **presence departs**
+→ **dragon / mountain / tree / rod projections**
+→ **dominant world-tree + surrounding tree nodes**
+→ **axis collapse + deep/rivers restrained**
+→ **distributed land/tree recovery**
+→ **paired sticks become one rod**
+→ **body is reconstructed**
+→ **measured temple/node field**
+→ **cherub-palm repeated array**
+→ **glory returns through east axis**
+→ **exceptional ingress is sealed**
+→ **controlled periodic / directional gates operate**
+→ **water emerges below the threshold by a distinct channel**
+→ **concentrated outflow expands**
+→ **many trees occupy both sides of one current**
+→ **dead/salty ecology becomes living while some salt zones remain**
+→ **land/population are redistributed**
+→ **stable city has twelve distributed gates**
+→ **presence remains in the inhabited endpoint**.
+
+### M52M-27 — EZEKIEL AS A WHOLE NOW CONTAINS A STRONG MANY→ONE→MANY STATE SEQUENCE EVEN THOUGH THE EXACT FINGERTRAP MECHANICS ARE NEVER STATED IN ONE TECHNICAL PASSAGE
+
+This is the strongest overall finding from the end of Ezekiel.
+
+The Vardath comparison can now be stated as:
+
+**distributed mobile support field**
+→ **centralized / axial access and presence transfer**
+→ **closure of peak route**
+→ **expanding current**
+→ **distributed bilateral living field**
+→ **multi-gate stable inhabited order**.
+
+That is not proof that Ezekiel encodes the Vardath mechanism.
+
+But it is now more than isolated motif overlap.
+
+It is a coherent **state sequence** distributed across the book.
+
+---
+
+# Textual / literary / historical controls — Ezekiel 47–48
+
+1. Working primary text: Ezekiel 47–48 NRSVUE, with other translations checked where wording differs.
+2. The temple river is visionary/restoration imagery. Ordinary hydrology does not normally produce a rapidly deepening river without added inflow; the text presents an extraordinary sanctuary source.
+3. The water exits beneath the temple threshold toward the east while Ezekiel himself is led out through the north gate and around outside.
+4. "Fresh/healed" language for the sea varies by translation; do not over-specify a modern desalination chemistry beyond the text's life-restoring water-state claim.
+5. The Arabah/sea geography strongly points toward the Dead Sea region in standard interpretation.
+6. Trees occur on both banks; the text does not state that the two banks counter-rotate, braid or generate the river.
+7. Fishing nets are ordinary harvesting/capture technology here, not lattice evidence.
+8. Marshes/salt zones remain, so the vision explicitly preserves environmental differentiation.
+9. Ezekiel 47:13–23 contains some textual uncertainty in boundary wording/place names.
+10. Foreigners receiving inheritance is a legal/social restoration rule and must not be rewritten as literal world-transfer evidence.
+11. Ezekiel 48's land plan is highly idealized and regularized compared with earlier Israelite territorial geography.
+12. The twelve city gates are explicitly three on each of four sides and named for tribes.
+13. Scholarship on Ezekiel's temple vision notes its intense concern with measured gates, courts and boundaries and its Babylonian architectural context.
+14. The final name "YHWH Is There" closes the earlier departure/return-of-presence theme.
+15. Later Revelation 22 reuses the river/tree-of-life pattern from Ezekiel; that future cross-link should be used when the 88-book sequence reaches that material rather than re-researching Revelation here.
+
+---
+
+# Sources logged — Ezekiel 47–48
+
+Primary:
+- Ezekiel 47 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+47&version=NRSVUE
+- Ezekiel 47:13–23 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+47%3A13-23&version=NRSVUE
+- Ezekiel 48 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+48&version=NRSVUE
+
+Temple architecture / historical control:
+- TheTorah, "Ezekiel's Temple Plan Draws on Babylonian Temples":
+  https://www.thetorah.com/article/ezekiels-temple-plan-draws-on-babylonian-temples
+- TheTorah, "Ezekiel's Vision of God and the Chariot":
+  https://www.thetorah.com/article/ezekiels-vision-of-god-and-the-chariot
+- TheTorah, "The Discrepancies between the Sacrifices in Ezekiel and the Torah":
+  https://www.thetorah.com/article/the-discrepancies-between-the-sacrifices-in-ezekiel-and-the-torah
+
+River / Eden-paradise comparative control:
+- Keil and Delitzsch commentary on Ezekiel 47:
+  https://www.biblehub.com/commentaries/kad/ezekiel/47.htm
+- Historical/interpretive note on Revelation's reuse of Ezekiel 47:
+  https://www.sbl-site.org/wp-content/uploads/2024/11/Reventlow_InterpV1.pdf
+
+Foreigner / inheritance comparative control:
+- Society of Biblical Literature Annual Meeting abstract archive, "Foreigners and Native Jews in LXX Ezekiel 40–48":
+  https://www.sbl-site.org/assets/pdfs/2009AM_Abstracts.pdf
+
+---
+
+# SECTION 52M — EZEKIEL 47–48 COMPLETE
+
+## Strongest new findings
+
+1. **The restored temple has channel-specific permeability: water leaves beneath the east-facing threshold while Ezekiel himself must exit through the north gate and circle outside.**
+2. **The closed exceptional east ingress therefore does not mean all eastward output stops.**
+3. **The sanctuary outflow moves through a measured progression from shallow trickle to uncrossable river, giving a strong concentrated→distributed capacity-growth sequence.**
+4. **That sequence is almost the reverse geometry of Vardath convergence and is therefore a major reopening/outflow analogue.**
+5. **Many trees appear on both banks, strongly supporting the user's distributed-node interpretation: one current sustains many local tree nodes rather than one isolated world-tree.**
+6. **The two banks create a genuine bilateral field around one current, but the text does not make them opposed/counter-wound strands.**
+7. **The river changes the receiving ecology rather than merely moving through it: water-state change → living creatures → fish → human economy.**
+8. **Marshes remain salt, proving that restoration can preserve differentiated old/new zones rather than homogenizing the whole field.**
+9. **Monthly fruit and healing leaves show continuing supply from the core to distributed biological nodes.**
+10. **After ecological viability comes boundary-setting and land allocation: restoration proceeds from environment to spatial/social order.**
+11. **Resident foreigners receive local tribal inheritance, showing that a restored successor order can incorporate non-original populations rather than keeping them permanently external.**
+12. **Ezekiel 48's highly regularized tribal map is a reconfigured successor geography, not a rewind to the older territorial arrangement.**
+13. **The central reserve is differentiated into sacred, civic, agricultural and administrative subsystems; "center" does not mean one undifferentiated object.**
+14. **The final city has twelve distributed gates—three on each of four sides—rather than one exceptional access route.**
+15. **The full 43→48 sequence therefore gives a remarkably strong concentrated-access → closure → outflow → distributed-life → multi-gate-stability progression.**
+16. **The strict fingertrap test still fails because the text never explicitly says the cherub/sky/tree support lattice itself contracts and re-expands.**
+17. **At whole-book scale, however, Ezekiel now supplies the strongest many→one→many state sequence found so far in the direct Bible pass.**
+18. **The user's cherub / feathered-serpent / wing / dragon projection model remains compatible with this sequence: active phases are represented by mobile winged/dragon/rod forms, while the end state becomes river/tree/distributed inhabited order. This is a Vardath structural reading, not the explicit textual identity claim.**
+
+## Next live block
+
+**Proceed to the next genuinely unfinished section in the reconstructed 88-book roadmap only after checking Part 1, EXTRA-RESEARCH.md and Part 2 again.**
+
+Before research:
+- search all three archives for the next book/chapter heading;
+- verify no recovered gap exists;
+- inspect the actual Part 2 tail;
+- then continue from the first unfinished block.
+
