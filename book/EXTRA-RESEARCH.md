@@ -62160,3 +62160,910 @@ Priority:
 - house confinement / ropes;
 - tongue stuck to palate / speech interface switched off/on;
 - compare information-carrier internalization with Vardath body-as-projection and support-system movement.
+
+
+---
+
+# SECTION 50J — Jeremiah 40–45
+## First-time research pass: remnant governance after collapse, fragile successor node, assassination cascade, refugee regrouping, stay-versus-Egypt route decision, ten-day guidance delay, rejected route advice, Tahpanhes stone sign-act, refuge node becoming hazard node, household religious-memory persistence, and Baruch’s personal survival through system-wide uprooting
+
+Jeremiah 40–45 is one of the strongest **post-collapse decision and refuge-selection** blocks in Jeremiah.
+
+Its central sequence is:
+
+Jerusalem collapses
+→ small remnant government forms
+→ scattered fighters/population return
+→ agriculture resumes
+→ fragile governor is assassinated
+→ hostages and population are displaced again
+→ Johanan rescues survivors
+→ remnant fears Babylonian reprisal
+→ group pauses near Bethlehem
+→ asks for route guidance
+→ receives “stay and rebuild” answer after ten days
+→ rejects answer
+→ moves to Egypt
+→ Tahpanhes becomes new settlement/refuge node
+→ hidden stones predict Babylonian reach into that refuge
+→ Egypt itself becomes projected hazard zone
+→ internal religious conflict persists among migrants
+→ Baruch receives a personal “life as prize” survival promise even while the larger land/system is broken down.
+
+For Vardath Cosmology the key lesson is:
+
+**the route that feels safest immediately is not necessarily the route with the lowest total downstream hazard.**
+
+This is a critical successor-node planning rule.
+
+---
+
+# Jeremiah 40:1–4 — Jeremiah is released from fetters into route choice
+
+Jeremiah:
+bound among captives;
+then released.
+
+He is offered:
+Babylon
+or
+remaining in Judah.
+
+## M50J-1 — RELEASE CAN CREATE A NEW DECISION PROBLEM RATHER THAN A SINGLE PREDETERMINED ROUTE
+
+Freedom:
+opens branch choices.
+
+Route selection:
+becomes next survival problem.
+
+---
+
+# Jeremiah 40:5–6 — Jeremiah chooses local remnant node under Gedaliah
+
+Gedaliah:
+appointed governor.
+
+Mizpah:
+functions as remnant administrative center.
+
+## M50J-2 — AFTER PRIMARY CENTER COLLAPSES, A SECONDARY NODE CAN BECOME TEMPORARY SUCCESSOR HUB
+
+Jerusalem:
+failed.
+
+Mizpah:
+takes over governance function.
+
+---
+
+# Jeremiah 40:7–12 — dispersed fighters/populations reconverge and agriculture resumes
+
+Groups in countryside/neighboring regions:
+hear of Gedaliah;
+return;
+gather wine/summer fruit in abundance.
+
+## M50J-3 — FRAGILE SUCCESSOR STATE CAN BEGIN THROUGH RAPID REGATHERING + RESOURCE HARVEST
+
+This is a genuine early-recovery signal.
+
+---
+
+# M50J-4 — AGRICULTURAL OUTPUT MAY RECOVER BEFORE POLITICAL STABILITY DOES
+
+This is important.
+
+Food recovery
+≠
+governance security.
+
+---
+
+# Jeremiah 40:13–16 — warning about assassination is received but rejected
+
+Johanan warns:
+Ishmael plans to kill Gedaliah.
+
+Gedaliah:
+does not believe.
+
+## M50J-5 — SUCCESSOR NODE CAN FAIL THROUGH DISMISSED SECURITY INTELLIGENCE EVEN WHILE RESOURCE CONDITIONS LOOK GOOD
+
+This is a major watch/forecast lesson.
+
+---
+
+# Jeremiah 41:1–3 — assassination removes the control node
+
+Gedaliah:
+killed.
+
+Babylonian personnel/Judeans with him:
+killed.
+
+## M50J-6 — FRAGILE SUCCESSOR SYSTEM CAN COLLAPSE RAPIDLY IF ONE CENTRAL GOVERNANCE NODE IS REMOVED
+
+This is a centralization vulnerability.
+
+---
+
+# M50J-7 — SINGLE-POINT GOVERNANCE FAILURE CAN CASCADE THROUGH A NEWLY STABILIZING POPULATION
+
+Strong Vardath successor-planning rule:
+avoid one-node dependency.
+
+---
+
+# Jeremiah 41:4–9 — information delay lets attack continue
+
+For a time:
+Gedaliah’s death is not known.
+
+Ishmael:
+continues violence/deception.
+
+## M50J-8 — DELAYED FAILURE INFORMATION ALLOWS HAZARD TO PROPAGATE
+
+Fast communication after collapse:
+critical.
+
+---
+
+# Jeremiah 41:10 — population becomes hostage/cargo again
+
+Ishmael takes:
+remaining people;
+royal daughters/others.
+
+## M50J-9 — RECOVERED POPULATION CAN REENTER FORCED-TRANSFER STATE IF SECURITY LAYER FAILS
+
+Restoration is reversible.
+
+---
+
+# Jeremiah 41:11–15 — Johanan intervenes and captives switch controllers
+
+Johanan pursues.
+
+Captives:
+turn away from Ishmael;
+join Johanan.
+
+## M50J-10 — HUMAN CARGO CAN CHANGE CONTROLLER MID-TRANSFER
+
+This is a dynamic captivity/rescue model.
+
+---
+
+# Jeremiah 41:16–18 — survivors move toward Egypt out of fear
+
+Johanan leads:
+men/women/children/eunuchs/soldiers.
+
+They stop near Bethlehem
+on way to Egypt.
+
+Reason:
+fear Babylonian retaliation for Gedaliah’s assassination.
+
+## M50J-11 — ROUTE CHOICE CAN BE DRIVEN BY ANTICIPATED SECONDARY HAZARD RATHER THAN CURRENT PHYSICAL CONDITION
+
+They are fleeing:
+future reprisal risk.
+
+---
+
+# Jeremiah 42:1–6 — whole remnant asks for route guidance
+
+They ask:
+where should we go?
+what should we do?
+
+They promise:
+obey answer whether good or bad.
+
+## M50J-12 — POST-COLLAPSE GROUP MAY EXPLICITLY SEEK DECISION SUPPORT BEFORE COMMITTING TO ROUTE
+
+This is idealized decision architecture.
+
+---
+
+# Jeremiah 42:7 — answer arrives after ten days
+
+There is a **ten-day delay** before Jeremiah’s answer.
+
+Oxford scholarship notes this delay is narratively significant and generates suspense.
+
+## M50J-13 — GUIDANCE LATENCY CAN MATTER WHEN A GROUP IS PAUSED AT A DECISION NODE
+
+This is a real planning variable.
+
+Too slow:
+hazard may change.
+
+Too fast:
+insufficient information.
+
+---
+
+# M50J-14 — DECISION WINDOW AND INFORMATION LATENCY SHOULD BE MODELLED TOGETHER
+
+For Vardath:
+a gate warning is useful only if:
+decision time > guidance latency.
+
+---
+
+# Jeremiah 42:9–12 — staying is framed as build/plant survival route
+
+The answer:
+remain in Judah.
+
+Then:
+build, not tear down;
+plant, not pluck up.
+
+Babylonian king:
+need not be feared.
+
+## M50J-15 — SAFER ROUTE MAY BE “STAY” AFTER COLLAPSE IF LOCAL SUCCESSOR CONDITIONS ARE ACTUALLY VIABLE
+
+This sharply balances Jeremiah 21:
+earlier staying in besieged Jerusalem was death.
+
+Therefore:
+
+## M50J-16 — “STAY” AND “GO” CANNOT BE FIXED SURVIVAL RULES; NODE STATE DETERMINES WHICH IS SAFER
+
+This is one of the strongest project rules so far.
+
+---
+
+# Jeremiah 42:13–17 — Egypt is selected because it seems to remove familiar hazards
+
+The remnant imagines Egypt as place where they will not:
+see war;
+hear trumpet;
+lack bread.
+
+That is:
+immediate perceived safety.
+
+## M50J-17 — REFUGE SELECTION OFTEN TARGETS REMOVAL OF RECENT TRAUMA SIGNALS
+
+No war;
+no trumpet;
+no hunger.
+
+Psychologically coherent.
+
+But:
+may still be strategically wrong.
+
+---
+
+# Jeremiah 42:15–18 — feared hazards are said to follow them to Egypt
+
+Sword;
+famine;
+pestilence
+→ projected to follow.
+
+## M50J-18 — MOVING AWAY FROM A HAZARD NODE DOES NOT HELP IF THE HAZARD PROCESS IS MOBILE OR REGIONAL
+
+This is extremely important.
+
+Route success requires:
+hazard geography
+to differ from origin.
+
+---
+
+# M50J-19 — REFUGE MUST BE TESTED AGAINST THE CAUSAL HAZARD, NOT JUST DISTANCE FROM THE LAST FAILURE SITE
+
+This is a core Vardath survival principle.
+
+---
+
+# Jeremiah 42:19–22 — requested advice is contradicted by pre-existing intention
+
+Jeremiah accuses them:
+they asked,
+but were already unwilling to obey.
+
+## M50J-20 — DECISION SUPPORT FAILS WHEN THE USER HAS ALREADY COMMITTED TO AN OUTCOME AND ONLY SEEKS CONFIRMATION
+
+This is a powerful epistemic control.
+
+---
+
+# Jeremiah 43:1–7 — group rejects guidance and forces route to Egypt
+
+Leaders accuse:
+Jeremiah lies;
+Baruch manipulates him.
+
+Then:
+entire remnant group taken to Egypt,
+including Jeremiah and Baruch.
+
+## M50J-21 — REJECTING UNWANTED MODEL CAN LEAD GROUP TO OVERRIDE ITS OWN REQUESTED DECISION PROCESS
+
+This is a group-risk failure.
+
+---
+
+# Jeremiah 43:7 — Tahpanhes becomes actual refugee/settlement node
+
+The migrants:
+arrive at Egyptian frontier center Tahpanhes.
+
+## M50J-22 — PLANNED REFUGE BECOMES NEW HOST NODE WITH ITS OWN POLITICAL/GEOGRAPHIC EXPOSURE
+
+No refuge exists outside geography.
+
+---
+
+# Jeremiah 43:8–10 — large stones are hidden/embedded at Pharaoh’s palace platform
+
+Jeremiah:
+places great stones
+in mortar/pavement/brickwork
+at entrance to Pharaoh’s house.
+
+Textual/lexical details are debated.
+
+The stones become:
+future throne-location sign.
+
+## M50J-23 — BURIED/EMBEDDED OBJECT CAN FUNCTION AS DELAYED PHYSICAL MARKER OF A FUTURE CLAIM
+
+This is an information-marker function.
+
+---
+
+# M50J-24 — LOCATION-BOUND MARKER CONNECTS FUTURE EVENT TO PRECISE TERRAIN NODE
+
+Unlike portable scroll:
+stone sign-act
+is spatially anchored.
+
+This complements:
+waymarks;
+boundary markers;
+archives.
+
+---
+
+# Jeremiah 43:10–13 — Babylonian reach extends into attempted refuge
+
+Nebuchadrezzar:
+projected to come to Egypt;
+establish power;
+strike/burn/carry.
+
+## M50J-25 — REFUGE NODE CAN ENTER THE SAME HAZARD NETWORK THE REFUGEES WERE TRYING TO ESCAPE
+
+This is the block’s central survival lesson.
+
+---
+
+# Jeremiah 43 — Vardath refuge comparison
+
+A future gate survivor might choose:
+- cave;
+- highland;
+- neighboring region;
+- another world/turn;
+- temporary camp.
+
+The correct refuge is not:
+the one that feels farthest from fear.
+
+It is:
+the one outside the causal hazard path
+and capable of sustaining life.
+
+## M50J-26 — REFUGE SELECTION REQUIRES HAZARD-PROPAGATION MODEL + RESOURCE MODEL + POLITICAL/ENVIRONMENTAL STABILITY MODEL
+
+Distance alone is insufficient.
+
+---
+
+# Jeremiah 44:1 — Judean migrants disperse across multiple Egyptian nodes
+
+Migdol;
+Tahpanhes;
+Memphis;
+Pathros.
+
+## M50J-27 — A REFUGEE POPULATION CAN DISTRIBUTE ACROSS MULTIPLE HOST NODES AFTER ONE INITIAL ROUTE DECISION
+
+This creates:
+distributed diaspora.
+
+---
+
+# Jeremiah 44:2–10 — ruins of Judah become visible evidence in argument
+
+The migrants:
+have seen destruction.
+
+Yet religious/cultural practices remain contested.
+
+## M50J-28 — DIRECT EXPERIENCE OF CATASTROPHE DOES NOT GUARANTEE CONSENSUS ABOUT ITS CAUSE
+
+This is critical for myth formation.
+
+Same event:
+different causal stories.
+
+---
+
+# Jeremiah 44:15–19 — women and men explicitly defend Queen-of-Heaven practice
+
+The community argues:
+when offerings were made,
+they had food/welfare;
+when stopped,
+disaster followed.
+
+Jeremiah:
+assigns opposite causal interpretation.
+
+## M50J-29 — POST-CATASTROPHE COMMUNITIES CAN DEVELOP COMPETING CAUSAL MODELS USING THE SAME HISTORICAL DATA
+
+This is one of the strongest epistemic lessons in the whole research.
+
+---
+
+# M50J-30 — CORRELATION MEMORY CAN SUPPORT OPPOSITE CAUSAL NARRATIVES
+
+Group A:
+ritual stopped
+→ disaster.
+
+Jeremiah:
+ritual caused disaster.
+
+Same sequence:
+opposite interpretation.
+
+For Vardath research:
+chronology alone
+does not establish causation.
+
+---
+
+# Jeremiah 44 — household religious practice is multi-gender/community sustained
+
+Women:
+make offerings.
+
+Husbands/men:
+know/participate.
+
+## M50J-31 — CULTURAL MEMORY CAN BE PRESERVED AT HOUSEHOLD LEVEL EVEN AFTER STATE/TEMPLE COLLAPSE
+
+This is very important for myth survival.
+
+Institutions may die;
+household practice persists.
+
+---
+
+# M50J-32 — HOUSEHOLD NETWORK CAN PRESERVE A MODEL THAT CENTRAL RELIGIOUS AUTHORITY OPPOSES
+
+Distributed cultural memory
+may diverge from official text.
+
+This matters for reconstructing older myth layers.
+
+---
+
+# Jeremiah 44:24–30 — Egypt itself receives a sign/prediction test
+
+A sign is given:
+Pharaoh Hophra will be handed to enemies.
+
+## M50J-33 — REFUGE MODEL CAN BE TESTED BY WHETHER THE HOST SYSTEM ITSELF REMAINS POLITICALLY STABLE
+
+Safe haven:
+depends on host durability.
+
+---
+
+# Jeremiah 45:1 — Baruch is explicitly tied back to scroll production
+
+The chapter returns chronologically to:
+Baruch writing Jeremiah’s words.
+
+## M50J-34 — EDITORIAL ORDER CAN RETURN TO AN EARLIER TIME TO REFRAME A SURVIVOR NODE
+
+Again:
+canonical sequence
+≠ strict chronology.
+
+---
+
+# Jeremiah 45:3 — Baruch is weary and cannot find rest
+
+Information-preservation worker:
+experiences cumulative load.
+
+## M50J-35 — ARCHIVE/COPY NODES HAVE HUMAN FATIGUE LIMITS
+
+Catastrophe information systems must protect:
+people,
+not only documents.
+
+---
+
+# Jeremiah 45:4 — built/planted whole land is broken/plucked
+
+The whole system:
+enters deconstruction state.
+
+## M50J-36 — LARGE-SCALE SYSTEM COLLAPSE CAN COEXIST WITH PRESERVATION OF SELECTED HUMAN NODES
+
+This is the chapter’s key contrast.
+
+---
+
+# Jeremiah 45:5 — Baruch receives “life as prize” wherever he goes
+
+Baruch:
+not promised intact infrastructure;
+wealth;
+status.
+
+He is promised:
+life.
+
+## M50J-37 — MINIMUM SUCCESS CRITERION DURING SYSTEM-WIDE COLLAPSE MAY BE BIOLOGICAL SURVIVAL OF KEY INFORMATION CARRIER
+
+This directly matches Jeremiah 21/38.
+
+---
+
+# M50J-38 — INFORMATION PRESERVATION NETWORK MAY NEED MOBILE HUMAN CARRIERS WHO SURVIVE ACROSS MULTIPLE LOCATIONS
+
+Baruch:
+scribe;
+mobile survivor;
+copy node.
+
+Extremely relevant to the Vardath archive project.
+
+---
+
+# Jeremiah 40–45 — fragile successor node synthesis
+
+The block shows:
+
+city collapse
+→ remnant government
+→ resource recovery
+→ assassination
+→ hostage crisis
+→ rescue
+→ refugee fear
+→ route decision
+→ wrong refuge choice
+→ distributed diaspora
+→ competing causal traditions.
+
+## M50J-39 — SUCCESSOR STATE IS MOST FRAGILE BEFORE GOVERNANCE, SECURITY, INFORMATION AND RESOURCE SYSTEMS ALL STABILIZE
+
+Early recovery:
+can be reversed quickly.
+
+---
+
+# Jeremiah 40–45 — Vardath route-choice synthesis
+
+Earlier Jeremiah gave:
+- **leave** besieged city to survive;
+- **settle** in Babylon for long exile;
+- **return** later;
+- **stay** in Judah after collapse under Gedaliah/Jeremiah;
+- **do not flee** to Egypt.
+
+Therefore:
+
+## M50J-40 — VARDATH SURVIVAL GUIDANCE CANNOT BE REDUCED TO ONE UNIVERSAL DIRECTIONAL RULE
+
+Not:
+always flee.
+
+Not:
+always stay.
+
+Not:
+always go high.
+
+Not:
+always cross gate.
+
+The correct action depends on:
+current node state;
+hazard propagation;
+resource availability;
+timing;
+governance/security;
+route viability.
+
+This is one of the most important master rules in the entire project.
+
+---
+
+# Jeremiah 40–45 — dragon/lattice comparison
+
+No dragon.
+No spiderweb.
+No support spring.
+
+This block operates at:
+post-collapse social routing.
+
+Its relevance comes after:
+the physical transition.
+
+## M50J-41 — PHYSICAL GATE MODEL MUST BE COUPLED TO A SEPARATE SURVIVOR DECISION MODEL
+
+Even perfect mechanism knowledge
+does not automatically answer:
+where people should go.
+
+---
+
+# Jeremiah 40–45 strict spiderweb → fingertrap screening
+
+## dragon support lattice
+Absent.
+
+## gate/throat
+Absent.
+
+## route decision
+Exceptionally strong.
+
+## refuge selection
+Exceptionally strong.
+
+## successor governance
+Exceptionally strong.
+
+## hazard propagation
+Exceptionally strong.
+
+## distributed cultural memory
+Strong.
+
+## personal survival
+Strong.
+
+### Strict verdict
+
+**Jeremiah 40–45 is not a fingertrap-mechanism block. It is one of the strongest post-collapse route-choice blocks in the research. A functioning remnant center forms and begins harvesting, then fails when its single governance node is assassinated. The surviving population chooses Egypt because it appears to remove the familiar signals of war and famine, yet the text’s internal model treats Egypt as still inside the causal hazard network. The key Vardath lesson is that refuge must be selected by downstream hazard and resource modeling, not by emotional distance from the last disaster.**
+
+---
+
+# Jeremiah 40–45 pair / process matrix
+
+## Jerusalem / Mizpah
+failed primary center / temporary successor hub.
+
+## Gedaliah / remnant
+central governor / recovering population.
+
+## harvest / assassination
+resource recovery / governance collapse.
+
+## Ishmael / Johanan
+captor/controller / rescuer/new leader.
+
+## Judah / Egypt
+local successor option / attempted external refuge.
+
+## stay / flee
+one route model / competing route model.
+
+## ten-day delay / decision
+guidance latency / route commitment.
+
+## expected Egypt safety / predicted Egypt hazard
+perceived refuge / causal-risk model.
+
+## hidden stones / Tahpanhes
+durable sign marker / fixed terrain node.
+
+## Queen-of-Heaven supporters / Jeremiah
+one causal model / competing causal model.
+
+## temple-state memory / household practice
+central institution / distributed culture.
+
+## collapsing land / Baruch
+system-wide deconstruction / preserved information carrier.
+
+---
+
+# Jeremiah 40–45 continuous transformation timeline
+
+Jeremiah is released from fetters
+→ chooses local remnant path
+→ Gedaliah becomes successor governor
+→ scattered fighters/population reconverge
+→ fields/fruit begin producing
+→ assassination warning is dismissed
+→ Gedaliah is killed
+→ fragile successor governance collapses
+→ violence continues under delayed information
+→ population becomes hostage cargo
+→ Johanan pursues/rescues captives
+→ remnant regroup near Bethlehem
+→ fear of Babylonian retaliation drives Egypt plan
+→ group asks Jeremiah for route guidance
+→ ten-day information delay follows
+→ answer says remain/build/plant
+→ leaders reject unwanted guidance
+→ entire remnant moves to Egypt
+→ Tahpanhes becomes refuge/host node
+→ large stones are embedded as local sign marker
+→ Babylonian reach is projected into Egypt
+→ migrant population disperses across multiple Egyptian centers
+→ migrants and Jeremiah dispute catastrophe causation
+→ Queen-of-Heaven practice persists through household/community network
+→ same history supports opposing causal interpretations
+→ host Egypt receives its own political-failure sign
+→ narrative returns chronologically to Baruch’s earlier scribal burden
+→ whole land is described as build→break / plant→pluck
+→ Baruch receives minimum survival promise: life retained wherever he goes.
+
+---
+
+# New master-mechanism additions from Jeremiah 40–45
+
+## M50J-1 — RELEASE CAN CREATE BRANCH-CHOICE PROBLEM
+## M50J-2 — SECONDARY NODE CAN BECOME TEMPORARY SUCCESSOR HUB
+## M50J-3 — EARLY RECOVERY CAN BEGIN THROUGH REGATHERING + HARVEST
+## M50J-4 — RESOURCE RECOVERY CAN PRECEDE POLITICAL STABILITY
+## M50J-5 — DISMISSED INTELLIGENCE CAN COLLAPSE SUCCESSOR NODE
+## M50J-6 — CENTRAL GOVERNANCE NODE REMOVAL CAN RAPIDLY DESTABILIZE SYSTEM
+## M50J-7 — SINGLE-POINT GOVERNANCE IS FRAGILE
+## M50J-8 — INFORMATION DELAY ALLOWS HAZARD PROPAGATION
+## M50J-9 — RECOVERED POPULATION CAN REENTER FORCED TRANSFER
+## M50J-10 — HUMAN CARGO CAN CHANGE CONTROLLER MID-TRANSFER
+## M50J-11 — ROUTE CHOICE CAN BE DRIVEN BY EXPECTED SECONDARY HAZARD
+## M50J-12 — GROUP CAN SEEK ROUTE DECISION SUPPORT
+## M50J-13 — GUIDANCE LATENCY MATTERS AT DECISION NODE
+## M50J-14 — DECISION WINDOW + INFORMATION LATENCY MUST BE CO-MODELLED
+## M50J-15 — “STAY” CAN BE SAFER AFTER COLLAPSE
+## M50J-16 — STAY/GO RULE DEPENDS ON NODE STATE
+## M50J-17 — REFUGE CHOICE OFTEN TARGETS RECENT TRAUMA SIGNALS
+## M50J-18 — HAZARD MAY FOLLOW IF PROCESS IS MOBILE/REGIONAL
+## M50J-19 — REFUGE MUST BE TESTED AGAINST CAUSAL HAZARD
+## M50J-20 — CONFIRMATION-SEEKING CAN CORRUPT DECISION SUPPORT
+## M50J-21 — GROUP CAN OVERRIDE ITS OWN REQUESTED GUIDANCE
+## M50J-22 — REFUGE NODE HAS ITS OWN EXPOSURE
+## M50J-23 — EMBEDDED STONE CAN FUNCTION AS DELAYED PHYSICAL MARKER
+## M50J-24 — LOCATION-BOUND MARKER LINKS FUTURE EVENT TO TERRAIN
+## M50J-25 — REFUGE NODE CAN ENTER SAME HAZARD NETWORK
+## M50J-26 — REFUGE NEEDS HAZARD + RESOURCE + STABILITY MODEL
+## M50J-27 — REFUGEE POPULATION CAN DISTRIBUTE ACROSS HOST NODES
+## M50J-28 — CATASTROPHE EXPERIENCE DOES NOT GUARANTEE CAUSAL CONSENSUS
+## M50J-29 — SAME HISTORY CAN SUPPORT COMPETING CAUSAL MODELS
+## M50J-30 — CORRELATION MEMORY ≠ CAUSAL PROOF
+## M50J-31 — HOUSEHOLD NETWORK CAN PRESERVE CULTURE AFTER STATE COLLAPSE
+## M50J-32 — DISTRIBUTED CULTURE CAN DIVERGE FROM CENTRAL AUTHORITY
+## M50J-33 — REFUGE MODEL SHOULD INCLUDE HOST-SYSTEM DURABILITY
+## M50J-34 — EDITORIAL ORDER CAN RETURN TO EARLIER TIME
+## M50J-35 — HUMAN ARCHIVE NODES HAVE FATIGUE LIMITS
+## M50J-36 — SYSTEM COLLAPSE CAN COEXIST WITH SELECTED-NODE PRESERVATION
+## M50J-37 — MINIMUM SUCCESS MAY BE LIFE OF KEY INFORMATION CARRIER
+## M50J-38 — ARCHIVE NETWORK MAY REQUIRE MOBILE HUMAN CARRIERS
+## M50J-39 — EARLY SUCCESSOR STATE IS MULTI-SYSTEM FRAGILE
+## M50J-40 — NO UNIVERSAL “STAY/FLEE” RULE IS VALID
+## M50J-41 — PHYSICAL GATE MODEL NEEDS SEPARATE SURVIVOR DECISION MODEL
+
+---
+
+# Number / timing register — Jeremiah 40–45
+
+Record without forcing:
+
+- **ten days** — delay before Jeremiah 42 route guidance.
+- no gate-duration number.
+- no world-layer count.
+- no dragon-spring count.
+- the ten-day interval is narrative decision latency, not a gate cycle.
+- later historical chronology of Egyptian/Babylonian conflict must be treated separately from symbolic sign acts.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 40–45
+
+1. Working primary text: Jeremiah 40–45 NRSVUE, compared with NIV/ESV/NKJV where useful.
+2. Oxford’s *After the Invasion* treats Jeremiah 40–44 as a coherent post-collapse narrative focused on factionalism, assassination, hostage crisis, route decision and migration to Egypt.
+3. Gedaliah’s appointment and assassination belong to the immediate aftermath of Babylonian destruction and the attempt to maintain a Judean rump administration.
+4. Jeremiah 42’s ten-day delay is narratively significant; scholarship asks whether the remnant’s request for guidance is sincere.
+5. Jeremiah 43’s Tahpanhes stone/platform wording is textually difficult; brickkiln, brickwork, mortar/platform readings differ.
+6. The secure function is a location-bound sign-act associated with future Babylonian power at the Egyptian refuge node.
+7. Jeremiah 44 preserves competing internal Judean explanations of disaster; Queen-of-Heaven devotees explicitly claim their prior ritual practice correlated with prosperity.
+8. Teresa Ann Ellis and recent migration scholarship emphasize the complexity of the Queen-of-Heaven dispute and the migrants’ own counter-narrative.
+9. Ancient migrant communities should not be treated as ideologically homogeneous.
+10. Jeremiah 45 returns chronologically to Baruch’s earlier scribal work, showing that book order is not strictly event chronology.
+11. No dragon/lattice-support or spiderweb→fingertrap mechanism appears.
+12. Strict fingertrap status remains negative; post-collapse route/refuge relevance is exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 40–45
+
+Primary:
+- Jeremiah 40 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+40&version=NRSVUE
+- Jeremiah 42 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+42&version=NRSVUE
+- Jeremiah 43 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+43&version=NRSVUE
+- Jeremiah 44 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+44&version=NRSVUE
+- Jeremiah 45 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+45&version=NRSVUE
+
+Scholarly / contextual:
+- Louis Stulman, *After the Invasion: A Reading of Jeremiah 40–44*, Oxford University Press:
+  https://academic.oup.com/book/7533
+- Oxford chapter “The Prophet’s Reactivation,” on the stay-versus-Egypt decision:
+  https://academic.oup.com/book/7533/chapter-abstract/152487232
+- Joshua J. Adler, “The Triple Tragedy of the Gedaliah Assassination,” *Jewish Bible Quarterly*:
+  https://www.jewishbible.org/articles/the-triple-tragedy-of-the-gedaliah-assassination/
+- Teresa Ann Ellis, “Jeremiah 44: What if ‘the Queen of Heaven’ is YHWH?”:
+  https://journals.sagepub.com/doi/10.1177/0309089209105690
+- Recent migration study on Jeremiah 44:
+  https://www.mdpi.com/2077-1444/16/4/469
+- Cambridge/Ellicott textual discussion of Jeremiah 43:9 Tahpanhes stones/pavement:
+  https://biblehub.com/commentaries/jeremiah/43-9.htm
+
+---
+
+# SECTION 50J CHECKPOINT — JEREMIAH 40–45 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 40–45 demonstrates how fragile the immediate post-collapse phase is: food production can recover while governance remains one assassination away from failure.**
+2. **Gedaliah’s death is a single-point governance failure that cascades into hostage-taking, rescue and mass refugee movement.**
+3. **The remnant explicitly asks which route to take; the answer arrives after ten days, making information latency part of the survival decision.**
+4. **Earlier Jeremiah said leave the besieged city; here Jeremiah says stay in the land. This proves there is no universal “always flee” or “always stay” rule. Node state decides.**
+5. **Egypt is chosen because it seems free of the recent trauma signals—war trumpet and bread shortage—but the text treats it as still inside the causal hazard network.**
+6. **A refuge must therefore be tested against downstream hazard propagation, resources and host-system stability, not just immediate emotional safety.**
+7. **Jeremiah 44 preserves competing causal interpretations of the same catastrophe; chronology/correlation alone does not prove causation.**
+8. **Household/community networks can preserve cultural models after central institutions collapse.**
+9. **Baruch’s survival promise reduces success to preservation of life for a key information carrier even while the whole land undergoes break/pluck collapse.**
+10. **No dragon-support lattice or strict spiderweb→fingertrap mechanism appears; this block belongs to post-transition survivor decision science.**
+
+### Next live block
+
+**Jeremiah 46–49**
+
+Priority:
+- Egypt at Carchemish and historical 605 BCE control;
+- river/Nile rising like flood and military surge imagery;
+- north-force movement;
+- horse/chariot speed and collapse;
+- healing balm failure;
+- Egypt as beautiful heifer / gadfly from north;
+- forest cut though impenetrable;
+- Jacob return/no fear refrain;
+- Philistia flood from north;
+- Moab vessel/wine settling then pouring from vessel to vessel;
+- Chemosh goes into exile;
+- Ammon/Milcom dispossession;
+- Edom eagle/high nest/downfall;
+- Damascus weak hands/labor;
+- Kedar tents/flocks/camels;
+- Elam bow broken / four winds scatter / throne set;
+- HIGH PRIORITY: multiple fluid/container/wind/scatter geometries and exact historical battle controls.
