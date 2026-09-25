@@ -25883,3 +25883,1624 @@ Strongest first-time findings:
 
 Next action:
 **return to the reconstructed 88-book progression ledger and continue with the first unfinished book/section after Isaiah, using the actual appended research state rather than chat memory.**
+
+
+---
+
+# SECTION 50 progress A — Jeremiah 1–6
+## First-time direct research pass: womb-call, almond-rod timing signal, boiling pot tilted from north, broken water-storage systems, withheld rain, north→south invasion field, high-energy wind, creation-order reversal without total annihilation, sea-boundary control, predator/watch geometry, siege encirclement, ancient paths/watchmen, and failed refining
+
+Jeremiah begins with a different symbolic grammar from Isaiah.
+
+The first six chapters repeatedly use:
+
+- rod/branch;
+- pot/container;
+- north→south directional pressure;
+- fountain/cistern water systems;
+- rain withholding;
+- yokes/bonds;
+- paths/roads;
+- trumpet/signal;
+- wind;
+- mountain movement;
+- light loss;
+- city/land personification;
+- siege enclosure;
+- boundary control by sand;
+- refining/metallurgy.
+
+For Vardath Cosmology the strongest early Jeremiah result is **Jeremiah 4:23–28**.
+
+The text deliberately evokes Genesis creation language and then reverses ordered conditions:
+
+**ordered land**
+→ **tohu wabohu / waste-chaos**
+→ **sky loses light**
+→ **mountains quake / hills move**
+→ **humans absent**
+→ **birds gone**
+→ **fruitful land becomes desert**
+→ **cities ruined**
+→ **yet destruction is explicitly not total**.
+
+This is one of the clearest biblical **reset-with-continuity** patterns encountered so far.
+
+The ordinary literary/historical control remains strong:
+the surrounding chapters concern impending devastation of Judah from an enemy from the north.
+
+So Jeremiah 4 is a major **Vardath process analogue**, not direct proof of the dragon/fingertrap mechanics.
+
+---
+
+# Jeremiah 1:1–3 — the book opens with a long historical observation window
+
+Jeremiah’s word/ministry is framed from:
+- Josiah’s thirteenth year;
+- through Jehoiakim;
+- through Zedekiah’s eleventh year;
+- to Jerusalem’s captivity in the fifth month.
+
+## M50A-1 — OBSERVER WINDOW CAN SPAN MULTIPLE POLITICAL REGIMES AND TERMINATE AT A SYSTEM COLLAPSE
+
+This matters for the final timeline.
+
+One source can preserve:
+precursor state
+→ multiple intermediate regimes
+→ final collapse.
+
+Narrative sequence must still be separated from exact composition/date of individual oracles.
+
+---
+
+# Jeremiah 1:4–5 — formation in womb precedes active mission
+
+The prophet is:
+formed in womb;
+known/consecrated before birth;
+appointed before active deployment.
+
+## M50A-2 — ROLE/INFORMATION ASSIGNMENT CAN PRECEDE BIOLOGICAL/OPERATIONAL EMERGENCE
+
+This repeats Isaiah 49.
+
+### Control
+
+Womb:
+developmental enclosure.
+
+Not:
+automatic cosmic gate/womb identity.
+
+---
+
+# Jeremiah 1:6–10 — mouth becomes information interface, then mission spans destruction and rebuilding
+
+The source:
+touches Jeremiah’s mouth;
+places words there.
+
+The mission uses paired verbs:
+- pluck up;
+- pull down;
+- destroy;
+- overthrow;
+- build;
+- plant.
+
+## M50A-3 — ONE INFORMATION NODE CAN BE ASSIGNED BOTH DESTRUCTIVE AND CONSTRUCTIVE SYSTEM FUNCTIONS
+
+This is important for Vardath.
+
+Transition sequence:
+destruction
+does not terminate the whole process.
+
+It is paired from the beginning with:
+building/planting.
+
+---
+
+# M50A-4 — JEREMIAH’S COMMISSION ALREADY CONTAINS RESET, NOT PURE ANNIHILATION
+
+destroy/remove
+→ later build/plant.
+
+This becomes a book-level control.
+
+---
+
+# Jeremiah 1:11–12 — almond branch/rod is primarily a sound/timing sign
+
+Jeremiah sees:
+branch/rod of almond tree.
+
+Hebrew:
+**shaqed** = almond;
+**shoqed** = watching.
+
+Major translations and commentary note the deliberate wordplay.
+
+The almond tree’s early blossoming may reinforce the waking/early-action association, but the textual explanation itself is:
+source is “watching” over the word to perform it.
+
+## M50A-5 — ROD/BRANCH FORM HERE IS AN INFORMATIONAL WORDPLAY TRIGGER BEFORE IT IS A MECHANICAL ROD
+
+This is a crucial Vardath control.
+
+Do not reason:
+rod appears
+→ fingertrap rod.
+
+The text itself explains:
+almond/rod
+→ watching/fulfillment.
+
+---
+
+# M50A-6 — A VISUAL OBJECT CAN FUNCTION AS A PHONETIC/INFORMATION KEY RATHER THAN AS THE PHYSICAL MECHANISM IT RESEMBLES
+
+This is essential for:
+rods;
+trees;
+animals;
+numbers;
+names.
+
+---
+
+# Jeremiah 1:13–14 — boiling pot has directional orientation
+
+Second vision:
+boiling pot/container.
+
+Its face/orientation:
+away from / from the north,
+depending translation.
+
+NET explains the result:
+destruction breaks out from the north over inhabitants of the land.
+
+## M50A-7 — CONTAINER ORIENTATION CAN encode DIRECTION OF IMPENDING FLOW WITHOUT THE CONTAINER ITSELF BEING THE FINAL EVENT MECHANISM
+
+The pot is:
+vision trigger/model.
+
+The historical process:
+northern invasion pressure.
+
+---
+
+# Jeremiah 1:13 — pot is heated/boiling: stored contents under energy input
+
+## M50A-8 — CONTAINED MATERIAL UNDER HEAT CAN REPRESENT A PRESSURIZED/READY-TO-RELEASE STATE
+
+This is a genuine process analogue.
+
+But:
+the chapter does not identify the contents,
+pressure,
+or literal fluid discharge.
+
+Strict physical reconstruction:
+not justified.
+
+---
+
+# Jeremiah 1:14–15 — north becomes origin field; gates become target/control nodes
+
+Nations/kingdoms:
+come from north.
+
+They place thrones:
+at Jerusalem’s gates
+and against walls/cities.
+
+## M50A-9 — EXTERNAL FORCE CAN CAPTURE A CITY BY OCCUPYING ITS ACCESS/CONTROL INTERFACES
+
+Gate:
+not just opening.
+
+Gate:
+political/judicial/control node.
+
+This is another gate-type.
+
+---
+
+# Jeremiah 1:17–19 — prophet is projected as fortified city, iron pillar and bronze wall
+
+Jeremiah:
+one human agent.
+
+Projected as:
+- fortified city;
+- iron pillar;
+- bronze wall.
+
+## M50A-10 — HUMAN AGENT CAN BE PROJECTED AS ARCHITECTURAL LOAD-BEARING STRUCTURE WITHOUT LITERAL BODY=BUILDING IDENTITY
+
+This is a major Squatter-Man control.
+
+---
+
+# Jeremiah 2:2–7 — wilderness→fertile land is an environmental transition
+
+Earlier route:
+unsown wilderness;
+deserts;
+pits;
+drought;
+deep darkness;
+uninhabited/no-passage terrain.
+
+Destination:
+plentiful/fertile land;
+fruit/produce.
+
+## M50A-11 — TRANSFER CAN MOVE POPULATION FROM LOW-HABITABILITY CORRIDOR INTO HIGH-PRODUCTIVITY LAND
+
+This is ordinary Exodus-memory geography first.
+
+---
+
+# Jeremiah 2:13 — living fountain versus broken cisterns is a complete water-system comparison
+
+Two systems:
+
+### source-fed system
+fountain of living water.
+
+### human storage system
+cisterns dug;
+broken/cracked;
+cannot hold water.
+
+## M50A-12 — WATER SECURITY DEPENDS ON SOURCE + STORAGE INTEGRITY
+
+This is a highly practical systems result.
+
+A world can have:
+water input
+
+but still fail habitability if:
+storage/retention fails.
+
+---
+
+# M50A-13 — HYDROLOGICAL FAILURE CAN OCCUR THROUGH BOUNDARY LEAKAGE RATHER THAN ABSENCE OF WATER SOURCE
+
+Cistern:
+has intended enclosure function.
+
+Crack/breach:
+destroys retention.
+
+### Vardath relevance
+
+After water redistribution:
+retention basins;
+ground porosity;
+cracks;
+drainage
+will determine whether the successor surface remains wet.
+
+---
+
+# Jeremiah 2:18 — Egypt/Assyria waters are political-route resources
+
+The chapter names:
+Nile/Shihor;
+Euphrates/river
+in geopolitical alliance imagery.
+
+## M50A-14 — NAMED RIVERS CAN FUNCTION AS POLITICAL-ROUTE MARKERS RATHER THAN COSMIC WATER CHANNELS
+
+Object/context control remains mandatory.
+
+---
+
+# Jeremiah 2:20 — yoke/bonds are restraint systems again
+
+Yoke:
+broken.
+
+Bonds:
+burst.
+
+Then:
+uncontrolled high-place activity.
+
+## M50A-15 — RESTRAINT REMOVAL CAN PRODUCE FREEDOM OR LOSS OF STABILITY DEPENDING ON SYSTEM PURPOSE
+
+Compare Isaiah 58:
+breaking oppressive yoke = liberation.
+
+Jeremiah 2:
+breaking relational yoke = rebellion.
+
+Same mechanics;
+different function.
+
+---
+
+# Jeremiah 2:21 — choice vine → degenerate/foreign vine is biological-state reversal
+
+Planting:
+high-quality stock.
+
+Later:
+changed/degenerate output.
+
+## M50A-16 — SAME BIOLOGICAL SYSTEM CAN DIVERGE FROM ITS INITIAL CONDITION WITHOUT CHANGING SPECIES-LABEL GRAMMAR
+
+This is identity/function divergence.
+
+---
+
+# Jeremiah 2:23–25 — camel/wild ass imagery describes uncontrolled route motion
+
+Movement:
+running;
+wandering;
+seeking;
+difficult to restrain.
+
+## M50A-17 — ANIMAL MOTION IMAGERY CAN PROJECT ROUTE INSTABILITY WITHOUT LITERAL SPECIES TRANSFORMATION
+
+---
+
+# Jeremiah 3:1–3 — land pollution is followed by rain withholding
+
+Sequence:
+
+relational/cultic failure
+→ land polluted
+→ showers withheld
+→ spring rain absent.
+
+## M50A-18 — SOCIAL/RELIGIOUS DISORDER IS LITERARILY COUPLED TO HYDROLOGICAL OUTPUT
+
+### Vardath comparison
+
+This is important as a process chain:
+human/social state
+↔ rain/land state.
+
+But Jeremiah frames the causation theologically.
+
+Do not treat it as observed atmospheric physics.
+
+---
+
+# Jeremiah 3:2 — bare heights / waysides create high-place and route geometry
+
+Activity occurs:
+on bare heights;
+beside roads.
+
+## M50A-19 — HIGH PLACE + ROUTE-SIDE LOCATION CAN BELONG TO ONE TERRESTRIAL CULTIC NETWORK
+
+Not stacked-world proof.
+
+---
+
+# Jeremiah 3:6–11 — Israel/Judah are paired as related but distinct system branches
+
+Two named corporate figures:
+Israel;
+Judah.
+
+One:
+sent away/divorced.
+
+Other:
+observes but repeats pattern.
+
+## M50A-20 — RELATED POLITICAL SYSTEMS CAN FORM A PAIR OF SUCCESSIVE FAILURE STATES WITHOUT BEING TWO COSMIC STRANDS
+
+Pair classification:
+historical/corporate first.
+
+---
+
+# Jeremiah 3:12–14 — return from north and one/two remnant selection
+
+The text calls:
+return from north.
+
+It later describes taking:
+one from a city;
+two from a family/clan
+and bringing them to Zion.
+
+## M50A-21 — DISPERSED POPULATION CAN BE REDUCED TO SPARSE SELECTED NODES BEFORE RECONVERGENCE
+
+This is a remnant-selection topology.
+
+---
+
+# Jeremiah 3:16 — ark loses central symbolic function in the successor state
+
+The ark:
+will no longer be remembered/visited/made,
+according to the oracle.
+
+Jerusalem instead becomes:
+throne/central node.
+
+## M50A-22 — SUCCESSOR SYSTEM CAN RETIRE AN OLD CENTRAL OBJECT AND TRANSFER CENTRALITY TO A LARGER NODE
+
+This is a major architecture shift:
+
+portable sacred centre
+→ city-scale centre.
+
+---
+
+# Jeremiah 3:17–18 — nations gather; Judah/Israel reunite and move from north
+
+Jerusalem:
+central attractor.
+
+Nations:
+gather.
+
+Judah + Israel:
+move together from north
+toward inherited land.
+
+## M50A-23 — PREVIOUSLY SPLIT SYSTEM BRANCHES CAN RECOMBINE DURING RETURN
+
+This is a true:
+two→one political reconvergence.
+
+Still:
+not dragon strands.
+
+---
+
+# Jeremiah 4:3 — fallow ground must be broken before sowing
+
+## M50A-24 — PRODUCTIVE SUCCESSOR STATE MAY REQUIRE SUBSTRATE RECONFIGURATION BEFORE INPUT IS USEFUL
+
+Seed into thorns:
+fails.
+
+Ground preparation:
+precedes viable growth.
+
+This is strong post-catastrophe ecology/agriculture logic.
+
+---
+
+# Jeremiah 4:4 — internal covering is removed; fire threat follows
+
+“Circumcise heart”
+→ remove covering projection.
+
+If not:
+wrath like unquenchable fire.
+
+## M50A-25 — COVERING REMOVAL CAN BE A BODY/RELATIONAL METAPHOR WITHOUT PHYSICAL LAYER-STRIPPING MECHANISM
+
+---
+
+# Jeremiah 4:5–6 — trumpet + signal create emergency information network
+
+Trumpet:
+through land.
+
+Signal:
+toward Zion.
+
+Instruction:
+assemble;
+flee;
+do not delay.
+
+Hazard:
+comes from north.
+
+## M50A-26 — APPROACHING HAZARD TRIGGERS BROADCAST→CONVERGENCE/EVACUATION NETWORK
+
+This is exactly the kind of warning architecture needed in a gate-event survival model.
+
+---
+
+# Jeremiah 4:7 — lion/destroyer leaves place and moves toward inhabited field
+
+The invader is projected as:
+lion;
+destroyer of nations.
+
+## M50A-27 — PREDATOR FIGURE CAN MODEL MILITARY ACTOR WITHOUT DRAGON/SUPPORT FUNCTION
+
+Again:
+animal ≠ Vardath dragon.
+
+---
+
+# Jeremiah 4:11–12 — wind is too strong for ordinary winnowing/cleansing
+
+A hot/strong wind:
+comes from bare heights.
+
+The text explicitly says:
+not for winnowing;
+not for cleansing;
+too strong.
+
+## M50A-28 — SAME WIND PROCESS CLASS CAN HAVE USEFUL LOW-ENERGY AND DESTRUCTIVE HIGH-ENERGY REGIMES
+
+### low/moderate
+winnowing/cleaning.
+
+### high
+destructive force.
+
+This is a strong environmental dynamics analogue.
+
+---
+
+# M50A-29 — PROCESS FUNCTION CAN CHANGE WHEN INTENSITY CROSSES A THRESHOLD
+
+This is highly relevant to:
+wind;
+water;
+fire;
+plasma.
+
+---
+
+# Jeremiah 4:13 — cloud / whirlwind / eagle imagery projects invasion speed and field coverage
+
+Enemy:
+like clouds;
+chariots like whirlwind;
+horses swifter than eagles.
+
+## M50A-30 — CLOUD/ROTATION/BIRD ANALOGIES CAN PROJECT SPEED AND SCALE WITHOUT LITERAL METEOROLOGICAL IDENTITY
+
+---
+
+# Jeremiah 4:19–21 — trumpet and battle cry become repeated acoustic precursors
+
+Jeremiah reports:
+heart disturbance;
+trumpet;
+battle cry;
+disaster following disaster;
+tents/curtains suddenly destroyed.
+
+## M50A-31 — RAPID FIELD COLLAPSE CAN BE ACCOMPANIED BY REPEATED ACOUSTIC SIGNALS AND SUDDEN ENCLOSURE FAILURE
+
+Tent/curtain destruction:
+human habitation failure.
+
+Not sky-lattice proof.
+
+---
+
+# Jeremiah 4:23 — land becomes tohu wabohu; sky loses light
+
+This is one of the most important passages in the entire research.
+
+Hebrew:
+**tohu wabohu**.
+
+The same paired phrase appears in Genesis 1:2.
+
+NET explicitly notes the Genesis allusion and describes Jeremiah’s image as hyperbolic reversal of creation.
+
+Many scholars call the sequence:
+de-creation / undoing of creation.
+
+A competing scholarly emphasis argues:
+the scope is local/regional destruction of Judah rather than literal unmaking of the entire planet.
+
+Both must be retained.
+
+## M50A-32 — ORDERED CREATION CAN BE PROJECTED AS RUNNING BACKWARD INTO PRE-CREATION-LIKE DISORDER
+
+This is a very strong Vardath process analogue.
+
+---
+
+# Jeremiah 4:23 — land still exists while ordered state fails
+
+The observer sees:
+land/earth.
+
+It is not:
+nonexistent.
+
+Instead:
+disordered/waste.
+
+Sky:
+still there,
+but without light.
+
+## M50A-33 — WORLD-STATE RESET NEED NOT MEAN MATERIAL ANNIHILATION
+
+This maps strongly to Vardath:
+
+old order fails
+while
+material substrate remains.
+
+**Reset, not rewind; reconfiguration, not nothingness.**
+
+---
+
+# Jeremiah 4:24 — mountains quake and hills move
+
+Topography:
+loses stable state.
+
+## M50A-34 — MAJOR SYSTEM RESET CAN INCLUDE GROUND-SUPPORT / TOPOGRAPHIC INSTABILITY
+
+This is especially relevant after the user’s core clarification:
+
+> dragons are the lattice springs supporting the ground.
+
+If the Vardath dragon-support lattice changes/fails,
+a predicted downstream effect would be:
+terrain/mountain instability.
+
+Jeremiah 4 gives that **effect**.
+
+It does not identify:
+dragons;
+lattice springs;
+support failure
+as the cause.
+
+So this is:
+**strong consequence match, absent mechanism link**.
+
+---
+
+# M50A-35 — MOUNTAIN MOTION IS A HIGH-VALUE TEST OUTPUT FOR THE DRAGON-SUPPORT HYPOTHESIS
+
+Future passages should be cross-tested:
+
+dragon/support change
+→ mountain/ground instability
+→ water/atmosphere/ecology change.
+
+Jeremiah 4 supplies the middle/output side.
+
+---
+
+# Jeremiah 4:25 — “no human” and birds fled
+
+The scene:
+human population absent from viewed field;
+birds gone.
+
+## M50A-36 — CATASTROPHE CAN TEMPORARILY EMPTY A LOCAL/REGIONAL FIELD WITHOUT IMPLYING ALL WORLDS ARE UNINHABITED
+
+This is vital for Vardath.
+
+The user’s model:
+all world-turns are populated.
+
+Jeremiah’s scene is best controlled as:
+devastated Judah/land,
+not eternal cosmic emptiness.
+
+---
+
+# Jeremiah 4:26 — fruitful land → desert; cities destroyed
+
+Ecological/civic reversal:
+
+productive land
+→ desert;
+
+cities
+→ ruins.
+
+## M50A-37 — ONE RESET EVENT CAN COUPLE ECOLOGICAL AND URBAN FAILURE
+
+This is a strong Vardath consequence cluster.
+
+---
+
+# Jeremiah 4:27 — “desolate, but not a full end”
+
+This line is critical.
+
+Land:
+desolate.
+
+But:
+not total destruction/end.
+
+## M50A-38 — DE-CREATION IMAGERY CAN EXPLICITLY PRESERVE CONTINUITY THROUGH NON-TOTAL DESTRUCTION
+
+This is one of the strongest matches to the mature Vardath rule:
+
+**catastrophic reset**
+≠
+absolute annihilation.
+
+There is enough continuity for:
+later rebuilding,
+population return,
+successor state.
+
+---
+
+# Jeremiah 4:28 — earth mourns / heavens darken
+
+Ground and upper field:
+respond together.
+
+## M50A-39 — UPPER AND LOWER ENVIRONMENTAL STATES CAN CHANGE IN COUPLED FASHION
+
+This is a strong paired-domain effect.
+
+No physical coupling mechanism is given.
+
+---
+
+# Jeremiah 4:29 — population evacuates into thickets/rocks and abandons cities
+
+Invader signal:
+→ population scatters from civic surface
+→ takes refuge in natural enclosures
+→ cities empty.
+
+## M50A-40 — SURVIVAL RESPONSE CAN SHIFT POPULATION FROM OPEN URBAN FIELD INTO DISTRIBUTED NATURAL ENCLOSURES
+
+This resembles earlier cave/pit refuge patterns.
+
+---
+
+# Jeremiah 4:30–31 — city becomes dressed female / laboring woman
+
+Zion/Jerusalem:
+adornment;
+sexual/political personification;
+then woman in labor anguish.
+
+## M50A-41 — CITY CAN SWITCH BETWEEN LANDSCAPE, FEMALE BODY AND BIRTH PROCESS PROJECTIONS WITHOUT LITERAL GIANT-BODY IDENTITY
+
+A major Squatter-Man control.
+
+---
+
+# Jeremiah 5:1 — city is searched node-by-node for one qualifying person
+
+Streets/squares:
+systematically searched.
+
+Criterion:
+justice/truth.
+
+## M50A-42 — DISTRIBUTED NETWORK CAN BE TESTED BY SCANNING LOCAL NODES FOR A QUALIFYING STATE
+
+This is an inspection/search algorithm analogue.
+
+---
+
+# Jeremiah 5:3 — faces harder than rock = maladaptive rigidity
+
+## M50A-43 — HARDNESS CAN REPRESENT RESISTANCE TO STATE CHANGE
+
+Compare Isaiah:
+iron neck;
+flint face.
+
+Function matters.
+
+Here:
+maladaptive.
+
+---
+
+# Jeremiah 5:5 — yoke/bonds broken by all social classes
+
+## M50A-44 — SYSTEM-WIDE DECOUPLING CAN OCCUR ACROSS MULTIPLE SOCIAL LAYERS
+
+Again:
+relational yoke,
+not support lattice.
+
+---
+
+# Jeremiah 5:6 — lion/wolf/leopard create perimeter hazard
+
+Predators:
+forest/desert/city watch.
+
+Anyone exiting:
+at risk.
+
+## M50A-45 — OPENING/CROSSING A CITY BOUNDARY CAN BECOME LETHAL EVEN WHEN THE GATE ITSELF IS PHYSICALLY PASSABLE
+
+This is a key gate-survival control.
+
+Passage availability
+≠
+safe passage.
+
+---
+
+# Jeremiah 5:10 — vine wall/branches are selectively damaged, not total root destruction
+
+Attackers:
+go through rows/vines/walls;
+destroy branches
+but not make full end.
+
+Translation details vary,
+but partial destruction is clear.
+
+## M50A-46 — SELECTIVE PRUNING/DESTRUCTION CAN REMOVE ACTIVE BRANCHES WHILE PRESERVING SYSTEM CONTINUITY
+
+This repeats:
+not full end.
+
+---
+
+# Jeremiah 5:22 — sand is boundary set for sea
+
+This is a major physical boundary image.
+
+Sea:
+waves roar;
+surge;
+yet cannot cross fixed sand boundary.
+
+## M50A-47 — GRANULAR LOW-RIGIDITY MATERIAL CAN FUNCTION AS EFFECTIVE BOUNDARY AGAINST HIGH-ENERGY FLUID
+
+This is mechanically interesting.
+
+Boundary effectiveness:
+does not require a hard wall.
+
+---
+
+# M50A-48 — BOUNDARY FUNCTION DEPENDS ON SYSTEM INTERACTION, NOT MATERIAL APPEARANCE ALONE
+
+Sand:
+looks weak.
+
+Yet:
+shoreline boundary is rhetorically fixed.
+
+### Vardath relevance
+
+World interfaces may depend on:
+field conditions
+rather than solid barriers.
+
+But Jeremiah 5 is poetic sea-boundary theology,
+not technical geophysics.
+
+---
+
+# Jeremiah 5:24 — seasonal rains and harvest weeks establish periodic environmental timing
+
+The text names:
+autumn/early rain;
+spring/latter rain;
+appointed weeks of harvest.
+
+## M50A-49 — HABITABILITY DEPENDS ON RECURRING SEASONAL WATER + AGRICULTURAL TIME WINDOWS
+
+This adds a post-reset timing variable.
+
+---
+
+# Jeremiah 5:26–27 — bird trap / cage filled with birds models capture accumulation
+
+People:
+set traps.
+
+Cage:
+filled with birds.
+
+## M50A-50 — ENCLOSURE CAN ACCUMULATE MANY CAPTURED LIVING UNITS THROUGH REPEATED INPUT
+
+Carrier/enclosure type:
+predatory capture,
+not refuge.
+
+---
+
+# Jeremiah 6:1 — trumpet + elevated signal coordinate southward escape from northern threat
+
+People:
+flee Jerusalem.
+
+Trumpet:
+Tekoa.
+
+Signal/beacon:
+Beth-haccherem.
+
+Threat:
+north.
+
+Likely escape direction:
+southward, as commentary notes.
+
+## M50A-51 — DIRECTIONAL HAZARD CAN PRODUCE OPPOSITE-DIRECTION EVACUATION WITH MULTI-NODE SIGNALING
+
+north-origin pressure
+→ southward warning/escape chain.
+
+---
+
+# Jeremiah 6:2–3 — daughter Zion / pasture / encircling tents are successive projections of same target
+
+Zion:
+woman;
+pasture;
+besieged city.
+
+Shepherds/flocks:
+army projection.
+
+Tents:
+surround.
+
+## M50A-52 — ONE TERRITORIAL NODE CAN BE PROJECTED AS WOMAN, PASTURE AND ENCIRCLED CITY IN RAPID SUCCESSION
+
+Strong anti-literalization control.
+
+---
+
+# Jeremiah 6:3 — distributed attackers occupy all sides
+
+They pitch:
+around her;
+each in own place.
+
+## M50A-53 — SIEGE CONVERTS OPEN BOUNDARY INTO MULTI-DIRECTIONAL ENCIRCLEMENT
+
+This is a true ring/closure geometry.
+
+---
+
+# Jeremiah 6:4–5 — attack persists across noon→night phase transition
+
+Attackers first:
+plan noon attack.
+
+Light declines.
+
+They switch:
+night attack.
+
+## M50A-54 — OPERATION CAN CONTINUE THROUGH ENVIRONMENTAL PHASE CHANGE BY CHANGING TIMING STRATEGY
+
+Day/night:
+not absolute stop.
+
+---
+
+# Jeremiah 6:6 — trees become siege ramp material
+
+Trees:
+cut.
+
+Material:
+reassigned into engineered attack structure.
+
+## M50A-55 — BIOLOGICAL MATERIAL CAN BE CONVERTED INTO GEOMETRIC/STRUCTURAL WARFARE INFRASTRUCTURE
+
+Again:
+material class preserved;
+function changes.
+
+---
+
+# Jeremiah 6:7 — city produces evil like well produces water
+
+NRSVUE imagery:
+as well/cistern keeps water fresh,
+city keeps wickedness fresh/flowing.
+
+## M50A-56 — SOURCE/RESERVOIR HYDROLOGY CAN BE USED AS ANALOGY FOR CONTINUOUS SOCIAL OUTPUT
+
+Do not literalize:
+evil = water.
+
+---
+
+# Jeremiah 6:9 — remnant is gleaned like vine
+
+Process:
+harvested system
+→ remaining grapes/remnant
+→ hand passes again.
+
+## M50A-57 — REMNANT EXTRACTION CAN OCCUR IN MULTIPLE PASSES
+
+A first catastrophe/harvest:
+does not necessarily remove all.
+
+Later pass:
+extracts remainder.
+
+---
+
+# Jeremiah 6:10 — ear is “uncircumcised” / unable to listen
+
+This is another information-interface failure.
+
+## M50A-58 — SENSOR FAILURE CAN BE PROJECTED AS BLOCKED/UNMODIFIED BODY INTERFACE
+
+Not anatomical physics.
+
+---
+
+# Jeremiah 6:14 — “peace, peace” with no peace is false state reporting
+
+Leaders:
+declare stable state.
+
+Actual system:
+unstable/damaged.
+
+## M50A-59 — FALSE STABILITY SIGNAL CAN MASK APPROACHING SYSTEM FAILURE
+
+This is extremely relevant to catastrophe preparedness.
+
+---
+
+# Jeremiah 6:16 — crossroads + ancient paths is explicit route-selection architecture
+
+Instruction:
+stand at crossroads;
+look;
+ask for ancient paths;
+choose good way;
+walk;
+find rest.
+
+Population:
+refuses.
+
+## M50A-60 — MULTI-PATH SYSTEM REQUIRES ROUTE SELECTION; EXISTENCE OF OLD SUCCESSFUL PATH DOES NOT GUARANTEE USE
+
+This is a strong navigation/control analogy.
+
+---
+
+# Jeremiah 6:17 — watchmen + trumpet warning are explicitly rejected
+
+Watchmen:
+posted.
+
+Trumpet:
+sounds.
+
+Population:
+refuses to listen.
+
+## M50A-61 — FUNCTIONAL EARLY-WARNING SYSTEM CAN FAIL AT THE RECEIVER/COMPLIANCE STAGE
+
+This adds a third failure point:
+
+1. sensor;
+2. alarm;
+3. receiver compliance.
+
+Isaiah 56 failed at 1/2.
+Jeremiah 6 emphasizes 3.
+
+---
+
+# Jeremiah 6:22–24 — northern army sounds like roaring sea and produces labor-pain response
+
+Incoming force:
+north;
+distant;
+bows/spears;
+cruel;
+sound like sea.
+
+Receiving population:
+anguish;
+labor pains.
+
+## M50A-62 — MILITARY FIELD CAN BE PROJECTED AS HIGH-ENERGY WAVE/SEA FRONT IMPACTING A BODY/POPULATION SYSTEM
+
+Again:
+sea sound
+≠ literal flood.
+
+---
+
+# Jeremiah 6:27–30 — prophet/community becomes metallurgy/refining test
+
+Jeremiah:
+assayer/tester.
+
+People:
+ore/metal.
+
+Bellows:
+blow fiercely.
+
+Lead:
+consumed.
+
+Refining:
+continues in vain.
+
+Output:
+rejected silver.
+
+## M50A-63 — HIGH-ENERGY PROCESSING DOES NOT GUARANTEE SUCCESSFUL REFINEMENT IF INPUT MATERIAL/PROCESS CONDITIONS ARE WRONG
+
+This is a strong processing control.
+
+---
+
+# M50A-64 — FAILED REFINING IS A NEGATIVE CONTROL AGAINST ASSUMING EVERY FIRE/HEAT PROCESS PRODUCES PURIFICATION
+
+Fire can:
+destroy;
+refine;
+manufacture;
+fail to refine.
+
+Context/function required.
+
+---
+
+# Jeremiah 1–6 — direct Vardath dragon/lattice comparison
+
+No explicit dragon:
+appears.
+
+No spiderweb support lattice:
+appears.
+
+But several **predicted effects** of a ground-support transition do appear:
+
+- strong wind;
+- loss of light;
+- mountain/hill motion;
+- fertile land→desert;
+- city destruction;
+- population evacuation;
+- altered rain;
+- water-storage failure;
+- upper/lower field change.
+
+## M50A-65 — JEREMIAH 4 IS A HIGH-VALUE CONSEQUENCE CLUSTER FOR TESTING THE DRAGON GROUND-SUPPORT HYPOTHESIS
+
+Vardath hypothesis predicts:
+
+dragon/lattice support change
+→ ground/topography instability
+→ atmosphere/light/wind change
+→ water/ecology shift
+→ population/city failure
+→ non-total reset
+→ successor rebuilding.
+
+Jeremiah 4 supplies much of:
+**effect sequence**.
+
+Missing:
+dragon/lattice causal mechanism.
+
+---
+
+# Jeremiah 4 and the populated-world rule
+
+The vision says:
+“no human” in the devastated field.
+
+This must not be generalized to:
+all worlds are uninhabited.
+
+The surrounding context and scholarship support:
+Judah/land devastation imagery,
+even where cosmic Genesis language is deliberately used.
+
+## M50A-66 — LOCAL/REGIONAL POPULATION ABSENCE DURING CATASTROPHE ≠ EMPTY STACKED WORLD MODEL
+
+The Vardath rule remains:
+
+each world-turn
+has its own inhabited present.
+
+A given region can still:
+be devastated;
+evacuated;
+temporarily depopulated.
+
+---
+
+# Jeremiah 4 and “reset, not rewind”
+
+The strongest sequence is:
+
+ordered fertile land
+→ light loss
+→ mountain motion
+→ human/bird evacuation
+→ desertification
+→ urban ruin
+→ **not total end**.
+
+## M50A-67 — JEREMIAH 4 IS ONE OF THE STRONGEST BIBLICAL LITERARY ANALOGUES FOR DESTRUCTIVE RESET WITHOUT MATERIAL ANNIHILATION
+
+This should be cross-linked later with:
+
+- Genesis 1;
+- Isaiah 24;
+- Isaiah 34–35;
+- Isaiah 65–66;
+- Ezekiel restoration material;
+- apocalyptic new-creation texts.
+
+---
+
+# Jeremiah 1–6 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## connected spiderweb lattice
+Absent.
+
+## rod
+Present:
+almond branch/rod,
+but explicitly controlled by wordplay/watching.
+
+## directional container
+Present:
+boiling pot from north.
+
+## strong wind
+Present.
+
+## light failure
+Strong.
+
+## mountain/ground motion
+Strong.
+
+## water/rain changes
+Strong.
+
+## ecological reset
+Strong.
+
+## urban destruction
+Strong.
+
+## non-total continuity
+Explicit.
+
+## throat/narrowing
+Absent.
+
+## same support structure reopens
+Absent.
+
+### Strict verdict
+
+**Jeremiah 1–6 does not reveal the spiderweb→fingertrap mechanism. Jeremiah 4, however, is an exceptionally strong reset-consequence text: ordered land is described with Genesis de-creation language, the sky loses light, mountains and hills move, living populations leave the field, fertile land becomes desert and cities collapse—yet the destruction is explicitly not total. This matches the Vardath “destructive transition → inherited-material successor” process far more strongly than it matches the specific dragon/lattice mechanism.**
+
+---
+
+# Jeremiah 1–6 pair / process matrix
+
+## womb / prophet
+developmental enclosure / deployed information node.
+
+## almond / watching
+visual object / phonetic-information interpretation.
+
+## branch-rod / word
+image trigger / predicted execution.
+
+## boiling pot / north
+heated enclosure / directional threat field.
+
+## fountain / cistern
+continuous water source / storage enclosure.
+
+## intact cistern / broken cistern
+retention / leakage failure.
+
+## Israel / Judah
+related corporate branches.
+
+## rain / polluted land
+environmental input / failed field.
+
+## north threat / southward flight
+hazard origin / evacuation direction.
+
+## moderate wind / destructive wind
+useful processing / threshold-exceeded force.
+
+## ordered land / tohu wabohu
+stable creation state / de-created disorder state.
+
+## lit heavens / dark heavens
+normal upper field / failed illumination.
+
+## stable mountains / moving mountains
+ground equilibrium / topographic instability.
+
+## inhabited field / no-human field
+population state / evacuated/devastated state.
+
+## fruitful land / desert
+productive ecology / failed ecology.
+
+## destruction / not-full-end
+catastrophe / continuity.
+
+## sand / sea
+boundary medium / high-energy fluid.
+
+## yoke-bonds / release
+coupling/restraint / decoupling.
+
+## city / predator perimeter
+enclosure / hazardous exterior.
+
+## crossroads / ancient path
+choice node / inherited route.
+
+## watchman/trumpet / refusal
+warning system / receiver failure.
+
+## ore / rejected silver
+input material / failed processing output.
+
+---
+
+# Jeremiah 1–6 continuous transformation timeline
+
+historical observer window opens under Josiah
+→ prophet formed/assigned before birth
+→ mouth becomes information interface
+→ mission pairs destruction with later building/planting
+→ almond branch triggers watching/fulfillment wordplay
+→ boiling pot establishes heated directional threat image
+→ northern kingdoms converge on city gates
+→ prophet is projected as fortified structural node
+→ wilderness memory contrasts low-habitability route with fertile land
+→ living-water source is abandoned
+→ cracked cistern storage fails
+→ Israel/Judah relational branches diverge
+→ land pollution is coupled with withheld rain
+→ sparse remnant is selected
+→ split branches are promised future reconvergence
+→ old ark-centre is replaced by Jerusalem-centre
+→ fallow substrate must be broken before new sowing
+→ warning trumpet/signal activates
+→ northern threat advances
+→ wind crosses from useful-processing regime into destructive regime
+→ cloud/whirlwind/eagle imagery intensifies motion
+→ repeated battle sound accompanies sudden habitat failure
+→ ordered land reverses to tohu wabohu
+→ upper field loses light
+→ mountains/hills destabilize
+→ human population disappears from viewed field
+→ birds leave
+→ fertile land becomes desert
+→ cities collapse
+→ destruction explicitly stops short of total end
+→ earth/heavens enter coupled mourning/dark state
+→ population evacuates into natural refuges
+→ city becomes woman/laboring-body projection
+→ Jerusalem is scanned for one qualifying truth/justice node
+→ hardness blocks correction
+→ yokes/bonds break
+→ predator perimeter makes exit dangerous
+→ partial pruning preserves continuity
+→ sand/sea boundary models controlled fluid limit
+→ seasonal rain/harvest timing remains a stability variable
+→ bird-trap/cage models capture accumulation
+→ northern threat triggers southward signal/flight
+→ attackers encircle Zion
+→ trees become siege infrastructure
+→ false peace masks instability
+→ crossroads/path choice is rejected
+→ watchman/trumpet warning is rejected
+→ northern force roars like sea
+→ population enters labor-pain distress
+→ refining system applies high heat/air input
+→ refining fails
+→ output is classified as rejected silver.
+
+---
+
+# New master-mechanism additions from Jeremiah 1–6
+
+## M50A-1 — OBSERVER WINDOW CAN SPAN MULTIPLE REGIMES TO COLLAPSE
+## M50A-2 — ROLE ASSIGNMENT CAN PRECEDE OPERATIONAL EMERGENCE
+## M50A-3 — INFORMATION NODE CAN HOLD DESTRUCTIVE + CONSTRUCTIVE FUNCTIONS
+## M50A-4 — JEREMIAH COMMISSION EMBEDS RESET, NOT PURE ANNIHILATION
+## M50A-5 — ROD/BRANCH CAN BE INFORMATION WORDPLAY BEFORE MECHANICAL ROD
+## M50A-6 — VISUAL OBJECT CAN FUNCTION AS PHONETIC KEY
+## M50A-7 — CONTAINER ORIENTATION CAN encode DIRECTIONAL THREAT
+## M50A-8 — HEATED CONTAINER CAN MODEL READY-TO-RELEASE STATE
+## M50A-9 — EXTERNAL FORCE CAN CAPTURE ACCESS/CONTROL INTERFACES
+## M50A-10 — HUMAN AGENT CAN BE PROJECTED AS FORTIFIED LOAD-BEARING STRUCTURE
+## M50A-11 — TRANSFER CAN MOVE THROUGH LOW-HABITABILITY CORRIDOR TO FERTILE LAND
+## M50A-12 — WATER SECURITY REQUIRES SOURCE + STORAGE INTEGRITY
+## M50A-13 — HYDROLOGICAL FAILURE CAN COME FROM BOUNDARY LEAKAGE
+## M50A-14 — RIVER CAN BE POLITICAL-ROUTE MARKER
+## M50A-15 — RESTRAINT REMOVAL CAN LIBERATE OR DESTABILIZE
+## M50A-16 — SAME BIOLOGICAL SYSTEM CAN DEGRADE FROM INITIAL STATE
+## M50A-17 — ANIMAL MOTION IMAGE CAN PROJECT ROUTE INSTABILITY
+## M50A-18 — SOCIAL DISORDER CAN BE LITERARILY COUPLED TO RAIN FAILURE
+## M50A-19 — HIGH PLACE/ROADSIDE CAN BE ONE TERRESTRIAL NETWORK
+## M50A-20 — POLITICAL PAIR ≠ COSMIC TWO-STRAND PAIR
+## M50A-21 — SPARSE REMNANT NODES CAN LATER RECONVERGE
+## M50A-22 — SUCCESSOR SYSTEM CAN RETIRE OLD CENTRAL OBJECT
+## M50A-23 — SPLIT SYSTEM BRANCHES CAN RECOMBINE
+## M50A-24 — SUBSTRATE RECONFIGURATION CAN PRECEDE PRODUCTIVE INPUT
+## M50A-25 — COVERING REMOVAL CAN BE RELATIONAL/BODY METAPHOR
+## M50A-26 — HAZARD CAN TRIGGER BROADCAST→EVACUATION NETWORK
+## M50A-27 — PREDATOR IMAGE ≠ DRAGON SUPPORT FUNCTION
+## M50A-28 — WIND HAS USEFUL AND DESTRUCTIVE ENERGY REGIMES
+## M50A-29 — FUNCTION CAN CHANGE AT INTENSITY THRESHOLD
+## M50A-30 — CLOUD/WHIRLWIND/BIRD CAN PROJECT INVASION SPEED
+## M50A-31 — RAPID FIELD COLLAPSE CAN COINCIDE WITH ACOUSTIC SIGNALS
+## M50A-32 — ORDERED CREATION CAN BE PROJECTED AS REVERSING INTO PRE-CREATION DISORDER
+## M50A-33 — RESET NEED NOT MEAN MATERIAL ANNIHILATION
+## M50A-34 — RESET CAN INCLUDE TOPOGRAPHIC INSTABILITY
+## M50A-35 — MOUNTAIN MOTION IS TEST OUTPUT FOR GROUND-SUPPORT HYPOTHESIS
+## M50A-36 — LOCAL DEPOPULATION ≠ EMPTY WORLD-TURN MODEL
+## M50A-37 — RESET CAN COUPLE ECOLOGICAL + URBAN FAILURE
+## M50A-38 — DE-CREATION CAN EXPLICITLY PRESERVE NON-TOTAL CONTINUITY
+## M50A-39 — UPPER/LOWER ENVIRONMENTAL STATES CAN CHANGE TOGETHER
+## M50A-40 — SURVIVAL CAN SHIFT POPULATION INTO DISTRIBUTED NATURAL ENCLOSURES
+## M50A-41 — CITY CAN SWITCH LANDSCAPE/FEMALE/BIRTH PROJECTIONS
+## M50A-42 — DISTRIBUTED NETWORK CAN BE SCANNED FOR QUALIFYING NODE
+## M50A-43 — HARDNESS CAN BE MALADAPTIVE STATE RESISTANCE
+## M50A-44 — SYSTEM-WIDE DECOUPLING CAN CROSS SOCIAL LAYERS
+## M50A-45 — PHYSICALLY OPEN BOUNDARY CAN STILL BE LETHAL TO CROSS
+## M50A-46 — SELECTIVE DESTRUCTION CAN PRESERVE SYSTEM CONTINUITY
+## M50A-47 — GRANULAR MATERIAL CAN FUNCTION AS FLUID BOUNDARY
+## M50A-48 — BOUNDARY FUNCTION DEPENDS ON INTERACTION, NOT APPARENT RIGIDITY
+## M50A-49 — HABITABILITY DEPENDS ON SEASONAL WATER/TIME WINDOWS
+## M50A-50 — ENCLOSURE CAN ACCUMULATE CAPTURED LIVING UNITS
+## M50A-51 — DIRECTIONAL HAZARD CAN DRIVE OPPOSITE-DIRECTION EVACUATION
+## M50A-52 — TERRITORIAL NODE CAN SWITCH WOMAN/PASTURE/CITY PROJECTIONS
+## M50A-53 — SIEGE CREATES MULTI-DIRECTIONAL ENCIRCLEMENT
+## M50A-54 — OPERATION CAN CONTINUE THROUGH DAY/NIGHT PHASE CHANGE
+## M50A-55 — BIOLOGICAL MATERIAL CAN BECOME ENGINEERED STRUCTURE
+## M50A-56 — HYDROLOGY CAN MODEL CONTINUOUS SOCIAL OUTPUT
+## M50A-57 — REMNANT EXTRACTION CAN OCCUR IN MULTIPLE PASSES
+## M50A-58 — SENSOR FAILURE CAN BE PROJECTED AS BLOCKED BODY INTERFACE
+## M50A-59 — FALSE STABILITY SIGNAL CAN MASK SYSTEM FAILURE
+## M50A-60 — CROSSROADS REQUIRE ROUTE SELECTION
+## M50A-61 — WARNING SYSTEM CAN FAIL AT RECEIVER COMPLIANCE
+## M50A-62 — MILITARY FIELD CAN BE PROJECTED AS WAVE FRONT
+## M50A-63 — HIGH-ENERGY PROCESSING CAN FAIL TO REFINE
+## M50A-64 — FIRE/HEAT DOES NOT ALWAYS PRODUCE PURIFICATION
+## M50A-65 — JEREMIAH 4 IS HIGH-VALUE CONSEQUENCE CLUSTER FOR DRAGON-SUPPORT TEST
+## M50A-66 — REGIONAL ABSENCE OF PEOPLE ≠ UNINHABITED STACKED WORLDS
+## M50A-67 — JEREMIAH 4 STRONGLY FITS DESTRUCTIVE RESET WITHOUT ANNIHILATION
+
+---
+
+# Number / timing register — Jeremiah 1–6
+
+Record without forcing:
+
+- Jeremiah’s call is dated to **Josiah’s thirteenth year** in the received text;
+- the ministry frame continues through **Zedekiah’s eleventh year**, captivity in the **fifth month**;
+- chapter 3’s remnant image uses **one from a city / two from a family/clan**;
+- chapter 5 names recurring seasonal rains and **appointed harvest weeks**;
+- chapter 6 explicitly crosses **noon → evening → night** attack phases;
+- no gate-duration number;
+- no world-layer count;
+- no dragon-spring count;
+- Jeremiah 4’s “not a full end” is qualitative continuity, not a percentage.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 1–6
+
+1. Working primary text: Jeremiah 1–6 NRSVUE, compared with NET/NIV/ESV/NKJV/KJV where needed.
+2. Jeremiah 1:11–12 contains a well-established Hebrew pun **shaqed / shoqed** (“almond” / “watching”). The branch/rod is therefore explicitly an information-wordplay sign.
+3. Jeremiah 1:13’s boiling-pot orientation has translation complexity; NET renders it as tipped toward the audience from the north and explains the Hebrew “its face away from the north.”
+4. The “foe from the north” belongs first to Jeremiah’s geopolitical invasion horizon; later chapters clarify Babylonian involvement.
+5. Jeremiah 2’s fountain/broken-cistern contrast is a water-source/storage metaphor with real retention mechanics.
+6. Jeremiah 3 links land pollution with withheld showers/spring rain in theological-poetic causation.
+7. Jeremiah 4:23 repeats **tohu wabohu**, the Genesis 1:2 phrase. NET and much scholarship read the unit as creation-reversal/de-creation imagery.
+8. Scholarly disagreement remains over scope: some emphasize cosmic de-creation rhetoric; others argue the immediate referent is devastation of Judah rather than literal destruction of the entire planet.
+9. The surrounding text explicitly says the land is devastated but **not completely destroyed**, making absolute annihilation an especially poor process description.
+10. Jeremiah 4’s mountain/hill movement is part of prophetic catastrophe imagery; it is not independent geological evidence.
+11. Jeremiah 5:22’s sand/sea boundary is theological creation-order imagery using a real shoreline process.
+12. Jeremiah 6’s trumpet/signal and southward escape route from northern invasion are ordinary military-warning infrastructure.
+13. Daughter Zion/woman/pasture/city shifts are literary personification, not literal giant-body evidence.
+14. Jeremiah 6’s refining image ends in failed purification/rejected silver.
+15. No explicit dragon/lattice-spring or spiderweb→fingertrap transformation appears.
+16. Strict fingertrap status remains negative; reset-consequence correspondence is exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 1–6
+
+Primary:
+- Jeremiah 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+1&version=NRSVUE
+- Jeremiah 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+2&version=NRSVUE
+- Jeremiah 3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+3&version=NRSVUE
+- Jeremiah 4 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+4&version=NRSVUE
+- Jeremiah 5 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+5&version=NRSVUE
+- Jeremiah 6 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+6&version=NRSVUE
+
+Textual / scholarly:
+- NET Bible, Jeremiah 1:11–14, for **shaqed/shoqed** and boiling-pot/north notes:
+  https://classic.net.bible.org/passage.php?passage=Jer+1%3A11-14
+- Cambridge Bible for Schools and Colleges, Jeremiah 1, on the almond/watch wordplay:
+  https://biblehub.com/commentaries/cambridge/jeremiah/1.htm
+- NET Bible, Jeremiah 4:23, on **tohu wabohu** and creation reversal:
+  https://classic.net.bible.org/verse.php?book=Jer&chapter=4&verse=23
+- “Jeremiah, Judgement and Creation,” *Tyndale Bulletin*, retained for the de-creation reading and its controls:
+  https://tyndalebulletin.org/api/v1/articles/29263-jeremiah-judgement-and-creation.pdf
+- Slaviša Janković, work arguing Jeremiah 4:23–26 is Genesis-allusive but contextually focused on Judah’s devastation rather than literal universal de-creation:
+  https://digitalcommons.andrews.edu/sss/2018/Papers/20/
+- Cambridge Bible for Schools and Colleges, Jeremiah 6, for Tekoa/Beth-haccherem signal and flight geography:
+  https://biblehub.com/commentaries/cambridge/jeremiah/6.htm
+
+---
+
+# SECTION 50A CHECKPOINT — JEREMIAH 1–6 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah’s first rod/branch is explicitly governed by Hebrew almond/watching wordplay, making it a strong negative control against automatic rod=fingertrap identification.**
+2. **The boiling pot adds a heated container with directional orientation from the north, but the ordinary mechanism is invasion.**
+3. **Broken cisterns provide a precise hydrological-storage failure: water-source availability is useless if the enclosure cannot retain it.**
+4. **Jeremiah 3 couples social/cultic disorder with withheld rain, while Jeremiah 5 preserves seasonal rain/harvest periodicity.**
+5. **Jeremiah 4:23–28 is the major result: creation-order imagery runs backward—light fails, mountains move, humans and birds leave, fertile land becomes desert and cities collapse.**
+6. **The same passage explicitly says the devastation is *not a full end*, making it one of the strongest literary analogues for Vardath’s destructive reset without total material annihilation.**
+7. **Mountain/hill motion is a high-value predicted consequence to test against the Vardath dragon-lattice spring supporting the ground, but Jeremiah does not name that mechanism.**
+8. **Jeremiah 5’s sand/sea image proves that a mechanically effective boundary need not look like a rigid wall.**
+9. **Jeremiah 6 adds multi-node warning, encirclement, route choice, watchman/alarm rejection and failed refining.**
+10. **Strict spiderweb→fingertrap status remains negative; reset-consequence correspondence is exceptionally strong.**
+
+### Next live block
+
+**Jeremiah 7–10**
+
+Priority:
+- temple/gate sermon and gate as information-control node;
+- “den of robbers” enclosure;
+- Shiloh as previous failed sacred centre;
+- Topheth/Valley of Hinnom;
+- corpses as bird/beast food;
+- joy/voice removed from cities;
+- bones removed from graves and spread before sun/moon/host;
+- migration/bird timing instincts;
+- false pen / writing and information corruption;
+- harvest passed / summer ended / no salvation;
+- balm/physician;
+- mourning body/water imagery;
+- idols as cut tree → shaped → fixed with nails so it cannot move;
+- earth made by power / world established / heavens stretched;
+- water roar/clouds/lightning/wind;
+- compare fixed-nailed idol with true load-bearing lattice versus nonfunctional static structure;
+- compare seasonal migration timing and sky/water dynamics with Vardath precursor cycles.
