@@ -11725,3 +11725,1045 @@ Priority:
 - cup of wrath transfer from Zion to oppressors;
 - body/city/population object-role control;
 - strict test of sea-depth passage as possible gate analogue.
+
+
+---
+
+# SECTION 49 progress D2I — Isaiah 51
+## First-time research pass: source-material genealogy, one→many expansion, wilderness→Eden reversal, outward instruction flow, transient heavens/earth, Rahab/Dragon dismemberment, sea/deep→road conversion, return passage, heaven/earth creation geometry, oppressed release, stirred sea, and cup-transfer reversal
+
+Isaiah 51 is one of the most important chapters so far for comparing:
+- origin material;
+- population multiplication;
+- environmental restoration;
+- sky/earth durability;
+- mythic chaos-body imagery;
+- sea/deep route formation;
+- creation geometry;
+- population release.
+
+Its key process sequence is:
+
+rock/quarry source
+→ one ancestor pair
+→ many descendants
+→ ruined Zion restored
+→ wilderness becomes Eden/garden
+→ instruction flows outward
+→ heaven/earth enter transient-state imagery
+→ ancient chaos-opponent is cut/pierced
+→ sea/deep is dried
+→ abyss becomes road
+→ redeemed population crosses
+→ return to Zion
+→ heavens are stretched / earth founded
+→ oppressed are released
+→ sea can again be stirred
+→ wrath-cup burden is transferred away from Zion.
+
+This is unusually rich in **same-domain refunctioning**:
+the deep is not merely removed;
+it becomes a transit path.
+
+That makes Isaiah 51 a high-value Vardath comparison.
+
+---
+
+# Isaiah 51:1 — rock / quarry are source-material genealogy metaphors
+
+The audience is told:
+look to:
+- rock from which hewn;
+- quarry/pit from which dug.
+
+Then the text identifies:
+- Abraham;
+- Sarah.
+
+The source-material image therefore maps:
+stone source
+→ ancestral source.
+
+## M49D2I-1 — MATERIAL-ORIGIN IMAGE CAN REPRESENT GENEALOGICAL ORIGIN WITHOUT PEOPLE LITERALLY BEING STONE
+
+This is a major body/material control.
+
+The important transferable variable is:
+**source continuity**.
+
+---
+
+# Isaiah 51:1–2 — Abraham / Sarah form an ancestral pair, but with different roles
+
+Abraham:
+father/called one.
+
+Sarah:
+bore/gave birth.
+
+The pair contributes:
+- lineage source;
+- reproductive source;
+- one-to-many transition.
+
+## P49D2I-A — ABRAHAM / SARAH IS A TRUE ANCESTRAL REPRODUCTIVE PAIR
+
+This is not automatically:
+two opposed cosmic forces.
+
+Pair type:
+genealogical/reproductive.
+
+## M49D2I-2 — PAIR FUNCTION MUST BE CLASSIFIED BEFORE COMPARISON WITH TWO-FORCE COSMOLOGY
+
+The user’s cosmology has:
+two opposing/paired lattice directions.
+
+Abraham/Sarah:
+cooperative reproductive ancestry.
+
+Shared variable:
+pair → larger system.
+
+Different mechanism.
+
+---
+
+# Isaiah 51:2 — one becomes many
+
+Abraham:
+one when called
+→ blessed
+→ multiplied.
+
+## M49D2I-3 — SYSTEM SCALE CAN EXPAND FROM SINGLE SOURCE NODE TO LARGE DISTRIBUTED POPULATION
+
+This is one of the clearest:
+1 → many
+transitions in Isaiah.
+
+### Vardath number control
+
+The **one→many** pattern is structurally interesting,
+but no 1–3–7 or 8 mechanism is specified here.
+
+---
+
+# Isaiah 51:3 — Zion wilderness/desert becomes Eden/garden
+
+Waste places:
+→ comforted/restored.
+
+Wilderness:
+→ Eden-like.
+
+Desert:
+→ garden-like.
+
+## M49D2I-4 — FAILED LOW-PRODUCTIVITY ENVIRONMENT CAN BE RECONFIGURED INTO HIGH-PRODUCTIVITY SUCCESSOR ENVIRONMENT
+
+This repeats Isaiah 35.
+
+The location remains recognizably Zion/its waste places,
+but environmental operating state changes.
+
+---
+
+# Isaiah 51:3 — restoration includes sound/social state, not only vegetation
+
+The result includes:
+- joy;
+- gladness;
+- thanksgiving;
+- song.
+
+## M49D2I-5 — ENVIRONMENTAL RESTORATION AND SOCIAL/INFORMATIONAL RESTORATION CAN OCCUR TOGETHER WITHOUT BEING THE SAME VARIABLE
+
+Green land
+≠
+automatically happy society.
+
+The poem couples them,
+but the archive should track them separately.
+
+---
+
+# Isaiah 51:4 — instruction goes out from center
+
+Teaching/law:
+→ outward.
+
+Justice:
+→ light to peoples.
+
+## M49D2I-6 — CENTRAL NODE CAN BROADCAST INFORMATION/ORDER OUTWARD WHILE POPULATIONS ELSEWHERE REMAIN DISTRIBUTED
+
+This is another hub-and-spoke information geometry.
+
+Compare Micah 4:
+people inward to Zion;
+instruction outward.
+
+Isaiah 51 preserves the outward-flow side.
+
+---
+
+# Isaiah 51:5 — salvation/deliverance is described as drawing near
+
+The abstract outcome:
+distance decreases.
+
+## M49D2I-7 — TEMPORAL IMMINENCE CAN BE PROJECTED AS SPATIAL PROXIMITY
+
+Again:
+near/far
+does not automatically indicate literal travel.
+
+---
+
+# Isaiah 51:6 — heavens and earth enter degradation imagery
+
+Audience is told:
+look to heavens;
+look to earth beneath.
+
+Then:
+heavens
+→ vanish like smoke;
+
+earth
+→ wear out like garment;
+
+inhabitants
+→ die/pass like small creatures;
+
+salvation/righteousness
+→ persists.
+
+## M49D2I-8 — COSMIC ENVIRONMENT AND HUMAN INHABITANTS CAN BE PROJECTED AS TRANSIENT WHILE AN ABSTRACT ORDER VARIABLE REMAINS STABLE
+
+This is a large scale durability contrast.
+
+### Vardath relevance
+
+The cosmology deals with:
+world-turn transition;
+destructive reset;
+successor state.
+
+Isaiah 51 strongly supports:
+**environmental/world-order state can change radically without every abstract identity/order relation being erased.**
+
+---
+
+# Isaiah 51:6 — heaven→smoke / earth→garment are two different degradation projections
+
+Heaven:
+smoke-like disappearance.
+
+Earth:
+garment-like wear.
+
+## M49D2I-9 — UPPER AND LOWER DOMAINS MAY FAIL THROUGH DIFFERENT ANALOGICAL PROCESSES
+
+This reinforces Isaiah 48:
+earth foundation
+vs
+heaven spread.
+
+Do not assume:
+same failure mechanism above and below.
+
+---
+
+# Isaiah 51:7–8 — human reproach versus moth/worm degradation
+
+Opponents:
+mortal/social.
+
+Their durability:
+garment/wool subject to moth/worm.
+
+## M49D2I-10 — SOCIAL THREAT CAN BE RELATIVIZED BY COMPARISON WITH MATERIAL DECAY
+
+This repeats Isaiah 50’s:
+garment/moth
+and adds:
+wool/worm.
+
+Small decay agents
+→ long-term destruction.
+
+---
+
+# Isaiah 51:9 — “arm” is called to awake
+
+The poem calls:
+arm of YHWH
+→ awake;
+→ act as in ancient days.
+
+## M49D2I-11 — BODY-PART PERSONIFICATION CAN FUNCTION AS AN ACTION-CAPACITY MODULE
+
+The arm:
+does not need to be a detached literal limb.
+
+It represents:
+power/action capacity.
+
+This is another control against literalizing cosmic body parts.
+
+---
+
+# Isaiah 51:9 — ancient Rahab / Dragon is cut and pierced
+
+The poem recalls:
+- Rahab hacked/cut;
+- Dragon pierced.
+
+Modern scholarship widely reads this against ancient West Asian combat-with-chaos traditions.
+
+The exact relation between:
+Rahab;
+sea monster;
+Egypt;
+creation myth;
+Exodus typology
+is debated.
+
+## M49D2I-12 — ONE MONSTER FIGURE CAN CONDENSE MULTIPLE MYTHIC/HISTORICAL ASSOCIATIONS WITHOUT FIXED SINGLE IDENTITY
+
+Possible layers:
+- chaos monster;
+- sea power;
+- Egypt symbol;
+- creation-enemy;
+- Exodus-enemy.
+
+### Vardath control
+
+Do not force:
+Rahab/Dragon
+=
+Tiamat
+=
+lattice dragon
+=
+serpent current
+without process-specific evidence.
+
+Shared class:
+serpentine/chaos opponent.
+
+Identity:
+not established.
+
+---
+
+# Isaiah 51:9 — cutting/piercing is destructive separation, not fingertrap narrowing
+
+The monster:
+cut/pierced.
+
+## M49D2I-13 — LINEAR/DRAGON BODY BEING CUT ≠ SAME BODY REORIENTING INTO TRANSIT THROAT
+
+This is a strong negative control.
+
+The structure is:
+destroyed/defeated,
+not:
+temporarily reconfigured and reopened.
+
+---
+
+# Isaiah 51:10 — sea/deep is dried
+
+The poem now links the ancient victory to:
+
+sea
+→ dried;
+
+waters of great deep
+→ dried/controlled.
+
+## M49D2I-14 — WATER-DOMAIN REMOVAL CAN EXPOSE A PREVIOUSLY SUBMERGED TRANSIT REGION
+
+This is the key transition.
+
+Water occupies space.
+
+Water removed:
+substrate/path becomes available.
+
+---
+
+# Isaiah 51:10 — abyss/depth becomes road
+
+This is one of the strongest route-refunctioning images in Isaiah:
+
+**deep / sea abyss**
+→ **road**
+→ **redeemed pass through**.
+
+## M49D2I-15 — HAZARDOUS MEDIUM CAN CHANGE FUNCTION INTO TRANSIT INFRASTRUCTURE
+
+This is analogous to Isaiah 49:
+
+mountain
+→ road.
+
+Now:
+sea/deep
+→ road.
+
+That gives two different environmental domains refunctioned as route.
+
+### Vardath relevance
+
+This is highly compatible with the user’s mature rule:
+**the structure/environment itself changes function at transition.**
+
+Not:
+a separate portal appears beside it.
+
+Instead:
+the previously impassable domain becomes passable.
+
+This is a strong process correspondence.
+
+---
+
+# M49D2I-16 — ROUTE FORMATION CAN OCCUR BY MEDIUM REMOVAL RATHER THAN BY ADDING A BRIDGE
+
+Sea road:
+formed through:
+water removal.
+
+Mountain road:
+formed through:
+topographic refunctioning.
+
+Different route-generation mechanisms.
+
+This should be retained in the master map.
+
+---
+
+# Isaiah 51:10 — redeemed population crosses the transformed domain
+
+The road has:
+cargo/users:
+redeemed.
+
+## M49D2I-17 — ENVIRONMENTAL REFUNCTIONING IS VERIFIED BY SUCCESSFUL POPULATION TRANSIT
+
+A route is not merely:
+geometric possibility.
+
+It becomes operational when:
+people pass through.
+
+This is stronger evidence of transit function.
+
+---
+
+# Isaiah 51:11 — ransomed return reaches Zion
+
+The passage continues:
+deep-road crossing
+→ return
+→ Zion arrival
+→ durable joy
+→ sorrow/sighing flee.
+
+## M49D2I-18 — TRANSIT PATH IS EMBEDDED IN A COMPLETE ORIGIN→ROUTE→DESTINATION PROCESS
+
+This is important.
+
+The sea-road is not an isolated miracle image.
+
+It belongs to:
+population return.
+
+---
+
+# Isaiah 51:9–11 — creation combat and Exodus return are deliberately fused
+
+Modern scholarship such as Jeremy Hutton’s study treats Isaiah 51:9–11 as a rhetorical appropriation of hostile/chaos-theology imagery.
+
+The passage brings together:
+- ancient monster defeat;
+- sea/deep mastery;
+- road formation;
+- redeemed return.
+
+## M49D2I-19 — CREATION-MYTH MOTIF CAN BE REUSED AS HISTORICAL-RESTORATION TEMPLATE
+
+This is extremely relevant to Vardath’s myth-comparison work.
+
+A mythic cosmic event
+may be reused to describe:
+political/history-scale restoration.
+
+Therefore:
+similar cosmic language in a later text
+does not automatically mean
+the cosmic event is physically recurring.
+
+It may be:
+typological reuse.
+
+---
+
+# Isaiah 51:12–13 — fear shifts from mortal oppressor to creator-scale frame
+
+Humans:
+grass-like/mortal.
+
+Source:
+stretches heavens;
+lays earth foundation.
+
+## M49D2I-20 — THREAT ASSESSMENT CHANGES WHEN LOCAL ACTOR IS COMPARED WITH GLOBAL-SCALE SYSTEM
+
+This is a scale-control principle.
+
+Local power can look absolute
+until placed inside:
+larger system.
+
+---
+
+# Isaiah 51:13 — stretched heavens / earth foundations repeat
+
+Again:
+heavens
+→ stretched;
+
+earth
+→ founded.
+
+This is now one of the most repeated morphology pairs in Second Isaiah.
+
+## M49D2I-21 — REPEATED STRETCHED-UPPER / FOUNDED-LOWER GEOMETRY IS A STABLE ISAIAH COSMOLOGICAL FORMULA
+
+### Vardath comparison
+
+This continues to fit:
+broad/distributed upper field
+over
+stable lower inhabited world.
+
+But no strict axial contraction is yet supplied.
+
+---
+
+# Isaiah 51:13 — “oppressor bent on destruction” is another active-holder hazard
+
+Fear:
+oppressor.
+
+This echoes Isaiah 49:
+mighty captor.
+
+## M49D2I-22 — POPULATION CONSTRAINT CAN BE MAINTAINED BY ACTIVE HOSTILE AGENT RATHER THAN PASSIVE WALL
+
+Again:
+release needs:
+control-system defeat,
+not merely boundary opening.
+
+---
+
+# Isaiah 51:14 — oppressed/captive is released before Pit/starvation outcome
+
+The oppressed:
+speedily released.
+
+Avoided outcomes:
+- death;
+- Pit;
+- lack of bread.
+
+## M49D2I-23 — RELEASE TIMING CAN PREVENT CASCADING SECONDARY FAILURES
+
+Delay would lead to:
+confinement
+→ hunger
+→ death/Pit.
+
+Early release interrupts cascade.
+
+This is useful survival logic.
+
+---
+
+# Isaiah 51:15 — same source can dry sea in one image and stir sea in another
+
+Verse 10:
+sea dried.
+
+Verse 15:
+sea stirred;
+waves roar.
+
+## M49D2I-24 — SAME ENVIRONMENTAL DOMAIN CAN BE DRIVEN INTO OPPOSITE DYNAMIC STATES BY THE SAME OPERATOR
+
+sea state:
+dry/controlled route.
+
+sea state:
+agitated/roaring.
+
+This is a powerful anti-symbol-fixity control.
+
+“Sea”
+is not one process.
+
+---
+
+# Isaiah 51:16 — word in mouth + hidden in hand-shadow repeats Isaiah 49 servant architecture
+
+The source:
+- puts words in mouth;
+- hides/protects in hand-shadow;
+- stretches/plants heavens depending textual tradition;
+- lays earth foundations;
+- identifies Zion as people.
+
+NRSVUE footnotes:
+Syriac supports “stretching out,”
+while Hebrew has wording commonly rendered “planting.”
+
+## M49D2I-25 — TEXTUAL VARIANT AT COSMOLOGICAL VERB LOWERS PRECISION OF GEOMETRIC CLAIM
+
+This is critical.
+
+Do not claim:
+Isaiah 51:16 definitely describes one precise sky-construction mechanism.
+
+Secure:
+upper cosmos action
++ earth foundation
++ protected messenger/word
++ Zion identity.
+
+---
+
+# M49D2I-26 — INFORMATION CHANNEL AND COSMOLOGICAL ORDER ARE LINKED RHETORICALLY BUT NOT MECHANICALLY IDENTIFIED
+
+words in mouth
+and
+heavens/earth order
+appear together.
+
+That does not prove:
+speech physically constructs cosmos.
+
+---
+
+# Isaiah 51:17 — Jerusalem is personified as woman who has drunk a cup
+
+Jerusalem:
+wake;
+stand;
+has drunk cup of wrath;
+staggering bowl.
+
+## M49D2I-27 — CITY CAN BE PROJECTED AS BODY CONSUMING A LOAD/STATE
+
+Again:
+city
+→ woman/body.
+
+cup contents
+→ judgment state.
+
+This is not literal fluid ingestion by terrain.
+
+---
+
+# Isaiah 51:18–20 — children fail to guide mother-city
+
+Jerusalem has:
+children,
+but none guide/take hand.
+
+Children:
+faint;
+lie at street heads
+like antelope in net.
+
+## M49D2I-28 — POPULATION CAN FAIL AS SUPPORT/GUIDANCE SUBSYSTEM FOR PERSONIFIED CITY
+
+This reverses normal parent/child care:
+city-mother
+needs children.
+
+---
+
+# Isaiah 51:20 — net image is capture/exhaustion apparatus
+
+Children:
+like antelope in net.
+
+## M49D2I-29 — NET HERE IS CAPTURE STATE, NOT SUPPORT LATTICE
+
+Another strict negative control.
+
+---
+
+# Isaiah 51:21–23 — wrath cup is transferred from Zion to oppressors
+
+The object:
+cup/bowl of staggering.
+
+Initial holder:
+Jerusalem.
+
+Then:
+removed from Jerusalem.
+
+New holder:
+tormentors/oppressors.
+
+## M49D2I-30 — BURDEN/HAZARD OBJECT CAN BE TRANSFERRED BETWEEN SYSTEMS WITHOUT THE SYSTEMS THEMSELVES MOVING
+
+This is a distinct transfer class:
+**state/burden transfer**.
+
+Not:
+population transfer.
+
+Not:
+water transfer.
+
+Not:
+world transfer.
+
+---
+
+# Isaiah 51:23 — oppressor turns Zion’s body into a road
+
+The oppressors say:
+bow down
+so we may pass over.
+
+Zion makes:
+back/body
+→ like ground/street for passers.
+
+This is one of the strongest personification-route images in Isaiah.
+
+## M49D2I-31 — PERSONIFIED BODY CAN BE PROJECTED AS TRANSIT SURFACE
+
+city/body
+→ road.
+
+This is extremely important for Squatter-Man controls.
+
+A human-body form can:
+become landscape/road
+in literary projection
+without implying a literal giant organism.
+
+### Vardath comparison
+
+This also resembles:
+structure
+→ transit surface.
+
+But here:
+the structure is a metaphorical body of Zion under oppression.
+
+It strongly warns against taking every “body becomes road/mountain” motif literally.
+
+---
+
+# Isaiah 51 — rock/quarry / Abraham-Sarah / Zion-mother comparison
+
+The chapter contains multiple origin projections:
+
+### rock/quarry
+material source.
+
+### Abraham/Sarah
+ancestral/reproductive source.
+
+### Zion woman/mother
+collective/destination body.
+
+## M49D2I-32 — ONE COMMUNITY CAN BE PROJECTED THROUGH MATERIAL, GENEALOGICAL, AND BODY-CITY ORIGIN MODELS IN ONE CHAPTER
+
+Therefore:
+no single image should monopolize ontology.
+
+---
+
+# Isaiah 51 — Vardath sea-route comparison
+
+This is the central high-value sequence:
+
+ancient chaos opponent defeated
+→ sea/deep dried
+→ abyss becomes road
+→ redeemed population crosses
+→ ransomed return reaches Zion.
+
+### Strong overlap with Vardath process logic
+
+1. formerly impassable domain;
+2. domain state changes;
+3. route emerges from same domain;
+4. population transits;
+5. destination successor state follows.
+
+### Missing strict fingertrap mechanics
+
+- no broad sky mesh;
+- no braid-angle change;
+- no axial narrowing;
+- no fingertrap-like tube;
+- no same weave reopening after transit.
+
+## M49D2I-33 — ISAIAH 51 IS A STRONG SAME-DOMAIN→TRANSIT-ROUTE ANALOGUE BUT NOT A STRICT FINGERTRAP TEXT
+
+This should be flagged alongside:
+Isaiah 49 mountain→road
+and
+Isaiah 48 rock-split→water-flow.
+
+Together they form a powerful route/environment subcluster.
+
+---
+
+# Isaiah 51 pair / process matrix
+
+## rock / quarry
+solid source / extraction source.
+
+## Abraham / Sarah
+ancestral father / reproductive mother.
+
+## one / many
+single source node / multiplied population.
+
+## wilderness / Eden
+failed dry environment / restored garden environment.
+
+## teaching / peoples
+central information / distributed recipients.
+
+## heaven / smoke
+upper world / transient-disappearance projection.
+
+## earth / garment
+lower world / wearing-decay projection.
+
+## arm / Rahab-Dragon
+action capacity / defeated chaos opponent.
+
+## sea-deep / road
+hazardous medium / refunctioned transit structure.
+
+## redeemed / road
+population cargo / route.
+
+## stretched heaven / founded earth
+upper morphology / lower morphology.
+
+## mortal oppressor / creator-scale source
+local threat / global-system frame.
+
+## dry sea / stirred sea
+opposite dynamic states of one domain.
+
+## Jerusalem / cup
+personified city / received hazard-state load.
+
+## children / city-mother
+population / support-needing collective.
+
+## antelope / net
+living target / capture apparatus.
+
+## Zion-body / road
+personification / transit-surface projection.
+
+## cup at Zion / cup at oppressor
+initial burden holder / transferred burden holder.
+
+---
+
+# Isaiah 51 continuous transformation timeline
+
+audience is directed to source rock/quarry
+→ source image is mapped onto Abraham/Sarah ancestry
+→ one ancestor state expands to many
+→ Zion’s waste places are restored
+→ wilderness becomes Eden-like
+→ desert becomes garden-like
+→ joy/song social state returns
+→ teaching/justice flows outward
+→ salvation/deliverance draws near
+→ coastlands wait
+→ heavens are projected as smoke-like/transient
+→ earth is projected as garment-like/decaying
+→ inhabitants are mortalized
+→ ancient action-capacity is called to awake
+→ Rahab/Dragon is cut/pierced
+→ sea is dried
+→ great deep loses water barrier
+→ abyss/deep becomes road
+→ redeemed population walks through
+→ ransomed population returns to Zion
+→ joy becomes durable
+→ fear of mortal oppressor is reframed
+→ stretched-heaven / founded-earth creation formula repeats
+→ captive/oppressed release is accelerated
+→ hunger/death/Pit cascade is avoided
+→ same sea is later stirred into roaring-wave state
+→ words are placed in messenger mouth
+→ messenger is hidden in hand-shadow
+→ cosmological ordering language repeats with textual uncertainty at the heaven verb
+→ Zion is identified as people
+→ Jerusalem-city is personified as woman
+→ wrath cup is consumed
+→ city staggers
+→ children fail as guidance/support nodes
+→ children collapse like antelope in net
+→ cup is removed from Zion
+→ cup is reassigned to oppressors
+→ Zion-body/ground is recalled as road used by oppressors
+→ chapter ends with burden-transfer reversal.
+
+---
+
+# New master-mechanism additions from Isaiah 51
+
+## M49D2I-1 — MATERIAL-ORIGIN IMAGE CAN MODEL GENEALOGICAL ORIGIN
+## M49D2I-2 — PAIR FUNCTION MUST BE CLASSIFIED BEFORE TWO-FORCE COMPARISON
+## M49D2I-3 — ONE SOURCE NODE CAN MULTIPLY INTO LARGE DISTRIBUTED POPULATION
+## M49D2I-4 — FAILED ENVIRONMENT CAN BECOME HIGH-PRODUCTIVITY SUCCESSOR ENVIRONMENT
+## M49D2I-5 — ENVIRONMENTAL + SOCIAL RESTORATION ARE COUPLED BUT DISTINCT
+## M49D2I-6 — CENTRAL NODE CAN BROADCAST ORDER/INFORMATION OUTWARD
+## M49D2I-7 — TEMPORAL IMMINENCE CAN BE PROJECTED AS SPATIAL NEARNESS
+## M49D2I-8 — COSMIC ENVIRONMENT CAN BE TRANSIENT WHILE ABSTRACT ORDER PERSISTS
+## M49D2I-9 — UPPER/LOWER DOMAINS MAY FAIL THROUGH DIFFERENT PROCESSES
+## M49D2I-10 — SOCIAL THREAT CAN BE RELATIVIZED THROUGH SMALL-AGENT MATERIAL DECAY
+## M49D2I-11 — BODY-PART PERSONIFICATION CAN REPRESENT ACTION CAPACITY
+## M49D2I-12 — MONSTER FIGURE CAN CONDENSE MULTIPLE MYTHIC/HISTORICAL ASSOCIATIONS
+## M49D2I-13 — CUT DRAGON ≠ REORIENTED FINGERTRAP
+## M49D2I-14 — WATER-DOMAIN REMOVAL CAN EXPOSE TRANSIT REGION
+## M49D2I-15 — HAZARDOUS MEDIUM CAN CHANGE FUNCTION INTO TRANSIT INFRASTRUCTURE
+## M49D2I-16 — ROUTE CAN FORM BY MEDIUM REMOVAL RATHER THAN ADDED BRIDGE
+## M49D2I-17 — ROUTE FUNCTION IS VERIFIED BY SUCCESSFUL POPULATION TRANSIT
+## M49D2I-18 — TRANSIT PATH SHOULD BE EMBEDDED IN ORIGIN→ROUTE→DESTINATION PROCESS
+## M49D2I-19 — COSMIC-MYTH MOTIF CAN BE REUSED AS HISTORICAL-RESTORATION TEMPLATE
+## M49D2I-20 — LOCAL THREAT CHANGES SCALE WHEN PLACED IN GLOBAL SYSTEM
+## M49D2I-21 — STRETCHED-UPPER / FOUNDED-LOWER IS A STABLE ISAIAH FORMULA
+## M49D2I-22 — POPULATION CONSTRAINT MAY BE ACTIVE-AGENT CONTROL
+## M49D2I-23 — EARLY RELEASE CAN INTERRUPT HUNGER/DEATH CASCADE
+## M49D2I-24 — SAME SEA DOMAIN CAN ENTER OPPOSITE DYNAMIC STATES
+## M49D2I-25 — TEXTUAL VARIANT AT COSMOLOGICAL VERB LOWERS GEOMETRIC PRECISION
+## M49D2I-26 — INFORMATION CHANNEL + COSMOLOGICAL ORDER CAN BE RHETORICALLY LINKED WITHOUT MECHANICAL IDENTITY
+## M49D2I-27 — CITY CAN BE PROJECTED AS BODY CONSUMING A HAZARD-STATE LOAD
+## M49D2I-28 — POPULATION MAY FAIL AS SUPPORT SUBSYSTEM FOR COLLECTIVE CITY
+## M49D2I-29 — NET CAPTURE IMAGE ≠ SUPPORT LATTICE
+## M49D2I-30 — HAZARD/BURDEN CAN TRANSFER BETWEEN SYSTEMS WITHOUT POPULATION MOVEMENT
+## M49D2I-31 — PERSONIFIED BODY CAN BE PROJECTED AS TRANSIT SURFACE
+## M49D2I-32 — ONE COMMUNITY CAN HAVE MATERIAL + GENEALOGICAL + BODY-CITY ORIGIN PROJECTIONS
+## M49D2I-33 — SAME-DOMAIN→TRANSIT-ROUTE IS STRONG ANALOGUE WITHOUT STRICT FINGERTRAP
+
+---
+
+# Number / timing register — Isaiah 51
+
+Record without forcing:
+
+- Abraham is described as **one** before multiplication.
+- no explicit number for multiplied descendants.
+- “speedily” marks release urgency, not a cycle.
+- “days of old / generations long ago” is retrospective temporal depth.
+- no gate-duration number.
+- no world-layer count.
+- no sea-road width or passage time.
+
+### Number control
+
+The one→many transition is important,
+but no internally demonstrated 1–3–7/8 architecture appears here.
+
+---
+
+# Textual / historical / scholarly controls — Isaiah 51
+
+1. Working primary text: Isaiah 51 NRSVUE, compared with NIV/ESV/NET.
+2. Rock/quarry is immediately paired with Abraham/Sarah ancestry, making genealogical-source interpretation primary.
+3. Working Preacher notes the Abraham/Sarah/rock/quarry cluster as an origin-confidence image in exilic disorientation.
+4. Isaiah 51:6 uses smoke/garment decay imagery for heaven/earth transience; these are analogies, not a literal material specification.
+5. Isaiah 51:9–10 draws on ancient divine-combat/chaos imagery involving Rahab/Dragon and sea mastery. Jeremy Hutton’s JBL study is a major scholarly treatment of the passage’s rhetorical reuse/subversion of hostile theologies.
+6. The passage also clearly reuses Exodus-style sea-crossing imagery for return from exile.
+7. Therefore Rahab/Dragon/sea-road should be read as a layered mythic-historical complex, not a single unambiguous physical report.
+8. Isaiah 51:13 repeats stretched-heaven / founded-earth morphology.
+9. Isaiah 51:16 has textual variation: NRSVUE follows Syriac “stretching out” in the note while Hebrew is commonly read “planting.” Exact sky-construction imagery is uncertain at that point.
+10. Jerusalem from v17 onward is female/city personification.
+11. The cup is a judgment-state object whose holder changes; object-type preservation is essential.
+12. Zion’s back/body becoming a road is explicit personification/transit imagery and a strong control against literalizing all body-landscape correspondences.
+13. Strict fingertrap status remains negative; same-domain→route correspondence is strong.
+
+---
+
+# Sources logged — Isaiah 51
+
+Primary:
+- Isaiah 51 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Isaiah+51&version=NRSVUE
+- Isaiah 51 NRSVUE / NIV:
+  https://www.biblegateway.com/passage/?search=Isaiah+51&version=NRSVUE%3BNIV
+- Isaiah 51:1–16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Isaiah+51%3A1-16&version=NRSVUE
+
+Scholarly / contextual:
+- Working Preacher, Isaiah 51:1–6, for rock/quarry and Abraham/Sarah origin imagery:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-21/commentary-on-isaiah-511-6-2
+- Jeremy M. Hutton, “Isaiah 51:9–11 and the Rhetorical Appropriation and Subversion of Hostile Theologies,” *Journal of Biblical Literature* 126 (2007): 271–303, retained through scholarly bibliographies and discussion.
+- TheTorah.com, discussion of Isaiah 51:9–11 as divine-combat/creation imagery reused for return from exile:
+  https://www.thetorah.com/article/gods-coronation-on-rosh-hashanah
+- Comparative ancient Near Eastern sea/chaos traditions retained as contextual controls, not identity claims.
+
+---
+
+# SECTION 49D2I CHECKPOINT — ISAIAH 51 COMPLETE
+
+Strongest first-time findings:
+
+1. **Rock/quarry is source genealogy, immediately grounded in Abraham/Sarah; it is not evidence that people are literally quarried stone.**
+2. **Abraham/Sarah gives one→many multiplication, but pair type is reproductive/ancestral rather than an opposed two-force mechanism.**
+3. **Isaiah 51 contains one of the strongest same-domain→route transformations yet: the sea/deep is dried and the abyss itself becomes the road used by the redeemed.**
+4. **This is explicitly entangled with both ancient chaos-combat imagery and Exodus/return-from-exile reuse, so it cannot simply be promoted to a physical gate report.**
+5. **Stretched heaven / founded earth repeats as a stable Second Isaiah morphology.**
+6. **The same sea can be dry route in one verse and roaring dynamic medium in another; symbol class does not fix process state.**
+7. **Zion’s body being made like a road is a direct demonstration that body/landscape/transit imagery can be personification rather than literal giant anatomy.**
+8. **Strict spiderweb→fingertrap status remains negative, while same-environment→transit-route correspondence is exceptionally strong.**
+
+### Next live block
+
+**Isaiah 52**
+
+Priority:
+- Zion waking and putting on strength/garments;
+- dust→throne/upright reversal;
+- neck bonds removed;
+- sold for nothing / redeemed without money;
+- Egypt→Assyria→Babylon oppression history compression;
+- messenger feet on mountains / information arrival;
+- watchmen synchronized seeing/voice;
+- ruins singing;
+- source “before/behind” as convoy protection;
+- departure without haste vs Exodus;
+- vessels carried;
+- servant exalted/high/lifted contrasted with marred appearance;
+- many nations startled/sprinkled textual issue;
+- kings shut mouths / unseen information revealed;
+- strict comparison with broad→axial/body figure geometry.
