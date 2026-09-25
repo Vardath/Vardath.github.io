@@ -75715,3 +75715,1538 @@ Priority:
 - runners/messengers meet;
 - Euphrates scroll tied to stone and sunk;
 - direct Vardath ground-support dragon comparison and source/mythology controls.
+
+
+---
+
+# SECTION 50 progress J3 — Jeremiah 51
+## First-time research pass: destructive wind and winnowing, creator-scale stretched heavens + atmospheric water system, war-club actuation, destroying mountain→burned mountain, denied foundation stone, Babylon as threshing floor, monster/dragon swallowing and disgorging, sea/wave reversal, dry sea/springs, wall/gate collapse, rumor timing, and scroll+stone sunk into Euphrates
+
+Jeremiah 51 is one of the highest-priority chapters in the entire Jeremiah corpus for Vardath Cosmology because it contains, in one chapter:
+
+- destructive wind;
+- winnowing / air-flow separation;
+- earth established and heavens stretched;
+- waters in the heavens;
+- clouds rising;
+- lightning + rain;
+- wind from storehouses;
+- war-club imagery;
+- a destroying mountain rolled down and burned;
+- no cornerstone/foundation stone taken from that mountain;
+- a city as threshing floor;
+- Nebuchadrezzar swallowing Zion like a **tannîn** / monster;
+- an emptied vessel;
+- the monster's belly filled;
+- the swallowed contents spewed out;
+- Bel later forced to disgorge what he swallowed;
+- a sea rising over Babylon;
+- tumultuous waves covering the city;
+- a dry/desert successor state;
+- wall/gate destruction;
+- and finally a written scroll tied to a stone and intentionally sunk in the Euphrates.
+
+The user’s core mechanical rule remains:
+
+> **The dragons are the lattice springs that support the ground/world layer.**
+
+Therefore Jeremiah 51:34 is a mandatory high-priority dragon test.
+
+The result is important:
+
+**the Hebrew monster/dragon is real and explicit, but its local function is swallowing/container-consumption, not ground support.**
+
+It therefore does **not** satisfy the Vardath dragon-support mechanism by itself.
+
+However, the chapter’s wider juxtaposition of:
+- monster/dragon;
+- mountain;
+- wind;
+- sea;
+- stretched heavens;
+- ground/earth;
+- foundation stone;
+- walls/gates;
+- water drying
+
+makes Jeremiah 51 a major **mythic-structural comparison field** that must be preserved carefully.
+
+---
+
+# Jeremiah 51:1–2 — destructive wind precedes winnowing
+
+The chapter begins with:
+a destructive wind / spirit-of-destroyer
+raised against Babylon.
+
+Then:
+winnowers
+→ winnow Babylon
+→ empty the land.
+
+## M50J3-1 — AIRFLOW CAN FUNCTION AS A SEPARATION FORCE
+
+Winnowing:
+mixed mass
+→ moving air
+→ components separate according to behavior/mass/aerodynamics.
+
+This is a real physical process used metaphorically for population/political destruction.
+
+---
+
+# M50J3-2 — ONE FORCE FIELD CAN SORT A MIXTURE WITHOUT DESTROYING EVERY COMPONENT IDENTICALLY
+
+This is highly relevant to Vardath.
+
+A gate event may:
+sort matter;
+water;
+debris;
+populations
+according to physical properties.
+
+But Jeremiah’s local function is:
+war/judgment.
+
+---
+
+# Jeremiah 51:1 — wind/spirit translation control
+
+NRSVUE tradition can render:
+destructive wind.
+
+The underlying **ruach** family can carry:
+wind;
+breath;
+spirit
+depending context.
+
+## M50J3-3 — WIND/BREATH/SPIRIT WORD FAMILY MUST NOT BE ASSIGNED ONE PHYSICAL ONTOLOGY ACROSS ALL PASSAGES
+
+Local process first.
+
+Here:
+airflow/destructive agency is the strongest operational image.
+
+---
+
+# Jeremiah 51:2 — land emptied by attackers from every side
+
+Winnowers:
+come from all sides.
+
+Result:
+land emptied.
+
+## M50J3-4 — MULTI-DIRECTIONAL PRESSURE CAN PRODUCE DEPOPULATION OF A CENTRAL NODE
+
+This continues:
+four winds / all-side convergence.
+
+No axial throat yet.
+
+---
+
+# Jeremiah 51:6 — flee from Babylon to save life
+
+Again:
+come out;
+flee;
+save life.
+
+## M50J3-5 — JEREMIAH 50–51 REPEATS THE PHASE-DEPENDENT EXIT COMMAND STRONGLY ENOUGH TO TREAT IT AS CENTRAL SURVIVAL LOGIC
+
+Babylon:
+earlier settlement node.
+
+Now:
+evacuation node.
+
+---
+
+# Jeremiah 51:7 — Babylon is golden cup making earth drunk
+
+Babylon:
+container/cup.
+
+Nations:
+drink contents.
+
+Effect:
+drunkenness/madness.
+
+## M50J3-6 — IMPERIAL INFLUENCE CAN BE PROJECTED AS CONTENT DISTRIBUTED FROM A CENTRAL CONTAINER
+
+Center:
+cup.
+
+Peripheral nodes:
+drink.
+
+This is network propagation.
+
+---
+
+# M50J3-7 — CONTAINER METAPHOR CAN MODEL DISTRIBUTED SYSTEM EFFECT WITHOUT PHYSICAL LIQUID TRANSFER
+
+Important because later:
+Babylon/Zion also become vessel/belly imagery.
+
+Object-type must remain explicit.
+
+---
+
+# Jeremiah 51:8–9 — failed healing of Babylon
+
+Babylon:
+falls suddenly;
+healing attempted;
+healing abandoned.
+
+People:
+leave;
+return to own countries.
+
+## M50J3-8 — SYSTEM REPAIR ATTEMPT CAN BE ABANDONED WHEN FAILURE IS JUDGED NONRECOVERABLE
+
+This is a triage rule.
+
+---
+
+# Jeremiah 51:9 — “healing fails” triggers evacuation
+
+## M50J3-9 — EVACUATION THRESHOLD CAN FOLLOW FAILURE OF REPAIR, NOT MERELY FIRST DAMAGE
+
+This is practical Vardath survival logic:
+repair if viable;
+leave if state crosses nonrecoverable threshold.
+
+---
+
+# Jeremiah 51:10 — survivors carry outcome report to Zion
+
+Again:
+event information
+→ survivor/reporters
+→ Zion.
+
+## M50J3-10 — FAILED-NODE OBSERVATION CAN BE TRANSMITTED TO SUCCESSOR NODE BY MOVING PEOPLE
+
+Reinforces Jeremiah 50.
+
+---
+
+# Jeremiah 51:11 — Medes named as attacking instrument
+
+The text identifies:
+kings of Medes.
+
+Historically, Babylon fell to Cyrus/Persian forces in 539 BCE after Media had already been incorporated into Cyrus’s empire.
+
+Modern scholarship uses this discrepancy as one clue in dating/redaction discussions.
+
+## M50J3-11 — PREDICTED/POETIC AGENT LABEL MAY NOT MAP SIMPLY ONTO LATER HISTORICAL COALITION STRUCTURE
+
+This is an important historical control.
+
+---
+
+# Jeremiah 51:12 — banner / guard / watch / ambush create boundary-defense system
+
+Commands include:
+raise signal;
+strengthen guard;
+post sentinels;
+prepare ambushes.
+
+## M50J3-12 — DEFENDED NODE REQUIRES INFORMATION SIGNALS + OBSERVERS + PHYSICAL GUARD + HIDDEN RESPONSE FORCE
+
+This is a complete defense architecture.
+
+---
+
+# Jeremiah 51:13 — Babylon “dwells by many waters”
+
+Babylon:
+located by abundant waters;
+wealthy;
+terminal point approaching.
+
+## M50J3-13 — WATER-RICH LOCATION CAN SUPPORT A HIGH-CAPACITY IMPERIAL NODE
+
+Babylon’s Euphrates/canal context matters.
+
+### Vardath control
+
+Water abundance:
+ordinary geographic/infrastructural first.
+
+---
+
+# Jeremiah 51:15 — earth made / world established / heavens stretched
+
+The creator doxology states:
+
+earth:
+made by power.
+
+world:
+established/founded by wisdom.
+
+heavens:
+stretched by understanding.
+
+This nearly repeats Jeremiah 10:12–16.
+
+## M50J3-14 — REPEATED CREATION FORMULA IN SAME BOOK IS SOURCE-DEPENDENT EVIDENCE, NOT A SECOND INDEPENDENT OBSERVATION
+
+This is critical.
+
+Do not count:
+Jer 10
+and
+Jer 51
+as independent confirmations of stretched-heaven geometry without controlling literary reuse.
+
+---
+
+# Jeremiah 51:15 — lower domain / upper domain have different construction verbs
+
+Lower:
+made/established.
+
+Upper:
+stretched.
+
+## M50J3-15 — JEREMIAH REPEATS THE STRETCHED-UPPER / ESTABLISHED-LOWER MORPHOLOGY SEEN IN ISAIAH
+
+This remains a strong cross-book motif.
+
+Whether literary dependence/shared tradition is responsible must be tested.
+
+---
+
+# Jeremiah 51:16 — waters in heavens roar; clouds rise; lightning/rain; wind storehouses
+
+The verse gives a compact atmospheric system:
+
+voice/thunder
+→ waters in heavens roar;
+clouds
+→ rise from earth’s ends;
+lightning
+↔ rain;
+wind
+→ released from storehouses.
+
+## M50J3-16 — THE TEXT PRESERVES A MULTI-COMPONENT ATMOSPHERIC PROCESS MODEL
+
+Components:
+- upper water;
+- clouds;
+- lightning;
+- rain;
+- wind.
+
+This is highly relevant to Vardath’s canopy/atmosphere research.
+
+---
+
+# M50J3-17 — ATMOSPHERIC VARIABLES SHOULD BE TRACKED AS A COUPLED SYSTEM, NOT ISOLATED SIGNS
+
+Pressure;
+water phase;
+cloud;
+electrical discharge;
+wind;
+rain
+may interact.
+
+The text itself does not give modern causal physics,
+but the variable cluster is real.
+
+---
+
+# Jeremiah 51:16 — “wind from storehouses” is containment/release imagery
+
+Wind:
+stored;
+then brought out.
+
+## M50J3-18 — DYNAMIC MEDIUM CAN BE PROJECTED AS STORED POTENTIAL RELEASED FROM CONTAINER
+
+This is metaphorical cosmology,
+not literal warehouse meteorology.
+
+---
+
+# Jeremiah 51:17–19 — breathless manufactured idols are contrasted with creator
+
+Images:
+manufactured;
+no breath.
+
+Creator:
+forms all.
+
+## M50J3-19 — MANUFACTURED REPRESENTATION / BREATHLESS OBJECT / COSMIC CREATOR ARE DISTINCT ONTOLOGICAL CLASSES IN THE TEXT
+
+Important myth/object control.
+
+---
+
+# Jeremiah 51:20–23 — war club/weapon smashes across system classes
+
+The “war club” smashes:
+- nations/kingdoms;
+- horse/rider;
+- chariot/driver;
+- man/woman;
+- old/young;
+- shepherd/flock;
+- farmer/team;
+- governors/deputies.
+
+## M50J3-20 — ONE ACTUATOR CAN PROPAGATE DAMAGE ACROSS MILITARY, DEMOGRAPHIC, AGRICULTURAL, AND GOVERNANCE SUBSYSTEMS
+
+This is systemic collapse.
+
+---
+
+# Jeremiah 51:20 — referent of “you are my war club” is debated
+
+Commentators differ over whether:
+Babylon;
+Media;
+another agent
+is addressed.
+
+## M50J3-21 — AMBIGUOUS ACTUATOR IDENTITY LOWERS CONFIDENCE IN PRECISE AGENT MAPPING
+
+Function:
+smashing instrument
+is clear.
+
+Identity:
+less secure.
+
+---
+
+# Jeremiah 51:25 — Babylon is “destroying mountain”
+
+Babylon:
+mountain
+that destroys whole earth.
+
+Then:
+rolled down from crags;
+made burned-out mountain.
+
+## M50J3-22 — IMPERIAL CENTER CAN BE PROJECTED AS LARGE TOPOGRAPHIC MASS / MOUNTAIN
+
+This is not ordinary Babylonian topography.
+
+Babylon itself is not a natural mountain city.
+
+Therefore the mountain is strongly symbolic/mythic.
+
+---
+
+# Jeremiah 51:25 — mountain moves from active destroyer to burned/inactive state
+
+destroying mountain
+→ rolled down
+→ burned mountain.
+
+## M50J3-23 — LARGE ACTIVE SYSTEM CAN UNDERGO FUNCTIONAL TOPOGRAPHIC COLLAPSE
+
+The image transfers:
+height;
+mass;
+dominance;
+destructive reach;
+then collapse.
+
+---
+
+# Jeremiah 51:25 and Babylonian myth control
+
+Recent scholarship argues this “destroying mountain” may participate in polemic against Babylonian cosmic/imperial theology.
+
+Possible echoes of Enuma Elish and Marduk/Tiamat traditions are debated.
+
+## M50J3-24 — MYTHIC ALLUSION CAN REVERSE AN EMPIRE’S OWN COSMIC SYMBOLISM WITHOUT REPORTING A LITERAL MOUNTAIN EVENT
+
+This is essential.
+
+---
+
+# Jeremiah 51:26 — no cornerstone / foundation stone taken from Babylon
+
+The ruined mountain:
+cannot supply:
+cornerstone;
+foundation stone.
+
+## M50J3-25 — FAILED SYSTEM CAN BECOME UNSUITABLE AS MATERIAL SOURCE FOR SUCCESSOR FOUNDATION
+
+This is a strong structural image.
+
+### Vardath comparison
+
+The ground-support lattice:
+must restore reliable support.
+
+A burned/destroyed support source:
+cannot function as stable foundation.
+
+But Babylon-mountain is not identified as the dragon lattice.
+
+---
+
+# M50J3-26 — FOUNDATION FUNCTION REQUIRES MATERIAL/STRUCTURAL INTEGRITY, NOT MERELY MASS
+
+Large ruined mass
+≠
+good foundation.
+
+---
+
+# Jeremiah 51:27–29 — nations gathered; land trembles
+
+Signals/banners;
+kingdoms summoned;
+horses/forces mobilized;
+earth/land trembles.
+
+## M50J3-27 — LARGE MILITARY CONVERGENCE CAN PRODUCE GROUND-TREMBLE IMAGERY WITHOUT TECTONIC CAUSE BEING SPECIFIED
+
+Another ground-motion control.
+
+---
+
+# Jeremiah 51:30–32 — city capture propagates faster than command network
+
+Warriors stop fighting;
+strongholds fail;
+dwellings burn;
+gate bars break;
+courier meets courier;
+messenger meets messenger;
+river crossings seized;
+marshes burn;
+soldiers panic.
+
+## M50J3-28 — DISTRIBUTED FAILURE CAN OUTRUN CENTRAL INFORMATION PROCESSING
+
+The king receives:
+successive reports
+after multiple subsystems have already failed.
+
+---
+
+# M50J3-29 — PARALLEL MESSENGERS CONVERGING ON ONE CONTROL NODE INDICATE MULTI-POINT SIMULTANEOUS COLLAPSE
+
+This is important for catastrophe reconstruction.
+
+---
+
+# Jeremiah 51:32 — river crossings seized
+
+## M50J3-30 — CONTROL OF CROSSINGS CAN DETERMINE WHETHER WATERWAY FUNCTIONS AS BARRIER OR ROUTE
+
+This is a strong route/boundary principle.
+
+---
+
+# Jeremiah 51:33 — Babylon as threshing floor nearing harvest
+
+Daughter Babylon:
+like threshing floor
+ready to be trodden;
+harvest time soon.
+
+## M50J3-31 — CITY CAN BE PROJECTED AS PROCESSING SURFACE WITH A PHASE-TRIGGERED OPERATING WINDOW
+
+“Time soon”
+→ processing begins.
+
+---
+
+# M50J3-32 — THRESHING-FLOOR IMAGE IS A PHASE/TIMING ANALOGUE, NOT A WORLD-LATTICE BY DEFAULT
+
+Flat surface;
+trampling;
+separation
+do not establish spiderweb geometry.
+
+---
+
+# Jeremiah 51:34 — Nebuchadrezzar swallowed Zion “like a monster” — HIGH PRIORITY
+
+The Hebrew noun is **tannîn**.
+
+It can denote:
+sea monster;
+dragon;
+great serpent/monster
+in biblical usage.
+
+Here:
+Nebuchadrezzar
+→ devours/crushes;
+→ makes Zion an empty vessel;
+→ swallows like **tannîn**;
+→ fills belly with Zion’s delicacies;
+→ spews/rinses Zion out.
+
+This is the strongest true “dragon/monster” lexeme in this Jeremiah block.
+
+## M50J3-33 — JEREMIAH 51:34 CONTAINS A TRUE BIBLICAL MONSTER/DRAGON LEXEME, NOT A JACKAL TRANSLATION FALSE POSITIVE
+
+This is important.
+
+Unlike Jeremiah 49:33 older-English “dragons”:
+Jeremiah 51:34 really uses **tannîn**.
+
+---
+
+# Jeremiah 51:34 — local monster function is swallowing/container-consumption
+
+The monster:
+- ingests;
+- contains in belly;
+- consumes valuables;
+- expels/spews contents.
+
+## M50J3-34 — THE JEREMIAH 51 DRAGON FUNCTIONS AS CONSUMER / LIVING CONTAINER, NOT GROUND-SUPPORT SPRING
+
+Now apply Vardath support test:
+
+### supports ground?
+No.
+
+### distributed lattice?
+No.
+
+### spring/tension member?
+No.
+
+### anchors world layer?
+No.
+
+### changes support geometry?
+No.
+
+### swallowing enclosure?
+Yes.
+
+### belly as containment volume?
+Yes.
+
+### cargo/content transfer?
+Yes.
+
+### expulsion?
+Yes.
+
+Therefore:
+
+## M50J3-35 — TRUE DRAGON LEXEME ≠ VARDATH DRAGON IDENTITY WHEN FUNCTION FAILS
+
+This is one of the most important negative controls discovered so far.
+
+---
+
+# Jeremiah 51:34 — empty vessel + monster belly create nested container imagery
+
+Zion:
+made empty vessel.
+
+Then:
+swallowed into monster belly.
+
+This creates:
+
+vessel emptied
+→ contents transferred
+→ predator/container filled
+→ expulsion.
+
+## M50J3-36 — ONE POPULATION/TERRITORY CAN BE PROJECTED THROUGH MULTIPLE CONTAINER STATES IN ONE PROCESS
+
+This is a high-value transfer analogue.
+
+---
+
+# M50J3-37 — SWALLOWING CAN MODEL IMPERIAL EXTRACTION: SOURCE NODE EMPTIED, DOMINANT NODE FILLED
+
+This fits Babylon’s:
+resource/manpower extraction from subject populations.
+
+Ordinary imperial mechanism
+explains the metaphor well.
+
+---
+
+# Jeremiah 51:34 — dragon and Vardath carrier comparison
+
+The Vardath dragons:
+support ground as lattice springs.
+
+This tannîn:
+temporarily contains swallowed contents.
+
+Therefore:
+it resembles
+**Jonah’s living enclosure carrier/container**
+more than
+the Vardath support dragons.
+
+## M50J3-38 — SAME MYTHIC CREATURE CLASS CAN HAVE DIFFERENT SYSTEM FUNCTIONS ACROSS TEXTS
+
+Function must dominate classification.
+
+---
+
+# Jeremiah 51:35–36 — Zion demands reversal; water of Babylon is dried
+
+Following the swallowing complaint:
+case is pleaded;
+vengeance;
+Babylon’s sea dried;
+spring/fountain dried.
+
+## M50J3-39 — CONTAINER/CONSUMPTION REVERSAL IS FOLLOWED BY HYDROLOGICAL DEPLETION OF THE CONSUMING CENTER
+
+This is interesting structurally.
+
+But the text does not say:
+the tannîn causes the drying.
+
+Do not create a causal link not stated.
+
+---
+
+# M50J3-40 — SEQUENTIAL PROXIMITY DOES NOT ESTABLISH MECHANICAL CAUSATION
+
+monster swallowing
+then
+water drying
+
+≠
+dragon support change causes hydrology.
+
+This is especially important for Vardath.
+
+---
+
+# Jeremiah 51:36 — sea / springs are dried
+
+Babylon:
+water-rich city.
+
+Now:
+sea/springs dry.
+
+## M50J3-41 — IMPERIAL WATER-RICH NODE IS PROJECTED INTO HYDROLOGICAL FAILURE STATE
+
+This supports the broader:
+water-system collapse
+theme.
+
+Exact literal mechanism:
+not specified.
+
+---
+
+# Jeremiah 51:37 — human city becomes jackal habitat
+
+Again:
+urban human centrality
+→ animal/desolate habitat.
+
+## M50J3-42 — CENTRALITY CAN REVERSE INTO ECOLOGICAL SUCCESSION / NON-HUMAN OCCUPANCY
+
+---
+
+# Jeremiah 51:38–40 — Babylonians as lions → feast/drunkenness → permanent sleep → slaughter animals
+
+The people shift:
+young lions;
+drunken revelers;
+sleepers;
+lambs/rams/goats.
+
+## M50J3-43 — ONE POPULATION CAN BE PROJECTED THROUGH MULTIPLE ANIMAL/BODY STATES ACCORDING TO PROCESS PHASE
+
+Again:
+not one literal composite beast.
+
+---
+
+# Jeremiah 51:41–42 — sea rises over Babylon; waves cover her
+
+The chapter then reverses the previous drying imagery:
+
+v36:
+sea/springs dried.
+
+v42:
+sea rises over Babylon;
+waves cover.
+
+This is a striking polarity.
+
+## M50J3-44 — SAME CHAPTER CAN USE OPPOSITE HYDROLOGICAL STATES AS DIFFERENT METAPHORIC OPERATORS
+
+drying
+and
+inundation
+can coexist as literary images of defeat.
+
+Therefore:
+do not merge them into one literal water chronology without external support.
+
+---
+
+# Jeremiah 51:42 and chaos-sea / Tiamat discussion
+
+Recent scholarship notes possible polemical allusions to Babylonian creation ideology:
+
+- Marduk’s city;
+- sea/chaos imagery;
+- destructive mountain;
+- winds;
+- creator formula;
+- Bel.
+
+Some scholars see the sea covering Babylon as an ironic reversal of Marduk’s mythic mastery of Tiamat/chaos.
+
+## M50J3-45 — JEREMIAH 51 MAY DELIBERATELY REVERSE BABYLONIAN CHAOS-COMBAT SYMBOLISM
+
+This is highly relevant to the project’s Tiamat research.
+
+But:
+
+## M50J3-46 — MYTHIC POLEMIC / ALLUSION ≠ REPORT THAT LITERAL TIAMAT PHYSICALLY FLOODED BABYLON
+
+Keep:
+literary-theological use
+and
+physical hypothesis
+separate.
+
+---
+
+# Jeremiah 51:34 dragon vs Tiamat control
+
+The **tannîn** in v34 is:
+Nebuchadrezzar.
+
+It is not explicitly:
+Tiamat.
+
+Its function:
+swallowing Zion.
+
+Therefore:
+
+## M50J3-47 — DO NOT IDENTIFY JEREMIAH 51:34’S TANNÎN WITH TIAMAT SOLELY BECAUSE BOTH ARE “DRAGON/SEA-MONSTER” CLASS FIGURES
+
+Shared creature class
+≠
+identity.
+
+This is exactly the kind of over-collapse the research must avoid.
+
+---
+
+# Jeremiah 51:44 — Bel disgorges what he swallowed
+
+Bel/Marduk:
+forced to disgorge swallowed contents.
+
+This repeats the swallowing topology at a second level:
+
+Nebuchadrezzar as tannîn
+→ swallowed Zion/resources.
+
+Bel
+→ has swallowed nations/resources
+→ must disgorge.
+
+## M50J3-48 — SWALLOW/DISGORGE TOPOLOGY IS REPEATED ACROSS KING AND PATRON-DEITY LEVELS
+
+This is extremely interesting.
+
+It suggests:
+imperial center as consuming system.
+
+---
+
+# M50J3-49 — REPEATED CONSUMPTION TOPOLOGY ACROSS POLITICAL + DIVINE SYMBOLIC LEVELS STRENGTHENS THE IMPERIAL-EXTRACTION READING
+
+Not support-lattice mechanics.
+
+---
+
+# Jeremiah 51:44 — nations stop streaming to Bel
+
+Previously:
+nations/resources
+→ center.
+
+After reversal:
+flow stops.
+
+## M50J3-50 — CENTRAL ATTRACTOR CAN LOSE INFLOW WHEN CONTROL/LEGITIMACY FAILS
+
+Network reversal.
+
+---
+
+# Jeremiah 51:44 — wall falls while inflow ceases
+
+Boundary:
+fails.
+
+Network:
+decentralizes.
+
+## M50J3-51 — BOUNDARY COLLAPSE AND LOSS OF NETWORK CENTRALITY CAN OCCUR TOGETHER
+
+---
+
+# Jeremiah 51:45–46 — flee, but do not react to every rumor
+
+This is a subtle survival-timing instruction:
+
+leave Babylon
+but
+do not panic at yearly rumors.
+
+One year:
+rumor.
+
+Next:
+another rumor.
+
+## M50J3-52 — TRUE EVACUATION COMMAND CAN COEXIST WITH WARNING AGAINST OVERREACTING TO NOISY PRECURSOR INFORMATION
+
+This is extremely important for Vardath survival planning.
+
+---
+
+# M50J3-53 — SIGNAL DETECTION NEEDS THRESHOLDING: NOT EVERY RUMOR IS THE EVENT
+
+A good warning system must avoid:
+- false negatives;
+- false positives.
+
+This is one of the strongest precursor-information controls in Jeremiah.
+
+---
+
+# Jeremiah 51:46 — ruler-against-ruler / yearly rumor sequence
+
+Political instability:
+repeated signals
+before terminal change.
+
+## M50J3-54 — PRE-TRANSITION PERIOD CAN CONTAIN MULTIPLE NONTERMINAL DISTURBANCES
+
+Again:
+not every disturbance = gate opening.
+
+---
+
+# Jeremiah 51:50 — escaped survivors instructed to remember Zion from afar
+
+Survivors:
+distance from destination.
+
+Memory:
+maintains orientation.
+
+## M50J3-55 — REMOTE DESTINATION CAN REMAIN ACTIVE NAVIGATIONAL TARGET THROUGH MEMORY BEFORE PHYSICAL RETURN
+
+This is useful for displaced populations.
+
+---
+
+# Jeremiah 51:54–58 — enemy waves / broken bows / wall leveled / gates burned
+
+The closing battle imagery includes:
+waves roaring like great waters;
+warriors captured;
+bows broken;
+wall leveled;
+high gates burned.
+
+## M50J3-56 — BOUNDARY SYSTEM CAN FAIL THROUGH MULTIPLE COMPONENT MODES
+
+- ranged defense disabled;
+- wall loses height/integrity;
+- gates destroyed by fire.
+
+This is structural collapse,
+not one generic “gate opens.”
+
+---
+
+# M50J3-57 — BURNED GATE ≠ FUNCTIONAL TRANSIT GATE
+
+A destroyed access structure can:
+increase uncontrolled entry
+while reducing controlled usability.
+
+This repeats:
+gate vs breach.
+
+---
+
+# Jeremiah 51:58 — massive labor becomes fuel/vanity
+
+People/nations labor:
+build huge walls.
+
+Outcome:
+labor consumed in fire.
+
+## M50J3-58 — LARGE INVESTMENT IN INFRASTRUCTURE DOES NOT GUARANTEE SURVIVAL IF FAILURE MODE EXCEEDS DESIGN ASSUMPTION
+
+Highly relevant to catastrophe engineering.
+
+---
+
+# Jeremiah 51:59–60 — information is written into portable scroll
+
+Jeremiah:
+records Babylon oracle.
+
+Seraiah:
+carries it to Babylon.
+
+## M50J3-59 — WRITTEN INFORMATION CAN BE PHYSICALLY TRANSPORTED INDEPENDENTLY OF AUTHOR
+
+Archive:
+portable carrier.
+
+---
+
+# Jeremiah 51:61–62 — scroll must be read at destination before destruction
+
+Information process:
+
+write
+→ transport
+→ arrive
+→ read aloud
+→ meaning enters listeners/memory
+→ only then destroy/sink carrier.
+
+## M50J3-60 — INFORMATION CAN SURVIVE LOSS OF PHYSICAL MEDIUM IF COPIED INTO HUMAN/SOCIAL MEMORY FIRST
+
+This is highly relevant to the Vardath catastrophe archive.
+
+---
+
+# Jeremiah 51:63 — stone tied to scroll changes buoyancy/sinking behavior
+
+Scroll alone:
+may float/drift.
+
+Scroll + stone:
+sinks.
+
+## M50J3-61 — ADDING MASS/BALLAST CAN CHANGE A CARRIER’S BEHAVIOR IN A FLUID MEDIUM
+
+This is an actual mechanics analogy.
+
+---
+
+# Jeremiah 51:63–64 — physical sinking becomes symbolic future-state model
+
+weighted scroll:
+sinks into Euphrates.
+
+Interpretation:
+Babylon
+→ sinks;
+→ does not rise.
+
+## M50J3-62 — SIGN-ACT MAPS CONTROLLED SMALL-SCALE PHYSICAL PROCESS ONTO ANTICIPATED LARGE-SCALE SYSTEM STATE
+
+This is a major methodological control.
+
+Ancient symbolic act:
+not necessarily physical causal mechanism.
+
+---
+
+# M50J3-63 — MODEL/SIGN CAN RESEMBLE TARGET PROCESS WITHOUT CAUSING TARGET PROCESS
+
+This is fundamental.
+
+Throwing scroll:
+does not hydraulically sink Babylon.
+
+It represents:
+predicted failure.
+
+---
+
+# Jeremiah 51 — direct Vardath dragon-support screening
+
+## true dragon/monster lexeme?
+Yes:
+**tannîn** in v34.
+
+## is dragon the ground-support spring?
+No.
+
+## does it support earth/ground?
+No.
+
+## distributed lattice?
+No.
+
+## elastic/spring behavior?
+No.
+
+## does it transform into route/throat?
+No.
+
+## does it swallow/contain cargo?
+Yes.
+
+## does it expel contents?
+Yes.
+
+## does hydrology change later?
+Yes,
+but causal link to monster not stated.
+
+### Classification
+
+**True dragon lexeme; wrong mechanical function for Vardath support-dragon identity.**
+
+This is more valuable than a superficial positive match because it sharpens the test.
+
+---
+
+# Jeremiah 51 — Vardath dragon / Babylonian myth comparison
+
+There are at least three distinct creature/cosmic layers that must remain separate:
+
+### Vardath dragon
+load-bearing lattice spring
+supporting ground/world layer.
+
+### Jeremiah 51 tannîn
+Nebuchadrezzar projected as swallowing monster.
+
+### Tiamat in Enuma Elish
+Mesopotamian chaos/sea figure in Marduk’s combat myth.
+
+They share:
+dragon/monster/chaos-adjacent symbolic space.
+
+They do **not** automatically share:
+mechanical role.
+
+## M50J3-64 — MYTHIC CREATURE FAMILY RESEMBLANCE MUST NOT OVERRIDE LOCAL MECHANICAL FUNCTION
+
+This is now a permanent master rule.
+
+---
+
+# Jeremiah 51 — possible Vardath-relevant structural cluster
+
+The chapter does contain a broader cluster:
+
+stretched heavens
++
+established earth
++
+upper waters
++
+wind
++
+mountain
++
+foundation stone
++
+monster
++
+sea/waves
++
+water drying
++
+ wall/gates
++
+river sign-act.
+
+This is unusually close to the project’s object inventory.
+
+But the roles are distributed among multiple unrelated metaphors.
+
+## M50J3-65 — OBJECT-INVENTORY OVERLAP IS NOT THE SAME AS PROCESS-CONTINUITY OVERLAP
+
+A strict Vardath match needs:
+same objects
+in
+same causal order.
+
+Jeremiah 51 does not yet supply that.
+
+---
+
+# Jeremiah 51 strict spiderweb → fingertrap screening
+
+## dragon
+Yes:
+true tannîn.
+
+## dragon ground support
+No.
+
+## stretched heavens
+Yes.
+
+## established earth
+Yes.
+
+## atmosphere/water/wind
+Yes.
+
+## mountain
+Yes.
+
+## foundation stone
+Yes, negatively denied.
+
+## sea/waves
+Yes.
+
+## water drying
+Yes.
+
+## wall/gate
+Yes.
+
+## same support lattice narrowing
+Absent.
+
+## throat
+Absent.
+
+## dragon supports ground then changes orientation
+Absent.
+
+## same structure reopens
+Absent.
+
+### Strict verdict
+
+**Jeremiah 51 is one of the richest Vardath comparison chapters by object inventory, but it does not provide the required causal continuity. The true tannîn/dragon is Nebuchadrezzar as a swallowing consumer/container, not the lattice spring supporting the ground. The chapter’s mountain, stretched heaven, atmospheric waters, sea, foundation stones and walls are separate images. Its strongest Vardath value is therefore comparative and methodological: it proves that a real dragon lexeme can still be a false mechanical match, while also preserving important wind/water/upper-lower/foundation motifs for later cross-text synthesis.**
+
+---
+
+# Jeremiah 51 pair / process matrix
+
+## wind / winnowing
+driving medium / separation process.
+
+## Babylon cup / nations
+central container / distributed receivers.
+
+## failed healing / evacuation
+repair threshold / exit decision.
+
+## stretched heaven / established earth
+upper morphology / lower morphology.
+
+## heavenly waters / clouds-rain-wind
+upper resource field / atmospheric transfer system.
+
+## war club / target subsystems
+actuator / distributed damaged layers.
+
+## destroying mountain / burned mountain
+active imperial mass / disabled successor state.
+
+## mountain stone / cornerstone-foundation
+failed source / denied structural reuse.
+
+## warriors / messengers
+physical defense / information network.
+
+## city / threshing floor
+urban node / processing-surface projection.
+
+## Zion vessel / monster belly
+emptied source container / filled consuming container.
+
+## tannîn / Vardath dragon
+swallowing imperial monster / ground-support lattice spring.
+
+## dry sea-springs / rising sea-waves
+depletion image / inundation image.
+
+## Nebuchadrezzar monster / Bel
+political consumer / divine-symbolic consumer.
+
+## swallowed / disgorged
+imperial accumulation / forced release.
+
+## yearly rumors / terminal event
+noisy precursors / true transition.
+
+## wall / gate
+perimeter / access subsystem.
+
+## scroll / stone
+information carrier / ballast.
+
+## reading / sinking
+information transfer / medium destruction.
+
+---
+
+# Jeremiah 51 continuous transformation timeline
+
+destructive wind is stirred
+→ winnowers enter
+→ land is emptied under multi-direction pressure
+→ people are told to flee and save life
+→ Babylon is projected as golden cup affecting nations
+→ Babylon falls suddenly
+→ healing is attempted
+→ healing is judged impossible
+→ allied/subject populations abandon repair and return home
+→ survivors carry news toward Zion
+→ Medes are named as hostile force
+→ banners/guards/watchers/ambushes are prepared
+→ water-rich Babylon approaches endpoint
+→ creator doxology establishes earth and stretches heavens
+→ heavenly waters/cloud/rain/lightning/wind system is described
+→ idols are contrasted with creator
+→ war-club actuator smashes many system classes
+→ Babylon becomes destroying mountain
+→ mountain is rolled down/burned
+→ ruined mass is denied cornerstone/foundation reuse
+→ nations converge and land trembles
+→ city defenses fail
+→ gate bars break
+→ dwellings burn
+→ couriers converge with successive failure reports
+→ river crossings are seized
+→ Babylon becomes threshing floor awaiting processing phase
+→ Zion accuses Nebuchadrezzar of devouring/crushing
+→ Zion is made empty vessel
+→ Nebuchadrezzar becomes tannîn swallowing Zion
+→ monster belly fills with extracted delicacies
+→ swallowed content is spewed out
+→ legal/reversal claim follows
+→ Babylon’s sea/springs are dried
+→ city becomes ruins/animal habitat
+→ Babylonians shift through lion/drunken/slaughter projections
+→ sea rises over Babylon in a separate inundation image
+→ waves cover the city
+→ land becomes dry/deserted
+→ Bel is forced to disgorge swallowed contents
+→ nations stop streaming to Babylonian center
+→ wall falls
+→ people are again told to leave
+→ yearly rumors are explicitly distinguished from terminal event
+→ survivors keep Zion in memory from afar
+→ enemy waves/roars close in
+→ bows break
+→ thick wall is leveled
+→ high gates burn
+→ accumulated labor becomes fuel
+→ Jeremiah records oracle on scroll
+→ Seraiah physically transports information to Babylon
+→ scroll is read at destination
+→ information is transferred before medium destruction
+→ stone is tied to scroll
+→ ballast causes sinking in Euphrates
+→ small-scale sign-act models Babylon’s future sinking.
+
+---
+
+# New master-mechanism additions from Jeremiah 51
+
+## M50J3-1 — AIRFLOW CAN FUNCTION AS SEPARATION FORCE
+## M50J3-2 — FLOW CAN SORT MIXTURE WITHOUT UNIFORM EFFECT
+## M50J3-3 — RUACH WORD FAMILY REQUIRES LOCAL FUNCTION TEST
+## M50J3-4 — MULTI-DIRECTION PRESSURE CAN EMPTY CENTRAL NODE
+## M50J3-5 — FLEE-BABYLON IS CENTRAL PHASE-DEPENDENT SURVIVAL LOGIC
+## M50J3-6 — CENTRAL CONTAINER CAN DISTRIBUTE SYSTEM EFFECT
+## M50J3-7 — CONTAINER METAPHOR ≠ PHYSICAL LIQUID TRANSFER
+## M50J3-8 — REPAIR CAN BE ABANDONED AFTER NONRECOVERABLE THRESHOLD
+## M50J3-9 — EVACUATION CAN FOLLOW FAILED REPAIR
+## M50J3-10 — SURVIVORS CAN TRANSPORT EVENT INFORMATION
+## M50J3-11 — AGENT LABEL MAY NOT MAP SIMPLY ONTO LATER COALITION
+## M50J3-12 — DEFENSE = SIGNAL + WATCH + GUARD + AMBUSH
+## M50J3-13 — WATER-RICH LOCATION CAN SUPPORT HIGH-CAPACITY CENTER
+## M50J3-14 — REPEATED CREATOR FORMULA IS SOURCE-DEPENDENT EVIDENCE
+## M50J3-15 — STRETCHED-UPPER / ESTABLISHED-LOWER REPEATS
+## M50J3-16 — TEXT PRESERVES MULTI-COMPONENT ATMOSPHERIC SYSTEM
+## M50J3-17 — ATMOSPHERIC VARIABLES SHOULD BE MODELED AS COUPLED
+## M50J3-18 — DYNAMIC MEDIUM CAN BE PROJECTED AS STORED/RELEASED
+## M50J3-19 — MANUFACTURED IMAGE / BREATH / CREATOR ARE DISTINCT CLASSES
+## M50J3-20 — ONE ACTUATOR CAN DAMAGE MULTIPLE SYSTEM LAYERS
+## M50J3-21 — AMBIGUOUS ACTUATOR ID LOWERS AGENT-MAPPING PRECISION
+## M50J3-22 — IMPERIAL CENTER CAN PROJECT AS MOUNTAIN
+## M50J3-23 — ACTIVE MASS CAN COLLAPSE INTO BURNED/INACTIVE STATE
+## M50J3-24 — MYTHIC ALLUSION CAN REVERSE IMPERIAL COSMOLOGY
+## M50J3-25 — FAILED SYSTEM CAN BE UNSUITABLE FOUNDATION SOURCE
+## M50J3-26 — FOUNDATION REQUIRES STRUCTURAL INTEGRITY
+## M50J3-27 — MILITARY CONVERGENCE CAN PROJECT AS GROUND TREMBLE
+## M50J3-28 — DISTRIBUTED FAILURE CAN OUTRUN CENTRAL INFORMATION
+## M50J3-29 — CONVERGING MESSENGERS SIGNAL MULTI-POINT COLLAPSE
+## M50J3-30 — WATERWAY CROSSING CONTROL DETERMINES BARRIER/ROUTE FUNCTION
+## M50J3-31 — CITY CAN PROJECT AS PHASE-TRIGGERED PROCESSING SURFACE
+## M50J3-32 — THRESHING FLOOR ≠ WORLD LATTICE
+## M50J3-33 — JER 51:34 CONTAINS TRUE TANNÎN DRAGON/MONSTER LEXEME
+## M50J3-34 — LOCAL DRAGON FUNCTION = CONSUMER/LIVING CONTAINER
+## M50J3-35 — TRUE DRAGON LEXEME ≠ VARDATH DRAGON IDENTITY IF FUNCTION FAILS
+## M50J3-36 — ONE NODE CAN PASS THROUGH NESTED CONTAINER PROJECTIONS
+## M50J3-37 — SWALLOWING CAN MODEL IMPERIAL EXTRACTION
+## M50J3-38 — MYTHIC CREATURE CLASS CAN HAVE DIFFERENT SYSTEM FUNCTIONS
+## M50J3-39 — CONSUMPTION REVERSAL CAN CO-OCCUR WITH WATER-SYSTEM FAILURE
+## M50J3-40 — SEQUENTIAL PROXIMITY ≠ CAUSATION
+## M50J3-41 — WATER-RICH NODE CAN ENTER HYDROLOGICAL FAILURE
+## M50J3-42 — CENTRAL CITY CAN REVERSE INTO NON-HUMAN HABITAT
+## M50J3-43 — POPULATION CAN RECEIVE MULTIPLE PHASE-SPECIFIC ANIMAL PROJECTIONS
+## M50J3-44 — OPPOSITE HYDROLOGICAL IMAGES CAN COEXIST IN ONE ORACLE
+## M50J3-45 — JER 51 MAY REVERSE BABYLONIAN CHAOS-COMBAT SYMBOLISM
+## M50J3-46 — MYTHIC POLEMIC ≠ LITERAL TIAMAT EVENT
+## M50J3-47 — TANNÎN ≠ TIAMAT BY CREATURE-CLASS ALONE
+## M50J3-48 — SWALLOW/DISGORGE TOPOLOGY REPEATS AT KING + DEITY LEVEL
+## M50J3-49 — REPEATED CONSUMPTION TOPOLOGY SUPPORTS IMPERIAL-EXTRACTION READING
+## M50J3-50 — CENTRAL ATTRACTOR CAN LOSE INFLOW
+## M50J3-51 — BOUNDARY FAILURE CAN COINCIDE WITH NETWORK DECENTRALIZATION
+## M50J3-52 — TRUE EVACUATION COMMAND CAN COEXIST WITH RUMOR CAUTION
+## M50J3-53 — WARNING SYSTEM NEEDS FALSE-POSITIVE / FALSE-NEGATIVE CONTROL
+## M50J3-54 — PRE-TRANSITION PERIOD CAN CONTAIN NONTERMINAL DISTURBANCES
+## M50J3-55 — REMOTE DESTINATION CAN REMAIN ACTIVE THROUGH MEMORY
+## M50J3-56 — BOUNDARY CAN FAIL THROUGH MULTIPLE COMPONENT MODES
+## M50J3-57 — BURNED GATE ≠ FUNCTIONAL TRANSIT GATE
+## M50J3-58 — LARGE INFRASTRUCTURE INVESTMENT ≠ CATASTROPHE RESILIENCE
+## M50J3-59 — WRITTEN INFORMATION CAN TRAVEL INDEPENDENTLY OF AUTHOR
+## M50J3-60 — INFORMATION CAN SURVIVE PHYSICAL MEDIUM LOSS AFTER COPYING
+## M50J3-61 — BALLAST CHANGES CARRIER BEHAVIOR IN FLUID
+## M50J3-62 — SMALL PHYSICAL SIGN-ACT CAN MODEL LARGE SYSTEM STATE
+## M50J3-63 — SIGN/MODEL RESEMBLANCE ≠ CAUSATION
+## M50J3-64 — MYTHIC CREATURE FAMILY RESEMBLANCE ≠ MECHANICAL IDENTITY
+## M50J3-65 — OBJECT-INVENTORY OVERLAP ≠ PROCESS-CONTINUITY OVERLAP
+
+---
+
+# Number / timing register — Jeremiah 51
+
+Record without forcing:
+
+- fourth year of Zedekiah anchors the Seraiah scroll episode in 51:59.
+- “one year … next year” in v46 explicitly distinguishes repeated rumor cycles from the terminal event.
+- “a little while / harvest time” in v33 is phase-trigger language, not a cosmological interval.
+- no gate-throat duration.
+- no world-layer count.
+- no dragon-spring count.
+- no measured sea-rise height.
+- no wind speed.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 51
+
+1. Working primary text: Jeremiah 51 NRSVUE, compared with NIV/KJV/other translations and Hebrew lexical material.
+2. Jeremiah 50–51 is a long Babylon-oracle complex with substantial compositional/redactional debate.
+3. The creator doxology in Jer 51:15–19 closely repeats Jer 10:12–16, so it is not independent evidence.
+4. Jer 51:16 gives upper waters/cloud/rain/lightning/wind imagery but not a complete modern meteorological mechanism.
+5. Jer 51:20’s war-club referent is debated; function is clearer than agent identity.
+6. Jer 51:25’s “destroying mountain” is symbolic because Babylon is not simply a natural mountain; scholarship has proposed links to Babylonian imperial/cosmic ideology.
+7. Jer 51:34 uses **tannîn**, a genuine biblical monster/dragon lexeme. University of Iowa lexical material explicitly notes its sea-monster/dragon semantic range and its use here for Nebuchadrezzar.
+8. The tannîn’s local action is swallowing Zion, filling belly with resources/delicacies, then expelling them. It has no ground-support function.
+9. Therefore Jer 51:34 is a true dragon word but a negative mechanical match to the Vardath dragon lattice-spring.
+10. Possible Marduk/Tiamat/Enuma Elish allusions in Jeremiah 50–51 are taken seriously in recent scholarship but remain literary/mythic intertextual arguments, not literal physical identifications.
+11. Jer 51:42’s sea covering Babylon may participate in chaos-sea reversal imagery; it should not automatically be entered as literal hydrological history.
+12. Jer 51:44’s Bel disgorging swallowed contents repeats the chapter’s imperial-consumption topology.
+13. Jer 51:46 explicitly warns against treating every annual rumor as the decisive event.
+14. Jer 51:59–64 clearly describes a sign-act: the scroll is read, tied to a stone, and sunk in Euphrates as a symbolic model of Babylon’s fall.
+15. Physical destruction of the scroll carrier occurs only after its information has been delivered.
+16. No strict spiderweb→fingertrap transformation appears.
+
+---
+
+# Sources logged — Jeremiah 51
+
+Primary:
+- Jeremiah 51 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+51&version=NRSVUE
+- Jeremiah 51:20–26 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+51%3A20-26&version=NRSVUE
+- Jeremiah 51:34 NRSVUE:
+  https://www.biblegateway.com/verse/en/Jeremiah%2051%3A34
+- Jeremiah 51:42–44 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+51%3A42-44&version=NRSVUE
+- Jeremiah 51:44–46 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+51%3A44-46&version=NRSVUE
+- Jeremiah 51:59–64 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+51%3A59-64&version=NRSVUE
+
+Scholarly / lexical:
+- University of Iowa, Hebrew **tannîyn** lexical discussion:
+  https://bam.sites.uiowa.edu/RTL/tanniyn
+- “The end of the oppressive empire is at hand: The thrust of the oracles in Jeremiah 50–51 Masoretic text,” *Verbum et Ecclesia* (2024):
+  https://verbumetecclesia.org.za/index.php/ve/article/view/3489/8963
+- Paul Kang-Kul Cho, *The Sea in the Hebrew Bible: Myth, Metaphor, and Muthos*:
+  http://dissertations.umi.com/gsas.harvard:11462
+- Academic Jeremiah 51 commentaries retained for Seraiah’s scroll/stone/Euphrates sign-act and textual/compositional controls.
+
+---
+
+# SECTION 50J3 CHECKPOINT — JEREMIAH 51 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 51 is one of the richest Vardath comparison chapters by object inventory: stretched heaven, established earth, upper waters, wind, mountain, foundation stone, dragon/monster, sea, walls, gates and river all occur.**
+2. **The dragon/monster word is genuine _tannîn_, unlike Jeremiah 49:33’s jackal translation false-positive.**
+3. **But the true tannîn still fails the Vardath mechanical test: Nebuchadrezzar acts as a swallowing consumer/container, not as the lattice spring supporting the ground.**
+4. **The chapter repeats swallowing at two levels—Nebuchadrezzar as tannîn and Bel forced to disgorge what he swallowed—strongly supporting an imperial-extraction topology.**
+5. **Possible Tiamat/Marduk polemics are worth preserving, but the tannîn must not simply be equated with Tiamat.**
+6. **The chapter contains both drying and inundation imagery; those opposite hydrological metaphors cannot be merged into one literal water chronology without outside evidence.**
+7. **Jeremiah 51:46 is an unusually useful precursor-warning control: real evacuation advice coexists with an explicit warning not to treat each annual rumor as the terminal event.**
+8. **The scroll+stone sign-act is a superb archive lesson: deliver/copy the information before destroying the physical carrier; model resemblance does not imply causal action.**
+9. **Object-inventory overlap with Vardath is strong, but same-object causal continuity remains absent; strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Jeremiah 52 — historical close + Jeremiah master synthesis**
+
+Priority:
+- siege timing and multi-year phase;
+- famine→breach→night escape;
+- double-wall/gate/Arabah route;
+- pursuit/capture at Jericho plains;
+- Zedekiah sons killed / eyes removed / chain→Babylon;
+- temple/palace/house burning;
+- wall destruction;
+- remnant deportation vs poor-vinedressers/farmers left;
+- Temple bronze pillars, bases and bronze sea — structural/material inventory;
+- vessel/metal removal;
+- deportation counts and textual controls;
+- Jehoiachin release from prison→elevated seat→garments/allowance;
+- close-of-book low→high reversal;
+- strong source dependence on 2 Kings 24–25;
+- Jeremiah-wide synthesis separating:
+  1. actual Vardath-mechanism advances,
+  2. partial analogues,
+  3. false positives / controls,
+  4. route/survival rules,
+  5. dragon support-lattice results.
