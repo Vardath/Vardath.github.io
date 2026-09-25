@@ -72893,3 +72893,1121 @@ Important:
   watchman/information relay;
   seven-day sitting period;
   route/receiver responsibility.
+
+
+---
+
+# SECTION 52 progress A1 — Ezekiel 1
+## Fresh sequential research: opened heavens, four-node support/mobility architecture, touching wings, wheels on earth, shared animating field, broad upper expanse, throne above and strict dragon-support/fingertrap tests
+
+### Sequential-integrity note
+
+This is the **fresh canonical sequential pass** through Ezekiel.
+
+The stray Ezekiel material inserted earlier during the abandoned automation episode is not being counted as research progress. This section was re-read from the primary text and checked independently against current scholarship.
+
+---
+
+# Historical / literary control before Vardath comparison
+
+Ezekiel 1 opens in exile by the River/Chebar canal in Babylonia.
+
+The vision belongs to the larger prophetic-call complex of Ezekiel 1:1–3:15.
+
+The fifth year of King Jehoiachin’s exile places the call around **593/592 BCE**.
+
+The “thirtieth year” remains debated and should not be forced into chronology arithmetic.
+
+The scene is visionary/theophanic:
+- heavens open;
+- storm-cloud/fire approaches;
+- living creatures appear;
+- wheels accompany them;
+- an expanse/dome lies above;
+- a throne and humanlike divine form are above that.
+
+Scholarly interpretation strongly connects the imagery with:
+- ancient Near Eastern throne/cherub traditions;
+- Babylonian cosmology;
+- temple imagery;
+- throne-chariot imagery.
+
+The Vardath comparison comes after those controls.
+
+---
+
+# Ezekiel 1:1 — heavens open while Ezekiel remains at the lower location
+
+Ezekiel is:
+among exiles;
+by the Chebar.
+
+Then:
+heavens open.
+
+He sees visions.
+
+There is no statement here that his physical body first leaves the river location.
+
+## M52A1-1 — UPPER-BOUNDARY OPENING CAN CHANGE ACCESS/OBSERVATION BEFORE BODY TRANSFER
+
+This is a direct boundary-channel distinction.
+
+Possible state change:
+closed/ordinary perception
+→ opened visual/revelatory access.
+
+### Vardath relevance
+
+This resembles:
+boundary-state change
+without immediate material transfer.
+
+But:
+vision access
+≠ physical world adjacency proof.
+
+---
+
+# Ezekiel 1:1–3 — multiple time/address systems coexist
+
+The chapter gives:
+- thirtieth year;
+- fourth month;
+- fifth day;
+- fifth year of Jehoiachin’s exile;
+- river/land address.
+
+## M52A1-2 — ONE EVENT CAN HAVE MULTIPLE TEMPORAL AND SPATIAL COORDINATES
+
+Do not collapse:
+calendar;
+regnal/exilic;
+personal/possible jubilee
+into one hidden clock.
+
+---
+
+# Ezekiel 1:4 — coupled storm / cloud / fire / brightness field
+
+Approach from north:
+stormy wind.
+
+Great cloud:
+brightness around.
+
+Fire:
+flashing continually.
+
+Center:
+gleaming/amber-like brightness.
+
+The event therefore begins as a **coupled field**:
+
+wind
++
+cloud
++
+fire
++
+light.
+
+## M52A1-3 — STRUCTURAL/VISION EVENT CAN ARRIVE WITH MULTIPLE COUPLED ENVIRONMENTAL SIGNALS
+
+This is strongly compatible at the effects level with:
+atmospheric activation;
+electrical/light phenomena;
+fire/plasma-like appearance.
+
+### Control
+
+The text is theophanic/visionary.
+
+It does not identify:
+electrical current;
+physical plasma;
+measured atmospheric pressure.
+
+---
+
+# Ezekiel 1:4 — north is a horizontal approach vector
+
+The heavens open vertically,
+while the storm comes from north.
+
+## M52A1-4 — HORIZONTAL AND VERTICAL DIRECTIONS CAN COEXIST IN ONE EVENT AND MUST NOT BE MERGED
+
+North:
+approach direction.
+
+Above/below:
+layer relation.
+
+This should remain a permanent direction-control rule.
+
+---
+
+# Ezekiel 1:5–6 — four living creatures form the main mobile node-set
+
+Explicit number:
+**four**.
+
+Each:
+humanlike;
+four faces;
+four wings.
+
+## M52A1-5 — THE PRIMARY SUPPORT/MOBILITY NODE SET IS FOUR, NOT TWO
+
+This is important for the user’s two-spring model.
+
+Do not reduce:
+4 creatures
+to
+2 opposed strands
+without actual textual mechanics.
+
+However,
+four may encode:
+four horizons/directions
+within a larger system.
+
+Scholarship commonly connects the four faces/directions to the four quarters of the world.
+
+---
+
+# Ezekiel 1:7–8 — hybrid human/animal/metallic/winged morphology
+
+Features include:
+- human form;
+- straight legs;
+- calf-like feet;
+- bronze-like gleam;
+- human hands beneath wings.
+
+## M52A1-6 — ONE SYSTEM NODE CAN BE REPRESENTED AS A COMPOSITE OF MULTIPLE FUNCTIONAL MORPHOLOGIES
+
+Human:
+agency.
+
+Animal:
+strength/domain.
+
+Wing:
+mobility/support.
+
+Metallic:
+radiance/otherness.
+
+This is a major Squatter-Man/personification control:
+hybrid body imagery may encode functions
+without describing ordinary biology.
+
+---
+
+# Ezekiel 1:8–11 — hands under wings + wings touching
+
+This is one of the highest-priority structures in the chapter.
+
+Each creature:
+has hands beneath wings.
+
+Each creature:
+has two wings extended toward/touching another creature.
+
+Two other wings:
+cover its body.
+
+Thus the same node has:
+
+### outward relational members
+two wings connecting/touching neighboring nodes.
+
+### inward/local members
+two wings covering the node/body.
+
+## M52A1-7 — SAME MEMBER CLASS CAN SPLIT INTO NETWORK-CONNECTION AND LOCAL-COVERING FUNCTIONS
+
+This is strongly relevant to Vardath:
+network support
+and
+local enclosure
+can coexist in one structural unit.
+
+---
+
+# Ezekiel 1:9,11 — touching does not automatically mean weaving
+
+The creatures’ wings:
+touch one another.
+
+This creates genuine connectivity.
+
+But the text does not explicitly say:
+- over-under crossings;
+- interlaced strands;
+- alternating weave;
+- braid-angle change.
+
+## M52A1-8 — CONTACT NETWORK ≠ WOVEN NETWORK
+
+This is one of the most important strict controls.
+
+Ezekiel 1 gives:
+**connectedness**.
+
+It does not yet give:
+**fingertrap weave mechanics**.
+
+---
+
+# Ezekiel 1:9,12 — connected system moves straight without turning
+
+The creatures:
+move straight ahead;
+do not turn.
+
+Where the spirit goes:
+they go.
+
+## M52A1-9 — CONNECTED NODE SYSTEM CAN TRANSLATE WHILE PRESERVING ORIENTATION
+
+This is mechanically unusual and highly relevant.
+
+A system can:
+change position
+without
+rotating each node into its travel direction.
+
+The multiple faces/directions likely help explain this in the imagery.
+
+---
+
+# Ezekiel 1:10 — four directional faces
+
+Human;
+lion right;
+ox left;
+eagle.
+
+Academic interpretation commonly relates the faces/directions to four quarters/horizons or representative creature domains.
+
+## M52A1-10 — ONE NODE CAN CONTAIN MULTIPLE DIRECTIONAL INTERFACES SIMULTANEOUSLY
+
+This helps distinguish:
+
+direction availability
+from
+body reorientation.
+
+---
+
+# Ezekiel 1:11 — two outward wings / two covering wings
+
+This gives an explicit **2 + 2** partition inside each four-winged node.
+
+## M52A1-11 — BINARY FUNCTIONAL SUBSTRUCTURE CAN EXIST INSIDE A FOUR-NODE SYSTEM
+
+This is relevant to the user’s two-direction model,
+but should not be overclaimed.
+
+The text gives:
+two wings for connection;
+two for covering.
+
+It does **not** say:
+one pair = upward spring;
+one pair = downward spring.
+
+---
+
+# Ezekiel 1:13–14 — mobile fire/lightning field among living nodes
+
+Something like:
+burning coals;
+torches;
+fire;
+lightning
+
+moves among the creatures.
+
+The creatures themselves:
+dart like lightning.
+
+## M52A1-12 — STRUCTURAL NETWORK AND MOBILE ENERGY-LIKE FIELD ARE DISTINCT VARIABLES
+
+This is exceptionally important for Vardath.
+
+Possible abstract distinction:
+
+support/mobility nodes
+≠
+energy/light field moving among them.
+
+This maps cleanly onto:
+lattice geometry
+versus
+current/plasma activity.
+
+### Control
+
+The text does not identify literal plasma physics.
+
+---
+
+# Ezekiel 1:15 — wheels are explicitly “on the earth” beside creatures
+
+One wheel:
+on the earth / ground
+beside each creature.
+
+This is the first clear lower-world interface.
+
+## M52A1-13 — COSMIC MOBILITY SYSTEM HAS EXPLICIT GROUND-CONTACT / EARTH-LEVEL COMPONENTS
+
+This is highly significant for the ground-support question.
+
+However:
+the wheel is beside the creature,
+not stated to be under the inhabited ground supporting it.
+
+---
+
+# Ezekiel 1:16–17 — wheel within wheel + four-direction motion
+
+The wheel construction is described as:
+wheel within wheel.
+
+Modern expert commentary often understands this as crossed/perpendicular wheel geometry allowing omnidirectional movement.
+
+The system can move:
+in any of four directions
+without veering/turning.
+
+## M52A1-14 — CROSS-ORIENTED CIRCULAR SUBSYSTEM CAN ENABLE MULTI-DIRECTIONAL MOTION WITHOUT WHOLE-SYSTEM TURNING
+
+This is a strong mechanics analogue.
+
+But:
+crossed wheels
+≠ braided springs.
+
+No narrowing/throat appears.
+
+---
+
+# Ezekiel 1:18 — tall rims + eyes all around
+
+The rims:
+tall/awesome;
+full of eyes.
+
+Textual/redactional scholarship has debated how some eye imagery developed between Ezekiel 1 and 10.
+
+## M52A1-15 — VISUALLY STRONG DETAIL WITH REDACTIONAL COMPLEXITY SHOULD NOT CARRY THE MODEL ALONE
+
+Eyes:
+may encode observation/animation/vision.
+
+But do not derive:
+nodes;
+stars;
+apertures;
+sensors
+as physical identity from one uncertain feature.
+
+---
+
+# Ezekiel 1:19–21 — wheels and creatures are synchronised by one spirit
+
+When creatures:
+move
+→ wheels move.
+
+stop
+→ wheels stop.
+
+rise from earth
+→ wheels rise.
+
+Reason:
+the same “spirit of the living creature” is in the wheels.
+
+This is one of the strongest systems statements yet.
+
+## M52A1-16 — DISTINCT SUBSYSTEMS CAN BE SYNCHRONIZED BY A SHARED CONTROL / ANIMATING FIELD
+
+Creature system:
+biomorphic.
+
+Wheel system:
+circular/mechanical.
+
+Motion state:
+shared.
+
+Control principle:
+shared spirit.
+
+---
+
+# M52A1-17 — SHARED FIELD CAN COORDINATE TRANSLATION, REST AND VERTICAL LIFT
+
+Three system states:
+move;
+stop;
+rise.
+
+All remain coupled.
+
+This is strongly compatible with a unified lattice/current model at the abstract level.
+
+---
+
+# Ezekiel 1:19–21 — vertical lift from earth is explicit
+
+The creatures:
+rise from earth.
+
+Wheels:
+rise with them.
+
+## M52A1-18 — GROUND-ASSOCIATED COMPONENTS CAN ENTER A COORDINATED VERTICAL-LIFT STATE
+
+This is a genuine mode change.
+
+But:
+the **ground itself** is not stated to rise.
+
+The mobile system rises from it.
+
+So this is not yet:
+ground carried by lattice.
+
+---
+
+# Ezekiel 1:22 — broad expanse/dome spread above creature heads
+
+The text describes something like:
+an expanse / dome / firmament
+spread out above the living creatures.
+
+This is one of the strongest broad-plane images in the corpus.
+
+Morphology:
+broad;
+spread;
+upper;
+continuous-looking plane.
+
+## M52A1-19 — EZEKIEL 1 CONTAINS A GENUINE BROAD UPPER PLANE OVER A COORDINATED LIVING NETWORK
+
+This is very relevant to Vardath’s broad quiet-state support geometry.
+
+---
+
+# Ezekiel 1:22–23 — wings are immediately beneath the expanse
+
+Under the expanse:
+wings stretched straight toward one another.
+
+This creates a direct layering:
+
+upper throne
+↑
+broad expanse
+↑
+extended wings / living creatures
+↑
+wheels / earth interface.
+
+---
+
+# Scholarly support reconstruction — exceptionally important
+
+Christoph Uehlinger and Susanne Müller Trufaut’s iconographic/redactional study proposes that an early visionary nucleus of Ezekiel 1 consisted of:
+
+**four living beings**
+→ **supporting the heavenly firmament**
+→ **surmounted by a divine throne**
+→ **with anthropomorphic deity seated above**.
+
+They compare the beings with Mesopotamian hybrid support figures and argue that the four living creatures represent the four horizons/quarters while holding up the heavenly firmament.
+
+This is not merely a modern Vardath analogy.
+
+It is an actual scholarly reconstruction of the vision’s ancient cosmological architecture.
+
+## M52A1-20 — EZEKIEL 1 HAS A HIGH-QUALITY SCHOLARLY SUPPORT-ARCHITECTURE INTERPRETATION
+
+This is one of the strongest findings of the entire Bible project so far.
+
+### Critical mismatch with the mature Vardath mechanism
+
+Vardath:
+dragon/lattice-spring network
+→ supports **the inhabited ground/world layer**.
+
+Uehlinger/Müller Trufaut reconstruction:
+four living beings
+→ support **the heavenly firmament/plaque**.
+
+Therefore the load direction / supported surface is different.
+
+## M52A1-21 — SUPPORT ROLE MATCH IS STRONG, SUPPORTED-SURFACE IDENTITY IS NOT
+
+This distinction must be preserved.
+
+---
+
+# Ezekiel 1 support-role comparison in detail
+
+## Vardath mature mechanism
+
+broad dragon/spiderweb lattice
+→ under/around world
+→ supports ground/world-disc
+→ spring-like geometry can change
+→ support shift contributes to gate transition
+→ ground/land can deform/move
+→ support later re-establishes.
+
+## Ezekiel 1 scholarly reconstruction
+
+four hybrid living beings
+→ located beneath firmament
+→ wings/being network associated with firmament
+→ firmament supports throne above
+→ whole mobile throne system can move/rise.
+
+### Strong overlaps
+
+- distributed living support figures;
+- broad plane above support figures;
+- four-direction world/horizon association;
+- connected/touching extended members;
+- coordinated movement;
+- internal fire/light field;
+- ground/earth-associated wheels;
+- vertical lift;
+- humanlike upper figure.
+
+### Critical mismatches
+
+- supported surface is heavenly firmament, not inhabited ground;
+- figures are four, not explicit two-strand braid;
+- no spring elasticity stated;
+- no broad web interlacing stated;
+- no contraction into throat;
+- no world-layer material transfer;
+- no reopening/resupport sequence.
+
+### Classification
+
+**Exceptionally strong support-system analogue.  
+Not the strict Vardath ground-support/fingertrap mechanism.**
+
+---
+
+# M52A1-22 — FUNCTIONAL ROLE MAY BE MORE IMPORTANT THAN CREATURE NAME
+
+Ezekiel 1 calls them:
+living creatures.
+
+Ezekiel 10 later identifies them as cherubim.
+
+They are not called dragons.
+
+Yet their possible support role is much closer to the user’s mature dragon-support mechanism than Jeremiah 51’s explicit dragon, which functioned as a devouring imperial metaphor.
+
+Permanent rule:
+
+> **A non-dragon figure with the correct structural support role may be more Vardath-relevant than an explicit dragon with the wrong mechanical role.**
+
+This is a major improvement in the research method.
+
+---
+
+# Ezekiel 1:24–25 — wing motion generates mighty-water/army-like sound
+
+When moving:
+wings sound like mighty waters / tumult / army.
+
+When stopped:
+wings lower.
+
+Voice:
+comes from above the expanse.
+
+## M52A1-23 — STRUCTURAL MOTION CAN PRODUCE WATER-LIKE ACOUSTIC ANALOGY WITHOUT WATER MOTION
+
+This is another hydrology control.
+
+“Mighty waters” here:
+sound comparison.
+
+Do not place it in:
+physical water-transfer timeline.
+
+---
+
+# Ezekiel 1:24–25 — deployed vs lowered wing state
+
+Moving:
+wings active/extended/sounding.
+
+Stopped:
+wings lowered.
+
+## M52A1-24 — SAME SUPPORT/MOBILITY MEMBERS CAN CHANGE CONFIGURATION BETWEEN ACTIVE AND REST STATES
+
+This is genuinely relevant to Vardath.
+
+Same members:
+different geometry.
+
+But:
+the change is wing deployment
+not broad web → narrow throat.
+
+---
+
+# Ezekiel 1:26 — vertical architecture becomes explicit
+
+Layering:
+
+earth / wheels
+→ living creatures
+→ expanse
+→ throne
+→ humanlike figure.
+
+## M52A1-25 — EZEKIEL 1 DEFINES A MULTI-LAYER VERTICAL SYSTEM WITH DIFFERENT FUNCTIONAL LEVELS
+
+This is strongly relevant to stacked-world thinking.
+
+But:
+the text does not say each level is an inhabited world-disc.
+
+Do not inflate:
+vertical architecture
+into
+full Vardath ontology.
+
+---
+
+# Ezekiel 1:26–27 — humanlike upper figure is above the support/mobility architecture
+
+The humanlike form:
+sits above throne/expanse.
+
+It is not described as:
+the creatures;
+the wheels;
+the expanse.
+
+## M52A1-26 — HUMANLIKE OPERATOR/DEITY CAN OCCUPY A SYSTEM WITHOUT BEING IDENTICAL TO THE SUPPORT NETWORK
+
+This is a major Squatter-Man control.
+
+Human projection:
+can represent operator/occupant
+rather than
+apparatus itself.
+
+---
+
+# Ezekiel 1:27 — upper/downward division around the loins
+
+The humanlike figure is described:
+
+upward from loins:
+gleaming/fire-like.
+
+downward from loins:
+fire-like.
+
+This creates an explicit:
+upper half / lower half
+division around a middle body boundary.
+
+## M52A1-27 — ANTHROPOMORPHIC FIGURE CAN ENCODE TWO OPPOSITE VERTICAL REGIONS ABOUT A CENTRAL MIDPOINT
+
+This is genuinely interesting for the two-direction model.
+
+However:
+both regions are fiery appearance;
+no opposing motion is stated;
+no two springs are stated;
+no crossing at the loins is stated.
+
+### Classification
+
+**Strong upper/lower body-axis morphology.  
+Weak two-spring mechanics.**
+
+---
+
+# Ezekiel 1:28 — rainbow/cloud/light closes the vision
+
+Splendor:
+like bow/rainbow in cloud on rainy day.
+
+Again:
+water-weather imagery is optical/appearance based,
+not a flood statement.
+
+## M52A1-28 — RAINBOW/CLOUD IMAGE CAN MARK LIGHT/GLORY APPEARANCE WITHOUT HYDROLOGICAL TRANSFER
+
+---
+
+# Ezekiel 1 strict Squatter-Man screening
+
+## central humanlike figure
+Yes, but uppermost/operator-like.
+
+## bilateral arms/supports
+Not described for upper figure.
+
+## crouched/squatting
+No.
+
+## mountain/stone seat
+Throne, not mountain.
+
+## human figure integrated into support lattice
+No; figure is above it.
+
+## upper/lower division
+Strong around loins.
+
+## figure’s motion drives lower network
+Not explicitly stated.
+
+### Verdict
+
+**Strong anthropomorphic upper-axis/operator morphology; weak strict Squatter-Man identity.**
+
+The more structurally important Vardath analogue in this chapter is actually:
+**the living-creature support system below**, not the humanlike figure above.
+
+---
+
+# Ezekiel 1 strict dragon-ground-support test
+
+## dragon named
+No.
+
+## hybrid living beings
+Yes.
+
+## under/supporting a broad plane
+Strong scholarly reconstruction: yes.
+
+## supported object is inhabited ground
+No — heavenly firmament/plaque.
+
+## spring-like tension
+No explicit elasticity.
+
+## connected extended members
+Yes — touching wings.
+
+## motion alters support geometry
+Wing state changes, but no load consequence stated.
+
+## ground deforms/moves when supports move
+No.
+
+## support later restored
+No explicit collapse/re-support cycle.
+
+### Verdict
+
+**Strongest support-architecture analogue so far, but not direct Vardath dragon-ground support because the supported surface is the upper firmament rather than the inhabited ground.**
+
+---
+
+# Ezekiel 1 strict spiderweb → fingertrap screening
+
+## broad plane
+Yes: expanse.
+
+## connected nodes
+Yes: four living creatures.
+
+## touching members
+Yes: wings.
+
+## actual weaving/interlacing
+Not stated.
+
+## two opposed strands
+Absent.
+
+## tension-driven narrowing
+Absent.
+
+## axial throat/rod
+Absent.
+
+## transfer through throat
+Absent.
+
+## reopening
+Absent.
+
+### Verdict
+
+**Fails strict fingertrap test despite exceptional broad support-network relevance.**
+
+This is important:
+a text can be extremely relevant to the **quiet/support architecture**
+while giving no evidence for the **contraction/gate phase**.
+
+---
+
+# Ezekiel 1 Vardath phase classification
+
+The chapter most closely resembles a candidate:
+
+**broad/mobile support-apparatus state**
+
+rather than:
+**fingertrap contraction state**.
+
+Possible abstract mapping:
+
+broad upper plane
++
+distributed living supports
++
+four-direction mobility
++
+shared control field
++
+fire/light activity
++
+earth-interface wheels
++
+upper operator
+
+This could fit the **apparatus before contraction** side of Vardath better than any strict gate event.
+
+But:
+the surface being supported is different.
+
+---
+
+# Ezekiel 1 pair / subsystem matrix
+
+## four creatures / four wheels
+living nodes / mechanical circular nodes.
+
+## creature / wheel
+biomorphic subsystem / ground-associated mobility subsystem.
+
+## wings outward / wings covering
+network connection / local enclosure.
+
+## right lion / left ox
+lateral face polarity.
+
+## movement / stop
+active translation / rest configuration.
+
+## rise / earth
+vertical lift / lower reference.
+
+## fire field / living network
+dynamic energy-like phenomenon / structure.
+
+## expanse / creatures
+broad upper plane / lower support-like nodes.
+
+## throne / expanse
+authority-seat / supporting heavenly platform.
+
+## upper humanlike figure / lower support system
+operator/deity projection / apparatus.
+
+## upward fire / downward fire
+two vertical appearance regions about body midpoint.
+
+---
+
+# Ezekiel 1 continuous transformation / observation timeline
+
+Ezekiel remains with exiles by Chebar
+→ heavens open
+→ information/vision access changes
+→ storm-wind approaches from north
+→ cloud/fire/brightness field appears
+→ four living creatures emerge
+→ human/animal/wing/metal features combine
+→ outward wings touch neighboring nodes
+→ covering wings protect local bodies
+→ connected nodes move straight without turning
+→ multiple faces preserve directional interfaces
+→ mobile fire/lightning field moves among nodes
+→ four wheels appear on earth beside creatures
+→ crossed/nested wheel geometry supports multi-direction motion
+→ wheel and creature motion are synchronized
+→ shared spirit coordinates move/stop/rise
+→ creature/wheel system rises from earth
+→ broad expanse is visible over living nodes
+→ wings extend immediately beneath expanse
+→ scholarly iconographic reconstruction identifies living beings as supporters of heavenly firmament
+→ throne sits above expanse
+→ humanlike fiery figure sits above throne
+→ upper/lower appearance divides around loins
+→ rainbow/cloud splendor surrounds
+→ Ezekiel falls
+→ voice begins.
+
+---
+
+# New master-mechanism additions from Ezekiel 1
+
+## M52A1-1 — BOUNDARY OPENING CAN CHANGE OBSERVATION BEFORE BODY TRANSFER
+## M52A1-2 — EVENT CAN HAVE MULTIPLE TEMPORAL/SPATIAL COORDINATES
+## M52A1-3 — STRUCTURAL EVENT CAN HAVE COUPLED WIND/CLOUD/FIRE/LIGHT SIGNALS
+## M52A1-4 — HORIZONTAL AND VERTICAL DIRECTIONS MUST REMAIN DISTINCT
+## M52A1-5 — PRIMARY SUPPORT/MOBILITY NODE SET MAY BE FOUR, NOT TWO
+## M52A1-6 — COMPOSITE BODY CAN ENCODE MULTIPLE FUNCTIONS
+## M52A1-7 — SAME MEMBER CLASS CAN HANDLE NETWORK CONNECTION + LOCAL COVERING
+## M52A1-8 — CONTACT NETWORK ≠ WOVEN NETWORK
+## M52A1-9 — CONNECTED SYSTEM CAN TRANSLATE WITHOUT NODE ROTATION
+## M52A1-10 — ONE NODE CAN HOLD MULTIPLE DIRECTIONAL INTERFACES
+## M52A1-11 — BINARY FUNCTION CAN EXIST INSIDE FOUR-NODE SYSTEM
+## M52A1-12 — STRUCTURAL NETWORK ≠ ENERGY-LIKE FIELD
+## M52A1-13 — COSMIC MOBILITY SYSTEM CAN HAVE EARTH-LEVEL INTERFACE
+## M52A1-14 — CROSS-ORIENTED CIRCULAR GEOMETRY CAN ENABLE MULTI-DIRECTION MOTION
+## M52A1-15 — REDACTIONALLY COMPLEX DETAIL SHOULD NOT CARRY MODEL ALONE
+## M52A1-16 — DISTINCT SUBSYSTEMS CAN SHARE ONE CONTROL FIELD
+## M52A1-17 — SHARED FIELD CAN COORDINATE MOVE/STOP/RISE STATES
+## M52A1-18 — GROUND-ASSOCIATED COMPONENT CAN ENTER VERTICAL LIFT STATE
+## M52A1-19 — BROAD UPPER PLANE CAN SIT OVER COORDINATED LIVING NETWORK
+## M52A1-20 — EZEKIEL 1 HAS A SCHOLARLY SUPPORT-ARCHITECTURE INTERPRETATION
+## M52A1-21 — SUPPORT ROLE MATCH ≠ SUPPORTED-SURFACE IDENTITY
+## M52A1-22 — CORRECT SUPPORT FUNCTION MAY MATTER MORE THAN CREATURE NAME
+## M52A1-23 — WATER-LIKE SOUND ≠ WATER MOTION
+## M52A1-24 — SAME MEMBERS CAN CHANGE ACTIVE/REST CONFIGURATION
+## M52A1-25 — VERTICAL SYSTEM CAN HAVE DISTINCT FUNCTIONAL LEVELS
+## M52A1-26 — HUMANLIKE OPERATOR ≠ SUPPORT APPARATUS
+## M52A1-27 — HUMAN FORM CAN SPLIT INTO UPPER/LOWER APPEARANCE REGIONS
+## M52A1-28 — RAINBOW/CLOUD APPEARANCE ≠ HYDROLOGICAL TRANSFER
+
+---
+
+# Number / timing register — Ezekiel 1
+
+Record without forcing:
+
+- **30th year** — referent debated.
+- **4th month**.
+- **5th day**.
+- **5th year** of Jehoiachin’s exile.
+- **4 living creatures**.
+- each has **4 faces**.
+- each has **4 wings**.
+- each creature has a corresponding wheel; **4 wheels** in the developed vision.
+- two wings extend/connect; two cover body.
+- four movement directions.
+
+### Number control
+
+The repeated four is structurally important **inside Ezekiel 1 itself**:
+faces;
+wings;
+creatures;
+wheels;
+directions/horizons.
+
+This makes four a genuine local system number.
+
+It does not justify converting:
+4
+into
+Vardath 1–3–7/8
+without a separate mechanism.
+
+---
+
+# Textual / historical / scholarly controls — Ezekiel 1
+
+1. Working primary text: Ezekiel 1 NRSVUE.
+2. The vision belongs to Ezekiel’s prophetic call complex, conventionally dated around 593/592 BCE from Jehoiachin’s exile chronology.
+3. The “thirtieth year” remains debated.
+4. Scholarly readings commonly connect the living creatures with cherub/throne imagery and ancient Near Eastern hybrid beings.
+5. Ezekiel 10 later identifies the living creatures as cherubim.
+6. Carl Ehrlich’s historical-context reading treats the four faces/directions as related to four world quarters and the wheels as multi-directional throne-chariot components.
+7. Uehlinger and Müller Trufaut argue from Babylonian cosmology/iconography that an early vision layer had four living beings **supporting the heavenly firmament**, with divine throne above.
+8. That interpretation is especially important for Vardath because it is a genuine support architecture, but the supported plane is the **heavenly firmament**, not inhabited ground.
+9. Their study also treats Ezekiel 1 as compositionally/redactionally complex; not every detail necessarily belongs to one original vision layer.
+10. The touching wings establish contact, not demonstrated weaving.
+11. The wheels rise with the creatures from earth; the text does not say the earth rises with them.
+12. The “mighty waters” comparison is acoustic.
+13. No broad→narrow→throat transformation occurs.
+14. No material transfer between inhabited world layers occurs.
+15. Strict fingertrap status: negative.
+16. Strict Vardath ground-support identity: negative, despite exceptionally strong support-role analogy.
+
+---
+
+# Sources logged — Ezekiel 1
+
+Primary:
+- Ezekiel 1–3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel%201-3&version=NRSVUE
+
+Historical / scholarly:
+- Carl S. Ehrlich, “Ezekiel’s Vision of God and the Chariot,” TheTorah.com:
+  https://www.thetorah.com/article/ezekiels-vision-of-god-and-the-chariot
+- Christoph Uehlinger & Susanne Müller Trufaut, “Ezekiel 1, Babylonian Cosmological Scholarship and Iconography: Attempts at Further Refinement,” *Theologische Zeitschrift* 57 (2001), 140–171:
+  https://www.religionswissenschaft.uzh.ch/dam/jcr:a8d0a86a-efc1-473a-91a0-177e1473ecdf/Uehlinger-M%C3%BCller%20(2001),%20Ezekiel%201,%20Babylonian.pdf
+- Bibliographic record:
+  https://pascal-francis.inist.fr/vibad/index.php?action=getRecordDetail&idt=1168237&lang=en
+- Rachel Elior, *The Three Temples*, chapter on Temple → Merkavah transformation:
+  https://www.cambridge.org/core/books/abs/three-temples/from-temple-to-merkavah-from-the-chariot-throne-of-the-cherubim-to-ezekiels-vision/BF3F3D0DD011F13278FF1164D4C3A812
+
+---
+
+# SECTION 52A1 CHECKPOINT — EZEKIEL 1 COMPLETE
+
+Strongest first-time findings:
+
+1. **Ezekiel 1 contains the strongest genuine support-architecture analogue found so far.**
+2. **A major scholarly iconographic reconstruction explicitly identifies the four living beings as supporting the heavenly firmament, with the divine throne above it.**
+3. **This is far more structurally relevant to the Vardath dragon-support hypothesis than an explicit dragon that merely devours or fights.**
+4. **The decisive mismatch is that Ezekiel’s support beings support the heavenly firmament/platform, not the inhabited ground/world-disc.**
+5. **The vision has real node connectivity: wings touch, but touching is not yet weaving.**
+6. **The system distinguishes structure from a mobile fire/lightning field.**
+7. **Creature and wheel subsystems share a control/animating field and synchronize movement, stopping and vertical lift.**
+8. **The wheels are explicitly earth-associated, but the earth itself is not carried upward.**
+9. **The broad expanse over the connected living system is highly relevant to the Vardath broad-state architecture.**
+10. **No broad-state contraction into fingertrap/rod/throat occurs, so strict fingertrap status remains negative.**
+11. **The upper humanlike figure is best controlled as an operator/deity above the apparatus rather than assumed to be the apparatus itself.**
+12. **Ezekiel 1 therefore currently ranks as a high-priority quiet/support-state analogue, not a demonstrated gate/contraction-state description.**
+
+### Next live block
+
+**Ezekiel 2–3**
+
+Priority:
+- spirit enters body and changes posture;
+- message sender / receiver / refusal channels;
+- thorn/scorpion enclosure language;
+- outstretched hand carrying scroll;
+- scroll broad/open state → ingestion into mouth/stomach;
+- written information becomes embodied speech;
+- sweetness vs lament/woe content;
+- face/forehead hardening against receiver resistance;
+- spirit lifts/bears Ezekiel;
+- wings/wheels continue as sound/mobility system;
+- seven-day stunned interval;
+- sentinel/watchman as information relay node;
+- responsibility depends on transmission vs reception;
+- house closure + cords + speech blockage;
+- mouth later reopened by source;
+- HIGH PRIORITY: compare scroll ingestion with material/info transfer and test whether this is the clearest body-as-information-carrier transformation yet.
