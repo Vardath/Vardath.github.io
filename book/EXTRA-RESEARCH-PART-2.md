@@ -26617,3 +26617,1642 @@ Required controls before research:
 - record any mountain/rod/gate/water geometry;
 - preserve Ethiopian textual/translation uncertainty.
 
+
+
+---
+
+# SECTION 65 — 1 MEQABYAN
+## Direct Ethiopic-canon pass — mountain refuge, martyr triad/five-brother expansion, fiery pit, sea-body preservation, winged shade, light-tent, heavenly water-of-life house, resurrection as elemental reassembly, world-renewal, second triad of warrior brothers, cherub-throne reference, earth-on-waters cosmography, upper waters spread/pillared by wind, lower waters/deep sea, sand-bolted sea boundary, last-days sea shaking, and populated successor inheritance
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for direct 1 Meqabyan research;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed direct sequential 1 Meqabyan pass exists.
+
+The verified Part 2 tail identified:
+**Section 65 — 1 Meqabyan**.
+
+This research is appended only to Part 2.
+
+---
+
+# Text identity / translation-control first
+
+This is **Ethiopian 1 Meqabyan**, not Greek 1 Maccabees.
+
+The two works are different:
+- different story;
+- different principal figures;
+- different literary structure;
+- different canonical tradition.
+
+The working English text for this pass is the modernized Clear Text / EthiopianCanon presentation of a Geʽez-derived translation.
+
+However, because English Meqabyan scholarship/translations are unusually sparse and uneven, key verses were cross-checked against **TIPs / United Bible Societies**, where:
+- the Geʽez text is displayed;
+- the English translation is attributed to **Haileyesus Woldemariam (UBS)**;
+- the Geʽez source is used with permission from the **Bible Society of Ethiopia**.
+
+This is especially important in chapters:
+- 3–4;
+- 6;
+- 8;
+- 27.
+
+### Major translation-control warning
+
+The English secondary renderings are not always identical.
+
+Example:
+1 Meqabyan 8:11 is modernized in one source as:
+**gathered and become one body**,
+
+while the UBS/TIPs rendering reads:
+**gathered and become one spirit**.
+
+Therefore:
+the larger **gather-from-four-winds / reconstitution** process is secure,
+but exact body/spirit wording must not be overstated.
+
+### Scholarship-control warning
+
+Reliable modern academic study of Meqabyan is extremely thin compared with Enoch/Jubilees.
+
+Therefore this block distinguishes carefully between:
+1. direct Geʽez-derived text;
+2. translation uncertainty;
+3. ordinary theological/literary function;
+4. Vardath comparison.
+
+Do not assign confident composition date, historical king identity or external event chronology where scholarship is not secure.
+
+---
+
+# BOOK STRUCTURE OVERVIEW
+
+1 Meqabyan has **36 chapters** in the working text.
+
+The book is not one continuous revolt narrative.
+
+Broad structure:
+
+## Chapters 1–4
+Tsirtsaydan / Meqabis household / Abiya-Sila-Fentos / martyrdom / five martyrs / resurrection appearance.
+
+## Chapters 5–14
+Extended theological/exhortative material:
+- kingship;
+- heaven/Sheol;
+- resurrection;
+- tree/seed analogies;
+- four elements;
+- city/Jerusalem critique;
+- Israel history.
+
+## Chapter 15
+A separate military deliverance episode:
+- Akrandyos;
+- three brothers Mebekeyus, Meqabis, Yehuda.
+
+## Chapters 16–36
+Extended historical-theological exhortation:
+- nations;
+- cherub-throne reference;
+- giants/fallen beings;
+- Israel cycles;
+- judgment;
+- creation cosmography;
+- Adam/Cain;
+- kingship;
+- final resurrection/inheritance theology.
+
+Therefore:
+**the three named martyrs in chapters 1–4 are not the same narrative unit as the three warrior brothers in chapter 15**.
+
+This matters greatly to the project's triad/pair method.
+
+---
+
+# 1 MEQABYAN 1
+## Tsirtsaydan: distributed idol system, anthropomorphic idol array, five houses, coercive network
+
+Tsirtsaydan:
+- loves wickedness;
+- trusts military force;
+- worships many idols;
+- assigns priests;
+- builds multiple idol houses;
+- deploys spies across kingdom;
+- enforces sacrifice.
+
+The idols include:
+- male-form images;
+- female-form images;
+- iron/bronze/lead constructions;
+- gold/silver adornment.
+
+### M65-1 — 1 MEQABYAN OPENS WITH A DISTRIBUTED POLITICAL/RELIGIOUS CONTROL NETWORK, NOT A COSMIC MACHINE
+
+Important anti-forcing control.
+
+The repeated:
+- houses;
+- images;
+- priests;
+- spies;
+- punishments
+
+are an institutional network.
+
+Do not map multiplicity itself into lattice nodes.
+
+### M65-2 — ANTHROPOMORPHIC FORM DOES NOT IMPLY LIVING AGENT
+
+The idols look human,
+but the text emphasizes:
+- no true life;
+- no reasoning;
+- no real causal power.
+
+This is a major control for projection research:
+**shape alone does not establish agency**.
+
+---
+
+# 1 Meqabyan 2
+## Meqabis's three sons → mountain refuge → city gates close → population looks upward to mountain → east-facing collective prayer → fiery-sword intervention → dead men rise
+
+Meqabis has three named sons:
+- Abiya;
+- Sila;
+- Fentos.
+
+They are:
+- warriors;
+- strong;
+- resistant to royal idol command.
+
+When pursued:
+- they climb a **high mountain**;
+- escape capture.
+
+The troops:
+- return to city;
+- **shut city gates**;
+- threaten destruction unless the brothers surrender.
+
+Population:
+- comes out;
+- looks toward mountain;
+- cries to brothers.
+
+Then:
+- people face **east**;
+- stretch hands;
+- pray.
+
+A violent intervention follows:
+- fiery swords descend / flash like lightning in the translation tradition;
+- two attackers are killed;
+- then rise alive again;
+- their appearance becomes more glorious.
+
+### M65-3 — MOUNTAIN FUNCTIONS AS REFUGE NODE ABOVE A CLOSED CITY-BOUNDARY SYSTEM
+
+Geometry:
+
+**city below**
+→ gates shut
+→ population inside/near city
+→ **brothers on high mountain**
+→ population looks upward.
+
+This is a real:
+**low enclosure ↔ high refuge**
+system.
+
+But no world-gate mechanics are present.
+
+### M65-4 — CLOSED CITY GATES CREATE SOCIAL/POLITICAL PRESSURE, NOT COSMIC SEPARATION
+
+Again:
+gate function must be classified.
+
+### M65-5 — EAST-FACING, HAND-EXTENSION POSTURE IS EXPLICIT BUT NOT SQUATTER-MAN BY ITSELF
+
+Population:
+faces east,
+raises/stretches hands.
+
+This is collective prayer posture.
+
+Do not convert to axis geometry without more.
+
+### M65-6 — FIRE/LIGHTNING INTERVENTION IS FOLLOWED BY DEATH→RETURN, BUT THE INTERVENTION TARGETS PEOPLE RATHER THAN OPENING SPACE
+
+The event:
+- strikes;
+- kills;
+- then the dead rise.
+
+Strong resurrection/state-change image.
+
+No aperture formation.
+
+---
+
+# 1 MEQABYAN 3
+## three brothers answer "with one word" → bound → three-day confinement → beasts reverse target → two younger brothers join → five martyrs → fiery pit → souls carried to Paradise
+
+Abiya, Sila, Fentos:
+- are seized;
+- answer king "with one word";
+- refuse idols;
+- are beaten;
+- bound;
+- imprisoned **three days and three nights**.
+
+Later:
+- beasts are sent against them;
+- beasts bow/refuse attack;
+- turn on keepers.
+
+Then:
+- **two younger brothers** arrive;
+- free the three;
+- choose to stand with them.
+
+Now:
+**five brothers** act as martyr group.
+
+Finally:
+- furnace/pit prepared;
+- fire mixture intensified;
+- all five thrown in;
+- they die;
+- angels receive souls;
+- souls taken to Paradise.
+
+TIPs/UBS confirms the furnace/pit language in 3:35.
+
+### M65-7 — THE ORIGINAL THREE ARE DISTINCT PEOPLE OPERATING AS A COLLECTIVE UNIT, NOT ONE FIGURE SPLIT INTO THREE
+
+Evidence:
+- individually named;
+- spoken of as brothers;
+- later joined by **two additional brothers**;
+- group count becomes five.
+
+Thus the best classification is:
+**triadic cooperative role**,
+not
+**one identity divided into three projections**.
+
+### M65-8 — THE BOOK REPEATS TRIADIC WARRIOR STRUCTURE LATER, SUGGESTING ROLE-PATTERN RATHER THAN SAME PERSONS
+
+Chapter 15 gives another three-brother warrior group.
+
+Therefore:
+1 Meqabyan may favor:
+**three-person deliverer/martyr pattern**.
+
+Do not conflate groups.
+
+### M65-9 — THREE-DAY ENCLOSURE→PUBLIC RE-EMERGENCE IS A REAL TEMPORAL/BOUNDARY SEQUENCE
+
+Prison:
+- entry;
+- three-day interval;
+- exit;
+- trial.
+
+But ordinary imprisonment,
+not cosmic gate.
+
+### M65-10 — BEAST-THREAT FIELD REVERSAL IS CARRIER/TARGET DEPENDENT
+
+Hungry predators:
+- approach martyrs;
+- refuse them;
+- attack handlers/army.
+
+Same hazard:
+different target response.
+
+Cross-link Daniel furnace/lions.
+
+### M65-11 — FIERY PIT FUNCTIONS AS TERMINAL HUMAN-BODY ENCLOSURE WHILE SOULS TRANSFER TO PARADISE
+
+Two simultaneous layers:
+
+**bodies**
+→ fire/pit
+
+**souls**
+→ angelic reception
+→ Paradise.
+
+Source meaning:
+martyrdom + afterlife.
+
+Vardath analogy:
+one event can separate:
+- body state;
+- occupant/soul destination.
+
+Do not equate with physical cargo transfer.
+
+---
+
+# 1 MEQABYAN 4
+## dead bodies resist fire, weighted sea sinking, animal predation; birds create wing-canopy; light surrounds bodies like tent; buried bodies later appear alive to king
+
+After death:
+- bodies placed in fire again;
+- fire fails to consume even hair.
+
+Then:
+- bodies thrown into sea;
+- heavy weights/stones/millstones added;
+- they do **not sink**;
+- Spirit rests upon them;
+- bodies float on deep.
+
+TIPs/UBS directly confirms:
+- sea does not swallow;
+- heavy weights attached;
+- bodies remain afloat;
+- Spirit upon them.
+
+Then:
+- beasts/vultures refuse destruction;
+- birds/vultures **shield bodies with wings from sun**;
+- bodies remain for fourteen days;
+- bodies shine like sun-rays;
+- light surrounds them **like a tent**;
+- angels encircle them.
+
+Bodies:
+- buried.
+
+Later:
+- five martyrs appear to king at night;
+- stand with swords;
+- say God preserved their bodies;
+- king recognizes resurrection.
+
+### M65-12 — THIS IS A COMPLETE POST-DEATH MULTI-MEDIUM PRESERVATION SEQUENCE
+
+Attempts:
+1. fire;
+2. sea/depth + added weight;
+3. animals;
+4. sun exposure;
+5. burial.
+
+Each medium fails to destroy identity.
+
+### M65-13 — WINGS HERE FUNCTION AS SHADE/PROTECTIVE CANOPY
+
+Birds:
+**spread/shield**
+bodies
+from
+sun.
+
+This gives another wing-function class:
+
+**protective-wing / canopy-wing**.
+
+Cross-link:
+- Zechariah carrier-wing;
+- Malachi radiant/healing wing;
+- cherub support/protective wing candidate.
+
+### M65-14 — LIGHT ENCIRCLING BODIES "LIKE A TENT" IS A FIELD/ENCLOSURE PROJECTION
+
+The bodies are not merely "bright."
+
+They have:
+**surrounding light**
+with
+**tent/enclosure comparison**.
+
+This is highly relevant to:
+- luminous canopy;
+- aura/field;
+- enclosure projection.
+
+Still:
+the source is miracle/martyr hagiography.
+
+### M65-15 — SEA BUOYANCY OVERRIDES ADDED DOWNWARD LOAD
+
+The narrative intentionally emphasizes:
+- weights;
+- stones;
+- millstone;
+- no sinking.
+
+Mechanically:
+**carrier/body state overrides expected gravity/buoyancy outcome**.
+
+Source explanation:
+Spirit of God.
+
+Do not infer electromagnetic levitation without evidence.
+
+### M65-16 — DEATH→VISIONARY RETURN PRESERVES PERSONAL IDENTITY
+
+The five identify themselves as:
+the same persons burned/thrown into sea.
+
+This supports identity continuity across:
+- death;
+- burial;
+- visionary appearance.
+
+---
+
+# 1 MEQABYAN 5–7
+## kingship as temporary state; heaven/earth polarity; wing shelter over king; luminous heavenly hall
+
+Chapter 5:
+- proud rulers humbled;
+- Nebuchadnezzar animal-state recalled;
+- kingship granted/removed;
+- God may "spread his wings over your head as a shelter."
+
+Chapter 6:
+righteous kings have:
+- luminous heavenly hall;
+- precious-stone floor;
+- house not like earthly hall;
+- **water of life flows from it**;
+- TIPs/UBS renders:
+  **water of life ... tabernacle of light ... encompassed by dews of Hermon**.
+
+### M65-17 — WING-AS-SHELTER APPEARS AGAIN, NOW DIRECTLY ABOVE A HUMAN HEAD
+
+This reinforces:
+**wing = overhead protection**.
+
+Not flight.
+
+### M65-18 — HEAVENLY HOUSE → WATER-OF-LIFE OUTFLOW → LIGHT-TABERNACLE IS A STRONG STABLE-REALM COMBINATION
+
+This is highly relevant to:
+- Ezekiel 47;
+- Joel sanctuary fountain;
+- Revelation river/tree;
+- Vardath stable outflow phase.
+
+Source:
+heavenly reward imagery.
+
+### M65-19 — EARTHLY KINGSHIP / HEAVENLY DWELLING ARE PARALLEL STATE DOMAINS
+
+The text repeatedly contrasts:
+- temporary earthly throne;
+- enduring heavenly dwelling.
+
+Do not equate with stacked physical world-turns,
+but populated upper habitation is explicit in theological terms.
+
+---
+
+# 1 MEQABYAN 8
+## MAJOR RESURRECTION-MECHANICS PASSAGE
+## tree roots from water+earth, branches fed by wind+sun; soul/body elements disperse; water→dew, fire→warmth, wind→breath; four winds gather; reconstitution; world renewal
+
+This chapter is exceptionally important.
+
+---
+
+# 1 Meqabyan 8:1–5
+## tree-growth model as resurrection machine metaphor
+
+Tree:
+- begins small;
+- branches;
+- vine shoots;
+- fruit.
+
+Roots:
+- watered from **water + earth**.
+
+Branches:
+- fed by **wind + sun**.
+
+Root:
+- draws water upward to leaves.
+
+Earth:
+- gives strength to branches.
+
+Wind:
+- contributes to fruiting.
+
+Then:
+**so too resurrection**.
+
+### M65-20 — RESURRECTION IS EXPLICITLY MODELED AS A MULTI-MEDIUM PLANT NETWORK
+
+Inputs:
+- water;
+- earth;
+- wind;
+- sun.
+
+Structure:
+- root;
+- branch;
+- leaf;
+- fruit.
+
+This is a genuine:
+**distributed environmental input → one living body**
+model.
+
+### M65-21 — ROOT DRAWS WATER UPWARD INTO A LARGER BRANCH FIELD
+
+This is highly relevant to:
+tree/current network geometry.
+
+But source is biological analogy.
+
+---
+
+# 1 Meqabyan 8:6–15
+## elemental separation → elemental persistence → reassembly
+
+The text describes:
+- soul separating from body;
+- components associated with:
+  - water;
+  - earth;
+  - fire;
+  - wind.
+
+Each "nature":
+- persists in its mode.
+
+Modernized source:
+- water → dew;
+- fire → burning/warmth;
+- wind → wind/breath;
+- earth → earth/ash.
+
+Soul:
+- retained by Creator.
+
+Then:
+- call from four winds;
+- gathering;
+- Ezekiel dry-bones cross-reference;
+- reconstitution.
+
+### M65-22 — 1 MEQABYAN EXPLICITLY DESCRIBES DECOMPOSITION INTO MEDIA/QUALITIES AND LATER REASSEMBLY
+
+This is a major systems process:
+
+**one living person**
+→ **distributed components**
+→ **storage/persistence**
+→ **signal/call**
+→ **recollection**
+→ **living person restored**.
+
+### M65-23 — FOUR-DIRECTION GATHERING IS A TRUE MANY→ONE RECONSTRUCTION MODEL
+
+This directly resembles:
+distributed field
+→ convergence
+→ body.
+
+### M65-24 — TRANSLATION CONTROL: "ONE BODY" / "ONE SPIRIT" VARIES
+
+TIPs/UBS 1 Meqabyan 8:11:
+**summon from the four winds, so that they may be gathered and become one spirit**.
+
+A modernized derived text says:
+**become one body**.
+
+Therefore:
+secure claim =
+**four-direction gathering into unified reconstitution**.
+
+Do not claim exact body/spirit wording without specifying translation.
+
+### M65-25 — WATER/DEW + FIRE/WARMTH + WIND/BREATH + EARTH/MATTER FORM A FOUR-MEDIUM RECONSTITUTION GRAMMAR
+
+This is one of the strongest Vardath-relevant symbolic systems in the book.
+
+Potential comparison:
+- water;
+- thermal/fire state;
+- atmospheric/wind state;
+- material/earth state.
+
+But theological anthropology ≠ physical gate engineering.
+
+---
+
+# 1 Meqabyan 8:16–35
+## sleep/night → morning/world-renewal; present world passes; new world illuminated; seed breaks down → sprouts many shoots; dew required for tree life
+
+The chapter continues:
+
+sleep:
+= death analogy.
+
+Night:
+= present-world analogy.
+
+Morning:
+= resurrection.
+
+Then:
+- present world passes like night;
+- new world shines;
+- God as unsetting sun/light.
+
+Seed:
+- must break down;
+- then sprouts;
+- multiplies;
+- produces many shoots.
+
+Tree:
+- requires dew/rain;
+- otherwise withers.
+
+### M65-26 — OLD-WORLD NIGHT → NEW-WORLD MORNING IS AN EXPLICIT WORLD-STATE TRANSITION METAPHOR
+
+This is important.
+
+The text does not present:
+new world as empty abstraction.
+
+It is linked to:
+- resurrection;
+- life;
+- illumination.
+
+### M65-27 — SUCCESSOR FORM CAN EMERGE THROUGH BREAKDOWN OF PREVIOUS FORM WITHOUT LOSS OF IDENTITY-TYPE
+
+Seed:
+breaks down
+→ same seed-kind sprouts.
+
+This is a strong:
+**transformation without species/identity substitution** control.
+
+### M65-28 — ONE SEED→MANY SHOOTS IS A CONCENTRATED→DISTRIBUTED GROWTH MODEL
+
+Very useful reopening analogue.
+
+No gate mechanics.
+
+---
+
+# 1 MEQABYAN 9–10
+## trumpet → mountains/hills lowered + rivers/depths leveled → straight highways; graves return stored persons
+
+Chapter 9:
+- trumpet of Michael;
+- mountains/hills brought low;
+- rivers/depths leveled;
+- straight highways;
+- universal resurrection.
+
+Chapter 10:
+- ancestral tombs;
+- mixed bones;
+- earth/grave cannot prevent restoration;
+- death→life.
+
+### M65-29 — RESURRECTION IS ACCOMPANIED BY TOPOGRAPHIC LEVELING INTO STRAIGHT ROUTES
+
+This resembles:
+Zechariah land leveling;
+Isaiah highway;
+Vardath broad stable post-event surface.
+
+Source meaning:
+eschatological accessibility/restoration.
+
+### M65-30 — GRAVE/EARTH FUNCTIONS AS STORAGE DOMAIN THAT RELEASES OCCUPANTS
+
+Cross-link 4 Ezra.
+
+---
+
+# 1 MEQABYAN 11–14
+## Jerusalem/city as woman; poisoned vine; upper/lower moral geography; Exodus cloud/fire recall
+
+Jerusalem:
+- female personification;
+- childhood→youth→old-age life history;
+- city and woman identity overlap.
+
+Vine:
+- Sodom/Gomorrah;
+- roots/water;
+- branches;
+- fruit/poison.
+
+Israel history:
+- Egypt;
+- cloud by day;
+- pillar fire by night;
+- Red Sea dry passage;
+- Sinai.
+
+### M65-31 — CITY↔WOMAN PROJECTION REAPPEARS OUTSIDE 4 EZRA
+
+This strengthens:
+**city-body projection is a broader tradition**.
+
+### M65-32 — CLOUD/FIRE PILLAR IS REUSED AS PROTECTIVE/GUIDING CARRIER FIELD
+
+Source is historical retelling.
+
+Keep for pillar/axis register.
+
+---
+
+# 1 MEQABYAN 15
+## SECOND TRIAD — Mebekeyus + Meqabis + Yehuda
+## enemy beyond Jordan → three brothers cross to fight → king/head removed → left/right attackers collapse → enemy crosses back over Jordan → plunder recovered
+
+A separate story:
+
+Enemy king Akrandyos:
+- camps beyond Jordan;
+- crosses Jordan;
+- threatens Israel.
+
+God strengthens:
+- Mebekeyus;
+- Meqabis;
+- Yehuda.
+
+Three brothers:
+- coordinate;
+- arm themselves;
+- attack.
+
+Mebekeyus:
+- removes commander/head.
+
+Yehuda + Meqabis:
+- strike those on left/right.
+
+Enemy:
+- self-destructs;
+- flees;
+- crosses Jordan;
+- abandons plunder.
+
+### M65-33 — THE BOOK CONTAINS TWO DISTINCT TRIADIC BROTHER SYSTEMS
+
+Triad A:
+- Abiya;
+- Sila;
+- Fentos.
+
+Triad B:
+- Mebekeyus;
+- Meqabis;
+- Yehuda.
+
+Therefore:
+**triadic role-pattern** is more plausible than identity continuity.
+
+### M65-34 — SECOND TRIAD HAS CENTRAL/LEFT/RIGHT COMBAT FUNCTION DISTRIBUTION
+
+One:
+targets leader/head.
+
+Two:
+operate against left/right surrounding forces.
+
+This is a real:
+**center + bilateral flank**
+combat pattern.
+
+Do not turn it into cosmic three-strand geometry.
+
+### M65-35 — JORDAN FUNCTIONS AS POLITICAL/MILITARY BOUNDARY CROSSED IN BOTH DIRECTIONS
+
+Enemy:
+crosses in.
+
+Later:
+crosses out.
+
+Ordinary river boundary.
+
+---
+
+# 1 MEQABYAN 16
+## city of God + enthroned on cherubim
+
+One key line describes the city of God:
+- Holy One dwelling;
+- Lord of Hosts;
+- **enthroned upon the chariot of the cherubim**;
+- countless angels.
+
+### M65-36 — CHERUB-THRONE / CHARIOT GRAMMAR IS EXPLICITLY PART OF 1 MEQABYAN'S COSMIC AUTHORITY IMAGE
+
+This links Meqabyan back to:
+- Ezekiel;
+- Daniel wheeled throne tradition;
+- cherub-carrier family.
+
+However:
+no detailed cherub morphology is supplied here.
+
+### M65-37 — CHERUBIM HERE FUNCTION AS THRONE/CHARIOT SUPPORT, NOT SERPENT OR TREE
+
+Role taxonomy matters.
+
+---
+
+# 1 MEQABYAN 18
+## angelic ancestors → fall → human flesh/wives
+
+A group described as having fathers who were angels:
+- praised in heaven;
+- fell through will;
+- took human wives;
+- human flesh involved as test/humbling.
+
+### M65-38 — UPPER-REALM AGENT → HUMAN-FLESH STATE CHANGE IS EXPLICIT TRADITIONAL MOTIF
+
+This is relevant to cross-form identity.
+
+But source:
+fallen-angel/giant tradition.
+
+Do not mechanically join it to cherub/Feathered Serpent without matching function.
+
+---
+
+# 1 MEQABYAN 20s
+## broad moral homily with recurring environmental/structural metaphors
+
+Themes:
+- mountain/wall refuge;
+- root/moisture/leaf/fruit;
+- upper clouds / lower vegetation;
+- sea/fire judgment;
+- visible/invisible creatures;
+- horizon-to-horizon rule.
+
+A notable passage:
+- wind of Azeb stirs heat of Mesem;
+- Sea of Eritrea will shake in last days.
+
+### M65-39 — LAST-DAYS SEA SHAKING IS EXPLICIT BUT MECHANISM IS UNSPECIFIED
+
+Log:
+**wind/heat relation**
++
+**sea shaking**.
+
+Do not infer precise atmospheric/plasma mechanism.
+
+---
+
+# 1 MEQABYAN 27
+# MAJOR COSMOLOGY PASSAGE
+## earth established upon waters; upper water raised; upper covering spread like cloth and PILLARED WITH WIND; lower water beneath sea-depth; sea enclosed with sand-bolts and strengthened by Spirit
+
+This is the strongest cosmographic material in the book.
+
+---
+
+# 1 Meqabyan 27:1
+TIPs/UBS:
+
+- world created;
+- mountains/hills set in order;
+- **earth established upon waters**;
+- sand boundary prevents shaking.
+
+### M65-40 — EARTH-ON-WATERS IS EXPLICIT
+
+This is direct ancient cosmography.
+
+For Vardath:
+strong analogue to:
+land/world-disc over water/current layer.
+
+But source:
+creation theology.
+
+---
+
+# 1 Meqabyan 27:3–4
+## water raised above sky → spread like cloth/sackcloth → PILLARED WITH WIND
+
+TIPs/UBS 27:3:
+water raised above heaven/sky.
+
+TIPs/UBS 27:4:
+upper water covering:
+- spread out like sackcloth;
+- **pillared with the wind**.
+
+Modernized derivative:
+- spread like a tent;
+- established with wind.
+
+### M65-41 — THIS IS ONE OF THE CLOSEST EXPLICIT UPPER-WATER / WIND-SUPPORT TEXTS FOUND SO FAR
+
+Key components:
+
+**upper water**
+→ **spread broad**
+→ **cloth/tent-like form**
+→ **wind as support/pillar**.
+
+This is highly relevant to:
+- Vardath canopy;
+- broad sky lattice;
+- upper watery boundary;
+- current/wind support.
+
+### M65-42 — "PILLARED WITH WIND" IS STRONGER THAN A GENERIC "WIND BLEW"
+
+Wind has:
+**structural support role**.
+
+That is significant.
+
+### M65-43 — SOURCE STILL DOES NOT SAY WOVEN FINGERTRAP LATTICE
+
+The shape:
+cloth/sackcloth/tent.
+
+Support:
+wind.
+
+Missing:
+- strands;
+- braid;
+- contraction;
+- throat.
+
+Classification:
+**major upper-cover/support analogue**.
+
+---
+
+# 1 Meqabyan 27:4–5
+## lower water deep below; sea enclosed with sand bolts; Spirit reinforces boundary
+
+Lower water:
+- dwells beneath sea-depth.
+
+Sea:
+- enclosed by sand;
+- sand described as bolts/boundary;
+- strengthened by Spirit.
+
+### M65-44 — UPPER AND LOWER WATER DOMAINS ARE EXPLICITLY SEPARATED
+
+This is very important.
+
+System:
+**upper water cover**
+|
+**inhabited/earth system**
+|
+**lower sea/deep water**.
+
+### M65-45 — SAND FUNCTIONS AS A SEA-BOUNDARY / LOCKING MATERIAL
+
+This is a genuine boundary-control image.
+
+TIPs/UBS:
+sea "enclosed ... with sand as its bolts."
+
+### M65-46 — WATER BOUNDARY STABILITY IS ASSOCIATED WITH BOTH MATERIAL BARRIER + SPIRITUAL/ENERGETIC SUPPORT
+
+Textual grammar:
+
+**sand**
++
+**Spirit**
+→ stable sea boundary.
+
+For Vardath:
+possible formal analogy to:
+material crust/coast
++
+field/current support.
+
+But do not translate "Spirit" into electromagnetism.
+
+---
+
+# 1 Meqabyan 27 cosmology diagram
+
+**UPPER WATER**
+spread broad like cloth/tent
+↑
+**wind as pillar/support**
+──────── sky/heaven boundary ────────
+**earth / mountains / land**
+established upon waters
+sand boundary / stability
+──────── sea boundary ────────
+**LOWER WATER / DEEP SEA**
+enclosed/bolted with sand
+stabilized by Spirit
+visible + invisible creatures
+
+### M65-47 — THIS IS THE CLOSEST MEQABYAN PARALLEL TO THE USER'S SKY-WATER / SUPPORT / LOWER-WATER ARCHITECTURE
+
+Important:
+still a textual cosmology,
+not proof of Vardath physics.
+
+---
+
+# 1 MEQABYAN 27 onward
+## sun/moon/stars ordered; day/night turns; visible/invisible creatures; Adam; serpent; world order
+
+The chapter continues:
+- sun/moon/stars in sky;
+- day/night alternating;
+- aquatic/air/land creatures;
+- visible/invisible categories;
+- Adam/Eve;
+- serpent;
+- garden.
+
+### M65-48 — CREATION ORDER IS LAYERED BY MEDIUM
+
+- water creatures;
+- air birds;
+- land animals/humans.
+
+This supports domain-based system analysis.
+
+---
+
+# 1 MEQABYAN 30–36
+## kingship removal/restoration; spacious land inheritance; complete biosphere; star/sand pair; final death→life passage
+
+Later chapters emphasize:
+- kingdom/gift granted/removed;
+- spatial inheritance;
+- animals, fish, birds, serpents, large sea creatures;
+- blessing across whole biosphere;
+- righteous as stars;
+- sinners as sand by sea/riverbank;
+- resurrection;
+- final passing from death into life.
+
+### M65-49 — WORLD ORDER IS CONSISTENTLY POPULATED ACROSS AIR/LAND/WATER DOMAINS
+
+This fits the user's emphasis:
+not empty cosmology.
+
+But these are one-world ecological domains plus heavenly afterlife,
+not multiple populated physical world-turns.
+
+### M65-50 — STAR/SAND HUMAN PROJECTION REPEATS CELESTIAL/TERRESTRIAL BODY-SCALE METAPHOR
+
+People:
+- stars;
+- sand.
+
+Again:
+visual scale does not determine ontology.
+
+---
+
+# CROSS-BOOK SYNTHESIS — 1 MEQABYAN
+
+# 1. The martyr sequence is not the same as Daniel's furnace but supplies a stronger postmortem multi-medium preservation chain
+
+Daniel 3:
+living bodies survive furnace.
+
+1 Meqabyan:
+five die in fire,
+then bodies resist:
+- more fire;
+- sinking;
+- animal destruction;
+- sun exposure;
+- burial oblivion.
+
+### M65-51 — SAME IDENTITY PERSISTS ACROSS MULTIPLE FAILED DESTRUCTION MODES
+
+This is strong state continuity.
+
+---
+
+# 2. Wings gain another distinct function
+
+Previously:
+- cherub/throne/support;
+- Zechariah transport;
+- Malachi radiant healing;
+- avian speed.
+
+Here:
+- **shade/protective canopy**;
+- divine wing shelter over king.
+
+### M65-52 — "WING" TAXONOMY NOW HAS AT LEAST FOUR FUNCTION CLASSES
+
+1. carrier wing;
+2. protective/shade wing;
+3. radiant/healing wing;
+4. speed/animal wing.
+
+Potential fifth:
+cherub/throne support wing.
+
+Therefore:
+the user's Feathered Serpent/cherub hypothesis must compare **wing function**, not merely wings.
+
+---
+
+# 3. Light can form a tent/enclosure
+
+Bodies:
+- light around them like tent.
+
+Heaven:
+- tabernacle/tent of light.
+
+Upper water:
+- broad cloth/tent-like covering.
+
+### M65-53 — COVERING/ENCLOSURE GRAMMAR REPEATS ACROSS LIGHT AND WATER DOMAINS
+
+This is noteworthy:
+different media share:
+**broad covering/tent geometry**.
+
+Potential Vardath comparison:
+same apparatus projected as:
+- luminous cover;
+- watery cover.
+
+Still speculative.
+
+---
+
+# 4. Resurrection mechanics closely resemble a distributed-field recomposition model
+
+Chapter 8 gives:
+- person decomposes;
+- water/earth/fire/wind states persist;
+- soul retained;
+- four-direction call;
+- reassembly;
+- body/life returns.
+
+### M65-54 — ONE BODY CAN BE DISTRIBUTED ACROSS MULTIPLE MEDIA AND RECONVERGED
+
+This is one of the strongest formal many→one transformations yet.
+
+Not world transfer,
+but relevant to:
+matter/cargo redistribution.
+
+---
+
+# 5. 1 Meqabyan 27 may be more important to Vardath cosmography than the martyr narrative
+
+The roadmap originally flagged:
+- Meqabis;
+- sons;
+- mountain;
+- fire;
+- resurrection.
+
+Those are important.
+
+But direct reading reveals a much stronger cosmological passage:
+
+**earth upon waters**
++
+**upper water raised**
++
+**upper covering spread broad**
++
+**wind as pillar/support**
++
+**lower waters in deep**
++
+**sea boundary locked with sand**
++
+**Spirit reinforcement**.
+
+### M65-55 — THIS SHOULD BECOME A PERMANENT CROSS-LINK WITH:
+- Genesis waters;
+- 1 Enoch gates/upper waters;
+- Amos upper structure;
+- Ezekiel water/current;
+- Vardath canopy;
+- dragon/lattice support;
+- upper/lower water separation.
+
+---
+
+# 6. Cherub / Feathered Serpent / Quetzalcoatl update
+
+Direct cherub reference:
+**throne/chariot of cherubim**.
+
+Direct wing functions:
+**protective shade**.
+
+Direct broad-cover cosmology:
+**upper water spread like cloth/tent and pillared with wind**.
+
+Potential Vardath phase-family comparison:
+
+**broad wind-supported watery covering**
+↔
+**wing-like protective extension**
+↔
+**cherub throne/support carrier**
+↔
+**luminous tent field**.
+
+This is structurally suggestive.
+
+But the text never says:
+the upper water covering becomes the cherub,
+or
+the cherub becomes the wings around martyrs.
+
+Therefore:
+keep as **functional family candidate**.
+
+---
+
+# 7. The triad question
+
+## First triad
+Abiya / Sila / Fentos:
+- brothers;
+- named separately;
+- speak collectively;
+- martyr unit.
+
+## Expansion
+two younger brothers:
+- join;
+- total five.
+
+## Second triad
+Mebekeyus / Meqabis / Yehuda:
+- separate later narrative;
+- warrior deliverers;
+- central/left/right combat distribution.
+
+### M65-56 — BEST CLASSIFICATION:
+**repeated triadic role-pattern**, not one identity split into three.
+
+This is important enough to carry forward.
+
+---
+
+# 8. Resurrection/world-renewal and user's populated-world rule
+
+1 Meqabyan says:
+- current world passes like night;
+- new world shines;
+- dead rise;
+- heavenly halls populated by righteous;
+- Paradise populated.
+
+This is broadly compatible with:
+**successor world = inhabited**.
+
+However:
+the text's "new world" is eschatological/theological,
+not a clearly described already-populated adjacent physical world.
+
+Do not claim more.
+
+---
+
+# Strict fingertrap test — 1 Meqabyan
+
+Criteria:
+1. broad distributed support;
+2. structural continuity;
+3. changing angle/contraction;
+4. narrow throat/rod;
+5. transfer through;
+6. reopening.
+
+## Chapter 27
+
+Broad upper covering:
+**very strong**.
+
+Support:
+**strong**
+- wind explicitly pillars/spreads it.
+
+Water layering:
+**very strong**.
+
+Boundary:
+**strong**
+- sea bolted by sand.
+
+Contraction:
+**absent**.
+
+Throat:
+**absent**.
+
+Transfer:
+**absent**.
+
+Reopening:
+**absent**.
+
+### Verdict
+**Major broad-support cosmography analogue; not fingertrap.**
+
+## Chapter 8
+
+Many→one convergence:
+strong.
+
+Distributed media:
+strong.
+
+Throat:
+absent.
+
+### Verdict
+**Strong reassembly analogue.**
+
+## Chapters 2–4
+
+Mountain/refuge:
+strong.
+
+Fire/sea/wing/light transformations:
+strong.
+
+Gate mechanics:
+weak.
+
+### Overall verdict
+
+**No strict fingertrap.**
+
+But 1 Meqabyan makes a major contribution on the **broad/support side** of the model:
+
+> **upper water spread as a broad covering and pillared by wind, with lower water/deep below and earth/sea boundaries stabilized between them.**
+
+The still-missing process is:
+**that broad support visibly tightening into the narrow throat already found in 4 Ezra 7, then reopening.**
+
+---
+
+# Full 1 Meqabyan process timeline
+
+Tsirtsaydan builds distributed idol/authority network
+→ spies enforce worship
+→ Meqabis's three sons resist
+→ three retreat up high mountain
+→ city gates close below
+→ population looks toward mountain
+→ east-facing prayer
+→ fiery/lightning intervention
+→ killed men rise
+→ three sons surrender for martyrdom
+→ bound/imprisoned three days
+→ beasts reverse against handlers
+→ two younger brothers join
+→ five-brother martyr group
+→ furnace pit
+→ souls carried to Paradise
+→ bodies resist subsequent fire
+→ bodies weighted and thrown into sea
+→ bodies float
+→ birds create wing-shade canopy
+→ light surrounds bodies like tent
+→ burial
+→ five appear alive to king
+→ king confronts resurrection
+→ kingship/afterlife homily
+→ heavenly bright house
+→ water of life flows
+→ resurrection explained through tree/root/water/earth/wind/sun
+→ body elements distribute
+→ four-direction gathering
+→ resurrection reconstitution
+→ night/current world analogy
+→ morning/new-world analogy
+→ seed breaks down
+→ many shoots emerge
+→ topography leveled for resurrection
+→ Jerusalem projected as female city
+→ Exodus cloud/fire retold
+→ separate enemy invasion
+→ second triad of brothers fights
+→ central king/head removed
+→ left/right enemy forces struck
+→ enemy recrosses Jordan
+→ cherub-throne/chariot invoked
+→ long exhortative history
+→ last-days sea shaking image
+→ creation cosmography restated
+→ earth established upon waters
+→ upper water raised
+→ upper cover spread like cloth/tent
+→ wind pillars/supports it
+→ lower waters remain in sea-depth
+→ sand forms sea bolts/boundary
+→ Spirit stabilizes
+→ land/air/water creatures populate domains
+→ kingship cycles
+→ righteous/star projection
+→ sinner/sand projection
+→ resurrection/final inheritance.
+
+---
+
+# Number / timing register
+
+Record without forcing:
+
+## Chapter 1
+- 50 male-form idols;
+- 20 female-form idols;
+- 5 idol houses;
+- 40 sacrificial animals in grouped tens;
+- 50 wine measures;
+- 50 wheat measures.
+
+## Chapters 2–4
+- first named triad = 3 brothers;
+- later +2 brothers = 5 martyrs;
+- imprisonment = 3 days / 3 nights;
+- waited another 3 days before fiery pit;
+- bodies exposed/protected = 14 days;
+- 75 soldiers killed in beast reversal.
+
+## Chapter 5
+- Nebuchadnezzar exile = 7 years in this telling.
+
+## Chapter 8
+- four winds/directions;
+- seed springs "sevenfold" in working translation.
+
+## Chapter 15
+- second triad = 3 brothers.
+
+## Chapter 27
+- creation-day sequence.
+
+### Number-control warning
+
+Because:
+- English Meqabyan translations vary;
+- scholarship is thin;
+- manuscript/edition history is not yet critically established in accessible English;
+
+no hidden Vardath number structure should be built from these counts without Geʽez witness verification.
+
+---
+
+# Textual / historical controls
+
+1. 1 Meqabyan is not Greek 1 Maccabees.
+2. The working book has 36 chapters.
+3. A reliable English critical edition remains difficult to identify; modern English editions frequently depend on Geʽez-derived translation chains of uneven transparency.
+4. TIPs/UBS is valuable because it provides Geʽez text + named English translator Haileyesus Woldemariam and identifies Bible Society of Ethiopia source permission.
+5. The principal ruler's name varies in transliteration: Tsirtsaydan / Tseerutsaydan / Ziruzaidan / similar forms.
+6. Proposed identification with Antiochus IV remains speculative and should not be treated as established history.
+7. Chapters 1–4 give Meqabis + sons, but chapter 15 gives a distinct later three-brother deliverance story.
+8. The first three named brothers are not one figure in three disguises; the text treats them as separate siblings.
+9. The first group expands from three to five, strengthening separate-person interpretation.
+10. Chapter 3 fiery-pit details are confirmed in the Geʽez-derived UBS/TIPs verse.
+11. Chapter 4 weighted-sea-floating is confirmed in UBS/TIPs.
+12. Winged shade and light-tent imagery occur after martyrdom and are protective/glorifying imagery, not explicit sky-lattice mechanics.
+13. Chapter 6 water-of-life / light-tabernacle language is confirmed in UBS/TIPs.
+14. Chapter 8 resurrection explanation uses tree/seed/environmental analogy and elemental reassembly.
+15. Chapter 8:11 has translation variation between "one spirit" and a modernized "one body"; the secure concept is gathering/reconstitution.
+16. Chapter 15's triad is a separate story and should not be conflated with Abiya/Sila/Fentos.
+17. Chapter 16 explicitly refers to God enthroned on the chariot of cherubim but gives little morphology.
+18. Chapter 27 is the critical cosmology text.
+19. UBS/TIPs 27:1 says the earth is established upon waters and bounded with sand so it will not shake.
+20. UBS/TIPs 27:4 says the upper covering is spread like sackcloth and "pillared with the wind."
+21. UBS/TIPs 27:5 says the sea is enclosed with sand as bolts and strengthened by Spirit.
+22. Modernized English may say "tent" where UBS/TIPs has "sackcloth"; retain both as translation comparison rather than silently choose the more Vardath-like wording.
+23. "Spirit" must not be automatically translated into electromagnetism/plasma/current.
+24. Upper/lower water language is creation cosmography and should first be understood in that textual-theological setting.
+25. The book strongly teaches resurrection/new-world life but does not explicitly describe Vardath's already-populated adjacent world-turns.
+
+---
+
+# Sources logged — 1 Meqabyan
+
+## Primary working English text
+- Ethiopian Canon / Clear Text, 1 Meqabyan:
+  https://www.ethiopiancanon.com/read/1-meqabyan
+
+## Geʽez + named UBS English translation / Bible Society of Ethiopia source
+- TIPs / 1 Meqabyan 1:1:
+  https://tips.translation.bible/tip_verse/1meq-11/
+- TIPs / 1 Meqabyan 3:35:
+  https://tips.translation.bible/tip_verse/1meq-335/
+- TIPs / 1 Meqabyan 4:3:
+  https://tips.translation.bible/tip_verse/1meq-43/
+- TIPs / 1 Meqabyan 6:8:
+  https://tips.translation.bible/tip_verse/1meq-68/
+- TIPs / 1 Meqabyan 8:1:
+  https://tips.translation.bible/tip_verse/1meq-81/
+- TIPs / 1 Meqabyan 8:11:
+  https://tips.translation.bible/tip_verse/1meq-811/
+- TIPs / 1 Meqabyan 27:1–5 dataset/pages:
+  https://tips.translation.bible/test-2/?batch=22
+  https://tips.translation.bible/tip_verse/1meq-27-4/
+  https://tips.translation.bible/tip_verse/1meq-27-5/
+
+## Translation / canon control
+- Ethiopian Bible guide, Meqabyan distinction and scholarship scarcity:
+  https://ethiopiabible.com/meqabyan/
+- Ethiopian Bible English-availability caution:
+  https://ethiopiabible.com/english-availability/
+
+---
+
+# SECTION 65 — 1 MEQABYAN COMPLETE
+
+## Strongest new findings
+
+1. **The book researched here is Ethiopian 1 Meqabyan, not Greek 1 Maccabees; conflating them would destroy the 88-book sequence.**
+2. **Key verses were cross-checked against a Geʽez text with English translation attributed to Haileyesus Woldemariam/UBS and source permission from the Bible Society of Ethiopia, because English Meqabyan editions are unusually uneven.**
+3. **The first triad—Abiya, Sila, Fentos—are clearly three distinct brothers, not one identity split into three; later two younger brothers join them, producing five martyrs.**
+4. **Chapter 15 contains a different three-brother warrior group—Mebekeyus, Meqabis, Yehuda—so the stronger pattern is repeated triadic role-structure rather than same-person recurrence.**
+5. **The first trio retreats to a high mountain while city gates close below and the population looks upward, giving a real high-refuge/low-enclosure geometry but not a cosmic gate.**
+6. **The martyr sequence distinguishes body and soul states: bodies enter fiery pit while souls are carried by angels to Paradise.**
+7. **After death, the same bodies resist further fire, weighted sea-sinking, animal predation and solar exposure, producing an unusually complete multi-medium preservation sequence.**
+8. **Birds shield the bodies with their wings from the sun, adding a clear protective/canopy wing function to the project's wing taxonomy.**
+9. **A light field surrounds the bodies "like a tent," and chapter 6 separately describes a light-tabernacle/heavenly house from which water of life flows; broad luminous enclosure imagery therefore repeats.**
+10. **Chapter 8 is a major systems passage: resurrection is modeled through tree/root/branch growth using water, earth, wind and sun, then through decomposition/distribution and later gathering from the four winds into renewed life.**
+11. **The precise 8:11 wording varies—UBS/TIPs gives "one spirit," while a modernized source says "one body"—so the secure finding is many-direction gathering/reconstitution, not one exact noun.**
+12. **The chapter's water/dew, earth/matter, fire/warmth and wind/breath scheme gives one of the strongest multi-medium reassembly grammars found so far.**
+13. **The current world is compared to night/sleep and the renewed world to morning/rising, while seed breakdown followed by many shoots gives a concentrated→distributed successor-growth analogy.**
+14. **Chapter 9 adds mountains/hills lowered and rivers/depths leveled into straight highways at resurrection—another broad stable successor-terrain image.**
+15. **Chapter 16 explicitly invokes God enthroned on the chariot of cherubim, tying Meqabyan into the Ezekiel/cherub-throne tradition, though without enough morphology to claim a direct serpent/feathered identity.**
+16. **The most important cosmology discovery is chapter 27: earth is explicitly established upon waters; upper water is raised above the sky; that upper covering is spread out like cloth/sackcloth and "pillared with the wind"; lower water remains beneath the depths of the sea.**
+17. **Chapter 27 then describes the sea as enclosed/bolted with sand and strengthened by Spirit, giving a true material-boundary + sustaining-force cosmography.**
+18. **This is one of the closest explicit textual analogues yet to the user's broad upper-water covering / support-field / lower-water architecture, while still lacking woven strands, braid, contraction or throat.**
+19. **The translation difference "sackcloth" versus modernized "tent" is logged explicitly; the structurally secure claim is broad upper covering + wind support.**
+20. **The text also contains last-days sea-shaking language connected with wind/heat imagery, but no mechanism is specified and no plasma claim is justified.**
+21. **Across 1 Meqabyan, wings now clearly perform protective/shade function, adding to transport-wing, radiant-wing and cherub/support-wing categories already found elsewhere.**
+22. **No strict fingertrap appears; 1 Meqabyan contributes most strongly to the BROAD/SUPPORT side of the model, while 4 Ezra 7 remains the strongest static THROAT side.**
+23. **The most important unresolved cross-text question is now whether another text ever explicitly connects a wind-supported broad upper covering like 1 Meqabyan 27 to a narrow throat like 4 Ezra 7 and then back to an opened/distributed state like Zechariah 14.**
+24. **For the cherub / Quetzalcoatl / Feathered-Serpent / dragon / Squatter-Man hypothesis, 1 Meqabyan strengthens functional comparison through protective wings, cherub-throne support, luminous tent-fields and wind-supported upper covering, but it does not itself say those are one apparatus.**
+
+## Next live block
+
+**Section 66 — 2 Meqabyan**
+
+Required protocol:
+- re-check Part 1, EXTRA-RESEARCH.md and Part 2 before beginning;
+- do not assume 2 Meqabyan continues 1 Meqabyan narratively;
+- locate a Geʽez-derived English source and, where possible, cross-check against TIPs/UBS;
+- read the whole book before mapping;
+- identify principal kings/teachers/faithful figures;
+- record resurrection/judgment material;
+- search explicitly for:
+  - mountain;
+  - rod/staff;
+  - gate/door;
+  - water/deep/sea;
+  - fire/light;
+  - wings/cherub/serpent;
+  - paired/doubled figures;
+  - distributed→central→distributed process;
+- preserve translation uncertainty;
+- apply strict fingertrap criteria only after ordinary literary/theological function is established.
+
