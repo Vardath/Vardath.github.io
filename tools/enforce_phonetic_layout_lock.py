@@ -11,7 +11,7 @@ text=html.read_text(encoding='utf-8')
 text=re.sub(r'\s*<script\s+defer\s+src="phonetic-layout-safe-guard\.js\?v=[^"]+"></script>','',text)
 text=re.sub(r'\s*<script\s+defer\s+src="phonetic-no-autoscroll\.js\?v=[^"]+"></script>','',text)
 needle='<script defer src="phonetic-numeral-sounds.js?v=20260905-num1"></script>'
-guard='<script defer src="phonetic-layout-safe-guard.js?v=20260912-guard1"></script>'
+guard='<script defer src="phonetic-layout-safe-guard.js?v=20260925-wngnav2"></script>'
 tag='<script defer src="phonetic-no-autoscroll.js?v=20260911-sequence3"></script>'
 insert=guard+'\n'+tag
 if needle in text:
