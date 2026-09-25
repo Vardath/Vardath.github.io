@@ -32928,3 +32928,1095 @@ Priority:
 - false prophets / dream validation;
 - compare wooden→iron yoke substitution with rigidity and support/coupling classes;
 - compare fixed 70-year historical interval with gate-cycle claims without importing it mechanically.
+
+
+---
+
+# SECTION 50 progress F1 — Jeremiah 25–26
+## First-time research pass: 23-year warning archive, seventy-year Babylon interval, cup transferred among nations, roaring/winepress/storm propagation, temple-court broadcast, conditional disaster branch, Shiloh precedent, New-Gate trial, explicit Micah 3:12 reuse, Uriah counterexample, and source-dependence control
+
+Jeremiah 25–26 forms a major transition in the book.
+
+Jeremiah 25 expands from Judah/Jerusalem to:
+- Babylonian domination;
+- a seventy-year interval;
+- an international cup/judgment sequence;
+- judgment moving across many nations;
+- roaring/winepress/storm/shepherd-collapse imagery.
+
+Jeremiah 26 then narrows back to:
+- the temple court;
+- one public message;
+- one threatened prophet;
+- a formal dispute over source validity;
+- one earlier prophetic precedent — Micah;
+- one contemporary/near-contemporary comparison — Uriah.
+
+For the Vardath project this pair is exceptionally important methodologically because **Jeremiah 26 itself demonstrates literary/historical reuse of an earlier prophecy**.
+
+That means:
+repeated wording across biblical books cannot simply be counted as independent confirmation.
+
+---
+
+# Jeremiah 25:1–3 — 23-year warning history is explicitly archived
+
+Jeremiah dates the oracle to:
+the fourth year of Jehoiakim,
+identified with the first year of Nebuchadrezzar.
+
+He then looks back:
+thirteenth year of Josiah
+→ present
+= twenty-three years of persistent warning.
+
+## M50F1-1 — LONG WARNING HISTORY CAN PRECEDE A LATE MATERIAL TRANSITION
+
+The information phase:
+decades.
+
+The final regime change:
+much shorter.
+
+This repeats the pattern already found in Isaiah:
+
+**long-lead warning**
+→ **rapid execution**.
+
+---
+
+# M50F1-2 — WARNING DURATION ≠ EVENT DURATION
+
+Twenty-three years of messages do not mean:
+the catastrophe itself lasts twenty-three years.
+
+This remains a permanent timing rule.
+
+---
+
+# Jeremiah 25:3–7 — repeated sending / repeated non-listening forms a failed feedback loop
+
+Source:
+sends prophets repeatedly.
+
+Population:
+does not listen.
+
+Desired correction:
+turn from path
+→ remain in land.
+
+Observed:
+no effective response.
+
+## M50F1-3 — REPEATED SIGNAL WITHOUT RECEIVER STATE CHANGE IS A CLOSED-LOOP CONTROL FAILURE
+
+More messages:
+do not guarantee correction.
+
+---
+
+# Jeremiah 25:5 — staying in land is conditional, not automatic
+
+The population can remain:
+if route/behavior changes.
+
+## M50F1-4 — LOCATION CONTINUITY CAN DEPEND ON OPERATING STATE
+
+Same land:
+habitable/retained under one behavior;
+lost under another.
+
+This aligns with Jeremiah 21–24:
+remaining physically at the old node is not always the survival path.
+
+---
+
+# Jeremiah 25:8–11 — one imperial field expands across multiple lands
+
+Nebuchadrezzar/Babylon:
+acts across Judah and surrounding nations.
+
+Outputs:
+- devastation;
+- silence/loss of ordinary social sounds;
+- cessation of millstone/light imagery;
+- subjection.
+
+## M50F1-5 — ONE LARGE CONTROL SYSTEM CAN ENTRAIN MANY REGIONAL NODES INTO A COMMON POLITICAL STATE
+
+This is geopolitical synchronization,
+not a cosmic field.
+
+---
+
+# Jeremiah 25:10 — social system shutdown is measured through ordinary outputs
+
+The text removes:
+- joy;
+- weddings;
+- millstone sound;
+- lamp light.
+
+## M50F1-6 — CIVILIZATION FAILURE CAN BE DETECTED THROUGH LOSS OF REPEATED LOW-LEVEL OUTPUTS
+
+Instead of measuring:
+“state collapse”
+directly,
+
+observe:
+- food-processing sound;
+- domestic light;
+- marriage/social reproduction;
+- communal celebration.
+
+This is useful for archaeology and post-catastrophe reconstruction.
+
+---
+
+# Jeremiah 25:11–12 — seventy years is a bounded imperial interval
+
+The nations:
+serve Babylon seventy years.
+
+Then:
+Babylon itself is punished.
+
+This is a complete:
+dominant-system interval
+with
+termination condition.
+
+## M50F1-7 — LONG-DURATION CONTROL REGIME CAN HAVE A STATED TERMINAL HORIZON
+
+This is one of Jeremiah’s most important explicit numbers.
+
+---
+
+# Jeremiah 25 / 29 — seventy years must not be flattened into one simple “captivity period”
+
+Scholarship is divided over:
+- exact start/end points;
+- whether seventy functions as a round/lifetime number;
+- how Jeremiah 25 and 29 relate;
+- later reinterpretation in Chronicles, Zechariah, and Daniel.
+
+A crucial control from specialist studies:
+
+**servitude/domination, deportation/captivity, and land desolation are not identical processes or necessarily identical intervals.**
+
+## M50F1-8 — ONE NUMBER CAN INDEX A LARGE HISTORICAL REGIME WITHOUT EVERY SUBPROCESS SHARING THE SAME START/END DATES
+
+This matters enormously for Vardath cycle work.
+
+If a tradition gives:
+“70 years,”
+ask:
+
+what variable is timed?
+
+- political domination?
+- exile?
+- desolation?
+- rebuilding?
+- generation?
+- symbolic completeness?
+
+Do not assume one number times the whole phenomenon.
+
+---
+
+# M50F1-9 — JEREMIAH’S 70 YEARS MUST NOT BE IMPORTED DIRECTLY AS A VARDATH GATE CYCLE
+
+At present the text supplies:
+a Babylon-related historical/prophetic interval.
+
+No:
+dragon cycle;
+lattice period;
+world-turn recurrence
+is stated.
+
+Keep the number,
+but do not mechanize it prematurely.
+
+---
+
+# Jeremiah 25:12–14 — dominant controller later becomes target
+
+Babylon:
+first acts as regional controlling power.
+
+Later:
+Babylon itself is punished.
+
+## M50F1-10 — CONTROL NODE CAN LATER ENTER THE SAME CONSEQUENCE NETWORK IT IMPOSED ON OTHERS
+
+Dominant
+≠
+permanently outside system.
+
+---
+
+# Jeremiah 25:13 — scroll/written archive links future event to prior information record
+
+The chapter refers to:
+what has been written/declared.
+
+## M50F1-11 — WRITTEN ARCHIVE CAN PRESERVE PREDICTION CLAIM ACROSS THE WAIT INTERVAL
+
+This is stronger than:
+later oral recollection alone.
+
+For Vardath:
+dateable records matter.
+
+---
+
+# Jeremiah 25:15–17 — cup is a transferable hazard-state object
+
+Jeremiah is commanded to take:
+cup of wine/wrath
+and make nations drink.
+
+The cup moves conceptually:
+source
+→ prophet
+→ nation after nation.
+
+## M50F1-12 — HAZARD/STATE CAN BE PROJECTED AS A PORTABLE CONTAINER PASSED THROUGH A NETWORK
+
+This repeats Isaiah’s:
+wrath cup.
+
+Object type:
+judgment-state symbol.
+
+Not:
+ordinary hydrological water.
+
+---
+
+# Jeremiah 25:15–29 — cup transfer is sequential across many recipients
+
+The chapter enumerates:
+Jerusalem/Judah;
+Egypt;
+regional kingdoms;
+coastlands;
+Arabian/desert groups;
+Elam/Media;
+northern kings;
+other kingdoms;
+Babylon/Sheshach.
+
+The exact list and textual arrangement are complex.
+
+## M50F1-13 — ONE HAZARD STATE CAN PROPAGATE THROUGH A MULTI-NODE NETWORK IN SEQUENCE
+
+This is a powerful propagation model.
+
+But:
+the “cup” is not a literal fluid transported geographically in the normal sense.
+
+---
+
+# Jeremiah 25:26 — Sheshach is a coded Babylon name in standard interpretation
+
+“Sheshach” is widely understood as an **atbash** cipher for Babylon.
+
+## M50F1-14 — TEXT CAN ENCODE AN IDENTIFIED NODE THROUGH LETTER-SUBSTITUTION WITHOUT CHANGING THE REFERENT
+
+This is relevant to the user’s number/language research.
+
+But one demonstrated cipher:
+does not license arbitrary hidden-code extraction everywhere.
+
+---
+
+# Jeremiah 25:27 — drink→stagger→fall→rise-no-more is a state chain
+
+The cup produces:
+drink;
+intoxication;
+vomiting/staggering;
+fall;
+non-recovery.
+
+Recent scholarship has compared this with Mesopotamian poisoned-drink / divine-wrath imagery.
+
+## M50F1-15 — PORTABLE HAZARD IMAGE CAN BE MODELLED AS INGESTED STATE CHANGE TERMINATING IN SYSTEM COLLAPSE
+
+Again:
+body process
+projects political judgment.
+
+---
+
+# Jeremiah 25:28 — refusal does not cancel hazard
+
+If nations refuse cup:
+the oracle says they still must drink.
+
+## M50F1-16 — SYSTEM EXPOSURE CAN BE NON-OPTIONAL EVEN WHEN LOCAL NODE REJECTS THE MODEL
+
+This is a useful catastrophe control.
+
+Belief/disbelief
+does not necessarily control:
+physical exposure.
+
+Here the context is theological judgment,
+but the general principle is valid.
+
+---
+
+# Jeremiah 25:29 — hazard begins at central named node and extends outward
+
+Judgment:
+begins at city called by source’s name
+then
+extends to other nations.
+
+## M50F1-17 — SYSTEMIC DISTURBANCE CAN BEGIN AT CENTRAL NODE AND PROPAGATE OUTWARD
+
+This is a network/topology analogue.
+
+---
+
+# Jeremiah 25:30 — roar from on high / holy dwelling gives high→lower transmission imagery
+
+The source:
+roars from on high;
+from holy dwelling;
+against habitation/land.
+
+## M50F1-18 — UPPER-SOURCE SIGNAL CAN BE PROJECTED AS DOWNWARD-PROPAGATING ACOUSTIC/POWER OUTPUT
+
+### Vardath control
+
+This is not:
+proof of an upper populated world transmitting through a gate.
+
+Immediate image:
+divine roar/judgment.
+
+But:
+upper→lower direction is explicit.
+
+---
+
+# Jeremiah 25:30 — winepress shout converts nations/earth into processing scene
+
+The cry:
+like treader in winepress.
+
+## M50F1-19 — LARGE-SCALE POLITICAL PROCESS CAN BE PROJECTED THROUGH COMPRESSION/PROCESSING TECHNOLOGY
+
+Winepress:
+input material
+→ force
+→ extracted/crushed output.
+
+This is not a fingertrap.
+But it is a pressure-processing analogue.
+
+---
+
+# Jeremiah 25:31–33 — dispute/judgment expands to “ends of earth”
+
+The scope becomes:
+nation to nation;
+all flesh;
+end to end of earth.
+
+## M50F1-20 — LITERARY SCOPE CAN EXPAND FROM LOCAL NODE TO UNIVERSALIZED FIELD
+
+This matters when scoring “global” catastrophe texts.
+
+Ask:
+is this:
+- literal geographic measurement;
+- rhetorical universalization;
+- theological scope?
+
+Jeremiah 25 uses sweeping judgment rhetoric.
+
+---
+
+# Jeremiah 25:32 — storm/tempest moves from nation to nation
+
+A great tempest:
+stirs from farthest parts/edges.
+
+## M50F1-21 — HIGH-ENERGY DISTURBANCE CAN PROPAGATE ACROSS MULTIPLE REGIONS
+
+This is a strong event-wave analogue.
+
+### Vardath comparison
+
+A dragon/lattice support transition could in theory propagate geographically.
+
+But Jeremiah provides:
+storm/judgment imagery,
+not support mechanics.
+
+---
+
+# Jeremiah 25:33 — bodies distributed across ground from end to end
+
+The slain:
+not gathered;
+not buried;
+become dung on ground.
+
+## M50F1-22 — CATASTROPHE OUTPUT CAN EXCEED NORMAL RECOVERY/BURIAL CAPACITY
+
+This is a population-system overload indicator.
+
+---
+
+# Jeremiah 25:34–38 — shepherds/control nodes lose escape routes
+
+Shepherds/leaders:
+wail;
+roll;
+cannot flee;
+refuge fails.
+
+## M50F1-23 — CONTROL NODES CAN LOSE MOBILITY AND REFUGE AT SYSTEM-WIDE FAILURE SCALE
+
+Leadership status:
+does not guarantee evacuation capacity.
+
+---
+
+# Jeremiah 25 — Vardath comparison
+
+Strong process analogues:
+- long warning → rapid regime shift;
+- bounded long-duration domination interval;
+- hazard propagated node-to-node;
+- high→lower signal;
+- storm propagation;
+- population/recovery overload.
+
+Missing:
+- dragon ground-support spring;
+- spiderweb;
+- same lattice geometry change;
+- axial narrowing;
+- gate throat;
+- hydrological transfer caused by support change.
+
+### Strict status
+
+**Jeremiah 25 is a timing/propagation catastrophe analogue, not a fingertrap-mechanism text.**
+
+---
+
+# Jeremiah 26:1–3 — temple court becomes broadcast node for all Judah cities
+
+Jeremiah:
+stands in temple court.
+
+Audience:
+people from cities of Judah coming to worship.
+
+Message:
+all commanded words;
+nothing withheld.
+
+## M50F1-24 — CENTRAL RELIGIOUS NODE CAN FUNCTION AS HIGH-DENSITY INFORMATION BROADCAST INTERFACE
+
+One location:
+aggregates many regional listeners.
+
+This is efficient network dissemination.
+
+---
+
+# Jeremiah 26:3 — future disaster remains conditional at message time
+
+“If they listen/turn”
+→ source may relent/change intended disaster.
+
+## M50F1-25 — FORECASTED CATASTROPHE CAN BE A CONDITIONAL BRANCH RATHER THAN FIXED OUTCOME
+
+This is crucial.
+
+Prediction statement:
+does not always equal:
+unconditional timeline.
+
+For cycle research:
+classify whether a forecast is:
+- fixed;
+- conditional;
+- probabilistic;
+- rhetorical warning.
+
+---
+
+# M50F1-26 — RESPONSE TO WARNING CAN ALTER THE FUTURE BRANCH INSIDE THE TEXT’S OWN MODEL
+
+This parallels Jonah.
+
+---
+
+# Jeremiah 26:6 — Jerusalem temple is compared to Shiloh
+
+House:
+may become like Shiloh.
+
+City:
+desolate/curse.
+
+The text uses:
+earlier destroyed sanctuary
+as precedent for present sanctuary vulnerability.
+
+## M50F1-27 — PREVIOUS FAILED SACRED NODE CAN BE USED AS ANALOGUE FOR CURRENT NODE
+
+Sacred status
+≠
+structural immunity.
+
+---
+
+# Jeremiah 26:8–11 — message triggers capture and death demand
+
+Jeremiah:
+finishes message.
+
+Priests/prophets/people:
+seize him.
+
+Accusation:
+you shall die.
+
+## M50F1-28 — INFORMATION CARRIER CAN BECOME PHYSICAL TARGET WHEN MESSAGE THREATENS CENTRAL SYSTEM MODEL
+
+Information conflict
+→ bodily threat.
+
+---
+
+# Jeremiah 26:10 — officials move from palace to temple and sit at New Gate
+
+The officials:
+hear;
+come from royal palace;
+sit at entrance of New Gate of temple.
+
+## M50F1-29 — GATE CAN FUNCTION AS JUDICIAL/INSTITUTIONAL INTERFACE
+
+This is another gate-function class.
+
+Not:
+transit throat.
+
+Not:
+city defense only.
+
+Here:
+decision/public trial node.
+
+---
+
+# Jeremiah 26:12–15 — source provenance is Jeremiah’s defense
+
+Jeremiah’s core defense:
+I was sent;
+these words were commanded.
+
+## M50F1-30 — SOURCE-PROVENANCE CLAIM BECOMES CENTRAL WHEN MESSAGE VALIDITY IS CONTESTED
+
+This connects directly to Jeremiah 23.
+
+---
+
+# Jeremiah 26:16 — officials/population revise outcome after hearing evidence
+
+Initial:
+death demand.
+
+Later:
+not deserving death.
+
+## M50F1-31 — PUBLIC SYSTEM CAN UPDATE DECISION AFTER EVIDENCE/ARGUMENT RATHER THAN REMAIN LOCKED TO FIRST RESPONSE
+
+This is an important correction mechanism.
+
+---
+
+# Jeremiah 26:17–19 — elders explicitly cite Micah 3:12
+
+This is one of the most important methodological passages in the entire research project.
+
+Jeremiah 26 quotes/reuses the earlier Micah oracle:
+
+Zion plowed like field;
+Jerusalem ruins;
+temple mountain wooded/high place.
+
+The elders use it as:
+historical/legal precedent.
+
+## M50F1-32 — JEREMIAH 26 / MICAH 3 IS EXPLICIT TEXTUAL-TRADITION DEPENDENCE, NOT AN INDEPENDENT SECOND OBSERVATION
+
+This must become a permanent cross-text scoring rule.
+
+### Vardath consequence
+
+When two biblical texts contain:
+nearly identical catastrophe geometry,
+
+first test:
+citation/reuse/shared tradition.
+
+Do **not** count both as independent witnesses unless independence is demonstrated.
+
+---
+
+# M50F1-33 — LITERARY REPETITION CAN PRESERVE A REAL OLDER TRADITION WHILE STILL FAILING THE INDEPENDENCE TEST
+
+Dependence does not mean:
+false.
+
+It means:
+not independent evidence.
+
+This distinction is essential.
+
+---
+
+# Jeremiah 26:18–19 — Hezekiah response changes outcome
+
+Micah warned.
+
+Hezekiah:
+did not execute prophet;
+responded;
+disaster was averted/relented in the remembered precedent.
+
+## M50F1-34 — HISTORICAL PRECEDENT IS USED TO SHOW WARNING→RESPONSE→OUTCOME-CHANGE
+
+This reinforces:
+conditional branch logic.
+
+---
+
+# Jeremiah 26:20–23 — Uriah gives a second comparison with different outcome
+
+Uriah:
+prophesies similarly.
+
+Threatened:
+flees to Egypt.
+
+King:
+sends agents to Egypt.
+
+Uriah:
+extracted;
+returned;
+killed;
+body discarded.
+
+## M50F1-35 — SAME MESSAGE CLASS CAN PRODUCE DIFFERENT CARRIER/SURVIVAL OUTCOMES FOR DIFFERENT MESSENGERS
+
+Jeremiah:
+survives.
+
+Uriah:
+killed.
+
+Message similarity
+does not determine:
+messenger survival.
+
+---
+
+# Jeremiah 26:20–23 — foreign refuge fails because extraction network reaches across border
+
+Egypt:
+temporary refuge.
+
+Royal agents:
+cross border;
+retrieve target.
+
+## M50F1-36 — GEOGRAPHIC DISPLACEMENT DOES NOT GUARANTEE SAFETY IF HOSTILE CONTROL NETWORK CAN OPERATE ACROSS BOUNDARIES
+
+This is a strong Vardath survival control.
+
+Crossing a gate/border:
+not enough.
+
+Destination must actually be secure.
+
+---
+
+# Jeremiah 26:24 — Ahikam protection changes Jeremiah’s physical outcome
+
+Jeremiah’s survival:
+depends on a protective political/social node.
+
+## M50F1-37 — INFORMATION CARRIER SURVIVAL CAN DEPEND ON LOCAL PROTECTIVE NETWORK
+
+Again:
+truth-value and survival
+are separate variables.
+
+---
+
+# Jeremiah 26 — Micah/Uriah/Jeremiah comparison
+
+## Micah
+earlier warning tradition;
+quoted as precedent;
+survived.
+
+## Uriah
+similar message;
+flees;
+captured;
+killed.
+
+## Jeremiah
+similar message;
+tried;
+protected;
+survives.
+
+## M50F1-38 — SAME MESSAGE FAMILY CAN HAVE MULTIPLE TRANSMISSION/SURVIVAL HISTORIES
+
+This is extremely important for reconstructing ancient catastrophe traditions.
+
+What survives in the archive may be shaped by:
+- patronage;
+- execution;
+- exile;
+- copying;
+- institutional adoption.
+
+---
+
+# Jeremiah 25–26 — chronology control
+
+Jeremiah 25:
+fourth year of Jehoiakim.
+
+Jeremiah 26:
+beginning of Jehoiakim’s reign.
+
+Therefore chapter order:
+is not simple event chronology.
+
+## M50F1-39 — CANONICAL/TEXTUAL ORDER ≠ STRICT CHRONOLOGICAL ORDER
+
+This is essential to the 88-book timeline project.
+
+We must reconstruct:
+event chronology
+separately from
+book order.
+
+---
+
+# Jeremiah 25–26 — textual-edition control
+
+Jeremiah exists in:
+a longer Masoretic edition
+and
+a substantially shorter/differently ordered Greek tradition derived from a shorter Hebrew Vorlage.
+
+Jeremiah 25 is a major point where the sequence/order of the book diverges.
+
+## M50F1-40 — TEXTUAL EDITION HISTORY CAN CHANGE POSITION/SEQUENCE OF MATERIAL WITHOUT NECESSARILY INVENTING THE CORE ORACLE
+
+This means:
+book architecture itself has transmission history.
+
+---
+
+# Jeremiah 25–26 direct dragon/lattice comparison
+
+No dragon:
+appears.
+
+No load-bearing spring lattice:
+appears.
+
+No spiderweb:
+appears.
+
+There are:
+- cup transfer;
+- high roar;
+- storm;
+- gates as judicial nodes;
+- plowed/ruined mountain tradition quoted from Micah.
+
+The Micah geometry is explicitly reused,
+so it must not increase independent support count.
+
+## M50F1-41 — REUSED GEOMETRIC ORACLE SHOULD INCREASE TRADITIONAL PERSISTENCE SCORE, NOT INDEPENDENT-WITNESS SCORE
+
+This is a key scoring refinement for the project.
+
+---
+
+# Jeremiah 25–26 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## connected mesh
+Absent.
+
+## propagation
+Strong.
+
+## timing interval
+Very strong:
+70 years.
+
+## gate
+Present as institutional/judicial interface.
+
+## catastrophe branch conditionality
+Strong.
+
+## source dependence
+Explicitly demonstrated.
+
+## axial narrowing
+Absent.
+
+## same support structure transforms
+Absent.
+
+### Strict verdict
+
+**Jeremiah 25–26 is not a fingertrap-mechanism block. Its exceptional value lies in timing, propagation, conditional forecasting, and source criticism. Jeremiah 25 supplies a bounded long imperial interval plus international hazard-propagation imagery; Jeremiah 26 proves that major catastrophe language can be intentionally transmitted from an earlier prophetic source, because Micah 3:12 is explicitly quoted as precedent. That means repeated biblical geometry must be separated into independent witnesses versus inherited/cited tradition before it is used to score the Vardath model.**
+
+---
+
+# Jeremiah 25–26 pair / process matrix
+
+## 23-year warning / later disaster
+long information phase / later event.
+
+## seventy-year service / Babylon punishment
+bounded control regime / terminal reversal.
+
+## cup / nations
+portable hazard-state symbol / sequential receivers.
+
+## high roar / lower land
+upper-source image / target field.
+
+## storm / nations
+propagating disturbance / regional nodes.
+
+## shepherd / flock
+control nodes / populations.
+
+## temple court / cities of Judah
+central broadcast node / distributed audience.
+
+## conditional warning / response
+forecast branch / control input.
+
+## Shiloh / Jerusalem
+previous failed sanctuary / threatened current sanctuary.
+
+## New Gate / trial
+boundary interface / institutional decision process.
+
+## Micah / Jeremiah
+older source / later cited tradition.
+
+## Uriah / Jeremiah
+similar message / different survival outcome.
+
+## Egypt refuge / royal extraction
+destination sanctuary attempt / hostile cross-border reach.
+
+---
+
+# Jeremiah 25–26 continuous transformation timeline
+
+twenty-three-year warning history is recalled
+→ receiver nonresponse persists
+→ Babylon is assigned regional control
+→ normal social/domestic outputs shut down
+→ nations enter seventy-year Babylon-serving horizon
+→ Babylon itself is assigned later punishment
+→ written archive preserves declared outcomes
+→ cup is transferred into international judgment network
+→ nation after nation receives hazard-state projection
+→ refusal does not cancel exposure
+→ high-place roar expands over land
+→ winepress/process imagery intensifies
+→ storm propagates across nations
+→ population/burial recovery capacity fails
+→ shepherd/control nodes lose refuge
+→ chapter order shifts backward chronologically to early Jehoiakim
+→ Jeremiah broadcasts in temple court
+→ disaster remains conditionally avoidable
+→ Shiloh becomes precedent for sacred-node failure
+→ message triggers physical seizure
+→ officials move to temple New Gate
+→ gate becomes trial/judicial node
+→ source provenance is debated
+→ decision shifts away from execution
+→ elders cite Micah 3:12 explicitly
+→ earlier prophetic wording is reused as legal/historical precedent
+→ Hezekiah response is remembered as altering outcome
+→ Uriah supplies similar-message counterexample
+→ Uriah flees across border
+→ hostile royal network retrieves him from Egypt
+→ Uriah is killed
+→ Jeremiah survives through Ahikam’s protection
+→ archive preserves multiple messenger-survival paths.
+
+---
+
+# New master-mechanism additions from Jeremiah 25–26
+
+## M50F1-1 — LONG WARNING HISTORY CAN PRECEDE LATE MATERIAL TRANSITION
+## M50F1-2 — WARNING DURATION ≠ EVENT DURATION
+## M50F1-3 — REPEATED SIGNAL WITHOUT RECEIVER CHANGE IS CONTROL FAILURE
+## M50F1-4 — LOCATION CONTINUITY CAN DEPEND ON OPERATING STATE
+## M50F1-5 — ONE LARGE CONTROL SYSTEM CAN SYNCHRONIZE MANY REGIONAL NODES
+## M50F1-6 — CIVILIZATION FAILURE CAN BE MEASURED THROUGH LOST ORDINARY OUTPUTS
+## M50F1-7 — LONG CONTROL REGIME CAN HAVE TERMINAL HORIZON
+## M50F1-8 — ONE TIMING NUMBER NEED NOT TIME EVERY SUBPROCESS
+## M50F1-9 — JEREMIAH 70 YEARS ≠ VARDATH GATE CYCLE BY DEFAULT
+## M50F1-10 — DOMINANT CONTROL NODE CAN LATER BECOME TARGET
+## M50F1-11 — WRITTEN ARCHIVE CAN PRESERVE PREDICTION ACROSS WAIT INTERVAL
+## M50F1-12 — HAZARD STATE CAN BE PROJECTED AS PORTABLE CONTAINER
+## M50F1-13 — HAZARD CAN PROPAGATE SEQUENTIALLY THROUGH MULTI-NODE NETWORK
+## M50F1-14 — DEMONSTRATED CIPHER DOES NOT LICENSE ARBITRARY CODE EXTRACTION
+## M50F1-15 — INGESTED HAZARD IMAGE CAN MODEL SYSTEM COLLAPSE
+## M50F1-16 — LOCAL REFUSAL NEED NOT CANCEL EXPOSURE
+## M50F1-17 — DISTURBANCE CAN BEGIN AT CENTRAL NODE AND PROPAGATE OUTWARD
+## M50F1-18 — UPPER-SOURCE SIGNAL CAN PROJECT DOWNWARD POWER OUTPUT
+## M50F1-19 — LARGE POLITICAL PROCESS CAN BE PROJECTED THROUGH COMPRESSION TECHNOLOGY
+## M50F1-20 — LOCAL EVENT LANGUAGE CAN EXPAND TO UNIVERSALIZED FIELD
+## M50F1-21 — HIGH-ENERGY DISTURBANCE CAN PROPAGATE REGIONALLY
+## M50F1-22 — CATASTROPHE CAN EXCEED RECOVERY/BURIAL CAPACITY
+## M50F1-23 — CONTROL NODES CAN LOSE REFUGE AT SYSTEM-WIDE FAILURE
+## M50F1-24 — CENTRAL NODE CAN FUNCTION AS BROADCAST INTERFACE
+## M50F1-25 — FORECAST CATASTROPHE CAN BE CONDITIONAL
+## M50F1-26 — RESPONSE TO WARNING CAN ALTER FUTURE BRANCH
+## M50F1-27 — EARLIER FAILED SACRED NODE CAN MODEL CURRENT NODE VULNERABILITY
+## M50F1-28 — INFORMATION CARRIER CAN BECOME PHYSICAL TARGET
+## M50F1-29 — GATE CAN FUNCTION AS JUDICIAL/INSTITUTIONAL INTERFACE
+## M50F1-30 — SOURCE PROVENANCE BECOMES CENTRAL UNDER MESSAGE CONFLICT
+## M50F1-31 — DECISION SYSTEM CAN UPDATE AFTER EVIDENCE
+## M50F1-32 — EXPLICIT CITATION/REUSE ≠ INDEPENDENT WITNESS
+## M50F1-33 — DEPENDENT TRADITION CAN STILL PRESERVE REAL OLDER INFORMATION
+## M50F1-34 — HISTORICAL PRECEDENT CAN MODEL WARNING→RESPONSE→OUTCOME CHANGE
+## M50F1-35 — SAME MESSAGE CLASS CAN PRODUCE DIFFERENT MESSENGER OUTCOMES
+## M50F1-36 — CROSS-BORDER FLIGHT ≠ SAFETY IF HOSTILE NETWORK HAS REACH
+## M50F1-37 — INFORMATION-CARRIER SURVIVAL CAN DEPEND ON PROTECTIVE NETWORK
+## M50F1-38 — SAME MESSAGE FAMILY CAN HAVE MULTIPLE SURVIVAL/TRANSMISSION HISTORIES
+## M50F1-39 — TEXTUAL/CANONICAL ORDER ≠ STRICT EVENT CHRONOLOGY
+## M50F1-40 — EDITION HISTORY CAN CHANGE MATERIAL ORDER/EXTENT
+## M50F1-41 — REUSED ORACLE INCREASES TRADITION-PERSISTENCE SCORE, NOT INDEPENDENT-WITNESS SCORE
+
+---
+
+# Number / timing register — Jeremiah 25–26
+
+Record without forcing:
+
+- **23 years**: Jeremiah’s recalled warning ministry interval to the Jeremiah 25 date.
+- **70 years**: Babylon-serving/control interval in Jeremiah 25:11–12 and later Jeremiah 29:10.
+- Scholarly dating/meaning of the 70 years is debated; “servitude,” “captivity,” and “desolation” must not be treated as identical.
+- no Vardath gate-duration number appears.
+- no dragon/lattice-spring count.
+- no world-layer count.
+- Jeremiah 26 is chronologically earlier than Jeremiah 25 despite following it in the book.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 25–26
+
+1. Working primary texts: Jeremiah 25–26 NRSVUE.
+2. Jeremiah 25 dates itself to the fourth year of Jehoiakim / first year of Nebuchadrezzar and retrospectively names a 23-year warning period.
+3. Jeremiah 25:11–12 assigns seventy years to Babylonian domination/service and then predicts Babylon’s punishment.
+4. Scholarship strongly cautions against casually calling this one simple “70-year captivity”; servitude, deportation and desolation can mark different processes and dates.
+5. Jeremiah 25 functions as a major structural hinge in the book and links the Judah material to judgment on the nations.
+6. The Hebrew/Greek editions diverge substantially in Jeremiah, with Jeremiah 25 a major point of ordering/edition difference.
+7. The cup of wrath is a symbolic portable hazard-state image; recent peer-reviewed work compares its intoxication/vomiting/staggering effects with Mesopotamian poisoned-drink/divine-wrath traditions.
+8. Jeremiah 26 is structured as a public trial/source-validation narrative.
+9. Jeremiah 26 explicitly quotes Micah 3:12 as historical precedent. This is demonstrated textual/traditional dependence, not an independent second observation of the same event.
+10. The Uriah episode provides a same-message/different-messenger-outcome control.
+11. Jeremiah’s survival through Ahikam shows source-message validity and messenger survival are independent variables.
+12. No dragon/lattice-spring or strict spiderweb→fingertrap transformation appears.
+
+---
+
+# Sources logged — Jeremiah 25–26
+
+Primary:
+- Jeremiah 25 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+25&version=NRSVUE
+- Jeremiah 26 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Jeremiah+26&version=NRSVUE
+
+Scholarly / historical controls:
+- Cristiana Conti, “Drink, be drunk and vomit, fall and rise no more: Understanding the image of the cup of God’s wrath in Jeremiah 25 in light of the Mesopotamian anti-witchcraft tradition,” *Journal for the Study of the Old Testament* (2024):
+  https://doi.org/10.1177/03090892231210890
+- *An International Divine Judgment in Jer 25*, detailed study of Jeremiah 25 as a structural pillar and of the Hebrew/Greek divergence:
+  https://diglib.uibk.ac.at/download/pdf/7785516.pdf
+- “HOW LONG, O LORD? The Significance of Jeremiah’s Seventy Years,” for the distinction among servitude, captivity and desolation and survey of dating interpretations:
+  https://www.academia.edu/41467158/_HOW_LONG_O_LORD_The_Significance_of_Jeremiahs_Seventy_Years
+- Claude F. Mariottini, “The Trial of Jeremiah and the Killing of Uriah the Prophet,” *Jewish Bible Quarterly*:
+  https://www.jewishbible.org/articles/trial-of-jeremiah-and-the-killing-of-uriah/
+
+---
+
+# SECTION 50F1 CHECKPOINT — JEREMIAH 25–26 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah explicitly distinguishes a long information/warning phase from later material consequences.**
+2. **The 70-year Babylon figure is real and important, but it times a debated historical/prophetic control horizon rather than supplying a demonstrated Vardath gate-cycle period.**
+3. **The cup is a portable hazard-state metaphor that moves sequentially through a network of nations; object type must not be confused with literal hydrological transfer.**
+4. **Jeremiah 25’s storm/roar/judgment propagation is globally expansive but supplies no dragon/lattice-support mechanism.**
+5. **Jeremiah 26 shows a catastrophe forecast can remain conditional: response can alter the future branch.**
+6. **The temple New Gate functions as a judicial interface, adding another gate class unrelated to a cosmic throat.**
+7. **Jeremiah 26 explicitly reuses Micah 3:12. That repetition must be scored as inherited/cited tradition, not as an independent witness.**
+8. **Uriah and Jeremiah show that the same message can have different messenger-survival histories.**
+9. **Canonical chapter order is not chronological event order; the 88-book timeline must reconstruct chronology independently.**
+10. **Strict spiderweb→fingertrap status remains negative.**
+
+### Next live block
+
+**Jeremiah 27–29**
+
+Priority:
+- yoke straps/bars as real coupled restraint geometry;
+- multiple yokes sent through diplomatic carrier network;
+- earth/people/animals assigned under imperial controller;
+- serve / resist binary survival path;
+- false prophets and dreamers as competing forecast network;
+- temple vessels as movable sacred cargo;
+- Hananiah’s two-year prediction;
+- yoke physically broken;
+- wooden yoke → iron yoke substitution;
+- whether stronger rigidity follows failed attempt to break restraint;
+- fulfillment/source-validation test;
+- Jeremiah’s letter as long-distance information carrier;
+- build houses / plant gardens / marry / multiply;
+- seek welfare of destination city;
+- 70-year horizon repeated;
+- false-dream controls;
+- compare exile settlement with temporary off-site population preservation;
+- strict Vardath support-vs-restraint classification.
