@@ -2,6 +2,20 @@
 
 This file begins the **new research continuation only**.
 
+## CHAT-LIMIT / FREEZE CONTINUATION RULE
+
+If a chat freezes, reaches its limit, refreshes memory, or the user opens a new chat and says **"continue"**, do not restart from remembered chat state.
+
+The research files are authoritative. Before doing new work:
+1. check Part 1;
+2. check `EXTRA-RESEARCH.md`;
+3. check this Part 2 file, especially its actual tail;
+4. continue from the first genuinely unfinished block.
+
+Research may have been appended successfully even when the visible chat appeared to freeze. Never redo an already-appended block merely because the previous assistant did not get to summarize it.
+
+See the fuller **YOU SHOULD REALLY KNOW AND BE AWARE OF THIS — FAST CATCH-UP** section near the top of `book/EXTRA-RESEARCH.md`.
+
 It does **not** duplicate or replace either earlier research archive:
 
 - `book/EXTRA-RESEARCH-PART-1-THROUGH-ISAIAH-35.md`
