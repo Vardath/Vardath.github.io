@@ -20574,3 +20574,1543 @@ High priority:
 - restored speech / gathered lame/outcast;
 - strict test for whether Habakkuk's bilateral hand-rays + before/behind hazard + water/earth/sky response materially strengthens the Squatter-Man/current model.
 
+
+
+---
+
+# SECTION 56 — NAHUM + HABAKKUK + ZEPHANIAH
+## Direct Book-of-the-Twelve pass — storm-path theophany, water-gate failure and draining-city image, divine-warrior hand-rays, before/behind hazard train, land/river/deep/sky coupling, watchtower timing, whole-biosphere sweep, threshold control, gather→fire→speech-reset→regathered remnant
+
+### Frontier verification
+
+Before beginning this block:
+- Part 1 was checked for direct Nahum / Habakkuk / Zephaniah research headings;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed direct sequential pass for these three books exists in the three-file archive.
+
+The verified Part 2 tail identified this as the next live block.
+
+This section is therefore appended only here in Part 2.
+
+---
+
+# Historical / literary control first
+
+## Nahum
+
+Nahum is an oracle against Nineveh/Assyria.
+
+Its final form celebrates or anticipates Nineveh's fall and uses:
+- divine-warrior theophany;
+- storm;
+- flood;
+- siege;
+- water;
+- lions;
+- fire;
+- locust-like multiplication;
+- city-as-woman rhetoric.
+
+Modern scholarship stresses:
+- the book's relation to Assyrian domination and Nineveh's fall in 612 BCE;
+- the literary artistry of Nahum;
+- ethical problems raised by its vengeance and sexualized violence;
+- its relationship with Jonah and Habakkuk inside the Book of the Twelve.
+
+Therefore its destruction imagery should not be treated as a neutral technical report.
+
+## Habakkuk
+
+Habakkuk moves through:
+- complaint;
+- divine response;
+- watch/vision;
+- woes against oppressive empire;
+- final theophanic prayer.
+
+Modern scholarship emphasizes:
+- theodicy;
+- imperial violence;
+- the righteous living by faithfulness;
+- divine sovereignty;
+- the literary integration of chapters 1–3.
+
+Habakkuk 3 deliberately reuses old divine-warrior / Exodus / cosmic-theophany language.
+
+That means the poem is especially useful for process geometry, but historical/literary inheritance must remain alongside the Vardath comparison.
+
+## Zephaniah
+
+Zephaniah presents:
+- Day-of-YHWH catastrophe;
+- city judgment;
+- universal sweep;
+- darkness/fire;
+- threshold and gate imagery;
+- gathering of nations;
+- speech transformation;
+- remnant/restoration;
+- return from beyond rivers.
+
+Modern scholarship highlights:
+- the Day of YHWH;
+- corrupt elites;
+- city imagery;
+- humble remnant;
+- redemption/restoration;
+- Zephaniah's intertextual position within the Twelve.
+
+---
+
+# NAHUM
+
+# Nahum 1:2–6
+## Whirlwind/storm path → cloud-dust feet → sea/rivers dry → vegetation fades → mountains quake → hills melt → earth heaves → fire/rocks break
+
+The divine approach is described through a connected environmental sequence.
+
+YHWH's "way" is:
+- whirlwind;
+- storm.
+
+Clouds:
+- dust of feet.
+
+Then:
+- sea rebuked/dried;
+- rivers dried;
+- Bashan/Carmel/Lebanon vegetation withers;
+- mountains quake;
+- hills melt;
+- earth/world heaves;
+- wrath poured like fire;
+- rocks broken down.
+
+### M56-1 — NAHUM OPENS WITH A MULTI-DOMAIN MOVING THEOPHANY, NOT ISOLATED WEATHER MOTIFS
+
+The sequence links:
+
+**storm/air**
+→ **cloud**
+→ **water-system failure**
+→ **vegetation failure**
+→ **mountain deformation**
+→ **earth motion**
+→ **fire/rock failure**.
+
+This is a strong whole-system catastrophe analogue.
+
+### M56-2 — THE "WAY" IS IN THE STORM: THE EVENT IS DESCRIBED AS A MOVING PATH
+
+The storm is not merely scenery.
+
+It is the route/path of the divine warrior.
+
+For Vardath:
+this is compatible with:
+**moving active current/front**.
+
+But the text does not describe:
+- strands;
+- lattice;
+- gate throat.
+
+### M56-3 — CLOUDS AS "DUST OF FEET" PROJECT ATMOSPHERIC MASS INTO AN ANTHROPOMORPHIC BODY SCALE
+
+A huge-scale humanlike body is implied:
+- feet correspond to storm/cloud field.
+
+This is another source-level scale projection.
+
+Compare:
+- Squatter-Man;
+- giant Revelation figure;
+- Daniel humanlike sky figures.
+
+But no strict anatomical geometry beyond "feet" is given.
+
+---
+
+# Nahum 1:7–13
+## Refuge node versus overwhelming flood; yoke/bars broken
+
+The same passage contrasts:
+- stronghold/refuge for some;
+- overwhelming flood for the enemy.
+
+Later:
+- yoke broken;
+- bonds/bars snapped.
+
+### M56-4 — SAME EVENT FIELD CAN BE PROTECTIVE FOR ONE POPULATION AND DESTRUCTIVE FOR ANOTHER
+
+This repeats Daniel 3's position/carrier-dependent hazard logic.
+
+Event effect depends on:
+- relation;
+- location;
+- population category.
+
+### M56-5 — BAR/BOND BREAKING IS RELEASE LANGUAGE, NOT AUTOMATIC GATE OPENING
+
+Bars/bonds:
+political oppression image.
+
+Do not classify every broken bar as a physical portal.
+
+---
+
+# Nahum 2:1–5
+## Siege field → shield formation → chariot/fire-like motion → rapid urban circulation
+
+The attacking force:
+- advances;
+- defenders mobilize;
+- shields prepared;
+- chariots race;
+- equipment flashes;
+- troops stumble toward wall.
+
+### M56-6 — NAHUM 2 DESCRIBES A HIGH-SPEED NETWORK OF MOVING UNITS INSIDE A CONSTRAINED URBAN FIELD
+
+Useful as:
+**distributed moving units under siege pressure**.
+
+Not sky-lattice evidence.
+
+---
+
+# Nahum 2:6–10
+## River gates open → palace collapses → population carried away → city drains like a pool
+
+The sequence is unusually mechanical:
+
+- river gates are opened;
+- palace collapses/dissolves;
+- city/queen is carried away;
+- Nineveh compared with a pool whose water drains away;
+- people flee and do not return.
+
+### M56-7 — NAHUM GIVES A TRUE WATER-GATE→STRUCTURAL FAILURE SEQUENCE
+
+This is one of the strongest literal gate/water interactions in the Twelve.
+
+**water/river gate state changes**
+→ **palace structural state fails**.
+
+Historical details of Nineveh's fall and exact hydraulic role remain debated.
+
+Do not convert the verse into a proved dam-breach reconstruction.
+
+### M56-8 — THE CITY ITSELF IS THEN PROJECTED AS A DRAINING WATER-BODY
+
+Nineveh:
+**city**
+→ **pool losing water**.
+
+Thus:
+urban population loss
+is represented as
+**fluid draining from an enclosure**.
+
+This is an excellent projection control.
+
+### M56-9 — GATE OPENING CAN PRODUCE LOSS/DEPLETION RATHER THAN BENEFICIAL TRANSFER
+
+Important Vardath control:
+
+**open gate**
+does not inherently mean
+**successful restoration**.
+
+An opening can:
+- drain;
+- destabilize;
+- expose;
+- collapse.
+
+---
+
+# Nahum 2:11–13
+## Lion-den identity collapses
+
+Assyria/Nineveh is projected as:
+- lion;
+- lioness;
+- cubs;
+- den filled with prey.
+
+Then that secure predator ecology disappears.
+
+### M56-10 — IMPERIAL CITY CAN BE PROJECTED AS ANIMAL FAMILY + DEN SYSTEM
+
+Same referent:
+**city/empire**
+→ **lion body/family**
+→ **enclosure/den**.
+
+Again:
+body type is function, not ontology.
+
+---
+
+# Nahum 3
+## City-woman / fire / sword / locust / swarm projections
+
+Nahum 3 cycles through:
+- city as woman;
+- exposed body;
+- fire;
+- sword;
+- locusts;
+- swarming insects;
+- merchants as stars/insects;
+- guards/officials like locusts that disappear when sun rises.
+
+The rhetoric is violent and includes sexual humiliation.
+
+### M56-11 — ONE POLITICAL SYSTEM IS PROJECTED THROUGH HUMAN, ANIMAL/INSECT, MATERIAL AND URBAN FORMS
+
+This strongly reinforces projection grammar.
+
+But ethical control matters:
+the female-city imagery is part of violent humiliation rhetoric and should not be sanitized into neutral "mechanics."
+
+### M56-12 — LOCUST/SWARM IMAGERY HERE FUNCTIONS AS MULTIPLICATION + SUDDEN DISPERSAL
+
+The swarm:
+- multiplies;
+- settles;
+- then flies away/disappears.
+
+This is useful as:
+**distributed field can rapidly de-cohere/disperse**.
+
+Not evidence of physical lattice strands.
+
+---
+
+# NAHUM continuous process
+
+storm-path begins
+→ cloud field becomes body-scale foot imagery
+→ sea/rivers dry
+→ vegetation fades
+→ mountains quake/hills melt
+→ earth heaves
+→ rocks break under fire-like wrath
+→ refuge and destruction coexist by population/state
+→ siege field forms
+→ urban units accelerate
+→ river gates open
+→ palace fails
+→ city population is carried away
+→ Nineveh becomes draining-pool projection
+→ lion-den identity collapses
+→ city shifts through woman/fire/sword/locust projections
+→ distributed officials/merchants disperse
+→ imperial system terminates.
+
+---
+
+# HABAKKUK
+
+# Habakkuk 1
+## Watching violence → Chaldean mobile predator field
+
+Habakkuk's first complaint concerns:
+- violence;
+- law paralysis;
+- injustice.
+
+The answer introduces the Chaldeans:
+- rapid;
+- mobile;
+- horses swifter than leopards;
+- cavalry spread/flies like eagle;
+- gather captives like sand;
+- sweep onward like wind.
+
+### M56-13 — ONE HUMAN MILITARY SYSTEM IS PROJECTED AS LEOPARD + EAGLE + WIND
+
+This is another strong cross-form projection control.
+
+Same army:
+- mammal;
+- bird;
+- atmospheric flow.
+
+Thus:
+animal/wing/wind identities can all encode one moving process.
+
+### M56-14 — WINGED/AVIAN SPEED HERE IS CLEARLY MILITARY, NOT SKY-SUPPORT MACHINERY
+
+Important negative control for the user's Feathered Serpent family.
+
+Function first.
+
+---
+
+# Habakkuk 1:14–17
+## Humans as fish → net/dragnet enclosure → repeated capture/emptying
+
+Humanity is compared with:
+- fish;
+- sea creatures.
+
+The oppressor:
+- hooks;
+- drags with net;
+- gathers in dragnet;
+- empties net;
+- repeatedly destroys nations.
+
+### M56-15 — NET IS AGAIN A CAPTURE/CONCENTRATION DEVICE, NOT AUTOMATIC SKY LATTICE
+
+This repeats Ezekiel/other controls.
+
+The process is:
+
+**distributed swimmers**
+→ **net concentration**
+→ **removal/harvest**
+→ **net reset/reuse**.
+
+Interesting concentration geometry,
+wrong function for world-support lattice.
+
+---
+
+# Habakkuk 2:1–3
+## Watchtower → receive vision → written message → appointed-time logic
+
+Habakkuk:
+- stands at watchpost;
+- stations on rampart/tower;
+- watches for answer.
+
+Vision:
+- written clearly;
+- "for the appointed time";
+- speaks/hastens toward end;
+- if it seems to delay, wait;
+- it will come.
+
+### M56-16 — HABAKKUK DISTINGUISHES OBSERVATION NODE, INFORMATION, AND EVENT TIME
+
+This is very useful.
+
+- tower = observer position;
+- vision = information;
+- appointed time = event schedule.
+
+Do not collapse the watchtower into the event mechanism.
+
+### M56-17 — "DELAY" IS EXPECTATION/SCHEDULE LANGUAGE, NOT PHYSICAL TIME DILATION
+
+The text explicitly discusses:
+**anticipated time vs perceived delay**.
+
+That is a strong timing control.
+
+Do not convert it to:
+local fast-time/slow-time physics.
+
+---
+
+# Habakkuk 2 woes
+## Accumulation → destabilization; stone/beam speech; cup reversal
+
+The oppressor:
+- accumulates what is not his;
+- loads himself with pledges;
+- builds through blood/injustice.
+
+House imagery:
+- stone cries from wall;
+- beam/wood answers.
+
+Cup imagery:
+- one party makes others drink;
+- cup then comes around to the original actor.
+
+### M56-18 — BUILDING ELEMENTS CAN BE PERSONIFIED AS INFORMATION/WITNESS NODES
+
+Stone:
+speaks/cries.
+
+Beam:
+answers.
+
+Again:
+partial structural components can carry agency/information without being separate organisms.
+
+### M56-19 — CUP-RETURN IS ANOTHER RETURN-TO-SOURCE REVERSAL PROCESS
+
+Cross-link:
+Obadiah's deed returning to actor.
+
+---
+
+# Habakkuk 3:3–4
+## SOUTHERN ARRIVAL → heaven/earth illumination → hand-rays
+
+God/Holy One comes from:
+- Teman;
+- Mount Paran.
+
+Then:
+- glory/splendor covers heavens;
+- earth filled;
+- brightness like light/sun;
+- rays flash from **his hand**;
+- power hidden there.
+
+### M56-20 — DIVINE ARRIVAL HAS DIRECTIONAL ORIGIN, SKY-WIDE LIGHT FIELD, AND LOCAL HAND-RAY PROJECTION
+
+This combines:
+- geographic approach;
+- broad sky coverage;
+- anthropomorphic local emitter.
+
+For Vardath:
+**broad luminous field**
++
+**humanlike localized hand feature**
+is highly relevant to projection grammar.
+
+### M56-21 — IMPORTANT CORRECTION: THE TEXT DOES NOT GIVE TWO RAY-EMITTING HANDS
+
+The Hebrew/NRSVUE image is:
+**rays from his hand** (singular).
+
+Therefore this passage should **not** be used as a strict bilateral Squatter-Man arm match.
+
+The bilateral-looking geometry must come from other passages, especially Daniel 12.
+
+This correction is permanently logged.
+
+### M56-22 — "POWER HIDDEN IN THE HAND" MAKES THE HAND A LOCALIZED ENERGY/AGENCY NODE
+
+This is useful beside:
+- Daniel 5 hand;
+- Ezekiel hand;
+- divine arm/hand imagery.
+
+But:
+**ray/light imagery ≠ proof of plasma**.
+
+---
+
+# Habakkuk 3:5
+## Pestilence before; plague behind
+
+The divine warrior moves with:
+- pestilence in front;
+- plague following behind.
+
+### M56-23 — HABAKKUK GIVES A GENUINE FRONT/REAR HAZARD ENVELOPE AROUND ONE MOVING FIGURE
+
+This is important.
+
+Compare Joel 2:
+- fire in front;
+- flame behind.
+
+Habakkuk:
+- pestilence before;
+- plague behind.
+
+This is now a repeated Book-of-the-Twelve process pattern:
+
+**moving central body**
++
+**different hazard states at leading/trailing edges**.
+
+### M56-24 — FRONT/REAR HAZARD DOES NOT REQUIRE BILATERAL LEFT/RIGHT GEOMETRY
+
+Keep axes separate:
+- front/back;
+- left/right;
+- up/down.
+
+Do not merge them into one Squatter-Man silhouette.
+
+---
+
+# Habakkuk 3:6–7
+## Standing/stopping → earth shakes → nations tremble → ancient mountains shatter → hills sink
+
+The figure:
+- stops/stands;
+- earth shakes;
+- glance causes nations to tremble;
+- eternal mountains shatter;
+- ancient hills sink;
+- tents/curtains tremble.
+
+### M56-25 — A SINGLE CENTRAL BODY-STATE CHANGE IS COUPLED TO REGIONAL/GLOBAL GROUND DEFORMATION
+
+The striking thing is the grammar:
+
+**he stands/stops**
+→ **earth shakes**.
+
+For Vardath:
+this resembles an axis entering a stable/concentrated state that changes support geometry.
+
+But source meaning:
+divine-warrior theophany.
+
+No physical coupling mechanism is given.
+
+### M56-26 — MOUNTAIN/HILL FAILURE IS DESCRIBED AS BOTH BREAKING AND LOWERING
+
+This is more than vibration:
+- mountains shatter;
+- hills sink.
+
+Cross-link:
+Micah 1 mountain melt/valley split.
+
+---
+
+# Habakkuk 3:8–10
+## Rivers/sea challenged → mounted/chariot traversal → earth split by rivers → mountains writhe → torrents pass → deep raises hands/waves
+
+The poem asks whether wrath is against:
+- rivers;
+- streams;
+- sea.
+
+Divine movement:
+- horses;
+- chariots.
+
+Then:
+- earth split/divided with rivers;
+- mountains writhe;
+- torrents sweep by;
+- deep roars;
+- deep raises its "hands"/waves high.
+
+### M56-27 — LAND, RIVER, MOUNTAIN AND DEEP RESPOND IN ONE CONNECTED EVENT
+
+This is a major multi-domain sequence.
+
+**earth**
+↔ **river channels**
+↔ **mountains**
+↔ **deep water**.
+
+### M56-28 — THE DEEP ITSELF IS ANTHROPOMORPHIZED WITH RAISED HANDS
+
+This is extremely important projection control.
+
+The "hands" do not necessarily belong to the central divine figure.
+
+They belong to:
+**the deep / wave field**.
+
+Therefore a hand/arm-like visual shape may be:
+**a projection of a fluid body**.
+
+This is directly relevant to Squatter-Man/plasma-current interpretation.
+
+It does not prove that such a phenomenon lies behind the text.
+
+### M56-29 — FLUID FIELD → ANTHROPOMORPHIC LIMB PROJECTION IS SOURCE-LEVEL GRAMMAR
+
+This is one of the most useful findings in the block.
+
+Earlier:
+- human → tree;
+- beast → human;
+- city → woman/animal;
+- remnant → dew/lion.
+
+Here:
+**deep/water field**
+→ **raised hands**.
+
+That strengthens the possibility that an anthropomorphic appearance can emerge from a nonhuman environmental field.
+
+---
+
+# Habakkuk 3:11
+## Sun and moon stand/hold position during luminous projectile event
+
+Sun and moon:
+- stand/stay in place.
+
+Context:
+- arrows/light;
+- flashing spear.
+
+### M56-30 — CELESTIAL LIGHT STATE IS COUPLED TO THE SAME THEOPHANIC EVENT
+
+Record:
+**sun/moon altered apparent motion/state**.
+
+Do not infer:
+- actual orbital halt;
+- Earth rotation reversal;
+- time-door freeze
+
+without independent evidence.
+
+The language is poetic/theophanic and recalls Joshua traditions.
+
+---
+
+# Habakkuk 3:12–15
+## Earth stride → nations threshed → leader/head destroyed → sea trampled → great waters churn
+
+The divine warrior:
+- strides through earth;
+- threshes nations;
+- destroys/crushes head/leader of wicked house/land;
+- moves through/tramples sea with horses;
+- churns/surges great waters.
+
+### M56-31 — THE SAME ANTHROPOMORPHIC FIGURE OPERATES ACROSS LAND AND SEA DOMAINS
+
+This is important.
+
+Not:
+separate land god and sea god.
+
+One projected body:
+- crosses earth;
+- then sea.
+
+### M56-32 — WATER IS NOT JUST BACKGROUND; THE MOVING FIGURE CHANGES ITS STATE
+
+Sea:
+- churned;
+- surged.
+
+This is a real:
+**carrier/body movement → water-state response**.
+
+### M56-33 — "HEAD" DESTRUCTION IS POLITICAL/ENEMY-BODY LANGUAGE, NOT AUTOMATIC AXIS SEVERING
+
+Again:
+body-part language may encode leadership.
+
+Do not over-map "head" mechanically.
+
+---
+
+# Habakkuk 3:16–19
+## Observer-body reaction → waiting interval → ecological collapse accepted → deer-like ascent/high-place movement
+
+Habakkuk physically reacts:
+- body trembles;
+- lips quiver;
+- bones weakened;
+- waits quietly for day of calamity.
+
+Even if:
+- fig fails;
+- vine fails;
+- olive fails;
+- fields fail;
+- flock/herd fail;
+
+he still trusts.
+
+Ending:
+- feet like deer;
+- makes him tread on heights/high places.
+
+### M56-34 — HUMAN OBSERVER STATE IS PART OF THE EVENT RECORD
+
+The witness body registers:
+- vibration/fear;
+- weakness;
+- waiting.
+
+This is useful to the project's witness/observer category.
+
+### M56-35 — FINAL HIGH-PLACE MOVEMENT IS RESTORED MOBILITY, NOT NECESSARILY WORLD ASCENT
+
+Deer-foot imagery:
+stability/mobility on heights.
+
+Do not turn it into a physical ascent gate.
+
+---
+
+# HABAKKUK composite event geometry
+
+observer at watchtower
+→ vision tied to appointed time
+→ oppression described through animal/wind projections
+→ divine figure approaches from south/Teman-Paran
+→ luminosity covers heavens/earth
+→ rays project from one hand
+→ pestilence precedes
+→ plague follows behind
+→ figure stops/stands
+→ earth shakes
+→ mountains shatter
+→ hills sink
+→ rivers/sea enter active scene
+→ earth split by rivers
+→ torrents sweep
+→ deep roars
+→ deep raises hands/waves
+→ sun/moon hold position
+→ figure strides across earth
+→ enemy political body loses head/leadership
+→ figure traverses sea
+→ great waters churn
+→ witness body trembles
+→ waiting interval
+→ ecological support may fail
+→ observer still reaches high places.
+
+---
+
+# HABAKKUK and Squatter-Man / current model
+
+## Strong matches
+
+- broad sky illumination;
+- anthropomorphic figure;
+- localized hand-ray;
+- moving central body;
+- front/rear hazard envelope;
+- figure stands and earth responds;
+- mountain/hill deformation;
+- river/sea/deep response;
+- deep itself gains anthropomorphic hands;
+- luminous spear/projectile language;
+- one figure spans land/sea action.
+
+## Weak/missing
+
+- no two raised arms;
+- no two opposed bank nodes;
+- no woven support lattice;
+- no explicit contraction into throat;
+- no transfer between populated worlds;
+- no reopening of same structure.
+
+### M56-36 — HABAKKUK 3 STRONGLY SUPPORTS ENVIRONMENTAL-FIELD→ANTHROPOMORPHIC PROJECTION, BUT NOT THE FULL SQUATTER-MAN GEOMETRY
+
+The best evidence is not the hand-ray itself.
+
+It is the combination:
+**fluid deep raises hands**
++
+**humanlike divine body changes terrain/water/sky**
++
+**front/back hazards travel with the body**.
+
+This is a more precise comparison than simply saying:
+"there are rays from hands."
+
+---
+
+# ZEPHANIAH
+
+# Zephaniah 1:2–3
+## Whole-biosphere sweep: humans + animals + birds + fish
+
+The opening judgment removes:
+- humans;
+- animals;
+- birds;
+- fish.
+
+### M56-37 — ZEPHANIAH OPENS WITH A FOUR-DOMAIN BIOSPHERE COLLAPSE IMAGE
+
+The sweep reaches:
+- land humans;
+- land animals;
+- air birds;
+- water fish.
+
+This is strongly compatible with Vardath's insistence that a world event should be tracked across multiple ecological media.
+
+But source meaning:
+universal prophetic judgment.
+
+---
+
+# Zephaniah 1:4–6
+## Hand stretched over land; roof-level host-of-heaven worship
+
+The divine hand is stretched against Judah.
+
+Some worship:
+- on roofs;
+- toward host of heavens.
+
+### M56-38 — UPPER/ROOF ORIENTATION IS RITUAL, NOT MATERIAL ASCENT
+
+Important anti-forcing control.
+
+---
+
+# Zephaniah 1:7–13
+## Sacrifice/day preparation + threshold action + Fish Gate / Second Quarter / hills + lamp search
+
+The Day is staged through urban nodes:
+
+- prepared sacrifice;
+- threshold leap/passage;
+- Fish Gate;
+- Second Quarter;
+- hills;
+- market/trader district;
+- Jerusalem searched with lamps;
+- houses/vineyards become unusable by builders/planters.
+
+### M56-39 — THE CITY IS REPRESENTED AS A DISTRIBUTED NODE MAP
+
+Named urban locations:
+- threshold;
+- gate;
+- district;
+- hills;
+- houses;
+- vineyards.
+
+The Day propagates through this network.
+
+### M56-40 — THRESHOLD LANGUAGE HERE CONCERNS HUMAN/RELIGIOUS PRACTICE, NOT A COSMIC GATE
+
+The "leap over threshold" verse should not be imported into Vardath mechanics without context.
+
+---
+
+# Zephaniah 1:14–18
+## Day = darkness/cloud/thick darkness + signal + fortified-city attack + consuming fire
+
+The Day is:
+- near;
+- fast approaching;
+- sound/cry;
+- distress;
+- devastation;
+- darkness;
+- gloom;
+- cloud;
+- thick darkness;
+- trumpet/battle cry;
+- against cities/battlements;
+- whole earth consumed by fire of passion.
+
+### M56-41 — DARKENED SKY + SOUND/SIGNAL + FIRE + BUILT-STRUCTURE FAILURE RECUR AS A COMPOSITE EVENT PACKAGE
+
+Cross-link:
+- Joel;
+- Nahum;
+- Habakkuk;
+- Isaiah.
+
+This is now a repeated prophetic catastrophe grammar.
+
+Still:
+shared literary tradition can explain recurrence.
+
+---
+
+# Zephaniah 2:1–3
+## Gather before the day; chaff-dispersal alternative; possible hiding/remnant state
+
+The nation is told:
+- gather together;
+- before day passes like chaff / before judgment;
+- seek humility/righteousness;
+- perhaps be hidden.
+
+### M56-42 — PRE-EVENT GATHERING AND POST-EVENT DISPERSAL/HIDING ARE DISTINCT POPULATION STATES
+
+Again:
+population configuration changes with event phase.
+
+---
+
+# Zephaniah 2:4–15
+## Coast emptied → remnant reoccupies; north/Nineveh becomes dry waste → animals occupy architecture
+
+Coastal cities:
+- emptied/desolated.
+
+Then remnant:
+- pastures there;
+- occupies houses;
+- lies down.
+
+Nineveh:
+- becomes dry waste;
+- animals lodge in capitals/windows/thresholds;
+- cedarwork exposed.
+
+### M56-43 — SUCCESSOR OCCUPANCY CAN CHANGE SPECIES/POPULATION TYPE WITHOUT THE BUILT LOCATION VANISHING
+
+Urban structure remains enough to:
+- expose capitals/windows/thresholds.
+
+Occupants change:
+**human city**
+→ **animal habitation**.
+
+This is another successor-state control:
+structure and occupancy are separable variables.
+
+### M56-44 — REMNANT REOCCUPATION USES EXISTING LAND/HOUSES
+
+Again:
+not blank creation.
+
+---
+
+# Zephaniah 3:1–8
+## Corrupt city → empty cities → wait → nations gathered → fire/heat poured over earth
+
+Jerusalem:
+- officials as lions;
+- judges as wolves;
+- prophets/priests corrupt.
+
+Other cities:
+- cut off;
+- streets empty;
+- no inhabitants.
+
+Then:
+- nations gathered;
+- kingdoms assembled;
+- indignation/heat poured;
+- earth consumed in fire.
+
+### M56-45 — MANY POLITICAL NODES ARE GATHERED BEFORE THE HIGH-ENERGY JUDGMENT STATE
+
+This is a real:
+**distributed nations**
+→ **assembly/concentration**
+→ **fire/heat phase**.
+
+It resembles many→one event concentration.
+
+No physical throat is described.
+
+---
+
+# Zephaniah 3:9–10
+## After fire phase: speech is transformed, then dispersed population returns from beyond rivers of Cush
+
+After the gathered-fire sequence:
+
+- speech/language of peoples changed/purified;
+- unified calling/service;
+- from beyond rivers of Cush:
+  dispersed worshipers bring offering.
+
+### M56-46 — ZEPHANIAH GIVES A GATHER→HIGH-ENERGY→INFORMATION-STATE CHANGE→REGATHERED-DIASPORA SEQUENCE
+
+This is unusually interesting.
+
+Sequence:
+
+**nations assembled**
+→ **fire judgment**
+→ **speech/information layer transformed**
+→ **dispersed people return across rivers**.
+
+This should be compared later with:
+- Babel language split;
+- Pentecost language distribution;
+- Vardath information/culture transfer ideas.
+
+### M56-47 — SPEECH CHANGE IS AN INFORMATION/SOCIAL LAYER, NOT PHYSICAL VOCAL-TRACT REENGINEERING
+
+Important control.
+
+---
+
+# Zephaniah 3:11–13
+## Proud centre removed; lowly remnant remains; pasture/rest state
+
+From the central holy mountain/community:
+- proud removed;
+- humble/lowly remain;
+- remnant does no wrong;
+- grazes/lies down safely.
+
+### M56-48 — SUCCESSOR STABILITY CAN RESULT FROM SELECTIVE REMOVAL + RETAINED REMNANT
+
+Again:
+**sorting**
+rather than
+**total replacement**.
+
+Cross-link:
+Amos sieve.
+
+---
+
+# Zephaniah 3:14–20
+## Daughter Zion / city-person → central warrior within → lame/outcast gathered → brought home
+
+Jerusalem/Zion is personified.
+
+The restored state:
+- judgments removed;
+- enemies turned away;
+- king/YHWH in midst;
+- warrior in midst;
+- lame saved;
+- outcast gathered;
+- shame converted to praise;
+- people brought home/gathered;
+- fortunes restored.
+
+### M56-49 — CITY/PEOPLE AND CENTRAL WARRIOR OCCUPY THE SAME RESTORED FIELD WITHOUT BEING THE SAME ENTITY
+
+This is an operator/population distinction.
+
+### M56-50 — THE END STATE IS POPULATED, GATHERED AND INHABITED
+
+Again strongly consistent with user's:
+**restored/future-relative world is populated**.
+
+Source meaning:
+restored community.
+
+---
+
+# ZEPHANIAH continuous process
+
+biosphere-wide removal announced
+→ divine hand extends over land
+→ city thresholds/gates/districts become judgment nodes
+→ Day approaches with sound
+→ darkness/cloud thickens
+→ city/battlements attacked
+→ fire consumes
+→ population urged to gather before event
+→ some regions emptied
+→ remnants reoccupy land/houses
+→ Nineveh becomes animal-occupied ruin
+→ corrupt city confronted
+→ nations/kingdoms gathered
+→ heat/fire phase
+→ speech/information state changes
+→ dispersed people return from beyond rivers
+→ proud central population removed
+→ humble remnant remains
+→ city-person rejoices
+→ central warrior present
+→ lame/outcasts gathered
+→ population brought home
+→ fortunes restored.
+
+---
+
+# CROSS-BOOK SYNTHESIS — Nahum + Habakkuk + Zephaniah
+
+## 1. Moving-event envelope becomes clearer
+
+Nahum:
+**whirlwind/storm path**.
+
+Habakkuk:
+**pestilence before + plague behind**.
+
+Zephaniah:
+**sound/dark cloud/fire Day front**.
+
+### M56-51 — THE TWELVE REPEATEDLY REPRESENTS CATASTROPHE AS A MOVING FIELD WITH LEADING/TRAILING OR ENVIRONMENTAL ENVELOPE
+
+This is stronger than static catastrophe imagery.
+
+Still:
+literary divine-warrior tradition may account for the pattern.
+
+---
+
+# 2. Water changes role across phases/books
+
+Nahum:
+- sea/rivers dry;
+- river gates open;
+- city drains like pool.
+
+Habakkuk:
+- earth split by rivers;
+- torrents sweep;
+- deep raises hands;
+- sea churned by moving figure.
+
+Zephaniah:
+- dispersed people return from beyond rivers;
+- coast/sea regions redistributed.
+
+### M56-52 — WATER IS AGAIN A GEOMETRIC TRACER, BUT ITS FUNCTION CHANGES
+
+Water can indicate:
+- depletion;
+- gate failure;
+- drainage;
+- terrain division;
+- active deep;
+- route/boundary.
+
+This fits Vardath's mature rule:
+**water follows geometry**
+without requiring every water image to be literal mechanism.
+
+---
+
+# 3. Environment → anthropomorphic projection is especially strong in Habakkuk 3
+
+Key:
+**the deep raises its hands**.
+
+This is crucial.
+
+### M56-53 — A FLUID FIELD CAN BE DESCRIBED AS AN ANTHROPOMORPHIC LIMB-BEARING BODY
+
+This gives a textual basis for asking whether:
+- Squatter-Man;
+- winged figures;
+- humanlike columns
+
+might sometimes be perceived/projected forms of:
+- current;
+- fluid/plasma field;
+- environmental structure.
+
+It does not prove that physical phenomenon.
+
+But it is exactly the kind of projection grammar the hypothesis requires.
+
+---
+
+# 4. Front/back is now a recurring phase geometry
+
+Joel:
+- fire ahead;
+- flame behind.
+
+Habakkuk:
+- pestilence before;
+- plague behind.
+
+### M56-54 — ONE MOVING EVENT-BODY CAN CARRY DIFFERENT STATES ON ITS LEADING AND TRAILING EDGES
+
+This should be added to the master geometry.
+
+Potential Vardath comparison:
+- approach-side compression/heating;
+- wake-side disturbance/aftereffects.
+
+But those specific physical assignments remain speculative.
+
+---
+
+# 5. Gates can stabilize or destabilize
+
+Micah 2:
+**gate opens → population liberated/emerges**.
+
+Nahum 2:
+**river gates open → palace collapses / city drains**.
+
+### M56-55 — OPENING IS NOT INHERENTLY BENEFICIAL
+
+The effect depends on:
+- what boundary;
+- what medium;
+- pressure/state;
+- what lies behind it.
+
+This is highly important for gate engineering logic.
+
+---
+
+# 6. Gather→high-energy→reconfiguration→regather is now explicit
+
+Zephaniah:
+**nations gather**
+→ **fire/heat**
+→ **speech changes**
+→ **dispersed return**
+→ **remnant stabilized**.
+
+### M56-56 — CATASTROPHIC CONVERGENCE CAN BE FOLLOWED BY INFORMATION/CULTURE RECONFIGURATION BEFORE STABLE REPOPULATION
+
+This is especially relevant to Vardath's idea that transfer could move:
+- culture;
+- language;
+- people;
+- material.
+
+Again:
+source meaning is theological/social restoration, not inter-world migration.
+
+---
+
+# Cherub / Feathered Serpent / Quetzalcoatl / dragon / Squatter-Man update
+
+This block adds one particularly important point.
+
+The strongest Vardath-relevant anthropomorphic projection is not a winged creature.
+
+It is:
+**the deep itself raising hands** in Habakkuk 3.
+
+That means the research should now distinguish:
+
+1. **creature-body projection**
+   - lion;
+   - eagle;
+   - serpent;
+   - dragon;
+   - cherub.
+
+2. **environment-body projection**
+   - cloud as foot-dust;
+   - deep as hands;
+   - city as woman;
+   - mountain/land as moving body.
+
+3. **axis-person projection**
+   - Daniel linen man;
+   - Revelation giant;
+   - Squatter-Man candidate.
+
+### M56-57 — THE SAME UNDERLYING PHENOMENON NEED NOT FIRST APPEAR AS A "CREATURE"; IT MAY APPEAR AS AN ENVIRONMENT THAT ACQUIRES BODY PARTS
+
+This broadens the Quetzalcoatl/cherub hypothesis responsibly.
+
+A Feathered Serpent may be one projection family member,
+but other cultures/texts may encode:
+- the field;
+- its limbs;
+- its wake;
+- its cloud;
+- its water response
+
+without giving a complete serpent body.
+
+---
+
+# Strict fingertrap test — Nahum + Habakkuk + Zephaniah
+
+Criteria:
+1. broad/open support structure;
+2. structural continuity;
+3. angle/contraction;
+4. throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Nahum
+
+Strong:
+- storm-path field;
+- water gates;
+- gate-state change causes structural failure;
+- draining enclosure.
+
+Missing:
+- woven support;
+- contraction;
+- throat;
+- same-structure reopening.
+
+**Strict negative; major gate-failure analogue.**
+
+## Habakkuk
+
+Strong:
+- broad luminous field;
+- anthropomorphic figure;
+- hand-ray;
+- front/back hazards;
+- earth response to standing figure;
+- mountain/hill deformation;
+- rivers/deep/sea response;
+- deep anthropomorphized with hands;
+- sea traversed/churned.
+
+Missing:
+- two raised arms;
+- woven lattice;
+- contraction into central throat;
+- world-to-world transfer;
+- re-expansion.
+
+**Strict negative; exceptionally strong field→anthropomorphic/current analogue.**
+
+## Zephaniah
+
+Strong:
+- distributed population gathering;
+- high-energy/fire phase;
+- information-state change;
+- dispersal/regathering;
+- stable remnant.
+
+Missing:
+mechanical support/gate sequence.
+
+**Strict negative; strong population/information-state sequence.**
+
+---
+
+# Number / timing register
+
+## Nahum
+No major timed interval to force.
+
+## Habakkuk
+- vision has an **appointed time**;
+- perceived delay/wait instruction;
+- no numerical duration in Habakkuk 2:1–3.
+
+Do not invent a period.
+
+## Zephaniah
+No precise cycle duration in the Day language.
+
+The Day is "near" and "hastening," which is rhetorical temporal urgency.
+
+---
+
+# Textual / scholarly controls — Nahum + Habakkuk + Zephaniah
+
+1. Nahum is an anti-Nineveh/anti-Assyrian oracle and should be read against Assyrian imperial domination and Nineveh's fall.
+2. Nahum's vengeance and sexualized humiliation imagery has major ethical implications and should not be neutralized into pure mechanics.
+3. Nahum 1's storm/sea/mountain imagery belongs to divine-warrior theophany tradition.
+4. Nahum 2 explicitly says river gates open and palace collapses, but the exact historical hydraulic mechanics of Nineveh's fall should not be claimed as proved by the verse.
+5. Nahum 2:8 has textual/translation uncertainty in details, while the draining-pool comparison is secure in major translations.
+6. Habakkuk 1's leopard/eagle/wind images describe the Chaldean military force, not literal hybrid creatures.
+7. Habakkuk 2's watchtower is an observation/information node; "appointed time" and "delay" are prophetic schedule language.
+8. Habakkuk 3 is a poetic theophany drawing on older divine-warrior/Exodus traditions.
+9. Habakkuk 3:4 gives rays from **one hand** grammatically; it must not be misreported as two bilateral hand-rays.
+10. Habakkuk 3:5 securely gives pestilence before and plague behind.
+11. Habakkuk 3:6 gives earth shaking, mountain shattering and hills sinking in the theophany.
+12. Habakkuk 3:8–15 explicitly joins rivers, sea, earth, mountains, torrents, deep, sun/moon, land-stride and sea-trampling.
+13. Translation of the deep "raising hands" can be rendered as waves/hands depending version, but anthropomorphic Hebrew/poetic language is real.
+14. Habakkuk 3:13 contains textual difficulty in the exact body/house/head/foundation wording; use only the secure leader/evil-house defeat function.
+15. Zephaniah opens with universalized judgment spanning humans, animals, birds and fish.
+16. Zephaniah 1 threshold imagery concerns cult/social practice; it is not technical gate language.
+17. Zephaniah 1's Day combines darkness, cloud, sound, fortified-city assault and fire.
+18. Zephaniah 2 explicitly preserves/remaps land for remnant occupancy after desolation.
+19. Zephaniah 3 gives gather-nations → fire/heat → changed speech → return from beyond rivers → remnant restoration.
+20. Modern scholarship emphasizes Zephaniah's Day-of-YHWH, city, remnant and restoration themes and its intertextual relationship with the Twelve.
+
+---
+
+# Sources logged — Nahum + Habakkuk + Zephaniah
+
+## Primary — Nahum
+- Nahum 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Nahum+1&version=NRSVUE
+- Nahum 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Nahum+2&version=NRSVUE
+- Nahum 3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Nahum+3&version=NRSVUE
+
+## Nahum scholarship
+- Bo H. Lim, "Nahum," *The Oxford Handbook of the Minor Prophets*:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373533
+
+## Primary — Habakkuk
+- Habakkuk 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Habakkuk+1&version=NRSVUE
+- Habakkuk 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Habakkuk+2&version=NRSVUE
+- Habakkuk 3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Habakkuk+3&version=NRSVUE
+- Habakkuk 3:5–7 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Habakkuk+3%3A5-7&version=NRSVUE
+- Habakkuk 3:8–15:
+  https://www.biblegateway.com/passage/?search=Habakkuk+3%3A8-15&version=NIV
+
+## Habakkuk scholarship
+- Grace Ko, "Habakkuk," *The Oxford Handbook of the Minor Prophets*:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373592
+
+## Primary — Zephaniah
+- Zephaniah 1–3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Zephaniah+1-3&version=NRSVUE
+
+## Zephaniah scholarship
+- Cat Quine, "Zephaniah," *The Oxford Handbook of the Minor Prophets*:
+  https://academic.oup.com/edited-volume/38566/chapter-abstract/334373664
+
+---
+
+# SECTION 56 — NAHUM + HABAKKUK + ZEPHANIAH COMPLETE
+
+## Strongest new findings
+
+1. **Nahum 1 joins storm-path, cloud, sea/river drying, vegetation loss, mountain quake/hill melting, earth heaving and fire/rock failure into one multi-domain event sequence.**
+2. **Clouds as the "dust of his feet" are another example of an atmospheric field being projected as part of a giant anthropomorphic body.**
+3. **Nahum 2 supplies a genuine water-gate failure sequence: river gates open and the palace collapses; immediately afterward Nineveh is compared with a pool whose water is draining away.**
+4. **That gives an important control: opening a gate can destabilize/drain a system rather than beneficially connect it.**
+5. **Nahum cycles one city/empire through urban, lion/den, woman, fire, sword and locust/swarm projections, further proving cross-form symbolic identity.**
+6. **Habakkuk 1 projects one military system as leopard, eagle and wind; avian/wing imagery therefore cannot be assigned to the Feathered-Serpent/cherub family by appearance alone.**
+7. **Habakkuk 2 cleanly separates observer node (watchtower), information (vision) and timing (appointed time), and its "delay" language is schedule/expectation language rather than physical time dilation.**
+8. **Habakkuk 3 gives a broad luminous sky/earth field, rays from a localized anthropomorphic hand, and a moving divine-warrior body.**
+9. **Critical correction: the ray-emitting hand is singular; Habakkuk 3 does not provide a two-hand bilateral Squatter-Man ray posture.**
+10. **The stronger geometry is front/back: pestilence goes before the figure and plague follows behind, closely paralleling Joel's fire-before/flame-behind moving event envelope.**
+11. **The figure's standing/stopping is immediately coupled to earth shaking, nations trembling, mountains shattering and hills sinking—a strong axis-state/ground-response analogue.**
+12. **Habakkuk then links rivers, split earth, mountains, torrents, deep, sun/moon, land movement and sea traversal in one continuous theophany.**
+13. **The deepest Vardath-relevant result is that the deep itself is personified as raising hands/waves: an environmental fluid field can acquire anthropomorphic limb geometry in the text.**
+14. **That materially strengthens the possibility that some anthropomorphic cosmic forms may be projections of a current/field rather than literal humanoid organisms, while remaining only a comparative hypothesis.**
+15. **The same central figure traverses both land and sea and changes the state of the great waters, another body/current interaction.**
+16. **Zephaniah opens with a biosphere-wide collapse image spanning humans, terrestrial animals, birds and fish—air/land/water life systems together.**
+17. **Its threshold reference is cult/social practice and is explicitly logged as a non-cosmic-gate control.**
+18. **Zephaniah's Day repeats the catastrophe package of darkness, cloud, signal/sound, fortified-structure failure and fire.**
+19. **The book then supplies a distinct gather→fire/heat→speech/information transformation→return from beyond rivers→stable remnant sequence.**
+20. **That is important to the Vardath possibility that catastrophic convergence could be followed by population/cultural/information reconfiguration before a stable successor state.**
+21. **Across the block, the most important new mechanism distinction is between creature-body projection, environment-body projection and axis-person projection. Habakkuk's deep-with-hands proves the second category directly.**
+22. **No strict fingertrap appears, but Habakkuk 3 is one of the strongest field→anthropomorphic/current analogues yet, while Nahum 2 is one of the cleanest destructive gate-opening analogues.**
+
+## Next live block
+
+**Haggai + Zechariah + Malachi**
+
+High priority:
+- Haggai "shake heavens and earth, sea and dry land";
+- shaking of nations / treasures moving;
+- former/later temple glory;
+- Zerubbabel as signet;
+- Zechariah gets special depth:
+  - man among myrtle trees;
+  - horses/colored directional patrol;
+  - measuring line;
+  - Joshua / Branch;
+  - lampstand + bowl + seven lamps/eyes;
+  - **two olive trees / two anointed ones**;
+  - flying scroll;
+  - woman in ephah/container;
+  - **two women with wings like stork wings carrying the ephah between earth and heaven**;
+  - four chariots emerging **between two bronze mountains**;
+  - directional winds/spirits;
+  - Mount of Olives split east↔west;
+  - one half north / one half south;
+  - valley/gate route;
+  - living waters split east / west;
+  - altered day/night light;
+  - cosmic kingship/restored inhabited city;
+- Malachi messenger/path preparation;
+- temple threshold/arrival;
+- refiner's fire / fuller's soap;
+- return/reconciliation;
+- Elijah recurrence;
+- sun imagery;
+- strict test for whether Zechariah's two olive trees + winged women + two bronze mountains + split mountain + two-direction living waters finally gives a closer two-strand / bilateral-gate system.
+
