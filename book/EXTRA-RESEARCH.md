@@ -31764,3 +31764,1167 @@ Priority:
 - bad figs remain/are scattered;
 - compare **same fruit class sorted into two baskets with opposite destinies** to paired-world/remnant selection;
 - connect Jeremiah 24 build/plant after exile to Jeremiah 18 reworked clay and Jeremiah 12 uproot-return.
+
+
+---
+
+# SECTION 50 progress E — Jeremiah 21–24
+## First-time direct research pass: siege weapons turned inward, binary life/death routes, exit as survival, palace gates and cedar-height collapse, irreversible exile vectors, signet-ring detachment, broken-pot personification, failed shepherds→remnant regathering, Branch growth, false-dream information networks, fire/hammer word imagery, and two baskets of one fruit class sorted into opposite population trajectories
+
+Jeremiah 21–24 is a high-value **route-selection / population-sorting / successor-building** block.
+
+Its most important architecture is:
+
+### Jeremiah 21
+one besieged population
+→ two route choices
+→ remain inside
+or
+exit/surrender.
+
+The surprising result is:
+**staying inside the defended city is the death route,
+while crossing the siege boundary outward is the life route.**
+
+### Jeremiah 24
+one fruit class:
+figs
+→ two baskets
+→ one judged “very good”
+→ one “very bad.”
+
+The populations mapped onto those baskets then receive opposite trajectories:
+
+### exiled group
+sent away
+→ watched for good
+→ brought back
+→ built up
+→ planted
+→ not torn down/plucked up.
+
+### remaining/Egypt group
+stays or relocates differently
+→ sword/famine/pestilence/scattering.
+
+This is a major Vardath control:
+
+> **location continuity is not automatically survival continuity.  
+> Sometimes leaving the old node preserves the population that later returns and rebuilds it.**
+
+That is highly compatible with a catastrophe/reset model in which:
+survival may require temporary transfer away from the failing present-world region before successor reattachment.
+
+The ordinary historical mechanism here is Babylonian siege/exile,
+not a physical inter-world gate.
+
+---
+
+# Jeremiah 21:1–4 — defensive weapons reverse direction into the city
+
+Jerusalem is besieged.
+
+The city’s own weapons:
+being used outward against Babylonian forces
+
+are said to be:
+turned back
+and gathered into the center of the city.
+
+## M50E-1 — DEFENSIVE OUTPUT CAN BE REVERSED INTO INTERNALIZED FAILURE
+
+Expected vector:
+inside
+→ outside.
+
+Reversal:
+outside pressure
+→ weapons collapse inward / become ineffective.
+
+This is a powerful control-system failure image.
+
+---
+
+# Jeremiah 21:4 — exterior enemy + interior concentration creates enclosure pressure
+
+Chaldeans:
+outside walls.
+
+Weapons/defenders:
+drawn into city center.
+
+## M50E-2 — ENCLOSURE CAN BECOME A PRESSURE TRAP WHEN EXTERNAL THREAT SURROUNDS IT AND INTERNAL DEFENSE COLLAPSES
+
+A wall may:
+protect under one regime
+and
+trap under another.
+
+---
+
+# Jeremiah 21:6–7 — enclosed city develops multiple internal hazards
+
+Inside:
+- pestilence;
+- famine;
+- sword survival pressure.
+
+Even survivors:
+later transferred to enemy control.
+
+## M50E-3 — FORTIFICATION DOES NOT GUARANTEE HABITABILITY UNDER PROLONGED ENCLOSURE
+
+This cross-links Jeremiah 19 siege pressure.
+
+---
+
+# Jeremiah 21:8–9 — “way of life / way of death” is explicit binary route architecture
+
+The population is given:
+
+### Route A
+stay in city
+→ sword/famine/pestilence
+→ death.
+
+### Route B
+go out
+→ surrender/cross siege line
+→ live.
+
+## M50E-4 — SAME BOUNDARY CAN SEPARATE A DEADLY INSIDE STATE FROM A SURVIVABLE OUTSIDE ROUTE
+
+This is highly important for gate analysis.
+
+Usually:
+inside = safe.
+
+Here:
+inside = lethal.
+
+---
+
+# M50E-5 — CROSSING A HOSTILE BOUNDARY CAN BE THE SURVIVAL MOVE WHEN THE ENCLOSED NODE HAS PASSED ITS STABILITY THRESHOLD
+
+This is a major Vardath survival principle.
+
+If a world-region becomes:
+thermally;
+hydrologically;
+structurally
+unsurvivable,
+
+remaining because it is “home”
+may be worse than transfer.
+
+---
+
+# Jeremiah 21:9 — life becomes “prize/spoil” carried away from failed node
+
+Those exiting:
+retain life
+as spoil/prize of war.
+
+## M50E-6 — MINIMUM SUCCESS OUTPUT MAY BE CARGO SURVIVAL RATHER THAN PRESERVATION OF PROPERTY/LOCATION
+
+In extreme transition:
+life
+may be the only retained resource.
+
+---
+
+# Jeremiah 21:10 — city is burned after population route split
+
+City:
+given to Babylon;
+burned.
+
+## M50E-7 — POPULATION SURVIVAL AND OLD-INFRASTRUCTURE SURVIVAL CAN DIVERGE
+
+People may survive transfer
+while:
+old node
+is destroyed.
+
+This strongly supports:
+identity continuity without structural continuity.
+
+---
+
+# Jeremiah 21:12 — justice “in the morning” adds daily response timing
+
+House of David:
+execute justice in morning.
+
+Otherwise:
+wrath/fire.
+
+## M50E-8 — CONTROL ACTION CAN HAVE REPEATED DAILY TIMING WITHOUT DEFINING CATASTROPHE CYCLE
+
+Morning:
+operational phase,
+not gate recurrence.
+
+---
+
+# Jeremiah 22:1–5 — palace/house gates remain traffic and governance interfaces
+
+King;
+servants;
+people
+enter gates.
+
+If justice holds:
+kingly traffic continues.
+
+If not:
+house becomes desolation.
+
+## M50E-9 — GATE TRAFFIC CAN FUNCTION AS AN INDICATOR OF INSTITUTIONAL CONTINUITY
+
+Continued movement through gate:
+means system still functioning.
+
+---
+
+# Jeremiah 22:6–7 — high-value cedar/Lebanon architecture can still become desert/fire fuel
+
+Royal house:
+likened to Gilead/Lebanon summit.
+
+Choice cedars:
+cut;
+cast into fire.
+
+## M50E-10 — HIGH-STATUS / HIGH-ELEVATION / HIGH-QUALITY MATERIAL DOES NOT GUARANTEE STRUCTURAL SURVIVAL
+
+This is another anti-centrality/permanence control.
+
+---
+
+# Jeremiah 22:8–9 — ruined city becomes an information object for passing nations
+
+Passersby:
+observe ruins;
+ask causal question;
+receive explanation.
+
+## M50E-11 — POST-CATASTROPHE LANDSCAPE CAN FUNCTION AS A PUBLIC INFORMATION RECORD
+
+This parallels Isaiah 55:
+environmental sign.
+
+Ruins:
+carry memory.
+
+---
+
+# Jeremiah 22:10–12 — exile can become one-way transfer for a specific individual
+
+Shallum:
+goes away;
+does not return;
+dies at destination.
+
+## M50E-12 — NOT ALL TRANSFER PATHS ARE REVERSIBLE FOR ALL CARGO
+
+This is an important control against:
+assuming every exile/gate crossing implies return.
+
+---
+
+# Jeremiah 22:13–17 — large house can expand through exploitative resource flow
+
+Spacious upper rooms;
+windows;
+cedar;
+vermilion
+
+are built through:
+unpaid labor;
+injustice.
+
+## M50E-13 — STRUCTURAL SCALE/BEAUTY CAN HIDE UNSUSTAINABLE OR EXPLOITATIVE INPUT NETWORK
+
+Physical impressiveness:
+does not prove healthy system.
+
+---
+
+# Jeremiah 22:19 — dead ruler is thrown beyond city gates
+
+Body:
+dragged;
+cast beyond gate.
+
+## M50E-14 — GATE CAN FUNCTION AS EXPULSION BOUNDARY BETWEEN CIVIC INTERIOR AND DISPOSAL EXTERIOR
+
+Another gate class.
+
+---
+
+# Jeremiah 22:22 — wind “shepherds” the shepherds
+
+The normal hierarchy reverses:
+
+shepherds:
+normally direct flock.
+
+Wind:
+now drives/shepherds them.
+
+## M50E-15 — ENVIRONMENTAL FORCE CAN REPLACE HUMAN CONTROL NODE AS MOTION DRIVER
+
+Very relevant to Vardath environmental dynamics.
+
+---
+
+# Jeremiah 22:23 — cedar nest / labor pain combine high enclosure with transition distress
+
+Jerusalem/royal power:
+nested among cedars;
+yet seized by labor-pain imagery.
+
+## M50E-16 — HIGH/NESTED POSITION DOES NOT PREVENT RAPID TRANSITION DISTRESS
+
+---
+
+# Jeremiah 22:24 — signet ring is intimate high-value contact object that can still be torn off
+
+Coniah:
+even if signet ring on right hand
+→ torn off.
+
+Signet:
+authority/identity seal;
+close-body object.
+
+## M50E-17 — HIGH-VALUE CLOSE-COUPLED OBJECT CAN BE DECOUPLED FROM ITS CONTROLLER
+
+This is a useful coupling analogue.
+
+---
+
+# Jeremiah 22:25–27 — decoupled ruler and mother are hurled into foreign land
+
+Birth location:
+one land.
+
+Death:
+another.
+
+Desired return:
+denied.
+
+## M50E-18 — BIOLOGICAL ORIGIN DOES NOT GUARANTEE DESTINATION RETURN
+
+Again:
+identity continuity
+without geographic continuity.
+
+---
+
+# Jeremiah 22:28 — ruler is projected as despised broken pot/vessel
+
+Coniah:
+person
+→ broken unwanted vessel.
+
+## M50E-19 — HUMAN FIGURE CAN BE PROJECTED AS BROKEN CERAMIC WITHOUT LITERAL MATERIAL IDENTITY
+
+Cross-link Jeremiah 19.
+
+Do not merge every pot image into:
+same physical object.
+
+---
+
+# Jeremiah 23:1–2 — failed shepherds produce scattering
+
+Shepherd/control nodes:
+destroy;
+scatter;
+drive away;
+fail to attend flock.
+
+## M50E-20 — POPULATION DISPERSION CAN BE OUTPUT OF GOVERNANCE FAILURE, NOT ONLY EXTERNAL FORCE
+
+---
+
+# Jeremiah 23:3–4 — scattered remnant is gathered to fold and becomes fruitful
+
+Sequence:
+
+scattered across lands
+→ gathered
+→ returned to fold
+→ fruitful
+→ multiply
+→ new shepherds
+→ no missing units.
+
+## M50E-21 — SUCCESSOR RESTORATION CAN REVERSE SCATTER THROUGH RECONVERGENCE + CONTROL-NODE REPLACEMENT
+
+This is a full remnant recovery architecture.
+
+---
+
+# Jeremiah 23:5 — “Branch” is dynastic/growth projection
+
+A righteous Branch:
+raised up for David.
+
+## M50E-22 — BRANCH LANGUAGE CAN MODEL DYNASTIC SUCCESSOR GROWTH WITHOUT LITERAL TREE ANATOMY
+
+This is critical for:
+tree/rod/branch comparisons.
+
+Local referent:
+royal successor.
+
+---
+
+# Jeremiah 23:6 — Judah/Israel can occupy safety state under successor governance
+
+## M50E-23 — POPULATION SAFETY MAY DEPEND ON CONTROL SYSTEM REPLACEMENT AFTER REGATHERING
+
+Return alone:
+not enough.
+
+---
+
+# Jeremiah 23:7–8 — north-country return again supersedes Egypt Exodus formula
+
+Jeremiah 16’s shift repeats:
+
+Egypt memory
+→ future north/dispersed return becomes dominant.
+
+## M50E-24 — REPEATED TEMPLATE REPLACEMENT INSIDE SAME BOOK STRENGTHENS THE RETURN-TYPOLOGY RESULT
+
+But it is still:
+literary-historical return grammar,
+not independent physical event evidence.
+
+---
+
+# Jeremiah 23:9 — prophet body becomes drunk/shaking under information load
+
+Heart:
+crushed.
+
+Bones:
+shake.
+
+Body:
+like drunk person because of holy words.
+
+## M50E-25 — INFORMATION/EMOTIONAL LOAD CAN BE PROJECTED AS WHOLE-BODY PHYSIOLOGICAL DESTABILIZATION
+
+Cross-link Jeremiah 20:
+fire in bones.
+
+---
+
+# Jeremiah 23:10 — land mourns / pastures dry
+
+Human/social corruption:
+paired with:
+land/pasture ecological failure.
+
+## M50E-26 — SOCIAL AND ECOLOGICAL FAILURE CONTINUE TO BE LITERARILY COUPLED
+
+---
+
+# Jeremiah 23:12 — false leadership route becomes slippery path in darkness
+
+Path:
+slippery.
+
+Environment:
+dark.
+
+Agents:
+driven;
+fall.
+
+## M50E-27 — ROUTE SAFETY DEPENDS ON BOTH SURFACE FRICTION AND VISIBILITY
+
+This is mechanically real in the analogy.
+
+---
+
+# Jeremiah 23:15 — wormwood + poisoned water again model corrupt-source propagation
+
+Prophetic corruption:
+spreads from Jerusalem.
+
+Output:
+bitter/toxic intake.
+
+## M50E-28 — INFORMATION CORRUPTION CAN BE PROJECTED AS TOXIC FOOD/WATER CONTAMINATION
+
+Important:
+contamination
+≠ resource absence.
+
+---
+
+# Jeremiah 23:16–17 — false prophets issue high-confidence “no calamity” forecast
+
+Message:
+it will be well;
+no disaster.
+
+Source:
+their own minds.
+
+## M50E-29 — FORECAST CONFIDENCE IS NOT EVIDENCE OF SOURCE VALIDITY
+
+This is central to Vardath/Archaix comparisons.
+
+---
+
+# Jeremiah 23:18–22 — legitimate prediction requires access to source/council and correct transmission
+
+Questions:
+who stood in council?
+who saw/heard?
+who attended?
+who proclaimed faithfully?
+
+## M50E-30 — PREDICTION VALIDATION REQUIRES SOURCE PROVENANCE + OBSERVATION + TRANSMISSION FIDELITY
+
+This is one of the strongest epistemic rules in Jeremiah.
+
+---
+
+# Jeremiah 23:19–20 — whirling storm is executed until intended process completes
+
+Storm:
+whirling tempest.
+
+It:
+bursts on target.
+
+It will not turn back
+until:
+purpose completed.
+
+## M50E-31 — HIGH-ENERGY ROTATIONAL PROCESS CAN BE MODELLED AS COMMITTED UNTIL TERMINAL CONDITION IS MET
+
+This echoes:
+Isaiah 66 whirlwind.
+
+### Control
+
+Storm:
+judgment metaphor,
+not dragon mechanics.
+
+---
+
+# Jeremiah 23:23–24 — near/far and heaven/earth occupancy are explicitly linked
+
+Source:
+near and far.
+
+Cannot hide.
+
+Fills:
+heaven and earth.
+
+## M50E-32 — SYSTEM PRESENCE CAN SPAN NEAR/FAR AND UPPER/LOWER DOMAINS WITHOUT COLLAPSING THEM INTO ONE LOCATION
+
+This is conceptually compatible with:
+interacting vertical levels,
+but not stacked populated-world proof.
+
+---
+
+# Jeremiah 23:25–27 — dreams propagate person-to-person as memory replacement network
+
+False prophets:
+dream;
+tell one another;
+cause name-memory to be forgotten.
+
+## M50E-33 — INFORMATION NETWORK CAN OVERWRITE PRIOR IDENTITY THROUGH REPEATED PEER-TO-PEER TRANSMISSION
+
+This is highly relevant to myth evolution.
+
+---
+
+# Jeremiah 23:28 — dream and word are compared as straw versus wheat
+
+## M50E-34 — TWO INFORMATION SOURCES CAN SHARE “MESSAGE” CLASS WHILE DIFFERING RADICALLY IN SIGNAL VALUE
+
+Content type:
+message.
+
+Quality:
+different.
+
+---
+
+# Jeremiah 23:29 — word is fire and hammer breaking rock
+
+Same “word”:
+- fire;
+- hammer.
+
+Rock:
+broken in pieces.
+
+## M50E-35 — INFORMATION CAN BE PROJECTED AS MULTIPLE HIGH-ENERGY TRANSFORMATION TOOLS WITHOUT BECOMING PHYSICAL FIRE/HAMMER
+
+Strong anti-literalization control.
+
+---
+
+# Jeremiah 23:29 — hammer/rock is a genuine fracture process inside metaphor
+
+## M50E-36 — HIGH-ENERGY IMPULSE CAN FRACTURE RIGID SUBSTRATE
+
+Cross-link:
+Jeremiah 19 brittle jar.
+
+But:
+no support lattice is involved.
+
+---
+
+# Jeremiah 23:30–32 — information can be stolen, copied and falsely relabeled
+
+Prophets:
+steal words from one another;
+use own tongues;
+claim source authority;
+spread false dreams.
+
+## M50E-37 — DERIVATIVE REPORTS MUST NOT BE COUNTED AS INDEPENDENT WITNESSES
+
+This is critical for the 88-book project.
+
+Ten texts repeating:
+one inherited source
+≠
+ten independent observations.
+
+---
+
+# M50E-38 — SOURCE INDEPENDENCE MUST BE TESTED BEFORE CROSS-CULTURAL/INTERTEXTUAL CONVERGENCE IS SCORED
+
+Permanent methodology rule.
+
+---
+
+# Jeremiah 23:33–40 — “burden” word itself becomes corrupted information object
+
+People:
+misuse “burden of YHWH.”
+
+The phrase:
+becomes target of correction.
+
+## M50E-39 — EVEN A TECHNICAL/RELIGIOUS TERM CAN BECOME SEMANTICALLY CORRUPTED THROUGH REPEATED MISUSE
+
+Word survival
+≠
+meaning stability.
+
+---
+
+# Jeremiah 24:1 — two baskets are positioned before the same temple node
+
+Vision:
+two baskets of figs
+side by side
+before temple.
+
+Same:
+location;
+fruit class;
+observer.
+
+Different:
+quality;
+future trajectory.
+
+## M50E-40 — CONTROLLED COMPARISON IS STRONGEST WHEN OBJECTS SHARE CLASS/LOCATION BUT DIFFER ONE KEY STATE VARIABLE
+
+This is almost experimental logic.
+
+---
+
+# Jeremiah 24:2–3 — one basket very good; one too bad to eat
+
+The contrast is deliberately extreme.
+
+## M50E-41 — SAME OBJECT CLASS CAN OCCUPY OPPOSITE QUALITY STATES
+
+Fig:
+does not guarantee:
+good/bad.
+
+Local state matters.
+
+---
+
+# Jeremiah 24:5 — “good” group is paradoxically the deported population
+
+The exiles:
+removed from Jerusalem
+→ regarded as good figs.
+
+This reverses naive location logic.
+
+## M50E-42 — DISPLACEMENT CAN FUNCTION AS PRESERVATION PATH RATHER THAN PURE FAILURE
+
+This is one of the chapter’s strongest Vardath analogues.
+
+---
+
+# Jeremiah 24:6 — exiles receive watch→return→build→plant sequence
+
+Source:
+sets eyes for good;
+brings them back;
+builds not tears down;
+plants not plucks up.
+
+## M50E-43 — TEMPORARY REMOVAL CAN PRESERVE A POPULATION FOR LATER REATTACHMENT AND RECONSTRUCTION
+
+This strongly connects:
+
+Jeremiah 12:
+uproot→return.
+
+Jeremiah 18:
+spoiled form→reworked.
+
+Jeremiah 24:
+exile→return→build/plant.
+
+Together they form a robust:
+**continuity-through-displacement/reconfiguration** cluster.
+
+---
+
+# M50E-44 — SUCCESSOR STATE CAN PRESERVE IDENTITY THROUGH TEMPORARY OFF-SITE STORAGE OF POPULATION
+
+This is directly relevant to the Vardath gate idea at an abstract level.
+
+Population may survive:
+outside failing node
+then:
+return/repopulate.
+
+Ordinary mechanism here:
+Babylonian exile.
+
+---
+
+# Jeremiah 24:7 — return includes information/identity-state change
+
+A new/changed heart:
+knows source.
+
+Population:
+returns “with whole heart.”
+
+## M50E-45 — PHYSICAL RETURN CAN BE COUPLED TO INTERNAL INFORMATION/IDENTITY RECONFIGURATION
+
+Movement alone:
+not full restoration.
+
+---
+
+# Jeremiah 24:8–10 — remaining population is mapped to bad figs
+
+Bad figs:
+Zedekiah;
+officials;
+Jerusalem remnant;
+Egypt group.
+
+Outcomes:
+scattering;
+sword;
+famine;
+pestilence;
+removal from land.
+
+## M50E-46 — REMAINING AT ORIGINAL NODE DOES NOT GUARANTEE CONTINUITY
+
+This is a powerful reversal.
+
+---
+
+# Jeremiah 24 — historical/ideological control
+
+Modern scholarship emphasizes that the chapter reflects a strong **pro-golah** perspective:
+the 597 BCE deportees are rhetorically privileged as “good figs,” while those remaining in Judah and those in Egypt are negatively classified.
+
+Studies of involuntary migration warn against treating:
+“exiles”
+as one uniform population experience.
+
+## M50E-47 — BINARY TEXTUAL SORTING CAN EXPRESS GROUP IDEOLOGY AND SHOULD NOT BE MISTAKEN FOR NEUTRAL DEMOGRAPHIC MEASUREMENT
+
+This is an essential control.
+
+---
+
+# M50E-48 — POPULATION CATEGORIES IN TEXT MAY BE RHETORICALLY CONSTRUCTED RATHER THAN NATURAL PHYSICAL CLASSES
+
+For Vardath:
+do not assume every binary mythic group maps to:
+two literal world populations
+or
+two physical strands.
+
+---
+
+# Jeremiah 21–24 — Vardath route/survival synthesis
+
+The key abstract process is:
+
+old city becomes unstable enclosure
+→ route choice opens
+→ exit can preserve life
+→ some transferred populations remain intact in exile
+→ later regathering/building/planting follows.
+
+This is structurally compatible with:
+
+present world-region becomes unstable
+→ gate/route opens
+→ some population crosses
+→ old local infrastructure fails
+→ survivor population later establishes successor state.
+
+## M50E-49 — JEREMIAH 21–24 STRONGLY SUPPORTS “SURVIVAL MAY REQUIRE LEAVING THE FAILING NODE” AS A PROCESS ANALOGUE
+
+But:
+no cosmic gate mechanics are specified.
+
+---
+
+# Jeremiah 21–24 — direct dragon/lattice comparison
+
+No dragon:
+appears.
+
+No support lattice:
+appears.
+
+No spiderweb:
+appears.
+
+There are:
+- walls;
+- gates;
+- storm;
+- fire;
+- branches;
+- broken pots;
+- baskets;
+- population movement.
+
+These inform:
+survival and sorting,
+not the support geometry.
+
+## M50E-50 — POPULATION-SORTING/TRANSFER TEXTS SHOULD BE SEPARATED FROM SUPPORT-MECHANISM TEXTS
+
+This keeps the model clean.
+
+---
+
+# Jeremiah 21–24 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## connected mesh
+Absent.
+
+## gate
+Strong but city/palace/access types.
+
+## binary route
+Exceptionally strong.
+
+## crossing boundary for survival
+Exceptionally strong.
+
+## population transfer
+Exceptionally strong.
+
+## remnant return/build/plant
+Exceptionally strong.
+
+## axial narrowing
+Absent.
+
+## same support structure transforms
+Absent.
+
+### Strict verdict
+
+**Jeremiah 21–24 is not a fingertrap-mechanism block. It is, however, one of Jeremiah’s strongest survival-routing and population-differentiation blocks. The defended interior becomes the death route while crossing outward becomes the life route; later, the population already removed from the old node is paradoxically treated as the preserved group that will return, be built up and planted. This is highly compatible with a Vardath-style principle that survival may require temporary transfer away from a failing present-world region, while remaining in place can be the more dangerous trajectory.**
+
+---
+
+# Jeremiah 21–24 pair / process matrix
+
+## outside besieger / inside city
+external pressure / enclosed population.
+
+## stay / exit
+death route / life route.
+
+## old city / surviving person
+failed infrastructure / preserved identity.
+
+## palace gate / royal traffic
+interface / institutional continuity.
+
+## cedar palace / fire
+high-status structure / destruction.
+
+## signet ring / hand
+close authority object / controller.
+
+## attached ring / torn-off ring
+coupled status / decoupled transfer.
+
+## shepherd / flock
+control node / population.
+
+## scatter / gather
+dispersion / reconvergence.
+
+## Branch / Davidic line
+growth projection / dynasty.
+
+## false dream / faithful word
+low-integrity signal / validated signal.
+
+## straw / wheat
+low-value message / high-value message.
+
+## word / fire-hammer
+information / transformation-tool projection.
+
+## two baskets / same fig class
+two containers / common object class.
+
+## good figs / bad figs
+preserved trajectory / destructive trajectory.
+
+## exile / return
+off-site displacement / reattachment.
+
+## tear-down-pluck-up / build-plant
+destruction / successor stabilization.
+
+---
+
+# Jeremiah 21–24 continuous transformation timeline
+
+Babylonian force surrounds city
+→ city weapons reverse/lose outward function
+→ enclosure pressure intensifies
+→ pestilence/famine/sword operate inside
+→ two routes are declared
+→ staying inside maps to death
+→ exiting across siege boundary maps to life
+→ city itself is burned
+→ palace gate remains governance test node
+→ cedar/high-status architecture loses permanence
+→ ruined city becomes information record to passersby
+→ some exile trajectories become one-way
+→ large exploitative houses lose legitimacy
+→ bodies can be expelled beyond gates
+→ wind replaces shepherd as motion driver
+→ cedar-nested elite enters labor-pain transition
+→ signet-ring coupling is torn from hand
+→ ruler/mother are hurled into foreign land
+→ ruler is projected as broken unwanted vessel
+→ failed shepherds scatter flock
+→ remnant is regathered to fold
+→ new shepherds replace failed control nodes
+→ Branch/dynastic successor is projected as growth
+→ north-return formula supersedes Egypt-return formula again
+→ prophet body destabilizes under word load
+→ land/pastures dry
+→ false prophets issue no-calamity forecast
+→ source-provenance test is articulated
+→ whirling storm runs until purpose completed
+→ near/far and heaven/earth presence are linked
+→ dreams propagate peer-to-peer
+→ dream and word are separated as straw/wheat
+→ word is projected as fire and rock-breaking hammer
+→ derivative prophets steal/copy/relabel messages
+→ key terminology itself becomes semantically corrupted
+→ two baskets of figs are placed before one node
+→ same fruit class separates into very good/very bad states
+→ deported population is classified as good figs
+→ watched exile population is preserved
+→ exiles are returned
+→ returned group is built rather than torn down
+→ planted rather than plucked
+→ internal identity/heart is reconfigured
+→ remaining/Egypt group is classified as bad figs
+→ alternate population branch enters sword/famine/pestilence/scattering trajectory.
+
+---
+
+# New master-mechanism additions from Jeremiah 21–24
+
+## M50E-1 — DEFENSIVE OUTPUT CAN REVERSE INTO INTERNAL FAILURE
+## M50E-2 — ENCLOSURE CAN BECOME PRESSURE TRAP
+## M50E-3 — FORTIFICATION ≠ HABITABILITY UNDER PROLONGED ENCLOSURE
+## M50E-4 — BOUNDARY CAN SEPARATE DEADLY INSIDE FROM SURVIVABLE OUTSIDE
+## M50E-5 — HOSTILE BOUNDARY CROSSING CAN BE SURVIVAL MOVE
+## M50E-6 — MINIMUM SUCCESS OUTPUT MAY BE LIFE, NOT LOCATION/PROPERTY
+## M50E-7 — POPULATION SURVIVAL CAN DIVERGE FROM INFRASTRUCTURE SURVIVAL
+## M50E-8 — DAILY OPERATING TIME ≠ CATASTROPHE CYCLE
+## M50E-9 — GATE TRAFFIC CAN INDICATE INSTITUTIONAL CONTINUITY
+## M50E-10 — HIGH STATUS/ELEVATION/MATERIAL QUALITY ≠ STRUCTURAL SURVIVAL
+## M50E-11 — RUINS CAN FUNCTION AS INFORMATION RECORD
+## M50E-12 — NOT ALL TRANSFERS ARE REVERSIBLE
+## M50E-13 — BEAUTIFUL LARGE STRUCTURE CAN HIDE UNSUSTAINABLE INPUT NETWORK
+## M50E-14 — GATE CAN BE EXPULSION BOUNDARY
+## M50E-15 — ENVIRONMENTAL FORCE CAN REPLACE HUMAN MOTION CONTROLLER
+## M50E-16 — HIGH/NESTED POSITION ≠ PROTECTION FROM TRANSITION
+## M50E-17 — CLOSE-COUPLED AUTHORITY OBJECT CAN BE DECOUPLED
+## M50E-18 — ORIGIN DOES NOT GUARANTEE RETURN
+## M50E-19 — HUMAN CAN BE PROJECTED AS BROKEN POT
+## M50E-20 — GOVERNANCE FAILURE CAN CREATE DISPERSION
+## M50E-21 — SCATTER CAN REVERSE THROUGH GATHER + CONTROL-NODE REPLACEMENT
+## M50E-22 — BRANCH IMAGE CAN MODEL DYNASTIC SUCCESSION
+## M50E-23 — POPULATION SAFETY MAY REQUIRE SUCCESSOR GOVERNANCE
+## M50E-24 — RETURN-TEMPLATE REPLACEMENT REPEATS WITHIN JEREMIAH
+## M50E-25 — INFORMATION LOAD CAN PROJECT AS PHYSIOLOGICAL DESTABILIZATION
+## M50E-26 — SOCIAL/ECOLOGICAL FAILURE CAN BE LITERARILY COUPLED
+## M50E-27 — ROUTE SAFETY DEPENDS ON SURFACE + VISIBILITY
+## M50E-28 — INFORMATION CORRUPTION CAN PROJECT AS RESOURCE TOXICITY
+## M50E-29 — CONFIDENT FORECAST ≠ VALID SOURCE
+## M50E-30 — FORECAST VALIDATION REQUIRES PROVENANCE/OBSERVATION/FIDELITY
+## M50E-31 — ROTATIONAL HIGH-ENERGY PROCESS CAN RUN TO TERMINAL CONDITION
+## M50E-32 — NEAR/FAR + HEAVEN/EARTH RELATION ≠ COLLAPSED LOCATION
+## M50E-33 — PEER NETWORK CAN OVERWRITE PRIOR IDENTITY/MEMORY
+## M50E-34 — MESSAGE CLASS CAN CONTAIN HIGH/LOW SIGNAL-VALUE MEMBERS
+## M50E-35 — INFORMATION CAN PROJECT AS MULTIPLE TRANSFORMATION TOOLS
+## M50E-36 — HIGH-ENERGY IMPULSE CAN FRACTURE RIGID SUBSTRATE
+## M50E-37 — DERIVATIVE REPORTS ≠ INDEPENDENT WITNESSES
+## M50E-38 — TEST SOURCE INDEPENDENCE BEFORE SCORING CONVERGENCE
+## M50E-39 — SURVIVING TERM ≠ STABLE MEANING
+## M50E-40 — SAME-CLASS SIDE-BY-SIDE COMPARISON IS HIGH-VALUE CONTROL
+## M50E-41 — SAME OBJECT CLASS CAN OCCUPY OPPOSITE QUALITY STATES
+## M50E-42 — DISPLACEMENT CAN FUNCTION AS PRESERVATION PATH
+## M50E-43 — TEMPORARY REMOVAL CAN PRESERVE POPULATION FOR RETURN/REBUILD
+## M50E-44 — POPULATION CAN BE PRESERVED THROUGH TEMPORARY OFF-SITE STORAGE
+## M50E-45 — PHYSICAL RETURN CAN COUPLE TO IDENTITY RECONFIGURATION
+## M50E-46 — REMAINING AT ORIGINAL NODE ≠ CONTINUITY
+## M50E-47 — BINARY TEXTUAL SORTING CAN EXPRESS GROUP IDEOLOGY
+## M50E-48 — TEXTUAL POPULATION CLASSES MAY BE RHETORICALLY CONSTRUCTED
+## M50E-49 — SURVIVAL MAY REQUIRE LEAVING FAILING NODE
+## M50E-50 — POPULATION TRANSFER LAYER ≠ SUPPORT-MECHANISM LAYER
+
+---
+
+# Number / timing register — Jeremiah 21–24
+
+Record without forcing:
+
+- Jeremiah 21 presents a **binary** route choice: life/death;
+- Jeremiah 22 contains repeated one-way return prohibitions for specific royal figures;
+- Jeremiah 23 names a **year of punishment** in prophetic judgment language but no recurrence period;
+- Jeremiah 24 contains **two baskets** of figs;
+- the figs are one object class split into two quality groups, not evidence of two literal worlds;
+- no gate-duration number;
+- no world-layer count;
+- no dragon-spring count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 21–24
+
+1. Working primary text: Jeremiah 21–24 NRSVUE, compared with NIV/ESV/other witnesses where useful.
+2. Jeremiah 21’s “way of life / way of death” occurs in a Babylonian siege context. The life route is surrender to the Chaldeans, not passage through a cosmic gate.
+3. The paradox that exiting the fortified city preserves life is nevertheless a strong abstract survival-routing result.
+4. Jeremiah 22’s signet-ring image is an authority/attachment metaphor; Haggai later reuses signet imagery positively, so the object class does not have one fixed meaning.
+5. Jeremiah 22:28’s broken-pot image is personification/metaphor and should not be treated as the literal Jeremiah 19 vessel.
+6. Jeremiah 23’s shepherd/Branch imagery belongs first to leadership/dynastic discourse.
+7. Jeremiah 23 sharply distinguishes source-grounded speech from dreams/self-generated prophecy and explicitly criticizes prophets who steal/repeat words from one another.
+8. That makes textual/source dependence a first-order concern in cross-text convergence analysis.
+9. Jeremiah 24 is strongly situated after the 597 BCE deportation of Jehoiachin/Jeconiah and elite/artisan groups.
+10. Hermann-Josef Stipp’s work explicitly studies the chapter in terms of deportees, remainees, returnees and diaspora.
+11. Scholarship also identifies a pro-golah ideology in Jeremiah 24; the “good figs” classification should not be mistaken for neutral sociological measurement of every individual who went or stayed.
+12. Studies of involuntary migration warn that “the exiles” were not one homogeneous population or experience.
+13. No explicit dragon/lattice-spring or strict spiderweb→fingertrap transformation appears.
+14. Strict fingertrap status remains negative; survival-route/population-sorting correspondence is exceptionally strong.
+
+---
+
+# Sources logged — Jeremiah 21–24
+
+Primary:
+- Jeremiah 21 NRSVUE:
+  https://www.bible.com/bible/3523/JER.21.NRSVUE
+- Jeremiah 22 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+22&version=NRSVUE
+- Jeremiah 23 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+23&version=NRSVUE
+- Jeremiah 24 NRSVUE:
+  https://www.bible.com/bible/3523/JER.24.NRSVUE
+
+Scholarly / historical controls:
+- Hermann-Josef Stipp, “Jeremiah 24: Deportees, Remainees, Returnees, and the Diaspora”:
+  https://epub.ub.uni-muenchen.de/38499/
+- Rebecca Jo Plant, *Good Figs, Bad Figs: Judicial Differentiation in the Book of Jeremiah*:
+  http://loc.gov/catdir/toc/ecip0717/2007018009.html
+- “Going home? Exiles, inciles and refugees in the Book of Jeremiah,” for the pro-golah ideology and competing survival options:
+  https://scielo.org.za/scielo.php?pid=S0259-94222019000300003&script=sci_arttext
+- C. A. Strine, “Is ‘exile’ enough? Jeremiah, Ezekiel, and the need for a taxonomy of involuntary migration”:
+  https://eprints.whiterose.ac.uk/141267
+
+---
+
+# SECTION 50E CHECKPOINT — JEREMIAH 21–24 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 21 makes the inside/outside survival inversion explicit: remaining in the fortified city is the death route, while crossing outward through the hostile siege boundary is the life route.**
+2. **That is a powerful Vardath survival analogue: once a node passes its stability threshold, “stay home” may be more dangerous than transfer.**
+3. **Population survival and infrastructure survival are separated—the city can burn while transferred people live.**
+4. **Jeremiah 23 provides one of the strongest source-validation rules in the Bible: source provenance, actual hearing/seeing, faithful transmission and independence from copied/“stolen” words matter.**
+5. **This means repeated derivative texts must never be counted as independent confirmation of a cosmological mechanism.**
+6. **Jeremiah 24’s two baskets are a controlled same-class comparison: the same fruit type is sorted into opposite quality states and mapped to opposite population trajectories.**
+7. **The exiled group is paradoxically the preserved group: temporary removal is followed by return, building and planting.**
+8. **Remaining at the original node is not automatically the continuity path.**
+9. **Scholarly pro-golah/ideological controls are important: the two baskets are rhetorical population categories, not literal cosmic binary populations.**
+10. **Strict spiderweb→fingertrap mechanism remains absent, but the survival-route and off-site-preservation logic is exceptionally relevant.**
+
+### Next live block
+
+**Jeremiah 25–29**
+
+Priority:
+- seventy-year Babylon period and exact timing control;
+- cup passed among nations as transferable hazard-state object;
+- universal roaring/treading imagery;
+- slain from end to end of earth;
+- yoke-bars in Jeremiah 27–28 — HIGH PRIORITY structural coupling/restraint;
+- wooden yoke broken → iron yoke substituted;
+- Hananiah prediction test and two-year time claim;
+- Jeremiah 29 exile settlement: build houses, plant gardens, marry, multiply;
+- seventy-year return promise;
+- letter as long-distance information carrier;
+- false prophets / dream validation;
+- compare wooden→iron yoke substitution with rigidity and support/coupling classes;
+- compare fixed 70-year historical interval with gate-cycle claims without importing it mechanically.
