@@ -7059,3 +7059,1111 @@ Priority:
 - new heart/new spirit;
 - land becoming like Eden;
 - HIGH PRIORITY: test whether Ezekiel 34–36 gives the **reopening/repopulation side** needed to complement the dragon/tree collapse sequence in 28–32.
+
+
+---
+
+# SECTION 52 progress I — Ezekiel 33–36
+## Fresh sequential research: watchman signal chain, fugitive-confirmed channel reopening, scattered flock re-gathered through mountains/watercourses, one coordinating shepherd, Mount Seir possession contrast, distributed mountain/branch recovery, cleansing water and Eden-like repopulation
+
+### Sequential-integrity note
+
+The mandatory three-file rule was checked before continuing.
+
+- Part 1 contains no direct sequential Ezekiel 33–36 pass.
+- Existing EXTRA-RESEARCH.md does not contain this direct block.
+- Part 2 ends the completed direct pass at Ezekiel 29–32.
+- Therefore Ezekiel 33–36 is the next fresh block.
+
+Primary text read in full:
+- Ezekiel 33 NRSVUE;
+- Ezekiel 34 NRSVUE;
+- Ezekiel 35 NRSVUE;
+- Ezekiel 36 NRSVUE.
+
+This block is especially important because Ezekiel 29–32 ended with:
+- dragon removed from water;
+- waters disturbed then later cleared;
+- dominant cedar/world-tree cast down;
+- deep closed;
+- rivers restrained;
+- mighty waters checked;
+- sky lights darkened;
+- broad population/support system broken.
+
+Ezekiel 33–36 now shifts strongly toward:
+- signal restored;
+- scattered living units re-gathered;
+- mountains/watercourses repopulated;
+- distributed branches and fruit returning;
+- rain and ground productivity;
+- cities rebuilt;
+- people and animals multiplied;
+- land described as Eden-like again.
+
+That makes this the best place yet to test the reopening / broad-state restoration side of the Vardath model.
+
+---
+
+# Ezekiel 33
+## Watchman = sensing node + transmitter; receiver responsibility; fugitive information carrier; Ezekiel's speech channel reopens
+
+## 33:1–9 — sentinel sees → trumpet sounds → receivers decide
+
+The watchman process is explicit:
+
+**incoming threat exists**
+→ **sentinel detects it**
+→ **sentinel emits signal**
+→ **population hears**
+→ **each receiver either responds or ignores**
+→ **outcome follows**.
+
+The chapter separates:
+- detection;
+- transmission;
+- reception;
+- interpretation/action;
+- consequence.
+
+### M52I-1 — A WATCHMAN IS A SENSOR/RELAY NODE, NOT THE THREAT OR THE RECEIVER
+
+The watchman does not create the sword, physically carry every listener to safety, or force the receiver response.
+
+Its function is:
+
+**sense**
+→ **encode warning**
+→ **transmit**.
+
+For Vardath node research this distinguishes:
+- structural node;
+- sensing/visible node;
+- communication role;
+- transport role.
+
+Not every eye/watcher/node must be a material gate.
+
+A node can simply detect or signal.
+
+### M52I-2 — OPEN SIGNAL CHANNEL DOES NOT GUARANTEE SUCCESSFUL RESPONSE
+
+Even with threat detected, warning transmitted and warning heard, the receiver can still fail to act.
+
+So:
+
+**information availability**
+≠
+**system-state correction**.
+
+---
+
+# 33:10–20 — turn/change rather than inherited fixed fate
+
+The moral argument again emphasizes that:
+- wicked can turn;
+- righteous can turn away;
+- current state/action matters.
+
+### M52I-3 — THE BOOK REPEATEDLY PREFERS STATE TRANSITION OVER FIXED ESSENCE
+
+For pair analysis:
+- same person may occupy different states;
+- inherited label does not permanently fix outcome.
+
+This remains a control for all same-hidden-figure proposals.
+
+---
+
+# 33:21–22 — fugitive arrives; remote city state is reported; mouth opens
+
+The narrative gives:
+- twelfth year;
+- tenth month;
+- fifth day;
+- fugitive/survivor arrives from Jerusalem;
+- message: city has fallen.
+
+The evening before the carrier arrives:
+- YHWH's hand is upon Ezekiel.
+
+When the fugitive arrives in the morning:
+- Ezekiel's mouth is open;
+- he is no longer unable to speak.
+
+This directly fulfills the sign sequence anticipated in Ezekiel 24:25–27.
+
+### M52I-4 — EZEKIEL 24'S PREDICTED SIGNAL CHAIN IS CLOSED IN EZEKIEL 33
+
+Earlier:
+**city loss**
+→ **fugitive will escape**
+→ **fugitive will arrive**
+→ **mouth will open**.
+
+Now:
+**city falls**
+→ **living carrier arrives**
+→ **report delivered**
+→ **speech channel open**.
+
+### M52I-5 — MATERIAL CARRIER + INFORMATION CARGO + RECEIVER CHANNEL CHANGE
+
+The fugitive is physically transported.
+
+What the fugitive carries that matters to Ezekiel is information.
+
+The information reception is correlated with a change in Ezekiel's speech state.
+
+Thus:
+**carrier**
+≠
+**cargo**
+≠
+**receiver channel**.
+
+All three must be tracked separately.
+
+---
+
+# 33:23–29 — survivors mistake continued occupancy for guaranteed possession
+
+The remaining inhabitants of ruined Judah argue roughly:
+
+Abraham was one
+→ he possessed land
+→ we are many
+→ therefore land belongs securely to us.
+
+The oracle rejects that reasoning.
+
+### M52I-6 — OCCUPANCY DOES NOT EQUAL SECURE OWNERSHIP OR STABLE WORLD STATE
+
+The physical land can remain occupied while its social/political future remains unstable.
+
+---
+
+# 33:30–33 — signal is heard but treated as performance
+
+People gather to hear Ezekiel.
+
+They listen, but do not act.
+
+### M52I-7 — A HIGH-FIDELITY MESSAGE CAN FAIL AT THE BEHAVIORAL OUTPUT STAGE
+
+The bottleneck is not always sender, channel or decoder.
+
+It can be decision/action after decoding.
+
+This is useful for interpreting mythic memory:
+preservation of an image or story does not guarantee preservation of its original process meaning.
+
+---
+
+# Ezekiel 33 strict Vardath screening
+
+Strong:
+- sensing node/watchman;
+- signal relay;
+- living information carrier;
+- remote-event reporting;
+- speech-channel reopening;
+- receiver-state distinction.
+
+Absent:
+- lattice contraction;
+- dragon support;
+- world throat;
+- branch re-expansion.
+
+### Verdict
+
+**Ezekiel 33 is an information-network chapter, not a strict geometry chapter. It closes Ezekiel 24's carrier/speech loop with exceptional clarity.**
+
+---
+
+# Ezekiel 34
+## Failed shepherd network → scattered flock across mountains → gathering from countries → one coordinating shepherd → watercourses, rain, trees, ground and secure repopulation
+
+The conventional political metaphor is strong:
+- shepherds = rulers/leaders;
+- sheep = people.
+
+The shepherd metaphor for rulers is widely attested in ancient Near Eastern and biblical literature. Scholarship on Ezekiel 34 commonly reads the indictment as judgment on failed leadership followed by a promised new order in which YHWH shepherds the people and a Davidic ruler appears.
+
+That ordinary reading remains primary.
+
+---
+
+# 34:1–10 — operators feed themselves, flock loses cohesion
+
+Failed shepherds:
+- consume resources;
+- fail to strengthen weak;
+- fail to heal sick;
+- fail to bind injured;
+- fail to return strays;
+- fail to seek lost.
+
+Result:
+- no effective shepherd;
+- flock scatters;
+- animals prey on it;
+- sheep spread across mountains/high hills and across the face of the earth.
+
+### M52I-8 — DISTRIBUTED SYSTEM FAILURE CAN BEGIN WITH OPERATOR FAILURE, NOT STRUCTURE FAILURE
+
+The mountains still exist.
+
+The land still exists.
+
+The flock scatters because coordination/support fails.
+
+This gives another alternative to physical gate explanations:
+sometimes distribution is social/administrative.
+
+---
+
+# 34:11–16 — scattered points are searched, sorted, gathered and brought into an inhabited landscape
+
+The recovery sequence:
+
+**scattered sheep**
+→ **search**
+→ **sorting**
+→ **rescue from all scattered locations**
+→ **brought out from peoples**
+→ **gathered from countries**
+→ **brought into own land**
+→ **fed on mountains**
+→ **fed by watercourses**
+→ **fed in inhabited places**
+→ **injured bound**
+→ **weak strengthened**.
+
+The scattering is associated with a **day of clouds and thick darkness**.
+
+### M52I-9 — AFTER DARK/CLOUD SCATTERING, THE SYSTEM REASSEMBLES ACROSS MULTIPLE LANDSCAPE NODES
+
+Ezekiel 32:
+- dragon collapse;
+- heavens darkened;
+- water disturbed.
+
+Ezekiel 34:
+- sheep remembered as scattered on cloud/darkness day;
+- living units collected from multiple remote locations;
+- redistributed onto mountains/watercourses/inhabited regions.
+
+Under the Vardath comparison this resembles the post-event repopulation phase.
+
+Control:
+the direct literary subject remains exile, leadership and restoration.
+
+---
+
+# 34:17–22 — sorting occurs inside the restored flock
+
+The shepherd then judges:
+- sheep vs sheep;
+- rams/goats;
+- strong vs weak;
+- those muddying water/trampling pasture vs those deprived.
+
+### M52I-10 — GATHERING DOES NOT END DIFFERENTIATION
+
+Even after reassembly:
+- internal sorting continues;
+- resource access must be regulated.
+
+This parallels Ezekiel 20's gather → sort → admit sequence.
+
+---
+
+# 34:23–24 — one shepherd / David
+
+A single shepherd is placed over the flock.
+
+### M52I-11 — MANY DISTRIBUTED LIVING UNITS CAN BE COORDINATED BY ONE CENTRAL OPERATOR
+
+Stripped systems form:
+
+**many scattered units**
+→ **one central shepherd/controller**
+→ **coordinated feeding/rest/state**.
+
+For Vardath this is compatible with distributed nodes under a dominant axis/operator.
+
+But the source's ordinary meaning is political/theological kingship.
+
+The one shepherd should not automatically be turned into the physical rod-body.
+
+---
+
+# 34:25–31 — peace covenant → dangerous animals removed → safe wilderness → rain → trees fruit → ground yield
+
+The restoration sequence continues materially/ecologically:
+
+**covenant of peace**
+→ **dangerous animals removed**
+→ **safe wilderness/forest habitation**
+→ **seasonal showers**
+→ **trees yield fruit**
+→ **ground yields produce**
+→ **people secure**
+→ **yoke bars broken**
+→ **predation ends**
+→ **planting/food security restored**.
+
+### M52I-12 — RESTORATION IS MULTICHANNEL
+
+A stable successor state requires simultaneous recovery of:
+- population distribution;
+- leadership;
+- safety;
+- weather;
+- vegetation;
+- soil productivity;
+- food supply;
+- freedom from predation/oppression.
+
+This strongly resembles the Vardath principle that a new beginning is not merely gate closure.
+
+The environment must stabilize across coupled systems.
+
+### M52I-13 — RAIN AND TREE FRUIT RETURN AFTER THE CLOUD/DARKNESS SCATTERING PHASE
+
+Narrative polarity:
+
+**cloud/darkness + scattering**
+→ later
+**seasonal rain + fruitful trees + safe inhabited land**.
+
+The text does not describe the physical cloud mechanics, but this belongs in the recovery-phase register.
+
+---
+
+# Ezekiel 34 strict Vardath screening
+
+Strong:
+- distributed living units;
+- one coordinator;
+- cloud/darkness scatter phase;
+- gather from many domains;
+- mountain/watercourse repopulation;
+- rain/trees/ground recovery;
+- safe inhabited endpoint.
+
+Missing:
+- same physical lattice changing angle;
+- explicit rod/fingertrap contraction;
+- same support structure reopening.
+
+### Verdict
+
+**Not a strict fingertrap description, but one of the strongest post-collapse reassembly/ecological-stabilization sequences yet.**
+
+---
+
+# Ezekiel 35
+## Mount Seir as rival landscape-system; movement cut off; two nations/two lands possession claim; mountain/hill/valley/watercourse saturation
+
+Mount Seir/Edom is addressed as if it were a person/system.
+
+The mountain:
+- is spoken to;
+- has towns;
+- can be made desolate;
+- has traffic coming and going;
+- contains mountains, hills, valleys and watercourses.
+
+---
+
+# 35:7 — movement channel shut
+
+The oracle says movement through Mount Seir will be cut off:
+- those passing through;
+- those returning.
+
+### M52I-14 — A LANDSCAPE SYSTEM CAN BE DESCRIBED BY ITS TRAFFIC STATE
+
+Active landscape:
+**entry/exit/transit occurs**.
+
+Desolated landscape:
+**traffic ceases**.
+
+Mobility is a separate system property from whether terrain exists.
+
+---
+
+# 35:10 — two nations and two countries
+
+Mount Seir/Edom claims possession of:
+- two nations;
+- two countries/lands.
+
+The immediate referents are Israel/Judah, not future/present/past world turns.
+
+### M52I-15 — TWO LANDS IS A HARD CONTROL AGAINST AUTOMATIC WORLD-LAYER READING
+
+The text itself supplies a historical/geopolitical meaning.
+
+Do not turn every pair of lands into adjacent worlds.
+
+---
+
+# 35:8 — mountains/hills/valleys/watercourses all receive consequences
+
+The chapter enumerates:
+- mountains;
+- hills;
+- valleys;
+- watercourses.
+
+This is a distributed landscape field.
+
+### M52I-16 — EZEKIEL TREATS LAND AS A MULTI-NODE GEOGRAPHIC SYSTEM
+
+This matters in chapter 36, where the same kinds of landscape components are addressed again but in restoration rather than destruction.
+
+Ezekiel 35→36 forms a polarity:
+
+**landscape nodes desolated**
+→
+**landscape nodes restored**.
+
+---
+
+# Ezekiel 35 strict screening
+
+Useful:
+- traffic state;
+- paired lands;
+- distributed geographic nodes.
+
+No:
+- fingertrap;
+- dragon;
+- axial contraction;
+- inter-world transfer.
+
+### Verdict
+
+**A destruction-state landscape control that sets up the reversal in chapter 36.**
+
+---
+
+# Ezekiel 36
+## Mountains/hills/watercourses/valleys addressed as distributed system; branches and fruit appear before returning people; cities repopulate; cleansing water; new internal state; desolate land becomes Eden-like
+
+This chapter is one of the strongest restoration/reopening analogues found so far.
+
+---
+
+# 36:1–7 — the distributed landscape is addressed node by node
+
+The prophetic address includes:
+- mountains;
+- hills;
+- watercourses/ravines;
+- valleys;
+- desolate wastes;
+- deserted towns.
+
+These units have:
+- been attacked;
+- become plunder;
+- been spoken about by neighbors;
+- suffered shame.
+
+### M52I-17 — THE LAND IS NOT ONE UNDIFFERENTIATED OBJECT
+
+Ezekiel represents it as a connected field of differentiated local components.
+
+This matters directly to the user's **surrounding trees / other node points** thought from Ezekiel 31.
+
+Ezekiel 31:
+- one dominant cedar;
+- many surrounding trees of Eden;
+- streams distributed to other trees.
+
+Ezekiel 36:
+- plural mountains;
+- hills;
+- watercourses;
+- valleys;
+- towns;
+- wastes
+
+are all separately named but participate in one restoration.
+
+Under the Vardath model, this is compatible with a distributed node field rather than a single central object.
+
+Ordinary control:
+it is poetic personification of the land of Israel.
+
+---
+
+# 36:8 — mountains shoot forth branches and yield fruit because people are about to return
+
+The mountains are told:
+
+**shoot forth branches**
+→ **yield fruit**
+→ **people are about to come home**.
+
+The environmental receiver state changes before population arrival.
+
+### M52I-18 — THE RECEIVING LANDSCAPE PREPARES BEFORE LIVING CARGO RETURNS
+
+Sequence:
+
+**desolate landscape**
+→ **branching/fruiting begins**
+→ **incoming population approaches**
+→ **population settles**.
+
+This resembles Vardath's idea that the receiving/reopened structure must become viable before or during transfer.
+
+### M52I-19 — FROM EZEKIEL 31 TO 36, DOMINANT TREE COLLAPSE IS FOLLOWED BY DISTRIBUTED BRANCH RECOVERY
+
+This is a major composite finding.
+
+Ezekiel 31:
+- one extraordinary central cedar dominates;
+- other trees surround it;
+- deep/waters sustain it;
+- cedar falls;
+- branches scatter;
+- deep closes;
+- rivers are restrained.
+
+Ezekiel 36:
+- plural mountains/landscape nodes are addressed;
+- branches shoot forth again;
+- fruit returns;
+- population returns;
+- cities rebuild.
+
+The source never states:
+**the fallen cedar physically unfolded into the mountains**.
+
+So the strict fingertrap criterion remains unmet.
+
+But the state sequence is strikingly close to the Vardath broad/axial cycle:
+
+**dominant axis / world-tree state**
+→ **collapse**
+→ **water shutdown**
+→ **distributed field**
+→ **branching recovery**
+→ **repopulation**.
+
+This is materially stronger than isolated motif comparison.
+
+---
+
+# 36:9–12 — substrate becomes productive; people and animals multiply
+
+The land is:
+- turned toward;
+- tilled;
+- sown;
+- populated;
+- cities inhabited;
+- ruins rebuilt;
+- humans multiplied;
+- animals multiplied;
+- restored beyond former condition.
+
+### M52I-20 — REOPENING/RESTORATION IS NOT EMPTY
+
+This directly supports the user's non-negotiable rule:
+
+**restored world/land = inhabited**.
+
+The text's own endpoint includes:
+- people;
+- animals;
+- cities;
+- agriculture.
+
+No empty shell.
+
+---
+
+# 36:13–15 — land accused of devouring people; relation changes
+
+The land had a reputation for:
+- devouring people;
+- bereaving nation.
+
+The restored relation reverses:
+- it will no longer devour/bereave.
+
+### M52I-21 — SAME LANDSCAPE CAN CHANGE FROM HOSTILE RECEIVER TO SUPPORTIVE RECEIVER
+
+This is another state-pair:
+**same substrate**
+→ **different interaction with inhabitants**.
+
+For Vardath:
+a world-layer need not be intrinsically good/bad;
+its phase/state determines habitability and transfer conditions.
+
+---
+
+# 36:16–21 — scatter phase remembered
+
+The chapter recalls:
+- prior occupation;
+- defilement;
+- wrath;
+- people scattered among nations;
+- dispersed through countries.
+
+The restoration does not pretend it never happened.
+
+### M52I-22 — RESTORATION RETAINS EVENT HISTORY
+
+Again:
+**new beginning**
+≠
+**rewind**.
+
+---
+
+# 36:22–28 — gather → cleanse with water → new heart/spirit → settled land
+
+The sequence:
+
+**take from nations**
+→ **gather from countries**
+→ **bring into own land**
+→ **clean water sprinkled**
+→ **cleansing**
+→ **new heart**
+→ **new spirit**
+→ **stone heart removed**
+→ **flesh heart given**
+→ **behavioral/internal state altered**
+→ **live in land**.
+
+### M52I-23 — EXTERNAL RELOCATION AND INTERNAL RECONFIGURATION ARE SEPARATE STAGES
+
+This is extremely important.
+
+Transfer alone does not complete restoration.
+
+The text separates:
+1. geographic gathering;
+2. water-cleansing;
+3. internal state change;
+4. stable habitation.
+
+For Vardath comparisons, distinguish:
+- transport;
+- environmental processing;
+- biological/psychological adaptation;
+- settlement.
+
+### Water control
+
+The clean water is ritual purification imagery.
+
+Do not identify it automatically with:
+- flood water;
+- upper canopy drainage;
+- world-transfer water.
+
+But it belongs in the broader water-state register as a different function.
+
+### M52I-24 — STONE → FLESH HEART IS A SAME-BODY INTERNAL MATERIAL METAPHOR
+
+It is not a literal heart transplant description.
+
+It expresses internal reconfiguration.
+
+This is another strong same-person/state-change control.
+
+---
+
+# 36:29–32 — environmental failure removed
+
+The promised state includes:
+- grain called forth;
+- famine removed;
+- fruit increased;
+- produce increased.
+
+### M52I-25 — POPULATION RESTORATION REQUIRES FOOD-SYSTEM RESTORATION
+
+Again the text treats ecology as coupled to social recovery.
+
+---
+
+# 36:33–36 — ruined land rebuilt, desolation tilled, land becomes like the garden of Eden
+
+The chapter explicitly says:
+
+**towns inhabited**
++
+**waste places rebuilt**
++
+**desolate land tilled**
+→ observers say
+**the desolate land has become like the garden of Eden**.
+
+The ruined towns become:
+- inhabited;
+- fortified.
+
+### M52I-26 — EZEKIEL CLOSES THE EDEN/CHERUB/TREE DESTRUCTION CLUSTER WITH AN EDEN-LIKE RESTORED LANDSCAPE
+
+This is a major cross-block connection.
+
+Ezekiel 28:
+- Eden;
+- cherub;
+- holy mountain;
+- fiery stones;
+- expulsion.
+
+Ezekiel 31:
+- trees of Eden;
+- dominant cedar;
+- waters;
+- fall/descent.
+
+Ezekiel 36:
+- formerly desolate inhabited land;
+- explicitly compared to Eden.
+
+So the Eden motif itself moves through:
+
+**elevated guarded/garden state**
+→ **tree-system fall**
+→ **desolation/scattering**
+→ **land restoration**
+→ **Eden-like inhabited state**.
+
+This does not prove the Vardath machine.
+
+But it strongly supports treating Ezekiel as a sequence of changing projections/states, not isolated symbols.
+
+---
+
+# 36:37–38 — ruined cities filled with people like festival flocks
+
+The final image is dense repopulation.
+
+Ruined towns:
+→ filled with flocks of people.
+
+This reconnects directly to Ezekiel 34.
+
+### M52I-27 — THE FLOCK METAPHOR AND CITY REPOPULATION CONVERGE
+
+Ezekiel 34:
+**scattered sheep**
+→ **gathered flock**.
+
+Ezekiel 36:
+**ruined cities**
+→ **filled with flock-like population**.
+
+The human/animal metaphor is carried from mobility/gathering into settlement.
+
+---
+
+# Cross-block synthesis — Ezekiel 28–36
+## The strongest collapse → distributed recovery sequence so far
+
+### active/axial visual state
+Ezekiel 28:
+- cherub;
+- holy mountain;
+- fiery stones;
+- Eden;
+- internal fire;
+- expulsion/downcast movement.
+
+### dragon/current state
+Ezekiel 29:
+- great dragon in water;
+- scales;
+- attached fish;
+- central body extraction.
+
+### body/operator state
+Ezekiel 30:
+- arms/hands break or strengthen;
+- weapon transfers between operators.
+
+### dominant world-tree / distributed canopy state
+Ezekiel 31:
+- roots in deep water;
+- trunk/axis rises;
+- crown in clouds;
+- broad branches;
+- other trees around it;
+- birds/animals/nations supported;
+- streams feed other trees;
+- dominant tree falls;
+- branches distribute across landscape;
+- deep closes;
+- rivers restrained.
+
+### dragon/environment collapse
+Ezekiel 32:
+- dragon disturbs water;
+- captured/destroyed;
+- body becomes landscape-scale;
+- heavens darken;
+- waters later become clear/quiet.
+
+### signal restart
+Ezekiel 33:
+- fugitive arrives;
+- speech channel reopens.
+
+### population regrouping
+Ezekiel 34:
+- scattered flock collected;
+- mountains/watercourses repopulated;
+- one coordinating shepherd;
+- rain;
+- fruiting trees;
+- productive ground.
+
+### distributed landscape reactivation
+Ezekiel 36:
+- mountains/hills/watercourses/valleys addressed;
+- mountains shoot branches;
+- fruit appears;
+- people return;
+- cities rebuild;
+- people/animals multiply;
+- clean water/internal renewal;
+- land becomes Eden-like.
+
+### M52I-28 — EZEKIEL 28–36 NOW FORMS A SERIOUS COMPOSITE VARDATH PHASE SEQUENCE
+
+Under the user's mature model:
+
+**cherub / feathered-serpent / Squatter-Man active projection**
+→ **dragon/current in water**
+→ **axis/world-tree dominance**
+→ **collapse and water shutdown**
+→ **darkened sky**
+→ **quieting waters**
+→ **information channel reopening**
+→ **distributed-node repopulation**
+→ **rain / trees / ground recovery**
+→ **branches return across the landscape**
+→ **inhabited Eden-like successor state**.
+
+The ordinary literary reading remains:
+- prophetic judgment;
+- empire imagery;
+- exile;
+- restoration.
+
+But as a structural comparison this is substantially stronger than isolated word-matching because the motifs occur in a directional sequence.
+
+---
+
+# The user's surrounding trees = other node points hypothesis
+
+This can now be stated more precisely.
+
+Ezekiel 31 supplies:
+- one dominant cedar;
+- multiple other trees of Eden;
+- water distributed from the deep/streams;
+- one tree exceeding the others;
+- broad branch shelter;
+- collective environmental effects when the central tree falls.
+
+Ezekiel 36 supplies:
+- multiple named landscape units;
+- distributed branches/fruit;
+- returning population across them.
+
+Within Vardath Cosmology, a testable reading is:
+
+> **dominant cedar = temporarily dominant axial node / trunk-state; surrounding trees = other distributed nodes/branches in the broader field.**
+
+When the dominant state fails:
+- distributed system is disrupted.
+
+When the field recovers:
+- plural landscape/branch nodes become productive again.
+
+This is not established by Ezekiel's ordinary literary meaning.
+
+But unlike a loose symbolic association, it makes a concrete prediction:
+future relevant texts should show **one dominant tree/axis coordinated with multiple lesser tree/node structures whose water, light, population or movement states change together**.
+
+Record that as a forward test.
+
+---
+
+# Pair / role register update — Ezekiel 33–36
+
+## watchman / population
+- operator/sensor ↔ receiver network;
+- not same figure.
+
+## signal / action
+- information pair;
+- open warning channel does not force action.
+
+## fugitive / Ezekiel
+- carrier ↔ receiver;
+- message triggers receiver channel-state transition.
+
+## failed shepherds / one shepherd
+- distributed failed operators ↔ single coordinating operator;
+- political/kingship meaning primary.
+
+## sheep / land
+- mobile living units ↔ receiving landscape.
+
+## Mount Seir / mountains of Israel
+- rival landscape systems;
+- destruction/restoration polarity;
+- not upper/lower worlds.
+
+## stone heart / flesh heart
+- P3 same-person internal state pair.
+
+## desolate land / Eden-like land
+- P3 same substrate before/after state pair;
+- one of the strongest explicit environmental state transformations.
+
+---
+
+# Timing / number register — Ezekiel 33–36
+
+- Ezekiel 33 fugitive report:
+  **twelfth year, tenth month, fifth day**.
+- Evening-before / morning-arrival sequence:
+  Ezekiel's mouth-opening transition is tied narratively to the fugitive's arrival.
+- No numerical recurrence in 34–36 should yet be forced into a cosmological cycle.
+
+---
+
+# Strict fingertrap test — Ezekiel 33–36
+
+## Within these chapters alone
+No chapter explicitly states:
+- one broad woven structure;
+- strand-angle change;
+- narrowing into rod/throat;
+- transfer through that same throat;
+- physical re-expansion of that same structure.
+
+So **strict single-text fingertrap test remains negative**.
+
+## Across Ezekiel 28–36 as a composite phase sequence
+The evidence is stronger:
+- cherub/axis;
+- dragon/current;
+- world-tree;
+- broad branches/support;
+- surrounding trees;
+- water coupling;
+- collapse;
+- deep/rivers shut;
+- sky dark;
+- later waters calm;
+- distributed mountains/branches reactivate;
+- people/animals return;
+- Eden-like inhabited state.
+
+### Corrected composite verdict
+
+**Ezekiel does not narrate the literal fingertrap mechanics in one continuous technical description, but chapters 28–36 now give the strongest broad-to-axis/collapse-to-distributed-recovery state sequence found so far in the direct Bible pass.**
+
+That should be retained as a **high-priority composite match**, not downgraded merely because the intermediate geometry is distributed across successive allegories.
+
+---
+
+# Sources logged — Ezekiel 33–36
+
+Primary:
+- Ezekiel 33 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+33&version=NRSVUE
+- Ezekiel 34 NRSVUE:
+  https://classic.biblegateway.com/passage/?search=Ezekiel+34&version=NRSVUE
+- Ezekiel 35 NRSVUE:
+  https://search.biblegateway.com/passage/?search=Ezekiel+35&version=NRSVUE
+- Ezekiel 36 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Ezekiel+36&version=NRSVUE
+
+Key primary subunits:
+- Ezekiel 33:21–22, fugitive / mouth reopening:
+  https://search.biblegateway.com/passage/?search=Ezekiel+33&version=NRSVUE
+- Ezekiel 34:11–31, gathering / mountains / watercourses / one shepherd / rain / trees:
+  https://www.biblegateway.com/passage/?search=Ezekiel+34%3A11-31&version=NRSVUE
+- Ezekiel 36:1–15, landscape nodes / branches / fruit / repopulation:
+  https://www.biblegateway.com/passage/?search=Ezekiel+36&version=NRSVUE
+- Ezekiel 36:16–38, gathering / clean water / new heart / Eden-like land:
+  https://www.biblegateway.com/passage/?search=Ezekiel+36%3A16-38&version=NRSVUE
+
+Literary / kingship control:
+- William H. Brownlee, “Ezekiel's Poetic Indictment of the Shepherds,” Harvard Theological Review 51.4:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/ezekiels-poetic-indictment-of-the-shepherds/79704ABB9BBDBFB179697186B9A594F8
+- Deborah W. Rooke, Zadok's Heirs, chapter “Ezekiel: A Vision of Hierocracy?”:
+  https://academic.oup.com/book/26648/chapter-abstract/195387297
+- Daniel I. Block, Beyond the River Chebar:
+  https://www.jstor.org/stable/j.ctt1cgf09q
+
+Vardath internal cross-links:
+- book/chapters/07-the-world-disc-and-the-lattice-dome.md — broad distributed sky lattice, nodes, SKY → ARC → NARROW WEAVE → LADDER → ROD → THROAT → reopening;
+- book/chapters/02-the-figure-in-the-current.md — Squatter-Man as current-state and node→eye projection;
+- book/chapters/41-the-sky-is-part-of-the-machine.md — broad dome, local nodes, active axial rod-body;
+- book/chapters/49-the-full-cycle.md — distributed quiet lattice → convergence → axial state → catastrophe → reopening;
+- preceding Part 2 Ezekiel 28–32 research — cherub/dragon/world-tree/water/sky collapse sequence.
+
+---
+
+# SECTION 52I — EZEKIEL 33–36 COMPLETE
+
+## Strongest new findings
+
+1. **Ezekiel 33 gives a clean sensor-network grammar: sentinel detects threat → sends signal → receivers hear → receivers act or fail to act.**
+2. **The Ezekiel 24 prediction is explicitly closed in Ezekiel 33: fugitive arrives from fallen Jerusalem and Ezekiel's speech channel reopens.**
+3. **Ezekiel 34 shows a distributed living system scattered across mountains and the face of the earth after operator failure, then searched, sorted, gathered and redistributed onto mountains, watercourses and inhabited places.**
+4. **The scattered phase is associated with cloud/thick darkness; the restored phase includes seasonal showers, fruiting trees, productive ground and safe habitation.**
+5. **One shepherd coordinates many distributed sheep, a useful central-operator / distributed-node analogue while remaining ordinary kingship/shepherd metaphor.**
+6. **Ezekiel 35→36 deliberately reverses the same landscape field: mountains/hills/valleys/watercourses move from desolation and blocked traffic to productive, inhabited condition.**
+7. **Ezekiel 36:8 is especially important: the mountains shoot forth branches and yield fruit because the people are about to return—the receiving environment begins recovery before the living population arrives.**
+8. **Across Ezekiel 31→36, the sequence becomes dominant cedar/world-tree collapse + deep/rivers restrained → later distributed mountains/branches/fruit + water/ecology + repopulation. This is the strongest composite reopening analogue yet.**
+9. **The user's surrounding trees = other node points proposal is now a precise forward hypothesis: one dominant tree/axis should coordinate with multiple lesser tree/node structures whose environmental states change together.**
+10. **Ezekiel 36 restoration is explicitly inhabited: humans and animals multiply, cities are rebuilt, land is tilled, and ruined towns fill with people.**
+11. **Gathering, clean-water cleansing, internal heart/spirit change and settlement are separate stages, so transfer alone is not equivalent to completed restoration.**
+12. **The formerly desolate land becoming like the garden of Eden closes an Eden sequence that began with the cherub/holy mountain in Ezekiel 28 and continued through the trees of Eden in Ezekiel 31.**
+13. **The strict one-object fingertrap transformation is still not technically described, but Ezekiel 28–36 now forms a high-value composite state sequence under the many-camera-angles method.**
+
+## Next live block
+
+**Ezekiel 37–39**
+
+Priority:
+- valley of dry bones;
+- breath/wind entering from four directions;
+- bones → sinews → flesh → skin → breath → standing host;
+- grave opening and ascent from graves;
+- two sticks Judah/Joseph becoming one in the hand;
+- one king / one shepherd / one land;
+- Gog from far north;
+- mountains / unwalled settlements;
+- earthquake;
+- mountains thrown down / cliffs and walls fall;
+- torrential rain / hail / fire / sulfur;
+- weapons burned seven years;
+- burial/cleansing seven months;
+- HIGH PRIORITY: test Ezekiel 37's **distributed dead components → reassembly → breath → standing body** and **two rods → one rod** directly against the user's lattice-convergence / paired-strand model, then test 38–39 as another gate/catastrophe phase.
