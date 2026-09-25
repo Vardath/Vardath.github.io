@@ -29187,3 +29187,1451 @@ Priority:
 - prophet words “eaten” as information-ingestion projection;
 - iron/bronze fortified wall;
 - compare linen hidden-in-rock process and drought ecology with Vardath enclosure, water-loss and inherited-material reset.
+
+
+---
+
+# SECTION 50 progress C — Jeremiah 11–15
+## First-time direct research pass: covenant network failure, planted olive-tree burning, Anathoth tree/fruit cut-off plot, land/ecology withering, uproot→return→rebuild sequence, linen loincloth body-contact→rock-cleft burial→ruin, wine-vessel collision, light→darkness and crown descent, drought through empty cisterns/cracked ground/animal distress, false prediction under observable famine, four destroyer classes, gate-winnowing, words eaten, failing brook, northern iron/bronze and prophet-as-bronze-wall
+
+Jeremiah 11–15 is one of the strongest **material-state / hydrology / uproot-replant** blocks encountered so far.
+
+Its most valuable Vardath-relevant process clusters are:
+
+1. **Jeremiah 12**:
+   productive land/ecology fails,
+   populations are uprooted,
+   then a later phase explicitly brings them back and builds them again.
+
+2. **Jeremiah 13**:
+   a close-contact linen object is removed from its proper interface,
+   hidden in a rock cleft,
+   left through a time interval,
+   retrieved,
+   and found structurally ruined.
+
+3. **Jeremiah 14**:
+   intact access to water-storage sites produces empty vessels because the environmental water supply itself has failed;
+   ground cracks;
+   vegetation fails;
+   animals alter normal reproductive/survival behavior.
+
+4. **Jeremiah 15**:
+   population is sorted into multiple destructive outcomes;
+   winnowing occurs at gates;
+   information is “eaten” into the prophet;
+   apparently dependable water becomes a failing brook;
+   Jeremiah becomes a bronze fortified wall.
+
+None of these gives the dragon lattice-spring directly.
+
+But together they sharpen the project’s distinction between:
+- support;
+- enclosure;
+- stored resource;
+- environment;
+- time exposure;
+- material degradation;
+- information transfer;
+- population sorting;
+- rebuilding.
+
+---
+
+# Jeremiah 11:1–8 — covenant is an information network requiring reception and execution
+
+Jeremiah receives:
+“words of this covenant.”
+
+He must:
+- hear;
+- speak;
+- proclaim;
+- require action.
+
+The intended chain is:
+
+source information
+→ messenger
+→ population
+→ behavior.
+
+## M50C-1 — COVENANT CAN BE ANALYZED AS INFORMATION→RESPONSE CONTROL LOOP
+
+Failure occurs when:
+message is present
+but
+behavior does not update.
+
+---
+
+# Jeremiah 11:6 — covenant information is propagated through towns and streets
+
+The message is not kept:
+inside one sanctuary.
+
+It is broadcast across:
+Judah’s towns;
+Jerusalem’s streets.
+
+## M50C-2 — DISTRIBUTED POPULATION CONTROL REQUIRES MULTI-NODE INFORMATION PROPAGATION
+
+This continues:
+trumpets;
+watchmen;
+gate preaching.
+
+---
+
+# Jeremiah 11:9–10 — Israel/Judah jointly break a prior coupling relation
+
+Two corporate branches:
+Israel;
+Judah.
+
+Both:
+break covenant.
+
+## M50C-3 — TWO RELATED SYSTEM BRANCHES CAN FAIL THE SAME COUPLING RULE WITHOUT BEING TWO PHYSICAL STRANDS
+
+Important pair control.
+
+---
+
+# Jeremiah 11:11–14 — escape and return communication both fail
+
+Disaster:
+cannot escape.
+
+People:
+cry to alternate gods;
+no rescue.
+
+Jeremiah:
+again told not to intercede.
+
+## M50C-4 — SYSTEM FAILURE CAN CLOSE BOTH PHYSICAL ESCAPE AND INFORMATION-RESCUE CHANNELS
+
+These are distinct:
+movement failure;
+communication failure.
+
+---
+
+# Jeremiah 11:16–17 — planted green olive tree is exposed to storm/fire and branch loss
+
+Initial state:
+green;
+beautiful;
+fruitful;
+planted.
+
+Transition:
+roar/tumult of great storm
+→ fire
+→ branches consumed/broken.
+
+## M50C-5 — STABLE ROOTED BIOLOGICAL SYSTEM CAN LOSE AERIAL BRANCH STRUCTURE UNDER HIGH-ENERGY DISTURBANCE
+
+This is a strong:
+rooted-system / branch-failure
+analogue.
+
+### Vardath comparison
+
+If ground-support remains but upper branching fails,
+the system need not be totally annihilated.
+
+However:
+Jeremiah’s olive tree is Israel/Judah personification,
+not the dragon lattice.
+
+---
+
+# Jeremiah 11:17 — planter and planted system remain distinct
+
+The source:
+planted tree.
+
+Tree:
+population/system.
+
+## M50C-6 — CREATOR/PLANTER ≠ STRUCTURE ITSELF
+
+Another identity control.
+
+---
+
+# Jeremiah 11:18–19 — Jeremiah is projected as lamb and as tree-with-fruit
+
+Jeremiah says:
+gentle lamb led to slaughter.
+
+Plotters say:
+destroy tree with its fruit;
+cut him from land of living;
+erase name.
+
+One human figure therefore becomes:
+animal
+and
+tree
+within the same passage.
+
+## M50C-7 — ONE HUMAN FIGURE CAN RECEIVE MULTIPLE INCOMPATIBLE BIOLOGICAL PROJECTIONS WITHOUT LITERAL TRANSFORMATION
+
+This is a very strong Squatter-Man control.
+
+---
+
+# Jeremiah 11:19 — tree + fruit destruction represents central node plus output/continuity
+
+Plot:
+destroy tree
+**with its fruit**.
+
+## M50C-8 — DESTROYING SOURCE NODE PLUS OUTPUT CAN TERMINATE BOTH CURRENT FUNCTION AND FUTURE CONTINUITY
+
+Tree:
+producer.
+
+Fruit:
+output / seed / continuation.
+
+---
+
+# Jeremiah 11:19 — “land of the living” again marks life-state domain
+
+As in Isaiah 53:
+cut off from land of living.
+
+## M50C-9 — LAND OF LIVING SHOULD BE READ FIRST AS LIFE/DEATH DOMAIN, NOT STACKED WORLD GEOGRAPHY
+
+Keep this consistent.
+
+---
+
+# Jeremiah 11:21–23 — information output is threatened with bodily death
+
+Anathoth:
+“do not prophesy”
+or:
+die.
+
+## M50C-10 — CONTROL OF INFORMATION CAN BE ATTEMPTED BY THREATENING THE TRANSMITTER
+
+Information suppression:
+not channel physics,
+but social coercion.
+
+---
+
+# Jeremiah 12:1–3 — wicked are projected as planted/rooted/fruiting even while morally misaligned
+
+They:
+planted;
+root;
+grow;
+bear fruit.
+
+Yet:
+lips near;
+hearts far.
+
+## M50C-11 — BIOLOGICAL PRODUCTIVITY AND INFORMATION/RELATIONAL ALIGNMENT CAN DIVERGE
+
+A successful-looking system:
+may be globally misaligned.
+
+---
+
+# Jeremiah 12:4 — land, grass, animals and birds respond together to human-system disorder
+
+Land:
+mourns/parches.
+
+Grass:
+withers.
+
+Animals/birds:
+perish/swept away.
+
+## M50C-12 — ECOLOGICAL FAILURE CAN PROPAGATE ACROSS SOIL/VEGETATION/ANIMAL SUBSYSTEMS
+
+This is another broad consequence cluster.
+
+---
+
+# Jeremiah 12:5 — foot race → horse race is a scale/intensity escalation test
+
+If:
+running with footmen exhausts,
+
+then:
+horses will exceed capacity.
+
+If:
+safe land causes failure,
+
+then:
+Jordan thicket/floodplain danger will be worse.
+
+## M50C-13 — SYSTEM CAPABILITY SHOULD BE TESTED AGAINST HIGHER-INTENSITY REGIME, NOT ONLY NORMAL CONDITIONS
+
+This is extremely relevant to Vardath survival planning.
+
+Normal climate performance
+≠
+catastrophe performance.
+
+---
+
+# Jeremiah 12:7–9 — inheritance changes from beloved possession to predator field
+
+The inheritance/land/population is projected as:
+- beloved;
+- lion;
+- speckled bird of prey surrounded by predators.
+
+## M50C-14 — ONE TERRITORIAL SYSTEM CAN SHIFT THROUGH MULTIPLE ANIMAL/RELATIONAL PROJECTIONS WITHOUT ONTOLOGICAL IDENTITY
+
+---
+
+# Jeremiah 12:10–13 — vineyard/field is trampled into desolate wilderness; sowing no longer yields expected crop
+
+Many shepherds:
+ruin vineyard;
+trample field.
+
+Productive land:
+→ desolate wilderness.
+
+Sow:
+wheat.
+
+Reap:
+thorns / gain nothing.
+
+## M50C-15 — INPUT→OUTPUT RELATION CAN INVERT UNDER DAMAGED ENVIRONMENTAL/SOCIAL CONDITIONS
+
+Valid input:
+seed/labor.
+
+Output:
+wrong/unusable crop.
+
+---
+
+# Jeremiah 12:14–15 — uproot is followed by compassion, return and restoration
+
+This is one of the most important process sequences in the block:
+
+populations/nations
+→ uprooted from land
+→ Judah also removed
+→ later compassion
+→ each returned to inheritance/land.
+
+## M50C-16 — UPROOTING DOES NOT NECESSARILY TERMINATE SYSTEM IDENTITY
+
+The same populations:
+can be removed
+and
+later reattached.
+
+---
+
+# M50C-17 — JEREMIAH 12 EXPLICITLY SUPPORTS REMOVE→RETURN→REESTABLISH RATHER THAN ANNIHILATE→CREATE EX NIHILO
+
+This is highly compatible with:
+**reset, not rewind**.
+
+Different:
+the ordinary mechanism is exile/restoration.
+
+---
+
+# Jeremiah 12:16 — returned outsiders can be “built up” in the midst of the people
+
+Learned behavior:
+→ established/built up.
+
+## M50C-18 — REINTEGRATION CAN PRODUCE A NEW COMPOSITE SUCCESSOR POPULATION
+
+Successor state:
+may include former outsiders.
+
+---
+
+# Jeremiah 13:1–2 — linen loincloth begins as close-contact functional garment
+
+Object:
+linen loincloth/belt.
+
+Initial position:
+directly on Jeremiah’s loins/body.
+
+Instruction:
+do not put/dip it in water.
+
+## M50C-19 — MATERIAL OBJECT BEGINS IN HIGH-CONTACT INTERFACE STATE WITH A LIVING BODY
+
+This matters because the later hiding removes it from its intended functional environment.
+
+---
+
+# Jeremiah 13:1 — “do not put it in water” isolates the sign-act from ordinary washing
+
+Interpretations vary over why this detail matters.
+
+At minimum:
+water exposure is deliberately controlled.
+
+## M50C-20 — MATERIAL-STATE EXPERIMENT CAN CONTROL ONE ENVIRONMENTAL VARIABLE BEFORE RELOCATION
+
+Do not overclaim:
+this is not a laboratory experiment in the modern sense.
+
+But water exposure is intentionally specified.
+
+---
+
+# Jeremiah 13:4–5 — body-contact object is transferred into a rock cleft
+
+Sequence:
+
+worn close to body
+→ removed
+→ carried to Perath/Euphrates
+→ hidden in cleft/crevice of rock.
+
+## M50C-21 — ONE OBJECT CAN PASS FROM BIOLOGICAL INTERFACE TO GEOLOGICAL ENCLOSURE
+
+This is a striking enclosure-class transition.
+
+body-contact state
+→ rock-enclosed state.
+
+---
+
+# Jeremiah 13:4 — Perath/Euphrates location is debated
+
+NRSVUE notes:
+“Euphrates”
+or
+“Parah.”
+
+Modern scholarship discusses:
+- literal Euphrates;
+- nearby Parah/Perath;
+- literary/symbolic Euphrates association.
+
+Klaas Smelik’s detailed literary study treats the identification as a genuine interpretive problem.
+
+## M50C-22 — UNCERTAIN LOCATION MUST LOWER PRECISION OF ANY DISTANCE/TIMING MECHANISM
+
+Do not use:
+journey distance
+as a cosmological number.
+
+---
+
+# Jeremiah 13:6 — long dwell time precedes retrieval
+
+“After many days”:
+the object is retrieved.
+
+## M50C-23 — MATERIAL DEGRADATION CAN DEPEND ON EXPOSURE DURATION INSIDE AN ENCLOSURE
+
+Time:
+a state variable.
+
+---
+
+# Jeremiah 13:7 — same object remains identifiable but becomes ruined/useless
+
+Jeremiah:
+digs;
+retrieves the loincloth.
+
+Identity continuity:
+preserved enough to recognize object.
+
+Function:
+lost.
+
+## M50C-24 — OBJECT IDENTITY CAN PERSIST WHILE FUNCTIONAL/MATERIAL INTEGRITY FAILS
+
+This is highly relevant to Vardath reset logic.
+
+Same inherited material
+can survive
+but no longer support its old function.
+
+---
+
+# M50C-25 — ENCLOSURE DOES NOT GUARANTEE PRESERVATION
+
+The rock cleft:
+hides/protects from some exposures.
+
+Yet:
+object deteriorates.
+
+This is an important ark/cave/container control.
+
+---
+
+# Jeremiah 13:8–11 — ruined garment is explicitly mapped to broken attachment relation
+
+Loincloth:
+should cling to body.
+
+Israel/Judah:
+were meant to cling to source.
+
+Ruined cloth:
+models ruined relation.
+
+## M50C-26 — CLOSE-CONTACT GARMENT CAN MODEL COUPLING/ATTACHMENT WITHOUT BEING A SUPPORT STRUCTURE
+
+This prevents:
+loincloth
+→ lattice
+overreading.
+
+---
+
+# Jeremiah 13 — strict Vardath comparison of rock-cleft sign
+
+Possible superficial sequence:
+
+close-coupled material
+→ separated
+→ hidden in rock
+→ time passes
+→ retrieved transformed/ruined.
+
+Vardath:
+worlds separated/coupled through changing geometry.
+
+But missing:
+- ground-support lattice;
+- broad mesh;
+- axial throat;
+- transfer through same support structure;
+- reopening.
+
+## M50C-27 — ROCK-CLEFT MATERIAL TRANSFORMATION IS A HIGH-VALUE ENCLOSURE/DEGRADATION ANALOGUE, NOT A FINGERTRAP MATCH
+
+---
+
+# Jeremiah 13:12–14 — vessels are filled, then vessels/people are dashed together
+
+Wine jars:
+expected to hold wine.
+
+People:
+projected as filled with drunkenness.
+
+Then:
+parents/children dashed against each other.
+
+## M50C-28 — CONTAINER SATURATION CAN BE FOLLOWED BY CONTAINER-COLLISION FAILURE
+
+This is a strong:
+fill
+→ loss of control
+→ collision
+sequence.
+
+---
+
+# Jeremiah 13:16 — light→twilight→deep darkness creates navigation failure on mountains
+
+Feet:
+stumble on darkening mountains.
+
+Expected:
+light.
+
+Output:
+gloom/deep darkness.
+
+## M50C-29 — LIGHT-STATE CHANGE CAN CONVERT OTHERWISE PASSABLE TOPOGRAPHY INTO NAVIGATION HAZARD
+
+Important survival variable.
+
+---
+
+# Jeremiah 13:18 — crown descends from ruler’s head
+
+King/queen mother:
+sit low.
+
+Crown:
+comes down.
+
+## M50C-30 — POLITICAL STATUS REVERSAL CAN BE PROJECTED AS HIGH→LOW MATERIAL MOVEMENT
+
+Do not confuse:
+crown descent
+with
+world-layer descent.
+
+---
+
+# Jeremiah 13:19 — southern towns shut; no one opens them
+
+## M50C-31 — ACCESS NODES CAN ENTER CLOSED STATE WITH NO AVAILABLE OPERATOR
+
+This is a true boundary-state failure.
+
+---
+
+# Jeremiah 13:20–21 — north-origin force changes hierarchy and triggers labor-pain projection
+
+Former allies/trainees:
+become rulers over Judah.
+
+Population:
+labor pains.
+
+## M50C-32 — EXTERNAL NETWORK CAN REVERSE CONTROL DIRECTION AND RECLASSIFY FORMER PARTNER AS CONTROLLER
+
+---
+
+# Jeremiah 13:23 — Cushite skin / leopard spots are persistence analogies
+
+The text asks whether:
+skin color;
+leopard spots
+can be changed.
+
+Function:
+habitual behavior is deeply entrenched.
+
+## M50C-33 — STABLE BIOLOGICAL APPEARANCE CAN BE USED AS ANALOGY FOR BEHAVIORAL PERSISTENCE WITHOUT LINKING ETHNICITY/SPECIES TO COSMIC MECHANISM
+
+Important ethical/textual control.
+
+The verse must not be used to infer:
+race-based essence
+or
+literal transformation.
+
+---
+
+# Jeremiah 13:24 — chaff is driven by desert wind
+
+## M50C-34 — LOSS OF COHESION CONVERTS POPULATION INTO WIND-MOBILE PARTICLES IN THE IMAGE
+
+This repeats Isaiah’s chaff class.
+
+---
+
+# Jeremiah 14:1–3 — drought converts water-search network into repeated empty returns
+
+Nobles:
+send servants.
+
+Servants:
+go to cisterns/water holes.
+
+They:
+find no water.
+
+Vessels:
+return empty.
+
+## M50C-35 — STORAGE/ACCESS INFRASTRUCTURE CAN REMAIN PRESENT WHILE RESOURCE FIELD FAILS
+
+This contrasts Jeremiah 2:
+
+### Jeremiah 2
+water-source exists;
+cistern boundary broken.
+
+### Jeremiah 14
+cistern/access point exists;
+water itself absent.
+
+---
+
+# M50C-36 — HYDROLOGICAL FAILURE HAS DISTINCT MODES: LEAKAGE VS SUPPLY LOSS
+
+This is a major environmental-model result.
+
+Vardath post-event water modeling must track:
+- source volume;
+- storage;
+- permeability;
+- drainage;
+- evaporation;
+- rainfall.
+
+---
+
+# Jeremiah 14:4 — no rain → cracked ground → farmer distress
+
+Sequence:
+
+rain absent
+→ soil dries/cracks
+→ agriculture fails
+→ farmers affected.
+
+## M50C-37 — ATMOSPHERIC WATER FAILURE PROPAGATES INTO SOIL-MECHANICAL CHANGE BEFORE HUMAN FOOD FAILURE
+
+This is especially relevant to:
+canopy/atmosphere hypotheses.
+
+---
+
+# Jeremiah 14:5 — doe abandons newborn because grass is absent
+
+Normal maternal behavior:
+fails under resource stress.
+
+## M50C-38 — EXTREME ECOLOGICAL STRESS CAN OVERRIDE NORMAL REPRODUCTIVE/CARE BEHAVIOR
+
+This is a powerful habitability indicator.
+
+---
+
+# Jeremiah 14:6 — wild asses move to bare heights and pant; vegetation failure affects sensory/physiological state
+
+## M50C-39 — DROUGHT PROPAGATES FROM WATER→VEGETATION→ANIMAL PHYSIOLOGY/BEHAVIOR
+
+This is a complete ecological cascade.
+
+---
+
+# Jeremiah 14:7–9 — source is asked to act like traveler/stranger rather than permanent inhabitant
+
+The lament asks why source seems:
+like stranger;
+traveler staying only one night.
+
+## M50C-40 — TEMPORARY TRANSIT OCCUPANCY IS DISTINCT FROM PERMANENT INDWELLING
+
+Another shelter/residence class control.
+
+---
+
+# Jeremiah 14:11–12 — intercession fails; three destruction modes are named
+
+Despite:
+prayer;
+fasting;
+offerings,
+
+the announced modes are:
+- sword;
+- famine;
+- pestilence.
+
+## M50C-41 — ONE COLLAPSE CAN OPERATE THROUGH MULTIPLE HAZARD CHANNELS SIMULTANEOUSLY
+
+Physical violence;
+resource failure;
+disease
+must remain distinct.
+
+---
+
+# Jeremiah 14:13–16 — false prophets predict no sword/famine despite observable drought
+
+False message:
+peace;
+no sword;
+no famine.
+
+Observed/announced conditions:
+drought;
+famine risk;
+war.
+
+## M50C-42 — PREDICTION SYSTEM SHOULD BE TESTED AGAINST OBSERVABLE ENVIRONMENTAL AND FUTURE OUTCOMES
+
+This is another anti-confirmation-bias rule.
+
+---
+
+# M50C-43 — FALSE REASSURANCE CAN BE FALSIFIED BY THE SAME HAZARD IT DENIES
+
+The false prophets:
+are themselves said to die by sword/famine.
+
+---
+
+# Jeremiah 14:17–18 — field/city form a two-zone hazard map
+
+Outside/field:
+sword dead.
+
+Inside/city:
+famine sickness.
+
+## M50C-44 — DIFFERENT ZONES OF ONE CRISIS CAN HAVE DIFFERENT DOMINANT HAZARDS
+
+This is extremely useful for survival modeling.
+
+There may be:
+no single universally safe location.
+
+---
+
+# Jeremiah 14:19–22 — healing expected but terror arrives; rain/cloud capacity is explicitly questioned
+
+The lament asks:
+can idols produce rain?
+can heavens give showers?
+
+## M50C-45 — RAINFALL SOURCE ATTRIBUTION IS AN EXPLICIT CAUSAL QUESTION IN THE TEXT
+
+Ancient people recognized:
+rain as critical system input
+and debated agency.
+
+This does not settle:
+modern physical mechanism.
+
+---
+
+# Jeremiah 15:1 — Moses and Samuel are invoked as historical mediator controls
+
+Even if:
+Moses;
+Samuel
+stood before source,
+
+outcome would not change.
+
+## M50C-46 — PREVIOUS HIGH-EFFECT MEDIATORS CAN LOSE DISCRIMINATING POWER IN A NEW SYSTEM STATE
+
+Historical precedent:
+does not guarantee current result.
+
+---
+
+# Jeremiah 15:2 — population is sorted into four destination/outcome classes
+
+Those for:
+death;
+sword;
+famine;
+captivity.
+
+## M50C-47 — ONE POPULATION CAN BE PARTITIONED INTO MULTIPLE FAILURE OUTPUT CLASSES
+
+This is a sorting process,
+not one uniform fate.
+
+---
+
+# Jeremiah 15:3 — four destroyer classes operate in sequence/parallel
+
+- sword;
+- dogs;
+- birds;
+- wild animals.
+
+Functions:
+kill;
+drag;
+devour;
+destroy.
+
+## M50C-48 — DESTRUCTIVE PROCESS CAN PASS MATERIAL THROUGH MULTIPLE CONSUMER/REMOVAL STAGES
+
+human death
+→ animal removal/scavenging.
+
+Again:
+ecological reallocation after social collapse.
+
+---
+
+# Jeremiah 15:6–7 — backward movement → winnowing at gates
+
+Population:
+keeps going backward.
+
+Then:
+winnowed with winnowing fork
+at gates of land.
+
+## M50C-49 — GATE CAN FUNCTION AS SORTING/SEPARATION INTERFACE
+
+This is another gate class.
+
+At gate:
+population/material is processed/sorted in the image.
+
+---
+
+# M50C-50 — SORTING GATE ≠ TRANSIT THROAT WITHOUT SAME-STRUCTURE GEOMETRY
+
+Important Vardath control.
+
+---
+
+# Jeremiah 15:12 — northern iron + bronze are resistance-strength imagery
+
+Question:
+can iron be broken,
+iron from north,
+and bronze?
+
+## M50C-51 — MATERIAL STRENGTH CAN MODEL RESISTANCE/UNBREAKABILITY WITHOUT LITERAL METAL BODY
+
+This sets up the later bronze-wall projection.
+
+---
+
+# Jeremiah 15:13–14 — treasures/people move into enemy territory
+
+Wealth:
+plunder.
+
+Population:
+serves enemies in unknown land.
+
+## M50C-52 — MATERIAL AND HUMAN CARGO CAN SHARE FORCED-TRANSFER DESTINATION WHILE REMAINING DISTINCT OBJECT CLASSES
+
+Repeats Isaiah 39.
+
+---
+
+# Jeremiah 15:16 — words are found and eaten
+
+Information:
+found
+→ ingested
+→ becomes joy/delight in heart.
+
+## M50C-53 — INFORMATION CAN BE PROJECTED AS FOOD THAT CROSSES BODY BOUNDARY AND CHANGES INTERNAL STATE
+
+This is an exceptionally strong information-ingestion projection.
+
+### Control
+
+Words:
+do not become literal calories.
+
+Shared process:
+external input
+→ internalized
+→ state change.
+
+---
+
+# M50C-54 — INFORMATION TRANSFER CAN BE REPRESENTED THROUGH MATERIAL-INGESTION GRAMMAR WITHOUT MATERIAL IDENTITY
+
+Important for:
+Ezekiel scroll-eating later.
+
+---
+
+# Jeremiah 15:17 — hand/indignation becomes imposed load leading to social isolation
+
+Jeremiah:
+sits alone
+under weight/hand.
+
+## M50C-55 — INFORMATION/ROLE LOAD CAN ALTER SOCIAL NETWORK POSITION
+
+---
+
+# Jeremiah 15:18 — source is compared to deceitful brook / waters that fail
+
+Jeremiah asks:
+why like unreliable stream?
+
+## M50C-56 — APPARENT WATER SOURCE CAN FAIL TEMPORALLY EVEN WHEN CHANNEL/STREAM FORM EXISTS
+
+This is a third hydrological failure class.
+
+### three Jeremiah water failures now:
+
+1. broken cistern:
+retention failure.
+
+2. drought:
+supply failure.
+
+3. deceitful/intermittent brook:
+reliability/timing failure.
+
+---
+
+# M50C-57 — WATER SECURITY REQUIRES SOURCE, RETENTION AND TEMPORAL RELIABILITY
+
+This is a major Vardath habitability rule.
+
+---
+
+# Jeremiah 15:19 — return/restore plus mouth filtering
+
+If Jeremiah:
+returns,
+restored.
+
+If he separates:
+precious from worthless speech,
+becomes source’s mouth.
+
+## M50C-58 — INFORMATION NODE CAN REQUIRE FILTERING BEFORE TRUSTED OUTPUT
+
+Signal quality:
+not only quantity.
+
+---
+
+# Jeremiah 15:20 — Jeremiah becomes fortified bronze wall
+
+One person:
+projected as:
+fortified wall of bronze.
+
+Opponents:
+fight against wall;
+do not prevail.
+
+## M50C-59 — HUMAN AGENT CAN BE PROJECTED AS HIGH-STRENGTH DEFENSIVE MATERIAL/ARCHITECTURE
+
+Another Squatter-Man/body-architecture control.
+
+---
+
+# Jeremiah 15:20 — bronze-wall projection differs from Vardath ground-support lattice
+
+Bronze wall:
+- defensive barrier;
+- static;
+- one-agent metaphor.
+
+Vardath dragon springs:
+- distributed;
+- elastic/tensioned;
+- support ground;
+- change geometry.
+
+## M50C-60 — HIGH-STRENGTH BARRIER ≠ LOAD-BEARING SPRING LATTICE
+
+Permanent structural distinction.
+
+---
+
+# Jeremiah 11–15 — linen / rock / water synthesis
+
+These chapters now supply several distinct interactions between matter and environment:
+
+### linen in rock cleft
+material object
+→ time exposure
+→ ruined.
+
+### cistern under drought
+enclosure intact
+→ no resource.
+
+### cracked soil
+water input absent
+→ substrate fractures.
+
+### intermittent brook
+channel exists
+→ output unreliable.
+
+## M50C-61 — SAME “FAILURE” OUTCOME CAN ARISE FROM MATERIAL DEGRADATION, RESOURCE ABSENCE, SUBSTRATE CHANGE OR TEMPORAL UNRELIABILITY
+
+This is exactly the kind of distinction the final Vardath process map needs.
+
+---
+
+# Jeremiah 11–15 — direct Vardath dragon/lattice comparison
+
+No explicit dragon:
+appears.
+
+No spiderweb:
+appears.
+
+But the block provides predicted environmental consequences relevant to a ground-support/atmospheric transition:
+
+- storm/fire;
+- land withering;
+- animal/bird loss;
+- desertification;
+- wind scattering;
+- deep darkness;
+- drought;
+- cracked ground;
+- empty water storage;
+- animal reproductive stress;
+- population sorting/exile.
+
+## M50C-62 — JEREMIAH 11–15 ADDS HIGH-RESOLUTION FAILURE MODES TO THE DOWNSTREAM SIDE OF THE VARDATH MODEL
+
+It improves:
+the consequence model,
+not the support-lattice mechanism.
+
+---
+
+# Jeremiah 11–15 strict spiderweb → fingertrap screening
+
+## dragon ground-support spring
+Absent.
+
+## web/lattice
+Absent.
+
+## rock enclosure
+Strong:
+loincloth in cleft.
+
+## time-dependent material change
+Strong.
+
+## water failure
+Exceptionally strong.
+
+## ground cracking
+Strong.
+
+## wind scattering
+Strong.
+
+## gate
+Present as winnowing/sorting interface.
+
+## metal wall
+Strong but static-defense class.
+
+## broad mesh→throat
+Absent.
+
+## transfer through same support structure
+Absent.
+
+## reopening
+Absent.
+
+### Strict verdict
+
+**Jeremiah 11–15 does not describe the Vardath spiderweb→fingertrap mechanism. Its greatest contribution is failure-mode resolution. Jeremiah 13 proves that an object can survive enclosure but lose function through time-dependent material degradation; Jeremiah 14 distinguishes water-supply collapse from storage failure and tracks drought into cracked ground, vegetation loss and altered animal behavior; Jeremiah 15 adds population sorting, information ingestion, intermittent-water reliability failure and a static bronze-wall control. These are important downstream constraints on any physical gate/reset model.**
+
+---
+
+# Jeremiah 11–15 pair / process matrix
+
+## covenant word / population
+information input / receiver network.
+
+## Israel / Judah
+paired corporate branches.
+
+## olive tree / storm-fire
+rooted productive system / destructive disturbance.
+
+## lamb / tree
+one human / two incompatible projections.
+
+## tree / fruit
+producer / output-continuity.
+
+## planted wicked / bad alignment
+biological success image / relational failure.
+
+## land-grass / animals-birds
+environmental substrate / dependent ecology.
+
+## uproot / return
+displacement / reattachment.
+
+## loincloth / body
+close-contact object / living interface.
+
+## loincloth / rock cleft
+portable textile / geological enclosure.
+
+## useful cloth / ruined cloth
+functional state / degraded state.
+
+## wine jar / drunken population
+container / personified contents.
+
+## light / mountain stumbling
+illumination / route viability.
+
+## crown high / low seat
+status / reversal.
+
+## cistern / empty vessel
+storage node / failed resource return.
+
+## rain / cracked ground
+atmospheric input / substrate mechanical response.
+
+## doe-fawn / no grass
+normal care / ecological stress override.
+
+## field / city
+sword-dominant zone / famine-dominant zone.
+
+## four outcomes / one population
+sorting classes / input population.
+
+## gate / winnowing
+interface / separation process.
+
+## words / eating
+information / ingestion projection.
+
+## brook / failed water
+channel / unreliable output.
+
+## bronze wall / opponents
+static defensive barrier / external force.
+
+---
+
+# Jeremiah 11–15 continuous transformation timeline
+
+covenant information is received by messenger
+→ message propagates through towns/streets
+→ Israel/Judah break coupling relation
+→ physical escape and intercession/rescue channels fail
+→ planted green olive system is struck by storm/fire
+→ branches are consumed
+→ Jeremiah is projected first as lamb then tree with fruit
+→ plot attempts to remove source node and continuity
+→ Anathoth threatens transmitter to stop information output
+→ prosperous wicked are projected as rooted/fruiting
+→ land/grass/animals/birds deteriorate
+→ system capability is challenged from foot-race to horse-race intensity
+→ vineyard/field is trampled into wilderness
+→ wheat input yields thorns/no gain
+→ populations are uprooted
+→ later compassion triggers return to inherited land
+→ some outsiders are built into successor population
+→ linen cloth begins as close-contact body interface
+→ water exposure is deliberately constrained
+→ cloth is removed from body
+→ transported to Perath/Euphrates/Parah location
+→ hidden in rock cleft
+→ many days pass
+→ cloth is dug out
+→ same object remains identifiable
+→ functional/material integrity is lost
+→ ruined cloth becomes coupling-failure symbol
+→ jars are filled
+→ population is projected as saturated/drunken
+→ containers/people collide
+→ light fades and mountain navigation becomes hazardous
+→ crown/high status descends
+→ southern access nodes close
+→ north-origin force reverses hierarchy
+→ population scatters like wind-driven chaff
+→ drought begins
+→ servants move to cisterns
+→ cisterns yield no water
+→ vessels return empty
+→ rain absence cracks ground
+→ farmers fail
+→ grass disappears
+→ doe abandons newborn
+→ wild asses move/pant on bare heights
+→ intercession remains closed
+→ sword/famine/pestilence form parallel hazards
+→ false prediction denies sword/famine
+→ field and city develop different dominant hazard states
+→ rain/cloud causation becomes explicit question
+→ prior mediator precedents Moses/Samuel are declared insufficient
+→ population is sorted into death/sword/famine/captivity classes
+→ sword/dogs/birds/wild animals form four destroyer stages
+→ population is winnowed at land gates
+→ northern iron/bronze resistance imagery appears
+→ wealth and population become forced-transfer cargo
+→ words are found
+→ words are eaten/internalized
+→ internal information state changes
+→ prophet experiences weight/isolation
+→ reliable-water expectation fails in deceitful-brook image
+→ return/restore pathway opens for prophet
+→ speech is filtered precious/worthless
+→ prophet becomes fortified bronze wall.
+
+---
+
+# New master-mechanism additions from Jeremiah 11–15
+
+## M50C-1 — COVENANT CAN BE INFORMATION→RESPONSE CONTROL LOOP
+## M50C-2 — DISTRIBUTED CONTROL REQUIRES MULTI-NODE INFORMATION PROPAGATION
+## M50C-3 — RELATED POLITICAL PAIR ≠ PHYSICAL TWO-STRAND SYSTEM
+## M50C-4 — PHYSICAL ESCAPE + INFORMATION RESCUE CAN FAIL SEPARATELY
+## M50C-5 — ROOTED SYSTEM CAN LOSE BRANCH STRUCTURE UNDER DISTURBANCE
+## M50C-6 — PLANTER ≠ PLANTED STRUCTURE
+## M50C-7 — ONE HUMAN CAN CARRY INCOMPATIBLE ANIMAL/TREE PROJECTIONS
+## M50C-8 — SOURCE + FRUIT DESTRUCTION REMOVES CURRENT + FUTURE OUTPUT
+## M50C-9 — LAND OF LIVING ≠ STACKED WORLD BY DEFAULT
+## M50C-10 — INFORMATION CAN BE SUPPRESSED THROUGH TRANSMITTER THREAT
+## M50C-11 — PRODUCTIVITY AND RELATIONAL ALIGNMENT CAN DIVERGE
+## M50C-12 — ECOLOGICAL FAILURE CAN CROSS SOIL/PLANT/ANIMAL SUBSYSTEMS
+## M50C-13 — CAPABILITY MUST BE TESTED AGAINST HIGH-INTENSITY REGIME
+## M50C-14 — TERRITORY CAN SHIFT MULTIPLE ANIMAL PROJECTIONS
+## M50C-15 — VALID INPUT CAN YIELD WRONG OUTPUT IN DAMAGED SYSTEM
+## M50C-16 — UPROOTING DOES NOT NECESSARILY TERMINATE IDENTITY
+## M50C-17 — REMOVE→RETURN→REESTABLISH SUPPORTS RESET/CONTINUITY
+## M50C-18 — SUCCESSOR POPULATION CAN INCORPORATE FORMER OUTSIDERS
+## M50C-19 — MATERIAL OBJECT CAN BEGIN IN HIGH-CONTACT BIOLOGICAL INTERFACE
+## M50C-20 — SIGN-ACT CAN CONTROL AN ENVIRONMENTAL VARIABLE
+## M50C-21 — OBJECT CAN TRANSFER BIOLOGICAL INTERFACE→GEOLOGICAL ENCLOSURE
+## M50C-22 — UNCERTAIN LOCATION LOWERS DISTANCE/TIMING PRECISION
+## M50C-23 — MATERIAL DEGRADATION CAN DEPEND ON ENCLOSURE DURATION
+## M50C-24 — OBJECT IDENTITY CAN PERSIST WHILE FUNCTION FAILS
+## M50C-25 — ENCLOSURE ≠ PRESERVATION
+## M50C-26 — CLOSE-CONTACT GARMENT CAN MODEL COUPLING
+## M50C-27 — ROCK-CLEFT DEGRADATION ≠ FINGERTRAP
+## M50C-28 — CONTAINER SATURATION CAN PRECEDE COLLISION FAILURE
+## M50C-29 — LIGHT CHANGE CAN ALTER TOPOGRAPHIC ROUTE VIABILITY
+## M50C-30 — STATUS REVERSAL CAN PROJECT AS HIGH→LOW MATERIAL MOVEMENT
+## M50C-31 — ACCESS NODE CAN CLOSE WITHOUT OPERATOR
+## M50C-32 — EXTERNAL NETWORK CAN REVERSE CONTROL DIRECTION
+## M50C-33 — BIOLOGICAL APPEARANCE ANALOGY ≠ RACIAL/COSMIC ESSENCE
+## M50C-34 — LOSS OF COHESION CAN PRODUCE WIND-MOBILE PARTICLES
+## M50C-35 — RESOURCE INFRASTRUCTURE CAN REMAIN WHILE RESOURCE FIELD FAILS
+## M50C-36 — HYDROLOGICAL FAILURE INCLUDES LEAKAGE + SUPPLY-LOSS MODES
+## M50C-37 — RAIN FAILURE CAN PRODUCE SOIL FRACTURE BEFORE FOOD FAILURE
+## M50C-38 — ECOLOGICAL STRESS CAN OVERRIDE NORMAL CARE BEHAVIOR
+## M50C-39 — DROUGHT CASCADE: WATER→VEGETATION→ANIMAL PHYSIOLOGY
+## M50C-40 — TEMPORARY TRANSIT OCCUPANCY ≠ PERMANENT DWELLING
+## M50C-41 — ONE COLLAPSE CAN USE VIOLENCE/RESOURCE/DISEASE CHANNELS
+## M50C-42 — PREDICTION SHOULD BE TESTED AGAINST OBSERVED/FUTURE HAZARDS
+## M50C-43 — FALSE REASSURANCE CAN BE FALSIFIED BY DENIED HAZARD
+## M50C-44 — ONE CRISIS CAN HAVE ZONE-SPECIFIC DOMINANT HAZARDS
+## M50C-45 — RAINFALL SOURCE ATTRIBUTION IS EXPLICIT CAUSAL QUESTION
+## M50C-46 — PRIOR EFFECTIVE MEDIATOR ≠ CURRENT OUTCOME GUARANTEE
+## M50C-47 — ONE POPULATION CAN SORT INTO MULTIPLE FAILURE CLASSES
+## M50C-48 — DESTRUCTION CAN PASS MATERIAL THROUGH MULTIPLE REMOVAL STAGES
+## M50C-49 — GATE CAN BE SORTING/SEPARATION INTERFACE
+## M50C-50 — SORTING GATE ≠ TRANSIT THROAT
+## M50C-51 — MATERIAL STRENGTH CAN MODEL RESISTANCE
+## M50C-52 — HUMAN + MATERIAL CARGO CAN SHARE DESTINATION WITHOUT IDENTITY
+## M50C-53 — INFORMATION CAN BE PROJECTED AS INGESTED FOOD
+## M50C-54 — INFORMATION INGESTION GRAMMAR ≠ MATERIAL IDENTITY
+## M50C-55 — ROLE LOAD CAN CHANGE SOCIAL NETWORK POSITION
+## M50C-56 — CHANNEL CAN EXIST WHILE RESOURCE OUTPUT FAILS TEMPORALLY
+## M50C-57 — WATER SECURITY REQUIRES SOURCE + RETENTION + RELIABILITY
+## M50C-58 — TRUSTED INFORMATION OUTPUT CAN REQUIRE FILTERING
+## M50C-59 — HUMAN AGENT CAN BE PROJECTED AS BRONZE DEFENSIVE WALL
+## M50C-60 — STATIC HIGH-STRENGTH BARRIER ≠ SPRING LATTICE
+## M50C-61 — FAILURE MAY ARISE FROM DEGRADATION / ABSENCE / SUBSTRATE CHANGE / TIMING
+## M50C-62 — JEREMIAH 11–15 SHARPENS DOWNSTREAM VARDATH FAILURE MODES
+
+---
+
+# Number / timing register — Jeremiah 11–15
+
+Record without forcing:
+
+- Jeremiah 11 refers to a **year of punishment/visitation** for Anathoth, without supplying a cycle;
+- Jeremiah 13 uses **“after many days”** as material-exposure interval, unquantified;
+- no reliable distance should be inferred from Perath before resolving the Euphrates/Parah question;
+- Jeremiah 14 describes drought duration qualitatively;
+- Jeremiah 15 explicitly names **four kinds of destroyers**;
+- no gate-duration number;
+- no world-layer count;
+- no dragon-spring count.
+
+---
+
+# Textual / historical / scholarly controls — Jeremiah 11–15
+
+1. Working primary text: Jeremiah 11–15 NRSVUE, compared with NIV/ESV/NRSVCE where useful.
+2. Jeremiah 11:15 has textual difficulty around “vows/many/sacrificial flesh”; do not build a precise ritual mechanism on that clause.
+3. Jeremiah 11:19’s lamb/tree combination is flexible poetic projection and a strong control against literalizing body/plant/animal identity.
+4. Jeremiah 12 uses land/vineyard/shepherd/predator imagery within a historical-political lament; ecology is real process imagery but not an independent field report.
+5. Jeremiah 12:14–17 explicitly pairs uprooting with possible later return/restoration, making total annihilation a poor process description.
+6. Jeremiah 13:1–11 is a recognized prophetic sign-act. The exact identification of **Perath** is debated: Euphrates versus a nearer Parah/Perath has substantial interpretive history.
+7. Klaas Smelik’s *Scandinavian Journal of the Old Testament* article specifically treats the location, linen material, rock cleft, symbolic action and relation to Babylon/exile as interpretive problems.
+8. NRSVUE itself footnotes “Euphrates” with “or Parah,” so exact travel-distance arithmetic must be avoided.
+9. The linen cloth remains the same identifiable object after retrieval but is ruined; that process-level continuity is secure.
+10. Jeremiah 13:23’s Cushite/skin and leopard/spots are analogies for habituated behavior. They must not be racialized into a biological hierarchy or used as cosmological identity evidence.
+11. Jeremiah 14 gives unusually concrete drought imagery: empty cisterns, empty vessels, cracked ground, failed grass, doe/fawn and wild-ass distress.
+12. Jeremiah 14’s false prophets are a direct information-quality conflict against sword/famine/drought conditions.
+13. Jeremiah 15’s “words eaten” is an information-ingestion metaphor; later Ezekiel will provide an important cross-comparison.
+14. Jeremiah 15’s northern iron/bronze and fortified bronze wall are strength/barrier images, not literal human metallurgy.
+15. No explicit dragon/lattice-spring or strict spiderweb→fingertrap transformation appears.
+16. Strict fingertrap status remains negative.
+
+---
+
+# Sources logged — Jeremiah 11–15
+
+Primary:
+- Jeremiah 11 NRSVUE:
+  https://www.bible.com/bible/3523/JER.11.NRSVUE
+- Jeremiah 11–12 NIV comparison:
+  https://www.biblegateway.com/passage/?search=Jeremiah+11-12&version=NIV
+- Jeremiah 12 NRSV:
+  https://bible-history.com/nrsv/jeremiah-12
+- Jeremiah 13 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+13&version=NRSVUE
+- Jeremiah 14 NRSVUE:
+  https://www.bible.com/bible/3523/JER.14.NRSVUE
+- Jeremiah 15 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+15&version=NRSVUE
+- Jeremiah 15:16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Jeremiah+15%3A16&version=NRSVUE
+
+Scholarly / textual:
+- Klaas A. D. Smelik, “The girdle and the cleft: the parable of Jeremiah 13,1–11,” *Scandinavian Journal of the Old Testament* 28.1 (2014): 116–132:
+  https://biblio.ugent.be/publication/4443176
+  DOI: https://doi.org/10.1080/09018328.2014.926699
+- Translation commentary on Jeremiah 13:4–5 and Perath/Euphrates/Parah:
+  https://tips.translation.bible/story/translation-commentary-on-jeremiah-134-135/
+- USCCB Jeremiah 13 notes on the Parah/Perath sign-act:
+  https://bible.usccb.org/bible/jeremiah/13
+- Recent material-identity study of the loincloth retained as secondary interpretive context:
+  https://doi.org/10.29357/2789-1577.2025.23.2.1
+
+---
+
+# SECTION 50C CHECKPOINT — JEREMIAH 11–15 COMPLETE
+
+Strongest first-time findings:
+
+1. **Jeremiah 12 explicitly gives uproot→compassion→return/reestablish, another strong “reset with identity continuity” sequence.**
+2. **Jeremiah 13’s linen loincloth is a rare same-object transformation sequence: body-contact garment → rock-cleft enclosure → time interval → retrieval → same identifiable object but ruined function.**
+3. **That is a valuable enclosure/material-state analogue but still lacks the Vardath broad support lattice, axial narrowing and reopening.**
+4. **Jeremiah 14 distinguishes a new hydrological failure mode: the cistern/access structure remains but water supply disappears; rain absence then cracks the ground and propagates through plants and animal behavior.**
+5. **Across Jeremiah 2, 14 and 15 we now have retention failure, supply failure and temporal-reliability failure as three distinct water-security modes.**
+6. **Jeremiah 14’s false prophets are a clean forecast-validation case: they deny sword/famine while the crisis ecology and later outcome contradict them.**
+7. **Jeremiah 15 sorts one population into multiple failure classes and uses a gate as a winnowing/separation interface—again not automatically a world throat.**
+8. **“Words were found and I ate them” is a strong information-ingestion projection to cross-check later against Ezekiel.**
+9. **The bronze-wall figure is a static defensive barrier, not an elastic ground-support lattice.**
+10. **Strict spiderweb→fingertrap status remains negative; hydrological/ecological and material-degradation modeling has become substantially more precise.**
+
+### Next live block
+
+**Jeremiah 16–20**
+
+Priority:
+- prohibition on marriage/children and removal of ordinary social continuity;
+- death without burial / scavenger ecology;
+- first exodus versus future north-country return — historical transfer template modification;
+- fishers/hunters as different population-capture modes;
+- potter/clay in Jeremiah 18 — HIGH PRIORITY same-material re-forming sequence;
+- vessel spoiled in potter’s hand → reworked into another vessel;
+- conditional system model and branch revision;
+- plots/information warfare;
+- pot smashed in Jeremiah 19 — contrast re-formable wet clay versus irreversibly shattered fired vessel;
+- Topheth/jar sign-act;
+- Jeremiah 20 stocks/gate confinement;
+- word like fire in bones / cannot hold it;
+- Magor-missabib “terror all around” and forced transfer;
+- compare Jeremiah 18–19 directly with Vardath reset-not-rewind: same inherited material can be re-formed before hardening, while later brittle structure shatters and cannot simply be restored.
