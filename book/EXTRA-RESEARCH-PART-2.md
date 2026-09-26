@@ -70819,3 +70819,2806 @@ Required work:
 - do not yet force Archaix chronology;
 - only after the phase map is stable should timing intervals be compared.
 
+
+
+---
+
+# SYNTHESIS 5 — FULL TRANSFORMATION TIMELINE / EVENT-PHASE MAP
+## Ordered process map after completion of the direct 88-book corpus and Syntheses 1–4
+
+### Frontier verification
+
+The direct sequential corpus is complete through Section 89.
+
+Completed post-corpus syntheses:
+1. **SYNTHESIS 1 — mechanism spine / strict fingertrap evidence matrix**
+2. **SYNTHESIS 2 — cherub / Feathered Serpent / dragon / Squatter-Man projection matrix**
+3. **SYNTHESIS 3 — transformation chains / same-identity shape changes**
+4. **SYNTHESIS 4 — broad support → throat → opening / same-structure gap search**
+
+The verified unfinished block was:
+**SYNTHESIS 5 — FULL TRANSFORMATION TIMELINE / EVENT-PHASE MAP**.
+
+This synthesis does not add new books.
+
+Its task is to stop treating:
+- serpent;
+- tree;
+- gate;
+- wing;
+- flood;
+- mountain;
+- rod
+
+as isolated matching shapes,
+
+and instead ask:
+
+> **What ordered event phases recur across the completed corpus, which sources best support each phase, which transitions are same-object evidence, and where does the Vardath reconstruction still rely on cross-text synthesis?**
+
+---
+
+# MASTER EVENT GRAPH
+
+The recurring process can now be represented as:
+
+**PHASE 1 — STABLE BROAD WORLD / SUPPORT**
+↓
+**PHASE 2 — WARNING / INFORMATION**
+↓
+**PHASE 3 — ACTIVATION / FORCING**
+↓
+**PHASE 4 — SKY / SUPPORT / TERRAIN DEFORMATION**
+↓
+**PHASE 5 — CONVERGENCE / AXIS / GATE-STATE FORMATION**
+↓
+**PHASE 6 — BOUNDARY OPENING**
+↓
+**PHASE 7 — TRANSFER / CARGO SORTING**
+↓
+**PHASE 8 — WATER / ATMOSPHERE / LAND RESPONSE**
+↓
+**PHASE 9 — DESTRUCTIVE MAXIMUM**
+↓
+**PHASE 10 — CLOSURE / RELAXATION / RETURN OF BOUNDARY STATE**
+↓
+**PHASE 11 — ECOLOGICAL RECOVERY**
+↓
+**PHASE 12 — POPULATION REDISTRIBUTION**
+↓
+**PHASE 13 — STABLE INHABITED SUCCESSOR**
+
+This is the best recurrent **event-phase graph** recoverable from the researched corpus.
+
+Important:
+the graph is stronger than a motif list,
+but it is still not one continuous source mechanism.
+
+Some phase transitions have same-object evidence.
+Others remain cross-text bridges.
+
+---
+
+# PHASE 1 — STABLE BROAD WORLD / SUPPORT STATE
+
+## Core process
+
+The world begins in an ordered, extended, distributed state.
+
+Typical source features:
+- broad heaven/cover;
+- upper/lower water separation;
+- stable earth/land;
+- bounded sea;
+- distributed vegetation/population;
+- walls/gates in normal operating state;
+- environmental cycles working.
+
+## Strongest sources
+
+### 1 Meqabyan 27
+Directly gives:
+- earth established upon waters;
+- upper water raised;
+- broad covering spread like cloth/sackcloth;
+- wind as pillar/support;
+- lower deep water;
+- sea enclosed by sand/bolts.
+
+### 3 Meqabyan 9
+Directly gives:
+- earth founded upon waters;
+- heaven pillared upon wind;
+- heaven spread like garment over waters;
+- cloud→rain→earth→fruit chain.
+
+### Amos 9
+Gives:
+- upper chambers;
+- earth-support/foundation relation;
+- water redistribution potential.
+
+### Ethiopic Didascalia
+Gives:
+- broad heaven/vault cosmography;
+- earth/water relation;
+- cherub/throne/fire cluster.
+
+### Genesis / Enoch / wider creation tradition
+Gives:
+- upper/lower waters;
+- ordered firmament;
+- bounded seas;
+- gates/windows;
+- ordered luminaries.
+
+## Ordinary source meaning
+
+Creation/order cosmography.
+
+The sources are describing:
+- world order;
+- divine architecture;
+- creation;
+- stable cosmic arrangement.
+
+They do not say:
+"this is the Vardath sky lattice."
+
+## Vardath comparison
+
+Closest formal analogue:
+**quiet broad lattice/support state**.
+
+### S5-P1-1
+The corpus supports a broad ordered upper/lower world architecture much more strongly than it supports a specifically woven lattice.
+
+### S5-P1-2
+The strongest recurring physical variables are:
+- water;
+- wind;
+- earth;
+- sky/cover;
+- boundary.
+
+### S5-P1-3
+Stable does not mean empty or inert.
+
+Many stable endpoints and starting states are:
+- populated;
+- ecologically active;
+- agriculturally productive;
+- socially organized.
+
+---
+
+# PHASE 1 PAIRS / ROLES
+
+- upper water ↔ lower water;
+- heaven ↔ earth;
+- sea ↔ dry land;
+- center ↔ distributed field;
+- tree ↔ surrounding trees;
+- city ↔ surrounding territory;
+- wall ↔ interior population.
+
+These are state relations,
+not proof of two physical world-turns.
+
+---
+
+# PHASE 1 TIMING
+
+No universal duration.
+
+Important rule:
+**stable phase is defined by operating condition, not by one number.**
+
+---
+
+# PHASE 2 — WARNING / INFORMATION PHASE
+
+## Core process
+
+Before major transformation,
+information enters the system.
+
+Typical forms:
+- prophet warning;
+- trumpet;
+- watcher;
+- dream;
+- written message;
+- sealed/unsealed book;
+- angelic interpreter;
+- signal/voice;
+- omen;
+- measurement.
+
+## Strongest sources
+
+### Ezekiel
+- watchman;
+- measured temple;
+- divine speech;
+- scroll;
+- symbolic acts.
+
+### Daniel
+- dreams;
+- interpretations;
+- handwriting;
+- Gabriel;
+- books/judgment;
+- time announcements.
+
+### Habakkuk 2
+- watchtower;
+- vision;
+- appointed time;
+- wait for fulfillment.
+
+### 4 Ezra
+- Uriel;
+- sign-sequence timing;
+- public/secret revelation;
+- books;
+- Ezra scribal reconstruction.
+
+### Revelation
+- seals;
+- trumpets;
+- angelic announcements;
+- measured temple;
+- open scroll/book.
+
+### Zephaniah / Joel
+- trumpet/alarm;
+- Day announcement;
+- call to gather/return.
+
+## Ordinary source meaning
+
+Prophetic/apocalyptic communication.
+
+The text is:
+- warning;
+- interpreting history;
+- calling for repentance;
+- revealing divine judgment.
+
+## Vardath comparison
+
+Possible analogue:
+**pre-event signal / information phase**.
+
+This phase may precede:
+- migration;
+- gathering;
+- ritual preparation;
+- route opening;
+- catastrophe.
+
+### S5-P2-1
+Information frequently changes population behavior before environmental transformation.
+
+Examples:
+- Noah-like preparation traditions;
+- Exodus instructions;
+- prophetic calls;
+- Nineveh response in Jonah;
+- gathering before Day in Zephaniah;
+- Ezra sign recognition.
+
+### S5-P2-2
+Information-channel failure is also a recurrent pre-collapse condition.
+
+Examples:
+- Zechariah 7;
+- Amos information famine;
+- prophetic refusal narratives.
+
+### S5-P2-3
+The corpus therefore supports two pre-event branches:
+
+**warning received**
+→ preparation / survival / reorganization
+
+or
+
+**warning rejected**
+→ exposure / judgment / scattering.
+
+---
+
+# PHASE 2 PAIRS / ROLES
+
+- messenger ↔ recipient;
+- watcher ↔ event;
+- interpreter ↔ vision;
+- sealed ↔ revealed;
+- trumpet/signal ↔ gathered population;
+- prophet ↔ city;
+- public knowledge ↔ restricted knowledge.
+
+---
+
+# PHASE 2 TIMING
+
+Strong source-attached examples:
+- Habakkuk: **appointed time**;
+- Daniel: explicit numbered periods;
+- 4 Ezra: timing inferred from **sign sequence**;
+- Revelation: structured seals/trumpets/bowls.
+
+Important:
+**timing belongs to specific source event systems.**
+
+No corpus-wide clock should yet be inferred.
+
+---
+
+# PHASE 3 — ACTIVATION / FORCING
+
+## Core process
+
+A previously stable field becomes active.
+
+Common activating agents:
+- wind;
+- divine voice;
+- fire/light;
+- trumpet/signal;
+- shaking;
+- moving divine/anthropomorphic body;
+- storm;
+- political/military pressure.
+
+## Strongest sources
+
+### Daniel 7
+**four winds**
+→ disturb one sea
+→ multiple beast forms emerge.
+
+### 4 Ezra 13
+**wind**
+→ stirs sea
+→ humanlike figure rises from sea.
+
+### Exodus 14 / Jubilees 48
+wind/action:
+→ changes sea state
+→ corridor eventually appears.
+
+### Joel 2
+moving destructive field:
+- fire ahead;
+- flame behind;
+- earth/sky response.
+
+### Habakkuk 3
+moving figure:
+- pestilence before;
+- plague behind;
+- earth shakes;
+- waters respond.
+
+### Nahum 1
+whirlwind/storm:
+→ sea/rivers;
+→ vegetation;
+→ mountains;
+→ earth.
+
+### Haggai 2
+shaking:
+- heavens;
+- earth;
+- sea;
+- dry land;
+- nations.
+
+## Ordinary source meaning
+
+Divine-warrior theophany,
+judgment,
+imperial invasion,
+miracle,
+eschatological disturbance.
+
+## Vardath comparison
+
+Closest analogue:
+**activation of the quiet support/current field**.
+
+### S5-P3-1
+Wind is one of the most recurrent activation media in the corpus.
+
+But "wind" can mean:
+- literal weather;
+- spirit;
+- military speed;
+- symbolic force.
+
+Function must be identified source by source.
+
+### S5-P3-2
+Activation often appears before visible form change.
+
+Strongest examples:
+- wind→sea→beast;
+- wind→sea→man;
+- wind→sea corridor;
+- storm→terrain response.
+
+### S5-P3-3
+This is one of the strongest recurrent process relations in the corpus:
+
+**forcing**
+→ **field-state change**
+→ **new visible geometry**.
+
+---
+
+# PHASE 3 PAIRS / ROLES
+
+- wind ↔ sea;
+- voice ↔ foundations;
+- fire ↔ water;
+- front ↔ rear;
+- before ↔ behind;
+- north ↔ south;
+- source ↔ responding field.
+
+---
+
+# PHASE 3 TIMING
+
+Usually event-triggered rather than numerically timed.
+
+Where durations exist,
+they belong to later oppression/transfer/judgment phases,
+not necessarily initial activation.
+
+---
+
+# PHASE 4 — SKY / SUPPORT / TERRAIN DEFORMATION
+
+## Core process
+
+The stable environment changes shape.
+
+Possible forms:
+- sky rolls;
+- mountain splits;
+- mountain melts;
+- land rises/sinks;
+- rivers divide land;
+- walls/foundations collapse;
+- upper/lower boundaries alter.
+
+## Strongest sources
+
+### Isaiah 34
+sky:
+**extended**
+→ **rolled like scroll**.
+
+### Revelation 6
+sky/heaven:
+**recedes/rolls like scroll**;
+mountains/islands move.
+
+### Zechariah 14
+Mount of Olives:
+**one mountain**
+→ **split into two halves**
+→ **new valley**.
+
+### Micah 1
+mountains:
+- melt;
+- valleys split.
+
+### Amos 8–9
+land:
+- rises like Nile;
+- sinks again.
+
+### Habakkuk 3
+mountains:
+- shatter;
+- hills sink;
+- earth splits with rivers.
+
+### Nahum 1
+mountains quake;
+hills melt;
+earth heaves.
+
+## Ordinary source meaning
+
+Judgment/theophany,
+cosmic destabilization,
+poetic catastrophe.
+
+## Vardath comparison
+
+Closest analogue:
+**support geometry changing before/around gate state**.
+
+### S5-P4-1
+This phase is well attested as **deformation**.
+
+### S5-P4-2
+What is not well attested is:
+**one broad woven support visibly tightening by continuous strand motion**.
+
+### S5-P4-3
+Three deformation classes should remain separate:
+
+1. **rolling/folding** — Isaiah/Revelation;
+2. **splitting/separation** — Zechariah;
+3. **melting/shattering/rising/sinking** — Micah/Amos/Habakkuk/Nahum.
+
+Do not collapse these into one mechanism without evidence.
+
+---
+
+# PHASE 4 PAIRS / ROLES
+
+- broad sky ↔ rolled sky;
+- one mountain ↔ two mountain halves;
+- height ↔ lowered plain;
+- rise ↔ sink;
+- intact foundation ↔ exposed foundation.
+
+---
+
+# PHASE 4 TIMING
+
+No universal measured interval.
+
+The deformation normally appears as:
+**event state**,
+not long stable period.
+
+---
+
+# PHASE 5 — CONVERGENCE / AXIS / GATE-STATE FORMATION
+
+## Core process
+
+The event reaches a concentrated/centralized state.
+
+This phase is the most uncertain mechanically.
+
+The corpus supplies several different forms:
+- static narrow connector;
+- central anthropomorphic axis;
+- gathered population;
+- bilateral side nodes feeding center;
+- central mountain/city;
+- rod/staff/column;
+- one-head gathering.
+
+## Strongest sources
+
+### 4 Ezra 7
+Best static geometry:
+**broad**
+→ **narrow connector**
+→ **broad**.
+
+Central path:
+- one-person capacity;
+- fire right;
+- deep water left.
+
+### Daniel 12
+Central linen figure:
+- above water;
+- figure on each bank;
+- two hands raised;
+- timing formula.
+
+### Revelation 10
+Giant figure:
+- land/sea spanning posture;
+- cloud/light/fire features.
+
+### Habakkuk 3
+Anthropomorphic field projection:
+- hand-ray;
+- deep raises hands;
+- central moving body.
+
+### 4 Ezra 13
+Sea:
+→ humanlike figure.
+
+### Zechariah 4
+Two olive-tree nodes:
+→ central lamp/light system.
+
+### Hosea 1 / Micah 2
+Distributed population:
+→ one head / gathered enclosure.
+
+### Rod/tree/axis traditions
+Daniel 4;
+Ezekiel;
+Aaron's rod;
+Qalementos;
+Didascalia.
+
+## Ordinary source meaning
+
+Different sources mean:
+- moral path;
+- messianic figure;
+- angelic figure;
+- leadership;
+- ritual/sacred center;
+- political gathering.
+
+## Vardath comparison
+
+Closest analogue:
+**concentrated axis / throat / Squatter-Man phase**.
+
+### S5-P5-1
+The corpus strongly supports:
+**centralization**.
+
+### S5-P5-2
+The corpus strongly supports:
+**anthropomorphic projection of environmental or political systems**.
+
+### S5-P5-3
+The corpus does **not** securely show:
+the broad support from Phase 1
+becoming
+the narrow throat/axis in Phase 5.
+
+This remains the G5 gap.
+
+---
+
+# PHASE 5 PAIRS / ROLES
+
+- fire right ↔ deep water left;
+- bank A ↔ bank B;
+- two olive trees ↔ central lamp;
+- Judah ↔ Israel under one head;
+- two directional forces ↔ central axis;
+- human figure ↔ environmental field.
+
+---
+
+# PHASE 5 TIMING
+
+Important explicit examples:
+- Daniel 12:
+  **time, times, half a time**
+  is spoken in river/axis tableau.
+- 4 Ezra 7:
+  finite path throughput,
+  but no clock duration.
+- Revelation:
+  measured apocalyptic intervals belong to the broader event system.
+
+### S5-P5-4
+Timing can be attached to axis/gate imagery,
+but no source yet gives:
+**gate formation duration = universal world-cycle constant**.
+
+---
+
+# PHASE 6 — BOUNDARY OPENING
+
+## Core process
+
+A normally impassable boundary becomes traversable.
+
+This phase is exceptionally well attested.
+
+## Strongest same-object sources
+
+### Exodus 14 / Jubilees 48
+Same sea:
+- divides;
+- forms corridor;
+- water stands right/left;
+- people cross;
+- later same water returns.
+
+### Joshua 3–4
+Same river:
+- flow stops/heaps;
+- bed becomes traversable;
+- whole population crosses;
+- same river resumes.
+
+### Zechariah 14
+Same mountain:
+- splits;
+- valley forms;
+- population flees through.
+
+### Micah 2
+Dense enclosure:
+- breaker opens breach;
+- gate crossed;
+- leader goes first.
+
+### 4 Ezra 13
+Euphrates channels:
+- stopped;
+- population crosses;
+- later stopped again for return.
+
+### Ezekiel
+fixed gates:
+- open/closed;
+- directional traffic rules;
+- schedule/permission state.
+
+## Gate classes established in Synthesis 4
+
+**G1 — boundary parting**
+- Exodus/Jordan.
+
+**G2 — structure splitting**
+- Zechariah 14.
+
+**G3 — static throat**
+- 4 Ezra 7.
+
+**G4 — operated aperture**
+- Ezekiel/Revelation doors.
+
+**G5 — deformable support-to-throat**
+- still missing.
+
+### S5-P6-1
+Boundary opening is one of the strongest direct mechanisms in the corpus.
+
+### S5-P6-2
+The weak point is not "does the corpus contain gates?"
+
+It does.
+
+The weak point is:
+**does the broad support itself become the gate?**
+
+No direct example yet.
+
+---
+
+# PHASE 6 PAIRS / ROLES
+
+- right water wall ↔ left water wall;
+- upstream ↔ downstream;
+- north mountain half ↔ south mountain half;
+- inside ↔ outside;
+- closed ↔ open;
+- opener ↔ gate;
+- leader ↔ travellers.
+
+---
+
+# PHASE 6 TIMING
+
+Normally:
+event-triggered.
+
+Examples:
+- Exodus crossing window;
+- Joshua crossing period;
+- Ezekiel scheduled east-gate cycles;
+- Zechariah valley opening during one eschatological event.
+
+No universal duration.
+
+---
+
+# PHASE 7 — TRANSFER / CARGO SORTING
+
+## Core process
+
+Once a route exists,
+different classes of cargo move.
+
+The corpus is extremely rich here.
+
+## Human populations
+
+- Israelites through sea;
+- Israel through Jordan;
+- Zechariah valley escape;
+- 4 Ezra tribes through stopped Euphrates;
+- exile/return traditions;
+- nations/tribes entering restored cities.
+
+## Protected individual cargo
+
+### Moses basket
+- child;
+- basket;
+- water;
+- receiving shore/population.
+
+### Jonah fish
+- person;
+- fish enclosure;
+- deep medium;
+- dry-land ejection.
+
+### Zechariah 5 ephah
+- sealed woman/cargo;
+- lead closure;
+- two winged carriers;
+- wind;
+- earth/sky transit;
+- receiving base.
+
+### cloud/angelic carriers
+Across ascension/vision traditions:
+- persons/presence move via cloud/heavenly carrier imagery.
+
+## Information cargo
+
+- scrolls;
+- books;
+- speech;
+- prophecy;
+- law;
+- fire-as-law in 4 Ezra 13;
+- public/secret books.
+
+## Material/environmental cargo
+
+- water;
+- treasure;
+- sacred vessels;
+- bones;
+- land/produce;
+- atmosphere/wind imagery.
+
+### S5-P7-1
+The corpus strongly distinguishes:
+**cargo**
+from
+**carrier**
+from
+**boundary**
+from
+**operator**.
+
+This is one of the most important mature research rules.
+
+### S5-P7-2
+Different cargo classes can follow different routes through the same larger system.
+
+Strongest example:
+Ezekiel 47:
+water route
+≠
+human route.
+
+### S5-P7-3
+Transfer is frequently selective.
+
+Not all:
+- people;
+- animals;
+- water;
+- information;
+- sacred objects
+
+move under identical rules.
+
+This strongly supports Vardath's **sorted flow** concept at the formal level.
+
+---
+
+# PHASE 7 PAIRS / ROLES
+
+- cargo ↔ carrier;
+- carrier ↔ medium;
+- opener ↔ traveller;
+- permitted ↔ forbidden;
+- clean ↔ unclean;
+- sacred ↔ common;
+- Israelite ↔ Egyptian in sea crossing;
+- resident foreigner ↔ tribal population in successor land.
+
+---
+
+# PHASE 7 TIMING
+
+Source-specific:
+- Jonah: three days/nights;
+- 4 Ezra migration: long journey intervals;
+- Exodus/Jordan: event-specific crossing window;
+- Daniel/4 Ezra: measured eschatological periods.
+
+No universal transfer duration.
+
+---
+
+# PHASE 8 — WATER / ATMOSPHERE / LAND RESPONSE
+
+## Core process
+
+After/around opening and transfer,
+the environment changes.
+
+This phase is very strongly attested.
+
+## Water
+
+### Ezekiel 47
+small source:
+→ larger river
+→ sea healing
+→ fish
+→ trees.
+
+### Zechariah 14
+one source:
+→ half east
+→ half west.
+
+### Amos 9
+sea water:
+→ poured over land.
+
+### Exodus/Jordan
+water boundary changes state.
+
+### Joel 3
+sanctuary fountain:
+→ land.
+
+### 4 Ezra / Meqabyan
+upper/lower water boundary cosmography.
+
+## Atmosphere
+
+- wind activation;
+- cloud;
+- darkness;
+- smoke;
+- fire;
+- altered light;
+- dew/rain changes.
+
+## Land
+
+- mountains split/melt;
+- valleys open;
+- land rises/sinks;
+- cities collapse;
+- plains form;
+- foundations exposed.
+
+### S5-P8-1
+Water is one of the best **geometry tracers** in the corpus.
+
+It repeatedly reveals:
+- boundary state;
+- route;
+- source;
+- receiver;
+- environmental consequence.
+
+### S5-P8-2
+Atmosphere/wind is one of the best **activation tracers**.
+
+### S5-P8-3
+Land is one of the best **structural response tracers**.
+
+This gives a useful Vardath observational triad:
+
+**wind/air = forcing**
+**water = channel/flow**
+**land = geometry/load response**
+
+This is a Vardath synthesis,
+not a source quotation.
+
+---
+
+# PHASE 8 PAIRS / ROLES
+
+- upper water ↔ lower water;
+- east flow ↔ west flow;
+- north corridor ↔ south corridor;
+- sea ↔ land;
+- rain ↔ drought;
+- fire ↔ water;
+- mountain ↔ valley;
+- source ↔ receiver.
+
+---
+
+# PHASE 8 TIMING
+
+Often immediate to event,
+but ecological consequences extend beyond event.
+
+Do not collapse:
+**gate duration**
+with
+**recovery duration**.
+
+---
+
+# PHASE 9 — DESTRUCTIVE MAXIMUM
+
+## Core process
+
+The event reaches its most damaging state.
+
+Recurring effects:
+- earthquake;
+- fire;
+- dark sky;
+- water disruption;
+- city collapse;
+- mountain/land deformation;
+- biological loss;
+- population death/scattering;
+- political-system collapse.
+
+## Strongest sources
+
+### Revelation 6–16
+Large composite sequence:
+- earthquake;
+- sky rolling;
+- falling stars;
+- abyss;
+- sea/water changes;
+- plagues;
+- global city/land disruption.
+
+### Joel 2
+moving front:
+- fire before;
+- flame behind;
+- Eden→wilderness transformation;
+- earth/heaven response.
+
+### Nahum
+storm/sea/earth/city collapse.
+
+### Zephaniah 1
+biosphere-wide removal:
+- human;
+- animal;
+- bird;
+- fish;
+plus darkness/fire.
+
+### Habakkuk 3
+mountains/hills/water/land response.
+
+### Micah 1
+mountain/valley deformation.
+
+### Haggai
+whole-domain shaking.
+
+## Ordinary source meaning
+
+Judgment,
+war,
+imperial collapse,
+Day of YHWH,
+apocalyptic crisis.
+
+## Vardath comparison
+
+Closest analogue:
+**maximum gate/event disturbance**.
+
+### S5-P9-1
+The corpus clearly supports catastrophic maxima.
+
+### S5-P9-2
+What remains uncertain is whether:
+the catastrophe is caused by
+the same physical gate mechanism
+or
+is merely associated symbolically/theologically with opening/judgment.
+
+---
+
+# PHASE 9 PAIRS / ROLES
+
+- survivor ↔ destroyed population;
+- refuge ↔ exposed zone;
+- city ↔ wilderness;
+- light ↔ darkness;
+- fertile ↔ barren;
+- center ↔ collapsed periphery.
+
+---
+
+# PHASE 9 TIMING
+
+Strong explicit periods belong mainly to Daniel/4 Ezra/Revelation-style apocalyptic frameworks.
+
+Important:
+these periods do not map cleanly into one universal clock.
+
+---
+
+# PHASE 10 — CLOSURE / RELAXATION / RETURN OF BOUNDARY STATE
+
+## Core process
+
+The opening/maximum does not continue forever.
+
+The system moves toward closure or a new stable configuration.
+
+## Strongest same-object examples
+
+### Exodus 14
+same sea:
+returns to ordinary position/state.
+
+### Joshua 4
+same Jordan:
+resumes flow/banks.
+
+### Ezekiel gates
+apertures:
+open/close on schedules and permissions.
+
+### Zechariah 14
+mountain corridor does not close,
+so this is not same-state return.
+
+### Daniel 4
+king/tree identity:
+restored,
+but not boundary closure.
+
+### Ezekiel 17
+sprig→broad cedar,
+regrowth rather than gate closure.
+
+## Return classes from Synthesis 4
+
+**R1 — medium-state return**
+- sea/river.
+
+**R2 — identity/function return**
+- Daniel 4.
+
+**R3 — biological/material regrowth**
+- Ezekiel 17;
+- Aaron's rod.
+
+**R4 — ecological/social successor**
+- Ezekiel 47–48;
+- Amos;
+- Zechariah.
+
+**R5 — same deformable support mechanically relaxes**
+- still missing.
+
+### S5-P10-1
+Closure is strongly attested for boundary media,
+especially water.
+
+### S5-P10-2
+The exact Vardath reopening/relaxation requirement remains:
+**R5**, not merely any return.
+
+---
+
+# PHASE 10 PAIRS / ROLES
+
+- open ↔ closed;
+- stopped flow ↔ resumed flow;
+- active gate ↔ sealed gate;
+- disturbed sea ↔ restored sea;
+- scattered ↔ regathered.
+
+---
+
+# PHASE 10 TIMING
+
+Usually tied to:
+completion of crossing,
+judgment,
+or ritual schedule.
+
+No universal relaxation time.
+
+---
+
+# PHASE 11 — ECOLOGICAL RECOVERY
+
+## Core process
+
+After maximum disturbance,
+the environment becomes life-supporting again.
+
+This phase is one of the strongest recurrent endpoints.
+
+## Strongest sources
+
+### Ezekiel 47
+- river grows;
+- sea becomes life-supporting;
+- fish multiply;
+- trees on both banks;
+- monthly fruit;
+- healing leaves;
+- salt marsh exceptions.
+
+### Hosea 14
+- dew;
+- roots;
+- branches;
+- shade;
+- grain/vine/fruit.
+
+### Joel 2–3
+- rain;
+- green pasture;
+- trees;
+- crops;
+- sanctuary fountain.
+
+### Amos 9
+- mountains drip;
+- vineyards/gardens;
+- agricultural phases overlap;
+- cities rebuilt.
+
+### Zechariah 8 / 14
+- dew/rain;
+- vine/ground productivity;
+- living waters;
+- inhabited city.
+
+### Revelation 21–22
+- river;
+- tree of life;
+- healing;
+- inhabited city.
+
+### Meqabyan resurrection analogies
+- rain/dew;
+- seed;
+- new life.
+
+## Ordinary source meaning
+
+Restoration,
+fertility,
+healing,
+eschatological blessing.
+
+## Vardath comparison
+
+Closest analogue:
+**post-event ecological stabilization**.
+
+### S5-P11-1
+Recovery is normally dynamic,
+not frozen.
+
+Stable successor worlds still have:
+- flow;
+- rain;
+- growth;
+- reproduction;
+- food;
+- migration;
+- social life.
+
+### S5-P11-2
+Recovery can be nonuniform.
+
+Best example:
+Ezekiel 47 salt marshes remain salt.
+
+This strongly supports:
+**successor state ≠ homogeneous reset**.
+
+---
+
+# PHASE 11 PAIRS / ROLES
+
+- source ↔ receiver;
+- river ↔ banks;
+- dew ↔ roots;
+- rain ↔ crop;
+- tree ↔ inhabitant/shade;
+- healed zone ↔ preserved salt zone.
+
+---
+
+# PHASE 11 TIMING
+
+Examples:
+- Ezekiel fruit monthly;
+- Zechariah annual pilgrimage/rain relation;
+- agricultural cycles.
+
+These are stable-state rhythms,
+not necessarily event recurrence clocks.
+
+---
+
+# PHASE 12 — POPULATION REDISTRIBUTION
+
+## Core process
+
+Once environment stabilizes,
+populations are reorganized.
+
+Common processes:
+- exiles return;
+- tribes redistributed;
+- foreigners integrated;
+- cities reinhabited;
+- survivors gathered;
+- boundaries redrawn;
+- new gate networks established.
+
+## Strongest sources
+
+### Ezekiel 47–48
+- land redistributed;
+- tribes arranged;
+- resident foreigners inherit;
+- city with twelve gates.
+
+### Amos 9
+- ruined cities rebuilt;
+- people reinhabit;
+- vineyards/gardens.
+
+### Zechariah 8 / 14
+- east/west return;
+- children/elderly;
+- nations visit;
+- city inhabited.
+
+### Micah 4–7
+- lame/outcasts gathered;
+- boundary expanded;
+- sea-to-sea/mountain-to-mountain return.
+
+### 4 Ezra 13
+- dispersed tribes return through controlled water boundary.
+
+### Revelation 21–22
+- nations/city/gates;
+- inhabited New Jerusalem.
+
+### Obadiah
+- successor territorial redistribution.
+
+## Ordinary source meaning
+
+Exile/restoration,
+eschatological regathering,
+territorial idealization,
+social reintegration.
+
+## Vardath comparison
+
+Closest analogue:
+**post-event cargo/population redistribution into successor world**.
+
+### S5-P12-1
+The corpus overwhelmingly favors:
+**reorganized inheritance**
+over
+**empty-world replacement**.
+
+### S5-P12-2
+Identity can persist while:
+- location changes;
+- political role changes;
+- name/status changes;
+- territory changes.
+
+This is a major repeated source-level rule.
+
+### S5-P12-3
+The user's all-worlds-populated model remains a Vardath rule,
+not a universal source rule.
+
+Important source exceptions:
+- 4 Ezra seven-day depopulated interval;
+- Arzareth initially uninhabited in 4 Ezra tradition.
+
+These exceptions remain explicitly logged.
+
+---
+
+# PHASE 12 PAIRS / ROLES
+
+- exile ↔ return;
+- native ↔ foreign resident;
+- Judah ↔ Israel;
+- old city ↔ rebuilt city;
+- scattered ↔ gathered;
+- north ↔ south;
+- east ↔ west;
+- remnant ↔ destroyed majority.
+
+---
+
+# PHASE 12 TIMING
+
+Source-specific:
+- exile periods;
+- prophetic "days";
+- Daniel/4 Ezra calendars.
+
+No universal phase duration.
+
+---
+
+# PHASE 13 — STABLE INHABITED SUCCESSOR
+
+## Core process
+
+The event cycle ends not with emptiness,
+but with an inhabited material order.
+
+Typical features:
+- city;
+- gates;
+- water;
+- trees;
+- farms;
+- animals;
+- households;
+- law/order;
+- divine presence;
+- ongoing cycles.
+
+## Strongest sources
+
+### Ezekiel 47–48
+Perhaps the strongest:
+- water;
+- bilateral trees;
+- fish;
+- land;
+- tribes;
+- foreigners;
+- city;
+- twelve gates;
+- divine presence.
+
+### Revelation 21–22
+- city;
+- gates;
+- nations;
+- river;
+- tree;
+- healing;
+- divine presence.
+
+### Amos 9
+- rebuilt cities;
+- gardens/vineyards;
+- planted population.
+
+### Zechariah 14
+- altered terrain;
+- living waters;
+- inhabited Jerusalem;
+- recurring nations/pilgrimage.
+
+### Hosea / Joel
+- restored crops;
+- rain;
+- houses;
+- population.
+
+### Jubilees / restoration traditions
+- renewed inheritance/settlement.
+
+## Ordinary source meaning
+
+Restoration,
+eschatological city,
+covenant fulfillment,
+return from exile.
+
+## Vardath comparison
+
+Closest analogue:
+**stable populated successor world-turn**.
+
+### S5-P13-1
+This is one of the strongest points of agreement between the Vardath model and many restoration traditions:
+**the endpoint is populated and material**.
+
+### S5-P13-2
+The endpoint is usually not a rewind.
+
+It contains:
+- repaired ruins;
+- new territorial layouts;
+- new access rules;
+- retained differentiated zones;
+- incorporated populations.
+
+### S5-P13-3
+"New" often means:
+**reconfigured successor**
+rather than:
+**replay of old state**.
+
+---
+
+# MASTER PHASE-TRANSITION TABLE
+
+| From | To | Strongest source-level bridge | Same-object? | Evidence status | Vardath relevance |
+|---|---|---|---:|---|---|
+| Stable support | Warning/info | prophets / watchers / books / trumpets | usually no | **Strong narrative transition** | pre-event detection |
+| Warning/info | Activation | Exodus / Joel / Daniel / 4 Ezra | sometimes same episode | **Strong** | signal precedes forcing |
+| Activation | Deformation | Daniel 7; 4 Ezra 13; Nahum; Habakkuk | field continuity partial | **Strong formal analogue** | quiet field becomes active |
+| Deformation | Axis/throat | Isaiah/Revelation rolled sky → later axis forms only cross-text | no clean bridge | **WEAK / MISSING** | critical G5 gap |
+| Broad support | Static throat | Meqabyan → 4 Ezra 7 | no | **Cross-text only** | broad→narrow topology concept |
+| Axis/throat | Boundary opening | 4 Ezra 7 / Zechariah / Exodus are different objects | generally no | **Partial** | gate-state formation |
+| Boundary opening | Transfer | Exodus 14; Joshua 3–4; Zechariah 14; Micah 2; 4 Ezra 13 | **yes in strongest cases** | **Very strong** | actual traversal |
+| Transfer | Water/land response | Exodus; Ezekiel; Zechariah; Amos | often yes/adjacent | **Strong** | cargo changes environment |
+| Environmental response | Destructive maximum | Joel; Revelation; Nahum; Habakkuk | same episode | **Very strong** | event peak |
+| Destructive maximum | Closure/return | Exodus; Jordan | **yes** | **Very strong for water boundaries** | finite event |
+| Closure | Ecological recovery | Ezekiel/Joel/Amos/Zechariah | usually cross-scene | **Strong composite** | post-event stabilization |
+| Recovery | Population redistribution | Ezekiel 47–48; Amos; Zechariah; Micah | same restoration sequence often | **Very strong** | successor settlement |
+| Redistribution | Stable inhabited successor | Ezekiel; Revelation; Amos; Zechariah | same source sequences | **Very strong** | completed cycle |
+
+---
+
+# THE CRITICAL WEAK TRANSITION
+
+The phase graph exposes one transition as uniquely weak:
+
+> **PHASE 4 DEFORMATION**
+> →  
+> **PHASE 5 AXIS / THROAT FORMATION**
+
+The corpus has:
+- broad support;
+- rolled sky;
+- split mountains;
+- anthropomorphic axes;
+- static throats;
+- actual gates;
+- actual transfers.
+
+But not:
+
+**same broad support**
+→ **same material continuously converges**
+→ **narrow axial connector forms**.
+
+### S5-MASTER-1
+This remains the single most important missing transition in the Vardath mechanical chain.
+
+It is exactly the G5 gap from Synthesis 4.
+
+---
+
+# SECOND CRITICAL WEAK TRANSITION
+
+Another weak link is:
+
+> **PHASE 10 CLOSURE**
+> →  
+> **same support returning to PHASE 1 broad state**
+
+The corpus has:
+- water returns;
+- rivers resume;
+- gates close;
+- trees regrow;
+- cities recover.
+
+But not:
+**same deformed support mechanically unrolls/relaxes into original broad support**.
+
+### S5-MASTER-2
+The missing return class remains **R5**.
+
+---
+
+# SAME-OBJECT PHASE CHAINS THAT ARE ACTUALLY STRONG
+
+The corpus does contain several shorter same-object chains.
+
+These should be treated as anchors.
+
+---
+
+# CHAIN A — RED SEA
+## strongest temporary-boundary event chain
+
+**broad sea**
+→ wind/action
+→ water state changes
+→ bilateral walls
+→ dry corridor
+→ population crosses
+→ hostile population enters
+→ water returns
+→ corridor disappears
+→ ordinary sea state restored.
+
+### Phases covered
+3 → 4/6 → 7 → 9 → 10.
+
+### Missing
+1 as support-lattice,
+5 as fingertrap throat,
+11–13 in same object.
+
+---
+
+# CHAIN B — JORDAN
+## strongest same-river flow interruption/return
+
+**river flood state**
+→ flow stops/heaps
+→ riverbed opens
+→ population crosses
+→ same flow resumes.
+
+### Phases covered
+3/6 → 7 → 10.
+
+---
+
+# CHAIN C — ZECHARIAH 14
+## strongest solid topology-change passage
+
+**one mountain**
+→ split
+→ halves move north/south
+→ valley corridor
+→ people flee
+→ water source splits east/west
+→ broad land becomes plain
+→ Jerusalem remains inhabited.
+
+### Phases covered
+4 → 6 → 7 → 8 → 12/13.
+
+### Missing
+Phase 5 narrowing:
+opening occurs by widening/splitting.
+
+---
+
+# CHAIN D — DANIEL 4
+## strongest broad→reduced→restored identity
+
+**world-tree / king**
+→ cut
+→ stump/root retained
+→ altered interval
+→ same king/kingdom restored.
+
+### Phases covered
+1-ish broad state → 4 reduction → 10/11 return.
+
+### Missing
+gate/transfer.
+
+---
+
+# CHAIN E — EZEKIEL 17
+## strongest living fragment handoff
+
+**large cedar**
+→ tender sprig removed/transferred
+→ planted
+→ grows into broad sheltering cedar.
+
+### Phases covered
+1 → 7 → 11/13.
+
+### Missing
+whole structure contraction.
+
+---
+
+# CHAIN F — EZEKIEL 43–48
+## strongest central-return→controlled-access→outflow→ecological-successor chain
+
+**glory returns**
+→ east route used
+→ exceptional route closed
+→ controlled gate states
+→ water emerges by different channel
+→ outflow widens
+→ bilateral trees
+→ ecological healing
+→ land redistributed
+→ multi-gate inhabited city.
+
+### Phases covered
+5/6 → 7/8 → 10 → 11 → 12 → 13.
+
+### S5-MASTER-3
+Ezekiel 43–48 remains the strongest **late-cycle** same-book sequence.
+
+---
+
+# CHAIN G — 4 EZRA 7
+## strongest static topology model
+
+**broad domain**
+→ **narrow one-person path**
+with
+**fire right / deep water left**
+→ **broad desired city/domain**.
+
+### Phases represented
+1-ish broad domain → 5 static throat → 7 traversal → 13 inheritance.
+
+### Missing
+dynamic formation/closure.
+
+---
+
+# CHAIN H — 4 EZRA 13
+## strongest controlled repeated migration across water boundary
+
+**river flowing**
+→ channels stopped
+→ population crosses
+→ distant region inhabited
+→ later channels stopped again
+→ population returns.
+
+### Phases covered
+6 → 7 → 12.
+
+---
+
+# CHAIN I — 1/3 MEQABYAN
+## strongest broad support state
+
+**water architecture**
++ **wind-supported upper covering**
++ **earth**
++ **lower water**
++ **bounded sea**.
+
+### Phase covered
+1 strongly.
+
+### Missing
+dynamic transition out of state.
+
+---
+
+# CHAIN J — ISAIAH 34 / REVELATION 6
+## strongest broad-field deformation
+
+**broad sky**
+→ **rolled/receded sky**.
+
+### Phase covered
+4 strongly.
+
+### Missing
+narrow connector,
+traffic,
+unrolling.
+
+---
+
+# MASTER PAIR / ROLE MAP BY PHASE
+
+## Stable phase
+- heaven / earth;
+- upper / lower water;
+- central city / surrounding land.
+
+## Warning phase
+- messenger / recipient;
+- watcher / event;
+- sealed / revealed;
+- prophet / population.
+
+## Activation
+- wind / sea;
+- fire / water;
+- front / rear;
+- voice / foundations.
+
+## Deformation
+- broad / rolled;
+- one mountain / two halves;
+- rise / sink.
+
+## Axis / gate-state
+- fire-right / deep-left;
+- bank A / bank B;
+- two trees / central lamp;
+- field / humanlike projection.
+
+## Opening
+- right wall / left wall;
+- upstream / downstream;
+- inside / outside;
+- north half / south half.
+
+## Transfer
+- cargo / carrier;
+- traveller / gate;
+- permitted / forbidden;
+- sacred / common.
+
+## Environmental response
+- east / west flow;
+- mountain / valley;
+- rain / drought;
+- land / sea.
+
+## Destructive maximum
+- survivor / destroyed;
+- refuge / exposed;
+- light / darkness.
+
+## Closure
+- open / closed;
+- stopped / resumed;
+- disturbed / restored.
+
+## Recovery
+- source / receiver;
+- dew / roots;
+- river / banks.
+
+## Redistribution
+- exile / return;
+- native / foreigner;
+- scattered / gathered;
+- Judah / Israel.
+
+## Stable successor
+- center / periphery;
+- city / gates;
+- people / land;
+- old inheritance / reconfigured inheritance.
+
+---
+
+# TIMING MAP — ONLY WHERE PHASE ATTACHMENT IS EXPLICIT
+
+This synthesis deliberately does **not** force Archaix chronology.
+
+The current timing evidence should be stored by phase first.
+
+---
+
+# WARNING / PRE-EVENT TIMING
+
+## Habakkuk
+"appointed time";
+wait even if delayed.
+
+Meaning:
+prophetic schedule.
+
+## 4 Ezra
+measure end by sign sequence.
+
+Meaning:
+phase recognition.
+
+## Daniel
+visions provide explicit periods,
+but tied to persecution/kingdom crisis.
+
+### Rule
+Do not infer event interval from warning interval.
+
+---
+
+# AXIS / CRISIS TIMING
+
+## Daniel 7 / 12
+"time, times, half a time."
+
+Daniel 12 places formula in:
+river / bilateral-bank / central-man tableau.
+
+## Daniel 12
+1,290;
+1,335;
+45-day difference.
+
+## Daniel 8
+2,300 evenings/mornings.
+
+## Daniel 9
+70 weeks / internal subdivisions.
+
+### Rule
+These belong to Daniel's apocalyptic timetable,
+not automatically physical gate duration.
+
+---
+
+# TRANSFER / ENCLOSURE TIMING
+
+## Jonah
+three days / nights in fish.
+
+## 4 Ezra
+migration journey intervals.
+
+## Meqabyan
+martyr/confinement intervals.
+
+### Rule
+Carrier residence time is not gate-open time.
+
+---
+
+# TRANSITION / SILENCE TIMING
+
+## 4 Ezra 7
+seven-day primeval silence.
+
+This is:
+world-transition theology.
+
+Do not universalize.
+
+---
+
+# STABLE SUCCESSOR TIMING
+
+## Ezekiel 47
+monthly fruit.
+
+## Zechariah 14
+annual pilgrimage.
+
+These are:
+operating rhythms of successor state,
+not catastrophe recurrence.
+
+---
+
+# S5-MASTER-4 — CURRENT TIMING CONCLUSION
+
+The corpus contains many explicit clocks.
+
+It does **not** yet contain one securely demonstrated number that measures the entire 13-phase event cycle.
+
+Therefore:
+**Archaix comparison must remain deferred until after this phase map is accepted and source-specific intervals are normalized.**
+
+---
+
+# INFORMATION / MATTER / POPULATION LAYERS
+
+The completed corpus repeatedly shows that an event can operate on several layers at once.
+
+## INFORMATION
+- warnings;
+- books;
+- speech;
+- law;
+- name/status;
+- memory;
+- language.
+
+## MATERIAL
+- water;
+- land;
+- stone;
+- buildings;
+- vegetation;
+- sacred objects.
+
+## BIOLOGICAL
+- humans;
+- animals;
+- birds;
+- fish;
+- plants.
+
+## SOCIAL/POLITICAL
+- kingdoms;
+- tribes;
+- cities;
+- exiles;
+- rulers.
+
+## SPIRITUAL / THEOLOGICAL
+- divine presence;
+- judgment;
+- souls;
+- heavenly beings.
+
+### S5-MASTER-5
+One of the strongest mature Vardath insights is that:
+**the same event need not move all layers through the same channel.**
+
+Source-level supports include:
+- Ezekiel water route ≠ human route;
+- sacred/common access differences;
+- body/soul separation traditions;
+- information channels distinct from material gates;
+- winged carriers distinct from cargo;
+- different populations receiving different outcomes.
+
+---
+
+# PHASE-GRAPH BRANCHES
+
+The corpus does not support one rigid deterministic path.
+
+Several branches recur.
+
+---
+
+# BRANCH A — WARNING RECEIVED VS REJECTED
+
+**received**
+→ preparation / repentance / survival / gathering.
+
+**rejected**
+→ exposure / scattering / destruction.
+
+Sources:
+Jonah;
+prophets;
+Noah traditions;
+Zephaniah;
+Ezekiel.
+
+---
+
+# BRANCH B — OPENING AS LIBERATION VS OPENING AS FAILURE
+
+**liberation**
+- Exodus;
+- Micah;
+- Zechariah 14.
+
+**failure/drainage**
+- Nahum river gates;
+- breached city;
+- uncontrolled collapse.
+
+### S5-B1
+"Gate opens" is not enough to define event valence.
+
+Pressure/context/cargo determine effect.
+
+---
+
+# BRANCH C — FIRE AS DESTRUCTION VS REFINEMENT
+
+**destruction**
+- Day/fire judgments.
+
+**refinement**
+- Zechariah 13;
+- Malachi 3;
+- martyr/resurrection traditions.
+
+### S5-B2
+High-energy phase can:
+- destroy;
+- sort;
+- purify;
+- transform.
+
+---
+
+# BRANCH D — WATER AS BARRIER VS PATH VS LIFE-SOURCE
+
+**barrier**
+- sea/river.
+
+**path after state change**
+- Exodus/Jordan.
+
+**life-source**
+- Ezekiel/Joel/Revelation.
+
+**judgment/destruction**
+- flood traditions.
+
+### S5-B3
+Water changes function by phase.
+
+This supports using it as a geometry tracer,
+not a fixed-symbol dictionary.
+
+---
+
+# BRANCH E — CENTRAL AXIS AS PERSON VS TREE VS MOUNTAIN VS CITY
+
+Sources show:
+- king↔tree;
+- woman↔city;
+- sea→man;
+- Zion↔mountain;
+- remnant↔dew/lion;
+- city↔woman/animal.
+
+### S5-B4
+Axis identity is frequently projection-dependent.
+
+This is one of the strongest supports for the user's projection grammar.
+
+---
+
+# UNRESOLVED BRANCH POINTS
+
+The phase map makes the remaining research questions much clearer.
+
+---
+
+# U1 — WHAT TRIGGERS THE BROAD SUPPORT TO DEFORM?
+
+Candidate source-level triggers:
+- wind;
+- voice;
+- divine presence;
+- judgment;
+- cosmic shaking;
+- political crisis.
+
+Vardath candidate:
+field/current activation.
+
+But no source directly says:
+wind/current causes the broad upper support to cinch into throat.
+
+**Unresolved.**
+
+---
+
+# U2 — DOES THE BROAD SUPPORT BECOME THE AXIS?
+
+This is the central G5 question.
+
+Evidence:
+- broad sky can roll;
+- environment can become humanlike;
+- trees can become humans/kings;
+- city can become woman;
+- static throat exists.
+
+But:
+same support→axis continuity is absent.
+
+**Unresolved.**
+
+---
+
+# U3 — IS THE ANTHROPOMORPHIC AXIS A STRUCTURE, OPERATOR, OR PROJECTION?
+
+Different sources give different functions:
+- operator;
+- divine figure;
+- environmental projection;
+- political body;
+- current-body.
+
+Vardath currently treats Squatter-Man as:
+projection of active geometry/current.
+
+The corpus supports that as a valid test,
+not as universal identity.
+
+**Unresolved source-by-source.**
+
+---
+
+# U4 — ARE CHERUB / DRAGON / FEATHERED SERPENT / AXIS THE SAME PHENOMENON?
+
+The corpus supports:
+- cross-form projection;
+- wing multifunction;
+- serpent host/channel;
+- dragon political/environmental projection;
+- cherub support/throne;
+- field→human projection.
+
+It does **not** give:
+direct cherub→dragon→axis same-object transformation.
+
+Quetzalcoatl remains comparative.
+
+**Speculative.**
+
+---
+
+# U5 — DOES WATER MOVE BEFORE, DURING, OR AFTER THROAT FORMATION?
+
+Different texts place water at different phases:
+- activation;
+- barrier;
+- corridor;
+- outflow;
+- recovery.
+
+Vardath needs a more specific physical model.
+
+Current best provisional sequence:
+**field activation**
+→ **boundary/geometry change**
+→ **water route change**
+→ **environmental redistribution**.
+
+But text corpus does not uniquely fix order.
+
+**Unresolved.**
+
+---
+
+# U6 — WHERE DOES ATMOSPHERE FIT?
+
+The corpus repeatedly couples:
+- wind;
+- cloud;
+- smoke;
+- fire;
+- darkness;
+- rain.
+
+Vardath canopy model proposes:
+heating / vapor / pressure changes.
+
+The texts support atmospheric involvement,
+not the exact thermodynamic sequence.
+
+**Unresolved.**
+
+---
+
+# U7 — LOCAL GATES OR ONE GLOBAL AXIS?
+
+Evidence:
+- multiple gates;
+- multiple mountains;
+- multiple rivers;
+- local sacred centers;
+- global sky deformation.
+
+Vardath mature model allows:
+local throats inside a global support system.
+
+The corpus is compatible with that,
+but does not explicitly teach it.
+
+**Open.**
+
+---
+
+# U8 — DOES THE EVENT REPLACE THE WORLD OR RECONFIGURE IT?
+
+Strong majority of restoration sources:
+**reconfigure inherited material/population**.
+
+Some apocalyptic passages:
+appear more discontinuous.
+
+Current Vardath rule:
+**reset is not rewind; successor inherits transferred/retained material**.
+
+This is strongly supported as a comparative pattern,
+but not universal.
+
+---
+
+# U9 — ARE FUTURE/PAST WORLDS ALREADY POPULATED?
+
+Strong analogues:
+- inhabited other realms;
+- adjacent ages;
+- heavenly cities;
+- populated successor worlds.
+
+Direct counterexamples:
+- 4 Ezra depopulated silence interval;
+- Arzareth initially without inhabitants.
+
+Thus:
+Vardath's all-worlds-populated rule remains its own model choice,
+not a source-wide consensus.
+
+---
+
+# U10 — WHAT IS THE EVENT CLOCK?
+
+Still unresolved.
+
+Required next step later:
+- normalize intervals;
+- attach each to phase;
+- distinguish:
+  - warning;
+  - persecution;
+  - gate;
+  - journey;
+  - recovery;
+  - successor rhythm;
+- only then compare Archaix.
+
+---
+
+# BEST CANDIDATE VARDATH SEQUENCE FROM THE CORPUS
+
+The following is the best **source-controlled comparative reconstruction**.
+
+Each line names the strongest source family for that phase.
+
+---
+
+## 1. QUIET BROAD SUPPORT
+1 Meqabyan 27 / 3 Meqabyan 9 / Amos 9
+
+**broad upper cover**
++
+**water architecture**
++
+**wind/support relation**
++
+**inhabited land**.
+
+↓
+
+## 2. INFORMATION / WARNING
+Ezekiel / Daniel / Habakkuk / 4 Ezra / Revelation
+
+**signal**
+→ **observer/population receives phase information**.
+
+↓
+
+## 3. ACTIVATION
+Daniel 7 / 4 Ezra 13 / Exodus / Joel / Habakkuk
+
+**wind / voice / fire / motion**
+→ **field becomes active**.
+
+↓
+
+## 4. UPPER-FIELD DEFORMATION
+Isaiah 34 / Revelation 6
+
+**broad upper field**
+→ **rolled/receded field**.
+
+Alternative local solid deformation:
+Zechariah 14 / Micah 1.
+
+↓
+
+## 5. CONCENTRATED / AXIAL / THROAT STATE
+4 Ezra 7 / Daniel 12 / 4 Ezra 13 / Revelation 10
+
+**narrow connector**
++
+**bilateral side states**
++
+**anthropomorphic/current axis projection**.
+
+### CRITICAL WARNING
+The transition from 4→5 is cross-text.
+
+This is the missing G5 link.
+
+↓
+
+## 6. BOUNDARY OPENS
+Exodus 14 / Joshua 3–4 / Zechariah 14 / Micah 2 / Ezekiel gates
+
+**normally impassable boundary**
+→ **traversable route**.
+
+↓
+
+## 7. CARGO PASSES / SORTS
+Exodus / Moses basket / Jonah / Zechariah ephah / 4 Ezra migration / Ezekiel
+
+**people / objects / information / water**
+move under different rules.
+
+↓
+
+## 8. WATER / ATMOSPHERE / LAND REORGANIZE
+Ezekiel 47 / Zechariah 14 / Amos 9 / Joel / Habakkuk
+
+**flow changes**
++
+**terrain changes**
++
+**sky/air changes**.
+
+↓
+
+## 9. MAXIMUM DISTURBANCE
+Revelation / Joel / Nahum / Zephaniah / Habakkuk
+
+**fire**
++
+**darkness**
++
+**quake**
++
+**water disruption**
++
+**city/land failure**.
+
+↓
+
+## 10. BOUNDARY CLOSES / EVENT ENDS
+Exodus / Jordan / Ezekiel gates
+
+**same boundary medium returns**
+or
+**aperture closes**.
+
+### CRITICAL WARNING
+Same-support mechanical relaxation R5 remains missing.
+
+↓
+
+## 11. ECOLOGY RECOVERS
+Ezekiel 47 / Hosea 14 / Joel / Amos / Zechariah / Revelation 22
+
+**water**
+→ **plants**
+→ **animals**
+→ **food**
+→ **healing**.
+
+↓
+
+## 12. POPULATIONS REDISTRIBUTE
+Ezekiel 48 / Amos 9 / Zechariah / Micah / 4 Ezra
+
+**survivors / exiles / foreigners / tribes**
+→ **new allocation / return / integration**.
+
+↓
+
+## 13. STABLE INHABITED SUCCESSOR
+Ezekiel 47–48 / Revelation 21–22 / Amos 9 / Zechariah 14
+
+**city**
++
+**water**
++
+**trees**
++
+**people**
++
+**gates**
++
+**ongoing cycles**.
+
+---
+
+# S5-MASTER-6 — THE PHASE MAP IS MUCH STRONGER THAN A SYMBOL LIST
+
+The corpus repeatedly supports:
+
+**warning**
+→ **activation**
+→ **deformation**
+→ **opening**
+→ **transfer**
+→ **environmental disruption**
+→ **closure**
+→ **ecological recovery**
+→ **population reorganization**
+→ **inhabited successor**.
+
+This is a coherent process family.
+
+---
+
+# S5-MASTER-7 — THE STRICT VARDATH DIFFERENCE IS STILL MECHANICAL
+
+The Vardath model adds one specific bridge that the corpus does not yet state:
+
+> **the broad support itself mechanically converges into the narrow transfer throat and later mechanically relaxes back toward broad support.**
+
+That bridge is:
+**G5 + R5**.
+
+All future source searches should target that,
+not generic catastrophe symbolism.
+
+---
+
+# S5-MASTER-8 — "THE SPIDERWEB BECOMES THE FINGERTRAP" NOW HAS A PRECISE PLACE IN THE MAP
+
+It belongs specifically at:
+
+**PHASE 4**
+→
+**PHASE 5**
+
+and its reversal belongs at:
+
+**PHASE 10**
+→
+**PHASE 11 / PHASE 1-like broad stability**.
+
+This is a major clarification.
+
+The statement does **not** describe the entire event.
+
+It describes the two weakest mechanical joins in the otherwise well-populated phase graph.
+
+---
+
+# S5-MASTER-9 — BEST CURRENT SOURCE CLUSTERS BY FUNCTION
+
+## Broad support
+1/3 Meqabyan; Amos; Didascalia.
+
+## Warning/timing
+Daniel; Habakkuk; 4 Ezra; Revelation.
+
+## Activation
+Daniel 7; 4 Ezra 13; Exodus; Joel; Habakkuk.
+
+## Deformation
+Isaiah 34; Revelation 6; Zechariah 14; Micah 1.
+
+## Static throat / axis
+4 Ezra 7; Daniel 12; 4 Ezra 13; Revelation 10.
+
+## Opening
+Exodus; Joshua; Zechariah 14; Micah 2; Ezekiel.
+
+## Carrier/transfer
+Moses basket; Jonah; Zechariah 5; 4 Ezra 13; Exodus.
+
+## Sorted/bilateral flow
+Zechariah 14; Ezekiel 46–47; Exodus; 4 Ezra 7.
+
+## Maximum event
+Revelation; Joel; Nahum; Zephaniah; Habakkuk.
+
+## Closure
+Exodus; Joshua; Ezekiel gate cycles.
+
+## Recovery
+Ezekiel 47; Hosea; Joel; Amos; Zechariah; Revelation.
+
+## Redistribution
+Ezekiel 48; Amos; Micah; Zechariah; 4 Ezra.
+
+## Stable successor
+Ezekiel 47–48; Revelation 21–22; Amos 9; Zechariah 14.
+
+---
+
+# S5-MASTER-10 — BEST SINGLE-BOOK PHASE COVERAGE
+
+No one book gives all phases.
+
+But several books cover long stretches.
+
+## Ezekiel
+Best late-cycle:
+- mobile divine field;
+- departure/return;
+- gates;
+- separate channels;
+- outflow;
+- ecology;
+- land redistribution;
+- stable city.
+
+## Zechariah
+Best opening/topology/carrier mix:
+- bilateral trees;
+- winged carrier;
+- corridor between mountains;
+- mountain split;
+- human passage;
+- east/west living waters;
+- inhabited successor.
+
+## 4 Ezra
+Best topology/projection/timing mix:
+- adjacent ages;
+- static throat;
+- bilateral fire/water;
+- woman→city;
+- eagle time-body;
+- sea→man;
+- controlled river crossing;
+- public/secret information.
+
+## Revelation
+Best catastrophe→successor sweep:
+- sky deformation;
+- abyss/gates;
+- dragon/beast;
+- earth/sea judgments;
+- city collapse;
+- new city;
+- river/tree.
+
+## Exodus/Joshua
+Best same-boundary opening/closing mechanics:
+- water medium;
+- corridor;
+- population crossing;
+- same water return.
+
+### S5-MASTER-11
+The Vardath phase model is most plausibly a **composite of several strong source families**, not a paraphrase of one text.
+
+---
+
+# FULL PHASE MAP — COMPACT VERSION
+
+**Stable populated material world**
+→
+**warning / signal**
+→
+**wind / voice / fire activation**
+→
+**sky / terrain deformation**
+→
+**central axis / throat-like state**
+→
+**boundary becomes traversable**
+→
+**cargo moves under selective rules**
+→
+**water / atmosphere / land redistribute**
+→
+**destructive maximum**
+→
+**boundary closes / event pressure falls**
+→
+**water and ecology recover**
+→
+**populations/territories reorganize**
+→
+**inhabited successor stabilizes**.
+
+### Missing direct mechanical links:
+**broad support → throat**
+and
+**same throat/support → broad support again**.
+
+---
+
+# SYNTHESIS 5 — FINAL RESULT
+
+## What the completed corpus strongly supports
+
+1. **A broad ordered heaven/earth/water support cosmography.**
+2. **Warning/information phases before large transitions.**
+3. **Wind/voice/fire/shaking as recurrent activation forms.**
+4. **Large-scale deformation of sky, mountains, land and water boundaries.**
+5. **Anthropomorphic, animal, tree, city and mountain projections of underlying political/environmental processes.**
+6. **Static narrow connectors and bilateral side geometries.**
+7. **Temporary openings in otherwise impassable boundaries.**
+8. **Actual human/population transfer through changed boundaries.**
+9. **Protected carriers and cargo-class distinctions.**
+10. **Different channel rules for water, people, sacred objects and information.**
+11. **Water/air/land coupled event responses.**
+12. **Catastrophic maxima involving darkness, fire, shaking and biological/social loss.**
+13. **Finite event windows and closure/return of some boundary media.**
+14. **Strong ecological recovery sequences.**
+15. **Population/territorial redistribution after the event.**
+16. **Stable inhabited successor worlds/cities rather than simple rewind.**
+
+## What remains specifically Vardath synthesis
+
+1. **the broad support is a woven spiderweb-like lattice;**
+2. **that same lattice tightens/cinches like a fingertrap;**
+3. **the resulting narrow axis is the actual transfer gate;**
+4. **cherub / dragon / Feathered Serpent / Squatter-Man are phase projections of that same apparatus;**
+5. **the same support mechanically relaxes/reopens after transfer;**
+6. **all adjacent world-turns are already populated physical worlds;**
+7. **one physical event clock links the recurring intervals.**
+
+These remain:
+**research hypotheses / mechanical synthesis**,
+not source-level conclusions.
+
+---
+
+# SYNTHESIS 5 — COMPLETE
+
+## New permanent rules
+
+### S5-RULE-1
+**Research future texts by event phase, not by isolated symbol.**
+
+### S5-RULE-2
+**Every candidate must be assigned to one or more of the 13 phases before comparison.**
+
+### S5-RULE-3
+**Always distinguish same-object phase transition from cross-text phase alignment.**
+
+### S5-RULE-4
+**Gate opening, throat formation and support deformation are separate evidentiary questions.**
+
+### S5-RULE-5
+**Water is best treated as a geometry/route tracer; wind as an activation tracer; land as a structural-response tracer.**
+
+### S5-RULE-6
+**Information, material, biological and population layers can follow different routes in one event.**
+
+### S5-RULE-7
+**Do not use one timing number until its phase attachment is known.**
+
+### S5-RULE-8
+**Do not compare Archaix chronology until all source intervals are normalized by phase and textual witness.**
+
+### S5-RULE-9
+**The decisive missing mechanical bridge remains G5 + R5: broad support→throat and same support→broad relaxation.**
+
+### S5-RULE-10
+**The best current Vardath comparison is a phase graph, not a claim that one ancient source contains the full machine.**
+
+---
+
+# Next synthesis block
+
+**SYNTHESIS 6 — TIMING / INTERVAL NORMALIZATION BY EVENT PHASE**
+
+Required work:
+- use SYNTHESIS 5 phase map as the organizing framework;
+- collect only explicit numbers/intervals already researched;
+- attach every number to:
+  - warning;
+  - activation;
+  - oppression;
+  - opening;
+  - transfer;
+  - destruction;
+  - closure;
+  - recovery;
+  - successor operation;
+- record textual witness/version:
+  - Masoretic;
+  - Septuagint;
+  - Ethiopic;
+  - Latin/Syriac/other where relevant;
+- flag unstable numbers;
+- keep narrative-symbolic numbers separate from plausible elapsed-time intervals;
+- normalize units only where justified;
+- do **not** yet fit Archaix;
+- after normalization, identify:
+  - repeated interval families;
+  - half-periods;
+  - multiples/divisions;
+  - phase transitions that carry clocks;
+- only after that stage should an Archaix/Vardath chronology comparison begin.
+
