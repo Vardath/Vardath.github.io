@@ -3449,3 +3449,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **2.** “They do this because of the roar of the angels' voices, the tumult of their exaltation, and the sparks that go forth from their mouths, as it is written: ‘The voice of Your thunder was in the whirlwind; the lightnings lit up the world.’
 
 **3.** “Then the Prince of the World calls to them and says, ‘Be still in your places and do not fear. The ministering angels are singing before the Holy One, blessed be He,’ as it is written: ‘When the morning stars sang together and all the children of God shouted for joy.’”
+
+
+## 3 Enoch 39
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the ministering angels proclaim ‘Holy,’ all the explicit Names engraved with a pen of flame upon the Throne of Glory take flight like eagles with sixteen wings. They encircle and surround the Holy One, blessed be He, through the four directions of the place of His Shekinah.
+
+**2.** “The angels of the host, the ministers of flame, the mighty ophanim, the cherubim of the Shekinah, the Holy Living Creatures, the seraphim, the erelim, the tafsarim, the companies of consuming fire, the ranks of torch-fire, the hosts of blazing heat, the holy princes, and the princes of crowns—clothed in kingship, wrapped in mighty glory and splendor, girded with majesty and pride—fall upon their faces three times and say: ‘Blessed be the name of the glory of His kingdom forever and ever.’”
