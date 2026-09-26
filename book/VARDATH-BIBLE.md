@@ -3363,3 +3363,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **9.** “Some determine matters and some decree them in the Great Court in Arabot. Some bring questions before the Divine Majesty and some complete the matters before the Most High. Others establish the decrees upon the earth below, as it is written: ‘A Watcher and a Holy One came down from heaven and cried aloud, saying: Cut down the tree and cut off its branches; strip off its leaves and scatter its fruit.’
 
 **10.** “Why are they called Watchers and Holy Ones? Because they sanctify body and soul with fiery lashes on the third day of judgment, as it is written, ‘After two days He will revive us; on the third day He will raise us up, and we will live before Him.’”
+
+
+## 3 Enoch 29
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Each one of them has seventy names corresponding to the seventy languages, and all of those names are derived from the name of the Holy One, blessed be He. Every name is written with a pen of flame upon the awesome crown that is upon the head of the high and exalted King.
+
+**2.** “From every one of those names sparks and lightning go forth. Around each one are horns of radiance; from each one lights flash, and around each one are canopies and tents of brilliance, so that even the seraphim and the Holy Living Creatures—greater than all the children of the heights—are unable to gaze upon them.”
