@@ -4371,3 +4371,342 @@ The chief-captain said to him, “I am the chief-captain Michael, that stands be
 
 Abraham said, “Now I know that thou art an angel of the Lord, and wast sent to take my soul, but I will not go with thee; but do thou whatever thou art commanded.”
 
+### Testament of Abraham 8
+
+The chief-captain hearing these words immediately vanished, and ascending into heaven stood before God, and told all that he had seen in the house of Abraham; and the chief-captain said this also to his Lord, Thus says thy friend Abraham, I will not go with thee, but do thou whatever thou art commanded; and now, O Lord Almighty, doth thy glory and immortal kingdom order aught?  God said to the chief-captain Michael, Go to my friend Abraham yet once again, and speak to him thus, Thus saith the Lord thy God, he that brought thee into the land of promise, that blessed thee above the sand of the sea and above the stars of heaven, that opened the womb of barrenness of Sarah, and granted thee Isaac as the fruit of the womb in old age, Verily I say unto thee that blessing I will bless thee, and multiplying I will multiply thy seed, and I will give thee all that thou shalt ask from me, for I am the Lord thy God, and besides me there is no other.
+
+Tell me why thou hast rebelled against me, and why there is grief in thee, and why thou rebelled against my archangel Michael?  Knowest thou not that all who have come from Adam and Eve have died, and that none of the prophets has escaped death?  None of those that rule as kings is immortal; none of thy forefathers has escaped the mystery of death.
+
+They have all died, they have all departed into Hades, they are all gathered by the sickle of death.
+
+But upon thee I have not sent death, I have not suffered any deadly disease to come upon thee, I have not permitted the sickle of death to meet thee, I have not allowed the nets of Hades to enfold thee, I have never wished thee to meet with any evil.
+
+But for good comfort I have sent my chief-captain Michael to thee, that thou mayst know thy departure from the world, and set thy house in order, and all that belongs to thee, and bless Isaac thy beloved son.
+
+And now know that I have done this not wishing to grieve thee.
+
+Wherefore then hast thou said to my chief-captain, I will not go with thee?  Wherefore hast thou spoken thus?  Knowest thou not that if I give leave to death and he comes upon thee, then I should see whether thou wouldst come or not?
+
+### Testament of Abraham 9
+
+And the chief-captain receiving the exhortations of the Lord went down to Abraham, and seeing him the righteous one fell upon his face to the ground as one dead, and the chief-captain told him all that he had heard from the Most High.
+
+Then the holy and just Abraham rising with many tears fell at the feet of the Incorporeal, and besought him, saying, I beseech thee, chief-captain of the hosts above, since thou hast wholly deigned to come thyself to me a sinner and in all things thy unworthy servant, I beseech thee even now, O chief-captain, to carry my word yet again to the Most High, and thou shalt say to him, Thus saith Abraham thy servant, Lord, Lord, in every work and word which I have asked of thee thou hast heard me, and hast fulfilled all my counsel.
+
+Now, Lord, I resist not thy power, for I too know that I am not immortal but mortal.
+
+Since therefore to thy command all things yield, and fear and tremble at the face of thy power, I also fear, but I ask one request of thee, and now, Lord and Master, hear my prayer, for while still in this body I desire to see all the inhabited earth, and all the creations which thou didst establish by one word, and when I see these, then if I shall depart from life I shall be without sorrow.
+
+So the chief-captain went back again, and stood before God, and told him all, saying, Thus saith thy friend Abraham, I desired to behold all the earth in my lifetime before I died.
+
+And the Most High hearing this, again commanded the chief-captain Michael, and said to him, Take a cloud of light, and the angels that have power over the chariots, and go down, take the righteous Abraham upon a chariot of the cherubim, and exalt him into the air of heaven that he may behold all the earth.
+
+### Testament of Abraham 10
+
+And the archangel Michael went down and took Abraham upon a chariot of the cherubim, and exalted him into the air of heaven, and led him upon the cloud together with sixty angels, and Abraham ascended upon the chariot over all the earth.
+
+And Abraham saw the world as it was in that day, some ploughing, others driving wains, in one place men herding flocks, and in another watching them by night, and dancing and playing and harping, in another place men striving and contending at law, elsewhere men weeping and having the dead in remembrance.
+
+He saw also the newly-wedded received with honor, and in a word he saw all things that are done in the world, both good and bad.
+
+Abraham therefore passing over them saw men bearing swords, wielding in their hands sharpened swords, and Abraham asked the chief-captain, Who are these?  The chief-captain said, These are thieves, who intend to commit murder, and to steal and burn and destroy.
+
+Abraham said, Lord, Lord, hear my voice, and command that wild beasts may come out of the wood and devour them.
+
+And even as he spoke there came wild beasts out of the wood and devoured them.
+
+And he saw in another place a man with a woman committing fornication with each other, and said, Lord, Lord, command that the earth may open and swallow them, and straightway the earth was cleft and swallowed them.
+
+And he saw in another place men digging through a house, and carrying away other men's possessions, and he said, Lord, Lord, command that fire may come down from heaven and consume them.
+
+And even as he spoke, fire came down from heaven and consumed them.
+
+And straightway there came a voice from heaven to the chief-captain, saying thus, O chief-captain Michael, command the chariot to stop, and turn Abraham away that he may not see all the earth, for if he behold all that live in wickedness, he will destroy all creation.
+
+For behold, Abraham has not sinned, and has no pity on sinners, but I have made the world, and desire not to destroy any one of them, but wait for the death of the sinner, till he be converted and live.
+
+But take Abraham up to the first gate of heaven, that he may see there the judgments and recompenses, and repent of the souls of the sinners that he has destroyed.
+
+### Testament of Abraham 11
+
+So Michael turned the chariot and brought Abraham to the east, to the first gate of heaven; and Abraham saw two ways, the one narrow and contracted, the other broad and spacious, and there he saw two gates, the one broad on the broad way, and the other narrow on the narrow way.
+
+And outside the two gates there he saw a man sitting upon a gilded throne, and the appearance of that man was terrible, as of the Lord.
+
+And they saw many souls driven by angels and led in through the broad gate, and other souls, few in number, that were taken by the angels through the narrow gate.
+
+And when the wonderful one who sat upon the golden throne saw few entering through the narrow gate, and many entering through the broad one, straightway that wonderful one tore the hairs of his head and the sides of his beard, and threw himself on the ground from his throne, weeping and lamenting.
+
+But when he saw many souls entering through the narrow gate, then he arose from the ground and sat upon his throne in great joy, rejoicing and exulting.
+
+And Abraham asked the chief-captain, My Lord chief-captain, who is this most marvelous man, adorned with such glory, and sometimes he weeps and laments, and sometimes he rejoices and exults?  The incorporeal one said:  This is the first-created Adam who is in such glory, and he looks upon the world because all are born from him, and when he sees many souls going through the narrow gate, then he arises and sits upon his throne rejoicing and exulting in joy, because this narrow gate is that of the just, that leads to life, and they that enter through it go into Paradise.
+
+For this, then, the first-created Adam rejoices, because he sees the souls being saved.
+
+But when he sees many souls entering through the broad gate, then he pulls out the hairs of his head, and casts himself on the ground weeping and lamenting bitterly, for the broad gate is that of sinners, which leads to destruction and eternal punishment.
+
+And for this the first-formed Adam falls from his throne weeping and lamenting for the destruction of sinners, for they are many that are lost, and they are few that are saved, for in seven thousand there is scarcely found one soul saved, being righteous and undefiled.
+
+### Testament of Abraham 12
+
+While he was yet saying these things to me, behold two angels, fiery in aspect, and pitiless in mind, and severe in look, and they drove on thousands of souls, pitilessly lashing them with fiery thongs.
+
+The angel laid hold of one soul, and they drove all the souls in at the broad gate to destruction.
+
+So we also went along with the angels, and came within that broad gate, and between the two gates stood a throne terrible of aspect, of terrible crystal, gleaming as fire, and upon it sat a wondrous man bright as the sun, like to the Son of God.
+
+Before him stood a table like crystal, all of gold and fine linen, and upon the table there was lying a book, the thickness of it six cubits, and the breadth of it ten cubits, and on the right and left of it stood two angels holding paper and ink and pen.
+
+Before the table sat an angel of light, holding in his hand a balance, and on his left sat an angel all fiery, pitiless, and severe, holding in his hand a trumpet, having within it all-consuming fire with which to try the sinners.
+
+The wondrous man who sat upon the throne himself judged and sentenced the souls, and the two angels on the right and on the left wrote down, the one on the right the righteousness and the one on the left the wickedness.
+
+The one before the table, who held the balance, weighed the souls, and the fiery angel, who held the fire, tried the souls.
+
+And Abraham asked the chief-captain Michael, What is this that we behold?  And the chief-captain said, These things that thou seest, holy Abraham, are the judgment and recompense.
+
+And behold the angel holding the soul in his hand, and he brought it before the judge, and the judge said to one of the angels that served him, Open me this book, and find me the sins of this soul.
+
+And opening the book he found its sins and its righteousness equally balanced, and he neither gave it to the tormentors, nor to those that were saved, but set it in the midst.
+
+### Testament of Abraham 13
+
+And Abraham said, My Lord chief-captain, who is this most wondrous judge? and who are the angels that write down? and who is the angel like the sun, holding the balance? and who is the fiery angel holding the fire?  The chief-captain said, "Seest thou, most holy Abraham, the terrible man sitting upon the throne?  This is the son of the first created Adam, who is called Abel, whom the wicked Cain killed, and he sits thus to judge all creation, and examines righteous men and sinners.
+
+For God has said, I shall not judge you, but every man born of man shall be judged.
+
+Therefore he has given to him judgment, to judge the world until his great and glorious coming, and then, O righteous Abraham, is the perfect judgment and recompense, eternal and unchangeable, which no one can alter.
+
+For every man has come from the first-created, and therefore they are first judged here by his son, and at the second coming they shall be judged by the twelve tribes of Israel, every breath and every creature.
+
+But the third time they shall be judged by the Lord God of all, and then, indeed, the end of that judgment is near, and the sentence terrible, and there is none to deliver.
+
+And now by three tribunals the judgment of the world and the recompense is made, and for this reason a matter is not finally confirmed by one or two witnesses, but by three witnesses shall everything be established.
+
+The two angels on the right hand and on the left, these are they that write down the sins and the righteousness, the one on the right hand writes down the righteousness, and the one on the left the sins.
+
+The angel like the sun, holding the balance in his hand, is the archangel, Dokiel the just weigher, and he weighs the righteousnesses and sins with the righteousness of God.
+
+The fiery and pitiless angel, holding the fire in his hand, is the archangel Puruel, who has power over fire, and tries the works of men through fire, and if the fire consume the work of any man, the angel of judgment immediately seizes him, and carries him away to the place of sinners, a most bitter place of punishment.
+
+But if the fire approves the work of anyone, and does not seize upon it, that man is justified, and the angel of righteousness takes him and carries him up to be saved in the lot of the just.
+
+And thus, most righteous Abraham, all things in all men are tried by fire and the balance".
+
+### Testament of Abraham 14
+
+And Abraham said to the chief-captain, My Lord the chief-captain, the soul which the angel held in his hand, why was it adjudged to be set in the midst?  The chief-captain said, Listen, righteous Abraham.
+
+Because the judge found its sins.
+
+and its righteousnesses equal, he neither committed it to judgment nor to be saved, until the judge of all shall come.
+
+Abraham said to the chief-captain, And what yet is wanting for the soul to be saved?  The chief-captain said, If it obtains one righteousness above its sins, it enters into salvation.
+
+Abraham said to the chief-captain, Come hither, chief-captain Michael, let us make prayer for this soul, and see whether God will hear us.
+
+The chief-captain said, Amen, be it so; and they made prayer and entreaty for the soul, and God heard them, and when they rose up from their prayer they did not see the soul standing there.
+
+And Abraham said to the angel, Where is the soul that thou didst hold in the midst?  And the angel answered, It has been saved by thy righteous prayer, and behold an angel of light has taken it and carried it up into Paradise.
+
+Abraham said, I glorify the name of God, the Most High, and his immeasurable mercy.
+
+And Abraham said to the chief-captain, I beseech thee, archangel, hearken to my prayer, and let us yet call upon the Lord, and supplicate his compassion, and entreat his mercy for the souls of the sinners whom I formerly, in my anger, cursed and destroyed, whom the earth devoured, and the wild beasts tore in pieces, and the fire consumed through my words.
+
+Now I know that I have sinned before the Lord our God.
+
+Come then, O Michael, chief-captain of the hosts above, come, let us call upon God with tears that he may forgive me my sin, and grant them to me.
+
+And the chief-captain heard him, and they made entreaty before the Lord, and when they had called upon him for a long space, there came a voice from heaven saying, Abraham, Abraham, I have hearkened to thy voice and thy prayer, and forgive thee thy sin, and those whom thou thinkest that I destroyed I have called up and brought them into life by my exceeding kindness, because for a season I have requited them in judgment, and those whom I destroy living upon earth, I will not requite in death.
+
+### Testament of Abraham 15
+
+And the voice of the Lord said also to the chief-captain Michael, Michael, my servant, turn back Abraham to his house, for behold his end has come nigh, and the measure of his life is fulfilled, that he may set all things in order, and then take him and bring him to me.
+
+So the chief-captain, turning the chariot and the cloud, brought Abraham to his house, and going into his chamber he sat upon his couch.
+
+And Sarah his wife came and embraced the feet of the Incorporeal, and spoke humbly, saying, I give thee thanks, my Lord, that thou hast brought my Lord Abraham, for behold we thought he had been taken up from us.
+
+And his son Isaac also came and fell upon his neck, and in the same way all his men-slaves and women-slaves surrounded Abraham and embraced him, glorifying God.
+
+And the Incorporeal one said to them, Hearken, righteous Abraham.
+
+Behold thy wife Sarah, behold also thy beloved son Isaac, behold also all thy men-servants and maid-servants round about thee.
+
+Make disposition of all that thou hast, for the day has come nigh in which thou shalt depart from the body and go to the Lord once for all.
+
+Abraham said, Has the Lord said it, or sayest thou this of thyself?  The chief-captain answered, Hearken, righteous Abraham.
+
+The Lord has commanded, and I tell it thee.
+
+Abraham said, I will not go with thee.
+
+The chief-captain, hearing these words, straightway went forth from the presence of Abraham, and went up into the heavens, and stood before God the Most High, and said, Lord Almighty, behold I have hearkened to Thy friend Abraham in all he has said to Thee, and have fulfilled his requests.
+
+I have shown to him Thy power, and all the earth and sea that is under heaven.
+
+I have shown to him judgment and recompense by means of cloud and chariots, and again he says, I will not go with thee.
+
+And the Most High said to the angel, Does my friend Abraham say thus again, I will not go with thee?  The archangel said, Lord Almighty, he says thus, and I refrain from laying hands on him, because from the beginning he is Thy friend, and has done all things pleasing in Thy sight.
+
+There is no man like him on earth, not even Job the wondrous man, and therefore I refrain from laying hands on him.
+
+Command, therefore, Immortal King, what shall be done.
+
+### Testament of Abraham 16
+
+Then the Most High said, Call me hither Death that is called the shameless countenance and the pitiless look.
+
+And Michael the Incorporeal went and said to Death, Come hither; the Lord of creation, the immortal king, calls thee.
+
+And Death, hearing this, shivered and trembled, being possessed with great terror, and coming with great fear it stood before the invisible father, shivering, groaning and trembling, awaiting the command of the Lord.
+
+Therefore the invisible God said to Death, Come hither, thou bitter and fierce name of the world, hide thy fierceness, cover thy corruption, and cast away thy bitterness from thee, and put on thy beauty and all thy glory, and go down to Abraham my friend, and take him and bring him to me.
+
+But now also I tell thee not to terrify him, but bring him with fair speech, for he is my own friend.
+
+Having heard this, Death went out from the presence of the Most High, and put on a robe of great brightness, and made his appearance like the sun, and became fair and beautiful above the sons of men, assuming the form of an archangel, having his cheeks flaming with fire, and he departed to Abraham.
+
+Now the righteous Abraham went out of his chamber, and sat under the trees of Mamre, holding his chin in his hand, and awaiting the coming of the archangel Michael.
+
+And behold, a smell of sweet odor came to him, and a flashing of light, and Abraham turned and saw Death coming towards him in great glory and beauty.
+
+And Abraham arose and went to meet him, thinking that it was the chief-captain of God, and Death beholding him saluted him, saying, Rejoice, precious Abraham, righteous soul, true friend of the Most High God, and companion of the holy angels.
+
+Abraham said to Death, Hail thou of appearance and form like the sun, most glorious helper, bringer of light, wondrous man, from whence does thy glory come to us, and who art thou, and whence comest thou?  Then Death said, Most righteous Abraham, behold I tell thee the truth.
+
+I am the bitter lot of death.
+
+Abraham said to him, Nay, but thou art the comeliness of the world, thou art the glory and beauty of angels and men, thou art fairer in form than every other, and sayest thou, I am the bitter lot of death, and not rather, I am fairer than every good thing.
+
+Death said, I tell thee the truth.
+
+What the Lord has named me, that also I tell thee.
+
+Abraham said, For what art thou come hither?  Death said, For thy holy soul am I come.
+
+Then Abraham said, I know what thou meanest, but I will not go with thee; and Death was silent and answered him not a word.
+
+### Testament of Abraham 17
+
+Then Abraham arose, and went into his house, and Death also accompanied him thither.
+
+And Abraham went up into his chamber, and Death went up with him.
+
+And Abraham lay down upon his couch, and Death came and sat by his feet.
+
+Then Abraham said, Depart, depart from me, for I desire to rest upon my couch.
+
+Death said, I will not depart until I take thy spirit from thee.
+
+Abraham said to him, By the immortal God I charge thee to tell me the truth.
+
+Art thou death?  Death said to him, I am Death.
+
+I am the destroyer of the world.
+
+Abraham said, I beseech thee, since thou art Death, tell me if thou comest thus to all in such fairness and glory and beauty?  Death said, Nay, my Lord Abraham, for thy righteousnesses, and the boundless sea of thy hospitality, and the greatness of thy love towards God has become a crown upon my head, and in beauty and great peace and gentleness I approach the righteous, but to sinners I come in great corruption and fierceness and the greatest bitterness and with fierce and pitiless look.
+
+Abraham said, I beseech thee, hearken to me, and show me thy fierceness and all thy corruption and bitterness.
+
+And Death said, Thou canst not behold my fierceness, most righteous Abraham.
+
+Abraham said, Yes, I shall be able to behold all thy fierceness by means of the name of the living God, for the might of my God that is in heaven is with me.
+
+Then Death put off all his comeliness and beauty, and all his glory and the form like the sun with which he was clothed, and put upon himself a tyrant's robe, and made his appearance gloomy and fiercer than all kind of wild beasts, and more unclean than all uncleanness.
+
+And he showed to Abraham seven fiery heads of serpents and fourteen faces, (one) of flaming fire and of great fierceness, and a face of darkness, and a most gloomy face of a viper, and a face of a most terrible precipice, and a face fiercer than an asp, and a face of a terrible lion, and a face of a cerastes and basilisk.
+
+He showed him also a face of a fiery scimitar, and a sword-bearing face, and a face of lightning, lightening terribly, and a noise of dreadful thunder.
+
+He showed him also another face of a fierce stormy sea, and a fierce rushing river, and a terrible three-headed serpent, and a cup mingled with poisons, and in short he showed to him great fierceness and unendurable bitterness, and every mortal disease as of the odor of Death.
+
+And from the great bitterness and fierceness there died servants and maid-servants in number about seven thousand, and the righteous Abraham came into indifference of death so that his spirit failed him.
+
+### Testament of Abraham 18
+
+And the all-holy Abraham, seeing these things thus, said to Death, I beseech thee, all-destroying Death, hide thy fierceness, and put on thy beauty and the shape which thou hadst before.
+
+And straightway Death hid his fierceness, and put on his beauty which he had before.
+
+And Abraham said to Death, Why hast thou done this, that thou hast slain all my servants and maidservants?  Has God sent thee hither for this end this day?  Death said, Nay, my Lord Abraham, it is not as thou sayest, but on thy account was I sent hither.
+
+Abraham said to Death, How then have these died?  Has the Lord not spoken it?  Death said, Believe thou, most righteous Abraham, that this also is wonderful, that thou also wast not taken away with them.
+
+Nevertheless I tell thee the truth, for if the right hand of God had not been with thee at that time, thou also wouldst have had to depart from this life.
+
+The righteous Abraham said, Now I know that I have come into indifference of death, so that my spirit fails, but I beseech thee, all-destroying Death, since my servants have died before their time, come let us pray to the Lord our God that he may hear us and raise up those who died by thy fierceness before their time.
+
+And Death said, Amen, be it so.
+
+Therefore Abraham arose and fell upon the face of the ground in prayer, and Death together with him, and the Lord sent a spirit of life upon those that were dead and they were made alive again.
+
+Then the righteous Abraham gave glory to God.
+
+### Testament of Abraham 19
+
+And going up into his chamber he lay down, and Death came and stood before him.
+
+And Abraham said to him, Depart from me, for I desire to rest, because my spirit is in indifference.
+
+Death said, I will not depart from thee until I take thy soul.
+
+And Abraham with an austere countenance and angry look said to Death, Who has ordered thee to say this?  Thou sayest these words of thyself boastfully, and I will not go with thee until the chief-captain Michael come to me, and I shall go with him.
+
+But this also I tell thee, if thou desirest that I shall accompany thee, explain to me all thy changes, the seven fiery heads of serpents and what the face of the precipice is, and what the sharp sword, and what the loud-roaring river, and what the tempestuous sea that rages so fiercely.
+
+Teach me also the unendurable thunder, and the terrible lightning, and the evil-smelling cup mingled with poisons.
+
+Teach me concerning all these.
+
+And Death answered, Listen, righteous Abraham.
+
+For seven ages I destroy the world and lead all down to Hades, kings and rulers, rich and poor, slaves and free men, I convoy to the bottom of Hades, and for this I showed thee the seven heads of serpents.
+
+The face of fire I showed thee because many die consumed by fire, and behold death through a face of fire.
+
+The face of the precipice I showed thee, because many men die descending from the tops of trees or terrible precipices and losing their life, and see death in the shape of a terrible precipice.
+
+The face of the sword I showed thee because many are slain in wars by the sword, and see death as a sword.
+
+The face of the great rushing river I showed thee because many are drowned and perish snatched away by the crossing of many waters and carried off by great rivers, and see death before their time.
+
+The face of the angry raging sea I showed thee because many in the sea falling into great surges and becoming shipwrecked are swallowed up and behold death as the sea.
+
+The unendurable thunder and the terrible lightning I showed thee because many men in the moment of anger meet with unendurable thunder and terrible lightning coming to seize upon men, and see death thus.
+
+I showed thee also the poisonous wild beasts, asps and basilisks, leopards and lions and lions' whelps, bears and vipers, and in short the face of every wild beast I showed thee, most righteous one, because many men are destroyed by wild beasts, and others by poisonous snakes, serpents and asps and cerastes and basilisks and vipers, breathe out their life and die.
+
+I showed thee also the destroying cups mingled with poison, because many men being given poison to drink by other men straightway depart unexpectedly.
+
+### Testament of Abraham 20
+
+Abraham said, I beseech thee, is there also an unexpected death?  Tell me.
+
+Death said, Verily, verily, I tell thee in the truth of God that there are seventy-two deaths.
+
+One is the just death, buying its fixed time, and many men in one hour enter into death being given over to the grave.
+
+Behold, I have told thee all that thou hast asked, now I tell thee, most righteous Abraham, to dismiss all counsel, and cease from asking anything once for all, and come, go with me, as the God and judge of all has commanded me.
+
+Abraham said to Death, Depart from me yet a little, that I may rest on my couch, for I am very faint at heart, for since I have seen thee with my eyes my strength has failed me, all the limbs of my flesh seem to me a weight as of lead, and my spirit is distressed exceedingly.
+
+Depart for a little; for I have said I cannot bear to see thy shape.
+
+Then Isaac his son came and fell upon his breast weeping, and his wife Sarah came and embraced his feet, lamenting bitterly.
+
+There came also his men slaves and women slaves and surrounded his couch, lamenting greatly.
+
+And Abraham came into indifference of death, and Death said to Abraham, Come, take my right hand, and may cheerfulness and life and strength come to thee.
+
+For Death deceived Abraham, and he took his right hand, and straightway his soul adhered to the hand of Death.
+
+And immediately the archangel Michael came with a multitude of angels and took up his precious soul in his hands in a divinely woven linen cloth, and they tended the body of the just Abraham with divine ointments and perfumes until the third day after his death, and buried him in the land of promise, the oak of Mamre, but the angels received his precious soul, and ascended into heaven, singing the hymn of "thrice holy" to the Lord the God of all, and they set it there to worship the God and Father.
+
+And after great praise and glory had been given to the Lord, and Abraham bowed down to worship, there came the undefiled voice of the God and Father saying thus, Take therefore my friend Abraham into Paradise, where are the tabernacles of my righteous ones, and the abodes of my saints Isaac and Jacob in his bosom, where there is no trouble, nor grief, nor sighing, but peace and rejoicing and life unending.
+
+(And let us, too, my beloved brethren, imitate the hospitality of the patriarch Abraham, and attain to his virtuous way of life, that we may be thought worthy of the life eternal, glorifying the Father, Son and Holy Ghost; to whom be glory and power forever.
+
+Amen.
+
+).
