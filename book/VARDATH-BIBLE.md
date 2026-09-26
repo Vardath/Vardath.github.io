@@ -3069,3 +3069,42 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **2.** “Each one is prince of the host of one heaven, and with each are four hundred and ninety-six thousand myriads of ministering angels.
 
 **3.** “Michael, the great prince, is appointed over the seventh heaven, the highest, which is in Arabot. Gabriel, prince of the host, is appointed over the sixth heaven, which is in Makhon. Shatqiel, prince of the host, is appointed over the fifth heaven, which is in Ma'on. Shachaqiel, prince of the host, is appointed over the fourth heaven, which is in Zebul. Bardiel, prince of the host, is appointed over the third heaven, which is in Shehaqim. Barqiel, prince of the host, is appointed over the second heaven, in the height of Raqia. Sedriel, prince of the host, is appointed over the first heaven, which is Vilon in the heavens.”
+
+
+## 3 Enoch 18
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Below them is Galgaliel, the prince appointed over the sphere of the sun. With him are ninety-six great and honored angels who drive the sun's wheel through the firmament, three hundred and sixty-five thousand parasangs each day.
+
+**2.** “Below them is Ophanniel, the prince appointed over the wheel of the moon. With him are eighty-eight angels who drive the moon's wheel three hundred and fifty-four thousand parasangs each night, during the time when the moon stands in its eastern turning; this occurs on the sixteenth day of each month.
+
+**3.** “Below them is Rahatiel, the prince appointed over the constellations, and with him are seventy-two great and honored angels. He is called Rahatiel because he makes the constellations run in their wheels and courses, three hundred and thirty-nine thousand parasangs each night, from east to west and from west to east.
+
+**4.** “The Holy One, blessed be He, made one tent for the sun, the moon, the stars, and the constellations, and by night they travel within it from west to east.
+
+**5.** “Below them is Kokabiel, the prince appointed over all the stars. With him are three hundred and sixty-five thousand myriads of great and honored ministering angels who drive the stars from city to city and from province to province in the firmament of heaven.
+
+**6.** “Above them are seventy-two princes of kingdoms in the height, corresponding to the languages of the world. All are bound with royal crowns, clothed in royal garments, wrapped in royal ornaments, mounted on royal horses, and holding royal scepters in their hands.
+
+**7.** “Whenever one of them travels through the firmament, royal attendants run before him with great honor and dignity, just as attendants on earth go before a king with chariot, horsemen, and many troops. So are the princes served in the height, with glory, greatness, praise, song, and splendor.”
+
+## 3 Enoch 19
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above those great princes is one prince for whom there is no equal among the princes: distinguished and honored, mighty and glorious, adorned and awesome, strong and exalted, crowned and wondrous, pure and beloved, ruling, lofty, ancient, and powerful. His name is Rikhbiel YHWH, the great and awesome prince who stands beside the Chariot.
+
+**2.** “Why is he called Rikhbiel? Because he is appointed over the wheels of the Chariot, and the wheels of the Chariot are entrusted into his hand.
+
+**3.** “How many wheels are there? Eight - two toward each direction. Four winds encircle them: the storm wind, the tempest wind, the mighty wind, and the wind of earthquake.
+
+**4.** “Beneath them four rivers of fire continually flow, one river of fire toward each side. Between them stand four clouds: clouds of fire, clouds of flame, clouds of burning coal, and clouds of sulfur. They stand opposite the wheels.
+
+**5.** “The feet of the Living Creatures rest upon the wheels. Between wheel and wheel an earthquake roars, and between wheel and wheel thunder thunders.
+
+**6.** “When the time comes to utter the song, the multitude of wheels roars and the multitude of clouds trembles. The captains are shaken, the horsemen surge, the mighty recoil, the hosts are terrified, the troops hurry, the appointed ones are alarmed, the princes and armies are dismayed, the servants writhe, and the angels and standards tremble.
+
+**7.** “Then wheel calls to wheel, cherub to cherub, Living Creature to Living Creature, ophanim to ophanim, and seraph to seraph: ‘Exalt the One who rides through Arabot, whose name is Yah, and rejoice before Him.’”
+
+## 3 Enoch 20
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above them is one great and mighty prince whose name is Hayyliel YHWH. He is a powerful and awesome prince, a chief and a mighty one, a great and terrible prince before whom all the inhabitants of the heights tremble. He is able to swallow the whole world in a single moment.
+
+**2.** “Why is he called Hayyliel YHWH? Because he is appointed over the Holy Living Creatures. He strikes the Living Creatures with lashes of light, adorns and glorifies them when they give praise, thanksgiving, and song, and urges them to make haste and answer after him: ‘Holy,’ and, ‘Blessed is the glory of YHWH from His place.’”
