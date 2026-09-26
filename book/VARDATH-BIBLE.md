@@ -3048,3 +3048,24 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Splendor of all the heights: when the Holy One, blessed be He, took me to minister before the Throne of Glory, the wheels of the Chariot, and all the needs of the Shekinah, my flesh was immediately changed into flame, my sinews into fire, my bones into burning coals of broomwood, the light of my eyelids into the radiance of the firmament, the wheels of my eyes into torches of fire, the hair of my head into blaze and flame, all my limbs into wings of burning fire, and the whole stature of my body into a consuming fire.
 
 **2.** “At my right were those who hew out flames of fire; at my left a torch of fire burned. Around me flew storm-wind and tempest, and before me and behind me sounded the voice of tumult upon tumult.”
+
+
+## 3 Enoch 16
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, the glory of all the heights, said to me, “At first I sat upon a great throne at the entrance of the seventh palace, and by the authority of the Holy One, blessed be He, I judged all the inhabitants of the heights. The princes of the kingdoms stood before me on my right and on my left, while I sat in the heavenly court.
+
+**2.** “When Acher came to gaze upon the vision of the Chariot and fixed his eyes upon me, he feared and trembled before me, and his soul was terrified as though it would leave him because of my dread, terror, and awe. He saw me seated upon a throne like a king, with the ministering angels standing around me like servants and the princes of the kingdoms crowned and encircling me.
+
+**3.** “At that moment he opened his mouth and said, ‘Surely there are two powers in heaven.’
+
+**4.** “Immediately a heavenly voice went forth from before the Shekinah and said, ‘Return, backsliding children - except Acher.’
+
+**5.** “At that hour Anaphiel, the honored prince - glorious, beloved, wondrous, awesome, and revered - came on the mission of the Holy One, blessed be He. He struck me with sixty lashes of light and made me stand upon my feet.”
+
+## 3 Enoch 17
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, the glory of all the heights, said to me, “Seven are the great princes - beautiful, awesome, wondrous, and honored - who are appointed over the seven heavens. These are their names: Michael, Gabriel, Shatqiel, Shachaqiel, Bardiel, Barqiel, and Sedriel.
+
+**2.** “Each one is prince of the host of one heaven, and with each are four hundred and ninety-six thousand myriads of ministering angels.
+
+**3.** “Michael, the great prince, is appointed over the seventh heaven, the highest, which is in Arabot. Gabriel, prince of the host, is appointed over the sixth heaven, which is in Makhon. Shatqiel, prince of the host, is appointed over the fifth heaven, which is in Ma'on. Shachaqiel, prince of the host, is appointed over the fourth heaven, which is in Zebul. Bardiel, prince of the host, is appointed over the third heaven, which is in Shehaqim. Barqiel, prince of the host, is appointed over the second heaven, in the height of Raqia. Sedriel, prince of the host, is appointed over the first heaven, which is Vilon in the heavens.”
