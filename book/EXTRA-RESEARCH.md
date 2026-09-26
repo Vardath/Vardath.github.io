@@ -40,8 +40,8 @@ When the user says **"continue"** after a chat-limit rollover, freeze, memory re
    - `book/EXTRA-RESEARCH.md`
    - `book/EXTRA-RESEARCH-PART-2.md`
 3. Search the relevant book/chapter range and inspect the actual tail of Part 2.
-4. Treat the **files themselves as the progress authority**. Chat memory, checkpoint headings, commit messages and a previous assistant's summary are secondary.
-5. If the next research block was already appended before the freeze, **do not redo it**. Continue from the first genuinely unfinished block.
+4. Treat the **actual live end of the research files — especially the end of Part 2 — as the sole authority for progress measurement**. **Never use checkpoints to decide where to resume.** Checkpoint headings, progress summaries, chat memory, commit messages, and a previous assistant's remembered stopping point are historical aids only; they can be stale and must never override what the file end proves was actually appended.
+5. After any chat-limit rollover, erased-message event, freeze, memory refresh, or new chat, **read the live Part 2 tail first and continue from the first genuinely unfinished block shown there**. If work was already appended before messages disappeared, **do not redo it**, even if a checkpoint or remembered summary says otherwise.
 6. All new research from the creation of Part 2 onward is appended **only to Part 2**.
 7. After every append, verify the actual Part 2 tail and that the new block occurs once.
 
