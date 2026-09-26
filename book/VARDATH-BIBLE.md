@@ -4119,3 +4119,56 @@ And make known to Thy servant as thou hast promised me!
 **7.** I saw there naked men, the foreheads against each other, and their disgrace, and their passion which they had against each other, and their retribution.
 
 **8.** I saw there Desire, and in her hand the head of every kind of lawlessness [and her scorn and her waste assigned to perdition].
+
+
+## Apocalypse of Abraham 25
+
+**1.** I saw there the likeness of the idol of jealousy, having the likeness of woodwork such as my father was wont to make, and its statue was of glittering bronze.
+
+**2.** And before it a man, and he worshipped it; and in front of him an altar, and upon it a boy slain in the presence of the idol.
+
+**3.** But I said to Him: “What is this idol, or what is the altar, or who are they that are sacrificed, or who is the sacrificer? Or what is the Temple which I see that is beautiful in art, and its beauty being like the glory that lieth beneath Thy throne?”
+
+**4.** And He said: “Hear, Abraham. This which thou seest, the Temple and altar and beauty, is my idea of the priesthood of my glorious Name, in which dwelleth every single prayer of man, and the rise of kings and prophets, and whatever sacrifice I ordain to be offered to me among my people who are to come out of thy generation.
+
+**5.** But the statue which thou sawest is mine anger wherewith the people anger me who are to proceed for me from thee.
+
+**6.** But the man whom thou sawest slaughtering—that is he who inciteth murderous sacrifices, which are a witness to me of the final judgement, even at the beginning of creation.”
+
+## Apocalypse of Abraham 26
+
+**1.** And I said: “O Eternal, Mighty One! Wherefore hast Thou established that it should be so, and then proclaim the knowledge thereof?”
+
+**2.** And He said to me: “Hear, Abraham; understand what I say to thee, and answer me as I question thee.
+
+**3.** Why did thy father Terah not listen to thy voice, and why did he not cease from the devilish idolatry until he perished and his whole household with him?”
+
+**4.** And I said: “O Eternal, [Mighty One]! It was entirely because he did not choose to listen to me; but I, too, did not follow his works.”
+
+**5.** And He said to me: “Hear, Abraham. As the counsel of thy father is in him, and as thy counsel is in thee, so also is the counsel of my will in me ready for the coming days, before thou hast knowledge of these, or canst see with thine eyes what is future in them.
+
+**6.** How those of thy seed will be, look in the picture.”
+
+## Apocalypse of Abraham 27
+
+**1.** And I looked and saw: lo! the picture swayed and from it emerged,
+
+**2.** On its left side, a heathen people, and they pillaged those who were on the right side, men and women and children: some they slaughtered, others they retained with themselves.
+
+**3.** Lo! I saw them run towards them through four entrances, and they burnt the Temple with fire, and the holy things that were therein they plundered.
+
+**4.** And I said: “O Eternal One! Lo! the people that spring from me, whom Thou hast accepted, the hordes of the heathen do plunder, and some they kill, while others they hold fast as aliens, and the Temple they have burnt with fire, and the beautiful things therein they do rob and destroy.
+
+**5.** O Eternal, Mighty One! If this be so, wherefore hast Thou now lacerated my heart, and why should this be so?”
+
+**6.** And He said to me: “Hear, Abraham. What thou hast seen shall happen on account of thy seed who anger me by reason of the statue which thou sawest, and on account of the human slaughter in the picture, through zeal in the Temple; and as thou sawest so shall it be.”
+
+**7.** And I said: “O Eternal, Mighty One! May the works of evil wrought in ungodliness now pass by, but show me rather those who fulfilled the commandments, even the works of his righteousness. For thou canst do this.”
+
+**8.** And He said to me: “The time of the righteous meeteth them first through the holiness flowing from kings and righteous-dealing rulers whom I at first created in order from such to rule among them. But from these issue men who care for their interests, as I have made known to thee and thou hast seen.”
+
+## Apocalypse of Abraham 28
+
+**1.** And I answered and said: “O Mighty, [Eternal One], hallowed by Thy power! Be favourable to my petition, [for for this hast Thou brought me up here—and shew me]. As Thou hast brought me up to Thy height, so make [this] known to me, Thy beloved one, as much as I ask—whether what I saw shall happen to them for long?”
+
+**2.** And He showed me a multitude of His people, and said to me: “On their account through four issues, as thou sawest, I shall be provoked by them, and in these my retribution for their deeds shall be accomplished. But in the fourth outgoing of a hundred years and one hour of the age—the same is a hundred years—it shall be in misfortune among the heathen [but one hour in mercy and contumely, as among the heathen].”
