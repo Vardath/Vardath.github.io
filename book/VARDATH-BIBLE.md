@@ -3404,3 +3404,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **4.** “From beneath the feet of the Living Creatures seven rivers of fire draw forth and flow. The witness gives a measure of three hundred and sixty-five thousand parasangs for each river, and then says that its length is beyond searching and without number.
 
 **5.** “Each river curves like an arch through the four directions of Arabot Raqia. From there it falls and comes to an end in Ma'on; from Ma'on it descends to Zebul, from Zebul to Shehaqim, from Shehaqim to Raqia, from Raqia to Shamayim, and from Shamayim upon the heads of the wicked in Gehenna, as it is written: ‘Behold, the storm of YHWH, fury has gone forth, a whirling tempest; it shall burst upon the head of the wicked.’”
+
+
+## 3 Enoch 34
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “The hoofs of the feet of the Holy Living Creatures are surrounded by seven clouds of burning coal. Outside the clouds of coal are seven walls of flame; outside them are seven walls of torch-fire; beyond them are seven hailstones. Around the hailstones are circles of flame, beyond the circles of flame are chambers of storm, and beyond the chambers of storm are walls of fire and water.
+
+**2.** “Beyond those are the ones who proclaim ‘Holy,’ and beyond them the ones who proclaim ‘Blessed.’ Beyond them are mists of purity; beyond them are coals of broomwood; and beyond them are a thousand camps of fire and myriads of hosts of flame. Between camp and camp and between host and host a mist surrounds them so that they will not be burned by the fire.”
