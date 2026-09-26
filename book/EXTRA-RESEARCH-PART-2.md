@@ -36021,3 +36021,1325 @@ Required protocol:
 - continue pair/role and transformation timeline;
 - append only after ordinary literary function is established.
 
+
+
+---
+
+# SECTION 72 — TEACHING / PARABLES / SIGNS AND THE ROAD TOWARD JERUSALEM
+## Synoptic process pass — seed→tree expansion, mixed-field coexistence and delayed sorting, dragnet gathering, narrow gate/door and finite access windows, foundation-dependent storm response, lamps/oil and shut-door timing, lost→searched→recovered systems, road/carrier rescue, fixed gulf with communication but no transit, tree as observation node, delayed fig-tree judgment, and royal movement toward Jerusalem
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+Sections 68–71 were already complete.
+
+No completed Section 72 existed.
+
+The verified next block was:
+**Teaching / parables / signs and the road toward Jerusalem**.
+
+This section is appended only to Part 2.
+
+---
+
+# Method control
+
+This block is unusually parable-heavy.
+
+Therefore the research rule is stricter than usual:
+
+1. identify the ordinary teaching function first;
+2. treat the image as a process analogy;
+3. do not assume the story-world is literal cosmography;
+4. only compare mechanics when the process itself is explicit;
+5. distinguish:
+   - access;
+   - permission;
+   - timing;
+   - carrier;
+   - boundary;
+   - signal;
+   - sorting;
+   - destination.
+
+The same word "gate", "door", "tree", "seed", "net", "road", "lamp" or "house" can encode completely different functions.
+
+---
+
+# MATTHEW 7 / LUKE 13
+# Narrow gate / narrow door
+
+Matthew gives:
+- broad gate/road;
+- many travel it;
+- destruction destination;
+- narrow gate/road;
+- few find it;
+- life destination.
+
+Luke gives:
+- "narrow door";
+- people seek entrance;
+- householder/master eventually rises and shuts door;
+- later knocking does not reopen it;
+- people gather from east/west/north/south into kingdom banquet.
+
+### M72-1 — NARROW ACCESS CAN BE A MORAL/ESCHATOLOGICAL FILTER WITHOUT ANY PHYSICAL THROAT MECHANISM
+
+Matthew:
+**two routes**
+with different destinations.
+
+Luke:
+**one restricted entrance**
+with a temporal access window.
+
+This is important.
+
+### M72-2 — LUKE'S NARROW DOOR ADDS A TIME VARIABLE
+
+Before closure:
+entry possible.
+
+After closure:
+knocking/recognition claim does not reopen route.
+
+Thus:
+
+**same doorway**
++
+**different time/state**
+=
+**different accessibility**.
+
+This is highly relevant to Vardath's:
+gate-state ≠ fixed geometry alone.
+
+But source meaning:
+discipleship/judgment.
+
+### M72-3 — COMPARED WITH 4 EZRA 7, THE GOSPEL NARROW-GATE IMAGE IS MECHANICALLY WEAKER
+
+4 Ezra 7:
+- broad domain;
+- narrow central connector;
+- fire right;
+- deep water left;
+- one-person throughput.
+
+Matthew/Luke:
+- narrow gate/door;
+- destination;
+- access restriction.
+
+Missing:
+- bilateral media;
+- broad→narrow→broad spatial topology;
+- defined finite carrier capacity.
+
+Therefore:
+**do not replace 4 Ezra 7 with Matthew/Luke as the stronger throat text**.
+
+---
+
+# MATTHEW 7
+# Wise / foolish builders
+## same storm input → different foundation → different structural outcome
+
+Two houses:
+- one on rock;
+- one on sand.
+
+Same environmental load:
+- rain;
+- floods;
+- winds.
+
+Outcomes:
+- rock-founded house stands;
+- sand-founded house collapses.
+
+### M72-4 — STRUCTURAL RESPONSE DEPENDS ON SUBSTRATE, NOT ONLY EVENT INTENSITY
+
+This is an excellent systems control.
+
+Same external event:
+**rain + flood + wind**.
+
+Different internal/base state:
+**rock vs sand**.
+
+Different result:
+**survival vs collapse**.
+
+For Vardath:
+catastrophe outcome may depend on:
+- foundation;
+- local substrate;
+- coupling state.
+
+Do not assume one event must affect every location identically.
+
+### M72-5 — FOUNDATION IS A HIDDEN STATE VARIABLE UNTIL LOAD ARRIVES
+
+Before storm:
+both houses may appear functional.
+
+Event reveals:
+which structure is truly stable.
+
+---
+
+# MATTHEW 13 / MARK 4 / LUKE 13
+# Mustard seed → large plant/tree → birds in branches
+
+Process:
+- extremely small seed;
+- planted;
+- grows;
+- becomes large shrub/tree in parabolic hyperbole;
+- branches support/nest birds.
+
+Scholarly control:
+mustard is not naturally a cedar-scale world tree.
+The image is deliberately surprising/hyperbolic and can evoke prophetic tree imagery from Ezekiel/Daniel.
+
+### M72-6 — THIS IS A CLEAN CONCENTRATED→DISTRIBUTED GROWTH SEQUENCE
+
+**tiny seed**
+→ **rooted growth**
+→ **branching expansion**
+→ **distributed support habitat**.
+
+This is a strong **reopening/expansion** analogue.
+
+### M72-7 — THE END STATE IS A POPULATED SUPPORT TREE
+
+Birds:
+occupy branches.
+
+Cross-link:
+- Ezekiel 17;
+- Ezekiel 31;
+- Daniel 4.
+
+This supports the broader tree/node tradition.
+
+### M72-8 — MUSTARD TREE IS NOT AUTOMATICALLY YGGDRASIL / SKY LATTICE
+
+Ordinary function:
+kingdom parable.
+
+The tree/bird image belongs to prophetic kingdom-tree grammar.
+
+Mechanical use:
+**small centre → branching support field**.
+
+---
+
+# MATTHEW 13
+# Wheat and weeds
+## mixed field → simultaneous growth → deferred separation → harvest sorting
+
+One field contains:
+- good seed/wheat;
+- enemy-sown weeds.
+
+Servants want early removal.
+
+Owner refuses:
+- uprooting weeds might uproot wheat.
+
+Both grow together until harvest.
+
+Then:
+- reapers separate;
+- weeds burned;
+- wheat stored.
+
+### M72-9 — MIXED SYSTEMS CAN BE IMPOSSIBLE TO SORT SAFELY BEFORE MATURITY
+
+This is an important process result.
+
+Early intervention:
+risks damaging desired elements.
+
+Therefore:
+**delay is functional**, not failure.
+
+### M72-10 — SHARED FIELD DOES NOT MEAN SHARED IDENTITY
+
+Wheat and weeds:
+- occupy same substrate;
+- receive same rain/sun;
+- remain distinct.
+
+This is a major control against:
+**same environment = same phenomenon**.
+
+### M72-11 — FINAL SORTING OCCURS AFTER COEXISTENCE, NOT DURING GROWTH
+
+Sequence:
+
+**distributed mixed field**
+→ **maturation**
+→ **central harvest event**
+→ **classification**
+→ **different destinations**.
+
+This is a real sorting architecture.
+
+---
+
+# MATTHEW 13
+# Dragnet
+## broad sea deployment → mixed capture → shore concentration → sorting
+
+Net:
+- cast into sea;
+- gathers fish of every kind;
+- becomes full;
+- drawn ashore;
+- fish sorted;
+- good retained;
+- bad discarded.
+
+### M72-12 — THE DRAGNET IS A DISTRIBUTED→CONCENTRATED→SORTED PROCESS
+
+Process:
+
+**distributed sea population**
+→ **net capture**
+→ **convergence**
+→ **shore/boundary**
+→ **classification**
+→ **separate destinations**.
+
+### M72-13 — NET FUNCTION IS CAPTURE/SORTING, NOT SUPPORT LATTICE
+
+This repeats earlier net controls.
+
+A net can be:
+- capture;
+- concentration;
+- sorting.
+
+Shape similarity to a lattice is insufficient.
+
+### M72-14 — WHEAT/WEEDS AND NET PARABLES GIVE TWO DIFFERENT SORTING ARCHITECTURES
+
+Field:
+**coexist first → maturity → harvest sorting**.
+
+Net:
+**capture first → concentration → shore sorting**.
+
+Do not collapse them.
+
+---
+
+# MATTHEW 13 / LUKE 13
+# Yeast / leaven
+## small distributed input transforms entire matrix
+
+Small yeast:
+- placed/hidden in large flour mass;
+- spreads;
+- whole batch becomes leavened.
+
+### M72-15 — SMALL LOCAL INPUT CAN PROPAGATE THROUGH AN ENTIRE MEDIUM WITHOUT A CENTRAL THROAT
+
+This is a diffusion/transformation model.
+
+Useful distinction:
+not every global state change requires:
+- gate;
+- axis;
+- central corridor.
+
+Some transformations are:
+**distributed propagation**.
+
+---
+
+# LUKE 15
+# Lost sheep / lost coin / lost son
+## three different recovery architectures
+
+Luke frames all three under:
+- lost;
+- found;
+- rejoicing.
+
+But mechanisms differ.
+
+---
+
+# Lost sheep
+
+One sheep:
+- leaves/is lost from 100;
+- shepherd leaves 99;
+- searches;
+- finds;
+- carries sheep on shoulders;
+- returns;
+- community rejoices.
+
+### M72-16 — SEARCH→RECOVERY→CARRIER RETURN IS EXPLICIT
+
+The recovered occupant does not simply rejoin by itself.
+
+The shepherd:
+- locates;
+- carries;
+- reintegrates.
+
+This is a true:
+**retrieval/carrier** process.
+
+---
+
+# Lost coin
+
+One coin:
+- lost within house;
+- woman lights lamp;
+- sweeps;
+- searches carefully;
+- finds;
+- rejoices.
+
+### M72-17 — LIGHT FUNCTIONS AS SEARCH/DETECTION AID
+
+Lamp:
+does not transform coin.
+
+It:
+**improves detection**.
+
+Important control:
+light ≠ activation automatically.
+
+### M72-18 — HOUSE IS SEARCH VOLUME, NOT GATE
+
+---
+
+# Two sons / "prodigal"
+
+Younger son:
+- leaves home voluntarily;
+- travels to distant country;
+- dissipates resources;
+- crisis/famine;
+- "comes to himself";
+- turns back;
+- father sees from distance;
+- father runs outward to meet;
+- son reintegrated.
+
+Older son:
+- remains geographically near;
+- yet becomes relationally outside celebration.
+
+### M72-19 — LOSTNESS CAN BE SPATIAL OR RELATIONAL
+
+Younger:
+far away physically.
+
+Older:
+near home physically,
+but alienated from restored relationship.
+
+This is crucial:
+**distance is not identical to adjacency/state**.
+
+### M72-20 — THE FATHER DOES NOT OPERATE LIKE THE SHEPHERD
+
+Shepherd:
+goes searching.
+
+Father:
+waits/sees/runs once return begins.
+
+Thus:
+same "lost/found" outcome,
+different agent/cargo behavior.
+
+### M72-21 — RETURN IS A TWO-PART MOVEMENT
+
+Son:
+moves toward home.
+
+Father:
+moves outward toward son.
+
+They converge.
+
+This is a genuine:
+**two-sided approach to reunion**.
+
+---
+
+# LUKE 10
+# Good Samaritan
+## route hazard → damaged traveller → passers ignore → rescuer stabilizes → carrier transport → inn handoff
+
+Man travels:
+**Jerusalem → down toward Jericho**.
+
+He is:
+- attacked;
+- stripped;
+- wounded;
+- left half-dead.
+
+Priest/Levite:
+- pass.
+
+Samaritan:
+- approaches;
+- treats wounds with oil/wine;
+- loads victim on own animal;
+- transports to inn;
+- hands off to innkeeper;
+- funds continuing care;
+- promises return.
+
+### M72-22 — THIS IS ONE OF THE CLEANEST RESCUE-CHAIN MODELS IN THE GOSPELS
+
+Variables:
+
+**route**
+→ **hazard**
+→ **damaged occupant**
+→ **rescuer**
+→ **stabilization**
+→ **carrier**
+→ **destination**
+→ **secondary caretaker**
+→ **later return**.
+
+### M72-23 — CARRIER, GUIDE/RESCUER AND DESTINATION ARE DISTINCT
+
+Samaritan:
+operator.
+
+Animal:
+carrier.
+
+Inn:
+receiving node.
+
+Innkeeper:
+secondary operator.
+
+This reinforces the project's role separation.
+
+### M72-24 — "DOWN FROM JERUSALEM TO JERICHO" IS ORDINARY TOPOGRAPHIC ROUTE LANGUAGE
+
+Do not convert every ascent/descent into world-layer travel.
+
+---
+
+# LUKE 16
+# Rich man and Lazarus
+## earthly gate → postmortem reversal → fixed great chasm → communication possible but crossing impossible
+
+During life:
+- rich man inside prosperous household;
+- Lazarus lies at his gate;
+- the ordinary gate is physically traversable;
+- rich man repeatedly fails to respond.
+
+After death:
+- Lazarus with Abraham;
+- rich man in Hades/torment;
+- rich man can:
+  - see;
+  - speak;
+  - request assistance.
+
+But:
+- a great chasm is fixed;
+- passage from either side is impossible.
+
+### M72-25 — THIS IS ONE OF THE STRONGEST BOUNDARY-CONTROL TEXTS IN THE GOSPELS
+
+It explicitly separates:
+
+**visibility**
+from
+**communication**
+from
+**material/person crossing**.
+
+They can:
+- perceive;
+- communicate.
+
+They cannot:
+- transit.
+
+### M72-26 — INFORMATION CAN CROSS WHERE OCCUPANTS CANNOT
+
+This is extremely important for Vardath.
+
+A boundary may allow:
+- signal;
+- observation;
+- speech/information
+
+while forbidding:
+- body/cargo transfer.
+
+This is exactly why:
+**adjacency ≠ full coupling**.
+
+### M72-27 — THE EARTHLY GATE AND AFTERLIFE CHASM FORM A MORAL REVERSAL
+
+During life:
+a small/passable social boundary exists,
+but compassion does not cross it.
+
+After death:
+a fixed impassable boundary exists,
+and crossing is no longer available.
+
+### M72-28 — THE CHASM IS EXPLICITLY FIXED, NOT A TEMPORARILY CLOSED GATE
+
+Therefore:
+do not treat it as a dormant Vardath door.
+
+It is a negative control:
+**non-crossable boundary**.
+
+---
+
+# MATTHEW 25
+# Ten bridesmaids / lamps / oil / delayed arrival / shut door
+
+Ten:
+- await bridegroom;
+- all have lamps/torches;
+- five have adequate oil/preparation;
+- five do not.
+
+Bridegroom:
+- delayed.
+
+All:
+- become drowsy/sleep.
+
+At midnight:
+- cry/signal announces arrival;
+- lamps prepared;
+- unprepared group leaves for oil;
+- bridegroom arrives;
+- prepared group enters banquet;
+- door shuts;
+- late arrivals request opening;
+- access denied.
+
+### M72-29 — ALL AGENTS SHARE THE SAME WAITING FIELD; ONE RESOURCE-STATE VARIABLE DETERMINES READINESS
+
+Difference is not:
+location.
+
+Difference:
+**stored readiness/resource**.
+
+### M72-30 — THE ARRIVAL SIGNAL ACTIVATES THE WHOLE WAITING GROUP SIMULTANEOUSLY
+
+Signal:
+**midnight cry**.
+
+Response:
+all awaken/prepare.
+
+This is:
+**one information event → distributed activation**.
+
+### M72-31 — DOOR CLOSURE IS A TIME/STATE ACCESS THRESHOLD
+
+Before:
+entry open.
+
+After procession:
+entry closed.
+
+Late knocking:
+does not reverse state.
+
+Cross-link Luke 13.
+
+### M72-32 — CLOSED DOOR IS NOT PROOF OF PHYSICAL APERTURE MECHANICS
+
+Ordinary teaching:
+readiness in light of delayed arrival/judgment.
+
+---
+
+# MATTHEW 22 / LUKE 14
+# Banquet invitation → repeated messengers → broad-road gathering → filled hall → internal sorting
+
+Banquet parables involve:
+- invited group refusing;
+- repeated messengers;
+- later gathering from roads/streets;
+- hall filled with new guests;
+- in Matthew, one guest is later inspected/sorted.
+
+### M72-33 — ACCESS SYSTEM CAN CHANGE POPULATION SOURCE WITHOUT CHANGING DESTINATION
+
+Same hall:
+first intended population refuses.
+
+Invitation network expands:
+new population enters.
+
+This is a:
+**routing/admission-policy change**.
+
+---
+
+# LUKE 13
+# Barren fig tree
+## delayed removal → one more cultivation cycle
+
+Tree:
+- fails to produce;
+- owner requests cutting;
+- gardener asks:
+  - leave one more year;
+  - dig around;
+  - fertilize;
+  - reassess.
+
+### M72-34 — FAILED NODE IS NOT IMMEDIATELY REMOVED; INTERVENTION CAN EXTEND TEST WINDOW
+
+Sequence:
+**underperformance**
+→ **planned removal**
+→ **intercession**
+→ **additional cultivation**
+→ **future reassessment**.
+
+This is a strong:
+**delay for remediation** model.
+
+Not world-tree machinery.
+
+---
+
+# MARK 11 / MATTHEW 21
+# Fig tree + temple sequence
+## tree judgment and temple judgment interwoven
+
+Mark famously sandwiches:
+- fig tree;
+- temple action;
+- withered fig tree.
+
+Scholarly/literary reading commonly treats:
+fig tree
+and
+temple
+as mutually interpreting judgment images.
+
+### M72-35 — TREE CAN PROJECT INSTITUTION/CITY-TEMPLE STATE
+
+Cross-link:
+Ezekiel tree-empire;
+Daniel tree-king;
+4 Ezra woman-city.
+
+Again:
+tree morphology can encode:
+social/institutional body.
+
+---
+
+# MATTHEW 20 / MARK 10 / LUKE 18–19
+# Road toward Jerusalem
+## journey becomes directional narrative backbone
+
+Jesus repeatedly:
+- "sets face" / goes toward Jerusalem;
+- predicts suffering/death/resurrection;
+- moves through villages/towns;
+- gathers/fails followers along route.
+
+### M72-36 — THE GOSPELS USE ROUTE AS NARRATIVE STATE PROGRESSION
+
+Movement toward Jerusalem is not merely geography.
+
+It organizes:
+- teaching;
+- conflict;
+- identity revelation;
+- approaching terminal event.
+
+Still:
+ordinary terrestrial journey.
+
+---
+
+# LUKE 19
+# Zacchaeus
+## crowd blocks line-of-sight → tree provides elevated observation node → Jesus calls observer down → house becomes encounter node
+
+Zacchaeus:
+- wants to see;
+- crowd blocks view;
+- climbs sycamore tree;
+- obtains elevated sight line;
+- Jesus reaches location;
+- looks up;
+- calls him down;
+- Jesus enters his house.
+
+### M72-37 — TREE FUNCTIONS AS OBSERVATION PLATFORM, NOT AXIS/GATE
+
+This is a valuable negative control.
+
+Tree:
+solves
+**line-of-sight obstruction**.
+
+### M72-38 — OBSERVER NODE CAN BECOME INTERACTION NODE
+
+Initial:
+Zacchaeus observes from tree.
+
+Then:
+source/teacher identifies observer.
+
+Interaction moves:
+tree
+→ ground
+→ house.
+
+This is a clean:
+**observe → call → descend → host**
+sequence.
+
+---
+
+# LUKE 19 / MATTHEW 21 / MARK 11
+# Triumphal/royal entry toward Jerusalem
+## Mount-of-Olives region → animal acquired → rider proceeds → garments mark route → crowd acclaims → city/temple entry
+
+Process:
+- approach via Bethany/Bethphage/Mount-of-Olives region;
+- disciples retrieve colt/donkey;
+- animal carries Jesus;
+- garments spread on road;
+- crowd forms procession;
+- royal/prophetic acclamation;
+- city reached;
+- temple becomes next conflict node.
+
+Luke explicitly evokes royal meaning;
+Matthew/John explicitly connect to Zechariah 9:9.
+
+### M72-39 — THIS IS A CONTROLLED PROCESSION INTO A CENTRAL CITY, NOT A COSMIC GATE EVENT
+
+Variables:
+- route;
+- carrier;
+- operator/rider;
+- crowd;
+- destination.
+
+No topology change occurs.
+
+### M72-40 — THE COLT IS CARRIER, NOT SYMBOLICALLY IDENTICAL TO RIDER
+
+Again:
+role distinction.
+
+### M72-41 — ZECHARIAH'S EARLIER GEOMETRY IS REUSED HERE AS ROYAL-PROPHETIC SIGN, NOT AS ZECHARIAH 14'S MOUNTAIN-SPLIT MECHANISM
+
+Do not merge:
+Zechariah 9 king/colt
+with
+Zechariah 14 opening valley.
+
+---
+
+# LUKE 19:40
+## stones would cry out
+
+Jesus says that if disciples were silent:
+stones would cry out.
+
+### M72-42 — INANIMATE MATTER CAN BE PROJECTED AS INFORMATION/VOICE NODE
+
+Cross-link:
+- Habakkuk stone/beam;
+- 4 Ezra speaking stone signs.
+
+But rhetorical/hyperbolic context is strong.
+
+Do not treat as literal acoustic stone mechanism.
+
+---
+
+# VINEYARD / TENANTS
+## owner → repeated servants → son → rejection → transfer of stewardship
+
+Parable structure:
+- vineyard planted/prepared;
+- entrusted to tenants;
+- owner sends servants;
+- tenants reject/beat/kill;
+- son sent;
+- son killed;
+- tenancy judged/transferred.
+
+### M72-43 — SYSTEM OWNERSHIP CAN PERSIST WHILE OPERATORS/STEWARDS CHANGE
+
+Vineyard:
+same productive domain.
+
+Stewardship:
+changes.
+
+Cross-link:
+throne/role replacement.
+
+### M72-44 — REPEATED MESSENGER FAILURE PRECEDES OPERATOR REPLACEMENT
+
+This is:
+**information/authority channel failure**
+→ **system governance change**.
+
+Not cosmological.
+
+---
+
+# CROSS-PARABLE SYSTEM TAXONOMY
+
+Section 72 is valuable precisely because similar images perform different functions.
+
+## TREE
+Mustard:
+growth/support habitat.
+
+Fig:
+productivity/judgment.
+
+Zacchaeus tree:
+observation platform.
+
+Vine:
+productive system.
+
+### M72-45 — "TREE" IS NOT ONE MECHANISM
+
+Function must decide comparison.
+
+---
+
+## GATE / DOOR / CHASM
+
+Matthew 7:
+route-selection metaphor.
+
+Luke 13:
+narrow timed-access door.
+
+Matthew 25:
+door closes after readiness window.
+
+Luke 16:
+fixed chasm with no crossing.
+
+### M72-46 — BOUNDARY TYPES NOW REQUIRE AT LEAST FOUR CLASSES
+
+1. **selective entrance**
+2. **time-window entrance**
+3. **closed/permission boundary**
+4. **permanent non-crossable divide**
+
+Vardath gate comparisons must specify which class.
+
+---
+
+## LIGHT
+
+Lost coin:
+search illumination.
+
+Bridesmaids:
+readiness/procession light.
+
+Transfiguration from Section 71:
+body-state luminosity.
+
+### M72-47 — LIGHT CAN BE DETECTION, SIGNAL/READINESS OR BODY-STATE PROJECTION
+
+Again:
+shape/medium does not determine function.
+
+---
+
+## NET / FIELD / HOUSE
+
+Net:
+capture→concentrate→sort.
+
+Field:
+coexist→mature→sort.
+
+House:
+search volume / banquet destination / structural object.
+
+### M72-48 — SAME ENCLOSURE-LIKE FORMS CAN IMPLEMENT DIFFERENT PROCESS ORDERS
+
+---
+
+# MAJOR VARDATH RESULT 1
+# Information can cross a non-traversable boundary
+
+Luke 16 is the standout.
+
+Rich man and Abraham/Lazarus:
+- see each other;
+- communicate;
+- remain separated by fixed gulf.
+
+### M72-49 — THIS IS A DIRECT TEXTUAL MODEL OF PARTIAL COUPLING
+
+Possible channels:
+- visual;
+- verbal/information.
+
+Blocked channel:
+- body/person transfer.
+
+This is exactly the distinction needed between:
+**awareness**
+and
+**adjacency**
+and
+**material transfer**.
+
+---
+
+# MAJOR VARDATH RESULT 2
+# Narrow access has a temporal state in Luke 13 / Matthew 25
+
+Same door:
+- open at one phase;
+- shut at later phase.
+
+### M72-50 — GATE FUNCTION DEPENDS ON TIME/STATE, NOT GEOMETRY ALONE
+
+This formally matches Vardath's:
+door open / door closed
+state logic.
+
+But:
+source is eschatological readiness,
+not physical time-door engineering.
+
+---
+
+# MAJOR VARDATH RESULT 3
+# One event can reveal hidden substrate differences
+
+Matthew 7:
+
+same storm
+→ different structures
+→ different outcomes.
+
+### M72-51 — LOCAL SUBSTRATE IS A NECESSARY VARIABLE IN CATASTROPHE MODELLING
+
+This should be carried into:
+- flood comparisons;
+- mountain failure;
+- transferred land;
+- survivor-region analysis.
+
+---
+
+# MAJOR VARDATH RESULT 4
+# Concentrated→distributed growth and distributed→concentrated sorting are both explicit
+
+Mustard:
+**seed → branching field**.
+
+Net:
+**distributed fish → concentrated catch**.
+
+Lost sheep:
+**distributed flock → one lost → retrieval → flock restored**.
+
+### M72-52 — THE GOSPELS CONTAIN BOTH EXPANSION AND RECONVERGENCE PROCESS GRAMMARS
+
+Still:
+parable processes,
+not direct cosmography.
+
+---
+
+# MAJOR VARDATH RESULT 5
+# Gate opening and activation signal remain separate
+
+Cross-link Section 71 Lazarus:
+- tomb stone removed;
+- call triggers occupant emergence.
+
+Section 72 doors:
+- door may exist geometrically;
+- permission/timing determines crossing.
+
+### M72-53 — APERTURE, SIGNAL AND AUTHORIZATION ARE THREE DISTINCT VARIABLES
+
+This is becoming a mature project rule.
+
+---
+
+# STRICT FINGERTRAP TEST — SECTION 72
+
+## Mustard seed/tree
+
+Broad distributed final structure:
+strong.
+
+Narrow throat:
+absent.
+
+Contraction:
+opposite — expansion.
+
+**Not fingertrap; strong reopening/growth analogue.**
+
+## Narrow gate / door
+
+Narrow connector:
+strong.
+
+Access:
+strong.
+
+Dynamic contraction:
+absent.
+
+Broad support continuity:
+absent.
+
+**Static access analogue only.**
+
+## Wheat/weeds / net
+
+Convergence/sorting:
+strong.
+
+Support-lattice contraction:
+absent.
+
+**Sorting analogues only.**
+
+## Rich man/Lazarus
+
+Boundary:
+strong.
+
+Crossing:
+explicitly impossible.
+
+**Negative gate control.**
+
+## Triumphal entry
+
+Route/carrier/destination:
+strong.
+
+Topology change:
+absent.
+
+**Procession/route analogue only.**
+
+### Overall verdict
+
+**No strict fingertrap.**
+
+Section 72 does not advance the missing contraction link.
+
+Its major contribution is **boundary taxonomy and partial-coupling logic**, especially:
+
+> **signal/visibility may cross a boundary even when bodies cannot; and a geometrically existing door can change from accessible to inaccessible based on timing/state.**
+
+---
+
+# Pair / role register
+
+## wide road / narrow road
+paired route outcomes.
+
+## rock / sand
+paired foundations under same load.
+
+## wheat / weeds
+mixed field populations.
+
+## good fish / bad fish
+post-capture sorted populations.
+
+## 99 / 1 sheep
+distributed retained field ↔ missing member.
+
+## 9 / 1 coins
+retained inventory ↔ missing object.
+
+## younger / older son
+physically distant lostness ↔ relationally near lostness.
+
+## rich man / Lazarus
+earthly social asymmetry ↔ postmortem reversal.
+
+## five prepared / five unprepared bridesmaids
+same waiting group, different resource readiness.
+
+## owner / tenants
+system owner ↔ operators.
+
+## Jesus / colt
+rider/operator ↔ carrier.
+
+---
+
+# Number / timing register
+
+Record without forcing:
+
+- 100 sheep / 1 lost.
+- 10 coins / 1 lost.
+- 2 sons.
+- 10 bridesmaids:
+  - 5 prepared;
+  - 5 unprepared.
+- midnight arrival signal.
+- fig tree additional 1-year cultivation window.
+- vineyard repeated messenger sequence.
+- mustard tiny seed → large branching plant.
+
+No Vardath cycle should be inferred from these counts.
+
+---
+
+# Textual / scholarly controls
+
+1. Gospel parables are analogical teaching forms; individual story details are not automatically literal cosmography.
+2. Matthew 13's wheat/weeds explanation associates harvest with end-of-age sorting in Matthew's own narrative.
+3. Scholars note mustard is an intentionally surprising kingdom image; it should not be treated as a literal cedar/world-tree description.
+4. Birds in branches evoke Hebrew Bible empire/restoration tree traditions, especially Ezekiel/Daniel.
+5. Matthew 13's net and wheat/weeds both sort mixed populations but in different process orders.
+6. Matthew 7's narrow gate/road is ethical/eschatological route imagery.
+7. Luke 13's narrow door includes delayed closure and broad geographic gathering but no bilateral fire/water throat.
+8. Matthew 25's ten bridesmaids parable primarily concerns readiness during delayed arrival; oil should not be assigned a single physical substance.
+9. Luke 15's three lost/found stories have different agency structures and should not be mechanically homogenized.
+10. Good Samaritan road geography is ordinary Jerusalem→Jericho travel and must not be treated as world-layer descent.
+11. Luke 16's rich man/Lazarus is parabolic/apocalyptic moral reversal imagery, not a neutral map of afterlife physics.
+12. Nevertheless, the story explicitly distinguishes communication/visibility from crossing because the chasm cannot be traversed.
+13. Zacchaeus's tree is an observation platform.
+14. The fig tree traditions function as productivity/judgment imagery and, in Mark, are closely linked literarily to temple judgment.
+15. The Jerusalem journey is a narrative-geographic backbone.
+16. The royal entry evokes Zechariah 9:9; it should not be merged with Zechariah 14's separate mountain-splitting image.
+17. "Stones crying out" is rhetorical prophetic language and should not be literalized without evidence.
+
+---
+
+# Sources logged — Section 72
+
+## Primary Gospel passages
+- Matthew 7:
+  https://www.biblegateway.com/passage/?search=Matthew+7&version=NRSVUE
+- Matthew 13:
+  https://www.biblegateway.com/passage/?search=Matthew+13&version=NRSVUE
+- Matthew 20–22:
+  https://www.biblegateway.com/passage/?search=Matthew+20-22&version=NRSVUE
+- Matthew 25:
+  https://www.biblegateway.com/passage/?search=Matthew+25&version=NRSVUE
+- Mark 4:
+  https://www.biblegateway.com/passage/?search=Mark+4&version=NRSVUE
+- Mark 10–11:
+  https://www.biblegateway.com/passage/?search=Mark+10-11&version=NRSVUE
+- Luke 10:
+  https://www.biblegateway.com/passage/?search=Luke+10&version=NRSVUE
+- Luke 13:
+  https://www.biblegateway.com/passage/?search=Luke+13&version=NRSVUE
+- Luke 14–16:
+  https://www.biblegateway.com/passage/?search=Luke+14-16&version=NRSVUE
+- Luke 18–19:
+  https://www.biblegateway.com/passage/?search=Luke+18-19&version=NRSVUE
+
+## Scholarly/commentary controls
+- Working Preacher — Matthew 13 mustard/tree/net:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-17/commentary-on-matthew-1331-33-44-52-2
+- Working Preacher — Matthew 13 wheat/weeds:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/parables-of-the-kingdom/commentary-on-matthew-1324-43
+- Working Preacher — Matthew 7 narrow gate/builders:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/the-golden-rule/commentary-on-matthew-71-14-24-29-2
+- Working Preacher — Luke 13 narrow door:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/tower-in-siloam/commentary-on-luke-131-9-31-35
+- Working Preacher — Luke 15:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/lost-sheep-coin-son/commentary-on-luke-151-32-4
+- Working Preacher — Good Samaritan:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/good-samaritan-2/commentary-on-luke-1025-42-3
+- Working Preacher — Rich Man/Lazarus:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-26-3/commentary-on-luke-1619-31-4
+- Working Preacher — Ten Bridesmaids:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-32/commentary-on-matthew-251-13-7
+- Working Preacher — Zacchaeus:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/ordinary-31-3/commentary-on-luke-191-10-2
+- Working Preacher — Jerusalem entry:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday-3/commentary-on-luke-1928-40-2
+
+---
+
+# SECTION 72 — TEACHING / PARABLES / SIGNS AND THE ROAD TOWARD JERUSALEM COMPLETE
+
+## Strongest new findings
+
+1. **Matthew/Luke narrow-gate/door imagery is a real access model but is mechanically weaker than 4 Ezra 7: it lacks the bilateral fire/deep-water flanks and broad→narrow→broad topology.**
+2. **Luke 13 and Matthew 25 nevertheless add a major variable: the same door can be accessible during one phase and closed during another, so access depends on time/state as well as geometry.**
+3. **Matthew 7's two builders show that identical rain/flood/wind input can produce survival or collapse depending on hidden foundation/substrate state; local substrate must remain a variable in Vardath catastrophe modelling.**
+4. **The mustard seed gives a clean concentrated→distributed→support sequence: tiny seed → expanding branches → populated bird habitat. It is a strong reopening/growth analogue, not evidence that the mustard plant is a literal world-tree.**
+5. **The wheat/weeds parable gives coexistence→maturation→delayed sorting, while the dragnet gives capture→concentration→shore sorting. They are two distinct sorting architectures.**
+6. **The yeast parable gives another important control: a small local input can transform an entire medium by propagation, showing that not every global state change needs a central gate or axis.**
+7. **Luke 15's three lost/found stories share one outcome but use different mechanics: shepherd searches/carries sheep; woman uses light/search to recover coin; son returns under his own agency while father moves outward to meet him.**
+8. **The two sons demonstrate that lostness can be spatial or relational: one is far away physically, while the other remains geographically near but relationally outside the restored celebration.**
+9. **The Good Samaritan is one of the cleanest route-rescue chains: route → hazard → injured occupant → rescuer → stabilization → animal carrier → inn → secondary caretaker → later return.**
+10. **Luke 16's rich man/Lazarus is the standout boundary result: the two sides can see and communicate across the great chasm, yet neither person can cross it.**
+11. **That explicitly proves a partial-coupling model in the story-world: information/visibility can cross a boundary while bodies/cargo cannot.**
+12. **This is a major Vardath control: awareness, communication, adjacency and material transfer must remain separate variables.**
+13. **The rich man's ordinary earthly gate and the later fixed chasm also distinguish a passable social boundary from a permanently non-crossable postmortem divide; not every boundary is a temporarily closed gate.**
+14. **The ten bridesmaids add distributed signal activation: one midnight cry wakes the entire waiting group, while readiness depends on stored resource state and the door later closes.**
+15. **The banquet parables show that one destination can retain identity while its admission policy/population source changes.**
+16. **The barren fig tree gives underperforming-node → planned removal → intervention → extended test window → reassessment, a useful delayed-remediation process.**
+17. **Zacchaeus's tree is a strong negative control: it is simply an elevated observation node solving line-of-sight obstruction, not an axis or gate.**
+18. **The Jerusalem entry cleanly separates route, carrier, rider/operator, crowd and destination; the colt is a carrier, and Zechariah 9's royal sign must not be merged with Zechariah 14's mountain-opening mechanism.**
+19. **Section 72 adds a mature four-class boundary taxonomy: selective entrance, time-window entrance, closed/permission boundary, and permanent non-crossable divide.**
+20. **No strict fingertrap appears. The section's major contribution is boundary/access/partial-coupling logic rather than the missing broad-support→contracted-throat transition.**
+
+## Next live block
+
+**Recover the exact roadmap wording from the three-file archive before proceeding.**
+
+Likely next phase is the Jerusalem / Passion block, but do not assume.
+
+Before continuing:
+- search all three archives for Section 73 / the next roadmap marker;
+- inspect actual Part 2 tail;
+- identify the first unfinished exact block;
+- append only after source-controlled research.
+
