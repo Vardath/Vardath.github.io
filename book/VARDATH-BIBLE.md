@@ -3411,3 +3411,18 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “The hoofs of the feet of the Holy Living Creatures are surrounded by seven clouds of burning coal. Outside the clouds of coal are seven walls of flame; outside them are seven walls of torch-fire; beyond them are seven hailstones. Around the hailstones are circles of flame, beyond the circles of flame are chambers of storm, and beyond the chambers of storm are walls of fire and water.
 
 **2.** “Beyond those are the ones who proclaim ‘Holy,’ and beyond them the ones who proclaim ‘Blessed.’ Beyond them are mists of purity; beyond them are coals of broomwood; and beyond them are a thousand camps of fire and myriads of hosts of flame. Between camp and camp and between host and host a mist surrounds them so that they will not be burned by the fire.”
+
+
+## 3 Enoch 35
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “The Holy One, blessed be He, has four hundred and ninety-six thousand myriads of camps in the height of Arabot Raqia, and every camp contains four hundred and ninety-six thousand angels.
+
+**2.** “The height of every angel is like the Great Sea. The appearance of their form is like lightning; their eyes are like torches of fire; and their arms and their feet are like the appearance of polished bronze.
+
+**3.** “The princes of the host stand at the head of every row.
+
+**4.** “Some of them proclaim ‘Holy,’ and some proclaim ‘Blessed.’ Some run on missions, while others stand in service, as it is written: ‘A thousand thousands served Him, and myriads upon myriads stood before Him; the court sat, and the books were opened.’
+
+**5.** “When the time arrives to proclaim ‘Holy,’ first a storm-wind goes forth from before the Holy One, blessed be He, and falls upon the camp of the Shekinah, and there is a great tempest among them, as it is written: ‘Behold, the storm of YHWH goes forth in fury, a whirling tempest.’
+
+**6.** “At that hour a thousand thousands of them become torches and say ‘Amen’; whispering ones say ‘Amen’; flames say ‘Amen’; males say ‘Amen’; females say ‘Amen’; burning fires say ‘Amen’; angels of flame say ‘Amen’; flashing sparks say ‘Amen’; and hashmallim of light say ‘Amen.’ They accept upon themselves the yoke of the kingship of the high and exalted Creator of them all with fear, trembling, shaking, agitation, terror, dread, and quaking. Afterward they return to their former measure, so that the fear of their King may remain before them at every hour and their hearts may be directed to sing continually, as it is written: ‘One called to another and said: Holy.’”
