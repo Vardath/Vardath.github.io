@@ -59988,3 +59988,1509 @@ Required protocol:
 - append only verified findings;
 - verify the actual tail after append.
 
+
+
+---
+
+# SECTION 87 — SECOND BOOK OF THE COVENANT / SECOND DOMINOS
+## Ethiopic Testamentum Domini in Galilee + embedded Epistula Apostolorum — source-layered pass on later Galilee apocalypse, second-century apostolic dialogue, four-direction information field, bounded sea/deeps/fountains, explicit cross-form angel→Gabriel→flesh identity, prison-door operator, cloud-wings as luminous carrier, lower→upper population transfer, bodily resurrection, sky-opening/bright-cloud ascent, and strict fingertrap test
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for Second Dominos / Testamentum Domini in Galilee / Epistula Apostolorum;
+- EXTRA-RESEARCH.md was checked;
+- actual Part 2 tail was checked.
+
+Section 86 was present once and complete once.
+
+No earlier direct Section 87 research existed.
+
+This section is appended only to Part 2.
+
+---
+
+# TEXT IDENTITY FIRST — TWO HISTORICAL LAYERS IN ONE RECEIVED BOOK
+
+The Ethiopic **Second Book of Dominos** is the received:
+**Testamentum Domini in Galilee**.
+
+The Ethiopic composite has **62 chapters**.
+
+It contains two historically distinct writings:
+
+## Layer A — received chapters 1–11
+A later post-resurrection Galilee apocalypse.
+
+Usually dated:
+**4th/5th century**.
+
+## Layer B — received chapters 12–62
+The much older:
+**Epistula Apostolorum / Epistle of the Apostles**.
+
+Usually dated:
+**later 2nd century, commonly c.160–170 CE**.
+
+The Epistula:
+- was originally composed in Greek;
+- survives completely only in Geʽez;
+- also has fragmentary Coptic and Latin witnesses.
+
+### M87-1 — THE RECEIVED 62-CHAPTER BOOK MUST NOT BE TREATED AS ONE COMPOSITION FROM ONE TIME
+
+This is mandatory.
+
+A sequence spanning:
+- Galilee apocalypse;
+- Epistula dialogue
+
+is a **final-form Ethiopian sequence**,
+not proof that one historical author described one continuous event.
+
+---
+
+# NUMBERING CONTROL
+
+Modern public English editions of the **Epistula Apostolorum alone** often number it as:
+**1–51**.
+
+Those 51 sections correspond approximately to:
+**received Second Dominos chapters 12–62**.
+
+Thus:
+
+Epistula 1 ≈ received ch.12  
+...  
+Epistula 51 ≈ received ch.62.
+
+### M87-2 — ALWAYS NAME WHICH NUMBERING SYSTEM IS BEING USED
+
+This section uses:
+- **Galilee 1–11** for the later prefatory apocalypse;
+- **EA 1–51** for the M. R. James Epistula-only English numbering.
+
+---
+
+# LAYER A — LATER GALILEE APOCALYPSE
+
+# Galilee apocalypse overview
+## post-resurrection revelation → heaven/earth signs → ecological withdrawal → four-corner oppression → false-Christ body → elect-only sign → universal fire → rolled heavens
+
+NASSCAL's source-based summary of the Ethiopic Galilee apocalypse gives:
+
+- risen Jesus answers apostles in Galilee;
+- signs/wonders in heaven and earth;
+- trumpet from heaven;
+- catastrophes/plagues;
+- huge mortality;
+- funerals cease;
+- angels remove:
+  - fruits;
+  - rivers;
+  - deeps;
+  - trees;
+- locusts/insects consume;
+- Satan oppresses the **four corners of the world**;
+- named lands/cities suffer;
+- false Christ appears;
+- false-Christ morphology is distorted/asymmetrical;
+- God gives the beloved an identifying sign not universally perceived;
+- persecution;
+- all creation enters fire;
+- heavens are rolled up;
+- judgment;
+- righteous kingdom/rest.
+
+### M87-3 — THIS IS A WHOLE-SYSTEM WITHDRAWAL SEQUENCE
+
+The striking feature is not one catastrophe.
+
+It is simultaneous removal/failure of:
+
+**fruit/food**
++
+**rivers**
++
+**deep waters**
++
+**trees**
++
+**population survival**.
+
+That is a true:
+**ecology + hydrology + vegetation + population**
+collapse package.
+
+### M87-4 — WATER SYSTEM FAILURE INCLUDES BOTH SURFACE RIVERS AND DEEPS
+
+This is especially relevant to Vardath's:
+water follows geometry / multiple water layers.
+
+But:
+the apocalypse does not give a physical hydraulic mechanism.
+
+---
+
+# Four corners
+
+Satan's oppression reaches:
+**four corners of world**.
+
+### M87-5 — GLOBAL FIELD IS REPRESENTED AS FOUR EXTREMITIES
+
+This is geographic/cosmographic totality.
+
+Do not convert automatically into:
+four lattice arms.
+
+---
+
+# Elect-only sign
+
+The beloved/elect receive a sign that distinguishes or is visible to them.
+
+### M87-6 — OBSERVER/ACCESS STATE CAN CONTROL WHAT INFORMATION IS AVAILABLE
+
+This cross-links:
+- Daniel sealed information;
+- Ezekiel access categories;
+- 4 Ezra public/secret;
+- Abtilis restricted books.
+
+It is a semantic/perceptual layer,
+not physical invisibility proof.
+
+---
+
+# False-Christ morphology
+
+The later apocalypse gives a grotesquely asymmetric humanlike figure:
+- flame-like head;
+- differently described right/left eyes;
+- distorted facial/limb details;
+- deformed feet/fingers/joints.
+
+### M87-7 — AN APOCALYPTIC SYSTEM CAN GENERATE STRANGE ANTHROPOMORPHIC MORPHOLOGY WITHOUT DESCRIBING A WORLD-MACHINE
+
+This is one of the strongest negative controls for Squatter-Man analysis.
+
+Humanlike cosmic/eschatological body:
+does not automatically mean
+plasma-current axis.
+
+Function and sequence remain decisive.
+
+---
+
+# Universal fire + rolled heavens
+
+The Galilee apocalypse culminates:
+- creation enters fire;
+- heavens rolled up;
+- judgment/new state.
+
+### M87-8 — THE SKY ITSELF CHANGES PRESENTATION/STATE AT THE WORLD-TRANSITION
+
+Cross-link:
+- Isaiah rolled sky;
+- Revelation scroll-sky;
+- Vardath scroll/rod projection.
+
+But this text does not say:
+rolled heaven becomes a throat.
+
+### M87-9 — FIRE IS UNIVERSAL TRANSITION/JUDGMENT MEDIUM HERE, NOT NECESSARILY PLASMA
+
+Important source control.
+
+---
+
+# LAYER A continuous process
+
+post-resurrection teacher
+→ future signs disclosed
+→ trumpet from heaven
+→ heaven/earth disturbances
+→ fruits/rivers/deeps/trees removed
+→ insects/locusts intensify collapse
+→ four-corner global oppression
+→ regions/cities fall into tribulation
+→ false-Christ anthropomorphic body manifests
+→ elect receive distinguishing sign
+→ persecution
+→ creation enters fire
+→ heavens roll up
+→ judgment
+→ righteous kingdom.
+
+---
+
+# LAYER B — EPISTULA APOSTOLORUM
+
+# EA 1–2
+## one witness-centre → four-direction information broadcast
+
+The apostolic letter says it is:
+- written for the whole world.
+
+The eleven named apostles address churches of:
+- east;
+- west;
+- north;
+- south.
+
+Their authority is grounded in:
+- seeing;
+- hearing;
+- touching
+the risen Jesus.
+
+### M87-10 — ONE CENTRAL TESTIMONY IS EXPLICITLY DISTRIBUTED TO A FOUR-DIRECTION FIELD
+
+Geometry:
+
+             NORTH
+               ↑
+WEST ← apostolic witness → EAST
+               ↓
+             SOUTH
+
+Function:
+**information distribution**.
+
+Not physical cargo/gate.
+
+### M87-11 — FOUR-DIRECTION GEOMETRY CAN BE PURELY COMMUNICATIONAL
+
+Important control for four-corner cosmology.
+
+---
+
+# EA 3
+## bounded sea + deeps/fountains + seasons + earth quake/re-establishment
+
+The confession attributes to God/Christ:
+
+- heavens made;
+- earth formed;
+- **sea bounded so it cannot pass**;
+- **deeps and fountains made to spring and flow over earth**;
+- day/night;
+- sun/moon/stars;
+- light separated from darkness;
+- winter rain;
+- snow/cloud;
+- hail;
+- ice;
+- earth shaken and re-established.
+
+### M87-12 — EA 3 IS A COMPACT MULTI-LAYER ENVIRONMENTAL CONTROL SYSTEM
+
+It distinguishes:
+
+**sea**
+= bounded reservoir;
+
+**deep/fountains**
+= source/flow system;
+
+**sky**
+= lights/weather;
+
+**earth**
+= deformable/stabilized substrate.
+
+This is useful to the Vardath systems model.
+
+### M87-13 — SEA BOUNDARY AND DEEP/Fountain OUTFLOW ARE DIFFERENT FUNCTIONS
+
+Do not collapse:
+- sea wall/boundary;
+- spring/deep source;
+- river;
+- gate.
+
+---
+
+# EA 5
+## sea/wind control + deep fish carrier + distributed food
+
+Miracle summary includes:
+- unclean spirits → pigs → water;
+- walking on sea;
+- wind/waves calmed;
+- hook cast into deep;
+- fish carries coin;
+- five loaves/two fish;
+- food distributed to thousands;
+- twelve baskets remain.
+
+### M87-14 — CARRIER, MEDIUM AND CONTENT ARE DISTINCT
+
+Fish:
+carrier.
+
+Deep:
+medium/source environment.
+
+Coin:
+cargo.
+
+This repeats Jonah's carrier lesson:
+do not call carrier the gate.
+
+---
+
+# EA 9–12
+## tomb aperture → risen body proves continuity by wound/weight/contact → upper-heaven destination revealed
+
+The resurrection sequence includes:
+
+- tomb entrance opened / stone rolled away in Ethiopic note;
+- same Jesus appears;
+- disciples initially doubt;
+- wounds checked;
+- Peter/Thomas touch;
+- Andrew checks feet;
+- feet press the earth;
+- phantom contrast:
+  no footprint;
+- disciples physically touch him;
+- text insists:
+  **risen in flesh**.
+
+Then:
+- he will reveal what is above heaven/in heaven;
+- Father gives him power to take disciples/believers up there.
+
+### M87-15 — BODY-STATE CHANGE PRESERVES PERSONAL/BODILY IDENTITY
+
+Same identity:
+death
+→ tomb
+→ resurrection
+→ tactile body.
+
+This is another strong continuity control.
+
+### M87-16 — EARTH-CONTACT/FOOTPRINT IS USED AS A TEST OF MATERIAL EMBODIMENT
+
+Very useful projection control:
+appearance alone is insufficient.
+
+The text asks:
+does the body interact materially with ground?
+
+### M87-17 — AN UPPER INHABITED/REST DESTINATION IS EXPLICIT
+
+Believers are promised:
+**taken up**.
+
+Source meaning:
+heavenly salvation.
+
+Formal Vardath comparison:
+lower/present realm → upper destination.
+
+But no physical gate mechanism given.
+
+---
+
+# EA 13
+# MAJOR CROSS-FORM PROJECTION PASSAGE
+## one identity passes through heavens by adopting angelic likenesses
+
+Jesus describes pre-incarnation descent:
+
+- comes from Father;
+- passes through heavens;
+- puts on wisdom/power;
+- passes among archangels/angels
+  **in their likeness**;
+- appears as though one of them;
+- Michael/Gabriel/Uriel/Raphael accompany to fifth firmament/heaven;
+- "became all things in all" in service of the Father's plan.
+
+### M87-18 — SAME UNDERLYING AGENT CHANGES VISIBLE FORM ACCORDING TO THE DOMAIN THROUGH WHICH IT PASSES
+
+This is one of the strongest projection-grammar passages found.
+
+The identity remains:
+**one agent**.
+
+Visible/functional form:
+changes by level.
+
+This is directly relevant to:
+- cherub;
+- angel;
+- serpent;
+- Squatter-Man;
+- mountain/tree/body projections.
+
+It does not prove those Vardath identifications.
+
+### M87-19 — CROSS-DOMAIN PASSAGE CAN REQUIRE FORM MATCHING / LOCAL LIKENESS IN THE TEXT'S SYMBOLIC THEOLOGY
+
+That is an unusually precise concept.
+
+Again:
+Christological/incarnational theology,
+not engineering.
+
+---
+
+# EA 14
+# EVEN STRONGER SAME-IDENTITY TRANSFORMATION
+## divine agent → angel Gabriel form → enters Mary → flesh
+
+The dialogue says:
+
+- "I became an angel among angels";
+- took the **form of the angel Gabriel**;
+- appeared to Mary;
+- formed himself / entered her body;
+- **became flesh**;
+- Ethiopic wording emphasizes:
+  **"I was mine own messenger."**
+
+### M87-20 — THIS IS EXPLICIT SAME-IDENTITY CROSS-MORPHOLOGY:
+**DIVINE AGENT → ANGEL FORM → HUMAN FLESH**
+
+This is source-level,
+not inferred.
+
+### M87-21 — FORM AND IDENTITY ARE THEREFORE EXPLICITLY SEPARABLE VARIABLES
+
+This is enormously important to the project.
+
+An observed:
+- angel;
+- human;
+- other form
+
+need not equal:
+a different underlying agent
+within this symbolic system.
+
+This does **not** mean all mythic beings are one phenomenon.
+
+It proves that:
+**such a representational grammar exists**.
+
+---
+
+# EA 15
+## projected angelic power opens prison door → human exits → returns → later exits again
+
+A prisoner cannot join Passover memorial.
+
+Christ says:
+- sends power in the **form of angel Gabriel**;
+- prison doors open;
+- prisoner comes out;
+- joins night-watch;
+- after memorial is returned/cast into prison;
+- later comes out again to preach.
+
+### M87-22 — OPERATOR / GATE / CARRIER / DESTINATION ARE CLEANLY SEPARATED
+
+Operator:
+projected divine power / Gabriel form.
+
+Gate:
+prison door.
+
+Carrier/cargo:
+human prisoner.
+
+Destination:
+community outside.
+
+Then:
+reverse route back to prison.
+
+### M87-23 — SAME BOUNDARY IS USED IN BOTH DIRECTIONS AT DIFFERENT TIMES
+
+This is a genuine reciprocal passage system.
+
+But:
+ordinary miraculous prison architecture,
+not world gate.
+
+### M87-24 — ANGELIC FORM HERE IS AN OPERATOR ROLE
+
+Cross-link wing taxonomy:
+- wing/carrier;
+- wing/shade;
+- radiant wing;
+- angel/operator.
+
+Function first.
+
+---
+
+# EA 16
+# MAJOR WINGED-CLOUD CARRIER PASSAGE
+## return like sun → sevenfold brightness → "wings of clouds" carry figure → sign precedes → descent to earth
+
+When asked:
+**in what power/form will you come?**
+
+Answer:
+
+- like rising sun;
+- brightness seven times the sun;
+- **"the wings of the clouds shall bear me in brightness"**;
+- sign of cross precedes;
+- figure comes upon earth.
+
+### M87-25 — CLOUD ITSELF ACQUIRES WINGS AND CARRIER FUNCTION
+
+This is one of the most important wing findings in the whole research.
+
+"Wings" do not belong here to:
+- bird;
+- cherub;
+- serpent.
+
+They belong to:
+**cloud field**.
+
+### M87-26 — ENVIRONMENTAL FIELD → WINGED CARRIER IS SOURCE-LEVEL GRAMMAR
+
+This directly strengthens the user's idea that:
+wing imagery can describe an aspect/extension of an atmospheric/luminous phenomenon rather than literal feathers.
+
+It still does not identify:
+- Quetzalcoatl;
+- cherubim;
+- cloud wings
+
+as the same historical phenomenon.
+
+### M87-27 — RETURN PHASE IS DOWNWARD/INWARD:
+**bright upper figure**
+→ **winged cloud carrier**
+→ **earth**.
+
+This becomes very important beside EA 51.
+
+---
+
+# EA 17
+## ancient countdown variant + here/there simultaneity
+
+Textual witnesses differ:
+- Coptic: often read **120 years**;
+- Ethiopic tradition: commonly **150 years**;
+- Latin fragment is damaged/uncertain.
+
+The text also explores:
+- presence with Father and disciples;
+- "here" and "there";
+- shared form/power/fullness/light.
+
+### M87-28 — THE 120/150 VARIANT IS A STRONG WARNING AGAINST USING THIS PASSAGE AS A VARDATH CLOCK
+
+Do not force.
+
+### M87-29 — "HERE AND THERE" LANGUAGE IS THEOLOGICAL CO-PRESENCE, NOT PROOF OF TIME-DILATION OR STACKED-WORLD MULTILOCATION
+
+Record,
+do not literalize.
+
+---
+
+# EA 19–21
+## upper rest + bodily resurrection + ascent
+
+The dialogue says:
+- believers/disciples become children/heirs;
+- rest is "above";
+- not subject to ordinary earthly decay;
+- same Jesus has put on flesh;
+- believers will likewise:
+  **rise in flesh**
+  and
+  **be taken up into highest heaven**.
+
+### M87-30 — SAME-BODY RESURRECTION AND UPWARD TRANSFER ARE LINKED
+
+This gives:
+
+**earthly body**
+→ death
+→ resurrection
+→ **upper transfer**.
+
+Still:
+no aperture/throat is specified.
+
+---
+
+# EA 24–26
+## dissolved body becomes whole → fallen rises → lost found → body+soul judgment
+
+The Apostles ask:
+can dissolved flesh become whole?
+
+Answer:
+- flesh rises;
+- fallen rises;
+- lost found;
+- weak recovers;
+- soul remains alive;
+- body+soul participate in judgment.
+
+### M87-31 — DISTRIBUTED/DECOMPOSED MATERIAL IS REASSEMBLED INTO SAME IDENTITY
+
+Cross-link:
+1/2/3 Meqabyan resurrection mechanics.
+
+Again:
+many→one recomposition.
+
+---
+
+# EA 27
+# MAJOR LOWER→UPPER POPULATION TRANSFER
+## descent to lower rest → preaching → righteous/prophets emerge → ascent to upper rest → water/baptism of life
+
+Christ says he:
+
+- **went down** to the place/rest of Lazarus;
+- preached to righteous and prophets;
+- so that they might:
+  **come out of the rest below**
+  and
+  **come up into that which is above**;
+- Ethiopic wording associates:
+  **baptism/water of life, forgiveness and salvation**.
+
+### M87-32 — THIS IS A GENUINE POPULATION TRANSFER BETWEEN LOWER AND UPPER DOMAINS IN THE TEXT'S AFTERLIFE COSMOLOGY
+
+Sequence:
+
+**populated lower rest**
+→ agent descends
+→ information/action delivered
+→ occupants come out
+→ occupants move upward
+→ upper rest.
+
+This is highly relevant to user's:
+populated below/above world model.
+
+### M87-33 — SOURCE AND VARDATH MUST REMAIN DISTINCT
+
+Source:
+- abode of the righteous/dead;
+- afterlife/soteriology.
+
+Vardath:
+- populated physical world-turns.
+
+Formal process match:
+strong.
+
+Ontological identity:
+not established.
+
+### M87-34 — WATER/BAPTISM-OF-LIFE IS ASSOCIATED WITH THE TRANSFER BUT NOT DESCRIBED AS THE PHYSICAL TRANSPORT MEDIUM
+
+Do not overstate.
+
+---
+
+# EA 28
+## prison/fetters → release → upward transfer into prepared heaven
+
+Believers:
+- come out of prison-house/fetters;
+- are taken up to heaven;
+- enter prepared place/rest.
+
+### M87-35 — ENCLOSURE-RELEASE PRECEDES UPWARD TRANSFER
+
+This repeats:
+container → opening/release → new domain.
+
+No fingertrap.
+
+---
+
+# EA 30
+## four-direction mission field
+
+Mission:
+- Israel;
+- Gentiles;
+- east→west;
+- south→north.
+
+Christ says:
+- "I am in you";
+- gives Spirit/power;
+- distributed teachers continue mission.
+
+### M87-36 — ONE AGENT/INFORMATION SOURCE OPERATES THROUGH MULTIPLE DISTRIBUTED HUMAN NODES
+
+Formal:
+**one source**
+→ apostles
+→ future teachers
+→ four-direction population field.
+
+Again:
+network,
+not physical lattice.
+
+---
+
+# EA 31–33
+## Paul as role reversal + voice from heaven → blindness → hand-mediated restoration → distributed missionary node
+
+Paul:
+- initially enemy/persecutor;
+- hears voice from heaven;
+- bodily sensory state changes;
+- apostles' hands mediate restoration;
+- becomes preacher to Gentiles;
+- described as vessel/wall;
+- later Christ speaks to him from heaven.
+
+### M87-37 — ONE PERSON CAN REVERSE FUNCTION WHILE RETAINING IDENTITY
+
+Enemy node:
+→ messenger node.
+
+Very useful:
+state/role ≠ identity.
+
+### M87-38 — HEAVEN→PERSON INFORMATION CHANNEL CHANGES GROUND-LEVEL NETWORK BEHAVIOR
+
+Again:
+information and geometry distinct.
+
+---
+
+# EA 32
+## unequal fingers / ears of grain / trees as differentiated same-category nodes
+
+Not all recipients/rewards are identical.
+
+Analogies:
+- fingers of one hand differ;
+- ears of grain differ;
+- fruit trees produce by nature.
+
+### M87-39 — SAME SYSTEM CAN CONTAIN NONIDENTICAL NODES WITHOUT BREAKING UNITY
+
+Useful for:
+tree-node field;
+finger/hand geometry;
+different local node functions.
+
+---
+
+# EA 34–37
+## end-sign phase: trumpet + stars/daylight + fire-like falling stars + sun/moon conflict + thunder/lightning + earthquake + collapsed cities + drought + pestilence + four ends in commotion
+
+EA 34 gives:
+
+- trumpet in heaven;
+- great stars visible by day;
+- sights from heaven toward earth;
+- stars fall like fire;
+- Ethiopic variant:
+  star shining from east like fire;
+- sun/moon conflict;
+- rolling/noise;
+- thunder/lightning;
+- earthquake;
+- cities fall;
+- people die in ruins;
+- lack of rain;
+- pestilence;
+- mass mortality/no burial.
+
+EA 37:
+- war upon war;
+- four ends of earth in commotion;
+- clouds/locust clouds;
+- darkness;
+- dearth;
+- persecution.
+
+### M87-40 — THE OLDER EPISTULA ITSELF ALREADY CONTAINS A MULTI-DOMAIN CATASTROPHE PACKAGE
+
+Therefore the later Galilee apocalypse did not invent the overall genre,
+though it expands/reframes it.
+
+### M87-41 — SKY SIGNALS, GROUND FAILURE, WATER/RAIN FAILURE AND POPULATION COLLAPSE FORM ONE ORDERED EVENT FIELD
+
+This is highly Vardath-relevant structurally.
+
+But:
+apocalyptic tradition explains it literarily.
+
+---
+
+# EA 39
+## light/darkness as chosen states; Adam touches/chooses light
+
+The dialogue contrasts:
+- light;
+- darkness;
+- life;
+- death;
+- choice.
+
+Adam is described as:
+choosing light / laying hand on it,
+leaving darkness.
+
+### M87-42 — LIGHT/DARK IS SEMANTIC/MORAL STATE POLARITY, NOT AUTOMATIC PHYSICAL ENERGY POLARITY
+
+Important control.
+
+---
+
+# EA 41–42
+## one person can be father + servant + master depending function
+
+The Apostles ask how each can be:
+- father;
+- servant;
+- master.
+
+Answer:
+- father through revealing kingdom;
+- servant through baptismal service;
+- master through teaching.
+
+### M87-43 — ONE IDENTITY CAN HOLD THREE DIFFERENT FUNCTIONAL PROJECTIONS SIMULTANEOUSLY
+
+This strongly reinforces:
+function-based projection grammar.
+
+---
+
+# EA 43–45
+# virtues become women/virgins + door closes
+
+Five wise virgins are interpreted as:
+- Faith;
+- Love;
+- Grace;
+- Peace;
+- Hope.
+
+Five foolish:
+- Knowledge;
+- Understanding/Perception;
+- Obedience;
+- Patience;
+- Compassion
+in the transmitted text.
+
+Wise:
+- enter bridegroom house/chamber.
+
+Foolish:
+- wake later;
+- come to door;
+- door is shut;
+- knock;
+- remain outside.
+
+### M87-44 — ABSTRACT INFORMATION/MORAL STATES ARE PROJECTED AS HUMAN FEMALE BODIES
+
+Projection grammar is explicit.
+
+### M87-45 — DOOR STATE CONTROLS ACCESS TO A POPULATED INNER DOMAIN
+
+This is a genuine:
+**open phase**
+→ entrants pass
+→ **closed phase**
+→ later entrants excluded.
+
+But:
+static social/eschatological door,
+not dynamic world throat.
+
+---
+
+# EA 49
+## harvest sorting
+
+Corn/grain:
+- gathered into store;
+- chaff:
+  fire.
+
+### M87-46 — ONE DISTRIBUTED FIELD IS SORTED INTO TWO DESTINATION CLASSES
+
+Cross-link:
+Amos sieve;
+Vardath cargo sorting.
+
+---
+
+# EA 51
+# MAJOR ASCENSION / SKY-OPENING CARRIER PASSAGE
+## timed arrival → thunder/lightning/earthquake → heavens split → bright cloud carries figure upward → firmament approach/crossing
+
+Ending:
+
+- "third day and third hour";
+- the one who sent him comes;
+- thunder;
+- lightning;
+- earthquake;
+- **heavens part/asunder**;
+- **bright cloud bears him up**;
+- angel voices;
+- approach to firmament;
+- final voice to Apostles.
+
+### M87-47 — THIS IS A TRUE SKY-BOUNDARY OPENING FOLLOWED BY CARRIER TRANSIT
+
+Sequence:
+
+**ground-level embodied figure**
+→ signal/event package
+→ **heaven boundary parts**
+→ **bright cloud carrier engages**
+→ figure moves upward
+→ firmament/heaven boundary approached/crossed.
+
+This is one of the strongest sky-opening sequences in the entire research.
+
+### M87-48 — CLOUD IS AGAIN THE CARRIER
+
+EA 16:
+**winged clouds bear luminous figure DOWN/TO EARTH at return**.
+
+EA 51:
+**bright cloud bears same type of figure UP at ascension**.
+
+This creates a major paired result.
+
+---
+
+# MAJOR VARDATH FINDING
+# SAME SKY/CLOUD CARRIER FAMILY OPERATES IN OPPOSITE DIRECTIONS
+
+## Return / descent phase
+EA 16:
+
+**upper luminous figure**
+→ cloud **wings**
+→ carried to earth.
+
+## Ascension phase
+EA 51:
+
+**earthly embodied figure**
+→ thunder/lightning/earthquake
+→ heavens **part**
+→ bright cloud
+→ carried upward
+→ firmament/heaven.
+
+### M87-49 — SECOND DOMINOS GIVES THE STRONGEST BIDIRECTIONAL SKY-CARRIER PAIR FOUND SO FAR
+
+This is highly relevant to the user's:
+- opposed directional paths;
+- carrier;
+- cloud/plasma/wings;
+- one axis used for ascent/descent.
+
+But:
+the text never states that the cloud follows one fixed physical axis,
+nor that two counter-wound strands exist.
+
+### M87-50 — "WINGS" CAN BELONG DIRECTLY TO A CLOUD/ENVIRONMENTAL FIELD
+
+This is now source-level.
+
+Wing taxonomy gains a major category:
+
+1. bird/anatomical wing;
+2. transport wing — Zechariah;
+3. protective/shade wing — 1 Meqabyan;
+4. radiant/healing wing — Malachi;
+5. angelic praise/presence wing — 3 Meqabyan;
+6. **cloud/environmental carrier wing — Second Dominos**.
+
+This is one of the strongest findings for the:
+**Quetzalcoatl / cherub / Feathered Serpent / sky-phenomenon**
+comparison.
+
+### M87-51 — SAME-PHENOMENON HYPOTHESIS BECOMES MORE PLAUSIBLY TESTABLE AS "WING = EXTENDING/CARRYING FIELD GEOMETRY," NOT "WING = FEATHER"
+
+That is a much stronger formulation.
+
+Still speculative.
+
+---
+
+# CROSS-FORM PROJECTION CLUSTER
+
+Second Dominos contains explicit:
+
+**divine identity**
+→ angel likeness
+→ Gabriel form
+→ human flesh.
+
+It also contains:
+
+**cloud**
+→ winged carrier.
+
+And:
+
+**abstract virtues**
+→ women/virgins.
+
+### M87-52 — ONE BOOK PROVIDES THREE DIFFERENT PROJECTION CLASSES
+
+1. person/agent changes body form;
+2. environment acquires body part/function;
+3. abstract states acquire human bodies.
+
+This is extremely important methodological evidence.
+
+---
+
+# LOWER / UPPER POPULATED-DOMAIN COMPARISON
+
+EA 27:
+- lower rest contains righteous/prophets;
+- upper rest exists;
+- agent descends;
+- population emerges;
+- moves upward.
+
+EA 19/21/28:
+- prepared upper realm;
+- believers later taken up.
+
+### M87-53 — SECOND DOMINOS HAS A STRONG POPULATED LOWER↔UPPER DOMAIN FORMALISM
+
+This is closer to Vardath than merely saying:
+"heaven exists."
+
+There are:
+- occupants below;
+- occupants above/destination;
+- movement between.
+
+But:
+source ontology = afterlife/salvation.
+
+Not:
+physical stacked Earth turns.
+
+---
+
+# GATE / OPERATOR / CARRIER TAXONOMY
+
+Second Dominos gives unusually clear distinctions:
+
+## EA 15
+operator = projected angelic power  
+gate = prison door  
+carrier/cargo = prisoner  
+destination = community  
+reverse passage later.
+
+## EA 16
+carrier = winged cloud  
+cargo = returning luminous figure  
+destination = earth.
+
+## EA 27
+operator = descending Christ  
+population = righteous/prophets  
+origin = lower rest  
+destination = upper rest  
+water/baptism of life = associated transformation.
+
+## EA 51
+boundary = heavens  
+boundary state = parted/open  
+carrier = bright cloud  
+cargo = risen embodied figure  
+destination = upper realm/firmament.
+
+### M87-54 — THIS IS ONE OF THE BEST BOOKS YET FOR SEPARATING SYSTEM VARIABLES
+
+Do not collapse:
+- operator;
+- boundary;
+- aperture;
+- carrier;
+- cargo;
+- medium;
+- origin;
+- destination.
+
+---
+
+# QUETZALCOATL / CHERUB / FEATHERED-SERPENT / DRAGON UPDATE
+
+Second Dominos contributes **no need for a literal bird** to get wing imagery.
+
+Clouds themselves:
+have wings and carry.
+
+This is highly relevant to the user's observation that:
+- Feathered Serpent;
+- cherub wings;
+- Quetzalcoatl;
+- luminous/atmospheric forms
+
+may be different projections of one phenomenon.
+
+### M87-55 — THE BEST CURRENT COMPARATIVE MODEL IS:
+
+**environmental field**
+→ develops/extents "wings"
+→ acts as carrier
+→ transports luminous/humanlike central form
+→ crosses/uses sky boundary.
+
+This resembles:
+a dynamic atmospheric/sky structure much more closely than:
+a literal zoological creature.
+
+However:
+Second Dominos says **cloud**, not serpent.
+
+The serpent/dragon connection still requires another process link.
+
+---
+
+# STRICT FINGERTRAP TEST — SECOND DOMINOS
+
+Criteria:
+1. broad/open distributed support;
+2. structural continuity;
+3. geometry/angle change;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Broad/open field
+Cloud/sky:
+present.
+
+But not explicitly:
+woven support lattice.
+
+## Structural continuity
+Cloud carrier recurs in ascent/descent imagery.
+
+Interesting,
+but not enough to prove one persistent structure.
+
+## Geometry change
+Heavens part/open in EA 51.
+
+Strong opening,
+not contraction.
+
+## Narrow throat
+Absent.
+
+## Transfer/contact
+Very strong:
+- prison passage;
+- lower→upper population;
+- cloud descent;
+- cloud ascent.
+
+## Reopening/broad state
+Heaven opening occurs;
+no same-structure contraction/re-expansion cycle.
+
+### Strict verdict
+
+**NOT A STRICT FINGERTRAP.**
+
+### Classification
+
+**Exceptionally strong bidirectional sky-carrier + boundary-opening analogue.**
+
+It strengthens:
+- carrier;
+- ascent/descent;
+- cloud wings;
+- sky opening;
+- populated upper/lower transfer.
+
+It does **not** supply:
+the missing broad-mesh→narrow-throat contraction.
+
+---
+
+# TRANSFORMATION TIMELINE — FINAL-FORM SECOND DOMINOS
+
+## Later Galilee frame
+risen Christ reveals future
+→ trumpet/signs heaven+earth
+→ rivers/deeps/fruits/trees withdrawn
+→ ecological/population collapse
+→ four corners oppressed
+→ strange false-Christ body
+→ elect-only distinguishing sign
+→ persecution
+→ all creation fire
+→ heaven rolled
+→ judgment/kingdom.
+
+## Older Epistula
+apostolic witness formed
+→ message distributed east/west/north/south
+→ creator cosmography defines sea/deeps/fountains/sky/earth
+→ Jesus miracle traditions
+→ tomb entrance opens
+→ same risen body physically verified
+→ upper realm revealed
+→ pre-existent agent descends through heavens
+→ takes angelic likeness
+→ takes Gabriel form
+→ enters Mary
+→ becomes flesh
+→ projected Gabriel-power opens prison
+→ prisoner crosses out/in
+→ future return described
+→ **winged clouds bear luminous figure earthward**
+→ ancient countdown given with textual variants
+→ bodily resurrection promised
+→ lower inhabited rest entered
+→ righteous/prophets brought out
+→ population moves upward
+→ believers promised upper rest
+→ mission spreads four directions
+→ Paul role reverses
+→ catastrophe signs intensify
+→ virtues projected as women
+→ inner door closes
+→ sorting/judgment
+→ timed departure event
+→ thunder/lightning/earthquake
+→ **heavens part**
+→ **bright cloud bears figure upward**
+→ firmament reached
+→ Ascension closes book.
+
+---
+
+# PAIR / ROLE REGISTER
+
+## later apocalypse / older Epistula
+two textual layers in one received book.
+
+## earth / heaven
+origin ↔ destination.
+
+## below / above
+populated rest ↔ upper rest.
+
+## ascent / descent
+same vertical relation in opposite directions.
+
+## cloud wings / bright cloud
+downward carrier ↔ upward carrier.
+
+## agent / angel form
+identity ↔ local projection.
+
+## Gabriel form / flesh
+celestial form ↔ human body.
+
+## prison inside / outside
+bounded reciprocal route.
+
+## sea / fountains-deeps
+bounded reservoir ↔ outflow/source systems.
+
+## east-west / north-south
+four-direction information field.
+
+## light / darkness
+moral/theological state polarity.
+
+## wise / foolish virgins
+projected virtue-state pair.
+
+## body / soul
+reunited judgment identity.
+
+---
+
+# NUMBER / TIMING REGISTER
+
+## Received Second Dominos
+- 62 chapters.
+- later apocalypse = 1–11.
+- embedded Epistula = 12–62.
+
+## Epistula-only English numbering
+- 51 sections.
+
+## Apostolic group
+- 11 in main Epistula voice;
+- some manuscript/editorial traditions vary to 12.
+
+## EA 13
+- fifth firmament/heaven.
+
+## EA 16
+- brightness = sevenfold sun in James translation.
+
+## EA 17
+- countdown variant:
+  - Coptic 120;
+  - Ethiopic commonly 150;
+  - Latin damaged.
+
+## EA 43
+- 5 wise;
+- 5 foolish.
+
+## EA 51
+- third day;
+- third hour.
+
+### M87-56 — TEXTUAL VARIANTS MAKE THE 120/150 COUNT UNSUITABLE AS A VARDATH CHRONOLOGY ANCHOR
+
+Do not force.
+
+---
+
+# TEXTUAL / HISTORICAL CONTROLS
+
+1. Second Dominos is a 62-chapter received Geʽez composite.
+2. Chapters 1–11 and 12–62 are historically distinct layers.
+3. The Galilee apocalypse is generally dated to the 4th/5th century.
+4. The Epistula Apostolorum is generally dated to the later 2nd century.
+5. No complete Greek original survives.
+6. The complete Epistula is preserved only in Geʽez.
+7. Coptic and Latin fragments provide independent controls.
+8. The route into Geʽez is debated; direct Greek influence/translation has serious modern support, but no translator's colophon proves it.
+9. M. R. James's English translation is a composite scholarly translation using Coptic/Ethiopic/Latin, with witness notes.
+10. James's 51-section numbering is not the same as received 62-chapter Second Dominos numbering.
+11. Galilee apocalypse ecological/cosmic material must not be attributed to the 2nd-century Epistula.
+12. The 120/150-year saying is versionally unstable and historically belongs to ancient eschatological expectation, not a modern countdown.
+13. EA 13–14 explicitly presents one agent changing angelic/human form; this is theological incarnation/projection grammar.
+14. EA 16 directly gives cloud wings as carrier imagery.
+15. EA 27 directly gives lower→upper movement of righteous/prophets in afterlife theology.
+16. EA 51 directly gives heaven parting + bright-cloud ascent.
+17. None of these passages explicitly describes a woven lattice contracting into a narrow throat.
+18. No strict fingertrap is present.
+
+---
+
+# Sources logged — Second Dominos
+
+## Ethiopic composite identity / structure
+- Encyclopaedia Aethiopica, Testamentum Domini in Galilee:
+  https://en.sewasew.com/p/testamentum-domini-in-galilee-(%E1%89%A0%E1%8C%88%E1%88%8A%E1%88%8B-%E1%8B%A8%E1%8C%8C%E1%89%B3-%E1%8A%AA%E1%8B%B3%E1%8A%95)
+- NASSCAL, Testament of Our Lord in Galilee:
+  https://www.nasscal.com/e-clavis-christian-apocrypha/testament-of-our-lord-in-galilee/
+- Second Dominos evidence-oriented study guide:
+  https://elroidigital.org/second-book-of-dominos-study-guide.html
+
+## Epistula English working translation
+- M. R. James / Book of Covenant 2:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/
+
+## Key Epistula passages
+- four-direction witness:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/2/
+- cosmography:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/3/
+- bodily resurrection verification:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/11/
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/12/
+- passage through heavens / angel likeness:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/13/
+- Gabriel-form → flesh:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/14/
+- Gabriel-power / prison opening:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/15/
+- winged clouds / luminous return:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/16/
+- chronology variant / presence:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/17/
+- upper rest:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/19/
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/21/
+- flesh resurrection:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/24/
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/25/
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/26/
+- lower→upper population transfer:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/27/
+- four-direction mission:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/30/
+- Paul state reversal:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/31/
+- end-time signs:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/34/
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/37/
+- wise/foolish virtue projections + shut door:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/43/
+- heaven opening / bright-cloud ascent:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant2/51/
+
+---
+
+# SECTION 87 — SECOND BOOK OF THE COVENANT / SECOND DOMINOS COMPLETE
+
+## Strongest new findings
+
+1. **Second Dominos is a two-layer received book: a later 4th/5th-century Galilee apocalypse plus the much older second-century Epistula Apostolorum. These layers must never be given one historical date.**
+2. **The later Galilee apocalypse describes a genuine whole-system collapse package: fruits, rivers, deeps and trees are withdrawn, followed by famine/plague/global oppression and finally universal fire and rolled heavens.**
+3. **Its bizarre asymmetrical false-Christ body is a major negative control: striking anthropomorphic morphology can be generated by apocalypse without being a Squatter-Man/world-machine description.**
+4. **The older Epistula begins with one apostolic testimony explicitly distributed east, west, north and south—a four-direction information field rather than a physical lattice.**
+5. **EA 3 distinguishes a bounded sea from flowing deeps/fountains, weather/light systems and a quake/re-established earth, providing a compact environmental-control cosmography.**
+6. **The resurrection account uses footprint, wounds and touch to prove same-body material continuity; appearance alone is explicitly insufficient.**
+7. **EA 13 is one of the strongest projection passages yet: the same underlying agent passes through heaven by taking the likeness of angels in each celestial domain.**
+8. **EA 14 makes the transformation even more explicit: the same identity takes Gabriel-form, appears to Mary, enters her and becomes flesh. Form and identity are therefore directly separable variables in the text's symbolic theology.**
+9. **EA 15 cleanly separates operator, gate, cargo and destination: divine power in Gabriel-form opens a prison door, a human passes out, later returns through the boundary, and later exits again.**
+10. **EA 16 contains a major wing result: “the wings of the clouds” carry the luminous returning figure to earth. Wings therefore belong directly to an environmental/cloud field, not a bird or cherub.**
+11. **This is highly relevant to the cherub / Quetzalcoatl / Feathered-Serpent hypothesis because it gives source-level evidence that wing imagery can represent extending/carrying atmospheric geometry rather than literal feathers.**
+12. **EA 27 gives a genuine populated lower→upper domain transfer in the text's afterlife theology: the agent descends to the lower rest, addresses righteous/prophets, they come out, and move upward into the upper rest.**
+13. **This is one of the strongest formal parallels to the user's populated-above/populated-below model, but its source ontology is afterlife salvation rather than physical stacked world-turns.**
+14. **EA 34–37 supplies its own multi-domain end-event package—heavenly trumpet/stars/fire-like lights, sun/moon disturbance, thunder/lightning, earthquake, cities collapsing, drought, plague, darkness and four-end global commotion.**
+15. **EA 41–42 explicitly lets one person be father, servant and master according to function, reinforcing the rule that role-form and identity are separate variables.**
+16. **EA 43 projects abstract virtues as women/virgins and uses a shut bridal-chamber door as a real access-state boundary, but not a physical world gate.**
+17. **EA 51 is the second major cloud-carrier endpoint: thunder/lightning/earthquake occur, the heavens part, and a bright cloud bears the embodied figure upward toward/across the firmament.**
+18. **EA 16 + EA 51 therefore form the strongest bidirectional sky-carrier pair found so far: winged clouds carry the figure earthward at return, while a bright cloud carries the figure upward at ascension.**
+19. **The same textual system thus uses cloud/brightness as a carrier in opposite vertical directions, strongly relevant to the user's two-direction axis idea while still lacking any explicit braid or counter-wound strands.**
+20. **Second Dominos is also one of the best books yet for system-variable separation: operator, gate, carrier, cargo, origin, destination, medium and access-state are repeatedly distinguishable.**
+21. **No strict fingertrap appears. The book gives broad cloud/sky fields, sky-opening, transfer and opposite-direction carrier motion, but never a broad woven support structure contracting into a narrow throat and reopening.**
+22. **Its best Vardath classification is therefore: exceptionally strong bidirectional sky-carrier + boundary-opening analogue.**
+23. **The wing taxonomy must now include cloud/environmental carrier-wings alongside transport, protection, radiance and angelic-praise wings.**
+24. **The unresolved central question remains unchanged but sharper: can any remaining text explicitly connect the broad wind-supported covering of Meqabyan to the narrow throat of 4 Ezra and the opening/bidirectional carrier behavior of Zechariah/Second Dominos as states of one continuous structure?**
+
+## Next live block
+
+**DO NOT ASSUME THE NEXT BOOK FROM CHAT MEMORY.**
+
+Before continuing:
+- search the master reconstructed 88-book roadmap in Part 1 / EXTRA-RESEARCH.md / Part 2;
+- determine whether another Section 88 block remains;
+- if the roadmap is complete, calculate the actual number of reconstructed 88-book sections finished;
+- if Section 88 exists, identify its exact title from the file before researching it;
+- continue only from that verified file-defined frontier.
+
