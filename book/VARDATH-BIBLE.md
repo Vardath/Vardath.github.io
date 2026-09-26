@@ -3238,3 +3238,52 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **17.** “Where do all these winds go? They go out from beneath the wings of the cherubim and descend into the sphere of the sun, as it is written, ‘The wind goes toward the south and turns toward the north; round and round it goes, and the wind returns upon its circuits.’ From the sphere of the sun they return and descend upon the mountains, the seas, and the hills, as it is written, ‘He who forms the mountains and creates the wind.’
 
 **18.** “From the mountains and hills they return to the seas and rivers; from the seas and rivers they pass into the inhabited land, and from the inhabited land into towns and provinces. From there they descend into the Garden, and from the Garden into Eden, as it is written, ‘walking in the Garden in the wind of the day.’ Within the Garden of Eden they mingle and blow from side to side. They are perfumed by the spices and fragrances of Eden until they separate again, filled with the scent of pure perfume. They carry the fragrance of the spices of the Garden and of Eden to the righteous and devout who will inherit the Garden of Eden and the Tree of Life in the age to come, as it is written, ‘Awake, north wind, and come, south wind; blow upon my garden, that its spices may flow out. Let my beloved come into his garden and eat its precious fruits.’”
+
+
+## 3 Enoch 24
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, the glory of all the heights, said to me, “How many chariots does the Holy One, blessed be He, possess? He has a chariot of cherubim, as it is written, ‘He rode upon a cherub and flew.’
+
+**2.** “He has a chariot of wind, as it is written, ‘He soared upon the wings of the wind.’
+
+**3.** “He has a chariot of swift cloud, as it is written, ‘Behold, YHWH rides upon a swift cloud.’
+
+**4.** “He has chariots of clouds, as it is written, ‘Behold, I come to you in the thickness of the cloud.’
+
+**5.** “He has a chariot of the altar, as it is written, ‘I saw YHWH standing upon the altar.’
+
+**6.** “He has a chariot of myriads, as it is written, ‘The chariots of God are myriads, thousands upon thousands.’
+
+**7.** “He has a chariot of the Tent, as it is written that YHWH appeared in the Tent in a pillar of cloud.
+
+**8.** “He has a chariot of the Tent of Meeting, as it is written, ‘YHWH spoke to him from the Tent of Meeting.’
+
+**9.** “He has a chariot of the mercy seat, as it is written that he heard the Voice speaking to him from above the mercy seat.
+
+**10.** “He has a chariot of sapphire stone, as it is written, ‘Under His feet was something like a pavement of sapphire stone.’
+
+**11.** “He has a chariot of eagles, as it is written, ‘I carried you on eagles’ wings.’
+
+**12.** “He has a chariot of the shout, as it is written, ‘God has gone up with a shout.’
+
+**13.** “He has a chariot of Arabot, as it is written, ‘Extol the One who rides through Arabot; Yah is His name.’
+
+**14.** “He has a chariot of thick clouds, as it is written, ‘He makes the thick clouds His chariot.’
+
+**15.** “He has chariots of the Living Creatures, as it is written, ‘The Living Creatures ran and returned.’ They run by permission and return by permission, because the Shekinah rests above the height of their heads.
+
+**16.** “He has chariots of wheels, as it is written, ‘He said to the man clothed in linen, Go in between the wheelwork.’
+
+**17.** “He has a chariot of the swift cherub. When He rides upon the swift cherub and places one foot upon it, before He sets down the second foot He surveys eighteen thousand worlds in a single glance. He understands and sees their multitudes and knows all who are in them; then He places His other foot upon it. Thus it is written, ‘Around it shall be eighteen thousand.’ And that He surveys them every day is shown by the words, ‘YHWH looked down from heaven upon the children of men, to see whether there were any who understood, who sought after God.’
+
+**18.** “He has chariots of ophanim, as it is written, ‘The wheels were full of eyes all around.’
+
+**19.** “He has a chariot of the holy throne, as it is written, ‘God sits upon His holy throne.’
+
+**20.** “He has a chariot of the throne of Yah, as it is written, ‘For a hand is upon the throne of Yah.’
+
+**21.** “He has a chariot of the throne of judgment, as it is written, ‘YHWH of Hosts is exalted in judgment.’
+
+**22.** “He has a chariot of the Throne of Glory, as it is written, ‘A glorious throne, exalted from the beginning, is the place of our sanctuary.’
+
+**23.** “He has a chariot of the high and exalted throne, as it is written, ‘I saw YHWH sitting upon a throne, high and lifted up.’”
