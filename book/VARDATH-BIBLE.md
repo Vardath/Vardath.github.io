@@ -3735,3 +3735,52 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **13.** [And I said:] “He is burnt to ashes in the violence of the fire and is reduced to dust.”
 
 **14.** And he said: “Great is the power of Barisat! I will make another to-day, and to-morrow he will prepare my food.”
+
+
+## Apocalypse of Abraham 6
+
+**1.** When I, Abraham, however, heard such words from my father, I laughed in my mind and sighed in the grief and in the anger of my soul, and said: “How then can that which is made by him—manufactured statues—be a helper of my father? Or shall the body then be subject to its soul, and the soul to the spirit, and the spirit to folly and ignorance!”
+
+**2.** And I said: “It is fitting once to endure evil. So I will direct my mind to what is pure and lay my thoughts open before him.”
+
+**3.** [And] I answered and said: “O father Terah, whichever of these thou praisest as a god, thou art foolish in thy mind. Behold the gods of thy brother Ora, which stand in the holy temple, are more worthy of honour than [these of] thine.”
+
+**4.** “For behold Zucheus, the god of thy brother Oron, is more worthy of honour than thy god Merumath, because he is made of gold which is highly valued by people, and when he groweth old in years he will be re-modelled; but if your god Merumath is changed or broken, he will not be renewed, because he is a stone.”
+
+**5.** “The which is also the case with the god Joavon [who standeth with Zucheus over the other gods—how much more worthy of honour is he than the god Barisat, who is made of wood, while he is forged of silver! How is he made, by adaptation of man, valuable to outward appearance!”
+
+**6.** “But thy god Barisat, while he was still, before he had been prepared, rooted up (?) upon the earth and was great and wonderful with the glory of branches and blossom, thou didst hew out with the axe, and by means of thy art he hath been made into a god.”
+
+**7.** “And lo! his fatness is already withered and perished, he is fallen from the height to the ground, he hath come from great estate to littleness, and the appearance of his countenance hath vanished, and he Barisat himself is burnt up by fire and reduced to ashes and is no more; and thou sayest: ‘To-day I will make another which to-morrow shall make ready my food!’”
+
+**8.** “He hath perished to utter destruction!”
+
+## Apocalypse of Abraham 7
+
+**1.** “Behold, the fire is more worthy of honour than all things formed because even that which is not subjected is subjected unto it, and things easily perishable are mocked by its flames.”
+
+**2.** “But even more worthy of honour is the water, because it conquereth the fire and satisfieth the earth. But even it I do not call God, because it is subjected to the earth under which the water inclineth.”
+
+**3.** “But I call the earth much more worthy of honour, because it overpowereth the nature (and the fulness) of the water. Even it (viz. the earth), however, I do not call god, [because] it, too, is dried up by the sun, [and] is apportioned to man to be tilled.”
+
+**4.** “[I call the sun more worthy of honour than the earth,] because it with its rays illumineth the whole world and the different atmospheres. [But] even it I do not call god, because at night and by clouds its course is obscured.”
+
+**5.** “Nor, again, do I call the moon or the stars god, because they also in their season obscure [their] light at night.”
+
+**6.** “[But] hear [this], Terah my father; for I will make known to thee the God who hath made everything, not these we consider as gods. Who then is He? or what is He?”
+
+**7.** “Who hath crimsoned the heavens, and made the sun golden, and the moon lustrous, and with it the stars; and hath made the earth dry in the midst of many waters, and set thee in . . . [and tested me in the confusion of my thoughts].”
+
+**8.** “Yet may God reveal Himself to us through Himself!”
+
+## Apocalypse of Abraham 8
+
+**1.** And it came to pass while I spake thus to my father Terah in the court of my house, there cometh down the voice of a Mighty One from heaven in a fiery cloud-burst, saying and crying: “Abraham, Abraham!”
+
+**2.** And I said: “Here am I.”
+
+**3.** And He said: “Thou art seeking in the understanding of thine heart the God of Gods and the Creator; I am He: Go out from thy father Terah, and get thee out from the house, that thou also be not slain in the sins of thy father’s house.”
+
+**4.** And I went out.
+
+**5.** And it came to pass when I went out, that before I succeeded in getting out in front of the door of the court, there came a sound of a [great] thunder and burnt him and his house, and everything whatsoever in his house, down to the ground, forty cubits.
