@@ -3542,3 +3542,14 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **5.** I saw Messiah son of Joseph and his generation and all the deeds that the nations perform in his days. I saw Messiah son of David and his generation, and every battle, war, work, and deed involving Israel, for good and for harm. I saw all the battles and wars of Gog and Magog in the days of Messiah and all that the Holy One, blessed be He, will do with them in the time to come.
 
 **6.** The leaders of every generation and all the deeds of every generation—whether in Israel or among the nations, whether already done or yet to be done, through all generations until the end—were engraved upon the curtain of the Omnipresent. I saw them all with my own eyes. When I had finished seeing them, I opened my mouth in praise of the Omnipresent and said: “Where the word of the King is, there is authority”; “Whoever keeps the commandment will know no evil thing”; “How many are Your works, YHWH”; and, “How great are Your works, YHWH.””
+
+
+## 3 Enoch 46
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and I will show you the spirits of the stars that are set deep in the firmament, where they go every night by command of the Omnipresent and where they stand.”
+
+**2.** I went with him. He took me by the hand and showed me all of them with the fingers of his hand. They were like sparks of flame around the Chariot of the Omnipresent. At that hour Metatron struck one hand against the other and caused them all to fly from their places. Immediately they flew on wings of flame and spread through the four directions around the Throne of the Chariot. He told me the name and designation of each one, as it is written: “He counts the number of the stars; He calls them all by name.” This teaches that the Holy One, blessed be He, assigned a name to every star.
+
+**3.** They all enter in counted order through the hand of Rahatiel into the firmament of heaven to serve the world, and they go out in counted order to praise the Holy One, blessed be He, with songs and praises, as it is written: “The heavens declare the glory of God, and the firmament proclaims the work of His hands.”
+
+**4.** In the time to come the Holy One, blessed be He, will renew them, as it is written: “They are new every morning; great is Your faithfulness.” Then they open their mouths and sing. What song do they sing? “When I behold Your heavens, the work of Your fingers...””
