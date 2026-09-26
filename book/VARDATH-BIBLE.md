@@ -3640,3 +3640,98 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **9.** “They were not appeased until the Holy One, blessed be He, rebuked them and drove them away from before Him, saying: ‘I desired it, I delighted in it, I appointed it, and I entrusted it to Metatron My servant alone, who is unique among all the sons of the heights.’
 
 **10.** Metatron brought the mysteries out from the house of his treasuries and entrusted them to Moses; Moses to Joshua; Joshua to the elders; the elders to the prophets; the prophets to the men of the Great Assembly; the men of the Great Assembly to Ezra the Scribe; Ezra to Hillel the Elder; Hillel to Rabbi Abbahu; Rabbi Abbahu to Rabbi Zera; Rabbi Zera to the people of faith; and the people of faith transmitted them for warning and for healing the diseases that arise in the world, as it is written: “If you diligently listen to the voice of YHWH your God, do what is right in His eyes, give ear to His commandments, and keep all His statutes, I will put none of the diseases upon you that I put upon Egypt, for I am YHWH who heals you.”
+
+
+---
+
+# Book 5 — Apocalypse of Abraham
+
+*Public-domain English translation from the Slavonic by G. H. Box, with the assistance of J. I. Landsman, first edition 1918. Editorial paragraph numbers have been added for navigation; the translation wording is otherwise preserved from the historical edition, apart from obvious OCR cleanup.*
+
+*Title: The Book of the Revelation of Abraham, the son of Terah, the son of Nahor, the son of Serug, the son of Roog (Reu), the son of Arphaxad, the son of Shem, the son of Noah, the son of Lamech, the son of Methuselah, the son of Enoch, the son of Jared (Arad).*
+
+## Apocalypse of Abraham 1
+
+**1.** On the day when I planed the gods of my father Terah and the gods of Nahor his brother, when I was searching as to who the Mighty God in truth is—I, Abraham, at the time when it fell to my lot, when I fulfilled the services (the sacrifices) of my father Terah to his gods of wood and stone, gold and silver, brass and iron; having entered into their temple for service, I found the god whose name was Merumath (which was) hewn out of stone, fallen forward at the feet of the iron god Nahon.
+
+**2.** And it came to pass, when I saw it, my heart was perplexed, and I considered in my mind that I should not be able to bring him back to his place, I, Abraham, alone, because he was heavy, being of a large stone; and I went forth and made it known to my father.
+
+**3.** And he entered with me, and when both of us moved him (the god) forward, so that we might bring him back to his place, his head fell from him while I was still holding him by the head.
+
+**4.** And it came to pass, when my father saw that the head of Merumath had fallen from him, he said to me: “Abraham!” And I said: “Here am I.”
+
+**5.** And he said to me: “Bring me an axe, of the small ones, from the house.” And I brought it to him.
+
+**6.** And he hewed aright another Merumath out of another stone, without head, and the head which had been thrown down from Merumath he placed upon it, and the rest of Merumath he shattered.
+
+## Apocalypse of Abraham 2
+
+**1.** And he made five other gods, and gave them to me [and] commanded me to sell them outside in the street of the town.
+
+**2.** And I saddled my father’s ass, and placed them upon it, and went towards the inn to sell them.
+
+**3.** And lo! merchants from Fandana in Syria were travelling with camels going to Egypt, to trade. And I spoke with them.
+
+**4.** And one of their camels uttered a groan, and the ass took fright and sprang away and upset the gods; and three of them were smashed, and two were preserved.
+
+**5.** And it came to pass, when the Syrians saw that I had gods, they said to me: “Why didst thou not tell us [that thou hadst gods? Then we would have bought them] before the ass heard the sound of the camel, and they would not have been lost.”
+
+**6.** “Give us, at any rate, the gods that remain, and we will give thee the proper price for the broken gods, also for the gods that have been preserved.”
+
+**7.** For I was concerned in my heart as to how I could bring to my father the purchase-price; and the three broken ones I cast into the water of the river Gur, which was at that place.
+
+**8.** And they sank into the depths, and there was nothing more of them.
+
+## Apocalypse of Abraham 3
+
+**1.** When I was still going on the way, my heart was perplexed within me, and my mind was distracted.
+
+**2.** And I said in my heart: [“What evil deed is this that my father is doing? Is not he, rather, the god of his gods, since they come into existence through his chisels and lathes, and his wisdom, and is it not rather fitting that they should worship my father, since they are his work? What is this delusion of my father in his works?]
+
+**3.** Behold, Merumath fell and could not rise in his own temple, nor could I, by myself, move him until my father came, and the two of us moved him; and as we were thus too weak, his head fell from him, and he set it upon another stone of another god, which he had made without head.
+
+**4.** And the other five gods were broken in pieces down from the ass, which were able neither to help themselves, nor to hurt the ass, because it had broken them to pieces; nor did their broken fragments come up out of the river.”
+
+**5.** And I said in my heart: “If this be so, how can Merumath, my father’s god, having the head of another stone, and himself being made of another stone, rescue a man, or hear a man’s prayer and reward him?”
+
+## Apocalypse of Abraham 4
+
+**1.** And while I cogitated thus, I reached my father’s house; and having watered the ass, and set out hay for it, I brought the silver and gave it into the hand of my father Terah.
+
+**2.** When he saw it he was glad, [and] he said: “Blessed art thou, Abraham, of my gods, because thou hast brought the price of the gods, so that my work was not in vain.”
+
+**3.** And I answered and said to him: “Hear, O my father, Terah! Blessed are the gods of thee, for thou art their god, since thou hast made them; for their blessing is ruination, and their power is vain.”
+
+**4.** “They who did not help themselves, how shall they, then, help thee or bless me? I have been kind to thee in this affair, because by using my intelligence, I have brought thee the money for the broken gods.”
+
+**5.** And when he heard my word, he became furiously angry with me, because I had spoken hard words against his gods.
+
+## Apocalypse of Abraham 5
+
+**1.** I, however, having thought over my father’s anger, went out; [and after I had gone out] my father cried, saying: “Abraham!” And I said: “Here am I.”
+
+**2.** And he said: “Take and collect the splinters of the wood out of which I made gods of pine-wood before thou camest; and make ready for me the food of the mid-day meal.”
+
+**3.** And it came to pass, when I collected the splinters of wood, I found under them a little god which had been lying among the brush-wood on my left, and on his forehead was written: GOD BARISAT.
+
+**4.** And I did not inform my father that I had found the wooden god Barisat under the chips.
+
+**5.** And it came to pass, when I had laid the splinters in the fire, in order that I might make ready food for my father—on going out to ask a question regarding the food, I placed Barisat before the kindled fire, saying threateningly to him: “Pay careful attention, Barisat, [that] the fire do not die down until I come; if, however, it dieth down, blow on it that it may burn up again.”
+
+**6.** And I went out and accomplished my purpose.
+
+**7.** And on returning I found Barisat fallen backwards, and his feet surrounded by fire and horribly burnt.
+
+**8.** I burst into a fit of laughter, and I said to myself: “Truly, O Barisat, thou canst kindle the fire and cook food!”
+
+**9.** And it came to pass, while I spake thus in my laughter he (i.e. Barisat) was gradually burnt up by the fire and reduced to ashes.
+
+**10.** And I brought the food to my father, and he did eat. And I gave him wine and milk, and he was gladdened and blessed his god Merumath.
+
+**11.** And I said to him: “O father Terah, bless not thy god Merumath, and praise him not, but rather praise thy god Barisat because, loving thee more, he hath cast himself into the fire to cook thy food!”
+
+**12.** And he said to me: “And where is he now?”
+
+**13.** [And I said:] “He is burnt to ashes in the violence of the fire and is reduced to dust.”
+
+**14.** And he said: “Great is the power of Barisat! I will make another to-day, and to-morrow he will prepare my food.”
