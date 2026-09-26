@@ -3467,3 +3467,14 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **3.** “But when they do not proclaim ‘Holy’ in its proper order, a consuming fire goes forth from the little finger of the Holy One, blessed be He, and falls into their ranks. It divides into four hundred and ninety-six thousand myriads of portions, corresponding to the four camps of the ministering angels, and consumes them at once, as it is written: ‘Fire goes before Him and burns up His adversaries all around.’
 
 **4.** “Afterward the Holy One, blessed be He, opens His mouth and speaks one word. He creates others like them in their place, new ones, and each one stands in song before the Throne of His Glory and proclaims ‘Holy,’ as it is written: ‘They are new every morning; great is Your faithfulness.’”
+
+
+## 3 Enoch 41
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and I will show you the letters by which heaven and earth were created; the letters by which seas and rivers were created; the letters by which stars and constellations were created; the wheel of the moon, the sphere of the sun, Orion, the Pleiades, and every kind of luminary of the firmament.
+
+**2.** “These are the letters by which the ministering angels were created; the letters by which the seraphim and the Holy Living Creatures were created; the letters by which the Throne of Glory and the wheels of the Chariot were created; and the letters by which all the needs of the world were created.
+
+**3.** “These are the letters by which wisdom and understanding, knowledge and insight, humility and uprightness were created—the qualities by which the whole world is sustained.
+
+**4.** “I went with him. He took me by the hand, raised me upon his wings, and showed me all those letters. They were engraved with a pen of flame upon the Throne of Glory, and sparks and lightning went forth from them and covered all the chambers of Arabot.”
