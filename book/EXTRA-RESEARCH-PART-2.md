@@ -69338,3 +69338,1484 @@ Required work:
   - partially satisfied;
   - or remains an externally imposed mechanical bridge.
 
+
+
+---
+
+# SYNTHESIS 4 — BROAD SUPPORT → THROAT → OPENING / SAME-STRUCTURE GAP SEARCH
+## Strict same-object audit after the completed corpus and transformation-chain synthesis
+
+### Frontier verification
+
+The numbered direct corpus is complete through Section 89.
+
+Post-corpus syntheses already present:
+- SYNTHESIS 1 — mechanism spine / strict evidence matrix;
+- SYNTHESIS 2 — cherub / Feathered Serpent / dragon / Squatter-Man function matrix;
+- SYNTHESIS 3 — same-identity transformation chains.
+
+The actual unfinished block named at the Part 2 tail was:
+**SYNTHESIS 4 — BROAD SUPPORT → THROAT → OPENING / SAME-STRUCTURE GAP SEARCH**.
+
+This synthesis therefore does **not** add new books or restart the direct pass.
+
+Its single question is stricter:
+
+> **Does any already-researched source show one structurally continuous object or medium beginning broad/supportive, changing shape into a narrow connector, carrying traffic through that connector, and then returning toward its earlier broad state?**
+
+The standard is intentionally severe.
+
+Cross-text assembly is not enough.
+
+Same-book but different-object assembly is not enough.
+
+The preferred evidence order is:
+
+1. **same object;**
+2. **same source;**
+3. **same episode;**
+4. **explicit shape/state change;**
+5. **transfer through the changed geometry;**
+6. **return/reopening of that same object.**
+
+---
+
+# STRICT TEST USED IN THIS SYNTHESIS
+
+A candidate is tested against six requirements:
+
+## A — BROAD / SUPPORT STATE
+The same object or medium begins:
+- broad;
+- distributed;
+- supporting;
+- enclosing;
+- or boundary-forming.
+
+## B — SAME-OBJECT CONTINUITY
+The text makes clear that:
+the object after transformation
+is the same object/material/referent as before.
+
+## C — CONVERGENCE / NARROWING
+The same object:
+- tightens;
+- rolls;
+- folds;
+- contracts;
+- converges;
+- narrows;
+- or forms a constrained axial connector.
+
+## D — TRANSFER THROUGH THE CHANGED STATE
+People/material/water/other cargo actually pass:
+- through;
+- along;
+- across;
+- or via
+the changed geometry.
+
+## E — RETURN / REOPENING OF THE SAME OBJECT
+The same object:
+- broadens;
+- unrolls;
+- relaxes;
+- resumes prior flow;
+- rejoins;
+- or otherwise returns toward its earlier state.
+
+## F — PHASES EXPLICITLY BELONG TO ONE PROCESS
+The source itself connects the phases.
+
+A **strict fingertrap** should satisfy essentially all six.
+
+---
+
+# FIRST MAJOR RESULT
+# THE CORPUS CONTAINS TWO DIFFERENT STRONG MECHANISM FAMILIES
+
+After re-searching:
+- scroll/sky;
+- cloth/tent/garment;
+- mountain;
+- tree/branch;
+- river;
+- sea;
+- gate;
+- rod/staff;
+- serpent/dragon;
+- opening/closing passages;
+
+the evidence separates naturally into two families.
+
+---
+
+# FAMILY 1 — DYNAMIC BOUNDARY / CORRIDOR CYCLE
+
+Typical sequence:
+
+**continuous boundary**
+→ **boundary changes state**
+→ **corridor becomes traversable**
+→ **population crosses**
+→ **boundary resumes earlier state**.
+
+Strong examples:
+- Exodus 14 / Jubilees 48 Red Sea;
+- Joshua 3–4 Jordan;
+- 4 Ezra 13 Euphrates channels;
+- Ezekiel scheduled gates;
+- Revelation abyss/doors at the level of open/close grammar.
+
+This family gives:
+- temporary access;
+- transfer;
+- finite timing;
+- phase dependence;
+- return/closure.
+
+But it generally does **not** give:
+**broad support → inward convergence → narrow axial throat**.
+
+---
+
+# FAMILY 2 — MORPHOLOGICAL COMPRESSION / REDUCTION / REGROWTH
+
+Typical sequence:
+
+**broad structure**
+→ **rolled / cut / reduced / axial state**
+→ sometimes later **regrowth / restored broad state**.
+
+Strong examples:
+- Isaiah 34 sky rolled like scroll;
+- Revelation 6 sky recedes/rolls;
+- Daniel 4 tree → stump → restored kingdom;
+- Ezekiel 17 cedar → tender sprig → broad cedar;
+- Aaron's rod/staff → buds / blossoms / almonds;
+- Ethiopic Didascalia dry rod/tree renewal images.
+
+This family gives:
+- same-referent shape reduction;
+- broad↔concentrated morphology;
+- strong continuity in some cases.
+
+But it generally does **not** give:
+**traffic through the reduced form**.
+
+---
+
+# S4-MASTER-1 — THE MISSING FINGERTRAP LINK IS NOW MORE PRECISE
+
+The corpus strongly supplies:
+
+**dynamic gate-cycle mechanics**
+and separately
+**broad↔concentrated morphology**.
+
+What it does not securely supply is:
+
+> **the same object performing both jobs.**
+
+That is the exact gap.
+
+---
+
+# STRICT CANDIDATE RANKING
+# SAME OBJECT / SAME SOURCE / SAME SEQUENCE FIRST
+
+---
+
+# RANK 1 — EXODUS 14 / JUBILEES 48
+## SAME SEA → SPLIT BOUNDARY → BILATERAL WATER WALLS → DRY CORRIDOR → POPULATION TRANSFER → SAME SEA RETURNS
+
+This is now the strongest **dynamic same-medium gate cycle** in the researched corpus.
+
+Source-level process:
+
+**ordinary sea state**
+→ wind/action changes water boundary
+→ waters divide
+→ water stands on right and left
+→ dry route exists through former sea-space
+→ Israelites cross
+→ pursuing Egyptians enter same corridor
+→ timing/state changes
+→ waters return
+→ sea resumes ordinary position/state.
+
+The canonical Exodus wording makes the same-water continuity especially clear:
+- water forms walls on right and left;
+- travellers move through the middle;
+- later water flows back and sea returns to its place.
+
+### Criteria
+
+**A — broad/support/boundary state:** PARTIAL/STRONG  
+The sea is a broad environmental boundary, but not an overhead support lattice.
+
+**B — same-object continuity:** EXCEPTIONALLY STRONG  
+The same sea/water changes state and later returns.
+
+**C — convergence/narrowing:** PARTIAL  
+A constrained corridor forms, but by **division/separation** of water rather than inward convergence.
+
+**D — transfer:** EXCEPTIONALLY STRONG  
+Whole populations and vehicles traverse.
+
+**E — return/reopening:** EXCEPTIONALLY STRONG  
+The same water returns to its prior state/place.
+
+**F — one continuous process:** EXCEPTIONALLY STRONG.
+
+### S4-R1
+
+**The Red Sea is the best same-object OPEN→TRANSFER→CLOSE cycle.**
+
+But it is not a fingertrap because:
+the route forms through **parting**,
+not through
+**a broad support tightening into a throat**.
+
+### Important conceptual correction
+
+For Vardath this suggests that:
+**gate behavior**
+and
+**fingertrap formation**
+should not be treated as the same evidentiary question.
+
+The corpus strongly supports temporary corridor behavior independently of fingertrap mechanics.
+
+---
+
+# RANK 2 — JOSHUA 3–4
+## SAME JORDAN → FLOW INTERRUPTED/HEAPED → DRY RIVERBED CROSSING → SAME RIVER RETURNS TO BANKS
+
+Joshua gives a second, highly controlled water-boundary cycle.
+
+Process:
+
+**river flowing at flood stage**
+→ upstream water stops/stands in a heap
+→ downstream water is cut off
+→ riverbed becomes traversable
+→ priests stand in middle
+→ entire people cross
+→ priests leave
+→ water resumes flow
+→ Jordan returns to its banks.
+
+### Criteria
+
+**A:** PARTIAL  
+River is boundary/medium rather than broad support.
+
+**B:** EXCEPTIONALLY STRONG.
+
+**C:** PARTIAL  
+Flow is interrupted/rearranged; no inward sleeve contraction.
+
+**D:** EXCEPTIONALLY STRONG.
+
+**E:** EXCEPTIONALLY STRONG.
+
+**F:** EXCEPTIONALLY STRONG.
+
+### S4-R2
+
+This independently confirms that the Hebrew textual world is comfortable with:
+
+> **environmental medium → temporary traversable corridor → population transit → same medium restores previous boundary state.**
+
+This is not an isolated Red Sea motif.
+
+### Difference from Red Sea
+
+Red Sea:
+- bilateral water walls are explicit.
+
+Jordan:
+- upstream accumulation / downstream cutoff is emphasized.
+
+Therefore:
+different water geometry can produce the same functional result:
+**temporary passage**.
+
+---
+
+# RANK 3 — ZECHARIAH 14
+## SAME MOUNTAIN → SPLITS → TWO HALVES MOVE APART → VALLEY OPENS → PEOPLE PASS → TERRAIN/WATER REDISTRIBUTE
+
+This remains the strongest **solid-land same-structure topology change**.
+
+Process:
+
+**one Mount of Olives**
+→ split east–west
+→ north half moves north
+→ south half moves south
+→ broad valley/corridor forms between
+→ population flees through it
+→ living water later divides east/west
+→ wider land becomes plain
+→ Jerusalem remains elevated and inhabited.
+
+### Criteria
+
+**A:** STRONG  
+One coherent landform.
+
+**B:** EXCEPTIONALLY STRONG  
+Same mountain becomes two halves.
+
+**C:** FAILS IN DIRECTION  
+It **widens/splits**, not narrows.
+
+**D:** STRONG  
+People use the newly formed corridor.
+
+**E:** PARTIAL  
+A broad successor terrain follows, but the mountain halves do not explicitly rejoin.
+
+**F:** EXCEPTIONALLY STRONG.
+
+### S4-R3
+
+Zechariah 14 is the best same-object evidence for the **OPENING / REOPENING SIDE** of Vardath.
+
+It should no longer be described as a throat-formation candidate.
+
+It is:
+**topology-created passage by separation**.
+
+That is still extremely important.
+
+---
+
+# RANK 4 — DANIEL 4
+## WORLD-TREE → CUT TO STUMP/ROOTS → SAME KINGDOM/IDENTITY RESTORED
+
+Daniel 4 supplies the strongest broad→reduced→restored **same-referent** sequence.
+
+Initial tree:
+- enormous;
+- reaches heaven;
+- visible widely;
+- branches shelter birds;
+- ground shade shelters animals;
+- food supports many.
+
+Reduction:
+- tree cut;
+- branches removed;
+- leaves/fruit dispersed;
+- **stump and roots remain**.
+
+Interpretation:
+- tree = Nebuchadnezzar;
+- retained stump specifically signifies:
+  **kingdom will be restored**.
+
+Later:
+- same named king returns;
+- reason, court and kingdom return.
+
+### Criteria
+
+**A:** EXCEPTIONALLY STRONG  
+Broad distributed support tree.
+
+**B:** EXCEPTIONALLY STRONG  
+Tree explicitly = king; stump preserves continuity.
+
+**C:** STRONG MORPHOLOGICAL REDUCTION  
+Broad tree → concentrated stump/root base.
+
+**D:** ABSENT  
+Nothing passes through stump as a throat.
+
+**E:** STRONG SYMBOLIC RESTORATION / PARTIAL MORPHOLOGICAL RETURN  
+Kingdom broad state returns, but the vision does not narrate stump physically regrowing into the same tree.
+
+**F:** EXCEPTIONALLY STRONG.
+
+### S4-R4
+
+Daniel 4 is now the strongest evidence that:
+
+> **a broad support body can collapse to a retained axial/base remnant and later regain its broad functional state while identity remains continuous.**
+
+That is extremely fingertrap-relevant at the level of:
+**identity continuity across compression/reduction**.
+
+The missing element is:
+**transfer through the reduced form**.
+
+---
+
+# RANK 5 — EZEKIEL 17:22–24
+## BROAD CEDAR → TENDER SPRIG REMOVED → TRANSFERRED → PLANTED → BROAD CEDAR AGAIN
+
+This candidate becomes more important under the strict same-material search.
+
+Process:
+
+**lofty cedar**
+→ one tender sprig from top
+→ sprig detached
+→ sprig transported/planted on high mountain
+→ sprig grows branches
+→ bears fruit
+→ becomes noble/splendid cedar
+→ birds shelter beneath branches.
+
+### Criteria
+
+**A:** STRONG  
+Broad cedar source.
+
+**B:** STRONG BUT NOT WHOLE-OBJECT CONTINUITY  
+Same living material persists,
+but only a **fragment** of the original cedar transfers.
+
+**C:** STRONG REDUCTION BY SELECTION/DETACHMENT  
+Broad tree → narrow/small sprig.
+
+**D:** STRONG TRANSFER OF THE REDUCED FORM  
+The sprig itself is the cargo.
+
+**E:** EXCEPTIONALLY STRONG GROWTH BACK TO BROAD TREE FORM.
+
+**F:** EXCEPTIONALLY STRONG.
+
+### S4-R5 — IMPORTANT NEW DISTINCTION
+
+Ezekiel 17 may be the strongest **broad→small transferable unit→broad successor structure** in the corpus.
+
+That is very close to a handoff model:
+
+**distributed source**
+→ **selected axial fragment**
+→ **transport**
+→ **re-expansion into successor support**.
+
+### Why it still is not the strict fingertrap
+
+The original cedar does not itself cinch down.
+
+Instead:
+a piece is cut off.
+
+Transfer happens **as detached cargo**,
+not through the sprig as a corridor.
+
+This is:
+**fragment handoff**,
+not
+**throat formation**.
+
+### Vardath importance
+
+This may be highly relevant to the user's successor-world model:
+
+a future structure may inherit:
+**selected living/material continuity**
+without the whole old structure physically moving intact.
+
+---
+
+# RANK 6 — ISAIAH 34:4
+## BROAD SKY → ROLLED SKY
+
+This remains the strongest direct:
+**broad upper field → concentrated/rolled upper field**
+image.
+
+Process:
+**extended heavens/sky**
+→ **roll up like a scroll**.
+
+Associated:
+- heavenly host destabilized/falls;
+- landscape judgment follows.
+
+### Criteria
+
+**A:** EXCEPTIONALLY STRONG.
+
+**B:** EXCEPTIONALLY STRONG  
+Same sky.
+
+**C:** STRONG GEOMETRY CHANGE  
+Broad sheet-like field → rolled/curled form.
+
+**D:** ABSENT  
+No one passes through the roll.
+
+**E:** ABSENT  
+No same-sky unrolling.
+
+**F:** STRONG.
+
+### S4-R6
+
+This remains the best **contraction-side** cosmic candidate.
+
+But "rolling":
+- coils/folds a sheet;
+- does not explicitly narrow a woven sleeve by changing strand angle.
+
+Therefore:
+
+**rolled sky ≠ demonstrated fingertrap**.
+
+Still, it is the clearest text in which:
+**the broad upper boundary itself changes shape**.
+
+---
+
+# RANK 7 — REVELATION 6:12–14
+## BROAD SKY → RECEDES / ROLLS LIKE SCROLL DURING CATASTROPHE
+
+Revelation repeats the Isaiah family:
+- earthquake;
+- sun/moon changes;
+- stars fall;
+- sky recedes/vanishes like rolled scroll;
+- mountains/islands move.
+
+### Criteria
+
+A/B/C:
+strong.
+
+D:
+absent for the rolled sky itself.
+
+E:
+same sky not explicitly unrolled.
+
+F:
+strong within catastrophe.
+
+### S4-R7
+
+Revelation strengthens the **rolled-upper-field** motif.
+
+It also places other true openings later:
+- abyss opens;
+- giant domain-spanning figure appears;
+- heaven/temple opens.
+
+But those are **different structures**.
+
+### S4-R7A — DO NOT COMBINE REVELATION'S SKY, ABYSS, GIANT ANGEL AND TEMPLE DOOR INTO ONE MACHINE
+
+Revelation 6–11 is perhaps the closest **same-literary-sequence composite** to the Vardath phase order:
+
+**broad sky deforms**
+→ **lower boundary opens**
+→ **domain-spanning axis-person appears**
+→ **bodies/information transfer**
+→ **upper temple opens**.
+
+But:
+the text never says these are one continuous object.
+
+This is exactly the kind of apparent match Synthesis 4 was designed to police.
+
+---
+
+# RANK 8 — 4 EZRA 13
+## SAME EUPHRATES SYSTEM → CHANNELS STOP → POPULATION CROSSES → LATER CHANNELS STOP AGAIN FOR RETURN
+
+This is a very strong repeatable **boundary-control** candidate.
+
+Process:
+- exile population reaches river boundary;
+- river channels are stopped;
+- people cross;
+- distant land occupied;
+- at final return:
+  same water-boundary intervention occurs again;
+- population crosses back.
+
+### Criteria
+
+**A:** PARTIAL  
+River system.
+
+**B:** STRONG.
+
+**C:** WEAK  
+No broad-to-throat deformation; "narrow passages" exist.
+
+**D:** EXCEPTIONALLY STRONG.
+
+**E:** PARTIAL  
+Repeated stopping implies controllable phase cycling, but ordinary flow-restoration is less narratively explicit than Joshua.
+
+**F:** STRONG.
+
+### S4-R8
+
+This is one of the best:
+**reusable gate-window**
+analogues.
+
+It is especially valuable because:
+the same boundary supports:
+**outbound**
+and later
+**return traffic**.
+
+---
+
+# RANK 9 — AARON'S ROD / ETHIOPIC DIDASCALIA RENEWAL FAMILY
+## DRY AXIAL ROD → BUDS / BLOSSOMS / FRUIT
+
+Numbers 17:
+same dry staff:
+→ sprouts;
+→ buds;
+→ blossoms;
+→ almonds.
+
+Ethiopic Didascalia later uses:
+- Aaron's dry rod flowering;
+- cut tree sprouting;
+- seed growth
+
+as resurrection/renewal proofs.
+
+### Criteria
+
+**A:** NO INITIAL BROAD SUPPORT STATE.
+
+**B:** EXCEPTIONALLY STRONG.
+
+**C:** INVERSE DIRECTION  
+It begins concentrated/axial.
+
+**D:** ABSENT.
+
+**E:** VERY STRONG AXIS→BRANCHING/BROAD LIFE.
+
+**F:** STRONG.
+
+### S4-R9
+
+This is one of the clearest **reopening/expansion** analogues:
+
+**inert narrow axis**
+→ **distributed living growth**.
+
+It may model the **post-throat relaxation/growth side**,
+but supplies no prior broad→narrow contraction.
+
+---
+
+# RANK 10 — EZEKIEL 43–46 EAST-GATE SYSTEM
+## SAME ROUTE / SAME NODE → OUTBOUND DEPARTURE → INBOUND RETURN → CLOSURE → PERIODIC REOPENING → CONTROLLED THROUGH-FLOW
+
+Across Ezekiel:
+
+Earlier:
+- glory departs toward east.
+
+Later:
+- glory returns through east.
+
+Then:
+- outer east gate is closed because glory entered;
+- inner east gate has scheduled opening states;
+- north/south traffic follows directional rules.
+
+### Criteria
+
+**A:** NO broad support.
+
+**B:** EXCEPTIONALLY STRONG access-node continuity.
+
+**C:** NO shape contraction.
+
+**D:** EXCEPTIONALLY STRONG phase-specific transfer.
+
+**E:** EXCEPTIONALLY STRONG open/closed cycling.
+
+**F:** EXCEPTIONALLY STRONG.
+
+### S4-R10
+
+This is the strongest **controlled-gate operating protocol**:
+
+- same node;
+- direction can reverse;
+- gate state can change;
+- different layers/routes have different permissions;
+- scheduled reopening exists.
+
+But the gate does not morph from broad support.
+
+---
+
+# RANK 11 — 4 EZRA 7
+## BROAD → NARROW → BROAD TOPOLOGY, BUT STATIC
+
+This remains the geometry most similar to the fingertrap's finished shape:
+
+**broad sea/domain**
+→ **narrow entrance**
+→ **broad sea**.
+
+And:
+
+**broad city/plain**
+→ **narrow path**
+with:
+- fire right;
+- deep water left;
+- one-person throughput.
+
+### Criteria
+
+A:
+exceptionally strong.
+
+B:
+not applicable as dynamic identity;
+the topology already exists.
+
+C:
+exceptionally strong static narrowing.
+
+D:
+exceptionally strong.
+
+E:
+only topological emergence into broad destination,
+not same-structure reopening.
+
+F:
+strong.
+
+### S4-R11
+
+4 Ezra 7 remains:
+**best static throat**.
+
+It is deliberately ranked below the dynamic same-object candidates in this synthesis because the question here is:
+**formation and return of the same structure**.
+
+---
+
+# SPECIAL CANDIDATE — ISAIAH 34 → 35
+## ROLLED/COLLAPSED SKY-LANDSCAPE → BLOOMING/WATERED/INHABITED LAND
+
+Isaiah 34:
+- upper field rolls;
+- cosmic/landscape catastrophe.
+
+Isaiah 35:
+- desert blooms;
+- waters emerge;
+- highway appears;
+- redeemed return.
+
+### Why tempting
+
+It resembles:
+**contraction/collapse**
+→ **restored broad inhabited world**.
+
+### Why rejected as strict same-object reopening
+
+Isaiah 35 does not say:
+- the same rolled sky unrolls;
+- the roll becomes the highway;
+- the same upper support relaxes.
+
+### Classification
+
+**excellent adjacent literary phase pair**
+but
+**not same-object completion**.
+
+---
+
+# SPECIAL CANDIDATE — DANIEL 4 VERSUS AARON'S ROD
+
+These two passages together nearly form:
+
+**broad tree**
+→ **stump/rod**
+→ **flowering/broad life**.
+
+But they are:
+- different sources;
+- different objects;
+- different referents.
+
+### S4-REJECT-1
+
+They must not be stitched into one "tree→rod→tree" ancient mechanism.
+
+They are a **cross-text morphological family**, not one event.
+
+---
+
+# SPECIAL CANDIDATE — QALEMENTOS ROD / CROSS
+
+Qalementos directly verified:
+- rod used by Christ against Satan;
+- rod identified typologically/functionally with Moses' rod;
+- rod associated with Cross-sign.
+
+This is a strong:
+**rod ↔ Cross functional identity**.
+
+However:
+
+the broader folklore chain:
+**Paradise branch → Moses rod → serpent → sea → rock → Cross**
+was not directly verified inside Qalementos and was correctly excluded.
+
+### S4-REJECT-2
+
+Do not use that larger branch biography to manufacture the missing broad→rod continuity unless a directly verified source supplies it.
+
+---
+
+# SPECIAL CANDIDATE — SERPENT / DRAGON SHAPE CHANGE
+
+The completed corpus was searched for:
+- coiling;
+- uncoiling;
+- straightening;
+- thickening;
+- narrowing;
+- serpent becoming rod/tube;
+- dragon shifting between broad and axial geometry.
+
+### Result
+
+No source in the completed direct corpus gives a clean sequence:
+
+**broad serpent/dragon body**
+→ **same body tightens/straightens into axial throat**
+→ **traffic passes**
+→ **same body re-expands/uncoils**.
+
+Moses' staff/serpent tradition supplies:
+**staff ↔ serpent**
+as an object-form transformation,
+but not:
+- broad support;
+- traffic through body;
+- reopening into a world-support field.
+
+### S4-MASTER-2
+
+**The serpent/dragon family still lacks the exact mechanical transition the Vardath model assigns to it.**
+
+This is one of the most important negative findings.
+
+---
+
+# SPECIAL CANDIDATE — TREE / BRANCH CONTRACTION
+
+Search result:
+
+## Daniel 4
+broad tree → stump → restored identity.
+
+## Ezekiel 17
+broad cedar → detached sprig → broad cedar successor.
+
+## Aaron/Didascalia
+rod/cut tree → renewed branching.
+
+## Ezekiel 31
+broad tree falls; network disperses; no same-tree restoration.
+
+### S4-MASTER-3
+
+The tree family strongly supports:
+- broad support;
+- reduction;
+- retained substrate;
+- regrowth;
+- successor continuity.
+
+But no tree becomes:
+**a traversable throat**.
+
+Therefore:
+tree imagery can model
+**structural continuity across collapse/recovery**
+without supplying the gate itself.
+
+---
+
+# SPECIAL CANDIDATE — CLOTH / TENT / GARMENT HEAVEN
+
+1 Meqabyan 27:
+- upper water/cover spread broad like cloth/sackcloth;
+- wind pillars/supports.
+
+3 Meqabyan 9:
+- heaven spread like garment over waters;
+- heaven pillared on wind.
+
+Didascalia:
+- vault/heaven support cosmography.
+
+Isaiah/Revelation:
+- sky rolls like scroll.
+
+### Important observation
+
+Across the corpus we have:
+
+**broad fabric-like sky**
+and separately
+**rolled sky**.
+
+This is extremely close at the **image-family level**.
+
+### But source-control problem
+
+The Meqabyan broad fabric sky
+and the Isaiah/Revelation rolled sky
+are different books/traditions.
+
+No single directly verified passage says:
+
+**this wind-pillared garment sky**
+→ **rolls into the scroll form**.
+
+### S4-MASTER-4
+
+The strongest Vardath contraction remains a **cross-text fabric-family inference**:
+
+**Meqabyan broad garment**
++
+**Isaiah/Revelation rolled sky**.
+
+It is not same-source proof.
+
+---
+
+# SAME-BOOK COMPOSITE RANKING
+## Useful, but below same-object evidence
+
+Some books place many required components near one another while still assigning them to different objects.
+
+These are worth ranking separately.
+
+---
+
+# COMPOSITE BOOK RANK 1 — REVELATION 6–11
+
+Contains:
+- broad sky rolling;
+- boundary opening (abyss);
+- smoke/material emergence;
+- domain-spanning anthropomorphic figure;
+- information transfer;
+- two witnesses;
+- body revival/ascent;
+- heavenly temple opening.
+
+### Strength
+Extremely close phase sequence.
+
+### Failure
+Different structures:
+sky ≠ abyss ≠ giant angel ≠ witnesses ≠ temple opening.
+
+---
+
+# COMPOSITE BOOK RANK 2 — ZECHARIAH 4–14
+
+Contains:
+- bilateral living trees feeding center;
+- winged carriers;
+- constrained emergence between mountains;
+- gate/access systems;
+- two staffs;
+- central city;
+- mountain physically splits;
+- population traverses corridor;
+- water divides east/west;
+- broad inhabited successor landscape.
+
+### Strength
+Exceptional geometry diversity in one final-form book.
+
+### Failure
+The trees, carriers, bronze mountains, Mount of Olives and living waters are not identified as the same structure.
+
+---
+
+# COMPOSITE BOOK RANK 3 — 4 EZRA 6–13
+
+Contains:
+- adjacent age pair;
+- broad/narrow/broad static throat;
+- fire-right/deep-left flanks;
+- woman→city transformation;
+- feathered modular body;
+- sea-man;
+- mountain/Zion;
+- stopped river channels;
+- outward/return population crossing.
+
+### Strength
+Probably the single richest book for:
+**projection + throat + temporal boundary + transfer**.
+
+### Failure
+The narrow path does not dynamically emerge from the woman/eagle/sea-man/mountain structures.
+
+---
+
+# COMPOSITE BOOK RANK 4 — EZEKIEL 28–48
+
+Contains:
+- cherub;
+- ruler/cherub textual variant;
+- dragon;
+- tree;
+- surrounding tree nodes;
+- water/deep;
+- rod;
+- body reconstruction;
+- measured gate network;
+- glory departure/return;
+- scheduled gate operation;
+- sanctuary outflow;
+- bilateral trees;
+- broad populated successor.
+
+### Strength
+Best shared symbolic ecology for the user's full apparatus family.
+
+### Failure
+Individual referents change.
+No one object completes the chain.
+
+---
+
+# STRICT SCORECARD
+
+| Candidate | Broad/support | Same object | Narrows/concentrates | Transfer through changed geometry | Same-object return/broadening | Strict result |
+|---|---|---|---|---|---|---|
+| Exodus 14 sea | partial | **yes** | partial/wrong mechanism | **yes** | **yes** | strongest dynamic corridor; not fingertrap |
+| Joshua 3–4 Jordan | partial | **yes** | partial/wrong mechanism | **yes** | **yes** | strong dynamic corridor; not fingertrap |
+| Zechariah 14 mountain | **yes** | **yes** | **no — splits outward** | **yes** | partial | strongest opening half |
+| Daniel 4 tree/stump | **yes** | **yes referent** | **yes reduction** | no | **yes functionally** | strongest broad→reduced→restored identity |
+| Ezekiel 17 cedar/sprig | **yes** | **same living material** | **yes by detachment** | sprig transfers as cargo | **yes, successor cedar** | strongest fragment-handoff cycle |
+| Isaiah 34 sky | **yes** | **yes** | **yes roll** | no | no | strongest broad-field deformation |
+| Revelation 6 sky | **yes** | **yes** | **yes roll** | no | no | repeated rolled-sky catastrophe |
+| 4 Ezra 13 Euphrates | partial | **yes boundary** | weak | **yes, both directions over time** | partial | repeatable water gate |
+| Aaron rod | no initial broad | **yes** | starts narrow | no | **yes expansion** | strongest axial→branching analogue |
+| Ezekiel east gate | no | **yes** | no | **yes** | **yes open/close** | strongest access protocol |
+| 4 Ezra 7 throat | **yes topology** | static | **yes static** | **yes** | static broad exit | strongest finished throat shape |
+
+---
+
+# SYNTHESIS 4 CORE FINDING
+## THE STRICT FINGERTRAP TEST REMAINS UNSATISFIED
+
+After the full same-object search:
+
+> **No researched source yet gives one continuous object that is first a broad support, then visibly contracts/converges into a narrow axial throat, carries traffic through that throat, and then relaxes/reopens into the same broad support.**
+
+This remains the correct result.
+
+But the gap is now much narrower than before.
+
+---
+
+# WHAT IS NOW STRONGLY ESTABLISHED
+
+## 1 — SAME-MEDIUM GATE CYCLING
+Exodus / Joshua / 4 Ezra:
+environmental water boundary can:
+- change state;
+- permit crossing;
+- later restore flow/boundary.
+
+## 2 — SAME-OBJECT BROAD→CONCENTRATED DEFORMATION
+Isaiah / Revelation:
+broad sky can:
+- roll/concentrate.
+
+## 3 — SAME-REFERENT BROAD→REDUCED→RESTORED CONTINUITY
+Daniel 4:
+tree → stump → restored kingdom.
+
+## 4 — SAME-LIVING-MATERIAL BROAD→FRAGMENT→BROAD HANDOFF
+Ezekiel 17:
+cedar → sprig → cedar.
+
+## 5 — AXIAL→BRANCHING REOPENING
+Aaron's rod / Didascalia:
+dry staff → buds/branches/fruit.
+
+## 6 — STATIC BROAD→NARROW→BROAD THROAT
+4 Ezra 7.
+
+## 7 — TOPOLOGY-CREATED PASSAGE
+Zechariah 14:
+mountain splits → valley → passage.
+
+## 8 — SCHEDULED/REVERSIBLE ACCESS
+Ezekiel gates:
+open/closed/directional state.
+
+### S4-MASTER-5
+
+Every functional part of the Vardath gate cycle is now present somewhere in the corpus.
+
+The unresolved issue is **structural identity continuity across all parts**.
+
+---
+
+# THE CLOSEST POSSIBLE VARDATH MECHANICAL RECONSTRUCTION — CLEARLY LABELLED CROSS-TEXT
+
+If one deliberately builds the strongest comparative chain, it is:
+
+### Phase A — broad supported cover
+1/3 Meqabyan:
+**broad garment/cloth heaven + wind support + water layering**.
+
+### Phase B — broad upper field deforms
+Isaiah 34 / Revelation 6:
+**sky rolls like scroll**.
+
+### Phase C — finished throat geometry
+4 Ezra 7:
+**broad → narrow connector → broad**
+with:
+**fire right / deep water left / finite throughput**.
+
+### Phase D — temporary traffic window
+Exodus / Joshua / 4 Ezra 13:
+**boundary state changes → people cross → boundary later restores**.
+
+### Phase E — structure opens/broadens
+Zechariah 14:
+**same mountain splits → corridor → water distributes in opposite directions → broad successor terrain**.
+
+### Phase F — stable inhabited outflow field
+Ezekiel 47–48:
+**central source → widening river → bilateral trees → living ecology → inhabited distributed city/gates**.
+
+### S4-MASTER-6
+
+This chain is now remarkably coherent as a **comparative reconstruction**.
+
+But it is still:
+**cross-text synthesis**.
+
+It must never be reported as:
+"a single ancient document describes the Vardath fingertrap."
+
+---
+
+# DOES THE CORPUS SUPPORT THE USER'S "SPIDERWEB BECOMES FINGERTRAP" STATEMENT?
+
+## Source-controlled answer
+
+### "Spiderweb / broad support"
+Strong analogue:
+- garment/cloth/tent sky;
+- wind-supported heaven;
+- nets/webs/tree arrays;
+- broad upper support traditions.
+
+### "becomes"
+Partial:
+- sky rolls;
+- tree reduces;
+- mountain splits;
+- water boundary changes.
+
+### "fingertrap"
+Static finished geometry:
+- 4 Ezra 7 gives broad→narrow→broad access.
+
+### "traffic through it"
+Strong:
+- sea/river corridors;
+- Micah breach;
+- Zechariah valley;
+- 4 Ezra narrow path.
+
+### "returns to broad support"
+Partial:
+- sea/river return;
+- tree/rod regrowth;
+- successor broad landscapes.
+
+### Missing:
+the word/sequence that says:
+**the broad web-like support itself becomes the narrow connector and then becomes broad again**.
+
+### S4-MASTER-7
+
+The statement remains:
+**a plausible unifying Vardath mechanical interpretation of several recurring ancient image families**,
+not yet
+**an explicitly narrated source mechanism**.
+
+---
+
+# NEW MASTER DISTINCTION
+## "GATE" HAS AT LEAST FOUR DIFFERENT MECHANICAL CLASSES IN THE CORPUS
+
+### CLASS G1 — BOUNDARY PARTING
+Exodus / Jordan.
+
+The medium itself changes state to create route.
+
+### CLASS G2 — STRUCTURE SPLITTING
+Zechariah 14.
+
+Solid boundary changes geometry and produces corridor.
+
+### CLASS G3 — STATIC THROAT
+4 Ezra 7.
+
+Narrow connector permanently exists between broader domains.
+
+### CLASS G4 — OPERATED APERTURE
+Ezekiel gates / Revelation doors.
+
+A fixed node changes:
+open/closed/permission state.
+
+### S4-MASTER-8
+
+Vardath should no longer use "gate" as one undifferentiated category.
+
+The fingertrap hypothesis would represent a fifth class:
+
+### CLASS G5 — DEFORMABLE SUPPORT-TO-THROAT GATE
+Broad support itself:
+→ converges
+→ becomes connector
+→ relaxes again.
+
+**G5 remains the missing direct source example.**
+
+This classification is a major result of Synthesis 4.
+
+---
+
+# NEW MASTER DISTINCTION
+## "RETURN" ALSO HAS DIFFERENT CLASSES
+
+### R1 — medium-state return
+Red Sea / Jordan:
+water resumes former state.
+
+### R2 — identity/function return
+Daniel 4:
+kingdom/king returns.
+
+### R3 — biological/material regrowth
+Ezekiel 17 / Aaron's rod:
+small retained living material becomes broad growth.
+
+### R4 — social/ecological successor
+Ezekiel 47–48 / Amos / Zechariah:
+population and landscape stabilize.
+
+### R5 — same deformable support mechanically relaxes
+**not yet directly found**.
+
+### S4-MASTER-9
+
+The precise Vardath reopening requirement is:
+**R5**.
+
+The corpus strongly supports R1–R4.
+
+That explains why the model feels repeatedly "almost there" while strict proof remains absent.
+
+---
+
+# QUETZALCOATL / FEATHERED SERPENT IMPLICATION
+
+The same-structure audit does not materially strengthen:
+**Feathered Serpent = literal fingertrap**.
+
+It does strengthen the more careful functional possibility:
+
+a feathered/serpentine form might represent:
+- a moving/active phase;
+- wind/current;
+- carrier/support;
+- time-module;
+- environmental body;
+- axis projection.
+
+However:
+
+### S4-Q1
+
+No directly researched biblical/Ethiopic source yet shows:
+**feathered serpent body itself**
+changing into:
+**broad sky support**
+or
+**narrow gate throat**
+with same-object continuity.
+
+Therefore cross-cultural identity remains speculative.
+
+---
+
+# FALSIFIABLE SEARCH TARGET AFTER SYNTHESIS 4
+
+A future source would materially upgrade the Vardath fingertrap hypothesis if it says or depicts one sequence containing most of:
+
+1. one broad cloth/net/web/tree/wing-like support;
+2. explicit continuity of the same parts;
+3. tightening/tension/rolling/cinching;
+4. parts angle toward one centre;
+5. a rod/tube/throat appears from that structure;
+6. fire/water lie on opposite sides or flow along it;
+7. a human/serpent/winged projection appears in concentrated state;
+8. people/material actually traverse the connector;
+9. the same structure relaxes/unrolls/reopens;
+10. the inhabited environment returns with redistributed water/material.
+
+### S4-MASTER-10
+
+This is now a precise falsifiable search profile.
+
+A text containing only:
+- serpent;
+- tree;
+- gate;
+- flood;
+- wings
+
+is no longer enough.
+
+---
+
+# SYNTHESIS 4 — FINAL RESULT
+
+### Strict verdict
+
+**PARTIALLY SATISFIED AT THE FUNCTIONAL-COMPONENT LEVEL.**
+
+**NOT SATISFIED AS ONE SAME-STRUCTURE MECHANISM.**
+
+### Strongest direct same-object findings
+
+1. **Exodus 14 / Jubilees 48:** same water boundary opens for population passage and returns — strongest dynamic corridor cycle.
+2. **Joshua 3–4:** same river flow is interrupted for passage and resumes — independent dynamic water-gate confirmation.
+3. **Zechariah 14:** same mountain physically changes topology and people use the resulting corridor — strongest solid-structure opening.
+4. **Daniel 4:** same broad tree/king identity is reduced to retained stump/root substrate and later restored — strongest broad→reduced→restored identity.
+5. **Ezekiel 17:** same living cedar material becomes a small transferred sprig and later a broad sheltering cedar — strongest broad→fragment→transfer→broad successor chain.
+6. **Isaiah 34 / Revelation 6:** same broad upper field rolls into a concentrated form — strongest contraction/deformation side.
+7. **Aaron's rod / Didascalia:** same narrow axial object branches/flowers — strongest axial→broad regrowth/reopening analogue.
+8. **Ezekiel gates:** same aperture reverses traffic and cycles open/closed — strongest operated access protocol.
+9. **4 Ezra 7:** strongest static finished throat with bilateral fire/water and finite throughput.
+10. **4 Ezra 13:** strongest repeatedly controllable river-boundary crossing in both outward and return migration phases.
+
+### Central conclusion
+
+The completed corpus does not reveal a missed strict fingertrap passage.
+
+Instead it reveals that the Vardath model appears to combine **two very well attested ancient mechanism families**:
+
+**A. deformable/renewable structures**
+and
+**B. temporary transfer corridors**.
+
+The hypothesis that these are two phases of one physical world-machine remains the Vardath synthesis.
+
+It is not yet an explicit ancient statement.
+
+---
+
+# SYNTHESIS 4 — COMPLETE
+
+## New permanent rules
+
+### S4-RULE-1
+**Same medium opening/closing is stronger gate evidence than a static door metaphor.**
+
+### S4-RULE-2
+**Broad→reduced→broad identity is not enough unless transfer uses the reduced form as the connector.**
+
+### S4-RULE-3
+**A corridor formed by splitting is not a throat formed by convergence.**
+
+### S4-RULE-4
+**A rolled sky is deformation evidence, not automatically tube/gate evidence.**
+
+### S4-RULE-5
+**Fragment handoff (Ezekiel 17) must be distinguished from whole-structure contraction.**
+
+### S4-RULE-6
+**Same-object return of water/flow is not the same as same-support mechanical relaxation.**
+
+### S4-RULE-7
+**Static broad→narrow→broad topology (4 Ezra 7) is not dynamic throat formation.**
+
+### S4-RULE-8
+**Same-book composites are weaker than same-object sequences even when their phase order looks perfect.**
+
+### S4-RULE-9
+**The strict missing class is G5: deformable support-to-throat gate.**
+
+### S4-RULE-10
+**Until G5 is found directly, "the spiderweb becomes the fingertrap" remains a Vardath mechanical synthesis rather than a source quotation or demonstrated ancient mechanism.**
+
+---
+
+# Next synthesis block
+
+**SYNTHESIS 5 — FULL TRANSFORMATION TIMELINE / EVENT-PHASE MAP**
+
+Required work:
+- stop searching for isolated matching shapes;
+- use the complete direct corpus + Syntheses 1–4;
+- build one ordered phase graph of recurring processes;
+- distinguish:
+  1. stable broad world/support state;
+  2. warning/information phase;
+  3. activation/forcing;
+  4. sky/support deformation;
+  5. convergence / axis / gate-state formation;
+  6. boundary opening;
+  7. transfer/cargo sorting;
+  8. water/atmosphere/land response;
+  9. destructive maximum;
+  10. closure/relaxation;
+  11. ecological recovery;
+  12. population redistribution;
+  13. stable inhabited successor;
+- for every phase:
+  - list strongest sources;
+  - identify source-level ordinary meaning;
+  - note repeated paired figures/roles;
+  - record timing numbers only where phase attachment is explicit;
+  - distinguish same-object evidence from cross-text analogy;
+- produce:
+  - master transformation timeline;
+  - phase-transition table;
+  - unresolved branch points;
+  - best candidate sequence for comparing with Vardath Cosmology;
+- do not yet force Archaix chronology;
+- only after the phase map is stable should timing intervals be compared.
+
