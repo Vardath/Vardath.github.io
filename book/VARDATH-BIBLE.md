@@ -10,6 +10,97 @@ Only text that has been verified as public domain, clearly licensed for commerci
 
 For the canonical books, the working base is the **World English Bible Updated**, a public-domain English Bible. The Vardath Bible is a separate compilation title and is not presented as the World English Bible.
 
+## Contents — Fixed 88-Book Order
+
+1. Genesis
+2. Life of Adam and Eve / Apocalypse of Moses
+3. 2 Enoch
+4. 3 Enoch / Hebrew Book of Enoch
+5. Apocalypse of Abraham
+6. Testament of Abraham
+7. Testaments of the Twelve Patriarchs
+8. Jubilees
+9. 1 Enoch
+10. Exodus
+11. Leviticus
+12. Numbers
+13. Deuteronomy
+14. Joshua
+15. Judges
+16. Ruth
+17. I and II Samuel
+18. I and II Kings
+19. I Chronicles
+20. II Chronicles
+21. Ascension of Isaiah
+22. Ezra and Nehemiah
+23. Esther
+24. Tobit
+25. Judith
+26. Job
+27. Psalms
+28. Proverbs
+29. Tegsats / Reproof
+30. Ecclesiastes
+31. Song of Songs
+32. Metsihafe Tibeb / Books of Wisdom
+33. Joshua son of Sirach
+34. Isaiah
+35. Jeremiah
+36. Ezekiel
+37. Daniel
+38. Hosea
+39. Joel
+40. Amos
+41. Obadiah
+42. Jonah
+43. Micah
+44. Nahum
+45. Habakkuk
+46. Zephaniah
+47. Haggai
+48. Zechariah
+49. Malachi
+50. Ezra (2nd) and Ezra Sutuel
+51. I Maccabees / 1 Meqabyan
+52. II and III Maccabees / 2–3 Meqabyan
+53. Josephas / Josephas son of Bengorion
+54. Matthew
+55. Mark
+56. Luke
+57. John
+58. Acts
+59. Romans
+60. I Corinthians
+61. II Corinthians
+62. Galatians
+63. Ephesians
+64. Philippians
+65. Colossians
+66. I Thessalonians
+67. II Thessalonians
+68. I Timothy
+69. II Timothy
+70. Titus
+71. Philemon
+72. Hebrews
+73. I Peter
+74. II Peter
+75. I John
+76. II John
+77. III John
+78. James
+79. Jude
+80. Revelation
+81. Sirate Tsion / Order of Zion
+82. Tizaz / Te'ezaz
+83. Gitsew
+84. Abtilis
+85. I Book of Dominos
+86. II Book of Dominos
+87. Clement
+88. Didascalia
+
 ---
 
 # Book 1 — Genesis
