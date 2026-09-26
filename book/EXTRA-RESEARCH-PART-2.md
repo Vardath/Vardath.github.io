@@ -61494,3 +61494,1153 @@ Before continuing:
 - if Section 88 exists, identify its exact title from the file before researching it;
 - continue only from that verified file-defined frontier.
 
+
+
+---
+
+# SECTION 88 — ETHIOPIC CLEMENT / QALEMENTOS
+## Maṣḥafa Qalemǝnṭos — seven-book pseudo-Clementine pass on layered creation cosmography, four-medium Adam, luminous bilateral Adam/Golgotha projection, cloud-of-light transport to Paradise, cherub/seraph accompaniment, rod-of-Moses ↔ Cross identity, manuscript-order instability, and strict control against importing the Arabic Apocalypse of Peter or Cave of Treasures where Qalementos itself is not verified
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for Ethiopic Clement / Qalementos;
+- EXTRA-RESEARCH.md was checked;
+- actual Part 2 tail was checked.
+
+Section 87 — Second Dominos was verified complete.
+
+No earlier completed direct Qalementos section exists.
+
+The next live block was therefore:
+**Section 88 — Ethiopic Clement / Qalementos**.
+
+---
+
+# TEXT IDENTITY FIRST
+
+The Ethiopian broader-canon **Book of Clement** is the Geʽez:
+**Maṣḥafa Qalemǝnṭos / Qalēmenṭos**.
+
+It is:
+
+- **not** 1 Clement;
+- **not** 2 Clement;
+- **not** the western Clementine Homilies/Recognitions;
+- **not** the Sinodos recensions Teʾezaz / Gitsew / Abtilis;
+- **not** the separate Ethiopic Apocalypse of Peter dossier;
+- a distinct Ethiopic pseudo-Clementine collection traditionally framed as Peter revealing/instructing Clement.
+
+The standard scholarly work record has:
+**seven books**.
+
+But manuscript evidence shows:
+- transpositions;
+- omissions;
+- different paratextual headings;
+- and in some witnesses an additional commemoration of patriarchs that can effectively produce an eight-book arrangement.
+
+### M88-1 — “SEVEN BOOKS” IS THE RECEIVED STRUCTURE, NOT A PERFECTLY FIXED PHYSICAL MANUSCRIPT LAYOUT
+
+Therefore:
+book count and sequence must not be turned into hidden cosmological arithmetic.
+
+---
+
+# COMPOSITION / TRANSMISSION CONTROL
+
+Qalementos is a layered composite.
+
+## Books I–II
+Closely related to the Arabic:
+- Book of the Rolls;
+- Arabic Apocalypse of Peter to Clement traditions.
+
+## Books III–VII
+Have a more distinctive Ethiopic received form and are known especially through Alessandro Bausi's work.
+
+The whole collection cannot be assigned one simple date or source language.
+
+The apostolic Peter→Clement frame:
+- gives literary authority;
+- does not prove historical authorship by Peter or Clement.
+
+### M88-2 — TEXTUAL LAYERING MUST BE KEPT SEPARATE FROM COSMOLOGICAL LAYERING
+
+A change from:
+creation narrative
+→ apocalypse
+→ church order
+→ rod typology
+→ Petrine vision
+
+can arise from compilation,
+not necessarily from one physical machine moving through phases.
+
+---
+
+# SEVEN-BOOK STRUCTURE — SECURE HIGH-LEVEL MAP
+
+## Book I
+Creation + sacred history.
+
+## Book II
+Mysteries/secrets revealed by Peter to Clement:
+- heavenly/future material;
+- theological exposition;
+- heresy catalogue in transmitted form.
+
+## Book III
+Introduced in a major manuscript tradition as:
+**the power and miracles which the Lord showed**.
+
+## Book IV
+A speech/discourse of Peter.
+
+## Book V
+**Rule of the holy Church which our Lord and Saviour Jesus Christ told to Peter**.
+
+## Book VI
+The rod of Moses / Cross typology.
+
+## Book VII
+The **Vision of Simon son of Jonah / Peter**;
+some witnesses call it a “third speech” associated with penitence/re-entry.
+
+### M88-3 — QALEMENTOS ITSELF IS A MULTI-FUNCTION CORPUS
+
+It contains:
+- cosmology;
+- sacred history;
+- revelation;
+- miracle;
+- church order;
+- rod/cross typology;
+- vision.
+
+Do not force all seven books into one mechanical sequence.
+
+---
+
+# BOOK I — CREATION SYSTEM
+
+The direct Grébaut-based translation gives an unusually detailed creation cosmography.
+
+---
+
+# Angelic / elemental first-day field
+
+The text describes:
+- angelic orders/families;
+- Seraphim;
+- Cherubim;
+- light;
+- darkness/day/night;
+- winds;
+- water;
+- fire.
+
+The angels are divided into **nine families/orders** in the received passage.
+
+### M88-4 — ANGELIC AND ENVIRONMENTAL MEDIA ARE CREATED WITHIN ONE INITIAL COSMIC ORDER
+
+The text places:
+- living/intelligent heavenly beings;
+- light;
+- wind;
+- water;
+- fire
+
+inside one ordered creation system.
+
+This does not make the angels identical with the media.
+
+---
+
+# Upper / lower waters
+
+Book I describes:
+- water below;
+- water above sky/heaven;
+- separation between upper and lower water;
+- upper water/cloud-like state;
+- multiple heavenly levels in the rough translation.
+
+### M88-5 — QALEMENTOS HAS AN EXPLICIT UPPER/LOWER WATER-SEPARATION COSMOGRAPHY
+
+Cross-link:
+- Genesis;
+- 1 Meqabyan 27;
+- 3 Meqabyan 9.
+
+This strengthens the fact that:
+**upper/lower water layering is recurrent in the Ethiopic canonical/apocryphal environment**.
+
+It is still not automatically Vardath's physical canopy.
+
+---
+
+# Third-day land formation
+## waters gather → earth/water mud emerges → wind rises from earth → vegetation
+
+The direct passage gives:
+
+**waters gather**
+→ **dry region appears**
+→ land initially described as a mixture/mud of:
+  - earth;
+  - water.
+
+It also says:
+- water exists on/under ground;
+- winds rise from the bosom/interior of earth;
+- winds move/breathe in measured fashion;
+- vegetation follows.
+
+### M88-6 — LAND IS PRESENTED AS A WATER–EARTH INTERFACE RATHER THAN ABSOLUTELY DRY ISOLATED MATERIAL
+
+This is highly relevant to Vardath's:
+- crust;
+- water;
+- substrate;
+- current
+interdependence.
+
+But source meaning:
+creation cosmography.
+
+### M88-7 — WIND HAS A SYSTEMIC LIFE/SUPPORT ROLE
+
+The passage links wind with:
+- breathing;
+- creature life;
+- measured movement.
+
+This cross-links Meqabyan's repeated wind-support language.
+
+---
+
+# Sun / hardening of earth
+
+The sun is given a role in:
+- drying/hardening the earth/mud.
+
+### M88-8 — HEAT/LIGHT CHANGES MATERIAL STATE
+
+Formal:
+**wet/soft earth**
+→ solar input
+→ **hardened ground**.
+
+This is a genuine source-level environmental transformation.
+
+Do not inflate it into crust-formation physics beyond the text.
+
+---
+
+# BOOK I — ADAM AS FOUR-MEDIUM CONVERGENCE
+# MAJOR VARDATH PASSAGE
+
+Before creating Adam:
+
+- divine right hand extends over the whole earth;
+- the world is described as held in the hand;
+- from all earth:
+  a little dust;
+- from all water:
+  a drop;
+- from air:
+  a portion;
+- from burning fire:
+  a portion.
+
+All four are held together.
+
+Then:
+Adam is formed.
+
+### M88-9 — ONE HUMAN BODY IS EXPLICITLY THE CONVERGED STATE OF FOUR DISTRIBUTED ENVIRONMENTAL MEDIA
+
+Geometry/process:
+
+**EARTH**
++
+**WATER**
++
+**AIR**
++
+**FIRE**
+↓
+**ONE ANTHROPOMORPHIC BODY**.
+
+This is one of the strongest:
+**environment → person**
+transformations in the whole project.
+
+Cross-links:
+- 1 Meqabyan resurrection;
+- 3 Meqabyan Adam creation.
+
+### M88-10 — THE FOUR-MEDIUM ADAM GRAMMAR IS NOW REPEATED ACROSS MULTIPLE ETHIOPIC BROADER-CANON TEXTS
+
+This makes it much less likely to be a one-off translation accident.
+
+It is a recurring theological anthropology.
+
+---
+
+# The components are assigned functions
+
+The passage explains the four components approximately as:
+
+- earth → relation/authority over land creatures;
+- water → relation to water-created life;
+- air → breath/sensation;
+- fire → bodily strength/heat.
+
+### M88-11 — THE HUMAN BODY IS A LOCAL INTEGRATION NODE FOR MULTIPLE ENVIRONMENTAL DOMAINS
+
+That is a particularly useful formal comparison with:
+Squatter-Man as a possible projection of:
+- land;
+- water;
+- atmosphere/current;
+- fire/light.
+
+Still:
+Qalementos is describing Adamic creation,
+not plasma morphology.
+
+---
+
+# LUMINOUS ADAM
+## face brighter than sun; body like morning star
+
+After formation:
+
+Adam's:
+- face shines more intensely than sunlight;
+- body shines like the morning star;
+- he is crowned/clothed in glory.
+
+### M88-12 — HUMAN BODY CAN BE PROJECTED AS CELESTIAL/LUMINOUS FIELD
+
+Cross-link:
+- Daniel transformed figures;
+- 4 Ezra;
+- Second Dominos return figure.
+
+Human identity remains,
+visual scale/brightness changes.
+
+---
+
+# ADAM ON GOLGOTHA
+# MAJOR BILATERAL ANTHROPOMORPHIC GEOMETRY
+
+The direct passage places Adam:
+
+- standing before / in relation to the whole land;
+- **feet at/on Golgotha**;
+- **right hand extended**;
+- **left hand extended**;
+- toward the location associated with the future Cross.
+
+### M88-13 — THIS IS ONE OF THE STRONGEST EXPLICIT BILATERAL HUMAN-BODY GEOMETRIES FOUND SO FAR
+
+It contains:
+
+**central luminous human figure**
++
+**fixed ground node at feet**
++
+**right extension**
++
+**left extension**
++
+**future axial/cross reference**.
+
+This is visually much closer to:
+- Squatter-Man;
+- cross/rod;
+- bilateral current-body
+
+than most ordinary human descriptions.
+
+### M88-14 — BUT THE TEXT ITSELF MAKES THE FUNCTION CROSS-TYPOLOGICAL
+
+The explicit literary logic is:
+Adam's body foreshadows / aligns with the Cross-site.
+
+Therefore:
+this is not direct proof of:
+plasma Squatter-Man.
+
+Classification:
+**very strong projection-geometry analogue; ordinary function = Christian cross typology**.
+
+### M88-15 — BODY / LANDMARK / FUTURE OBJECT ARE OVERLAID IN ONE IMAGE
+
+This is important.
+
+Adam's:
+- body;
+- Golgotha;
+- future Cross
+
+occupy one typological geometry.
+
+Thus:
+**person**
+↔ **landscape node**
+↔ **rod/cross axis**
+can be deliberately superimposed by the source.
+
+This is highly relevant to the project's Moses/mountain/rod/person method.
+
+---
+
+# CENTRAL HUMAN NODE → DISTRIBUTED CREATURE FIELD
+
+Animals:
+- beasts;
+- birds;
+- other living creatures
+
+assemble around Adam.
+
+Adam:
+- names them;
+- receives authority/role over them.
+
+### M88-16 — DISTRIBUTED BIOSPHERE CONVERGES AROUND ONE CENTRAL ANTHROPOMORPHIC NODE
+
+This is:
+**many creatures → one center**.
+
+But:
+creation-kingship theology,
+not a physical convergence machine.
+
+---
+
+# SATAN'S STATE CHANGE
+
+After seeing Adam's glory:
+
+Satan:
+- becomes jealous;
+- loses former glory/majesty;
+- becomes rebellious.
+
+### M88-17 — ROLE/STATE CHANGES WHILE IDENTITY CONTINUES
+
+Same underlying figure:
+**high/bright role**
+→ **fallen/adversarial role**.
+
+Cross-link:
+Paul enemy→messenger in Second Dominos.
+
+---
+
+# CLOUD OF LIGHT CARRIER
+# MAJOR CROSS-TEXT FINDING
+
+While Adam stands at Golgotha:
+
+- a **cloud of light** comes;
+- it receives/takes Adam;
+- carries/leads him to Paradise;
+- angelic hosts accompany;
+- Cherubim bless;
+- Seraphim sing.
+
+### M88-18 — QALEMENTOS GIVES A TRUE LUMINOUS-CLOUD CARRIER
+
+Variables:
+
+**cargo**
+= Adam;
+
+**carrier**
+= cloud of light;
+
+**origin**
+= earthly/Golgotha state;
+
+**destination**
+= Paradise;
+
+**escort**
+= angelic hosts, including cherubim/seraphim.
+
+### M88-19 — THIS STRONGLY CROSS-LINKS SECOND DOMINOS
+
+Second Dominos:
+- cloud wings carry luminous figure earthward;
+- bright cloud carries embodied figure heavenward.
+
+Qalementos:
+- cloud of light carries luminous Adam toward Paradise.
+
+This is now a repeated:
+**luminous human + cloud carrier + vertical/domain transfer**
+grammar.
+
+### M88-20 — CHERUBIM / SERAPHIM ARE ADJACENT TO THE CLOUD-CARRIER EVENT BUT ARE NOT IDENTIFIED AS THE CLOUD
+
+Important distinction.
+
+The text gives:
+- cloud = carrier;
+- angels/cherubim/seraphim = accompanying agents.
+
+Therefore:
+do not collapse them automatically.
+
+### M88-21 — HOWEVER, THE USER'S SAME-PHENOMENON HYPOTHESIS GAINS A STRONGER TESTABLE SEQUENCE
+
+Across texts:
+
+**cloud field**
+→ can have "wings" and carry;
+**cherub/seraph**
+→ winged/presence agents;
+**luminous central person**
+→ carried on same vertical relation.
+
+This creates a meaningful functional family.
+
+Still:
+not proof of one historical physical phenomenon.
+
+---
+
+# PARADISE AS UPPER/AERIAL REALM
+
+The rough Grébaut-derived English rendering places Paradise:
+- high in air / elevated;
+- above ordinary terrain;
+- associated with heavenly character.
+
+One numerical phrase gives approximately:
+**15 cubits above high mountains/hills**,
+but the English rendering is rough.
+
+### M88-22 — PARADISE IS SPATIALLY PROJECTED AS AN UPPER REALM
+
+That is formally compatible with:
+upper inhabited domain.
+
+But:
+source meaning is Eden/Paradise theology.
+
+### M88-23 — THE 15-CUBIT DETAIL IS TRANSLATION-SENSITIVE AND MUST NOT BE USED NUMEROLOGICALLY
+
+Record only with caution.
+
+---
+
+# BOOK II
+## heavenly mysteries and future — secure at high level, not over-detailed
+
+Grébaut's outline and later scholarship identify Book II with:
+- mysteries revealed by Peter to Clement;
+- secrets of heaven;
+- future/esoteric teaching;
+- theological exposition;
+- a transmitted list of roughly **70 heresies**.
+
+### M88-24 — INFORMATION ACCESS IS AGAIN LAYERED
+
+Peter:
+receives mysteries.
+
+Clement:
+receives them through Peter.
+
+The audience:
+receives a written form.
+
+This is:
+**source → authorized intermediary → recipient**.
+
+### M88-25 — DO NOT IMPORT DETAILED PARADISE/HEAVENLY-JERUSALEM GEOGRAPHY FROM THE ARABIC APOCALYPSE OF PETER AS IF IT WERE VERIFIED QALEMENTOS WORDING
+
+The two traditions overlap,
+but are not textually identical.
+
+This control is explicit.
+
+---
+
+# BOOK III / IV
+## miracle + discourse layers
+
+The manuscript incipits identify:
+- Book III with divine power/miracles shown;
+- Book IV with a discourse/speech of Peter.
+
+The exact physical/cosmological mechanisms were not sufficiently exposed in accessible direct translation during this pass.
+
+### M88-26 — ABSENCE OF ACCESSIBLE DETAIL IS NOT PERMISSION TO FILL FROM PARALLEL TEXTS
+
+No fabricated mechanics.
+
+---
+
+# BOOK V
+## church-order layer
+
+Book V is explicitly:
+**Rule of the holy Church which our Lord and Saviour Jesus Christ told to Peter**.
+
+This shifts strongly toward:
+- ecclesial order;
+- authority;
+- community regulation.
+
+### M88-27 — QALEMENTOS ITSELF CONTAINS A STRONG INSTITUTIONAL LAYER
+
+This is important because:
+not every gate/order/node image in the total seven-book collection is cosmological.
+
+Cross-link:
+Sinodos;
+First Dominos;
+Abtilis.
+
+---
+
+# BOOK VI
+# MAJOR ROD / CROSS IDENTITY PASSAGE
+
+Bausi's 2024 manuscript study gives the Book VI incipit:
+
+> the rod by which Christ beat Satan is the rod of Moses, which performed miracles by God's word in the first Law, in the image/sign of the Cross on which Christ was crucified.
+
+### M88-28 — ONE ROD-IDENTITY IS PROJECTED ACROSS DIFFERENT HISTORICAL/THEOLOGICAL FUNCTIONS
+
+The text explicitly links:
+
+**rod of Moses**
+↔ **Christ's anti-Satan rod**
+↔ **sign/image of the Cross**.
+
+This is exceptionally relevant to the user's:
+rod / staff / Cross / axis
+family.
+
+### M88-29 — THE ROD IS NOT MERELY A LOOK-ALIKE; THE TEXT MAKES A FUNCTIONAL-TYPOLOGICAL IDENTITY CLAIM
+
+It carries:
+- miracle;
+- conflict;
+- authority;
+- Cross prefiguration.
+
+### M88-30 — DO NOT IMPORT THE ENTIRE CAVE-OF-TREASURES ROD LINEAGE INTO QALEMENTOS WITHOUT DIRECT VERIFICATION
+
+Related traditions tell of:
+- Paradise branch;
+- rod becoming serpent;
+- sea division;
+- rock water;
+- later Cross.
+
+But in this pass,
+only the Qalementos Book VI incipit above is directly secure.
+
+Therefore:
+no invented rod biography.
+
+---
+
+# BOOK VII
+## Vision of Simon son of Jonah / Peter
+
+Book VII is securely titled as a:
+**vision seen by Simon son of Jonah**.
+
+Some manuscripts frame it as:
+a third speech/order concerning penitence/re-entry.
+
+Accessible scholarship confirms:
+- it is a Petrine vision layer;
+- manuscript headings vary.
+
+Detailed cosmological imagery was not sufficiently exposed in accessible direct translation during this pass.
+
+### M88-31 — BOOK VII IS LOGGED AS A VISIONARY LAYER WITHOUT INVENTED CONTENT
+
+This protects the source.
+
+---
+
+# QALEMENTOS MANUSCRIPT GEOMETRY
+## textual blocks themselves move
+
+Bausi's manuscript work shows:
+
+- Book II has a heresy-list transposition in some witnesses;
+- Book III has a passage absent in one manuscript family but present in another;
+- Book VII's "third speech" title is present in some witnesses and absent in others;
+- one Eritrean manuscript physically transposes book blocks;
+- some witnesses add patriarch commemoration as another book.
+
+### M88-32 — MANUSCRIPT ORDER CAN CHANGE WITHOUT THE UNDERLYING TRADITION CLAIMING A COSMIC EVENT
+
+This is a crucial control.
+
+**textual adjacency**
+is not
+**physical-world adjacency**.
+
+---
+
+# CROSS-TEXT VARDATH SYNTHESIS
+
+# 1. FOUR-MEDIUM HUMAN FORMATION
+
+1 Meqabyan:
+distributed media → resurrected person.
+
+3 Meqabyan:
+earth/water/fire/wind → Adam.
+
+Qalementos:
+earth/water/air/fire → Adam.
+
+### M88-33 — THE ETHIOPIC BROADER CANON REPEATEDLY USES HUMAN FORM AS A CONVERGENCE OF ENVIRONMENTAL MEDIA
+
+This is now a robust textual pattern.
+
+That makes:
+**environmental field → anthropomorphic projection**
+a serious comparative grammar.
+
+Not proof of Squatter-Man physics.
+
+---
+
+# 2. BILATERAL LUMINOUS ADAM
+
+Qalementos adds:
+
+**luminous body**
++
+**feet at fixed sacred ground node**
++
+**right arm**
++
+**left arm**
++
+**Cross-axis association**.
+
+### M88-34 — THIS IS AMONG THE STRONGEST SOURCE-LEVEL HUMAN/AXIS/BILATERAL PROJECTIONS YET
+
+Compare:
+- Daniel's river man;
+- Habakkuk deep-with-hands;
+- Second Dominos luminous cloud-borne figure;
+- Squatter-Man.
+
+Ordinary source meaning remains:
+Cross prefiguration.
+
+---
+
+# 3. CLOUD-CARRIER FAMILY
+
+Qalementos:
+**cloud of light carries Adam upward/to Paradise**.
+
+Second Dominos:
+**winged clouds carry returning luminous figure downward**.
+
+Second Dominos:
+**bright cloud carries figure upward through parted heaven**.
+
+### M88-35 — A REPEATED SKY-CARRIER SYSTEM NOW EXISTS ACROSS TWO ETHIOPIC BROADER-CANON TEXTS
+
+Common variables:
+
+- luminous central figure;
+- cloud;
+- vertical/domain movement;
+- heavenly destination/origin;
+- angelic association.
+
+This is highly important.
+
+---
+
+# 4. CHERUB / SERAPH / CLOUD / WING FAMILY
+
+Qalementos places:
+- cloud carrier;
+- Cherubim;
+- Seraphim
+
+inside one Paradise-transfer event.
+
+Second Dominos supplies:
+- cloud **wings**.
+
+### M88-36 — THE FUNCTIONAL CONNECTION IS NOW STRONGER THAN A PURELY VISUAL ONE
+
+Possible comparative family:
+
+**luminous atmospheric carrier**
++
+**wing imagery**
++
+**cherubic/seraphic accompaniment**
++
+**central anthropomorphic figure**
++
+**vertical movement**.
+
+This is precisely the level at which the user's:
+Quetzalcoatl / cherub / Feathered Serpent
+hypothesis should be tested.
+
+### M88-37 — SERPENT CONNECTION REMAINS THE WEAKER LINK IN THIS PARTICULAR CHAIN
+
+Qalementos Book I does not say:
+cloud = serpent.
+
+Therefore:
+do not close the loop yet.
+
+---
+
+# 5. ROD / CROSS / PERSON / LANDSCAPE
+
+Qalementos Book I:
+Adam's body is aligned with:
+- Golgotha;
+- future Cross.
+
+Book VI:
+Moses' rod is explicitly interpreted through:
+- Christ;
+- Cross.
+
+### M88-38 — QALEMENTOS LINKS PERSON-BODY GEOMETRY AND ROD/CROSS GEOMETRY ACROSS DIFFERENT BOOKS
+
+This is very significant for:
+Moses/mountain/rod/person projection research.
+
+But:
+final mechanical identity between Adam body and Moses rod is not explicitly stated.
+
+---
+
+# 6. UPPER / LOWER WATER AND WIND
+
+Qalementos:
+- upper/lower water separation;
+- wind as life/system medium;
+- earth-water mixture;
+- solar hardening.
+
+1/3 Meqabyan:
+- broad sky/upper-water support;
+- heaven pillared on wind.
+
+### M88-39 — QALEMENTOS STRENGTHENS THE BROAD ENVIRONMENTAL SIDE OF THE MODEL
+
+Yet still:
+no contraction into throat.
+
+---
+
+# STRICT FINGERTRAP TEST — QALEMENTOS
+
+Criteria:
+1. broad/open distributed support structure;
+2. same structure remains continuous;
+3. angle/contraction;
+4. narrow axial throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Broad/open field
+Moderate/strong:
+- upper/lower water system;
+- broad creation field;
+- cloud/air/wind;
+- whole-earth hand image.
+
+## Same structural continuity
+No clear same physical structure.
+
+## Contraction/angle change
+Absent.
+
+## Narrow throat
+Rod/Cross appears,
+but not as contracted broad sky.
+
+## Transfer
+Strong:
+cloud carries Adam to Paradise.
+
+## Reopening
+Absent.
+
+### Verdict
+
+**NOT A STRICT FINGERTRAP.**
+
+### Classification
+
+Qalementos is:
+- **very strong projection-grammar evidence**;
+- **very strong cloud-carrier evidence**;
+- **very strong rod/Cross typology**;
+- **very strong four-medium→human convergence**;
+- **strong bilateral anthropomorphic geometry**;
+
+but it still lacks:
+**broad support → same structure contracts → narrow throat → transfer → same structure reopens**.
+
+---
+
+# QUETZALCOATL / CHERUB / FEATHERED-SERPENT UPDATE
+
+Qalementos strengthens the hypothesis in a specific way.
+
+We now have across the research:
+
+## Environmental wing
+Second Dominos:
+cloud itself has wings.
+
+## Environmental carrier
+Qalementos:
+cloud of light carries Adam.
+
+## Winged heavenly agents
+Qalementos:
+Cherubim/Seraphim accompany Paradise transfer.
+
+## Luminous human axis
+Qalementos:
+Adam shines like sun/star and extends both arms at Golgotha/Cross-axis.
+
+## Rod/Cross
+Qalementos:
+Moses' rod ↔ Christ's anti-Satan rod ↔ Cross.
+
+### M88-40 — A SINGLE FUNCTIONAL FAMILY CAN NOW BE TESTED ACROSS:
+**CLOUD / WING / CHERUB / LUMINOUS PERSON / ROD-CROSS / VERTICAL TRANSFER**
+
+This is substantially stronger than saying:
+"they all look winged."
+
+Still unresolved:
+- serpent-body connection;
+- broad lattice continuity;
+- contraction mechanics.
+
+---
+
+# FULL QALEMENTOS PROCESS MAP — VERIFIED MATERIAL ONLY
+
+Peter/Clement literary frame
+→ creation mysteries disclosed
+→ angelic orders established
+→ wind/water/fire/light included in cosmic order
+→ upper/lower waters separated
+→ waters gather
+→ land emerges as earth/water mixture
+→ winds rise/move in measured fashion
+→ vegetation grows
+→ sun hardens/drys ground
+→ land/water/air creatures appear
+→ divine hand encompasses world
+→ earth + water + air + fire samples converge
+→ Adam formed as one body
+→ Adam becomes luminous
+→ feet associated with Golgotha
+→ right/left arms extend toward Cross-site
+→ distributed animals gather around Adam
+→ Satan reacts and changes status
+→ cloud of light arrives
+→ Adam becomes cloud-borne cargo
+→ cherubim/seraphim accompany
+→ Paradise becomes destination
+→ later books shift into mysteries/miracles/church order
+→ Book VI identifies Moses' rod with Christ/Cross typology
+→ Book VII closes in Petrine visionary framework.
+
+---
+
+# PAIR / ROLE REGISTER
+
+## Peter / Clement
+revealer/intermediary ↔ recipient/scribe.
+
+## upper water / lower water
+separated cosmographic reservoirs.
+
+## earth / water
+land material mixture.
+
+## air / fire
+breath/heat components.
+
+## right hand / left hand
+bilateral Adam geometry.
+
+## feet / Golgotha
+body anchor ↔ landscape node.
+
+## Adam / Cross
+person-body ↔ future axial typology.
+
+## Satan / Adam
+fallen prior glory ↔ newly exalted human role.
+
+## cloud / Adam
+carrier ↔ cargo.
+
+## Cherubim / Seraphim
+paired heavenly accompaniment classes.
+
+## Moses' rod / Christ's rod / Cross
+same typological function-family across temporal contexts.
+
+---
+
+# NUMBER REGISTER
+
+- **7 books** — standard received scholarly structure.
+- Some witnesses can effectively yield **8** with patriarch commemoration.
+- **9 angelic families/orders** in Book I passage.
+- **4 elements/media** in Adam's formation.
+- Paradise elevation phrase approximately **15 cubits** in rough secondary English; translation-sensitive.
+- roughly **70 heresies** in transmitted Book II catalogue.
+- **3 hours** appears repeatedly in Adam/Paradise chronology in the rough Book I translation.
+
+### M88-41 — NONE OF THESE NUMBERS SHOULD BE FORCED INTO THE VARDATH CLOCK
+
+Especially:
+- 7 vs possible 8 book arrangement is manuscript/paratextual;
+- 70 heresies is catalogue rhetoric/structure;
+- 15-cubit wording needs direct French/Geʽez re-check before use.
+
+---
+
+# TEXTUAL / HISTORICAL CONTROLS
+
+1. Qalementos is the Ethiopic seven-book Maṣḥafa Qalemǝnṭos, not 1/2 Clement.
+2. It is not identical with Sinodos, First/Second Dominos or the Ethiopic Apocalypse of Peter dossier.
+3. Peter/Clement are literary authority figures; historical authorship is not demonstrated.
+4. The work is composite and layered.
+5. Books I–II overlap closely with Arabic Christian Book-of-Rolls / Apocalypse-of-Peter traditions.
+6. Books III–VII have a distinct Ethiopic transmission studied by Bausi.
+7. The collection's final Geʽez assembly cannot be dated simply by dating one Arabic comparator.
+8. Grébaut's Books I–II French translation remains essential but old.
+9. The small online English version used for Book I is a secondary rendering of Grébaut and its awkward wording must be treated cautiously.
+10. The four-medium Adam formation, luminous Adam, bilateral Golgotha posture and cloud-of-light carrier all occur in that transmitted Book I passage.
+11. Book VI's rod/Cross incipit is independently secure from Bausi's manuscript transcription/translation.
+12. The detailed Cave-of-Treasures rod biography must not be imported without Qalementos verification.
+13. Book II heavenly geography must not be filled from the Arabic Apocalypse of Peter merely because the traditions overlap.
+14. Book VII is securely Petrine visionary material, but detailed mechanics were not invented where direct translation was unavailable.
+15. Manuscript book order varies and can contain transpositions/omissions.
+16. No strict fingertrap is described.
+
+---
+
+# SOURCES LOGGED — QALEMENTOS
+
+## Modern manuscript / critical scholarship
+- Alessandro Bausi, "On the Manuscript Tradition of the Ethiopic Maṣḥafa Qalemǝnṭos (Book of Clement): News From Eritrea":
+  https://iris.uniroma1.it/retrieve/01e7c267-8bf0-4164-ab76-d8df7fdaa2f0/Bausi_The-Ethiopic-Book-of-Clement_2024.pdf
+- Alessandro Bausi, *Il Qalēmenṭos etiopico. La rivelazione di Pietro a Clemente. I libri 3–7*:
+  https://unora.unior.it/handle/11574/34697
+- Bausi, "Presenze clementine nella letteratura etiopica":
+  https://iris.uniroma1.it/handle/11573/1693162
+- manuscript tradition study:
+  https://www.academia.edu/1151119/The_Manuscript_Tradition_of_the_Ethiopic_Qal%C4%93men%E1%B9%ADos_A_Short_Note
+
+## Seven-book identity / source orientation
+- Ethiopian Book of Clement study guide:
+  https://elroidigital.org/ethiopian-book-of-clement-study-guide.html
+
+## Book I direct English reading aid based on Grébaut's French translation
+- Qalementos Book I excerpt:
+  http://benwallis.blogspot.com/2010/02/english-translation-of-small-portion-of.html
+
+## Arabic comparator — COMPARATIVE ONLY, not substituted for Ethiopic text
+- Emmanouela Grypeou, Arabic Apocalypse of Peter / Book of Rolls study in *The Apocalypse of Peter in Context*:
+  https://doi.org/10.2143/9789042952096
+
+---
+
+# SECTION 88 — ETHIOPIC CLEMENT / QALEMENTOS COMPLETE
+
+## Strongest new findings
+
+1. **Qalementos is a distinct seven-book Ethiopic pseudo-Clementine collection and must not be conflated with 1 Clement, 2 Clement, Sinodos, the Dominos books, or the separate Ethiopic Apocalypse of Peter dossier.**
+2. **Its manuscript tradition is stable enough to recognize seven books but unstable enough in ordering, omissions, headings and added patriarchal material that 7/8-style counting cannot safely become cosmological numerology.**
+3. **Book I gives another explicit upper/lower-water cosmography and places wind, water, fire and light inside one ordered creation system, strengthening the wider Ethiopic broad-support/environmental pattern.**
+4. **Land emerges through water gathering and is initially described as an earth/water mixture, while wind rises from the earth/interior and solar heat hardens the wet ground—an unusually process-oriented environmental sequence.**
+5. **The most important creation result is Adam's formation from earth + water + air + fire gathered into one hand and converged into one anthropomorphic body.**
+6. **That four-medium→human grammar now recurs across 1 Meqabyan, 3 Meqabyan and Qalementos, making environmental-media→anthropomorphic-form a robust Ethiopic textual pattern rather than an isolated curiosity.**
+7. **Adam is then rendered as a luminous cosmic-scale human figure: face brighter than sunlight and body like the morning star.**
+8. **The strongest geometric finding is Adam at Golgotha with feet anchored to the sacred ground node and right/left arms extended toward the future Cross-site.**
+9. **This is one of the strongest bilateral anthropomorphic/axis images found so far and is genuinely Squatter-Man-like in appearance, but the source explicitly gives it Christian Cross typology rather than plasma/current mechanics.**
+10. **The passage therefore proves that person-body, landscape node and rod/Cross axis can be intentionally superimposed in one symbolic geometry.**
+11. **A cloud of light then receives/carries Adam to Paradise while Cherubim and Seraphim accompany him, giving another direct luminous-human + cloud-carrier + upper-destination sequence.**
+12. **Combined with Second Dominos' winged clouds carrying a luminous figure downward and bright cloud carrying him upward, Qalementos makes cloud-carrier imagery a repeated Ethiopian broader-canon pattern.**
+13. **The cherubim/seraphim are adjacent to the Qalementos cloud-carrier event but are not identified as the cloud, so the user’s same-phenomenon hypothesis gains a stronger functional comparison without warranting literal identity.**
+14. **Book VI provides another major projection identity: the rod used by Christ against Satan is identified with Moses' miraculous rod and with the sign/image of the Cross.**
+15. **Rod → Cross is therefore not merely a visual resemblance in Qalementos; it is an explicit typological/functional identity across different historical contexts.**
+16. **However, the familiar Paradise-branch→Moses-rod→serpent→sea→rock→Cross biography from related traditions was deliberately NOT imported because Qalementos itself was not directly verified to contain all those steps.**
+17. **Book II was likewise kept source-clean: heavenly mysteries/future material are secure at high level, but detailed Arabic Apocalypse-of-Peter paradise geography was not relabelled as Ethiopic Qalementos.**
+18. **Book VII is securely a Vision of Simon son of Jonah/Peter, but inaccessible details were not invented.**
+19. **The most useful new Vardath functional family is now: cloud / wing / cherub-seraph accompaniment / luminous anthropomorphic figure / rod-Cross / vertical transfer.**
+20. **The serpent connection remains weaker in this specific chain and still needs a process-level bridge rather than simple visual association.**
+21. **No strict fingertrap appears. Qalementos supplies broad environmental structure, anthropomorphic convergence, bilateral axis imagery, cloud transfer and rod/cross identity, but never shows one broad support structure contracting into a narrow throat and reopening.**
+22. **The unresolved mechanical chain therefore remains sharply defined: broad wind/water support (Meqabyan/Qalementos) → missing same-structure contraction → static throat (4 Ezra 7) → opening/passage/outflow (Zechariah 14) → bidirectional cloud-carrier behavior (Second Dominos).**
+
+## Next live block
+
+**Section 89 — ETHIOPIC DIDASCALIA / DIDESQELYA**
+
+This is the final remaining text-unit in the verified reconstructed broader-canon roadmap.
+
+Required protocol:
+- re-check all three archives and actual Part 2 tail;
+- distinguish Ethiopic Didascalia from:
+  - Syriac Didascalia Apostolorum;
+  - Apostolic Constitutions I–VII;
+  - Didache;
+  - Sinodos;
+- identify the Ethiopic work's **43-chapter** structure and direct textual basis;
+- preserve versional differences;
+- read the whole accessible unit before mapping;
+- prioritize:
+  - church as body / members;
+  - bishop/deacon/widow/orphan role geometry;
+  - altar/sanctuary;
+  - doors/admission/exclusion;
+  - baptism/water/oil;
+  - Eucharist;
+  - fasting/Pascha/calendar;
+  - resurrection/judgment;
+  - any heaven/earth/sea/fire/wind/wing/serpent/dragon/mountain/rod imagery;
+  - pair/role systems;
+  - central→distributed→central governance;
+- expect substantial institutional negative-control material;
+- specifically test whether any physical cosmology survives beyond church-order metaphor;
+- apply strict fingertrap criteria only after ordinary literary/ecclesial function;
+- append only verified findings;
+- verify actual tail after completion;
+- after Section 89, verify whether the reconstructed 88-text corpus is truly complete from the files rather than assuming completion from numbering.
+
