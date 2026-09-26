@@ -58756,3 +58756,1235 @@ Required protocol:
 - append only verifiable findings;
 - verify actual tail after append.
 
+
+
+---
+
+# SECTION 86 — FIRST BOOK OF THE COVENANT / FIRST DOMINOS
+## Mäṣḥafä Kidan I / Ethiopic Testamentum Domini — source-critical pass on post-resurrection apocalypse, church-as-layered access architecture, earthly/heavenly sanctuary correspondence, baptismal water/oil/directional state change, liturgical clocks, information gating, dragon/sea imagery in the Syriac parallel, and strict separation of Geʽez evidence from versional reconstruction
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for First Book of the Covenant / First Dominos;
+- EXTRA-RESEARCH.md was checked;
+- actual Part 2 tail was checked.
+
+Section 85 — Abtilis / Abtelis was verified:
+- section start occurs once;
+- completion marker occurs once;
+- actual tail identifies Section 86 as next.
+
+No earlier completed direct Section 86 pass exists.
+
+This section is appended only to Part 2.
+
+---
+
+# TEXT IDENTITY FIRST
+
+The Ethiopian church-list title:
+**First Book of Dominos**
+corresponds to the Geʽez:
+**Mäṣḥafä Kidan / Kidan zä-ʾƎgziʾənä Iyäsus Krəstos**
+= **Testament of Our Lord Jesus Christ**.
+
+Modern scholarship calls it:
+**Testamentum Domini**.
+
+The directly relevant Ethiopic work:
+- has **60 chapters**;
+- is preserved completely in Geʽez;
+- opens with a post-resurrection revelation;
+- proceeds into detailed church-order/liturgical material;
+- ends with Christ's ascension.
+
+The Geʽez work is a complete independent textual witness.
+
+### M86-1 — FIRST DOMINOS MUST NOT BE REPLACED BY THE OLD ENGLISH SYRIAC TESTAMENTUM DOMINI
+
+The widely accessible English translation by:
+- James Cooper;
+- A. J. Maclean;
+- 1902
+
+is translated from the **Syriac** Testamentum Domini.
+
+It is:
+- extremely valuable comparatively;
+- closely related;
+- often preserves the same inherited church-order structure;
+
+but it is **not** a translation of Beylot's Geʽez critical edition.
+
+Therefore this section distinguishes:
+
+**G = directly secure Geʽez/Ethiopic evidence**
+from
+**S = Syriac comparative witness**.
+
+This distinction is mandatory.
+
+---
+
+# TRANSMISSION / HISTORICAL CONTROL
+
+Robert Beylot's critical work established the Ethiopic Testamentum Domini from seven manuscripts.
+
+His comparison concluded that:
+- the surviving Ethiopic manuscripts represent one Ethiopic version;
+- that version is independent of the Syriac and known Arabic forms;
+- several malformed Greek loanwords suggest direct translation from a lost Greek text;
+- an Aksumite-period Greek→Geʽez translation is linguistically plausible.
+
+The work itself probably arose in Greek in the late fourth/fifth century, though exact date and place remain debated.
+
+The surviving versions include:
+- Geʽez;
+- Syriac;
+- Arabic;
+plus smaller:
+- Greek;
+- Latin;
+- Georgian;
+- Coptic evidence.
+
+### M86-2 — THIS IS A TEXTUAL-FAMILY NETWORK, NOT ONE PERFECTLY IDENTICAL TRANSMISSION LINE
+
+Shared imagery may be:
+- inherited from Greek;
+- altered by translation;
+- added;
+- omitted;
+- rearranged.
+
+Therefore:
+a striking Syriac phrase is not automatically a Geʽez phrase.
+
+---
+
+# GEʽEZ STRUCTURE — SECURE OVERVIEW
+
+The Ethiopic work has 60 chapters.
+
+## Geʽez chapters 1–6
+Apocalyptic/post-resurrection section:
+- risen Christ appears;
+- Apostles and holy women including Mary, Martha and Salome participate;
+- end-time signs and final events are announced.
+
+## Subsequent section
+Church-order / canonico-liturgical material:
+- church construction;
+- hierarchy;
+- metropolitan/bishop;
+- presbyter;
+- deacon;
+- subdeacon;
+- reader;
+- widows;
+- virgins;
+- lay people;
+- catechumens;
+- Eucharist;
+- baptism;
+- daily discipline.
+
+Specific Ethiopic anchors:
+- **chapter 16** = Anaphora of Our Lord Jesus Christ;
+- **chapter 22** = Mystagogy / initiation teaching.
+
+The work ends:
+- with Christ's Ascension.
+
+### M86-3 — THE BOOK ITSELF MOVES FROM COSMIC/ESCHATOLOGICAL ORDER INTO LOCAL CHURCH ORDER
+
+This is structurally significant:
+
+**world/end-time frame**
+→
+**building**
+→
+**offices**
+→
+**sacrament**
+→
+**daily rhythms**
+→
+**ascension**.
+
+The literary claim is that:
+local communal order mirrors/divinely participates in larger heavenly order.
+
+That does **not** mean the church building is literally the world-machine.
+
+---
+
+# OPENING POST-RESURRECTION FRAME
+
+The Syriac parallel begins:
+
+**death**
+→ **resurrection**
+→ **physical recognition/contact**
+→ **disciples lifted from prostration**
+→ **Spirit/breath**
+→ **future/end-time disclosure**.
+
+The Geʽez overview independently confirms:
+- post-resurrection appearance;
+- Apostles;
+- holy women;
+- end-time apocalypse.
+
+### M86-4 — INFORMATION ABOUT THE FUTURE IS DELIVERED AFTER A BODY-STATE TRANSITION
+
+Narrative sequence:
+**death**
+→ **new bodily life**
+→ **revelatory information**.
+
+This is source theology,
+not evidence of physical time travel.
+
+---
+
+# END-TIME SIGNS
+## Geʽez: secure category; Syriac: detailed comparative imagery
+
+The Geʽez work securely contains an apocalypse describing signs of the end.
+
+The Syriac parallel gives a detailed package involving:
+- famine;
+- pestilence;
+- political disturbance;
+- signs in heaven;
+- unusual light;
+- sounds/noises;
+- sea raging;
+- earth roaring/shaking;
+- social breakdown;
+- violent rule;
+- climatic/agricultural distress;
+- final adversary.
+
+### M86-5 — FIRST DOMINOS BELONGS TO THE SAME MULTI-DOMAIN APOCALYPTIC GRAMMAR AS THE PROPHETS
+
+Secure at broad level:
+- sky;
+- earth;
+- social/political world;
+- final judgment.
+
+But individual Syriac details must not be silently quoted as exact Geʽez wording.
+
+---
+
+# DRAGON / MONSTROUS-BIRTH MATERIAL
+## strong Syriac comparison, not direct Geʽez finding
+
+The Syriac apocalypse includes:
+- dragons/monstrous births;
+- anomalous creatures;
+- altered human births;
+- unusual spirits.
+
+### M86-6 — DO NOT ADD THIS DIRECTLY TO THE GEʽEZ DRAGON CHAIN WITHOUT ETHIOPIC VERIFICATION
+
+This is exactly the kind of attractive match that could distort the project.
+
+Record as:
+**Testamentum Domini textual-family parallel**.
+
+Not:
+**verified First Dominos Geʽez dragon verse**.
+
+---
+
+# THE ADVERSARY AS ANTHROPOMORPHIC SYSTEM
+## Syriac comparative control
+
+The Syriac parallel gives the Son of Perdition:
+- asymmetrical eyes;
+- unusual limbs;
+- right/left differences;
+- fire imagery;
+- sword/flame;
+- directional agency.
+
+### M86-7 — AN APOCALYPTIC ENEMY CAN BE RENDERED AS A STRANGE ANTHROPOMORPHIC BODY WITHOUT IMPLYING A COSMIC MACHINE
+
+This is useful negative control for Squatter-Man comparisons.
+
+Morphology alone is insufficient.
+
+---
+
+# CHURCH BUILDING AS LAYERED ACCESS ARCHITECTURE
+## secure Geʽez category; detailed Syriac plan as comparative witness
+
+Beylot and Encyclopaedia Aethiopica independently confirm that the Ethiopic Testamentum Domini gives rules for:
+**how the church building should be constructed**.
+
+The closely related Syriac witness gives an unusually detailed plan:
+
+- three church entrances;
+- forecourt/portico;
+- diaconicum;
+- baptistery;
+- catechumen house;
+- altar/sanctuary;
+- throne;
+- right/left presbyter zones;
+- men's and women's porches;
+- veils;
+- illumination/light throughout;
+- commemoration/writing area;
+- treasury/offering room;
+- bishop's residence;
+- widows/deacons nearby;
+- guest house.
+
+It also describes:
+a baptistery with:
+- one entrance;
+- three exits.
+
+### M86-8 — THE TESTAMENTUM DOMINI FAMILY CONTAINS A TRUE NESTED-BOUNDARY ARCHITECTURE
+
+Conceptually:
+
+**outside**
+→ **forecourt**
+→ **catechumen zone**
+→ **inner liturgical boundary**
+→ **sanctuary/altar**.
+
+Different people may occupy different layers.
+
+### M86-9 — THIS IS STATIC ACCESS TOPOLOGY, NOT A DYNAMIC FINGERTRAP
+
+The boundaries:
+- do not contract;
+- do not braid;
+- do not become a throat;
+- do not reopen mechanically.
+
+The architecture is designed,
+not transformed during the event.
+
+---
+
+# THREE ENTRANCES / ONE ENTRANCE + THREE EXITS
+## comparative architecture
+
+The Syriac plan assigns symbolic meanings to architectural numbers.
+
+The church:
+- three entrances;
+- Trinity symbolism.
+
+The baptistery:
+- one entrance;
+- three exits.
+
+### M86-10 — ONE→THREE AND THREE→ONE ACCESS GEOMETRIES CAN BE EXPLICITLY SYMBOLIC
+
+This is important for number work.
+
+The text itself tells us:
+number/geometry can encode theology.
+
+Therefore:
+a recurring number pattern cannot automatically be treated as physical engineering.
+
+---
+
+# RIGHT / LEFT / CENTER SPATIAL ORDER
+
+The Syriac church plan places:
+- throne/altar center;
+- presbyters right/left;
+- deacons/readers/widows in ordered zones;
+- men/women in separated access areas.
+
+### M86-11 — RIGHT/LEFT GEOMETRY CAN BE PURELY LITURGICAL ORGANIZATION
+
+This is another direct warning against overfitting:
+**bilateral arrangement ≠ two Vardath strands**.
+
+---
+
+# LIGHT THROUGHOUT THE BUILDING
+
+The comparative plan explicitly requires:
+- all areas lighted;
+- for practical reading;
+- also symbolic type.
+
+### M86-12 — LIGHT CAN HAVE SIMULTANEOUS PRACTICAL + SYMBOLIC FUNCTION
+
+This matters for:
+- glowing temples;
+- shining bodies;
+- luminous fields.
+
+Not every "light" is solely supernatural or solely physical.
+
+---
+
+# VEIL / BOUNDARY
+
+The comparative Testamentum uses:
+- sanctuary veils;
+- baptistery veil;
+- closed veil/door during parts of offering.
+
+### M86-13 — VISUAL/PERMISSION BOUNDARY CAN CHANGE WITHOUT THE BUILDING GEOMETRY CHANGING
+
+A veil may be:
+- open;
+- closed.
+
+Thus:
+**same physical architecture**
+can change
+**access/visibility state**.
+
+This is closer to a "switch" than a permanent wall,
+but still institutional/liturgical.
+
+---
+
+# HEAVENLY ↔ EARTHLY SANCTUARY CORRESPONDENCE
+
+The comparative ordination prayer describes:
+- an **upper sanctuary**;
+- ministry before the foundation of the world;
+- earthly sanctuaries ordered according to/patterned after heaven.
+
+The church plan also says some local arrangement has:
+**a type in heaven**.
+
+### M86-14 — EARTHLY SACRED ARCHITECTURE IS PRESENTED AS A COPY/PATTERN OF AN UPPER ARCHITECTURE
+
+This is a significant formal match to the user's:
+**world above / world below correspondence**.
+
+But source meaning:
+liturgical heavenly archetype.
+
+The text does **not** say:
+the two buildings physically become adjacent,
+or material crosses between them.
+
+### M86-15 — SAME PATTERN CAN EXIST AT TWO LEVELS WITHOUT THE TWO LEVELS BEING THE SAME OBJECT
+
+This is a major methodological control.
+
+Formal similarity:
+does not establish:
+physical continuity.
+
+---
+
+# ORDINATION
+## many hands → one role state
+
+The Testamentum Domini family gives:
+- communal selection;
+- bishops;
+- laying on hands;
+- prayer;
+- one candidate enters new office-state.
+
+### M86-16 — OPERATOR NETWORK → ROLE TRANSFORMATION
+
+Person remains physically the same.
+
+But:
+**social/sacramental state changes**.
+
+Again:
+state transition without geometric machine.
+
+---
+
+# LITURGICAL CLOCK
+## hours, dawn star, midnight, lamp-lighting
+
+The Syriac witness organizes prayer by:
+- first hour;
+- midnight;
+- dawn/twilight;
+- dawn star;
+- morning;
+- third;
+- sixth;
+- ninth;
+- twelfth;
+- lamp-lighting.
+
+### M86-17 — THE BOOK CONTAINS A MULTI-POINT DAILY PHASE CLOCK
+
+This is a real ordered temporal cycle.
+
+### M86-18 — DAILY CLOCK PHASES ARE NOT COSMIC GATE PHASES
+
+They govern:
+- prayer;
+- liturgy;
+- communal synchronization.
+
+This is a useful clock negative-control.
+
+---
+
+# PASCHA / PENTECOST
+## seasonal synchronization
+
+The Testamentum Domini family strongly organizes:
+- preparation;
+- fasting;
+- baptism;
+- vigil;
+- Pascha;
+- Pentecost.
+
+Comparative Syriac:
+- baptism tied to Pascha;
+- Pascha completion around midnight;
+- Pentecost = altered fasting/kneeling regime.
+
+### M86-19 — ONE CALENDAR THRESHOLD CHANGES MULTIPLE SYSTEM RULES AT ONCE
+
+At Pascha/Pentecost:
+- fasting state changes;
+- vigil state changes;
+- baptismal admission changes;
+- liturgical participation changes.
+
+Formal Vardath analogy:
+**clock phase**
+→ **multiple linked state variables**.
+
+But:
+liturgical calendar,
+not physical time-door.
+
+---
+
+# EUCHARISTIC ACCESS
+## layered participation
+
+The comparative witness:
+- closes veil/door for offering;
+- restricts altar/inner participation;
+- excludes catechumen offering;
+- dismisses catechumens before hidden/mystagogical teaching;
+- admits initiated faithful further inward.
+
+### M86-20 — PHYSICAL POSITION, INFORMATION ACCESS AND SACRAMENTAL ACCESS ARE SEPARATE BUT COORDINATED LAYERS
+
+This is one of the strongest system-control findings of the book.
+
+A person may:
+- hear readings;
+- yet not enter inner rite;
+- be physically nearby;
+- yet not receive the same information;
+- later change status and gain access.
+
+Cross-link:
+- 4 Ezra public/secret books;
+- Ezekiel holy/common;
+- Abtilis restricted texts.
+
+---
+
+# BAPTISM
+## water as state-boundary medium
+
+The Geʽez work securely contains extensive baptismal order/prayers.
+
+The Syriac comparative witness gives:
+- preparation/testing;
+- exorcism;
+- water;
+- oil;
+- renunciation;
+- directional turning;
+- repeated/triple baptism;
+- post-water anointing;
+- Spirit invocation;
+- sealing;
+- Eucharistic integration.
+
+### M86-21 — BAPTISM IS A TRUE CARRIER-STATE TRANSITION THROUGH WATER
+
+The same individual passes:
+
+**catechumen**
+→ preparation
+→ **water**
+→ emergence
+→ anointing/seal
+→ **full participant**.
+
+The body is the same.
+Permission/identity state changes.
+
+### M86-22 — WATER IS THE MEDIUM OF TRANSITION, NOT THE DESTINATION
+
+This is highly important for Vardath comparisons.
+
+Do not collapse:
+- medium;
+- gate;
+- destination.
+
+---
+
+# WEST → EAST TURNING
+## Syriac comparative witness
+
+The Syriac rite:
+- candidate faces west to renounce Satan;
+- then turns east to affirm/submission/confession.
+
+### M86-23 — ONE BODY'S ORIENTATION ENCODES A TWO-STATE TRANSITION
+
+Geometry:
+
+**WEST**
+renunciation
+→ rotation
+→
+**EAST**
+affirmation.
+
+This is a genuine directional polarity.
+
+But:
+symbolic ritual orientation,
+not opposed cosmic currents.
+
+---
+
+# TWO OILS / RIGHT–LEFT PLACEMENT
+## Syriac comparative witness
+
+The comparative rite distinguishes:
+- exorcised oil;
+- thanksgiving oil.
+
+Attendants/oils occupy:
+- right;
+- left.
+
+### M86-24 — RIGHT/LEFT CAN ENCODE DIFFERENT FUNCTIONAL STATES AROUND ONE CENTRAL CARRIER
+
+This resembles:
+paired-state systems.
+
+But the two sides are:
+ritual function,
+not counter-wound strands.
+
+---
+
+# WATER + WINE / BODY + SOUL SYMBOLIC COORDINATION
+
+Comparative Eucharistic/baptismal language combines:
+- bread/body;
+- wine/blood;
+- water/laver;
+- soul/body healing.
+
+### M86-25 — MULTIPLE MEDIA CAN REPRESENT DIFFERENT LAYERS OF ONE PERSON/SYSTEM
+
+Cross-link:
+Meqabyan:
+earth/water/fire/wind → person.
+
+Here:
+material sacramental media
+→ body/soul/state symbolism.
+
+Again:
+symbolic system first.
+
+---
+
+# BAPTISMAL EXORCISM — DRAGON/SEA/FIRMAMENT/WIND/FIRE
+## IMPORTANT: SYRIAC PARALLEL ONLY UNLESS GEʽEZ TEXT IS DIRECTLY CHECKED
+
+The Syriac Testamentum Domini baptismal exorcism contains a remarkable cosmological cluster:
+
+- sea;
+- dragons in the sea;
+- mountains;
+- firmament/earth;
+- winter tempest;
+- raging whirlwind held to limits;
+- fire held within prescribed boundary;
+- serpent trodden down;
+- dragon killed.
+
+Modern scholarship on Christian baptism identifies this as a **Chaoskampf** liturgical reuse:
+biblical sea/dragon/Leviathan conflict imagery is applied to:
+- evil;
+- demonic opposition;
+- baptismal liberation.
+
+### M86-26 — THIS IS A CRITICAL CONTROL FOR THE USER'S DRAGON HYPOTHESIS
+
+In this ritual context:
+
+**dragon**
+does not function as:
+- sky lattice;
+- ground support;
+- winged carrier.
+
+It functions as:
+**hostile/demonic chaos image**.
+
+Therefore:
+dragon morphology alone cannot establish one physical phenomenon.
+
+### M86-27 — SEA + DRAGON + FIRMAMENT + WHIRLWIND IN ONE PASSAGE IS ATTRACTIVE, BUT FUNCTION OVERRIDES SHAPE
+
+The image cluster resembles parts of Vardath.
+
+Yet the text's liturgical function is explicit:
+baptismal exorcism.
+
+Classification:
+**comparative symbolic analogue / strong negative control**.
+
+### M86-28 — DO NOT LOG THIS AS DIRECT ETHIOPIC EVIDENCE UNTIL BEYLOT'S GEʽEZ PASSAGE IS CHECKED
+
+This source boundary is now explicit.
+
+---
+
+# SERPENT VS DRAGON
+
+The comparative exorcism distinguishes:
+- serpent;
+- dragon.
+
+Both are defeated-hostile images.
+
+### M86-29 — EVEN INSIDE ONE RITUAL, SERPENT AND DRAGON MAY BE RELATED WITHOUT BEING IDENTICAL
+
+This is useful for:
+Quetzalcoatl / cherub / serpent-family analysis.
+
+Need:
+- role;
+- medium;
+- action;
+- sequence.
+
+Not name alone.
+
+---
+
+# LAMP / LIGHT
+
+Comparative witness has:
+- dawn light;
+- lamp-lighting;
+- lamp offered in temple;
+- children singing by lamp;
+- God as light;
+- heavenly lights;
+- human faces/light symbolism.
+
+### M86-30 — LIGHT FUNCTIONS AT THREE LEVELS
+
+1. ordinary illumination;
+2. liturgical clock marker;
+3. heavenly/theological symbol.
+
+This is another anti-literalization control.
+
+---
+
+# INFORMATION GATING
+## catechumen → faithful → mysteries
+
+The comparative witness explicitly distinguishes:
+- initial instruction;
+- catechumen hearing;
+- dismissal;
+- hidden/mystagogical teaching;
+- initiated participation.
+
+### M86-31 — KNOWLEDGE ACCESS CHANGES WITH INITIATION STATE
+
+This is a strong:
+**semantic gate**.
+
+Cross-link:
+4 Ezra 14;
+Abtilis;
+Ezekiel;
+Daniel sealed information.
+
+---
+
+# BURIAL / RESURRECTION / CARRIER IDENTITY
+
+The Testamentum Domini family repeatedly teaches:
+- death;
+- resurrection;
+- body restored;
+- souls/life transformed;
+- Christ's descent/ascent.
+
+Comparative mystagogy uses strong language:
+- Adam's dead flesh;
+- restoration;
+- incorruptibility;
+- cords/bonds of death cut;
+- way of life opened.
+
+### M86-32 — "OPENING THE WAY" IS SOTERIOLOGICAL ACCESS LANGUAGE, NOT NECESSARILY A SPATIAL PORTAL
+
+This is important.
+
+The text can sound mechanically gate-like while clearly discussing:
+death/resurrection salvation.
+
+---
+
+# ASCENT / DESCENT
+
+The book's framework includes:
+- risen Christ;
+- heavenly/earthly sanctuary;
+- descent language;
+- final Ascension.
+
+### M86-33 — VERTICAL MOVEMENT IS THEOLOGICAL AND COSMOLOGICAL, BUT NOT A DOCUMENTED FINGERTRAP PASSAGE
+
+No secure sequence shows:
+- sky/support contracting;
+- axial throat;
+- material cargo crossing;
+- reopening.
+
+---
+
+# CHURCH AS MICROCOSM?
+## cautious classification
+
+Because the text aligns:
+- earthly sanctuary;
+- upper sanctuary;
+- light;
+- ordered ranks;
+- sacramental access;
+- symbolic entrances;
+
+it is tempting to describe the church as:
+**microcosm**.
+
+That is reasonable as comparative liturgical language.
+
+### M86-34 — BUT EARTHLY/HEAVENLY CORRESPONDENCE ≠ PHYSICAL WORLD-TO-WORLD ADJACENCY
+
+This distinction is crucial.
+
+The text supplies:
+**pattern correspondence**.
+
+Vardath requires:
+**mechanical adjacency/transfer**.
+
+Not the same evidentiary category.
+
+---
+
+# CROSS-TEXT COMPARISON
+
+## 1 Meqabyan 27 / 3 Meqabyan 9
+Strong:
+- broad upper covering;
+- water;
+- wind support.
+
+## 4 Ezra 7
+Strong:
+- narrow static access throat;
+- bilateral fire/water;
+- finite throughput.
+
+## Zechariah 14
+Strong:
+- structure changes;
+- passage opens;
+- people cross;
+- water divides.
+
+## First Dominos
+Strong:
+- nested access layers;
+- veil opening/closing;
+- water-state initiation;
+- earthly/heavenly pattern;
+- liturgical clocks.
+
+### M86-35 — FIRST DOMINOS ADDS CONTROL/ACCESS LOGIC BUT DOES NOT SUPPLY THE MISSING PHYSICAL CONTRACTION LINK
+
+The core cross-text Vardath mechanical chain remains:
+
+**broad support**
+→ ? **missing same-structure contraction** ?
+→ **static throat**
+→ **opening/pass-through**
+→ **redistribution**.
+
+---
+
+# QUETZALCOATL / CHERUB / FEATHERED SERPENT / SQUATTER-MAN CHECK
+
+## Direct secure Geʽez-level result
+
+No verified direct First Dominos evidence in this pass for:
+- feathered serpent;
+- Quetzalcoatl-like creature;
+- cherub morphologically becoming dragon;
+- Squatter-Man/current-body emergence.
+
+## Comparative Syriac family
+
+Contains:
+- angels;
+- cherubim;
+- seraphim;
+- sea;
+- dragons;
+- serpent;
+- whirlwind;
+- fire;
+- mountains;
+- firmament.
+
+But in baptismal exorcism:
+dragon/serpent function =
+**hostile chaos/demonic powers**.
+
+### M86-36 — THIS IS ONE OF THE BEST FUNCTION-FIRST CONTROLS FOR THE SAME-PHENOMENON HYPOTHESIS
+
+A dragon image can belong to:
+- support field in one tradition/hypothesis;
+- hostile sea-chaos in another;
+- empire in another;
+- serpent host/channel in another.
+
+To argue same phenomenon,
+the **process sequence** must converge,
+not just morphology.
+
+---
+
+# STRICT FINGERTRAP TEST — FIRST DOMINOS
+
+Criteria:
+1. broad/open support structure;
+2. same structural continuity;
+3. geometry/angle change;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Geʽez Testamentum Domini
+
+### broad physical support
+No secure connected broad-support apparatus in verified text summary.
+
+### continuity
+No.
+
+### contraction
+No.
+
+### throat
+No.
+
+### transfer
+Baptism:
+yes as ritual state transition,
+not inter-world material transfer.
+
+### reopening
+Veil/access-state changes,
+not physical mesh reopening.
+
+### Strict verdict
+**NEGATIVE.**
+
+## Syriac comparative witness
+
+Static nested boundaries:
+strong.
+
+One entrance/three exits:
+interesting.
+
+Directional west→east:
+strong symbolic transition.
+
+Sea/dragon/wind/fire:
+strong symbolic cluster.
+
+Dynamic broad→narrow contraction:
+absent.
+
+### Verdict
+**NEGATIVE / strong access-architecture analogue only.**
+
+---
+
+# PROCESS TIMELINE — FIRST DOMINOS
+
+resurrection
+→ disciples verify risen figure
+→ Spirit/revelation
+→ end-time signs disclosed
+→ world/social order described as approaching crisis
+→ focus turns from apocalypse to building ordered Church
+→ sacred building constructed
+→ entrances/zones/altar/baptistery establish nested access
+→ hierarchy chosen and ordained
+→ heavenly sanctuary provides archetypal pattern
+→ daily/hourly prayer clock established
+→ information divided between catechumen and initiated faithful
+→ catechumen tested
+→ Paschal clock approaches
+→ water prepared
+→ renunciation/affirmation
+→ candidate passes through baptismal water
+→ anointing/seal
+→ access-state changes
+→ Eucharistic participation
+→ community care/distribution
+→ recurring light/lamp/prayer cycles
+→ Pascha/Pentecost change system rules
+→ work concludes with Ascension.
+
+---
+
+# PAIR / ROLE REGISTER
+
+## heaven / earth
+archetype ↔ local sanctuary.
+
+## bishop / people
+operator/leader ↔ participating field.
+
+## catechumen / faithful
+limited-access state ↔ initiated-access state.
+
+## outside / inside
+physical-social boundary.
+
+## veil closed / veil open
+visibility/access switch.
+
+## west / east
+renunciation ↔ affirmation in Syriac comparative rite.
+
+## right oil / left oil
+differentiated ritual functions.
+
+## body / soul
+coordinated recipient layers.
+
+## water / oil
+transition medium ↔ sealing/anointing medium.
+
+## light / darkness
+knowledge/life ↔ ignorance/death symbolism.
+
+## serpent / dragon
+related hostile images in comparative exorcism, not automatically same creature.
+
+---
+
+# NUMBER / TIMING REGISTER
+
+## Geʽez
+- 60 chapters.
+- opening apocalypse chapters 1–6.
+- Anaphora at Geʽez ch. 16.
+- Mystagogy at Geʽez ch. 22.
+
+## Comparative Syriac witness
+- church entrances: 3;
+- baptistery:
+  - 1 entrance;
+  - 3 exits;
+- baptistery dimensions:
+  - 21 × 12 cubits;
+- throne/altar raised:
+  - 3 steps;
+- baptism:
+  - triple immersion/confession;
+- daily prayer:
+  multiple fixed hours;
+- Paschal timing;
+- Pentecost period;
+- various office-counts.
+
+### M86-37 — NUMBER SYMBOLISM IS EXPLICITLY LITURGICAL IN THIS TEXTUAL FAMILY
+
+Some numbers are explicitly tied to:
+- Trinity;
+- Gospel;
+- prophets;
+- apostles.
+
+Therefore they are poor candidates for hidden mechanical numerology unless independent evidence exists.
+
+---
+
+# TEXTUAL / HISTORICAL CONTROLS
+
+1. First Dominos = Geʽez Testamentum Domini, 60 chapters.
+2. It is distinct from Second Dominos / Testamentum Domini in Galilee / Epistula Apostolorum.
+3. The historical author is unknown.
+4. The risen-Christ speech is pseudepigraphical literary authority, not a demonstrable verbatim transcript.
+5. The Greek antecedent is generally dated to late fourth/fifth century; precise provenance remains debated.
+6. Complete versions survive in Geʽez, Syriac and Arabic.
+7. The Geʽez version is an independent complete witness and may descend directly from Greek.
+8. Beylot's edition used seven Ethiopic manuscripts and explicitly identified detailed divergences from Syriac/Arabic.
+9. The Cooper-Maclean English translation is Syriac, not Geʽez.
+10. Exact Syriac chapter numbering does not map mechanically onto the Geʽez 60-chapter structure.
+11. Church-construction rules are directly secure in the Ethiopic work.
+12. Detailed three-entrance / baptistery one-entry-three-exit architecture is secure in the Syriac Testamentum Domini family but was not independently checked word-for-word in Beylot's Geʽez translation here.
+13. Baptism, Eucharist, catechumens and hierarchy are directly secure Ethiopic subject matter.
+14. West/east turning, exact oil placement and triple-immersion wording used here come from the accessible Syriac witness unless separately stated.
+15. Dragon/sea/firmament/whirlwind baptismal-exorcism imagery is from the Syriac Testamentum Domini parallel and must not be relabelled as direct Geʽez evidence.
+16. Modern study identifies such dragon/sea imagery with Christianized biblical Chaoskampf/exorcism traditions.
+17. Heavenly/earthly sanctuary correspondence is liturgical/archetypal and does not prove physical stacked worlds.
+18. No strict fingertrap sequence occurs in the verified evidence.
+
+---
+
+# Sources logged — First Book of Covenant / First Dominos
+
+## Direct Ethiopic identity / scholarship
+- Encyclopaedia Aethiopica, "Testamentum Domini":
+  https://en.sewasew.com/p/testamentum-domini
+- Robert Beylot, summary of critical Ethiopic edition:
+  https://www.persee.fr/doc/ephe_0000-0001_1976_num_1_1_6338
+- Pierre Nautin review of Beylot's *Testamentum Domini éthiopien*:
+  https://www.persee.fr/doc/rhr_0035-1423_1986_num_203_4_2592
+- Ethiopian church/canon identity via Cowley:
+  https://www.islamic-awareness.org/bible/text/canon/ethiopican
+
+## Evidence-oriented First Dominos orientation
+- First Dominos study guide:
+  https://elroidigital.org/first-book-of-dominos-study-guide.html
+
+## Comparative Syriac English witness — NOT direct Geʽez translation
+- Cooper & Maclean / Testamentum Domini English:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/
+- representative church architecture:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/19/
+- ordination / upper sanctuary:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/21/
+- liturgical hours:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/22/
+- Eucharistic access:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/23/
+- catechumen access:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/48/
+- directional/community arrangement:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/51/
+- baptismal exorcism:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/54/
+- baptism:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/55/
+- post-baptism state:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/56/
+- Eucharistic integration:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/57/
+- lamp/Pascha:
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/58/
+  https://bible.ertale.com/ethiopiancanon/bookofthecovenant1/59/
+
+## Dragon/sea baptismal context
+- "Chaoskampf in the Orthodox Baptism ritual":
+  https://scielo.org.za/scielo.php?pid=S1015-87582017000300008&script=sci_arttext
+
+---
+
+# SECTION 86 — FIRST BOOK OF THE COVENANT / FIRST DOMINOS COMPLETE
+
+## Strongest new findings
+
+1. **First Dominos is securely identified as the 60-chapter Geʽez Testamentum Domini; it must not be replaced by the public-domain Syriac English translation.**
+2. **Beylot's critical work indicates that the Ethiopic version is independent of the Syriac and Arabic versions and plausibly derives directly from a lost Greek antecedent.**
+3. **The book has a deliberate macro-sequence: post-resurrection apocalypse → church construction → hierarchy → Eucharist/baptism → daily communal order → Ascension.**
+4. **This movement links cosmic/end-time order with local sacred order, but the relationship is theological/liturgical rather than a demonstrated physical world-machine.**
+5. **The Geʽez work directly contains rules for constructing the church; the related Syriac witness expands this into a nested architecture of forecourt, catechumen zone, sanctuary, altar, baptistery, veils, differentiated porches and controlled movement.**
+6. **That architecture gives one of the clearest static access topologies in the church-order corpus, but it never dynamically contracts into a throat.**
+7. **The Syriac parallel's three church entrances and baptistery with one entrance/three exits show that geometry and number can be intentionally symbolic rather than mechanical.**
+8. **Right/left/center organization inside the church is another strong control: bilateral geometry can be generated entirely by liturgical/social ordering.**
+9. **Veils provide a genuine switch-like boundary: the physical building stays the same while visibility/access state changes.**
+10. **The Testamentum family presents an upper/heavenly sanctuary and an earthly sanctuary patterned after it, giving a meaningful two-level correspondence but no physical transfer between the two.**
+11. **This is important for the Vardath model because it proves that two structurally corresponding levels can be imagined without implying that they are one continuous apparatus.**
+12. **The daily prayer cycle creates a real multi-phase clock using midnight, dawn, dawn star, numbered hours and lamp-lighting; Pascha/Pentecost similarly change several communal states at once.**
+13. **These are valuable synchronization analogues but explicit negative controls against turning every timed sacred cycle into a cosmic gate clock.**
+14. **Baptism provides a genuine same-carrier state transition through water: catechumen → water → emergence → oil/seal/Spirit → initiated participant.**
+15. **This cleanly distinguishes carrier, transition medium and destination/state; water is the medium rather than the destination.**
+16. **In the Syriac comparative rite, west-facing renunciation followed by east-facing affirmation gives a clear directional two-state transition, but it is symbolic orientation, not opposed cosmic strands.**
+17. **The paired oils/right-left arrangement similarly encodes different ritual functions around one carrier rather than two physical currents.**
+18. **Catechumen dismissal, hidden/mystagogical teaching and later initiated access establish another strong semantic/information gate.**
+19. **The Syriac baptismal exorcism contains sea, dragons, serpent, firmament, mountains, whirlwind and bounded fire in one cluster; modern scholarship identifies this as Christianized Chaoskampf/exorcism imagery.**
+20. **That dragon cluster is highly relevant but is deliberately NOT logged as direct Geʽez evidence because the exact Ethiopic passage was not independently verified in Beylot's text.**
+21. **Functionally, the dragon there is hostile/demonic sea-chaos rather than sky-support lattice, making it one of the project's strongest warnings that dragon morphology alone cannot establish the same phenomenon.**
+22. **Likewise, the strange anthropomorphic adversary in the Syriac apocalypse shows that unusual humanlike cosmic morphology can be generated by apocalyptic symbolism without being Squatter-Man machinery.**
+23. **No strict fingertrap appears: the book supplies static layered access, water-mediated state change, switchable veils and heavenly/earthly correspondence, but no broad woven structure that contracts into a throat and reopens.**
+24. **The physical Vardath chain therefore remains: 1/3 Meqabyan = broad wind-supported cover; 4 Ezra 7 = narrow static throat; Zechariah 14 = physical opening/passage/bilateral outflow. First Dominos adds control/access architecture but not the missing contraction.**
+
+## Next live block
+
+**Section 87 — Second Book of the Covenant / Second Dominos**
+**(Testamentum Domini in Galilee / Epistula Apostolorum complex)**
+
+Required protocol:
+- re-check all three archives and actual Part 2 tail;
+- distinguish:
+  1. Ethiopic Testamentum Domini in Galilee;
+  2. the older Epistula Apostolorum embedded within it;
+  3. First Dominos / Testamentum Domini;
+- preserve the composite structure:
+  - later Galilee apocalypse;
+  - older Epistula Apostolorum dialogue;
+- prioritize:
+  - post-resurrection dialogue;
+  - Christ's pre-existence/incarnation;
+  - descent into hell;
+  - resurrection;
+  - ascension;
+  - second coming;
+  - judgment;
+  - signs and timing;
+  - any opened heaven/earth/deep;
+  - population movement;
+  - light/fire/water;
+  - mountain/gate/door;
+  - serpent/dragon/wing/cherub;
+  - person↔landscape projection;
+- explicitly track which material belongs to the older Epistula and which to the later Galilee frame;
+- apply strict fingertrap test only after source-layer separation;
+- append only verified findings;
+- verify the actual tail after append.
+
