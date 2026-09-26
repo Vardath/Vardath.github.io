@@ -3153,3 +3153,14 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above them is one great and mighty prince whose name is Hayyliel YHWH. He is a powerful and awesome prince, a chief and a mighty one, a great and terrible prince before whom all the inhabitants of the heights tremble. He is able to swallow the whole world in a single moment.
 
 **2.** “Why is he called Hayyliel YHWH? Because he is appointed over the Holy Living Creatures. He strikes the Living Creatures with lashes of light, adorns and glorifies them when they give praise, thanksgiving, and song, and urges them to make haste and answer after him: ‘Holy,’ and, ‘Blessed is the glory of YHWH from His place.’”
+
+
+## 3 Enoch 21
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “There are four Living Creatures corresponding to the four winds. Each Living Creature fills the whole extent of the world. Each one has four faces, and every face is turned toward the east.
+
+**2.** “Each one has four wings, and every wing is like the covering of the world.
+
+**3.** “Each one has faces within faces and wings within wings. The measure of their faces is two hundred and forty-eight faces, and the measure of their wings is three hundred and sixty-five wings.
+
+**4.** “Upon the head of each one are bound two thousand crowns. Every crown is like the rainbow in the cloud; its radiance is like the radiance of the sun's sphere, and the sparks that go forth from each one shine like the morning star in the east.”
