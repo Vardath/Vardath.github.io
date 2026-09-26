@@ -3377,3 +3377,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Whenever the Great Court sits in the height of Arabot Raqia, no one in the world has permission to open his mouth except those great princes who are called by the name of YHWH, after the name of the Holy One, blessed be He.
 
 **2.** “How many are those princes? Seventy-two princes of the kingdoms of the world, apart from the Prince of the World, who speaks in praise of the world before the Holy One, blessed be He, every day when the book is opened in which all the deeds of the world are written, as it is written: ‘The court sat, and the books were opened.’”
+
+
+## 3 Enoch 31
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the Holy One, blessed be He, sits upon the throne of judgment, Justice stands at His right, Mercy at His left, and Truth before His face.
+
+**2.** “When a wicked person comes before Him for judgment, the measure of Mercy comes forth toward him and stands opposite him. Immediately the person falls upon his face, and all the angels of destruction at His right fear and tremble, as it is written: ‘In mercy the throne shall be established, and He shall sit upon it in truth.’”
