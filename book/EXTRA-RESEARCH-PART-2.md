@@ -62644,3 +62644,1304 @@ Required protocol:
 - verify actual tail after completion;
 - after Section 89, verify whether the reconstructed 88-text corpus is truly complete from the files rather than assuming completion from numbering.
 
+
+
+---
+
+# SECTION 89 — ETHIOPIC DIDASCALIA / DIDESQELYA
+## Final direct broader-canon pass — heavenly-pattern church order, church-as-body/ship/flock, bishop-centre and distributed sensory/ministry nodes, literal doorkeepers and classified admission, baptismal water/oil state transition, resurrection as four-element bodily reassembly, phoenix/seed/tree/rod renewal analogies, fiery angelic hosts + six-winged cherubim + divine chariot, vault-heaven / earth-on-waters cosmography, liturgical timing as calendar control, and apostolic centre→regional-node distribution
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+The actual Part 2 tail identified:
+**Section 89 — Ethiopic Didascalia / Didesqelya**
+as the final remaining text-unit in the verified reconstructed broader-canon roadmap.
+
+No completed Section 89 direct pass existed in the three-file research archive.
+
+This section is appended only here in Part 2.
+
+---
+
+# Text identity / recension control first
+
+The text researched here is the **Ethiopic Didascalia / Didesqelya**.
+
+It must be distinguished from:
+- the Syriac **Didascalia Apostolorum**;
+- the **Apostolic Constitutions**;
+- the **Didache**;
+- the Ethiopic **Sinodos**.
+
+These works overlap heavily in church-order material but are not textually identical.
+
+## Primary direct edition used
+
+The direct base for this pass is:
+
+**J. M. Harden, _The Ethiopic Didascalia_ (1920).**
+
+Harden's translation is preferable for this project to Thomas Pell Platt's 1834 edition because:
+- Platt's manuscript was defective;
+- Platt's edition ends around the middle of the work;
+- Harden used the more complete British Museum manuscript tradition.
+
+Harden reports five principal British Museum Ethiopic manuscripts:
+- Orient. 752;
+- Orient. 793;
+- Orient. 797;
+- Orient. 798;
+- Orient. 799.
+
+All but one divide the work into **43 chapters**.
+One manuscript combines chapters IV and V.
+
+Harden's base manuscript is Orient. 752, with comparison against the others.
+
+## Relation to other church orders
+
+The Ethiopic Didascalia broadly corresponds with material in **Apostolic Constitutions I–VII**, but:
+- contains omissions;
+- contains additions;
+- changes arrangements;
+- does not simply equal the Syriac Didascalia.
+
+Therefore:
+
+### M89-1 — RECENSION IDENTITY IS A REQUIRED CONTROL
+
+A parallel found in:
+- Syriac Didascalia;
+- Apostolic Constitutions;
+- Didache
+
+cannot automatically be attributed to the Ethiopic Didascalia unless the Ethiopic text itself was checked.
+
+This direct pass uses Harden's Ethiopic translation as authority.
+
+---
+
+# Overall literary function
+
+This is overwhelmingly a **church-order / disciplinary / liturgical** work.
+
+Its dominant concerns are:
+- moral conduct;
+- bishops;
+- presbyters;
+- deacons;
+- deaconesses;
+- readers;
+- singers;
+- doorkeepers;
+- widows;
+- virgins;
+- orphans;
+- offerings;
+- repentance;
+- baptism;
+- martyrs;
+- feasts;
+- Paschal calculation;
+- heresy;
+- prayer;
+- chrism;
+- resurrection;
+- regional episcopal succession.
+
+This makes it an exceptionally useful **negative-control text**.
+
+It contains:
+- nodes;
+- hierarchy;
+- bodies;
+- doors;
+- water;
+- ritual transformation;
+- ships;
+- flocks;
+- central and distributed roles;
+
+yet the source itself identifies most of those things as **ecclesial organization**, not cosmic machinery.
+
+---
+
+# CHAPTER I
+## MAJOR PATTERN STATEMENT
+## earthly church offices appointed "according to the pattern of that which is in heaven"
+
+The Twelve are depicted:
+- gathered in one place at Jerusalem;
+- with Paul and James;
+- ordaining degrees/offices for the Church;
+- explicitly **according to the pattern of that which is in heaven**.
+
+The roles include:
+- bishop = shepherd;
+- presbyter = teacher;
+- deacon = minister;
+- subdeacon;
+- reader;
+- singers;
+- people/hearers.
+
+### M89-2 — HEAVENLY PATTERN → EARTHLY INSTITUTIONAL INSTANTIATION IS EXPLICIT
+
+This is highly relevant to Vardath projection grammar.
+
+One higher-order pattern:
+→ can be instantiated at another scale/domain
+→ without being materially identical.
+
+For Vardath this is a strong formal precedent for:
+**same pattern / different projection**.
+
+### M89-3 — THE TEXT ITSELF IDENTIFIES THE PATTERN AS ECCLESIAL ROLE ORDER, NOT PHYSICAL WORLD GEOMETRY
+
+Do not turn:
+bishop / presbyter / deacon
+
+into:
+world-axis / strand / current
+
+merely because the arrangement mirrors heaven.
+
+The ordinary function must remain primary.
+
+---
+
+# CHAPTERS IV–XII
+## bishop-centre → distributed ministry network → information returns to centre
+
+The bishop is repeatedly presented as:
+- shepherd;
+- teacher;
+- judge;
+- father;
+- central authority.
+
+Deacons:
+- act under bishop's permission;
+- communicate people's needs;
+- minister throughout congregation.
+
+A particularly important passage says:
+- people should be **one body and one spirit**;
+- the ordained deacon is to be:
+  - **an ear**;
+  - **an eye**;
+  - **a mouth**
+  to the bishop;
+- he reports the cares of the people.
+
+### M89-4 — THIS IS AN EXPLICIT DISTRIBUTED SENSOR/COMMUNICATION BODY
+
+Geometry/function:
+
+**central bishop**
+↔
+**deacon sensory/speech nodes**
+↔
+**distributed people**.
+
+Information:
+- comes from distributed congregation;
+- passes through deacon;
+- reaches central authority;
+- instruction then returns outward.
+
+### M89-5 — ONE SOCIAL INSTITUTION IS PROJECTED AS ONE HUMAN BODY WITH SPECIALIZED ORGANS
+
+This strongly reinforces the project's projection method.
+
+The body is not a hidden biological organism.
+
+It is:
+**institutional topology rendered as anatomy**.
+
+### M89-6 — "BODY" LANGUAGE IS A HIGH-QUALITY NEGATIVE CONTROL FOR SQUATTER-MAN ANALYSIS
+
+Human-shaped language can encode:
+- governance;
+- information pathways;
+- role hierarchy;
+
+without implying a literal giant human form.
+
+Therefore anthropomorphic cosmic forms elsewhere require additional environmental/mechanical evidence.
+
+---
+
+# CHAPTER XII / ASSEMBLY ORDER
+## church explicitly projected as SHIP and FLOCK
+
+The bishop:
+- orders the gathered people like a wise **ship-master**.
+
+Deacons:
+- are like **sailors**.
+
+The congregation:
+- is together in **one ship**.
+
+The church building:
+- length oriented eastward;
+- two side porches "after the likeness of a ship";
+- bishop's throne in middle;
+- presbyters right and left;
+- deacons serving like sailors.
+
+Immediately the same system is re-projected:
+
+church:
+**ship**
+→ then
+**flock**.
+
+Shepherds:
+- separate sheep/goats;
+- arrange kinds/classes.
+
+### M89-7 — ONE INSTITUTION SWITCHES BETWEEN ARCHITECTURAL, VEHICLE, ANIMAL-GROUP AND HUMAN-BODY PROJECTIONS
+
+Same referent:
+- church/building;
+- ship;
+- flock;
+- body.
+
+This is one of the cleanest projection-control examples in the corpus.
+
+### M89-8 — THE SHIP IMAGE IS FUNCTIONAL
+
+It encodes:
+- master/pilot;
+- sailors;
+- passengers;
+- ordered positions;
+- coordinated operation.
+
+It is not evidence that the church building is literally a vehicle.
+
+This is directly useful when testing:
+- ark;
+- fish;
+- cloud;
+- chariot;
+- winged carrier
+
+elsewhere.
+
+---
+
+# DOORKEEPERS / ENTRY / CLASSIFICATION
+## literal local gate-control without cosmic topology
+
+The Didascalia assigns **doorkeepers**.
+
+They stand:
+- where men enter;
+- place people in designated positions.
+
+Deaconesses:
+- similarly arrange women.
+
+Deacons:
+- return anyone standing in wrong place to assigned class/seat.
+
+### M89-9 — THIS IS A TRUE ACCESS-CONTROL SYSTEM
+
+It contains:
+- entry point;
+- gate/door personnel;
+- classification;
+- routing;
+- assigned destination.
+
+But it is:
+**local ecclesial logistics**.
+
+### M89-10 — DOOR/GATE LANGUAGE DOES NOT AUTOMATICALLY MEAN INTER-WORLD ADJACENCY
+
+This is one of the strongest negative controls in the whole project.
+
+A real gate can be:
+- ordinary architecture;
+- social classifier;
+- ritual access point;
+
+without cosmic mechanics.
+
+---
+
+# CHAPTERS XIV–XXI
+## widows/orphans/deaconesses — persons projected as altar / fixed sacred nodes
+
+Widows/orphans receive:
+- specific ecclesial roles;
+- resource distribution;
+- care rules.
+
+The broader Didascalia tradition and Ethiopic material use altar comparison around recipients/holy dependants.
+
+### M89-11 — A HUMAN SOCIAL ROLE CAN BE PROJECTED AS AN ALTAR/SACRED SITE
+
+Again:
+person
+→ architecture/object.
+
+Cross-link:
+- woman → city in 4 Ezra;
+- human leaders → olive trees in Zechariah;
+- church → ship/body/flock here.
+
+### M89-12 — "ALTAR" CAN ENCODE SOCIAL-SACRED FUNCTION RATHER THAN A LITERAL STONE STRUCTURE
+
+Important source control.
+
+---
+
+# BAPTISMAL SEQUENCE
+## operator + medium + classified participant + anointing + immersion/emergence + changed ritual state
+
+The work carefully distributes baptismal roles.
+
+- bishops/presbyters authorize/perform;
+- deacons assist;
+- deaconesses minister particularly to women;
+- oil/chrism is applied;
+- candidate enters water;
+- invocation is pronounced;
+- candidate emerges from water;
+- candidate is instructed to preserve the baptismal seal/state.
+
+Chapter XL gives:
+- priest standing over water;
+- prayer/sanctification;
+- water becomes the ritual medium;
+- baptized participant is joined symbolically to:
+  - crucifixion;
+  - death;
+  - resurrection;
+  - ascension.
+
+Then:
+- baptism;
+- balsam/chrism.
+
+### M89-13 — BAPTISM IS A COMPLETE CONTROLLED STATE-TRANSITION SYSTEM
+
+Variables:
+
+**operator**
+= priest/bishop/presbyter;
+
+**assistants**
+= deacon/deaconess;
+
+**medium**
+= water;
+
+**preparation**
+= teaching/confession/anointing;
+
+**entry**
+= into water;
+
+**transition**
+= baptism;
+
+**emergence**
+= out of water;
+
+**post-state**
+= baptized/sealed member.
+
+### M89-14 — THE SAME FORMAL VARIABLES FOUND IN VARDATH TRANSFER CAN OCCUR IN PURELY RITUAL SYSTEMS
+
+Therefore:
+- medium;
+- entry;
+- transition;
+- emergence;
+- changed status
+
+do not alone prove physical world transfer.
+
+This is a powerful negative control.
+
+### M89-15 — WATER HERE IS BOTH PHYSICAL MEDIUM AND SEMANTIC/STATE MEDIUM
+
+The literal water is real.
+
+The:
+- death;
+- resurrection;
+- ascension
+
+mapping is ritual/theological.
+
+This demonstrates how one material process can carry a second symbolic topology.
+
+---
+
+# CHAPTER XXV
+# MAJOR RESURRECTION / WORLD-RENEWAL PASSAGE
+
+The chapter moves from martyrs into a long resurrection argument.
+
+It includes:
+- graves opening;
+- dead raised;
+- body/spirit reunion;
+- dew/life analogies;
+- seed and plant analogies;
+- phoenix;
+- dry rod/tree sprouting;
+- creation from four elements;
+- world renewal.
+
+---
+
+# Graves → opened storage → bodies restored
+
+The text speaks of:
+- the dead in earth;
+- graves opening;
+- spirit restored to bodies;
+- resurrection/judgment.
+
+### M89-16 — EARTH/GRAVE AGAIN FUNCTIONS AS BODY STORAGE DOMAIN
+
+Cross-link:
+- 4 Ezra;
+- 2 Meqabyan;
+- 3 Meqabyan.
+
+Process:
+**body dissolves/stored**
+→ **opening/release**
+→ **reconstitution**.
+
+This is resurrection theology,
+not inter-world cargo transport.
+
+---
+
+# World renewal
+
+The Didascalia states that the creator who raised:
+- vegetation;
+- trees;
+- herbs
+
+can:
+**renew the world again**
+and
+**raise the dead**.
+
+### M89-17 — WORLD-RENEWAL AND BODY-RENEWAL ARE PUT IN THE SAME ANALOGICAL SYSTEM
+
+This is useful for Vardath successor-state research.
+
+The source imagines:
+- world renewal;
+- bodily reconstitution
+
+through one creative power.
+
+But it is eschatological theology,
+not a physical cyclical-world mechanism.
+
+---
+
+# Four-element human
+
+The text explicitly says:
+**man was created from the four elements**
+and given a soul.
+
+At resurrection:
+- the dissolved flesh is returned to the soul.
+
+### M89-18 — FOUR-MEDIUM→ANTHROPOMORPHIC FORM IS NOW A REPEATED ETHIOPIC/BROADER-CANON PATTERN
+
+Cross-links:
+- 1 Meqabyan;
+- 3 Meqabyan;
+- Qalementos;
+- now Ethiopic Didascalia.
+
+This is no longer an isolated image.
+
+The recurring formal grammar is:
+
+**distributed environmental/material elements**
+→ **one human body**
+→ **dissolution**
+→ **reassembly**.
+
+### M89-19 — THIS IS HIGHLY RELEVANT TO SQUATTER-MAN FORMATION AS A FORMAL ANALOGY
+
+It demonstrates a textual tradition comfortable with:
+**environmental constituents converging into anthropomorphic form**.
+
+It does not prove:
+plasma/current forms a giant person.
+
+---
+
+# Seed / tree / rod renewal
+
+The text uses:
+- seed developing into living growth;
+- cut tree sprouting again;
+- Aaron's dry rod flowering;
+
+as resurrection proofs.
+
+### M89-20 — DEAD/CONCENTRATED AXIAL OBJECT → BRANCHING LIFE IS AN EXPLICIT REOPENING/GROWTH ANALOGY
+
+Rod:
+apparently inert/dry
+→ flowering.
+
+Seed:
+compact
+→ distributed plant.
+
+Tree:
+cut
+→ renewed branches.
+
+This is a useful:
+**concentrated → distributed**
+state grammar.
+
+Still:
+not a gate/fingertrap.
+
+---
+
+# Phoenix
+
+The text gives a phoenix resurrection illustration:
+- long life-cycle;
+- eastward orientation in the narrative;
+- death/burning;
+- ash;
+- new organism;
+- return.
+
+### M89-21 — CREATURE DESTRUCTION→REFORMATION FUNCTIONS AS RESURRECTION ANALOGY
+
+This is worth preserving because phoenix imagery occurs in the wider Vardath project.
+
+But:
+the Didascalia explicitly uses the phoenix as an illustrative proof,
+not as a technical chronology of world resets.
+
+### M89-22 — PHOENIX CYCLE MUST NOT BE USED AS A HIDDEN VARDATH CLOCK WITHOUT EXTERNAL EVIDENCE
+
+Strong numerical/chronological control.
+
+---
+
+# CHAPTERS XXIX–XXX
+## feasts / Pascha calculation = sophisticated timekeeping, but liturgical scheduling
+
+The work includes:
+- feast days;
+- fasting;
+- Passion-week chronology;
+- calculation of Pascha;
+- warnings against keeping it on wrong dates / duplicating yearly observance through mistaken reckoning.
+
+### M89-23 — COMPLEX CALENDAR ARITHMETIC CAN HAVE AN ORDINARY LITURGICAL FUNCTION
+
+This is an important number/timing control.
+
+Repeated:
+- days;
+- weeks;
+- fourteenth day;
+- Passion sequence
+
+must first be interpreted as:
+**calendar/liturgical scheduling**.
+
+Do not automatically convert recurring numbers into cosmic gate intervals.
+
+---
+
+# CHAPTER XXXIV
+## dead body classification changes under Christian ritual theology
+
+The work permits:
+- approach/touch around faithful dead;
+- prayer for departed;
+- rejects older contamination logic in this context.
+
+### M89-24 — CLASSIFICATION RULES CAN CHANGE WITHOUT PHYSICAL MATERIAL CHANGING
+
+Same physical category:
+**dead body**.
+
+Different semantic/ritual classification:
+- impure/avoid in one system;
+- holy/approachable in another.
+
+This strengthens the project's distinction between:
+**physical topology**
+and
+**semantic access layer**.
+
+Cross-link:
+Ezekiel holy/common/clean/unclean.
+
+---
+
+# CHAPTER XXXV
+## two ways / toil / thanksgiving — path language is ethical
+
+The work reuses:
+- way of life;
+- way of death;
+- moral routing.
+
+### M89-25 — PATH LANGUAGE HERE IS INFORMATIONAL/ETHICAL, NOT GEOMETRIC THROAT
+
+Another strong negative control against over-mapping "way/path."
+
+---
+
+# CHAPTER XXXVII
+# MAJOR COSMOLOGY + CHERUB PASSAGE
+## angelic hosts = flame of fire; six-winged cherubim; church like host of heaven; divine chariot; heaven hung as vault; earth founded/established on waters
+
+This is the strongest Vardath-relevant physical/cosmographic passage in the Ethiopic Didascalia.
+
+The prayer states:
+
+- spiritual angelic hosts are **a flame of fire**;
+- holy cherubim have **six wings**;
+- cherubim/seraphim/thrones/authorities/powers praise continually;
+- Church of nations is **like the host of heaven**;
+- divine **Chariot** is described through immense angelic multitudes;
+- heavens are hung **as a vault**;
+- foundations of earth are laid;
+- earth is **established on waters**;
+- darkness/light separated;
+- stars numbered.
+
+### M89-26 — FIERY HOST + SIX-WINGED CHERUB + CHARIOT + VAULT-HEAVEN OCCUR IN ONE TEXTUAL COMPLEX
+
+This is highly relevant to:
+- cherub;
+- wing;
+- current/fire;
+- throne/chariot;
+- broad sky structure.
+
+### M89-27 — CHERUB WINGS HERE HAVE PRAISE/PRESENCE/HEAVENLY-RETINUE FUNCTION
+
+The text does not give:
+- serpent body;
+- feathered-serpent transformation;
+- dragon;
+- lattice strand morphology.
+
+Therefore:
+this passage strengthens the **functional family comparison**
+without providing direct cherub = serpent evidence.
+
+### M89-28 — "ANGELIC HOSTS ARE A FLAME OF FIRE" PROVIDES A DIRECT FIRE/SPIRITUAL-BODY ASSOCIATION
+
+This can be compared with:
+- 3 Meqabyan wind/fire angelic composition;
+- Ezekiel fire/cherub;
+- luminous winged imagery.
+
+But:
+"flame of fire" is theological angelic imagery,
+not proof of plasma.
+
+### M89-29 — HEAVEN-AS-VAULT + EARTH-ON-WATERS REPEATS BROAD-COVER COSMOGRAPHY
+
+Cross-link:
+- 1 Meqabyan 27;
+- 3 Meqabyan 9;
+- Genesis-derived water cosmologies.
+
+Difference:
+the Didascalia says the heavens are:
+**supported/suspended by divine command** nearby in the prayer,
+not explicitly:
+**pillared by wind**.
+
+Do not silently merge these variants.
+
+### M89-30 — THIS TEXT STRENGTHENS THE BROAD-SUPPORT SIDE BUT NOT THE CONTRACTION SIDE
+
+Broad:
+yes.
+
+Water support/base:
+yes.
+
+Winged fiery heavenly agents:
+yes.
+
+Fingertrap narrowing:
+no.
+
+---
+
+# SERPENT / DRAGON / WING CONTROL
+
+A full-text search of Harden's Ethiopic Didascalia shows:
+- no meaningful dragon system;
+- serpent appears only sparsely, chiefly in inherited Adam/Garden moral material;
+- wing language is mainly angelic/cherubic or ordinary inherited imagery.
+
+### M89-31 — THIS IS IMPORTANT NEGATIVE EVIDENCE FOR THE USER'S SAME-PHENOMENON HYPOTHESIS
+
+The text can place together:
+- fiery hosts;
+- six-winged cherubim;
+- chariot;
+- heaven vault;
+- earth on waters
+
+without describing:
+- serpent;
+- dragon;
+- braid;
+- feathered serpent.
+
+Thus:
+**cherub/wing/fire/chariot**
+is a secure functional cluster here.
+
+**serpent/dragon**
+is not.
+
+Any Quetzalcoatl/Feathered-Serpent connection must come from cross-text comparison,
+not from the Didascalia itself.
+
+---
+
+# MOSES / ROD / WATER / CLOUD / FIRE RETELLING
+
+The Didascalia rehearses Exodus:
+- signs through Moses' hand/rod;
+- sea opened;
+- people pass on dry route;
+- enemies overwhelmed;
+- bitter water made sweet;
+- rock cleft;
+- water flows;
+- cloud by day;
+- fire by night.
+
+### M89-32 — THE TEXT REPEATS THE ROD→WATER→PASSAGE→CLOUD/FIRE PROCESS FAMILY
+
+But it adds no new mechanical link beyond earlier Exodus research.
+
+Therefore:
+log as recurrence,
+do not inflate as new evidence.
+
+---
+
+# NET CONTROL
+
+A punitive/enclosure passage uses net imagery.
+
+### M89-33 — NET HERE IS CAPTURE/RESTRAINT, NOT SKY SUPPORT
+
+Another direct anti-forcing control for:
+net/web/lattice language.
+
+---
+
+# CHAPTER XL
+## baptismal water prayer: upper observation → water sanctification → participant transformation
+
+The priest:
+- stands over water;
+- invokes divine action from heaven;
+- water is sanctified;
+- participant enters;
+- ritual identity maps to death/resurrection/ascension.
+
+### M89-34 — WATER CAN BE A TRUE PHYSICAL MEDIUM WHILE THE "TRANSFER" IS SEMANTIC/RITUAL
+
+This is one of the best controls for Vardath water-at-gate comparisons.
+
+---
+
+# CHAPTER XLIII
+## Jerusalem/apostolic centre → many regional bishops → distributed teaching nodes
+
+The final chapter lists bishops associated with:
+- Jerusalem;
+- Caesarea;
+- Antioch;
+- Alexandria;
+- Rome;
+- Ephesus;
+- Smyrna;
+- Pergamum;
+- Philadelphia;
+- Cenchreae;
+- Crete;
+- Athens;
+- Phoenician cities;
+- Laodicea;
+- Colossae;
+- Macedonia/Beroea;
+- Galatia;
+- Asia;
+- Aegina;
+- others.
+
+The apostles say these leaders were:
+- entrusted with churches;
+- ordained;
+- **sent forth** to teach in their respective regions.
+
+### M89-35 — THE BOOK ENDS WITH A CLEAN CENTRAL→DISTRIBUTED NETWORK
+
+Sequence:
+
+**apostolic gathering / Jerusalem centre**
+→ **ordination**
+→ **distributed regional nodes**
+→ **local teaching/governance**.
+
+This is an institutional:
+**one → many** deployment system.
+
+### M89-36 — THE WHOLE WORK THEREFORE BEGINS AND ENDS WITH NETWORK ARCHITECTURE
+
+Opening:
+**heavenly pattern**
+→ **earthly ordered offices**.
+
+Closing:
+**central apostles**
+→ **distributed regional bishops**.
+
+This is highly relevant to systems thinking,
+but its source-level domain is ecclesial governance.
+
+---
+
+# ETHIOPIC DIDASCALIA FULL PROCESS MAP
+
+heavenly pattern invoked
+→ apostles gather centrally in Jerusalem
+→ graded church roles assigned
+→ bishop acts as central shepherd/judge
+→ deacon becomes eye/ear/mouth information node
+→ congregation is one body
+→ same church re-projected as ship
+→ bishop = ship-master
+→ deacons = sailors
+→ same church re-projected as flock
+→ doorkeepers control entry
+→ deaconess/deacons classify and place participants
+→ offerings/resources flow through role network
+→ widows/orphans receive defined support
+→ ritual admission and exclusion rules operate
+→ baptismal candidate instructed
+→ oil applied
+→ water sanctified
+→ candidate enters water
+→ baptismal state transition
+→ candidate emerges/sealed
+→ martyr/resurrection teaching
+→ body stored/dissolved in earth
+→ four-element human model invoked
+→ world renewal compared with body renewal
+→ seed/tree/rod/phoenix used as reconstitution analogues
+→ calendar/Pascha scheduling regulates communal time
+→ dead-body classification transformed by Christian ritual logic
+→ moral life/death paths taught
+→ fiery angelic hosts described
+→ six-winged cherubim / seraphim
+→ divine chariot
+→ heaven hung as vault
+→ earth established on waters
+→ Moses rod/sea/water/cloud/fire sequence recalled
+→ catechumen approaches baptism
+→ priest stands over water
+→ water sanctified
+→ death/resurrection/ascension pattern ritually mapped
+→ final bishops listed
+→ central apostolic authority distributed into regional nodes
+→ teaching/network continues across world.
+
+---
+
+# VARDATH SYNTHESIS — WHAT THIS TEXT ACTUALLY ADDS
+
+## 1. Pattern can be preserved across scale/domain
+
+The strongest conceptual statement:
+**earthly offices are ordered according to a heavenly pattern**.
+
+### M89-37 — THE TEXT EXPLICITLY ALLOWS A PATTERN TO BE INSTANTIATED BELOW WITHOUT CLAIMING MATERIAL IDENTITY
+
+This is an excellent formal precedent for Vardath projection grammar.
+
+---
+
+## 2. A body can be a network
+
+Church:
+- one body.
+
+Deacon:
+- ear;
+- eye;
+- mouth.
+
+Bishop:
+- central coordinating authority.
+
+### M89-38 — ANTHROPOMORPHIC FORM CAN ENCODE INFORMATION/GOVERNANCE TOPOLOGY
+
+This is directly relevant to:
+Squatter-Man interpretation.
+
+It also cautions:
+human form alone is insufficient proof of physical person-shaped plasma/current.
+
+---
+
+## 3. Same system can switch projection families instantly
+
+Church:
+- body;
+- ship;
+- flock;
+- household;
+- temple/community.
+
+### M89-39 — FUNCTIONAL PROJECTION IS MORE IMPORTANT THAN SURFACE SHAPE
+
+This reinforces the project's mature method:
+compare process,
+not silhouette.
+
+---
+
+## 4. Gate/access systems can be ordinary and semantic
+
+Doorkeepers:
+literal entrance control.
+
+Baptism:
+ritual state gate.
+
+Excommunication/reconciliation:
+semantic social boundary.
+
+### M89-40 — THREE DIFFERENT "GATE" TYPES EXIST WITHOUT COSMIC TOPOLOGY
+
+1. architectural;
+2. social/classificatory;
+3. ritual/state.
+
+This is a major control for every later synthesis.
+
+---
+
+## 5. Four-medium human formation/reassembly is robust across Ethiopic texts
+
+Repeated in:
+- 1 Meqabyan;
+- 3 Meqabyan;
+- Qalementos;
+- Ethiopic Didascalia.
+
+### M89-41 — ENVIRONMENTAL MEDIA→ANTHROPOMORPHIC FORM IS NOW A STRONG ETHIOPIC TRADITIONAL GRAMMAR
+
+This supports the formal possibility behind:
+field/current→human projection.
+
+Not physical proof.
+
+---
+
+## 6. Cherub functional family gains another secure member
+
+Didascalia:
+- six wings;
+- fiery heavenly host context;
+- chariot/presence;
+- praise.
+
+### M89-42 — SECURE CHERUB CLUSTER HERE:
+**wing + fire-host + chariot + heavenly presence**.
+
+Not secure here:
+- serpent;
+- dragon;
+- tree;
+- fingertrap;
+- water-current body.
+
+This distinction should remain permanent.
+
+---
+
+## 7. Broad support cosmography repeats, but dynamic throat still missing
+
+Didascalia:
+- heavens as vault;
+- earth on waters;
+- heavens suspended/supported by command.
+
+Meqabyan:
+- broad water/garment/tent;
+- wind support.
+
+4 Ezra:
+- static narrow throat.
+
+Zechariah:
+- opening and bilateral outflow.
+
+### M89-43 — FINAL DIRECT-CORPUS RESULT:
+THE MISSING LINK REMAINS THE SAME
+
+The corpus contains separately:
+
+**broad support**
+→ in Meqabyan/Didascalia/Qalementos;
+
+**anthropomorphic environmental convergence**
+→ in 4 Ezra/Meqabyan/Qalementos;
+
+**static throat**
+→ 4 Ezra 7;
+
+**topological opening/passage**
+→ Zechariah 14;
+
+**two-way/bidirectional carrier/transfer motifs**
+→ multiple texts;
+
+but a single text has still not yet been found that explicitly shows:
+
+**the SAME broad woven support structure**
+→ **contracting/twisting**
+→ **becoming the narrow throat**
+→ **carrying material/population**
+→ **reopening into the broad support state**.
+
+That remains the strict evidentiary gap.
+
+---
+
+# Strict fingertrap test — Ethiopic Didascalia
+
+## 1. Broad/open distributed support structure
+Partial/strong:
+- heaven as vault;
+- earth on waters;
+- heavens suspended by divine command;
+- heavenly host network.
+
+## 2. Same structural continuity
+Not demonstrated.
+
+## 3. Geometry/strand-angle change
+Absent.
+
+## 4. Narrow throat/rod
+No relevant cosmographic throat.
+
+Rod appears in inherited biblical/resurrection analogies,
+not as transformed sky support.
+
+## 5. Transfer/contact
+Many ritual/social examples:
+- baptism;
+- church entry;
+- Exodus passage;
+- resurrection.
+
+But none through the same cosmographic support.
+
+## 6. Reopening
+Seed/tree/rod renewal gives distributed regrowth,
+but not same gate structure.
+
+### Strict verdict
+
+**NEGATIVE.**
+
+The Ethiopic Didascalia is exceptionally valuable as:
+- a projection-grammar text;
+- an institutional-network control;
+- an access-classification control;
+- a resurrection/reassembly text;
+- a cherub/fire/chariot text;
+- a broad-cover cosmography text.
+
+It does **not** supply the missing dynamic fingertrap.
+
+---
+
+# Pair / role register
+
+## heaven / earthly church
+pattern ↔ instantiation.
+
+## bishop / deacon
+central authority ↔ distributed sensor/minister.
+
+## bishop / presbyters
+centre ↔ right/left counsellor arrangement.
+
+## doorkeeper / entrant
+boundary controller ↔ routed participant.
+
+## deacon / deaconess
+gendered ministry roles in baptism/assembly.
+
+## widow / orphan
+distinct protected/resource-recipient roles.
+
+## body / soul
+temporary united person ↔ separable components in resurrection argument.
+
+## water / oil
+baptism medium ↔ anointing/sealing medium.
+
+## ship-master / sailors
+bishop ↔ deacons.
+
+## shepherd / flock
+leader ↔ congregation.
+
+## heavenly host / earthly church
+cosmic liturgical archetype ↔ ecclesial reflection.
+
+## apostles / regional bishops
+central founders ↔ distributed successor nodes.
+
+---
+
+# Timing / number register
+
+- 12 apostles in opening literary frame.
+- 43 chapters in most complete Ethiopic MSS.
+- Passion/Pascha day-counting in Chapters XXIX–XXX.
+- Phoenix cycle given as an illustrative resurrection story.
+- six wings on cherubim.
+- large chariot/angelic multitude numbers from inherited scriptural language.
+- feast/calendar calculations.
+
+### M89-44 — NUMBERS IN THIS TEXT HAVE CLEAR LITURGICAL, ORGANIZATIONAL OR SCRIPTURAL FUNCTIONS
+
+Do not mine them for hidden gate cycles without independent evidence.
+
+---
+
+# Textual / historical controls
+
+1. The Ethiopic Didascalia is not identical to the Syriac Didascalia Apostolorum.
+2. It is not identical to Apostolic Constitutions I–VII, despite extensive correspondence.
+3. It is not the Didache or Sinodos.
+4. Platt's 1834 Ethiopic edition was incomplete.
+5. Harden's 1920 translation uses a fuller five-manuscript British Museum tradition.
+6. Most Harden manuscripts divide the work into 43 chapters; one combines IV and V.
+7. Harden uses Orient. 752 as base text with comparison against other manuscripts.
+8. Exact transmission history through Greek/Coptic/Arabic/Ethiopic remains complex and should not be simplified beyond evidence.
+9. The work is overwhelmingly prescriptive church order, not a cosmological apocalypse.
+10. "According to the pattern of that which is in heaven" refers directly to church offices.
+11. Church-body, ship and flock metaphors are explicit institutional analogies.
+12. Doorkeepers are literal ecclesial admission/placement officers.
+13. Baptism uses literal water and oil but maps them onto theological death/resurrection/state transition.
+14. Chapter XXV's four-element human/resurrection argument is theological anthropology.
+15. Phoenix, seed, tree and rod are resurrection analogies, not demonstrated world-cycle physics.
+16. Chapters XXIX–XXX contain liturgical calendar/Pascha calculation; date arithmetic is not automatically cosmic chronology.
+17. Chapter XXXVII explicitly gives angelic hosts as flame of fire and cherubim with six wings.
+18. The same chapter gives divine chariot imagery, heaven as a vault, and earth established on waters.
+19. It does not give dragon imagery or a meaningful serpent→cherub identity.
+20. Heaven support here is by divine command/word; do not silently replace it with Meqabyan's wind-pillar wording.
+21. Chapter XL's water prayer is a ritual sanctification sequence.
+22. Chapter XLIII ends by distributing bishops from apostolic/Jerusalem authority to many regional churches.
+23. No strict fingertrap mechanism is present.
+
+---
+
+# Sources logged — Ethiopic Didascalia
+
+## Complete direct English translation used
+- J. M. Harden, _The Ethiopic Didascalia_ (1920), full text:
+  https://archive.org/stream/cu31924096083336/cu31924096083336_djvu.txt
+- Internet Archive item:
+  https://archive.org/details/cu31924096083336
+
+## Earlier incomplete edition / comparison
+- Thomas Pell Platt, _The Ethiopic Didascalia_ (1834):
+  https://archive.org/details/ethiopicdidascal00platrich
+- Scanned Platt PDF:
+  https://www.abbasamueleotm.org/wp-content/uploads/2020/03/Ethiopic-Didascalia-by-Thomas-Pell-Platt.pdf
+
+## Scholarly social/institutional control
+- Charlotte Methuen, “Widows, Bishops and the Struggle for Authority in the Didascalia Apostolorum,” _Journal of Ecclesiastical History_:
+  https://www.cambridge.org/core/journals/journal-of-ecclesiastical-history/article/abs/widows-bishops-and-the-struggle-for-authority-in-the-didascalia-apostolorum/F0CF948CF431E76A969EF41648C3C367
+
+---
+
+# SECTION 89 — ETHIOPIC DIDASCALIA / DIDESQELYA COMPLETE
+
+## Strongest new findings
+
+1. **The full Ethiopic Didascalia is best handled through Harden's 1920 43-chapter translation rather than Platt's incomplete 1834 edition.**
+2. **The Ethiopic recension is related to but not identical with Syriac Didascalia, Apostolic Constitutions, Didache or Sinodos; those parallels cannot be substituted for direct Ethiopic evidence.**
+3. **The opening explicitly says earthly church offices are appointed according to a pattern in heaven, giving one of the clearest source-level statements that a pattern can be instantiated across domains/scales without material identity.**
+4. **The congregation is explicitly "one body," and the deacon becomes the bishop's ear, eye and mouth—an institutional network rendered as anthropomorphic anatomy.**
+5. **That is a major Squatter-Man control: human-body geometry can encode distributed sensing, communication and governance without being a literal giant human organism.**
+6. **The same church is then projected as a ship, with bishop as ship-master and deacons as sailors, then immediately as a flock; one underlying system can therefore change projection family according to function.**
+7. **Doorkeepers literally control entry and placement, providing an excellent negative control: a real gate/access system can be architectural/social rather than cosmological.**
+8. **Baptism supplies operator + medium + entry + transition + emergence + post-state, yet its "transfer" is ritual/theological; the same formal variables therefore do not by themselves prove inter-world physical transfer.**
+9. **Chapter XXV repeats the broader Ethiopic four-element anthropomorphic grammar: man is created from four elements, body dissolves, and body is later restored to its soul.**
+10. **Seed, cut tree, dry rod and phoenix are used as concentrated/dead→distributed/living renewal analogies, but the text explicitly deploys them as resurrection proofs rather than world-cycle mechanics.**
+11. **The work explicitly says the world can be renewed again, placing bodily resurrection and world renewal inside the same theological analogy.**
+12. **The Pascha/calendar chapters are a major timing control: sophisticated recurring date arithmetic can have a straightforward liturgical scheduling function rather than encode cosmic cycle intervals.**
+13. **Chapter XXXVII is the major cherub/cosmology result: angelic hosts are described as flame of fire, cherubim have six wings, the divine chariot is invoked, heaven is hung as a vault, and earth is established on waters.**
+14. **This securely strengthens the functional cluster wing + fire-host + chariot + heavenly presence.**
+15. **However, the Didascalia supplies no meaningful dragon system and almost no serpent morphology, so it does not itself identify cherubim with a Feathered Serpent/dragon form.**
+16. **That negative result matters: the Quetzalcoatl / cherub / Feathered-Serpent hypothesis remains possible only as a cross-text functional comparison, not a direct Didascalia identity claim.**
+17. **The vault-heaven/earth-on-water imagery strengthens the broad-support cosmography already found in Meqabyan, but this text attributes support to divine command rather than explicitly to wind, so those variants remain distinct.**
+18. **The final chapter gives a clean central→distributed network: apostolic/Jerusalem authority ordains bishops and sends them to many regional churches.**
+19. **Across the whole work, body, ship, flock, altar, gate, water and hierarchy are mostly institutional/ritual metaphors; this makes the Didascalia one of the strongest anti-overfitting controls in the entire research corpus.**
+20. **No strict fingertrap appears. Broad support exists; anthropomorphic projection exists; water transfer/state-change exists; concentrated→distributed renewal exists—but not one continuous broad woven support contracting into a throat and reopening.**
+21. **The direct corpus therefore still leaves exactly one central mechanical evidentiary gap: same-structure broad support → contraction/twist → narrow throat → transfer → reopening.**
+
+## Corpus frontier after Section 89
+
+The verified roadmap that produced this sequence identifies the Ethiopic Didascalia as the final remaining direct text-unit.
+
+Do **not** begin another Bible/apocrypha text automatically.
+
+Next action must be:
+1. verify the three-file corpus against the reconstructed roadmap;
+2. identify any genuinely skipped or only partially researched roadmap unit;
+3. distinguish recovered omissions from duplicate numbering;
+4. only if no gap remains, mark the direct sequential 88-text/broader-canon pass complete;
+5. then move to synthesis/timeline work rather than another blind sequential pass.
+
