@@ -66874,3 +66874,966 @@ Required work:
 - cross-link Quetzalcoatl / Feathered Serpent only after the biblical/Ethiopic functional matrix is complete;
 - preserve explicit negative controls where winged forms have no serpent function and serpents have no wing/support function.
 
+
+
+---
+
+# SYNTHESIS 2 — CHERUB / FEATHERED SERPENT / DRAGON / SQUATTER-MAN PROJECTION MATRIX
+## Function-first comparison after completion of the 88-book corpus
+
+### Continuation verification
+
+Before this synthesis:
+- Part 1, EXTRA-RESEARCH.md and Part 2 were re-checked;
+- the actual Part 2 blob was fetched because ordinary file retrieval is now too large to return the body reliably;
+- Section 67 — 3 Meqabyan occurs once and is complete;
+- the complete 88-book pass is already present;
+- SYNTHESIS 1 — mechanism spine is complete.
+
+The actual file tail named this as the next live block.
+
+This synthesis therefore does **not** reopen or redo the book-by-book research.
+
+Its job is narrower:
+
+> **separate morphology from function, then test whether cherub / seraph / serpent / dragon / eagle-feathered body / winged carrier / radiant wing / cloud carrier / tree / mountain / anthropomorphic current-body / rod-axis can plausibly be phase/projection forms of one Vardath phenomenon.**
+
+The controlling rule from the completed corpus remains:
+
+> **same shape does not prove same mechanism; same mechanism expressed through changing shapes is much stronger evidence.**
+
+---
+
+# MATRIX LEGEND
+
+## Source-level
+The text itself explicitly makes the identification or transformation.
+
+## Strong formal analogue
+Process/geometry strongly resembles Vardath, but source does not identify it physically with Vardath.
+
+## Partial analogue
+Only one or two functions overlap.
+
+## Negative control
+A superficially similar shape is explicitly doing a different job.
+
+---
+
+# FUNCTION MATRIX
+
+| Form / projection | Primary medium | Movement | Support function | Carrier function | Boundary / gate function | Water relation | Fire / light relation | Eye / node relation | Human projection relation | Source-level transformation / identity |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Cherub** | sky/throne/sacred-space/fire | multi-directional in Ezekiel living-being system | **Strong** throne/guardian/support family | **Strong** throne/presence bearing | **Strong** restricted-sacred-space / guardian role | indirect in Ezekiel's larger temple/world-water system | **Very strong** fire/radiance | **Very strong** many-eye/wheel-node complex in Ezekiel 1/10 | **Strong but textually variant** Ezekiel 28 king may be cherub or with cherub | king↔cherub relation varies by textual tradition; no source says cherub literally becomes serpent |
+| **Seraph** | temple/air/fire | flying | weak/none | weak | purification/threshold-presence rather than gate machinery | weak | **Very strong** burning/fire semantics | weak | weak | no source transformation into dragon/cherub |
+| **Serpent** | land / tree / host-body; sometimes water/cosmic depending text | winding/crawling | normally weak | **Strong in 3 Meqabyan as host/channel for another agency** | Eden boundary/transgression function in Genesis tradition | variable | variable; fiery-serpent traditions separate | weak | agent may operate **through** serpent | 3 Meqabyan explicitly separates Satan-agent from serpent-host |
+| **Dragon / great monster** | **water/deep/river** especially Ezekiel 29/32 | embedded in river; dragged out | Vardath support role is speculative, **not source-secure** | fish attach to scales in Ezekiel 29 | water-domain ruler/boundary image | **Very strong** | low/variable | scales can suggest repeated surface units, but not eyes | **Very strong** Pharaoh = dragon/monster projection | source explicitly maps human ruler/empire to dragon body |
+| **Eagle / feathered body** | sea→sky/earth-spanning in 4 Ezra 11 | flight/spread over earth | weak | carries **historical/time-state modules** rather than physical cargo | weak | rises from sea | atmospheric/wind/cloud context | heads/wings operate as distributed modules | **Very strong** imperial history projected as creature body | 4 Ezra 12 explicitly decodes wings/heads as rulers/succession |
+| **Winged women / paired carriers** | air / between earth and sky | active transport | weak | **Exceptional** — two carriers lift one sealed ephah | container mouth/closure, but carriers are not gate | weak | wind is in wings | none | human female body = transport-agent projection | Zechariah 5 explicitly defines carrier operation |
+| **Radiant / healing wing** | celestial light | radiating / rising | protective/healing extension | none | none | none | **Exceptional** Malachi sun-with-wings | none | no human body needed | proves "wing" can be a light-extension metaphor rather than anatomy |
+| **Protective / canopy wing** | air/light over body | spreading/covering | **Strong local canopy/protection** | none | shelter rather than gate | body over sea episode in 1 Meqabyan nearby but not same mechanism | linked with luminous tent around martyrs | none | winged birds shelter human bodies | source shows wing=functional covering |
+| **Cloud carrier** | sky/air/water-vapour | rapid transport | variable | **Strong** in several vision/hagiographic carrier scenes | may cross vertical domains but not necessarily gate itself | **Strong atmospheric-water relation** | often luminous | variable | can carry human/angelic occupants | carrier and gate remain separate variables |
+| **Tree / world-tree projection** | earth+water+air | growth, branching, sometimes fall | **Strong** distributive/support-network analogue | nutrients/current through roots/branches | weak unless tree is used as axis | **Very strong** roots/deep/streams | sun/light input in Meqabyan plant analogies | branch/node structure | **Very strong** king/empire↔tree; human leaders↔olive trees | Daniel/Ezekiel/Zechariah explicitly map persons/polities to tree form |
+| **Mountain** | land/axis/high sacred space | usually stationary; Zechariah 14 splits/moves | **Strong** axial / elevated support-landform role | weak | **Very strong in Zechariah 14** when split creates corridor | living waters follow in same chapter | light-state alteration follows opening | no inherent eyes | **Strong** human/divine figures stand on or become associated with mountain/Zion | 4 Ezra woman→city and sea-man→mountain/Zion establish cross-scale projection grammar |
+| **Anthropomorphic current / environmental body** | sea/deep/cloud/current | rises, strides, stands, traverses sea | possible axis-function | can act as operator rather than carrier | may create/access mountain/city but not necessarily gate | **Exceptional** Habakkuk deep raises hands; 4 Ezra man rises from sea | hand-rays / fire-breath / radiance | body parts can emerge from field rather than biological anatomy | **Exceptional** environment→humanlike figure | 4 Ezra 13 is strongest direct field→human projection |
+| **Rod / staff / axis** | land/hand/vertical line | lifted, stretched, broken, planted | **Strong axis/control-token analogue** | weak | can mediate opening/authority, but often symbolic control rather than physical gate | Moses/Exodus water relation strong in some traditions | variable | none | human operator holds/embodies rod function | Zechariah 11 proves two rods can encode different system variables rather than literal machinery |
+| **Squatter-Man candidate** | Vardath interpretive category: concentrated sky/current | apparent standing humanlike column/branches | hypothesized concentrated support state | possible operator/apparatus fusion | hypothesized throat/axis projection | expected strong water response | expected plasma/fire/light | expected node/eye analogues in canopy | central issue: **apparatus may look human** | strongest source controls: 4 Ezra 10 woman→city; 4 Ezra 13 sea→man; Habakkuk deep→hands |
+
+---
+
+# 1. CHERUB — WHAT IS SOURCE-SECURE
+
+The completed Ezekiel research gives a secure cherub cluster:
+
+- wings;
+- movement;
+- throne/presence relation;
+- living-being system;
+- wheels;
+- repeated eyes;
+- fire/radiance;
+- multi-directional travel;
+- sacred/guardian function.
+
+Ezekiel 28 adds:
+- Eden/garden;
+- holy mountain;
+- stones of fire;
+- guardian cherub;
+- expulsion/downward transition;
+- internal fire.
+
+### CFS-1 — CHERUB IS THE STRONGEST BIBLICAL CANDIDATE FOR A **MOVING SUPPORT / GUARDIAN / PRESENCE APPARATUS PROJECTION**
+
+This does **not** mean ordinary scholarship describes a mechanical sky lattice.
+
+It means the functional combination is unusually dense:
+
+**support**
++
+**movement**
++
+**wings**
++
+**fire/light**
++
+**eyes/nodes**
++
+**sacred-space access**
++
+**throne/presence**.
+
+### CFS-2 — EZEKIEL 28'S TEXTUAL VARIANT CHANGES OPERATOR↔APPARATUS RELATION
+
+Two broad possibilities remain:
+
+**MT-style**
+king/ruler is identified with cherub.
+
+**LXX-style**
+king/ruler is with/accompanied by cherub.
+
+For Vardath these map differently:
+
+A. **operator = apparatus projection**
+
+or
+
+B. **operator accompanies apparatus**.
+
+That distinction remains important.
+
+---
+
+# 2. SERAPH — IMPORTANT NEGATIVE CONTROL
+
+Seraphim have:
+- wings;
+- fiery/burning semantics;
+- temple/heaven presence;
+- praise;
+- purification.
+
+But in the source corpus they do **not** supply:
+- many-eye wheel network;
+- serpent-host role;
+- water-current body;
+- gate-throat mechanics;
+- throne-bearing mechanics in the same way as Ezekiel's cherub system.
+
+### CFS-3 — WINGS + FIRE ALONE ARE NOT ENOUGH TO IDENTIFY SERAPH WITH CHERUB OR FEATHERED SERPENT
+
+This is one of the matrix's strongest negative controls.
+
+---
+
+# 3. SERPENT — HOST, PATH, BOUNDARY, CURRENT SHAPE
+
+The serpent cluster is functionally diverse.
+
+## Genesis / Adamic tradition
+serpent:
+- deception;
+- garden/tree boundary event.
+
+## 3 Meqabyan
+Satan:
+- is a separate agent;
+- **lodges in / acts through serpent reasoning**.
+
+This is extremely important.
+
+### CFS-4 — A SERPENT BODY CAN BE A **HOST OR CHANNEL FOR ANOTHER AGENCY**
+
+So a serpent-form phenomenon need not equal:
+- the operator;
+- the whole machine;
+- the intelligence behind it.
+
+It may be:
+**carrier/interface/projection**.
+
+## Path imagery
+3 Meqabyan also compares:
+- serpent path over rock;
+- bird path in sky;
+- ship path in sea.
+
+Thus serpent is strongly linked to:
+**medium-specific path**.
+
+---
+
+# 4. DRAGON — WATER-EMBEDDED POLITICAL / ENVIRONMENTAL BODY
+
+Ezekiel 29/32 is the strongest dragon cluster.
+
+Pharaoh becomes:
+- great dragon / monster in Nile;
+- embedded in river channels;
+- fish cling to scales;
+- hooks pull dragon and attached fish out.
+
+### CFS-5 — HUMAN RULER→DRAGON IS SOURCE-LEVEL CROSS-FORM IDENTITY
+
+This is not inferred.
+
+A human/political system is visibly projected as:
+**large aquatic serpentine body**.
+
+### CFS-6 — DRAGON BODY IS EMBEDDED IN A DISTRIBUTED WATER NETWORK
+
+This is highly relevant to the user's idea that:
+dragon
+may be a view of
+current/lattice/water-support system.
+
+But the source-secure function is:
+**Pharaoh/Egypt/Nile political image**.
+
+The Vardath ground-support role remains comparative, not textual fact.
+
+---
+
+# 5. FEATHERED EAGLE — BODY AS TIME / POLITICAL STATE MACHINE
+
+4 Ezra 11–12 is decisive.
+
+The sea-eagle has:
+- twelve wings;
+- three heads;
+- smaller/opposing wings;
+- sequential activation;
+- internal competition;
+- voice from middle of body.
+
+Then chapter 12 interprets:
+- wings;
+- heads;
+- smaller wings
+
+as political rulers and succession.
+
+### CFS-7 — FEATHERS/WINGS CAN ENCODE **TEMPORAL MODULES**
+
+This is one of the strongest source controls for the Feathered-Serpent comparison.
+
+A feathered body can be:
+**time/history made anatomical**.
+
+Therefore:
+feathers need not indicate a literal biological bird.
+
+---
+
+# 6. WINGED WOMEN — BODY AS TRANSPORT HARDWARE
+
+Zechariah 5 supplies:
+- two winged women;
+- wind in wings;
+- one central sealed container;
+- cargo inside;
+- travel between earth and sky;
+- destination;
+- receiving base.
+
+### CFS-8 — WINGED HUMAN FORM CAN FUNCTION AS A PAIRED CARRIER SYSTEM
+
+This is mechanically clear.
+
+It also proves:
+**winged form ≠ cherub by default**.
+
+Function is transport, not throne support.
+
+---
+
+# 7. RADIANT WING — LIGHT CAN HAVE WINGS
+
+Malachi:
+- sun image;
+- healing in its wings.
+
+### CFS-9 — WING CAN MEAN RADIATING EXTENSION
+
+This matters strongly for Vardath.
+
+A "feathered" or "winged" luminous phenomenon may be perceived as:
+- rays;
+- extensions;
+- broad lateral emission;
+rather than literal feathers.
+
+---
+
+# 8. TREE — DISTRIBUTED SUPPORT / SUPPLY NETWORK
+
+The completed corpus repeatedly maps:
+- king ↔ tree;
+- empire ↔ tree;
+- leaders ↔ olive trees;
+- roots ↔ water;
+- branches ↔ distributed field;
+- central tree failure ↔ wider water/environment response.
+
+Strongest nodes:
+- Daniel 4;
+- Ezekiel 31;
+- Zechariah 4;
+- Meqabyan plant/resurrection analogies.
+
+### CFS-10 — TREE IS ONE OF THE STRONGEST SOURCE-LEVEL FORMS FOR **CENTRAL AXIS + DISTRIBUTED BRANCH NETWORK + WATER SUPPLY**
+
+The source itself frequently projects:
+human/political systems
+into tree form.
+
+This is much stronger than merely noticing that trees look like branching currents.
+
+### CFS-11 — EZEKIEL 31'S "SURROUNDING TREES" REMAINS A HIGH-VALUE NODE-FIELD CANDIDATE
+
+Within Vardath:
+one dominant tree may be:
+- one active axial node;
+- among multiple local tree/node points;
+- all connected to shared deep/current field.
+
+This remains speculative but structurally coherent with the text.
+
+---
+
+# 9. MOUNTAIN — AXIS / NODE / PASSAGE-GENERATOR
+
+Mountain functions across the corpus include:
+- holy/elevated central node;
+- refuge;
+- divine presence;
+- Zion/city projection;
+- world-scale landform;
+- route barrier.
+
+Zechariah 14 adds the strongest gate function:
+
+**one mountain**
+→ **split**
+→ **two moving halves**
+→ **central valley**
+→ **population passes through**.
+
+### CFS-12 — MOUNTAIN CAN BECOME GATE-GEOMETRY WITHOUT CEASING TO BE THE SAME LAND STRUCTURE
+
+This is a stronger continuity result than most symbolic gates.
+
+It still represents:
+**splitting/opening**
+rather than fingertrap contraction.
+
+---
+
+# 10. ANTHROPOMORPHIC CURRENT-BODY — THE KEY SQUATTER-MAN CONTROL
+
+Two texts are decisive.
+
+## Habakkuk 3
+the **deep itself** raises hands/waves.
+
+Environment:
+→ body parts.
+
+## 4 Ezra 13
+wind stirs sea;
+humanlike figure rises from heart of sea;
+moves with clouds;
+affects environment;
+mountain/Zion manifestation follows.
+
+### CFS-13 — ENVIRONMENTAL FIELD→HUMANLIKE BODY IS SOURCE-LEVEL VISION GRAMMAR
+
+This is the strongest support for interpreting Squatter-Man as:
+**a field/current/apparatus seen anthropomorphically**.
+
+It does not prove Peratt/plasma identification.
+
+But it makes the *projection type* legitimate.
+
+---
+
+# 11. WOMAN→CITY — THE MASTER CROSS-SCALE CONTROL
+
+4 Ezra 9–10:
+
+woman:
+- grieves;
+- brightens;
+- flashes;
+- cries;
+- earth shakes.
+
+Then:
+- woman disappears;
+- city/foundations appear.
+
+Uriel explicitly says:
+**woman = Zion/city**.
+
+### CFS-14 — ONE REFERENT CAN MOVE FROM HUMAN BODY SCALE TO CITY/LANDSCAPE SCALE
+
+This remains the strongest methodological permission for Vardath to test:
+
+- human figure ↔ mountain;
+- human figure ↔ tree;
+- cherub ↔ apparatus;
+- serpent ↔ current;
+- Squatter-Man ↔ concentrated lattice.
+
+Again:
+it permits the test.
+It does not prove each identification.
+
+---
+
+# 12. ROD / STAFF / AXIS — CONTROL TOKEN VERSUS MACHINE
+
+The corpus gives:
+- Moses rod/staff;
+- prophetic rods;
+- Zechariah's two staffs Favor and Union;
+- iron rod rulership imagery;
+- rod/tree/branch overlaps.
+
+Zechariah 11 is especially important.
+
+Two staffs:
+- look similar as rods;
+- encode **different system variables**.
+
+### CFS-15 — ROD SHAPE DOES NOT MEAN ONE UNIVERSAL ROD MECHANISM
+
+A rod may be:
+- authority token;
+- boundary/control symbol;
+- directional axis;
+- shepherding tool;
+- weapon;
+- branch/tree projection.
+
+Only context determines which.
+
+---
+
+# WING FUNCTION TAXONOMY — CORPUS RESULT
+
+The completed corpus now gives at least these distinct wing functions:
+
+1. **throne/support/presence wing**
+   - cherub cluster.
+
+2. **praise/presence wing**
+   - seraph / 3 Meqabyan cherub-seraph praise imagery.
+
+3. **carrier wing**
+   - Zechariah 5.
+
+4. **protective/shade wing**
+   - 1 Meqabyan martyrs.
+
+5. **radiant/healing wing**
+   - Malachi.
+
+6. **speed/animal wing**
+   - military bird/eagle comparisons.
+
+7. **historical/time-module wing**
+   - 4 Ezra 11–12 eagle.
+
+### CFS-16 — "FEATHERED" IS NOT A SINGLE MECHANISM
+
+This is a decisive rule.
+
+If Quetzalcoatl / Feathered Serpent is compared to biblical winged forms,
+the comparison must specify **which wing function** is being matched.
+
+---
+
+# EYE / NODE TAXONOMY
+
+Strong eye/node systems:
+- Ezekiel wheels/living-being complex;
+- Zechariah seven eyes ranging through earth;
+- Daniel horn eyes;
+- Revelation eye-covered beings;
+- user Vardath canopy node / ice-eye model.
+
+### CFS-17 — EYES CAN FUNCTION AS DISTRIBUTED PERCEPTION / AGENCY NODES
+
+But:
+an "eye" can also be:
+- jewel;
+- aperture;
+- personified watcher;
+- symbolic perception.
+
+Vardath's ice-like node interpretation remains a physical hypothesis,
+not source translation.
+
+---
+
+# QUETZALCOATL / FEATHERED SERPENT — EXTERNAL CONTROL PASS
+
+This comparison is added **after** the biblical/Ethiopic matrix, not used to construct it.
+
+## Secure broad facts
+
+Authoritative museum and archaeological sources support a genuinely polyvalent Feathered Serpent tradition.
+
+The National Museum of the American Indian describes Postclassic Quetzalcoatl as:
+- Feathered Serpent;
+- creator/patron of humanity;
+- associated with Venus/sunrise;
+- calendar/time;
+- corn/fire;
+- trade;
+- a figure rulers could personify.
+
+Archaeological scholarship on the Feathered Serpent Pyramid at Teotihuacan argues that its iconography is deeply connected with:
+- creation;
+- origin of time;
+- calendric succession.
+
+López Austin / López Luján / Sugiyama further discuss the Feathered Serpent as:
+- bearer/extractor of time-destiny;
+- linked with forces periodically emerging from four trees in a **helix** toward the human world.
+
+This last point is especially important,
+but must be attributed to that scholarly reconstruction rather than treated as universal Mesoamerican consensus.
+
+Other Mesoamerican archaeological work emphasizes that the Feathered Serpent can be associated with:
+- wind;
+- rain;
+- rulership;
+- warfare;
+- lightning/storm imagery.
+
+### QFS-1 — QUETZALCOATL / FEATHERED SERPENT IS ITSELF A MULTI-FUNCTION PROJECTION FAMILY
+
+That makes it methodologically compatible with the Vardath question.
+
+The comparison is not:
+
+> "cherub looks like Quetzalcoatl."
+
+It is:
+
+> "do both traditions use a winged/feathered serpentine body to encode atmospheric, temporal, rulership, carrier, creation or boundary functions?"
+
+That is a much better test.
+
+---
+
+# QUETZALCOATL MATRIX ROW
+
+| Feature | Mesoamerican source-control status | Vardath comparison |
+|---|---|---|
+| serpent body | **secure** | winding/current/braid morphology candidate |
+| feathers | **secure** | aerial/radiant/field-extension candidate |
+| wind association | **secure in important later forms; not universal to every image** | atmospheric/current function |
+| rain/water association | **important in several traditions; context-dependent** | water follows active sky-current geometry |
+| creation / cosmic order | **strong in several traditions** | world-machine / reset-order comparison |
+| time / calendar | **very strong at Teotihuacan interpretation** | time-door / phase clock comparison |
+| rulership/personification | **strong** | operator↔apparatus/person projection |
+| lightning/storm | **present in scholarly interpretations/traditions** | plasma/current activation analogue |
+| helix / four-tree emergence | **specific scholarly reconstruction, not universal consensus** | especially relevant to Yggdrasil / braided-current / four-node research |
+| literal fingertrap contraction | **not established** | missing |
+| same body opens world-throat and re-expands | **not established here** | missing |
+
+---
+
+# THE MOST IMPORTANT NEW QUETZALCOATL RESULT
+
+The Cambridge Teotihuacan study is unusually relevant because it does **not** reduce Quetzalcoatl to "a feathered snake."
+
+Its interpretive model associates the Feathered Serpent with:
+- creation of calendric divisions;
+- carrying time/destiny;
+- forces emerging periodically through four trees;
+- **helix-like movement into the human world**.
+
+### QFS-2 — THIS IS A MUCH CLOSER FUNCTIONAL COMPARISON TO VARDATH THAN SIMPLE FEATHERED-SERPENT MORPHOLOGY
+
+Why:
+
+Vardath already contains:
+- tree/network;
+- time-door;
+- braided/helical current;
+- upper/lower world relation;
+- periodic activation;
+- anthropomorphic/serpentine projection.
+
+This does **not** prove identity or diffusion.
+
+But it makes Quetzalcoatl a legitimate **high-priority comparative process tradition**.
+
+### QFS-3 — DO NOT TURN THE FOUR-TREE / HELIX INTERPRETATION INTO A UNIVERSAL "QUETZALCOATL FACT"
+
+It belongs to a specific scholarly reconstruction of Teotihuacan iconography and broader Mesoamerican time concepts.
+
+Preserve attribution.
+
+---
+
+# CHERUB ↔ FEATHERED SERPENT COMPARISON
+
+## Strong overlaps
+
+- wings/feathers;
+- serpentine possibility on comparative side;
+- sky/air association;
+- fire/light/storm environment;
+- sacred/divine presence;
+- rulership/authority;
+- movement;
+- potential carrier/support functions;
+- body used to encode more than animal biology;
+- relation to cosmic order.
+
+## Important differences
+
+### Cherub
+strongest secure functions:
+- throne support;
+- guardian;
+- sacred-space presence;
+- eyes/wheels/fire movement.
+
+### Quetzalcoatl / Feathered Serpent
+strongest secure functions:
+- feathered serpent body;
+- creation/order;
+- time/calendar;
+- wind;
+- rulership;
+- rain/fertility in some contexts;
+- trade/culture-bearing functions in later traditions.
+
+### CFS-18 — THE OVERLAP IS FUNCTIONAL BUT NOT IDENTICAL
+
+The strongest comparison is:
+
+**moving cosmic-order body with aerial/serpentine features and authority over transitions/order**.
+
+Not:
+"same named deity."
+
+---
+
+# DRAGON ↔ FEATHERED SERPENT COMPARISON
+
+Dragon cluster in Ezekiel:
+- water/river embedded;
+- human ruler projected as monster;
+- scales;
+- attached fish;
+- dragged between water/land states.
+
+Feathered Serpent:
+- serpent;
+- aerial/feathered;
+- wind/rain/time/order associations.
+
+### CFS-19 — DRAGON AND FEATHERED SERPENT MAY REPRESENT DIFFERENT MEDIA-STATE VIEWS OF A SERPENTINE PROCESS IN THE VARDATH MODEL
+
+Possible Vardath interpretation:
+
+**water-embedded state**
+→ dragon.
+
+**air/sky-active state**
+→ feathered serpent.
+
+**concentrated axial state**
+→ Squatter-Man / rod.
+
+This is a **model hypothesis**.
+
+No source explicitly performs this exact transformation.
+
+---
+
+# CHERUB ↔ SQUATTER-MAN COMPARISON
+
+The key bridge is not visual resemblance alone.
+
+It is projection grammar:
+
+- Ezekiel gives moving winged/fire/eye support body;
+- 4 Ezra gives sea field → humanlike man;
+- Habakkuk gives deep → hands;
+- 4 Ezra gives woman → city;
+- Ezekiel 28 may fuse ruler ↔ cherub depending textual branch.
+
+### CFS-20 — APPARATUS↔ANTHROPOMORPHIC PROJECTION IS TEXTUALLY PLAUSIBLE AS A REPRESENTATIONAL MODE
+
+Therefore Vardath may legitimately test:
+
+**broad moving cherub-like support body**
+→ **contracted humanlike Squatter-Man projection**
+
+provided it continues to label the physical identity as speculative.
+
+---
+
+# PHASE / PROJECTION FAMILY — BEST CURRENT VARDATH MODEL
+
+The completed evidence matrix supports testing the following **as a hypothesis**:
+
+## Phase A — broad support / covering
+source analogues:
+- 1 Meqabyan 27;
+- 3 Meqabyan 9;
+- broad cloth/tent/garment heaven;
+- wind-supported upper field.
+
+Possible visual:
+- wings;
+- tree canopy;
+- web;
+- broad dragon body.
+
+## Phase B — activated distributed moving body
+source analogues:
+- Ezekiel cherub/living-being/wheel/eye system;
+- storm/cloud/fire theophanies.
+
+Possible visual:
+- cherub;
+- feathered body;
+- many-eyed moving structure.
+
+## Phase C — serpentine / braided-current view
+source analogues:
+- dragon/serpent traditions;
+- Quetzalcoatl comparative family;
+- water/wind/storm serpent functions.
+
+Possible visual:
+- dragon;
+- Feathered Serpent;
+- helix/winding current.
+
+## Phase D — concentrated axial / anthropomorphic view
+source analogues:
+- 4 Ezra sea-man;
+- Habakkuk environmental hands;
+- giant humanlike theophanies;
+- rods/pillars/trees.
+
+Possible visual:
+- Squatter-Man;
+- world-tree;
+- rod;
+- mountain;
+- standing giant.
+
+## Phase E — throat / gate state
+source analogues:
+- 4 Ezra 7 static narrow connector;
+- Zechariah 14 topological opening;
+- Micah breaker/gate passage.
+
+Possible visual:
+- narrow throat;
+- valley;
+- rod/axis.
+
+## Phase F — transfer / reopening
+source analogues:
+- Zechariah 5 carriers;
+- controlled water crossings;
+- Ezekiel/Zechariah two-direction flows;
+- restored populated landscape.
+
+Possible visual:
+- carrier;
+- water split;
+- broad reopening.
+
+### CFS-21 — THIS SIX-PHASE FAMILY IS NOW A TESTABLE COMPARATIVE MODEL, NOT A CLAIM THAT EVERY FORM IS LITERALLY ONE OBJECT
+
+The evidence supports:
+**testing continuity**.
+
+It does not yet supply:
+**one source showing all six phases of the same object**.
+
+---
+
+# NEGATIVE CONTROLS — DO NOT LOSE THESE
+
+1. **Seraph wings ≠ cherub mechanism automatically.**
+2. **Military eagle/wing imagery ≠ sky-support machinery.**
+3. **3 Meqabyan explicitly distinguishes Satan from serpent host.**
+4. **Cherub and serpent are not explicitly identified in 3 Meqabyan.**
+5. **Zechariah winged women are carriers, not cherubim.**
+6. **Malachi wings are radiant/healing extension, not literal bird anatomy.**
+7. **4 Ezra eagle is explicitly a political/time-state body.**
+8. **Ezekiel Pharaoh-dragon is explicitly a ruler/empire projection.**
+9. **Rod can be a control token, not the physical machine.**
+10. **Tree can be royal/political metaphor, not literal world-axis.**
+11. **Mountain can be sacred geography, not gate apparatus.**
+12. **Quetzalcoatl functions vary by place/period; later Aztec attributes should not automatically be projected backward onto every Teotihuacan Feathered Serpent image.**
+
+### CFS-22 — THESE NEGATIVE CONTROLS MAKE THE POSITIVE FAMILY STRONGER, NOT WEAKER
+
+A serious same-phenomenon hypothesis must predict:
+- when two forms should match;
+- when they should not.
+
+---
+
+# EVIDENCE STRENGTH SUMMARY
+
+## VERY STRONG SOURCE-LEVEL PROJECTION GRAMMAR
+- woman → city;
+- ruler → dragon;
+- ruler/empire → tree;
+- leaders → olive trees;
+- empire/time succession → feathered eagle anatomy;
+- environmental deep → hands;
+- sea field → humanlike man;
+- earth+water+fire+wind → Adam body.
+
+## VERY STRONG FUNCTIONAL OVERLAP
+- cherub support/movement/fire/eye system;
+- tree-axis/water network;
+- mountain→passage transformation;
+- winged carrier system;
+- broad wind-supported upper covering;
+- static throat;
+- bilateral flow.
+
+## STRONG COMPARATIVE MYTHOLOGY CANDIDATE
+- Quetzalcoatl / Feathered Serpent:
+  creation/time/wind/rain/rulership/serpent-feather body.
+
+## STILL MISSING
+- one text/image sequence where:
+  **broad winged/woven support**
+  remains the same object while
+  **twisting/cinching**
+  into
+  **narrow axial throat**
+  and later
+  **reopens**.
+
+---
+
+# SOURCES ADDED FOR QUETZALCOATL / FEATHERED SERPENT CONTROL
+
+## National Museum of the American Indian
+Tepanec Quetzalcoatl:
+https://americanindian.si.edu/exhibitions/infinityofnations/meso-carib/175441.html
+
+Used for:
+- Feathered Serpent identity;
+- creator/patron of humanity;
+- Venus/sunrise;
+- calendar/time;
+- corn/fire;
+- trade;
+- ruler personification.
+
+## Ancient Mesoamerica — López Austin, López Luján, Sugiyama
+"The Temple of Quetzalcoatl at Teotihuacan: Its Possible Ideological Significance"
+https://www.cambridge.org/core/journals/ancient-mesoamerica/article/temple-of-quetzalcoatl-at-teotihuacan-its-possible-ideological-significance/776CB2530116C2274AD550CE66D05558
+
+Used for:
+- Feathered Serpent at creation;
+- origin of time/calendric succession;
+- Cipactli/time headdress;
+- time/destiny bearer interpretation;
+- four-tree / helix emergence model as a specific scholarly reconstruction.
+
+## Ancient Mesoamerica — cosmic transformations at Teotihuacan
+https://www.cambridge.org/core/journals/ancient-mesoamerica/article/from-the-great-goddess-to-the-storm-god-cosmic-transformations-at-the-boundary-between-the-dry-and-rainy-seasons-in-classic-teotihuacan/55283911DDF1E4B947B47517CBD0DC0A
+
+Used cautiously for:
+- snake-bird / lightning-storm discussion;
+- serpent-water/mountain transformation comparisons;
+- not treated as universal Feathered Serpent doctrine.
+
+## Society for American Archaeology / tDAR session abstracts
+"Tales of the Feathered Serpent"
+https://core.tdar.org/collection/69492/tales-of-the-feathered-serpent-refining-our-understanding-of-an-enigmatic-mesoamerican-being
+
+Used for:
+- scholarly recognition that Feathered Serpent imagery varies through time/space;
+- associations including wind/rain/rulership/war/fertility/trade depending context.
+
+---
+
+# SYNTHESIS 2 — CONCLUSION
+
+The completed corpus strongly supports the **method** behind the user's idea:
+
+> a single process may be represented at different times as human, animal, tree, city, mountain, winged body, serpent/dragon, rod or environmental field.
+
+That is no longer speculative as a literary phenomenon.
+The sources themselves repeatedly perform those transformations.
+
+What remains speculative is the next step:
+
+> that cherub, Feathered Serpent, dragon, Quetzalcoatl, Squatter-Man, world-tree and rod are all cultural/phase projections of one physical sky-current apparatus.
+
+The strongest evidence for that hypothesis is now **functional convergence**, not resemblance:
+
+- broad upper support;
+- wind;
+- water;
+- fire/light;
+- wings;
+- distributed nodes/eyes;
+- serpent/current form;
+- time/order;
+- human projection;
+- tree/mountain axis;
+- passage creation;
+- population/material transfer;
+- restored inhabited state.
+
+The strongest warning is equally clear:
+
+> every one of those forms also has documented contexts in which it performs a completely different job.
+
+Therefore the next research step should look for **transition evidence**:
+a source that explicitly changes one member of the family into another while preserving function/identity.
+
+---
+
+# Next synthesis block
+
+**SYNTHESIS 3 — TRANSFORMATION CHAINS / SAME-IDENTITY SHAPE CHANGES**
+
+Required work:
+- collect only cases where the source itself preserves identity across form change;
+- rank evidence by transformation strength;
+- include:
+  - woman → city;
+  - sea/current → man;
+  - human ruler → dragon;
+  - human ruler/empire → tree;
+  - two leaders → olive trees;
+  - empire/history → eagle wings/heads;
+  - person/group → weapon;
+  - person/group → stone/architecture;
+  - environment → body parts;
+  - serpent host ← external agency;
+- distinguish:
+  1. explicit identity transformation;
+  2. interpreted symbol;
+  3. simile only;
+  4. Vardath extrapolation;
+- then test whether any transformation chain can actually connect:
+  **cherub → serpent/dragon → human axis → tree/mountain → throat**
+  without importing a missing step from another text.
+
