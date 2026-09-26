@@ -3164,3 +3164,38 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **3.** “Each one has faces within faces and wings within wings. The measure of their faces is two hundred and forty-eight faces, and the measure of their wings is three hundred and sixty-five wings.
 
 **4.** “Upon the head of each one are bound two thousand crowns. Every crown is like the rainbow in the cloud; its radiance is like the radiance of the sun's sphere, and the sparks that go forth from each one shine like the morning star in the east.”
+
+
+## 3 Enoch 22
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above them is one prince, mighty and wondrous, strong and praised with every kind of praise. His name is Kerubiel YHWH. He is a prince filled with power and might, a prince of exaltation and righteousness, a prince of holiness, glorified among thousands of hosts and raised high among myriads of armies.
+
+**2.** “At his wrath the earth shakes; at his anger the camps tremble. The foundations quiver from fear of him, and at his rebuke Arabot is shaken.
+
+**3.** “His stature is filled with burning coals. The height of his stature is like the height of the seven heavens, its breadth like the breadth of the seven heavens, and its thickness like the thickness of the seven heavens.
+
+**4.** “The opening of his mouth burns like a torch, and his tongue is a consuming fire. His eyelids shine like lightning, his eyes are sparks of brilliance, and the appearance of his face is like blazing fire.
+
+**5.** “A crown of holiness is upon his head, and the Explicit Name is engraved upon it; lightning goes forth from it. The bow of the Shekinah is between his shoulders.
+
+**6.** “His sword flashes like lightning at his loins, and his arrows blaze like lightning at his belt. Consuming fire is upon his armor, and burning coals of broomwood are around his neck and all about him.
+
+**7.** “The radiance of the Shekinah is upon his face, horns of majesty are upon his wheels, and a royal turban is upon his head. His whole body is filled with eyes.
+
+**8.** “The full height of his stature is covered with wings.
+
+**9.** “At his right a flame blazes, and at his left a fire burns. Burning streams issue from his body, torches go out from him, and lightning flashes from his face. Thunder upon thunder is continually with him, and earthquake upon earthquake is continually beside him.
+
+**10.** “The two princes of the Chariot are with him at his station.
+
+**11.** “Why is he called Kerubiel YHWH? Because he is appointed over the chariot of the cherubim, and the mighty cherubim are entrusted into his hand. He adorns the crowns upon their heads and burnishes the diadems upon their skulls.
+
+**12.** “He magnifies the glory of their appearance, exalts the beauty of their majesty, increases the greatness of their honor, and sets their song of praise in order. He strengthens their splendor, causes the brilliance of their glory to shine, beautifies their mercy and loving-kindness, shapes the loveliness of their radiance, makes their gracious beauty beautiful, glorifies the uprightness of their majesty, and orders their praise to prepare a dwelling for the One who sits upon the cherubim.
+
+**13.** “The cherubim stand beside the Holy Living Creatures. Their wings rise to the height of their heads, and the Shekinah rests above them. The brilliance of Glory is upon their faces, song and praise are in their mouths, their hands are beneath their wings, and their feet are covered by their wings. Horns of glory are upon their heads and the radiance of the Shekinah is upon their faces. Sapphire stones surround them, pillars of fire stand at their four sides, and pillars of flame are beside them.
+
+**14.** “A sapphire stands on one side and another sapphire on the other, and beneath the sapphires are burning coals of broomwood.
+
+**15.** “One cherub stands in each direction. The wings of the cherubim encircle one another above their heads in glory, and they spread them to sing a song to the One who dwells in the skies and to exalt the majesty of the King of kings.
+
+**16.** “Kerubiel YHWH, the prince appointed over them, arranges them in beautiful, fitting, and pleasant orders. He raises them through every kind of exaltation, dignity, and glory, and urges them with glory and strength to carry out the will of their Creator at every moment, for above the height of their heads continually rests the glory of the exalted King who sits upon the cherubim.”
