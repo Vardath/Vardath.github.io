@@ -3478,3 +3478,20 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **3.** “These are the letters by which wisdom and understanding, knowledge and insight, humility and uprightness were created—the qualities by which the whole world is sustained.
 
 **4.** “I went with him. He took me by the hand, raised me upon his wings, and showed me all those letters. They were engraved with a pen of flame upon the Throne of Glory, and sparks and lightning went forth from them and covered all the chambers of Arabot.”
+
+
+## 3 Enoch 42
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and I will show you where the waters hang in the height; where fire burns within hailstones; where thunders thunder in the heights above; where flame blazes within burning fire; and where a voice sounds amid thunder and earthquake.”
+
+**2.** I went with him. He took me by the hand, raised me upon his wings, and showed me all these things. I saw waters hanging in the height of Arabot Raqia by the Name **Yah, Ehyeh Asher Ehyeh**. From them rains descend and water the face of the world, as it is written: “From the fruit of Your works the earth is satisfied.”
+
+**3.** I saw fire, snow, and hailstones burning within one another without being harmed, by the Name **Esh Okhlah**—“Consuming Fire”—as it is written: “For YHWH your God is a consuming fire.”
+
+**4.** I saw lightning flashing within flames of fire without being harmed, by the Name **Yah YHWH Tzur Olamim**—“Yah, YHWH, Rock of Worlds”—as it is written: “For in Yah, YHWH, is the Rock of Worlds.”
+
+**5.** I saw thunders and voices roaring within flames of fire without being harmed, by the Name **Yad al Kes Yah**—“A hand upon the throne of Yah”—as it is written: “For a hand is upon the throne of Yah.”
+
+**6.** I saw rivers of fire within rivers of water, and rivers of water within rivers of fire, and neither was harmed.
+
+**7.** This was by the Name **Oseh Shalom Bimromav**—“He who makes peace in His heights”—for He makes peace between fire and water, between wind and cloud, and between wrath and sparks.”
