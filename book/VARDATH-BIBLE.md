@@ -3068,24 +3068,69 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 
 **2.** “Each one is prince of the host of one heaven, and with each are four hundred and ninety-six thousand myriads of ministering angels.
 
-**3.** “Michael, the great prince, is appointed over the seventh heaven, the highest, which is in Arabot. Gabriel, prince of the host, is appointed over the sixth heaven, which is in Makhon. Shatqiel, prince of the host, is appointed over the fifth heaven, which is in Ma'on. Shachaqiel, prince of the host, is appointed over the fourth heaven, which is in Zebul. Bardiel, prince of the host, is appointed over the third heaven, which is in Shehaqim. Barqiel, prince of the host, is appointed over the second heaven, in the height of Raqia. Sedriel, prince of the host, is appointed over the first heaven, which is Vilon in the heavens.”
+**3.** “Michael, the great prince, is appointed over the seventh heaven, the highest, which is in Arabot. Gabriel, prince of the host, is appointed over the sixth heaven, which is in Makhon. Shatqiel, prince of the host, is appointed over the fifth heaven, which is in Ma'on. Shachaqiel, prince of the host, is appointed over the fourth heaven, which is in Zebul. Bardiel, prince of the host, is appointed over the third heaven, which is in Shehaqim. Barqiel, prince of the host, is appointed over the second heaven, in the height of Raqia. Sedriel, prince of the host, is appointed over the first heaven, which is Vilon in the heavens.
 
+**4.** “Below them is Galgaliel, the prince appointed over the sphere of the sun. With him are ninety-six great and honored angels who drive the sun's wheel through the firmament, three hundred and sixty-five thousand parasangs each day.
+
+**5.** “Below them is Ophanniel, the prince appointed over the wheel of the moon. With him are eighty-eight angels who drive the moon's wheel three hundred and fifty-four thousand parasangs each night, during the time when the moon stands in its eastern turning; in this Hebrew witness this is given as the sixteenth day of each month.
+
+**6.** “Below them is Rahatiel, the prince appointed over the constellations, and with him are seventy-two great and honored angels. He is called Rahatiel because he makes the constellations run in their wheels and courses, three hundred and thirty-nine thousand parasangs each night, from east to west and from west to east. The Holy One, blessed be He, made one tent for the sun, moon, stars, and constellations, and by night they travel within it from west to east.
+
+**7.** “Below them is Kokabiel, the prince appointed over all the stars. With him are three hundred and sixty-five thousand myriads of great and honored ministering angels who drive the stars from city to city and from province to province in the firmament of heaven.
+
+**8.** “Above them are seventy-two princes of kingdoms in the height, corresponding in this witness to the tongues of the world. All are bound with royal crowns, clothed in royal garments, wrapped in royal ornaments, mounted on royal horses, and holding royal scepters in their hands. Whenever one of them travels through the firmament, royal attendants run before him with great honor and dignity, as attendants on earth go before a king with chariot, horsemen, and many troops.”
 
 ## 3 Enoch 18
 
-**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Below them is Galgaliel, the prince appointed over the sphere of the sun. With him are ninety-six great and honored angels who drive the sun's wheel through the firmament, three hundred and sixty-five thousand parasangs each day.
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “The angels of the first heaven, whenever they see their prince, dismount from their horses and fall upon their faces. The prince of the first heaven, when he sees the prince of the second, removes the crown of glory from his head and falls upon his face; the prince of the second does the same before the prince of the third, the third before the fourth, the fourth before the fifth, the fifth before the sixth, and the sixth before the seventh.
 
-**2.** “Below them is Ophanniel, the prince appointed over the wheel of the moon. With him are eighty-eight angels who drive the moon's wheel three hundred and fifty-four thousand parasangs each night, during the time when the moon stands in its eastern turning; this occurs on the sixteenth day of each month.
+**2.** “The prince of the seventh heaven, when he sees the seventy-two princes of the kingdoms, removes the crown of glory from his head and falls upon his face.
 
-**3.** “Below them is Rahatiel, the prince appointed over the constellations, and with him are seventy-two great and honored angels. He is called Rahatiel because he makes the constellations run in their wheels and courses, three hundred and thirty-nine thousand parasangs each night, from east to west and from west to east.
+**3.** “The seventy-two princes of the kingdoms, when they see the keepers of the gate of the first palace in the highest Arabot Raqia, remove their royal crowns and fall upon their faces. The keepers of the first palace do the same before the keepers of the second, those of the second before the third, the third before the fourth, the fourth before the fifth, the fifth before the sixth, and the sixth before the keepers of the seventh palace.
 
-**4.** “The Holy One, blessed be He, made one tent for the sun, the moon, the stars, and the constellations, and by night they travel within it from west to east.
+**4.** “The keepers of the seventh palace, when they see the four great and honored princes appointed over the four camps of the Shekinah, remove the crowns of glory from their heads and fall upon their faces.
 
-**5.** “Below them is Kokabiel, the prince appointed over all the stars. With him are three hundred and sixty-five thousand myriads of great and honored ministering angels who drive the stars from city to city and from province to province in the firmament of heaven.
+**5.** “The four great princes, when they see Tagas, the great and honored prince who leads the children of the heights in song and praise, remove the crowns of glory from their heads and fall upon their faces.
 
-**6.** “Above them are seventy-two princes of kingdoms in the height, corresponding to the languages of the world. All are bound with royal crowns, clothed in royal garments, wrapped in royal ornaments, mounted on royal horses, and holding royal scepters in their hands.
+**6.** “Tagas, when he sees the great prince set above him in the height of Arabot, removes the crown of glory from his head and falls upon his face.
 
-**7.** “Whenever one of them travels through the firmament, royal attendants run before him with great honor and dignity, just as attendants on earth go before a king with chariot, horsemen, and many troops. So are the princes served in the height, with glory, greatness, praise, song, and splendor.”
+**7.** “That prince, when he sees Hamon - the great, fearsome, honored, beloved, and terrible prince who makes the inhabitants of the heights tremble when the time approaches for the threefold Holy - removes the crown of glory from his head and falls upon his face.
+
+**8.** “Hamon, the great prince, when he sees Tutresiel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**9.** “Tutresiel YHWH, when he sees Atrugiel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**10.** “Atrugiel YHWH, when he sees Na'aririel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**11.** “Na'aririel YHWH, when he sees Sasnigiel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**12.** “Sasnigiel YHWH, when he sees Zazriel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**13.** “Zazriel YHWH, when he sees Geburatiel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**14.** “Geburatiel YHWH, when he sees Araphiel YHWH, removes the crown of glory from his head and falls upon his face.
+
+**15.** “Araphiel YHWH, when he sees Ashruylu YHWH, the prince who presides over the assemblies of the inhabitants of the heights, removes the crown of glory from his head and falls upon his face.
+
+**16.** “Ashruylu YHWH, when he sees Gallisur YHWH, the prince who reveals the mysteries of Torah, removes the crown of glory from his head and falls upon his face.
+
+**17.** “Gallisur YHWH, when he sees Zakzakiel YHWH, the prince appointed to record the merits of Israel upon the Throne of Glory, removes the crown of glory from his head and falls upon his face.
+
+**18.** “Zakzakiel YHWH, when he sees Anaphiel YHWH, keeper of the keys of the palaces of Arabot Raqia, removes the crown of glory from his head and falls upon his face. Why is he called Anaphiel? Because the branch of his majesty, glory, crown, radiance, and splendor overshadows the chambers of the highest Arabot. As it is written of the Maker of the world, ‘His glory covered the heavens,’ so the majesty of Anaphiel covers the glories of the highest Arabot.
+
+**19.** “When Anaphiel sees Sother Ashiel YHWH, the great, fearsome, and honored prince, he removes the crown of glory from his head and falls upon his face. Sother Ashiel is appointed over the four heads of the River of Fire before the Throne of Glory. No prince enters or leaves before the Shekinah except by his permission, because the seals of the fiery river are entrusted to him. His height is seventy thousand myriads of parasangs. He stirs the fire of the river and goes in and out before the Shekinah to interpret what is written concerning the inhabitants of the world: ‘The court sat, and the books were opened.’
+
+**20.** “Sother Ashiel, when he sees Shoqed Chozi YHWH, the great, mighty, fearsome, and honored prince, removes the crown of glory from his head and falls upon his face. Shoqed Chozi is so called because he weighs every merit in the scales before the Holy One, blessed be He.
+
+**21.** “Shoqed Chozi, when he sees Zehanpuryu YHWH, the great, mighty, fearsome, honored, and revered prince, removes the crown of glory from his head and falls upon his face. He is called Zehanpuryu because he rebukes the River of Fire and drives it back to its place.
+
+**22.** “Zehanpuryu, when he sees Azbuga YHWH - great, mighty, fearsome, honored, splendid, wondrous, exalted, beloved, and revered among the great princes who know the mystery of the Throne of Glory - removes the crown of glory from his head and falls upon his face. He is called Azbuga because in the age to come he will gird the righteous and the faithful with garments of life and wrap them in a mantle of life so that they may live with everlasting life.
+
+**23.** “Azbuga, when he sees the two great and honored princes who stand above him, removes the crown of glory from his head and falls upon his face. Their names are Sopheriel YHWH Who Brings Death and Sopheriel YHWH Who Gives Life. Both are great, honored, glorious, pure, ancient, and mighty princes.
+
+**24.** “Sopheriel Who Brings Death is appointed over the books of the dead; whoever reaches the day of death is written by him in the books of the dead. Sopheriel Who Gives Life is appointed over the books of life; whoever the Holy One, blessed be He, wills for life is written by him in the books of life by the authority of the Presence. Do not suppose that because the Holy One sits upon His throne these two also sit while writing. Scripture says, ‘All the host of heaven stood by Him,’ teaching that even the greatest princes fulfill the service of the Shekinah standing.
+
+**25.** “How then do they write while standing? One stands upon the wheels of tempest and the other upon the wheels of storm. Each wears royal garments and a mantle of majesty; each is crowned with a royal crown; each one's body is full of eyes; each one's appearance flashes like lightning and his eyes shine like the sun in strength. The height of each is like the height of the seven heavens, and the wings of each are as numerous as the days of the year, spreading across the breadth of Raqia. Their lips are like the gates of the east and their tongues like the height of the sea's waves. Flame and lightning issue from their mouths; fire kindles from their sweat; a torch burns from the tongue of each. A sapphire stone rests upon each head and a wheel upon each shoulder. Each holds a scroll of burning coal and a pen of flame. In this witness the scroll measures four thousand parasangs, the pen three thousand, and each letter they write three hundred and sixty-five parasangs.”
 
 ## 3 Enoch 19
 
