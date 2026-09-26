@@ -37365,3 +37365,1335 @@ Priority pair tests:
 
 This supplemental teaching/parables research remains valid but is not Section 72.
 
+
+
+---
+
+# SECTION 72 — JERUSALEM / PASSION
+## Direct Gospel master pass — royal entry, temple/body identity, fig-tree/temple projection, bread/body and wine/blood sign system, Gethsemane repeated approach/return, Judas/Peter divergence, kiss as identification signal, custody handoff network, Jesus/Barabbas paired alternatives, central cross with right/left flanking figures, darkness, cosmic/temple veil rupture, earthquake/rock fracture, tomb opening before occupant emergence, body-side breach with blood/water outflow, and sealed tomb as reinforced enclosure
+
+### Frontier / roadmap correction
+
+The master roadmap in Part 1 was re-opened before this pass.
+
+It confirms:
+
+**Section 72 — Jerusalem / Passion**
+- triumphal entry;
+- temple cleansing;
+- fig tree;
+- upper room;
+- bread/wine;
+- Gethsemane;
+- Judas/Peter;
+- arrest;
+- trial;
+- Jesus/Barabbas;
+- crucifixion;
+- two thieves/criminals;
+- darkness;
+- veil split;
+- earthquake;
+- spear/water/blood;
+- tomb sealed.
+
+Priority pair tests:
+- Jesus / Barabbas;
+- Peter / Judas;
+- two crucified companions;
+- cross as axis/rod;
+- veil as gate.
+
+The immediately preceding teaching/parables research was retained but relabelled:
+**SUPPLEMENTAL GOSPEL PASS**.
+
+It is not Section 72.
+
+---
+
+# Literary / source control first
+
+The four canonical Gospels do not present one mechanically identical Passion account.
+
+Important differences include:
+
+- Mark is generally treated as the earliest canonical Passion narrative and strongly structures the night through meal, Gethsemane, arrest, hearing, Peter denial and dawn handoff.
+- Matthew follows Mark closely but adds or intensifies:
+  - Judas's remorse/death;
+  - Pilate's wife's dream;
+  - Barabbas textual issues;
+  - earthquake;
+  - split rocks;
+  - opened tombs / raised holy ones;
+  - guard/seal at tomb.
+- Luke reshapes:
+  - Jesus before Herod;
+  - the two criminals so only one mocks and the other responds positively;
+  - Jesus' final words;
+  - other innocence themes.
+- John differs substantially:
+  - temple cleansing appears earlier in the ministry;
+  - Gethsemane is not narrated with the same "cup pass from me" scene;
+  - Jesus more directly controls the arrest encounter;
+  - no institution words over bread/wine at the Last Supper in the Synoptic form;
+  - unique spear / blood-and-water scene.
+
+Therefore:
+**do not harmonize divergent details into one eyewitness-style mechanical sequence.**
+
+This section records:
+1. shared process where secure;
+2. Gospel-specific expansions;
+3. textual variants explicitly.
+
+---
+
+# TRIUMPHAL / ROYAL ENTRY
+## route + carrier + crowd + central city
+
+The supplemental Gospel pass already established:
+
+- Jesus approaches Jerusalem via Mount-of-Olives / Bethany-Bethphage region;
+- a colt/donkey functions as carrier;
+- garments/branches mark the route;
+- crowd acclaims;
+- movement terminates at Jerusalem/temple.
+
+### M72P-1 — ROYAL ENTRY IS A CONTROLLED PROCESSION, NOT A TOPOLOGY CHANGE
+
+Variables:
+- route;
+- rider/operator;
+- animal carrier;
+- crowd;
+- destination.
+
+No mountain splits.
+No gate throat forms.
+
+Cross-link:
+Zechariah 9 royal-entry imagery must remain separate from Zechariah 14 mountain-split mechanics.
+
+---
+
+# TEMPLE CLEANSING
+## central sacred node → exchange system disrupted → boundary/function restored
+
+Synoptic tradition:
+Jesus enters temple and disrupts:
+- sellers;
+- buyers;
+- money changing;
+- associated commerce.
+
+He interprets the site through:
+- prayer-house;
+- den-of-robbers language.
+
+John places the temple action earlier and uniquely follows it with:
+**destroy this temple → in three days raise it**,
+then explicitly narrates that Jesus was speaking about:
+**the temple of his body**.
+
+### M72P-2 — JOHN GIVES EXPLICIT HUMAN-BODY ↔ TEMPLE-ARCHITECTURE IDENTITY
+
+This is a major projection result.
+
+The narrator itself establishes:
+
+**temple**
+↔
+**Jesus' body**.
+
+This belongs beside:
+- 4 Ezra woman ↔ city;
+- Daniel king ↔ tree;
+- Zechariah people ↔ tree/weapon;
+- Vardath axis-person ↔ structure hypothesis.
+
+### M72P-3 — ONE REFERENT CAN BE EXPRESSED AS BOTH BODY AND BUILDING WITHOUT EITHER IMAGE BEING SUPERFICIAL
+
+John's temple/body identification is theological,
+but source-level.
+
+That strongly supports the **possibility of cross-scale symbolic identity**.
+
+It does not prove:
+Jesus' physical body is literally masonry,
+or
+all temple imagery is human anatomy.
+
+### M72P-4 — THE TEMPLE IS A CENTRAL FUNCTIONAL NODE WHOSE USE CAN BE RECLASSIFIED
+
+Same physical site:
+- market/exchange use;
+- prayer/sacred use.
+
+Thus:
+**structure identity**
+and
+**operating function**
+are separable variables.
+
+---
+
+# FIG TREE + TEMPLE
+## plant state interwoven with institutional state
+
+Mark's arrangement:
+- fig tree encountered;
+- temple action;
+- fig tree later found withered.
+
+This literary "sandwich" strongly invites mutual interpretation.
+
+### M72P-5 — TREE CAN PROJECT TEMPLE / INSTITUTIONAL PRODUCTIVITY STATE
+
+This repeats:
+tree ≠ automatically literal cosmological tree.
+
+Possible function:
+- fruitfulness;
+- judgment;
+- institutional state.
+
+### M72P-6 — TREE FAILURE AND TEMPLE FAILURE ARE LINKED LITERARILY WITHOUT BECOMING THE SAME PHYSICAL OBJECT
+
+This is another important projection control.
+
+---
+
+# UPPER ROOM / LAST SUPPER
+## prepared enclosure → meal → bread/body and wine/blood identity statements → future transition
+
+The Synoptics describe:
+- prepared room;
+- shared meal;
+- bread taken/blessed/broken/given;
+- cup taken/shared.
+
+Jesus identifies:
+- bread with body;
+- wine/cup with covenant blood,
+with wording differences among Mark/Matthew/Luke.
+
+Mark:
+"blood of the covenant".
+
+Matthew adds:
+for forgiveness of sins.
+
+Luke/Pauline tradition uses:
+"new covenant" wording.
+
+### M72P-7 — EDIBLE MEDIA BECOME CARRIERS OF BODY/BLOOD IDENTITY
+
+This is a major symbolic-transfer system.
+
+**bread**
+→ body referent.
+
+**wine**
+→ blood/covenant referent.
+
+### M72P-8 — ONE HUMAN BODY IS DISTRIBUTED SYMBOLICALLY ACROSS MULTIPLE CONSUMABLE CARRIERS
+
+The meal creates:
+**central person**
+→ **distributed bread/cup among participants**.
+
+This resembles:
+concentrated source
+→ distributed recipient network.
+
+But:
+sacramental theology differs across traditions.
+
+Do not adjudicate:
+literal/transubstantial/symbolic metaphysics
+inside this research.
+
+Secure source-level fact:
+the meal explicitly maps food/drink to body/blood and impending death.
+
+### M72P-9 — BREAKING / POURING LANGUAGE ENCODES DISTRIBUTION THROUGH DAMAGE/RELEASE
+
+Bread:
+broken/distributed.
+
+Blood:
+"poured out" language.
+
+This is structurally relevant to:
+body-boundary / distributed-cargo imagery.
+
+But it is ritual/theological,
+not a mechanical model of world transfer.
+
+---
+
+# GETHSEMANE / MOUNT OF OLIVES
+## central figure + three close companions + repeated departure/return + cup-state acceptance
+
+Synoptic process:
+- Jesus goes to prayer place;
+- takes disciples;
+- Peter/James/John form closer subgroup in Mark/Matthew;
+- Jesus moves a short distance away;
+- prays;
+- returns;
+- finds them sleeping;
+- repeats prayer/return sequence.
+
+Cup:
+- represents impending suffering/fate;
+- requested to pass if possible;
+- accepted under divine will.
+
+### M72P-10 — GETHSEMANE IS A REPEATED CENTER↔PERIPHERY MOVEMENT
+
+Pattern:
+**group**
+→ Jesus separates
+→ **solitary prayer node**
+→ returns to group
+→ repeats.
+
+This is not a gate.
+
+It is a repeated:
+**depart / return / check-state**
+cycle.
+
+### M72P-11 — THREE CLOSE DISCIPLES ARE DISTINCT OBSERVER/SUPPORT NODES, NOT THREE FORMS OF JESUS
+
+Peter/James/John:
+- remain separate agents;
+- repeatedly fail to remain awake.
+
+No triadic identity collapse is warranted.
+
+### M72P-12 — "CUP" IS A FATE/EXPERIENCE CONTAINER METAPHOR
+
+Do not convert cup into literal fluid-system mechanics.
+
+### Textual control — Luke 22:43–44
+
+The angel-strengthening and sweat-like-blood verses have substantial textual-critical uncertainty.
+
+They are absent from important manuscripts and marked/questioned in others.
+
+Therefore:
+**do not use "sweat like blood" as stable physical evidence for a blood/plasma event.**
+
+---
+
+# JUDAS / PETER
+## paired disciple failure → two divergent trajectories
+
+Both:
+- belong to inner disciple group;
+- fail Jesus during Passion.
+
+Judas:
+- coordinates betrayal;
+- identifies Jesus with kiss in Synoptics;
+- in Matthew later regrets/returns silver;
+- dies.
+
+Peter:
+- promises loyalty;
+- follows at distance;
+- denies association three times;
+- rooster signal confirms prediction;
+- leaves/weeps;
+- later reappears in resurrection/community tradition.
+
+### M72P-13 — JUDAS / PETER FORM A REAL PARALLEL-DIVERGENCE PAIR
+
+Shared initial state:
+**disciple / insider**.
+
+Failure modes:
+- Judas = active handoff/betrayal.
+- Peter = defensive denial/disassociation.
+
+Later trajectories:
+diverge radically.
+
+### M72P-14 — SAME STARTING ROLE DOES NOT REQUIRE SAME SUCCESSOR STATE
+
+This is useful for pair analysis.
+
+Pairs may encode:
+**branching outcomes**,
+not merely opposed forces.
+
+---
+
+# ARREST
+## identification signal → target acquisition → custody transfer
+
+Judas gives an identification signal:
+- kiss in Synoptics.
+
+Then:
+- armed crowd seizes Jesus.
+
+This is mechanically clean:
+
+**information signal**
+→ **target identification**
+→ **physical control/capture**.
+
+### M72P-15 — SIGNAL AND MATERIAL TRANSFER ARE SEPARATE OPERATIONS
+
+Kiss:
+does not itself move Jesus.
+
+It:
+changes the arresting group's information state.
+
+Then:
+physical seizure occurs.
+
+This reinforces mature project rule:
+
+**signal**
+≠
+**aperture**
+≠
+**transfer**.
+
+### M72P-16 — ONE HUMAN CAN FUNCTION AS A GATEKEEPER/ROUTER WITHOUT BEING A GATE
+
+Judas:
+routes authority toward target.
+
+Not a physical boundary.
+
+---
+
+# ARREST VIOLENCE / EAR
+
+A disciple cuts the ear of the high priest's slave/servant in the Synoptic tradition.
+
+Luke uniquely narrates:
+Jesus heals the ear.
+
+### M72P-17 — DAMAGE AND RESTORATION CAN OCCUR WITHIN THE SAME CAPTURE EVENT
+
+Useful:
+event does not have one uniform destructive direction.
+
+---
+
+# CUSTODY / TRIAL NETWORK
+## one occupant routed through multiple authority nodes
+
+Passion tradition routes Jesus through combinations of:
+- high-priestly authorities;
+- council;
+- Pilate;
+- Herod in Luke;
+- back to Pilate;
+- soldiers;
+- execution site.
+
+### M72P-18 — THE PASSION TRIAL IS A MULTI-NODE CUSTODY/HANDOFF NETWORK
+
+Same occupant:
+**authority node A**
+→ **authority node B**
+→ **authority node C**.
+
+Custody changes.
+Identity does not.
+
+### M72P-19 — TRANSFER OF CONTROL CAN OCCUR WITHOUT TRANSFER OF PERSON'S ONTOLOGICAL STATE
+
+A useful ordinary control against overreading "handoff."
+
+---
+
+# JESUS / BARABBAS
+## two alternative prisoners; one released, one condemned
+
+All four canonical Gospels contain:
+- Barabbas;
+- Jesus;
+- choice/release sequence,
+though details differ.
+
+Matthew 27:16–17 has an important textual variant.
+
+Some manuscripts read:
+**Jesus Barabbas**.
+
+Others:
+**Barabbas** only.
+
+Some scholars argue the longer "Jesus Barabbas" reading may be original;
+external support is limited enough that the matter remains text-critically debated.
+
+### M72P-20 — IF THE LONGER READING IS ORIGINAL, MATTHEW PRESENTS A STRIKING SAME-NAME BINARY
+
+Potential pair:
+
+**Jesus Barabbas**
+vs
+**Jesus called Messiah**.
+
+One:
+released.
+
+One:
+condemned.
+
+This is an unusually sharp paired-role split.
+
+### M72P-21 — THE TEXTUAL VARIANT MUST REMAIN PART OF THE FINDING
+
+Do not write:
+"Barabbas was definitely named Jesus"
+as settled fact.
+
+Correct formulation:
+**some ancient witnesses preserve "Jesus Barabbas," and there is serious scholarly support for its originality, but the reading is disputed.**
+
+### M72P-22 — SAME/SIMILAR NAME CAN MASK OPPOSITE PROCESS OUTCOMES
+
+Pair analysis:
+identity-label similarity
+does not equal role identity.
+
+---
+
+# CRUCIFIXION
+## central execution body + right/left flanking bodies
+
+Jesus is crucified.
+
+The Synoptics place:
+- one condemned figure on one side;
+- another on the other.
+
+Matthew/Mark:
+both initially participate in mockery.
+
+Luke:
+differentiates:
+- one mocks/demands rescue;
+- one rebukes the first and asks remembrance.
+
+### M72P-23 — THE CRUCIFIXION CREATES AN EXPLICIT LEFT / CENTER / RIGHT HUMAN CONFIGURATION
+
+Geometry:
+
+**criminal**
+—
+**Jesus**
+—
+**criminal**
+
+This is source-level bilateral placement.
+
+### M72P-24 — LUKE TURNS THE BILATERAL GEOMETRY INTO BILATERAL ROLE POLARITY
+
+One side:
+rejection/mockery.
+
+Other side:
+recognition/request.
+
+Center:
+Jesus.
+
+This is a genuine:
+**negative / central / positive**
+three-position symbolic field.
+
+### M72P-25 — MATTHEW/MARK DO NOT SHARE LUKE'S POLARIZED THIEF ROLES
+
+This must remain Gospel-specific.
+
+Therefore:
+do not retroject Luke's polarity into all Passion traditions.
+
+---
+
+# CROSS AS AXIS / ROD TEST
+
+Secure:
+- Roman execution object;
+- Jesus fixed to it;
+- central position between two others in Gospel narrative.
+
+Not secure from Gospel text alone:
+- exact beam dimensions;
+- cosmic-axis function;
+- world-support role;
+- fingertrap origin.
+
+### M72P-26 — CROSS IS A REAL HUMAN-BEARING AXIAL OBJECT, BUT THE GOSPELS DO NOT IDENTIFY IT AS THE WORLD AXIS
+
+This is a **partial rod/axis analogue**.
+
+### M72P-27 — HUMAN BODY + EXECUTION WOOD FORM ONE VISIBLE COMPOSITE FIGURE
+
+That may help explain later:
+tree/cross/axis symbolic fusion.
+
+But source function remains:
+execution.
+
+---
+
+# DARKNESS
+## multi-hour environmental state change during central human event
+
+Synoptics:
+- darkness over land from about noon to about three.
+
+Luke:
+adds wording about sun's light failing/darkening depending translation/text.
+
+### M72P-28 — THE CENTRAL EXECUTION EVENT IS COUPLED LITERARILY TO A BROAD LIGHT-FIELD CHANGE
+
+This is important to Vardath comparisons.
+
+Sequence:
+**central body event**
+↔ **regional/cosmic darkness**.
+
+But:
+the Gospels do not provide a physical mechanism.
+
+Do not force:
+eclipse,
+plasma obscuration,
+canopy state,
+without external evidence.
+
+---
+
+# TEMPLE VEIL / CURTAIN TORN
+## boundary membrane ruptures from top to bottom
+
+All three Synoptics report temple curtain tearing.
+
+Matthew/Mark:
+from top to bottom.
+
+Interpretation is debated:
+- temple judgment/destruction;
+- access;
+- revelation;
+- divine departure;
+- Christological/cosmic symbolism.
+
+Ancient descriptions by Josephus associate the temple's curtain with richly symbolic cosmic imagery,
+but the exact curtain meant in the Gospel text is debated.
+
+### M72P-29 — THIS IS ONE OF THE STRONGEST BOUNDARY-MEMBRANE TRANSFORMATIONS IN THE GOSPELS
+
+Before:
+curtain intact
+→ separates spaces.
+
+Event:
+**top-to-bottom tear**.
+
+After:
+boundary continuity is broken.
+
+### M72P-30 — THE VEIL IS CLOSER TO A GATE-BOUNDARY THAN THE CROSS IS
+
+It is literally:
+a separating membrane
+whose state changes.
+
+### M72P-31 — BUT NO PERSON IS SAID TO PASS THROUGH THE TORN VEIL
+
+Therefore:
+
+**boundary rupture**
+≠
+**documented transit**.
+
+This is a partial gate analogue.
+
+### M72P-32 — IF THE CURTAIN'S COSMIC SYMBOLISM IS INCLUDED, THE IMAGE BECOMES HIGHLY RELEVANT TO SKY-VEIL / WORLD-BOUNDARY COMPARISON
+
+However:
+- which curtain?
+- what exact symbolism?
+- what Gospel author intended?
+
+remain debated.
+
+Therefore:
+**high-priority analogue, not proof**.
+
+---
+
+# MATTHEW 27:51–53
+## earthquake → rocks split → tombs open → bodies raised → occupants emerge later
+
+Matthew uniquely adds:
+
+At Jesus' death:
+- earth shakes;
+- rocks split;
+- tombs open;
+- bodies of holy ones raised.
+
+Then:
+**after Jesus' resurrection**
+they come out of tombs;
+enter holy city;
+appear to many.
+
+### M72P-33 — THIS IS A MAJOR MULTI-DOMAIN TRANSITION PACKAGE
+
+**central death**
+→ **darkness**
+→ **veil rupture**
+→ **earthquake**
+→ **rock fracture**
+→ **tomb boundary opening**
+→ **resurrection state**
+→ **later emergence**
+→ **city entry**.
+
+This is one of the strongest process chains in the Gospels.
+
+### M72P-34 — OPENING OF ENCLOSURE AND OCCUPANT EMERGENCE ARE AGAIN SEPARATE IN TIME
+
+This is crucial.
+
+At death:
+**tombs open**.
+
+After resurrection:
+**occupants come out**.
+
+Thus:
+
+**aperture available**
+≠
+**immediate transfer**.
+
+Cross-link:
+Lazarus:
+stone removed first,
+call then triggers emergence.
+
+### M72P-35 — BOUNDARY OPENING MAY PRECEDE ACTIVATION / RELEASE SIGNAL
+
+This is now a repeated Gospel pattern.
+
+Potential mature rule:
+
+1. enclosure boundary changes;
+2. occupant state changes;
+3. occupant exits;
+4. occupant enters receiving environment.
+
+### M72P-36 — MATTHEW'S OPENED-TOMBS SCENE IS GOSPEL-SPECIFIC AND HIGHLY THEOLOGICAL
+
+Modern scholarship debates:
+- historical status;
+- literary creation;
+- scriptural/apocalyptic background;
+- narrative purpose.
+
+Do not treat it as independent geological/archaeological evidence.
+
+---
+
+# ROCKS SPLIT / EARTHQUAKE
+## ground-support state changes during boundary rupture
+
+Matthew:
+- earth shakes;
+- rocks split.
+
+### M72P-37 — CENTRAL EVENT + GROUND DEFORMATION REPEATS THE AXIS/GROUND-RESPONSE GRAMMAR SEEN ELSEWHERE
+
+Cross-link:
+- Habakkuk 3;
+- Zechariah 14;
+- prophetic mountain/earthquake scenes.
+
+Still:
+Passion theology, not mechanical causal explanation.
+
+---
+
+# SPEAR / BLOOD / WATER — JOHN 19
+## body boundary pierced → two fluid outputs
+
+John uniquely says:
+- soldier pierces Jesus' side;
+- blood and water come out;
+- narrator/witness strongly emphasizes testimony.
+
+Scholarly interpretation includes:
+- theological symbolism;
+- sacramental readings;
+- life/source imagery;
+- attempts at medical explanation.
+
+Exact medical diagnosis cannot be securely recovered from the sparse description.
+
+### M72P-38 — THIS IS A CLEAN BODY-BOUNDARY BREACH→MULTI-FLUID OUTFLOW SEQUENCE
+
+**body enclosure**
+→ **puncture**
+→ **blood + water output**.
+
+This is mechanically simple and source-level.
+
+### M72P-39 — BLOOD AND WATER ARE DISTINCT CARGO/MEDIA LEAVING ONE SOURCE
+
+Potential Vardath comparison:
+one breached body/source
+→ multiple fluid classes.
+
+But:
+John's theological symbolism is primary to interpretation.
+
+### M72P-40 — DO NOT CLAIM A SPECIFIC MEDICAL OR PLASMA MECHANISM
+
+The data are insufficient.
+
+---
+
+# BURIAL / TOMB
+## body transferred from cross → wrapped → enclosed → stone closure
+
+Joseph of Arimathea:
+- receives body;
+- body wrapped;
+- placed in tomb;
+- stone closes entrance.
+
+Matthew uniquely continues:
+- guard;
+- seal on stone.
+
+### M72P-41 — TOMB IS A FULL ENCLOSURE SYSTEM
+
+Variables:
+- cargo = body;
+- chamber = tomb;
+- aperture = entrance;
+- movable barrier = stone;
+- seal = tamper/control state;
+- guard = external enforcement layer.
+
+### M72P-42 — MATTHEW BUILDS A TWO-LAYER BOUNDARY
+
+Physical:
+**stone**.
+
+Administrative/security:
+**seal + guard**.
+
+This is useful:
+boundaries can combine:
+- material;
+- informational/legal;
+- human enforcement.
+
+### M72P-43 — THE PASSION ENDS WITH OCCUPANT INSIDE A REINFORCED CLOSED ENCLOSURE
+
+This is deliberately the state from which Section 73 begins.
+
+---
+
+# JESUS / BARABBAS — DEEP PAIR TEST
+
+Potential longer Matthew reading:
+
+**Jesus Barabbas**
+↔
+**Jesus called Messiah**.
+
+Shared:
+- prisoner status before Pilate;
+- same/similar personal name if variant original;
+- crowd choice.
+
+Opposed outcomes:
+- release;
+- crucifixion.
+
+### M72P-44 — THIS IS ONE OF THE SHARPEST "SAME LABEL / OPPOSITE STATE" PAIRS IN THE PROJECT
+
+But because:
+text is variant,
+this must be classified:
+
+**high-interest textual pair**
+not
+**secure universal Gospel pair**.
+
+---
+
+# PETER / JUDAS — DEEP PAIR TEST
+
+Shared:
+- disciple;
+- predicted failure;
+- Passion-night action;
+- remorse/distress after failure.
+
+Different:
+- Judas actively identifies/hands over.
+- Peter verbally disowns/avoids identification.
+
+Matthew:
+Judas returns silver then dies.
+Peter:
+weeps.
+
+Later narrative tradition:
+Peter returns to community/leadership.
+
+### M72P-45 — SAME FAILURE FIELD CAN SPLIT INTO TERMINAL AND RESTORATIVE TRAJECTORIES
+
+This is likely more useful than treating Judas/Peter as simple good/evil opposites.
+
+---
+
+# TWO CRIMINALS — DEEP PAIR TEST
+
+Shared:
+- same execution method;
+- same physical proximity;
+- same boundary condition;
+- same central figure.
+
+Luke:
+- response polarity differs.
+
+### M72P-46 — SAME ENVIRONMENT / SAME HAZARD / SAME CENTRAL NODE DOES NOT FORCE SAME RESPONSE STATE
+
+This echoes:
+Daniel furnace;
+Meqabyan beasts;
+Matthew foundations.
+
+Local/agent state matters.
+
+---
+
+# VEIL AS GATE — STRICT TEST
+
+## boundary
+Very strong.
+
+## intact broad membrane
+Strong:
+curtain/veil separates spaces.
+
+## structural continuity
+Strong until tear.
+
+## geometry change
+Strong:
+top-to-bottom split.
+
+## narrow throat
+No.
+
+## transfer/contact through tear
+Not narrated.
+
+## reopening/reclosing
+Not narrated.
+
+### Verdict
+**Strong boundary-rupture analogue, not strict fingertrap.**
+
+---
+
+# CROSS AS AXIS — STRICT TEST
+
+## axial object
+Partial/strong at human scale.
+
+## central human figure
+Strong.
+
+## bilateral side figures
+Strong in Synoptic crucifixion geometry.
+
+## broad lattice origin
+Absent.
+
+## contraction
+Absent.
+
+## world transfer
+Absent.
+
+### Verdict
+**Axis/rod projection analogue only; not gate mechanics.**
+
+---
+
+# PASSION PROCESS TIMELINE
+
+royal procession approaches Jerusalem
+→ central temple reached
+→ temple exchange system disrupted
+→ fig-tree/temple judgment imagery paired
+→ upper-room enclosure prepared
+→ bread broken/distributed
+→ cup shared
+→ body/blood identity language established
+→ disciples go to Mount of Olives/Gethsemane
+→ Jesus separates from group
+→ repeated prayer/return cycles
+→ close disciples sleep
+→ Judas arrives with armed group
+→ kiss/identification signal
+→ target physically seized
+→ disciple violence / ear injury
+→ custody transferred through authority nodes
+→ Peter follows then denies three times
+→ Judas trajectory diverges
+→ Jesus / Barabbas choice
+→ one prisoner released
+→ Jesus handed to execution
+→ central crucifixion
+→ two figures flank right/left
+→ darkness covers land
+→ Jesus dies
+→ temple veil tears
+→ Matthew: earth shakes
+→ rocks split
+→ tombs open
+→ holy bodies raised
+→ later emergence waits until after resurrection
+→ John: side pierced
+→ blood/water leave body
+→ body removed from cross
+→ wrapped
+→ placed in tomb
+→ stone closes opening
+→ Matthew: stone sealed / guard stationed.
+
+---
+
+# MAJOR VARDATH FINDING 1
+## Body ↔ architecture identity is explicit in John
+
+John's narrator:
+**temple**
+=
+**Jesus' body** in the temple saying.
+
+### M72P-47 — THIS IS A HIGH-GRADE PROJECTION CONTROL
+
+Together with 4 Ezra woman→city:
+
+**human**
+↔
+**large structure**
+
+is directly licensed by ancient textual symbolism.
+
+This materially strengthens the methodology for testing:
+- Squatter-Man;
+- mountain-person;
+- tree-person;
+- cherub-machine
+as cross-scale projections.
+
+It still does not prove any particular equivalence.
+
+---
+
+# MAJOR VARDATH FINDING 2
+## boundary rupture can occur before occupant release
+
+Matthew's tombs:
+
+**open**
+then only later:
+**occupants emerge**.
+
+### M72P-48 — GATE OPENING AND TRANSFER ARE SEPARATE PHASES
+
+This now has multiple Gospel controls:
+- Lazarus tomb;
+- Matthew opened tombs;
+- timed doors in Section 72 supplemental.
+
+This should become a permanent project rule.
+
+---
+
+# MAJOR VARDATH FINDING 3
+## central axis + bilateral humans + environmental response occur together
+
+Crucifixion:
+- Jesus central;
+- one person right;
+- one left;
+- broad darkness;
+- veil rupture;
+- Matthew ground shaking.
+
+### M72P-49 — THE PASSION CREATES A STRONG VISUAL/PROCESS "CENTRE + TWO SIDES + FIELD RESPONSE" CONFIGURATION
+
+But:
+source function is execution + theology.
+
+Do not identify crucifixion itself with Squatter-Man apparatus.
+
+---
+
+# MAJOR VARDATH FINDING 4
+## veil rupture is a better gate analogue than cross geometry
+
+Cross:
+supports/executes body.
+
+Veil:
+actually separates domains/spaces
+and changes from intact to ruptured.
+
+### M72P-50 — IF LOOKING FOR THE PASSION'S BOUNDARY EVENT, PRIORITIZE THE VEIL OVER THE CROSS
+
+Still:
+no transit through veil is narrated.
+
+---
+
+# MAJOR VARDATH FINDING 5
+## body breach produces paired fluid outflow
+
+John:
+**side opening**
+→ **blood + water**.
+
+### M72P-51 — WATER/BLOOD OUTFLOW SHOULD BE LOGGED AS BODY-BOUNDARY FLUID RELEASE, NOT AS PROOF OF A COSMIC WATER GATE
+
+Important restraint.
+
+---
+
+# MAJOR VARDATH FINDING 6
+## reinforced enclosure creates the initial condition for resurrection section
+
+Tomb:
+- chamber;
+- stone;
+- seal;
+- guard.
+
+### M72P-52 — SECTION 72 ENDS IN MAXIMUM ENCLOSURE; SECTION 73 BEGINS WITH BOUNDARY REVERSAL
+
+This transition is structurally important.
+
+Passion:
+**open/public moving body**
+→ **fixed central cross**
+→ **dead body**
+→ **enclosed tomb**
+→ **sealed/guarded state**.
+
+Resurrection section will test:
+**seal/stone/closure**
+→ **opening**
+→ **empty chamber / appearances**
+→ **ascent**.
+
+---
+
+# Strict fingertrap test — actual Section 72
+
+Criteria:
+1. broad/open support;
+2. continuity;
+3. geometry/angle change;
+4. narrow throat/rod;
+5. transfer;
+6. reopening.
+
+## Cross
+- rod/axis: partial.
+- broad support origin: absent.
+- contraction: absent.
+- transfer: not through cross.
+**negative.**
+
+## Veil
+- broad membrane: yes.
+- continuity: yes until split.
+- geometry change: yes.
+- throat: no.
+- transfer: not described.
+- reopening: no.
+**strong boundary rupture; strict negative.**
+
+## Tomb
+- enclosure: yes.
+- aperture: yes.
+- closure: yes.
+- later opening belongs Section 73.
+- broad lattice: no.
+**strong enclosure/gate-state sequence; strict negative.**
+
+### Overall verdict
+
+**No strict fingertrap.**
+
+But Section 72 substantially advances:
+- body↔architecture projection;
+- central + bilateral geometry;
+- boundary rupture;
+- delayed emergence after opening;
+- multi-fluid release;
+- reinforced enclosure.
+
+---
+
+# Textual / historical controls
+
+1. The four canonical Passion narratives differ significantly and must not be flattened into one mechanically uniform report.
+2. Mark's Passion sequence is highly structured around evening, night, cockcrow and dawn.
+3. John's temple cleansing occurs early, unlike Synoptic placement near the Passion.
+4. John explicitly interprets "temple" as Jesus' body in John 2.
+5. Institution wording over bread/wine differs among Mark, Matthew, Luke and Pauline tradition.
+6. Luke 22:43–44 (angel + sweat like blood) is text-critically disputed and cannot be used as stable physical evidence.
+7. Judas/Peter are parallel failed disciples but not mirror-identical figures.
+8. The Barabbas release tradition appears in all four Gospels, but the Passover-release custom itself is historically debated.
+9. "Jesus Barabbas" in Matthew 27:16–17 is an ancient textual variant with serious scholarly support but limited external attestation; it must be presented as disputed.
+10. The exact shape/details of Roman crosses varied; Gospel text does not define a cosmic-axis geometry.
+11. Matthew/Mark and Luke portray the two crucified companions differently; Luke alone polarizes their responses.
+12. Darkness at the crucifixion is a theological/literary event marker; no physical mechanism is supplied.
+13. All three Synoptics report the temple curtain tearing, but its precise identity and meaning remain debated.
+14. Josephus gives cosmic symbolism to temple curtain imagery, which makes cosmic-boundary comparison historically relevant but not conclusive for Gospel authorial intent.
+15. Matthew's earthquake, split rocks and raised holy ones are Matthean-specific material.
+16. Matthew's tomb-opening/saints episode has substantial scholarly debate concerning literary origin and historical status.
+17. John alone gives the spear / blood-and-water detail.
+18. Medical explanations of John 19:34 remain underdetermined; theological symbolism is central in Johannine interpretation.
+19. Matthew uniquely emphasizes tomb seal/guard.
+20. Tomb sealing is the narrative boundary condition for the resurrection block; it should not be pre-emptively interpreted using Section 73 before that section is read.
+
+---
+
+# Sources logged — Section 72
+
+## Primary
+- Matthew 21:
+  https://www.biblegateway.com/passage/?search=Matthew+21&version=NRSVUE
+- Matthew 26–27:
+  https://www.biblegateway.com/passage/?search=Matthew+26-27&version=NRSVUE
+- Mark 11:
+  https://www.biblegateway.com/passage/?search=Mark+11&version=NRSVUE
+- Mark 14–15:
+  https://www.biblegateway.com/passage/?search=Mark+14-15&version=NRSVUE
+- Luke 19:
+  https://www.biblegateway.com/passage/?search=Luke+19&version=NRSVUE
+- Luke 22–23:
+  https://www.biblegateway.com/passage/?search=Luke+22-23&version=NRSVUE
+- John 2:
+  https://www.biblegateway.com/passage/?search=John+2&version=NRSVUE
+- John 18–19:
+  https://www.biblegateway.com/passage/?search=John+18-19&version=NRSVUE
+
+## Scholarly / textual controls
+- Working Preacher — Mark 14 Last Supper / Gethsemane / arrest:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/maundy-thursday-26-50-prayer-in-gethsemane-arrest/commentary-on-mark-1412-25
+- Working Preacher — Mark 14 bread/body, wine/blood:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/lords-supper-prayer-in-gethsemane-2/commentary-on-mark-1422-42-3
+- Cambridge HTR — Luke 22:43–44 textual problem:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/angel-and-the-sweat-like-drops-of-blood-lk-224344-69-and-f13/C7C4EFFF501AF7B164134B7BE3CB524E
+- Working Preacher — Matthew Passion / Judas / Peter:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/sunday-of-the-passion-palm-sunday/53132
+- Cambridge NTS — "Jesus Barabbas" textual variant:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/jesus-barabbas-a-nominal-messiah-text-and-history-in-matthew-271617/8611C1015C9CC7122E1A4FABDF7129B9
+- SBL — manuscript witnesses for "Jesus Barabbas":
+  https://www.sbl-site.org/wp-content/uploads/2024/11/Hull_NEWTEST.pdf
+- Working Preacher — Luke's two criminals:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/christ-the-king-3/commentary-on-luke-2333-43-4
+- Cambridge — The Torn Veil:
+  https://assets.cambridge.org/97805218/70641/excerpt/9780521870641_excerpt.htm
+- Cambridge HTR — Matthew 27:51 / veil:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/matthew-2751-in-early-christian-exegesis/7869A85EA789B264FF0E828FA1C3FF96
+- Cambridge NTS — Matthew 27:51–54:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/matt-27514-reconsidered-its-role-in-the-passion-narrative-meaning-and-origin/EC998FCBF4784C527592C346DDBD4CE2
+- Working Preacher — John 18–19 Passion:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/good-friday/commentary-on-john-181-1942-11
+- Working Preacher — John 19 blood/water:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/jesus-the-passover-lamb/commentary-on-john-1931-42-3
+- Cambridge SJT — blood/water historical/medical discussion:
+  https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/abs/incident-of-the-blood-and-water-in-john-1934/BB2AE69F9338A71F13454C5E8A5B2B78
+
+---
+
+# SECTION 72 — JERUSALEM / PASSION COMPLETE
+
+## Strongest new findings
+
+1. **The roadmap error was corrected: Jerusalem/Passion is the real Section 72; the teaching/parables material was retained as a supplemental pass rather than deleted or duplicated.**
+2. **John explicitly identifies Jesus' body with the temple, giving another source-level human-body↔architecture identity transformation comparable in methodological importance to 4 Ezra's woman↔city transformation.**
+3. **Mark's fig-tree/temple arrangement reinforces that one tree can project an institutional/sacred-system state rather than a literal world-tree mechanism.**
+4. **The Last Supper distributes one central body/blood referent across bread and wine shared among multiple recipients, a symbolic concentrated-source→distributed-carrier network.**
+5. **Gethsemane gives repeated centre↔group movement and repeated return/check cycles, but no gate geometry; the three close disciples remain separate observer/support agents.**
+6. **Luke's angel/sweat-like-blood scene is text-critically unstable and is explicitly excluded from physical blood/plasma argumentation.**
+7. **Judas and Peter form a strong branching pair: both insiders fail during the Passion, but betrayal/identification and denial/disassociation lead into radically different trajectories.**
+8. **Judas's kiss is an excellent signal/control example: information identifies the target first, then physical capture occurs. Signal and material transfer are separate operations.**
+9. **The trial narrative is a custody-routing network in which one unchanged occupant is handed among multiple authority nodes.**
+10. **Matthew's "Jesus Barabbas" variant creates a potentially striking same-name paired alternative—Jesus Barabbas versus Jesus called Messiah, release versus condemnation—but the reading remains disputed and is never treated as settled fact.**
+11. **The crucifixion creates an explicit left/centre/right human configuration with Jesus centrally flanked by two condemned figures.**
+12. **Luke alone turns the two flanking figures into a clear response polarity—one rejecting, one recognizing—while Matthew/Mark do not share that exact division.**
+13. **The cross is a genuine human-bearing axial/rod-like object, but the Gospel narratives do not identify it as a cosmic/world axis; it remains a partial axis analogue only.**
+14. **The crucifixion darkness couples a central human event to a broad environmental/light-state change, but no physical mechanism is supplied.**
+15. **The temple veil is mechanically more relevant to gate research than the cross: an intact separating membrane is torn from top to bottom, creating a boundary rupture.**
+16. **No transit through the torn veil is narrated, so veil tearing is a strong boundary-opening analogue but not a complete gate-transfer event.**
+17. **Because ancient temple-curtain traditions can carry cosmic symbolism, the veil is highly relevant to Vardath sky-boundary comparison, but curtain identity and authorial meaning remain contested.**
+18. **Matthew uniquely gives a powerful sequence: death → veil rupture → earthquake → rocks split → tombs open → bodies raised → only after Jesus' resurrection do occupants emerge and enter the city.**
+19. **This again proves that opening a boundary and transferring the occupant can be temporally separate phases.**
+20. **The opened-tombs scene therefore strengthens the mature rule: aperture state, occupant state, activation/release signal and actual transit must be tracked separately.**
+21. **John's spear scene gives a clean body-boundary breach→paired fluid outflow sequence: side pierced, blood and water emerge; theological meaning is strong and specific medical/plasma explanations remain underdetermined.**
+22. **The burial closes the Passion with one of the strongest reinforced-enclosure states in the Gospels: body inside tomb, stone at aperture, and in Matthew an additional seal and guard.**
+23. **Section 72 therefore ends in maximum enclosure, making the transition into Section 73 structurally sharp: sealed/guarded tomb → stone/boundary reversal → absence/appearance → ascent.**
+24. **No strict fingertrap appears. The Passion substantially advances cross-scale projection, boundary rupture, delayed emergence, bilateral human geometry and enclosure-state logic, but still does not supply broad woven support→contraction→throat→reopening continuity.**
+
+## Next live block
+
+**Section 73 — Resurrection / return / ascension**
+
+Required roadmap:
+- women at tomb;
+- stone moved;
+- angel(s);
+- appearances;
+- Emmaus pair;
+- Thomas;
+- fish meal;
+- ascension;
+- promised return.
+
+Priority pair tests:
+- descent / ascent;
+- death / resurrection as same-role state change;
+- two Emmaus disciples;
+- first / second coming.
+
+Required continuity tests:
+1. compare tomb closure from Section 72 with each Gospel's opening/empty-tomb state;
+2. distinguish who moves the stone, who observes it and whether Jesus is ever narrated passing through the opened aperture;
+3. track bodily continuity versus changed recognition/appearance;
+4. inspect "appearing/disappearing" without assuming teleportation;
+5. treat Luke/Acts ascension cloud as carrier/occlusion separately from the body;
+6. test "return in same way" language against Vardath recurrence without forcing identical physical route.
+
