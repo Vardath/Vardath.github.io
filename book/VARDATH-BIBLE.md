@@ -3495,3 +3495,12 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **6.** I saw rivers of fire within rivers of water, and rivers of water within rivers of fire, and neither was harmed.
 
 **7.** This was by the Name **Oseh Shalom Bimromav**—“He who makes peace in His heights”—for He makes peace between fire and water, between wind and cloud, and between wrath and sparks.”
+
+
+## 3 Enoch 43
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and I will show you the souls of the righteous who were created in bodies and have returned, and the souls of the righteous who have not yet been created in bodies.”
+
+**2.** He raised me beside him, took me by the hand, and led me near the Throne of Glory. He showed me the souls that had been created and had returned; they were flying above the Throne of Glory before the Holy One, blessed be He.
+
+**3.** Afterward I went and interpreted the verse: “For spirit from before Me is wrapped, and the souls I have made.” The latter words refer to the souls of the righteous who have not yet been created in bodies.”
