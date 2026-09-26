@@ -55285,3 +55285,1434 @@ Required protocol:
 - apply strict fingertrap test only after ordinary function is established;
 - do not use Horner material belonging to another Sinodos recension as though all witnesses were identical.
 
+
+
+---
+
+# SECTION 83 — TIZAZ / TEʾEZAZ / STATUTES OF THE APOSTLES
+## Direct Ethiopian broader-canon / Sinodos pass — apostolic distribution network, heavenly-pattern church order, bilateral presbyter array, initiation threshold sequence, west/east and left/right baptismal geometry, water→Spirit→new-body state transition, temporal prayer clocks, body↔doorpost protection analogy, sanctuary gatekeeping, feathered flabella negative control, hub→distributed ministry, sea bar-and-gate boundary, and open-heaven-gate vision
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- the actual Part 2 tail was verified.
+
+The file itself showed that Sections 68–82 had already been completed during prior continuation turns.
+
+The first unfinished roadmap block was therefore:
+
+**Section 83 — Tizaz / Teʾezaz / Statutes of the Apostles.**
+
+No earlier completed direct Section 83 pass was present.
+
+---
+
+# Text identity / numbering control
+
+Tizaz / Teʾezaz is one of the traditional component collections of the Ethiopic Sinodos.
+
+The Ethiopian broader-canon tradition commonly describes it as:
+**71 apostolic/ecclesiastical canons**.
+
+However:
+- some manuscripts/catalogues describe 72 orders/titles;
+- George W. Horner's 1904 printed translation contains duplicated/variant section numbering;
+- the modern Ertale transcription follows Horner sequentially and therefore displays **73 chapters**.
+
+This is a numbering/editorial issue.
+
+### M83-1 — 71 / 72 / 73 MUST NOT BE TURNED INTO COSMOLOGICAL NUMEROLOGY
+
+The secure textual unit is the Tizaz / Statutes collection.
+
+Numbering depends on:
+- witness;
+- title divisions;
+- Horner's printed sectioning.
+
+Therefore:
+never use "73" as a hidden Vardath number without naming the edition.
+
+---
+
+# Source-critical structure
+
+Modern church-order scholarship treats Tizaz as composite rather than as one document written in a single sitting by the historical apostles.
+
+A useful source-critical map is:
+
+## 1–20
+Ecclesiastical / moral canons and offices.
+
+## 21–47
+Material closely related to ancient church-order / Apostolic Tradition traditions:
+- ordination;
+- catechumens;
+- baptism;
+- Eucharist;
+- prayer;
+- fasting;
+- communal meals.
+
+## 48–51
+Grave / prayer / charismatic-gift material.
+
+## 52–71
+Material with strong Apostolic Constitutions / Didache-like parallels:
+- prophecy;
+- visiting teachers;
+- ministry;
+- initiation;
+- Sabbath / first day;
+- prayer times;
+- church order.
+
+The final Geʽez Tizaz is nevertheless one received Ethiopian unit.
+
+### M83-2 — SHARED FINAL COLLECTION DOES NOT MEAN EVERY CANON DESCRIBES ONE CONTINUOUS PHYSICAL SYSTEM
+
+This matters for Vardath mapping.
+
+Repeated:
+- gates;
+- water;
+- light;
+- hands;
+- order;
+- heaven/earth
+
+may come from different source layers and functions.
+
+---
+
+# TIZAZ 1
+## apostles gathered → earth divided among them → one order sent throughout world → church foundations patterned after heaven
+
+The opening presents the apostles together under Christ's command.
+
+They are told:
+- divide the earth among themselves;
+- each take a place according to number;
+- establish bishops, presbyters, deacons, readers, widows;
+- confirm foundations of the Church;
+- make a pattern of what is in heaven;
+- send the words into all the world.
+
+### M83-3 — THE COLLECTION OPENS WITH ONE CENTRE→MANY REGIONS DISTRIBUTION
+
+Process:
+
+**apostolic assembly**
+→ **shared instruction**
+→ **earth partitioned into mission fields**
+→ **mobile agents disperse**
+→ **same order reproduced in many places**.
+
+This is a clean information/culture replication system.
+
+### M83-4 — EARTHLY CHURCH ORDER IS EXPLICITLY A PATTERN OF HEAVENLY ORDER
+
+This is a true:
+**upper archetype ↔ lower institutional structure**
+mapping.
+
+It does not prove:
+one physical machine spans heaven and earth.
+
+---
+
+# TIZAZ 2–13
+## two places / two ways language, moral causation, deceptive signs rejected
+
+Chapter 2 speaks of:
+- two separate places;
+- one of life;
+- one of death;
+- separation between them.
+
+Chapters 3–13 then build ethical routes through:
+- neighbour-love;
+- nonviolence;
+- sexual restraint;
+- truthfulness;
+- humility;
+- almsgiving;
+- avoiding augury, stargazing, magical timing, omens and divination.
+
+### M83-5 — LIFE/DEATH "PLACES" HERE ARE MORAL-ESCHATOLOGICAL DESTINATIONS, NOT A PHYSICAL TWO-WORLD MAP
+
+Important source control.
+
+### M83-6 — TIZAZ ITSELF WARNS AGAINST READING STARS, TIMES, OMENS AND PRODIGIES AS AUTOMATIC INFORMATION
+
+This is valuable methodological discipline for the Vardath project.
+
+Pattern recognition must remain:
+- textually grounded;
+- source-controlled;
+- not omen-driven.
+
+---
+
+# TIZAZ 14
+# MAJOR BILATERAL OFFICE GEOMETRY
+## bishop/altar centre + 24 presbyters divided 12 right / 12 left with different functions
+
+The bishop is surrounded by a presbyteral model linked to twenty-four heavenly elders.
+
+The text explicitly states:
+- **12 on the right**;
+- **12 on the left**.
+
+Right-side presbyters:
+- assist at altar.
+
+Left-side presbyters:
+- attend/control/order of people.
+
+### M83-7 — THIS IS A TRUE 12+12 BILATERAL ARRAY AROUND A CENTRAL OFFICE/ALTAR SYSTEM
+
+Geometry:
+
+**12 RIGHT — central bishop/altar — 12 LEFT**
+
+But the two sides have:
+**different functions**.
+
+This strongly reinforces the project's rule:
+paired/bilateral structures need not carry identical forces.
+
+### M83-8 — RIGHT/LEFT FUNCTIONAL POLARITY IS INSTITUTIONAL, NOT A TWO-STRAND COSMIC BRAID
+
+No:
+- twist;
+- contraction;
+- opposed current;
+- gate throat.
+
+Do not overfit.
+
+---
+
+# TIZAZ 15–19
+## reader/deacon/widow/lay roles become distinct network nodes
+
+Reader:
+- information/public-reading role.
+
+Deacons:
+- service;
+- distribution;
+- teaching/questioning/reproving/consoling;
+- communication with bishop.
+
+Three widows:
+- two prayer-focused;
+- one sick-care/information liaison.
+
+Lay people:
+- defined work;
+- angelic analogy of not overstepping assigned order.
+
+### M83-9 — TIZAZ CONCEIVES COMMUNITY AS A DISTRIBUTED MULTI-ROLE NETWORK
+
+Different nodes:
+- do different work;
+- exchange information/resources;
+- coordinate around a central bishop/altar.
+
+This is highly relevant to:
+operator / carrier / node / observer distinctions.
+
+---
+
+# TIZAZ 20
+## Eucharistic object-state distinction
+
+Bread and wine:
+- ordinary materials;
+- then interpreted/handled as Body/Blood in ritual state.
+
+### M83-10 — SAME MATERIAL OBJECT CAN CHANGE SEMANTIC/RITUAL STATE WITHOUT CHANGING BASIC PHYSICAL CARRIER
+
+This belongs to the project's state-vs-carrier distinction.
+
+---
+
+# TIZAZ 22–24
+## ordination as directional authority transfer through hands
+
+Bishop ordination:
+- community selects;
+- bishops gather;
+- hands laid;
+- Holy Spirit invoked;
+- new bishop receives authority/functions.
+
+Presbyter:
+- bishop lays hand;
+- presbyters touch.
+
+Deacon:
+- bishop alone lays hand;
+- text explicitly explains this indicates different order/function.
+
+### M83-11 — LAYING-ON OF HANDS IS AN EXPLICIT SOURCE→RECEIVER AUTHORITY-TRANSFER RITUAL
+
+Variables:
+
+**authorized source**
+→ **contact by hand**
+→ **prayer/information-state transition**
+→ **new role permissions**.
+
+This is not literal energy-transfer proof.
+
+But it is excellent role/state grammar.
+
+### M83-12 — SAME CONTACT GESTURE HAS DIFFERENT MEANING DEPENDING ON ROLE AND PERMISSION
+
+Therefore:
+hand contact cannot be interpreted mechanically without institutional context.
+
+---
+
+# TIZAZ 25–27
+## confession, widow/virgin, reader/subdeacon, healing gift — charisma ≠ office
+
+A confessor may be honoured,
+but office still has rules.
+
+Reader:
+receives Scripture, not hand-laying.
+
+Virgin:
+state determined by commitment, not hand-laying.
+
+Healing/prophecy:
+must be verified by deeds;
+not automatically ordained.
+
+### M83-13 — GIFT / IDENTITY / OFFICE ARE SEPARATE VARIABLES
+
+This becomes a major control for visionary figures.
+
+Having a power/sign:
+does not make someone the operator of every system.
+
+---
+
+# TIZAZ 28–34
+## catechumen pathway = staged access-control architecture
+
+Candidate:
+- brought before teachers;
+- life/occupation examined;
+- may be accepted or rejected;
+- receives prolonged instruction;
+- prays separately;
+- cannot share full believer kiss/access;
+- receives hand-laying/instruction;
+- later receives final examination;
+- is set apart if not ready.
+
+### M83-14 — MEMBERSHIP IS A MULTI-STAGE STATE MACHINE
+
+Possible states:
+
+**outsider**
+→ **candidate**
+→ **catechumen**
+→ **examined candidate**
+→ **baptised believer**
+→ **full Mystery access**.
+
+This is one of the clearest semantic/access ladders in the corpus.
+
+### M83-15 — PHYSICAL PRESENCE DOES NOT EQUAL FULL ACCESS
+
+A catechumen can:
+- enter church;
+- hear instruction;
+- pray.
+
+But cannot:
+- share all rites;
+- pass every ritual boundary.
+
+Cross-link:
+Ezekiel holy/common;
+Revelation gate filtering.
+
+---
+
+# TIZAZ 35
+# MAJOR BAPTISMAL TRANSITION GEOMETRY
+## water source/tank + west/east orientation + left/right oils + immersion→emergence→anointing→church entry→Eucharist
+
+This is the richest process passage in the book.
+
+---
+
+# Phase 1 — water prepared
+
+At cock-crow:
+- prayer over water.
+
+Preferred water:
+- flowing into baptistery;
+- flowing down upon it.
+
+If water scarce:
+- water carried/drawn to tank.
+
+### M83-16 — WATER MEDIUM CAN BE NATURAL FLOW OR HUMAN-TRANSPORTED INPUT; FUNCTION IS PRESERVED
+
+This is useful:
+same ritual state does not require one hydrological source.
+
+---
+
+# Phase 2 — removal of ordinary markers
+
+Candidates:
+- remove clothes;
+- remove gold/rings/gems;
+- women loosen hair;
+- enter water without alien adornment.
+
+### M83-17 — THRESHOLD CROSSING IS PRECEDED BY STRIPPING OLD EXTERNAL STATE MARKERS
+
+This is a true:
+**pre-transition simplification**.
+
+---
+
+# Phase 3 — BILATERAL OIL GEOMETRY
+
+Two oils:
+- exorcised oil;
+- mystic oil.
+
+Two deacons:
+- one stands **LEFT** holding exorcised oil;
+- one stands **RIGHT** holding mystic oil.
+
+### M83-18 — TIZAZ 35 GIVES A TRUE LEFT/RIGHT RITUAL PAIR AROUND THE CENTRAL CANDIDATE
+
+Geometry:
+
+**LEFT: rejection/exorcised oil**
+→ **candidate**
+← **RIGHT: mystic/thanksgiving oil**
+
+The paired sides have:
+different phase functions.
+
+### M83-19 — THIS IS BILATERAL STATE-POLARITY, NOT TWO IDENTICAL STRANDS
+
+Left:
+old-state rejection.
+
+Right:
+new-state sanctification.
+
+This is highly relevant to the project's two-force comparison at the level of formal phase polarity.
+
+But it remains liturgical, not cosmophysical.
+
+---
+
+# Phase 4 — directional orientation
+
+The candidate is oriented in relation to:
+- west;
+- east;
+- outstretched hands;
+- renunciation/profession.
+
+The exact English syntax is awkward in Horner, but the directional opposition is real.
+
+### M83-20 — WEST/EAST BECOMES A RITUAL OLD-STATE/NEW-STATE AXIS
+
+The text makes bodily direction meaningful.
+
+Do not infer astronomical gate mechanics.
+
+---
+
+# Phase 5 — water + Spirit state change
+
+Prayer asks:
+- Holy Spirit sent upon water;
+- water changed/filled;
+- becomes water + Spirit for regeneration.
+
+Candidate:
+- enters;
+- is immersed three times;
+- declares faith.
+
+### M83-21 — ONE HUMAN CARRIER CROSSES A WATER BOUNDARY AND EMERGES IN A NEW ACCESS/IDENTITY STATE
+
+This is a true:
+**medium crossing → state transformation**.
+
+It is theological sacramental transformation,
+not transport to another physical world.
+
+---
+
+# Phase 6 — emergence + anointing + sealing
+
+After water:
+- candidate emerges;
+- anointed;
+- clothed;
+- enters church;
+- bishop lays hand;
+- forehead sealed.
+
+### M83-22 — THE PROCESS IS ORDERED:
+**strip → renounce → anoint → immerse → emerge → re-anoint → reclothe → enter → hand-lay → seal**
+
+This is a complete transition pipeline.
+
+---
+
+# Phase 7 — access opens after transition
+
+Only after baptism:
+- new members pray with full believers;
+- exchange salutation/kiss;
+- receive Eucharistic Body/Blood;
+- receive milk/honey.
+
+### M83-23 — BOUNDARY CROSSING CHANGES PERMISSIONS
+
+This is one of the strongest examples of:
+**state transition → access-control update**.
+
+---
+
+# TIZAZ 35 and body/cosmos comparison
+
+Baptismal prayer describes God as:
+- maker of heaven/earth/sea;
+- maker of human in divine likeness;
+- one who mingled immortal/mortal.
+
+### M83-24 — HUMAN BODY IS AGAIN DESCRIBED AS A COMPOSITE INTERFACE OF TWO STATES
+
+Here:
+**mortal + immortal**.
+
+Cross-link:
+Meqabyan elemental-body composition.
+
+---
+
+# TIZAZ 37–39
+## evening lamp / communal meal / distributed leftovers
+
+At evening:
+- lamp brought into midst of faithful;
+- transition from daylight to night commemorated;
+- prayers/psalms;
+- food distributed;
+- remnants/leavings can be sent to others.
+
+### M83-25 — LIGHT MARKS A TEMPORAL PHASE BOUNDARY
+
+**daylight**
+→ **evening lamp**
+→ **night**.
+
+Not cosmic reset.
+
+### M83-26 — CENTRAL GATHERING GENERATES DISTRIBUTED FOOD OUTPUT
+
+Again:
+hub → distribution.
+
+---
+
+# TIZAZ 40–43
+## second baptismal recension / healing-state materials / seasonal timing / care network
+
+The chapter numbering here reflects Horner's complicated section divisions.
+
+The baptismal material repeats:
+- candidate examination;
+- names;
+- bread/water/oil;
+- early-morning preparation;
+- west/east orientation;
+- water + Spirit;
+- transition into new status.
+
+### M83-27 — DUPLICATED/PARALLEL BAPTISMAL MATERIAL IS SOURCE-LAYER EVIDENCE, NOT TWO SEPARATE COSMIC EVENTS
+
+This is another warning against treating literary repetition as repeated historical catastrophe.
+
+---
+
+# TIZAZ 44 + 49 + 69
+# MAJOR TEMPORAL SYNCHRONIZATION SYSTEM
+## dawn / third / sixth / ninth / evening / sleep / midnight / cock-crow
+
+Prayer times are tied to:
+- dawn;
+- third hour;
+- sixth;
+- ninth;
+- evening;
+- sleep;
+- midnight;
+- cock-crow.
+
+These are linked to:
+- Passion events;
+- light/dark cycle;
+- resurrection expectation.
+
+Chapter 49 adds an extraordinary statement at midnight:
+- creation prays;
+- stars stand;
+- plants stand;
+- waters stand;
+- heavenly hosts/angels glorify God.
+
+### M83-28 — TIZAZ CREATES A DISTRIBUTED DAILY CLOCK THAT SYNCHRONIZES HUMAN COMMUNITY WITH COSMIC IMAGERY
+
+This is a ritual/commemorative clock.
+
+Not evidence that stars/plants/waters literally halt every midnight.
+
+### M83-29 — HOURLY RITUAL CLOCK ≠ VARDATH PHYSICAL GATE CLOCK
+
+Keep number/time layers separate.
+
+---
+
+# TIZAZ 49
+## forehead seal ↔ Passover lintel/doorpost seal
+
+The believer:
+- seals forehead with cross.
+
+The text explicitly compares this to:
+- Passover blood;
+- lintel;
+- doorposts.
+
+### M83-30 — HUMAN BODY BOUNDARY AND HOUSE THRESHOLD ARE MAPPED THROUGH THE SAME PROTECTIVE SIGN
+
+This is a major projection-grammar result:
+
+**forehead/body boundary**
+↔
+**doorpost/architectural boundary**.
+
+One protection function,
+two scales.
+
+### M83-31 — THIS SUPPORTS BODY↔ARCHITECTURE PROJECTION WITHOUT MAKING THE PERSON LITERALLY A BUILDING
+
+Cross-link:
+4 Ezra woman→city;
+Ezekiel/temple-body grammar.
+
+---
+
+# TIZAZ 45–46
+## Eucharistic admission and containment
+
+Mystery:
+- received under controlled conditions;
+- access restricted to believers;
+- cup/material must not spill;
+- fragments guarded.
+
+### M83-32 — SACRED MATERIAL HAS BOTH ACCESS PERMISSION AND CONTAINMENT RULES
+
+Again:
+**carrier**
++
+**boundary**
++
+**authorized receiver**.
+
+---
+
+# TIZAZ 47
+## daily central assembly → distributed work
+
+Presbyters/deacons:
+- assemble daily with bishop;
+- receive order/instruction;
+- teach in churches;
+- then return to individual work.
+
+### M83-33 — CLASSIC HUB-AND-SPOKE PROCESS
+
+**distributed agents**
+→ **central coordination**
+→ **information update**
+→ **redistribution to local work**.
+
+---
+
+# TIZAZ 48
+## grave as communal service node
+
+Burial/grave material concerns:
+- care for poor;
+- payment/support of diggers/guardians.
+
+### M83-34 — GRAVE HERE IS ORDINARY BURIAL INFRASTRUCTURE, NOT AN INTER-WORLD PORTAL
+
+Important negative control.
+
+---
+
+# TIZAZ 50–53
+## charismatic signs, serpents, miracles and prophecy explicitly decoupled from moral truth
+
+Chapter 50 recalls:
+- casting out demons;
+- tongues;
+- serpent handling;
+- poison;
+- healing;
+- rod becoming serpent;
+- river becoming blood.
+
+But it argues:
+signs do not confer superiority.
+
+Chapter 52 says:
+- prophecy does not prove righteousness;
+- exorcism does not prove holiness.
+
+Chapter 53:
+- prophets must be tested by life;
+- false prophecy is possible.
+
+### M83-35 — THE TEXT ITSELF EXPLICITLY REJECTS "PHENOMENON = TRUTH"
+
+This is one of the strongest methodological controls in the entire research project.
+
+A spectacular:
+- sign;
+- serpent;
+- fire;
+- prophecy;
+- miracle
+
+cannot by itself establish the interpretation.
+
+### M83-36 — ROD→SERPENT AND RIVER→BLOOD ARE CITED AS SIGNS, NOT AS MECHANICAL DESCRIPTIONS
+
+Do not treat them as direct engineering evidence without the source's own function.
+
+---
+
+# TIZAZ 54
+# MAJOR SANCTUARY / ACCESS ARCHITECTURE
+## bema + doors + men/women zones + closed gates + central altar + bilateral deacons + feathered flabella
+
+This chapter has the strongest explicit architectural access map in Tizaz.
+
+Sequence:
+- ordination;
+- readings;
+- deacon calls only Faithful to remain;
+- children positioned below bema;
+- deacons monitor men/women;
+- subdeacons stand at women's/men's doors;
+- doors/gates closed during Oblation;
+- catechumens/heretics excluded;
+- presbyters arranged by altar;
+- deacons stand on either side;
+- flabella/fans held near altar/cup.
+
+### M83-37 — THIS IS A TRUE MULTI-THRESHOLD ACCESS SYSTEM
+
+Zones include:
+- outside/non-admitted;
+- door;
+- believer assembly;
+- bema;
+- altar/sanctuary;
+- ministerial positions.
+
+### M83-38 — DOOR/GATE CLOSURE HERE IS PERMISSION CONTROL, NOT PHYSICAL COSMIC SEALING
+
+This is important.
+
+---
+
+# TIZAZ 54
+## feathered flabella negative control
+
+Deacons hold fans:
+- made of attractive material;
+- including peacock feathers;
+- to drive flying insects away from cup.
+
+### M83-39 — FEATHERED/WING-LIKE LITURGICAL OBJECTS CAN HAVE ENTIRELY PRACTICAL FUNCTION
+
+This is an excellent negative control for the cherub / Feathered Serpent / Quetzalcoatl work.
+
+Not every:
+- feather;
+- fan;
+- winged visual form
+
+is cosmic machinery.
+
+Function must be established.
+
+---
+
+# TIZAZ 55–60
+## office hierarchy as permission matrix; deaconesses as gatekeepers
+
+Different orders have specific allowed actions.
+
+Especially:
+- deaconess may keep gates of church;
+- assist in baptising women;
+- may not perform priest/deacon functions.
+
+### M83-40 — GATEKEEPER ≠ GATE ≠ OPERATOR
+
+This is now another explicit source-level distinction.
+
+Cross-link:
+Vardath operator/apparatus/guardian/witness taxonomy.
+
+---
+
+# TIZAZ 61–62
+## resource redistribution numbers
+
+Firstfruits/tithes:
+central collection → distribution.
+
+Remaining Eulogia:
+- bishop four parts;
+- presbyter three;
+- deacon two;
+- others one.
+
+### M83-41 — 4/3/2/1 IS AN INSTITUTIONAL DISTRIBUTION SCHEME, NOT HIDDEN COSMOLOGICAL ARITHMETIC
+
+Record,
+do not force.
+
+---
+
+# TIZAZ 63–65
+## repeated initiation screening = semantic gatekeeping
+
+Applicants:
+- examined;
+- testimony checked;
+- occupations evaluated;
+- harmful practices must stop;
+- acceptance/rejection follows.
+
+### M83-42 — THE COMMUNITY OPERATES A FILTERED GATE, NOT AN OPEN CHANNEL
+
+Entrance:
+conditional.
+
+This is analogous to:
+open-but-filtered successor gates in Revelation,
+but social/legal rather than physical.
+
+---
+
+# TIZAZ 67–69
+## weekly + annual + hourly clocks
+
+Chapter 67:
+- Sabbath;
+- first day;
+- creation rest;
+- resurrection day.
+
+Chapter 68:
+- Passion week;
+- Resurrection week;
+- Ascension;
+- Pentecost;
+- Nativity;
+- Epiphany;
+- apostles/martyrs.
+
+Chapter 69:
+- daily hour cycle.
+
+### M83-43 — TIZAZ BUILDS NESTED TEMPORAL SCALES
+
+**hours**
+inside
+**week**
+inside
+**annual feast cycle**.
+
+This is a ritual multi-scale clock.
+
+It is useful as a control when later sources give numerical cycles:
+not every nested clock is astronomical/mechanical.
+
+---
+
+# TIZAZ 70
+## place does not automatically sanctify people; people can sanctify or defile place
+
+The text explicitly says:
+- it is not the place which sanctifies the person;
+- the person sanctifies the place;
+- if church unavailable, prayer can occur in house;
+- if two or three gather, divine presence remains.
+
+### M83-44 — SACRED FUNCTION IS NOT INTRINSIC TO ONE PHYSICAL LOCATION
+
+This is extremely important for Vardath.
+
+A central place can be:
+- important;
+- structured;
+- ritually controlled;
+
+without being the causal physical machine.
+
+### M83-45 — NODE FUNCTION CAN MIGRATE WHEN THE ORIGINAL NODE BECOMES UNAVAILABLE
+
+Church unavailable:
+→ house or smaller gathering can carry prayer function.
+
+This resembles:
+functional redundancy / distributed fallback.
+
+---
+
+# TIZAZ 71
+## memorial time sequence after death
+
+Memorials:
+- third day;
+- seven days;
+- one month;
+- forty days;
+- half year;
+- year.
+
+### M83-46 — THESE ARE RITUAL MEMORY INTERVALS, NOT EVIDENCE OF A COSMIC RESET CYCLE
+
+Record as timing tradition only.
+
+---
+
+# TIZAZ 72
+# MAJOR BOUNDARY TEXT
+## sun/moon/stars/winds obey order; sea has ordinance, bar and gate, and cannot pass assigned limit
+
+The chapter argues each office should remain within assigned bounds by comparing human order with creation.
+
+Created systems named:
+- day;
+- night;
+- sun;
+- moon;
+- stars;
+- winds;
+- moon changes;
+- weeks;
+- hours.
+
+Then the sea:
+
+God placed:
+- an ordinance;
+- **a bar**;
+- **a gate**;
+
+and commanded:
+**thus far; do not pass beyond**.
+
+### M83-47 — THIS IS AN EXPLICIT SEA-BOUNDARY SYSTEM WITH BAR + GATE + MAXIMUM LIMIT
+
+This is highly relevant to:
+1 Meqabyan sea "bolts";
+Job sea doors;
+Genesis water boundaries;
+Vardath containment.
+
+### M83-48 — THE "GATE" HERE FUNCTIONS PRIMARILY AS CONTAINMENT, NOT TRANSIT
+
+This is crucial.
+
+Gate can mean:
+- boundary regulator;
+- stop;
+- limit.
+
+Not:
+- open passage.
+
+### M83-49 — NATURAL ORDER IS USED AS ANALOGY FOR ROLE/ACCESS ORDER
+
+Sea cannot exceed assigned limit;
+minister cannot exceed assigned office.
+
+Therefore:
+the cosmographic boundary language is serving an institutional teaching.
+
+It remains real imagery,
+but function must be kept.
+
+---
+
+# TIZAZ 73
+## separated ministries + seven deacons + Stephen sees open gates of heaven
+
+Final chapter:
+- bishops;
+- presbyters;
+- deacons;
+- distinct orders.
+
+It recalls:
+- seven deacons;
+- Stephen;
+- open gates of heaven.
+
+Stephen:
+- sees Christ/right hand;
+- sees heaven gates opened.
+
+### M83-50 — HEAVENLY GATE OPENING IS VISIONARY ACCESS, WHILE EARTHLY CHURCH GATES ARE INSTITUTIONAL ACCESS
+
+Same vocabulary:
+different function.
+
+Do not merge automatically.
+
+### M83-51 — SEVEN DEACONS FORM A REAL SEVEN-NODE MINISTRY ARRAY BUT MUST NOT BE FORCED INTO 1-3-7 NUMEROLOGY
+
+---
+
+# Cross-book synthesis — Tizaz contribution to Vardath Cosmology
+
+## 1. Strongest contribution = ACCESS / PERMISSION architecture
+
+Tizaz repeatedly separates:
+- outsider;
+- catechumen;
+- believer;
+- ordained role;
+- sanctuary worker;
+- bishop/presbyter/deacon;
+- male/female spatial zones;
+- doors open/closed;
+- full/partial ritual participation.
+
+### M83-52 — ACCESS IS A FIRST-CLASS SYSTEM VARIABLE
+
+This strongly reinforces the mature Vardath model:
+physical adjacency is not enough;
+permission/state can determine what passes.
+
+---
+
+# 2. Strong bilateral geometry appears, but institutionally
+
+Examples:
+- 12 presbyters right / 12 left;
+- two oils left/right at baptism;
+- deacons on both sides of altar;
+- men/women doors/zones.
+
+### M83-53 — BILATERALITY REPEATS ACROSS DIFFERENT FUNCTIONS
+
+But:
+- functions differ;
+- no evidence they are one physical two-strand apparatus.
+
+---
+
+# 3. Baptism is the clearest transition pipeline
+
+Tizaz 35:
+
+**old-state stripping**
+→ **renunciation**
+→ **left/right ritual media**
+→ **directional orientation**
+→ **water entry**
+→ **triple immersion**
+→ **emergence**
+→ **anointing**
+→ **new clothes**
+→ **church entry**
+→ **hand-laying**
+→ **forehead seal**
+→ **new communal access**
+→ **Eucharistic participation**.
+
+### M83-54 — THIS IS A TRUE THRESHOLD-STATE TRANSITION, BUT NOT A WORLD-GATE TRANSFER
+
+One body remains in same terrestrial place.
+
+Identity/access changes.
+
+---
+
+# 4. Body ↔ architecture projection receives another direct example
+
+Forehead seal:
+mapped to
+Passover lintel/doorpost blood.
+
+### M83-55 — BODY BOUNDARY AND HOUSE BOUNDARY CAN CARRY THE SAME SYMBOLIC FUNCTION
+
+This is highly important to:
+- Squatter-Man;
+- city/person;
+- mountain/person;
+- apparatus/person projection method.
+
+---
+
+# 5. Natural/cosmic order is repeatedly used as institutional analogy
+
+Especially chapter 72:
+- sun;
+- moon;
+- stars;
+- winds;
+- sea limit
+
+become models for:
+human office boundaries.
+
+### M83-56 — COSMIC LANGUAGE CAN BE USED TO EXPLAIN SOCIAL ORDER WITHOUT THE SOCIAL ORDER BEING A LITERAL COSMIC MACHINE
+
+This is one of the most important anti-overfitting lessons from Tizaz.
+
+---
+
+# 6. Sea boundary "bar + gate" adds to the containment family
+
+Cross-text:
+
+Job:
+sea doors/bounds.
+
+1 Meqabyan:
+sea bolted with sand.
+
+Tizaz:
+sea ordinance + bar + gate + "thus far."
+
+### M83-57 — BOUNDARY GATE CAN BE CLOSED/CONTAINING BY DEFAULT
+
+This strengthens the model distinction:
+
+**gate as containment regulator**
+versus
+**gate as passage aperture**.
+
+---
+
+# 7. Feathered imagery gets a strong negative control
+
+Tizaz 54:
+peacock-feather flabella.
+
+Function:
+keep insects away from Eucharistic cup.
+
+### M83-58 — FEATHERS CAN BE PURELY PRACTICAL MATERIAL AND MUST NOT BE AUTOMATICALLY ASSIGNED TO FEATHERED-SERPENT/COSMIC PHENOMENON
+
+Very important for methodology.
+
+---
+
+# 8. Tizaz adds almost nothing to strict fingertrap mechanics
+
+There are:
+- doors;
+- gates;
+- boundaries;
+- bilateral positions;
+- water;
+- central altar;
+- distributed network.
+
+But no:
+- broad woven support;
+- same strands;
+- angle change;
+- contraction;
+- narrow throat formation;
+- reopening of same structure.
+
+### Strict verdict
+
+**Strict fingertrap test: NEGATIVE.**
+
+Tizaz contributes:
+- access control;
+- state transitions;
+- bilateral role geometry;
+- containment gates;
+- body/architecture projection;
+- nested clocks.
+
+It does not supply the missing mechanical bridge.
+
+---
+
+# Cherub / Quetzalcoatl / Feathered Serpent / Squatter-Man update
+
+Tizaz contains no important cherub/dragon/Feathered-Serpent morphology.
+
+Its strongest relevance is indirect:
+
+1. body ↔ doorpost projection;
+2. left/right role asymmetry;
+3. practical feathered flabella negative control;
+4. signs/serpents/miracles do not automatically prove truth;
+5. gatekeeper/gate/operator distinctions;
+6. heavenly pattern ↔ earthly institutional pattern.
+
+### M83-59 — TIZAZ STRENGTHENS THE METHOD MORE THAN THE MORPHOLOGY
+
+It teaches us not to collapse:
+- wing shape;
+- gate word;
+- miracle;
+- sign;
+- role;
+- structure
+
+into one phenomenon without matching process.
+
+---
+
+# Full Tizaz process map
+
+apostles assemble
+→ earth divided into mission fields
+→ one order sent throughout world
+→ church patterned after heaven
+→ life/death ethical routes defined
+→ omen/divination reading rejected
+→ bishop/altar centre established
+→ 24 presbyters arranged 12 right / 12 left
+→ multiple offices distributed
+→ authority passed through role-specific hand-laying
+→ gifts distinguished from offices
+→ candidates screened
+→ catechumens occupy partial-access state
+→ full baptism candidates selected
+→ old adornment removed
+→ candidate enters directional west/east ritual axis
+→ left/right oils define old/new phase functions
+→ water is prayed over
+→ candidate immersed three times
+→ candidate emerges
+→ anointed/reclothed
+→ enters full church assembly
+→ receives hand/seal
+→ permissions change
+→ Eucharist received
+→ evening lamp marks day/night transition
+→ daily prayer cycle established
+→ third/sixth/ninth/evening/midnight/cock-crow synchronization
+→ forehead seal mapped to house lintel/doorpost
+→ sacred material contained and restricted
+→ ministers reconvene daily at central bishop node
+→ redistribute into local work
+→ charismatic signs tested rather than trusted automatically
+→ sanctuary spatial zones/doors controlled
+→ catechumens excluded during Mystery
+→ deacons stand either side
+→ feathered flabella protect cup
+→ offices maintain differentiated permissions
+→ firstfruits/material resources redistributed
+→ weekly/annual/hourly clocks nest
+→ sacred function can migrate from church to house if required
+→ memorial intervals organize death remembrance
+→ natural creation becomes role-order analogy
+→ sea defined by bar + gate + limit
+→ final ministry order reaffirmed
+→ Stephen's visionary open heaven gates contrasted with earthly institutional gates.
+
+---
+
+# Number / timing register
+
+Record but do not force:
+
+- 24 presbyters:
+  - 12 right;
+  - 12 left.
+- three widows in early office model.
+- three-year catechumen period, with conduct able to shorten.
+- triple baptismal immersion.
+- two oils:
+  - left;
+  - right.
+- daily prayer:
+  - dawn;
+  - third;
+  - sixth;
+  - ninth;
+  - evening;
+  - bedtime;
+  - midnight;
+  - cock-crow.
+- Eulogia share scheme:
+  - bishop 4;
+  - presbyter 3;
+  - deacon 2;
+  - others 1.
+- memorial:
+  - day 3;
+  - day 7;
+  - month;
+  - day 40;
+  - half-year;
+  - year.
+- seven deacons.
+- work identity:
+  - 71 canons traditionally;
+  - 72 in some witnesses;
+  - 73 sequential chapters in modern Horner-derived web display.
+
+### M83-60 — TIZAZ IS AN ESPECIALLY STRONG WARNING THAT NUMERICAL STRUCTURE CAN COME FROM EDITORIAL DIVISION, RITUAL SCHEDULING OR INSTITUTIONAL ALLOCATION
+
+---
+
+# Textual / historical controls
+
+1. Tizaz is a component of the Ethiopic Sinodos.
+2. Traditional identity is 71 canons; 72-title/order witnesses exist.
+3. Horner's printed sectioning can yield a modern sequential 73-chapter display.
+4. Tizaz is composite and pseudo-apostolic in modern source criticism.
+5. Apostolic attribution is literary authority, not proof that the historical Twelve wrote the final Geʽez collection together.
+6. Canons 21–47 preserve material related to ancient Apostolic Tradition / church-order strata.
+7. Later canons preserve Apostolic Constitutions / Didache-like parallels.
+8. Parallel material does not prove one simple line of dependence.
+9. Chapter 14's 12+12 arrangement is ecclesiastical/heavenly analogy, not evidence of two cosmic currents.
+10. Chapter 35's west/east and left/right baptismal pattern is ritual state grammar.
+11. Baptismal water/Spirit language is sacramental theology, not physical inter-world transfer.
+12. Chapter 49's stars/plants/waters standing at midnight belongs to ritual/cosmic prayer imagery and should not be asserted as observational astronomy.
+13. Chapter 49's forehead ↔ lintel/doorpost relation is explicit symbolic scale mapping.
+14. Chapter 50's rod→serpent and river→blood references are examples of signs; the canon itself warns against boasting in signs.
+15. Chapters 52–53 explicitly reject prophecy/miracle as automatic evidence of righteousness.
+16. Chapter 54 gives detailed sanctuary access architecture.
+17. Peacock-feather flabella in chapter 54 have a practical insect-control function.
+18. Deaconesses/gatekeepers in chapter 60 are institutional operators, not cosmic guardians.
+19. Chapter 70 explicitly says place alone does not sanctify the person.
+20. Chapter 72 explicitly gives the sea an ordinance, bar and gate limiting its extent.
+21. The sea gate is containment language in context.
+22. Chapter 73's open gates of heaven belong to Stephen's visionary scene.
+23. No strict fingertrap mechanism appears.
+
+---
+
+# Sources logged — Tizaz / Teʾezaz
+
+## Primary translation
+- George W. Horner, The Statutes of the Apostles or Canones Ecclesiastici, London, 1904:
+  https://archive.org/details/statutesapostle00unkngoog
+
+## Complete Horner-derived English web transcription
+- Tizaz index:
+  https://bible.ertale.com/ethiopiancanon/teezaz/
+- Chapters 1–73:
+  https://bible.ertale.com/ethiopiancanon/teezaz/1/
+  through
+  https://bible.ertale.com/ethiopiancanon/teezaz/73/
+
+## Ethiopic image / edition orientation
+- Tel Aviv University Teʾezaz notes:
+  https://www.tau.ac.il/~hacohen/Tezaz/Information.html
+
+## Canon / identity control
+- Roger Cowley, Ethiopian Orthodox canon overview:
+  https://www.islamic-awareness.org/bible/text/canon/ethiopican
+
+## Modern source-critical orientation
+- Tizaz study guide:
+  https://elroidigital.org/book-of-tizaz-study-guide.html
+
+---
+
+# SECTION 83 — TIZAZ / TEʾEZAZ / STATUTES OF THE APOSTLES COMPLETE
+
+## Strongest new findings
+
+1. **The archive had already advanced through Section 82; Section 83 was the correct live frontier and no earlier block was repeated.**
+2. **Tizaz is traditionally the 71-canons Statutes of the Apostles; 72-order/title witnesses and Horner-derived 73-chapter sequencing are editorial/witness differences, not cosmological numbers.**
+3. **The opening creates a one-centre→many-regions information network: apostles assemble, divide the earth into mission fields, and replicate one church order across the world.**
+4. **Earthly church structure is explicitly said to pattern heavenly order, providing a true upper-archetype/lower-structure analogy without proving a physical heaven-earth machine.**
+5. **Chapter 14 gives a genuine bilateral array: 24 presbyters split 12 right / 12 left around bishop/altar, with different functions on each side.**
+6. **That bilateral geometry is real but institutional; it does not contain braid, current, contraction or throat mechanics.**
+7. **Ordination shows source→receiver authority/state transfer through hand contact, but the same gesture has different permissions for bishop, presbyter, deacon and other roles.**
+8. **Tizaz strongly separates gift, office, carrier and operator: prophecy/healing/confession do not automatically confer institutional authority.**
+9. **The catechumen sequence is one of the clearest access-state machines found so far: outsider → candidate → catechumen → examined candidate → baptised believer → full Mystery access.**
+10. **Physical presence and full access are explicitly different: catechumens can enter and learn but remain excluded from some prayers, kiss and Eucharistic participation.**
+11. **Chapter 35 gives a complete threshold-transition pipeline: remove old adornment → directional renunciation/profession → left/right oils → water immersion → emergence → anointing → new clothing → church entry → hand-laying → forehead sealing → changed communal permissions.**
+12. **Two deacons stand on opposite sides with different oils: left = exorcised/old-state rejection; right = mystic/new-state sanctification. This is a real bilateral state-polarity pattern, but liturgical rather than cosmophysical.**
+13. **Baptism therefore provides a true medium-crossing→identity/access-state change, but the same person remains in the same terrestrial world; it is not inter-world transport.**
+14. **Chapter 49 creates a major body/architecture projection: the protective forehead seal is explicitly compared to Passover blood on lintel and doorposts. Human boundary and house boundary carry the same protective function at different scales.**
+15. **The daily prayer system synchronizes dawn, third, sixth, ninth, evening, midnight and cock-crow with Passion/light-cycle imagery, while week and annual feast cycles create larger nested clocks. These are ritual clocks, not gate-cycle measurements.**
+16. **At midnight the text says stars, plants, waters and heavenly hosts stand/pray; this is important cosmic liturgical imagery but not observational evidence of a physical nightly halt.**
+17. **Chapter 54 gives a true multi-threshold sanctuary access map: bema, men/women zones, guarded doors, closed gates, altar, ministerial positions and restricted Eucharistic access.**
+18. **The peacock-feather flabella in that chapter are a valuable negative control: feathered forms can be practical insect-control fans and must not automatically enter the Feathered-Serpent/cherub phenomenon family.**
+19. **Deaconesses keeping church gates gives another explicit gatekeeper ≠ gate ≠ operator distinction.**
+20. **Chapters 50–53 are methodologically crucial because the text explicitly says prophecy, exorcism and spectacular signs do not prove righteousness or truth. "Phenomenon = interpretation" is rejected by the source itself.**
+21. **Chapter 70 states that place itself does not sanctify the person and allows sacred gathering function to migrate from church to house when necessary, providing a strong control against identifying every sacred node as a physical machine.**
+22. **Chapter 72 is the strongest cosmographic result: the sea is assigned an ordinance, a bar and a gate, with the command "thus far" and no farther.**
+23. **That sea gate is a containment/regulation boundary, not a transit aperture, strengthening the distinction between gate-as-limit and gate-as-passage.**
+24. **This connects directly with the earlier sea-boundary family: Job's sea doors, 1 Meqabyan's sand bolts, and now Tizaz's bar + gate.**
+25. **Chapter 73 contrasts ordinary institutional ministry boundaries with Stephen's visionary open gates of heaven, again showing the same gate word can serve very different functions.**
+26. **Tizaz contributes little direct cherub/Quetzalcoatl/Feathered-Serpent morphology. Its major value is methodological: access control, bilateral role geometry, body↔architecture projection, containment gates, nested clocks, and strict distinction among sign, operator, carrier and permission.**
+27. **Strict fingertrap test remains negative: no broad woven support is shown contracting into a throat and reopening.**
+28. **The physical cross-text chain therefore remains: 1/3 Meqabyan = broad wind-supported covering; 4 Ezra 7 = narrow static throat; Zechariah 14 = opening/passage/bilateral outflow; Tizaz adds containment-gate and permission-state logic but not the missing mechanical transformation.**
+
+## Next live block
+
+**Section 84 — Gitsew / Gessew**
+
+Required protocol:
+- re-check all three archives and actual Part 2 tail first;
+- establish exact Gitsew/Gessew identity and witness;
+- keep it distinct from Tizaz and Abtilis;
+- use the Ethiopic Apostolic Canons / relevant printed Geʽez translation traditions where verifiable;
+- preserve 56/57 numbering differences;
+- read the whole unit before mapping;
+- prioritize:
+  - ordination numbers;
+  - altar/offering rules;
+  - doors/admission/excommunication;
+  - resurrection/afterlife references;
+  - baptism and Eucharist;
+  - Passover/calendar timing;
+  - bishops/presbyters/deacons;
+  - any explicit heaven/earth, sea, water, fire, wind, light, wings, serpents, rods or gates;
+- distinguish ecclesiastical boundary rules from cosmic boundaries;
+- apply strict fingertrap test only after ordinary legal/liturgical function is established;
+- append only verifiable material and verify tail after append.
+
