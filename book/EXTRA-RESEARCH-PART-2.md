@@ -34348,3 +34348,1676 @@ Priority tests:
 - whether transfiguration links human→light/body transformation with cloud/voice/mountain and paired predecessor figures;
 - strict fingertrap test only after ordinary narrative function.
 
+
+
+---
+
+# SECTION 71 — MIRACLES AND BOUNDARY EPISODES
+## Direct Gospel pass — water transformation, sea/wind command, water-supported body, concentrated→distributed food, living-water symbolism, touch/cleaning/opening, host transfer, paired twelve-year female restoration, tomb aperture→call→emergence→unbinding, and mountain/light/cloud Moses–Elijah–Jesus triad
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+No completed Section 71 existed.
+
+The verified frontier was:
+
+**Section 71 — Miracles and boundary episodes**
+
+Required scope:
+- water→wine;
+- storms calmed;
+- walking on water;
+- fish/catches;
+- feedings;
+- wells/living water;
+- healings;
+- demons entering/leaving bodies;
+- Jairus/daughter;
+- Lazarus;
+- tomb/cave;
+- transfiguration mountain;
+- Moses/Elijah/Jesus triad.
+
+This section is appended only to Part 2.
+
+---
+
+# Method control
+
+The Gospel miracle stories are first:
+- theological narratives;
+- signs of divine authority/identity;
+- healing/restoration stories;
+- scriptural/theophanic allusions;
+- social and ritual reintegration stories.
+
+They are not engineering reports.
+
+This pass therefore separates:
+
+1. **what physically/narratively happens in the story**;
+2. **what the evangelist explicitly interprets it to mean**;
+3. **ordinary scholarly/literary explanation**;
+4. **Vardath structural comparison**.
+
+No miracle is treated as proof of Vardath mechanics.
+
+---
+
+# JOHN 2 — WATER → WINE AT CANA
+## six stone purification jars → filled to brim → contents drawn → water state has become wine
+
+The narrative gives:
+- wedding;
+- wine shortage;
+- **six stone water jars**;
+- jars associated with Jewish purification;
+- each large-capacity;
+- servants fill jars with **water to the brim**;
+- servants draw from them;
+- steward tastes what had become **wine**;
+- servants know the source route;
+- sign reveals glory and contributes to disciples' belief.
+
+### M71-1 — THE CONTAINERS REMAIN; THE CONTENT STATE CHANGES
+
+This is important.
+
+The story does **not** describe:
+- jars becoming something else;
+- jars opening into another world;
+- external wine flowing through a visible gate.
+
+Narrative mechanics:
+
+**same container**
++
+**same filled volume/source location**
+→
+**different material state/content identity**.
+
+For Vardath:
+this is a clean control distinguishing:
+**state transformation**
+from
+**boundary transfer**.
+
+### M71-2 — WATER→WINE IS NOT A GATE EVENT
+
+No:
+- aperture;
+- transit;
+- throat;
+- outside donor reservoir
+is described.
+
+Classify:
+**material/sign transformation**.
+
+### M71-3 — PURIFICATION WATER BECOMING WINE ADDS A FUNCTIONAL/SYMBOLIC STATE CHANGE
+
+Scholarly readings often connect:
+- purification;
+- messianic abundance;
+- wedding imagery;
+- Jesus' "hour";
+- glory/sign.
+
+Therefore:
+the medium's changed function matters as much as changed substance.
+
+### Number control
+
+Six jars are explicit.
+
+Do not force:
+6 into Vardath/JANUS geometry.
+
+---
+
+# JOHN 4 — WELL / LIVING WATER
+## physical well/deep water → conceptual living water → internal spring
+
+At Jacob's well:
+- Samaritan woman comes to draw;
+- well is physically deep;
+- Jesus lacks ordinary drawing equipment;
+- woman understands literal well-water;
+- Jesus speaks of "living water";
+- then of water becoming **a spring/well within the person**, rising/gushing toward eternal life.
+
+### M71-4 — JOHN DELIBERATELY MOVES ONE WATER IMAGE ACROSS PHYSICAL→INTERNAL→THEOLOGICAL STATES
+
+Sequence:
+
+**external well**
+→ **drawn physical water**
+→ **"living water"**
+→ **internal spring**
+→ **life**.
+
+This is major source control.
+
+### M71-5 — WATER LANGUAGE CAN REPRESENT AN INTERNAL INFORMATION/LIFE STATE WITHOUT LITERAL HYDROLOGY
+
+Cross-link:
+- 4 Ezra knowledge river;
+- Meqabyan resurrection dew;
+- Zechariah living waters.
+
+Do not assume every "living water" passage is physical transfer.
+
+### M71-6 — THE WELL IS A TRUE VERTICAL ACCESS STRUCTURE, BUT ORDINARY WATER ACCESS
+
+Well:
+- depth;
+- mouth/opening;
+- water below;
+- vessel needed to draw.
+
+This is real throat-like geometry,
+but ordinary infrastructure.
+
+Useful anti-overfitting control.
+
+---
+
+# JOHN 7 — RIVERS OF LIVING WATER / SPIRIT INTERPRETATION
+
+John explicitly interprets:
+"rivers of living water"
+in relation to:
+**the Spirit**.
+
+### M71-7 — THE GOSPEL ITSELF DECODES WATER-FLOW LANGUAGE AS SPIRITUAL AGENCY
+
+This is one of the strongest warnings against literalizing every river/current.
+
+The text can say:
+**water/rivers**
+while meaning:
+**Spirit/life**.
+
+---
+
+# STORM CALMING — MARK 4 / MATTHEW 8 / LUKE 8
+## cross-sea route → windstorm → waves enter boat → command/rebuke → wind/sea calm → route continues
+
+Mark's sequence is especially useful:
+
+- Jesus says cross to **the other side**;
+- boat leaves shore;
+- great windstorm arises;
+- waves strike/enter boat;
+- boat approaches swamping;
+- Jesus sleeps in stern;
+- disciples wake him;
+- Jesus **rebukes wind**;
+- addresses sea to be silent/still;
+- wind ceases;
+- great calm follows.
+
+Matthew and Luke preserve the core:
+storm/seas → intervention → calm,
+with narrative differences.
+
+### M71-8 — THIS IS A COMPLETE ROUTE-HAZARD→FIELD-STATE CHANGE SEQUENCE
+
+**origin shore**
+→ **crossing**
+→ **wind activation**
+→ **water surface destabilization**
+→ **carrier threatened**
+→ **command**
+→ **wind stops**
+→ **sea state changes**
+→ **crossing resumes/completes**.
+
+This is useful.
+
+### M71-9 — WIND AND WATER ARE DISTINCT VARIABLES THAT CHANGE TOGETHER
+
+The story distinguishes:
+- wind;
+- waves/sea.
+
+This resembles Vardath's insistence that:
+atmosphere/current and water response should be tracked separately.
+
+### M71-10 — MARK USES EXORCISTIC COMMAND VOCABULARY AROUND THE SEA
+
+Scholars note Mark's rebuke/silencing language resembles commands to unclean spirits.
+
+Some recent interpretation reads Mark's lake sequence as divine mastery over hostile/demonic waters.
+
+However:
+this remains literary/theological analysis,
+not proof that the storm literally is a demon.
+
+### M71-11 — WATER IS A BOUNDARY/ROUTE MEDIUM BETWEEN SHORES
+
+The sea separates:
+- one shore;
+- another shore.
+
+Boat is carrier.
+
+Storm changes route difficulty,
+not destination identity.
+
+### M71-12 — THE BOAT, NOT THE SEA, IS THE HUMAN CARRIER
+
+Important variable separation.
+
+---
+
+# GERASENE / GERGENESENE POSSESSION — MARK 5 / MATTHEW 8 / LUKE 8
+## tomb-dwelling human host → spirits named/grouped → exit → enter pigs → herd moves into sea
+
+Mark/Luke give especially clear process:
+
+- afflicted man inhabits tomb region;
+- unclean spirit(s) occupy man;
+- external restraints fail;
+- Jesus commands spirit(s) out;
+- collective identifies as "Legion";
+- spirits request another host;
+- Jesus permits;
+- spirits **leave man**;
+- spirits **enter pigs**;
+- herd rushes into sea;
+- pigs drown;
+- former human host is found clothed and restored.
+
+### M71-13 — THIS IS THE CLEANEST HOST/OCCUPANT TRANSFER STORY FOUND SO FAR
+
+Narrative variables:
+
+**occupant** = unclean spirits;
+**host A** = human body;
+**exit event** = exorcism;
+**host B** = pig bodies;
+**destination medium** = sea;
+**host A end state** = restored;
+**host B end state** = destroyed/drowned.
+
+### M71-14 — HOST AND OCCUPANT ARE EXPLICITLY NOT THE SAME THING
+
+The spirits can:
+- leave one body;
+- enter another.
+
+This is crucial to:
+- carrier;
+- cargo;
+- occupant;
+- body
+taxonomy.
+
+### M71-15 — ONE OCCUPANT-GROUP CAN DISTRIBUTE INTO MANY HOSTS
+
+"Legion":
+one collective designation.
+
+Then:
+many pigs.
+
+So:
+**concentrated/grouped occupancy**
+→ **distributed multi-host occupancy**.
+
+This is a real one→many host transition.
+
+### M71-16 — TRANSFER DOES NOT PRESERVE DESTINATION HOST STABILITY
+
+Host transfer can be:
+destructive.
+
+Cross-link:
+Nahum gate opening can drain/destabilize.
+
+### M71-17 — TOMB SETTING ADDS DEATH/BOUNDARY GEOGRAPHY BUT IS NOT THE EXORCISM GATE
+
+Do not merge:
+- tomb;
+- body;
+- spirit exit;
+- sea.
+
+They are separate layers.
+
+---
+
+# UNCLEAN SPIRIT AS "HOUSE" — MATTHEW 12 / LUKE 11
+
+The returning-spirit saying compares a person to a:
+**house**.
+
+Spirit:
+- leaves;
+- wanders;
+- returns;
+- finds house empty/ordered;
+- brings others;
+- re-enters.
+
+### M71-18 — HUMAN BODY/PERSON CAN BE PROJECTED AS ARCHITECTURAL ENCLOSURE FOR AN OCCUPANT
+
+This is major.
+
+**person**
+=
+**house/host space**.
+
+Cross-link:
+woman→city;
+body→container;
+ephah cargo.
+
+### M71-19 — OCCUPANCY STATE IS A DISTINCT VARIABLE FROM STRUCTURAL STATE
+
+House can be:
+- swept;
+- ordered;
+- empty.
+
+Yet vulnerability depends on:
+**who inhabits it**.
+
+This is exactly the distinction between:
+structure
+and
+occupant.
+
+---
+
+# WALKING ON WATER — MARK 6 / MATTHEW 14 / JOHN 6
+## boat in adverse wind → Jesus crosses surface without boat → contact/recognition → wind change; Matthew adds Peter; John links boarding with arrival
+
+Core:
+- disciples in boat;
+- wind contrary;
+- Jesus approaches across sea on foot;
+- disciples fear/misidentify;
+- Jesus identifies himself;
+- enters/joins boat in Mark/Matthew;
+- wind ceases.
+
+Matthew uniquely adds:
+- Peter leaves boat;
+- Peter walks toward Jesus on water;
+- fear of wind;
+- begins sinking;
+- Jesus grasps him;
+- both enter boat;
+- wind ceases.
+
+John:
+- strong wind/rough sea;
+- Jesus approaches walking on sea;
+- disciples receive/want him into boat;
+- boat is then at destination.
+
+### M71-20 — THIS IS A BODY-SUPPORT REVERSAL IMAGE
+
+Ordinary expectation:
+human body requires:
+- boat;
+- shore;
+- solid ground.
+
+Narrative miracle:
+body is supported/traverses water surface.
+
+### M71-21 — DO NOT INFER A PHYSICAL PLASMA/LEVITATION MECHANISM
+
+The story gives no:
+- field;
+- magnetic structure;
+- lattice;
+- hidden platform.
+
+Ordinary interpretation:
+theophanic/divine mastery over sea.
+
+### M71-22 — MATTHEW GIVES TEMPORARY SECONDARY PARTICIPATION IN THE SAME SUPPORT STATE
+
+Jesus:
+stable.
+
+Peter:
+temporarily shares ability,
+then loses it/sinks,
+then is physically grasped.
+
+Thus:
+support state is narratively:
+**participant-dependent**.
+
+### M71-23 — WIND STATE REMAINS AN IMPORTANT VARIABLE
+
+In Matthew:
+Peter notices wind and sinks.
+
+After boarding:
+wind ceases.
+
+Track:
+**body support**
+separately from
+**wind/sea condition**.
+
+### M71-24 — JOHN'S IMMEDIATE ARRIVAL SHOULD BE LOGGED CONSERVATIVELY
+
+John narratively connects receiving Jesus into the boat with:
+arrival at intended land.
+
+This may be read as:
+compressed narrative / sign sequence.
+
+Do not claim:
+teleportation
+without stronger textual argument.
+
+---
+
+# MIRACULOUS FISH CATCHES — LUKE 5 / JOHN 21
+
+## Luke 5
+
+- fishermen have caught nothing;
+- Jesus instructs deeper launch / nets;
+- huge catch;
+- nets begin breaking;
+- partners summoned;
+- two boats loaded;
+- boats begin sinking.
+
+### M71-25 — RESOURCE INPUT OVERLOADS EXISTING CARRIER CAPACITY
+
+This is a real system limit:
+
+**small/empty load**
+→ **sudden large catch**
+→ **net stress**
+→ **multi-carrier assistance**
+→ **boats overloaded/sinking**.
+
+Important control:
+abundance can destabilize carriers.
+
+## John 21
+
+- after resurrection;
+- no catch overnight;
+- shore figure instructs right side;
+- net fills;
+- **153 large fish**;
+- net not torn;
+- fish brought to shore;
+- meal follows.
+
+### M71-26 — JOHN 21 GIVES THE SAME BASIC NETWORK WITH DIFFERENT FAILURE STATE
+
+Luke:
+net breaks / boats sink-risk.
+
+John:
+large catch / net holds.
+
+Thus:
+**same net/catch geometry**
+can produce different structural outcomes.
+
+Do not force the number 153 without textual necessity.
+
+---
+
+# FEEDINGS — FIVE THOUSAND / FOUR THOUSAND
+## small central supply → organized population → distribution → saturation → fragments re-collected
+
+Across traditions:
+- limited loaves/fish;
+- crowd organized/seated;
+- food blessed/broken;
+- distributed through disciples;
+- all eat;
+- leftovers collected.
+
+Five-thousand tradition:
+- five loaves;
+- two fish;
+- twelve baskets fragments.
+
+Four-thousand tradition:
+- seven loaves plus fish;
+- seven baskets in Mark/Matthew.
+
+### M71-27 — THIS IS A CONCENTRATED→DISTRIBUTED→RECOLLECTED RESOURCE PROCESS
+
+Sequence:
+
+**small central supply**
+→ **many recipients**
+→ **distributed consumption**
+→ **surplus fragments**
+→ **re-concentrated baskets**.
+
+### M71-28 — DISCIPLES FUNCTION AS DISTRIBUTION NODES
+
+Source:
+Jesus.
+
+Intermediaries:
+disciples.
+
+Recipients:
+crowd.
+
+This is a one→few→many network.
+
+### M71-29 — FOOD MULTIPLICATION DOES NOT REQUIRE A THROAT MODEL
+
+No narrow connector is described.
+
+Keep it as:
+**resource multiplication/distribution sign**.
+
+---
+
+# HEALING BY TOUCH / COMMAND — BOUNDARY CONTROLS
+
+The healing stories are useful because they show several different transfer modes.
+
+---
+
+# LEPER / SKIN-DISEASE HEALING — MARK 1 / MATTHEW 8 / LUKE 5
+## touch + command → clean state → priestly verification
+
+Jesus:
+- stretches hand;
+- touches;
+- commands cleansing;
+- condition leaves;
+- directs person toward priest/required procedure.
+
+### M71-30 — PHYSICAL CONTACT CAN ACCOMPANY STATE CHANGE
+
+But:
+touch is not proof of a transferred physical substance.
+
+### M71-31 — "CLEAN" IS A SOCIAL/RITUAL/MEDICAL STATUS VARIABLE AS WELL AS BODY STATE
+
+Scholarship cautions against simplistic claims that touching the leper automatically violated Torah.
+
+The story should not be reduced to:
+"contamination flows one way and Jesus reverses it."
+
+### M71-32 — RESTORATION INCLUDES RE-ENTRY INTO SOCIAL/CULTIC SYSTEM
+
+Healing:
+body change
++
+status verification/reintegration.
+
+This is a multi-layer successor state.
+
+---
+
+# HEMORRHAGING WOMAN + JAIRUS'S DAUGHTER — MARK 5 / MATTHEW 9 / LUKE 8
+## major paired-female / touch / power / death→life sequence
+
+Mark's intercalated structure is especially important.
+
+### Outer story begins
+Jairus asks for dying daughter.
+
+### Inner story interrupts
+Woman has hemorrhage **12 years**.
+
+She:
+- approaches through crowd;
+- touches garment;
+- bleeding stops immediately.
+
+Jesus:
+- perceives **power has gone out**;
+- asks who touched;
+- woman identifies herself;
+- restoration pronounced.
+
+### Outer story resumes
+News:
+Jairus's daughter has died.
+
+Jesus:
+- enters house;
+- takes girl by hand;
+- speaks command;
+- girl rises;
+- walks.
+
+Girl is:
+**12 years old**.
+
+Luke preserves:
+- only daughter about twelve;
+- woman bleeding twelve years.
+
+### M71-33 — MARK/LUKE CREATE AN EXPLICIT TWELVE-YEAR PAIR BETWEEN TWO FEMALE RESTORATIONS
+
+Pair:
+- one girl has lived 12 years;
+- one woman has suffered 12 years.
+
+This is source-level and intentional enough to record.
+
+Do not force hidden cosmic arithmetic beyond the narrative pairing.
+
+### M71-34 — TWO OPPOSITE BODY-BOUNDARY PROBLEMS ARE NESTED
+
+Woman:
+**life/blood escaping continuously from body**.
+
+Girl:
+**life has ceased / body dead**.
+
+Both resolve around:
+contact + Jesus.
+
+This is an unusually strong pair.
+
+### M71-35 — WOMAN'S STORY EXPLICITLY USES OUTFLOW LANGUAGE AROUND "POWER"
+
+Jesus perceives:
+power has gone out from him.
+
+This is one of the clearest Gospel examples of:
+**operator state/resource → contact → recipient state change**.
+
+Still:
+do not assign electricity/plasma.
+
+The narrative names power,
+not mechanism.
+
+### M71-36 — GARMENT CAN FUNCTION AS INTERFACE WITHOUT BEING THE SOURCE
+
+Woman touches:
+clothing.
+
+Source of healing:
+associated with Jesus.
+
+Thus:
+interface ≠ operator.
+
+Important Vardath variable distinction.
+
+### M71-37 — GIRL'S RAISING IS HAND-CONTACT + VOICE-COMMAND + BODY REACTIVATION
+
+Sequence:
+
+**dead body**
+→ **hand contact**
+→ **spoken command**
+→ **rising**
+→ **walking**
+→ **food requested/given**.
+
+No tomb/gate.
+
+This is body-state restoration.
+
+---
+
+# OTHER BOUNDARY-RELEVANT HEALINGS
+
+## Mark 7 — deaf man
+Jesus:
+- fingers ears;
+- saliva/touch tongue;
+- looks upward;
+- says **"Ephphatha" / "Be opened"**;
+- ears opened;
+- tongue released.
+
+### M71-38 — "OPENING" HERE IS LITERAL BODILY-SENSE APERTURE/FUNCTION, NOT COSMIC GATE
+
+Important anti-forcing control.
+
+## Mark 8 — blind man
+- saliva;
+- hands;
+- partial sight;
+- second hand contact;
+- full sight.
+
+### M71-39 — STATE CHANGE CAN BE MULTI-STAGE
+
+Not every miracle is instantaneous.
+
+This matters for:
+phase-transition thinking.
+
+## John 9 — blind man
+- saliva + earth → mud;
+- applied to eyes;
+- command to wash in Pool of Siloam;
+- washing;
+- returns seeing.
+
+### M71-40 — MULTI-MEDIUM HEALING PIPELINE
+
+**saliva**
++
+**earth/dust**
+→ **mud interface**
+→ **water washing**
+→ **restored sight**.
+
+But John's narrative function includes sign/identity/conflict themes.
+
+Do not treat recipe as physical mechanism.
+
+## Remote healings
+Centurion's servant / royal official's son:
+- target is distant;
+- command/word;
+- healing occurs.
+
+### M71-41 — TOUCH IS NOT REQUIRED IN GOSPEL HEALING LOGIC
+
+This is critical.
+
+Therefore:
+do not build a universal contact-transfer mechanism from garment/touch stories.
+
+The Gospels themselves allow:
+**word/action at distance**.
+
+---
+
+# WIDOW OF NAIN'S SON — LUKE 7
+## funeral procession → bier touch → command → dead person sits up and speaks → returned to mother
+
+### M71-42 — DEATH-STATE REVERSAL CAN OCCUR WITHOUT TOMB/ENCLOSURE
+
+Useful control against assuming tomb aperture is necessary.
+
+---
+
+# LAZARUS — JOHN 11
+## MAJOR ENCLOSURE / APERTURE / CALL / EMERGENCE / UNBINDING SEQUENCE
+
+This is one of the most mechanically useful Gospel episodes.
+
+State:
+- Lazarus ill;
+- dies;
+- in tomb **four days**.
+
+Tomb:
+- cave;
+- stone lying against/at entrance.
+
+Jesus commands:
+**remove the stone**.
+
+Stone is removed.
+
+Jesus:
+- prays;
+- calls with loud voice:
+**Lazarus, come out**.
+
+Lazarus:
+- emerges from tomb;
+- hands/feet bound with burial strips;
+- face wrapped.
+
+Jesus commands:
+**unbind him and let him go**.
+
+### M71-43 — THIS IS A TRUE SEALED-ENCLOSURE→OPENING→SIGNAL→OCCUPANT-EMERGENCE SEQUENCE
+
+Variables:
+
+**occupant** = Lazarus;
+**enclosure** = tomb/cave;
+**closure** = stone;
+**opening operation** = stone removal;
+**activation signal** = loud call;
+**transit** = Lazarus comes out;
+**post-exit restriction** = grave bindings;
+**secondary release** = unbind him;
+**end state** = living/reintegrated occupant.
+
+### M71-44 — THE APERTURE MUST BE OPENED BEFORE THE OCCUPANT EMERGES
+
+This is genuine boundary mechanics at narrative level.
+
+### M71-45 — OPENING ALONE DOES NOT CAUSE THE TRANSFER
+
+Stone removal:
+creates route.
+
+Voice/call:
+initiates emergence.
+
+This distinction is extremely valuable.
+
+**gate availability**
+≠
+**transfer trigger**.
+
+### M71-46 — EXIT DOES NOT COMPLETE RESTORATION
+
+Lazarus emerges:
+still bound.
+
+A second operation:
+**unbind**.
+
+Thus:
+**crossing boundary**
+and
+**restored mobility**
+are distinct phases.
+
+### M71-47 — LAZARUS IS A STRONG GATE ANALOGUE BUT NOT FINGERTRAP
+
+Strong:
+- enclosure;
+- closure;
+- aperture;
+- call;
+- emergence;
+- release.
+
+Missing:
+- broad woven support;
+- contraction;
+- throat;
+- reopening of same lattice.
+
+### M71-48 — FOUR-DAY NUMBER IS NARRATIVE, NOT A VARDATH CYCLE BY DEFAULT
+
+Record only.
+
+---
+
+# TRANSFIGURATION — MARK 9 / MATTHEW 17 / LUKE 9
+# MAJOR MOUNTAIN / HUMAN→LIGHT / CLOUD / VOICE / TRIAD PASSAGE
+
+This is the largest projection episode in Section 71.
+
+---
+
+# timing control
+
+Mark/Matthew:
+**after six days**.
+
+Luke:
+**about eight days after these sayings**.
+
+### M71-49 — THE SYNOPTICS DO NOT GIVE ONE IDENTICAL NUMERICAL INTERVAL
+
+Do not harmonize:
+6 = 8
+into hidden cycle.
+
+Different narrative counting conventions/redaction are possible.
+
+---
+
+# mountain ascent
+
+Jesus takes:
+- Peter;
+- James;
+- John.
+
+They ascend:
+- high mountain in Mark/Matthew;
+- mountain in Luke.
+
+### M71-50 — THREE DISCIPLE WITNESSES FORM OBSERVER GROUP, NOT PART OF MOSES–ELIJAH–JESUS TRIAD
+
+Keep groups separate.
+
+---
+
+# Jesus body/light transformation
+
+Mark:
+- Jesus "transfigured";
+- clothes intensely/dazzling white;
+- no explicit shining face.
+
+Matthew:
+- face shines **like sun**;
+- clothes white **like light**.
+
+Luke:
+- while Jesus prays;
+- appearance of face changes;
+- clothes become dazzling white.
+
+### M71-51 — SAME HUMAN BODY CHANGES VISIBLE STATE WITHOUT CHANGING IDENTITY
+
+This is a first-class projection/state-change passage.
+
+Jesus remains:
+same person.
+
+Visual state:
+ordinary
+→
+luminous/transfigured.
+
+### M71-52 — MATTHEW EXPLICITLY PROJECTS HUMAN FACE AS SUN
+
+Human:
+**face**
+→ **solar/light comparison**.
+
+Cross-link:
+Daniel;
+Meqabyan;
+Malachi winged sun imagery.
+
+### M71-53 — LUKE TIES TRANSFORMATION TO PRAYER STATE
+
+Only Luke explicitly says:
+change occurs while praying.
+
+Do not import that causal detail into Mark/Matthew as if all state it.
+
+---
+
+# Moses + Elijah appear with Jesus
+
+All three:
+- Moses;
+- Elijah;
+- Jesus;
+- conversation.
+
+Mark:
+Elijah named first in wording.
+
+Matthew/Luke:
+Moses first.
+
+Luke uniquely:
+- Moses and Elijah appear in glory;
+- discuss Jesus' **exodus/departure** to be fulfilled at Jerusalem.
+
+### M71-54 — MOSES / ELIJAH / JESUS IS A TRUE THREE-FIGURE MOUNTAIN CONFIGURATION
+
+But function differs:
+
+Moses:
+Sinai/theophany/law/exodus tradition.
+
+Elijah:
+Horeb/theophany/prophetic tradition.
+
+Jesus:
+central transformed figure.
+
+### M71-55 — BEST CURRENT CLASSIFICATION: TWO PREDECESSOR MOUNTAIN-THEOPHANY FIGURES FLANK/ATTEND A CENTRAL SUCCESSOR FIGURE
+
+Scholarly work strongly connects Moses and Elijah through:
+mountain theophanies at Sinai/Horeb.
+
+This is stronger than simply:
+"Law + Prophets."
+
+### M71-56 — THE TRIAD IS NOT TEXTUALLY THREE IDENTICAL ASPECTS OF ONE PERSON
+
+They converse as distinct figures.
+
+Therefore:
+do not collapse them into:
+one being split three ways.
+
+### M71-57 — HOWEVER, THEY MAY REPRESENT THREE STAGES/ROLES IN ONE THEOPHANIC MOUNTAIN TRADITION
+
+This is a valid structural comparison:
+- prior mountain encounter A;
+- prior mountain encounter B;
+- new central luminous mountain manifestation.
+
+---
+
+# Peter proposes three dwellings/tents
+
+Peter proposes:
+- one for Jesus;
+- one for Moses;
+- one for Elijah.
+
+### M71-58 — THREE TENTS WOULD FORM THREE SEPARATE ENCLOSURES, BUT THEY ARE ONLY PROPOSED
+
+They are not built.
+
+Do not treat them as actual mechanism.
+
+---
+
+# cloud enters / overshadows scene
+
+Mark:
+cloud overshadows them.
+
+Matthew:
+**bright cloud** overshadows.
+
+Luke:
+cloud comes/overshadows;
+disciples fear as they enter cloud.
+
+Voice:
+comes from cloud.
+
+Then:
+Moses/Elijah disappear;
+Jesus remains alone.
+
+### M71-59 — CLOUD FUNCTIONS AS TEMPORARY ENVIRONMENTAL ENCLOSURE / PRESENCE FIELD
+
+The group becomes:
+inside/under cloud.
+
+This is highly relevant to:
+field/enclosure imagery.
+
+### M71-60 — MATTHEW ALONE CALLS THE CLOUD BRIGHT
+
+Do not combine:
+Mark shadow-cloud
++
+Matthew bright cloud
++
+Luke entry/fear
+as if one Gospel states all details.
+
+### M71-61 — VOICE EMERGES FROM ENVIRONMENTAL FIELD
+
+Cloud:
+not just visual cover.
+
+It becomes:
+**information-output environment**.
+
+Cross-link:
+Habakkuk deep hands;
+Sinai;
+baptism heaven-voice.
+
+### M71-62 — TRIAD COLLAPSES BACK TO ONE VISIBLE CENTRAL FIGURE
+
+After cloud/voice:
+disciples see only Jesus.
+
+Process:
+
+**one Jesus**
+→ **three-figure configuration**
+→ **cloud/voice event**
+→ **one Jesus**.
+
+This is a real:
+**1 → 3 → 1 visual configuration**.
+
+But:
+Moses and Elijah are distinct persons,
+not pieces of Jesus.
+
+### M71-63 — THIS IS IMPORTANT TO USER'S 1–3–7 / PROJECTION INTEREST, BUT NUMBER MATCH MUST NOT BE FORCED
+
+Record 1→3→1,
+no numerological conclusion.
+
+---
+
+# Transfiguration and axis-person model
+
+Section 70 already found:
+John 1:51:
+- opened heaven;
+- angels ascending/descending;
+- Son of Man as central human referent.
+
+Section 71 adds:
+- mountain;
+- central luminous Jesus;
+- Moses/Elijah;
+- cloud;
+- voice;
+- descent after event.
+
+### M71-64 — GOSPEL AXIS-PERSON GRAMMAR IS NOW VERY STRONG
+
+John 1:
+**vertical traffic on/over Son of Man**.
+
+Transfiguration:
+**mountain + luminous central human + cloud/voice above/around**.
+
+This is highly relevant to:
+Squatter-Man / person-as-axis hypothesis.
+
+Still:
+no woven fingertrap formation.
+
+---
+
+# WATER / CURRENT SYNTHESIS ACROSS THE MIRACLES
+
+## Cana
+water changes state/function.
+
+## Jacob's well
+water access through vertical shaft,
+then symbolism becomes internal life spring.
+
+## storm
+wind destabilizes water;
+command stabilizes both.
+
+## walking
+body traverses water without normal carrier.
+
+## fish
+water contains resource network;
+net/boat capacity matters.
+
+## Gerasene
+host-transfer ends in sea.
+
+## John 9
+water participates in healing pipeline.
+
+### M71-65 — "WATER" HAS AT LEAST SIX DISTINCT FUNCTIONS IN THE GOSPELS
+
+1. material to transform;
+2. resource to draw;
+3. symbolic life/Spirit;
+4. hazardous route/boundary;
+5. body-support surface;
+6. biological/resource habitat.
+
+Therefore:
+water resemblance alone is never enough for Vardath identification.
+
+---
+
+# BODY / OCCUPANT SYNTHESIS
+
+## demon stories
+body = host;
+spirit = occupant.
+
+## Jairus daughter
+body state dead→living.
+
+## Lazarus
+body occupant emerges from external tomb.
+
+## transfiguration
+same body changes visible/luminous state.
+
+### M71-66 — FOUR DIFFERENT "BODY CHANGE" CATEGORIES MUST REMAIN SEPARATE
+
+1. occupant transfer;
+2. physiological/healing state;
+3. enclosure transit;
+4. visual/projection transformation.
+
+This is a major methodological upgrade.
+
+---
+
+# CARRIER TAXONOMY UPDATE
+
+## Boat
+physical human carrier across sea.
+
+## Garment
+interface/contact surface.
+
+## Body
+host for spirit/occupant.
+
+## Pig bodies
+secondary hosts.
+
+## Tomb
+external enclosure.
+
+## Net
+resource capture structure.
+
+## Disciples
+food distribution nodes.
+
+## Cloud
+environmental enclosure/presence field.
+
+### M71-67 — "CARRIER" IS NOT ONE THING
+
+The project should always ask:
+- carrier of person?
+- carrier of spirit?
+- carrier of information?
+- carrier of food/material?
+- enclosure?
+- interface?
+- field?
+
+---
+
+# DEATH / RAISING PAIR REGISTER
+
+## Jairus daughter
+house interior;
+hand;
+voice;
+immediate rise.
+
+## Nain son
+funeral procession;
+bier;
+voice;
+sits/speaks.
+
+## Lazarus
+sealed cave;
+stone;
+voice;
+emergence;
+unbind.
+
+### M71-68 — RAISING STORIES VARY THE BOUNDARY CONDITION
+
+Jairus:
+**no tomb**.
+
+Nain:
+**in transit to burial**.
+
+Lazarus:
+**sealed tomb after four days**.
+
+Thus:
+the boundary structure is narratively variable,
+not the universal source of resurrection.
+
+---
+
+# MOSES / ELIJAH / JESUS TRIAD REGISTER
+
+### Moses
+- mountain Sinai;
+- cloud;
+- divine speech;
+- radiant-face tradition;
+- Exodus/law.
+
+### Elijah
+- mountain Horeb;
+- divine encounter;
+- prophetic role;
+- unusual departure tradition.
+
+### Jesus
+- high mountain;
+- transformed light state;
+- cloud/voice;
+- central Son identity;
+- Luke "exodus" toward Jerusalem.
+
+### M71-69 — THE TRIAD IS BEST TREATED AS A THEOPHANIC ROLE SUCCESSION / CONVERGENCE, NOT IDENTITY FUSION
+
+This is likely one of the more important Gospel-pair/triad structures for the eventual transformation timeline.
+
+---
+
+# CHERUB / QUETZALCOATL / FEATHERED-SERPENT / WING UPDATE
+
+Section 71 contains few literal wings,
+but it substantially clarifies **visible-form function**.
+
+## Dove at baptism — Section 70
+winged animal-like bodily manifestation of Spirit.
+
+## Demonic transfer
+invisible agency can occupy different visible bodies.
+
+## Transfiguration
+human body becomes luminous without changing identity.
+
+## Cloud
+environmental field becomes voice-bearing presence.
+
+### M71-70 — THESE GOSPEL EPISODES STRENGTHEN THE GENERAL POSSIBILITY OF ONE AGENCY HAVING DIFFERENT VISIBLE INTERFACES WITHOUT PROVING CHERUB = SERPENT = QUETZALCOATL
+
+The strongest source-level principle is:
+**form and agency are separable variables**.
+
+That is more defensible than morphology-only matching.
+
+---
+
+# STRICT FINGERTRAP TEST — SECTION 71
+
+Criteria:
+1. broad/open distributed support;
+2. same structural continuity;
+3. geometry/strand angle changes;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Cana
+state transformation only.
+**Negative.**
+
+## Well
+narrow vertical access to water,
+but fixed ordinary infrastructure.
+**Static throat analogue only.**
+
+## Storm / walking water
+field/support changes,
+no contraction.
+**Negative.**
+
+## Gerasene host transfer
+transfer strong,
+structural gate absent.
+**Negative.**
+
+## Lazarus
+sealed enclosure;
+opening;
+occupant transit.
+Strong gate analogue,
+but:
+- no broad support;
+- no contraction;
+- no same-structure re-expansion.
+
+**Strict negative; strong aperture→signal→emergence analogue.**
+
+## Transfiguration
+broad cloud/field;
+mountain;
+luminous human projection;
+three-figure convergence;
+no throat/contraction.
+
+**Strict negative; strong axis-person/projection analogue.**
+
+### Overall Section 71 verdict
+
+**No strict fingertrap.**
+
+The section contributes three powerful components:
+
+1. **host/occupant transfer** — Gerasene;
+2. **aperture→call→emergence** — Lazarus;
+3. **mountain + luminous human + cloud/voice axis-person projection** — Transfiguration.
+
+The missing strict link remains:
+**broad woven support physically becoming a narrow passage and later reopening while maintaining structural continuity.**
+
+---
+
+# Full Section 71 process map
+
+purification jars filled with water
+→ content becomes wine while containers persist
+→ Jacob's well establishes ordinary vertical water access
+→ living-water language shifts external water into internal life/Spirit symbol
+→ sea crossing begins
+→ wind destabilizes water
+→ boat threatened
+→ wind/sea commanded
+→ calm
+→ crossing continues
+→ human host carrying Legion reaches boundary encounter
+→ spirits exit human
+→ enter many pigs
+→ secondary hosts enter sea/die
+→ restored human remains
+→ another sea crossing faces adverse wind
+→ Jesus traverses water without boat
+→ Matthew adds Peter sharing then losing support state
+→ boat/wind state resolves
+→ nets receive extraordinary resource loads
+→ carrier capacity stressed or preserved depending narrative
+→ small food supply distributed through disciples to many
+→ leftovers recollected
+→ touch/command healings change body/social states
+→ hemorrhaging woman touches garment
+→ power-outflow language accompanies restoration
+→ paired 12-year female narrative resumes
+→ dead girl takes hand-command
+→ rises/walks
+→ other healings show body apertures "opened"
+→ remote healings prove touch is not universal requirement
+→ Lazarus dies
+→ cave/tomb sealed with stone
+→ stone removed
+→ loud call
+→ Lazarus exits
+→ remains bound
+→ bindings removed
+→ transfiguration mountain ascended
+→ Jesus visible state changes to intense light
+→ Moses/Elijah appear
+→ three-figure theophanic configuration
+→ proposed three tents
+→ cloud encloses/overshadows
+→ voice emerges
+→ Moses/Elijah vanish
+→ Jesus remains central
+→ group descends mountain.
+
+---
+
+# Number / timing register
+
+## Cana
+- 6 stone jars.
+
+## feedings
+- 5 loaves + 2 fish;
+- 12 baskets;
+- 4,000 tradition;
+- 7 baskets.
+
+## John 21
+- 153 fish.
+
+## Jairus / hemorrhage
+- girl = 12 years;
+- woman bleeding = 12 years.
+
+## Lazarus
+- 4 days in tomb.
+
+## Transfiguration
+- Mark/Matthew = after 6 days;
+- Luke = about 8 days.
+
+### M71-71 — SYNOPTIC TIMING DIFFERENCE IS A DIRECT WARNING AGAINST FORCED NUMBER HARMONIZATION
+
+Record each source separately.
+
+---
+
+# Textual / scholarly controls
+
+1. Gospel miracle stories function as signs/theophanies/restoration narratives and should not be treated as technical engineering accounts.
+2. John 2 explicitly associates the six stone jars with purification and calls Cana the first/sign-beginning revealing Jesus' glory.
+3. John 4 intentionally contrasts ordinary well-water with "living water" that becomes an internal spring toward eternal life.
+4. John 7 explicitly interprets living-water language in relation to the Spirit, proving that current/river language can be theological rather than hydraulic.
+5. Mark 4's storm story uses rebuke/silencing language also associated with exorcism; scholarly interpretation often reads sea mastery through Jewish scriptural divine-warrior/theophany traditions.
+6. Recent scholarship also explores Mark's sea sequence as hydromachic/territorial imagery; that is an interpretation, not a demonstration that literal sea demons caused meteorological events.
+7. In Mark 5/Luke 8, unclean spirits explicitly leave a human and enter pigs; host/occupant distinction is secure at the narrative level.
+8. Matthew's version has two demoniacs where Mark/Luke focus on one; do not collapse Gospel differences.
+9. Walking-on-water stories are commonly read through divine sea-mastery/theophany traditions; no physical levitation mechanism is provided.
+10. Matthew alone includes Peter walking then sinking.
+11. John 6's narrative of the boat reaching land after receiving Jesus should not be overstated as teleportation.
+12. Luke 5 and John 21 miraculous catches are distinct episodes in their respective narratives; their net/capacity outcomes differ.
+13. Feeding narratives should preserve differences between 5,000 and 4,000 traditions rather than merge numbers.
+14. Touch is common in healing stories but is not universally required; remote-command healings are direct counterexamples.
+15. Modern scholarship cautions against oversimplified claims that touching a person with skin disease necessarily violated an explicit Levitical prohibition.
+16. Mark 5 deliberately intercalates Jairus's daughter with the hemorrhaging woman; both are linked by twelve-year language.
+17. "Power went out" from Jesus is explicit narrative language in Mark/Luke but does not define physical energy type.
+18. Lazarus is uniquely Johannine among these major raising stories and gives cave/tomb + stone + command + emergence + unbinding.
+19. Stone removal is route preparation; the call is the transfer trigger within the story.
+20. The Transfiguration differs across Synoptics:
+   - Mark stresses dazzling clothes;
+   - Matthew adds face like sun and bright cloud;
+   - Luke adds prayer, changed face, Moses/Elijah in glory and their discussion of Jesus' exodus.
+21. Mark/Matthew count six days; Luke says about eight days.
+22. Recent scholarship strongly connects Moses and Elijah at the Transfiguration through their Sinai/Horeb theophanies; other interpretations also exist.
+23. Moses and Elijah remain distinct persons conversing with Jesus; the text does not identify the triad as one entity.
+24. Cloud/voice imagery belongs to biblical theophany traditions and should not automatically be translated into plasma physics.
+25. No Section 71 episode supplies the strict dynamic fingertrap.
+
+---
+
+# Sources logged — Section 71
+
+## Primary Gospel texts
+- John 2:
+  https://www.biblegateway.com/passage/?search=John+2%3A1-12&version=NRSVUE
+- John 4:
+  https://www.biblegateway.com/passage/?search=John+4%3A1-26&version=NRSVUE
+- John 7:
+  https://www.biblegateway.com/passage/?search=John+7%3A37-39&version=NRSVUE
+- Mark 4:
+  https://www.biblegateway.com/passage/?search=Mark+4%3A35-41&version=NRSVUE
+- Matthew 8:
+  https://www.biblegateway.com/passage/?search=Matthew+8%3A23-34&version=NRSVUE
+- Luke 8:
+  https://www.biblegateway.com/passage/?search=Luke+8%3A22-56&version=NRSVUE
+- Mark 5:
+  https://www.biblegateway.com/passage/?search=Mark+5&version=NRSVUE
+- Mark 6:
+  https://www.biblegateway.com/passage/?search=Mark+6%3A30-52&version=NRSVUE
+- Matthew 14:
+  https://www.biblegateway.com/passage/?search=Matthew+14%3A13-33&version=NRSVUE
+- John 6:
+  https://www.biblegateway.com/passage/?search=John+6%3A1-24&version=NRSVUE
+- Luke 5:
+  https://www.biblegateway.com/passage/?search=Luke+5%3A1-11&version=NRSVUE
+- John 21:
+  https://www.biblegateway.com/passage/?search=John+21%3A1-14&version=NRSVUE
+- Mark 7:
+  https://www.biblegateway.com/passage/?search=Mark+7%3A31-37&version=NRSVUE
+- Mark 8:
+  https://www.biblegateway.com/passage/?search=Mark+8%3A22-26&version=NRSVUE
+- John 9:
+  https://www.biblegateway.com/passage/?search=John+9&version=NRSVUE
+- John 11:
+  https://www.biblegateway.com/passage/?search=John+11&version=NRSVUE
+- Mark 9:
+  https://www.biblegateway.com/passage/?search=Mark+9%3A2-13&version=NRSVUE
+- Matthew 17:
+  https://www.biblegateway.com/passage/?search=Matthew+17%3A1-13&version=NRSVUE
+- Luke 9:
+  https://www.biblegateway.com/passage/?search=Luke+9%3A28-36&version=NRSVUE
+
+## Scholarship / literary controls
+- Nathanael Vette, "The Son of Man and the Sea: Hydromachy and Conquest in Mark's Sea Voyages":
+  https://doi.org/10.1177/0142064X241290655
+- "The Parable of the Storm: Instruction and Demonstration in Mark 4:1–41":
+  https://journals.sagepub.com/doi/10.1177/0146107915577098
+- "Moses, Elijah, and Jesus' Divine Glory (Mark 9.2–8)," New Testament Studies:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/moses-elijah-and-jesus-divine-glory-mark-928/CB73D417E7FA86637012A1B208665D1B
+- "Listen to Him!: Angelic and Divine Typology in Mark's Transfiguration Account":
+  https://brill.com/view/journals/hbth/46/1/article-p65_6.xml
+- "The Social Condition of Lepers in the Gospels":
+  https://radicalbible.net/wp-content/uploads/2022/08/Shinall-The_Social_Condition_of_Lepers.pdf
+- Cana narrative/exegetical resource:
+  https://www.tarsus.ie/resources/PDF-25/OT25C02-Cana.pdf
+
+---
+
+# SECTION 71 — MIRACLES AND BOUNDARY EPISODES COMPLETE
+
+## Strongest new findings
+
+1. **Cana is a clean state-transformation control: the stone containers remain while their contents change from water to wine; no gate/transfer route is described.**
+2. **John's living-water material deliberately shifts water from external well-water to an internal spring/life state, and John 7 explicitly interprets river imagery through the Spirit; water language therefore cannot automatically be physicalized.**
+3. **Storm calming gives a clean route-hazard process: cross-sea journey → wind activation → water destabilization → boat threatened → command → wind/sea calm → route continues.**
+4. **Wind and water are tracked as separate but coupled variables, matching the mature research method without proving Vardath physics.**
+5. **The Gerasene episode is the strongest host/occupant transfer story so far: spirits leave a human host, enter many animal hosts, and those destination hosts enter the sea and die while the original human host is restored.**
+6. **That proves at narrative level that host/body and occupant/agency are distinct variables.**
+7. **The returning-spirit saying strengthens this further by explicitly projecting a human person as a house whose structural state and occupancy state are separate.**
+8. **Walking on water gives a body-support reversal but no stated physical mechanism; Matthew's Peter episode shows temporary secondary participation in the support state followed by loss/sinking and rescue.**
+9. **John's immediate-arrival wording after receiving Jesus into the boat is logged conservatively and is not called teleportation.**
+10. **The fish-catch stories expose carrier-capacity differences: Luke's enormous catch stresses nets/boats toward failure, while John 21's large catch leaves the net intact.**
+11. **The feeding stories form a useful concentrated→distributed→recollected resource network: small central food supply → disciples as intermediate nodes → many recipients → leftover fragments reconcentrated into baskets.**
+12. **Touch can accompany healing but cannot be the universal mechanism because the Gospels also contain remote-command healing; contact and source must remain separate variables.**
+13. **The hemorrhaging woman and Jairus's daughter form an explicit paired twelve-year structure: one woman has lost blood/life-state for 12 years while one girl has lived 12 years and then dies.**
+14. **The hemorrhaging woman's garment is an interface rather than the source, while Mark/Luke explicitly describe power as going out from Jesus.**
+15. **Jairus's daughter gives hand-contact + spoken command + rising/walking, while the Nain story proves that a tomb/opening is not required for a raising narrative.**
+16. **Lazarus is the strongest enclosure-boundary result of the section: sealed cave/tomb → stone removed → loud external call → occupant emerges → occupant remains bound → bindings removed.**
+17. **The Lazarus sequence proves an important gate distinction: opening the route and triggering the transfer are separate operations; stone removal makes passage possible, the call initiates emergence.**
+18. **Emergence itself does not complete restoration, because Lazarus still requires a second unbinding/release phase.**
+19. **Lazarus is therefore a strong aperture→signal→emergence analogue but still not a fingertrap because no broad woven structure contracts into the aperture.**
+20. **The Transfiguration gives a major same-person state transformation: Jesus remains the same identity while his visible body becomes intensely luminous; Matthew explicitly makes his face sun-like.**
+21. **Moses, Elijah and Jesus are a true three-figure mountain configuration, but the best source-controlled reading is two predecessor mountain-theophany figures converging around a central successor figure rather than three aspects of one person.**
+22. **Luke uniquely describes their subject as Jesus' coming "exodus/departure," making the mountain scene directly relevant to route/transition language.**
+23. **The cloud acts as a temporary environmental enclosure/presence field and also carries/output voice/information; Matthew alone calls it bright, while Luke uniquely emphasizes entering the cloud.**
+24. **The visible configuration goes one Jesus → Jesus+Moses+Elijah → cloud/voice → Jesus alone, a genuine 1→3→1 visual sequence that should be recorded without forcing numerology.**
+25. **Combined with John 1:51 from Section 70, the Gospel axis-person category is now very strong: one human figure can be the focus of vertical traffic, mountain light, cloud and divine voice.**
+26. **For the cherub / Quetzalcoatl / Feathered-Serpent / Squatter-Man hypothesis, Section 71's strongest contribution is not morphology but the source-level separation of agency, host, interface, visible form, field and occupant.**
+27. **No strict fingertrap appears. Section 71 adds three major functional pieces instead: host/occupant transfer, aperture→call→emergence, and luminous mountain axis-person projection.**
+
+## Next live block
+
+**Section 72 — Teaching / parables / signs and the road toward Jerusalem**
+
+Required protocol:
+- re-check all three archives and actual Part 2 tail;
+- recover exact roadmap wording before research;
+- do not assume every parable is cosmological;
+- prioritize process-rich material only;
+- track:
+  - seed/tree growth;
+  - mustard tree/birds;
+  - wheat/weeds sorting;
+  - net/fish sorting;
+  - vineyard/tenants;
+  - lost sheep/coin/son;
+  - narrow gate / door shut;
+  - wise/foolish builders;
+  - lamps/oil;
+  - wedding/banquet doors;
+  - rich man/Lazarus fixed gulf;
+  - Good Samaritan route;
+  - Jerusalem journey;
+  - Zacchaeus;
+  - fig tree;
+  - triumphal entry;
+- distinguish analogy from literal cosmography;
+- test narrow-gate imagery against 4 Ezra 7 without automatically equating them;
+- continue pair/role and transformation timeline;
+- append only after ordinary literary function is established.
+
