@@ -33003,3 +33003,1348 @@ Before the next research block:
 - verify that it is not already researched in substance;
 - append only to Part 2.
 
+
+
+---
+
+# SECTION 70 — BAPTISM / TEMPTATION / EARLY MINISTRY
+## Four-Gospel direct pass — John/Jesus predecessor-successor structure, Jordan water/body/heaven vertical alignment, opened/torn heaven, descending-and-remaining Spirit, dove-form projection, wilderness transfer, Jesus/Satan polarity, mountain/temple height tests, first-disciple handoff chains, Simon→Cephas/Peter rock-name transformation, and Son of Man as opened-heaven ascent/descent interface
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+Sections 68 and 69 were already complete in Part 2.
+
+The reconstructed roadmap identifies the first unfinished block as:
+
+**Section 70 — Baptism / temptation / early ministry**
+
+Required pair tests:
+- John / Jesus as predecessor-successor;
+- Jesus / Satan polarity;
+- descent of Spirit / emergence from water;
+- first-disciple pair structures.
+
+This section is appended only to Part 2.
+
+---
+
+# Method control — do NOT harmonize the four Gospels into one synthetic scene
+
+The baptism/temptation/first-disciple material differs substantially by Gospel.
+
+Therefore distinguish:
+
+## Mark
+- shortest baptism/test sequence;
+- heavens **torn apart**;
+- Spirit descends;
+- Spirit immediately drives Jesus into wilderness;
+- forty days;
+- Satan;
+- wild beasts;
+- angels.
+
+## Matthew
+- John/Jesus dialogue before baptism;
+- heavens **opened**;
+- Spirit descends/alights;
+- three detailed tests;
+- sequence:
+  1. stones/bread;
+  2. temple pinnacle;
+  3. very high mountain / kingdoms;
+- angels attend after Satan leaves.
+
+## Luke
+- Jesus baptized with the people;
+- while praying, heaven opens;
+- Spirit descends in **bodily form like a dove**;
+- three detailed tests;
+- sequence:
+  1. stone/bread;
+  2. kingdoms shown "in an instant";
+  3. Jerusalem temple pinnacle;
+- Satan departs until an opportune time.
+
+## John
+- no direct narrated baptism scene in the same form;
+- John gives witness/testimony that he saw Spirit descend from heaven like a dove and **remain**;
+- first disciples transfer from John's circle to Jesus;
+- chapter ends with heaven opened and angels ascending/descending **upon the Son of Man**.
+
+### M70-1 — THE SAME TRADITIONAL EVENT CAN BE RETAINED WHILE ITS GEOMETRY AND EMPHASIS CHANGE BY NARRATOR
+
+This is important for the project's comparative method.
+
+Do not merge:
+- Mark's "torn";
+- Matthew/Luke's "opened";
+- John's retrospective witness
+
+into one technical description without marking source.
+
+---
+
+# JOHN THE BAPTIST AS PREDECESSOR / ROUTE-PREPARER
+
+Across Synoptics:
+John appears in:
+- wilderness;
+- Jordan region;
+- calling people outward from settled centres;
+- preparing a "way/path";
+- baptizing with water;
+- announcing a stronger one who comes after.
+
+Mark especially gives:
+
+**messenger ahead**
+→ **prepare way**
+→ **people leave Judea/Jerusalem**
+→ **Jordan immersion**
+→ **coming successor**.
+
+### M70-2 — JOHN/JESUS IS A TRUE PREDECESSOR→SUCCESSOR ROLE PAIR
+
+John:
+- prepares route;
+- performs water rite;
+- points forward.
+
+Jesus:
+- comes after;
+- receives baptism;
+- is identified by heavenly/Spirit sign;
+- then begins independent ministry.
+
+This is not:
+two halves of one biological individual.
+
+Best classification:
+**phase-offset paired roles**.
+
+### M70-3 — PREDECESSOR CAN PREPARE A PATH WITHOUT BEING THE PATH OR GATE
+
+Important mechanism distinction.
+
+John:
+operator/messenger/route-preparer.
+
+Not:
+opening itself.
+
+---
+
+# POPULATION MOTION TO THE JORDAN
+
+Mark describes people from:
+- Judean countryside;
+- Jerusalem
+
+going **out** to John at Jordan.
+
+### M70-4 — EARLY GOSPEL MINISTRY BEGINS WITH DISTRIBUTED POPULATION CONVERGENCE ON A WATER BOUNDARY
+
+Pattern:
+
+**settled population**
+→ **outward movement**
+→ **river node**
+→ **ritual immersion**
+→ **return/changed social-religious state**.
+
+Source meaning:
+repentance/baptism movement.
+
+Not inter-world transfer.
+
+---
+
+# WATER BAPTISM ↔ SPIRIT / FIRE BAPTISM
+
+John contrasts:
+- his baptism with water;
+- successor baptism with Holy Spirit;
+and Matthew/Luke also include fire in John's proclamation.
+
+### M70-5 — THE TEXT DISTINGUISHES MEDIA/AGENTS OF TRANSFORMATION
+
+Water:
+John's rite.
+
+Spirit/fire:
+future/successor work.
+
+This is useful because:
+same word "baptize/immerse"
+can operate with different media.
+
+### M70-6 — WATER, SPIRIT AND FIRE SHOULD NOT BE COLLAPSED INTO ONE SUBSTANCE
+
+They function symbolically/theologically in relation,
+but the text distinguishes them.
+
+This is a strong control for Vardath:
+co-occurring water/fire/spirit does not automatically imply one physical plasma-water medium.
+
+---
+
+# MARK 1:9–11
+## Jordan immersion → Jesus rises from water → heavens torn → Spirit descends like dove → voice identifies Son
+
+Mark gives the sharpest vertical event sequence:
+
+**Jordan/water**
+→ **Jesus coming up**
+→ **heaven torn**
+→ **Spirit descending**
+→ **voice from heavens**.
+
+### M70-7 — MARK CREATES A THREE-LAYER VERTICAL ALIGNMENT
+
+Upper:
+**heavens / voice / descending Spirit**
+
+Middle:
+**Jesus**
+
+Lower:
+**Jordan water**
+
+This is one of the cleanest early-Gospel vertical stacks.
+
+### M70-8 — HUMAN EMERGENCE AND SPIRIT DESCENT MOVE IN OPPOSITE DIRECTIONS
+
+Jesus:
+**up out of water**.
+
+Spirit:
+**down from heaven**.
+
+Thus at one body/node:
+
+**upward human movement**
+meets
+**downward heavenly movement**.
+
+This is formally significant.
+
+### M70-9 — THE TEXT DOES NOT SAY JESUS ASCENDS THROUGH THE OPENED HEAVEN
+
+Important negative control.
+
+The opening permits/frames:
+- Spirit descent;
+- voice communication.
+
+Jesus remains at river level.
+
+So baptism is:
+**upper→lower contact**
+not
+**human bodily passage into upper world**.
+
+---
+
+# MARK'S "TORN HEAVENS"
+
+Mark's verb is stronger than ordinary "opened":
+the heavens are described as torn/split.
+
+Scholarship widely notes a literary relation between:
+- heavens torn at baptism;
+- temple veil torn at Jesus' death in Mark 15.
+
+### M70-10 — MARK USES A BOUNDARY-RUPTURE IMAGE, NOT MERELY AN OPEN DOOR
+
+This is important.
+
+Boundary:
+**heaven**.
+
+State:
+**torn**.
+
+Effect:
+- Spirit descends;
+- voice crosses boundary.
+
+### M70-11 — MARK'S BAPTISM MAY FORM A LITERARY OPENING WITH THE LATER TORN TEMPLE VEIL
+
+Do not complete Passion analysis here;
+Section 72 must handle the later half.
+
+But record cross-link:
+
+**heaven boundary torn near ministry beginning**
+↔
+**temple veil boundary torn at death**.
+
+This may become a strong open/close or upper/inner boundary comparison.
+
+---
+
+# MATTHEW 3
+## John/Jesus role inversion before baptism
+
+John says:
+- he needs baptism from Jesus;
+- yet Jesus comes to him.
+
+Jesus says:
+- permit it "now";
+- fulfill righteousness.
+
+### M70-12 — PREDECESSOR/SUCCESSOR ROLES TEMPORARILY CROSS
+
+Expected hierarchy:
+John baptizes others,
+successor greater than John.
+
+Actual event:
+greater successor receives rite from predecessor.
+
+This is a controlled role inversion,
+not identity collapse.
+
+---
+
+# MATTHEW BAPTISM GEOMETRY
+
+Jesus:
+- baptized;
+- comes up from water;
+- heavens opened;
+- Spirit descends like dove and alights;
+- heavenly voice identifies him.
+
+### M70-13 — MATTHEW RETAINS THE SAME VERTICAL COUNTER-MOTION AS MARK BUT SOFTENS "TORN" TO "OPENED"
+
+Important narrator-specific distinction.
+
+---
+
+# LUKE 3
+## baptism completed + prayer → heaven opens → Spirit descends in bodily form like dove
+
+Luke differs:
+- all people baptized;
+- Jesus also baptized;
+- Jesus praying;
+- then heaven opens;
+- Spirit descends in **bodily form like a dove**.
+
+### M70-14 — LUKE MAKES PRAYER PART OF THE OPEN-HEAVEN SEQUENCE
+
+Sequence:
+
+**baptism**
+→ **prayer**
+→ **heaven opens**
+→ **Spirit descends**
+→ **voice**.
+
+This is more information/ritual-state oriented than a purely mechanical water trigger.
+
+### M70-15 — "BODILY FORM LIKE A DOVE" IS A DIRECT FORM-PROJECTION STATEMENT
+
+Luke does not merely say:
+the Spirit is a bird.
+
+It is:
+Spirit
+→ visible/bodily form
+→ compared with dove.
+
+This is extremely useful for projection grammar.
+
+### M70-16 — NON-BODILY AGENCY CAN APPEAR IN BODILY/ANIMAL-LIKE FORM WITHOUT ONTOLOGICALLY BECOMING THAT ANIMAL
+
+This is a major control for:
+- cherub;
+- serpent;
+- dragon;
+- Feathered Serpent;
+- Squatter-Man.
+
+Visible form ≠ underlying identity.
+
+---
+
+# JOHN 1:32–34
+## Spirit descends from heaven like dove and REMAINS
+
+John the Baptist testifies:
+- he saw Spirit descend from heaven like dove;
+- it **remained** on Jesus;
+- this stable descent is the identifying sign.
+
+### M70-17 — JOHN ADDS A STATE-VARIABLE MISSING FROM THE SYNOPTIC VISUAL SNAPSHOT: PERSISTENCE
+
+Not just:
+**descend**.
+
+But:
+**descend + remain**.
+
+This produces:
+
+**upper-origin agent**
+→ **movement downward**
+→ **stable association with human node**.
+
+### M70-18 — TEMPORARY TRANSIT AND STABLE RESIDENCE MUST BE DISTINGUISHED
+
+Important for all future gate work.
+
+A thing can:
+- pass through;
+- arrive;
+- remain.
+
+These are different states.
+
+---
+
+# JOHN 1:34 TEXTUAL CONTROL
+
+At John 1:34 manuscripts differ between:
+- "Chosen One of God";
+- "Son of God".
+
+Modern scholarship continues to debate the earliest reading.
+
+### M70-19 — DO NOT BUILD MECHANICAL OR NUMERICAL ARGUMENTS ON ONE UNSTABLE TITLE READING
+
+The descent/remain event is secure enough.
+
+Exact title:
+text-critical caution.
+
+---
+
+# DOVE / WINGED-PHENOMENON UPDATE
+
+The baptism adds a new winged-form class.
+
+Spirit:
+**like a dove**.
+
+Function:
+- descent;
+- visible identification;
+- resting/remaining.
+
+This differs from:
+- Zechariah winged transport;
+- 1 Meqabyan shade/protection;
+- Malachi radiant/healing wings;
+- cherub throne/support;
+- bird speed metaphors.
+
+### M70-20 — DOVE FORM IS BEST CLASSIFIED AS VISIBLE DESCENT/IDENTIFICATION FORM
+
+Do not automatically identify:
+dove
+=
+cherub
+=
+Feathered Serpent
+=
+Quetzalcoatl.
+
+However:
+it strengthens the broader rule that a heavenly/nonhuman agency may appear through a winged animal-like form.
+
+---
+
+# BAPTISM STRICT GATE TEST
+
+## broad support structure
+Absent.
+
+## boundary
+Strong:
+heaven boundary opens/tears.
+
+## narrow throat
+Absent.
+
+## transfer
+Strong in one direction:
+Spirit/voice upper→lower.
+
+## human transfer
+Absent.
+
+## reopening/closure
+Closure not narrated.
+
+### Verdict
+
+**Not a fingertrap.**
+
+But it is a strong:
+**boundary opens → information/agency crosses → stable human association**
+scene.
+
+---
+
+# SPIRIT → WILDERNESS TRANSFER
+
+Mark:
+Spirit **drives** Jesus into wilderness immediately.
+
+Matthew:
+Spirit leads Jesus up/into wilderness.
+
+Luke:
+Jesus full of Spirit returns from Jordan and is led in wilderness.
+
+### M70-21 — THE SAME AGENCY THAT DESCENDS AT WATER NODE BECOMES ROUTE-GUIDE INTO WILDERNESS
+
+Sequence:
+
+**Spirit descends/associates**
+→ **Jesus leaves Jordan**
+→ **Spirit directs route**
+→ **testing field**.
+
+This creates a clear:
+contact → guidance → trial
+progression.
+
+---
+
+# FORTY-DAY TEST
+
+All Synoptics retain:
+- wilderness;
+- forty-day testing period.
+
+Matthew:
+forty days and nights fasting.
+
+Luke:
+no food through period.
+
+Mark:
+forty days, no detailed three tests.
+
+### M70-22 — FORTY IS A LITERARY/THEOLOGICAL TEST-PERIOD BEFORE IT IS ANY VARDATH CLOCK
+
+Scholarly interpretation commonly relates:
+- Israel's wilderness testing;
+- Moses/Elijah traditions;
+- Adam/Israel reversal motifs.
+
+Do not force 40 into gate chronology.
+
+---
+
+# JESUS / SATAN POLARITY
+
+The testing scenes put:
+Jesus
+↔
+Satan/devil
+
+into direct paired confrontation.
+
+Functions:
+
+Jesus:
+- receives identity declaration;
+- follows Spirit;
+- refuses proposed shortcuts/authority claims.
+
+Satan:
+- tests identity;
+- offers/claims authority;
+- manipulates place and scripture;
+- leaves after failure.
+
+### M70-23 — JESUS/SATAN IS A TRUE OPPOSITION PAIR, NOT A SPLIT-IDENTITY PAIR
+
+Best classification:
+**P4 adversarial polarity**.
+
+No source basis for:
+same person / two phases of one individual.
+
+---
+
+# TEMPTATION 1
+## stone → bread
+
+Proposed transformation:
+**stone**
+→ **bread**.
+
+Jesus refuses.
+
+### M70-24 — MATERIAL-TRANSFORMATION POSSIBILITY IS PRESENT AS A TEST, NOT AS AN EVENT THAT OCCURS
+
+This is important.
+
+Do not record:
+"Jesus transforms stones into bread."
+
+He does not.
+
+The hypothetical transformation itself has literary significance,
+but no observed state change.
+
+---
+
+# MATTHEW TEST ORDER
+
+1. stone/bread;
+2. temple pinnacle;
+3. very high mountain;
+4. kingdoms displayed;
+5. worship offer;
+6. Satan dismissed;
+7. angels attend.
+
+### MATTHEW TEMPLE PINNACLE
+
+The devil:
+- takes Jesus to holy city;
+- places him on temple pinnacle;
+- proposes downward fall;
+- invokes angelic hand-support.
+
+### M70-25 — MATTHEW'S SECOND TEST IS A VERTICAL FALL / CATCH SCENARIO
+
+Geometry:
+
+**high temple point**
+→ proposed **descent/fall**
+→ proposed **angelic interception/support**
+→ ground/stone hazard.
+
+But:
+the fall never occurs.
+
+### M70-26 — ANGELS ARE PROPOSED AS CARRIERS/SUPPORTERS, NOT GATE STRUCTURE
+
+Important function distinction.
+
+---
+
+# MATTHEW VERY HIGH MOUNTAIN
+
+Devil:
+- takes Jesus to very high mountain;
+- shows kingdoms of world and splendor;
+- offers authority in exchange for worship.
+
+### M70-27 — MOUNTAIN FUNCTIONS AS PANORAMIC / AUTHORITY-VIEW NODE
+
+It does not:
+- split;
+- open;
+- become a throat.
+
+Compare Zechariah 14:
+mountain mechanically changes geometry.
+
+Matthew 4:
+mountain gives elevated overview.
+
+Do not treat every high mountain as same phenomenon.
+
+---
+
+# LUKE TEST ORDER
+
+Luke changes order:
+
+1. stone/bread;
+2. raised vantage / kingdoms shown "in an instant";
+3. Jerusalem temple pinnacle as final test;
+4. Satan leaves until opportune time.
+
+### M70-28 — MATTHEW AND LUKE CANNOT BOTH PRESERVE THE SAME REQUIRED SPATIAL SEQUENCE
+
+This is crucial.
+
+Matthew ends:
+**mountain**.
+
+Luke ends:
+**temple/Jerusalem**.
+
+Therefore any proposed hidden physical route derived from order must be Gospel-specific.
+
+### M70-29 — LUKE'S "IN AN INSTANT" IS VISIONAL/TEMPORAL COMPRESSION, NOT EVIDENCE OF PHYSICAL FAST-TIME
+
+All kingdoms displayed in a moment.
+
+Best classification:
+**compressed visionary perception**.
+
+Do not claim literal accelerated global travel.
+
+---
+
+# MARK'S DIFFERENT WILDERNESS GEOMETRY
+
+Mark omits:
+- stones/bread;
+- temple;
+- mountain;
+- kingdom panorama.
+
+Adds/emphasizes:
+- wild beasts;
+- angels attending.
+
+### M70-30 — MARK'S TESTING FIELD IS ECOLOGICAL RATHER THAN ARCHITECTURAL/GEOGRAPHICALLY STAGED
+
+One human:
+between/among
+- Satanic testing;
+- wild animals;
+- angelic attendants.
+
+This is a multi-agent wilderness field.
+
+---
+
+# FIRST DISCIPLES — SYNOPTIC VERSION
+## two brother pairs at sea + nets
+
+Matthew/Mark:
+- Simon/Peter + Andrew;
+- James + John;
+- two brother pairs;
+- sea;
+- boat;
+- nets;
+- call;
+- immediate departure.
+
+### M70-31 — EARLY DISCIPLE NETWORK BEGINS AS TWO PAIRED SIBLING NODES
+
+Pair A:
+Simon/Andrew.
+
+Pair B:
+James/John.
+
+This is a real:
+**2 + 2**
+human recruitment structure.
+
+Do not force into hidden fourfold cosmology.
+
+### M70-32 — NET IS A VOCATIONAL CAPTURE DEVICE HERE, NOT SKY LATTICE
+
+Jesus transforms function:
+fishers
+→ fishers of people.
+
+The net metaphor becomes social recruitment.
+
+Strong anti-forcing control.
+
+### M70-33 — ONE CALL RECONFIGURES EXISTING SOCIAL ATTACHMENTS
+
+They leave:
+- nets;
+- boats;
+- father.
+
+This is:
+old network
+→ new network.
+
+---
+
+# JOHN'S FIRST-DISCIPLE HANDOFF
+## John → two disciples → Jesus; Andrew → Simon; Philip → Nathanael
+
+John 1 gives a different network.
+
+John the Baptist:
+- stands with two disciples;
+- identifies Jesus;
+- two disciples follow Jesus.
+
+Andrew:
+- finds Simon;
+- brings him.
+
+Jesus:
+- renames Simon as Cephas/Peter.
+
+Jesus:
+- calls Philip.
+
+Philip:
+- finds Nathanael;
+- says "come and see."
+
+### M70-34 — JOHN'S DISCIPLE NETWORK GROWS THROUGH RELAY / ONE-TO-ONE HANDOFF
+
+Pattern:
+
+**John**
+→ two disciples
+→ **Jesus**
+
+then:
+
+**Andrew**
+→ Simon
+
+**Jesus**
+→ Philip
+→ Nathanael.
+
+This is a distributed referral network.
+
+### M70-35 — JOHN/JESUS SUCCESSION INCLUDES TRANSFER OF FOLLOWERS
+
+This makes predecessor/successor more concrete.
+
+Not just:
+John predicts Jesus.
+
+Some of John's own followers:
+**shift allegiance to successor**.
+
+---
+
+# SIMON → CEPHAS / PETER
+## human receives stone/rock name
+
+Jesus tells Simon:
+- current name Simon;
+- future/new name Cephas;
+- translated Peter;
+- both associated with rock/stone.
+
+### M70-36 — HUMAN PERSON → ROCK-NAME PROJECTION APPEARS AT THE MOMENT OF NETWORK REASSIGNMENT
+
+This is important.
+
+One identity:
+**Simon**
+→ **Cephas/Peter ("rock")**.
+
+The person remains human,
+but acquires structural/material identity language.
+
+Cross-link:
+- tree-person;
+- city-woman;
+- weapon-person;
+- stone-object personifications.
+
+### M70-37 — NAME TRANSFORMATION CAN MARK FUNCTIONAL STATE CHANGE WITHOUT BIOLOGICAL TRANSFORMATION
+
+Very useful control.
+
+---
+
+# NATHANAEL / FIG TREE / JACOB-ISRAEL FRAME
+
+Jesus:
+- calls Nathanael a true Israelite without deceit;
+- says he saw him under fig tree before Philip called;
+- Nathanael responds with royal/divine titles;
+- Jesus then announces opened heaven + angelic ascent/descent.
+
+The final saying alludes directly to Genesis 28:
+Jacob's dream.
+
+### M70-38 — JOHN DELIBERATELY ACTIVATES A JACOB/ISRAEL FRAME BEFORE THE ASCENT/DESCENT IMAGE
+
+This matters.
+
+The scene is not random:
+- "Israelite";
+- deceit contrast;
+- opened heaven;
+- angels ascending/descending.
+
+---
+
+# JOHN 1:51
+# MAJOR AXIS-PERSON TEXT
+## heaven opened → angels ascend AND descend upon Son of Man
+
+This is one of the most important Gospel findings for Vardath Cosmology.
+
+The saying gives:
+
+**heaven opened**
++
+**two-way vertical angelic traffic**
++
+**one humanlike central referent: Son of Man**.
+
+### M70-39 — THE SON OF MAN OCCUPIES THE FUNCTIONAL POSITION OF THE HEAVEN/EARTH INTERFACE
+
+The text does not explicitly say:
+"Jesus is a ladder."
+
+But the Genesis 28 allusion transfers the ascent/descent traffic from Jacob's dream setting onto:
+**the Son of Man**.
+
+Scholarship has long recognized the Jacob-ladder allusion.
+
+### M70-40 — THIS IS ONE OF THE STRONGEST AXIS-PERSON / TRANSITION-PERSON TEXTS YET
+
+Required features present:
+
+- human figure;
+- opened heaven;
+- upward movement;
+- downward movement;
+- angelic traffic;
+- vertical interface.
+
+This is far stronger for the Squatter-Man hypothesis than a generic tall prophet or raised hand.
+
+### M70-41 — ASCENT AND DESCENT SHARE ONE CENTRAL HUMAN REFERENT
+
+This directly matches one mature Vardath rule:
+
+**upward and downward traffic can share one axis**.
+
+The text gives:
+- angels ascending;
+- angels descending;
+- both "upon/on" Son of Man.
+
+### M70-42 — THE ORDER IS ASCENDING THEN DESCENDING
+
+Interesting Genesis-style order.
+
+Do not assume this proves:
+past→future or future→past flow.
+
+Direction semantics remain theological.
+
+### M70-43 — THIS IS NOT YET A FINGERTRAP
+
+Missing:
+- broad lattice;
+- contraction;
+- narrow throat;
+- same material structure changing shape.
+
+But as **axis-person geometry** it is first-tier evidence.
+
+---
+
+# JOHN 1:51 AND JACOB'S LADDER — SOURCE CONTROL
+
+Genesis 28:
+- Jacob dreams;
+- ladder/stair set on earth;
+- top reaches heaven;
+- angels ascend/descend;
+- divine presence speaks.
+
+John 1:
+- heaven opened;
+- angels ascend/descend;
+- traffic centered on Son of Man.
+
+Some interpretive traditions even emphasize angels ascending/descending on Jacob/human figure rather than only on a ladder.
+
+### M70-44 — HUMAN FIGURE CAN REPLACE / ABSORB A PREVIOUSLY ARCHITECTURAL VERTICAL-CONNECTION SYMBOL
+
+This is extremely important to the project's:
+**person ↔ ladder ↔ axis**
+hypothesis.
+
+Do not claim:
+John describes physical mechanical transformation.
+
+But symbolically:
+the function migrates.
+
+---
+
+# EARLY-MINISTRY PROCESS SYNTHESIS
+
+Across the four Gospels:
+
+wilderness messenger appears
+→ settled populations converge on Jordan
+→ water rite marks repentance
+→ John announces stronger successor
+→ Jesus arrives at water node
+→ receives baptism
+→ emerges from water
+→ heaven opens/tears
+→ Spirit descends in winged/dove-like form
+→ voice/information crosses upper boundary
+→ in John, Spirit remains on human node
+→ Spirit guides/drives Jesus away from river into wilderness
+→ forty-day testing
+→ Jesus/Satan polarity
+→ stone/bread test
+→ height/authority tests differ by Gospel
+→ Satan departs
+→ angels attend
+→ ministry begins
+→ first disciples reorganize from fishing/family or John's movement into Jesus-following network
+→ Simon receives rock-name
+→ Nathanael/Israel/Jacob frame activates
+→ heaven is announced as opened
+→ angels ascend and descend on Son of Man.
+
+---
+
+# MAJOR VARDATH FINDING 1
+## Water emergence + heavenly descent meet at one central body
+
+Baptism gives:
+
+**upper realm**
+↓ Spirit / voice
+
+**Jesus**
+↑ emerging from water
+
+**Jordan**
+.
+
+### M70-45 — THIS IS A TRUE OPPOSITE-DIRECTION CONVERGENCE AT ONE HUMAN NODE
+
+It is not two strands,
+but it is a direct:
+**up + down**
+meeting.
+
+This should cross-link:
+- Daniel 12 two-sided river;
+- John 1:51 two-way vertical traffic;
+- Vardath one-axis/opposed direction model.
+
+---
+
+# MAJOR VARDATH FINDING 2
+## Mark gives rupture; John gives stable interface
+
+Mark baptism:
+**heaven torn**.
+
+John testimony:
+Spirit **remains**.
+
+John 1:51:
+heaven **opened**, two-way angel traffic.
+
+### M70-46 — GOSPEL MATERIAL DISTINGUISHES:
+1. boundary rupture/opening;
+2. downward transfer;
+3. stable occupancy;
+4. later two-way traffic.
+
+These are separate state variables.
+
+That is mechanically useful.
+
+---
+
+# MAJOR VARDATH FINDING 3
+## Son of Man becomes the vertical connection symbol
+
+This is stronger than:
+"person stands between heaven and earth."
+
+John actually assigns:
+**ascending/descending heavenly traffic**
+to the human figure.
+
+### M70-47 — AXIS-PERSON CATEGORY IS NOW TEXTUALLY MUCH STRONGER
+
+The Vardath research should permanently distinguish:
+
+- ordinary person;
+- symbolic person;
+- carrier-person;
+- city-person;
+- tree-person;
+- **axis-person / interface-person**.
+
+John 1:51 is a major anchor for the last category.
+
+---
+
+# QUETZALCOATL / CHERUB / FEATHERED-SERPENT / WINGS UPDATE
+
+Baptism adds:
+**dove-form descent**.
+
+Function:
+- visual manifestation;
+- descent;
+- identification;
+- resting/remain.
+
+John 1:51 adds:
+**angelic vertical traffic around/on a human interface**.
+
+### M70-48 — WINGED FORM AND AXIS-PERSON APPEAR IN THE SAME EARLY-MINISTRY SYMBOLIC COMPLEX
+
+But:
+the Gospel does not say:
+dove becomes Son of Man;
+angels are dove;
+Son of Man is cherub.
+
+Therefore:
+possible same-phenomenon comparison remains external.
+
+### M70-49 — FUNCTIONAL COMPARISON IS NOW:
+- dove = descending manifestation/identifier;
+- angels = bidirectional messengers/traffic;
+- Son of Man = interface/axis;
+- John = route-preparer;
+- Jordan = water ritual node.
+
+This is much more precise than:
+"all winged things are the same."
+
+---
+
+# STRICT FINGERTRAP TEST — SECTION 70
+
+## Mark/Matthew/Luke baptism
+
+Broad woven support:
+absent.
+
+Boundary:
+strong.
+
+Opening/rupture:
+strong.
+
+Transfer:
+one-way upper→lower.
+
+Central human node:
+strong.
+
+Throat:
+absent.
+
+Reopening:
+not described.
+
+**Strict negative.**
+
+## John 1:51
+
+Two-way traffic:
+exceptionally strong.
+
+Human axis:
+exceptionally strong.
+
+Opened heaven:
+strong.
+
+Woven/contraction geometry:
+absent.
+
+Narrow throat:
+not stated.
+
+**Strict negative; strongest Gospel axis-person analogue so far.**
+
+## Temptation
+
+Mountain/temple height:
+strong.
+
+Opening/transfer:
+weak/none.
+
+**Strict negative.**
+
+---
+
+# Pair / role register
+
+## John / Jesus
+predecessor ↔ successor.
+
+## water baptism / Spirit-fire baptism
+earlier medium ↔ successor medium.
+
+## Jesus / Satan
+adversarial polarity.
+
+## Jesus upward / Spirit downward
+opposed motion at baptism.
+
+## Simon / Andrew
+brother pair.
+
+## James / John
+brother pair.
+
+## John Baptist / two disciples / Jesus
+teacher-network handoff.
+
+## Andrew / Simon
+recruiter ↔ recruited brother.
+
+## Philip / Nathanael
+recruiter ↔ recruited friend.
+
+## Simon / Cephas-Peter
+same person, old name ↔ structural/new functional name.
+
+## Jacob-ladder tradition / Son of Man
+architectural/dream interface ↔ human-centered interface.
+
+---
+
+# Number / timing register
+
+- forty days wilderness testing;
+- Matthew: forty days and forty nights;
+- Luke/Mark: forty days;
+- first Synoptic call: two brother pairs;
+- John: John initially stands with two disciples;
+- no Vardath clock should be inferred from 40 or 2 without additional evidence.
+
+---
+
+# Textual / historical controls
+
+1. John the Baptist's immersion movement is historically treated by scholarship as a distinctive ritual movement influencing early Jesus tradition.
+2. Mark says heavens are "torn apart"; Matthew/Luke use ordinary opening language.
+3. Scholarship frequently notes Mark's baptismal heaven-tearing / Passion veil-tearing literary relation; leave final evaluation for Section 72.
+4. Luke explicitly links the opened heaven to Jesus praying after baptism.
+5. Luke says Spirit descends in bodily form "like a dove"; this is a visible-form simile, not a zoological identification.
+6. John does not narrate Jesus' baptism in the same direct Synoptic scene; it presents Baptist testimony to Spirit descent/remain.
+7. John 1:34 has a significant textual variant: "Chosen One of God" / "Son of God."
+8. Matthew and Luke order the final two detailed temptations differently.
+9. Therefore temptation geography/order cannot be harmonized into a single necessary mechanical route.
+10. Mark lacks the three detailed temptation scenes and instead emphasizes wilderness, Satan, wild beasts and angels.
+11. Matthew explicitly says "very high mountain"; Luke's NRSVUE says the devil "led him up" but does not require Matthew's same mountain setting.
+12. The world-kingdom display is visionary/literary and should not be treated as demonstrated physical global visibility from a terrestrial mountain.
+13. John 1:51 explicitly alludes to Genesis 28's angelic ascent/descent.
+14. The Greek "you" in John 1:51 is plural, so the promise is wider than Nathanael alone.
+15. John 1:51 centers angelic ascent/descent on the Son of Man; calling this an axis/interface is a structural comparison, not a claim that the text describes a literal machine.
+16. First-disciple accounts differ between Synoptics and John; both should be preserved rather than forced into one chronological recruitment scene.
+
+---
+
+# Sources logged — Section 70
+
+## Primary
+- Mark 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Mark+1&version=NRSVUE
+- Matthew 3:13–17 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Matthew+3%3A13-17&version=NRSVUE
+- Matthew 4:1–11 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Matthew+4%3A1-11&version=NRSVUE
+- Matthew 4:18–22 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Matthew+4%3A18-22&version=NRSVUE
+- Luke 3:21–22 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Luke+3%3A21-22&version=NRSVUE
+- Luke 4:1–15 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Luke+4%3A1-15&version=NRSVUE
+- John 1:32–34 NRSVUE:
+  https://www.biblegateway.com/passage/?search=John+1%3A32-34&version=NRSVUE
+- John 1:35–51 NRSVUE:
+  https://www.biblegateway.com/passage/?search=John+1%3A35-51&version=NRSVUE
+
+## Scholarship / controls
+- Markan heaven-tearing / temple-veil relation and heavenly temple discussion:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/he-saw-heaven-opened-heavenly-temple-and-universal-mission-in-lukeacts/2559348BC288E8E24C18BF14D811D1F5
+- John the Baptist's immersion as distinctive ritual movement:
+  https://academic.oup.com/book/3113/chapter-abstract/143929773
+- Synoptic baptism/testing and Son-of-God tradition:
+  https://academic.oup.com/book/44536/chapter-abstract/376971276
+- Mark's wilderness testing as distinct from Matthew/Luke detailed scenes:
+  https://www.cambridge.org/core/books/abs/temptation-and-the-passion/temptation-narrative/D9EEE064500D3E0C2E5C41037A491EE1
+- John 1:34 text-critical study:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/textcritical-study-of-john-134/9B7556B5C9D8EFF96D26AB8ABAD50E6F
+- Jacob-ladder tradition and John 1:51 human/Son-of-Man focus:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/ladder-of-jacob/1042E2BCFC18AB43C8004C22D0F11430
+- Later interpretive history explicitly recognizing John 1:51's substitution of Son of Man into Jacob-ladder imagery:
+  https://academic.oup.com/book/58014/chapter/479033444
+
+---
+
+# SECTION 70 — BAPTISM / TEMPTATION / EARLY MINISTRY COMPLETE
+
+## Strongest new findings
+
+1. **The four Gospels must not be harmonized mechanically: Mark's heavens are torn; Matthew/Luke say opened; John presents retrospective Baptist testimony rather than the same narrated baptism scene.**
+2. **John/Jesus is a strong predecessor→successor pair: John prepares the route, performs water baptism, announces the stronger successor, identifies him, and in John's Gospel some of John's own disciples transfer to Jesus.**
+3. **At baptism, Jesus rises out of water while Spirit descends from heaven, producing a genuine opposed-motion convergence at one human node: upward human movement meets downward heavenly movement.**
+4. **Mark creates a clean vertical stack—Jordan below, Jesus in the middle, opened/torn heaven above—with Spirit and voice crossing downward.**
+5. **The human Jesus does not pass through the heavenly opening at baptism; the event is upper→lower contact rather than bodily upper-world transit.**
+6. **Mark's 'torn heavens' is a stronger boundary-rupture image than ordinary opening and likely forms a literary relation with the torn temple veil later in Mark; that second half is reserved for the Passion section.**
+7. **Luke explicitly places prayer before the opening and says the Spirit appears in bodily form like a dove, giving a direct source-level example of nonhuman/spiritual agency taking a visible animal-like bodily form without being reduced to that animal.**
+8. **John adds a crucial state variable: the Spirit descends and REMAINS. Arrival and persistent occupancy are therefore different from mere transit.**
+9. **The dove motif adds another wing-function category: descent/identification/resting, distinct from transport wings, shade wings, radiant/healing wings and cherub/throne-support wings.**
+10. **The Spirit that descends at the Jordan then guides/drives Jesus into the wilderness, giving contact→route guidance→testing as a continuous process.**
+11. **Jesus/Satan is an adversarial polarity pair, not a split-identity pair.**
+12. **The stone→bread transformation is proposed but never occurs, so it must not be recorded as an actual material transformation event.**
+13. **Matthew's temple-pinnacle temptation is a hypothetical vertical fall/angelic-catch scene; the angels would be carriers/supporters, not the gate.**
+14. **Matthew's very high mountain functions as panoramic authority-viewpoint, not as splitting/opening mountain machinery.**
+15. **Matthew and Luke order the temple and kingdom-height temptations differently, proving that no single hidden mechanical route should be reconstructed from their combined order.**
+16. **Mark's version is structurally different again: a wilderness field containing Jesus, Satan, wild beasts and ministering angels without the detailed mountain/temple sequence.**
+17. **The Synoptic first-disciple scene begins with two brother pairs at the sea; nets are ordinary fishing/recruitment imagery here and are a useful anti-lattice control.**
+18. **John's first-disciple scene instead gives a relay network: John→two disciples→Jesus; Andrew→Simon; Jesus→Philip→Nathanael.**
+19. **Simon→Cephas/Peter is another same-person cross-form/function marker: a human receives a rock/stone identity-name while remaining the same person.**
+20. **The major finding is John 1:51: heaven is opened and angels ascend AND descend upon the Son of Man.**
+21. **That saying transfers the Genesis/Jacob vertical ascent-descent function onto a human figure, making it one of the strongest axis-person/interface-person texts found so far.**
+22. **Upward and downward traffic explicitly share one central human referent, directly matching the mature Vardath rule that opposed directional traffic can occupy one axis.**
+23. **John 1:51 still does not show a broad woven structure contracting into a throat, so it is not the strict fingertrap; its strength is axis-person geometry rather than fingertrap formation.**
+24. **For the cherub / Quetzalcoatl / Feathered-Serpent / Squatter-Man hypothesis, Section 70 strengthens the idea that visible forms can divide by function: dove = descending manifestation, angels = bidirectional traffic, Son of Man = vertical interface, John = route-preparer, Jordan = water-node.**
+25. **No strict fingertrap appears, but the Gospel axis-person category is now much stronger than before.**
+
+## Next live block
+
+**Section 71 — Miracles and boundary episodes**
+
+Required scope:
+- water→wine;
+- storms calmed;
+- walking on water;
+- fish/catches;
+- feedings;
+- wells/living water;
+- healings;
+- demons entering/leaving bodies;
+- Jairus/daughter;
+- Lazarus;
+- tomb/cave;
+- transfiguration mountain;
+- Moses/Elijah/Jesus triad.
+
+Priority tests:
+- Moses/Elijah/Jesus as recurring axis-role triad;
+- death/raising pairs;
+- inside/outside body;
+- water as boundary/support medium;
+- storm/wind/sea interaction;
+- whether walking-on-water scenes produce any legitimate body/current support analogy;
+- whether demon transfer between hosts gives a cleaner carrier/occupant distinction;
+- whether Lazarus tomb opening supplies enclosure→call→emergence sequence;
+- whether transfiguration links human→light/body transformation with cloud/voice/mountain and paired predecessor figures;
+- strict fingertrap test only after ordinary narrative function.
+
