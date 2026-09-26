@@ -3564,3 +3564,26 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **3.** I went with him. He took me by the hand and showed me all the souls of the angels and the spirits of the ministering servants standing behind the Shekinah. Then a storm passed, and walls of fire surrounded them.
 
 **4.** At that hour Metatron opened for me the gates of the walls of fire within which they stood behind the Shekinah. I lifted my eyes and saw them. The form of each was like the form of angels; their wings were like the wings of birds, fashioned of flame and the work of burning fire. Then I opened my mouth in praise of the Omnipresent and said: “Great are the works of YHWH.””
+
+
+## 3 Enoch 48A
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and see the right hand of the Omnipresent, which has been drawn behind Him because of the destruction of the Temple. Every kind of radiant light shines from it, and by it nine hundred and fifty-five firmaments were created. Even the seraphim and ophanim are not permitted to gaze upon it until the day of salvation arrives in the time to come.”
+
+**2.** I went with him. He took me by the hand, raised me upon his wings, and showed it to me. Every kind of praise, rejoicing, and song belongs to it; no mouth can tell its praise, and no eye can gaze upon it because of its greatness, majesty, preciousness, glory, and beauty.
+
+**3.** All the souls of the righteous who are worthy to see the joy of Jerusalem stand beside it, praise before it, and ask mercy before it three times every day, saying: “Awake, awake, put on strength, arm of YHWH; awake...” and, “He caused His glorious arm to go at the right hand of Moses.”
+
+**4.** At that hour the right hand of the Holy One, blessed be He, weeps. Five rivers of tears flow from its five fingers and fall into the Great Sea, shaking the world, as it is written: “The earth is utterly broken; the earth is completely shattered; the earth totters; the earth reels like a drunkard and sways like a hut.” The five expressions correspond to the five fingers of His great right hand.
+
+**5.** When the Holy One, blessed be He, sees that there is no righteous person in the generation, no devout person on earth, no righteousness in human hands, no one like Moses, and no intercessor like Samuel to ask mercy before the Omnipresent for salvation and to cause His right hand to return before Him to work salvation for Israel, He remembers His own righteousness, kindness, and mercy, and saves His great arm by Himself; His own righteousness supports Him.
+
+**6.** Thus it is written: “He saw that there was no man, and wondered that there was no intercessor; therefore His own arm brought salvation to Him.” There was no one like Moses, who repeatedly asked mercy for Israel in the wilderness and annulled decrees against them, and no intercessor like Samuel, who called upon the Holy One, blessed be He, and was answered, as it is written: “Is it not wheat harvest today? I will call to YHWH...”
+
+**7.** More than this: Scripture joins Samuel with Moses, as it is written: “Moses and Aaron among His priests, and Samuel among those who call upon His name,” and again: “Though Moses and Samuel stood before Me...” Thus, “His own arm brought salvation to Him.”
+
+**8.** At that hour the Holy One, blessed be He, says: “How long shall I wait for My children to work salvation for My arm through their righteousness? For My own sake, for My righteousness and merit, I will save My arm and rescue My children from among the nations of the world,” as it is written: “For My own sake I will do it, for how should I wait?”
+
+**9.** Then the Holy One, blessed be He, reveals His great arm in the world and shows it to the nations. Its length is like the length of the world from one end to the other, its breadth like the breadth of the world, and the appearance of its radiance like the sun shining in its strength at the summer solstice.
+
+**10.** Immediately Israel is redeemed from among the nations. Messiah appears to them and brings them up from the four directions of the world, and the nations do not sit with them, as it is written: “YHWH has bared His holy arm before the eyes of all the nations, and all the ends of the earth shall see the salvation of our God”; “YHWH alone guided him, and there was no foreign god with him”; and, “YHWH shall be King over all the earth.””
