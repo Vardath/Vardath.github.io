@@ -4048,3 +4048,74 @@ And make known to Thy servant as thou hast promised me!
 **6.** And I said: “O Eternal, Mighty One! Let thy servant speak before Thee, and let not Thine anger kindle against Thy chosen one!”
 
 **7.** “Lo, before Thou leddest me up Azazel inveighed against me. How, then, while he is not now before Thee, hast Thou constituted Thyself with him?”
+
+
+## Apocalypse of Abraham 21
+
+**1.** And He said to me: “Look, now, beneath thy feet at the firmaments and understand the creation foreshadowed in this expanse, the creatures existing on it, and the age prepared according to it.”
+
+**2.** And I saw beneath [the surfaces of the feet, and I saw beneath] the sixth heaven and what was therein, and then the earth and its fruits, and what moved upon it and its animate beings; and the power of its men, and the ungodliness of their souls, and their righteous deeds [and the beginnings of their works], and the lower regions and the perdition therein, the Abyss and its torments.
+
+**3.** I saw there the sea and its islands, and its monsters and its fishes, and Leviathan and his dominion, and his camping-ground, and his caves, and the world which lay upon him, and his movements, and the destructions of the world on his account.
+
+**4.** I saw there streams and the rising of their waters, and their windings.
+
+**5.** And I saw there the Garden of Eden and its fruits, the source of the stream issuing from it, and its trees and their bloom, and those who behaved righteously.
+
+**6.** And I saw therein their foods and blessedness.
+
+**7.** And I saw there a great multitude—men and women and children [half of them on the right side of the picture] and half of them on the left side of the picture.
+
+## Apocalypse of Abraham 22
+
+**1.** And I said: “O Eternal, Mighty One! What is this picture of the creatures?”
+
+**2.** And He said to me: “This is my will with regard to those who exist in the divine world-counsel, and it seemed well-pleasing before my sight, and then afterwards I gave commandment to them through my Word.”
+
+**3.** “And it came to pass whatever I had determined to be, was already planned beforehand in this picture, and it stood before me ere it was created, as thou hast seen.”
+
+**4.** And I said: “O Lord, mighty and eternal! Who are the people in this picture on this side and on that?”
+
+**5.** And He said to me: “These which are on the left side are the multitude of the peoples which have formerly been in existence and which are after thee destined, some for judgement and restoration, and others for vengeance and destruction at the end of the world.”
+
+**6.** “But these which are on the right side of the picture—they are the people set apart for me of the peoples with Azazel.”
+
+**7.** “These are they whom I have ordained to be born of thee and to be called My People.”
+
+## Apocalypse of Abraham 23
+
+**1.** “Now look again in the picture, who it is who seduced Eve and what is the fruit of the tree, [and] thou wilt know what there shall be, and how it shall be to thy seed among the people at the end of the days of the age, and so far as thou canst not understand I will make known to thee, for thou art well-pleasing in my sight, and I will tell thee what is kept in my heart.”
+
+**2.** And I looked into the picture, and mine eyes ran to the side of the Garden of Eden.
+
+**3.** And I saw there a man very great in height and fearful in breadth, incomparable in aspect, embracing a woman, who likewise approximated to the aspect and shape of the man.
+
+**4.** And they were standing under a tree of the Garden of Eden, and the fruit of this tree was like the appearance of a bunch of grapes of the vine, and behind the tree was standing as it were a serpent in form, having hands and feet like a man’s, and wings on its shoulders, six on the right side and six on the left, and they were holding the grapes of the tree in their hands, and both were eating it whom I had seen embracing.
+
+**5.** And I said: “Who are these mutually embracing, or who is this who is between them, or what is the fruit which they are eating, O Mighty Eternal One?”
+
+**6.** And He said: “This is the human world, this is Adam, and this is their desire upon the earth, this is Eve; but he who is between them representeth ungodliness, their beginning on the way to perdition, even Azazel.”
+
+**7.** And I said: “O Eternal, Mighty One! Why hast Thou given to such power to destroy the generation of men in their works upon the earth?”
+
+**8.** And He said to me: “They who will to do evil—and how much I hated it in those who do it!—over them I gave him power, and to be beloved of them.”
+
+**9.** And I answered and said: “O Eternal, Mighty One! Wherefore hast Thou willed to effect that evil should be desired in the hearts of men, since Thou indeed art angered over that which was willed by Thee, at him who is doing what is unprofitable in thy counsel?”
+
+## Apocalypse of Abraham 24
+
+**1.** And He said to me: “Being angered at the nations on thy account, and on account of the people of thy family who are to be separated after thee, as thou seest in the picture the burden of destiny that is laid upon them—and I will tell thee what shall be, and how much shall be, in the last days.”
+
+**2.** “Look now at everything in the picture.”
+
+**3.** And I looked and saw there what was before me in creation.
+
+**4.** I saw Adam, and Eve existing with him, and with them the cunning Adversary, and Cain who acted lawlessly through the Adversary, and the slaughtered Abel, and the destruction brought and caused upon him through the lawless one.
+
+**5.** I saw there also Impurity, and those who lust after it, and its pollution, and their jealousy, and the fire of their corruption in the lowest parts of the earth.
+
+**6.** I saw there Theft, and those who hasten after it, and the arrangement [of their retribution, the judgement of the Great Assize].
+
+**7.** I saw there naked men, the foreheads against each other, and their disgrace, and their passion which they had against each other, and their retribution.
+
+**8.** I saw there Desire, and in her hand the head of every kind of lawlessness [and her scorn and her waste assigned to perdition].
