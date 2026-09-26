@@ -20438,3 +20438,1644 @@ And would not hearken to our voice.
 **23.** All this, O king, does Araunah give to the king.” Araunah said to the king, “May the LORD your God accept you.”
 **24.** The king said to Araunah, “No, but I will most certainly buy it from you for a price. I will not offer burnt offerings to the LORD my God which cost me nothing.” So David bought the threshing floor and the oxen for fifty shekels of silver.
 **25.** David built an altar to the LORD there, and offered burnt offerings and peace offerings. So the LORD was entreated for the land, and the plague was removed from Israel.
+
+---
+
+# Book 18 — I and II Kings
+
+*World English Bible Updated (WEBU), public domain. USFM, Strong’s-number markup, and study footnotes have been removed while preserving the verse wording.*
+
+# I Kings
+
+## I Kings 1
+
+**1.** Now King David was old and advanced in years; and they covered him with clothes, but he couldn’t keep warm.
+**2.** Therefore his servants said to him, “Let a young virgin be sought for my lord the king. Let her stand before the king, and cherish him; and let her lie in your bosom, that my lord the king may keep warm.”
+**3.** So they sought for a beautiful young lady throughout all the borders of Israel, and found Abishag the Shunammite, and brought her to the king.
+**4.** The young lady was very beautiful; and she cherished the king, and served him; but the king didn’t know her intimately.
+**5.** Then Adonijah the son of Haggith exalted himself, saying, “I will be king.” Then he prepared him chariots and horsemen, and fifty men to run before him.
+**6.** His father had not displeased him at any time in saying, “Why have you done so?” and he was also a very handsome man; and he was born after Absalom.
+**7.** He conferred with Joab the son of Zeruiah and with Abiathar the priest; and they followed Adonijah and helped him.
+**8.** But Zadok the priest, Benaiah the son of Jehoiada, Nathan the prophet, Shimei, Rei, and the mighty men who belonged to David, were not with Adonijah.
+**9.** Adonijah killed sheep, cattle, and fatlings by the stone of Zoheleth, which is beside En Rogel; and he called all his brothers, the king’s sons, and all the men of Judah, the king’s servants;
+**10.** but he didn’t call Nathan the prophet, and Benaiah, and the mighty men, and Solomon his brother.
+**11.** Then Nathan spoke to Bathsheba the mother of Solomon, saying, “Haven’t you heard that Adonijah the son of Haggith reigns, and David our lord doesn’t know it?
+**12.** Now therefore come, please let me give you counsel, that you may save your own life and your son Solomon’s life.
+**13.** Go in to King David, and tell him, ‘Didn’t you, my lord the king, swear to your servant, saying, “Assuredly Solomon your son shall reign after me, and he shall sit on my throne”? Why then does Adonijah reign?’
+**14.** Behold, while you are still talking there with the king, I will also come in after you and confirm your words.”
+**15.** Bathsheba went in to the king in his room. The king was very old; and Abishag the Shunammite was serving the king.
+**16.** Bathsheba bowed and showed respect to the king. The king said, “What would you like?”
+**17.** She said to him, “My lord, you swore by the LORD your God to your servant, ‘Assuredly Solomon your son shall reign after me, and he shall sit on my throne.’
+**18.** Now, behold, Adonijah reigns; and you, my lord the king, don’t know it.
+**19.** He has slain cattle and fatlings and sheep in abundance, and has called all the sons of the king, Abiathar the priest, and Joab the captain of the army; but he hasn’t called Solomon your servant.
+**20.** You, my lord the king, the eyes of all Israel are on you, that you should tell them who will sit on the throne of my lord the king after him.
+**21.** Otherwise it will happen, when my lord the king sleeps with his fathers, that I and my son Solomon will be considered criminals.”
+**22.** Behold, while she was still talking with the king, Nathan the prophet came in.
+**23.** They told the king, saying, “Behold, Nathan the prophet!” When he had come in before the king, he bowed himself before the king with his face to the ground.
+**24.** Nathan said, “My lord, King, have you said, ‘Adonijah shall reign after me, and he shall sit on my throne’?
+**25.** For he has gone down today, and has slain cattle, fatlings, and sheep in abundance, and has called all the king’s sons, the captains of the army, and Abiathar the priest. Behold, they are eating and drinking before him, and saying, ‘Long live King Adonijah!’
+**26.** But he hasn’t called me, even me your servant, Zadok the priest, Benaiah the son of Jehoiada, and your servant Solomon.
+**27.** Was this thing done by my lord the king, and you haven’t shown to your servants who should sit on the throne of my lord the king after him?”
+**28.** Then King David answered, “Call Bathsheba in to me.” She came into the king’s presence and stood before the king.
+**29.** The king vowed and said, “As the LORD lives, who has redeemed my soul out of all adversity,
+**30.** most certainly as I swore to you by the LORD, the God of Israel, saying, ‘Assuredly Solomon your son shall reign after me, and he shall sit on my throne in my place;’ I will most certainly do this today.”
+**31.** Then Bathsheba bowed with her face to the earth and showed respect to the king, and said, “Let my lord King David live forever!”
+**32.** King David said, “Call to me Zadok the priest, Nathan the prophet, and Benaiah the son of Jehoiada.” They came before the king.
+**33.** The king said to them, “Take with you the servants of your lord, and cause Solomon my son to ride on my own mule, and bring him down to Gihon.
+**34.** Let Zadok the priest and Nathan the prophet anoint him there king over Israel. Blow the trumpet, and say, ‘Long live King Solomon!’
+**35.** Then come up after him, and he shall come and sit on my throne; for he shall be king in my place. I have appointed him to be prince over Israel and over Judah.”
+**36.** Benaiah the son of Jehoiada answered the king, and said, “Amen. May the LORD, the God of my lord the king, say so.
+**37.** As the LORD has been with my lord the king, even so may he be with Solomon, and make his throne greater than the throne of my lord King David.”
+**38.** So Zadok the priest, Nathan the prophet, Benaiah the son of Jehoiada, and the Cherethites and the Pelethites went down and had Solomon ride on King David’s mule, and brought him to Gihon.
+**39.** Zadok the priest took the horn of oil from the Tent, and anointed Solomon. They blew the trumpet; and all the people said, “Long live King Solomon!”
+**40.** All the people came up after him, and the people piped with pipes, and rejoiced with great joy, so that the earth shook with their sound.
+**41.** Adonijah and all the guests who were with him heard it as they had finished eating. When Joab heard the sound of the trumpet, he said, “Why is this noise of the city being in an uproar?”
+**42.** While he yet spoke, behold, Jonathan the son of Abiathar the priest came; and Adonijah said, “Come in; for you are a worthy man, and bring good news.”
+**43.** Jonathan answered Adonijah, “Most certainly our lord King David has made Solomon king.
+**44.** The king has sent with him Zadok the priest, Nathan the prophet, Benaiah the son of Jehoiada, and the Cherethites and the Pelethites; and they have caused him to ride on the king’s mule.
+**45.** Zadok the priest and Nathan the prophet have anointed him king in Gihon. They have come up from there rejoicing, so that the city rang again. This is the noise that you have heard.
+**46.** Also, Solomon sits on the throne of the kingdom.
+**47.** Moreover the king’s servants came to bless our lord King David, saying, ‘May your God make the name of Solomon better than your name, and make his throne greater than your throne;’ and the king bowed himself on the bed.
+**48.** Also thus said the king, ‘Blessed be the LORD, the God of Israel, who has given one to sit on my throne today, my eyes even seeing it.’”
+**49.** All the guests of Adonijah were afraid, and rose up, and each man went his way.
+**50.** Adonijah was afraid because of Solomon; and he arose, and went, and hung onto the horns of the altar.
+**51.** Solomon was told, “Behold, Adonijah fears King Solomon; for, behold, he is hanging onto the horns of the altar, saying, ‘Let King Solomon swear to me first that he will not kill his servant with the sword.’”
+**52.** Solomon said, “If he shows himself a worthy man, not a hair of his shall fall to the earth; but if wickedness is found in him, he shall die.”
+**53.** So King Solomon sent, and they brought him down from the altar. He came and bowed down to King Solomon; and Solomon said to him, “Go to your house.”
+## I Kings 2
+
+**1.** Now the days of David came near that he should die; and he commanded Solomon his son, saying,
+**2.** “I am going the way of all the earth. You be strong therefore, and show yourself a man;
+**3.** and keep the instruction of the LORD your God, to walk in his ways, to keep his statutes, his commandments, his ordinances, and his testimonies, according to that which is written in the law of Moses, that you may prosper in all that you do and wherever you turn yourself.
+**4.** Then the LORD may establish his word which he spoke concerning me, saying, ‘If your children are careful of their way, to walk before me in truth with all their heart and with all their soul, there shall not fail you,’ he said, ‘a man on the throne of Israel.’
+**5.** “Moreover you know also what Joab the son of Zeruiah did to me, even what he did to the two captains of the armies of Israel, to Abner the son of Ner and to Amasa the son of Jether, whom he killed, and shed the blood of war in peace, and put the blood of war on his sash that was around his waist and in his sandals that were on his feet.
+**6.** Do therefore according to your wisdom, and don’t let his gray head go down to Sheol in peace.
+**7.** But show kindness to the sons of Barzillai the Gileadite, and let them be among those who eat at your table; for so they came to me when I fled from Absalom your brother.
+**8.** “Behold, there is with you Shimei the son of Gera, the Benjamite of Bahurim, who cursed me with a grievous curse in the day when I went to Mahanaim; but he came down to meet me at the Jordan, and I swore to him by the LORD, saying, ‘I will not put you to death with the sword.’
+**9.** Now therefore don’t hold him guiltless, for you are a wise man; and you will know what you ought to do to him, and you shall bring his gray head down to Sheol with blood.”
+**10.** David slept with his fathers, and was buried in David’s city.
+**11.** The days that David reigned over Israel were forty years; he reigned seven years in Hebron, and he reigned thirty-three years in Jerusalem.
+**12.** Solomon sat on David his father’s throne; and his kingdom was firmly established.
+**13.** Then Adonijah the son of Haggith came to Bathsheba the mother of Solomon. She said, “Do you come peaceably?” He said, “Peaceably.
+**14.** He said moreover, I have something to tell you.” She said, “Say on.”
+**15.** He said, “You know that the kingdom was mine, and that all Israel set their faces on me, that I should reign. However, the kingdom is turned around, and has become my brother’s; for it was his from the LORD.
+**16.** Now I ask one petition of you. Don’t deny me.” She said to him, “Say on.”
+**17.** He said, “Please speak to Solomon the king (for he will not tell you ‘no’), that he give me Abishag the Shunammite as wife.”
+**18.** Bathsheba said, “All right. I will speak for you to the king.”
+**19.** Bathsheba therefore went to King Solomon, to speak to him for Adonijah. The king rose up to meet her and bowed himself to her, and sat down on his throne and caused a throne to be set for the king’s mother; and she sat on his right hand.
+**20.** Then she said, “I ask one small petition of you; don’t deny me.” The king said to her, “Ask on, my mother, for I will not deny you.”
+**21.** She said, “Let Abishag the Shunammite be given to Adonijah your brother as wife.”
+**22.** King Solomon answered his mother, “Why do you ask Abishag the Shunammite for Adonijah? Ask for him the kingdom also, for he is my elder brother; even for him, and for Abiathar the priest, and for Joab the son of Zeruiah.”
+**23.** Then King Solomon swore by the LORD, saying, “God do so to me, and more also, if Adonijah has not spoken this word against his own life.
+**24.** Now therefore as the LORD lives, who has established me and set me on my father David’s throne, and who has made me a house as he promised, surely Adonijah shall be put to death today.”
+**25.** King Solomon sent Benaiah the son of Jehoiada; and he fell on him, so that he died.
+**26.** To Abiathar the priest the king said, “Go to Anathoth, to your own fields, for you are worthy of death. But I will not at this time put you to death, because you bore the Lord GOD’s ark before David my father, and because you were afflicted in all in which my father was afflicted.”
+**27.** So Solomon thrust Abiathar out from being priest to the LORD, that he might fulfill the LORD’s word which he spoke concerning the house of Eli in Shiloh.
+**28.** This news came to Joab; for Joab had followed Adonijah, although he didn’t follow Absalom. Joab fled to the LORD’s Tent, and held onto the horns of the altar.
+**29.** King Solomon was told, “Joab has fled to the LORD’s Tent; and behold, he is by the altar.” Then Solomon sent Benaiah the son of Jehoiada, saying, “Go, fall on him.”
+**30.** Benaiah came to the LORD’s Tent, and said to him, “The king says, ‘Come out!’” He said, “No; but I will die here.” Benaiah brought the king word again, saying, “This is what Joab said, and this is how he answered me.”
+**31.** The king said to him, “Do as he has said, and fall on him, and bury him, that you may take away the blood, which Joab shed without cause, from me and from my father’s house.
+**32.** The LORD will return his blood on his own head, because he fell on two men more righteous and better than he, and killed them with the sword, and my father David didn’t know it: Abner the son of Ner, captain of the army of Israel, and Amasa the son of Jether, captain of the army of Judah.
+**33.** So their blood will return on the head of Joab and on the head of his offspring forever. But for David, for his offspring, for his house, and for his throne, there will be peace forever from the LORD.”
+**34.** Then Benaiah the son of Jehoiada went up and fell on him, and killed him; and he was buried in his own house in the wilderness.
+**35.** The king put Benaiah the son of Jehoiada in his place over the army; and the king put Zadok the priest in the place of Abiathar.
+**36.** The king sent and called for Shimei, and said to him, “Build yourself a house in Jerusalem, and live there, and don’t go anywhere else.
+**37.** For on the day you go out and pass over the brook Kidron, know for certain that you will surely die. Your blood will be on your own head.”
+**38.** Shimei said to the king, “What you say is good. As my lord the king has said, so will your servant do.” Shimei lived in Jerusalem many days.
+**39.** At the end of three years, two of Shimei’s slaves ran away to Achish, son of Maacah, king of Gath. They told Shimei, saying, “Behold, your slaves are in Gath.”
+**40.** Shimei arose, saddled his donkey, and went to Gath to Achish to seek his slaves; and Shimei went and brought his slaves from Gath.
+**41.** Solomon was told that Shimei had gone from Jerusalem to Gath, and had come again.
+**42.** The king sent and called for Shimei, and said to him, “Didn’t I adjure you by the LORD and warn you, saying, ‘Know for certain that on the day you go out and walk anywhere else, you shall surely die’? You said to me, ‘The saying that I have heard is good.’
+**43.** Why then have you not kept the oath of the LORD and the commandment that I have instructed you with?”
+**44.** The king said moreover to Shimei, “You know in your heart all the wickedness that you did to David my father. Therefore the LORD will return your wickedness on your own head.
+**45.** But King Solomon will be blessed, and David’s throne will be established before the LORD forever.”
+**46.** So the king commanded Benaiah the son of Jehoiada; and he went out, and fell on him, so that he died. The kingdom was established in the hand of Solomon.
+## I Kings 3
+
+**1.** Solomon made a marriage alliance with Pharaoh king of Egypt. He took Pharaoh’s daughter and brought her into David’s city until he had finished building his own house, the LORD’s house, and the wall around Jerusalem.
+**2.** However, the people sacrificed in the high places, because there was not yet a house built for the LORD’s name.
+**3.** Solomon loved the LORD, walking in the statutes of David his father, except that he sacrificed and burned incense in the high places.
+**4.** The king went to Gibeon to sacrifice there, for that was the great high place. Solomon offered a thousand burnt offerings on that altar.
+**5.** In Gibeon, the LORD appeared to Solomon in a dream by night; and God said, “Ask for what I should give you.”
+**6.** Solomon said, “You have shown to your servant David my father great loving kindness, because he walked before you in truth, in righteousness, and in uprightness of heart with you. You have kept for him this great loving kindness, that you have given him a son to sit on his throne, as it is today.
+**7.** Now, LORD my God, you have made your servant king instead of David my father. I am just a little child. I don’t know how to go out or come in.
+**8.** Your servant is among your people which you have chosen, a great people, that can’t be numbered or counted for multitude.
+**9.** Give your servant therefore an understanding heart to judge your people, that I may discern between good and evil; for who is able to judge this great people of yours?”
+**10.** This request pleased the Lord, that Solomon had asked this thing.
+**11.** God said to him, “Because you have asked this thing, and have not asked for yourself long life, nor have you asked for riches for yourself, nor have you asked for the life of your enemies, but have asked for yourself understanding to discern justice,
+**12.** behold, I have done according to your word. Behold, I have given you a wise and understanding heart, so that there has been no one like you before you, and after you none will arise like you.
+**13.** I have also given you that which you have not asked, both riches and honor, so that there will not be any among the kings like you for all your days.
+**14.** If you will walk in my ways, to keep my statutes and my commandments, as your father David walked, then I will lengthen your days.”
+**15.** Solomon awoke; and behold, it was a dream. Then he came to Jerusalem and stood before the ark of the LORD’s covenant, and offered up burnt offerings, offered peace offerings, and made a feast for all his servants.
+**16.** Then two women who were prostitutes came to the king, and stood before him.
+**17.** The one woman said, “Oh, my lord, I and this woman dwell in one house. I delivered a child with her in the house.
+**18.** The third day after I delivered, this woman delivered also. We were together. There was no stranger with us in the house, just us two in the house.
+**19.** This woman’s child died in the night, because she lay on it.
+**20.** She arose at midnight, and took my son from beside me while your servant slept, and laid it in her bosom, and laid her dead child in my bosom.
+**21.** When I rose in the morning to nurse my child, behold, he was dead; but when I had looked at him in the morning, behold, it was not my son whom I bore.”
+**22.** The other woman said, “No! But the living one is my son, and the dead one is your son.” The first one said, “No! But the dead one is your son, and the living one is my son.” They argued like this before the king.
+**23.** Then the king said, “One says, ‘This is my son who lives, and your son is the dead one;’ and the other says, ‘No! But your son is the dead one, and my son is the living one.’”
+**24.** The king said, “Get me a sword.” So they brought a sword before the king.
+**25.** The king said, “Divide the living child in two, and give half to the one, and half to the other.”
+**26.** Then the woman whose the living child was spoke to the king, for her heart yearned over her son, and she said, “Oh, my lord, give her the living child, and in no way kill him!” But the other said, “He shall be neither mine nor yours. Divide him.”
+**27.** Then the king answered, “Give the first woman the living child, and definitely do not kill him. She is his mother.”
+**28.** All Israel heard of the judgment which the king had judged; and they feared the king, for they saw that the wisdom of God was in him to do justice.
+## I Kings 4
+
+**1.** King Solomon was king over all Israel.
+**2.** These were the princes whom he had: Azariah the son of Zadok, the priest;
+**3.** Elihoreph and Ahijah, the sons of Shisha, scribes; Jehoshaphat the son of Ahilud, the recorder;
+**4.** Benaiah the son of Jehoiada was over the army; Zadok and Abiathar were priests;
+**5.** Azariah the son of Nathan was over the officers; Zabud the son of Nathan was chief minister, the king’s friend;
+**6.** Ahishar was over the household; and Adoniram the son of Abda was over the men subject to forced labor.
+**7.** Solomon had twelve officers over all Israel, who provided food for the king and his household. Each man had to make provision for a month in the year.
+**8.** These are their names: Ben Hur, in the hill country of Ephraim;
+**9.** Ben Deker, in Makaz, in Shaalbim, Beth Shemesh, and Elon Beth Hanan;
+**10.** Ben Hesed, in Arubboth (Socoh and all the land of Hepher belonged to him);
+**11.** Ben Abinadab, in all the height of Dor (he had Taphath, Solomon’s daughter, as wife);
+**12.** Baana the son of Ahilud, in Taanach and Megiddo, and all Beth Shean which is beside Zarethan, beneath Jezreel, from Beth Shean to Abel Meholah, as far as beyond Jokmeam;
+**13.** Ben Geber, in Ramoth Gilead (the towns of Jair the son of Manasseh, which are in Gilead, belonged to him; and the region of Argob, which is in Bashan, sixty great cities with walls and bronze bars, belonged to him);
+**14.** Ahinadab the son of Iddo, in Mahanaim;
+**15.** Ahimaaz, in Naphtali (he also took Basemath the daughter of Solomon as wife);
+**16.** Baana the son of Hushai, in Asher and Bealoth;
+**17.** Jehoshaphat the son of Paruah, in Issachar;
+**18.** Shimei the son of Ela, in Benjamin;
+**19.** Geber the son of Uri, in the land of Gilead, the country of Sihon king of the Amorites and of Og king of Bashan; and he was the only officer who was in the land.
+**20.** Judah and Israel were numerous as the sand which is by the sea in multitude, eating and drinking and making merry.
+**21.** Solomon ruled over all the kingdoms from the River to the land of the Philistines, and to the border of Egypt. They brought tribute and served Solomon all the days of his life.
+**22.** Solomon’s provision for one day was thirty cors of fine flour, sixty measures of meal,
+**23.** ten head of fat cattle, twenty head of cattle out of the pastures, and one hundred sheep, in addition to deer, gazelles, roebucks, and fattened fowl.
+**24.** For he had dominion over all on this side of the River, from Tiphsah even to Gaza, over all the kings on this side of the River; and he had peace on all sides around him.
+**25.** Judah and Israel lived safely, every man under his vine and under his fig tree, from Dan even to Beersheba, all the days of Solomon.
+**26.** Solomon had forty thousand stalls of horses for his chariots, and twelve thousand horsemen.
+**27.** Those officers provided food for King Solomon, and for all who came to King Solomon’s table, every man in his month. They let nothing be lacking.
+**28.** They also brought barley and straw for the horses and swift steeds to the place where the officers were, each man according to his duty.
+**29.** God gave Solomon abundant wisdom, understanding, and breadth of mind like the sand that is on the seashore.
+**30.** Solomon’s wisdom excelled the wisdom of all the children of the east and all the wisdom of Egypt.
+**31.** For he was wiser than all men—wiser than Ethan the Ezrahite, Heman, Calcol, and Darda, the sons of Mahol; and his fame was in all the nations all around.
+**32.** He spoke three thousand proverbs, and his songs numbered one thousand five.
+**33.** He spoke of trees, from the cedar that is in Lebanon even to the hyssop that grows out of the wall; he also spoke of animals, of birds, of creeping things, and of fish.
+**34.** People of all nations came to hear the wisdom of Solomon, sent by all kings of the earth who had heard of his wisdom.
+## I Kings 5
+
+**1.** Hiram king of Tyre sent his servants to Solomon, for he had heard that they had anointed him king in the place of his father, and Hiram had always loved David.
+**2.** Solomon sent to Hiram, saying,
+**3.** “You know that David my father could not build a house for the name of the LORD his God because of the wars which were around him on every side, until the LORD put his enemies under the soles of his feet.
+**4.** But now the LORD my God has given me rest on every side. There is no enemy and no evil occurrence.
+**5.** Behold, I intend to build a house for the name of the LORD my God, as the LORD spoke to David my father, saying, ‘Your son, whom I will set on your throne in your place shall build the house for my name.’
+**6.** Now therefore command that cedar trees be cut for me out of Lebanon. My servants will be with your servants; and I will give you wages for your servants according to all that you say. For you know that there is nobody among us who knows how to cut timber like the Sidonians.”
+**7.** When Hiram heard the words of Solomon, he rejoiced greatly, and said, “Blessed is the LORD today, who has given to David a wise son to rule over this great people.”
+**8.** Hiram sent to Solomon, saying, “I have heard the message which you have sent to me. I will do all your desire concerning timber of cedar, and concerning cypress timber.
+**9.** My servants will bring them down from Lebanon to the sea. I will make them into rafts to go by sea to the place that you specify to me, and will cause them to be broken up there, and you will receive them. You will accomplish my desire, in giving food for my household.”
+**10.** So Hiram gave Solomon cedar timber and cypress timber according to all his desire.
+**11.** Solomon gave Hiram twenty thousand cors of wheat for food to his household, and twenty cors of pure oil. Solomon gave this to Hiram year by year.
+**12.** The LORD gave Solomon wisdom, as he promised him. There was peace between Hiram and Solomon, and the two of them made a treaty together.
+**13.** King Solomon raised a levy out of all Israel; and the levy was thirty thousand men.
+**14.** He sent them to Lebanon, ten thousand a month by courses: for a month they were in Lebanon, and two months at home; and Adoniram was over the men subject to forced labor.
+**15.** Solomon had seventy thousand who bore burdens, and eighty thousand who were stone cutters in the mountains,
+**16.** besides Solomon’s chief officers who were over the work: three thousand three hundred who ruled over the people who labored in the work.
+**17.** The king commanded, and they cut out large stones, costly stones, to lay the foundation of the house with worked stone.
+**18.** Solomon’s builders and Hiram’s builders and the Gebalites cut them, and prepared the timber and the stones to build the house.
+## I Kings 6
+
+**1.** In the four hundred and eightieth year after the children of Israel had come out of the land of Egypt, in the fourth year of Solomon’s reign over Israel, in the month Ziv, which is the second month, he began to build the LORD’s house.
+**2.** The house which King Solomon built for the LORD had a length of sixty cubits, and its width twenty, and its height thirty cubits.
+**3.** The porch in front of the temple of the house had a length of twenty cubits, which was along the width of the house. Ten cubits was its width in front of the house.
+**4.** He made windows of fixed lattice work for the house.
+**5.** Against the wall of the house, he built floors all around, against the walls of the house all around, both of the temple and of the inner sanctuary; and he made side rooms all around.
+**6.** The lowest floor was five cubits wide, and the middle was six cubits wide, and the third was seven cubits wide; for on the outside he made offsets in the wall of the house all around, that the beams should not be inserted into the walls of the house.
+**7.** The house, when it was under construction, was built of stone prepared at the quarry; and no hammer or ax or any tool of iron was heard in the house while it was under construction.
+**8.** The door for the middle side rooms was in the right side of the house. They went up by winding stairs into the middle floor, and out of the middle into the third.
+**9.** So he built the house and finished it; and he covered the house with beams and planks of cedar.
+**10.** He built the floors all along the house, each five cubits high; and they rested on the house with timbers of cedar.
+**11.** The LORD’s word came to Solomon, saying,
+**12.** “Concerning this house which you are building, if you will walk in my statutes, and execute my ordinances, and keep all my commandments to walk in them, then I will establish my word with you, which I spoke to David your father.
+**13.** I will dwell among the children of Israel, and will not forsake my people Israel.”
+**14.** So Solomon built the house and finished it.
+**15.** He built the walls of the house within with boards of cedar; from the floor of the house to the walls of the ceiling, he covered them on the inside with wood. He covered the floor of the house with cypress boards.
+**16.** He built twenty cubits of the back part of the house with boards of cedar from the floor to the ceiling. He built this within, for an inner sanctuary, even for the most holy place.
+**17.** In front of the temple sanctuary was forty cubits long.
+**18.** There was cedar on the house within, carved with buds and open flowers. All was cedar. No stone was visible.
+**19.** He prepared an inner sanctuary in the middle of the house within, to set the ark of the LORD’s covenant there.
+**20.** Within the inner sanctuary was twenty cubits in length, and twenty cubits in width, and twenty cubits in its height. He overlaid it with pure gold. He covered the altar with cedar.
+**21.** So Solomon overlaid the house within with pure gold. He drew chains of gold across before the inner sanctuary, and he overlaid it with gold.
+**22.** He overlaid the whole house with gold, until all the house was finished. He also overlaid the whole altar that belonged to the inner sanctuary with gold.
+**23.** In the inner sanctuary he made two cherubim of olive wood, each ten cubits high.
+**24.** Five cubits was the length of one wing of the cherub, and five cubits was the length of the other wing of the cherub. From the tip of one wing to the tip of the other was ten cubits.
+**25.** The other cherub was ten cubits. Both the cherubim were of one measure and one form.
+**26.** One cherub was ten cubits high, and so was the other cherub.
+**27.** He set the cherubim within the inner house. The wings of the cherubim were stretched out, so that the wing of the one touched the one wall and the wing of the other cherub touched the other wall; and their wings touched one another in the middle of the house.
+**28.** He overlaid the cherubim with gold.
+**29.** He carved all the walls of the house around with carved figures of cherubim, palm trees, and open flowers, inside and outside.
+**30.** He overlaid the floor of the house with gold, inside and outside.
+**31.** For the entrance of the inner sanctuary, he made doors of olive wood. The lintel and door posts were a fifth part of the wall.
+**32.** So he made two doors of olive wood; and he carved on them carvings of cherubim, palm trees, and open flowers, and overlaid them with gold. He spread the gold on the cherubim and on the palm trees.
+**33.** He also made the entrance of the temple door posts of olive wood, out of a fourth part of the wall,
+**34.** and two doors of cypress wood. The two leaves of the one door were folding, and the two leaves of the other door were folding.
+**35.** He carved cherubim, palm trees, and open flowers; and he overlaid them with gold fitted on the engraved work.
+**36.** He built the inner court with three courses of cut stone and a course of cedar beams.
+**37.** The foundation of the LORD’s house was laid in the fourth year, in the month Ziv.
+**38.** In the eleventh year, in the month Bul, which is the eighth month, the house was finished throughout all its parts and according to all its specifications. So he spent seven years building it.
+## I Kings 7
+
+**1.** Solomon was building his own house thirteen years, and he finished all his house.
+**2.** For he built the House of the Forest of Lebanon. Its length was one hundred cubits, its width fifty cubits, and its height thirty cubits, on four rows of cedar pillars, with cedar beams on the pillars.
+**3.** It was covered with cedar above over the forty-five beams that were on the pillars, fifteen in a row.
+**4.** There were beams in three rows, and window was facing window in three ranks.
+**5.** All the doors and posts were made square with beams; and window was facing window in three ranks.
+**6.** He made the hall of pillars. Its length was fifty cubits and its width thirty cubits, with a porch before them, and pillars and a threshold before them.
+**7.** He made the porch of the throne where he was to judge, even the porch of judgment; and it was covered with cedar from floor to floor.
+**8.** His house where he was to dwell, the other court within the porch, was of the same construction. He made also a house for Pharaoh’s daughter (whom Solomon had taken as wife), like this porch.
+**9.** All these were of costly stones, even of stone cut according to measure, sawed with saws, inside and outside, even from the foundation to the coping, and so on the outside to the great court.
+**10.** The foundation was of costly stones, even great stones, stones of ten cubits and stones of eight cubits.
+**11.** Above were costly stones, even cut stone, according to measure, and cedar wood.
+**12.** The great court around had three courses of cut stone with a course of cedar beams, like the inner court of the LORD’s house and the porch of the house.
+**13.** King Solomon sent and brought Hiram out of Tyre.
+**14.** He was the son of a widow of the tribe of Naphtali, and his father was a man of Tyre, a worker in bronze; and he was filled with wisdom and understanding and skill to work all works in bronze. He came to King Solomon and performed all his work.
+**15.** For he fashioned the two pillars of bronze, eighteen cubits high apiece; and a line of twelve cubits encircled either of them.
+**16.** He made two capitals of molten bronze to set on the tops of the pillars. The height of the one capital was five cubits, and the height of the other capital was five cubits.
+**17.** There were nets of checker work and wreaths of chain work for the capitals which were on the top of the pillars: seven for the one capital, and seven for the other capital.
+**18.** So he made the pillars; and there were two rows of pomegranates around the one network, to cover the capitals that were on the top of the pillars; and he did so for the other capital.
+**19.** The capitals that were on the top of the pillars in the porch were of lily work, four cubits.
+**20.** There were capitals above also on the two pillars, close by the belly which was beside the network. There were two hundred pomegranates in rows around the other capital.
+**21.** He set up the pillars at the porch of the temple. He set up the right pillar and called its name Jachin; and he set up the left pillar and called its name Boaz.
+**22.** On the tops of the pillars was lily work. So the work of the pillars was finished.
+**23.** He made the molten sea ten cubits from brim to brim, round in shape. Its height was five cubits; and a line of thirty cubits encircled it.
+**24.** Under its brim around there were buds which encircled it for ten cubits, encircling the sea. The buds were in two rows, cast when it was cast.
+**25.** It stood on twelve oxen, three looking toward the north, and three looking toward the west, and three looking toward the south, and three looking toward the east; and the sea was set on them above, and all their hindquarters were inward.
+**26.** It was a hand width thick. Its brim was worked like the brim of a cup, like the flower of a lily. It held two thousand baths.
+**27.** He made the ten bases of bronze. The length of one base was four cubits, four cubits its width, and three cubits its height.
+**28.** The work of the bases was like this: they had panels; and there were panels between the ledges;
+**29.** and on the panels that were between the ledges were lions, oxen, and cherubim; and on the ledges there was a pedestal above; and beneath the lions and oxen were wreaths of hanging work.
+**30.** Every base had four bronze wheels and axles of bronze; and its four feet had supports. The supports were cast beneath the basin, with wreaths at the side of each.
+**31.** Its opening within the capital and above was a cubit. Its opening was round like the work of a pedestal, a cubit and a half; and also on its opening were engravings, and their panels were square, not round.
+**32.** The four wheels were underneath the panels; and the axles of the wheels were in the base. The height of a wheel was a cubit and half a cubit.
+**33.** The work of the wheels was like the work of a chariot wheel. Their axles, their rims, their spokes, and their hubs were all of cast metal.
+**34.** There were four supports at the four corners of each base. Its supports were of the base itself.
+**35.** In the top of the base there was a round band half a cubit high; and on the top of the base its supports and its panels were the same.
+**36.** On the plates of its supports and on its panels, he engraved cherubim, lions, and palm trees, each in its space, with wreaths all around.
+**37.** He made the ten bases in this way: all of them had one casting, one measure, and one form.
+**38.** He made ten basins of bronze. One basin contained forty baths. Every basin measured four cubits. One basin was on every one of the ten bases.
+**39.** He set the bases, five on the right side of the house and five on the left side of the house. He set the sea on the right side of the house eastward and toward the south.
+**40.** Hiram made the pots, the shovels, and the basins. So Hiram finished doing all the work that he worked for King Solomon in the LORD’s house:
+**41.** the two pillars; the two bowls of the capitals that were on the top of the pillars; the two networks to cover the two bowls of the capitals that were on the top of the pillars;
+**42.** the four hundred pomegranates for the two networks; two rows of pomegranates for each network, to cover the two bowls of the capitals that were on the pillars;
+**43.** the ten bases; the ten basins on the bases;
+**44.** the one sea; the twelve oxen under the sea;
+**45.** the pots; the shovels; and the basins. All of these vessels, which Hiram made for King Solomon in the LORD’s house, were of burnished bronze.
+**46.** The king cast them in the plain of the Jordan, in the clay ground between Succoth and Zarethan.
+**47.** Solomon left all the vessels unweighed, because there were so many of them. The weight of the bronze could not be determined.
+**48.** Solomon made all the vessels that were in the LORD’s house: the golden altar and the table that the show bread was on, of gold;
+**49.** and the lamp stands, five on the right side and five on the left, in front of the inner sanctuary, of pure gold; and the flowers, the lamps, and the tongs, of gold;
+**50.** the cups, the snuffers, the basins, the spoons, and the fire pans, of pure gold; and the hinges, both for the doors of the inner house, the most holy place, and for the doors of the house, of the temple, of gold.
+**51.** Thus all the work that King Solomon did in the LORD’s house was finished. Solomon brought in the things which David his father had dedicated—the silver, the gold, and the vessels—and put them in the treasuries of the LORD’s house.
+## I Kings 8
+
+**1.** Then Solomon assembled the elders of Israel with all the heads of the tribes, the princes of the fathers’ households of the children of Israel, to King Solomon in Jerusalem, to bring up the ark of the LORD’s covenant out of David’s city, which is Zion.
+**2.** All the men of Israel assembled themselves to King Solomon at the feast in the month Ethanim, which is the seventh month.
+**3.** All the elders of Israel came, and the priests picked up the ark.
+**4.** They brought up the LORD’s ark, the Tent of Meeting, and all the holy vessels that were in the Tent. The priests and the Levites brought these up.
+**5.** King Solomon and all the congregation of Israel, who were assembled to him, were with him before the ark, sacrificing sheep and cattle that could not be counted or numbered for multitude.
+**6.** The priests brought in the ark of the LORD’s covenant to its place, into the inner sanctuary of the house, to the most holy place, even under the cherubim’s wings.
+**7.** For the cherubim spread their wings out over the place of the ark, and the cherubim covered the ark and its poles above.
+**8.** The poles were so long that the ends of the poles were seen from the holy place before the inner sanctuary, but they were not seen outside. They are there to this day.
+**9.** There was nothing in the ark except the two stone tablets which Moses put there at Horeb, when the LORD made a covenant with the children of Israel, when they came out of the land of Egypt.
+**10.** It came to pass, when the priests had come out of the holy place, that the cloud filled the LORD’s house,
+**11.** so that the priests could not stand to minister by reason of the cloud; for the LORD’s glory filled the LORD’s house.
+**12.** Then Solomon said, “The LORD has said that he would dwell in the thick darkness.
+**13.** I have surely built you a house of habitation, a place for you to dwell in forever.”
+**14.** The king turned his face around and blessed all the assembly of Israel; and all the assembly of Israel stood.
+**15.** He said, “Blessed is the LORD, the God of Israel, who spoke with his mouth to David your father, and has with his hand fulfilled it, saying,
+**16.** ‘Since the day that I brought my people Israel out of Egypt, I chose no city out of all the tribes of Israel to build a house, that my name might be there; but I chose David to be over my people Israel.’
+**17.** “Now it was in the heart of David my father to build a house for the name of the LORD, the God of Israel.
+**18.** But the LORD said to David my father, ‘Whereas it was in your heart to build a house for my name, you did well that it was in your heart.
+**19.** Nevertheless, you shall not build the house; but your son who shall come out of your body, he shall build the house for my name.’
+**20.** The LORD has established his word that he spoke; for I have risen up in the place of David my father, and I sit on the throne of Israel, as the LORD promised, and have built the house for the name of the LORD, the God of Israel.
+**21.** There I have set a place for the ark, in which is the LORD’s covenant, which he made with our fathers when he brought them out of the land of Egypt.”
+**22.** Solomon stood before the LORD’s altar in the presence of all the assembly of Israel, and spread out his hands toward heaven;
+**23.** and he said, “LORD, the God of Israel, there is no God like you, in heaven above, or on earth beneath; who keeps covenant and loving kindness with your servants who walk before you with all their heart;
+**24.** who has kept with your servant David my father that which you promised him. Yes, you spoke with your mouth, and have fulfilled it with your hand, as it is today.
+**25.** Now therefore, may LORD, the God of Israel, keep with your servant David my father that which you have promised him, saying, ‘There shall not fail from you a man in my sight to sit on the throne of Israel, if only your children take heed to their way, to walk before me as you have walked before me.’
+**26.** “Now therefore, God of Israel, please let your word be verified, which you spoke to your servant David my father.
+**27.** But will God in very deed dwell on the earth? Behold, heaven and the heaven of heavens can’t contain you; how much less this house that I have built!
+**28.** Yet have respect for the prayer of your servant and for his supplication, LORD my God, to listen to the cry and to the prayer which your servant prays before you today;
+**29.** that your eyes may be open toward this house night and day, even toward the place of which you have said, ‘My name shall be there;’ to listen to the prayer which your servant prays toward this place.
+**30.** Listen to the supplication of your servant, and of your people Israel, when they pray toward this place. Yes, hear in heaven, your dwelling place; and when you hear, forgive.
+**31.** “If a man sins against his neighbor, and an oath is laid on him to cause him to swear, and he comes and swears before your altar in this house,
+**32.** then hear in heaven, and act, and judge your servants, condemning the wicked, to bring his way on his own head, and justifying the righteous, to give him according to his righteousness.
+**33.** “When your people Israel are struck down before the enemy because they have sinned against you, if they turn again to you and confess your name, and pray and make supplication to you in this house,
+**34.** then hear in heaven, and forgive the sin of your people Israel, and bring them again to the land which you gave to their fathers.
+**35.** “When the sky is shut up and there is no rain because they have sinned against you, if they pray toward this place and confess your name, and turn from their sin when you afflict them,
+**36.** then hear in heaven, and forgive the sin of your servants, and of your people Israel, when you teach them the good way in which they should walk; and send rain on your land which you have given to your people for an inheritance.
+**37.** “If there is famine in the land, if there is pestilence, if there is blight, mildew, locust or caterpillar; if their enemy besieges them in the land of their cities, whatever plague, whatever sickness there is,
+**38.** whatever prayer and supplication is made by any man, or by all your people Israel, who shall each know the plague of his own heart, and spread out his hands toward this house,
+**39.** then hear in heaven, your dwelling place, and forgive, and act, and give to every man according to all his ways, whose heart you know (for you, even you only, know the hearts of all the children of men);
+**40.** that they may fear you all the days that they live in the land which you gave to our fathers.
+**41.** “Moreover, concerning the foreigner, who is not of your people Israel, when he comes out of a far country for your name’s sake
+**42.** (for they shall hear of your great name and of your mighty hand and of your outstretched arm), when he comes and prays toward this house,
+**43.** hear in heaven, your dwelling place, and do according to all that the foreigner calls to you for; that all the peoples of the earth may know your name, to fear you, as do your people Israel, and that they may know that this house which I have built is called by your name.
+**44.** “If your people go out to battle against their enemy, by whatever way you shall send them, and they pray to the LORD toward the city which you have chosen, and toward the house which I have built for your name,
+**45.** then hear in heaven their prayer and their supplication, and maintain their cause.
+**46.** If they sin against you (for there is no man who doesn’t sin), and you are angry with them and deliver them to the enemy, so that they carry them away captive to the land of the enemy, far off or near;
+**47.** yet if they repent in the land where they are carried captive, and turn again, and make supplication to you in the land of those who carried them captive, saying, ‘We have sinned and have done perversely; we have dealt wickedly,’
+**48.** if they return to you with all their heart and with all their soul in the land of their enemies who carried them captive, and pray to you toward their land which you gave to their fathers, the city which you have chosen and the house which I have built for your name,
+**49.** then hear their prayer and their supplication in heaven, your dwelling place, and maintain their cause;
+**50.** and forgive your people who have sinned against you, and all their transgressions in which they have transgressed against you; and give them compassion before those who carried them captive, that they may have compassion on them
+**51.** (for they are your people and your inheritance, which you brought out of Egypt, from the middle of the iron furnace);
+**52.** that your eyes may be open to the supplication of your servant and to the supplication of your people Israel, to listen to them whenever they cry to you.
+**53.** For you separated them from among all the peoples of the earth to be your inheritance, as you spoke by Moses your servant, when you brought our fathers out of Egypt, Lord GOD.”
+**54.** It was so, that when Solomon had finished praying all this prayer and supplication to the LORD, he arose from before the LORD’s altar, from kneeling on his knees with his hands spread out toward heaven.
+**55.** He stood and blessed all the assembly of Israel with a loud voice, saying,
+**56.** “Blessed be the LORD, who has given rest to his people Israel, according to all that he promised. There has not failed one word of all his good promise, which he promised by Moses his servant.
+**57.** May the LORD our God be with us as he was with our fathers. Let him not leave us or forsake us,
+**58.** that he may incline our hearts to him, to walk in all his ways, and to keep his commandments, his statutes, and his ordinances, which he commanded our fathers.
+**59.** Let these my words, with which I have made supplication before the LORD, be near to the LORD our God day and night, that he may maintain the cause of his servant and the cause of his people Israel, as every day requires;
+**60.** that all the peoples of the earth may know that the LORD himself is God. There is no one else.
+**61.** “Let your heart therefore be perfect with the LORD our God, to walk in his statutes, and to keep his commandments, as it is today.”
+**62.** The king, and all Israel with him, offered sacrifice before the LORD.
+**63.** Solomon offered for the sacrifice of peace offerings, which he offered to the LORD, twenty two thousand head of cattle and one hundred twenty thousand sheep. So the king and all the children of Israel dedicated the LORD’s house.
+**64.** The same day the king made the middle of the court holy that was before the LORD’s house; for there he offered the burnt offering, the meal offering, and the fat of the peace offerings, because the bronze altar that was before the LORD was too little to receive the burnt offering, the meal offering, and the fat of the peace offerings.
+**65.** So Solomon held the feast at that time, and all Israel with him, a great assembly, from the entrance of Hamath to the brook of Egypt, before the LORD our God, seven days and seven more days, even fourteen days.
+**66.** On the eighth day he sent the people away; and they blessed the king, and went to their tents joyful and glad in their hearts for all the goodness that the LORD had shown to David his servant, and to Israel his people.
+## I Kings 9
+
+**1.** When Solomon had finished the building of the LORD’s house, the king’s house, and all Solomon’s desire which he was pleased to do,
+**2.** The LORD appeared to Solomon the second time, as he had appeared to him at Gibeon.
+**3.** The LORD said to him, “I have heard your prayer and your supplication that you have made before me. I have made this house holy, which you have built, to put my name there forever; and my eyes and my heart shall be there perpetually.
+**4.** As for you, if you will walk before me as David your father walked, in integrity of heart and in uprightness, to do according to all that I have commanded you, and will keep my statutes and my ordinances,
+**5.** then I will establish the throne of your kingdom over Israel forever, as I promised to David your father, saying, ‘There shall not fail from you a man on the throne of Israel.’
+**6.** But if you turn away from following me, you or your children, and not keep my commandments and my statutes which I have set before you, but go and serve other gods and worship them,
+**7.** then I will cut off Israel out of the land which I have given them; and I will cast this house, which I have made holy for my name, out of my sight; and Israel will be a proverb and a byword among all peoples.
+**8.** Though this house is so high, yet everyone who passes by it will be astonished and hiss; and they will say, ‘Why has the LORD done this to this land and to this house?’
+**9.** and they will answer, ‘Because they abandoned the LORD their God, who brought their fathers out of the land of Egypt, and embraced other gods, and worshiped them, and served them. Therefore the LORD has brought all this evil on them.’”
+**10.** At the end of twenty years, in which Solomon had built the two houses, the LORD’s house and the king’s house
+**11.** (now Hiram the king of Tyre had furnished Solomon with cedar trees and cypress trees, and with gold, according to all his desire), King Solomon gave Hiram twenty cities in the land of Galilee.
+**12.** Hiram came out of Tyre to see the cities which Solomon had given him; and they didn’t please him.
+**13.** He said, “What cities are these which you have given me, my brother?” He called them the land of Cabul to this day.
+**14.** Hiram sent to the king one hundred twenty talents of gold.
+**15.** This is the reason of the forced labor which King Solomon conscripted: to build the LORD’s house, his own house, Millo, Jerusalem’s wall, Hazor, Megiddo, and Gezer.
+**16.** Pharaoh king of Egypt had gone up, taken Gezer, burned it with fire, killed the Canaanites who lived in the city, and given it for a wedding gift to his daughter, Solomon’s wife.
+**17.** Solomon built in the land Gezer, Beth Horon the lower,
+**18.** Baalath, Tamar in the wilderness,
+**19.** all the storage cities that Solomon had, the cities for his chariots, the cities for his horsemen, and that which Solomon desired to build for his pleasure in Jerusalem, and in Lebanon, and in all the land of his dominion.
+**20.** As for all the people who were left of the Amorites, the Hittites, the Perizzites, the Hivites, and the Jebusites, who were not of the children of Israel—
+**21.** their children who were left after them in the land, whom the children of Israel were not able utterly to destroy—of them Solomon raised a levy of bondservants to this day.
+**22.** But of the children of Israel Solomon made no bondservants; but they were the men of war, his servants, his princes, his captains, and rulers of his chariots and of his horsemen.
+**23.** These were the five hundred fifty chief officers who were over Solomon’s work, who ruled over the people who labored in the work.
+**24.** But Pharaoh’s daughter came up out of David’s city to her house which Solomon had built for her. Then he built Millo.
+**25.** Solomon offered burnt offerings and peace offerings on the altar which he built to the LORD three times per year, burning incense with them on the altar that was before the LORD. So he finished the house.
+**26.** King Solomon made a fleet of ships in Ezion Geber, which is beside Eloth, on the shore of the Red Sea, in the land of Edom.
+**27.** Hiram sent in the fleet his servants, sailors who had knowledge of the sea, with the servants of Solomon.
+**28.** They came to Ophir, and fetched from there gold, four hundred and twenty talents, and brought it to King Solomon.
+## I Kings 10
+
+**1.** When the queen of Sheba heard of the fame of Solomon concerning the LORD’s name, she came to test him with hard questions.
+**2.** She came to Jerusalem with a very great caravan, with camels that bore spices, very much gold, and precious stones; and when she had come to Solomon, she talked with him about all that was in her heart.
+**3.** Solomon answered all her questions. There wasn’t anything hidden from the king which he didn’t tell her.
+**4.** When the queen of Sheba had seen all the wisdom of Solomon, the house that he had built,
+**5.** the food of his table, the sitting of his servants, the attendance of his officials, their clothing, his cup bearers, and his ascent by which he went up to the LORD’s house, there was no more spirit in her.
+**6.** She said to the king, “It was a true report that I heard in my own land of your acts and of your wisdom.
+**7.** However, I didn’t believe the words until I came and my eyes had seen it. Behold, not even half was told me! Your wisdom and prosperity exceed the fame which I heard.
+**8.** Happy are your men, happy are these your servants who stand continually before you, who hear your wisdom.
+**9.** Blessed is the LORD your God, who delighted in you, to set you on the throne of Israel. Because the LORD loved Israel forever, therefore he made you king, to do justice and righteousness.”
+**10.** She gave the king one hundred twenty talents of gold, and a very great quantity of spices, and precious stones. Never again was there such an abundance of spices as these which the queen of Sheba gave to King Solomon.
+**11.** The fleet of Hiram that brought gold from Ophir also brought in from Ophir great quantities of almug trees and precious stones.
+**12.** The king made of the almug trees pillars for the LORD’s house and for the king’s house, harps also and stringed instruments for the singers; no such almug trees came or were seen to this day.
+**13.** King Solomon gave to the queen of Sheba all her desire, whatever she asked, in addition to that which Solomon gave her of his royal bounty. So she turned and went to her own land, she and her servants.
+**14.** Now the weight of gold that came to Solomon in one year was six hundred sixty-six talents of gold,
+**15.** in addition to that which the traders brought, and the traffic of the merchants, and of all the kings of the mixed people, and of the governors of the country.
+**16.** King Solomon made two hundred bucklers of beaten gold; six hundred shekels of gold went to one buckler.
+**17.** He made three hundred shields of beaten gold; three minas of gold went to one shield; and the king put them in the House of the Forest of Lebanon.
+**18.** Moreover the king made a great throne of ivory, and overlaid it with the finest gold.
+**19.** There were six steps to the throne, and the top of the throne was round behind; and there were armrests on either side by the place of the seat, and two lions standing beside the armrests.
+**20.** Twelve lions stood there on the one side and on the other on the six steps. Nothing like it was made in any kingdom.
+**21.** All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. None were of silver, because it was considered of little value in the days of Solomon.
+**22.** For the king had a fleet of ships of Tarshish at sea with Hiram’s fleet. Once every three years the fleet of Tarshish came bringing gold, silver, ivory, apes, and peacocks.
+**23.** So King Solomon exceeded all the kings of the earth in riches and in wisdom.
+**24.** All the earth sought the presence of Solomon to hear his wisdom which God had put in his heart.
+**25.** Year after year, every man brought his tribute, vessels of silver, vessels of gold, clothing, armor, spices, horses, and mules.
+**26.** Solomon gathered together chariots and horsemen. He had one thousand four hundred chariots and twelve thousand horsemen. He kept them in the chariot cities and with the king at Jerusalem.
+**27.** The king made silver as common as stones in Jerusalem, and cedars as common as the sycamore trees that are in the lowland.
+**28.** The horses which Solomon had were brought out of Egypt. The king’s merchants received them in droves, each drove at a price.
+**29.** A chariot was imported from Egypt for six hundred shekels of silver, and a horse for one hundred fifty shekels; and so they exported them to all the kings of the Hittites and to the kings of Syria.
+## I Kings 11
+
+**1.** Now King Solomon loved many foreign women, together with the daughter of Pharaoh: women of the Moabites, Ammonites, Edomites, Sidonians, and Hittites,
+**2.** of the nations concerning which the LORD said to the children of Israel, “You shall not go among them, neither shall they come among you, for surely they will turn away your heart after their gods.” Solomon joined to these in love.
+**3.** He had seven hundred wives, princesses, and three hundred concubines. His wives turned his heart away.
+**4.** When Solomon was old, his wives turned away his heart after other gods; and his heart was not perfect with the LORD his God, as the heart of David his father was.
+**5.** For Solomon went after Ashtoreth the goddess of the Sidonians, and after Milcom the abomination of the Ammonites.
+**6.** Solomon did that which was evil in the LORD’s sight, and didn’t go fully after the LORD, as David his father did.
+**7.** Then Solomon built a high place for Chemosh the abomination of Moab, on the mountain that is before Jerusalem, and for Molech the abomination of the children of Ammon.
+**8.** So he did for all his foreign wives, who burned incense and sacrificed to their gods.
+**9.** The LORD was angry with Solomon, because his heart was turned away from the LORD, the God of Israel, who had appeared to him twice,
+**10.** and had commanded him concerning this thing, that he should not go after other gods; but he didn’t keep that which the LORD commanded.
+**11.** Therefore the LORD said to Solomon, “Because this is done by you, and you have not kept my covenant and my statutes, which I have commanded you, I will surely tear the kingdom from you, and will give it to your servant.
+**12.** Nevertheless, I will not do it in your days, for David your father’s sake; but I will tear it out of your son’s hand.
+**13.** However, I will not tear away all the kingdom; but I will give one tribe to your son, for David my servant’s sake, and for Jerusalem’s sake which I have chosen.”
+**14.** The LORD raised up an adversary to Solomon: Hadad the Edomite. He was one of the king’s offspring in Edom.
+**15.** For when David was in Edom, and Joab the captain of the army had gone up to bury the slain, and had struck every male in Edom
+**16.** (for Joab and all Israel remained there six months, until he had cut off every male in Edom),
+**17.** Hadad fled, he and certain Edomites of his father’s servants with him, to go into Egypt, when Hadad was still a little child.
+**18.** They arose out of Midian and came to Paran; and they took men with them out of Paran, and they came to Egypt, to Pharaoh king of Egypt, who gave him a house, and appointed him food, and gave him land.
+**19.** Hadad found great favor in the sight of Pharaoh, so that he gave him as wife the sister of his own wife, the sister of Tahpenes the queen.
+**20.** The sister of Tahpenes bore him Genubath his son, whom Tahpenes weaned in Pharaoh’s house; and Genubath was in Pharaoh’s house among the sons of Pharaoh.
+**21.** When Hadad heard in Egypt that David slept with his fathers, and that Joab the captain of the army was dead, Hadad said to Pharaoh, “Let me depart, that I may go to my own country.”
+**22.** Then Pharaoh said to him, “But what have you lacked with me, that behold, you seek to go to your own country?” He answered, “Nothing, however only let me depart.”
+**23.** God raised up an adversary to him, Rezon the son of Eliada, who had fled from his lord, Hadadezer king of Zobah.
+**24.** He gathered men to himself, and became captain over a troop, when David killed them of Zobah. They went to Damascus and lived there, and reigned in Damascus.
+**25.** He was an adversary to Israel all the days of Solomon, in addition to the mischief of Hadad. He abhorred Israel, and reigned over Syria.
+**26.** Jeroboam the son of Nebat, an Ephraimite of Zeredah, a servant of Solomon, whose mother’s name was Zeruah, a widow, also lifted up his hand against the king.
+**27.** This was the reason why he lifted up his hand against the king: Solomon built Millo, and repaired the breach of his father David’s city.
+**28.** The man Jeroboam was a mighty man of valor; and Solomon saw the young man that he was industrious, and he put him in charge of all the labor of the house of Joseph.
+**29.** At that time, when Jeroboam went out of Jerusalem, the prophet Ahijah the Shilonite found him on the way. Now Ahijah had clad himself with a new garment; and the two of them were alone in the field.
+**30.** Ahijah took the new garment that was on him, and tore it in twelve pieces.
+**31.** He said to Jeroboam, “Take ten pieces; for the LORD, the God of Israel, says, ‘Behold, I will tear the kingdom out of the hand of Solomon and will give ten tribes to you
+**32.** (but he shall have one tribe, for my servant David’s sake and for Jerusalem’s sake, the city which I have chosen out of all the tribes of Israel),
+**33.** because they have forsaken me, and have worshiped Ashtoreth the goddess of the Sidonians, Chemosh the god of Moab, and Milcom the god of the children of Ammon. They have not walked in my ways, to do that which is right in my eyes, and to keep my statutes and my ordinances, as David his father did.
+**34.** “‘However, I will not take the whole kingdom out of his hand, but I will make him prince all the days of his life for David my servant’s sake whom I chose, who kept my commandments and my statutes,
+**35.** but I will take the kingdom out of his son’s hand and will give it to you, even ten tribes.
+**36.** I will give one tribe to his son, that David my servant may have a lamp always before me in Jerusalem, the city which I have chosen for myself to put my name there.
+**37.** I will take you, and you shall reign according to all that your soul desires, and shall be king over Israel.
+**38.** It shall be, if you will listen to all that I command you, and will walk in my ways, and do that which is right in my eyes, to keep my statutes and my commandments, as David my servant did, that I will be with you, and will build you a sure house, as I built for David, and will give Israel to you.
+**39.** I will afflict the offspring of David for this, but not forever.’”
+**40.** Therefore Solomon sought to kill Jeroboam, but Jeroboam arose and fled into Egypt, to Shishak king of Egypt, and was in Egypt until the death of Solomon.
+**41.** Now the rest of the acts of Solomon, and all that he did, and his wisdom, aren’t they written in the book of the acts of Solomon?
+**42.** The time that Solomon reigned in Jerusalem over all Israel was forty years.
+**43.** Solomon slept with his fathers, and was buried in his father David’s city; and Rehoboam his son reigned in his place.
+## I Kings 12
+
+**1.** Rehoboam went to Shechem, for all Israel had come to Shechem to make him king.
+**2.** When Jeroboam the son of Nebat heard of it (for he was yet in Egypt, where he had fled from the presence of King Solomon, and Jeroboam lived in Egypt;
+**3.** and they sent and called him), Jeroboam and all the assembly of Israel came, and spoke to Rehoboam, saying,
+**4.** “Your father made our yoke difficult. Now therefore make the hard service of your father, and his heavy yoke which he put on us, lighter, and we will serve you.”
+**5.** He said to them, “Depart for three days, then come back to me.” So the people departed.
+**6.** King Rehoboam took counsel with the old men who had stood before Solomon his father while he yet lived, saying, “What counsel do you give me to answer these people?”
+**7.** They replied, “If you will be a servant to this people today, and will serve them, and answer them with good words, then they will be your servants forever.”
+**8.** But he abandoned the counsel of the old men which they had given him, and took counsel with the young men who had grown up with him, who stood before him.
+**9.** He said to them, “What counsel do you give, that we may answer these people who have spoken to me, saying, ‘Make the yoke that your father put on us lighter’?”
+**10.** The young men who had grown up with him said to him, “Tell these people who spoke to you, saying, ‘Your father made our yoke heavy, but make it lighter to us’—tell them, ‘My little finger is thicker than my father’s waist.
+**11.** Now my father burdened you with a heavy yoke, but I will add to your yoke. My father chastised you with whips, but I will chastise you with scorpions.’”
+**12.** So Jeroboam and all the people came to Rehoboam the third day, as the king asked, saying, “Come to me again the third day.”
+**13.** The king answered the people roughly, and abandoned the counsel of the old men which they had given him,
+**14.** and spoke to them according to the counsel of the young men, saying, “My father made your yoke heavy, but I will add to your yoke. My father chastised you with whips, but I will chastise you with scorpions.”
+**15.** So the king didn’t listen to the people; for it was a thing brought about from the LORD, that he might establish his word, which the LORD spoke by Ahijah the Shilonite to Jeroboam the son of Nebat.
+**16.** When all Israel saw that the king didn’t listen to them, the people answered the king, saying, “What portion have we in David? We don’t have an inheritance in the son of Jesse. To your tents, Israel! Now see to your own house, David.” So Israel departed to their tents.
+**17.** But as for the children of Israel who lived in the cities of Judah, Rehoboam reigned over them.
+**18.** Then King Rehoboam sent Adoram, who was over the men subject to forced labor; and all Israel stoned him to death with stones. King Rehoboam hurried to get himself up to his chariot, to flee to Jerusalem.
+**19.** So Israel rebelled against David’s house to this day.
+**20.** When all Israel heard that Jeroboam had returned, they sent and called him to the congregation, and made him king over all Israel. There was no one who followed David’s house, except for the tribe of Judah only.
+**21.** When Rehoboam had come to Jerusalem, he assembled all the house of Judah and the tribe of Benjamin, a hundred and eighty thousand chosen men who were warriors, to fight against the house of Israel, to bring the kingdom again to Rehoboam the son of Solomon.
+**22.** But the word of God came to Shemaiah the man of God, saying,
+**23.** “Speak to Rehoboam the son of Solomon, king of Judah, and to all the house of Judah and Benjamin, and to the rest of the people, saying,
+**24.** ‘The LORD says, “You shall not go up or fight against your brothers, the children of Israel. Everyone return to his house; for this thing is from me.”’” So they listened to the LORD’s word, and returned and went their way, according to the LORD’s word.
+**25.** Then Jeroboam built Shechem in the hill country of Ephraim, and lived in it; and he went out from there and built Penuel.
+**26.** Jeroboam said in his heart, “Now the kingdom will return to David’s house.
+**27.** If this people goes up to offer sacrifices in the LORD’s house at Jerusalem, then the heart of this people will turn again to their lord, even to Rehoboam king of Judah; and they will kill me, and return to Rehoboam king of Judah.”
+**28.** So the king took counsel, and made two calves of gold; and he said to them, “It is too much for you to go up to Jerusalem. Look and behold your gods, Israel, which brought you up out of the land of Egypt!”
+**29.** He set the one in Bethel, and the other he put in Dan.
+**30.** This thing became a sin, for the people went even as far as Dan to worship before the one there.
+**31.** He made houses of high places, and made priests from among all the people, who were not of the sons of Levi.
+**32.** Jeroboam ordained a feast in the eighth month, on the fifteenth day of the month, like the feast that is in Judah, and he went up to the altar. He did so in Bethel, sacrificing to the calves that he had made, and he placed in Bethel the priests of the high places that he had made.
+**33.** He went up to the altar which he had made in Bethel on the fifteenth day in the eighth month, even in the month which he had devised of his own heart; and he ordained a feast for the children of Israel, and went up to the altar to burn incense.
+## I Kings 13
+
+**1.** Behold, a man of God came out of Judah by the LORD’s word to Bethel; and Jeroboam was standing by the altar to burn incense.
+**2.** He cried against the altar by the LORD’s word, and said, “Altar! Altar! The LORD says: ‘Behold, a son will be born to David’s house, Josiah by name. On you he will sacrifice the priests of the high places who burn incense on you, and they will burn men’s bones on you.’”
+**3.** He gave a sign the same day, saying, “This is the sign which the LORD has spoken: Behold, the altar will be split apart, and the ashes that are on it will be poured out.”
+**4.** When the king heard the saying of the man of God, which he cried against the altar in Bethel, Jeroboam put out his hand from the altar, saying, “Seize him!” His hand, which he put out against him, dried up, so that he could not draw it back again to himself.
+**5.** The altar was also split apart, and the ashes poured out from the altar, according to the sign which the man of God had given by the LORD’s word.
+**6.** The king answered the man of God, “Now intercede for the favor of the LORD your God, and pray for me, that my hand may be restored me again.” The man of God interceded with the LORD, and the king’s hand was restored to him again, and became as it was before.
+**7.** The king said to the man of God, “Come home with me and refresh yourself, and I will give you a reward.”
+**8.** The man of God said to the king, “Even if you gave me half of your house, I would not go in with you, neither would I eat bread nor drink water in this place;
+**9.** for so was it commanded me by the LORD’s word, saying, ‘You shall eat no bread, drink no water, and don’t return by the way that you came.’”
+**10.** So he went another way, and didn’t return by the way that he came to Bethel.
+**11.** Now an old prophet lived in Bethel, and one of his sons came and told him all the works that the man of God had done that day in Bethel. They also told their father the words which he had spoken to the king.
+**12.** Their father said to them, “Which way did he go?” Now his sons had seen which way the man of God went, who came from Judah.
+**13.** He said to his sons, “Saddle the donkey for me.” So they saddled the donkey for him; and he rode on it.
+**14.** He went after the man of God, and found him sitting under an oak. He said to him, “Are you the man of God who came from Judah?” He said, “I am.”
+**15.** Then he said to him, “Come home with me and eat bread.”
+**16.** He said, “I may not return with you, nor go in with you. I will not eat bread or drink water with you in this place.
+**17.** For it was said to me by the LORD’s word, ‘You shall eat no bread or drink water there, and don’t turn again to go by the way that you came.’”
+**18.** He said to him, “I also am a prophet as you are; and an angel spoke to me by the LORD’s word, saying, ‘Bring him back with you into your house, that he may eat bread and drink water.’” He lied to him.
+**19.** So he went back with him, ate bread in his house, and drank water.
+**20.** As they sat at the table, the LORD’s word came to the prophet who brought him back;
+**21.** and he cried out to the man of God who came from Judah, saying, “The LORD says, ‘Because you have been disobedient to the LORD’s word, and have not kept the commandment which the LORD your God commanded you,
+**22.** but came back, and have eaten bread and drank water in the place of which he said to you, “Eat no bread, and drink no water,” your body will not come to the tomb of your fathers.’”
+**23.** After he had eaten bread and after he drank, he saddled the donkey for the prophet whom he had brought back.
+**24.** When he had gone, a lion met him by the way and killed him. His body was thrown on the path, and the donkey stood by it. The lion also stood by the body.
+**25.** Behold, men passed by and saw the body thrown on the path, and the lion standing by the body; and they came and told it in the city where the old prophet lived.
+**26.** When the prophet who brought him back from the way heard of it, he said, “It is the man of God who was disobedient to the LORD’s word. Therefore the LORD has delivered him to the lion, which has mauled him and slain him, according to the LORD’s word which he spoke to him.”
+**27.** He said to his sons, saying, “Saddle the donkey for me,” and they saddled it.
+**28.** He went and found his body thrown on the path, and the donkey and the lion standing by the body. The lion had not eaten the body nor mauled the donkey.
+**29.** The prophet took up the body of the man of God, and laid it on the donkey, and brought it back. He came to the city of the old prophet to mourn, and to bury him.
+**30.** He laid his body in his own grave; and they mourned over him, saying, “Alas, my brother!”
+**31.** After he had buried him, he spoke to his sons, saying, “When I am dead, bury me in the tomb in which the man of God is buried. Lay my bones beside his bones.
+**32.** For the saying which he cried by the LORD’s word against the altar in Bethel, and against all the houses of the high places which are in the cities of Samaria, will surely happen.”
+**33.** After this thing, Jeroboam didn’t turn from his evil way, but again made priests of the high places from among all the people. Whoever wanted to, he consecrated him, that there might be priests of the high places.
+**34.** This thing became sin to the house of Jeroboam, even to cut it off and to destroy it from off the surface of the earth.
+## I Kings 14
+
+**1.** At that time Abijah the son of Jeroboam became sick.
+**2.** Jeroboam said to his wife, “Please get up and disguise yourself, so that you won’t be recognized as Jeroboam’s wife. Go to Shiloh. Behold, Ahijah the prophet is there, who said that I would be king over this people.
+**3.** Take with you ten loaves of bread, some cakes, and a jar of honey, and go to him. He will tell you what will become of the child.”
+**4.** Jeroboam’s wife did so, and arose and went to Shiloh, and came to Ahijah’s house. Now Ahijah could not see, for his eyes were set by reason of his age.
+**5.** The LORD said to Ahijah, “Behold, Jeroboam’s wife is coming to inquire of you concerning her son, for he is sick. Tell her such and such; for it will be, when she comes in, that she will pretend to be another woman.”
+**6.** So when Ahijah heard the sound of her feet as she came in at the door, he said, “Come in, Jeroboam’s wife! Why do you pretend to be another? For I am sent to you with heavy news.
+**7.** Go, tell Jeroboam, ‘The LORD, the God of Israel, says: “Because I exalted you from among the people, and made you prince over my people Israel,
+**8.** and tore the kingdom away from David’s house, and gave it to you; and yet you have not been as my servant David, who kept my commandments, and who followed me with all his heart, to do that only which was right in my eyes,
+**9.** but have done evil above all who were before you, and have gone and made for yourself other gods, molten images, to provoke me to anger, and have cast me behind your back,
+**10.** therefore, behold, I will bring evil on the house of Jeroboam, and will cut off from Jeroboam everyone who urinates on a wall, he who is shut up and he who is left at large in Israel, and will utterly sweep away the house of Jeroboam, as a man sweeps away dung until it is all gone.
+**11.** The dogs will eat he who belongs to Jeroboam who dies in the city; and the birds of the sky will eat he who dies in the field, for the LORD has spoken it.”’
+**12.** Arise therefore, and go to your house. When your feet enter into the city, the child will die.
+**13.** All Israel will mourn for him and bury him; for he only of Jeroboam will come to the grave, because in him there is found some good thing toward the LORD, the God of Israel, in the house of Jeroboam.
+**14.** Moreover the LORD will raise up a king for himself over Israel who will cut off the house of Jeroboam. This is the day! What? Even now.
+**15.** For the LORD will strike Israel, as a reed is shaken in the water; and he will root up Israel out of this good land which he gave to their fathers, and will scatter them beyond the River, because they have made their Asherah poles, provoking the LORD to anger.
+**16.** He will give Israel up because of the sins of Jeroboam, which he has sinned, and with which he has made Israel to sin.”
+**17.** Jeroboam’s wife arose and departed, and came to Tirzah. As she came to the threshold of the house, the child died.
+**18.** All Israel buried him and mourned for him, according to the LORD’s word, which he spoke by his servant Ahijah the prophet.
+**19.** The rest of the acts of Jeroboam, how he fought and how he reigned, behold, they are written in the book of the chronicles of the kings of Israel.
+**20.** The days which Jeroboam reigned were twenty two years; then he slept with his fathers, and Nadab his son reigned in his place.
+**21.** Rehoboam the son of Solomon reigned in Judah. Rehoboam was forty-one years old when he began to reign, and he reigned seventeen years in Jerusalem, the city which the LORD had chosen out of all the tribes of Israel, to put his name there. His mother’s name was Naamah the Ammonitess.
+**22.** Judah did that which was evil in the LORD’s sight, and they provoked him to jealousy with their sins which they committed, above all that their fathers had done.
+**23.** For they also built for themselves high places, sacred pillars, and Asherah poles on every high hill and under every green tree.
+**24.** There were also sodomites in the land. They did according to all the abominations of the nations which the LORD drove out before the children of Israel.
+**25.** In the fifth year of King Rehoboam, Shishak king of Egypt came up against Jerusalem;
+**26.** and he took away the treasures of the LORD’s house and the treasures of the king’s house. He even took away all of it, including all the gold shields which Solomon had made.
+**27.** King Rehoboam made shields of bronze in their place, and committed them to the hands of the captains of the guard, who kept the door of the king’s house.
+**28.** It was so, that as often as the king went into the LORD’s house, the guard bore them, and brought them back into the guard room.
+**29.** Now the rest of the acts of Rehoboam, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**30.** There was war between Rehoboam and Jeroboam continually.
+**31.** Rehoboam slept with his fathers, and was buried with his fathers in David’s city. His mother’s name was Naamah the Ammonitess. Abijam his son reigned in his place.
+## I Kings 15
+
+**1.** Now in the eighteenth year of King Jeroboam the son of Nebat, Abijam began to reign over Judah.
+**2.** He reigned three years in Jerusalem. His mother’s name was Maacah the daughter of Abishalom.
+**3.** He walked in all the sins of his father, which he had done before him; and his heart was not perfect with the LORD his God, as the heart of David his father.
+**4.** Nevertheless for David’s sake, the LORD his God gave him a lamp in Jerusalem, to set up his son after him and to establish Jerusalem;
+**5.** because David did that which was right in the LORD’s eyes, and didn’t turn away from anything that he commanded him all the days of his life, except only in the matter of Uriah the Hittite.
+**6.** Now there was war between Rehoboam and Jeroboam all the days of his life.
+**7.** The rest of the acts of Abijam, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah? There was war between Abijam and Jeroboam.
+**8.** Abijam slept with his fathers, and they buried him in David’s city; and Asa his son reigned in his place.
+**9.** In the twentieth year of Jeroboam king of Israel, Asa began to reign over Judah.
+**10.** He reigned forty-one years in Jerusalem. His mother’s name was Maacah the daughter of Abishalom.
+**11.** Asa did that which was right in the LORD’s eyes, as David his father did.
+**12.** He put away the sodomites out of the land, and removed all the idols that his fathers had made.
+**13.** He also removed Maacah his mother from being queen, because she had made an abominable image for an Asherah. Asa cut down her image and burned it at the brook Kidron.
+**14.** But the high places were not taken away. Nevertheless the heart of Asa was perfect with the LORD all his days.
+**15.** He brought into the LORD’s house the things that his father had dedicated, and the things that he himself had dedicated: silver, gold, and utensils.
+**16.** There was war between Asa and Baasha king of Israel all their days.
+**17.** Baasha king of Israel went up against Judah, and built Ramah, that he might not allow anyone to go out or come in to Asa king of Judah.
+**18.** Then Asa took all the silver and the gold that was left in the treasures of the LORD’s house, and the treasures of the king’s house, and delivered it into the hand of his servants. Then King Asa sent them to Ben Hadad, the son of Tabrimmon, the son of Hezion, king of Syria, who lived at Damascus, saying,
+**19.** “Let there be a treaty between me and you, like that between my father and your father. Behold, I have sent to you a present of silver and gold. Go, break your treaty with Baasha king of Israel, that he may depart from me.”
+**20.** Ben Hadad listened to King Asa, and sent the captains of his armies against the cities of Israel, and struck Ijon, and Dan, and Abel Beth Maacah, and all Chinneroth, with all the land of Naphtali.
+**21.** When Baasha heard of it, he stopped building Ramah, and lived in Tirzah.
+**22.** Then King Asa made a proclamation to all Judah. No one was exempted. They carried away the stones of Ramah, and its timber, with which Baasha had built; and King Asa used it to build Geba of Benjamin, and Mizpah.
+**23.** Now the rest of all the acts of Asa, and all his might, and all that he did, and the cities which he built, aren’t they written in the book of the chronicles of the kings of Judah? But in the time of his old age he was diseased in his feet.
+**24.** Asa slept with his fathers, and was buried with his fathers in his father David’s city; and Jehoshaphat his son reigned in his place.
+**25.** Nadab the son of Jeroboam began to reign over Israel in the second year of Asa king of Judah; and he reigned over Israel two years.
+**26.** He did that which was evil in the LORD’s sight, and walked in the way of his father, and in his sin with which he made Israel to sin.
+**27.** Baasha the son of Ahijah, of the house of Issachar, conspired against him; and Baasha struck him at Gibbethon, which belonged to the Philistines; for Nadab and all Israel were besieging Gibbethon.
+**28.** Even in the third year of Asa king of Judah, Baasha killed him and reigned in his place.
+**29.** As soon as he was king, he struck all the house of Jeroboam. He didn’t leave to Jeroboam any who breathed, until he had destroyed him, according to the saying of the LORD, which he spoke by his servant Ahijah the Shilonite;
+**30.** for the sins of Jeroboam which he sinned, and with which he made Israel to sin, because of his provocation with which he provoked the LORD, the God of Israel, to anger.
+**31.** Now the rest of the acts of Nadab, and all that he did, aren’t they written in the book of the chronicles of the kings of Israel?
+**32.** There was war between Asa and Baasha king of Israel all their days.
+**33.** In the third year of Asa king of Judah, Baasha the son of Ahijah began to reign over all Israel in Tirzah for twenty-four years.
+**34.** He did that which was evil in the LORD’s sight, and walked in the way of Jeroboam, and in his sin with which he made Israel to sin.
+## I Kings 16
+
+**1.** The LORD’s word came to Jehu the son of Hanani against Baasha, saying,
+**2.** “Because I exalted you out of the dust and made you prince over my people Israel, and you have walked in the way of Jeroboam and have made my people Israel to sin, to provoke me to anger with their sins,
+**3.** behold, I will utterly sweep away Baasha and his house; and I will make your house like the house of Jeroboam the son of Nebat.
+**4.** The dogs will eat Baasha’s descendants who die in the city; and he who dies of his in the field, the birds of the sky will eat.”
+**5.** Now the rest of the acts of Baasha, and what he did, and his might, aren’t they written in the book of the chronicles of the kings of Israel?
+**6.** Baasha slept with his fathers, and was buried in Tirzah; and Elah his son reigned in his place.
+**7.** Moreover the LORD’s word came by the prophet Jehu the son of Hanani against Baasha and against his house, both because of all the evil that he did in the LORD’s sight, to provoke him to anger with the work of his hands, in being like the house of Jeroboam, and because he struck him.
+**8.** In the twenty-sixth year of Asa king of Judah, Elah the son of Baasha began to reign over Israel in Tirzah for two years.
+**9.** His servant Zimri, captain of half his chariots, conspired against him. Now he was in Tirzah, drinking himself drunk in the house of Arza, who was over the household in Tirzah;
+**10.** and Zimri went in and struck him and killed him in the twenty-seventh year of Asa king of Judah, and reigned in his place.
+**11.** When he began to reign, as soon as he sat on his throne, he attacked all the house of Baasha. He didn’t leave him a single one who urinates on a wall among his relatives or his friends.
+**12.** Thus Zimri destroyed all the house of Baasha, according to the LORD’s word which he spoke against Baasha by Jehu the prophet,
+**13.** for all the sins of Baasha, and the sins of Elah his son, which they sinned and with which they made Israel to sin, to provoke the LORD, the God of Israel, to anger with their vanities.
+**14.** Now the rest of the acts of Elah, and all that he did, aren’t they written in the book of the chronicles of the kings of Israel?
+**15.** In the twenty-seventh year of Asa king of Judah, Zimri reigned seven days in Tirzah. Now the people were encamped against Gibbethon, which belonged to the Philistines.
+**16.** The people who were encamped heard that Zimri had conspired, and had also killed the king. Therefore all Israel made Omri, the captain of the army, king over Israel that day in the camp.
+**17.** Omri went up from Gibbethon, and all Israel with him, and they besieged Tirzah.
+**18.** When Zimri saw that the city was taken, he went into the fortified part of the king’s house and burned the king’s house over him with fire, and died,
+**19.** for his sins which he sinned in doing that which was evil in the LORD’s sight, in walking in the way of Jeroboam, and in his sin which he did to make Israel to sin.
+**20.** Now the rest of the acts of Zimri, and his treason that he committed, aren’t they written in the book of the chronicles of the kings of Israel?
+**21.** Then the people of Israel were divided into two parts: half of the people followed Tibni the son of Ginath, to make him king, and half followed Omri.
+**22.** But the people who followed Omri prevailed against the people who followed Tibni the son of Ginath; so Tibni died, and Omri reigned.
+**23.** In the thirty-first year of Asa king of Judah, Omri began to reign over Israel for twelve years. He reigned six years in Tirzah.
+**24.** He bought the hill Samaria of Shemer for two talents of silver; and he built on the hill, and called the name of the city which he built, Samaria, after the name of Shemer, the owner of the hill.
+**25.** Omri did that which was evil in the LORD’s sight, and dealt wickedly above all who were before him.
+**26.** For he walked in all the way of Jeroboam the son of Nebat, and in his sins with which he made Israel to sin, to provoke the LORD, the God of Israel, to anger with their vanities.
+**27.** Now the rest of the acts of Omri which he did, and his might that he showed, aren’t they written in the book of the chronicles of the kings of Israel?
+**28.** So Omri slept with his fathers, and was buried in Samaria; and Ahab his son reigned in his place.
+**29.** In the thirty-eighth year of Asa king of Judah, Ahab the son of Omri began to reign over Israel. Ahab the son of Omri reigned over Israel in Samaria twenty-two years.
+**30.** Ahab the son of Omri did that which was evil in the LORD’s sight above all that were before him.
+**31.** As if it had been a light thing for him to walk in the sins of Jeroboam the son of Nebat, he took as wife Jezebel the daughter of Ethbaal king of the Sidonians, and went and served Baal and worshiped him.
+**32.** He raised up an altar for Baal in the house of Baal, which he had built in Samaria.
+**33.** Ahab made the Asherah; and Ahab did more yet to provoke the LORD, the God of Israel, to anger than all the kings of Israel who were before him.
+**34.** In his days Hiel the Bethelite built Jericho. He laid its foundation with the loss of Abiram his firstborn, and set up its gates with the loss of his youngest son Segub, according to the LORD’s word, which he spoke by Joshua the son of Nun.
+## I Kings 17
+
+**1.** Elijah the Tishbite, who was one of the settlers of Gilead, said to Ahab, “As the LORD, the God of Israel, lives, before whom I stand, there shall not be dew nor rain these years, but according to my word.”
+**2.** Then the LORD’s word came to him, saying,
+**3.** “Go away from here, turn eastward, and hide yourself by the brook Cherith, that is before the Jordan.
+**4.** You shall drink from the brook. I have commanded the ravens to feed you there.”
+**5.** So he went and did according to the LORD’s word, for he went and lived by the brook Cherith that is before the Jordan.
+**6.** The ravens brought him bread and meat in the morning, and bread and meat in the evening; and he drank from the brook.
+**7.** After a while, the brook dried up, because there was no rain in the land.
+**8.** The LORD’s word came to him, saying,
+**9.** “Arise, go to Zarephath, which belongs to Sidon, and stay there. Behold, I have commanded a widow there to sustain you.”
+**10.** So he arose and went to Zarephath; and when he came to the gate of the city, behold, a widow was there gathering sticks. He called to her and said, “Please get me a little water in a jar, that I may drink.”
+**11.** As she was going to get it, he called to her and said, “Please bring me a morsel of bread in your hand.”
+**12.** She said, “As the LORD your God lives, I don’t have anything baked, but only a handful of meal in a jar and a little oil in a jar. Behold, I am gathering two sticks, that I may go in and bake it for me and my son, that we may eat it, and die.”
+**13.** Elijah said to her, “Don’t be afraid. Go and do as you have said; but make me a little cake from it first, and bring it out to me, and afterward make some for you and for your son.
+**14.** For the LORD, the God of Israel, says, ‘The jar of meal will not run out, and the jar of oil will not fail, until the day that the LORD sends rain on the earth.’”
+**15.** She went and did according to the saying of Elijah; and she, he, and her household ate many days.
+**16.** The jar of meal didn’t run out and the jar of oil didn’t fail, according to the LORD’s word, which he spoke by Elijah.
+**17.** After these things, the son of the woman, the mistress of the house, became sick; and his sickness was so severe that there was no breath left in him.
+**18.** She said to Elijah, “What have I to do with you, you man of God? You have come to me to bring my sin to memory, and to kill my son!”
+**19.** He said to her, “Give me your son.” He took him out of her bosom, and carried him up into the room where he stayed, and laid him on his own bed.
+**20.** He cried to the LORD and said, “LORD my God, have you also brought evil on the widow with whom I am staying, by killing her son?”
+**21.** He stretched himself on the child three times, and cried to the LORD and said, “LORD my God, please let this child’s soul come into him again.”
+**22.** The LORD listened to the voice of Elijah; and the soul of the child came into him again, and he revived.
+**23.** Elijah took the child and brought him down out of the room into the house, and delivered him to his mother; and Elijah said, “Behold, your son lives.”
+**24.** The woman said to Elijah, “Now I know that you are a man of God, and that the LORD’s word in your mouth is truth.”
+## I Kings 18
+
+**1.** After many days, the LORD’s word came to Elijah, in the third year, saying, “Go, show yourself to Ahab; and I will send rain on the earth.”
+**2.** Elijah went to show himself to Ahab. The famine was severe in Samaria.
+**3.** Ahab called Obadiah, who was over the household. (Now Obadiah feared the LORD greatly;
+**4.** for when Jezebel cut off the LORD’s prophets, Obadiah took one hundred prophets, and hid them fifty to a cave, and fed them with bread and water.)
+**5.** Ahab said to Obadiah, “Go through the land, to all the springs of water, and to all the brooks. Perhaps we may find grass and save the horses and mules alive, that we not lose all the animals.”
+**6.** So they divided the land between them to pass throughout it. Ahab went one way by himself, and Obadiah went another way by himself.
+**7.** As Obadiah was on the way, behold, Elijah met him. He recognized him, and fell on his face, and said, “Is it you, my lord Elijah?”
+**8.** He answered him, “It is I. Go, tell your lord, ‘Behold, Elijah is here!’”
+**9.** He said, “How have I sinned, that you would deliver your servant into the hand of Ahab, to kill me?
+**10.** As the LORD your God lives, there is no nation or kingdom where my lord has not sent to seek you. When they said, ‘He is not here,’ he took an oath of the kingdom and nation that they didn’t find you.
+**11.** Now you say, ‘Go, tell your lord, “Behold, Elijah is here.”’
+**12.** It will happen, as soon as I leave you, that the LORD’s Spirit will carry you I don’t know where; and so when I come and tell Ahab, and he can’t find you, he will kill me. But I, your servant, have feared the LORD from my youth.
+**13.** Wasn’t it told my lord what I did when Jezebel killed the LORD’s prophets, how I hid one hundred men of the LORD’s prophets with fifty to a cave, and fed them with bread and water?
+**14.** Now you say, ‘Go, tell your lord, “Behold, Elijah is here”.’ He will kill me.”
+**15.** Elijah said, “As the LORD of Armies lives, before whom I stand, I will surely show myself to him today.”
+**16.** So Obadiah went to meet Ahab, and told him; and Ahab went to meet Elijah.
+**17.** When Ahab saw Elijah, Ahab said to him, “Is that you, you troubler of Israel?”
+**18.** He answered, “I have not troubled Israel, but you and your father’s house, in that you have forsaken the LORD’s commandments and you have followed the Baals.
+**19.** Now therefore send, and gather to me all Israel to Mount Carmel, and four hundred fifty of the prophets of Baal, and four hundred of the prophets of the Asherah, who eat at Jezebel’s table.”
+**20.** So Ahab sent to all the children of Israel, and gathered the prophets together to Mount Carmel.
+**21.** Elijah came near to all the people, and said, “How long will you waver between the two sides? If the LORD is God, follow him; but if Baal, then follow him.” The people didn’t say a word.
+**22.** Then Elijah said to the people, “I, even I only, am left as a prophet of the LORD; but Baal’s prophets are four hundred fifty men.
+**23.** Let them therefore give us two bulls; and let them choose one bull for themselves, and cut it in pieces, and lay it on the wood, and put no fire under; and I will dress the other bull, and lay it on the wood, and put no fire under it.
+**24.** You call on the name of your god, and I will call on the LORD’s name. The God who answers by fire, let him be God.” All the people answered, “What you say is good.”
+**25.** Elijah said to the prophets of Baal, “Choose one bull for yourselves, and dress it first, for you are many; and call on the name of your god, but put no fire under it.”
+**26.** They took the bull which was given them, and they dressed it, and called on the name of Baal from morning even until noon, saying, “Baal, hear us!” But there was no voice, and nobody answered. They leaped about the altar which was made.
+**27.** At noon, Elijah mocked them, and said, “Cry aloud, for he is a god. Either he is deep in thought, or he has gone somewhere, or he is on a journey, or perhaps he sleeps and must be awakened.”
+**28.** They cried aloud, and cut themselves in their way with knives and lances until the blood gushed out on them.
+**29.** When midday was past, they prophesied until the time of the evening offering; but there was no voice, no answer, and nobody paid attention.
+**30.** Elijah said to all the people, “Come near to me!”; and all the people came near to him. He repaired the LORD’s altar that had been thrown down.
+**31.** Elijah took twelve stones, according to the number of the tribes of the sons of Jacob, to whom the LORD’s word came, saying, “Israel shall be your name.”
+**32.** With the stones he built an altar in the LORD’s name. He made a trench around the altar large enough to contain two seahs of seed.
+**33.** He put the wood in order, and cut the bull in pieces and laid it on the wood. He said, “Fill four jars with water, and pour it on the burnt offering and on the wood.”
+**34.** He said, “Do it a second time;” and they did it the second time. He said, “Do it a third time;” and they did it the third time.
+**35.** The water ran around the altar; and he also filled the trench with water.
+**36.** At the time of the evening offering, Elijah the prophet came near and said, “LORD, the God of Abraham, of Isaac, and of Israel, let it be known today that you are God in Israel and that I am your servant, and that I have done all these things at your word.
+**37.** Hear me, LORD, hear me, that this people may know that you, LORD, are God, and that you have turned their heart back again.”
+**38.** Then the LORD’s fire fell and consumed the burnt offering, the wood, the stones, and the dust; and it licked up the water that was in the trench.
+**39.** When all the people saw it, they fell on their faces. They said, “The LORD, he is God! The LORD, he is God!”
+**40.** Elijah said to them, “Seize the prophets of Baal! Don’t let one of them escape!” They seized them; and Elijah brought them down to the brook Kishon, and killed them there.
+**41.** Elijah said to Ahab, “Get up, eat and drink; for there is the sound of abundance of rain.”
+**42.** So Ahab went up to eat and to drink. Elijah went up to the top of Carmel; and he bowed himself down on the earth, and put his face between his knees.
+**43.** He said to his servant, “Go up now and look toward the sea.” He went up and looked, then said, “There is nothing.” He said, “Go again” seven times.
+**44.** On the seventh time, he said, “Behold, a small cloud, like a man’s hand, is rising out of the sea.” He said, “Go up, tell Ahab, ‘Get ready and go down, so that the rain doesn’t stop you.’”
+**45.** In a little while, the sky grew black with clouds and wind, and there was a great rain. Ahab rode, and went to Jezreel.
+**46.** The LORD’s hand was on Elijah; and he tucked his cloak into his belt and ran before Ahab to the entrance of Jezreel.
+## I Kings 19
+
+**1.** Ahab told Jezebel all that Elijah had done, and how he had killed all the prophets with the sword.
+**2.** Then Jezebel sent a messenger to Elijah, saying, “So let the gods do to me, and more also, if I don’t make your life as the life of one of them by tomorrow about this time!”
+**3.** When he saw that, he arose and ran for his life, and came to Beersheba, which belongs to Judah, and left his servant there.
+**4.** But he himself went a day’s journey into the wilderness, and came and sat down under a juniper tree. Then he requested for himself that he might die, and said, “It is enough. Now, O LORD, take away my life; for I am not better than my fathers.”
+**5.** He lay down and slept under a juniper tree; and behold, an angel touched him, and said to him, “Arise and eat!”
+**6.** He looked, and behold, there was at his head a cake baked on the coals, and a jar of water. He ate and drank, and lay down again.
+**7.** The LORD’s angel came again the second time, and touched him, and said, “Arise and eat, because the journey is too great for you.”
+**8.** He arose, and ate and drank, and went in the strength of that food forty days and forty nights to Horeb, God’s Mountain.
+**9.** He came to a cave there, and camped there; and behold, the LORD’s word came to him, and he said to him, “What are you doing here, Elijah?”
+**10.** He said, “I have been very jealous for the LORD, the God of Armies; for the children of Israel have forsaken your covenant, thrown down your altars, and killed your prophets with the sword. I, even I only, am left; and they seek my life, to take it away.”
+**11.** He said, “Go out and stand on the mountain before the LORD.” Behold, the LORD passed by, and a great and strong wind tore the mountains and broke in pieces the rocks before the LORD; but the LORD was not in the wind. After the wind there was an earthquake; but the LORD was not in the earthquake.
+**12.** After the earthquake a fire passed; but the LORD was not in the fire. After the fire, there was a still small voice.
+**13.** When Elijah heard it, he wrapped his face in his mantle, went out, and stood in the entrance of the cave. Behold, a voice came to him, and said, “What are you doing here, Elijah?”
+**14.** He said, “I have been very jealous for the LORD, the God of Armies; for the children of Israel have forsaken your covenant, thrown down your altars, and killed your prophets with the sword. I, even I only, am left; and they seek my life, to take it away.”
+**15.** The LORD said to him, “Go, return on your way to the wilderness of Damascus. When you arrive, anoint Hazael to be king over Syria.
+**16.** Anoint Jehu the son of Nimshi to be king over Israel; and anoint Elisha the son of Shaphat of Abel Meholah to be prophet in your place.
+**17.** He who escapes from the sword of Hazael, Jehu will kill; and he who escapes from the sword of Jehu, Elisha will kill.
+**18.** Yet I reserved seven thousand in Israel, all the knees of which have not bowed to Baal, and every mouth which has not kissed him.”
+**19.** So he departed from there and found Elisha the son of Shaphat, who was plowing with twelve yoke of oxen before him, and he with the twelfth. Elijah went over to him and put his mantle on him.
+**20.** Elisha left the oxen and ran after Elijah, and said, “Let me please kiss my father and my mother, and then I will follow you.” He said to him, “Go back again; for what have I done to you?”
+**21.** He returned from following him, and took the yoke of oxen, killed them, and boiled their meat with the oxen’s equipment, and gave to the people; and they ate. Then he arose, and went after Elijah, and served him.
+## I Kings 20
+
+**1.** Ben Hadad the king of Syria gathered all his army together; and there were thirty-two kings with him, with horses and chariots. He went up and besieged Samaria, and fought against it.
+**2.** He sent messengers into the city to Ahab king of Israel and said to him, “Ben Hadad says,
+**3.** ‘Your silver and your gold are mine. Your wives also and your children, even the best, are mine.’”
+**4.** The king of Israel answered, “It is according to your saying, my lord, O king. I am yours, and all that I have.”
+**5.** The messengers came again and said, “Ben Hadad says, ‘I sent indeed to you, saying, “You shall deliver me your silver, your gold, your wives, and your children;
+**6.** but I will send my servants to you tomorrow about this time, and they will search your house and the houses of your servants. Whatever is pleasant in your eyes, they will put it in their hand, and take it away.”’”
+**7.** Then the king of Israel called all the elders of the land, and said, “Please notice how this man seeks mischief; for he sent to me for my wives, and for my children, and for my silver, and for my gold; and I didn’t deny him.”
+**8.** All the elders and all the people said to him, “Don’t listen, and don’t consent.”
+**9.** Therefore he said to the messengers of Ben Hadad, “Tell my lord the king, ‘All that you sent for to your servant at the first I will do, but this thing I cannot do.’” The messengers departed and brought him back the message.
+**10.** Ben Hadad sent to him, and said, “The gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who follow me.”
+**11.** The king of Israel answered, “Tell him, ‘Don’t let him who puts on his armor brag like he who takes it off.’”
+**12.** When Ben Hadad heard this message as he was drinking, he and the kings in the pavilions, he said to his servants, “Prepare to attack!” So they prepared to attack the city.
+**13.** Behold, a prophet came near to Ahab king of Israel, and said, “The LORD says, ‘Have you seen all this great multitude? Behold, I will deliver it into your hand today. Then you will know that I am the LORD.’”
+**14.** Ahab said, “By whom?” He said, “The LORD says, ‘By the young men of the princes of the provinces.’” Then he said, “Who shall begin the battle?” He answered, “You.”
+**15.** Then he mustered the young men of the princes of the provinces, and they were two hundred and thirty-two. After them, he mustered all the people, even all the children of Israel, being seven thousand.
+**16.** They went out at noon. But Ben Hadad was drinking himself drunk in the pavilions, he and the kings, the thirty-two kings who helped him.
+**17.** The young men of the princes of the provinces went out first; and Ben Hadad sent out, and they told him, saying, “Men are coming out from Samaria.”
+**18.** He said, “If they have come out for peace, take them alive; or if they have come out for war, take them alive.”
+**19.** So these went out of the city, the young men of the princes of the provinces, and the army which followed them.
+**20.** They each killed his man. The Syrians fled, and Israel pursued them. Ben Hadad the king of Syria escaped on a horse with horsemen.
+**21.** The king of Israel went out and struck the horses and chariots, and killed the Syrians with a great slaughter.
+**22.** The prophet came near to the king of Israel and said to him, “Go, strengthen yourself, and plan what you must do, for at the return of the year, the king of Syria will come up against you.”
+**23.** The servants of the king of Syria said to him, “Their god is a god of the hills; therefore they were stronger than we. But let’s fight against them in the plain, and surely we will be stronger than they.
+**24.** Do this thing: take the kings away, every man out of his place, and put captains in their place.
+**25.** Muster an army like the army that you have lost, horse for horse and chariot for chariot. We will fight against them in the plain, and surely we will be stronger than they are.” He listened to their voice and did so.
+**26.** At the return of the year, Ben Hadad mustered the Syrians and went up to Aphek to fight against Israel.
+**27.** The children of Israel were mustered and given provisions, and went against them. The children of Israel encamped before them like two little flocks of young goats, but the Syrians filled the country.
+**28.** A man of God came near and spoke to the king of Israel, and said, “The LORD says, ‘Because the Syrians have said, “The LORD is a god of the hills, but he is not a god of the valleys,” therefore I will deliver all this great multitude into your hand, and you shall know that I am the LORD.’”
+**29.** They encamped opposite each other for seven days. Then on the seventh day the battle was joined; and the children of Israel killed one hundred thousand footmen of the Syrians in one day.
+**30.** But the rest fled to Aphek, into the city; and the wall fell on twenty-seven thousand men who were left. Ben Hadad fled and came into the city, into an inner room.
+**31.** His servants said to him, “See now, we have heard that the kings of the house of Israel are merciful kings. Please let us put sackcloth on our bodies and ropes on our heads, and go out to the king of Israel. Maybe he will save your life.”
+**32.** So they put sackcloth on their bodies and ropes on their heads, and came to the king of Israel, and said, “Your servant Ben Hadad says, ‘Please let me live.’” He said, “Is he still alive? He is my brother.”
+**33.** Now the men observed diligently and hurried to take this phrase; and they said, “Your brother Ben Hadad.” Then he said, “Go, bring him.” Then Ben Hadad came out to him; and he caused him to come up into the chariot.
+**34.** Ben Hadad said to him, “The cities which my father took from your father I will restore. You shall make streets for yourself in Damascus, as my father made in Samaria.” “I”, said Ahab, “will let you go with this covenant.” So he made a covenant with him and let him go.
+**35.** A certain man of the sons of the prophets said to his fellow by the LORD’s word, “Please strike me!” The man refused to strike him.
+**36.** Then he said to him, “Because you have not obeyed the LORD’s voice, behold, as soon as you have departed from me, a lion will kill you.” As soon as he had departed from him, a lion found him and killed him.
+**37.** Then he found another man, and said, “Please strike me.” The man struck him and wounded him.
+**38.** So the prophet departed and waited for the king by the way, and disguised himself with his headband over his eyes.
+**39.** As the king passed by, he cried to the king, and he said, “Your servant went out into the middle of the battle; and behold, a man came over and brought a man to me, and said, ‘Guard this man! If by any means he is missing, then your life shall be for his life, or else you shall pay a talent of silver.’
+**40.** As your servant was busy here and there, he was gone.” The king of Israel said to him, “So shall your judgment be. You yourself have decided it.”
+**41.** He hurried, and took the headband away from his eyes; and the king of Israel recognized that he was one of the prophets.
+**42.** He said to him, “The LORD says, ‘Because you have let go out of your hand the man whom I had devoted to destruction, therefore your life will take the place of his life, and your people take the place of his people.’”
+**43.** The king of Israel went to his house sullen and angry, and came to Samaria.
+## I Kings 21
+
+**1.** After these things, Naboth the Jezreelite had a vineyard which was in Jezreel, next to the palace of Ahab king of Samaria.
+**2.** Ahab spoke to Naboth, saying, “Give me your vineyard, that I may have it for a garden of herbs, because it is near my house; and I will give you for it a better vineyard than it. Or, if it seems good to you, I will give you its worth in money.”
+**3.** Naboth said to Ahab, “May the LORD forbid me, that I should give the inheritance of my fathers to you!”
+**4.** Ahab came into his house sullen and angry because of the word which Naboth the Jezreelite had spoken to him, for he had said, “I will not give you the inheritance of my fathers.” He laid himself down on his bed, and turned away his face, and would eat no bread.
+**5.** But Jezebel his wife came to him, and said to him, “Why is your spirit so sad that you eat no bread?”
+**6.** He said to her, “Because I spoke to Naboth the Jezreelite, and said to him, ‘Give me your vineyard for money; or else, if it pleases you, I will give you another vineyard for it.’ He answered, ‘I will not give you my vineyard.’”
+**7.** Jezebel his wife said to him, “Do you now govern the kingdom of Israel? Arise, and eat bread, and let your heart be merry. I will give you the vineyard of Naboth the Jezreelite.”
+**8.** So she wrote letters in Ahab’s name and sealed them with his seal, and sent the letters to the elders and to the nobles who were in his city, who lived with Naboth.
+**9.** She wrote in the letters, saying, “Proclaim a fast, and set Naboth on high among the people.
+**10.** Set two men, wicked fellows, before him, and let them testify against him, saying, ‘You cursed God and the king!’ Then carry him out, and stone him to death.”
+**11.** The men of his city, even the elders and the nobles who lived in his city, did as Jezebel had instructed them in the letters which she had written and sent to them.
+**12.** They proclaimed a fast, and set Naboth on high among the people.
+**13.** The two men, the wicked fellows, came in and sat before him. The wicked fellows testified against him, even against Naboth, in the presence of the people, saying, “Naboth cursed God and the king!” Then they carried him out of the city and stoned him to death with stones.
+**14.** Then they sent to Jezebel, saying, “Naboth has been stoned and is dead.”
+**15.** When Jezebel heard that Naboth had been stoned and was dead, Jezebel said to Ahab, “Arise, take possession of the vineyard of Naboth the Jezreelite, which he refused to give you for money; for Naboth is not alive, but dead.”
+**16.** When Ahab heard that Naboth was dead, Ahab rose up to go down to the vineyard of Naboth the Jezreelite, to take possession of it.
+**17.** The LORD’s word came to Elijah the Tishbite, saying,
+**18.** “Arise, go down to meet Ahab king of Israel, who dwells in Samaria. Behold, he is in the vineyard of Naboth, where he has gone down to take possession of it.
+**19.** You shall speak to him, saying, ‘The LORD says, “Have you killed and also taken possession?”’ You shall speak to him, saying, ‘The LORD says, “In the place where dogs licked the blood of Naboth, dogs will lick your blood, even yours.”’”
+**20.** Ahab said to Elijah, “Have you found me, my enemy?” He answered, “I have found you, because you have sold yourself to do that which is evil in the LORD’s sight.
+**21.** Behold, I will bring evil on you, and will utterly sweep you away and will cut off from Ahab everyone who urinates against a wall, and him who is shut up and him who is left at large in Israel.
+**22.** I will make your house like the house of Jeroboam the son of Nebat, and like the house of Baasha the son of Ahijah, for the provocation with which you have provoked me to anger, and have made Israel to sin.”
+**23.** The LORD also spoke of Jezebel, saying, “The dogs will eat Jezebel by the rampart of Jezreel.
+**24.** The dogs will eat he who dies of Ahab in the city; and the birds of the sky will eat he who dies in the field.”
+**25.** But there was no one like Ahab, who sold himself to do that which was evil in the LORD’s sight, whom Jezebel his wife stirred up.
+**26.** He did very abominably in following idols, according to all that the Amorites did, whom the LORD cast out before the children of Israel.
+**27.** When Ahab heard those words, he tore his clothes, put sackcloth on his body, fasted, lay in sackcloth, and went about despondently.
+**28.** The LORD’s word came to Elijah the Tishbite, saying,
+**29.** “See how Ahab humbles himself before me? Because he humbles himself before me, I will not bring the evil in his days; but I will bring the evil on his house in his son’s day.”
+## I Kings 22
+
+**1.** They continued three years without war between Syria and Israel.
+**2.** In the third year, Jehoshaphat the king of Judah came down to the king of Israel.
+**3.** The king of Israel said to his servants, “You know that Ramoth Gilead is ours, and we do nothing, and don’t take it out of the hand of the king of Syria?”
+**4.** He said to Jehoshaphat, “Will you go with me to battle to Ramoth Gilead?” Jehoshaphat said to the king of Israel, “I am as you are, my people as your people, my horses as your horses.”
+**5.** Jehoshaphat said to the king of Israel, “Please inquire first for the LORD’s word.”
+**6.** Then the king of Israel gathered the prophets together, about four hundred men, and said to them, “Should I go against Ramoth Gilead to battle, or should I refrain?” They said, “Go up; for the Lord will deliver it into the hand of the king.”
+**7.** But Jehoshaphat said, “Isn’t there here a prophet of the LORD, that we may inquire of him?”
+**8.** The king of Israel said to Jehoshaphat, “There is yet one man by whom we may inquire of the LORD, Micaiah the son of Imlah; but I hate him, for he does not prophesy good concerning me, but evil.” Jehoshaphat said, “Don’t let the king say so.”
+**9.** Then the king of Israel called an officer, and said, “Quickly get Micaiah the son of Imlah.”
+**10.** Now the king of Israel and Jehoshaphat the king of Judah were sitting each on his throne, arrayed in their robes, in an open place at the entrance of the gate of Samaria; and all the prophets were prophesying before them.
+**11.** Zedekiah the son of Chenaanah made himself horns of iron, and said, “The LORD says, ‘With these you will push the Syrians, until they are consumed.’”
+**12.** All the prophets prophesied so, saying, “Go up to Ramoth Gilead and prosper; for the LORD will deliver it into the hand of the king.”
+**13.** The messenger who went to call Micaiah spoke to him, saying, “See now, the prophets declare good to the king with one mouth. Please let your word be like the word of one of them, and speak good.”
+**14.** Micaiah said, “As the LORD lives, what the LORD says to me, that I will speak.”
+**15.** When he had come to the king, the king said to him, “Micaiah, shall we go to Ramoth Gilead to battle, or shall we forbear?” He answered him, “Go up and prosper; and the LORD will deliver it into the hand of the king.”
+**16.** The king said to him, “How many times do I have to adjure you that you speak to me nothing but the truth in the LORD’s name?”
+**17.** He said, “I saw all Israel scattered on the mountains, as sheep that have no shepherd. The LORD said, ‘These have no master. Let them each return to his house in peace.’”
+**18.** The king of Israel said to Jehoshaphat, “Didn’t I tell you that he would not prophesy good concerning me, but evil?”
+**19.** Micaiah said, “Therefore hear the LORD’s word. I saw the LORD sitting on his throne, and all the army of heaven standing by him on his right hand and on his left.
+**20.** The LORD said, ‘Who will entice Ahab, that he may go up and fall at Ramoth Gilead?’ One said one thing, and another said another.
+**21.** A spirit came out and stood before the LORD, and said, ‘I will entice him.’
+**22.** The LORD said to him, ‘How?’ He said, ‘I will go out and will be a lying spirit in the mouth of all his prophets.’ He said, ‘You will entice him, and will also prevail. Go out and do so.’
+**23.** Now therefore, behold, the LORD has put a lying spirit in the mouth of all these your prophets; and the LORD has spoken evil concerning you.”
+**24.** Then Zedekiah the son of Chenaanah came near and struck Micaiah on the cheek, and said, “Which way did the LORD’s Spirit go from me to speak to you?”
+**25.** Micaiah said, “Behold, you will see on that day when you go into an inner room to hide yourself.”
+**26.** The king of Israel said, “Take Micaiah, and carry him back to Amon the governor of the city and to Joash the king’s son.
+**27.** Say, ‘The king says, “Put this fellow in the prison, and feed him with bread of affliction and with water of affliction, until I come in peace.”’”
+**28.** Micaiah said, “If you return at all in peace, the LORD has not spoken by me.” He said, “Listen, all you people!”
+**29.** So the king of Israel and Jehoshaphat the king of Judah went up to Ramoth Gilead.
+**30.** The king of Israel said to Jehoshaphat, “I will disguise myself and go into the battle, but you put on your robes.” The king of Israel disguised himself and went into the battle.
+**31.** Now the king of Syria had commanded the thirty-two captains of his chariots, saying, “Don’t fight with small nor great, except only with the king of Israel.”
+**32.** When the captains of the chariots saw Jehoshaphat, they said, “Surely that is the king of Israel!” and they came over to fight against him. Jehoshaphat cried out.
+**33.** When the captains of the chariots saw that it was not the king of Israel, they turned back from pursuing him.
+**34.** A certain man drew his bow at random, and struck the king of Israel between the joints of the armor. Therefore he said to the driver of his chariot, “Turn around, and carry me out of the battle, for I am severely wounded.”
+**35.** The battle increased that day. The king was propped up in his chariot facing the Syrians, and died at evening. The blood ran out of the wound into the bottom of the chariot.
+**36.** A cry went throughout the army about the going down of the sun, saying, “Every man to his city, and every man to his country!”
+**37.** So the king died, and was brought to Samaria; and they buried the king in Samaria.
+**38.** They washed the chariot by the pool of Samaria; and the dogs licked up his blood where the prostitutes washed themselves, according to the LORD’s word which he spoke.
+**39.** Now the rest of the acts of Ahab, and all that he did, and the ivory house which he built, and all the cities that he built, aren’t they written in the book of the chronicles of the kings of Israel?
+**40.** So Ahab slept with his fathers; and Ahaziah his son reigned in his place.
+**41.** Jehoshaphat the son of Asa began to reign over Judah in the fourth year of Ahab king of Israel.
+**42.** Jehoshaphat was thirty-five years old when he began to reign; and he reigned twenty-five years in Jerusalem. His mother’s name was Azubah the daughter of Shilhi.
+**43.** He walked in all the way of Asa his father. He didn’t turn away from it, doing that which was right in the LORD’s eyes. However, the high places were not taken away. The people still sacrificed and burned incense on the high places.
+**44.** Jehoshaphat made peace with the king of Israel.
+**45.** Now the rest of the acts of Jehoshaphat, and his might that he showed, and how he fought, aren’t they written in the book of the chronicles of the kings of Judah?
+**46.** The remnant of the sodomites, that remained in the days of his father Asa, he put away out of the land.
+**47.** There was no king in Edom. A deputy ruled.
+**48.** Jehoshaphat made ships of Tarshish to go to Ophir for gold, but they didn’t go, for the ships wrecked at Ezion Geber.
+**49.** Then Ahaziah the son of Ahab said to Jehoshaphat, “Let my servants go with your servants in the ships.” But Jehoshaphat would not.
+**50.** Jehoshaphat slept with his fathers, and was buried with his fathers in his father David’s city. Jehoram his son reigned in his place.
+**51.** Ahaziah the son of Ahab began to reign over Israel in Samaria in the seventeenth year of Jehoshaphat king of Judah, and he reigned two years over Israel.
+**52.** He did that which was evil in the LORD’s sight, and walked in the way of his father, and in the way of his mother, and in the way of Jeroboam the son of Nebat, in which he made Israel to sin.
+**53.** He served Baal and worshiped him, and provoked the LORD, the God of Israel, to anger in all the ways that his father had done so.
+
+# II Kings
+
+## II Kings 1
+
+**1.** Moab rebelled against Israel after the death of Ahab.
+**2.** Ahaziah fell down through the lattice in his upper room that was in Samaria, and was sick. So he sent messengers, and said to them, “Go, inquire of Baal Zebub, the god of Ekron, whether I will recover of this sickness.”
+**3.** But the LORD’s angel said to Elijah the Tishbite, “Arise, go up to meet the messengers of the king of Samaria, and tell them, ‘Is it because there is no God in Israel that you go to inquire of Baal Zebub, the god of Ekron?
+**4.** Now therefore the LORD says, “You will not come down from the bed where you have gone up, but you will surely die.”’” Then Elijah departed.
+**5.** The messengers returned to him, and he said to them, “Why is it that you have returned?”
+**6.** They said to him, “A man came up to meet us, and said to us, ‘Go, return to the king who sent you, and tell him, “The LORD says, ‘Is it because there is no God in Israel that you send to inquire of Baal Zebub, the god of Ekron? Therefore you will not come down from the bed where you have gone up, but you will surely die.’”’”
+**7.** He said to them, “What kind of man was he who came up to meet you and told you these words?”
+**8.** They answered him, “He was a hairy man, and wearing a leather belt around his waist.” He said, “It’s Elijah the Tishbite.”
+**9.** Then the king sent a captain of fifty with his fifty to him. He went up to him; and behold, he was sitting on the top of the hill. He said to him, “Man of God, the king has said, ‘Come down!’”
+**10.** Elijah answered to the captain of fifty, “If I am a man of God, then let fire come down from the sky and consume you and your fifty!” Then fire came down from the sky, and consumed him and his fifty.
+**11.** Again he sent to him another captain of fifty with his fifty. He answered him, “Man of God, the king has said, ‘Come down quickly!’”
+**12.** Elijah answered them, “If I am a man of God, then let fire come down from the sky and consume you and your fifty!” Then God’s fire came down from the sky, and consumed him and his fifty.
+**13.** Again he sent the captain of a third fifty with his fifty. The third captain of fifty went up, and came and fell on his knees before Elijah, and begged him, and said to him, “Man of God, please let my life and the life of these fifty of your servants be precious in your sight.
+**14.** Behold, fire came down from the sky and consumed the last two captains of fifty with their fifties. But now let my life be precious in your sight.”
+**15.** The LORD’s angel said to Elijah, “Go down with him. Don’t be afraid of him.” Then he arose and went down with him to the king.
+**16.** He said to him, “The LORD says, ‘Because you have sent messengers to inquire of Baal Zebub, the god of Ekron, is it because there is no God in Israel to inquire of his word? Therefore you will not come down from the bed where you have gone up, but you will surely die.’”
+**17.** So he died according to the LORD’s word which Elijah had spoken. Jehoram began to reign in his place in the second year of Jehoram the son of Jehoshaphat king of Judah, because he had no son.
+**18.** Now the rest of the acts of Ahaziah which he did, aren’t they written in the book of the chronicles of the kings of Israel?
+## II Kings 2
+
+**1.** When the LORD was about to take Elijah up by a whirlwind into heaven, Elijah went with Elisha from Gilgal.
+**2.** Elijah said to Elisha, “Please wait here, for the LORD has sent me as far as Bethel.” Elisha said, “As the LORD lives, and as your soul lives, I will not leave you.” So they went down to Bethel.
+**3.** The sons of the prophets who were at Bethel came out to Elisha, and said to him, “Do you know that the LORD will take away your master from over you today?” He said, “Yes, I know it. Hold your peace.”
+**4.** Elijah said to him, “Elisha, please wait here, for the LORD has sent me to Jericho.” He said, “As the LORD lives, and as your soul lives, I will not leave you.” So they came to Jericho.
+**5.** The sons of the prophets who were at Jericho came near to Elisha, and said to him, “Do you know that the LORD will take away your master from over you today?” He answered, “Yes, I know it. Hold your peace.”
+**6.** Elijah said to him, “Please wait here, for the LORD has sent me to the Jordan.” He said, “As the LORD lives, and as your soul lives, I will not leave you.” Then they both went on.
+**7.** Fifty men of the sons of the prophets went and stood opposite them at a distance; and they both stood by the Jordan.
+**8.** Elijah took his mantle, and rolled it up, and struck the waters; and they were divided here and there, so that they both went over on dry ground.
+**9.** When they had gone over, Elijah said to Elisha, “Ask what I shall do for you, before I am taken from you.” Elisha said, “Please let a double portion of your spirit be on me.”
+**10.** He said, “You have asked a hard thing. If you see me when I am taken from you, it will be so for you; but if not, it will not be so.”
+**11.** As they continued on and talked, behold, a chariot of fire and horses of fire separated them; and Elijah went up by a whirlwind into heaven.
+**12.** Elisha saw it, and he cried, “My father, my father, the chariots of Israel and its horsemen!” He saw him no more. Then he took hold of his own clothes and tore them in two pieces.
+**13.** He also took up Elijah’s mantle that fell from him, and went back and stood by the bank of the Jordan.
+**14.** He took Elijah’s mantle that fell from him, and struck the waters, and said, “Where is the LORD, the God of Elijah?” When he also had struck the waters, they were divided apart, and Elisha went over.
+**15.** When the sons of the prophets who were at Jericho facing him saw him, they said, “The spirit of Elijah rests on Elisha.” They came to meet him, and bowed themselves to the ground before him.
+**16.** They said to him, “See now, there are with your servants fifty strong men. Please let them go and seek your master. Perhaps the LORD’s Spirit has taken him up, and put him on some mountain or into some valley.” He said, “Don’t send them.”
+**17.** When they urged him until he was ashamed, he said, “Send them.” Therefore they sent fifty men; and they searched for three days, but didn’t find him.
+**18.** They came back to him while he stayed at Jericho; and he said to them, “Didn’t I tell you, ‘Don’t go’?”
+**19.** The men of the city said to Elisha, “Behold, please, the situation of this city is pleasant, as my lord sees; but the water is bad, and the land is barren.”
+**20.** He said, “Bring me a new jar, and put salt in it.” Then they brought it to him.
+**21.** He went out to the spring of the waters, and threw salt into it, and said, “The LORD says, ‘I have healed these waters. There shall not be from there any more death or barren wasteland.’”
+**22.** So the waters were healed to this day, according to Elisha’s word which he spoke.
+**23.** He went up from there to Bethel. As he was going up by the way, some youths came out of the city and mocked him, and said to him, “Go up, you baldy! Go up, you baldy!”
+**24.** He looked behind him and saw them, and cursed them in the LORD’s name. Then two female bears came out of the woods and mauled forty-two of those youths.
+**25.** He went from there to Mount Carmel, and from there he returned to Samaria.
+## II Kings 3
+
+**1.** Now Jehoram the son of Ahab began to reign over Israel in Samaria in the eighteenth year of Jehoshaphat king of Judah, and reigned twelve years.
+**2.** He did that which was evil in the LORD’s sight, but not like his father and like his mother, for he put away the pillar of Baal that his father had made.
+**3.** Nevertheless he held to the sins of Jeroboam the son of Nebat, with which he made Israel to sin. He didn’t depart from them.
+**4.** Now Mesha king of Moab was a sheep breeder; and he supplied the king of Israel with one hundred thousand lambs and the wool of one hundred thousand rams.
+**5.** But when Ahab was dead, the king of Moab rebelled against the king of Israel.
+**6.** King Jehoram went out of Samaria at that time, and mustered all Israel.
+**7.** He went and sent to Jehoshaphat the king of Judah, saying, “The king of Moab has rebelled against me. Will you go with me against Moab to battle?” He said, “I will go up. I am as you are, my people as your people, my horses as your horses.”
+**8.** Then he said, “Which way shall we go up?” Jehoram answered, “The way of the wilderness of Edom.”
+**9.** So the king of Israel went with the king of Judah and the king of Edom, and they marched for seven days along a circuitous route. There was no water for the army or for the animals that followed them.
+**10.** The king of Israel said, “Alas! For the LORD has called these three kings together to deliver them into the hand of Moab.”
+**11.** But Jehoshaphat said, “Isn’t there a prophet of the LORD here, that we may inquire of the LORD by him?” One of the king of Israel’s servants answered, “Elisha the son of Shaphat, who poured water on the hands of Elijah, is here.”
+**12.** Jehoshaphat said, “The LORD’s word is with him.” So the king of Israel and Jehoshaphat and the king of Edom went down to him.
+**13.** Elisha said to the king of Israel, “What have I to do with you? Go to the prophets of your father, and to the prophets of your mother.” The king of Israel said to him, “No, for the LORD has called these three kings together to deliver them into the hand of Moab.”
+**14.** Elisha said, “As the LORD of Armies lives, before whom I stand, surely, were it not that I respect the presence of Jehoshaphat the king of Judah, I would not look toward you, nor see you.
+**15.** But now bring me a musician.” When the musician played, the LORD’s hand came on him.
+**16.** He said, “The LORD says, ‘Make this valley full of trenches.’
+**17.** For the LORD says, ‘You will not see wind, neither will you see rain, yet that valley will be filled with water, and you will drink, both you and your livestock and your other animals.
+**18.** This is an easy thing in the LORD’s sight. He will also deliver the Moabites into your hand.
+**19.** You shall strike every fortified city and every choice city, and shall fell every good tree, and stop all springs of water, and mar every good piece of land with stones.’”
+**20.** In the morning, about the time of offering the sacrifice, behold, water came by the way of Edom, and the country was filled with water.
+**21.** Now when all the Moabites heard that the kings had come up to fight against them, they gathered themselves together, all who were able to put on armor, young and old, and stood on the border.
+**22.** They rose up early in the morning, and the sun shone on the water, and the Moabites saw the water opposite them as red as blood.
+**23.** They said, “This is blood. The kings are surely destroyed, and they have struck each other. Now therefore, Moab, to the plunder!”
+**24.** When they came to the camp of Israel, the Israelites rose up and struck the Moabites, so that they fled before them; and they went forward into the land attacking the Moabites.
+**25.** They beat down the cities; and on every good piece of land each man cast his stone, and filled it. They also stopped all the springs of water and cut down all the good trees, until in Kir Hareseth all they left was its stones; however the men armed with slings went around it and attacked it.
+**26.** When the king of Moab saw that the battle was too severe for him, he took with him seven hundred men who drew a sword, to break through to the king of Edom; but they could not.
+**27.** Then he took his oldest son who would have reigned in his place, and offered him for a burnt offering on the wall. There was great wrath against Israel; and they departed from him, and returned to their own land.
+## II Kings 4
+
+**1.** Now a certain woman of the wives of the sons of the prophets cried out to Elisha, saying, “Your servant my husband is dead. You know that your servant feared the LORD. Now the creditor has come to take for himself my two children to be slaves.”
+**2.** Elisha said to her, “What should I do for you? Tell me, what do you have in the house?” She said, “Your servant has nothing in the house, except a pot of oil.”
+**3.** Then he said, “Go, borrow empty containers from all your neighbors. Don’t borrow just a few containers.
+**4.** Go in and shut the door on you and on your sons, and pour oil into all those containers; and set aside those which are full.”
+**5.** So she went from him, and shut the door on herself and on her sons. They brought the containers to her, and she poured oil.
+**6.** When the containers were full, she said to her son, “Bring me another container.” He said to her, “There isn’t another container.” Then the oil stopped flowing.
+**7.** Then she came and told the man of God. He said, “Go, sell the oil, and pay your debt; and you and your sons live on the rest.”
+**8.** One day Elisha went to Shunem, where there was a prominent woman; and she persuaded him to eat bread. So it was, that as often as he passed by, he turned in there to eat bread.
+**9.** She said to her husband, “See now, I perceive that this is a holy man of God who passes by us continually.
+**10.** Please, let’s make a little room on the roof. Let’s set a bed, a table, a chair, and a lamp stand for him there. When he comes to us, he can stay there.”
+**11.** One day he came there, and he went to the room and lay there.
+**12.** He said to Gehazi his servant, “Call this Shunammite.” When he had called her, she stood before him.
+**13.** He said to him, “Say now to her, ‘Behold, you have cared for us with all this care. What is to be done for you? Would you like to be spoken for to the king, or to the captain of the army?’” She answered, “I dwell among my own people.”
+**14.** He said, “What then is to be done for her?” Gehazi answered, “Most certainly she has no son, and her husband is old.”
+**15.** He said, “Call her.” When he had called her, she stood in the door.
+**16.** He said, “At this season next year, you will embrace a son.” She said, “No, my lord, you man of God, do not lie to your servant.”
+**17.** The woman conceived, and bore a son at that season when the time came around, as Elisha had said to her.
+**18.** When the child was grown, one day he went out to his father to the reapers.
+**19.** He said to his father, “My head! My head!” He said to his servant, “Carry him to his mother.”
+**20.** When he had taken him and brought him to his mother, he sat on her knees until noon, and then died.
+**21.** She went up and laid him on the man of God’s bed, and shut the door on him, and went out.
+**22.** She called to her husband and said, “Please send me one of the servants, and one of the donkeys, that I may run to the man of God and come again.”
+**23.** He said, “Why would you want to go to him today? It is not a new moon or a Sabbath.” She said, “It’s all right.”
+**24.** Then she saddled a donkey, and said to her servant, “Drive, and go forward! Don’t slow down for me, unless I ask you to.”
+**25.** So she went, and came to the man of God to Mount Carmel. When the man of God saw her afar off, he said to Gehazi his servant, “Behold, there is the Shunammite.
+**26.** Please run now to meet her, and ask her, ‘Is it well with you? Is it well with your husband? Is it well with your child?’” She answered, “It is well.”
+**27.** When she came to the man of God to the hill, she caught hold of his feet. Gehazi came near to thrust her away; but the man of God said, “Leave her alone, for her soul is troubled within her; and the LORD has hidden it from me, and has not told me.”
+**28.** Then she said, “Did I ask you for a son, my lord? Didn’t I say, ‘Do not deceive me’?”
+**29.** Then he said to Gehazi, “Tuck your cloak into your belt, take my staff in your hand, and go your way. If you meet any man, don’t greet him; and if anyone greets you, don’t answer him again. Then lay my staff on the child’s face.”
+**30.** The child’s mother said, “As the LORD lives, and as your soul lives, I will not leave you.” So he arose, and followed her.
+**31.** Gehazi went ahead of them, and laid the staff on the child’s face; but there was no voice and no hearing. Therefore he returned to meet him, and told him, “The child has not awakened.”
+**32.** When Elisha had come into the house, behold, the child was dead, and lying on his bed.
+**33.** He went in therefore, and shut the door on them both, and prayed to the LORD.
+**34.** He went up and lay on the child, and put his mouth on his mouth, and his eyes on his eyes, and his hands on his hands. He stretched himself on him; and the child’s flesh grew warm.
+**35.** Then he returned, and walked in the house once back and forth, then went up and stretched himself out on him. Then the child sneezed seven times, and the child opened his eyes.
+**36.** He called Gehazi, and said, “Call this Shunammite!” So he called her. When she had come in to him, he said, “Take up your son.”
+**37.** Then she went in, fell at his feet, and bowed herself to the ground; then she picked up her son, and went out.
+**38.** Elisha came again to Gilgal. There was a famine in the land; and the sons of the prophets were sitting before him; and he said to his servant, “Get the large pot, and boil stew for the sons of the prophets.”
+**39.** One went out into the field to gather herbs, and found a wild vine, and gathered a lap full of wild gourds from it, and came and cut them up into the pot of stew; for they didn’t recognize them.
+**40.** So they poured out for the men to eat. As they were eating some of the stew, they cried out and said, “Man of God, there is death in the pot!” And they could not eat it.
+**41.** But he said, “Then bring meal.” He threw it into the pot; and he said, “Serve it to the people, that they may eat.” And there was nothing harmful in the pot.
+**42.** A man from Baal Shalishah came, and brought the man of God some bread of the first fruits: twenty loaves of barley and fresh ears of grain in his sack. Elisha said, “Give to the people, that they may eat.”
+**43.** His servant said, “What, should I set this before a hundred men?” But he said, “Give it to the people, that they may eat; for the LORD says, ‘They will eat, and will have some left over.’”
+**44.** So he set it before them and they ate and had some left over, according to the LORD’s word.
+## II Kings 5
+
+**1.** Now Naaman, captain of the army of the king of Syria, was a great man with his master, and honorable, because by him the LORD had given victory to Syria; he was also a mighty man of valor, but he was a leper.
+**2.** The Syrians had gone out in bands, and had brought away captive out of the land of Israel a little girl, and she waited on Naaman’s wife.
+**3.** She said to her mistress, “I wish that my lord were with the prophet who is in Samaria! Then he would heal him of his leprosy.”
+**4.** Someone went in and told his lord, saying, “The girl who is from the land of Israel said this.”
+**5.** The king of Syria said, “Go now, and I will send a letter to the king of Israel.” He departed, and took with him ten talents of silver, six thousand pieces of gold, and ten changes of clothing.
+**6.** He brought the letter to the king of Israel, saying, “Now when this letter has come to you, behold, I have sent Naaman my servant to you, that you may heal him of his leprosy.”
+**7.** When the king of Israel had read the letter, he tore his clothes and said, “Am I God, to kill and to make alive, that this man sends to me to heal a man of his leprosy? But please consider and see how he seeks a quarrel against me.”
+**8.** It was so, when Elisha the man of God heard that the king of Israel had torn his clothes, that he sent to the king, saying, “Why have you torn your clothes? Let him come now to me, and he shall know that there is a prophet in Israel.”
+**9.** So Naaman came with his horses and with his chariots, and stood at the door of the house of Elisha.
+**10.** Elisha sent a messenger to him, saying, “Go and wash in the Jordan seven times, and your flesh shall come again to you, and you shall be clean.”
+**11.** But Naaman was angry, and went away and said, “Behold, I thought, ‘He will surely come out to me, and stand, and call on the name of the LORD his God, and wave his hand over the place, and heal the leper.’
+**12.** Aren’t Abanah and Pharpar, the rivers of Damascus, better than all the waters of Israel? Couldn’t I wash in them and be clean?” So he turned and went away in a rage.
+**13.** His servants came near and spoke to him, and said, “My father, if the prophet had asked you do some great thing, wouldn’t you have done it? How much rather then, when he says to you, ‘Wash, and be clean’?”
+**14.** Then went he down and dipped himself seven times in the Jordan, according to the saying of the man of God; and his flesh was restored like the flesh of a little child, and he was clean.
+**15.** He returned to the man of God, he and all his company, and came, and stood before him; and he said, “See now, I know that there is no God in all the earth, but in Israel. Now therefore, please take a gift from your servant.”
+**16.** But he said, “As the LORD lives, before whom I stand, I will receive none.” He urged him to take it; but he refused.
+**17.** Naaman said, “If not, then, please let two mules’ load of earth be given to your servant; for your servant will from now on offer neither burnt offering nor sacrifice to other gods, but to the LORD.
+**18.** In this thing may the LORD pardon your servant: when my master goes into the house of Rimmon to worship there, and he leans on my hand, and I bow myself in the house of Rimmon. When I bow myself in the house of Rimmon, may the LORD pardon your servant in this thing.”
+**19.** He said to him, “Go in peace.” So he departed from him a little way.
+**20.** But Gehazi the servant of Elisha the man of God, said, “Behold, my master has spared this Naaman the Syrian, in not receiving at his hands that which he brought. As the LORD lives, I will run after him, and take something from him.”
+**21.** So Gehazi followed after Naaman. When Naaman saw one running after him, he came down from the chariot to meet him, and said, “Is all well?”
+**22.** He said, “All is well. My master has sent me, saying, ‘Behold, even now two young men of the sons of the prophets have come to me from the hill country of Ephraim. Please give them a talent of silver and two changes of clothing.’”
+**23.** Naaman said, “Be pleased to take two talents.” He urged him, and bound two talents of silver in two bags, with two changes of clothing, and laid them on two of his servants; and they carried them before him.
+**24.** When he came to the hill, he took them from their hand, and stored them in the house. Then he let the men go, and they departed.
+**25.** But he went in, and stood before his master. Elisha said to him, “Where did you come from, Gehazi?” He said, “Your servant went nowhere.”
+**26.** He said to him, “Didn’t my heart go with you when the man turned from his chariot to meet you? Is it a time to receive money, and to receive garments, and olive groves and vineyards, and sheep and cattle, and male servants and female servants?
+**27.** Therefore the leprosy of Naaman will cling to you and to your offspring forever.” He went out from his presence a leper, as white as snow.
+## II Kings 6
+
+**1.** The sons of the prophets said to Elisha, “See now, the place where we live and meet with you is too small for us.
+**2.** Please let us go to the Jordan, and each man take a beam from there, and let’s make us a place there, where we may live.” He answered, “Go!”
+**3.** One said, “Please be pleased to go with your servants.” He answered, “I will go.”
+**4.** So he went with them. When they came to the Jordan, they cut down wood.
+**5.** But as one was cutting down a tree, the ax head fell into the water. Then he cried out and said, “Alas, my master! For it was borrowed.”
+**6.** The man of God asked, “Where did it fall?” He showed him the place. He cut down a stick, threw it in there, and made the iron float.
+**7.** He said, “Take it.” So he put out his hand and took it.
+**8.** Now the king of Syria was at war against Israel; and he took counsel with his servants, saying, “My camp will be in such and such a place.”
+**9.** The man of God sent to the king of Israel, saying, “Beware that you not pass this place, for the Syrians are coming down there.”
+**10.** The king of Israel sent to the place which the man of God told him and warned him of; and he saved himself there, not once or twice.
+**11.** The king of Syria’s heart was very troubled about this. He called his servants, and said to them, “Won’t you show me which of us is for the king of Israel?”
+**12.** One of his servants said, “No, my lord, O king; but Elisha, the prophet who is in Israel, tells the king of Israel the words that you speak in your bedroom.”
+**13.** He said, “Go and see where he is, that I may send and get him.” He was told, “Behold, he is in Dothan.”
+**14.** Therefore he sent horses, chariots, and a great army there. They came by night and surrounded the city.
+**15.** When the servant of the man of God had risen early and gone out, behold, an army with horses and chariots was around the city. His servant said to him, “Alas, my master! What shall we do?”
+**16.** He answered, “Don’t be afraid, for those who are with us are more than those who are with them.”
+**17.** Elisha prayed, and said, “LORD, please open his eyes, that he may see.” the LORD opened the young man’s eyes, and he saw; and behold, the mountain was full of horses and chariots of fire around Elisha.
+**18.** When they came down to him, Elisha prayed to the LORD, and said, “Please strike this people with blindness.” He struck them with blindness according to Elisha’s word.
+**19.** Elisha said to them, “This is not the way, neither is this the city. Follow me, and I will bring you to the man whom you seek.” He led them to Samaria.
+**20.** When they had come into Samaria, Elisha said, “LORD, open these men’s eyes, that they may see.” The LORD opened their eyes, and they saw; and behold, they were in the middle of Samaria.
+**21.** The king of Israel said to Elisha, when he saw them, “My father, shall I strike them? Shall I strike them?”
+**22.** He answered, “You shall not strike them. Would you strike those whom you have taken captive with your sword and with your bow? Set bread and water before them, that they may eat and drink, then go to their master.”
+**23.** He prepared a great feast for them. After they ate and drank, he sent them away and they went to their master. So the bands of Syria stopped raiding the land of Israel.
+**24.** After this, Benhadad king of Syria gathered all his army, and went up and besieged Samaria.
+**25.** There was a great famine in Samaria. Behold, they besieged it until a donkey’s head was sold for eighty pieces of silver, and the fourth part of a kab of dove’s dung for five pieces of silver.
+**26.** As the king of Israel was passing by on the wall, a woman cried to him, saying, “Help, my lord, O king!”
+**27.** He said, “If the LORD doesn’t help you, where could I get help for you? From the threshing floor, or from the wine press?”
+**28.** Then the king asked her, “What is your problem?” She answered, “This woman said to me, ‘Give your son, that we may eat him today, and we will eat my son tomorrow.’
+**29.** So we boiled my son and ate him; and I said to her on the next day, ‘Give up your son, that we may eat him;’ and she has hidden her son.”
+**30.** When the king heard the words of the woman, he tore his clothes. Now he was passing by on the wall, and the people looked, and behold, he had sackcloth underneath on his body.
+**31.** Then he said, “God do so to me, and more also, if the head of Elisha the son of Shaphat stays on him today.”
+**32.** But Elisha was sitting in his house, and the elders were sitting with him. Then the king sent a man from before him; but before the messenger came to him, he said to the elders, “Do you see how this son of a murderer has sent to take away my head? Behold, when the messenger comes, shut the door, and hold the door shut against him. Isn’t the sound of his master’s feet behind him?”
+**33.** While he was still talking with them, behold, the messenger came down to him. Then he said, “Behold, this evil is from the LORD. Why should I wait for the LORD any longer?”
+## II Kings 7
+
+**1.** Elisha said, “Hear the LORD’s word. The LORD says, ‘Tomorrow about this time a seah of fine flour will be sold for a shekel, and two seahs of barley for a shekel, in the gate of Samaria.’”
+**2.** Then the captain on whose hand the king leaned answered the man of God, and said, “Behold, if the LORD made windows in heaven, could this thing be?” He said, “Behold, you will see it with your eyes, but will not eat of it.”
+**3.** Now there were four leprous men at the entrance of the gate. They said to one another, “Why do we sit here until we die?
+**4.** If we say, ‘We will enter into the city,’ then the famine is in the city, and we will die there. If we sit still here, we also die. Now therefore come, and let’s surrender to the army of the Syrians. If they save us alive, we will live; and if they kill us, we will only die.”
+**5.** They rose up in the twilight to go to the camp of the Syrians. When they had come to the outermost part of the camp of the Syrians, behold, no man was there.
+**6.** For the Lord had made the army of the Syrians to hear the sound of chariots and the sound of horses, even the noise of a great army; and they said to one another, “Behold, the king of Israel has hired against us the kings of the Hittites and the kings of the Egyptians to attack us.”
+**7.** Therefore they arose and fled in the twilight, and left their tents, their horses, and their donkeys, even the camp as it was, and fled for their life.
+**8.** When these lepers came to the outermost part of the camp, they went into one tent, and ate and drank, then carried away silver, gold, and clothing and went and hid it. Then they came back, and entered into another tent and carried things from there also, and went and hid them.
+**9.** Then they said to one another, “We aren’t doing right. Today is a day of good news, and we keep silent. If we wait until the morning light, punishment will overtake us. Now therefore come, let’s go and tell the king’s household.”
+**10.** So they came and called to the city gatekeepers; and they told them, “We came to the camp of the Syrians, and, behold, there was no man there, not even a man’s voice, but the horses tied, and the donkeys tied, and the tents as they were.”
+**11.** Then the gatekeepers called out and told it to the king’s household within.
+**12.** The king arose in the night, and said to his servants, “I will now show you what the Syrians have done to us. They know that we are hungry. Therefore they have gone out of the camp to hide themselves in the field, saying, ‘When they come out of the city, we shall take them alive, and get into the city.’”
+**13.** One of his servants answered, “Please let some people take five of the horses that remain, which are left in the city. Behold, they are like all the multitude of Israel who are left in it. Behold, they are like all the multitude of Israel who are consumed. Let’s send and see.”
+**14.** Therefore they took two chariots with horses; and the king sent them out to the Syrian army, saying, “Go and see.”
+**15.** They went after them to the Jordan; and behold, all the path was full of garments and equipment which the Syrians had cast away in their haste. The messengers returned and told the king.
+**16.** The people went out and plundered the camp of the Syrians. So a seah of fine flour was sold for a shekel, and two measures of barley for a shekel, according to the LORD’s word.
+**17.** The king had appointed the captain on whose hand he leaned to be in charge of the gate; and the people trampled over him in the gate, and he died as the man of God had said, who spoke when the king came down to him.
+**18.** It happened as the man of God had spoken to the king, saying, “Two seahs of barley for a shekel, and a seah of fine flour for a shekel, shall be tomorrow about this time in the gate of Samaria;”
+**19.** and that captain answered the man of God, and said, “Now, behold, if the LORD made windows in heaven, might such a thing be?” and he said, “Behold, you will see it with your eyes, but will not eat of it.”
+**20.** It happened like that to him, for the people trampled over him in the gate, and he died.
+## II Kings 8
+
+**1.** Now Elisha had spoken to the woman whose son he had restored to life, saying, “Arise, and go, you and your household, and stay for a while wherever you can; for the LORD has called for a famine. It will also come on the land for seven years.”
+**2.** The woman arose, and did according to the man of God’s word. She went with her household, and lived in the land of the Philistines for seven years.
+**3.** At the end of seven years, the woman returned from the land of the Philistines. Then she went out to beg the king for her house and for her land.
+**4.** Now the king was talking with Gehazi the servant of the man of God, saying, “Please tell me all the great things that Elisha has done.”
+**5.** As he was telling the king how he had restored to life him who was dead, behold, the woman whose son he had restored to life begged the king for her house and for her land. Gehazi said, “My lord, O king, this is the woman, and this is her son, whom Elisha restored to life.”
+**6.** When the king asked the woman, she told him. So the king appointed to her a certain officer, saying, “Restore all that was hers, and all the fruits of the field since the day that she left the land, even until now.”
+**7.** Elisha came to Damascus; and Benhadad the king of Syria was sick. He was told, “The man of God has come here.”
+**8.** The king said to Hazael, “Take a present in your hand, and go meet the man of God, and inquire of the LORD by him, saying, ‘Will I recover from this sickness?’”
+**9.** So Hazael went to meet him and took a present with him, even of every good thing of Damascus, forty camels’ burden, and came and stood before him and said, “Your son Benhadad king of Syria has sent me to you, saying, ‘Will I recover from this sickness?’”
+**10.** Elisha said to him, “Go, tell him, ‘You will surely recover;’ however the LORD has shown me that he will surely die.”
+**11.** He settled his gaze steadfastly on him, until he was ashamed. Then the man of God wept.
+**12.** Hazael said, “Why do you weep, my lord?” He answered, “Because I know the evil that you will do to the children of Israel. You will set their strongholds on fire, and you will kill their young men with the sword, and will dash their little ones in pieces, and rip up their pregnant women.”
+**13.** Hazael said, “But what is your servant, who is but a dog, that he could do this great thing?” Elisha answered, “The LORD has shown me that you will be king over Syria.”
+**14.** Then he departed from Elisha, and came to his master, who said to him, “What did Elisha say to you?” He answered, “He told me that you would surely recover.”
+**15.** On the next day, he took a thick cloth, dipped it in water, and spread it on the king’s face, so that he died. Then Hazael reigned in his place.
+**16.** In the fifth year of Joram the son of Ahab king of Israel, Jehoshaphat being king of Judah then, Jehoram the son of Jehoshaphat king of Judah began to reign.
+**17.** He was thirty-two years old when he began to reign. He reigned eight years in Jerusalem.
+**18.** He walked in the way of the kings of Israel, as did Ahab’s house, for he married Ahab’s daughter. He did that which was evil in the LORD’s sight.
+**19.** However, the LORD would not destroy Judah, for David his servant’s sake, as he promised him to give to him a lamp for his children always.
+**20.** In his days Edom revolted from under the hand of Judah, and made a king over themselves.
+**21.** Then Joram crossed over to Zair, and all his chariots with him; and he rose up by night and struck the Edomites who surrounded him with the captains of the chariots; and the people fled to their tents.
+**22.** So Edom revolted from under the hand of Judah to this day. Then Libnah revolted at the same time.
+**23.** The rest of the acts of Joram, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**24.** Joram slept with his fathers, and was buried with his fathers in David’s city; and Ahaziah his son reigned in his place.
+**25.** In the twelfth year of Joram the son of Ahab king of Israel, Ahaziah the son of Jehoram king of Judah began to reign.
+**26.** Ahaziah was twenty-two years old when he began to reign; and he reigned one year in Jerusalem. His mother’s name was Athaliah the daughter of Omri king of Israel.
+**27.** He walked in the way of Ahab’s house and did that which was evil in the LORD’s sight, as did Ahab’s house, for he was the son-in-law of Ahab’s house.
+**28.** He went with Joram the son of Ahab to war against Hazael king of Syria at Ramoth Gilead, and the Syrians wounded Joram.
+**29.** King Joram returned to be healed in Jezreel from the wounds which the Syrians had given him at Ramah, when he fought against Hazael king of Syria. Ahaziah the son of Jehoram, king of Judah, went down to see Joram the son of Ahab in Jezreel, because he was sick.
+## II Kings 9
+
+**1.** Elisha the prophet called one of the sons of the prophets, and said to him, “Put your belt on your waist, take this vial of oil in your hand, and go to Ramoth Gilead.
+**2.** When you come there, find Jehu the son of Jehoshaphat the son of Nimshi, and go in and make him rise up from among his brothers, and take him to an inner room.
+**3.** Then take the vial of oil, and pour it on his head, and say, ‘The LORD says, “I have anointed you king over Israel.”’ Then open the door, flee, and don’t wait.”
+**4.** So the young man, the young prophet, went to Ramoth Gilead.
+**5.** When he came, behold, the captains of the army were sitting. Then he said, “I have a message for you, captain.” Jehu said, “To which one of us?” He said, “To you, O captain.”
+**6.** He arose, and went into the house. Then he poured the oil on his head, and said to him, “The LORD, the God of Israel, says, ‘I have anointed you king over the people of the LORD, even over Israel.
+**7.** You must strike your master Ahab’s house, that I may avenge the blood of my servants the prophets, and the blood of all the servants of the LORD, at the hand of Jezebel.
+**8.** For the whole house of Ahab will perish. I will cut off from Ahab everyone who urinates against a wall, both him who is shut up and him who is left at large in Israel.
+**9.** I will make Ahab’s house like the house of Jeroboam the son of Nebat, and like the house of Baasha the son of Ahijah.
+**10.** The dogs will eat Jezebel on the plot of ground of Jezreel, and there shall be no one to bury her.’” Then he opened the door and fled.
+**11.** When Jehu came out to the servants of his lord and one said to him, “Is all well? Why did this madman come to you?” He said to them, “You know the man and how he talks.”
+**12.** They said, “That is a lie. Tell us now.” He said, “He said to me, ‘The LORD says, I have anointed you king over Israel.’”
+**13.** Then they hurried, and each man took his cloak, and put it under him on the top of the stairs, and blew the trumpet, saying, “Jehu is king.”
+**14.** So Jehu the son of Jehoshaphat the son of Nimshi conspired against Joram. (Now Joram was defending Ramoth Gilead, he and all Israel, because of Hazael king of Syria;
+**15.** but King Joram had returned to be healed in Jezreel of the wounds which the Syrians had given him when he fought with Hazael king of Syria.) Jehu said, “If this is your thinking, then let no one escape and go out of the city to go to tell it in Jezreel.”
+**16.** So Jehu rode in a chariot and went to Jezreel, for Joram lay there. Ahaziah king of Judah had come down to see Joram.
+**17.** Now the watchman was standing on the tower in Jezreel, and he spied the company of Jehu as he came, and said, “I see a company.” Joram said, “Take a horseman, and send to meet them, and let him say, ‘Is it peace?’”
+**18.** So one went on horseback to meet him, and said, “the king says, ‘Is it peace?’” Jehu said, “What do you have to do with peace? Fall in behind me!” The watchman said, “The messenger came to them, but he isn’t coming back.”
+**19.** Then he sent out a second on horseback, who came to them and said, “The king says, ‘Is it peace?’” Jehu answered, “What do you have to do with peace? Fall in behind me!”
+**20.** The watchman said, “He came to them, and isn’t coming back. The driving is like the driving of Jehu the son of Nimshi, for he drives furiously.”
+**21.** Joram said, “Get ready!” They got his chariot ready. Then Joram king of Israel and Ahaziah king of Judah went out, each in his chariot; and they went out to meet Jehu, and found him on Naboth the Jezreelite’s land.
+**22.** When Joram saw Jehu, he said, “Is it peace, Jehu?” He answered, “What peace, so long as the prostitution of your mother Jezebel and her witchcraft abound?”
+**23.** Joram turned his hands and fled, and said to Ahaziah, “This is treason, Ahaziah!”
+**24.** Jehu drew his bow with his full strength, and struck Joram between his arms; and the arrow went out at his heart, and he sunk down in his chariot.
+**25.** Then Jehu said to Bidkar his captain, “Pick him up, and throw him in the plot of the field of Naboth the Jezreelite; for remember how, when you and I rode together after Ahab his father, the LORD laid this burden on him:
+**26.** ‘Surely I have seen yesterday the blood of Naboth, and the blood of his sons,’ says the LORD; ‘and I will repay you in this plot of ground,’ says the LORD. Now therefore take and cast him onto the plot of ground, according to the LORD’s word.”
+**27.** But when Ahaziah the king of Judah saw this, he fled by the way of the garden house. Jehu followed after him, and said, “Strike him also in the chariot!” They struck him at the ascent of Gur, which is by Ibleam. He fled to Megiddo, and died there.
+**28.** His servants carried him in a chariot to Jerusalem, and buried him in his tomb with his fathers in David’s city.
+**29.** In the eleventh year of Joram the son of Ahab, Ahaziah began to reign over Judah.
+**30.** When Jehu had come to Jezreel, Jezebel heard of it; and she painted her eyes, and adorned her head, and looked out at the window.
+**31.** As Jehu entered in at the gate, she said, “Do you come in peace, Zimri, you murderer of your master?”
+**32.** He lifted up his face to the window, and said, “Who is on my side? Who?” Two or three eunuchs looked out at him.
+**33.** He said, “Throw her down!” So they threw her down; and some of her blood was sprinkled on the wall, and on the horses. Then he trampled her under foot.
+**34.** When he had come in, he ate and drank. Then he said, “See now to this cursed woman, and bury her; for she is a king’s daughter.”
+**35.** They went to bury her, but they found no more of her than the skull, the feet, and the palms of her hands.
+**36.** Therefore they came back, and told him. He said, “This is the LORD’s word, which he spoke by his servant Elijah the Tishbite, saying, ‘The dogs will eat the flesh of Jezebel on the plot of Jezreel,
+**37.** and the body of Jezebel will be as dung on the surface of the field on Jezreel’s land, so that they won’t say, “This is Jezebel.”’”
+## II Kings 10
+
+**1.** Now Ahab had seventy sons in Samaria. Jehu wrote letters and sent them to Samaria, to the rulers of Jezreel, even the elders, and to those who brought up Ahab’s sons, saying,
+**2.** “Now as soon as this letter comes to you, since your master’s sons are with you, and you have chariots and horses, a fortified city also, and armor,
+**3.** select the best and fittest of your master’s sons, set him on his father’s throne, and fight for your master’s house.”
+**4.** But they were exceedingly afraid, and said, “Behold, the two kings didn’t stand before him! How then shall we stand?”
+**5.** He who was over the household, and he who was over the city, the elders also, and those who raised the children, sent to Jehu, saying, “We are your servants, and will do all that you ask us. We will not make any man king. You do that which is good in your eyes.”
+**6.** Then he wrote a letter the second time to them, saying, “If you are on my side, and if you will listen to my voice, take the heads of the men who are your master’s sons, and come to me to Jezreel by tomorrow this time.” Now the king’s sons, being seventy persons, were with the great men of the city, who brought them up.
+**7.** When the letter came to them, they took the king’s sons and killed them, even seventy people, and put their heads in baskets, and sent them to him to Jezreel.
+**8.** A messenger came and told him, “They have brought the heads of the king’s sons.” He said, “Lay them in two heaps at the entrance of the gate until the morning.”
+**9.** In the morning, he went out and stood, and said to all the people, “You are righteous. Behold, I conspired against my master and killed him, but who killed all these?
+**10.** Know now that nothing will fall to the earth of the LORD’s word, which the LORD spoke concerning Ahab’s house. For the LORD has done that which he spoke by his servant Elijah.”
+**11.** So Jehu struck all that remained of Ahab’s house in Jezreel, with all his great men, his familiar friends, and his priests, until he left him no one remaining.
+**12.** He arose and departed, and went to Samaria. As he was at the shearing house of the shepherds on the way,
+**13.** Jehu met with the brothers of Ahaziah king of Judah, and said, “Who are you?” They answered, “We are the brothers of Ahaziah. We are going down to greet the children of the king and the children of the queen.”
+**14.** He said, “Take them alive!” They took them alive, and killed them at the pit of the shearing house, even forty-two men. He didn’t leave any of them.
+**15.** When he had departed from there, he met Jehonadab the son of Rechab coming to meet him. He greeted him, and said to him, “Is your heart right, as my heart is with your heart?” Jehonadab answered, “It is.” “If it is, give me your hand.” He gave him his hand; and he took him up to him into the chariot.
+**16.** He said, “Come with me, and see my zeal for the LORD.” So they made him ride in his chariot.
+**17.** When he came to Samaria, he struck all who remained to Ahab in Samaria, until he had destroyed them, according to the LORD’s word which he spoke to Elijah.
+**18.** Jehu gathered all the people together, and said to them, “Ahab served Baal a little, but Jehu will serve him much.
+**19.** Now therefore call to me all the prophets of Baal, all of his worshipers, and all of his priests. Let no one be absent, for I have a great sacrifice to Baal. Whoever is absent, he shall not live.” But Jehu did deceptively, intending to destroy the worshipers of Baal.
+**20.** Jehu said, “Sanctify a solemn assembly for Baal!” So they proclaimed it.
+**21.** Jehu sent through all Israel; and all the worshipers of Baal came, so that there was not a man left that didn’t come. They came into the house of Baal; and the house of Baal was filled from one end to another.
+**22.** He said to him who kept the wardrobe, “Bring out robes for all the worshipers of Baal!” So he brought robes out to them.
+**23.** Jehu went with Jehonadab the son of Rechab into the house of Baal. Then he said to the worshipers of Baal, “Search, and see that none of the servants of the LORD are here with you, but only the worshipers of Baal.”
+**24.** So they went in to offer sacrifices and burnt offerings. Now Jehu had appointed for himself eighty men outside, and said, “If any of the men whom I bring into your hands escape, he who lets him go, his life shall be for the life of him.”
+**25.** As soon as he had finished offering the burnt offering, Jehu said to the guard and to the captains, “Go in and kill them! Let no one escape.” So they struck them with the edge of the sword. The guard and the captains threw the bodies out, and went to the inner shrine of the house of Baal.
+**26.** They brought out the pillars that were in the house of Baal and burned them.
+**27.** They broke down the pillar of Baal, and broke down the house of Baal, and made it a latrine, to this day.
+**28.** Thus Jehu destroyed Baal out of Israel.
+**29.** However, Jehu didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin—the golden calves that were in Bethel and that were in Dan.
+**30.** The LORD said to Jehu, “Because you have done well in executing that which is right in my eyes, and have done to Ahab’s house according to all that was in my heart, your descendants shall sit on the throne of Israel to the fourth generation.”
+**31.** But Jehu took no heed to walk in the law of the LORD, the God of Israel, with all his heart. He didn’t depart from the sins of Jeroboam, with which he made Israel to sin.
+**32.** In those days the LORD began to cut away parts of Israel; and Hazael struck them in all the borders of Israel
+**33.** from the Jordan eastward, all the land of Gilead, the Gadites, and the Reubenites, and the Manassites, from Aroer, which is by the valley of the Arnon, even Gilead and Bashan.
+**34.** Now the rest of the acts of Jehu, and all that he did, and all his might, aren’t they written in the book of the chronicles of the kings of Israel?
+**35.** Jehu slept with his fathers; and they buried him in Samaria. Jehoahaz his son reigned in his place.
+**36.** The time that Jehu reigned over Israel in Samaria was twenty-eight years.
+## II Kings 11
+
+**1.** Now when Athaliah the mother of Ahaziah saw that her son was dead, she arose and destroyed all the royal offspring.
+**2.** But Jehosheba, the daughter of King Joram, sister of Ahaziah, took Joash the son of Ahaziah, and stole him away from among the king’s sons who were slain, even him and his nurse, and put them in the bedroom; and they hid him from Athaliah, so that he was not slain.
+**3.** He was with her hidden in the LORD’s house six years while Athaliah reigned over the land.
+**4.** In the seventh year Jehoiada sent and fetched the captains over hundreds of the Carites and of the guard, and brought them to him into the LORD’s house; and he made a covenant with them, and made a covenant with them in the LORD’s house, and showed them the king’s son.
+**5.** He commanded them, saying, “This is what you must do: a third of you, who come in on the Sabbath, shall be keepers of the watch of the king’s house;
+**6.** a third of you shall be at the gate Sur; and a third of you at the gate behind the guard. So you shall keep the watch of the house, and be a barrier.
+**7.** The two companies of you, even all who go out on the Sabbath, shall keep the watch of the LORD’s house around the king.
+**8.** You shall surround the king, every man with his weapons in his hand; and he who comes within the ranks, let him be slain. Be with the king when he goes out, and when he comes in.”
+**9.** The captains over hundreds did according to all that Jehoiada the priest commanded; and they each took his men, those who were to come in on the Sabbath with those who were to go out on the Sabbath, and came to Jehoiada the priest.
+**10.** The priest delivered to the captains over hundreds the spears and shields that had been King David’s, which were in the LORD’s house.
+**11.** The guard stood, every man with his weapons in his hand, from the right side of the house to the left side of the house, along by the altar and the house, around the king.
+**12.** Then he brought out the king’s son, and put the crown on him, and gave him the covenant; and they made him king and anointed him; and they clapped their hands, and said, “Long live the king!”
+**13.** When Athaliah heard the noise of the guard and of the people, she came to the people into the LORD’s house;
+**14.** and she looked, and behold, the king stood by the pillar, as the tradition was, with the captains and the trumpets by the king; and all the people of the land rejoiced, and blew trumpets. Then Athaliah tore her clothes and cried, “Treason! Treason!”
+**15.** Jehoiada the priest commanded the captains of hundreds who were set over the army, and said to them, “Bring her out between the ranks. Kill anyone who follows her with the sword.” For the priest said, “Don’t let her be slain in the LORD’s house.”
+**16.** So they seized her; and she went by the way of the horses’ entry to the king’s house, and she was slain there.
+**17.** Jehoiada made a covenant between the LORD and the king and the people, that they should be the LORD’s people; also between the king and the people.
+**18.** All the people of the land went to the house of Baal, and broke it down. They broke his altars and his images in pieces thoroughly, and killed Mattan the priest of Baal before the altars. The priest appointed officers over the LORD’s house.
+**19.** He took the captains over hundreds, and the Carites, and the guard, and all the people of the land; and they brought down the king from the LORD’s house, and came by the way of the gate of the guard to the king’s house. He sat on the throne of the kings.
+**20.** So all the people of the land rejoiced, and the city was quiet. They had slain Athaliah with the sword at the king’s house.
+**21.** Jehoash was seven years old when he began to reign.
+## II Kings 12
+
+**1.** Jehoash began to reign in the seventh year of Jehu, and he reigned forty years in Jerusalem. His mother’s name was Zibiah of Beersheba.
+**2.** Jehoash did that which was right in the LORD’s eyes all his days in which Jehoiada the priest instructed him.
+**3.** However, the high places were not taken away. The people still sacrificed and burned incense in the high places.
+**4.** Jehoash said to the priests, “All the money of the holy things that is brought into the LORD’s house, in current money, the money of the people for whom each man is evaluated, + 12:4 Exodus 30:12 and all the money that it comes into any man’s heart to bring into the LORD’s house,
+**5.** let the priests take it to them, each man from his donor; and they shall repair the damage to the house, wherever any damage is found.”
+**6.** But it was so, that in the twenty-third year of King Jehoash the priests had not repaired the damage to the house.
+**7.** Then King Jehoash called for Jehoiada the priest, and for the other priests, and said to them, “Why aren’t you repairing the damage to the house? Now therefore take no more money from your treasurers, but deliver it for repair of the damage to the house.”
+**8.** The priests consented that they should take no more money from the people, and not repair the damage to the house.
+**9.** But Jehoiada the priest took a chest and bored a hole in its lid, and set it beside the altar, on the right side as one comes into the LORD’s house; and the priests who kept the threshold put all the money that was brought into the LORD’s house into it.
+**10.** When they saw that there was much money in the chest, the king’s scribe and the high priest came up, and they put it in bags and counted the money that was found in the LORD’s house.
+**11.** They gave the money that was weighed out into the hands of those who did the work, who had the oversight of the LORD’s house; and they paid it out to the carpenters and the builders who worked on the LORD’s house,
+**12.** and to the masons and the stone cutters, and for buying timber and cut stone to repair the damage to the LORD’s house, and for all that was laid out for the house to repair it.
+**13.** But there were not made for the LORD’s house cups of silver, snuffers, basins, trumpets, any vessels of gold or vessels of silver, of the money that was brought into the LORD’s house;
+**14.** for they gave that to those who did the work, and repaired the LORD’s house with it.
+**15.** Moreover they didn’t demand an accounting from the men into whose hand they delivered the money to give to those who did the work; for they dealt faithfully.
+**16.** The money for the trespass offerings and the money for the sin offerings was not brought into the LORD’s house. It was the priests’.
+**17.** Then Hazael king of Syria went up and fought against Gath, and took it; and Hazael set his face to go up to Jerusalem.
+**18.** Jehoash king of Judah took all the holy things that Jehoshaphat and Jehoram and Ahaziah, his fathers, kings of Judah, had dedicated, and his own holy things, and all the gold that was found in the treasures of the LORD’s house, and of the king’s house, and sent it to Hazael king of Syria; and he went away from Jerusalem.
+**19.** Now the rest of the acts of Joash, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**20.** His servants arose and made a conspiracy, and struck Joash at the house of Millo, on the way that goes down to Silla.
+**21.** For Jozacar the son of Shimeath, and Jehozabad the son of Shomer, his servants, struck him, and he died; and they buried him with his fathers in David’s city; and Amaziah his son reigned in his place.
+## II Kings 13
+
+**1.** In the twenty-third year of Joash the son of Ahaziah, king of Judah, Jehoahaz the son of Jehu began to reign over Israel in Samaria for seventeen years.
+**2.** He did that which was evil in the LORD’s sight, and followed the sins of Jeroboam the son of Nebat, with which he made Israel to sin. He didn’t depart from it.
+**3.** The LORD’s anger burned against Israel, and he delivered them into the hand of Hazael king of Syria, and into the hand of Benhadad the son of Hazael, continually.
+**4.** Jehoahaz begged the LORD, and the LORD listened to him; for he saw the oppression of Israel, how the king of Syria oppressed them.
+**5.** (The LORD gave Israel a savior, so that they went out from under the hand of the Syrians; and the children of Israel lived in their tents as before.
+**6.** Nevertheless they didn’t depart from the sins of the house of Jeroboam, with which he made Israel to sin, but walked in them; and the Asherah also remained in Samaria.)
+**7.** For he didn’t leave to Jehoahaz of the people any more than fifty horsemen, and ten chariots, and ten thousand footmen; for the king of Syria destroyed them and made them like the dust in threshing.
+**8.** Now the rest of the acts of Jehoahaz, and all that he did, and his might, aren’t they written in the book of the chronicles of the kings of Israel?
+**9.** Jehoahaz slept with his fathers; and they buried him in Samaria; and Joash his son reigned in his place.
+**10.** In the thirty-seventh year of Joash king of Judah, Jehoash the son of Jehoahaz began to reign over Israel in Samaria for sixteen years.
+**11.** He did that which was evil in the LORD’s sight. He didn’t depart from all the sins of Jeroboam the son of Nebat, with which he made Israel to sin; but he walked in them.
+**12.** Now the rest of the acts of Joash, and all that he did, and his might with which he fought against Amaziah king of Judah, aren’t they written in the book of the chronicles of the kings of Israel?
+**13.** Joash slept with his fathers; and Jeroboam sat on his throne. Joash was buried in Samaria with the kings of Israel.
+**14.** Now Elisha became sick with the illness of which he died; and Joash the king of Israel came down to him, and wept over him, and said, “My father, my father, the chariots of Israel and its horsemen!”
+**15.** Elisha said to him, “Take bow and arrows;” and he took bow and arrows for himself.
+**16.** He said to the king of Israel, “Put your hand on the bow;” and he put his hand on it. Elisha laid his hands on the king’s hands.
+**17.** He said, “Open the window eastward;” and he opened it. Then Elisha said, “Shoot!” and he shot. He said, “The LORD’s arrow of victory, even the arrow of victory over Syria; for you will strike the Syrians in Aphek until you have consumed them.”
+**18.** He said, “Take the arrows;” and he took them. He said to the king of Israel, “Strike the ground;” and he struck three times, and stopped.
+**19.** The man of God was angry with him, and said, “You should have struck five or six times. Then you would have struck Syria until you had consumed it, but now you will strike Syria just three times.”
+**20.** Elisha died, and they buried him. Now the bands of the Moabites invaded the land at the coming in of the year.
+**21.** As they were burying a man, behold, they saw a band of raiders; and they threw the man into Elisha’s tomb. As soon as the man touched Elisha’s bones, he revived, and stood up on his feet.
+**22.** Hazael king of Syria oppressed Israel all the days of Jehoahaz.
+**23.** But the LORD was gracious to them, and had compassion on them, and favored them because of his covenant with Abraham, Isaac, and Jacob, and would not destroy them and he didn’t cast them from his presence as yet.
+**24.** Hazael king of Syria died; and Benhadad his son reigned in his place.
+**25.** Jehoash the son of Jehoahaz took again out of the hand of Benhadad the son of Hazael the cities which he had taken out of the hand of Jehoahaz his father by war. Joash struck him three times, and recovered the cities of Israel.
+## II Kings 14
+
+**1.** In the second year of Joash, son of Joahaz, king of Israel, Amaziah the son of Joash king of Judah began to reign.
+**2.** He was twenty-five years old when he began to reign; and he reigned twenty-nine years in Jerusalem. His mother’s name was Jehoaddin of Jerusalem.
+**3.** He did that which was right in the LORD’s eyes, yet not like David his father. He did according to all that Joash his father had done.
+**4.** However the high places were not taken away. The people still sacrificed and burned incense in the high places.
+**5.** As soon as the kingdom was established in his hand, he killed his servants who had slain the king his father,
+**6.** but the children of the murderers he didn’t put to death, according to that which is written in the book of the law of Moses, as the LORD commanded, saying, “The fathers shall not be put to death for the children, nor the children be put to death for the fathers; but every man shall die for his own sin.”
+**7.** He killed ten thousand Edomites in the Valley of Salt, and took Sela by war, and called its name Joktheel, to this day.
+**8.** Then Amaziah sent messengers to Jehoash, the son of Jehoahaz son of Jehu, king of Israel, saying, “Come, let’s look one another in the face.”
+**9.** Jehoash the king of Israel sent to Amaziah king of Judah, saying, “The thistle that was in Lebanon sent to the cedar that was in Lebanon, saying, ‘Give your daughter to my son as wife.’ Then a wild animal that was in Lebanon passed by, and trampled down the thistle.
+**10.** You have indeed struck Edom, and your heart has lifted you up. Enjoy the glory of it, and stay at home; for why should you meddle to your harm, that you fall, even you, and Judah with you?”
+**11.** But Amaziah would not listen. So Jehoash king of Israel went up; and he and Amaziah king of Judah looked one another in the face at Beth Shemesh, which belongs to Judah.
+**12.** Judah was defeated by Israel; and each man fled to his tent.
+**13.** Jehoash king of Israel took Amaziah king of Judah, the son of Jehoash the son of Ahaziah, at Beth Shemesh and came to Jerusalem, then broke down the wall of Jerusalem from the gate of Ephraim to the corner gate, four hundred cubits.
+**14.** He took all the gold and silver and all the vessels that were found in the LORD’s house and in the treasures of the king’s house, the hostages also, and returned to Samaria.
+**15.** Now the rest of the acts of Jehoash which he did, and his might, and how he fought with Amaziah king of Judah, aren’t they written in the book of the chronicles of the kings of Israel?
+**16.** Jehoash slept with his fathers, and was buried in Samaria with the kings of Israel; and Jeroboam his son reigned in his place.
+**17.** Amaziah the son of Joash king of Judah lived after the death of Jehoash son of Jehoahaz, king of Israel, fifteen years.
+**18.** Now the rest of the acts of Amaziah, aren’t they written in the book of the chronicles of the kings of Judah?
+**19.** They made a conspiracy against him in Jerusalem, and he fled to Lachish; but they sent after him to Lachish and killed him there.
+**20.** They brought him on horses, and he was buried at Jerusalem with his fathers in David’s city.
+**21.** All the people of Judah took Azariah, who was sixteen years old, and made him king in the place of his father Amaziah.
+**22.** He built Elath and restored it to Judah. After that the king slept with his fathers.
+**23.** In the fifteenth year of Amaziah the son of Joash king of Judah, Jeroboam the son of Joash king of Israel began to reign in Samaria for forty-one years.
+**24.** He did that which was evil in the LORD’s sight. He didn’t depart from all the sins of Jeroboam the son of Nebat, with which he made Israel to sin.
+**25.** He restored the border of Israel from the entrance of Hamath to the sea of the Arabah, according to the LORD, the God of Israel’s word, which he spoke by his servant Jonah the son of Amittai, the prophet, who was from Gath Hepher.
+**26.** For the LORD saw the affliction of Israel, that it was very bitter for all, slave and free; and there was no helper for Israel.
+**27.** The LORD didn’t say that he would blot out the name of Israel from under the sky; but he saved them by the hand of Jeroboam the son of Joash.
+**28.** Now the rest of the acts of Jeroboam, and all that he did, and his might, how he fought, and how he recovered Damascus, and Hamath, which had belonged to Judah, for Israel, aren’t they written in the book of the chronicles of the kings of Israel?
+**29.** Jeroboam slept with his fathers, even with the kings of Israel; and Zechariah his son reigned in his place.
+## II Kings 15
+
+**1.** In the twenty-seventh year of Jeroboam king of Israel, Azariah son of Amaziah king of Judah began to reign.
+**2.** He was sixteen years old when he began to reign, and he reigned fifty-two years in Jerusalem. His mother’s name was Jecoliah of Jerusalem.
+**3.** He did that which was right in the LORD’s eyes, according to all that his father Amaziah had done.
+**4.** However, the high places were not taken away. The people still sacrificed and burned incense in the high places.
+**5.** The LORD struck the king, so that he was a leper to the day of his death, and lived in a separate house. Jotham, the king’s son, was over the household, judging the people of the land.
+**6.** Now the rest of the acts of Azariah, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**7.** Azariah slept with his fathers; and they buried him with his fathers in David’s city; and Jotham his son reigned in his place.
+**8.** In the thirty-eighth year of Azariah king of Judah, Zechariah the son of Jeroboam reigned over Israel in Samaria six months.
+**9.** He did that which was evil in the LORD’s sight, as his fathers had done. He didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.
+**10.** Shallum the son of Jabesh conspired against him, and struck him before the people and killed him, and reigned in his place.
+**11.** Now the rest of the acts of Zechariah, behold, they are written in the book of the chronicles of the kings of Israel.
+**12.** This was the LORD’s word which he spoke to Jehu, saying, “Your sons to the fourth generation shall sit on the throne of Israel.” So it came to pass.
+**13.** Shallum the son of Jabesh began to reign in the thirty-ninth year of Uzziah king of Judah, and he reigned for a month in Samaria.
+**14.** Menahem the son of Gadi went up from Tirzah, came to Samaria, struck Shallum the son of Jabesh in Samaria, killed him, and reigned in his place.
+**15.** Now the rest of the acts of Shallum, and his conspiracy which he made, behold, they are written in the book of the chronicles of the kings of Israel.
+**16.** Then Menahem attacked Tiphsah and all who were in it and its border areas, from Tirzah. He attacked it because they didn’t open their gates to him, and he ripped up all their women who were with child.
+**17.** In the thirty ninth year of Azariah king of Judah, Menahem the son of Gadi began to reign over Israel for ten years in Samaria.
+**18.** He did that which was evil in the LORD’s sight. He didn’t depart all his days from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.
+**19.** Pul the king of Assyria came against the land, and Menahem gave Pul one thousand talents of silver, that his hand might be with him to confirm the kingdom in his hand.
+**20.** Menahem exacted the money from Israel, even from all the mighty men of wealth, from each man fifty shekels of silver, to give to the king of Assyria. So the king of Assyria turned back, and didn’t stay there in the land.
+**21.** Now the rest of the acts of Menahem, and all that he did, aren’t they written in the book of the chronicles of the kings of Israel?
+**22.** Menahem slept with his fathers, and Pekahiah his son reigned in his place.
+**23.** In the fiftieth year of Azariah king of Judah, Pekahiah the son of Menahem began to reign over Israel in Samaria for two years.
+**24.** He did that which was evil in the LORD’s sight. He didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.
+**25.** Pekah the son of Remaliah, his captain, conspired against him and attacked him in Samaria, in the fortress of the king’s house, with Argob and Arieh; and with him were fifty men of the Gileadites. He killed him, and reigned in his place.
+**26.** Now the rest of the acts of Pekahiah, and all that he did, behold, they are written in the book of the chronicles of the kings of Israel.
+**27.** In the fifty-second year of Azariah king of Judah, Pekah the son of Remaliah began to reign over Israel in Samaria for twenty years.
+**28.** He did that which was evil in the LORD’s sight. He didn’t depart from the sins of Jeroboam the son of Nebat, with which he made Israel to sin.
+**29.** In the days of Pekah king of Israel, Tiglath Pileser king of Assyria came and took Ijon, Abel Beth Maacah, Janoah, Kedesh, Hazor, Gilead, and Galilee, all the land of Naphtali; and he carried them captive to Assyria.
+**30.** Hoshea the son of Elah made a conspiracy against Pekah the son of Remaliah, attacked him, killed him, and reigned in his place, in the twentieth year of Jotham the son of Uzziah.
+**31.** Now the rest of the acts of Pekah, and all that he did, behold, they are written in the book of the chronicles of the kings of Israel.
+**32.** In the second year of Pekah the son of Remaliah king of Israel, Jotham the son of Uzziah king of Judah began to reign.
+**33.** He was twenty-five years old when he began to reign, and he reigned sixteen years in Jerusalem. His mother’s name was Jerusha the daughter of Zadok.
+**34.** He did that which was right in the LORD’s eyes. He did according to all that his father Uzziah had done.
+**35.** However the high places were not taken away. The people still sacrificed and burned incense in the high places. He built the upper gate of the LORD’s house.
+**36.** Now the rest of the acts of Jotham, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**37.** In those days, the LORD began to send Rezin the king of Syria and Pekah the son of Remaliah against Judah.
+**38.** Jotham slept with his fathers, and was buried with his fathers in his father David’s city; and Ahaz his son reigned in his place.
+## II Kings 16
+
+**1.** In the seventeenth year of Pekah the son of Remaliah, Ahaz the son of Jotham king of Judah began to reign.
+**2.** Ahaz was twenty years old when he began to reign, and he reigned sixteen years in Jerusalem. He didn’t do that which was right in the LORD his God’s eyes, like David his father.
+**3.** But he walked in the way of the kings of Israel, and even made his son to pass through the fire, according to the abominations of the nations whom the LORD cast out from before the children of Israel.
+**4.** He sacrificed and burned incense in the high places, on the hills, and under every green tree.
+**5.** Then Rezin king of Syria and Pekah son of Remaliah king of Israel came up to Jerusalem to wage war. They besieged Ahaz, but could not overcome him.
+**6.** At that time Rezin king of Syria recovered Elath to Syria, and drove the Jews from Elath; and the Syrians came to Elath, and lived there to this day.
+**7.** So Ahaz sent messengers to Tiglath Pileser king of Assyria, saying, “I am your servant and your son. Come up and save me out of the hand of the king of Syria and out of the hand of the king of Israel, who rise up against me.”
+**8.** Ahaz took the silver and gold that was found in the LORD’s house, and in the treasures of the king’s house, and sent it for a present to the king of Assyria.
+**9.** The king of Assyria listened to him; and the king of Assyria went up against Damascus and took it, and carried its people captive to Kir, and killed Rezin.
+**10.** King Ahaz went to Damascus to meet Tiglath Pileser king of Assyria, and saw the altar that was at Damascus; and King Ahaz sent to Urijah the priest a drawing of the altar and plans to build it.
+**11.** Urijah the priest built an altar. According to all that King Ahaz had sent from Damascus, so Urijah the priest made it for the coming of King Ahaz from Damascus.
+**12.** When the king had come from Damascus, the king saw the altar; and the king came near to the altar, and offered on it.
+**13.** He burned his burnt offering and his meal offering, poured his drink offering, and sprinkled the blood of his peace offerings on the altar.
+**14.** The bronze altar, which was before the LORD, he brought from the front of the house, from between his altar and the LORD’s house, and put it on the north side of his altar.
+**15.** King Ahaz commanded Urijah the priest, saying, “On the great altar burn the morning burnt offering, the evening meal offering, the king’s burnt offering and his meal offering, with the burnt offering of all the people of the land, their meal offering, and their drink offerings; and sprinkle on it all the blood of the burnt offering, and all the blood of the sacrifice; but the bronze altar will be for me to inquire by.”
+**16.** Urijah the priest did so, according to all that King Ahaz commanded.
+**17.** King Ahaz cut off the panels of the bases, and removed the basin from off them, and took down the sea from off the bronze oxen that were under it, and put it on a pavement of stone.
+**18.** He removed the covered way for the Sabbath that they had built in the house, and the king’s outer entrance to the LORD’s house, because of the king of Assyria.
+**19.** Now the rest of the acts of Ahaz which he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**20.** Ahaz slept with his fathers, and was buried with his fathers in David’s city; and Hezekiah his son reigned in his place.
+## II Kings 17
+
+**1.** In the twelfth year of Ahaz king of Judah, Hoshea the son of Elah began to reign in Samaria over Israel for nine years.
+**2.** He did that which was evil in the LORD’s sight, yet not as the kings of Israel who were before him.
+**3.** Shalmaneser king of Assyria came up against him; and Hoshea became his servant, and brought him tribute.
+**4.** The king of Assyria discovered a conspiracy in Hoshea; for he had sent messengers to So king of Egypt, and offered no tribute to the king of Assyria, as he had done year by year. Therefore the king of Assyria seized him, and bound him in prison.
+**5.** Then the king of Assyria came up throughout all the land, went up to Samaria, and besieged it three years.
+**6.** In the ninth year of Hoshea the king of Assyria took Samaria and carried Israel away to Assyria, and placed them in Halah, and on the Habor, the river of Gozan, and in the cities of the Medes.
+**7.** It was so because the children of Israel had sinned against the LORD their God, who brought them up out of the land of Egypt from under the hand of Pharaoh king of Egypt, and had feared other gods,
+**8.** and walked in the statutes of the nations whom the LORD cast out from before the children of Israel, and of the kings of Israel, which they made.
+**9.** The children of Israel secretly did things that were not right against the LORD their God; and they built high places for themselves in all their cities, from the tower of the watchmen to the fortified city;
+**10.** and they set up for themselves pillars and Asherah poles on every high hill and under every green tree;
+**11.** and there they burned incense in all the high places, as the nations whom the LORD carried away before them did; and they did wicked things to provoke the LORD to anger;
+**12.** and they served idols, of which the LORD had said to them, “You shall not do this thing.”
+**13.** Yet the LORD testified to Israel and to Judah, by every prophet and every seer, saying, “Turn from your evil ways, and keep my commandments and my statutes, according to all the law which I commanded your fathers, and which I sent to you by my servants the prophets.”
+**14.** Notwithstanding, they would not listen, but hardened their neck like the neck of their fathers who didn’t believe in the LORD their God.
+**15.** They rejected his statutes and his covenant that he made with their fathers, and his testimonies which he testified to them; and they followed vanity, and became vain, and followed the nations that were around them, concerning whom the LORD had commanded them that they should not do like them.
+**16.** They abandoned all the commandments of the LORD their God, and made molten images for themselves, even two calves, and made an Asherah, and worshiped all the army of the sky, and served Baal.
+**17.** They caused their sons and their daughters to pass through the fire, used divination and enchantments, and sold themselves to do that which was evil in the LORD’s sight, to provoke him to anger.
+**18.** Therefore the LORD was very angry with Israel, and removed them out of his sight. There was none left but the tribe of Judah only.
+**19.** Also Judah didn’t keep the commandments of the LORD their God, but walked in the statutes of Israel which they made.
+**20.** The LORD rejected all the offspring of Israel, afflicted them, and delivered them into the hands of raiders, until he had cast them out of his sight.
+**21.** For he tore Israel from David’s house; and they made Jeroboam the son of Nebat king; and Jeroboam drove Israel from following the LORD, and made them sin a great sin.
+**22.** The children of Israel walked in all the sins of Jeroboam which he did; they didn’t depart from them
+**23.** until the LORD removed Israel out of his sight, as he said by all his servants the prophets. So Israel was carried away out of their own land to Assyria to this day.
+**24.** The king of Assyria brought people from Babylon, from Cuthah, from Avva, and from Hamath and Sepharvaim, and placed them in the cities of Samaria instead of the children of Israel; and they possessed Samaria and lived in its cities.
+**25.** So it was, at the beginning of their dwelling there, that they didn’t fear the LORD. Therefore the LORD sent lions among them, which killed some of them.
+**26.** Therefore they spoke to the king of Assyria, saying, “The nations which you have carried away and placed in the cities of Samaria don’t know the law of the god of the land. Therefore he has sent lions among them; and behold, they kill them, because they don’t know the law of the god of the land.”
+**27.** Then the king of Assyria commanded, saying, “Carry there one of the priests whom you brought from there; and let him go and dwell there, and let him teach them the law of the god of the land.”
+**28.** So one of the priests whom they had carried away from Samaria came and lived in Bethel, and taught them how they should fear the LORD.
+**29.** However every nation made gods of their own, and put them in the houses of the high places which the Samaritans had made, every nation in their cities in which they lived.
+**30.** The men of Babylon made Succoth Benoth, and the men of Cuth made Nergal, and the men of Hamath made Ashima,
+**31.** and the Avvites made Nibhaz and Tartak; and the Sepharvites burned their children in the fire to Adrammelech and Anammelech, the gods of Sepharvaim.
+**32.** So they feared the LORD, and also made from among themselves priests of the high places for themselves, who sacrificed for them in the houses of the high places.
+**33.** They feared the LORD, and also served their own gods, after the ways of the nations from among whom they had been carried away.
+**34.** To this day they do what they did before. They don’t fear the LORD, and they do not follow the statutes, or the ordinances, or the law, or the commandment which the LORD commanded the children of Jacob, whom he named Israel;
+**35.** with whom the LORD had made a covenant and commanded them, saying, “You shall not fear other gods, nor bow yourselves to them, nor serve them, nor sacrifice to them;
+**36.** but you shall fear the LORD, who brought you up out of the land of Egypt with great power and with an outstretched arm, and you shall bow yourselves to him, and you shall sacrifice to him.
+**37.** The statutes and the ordinances, and the law and the commandment which he wrote for you, you shall observe to do forever more. You shall not fear other gods.
+**38.** You shall not forget the covenant that I have made with you. You shall not fear other gods.
+**39.** But you shall fear the LORD your God, and he will deliver you out of the hand of all your enemies.”
+**40.** However they didn’t listen, but they did what they did before.
+**41.** So these nations feared the LORD, and also served their engraved images. Their children did likewise, and so did their children’s children. They do as their fathers did to this day.
+## II Kings 18
+
+**1.** Now in the third year of Hoshea son of Elah king of Israel, Hezekiah the son of Ahaz king of Judah began to reign.
+**2.** He was twenty-five years old when he began to reign, and he reigned twenty-nine years in Jerusalem. His mother’s name was Abi the daughter of Zechariah.
+**3.** He did that which was right in the LORD’s eyes, according to all that David his father had done.
+**4.** He removed the high places, broke the pillars, and cut down the Asherah. He also broke in pieces the bronze serpent that Moses had made, because in those days the children of Israel burned incense to it; and he called it Nehushtan.
+**5.** He trusted in the LORD, the God of Israel, so that after him was no one like him among all the kings of Judah, nor among them that were before him.
+**6.** For he joined with the LORD. He didn’t depart from following him, but kept his commandments, which the LORD commanded Moses.
+**7.** The LORD was with him. Wherever he went, he prospered. He rebelled against the king of Assyria, and didn’t serve him.
+**8.** He struck the Philistines to Gaza and its borders, from the tower of the watchmen to the fortified city.
+**9.** In the fourth year of King Hezekiah, which was the seventh year of Hoshea son of Elah king of Israel, Shalmaneser king of Assyria came up against Samaria and besieged it.
+**10.** At the end of three years they took it. In the sixth year of Hezekiah, which was the ninth year of Hoshea king of Israel, Samaria was taken.
+**11.** The king of Assyria carried Israel away to Assyria, and put them in Halah, and on the Habor, the river of Gozan, and in the cities of the Medes,
+**12.** because they didn’t obey the LORD their God’s voice, but transgressed his covenant, even all that Moses the servant of the LORD commanded, and would not hear it or do it.
+**13.** Now in the fourteenth year of King Hezekiah, Sennacherib king of Assyria came up against all the fortified cities of Judah and took them.
+**14.** Hezekiah king of Judah sent to the king of Assyria at Lachish, saying, “I have offended you. Withdraw from me. That which you put on me, I will bear.” The king of Assyria appointed to Hezekiah king of Judah three hundred talents of silver and thirty talents of gold.
+**15.** Hezekiah gave him all the silver that was found in the LORD’s house and in the treasures of the king’s house.
+**16.** At that time, Hezekiah cut off the gold from the doors of the LORD’s temple, and from the pillars which Hezekiah king of Judah had overlaid, and gave it to the king of Assyria.
+**17.** The king of Assyria sent Tartan, Rabsaris, and Rabshakeh from Lachish to King Hezekiah with a great army to Jerusalem. They went up and came to Jerusalem. When they had come up, they came and stood by the conduit of the upper pool, which is in the highway of the fuller’s field.
+**18.** When they had called to the king, Eliakim the son of Hilkiah, who was over the household, and Shebnah the scribe, and Joah the son of Asaph the recorder came out to them.
+**19.** Rabshakeh said to them, “Say now to Hezekiah, ‘The great king, the king of Assyria, says, “What confidence is this in which you trust?
+**20.** You say (but they are but vain words), ‘There is counsel and strength for war.’ Now on whom do you trust, that you have rebelled against me?
+**21.** Now, behold, you trust in the staff of this bruised reed, even in Egypt. If a man leans on it, it will go into his hand and pierce it. So is Pharaoh king of Egypt to all who trust on him.
+**22.** But if you tell me, ‘We trust in the LORD our God,’ isn’t that he whose high places and whose altars Hezekiah has taken away, and has said to Judah and to Jerusalem, ‘You shall worship before this altar in Jerusalem’?
+**23.** Now therefore, please give pledges to my master the king of Assyria, and I will give you two thousand horses if you are able on your part to set riders on them.
+**24.** How then can you turn away the face of one captain of the least of my master’s servants, and put your trust on Egypt for chariots and for horsemen?
+**25.** Have I now come up without the LORD against this place to destroy it? The LORD said to me, ‘Go up against this land, and destroy it.’”’”
+**26.** Then Eliakim the son of Hilkiah, Shebnah, and Joah, said to Rabshakeh, “Please speak to your servants in the Syrian language, for we understand it. Don’t speak with us in the Jews’ language, in the hearing of the people who are on the wall.”
+**27.** But Rabshakeh said to them, “Has my master sent me to your master and to you, to speak these words? Hasn’t he sent me to the men who sit on the wall, to eat their own dung, and to drink their own urine with you?”
+**28.** Then Rabshakeh stood and cried with a loud voice in the Jews’ language, and spoke, saying, “Hear the word of the great king, the king of Assyria.
+**29.** The king says, ‘Don’t let Hezekiah deceive you, for he will not be able to deliver you out of his hand.
+**30.** Don’t let Hezekiah make you trust in the LORD, saying, “The LORD will surely deliver us, and this city shall not be given into the hand of the king of Assyria.”
+**31.** Don’t listen to Hezekiah.’ For the king of Assyria says, ‘Make your peace with me, and come out to me; and everyone of you eat from his own vine, and everyone from his own fig tree, and everyone drink water from his own cistern;
+**32.** until I come and take you away to a land like your own land, a land of grain and new wine, a land of bread and vineyards, a land of olive trees and of honey, that you may live and not die. Don’t listen to Hezekiah when he persuades you, saying, “The LORD will deliver us.”
+**33.** Has any of the gods of the nations ever delivered his land out of the hand of the king of Assyria?
+**34.** Where are the gods of Hamath and of Arpad? Where are the gods of Sepharvaim, of Hena, and Ivvah? Have they delivered Samaria out of my hand?
+**35.** Who are they among all the gods of the countries, that have delivered their country out of my hand, that the LORD should deliver Jerusalem out of my hand?’”
+**36.** But the people stayed quiet, and answered him not a word; for the king’s commandment was, “Don’t answer him.”
+**37.** Then Eliakim the son of Hilkiah, who was over the household, came with Shebna the scribe and Joah the son of Asaph the recorder to Hezekiah with their clothes torn, and told him Rabshakeh’s words.
+## II Kings 19
+
+**1.** When King Hezekiah heard it, he tore his clothes, covered himself with sackcloth, and went into the LORD’s house.
+**2.** He sent Eliakim, who was over the household, Shebna the scribe, and the elders of the priests, covered with sackcloth, to Isaiah the prophet the son of Amoz.
+**3.** They said to him, “Hezekiah says, ‘Today is a day of trouble, of rebuke, and of rejection; for the children have come to the point of birth, and there is no strength to deliver them.
+**4.** It may be the LORD your God will hear all the words of Rabshakeh, whom the king of Assyria his master has sent to defy the living God, and will rebuke the words which the LORD your God has heard. Therefore lift up your prayer for the remnant that is left.’”
+**5.** So the servants of King Hezekiah came to Isaiah.
+**6.** Isaiah said to them, “Tell your master this: ‘The LORD says, “Don’t be afraid of the words that you have heard, with which the servants of the king of Assyria have blasphemed me.
+**7.** Behold, I will put a spirit in him, and he will hear news, and will return to his own land. I will cause him to fall by the sword in his own land.”’”
+**8.** So Rabshakeh returned and found the king of Assyria warring against Libnah; for he had heard that he had departed from Lachish.
+**9.** When he heard it said of Tirhakah king of Ethiopia, “Behold, he has come out to fight against you,” he sent messengers again to Hezekiah, saying,
+**10.** “Tell Hezekiah king of Judah this: ‘Don’t let your God in whom you trust deceive you, saying, Jerusalem will not be given into the hand of the king of Assyria.
+**11.** Behold, you have heard what the kings of Assyria have done to all lands, by destroying them utterly. Will you be delivered?
+**12.** Have the gods of the nations delivered them, which my fathers have destroyed—Gozan, Haran, Rezeph, and the children of Eden who were in Telassar?
+**13.** Where is the king of Hamath, the king of Arpad, and the king of the city of Sepharvaim, of Hena, and Ivvah?’”
+**14.** Hezekiah received the letter from the hand of the messengers and read it. Then Hezekiah went up to the LORD’s house, and spread it before the LORD.
+**15.** Hezekiah prayed before the LORD, and said, “LORD, the God of Israel, who are enthroned above the cherubim, you are the God, even you alone, of all the kingdoms of the earth. You have made heaven and earth.
+**16.** Incline your ear, LORD, and hear. Open your eyes, LORD, and see. Hear the words of Sennacherib, which he has sent to defy the living God.
+**17.** Truly, LORD, the kings of Assyria have laid waste the nations and their lands,
+**18.** and have cast their gods into the fire; for they were no gods, but the work of men’s hands, wood and stone. Therefore they have destroyed them.
+**19.** Now therefore, LORD our God, save us, I beg you, out of his hand, that all the kingdoms of the earth may know that you, LORD, are God alone.”
+**20.** Then Isaiah the son of Amoz sent to Hezekiah, saying, “The LORD, the God of Israel, says ‘You have prayed to me against Sennacherib king of Assyria, and I have heard you.
+**21.** This is the word that the LORD has spoken concerning him: ‘The virgin daughter of Zion has despised you and ridiculed you. The daughter of Jerusalem has shaken her head at you.
+**22.** Whom have you defied and blasphemed? Against whom have you exalted your voice and lifted up your eyes on high? Against the Holy One of Israel!
+**23.** By your messengers, you have defied the Lord, and have said, “With the multitude of my chariots, I have come up to the height of the mountains, to the innermost parts of Lebanon, and I will cut down its tall cedars and its choice cypress trees; and I will enter into his farthest lodging place, the forest of his fruitful field.
+**24.** I have dug and drunk strange waters, and I will dry up all the rivers of Egypt with the sole of my feet.”
+**25.** Haven’t you heard how I have done it long ago, and formed it of ancient times? Now I have brought it to pass, that it should be yours to lay waste fortified cities into ruinous heaps.
+**26.** Therefore their inhabitants had little power. They were dismayed and confounded. They were like the grass of the field and like the green herb, like the grass on the housetops and like grain blasted before it has grown up.
+**27.** But I know your sitting down, your going out, your coming in, and your raging against me.
+**28.** Because of your raging against me, and because your arrogance has come up into my ears, therefore I will put my hook in your nose, and my bridle in your lips, and I will turn you back by the way by which you came.’
+**29.** “This will be the sign to you: This year, you will eat that which grows of itself, and in the second year that which springs from that; and in the third year sow and reap, and plant vineyards and eat their fruit.
+**30.** The remnant that has escaped of the house of Judah will again take root downward, and bear fruit upward.
+**31.** For out of Jerusalem a remnant will go out, and out of Mount Zion those who shall escape. The LORD’s zeal will perform this.
+**32.** “Therefore the LORD says concerning the king of Assyria, ‘He will not come to this city, nor shoot an arrow there. He will not come before it with shield, nor cast up a mound against it.
+**33.** He will return the same way that he came, and he will not come to this city,’ says the LORD.
+**34.** ‘For I will defend this city to save it, for my own sake and for my servant David’s sake.’”
+**35.** That night, the LORD’s angel went out and struck one hundred eighty-five thousand in the camp of the Assyrians. When men arose early in the morning, behold, these were all dead bodies.
+**36.** So Sennacherib king of Assyria departed, went home, and lived at Nineveh.
+**37.** As he was worshiping in the house of Nisroch his god, Adrammelech and Sharezer struck him with the sword; and they escaped into the land of Ararat. Esar Haddon his son reigned in his place.
+## II Kings 20
+
+**1.** In those days Hezekiah was sick and dying. Isaiah the prophet the son of Amoz came to him, and said to him, “The LORD says, ‘Set your house in order; for you will die, and not live.’”
+**2.** Then he turned his face to the wall, and prayed to the LORD, saying,
+**3.** “Remember now, LORD, I beg you, how I have walked before you in truth and with a perfect heart, and have done that which is good in your sight.” And Hezekiah wept bitterly.
+**4.** Before Isaiah had gone out into the middle part of the city, the LORD’s word came to him, saying,
+**5.** “Turn back, and tell Hezekiah the prince of my people, ‘The LORD, the God of David your father, says, “I have heard your prayer. I have seen your tears. Behold, I will heal you. On the third day, you will go up to the LORD’s house.
+**6.** I will add to your days fifteen years. I will deliver you and this city out of the hand of the king of Assyria. I will defend this city for my own sake, and for my servant David’s sake.”’”
+**7.** Isaiah said, “Take a cake of figs.” They took and laid it on the boil, and he recovered.
+**8.** Hezekiah said to Isaiah, “What will be the sign that the LORD will heal me, and that I will go up to the LORD’s house the third day?”
+**9.** Isaiah said, “This will be the sign to you from the LORD, that the LORD will do the thing that he has spoken: should the shadow go forward ten steps, or go back ten steps?”
+**10.** Hezekiah answered, “It is a light thing for the shadow to go forward ten steps. No, but let the shadow return backward ten steps.”
+**11.** Isaiah the prophet cried to the LORD; and he brought the shadow ten steps backward, by which it had gone down on the sundial of Ahaz.
+**12.** At that time Berodach Baladan the son of Baladan, king of Babylon, sent letters and a present to Hezekiah, for he had heard that Hezekiah had been sick.
+**13.** Hezekiah listened to them, and showed them all the storehouse of his precious things—the silver, the gold, the spices, and the precious oil, and the house of his armor, and all that was found in his treasures. There was nothing in his house, or in all his dominion, that Hezekiah didn’t show them.
+**14.** Then Isaiah the prophet came to King Hezekiah, and said to him, “What did these men say? From where did they come to you?” Hezekiah said, “They have come from a far country, even from Babylon.”
+**15.** He said, “What have they seen in your house?” Hezekiah answered, “They have seen all that is in my house. There is nothing among my treasures that I have not shown them.”
+**16.** Isaiah said to Hezekiah, “Hear the LORD’s word.
+**17.** ‘Behold, the days come that all that is in your house, and that which your fathers have laid up in store to this day, will be carried to Babylon. Nothing will be left,’ says the LORD.
+**18.** ‘They will take away some of your sons who will issue from you, whom you will father; and they will be eunuchs in the palace of the king of Babylon.’”
+**19.** Then Hezekiah said to Isaiah, “The LORD’s word which you have spoken is good.” He said moreover, “Isn’t it so, if peace and truth will be in my days?”
+**20.** Now the rest of the acts of Hezekiah, and all his might, and how he made the pool, and the conduit, and brought water into the city, aren’t they written in the book of the chronicles of the kings of Judah?
+**21.** Hezekiah slept with his fathers, and Manasseh his son reigned in his place.
+## II Kings 21
+
+**1.** Manasseh was twelve years old when he began to reign, and he reigned fifty-five years in Jerusalem. His mother’s name was Hephzibah.
+**2.** He did that which was evil in the LORD’s sight, after the abominations of the nations whom the LORD cast out before the children of Israel.
+**3.** For he built again the high places which Hezekiah his father had destroyed; and he raised up altars for Baal, and made an Asherah, as Ahab king of Israel did, and worshiped all the army of the sky, and served them.
+**4.** He built altars in the LORD’s house, of which the LORD said, “I will put my name in Jerusalem.”
+**5.** He built altars for all the army of the sky in the two courts of the LORD’s house.
+**6.** He made his son to pass through the fire, practiced sorcery, used enchantments, and dealt with those who had familiar spirits and with wizards. He did much evil in the LORD’s sight, to provoke him to anger.
+**7.** He set the engraved image of Asherah that he had made in the house of which the LORD said to David and to Solomon his son, “In this house, and in Jerusalem, which I have chosen out of all the tribes of Israel, I will put my name forever;
+**8.** I will not cause the feet of Israel to wander any more out of the land which I gave their fathers, if only they will observe to do according to all that I have commanded them, and according to all the law that my servant Moses commanded them.”
+**9.** But they didn’t listen, and Manasseh seduced them to do that which is evil more than the nations did whom the LORD destroyed before the children of Israel.
+**10.** The LORD spoke by his servants the prophets, saying,
+**11.** “Because Manasseh king of Judah has done these abominations, and has done wickedly above all that the Amorites did, who were before him, and has also made Judah to sin with his idols;
+**12.** therefore the LORD the God of Israel says, ‘Behold, I will bring such evil on Jerusalem and Judah that whoever hears of it, both his ears will tingle.
+**13.** I will stretch over Jerusalem the line of Samaria, and the plumb line of Ahab’s house; and I will wipe Jerusalem as a man wipes a dish, wiping it and turning it upside down.
+**14.** I will cast off the remnant of my inheritance and deliver them into the hands of their enemies. They will become a prey and a plunder to all their enemies,
+**15.** because they have done that which is evil in my sight, and have provoked me to anger since the day their fathers came out of Egypt, even to this day.’”
+**16.** Moreover Manasseh shed innocent blood very much, until he had filled Jerusalem from one end to another; in addition to his sin with which he made Judah to sin, in doing that which was evil in the LORD’s sight.
+**17.** Now the rest of the acts of Manasseh, and all that he did, and his sin that he sinned, aren’t they written in the book of the chronicles of the kings of Judah?
+**18.** Manasseh slept with his fathers, and was buried in the garden of his own house, in the garden of Uzza; and Amon his son reigned in his place.
+**19.** Amon was twenty-two years old when he began to reign; and he reigned two years in Jerusalem. His mother’s name was Meshullemeth the daughter of Haruz of Jotbah.
+**20.** He did that which was evil in the LORD’s sight, as Manasseh his father did.
+**21.** He walked in all the ways that his father walked in, and served the idols that his father served, and worshiped them;
+**22.** and he abandoned the LORD, the God of his fathers, and didn’t walk in the way of the LORD.
+**23.** The servants of Amon conspired against him, and put the king to death in his own house.
+**24.** But the people of the land killed all those who had conspired against King Amon; and the people of the land made Josiah his son king in his place.
+**25.** Now the rest of the acts of Amon which he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**26.** He was buried in his tomb in the garden of Uzza, and Josiah his son reigned in his place.
+## II Kings 22
+
+**1.** Josiah was eight years old when he began to reign, and he reigned thirty-one years in Jerusalem. His mother’s name was Jedidah the daughter of Adaiah of Bozkath.
+**2.** He did that which was right in the LORD’s eyes, and walked in all the ways of David his father, and didn’t turn away to the right hand or to the left.
+**3.** In the eighteenth year of King Josiah, the king sent Shaphan, the son of Azaliah the son of Meshullam, the scribe, to the LORD’s house, saying,
+**4.** “Go up to Hilkiah the high priest, that he may count the money which is brought into the LORD’s house, which the keepers of the threshold have gathered of the people.
+**5.** Let them deliver it into the hand of the workers who have the oversight of the LORD’s house; and let them give it to the workers who are in the LORD’s house, to repair the damage to the house,
+**6.** to the carpenters, and to the builders, and to the masons, and for buying timber and cut stone to repair the house.
+**7.** However, no accounting shall be asked of them for the money delivered into their hand, for they deal faithfully.”
+**8.** Hilkiah the high priest said to Shaphan the scribe, “I have found the book of the law in the LORD’s house.” Hilkiah delivered the book to Shaphan, and he read it.
+**9.** Shaphan the scribe came to the king, and brought the king word again, and said, “Your servants have emptied out the money that was found in the house, and have delivered it into the hands of the workmen who have the oversight of the LORD’s house.”
+**10.** Shaphan the scribe told the king, saying, “Hilkiah the priest has delivered a book to me.” Then Shaphan read it before the king.
+**11.** When the king had heard the words of the book of the law, he tore his clothes.
+**12.** The king commanded Hilkiah the priest, Ahikam the son of Shaphan, Achbor the son of Micaiah, Shaphan the scribe, and Asaiah the king’s servant, saying,
+**13.** “Go inquire of the LORD for me, and for the people, and for all Judah, concerning the words of this book that is found; for great is the LORD’s wrath that is kindled against us, because our fathers have not listened to the words of this book, to do according to all that which is written concerning us.”
+**14.** So Hilkiah the priest, Ahikam, Achbor, Shaphan, and Asaiah went to Huldah the prophetess, the wife of Shallum the son of Tikvah, the son of Harhas, keeper of the wardrobe (now she lived in Jerusalem in the second quarter); and they talked with her.
+**15.** She said to them, “The LORD the God of Israel says, ‘Tell the man who sent you to me,
+**16.** “The LORD says, ‘Behold, I will bring evil on this place and on its inhabitants, even all the words of the book which the king of Judah has read.
+**17.** Because they have forsaken me and have burned incense to other gods, that they might provoke me to anger with all the work of their hands, therefore my wrath shall be kindled against this place, and it will not be quenched.’”
+**18.** But to the king of Judah, who sent you to inquire of the LORD, tell him, “The LORD the God of Israel says, ‘Concerning the words which you have heard,
+**19.** because your heart was tender, and you humbled yourself before the LORD when you heard what I spoke against this place and against its inhabitants, that they should become a desolation and a curse, and have torn your clothes and wept before me, I also have heard you,’ says the LORD.
+**20.** ‘Therefore behold, I will gather you to your fathers, and you will be gathered to your grave in peace. Your eyes will not see all the evil which I will bring on this place.’”’” So they brought this message back to the king.
+## II Kings 23
+
+**1.** The king sent, and they gathered to him all the elders of Judah and of Jerusalem.
+**2.** The king went up to the LORD’s house, and all the men of Judah and all the inhabitants of Jerusalem with him—with the priests, the prophets, and all the people, both small and great; and he read in their hearing all the words of the book of the covenant which was found in the LORD’s house.
+**3.** The king stood by the pillar and made a covenant before the LORD to walk after the LORD and to keep his commandments, his testimonies, and his statutes with all his heart and all his soul, to confirm the words of this covenant that were written in this book; and all the people agreed to the covenant.
+**4.** The king commanded Hilkiah the high priest, and the priests of the second order, and the keepers of the threshold, to bring out of the LORD’s temple all the vessels that were made for Baal, for the Asherah, and for all the army of the sky; and he burned them outside of Jerusalem in the fields of the Kidron, and carried their ashes to Bethel.
+**5.** He got rid of the idolatrous priests whom the kings of Judah had ordained to burn incense in the high places in the cities of Judah and in the places around Jerusalem; those also who burned incense to Baal, to the sun, to the moon, to the planets, and to all the army of the sky.
+**6.** He brought out the Asherah from the LORD’s house, outside of Jerusalem, to the brook Kidron, and burned it at the brook Kidron, and beat it to dust, and cast its dust on the graves of the common people.
+**7.** He broke down the houses of the male shrine prostitutes that were in the LORD’s house, where the women wove hangings for the Asherah.
+**8.** He brought all the priests out of the cities of Judah, and defiled the high places where the priests had burned incense, from Geba to Beersheba; and he broke down the high places of the gates that were at the entrance of the gate of Joshua the governor of the city, which were on a man’s left hand at the gate of the city.
+**9.** Nevertheless the priests of the high places didn’t come up to the LORD’s altar in Jerusalem, but they ate unleavened bread among their brothers.
+**10.** He defiled Topheth, which is in the valley of the children of Hinnom, that no man might make his son or his daughter to pass through the fire to Molech.
+**11.** He took away the horses that the kings of Judah had dedicated to the sun, at the entrance of the LORD’s house, by the room of Nathan Melech the officer who was in the court; and he burned the chariots of the sun with fire.
+**12.** The king broke down the altars that were on the roof of the upper room of Ahaz, which the kings of Judah had made, and the altars which Manasseh had made in the two courts of the LORD’s house, and beat them down from there, and cast their dust into the brook Kidron.
+**13.** The king defiled the high places that were before Jerusalem, which were on the right hand of the mountain of corruption, which Solomon the king of Israel had built for Ashtoreth the abomination of the Sidonians, and for Chemosh the abomination of Moab, and for Milcom the abomination of the children of Ammon.
+**14.** He broke in pieces the pillars, cut down the Asherah poles, and filled their places with men’s bones.
+**15.** Moreover the altar that was at Bethel and the high place which Jeroboam the son of Nebat, who made Israel to sin, had made, even that altar and the high place he broke down; and he burned the high place and beat it to dust, and burned the Asherah.
+**16.** As Josiah turned himself, he spied the tombs that were there in the mountain; and he sent, and took the bones out of the tombs, and burned them on the altar, and defiled it, according to the LORD’s word which the man of God proclaimed, who proclaimed these things.
+**17.** Then he said, “What monument is that which I see?” The men of the city told him, “It is the tomb of the man of God who came from Judah and proclaimed these things that you have done against the altar of Bethel.”
+**18.** He said, “Let him be! Let no one move his bones.” So they let his bones alone, with the bones of the prophet who came out of Samaria.
+**19.** All the houses also of the high places that were in the cities of Samaria, which the kings of Israel had made to provoke the LORD to anger, Josiah took away, and did to them according to all the acts that he had done in Bethel.
+**20.** He killed all the priests of the high places that were there, on the altars, and burned men’s bones on them; and he returned to Jerusalem.
+**21.** The king commanded all the people, saying, “Keep the Passover to the LORD your God, as it is written in this book of the covenant.”
+**22.** Surely there was not kept such a Passover from the days of the judges who judged Israel, nor in all the days of the kings of Israel, nor of the kings of Judah;
+**23.** but in the eighteenth year of King Josiah, this Passover was kept to the LORD in Jerusalem.
+**24.** Moreover, Josiah removed those who had familiar spirits, the wizards, and the teraphim, and the idols, and all the abominations that were seen in the land of Judah and in Jerusalem, that he might confirm the words of the law which were written in the book that Hilkiah the priest found in the LORD’s house.
+**25.** There was no king like him before him, who turned to the LORD with all his heart, and with all his soul, and with all his might, according to all the law of Moses; and there was none like him who arose after him.
+**26.** Notwithstanding, the LORD didn’t turn from the fierceness of his great wrath, with which his anger burned against Judah, because of all the provocation with which Manasseh had provoked him.
+**27.** The LORD said, “I will also remove Judah out of my sight, as I have removed Israel; and I will cast off this city which I have chosen, even Jerusalem, and the house of which I said, ‘My name shall be there.’”
+**28.** Now the rest of the acts of Josiah, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**29.** In his days Pharaoh Necoh king of Egypt went up against the king of Assyria to the river Euphrates; and King Josiah went against him, but Pharaoh Necoh killed him at Megiddo when he saw him.
+**30.** His servants carried him dead in a chariot from Megiddo, brought him to Jerusalem, and buried him in his own tomb. The people of the land took Jehoahaz the son of Josiah, and anointed him, and made him king in his father’s place.
+**31.** Jehoahaz was twenty-three years old when he began to reign; and he reigned three months in Jerusalem. His mother’s name was Hamutal the daughter of Jeremiah of Libnah.
+**32.** He did that which was evil in the LORD’s sight, according to all that his fathers had done.
+**33.** Pharaoh Necoh put him in bonds at Riblah in the land of Hamath, that he might not reign in Jerusalem; and put the land to a tribute of one hundred talents of silver and a talent of gold.
+**34.** Pharaoh Necoh made Eliakim the son of Josiah king in the place of Josiah his father, and changed his name to Jehoiakim; but he took Jehoahaz away, and he came to Egypt and died there.
+**35.** Jehoiakim gave the silver and the gold to Pharaoh; but he taxed the land to give the money according to the commandment of Pharaoh. He exacted the silver and the gold of the people of the land, from everyone according to his assessment, to give it to Pharaoh Necoh.
+**36.** Jehoiakim was twenty-five years old when he began to reign, and he reigned eleven years in Jerusalem. His mother’s name was Zebidah the daughter of Pedaiah of Rumah.
+**37.** He did that which was evil in the LORD’s sight, according to all that his fathers had done.
+## II Kings 24
+
+**1.** In his days Nebuchadnezzar king of Babylon came up, and Jehoiakim became his servant three years. Then he turned and rebelled against him.
+**2.** The LORD sent against him bands of the Chaldeans, bands of the Syrians, bands of the Moabites, and bands of the children of Ammon, and sent them against Judah to destroy it, according to the LORD’s word which he spoke by his servants the prophets.
+**3.** Surely at the commandment of the LORD this came on Judah, to remove them out of his sight for the sins of Manasseh, according to all that he did,
+**4.** and also for the innocent blood that he shed; for he filled Jerusalem with innocent blood, and the LORD would not pardon.
+**5.** Now the rest of the acts of Jehoiakim, and all that he did, aren’t they written in the book of the chronicles of the kings of Judah?
+**6.** So Jehoiakim slept with his fathers, and Jehoiachin his son reigned in his place.
+**7.** The king of Egypt didn’t come out of his land any more; for the king of Babylon had taken, from the brook of Egypt to the river Euphrates, all that belonged to the king of Egypt.
+**8.** Jehoiachin was eighteen years old when he began to reign, and he reigned in Jerusalem three months. His mother’s name was Nehushta the daughter of Elnathan of Jerusalem.
+**9.** He did that which was evil in the LORD’s sight, according to all that his father had done.
+**10.** At that time the servants of Nebuchadnezzar king of Babylon came up to Jerusalem, and the city was besieged.
+**11.** Nebuchadnezzar king of Babylon came to the city while his servants were besieging it,
+**12.** and Jehoiachin the king of Judah went out to the king of Babylon—he, his mother, his servants, his princes, and his officers; and the king of Babylon captured him in the eighth year of his reign.
+**13.** He carried out from there all the treasures of the LORD’s house and the treasures of the king’s house, and cut in pieces all the vessels of gold which Solomon king of Israel had made in the LORD’s temple, as the LORD had said.
+**14.** He carried away all Jerusalem, and all the princes, and all the mighty men of valor, even ten thousand captives, and all the craftsmen and the smiths. No one remained except the poorest people of the land.
+**15.** He carried away Jehoiachin to Babylon, with the king’s mother, the king’s wives, his officers, and the chief men of the land. He carried them into captivity from Jerusalem to Babylon.
+**16.** All the men of might, even seven thousand, and the craftsmen and the smiths one thousand, all of them strong and fit for war, even them the king of Babylon brought captive to Babylon.
+**17.** The king of Babylon made Mattaniah, Jehoiachin’s father’s brother, king in his place, and changed his name to Zedekiah.
+**18.** Zedekiah was twenty-one years old when he began to reign, and he reigned eleven years in Jerusalem. His mother’s name was Hamutal the daughter of Jeremiah of Libnah.
+**19.** He did that which was evil in the LORD’s sight, according to all that Jehoiakim had done.
+**20.** For through the anger of the LORD, this happened in Jerusalem and Judah, until he had cast them out from his presence. Then Zedekiah rebelled against the king of Babylon.
+## II Kings 25
+
+**1.** In the ninth year of his reign, in the tenth month, in the tenth day of the month, Nebuchadnezzar king of Babylon came, he and all his army, against Jerusalem, and encamped against it; and they built forts against it around it.
+**2.** So the city was besieged until the eleventh year of King Zedekiah.
+**3.** On the ninth day of the fourth month, the famine was severe in the city, so that there was no bread for the people of the land.
+**4.** Then a breach was made in the city, and all the men of war fled by night by the way of the gate between the two walls, which was by the king’s garden (now the Chaldeans were against the city around it); and the king went by the way of the Arabah.
+**5.** But the Chaldean army pursued the king, and overtook him in the plains of Jericho; and all his army was scattered from him.
+**6.** Then they captured the king and carried him up to the king of Babylon to Riblah; and they passed judgment on him.
+**7.** They killed Zedekiah’s sons before his eyes, then put out Zedekiah’s eyes, bound him in fetters, and carried him to Babylon.
+**8.** Now in the fifth month, on the seventh day of the month, which was the nineteenth year of King Nebuchadnezzar king of Babylon, Nebuzaradan the captain of the guard, a servant of the king of Babylon, came to Jerusalem.
+**9.** He burned the LORD’s house, the king’s house, and all the houses of Jerusalem. He burned every great house with fire.
+**10.** All the army of the Chaldeans, who were with the captain of the guard, broke down the walls around Jerusalem.
+**11.** Nebuzaradan the captain of the guard carried away captive the rest of the people who were left in the city and those who had deserted to the king of Babylon—all the rest of the multitude.
+**12.** But the captain of the guard left some of the poorest of the land to work the vineyards and fields.
+**13.** The Chaldeans broke up the pillars of bronze that were in the LORD’s house and the bases and the bronze sea that were in the LORD’s house, and carried the bronze pieces to Babylon.
+**14.** They took away the pots, the shovels, the snuffers, the spoons, and all the vessels of bronze with which they ministered.
+**15.** The captain of the guard took away the fire pans, the basins, that which was of gold, for gold, and that which was of silver, for silver.
+**16.** The two pillars, the one sea, and the bases, which Solomon had made for the LORD’s house, the bronze of all these vessels was not weighed.
+**17.** The height of the one pillar was eighteen cubits, and a capital of bronze was on it. The height of the capital was three cubits, with network and pomegranates on the capital around it, all of bronze; and the second pillar with its network was like these.
+**18.** The captain of the guard took Seraiah the chief priest, Zephaniah the second priest, and the three keepers of the threshold;
+**19.** and out of the city he took an officer who was set over the men of war; and five men of those who saw the king’s face, who were found in the city; and the scribe, the captain of the army, who mustered the people of the land, and sixty men of the people of the land who were found in the city.
+**20.** Nebuzaradan the captain of the guard took them, and brought them to the king of Babylon to Riblah.
+**21.** The king of Babylon attacked them and put them to death at Riblah in the land of Hamath. So Judah was carried away captive out of his land.
+**22.** As for the people who were left in the land of Judah whom Nebuchadnezzar king of Babylon had left, even over them he made Gedaliah the son of Ahikam, the son of Shaphan, governor.
+**23.** Now when all the captains of the forces, they and their men, heard that the king of Babylon had made Gedaliah governor, they came to Gedaliah to Mizpah, even Ishmael the son of Nethaniah, Johanan the son of Kareah, Seraiah the son of Tanhumeth the Netophathite, and Jaazaniah the son of the Maacathite, they and their men.
+**24.** Gedaliah swore to them and to their men, and said to them, “Don’t be afraid because of the servants of the Chaldeans. Dwell in the land and serve the king of Babylon, and it will be well with you.”
+**25.** But in the seventh month, Ishmael the son of Nethaniah, the son of Elishama, of the royal offspring came, and ten men with him, and struck Gedaliah so that he died, with the Jews and the Chaldeans that were with him at Mizpah.
+**26.** All the people, both small and great, and the captains of the forces arose and came to Egypt; for they were afraid of the Chaldeans.
+**27.** In the thirty-seventh year of the captivity of Jehoiachin king of Judah, in the twelfth month, on the twenty-seventh day of the month, Evilmerodach king of Babylon, in the year that he began to reign, released Jehoiachin king of Judah out of prison,
+**28.** and he spoke kindly to him and set his throne above the throne of the kings who were with him in Babylon,
+**29.** and changed his prison garments. Jehoiachin ate bread before him continually all the days of his life;
+**30.** and for his allowance, there was a continual allowance given him from the king, every day a portion, all the days of his life.
