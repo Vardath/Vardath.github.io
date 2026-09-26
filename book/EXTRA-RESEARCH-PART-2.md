@@ -40048,3 +40048,1829 @@ Required continuity controls:
 6. inspect Stephen's opened-heaven vision as observer access rather than automatic physical portal;
 7. track Philip/eunuch road, water, baptism and post-baptism disappearance/transport without inventing mechanism.
 
+
+
+---
+
+# SECTION 74 — ACTS 1–12
+## Direct Luke–Acts pass — Pentecost house-filling wind-like sound / divided fire-like tongues / distributed languages, gate-access healing, prayer-shake→speech, temporary prison-boundary opening, opened-heaven observer access, persecution-driven network dispersion, Philip road/water/Spirit transport, Saul same-identity role inversion, paired visions, four-corner heavenly sheet down/up cycle, Spirit "fall/pour" across social boundary, and Peter's multi-layer prison escape through self-opening iron gate
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was searched for Acts 1–12 / Pentecost / Stephen / Philip / Saul / Peter prison material;
+- EXTRA-RESEARCH.md was searched;
+- Part 2 actual tail was checked.
+
+No completed direct Acts 1–12 pass was found in the earlier archives.
+
+The actual Part 2 tail identified:
+**Section 74 — Acts 1–12**.
+
+Section 73 already completed the resurrection/appearance/ascension transition and included Acts 1:6–11.
+
+Therefore this section:
+- cross-references the Acts 1 ascension findings;
+- does not duplicate them in full;
+- advances the specifically Acts 1–12 network, boundary, Spirit, transport and gate sequence.
+
+---
+
+# Historical / literary control first
+
+Acts is the second volume of Luke–Acts.
+
+Its narrative begins:
+- in Jerusalem;
+- with Jesus' ascension;
+- with the Spirit and Jerusalem community;
+
+and then expands:
+- Jerusalem;
+- Judea;
+- Samaria;
+- wider Gentile mission;
+- ultimately Rome.
+
+The early chapters focus strongly on:
+- Peter;
+- Jerusalem;
+- the Twelve;
+- Stephen;
+- Philip;
+
+before Saul/Paul becomes increasingly central.
+
+Modern scholarship does not treat Acts as a transparent stenographic transcript of earliest Christian history.
+
+There are long-running debates about:
+- Luke's historiography;
+- narrative shaping;
+- speeches;
+- chronology;
+- Paul's portrayal in Acts versus Paul's letters.
+
+Therefore:
+Vardath comparisons must start from **the narrative form Acts actually gives**, not from the assumption that every narrated supernatural detail is a laboratory description.
+
+---
+
+# ACTS 1
+## Ascension cross-reference only; role replacement and one→many mission geometry
+
+Section 73 already established:
+
+- Jesus is visibly lifted;
+- a cloud takes him from observers' sight;
+- two white-clad figures interpret the transition;
+- the same Jesus is promised to return;
+- exact return times/periods are explicitly withheld.
+
+Do not duplicate that work here.
+
+### M74-1 — ACTS 1 SETS THE MACRO NETWORK PROGRAM
+
+The explicit mission geography is:
+
+**Jerusalem**
+→ **Judea**
+→ **Samaria**
+→ **ends of earth**.
+
+This is a source-level:
+**central origin → distributed expansion**
+program.
+
+### M74-2 — ONE VACATED ROLE IS FILLED BY ANOTHER PERSON WITHOUT CHANGING THE ROLE ITSELF
+
+Judas's apostolic position:
+- becomes vacant;
+- two candidates proposed;
+- Matthias selected;
+- Matthias joins the eleven.
+
+This repeats the project's:
+**persistent role / changing occupant**
+logic.
+
+Do not treat office succession as physical body transformation.
+
+---
+
+# ACTS 2
+# MAJOR PENTECOST PROCESS
+## all together in one place → sound from heaven LIKE violent wind fills entire house → divided tongues AS OF fire appear → one rests on each person → all filled with Spirit → many languages → multinational listeners hear in own language
+
+The text is precise in its comparison language.
+
+It says:
+- a **sound like** a violent/rushing wind;
+- divided tongues **as of / like fire**.
+
+It does not require:
+- meteorological wind physically blasting through room;
+- ordinary combustion on heads.
+
+### M74-3 — PENTECOST IS A BROAD-FIELD→DISTRIBUTED-NODE INFORMATION EVENT
+
+Sequence:
+
+**group concentrated in one place**
+→ **house-wide sound field**
+→ **divided visible tongue-like nodes**
+→ **one node associated with each person**
+→ **all persons filled**
+→ **many language outputs**
+→ **distributed audience receives intelligible information**.
+
+This is one of the strongest information-network transformations in the New Testament.
+
+### M74-4 — THE PHENOMENON MOVES FROM ONE SHARED ENVIRONMENT TO MANY INDIVIDUAL OUTPUT NODES
+
+Important distinction:
+
+The text does not explicitly say:
+one flame physically splits.
+
+It says:
+**divided tongues as of fire appeared among them**.
+
+Therefore secure classification:
+
+**shared event**
+→ **distributed individual manifestations**.
+
+### M74-5 — "FILLING" OCCURS AT TWO SCALES
+
+The sound:
+**fills the house**.
+
+The people:
+**are filled with Spirit**.
+
+This gives:
+- enclosure-scale filling;
+- person-scale filling.
+
+Same verb-family/function should not automatically mean same material.
+
+### M74-6 — "POURING OUT SPIRIT" IS INFORMATION/AGENCY LANGUAGE WITH FLUID GRAMMAR
+
+Peter interprets the event through Joel:
+Spirit is:
+**poured out**
+on:
+- sons;
+- daughters;
+- young;
+- old;
+- male/female servants.
+
+Effects:
+- prophecy;
+- visions;
+- dreams;
+- speech.
+
+This is highly relevant to Vardath's:
+**fluid/current language can encode information-state transfer**.
+
+But Spirit is not reducible to literal water/plasma in the text.
+
+### M74-7 — MANY LANGUAGES ARE NOT A RETURN TO ONE SPOKEN LANGUAGE
+
+The event does not erase diversity.
+
+Instead:
+one shared Spirit event
+produces
+**many intelligible language channels**.
+
+This differs from:
+language homogenization.
+
+It is closer to:
+**one source → many compatible encodings**.
+
+### M74-8 — PENTECOST IS AN IMPORTANT CONTROL AGAINST OVER-PHYSICALIZING FIRE/WIND
+
+Because the narrative itself says:
+- like wind;
+- as of fire;
+
+and the principal output is:
+**speech / understanding / witness**.
+
+---
+
+# ACTS 2:41–47
+## information event → population growth → distributed resource network
+
+About three thousand are added.
+
+Community then:
+- teaches;
+- shares meals;
+- prays;
+- sells possessions;
+- distributes resources according to need.
+
+### M74-9 — INFORMATION EVENT PRODUCES A NEW SOCIAL/RESOURCE NETWORK
+
+This is a true:
+**signal/message**
+→ **population-state change**
+→ **resource redistribution**
+sequence.
+
+Not physical gate mechanics.
+
+---
+
+# ACTS 3
+## Beautiful Gate: immobile person outside/at boundary → right-hand lift → bodily state changes → person crosses into temple
+
+A man unable to walk from birth:
+- is carried daily;
+- placed at the Beautiful Gate;
+- remains dependent outside/at the temple access point.
+
+Peter:
+- takes him by the **right hand**;
+- raises him;
+- feet/ankles become strong.
+
+Then:
+- he stands;
+- walks;
+- enters temple.
+
+### M74-10 — BODILY STATE CHANGE ALTERS BOUNDARY ACCESS WITHOUT THE GATE ITSELF CHANGING
+
+Before:
+cannot independently traverse.
+
+After:
+same gate / same temple;
+carrier changes state;
+access becomes possible.
+
+This is very important to gate modelling:
+
+**boundary**
+is only one variable.
+
+**traveller capability/state**
+is another.
+
+### M74-11 — RIGHT-HAND CONTACT IS OPERATOR→CARRIER TRANSFER GRAMMAR
+
+Peter's hand:
+- contacts;
+- raises.
+
+But no physical energy mechanism is specified.
+
+---
+
+# ACTS 3
+## "times of refreshing" and universal restoration
+
+Peter speaks of:
+- refreshing from divine presence;
+- Jesus remaining in heaven until a time of restoration.
+
+### M74-12 — RESTORATION IS TEMPORALLY STAGED BUT ITS CLOCK IS NOT GIVEN
+
+Cross-link Acts 1:
+times/periods not available to disciples.
+
+Do not derive gate chronology from this verse alone.
+
+---
+
+# ACTS 4
+## confinement → release → collective prayer → place shakes → group filled → speech propagates
+
+Peter and John:
+- are detained;
+- released;
+- return to community.
+
+Community:
+- raises one voice;
+- prays.
+
+Then:
+- gathering place shakes;
+- all are filled with Spirit;
+- speak with boldness.
+
+### M74-13 — ACTS 4 GIVES A SIGNAL→STRUCTURE-RESPONSE→INFORMATION-OUTPUT SEQUENCE
+
+**collective prayer/speech**
+→ **place shakes**
+→ **people filled**
+→ **word spoken outward**.
+
+This is a real coupled:
+- observer/community;
+- place;
+- information
+
+event.
+
+### M74-14 — EARTH/ROOM SHAKING HERE IS NOT ACCOMPANIED BY LANDSCAPE DEFORMATION
+
+So:
+do not treat every biblical shake as crustal reset.
+
+Function here:
+divine confirmation/empowerment in narrative.
+
+### M74-15 — "ONE HEART AND SOUL" IS SOCIAL UNITY, NOT LITERAL FUSION OF PERSONS
+
+Important control for one-body language.
+
+---
+
+# ACTS 5
+## Ananias/Sapphira mirrored pair with ~three-hour phase offset
+
+Ananias and Sapphira:
+- jointly participate in same deception;
+- enter separately;
+- are questioned separately;
+- each falls/dies after verbal exposure;
+- second event occurs about three hours later.
+
+### M74-16 — THIS IS A TRUE MIRRORED PAIR SEQUENCE WITH TIME OFFSET
+
+The pair:
+- shares one plan;
+- undergoes parallel outcome;
+- second repeats first after delay.
+
+This is useful to the paired-figure timeline method.
+
+But:
+they remain two distinct humans.
+
+---
+
+# ACTS 5
+## MAJOR PRISON-BOUNDARY EVENT
+## apostles in public prison → angel opens doors at night → prisoners brought out → later prison found securely locked + guards still at doors + prisoners absent
+
+The source says:
+
+- apostles placed in public prison;
+- angel opens prison doors;
+- brings them out;
+- tells them to return to temple and speak.
+
+Later officials find:
+- prison securely locked;
+- guards standing at doors;
+- no apostles inside.
+
+### M74-17 — THIS IS ONE OF THE CLEANEST TEMPORARY BOUNDARY-STATE REVERSALS IN THE NEW TESTAMENT
+
+Secure sequence:
+
+**enclosed**
+→ **door opens**
+→ **occupants cross**
+→ **later boundary is again found closed/secure**
+→ **guards remain in expected positions**
+→ **occupants are elsewhere**.
+
+The text does not narrate:
+how/when doors reclosed.
+
+So do not invent:
+automatic reclosure mechanism.
+
+### M74-18 — TRANSFER CAN OCCUR WITHOUT PERMANENTLY DESTROYING THE ENCLOSURE
+
+This is highly relevant to Vardath.
+
+The prison remains:
+- intact;
+- lockable;
+- guarded.
+
+Therefore:
+**boundary transition**
+need not equal
+**boundary destruction**.
+
+### M74-19 — OUTPUT DESTINATION IS INFORMATIONAL MISSION
+
+They are released:
+to speak publicly.
+
+Again:
+movement and message propagation are linked.
+
+---
+
+# ACTS 5
+## Peter's moving shadow
+
+Sick people are positioned so:
+Peter's shadow may fall on them as he passes.
+
+The narrative says crowds bring sick and all are cured.
+
+### M74-20 — A MOVING HUMAN BODY IS ASSOCIATED WITH A PROJECTED SPATIAL EFFECT/SHADOW FIELD
+
+This is relevant to:
+body-field projection.
+
+But text does not specify:
+shadow as causal radiation.
+
+Avoid plasma/electromagnetic claims.
+
+---
+
+# ACTS 6
+## one central community problem → seven service nodes appointed
+
+Distribution problem emerges between:
+- Hellenists;
+- Hebrews;
+- widows/resource service.
+
+Community selects:
+**seven** persons,
+including:
+- Stephen;
+- Philip.
+
+### M74-21 — NETWORK LOAD IS RESOLVED BY FUNCTIONAL DISTRIBUTION
+
+One leadership core:
+does not perform every task.
+
+New service nodes:
+take distributed responsibility.
+
+This is administrative,
+not cosmological.
+
+Do not force seven into Vardath number architecture.
+
+---
+
+# ACTS 6–7
+## Stephen's face / speech / tent-pattern / opened heaven
+
+Stephen:
+- speaks under Spirit/wisdom;
+- recounts Israel's history;
+- retells Moses/bush/wilderness/Red Sea;
+- recalls the tent of testimony made according to a revealed pattern;
+- distinguishes divine presence from human-built house.
+
+At the climax:
+- Stephen is filled with Spirit;
+- gazes into heaven;
+- sees divine glory;
+- sees Jesus standing at God's right hand;
+- says **heavens opened**;
+- is then killed;
+- commends his spirit to Jesus.
+
+### M74-22 — "HEAVENS OPENED" FUNCTIONS AS OBSERVER ACCESS
+
+What changes securely:
+**Stephen's access/vision**.
+
+The text does not say:
+- the crowd physically enters heaven;
+- material passes through an atmospheric aperture;
+- the sky structure physically tears.
+
+So classification:
+**perceptual/vision boundary opening**.
+
+### M74-23 — OPENED-HEAVEN OBSERVER ACCESS AND PHYSICAL GATE TRANSFER MUST REMAIN DIFFERENT CATEGORIES
+
+This distinction is now essential.
+
+### M74-24 — HEAVENLY PATTERN → EARTHLY TENT IS AGAIN ARCHETYPE/COPY GRAMMAR
+
+Stephen recalls:
+wilderness tent made according to shown pattern.
+
+Cross-link 2 Meqabyan:
+upper tent/archetype ↔ earthly sanctuary.
+
+This is correspondence,
+not proof of one apparatus spanning levels.
+
+### M74-25 — STEPHEN'S DEATH AGAIN SEPARATES BODY EVENT FROM SPIRIT DESTINATION
+
+He asks Jesus to:
+receive his spirit.
+
+Source:
+martyrdom theology.
+
+---
+
+# ACTS 8
+## persecution → population scattering → message spreads
+
+After Stephen's death:
+- severe persecution;
+- believers scatter through Judea/Samaria;
+- scattered persons preach wherever they go.
+
+### M74-26 — DESTRUCTIVE PRESSURE PRODUCES DISTRIBUTED NETWORK EXPANSION
+
+This is a strong systems pattern:
+
+**central concentration**
+→ **external pressure**
+→ **population dispersal**
+→ **information spreads farther**.
+
+So:
+dispersion can increase network reach.
+
+---
+
+# ACTS 8
+## Samaria: word received → Peter/John arrive → hands laid → Spirit received
+
+Acts narrates:
+- Samaritans accept word;
+- baptism occurs;
+- Peter/John arrive;
+- pray;
+- lay hands;
+- Spirit received.
+
+Simon sees an observable effect and attempts to purchase the ability.
+
+### M74-27 — INFORMATION, WATER-BAPTISM, HAND-CONTACT AND SPIRIT-STATE ARE SEPARATE VARIABLES
+
+Acts does not collapse them.
+
+This matters for Vardath:
+- symbol/action;
+- carrier state;
+- operator contact;
+- information/agency
+
+can be distinct layers.
+
+---
+
+# ACTS 8:26–40
+# MAJOR PHILIP / ETHIOPIAN EUNUCH ROUTE + WATER + TRANSPORT SEQUENCE
+
+Sequence:
+
+- angel directs Philip to wilderness road;
+- Ethiopian court official travels by chariot;
+- reads Isaiah;
+- Spirit directs Philip to join chariot;
+- Philip becomes interpreter/guide;
+- road reaches water;
+- both descend into water;
+- baptism;
+- both come up from water;
+- Spirit of Lord **snatches Philip away**;
+- eunuch sees Philip no more;
+- Philip is found at Azotus;
+- eunuch continues route.
+
+### M74-28 — GUIDE, TRAVELLER, VEHICLE, ROAD, WATER AND TRANSPORT EVENT ARE ALL DISTINCT VARIABLES
+
+This is extremely useful.
+
+- guide = Philip;
+- traveller = eunuch;
+- vehicle = chariot;
+- route = road;
+- threshold medium = water;
+- post-threshold transport = Spirit action.
+
+### M74-29 — WATER CROSSING AND PHILIP'S DISAPPEARANCE OCCUR ADJACENTLY BUT SHOULD NOT BE CAUSALLY FUSED
+
+The text says:
+after they come up from water,
+Spirit snatches Philip.
+
+It does not say:
+water itself is the portal.
+
+### M74-30 — PHILIP'S TRANSPORT IS A TRUE DISCONTINUOUS-LOCATION NARRATIVE, BUT MECHANISM IS UNSPECIFIED
+
+Before:
+with eunuch on Gaza road.
+
+After:
+found at Azotus.
+
+Secure:
+location discontinuity in narrative.
+
+Not secure:
+- flight path;
+- wormhole;
+- time door;
+- plasma carrier.
+
+### M74-31 — THE EUNUCH DOES NOT DISAPPEAR
+
+Important carrier distinction.
+
+Same event:
+Philip removed;
+eunuch remains and continues.
+
+### Historical/geographic control
+
+"Candace/Kandake" refers to a royal title associated with the kingdom south of Egypt, commonly related to Kush/Meroe.
+
+The narrative's "Ethiopian" figure should not be naively equated with the later Ethiopian Orthodox canon merely because the English word Ethiopia appears.
+
+---
+
+# ACTS 9
+# SAUL — SAME PERSON / RADICAL ROLE-STATE INVERSION
+## persecutor route → heaven-light → fall → voice → blindness → three-day interval → paired vision with Ananias → hand contact → scale-like material falls → sight restored → baptism → former persecutor becomes preacher
+
+Saul:
+- travels toward Damascus;
+- light from heaven flashes around;
+- falls;
+- hears voice;
+- voice identifies as Jesus.
+
+Companions:
+- hear voice;
+- see no one.
+
+Saul:
+- rises;
+- eyes open;
+- cannot see;
+- led by hand;
+- remains blind three days;
+- neither eats nor drinks.
+
+### M74-32 — LIGHT, VOICE AND VISUAL ACCESS ARE SEPARATE CHANNELS
+
+Saul:
+- receives light;
+- voice;
+- blindness.
+
+Companions:
+- receive at least auditory component;
+- lack visible speaker.
+
+Observer access differs by person.
+
+### M74-33 — "EYES OPEN BUT SEES NOTHING" IS AN EXPLICIT PERCEPTION-STATE REVERSAL
+
+Physical eye-open state
+≠
+visual access state.
+
+Important for observer/gate theory.
+
+---
+
+# Acts 9 — Ananias/Saul paired vision
+
+Ananias receives:
+- direct vision instructing route.
+
+Saul simultaneously sees in vision:
+- Ananias coming;
+- hands laid;
+- sight restored.
+
+### M74-34 — TWO HUMAN NODES RECEIVE COMPLEMENTARY INFORMATION ABOUT THE SAME FUTURE CONTACT EVENT
+
+This is a strong synchronized-pair structure:
+
+**Saul vision**
+↔
+**Ananias vision**
+→
+**meeting occurs**.
+
+Information converges before bodies do.
+
+---
+
+# Acts 9:17–19
+## hand contact → Spirit filling → "something like scales" falls → vision returns
+
+Ananias:
+- lays hands on Saul.
+
+Then:
+- Saul is filled with Spirit;
+- something **like scales** falls from eyes;
+- sight restored;
+- baptism;
+- food;
+- strength.
+
+### M74-35 — "SCALES" ARE A SIMILE/RESEMBLANCE, NOT EVIDENCE SAUL LITERALLY DEVELOPED REPTILIAN EYE SCALES
+
+Very important for serpent research.
+
+Shape resemblance:
+does not imply
+serpent morphology/identity.
+
+### M74-36 — SAME SAUL CONTINUES THROUGH THE TRANSFORMATION
+
+The narrative deliberately preserves identity:
+
+before:
+persecutor.
+
+after:
+preacher.
+
+Others ask:
+"Is not this the man...?"
+
+Therefore:
+**same person**
++
+**changed allegiance/function**.
+
+### M74-37 — ACTS 9 DOES NOT YET RENAME SAUL "PAUL"
+
+This must be kept precise.
+
+Acts continues using:
+**Saul**
+after this event.
+
+The double name appears later:
+"Saul, who was also called Paul" in Acts 13.
+
+So:
+do not make Saul→Paul a magical renaming event at conversion.
+
+---
+
+# Acts 9:23–25
+## guarded city gates bypassed by wall-opening + basket
+
+Enemies:
+- watch city gates day/night.
+
+Saul:
+- does not use gate;
+- disciples lower him in basket through opening in wall.
+
+### M74-38 — SAME BOUNDARY CAN HAVE MULTIPLE ROUTES
+
+Main gate:
+blocked/monitored.
+
+Alternate wall aperture:
+used.
+
+Carrier:
+basket.
+
+This is an excellent gate-system control:
+**gate closure does not imply total boundary closure**.
+
+---
+
+# Acts 9:36–42
+## Tabitha: body remains upstairs → Peter clears room/prays → same body responds → hand-raise → alive presentation
+
+Tabitha/Dorcas:
+- becomes ill;
+- dies;
+- body washed;
+- placed upstairs.
+
+Peter:
+- sends others out;
+- kneels/prays;
+- speaks to body;
+- body opens eyes;
+- sits;
+- Peter gives hand;
+- raises her;
+- presents same person alive.
+
+### M74-39 — TABITHA IS A STRONG SAME-BODY DEATH→LIFE CONTINUITY TEXT
+
+No replacement body.
+
+Same corpse:
+→ living person.
+
+This reinforces 1–3 Meqabyan resurrection identity controls.
+
+---
+
+# ACTS 10
+# MAJOR PAIRED-VISION / HEAVENLY DOWN-UP CARRIER SEQUENCE
+
+Cornelius:
+- receives clear angelic vision;
+- told to send for Peter.
+
+Messengers travel.
+
+Meanwhile Peter:
+- on roof;
+- enters trance;
+- **heaven opened**;
+- something like large sheet/container descends;
+- lowered by **four corners**;
+- contains multiple animal types;
+- voice commands;
+- Peter resists classification change;
+- instruction repeated;
+- whole event occurs **three times**;
+- object pulled/taken back up into heaven.
+
+### M74-40 — CORNELIUS/PETER ARE A TRUE COMPLEMENTARY VISION PAIR
+
+Cornelius receives:
+**send for Peter**.
+
+Peter receives:
+**classification/boundary change**.
+
+Messenger group:
+physically connects them.
+
+This is:
+**remote information synchronization**
+→ **human travel**
+→ **meeting**.
+
+### M74-41 — THE SHEET IS A COMPLETE VISIONARY DOWN→PRESENT→UP CYCLE
+
+Secure topology:
+
+**opened heaven**
+↓
+**four-corner object/container lowered**
+↓
+**content displayed**
+↓
+**message**
+↑
+**object taken back up**.
+
+This is one of the cleanest reversible vertical motion sequences in Acts.
+
+### M74-42 — THE OBJECT IS "LIKE A LARGE SHEET"; IT IS NOT THE SKY ITSELF
+
+Do not transform the visionary object into:
+- literal firmament;
+- fingertrap membrane;
+- vehicle
+
+without evidence.
+
+### M74-43 — FOUR CORNERS DEFINE A BROAD CONTAINER/PLATFORM FORM, NOT A THROAT
+
+Potential geometry:
+broad suspended surface.
+
+Missing:
+- contraction;
+- tube;
+- axial narrowing.
+
+### M74-44 — THREE REPETITIONS EMPHASIZE INSTRUCTION, NOT NECESSARILY THREE PHYSICAL GATE CYCLES
+
+Acts 11 later retells the vision.
+
+The narrative itself interprets its function:
+social/religious classification.
+
+---
+
+# Acts 10 interpretation
+## "do not call anyone profane/unclean"
+
+Peter explicitly says the vision taught:
+not to call a person profane/unclean.
+
+### M74-45 — THE TEXT GIVES ITS OWN SYMBOLIC INTERPRETATION
+
+Therefore:
+animals/sheet
+→
+classification/social-boundary lesson.
+
+This should take priority over speculative physical readings.
+
+### M74-46 — BOUNDARY CHANGE OCCURS SEMANTICALLY/SOCIALLY
+
+Previously:
+outsider association restricted.
+
+After:
+Peter enters Cornelius's house.
+
+Thus:
+**classification changes**
+→
+**social boundary becomes traversable**.
+
+This resembles Ezekiel's semantic access layer.
+
+---
+
+# Acts 10:44–48
+## Spirit falls / gift poured out → speech → water baptism follows
+
+While Peter speaks:
+- Spirit falls on listeners;
+- gift described as poured out;
+- languages/praise heard;
+- then water baptism is permitted.
+
+### M74-47 — SPIRIT-STATE PRECEDES WATER RITE HERE
+
+This differs from:
+a simplistic fixed physical sequence.
+
+So:
+Acts itself demonstrates variable ordering.
+
+### M74-48 — "FALL" AND "POUR" ARE TWO SPATIAL/FLUID METAPHORS FOR ONE AGENCY EVENT
+
+Again:
+source uses material-motion vocabulary
+for
+information/agency transformation.
+
+---
+
+# ACTS 11
+## Peter retells vision "step by step" and supplies interpretive control
+
+Peter reports:
+- object came down;
+- three repetitions;
+- everything pulled back to heaven;
+- Spirit told him not to distinguish;
+- Cornelius had angel message;
+- Spirit fell as at beginning.
+
+### M74-49 — ACTS 11 IS AN INTERNAL VALIDATION PASS
+
+This is methodologically important.
+
+The narrative:
+**replays event**
+and
+**states interpretation**.
+
+For Vardath research:
+later internal explanation should constrain earlier image speculation.
+
+### M74-50 — "NO DISTINCTION" IS THE CORE BOUNDARY RESULT
+
+The transformation is:
+social/access classification.
+
+---
+
+# Acts 11:19–30
+## persecution scattering → Antioch network → Barnabas finds Saul → famine signal → distributed relief
+
+Believers scattered after Stephen:
+- travel farther;
+- message reaches Antioch.
+
+Barnabas:
+- goes to Tarsus;
+- finds Saul;
+- brings him to Antioch.
+
+Agabus:
+- predicts famine.
+
+Community:
+- organizes relief;
+- distributes aid toward Judea.
+
+### M74-51 — PRESSURE-DRIVEN DISPERSION PRODUCES NEW NETWORK HUBS
+
+Jerusalem:
+initial hub.
+
+Antioch:
+new hub.
+
+This is a real:
+**central network → scattering → secondary center formation**.
+
+### M74-52 — INFORMATION ABOUT FUTURE SCARCITY PRODUCES PRE-EMPTIVE MATERIAL REDISTRIBUTION
+
+Signal:
+famine prediction.
+
+Response:
+aid collection/transfer.
+
+This is an information→resource-flow mechanism.
+
+---
+
+# ACTS 12
+# MAJOR PHYSICAL GATE / ENCLOSURE ESCAPE
+## Peter between two soldiers + two chains + guarded door → angel/light → chains fall → first guard → second guard → iron city gate opens by itself → crossing → street → angel disappears
+
+Peter:
+- imprisoned;
+- bound with **two chains**;
+- sleeps between **two soldiers**;
+- guards at door.
+
+Angel:
+- appears;
+- light shines in cell;
+- wakes Peter;
+- orders rapid rising.
+
+Chains:
+- fall from wrists.
+
+Peter:
+- dresses;
+- follows.
+
+They pass:
+1. first guard layer;
+2. second guard layer;
+3. iron gate leading toward city.
+
+Gate:
+- opens **of its own accord**.
+
+They:
+- go through;
+- proceed along street.
+
+Angel:
+- suddenly leaves.
+
+### M74-53 — ACTS 12 IS THE CLEANEST MULTI-LAYER PHYSICAL BOUNDARY-CROSSING SEQUENCE IN ACTS 1–12
+
+Variables:
+
+**carrier** = Peter;
+**guide/operator** = angel;
+**internal restraints** = two chains;
+**human containment nodes** = two soldiers + guard stations;
+**enclosure** = prison/cell;
+**outer aperture** = iron gate;
+**gate state change** = self-opening;
+**destination** = city street;
+**guide termination** = angel departs after crossing.
+
+This is excellent gate taxonomy.
+
+### M74-54 — BOUNDARY REMOVAL HAPPENS IN STAGES, NOT ALL AT ONCE
+
+1. body restraint releases;
+2. internal human guard layers passed;
+3. outer iron gate changes state;
+4. carrier passes;
+5. guide leaves.
+
+This is highly relevant to Vardath's:
+multi-layer gate model.
+
+### M74-55 — THE IRON GATE IS A TRUE SELF-OPENING APERTURE IN THE NARRATIVE
+
+Unlike:
+- metaphoric gate;
+- vision-only opening;
+- human-opened door.
+
+Acts explicitly says:
+it opens by itself/automatically.
+
+### M74-56 — PETER INITIALLY MISCLASSIFIES THE EVENT AS VISION, THEN RECLASSIFIES IT AS REAL
+
+This is a major observer-state control.
+
+During:
+thinks vision.
+
+After:
+"comes to himself";
+concludes actual rescue occurred.
+
+Therefore:
+observer interpretation
+can lag behind event.
+
+### M74-57 — LIGHT APPEARS INSIDE ENCLOSURE BEFORE RESTRAINT RELEASE
+
+Sequence:
+**light**
+→ **wake**
+→ **chains fall**
+→ **movement**.
+
+Do not infer light itself physically broke chains.
+
+Narrative attributes action to angelic deliverance.
+
+---
+
+# Acts 12:12–16
+## supernatural iron gate opens; ordinary house gate remains closed because human operator fails to open it
+
+Peter reaches Mary's house.
+
+He knocks at:
+**outer gate**.
+
+Rhoda:
+- recognizes voice;
+- becomes overjoyed;
+- runs inward;
+- forgets to open gate.
+
+Peter:
+remains outside knocking.
+
+### M74-58 — ACTS DELIBERATELY JUXTAPOSES TWO VERY DIFFERENT GATE FAILURES/STATES
+
+Prison iron gate:
+**opens automatically**.
+
+House outer gate:
+**stays shut because human gatekeeper does not open it**.
+
+This is an excellent control.
+
+Gate behavior depends on:
+- operator;
+- context;
+- authorization;
+- human action.
+
+### M74-59 — RECOGNITION CAN OCCUR THROUGH VOICE BEFORE VISUAL ACCESS
+
+Rhoda:
+recognizes Peter's voice
+while gate remains closed.
+
+Cross-link resurrection:
+identity recognition can use nonvisual channel.
+
+---
+
+# Acts 12:20–23
+## Herod/Agrippa public acclamation → angel strike → bodily collapse/death
+
+Acts narrates:
+- Herod receives divine acclamation;
+- fails to give glory;
+- angel strikes;
+- worms;
+- death.
+
+Josephus also reports Agrippa I's fatal illness after a public appearance/acclamation,
+but details and theological framing differ.
+
+### M74-60 — HISTORICAL PARALLEL DOES NOT MAKE EVERY NARRATIVE DETAIL IDENTICAL ACROSS SOURCES
+
+This is a useful historiographic control.
+
+Acts:
+theological judgment narrative.
+
+Josephus:
+different descriptive framing.
+
+Use overlap cautiously.
+
+---
+
+# Acts 12:24
+## "word grew and multiplied"
+
+After political violence and imprisonment:
+the word:
+- grows;
+- multiplies.
+
+### M74-61 — INFORMATION IS PROJECTED AS BIOLOGICAL GROWTH
+
+Again:
+word/message
+→ organism/seed-like proliferation.
+
+This matches:
+seed/tree information metaphors elsewhere.
+
+---
+
+# PAIR / ROLE ANALYSIS — ACTS 1–12
+
+## Peter / John
+
+Often operate as a pair:
+- temple;
+- healing;
+- council;
+- Samaria.
+
+Best classification:
+**paired mission/leadership agents**.
+
+Not same identity.
+
+## Ananias / Sapphira
+
+Mirrored negative pair:
+- shared plan;
+- staggered entry;
+- same exposure/death outcome.
+
+Best classification:
+**paired mirrored process with time offset**.
+
+## Philip / Ethiopian eunuch
+
+- guide/interpreter;
+- traveller/receiver.
+
+They share:
+road + chariot + water.
+
+After baptism:
+roles separate again.
+
+## Saul / Ananias
+
+Complementary-vision pair:
+information arrives remotely to each
+before physical meeting.
+
+## Cornelius / Peter
+
+Strongest paired-information system in this block:
+two visions
+→ messengers
+→ meeting
+→ interpretation
+→ boundary reclassification.
+
+## Saul / Paul
+
+### M74-62 — DO NOT YET TREAT "SAUL / PAUL" AS A TWO-NAME TRANSFORMATION IN ACTS 9
+
+Acts 1–12:
+the figure remains **Saul**.
+
+Acts 13 later says:
+"Saul, who was also called Paul."
+
+Therefore:
+conversion/calling
+≠
+instant renaming.
+
+But same-identity role transformation is already exceptionally strong.
+
+## two men in white at ascension
+
+Interpreters/witnesses.
+
+No wing morphology.
+
+---
+
+# INFORMATION / FIELD TRANSFORMATION MAP
+
+Acts 1–12 repeatedly gives:
+
+## one→many
+- Pentecost Spirit → many speakers/languages;
+- Jerusalem message → Judea/Samaria/regions;
+- word → growing population.
+
+## many→one
+- multinational crowd gathers at sound;
+- community gathers in prayer;
+- Cornelius gathers household/friends;
+- Antioch becomes secondary hub.
+
+## one→many again
+- persecution scatters believers;
+- scattered believers spread message;
+- Antioch sends aid outward/inward regionally.
+
+### M74-63 — ACTS 1–12 HAS A VERY STRONG DISTRIBUTED NETWORK RHYTHM
+
+**central gathering**
+→ **activation**
+→ **distributed outputs**
+→ **new hubs**
+→ **further distribution**.
+
+This is formally close to:
+Vardath broad/network phase logic,
+but is primarily social/information geography.
+
+---
+
+# BOUNDARY TAXONOMY — ACTS 1–12
+
+## visual/observer boundary
+- ascension cloud removes Jesus from sight;
+- Stephen sees opened heavens;
+- Saul hears unseen speaker;
+- Peter trance sees opened heaven.
+
+## social/classification boundary
+- Jew/Gentile;
+- clean/unclean;
+- Acts 10–11 reclassification.
+
+## bodily-capacity boundary
+- lame man cannot traverse temple access until bodily state changes.
+
+## prison boundary
+- Acts 5 angel opens doors;
+- Acts 12 chains/guards/gate crossed.
+
+## wall boundary
+- Saul bypasses monitored gates using wall opening/basket.
+
+## water threshold
+- baptism;
+- Philip/eunuch descend and emerge;
+- not itself described as transport gate.
+
+### M74-64 — "GATE" IS NOT ONE PHENOMENON IN ACTS
+
+This is a major methodological result.
+
+We must distinguish:
+1. perceptual opening;
+2. semantic/social opening;
+3. bodily access change;
+4. literal door/gate opening;
+5. alternative aperture;
+6. water rite.
+
+---
+
+# CHERUB / QUETZALCOATL / FEATHERED-SERPENT / WING ANALYSIS
+
+Acts 1–12 adds almost no direct wing morphology.
+
+Angels:
+- appear;
+- speak;
+- guide;
+- open doors;
+
+but are not described as winged in these chapters.
+
+Pentecost:
+- fire-like tongues,
+not feathers/wings.
+
+Peter's sheet:
+- four corners,
+not wings.
+
+### M74-65 — DO NOT IMPORT WINGS INTO ACTS ANGELS
+
+This is a useful negative control.
+
+The phenomenon-family comparison should not assume:
+angel = winged body
+unless text/iconography supplies it.
+
+### M74-66 — THE MORE RELEVANT ACTS CONTRIBUTION IS FUNCTIONAL:
+- messenger;
+- guide;
+- boundary operator;
+- light-associated agent;
+- transport/directive agent.
+
+That functional profile can later be compared with:
+cherub carrier/support functions,
+without inventing feather morphology.
+
+---
+
+# SQUATTER-MAN / ENVIRONMENT-BODY RELEVANCE
+
+Acts contributes only indirectly.
+
+Strongest:
+- Pentecost shared environmental sound/fire-like manifestations distributed over human nodes;
+- Stephen/opened heaven observer relation;
+- Saul surrounded by heaven-light;
+- Peter sheet broad suspended form.
+
+No direct:
+environmental field → giant anthropomorphic body
+like 4 Ezra 13.
+
+### M74-67 — ACTS 1–12 ADVANCES FIELD→PERSON STATE TRANSFER MORE THAN FIELD→PERSON SHAPE PROJECTION
+
+Important distinction.
+
+---
+
+# Strict fingertrap test — Acts 1–12
+
+Criteria:
+1. broad/open distributed support structure;
+2. continuity of same structure;
+3. angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening/broad return.
+
+## Pentecost
+
+Broad house-filling phenomenon:
+strong.
+
+Distributed tongues:
+strong.
+
+Same structure contraction:
+absent.
+
+Throat:
+absent.
+
+Transfer:
+information/agency,
+not through narrow connector.
+
+**Strict negative.**
+
+## Peter's sheet — Acts 10
+
+Broad suspended four-corner object:
+strong.
+
+Down/up reversible motion:
+strong.
+
+Contraction:
+absent.
+
+Throat:
+absent.
+
+Human transfer:
+absent.
+
+**Strict negative; strong vertical carrier/vision analogue.**
+
+## Prison gates — Acts 5 / 12
+
+Literal aperture:
+very strong.
+
+Transfer:
+very strong.
+
+Automatic opening:
+Acts 12 strong.
+
+Broad support→throat:
+absent.
+
+**Strict negative; strongest physical boundary-operation analogues.**
+
+### Overall verdict
+
+**No strict fingertrap in Acts 1–12.**
+
+Acts contributes:
+- temporary boundary-state reversal;
+- layered gate traversal;
+- paired information synchronization;
+- variable observer access;
+- social classification boundary change;
+- distributed information-network activation;
+- discontinuous transport narrative.
+
+It does **not** supply:
+broad woven support
+→ contraction
+→ narrow throat
+→ reopening.
+
+---
+
+# Full Acts 1–12 process timeline
+
+resurrected Jesus teaches
+→ ascension / cloud occlusion
+→ return timing withheld
+→ Jerusalem group waits
+→ vacant role filled
+→ community concentrates at Pentecost
+→ house-filling wind-like sound
+→ divided fire-like tongues
+→ individual manifestations
+→ multilingual output
+→ multinational audience gathers
+→ population expands
+→ resources redistributed
+→ lame man remains at gate
+→ right-hand raising changes bodily access
+→ same man enters temple
+→ leaders imprisoned/released
+→ gathered place shakes after prayer
+→ Spirit filling / speech amplification
+→ paired Ananias/Sapphira mirrored failure
+→ apostles imprisoned
+→ angel opens doors
+→ prisoners cross
+→ prison later appears securely closed
+→ new service nodes/seven appointed
+→ Stephen witness
+→ opened-heaven observer access
+→ Stephen killed
+→ persecution scatters population
+→ information spreads with scattering
+→ Philip sent to wilderness road
+→ Ethiopian traveller/chariot/Isaiah
+→ interpreter joins vehicle
+→ water threshold/baptism
+→ Philip snatched away
+→ found at Azotus
+→ Saul approaches Damascus
+→ heaven-light / voice
+→ blindness
+→ three-day pause
+→ Saul/Ananias paired visions
+→ contact / sight restored
+→ same Saul becomes preacher
+→ monitored gates bypassed via wall aperture/basket
+→ Tabitha's same body returns to life
+→ Cornelius vision
+→ messenger route
+→ Peter trance
+→ heaven opens
+→ four-corner sheet descends
+→ contents displayed
+→ classification instruction repeated three times
+→ sheet returns upward
+→ messengers arrive at gate
+→ Peter travels
+→ social boundary crossed
+→ Spirit falls/pours on Gentiles
+→ water baptism follows
+→ Peter retells and interprets vision
+→ persecution-generated Antioch hub
+→ Saul brought to Antioch
+→ famine information produces material relief network
+→ Herod kills James
+→ Peter imprisoned with chains/soldiers/guards
+→ angel/light enters cell
+→ chains fall
+→ first/second guard layers passed
+→ iron gate self-opens
+→ Peter crosses to street
+→ angel departs
+→ Peter recognizes event as real
+→ ordinary house gate remains shut despite Peter's presence
+→ Peter identified by voice
+→ Herod dies after acclamation/judgment scene
+→ word grows/multiplies.
+
+---
+
+# Number / timing register
+
+Record without forcing:
+
+## Acts 1
+- 40 days of resurrection appearances;
+- about 120 gathered;
+- two candidates;
+- eleven + Matthias restores twelve.
+
+## Acts 2
+- Pentecost / fiftieth-day festival tradition;
+- about 3,000 added.
+
+## Acts 4
+- believers count about 5,000 men in narrative counting;
+- healed man over 40 years old.
+
+## Acts 5
+- Ananias/Sapphira event separated by about 3 hours.
+
+## Acts 6
+- seven appointed service leaders.
+
+## Acts 8
+- no forced transport distance calculation.
+
+## Acts 9
+- Saul blind 3 days;
+- Aeneas bedridden 8 years;
+- two messengers sent for Peter at Tabitha episode.
+
+## Acts 10
+- sheet cycle repeated 3 times;
+- lowered by four corners;
+- Cornelius prayer at ninth hour / Peter around noon.
+
+## Acts 12
+- two chains;
+- two soldiers immediately flanking Peter;
+- first and second guard stations;
+- four squads assigned overall.
+
+### M74-68 — NUMBERS IN ACTS ARE NARRATIVE / ADMINISTRATIVE / LITURGICAL BEFORE THEY ARE COSMOLOGICAL
+
+No 1-3-7 / 8 / 11 system should be forced here.
+
+---
+
+# Textual / historical controls — Acts 1–12
+
+1. Acts is the second volume of Luke–Acts and narratively organizes expansion from Jerusalem outward.
+2. Its historical value is debated; narrative theology and historiography must be kept together.
+3. Acts 1 explicitly withholds exact restoration times/periods.
+4. Acts 2 says a sound **like** violent wind and tongues **as of** fire; simile language matters.
+5. Pentecost's principal effects are Spirit filling, speech and multilingual understanding.
+6. "Pouring out" Spirit is fluid grammar for agency/information transformation, not proof of literal liquid.
+7. The Beautiful Gate healing changes traveller capability, not gate geometry.
+8. Acts 4 place-shaking is a local narrative sign and does not describe tectonic landscape reset.
+9. Acts 5 prison escape explicitly results in prisoners outside while the later inspected prison is securely locked with guards present; the text does not narrate the door-reclosing mechanism.
+10. Stephen's opened heavens are vision/observer access in context.
+11. Stephen's tabernacle discussion explicitly distinguishes heavenly/divine presence from human-built houses.
+12. Persecution scattering in Acts 8 is a narrative mechanism for mission expansion.
+13. The Ethiopian eunuch narrative uses a Greco-Roman geographic label/title context; it should not be automatically equated with later Ethiopian Orthodox textual tradition.
+14. Philip's removal by Spirit is narrated as supernatural transport but gives no physical mechanism.
+15. Saul's Damascus event is commonly discussed as both conversion and calling; Acts preserves same personal identity across role reversal.
+16. Saul is not renamed Paul in Acts 9; Acts 13 explicitly introduces the double name later.
+17. "Something like scales" is simile language and should not be used as reptilian morphology evidence.
+18. Saul escapes through an alternate wall aperture in a basket because main gates are watched.
+19. Tabitha resurrection is same-body continuity in the narrative.
+20. Acts 10's sheet vision is explicitly interpreted by Peter in social/person classification terms.
+21. The sheet descends/ascends in vision; it is not identified as physical sky membrane.
+22. Spirit falls/pours on Cornelius's household before water baptism, showing variable ritual/agency sequence.
+23. Acts 11 deliberately retells Acts 10 and supplies internal interpretation.
+24. Acts 12's iron gate literally opens of its own accord in the narrative.
+25. Peter's escape crosses multiple restraint/boundary layers rather than one single portal.
+26. Peter initially thinks the escape is a vision and later reclassifies it as real, making observer interpretation part of the narrative.
+27. Acts does not describe angels in chapters 1–12 as winged; do not import later iconography.
+28. Josephus also reports Agrippa I's fatal illness after public acclaim, but Acts and Josephus frame/details differ.
+
+---
+
+# Sources logged — Acts 1–12
+
+## Primary text
+- Acts 1–7 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+1-7&version=NRSVUE
+- Acts 8–12 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+8-12&version=NRSVUE
+- Acts 12 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+12&version=NRSVUE
+
+## General Acts scholarship / orientation
+- Oxford Classical Dictionary, "Acts of the Apostles":
+  https://academic.oup.com/edited-volume/61673/chapter-abstract/548060954
+- Oxford Handbook of Biblical Narrative, "The Acts of the Apostles, Narrative, and History":
+  https://academic.oup.com/edited-volume/34438/chapter-abstract/292234676
+- USCCB introduction to Acts:
+  https://bible.usccb.org/bible/acts/0
+
+## Pentecost
+- Working Preacher, Acts 2:1–21:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/day-of-pentecost-2/commentary-on-acts-21-21-17
+- Working Preacher, Acts 2:1–21:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/day-of-pentecost/commentary-on-acts-21-21-8
+
+## Stephen
+- Working Preacher, Acts 7:55–60:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/fifth-sunday-of-easter/commentary-on-acts-755-60-3
+
+## Philip / Ethiopian eunuch
+- Working Preacher, Acts 8:26–39:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/ethiopian-eunuch-baptized/commentary-on-acts-826-39-4
+- Working Preacher, Acts 8:26–40:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/fifth-sunday-of-easter-2/commentary-on-acts-826-40-5
+
+## Saul
+- Working Preacher, Acts 9:1–19a:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/pauls-conversion/commentary-on-acts-91-19a-3
+
+## Peter / Cornelius
+- Working Preacher, Acts 10:1–17, 34–35:
+  https://www.workingpreacher.org/commentaries/narrative-lectionary/peters-vision/commentary-on-acts-101-17-34-35
+- Working Preacher, Acts 10:34–43:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/resurrection-of-our-lord/commentary-on-acts-1034-43-12
+- Working Preacher, Acts 10:44–48:
+  https://www.workingpreacher.org/commentaries/revised-common-lectionary/sixth-sunday-of-easter-2/commentary-on-acts-1044-48-5
+
+## Peter prison / Herod
+- Bible Gateway Acts 12:
+  https://www.biblegateway.com/passage/?search=Acts+12&version=NRSVUE
+- Josephus, *Antiquities* 19 on Agrippa's death:
+  https://www.ccel.org/ccel/josephus/complete.ii.xx.viii.html
+
+---
+
+# SECTION 74 — ACTS 1–12 COMPLETE
+
+## Strongest new findings
+
+1. **Acts 1–12 is fundamentally a central→distributed network story: Jerusalem activation expands through Judea/Samaria and produces new hubs rather than merely moving one leader around.**
+2. **Pentecost gives a shared enclosure-scale event that becomes distributed person-scale manifestations: a house-filling sound like violent wind, divided tongues as of fire, individual resting manifestations, Spirit filling and many language outputs.**
+3. **The text's "like wind" / "as of fire" grammar must remain explicit; ordinary wind and combustion are not required by the wording.**
+4. **Pentecost is especially strong as an information/current analogue: one shared event produces many compatible language channels while preserving diversity rather than collapsing everyone to one language.**
+5. **The Beautiful Gate episode proves that access can change because the traveller changes state even when the gate itself does not change.**
+6. **Acts 4 gives a signal→place-shaking→Spirit-filling→speech-output sequence, coupling community information state and local enclosure response without describing broad terrain deformation.**
+7. **Ananias/Sapphira form a genuine mirrored human pair with about a three-hour offset, useful for paired-event chronology but not one split identity.**
+8. **Acts 5 is a strong temporary-boundary example: apostles are enclosed, an angel opens prison doors and removes them, yet later the prison is found securely locked with guards still stationed—transfer occurred without destroying the enclosure.**
+9. **Stephen's "heavens opened" should be classified as observer/vision access; the text does not narrate physical human transfer through a sky aperture.**
+10. **Persecution after Stephen creates a distributed network effect: the central population scatters and the message spreads farther, showing that destructive pressure can generate network expansion.**
+11. **Philip and the Ethiopian eunuch cleanly separate guide, traveller, vehicle, road, water threshold and post-baptism transport; Philip is snatched away while the eunuch remains.**
+12. **Philip's sudden relocation to Azotus is a genuine discontinuous-location narrative, but Acts supplies no transport physics.**
+13. **Saul's Damascus event gives same-identity radical role inversion without an immediate name change: persecutor→blinded receiver→restored sight→preacher, still called Saul.**
+14. **Saul/Ananias provide a strong complementary-vision pair in which remote information arrives to both participants before their physical meeting.**
+15. **"Something like scales" falling from Saul's eyes is explicitly resemblance language and must not be used as serpent/reptilian morphology evidence.**
+16. **Saul's basket escape shows that when a principal gate is monitored, an alternate aperture through the same boundary may permit passage—gate closure and total boundary closure are different conditions.**
+17. **Tabitha provides strong same-body death→life identity continuity: the corpse placed upstairs is the same person shown alive after Peter's prayer/command.**
+18. **Cornelius/Peter is the strongest paired-information system in Acts 1–12: two remotely coordinated visions, human messengers, physical convergence and an explicit reinterpretation of social boundary rules.**
+19. **Peter's four-corner sheet is a clean visionary down→display→up cycle: heaven opens, a broad object is lowered, content/message presented three times, and the object is pulled back up.**
+20. **Acts itself interprets the sheet vision as a clean/unclean social-person boundary change, so that internal explanation must constrain attempts to treat the sheet as literal sky machinery.**
+21. **Spirit "falls" and is "poured out" on Cornelius's household before water baptism, proving that fluid/spatial Spirit language and water rite are distinct variables and can occur in variable order.**
+22. **Acts 11 acts like an internal validation pass: Peter replays the vision step by step and states the intended boundary interpretation.**
+23. **Acts 12 gives the strongest literal physical gate sequence in this block: two chains, two immediate soldiers, layered guards, light/angel appearance, restraint release, passage through two guard layers, self-opening iron gate, crossing, street emergence and guide departure.**
+24. **The Peter escape is explicitly staged—restraint, guard layers, aperture, outside route—rather than one instantaneous "portal," making it highly useful for layered gate taxonomy.**
+25. **Peter first thinks the event is a vision and only afterward recognizes it as real; observer classification can therefore lag behind an event.**
+26. **Acts then provides a deliberate-looking gate contrast: the supernatural iron prison gate opens automatically, while Mary's ordinary house gate remains shut because Rhoda recognizes Peter's voice and forgets to open it.**
+27. **Voice recognition can identify a person across a still-closed visual/physical boundary.**
+28. **Acts 1–12 gives almost no wing/feather morphology. Angels function as messenger, guide, light-associated agent and boundary operator, but the text does not describe them as winged. This is an important negative control for the cherub/Quetzalcoatl/Feathered-Serpent comparison.**
+29. **No strict fingertrap appears. Acts materially advances boundary-state reversal, layered gate traversal, observer-access theory, distributed information dynamics and paired remote synchronization, but not the missing broad-woven-support→narrow-throat transformation.**
+
+## Next live block
+
+**Section 75 — Acts 13–28**
+
+Required priorities:
+- verify Part 1 / EXTRA-RESEARCH / Part 2 before beginning;
+- Saul explicitly becomes the double-name figure **"Saul, who was also called Paul"** in Acts 13;
+- track Paul/Barnabas then Paul/Silas paired mission structures;
+- Elymas blindness;
+- mission routes as distributed network expansion;
+- Macedonian vision;
+- Lydia / jailer;
+- Acts 16 prison earthquake / doors / chains;
+- Athens altar / world geography;
+- Eutychus death/restoration;
+- prophetic binding;
+- Jerusalem arrest;
+- Paul before councils/rulers;
+- voyage/storm;
+- ship as carrier;
+- anchors;
+- sounding depth;
+- shipwreck;
+- everyone reaches land;
+- snake/viper episode;
+- Malta;
+- final arrival Rome;
+- compare Acts 16 prison release with Acts 5 and Acts 12;
+- track gates/doors/chains/earthquake as separate variables;
+- track water/sea as route medium versus hazard field versus boundary;
+- distinguish visions from physical transport;
+- do not infer "Saul→Paul" as literal body change;
+- test whether voyage/shipwreck provides any broad→narrow→broad or carrier-through-throat process;
+- apply strict fingertrap test only after full ordinary narrative reading.
+
