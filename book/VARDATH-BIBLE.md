@@ -3983,3 +3983,68 @@ Whose look is like the lightning, all-seeing,
 
 **21.** Accept me favourably, and shew me, and teach me,  
 And make known to Thy servant as thou hast promised me!
+
+
+## Apocalypse of Abraham 18
+
+**1.** And while I still recited the song, the mouth of the fire which was on the surface rose up on high.
+
+**2.** And I heard a voice like the roaring of the sea; nor did it cease on account of the rich abundance of the fire.
+
+**3.** And as the fire raised itself up, ascending into the height, I saw under the fire a throne of fire, and, round about it all-seeing ones, reciting the song, and under the throne four fiery living creatures singing.
+
+**4.** And their appearance was one, each one of them with four faces.
+
+**5.** And such was the appearance of their countenances: of a lion, of a man, of an ox, of an eagle; four heads were upon their bodies, so that the four creatures had sixteen faces.
+
+**6.** And each had six wings, from their shoulders, [and their sides] and their loins.
+
+**7.** And with the two wings from their shoulders they covered their faces, and with the two wings which sprang from their loins they covered their feet, while the two middle wings they spread out for flying straightforward.
+
+**8.** And when they had ended the singing, they looked at one another and threatened one another.
+
+**9.** And it came to pass when the angel who was with me saw that they were threatening each other, he left me and went running to them and turned the countenance of each living creature from the countenance immediately confronting him, in order that they might not see their countenances threatening each other.
+
+**10.** And he taught them the song of peace which hath its origin [in the Eternal One].
+
+**11.** And as I stood alone and looked, I saw behind the living creatures a chariot with fiery wheels, each wheel full of eyes round about.
+
+**12.** And over the wheels was a throne which I saw, and this was covered with fire, and fire encircled it round about, and lo! an indescribable fire environed a fiery host.
+
+**13.** And I heard its holy voice like the voice of a man.
+
+## Apocalypse of Abraham 19
+
+**1.** And a voice came to me out of the midst of the fire, saying: “Abraham, Abraham!”
+
+**2.** I said: “Here am I!”
+
+**3.** And He said: “Consider the expanses which are under the firmament on which thou art now placed, and see how on no single expanse is there any other but He whom thou hast sought, or who hath loved thee.”
+
+**4.** And while He was yet speaking, lo! the expanses opened, and beneath me the heavens.
+
+**5.** And I saw upon the seventh firmament upon which I stood a fire widely extended, and light, and dew, and a multitude of angels, and a power of invisible glory over the living creatures which I saw; but no other being did I see there.
+
+**6.** And I looked from the mountain in which I stood [downwards] to the sixth firmament, and saw there a multitude of angels, of pure spirit, without bodies, who carried out the commands of the fiery angels who were upon the eighth firmament, as I was standing suspended over them.
+
+**7.** And behold, upon this firmament there were no other powers of any other form, but only angels of pure spirit, like the power which I saw on the seventh firmament.
+
+**8.** And He commanded that the sixth firmament should be taken away.
+
+**9.** And I saw there, on the fifth firmament, the powers of the stars which carry out the commands laid upon them, and the elements of the earth obeyed them.
+
+## Apocalypse of Abraham 20
+
+**1.** And the Eternal Mighty One said to me: “Abraham, Abraham!”
+
+**2.** And I said: “Here am I.”
+
+**3.** [And He said:] “Consider from above the stars which are beneath thee, and number them [for me], and make known [to me] their number.”
+
+**4.** And I said: “When can I? For I am but a man [of dust and ashes].”
+
+**5.** And He said to me: “As the number of the stars and their power, so will I make thy seed a nation and a people, set apart for me in my heritage with Azazel.”
+
+**6.** And I said: “O Eternal, Mighty One! Let thy servant speak before Thee, and let not Thine anger kindle against Thy chosen one!”
+
+**7.** “Lo, before Thou leddest me up Azazel inveighed against me. How, then, while he is not now before Thee, hast Thou constituted Thyself with him?”
