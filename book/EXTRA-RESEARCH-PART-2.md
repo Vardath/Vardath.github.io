@@ -73622,3 +73622,2302 @@ Required work:
   - phase transitions that carry clocks;
 - only after that stage should an Archaix/Vardath chronology comparison begin.
 
+
+
+---
+
+# SYNTHESIS 6 — TIMING / INTERVAL NORMALIZATION BY EVENT PHASE
+## Phase-attached chronology after completion of the direct corpus and Synthesis 5
+
+### Frontier verification
+
+The file itself is authoritative.
+
+Verified complete:
+- direct corpus through Section 89;
+- Synthesis 1 — mechanism spine / strict fingertrap matrix;
+- Synthesis 2 — cherub / Feathered Serpent / dragon / Squatter-Man matrix;
+- Synthesis 3 — transformation chains;
+- Synthesis 4 — broad support → throat → opening gap search;
+- Synthesis 5 — full event-phase map.
+
+The explicit unfinished instruction at the end of Synthesis 5 was:
+
+**normalize timing/intervals by event phase before comparing them with Archaix or fitting any Vardath clock.**
+
+This synthesis therefore does **not** search for numerical matches first.
+
+It asks:
+
+> **What is each number timing?**
+
+That is the controlling question.
+
+---
+
+# MASTER TIMING RULE
+
+A number is not comparable merely because it is numerically close to another number.
+
+Every timing item must first be assigned:
+
+1. **source**
+2. **textual witness / recension**
+3. **raw unit**
+4. **event phase**
+5. **what starts the clock**
+6. **what ends the clock**
+7. **whether the text presents literal elapsed time, symbolic periodization, ritual calendar, historical chronology, or analogy**
+8. **whether the number is textually stable**
+9. **whether normalization requires an extra assumption**
+
+Only after those fields are known can two intervals be compared.
+
+### S6-RULE-1
+
+**Same number + different phase ≠ same clock.**
+
+### S6-RULE-2
+
+**Same phase + different number may still be more important than same number + unrelated phase.**
+
+### S6-RULE-3
+
+**No Archaix/Vardath comparison is allowed in this synthesis.**
+
+---
+
+# TIMING EVIDENCE CLASSES
+
+## T-A — DIRECT ELAPSED EVENT INTERVAL
+
+The source itself gives:
+- start;
+- duration;
+- end or next phase.
+
+Examples:
+- Genesis Flood rain = 40 days/nights;
+- Jonah inside fish = 3 days/nights;
+- Acts storm = 14 nights;
+- 4 Ezra fountains stop = 3 hours.
+
+These are the easiest to normalize.
+
+---
+
+# T-B — SYMBOLIC / APOCALYPTIC PERIOD
+
+The source gives a measured period,
+but the period belongs to:
+- visionary history;
+- oppression;
+- symbolic periodization;
+- eschatology.
+
+Examples:
+- Daniel time/times/half-time;
+- Daniel 2,300 evenings-mornings;
+- Daniel seventy weeks;
+- Revelation 42 months / 1,260 days.
+
+These numbers are real textual data,
+but not ordinary stopwatch readings by default.
+
+---
+
+# T-C — CALENDAR / OPERATIONAL CYCLE
+
+The interval defines:
+- year;
+- quarter;
+- Sabbath;
+- solar/lunar cycle;
+- feast;
+- ritual operation.
+
+Examples:
+- Jubilees 364-day year;
+- 2 Enoch solar/lunar cycles;
+- liturgical 40/50-day cycles.
+
+These belong primarily to:
+**PHASE 1 — stable operation**
+or ritual memory,
+not catastrophe duration.
+
+---
+
+# T-D — LONG HISTORICAL / CHRONOGRAPHIC PERIOD
+
+Examples:
+- 400 years;
+- 430 years;
+- 70 years exile/restoration;
+- 490-year Danielic interpretation;
+- long regnal/jubilee schemes.
+
+These describe:
+- eras;
+- oppression;
+- historical framing;
+- theological chronology.
+
+Do not mistake them for the duration of a physical opening.
+
+---
+
+# T-E — EXPLICIT SCALE-CONVERSION / ANALOGICAL TIME
+
+Examples:
+- Numbers:
+  **40 days reconnaissance → 40 years wandering**.
+- Daniel:
+  Jeremiah's **70 years → 70 weeks/sevens**.
+- 2 Peter:
+  **one day ~ thousand years** in divine-patience analogy.
+- Jubilees:
+  heavenly-day / thousand-year analogy.
+
+These are especially important because they prove:
+
+> **ancient texts can intentionally rescale time without describing physical time dilation.**
+
+---
+
+# T-F — VERSIONALLY UNSTABLE / DERIVED NUMBER
+
+Examples:
+- Exodus 430-year clock start differs by textual tradition;
+- 4 Ezra age-parts differ Latin/Ethiopic;
+- 2 Enoch cycles vary by recension;
+- some Meqabyan English renderings vary;
+- 1 Enoch shepherd/week chronology cannot be assigned equal-year units without interpretation.
+
+These require witness labels before any calculation.
+
+---
+
+# PHASE-BY-PHASE TIMING MAP
+
+Using the Synthesis 5 phase graph:
+
+1. stable broad world/support
+2. warning/information
+3. activation/forcing
+4. deformation
+5. convergence/axis/gate-state formation
+6. boundary opening
+7. transfer/cargo
+8. water/atmosphere/land response
+9. destructive maximum
+10. closure/relaxation
+11. ecological recovery
+12. population redistribution
+13. stable inhabited successor
+
+---
+
+# PHASE 1 — STABLE BROAD WORLD / SUPPORT
+## The strongest numerical material here is CALENDRICAL, not catastrophic
+
+### Jubilees calendar
+
+Directly researched:
+
+- **364 days**
+- **52 weeks**
+- **4 × 91-day quarters**
+- quarter markers at months 1 / 4 / 7 / 10
+- quarter spacing = **13 weeks**
+
+Exact internal arithmetic:
+
+**364 = 52 × 7 = 4 × 91**
+
+This is one of the cleanest stable-operation clocks in the corpus.
+
+### Classification
+**T-C — calendar/operational cycle**
+
+### Phase
+**P1 stable operation**
+
+### Important result
+
+The 364-day scheme regulates:
+- Sabbaths;
+- festivals;
+- quarter points;
+- recurring annual dates.
+
+It is not a catastrophe interval.
+
+---
+
+# 2 Enoch stable astronomical cycles
+
+Research register preserved:
+
+- solar year ≈ **365¼ days** in one recension/tradition;
+- lunar year = **354 days** in the cited transmission;
+- solar cycle = **28 years**;
+- lunar/intercalation cycle = **19 years**;
+- great cycle = **532 years**;
+- sun hidden under earth = **7 great hours**;
+- light/crown restored in **8th hour**.
+
+Where the 28-year and 19-year values belong to the same calendrical system:
+
+**28 × 19 = 532**.
+
+Because 19 and 28 are coprime,
+532 is the simple common-cycle product.
+
+### Classification
+primarily **T-C**.
+
+### Phase
+**P1 stable astronomical operation**.
+
+### S6-P1-1
+
+**2 Enoch's 19 / 28 / 532 family is internally calendrical. It should not be imported into a catastrophe clock merely because 532 may numerically resemble another chronology.**
+
+---
+
+# 1 Enoch Apocalypse of Weeks
+
+Direct research established:
+
+- **10 weeks**
+- each conceptually divisible into **7 parts**
+- implied total = **70 parts**
+- explicit seventh-part markers in weeks 1 and 10.
+
+But the research also recorded the crucial scholarly control:
+
+**the text does not require the parts/weeks to be equal elapsed durations.**
+
+Therefore:
+
+**10 × 7 = 70 structural parts**
+is secure,
+
+but:
+
+**70 equal chronological units**
+is not.
+
+### Classification
+**T-B / T-D symbolic historical periodization**
+
+### Phase
+spans the entire P1→P13 historical arc,
+not one event phase.
+
+### S6-P1-2
+
+**1 Enoch's 70-part structure is a sequence architecture, not yet a normalized clock.**
+
+---
+
+# PHASE 2 — WARNING / INFORMATION
+## Numbers often measure PREPARATION, not the event itself
+
+### Genesis Flood warning
+
+Before the Flood:
+**7-day warning/entry interval**.
+
+Then the rain event begins.
+
+### Classification
+**T-A**
+
+### Phase
+**P2 warning/preparation**.
+
+This is one of the cleanest examples where:
+**the countdown is not the catastrophe duration**.
+
+---
+
+# Jonah / Nineveh warning
+
+Jonah:
+**40 days**
+until announced overthrow.
+
+The city responds,
+and the destruction branch is cancelled.
+
+### Classification
+**T-A narrative warning interval**.
+
+### Phase
+**P2 warning/information**.
+
+### S6-P2-1
+
+The same number **40** appears elsewhere in:
+- Flood rain;
+- Sinai;
+- spies;
+- wilderness testing;
+- resurrection appearances.
+
+Therefore:
+**40 does not belong to one phase universally.**
+
+It is a broad transition/test number,
+not a unique gate-duration number.
+
+---
+
+# Habakkuk appointed time
+
+Habakkuk gives:
+- appointed time;
+- apparent delay;
+- instruction to wait.
+
+No numerical duration.
+
+### Result
+
+Some source clocks are:
+**phase-defined but unnumbered**.
+
+This matters because absence of a number is itself a constraint.
+
+---
+
+# 4 Ezra sign-sequence timing
+
+4 Ezra explicitly instructs:
+- observe predicted signs;
+- infer where the age is in its sequence.
+
+### S6-P2-2
+
+**4 Ezra's timing method is phase-recognition first, number second.**
+
+This matches the mature research method and should remain the model for chronology comparison.
+
+---
+
+# PHASE 3 — ACTIVATION / FORCING
+## 6→7, 40, 10 and half-hour intervals occur here, but for different functions
+
+### Sinai / Jubilees
+
+Research preserved:
+
+- cloud preparation = **6 days**
+- call/entry = **7th day**
+- revelation = **40 days + 40 nights**
+
+### Classification
+
+6→7:
+**T-A / ritual-theophany transition**.
+
+40:
+**T-A revelation interval**.
+
+### Phase
+
+- 6 days = late P2 / preparation;
+- 7th-day call = P3 activation;
+- 40-day revelation = P2/P3 information interface.
+
+This is not gate-open duration.
+
+---
+
+# Jesus wilderness
+
+Canonical Gospel research:
+
+- **40 days**
+- Matthew also emphasizes **40 days and 40 nights**.
+
+### Phase
+testing/activation before public ministry.
+
+### Classification
+**T-A narrative/theological test interval**.
+
+Again:
+same number as Flood rain,
+different process.
+
+---
+
+# Sirate Tsion / Pentecost sequence
+
+Research preserved:
+
+- resurrection appearance tradition = **40 days**
+- ascension point = fortieth day
+- upper-room waiting = **10 days**
+- Pentecost = fiftieth-day framework.
+
+This gives a particularly clean staged sequence:
+
+**40-day post-return instruction**
+→ **transition/ascension**
+→ **10-day waiting**
+→ **activation/distribution at Pentecost**
+
+and:
+
+**40 + 10 = 50**.
+
+### S6-P3-1
+
+This is one of the strongest examples where:
+**one large liturgical/theological cycle is internally segmented by phase**.
+
+It does not imply:
+40-day gate + 10-day cooldown.
+
+The phases are:
+instruction / waiting / activation.
+
+---
+
+# Revelation half-hour silence
+
+Before trumpet escalation:
+**approximately half an hour of silence**.
+
+### Classification
+**T-B symbolic/apocalyptic interval**.
+
+### Phase
+late P2 / pre-P3 pause.
+
+### S6-P3-2
+
+This is a real timed quiet interval,
+but no source statement identifies it as a physical gate dwell time.
+
+---
+
+# PHASE 4 — SKY / SUPPORT / TERRAIN DEFORMATION
+
+## Critical timing result
+
+Across the strongest deformation texts:
+- Isaiah sky roll;
+- Revelation sky roll;
+- Zechariah mountain split;
+- Micah mountain melt;
+- Amos rise/sink;
+- Habakkuk mountain shatter;
+- Nahum earth heave;
+
+**the deformation itself is usually not assigned a numerical duration**.
+
+### S6-P4-1
+
+This is an important negative result:
+
+> **The corpus gives abundant deformation geometry but almost no calibrated deformation clock.**
+
+Therefore any Vardath claim for:
+"lattice takes X days/years to deform"
+would currently come from outside these sources.
+
+---
+
+# PHASE 5 — CONVERGENCE / AXIS / GATE-STATE FORMATION
+
+## 4 Ezra 7
+
+Strongest static throat:
+- broad;
+- narrow;
+- broad;
+- one-person capacity.
+
+But:
+**no formation duration**.
+
+---
+
+# Daniel 12
+
+The linen-man river tableau is associated with:
+**time, times, half a time**.
+
+However the text's ordinary/apocalyptic interpretation ties this interval to:
+- oppression;
+- shattering of holy people;
+- end sequence.
+
+It does not say:
+the axis takes 3½ units to form.
+
+### S6-P5-1
+
+**Timing can be spoken at the axis geometry without timing the axis formation itself.**
+
+This distinction is crucial.
+
+---
+
+# PHASE 6 — BOUNDARY OPENING
+## The decisive negative result of Synthesis 6
+
+Strong gate sources include:
+- Exodus sea;
+- Joshua Jordan;
+- Micah breach/gate;
+- Zechariah 14 split mountain;
+- 4 Ezra stopped Euphrates;
+- Ezekiel operated gates;
+- Revelation opened doors/abyss.
+
+Yet:
+
+### S6-P6-1
+
+**The actual opening phase is usually EVENT-TRIGGERED, not given a universal elapsed duration.**
+
+This is the single most important chronology constraint found here.
+
+The texts tell us:
+- what opens;
+- why;
+- who passes;
+- what closes;
+
+much more often than:
+**how many hours/days the opening itself exists**.
+
+### Consequence
+
+A proposed physical Vardath gate duration cannot presently be validated from a recurring biblical/Ethiopic opening clock.
+
+---
+
+# Flood as partial exception
+
+Genesis gives detailed chronology around the water-boundary event:
+
+- warning = **7 days**
+- rain = **40 days/nights**
+- waters prevail = **150 days**
+- exact month/day markers
+- later waiting/probe intervals.
+
+But even here:
+the text does not isolate:
+"the fountains/windows were open for exactly X hours."
+
+Instead:
+the clock measures the larger Flood state.
+
+### S6-P6-2
+
+**Even the best-timed gate-like event times the whole environmental episode more clearly than the aperture itself.**
+
+---
+
+# PHASE 7 — TRANSFER / CARGO
+
+## Jonah
+
+Inside fish:
+**3 days + 3 nights**.
+
+### Classification
+**T-A transfer/carrier interval**.
+
+### Phase
+P7.
+
+This is a real carrier-duration number.
+
+It is not the duration of a gate.
+
+---
+
+# Acts 27 sea transport
+
+Storm voyage:
+**14 nights**
+before landfall crisis.
+
+Then:
+- ship fails;
+- cargo/persons redistribute;
+- all reach land.
+
+### Classification
+**T-A transport/environment interval**.
+
+### Phase
+P7–P9.
+
+Again:
+carrier exposure time,
+not gate duration.
+
+---
+
+# 4 Ezra exiled tribes
+
+Journey:
+approximately **1½ years** to distant region.
+
+Water channels stop to enable crossing,
+but the 1½ years describes the longer migration,
+not the crossing window itself.
+
+### Classification
+**T-A/T-D migration interval**.
+
+### S6-P7-1
+
+**Travel duration must not be substituted for boundary-open duration.**
+
+---
+
+# 4 Baruch / Paralipomena of Jeremiah
+
+Research recorded:
+- Abimelech experiences what appears subjectively short;
+- roughly **66 years** pass externally;
+- figs remain preserved/fresh;
+- he returns to a transformed world.
+
+### Classification
+**T-A literary relative-time anomaly**,
+but subjective elapsed time is not numerically specified enough for a ratio.
+
+### Phase
+P7 / P12 boundary-crossing-transition story.
+
+### S6-P7-2
+
+This remains the strongest direct **relative-time discontinuity** candidate in the corpus.
+
+But:
+
+**no dilation factor can be calculated**.
+
+The text gives:
+large external elapsed time
+versus
+short experienced interval,
+not a precise clock-rate ratio.
+
+---
+
+# PHASE 8 — WATER / ATMOSPHERE / LAND RESPONSE
+
+## Genesis Flood
+
+Rain:
+**40 days + 40 nights**.
+
+Waters prevail:
+**150 days / five named months**.
+
+### Classification
+**T-A environmental event**.
+
+### Phase
+- 40 = P3/P8 forcing/input;
+- 150 = P8/P9 sustained inundation maximum.
+
+Important:
+**40 and 150 are different phase clocks inside one event.**
+
+---
+
+# 4 Ezra water-source interruption
+
+Fountains/springs stop:
+**3 hours**.
+
+### Classification
+**T-B apocalyptic sign interval**.
+
+### Phase
+P8 environmental anomaly.
+
+### S6-P8-1
+
+The 3-hour interval is attached to:
+**water-source behavior**,
+not the whole end-time event.
+
+---
+
+# Ezekiel 47
+
+Trees produce fruit:
+**monthly**.
+
+This is not recovery duration.
+
+It is:
+**stable successor operating periodicity**.
+
+### Classification
+T-C.
+
+### Phase
+P13.
+
+Do not count "monthly fruit" as "one-month recovery."
+
+---
+
+# PHASE 9 — DESTRUCTIVE MAXIMUM / OPPRESSION
+## This is where the strongest coherent apocalyptic interval family appears
+
+---
+
+# Daniel 7 / Daniel 12
+
+Raw formula:
+**time + times + half a time**.
+
+Working apocalyptic total:
+**3½ periods**.
+
+### Phase
+P9 oppression/end phase.
+
+### Classification
+T-B.
+
+---
+
+# Revelation equivalence family
+
+Revelation gives:
+- **42 months**
+- **1,260 days**
+- related **time / times / half-time** language.
+
+Under the apocalypse's conventional 30-day schematic month:
+
+**42 × 30 = 1,260 days**.
+
+Under a 360-day schematic year:
+
+**3.5 × 360 = 1,260 days**.
+
+Therefore the internal equivalence:
+
+**3½ years**
+=
+**42 months**
+=
+**1,260 days**
+
+is coherent **within that apocalyptic schematic system**.
+
+### S6-P9-1
+
+This is the strongest normalized interval family in the corpus.
+
+But it times:
+- oppression;
+- protection;
+- trampling;
+- wilderness preservation;
+- beast authority;
+
+not explicit gate formation.
+
+---
+
+# Daniel 12 extensions
+
+Raw:
+- **1,290 days**
+- **1,335 days**
+
+Relative to 1,260:
+
+- 1,290 − 1,260 = **30 days**
+- 1,335 − 1,290 = **45 days**
+- 1,335 − 1,260 = **75 days**
+
+These are real arithmetic relations.
+
+But the text does not tell us with certainty:
+what every added day-block physically represents.
+
+### S6-P9-2
+
+The correct normalized form is:
+
+**1,260 base apocalyptic family**
+→ **+30**
+→ **+45 additional**
+→ total **1,335**.
+
+Do **not** name the +30 or +45 as:
+- gate closure;
+- cooling;
+- flood drainage;
+- transfer completion
+
+without source evidence.
+
+---
+
+# Daniel 8 — 2,300 evenings-mornings
+
+Raw:
+**2,300 evenings and mornings**.
+
+This belongs to:
+**sanctuary disruption → restoration**.
+
+### Textual/interpretive control
+
+Do not automatically normalize to:
+- 2,300 full days,
+or
+- 1,150 days
+
+without choosing an interpretation of "evening-morning" and sacrifice counting.
+
+### S6-P9-3
+
+**2,300 remains a separate interval family until its unit is defined explicitly.**
+
+Do not force it into the 1,260/1,290/1,335 set.
+
+---
+
+# Revelation locust torment
+
+**5 months**.
+
+### Phase
+P9.
+
+### Classification
+T-B.
+
+It is a bounded torment interval,
+but no textual equation links it to the 42-month family.
+
+Keep separate.
+
+---
+
+# James / Elijah
+
+No rain:
+**3 years 6 months**.
+
+Numerically:
+3½ years.
+
+### Phase
+environmental deprivation / drought.
+
+### Classification
+T-B/T-D scriptural traditional interval.
+
+### S6-P9-4
+
+This is numerically close to the Daniel/Revelation 3½ family,
+but its literary function is different.
+
+It may reflect broader biblical 3½ symbolism,
+but it is not enough by itself to establish one event clock.
+
+---
+
+# PHASE 10 — CLOSURE / RELAXATION / QUIET INTERVAL
+
+## Flood recovery
+
+After the major water phase:
+- Noah waits **40 days** before opening/sending birds;
+- dove tests have repeated **7-day** waits.
+
+### Phase
+P10→P11.
+
+### S6-P10-1
+
+The Flood uses:
+- 40 in destructive input,
+and later
+- 40 in recovery/testing.
+
+Therefore even within one event:
+**same number can occur at different phases.**
+
+This destroys any simple rule:
+"40 = destruction"
+or
+"40 = gate."
+
+---
+
+# 4 Ezra primeval silence
+
+After the 400-year messianic phase:
+- all living humanity dies;
+- world enters **7 days** of primeval silence;
+- then world awakens/resurrection proceeds.
+
+### Phase
+P10 closure/quiet transition.
+
+### Classification
+T-B.
+
+### S6-P10-2
+
+Seven can mark:
+**silence/reset interval**
+here,
+while elsewhere it marks:
+warning,
+festival,
+probe,
+completion.
+
+So:
+**7 is a phase-transition number, not a unique physical-duration signature.**
+
+---
+
+# Revelation two witnesses
+
+Bodies exposed:
+**3½ days**.
+
+Then:
+- life returns;
+- they rise.
+
+### Phase
+P10→P11.
+
+### Classification
+T-B.
+
+Important:
+this is **3½ days**,
+not **3½ years**.
+
+Same numerical shape,
+different unit and phase.
+
+### S6-P10-3
+
+**Never compare 3½ values without units.**
+
+---
+
+# PHASE 11 — ECOLOGICAL RECOVERY
+
+Most recovery texts give:
+- ordered ecological sequence;
+- rain;
+- vegetation;
+- fish;
+- trees;
+- fruit;
+- land reoccupation;
+
+but few give a total recovery duration.
+
+### Flood exception
+
+Repeated:
+**7-day dove intervals**
+act as external recovery probes.
+
+### S6-P11-1
+
+These 7-day periods time:
+**sampling/testing of recovery**,
+not necessarily recovery physics itself.
+
+---
+
+# Joel / Hosea / Ezekiel / Amos
+
+Recovery is process-rich but not clock-rich.
+
+This is another negative constraint:
+
+### S6-P11-2
+
+**The corpus describes the ORDER of ecological recovery more strongly than its elapsed duration.**
+
+That matters for Vardath.
+
+A future physical model should predict:
+- sequence;
+- then duration.
+
+The ancient texts mostly supply the first.
+
+---
+
+# PHASE 12 — POPULATION REDISTRIBUTION
+
+## Numbers 13–14
+
+This is one of the most important time-scaling controls in the corpus.
+
+Scouting:
+**40 days**.
+
+Judicial wandering:
+**40 years**.
+
+The text explicitly maps:
+**one day → one year**.
+
+### Classification
+**T-E explicit symbolic/judicial scale conversion**.
+
+### Phase
+P12 redistribution/wilderness transition.
+
+### S6-P12-1
+
+This is direct evidence that:
+**a text can convert a short period into a long historical period symbolically**.
+
+It is not evidence of physical time dilation.
+
+---
+
+# Exodus/Jubilees wilderness
+
+Manna/provision:
+**40 years**.
+
+### Phase
+P12 long transitional settlement/preparation.
+
+Again:
+same "40",
+different unit and phase.
+
+---
+
+# Exile/restoration family
+
+### 70 years
+
+Research contains:
+- Jeremiah/Chronicles restoration frame;
+- Zechariah seventy-year question;
+- Isaiah/Tyre seventy-year imperial interval.
+
+### Classification
+T-D.
+
+### Phase
+mostly P12→P13 historical redistribution/restoration.
+
+### S6-P12-2
+
+**70 years is a long historical/theological restoration unit, not a gate-open interval.**
+
+---
+
+# 4 Baruch ~66 years
+
+The 66-year external interval occurs while:
+- protected person is removed from city crisis;
+- returns after the world/city state changed.
+
+It is close to 70 numerically,
+but should remain separate.
+
+### S6-P12-3
+
+**66 ≠ 70 simply because both describe exile-era-scale time.**
+
+No adjustment should be made merely to create a match.
+
+---
+
+# PHASE 13 — STABLE INHABITED SUCCESSOR / INTERIM SUCCESSOR OPERATION
+
+## 4 Ezra messianic phase
+
+**400 years**.
+
+Then:
+- Messiah/humanity dies;
+- seven-day silence;
+- final transition.
+
+### Classification
+T-B apocalyptic successor/interim phase.
+
+This is not:
+opening duration.
+
+---
+
+# Revelation thousand years
+
+Raw:
+**1,000 years**.
+
+Associated with:
+- dragon binding;
+- reign/intermediate eschatological state;
+- later release.
+
+### Phase
+interim P13-like stable/controlled period,
+before final endpoint.
+
+### Classification
+T-B.
+
+### S6-P13-1
+
+The millennium is:
+**an interim controlled state**,
+not the duration of the gate-opening catastrophe.
+
+---
+
+# Judges "rest" formulas
+
+Direct research includes:
+- 40 years;
+- 80 years;
+- repeated rest/oppression cycles.
+
+### Phase
+P13 political successor/stability.
+
+### Classification
+T-D editorial/historical formulas.
+
+These are especially important as a control:
+
+**40 years can mean stable rest**,
+while elsewhere 40 means:
+rain,
+testing,
+revelation,
+wandering,
+appearance period.
+
+Therefore:
+
+### S6-P13-2
+
+**40 is emphatically not a single-mechanism constant.**
+
+---
+
+# Christian resurrection→deployment sequence
+
+Canonical/Church-order research preserves:
+
+- resurrection "third day";
+- appearances over **40 days**;
+- **10-day** wait;
+- Pentecost / **50th day** framework.
+
+### Phase
+
+- third day = P10→P13 return;
+- 40 days = successor instruction/transition;
+- 10 days = pre-activation waiting;
+- 50th day = deployment/activation marker.
+
+### S6-P13-3
+
+This is a **nested phase clock**:
+not one homogeneous 50-day event.
+
+---
+
+# LONG HISTORICAL CLOCKS — KEEP OUT OF GATE-DURATION ANALYSIS
+
+---
+
+# 400 years
+
+Genesis 15:
+**400 years**
+of strangerhood/oppression,
+plus
+**fourth generation** return.
+
+Jubilees preserves the 400-year figure.
+
+### Classification
+T-D.
+
+### Important control
+
+400 years
+and
+four generations
+are separate textual claims.
+
+Do not assume they are mathematically identical.
+
+---
+
+# 430 years — major textual-witness problem
+
+Direct Exodus research recorded:
+
+### Masoretic Exodus 12:40
+Israelite dwelling:
+**in Egypt**
+= 430 years.
+
+### Septuagint / Samaritan traditions
+include:
+**Canaan + Egypt**
+inside the 430-year clock.
+
+A harmonized scheme can produce:
+- 215 years Canaan;
+- 215 years Egypt;
+- total 430.
+
+Other traditional chronologies differ.
+
+### S6-LONG-1
+
+**430 is a real textual number but not a stable cross-witness start-to-end interval.**
+
+No Vardath/Archaix match may use "430 years" without specifying:
+- witness;
+- start point;
+- end point.
+
+---
+
+# 70 years → 70 weeks
+
+Daniel explicitly begins from Jeremiah's:
+**70 years**.
+
+Then revelation reframes:
+**70 weeks/sevens**.
+
+Under the standard "weeks of years" reading:
+
+**70 × 7 = 490 years**.
+
+### Classification
+T-E/T-B.
+
+### S6-LONG-2
+
+This is a direct example of:
+**chronological rescaling / reinterpretation**.
+
+It is not physical time dilation.
+
+### Important arithmetic
+
+490 − 400 = **90 years**.
+
+That arithmetic is real,
+but it does not create a source relation between the Genesis 400 and Daniel 490 clocks.
+
+---
+
+# 49-year versus 50th-year Jubilee
+
+Research already established a critical distinction:
+
+Jubilees' chronological unit:
+**7 × 7 = 49 years**.
+
+Biblical Jubilee legislation:
+can speak of the **50th year** as release/proclamation year.
+
+### S6-LONG-3
+
+**49 and 50 must not be silently merged.**
+
+They describe related but not identical calendar concepts.
+
+Any long-cycle comparison must specify:
+- 49-year block,
+or
+- 50th-year observance.
+
+---
+
+# 1,000-year family
+
+Several sources use 1,000 in different ways.
+
+## Jubilees
+- heavenly day analogy;
+- restored lifespan approaches 1,000 years.
+
+## 2 Peter
+- one day is like a thousand years / thousand years like a day;
+- context = divine patience/temporal perspective.
+
+## Revelation
+- thousand-year binding/reign.
+
+These are not one obvious clock.
+
+### S6-LONG-4
+
+**The 1,000 family is cross-functional: analogy, lifespan ideal, eschatological reign.**
+
+Do not equate them merely by number.
+
+---
+
+# CALENDAR NORMALIZATION TABLE
+
+## Jubilees
+
+**364 days**
+=
+**52 weeks**
+=
+**4 × 91 days**
+=
+**4 × 13 weeks**.
+
+This is internally exact.
+
+---
+
+# 2 Enoch
+
+Where the cited recension gives:
+- 19-year lunar/intercalation cycle;
+- 28-year solar cycle;
+
+their combined cycle:
+
+**19 × 28 = 532 years**.
+
+This is also internally exact.
+
+But:
+recension differences must remain attached.
+
+---
+
+# Jubilees versus 2 Enoch year
+
+Jubilees:
+**364 days**.
+
+2 Enoch tradition:
+approximately **365¼ days**.
+
+Difference:
+**1¼ days per year**.
+
+This is not a small editorial rounding if accumulated indefinitely.
+
+Therefore they should be treated as:
+**different calendrical systems/traditions**,
+not one clock waiting to be averaged.
+
+### S6-CAL-1
+
+**Do not average ancient calendars into a synthetic Vardath year unless the source itself provides reconciliation.**
+
+---
+
+# 3½ APOCALYPTIC FAMILY — NORMALIZED
+
+This deserves a dedicated table because it is the most coherent cross-source timing family.
+
+## Daniel
+- time;
+- times;
+- half a time
+= conceptually 3½ periods.
+
+## Revelation
+- 42 months;
+- 1,260 days;
+- time/times/half-time.
+
+Using the Revelation schematic:
+
+**42 months × 30 days = 1,260 days**
+
+and:
+
+**3.5 years × 360 days = 1,260 days**.
+
+## Daniel 12
+- 1,290 days
+- 1,335 days.
+
+Differences:
+
+**1,290 = 1,260 + 30**
+
+**1,335 = 1,290 + 45**
+
+**1,335 = 1,260 + 75**
+
+### S6-APOC-1
+
+This is the strongest place where normalization produces a real numerical family.
+
+### S6-APOC-2
+
+Its shared phase is broadly:
+**oppression / protection / desecration / end transition**.
+
+It is **not** primarily:
+boundary-opening duration.
+
+### S6-APOC-3
+
+This family should be the first numerical family tested in any later chronology comparison,
+because it has:
+- repeated source support;
+- explicit related forms;
+- relatively clear phase attachment.
+
+---
+
+# 2,300 EVENINGS-MORNINGS — KEEP SEPARATE
+
+Daniel 8:
+**2,300 evenings-mornings**.
+
+Possible interpretations differ.
+
+Without choosing:
+- full days,
+or
+- individual evening/morning sacrificial units,
+
+normalization is premature.
+
+### S6-APOC-4
+
+**Do not halve 2,300 to 1,150 merely because it improves a numerical fit.**
+
+Only do so if:
+- the chosen textual/exegetical interpretation independently requires it.
+
+---
+
+# THE 3 / 3½ FAMILY — SAME NUMBER SHAPE, DIFFERENT PHASES
+
+Examples already researched:
+
+- Jonah = **3 days / 3 nights** — carrier/transfer.
+- resurrection tradition = **third day** — return/state reversal.
+- Saul = **3 days** blind — information/state transition.
+- 4 Ezra = **3 hours** fountain interruption — environmental anomaly.
+- Revelation witnesses = **3½ days** dead — closure/return.
+- Daniel/Revelation = **3½ years/periods** — oppression/end interval.
+- James/Elijah = **3½ years** drought.
+
+### S6-FAM-1
+
+**"Three-ish" recurs, but the unit and phase vary too widely to justify one physical period.**
+
+The proper comparison is:
+phase-by-phase,
+not number-first.
+
+---
+
+# THE 7 FAMILY — COMPLETION / TRANSITION, NOT ONE CLOCK
+
+Examples:
+
+- Flood warning = 7 days.
+- Flood recovery probes = repeated 7 days.
+- 4 Ezra world silence = 7 days.
+- Jubilees feasts = 7 days.
+- 2 Enoch solar hidden phase = 7 great hours, restored 8th.
+- Adam/Eve traditions = 7-day mourning / 7th-day rest patterns.
+- creation/Sabbath = 7-day architecture.
+- 1 Enoch weeks = groups structured by seven parts.
+
+### S6-FAM-2
+
+Seven is genuinely pervasive.
+
+But:
+it marks many different functions:
+- completion;
+- waiting;
+- warning;
+- probing;
+- ritual closure;
+- calendrical organization;
+- historical structuring.
+
+Therefore:
+**7 is a structural/completion number before it is a physical gate duration.**
+
+---
+
+# THE 7→8 TRANSITION FAMILY
+
+Research already recorded several explicit 7→8 transitions:
+
+- circumcision on 8th day after seven-day completion structure;
+- 2 Enoch sun hidden seven hours, re-crowned eighth;
+- theological "eighth day" beyond ordinary sevenfold time;
+- resurrection/new-beginning traditions often use first/eighth-day overlap in later reception.
+
+### S6-FAM-3
+
+This is a meaningful **completion→new-state** pattern.
+
+But:
+its units and contexts vary.
+
+Do not equate:
+8th day ritual,
+8th hour solar emergence,
+and Vardath "8 enclosure"
+as one source-level equation.
+
+---
+
+# THE 40 FAMILY — TRANSITION / TEST / PREPARATION
+
+Strong examples:
+
+- Flood rain = 40 days/nights.
+- Moses/Sinai = 40 days/nights.
+- intercession = 40 days/nights.
+- spies = 40 days.
+- judicial wilderness = 40 years.
+- manna = 40 years.
+- Jesus wilderness = 40 days.
+- post-resurrection appearances = 40 days.
+- Judges rest formulas = 40 years.
+
+### S6-FAM-4
+
+40 is the clearest **cross-context transition/test number**.
+
+But precisely because it occurs in:
+- destruction;
+- revelation;
+- reconnaissance;
+- punishment;
+- provision;
+- testing;
+- successor instruction;
+- political rest,
+
+it cannot be assigned one mechanical meaning.
+
+### Special importance — Numbers
+
+**40 days → 40 years**
+is an explicit text-level scale conversion.
+
+This should be the main warning against treating every 40 as the same elapsed process.
+
+---
+
+# THE 70 FAMILY — HISTORICAL / TOTALIZING STRUCTURE
+
+Examples:
+
+- 70-year exile/restoration frames.
+- Daniel 70 weeks.
+- 1 Enoch 70 shepherds.
+- 1 Enoch 70 implied parts.
+- 3 Enoch 70 names/nations.
+- other seventy elders/nations traditions.
+
+### S6-FAM-5
+
+70 frequently means:
+**complete historical/governance/distribution set**.
+
+But these are different dimensions:
+- years;
+- weeks;
+- operators;
+- parts;
+- names.
+
+Never convert them into years without source permission.
+
+---
+
+# THE 400 / 430 / 490 FAMILY — DO NOT FORCE
+
+Numerically:
+
+- 400
+- 430
+- 490
+
+Differences:
+- 430 − 400 = **30**
+- 490 − 400 = **90**
+- 490 − 430 = **60**
+
+These relationships are arithmetic only.
+
+Source functions differ:
+
+- 400 = patriarchal oppression prophecy;
+- 430 = Exodus residence/sojourn formula with witness dispute;
+- 490 = Danielic seventy-weeks reinterpretation.
+
+### S6-FAM-6
+
+**No source-level sequence currently links 400→430→490 as one expanding clock.**
+
+Do not build one merely because differences look patterned.
+
+---
+
+# RELATIVE-TIME / TIME-DILATION CANDIDATES
+
+This category must be kept separate from ordinary chronology.
+
+## 4 Baruch / Abimelech
+
+Strongest candidate:
+- short subjective sleep;
+- ~66 external years;
+- preserved figs;
+- seasonal/world-state mismatch.
+
+### Verdict
+**strong literary relative-time anomaly**.
+
+### Missing
+- precise subjective duration;
+- measurable physical mechanism;
+- repeatable ratio.
+
+---
+
+# 2 Peter day/thousand-years
+
+### Verdict
+**explicit temporal-perspective analogy**.
+
+Context:
+divine patience.
+
+Not physical dilation.
+
+---
+
+# Jubilees heavenly day / thousand years
+
+### Verdict
+**theological scale analogy**.
+
+Potentially relevant to long/short time comparison,
+but again not physical clock-rate evidence.
+
+---
+
+# Numbers 40 days→40 years
+
+### Verdict
+**explicit symbolic judicial rescaling**.
+
+This demonstrates:
+one unit can be deliberately mapped to another,
+but not that participants experience different physical clock rates.
+
+---
+
+# Daniel 70 years→70 weeks
+
+### Verdict
+**chronological/apocalyptic rescaling**.
+
+Again:
+symbolic historical reinterpretation.
+
+---
+
+# S6-REL-1 — CURRENT TIME-DILATION EVIDENCE RANKING
+
+## Strongest literary anomaly
+**4 Baruch ~66-year external discontinuity.**
+
+## Strongest explicit scale-conversion
+**Numbers 40 days → 40 years.**
+
+## Strongest theological long/short analogy
+**day ↔ 1,000 years traditions.**
+
+## Strongest chronological reinterpretation
+**70 years → 70 weeks.**
+
+None currently establishes:
+**physical relativistic time dilation caused by a gate.**
+
+---
+
+# WHICH EVENT PHASES ACTUALLY CARRY CLOCKS?
+
+This is the central result of Synthesis 6.
+
+## Clock-rich phases
+
+### P2 — warning/information
+- 7-day Flood warning;
+- 40-day Nineveh warning;
+- appointed-time structures.
+
+### P7 — transfer/carrier
+- Jonah 3 days/nights;
+- Acts 14-night storm;
+- migration durations.
+
+### P9 — oppression/destructive maximum
+- 3½ apocalyptic family;
+- 2,300 evenings-mornings;
+- 5 months;
+- 1,290 / 1,335 extensions.
+
+### P10 — closure/quiet
+- 7-day 4 Ezra silence;
+- 3½-day witness death;
+- Flood post-maximum waiting.
+
+### P12 — redistribution
+- 40 years wilderness;
+- exile/restoration periods;
+- 4 Baruch long absence.
+
+### P13 — successor/interim operation
+- 40-day instruction;
+- 1,000-year reign;
+- 400-year 4 Ezra messianic phase;
+- Judges rest formulas.
+
+---
+
+# Clock-poor phases
+
+### P4 — deformation
+very few calibrated durations.
+
+### P5 — gate-state formation
+almost no formation duration.
+
+### P6 — actual opening
+almost no universal opening duration.
+
+### P11 — ecological recovery
+rich sequence,
+poor elapsed-time data.
+
+### S6-MASTER-1
+
+> **The phases most important to a physical Vardath gate—deformation, throat formation, opening, and recovery—are precisely the phases least often assigned stable numerical durations by the source corpus.**
+
+This is a major falsifiability constraint.
+
+---
+
+# SOURCE-WITNESS STABILITY MATRIX
+
+## HIGH stability for interval form
+- Genesis Flood 7 / 40 / 150 broad chronology.
+- Jonah 3 days/nights.
+- Numbers 40 days→40 years.
+- Daniel 70 weeks structure.
+- Daniel 1,290 / 1,335.
+- Revelation 42 months / 1,260 days.
+- Acts 40-day appearance tradition.
+- Revelation thousand years.
+
+Interpretation may still vary,
+but the numbers themselves are strongly embedded.
+
+---
+
+# MEDIUM stability / interpretation-sensitive
+- Daniel 2,300 evenings-mornings.
+- 4 Ezra 400 years / seven-day silence.
+- 2 Enoch astronomical cycles.
+- 1 Enoch 10 weeks / 70 parts.
+- 4 Baruch ~66 years.
+- Jubilees long chronology.
+
+---
+
+# HIGH witness sensitivity
+- Exodus 430-year start-point.
+- 4 Ezra 10-part vs 12-part age schemes.
+- 2 Enoch recension-specific cycles.
+- later church-order 120/150-year expectations.
+- Meqabyan translation-number details where English traditions disagree.
+
+### S6-MASTER-2
+
+**No high-sensitivity number may be used as a precision match without naming the witness/recension.**
+
+---
+
+# NORMALIZATION RULES FOR THE NEXT STAGE
+
+Before comparing a source interval with Vardath/Archaix:
+
+### Step 1
+Identify source phase.
+
+### Step 2
+Identify raw unit.
+
+### Step 3
+Identify witness.
+
+### Step 4
+Classify:
+A elapsed,
+B apocalyptic,
+C calendar,
+D historical,
+E rescaled,
+F unstable.
+
+### Step 5
+Only normalize units if source system permits it.
+
+Examples:
+
+Allowed:
+- 42 months × 30 days = 1,260
+  because Revelation's apocalyptic family supplies that equivalence.
+
+Allowed:
+- 70 weeks × 7 years = 490
+  when explicitly using the weeks-of-years interpretation.
+
+Allowed:
+- 28 × 19 = 532
+  in the 2 Enoch calendrical system where both cycles are attested.
+
+Not allowed:
+- convert every "time" into 360 days;
+- halve 2,300 because it improves a fit;
+- equate 49-year and 50-year Jubilee without qualification;
+- average 364 and 365¼ calendars;
+- turn 66 years into 70;
+- force 400/430/490 into one recurrence.
+
+---
+
+# REPEATED INTERVAL FAMILIES — RANKED
+
+## FAMILY A — 3½ apocalyptic family
+**Highest coherence**
+
+Forms:
+- time/times/half;
+- 42 months;
+- 1,260 days;
+- 1,290;
+- 1,335;
+- 3½-day echo in Revelation, but different unit;
+- 3½-year drought tradition as a separate function.
+
+Best shared phase:
+**P9 oppression / protection / end transition**.
+
+---
+
+# FAMILY B — 40 transition family
+**High recurrence, low phase specificity**
+
+Forms:
+- 40 days;
+- 40 nights;
+- 40 years.
+
+Functions:
+- destruction;
+- revelation;
+- reconnaissance;
+- punishment;
+- provision;
+- testing;
+- post-resurrection instruction;
+- political rest.
+
+Conclusion:
+**transition/test archetype, not physical gate constant**.
+
+---
+
+# FAMILY C — 7 completion family
+**Very high recurrence, very low mechanistic specificity**
+
+Forms:
+- 7 days;
+- repeated 7s;
+- 7 years;
+- 7 hours;
+- 7 parts;
+- 7th-day / 8th-state transitions.
+
+Conclusion:
+**completion/boundary grammar**,
+not a single elapsed process.
+
+---
+
+# FAMILY D — 70 historical-totality family
+
+Forms:
+- 70 years;
+- 70 weeks;
+- 70 shepherds;
+- 70 parts;
+- 70 names/nations.
+
+Conclusion:
+**totalized historical/governance architecture**.
+
+Do not normalize unlike units.
+
+---
+
+# FAMILY E — stable calendar family
+
+Forms:
+- 364-day Jubilees year;
+- 365/365¼ solar traditions;
+- 354-day lunar;
+- 19-year lunar/intercalation;
+- 28-year solar;
+- 532-year combined cycle.
+
+Conclusion:
+**P1 operation clocks**.
+
+Do not confuse with catastrophe clocks.
+
+---
+
+# FAMILY F — long historical exile/oppression family
+
+Forms:
+- 400;
+- 430;
+- 490;
+- 70;
+- ~66;
+- other regnal/exile periods.
+
+Conclusion:
+these require:
+- source;
+- witness;
+- start/end anchor;
+- historical function.
+
+No simple "closest number wins."
+
+---
+
+# WHAT THE TIMING DATA DOES SUPPORT
+
+1. **The corpus is highly phase-structured.**
+2. **Different phases can have different clocks inside one event.**
+3. **The same number can recur in different phases.**
+4. **The same phase can carry different numbers in different sources.**
+5. **Ancient authors deliberately rescale time symbolically.**
+6. **Apocalyptic literature can create internally coherent conversion families.**
+7. **Calendrical texts preserve sophisticated stable-operation cycles.**
+8. **Long/short-time anomalies exist literarily.**
+9. **Warning and oppression phases are more often quantified than physical aperture formation.**
+10. **Closure/recovery can have probe/wait clocks without revealing physical recovery-rate laws.**
+
+---
+
+# WHAT THE TIMING DATA DOES NOT YET SUPPORT
+
+1. one universal biblical gate period;
+2. one recurring physical interval for lattice contraction;
+3. one recurring physical interval for the aperture-open state;
+4. one recurring relaxation/reopening duration;
+5. one clock connecting Genesis Flood, Daniel, Revelation and Meqabyan mechanically;
+6. direct derivation of 138 / 552 / 1104 from the corpus;
+7. direct derivation of Archaix chronology;
+8. a demonstrated physical time-dilation ratio;
+9. converting symbolic apocalyptic numbers into geophysical periods without independent anchors;
+10. selecting manuscript variants because they fit a preferred number.
+
+---
+
+# VARDATH TIMING IMPLICATION
+
+The mature Vardath model currently has a stronger **phase graph** than **clock model**.
+
+That is a useful result.
+
+The source corpus supports:
+
+**stable**
+→ **warning**
+→ **activation**
+→ **deformation**
+→ **convergence**
+→ **opening**
+→ **transfer**
+→ **environment response**
+→ **destructive maximum**
+→ **closure**
+→ **recovery**
+→ **redistribution**
+→ **successor stability**
+
+much more securely than it supports:
+
+**every X years, for Y days, the gate does Z**.
+
+### S6-MASTER-3
+
+**The timing problem should therefore be solved from phase anchors outward, not by fitting a single repeating number inward.**
+
+---
+
+# A PHASE-NORMALIZED CORE TABLE FOR FUTURE COMPARISON
+
+| Source | Raw interval | Phase attachment | Type | Normalization status |
+|---|---:|---|---|---|
+| Genesis Flood | 7 days | P2 warning | A | direct |
+| Genesis Flood | 40 days/nights | P3/P8 forcing | A | direct |
+| Genesis Flood | 150 days | P8/P9 inundation maximum | A | direct |
+| Genesis Flood | repeated 7 days | P11 recovery probes | A | direct |
+| Numbers | 40 days → 40 years | P2 reconnaissance → P12 redistribution | E | explicit scale conversion |
+| Jonah | 3 days/nights | P7 carrier | A | direct |
+| Jonah | 40 days | P2 warning | A | direct |
+| Jubilees | 364 days | P1 calendar | C | exact internal |
+| Jubilees | 49-year chronological Jubilee | P1/D historical calendar | C/D | distinguish 50th year |
+| 2 Enoch | 19 years | P1 lunar/intercalation | C/F | recension-sensitive |
+| 2 Enoch | 28 years | P1 solar cycle | C/F | recension-sensitive |
+| 2 Enoch | 532 years | P1 great cycle | C/F | 19×28 where attested |
+| 2 Enoch | 7 hours → 8th | P1 daily solar operation | C/F | recension-sensitive |
+| 1 Enoch Weeks | 10 weeks / 70 parts | whole-history structure | B/D | units unequal/unspecified |
+| 4 Baruch | ~66 external years | P7/P12 relative-time transition | A/F | subjective interval not quantified |
+| Genesis/Jubilees | 400 years | long oppression | D | direct source formula |
+| Exodus | 430 years | long sojourn | D/F | start point witness-dependent |
+| Zechariah/Jeremiah frame | 70 years | P12→P13 exile/restoration | D | historical/theological |
+| Daniel 7/12 | 3½ periods | P9 oppression/end | B | symbolic period |
+| Daniel 8 | 2,300 evenings-mornings | P9 disruption→restoration | B/F | unit interpretation unresolved |
+| Daniel 9 | 70 weeks ≈ 490 years | whole historical scheme | B/E | weeks-of-years interpretation |
+| Daniel 12 | 1,290 days | P9→end | B | +30 vs 1,260 |
+| Daniel 12 | 1,335 days | P9→blessing/end | B | +75 vs 1,260 |
+| 4 Ezra | 3 hours | P8 water-source anomaly | B | direct raw unit |
+| 4 Ezra | 400 years | interim P13-like phase | B | apocalyptic |
+| 4 Ezra | 7 days | P10 silence/reset | B | direct raw unit |
+| 4 Ezra | 1½ years | P7 migration | A/D | longer migration, not crossing window |
+| Gospels | 40 days | P3 testing | A | narrative |
+| Gospels/Acts | third day | P10→P13 return | A/B | resurrection tradition |
+| Acts | 40 days | P13 transition/instruction | A | direct narrative |
+| Acts/Sirate Tsion | 10 days | P2/P3 wait before activation | A/C | liturgical/narrative synthesis |
+| Pentecost frame | 50th day | P3 deployment marker | C | festival framework |
+| Acts 27 | 14 nights | P7–P9 storm transport | A | direct |
+| James/Elijah | 3 years 6 months | P8/P9 drought | B/D | distinct from gate timing |
+| Revelation | half hour | P2/P3 quiet interval | B | symbolic/apocalyptic |
+| Revelation | 5 months | P9 torment | B | separate |
+| Revelation | 42 months | P9 oppression | B | =1,260 at 30d/month |
+| Revelation | 1,260 days | P9 protection/oppression | B | coherent apocalyptic family |
+| Revelation | 3½ days | P10 death→return | B | do not equate units |
+| Revelation | 1,000 years | interim P13 | B | millennial scheme |
+
+---
+
+# MOST IMPORTANT NEGATIVE FINDING
+
+The corpus contains many clocks.
+
+But the clocks do **not** cluster where a physical fingertrap model most needs them.
+
+The direct evidence is weakest for:
+
+- exact onset-to-contraction duration;
+- exact broad-support→throat duration;
+- exact open-gate dwell time;
+- exact same-support relaxation duration.
+
+### S6-MASTER-4
+
+**Any later claim that a specific Vardath/Archaix period is "the biblical gate cycle" must solve this phase problem explicitly.**
+
+It must show:
+1. which source times the gate itself;
+2. which phase the number belongs to;
+3. why the unit is comparable;
+4. why manuscript choice is justified;
+5. why the match is not post-hoc.
+
+---
+
+# SYNTHESIS 6 — FINAL RESULT
+
+## Strongest normalized family
+
+**3½ / 42 months / 1,260 days**
+is the most internally coherent apocalyptic interval family.
+
+But it attaches primarily to:
+**oppression/protection/end phase**,
+not physical opening.
+
+## Strongest repeated transition number
+
+**40**.
+
+But it is cross-functional,
+not one mechanism.
+
+## Strongest completion grammar
+
+**7 → sometimes 8**.
+
+But it is symbolic/ritual/operational across many scales.
+
+## Strongest stable calendar
+
+**Jubilees 364-day / 52-week / four-quarter system**.
+
+## Strongest multi-cycle calendar
+
+**2 Enoch 19 / 28 / 532 family**,
+with recension control.
+
+## Strongest literary relative-time anomaly
+
+**4 Baruch ~66 external years versus short subjective interval**.
+
+## Strongest explicit time rescaling
+
+**Numbers 40 days → 40 years**.
+
+## Strongest chronological reinterpretation
+
+**Daniel 70 years → seventy weeks/sevens**.
+
+## Strongest warning for manuscript discipline
+
+**Exodus 430-year start-point + 4 Ezra age-part variation + 2 Enoch recension cycles**.
+
+## Decisive conclusion
+
+> **The corpus supports phase-dependent clocks, not one demonstrated universal gate clock.**
+
+This means the next comparison must ask:
+
+**Does an external chronology independently predict one of these SOURCE-PHASE interval families?**
+
+not:
+
+**Which biblical number can be made to resemble the external chronology?**
+
+---
+
+# NEW PERMANENT TIMING RULES
+
+### S6-RULE-4
+Never compare numbers before assigning event phase.
+
+### S6-RULE-5
+Never compare numbers without units.
+
+### S6-RULE-6
+Never compare a calendar period with a catastrophe duration as though they were the same category.
+
+### S6-RULE-7
+Never use a manuscript variant without naming the witness.
+
+### S6-RULE-8
+Never convert 2,300 evenings-mornings to 1,150 merely to improve a fit.
+
+### S6-RULE-9
+Never turn 66 into 70, 49 into 50, or 364 into 365/365¼ by rounding for convenience.
+
+### S6-RULE-10
+Treat 1,260 / 42 months / 3½ as one coherent family only within its apocalyptic schematic framework.
+
+### S6-RULE-11
+Treat 1,290 and 1,335 as extensions of that family numerically, while leaving the added 30/45/75-day phase meaning unresolved unless the source defines it.
+
+### S6-RULE-12
+Treat 40-day→40-year and 70-year→70-weeks transformations as explicit evidence of symbolic rescaling, not physical time dilation.
+
+### S6-RULE-13
+The physical gate-opening duration remains an unresolved variable.
+
+---
+
+# SYNTHESIS 6 — COMPLETE
+
+## Next live block
+
+**SYNTHESIS 7 — ARCHAIX / JASON BRESHEARS CHRONOLOGY COMPARISON AGAINST THE PHASE-NORMALIZED SOURCE TABLE**
+
+Required protocol:
+
+1. Search current/public Archaix/Jason Breshears material directly.
+2. Record exact claimed:
+   - cycle;
+   - interval;
+   - anchor date;
+   - event type;
+   - source/publication;
+   - whether claim is original to Archaix or inherited from older chronology.
+3. Do not rely on memory of Archaix claims.
+4. Compare each claim only against **same-phase** source intervals from Synthesis 6.
+5. Calculate:
+   - absolute numerical difference;
+   - percentage difference;
+   - unit conversion assumptions;
+   - phase compatibility.
+6. Keep failed comparisons.
+7. Flag any match requiring:
+   - rounding;
+   - manuscript cherry-picking;
+   - unit substitution;
+   - changing event phase;
+   - after-the-fact anchor selection.
+8. Separate:
+   - exact match;
+   - mathematically related;
+   - near match;
+   - no match.
+9. Do not alter Vardath/Archaix numbers to improve fit.
+10. Only after that comparison decide whether any timing family materially strengthens the Vardath event model.
+
