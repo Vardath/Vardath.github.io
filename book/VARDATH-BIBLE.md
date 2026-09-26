@@ -30422,9 +30422,11 @@ And would not hearken to our voice.
 
 ---
 
+---
+
 # Book 28 — Proverbs
 
-*World English Bible Updated (WEBU), public domain. USFM, Strong’s-number markup, and study footnotes have been removed while preserving the verse wording.*
+*World English Bible Updated (WEBU), public domain. In the Ethiopian canonical division represented here, this book corresponds to Proverbs 1–24; Proverbs 25–31 form the following book, Tegsats/Reproof.*
 
 ## Proverbs 1
 
@@ -31187,7 +31189,14 @@ And would not hearken to our voice.
 **32.** Then I saw, and considered well. I saw, and received instruction:
 **33.** a little sleep, a little slumber, a little folding of the hands to sleep,
 **34.** so your poverty will come as a robber and your want as an armed man.
-## Proverbs 25
+
+---
+
+# Book 29 — Tegsats / Reproof
+
+*Ethiopian canonical division corresponding to Proverbs 25–31. The English wording is the public-domain World English Bible Updated (WEBU) text already used for Proverbs, with these seven chapters separated and renumbered as Tegsats 1–7 to reflect the Ethiopian book boundary.*
+
+## Tegsats 1
 
 **1.** These also are proverbs of Solomon, which the men of Hezekiah king of Judah copied out.
 **2.** It is the glory of God to conceal a thing, but the glory of kings is to search out a matter.
@@ -31217,7 +31226,7 @@ And would not hearken to our voice.
 **26.** Like a muddied spring and a polluted well, so is a righteous man who gives way before the wicked.
 **27.** It is not good to eat much honey, nor is it honorable to seek one’s own honor.
 **28.** Like a city that is broken down and without walls is a man whose spirit is without restraint.
-## Proverbs 26
+## Tegsats 2
 
 **1.** Like snow in summer, and as rain in harvest, so honor is not fitting for a fool.
 **2.** Like a fluttering sparrow, like a darting swallow, so the undeserved curse doesn’t come to rest.
@@ -31247,7 +31256,7 @@ And would not hearken to our voice.
 **26.** His malice may be concealed by deception, but his wickedness will be exposed in the assembly.
 **27.** Whoever digs a pit shall fall into it. Whoever rolls a stone, it will come back on him.
 **28.** A lying tongue hates those it hurts; and a flattering mouth works ruin.
-## Proverbs 27
+## Tegsats 3
 
 **1.** Don’t boast about tomorrow; for you don’t know what a day may bring.
 **2.** Let another man praise you, and not your own mouth; a stranger, and not your own lips.
@@ -31276,7 +31285,7 @@ And would not hearken to our voice.
 **25.** The hay is removed, and the new growth appears, the grasses of the hills are gathered in.
 **26.** The lambs are for your clothing, and the goats are the price of a field.
 **27.** There will be plenty of goats’ milk for your food, for your family’s food, and for the nourishment of your servant girls.
-## Proverbs 28
+## Tegsats 4
 
 **1.** The wicked flee when no one pursues; but the righteous are as bold as a lion.
 **2.** In rebellion, a land has many rulers, but order is maintained by a man of understanding and knowledge.
@@ -31306,7 +31315,7 @@ And would not hearken to our voice.
 **26.** One who trusts in himself is a fool; but one who walks in wisdom is kept safe.
 **27.** One who gives to the poor has no lack; but one who closes his eyes will have many curses.
 **28.** When the wicked rise, men hide themselves; but when they perish, the righteous thrive.
-## Proverbs 29
+## Tegsats 5
 
 **1.** He who is often rebuked and stiffens his neck will be destroyed suddenly, with no remedy.
 **2.** When the righteous thrive, the people rejoice; but when the wicked rule, the people groan.
@@ -31335,7 +31344,7 @@ And would not hearken to our voice.
 **25.** The fear of man proves to be a snare, but whoever puts his trust in the LORD is kept safe.
 **26.** Many seek the ruler’s favor, but a man’s justice comes from the LORD.
 **27.** A dishonest man detests the righteous, and the upright in their ways detest the wicked.
-## Proverbs 30
+## Tegsats 6
 
 **1.** The words of Agur the son of Jakeh, the revelation: the man says to Ithiel, to Ithiel and Ucal:
 **2.** “Surely I am the most ignorant man, and don’t have a man’s understanding.
@@ -31370,7 +31379,7 @@ And would not hearken to our voice.
 **31.** the greyhound; the male goat; and the king against whom there is no rising up.
 **32.** “If you have done foolishly in lifting up yourself, or if you have thought evil, put your hand over your mouth.
 **33.** For as the churning of milk produces butter, and the wringing of the nose produces blood, so the forcing of wrath produces strife.”
-## Proverbs 31
+## Tegsats 7
 
 **1.** The words of King Lemuel—the revelation which his mother taught him:
 **2.** “Oh, my son! Oh, son of my womb! Oh, son of my vows!
