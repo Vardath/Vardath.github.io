@@ -2875,3 +2875,176 @@ For the canonical books, the working base is the **World English Bible Updated**
 **9.** And they made a great feast, rejoicing and making merry three days, praising God, who had given them such a sign through Enoch, who had found favour with him, and that they should hand it on to their sons from generation to generation, from age to age.
 
 **10.** Amen.
+
+
+---
+
+# Book 4 — 3 Enoch / Hebrew Book of Enoch
+
+*Fresh English translation prepared for the Vardath Bible from the Hebrew **Sefer Hekhalot** tradition. The English wording below is newly rendered for this edition rather than copied from Hugo Odeberg or another modern English translation. The Hebrew base is the old printed Sefer Hekhalot tradition; the public-domain Lviv Hebrew witness and the Jellinek/Eisenstein transmission were used as textual witnesses. Chapter divisions follow the conventional 3 Enoch sequence for ease of reference.*
+
+## 3 Enoch 1
+
+**1.** “Enoch walked with God; then he was no more, because God took him.”
+
+Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chariot, I passed through six palaces, chamber within chamber. When I reached the entrance of the seventh palace, I stood in prayer before the Holy One, blessed be He. I lifted my eyes upward and said, “Master of the universe, I ask before You that at this hour the merit of Aaron son of Amram may stand for me - he who loved peace and pursued peace, and who received the crown of priesthood before Your glory at Mount Sinai. Let Qaspiel the prince and the angels with him have no power over me, and let them not cast me from heaven.”
+
+**2.** At once the Holy One, blessed be He, appointed Metatron His servant, the angel who is Prince of the Presence. He flew out on his wings and came toward me with great joy to rescue me from their hand. He seized me by the hand before their eyes and said to me, “Come in peace. You have found favor before the high and exalted King, to gaze upon the appearance of the Chariot.”
+
+**3.** At that time I entered the seventh palace. Metatron led me into the camp of the Shekinah and set me before the Throne of Glory to behold the Chariot. When the princes of the Chariot and the seraphim of flame saw me, they fixed their eyes upon me. Immediately I recoiled and trembled, fell from where I stood, and sank into a stupor because of the brilliance of their eyes and the splendor of their faces; and my soul departed from me.
+
+**4.** Then the Holy One, blessed be He, rebuked them and said, “My servants, My seraphim, My cherubim, and My ophanim: cover your eyes before Ishmael, My son, My beloved, My cherished one, My glory, so that he will not recoil and will not tremble.”
+
+**5.** At once Metatron, Prince of the Presence, came and restored my soul to me and set me upon my feet. Yet I still had no strength to sing before the Throne of Glory of the King of Glory, mighty above all kings and radiant above all rulers, until an hour had passed.
+
+**6.** After an hour the Holy One, blessed be He, opened for me the gates of the Shekinah, the gates of peace, the gates of wisdom, the gates of strength, the gates of might, the gates of speech, the gates of song, the gates of holiness, and the gates of sweet melody. He illuminated my eyes and my heart with words of praise and blessing, rejoicing and thanksgiving, song, beauty, splendor, exaltation, and strength.
+
+**7.** When I opened my mouth and sang praise before the Throne of Glory, the Holy Living Creatures beneath the throne of the King of Glory and those above the throne answered after me, saying: “Holy, holy, holy,” and, “Blessed is the glory of YHWH from His place.”
+
+## 3 Enoch 2
+
+**1.** Rabbi Ishmael said: At that time the attendants of the Chariot, the ophanim of flame, and the seraphim of consuming fire came and asked, “From what people is he? From what tribe is he? What is the nature of this man?”
+
+**2.** Metatron answered them and said, “He is from the people Israel, whom the Holy One, blessed be He, chose to be His people. He is from the tribe of Levi, raised up for His name. He is of the seed of Aaron, whom He chose for His service and upon whom the Holy One, blessed be He, Himself bound the crown of priesthood at Sinai.”
+
+**3.** Immediately they opened their mouths and said, “Surely this one is worthy to behold the Chariot,” as it is written: “Happy is the people for whom it is so.”
+
+## 3 Enoch 3
+
+**1.** Rabbi Ishmael said: At that time I asked Metatron, the angel who is Prince of the Presence, “What is your name?”
+
+**2.** He said to me, “I have seventy names corresponding to the seventy languages of the world, and every one of them is derived from the name of the King of kings of kings. But my King calls me ‘Youth.’”
+
+## 3 Enoch 4
+
+**1.** Rabbi Ishmael said: I said to Metatron, “Why are you called by names of your Creator - seventy names - when you are greater than all the princes, higher than all the angels, more beloved than all the ministers, more honored than all the hosts, and greater than all the mighty ones in kingship, greatness, and glory? And why, in the heights, do they call you ‘Youth’?”
+
+**2.** He answered me and said, “Because I am Enoch son of Jared. When the generation of the Flood sinned and said to God, ‘Depart from us; we do not desire the knowledge of Your ways,’ the Holy One, blessed be He, lifted me from among them to be a witness against them in the highest heavens before all who come into the world.
+
+**3.** “This was so that they could not say, ‘The Merciful One is cruel. What was the sin of all those multitudes? Even if they sinned, what had their wives, their sons and daughters, their horses and mules, their cattle and all their possessions, and all the birds in the world done, that the Holy One, blessed be He, destroyed them together with the generation of the Flood?’
+
+**4.** “Therefore He lifted me alive before their eyes into the highest heavens, to be a witness concerning them for the world to come; and the Holy One, blessed be He, appointed me on high as prince and ruler among the ministering angels.
+
+**5.** “Uzza and Azael were among the ministering angels in the heights. They said before the Holy One, blessed be He, ‘Master of the universe, did not the first ones speak rightly before You: Do not create man?’
+
+**6.** “The Holy One, blessed be He, answered them, ‘I have made, and I will bear; I will carry, and I will deliver.’
+
+**7.** “When they saw me, they said before Him, ‘Master of the universe, what is this one doing who has ascended to the highest height? Is he not one of the descendants of those who were destroyed in the days of the Flood?’
+
+**8.** “The Holy One, blessed be He, answered them again and said, ‘What business is it of yours to speak against the one in whom I have delighted more than all of you, to make him prince and ruler over you in the highest heavens?’
+
+**9.** “Immediately they all stood, came out to meet me, bowed before me, and said, ‘Happy are you, and happy are your parents, for your Creator has delighted in you.’
+
+**10.** “Because I am the youngest among them, a youth among them in days, months, and years, they therefore call me ‘Youth.’”
+
+## 3 Enoch 5
+
+**1.** Rabbi Ishmael said: Metatron, Prince of the Presence, said to me, “From the day when the Holy One, blessed be He, expelled the first Adam from the Garden of Eden, the Shekinah dwelt upon a cherub beneath the Tree of Life. The ministering angels would leap forth, come, and descend in companies from heaven to travel through the whole world.
+
+**2.** “Adam and Eve sat at the gate of the Garden of Eden, gazing upon the appearance and radiance of the Shekinah. The radiance of the Shekinah traveled from one end of the world to the other, through three hundred and sixty-five thousand measures in the circuit of the sun.
+
+**3.** “Whoever looked upon the radiance of that Shekinah was not troubled by flies or gnats, did not become sick, no harmful thing could injure him, and even the angels had no power over him.
+
+**4.** “The Holy One, blessed be He, went and moved from the Garden to Eden, from Eden to the Garden, from the Garden to the firmament, and from the firmament to the Garden of Eden; and all gazed upon the radiance of the appearance of His Shekinah and were not harmed.
+
+**5.** “Then came the people of the generation of Enosh. They went from one end of the world to the other, and each brought silver, gold, precious stones, and pearls in heaps like mountains and hills. They fashioned them into idols in the world, enormous in measure, and brought down the sun, the moon, the stars, and the constellations to stand before them on their right and on their left, so that they might serve them as they had served the Holy One, blessed be He.
+
+**6.** “How did they have power to bring them down and make use of them? Uzza and Azael taught them sorceries by which they could bring them down and use them. Without this they would not have been able to do so.
+
+**7.** “At that time the ministering angels brought an accusation before the Holy One, blessed be He, and said, ‘Master of the universe, what have You to do with humankind? “What is Enosh, that You remember him?” It does not say “What is Adam?” but “What is Enosh?” - for he was the beginning of idolatry.
+
+**8.** “‘Why have You left the highest heavens, the dwelling of Your glory and the high and exalted throne in the heights of Arabot, and gone among human beings who worship idols and have equated You with idols? Now You are on earth and their idols are on earth - what are You doing among the inhabitants of earth who worship idols?’
+
+**9.** “Then the Holy One, blessed be He, removed His Shekinah from the earth and from among them. At that time the ministering angels came in ranks of hosts and armies of Arabot, thousands upon tens of thousands. They took trumpets and grasped shofars in their hands, and surrounded the Shekinah with songs and praises as it ascended to the highest heavens, as it is written: ‘God has gone up with a shout; YHWH with the sound of a shofar.’”
+
+## 3 Enoch 6
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the Holy One, blessed be He, wished to bring me up to the heights, He first sent the prince Anaphiel. He took me from among them before their eyes, led me with great honor upon a chariot of fire with horses of fire and ministers of glory, and raised me to the Shekinah in the highest heavens.
+
+**2.** “When I reached the highest heavens, the Holy Living Creatures, the ophanim, the seraphim, the cherubim, the wheels of the Chariot, and the ministers of consuming fire smelled my scent from a distance of sixty-five thousand and three hundred parasangs.
+
+**3.** “They said, ‘What is the scent of one born of woman, and what is the savor of a white drop, that he ascends into the highest heavens and serves among those who hew out flame?’
+
+**4.** “The Holy One, blessed be He, answered them and said, ‘My servants, My hosts, My cherubim, My ophanim, and My seraphim, do not let your hearts be troubled by this. All humankind has denied Me and My great kingship; they went and served idols, and I removed My Shekinah from among them and ascended to the height.
+
+**5.** “‘But this one whom I have taken from among them is the chosen one among them all. In faith, righteousness, and the perfection of his deeds, he is equal to them all. This one whom I have taken is My reward from My world beneath the heavens.’”
+
+## 3 Enoch 7
+
+**1.** Rabbi Ishmael said: Metatron, Prince of the Presence, said to me, “When they took me from among the generation of the Flood, they raised me on the wings of the wind of the Shekinah to the highest firmament.
+
+**2.** “They brought me into the great palaces in the height of the firmament of Arabot, where stand the Throne of Glory, the Shekinah, and the Chariot; there are ranks of fire, armies of wrath, forces of fury, cherubim of torch-fire, ophanim of glowing coal, ministers of flame, hashmallim of lightning, and seraphim of flashing fire.
+
+**3.** “They stationed me there to minister every day before the Throne of Glory.”
+
+## 3 Enoch 8
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Before they appointed me to minister before the Throne of Glory, the Holy One, blessed be He, opened for me thirteen hundred thousand gates of wisdom and three hundred thousand gates of understanding, and innumerable gates of prudence, life, peace, the Shekinah, strength and valor, power, grace and mercy, love, desire, humility, and fear of sin.
+
+**2.** “At that time the Holy One, blessed be He, added to me wisdom upon wisdom, understanding upon understanding, prudence upon prudence, knowledge upon knowledge, mercy upon mercy, Torah upon Torah, love upon love, kindness upon kindness, desire upon desire, humility upon humility, might upon might, power upon power, valor upon valor, radiance upon radiance, beauty upon beauty, and splendor upon splendor.
+
+**3.** “I was honored and glorified through all these good and praiseworthy qualities more than all the inhabitants of the heights.”
+
+## 3 Enoch 9
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “After all these qualities had been given to me, the Holy One, blessed be He, laid His hand upon me and blessed me with three hundred and sixty-five thousand blessings.
+
+**2.** “I was raised and enlarged until my height equaled the length and breadth of the world. He caused seventy-two wings to grow upon me - thirty-six wings on one side and thirty-six on the other - and every wing filled the world.
+
+**3.** “He fixed in me three hundred and sixty-five thousand eyes, every eye like the great luminary. He left no kind of radiance, form, beauty, or light in the world that He did not set within me.”
+
+## 3 Enoch 10
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “All this the Holy One, blessed be He, did for me. He made for me a throne like the Throne of Glory.
+
+**2.** “He spread over me a covering of radiance, brilliance, beauty, glory, loveliness, and mercy like the covering of the Throne of Glory, in which every kind of luminous splendor in the world was fixed.
+
+**3.** “They placed it at the entrance of the seventh palace and seated me upon it. A herald went forth through every firmament, proclaiming: ‘Metatron My servant - I have appointed him prince and ruler over all the princes of My kingdoms and over all the inhabitants of the heights, apart from the honored and awesome princes who bear the Name of the Eternal King.
+
+**4.** “‘Every angel who has a matter to speak before Me shall go before him and speak to him. Every word that he speaks to you in My name you shall guard and perform, for the Prince of Wisdom and the Prince of Understanding serve him and teach him the wisdom of the upper and lower worlds, the wisdom of this world and the secret of the world to come.
+
+**5.** “‘I have also appointed him over all the treasuries of the palace of Arabot and over all the stores of life that are in the highest heavens.’”
+
+## 3 Enoch 11
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “The Holy One, blessed be He, revealed to me every source of the mysteries of Torah, every secret of wisdom, and every depth of the perfect Torah.
+
+**2.** “The thoughts of the hearts of creatures, every mystery of the world, and all the secrets of Creation are revealed before me in the manner in which they are revealed before the Creator of Creation.
+
+**3.** “From that time I have gazed into the mysteries of the deep and into the wondrous secret. Before a person thinks, I know; before he conceals a matter in secret, I see; before a person acts, I know. There is nothing hidden or deep in the heights that is concealed from me.”
+
+## 3 Enoch 12
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Because of the love with which the Holy One, blessed be He, loved me more than all the inhabitants of the heights, He made for me a garment of majesty in which every kind of light was fixed, and He wrapped me in it.
+
+**2.** “He made for me a royal crown in which were fixed forty-nine stones blazing with the light of the sun's sphere. Its radiance traveled through the four quarters of the firmament of Arabot, through the seven heavens, and through the four directions of the world.
+
+**3.** “He bound it upon my head and called me ‘the Lesser YHWH’ before all His household in the heights, as it is written: ‘For My name is within him.’”
+
+## 3 Enoch 13
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Because of the great love and immense compassion with which the Holy One, blessed be He, loved and cherished me more than all the inhabitants of the heights, He wrote with His finger, with a pen of flame, upon the crown on my head the letters by which heaven and earth were created.
+
+**2.** “They were the letters by which seas and rivers were created, the letters by which mountains and hills were created, the letters by which stars and constellations, lightning, wind, thunder, voices, snow, hail, tempest, and storm were created; the letters by which the needs of the world and all the secrets of Creation were made.
+
+**3.** “Every letter shone face to face like the rising of the sun and moon and stars.”
+
+## 3 Enoch 14
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the Holy One, blessed be He, bound this crown upon my head, all the princes of kingdoms in the height of Arabot and all the armies of every firmament shook before me.
+
+**2.** “Even the princes of the mighty ones, the captains, and the princes of the erelim, who are greater than all the ministering angels serving before the Throne of Glory, trembled and recoiled before me.
+
+**3.** “Even Samael the wicked, chief of all accusers, who is great among the kingdoms of the heights, feared and trembled.
+
+**4.** “The angel of fire, the angel of hail, the angel of wind, the angel of lightning, the angel of wrath, the angel of thunder, the angel of snow, the angel of rain, the angel of day, the angel of night, and the angels of the stars and constellations through whose hands the world is governed - all trembled and recoiled before me when they saw me.
+
+**5.** “These are the names of the princes who govern the world: Gabriel, angel of fire; Baradiel, angel of hail; Ruhiel, appointed over the wind; Baraqiel, appointed over lightning; Za'amiel, appointed over wrath; Ziqiel, appointed over sparks; Zo'iel, appointed over tremors; Za'afiel, appointed over fury; Ra'amiel, appointed over thunder; Ra'ashiel, appointed over earthquake; Shelegiel, appointed over snow; Matariel, appointed over rain; Shamshiel, appointed over the day; Lailiel, appointed over the night; Galgaliel, appointed over the sphere of the sun; Ophanniel, appointed over the wheel of the moon; Kokabiel, appointed over the stars; and Rahatiel, appointed over the constellations.
+
+**6.** “All of them fall upon their faces when they see me. They cannot gaze at me because of the majesty, splendor, radiance, brilliance, beauty, form, brightness, and glorious light upon my head.”
+
+## 3 Enoch 15
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Splendor of all the heights: when the Holy One, blessed be He, took me to minister before the Throne of Glory, the wheels of the Chariot, and all the needs of the Shekinah, my flesh was immediately changed into flame, my sinews into fire, my bones into burning coals of broomwood, the light of my eyelids into the radiance of the firmament, the wheels of my eyes into torches of fire, the hair of my head into blaze and flame, all my limbs into wings of burning fire, and the whole stature of my body into a consuming fire.
+
+**2.** “At my right were those who hew out flames of fire; at my left a torch of fire burned. Around me flew storm-wind and tempest, and before me and behind me sounded the voice of tumult upon tumult.”
