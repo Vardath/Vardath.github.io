@@ -53896,3 +53896,1392 @@ Roadmap requirements:
 - if accessible English is incomplete, record that limitation rather than inventing missing text;
 - append only verifiable findings.
 
+
+
+---
+
+# SECTION 82 — SIRATE TSION / ORDER OF ZION
+## Direct broader-canon / Sinodos pass — Zion as gathering-and-distribution centre, bright-cloud ascent, ten-day waiting interval, wind/fire/language activation, common-order dissemination, eastward orientation, calendrical synchronization, elevated Scripture-reading node, office/access filtering, seven-minister sanctuary array, district chief network, sanctuary permission, same-day offering circulation, and four-corner information spread
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+The files themselves showed that Sections 68–81 had already been completed and appended despite the visible chat no longer containing all of that work.
+
+The actual Part 2 tail identified the next unfinished block as:
+
+**Section 82 — Sirate Tsion / Order of Zion**.
+
+No existing Section 82 marker was present.
+
+This section is appended only here in Part 2.
+
+---
+
+# TEXT IDENTITY FIRST
+
+**Sirate Tsion / Sərʿata Ṣəyon / Order of Zion / Book of Order** belongs to the Ethiopian Orthodox broader New Testament canon.
+
+It is one of the four traditional Sinodos church-order divisions.
+
+The strongest current scholarly identification is with the:
+
+**Canons after the Ascension of Our Lord**,
+
+traditionally arranged as **30 canons/orders**.
+
+It is **not the same text as Tizaz / Teʾezaz**.
+
+Tizaz is the neighboring larger Statutes-of-the-Apostles unit, conventionally associated with 71 canons.
+
+This distinction is important because George Horner's 1904 *Statutes of the Apostles* is often surfaced by web searches for Sinodos and can easily be misassigned to Sirate Tsion.
+
+### M82-1 — THE TITLE "ORDER OF ZION" MUST NOT BE TREATED AS EVIDENCE THAT THIS IS A MYSTICAL ZION COSMOLOGY
+
+The text is primarily:
+- church order;
+- liturgical regulation;
+- office/discipline;
+- prayer;
+- feasts;
+- commemoration;
+- sanctuary order;
+- Eucharistic practice.
+
+Its Zion language is important,
+but its ordinary literary function is institutional and liturgical.
+
+That is the control baseline.
+
+---
+
+# MANUSCRIPT / EDITION CONTROL
+
+Specialist descriptions and manuscript catalogues identify:
+- a Geʽez Sinodos witness tradition;
+- a section known as the Canons after the Ascension;
+- normally **30 canons**.
+
+At least one catalogue witness describes **29**.
+
+Therefore:
+**30 is the traditional/common count, but witness-level variation exists**.
+
+Alessandro Bausi's critical work on the Ethiopic Sinodos is the principal scholarly control for the pseudo-apostolic material.
+
+The accessible full English reading aid used for this pass presents:
+- Prologue;
+- Canons 1–30;
+- Conclusion.
+
+It is useful for direct close reading,
+but it is a modern English presentation,
+not a replacement for Bausi's critical Geʽez edition.
+
+### M82-2 — NUMBERING IS A TRANSMISSION VARIABLE
+
+Do not derive Vardath numerology from:
+29 vs 30
+without specifying witness/edition.
+
+---
+
+# PROLOGUE
+## scattering → Mount-of-Olives regathering → bright-cloud ascent → upper-room waiting → wind/fire/language activation → deliberate world dispersal
+
+The prologue gives an unexpectedly clear process sequence.
+
+After resurrection:
+- disciples are scattered through Galilee/Nazareth;
+- on the **fortieth day** they gather at Mount of Olives/Jerusalem;
+- Christ appears in their midst;
+- lays hand on each of eleven disciples;
+- a **bright cloud carries/lifts him upward**;
+- disciples watch ascent to heaven;
+- they return to the **upper room**;
+- pray and fast **ten days**;
+- do not yet know foreign languages;
+- then hear a sound like **violent wind**;
+- smell unusual fragrance;
+- **tongues of fire descend upon each**;
+- receive new languages and understanding;
+- fast forty days;
+- then disperse on missions to distant regions.
+
+### M82-3 — THIS IS A TRUE SCATTER→REGATHER→ACTIVATE→REDISTRIBUTE SEQUENCE
+
+Formal process:
+
+**distributed disciples**
+→ **central gathering at Zion/Jerusalem**
+→ **waiting interval**
+→ **wind/fire/information activation**
+→ **new language capacity**
+→ **deliberate dispersal through world**.
+
+This is highly relevant to the project's:
+**distributed → concentrated → transformed → distributed**
+grammar.
+
+But the mechanism is:
+**religious/information network formation**,
+not physical world-gate formation.
+
+---
+
+# BRIGHT CLOUD AS ASCENT CARRIER
+
+The prologue says a:
+**bright cloud carried/lifted Christ from their midst**.
+
+### M82-4 — CLOUD FUNCTIONS AS A CARRIER MEDIUM IN THE TEXTUAL IMAGE
+
+This adds another cloud function to the master taxonomy:
+
+- concealment;
+- glory/presence;
+- weather;
+- vehicle/carrier;
+- signal field.
+
+The text does not describe:
+- cloud mechanics;
+- plasma;
+- woven structure;
+- gate aperture.
+
+Classification:
+**carrier-cloud imagery**.
+
+---
+
+# HAND-ON-HEAD ORDINATION
+## one central figure → repeated contact with eleven nodes
+
+Christ:
+- lays hand upon head of each disciple;
+- establishes/authorizes them.
+
+### M82-5 — AUTHORITY TRANSFER OCCURS THROUGH REPEATED ONE-TO-ONE CONTACT FROM A CENTRAL SOURCE
+
+Formal network:
+
+**one source**
+→ disciple 1
+→ disciple 2
+→ ...
+→ disciple 11.
+
+This is:
+**central authorization distributed to multiple future nodes**.
+
+Not material-energy proof.
+
+---
+
+# TEN-DAY WAITING INTERVAL
+## dormant capacity → activation
+
+For ten days:
+- disciples remain together;
+- pray/fast;
+- lack language capacity for future missions.
+
+Then:
+- wind/fire event;
+- language/understanding appears.
+
+### M82-6 — THE TEXT DISTINGUISHES GATHERING FROM ACTIVATION
+
+Gathering alone is not enough.
+
+There is:
+1. central assembly;
+2. waiting interval;
+3. activation event;
+4. changed functional capacity;
+5. outward deployment.
+
+This is a very useful process distinction.
+
+---
+
+# WIND + FIRE + LANGUAGE
+
+The Pentecost-style activation has:
+- violent-wind sound;
+- descending fire tongues;
+- new languages;
+- knowledge of prayer/worship/law/order.
+
+### M82-7 — WIND/FIRE HERE IS DIRECTLY COUPLED TO INFORMATION CAPACITY
+
+The immediate output is:
+- speech;
+- understanding;
+- instruction;
+- social order.
+
+Therefore:
+wind/fire imagery can encode
+**information-state transformation**.
+
+This is another major control against automatically reading all fire/wind passages as physical plasma machinery.
+
+### M82-8 — ONE ACTIVATION EVENT CREATES MANY DIFFERENT LOCAL-LANGUAGE CHANNELS
+
+One central event
+→ many language-specific outputs.
+
+That is a:
+**one → many encoded-channel transformation**.
+
+---
+
+# REGIONAL APOSTOLIC DISPERSAL
+## one gathered centre → many geographic mission nodes
+
+The prologue assigns different agents to:
+- Jerusalem/Palestine;
+- Alexandria/Egypt/Nubia/Ethiopia;
+- India/Sind/Red Sea;
+- Syria/Antioch/Galatia/Crete/Pontus/Rome/Spain;
+- Ephesus/Asia/Phrygia;
+- western lands/Great Sea;
+- Persia/Babylon/Arabia/Yemen;
+- mountain/river regions;
+- other countries.
+
+### M82-9 — THE TEXT EXPLICITLY TURNS ONE CENTRAL ZION ASSEMBLY INTO A DISTRIBUTED GLOBAL NETWORK
+
+This is one of Sirate Tsion's strongest structural features.
+
+Zion:
+**information/order source**.
+
+Apostles:
+**mobile carriers**.
+
+Regions:
+**distributed receiving nodes**.
+
+---
+
+# COMMON ORDER BEFORE DISPERSAL
+
+The prologue explicitly says:
+before separating into the different regions,
+the apostles:
+- established an order/canon;
+- taught it while gathered in Zion;
+- then carried it everywhere.
+
+### M82-10 — COMMON INFORMATION IS FIXED AT THE CENTRE BEFORE NETWORK DISPERSAL
+
+This gives:
+
+**central consensus**
+→ **encoded common order**
+→ **distributed carriers**
+→ **regional replication**.
+
+For Vardath:
+this is a strong cultural/information-transfer analogue.
+
+It is not:
+world material transfer.
+
+---
+
+# CANON 1
+## EAST-FACING PRAYER
+## east→west lightning model determines human orientation
+
+Canon 1:
+- prayer directed toward **east**;
+- rationale:
+  coming of Christ compared with lightning from east visible as far as west;
+- therefore expected coming from east.
+
+### M82-11 — COSMIC/DIRECTIONAL IMAGE IS CONVERTED INTO A HUMAN ORIENTATION RULE
+
+Process:
+
+**east→west lightning image**
+→ **future-coming expectation**
+→ **whole worshiping body faces east**.
+
+This is a true:
+**large-scale directional sign → collective bodily alignment**
+mapping.
+
+### M82-12 — ORIENTATION IS SYMBOLIC/ESCHATOLOGICAL, NOT A MATERIAL CURRENT DIRECTION
+
+Do not turn:
+east-facing prayer
+into proof of eastward gate flow.
+
+---
+
+# CANONS 2–4
+## recurring weekly synchronization through event-memory
+
+Canon 2:
+- gather Sunday;
+- third hour;
+- prayer;
+- Scripture reading;
+- Eucharist;
+- resurrection/return memory.
+
+Canon 3:
+- gather/pray Wednesday;
+- passion prediction memory.
+
+Canon 4:
+- Friday ninth-hour prayer;
+- crucifixion memory;
+- earth shaking;
+- sun darkening.
+
+### M82-13 — CALENDAR CONVERTS HISTORICAL EVENTS INTO REPEATED NETWORK SYNCHRONIZATION
+
+Different communities can perform:
+the same actions
+at repeated phase positions.
+
+This is a real:
+**distributed temporal synchronization system**.
+
+### M82-14 — LITURGICAL CLOCK ≠ COSMIC CYCLE CLOCK
+
+The recurrence is:
+- weekly;
+- commemorative;
+- institutional.
+
+Do not infer:
+physical gate periodicity.
+
+---
+
+# CANONS 5–7
+## hierarchical office network modeled after earlier priestly roles
+
+Canons establish:
+- bishops/prelates;
+- presbyters;
+- deacons;
+- subdeacons;
+- readers.
+
+Roles are modeled after:
+- Moses/Aaron;
+- Israelite priests;
+- Levites.
+
+Deacons/subdeacons/readers:
+carry vessels of offering/sanctuary/sacrifice.
+
+### M82-15 — THE SYSTEM IS FUNCTIONALLY DIFFERENTIATED
+
+Different nodes perform:
+- command;
+- teaching;
+- judgment;
+- carrying;
+- reading;
+- sanctuary service.
+
+This is not one undifferentiated hierarchy.
+
+### M82-16 — ROLE RECURRENCE OPERATES BY FUNCTIONAL ANALOGY ACROSS TIME
+
+New office:
+is patterned after
+earlier office.
+
+Cross-link:
+Malachi Elijah-role;
+other biblical role recurrences.
+
+---
+
+# CANONS 8–11
+## annual and multi-week time structure
+
+Canons mark:
+- Nativity;
+- Baptism;
+- forty-day fast;
+- Pascha;
+- fifty-day non-fasting interval;
+- Ascension at forty days.
+
+### M82-17 — SIRATE TSION BUILDS A MULTI-SCALE TIME GRID
+
+It contains:
+- daily/hourly prayer points;
+- weekly recurrence;
+- annual feasts;
+- 40-day and 50-day intervals.
+
+Again:
+institutional/liturgical clock.
+
+### M82-18 — DIFFERENT INTERVALS HAVE DIFFERENT FUNCTIONS
+
+Do not collapse:
+- 10;
+- 40;
+- 50;
+into hidden gate arithmetic.
+
+---
+
+# CANON 12
+## elevated Scripture-reading seat → sequential information hierarchy
+
+Scriptures are read:
+- from an **elevated seat** in church.
+
+Sequence:
+- Law;
+- prophets;
+- apostolic account;
+- Gospel.
+
+People:
+- stand;
+- listen;
+- pray.
+
+### M82-19 — PHYSICAL ELEVATION MARKS INFORMATIONAL AUTHORITY
+
+An elevated local node:
+broadcasts information
+to gathered population.
+
+This is a literal:
+**height → communication-centre**
+arrangement.
+
+### M82-20 — INFORMATION ITSELF HAS ORDERED LAYERS
+
+Different textual corpora are not treated as random.
+
+They are presented in a sequence culminating in Gospel.
+
+This is:
+**semantic hierarchy**,
+not physical layered worlds.
+
+---
+
+# CANONS 13–20
+## semantic access control / office eligibility
+
+The canons regulate who may remain in:
+- ordination;
+- ministry;
+- judgment;
+- leadership.
+
+Reasons for exclusion include:
+- misconduct;
+- false witness;
+- violence;
+- divination/astrology/sorcery;
+- distrust/unfaithfulness;
+- greed;
+- sexual misconduct;
+- certain religious/social boundary violations;
+- unjust leadership.
+
+### M82-21 — OFFICE ACCESS IS A SEMANTIC/PERMISSION FILTER
+
+A person can physically be present,
+but lack authorization to occupy a role.
+
+This strongly parallels the distinction already found in Revelation 21:
+
+**aperture/presence state**
+≠
+**permission/access state**.
+
+### M82-22 — ROLE CAN BE REMOVED WHILE PERSON CONTINUES TO EXIST
+
+Office:
+can be revoked.
+
+Occupant:
+remains a person.
+
+Again:
+**role and carrier are separate variables**.
+
+---
+
+# ANTI-JEWISH / EXCLUSIONARY MATERIAL — REQUIRED HISTORICAL CONTROL
+
+Canon 18 and parts of the conclusion contain explicit anti-Jewish polemic characteristic of some Christian church-order traditions.
+
+### M82-23 — THIS LANGUAGE IS HISTORICAL POLEMIC, NOT A VARDATH COSMOLOGICAL VARIABLE
+
+Do not convert:
+religious out-group language
+into
+mechanical purity/sorting physics.
+
+Do not reproduce it as normative treatment of Jewish people.
+
+This is source history,
+not project mechanism.
+
+---
+
+# CANON 19
+## entry, affiliation, return to former practice, re-entry rules
+
+Canon 19 concerns:
+- accepting newcomers;
+- joining them to community;
+- relation to former social group;
+- consequences of leaving/reverting.
+
+### M82-24 — COMMUNITY MEMBERSHIP IS A STATE MACHINE
+
+Possible states:
+- outside;
+- admitted;
+- joined;
+- leaves/reverts;
+- returns under changed status.
+
+This is useful as an abstract:
+**state-transition/access-control**
+model.
+
+No physical gate.
+
+---
+
+# CANON 20
+## distributed leadership constrained by joint counsel
+
+Church head:
+- should not act arbitrarily;
+- works with companions/counsel;
+- judgment must remain upright.
+
+Prayer begun:
+- should not be abandoned for another task.
+
+### M82-25 — CENTRAL NODE IS NOT ABSOLUTE; IT IS CONSTRAINED BY PEER-NODE FEEDBACK
+
+This is important.
+
+Network structure:
+**leader**
++
+**council/companions**
+→ decision.
+
+Not:
+single unconstrained operator.
+
+---
+
+# CANON 21
+## martyr commemoration preserves identity through time
+
+Martyrs:
+- commemorated yearly on death/crowning day.
+
+### M82-26 — MEMORY FUNCTIONS AS INFORMATIONAL CONTINUITY AFTER BIOLOGICAL ABSENCE
+
+Person:
+no longer physically present.
+
+Identity/event:
+remains active in calendrical network.
+
+This is a cultural persistence mechanism,
+not resurrection.
+
+---
+
+# CANON 22
+## day/night prayer + Psalms = continuous information loop
+
+Prayer:
+- multiplied by night/day;
+- Psalms reused for praise, thanksgiving, confession, petition;
+- used in distress.
+
+### M82-27 — ONE TEXTUAL CORPUS SUPPORTS MULTIPLE SYSTEM FUNCTIONS
+
+Same Psalms:
+- praise;
+- request;
+- confession;
+- coping;
+- synchronization.
+
+Thus:
+one information carrier
+can perform different operations by context.
+
+---
+
+# CANON 23
+## SEVEN MINISTERS selected for sanctuary service
+
+Canon 23 specifies:
+**seven ministers** chosen from people for sanctuary ministry.
+
+They:
+- know order;
+- speak concerning prayer;
+- consecrate offering;
+- reconcile people;
+- act as ministers/mediators.
+
+### M82-28 — SIRATE TSION CONTAINS A SEVEN-NODE MINISTRY ARRAY
+
+Record because numbers matter to the larger project.
+
+But:
+ordinary function is ecclesiastical.
+
+Do not force:
+7 = Vardath/JANUS subconscious evaluators
+or
+7 = Fano structure.
+
+### M82-29 — SEVEN SIDE/LOCAL AGENTS MEDIATE ONE CENTRAL SANCTUARY FUNCTION
+
+This is a legitimate network comparison:
+distributed selected agents
+→ common sanctuary process.
+
+---
+
+# CANONS 24–26
+## appeals ladder + district supervision network
+
+Canon 24:
+- local dispute/judgment;
+- priest oversight;
+- if unresolved, send upward to bishop/archbishop;
+- authority itself can be corrected.
+
+Canon 26:
+- chief priest over presbyters throughout districts;
+- travels among them;
+- gathers;
+- commands;
+- inspects.
+
+### M82-30 — THIS IS A MULTI-LEVEL ERROR-CORRECTION / ESCALATION NETWORK
+
+Local node:
+handles issue.
+
+If failure:
+→ higher node.
+
+Higher node:
+travels/inspects distributed regions.
+
+This is another organizational-network result,
+not cosmic hierarchy.
+
+### M82-31 — THE SUPERVISOR MOVES THROUGH THE NETWORK RATHER THAN REMAINING A PERMANENT CENTRAL POINT
+
+Interesting for the mature Vardath rule:
+local centres can be temporary/function-specific.
+
+---
+
+# CANONS 27–28
+## king receives sanctuary access but not unrestricted control
+
+Canon 27:
+- king stands with faithful/dignitaries/priests;
+- enters sanctuary;
+- has an assigned place.
+
+Canon 28:
+- king must **not act according to his own will** in sanctuary;
+- role constrained by sacred order.
+
+### M82-32 — PHYSICAL ACCESS DOES NOT EQUAL UNLIMITED AUTHORITY
+
+This is one of the clearest Sirate Tsion controls.
+
+The king can:
+**enter**.
+
+But cannot:
+**control system arbitrarily**.
+
+Thus:
+
+**access**
+≠
+**operator privilege**.
+
+This strongly cross-links:
+Revelation 21 open gates + selective entry;
+Ezekiel layered access;
+priestly clothing/access boundaries.
+
+### M82-33 — EVEN THE HIGHEST POLITICAL NODE IS SUBORDINATE TO THE SYSTEM'S RULES
+
+Important institutional control.
+
+Do not treat king as gate/operator simply because he occupies privileged space.
+
+---
+
+# CANON 29
+## office execution / command continuity
+
+Priests/officials:
+- expected to carry out assigned work;
+- commands move through authority chain.
+
+### M82-34 — SYSTEM CONTINUITY DEPENDS ON ROLE PERFORMANCE, NOT SYMBOLIC TITLE ALONE
+
+---
+
+# CANON 30
+## OFFERING MUST CIRCULATE SAME DAY
+## central altar → distribution → no overnight retention
+
+Bread:
+- offered at altar on day prepared;
+- distributed same day;
+- none kept for tomorrow.
+
+### M82-35 — THIS IS A TRUE INPUT→CENTRAL PROCESS→DISTRIBUTION FLOW
+
+Formal sequence:
+
+**prepared resource**
+→ **altar/central ritual node**
+→ **same-day distribution**
+→ **zero retained stock**.
+
+This is one of the cleanest material-flow systems in Sirate Tsion.
+
+But source:
+Eucharistic discipline.
+
+Not cosmology.
+
+### M82-36 — THE CENTRAL NODE IS A TRANSFORMATION/DISTRIBUTION POINT, NOT A PERMANENT WAREHOUSE
+
+That distinction is useful.
+
+---
+
+# CONCLUSION
+## Zion order → distributed writings/teachers → four corners of world
+
+The conclusion returns to:
+- apostles gathered in upper chamber/Jerusalem;
+- Holy Spirit on height of Zion;
+- wisdom/order given;
+- later apostles and successors carry/write it in many regions;
+- documents to be read in churches;
+- message spreads through cities/countries;
+- preaching reaches **four corners of world**.
+
+### M82-37 — SIRATE TSION CLOSES THE SAME NETWORK CYCLE IT OPENED
+
+Beginning:
+**distributed disciples → central Zion gathering**.
+
+Middle:
+**activation + common-order formation**.
+
+End:
+**distributed global replication**.
+
+Full shape:
+
+**many**
+→ **one centre**
+→ **common encoding**
+→ **many regional copies/nodes**.
+
+This is a genuine:
+**many → one → many**
+information-network transformation.
+
+---
+
+# FOUR-CORNER DISTRIBUTION
+
+The conclusion explicitly says preaching spread:
+**throughout the four corners of the world**.
+
+### M82-38 — FOUR DIRECTIONS/CORNERS FUNCTION AS COMPLETE DISTRIBUTED COVERAGE
+
+This is not a four-strand gate.
+
+It is:
+**global reach/completeness**.
+
+Record in directional register,
+not mechanism register.
+
+---
+
+# ZION AS CENTRE
+## what "Zion" is doing in this text
+
+Zion functions as:
+- assembly point;
+- authorization point;
+- information/order formation point;
+- Pentecost activation point;
+- origin point from which agents disperse.
+
+### M82-39 — ZION IS A CENTRAL INFORMATION/ORDINATION NODE MORE THAN A GEOMETRIC WORLD-AXIS IN THIS TEXT
+
+This matters enormously.
+
+A central sacred place can be:
+**network source**
+without being:
+**physical cosmic throat**.
+
+This is a strong anti-overfitting control for all Zion/Jerusalem passages.
+
+---
+
+# SACRED-SPACE GEOMETRY
+
+Direct spatial variables in Sirate Tsion include:
+- Mount of Olives;
+- Jerusalem/Zion;
+- upper room;
+- eastward prayer;
+- elevated Scripture seat;
+- sanctuary;
+- assigned places within sanctuary;
+- altar;
+- districts;
+- four corners/world regions.
+
+What is **not** clearly present:
+- woven sky;
+- upper/lower water;
+- serpent/dragon;
+- winged creature;
+- mountain splitting;
+- narrow throat;
+- rod;
+- bilateral water outflow.
+
+### M82-40 — THE TEXT'S GEOMETRY IS MOSTLY SOCIAL/LITURGICAL SPATIAL ORDER
+
+That negative finding must remain explicit.
+
+---
+
+# ASCENT / DESCENT
+
+The prologue includes:
+- bright-cloud upward ascent of Christ;
+- tongues of fire descending on disciples;
+- future coming from heaven.
+
+### M82-41 — UPWARD CARRIER AND DOWNWARD INFORMATION/ACTIVATION EVENTS ARE DISTINCT
+
+Up:
+**Christ + bright cloud**.
+
+Down:
+**fire/tongues / Holy Spirit activation**.
+
+Do not merge them into one bidirectional physical current merely because directions oppose.
+
+But the text does provide:
+**ascent and descent using different carriers/functions**.
+
+---
+
+# WATER / BAPTISM
+
+Sirate Tsion contains:
+- feast of Baptism;
+- baptism in apostolic mission.
+
+It does not, in the accessible text:
+- give detailed water geometry;
+- describe deep/sea mechanisms;
+- use baptismal water as a cosmic boundary.
+
+### M82-42 — BAPTISMAL WATER IS RITUAL/IDENTITY TRANSITION HERE, NOT WORLD-GATE WATER
+
+---
+
+# FIRE / LIGHT
+
+Fire appears most strongly as:
+- tongues descending at Pentecost;
+- Friday memory includes sun darkening/earthquake.
+
+Lightning:
+- east→west eschatological directional image.
+
+### M82-43 — FIRE/LIGHT IS PRIMARILY INFORMATION, PRESENCE AND ESCHATOLOGICAL SIGNAL
+
+This is consistent with:
+4 Ezra fire = law/reproof;
+other biblical light = authority/revelation.
+
+Again:
+fire is not automatically plasma.
+
+---
+
+# CHERUB / FEATHERED-SERPENT / QUETZALCOATL UPDATE
+
+Sirate Tsion supplies:
+- **no significant serpent/dragon body**;
+- **no developed cherub morphology**;
+- **no winged transport creature** in the 30 canons.
+
+Its useful contribution is instead:
+- bright-cloud carrier;
+- wind/fire activation;
+- directional lightning;
+- distributed information network.
+
+### M82-44 — THIS BLOCK IS A NEGATIVE MORPHOLOGY CONTROL
+
+The same-cosmological-phenomenon hypothesis should **not** expand merely because:
+- Zion;
+- fire;
+- wind;
+- ascent
+
+occur.
+
+There is no sufficient creature/support morphology here.
+
+That is useful evidence against overfitting.
+
+---
+
+# INFORMATION / CULTURE TRANSFER
+
+This is where Sirate Tsion is strongest for Vardath.
+
+The text explicitly contains:
+- new language acquisition;
+- shared law/order;
+- mobile carriers;
+- regional dissemination;
+- written replication;
+- common calendrical practices;
+- common office system;
+- common liturgy.
+
+### M82-45 — SIRATE TSION IS ONE OF THE CLEAREST TEXTS FOR CULTURAL/INFORMATION TRANSFER AS A SYSTEM VARIABLE
+
+If Vardath world-contact transfers:
+- people;
+- language;
+- culture;
+- rule;
+- memory;
+
+Sirate Tsion is valuable as a **social-information analogue**.
+
+It is not evidence of physical inter-world transfer.
+
+---
+
+# TEMPORAL / CLOCK REGISTER
+
+Direct timing:
+
+- 40th day: Mount of Olives gathering/ascension.
+- 10 days: upper-room waiting.
+- Pentecost activation.
+- 40-day fast afterward in prologue.
+- Sunday third hour.
+- Wednesday prayer.
+- Friday ninth hour.
+- annual Nativity.
+- annual Baptism.
+- Paschal fast: 40 days.
+- 50-day post-Paschal interval.
+- Ascension feast: 40th day.
+
+### M82-46 — TIME IS USED TO SYNCHRONIZE COMMUNITY STATE
+
+This is:
+**ritual phase clock**.
+
+No evidence that:
+- these numbers measure a cosmic gate interval;
+- 40/50 map Vardath shell periods.
+
+Do not force.
+
+---
+
+# NUMBER REGISTER
+
+- 11 disciples receive hand-on-head authorization in prologue.
+- 10-day waiting interval.
+- 40-day post-activation fast.
+- traditional 30 canons.
+- Canon 23: 7 ministers.
+- four corners of world.
+- repeated 40 and 50 day liturgical intervals.
+
+### M82-47 — THE SEVEN-MINISTER ARRAY IS WORTH RECORDING BUT NOT NUMEROLOGICALLY PROMOTING
+
+The text gives:
+seven
+for a direct ecclesiastical role.
+
+No Fano/1-3-7 connection is claimed.
+
+---
+
+# FULL SIRATE TSION PROCESS TIMELINE
+
+disciples initially scattered
+→ forty-day point
+→ regather on Mount of Olives/Jerusalem
+→ Christ appears among centre
+→ repeated hand-on-head authorization
+→ bright cloud lifts Christ upward
+→ disciples enter upper room
+→ ten-day waiting/prayer/fasting
+→ language limitation remains
+→ violent-wind sound
+→ fragrance
+→ fire tongues descend
+→ new languages and understanding
+→ common prayer/order knowledge
+→ further fasting
+→ apostolic assignments differentiate
+→ common order fixed while gathered in Zion
+→ mobile agents disperse across countries
+→ converts/baptism/regional nodes form
+→ eastward prayer gives directional alignment
+→ weekly/hourly prayer gives temporal alignment
+→ annual feasts/fasts create long-period synchronization
+→ office network differentiates functions
+→ elevated reading seat broadcasts ordered information
+→ office admission/removal creates semantic access filters
+→ local leaders constrained by council
+→ martyr memory preserves absent persons in calendar
+→ seven ministers mediate sanctuary function
+→ dispute escalation rises through office hierarchy
+→ district chief travels among local nodes
+→ king receives sanctuary access but not unrestricted control
+→ altar offering processed/distributed same day
+→ apostles/successors encode order in writings
+→ writings circulate among churches
+→ network expands to cities/countries
+→ message reaches four corners of world
+→ local communities retain one shared order.
+
+---
+
+# CROSS-TEXT SYNTHESIS
+
+## Revelation 21 ↔ Sirate Tsion
+Revelation:
+- gates physically open;
+- access still identity-filtered.
+
+Sirate Tsion:
+- sanctuary/office physical presence possible;
+- authority/access remains role-filtered.
+
+### M82-48 — PHYSICAL OPENNESS AND SEMANTIC PERMISSION ARE CONSISTENTLY SEPARATE VARIABLES
+
+This is a mature Vardath control.
+
+---
+
+## Acts ↔ Sirate Tsion
+Acts:
+- Pentecost;
+- language;
+- mission dispersal.
+
+Sirate Tsion:
+- uses same narrative as foundation for a common church-order network.
+
+### M82-49 — AN ACTIVATION EVENT CAN BE FOLLOWED BY INSTITUTIONAL STABILIZATION
+
+Sequence:
+
+**event**
+→ **new capacity**
+→ **expansion**
+→ **rules**
+→ **stable distributed network**.
+
+Interesting formal parallel to:
+**gate event**
+→ **transfer**
+→ **successor equilibrium**.
+
+But social rather than physical.
+
+---
+
+## 4 Ezra 14 ↔ Sirate Tsion
+4 Ezra:
+- one source;
+- scribes;
+- books;
+- public/restricted information.
+
+Sirate Tsion:
+- one central order;
+- mobile apostles/successors;
+- writings;
+- distributed churches.
+
+### M82-50 — INFORMATION ITSELF HAS CARRIERS, COPIES, PERMISSIONS AND DESTINATIONS
+
+This strengthens the project's information-layer taxonomy.
+
+---
+
+# STRICT FINGERTRAP TEST — SIRATE TSION
+
+Criteria:
+1. broad/open distributed support;
+2. same-structure continuity;
+3. changing geometry/angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Broad distributed network
+Strong,
+but it is a **human/information network**,
+not a physical support lattice.
+
+## Same structural continuity
+The church/order persists across regions,
+but not as one material structure.
+
+## Contraction
+No.
+
+## Throat
+No.
+
+## Transfer
+Strong informational/cultural transfer.
+
+## Reopening
+No relevant physical reopening.
+
+### VERDICT
+
+**Strict fingertrap: NEGATIVE.**
+
+### M82-51 — SIRATE TSION SHOULD NOT BE USED AS MECHANICAL GATE EVIDENCE
+
+Its contribution is:
+**information-network and access-control architecture**.
+
+The current strongest physical chain therefore remains:
+
+**1/3 Meqabyan — broad wind-supported sky covering**
+→
+**4 Ezra 7 — narrow static throat**
+→
+**Zechariah 14 — topology opening/passage/bilateral outflow**
+
+with Revelation adding:
+- controlled abyss closure/release;
+- open-but-filtered gates;
+- successor river/tree network.
+
+The missing evidence is still:
+**one continuous broad woven support structure visibly contracting into the narrow throat and later reopening.**
+
+---
+
+# TEXTUAL / HISTORICAL CONTROLS — SIRATE TSION
+
+1. Sirate Tsion belongs to the Ethiopian broader-canon Church Order / Sinodos tradition.
+2. It is best identified with the Canons after the Ascension.
+3. It is not Tizaz/Teʾezaz.
+4. Traditional count is 30 canons, but manuscript/catalogue variation includes 29.
+5. Apostolic attribution is literary/ecclesial authority, not demonstrated first-century apostolic authorship.
+6. The Sinodos has a complex transmission history involving different linguistic and canonical collections.
+7. Bausi's critical edition is the principal scholarly control for the Ethiopic pseudo-apostolic material.
+8. The accessible Modern Testament rendering is a useful English reading aid but should not be treated as a critical edition.
+9. Horner's 1904 *Statutes of the Apostles* is highly relevant comparative Sinodos material but should not be silently substituted for Sirate Tsion.
+10. The prologue's Ascension/Pentecost narrative is a church-order authority frame and must be distinguished from Acts as a separate received text.
+11. East-facing prayer is liturgical/es­chatological orientation, not a physical current direction.
+12. Weekly and annual cycles are ritual synchronization, not demonstrated cosmic periodicity.
+13. Ministry rules describe institutional access, not cosmic sorting.
+14. Anti-Jewish polemic in parts of the text belongs to historical Christian controversy and must not be adopted as normative or mechanical symbolism.
+15. The king's sanctuary place is an ancient ecclesial-political rule, not evidence that modern political rulers possess sacred status.
+16. No developed serpent/dragon/cherub/fingertrap morphology appears in the 30-canons text.
+17. The strongest structural result is central information formation followed by distributed replication.
+
+---
+
+# SOURCES LOGGED — SIRATE TSION
+
+## Official Ethiopian Orthodox canon listing
+- Ethiopian Orthodox Tewahedo Church, canonical books:
+  https://www.ethiopianorthodox.org/english/canonical/books.html
+
+## Direct accessible English reading aid — prologue + 30 canons + conclusion
+- Sirate Tsion Prologue:
+  https://moderntestament.com/read/sirate-tsion/1/
+- Canon 1:
+  https://moderntestament.com/read/sirate-tsion/2/
+- Canon 2:
+  https://moderntestament.com/read/sirate-tsion/3/
+- Canon 3:
+  https://moderntestament.com/read/sirate-tsion/4/
+- Canon 4:
+  https://moderntestament.com/read/sirate-tsion/5/
+- Canon 5:
+  https://moderntestament.com/read/sirate-tsion/6/
+- Canon 6:
+  https://moderntestament.com/read/sirate-tsion/7/
+- Canon 7:
+  https://moderntestament.com/read/sirate-tsion/8/
+- Canon 8:
+  https://moderntestament.com/read/sirate-tsion/9/
+- Canon 9:
+  https://moderntestament.com/read/sirate-tsion/10/
+- Canon 10:
+  https://moderntestament.com/read/sirate-tsion/11/
+- Canon 11:
+  https://moderntestament.com/read/sirate-tsion/12/
+- Canon 12:
+  https://moderntestament.com/read/sirate-tsion/13/
+- Canon 13:
+  https://moderntestament.com/read/sirate-tsion/14/
+- Canon 14:
+  https://moderntestament.com/read/sirate-tsion/15/
+- Canon 15:
+  https://moderntestament.com/read/sirate-tsion/16/
+- Canon 16:
+  https://moderntestament.com/read/sirate-tsion/17/
+- Canon 17:
+  https://moderntestament.com/read/sirate-tsion/18/
+- Canon 18:
+  https://moderntestament.com/read/sirate-tsion/19/
+- Canon 19:
+  https://moderntestament.com/read/sirate-tsion/20/
+- Canon 20:
+  https://moderntestament.com/read/sirate-tsion/21/
+- Canon 21:
+  https://moderntestament.com/read/sirate-tsion/22/
+- Canon 22:
+  https://moderntestament.com/read/sirate-tsion/23/
+- Canon 23:
+  https://moderntestament.com/read/sirate-tsion/24/
+- Canon 24:
+  https://moderntestament.com/read/sirate-tsion/25/
+- Canon 25:
+  https://moderntestament.com/read/sirate-tsion/26/
+- Canon 26:
+  https://moderntestament.com/read/sirate-tsion/27/
+- Canon 27:
+  https://moderntestament.com/read/sirate-tsion/28/
+- Canon 28:
+  https://moderntestament.com/read/sirate-tsion/29/
+- Canon 29:
+  https://moderntestament.com/read/sirate-tsion/30/
+- Canon 30:
+  https://moderntestament.com/read/sirate-tsion/31/
+- Conclusion:
+  https://moderntestament.com/read/sirate-tsion/32/
+
+## Specialist orientation / manuscript / Sinodos history
+- Alessandro Bausi, “Sēnodos / Senodos,” Encyclopaedia Aethiopica orientation:
+  https://en.sewasew.com/p/senodos-(%E1%88%B2%E1%8A%96%E1%8B%B6%E1%88%B5)
+- Bausi, *Il Sēnodos etiopico. Canoni pseudoapostolici*, CSCO 552–553 (1995), publication record:
+  https://www.peeters-leuven.be/detail.php?search_key=9789068316896
+- Evidence-oriented Sirate Tsion study guide / manuscript bibliography:
+  https://elroidigital.org/book-of-sirate-tsion-study-guide.html
+- George W. Horner, *The Statutes of the Apostles or Canones Ecclesiastici* (1904), comparative neighboring Sinodos tradition:
+  https://archive.org/details/statutesapostle00unkngoog
+
+---
+
+# SECTION 82 — SIRATE TSION / ORDER OF ZION COMPLETE
+
+## Strongest new findings
+
+1. **Sirate Tsion is a 30-canons Church Order/Sinodos text best identified with the Canons after the Ascension, not a hidden Zion apocalypse and not the same work as Tizaz.**
+2. **The text itself produces a strong scatter→regather→activation→redistribution process: disciples are scattered, gather at Jerusalem/Mount of Olives, wait in the upper room, undergo wind/fire/language activation, establish common order, then disperse globally.**
+3. **This is a genuine many→one→many transformation, but its medium is human/information organization rather than a physical support lattice.**
+4. **The Ascension is represented with a bright cloud functioning as a carrier that lifts Christ upward, adding a clear cloud-carrier function to the project's carrier taxonomy.**
+5. **The ten-day interval before Pentecost cleanly separates central gathering from activation: assembly → waiting → activation → changed capacity → deployment.**
+6. **Wind and fire directly produce information/language/understanding effects in the narrative, reinforcing that wind/fire imagery can encode an information-state transformation rather than literal plasma mechanics.**
+7. **Before geographic dispersal the apostles establish one shared order at Zion; mobile agents then replicate it through many regions, making Zion a central information/authorization node.**
+8. **Canon 1 converts east→west lightning imagery into east-facing prayer, giving a source-level large-scale directional sign → collective bodily orientation mapping.**
+9. **The weekly/hourly and annual feast/fast system creates distributed temporal synchronization; this is a ritual clock, not evidence of a cosmic gate cycle.**
+10. **The elevated Scripture-reading seat turns physical height into an information-broadcast marker while the sequence Law→Prophets→Apostles→Gospel creates a semantic hierarchy rather than a physical layered-world map.**
+11. **Canons 13–20 create explicit semantic/permission access control: people may be physically present but disqualified from office; role and carrier are therefore separate variables.**
+12. **Canon 20 further shows the central leader constrained by counsel/peer feedback rather than functioning as an unconstrained operator.**
+13. **Canon 23 specifies seven ministers for sanctuary service, a real seven-node ecclesiastical array that should be recorded but not forced into Vardath/JANUS 1-3-7 arithmetic.**
+14. **Canons 24–26 establish a multi-level escalation and supervisory network: local issue → higher bishop/archbishop, with a district chief who travels, gathers and inspects distributed nodes.**
+15. **Canons 27–28 give a particularly useful access-control distinction: the king may enter and occupy an assigned sanctuary place, but that physical access does not grant arbitrary control over the sanctuary. Access ≠ operator privilege.**
+16. **Canon 30 gives a clean material flow: prepared bread → altar/central ritual node → same-day distribution → no retained stock. The centre transforms/distributes rather than acting as a permanent warehouse.**
+17. **The conclusion explicitly returns the common order from Zion into writings, teachers and communities reaching the four corners of the world, completing the many→one→many network cycle.**
+18. **Sirate Tsion therefore contributes strongly to the project's information/culture-transfer layer: language, rules, memory, offices, calendars and texts all have carriers, destinations, permissions and replication.**
+19. **It contributes little direct support to the cherub/Quetzalcoatl/Feathered-Serpent morphology hypothesis: no substantial serpent/dragon/winged-support body or physical throat is present. This is a useful negative control against overfitting fire, wind, ascent and Zion.**
+20. **The strict fingertrap test is negative. There is no broad woven material structure contracting into a throat and reopening.**
+21. **The physical cross-text chain therefore remains unchanged: 1/3 Meqabyan = broad wind-supported covering; 4 Ezra 7 = narrow static throat; Zechariah 14 = opening/passage/bilateral outflow, with Revelation adding controlled gate closure/release and open-but-filtered successor gates.**
+22. **The missing mechanical evidence remains one continuous structure explicitly shown changing from broad support → narrow throat → open/distributed state.**
+
+## Next live block
+
+**Section 83 — Tizaz / Teʾezaz / Statutes of the Apostles**
+
+Required protocol:
+- re-check all three archives and actual Part 2 tail first;
+- keep Tizaz distinct from Sirate Tsion;
+- use George W. Horner's 1904 Geʽez-derived *Statutes of the Apostles* as a primary English control where appropriate;
+- preserve the 71/72/73 numbering issue caused by edition/section divisions;
+- read the whole Tizaz unit before mapping;
+- prioritize:
+  - church building / altar / sanctuary geometry;
+  - bishop/presbyter/deacon placement;
+  - baptismal water and anointing;
+  - Eucharistic flow;
+  - east-facing prayer / time-of-day prayer;
+  - laying-on of hands / authority transfer;
+  - doors/thresholds and admission;
+  - burial/death/resurrection language;
+  - charisms and distributed gifts;
+  - role/access permissions;
+  - any explicit heaven/earth, fire, water, wind, light, wing, serpent or cherub imagery;
+- distinguish institutional architecture from cosmic architecture;
+- apply strict fingertrap test only after ordinary function is established;
+- do not use Horner material belonging to another Sinodos recension as though all witnesses were identical.
+
