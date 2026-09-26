@@ -3199,3 +3199,42 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **15.** “One cherub stands in each direction. The wings of the cherubim encircle one another above their heads in glory, and they spread them to sing a song to the One who dwells in the skies and to exalt the majesty of the King of kings.
 
 **16.** “Kerubiel YHWH, the prince appointed over them, arranges them in beautiful, fitting, and pleasant orders. He raises them through every kind of exaltation, dignity, and glory, and urges them with glory and strength to carry out the will of their Creator at every moment, for above the height of their heads continually rests the glory of the exalted King who sits upon the cherubim.”
+
+
+## 3 Enoch 23
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Many winds blow beneath the wings of the cherubim. The Brooding Wind blows there, as it is written, ‘The Spirit of God hovered over the surface of the waters.’
+
+**2.** “The Strong Wind blows there, as it is written that YHWH drove the sea back through the night by a strong east wind.
+
+**3.** “The East Wind blows there, as it is written that the east wind brought up the locusts.
+
+**4.** “The Wind from the Sea blows there, as it is written that a wind went out from YHWH and brought quail from the sea.
+
+**5.** “The Wind of Jealousy blows there, as it is written, ‘A spirit of jealousy comes upon him.’
+
+**6.** “The Wind of Earthquake blows there, as it is written, ‘After the wind came an earthquake, but YHWH was not in the earthquake.’
+
+**7.** “The Wind of YHWH blows there, as it is written, ‘The Spirit of YHWH carried me and set me down.’
+
+**8.** “The Evil Wind blows there, as it is written that the evil spirit departed from him.
+
+**9.** “There blow the Wind of Wisdom and Understanding, the Wind of Counsel and Might, and the Wind of Knowledge and the Fear of YHWH, as it is written, ‘The Spirit of YHWH will rest upon him: the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of YHWH.’
+
+**10.** “The Wind of Rain blows there, as it is written, ‘The north wind brings forth rain.’
+
+**11.** “The Wind of Lightning blows there, as it is written, ‘He makes lightning for the rain and brings the wind out of his treasuries.’
+
+**12.** “The Wind that Breaks the Rocks blows there, as it is written that YHWH passed by and a great and mighty wind tore the mountains and shattered the rocks before YHWH.
+
+**13.** “The Wind that Calms the Waters blows there, as it is written, ‘God caused a wind to pass over the earth, and the waters subsided.’
+
+**14.** “The Wind of Wrath blows there, as it is written, ‘A great wind came from beyond the wilderness, struck the four corners of the house, and it fell upon the young people.’
+
+**15.** “The Storm Wind blows there, as it is written, ‘Storm wind, fulfilling His word.’
+
+**16.** “Satan stands among these winds. All these winds blow only beneath the wings of the cherubim, as it is written, ‘He rode upon a cherub and flew; He soared upon the wings of the wind.’
+
+**17.** “Where do all these winds go? They go out from beneath the wings of the cherubim and descend into the sphere of the sun, as it is written, ‘The wind goes toward the south and turns toward the north; round and round it goes, and the wind returns upon its circuits.’ From the sphere of the sun they return and descend upon the mountains, the seas, and the hills, as it is written, ‘He who forms the mountains and creates the wind.’
+
+**18.** “From the mountains and hills they return to the seas and rivers; from the seas and rivers they pass into the inhabited land, and from the inhabited land into towns and provinces. From there they descend into the Garden, and from the Garden into Eden, as it is written, ‘walking in the Garden in the wind of the day.’ Within the Garden of Eden they mingle and blow from side to side. They are perfumed by the spices and fragrances of Eden until they separate again, filled with the scent of pure perfume. They carry the fragrance of the spices of the Garden and of Eden to the righteous and devout who will inherit the Garden of Eden and the Tree of Life in the age to come, as it is written, ‘Awake, north wind, and come, south wind; blow upon my garden, that its spices may flow out. Let my beloved come into his garden and eat its precious fruits.’”
