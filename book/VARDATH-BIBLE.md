@@ -3928,3 +3928,58 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **2.** And he said to me: “Remain by me; fear not! And He whom thou seest come straight towards us with great voice of holiness—that is the Eternal One who Loveth thee; but Himself thou canst not see.”
 
 **3.** “But let not thy spirit grow faint [on account of the loud crying], for I am with thee, strengthening thee.”
+
+
+## Apocalypse of Abraham 17
+
+**1.** And while he yet spake, lo! fire came against us round about, and a voice was in the fire like a voice of many waters, like the sound of the sea in its uproar.
+
+**2.** And the angel bent his head with me and worshipped.
+
+**3.** And I desired to fall down upon the earth, and the high place on which we stood [at one moment rose upright,] but at another rolled downwards.
+
+**4.** And he said: “Only worship, Abraham, and utter the song which I have taught thee;” because there was no earth to fall upon.
+
+**5.** And I worshipped only, and uttered the song which he had taught me.
+
+**6.** And he said: “Recite without ceasing.”
+
+**7.** And I recited, and he also himself with me recited the song:
+
+**8.** Eternal, mighty, Holy, El,  
+God only—Supreme!
+
+**9.** Thou who art self-originated, incorruptible, spotless,  
+Uncreate, immaculate, immortal,  
+Self-complete, self-illuminating;
+
+**10.** Without father, without mother, unbegotten,  
+Exalted, fiery One!
+
+**11.** Lover of men, benevolent, bountiful,  
+jealous over me and very compassionate;
+
+**12.** Eli, that is, My God—  
+Eternal, mighty holy Sabaoth,  
+very glorious El, El, El, El, Jaoel!
+
+**13.** Thou art He whom my soul hath loved!
+
+**14.** Eternal Protector, shining like fire,  
+Whose voice is like the thunder,  
+Whose look is like the lightning, all-seeing,
+
+**15.** Who receiveth the prayers of such as honour Thee!
+
+**16.** [And turneth away from the requests of such as embarrass with the embarrassment of their provocations,
+
+**17.** Who dissolveth the confusions of the world which arise from the ungodly and righteous in the corruptible age, renewing the age of the righteous!]
+
+**18.** Thou, O Light, shinest before the light of the morning upon Thy creatures, [so that it becometh day upon the earth,]
+
+**19.** And in Thy heavenly dwelling places there is no need of any other light than that of the unspeakable splendour from the lights of Thy countenance.
+
+**20.** Accept my prayer [and be well-pleased with it], likewise also the sacrifice which Thou hast prepared Thee through me who sought Thee!
+
+**21.** Accept me favourably, and shew me, and teach me,  
+And make known to Thy servant as thou hast promised me!
