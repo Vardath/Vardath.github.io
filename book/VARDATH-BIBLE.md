@@ -3440,3 +3440,12 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “In the seven palaces stand four chariots of the Shekinah, and before each one stand four camps of the Shekinah. Between camp and camp a river of fire draws forth and passes.
 
 **2.** “Between river and river are mists of purity. Between them stand pillars of sulfur; between pillar and pillar are wheels of flame; between wheel and wheel are sparks of torch-fire; between spark and spark are treasuries of lightning. Beyond the treasuries of lightning are wings of storm and storehouses of tempest, winds, voices, thunder, flashes upon flashes, and quakings surrounding quakings.”
+
+
+## 3 Enoch 38
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the ministering angels proclaim ‘Holy,’ all the pillars of the firmaments and their foundations loosen. The gates of the palaces and Arabot Raqia shake; the foundations of the world and Shehaqim tremble; the chambers of Ma'on and the palaces of Makhon convulse. All the hidden regions of Raqia, the constellations, and the stars are alarmed. The sphere of the sun and the sphere of the moon hasten away, flee from their courses, and run backward twelve thousand parasangs, seeking to cast themselves down from heaven.
+
+**2.** “They do this because of the roar of the angels' voices, the tumult of their exaltation, and the sparks that go forth from their mouths, as it is written: ‘The voice of Your thunder was in the whirlwind; the lightnings lit up the world.’
+
+**3.** “Then the Prince of the World calls to them and says, ‘Be still in your places and do not fear. The ministering angels are singing before the Holy One, blessed be He,’ as it is written: ‘When the morning stars sang together and all the children of God shouted for joy.’”
