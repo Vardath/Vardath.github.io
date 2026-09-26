@@ -3287,3 +3287,20 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **22.** “He has a chariot of the Throne of Glory, as it is written, ‘A glorious throne, exalted from the beginning, is the place of our sanctuary.’
 
 **23.** “He has a chariot of the high and exalted throne, as it is written, ‘I saw YHWH sitting upon a throne, high and lifted up.’”
+
+
+## 3 Enoch 25
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above them is one great and fearsome prince, mighty and honored, a chief and revered one, ancient and strong. Ophanniel YHWH is his name.
+
+**2.** “He has sixteen faces, four faces toward each side, and a hundred wings toward each side. In this Hebrew witness he has eight thousand seven hundred and sixty-four eyes, corresponding to the hours of the days of the year, two thousand one hundred and ninety-one toward each side.
+
+**3.** “The two eyes in each of his faces flash with lightning, and burning torches blaze from each one. No creature is able to gaze upon them, for whoever looks at them is immediately burned.
+
+**4.** “The height of his stature is a journey of two thousand five hundred years. No created eye is able to behold it, and no mouth is able to tell the mighty power of his strength except the King of kings of kings, the Holy One, blessed be He, alone.
+
+**5.** “Why is he called Ophanniel? Because he is appointed over the ophanim, and they are entrusted into his hand. Every day he stands and ministers to them, adorns and delights them, arranges and beautifies their courses, gathers their stations, makes pleasant their dwellings, refreshes their corners, and enriches their seats. Morning and evening, night and day, he attends them to increase their splendor, magnify their majesty, and make them swift in the praise of their Creator.
+
+**6.** “All the ophanim are full of eyes and full of wings: eyes opposite wings and wings opposite eyes. From between them light flashes like the light of the morning star.
+
+**7.** “Seventy-two sapphire stones are fixed upon the crown of each one. Their radiance travels through the four directions of Arabot as the radiance of the sun's sphere travels through the four directions of the world. This witness also asks why the name Tzadqel is used: because his radiance resembles the appearance of Tzedek. Around them are canopies of radiance, canopies of brilliance, and canopies of sapphire and carbuncle light because of the appearance of their eyes.”
