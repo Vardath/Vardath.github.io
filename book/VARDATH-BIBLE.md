@@ -3304,3 +3304,30 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **6.** “All the ophanim are full of eyes and full of wings: eyes opposite wings and wings opposite eyes. From between them light flashes like the light of the morning star.
 
 **7.** “Seventy-two sapphire stones are fixed upon the crown of each one. Their radiance travels through the four directions of Arabot as the radiance of the sun's sphere travels through the four directions of the world. This witness also asks why the name Tzadqel is used: because his radiance resembles the appearance of Tzedek. Around them are canopies of radiance, canopies of brilliance, and canopies of sapphire and carbuncle light because of the appearance of their eyes.”
+
+
+## 3 Enoch 26
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above them is one prince, wondrous and mighty, precious and powerful, a chief and ruler, majestic, honored, and beloved.
+
+**2.** “He is entirely filled with radiance, entirely filled with praise and brilliance, entirely filled with splendor, entirely filled with light, and entirely filled with great beauty and delight.
+
+**3.** “His appearance is like that of angels, and his body is like that of eagles.
+
+**4.** “His radiance is like lightning, his form like burning torches, his beauty like sparks, his majesty like streams of fire, his splendor like the hashmallim, and his brightness like the light of the morning star. His appearance is like the great luminary; his height is like the seven heavens; and the light of his eyelids is like sevenfold light.
+
+**5.** “The sapphire stone upon his head is as large as the world, shining like the very substance of the heavens in purity.
+
+**6.** “His body is full of eyes like the stars of heaven, beyond searching and without end. Every eye shines like the morning star. Some are like the lesser luminary and some like the greater luminary. From his ankles to his knees they shine like flashing stars; from his knees to his thighs like the morning star; from his thighs to his loins like the light of the moon; from his loins to his neck like the light of the sun; and from his neck to the crown of his head like unfailing light.
+
+**7.** “The crown upon his head shines like the Throne of Glory. The measure of that crown is a journey of five hundred and two years. There is no kind of radiance, splendor, brightness, or light in the world that is not fixed within that crown.
+
+**8.** “The name of that prince is Seraphiel YHWH, because he is appointed over the seraphim and the seraphim of flame are entrusted into his hand. He stands over them by night and by day and teaches them song, praise, beauty, might, and majesty, so that they may glorify their King with every kind of praise and holiness.
+
+**9.** “How many seraphim are there? Four, corresponding to the four winds of the world. How many wings do they have? Six, corresponding to the six days of Creation. How many faces do they have? In this witness, sixteen faces, four toward each direction.
+
+**10.** “The measure of each wing is like the fullness of the firmament, and the measure of every face is like the face of the east.
+
+**11.** “Each one shines like the radiance of the Throne of Glory, so that even the Holy Living Creatures, the ophanim of glory, and the cherubim of majesty are unable to gaze upon them. Whoever looks at them has his eyes dimmed by the great radiance upon them.
+
+**12.** “Why are they called seraphim? Because they burn the records of Satan. Every day Satan sits with Samael the wicked, prince of Rome, and with Dubiel, prince of Persia, and they write the sins of Israel upon their records and give them to the seraphim to bring before the Holy One, blessed be He, seeking the destruction of Israel from the world. But the seraphim perceive that the Holy One, blessed be He, does not desire the fall of His people Israel. Therefore every day they take those records from the hand of Satan and burn them in the blazing fire opposite the high and exalted throne, so that they will not enter before the Holy One, blessed be He, when He sits in judgment and judges the whole world together.”
