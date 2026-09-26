@@ -48951,3 +48951,1626 @@ High-priority Vardath tests:
 8. test witness death→breath→standing→voice→cloud ascent→earthquake as a transition/transfer sequence;
 9. apply strict fingertrap criteria only after seal, abyss, sky-scroll, giant angel, witness and temple-opening systems are kept distinct.
 
+
+
+---
+
+# SECTION 79 — REVELATION 6–11
+## Direct Revelation pass — seal-controlled release, sky rolled up like scroll, wind restraint, altar-to-earth fire transfer, burning-mountain and falling-star impacts, true abyss-key opening, smoke-column emergence, hybrid locust/horse/serpent bodies, Euphrates release, Danielic sea/land/heaven giant, seven-thunder information channel, scroll ingestion, measuring-rod boundary control, two witnesses as olive trees + lampstands, death→breath→standing→cloud ascent, earthquake, and heavenly-temple opening
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+The verified frontier was:
+**Section 79 — Revelation 6–11**.
+
+No completed Section 79 existed.
+
+This section is appended only here in Part 2.
+
+---
+
+# Historical / literary control first
+
+Revelation is an apocalypse, prophecy and circular letter addressed to churches in Roman Asia.
+
+Modern scholarship emphasizes that its visions:
+- reuse Israel's scriptures intensively;
+- combine Daniel, Ezekiel, Zechariah, Isaiah, Exodus and prophetic judgment traditions;
+- challenge imperial/political claims through a rival cosmic order;
+- use symbolic bodies, numbers, beasts, cities, cosmic catastrophes and liturgical scenes rather than straightforward technical description.
+
+Claims that the entire book is simply a transcript of literal astronomical or geophysical events are therefore not source-neutral.
+
+Likewise:
+scholarly reconstructions of the exact level of state persecution in first-century Asia Minor differ.
+
+For this project, each passage is therefore separated into:
+1. source-level process;
+2. known intertext;
+3. ordinary literary/theological function;
+4. Vardath comparison.
+
+---
+
+# REVELATION 6
+## seals as event-control locks → four riders released sequentially
+
+The Lamb opens seals one at a time.
+
+With the first four:
+- seal opens;
+- living creature calls;
+- horse/rider appears;
+- a new world-state effect is authorized.
+
+Riders:
+1. white horse / conquest;
+2. red horse / peace removed, violence;
+3. black horse / scales, scarcity/economic rationing;
+4. pale horse / Death, followed by Hades, with sword/famine/pestilence/wild animals.
+
+### M79-1 — SEAL OPENING FUNCTIONS AS EVENT AUTHORIZATION, NOT A SPATIAL GATE
+
+A seal:
+- prevents access/action;
+- opening permits a programmed state/event.
+
+This is closer to:
+**lock / permission / phase trigger**
+than
+**physical throat**.
+
+### M79-2 — ONE CENTRAL INFORMATION OBJECT CONTROLS MULTIPLE DISTRIBUTED WORLD EVENTS
+
+Cross-link Revelation 5:
+scroll = information/event-control object.
+
+Sequence:
+**central sealed information**
+→ **authorized opening**
+→ **distributed terrestrial effects**.
+
+This is a strong control:
+not all “opening” language means physical adjacency.
+
+---
+
+# Revelation 6:9–11
+## souls under altar → delayed completion / waiting state
+
+Martyr souls:
+- occupy a defined place under altar;
+- speak;
+- receive white robes;
+- are told to rest/wait until a number/process is complete.
+
+### M79-3 — OCCUPANT STORAGE + WAITING STATE REAPPEARS
+
+Again:
+- person/soul;
+- location;
+- delay;
+- release/completion timing
+
+are separable variables.
+
+No bodily resurrection yet in this scene.
+
+---
+
+# Revelation 6:12–17
+# MAJOR SKY-GEOMETRY PASSAGE
+## earthquake → sun dark → moon bloodlike → stars fall → SKY ROLLS/VANISHES LIKE SCROLL → every mountain/island displaced
+
+Sixth seal sequence:
+
+- great earthquake;
+- sun black;
+- full moon bloodlike;
+- stars fall like shaken fig fruit;
+- sky disappears/vanishes **like a scroll rolling itself up**;
+- mountains/islands moved from places;
+- populations seek shelter in mountains/caves.
+
+### M79-4 — THIS IS THE STRONGEST BROAD-SKY→COMPACT-ROLL DYNAMIC IMAGE FOUND SO FAR
+
+Unlike many previous passages that merely say:
+- sky darkens;
+- heavens shake;
+
+this one gives:
+**the sky itself changes geometry**.
+
+Broad sky:
+→ **rolls up**.
+
+This is extremely relevant to Vardath's:
+**broad sky/lattice → axial/rolled state**.
+
+### M79-5 — SAME STRUCTURE CONTINUITY IS STRONGER HERE THAN IN MANY EARLIER ANALOGUES
+
+The source does not introduce:
+“a separate rod.”
+
+Rather:
+**the sky itself**
+is the thing compared to a scroll
+that rolls.
+
+This substantially improves strict-test criteria 1–3:
+1. broad/open covering = yes;
+2. same structure continuity = yes;
+3. geometry change = yes.
+
+### M79-6 — BUT THE ROLLED SKY IS NOT USED AS A THROAT/PASSAGE
+
+Missing:
+- people/material entering the roll;
+- narrow corridor;
+- contact between two populated worlds;
+- reopening of same sky afterward in this chapter.
+
+Therefore:
+this is **not yet the strict fingertrap**.
+
+### M79-7 — REVELATION 6 MAY SUPPLY THE MISSING CONTRACTION/ROLLING HALF, BUT NOT THE TRANSFER HALF
+
+This is a major update.
+
+Current cross-text chain can now be refined:
+
+**1/3 Meqabyan**
+= broad wind-supported upper covering;
+
+**Revelation 6**
+= broad sky rolls itself up;
+
+**4 Ezra 7**
+= narrow static connector;
+
+**Zechariah 14**
+= opening/passage/bilateral outflow.
+
+The unresolved question is whether Revelation later connects the rolled-sky state to:
+a traversable axial throat.
+
+### M79-8 — MOUNTAIN/ISLAND DISPLACEMENT IMMEDIATELY FOLLOWS SKY-GEOMETRY CHANGE
+
+This makes the sequence important for the user's:
+support-lattice / ground-coupling model.
+
+Source-level order:
+**sky roll**
++
+**landform displacement**.
+
+But the text does not state:
+sky roll mechanically causes mountain/island movement.
+
+Keep correlation distinct from causation.
+
+---
+
+# REVELATION 7
+## four angels restrain four winds → environmental damage postponed until population is sealed
+
+Four angels:
+- stand at four corners;
+- hold back four winds;
+- prevent wind over:
+  - earth;
+  - sea;
+  - trees.
+
+Another angel:
+- rises from east/rising sun;
+- commands delay;
+- servants marked/sealed before damage.
+
+### M79-9 — WIND IS A CONTROLLED ENVIRONMENTAL VARIABLE
+
+This is important after Meqabyan wind-support passages.
+
+Here:
+wind can be:
+**restrained / released**.
+
+But function:
+judgment/environmental damage,
+not structural sky support.
+
+### M79-10 — FOUR CONTROLLERS REGULATE ONE DISTRIBUTED ENVIRONMENT
+
+This is a:
+**multi-node control network**.
+
+### M79-11 — POPULATION MARKING PRECEDES HAZARDOUS ENVIRONMENTAL PHASE
+
+Sequence:
+**identify/mark protected carriers**
+→ **then permit environmental damage**.
+
+This resembles:
+access/permission tagging.
+
+The forehead seal is:
+identity/protection mark,
+not a physical gate.
+
+---
+
+# Revelation 7:9–17
+## multinational population converges around central throne → shelter + water-of-life endpoint
+
+A vast population:
+- from nations/tribes/peoples/languages;
+- gathers before throne/Lamb;
+- wears robes;
+- palms;
+- protected/sheltered;
+- no longer hunger/thirst;
+- guided to springs of water of life.
+
+### M79-12 — DISTRIBUTED HUMANITY→CENTRAL GATHERING→STABLE WATERED STATE
+
+This is another:
+**many → center → stable successor condition**
+sequence.
+
+Cross-link:
+Zechariah;
+4 Ezra;
+Ezekiel 47.
+
+---
+
+# REVELATION 8:1
+## seventh seal → silence approximately half an hour
+
+### M79-13 — EVENT CONTROL CAN INCLUDE A QUIET INTERVAL BEFORE NEXT PHASE
+
+This is a source-level pause.
+
+Do not automatically map:
+half-hour heavenly silence
+to Vardath gate dwell time.
+
+Record timing only.
+
+---
+
+# Revelation 8:2–5
+## prayers/incense rise → altar fire loaded into censer → fire thrown to earth → thunder/lightning/earthquake
+
+At central heavenly altar:
+- incense + prayers rise;
+- angel takes fire from altar;
+- fills censer;
+- throws it toward earth;
+- thunder;
+- rumbling;
+- lightning;
+- earthquake.
+
+### M79-14 — INFORMATION/SOCIAL INPUT AND PHYSICAL-FIRE IMAGE ARE COMBINED AT ONE CENTRAL NODE
+
+Prayers:
+social/information layer.
+
+Incense/smoke:
+ritual carrier image.
+
+Fire:
+event output.
+
+Then:
+earth response.
+
+### M79-15 — CENTRAL ALTAR FUNCTIONS AS INPUT/OUTPUT TRANSFORMATION NODE
+
+Formal sequence:
+
+**distributed prayers**
+→ **central altar**
+→ **fire-bearing vessel**
+→ **earth**
+→ **atmospheric/seismic response**.
+
+This is highly Vardath-relevant as a system topology,
+while remaining liturgical/apocalyptic symbolism.
+
+---
+
+# REVELATION 8:7–12
+## four trumpet impacts propagate through different environmental media
+
+Trumpet 1:
+- hail/fire/blood;
+- land/trees/grass.
+
+Trumpet 2:
+- **something like a great burning mountain**;
+- thrown into sea;
+- sea becomes bloodlike;
+- sea life dies;
+- ships destroyed.
+
+Trumpet 3:
+- great blazing star;
+- falls on rivers/springs;
+- waters become bitter.
+
+Trumpet 4:
+- sun/moon/stars struck;
+- light reduced.
+
+### M79-16 — ONE SERIES TARGETS FOUR DIFFERENT SYSTEM LAYERS
+
+1. land/vegetation;
+2. sea;
+3. freshwater;
+4. celestial light.
+
+This is a deliberate multi-domain sequence.
+
+### M79-17 — BURNING “MOUNTAIN” IS EXPLICITLY COMPARATIVE
+
+Text says:
+**something like a great mountain**.
+
+Therefore:
+do not state that a literal terrestrial mountain is necessarily launched into sea.
+
+The image also echoes prophetic “destroying mountain” traditions such as Jeremiah 51.
+
+### M79-18 — SEA IMPACT PROPAGATES THROUGH WATER→BIOLOGY→TRANSPORT SYSTEM
+
+Impact:
+→ sea transformation;
+→ organisms die;
+→ ships destroyed.
+
+This is a clear cascade across:
+medium → ecology → human transport.
+
+### M79-19 — FALLING STAR TARGETS FRESHWATER NETWORK RATHER THAN ONE LOCAL BODY OF WATER
+
+Rivers + springs:
+distributed water network.
+
+Effect:
+chemical/taste/toxicity state change.
+
+Cross-link:
+water as geometry/state tracer.
+
+### M79-20 — CELESTIAL-LIGHT REDUCTION IS FRACTIONAL AND PHASED, NOT TOTAL
+
+Repeated “third” limits matter.
+
+The text presents partial system damage before later total/new-creation scenes.
+
+Do not flatten every catastrophe into total destruction.
+
+---
+
+# REVELATION 9:1–12
+# MAJOR LOWER-BOUNDARY OPENING
+## fallen star/agent receives key → shaft of abyss OPENED → furnace-like smoke RISES → sun/air darken → locust beings EMERGE
+
+This is one of the cleanest actual opening sequences in Revelation.
+
+### Phase sequence
+
+1. star/agent falls/is present;
+2. receives **key**;
+3. opens **shaft** of abyss;
+4. smoke rises from shaft;
+5. smoke compared with great furnace;
+6. sun + air darkened;
+7. locust beings emerge from smoke onto earth.
+
+### M79-21 — THIS IS A TRUE BOUNDARY-OPENING→OUTFLOW→EMERGENCE SEQUENCE
+
+Unlike seal opening,
+this is genuinely spatial.
+
+Components:
+- closed lower domain;
+- keyed access;
+- shaft/aperture;
+- upward flow;
+- environmental spillover;
+- entities crossing boundary.
+
+This is a major gate analogue.
+
+### M79-22 — ABYSS OPENING IS LOWER→UPPER DIRECTIONAL
+
+Flow:
+**below**
+→ shaft
+→ atmosphere/earth.
+
+Thus:
+a lower domain becomes temporarily connected to surface world.
+
+### M79-23 — SMOKE COLUMN IS THE FIRST MATERIAL OUTFLOW; CREATURES FOLLOW
+
+Sequence matters:
+
+**aperture**
+→ **smoke**
+→ **environmental darkening**
+→ **living/agent emergence**.
+
+This is very close to the user's idea that:
+current/environmental effects may precede larger transfer.
+
+### M79-24 — BUT THE SHAFT IS OPENED BY A KEY; IT IS NOT CREATED BY LATTICE CONTRACTION
+
+Therefore:
+strong gate process,
+not fingertrap formation.
+
+---
+
+# Revelation 9 locust morphology
+## horse + human + female-hair + lion + iron + wing/chariot + scorpion composite
+
+The abyss locusts are described with:
+- horse/battle form;
+- crown-like heads;
+- humanlike faces;
+- hair like women's hair;
+- lion teeth;
+- iron breastplate-like scales;
+- wings whose sound resembles chariots;
+- scorpion tails/stingers.
+
+### M79-25 — REVELATION BUILDS ONE FUNCTIONAL BODY FROM MULTIPLE SPECIES/MACHINE PROJECTIONS
+
+This is another major projection control.
+
+One referent/body:
+- insect;
+- horse;
+- human;
+- lion;
+- armored object;
+- chariot-sound system;
+- scorpion.
+
+### M79-26 — WINGS HERE FUNCTION MOST STRONGLY AS MOTION/NOISE/ATTACK-MASS SIGNATURE
+
+This differs from:
+- cherub throne wing;
+- Zechariah transport wing;
+- Meqabyan shade wing;
+- Malachi radiant wing.
+
+Again:
+morphology must be classified by function.
+
+### M79-27 — HYBRID MORPHOLOGY DOES NOT REQUIRE A LITERAL HYBRID BIOLOGICAL SPECIES
+
+The text itself repeatedly says:
+“like.”
+
+This is visionary composite description.
+
+Highly relevant to:
+Quetzalcoatl/cherub/Squatter-Man comparisons.
+
+---
+
+# Revelation 9:13–21
+## four Euphrates angels bound→released at exact time → huge cavalry → mouth fire/smoke/sulfur + serpent-headed tails
+
+Four angels:
+- bound at Euphrates;
+- released;
+- prepared for exact:
+  - hour;
+  - day;
+  - month;
+  - year.
+
+Then:
+massive cavalry.
+
+Horses:
+- lionlike heads;
+- fire/smoke/sulfur from mouths;
+- serpentlike tails;
+- tails have heads;
+- both mouth and tail inflict harm.
+
+### M79-28 — RIVER BOUNDARY FUNCTIONS AS A HOLDING/RELEASE NODE
+
+Euphrates:
+not merely water scenery.
+
+It marks:
+- confinement;
+- timed release.
+
+### M79-29 — RELEASE IS CLOCKED AT MULTIPLE TIME SCALES
+
+Hour/day/month/year.
+
+This gives:
+**event schedule with nested temporal resolution**.
+
+Do not convert directly into Vardath cycle arithmetic.
+
+### M79-30 — HORSE BODY HAS FRONT AND REAR ACTIVE OUTPUT NODES
+
+Front:
+mouth/fire/smoke/sulfur.
+
+Rear:
+serpentlike tail with head.
+
+This is important.
+
+Compare:
+Joel/Habakkuk moving-event front/back asymmetry.
+
+### M79-31 — SERPENT MORPHOLOGY HERE APPEARS AS A REAR EXTENSION OF A DIFFERENT CREATURE BODY
+
+This is highly relevant to the user's serpent/dragon idea.
+
+A serpent can be:
+- entire creature;
+- host;
+- tail/extension;
+- current-path metaphor.
+
+Shape is modular.
+
+---
+
+# REVELATION 10
+# MAJOR SQUATTER-MAN / DOMAIN-BRIDGE PASSAGE
+## mighty angel descends cloud-clothed; rainbow; sun-face; fire-pillar legs; right foot sea; left foot land; raised right hand to heaven
+
+This is one of the most important figures in the entire project.
+
+The angel:
+- descends from heaven;
+- wrapped/clothed in cloud;
+- rainbow over head;
+- face like sun;
+- legs like pillars of fire;
+- right foot on sea;
+- left foot on land;
+- shouts like lion;
+- seven thunders answer;
+- raises right hand to heaven;
+- swears by Creator of heaven/earth/sea.
+
+### M79-32 — REVELATION 10 IS THE CLEAREST THREE-DOMAIN ANTHROPOMORPHIC BRIDGE FOUND SO FAR
+
+Body touches/relates simultaneously to:
+
+**HEAVEN**
+↑ raised hand / cloud origin
+
+**LAND** ← one foot
+**SEA** ← other foot
+
+This is explicit.
+
+### M79-33 — THIS IS MUCH CLOSER TO SQUATTER-MAN GEOMETRY THAN REVELATION 1
+
+Revelation 1:
+composite humanlike cosmic body.
+
+Revelation 10:
+body is spatially assigned across:
+- sea;
+- land;
+- heaven.
+
+That is a true domain-spanning posture.
+
+### M79-34 — BUT IT IS NOT THE CLASSIC TWO-UPRAISED-ARMS DANIEL 12 POSTURE
+
+Daniel 12:
+- one figure above/at river;
+- two people on opposite banks;
+- central linen figure;
+- raises **right and left hands** toward heaven for oath.
+
+Revelation 10:
+- one foot sea;
+- one foot land;
+- raises **right hand** toward heaven.
+
+Therefore Revelation transforms the Danielic geometry.
+
+### M79-35 — DANIEL 12 BILATERAL HANDS ARE REASSIGNED IN REVELATION 10 INTO BILATERAL FEET/DOMAINS + SINGLE VERTICAL HAND
+
+This is a major projection transformation.
+
+Possible literary process:
+
+Daniel:
+**two banks + central water figure + two raised hands**
+
+Revelation:
+**sea/land under two feet + one raised oath hand**.
+
+The underlying oath/timing motif persists,
+while body/domain geometry changes.
+
+This is exactly the kind of transformation the Vardath project is tracking.
+
+### M79-36 — THE GIANT'S LEGS ARE FIRE PILLARS
+
+Not merely fiery feet.
+
+Legs:
+**pillars**.
+
+This combines:
+anthropomorphic limb
++
+architectural/support axis
++
+fire.
+
+A very strong:
+**person ↔ pillar/axis**
+projection.
+
+### M79-37 — CLOUD CLOTHING + SUN FACE + FIRE-PILLAR LEGS CREATE A FULL ENVIRONMENT→HUMAN BODY COMPOSITE
+
+Cloud:
+garment.
+
+Sun:
+face.
+
+Fire pillars:
+legs.
+
+Sea/land:
+foot supports.
+
+This is one of the strongest environment-body projections in Revelation.
+
+---
+
+# Revelation 10:3–4
+## lion-shout → seven thunders speak → content sealed
+
+Angel roars like lion.
+
+Seven thunders:
+- sound;
+- apparently articulate/speak information;
+- John intends to write;
+- heavenly voice commands him to seal/not write.
+
+### M79-38 — THUNDER IS EXPLICITLY AN INFORMATION CHANNEL
+
+This is important.
+
+Thunder here is not only:
+acoustic weather.
+
+It carries:
+**semantic content**.
+
+### M79-39 — INFORMATION CAN BE GENERATED, RECEIVED, THEN RE-SEALED
+
+Pipeline:
+
+**giant shout**
+→ **seven thunder responses**
+→ **human recorder**
+→ **higher instruction**
+→ **information suppressed/sealed**.
+
+This is a sophisticated information-control network.
+
+Do not physicalize the seven thunders automatically.
+
+---
+
+# Revelation 10:5–7
+## raised hand / oath / no further delay / seventh-trumpet fulfillment
+
+The angel:
+- remains planted on sea/land;
+- raises hand to heaven;
+- swears;
+- announces no more delay;
+- mystery fulfilled with seventh trumpet.
+
+### M79-40 — BODY POSTURE AND TIME ANNOUNCEMENT ARE COUPLED
+
+The domain-spanning figure is also:
+**clock/timing herald**.
+
+This is strongly relevant to the user's:
+axis/time-door
+association.
+
+But source meaning:
+prophetic/esoteric timing.
+
+No physical time dilation is described.
+
+---
+
+# Revelation 10:8–11
+## open scroll transferred from giant → John eats it → sweet mouth / bitter stomach → prophecy redistributed to nations
+
+Sequence:
+
+**open information object**
+→ transferred from giant's hand
+→ eaten by John
+→ sweet/bitter internal state
+→ new prophecy concerning peoples/nations/languages/kings.
+
+### M79-41 — INFORMATION BECOMES BODY-STATE THEN RE-EMERGES AS DISTRIBUTED SPEECH
+
+This is an exceptional:
+**object → body → information output**
+transformation.
+
+Cross-link:
+Ezekiel scroll;
+4 Ezra fire-water drink.
+
+### M79-42 — THE ANGEL IS NOT THE MESSAGE
+
+Keep roles separate:
+
+- angel = carrier/authority;
+- scroll = information;
+- John = receiver/processor;
+- prophecy = redistributed output.
+
+---
+
+# REVELATION 11:1–2
+## measuring rod/staff → temple/altar/worshippers measured; outer court excluded
+
+John receives:
+- measuring rod like staff.
+
+He measures:
+- temple;
+- altar;
+- worshippers.
+
+Outer court:
+- not measured;
+- given to nations;
+- city trampled 42 months.
+
+### M79-43 — ROD IS A MEASUREMENT TOOL, NOT THE AXIS IT MEASURES
+
+This is a crucial anti-forcing rule.
+
+Rod/staff imagery:
+may be:
+- ruler;
+- shepherd tool;
+- weapon;
+- authority symbol;
+- measuring instrument.
+
+Here:
+**measurement**.
+
+### M79-44 — MEASUREMENT CREATES/REVEALS AN INCLUSION–EXCLUSION BOUNDARY
+
+Inside measured set:
+- temple;
+- altar;
+- worshippers.
+
+Outside:
+- court/nations.
+
+Scholarly interpretation varies,
+but the spatial distinction is explicit.
+
+### M79-45 — THE MEASURED SYSTEM INCLUDES PEOPLE AS WELL AS ARCHITECTURE
+
+Worshippers themselves are measured.
+
+Thus:
+boundary/calibration can apply to:
+- structure;
+- population.
+
+---
+
+# REVELATION 11:3–6
+# TWO WITNESSES
+## two persons = two olive trees + two lampstands; fire mouth; sky shut; water altered
+
+The witnesses are explicitly described as:
+- **two olive trees**;
+- **two lampstands**;
+- standing before Lord of earth.
+
+They:
+- prophesy;
+- fire issues from mouth against enemies;
+- can shut sky/rain;
+- turn water to blood;
+- strike earth with plagues.
+
+### M79-46 — THIS IS ANOTHER SOURCE-LEVEL SAME-IDENTITY MULTI-FORM TRANSFORMATION
+
+The same two referents are simultaneously:
+- human witnesses;
+- olive trees;
+- lampstands.
+
+No inference required.
+
+### M79-47 — REVELATION TRANSFORMS ZECHARIAH 4'S BILATERAL SYSTEM
+
+Zechariah 4:
+- two olive trees;
+- one central lampstand/bowl system.
+
+Revelation 11:
+- two witnesses;
+- two olive trees;
+- **two lampstands**.
+
+Therefore:
+the earlier image is not merely copied.
+
+It is reconfigured.
+
+### M79-48 — ONE PAIR NOW CARRIES BOTH BIOLOGICAL-SUPPLY AND LIGHT-EMISSION IDENTITIES
+
+Each pair member belongs to:
+tree role
++
+lamp role.
+
+This strongly supports the user's:
+same underlying role appearing as tree / light / person
+projection family.
+
+### M79-49 — WITNESSES COMBINE ELIJAH-LIKE AND MOSES-LIKE FUNCTIONS
+
+- shut rain/sky resembles Elijah;
+- water-to-blood/plagues resemble Moses.
+
+Their exact identification is debated.
+
+Do not assert:
+they literally are Moses and Elijah
+unless discussing a particular interpretation.
+
+### M79-50 — FIRE FROM MOUTH IS AGAIN INFORMATION/JUDGMENT EXPRESSED AS ENERGY OUTPUT
+
+As with:
+4 Ezra sea-man.
+
+Mouth:
+prophecy/speech organ
++
+fire output.
+
+This is a recurrent:
+**message → fire**
+projection.
+
+---
+
+# Revelation 11:7–10
+## beast rises from abyss → kills pair → bodies remain exposed → city receives multiple symbolic identities
+
+Beast:
+- **comes up from abyss**;
+- wars against witnesses;
+- kills them.
+
+Bodies:
+- remain in street;
+- visible for 3.5 days;
+- denied burial.
+
+City:
+- symbolically called:
+  - Sodom;
+  - Egypt;
+  - where Lord was crucified.
+
+### M79-51 — ABYSS BOUNDARY REMAINS AN ACTIVE SOURCE OF AGENT EMERGENCE
+
+Chapter 9:
+locust beings emerge after abyss shaft opened.
+
+Chapter 11:
+beast is described as coming up from abyss.
+
+Thus:
+lower-domain emergence is a repeated structural motif.
+
+### M79-52 — ONE CITY IS PROJECTED AS MULTIPLE HISTORICAL/GEOGRAPHIC IDENTITIES
+
+Same location:
+**Sodom**
++
+**Egypt**
++
+**crucifixion-city/Jerusalem association**.
+
+This is another powerful projection control:
+names can encode function,
+not literal geographic identity.
+
+---
+
+# Revelation 11:11–13
+# MAJOR TRANSITION / TRANSFER SEQUENCE
+## breath of life enters → two stand → heavenly voice calls → cloud ascent → earthquake
+
+After 3.5 days:
+
+1. breath/spirit of life from God enters them;
+2. they stand on feet;
+3. observers terrified;
+4. loud heavenly voice:
+   **come up here**;
+5. witnesses ascend to heaven in cloud;
+6. enemies watch;
+7. earthquake occurs;
+8. part of city falls;
+9. deaths;
+10. survivors respond.
+
+### M79-53 — THIS IS ONE OF THE CLEANEST BODY-STATE→UPWARD-TRANSFER SEQUENCES IN THE CORPUS
+
+Sequence:
+**dead body**
+→ **breath input**
+→ **upright body**
+→ **external call**
+→ **upward movement**
+→ **cloud carrier/environment**
+→ **earth response**.
+
+### M79-54 — TRANSFER OCCURS AFTER REANIMATION, NOT WHILE DEAD
+
+Important state order.
+
+The carrier/person is restored first,
+then moved upward.
+
+### M79-55 — CLOUD FUNCTIONS AS ASCENT MEDIUM/CARRIER IMAGE
+
+Cross-link:
+Daniel;
+Acts;
+Revelation 10 cloud-clothed angel.
+
+Still:
+visionary ascension,
+not proof of physical atmospheric vehicle.
+
+### M79-56 — EARTHQUAKE FOLLOWS THE ASCENT EVENT
+
+Again:
+upper/lower transition
+and
+ground disturbance
+are adjacent in sequence.
+
+Do not infer mechanical causality without more.
+
+---
+
+# REVELATION 11:15–19
+## seventh trumpet → sovereignty transition → HEAVENLY TEMPLE OPENS → ark visible → lightning/thunder/earthquake/hail
+
+Seventh trumpet:
+- loud heavenly proclamation;
+- kingdom/world sovereignty changes.
+
+Then:
+- heavenly temple **opened**;
+- ark becomes visible inside;
+- lightning;
+- rumbling;
+- thunder;
+- earthquake;
+- hail.
+
+### M79-57 — HEAVENLY OPENING REVEALS AN INTERNAL OBJECT
+
+This is a true:
+**closed/interior sacred domain**
+→ **opening**
+→ **interior becomes visible**.
+
+But:
+no person is said to traverse the opening in this verse.
+
+### M79-58 — OPENING IS AGAIN COUPLED TO MULTI-DOMAIN ENVIRONMENTAL DISCHARGE
+
+Visible ark:
+information/covenant object.
+
+Environmental effects:
+- light;
+- sound;
+- ground motion;
+- precipitation/ice.
+
+This is a strong:
+**access-state change + field response**
+sequence.
+
+---
+
+# REVELATION 6–11 FULL PROCESS SEQUENCE
+
+sealed central scroll continues opening
+→ rider 1 released
+→ rider 2 released
+→ rider 3 released
+→ rider 4 released
+→ martyr souls wait beneath altar
+→ sixth seal
+→ earthquake
+→ sun/moon/star state changes
+→ broad sky rolls/vanishes like scroll
+→ mountains/islands displaced
+→ four winds restrained
+→ protected population sealed
+→ multinational population gathers at throne
+→ seventh seal
+→ silence
+→ prayers/incense rise
+→ altar fire transferred downward
+→ thunder/lightning/earthquake
+→ land/vegetation trumpet damage
+→ burning-mountain-like object enters sea
+→ sea/ecology/ships altered
+→ blazing star enters freshwater system
+→ waters become bitter
+→ celestial light reduced
+→ abyss agent receives key
+→ lower shaft opens
+→ furnace-like smoke rises
+→ sun/air darken
+→ composite locust beings emerge
+→ Euphrates-bound angels released on exact schedule
+→ vast horse system emerges
+→ mouths emit fire/smoke/sulfur
+→ serpent-headed tails attack
+→ mighty angel descends from heaven
+→ cloud/rainbow/sun/fire-pillar anthropomorphic body forms
+→ right foot plants on sea
+→ left foot plants on land
+→ lion-like shout
+→ seven thunders speak
+→ thunder-information sealed
+→ right hand rises to heaven
+→ timing oath / no further delay
+→ scroll transferred
+→ John ingests information
+→ prophecy redistributed
+→ measuring rod given
+→ temple/altar/worshippers bounded/measured
+→ two witnesses appear
+→ same pair = olive trees + lampstands
+→ sky/rain/water/plague authority
+→ beast rises from abyss
+→ witnesses killed
+→ bodies remain exposed
+→ breath of life enters
+→ witnesses stand
+→ heavenly voice calls upward
+→ cloud ascent
+→ earthquake
+→ seventh trumpet
+→ sovereignty transition
+→ heavenly temple opens
+→ ark visible
+→ lightning/thunder/earthquake/hail.
+
+---
+
+# MAJOR VARDATH FINDING 1
+## Revelation 6 finally gives a dynamic broad-cover roll
+
+Earlier best broad/support:
+- 1 Meqabyan 27;
+- 3 Meqabyan 9.
+
+Earlier best narrow throat:
+- 4 Ezra 7.
+
+Revelation 6 adds:
+**broad sky itself rolls up**.
+
+### M79-59 — THIS IS THE FIRST MAJOR TEXT TO SUPPLY A DIRECT BROAD-COVER→ROLLED/COMPACT GEOMETRY CHANGE WHILE RETAINING IDENTITY OF THE COVERING
+
+This is a genuine advance.
+
+But:
+rolled sky is not shown functioning as a traversable throat.
+
+So the missing link narrows to:
+
+**Does any text show the rolled/contracted sky becoming the actual connector through which transfer occurs?**
+
+---
+
+# MAJOR VARDATH FINDING 2
+## Revelation 9 supplies a real lower-world gate process
+
+Abyss:
+closed.
+
+Key:
+granted.
+
+Shaft:
+opened.
+
+Smoke:
+rises.
+
+Atmosphere:
+changes.
+
+Entities:
+emerge.
+
+### M79-60 — THIS IS THE CLEANEST “LOWER BOUNDARY OPENS AND CONTENT CROSSES” SEQUENCE IN REVELATION SO FAR
+
+Still:
+mechanism is key/aperture,
+not contracting sky lattice.
+
+---
+
+# MAJOR VARDATH FINDING 3
+## Revelation 10 is the clearest three-domain Squatter-Man candidate
+
+The giant angel simultaneously maps:
+
+**heaven**
+→ cloud origin + raised hand;
+
+**sea**
+→ right foot;
+
+**land**
+→ left foot.
+
+Body:
+- face = sun;
+- legs = fire pillars.
+
+### M79-61 — THIS IS A TRUE DOMAIN-BRIDGING ANTHROPOMORPHIC FIGURE
+
+It is not merely:
+“a man in the sky.”
+
+Its limbs are assigned to environmental domains.
+
+### M79-62 — DANIEL 12 AND REVELATION 10 SHOULD NOW BE TREATED AS A TRANSFORMED PAIR
+
+Daniel 12:
+- bank / river / bank;
+- central figure above waters;
+- both hands heaven.
+
+Revelation 10:
+- sea under one foot;
+- land under other foot;
+- one hand heaven.
+
+Same broad literary family:
+- giant/angelic figure;
+- water/boundary;
+- oath;
+- timing;
+- heavenward gesture.
+
+Different geometry.
+
+This may be one of the best examples of:
+**same vision grammar changing body projection across texts**.
+
+---
+
+# MAJOR VARDATH FINDING 4
+## two witnesses fuse person/tree/lamp
+
+Revelation 11:
+**two people**
+=
+**two olive trees**
+=
+**two lampstands**.
+
+### M79-63 — TREE / LIGHT / HUMAN IDENTITY IS EXPLICIT
+
+This strongly supports Vardath's practice of testing whether:
+- tree;
+- humanlike node;
+- luminous structure
+
+can represent different views of one function.
+
+Again:
+it does not prove Yggdrasil = human figure physically.
+
+It proves the symbolic grammar permits the transformation.
+
+---
+
+# MAJOR VARDATH FINDING 5
+## upward transfer can have a staged operating sequence
+
+Witnesses:
+**dead**
+→ **breath enters**
+→ **stand**
+→ **voice authorizes**
+→ **ascend in cloud**
+→ **earthquake**.
+
+### M79-64 — TRANSFER IS NOT ONE INSTANT
+
+This aligns with the mature Vardath:
+**handoff / staged event**
+rule.
+
+---
+
+# MAJOR VARDATH FINDING 6
+## Revelation 6–11 contains BOTH upper-cover change and lower-boundary opening, but does not explicitly connect them
+
+Upper:
+- sky rolls up.
+
+Lower:
+- abyss shaft opens.
+
+Middle:
+- giant spans sea/land/heaven.
+
+Later:
+- witnesses ascend.
+- heavenly temple opens.
+
+### M79-65 — THE FINAL-FORM SEQUENCE IS HIGHLY SUGGESTIVE AS A MULTI-BOUNDARY EVENT FAMILY
+
+But source discipline requires:
+do not assert these are mechanically one device.
+
+They are different visions/events in the apocalyptic sequence.
+
+---
+
+# CHERUB / FEATHERED SERPENT / QUETZALCOATL / DRAGON UPDATE
+
+This block has no explicit dragon yet.
+The explicit dragon arrives in Revelation 12.
+
+But it adds:
+
+## composite winged locust system
+Wings:
+motion/noise/attack.
+
+## giant angel
+Cloud body;
+rainbow;
+sun face;
+fire-pillar legs;
+sea/land stance.
+
+## witnesses
+Tree + light + human identity.
+
+## serpent morphology
+Horse tails:
+serpents with heads.
+
+### M79-66 — SERPENT FORM IS AGAIN MODULAR
+
+A serpent may appear as:
+- whole creature;
+- host;
+- tail/extension;
+- dragon body later.
+
+This continues to support:
+functional morphology rather than fixed zoology.
+
+### M79-67 — REVELATION 12 IS NOW HIGH PRIORITY BECAUSE IT WILL PLACE THE EXPLICIT DRAGON BESIDE THE ALREADY-ESTABLISHED SKY/WING/STAR/AXIS SYSTEM
+
+Keep for Section 80.
+
+---
+
+# STRICT FINGERTRAP TEST — REVELATION 6–11
+
+Criteria:
+1. broad/open distributed support;
+2. same structural continuity;
+3. geometry/angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Revelation 6 sky-scroll
+
+1. broad/open covering:
+**strong**.
+
+2. same-structure continuity:
+**strong**.
+
+3. geometry change:
+**very strong** — rolls up.
+
+4. throat/rod:
+**partial at best** — a rolled scroll is compact/axial but not called a throat/path.
+
+5. transfer:
+**absent**.
+
+6. reopening:
+**absent**.
+
+### Verdict
+**Closest dynamic contraction/rolling analogue yet, but not strict fingertrap.**
+
+## Revelation 9 abyss
+
+1. broad support:
+absent.
+
+2. continuity:
+shaft remains shaft.
+
+3. contraction:
+absent.
+
+4. throat:
+**strong aperture/shaft**.
+
+5. transfer:
+**very strong** — smoke/entities emerge.
+
+6. closure/reopening:
+not described in this block.
+
+### Verdict
+**Strong gate/throat transfer, not fingertrap formation.**
+
+## Revelation 10 giant
+
+Broad support:
+not explicit.
+
+Axis-person:
+**exceptionally strong**.
+
+Three-domain connection:
+**exceptionally strong**.
+
+Throat:
+absent.
+
+Transfer:
+information transfer, not world-material transfer.
+
+### Verdict
+**Best domain-spanning anthropomorphic axis analogue, not fingertrap.**
+
+## Revelation 11 witness ascent
+
+Transfer:
+strong.
+
+Cloud carrier:
+strong.
+
+Structural throat:
+absent.
+
+### Overall strict verdict
+
+**Still no single strict fingertrap.**
+
+But Revelation 6–11 is the closest block yet to assembling its separate phases:
+
+**broad cover rolls**
+→ **lower boundary opens**
+→ **domain-spanning axis-person appears**
+→ **information and bodies transfer**
+→ **upper temple opens**.
+
+The text does not state that these are one mechanism.
+
+---
+
+# Number / timing register
+
+Record without forced arithmetic:
+
+- 7 seals;
+- 4 riders;
+- fourth of earth in fourth-seal authority;
+- 144,000 sealed;
+- 4 winds / 4 corners;
+- 7 trumpets;
+- half-hour silence;
+- repeated thirds in first four trumpets;
+- 5 months locust torment;
+- 4 Euphrates angels;
+- exact hour/day/month/year;
+- 200 million cavalry number in NRSVUE;
+- 7 thunders;
+- 42 months;
+- 1,260 days;
+- 2 witnesses;
+- 3.5 days bodies exposed;
+- tenth of city falls;
+- 7,000 deaths;
+- seventh trumpet.
+
+### M79-68 — 42 MONTHS / 1,260 DAYS / 3.5 DAYS BELONG TO DANIELIC APOCALYPTIC TIME GRAMMAR
+
+Do not equate them automatically to Vardath clock intervals.
+
+---
+
+# Textual / scholarly controls
+
+1. Revelation 6–11 is apocalyptic symbolic literature with dense reuse of Israel's scriptures.
+2. The four horsemen draw heavily on Zechariah-style horse patrol imagery but are reconfigured into judgment agents.
+3. Revelation 6's sky rolled like a scroll is a cosmic-collapse/decreation image with prophetic antecedents; it is not a technical statement that the atmosphere literally becomes paper.
+4. The source nevertheless genuinely depicts broad sky geometry changing by rolling.
+5. Revelation 7's four winds are restrained by four angels; this is environmental control imagery, not evidence that four literal physical beings regulate meteorology.
+6. Sealing in Revelation 7 functions as identification/protection before judgment.
+7. Revelation 8's censer scene combines prayer/incense imagery with altar fire and earthly catastrophe.
+8. “Something like a burning mountain” is explicitly simile/comparison.
+9. The burning-mountain image has prophetic parallels, including anti-Babylon mountain imagery.
+10. Revelation 9's abyss shaft is a true opened spatial boundary in the vision.
+11. Smoke-darkening and locust emergence occur after the opening and should preserve that order.
+12. The locust bodies are deliberately composite and heavily allusive; their hybrid form should not be treated as zoological field notes.
+13. Revelation 9's Euphrates release combines geographical boundary, confinement and exact divine timing.
+14. Revelation 10 strongly reuses Danielic oath/timing imagery, especially Daniel 12.
+15. Daniel 12 and Revelation 10 differ materially in posture: Daniel has bilateral raised hands and river-bank geometry; Revelation has sea/land feet plus one raised hand.
+16. Revelation 10's giant angel is not automatically Christ; interpreters differ on identification, and the text calls him another mighty angel.
+17. Seven thunders carry content but are intentionally not disclosed.
+18. Eating the scroll is prophetic information-internalization imagery closely related to Ezekiel.
+19. Revelation 11's measuring rod has Ezekiel/Zechariah measuring traditions behind it.
+20. Scholarly interpretation of exactly what the measured temple/worshippers symbolize varies.
+21. The two witnesses deliberately echo Zechariah 4 olive-tree imagery.
+22. Identification of the witnesses varies; Moses/Elijah, Joshua/Zerubbabel, church/prophetic witness and other readings have been proposed.
+23. Their functions deliberately evoke Elijah and Moses whether or not they are those literal historical persons.
+24. Their resurrection scene reuses Ezekiel 37 breath/life language.
+25. Their ascent also draws on prophetic/ascension traditions.
+26. Revelation 11:19 is a heavenly-temple opening/revelation scene; the text does not describe ordinary people walking through that opening.
+27. Modern scholarship emphasizes Revelation's creation/new-creation and anti-imperial/counter-cosmic rhetoric as important contexts for its cosmic catastrophe language.
+
+---
+
+# Sources logged — Revelation 6–11
+
+## Primary
+- Revelation 6:
+  https://www.biblegateway.com/passage/?search=Revelation+6&version=NRSVUE
+- Revelation 6–7:
+  https://www.biblegateway.com/passage/?search=Revelation+6-7&version=NRSVUE
+- Revelation 8–9:
+  https://www.biblegateway.com/passage/?search=Revelation+8-9&version=NRSVUE
+- Revelation 10:
+  https://www.biblegateway.com/passage/?search=Revelation+10&version=NRSVUE
+- Revelation 11:
+  https://www.biblegateway.com/passage/?search=Revelation+11&version=NRSVUE
+- Daniel 12:
+  https://www.biblegateway.com/passage/?search=Daniel+12&version=NRSVUE
+- Zechariah 4:
+  https://www.biblegateway.com/passage/?search=Zechariah+4&version=NRSVUE
+
+## Scholarship / source controls
+- Mark B. Stephens, “Creation and New Creation in the Book of Revelation,” *Oxford Handbook of the Book of Revelation*:
+  https://academic.oup.com/edited-volume/34244/chapter/290347848
+- Warren Carter, “Revelation and Roman Rule in First-Century Asia Minor,” *Oxford Handbook of the Book of Revelation*:
+  https://academic.oup.com/edited-volume/34244/chapter-abstract/290346111
+- Charles Homer Giblin, “Revelation 11.1–13: its Form, Function, and Contextual Integration,” *New Testament Studies*:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/revelation-11-113-its-form-function-and-contextual-integration/E759ED8F76C25C7AFA8246A88772586E
+- “The Abyss in Revelation: A View from Below,” JSTOR:
+  https://www.jstor.org/stable/10.5325/jj.5233046
+
+---
+
+# SECTION 79 — REVELATION 6–11 COMPLETE
+
+## Strongest new findings
+
+1. **Revelation 6 finally gives a direct broad-sky geometry change: the sky itself vanishes/rolls up like a scroll. This is the strongest dynamic broad-cover→compact-roll image found so far.**
+2. **Because the same sky is the structure that rolls, continuity is stronger than in analogies where one object simply resembles another.**
+3. **It still fails the strict fingertrap because the rolled sky is not used as a traversable throat and is not shown reopening in the same scene.**
+4. **Mountain/island displacement immediately accompanies the sky-roll phase, making this highly relevant to the user's support-lattice/ground-coupling model, though causality is not stated.**
+5. **Revelation 7 shows four winds actively restrained until a protected population is sealed, adding environmental-phase control plus carrier/population marking.**
+6. **Revelation 8's altar scene gives distributed prayer/information input→central altar→fire-bearing vessel→earth→thunder/lightning/earthquake, another strong central-node transformation topology.**
+7. **The first trumpets deliberately propagate through land/vegetation, sea/ecology/shipping, freshwater, and celestial light as distinct system layers.**
+8. **The burning-mountain image is explicitly “something like” a mountain and should not be turned into a literal terrestrial mountain without qualification.**
+9. **Revelation 9 gives one of the clearest true gate processes yet: a key opens the abyss shaft, smoke rises, the atmosphere darkens, then beings emerge from the lower domain.**
+10. **This provides boundary opening→first material outflow→environmental change→entity transfer, closely matching the project's insistence on staged events.**
+11. **The abyss is a real throat/aperture analogue, but it is opened by key rather than formed by broad-lattice contraction.**
+12. **The locusts are an explicit multi-form body combining insect, horse, human, lion, armor, chariot-sound and scorpion features, reinforcing projection/composite morphology rather than fixed zoological identity.**
+13. **The Euphrates angels give a river-boundary hold/release system operating on an exact hour/day/month/year schedule, but those times should not be forced into the Vardath clock.**
+14. **The sixth-trumpet horses possess active front and rear nodes: mouths emit fire/smoke/sulfur while serpent-headed tails also harm, strengthening the recurring front/back moving-body pattern.**
+15. **Revelation 10 is the clearest three-domain Squatter-Man analogue yet: a colossal anthropomorphic figure descends from heaven, plants one foot on sea and one on land, and raises a hand toward heaven.**
+16. **Its environment-body projection is unusually complete: cloud as clothing, rainbow at head, sun as face, fire-pillars as legs, sea/land beneath feet.**
+17. **Daniel 12 and Revelation 10 form a transformed literary pair: Daniel gives two banks + central water figure + two raised hands, whereas Revelation redistributes the bilateral geometry into two feet on sea/land plus one raised hand.**
+18. **That transformation is especially important to the project because the oath/timing function persists while the body's geometry changes.**
+19. **The giant angel's legs being “pillars of fire” is a direct person↔architectural-axis↔fire fusion.**
+20. **The seven thunders explicitly carry information that John hears but is ordered not to write, proving that thunder can function as a semantic/information channel in the vision.**
+21. **The little-scroll scene cleanly separates carrier, information object, receiver/body and redistributed prophecy; information is literally ingested and converted into bodily sweet/bitter state before being spoken outward.**
+22. **Revelation 11's measuring rod is a measurement/boundary tool, not automatically a cosmic rod/axis; this is a strong anti-overfitting control.**
+23. **The two witnesses are explicitly the same referents as two olive trees and two lampstands, giving a direct human↔tree↔light-structure transformation.**
+24. **Revelation modifies Zechariah 4 rather than merely copying it: Zechariah has two olive trees around one lampstand system, while Revelation presents two olive trees and two lampstands as the two witnesses.**
+25. **The witness pair combines Elijah-like sky/rain control and Moses-like water/plague control, but scholarly identification of the witnesses remains disputed.**
+26. **The beast's emergence from the abyss shows that the lower-domain opening motif remains active beyond the locust episode.**
+27. **The witness resurrection/ascent is a particularly clean staged transfer: breath enters→bodies stand→voice authorizes ascent→cloud carries/contains upward movement→earthquake follows.**
+28. **That sequence strongly supports the mature Vardath rule that transfer/handoff can be phased rather than instantaneous.**
+29. **The heavenly temple then opens and reveals the ark, followed by lightning/thunder/earthquake/hail—another access-state change coupled to broad environmental effects.**
+30. **Across Revelation 6–11, upper cover change, lower-boundary opening, a three-domain giant figure, bodily ascent, and upper-temple opening all occur in one larger sequence. This is highly suggestive as a transformation family but the text does not explicitly say they are one physical apparatus.**
+31. **The strict fingertrap is still not complete, but the missing link has narrowed considerably: Revelation 6 now supplies a plausible dynamic broad-cover roll, Revelation 9 supplies an actual transfer throat, and Revelation 10 supplies a domain-spanning axis-person. What is still missing is explicit continuity showing that the rolled broad cover itself becomes the transfer throat and later reopens.**
+
+## Next live block
+
+**Section 80 — Revelation 12 onward**
+
+The existing roadmap explicitly reserves the Revelation 12 dragon for Section 80.
+
+Before proceeding, re-check the exact Section 80 range in the three-file roadmap, then prioritize:
+- woman clothed with sun / moon / twelve stars;
+- dragon in heaven;
+- seven heads / ten horns;
+- tail sweeping stars;
+- child / iron rod;
+- war in heaven;
+- dragon cast down to earth;
+- eagle wings given to woman;
+- wilderness transfer/protection;
+- serpent pours river from mouth;
+- earth opens mouth and swallows river;
+- sea beast / land beast;
+- image given breath;
+- mountain/Zion/Lamb;
+- harvest/sickle;
+- sea of glass/fire;
+- temple opening;
+- bowls;
+- Euphrates drying;
+- three frog-like spirits from mouths;
+- global earthquake;
+- islands/mountains removed;
+- strict test for whether dragon/serpent, wing, sky, river, earth-mouth and rod imagery finally form one connected structural process.
+
