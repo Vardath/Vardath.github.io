@@ -3331,3 +3331,12 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **11.** “Each one shines like the radiance of the Throne of Glory, so that even the Holy Living Creatures, the ophanim of glory, and the cherubim of majesty are unable to gaze upon them. Whoever looks at them has his eyes dimmed by the great radiance upon them.
 
 **12.** “Why are they called seraphim? Because they burn the records of Satan. Every day Satan sits with Samael the wicked, prince of Rome, and with Dubiel, prince of Persia, and they write the sins of Israel upon their records and give them to the seraphim to bring before the Holy One, blessed be He, seeking the destruction of Israel from the world. But the seraphim perceive that the Holy One, blessed be He, does not desire the fall of His people Israel. Therefore every day they take those records from the hand of Satan and burn them in the blazing fire opposite the high and exalted throne, so that they will not enter before the Holy One, blessed be He, when He sits in judgment and judges the whole world together.”
+
+
+## 3 Enoch 27
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above the seraphim is one prince exalted above all the princes and more wondrous than all the ministers. In this Hebrew witness his name is Dabriel YHWH. He is appointed over the treasuries of His books.
+
+**2.** “He brings out and returns the cases of writings, opens them, takes out the books, and places them into the hand of the Holy One, blessed be He. The Holy One, blessed be He, receives them from his hand and gives them before Him to the scribes, so that they may read them in the Great Court in the height of Arabot Raqia before the heavenly household.
+
+**3.** “Why is he called Dabriel? Because from every word that goes out from him an angel comes forth and takes its place among the ministering angels, and they sing before Him when the time arrives to proclaim ‘Holy.’”
