@@ -3594,3 +3594,26 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** The Holy One, blessed be He, has seventy names that are explicitly given, while the rest that are not explicitly given are unsearchable and without number. The selected public-domain Hebrew witness records that its manuscript contained grouped lists of the individual names, but the 1915 editor did not print those lists. These divine Names go forth from before the Throne of Glory adorned with many crowns of fire, many crowns of flame, many crowns of lightning, many crowns of hashmal, and many crowns of flashing light. With them go a thousand camps of the Shekinah and myriads upon myriads of hosts of might, conducting them like a king with trembling, quaking, awe, fear, splendor, majesty, dread, greatness, honor, strength, joy, and song, amid pillars of fire, pillars of flame, flashes of light, and the appearance of hashmal. They give them glory and strength and proclaim before them: “Holy, holy, holy,” as it is written: “One called to another and said, Holy, holy, holy.”
 
 **2.** They roll them through every firmament in the height like sons of kings, mighty and honored. When they bring them back to the place of the Throne of Glory, all the Living Creatures of the Chariot open their mouths in praise of the glory of the name of the Holy One, blessed be He, and say: “Blessed is the glory of YHWH from His place.”
+
+
+## 3 Enoch 48C
+
+**1.** Aleph. The Holy One, blessed be He, said: “I strengthened him, I took him, I appointed him—Metatron My servant, unique among all the sons of the heights. I strengthened him in the generation of the first Adam. When I saw that the generation of the Flood was becoming corrupt, I removed My Shekinah from among them and ascended to the height with the sound of a shofar and with shouting, as it is written: ‘God has gone up with a shout; YHWH with the sound of a shofar.’
+
+**2.** “I took Enoch son of Jared from among them and raised him with the sound of a shofar and with shouting to the height, to be My witness together with the four Living Creatures of the Chariot in the world to come.
+
+**3.** “I appointed him over all the treasuries and storehouses that I have in every firmament, and I placed into his hand the keys of every one of them.
+
+**4.** “I made him prince over all the heavens and minister of My Throne of Glory and the palaces of Arabot: to open their doors for Me; to arrange and order the Throne of Glory; to bind crowns upon the heads of the Holy Living Creatures; to crown the majestic ophanim with strength and glory; to clothe the honored cherubim in splendor; to make the sparks of radiance shine; to wrap the seraphim of flame in majesty; to gird the hashmallim of light with brightness; and every morning to prepare for Me a seat when I sit upon My throne in glory and honor, magnifying My glory in the height and knowing the mysteries above and the mysteries below.
+
+**5.** “I raised his stature above all the tall ones. In this Hebrew witness the height of his stature among all those of lofty stature is seven thousand parasangs. I enlarged his throne from the majesty of My throne and increased his glory from the splendor of My glory.
+
+**6.** “I transformed his flesh into torches of fire and all the bones of his body into coals of light. I made his appearance like lightning, the light of his eyelids like unfailing light, his face bright like the radiance of the sun, and his eyes like the radiance of the Throne of Glory.
+
+**7.** “I made honor, majesty, and splendor his clothing; beauty, exaltation, and strength the covering of his mantle; and a royal crown five hundred by five hundred parasangs his diadem. I placed upon him of My majesty, My splendor, and the radiance of My glory that is upon the Throne of Glory. I called him by My name, the Lesser YHWH, Prince of the Presence and Knower of Secrets. Every mystery I revealed to him in love, and every secret I made known to him in uprightness.
+
+**8.** “I established his throne at the entrance of My palace, outside, so that he might sit and judge all My heavenly household. I set every prince before him to receive authority from him to carry out My will.
+
+**9.** “I took seventy names from My names and called him by them to increase his glory. I gave seventy princes into his hand, to command them in every language according to My words: to bring the proud down to the earth by My word and raise the lowly to the height by the speech of My lips; to strike kings by his utterance, to humble rulers and the presumptuous by his word, to remove kings from their kingdoms and establish rulers over their dominions; to give wisdom to the wise of the world and understanding and knowledge to those who know understanding; to reveal to them the mysteries of My words and teach them the decree of My righteous judgment.
+
+**10.** “Thus it is written: ‘So shall My word be that goes forth from My mouth; it shall not return to Me empty, but shall accomplish that which I desire.’ It does not say ‘I shall accomplish,’ but ‘it shall accomplish.’ This teaches that every word and every utterance that goes forth from before the Holy One, blessed be He, Metatron stands and carries out, establishing the decree of the Holy One, blessed be He.”
