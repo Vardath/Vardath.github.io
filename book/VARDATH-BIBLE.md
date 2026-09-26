@@ -3384,3 +3384,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the Holy One, blessed be He, sits upon the throne of judgment, Justice stands at His right, Mercy at His left, and Truth before His face.
 
 **2.** “When a wicked person comes before Him for judgment, the measure of Mercy comes forth toward him and stands opposite him. Immediately the person falls upon his face, and all the angels of destruction at His right fear and tremble, as it is written: ‘In mercy the throne shall be established, and He shall sit upon it in truth.’”
+
+
+## 3 Enoch 32
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When they open the book before the Holy One, blessed be He, half of it is fire and half of it flame. From before Him, at every moment, fire and flame go forth to execute judgment upon the wicked. His sword is drawn from its sheath; its radiance flashes like lightning and travels from one end of the world to the other.
+
+**2.** “Sparks go forth from it in number like the stars of the firmament, as it is written: ‘If I sharpen the lightning of My sword.’”
