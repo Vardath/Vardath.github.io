@@ -75921,3 +75921,990 @@ Required protocol:
 9. Do not alter Vardath/Archaix numbers to improve fit.
 10. Only after that comparison decide whether any timing family materially strengthens the Vardath event model.
 
+
+
+---
+
+# SYNTHESIS 7 — ARCHAIX / JASON BRESHEARS CHRONOLOGY COMPARISON
+## Compared against the phase-normalized timing table from Synthesis 6
+
+### Frontier verification
+
+The file itself remains authoritative.
+
+Verified before this block:
+- direct 88-text corpus complete;
+- Syntheses 1–6 complete;
+- Synthesis 6 concluded that the corpus supplies a strong event-phase graph but does **not** supply one universal physical gate clock.
+
+This block therefore tests Archaix chronology **without changing either source family to improve a fit**.
+
+---
+
+# SOURCE SET USED FOR SYNTHESIS 7
+
+## Current first-party Archaix pages
+
+### Phoenix Phenomenon
+https://archaix.com/phoenix-phenomenon
+
+Current public Archaix statement:
+- Phoenix returns May 2040;
+- Phoenix is activated at varying magnitude every **138 years**;
+- Archaix says the 138-year timeline was discovered in 2004 and later published.
+
+### Archaix Charts
+https://archaix.com/charts
+
+Current public chart description states:
+- Phoenix chronology = **138-year visitations to 2040**;
+- Nemesis X Object chronology = **792-year visitations to 2046**;
+- Anunnaki NER = **600-year periods**;
+- Mayan Long Count is separately tracked;
+- the chart pack combines these on one chronology.
+
+### Archaix Glossary
+https://archaix.com/glossary
+
+Current public definitions used here:
+- Phoenix visits every **138 years**;
+- Phoenix Cycle = **552 years = four 138-year periods**;
+- Dark Satellite periodically visits and is projected to return in **2052 CE**;
+- Draconian Year = **360-day** day-count system;
+- Great Flood = Archaix Phoenix cataclysm at **2239 BCE**;
+- Ogygian Deluge = Archaix Phoenix destruction at **1687 BCE**;
+- NER = **600 years**.
+
+---
+
+## Archaix chronology / transcript material
+
+### Antediluvian Calendars of the Anunnaki
+https://archaixtranscripts.wordpress.com/antediluvian-calendars-of-the-anunnaki-part-14-of-anunna-files/
+
+Important direct statements:
+- Mayan baktun = **144,000 days**;
+- ancient systems are treated as day-count systems;
+- Archaix identifies a **1,656-year Pre-Flood world** ending in a Phoenix reset;
+- the 1,656-year Hebraic/Genesis genealogy is explicitly acknowledged as biblical dating;
+- two 600-year periods = **432,000 days = 3 × 144,000 days** under the 360-day system;
+- several calendar inception dates within a multi-year range are treated as records of one underlying historical transition;
+- Jason explicitly argues that later chronographers can preserve inherited material with offset dates.
+
+### Kali Yuga / Phoenix Programming
+https://archaix.com/blog/f/kali-yuga-phoenix-programming-disguised-by-simulacrum
+
+Direct Archaix statements used:
+- Nemesis X periodicity = **792 years**;
+- projected return = **2046 CE**;
+- Pre-Flood world = **1,656 years**;
+- Archaix explicitly gives **864 + 792 = 1,656**.
+
+---
+
+## Chronicon mirror / digitized archive
+
+Digitized Chronicon:
+https://pdfcoffee.com/chronicon-pc-v5-pdf-free.html
+
+This is not the canonical Archaix host, so it is used as a **mirror of Jason Breshears's Chronicon material**, not as an independent source.
+
+Relevant Chronicon statements:
+- Phoenix = **138-year orbit**;
+- Nemesis X = **792-year orbit**;
+- Dark Satellite = projected **2052 CE** return;
+- Dark Satellite described as a **fixed 395-year orbit**;
+- Chronicon contains dated entries including **1504 BCE**, **867 CE**, and **2052 CE** that are useful for reconstructing the nominal 395-year line.
+
+---
+
+# USER CORRECTION ENTERED INTO THE TIMING REGISTER
+## Dark Satellite = 144,000 days
+
+The user supplied an important correction during this synthesis:
+
+> **The Dark Satellite recurrence is every 144,000 days.**
+
+This is retained as the controlling raw unit for the Vardath comparison.
+
+Public Archaix material independently verifies:
+- **144,000 days** as a major Archaix day-count unit;
+- **395 years** as the rounded Chronicon Dark Satellite orbit;
+- **2052 CE** as the Dark Satellite future anchor.
+
+A directly indexed public source explicitly saying the words
+**"Dark Satellite = 144,000 days"**
+was not located during this pass.
+
+Therefore the register preserves both layers:
+
+1. **user-specified Archaix chart rule:** 144,000 days;
+2. **public Chronicon wording:** fixed 395-year orbit.
+
+Do not silently substitute one for the other.
+
+---
+
+# NEW CHRONOGRAPHIC RULE
+## DESTRUCTION DATE ≠ FIRST SURVIVING CALENDAR DATE
+
+The user added a necessary methodological correction:
+
+> large destructions can form the boundary from which later history, official records or calendars begin, so the recorded calendar epoch can be a few years displaced from the physical destruction.
+
+Archaix's own transcript method supports this distinction.
+
+It compares several calendar beginnings spread across a range and interprets them as descendants of one underlying event.
+
+Therefore Synthesis 7 now separates:
+
+### C1 — physical/event anchor
+The proposed underlying destruction, arrival, reset or transition.
+
+### C2 — formal calendar epoch
+The official year from which a later count begins.
+
+### C3 — first surviving record
+The earliest surviving written/monumental date.
+
+### C4 — later chronographer reconstruction
+A retrospective date produced from inherited material.
+
+### S7-RULE-1
+
+**A small event↔calendar offset does not automatically falsify a recurrence.**
+
+But:
+
+### S7-RULE-2
+
+**The exact published date must still be preserved.**
+
+Never rewrite:
+718 BCE
+as:
+714 BCE
+
+merely because 714 lies on a preferred recurrence.
+
+Instead record:
+
+**source anchor = 718 BCE**
+**nominal recurrence point = 714 BCE**
+**chronographic offset = +4 years**
+
+and then ask whether there is an independent reason that the surviving historical/calendar date should lag the physical event.
+
+### S7-RULE-3
+
+There is no universal free "± few years" correction.
+
+An offset is admissible only when:
+- calendar inception;
+- reconstruction;
+- reign-year conversion;
+- post-destruction reorganization;
+- or source transmission
+
+gives a concrete reason to expect one.
+
+This prevents the correction from becoming an unrestricted fitting device.
+
+---
+
+# ARCHAIX CLOCK REGISTER
+
+# A — PHOENIX
+
+## Raw recurrence
+**138 years**
+
+## Larger internally exact Phoenix multiples
+
+**3 × 138 = 414 years**
+
+**4 × 138 = 552 years**
+
+**12 × 138 = 1,656 years**
+
+and:
+
+**3 × 552 = 1,656 years**
+
+These are exact arithmetic relations.
+
+## Public anchor
+**May 2040**
+
+## Archaix event class
+Phoenix is described as:
+- cataclysm/reset;
+- darkening;
+- terraforming;
+- material removal/addition;
+- population rearrangement;
+- volcanic / dust / mud / water effects depending event magnitude.
+
+## Best Vardath phase attachment
+primarily:
+- P8 environment response;
+- P9 destructive maximum;
+- P10 closure/reconfiguration;
+- P11 recovery;
+- P12 redistribution;
+- P13 successor state.
+
+### S7-PHX-1
+
+**138 years is an event-to-event recurrence interval.**
+
+It is **not** the same category as:
+- Genesis 40-day rain;
+- Revelation 1,260-day oppression;
+- Jonah 3-day carrier interval;
+- 4 Ezra 3-hour water anomaly.
+
+Those are within-event durations.
+
+---
+
+# B — 552-YEAR PHOENIX CYCLE
+
+Archaix glossary explicitly defines:
+
+**552 years = four 138-year Phoenix periods.**
+
+This is a larger recurrence / severity family.
+
+### Same-phase comparison against Synthesis 6
+
+Closest conspicuous long source number:
+**2 Enoch 532-year great calendrical cycle**.
+
+Difference:
+
+**552 − 532 = 20 years**
+
+Percentage relative to 532:
+
+**20 / 532 ≈ 3.76%**
+
+But the comparison fails mechanistically:
+
+- 532 = stable astronomical/calendar operation;
+- 552 = Archaix catastrophe recurrence.
+
+### S7-PHX-2
+
+**552 vs 532 is a numerical near-neighbour, not a same-phase clock match.**
+
+Do not use it as evidence for the Vardath event cycle.
+
+---
+
+# C — 1,656-YEAR PRE-FLOOD WORLD
+
+This is the strongest exact cross-system number found in this synthesis.
+
+Archaix explicitly states:
+- Pre-Flood world lasted **1,656 years**;
+- it ended in the Great Flood / Phoenix reset;
+- the **1,656-year** genealogy is biblical dating.
+
+The Masoretic Genesis patriarchal chronology likewise yields the Flood in **Anno Mundi 1656** when the ages in Genesis 5 and Genesis 7 are summed in the conventional Masoretic scheme.
+
+Therefore:
+
+**Archaix 1,656**
+=
+**Masoretic Genesis AM 1,656**
+
+This is an **exact numerical match**.
+
+It is also phase-compatible at the large-scale level:
+
+**stable world-age**
+→ **terminal Flood/reset**.
+
+However it fails the independence test.
+
+Archaix itself says this is biblical dating.
+
+### S7-MASTER-1
+
+> **1,656 is an exact and phase-compatible Archaix/Genesis match, but it is inherited/source-linked rather than independent confirmation.**
+
+It is important structurally,
+but it cannot be counted as:
+"Archaix independently predicted a biblical number."
+
+---
+
+# 1,656 AS A NESTED ARCHAIX NUMBER
+
+Internal Archaix arithmetic:
+
+**1,656 = 12 × 138**
+
+**1,656 = 3 × 552**
+
+Archaix also gives:
+
+**1,656 = 864 + 792**
+
+where:
+- 864 is used in its Vedic/Kali-Yuga chronology;
+- 792 is Nemesis X periodicity.
+
+This makes 1,656 a genuine **cross-clock junction inside the Archaix system**.
+
+### S7-MASTER-2
+
+The strongest timing bridge is therefore not:
+**138 = hidden biblical gate duration**.
+
+It is:
+
+**a biblical-derived 1,656-year world-age has been made a major arithmetic junction in the Archaix chronology.**
+
+That is a different and more precise claim.
+
+---
+
+# D — NEMESIS X
+
+## Raw recurrence
+**792 years**
+
+Current Archaix charts describe:
+**792-year visitations to 2046**.
+
+Current Archaix blog:
+**792-year periodicity**.
+
+Chronicon:
+**792-year orbit**.
+
+## Public future anchor
+**2046 CE**
+
+## Additional Archaix event duration
+Nemesis X is also described in chart material as having a roughly **60-year inner-system transit** in some historical/future sequences.
+
+That 60-year transit is not the same thing as the 792-year recurrence.
+
+### Best Vardath phase attachment
+
+Archaix assigns Nemesis to:
+- arrival;
+- large environmental/celestial change;
+- catastrophic maximum;
+- altered order;
+- long transition to later state.
+
+Therefore:
+P3/P8/P9 through P13,
+depending which statement is being compared.
+
+---
+
+# 792 AGAINST BIBLICAL/SYNTHESIS-6 NUMBERS
+
+## Tempting but invalid comparison: 2 × 400
+
+**2 × 400 = 800**
+
+Difference from 792:
+
+**8 years**
+
+Percentage:
+**1.0% of 800**
+
+But:
+- Genesis 400 = oppression/historical duration;
+- 792 = celestial recurrence;
+- doubling 400 is not a source-given operation.
+
+Therefore:
+
+**near arithmetic**
+≠
+**same clock**.
+
+## 792 vs 2 Enoch 532
+Difference = **260 years**.
+
+No useful match.
+
+## 792 vs Danielic 490
+Difference = **302 years**.
+
+No useful match.
+
+### S7-NEM-1
+
+**No phase-normalized biblical/Ethiopic interval in Synthesis 6 independently matches the 792-year Nemesis recurrence.**
+
+---
+
+# E — 2040 → 2046 → 2052 TERMINAL ARCHAIX SEQUENCE
+
+Current/public Archaix chronology distinguishes:
+
+- Phoenix — 2040;
+- Nemesis X — 2046;
+- Dark Satellite — 2052.
+
+This produces:
+
+**2040 → +6 → 2046 → +6 → 2052**
+
+and:
+
+**2040 → 2052 = 12 years**.
+
+These are real relations inside the published future sequence.
+
+But:
+
+### S7-TERM-1
+
+Do not equate the first six-year spacing with:
+- six creation days;
+- six-day Sinai preparation;
+- 6→7 transition grammar;
+
+without independent source justification.
+
+The Archaix terminal sequence concerns **different claimed objects/protocols**, not six years spent in one gate phase.
+
+Record it.
+
+Do not over-map it.
+
+---
+
+# F — DARK SATELLITE
+## Raw unit kept as 144,000 days
+
+The raw recurrence entered for comparison is:
+
+**144,000 days**.
+
+Archaix also preserves:
+- 360-day Draconian year;
+- 144,000-day baktun/day-count units;
+- public Chronicon Dark Satellite wording of a **395-year** orbit.
+
+---
+
+# DARK SATELLITE UNIT CONVERSION
+
+These are arithmetic conversions only.
+
+## Under 360-day year
+
+**144,000 / 360 = 400 years exactly**
+
+This is exact.
+
+## Under 365-day year
+
+**144,000 / 365 ≈ 394.5205 years**
+
+## Under 365.25-day year
+
+**144,000 / 365.25 ≈ 394.2505 years**
+
+Therefore:
+
+**144,000 days**
+is not exactly
+**395 modern solar years**.
+
+"395 years" is a rounded civil-year expression.
+
+### S7-DARK-1
+
+The controlling recurrence should remain:
+
+**144,000 days**
+
+whenever precision matters.
+
+"394.5" or "395 years" may be used only as calendar approximations with the assumed year length named.
+
+---
+
+# NOMINAL 395-YEAR DARK-SATELLITE LINE FROM 2052
+
+Using Chronicon's rounded 395-year expression for historical indexing gives:
+
+- 2052 CE
+- 1657 CE
+- 1262 CE
+- 867 CE
+- 472 CE
+- 77 CE
+- 319 BCE
+- 714 BCE
+- 1109 BCE
+- 1504 BCE
+- 1899 BCE
+- 2294 BCE
+
+This is a **nominal year-label line**.
+
+It is not a replacement for the 144,000-day count.
+
+Public Chronicon indexing visibly contains:
+- 1504 BCE;
+- 867 CE;
+- 2052 CE.
+
+The user's earlier Chronicon check also surfaced a Hezekiah/Sennacherib-associated historical date at **718 BCE** in material describing completion of the orbit.
+
+Under the nominal line:
+
+expected rounded recurrence point = **714 BCE**
+
+historical source anchor = **718 BCE**
+
+offset = **+4 years**.
+
+### S7-DARK-2
+
+Under the destruction-first/calendar-later rule:
+
+**+4 years is a candidate chronographic offset, not a reason to alter the 144,000-day recurrence.**
+
+It should be investigated by:
+- source date provenance;
+- regnal-year system;
+- calendar accession rules;
+- chronology used by the cited historian;
+- whether the recorded year is destruction, observation, reign marker or later reconstruction.
+
+---
+
+# DARK SATELLITE VS GENESIS 400 YEARS
+
+This is the closest superficially interesting Synthesis-6 timing comparison.
+
+Genesis gives:
+**400 years**
+for the long oppression/sojourn prophecy family.
+
+Dark Satellite raw recurrence:
+**144,000 days**.
+
+Under 360-day Draconian conversion:
+
+**144,000 days = 400 × 360-day years exactly**.
+
+This is a mathematically exact relation.
+
+But it is not yet a same-phase match.
+
+Genesis 400:
+- historical/oppression period;
+- T-D long chronology.
+
+Dark Satellite 144,000 days:
+- claimed recurrence interval between celestial/satellite returns.
+
+### S7-DARK-3
+
+> **144,000 days = 400 Draconian years is an exact unit conversion, but Genesis's 400-year period is not thereby established as a Dark Satellite recurrence.**
+
+This is stronger than an accidental near-number,
+but still fails:
+**event-role equivalence**.
+
+Keep it as:
+**mathematically related / phase-incompatible**.
+
+---
+
+# 144,000 IN REVELATION
+## EXACT INTEGER — WRONG DIMENSION
+
+Revelation contains:
+**144,000 sealed persons**.
+
+Dark Satellite register:
+**144,000 days**.
+
+The integer is identical.
+
+The units are not.
+
+Revelation:
+**population count / symbolic community number**.
+
+Dark Satellite:
+**elapsed recurrence time**.
+
+### S7-DARK-4
+
+**144,000 persons ≠ 144,000 days.**
+
+This is a legitimate numerical resonance for a separate number-symbolism study.
+
+It is **not** a timing match.
+
+This is exactly the kind of unit substitution Synthesis 6 prohibited.
+
+---
+
+# G — ANUNNA NER
+
+Archaix:
+**600-year period**.
+
+Under its 360-day Draconian system:
+
+**600 × 360 = 216,000 days**.
+
+Two NER periods:
+
+**1,200 × 360 = 432,000 days**
+
+and:
+
+**432,000 = 3 × 144,000**.
+
+This arithmetic is directly stated in Archaix transcript material.
+
+### Comparison with Genesis/Noah
+
+Archaix also aligns:
+- Noah's birth;
+- 600 years to the Flood.
+
+Genesis gives Noah as **600 years old** at the Flood.
+
+Therefore this is another exact biblical/Archaix numerical overlap.
+
+But again:
+Archaix explicitly uses biblical chronology here.
+
+### S7-NER-1
+
+**600-year Noah/Flood alignment is exact but source-derived, not independent external confirmation.**
+
+---
+
+# PHASE-NORMALIZED COMPARISON TABLE
+
+| Archaix clock | Raw value | Archaix function | Closest source number | Numerical relation | Phase/category result |
+|---|---:|---|---|---|---|
+| Phoenix | 138 years | catastrophe recurrence | none | no exact source family | no same-phase match |
+| Phoenix large cycle | 552 years | catastrophe recurrence | 2 Enoch 532 years | +20 y / ~3.76% | calendar vs catastrophe — fail |
+| Pre-Flood world | 1,656 years | world-age ending in Flood/reset | Genesis AM 1656 | exact | phase-compatible but inherited |
+| Nemesis X | 792 years | celestial recurrence | 2×Genesis 400 = 800 | −8 y / 1% | derived doubling + wrong phase — fail |
+| NER | 600 years | long calendrical/regnal period | Noah age 600 at Flood | exact | inherited/source-linked |
+| Dark Satellite | 144,000 days | recurrence | 400 × 360-day years | exact conversion | mathematical relation; role unresolved |
+| Dark Satellite | ~394.25–394.52 solar y | recurrence | Genesis 400 y | ~5.5–5.75 y difference | historical duration vs recurrence — fail |
+| Dark Satellite | 144,000 days | recurrence | Rev 144,000 persons | exact integer | unit/role mismatch — fail |
+| Nemesis transit | ~60 years | event/transit duration | 4 Baruch ~66 y | ~6 y difference | different event role — no match |
+| Nemesis transit | ~60 years | event/transit duration | 70-y exile | ~10 y difference | different phase/history — no match |
+| terminal spacing | 6 y | Phoenix→Nemesis / Nemesis→Dark Satellite | Sinai 6-day prep | same numeral only | unit + mechanism mismatch |
+
+---
+
+# MOST IMPORTANT RESULT
+## ARCHAIX CLOCKS ARE MOSTLY RECURRENCE CLOCKS; THE CORPUS CLOCKS ARE MOSTLY PHASE-DURATION CLOCKS
+
+This resolves much of the apparent timing confusion.
+
+Synthesis 6 mainly measured:
+
+**inside one event**
+- warning duration;
+- rain duration;
+- oppression duration;
+- carrier duration;
+- closure/waiting;
+- recovery probes.
+
+Archaix mainly gives:
+
+**between repeated macro-events**
+- Phoenix to Phoenix;
+- Nemesis to Nemesis;
+- Dark Satellite to Dark Satellite;
+- epoch to epoch.
+
+These are different dimensions.
+
+### S7-MASTER-3
+
+> **The Bible/Ethiopic corpus currently provides many event-phase durations but very few securely recurring catastrophe-to-catastrophe periods.**
+
+Therefore no honest derivation presently yields:
+
+**138 years = biblical gate cycle**
+
+or:
+
+**792 years = biblical gate cycle**
+
+or:
+
+**144,000 days = biblical aperture-open duration**.
+
+---
+
+# WHAT DOES MATCH MORE STRONGLY?
+## EVENT SEQUENCE, NOT RECURRENCE NUMBER
+
+Archaix Phoenix descriptions and the Vardath/Bible synthesis overlap much more strongly at the level of event phase:
+
+Archaix Phoenix descriptions include:
+- sky darkening;
+- dust/red fallout;
+- volcanism;
+- flood/mud/water displacement;
+- crust/land change;
+- population removal/rearrangement;
+- successor conditions.
+
+Synthesis 5 corpus phase graph gives:
+
+**warning**
+→ **activation**
+→ **deformation**
+→ **opening/transfer**
+→ **water/air/land response**
+→ **destructive maximum**
+→ **closure**
+→ **recovery**
+→ **population redistribution**
+→ **inhabited successor state**.
+
+### S7-MASTER-4
+
+**Archaix materially strengthens the comparative EVENT-PHASE discussion more than it strengthens a biblical recurrence-clock derivation.**
+
+This is the strongest responsible result.
+
+The overlap is:
+**what happens in the transition**,
+
+not yet:
+**the Bible independently supplies Archaix's recurrence interval**.
+
+---
+
+# DESTRUCTION-FIRST CHRONOLOGY
+## WHY THE USER'S CORRECTION MATTERS
+
+If large resets destroy:
+- archives;
+- governments;
+- calendars;
+- monuments;
+- populations;
+
+then the first surviving date after a catastrophe may mark:
+
+**reorganization after the event**
+rather than:
+**the exact event onset**.
+
+This means future chronology work must record both:
+
+### EVENT DATE
+proposed physical transition.
+
+### RECORD DATE
+when a polity/calendar/chronicle begins.
+
+### OFFSET
+record date minus event date.
+
+### SOURCE REASON
+why the record should lag.
+
+### S7-MASTER-5
+
+**The correct question is no longer merely "Do the years match?"**
+
+It is:
+
+> **Does the event sequence predict that formal chronology would restart shortly after the destruction, and do independent cultures show that behavior around the same recurrence point?**
+
+That is a much stronger test.
+
+---
+
+# HARD NEGATIVE CONTROLS PRESERVED
+
+1. **552 ≠ 532**
+   despite numerical proximity.
+
+2. **792 ≠ 800**
+   unless a source explicitly licenses doubling the Genesis 400.
+
+3. **144,000 people ≠ 144,000 days**.
+
+4. **400-year oppression ≠ automatically a 400-year celestial orbit**.
+
+5. **60-year Nemesis transit ≠ 66-year 4 Baruch anomaly**.
+
+6. **6-year future object spacing ≠ 6-day biblical preparation**.
+
+7. **small historical dating offsets may be admitted only with chronology reasons; they cannot repair a wrong event phase.**
+
+8. **1,656 exact match cannot be counted as independent when Archaix explicitly inherited the biblical chronology.**
+
+---
+
+# NEW MASTER TIMING CLASSES AFTER ARCHAIX COMPARISON
+
+The research now needs four distinct clock classes.
+
+## CLOCK A — RECURRENCE CLOCK
+time between repeat macro-events.
+
+Examples:
+- Phoenix 138 y;
+- Nemesis 792 y;
+- Dark Satellite 144,000 d.
+
+## CLOCK B — EVENT-DURATION CLOCK
+time occupied by one event phase.
+
+Examples:
+- Flood 40 d;
+- 150 d;
+- Acts storm 14 nights.
+
+## CLOCK C — EPOCH / WORLD-AGE CLOCK
+time from one major state boundary to another.
+
+Examples:
+- Archaix Pre-Flood 1,656 y;
+- long historical biblical schemes.
+
+## CLOCK D — CALENDAR / RECORD EPOCH
+formal starting point of a chronology after an event.
+
+Examples:
+- calendar beginnings;
+- regnal epochs;
+- Annus Mundi reconstructions.
+
+### S7-RULE-4
+
+**Never compare A, B, C and D as though they were one type of time interval.**
+
+This is now a permanent research rule.
+
+---
+
+# SYNTHESIS 7 — FINAL RESULT
+
+## Exact findings
+
+### Exact mathematical
+- 552 = 4 × 138.
+- 1,656 = 12 × 138.
+- 1,656 = 3 × 552.
+- 864 + 792 = 1,656.
+- 144,000 d = 400 × 360-day years.
+- 432,000 d = 3 × 144,000 d.
+- Archaix Pre-Flood 1,656 = conventional Masoretic Genesis Flood AM 1656.
+- Archaix/Genesis Noah-to-Flood 600-year value is exact.
+
+### Exact but source-dependent
+- 1,656 biblical/Archaix.
+- Noah 600 / NER comparison.
+
+These cannot be counted as independent confirmations because Archaix openly uses biblical chronology.
+
+---
+
+## Mathematically related but phase-incompatible
+
+- Dark Satellite 144,000 d ↔ 400 Draconian years.
+- Dark Satellite ~394.25–394.52 modern years ↔ Genesis 400 years.
+- Nemesis 792 ↔ 800 = 2×400.
+- Phoenix 552 ↔ 2 Enoch 532 near-neighbour.
+
+These remain comparison data,
+not mechanism proof.
+
+---
+
+## Strongest new chronology insight
+
+The user correction is retained:
+
+> **history and formal calendars may begin after destruction rather than on its exact physical date.**
+
+This provides a principled way to examine small offsets such as a historical date lying a few years away from an exact recurrence line.
+
+But it must be source-controlled.
+
+---
+
+## Decisive conclusion
+
+> **Synthesis 7 does not derive Archaix's 138-, 792-year or 144,000-day recurrences from the Bible/Ethiopic phase clocks.**
+
+It does something more useful:
+
+1. separates recurrence from event duration;
+2. identifies exact inherited biblical chronology inside Archaix;
+3. identifies genuine arithmetic architecture inside Archaix;
+4. preserves small chronology offsets without altering the recurrence;
+5. shows that Archaix and the completed corpus compare most strongly in the **sequence and character of reset events**, not in a demonstrated shared recurrence number.
+
+That keeps the timing research rigorous while preserving the genuinely interesting correspondences.
+
+---
+
+# SYNTHESIS 7 — COMPLETE
+
+## Next live block
+
+**SYNTHESIS 8 — CATASTROPHE-ANCHOR / CALENDAR-RESTART AUDIT**
+
+Required work:
+
+1. Search the completed corpus and external chronology for cases where:
+   - destruction occurs;
+   - a new reign/calendar/age/epoch begins shortly afterward;
+   - the first surviving record may lag the event.
+2. Build rows for:
+   - event date;
+   - first record date;
+   - calendar/reign start;
+   - offset;
+   - source type;
+   - certainty.
+3. Test Archaix recurrence points first:
+   - Phoenix;
+   - Nemesis;
+   - Dark Satellite.
+4. For Dark Satellite keep **144,000 days** as raw recurrence.
+5. Reconstruct the historical Dark Satellite chart line from source material where possible rather than extrapolation alone.
+6. Treat a date near the nominal recurrence as:
+   - exact;
+   - calendar-offset compatible;
+   - broad chronographic approximation;
+   - incompatible.
+7. Do not grant an offset merely because it improves the fit.
+8. Test whether calendar restarts systematically follow:
+   - flood;
+   - darkening;
+   - dynastic collapse;
+   - population loss;
+   - land/water rearrangement.
+9. Compare calendar-start behavior with the Vardath phase map:
+   **P9 destruction → P10 closure → P11 recovery → P12 redistribution → P13 successor order**.
+10. Preserve failed cases.
+
