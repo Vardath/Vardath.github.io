@@ -4244,3 +4244,58 @@ Go to thy heritage.
 ## Apocalypse of Abraham 32
 
 **1.** “Therefore hear, O Abraham, and see; lo! thy seventh generation shall go with thee, and they shall go out into a strange land, and they shall enslave them, and evil-entreat them as it were an hour of the Age of ungodliness; but the nation whom they shall serve I will judge.”
+
+---
+
+# Book 6 — Testament of Abraham
+
+*Public-domain English translation by W. A. Craigie, from* Ante-Nicene Fathers, *Volume IX, edited by Allan Menzies (Christian Literature Publishing Co., 1896/1897). The historical edition gives both Greek recensions in full. They are preserved here as Version I (the longer recension) and Version II (the shorter recension).*
+
+## Testament of Abraham — Version I
+
+### Testament of Abraham 1
+
+Abraham lived the measure of his life, nine hundred and ninety-five years, and having lived all the years of his life in quietness, gentleness, and righteousness, the righteous one was exceeding hospitable; for, pitching his tent in the cross-ways at the oak of Mamre, he received every one, both rich and poor, kings and rulers, the maimed and the helpless, friends and strangers, neighbors and travelers, all alike did the devout, all-holy, righteous, and hospitable Abraham entertain.
+
+Even upon him, however, there came the common, inexorable, bitter lot of death, and the uncertain end of life. Therefore the Lord God, summoning his archangel Michael, said to him: “Go down, chief-captain Michael, to Abraham and speak to him concerning his death, that he may set his affairs in order, for I have blessed him as the stars of heaven, and as the sand by the sea-shore, and he is in abundance of long life and many possessions, and is becoming exceeding rich.
+
+“Beyond all men, moreover, he is righteous in every goodness, hospitable and loving to the end of his life; but do thou, archangel Michael, go to Abraham, my beloved friend, and announce to him his death and assure him thus: Thou shalt at this time depart from this vain world, and shalt quit the body, and go to thine own Lord among the good.”
+
+### Testament of Abraham 2
+
+And the chief-captain departed from before the face of God, and went down to Abraham to the oak of Mamre, and found the righteous Abraham in the field close by, sitting beside yokes of oxen for ploughing, together with the sons of Masek and other servants, to the number of twelve.
+
+And behold the chief-captain came to him, and Abraham, seeing the chief-captain Michael coming from afar, like to a very comely warrior, arose and met him as was his custom, meeting and entertaining all strangers.
+
+And the chief-captain saluted him and said: “Hail, most honored father, righteous soul chosen of God, true son of the heavenly one.”
+
+Abraham said to the chief-captain: “Hail, most honored warrior, bright as the sun and most beautiful above all the sons of men; thou art welcome; therefore I beseech thy presence, tell me whence the youth of thy age has come; teach me, thy suppliant, whence and from what army and from what journey thy beauty has come hither.”
+
+The chief-captain said: “I, O righteous Abraham, come from the great city. I have been sent by the great king to take the place of a good friend of his, for the king has summoned him.”
+
+And Abraham said, “Come, my Lord, go with me as far as my field.”
+
+The chief-captain said: “I come”; and going into the field of the ploughing, they sat down beside the company.
+
+And Abraham said to his servants, the sons of Masek: “Go ye to the herd of horses, and bring two horses, quiet, and gentle and tame, so that I and this stranger may sit thereon.”
+
+But the chief-captain said, “Nay, my Lord, Abraham, let them not bring horses, for I abstain from ever sitting upon any four-footed beast. Is not my king rich in much merchandise, having power both over men and all kinds of cattle? but I abstain from ever sitting upon any four-footed beast. Let us go, then, O righteous soul, walking lightly until we reach thy house.”
+
+And Abraham said, “Amen, be it so.”
+
+### Testament of Abraham 3
+
+And as they went on from the field toward his house, beside that way there stood a cypress tree, and by the command of the Lord the tree cried out with a human voice, saying, “Holy, holy, holy is the Lord God that calls himself to those that love him”; but Abraham hid the mystery, thinking that the chief-captain had not heard the voice of the tree.
+
+And coming nigh to the house they sat down in the court, and Isaac seeing the face of the angel said to Sarah his mother, “My lady mother, behold, the man sitting with my father Abraham is not a son of the race of those that dwell on the earth.”
+
+And Isaac ran, and saluted him, and fell at the feet of the Incorporeal, and the Incorporeal blessed him and said, “The Lord God will grant thee his promise that he made to thy father Abraham and to his seed, and will also grant thee the precious prayer of thy father and thy mother.”
+
+Abraham said to Isaac his son, “My son Isaac, draw water from the well, and bring it me in the vessel, that we may wash the feet of this stranger, for he is tired, having come to us from off a long journey.”
+
+And Isaac ran to the well and drew water in the vessel and brought it to them, and Abraham went up and washed the feet of the chief-captain Michael, and the heart of Abraham was moved, and he wept over the stranger.
+
+And Isaac, seeing his father weeping, wept also, and the chief-captain, seeing them weeping, also wept with them, and the tears of the chief-captain fell upon the vessel into the water of the basin and became precious stones.
+
+And Abraham seeing the marvel, and being astonished, took the stones secretly, and hid the mystery, keeping it by himself in his heart.
+
