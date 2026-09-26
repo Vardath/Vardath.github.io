@@ -3370,3 +3370,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Each one of them has seventy names corresponding to the seventy languages, and all of those names are derived from the name of the Holy One, blessed be He. Every name is written with a pen of flame upon the awesome crown that is upon the head of the high and exalted King.
 
 **2.** “From every one of those names sparks and lightning go forth. Around each one are horns of radiance; from each one lights flash, and around each one are canopies and tents of brilliance, so that even the seraphim and the Holy Living Creatures—greater than all the children of the heights—are unable to gaze upon them.”
+
+
+## 3 Enoch 30
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Whenever the Great Court sits in the height of Arabot Raqia, no one in the world has permission to open his mouth except those great princes who are called by the name of YHWH, after the name of the Holy One, blessed be He.
+
+**2.** “How many are those princes? Seventy-two princes of the kingdoms of the world, apart from the Prince of the World, who speaks in praise of the world before the Holy One, blessed be He, every day when the book is opened in which all the deeds of the world are written, as it is written: ‘The court sat, and the books were opened.’”
