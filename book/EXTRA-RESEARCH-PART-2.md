@@ -65531,3 +65531,1346 @@ Future work should therefore shift from blind sequential reading to:
 If a later file audit finds a specific missing chapter/subunit,
 recover it in Part 2 as another omission rather than restarting the sequence.
 
+
+
+---
+
+# SYNTHESIS 1 — CORPUS MECHANISM SPINE / STRICT FINGERTRAP EVIDENCE MATRIX
+## First post-sequential synthesis after completion of the reconstructed direct corpus
+
+### Why this synthesis begins now
+
+The direct sequential roadmap has been audited after Section 89.
+
+The one genuine missing range discovered by that audit:
+**Jubilees 39–50**
+has now been researched and recovered.
+
+No other unresearched roadmap unit was identified.
+
+The research should therefore stop behaving as:
+**next text → next text → next text**
+
+and begin testing the accumulated evidence as a system.
+
+This first synthesis asks one deliberately narrow question:
+
+> **Across the entire researched corpus, which sources actually supply each mechanical stage required by the mature Vardath fingertrap/gate hypothesis, and which stage is still unsupported?**
+
+This is not an attempt to prove the cosmology by assembling unrelated verses.
+
+It is an evidentiary map.
+
+Each row below distinguishes:
+- what the source genuinely gives;
+- the closest Vardath analogue;
+- what remains missing.
+
+---
+
+# THE STRICT VARDATH MECHANICAL SEQUENCE BEING TESTED
+
+The mature mechanism can be reduced to:
+
+1. **BROAD SUPPORT**
+   - distributed/open sky or support field;
+   - preferably woven/branched/networked;
+   - supports or bounds inhabited world/land/water system.
+
+2. **SAME-STRUCTURE DEFORMATION**
+   - same broad structure remains continuous;
+   - geometry changes;
+   - strands/parts change angle, roll, tighten, braid, converge or cinch.
+
+3. **AXIAL / THROAT STATE**
+   - deformation produces a narrower connector:
+     - rod;
+     - tube;
+     - throat;
+     - axial channel.
+
+4. **TEMPORARY ADJACENCY / OPENING**
+   - normally separated domains become traversably connected.
+
+5. **TRANSFER**
+   - people, material, water, atmosphere, information or other cargo moves.
+
+6. **TWO-DIRECTION / SORTED FLOW**
+   - different cargoes, populations or currents may move differently or oppositely.
+
+7. **REOPENING / RELAXATION**
+   - concentrated connector ceases;
+   - structure moves back toward broad/open state.
+
+8. **SUCCESSOR EQUILIBRIUM**
+   - inhabited, material world remains;
+   - inherited/transferred material is reorganized;
+   - not rewind and not necessarily creation from nothing.
+
+The strict claim requires stages **1–8 to belong to one continuous structural process**, not merely to resemble one another across unrelated texts.
+
+---
+
+# EVIDENCE MATRIX — STAGE 1
+# BROAD SUPPORT / BROAD COVER
+
+## 1 Meqabyan 27
+
+Directly gives:
+- earth established upon waters;
+- upper water raised above;
+- upper covering spread broad like cloth/sackcloth;
+- **wind as pillar/support**;
+- lower water/deep below;
+- sea enclosed/bolted with sand;
+- Spirit associated with stability.
+
+### Classification
+**VERY STRONG BROAD-SUPPORT ANALOGUE**
+
+Why:
+the source actually combines:
+**broad upper cover + water layering + structural support language**.
+
+Missing:
+- weave/strands;
+- contraction;
+- throat;
+- transfer through transformed cover.
+
+---
+
+## 3 Meqabyan 9
+
+Directly gives:
+- earth founded upon waters;
+- earth firm without ordinary stakes/supports;
+- heaven **pillared upon wind**;
+- heaven spread like a **garment over waters**;
+- clouds/rain then nourish ground.
+
+### Classification
+**VERY STRONG BROAD-SUPPORT ANALOGUE**
+
+This independently reinforces the Meqabyan pattern.
+
+Important:
+the repeated support grammar across 1 and 3 Meqabyan makes:
+**broad cover + water + wind-support**
+a recurring Ethiopic cosmographic pattern rather than one isolated modern wording.
+
+Missing:
+same dynamic transition as above.
+
+---
+
+## Amos 9:5–6
+
+Directly gives:
+- upper chambers in heavens;
+- a support/vault/foundation relation to earth;
+- earth melts/rises/sinks in adjacent imagery;
+- sea waters are called and poured over earth.
+
+Lexical control:
+Hebrew **'aguddah** is difficult;
+exact architectural form should not be overstated.
+
+### Classification
+**STRONG SUPPORT + WATER-REDISTRIBUTION ANALOGUE**
+
+Especially important because:
+structure/support and water transfer occur together.
+
+Missing:
+- visible weave;
+- same structure narrowing.
+
+---
+
+## Ethiopic Didascalia XXXVII
+
+Directly gives:
+- heaven hung as a vault;
+- earth established on waters;
+- fiery angelic hosts;
+- six-winged cherubim;
+- divine chariot/presence.
+
+### Classification
+**STRONG BROAD-COSMOGRAPHY + CHERUB/FIRE FUNCTIONAL CLUSTER**
+
+Important negative result:
+no meaningful dragon/serpent system is attached to this cosmography.
+
+---
+
+## Genesis / Enoch / wider firmament tradition
+
+Across the earlier direct passes:
+- upper/lower waters;
+- firmament;
+- gates/windows;
+- cosmic mountains/houses;
+- bounded waters;
+- ordered upper structure
+
+recur repeatedly.
+
+### Classification
+**BROAD CULTURAL COSMOGRAPHIC BACKGROUND**
+
+But:
+"firmament" by itself is not a woven fingertrap.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 1
+
+### S1 — BROAD SUPPORT IS WELL ATTESTED AS A FORMAL ANALOGUE
+
+The corpus repeatedly supplies:
+- broad sky covering;
+- upper/lower water separation;
+- heaven-earth support relation;
+- wind/Spirit/fire as sustaining or active media;
+- inhabited land beneath/within the system.
+
+### Evidence level
+**HIGH for a broad support/canopy concept.**
+
+### Evidence level for specifically WOVEN support
+**LOWER.**
+
+The corpus contains many:
+- nets;
+- webs;
+- cloths;
+- tents;
+- garments;
+- branches;
+- wings;
+
+but ordinary source functions often differ.
+
+The mature hypothesis must not quietly replace:
+**cloth/tent/garment**
+with
+**literal braided lattice**
+unless a text supplies continuity or strand behavior.
+
+---
+
+# EVIDENCE MATRIX — STAGE 2
+# SAME BROAD STRUCTURE CHANGES GEOMETRY
+
+This is the critical stage.
+
+---
+
+## Isaiah 34:4
+
+Directly gives:
+
+**extended sky**
+→ **sky rolled up like a scroll**
+→ heavenly host loses stable position/falls/withers.
+
+The earlier direct pass correctly classified this as:
+
+**strong broad-field → rolled-field morphological change**.
+
+### Why this matters
+
+This is much stronger than an ordinary:
+"gate opened."
+
+The **upper field itself changes form**.
+
+### Missing
+
+Isaiah does not say:
+- the sky is woven;
+- its strands remain continuous;
+- the rolled structure becomes a tube/throat;
+- people/material pass through the rolled form;
+- the same sky subsequently unrolls.
+
+### Classification
+**STRONGEST DIRECT BROAD-FIELD DEFORMATION ANALOGUE**
+
+Not strict fingertrap.
+
+---
+
+## Revelation 6:12–14
+
+Directly gives:
+- earthquake;
+- altered sun/moon;
+- stars fall;
+- heaven/sky departs or recedes **like a scroll being rolled up**;
+- mountains/islands move.
+
+### Classification
+**SECOND MAJOR BROAD-FIELD → ROLLED-FIELD ANALOGUE**
+
+It strengthens the motif because:
+upper-field rolling appears again inside a large catastrophe sequence.
+
+But the same missing link remains:
+rolled sky is not explicitly the later passage/throat.
+
+---
+
+## 1 Enoch house/support transitions
+
+Earlier research records:
+- old heavenly/support house structures;
+- removal/folding/replacement imagery in visionary sequences;
+- new greater/higher structure.
+
+### Classification
+**STRUCTURAL REPLACEMENT / RECONFIGURATION ANALOGUE**
+
+But:
+not a clearly continuous woven sleeve tightening into a throat.
+
+---
+
+## Zechariah 14
+
+Directly gives:
+one mountain
+→ splits
+→ two halves move apart
+→ wide valley/corridor forms.
+
+### Classification
+**VERY STRONG SAME-STRUCTURE GEOMETRY CHANGE**
+
+Continuity is explicit:
+it is the same mountain becoming two halves.
+
+But the direction of transformation is:
+**opening/separation**,
+not
+**broad structure tightening/narrowing**.
+
+This is much closer to Vardath's **reopening** half than its contraction half.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 2
+
+### S2 — GEOMETRY CHANGE IS ATTESTED; FINGERTRAP-LIKE CONTRACTION IS NOT
+
+Secure motifs include:
+- sky rolling;
+- mountain splitting;
+- house/support replacement;
+- mountains melting/sinking;
+- earth rising/sinking;
+- valleys opening.
+
+What is still absent is:
+
+> **same broad support → continuity retained → parts/strands angle inward → narrow axial connector forms.**
+
+### Evidence level
+**HIGH for dynamic cosmic geometry in general.**
+
+### Evidence level
+**LOW for the precise fingertrap contraction mechanism.**
+
+This is currently the single most important mechanical evidentiary gap.
+
+---
+
+# EVIDENCE MATRIX — STAGE 3
+# AXIS / THROAT / CONCENTRATED CONNECTOR
+
+---
+
+## 4 Ezra 7
+
+This remains the strongest static throat text.
+
+Direct geometry:
+
+**broad vast sea**
+→ **narrow river-like entrance**
+→ **broad sea/domain**.
+
+Second analogy:
+
+**broad desirable city/plain**
+→ **narrow dangerous path**
+→ one person at a time.
+
+Flanks:
+- **fire on right**;
+- **deep water on left**.
+
+### Classification
+**STRONGEST STATIC THROAT / FINITE-CAPACITY CONNECTOR**
+
+It supplies:
+- broad→narrow→broad topology;
+- bilateral media;
+- central path;
+- finite throughput.
+
+### Missing
+The narrow throat is not shown being formed dynamically from the broad structure.
+
+This distinction is fundamental.
+
+---
+
+## Micah 2:12–13
+
+Sequence:
+- population gathered densely;
+- breaker/opening function goes first;
+- breach;
+- gate passage;
+- leader at head.
+
+### Classification
+**STRONG CONCENTRATION→BREACH→PASSAGE ANALOGUE**
+
+Missing:
+the enclosure is not shown morphing into the breach.
+
+---
+
+## Zechariah 6
+
+Four chariots/winds emerge:
+**between two bronze mountains**.
+
+### Classification
+**STRONG TWO-SIDED CORRIDOR / SOURCE APERTURE**
+
+One constrained origin
+→ multidirectional output.
+
+Missing:
+mountains do not contract or move.
+
+---
+
+## Daniel 12
+
+Earlier research:
+- man in linen associated with river/water;
+- bilateral river-side beings;
+- raised hands/timing configuration.
+
+### Classification
+**STRONG AXIS-PERSON / WATER / BILATERAL TIMING IMAGE**
+
+Not a literal throat.
+
+---
+
+## Revelation 10
+
+Mighty figure:
+- descends from heaven;
+- clothed with cloud;
+- face like sun;
+- legs like pillars of fire;
+- one foot sea;
+- one foot land;
+- hand raised to heaven;
+- thunders.
+
+### Classification
+**STRONG HUMANLIKE AXIS / MULTI-DOMAIN BRIDGE PROJECTION**
+
+It spans:
+sky ↔ land ↔ sea.
+
+But no tubular physical gate is identified.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 3
+
+### S3 — AXIS AND STATIC THROAT ARE STRONGLY REPRESENTED AS SEPARATE IMAGE FAMILIES
+
+Static connector:
+**4 Ezra 7**.
+
+Axis-person:
+**Daniel / Revelation / 4 Ezra 13 / Qalementos / Moses-related imagery**.
+
+The unresolved question is whether these image families are:
+- independent metaphors,
+or
+- different projections of one physical state.
+
+The corpus proves representational flexibility;
+it does not prove physical identity.
+
+---
+
+# EVIDENCE MATRIX — STAGE 4
+# OPENING / TEMPORARY ADJACENCY
+
+---
+
+## Zechariah 14
+
+Strongest direct topology-change opening:
+
+**one mountain**
+→ split
+→ north/south halves separate
+→ central valley forms
+→ people use it as route.
+
+### Classification
+**STRONGEST LANDSCAPE-OPENING ANALOGUE**
+
+Source-level sequence:
+**structure changes → passage appears → people traverse**.
+
+---
+
+## Jubilees 48 / Exodus sea crossing
+
+Strong sequence:
+
+water boundary
+→ temporary dry corridor
+→ one population crosses
+→ later pursuing population enters
+→ route/water state changes
+→ pursuers destroyed.
+
+### Classification
+**STRONGEST TEMPORARY-ROUTE / PHASE-DEPENDENT PASSAGE ANALOGUE**
+
+Important:
+the same corridor has different outcomes at different times.
+
+This is highly relevant to:
+**temporary gate window**.
+
+But:
+terrestrial miracle narrative,
+not stacked-world adjacency.
+
+---
+
+## Ezekiel gate system
+
+Ezekiel 43–46:
+- glory enters via east route;
+- gate closes;
+- inner gates reopen at scheduled/event times;
+- directed north↔south pedestrian flow.
+
+### Classification
+**STRONG CONTROLLED-ACCESS / SCHEDULED-GATE SYSTEM**
+
+Important because it distinguishes:
+- outer gate;
+- inner gate;
+- scheduled opening;
+- event-triggered opening;
+- directional through-flow.
+
+Not inter-world adjacency.
+
+---
+
+## Revelation doors / abyss
+
+Revelation repeatedly gives:
+- heaven opened;
+- temple opened;
+- abyss opened;
+- abyss later shut/sealed.
+
+### Classification
+**STRONG OPEN/CLOSED COSMIC-BOUNDARY GRAMMAR**
+
+But:
+different apertures and chapters must not be collapsed into one machine.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 4
+
+### S4 — TEMPORARY OPENING / ACCESS-STATE CHANGE IS VERY WELL ATTESTED
+
+The corpus supplies:
+- landscape corridor opening;
+- water corridor opening;
+- scheduled gate opening;
+- heaven opening;
+- abyss opening/closing;
+- sealed/unsealed access.
+
+### Evidence level
+**HIGH for temporary boundary-state change as a symbolic/narrative process.**
+
+Still absent:
+proof these all describe one physical world-layer gate.
+
+---
+
+# EVIDENCE MATRIX — STAGE 5
+# TRANSFER / CARGO / CARRIER
+
+The corpus is exceptionally rich here.
+
+---
+
+## Zechariah 5
+
+Complete carrier system:
+- woman/cargo;
+- ephah/container;
+- lead closure;
+- two winged women;
+- wind in wings;
+- between-earth-and-sky travel zone;
+- destination Shinar;
+- receiving base/house.
+
+### Classification
+**STRONGEST WINGED CARRIER SYSTEM**
+
+---
+
+## Moses box — Exodus / Jubilees 47
+
+Jubilees direct version:
+- infant cargo;
+- sealed pitch/asphalt box;
+- river-edge medium;
+- timed guardians;
+- receiver/extraction;
+- new household/status.
+
+### Classification
+**STRONG SMALL ENCLOSED-CARRIER SYSTEM**
+
+Direct Jubilees does not give fingertrap weave.
+
+---
+
+## Jonah
+
+Earlier classification:
+fish = **mobile enclosed carrier through deep environment**,
+not the gate.
+
+### Classification
+**STRONG BIOLOGICAL-CARRIER ANALOGUE**
+
+Important operator/aperture distinction.
+
+---
+
+## Qalementos / Second Dominos cloud carriers
+
+Research found:
+- luminous humanlike figures;
+- cloud receiving/carrying;
+- upward/downward transfer;
+- winged/cherub/seraph accompaniment in related scenes.
+
+### Classification
+**STRONG CLOUD-CARRIER / VERTICAL-TRANSFER FAMILY**
+
+Do not collapse cloud and cherub unless source explicitly does.
+
+---
+
+## Joseph's bones / books — Jubilees 45–46
+
+- books transmitted to Levi;
+- bones preserved;
+- transfer delayed until future migration window.
+
+### Classification
+**STRONG INFORMATION + MATERIAL HANDOFF ACROSS TIME**
+
+This is important because Vardath cargo need not be only living persons.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 5
+
+### S5 — TRANSFER/CARRIER LOGIC IS EXTREMELY WELL ATTESTED
+
+The corpus clearly distinguishes:
+- cargo;
+- carrier;
+- aperture;
+- operator;
+- medium;
+- destination;
+- timing.
+
+This is a major gain of the research.
+
+### Critical methodological rule
+
+> **Carrier ≠ gate.  
+> Operator ≠ gate.  
+> Cargo ≠ carrier.  
+> Medium ≠ aperture.**
+
+A large portion of earlier overfitting risk disappears once those are separated.
+
+---
+
+# EVIDENCE MATRIX — STAGE 6
+# TWO-DIRECTION / BILATERAL / SORTED FLOW
+
+---
+
+## Zechariah 14
+
+One central water source:
+- half east;
+- half west.
+
+Same chapter:
+- mountain halves north/south;
+- water halves east/west.
+
+### Classification
+**STRONGEST EXPLICIT BILATERAL WATER OUTPUT**
+
+Important:
+axes are orthogonal.
+Do not merge them into one braid without evidence.
+
+---
+
+## Zechariah 4
+
+Two olive trees:
+- left;
+- right;
+- both relate/feed one central lamp/bowl system.
+
+### Classification
+**STRONGEST BILATERAL FEEDER NETWORK**
+
+Missing:
+counter-winding/opposed motion.
+
+---
+
+## Habakkuk 3
+
+Moving central divine figure:
+- pestilence before;
+- plague behind.
+
+The deep:
+- raises "hands"/waves.
+
+### Classification
+**STRONG FRONT/BACK EVENT ENVELOPE + ENVIRONMENT-BODY PROJECTION**
+
+Do not confuse:
+front/back
+with
+left/right.
+
+---
+
+## Ezekiel 46
+
+Those entering north:
+exit south.
+
+Those entering south:
+exit north.
+
+No return by same gate.
+
+### Classification
+**STRONG DIRECTED THROUGH-FLOW ACROSS CENTRAL FIELD**
+
+This is an actual:
+opposite-side routing rule.
+
+Not a braid.
+
+---
+
+## Jubilees 48
+
+Same corridor:
+- Israelites traverse one phase safely;
+- Egyptians enter later and are destroyed.
+
+### Classification
+**STRONG SORTED / PHASE-DEPENDENT POPULATION OUTCOME**
+
+Not simultaneous opposite flow.
+
+---
+
+## 4 Ezra 7
+
+Central narrow path:
+- fire right;
+- deep water left.
+
+### Classification
+**STRONG BILATERAL MEDIA FLANKING**
+
+Not bilateral current.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 6
+
+### S6 — BILATERALITY IS VERY WELL ATTESTED; A TRUE TWO-STRAND BRAID IS NOT
+
+The corpus contains:
+- left/right feeder nodes;
+- east/west water;
+- north/south opening;
+- front/back hazard;
+- opposite-side through-flow;
+- right fire/left deep;
+- paired banks;
+- paired mountains;
+- paired figures.
+
+### Evidence level
+**HIGH for bilateral and opposed-direction grammar.**
+
+### Evidence level
+**LOW for two physical counter-wound strands forming one fingertrap sleeve.**
+
+---
+
+# EVIDENCE MATRIX — STAGE 7
+# REOPENING / RELAXATION / RETURN TOWARD BROAD STATE
+
+This stage is harder than opening.
+
+---
+
+## Zechariah 14
+
+After mountain split/pass:
+- land becomes broad/plain;
+- Jerusalem remains elevated;
+- city remains inhabited;
+- water distributes persistently.
+
+### Classification
+**STRONG POST-OPENING BROADENED SUCCESSOR TERRAIN**
+
+This resembles:
+**reopening/distribution**,
+though not relaxation of the same fingertrap.
+
+---
+
+## Isaiah 35 paired with Isaiah 34
+
+Isaiah 34:
+- rolled/collapsing upper/landscape catastrophe.
+
+Isaiah 35:
+- dry land blooms;
+- waters emerge;
+- highway/access;
+- inhabited return.
+
+### Classification
+**STRONG CATASTROPHE→RESTORED-LAND PAIR**
+
+But:
+the sky itself is not explicitly unrolled.
+
+---
+
+## Ezekiel 47–48
+
+After temple/gate restructuring:
+- water leaves threshold;
+- stream grows;
+- dead/salty water becomes living ecology;
+- trees on both banks;
+- fruit/healing leaves;
+- land redistributed;
+- foreigners receive inheritance;
+- city with twelve gates;
+- inhabited final city.
+
+### Classification
+**STRONGEST RESTORED-WATER / REPOPULATED SUCCESSOR-SYSTEM ANALOGUE**
+
+Not same support reopening.
+
+---
+
+## Amos 9
+
+Judgment:
+→ fallen booth repaired;
+→ breaches repaired;
+→ ruined cities rebuilt and inhabited;
+→ agriculture resumes;
+→ population planted.
+
+### Classification
+**STRONG INHERITED-RUIN→INHABITED SUCCESSOR ANALOGUE**
+
+---
+
+## Jubilees 45
+
+Famine:
+→ Nile overflows;
+→ preserved seed distributed;
+→ sowing;
+→ productive land.
+
+### Classification
+**STRONGEST SIMPLE ECOLOGICAL RESTART FROM INHERITED MATERIAL**
+
+---
+
+## Revelation 21–22
+
+Old heaven/earth pass;
+New Jerusalem;
+river;
+tree;
+gates;
+inhabited renewed world.
+
+### Classification
+**STRONG LARGE-SCALE SUCCESSOR-WORLD ENDPOINT**
+
+But:
+the new world is theological/apocalyptic;
+the text does not say the same support lattice merely relaxed back open.
+
+---
+
+# SYNTHESIS RESULT FOR STAGE 7
+
+### S7 — SUCCESSOR BROADENING/RESTORATION IS WELL ATTESTED; SAME-STRUCTURE RELAXATION IS NOT
+
+This is a precise distinction.
+
+We have:
+**after-event broad, watered, inhabited stability**.
+
+We do not have:
+**the exact rolled/cinched structure visibly unrolling into its former support form**.
+
+---
+
+# EVIDENCE MATRIX — STAGE 8
+# SUCCESSOR EQUILIBRIUM / INHERITED MATERIAL / POPULATED END STATE
+
+This is one of the strongest parts of the corpus.
+
+Repeated findings:
+- Amos rebuilt cities;
+- Ezekiel restored land, river, trees, inheritance, city;
+- Zechariah inhabited Jerusalem;
+- Jubilees seed/water recovery;
+- post-Flood inheritance/repopulation;
+- Revelation renewed city/world;
+- Meqabyan resurrection/new-world life;
+- multiple exile/return systems.
+
+### S8 — THE CORPUS STRONGLY FAVORS SUCCESSOR STATES THAT ARE INHABITED AND MATERIAL, NOT ABSTRACT EMPTY VOID
+
+This is compatible with the user's insistence:
+**new beginning ≠ blank nothingness**.
+
+But textual models differ:
+- restoration of this land;
+- resurrection world;
+- heavenly city;
+- post-Flood repopulation;
+- eschatological renewed creation.
+
+Do not flatten them into one cosmology.
+
+---
+
+# ANTHROPOMORPHIC / PROJECTION EVIDENCE
+# Why body imagery can legitimately be tested as process imagery
+
+This synthesis also confirms a separate major result.
+
+The corpus repeatedly and explicitly makes the same referent change body/form.
+
+---
+
+## 4 Ezra 10
+**woman = Zion/city**.
+
+Human body
+→ lightning/cry/earthquake transition
+→ architectural city/foundations.
+
+This is one of the strongest same-identity projection proofs.
+
+---
+
+## 4 Ezra 11–12
+Eagle:
+- wings;
+- heads;
+- secondary wings
+
+are explicitly decoded as:
+historical/political rulers and succession modules.
+
+Feathered anatomy
+→ temporal/political state machine.
+
+---
+
+## 4 Ezra 13
+wind stirs sea
+→ humanlike man rises from sea.
+
+Environment/current field
+→ anthropomorphic projection.
+
+---
+
+## Habakkuk 3
+deep/water field
+→ raises "hands"/waves.
+
+Environment
+→ anthropomorphic limbs.
+
+---
+
+## Zechariah 4
+olive trees
+→ two anointed human/leadership roles.
+
+Tree
+→ person/role.
+
+---
+
+## Ethiopic Didascalia
+one church
+→ body
+→ ship
+→ flock.
+
+Deacon
+→ ear/eye/mouth.
+
+Institutional network
+→ anatomy / vehicle / animal-group form.
+
+---
+
+## Qalementos
+research records:
+- Adam as luminous cosmic-scale human;
+- bilateral arms anchored to sacred landscape/Cross geometry;
+- cloud carrier;
+- rod/Cross typological identity.
+
+---
+
+### P1 — THE CORPUS STRONGLY SUPPORTS THE METHOD OF TESTING CROSS-FORM PROJECTIONS
+
+It is entirely legitimate to ask whether:
+- serpent;
+- winged creature;
+- humanlike figure;
+- tree;
+- mountain;
+- city;
+- rod;
+- cloud;
+- chariot
+
+may sometimes represent different aspects of the same underlying referent.
+
+### P2 — IT DOES NOT FOLLOW THAT ALL SUCH IMAGES ARE ONE PHYSICAL PHENOMENON
+
+The correct test remains:
+**function + sequence + context + continuity**.
+
+Not:
+surface resemblance.
+
+---
+
+# CHERUB / FEATHERED-SERPENT / DRAGON STATUS WITHIN THE MECHANISM SPINE
+
+At this synthesis stage the safest functional breakdown is:
+
+## Secure cherub cluster
+- wings;
+- throne/chariot;
+- divine presence;
+- fire/light;
+- support/bearing;
+- directional movement in Ezekiel;
+- eye/node imagery in Ezekielic tradition.
+
+## Secure serpent/dragon clusters
+They vary:
+- adversary;
+- sea/deep creature;
+- pursuer;
+- empire;
+- chaos/water agent;
+- healing/raised serpent;
+- serpent host/channel;
+- world-boundary creature in some comparative traditions.
+
+## Secure feather/wing clusters
+Wings can mean:
+- carrier/transport — Zechariah 5;
+- protective canopy/shade — 1 Meqabyan;
+- luminous/healing extension — Malachi;
+- speed — military/animal metaphors;
+- heavenly praise/presence — Didascalia/Meqabyan cherub-seraph material;
+- temporal/political modules — 4 Ezra eagle.
+
+### CF1 — "WING" IS A FUNCTIONALLY POLYVALENT FORM
+
+Thus:
+winged appearance alone cannot establish identity.
+
+### CF2 — THE USER'S QUETZALCOATL / CHERUB / FEATHERED-SERPENT HYPOTHESIS REMAINS MOST PLAUSIBLE AS A **PHASE/PROJECTION FAMILY TEST**, NOT AS A ONE-TO-ONE CREATURE IDENTIFICATION
+
+A stronger connection would require:
+- shared process order;
+- shared environmental role;
+- shared movement;
+- shared support/gate behavior;
+- transformation between forms.
+
+That is the correct target for the next synthesis.
+
+---
+
+# CLOSEST CROSS-TEXT VARDATH MECHANISM SPINE
+
+If the strongest formal analogues are arranged in Vardath order, the composite looks like this:
+
+### 1. BROAD SUPPORT
+1 Meqabyan 27 / 3 Meqabyan 9 / Amos 9:
+**broad upper covering / support / water architecture**.
+
+↓
+
+### 2. UPPER-FIELD DEFORMATION
+Isaiah 34 / Revelation 6:
+**sky rolls like a scroll**.
+
+↓
+
+### 3. FIELD→BODY / AXIS PROJECTION
+Habakkuk 3 / 4 Ezra 13 / Daniel 12 / Revelation 10 / Qalementos:
+**water/current/sky event rendered as anthropomorphic axial figure**.
+
+↓
+
+### 4. NARROW CONNECTOR
+4 Ezra 7:
+**broad → narrow path with bilateral fire/deep flanks → broad destination**.
+
+↓
+
+### 5. OPENING / CORRIDOR
+Zechariah 14 / Exodus-Jubilees sea:
+**structure/boundary changes and a traversable route appears**.
+
+↓
+
+### 6. CARGO / TRANSFER
+Moses box / Jonah fish / Zechariah ephah / clouds / migration / bones/books:
+**different carrier classes move protected cargo**.
+
+↓
+
+### 7. BILATERAL / SORTED FLOW
+Zechariah east-west waters / Ezekiel north-south through-flow / phase-dependent sea crossing:
+**different directions and populations follow different flow rules**.
+
+↓
+
+### 8. BROAD SUCCESSOR
+Ezekiel 47–48 / Amos 9 / Zechariah 14 / Jubilees 45 / Revelation 21–22:
+**water, land, vegetation, city and population reach a new stable state**.
+
+---
+
+# CRITICAL WARNING ABOUT THE COMPOSITE
+
+### MS1 — THIS SEQUENCE IS A RESEARCH MODEL MADE BY ALIGNING DIFFERENT TEXTS
+
+No researched source presently states that all eight stages are one physical apparatus.
+
+Therefore it should be labelled:
+
+**cross-text mechanism spine**
+or
+**composite formal analogue**,
+
+not:
+"the Bible describes the Vardath fingertrap."
+
+That distinction protects the project from overclaiming and makes any future genuine bridge far more meaningful.
+
+---
+
+# THE SINGLE MOST IMPORTANT MISSING TEXTUAL LINK
+
+After the full corpus pass and this synthesis, the unresolved evidence can now be stated in one sentence:
+
+> **We still need a text in which the SAME broad support/covering remains structurally continuous while its parts visibly converge/twist/cinch into a narrower axial throat, through which relevant transfer occurs, and which later returns toward the broad support state.**
+
+Everything else has comparatively strong analogues somewhere.
+
+This is the decisive test.
+
+---
+
+# PREDICTIONS IF THE STRICT VARDATH MECHANISM IS REALLY PRESENT IN AN UNRECOGNIZED SOURCE
+
+A future high-value text or image should ideally combine several of these in one continuous episode:
+
+1. broad cloth/net/tree/wing/sky support;
+2. explicit tension/tightening/rolling/twisting;
+3. continuity of strands/branches/supports;
+4. narrowing toward one central axis/throat;
+5. paired/opposed side structures or directional currents;
+6. water reacting to the geometry;
+7. anthropomorphic/serpentine/winged form appearing during the concentrated state;
+8. cargo/population/material moving through/along it;
+9. later relaxation/reopening;
+10. stable inhabited landscape afterward.
+
+### MS2 — THESE ARE NOW FALSIFIABLE SEARCH CRITERIA
+
+This is much stronger than searching mythology for:
+- serpent;
+- tree;
+- gate;
+- flood
+
+in isolation.
+
+---
+
+# STRICT FINGERTRAP EVIDENCE TABLE — CORPUS STATUS
+
+| Required property | Strongest textual analogue(s) | Status |
+|---|---|---|
+| Broad support/cover | 1 Meqabyan 27; 3 Meqabyan 9; Amos 9; Didascalia XXXVII | **Strong analogue** |
+| Woven/network character | nets/webs/cloth/tree/wing imagery across corpus | **Fragmentary / function-dependent** |
+| Same support changes geometry | Isaiah 34; Revelation 6 sky rolled; Zechariah 14 mountain split | **Strong deformation, wrong/uncertain mechanism** |
+| Continuous inward convergence | no clean direct example found | **Missing** |
+| Narrow throat | 4 Ezra 7 | **Strong static analogue** |
+| Bilateral flanks | 4 Ezra 7; Zechariah 4/14; Daniel 12 | **Strong analogue** |
+| Temporary corridor/opening | Zechariah 14; Exodus/Jubilees sea; Ezekiel gates | **Strong analogue** |
+| Finite throughput | 4 Ezra 7 one-person path | **Explicit** |
+| Protected cargo/carrier | Moses box; Jonah fish; Zechariah ephah; cloud carriers | **Very strong** |
+| Two-direction / sorted flow | Zechariah 14; Ezekiel 46; Jubilees 48 | **Strong analogue** |
+| Anthropomorphic field projection | Habakkuk 3; 4 Ezra 13; Qalementos | **Very strong projection grammar** |
+| Winged carrier/support states | Zechariah 5; cherub traditions; Meqabyan; Didascalia | **Very strong functional family** |
+| Reopening of SAME throat structure | no clean direct example found | **Missing** |
+| Inhabited material successor | Ezekiel 47–48; Amos 9; Zechariah 14; Revelation 21–22; Jubilees 45 | **Very strong analogue** |
+
+---
+
+# SYNTHESIS 1 — CONCLUSION
+
+The completed corpus does **not** presently give a strict one-text fingertrap mechanism.
+
+It does give an unusually rich set of component analogues:
+
+- broad upper support;
+- water layering;
+- structural sky deformation;
+- anthropomorphic current/field projection;
+- static broad→narrow→broad throat topology;
+- finite throughput;
+- bilateral media;
+- topology-created corridor;
+- phase-dependent crossing;
+- protected carriers;
+- winged transport;
+- sorted/opposite flow;
+- water redistribution;
+- material inheritance;
+- inhabited successor state.
+
+The central question is no longer:
+**"Are there enough symbolic similarities?"**
+
+There are.
+
+The central question is now:
+
+> **Can the broad support, contraction, throat, transfer and reopening be tied to one structurally continuous object/process rather than assembled from different texts?**
+
+That is the evidentiary threshold for moving the fingertrap from:
+**highly developed comparative model**
+to
+**textually continuous mechanism hypothesis**.
+
+---
+
+# Next synthesis block
+
+**SYNTHESIS 2 — CHERUB / FEATHERED SERPENT / DRAGON / SQUATTER-MAN PROJECTION MATRIX**
+
+Required work:
+- separate morphology from function;
+- build rows for:
+  - cherub;
+  - seraph;
+  - serpent;
+  - dragon;
+  - eagle/feathered body;
+  - winged woman/carrier;
+  - radiant wing;
+  - cloud carrier;
+  - tree;
+  - mountain;
+  - anthropomorphic current-body;
+  - rod/axis;
+- record for each:
+  - medium;
+  - movement;
+  - support function;
+  - carrier function;
+  - boundary/gate function;
+  - water relation;
+  - fire/light relation;
+  - eye/node relation;
+  - human projection relation;
+  - whether source itself transforms one form into another;
+- cross-link Quetzalcoatl / Feathered Serpent only after the biblical/Ethiopic functional matrix is complete;
+- preserve explicit negative controls where winged forms have no serpent function and serpents have no wing/support function.
+
