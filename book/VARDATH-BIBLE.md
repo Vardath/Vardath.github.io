@@ -4299,3 +4299,75 @@ And Isaac, seeing his father weeping, wept also, and the chief-captain, seeing t
 
 And Abraham seeing the marvel, and being astonished, took the stones secretly, and hid the mystery, keeping it by himself in his heart.
 
+### Testament of Abraham 4
+
+And Abraham said to Isaac his son: “Go, my beloved son, into the inner chamber of the house and beautify it. Spread for us there two couches, one for me and one for this man that is guest with us this day. Prepare for us there a seat and a candlestick and a table with abundance of every good thing.
+
+“Beautify the chamber, my son, and spread under us linen and purple and fine linen. Burn there every precious and excellent incense, and bring sweet-smelling plants from the garden and fill our house with them. Kindle seven lamps full of oil, so that we may rejoice, for this man that is our guest this day is more glorious than kings or rulers, and his appearance surpasses all the sons of men.”
+
+And Isaac prepared all things well, and Abraham taking the archangel Michael went into the chamber, and they both sat down upon the couches, and between them he placed a table with abundance of every good thing.
+
+Then the chief captain arose and went out, as if by constraint of his belly to make issue of water, and ascended to heaven in the twinkling of an eye, and stood before the Lord, and said to him: “Lord and Master, let thy power know that I am unable to remind that righteous man of his death, for I have not seen upon the earth a man like him, pitiful, hospitable, righteous, truthful, devout, refraining from every evil deed. And now know, Lord, that I cannot remind him of his death.”
+
+And the Lord said: “Go down, chief-captain Michael, to my friend Abraham, and whatever he say to thee, that do thou also, and whatever he eat, eat thou also with him. And I will send my Holy Spirit upon his son Isaac, and will put the remembrance of his death into the heart of Isaac, so that even he in a dream may see the death of his father, and Isaac will relate the dream, and thou shalt interpret it, and he himself will know his end.”
+
+And the chief-captain said, “Lord, all the heavenly spirits are incorporeal, and neither eat nor drink, and this man has set before me a table with abundance of all good things earthly and corruptible. Now, Lord, what shall I do? How shall I escape him, sitting at one table with him?”
+
+The Lord said: “Go down to him, and take no thought for this, for when thou sittest down with him, I will send upon thee a devouring spirit, and it will consume out of thy hands and through thy mouth all that is on the table. Rejoice together with him in everything, only thou shalt interpret well the things of the vision, that Abraham may know the sickle of death and the uncertain end of life, and may make disposal of all his possessions, for I have blessed him above the sand of the sea and as the stars of heaven.”
+
+### Testament of Abraham 5
+
+Then the chief captain went down to the house of Abraham, and sat down with him at the table, and Isaac served them. And when the supper was ended, Abraham prayed after his custom, and the chief-captain prayed together with him, and each lay down to sleep upon his couch.
+
+And Isaac said to his father, “Father, I too would fain sleep with you in this chamber, that I also may hear your discourse, for I love to hear the excellence of the conversation of this virtuous man.”
+
+Abraham said, “Nay, my son, but go to thy own chamber and sleep on thy own couch, lest we be troublesome to this man.”
+
+Then Isaac, having received the prayer from them, and having blessed them, went to his own chamber and lay down upon his couch.
+
+But the Lord cast the thought of death into the heart of Isaac as in a dream, and about the third hour of the night Isaac awoke and rose up from his couch, and came running to the chamber where his father was sleeping together with the archangel.
+
+Isaac, therefore, on reaching the door cried out, saying, “My father Abraham, arise and open to me quickly, that I may enter and hang upon thy neck, and embrace thee before they take thee away from me.”
+
+Abraham therefore arose and opened to him, and Isaac entered and hung upon his neck, and began to weep with a loud voice. Abraham therefore being moved at heart, also wept with a loud voice, and the chief-captain, seeing them weeping, wept also.
+
+Sarah being in her room, heard their weeping, and came running to them, and found them embracing and weeping. And Sarah said with weeping, “My Lord Abraham, what is this that ye weep? Tell me, my Lord, has this brother that has been entertained by us this day brought thee tidings of Lot, thy brother’s son, that he is dead? is it for this that ye grieve thus?”
+
+The chief-captain answered and said to her, “Nay, my sister Sarah, it is not as thou sayest, but thy son Isaac, methinks, beheld a dream, and came to us weeping, and we seeing him were moved in our hearts and wept.”
+
+### Testament of Abraham 6
+
+Then Sarah, hearing the excellence of the conversation of the chief-captain, straightway knew that it was an angel of the Lord that spoke.
+
+Sarah therefore signified to Abraham to come out towards the door, and said to him, “My Lord Abraham, knowest thou who this man is?”
+
+Abraham said, “I know not.”
+
+Sarah said, “Thou knowest, my Lord, the three men from heaven that were entertained by us in our tent beside the oak of Mamre, when thou didst kill the kid without blemish, and set a table before them. After the flesh had been eaten, the kid rose again, and sucked its mother with great joy. Knowest thou not, my Lord Abraham, that by promise they gave to us Isaac as the fruit of the womb? Of these three holy men this is one.”
+
+Abraham said, “O Sarah, in this thou speakest the truth. Glory and praise from our God and the Father. For late in the evening when I washed his feet in the basin I said in my heart, These are the feet of one of the three men that I washed then; and his tears that fell into the basin then became precious stones.”
+
+And shaking them out from his lap he gave them to Sarah, saying, “If thou believest me not, look now at these.”
+
+And Sarah receiving them bowed down and saluted and said, “Glory be to God that showeth us wonderful things. And now know, my Lord Abraham, that there is among us the revelation of some thing, whether it be evil or good!”
+
+### Testament of Abraham 7
+
+And Abraham left Sarah, and went into the chamber, and said to Isaac, “Come hither, my beloved son, tell me the truth, what it was thou sawest and what befell thee that thou camest so hastily to us.”
+
+And Isaac answering began to say, “I saw, my Lord, in this night the sun and the moon above my head, surrounding me with its rays and giving me light. As I gazed at this and rejoiced, I saw the heaven opened, and a man bearing light descend from it, shining more than seven suns.
+
+“And this man like the sun came and took away the sun from my head, and went up into the heavens from whence he came, but I was greatly grieved that he took away the sun from me.
+
+“After a little, as I was still sorrowing and sore troubled, I saw this man come forth from heaven a second time, and he took away from me the moon also from off my head, and I wept greatly and called upon that man of light, and said, Do not, my Lord, take away my glory from me; pity me and hear me, and if thou takest away the sun from me, then leave the moon to me.
+
+“He said, Suffer them to be taken up to the king above, for he wishes them there. And he took them away from me, but he left the rays upon me.”
+
+The chief-captain said, “Hear, O righteous Abraham; the sun which thy son saw is thou his father, and the moon likewise is Sarah his mother. The man bearing light who descended from heaven, this is the one sent from God who is to take thy righteous soul from thee. And now know, O most honored Abraham, that at this time thou shalt leave this worldly life, and remove to God.”
+
+Abraham said to the chief captain, “O strangest of marvels! and now art thou he that shall take my soul from me?”
+
+The chief-captain said to him, “I am the chief-captain Michael, that stands before the Lord, and I was sent to thee to remind thee of thy death, and then I shall depart to him as I was commanded.”
+
+Abraham said, “Now I know that thou art an angel of the Lord, and wast sent to take my soul, but I will not go with thee; but do thou whatever thou art commanded.”
+
