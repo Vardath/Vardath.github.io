@@ -76908,3 +76908,372 @@ Required work:
    **P9 destruction → P10 closure → P11 recovery → P12 redistribution → P13 successor order**.
 10. Preserve failed cases.
 
+
+
+---
+
+# SYNTHESIS 8 — CATASTROPHE-ANCHOR / CALENDAR-RESTART AUDIT
+## Pass 1 — Dark Satellite anchor control and chronology-offset rules
+
+### Frontier verification
+
+Synthesis 7 is complete.
+
+The next required task is to distinguish:
+
+- physical destruction/event date;
+- recurrence point;
+- calendar/epoch start;
+- first surviving record;
+- later chronographer reconstruction.
+
+The user supplied the key working hypothesis:
+
+> **history can restart after destruction, so an official calendar or surviving record may begin a few years after the physical event.**
+
+This is now tested rather than assumed.
+
+---
+
+# S8 CORRECTION TO THE ROUNDED DARK-SATELLITE LINE
+
+Synthesis 7 deliberately labelled the 395-year sequence from 2052 as a **nominal rounded year-label line**.
+
+That distinction now becomes mandatory.
+
+The user's raw recurrence is:
+
+**144,000 days**.
+
+Archaix public material also gives:
+
+- 144,000-day baktun/day-count units;
+- a 360-day Draconian year;
+- the Dark Satellite described in Chronicon as a fixed **395-year orbit**;
+- future return in **2052 CE**.
+
+Therefore:
+
+### S8-RULE-1
+
+**Do not generate a historical Dark Satellite chronology by repeatedly subtracting 395 civil years and then treat those labels as exact source dates.**
+
+Why:
+
+- 144,000 / 360 = **400 old 360-day years exactly**;
+- 144,000 / 365 = **394.5205 years**;
+- 144,000 / 365.25 = **394.2505 years**.
+
+A fixed day-count recurrence changes its expression in calendar-years when the year-length convention changes.
+
+Thus:
+
+**144,000 days**
+is the precision quantity.
+
+**395 years**
+is a rounded calendar expression.
+
+---
+
+# VERIFIED FIRST-PARTY HISTORICAL DARK-SATELLITE ANCHOR
+## Chronicon Archive 3 — 718 BCE
+
+Archaix currently hosts free Chronicon archive PDFs at:
+
+https://archaix.com/chronicon-pdfs
+
+The current page lists:
+- Chronicon Archive 1;
+- Archive 2;
+- Archive 3;
+- Archive 4;
+- Archive 5;
+covering the historical sequence.
+
+In **Chronicon Archive 3**, the entry headed **718 BC** explicitly says:
+
+- Sennacherib of Assyria came against Judah/Jerusalem;
+- Hezekiah consulted Isaiah;
+- the **Dark Satellite passed close to Earth**;
+- the event weakened the sun's gravitational hold in the Archaix model;
+- Earth retrograded;
+- year-length changed from **360 to 365.25 days**;
+- an electromagnetic/flux-tube event destroyed the Assyrian host;
+- this **completed the 395-year orbit of the Dark Satellite**.
+
+This is the strongest verified historical Dark-Satellite anchor yet because it is:
+
+1. directly labelled Dark Satellite;
+2. directly dated;
+3. directly assigned the 395-year recurrence;
+4. directly linked to the claimed calendar-regime change.
+
+Source:
+https://img1.wsimg.com/blobby/go/eb77e6ef-cc80-4071-aa08-29346acad247/downloads/Chronicon%20Archive%203%20%28pgs%201-48%29.PDF
+
+### S8-DS-1
+
+**718 BCE is a verified Archaix Dark-Satellite event claim.**
+
+Do not replace it with:
+- 714 BCE;
+- 713 BCE;
+- 707 BCE;
+
+unless another Archaix source itself supplies a different date and the discrepancy is recorded explicitly.
+
+---
+
+# IMPORTANT INTERNAL TIMING CONSEQUENCE
+
+The same 718 BCE Chronicon passage says the event changed the year from:
+
+**360 days**
+to
+**365.25 days**.
+
+That creates a necessary two-regime recurrence calculation.
+
+## Before the claimed calendar/sky change
+
+144,000 days =
+**400 × 360-day years**.
+
+## After the claimed change
+
+144,000 days ≈
+**394.2505 × 365.25-day years**.
+
+### S8-DS-2
+
+If the user-specified 144,000-day Dark-Satellite period is correct, then the historical labels on opposite sides of the 718/713-era transition should **not** be expected to remain exactly 395 civil years apart.
+
+This is not an error.
+
+It is a direct mathematical consequence of Archaix's own claim that the year's length changed.
+
+---
+
+# HISTORICAL-CONTROL CHECK
+## Archaix 718 BCE is not the same chronology as standard Neo-Assyrian dating
+
+The Chronicon identifies the 718 BCE event with:
+- Sennacherib;
+- Hezekiah;
+- Jerusalem/Judah;
+- the 185,000 Assyrian-host tradition.
+
+But standard Neo-Assyrian chronology places:
+- Sargon II's death = **705 BCE**;
+- Sennacherib's accession = **705 BCE**;
+- Sennacherib's major Judah campaign = **701 BCE**.
+
+The British Museum's Taylor/Sennacherib Prism catalogue explicitly identifies:
+**Hezekiah's tribute in 701 BCE**.
+
+Modern Cambridge scholarship likewise places the Judean campaign in:
+**701 BCE**.
+
+Therefore:
+
+Archaix event date = **718 BCE**
+standard Assyrian campaign date = **701 BCE**
+
+difference = **17 years**.
+
+### S8-CTRL-1
+
+**This is too large to classify automatically as a "few-year calendar restart offset."**
+
+It must instead be classified as:
+
+**alternative chronology / source-system divergence**
+
+unless Archaix provides a separate argument showing why the Assyrian campaign itself should be moved.
+
+This is important.
+
+The user's calendar-lag principle remains valid as a test,
+but it cannot become a blanket tolerance that absorbs every chronology conflict.
+
+---
+
+# OLDER CHRONOGRAPHIC VARIANT CONTROL
+
+An older English Josephus chronology places the opening of the Hezekiah/Sennacherib episode under a marginal label around:
+
+**714 BCE**.
+
+That demonstrates that older chronographic traditions can indeed attach a different absolute year to the same narrative episode.
+
+But:
+
+- 714 BCE still differs from standard 701 BCE;
+- it does not by itself establish 718 BCE;
+- it does show why the provenance of each historical year matters.
+
+### S8-CTRL-2
+
+Future rows must distinguish:
+
+1. ancient primary date;
+2. modern historical conversion;
+3. early-modern/older chronographer date;
+4. Archaix-selected date.
+
+Never call all four simply:
+"the historical date."
+
+---
+
+# DIRECT DARK-SATELLITE LIST SEARCH
+## Current result
+
+The research searched:
+
+- current Archaix Chronicon PDF index;
+- current Archaix glossary;
+- Archaix transcript archive;
+- **The Dark Satellite: Lost World of Occult Lore**;
+- ANUNNA Files references;
+- public Chronicon mirrors;
+- current Archaix historical/chart pages.
+
+Verified:
+
+### Direct
+- **718 BCE** — explicitly Dark Satellite / 395-year orbit in Chronicon.
+- **2052 CE** — current Archaix future return in glossary/Chronicon.
+
+Not yet verified as directly labelled Dark-Satellite events:
+- 1504 BCE;
+- 1109/1107 BCE;
+- 714/713/707 BCE;
+- 319/313 BCE;
+- 77/82 CE;
+- 472/476 CE;
+- 867/870 CE;
+- 1262/1264 CE;
+- 1657/1658 CE.
+
+Some of these years occur in Chronicon indexes or can be generated by a rounded recurrence.
+
+That is **not enough**.
+
+### S8-DS-3
+
+**A year appearing in Chronicon is not a Dark-Satellite date unless the event text or chart labels it as Dark Satellite.**
+
+This corrects an earlier overly strong working statement that treated several indexed years as explicit Dark-Satellite entries.
+
+The historical list is still being reconstructed.
+
+---
+
+# DARK-SATELLITE LORE TRANSCRIPT CONTROL
+
+The transcript:
+**The Dark Satellite: Lost World Of Occult Lore**
+
+does not itself provide:
+- 144,000-day period;
+- 395-year period;
+- 2052 date;
+- a historical return table.
+
+Its contribution is different.
+
+It records Jason's claimed occult/literary identity for the object and connects it to:
+- Thomas Burgoyne;
+- a dark/missing world;
+- imprisoned beings;
+- Seven Kings / Anunnaki;
+- world-return traditions;
+- the Great Pyramid / gate motif.
+
+Therefore:
+
+### S8-DS-4
+
+**Do not use the lore transcript as chronology evidence.**
+
+Use it only for:
+- identity;
+- function;
+- mythic/literary comparison.
+
+Chronology must come from:
+- Chronicon;
+- charts;
+- explicit dated presentations.
+
+---
+
+# USER CALENDAR-RESTART HYPOTHESIS
+## Formal test structure
+
+For each proposed recurrence point, record:
+
+| Field | Meaning |
+|---|---|
+| recurrence point | exact day-count or cycle-generated target |
+| destruction/event claim | proposed physical event |
+| official chronology date | conventional historical date |
+| alternate chronology date | Archaix/older chronographer/etc. |
+| calendar/reign start | formal epoch after event |
+| first surviving dated record | earliest secure record |
+| offset | record/epoch minus proposed event |
+| reason for offset | rebuilding, accession, calendar reform, source transmission, etc. |
+| class | exact / small restart offset / alternative chronology / incompatible |
+
+### S8-RULE-2
+
+A **small restart offset** requires an external reason.
+
+Examples of acceptable reasons:
+- accession-year vs non-accession-year regnal count;
+- calendar established after destruction;
+- first monument erected after rebuilding;
+- epoch formally declared after event;
+- scribal conversion between calendar systems.
+
+Not acceptable:
+- "it is close enough";
+- "history is probably wrong";
+- changing the year because the recurrence demands it.
+
+---
+
+# FIRST S8 RESULT
+
+The user's insight survives the first control test in a **restricted** form:
+
+> **catastrophe date and calendar/record start should be tracked separately.**
+
+That is methodologically sound.
+
+But the 718 BCE Dark-Satellite case also shows why the tolerance must remain disciplined:
+
+> **some discrepancies are not calendar lag; they reflect competing chronologies.**
+
+This creates a better audit framework than either:
+- demanding every ancient date match to the year,
+or
+- allowing unlimited chronological drift.
+
+---
+
+# NEXT S8 PASS
+
+Continue with:
+
+1. reconstruct every directly labelled Dark-Satellite event from the free Chronicon archives;
+2. keep **144,000 days** as the master recurrence unit;
+3. locate calendar/dynastic starts surrounding each verified event;
+4. measure the event→record offset;
+5. repeat for Phoenix recurrence points;
+6. repeat for Nemesis recurrence points;
+7. compare the resulting restart pattern with:
+   **P9 destruction → P10 closure → P11 recovery → P12 redistribution → P13 successor order**.
+
