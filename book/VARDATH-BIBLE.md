@@ -3433,3 +3433,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the ministering angels desire to sing, the River of Fire rises with many thousands upon thousands and myriads upon myriads of powers of fiery might. It draws forth and passes beneath the Throne of Glory, between the camps of the ministering angels and the hosts of Arabot.
 
 **2.** “All the ministering angels first descend into the River of Fire and immerse themselves in its fire. They immerse their tongues and their mouths seven times in the River of Fire. Afterward they ascend, put on garments of hashmal, and stand in four rows opposite the Throne of Glory in every firmament.”
+
+
+## 3 Enoch 37
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “In the seven palaces stand four chariots of the Shekinah, and before each one stand four camps of the Shekinah. Between camp and camp a river of fire draws forth and passes.
+
+**2.** “Between river and river are mists of purity. Between them stand pillars of sulfur; between pillar and pillar are wheels of flame; between wheel and wheel are sparks of torch-fire; between spark and spark are treasuries of lightning. Beyond the treasuries of lightning are wings of storm and storehouses of tempest, winds, voices, thunder, flashes upon flashes, and quakings surrounding quakings.”
