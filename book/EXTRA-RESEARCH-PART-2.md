@@ -41874,3 +41874,1869 @@ Required priorities:
 - test whether voyage/shipwreck provides any broad→narrow→broad or carrier-through-throat process;
 - apply strict fingertrap test only after full ordinary narrative reading.
 
+
+
+---
+
+# SECTION 75 — ACTS 13–28
+## Direct narrative pass — simultaneous Saul/Paul identity, paired mission fission, temporary blindness and guided movement, human→god misclassification, vision-directed geography, earthquake→foundation→doors/chains release without transfer, times/boundaries of habitation, mediated object-agency, upper-window death/return, prophetic body-substitution, legal speech changing route, sea-carrier failure, depth/anchor sensing, one carrier→fragment carriers, heat-driven viper/observer reclassification, Dioscuri figurehead, and bounded-body/open-information ending
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for the roadmap and prior Acts material;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+Part 2 already contained:
+**Section 74 — Acts 1–12 COMPLETE**.
+
+The roadmap in Part 1 defines:
+**Section 75 — Acts 13–28**.
+
+No completed direct Section 75 research existed in the archives.
+
+This block is therefore appended only here in Part 2.
+
+---
+
+# Historical / literary control first
+
+Acts 13–28 is the second major half of the Acts narrative.
+
+Modern narrative scholarship stresses that Acts:
+- tells the spread of the Jesus movement through selected leaders;
+- moves geographically from Jerusalem/Judea toward the Aegean and finally Rome;
+- uses plot, characterization and geography as literary structure;
+- is not simply a neutral itinerary or technical log.
+
+Paul's missionary activity is historically studied through:
+- Acts;
+- Paul's letters;
+- chronology;
+- geography;
+- audiences;
+- travel hazards.
+
+Therefore:
+every route, prison, storm and vision below must first be read as part of Luke-Acts' missionary narrative before any Vardath comparison.
+
+A further source control:
+Acts has a complex textual history, including a longer "Western" textual form represented especially by Codex Bezae.
+
+Mechanical conclusions should not depend on one unstable wording where variants are material.
+
+---
+
+# ACTS 13
+## Barnabas + Saul commissioned as paired mission unit → island traversal → Saul explicitly "also called Paul" → Elymas/Bar-Jesus temporary blindness
+
+Antioch contains a distributed leadership group:
+- Barnabas;
+- Simeon/Niger;
+- Lucius;
+- Manaen;
+- Saul.
+
+The Spirit sets apart:
+- **Barnabas and Saul**.
+
+Hands are laid on them.
+They are sent.
+
+They:
+- go down to Seleucia;
+- sail to Cyprus;
+- cross the island.
+
+At Paphos:
+- Bar-Jesus / Elymas opposes them;
+- Saul is introduced as:
+  **"Saul, who was also called Paul."**
+
+### M75-1 — SAUL→PAUL IS EXPLICITLY A DOUBLE-NAME IDENTITY, NOT A BODY TRANSFORMATION
+
+This permanently resolves an important projection control.
+
+The text does **not** say:
+Saul ceased existing and a new Paul appeared.
+
+It says:
+**Saul = also Paul**.
+
+Therefore:
+paired names can be simultaneous labels for one person.
+
+### M75-2 — BAR-JESUS / ELYMAS PROVIDES A SECOND DOUBLE-NAME CONTROL IN THE SAME SCENE
+
+The story contains:
+- Saul/Paul;
+- Bar-Jesus/Elymas.
+
+So doubled naming is a normal identity variable in Acts.
+
+Do not infer:
+two names = two world states
+without additional evidence.
+
+---
+
+# Acts 13:9–12
+## hand of Lord → mist/darkness → temporary blindness → hand-guided movement
+
+Paul announces:
+- "hand of the Lord" against Elymas;
+- temporary blindness;
+- inability to see sun.
+
+Then:
+- mist;
+- darkness;
+- Elymas seeks someone to lead him by hand.
+
+### M75-3 — PERCEPTION-LAYER FAILURE CHANGES MOBILITY WITHOUT CHANGING BODY IDENTITY
+
+Same Elymas:
+- seeing/independent;
+- blind/dependent;
+- expected later restoration.
+
+This is a clean:
+**sensor state → route dependence** sequence.
+
+### M75-4 — HAND GUIDANCE BECOMES A SUBSTITUTE NAVIGATION CHANNEL AFTER VISION LOSS
+
+Visual information fails.
+Tactile/social guide channel replaces it.
+
+Cross-link:
+Saul's earlier blindness in Acts 9.
+
+---
+
+# Acts 13–14
+## network propagation, healing, Zeus/Hermes projection, stoning/"dead" classification→re-entry
+
+Paul/Barnabas:
+- move town to town;
+- teaching produces mixed reception;
+- opposition forces route changes;
+- communities remain behind as nodes.
+
+At Lystra:
+Paul heals a man unable to walk.
+
+The crowd classifies:
+- Barnabas = Zeus;
+- Paul = Hermes,
+because Paul is chief speaker.
+
+### M75-5 — TWO ORDINARY HUMAN AGENTS ARE PROJECTED AS A DIVINE PAIR BASED ON FUNCTION
+
+This is extremely useful projection evidence.
+
+Same physical persons:
+**Barnabas + Paul**
+→ in crowd perception
+**Zeus + Hermes**.
+
+The assignment is role-sensitive:
+Paul's speaking function drives Hermes identification.
+
+### M75-6 — OBSERVER CLASSIFICATION CAN CHANGE BODY-IDENTITY CATEGORY WITHOUT ANY SOURCE-LEVEL BODY CHANGE
+
+This is a major control for:
+- cherub;
+- god;
+- angel;
+- Squatter-Man;
+- divine-man classifications.
+
+What observers call a figure
+is not automatically what the narrator says it ontologically is.
+
+---
+
+# Acts 14:19–20
+## Paul stoned → dragged outside city as dead → rises → re-enters same city
+
+Paul:
+- is stoned;
+- dragged out;
+- observers suppose him dead;
+- disciples surround him;
+- he gets up;
+- returns into city.
+
+### M75-7 — "DEAD" IS AN OBSERVER CLASSIFICATION THAT IS REVERSED BY SUBSEQUENT BODY ACTION
+
+Acts does not narrate a separate soul/body sequence here.
+
+The secure process:
+**violent collapse**
+→ **classified dead**
+→ **same body rises**
+→ **same person re-enters city**.
+
+This is weaker than explicit resurrection stories,
+but very strong for:
+**observer-state uncertainty**.
+
+---
+
+# ACTS 15
+## dispute → central council → encoded letter + human messengers → distributed communities
+
+A distributed dispute about gentile inclusion:
+- travels to Jerusalem;
+- is processed by apostles/elders;
+- produces a written decision;
+- is sent outward through named carriers;
+- congregations read it.
+
+### M75-8 — ACTS 15 IS A CENTRAL INFORMATION-PROCESSING AND REDISTRIBUTION SYSTEM
+
+Process:
+
+**distributed disagreement**
+→ **central convergence**
+→ **decision**
+→ **written packet**
+→ **human carriers**
+→ **distributed recipient nodes**.
+
+This is a genuine many→one→many information structure.
+
+Not physical gate mechanics.
+
+---
+
+# Acts 15:36–41
+## one mission pair splits into two mission pairs
+
+Original pair:
+**Paul + Barnabas**.
+
+Sharp disagreement over Mark.
+
+Result:
+- Barnabas + Mark → Cyprus;
+- Paul + Silas → Syria/Cilicia.
+
+### M75-9 — ONE TWO-PERSON NETWORK NODE FISSIONS INTO TWO TWO-PERSON MISSION NODES
+
+This is one of Acts' clearest distributed-network expansions:
+
+**A—B**
+→
+**A—C**
++
+**B—D**.
+
+The split is conflict-driven,
+but the network does not simply collapse.
+
+It branches geographically.
+
+### M75-10 — PAIR STRUCTURE CAN PERSIST WHILE MEMBERSHIP CHANGES
+
+Again:
+role topology
+can survive
+occupant substitution.
+
+---
+
+# ACTS 16
+## route blocking + Macedonian vision → physical rerouting
+
+Paul/Silas/Timothy:
+- are prevented by Spirit from certain Asian routes;
+- attempt Bithynia;
+- route blocked again;
+- reach Troas.
+
+Paul receives vision:
+- Macedonian man;
+- request to cross over/help.
+
+Narrative response:
+- group concludes they are called to Macedonia;
+- immediately seeks passage there.
+
+### M75-11 — INFORMATION/VISION CHANGES PHYSICAL ROUTE WITHOUT BEING THE TRANSPORT MECHANISM
+
+This distinction is crucial.
+
+Vision:
+**route instruction**.
+
+Ship/roads:
+**physical transport**.
+
+Do not collapse:
+message
+into
+gate.
+
+### M75-12 — "CROSS OVER" IS GEOGRAPHIC MISSION LANGUAGE HERE
+
+It involves:
+Aegean movement into Macedonia.
+
+It should not be automatically interpreted as:
+inter-world crossing.
+
+---
+
+# Acts 16 — Lydia
+## heart "opened" → message reception → household water rite
+
+Lydia:
+- listens;
+- Lord "opens her heart";
+- attends/responds to Paul's message;
+- household baptized.
+
+### M75-13 — OPENING LANGUAGE CAN REFER TO INFORMATION RECEPTIVITY
+
+"Open":
+does not always mean physical aperture.
+
+This is a useful gate-language control.
+
+---
+
+# Acts 16 — enslaved diviner / spirit
+## human host + possessing agency distinguished → verbal command causes agency exit
+
+A slave girl:
+- carries a divining spirit;
+- follows Paul/Silas;
+- speaks.
+
+Paul:
+- addresses spirit;
+- commands it out.
+
+Spirit:
+- leaves at that hour.
+
+### M75-14 — HOST BODY AND OCCUPYING/OPERATING AGENCY ARE DISTINCT VARIABLES
+
+Cross-link:
+3 Meqabyan serpent-host logic.
+
+Human:
+carrier/host.
+
+Spirit:
+operating agency.
+
+This is relevant to:
+creature-as-host
+versus
+creature-as-agent.
+
+---
+
+# ACTS 16:22–34
+# MAJOR PHYSICAL RELEASE SYSTEM
+## inner prison + stocks → earthquake → foundations shake → ALL doors open + ALL chains unfasten → nobody leaves
+
+Paul/Silas:
+- beaten;
+- placed in **inner prison**;
+- feet fastened in stocks.
+
+At midnight:
+- prayer/song;
+- violent earthquake;
+- prison foundations shaken;
+- immediately:
+  - all doors open;
+  - everyone's chains unfasten.
+
+Jailer wakes:
+- sees doors;
+- assumes prisoners escaped.
+
+Paul:
+- corrects him:
+  **all are still here**.
+
+### M75-15 — THIS IS THE STRONGEST PROOF YET THAT APERTURE OPENING ≠ CARGO TRANSFER
+
+Three independent variables:
+
+1. **restraint state**
+   - chains/stocks;
+
+2. **boundary state**
+   - doors;
+
+3. **occupant movement**
+   - prisoners.
+
+Earthquake changes:
+1 + 2.
+
+But 3 remains unchanged.
+
+This is extremely important to Vardath.
+
+### M75-16 — GATE OPENING DOES NOT FORCE PASSAGE
+
+This should become a master cosmology control.
+
+Even when:
+- restraints release;
+- all doors open;
+
+occupants may:
+- remain;
+- wait;
+- cross later;
+- cross selectively.
+
+### M75-17 — OBSERVER CAN FALSELY INFER TRANSFER FROM APERTURE STATE
+
+Jailer logic:
+
+**doors open**
+→ assumes
+**prisoners gone**.
+
+But he is wrong.
+
+Therefore:
+seeing an open gate is insufficient evidence that transfer occurred.
+
+### M75-18 — ACTS 16 DIFFERS MECHANICALLY FROM ACTS 12
+
+Acts 12:
+- angelic guide;
+- chains;
+- guard layers;
+- self-opening iron gate;
+- Peter traverses outward.
+
+Acts 16:
+- no angel guide stated;
+- earthquake affects whole foundation;
+- every door/chain changes;
+- prisoners remain.
+
+Thus there are at least two release types:
+
+**localized guided escape**
+versus
+**system-wide boundary/restraint release without evacuation**.
+
+---
+
+# Acts 16 continued
+## jailer moves prisoners outside → household washing/baptism → re-entry into administrative process
+
+Only later:
+- jailer brings Paul/Silas outside;
+- washes wounds;
+- household receives teaching/baptism;
+- officials send release order.
+
+### M75-19 — ACTUAL CROSSING OCCURS THROUGH HUMAN ACTION AFTER THE SYSTEMIC OPENING EVENT
+
+Again:
+event makes passage possible;
+agent/cargo choice determines passage.
+
+---
+
+# ACTS 17
+## one ancestor → distributed peoples → allotted times + boundaries of habitation
+
+At Athens Paul says:
+- God made world/heaven/earth;
+- all peoples derive from one ancestor;
+- peoples inhabit whole earth;
+- **times** are allotted;
+- **boundaries of places** of habitation are allotted.
+
+### M75-20 — ACTS EXPLICITLY COUPLES POPULATION, TIME AND SPATIAL BOUNDARY
+
+This is highly relevant formally.
+
+Variables:
+- population identity;
+- temporal allocation;
+- spatial habitation boundary.
+
+### M75-21 — THIS IS NOT YET VARDATH'S STACKED POPULATED WORLD-TURNS
+
+The verse describes:
+human peoples in the inhabited earth.
+
+But formal similarity:
+**population has a time + bounded place**.
+
+Keep as:
+structural analogue,
+not physical-world proof.
+
+---
+
+# ACTS 18
+## Priscilla + Aquila teaching pair → Apollos information correction
+
+Priscilla/Aquila:
+- paired household/work/teaching agents.
+
+Apollos:
+- knowledgeable but incomplete.
+
+Pair:
+- takes him aside;
+- explains way more accurately.
+
+### M75-22 — TWO-PERSON NODE CORRECTS/UPGRADES ONE INFORMATION CARRIER
+
+Again Acts prefers:
+distributed human information networks
+over isolated revelation-only transmission.
+
+---
+
+# ACTS 19
+## mediated cloth objects + failed imitation + information destruction + civic "image from heaven"
+
+Extraordinary acts associated with Paul include:
+- handkerchiefs/aprons carried from his body to sick;
+- illnesses leave;
+- spirits leave.
+
+### M75-23 — MATERIAL OBJECTS FUNCTION AS SECONDARY CARRIERS OF ASSOCIATED AGENCY/EFFECT
+
+Object:
+- contacts/associated with central person;
+- moves elsewhere;
+- effect occurs remotely.
+
+This is a carrier model.
+
+Source:
+miracle narrative.
+
+Do not infer physical field transfer mechanism.
+
+---
+
+# Acts 19 — sons of Sceva
+## copied verbal formula fails because role/authority is not transferable by words alone
+
+Others imitate:
+- Jesus-name;
+- Paul formula.
+
+Spirit responds:
+- recognizes Jesus;
+- recognizes Paul;
+- rejects imitators.
+
+### M75-24 — INFORMATION TOKEN ALONE DOES NOT REPRODUCE OPERATOR AUTHORITY
+
+Same words
+≠
+same system access.
+
+This is a very useful:
+**credential/access-control** analogy.
+
+---
+
+# Acts 19 — books burned
+## encoded information physically destroyed
+
+Practitioners:
+- gather books/scrolls;
+- burn them publicly.
+
+### M75-25 — INFORMATION-LAYER CHANGE CAN BE ENACTED THROUGH MATERIAL ARCHIVE DESTRUCTION
+
+Cross-link:
+4 Ezra's burned/restored law.
+
+---
+
+# Acts 19 — Artemis "image that fell from heaven"
+## civic claim inside speech, not narrator's demonstrated cosmology
+
+Town clerk says Ephesus:
+- guardian of Artemis temple;
+- guardian of image/object "fallen from heaven."
+
+### M75-26 — DESCENDING SACRED-OBJECT LANGUAGE IS PRESENT, BUT AS A LOCAL CIVIC CLAIM
+
+Do not treat this automatically as:
+the narrator confirming an extraterrestrial object.
+
+It is embedded in:
+riot-control speech.
+
+---
+
+# ACTS 20
+## mission group distributed/reconverged; Eutychus upper-window fall → dead classification → Paul descends → body contact → alive → Paul ascends again
+
+Paul's larger travelling group:
+- moves in staggered fashion;
+- some go ahead;
+- others sail;
+- reconverge at Troas.
+
+### M75-27 — MISSION NETWORK CAN DISTRIBUTE AND RECONVERGE WITHOUT LOSING COLLECTIVE IDENTITY
+
+Useful network process.
+
+---
+
+# Acts 20:7–12
+## Eutychus on third-storey window
+
+Eutychus:
+- sits in boundary aperture/window;
+- falls from third story;
+- is picked up dead.
+
+Paul:
+- goes down;
+- bends over/takes him in arms;
+- says life is in him.
+
+Then:
+- Paul goes back up;
+- community resumes meal/discussion;
+- Eutychus taken alive.
+
+### M75-28 — ONE VERTICAL AXIS CONTAINS:
+**upper chamber → boundary/window → ground/death state → body contact → life state → upward return of operator**
+
+This is interesting geometry.
+
+But:
+ordinary building architecture.
+
+### M75-29 — WINDOW IS A TRUE BOUNDARY APERTURE BUT FUNCTIONS HERE AS FALL HAZARD, NOT GATE
+
+Not every aperture enables safe transit.
+
+### M75-30 — PAUL'S DOWN→CONTACT→UP SEQUENCE IS OPERATOR MOVEMENT AROUND AN OCCUPANT STATE CHANGE
+
+Useful to operator/cargo taxonomy.
+
+---
+
+# ACTS 21
+## Agabus uses Paul's belt on HIS OWN body to project Paul's future body state
+
+Agabus:
+- takes Paul's belt;
+- binds **his own hands and feet**;
+- says owner of belt will be bound similarly.
+
+### M75-31 — THIS IS ONE OF THE CLEANEST PERSON→PERSON PROJECTION ACTS IN THE NEW TESTAMENT
+
+Variables:
+
+**object owner** = Paul;
+**display body** = Agabus;
+**future target body** = Paul.
+
+Agabus's body temporarily represents Paul's future body state.
+
+### M75-32 — OBJECT + SUBSTITUTE BODY CAN ENCODE A FUTURE EVENT WITHOUT IDENTITY CONFUSION
+
+This is extremely useful for the user's:
+"person may project another process/person/state"
+hypothesis.
+
+The text itself gives:
+one person physically enacting another person's future state.
+
+---
+
+# Acts 21–22
+## arrest + stairs/barracks boundary + repeated conversion account
+
+Paul:
+- seized in temple;
+- carried/protected by Roman troops;
+- moved via stairs into barracks;
+- addresses crowd from threshold/stair position.
+
+Acts 22 retells:
+- heavenly light;
+- fall;
+- voice;
+- blindness;
+- guided movement;
+- restored sight;
+- later temple trance.
+
+### M75-33 — SAME EVENT CAN BE RE-NARRATED WITH DIFFERENT EMPHASIS WITHOUT BECOMING A DIFFERENT EVENT
+
+This is another memory/textual control.
+
+Do not count repeated conversion accounts as multiple gate events.
+
+---
+
+# ACTS 23
+## assembly splits by doctrine → Lord stands near → Rome destination announced → hidden information prevents ambush → large night escort moves single prisoner
+
+Paul's statement on resurrection:
+- divides Pharisee/Sadducee assembly.
+
+Later:
+- Lord stands near him;
+- says he must testify in Rome.
+
+Conspiracy:
+- more than forty bind themselves by oath;
+- planned route ambush.
+
+Paul's nephew:
+- hears;
+- transmits information through officer to tribune.
+
+Tribune:
+- changes transport conditions;
+- mobilizes a large escort;
+- moves Paul by night toward Caesarea.
+
+### M75-34 — INFORMATION ABOUT A HIDDEN ROUTE HAZARD RECONFIGURES THE TRANSPORT SYSTEM
+
+Without message:
+planned route = ambush.
+
+With message:
+same traveller
+→ protected carrier/escort architecture.
+
+### M75-35 — A SMALL INFORMATION NODE CAN CONTROL A MUCH LARGER MATERIAL MOVEMENT
+
+One young informant:
+→ commander decision
+→ hundreds of troops / horses mobilized.
+
+This is a strong information→physical-system amplification example.
+
+---
+
+# ACTS 24–26
+## custody, legal nodes, appeal to Caesar; speech changes physical destination
+
+Paul:
+- remains in custody;
+- appears before successive authorities:
+  - Felix;
+  - Festus;
+  - Agrippa/Bernice.
+
+In Acts 25:
+Paul invokes Roman legal right:
+**"I appeal to Caesar."**
+
+Response:
+**to Caesar you will go**.
+
+### M75-36 — ONE SPEECH ACT CHANGES THE TRAVELLER'S MACRO-DESTINATION
+
+This is not metaphor.
+
+Legal information/authority:
+**reconfigures physical route**.
+
+### M75-37 — BOUNDARY ACCESS CAN BE CONTROLLED BY LEGAL/SEMANTIC STATE, NOT GEOMETRY ALONE
+
+Paul's:
+- citizenship;
+- appeal;
+- prisoner status
+
+determine:
+where he may/must be transported.
+
+Cross-link Ezekiel access classifications.
+
+---
+
+# Acts 26
+## midday light brighter than sun → group falls → voice → mission route/information transformation
+
+Paul retells Damascus event:
+- midday;
+- heavenly light brighter than sun;
+- light surrounds him and companions;
+- all fall;
+- voice addresses Saul;
+- mission defined as turning people:
+  darkness→light,
+  power of Satan→God.
+
+### M75-38 — LIGHT EVENT IS BOTH PERCEPTUAL AND INFORMATIONAL
+
+The physical/vision image:
+bright surrounding light.
+
+Interpretation:
+new mission / changed allegiance / seeing.
+
+Again:
+light imagery cannot be assumed to be only physical energy.
+
+---
+
+# ACTS 27
+# MAJOR CARRIER / ENVIRONMENT / FAILURE-SEQUENCE TEXT
+## multiple ships → dangerous season → moderate wind → violent northeaster → ship captured by field → undergirding cables → jettison → loss of sun/stars → angelic destination information → depth soundings → anchors → lifeboat cut away → food/load change → grounding → hull bifurcation → carrier fragmentation → all occupants reach land
+
+This is the largest literal transport-system passage in Acts.
+
+---
+
+# Acts 27:1–8
+## chained/prisoner traveller moves through multiple carriers
+
+Paul:
+- prisoner;
+- under centurion Julius;
+- boards ship from Adramyttium;
+- later transfers at Myra to Alexandrian ship.
+
+### M75-39 — SAME CARGO/PERSON CAN MOVE THROUGH SUCCESSIVE CARRIERS WITHOUT IDENTITY CHANGE
+
+Person:
+constant.
+
+Carrier:
+changes.
+
+This is basic but important for:
+carrier ≠ cargo.
+
+---
+
+# Acts 27:9–20
+## environment takes control of carrier
+
+Paul warns:
+- dangerous voyage;
+- cargo/ship/life risk.
+
+Moderate south wind:
+- initially seems favorable.
+
+Then:
+violent northeaster.
+
+Ship:
+- cannot face wind;
+- yields;
+- is driven.
+
+Crew:
+- brings boat under control;
+- **undergirds ship with cables**;
+- lowers gear/sea-anchor depending translation;
+- jettisons cargo;
+- throws tackle overboard.
+
+For many days:
+- sun and stars not visible;
+- violent storm continues;
+- hope of survival fades.
+
+### M75-40 — ACTS 27 DISTINGUISHES CARRIER CONTROL FROM ENVIRONMENTAL CONTROL
+
+Quiet/moderate field:
+crew steers.
+
+Storm field:
+carrier is **driven**.
+
+This is a direct carrier/current relation.
+
+### M75-41 — UNDERGIRDING CABLES ARE TRUE STRUCTURAL WRAPPING/REINFORCEMENT, BUT NOT FINGERTRAP GEOMETRY
+
+The hull is literally bound/reinforced by ropes/cables.
+
+Useful:
+support lattice around carrier.
+
+Missing:
+- broad mesh contraction into throat;
+- route opening;
+- transfer between worlds.
+
+Do not overclaim.
+
+### M75-42 — SUN/STAR OCCLUSION CAUSES INFORMATION LOSS, NOT JUST DARKNESS
+
+Ancient navigation depends on sky information.
+
+Storm/cloud field removes:
+- visibility;
+- orientation information.
+
+This is another:
+environmental state → information-channel failure.
+
+---
+
+# Acts 27:21–26
+## angelic message supplies destination constraint, not propulsion
+
+Angel/message says:
+- Paul must stand before Caesar;
+- people sailing with him will survive;
+- ship will run aground on island.
+
+### M75-43 — INFORMATION PREDICTS/CONSTRAINS OUTCOME BUT DOES NOT PHYSICALLY STEER SHIP
+
+Message:
+route/outcome knowledge.
+
+Wind/ship/crew:
+transport mechanics.
+
+Same crucial distinction as Macedonian vision.
+
+---
+
+# Acts 27:27–32
+## depth sensing → approaching boundary → four anchors → auxiliary boat lowered → auxiliary route deliberately cut away
+
+Fourteenth night:
+- sailors sense land.
+
+Soundings:
+- 20 fathoms;
+- then 15 fathoms.
+
+Crew:
+- lowers four anchors from stern;
+- waits for daylight.
+
+Sailors:
+- lower boat pretending to deploy bow anchors;
+- intend escape.
+
+Paul says:
+unless sailors remain in ship,
+others cannot be saved.
+
+Soldiers:
+- cut boat ropes;
+- let it drift away.
+
+### M75-44 — DEPTH SOUNDINGS ARE A TRUE REMOTE-BOUNDARY SENSOR
+
+Sea-floor proximity:
+is measured before visible land recognition.
+
+This is a very literal:
+**hidden boundary distance → measured signal → route decision**.
+
+### M75-45 — FOUR ANCHORS CREATE TEMPORARY POSITIONAL STABILIZATION AGAINST MOVING FIELD
+
+Not a gate.
+
+But clear:
+carrier tethering to environment.
+
+### M75-46 — AUXILIARY ESCAPE ROUTE IS INTENTIONALLY DISCONNECTED TO PRESERVE MAIN-CARRIER COHERENCE
+
+This is fascinating.
+
+Potential alternate carrier:
+boat.
+
+Ropes cut:
+alternate route removed.
+
+Narrative logic:
+survival requires:
+crew + main ship
+remain one system for now.
+
+### M75-47 — SYSTEM SURVIVAL DEPENDS ON MAINTAINING REQUIRED OPERATORS INSIDE CARRIER
+
+Cargo alone is not sufficient.
+
+Operator competence remains necessary.
+
+---
+
+# Acts 27:33–38
+## food restored → wheat/cargo jettisoned → carrier lightened
+
+After fourteen-day suspense:
+- people eat;
+- strength restored;
+- grain/wheat thrown overboard;
+- ship lightened.
+
+NRSVUE gives:
+**276 persons**
+with textual footnote variation.
+
+### M75-48 — HUMAN-CARRIER SYSTEM TRADES STORED CARGO MASS FOR SURVIVAL/BUOYANCY
+
+Same ship:
+different load state.
+
+This is a true:
+**carrier capacity / weight-management**
+process.
+
+### M75-49 — NUMBER 276 MUST NOT BE USED AS STABLE NUMEROLOGICAL EVIDENCE WITHOUT TEXTUAL CONTROL
+
+Acts 27:37 has manuscript variation.
+
+Do not build hidden geometry on it.
+
+---
+
+# Acts 27:39–44
+## target beach → anchors released → steering loosened → sail raised → shoal/reef → bow immobilized / stern destroyed → occupants redistribute onto swimmers + fragments
+
+Morning:
+- land not recognized;
+- bay/beach seen.
+
+Crew:
+- cuts/releases anchors;
+- loosens steering-oar ropes;
+- raises foresail;
+- heads to beach.
+
+Ship:
+- strikes shoal/reef;
+- bow sticks/immobilized;
+- stern breaks under waves.
+
+Final transfer:
+- swimmers go first;
+- others use:
+  - planks;
+  - pieces of ship.
+
+All:
+reach land safely.
+
+### M75-50 — THIS IS ONE OF THE STRONGEST CARRIER-DISASSEMBLY→CARGO-SURVIVAL SEQUENCES IN THE BIBLE
+
+One large carrier:
+**fails structurally**.
+
+Its former material:
+becomes
+**many small flotation carriers**.
+
+Occupants:
+redistribute
+and still cross final water boundary.
+
+### M75-51 — CARRIER DESTRUCTION DOES NOT REQUIRE CARGO DESTRUCTION
+
+This is major.
+
+Structure:
+can fail,
+while contents survive by:
+- independent movement;
+- fragments;
+- secondary support.
+
+### M75-52 — THE SHIP BECOMES ITS OWN SUCCESSOR CARRIER MATERIAL
+
+This is highly relevant to Vardath's:
+**successor world uses inherited material**.
+
+Formal process:
+
+**integrated carrier**
+→ **structural break**
+→ **fragments**
+→ **fragments support occupants**
+→ **new shore state**.
+
+Do not claim:
+shipwreck = world reset.
+
+But the inherited-material grammar is excellent.
+
+### M75-53 — BOW/STERN ENTER DIFFERENT STATES SIMULTANEOUSLY
+
+Bow:
+fixed/stable.
+
+Stern:
+broken by waves.
+
+Same structure can occupy:
+**stable + destructive**
+local states at once.
+
+This is useful for uneven event-phase modeling.
+
+---
+
+# Acts 27 strict throat/fingertrap check
+
+Broad water field:
+strong.
+
+Carrier wrapping:
+present via undergirding cables.
+
+Concentration into throat:
+absent.
+
+Narrow connector:
+not central.
+
+Transfer:
+strong,
+but sea→shore.
+
+Reopening:
+not relevant.
+
+### Verdict
+
+**No fingertrap.**
+
+Acts 27 is instead:
+**carrier-in-field → loss of control → structural reinforcement → information loss → sensing/tethering → load change → carrier breakup → distributed successor carriers → completed transfer**.
+
+---
+
+# ACTS 28:1–6
+## heat drives viper from brushwood → serpent fastens to Paul's hand → observers classify murderer → Paul shakes serpent into fire → no harm → observers reclassify him as god
+
+Malta:
+- rain/cold;
+- fire.
+
+Paul adds brushwood.
+
+Heat:
+- drives viper out;
+- viper fastens to hand.
+
+Islanders infer:
+**murderer punished by Justice**.
+
+Paul:
+- shakes creature into fire;
+- no harm.
+
+They wait for:
+- swelling;
+- sudden death.
+
+Nothing occurs.
+
+Then:
+they change classification:
+**god**.
+
+### M75-54 — THIS IS A PERFECT OBSERVER-RECLASSIFICATION EXPERIMENT
+
+Same Paul.
+Same body.
+
+Observer labels:
+
+1. murderer under divine punishment;
+2. expected corpse;
+3. god.
+
+Nothing about Paul's identity physically changes.
+
+### M75-55 — SERPENT HERE IS AN ORDINARY HAZARD ANIMAL IN THE NARRATIVE
+
+This is an important negative control for:
+serpent = cosmic current.
+
+Heat drives animal.
+Animal bites/fastens.
+Animal is shaken into fire.
+
+Do not import Quetzalcoatl/dragon machinery into every serpent episode.
+
+### M75-56 — HAND AGAIN BECOMES THE LOCAL INTERFACE BETWEEN HUMAN BODY AND SERPENT HAZARD
+
+Interesting recurring body node,
+but function is ordinary contact point.
+
+---
+
+# Acts 28:7–10
+## one healing → distributed island healing network
+
+Publius's father:
+- sick;
+- Paul prays/lays hands;
+- healed.
+
+Then:
+- others on island come;
+- are healed.
+
+### M75-57 — ONE LOCAL EVENT PROPAGATES INTO A DISTRIBUTED POPULATION RESPONSE
+
+Again:
+node event
+→ network convergence.
+
+---
+
+# Acts 28:11
+## Alexandrian ship with Dioscuri/Castor-Pollux figurehead
+
+After three months:
+- another Alexandrian ship;
+- wintered on Malta;
+- figurehead/sign:
+  **Dioscuri / Twin Brothers**.
+
+### M75-58 — A LITERAL PAIRED MYTHIC FIGURE IS ATTACHED TO A TRANSPORT CARRIER
+
+This is important to pair research.
+
+The twins:
+are not passengers.
+
+They are:
+**ship identity/figurehead symbol**.
+
+### M75-59 — DO NOT FORCE DIOSCURI INTO VARDATH TWO-STRAND GEOMETRY
+
+Recent scholarship offers a simpler narratological explanation:
+- Dioscuri were especially associated with sailor protection;
+- their mention may explain confidence in this vessel / voyage timing after prior disaster.
+
+Other symbolic readings exist,
+but are not necessary.
+
+Thus:
+**pair image attached to carrier**
+is secure.
+
+Cosmic twin-machine interpretation:
+unsupported.
+
+---
+
+# Acts 28:14–31
+## final arrival Rome → body remains bounded / message becomes open
+
+Paul:
+- reaches Rome;
+- permitted to live by himself with soldier;
+- later remains under house arrest/rented quarters.
+
+He:
+- receives visitors;
+- teaches;
+- proclaims.
+
+Acts ends emphasizing:
+- boldness;
+- **without hindrance**.
+
+### M75-60 — PHYSICAL BODY BOUNDARY AND INFORMATION BOUNDARY DIVERGE AT THE END OF ACTS
+
+Paul:
+physically constrained.
+
+Message:
+continues to circulate.
+
+This is a profound final control:
+
+**bounded operator**
+≠
+**bounded information**.
+
+### M75-61 — THE ENTIRE ACTS GEOGRAPHY ENDS WITH INFORMATION REACHING THE IMPERIAL CENTER THROUGH A PRISONER-CARRIER
+
+The traveller's political constraint
+does not stop network expansion.
+
+---
+
+# PAIR ANALYSIS — ACTS 13–28
+
+## Saul / Paul
+same person, simultaneous double-name.
+
+## Bar-Jesus / Elymas
+same figure, alternative/translated naming.
+
+## Paul / Barnabas
+mission pair.
+
+## Barnabas / Mark
+new pair after fission.
+
+## Paul / Silas
+new pair after fission.
+
+## Priscilla / Aquila
+teaching/household pair.
+
+## Paul / Eutychus
+operator/contact pair around death/alive state.
+
+## Agabus / Paul
+display body ↔ future target body.
+
+## Festus / Agrippa
+successive legal/interpretive authorities.
+
+## Agrippa / Bernice
+royal pair present in hearing scenes.
+
+## main ship / lifeboat
+primary carrier ↔ potential auxiliary escape carrier.
+
+## bow / stern
+same carrier, opposite structural states during wreck.
+
+## swimmers / ship fragments
+independent carriers ↔ inherited-material carriers.
+
+## Castor / Pollux
+mythic twin figurehead on final sea carrier.
+
+### M75-62 — ACTS 13–28 USES PAIRS MAINLY AS MISSION / INFORMATION / LEGAL / CARRIER RELATIONSHIPS, NOT AS TWO COSMIC FORCES
+
+This is the safest classification.
+
+---
+
+# GATE / BOUNDARY TAXONOMY — ACTS 13–28
+
+## Acts 16 prison
+boundary opens
+but occupants remain.
+
+## Eutychus window
+boundary aperture becomes fall hazard.
+
+## Agabus belt
+restraint object encodes future binding.
+
+## temple/barracks
+political security boundaries.
+
+## legal appeal
+semantic/legal boundary changes route.
+
+## ship hull
+carrier/environment boundary.
+
+## lifeboat ropes
+connection boundary intentionally severed.
+
+## shore
+water/land media boundary.
+
+## Rome house arrest
+body boundary stays closed-ish while information boundary remains open.
+
+### M75-63 — ACTS 13–28 MAKES BOUNDARY TYPE A FIRST-CLASS VARIABLE
+
+A "boundary" may be:
+- architectural;
+- restraint;
+- legal;
+- social;
+- informational;
+- carrier hull;
+- medium interface.
+
+Do not merge them.
+
+---
+
+# INFORMATION / TRANSPORT DISTINCTION
+
+Acts repeatedly separates:
+**route knowledge**
+from
+**physical movement**.
+
+Examples:
+- Macedonian vision directs sea crossing;
+- Agabus predicts binding but does not cause arrest;
+- Lord promises Rome but does not instantaneously transport Paul;
+- nephew reports ambush and causes escort redesign;
+- Caesar appeal changes destination legally;
+- angel predicts shipwreck/survival but wind/crew/ship enact voyage.
+
+### M75-64 — INFORMATION CAN RECONFIGURE TRANSPORT WITHOUT BEING TRANSPORT
+
+This is now a master rule.
+
+---
+
+# OBSERVER CLASSIFICATION CONTROL
+
+Acts 13–28 gives repeated mistaken/revisable identification:
+
+- Lystra:
+  humans → Zeus/Hermes.
+
+- Paul after stoning:
+  alive person → classified dead.
+
+- jailer:
+  open doors → assumes empty prison.
+
+- Malta:
+  Paul → murderer → expected corpse → god.
+
+### M75-65 — OBSERVER INTERPRETATION IS A VARIABLE SEPARATE FROM OBJECT/FIGURE STATE
+
+This is vital to Vardath research.
+
+Ancient reports can preserve:
+- observed form;
+- observer classification;
+- narrator interpretation
+
+as three different layers.
+
+---
+
+# CHERUB / QUETZALCOATL / FEATHERED-SERPENT / DRAGON / SQUATTER-MAN UPDATE
+
+Acts 13–28 contributes mostly **negative controls**.
+
+## No major winged angel morphology
+
+Visions/messages:
+- Macedonian man;
+- Lord standing near;
+- angel in storm;
+- heavenly light.
+
+But no important wing description.
+
+Therefore:
+do not add feathers where Acts does not.
+
+## Serpent/viper
+
+Acts 28:
+ordinary animal hazard.
+
+This shows:
+not every serpent belongs in cosmic-serpent family.
+
+## Human→god observer projection
+
+Lystra and Malta:
+ordinary humans are classified as gods by observers.
+
+This supports:
+**apparent divine form/category may be observer interpretation**.
+
+## Agabus body-substitution
+
+One human body represents another person's future state.
+
+This supports:
+**human figure can be a projection surface**.
+
+### M75-66 — ACTS 13–28 STRENGTHENS PROJECTION METHODOLOGY MORE THAN FEATHERED-SERPENT MORPHOLOGY
+
+It teaches how to separate:
+- event;
+- body;
+- observer label;
+- message;
+- carrier;
+- operator.
+
+---
+
+# STRICT FINGERTRAP TEST — ACTS 13–28
+
+Criteria:
+1. broad/open distributed support;
+2. same structure continuity;
+3. angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Acts 16 prison
+
+Opening:
+strong.
+
+Transfer:
+explicitly absent initially.
+
+Broad support→throat:
+absent.
+
+**Strict negative.**
+
+## Acts 20 window
+
+Aperture:
+strong.
+
+Dynamic formation:
+absent.
+
+**Strict negative.**
+
+## Acts 27 ship
+
+Broad carrier/support:
+strong.
+
+Cables wrapping hull:
+present.
+
+Structural transformation:
+strong,
+but into destruction/fragments.
+
+Narrow throat:
+absent.
+
+Transfer:
+strong sea→shore.
+
+Reopening:
+absent.
+
+**Strict negative.**
+
+### Overall
+
+**No strict fingertrap.**
+
+Acts 13–28 materially advances:
+- aperture/transfer separation;
+- carrier/cargo distinction;
+- route-information distinction;
+- network fission/reconvergence;
+- observer misclassification;
+- inherited-fragment carrier survival.
+
+It does not supply:
+**broad woven support → contraction into narrow throat → same-structure reopening**.
+
+---
+
+# FULL ACTS 13–28 PROCESS TIMELINE
+
+Antioch leadership network
+→ Barnabas/Saul selected
+→ hands laid / pair sent
+→ island crossed
+→ Saul simultaneously identified as Paul
+→ Elymas temporarily blinded
+→ touch/social guidance replaces sight
+→ mission network expands
+→ Paul/Barnabas classified as Hermes/Zeus
+→ Paul stoned/classified dead
+→ same body rises/re-enters city
+→ distributed inclusion dispute
+→ Jerusalem central council
+→ encoded letter + carriers
+→ decision redistributed
+→ Paul/Barnabas pair splits
+→ Barnabas/Mark + Paul/Silas two-route system
+→ route restrictions divert Paul/Silas/Timothy
+→ Macedonian vision supplies new route instruction
+→ physical sea crossing follows
+→ Lydia information-receptivity "opens"
+→ spirit-host relation separated in slave girl
+→ Paul/Silas inner prison
+→ feet restrained
+→ midnight prayer/song
+→ earthquake
+→ foundations shake
+→ every door opens
+→ every chain unfastens
+→ occupants remain
+→ jailer falsely infers escape
+→ voluntary movement occurs later
+→ Athens world/peoples/times/boundaries speech
+→ Priscilla/Aquila information-correction node
+→ cloth objects mediate remote effects
+→ copied authority formula fails
+→ books burned
+→ civic heavenly-image claim
+→ travel group distributes/reconverges
+→ Eutychus falls through upper aperture
+→ death classification
+→ Paul descends/body contact
+→ life state
+→ Paul returns upward
+→ Agabus binds own body with Paul's belt
+→ one body projects another's future restraint
+→ Paul arrested
+→ conversion/light event re-narrated
+→ assembly split around resurrection
+→ Lord announces Rome destination
+→ hidden ambush detected
+→ nephew information packet
+→ large night escort mobilized
+→ Paul transferred to Caesarea
+→ legal hearings
+→ appeal to Caesar
+→ speech changes macro-destination
+→ Damascus vision retold as light→mission/information transformation
+→ prisoner boards first ship
+→ carrier changes at Myra
+→ dangerous season
+→ moderate wind
+→ violent northeaster
+→ ship loses directional control
+→ hull undergirded by cables
+→ cargo/tackle jettisoned
+→ sun/stars unavailable
+→ orientation information collapses
+→ angel supplies outcome information
+→ 14th night
+→ depth soundings 20→15 fathoms
+→ four anchors
+→ lifeboat escape attempt
+→ lifeboat connection cut away
+→ people eat
+→ grain jettisoned / ship lightened
+→ bay/beach target selected
+→ anchors released
+→ steering freed
+→ sail raised
+→ shoal/reef
+→ bow fixed
+→ stern destroyed
+→ swimmers depart
+→ remaining occupants use planks/fragments
+→ all reach shore
+→ rain/cold/fire on Malta
+→ heat drives viper
+→ viper attaches to Paul's hand
+→ murderer classification
+→ no-harm observation
+→ god classification
+→ local healing becomes island-wide convergence
+→ three-month interval
+→ new Alexandrian carrier with Dioscuri figurehead
+→ sea route resumes
+→ Puteoli
+→ overland route
+→ Rome
+→ body remains under guard/house arrest
+→ information continues without hindrance.
+
+---
+
+# Number / timing register
+
+Record without forcing:
+
+- Acts 13:
+  paired Barnabas/Saul.
+- Acts 14:
+  Zeus/Hermes paired classification.
+- Acts 15:
+  one pair splits into two pairs.
+- Acts 16:
+  midnight prison event.
+- Acts 19:
+  seven sons of Sceva tradition.
+- Acts 20:
+  third-story fall;
+  seven days at Troas.
+- Acts 21:
+  four prophetic daughters.
+- Acts 23:
+  more than forty conspirators;
+  escort numbers include 200 soldiers, 70 horsemen and 200 spearmen in NRSVUE.
+- Acts 24:
+  two-year custody period under Felix.
+- Acts 27:
+  fourteen-night storm interval;
+  20→15 fathom soundings;
+  four stern anchors;
+  276 persons in NRSVUE with textual variation.
+- Acts 28:
+  three months on Malta.
+
+### M75-67 — ACTS NUMBERS ARE PRIMARILY NARRATIVE / LOGISTICAL / CHRONOLOGICAL
+
+Do not force:
+4 anchors,
+14 days,
+276 persons,
+3 months,
+etc.
+into Vardath cycles without independent evidence.
+
+---
+
+# Textual / historical controls — Acts 13–28
+
+1. Acts is Luke's sequel and final-form narrative of Jesus-movement expansion toward Rome; it is not a technical travel manual.
+2. Modern scholarship emphasizes Acts' westward geography and literary/narrative shaping.
+3. Paul's own letters and Acts are distinct source types and should not be harmonized uncritically.
+4. Acts 13 explicitly says "Saul, also called Paul"; name change is not a physical transformation.
+5. Bar-Jesus/Elymas is another double-name identity in the same chapter.
+6. Lystra's Zeus/Hermes identification is the crowd's interpretation of Paul/Barnabas, not narrator confirmation that they became gods.
+7. Paul being "supposed dead" after stoning is observer classification language.
+8. Acts 15's mission-pair split is explicit: Barnabas/Mark and Paul/Silas.
+9. Macedonian vision functions as route instruction; actual movement occurs by ordinary travel.
+10. Acts 16 prison sequence explicitly says earthquake shakes foundations, doors open and chains release, while prisoners remain.
+11. This distinguishes possibility of passage from actual passage.
+12. Acts 17's allotted times/boundaries concerns peoples inhabiting earth and should not be made into stacked-world physics without further evidence.
+13. Acts 19's Artemis object "fallen from heaven" appears in civic speech by the town clerk.
+14. Acts 20's Eutychus event takes place in ordinary third-story architecture.
+15. Acts 21's Agabus sign-act intentionally substitutes Agabus's body for Paul's future bound state.
+16. Acts 23's conspiracy information changes Paul's escort/transport conditions.
+17. Acts 25's appeal to Caesar legally determines the Roman destination.
+18. Acts 26's light event is Paul's narrated heavenly vision and has explicit mission/information interpretation.
+19. Acts 27 contains detailed nautical narrative: carrier, weather, cables, cargo, anchors, soundings, boat, hull failure and survival.
+20. The exact historical reconstruction of every nautical detail remains debated; use the narrative sequence before speculative physics.
+21. Acts 27:37's 276-person total has manuscript variation and should not carry numerological weight.
+22. The ship's undergirding cables reinforce a hull; they do not form a fingertrap gate.
+23. In Acts 28 the viper is narrated as an animal driven by heat and attaching to Paul's hand.
+24. Maltese observer interpretation changes from murderer to god; this is explicitly human reclassification.
+25. Acts 28:11's Dioscuri are a ship figurehead/sign; recent JTS scholarship argues a straightforward sailor-protection/narrative explanation may be preferable to elaborate symbolic readings.
+26. No significant winged-angel morphology appears in Acts 13–28.
+27. No strict fingertrap sequence appears.
+
+---
+
+# Sources logged — Acts 13–28
+
+## Primary text
+- Acts 13 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+13&version=NRSVUE
+- Acts 14–15 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+14-15&version=NRSVUE
+- Acts 15:36–16:5 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+15%3A36-16%3A5&version=NRSVUE
+- Acts 16:6–40 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+16%3A6-40&version=NRSVUE
+- Acts 17:16–28 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+17%3A16-28&version=NRSVUE
+- Acts 18:18–19:41:
+  https://www.biblegateway.com/passage/?search=Acts+18%3A18-19%3A41&version=NRSVUE
+- Acts 20 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+20&version=NRSVUE
+- Acts 21 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+21&version=NRSVUE
+- Acts 23 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+23&version=NRSVUE
+- Acts 25–26 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+25-26&version=NRSVUE
+- Acts 27 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+27&version=NRSVUE
+- Acts 27–28 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+27-28&version=NRSVUE
+
+## Scholarship / controls
+- Rubén René Dupertuis, "The Acts of the Apostles, Narrative, and History," *Oxford Handbook of Biblical Narrative*:
+  https://academic.oup.com/edited-volume/34438/chapter-abstract/292234676
+- Eckhard J. Schnabel, "Paul the Missionary," *Oxford Handbook of Pauline Studies*:
+  https://academic.oup.com/edited-volume/41311/chapter-abstract/352059479
+- Christopher Rowland, "Acts of the Apostles," Oxford reference article:
+  https://academic.oup.com/edited-volume/61673/chapter-abstract/548060954
+- David Woods, "Once More on St Paul and the Dioscuri (Acts 28:11)," *Journal of Theological Studies* 77.1 (2026):
+  https://academic.oup.com/jts/article/77/1/101/8539660
+- Ben Kolbeck, "A Telling Terminus Technicus in Codex Bezae’s Latin Text of Acts," *Journal of Theological Studies* 77.1 (2026):
+  https://academic.oup.com/jts/article/77/1/93/8431562
+
+---
+
+# SECTION 75 — ACTS 13–28 COMPLETE
+
+## Strongest new findings
+
+1. **Acts 13 explicitly settles Saul/Paul: "Saul, who was also called Paul" is one person with simultaneous names, not a literal transformation.**
+2. **Bar-Jesus/Elymas provides a second double-name control in the same scene, showing that doubled naming alone is not evidence of paired world-states.**
+3. **Elymas's temporary blindness shows perception failure changing mobility; hand-guidance replaces visual navigation without changing personal identity.**
+4. **At Lystra, the crowd projects Barnabas/Paul into Zeus/Hermes based partly on function, giving a strong source-level example of two humans being classified as a divine pair without body transformation.**
+5. **Paul being dragged out "supposed dead" and then rising/re-entering the city gives another clean observer-classification reversal.**
+6. **Acts 15 gives a true many→one→many information system: distributed dispute → Jerusalem council → written decision → human carriers → distributed communities.**
+7. **The Paul/Barnabas pair then splits into Barnabas/Mark and Paul/Silas, showing one paired mission node fissioning into two paired routes rather than simply disappearing.**
+8. **The Macedonian vision changes physical route but is not itself transport; this strengthens the master distinction between information that controls movement and the carrier that performs movement.**
+9. **Acts 16 gives one of the most important controls in the whole research: earthquake shakes prison foundations, ALL doors open, ALL chains release, yet ALL prisoners remain.**
+10. **Therefore aperture opening, restraint release and cargo transfer are separate state variables; an open gate does not prove passage occurred.**
+11. **The jailer incorrectly infers transfer from open doors, directly demonstrating that an observer can misread boundary state as occupant movement.**
+12. **Acts 17 explicitly couples human populations with allotted times and spatial habitation boundaries, a formal analogue to time/place-bounded populations without proving stacked worlds.**
+13. **Acts 19 shows material objects acting as secondary carriers of associated healing/exorcistic effect, while failed imitation by the sons of Sceva shows that a copied information token does not automatically confer operator access/authority.**
+14. **The Artemis object said to have fallen from heaven is a civic claim inside the town clerk's speech and is not secure narrator confirmation of a descending technological object.**
+15. **Eutychus supplies an upper-room/window/ground vertical sequence: boundary aperture → fall → death classification → operator descends/body contact → life state → operator returns upward, but within ordinary architecture.**
+16. **Agabus gives one of the clearest person-projection acts: he takes Paul's belt and binds his own hands/feet so his body represents Paul's future body state.**
+17. **Acts 23 shows small-scale information producing large-scale physical reconfiguration: one nephew's report of an ambush causes a heavily protected night transfer to Caesarea.**
+18. **Paul's appeal to Caesar is a true speech-act→destination change: legal/semantic state determines the physical route to Rome.**
+19. **Acts 27 is the strongest carrier mechanics text in Acts: changing ships, storm/current control, cable reinforcement, cargo jettison, sky-navigation loss, depth soundings, anchors, lifeboat, load reduction, grounding and structural breakup.**
+20. **Depth soundings from twenty to fifteen fathoms are a literal hidden-boundary sensing system: unseen seabed proximity becomes measured information that changes carrier behavior.**
+21. **Cutting away the lifeboat removes an auxiliary escape path because survival is narrated as depending on sailors remaining within the primary carrier system.**
+22. **When the main ship fails, the occupants redistribute into swimmers and pieces/planks of the former ship; one integrated carrier becomes many inherited-material carriers and all reach shore.**
+23. **That is an excellent formal analogue for Vardath's successor-state principle: failed structure can supply the material supporting survival into the next stable location rather than everything being replaced from nothing.**
+24. **The bow and stern occupy different states simultaneously—bow stuck/immobile, stern destroyed by waves—showing that one structure can be locally stable and locally catastrophic at the same time.**
+25. **Acts 28's viper is a major negative control: the narrative treats it as an ordinary heat-driven animal hazard, not a cosmic serpent.**
+26. **The Maltese move from classifying Paul as murderer, to expecting him dead, to calling him a god, while Paul's body remains the same—one of the clearest observer-reclassification sequences in the Bible.**
+27. **The Dioscuri/Castor-Pollux figurehead is literally a paired mythic symbol attached to a ship/carrier, but recent scholarship gives good reason not to force the twins into hidden two-strand cosmology.**
+28. **Acts ends with an especially useful boundary distinction: Paul's body remains physically constrained in Rome while his information/message circulates "without hindrance."**
+29. **Across Acts 13–28, the major advance is methodological: body state, observer label, aperture state, restraint state, carrier, cargo, operator, information and destination all have to be tracked separately.**
+30. **No strict fingertrap appears. Acts 27 contains real hull-wrapping cables and violent structural transformation, but never a broad woven support becoming a narrow throat and reopening.**
+
+## Next live block
+
+**Section 76 — Pauline epistles**
+
+Roadmap priority:
+- first Adam / last Adam;
+- old person / new person;
+- flesh / spirit;
+- death / resurrection;
+- earthly / heavenly body;
+- Sarah / Hagar as two covenants;
+- old covenant / new covenant;
+- body / head;
+- grafting / root / tree;
+- caught up to **third heaven**;
+- "in the body / out of the body" uncertainty;
+- creation groaning / transformation;
+- veil;
+- mirror;
+- seed/body transformation;
+- two Jerusalems if present in Pauline material;
+- paired-role theology where one figure/state explicitly represents another.
+
+Required controls:
+- distinguish undisputed Pauline letters from disputed/deutero-Pauline texts where relevant;
+- do not flatten Paul's letters into Acts narrative;
+- source the actual epistle text first;
+- keep metaphor/theology separate from physical-mechanism comparison;
+- give special attention to 1 Corinthians 15 because Paul explicitly develops Adam/Christ and seed/body state transformations;
+- give special attention to Galatians 4 because Paul explicitly says Hagar/Sarah are an allegory corresponding to two covenants/Jerusalems;
+- give special attention to 2 Corinthians 12 because Paul himself says he does not know whether the third-heaven experience was "in the body or out of the body";
+- apply strict fingertrap test only after the full structural-pair pass.
+
