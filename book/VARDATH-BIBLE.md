@@ -3426,3 +3426,10 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **5.** “When the time arrives to proclaim ‘Holy,’ first a storm-wind goes forth from before the Holy One, blessed be He, and falls upon the camp of the Shekinah, and there is a great tempest among them, as it is written: ‘Behold, the storm of YHWH goes forth in fury, a whirling tempest.’
 
 **6.** “At that hour a thousand thousands of them become torches and say ‘Amen’; whispering ones say ‘Amen’; flames say ‘Amen’; males say ‘Amen’; females say ‘Amen’; burning fires say ‘Amen’; angels of flame say ‘Amen’; flashing sparks say ‘Amen’; and hashmallim of light say ‘Amen.’ They accept upon themselves the yoke of the kingship of the high and exalted Creator of them all with fear, trembling, shaking, agitation, terror, dread, and quaking. Afterward they return to their former measure, so that the fear of their King may remain before them at every hour and their hearts may be directed to sing continually, as it is written: ‘One called to another and said: Holy.’”
+
+
+## 3 Enoch 36
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the ministering angels desire to sing, the River of Fire rises with many thousands upon thousands and myriads upon myriads of powers of fiery might. It draws forth and passes beneath the Throne of Glory, between the camps of the ministering angels and the hosts of Arabot.
+
+**2.** “All the ministering angels first descend into the River of Fire and immerse themselves in its fire. They immerse their tongues and their mouths seven times in the River of Fire. Afterward they ascend, put on garments of hashmal, and stand in four rows opposite the Throne of Glory in every firmament.”
