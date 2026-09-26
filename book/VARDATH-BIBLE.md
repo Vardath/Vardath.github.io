@@ -4172,3 +4172,75 @@ And make known to Thy servant as thou hast promised me!
 **1.** And I answered and said: “O Mighty, [Eternal One], hallowed by Thy power! Be favourable to my petition, [for for this hast Thou brought me up here—and shew me]. As Thou hast brought me up to Thy height, so make [this] known to me, Thy beloved one, as much as I ask—whether what I saw shall happen to them for long?”
 
 **2.** And He showed me a multitude of His people, and said to me: “On their account through four issues, as thou sawest, I shall be provoked by them, and in these my retribution for their deeds shall be accomplished. But in the fourth outgoing of a hundred years and one hour of the age—the same is a hundred years—it shall be in misfortune among the heathen [but one hour in mercy and contumely, as among the heathen].”
+
+
+## Apocalypse of Abraham 29
+
+**1.** And I said: “O Eternal Mighty One! And how long a time is an hour of the Age?”
+
+**2.** And He said: “Twelve years have I ordained of this ungodly Age to rule among the heathen and in thy seed; and until the end of the times it shall be as thou sawest.
+
+**3.** And do thou reckon and understand and look into the picture.”
+
+**4.** And I looked and saw a man going out from the left side of the heathen; and there went out men and women and children, from the side of the heathen, many hosts, and worshipped him.
+
+**5.** And while I still looked there came out from the right side many, and some insulted that man, while some struck him; others, however, worshipped him.
+
+**6.** And I saw how these worshipped him, and Azazel ran and worshipped him, and having kissed his face he turned and stood behind him.
+
+**7.** And I said: “O Eternal, Mighty One! Who is the man insulted and beaten, who is worshipped by the heathen with Azazel?”
+
+**8.** And He answered and said: “Hear, Abraham! The man whom thou sawest insulted and beaten and again worshipped—that is the relief granted by the heathen to the people who proceed from thee, in the last days, in this twelfth hour of the Age of ungodliness. But in the twelfth year of my final Age I will set up this man from thy generation, whom thou sawest issue from my people; this one all will follow, and such as are called by me will join, even those who change in their counsels.
+
+**9.** And those whom thou sawest emerge from the left side of the picture—the meaning is: There shall be many from the heathen who set their hopes upon him; and as for those whom thou sawest from thy seed on the right side, some insulting and striking, others worshipping him—many of them shall be offended at him.
+
+**10.** He, however, is testing those who have worshipped him of thy seed, in that twelfth hour of the End, with a view to shortening the Age of ungodliness.
+
+**11.** Before the Age of the righteous beginneth to grow, my judgement shall come upon the lawless heathen through the people of thy seed who have been separated for me. In those days I will bring upon all creatures of the earth ten plagues, through misfortune and disease and sighing of the grief of their soul. Thus much will I bring upon the generations of men that be upon it on account of the provocation and the corruption of its creatures, whereby they provoke me.
+
+**12.** And then shall righteous men of thy seed be left in the number which is kept secret by me, hastening in the glory of My Name to the place prepared beforehand for them, which thou sawest devastated in the picture; and they shall live and be established through sacrifices and gifts of righteousness and truth in the Age of the righteous, and shall rejoice in Me continually; and they shall destroy those who have destroyed them, and shall insult those who have insulted them.
+
+**13.** And of those who defamed them they shall spit in the face, scorned by Me, while they, the righteous, shall behold Me full of joy, rejoicing with My people, and receiving those who return to Me [in repentance].
+
+**14.** See, Abraham, what thou hast seen,  
+And [hear] what thou hast heard,  
+And [take full knowledge of] what thou hast come to know.  
+Go to thy heritage.
+
+**15.** And lo! I am with you for ever.”
+
+## Apocalypse of Abraham 30
+
+**1.** But while He was still speaking, I found myself upon the earth. And I said: “O Eternal, [Mighty One], I am no longer in the glory in which I was while on high, and what my soul longed to understand in mine heart I do not understand.”
+
+**2.** And He said to me: “What is desired in thine heart I will tell thee, because thou hast sought to see the ten plagues which I have prepared for the heathen, and have prepared beforehand at the passing over of the twelfth hour of the earth.
+
+**3.** Hear what I divulge to thee, so shall it come to pass:
+
+**4.** The first is pain of great distress; the second, conflagration of many cities;
+
+**5.** the third, destruction and pestilence of animals; the fourth, hunger of the whole world and of its people;
+
+**6.** the fifth, destruction among its rulers, destruction by earthquake and the sword; the sixth, multiplication of hail and snow; the seventh, the wild beasts will be their grave;
+
+**7.** the eighth, hunger and pestilence will alternate with their destruction;
+
+**8.** the ninth, punishment by the sword and flight in distress; the tenth, thunder and voices and destructive earthquake.”
+
+## Apocalypse of Abraham 31
+
+**1.** “And then I will sound the trumpet out of the air, and will send mine Elect One, having in him all my power, one measure; and this one shall summon my despised people from the nations.
+
+**2.** And I will burn with fire those who have insulted them and who have ruled among them in this Age.
+
+**3.** And I will give those who have covered me with mockery to the scorn of the coming Age;
+
+**4.** and I have prepared them to be food for the fire of Hades and for ceaseless flight to and fro through the air in the underworld beneath the earth, the body filled with worms.
+
+**5.** For on them shall they see the righteousness of the Creator, those, namely, who have chosen to do my will, and those who have openly kept my commandments, and they shall rejoice with joy over the downfall of the men who still remain, who have followed the idols and their murders.
+
+**6.** For they shall putrefy in the body of the evil worm Azazel, and be burnt with the fire of Azazel’s tongue; for I hoped that they would come to me, and not have loved and praised the strange god, and not have adhered to him for whom they were not allotted, but instead they have forsaken the mighty Lord.”
+
+## Apocalypse of Abraham 32
+
+**1.** “Therefore hear, O Abraham, and see; lo! thy seventh generation shall go with thee, and they shall go out into a strange land, and they shall enslave them, and evil-entreat them as it were an hour of the Age of ungodliness; but the nation whom they shall serve I will judge.”
