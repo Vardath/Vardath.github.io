@@ -52112,3 +52112,1787 @@ Priority pair tests:
 - sea as hostile/occupant domain ↔ final no-sea state;
 - closed/restricted access ↔ permanently open city gates.
 
+
+
+---
+
+# SECTION 81 — REVELATION 17–22
+## Direct final-Revelation pass — Babylon woman/city, waters→peoples, heads→mountains/kings, imperial network collapse, millstone→sea destruction sign, rider/Word/mouth-sword, dragon=ancient-serpent=Satan identity, keyed/locked/sealed abyss, timed release, first/second resurrection/death, sea/Death/Hades release occupants, old heaven/earth pass, New Jerusalem bride/city descends, four-direction gates, measured cubic city, permanently open-but-selective access, throne→river→tree-on-both-sides→healing nations, and final populated illuminated successor city
+
+### Frontier verification
+
+Before beginning:
+- Part 1 roadmap was checked;
+- EXTRA-RESEARCH.md was checked for prior Revelation 17–22 work;
+- Part 2 actual tail was checked.
+
+Sections 78–80 already cover Revelation 1–16.
+
+No completed direct Section 81 pass existed.
+
+The roadmap explicitly identifies:
+**Section 81 — Revelation 17–22**.
+
+All new research is appended only here in Part 2.
+
+---
+
+# Historical / literary control first
+
+Revelation's final six chapters are not a neutral technical report.
+
+They are:
+- Jewish-Christian apocalypse;
+- anti-imperial prophetic literature;
+- heavily intertextual with:
+  - Daniel;
+  - Isaiah;
+  - Jeremiah;
+  - Ezekiel;
+  - Eden/Genesis traditions;
+  - earlier apocalyptic literature.
+
+Modern scholarship widely understands **Babylon** in Revelation 17–18 as a symbolic representation of **Rome / Roman imperial order**, especially because:
+- the woman is the great city ruling kings;
+- the beast's seven heads are seven mountains and kings;
+- Rome was famously associated with seven hills;
+- Revelation's economic critique fits the imperial commercial network.
+
+Scholars also stress that:
+- cities were commonly personified as women in antiquity;
+- Revelation deliberately contrasts Babylon-woman and New-Jerusalem-woman;
+- the sexualized humiliation/violence in the Babylon imagery raises major ethical and gendered interpretive issues.
+
+Therefore:
+do not neutralize the city-women into pure machine diagrams.
+
+The mechanical comparison comes only **after** source-level political/literary meaning.
+
+---
+
+# REVELATION 17
+## BABYLON WOMAN / BEAST / WATERS / HEADS
+## unusually explicit symbol-decoding inside the text itself
+
+The vision presents:
+- woman seated on many waters;
+- woman seated on scarlet beast;
+- beast has seven heads;
+- ten horns;
+- woman clothed in luxury;
+- cup;
+- name on forehead: Babylon.
+
+Then the angel explicitly decodes several elements.
+
+---
+
+# Revelation 17:7–11
+## beast carried woman; beast was/is-not/is-to-come; seven heads = seven mountains AND seven kings
+
+The beast:
+- carries woman;
+- "was";
+- "is not";
+- is about to ascend from abyss;
+- goes to destruction.
+
+Seven heads:
+- seven mountains on which woman sits;
+- also seven kings.
+
+### M81-1 — ONE BODY PART IS EXPLICITLY GIVEN TWO DIFFERENT REFERENT CLASSES
+
+**head**
+=
+**mountain**
++
+**king**.
+
+This is exceptionally strong projection grammar.
+
+It proves that in Revelation:
+one visible anatomical feature can simultaneously encode:
+- geography;
+- political person/office.
+
+That is directly relevant to:
+- person ↔ mountain;
+- creature ↔ landscape;
+- head ↔ ruling node;
+- Squatter-Man/body-as-system interpretation.
+
+### M81-2 — THE SAME BEAST HAS TEMPORAL STATE LANGUAGE:
+**was → is not → is to come/ascend → destruction**
+
+This is not simple biological life/death description.
+
+The beast-body represents:
+a temporally changing political/system state.
+
+Cross-link:
+4 Ezra eagle historical body.
+
+### M81-3 — ABYSS ASCENT IS A BOUNDARY-CROSSING STATE CHANGE, BUT THE BEAST IS POLITICAL/APOCALYPTIC SYMBOL BEFORE IT IS PHYSICAL CREATURE DATA
+
+Important control.
+
+---
+
+# Revelation 17:12–14
+## horns = kings; temporary one-hour authority; distributed rulers yield power to one beast
+
+Ten horns:
+- ten kings;
+- not yet kingdom;
+- receive authority for one hour;
+- all give power/authority to beast.
+
+### M81-4 — DISTRIBUTED POLITICAL NODES CONVERGE INTO ONE CENTRAL BODY
+
+Process:
+
+**many kings**
+→ **yield authority**
+→ **one beast-system**.
+
+This is a clean:
+distributed→central concentration
+in political terms.
+
+### M81-5 — "ONE HOUR" FUNCTIONS AS LIMITED AUTHORITY WINDOW, NOT A COSMIC CLOCK BY DEFAULT
+
+Record timing,
+do not force chronology.
+
+---
+
+# Revelation 17:15
+## WATERS ARE EXPLICITLY DECODED
+
+The angel says:
+
+waters where woman sits
+=
+- peoples;
+- multitudes;
+- nations;
+- languages.
+
+### M81-6 — THIS IS ONE OF THE STRONGEST ANTI-FORCING CONTROLS IN THE ENTIRE PROJECT
+
+The text itself tells us:
+**water imagery can be non-hydrological**.
+
+Here:
+**many waters**
+=
+**human populations/language groups**.
+
+Therefore every biblical:
+- sea;
+- river;
+- flood;
+- water
+
+must be tested by function/context before assigning physical water mechanics.
+
+### M81-7 — WATER FUNCTIONS AS A DISTRIBUTED HUMAN NETWORK/FIELD
+
+Babylon sits upon:
+a many-population network.
+
+This is structurally compatible with:
+**distributed field supporting central node**.
+
+But it is explicitly sociopolitical.
+
+---
+
+# Revelation 17:16–18
+## beast/horns turn against woman → city destroyed; woman explicitly = great city
+
+The text concludes:
+**woman**
+=
+**great city ruling kings**.
+
+### M81-8 — WOMAN↔CITY IDENTITY IS EXPLICIT, JUST AS IN 4 EZRA
+
+This is now a repeated apocalyptic source-level transformation:
+
+4 Ezra:
+**woman = Zion/city**.
+
+Revelation:
+**woman = Babylon/great city**.
+
+Later Revelation 21:
+**bride = New Jerusalem city**.
+
+### M81-9 — HUMAN FEMALE BODY IS A STANDARD CITY-SCALE PROJECTION IN THIS APOCALYPTIC TRADITION
+
+This materially strengthens the project's:
+human figure ↔ city/landscape
+projection grammar.
+
+It does not mean:
+every woman in scripture = city.
+
+---
+
+# REVELATION 17 continuous geometry
+
+many peoples/languages = waters
+→ city/empire projected as woman seated on waters
+→ same city-woman rides beast
+→ beast's heads simultaneously = mountains + kings
+→ horns = additional kings
+→ multiple kings concentrate authority in beast
+→ beast/horns reverse relation to woman
+→ central city/woman destroyed.
+
+### M81-10 — THIS CHAPTER IS ALMOST A BUILT-IN LEGEND FOR HOW APOCALYPTIC PROJECTION WORKS
+
+The text itself maps:
+- water → populations;
+- woman → city;
+- heads → mountains/kings;
+- horns → kings;
+- beast → imperial/political system.
+
+This should be a permanent methodological control.
+
+---
+
+# REVELATION 18
+## Babylon economic-body collapse
+
+Babylon's fall affects:
+- kings;
+- merchants;
+- shipmasters;
+- sailors;
+- cargo networks;
+- enslaved/human lives;
+- crafts;
+- music;
+- lamps;
+- marriage/social life.
+
+### M81-11 — CITY IS NOT MERELY BUILDINGS; IT IS A DISTRIBUTED ECONOMIC/CULTURAL NETWORK
+
+When Babylon falls:
+- distant nodes react;
+- trade stops;
+- shipping loses center;
+- sound/light/social functions cease.
+
+This is a true:
+**central-node failure → network-wide economic response**
+sequence.
+
+---
+
+# Revelation 18:4
+## "come out of her"
+
+Population is instructed:
+- exit Babylon;
+- avoid sharing its plagues.
+
+### M81-12 — CITY-BODY FUNCTIONS AS AN ENCLOSURE/ASSOCIATION STATE FROM WHICH PEOPLE CAN EXIT
+
+This is not a literal anatomical exit from a woman.
+
+Because woman=city,
+the body metaphor has spatial consequences.
+
+Projection can preserve:
+**inside/outside**.
+
+---
+
+# Revelation 18:8–19
+## compressed collapse: one day / one hour; maritime network watches from distance
+
+Judgment is rhetorically sudden:
+- one day;
+- repeatedly "one hour."
+
+Maritime traders:
+- stand far off;
+- observe smoke;
+- mourn network loss.
+
+### M81-13 — TEMPORAL COMPRESSION MARKS RAPID SYSTEM FAILURE
+
+Do not convert:
+"one hour"
+into a literal Vardath cycle without independent evidence.
+
+### M81-14 — SEA NETWORK SURVIVES LONG ENOUGH TO OBSERVE CITY FAILURE FROM OUTSIDE
+
+Useful system distinction:
+- city node fails;
+- shipping observers remain external.
+
+---
+
+# Revelation 18:21
+## GREAT MILLSTONE THROWN INTO SEA = CITY'S IRREVERSIBLE FALL SIGN
+
+Angel:
+- lifts great millstone-like stone;
+- throws into sea;
+- says Babylon will be thrown down like this.
+
+### M81-15 — OBJECT→SEA MOTION IS AN ENACTED SYMBOL OF CITY-SCALE DESTRUCTION
+
+Important:
+the millstone is not Babylon physically.
+
+It is a demonstrative model:
+**small visible event**
+represents
+**large city event**.
+
+This is another scale-projection control.
+
+### M81-16 — DESCENT INTO SEA HERE MEANS IRREVERSIBILITY/DISAPPEARANCE, NOT AUTOMATIC WORLD TRANSFER
+
+Anti-forcing rule.
+
+---
+
+# REVELATION 19
+## Babylon-woman replaced by bride imagery; many-waters voice; heaven opens; rider/Word; mouth-sword
+
+---
+
+# Revelation 19:6–9
+## multitude voice = many waters + thunder; bride prepares
+
+A heavenly multitude sounds like:
+- many waters;
+- mighty thunder.
+
+Then:
+- Lamb marriage;
+- bride prepared;
+- linen explicitly decoded as righteous deeds.
+
+### M81-17 — WATER SOUND AGAIN FUNCTIONS AS INFORMATION/VOICE
+
+This continues:
+Revelation 1;
+Ezekiel;
+Habakkuk.
+
+**many waters**
+can encode:
+**collective semantic sound**.
+
+### M81-18 — CLOTHING IS ALSO EXPLICITLY DECODED
+
+Linen:
+=
+righteous deeds.
+
+Again:
+visible/material image
+→ ethical/social meaning.
+
+---
+
+# Revelation 19:11–16
+## heaven opens → rider emerges → eyes/fire → Word-name → sword from mouth → iron rod
+
+Heaven:
+opens.
+
+Rider:
+- appears on white horse;
+- eyes like flame;
+- multiple crowns;
+- name "Word of God";
+- armies follow.
+
+From mouth:
+- sharp sword.
+
+He rules:
+- iron rod/scepter.
+
+### M81-19 — HEAVEN-OPENING IS FOLLOWED BY AGENT EMERGENCE
+
+This is a real:
+**boundary opens**
+→ **carrier/rider appears**
+sequence.
+
+But source:
+visionary divine-warrior apocalypse.
+
+### M81-20 — MOUTH-SWORD IS EXPLICITLY AN INFORMATION/WORD-WEAPON PROJECTION
+
+Rider's name:
+**Word of God**.
+
+Weapon:
+comes from **mouth**.
+
+Thus:
+speech/judgment
+is represented as
+blade.
+
+This is strong anti-literal control.
+
+### M81-21 — ROD/SCEPTER FUNCTIONS AS RULE/AUTHORITY, NOT AUTOMATIC GATE-AXIS
+
+Do not map iron rod mechanically by shape alone.
+
+---
+
+# Revelation 19:17–21
+## angel stands in sun; birds gather; enemy kings gather; beast/false prophet removed
+
+An angel:
+- stands in/at sun;
+- calls birds in midheaven.
+
+Birds:
+- converge.
+
+Kings/armies:
+- converge.
+
+Then:
+- beast + false prophet captured;
+- thrown alive into fire lake.
+
+### M81-22 — SAME EVENT PRODUCES TWO GATHERINGS
+
+1. birds gather from sky;
+2. armies/kings gather on earth.
+
+One is scavenging/result-oriented;
+one is conflict-oriented.
+
+This is another:
+distributed→central
+pattern with different functions.
+
+### M81-23 — ANGEL "IN THE SUN" IS A STRONG HUMANLIKE-FIGURE / LUMINOUS-DOMAIN PROJECTION
+
+Interesting for Squatter-Man comparisons.
+
+But no body geometry is supplied beyond location.
+
+---
+
+# REVELATION 20
+## MAJOR CONTROLLED-BOUNDARY CYCLE
+## key → chain → dragon seized → abyss → LOCKED + SEALED → timed interval → RELEASE
+
+This is mechanically one of Revelation's clearest boundary sequences.
+
+---
+
+# Revelation 20:1–3
+## dragon explicitly = ancient serpent = Devil = Satan
+
+Angel descends:
+- key to abyss;
+- great chain.
+
+Then:
+- seizes dragon;
+- dragon explicitly identified as:
+  - ancient serpent;
+  - Devil;
+  - Satan.
+- binds;
+- throws into abyss;
+- locks;
+- seals.
+
+Purpose:
+- prevent deception.
+
+Duration:
+- thousand years.
+
+Then:
+- must be released for short time.
+
+### M81-24 — THIS IS AN EXPLICIT SAME-IDENTITY CREATURE-NAME COLLAPSE
+
+Unlike texts where:
+serpent;
+dragon;
+agent
+
+must be distinguished,
+
+Revelation explicitly says:
+**dragon = ancient serpent = Devil = Satan**.
+
+This is very important for user's same-phenomenon hypothesis.
+
+Within Revelation's symbolic theology,
+these are one referent.
+
+### M81-25 — THIS DOES NOT AUTOMATICALLY MAKE CHERUB OR QUETZALCOATL THE SAME REFERENT
+
+The identity is source-specific.
+
+But it proves:
+one underlying agent can legitimately carry multiple creature/name projections.
+
+### M81-26 — ABYSS BOUNDARY HAS TRUE ACCESS-CONTROL HARDWARE GRAMMAR
+
+Variables:
+
+- key;
+- chain;
+- container/domain;
+- lock;
+- seal;
+- occupant;
+- timed closure;
+- later release.
+
+This is one of the strongest:
+**access-control system**
+texts yet.
+
+### M81-27 — CLOSED/SEALED DOES NOT MEAN PERMANENT
+
+State cycle:
+
+**open/accessible enough to imprison**
+→ **locked**
+→ **sealed**
+→ **closed interval**
+→ **release/reopening**.
+
+Cross-link:
+Revelation 9 abyss opening.
+
+### M81-28 — SAME NAMED ABYSS CAN HAVE DIFFERENT OPERATIONAL PHASES ACROSS REVELATION
+
+Earlier:
+abyss opened;
+smoke/agents emerge.
+
+Here:
+dragon inserted;
+abyss locked/sealed.
+
+Later:
+dragon released.
+
+This is a genuine:
+**open ↔ closed/sealed ↔ reopened**
+boundary cycle.
+
+### M81-29 — THIS IS A STRONGER GATE-STATE SEQUENCE THAN MOST "DOOR" PASSAGES
+
+Still:
+no woven contraction.
+
+---
+
+# Revelation 20:4–6
+## first resurrection / second death asymmetry
+
+Some dead:
+- come to life;
+- reign thousand years;
+- called first resurrection.
+
+Second death:
+- no power over this group.
+
+Others:
+- remain dead until later.
+
+### M81-30 — RESURRECTION AND DEATH ARE MULTI-STAGE, NOT SINGLE BINARY EVENTS
+
+Text gives:
+- first resurrection;
+- later resurrection/judgment;
+- first ordinary death;
+- second death.
+
+This is a state-machine sequence.
+
+### M81-31 — DIFFERENT POPULATIONS OCCUPY DIFFERENT TEMPORAL STATES SIMULTANEOUSLY
+
+One group:
+alive/reigning.
+
+Other dead:
+not yet raised.
+
+This matters for:
+populated-layer/state modelling.
+
+But source is eschatological sequence,
+not stacked physical worlds.
+
+---
+
+# Revelation 20:7–10
+## sealed occupant released → information/deception spreads → four-corner gathering → city encircled → fire from heaven
+
+After timed interval:
+- Satan released;
+- goes out;
+- deceives nations;
+- four corners of earth;
+- Gog/Magog gather;
+- surround beloved city;
+- fire descends.
+
+### M81-32 — RELEASED CENTRAL AGENT PRODUCES DISTRIBUTED INFORMATION PROPAGATION AND THEN RECONVERGENCE
+
+Sequence:
+
+**sealed agent released**
+→ **information/deception spreads outward**
+→ **nations activated at four corners**
+→ **population converges back toward one city**.
+
+This is a strong:
+central→distributed→central
+cycle.
+
+### M81-33 — FOUR-CORNER GEOGRAPHY IS GLOBAL DISTRIBUTION LANGUAGE, NOT PROOF OF SQUARE EARTH BY ITSELF
+
+Important control.
+
+---
+
+# Revelation 20:11–15
+## earth/heaven flee; books open; sea/Death/Hades GIVE UP occupants; storage domains themselves removed
+
+At final judgment:
+- heaven/earth flee;
+- dead stand;
+- books open.
+
+Then:
+- **sea gives up dead in it**;
+- **Death gives up dead**;
+- **Hades gives up dead**.
+
+After occupants released:
+- Death;
+- Hades
+
+are thrown into fire lake.
+
+### M81-34 — THREE DIFFERENT STORAGE/DOMAIN SYSTEMS RELEASE OCCUPANTS IN PARALLEL
+
+1. sea;
+2. Death;
+3. Hades.
+
+This is a major multi-domain release process.
+
+### M81-35 — ABSTRACT STATES CAN BE TREATED AS CONTAINERS AND THEN AS CARGO
+
+Death/Hades:
+first:
+**domains containing dead**.
+
+Then:
+**entities thrown into another domain**.
+
+This is radical projection grammar.
+
+### M81-36 — STORAGE DOMAIN CAN BE ABOLISHED AFTER ITS CONTENTS ARE RELEASED
+
+Important for successor-state modelling.
+
+Sequence:
+
+**occupied domain**
+→ **empty/release**
+→ **domain removed**.
+
+---
+
+# REVELATION 21
+## OLD WORLD → NEW WORLD
+## sea absent, city descends from heaven, bride=city, high-mountain view, exact geometry, four-direction gates, always-open yet selective boundary
+
+---
+
+# Revelation 21:1–5
+## first heaven/earth pass → new heaven/earth → sea no more → New Jerusalem descends → populated divine dwelling
+
+New state:
+- new heaven;
+- new earth;
+- first heaven/earth passed;
+- sea no more.
+
+New Jerusalem:
+- comes down from heaven;
+- prepared as bride.
+
+End state:
+- divine dwelling among mortals;
+- peoples present;
+- death/crying/pain no more.
+
+### M81-37 — SUCCESSOR WORLD IS EXPLICITLY POPULATED
+
+This strongly supports the user's:
+**new world is inhabited**
+principle.
+
+However:
+Revelation does not explicitly state that this exact city was already populated before descent.
+
+Do not add that.
+
+### M81-38 — "NO SEA" DOES NOT MEAN "NO WATER"
+
+This becomes decisive in chapter 22,
+where river of life flows through city.
+
+Therefore the transition is:
+
+**sea removed**
+but
+**ordered life-river remains/emerges**.
+
+### M81-39 — WATER FUNCTION CHANGES ACROSS THE WORLD TRANSITION
+
+Earlier sea:
+- beast source;
+- dead-storage domain;
+- economic shipping network;
+- chaotic/hostile symbolism.
+
+Final river:
+- life;
+- healing;
+- central ordered flow.
+
+This is a major Vardath-relevant state change.
+
+---
+
+# Revelation 21:9–10
+## BRIDE = CITY
+## observer moved to high mountain; city descends from heaven
+
+Angel says:
+"I will show you the bride."
+
+What John is shown:
+**holy city Jerusalem**.
+
+### M81-40 — SECOND EXPLICIT WOMAN↔CITY IDENTITY
+
+Revelation now gives the pair:
+
+**Babylon woman**
+=
+corrupt imperial city.
+
+**Bride**
+=
+New Jerusalem city.
+
+This is one of the strongest paired projection structures in the whole Bible.
+
+### M81-41 — WOMAN/CITY IS NOT ONE-OFF METAPHOR; IT STRUCTURES THE ENDING
+
+The final world transition is framed as:
+**one woman-city falls**
+→
+**another woman-city descends**.
+
+### M81-42 — HIGH MOUNTAIN FUNCTIONS AS OBSERVATION PLATFORM, NOT CITY ITSELF
+
+Unlike some person/mountain identity candidates,
+here:
+observer is taken to mountain
+to view descending city.
+
+Keep role separation.
+
+---
+
+# Revelation 21:12–17
+## twelve gates in four directions + twelve foundations + golden measuring rod + equal length/width/height
+
+City has:
+- high wall;
+- twelve gates;
+- twelve gate-angels;
+- tribal names;
+- 3 east;
+- 3 north;
+- 3 south;
+- 3 west.
+
+Foundations:
+- twelve apostolic names.
+
+Angel:
+- golden measuring rod.
+
+City:
+- four equal sides;
+- length = width;
+- height = same;
+- 12,000 stadia;
+- wall 144 cubits.
+
+### M81-43 — THIS IS AN EXPLICIT FOUR-DIRECTION ACCESS ARCHITECTURE
+
+Every cardinal direction:
+has gates.
+
+Access is not:
+one privileged side only.
+
+### M81-44 — CITY IS THREE-DIMENSIONALLY EQUAL / CUBE-LIKE IN THE TEXT'S GEOMETRY
+
+Length:
+=
+width:
+=
+height.
+
+This is unusual enough to record.
+
+Scholarly interpretation often compares this idealized geometry with:
+- temple/holy-space traditions;
+- Ezekiel;
+- apocalyptic ideal-city measurement.
+
+Do not force modern engineering scale literally.
+
+### M81-45 — MEASUREMENT IS PART OF REVELATION'S SUCCESSOR-WORLD STABILIZATION
+
+Cross-link:
+Ezekiel 40–48;
+Zechariah measuring line.
+
+Sequence:
+**catastrophe**
+→ **new city**
+→ **measurement/order**.
+
+### M81-46 — GATES + FOUNDATIONS CARRY HUMAN GROUP IDENTITIES
+
+Gates:
+tribes.
+
+Foundations:
+apostles.
+
+Architecture:
+=
+social/community memory.
+
+Another:
+human group → structural component
+projection.
+
+---
+
+# Revelation 21:22–27
+## no temple; no ordinary sun/moon need; nations enter; GATES NEVER SHUT; access still filtered
+
+New city:
+- no separate temple;
+- God/Lamb = temple;
+- no need for sun/moon;
+- divine glory = light;
+- nations walk by light;
+- kings bring glory in.
+
+Crucially:
+**gates are never shut**.
+
+Yet:
+- unclean/falsehood excluded;
+- book-of-life status controls entry.
+
+### M81-47 — OPEN GATES DO NOT MEAN UNFILTERED ACCESS
+
+This is one of the most important gate rules yet.
+
+Physical gate state:
+**open**.
+
+Semantic/moral permission layer:
+**selective**.
+
+Thus:
+access control can exist
+without mechanical closure.
+
+Cross-link:
+Ezekiel holiness classifications.
+
+### M81-48 — SUCCESSOR WORLD HAS PERMANENTLY OPEN BOUNDARIES + CLASSIFICATION FILTER
+
+This is a mature gate-state distinction:
+
+- open aperture;
+- no night closure;
+- continuing selectivity.
+
+### M81-49 — ACCESS CONTROL HAS SHIFTED FROM HARDWARE TO IDENTITY/INFORMATION
+
+Earlier Revelation 20:
+- key;
+- chain;
+- lock;
+- seal.
+
+Revelation 21:
+- gates open;
+- names/book status determine entry.
+
+This is a remarkable transition:
+
+**mechanical closure**
+→ **semantic access control**.
+
+---
+
+# REVELATION 22
+## throne → central river → street → tree on either side → monthly fruit → healing nations
+
+This chapter completes the geometry.
+
+---
+
+# Revelation 22:1–2
+## RIVER OF LIFE FROM CENTRAL THRONE
+
+River:
+- bright as crystal;
+- flows from throne of God/Lamb;
+- runs through middle of city's street.
+
+Tree of life:
+- described "on either side of river";
+- twelve kinds of fruit;
+- fruit monthly;
+- leaves heal nations.
+
+### M81-50 — THIS IS A TRUE CENTRAL-SOURCE→AXIAL-OUTFLOW SYSTEM
+
+Source:
+**throne**.
+
+Channel:
+**river**.
+
+Route:
+**through middle of city/street**.
+
+Output:
+**life/healing ecology**.
+
+Cross-link:
+Ezekiel 47.
+
+### M81-51 — WATER IS NOW ORDERED, CENTRAL AND LIFE-GIVING
+
+This sharply contrasts:
+- beast-producing sea;
+- Babylon shipping sea;
+- sea holding dead.
+
+### M81-52 — TREE / RIVER RELATION IS BILATERAL, BUT TEXTUAL GRAMMAR MUST BE HANDLED CAREFULLY
+
+NRSVUE:
+tree of life "on either side of the river."
+
+This can be visualized as:
+- tree imagery spanning both banks;
+- collective tree growth;
+- repeated tree presence on both sides.
+
+Do **not** assert:
+exactly two separate trees
+unless a textual argument is made.
+
+### M81-53 — TWO BANKS ARE A REAL BILATERAL ECOLOGICAL FIELD
+
+Even if "tree" is grammatically singular/collective,
+the river has:
+**side A**
++
+**side B**.
+
+Both belong to life-tree zone.
+
+This is highly relevant to:
+- Ezekiel 47 trees on both banks;
+- paired node-field hypothesis;
+- two-strand/bilateral ecology.
+
+### M81-54 — HEALING FLOWS OUTWARD FROM CREATED ECOLOGY, NOT ONLY DIRECTLY FROM CENTRAL THRONE
+
+A recent JTS study emphasizes:
+the leaves/tree mediate healing of nations.
+
+This is important:
+central source
+→ river
+→ tree
+→ nations.
+
+That is a multi-stage distribution chain.
+
+### M81-55 — MONTHLY FRUIT MAKES THE TREE A PERIODIC OUTPUT NODE
+
+Cycle:
+**one fruit class/output each month** in translation sense of twelve kinds.
+
+This is a recurring-clock/ecology image.
+
+Do not force:
+12-month modern calendrical mechanics beyond source.
+
+---
+
+# Revelation 22:3–5
+## throne inside city; servants see face; no night; direct illumination; populated eternal state
+
+Final stable city:
+- throne in it;
+- servants present;
+- worship;
+- face-to-face access;
+- names on foreheads;
+- no night;
+- no lamp/sun requirement;
+- inhabitants reign.
+
+### M81-56 — FINAL STATE IS NOT EMPTY OR STATIC
+
+It is:
+- inhabited;
+- relational;
+- illuminated;
+- active;
+- ordered.
+
+Strong support for:
+**successor world = populated present** as formal comparison.
+
+Again:
+not proof of Vardath physical world-turns.
+
+---
+
+# Revelation 22:10
+## prophecy NOT sealed because time near
+
+Earlier:
+- abyss sealed.
+
+Here:
+- information/book not to be sealed.
+
+### M81-57 — "SEALING" HAS DOMAIN-SPECIFIC FUNCTIONS
+
+Abyss seal:
+restricts occupant movement.
+
+Book seal:
+restricts information access.
+
+Same word-family/function:
+different substrate.
+
+This is valuable for gate/information distinction.
+
+---
+
+# Revelation 22:14–17
+## entry by gates + water available to thirsty
+
+Eligible persons:
+- enter city by gates.
+
+Call:
+- thirsty come;
+- take water of life.
+
+### M81-58 — FINAL ACCESS SYSTEM COMBINES GATE ENTRY WITH FREE LIFE-WATER DISTRIBUTION
+
+This is not:
+everyone everywhere automatically inside.
+
+There remains:
+- outside;
+- inside;
+- gate;
+- eligibility.
+
+But water invitation is expansive.
+
+### Textual control
+Revelation 22:14 has an important textual variant:
+- "wash their robes";
+- "do his commandments."
+
+Do not make a Vardath mechanism depend on the wording.
+
+---
+
+# BABYLON ↔ NEW JERUSALEM PAIR
+## one of the strongest mirror structures in the entire research
+
+## Babylon
+- woman;
+- city;
+- sits on many waters;
+- waters = populations/languages;
+- carried by beast;
+- luxury;
+- trade network;
+- kings/merchants;
+- blood;
+- falls;
+- burns;
+- becomes desolate;
+- millstone sign descends into sea;
+- music/light/social life cease.
+
+## New Jerusalem
+- bride/woman;
+- city;
+- descends from heaven;
+- measured/stable;
+- luminous;
+- nations/kings enter;
+- gates remain open;
+- river of life;
+- tree/healing;
+- inhabitants present;
+- no night.
+
+### M81-59 — WOMAN/CITY PAIR IS A TRUE OLD-SYSTEM / SUCCESSOR-SYSTEM MIRROR
+
+Not same city transformed in a simple historical sense.
+
+Rather:
+two opposed city-women represent:
+- corrupt imperial order;
+- renewed sacred/community order.
+
+### M81-60 — BOTH CITY-WOMEN ARE CONNECTED TO NATIONS, WEALTH AND WATER, BUT IN OPPOSITE MODES
+
+Babylon:
+- waters = nations supporting empire;
+- wealth concentrated/extracted;
+- nations deceived.
+
+New Jerusalem:
+- nations walk by light;
+- bring glory;
+- receive healing;
+- life water flows outward.
+
+This is a remarkable reversal:
+
+**extractive centre**
+→
+**distributive/healing centre**.
+
+### M81-61 — SUCCESSOR STATE RETAINS CITY, NATIONS, WEALTH-LIKE MATERIALS AND GATES BUT CHANGES THEIR FUNCTION
+
+This is exactly:
+**new beginning from inherited symbolic/material categories**
+rather than
+blank reset.
+
+---
+
+# OLD SEA ↔ FINAL RIVER
+## water-system transformation
+
+Earlier Revelation:
+sea can be:
+- chaos;
+- monster/beast source;
+- trade network;
+- death storage.
+
+At judgment:
+- sea gives up dead.
+
+New creation:
+- sea no more.
+
+Final city:
+- life river remains.
+
+### M81-62 — REVELATION DOES NOT END WATER; IT REASSIGNS WATER FUNCTION
+
+Old:
+**large hostile/ambiguous sea-domain**.
+
+New:
+**bounded ordered axial life-flow**.
+
+This is highly relevant to Vardath:
+water follows geometry/state.
+
+### M81-63 — SEA RELEASES ITS OCCUPANTS BEFORE DISAPPEARING
+
+Sequence:
+
+**occupied sea-domain**
+→ **occupants released**
+→ **old sea removed**
+→ **ordered river appears in successor state**.
+
+This is one of the strongest domain-handoff sequences yet.
+
+---
+
+# ABYSS OPEN/CLOSED/REOPENED PAIR
+## Revelation 9 ↔ Revelation 20
+
+Earlier:
+- key;
+- abyss opens;
+- smoke/locust agents emerge.
+
+Now:
+- key;
+- dragon inserted;
+- locked;
+- sealed;
+- timed closure;
+- released.
+
+### M81-64 — THE SAME APERTURE CLASS CAN SUPPORT BOTH OUTWARD AND INWARD TRAFFIC
+
+Abyss can:
+- release occupants;
+- receive occupant;
+- contain;
+- later release.
+
+This is a true bidirectional containment boundary.
+
+### M81-65 — GATE STATE AND TRAFFIC DIRECTION ARE SEPARATE VARIABLES
+
+Key Vardath engineering principle:
+- open/closed;
+- inbound/outbound;
+- cargo type;
+- duration
+
+must be tracked separately.
+
+---
+
+# FIRST / SECOND PAIRS
+
+Revelation 20–21 explicitly stacks:
+- first resurrection;
+- later resurrection;
+- first ordinary death;
+- second death;
+- first heaven/earth;
+- new heaven/earth.
+
+### M81-66 — REVELATION'S ENDING IS ORGANIZED AS SUCCESSIVE STATE PAIRS
+
+This is directly relevant to:
+world-turn interpretation.
+
+But source:
+eschatological transformation.
+
+Do not force:
+physical repeated cycles.
+
+---
+
+# DRAGON / SERPENT / FEATHERED-SERPENT / CHERUB UPDATE
+
+Revelation makes one identity explicit:
+
+**dragon**
+=
+**ancient serpent**
+=
+**Devil**
+=
+**Satan**.
+
+Earlier Section 80 showed:
+dragon:
+- in heaven;
+- stars;
+- pursues woman;
+- water/flood output from mouth;
+- earth opens to receive river.
+
+Section 81:
+same dragon/serpent:
+- captured;
+- bound;
+- inserted into abyss;
+- sealed;
+- released.
+
+### M81-67 — THE DRAGON/SERPENT PHENOMENON NOW HAS A COMPLETE OPERATIONAL STATE SEQUENCE WITHIN REVELATION
+
+**active celestial adversary**
+→ **defeated/cast**
+→ **bound**
+→ **contained**
+→ **sealed**
+→ **timed dormancy**
+→ **released**
+→ **final removal**.
+
+This is very useful for Vardath phase comparison.
+
+### M81-68 — REVELATION ITSELF DOES NOT GIVE THIS DRAGON FEATHERED WINGS
+
+Wings in Revelation 12 belong to:
+- woman receiving eagle wings.
+
+Therefore:
+do not say Revelation depicts a literal winged dragon.
+
+However:
+dragon;
+wing;
+water current;
+earth aperture
+occur in one connected event ecology.
+
+That remains a strong functional-family analogue.
+
+### M81-69 — CHERUB IDENTITY STILL CANNOT BE EQUATED WITH REVELATION'S DRAGON FROM THIS TEXT ALONE
+
+Source traditions differ.
+
+The user's Quetzalcoatl/cherub/dragon hypothesis remains comparative,
+not textually explicit here.
+
+---
+
+# SQUATTER-MAN / AXIS-PERSON UPDATE
+
+Potential high-value figures:
+- rider emerging through opened heaven;
+- angel standing in sun;
+- throne-centered city;
+- high-mountain observer.
+
+But:
+none gives the full bilateral raised-arm Squatter-Man geometry.
+
+### M81-70 — THE STRONGER RESULT IS BODY→LANDSCAPE/POLITY PROJECTION, NOT HUMAN SILHOUETTE GEOMETRY
+
+Revelation 17:
+heads = mountains/kings.
+
+Woman = city.
+
+Revelation 21:
+bride = city.
+
+This is more rigorous than forcing anthropomorphic silhouettes.
+
+---
+
+# STRICT FINGERTRAP TEST — Revelation 17–22
+
+Criteria:
+1. broad/open distributed support structure;
+2. same structural continuity;
+3. angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Revelation 17
+Distributed waters/populations:
+strong.
+
+Central woman/city:
+strong.
+
+Throat formation:
+absent.
+
+## Revelation 18
+Network collapse:
+strong.
+
+Millstone/sea:
+symbolic descent.
+
+Throat:
+absent.
+
+## Revelation 19
+Heaven opens:
+strong aperture.
+
+Agent emerges:
+strong.
+
+Contraction:
+absent.
+
+## Revelation 20
+Key/lock/seal/release:
+exceptionally strong boundary-state cycle.
+
+Inbound/outbound traffic:
+strong.
+
+Broad woven support:
+absent.
+
+Dynamic narrowing:
+absent.
+
+## Revelation 21
+New city descends:
+strong transfer.
+
+Gates:
+strong.
+
+Four-direction access:
+strong.
+
+Open-gate semantic filtering:
+exceptionally strong.
+
+Fingertrap:
+absent.
+
+## Revelation 22
+Central river:
+strong.
+
+Bilateral banks/tree:
+strong.
+
+Distributed healing:
+strong.
+
+Contraction:
+absent.
+
+### Verdict
+
+**Strict fingertrap remains negative.**
+
+Revelation 17–22 contributes instead:
+- best symbolic-decoding legend;
+- strong woman↔city projection;
+- strong locked/sealed/reopened boundary cycle;
+- strong domain-release→domain-removal sequence;
+- strong successor-city geometry;
+- strong open-but-filtered gate model;
+- strong ordered central river/bilateral tree field.
+
+The still-missing strict evidence remains:
+
+> **one continuous broad woven support structure itself tightening into a narrow axial throat, allowing transfer, and then reopening into a broad state.**
+
+---
+
+# FULL REVELATION 17–22 PROCESS TIMELINE
+
+distributed peoples/nations/languages appear as many waters
+→ Babylon imperial city appears as woman seated on those waters
+→ woman rides beast
+→ beast heads decode as mountains/kings
+→ horns decode as kings
+→ distributed rulers yield authority to beast
+→ rulers reverse and destroy city-woman
+→ imperial trade/cultural network collapses
+→ population warned to exit
+→ seaborne observers remain outside
+→ millstone cast into sea models irreversible city fall
+→ heavenly multitude sounds like many waters/thunder
+→ bride prepares
+→ heaven opens
+→ rider/Word emerges
+→ mouth-sword judges
+→ earthly kings gather
+→ sky birds gather
+→ beast/false prophet removed
+→ angel descends with key/chain
+→ dragon explicitly identified as ancient serpent/Devil/Satan
+→ dragon bound
+→ inserted into abyss
+→ abyss locked
+→ abyss sealed
+→ thousand-year closed interval
+→ first resurrection population lives/reigns
+→ timed release
+→ agent disperses deception to four corners
+→ nations reconverge around beloved city
+→ fire descends
+→ final adversary removed
+→ books open
+→ sea releases dead
+→ Death releases dead
+→ Hades releases dead
+→ storage domains abolished
+→ first heaven/earth pass
+→ sea disappears
+→ new heaven/earth appear
+→ New Jerusalem descends from heaven
+→ bride explicitly revealed as city
+→ observer views from high mountain
+→ city measured
+→ 12 gates arranged in four directions
+→ 12 foundations
+→ city equal length/width/height
+→ no separate temple
+→ direct light replaces ordinary lamp/sun requirement
+→ nations/kings enter
+→ gates remain permanently open
+→ access nevertheless filtered by identity
+→ throne anchors city
+→ river of life flows from throne through central street
+→ life-tree zone occupies both river sides
+→ fruit cycles monthly
+→ leaves distribute healing to nations
+→ no night
+→ inhabitants remain active
+→ water-of-life invitation remains open
+→ final world is populated, illuminated and relational.
+
+---
+
+# PAIR / MIRROR REGISTER
+
+## Babylon woman / New Jerusalem bride
+corrupt city-body ↔ renewed city-body.
+
+## many waters / river of life
+distributed human-population field ↔ ordered life-flow.
+
+## beast / Lamb
+imperial/adversarial rule ↔ victorious sacred rule.
+
+## dragon / ancient serpent
+explicit same identity.
+
+## seven heads / seven mountains / seven kings
+body ↔ geography ↔ political office.
+
+## ten horns / ten kings
+body feature ↔ rulers.
+
+## old heaven-earth / new heaven-earth
+world-state pair.
+
+## sea / river
+old ambiguous/death/monster/trade domain ↔ new life/healing channel.
+
+## first resurrection / later resurrection
+staged life-return.
+
+## first death / second death
+staged death category.
+
+## open abyss / sealed abyss / reopened abyss
+boundary-state cycle.
+
+## mechanical lock/seal / semantic open-gate filter
+two access-control architectures.
+
+## four directions / central city
+distributed cardinal access ↔ central node.
+
+## river bank A / river bank B
+bilateral ecological field.
+
+## city outside / city inside
+access boundary remains meaningful even when gates never close.
+
+---
+
+# NUMBER / TIMING REGISTER
+
+Record without forcing:
+
+- 7 heads;
+- 7 mountains;
+- 7 kings;
+- beast also called an 8th belonging to the 7;
+- 10 horns/kings;
+- "one hour" authority;
+- "one hour" Babylon fall rhetoric;
+- 24 elders;
+- 1,000 years;
+- "little while";
+- four corners earth;
+- 12 gates;
+- 3 gates each cardinal direction;
+- 12 foundations;
+- 12,000 stadia;
+- 144 cubits;
+- 12 tree-fruit outputs/kinds;
+- monthly fruit.
+
+### M81-71 — REVELATION'S NUMBERS ARE HEAVILY SYMBOLIC AND LITERARILY STRUCTURED
+
+Do not treat:
+7;
+8;
+10;
+12;
+144;
+1000
+as hidden Vardath clock values without independent textual/chronological support.
+
+---
+
+# TEXTUAL / SCHOLARLY CONTROLS
+
+1. Revelation 17 explicitly decodes the woman as a great city.
+2. Revelation 17 explicitly decodes waters as peoples, multitudes, nations and languages.
+3. Revelation 17 explicitly decodes seven heads as seven mountains and seven kings.
+4. Revelation 17 explicitly decodes horns as kings.
+5. Scholarship widely identifies Babylon with Rome / Roman imperial order, especially through city-rule and seven-hill imagery.
+6. Woman-city personification was common enough in antiquity that the image should be read in ancient political/urban context.
+7. The sexualized violence against Babylon has serious ethical/gender implications and should not be sanitized into purely mechanical imagery.
+8. Revelation 18 critiques an imperial economic/trade system, including maritime commerce and human lives as cargo.
+9. The millstone thrown into sea is an enacted prophetic symbol of Babylon's irreversible fall, not necessarily a record of literal city submergence.
+10. Revelation 19's many-waters sound functions as voice.
+11. The rider's mouth-sword belongs to Word/judgment imagery and should not be assumed a literal energy weapon.
+12. Revelation 20 explicitly equates dragon, ancient serpent, Devil and Satan.
+13. Revelation 20 explicitly uses key, chain, abyss, lock, seal and timed release language.
+14. Christian traditions differ substantially in interpretation of the thousand years; do not present one millennial scheme as neutral fact.
+15. Revelation 20:13 explicitly gives sea, Death and Hades as domains releasing dead occupants.
+16. Revelation 21 explicitly distinguishes old and new heaven/earth and says the sea is no more.
+17. "No sea" cannot mean "no water," because Revelation 22 contains river/water of life.
+18. Revelation 21 explicitly identifies the bride with New Jerusalem by showing the city after promising to show the bride.
+19. New Jerusalem's geometry is measured and idealized; scholarship connects it with prophetic/apocalyptic sacred-space traditions, including Ezekiel.
+20. Scholarly work also notes that New Jerusalem mirrors and transforms luxury/architectural imagery associated with imperial cities rather than simply abandoning precious materials.
+21. Revelation 21 says gates never shut, but entry remains selective; open aperture and permission are separate variables.
+22. Revelation 22's "tree of life on either side of the river" should not automatically be converted into exactly two discrete trees; the syntax/image can be collective or spanning both banks.
+23. Revelation 22's healing of nations is a significant final-state feature; recent scholarship emphasizes its relationship to earlier prophetic restoration traditions.
+24. Revelation 22:14 has a notable textual variant between robe-washing and commandment-doing; no mechanism should rely on one wording.
+25. Revelation's final city is populated and active, but the text does not explicitly state that the descending city was already physically populated before descent.
+
+---
+
+# SOURCES LOGGED — Revelation 17–22
+
+## Primary
+- Revelation 17–22 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+17-22&version=NRSVUE
+
+## Babylon / Rome / city-women
+- Richard Bauckham, *The Theology of the Book of Revelation*, "The New Jerusalem":
+  https://www.cambridge.org/core/books/abs/theology-of-the-book-of-revelation/new-jerusalem/4BC13A79E3914C6A70DA4C8E236AA0C7
+- "The City-Women Babylon and New Jerusalem in Revelation," *Oxford Handbook of the Book of Revelation*:
+  https://academic.oup.com/edited-volume/34244/chapter-abstract/290348532
+- "Revelation 17.1–19.10: A Prophetic Vision of the Destruction of Rome," Cambridge:
+  https://www.cambridge.org/core/books/abs/future-of-rome/revelation-1711910-a-prophetic-vision-of-the-destruction-of-rome/A8F1F455661F647A9E37DE72E82612E6
+- "The Roman Empire in the Book of Revelation," Oxford Handbook:
+  https://academic.oup.com/edited-volume/43185/chapter-abstract/362592229
+
+## New Jerusalem / architecture / nations
+- Candida Moss and Liane Feldman, "The New Jerusalem: Wealth, Ancient Building Projects and Revelation 21–22":
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/new-jerusalem-wealth-ancient-building-projects-and-revelation-2122/05128E36D9B8DCF3D2830D7C400236C2
+- "How Are the Gentiles Changed? The Influence of Micah on the Animal Apocalypse and Revelation 21–22":
+  https://academic.oup.com/jts/article/76/1/138/7994350
+
+## Millennium / abyss interpretation control
+- Cambridge, millennial interpretation discussion:
+  https://www.cambridge.org/core/books/abs/revelation/appendix-a-millennial-problem/1229E28DF76CDF4BE40A97E87E6C9E27
+
+## Textual variant Revelation 22:14
+- Stephen Goranson, "The Text of Revelation 22.14":
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/text-of-revelation-2214/7409E6E65146420ECAFFFC338F17FF25
+
+---
+
+# SECTION 81 — REVELATION 17–22 COMPLETE
+
+## Strongest new findings
+
+1. **Revelation 17 functions almost like an internal legend for apocalyptic symbolism: waters are explicitly peoples/nations/languages, woman is explicitly city, heads are explicitly mountains and kings, and horns are explicitly kings.**
+2. **This is one of the strongest proofs in the project that visible body/environment imagery can represent social, political and geographic systems without being literal morphology.**
+3. **Babylon's many waters are explicitly non-hydrological, making Revelation 17 a permanent warning against automatically physicalizing every biblical water image.**
+4. **Woman→city identity repeats the explicit 4 Ezra woman→Zion transformation and is then mirrored again by New Jerusalem as bride→city.**
+5. **The final Revelation therefore contains a deliberate Babylon-woman/city ↔ New-Jerusalem-bride/city pair, one of the strongest old-system/successor-system mirrors yet.**
+6. **Babylon's fall is network-wide: kings, merchants, shipping, crafts, sound, light and social life fail around the central city, giving a strong central-node→distributed-network-collapse process.**
+7. **The millstone cast into the sea is a scale-model prophetic action—small object motion represents city-scale destruction—another direct demonstration of projection across scale.**
+8. **Revelation 19's multitude sounds like many waters and thunder, further confirming water imagery can carry semantic/voice function.**
+9. **The rider is called the Word and carries a sword from his mouth, giving direct source-level evidence that a weapon-like projection can mean speech/judgment rather than literal physical weaponry.**
+10. **Revelation 20 explicitly identifies dragon = ancient serpent = Devil = Satan. Unlike many comparative serpent links, this one is source-level same identity.**
+11. **The abyss sequence is one of the strongest access-control mechanisms found so far: key → chain → occupant insertion → lock → seal → thousand-year interval → later release.**
+12. **Crossed with Revelation 9, the abyss has open → closed/sealed → reopened phases and can support both outward and inward traffic.**
+13. **This makes gate state, traffic direction, cargo type and duration clearly separate variables—very useful for the mature Vardath mechanism.**
+14. **The first resurrection / later resurrection and first death / second death show Revelation's endpoint as a multi-stage state system rather than one simple binary transition.**
+15. **Sea, Death and Hades each release their stored occupants at judgment; then Death/Hades themselves are removed, giving a strong occupied-domain→release→domain-abolition sequence.**
+16. **The old sea also gives up its dead before the new world arrives and the sea disappears.**
+17. **The new world is not waterless: Revelation 22 immediately restores ordered water as a crystal-bright river of life. Therefore the deeper transition is hostile/ambiguous sea-domain → ordered life-river, not water → no water.**
+18. **New Jerusalem is explicitly populated in its final state, preserving the user's core successor-world requirement at the level of formal comparison.**
+19. **The bride is explicitly shown as New Jerusalem city, creating a second source-level woman→city identity in Revelation itself.**
+20. **The city has a true four-direction gate architecture—three gates east, north, south and west—and is measured with a golden rod.**
+21. **Its length, width and height are explicitly equal, giving a cubic/equal-dimension sacred-city geometry.**
+22. **The city's gates never close, yet entry remains selective. This gives one of the clearest distinctions yet between physical aperture state and semantic/identity permission.**
+23. **That creates a major transition from Revelation 20's hard access control—key/lock/seal—to Revelation 21's open aperture plus identity/information filter.**
+24. **Revelation 22 gives a central-source system: throne → river → middle of city/street → life-tree zone on both river sides → monthly fruit → healing of nations.**
+25. **The two river sides form a real bilateral ecological field, but the wording should not be forced into exactly two individual trees.**
+26. **The final water/tree system strongly cross-links Ezekiel 47: central sacred source, river, bilateral tree growth, recurring fruit and healing.**
+27. **Babylon and New Jerusalem also reverse resource flow: Babylon concentrates/extracts wealth from nations, while New Jerusalem's river/tree system distributes light, water and healing outward.**
+28. **Revelation 17–22 does not give the strict fingertrap. Its decisive contributions are symbolic decoding, city-body projection, controlled abyss closure/release, storage-domain release, permanently open-but-filtered gates and ordered successor water flow.**
+29. **For the Quetzalcoatl/cherub/Feathered-Serpent/dragon hypothesis, Revelation now provides a complete dragon/serpent operational cycle—active, defeated, bound, sealed, released, finally removed—but it still does not make the dragon winged; wings remain functionally assigned elsewhere.**
+30. **The unresolved mechanical link remains exactly the same: we still need one continuous broad woven support structure explicitly shown tightening into the narrow throat already seen in 4 Ezra 7 and then reopening into the distributed/open state seen in Zechariah 14/Revelation's successor geometry.**
+
+## Next live block
+
+**Section 82 — Sirate Tsion / Order of Zion**
+
+Roadmap requirements:
+- determine the exact Ethiopic text/English witness before analysis;
+- establish whether "Sirate Tsion" here is a standalone book, a Sinodos component, or title/translation variant in the Ethiopian broader New Testament canon;
+- do not substitute a similarly named Zion liturgical text without manuscript/canon verification;
+- inspect:
+  - sacred-space geometry;
+  - church/temple as body/building;
+  - altar;
+  - doors/gates/thresholds;
+  - east/west/north/south orientation;
+  - ascent/descent;
+  - heaven/earth correspondence;
+  - water/baptism;
+  - fire/light;
+  - apostolic authority chains;
+  - paired offices;
+- distinguish narrative/cosmological material from church-order instructions;
+- if accessible English is incomplete, record that limitation rather than inventing missing text;
+- append only verifiable findings.
+
