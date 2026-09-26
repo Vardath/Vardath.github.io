@@ -56716,3 +56716,1271 @@ Required protocol:
 - apply strict fingertrap test only after ordinary legal/liturgical function is established;
 - append only verifiable material and verify tail after append.
 
+
+
+---
+
+# SECTION 84 — GITSEW / GESSEW
+## Direct broader-canon / Sinodos pass — 56-canons identity, 57-item English segmentation, ordination topology, altar/input filtering, equinox-timed Passover rule, admission/exclusion networks, territorial permission, distributed episcopal coordination, periodic synchronization, resource-flow boundaries, adjudication thresholds, non-hereditary office, canon-list closure and strict cosmology negative control
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for Gitsew / Gessew;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked through the Git blob because the file is now large enough that ordinary GitHub content retrieval can return an empty body.
+
+The actual Part 2 tail was:
+**Section 83 — Tizaz COMPLETE**
+
+with:
+**Section 84 — Gitsew / Gessew**
+as the next live block.
+
+No completed Section 84 was present.
+
+This section is appended only to Part 2.
+
+---
+
+# TEXT IDENTITY / RECENSION CONTROL FIRST
+
+Gitsew / Gessew is one of the four traditionally apostolic divisions of the Ethiopic **Sinodos**.
+
+The usual traditional division is:
+
+- Serʿata Seyon — 30 canons;
+- Teʾezaz / Tizaz — 71 canons;
+- **Gessew / Gitsew — 56 canons**;
+- Abtelis / Abtilis — 81 canons.
+
+Roger Cowley's canon study explicitly identifies:
+**Gessew = 56 canons**.
+
+Winand Fell printed the Geʽez text in 1871 as:
+**Canones Apostolorum Aethiopice**.
+
+George H. Schodde translated Fell's Ethiopic edition into English in 1885:
+**The Apostolic Canons, Translated from the Ethiopic**.
+
+### Numbering control
+
+Traditional Ethiopian identity:
+**56 canons**.
+
+Schodde's English presentation reaches:
+**Canon LVII / 57**.
+
+This occurs because the closing:
+- heading introducing canonical books;
+- actual book list;
+- final instruction/conclusion
+
+is segmented differently.
+
+### M84-1 — 56 AND 57 ARE SEGMENTATION DIFFERENCES, NOT TWO DIFFERENT GITSEW WORKS
+
+For future citation:
+always state whether numbering follows:
+- traditional 56;
+- Schodde's 57-item segmentation;
+- another manuscript/recension.
+
+---
+
+# HISTORICAL / LITERARY CONTROL
+
+The received Geʽez Gitsew is an Ethiopic recension of the wider **Apostolic Canons** tradition.
+
+Schodde himself identifies it as:
+- Ethiopic form of the canons appended to the Apostolic Constitutions;
+- part of the Ethiopian Sinodos;
+- translated through the Coptic/Egyptian ecclesiastical tradition in his nineteenth-century account.
+
+Modern scholarship treats the Sinodos as:
+- composite;
+- translated/adapted;
+- transmitted in varying manuscript sequences;
+- pseudo-apostolic in literary attribution.
+
+Therefore:
+"Apostles through Clement" is the text's authority-frame,
+not modern proof of a jointly authored first-century apostolic autograph.
+
+### M84-2 — GITSEW IS PRIMARILY A CHURCH-ORDER / LEGAL-ACCESS TEXT
+
+Its dominant subjects are:
+- ordination;
+- offerings;
+- Eucharist;
+- clerical conduct;
+- territorial authority;
+- discipline;
+- property;
+- adjudication;
+- canonical books.
+
+It contains very little direct physical cosmography.
+
+That makes it valuable chiefly as a **control text** for deciding when:
+- gates;
+- paths;
+- numbers;
+- cycles;
+- central nodes
+
+are institutional rather than cosmophysical.
+
+---
+
+# CANON I
+## two/three bishops authorize one bishop; one bishop authorizes presbyter/deacon/lower clergy
+
+Schodde:
+
+- bishop ordained by **two or three bishops**;
+- elder/presbyter, deacon and other ordained ministers by **one bishop**.
+
+### M84-3 — ORDINATION IS A MANY→ONE / ONE→MANY AUTHORIZATION TOPOLOGY
+
+At upper level:
+
+**2–3 bishops**
+→ authorize
+**1 bishop**.
+
+At lower level:
+
+**1 bishop**
+→ authorizes
+**multiple lower offices**.
+
+This is an explicit structural hierarchy.
+
+### M84-4 — NUMERICAL ASYMMETRY HERE IS INSTITUTIONAL, NOT COSMIC
+
+The 2/3 → 1 pattern must not be forced into:
+- 1-3-7;
+- two strands;
+- gate geometry.
+
+Its function is appointment validation.
+
+---
+
+# CANON II
+## altar as input-filter boundary
+
+Permitted altar inputs include:
+- prescribed Eucharistic offering;
+- ears/grain;
+- grapes in season;
+- lamp oil;
+- incense.
+
+Other fruits:
+- go to house;
+- bishop/presbyters/clergy distribute them.
+
+### M84-5 — ALTAR OPERATES AS A TRUE SELECTIVE INPUT BOUNDARY
+
+Not every item may cross into:
+**altar-space**.
+
+The system distinguishes:
+
+**allowed altar cargo**
+vs
+**non-altar goods redirected to another receiving node**.
+
+This is useful for Vardath's:
+**gate sorts cargo**
+rule.
+
+### M84-6 — SAME MATERIAL ECONOMY HAS MULTIPLE DESTINATIONS BASED ON CLASSIFICATION
+
+Cargo does not simply:
+enter / fail to enter.
+
+It can be:
+- accepted at altar;
+- redirected to house;
+- redistributed among people.
+
+This is a strong **routing** analogue.
+
+Source function:
+liturgical purity/order.
+
+---
+
+# CANON III
+## clerical role does not erase household relationship
+
+Bishop/presbyter/deacon may not discard wife under pretext of religious service.
+
+### M84-7 — OFFICE-STATE DOES NOT AUTOMATICALLY ERASE PRIOR HUMAN RELATIONSHIP
+
+Useful identity continuity control.
+
+No cosmology.
+
+---
+
+# CANON IV
+## PASSOVER TIMED TO EQUINOX
+
+If bishop/presbyter/deacon celebrates Passover with Jews before:
+**day and night are equal**
+(vernal equinox),
+deposition follows.
+
+### M84-8 — GITSEW CONTAINS AN EXPLICIT ASTRONOMICAL/LIGHT-CYCLE THRESHOLD
+
+The liturgical clock uses:
+
+**day length = night length**
+→ seasonal boundary.
+
+### M84-9 — THIS IS A TRUE CALENDAR PHASE MARKER, NOT A GATE CYCLE
+
+Important distinction.
+
+The text does not say:
+- equinox opens a physical portal;
+- sky geometry changes;
+- world layers meet.
+
+It uses celestial/light-cycle observation to regulate festival timing.
+
+---
+
+# CANONS V–X
+## participation, Eucharist and exclusion produce an access-state network
+
+Canon VI:
+a cleric refusing Eucharist must state valid cause.
+
+Canon VII:
+believer entering church, hearing Scripture but refusing prayer/Eucharist can be expelled.
+
+Canon VIII:
+association/prayer with one excluded from mysteries can itself trigger exclusion.
+
+Canon IX:
+praying with expelled clergy transmits disciplinary consequence.
+
+Canon X:
+an expelled person entering another city without permission and receiving office is rejected along with unauthorized ordainer.
+
+### M84-10 — GITSEW BUILDS A MULTI-STATE ACCESS SYSTEM
+
+Possible states:
+
+**inside + full participation**
+→ **inside but nonparticipating**
+→ **excluded**
+→ **excluded but improperly associated with**
+→ **unauthorized entry elsewhere**
+→ **possible controlled restoration**.
+
+### M84-11 — PHYSICAL ENTRY AND PERMISSION ARE DIFFERENT VARIABLES
+
+Canon X is especially important.
+
+A person may:
+**physically enter another city**
+
+but still lack:
+**valid institutional access/authorization**.
+
+Cross-link Tizaz:
+presence ≠ full access.
+
+### M84-12 — ACCESS STATUS CAN PROPAGATE THROUGH ASSOCIATION
+
+In this legal system:
+contact/association with excluded persons can change another person's status.
+
+This resembles a **state-propagation rule**,
+not a physical contagion.
+
+---
+
+# CANONS XI–XII
+## territorial continuity and permission
+
+A bishop:
+- may not simply abandon one diocese for another;
+- exceptional transfer requires collective judgment/benefit.
+
+Presbyter/deacon:
+- may not migrate permanently without bishop's permission;
+- can lose office-status and return only as layperson.
+
+### M84-13 — PERSON / OFFICE / TERRITORY ARE SEPARATE VARIABLES
+
+Same individual can change:
+
+**person remains same**
+while
+**office-state changes**
+depending on territory/permission.
+
+This is highly useful to projection/state analysis.
+
+### M84-14 — CROSSING A GEOGRAPHIC BOUNDARY DOES NOT AUTOMATICALLY CARRY AUTHORITY WITH THE PERSON
+
+Authority is:
+context-dependent.
+
+This is a strong negative control against:
+**carrier automatically transports every property/state**.
+
+---
+
+# CANONS XIII–XVII
+## eligibility-state rules
+
+These rules govern:
+- marriage history;
+- surety;
+- bodily condition;
+- self-castration;
+- sexual misconduct;
+- theft;
+- false oath;
+- readers/psalm-singers.
+
+### Ethical control
+
+Some rules reflect:
+- ancient gender assumptions;
+- disability/body assumptions;
+- ancient household/sexual law.
+
+They are historical evidence,
+not modern ethical policy.
+
+### M84-15 — BODILY STATE, SOCIAL STATE AND OFFICE-STATE ARE TREATED AS SEPARATE CLASSIFICATION LAYERS
+
+This reinforces:
+system identity can have multiple independent state variables.
+
+---
+
+# CANON XVIII
+## authority must not be converted into violence
+
+Clergy who strike people to create fear:
+deposed.
+
+The canon appeals to Jesus not retaliating when struck/reviled.
+
+### M84-16 — OPERATOR AUTHORITY ≠ FORCE OUTPUT
+
+Important systems distinction.
+
+A legitimate operator is not defined by maximum power.
+
+---
+
+# CANONS XIX–XXIV
+## office loss, bribery, political capture, schism, reinstatement and transfer
+
+These canons regulate:
+- reoccupation of office after deposition;
+- bribery;
+- secular-prince capture of church office;
+- unauthorized altar/community splitting;
+- cross-bishop reinstatement;
+- reception of outside clergy.
+
+### M84-17 — GITSEW REPEATEDLY DISTINGUISHES:
+**ROLE**
+from
+**PERSON**
+from
+**VALID AUTHORIZATION**.
+
+A person can:
+- still exist;
+- still enter a place;
+- still claim title;
+
+while the system refuses the role-state.
+
+This is important for repeated-name / recurring-person analysis.
+
+---
+
+# CANON XXV
+# MAJOR NETWORK STRUCTURE
+## many bishops recognize one metropolitan, but the metropolitan also requires the many
+
+The bishops of a province:
+- recognize one first/metropolitan;
+- do not undertake important work without him.
+
+But:
+the metropolitan also shall not act
+without consent of the bishops.
+
+Each bishop:
+- works in own assigned territory;
+- cannot ordain in another territory without local consent.
+
+### M84-18 — THIS IS A TRUE DISTRIBUTED NETWORK WITH A CENTRAL COORDINATION NODE AND FEEDBACK CONSTRAINT
+
+Geometry/function:
+
+**many local bishops**
+↔
+**one metropolitan**
+↔
+**many local bishops**.
+
+The central node:
+coordinates,
+but is not absolute.
+
+### M84-19 — CENTRALIZATION AND DISTRIBUTION COEXIST
+
+This is a very useful JANUS/Vardath-style control:
+
+**one centre**
+does not imply
+**all agency originates only at centre**.
+
+The local nodes retain:
+- territory;
+- work;
+- consent power.
+
+### M84-20 — NETWORK BOUNDARIES ARE TERRITORIAL AND PERMISSION-BASED
+
+Each node has:
+- local domain;
+- external-action restrictions.
+
+This is a genuine network-topology text,
+but ecclesiastical, not physical.
+
+---
+
+# CANON XXVI
+## failed operator versus failed receiver
+
+If bishop fails to teach:
+operator corrected/removed.
+
+If bishop teaches adequately but people refuse:
+responsibility can shift to local clergy/people.
+
+### M84-21 — SYSTEM FAILURE CAN OCCUR AT TRANSMITTER OR RECEIVER
+
+This is a strong information-system control.
+
+Do not blame:
+- source;
+- carrier;
+- receiver
+
+without identifying where failure occurs.
+
+---
+
+# CANON XXVII
+## two synods each year = periodic synchronization
+
+Bishops meet:
+**twice yearly**.
+
+Schodde gives:
+- first around middle of Pentecost;
+- second on 18 Tekemt / October.
+
+Purpose:
+- examine church order;
+- resolve heresies/offences.
+
+### M84-22 — DISTRIBUTED NODES PERIODICALLY RE-SYNCHRONIZE
+
+This is a genuine:
+**network clock**.
+
+Local nodes operate,
+then reconvene at set intervals.
+
+### M84-23 — RECURRING TIME STRUCTURE HERE IS ADMINISTRATIVE, NOT COSMIC
+
+Do not infer:
+two annual gate events.
+
+---
+
+# CANONS XXVIII–XXXI
+## church property / private property / poor-relief routing
+
+Rules distinguish:
+- church property;
+- bishop's private property;
+- family/property inheritance;
+- poor relief;
+- distribution through presbyters/deacons.
+
+### M84-24 — OWNERSHIP BOUNDARIES ARE EXPLICITLY MAINTAINED TO PREVENT STATE-MERGING
+
+This is highly relevant methodologically.
+
+Two adjacent stores:
+**bishop property**
+and
+**church property**
+must remain identifiable.
+
+### M84-25 — RESOURCE FLOW HAS A CENTRAL CUSTODIAN BUT DISTRIBUTED DELIVERY CHANNELS
+
+Bishop:
+central steward.
+
+Elders/deacons:
+distribution pathways.
+
+Poor/community:
+destinations.
+
+This is:
+**central pool → intermediary nodes → distributed recipients**.
+
+Again:
+institutional network,
+not physical current.
+
+---
+
+# CANONS XXXII–XXXVII
+## conduct rules and state restoration
+
+These include:
+- theatre/intoxication;
+- participation in rival rites;
+- marriage/food purity;
+- receiving repentant persons;
+- festival food;
+- tavern conduct;
+- insulting clergy/disabled persons.
+
+### M84-26 — REPENTANCE CAN CHANGE ACCESS STATE
+
+Canon XXXV specifically requires receiving one who repents.
+
+Thus:
+exclusion is not always permanent.
+
+This gives:
+
+**fault**
+→ **exclusion / altered state**
+→ **repentance**
+→ **readmission**.
+
+A genuine reversible permission-state cycle.
+
+---
+
+# CANONS XXXVIII–XLI
+## teaching, poverty, false writings, accusation
+
+Canon XXXVIII:
+teachers must teach.
+
+Canon XXXIX:
+poor clergy must not be neglected.
+
+Canon XL:
+false/heretical writings introduced as sacred writings are rejected.
+
+Canon XLI:
+proven misconduct removes clergy status.
+
+### M84-27 — INFORMATION ITSELF HAS AN ADMISSION FILTER
+
+Canon XL is effectively:
+**document/input validation**.
+
+A text may:
+physically enter the church,
+yet be denied:
+**sacred-information status**.
+
+Cross-link:
+public/secret books in 4 Ezra,
+Tizaz sign-validation.
+
+---
+
+# CANONS XLII–L
+## denial, blood-food rules, fasting/calendar, cross-community prayer, violence, ordination, church property
+
+This block includes:
+- denial of Christ/office;
+- food containing life-blood;
+- Sabbath/Lord's-day fasting;
+- Passover/fasting relations;
+- synagogue/heretical worship boundaries;
+- violence;
+- re-ordination;
+- forty-day/weekly fasting;
+- theft of church oil/wax/vessels.
+
+### M84-28 — TIME, FOOD, OFFICE AND COMMUNITY CONTACT ARE ALL SEPARATE STATE AXES
+
+Gitsew does not collapse religious identity into a single variable.
+
+It tracks:
+- calendar;
+- ritual participation;
+- resource handling;
+- speech/confession;
+- office;
+- association.
+
+This is a sophisticated classification system.
+
+---
+
+# CANON XLVI
+## sexual-violence rule — historical source, NOT modern policy
+
+Schodde's canon includes a coercive rule requiring the perpetrator of sexual violence to remain with the woman.
+
+### CONTROL NOTE
+
+This reflects harmful ancient legal assumptions.
+
+It must not be treated as:
+- survivor-centered ethics;
+- valid modern safeguarding;
+- required relationship/marriage policy.
+
+Modern application must prioritize:
+- survivor autonomy;
+- safety;
+- consent;
+- medical care;
+- legal protection.
+
+### M84-29 — CANONICAL STATUS DOES NOT TURN EVERY HISTORICAL SOCIAL RULE INTO A UNIVERSAL MECHANICAL OR MORAL LAW
+
+Important methodological control for the whole 88-book project.
+
+---
+
+# CANONS LI–LII
+# MAJOR VALIDATION / ADJUDICATION STRUCTURE
+
+Accused bishop:
+- called once;
+- called second time;
+- **two bishops** sent;
+- called third time;
+- **two bishops** sent again;
+- then judgment can proceed.
+
+Testimony:
+- single witness insufficient;
+- "two and three" witnesses required.
+
+Office:
+- bishopric not hereditary;
+- cannot simply pass to brother/son/kin.
+
+### M84-30 — GITSEW HAS A MULTI-STAGE ERROR-CHECKING PROTOCOL
+
+Sequence:
+
+**accusation**
+→ **summons 1**
+→ **summons 2 + paired messengers**
+→ **summons 3 + paired messengers**
+→ **judgment**.
+
+This is one of the clearer institutional:
+**redundancy before irreversible state change**
+systems.
+
+### M84-31 — TWO/THREE FUNCTIONS HERE AS VALIDATION THRESHOLD
+
+Again:
+number meaning is explicit.
+
+Do not force it into hidden cosmology.
+
+### M84-32 — OFFICE IS EXPLICITLY NON-HEREDITARY
+
+One node cannot simply:
+replicate its institutional state into kin.
+
+This is a valuable control against assuming:
+similar/repeated figures imply biological succession.
+
+---
+
+# CANON LII — BODY DEFECT / SOUL DEFECT LANGUAGE
+
+The canon allows some bodily impairments while excluding other states in ways that reflect ancient assumptions.
+
+It explicitly distinguishes:
+**bodily defect**
+from
+**defect of soul**.
+
+### M84-33 — SOURCE ITSELF DISTINGUISHES PHYSICAL FORM FROM MORAL/ROLE STATE
+
+That conceptual distinction is useful.
+
+But:
+its disability exclusions must not be carried forward as normative ethics.
+
+---
+
+# CANON LIII
+## recently baptized person must not immediately become bishop
+
+A recent convert:
+- cannot instantly become teacher/bishop;
+- must first be tested.
+
+### M84-34 — IDENTITY TRANSITION DOES NOT IMMEDIATELY GRANT EVERY PERMISSION
+
+Cross-link Tizaz baptism.
+
+**state change**
+≠
+**full role authorization**.
+
+This is another layered-access control.
+
+---
+
+# CANON LIV
+## military role and clerical role separated
+
+Clergy combining military and priestly calling:
+restricted/deposed.
+
+### M84-35 — ONE PERSON CAN CARRY MULTIPLE POTENTIAL ROLES, BUT THE SYSTEM MAY DECLARE THEM INCOMPATIBLE
+
+Again:
+person ≠ role.
+
+---
+
+# CANONS LV–LVI / SCHODDE LV–LVII
+## recognized-book list closes the system
+
+Schodde's closing sequence:
+
+Canon LV:
+introduces which Old/New Testament books are received.
+
+Canon LVI:
+lists:
+- Torah;
+- Joshua/Judges/Ruth;
+- Kings/Chronicles;
+- Ezra;
+- Job;
+- Esther;
+- Tobit;
+- Ecclesiastes;
+- Psalms;
+- Proverbs;
+- Ecclesiasticus;
+- Song of Songs;
+- Twelve;
+- Isaiah/Jeremiah/Daniel/Ezekiel;
+- Wisdom;
+- Judith;
+- Kufale/Jubilees material;
+- Jesus ben Sirach;
+- Gospels;
+- Acts;
+- Catholic epistles;
+- Pauline letters;
+- Apocalypse;
+- two Clement letters.
+
+Schodde LVII:
+closing command/benediction concerning the Synodus.
+
+### M84-36 — INFORMATION CANON ITSELF IS AN ACCESS-BOUNDARY SYSTEM
+
+The list defines:
+**recognized sacred corpus**
+vs
+**other writings**.
+
+Cross-link Canon XL:
+false writings rejected.
+
+Thus the unit ends with:
+**information-boundary closure**.
+
+### M84-37 — THE CANON LIST IS A HISTORICAL WITNESS, NOT A SIMPLE TIMELESS 81-BOOK TABLE
+
+Ethiopian canon lists vary.
+
+Do not use this one list to:
+- erase later broader-canon traditions;
+- claim all Ethiopian manuscripts enumerate identically;
+- flatten Sinodos transmission.
+
+---
+
+# CANON LVII / FINAL BENEDICTION
+## obedience → peace / eternal-life place
+
+The ending promises:
+- peace;
+- help;
+- unstained life;
+- a place in eternal life.
+
+### M84-38 — "PLACE IN ETERNAL LIFE" IS DESTINATION/REWARD LANGUAGE, NOT PHYSICAL UPPER-WORLD CARTOGRAPHY
+
+No route geometry is supplied.
+
+---
+
+# GITSEW FULL PROCESS MAP
+
+apostolic/Clementine authority frame
+→ ordination topology defined
+→ altar cargo filtered
+→ non-altar goods rerouted
+→ household/office boundaries regulated
+→ Passover tied to equinox
+→ Eucharistic participation rules
+→ exclusion network established
+→ association can alter status
+→ unauthorized cross-city re-entry blocked
+→ territorial office continuity enforced
+→ eligibility classifications applied
+→ violent authority restricted
+→ bribery/political capture rejected
+→ unauthorized alternate altar/community rejected
+→ reinstatement controlled
+→ local bishops organized under metropolitan
+→ metropolitan also constrained by local bishops
+→ territorial ordination boundaries maintained
+→ transmitter/receiver responsibility separated
+→ bishops synchronize twice yearly
+→ church/private property separated
+→ central resources redistributed through intermediary clergy
+→ conduct rules applied
+→ repentance can restore access
+→ false sacred information filtered
+→ calendar/food/contact rules applied
+→ church goods protected
+→ accusation proceeds through repeated summons
+→ paired messengers provide redundancy
+→ two/three witness threshold
+→ hereditary office blocked
+→ novice-to-bishop shortcut blocked
+→ incompatible offices separated
+→ recognized book corpus listed
+→ final peace/eternal-life benediction.
+
+---
+
+# CROSS-TEXT COMPARISON WITH VARDATH
+
+## 1. Gate-as-permission versus gate-as-geometry
+
+Tizaz:
+- guarded church gates;
+- catechumen access;
+- heaven gates in vision;
+- sea gate as containment boundary.
+
+Gitsew:
+- fewer literal gate terms;
+- but extremely strong **permission-state architecture**.
+
+### M84-39 — GITSEW SHOWS THAT "ACCESS" CAN EXIST WITHOUT A PHYSICAL APERTURE
+
+A person can be:
+- admitted;
+- excluded;
+- restored;
+- unauthorized in another city;
+
+without any special gate structure.
+
+This is a major anti-overfitting control.
+
+---
+
+# 2. Central node versus distributed network
+
+Canon XXV:
+
+local bishops
+↔ metropolitan
+↔ local bishops.
+
+### M84-40 — THIS IS A CLEAN EXAMPLE OF A ONE-CENTRE / MANY-NODE SYSTEM THAT IS NOT A PHYSICAL WORLD MACHINE
+
+Important for:
+- JANUS analogies;
+- Vardath node maps;
+- tree/network imagery.
+
+Structural similarity alone does not establish cosmophysical identity.
+
+---
+
+# 3. Sorted cargo / classified inputs
+
+Canon II:
+
+altar accepts only certain inputs;
+others redirected elsewhere.
+
+### M84-41 — GITSEW STRONGLY SUPPORTS THE GENERAL SYSTEMS PRINCIPLE:
+**BOUNDARIES CAN SORT BY CARGO CLASS**
+
+This is formally relevant to the Vardath gate model.
+
+But:
+the mechanism is ritual law,
+not physical selectivity.
+
+---
+
+# 4. Reversible access-state cycle
+
+Fault:
+→ exclusion
+→ repentance
+→ readmission.
+
+### M84-42 — SYSTEM STATE CAN CHANGE WITHOUT PERSON IDENTITY CHANGING
+
+This strongly supports the project's broader:
+**same entity / different state**
+method.
+
+---
+
+# 5. Timekeeping
+
+Passover:
+- equinox constraint.
+
+Synods:
+- twice per year.
+
+Fasts:
+- weekly;
+- forty-day;
+- festival restrictions.
+
+### M84-43 — GITSEW HAS MULTIPLE NESTED RITUAL CLOCKS
+
+But none are evidence for:
+- 138-year gate cycle;
+- 552-year phase;
+- physical world-turn timing.
+
+Keep them as liturgical clocks.
+
+---
+
+# 6. Information-channel controls
+
+Canon XL:
+false writings rejected.
+
+Closing:
+recognized writings listed.
+
+Canon LI–LII:
+evidence thresholds.
+
+### M84-44 — INFORMATION HAS:
+**INPUT FILTER**
++ **VALIDATION THRESHOLD**
++ **AUTHORIZED CORPUS**.
+
+This is one of Gitsew's strongest conceptual contributions.
+
+---
+
+# CHERUB / QUETZALCOATL / FEATHERED-SERPENT / SQUATTER-MAN CHECK
+
+Direct Gitsew evidence:
+
+- no detailed cherub morphology;
+- no wing system;
+- no serpent/dragon mechanism;
+- no anthropomorphic environmental field;
+- no mountain-person transformation;
+- no broad sky lattice;
+- no axial rod/throat.
+
+### M84-45 — GITSEW IS A STRONG NEGATIVE CONTROL FOR CREATURE/PROJECTION HUNTING
+
+The text contains many:
+- numbers;
+- thresholds;
+- central nodes;
+- repeated permissions;
+- seasonal rules.
+
+Yet none need:
+cherub/serpent/Squatter-Man interpretation.
+
+This is precisely why function-first analysis matters.
+
+---
+
+# WATER / SEA / FIRE / WIND / LIGHT CHECK
+
+Direct cosmophysical material is minimal.
+
+## water
+Primarily:
+- Eucharistic/food context only indirectly;
+- no world-water architecture.
+
+## sea
+No meaningful sea cosmography.
+
+## fire
+No major cosmic-fire mechanism.
+
+## wind
+No cosmographic wind-support system.
+
+## light
+Lamp oil appears as permitted altar input,
+not cosmological light field.
+
+### M84-46 — GITSEW DOES NOT ADD TO THE BROAD-COVER / THROAT / REOPENING PHYSICAL CHAIN
+
+Current strongest chain remains:
+
+**1/3 Meqabyan**
+= broad wind-supported covering;
+
+**4 Ezra 7**
+= narrow static throat;
+
+**Zechariah 14**
+= opening/passage/bilateral outflow.
+
+Gitsew contributes:
+**permission, routing, validation and network-state logic**,
+not missing mechanical geometry.
+
+---
+
+# STRICT FINGERTRAP TEST — GITSEW / GESSEW
+
+Criteria:
+
+1. broad/open distributed support structure;
+2. same structure retains continuity;
+3. angle/contraction change;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Result
+
+Broad support:
+**absent physically**.
+
+Structural contraction:
+**absent**.
+
+Throat:
+**absent**.
+
+Physical transfer:
+**absent**.
+
+Reopening:
+**absent**.
+
+### Verdict
+
+**Strict negative.**
+
+Do not manufacture a fingertrap from:
+- 2/3 bishops;
+- one metropolitan;
+- altar filtering;
+- church exclusion;
+- equinox;
+- repeated summons.
+
+Those are institutional mechanics.
+
+---
+
+# NUMBER / TIMING REGISTER
+
+- bishop ordination:
+  **2 or 3 bishops**;
+- lower clergy:
+  **1 bishop**;
+- unauthorized schismatic appeal:
+  requests repeated up to **3 times** in one rule;
+- bishops' synods:
+  **2 per year**;
+- adjudication:
+  repeated summons;
+  **2 bishops** as messengers;
+  **2 or 3** witness standard;
+- self-castrating layman:
+  **3-year** exclusion in Schodde;
+- fasting:
+  **40 days**;
+  fourth/sixth weekdays;
+- theft restitution:
+  **fivefold**;
+- traditional Gitsew:
+  **56 canons**;
+- Schodde segmentation:
+  **57 items**.
+
+### M84-47 — EVERY IMPORTANT NUMBER HERE HAS A DIRECT LEGAL/LITURGICAL FUNCTION
+
+No hidden cosmological arithmetic should be inferred from these counts.
+
+---
+
+# ETHICAL / HISTORICAL CONTROLS
+
+1. Gitsew is a historical church-order text.
+2. Traditional canonical status does not require direct modern enforcement of every penalty.
+3. Ancient anti-Jewish boundary rules must not be turned into antisemitism or collective blame.
+4. Sexual-violence material must not override survivor autonomy, consent, medical care or civil law.
+5. Slavery/servitude assumptions belong to historical context, not modern human-rights norms.
+6. Disability exclusions/ableist assumptions are historical, not a valid claim that disability is moral defect or impurity.
+7. Excommunication/deposition rules are not substitutes for modern safeguarding, evidence standards, employment law or criminal law.
+8. Apostolic literary attribution must be distinguished from historical authorship.
+9. Sinodos manuscripts vary in order/content.
+10. Gitsew must remain distinct from:
+   - Tizaz;
+   - Abtilis;
+   - Serʿata Seyon.
+11. The 56/57 discrepancy is segmentation, not a different cosmology or lost canon.
+12. The closing book list is one historical witness among varying Ethiopian canon lists.
+
+---
+
+# SOURCES LOGGED — GITSEW / GESSEW
+
+## Primary Ethiopic-edition / English-translation line
+
+### George H. Schodde, 1885
+**The Apostolic Canons, Translated from the Ethiopic**
+Journal of the Society of Biblical Literature and Exegesis 5:
+https://www.jstor.org/stable/3268629
+
+Accessible scan:
+https://agape-biblia.org/literatura/Constitutions-of-the-Holy-Apostles.pdf
+
+Schodde translation is based on:
+
+### Winand Fell, 1871
+**Canones Apostolorum Aethiopice**
+Leipzig: Brockhaus.
+
+Google Play/scan record:
+https://play.google.com/store/books/details?id=OaAOAAAAQAAJ
+
+Bibliographic record:
+https://lawcat.berkeley.edu/record/333354
+
+## Ethiopian canon / identity control
+
+Roger W. Cowley,
+**The Biblical Canon of the Ethiopian Orthodox Church Today**:
+https://www.islamic-awareness.org/bible/text/canon/ethiopican
+
+## Modern identity / manuscript / source-control survey
+
+**Gitsew Study Guide — the traditional 56 Apostolic Canons within the Geʽez Sinodos**:
+https://elroidigital.org/book-of-gitsew-study-guide.html
+
+## Comparative Apostolic Canons
+
+New Advent:
+https://www.newadvent.org/fathers/3820.htm
+
+CCEL / Apostolic Constitutions:
+https://ccel.org/ccel/schaff/anf07/anf07.ix.ix.vi.html
+
+---
+
+# SECTION 84 — GITSEW / GESSEW COMPLETE
+
+## Strongest new findings
+
+1. **Gitsew/Gessew is securely the traditional 56-canons Apostolic Canons division of the Ethiopic Sinodos, distinct from Tizaz and Abtilis.**
+2. **Schodde's 1885 English translation from Fell's Geʽez edition reaches 57 because the closing canon-list material is segmented differently; this is a numbering/segmentation issue, not a separate work.**
+3. **Canon I gives explicit authorization topology: two or three bishops ordain one bishop, while one bishop ordains lower clerical offices. This is institutional validation, not hidden cosmological 2/3→1 geometry.**
+4. **Canon II is the strongest gate-like systems result: the altar is a selective input boundary. Certain cargo may enter altar-space, while other produce is routed to another receiving node and redistributed.**
+5. **This formally supports Vardath's principle that a boundary can sort cargo, while remaining entirely liturgical rather than physical gate engineering.**
+6. **The Passover rule uses the vernal equinox—day/night equality—as a real light-cycle/calendar threshold, but there is no claim that the equinox opens a physical gate.**
+7. **Canons VI–X build a genuine access-state system: full participation, nonparticipation, exclusion, prohibited association, unauthorized re-entry elsewhere and controlled status recognition.**
+8. **Physical entry and valid access are therefore explicitly different variables—one may enter another city while lacking legitimate institutional permission.**
+9. **Territory, person and office are distinct state layers: crossing into another district does not automatically carry authority with the individual.**
+10. **Canon XXV is the standout network result: many local bishops recognize one metropolitan, yet the metropolitan cannot act without the bishops. This is a distributed network with a central coordination node and feedback constraint, not an absolute one-way hierarchy.**
+11. **That gives an excellent control for the wider project: a one-centre/many-node structure can arise from institutional organization without implying a physical world-machine.**
+12. **Canon XXVI cleanly distinguishes transmitter failure from receiver failure, strengthening the research rule that source, carrier and recipient must be diagnosed separately.**
+13. **Canon XXVII supplies a genuine synchronization clock: distributed bishops reconvene twice yearly. It is an administrative network clock, not evidence for a cosmic gate cycle.**
+14. **Canons XXVIII–XXXI distinguish church property from private property while routing shared resources from a central steward through elders/deacons to distributed recipients—another central-pool→intermediary→field model.**
+15. **Repentance can reverse an exclusion state, showing that system permissions can change while personal identity remains continuous.**
+16. **Canon XL treats writings themselves as filtered inputs: physical presence of a document does not confer sacred-information status.**
+17. **Canons LI–LII give a genuine validation protocol: repeated summons, paired messengers, multiple witnesses and delayed judgment before irreversible status change.**
+18. **The same closing material rejects hereditary episcopal transmission: role-state cannot simply be copied biologically from one node to kin.**
+19. **The closing recognized-book list functions as an information boundary, complementing the earlier false-writing filter.**
+20. **Gitsew contains almost no useful direct water/sea/fire/wind/wing/serpent/cherub/rod cosmography. This is itself important: numerous numbers, boundaries and central-node structures occur without any reason to identify them with the Vardath phenomenon.**
+21. **It therefore provides a strong negative control against overfitting institutional geometry into cosmophysical geometry.**
+22. **Strict fingertrap test is fully negative: no broad support structure contracts, no throat forms, no physical transfer occurs through such a structure, and no reopening is described.**
+23. **The physical cross-text chain remains unchanged: 1/3 Meqabyan = broad wind-supported covering; 4 Ezra 7 = narrow static throat; Zechariah 14 = opening/passage/bilateral outflow.**
+24. **Gitsew's real contribution is the control layer: cargo sorting, permission states, central/distributed coordination, validation thresholds, periodic synchronization and identity-through-role-change.**
+
+## Next live block
+
+**Section 85 — Abtilis / Abtelis**
+
+Required protocol:
+- re-check all three archives and actual Part 2 tail before beginning;
+- establish the exact Abtilis recension and numbering before mapping;
+- keep Abtilis distinct from Gitsew and Tizaz;
+- preserve **80/81/82/83** numbering or segmentation differences where witnesses differ;
+- use direct Geʽez / Syriac-Coptic comparative material where verifiable rather than assuming the ordinary Greek 85 Apostolic Canons are identical;
+- read the whole accessible unit before interpreting it;
+- prioritize:
+  - ordination hierarchy;
+  - baptism;
+  - Eucharist;
+  - church doors/admission/exclusion;
+  - altar/offering rules;
+  - calendrical/Passover rules;
+  - canonical book list;
+  - any heaven/earth/water/sea/fire/wind/light/wing/serpent/rod/gate language;
+  - resurrection/afterlife;
+  - central↔distributed structures;
+- explicitly compare Abtilis with Gitsew where the same canonical rule appears in changed form;
+- distinguish recension expansion from new cosmology;
+- apply strict fingertrap criteria only after ordinary legal/liturgical function is established;
+- append only verifiable material and verify the actual tail after append.
