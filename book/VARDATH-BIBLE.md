@@ -3504,3 +3504,26 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **2.** He raised me beside him, took me by the hand, and led me near the Throne of Glory. He showed me the souls that had been created and had returned; they were flying above the Throne of Glory before the Holy One, blessed be He.
 
 **3.** Afterward I went and interpreted the verse: “For spirit from before Me is wrapped, and the souls I have made.” The latter words refer to the souls of the righteous who have not yet been created in bodies.”
+
+
+## 3 Enoch 44
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and I will show you how the souls of the wicked descend, and how the souls of the intermediate ones stand.”
+
+**2.** He said to me, “The souls of the wicked descend to Sheol by the hand of two angels of destruction. Their names are Za'afiel and Samkhiel.
+
+**3.** “Samkhiel is appointed over the souls of the intermediate ones, to support them and purify them from sin through the abundant mercy of the Omnipresent. Za'afiel is appointed over the souls of the wicked, to bring them down from before the Holy One, blessed be He, from the judgment of the Shekinah to Sheol, to judge them in the fire of Gehenna with rods of burning coals.”
+
+**4.** I went with him. He took me by the hand and showed me all of them with the fingers of his hand.
+
+**5.** I saw that the appearance of their faces was like the faces of human beings, and their bodies like eagles. The radiance of the intermediate ones was greenish because their deeds contained blemishes, until they were purified from their iniquity by fire.
+
+**6.** The radiance of the souls of the wicked was like the bottom of a cooking pot because of the multitude of their evil deeds.
+
+**7.** I saw the souls of the fathers of the world—Abraham, Isaac, and Jacob—and the rest of the righteous, when they were raised from their graves and ascended to the firmament. They prayed before the Holy One, blessed be He, saying, “Master of the universe, how long will You sit upon a throne like a mourner sitting in the days of mourning, with Your right hand behind You? Why do You not redeem Your children and reveal Your kingdom in the world? Why do You not have compassion upon Your children who serve as slaves among the nations, and upon Your right hand behind You, by which You stretched out heaven and the heaven of heavens?”
+
+**8.** At that hour the Holy One, blessed be He, answered each of them and said, “Because these wicked ones have sinned before Me in such and such ways, acted perversely before Me in such and such ways, and rebelled before Me in such and such ways—how can I save My children from among the nations and reveal My kingdom in the world before the eyes of the nations, to save My great right hand that has fallen through their deeds?”
+
+**9.** At that hour He called me and said, “Metatron, My servant, take the books and read their deeds.” Thirty-six excisions were found that every wicked person had transgressed. Beyond this, they had transgressed all the letters of Torah, as it is written, “All Israel has transgressed Your Torah.” The witness explains this as transgression from Aleph to Tav, with thirty-six excisions against every letter.
+
+**10.** Immediately Abraham wept by himself, Isaac by himself, and Jacob by himself. Then the Holy One, blessed be He, said to them, “Abraham My beloved, Isaac My chosen one, Jacob My firstborn—now I cannot save them from among the nations of the world.” At once Michael, prince of Israel, cried out and wept with a loud voice, as it is written: “Why, YHWH, do You stand far off?””
