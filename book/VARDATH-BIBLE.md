@@ -3784,3 +3784,82 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **4.** And I went out.
 
 **5.** And it came to pass when I went out, that before I succeeded in getting out in front of the door of the court, there came a sound of a [great] thunder and burnt him and his house, and everything whatsoever in his house, down to the ground, forty cubits.
+
+
+## Apocalypse of Abraham 9
+
+**1.** Then a voice came to me speaking twice: “Abraham, Abraham!”
+
+**2.** And I said: “Here am I!”
+
+**3.** And He said: “Behold, it is I; fear not, for I am before the worlds, and a mighty God who hath created the light of the world. I am a shield over thee, and I am thy helper.”
+
+**4.** “Go, take me a young heifer of three years old, and a she-goat of three years old, and a ram of three years old, and a turtledove and a pigeon, and bring me a pure sacrifice.”
+
+**5.** “And in this sacrifice I will lay before thee the ages (to come), and make known to thee what is reserved, and thou shalt see great things which thou hast not seen (hitherto); because thou hast loved to search me out, and I have named thee my Friend.”
+
+**6.** “But abstain from every form of food that proceedeth out of the fire, and from the drinking of wine, and from anointing (thyself) with oil, forty days.”
+
+**7.** “And then set forth for me the sacrifice which I have commanded thee, in the place which I will shew thee, on a high mountain, and there I will shew thee the ages which have been created and established, made and renewed, by my Word.”
+
+**8.** “And I will make known to thee what shall come to pass in them on those who have done evil and (practised) righteousness in the generation of men.”
+
+## Apocalypse of Abraham 10
+
+**1.** And it came to pass, when I heard the voice of Him who spake such words to me, [and] I looked hither and thither and lo! there was no breath of a man.
+
+**2.** And my spirit was affrighted, and my soul fled from me, and I became like a stone, and fell down upon the earth, for I had no more strength to stand on the earth.
+
+**3.** And while I was still lying with my face upon the earth, I heard the voice of the Holy One speaking: “Go, Jaoel, and by means of my ineffable Name raise me yonder man, and strengthen him (so that he recover) from his trembling.”
+
+**4.** And the angel came, whom He had sent to me, in the likeness of a man, and grasped me by my right hand, and set me up upon my feet, and said to me:
+
+**5.** “Stand up, [Abraham,] Friend of God who loveth thee; let not the trembling of man seize thee! For, lo! I have been sent to thee to strengthen thee and bless thee in the name of God—who loveth thee—the Creator of the celestial and terrestrial.”
+
+**6.** “Be fearless and hasten to Him. I am called Jaoel by Him who moveth that which existeth with me on the seventh expanse upon the firmament, a power in virtue of the ineffable Name that is dwelling in me.”
+
+**7.** “I am the one who hath been given to restrain, according to His commandment, the threatening attack of the living creatures of the Cherubim against one another, and teach those who carry Him the song of the seventh hour of the night of man.”
+
+**8.** “I am ordained to restrain the Leviathan, for unto me are subject the attack and menace of every single reptile.”
+
+**9.** “[I am he who hath been commissioned to loosen Hades, to destroy him who stareth at the dead.]”
+
+**10.** “I am the one who was commissioned to set on fire thy father’s house together with him, because he displayed reverence for dead (idols).”
+
+**11.** “I have been sent to bless thee now, and the land which the Eternal One, whom thou hast invoked, hath prepared for thee, and for thy sake have I wended my way upon the earth.”
+
+**12.** “Stand up, Abraham! Go without fear; be right glad and rejoice; and I am with thee! For eternal honour hath been prepared for thee by the Eternal One. Go, fulfil the sacrifices commanded.”
+
+**13.** “For lo! I have been appointed to be with thee and with the generation prepared (to spring) from thee; and with me Michael blesseth thee for ever. Be of good cheer, go!”
+
+## Apocalypse of Abraham 11
+
+**1.** And I rose up and saw him who had grasped me by my right hand and set me up upon my feet.
+
+**2.** And the appearance of his body was like sapphire, and the look of his countenance like chrysolite, and the hair of his head like snow, and the turban upon his head like the appearance of the rainbow, and the clothing of his garments like purple; and a golden sceptre was in his right hand.
+
+**3.** And he said to me: “Abraham!”
+
+**4.** And I said: “Here am I, thy servant.”
+
+**5.** And he said: “Let not my look affright thee, nor my speech, that thy soul be not perturbed. Come with me and I will go with thee, until the sacrifice, visible, but after the sacrifice, invisible for ever. Be of good cheer, and come!”
+
+## Apocalypse of Abraham 12
+
+**1.** And we went, the two of us together, forty days and nights, and I ate no bread, and drank no water, because my food was to see the angel who was with me, and his speech—that was my drink.
+
+**2.** And we came to the Mount of God, the glorious Horeb.
+
+**3.** And I said to the angel: “Singer of the Eternal One! Lo! I have no sacrifice with me, nor am I aware of a place of an altar on the mountain: how can I bring a sacrifice?”
+
+**4.** And he said to me: “Look round!”
+
+**5.** And I looked round, and lo! there were following us all the prescribed sacrificial (animals)—the young heifer, and the she-goat, and the ram, and the turtle-dove, and the pigeon.
+
+**6.** And the angel said to me: “Abraham!”
+
+**7.** I said: “Here am I.”
+
+**8.** And he said to me: “All these slaughter, and divide the animals into halves, one against the other, but the birds do not sever; and give to the men, whom I will shew thee, standing by thee, for these are the altar upon the Mountain, to offer a sacrifice to the Eternal.”
+
+**9.** “But the turtledove and the pigeon give to me, for I will ascend upon the wings of the bird, in order to shew thee in heaven, and on the earth, and in the sea, and in the abyss, and in the under-world, and in the Garden of Eden, and in its rivers and in the fulness of the whole world and its circle—thou shalt gaze in them all.”
