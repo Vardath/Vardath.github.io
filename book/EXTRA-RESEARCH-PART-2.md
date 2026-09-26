@@ -57984,3 +57984,775 @@ Required protocol:
 - distinguish recension expansion from new cosmology;
 - apply strict fingertrap criteria only after ordinary legal/liturgical function is established;
 - append only verifiable material and verify the actual tail after append.
+
+
+---
+
+# SECTION 85 — ABTILIS / ABTELIS
+## Source-critical Sinodos pass — variable 80/81/82/83 recensions, Clementine/Octateuch transmission, ordination and access control, altar/input filtering, Paschal synchronization, central↔distributed church governance, canon-list boundary, and strong negative control against cosmological overfitting
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for Abtilis / Abtelis;
+- EXTRA-RESEARCH.md was checked;
+- actual Part 2 tail was checked.
+
+Section 84 — Gitsew was already complete.
+
+No prior completed direct Abtilis section existed.
+
+The verified next block was therefore:
+**Section 85 — Abtilis / Abtelis**.
+
+---
+
+# TEXT IDENTITY FIRST
+
+Abtilis / Abtelis / Abṭəlis / Abiélis(at) belongs to the Ethiopic **Sinodos** church-order/canon-law corpus.
+
+The standard four apostolic Sinodos divisions are commonly described as:
+
+1. Sirate Tsion / Serʿata Ṣeyon — roughly 30 canons;
+2. Tizaz / Teʾezaz — roughly 71 canons;
+3. Gitsew / Gessew — roughly 56 canons;
+4. Abtilis / Abtelis — roughly 81 canons.
+
+But the manuscript situation is not numerically simple.
+
+Modern scholarship reports:
+- an 81-canons apostolic collection;
+- two Abiélis/Abtilis recensions of about 81 and 82 canons;
+- manuscript descriptions giving 81 or 83;
+- secondary Ethiopian lists referring to 80-, 81-, 82- and 83-item forms or segmentations.
+
+### M85-1 — ABTILIS NUMBERING IS A RECENSION/SEGMENTATION PROBLEM, NOT A CLEAN NUMERICAL CONSTANT
+
+Therefore:
+- do not build Vardath numerology on "81 canons" as though every witness has exactly the same segmentation;
+- canon number must always be tied to recension/witness.
+
+This is the same methodological lesson learned from:
+- 4 Ezra number variants;
+- Meqabyan book-label mismatch.
+
+---
+
+# TRANSMISSION HISTORY
+
+Scholarly work on the Ethiopic Sinodos shows a complex transmission history.
+
+The later standard Sinodos:
+- drew heavily on Arabic canonical collections;
+- preserves Clementine/pseudo-apostolic materials;
+- contains multiple recensions of the Apostolic Canons.
+
+At the same time:
+- the Aksumite Collection preserves much older Ethiopic canon-law material translated directly from Greek;
+- some later Sinodos texts preserve or combine older Greek-derived layers with later Arabic-derived forms.
+
+Abtilis specifically is described by Cowley as:
+**very similar to Book VIII of the Syriac Octateuch of Clement**.
+
+Bausi's critical work distinguishes:
+- the 56-canons recension;
+- the 81-canons recension;
+- the two Abiélis(at) recensions.
+
+### M85-2 — ABTILIS IS A TRANSMISSION/REDACTION SYSTEM, NOT A SINGLE IMMUTABLE "APOSTOLIC CANON" TEXT
+
+This matters enormously.
+
+A rule found in:
+- Greek 85 Apostolic Canons;
+- Ethiopic 56 canons;
+- Syriac Octateuch;
+- Abtilis 81/82/83
+
+may be parallel without being textually identical.
+
+---
+
+# CRITICAL SOURCE WARNING
+## Gitsew must not be mislabeled as Abtilis
+
+Several modern English websites present George H. Schodde's **56/57-canons Ethiopic Apostolic Canons** as "Abtelis."
+
+But the scholarly Sinodos taxonomy distinguishes:
+
+**Gitsew / Gessew**
+= roughly 56 canons
+
+from
+
+**Abtilis / Abiélisat**
+= roughly 80–83 canons.
+
+### M85-3 — THE 56-CANON ENGLISH TEXT IS A COMPARATIVE WITNESS, NOT A DIRECT ABTILIS TRANSLATION
+
+This correction is logged permanently.
+
+Where a rule below is known only from:
+- Schodde's 56-canons recension;
+- Greek 85 canons;
+- Syriac Octateuch parallels,
+
+it is labelled **comparative** rather than attributed word-for-word to Abtilis.
+
+---
+
+# WHAT IS SECURE AT ABTILIS LEVEL
+
+Even where a complete free English translation of Bausi's critical Abtilis recension was not available, several features are secure from:
+- manuscript descriptions;
+- Cowley;
+- Bausi;
+- Ethiopian canon studies;
+- comparison with the closely related Syriac Octateuch.
+
+Secure Abtilis-level features include:
+
+1. it is an apostolic canon/church-order collection;
+2. it belongs to the Clementine/Octateuch canonical family;
+3. it regulates ecclesiastical order and authority;
+4. its final portion contains a **biblical canon list**;
+5. its recension count varies around 80–83;
+6. at least one major witness, British Library Orient 793, has an Abtelis **83** ending;
+7. that ending lists scriptural books and then adds Clementine material with differentiated access.
+
+---
+
+# FINAL CANON / BOOK-LIST BOUNDARY
+## Abtilis as information-permission architecture
+
+The final Abtilis material is especially important.
+
+Cowley reports that:
+- the Fetha Nägäst's supposed reference to Teʾezaz 81 should instead point to **Abtelis 81 or 83**;
+- British Museum Orient 793, Abtelis 83, gives the biblical canon list;
+- after the list it adds **eight books of Clement received from the apostles**;
+- then an additional Clement book is restricted:
+  **only church scholars should read it**.
+
+### M85-4 — ABTILIS ENDS WITH A TRUE INFORMATION-ACCESS BOUNDARY
+
+This is not metaphorical.
+
+The textual system distinguishes:
+- writings for broad ecclesial use;
+- Clementine material transmitted with apostolic authority;
+- at least one restricted scholarly text.
+
+This cross-links strongly with:
+
+**4 Ezra 14**
+- 24 public;
+- 70 restricted.
+
+**Ezekiel**
+- holy/common access distinctions.
+
+**Gitsew**
+- accepted/rejected writings.
+
+### M85-5 — PHYSICAL POSSESSION OF INFORMATION ≠ PERMISSION TO ACCESS IT
+
+This is a recurring biblical/canonical-system rule.
+
+Information state has:
+- admission;
+- exclusion;
+- role-based permissions.
+
+For Vardath:
+this is relevant to semantic/control layers,
+not physical gate mechanics.
+
+---
+
+# ABTILIS CANON LIST
+## A textual network defining which writings belong to the system
+
+One Ethiopian canon study attributes to an Abtilis list an Old Testament order including:
+
+- Torah;
+- Joshua;
+- Judges;
+- Ruth;
+- **Jubilees**;
+- Kings;
+- Chronicles;
+- Ezra;
+- Job;
+- Psalms;
+- Solomon books;
+- major prophets;
+- minor prophets;
+- Judith;
+- Tobit;
+- Esther;
+- Meqabyan;
+- Sirach.
+
+The New Testament portion includes:
+- Gospels;
+- Acts;
+- Catholic epistles;
+- Pauline epistles;
+- Revelation;
+- Clementine/church-order material depending recension/list.
+
+### M85-6 — CANON LISTS ARE THEMSELVES SYSTEM-BOUNDARY DIAGRAMS
+
+A canon list answers:
+
+**what information is inside**
+versus
+**what information remains outside/restricted**.
+
+It is a semantic enclosure.
+
+### M85-7 — BOOK COUNT IS TOPOLOGICAL/EDITORIAL, NOT SIMPLE ARITHMETIC
+
+Books can be:
+- grouped;
+- split;
+- counted as one or several;
+- shifted between lists.
+
+This is why "81" can remain stable as a traditional total while component arithmetic varies.
+
+Do not map the 81 directly to:
+- 9×9;
+- 3⁴;
+- Vardath shell count
+
+without independent textual support.
+
+---
+
+# INSTITUTIONAL GEOMETRY
+## Abtilis and its close Apostolic-Canon parallels
+
+Because Abtilis is very close to the Clementine/Syriac Book VIII canon tradition, its nearest comparative rules concern:
+
+- bishop ordination;
+- priest/deacon ordination;
+- altar offerings;
+- Eucharistic participation;
+- excommunication;
+- clergy relocation;
+- episcopal territorial jurisdiction;
+- synods;
+- property;
+- Passover/Pascha;
+- accepted writings.
+
+The directly accessible 56-canons Ethiopic parallel begins with:
+
+- bishop ordained by **two or three bishops**;
+- presbyter/deacon by **one bishop**;
+- altar input restricted to authorized offerings;
+- Pascha timing regulated;
+- office-holders constrained by location/jurisdiction;
+- periodic episcopal meetings;
+- church property distinguished and administered.
+
+Again:
+these rules are comparative where not independently verified in the exact Abtilis recension.
+
+---
+
+# ORDINATION
+## distributed validators → one office-holder
+
+The close Apostolic-Canon family requires multiple bishops for episcopal ordination.
+
+Formal pattern:
+
+**bishop A**
++
+**bishop B**
+(+ **bishop C**)
+→
+**one new bishop**.
+
+### M85-8 — MANY AUTHORIZED NODES CONVERGE TO ACTIVATE ONE NEW ROLE-NODE
+
+This resembles:
+distributed validators
+→ central activation.
+
+But it is plainly:
+institutional governance.
+
+### M85-9 — ROLE CREATION REQUIRES AUTHORIZED INPUT, NOT SELF-ACTIVATION
+
+A candidate cannot simply declare:
+"I am bishop."
+
+Role-state depends on:
+- external validation;
+- authorized network.
+
+Useful control for:
+operator vs self-generated node.
+
+---
+
+# ALTAR / OFFERING RULES
+## central node accepts only specific cargo classes
+
+The close Ethiopic Apostolic-Canon tradition restricts what may be brought onto the altar.
+
+Some things:
+- admitted.
+
+Other things:
+- routed elsewhere.
+
+### M85-10 — CENTRAL SACRED NODE HAS AN INPUT FILTER
+
+This is very useful conceptually.
+
+**incoming cargo**
+→ classification
+→ either:
+  - accepted at central node;
+  - redirected away.
+
+Cross-link:
+- Ezekiel holy/common;
+- Gitsew cargo sorting;
+- 4 Ezra public/secret information.
+
+### M85-11 — INPUT FILTERING DOES NOT MAKE THE ALTAR A PHYSICAL INTER-WORLD GATE
+
+This is a strong anti-overfitting control.
+
+The structure is:
+ritual/legal.
+
+---
+
+# EUCHARISTIC PARTICIPATION
+## presence does not equal permission
+
+A recurrent Apostolic-Canon rule says that a participant/clergyman who enters the assembly but refuses participation without valid reason creates a status problem.
+
+Likewise:
+- communion;
+- excommunication;
+- praying with excluded persons
+
+are regulated.
+
+### M85-12 — CO-LOCATION ≠ SHARED ACCESS STATE
+
+Two people can stand in the same building but have different:
+- sacramental;
+- legal;
+- relational permissions.
+
+This is important for Vardath logic:
+**position** and **access-state** are separate variables.
+
+---
+
+# ECCLESIAL TERRITORY
+## office and geographic location are separate state variables
+
+A major canonical theme in the close tradition is:
+- bishop/presbyter/deacon should not abandon assigned place arbitrarily;
+- another jurisdiction cannot simply absorb them;
+- receiving a transferred cleric may require authorization.
+
+### M85-13 — PERSON, OFFICE, TERRITORY AND PERMISSION ARE FOUR DISTINCT VARIABLES
+
+This strongly reinforces the same control found in Gitsew.
+
+A person may:
+- move physically;
+but not necessarily:
+- carry jurisdiction;
+- carry office permission;
+- gain destination authorization.
+
+For gate research:
+**cargo transfer does not automatically transfer system-role state**.
+
+---
+
+# PERIODIC SYNOD / SYNCHRONIZATION
+
+Apostolic-Canon traditions require bishops to meet periodically.
+
+The 56-canons Ethiopic parallel gives:
+- recurring assemblies;
+- twice-yearly coordination in one recension.
+
+The exact Abtilis numbering/wording must remain recension-controlled.
+
+### M85-14 — DISTRIBUTED NODES PERIODICALLY RECONVERGE TO SYNCHRONIZE SYSTEM STATE
+
+This is a genuine network clock.
+
+But:
+it is administrative.
+
+Do not convert:
+periodic synod
+into
+cosmic gate cycle.
+
+---
+
+# PASCHA / CALENDAR
+
+The Apostolic-Canon family regulates:
+- when Pascha is celebrated;
+- relationship to equinox/Jewish calendrical timing in some recensions.
+
+### M85-15 — CALENDAR RULES ARE SYNCHRONIZATION RULES
+
+A distributed community must align:
+- ritual phase;
+- date;
+- common observance.
+
+This provides a useful clock-control example.
+
+### M85-16 — A CALENDAR THRESHOLD IS NOT A PHYSICAL WORLD-THRESHOLD
+
+Important anti-forcing control.
+
+---
+
+# PROPERTY / DISTRIBUTION
+
+Closely related canon collections distinguish:
+- church property;
+- personal property;
+- bishop/steward responsibility;
+- distribution to clergy/poor.
+
+### M85-17 — CENTRAL POOL → AUTHORIZED STEWARD → DISTRIBUTED RECIPIENTS
+
+This resembles:
+central reservoir
+→ controlled output network.
+
+But again:
+economic/institutional function.
+
+---
+
+# CHURCH ENTRY / EXCLUSION
+## door-like logic without physical gate mechanics
+
+Abtilis-family law repeatedly creates statuses equivalent to:
+
+- admitted;
+- excluded;
+- restored;
+- transferred;
+- deposed;
+- reconciled.
+
+### M85-18 — THE STRONGEST "GATE" IN ABTILIS IS PERMISSION LOGIC
+
+There is no need for:
+- moving mountain;
+- water breach;
+- sky opening.
+
+The boundary is:
+**rule-based membership**.
+
+This is an excellent control:
+a text can be saturated with boundary transitions
+without describing the Vardath phenomenon.
+
+---
+
+# ABTILIS VS GITSEW
+
+The previous section, Gitsew, and Abtilis overlap in canonical family and institutional concerns.
+
+But they must remain separate textual recensions.
+
+## Shared functional classes
+- ordination;
+- clergy discipline;
+- Eucharistic rules;
+- territorial authority;
+- synodal meetings;
+- property;
+- books/canonical information.
+
+## Critical difference
+Abtilis:
+- belongs to a different recension/segmentation stream;
+- has a longer 80–83-canons structure;
+- preserves a major canon-list ending;
+- closely parallels Syriac Octateuch Book VIII.
+
+### M85-19 — SAME RULE FAMILY CAN BE RE-SEGMENTED AND RE-ORDERED WITHOUT BECOMING A NEW COSMOLOGY
+
+This is important for the entire 88-book project.
+
+Textual architecture can change because of:
+- translation;
+- redaction;
+- canon grouping;
+- manuscript segmentation.
+
+Do not infer a physical event from changed chapter/canon counts.
+
+---
+
+# ABTILIS AND VARDATH COSMOLOGY
+## strong control, weak direct match
+
+Search priorities:
+- heaven/earth;
+- sea/water;
+- fire;
+- wind;
+- wings;
+- serpent/dragon;
+- mountain;
+- rod/staff;
+- opening/closing physical passage.
+
+Result:
+
+No secure Abtilis evidence found in this pass for a connected physical sequence involving:
+- broad sky/support field;
+- contraction;
+- throat;
+- material transfer;
+- reopening.
+
+Its recurring structures are overwhelmingly:
+- legal;
+- liturgical;
+- institutional;
+- informational.
+
+### M85-20 — ABTILIS IS A STRONG NEGATIVE CONTROL FOR GEOMETRIC OVERFITTING
+
+It proves that:
+- nodes;
+- central authority;
+- boundaries;
+- admission/exclusion;
+- cycles;
+- cargo filtering;
+- numbers;
+- directional jurisdiction
+
+can all appear densely in a text with no plausible world-machine description.
+
+This should raise the evidentiary bar elsewhere.
+
+---
+
+# STRICT FINGERTRAP TEST — ABTILIS
+
+## 1. broad/open distributed support structure
+No.
+
+Institutional church network:
+yes,
+but not physical support.
+
+## 2. same structural continuity
+No relevant physical structure.
+
+## 3. angle/contraction
+No.
+
+## 4. narrow throat/rod
+No.
+
+## 5. material transfer/contact through throat
+No.
+
+## 6. reopening
+No.
+
+### Verdict
+
+**FULL STRICT NEGATIVE.**
+
+Abtilis contributes:
+- permission-state logic;
+- input filtering;
+- network validation;
+- periodic synchronization;
+- canon/information boundaries.
+
+It does **not** contribute the missing Vardath mechanical link.
+
+---
+
+# QUETZALCOATL / CHERUB / FEATHERED-SERPENT / SQUATTER-MAN CHECK
+
+No secure Abtilis material in this pass adds:
+- serpent morphology;
+- dragon morphology;
+- feathered being;
+- cherub body;
+- winged transport;
+- anthropomorphic environmental field.
+
+### M85-21 — ABSENCE IS IMPORTANT
+
+The apostolic-canon tradition can express complex sacred order without:
+- wings;
+- serpents;
+- sky bodies;
+- cosmic mountains.
+
+Therefore those motifs in Ezekiel / 4 Ezra / Meqabyan remain meaningfully distinctive rather than generic features of all sacred literature.
+
+---
+
+# NUMBER REGISTER
+
+Depending on witness/secondary description:
+
+- 80 canons;
+- 81 canons;
+- 82 canons;
+- 83 canons.
+
+Related canonical corpus:
+- 56-canons Gitsew;
+- 71/72 Teʾezaz;
+- 30 Sirate Tsion.
+
+Final canon-list traditions:
+- conventional total of 81 biblical books;
+- internal arithmetic varies according to how works are grouped/split.
+
+### M85-22 — 80/81/82/83 VARIATION IS A MANUSCRIPT/SEGMENTATION SIGNAL, NOT A COSMIC CLOCK
+
+Record numbers;
+do not force them.
+
+---
+
+# SOURCE-CRITICAL FINDINGS
+
+1. Abtilis is a Sinodos apostolic-canon recension, not a free-standing ancient narrative apocalypse.
+2. It is distinct from Gitsew's 56-canons recension.
+3. Modern websites sometimes mislabel the 56-canons Ethiopic Apostolic Canons as Abtelis.
+4. Scholarly work distinguishes an 81-canons collection and two Abiélis(at) recensions around 81/82 canons.
+5. Older manuscript/canon scholarship also reports Abtelis with 81 or 83 canons.
+6. Cowley identifies Abtelis as very similar to Book VIII of the Syriac Octateuch of Clement.
+7. The Syriac Octateuch itself is a pseudo-Clementine eight-book canonical collection with a final book of ecclesiastical canons.
+8. The exact Syriac/Arabic/Ethiopic relationships are redactionally complex and must not be flattened.
+9. British Museum Orient 793 contains an Abtelis 83 ending with a biblical canon list plus Clementine material.
+10. At least one additional Clement text is restricted to church scholars.
+11. Abtilis canon lists place Jubilees within the scriptural sequence in some Ethiopian witnesses.
+12. Book counts depend on grouping conventions.
+13. No secure Abtilis physical-cosmology sequence was found.
+14. Directly accessible Greek/56-canons parallels are useful for function comparison but cannot substitute silently for the Abtilis text.
+15. Bausi 1995 remains the critical scholarly edition/translation reference for the pseudo-apostolic Sinodos recensions.
+
+---
+
+# Sources logged — Abtilis / Abtelis
+
+## Ethiopian canon / Abtelis identity
+- Roger W. Cowley, "The Biblical Canon of the Ethiopian Orthodox Church Today":
+  https://www.islamic-awareness.org/bible/text/canon/ethiopican
+- G. A. Mikre-Sellassie, "The Bible and its Canon in the Ethiopian Orthodox Church":
+  https://translation.bible/wp-content/uploads/2024/06/mikre-sellassie-1993-the-bible-and-its-canon-in-the-ethiopian-orthodox-church.pdf
+- Ethiopian Orthodox Tewahedo Church canonical books list:
+  http://ethiopianorthodox.org/english/canonical/books.html
+- Anke Wanger, "The Biblical Canon of the Ethiopian Orthodox Tewahdo Church":
+  https://www.euclid.int/papers/Anke%20Wanger%20-%20Canon%20in%20the%20EOTC.pdf
+
+## Critical Sinodos scholarship
+- Alessandro Bausi, *Il Sēnodos etiopico. Canoni pseudoapostolici* — critical edition:
+  https://iris.uniroma1.it/handle/11573/1693221
+- Alessandro Bausi, *Il Sēnodos etiopico... Versio*:
+  https://iris.uniroma1.it/handle/11573/1696401
+- Encyclopaedia Aethiopica / Sewasew, "Senodos":
+  https://en.sewasew.com/p/senodos-(%E1%88%B2%E1%8A%96%E1%8B%B6%E1%88%B5)
+- Sewasew, "Canon law":
+  https://en.sewasew.com/p/canon-law-(%E1%88%85%E1%8C%88-%E1%89%80%E1%8A%96%E1%8A%93)
+
+## Syriac/Clementine parallel
+- François Nau / Syriac Octateuch of Clement:
+  https://gorgiaspress.com/la-version-syriaque-de-loctateuque-de-clement
+- Syriac pseudo-Clementine Octateuch research project:
+  https://www.ku.de/en/thf/forschung/forschungseinrichtungen/forschungsstelle-christlicher-orient/forschungsvorhaben/syriac-pseudo-clementine-oktateuch
+- Coptic Encyclopedia, Octateuch of Clement:
+  https://ccdl.claremont.edu/digital/api/collection/cce/id/1465/download
+
+## Comparative Ethiopic Apostolic-Canon recension — NOT direct Abtilis
+- George H. Schodde, "The Apostolic Canons, Translated from the Ethiopic":
+  https://archive.org/stream/jstor-3268629/3268629_djvu.txt
+
+---
+
+# SECTION 85 — ABTILIS / ABTELIS COMPLETE
+
+## Strongest new findings
+
+1. **Abtilis is not safely represented by the freely available 56/57-canons Ethiopic translation; that shorter recension belongs to the Gitsew/Gessew stream in the scholarly Sinodos taxonomy.**
+2. **The actual Abtilis/Abiélisat tradition varies around 80–83 canons, so its number is manuscript/redaction dependent and should not be used as a fixed Vardath numerical constant.**
+3. **Abtilis is closely related to Book VIII of the Syriac pseudo-Clementine Octateuch, placing it firmly inside a transmitted/redacted church-order family rather than a single immutable apostolic document.**
+4. **Its strongest directly secure structural feature is its ending: the recension defines a biblical-information boundary through a canon list.**
+5. **British Museum Orient 793's Abtelis 83 then adds Clementine books and restricts another Clement text to church scholars, producing a genuine role-based information-access system.**
+6. **This cross-links strongly with 4 Ezra's public/secret books, Ezekiel's holy/common boundary and Gitsew's writing filters.**
+7. **In the wider Apostolic-Canon family, ordination gives a clear many-authorized-nodes→one-new-role pattern; role activation requires external validation.**
+8. **Altar rules function as input/cargo filters: co-location with a sacred centre does not mean every incoming object is authorized for that centre.**
+9. **Eucharistic/excommunication rules show that physical presence and permission state are separate variables.**
+10. **Clergy-movement rules show that person, location, office and jurisdiction are separate state layers; moving a person does not automatically transfer authority.**
+11. **Synodal meeting rules create periodic network synchronization, but this is an administrative clock, not a cosmic gate cycle.**
+12. **Paschal rules likewise synchronize distributed communities without implying a physical time-door.**
+13. **Property systems provide central-pool→authorized-steward→distributed-recipient logic, another institutional network analogue.**
+14. **Abtilis therefore reinforces the same control lesson as Gitsew: sophisticated nodes, gates, boundaries, filters, cycles and central/distributed structures can arise entirely from institutional organization.**
+15. **No secure connected water/sea/fire/wind/wing/serpent/cherub/mountain physical mechanism appears in the Abtilis material verified here.**
+16. **Strict fingertrap result is fully negative: no broad support structure contracts, no throat forms, no material crosses such a throat and no reopening occurs.**
+17. **The cross-text physical chain remains unchanged: 1/3 Meqabyan = broad wind-supported sky/covering; 4 Ezra 7 = narrow static throat; Zechariah 14 = opening/passage/bilateral outflow.**
+18. **Abtilis's value is methodological: it raises the bar for calling something a Vardath match by demonstrating how much apparent 'geometry' can be generated by law, liturgy and information permissions alone.**
+
+## Next live block
+
+**Section 86 — First Book of the Covenant / First Book of Dominos (Mäṣḥafä Kidan I)**
+
+Required protocol:
+- re-check all three archives and the actual Part 2 tail before beginning;
+- distinguish Ethiopic Mäṣḥafä Kidan I from the Syriac **Testamentum Domini** even where they share source traditions;
+- identify what is directly verifiable in Geʽez versus reconstructed through Syriac/Arabic parallels;
+- read the whole accessible unit before mapping;
+- prioritize:
+  - post-resurrection setting;
+  - church/altar architecture;
+  - baptism and water;
+  - oil/anointing;
+  - Eucharist;
+  - lamps/fire/light;
+  - doors/admission;
+  - burial/resurrection;
+  - calendrical/event timing;
+  - heavenly/earthly sanctuary correspondence;
+  - operator/carrier/recipient distinctions;
+- search specifically for:
+  - mountain;
+  - water/deep/sea;
+  - wind/fire/light;
+  - wings/cherub/serpent;
+  - rod/staff;
+  - gate/door;
+  - broad→narrow→broad physical structures;
+- preserve recension differences;
+- append only verifiable findings;
+- verify actual tail after append.
+
