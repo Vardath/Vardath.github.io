@@ -38697,3 +38697,1354 @@ Required continuity tests:
 5. treat Luke/Acts ascension cloud as carrier/occlusion separately from the body;
 6. test "return in same way" language against Vardath recurrence without forcing identical physical route.
 
+
+
+---
+
+# SECTION 73 — RESURRECTION / RETURN / ASCENSION
+## Direct Gospel/Acts pass — sealed tomb→opened boundary, absent occupant, recognition-state changes, wounds/body continuity, locked-room appearances, Emmaus pair, food/fish embodiment, ascent/cloud occlusion, two white-clad witnesses, and promised return
+
+### Frontier verification
+
+The three-file research authority was rechecked before beginning.
+
+Part 2 actual tail ended at:
+**Section 72 — Jerusalem / Passion COMPLETE**
+
+with the next live block:
+**Section 73 — Resurrection / return / ascension**.
+
+No completed Section 73 was found in the archive.
+
+This section is appended only to Part 2.
+
+---
+
+# Historical / textual control first
+
+The canonical resurrection material is not one uniform narrative.
+
+The four Gospels differ in:
+- women named;
+- number/description of angelic figures;
+- whether the stone movement is narrated or already complete;
+- Jerusalem versus Galilee emphasis;
+- first appearances;
+- recognition;
+- physical-contact details;
+- ending structure.
+
+These differences must be preserved rather than harmonized mechanically.
+
+## Mark ending control
+
+The earliest recoverable form of Mark in major ancient witnesses ends at **Mark 16:8**.
+
+The intermediate and long endings are later textual forms.
+
+Therefore:
+- Mark 16:9–20 can be studied as early reception/tradition;
+- it must not be silently treated as unquestionably original Mark.
+
+## Luke ascension textual control
+
+Luke 24:51 has manuscript variation:
+some ancient witnesses lack the words equivalent to:
+**"and was carried up into heaven."**
+
+Acts 1 gives the fuller visible ascension narrative.
+
+Therefore:
+Acts 1 is the strongest primary narrative for:
+- lifting;
+- cloud;
+- disappearance from sight;
+- promised return.
+
+## General control
+
+This research asks:
+- what the texts narrate;
+- what they leave un-narrated;
+- how identity and boundaries function.
+
+It does not attempt to prove or disprove resurrection historically.
+
+---
+
+# TOMBS ACROSS THE FOUR GOSPELS
+## maximum enclosure from Section 72 → aperture state reversal
+
+Section 72 ended with:
+- corpse inside tomb;
+- stone at entrance;
+- in Matthew additionally seal + guard.
+
+Section 73 begins with:
+**stone no longer sealing the aperture**.
+
+This is a sharp boundary-state transition.
+
+---
+
+# MATTHEW 28:1–10
+## earthquake → angel descends → stone rolled back → angel sits on stone → guards become like dead → tomb empty → women meet Jesus
+
+Matthew alone among the four explicitly narrates:
+- great earthquake;
+- angel descending from heaven;
+- angel rolling back the stone;
+- angel sitting on it;
+- guards shaking/becoming like dead.
+
+Women are then told:
+- Jesus is not there;
+- he has been raised.
+
+Shortly afterward:
+- Jesus meets them;
+- they take hold of his feet.
+
+### M73-1 — MATTHEW NARRATES THE BOUNDARY-OPENING AGENT, BUT NOT JESUS CROSSING THE APERTURE
+
+This distinction is crucial.
+
+Sequence:
+
+**sealed tomb**
+→ earthquake
+→ angel descends
+→ stone moved
+→ tomb already lacks Jesus
+→ women later encounter Jesus elsewhere.
+
+Matthew never says:
+**stone moved so Jesus could walk out**.
+
+### M73-2 — OPENING AND OCCUPANT EMERGENCE ARE SEPARATE VARIABLES
+
+This directly strengthens Section 72's tomb-opening control.
+
+We have:
+- aperture-state change;
+- occupant-state change;
+
+but not the physical transit step.
+
+### M73-3 — THE STONE BECOMES A PLATFORM/SEAT AFTER CEASING TO BE A BARRIER
+
+Same object:
+**closure/barrier**
+→ **seat/support**.
+
+This is a clean function-state transformation.
+
+### M73-4 — MATTHEW'S WOMEN TOUCH JESUS' FEET, SUPPORTING BODY-CONTINUITY PRESENTATION
+
+The risen figure:
+- can be grasped;
+- is identified with the crucified Jesus.
+
+This is narrative continuity,
+not replacement by a different occupant.
+
+---
+
+# MARK 16:1–8
+## women approach sealed expectation → stone already rolled away → enter tomb → young man on right → absent body → future Galilee encounter announced
+
+The women ask:
+"Who will roll away the stone?"
+
+But when they arrive:
+- stone already moved;
+- no movement event witnessed;
+- they enter;
+- young man in white sits on **right side**;
+- Jesus is absent;
+- Galilee encounter is promised.
+
+### M73-5 — MARK IS EVEN MORE EXPLICIT THAT APERTURE CHANGE PRECEDES OBSERVATION
+
+Witnesses arrive after:
+**boundary state already changed**.
+
+No mechanism given.
+
+### M73-6 — RIGHT-SIDE POSITION OF THE YOUNG MAN IS SPATIAL, BUT NOT A FULL BILATERAL SYSTEM
+
+Record:
+**right side**.
+
+Missing:
+paired left figure;
+opposed two-side function.
+
+Do not manufacture bilateral geometry.
+
+### M73-7 — MARK 16:1–8 ENDS WITH EXPECTED FUTURE APPEARANCE RATHER THAN NARRATING IT
+
+This creates:
+**opened tomb**
+→ **message**
+→ **future destination/meeting**.
+
+It is an information-routing ending.
+
+---
+
+# MARK 16:9–20 — TEXTUAL-RECEPTION CONTROL
+## later long ending: Mary appearance, two walkers, eleven, ascension
+
+The long ending includes:
+- Mary Magdalene;
+- appearance "in another form" to two walking;
+- appearance to eleven;
+- commissioning;
+- ascension.
+
+### M73-8 — "ANOTHER FORM" BELONGS TO THE LATER MARKAN ENDING AND MUST NOT BE USED AS SECURE ORIGINAL-MARK EVIDENCE
+
+It is relevant to reception history,
+but lower-weight than Luke's explicit Emmaus recognition scene.
+
+---
+
+# LUKE 24:1–12
+## stone already moved → two dazzling men → absent body → women transmit message → Peter inspects empty enclosure
+
+Luke:
+- women arrive;
+- stone already rolled away;
+- enter tomb;
+- body absent;
+- two men in dazzling clothing appear.
+
+Then:
+- women transmit information;
+- Peter checks tomb;
+- linen cloths remain.
+
+### M73-9 — LUKE AGAIN SEPARATES CONTAINER, APERTURE, BODY AND INFORMATION
+
+Variables:
+- container/tomb;
+- aperture/stone;
+- body absent;
+- cloth retained;
+- witnesses;
+- message.
+
+This is exactly the mature Vardath variable separation.
+
+---
+
+# JOHN 20:1–10
+## stone removed → two disciples run → different arrival/order → wrappings remain → body absent
+
+John:
+- Mary sees stone removed;
+- assumes body has been taken;
+- Peter + beloved disciple run;
+- beloved disciple arrives first;
+- Peter enters first;
+- cloths remain;
+- head cloth separate.
+
+### M73-10 — SAME LOCATION PRODUCES A TWO-OBSERVER SEQUENCE WITH DIFFERENT ACCESS ORDER
+
+Pair:
+**Peter / beloved disciple**.
+
+Functions differ:
+- one reaches boundary first;
+- one enters first;
+- other then enters and "believes."
+
+This is a true complementary pair,
+but narrative/epistemic rather than cosmic geometry.
+
+### M73-11 — CLOTHING/WRAPPINGS REMAIN WHILE OCCUPANT IS ABSENT
+
+This is another:
+**container residue ≠ occupant** distinction.
+
+---
+
+# CROSS-GOSPEL TOMB MECHANISM RESULT
+
+Matthew:
+stone movement is narrated by angel.
+
+Mark:
+stone already moved.
+
+Luke:
+stone already moved.
+
+John:
+stone already removed.
+
+### M73-12 — NONE OF THE FOUR GOSPELS NARRATES JESUS PHYSICALLY PASSING THROUGH THE OPEN TOMB ENTRANCE
+
+This is one of Section 73's most important findings.
+
+Therefore:
+
+**stone removed**
+does not equal
+**narrated exit route**.
+
+The aperture may function:
+- for witnesses to inspect;
+- as evidence state;
+- as access to the empty enclosure.
+
+Do not infer the un-narrated transit mechanism.
+
+---
+
+# MARY MAGDALENE — JOHN 20:11–18
+## two angels at head/feet → Jesus present but unrecognized → recognition triggered by name → ascent announced
+
+Mary sees:
+- two angels;
+- one where head had lain;
+- one where feet had lain.
+
+Then:
+- Jesus stands nearby;
+- she sees him;
+- does not recognize him;
+- assumes gardener;
+- recognition occurs when he says:
+  **"Mary."**
+
+### M73-13 — IDENTITY CAN REMAIN CONSTANT WHILE VISUAL RECOGNITION FAILS
+
+This is extremely important.
+
+Same Jesus:
+- present;
+- visible;
+- speaking;
+- initially misidentified.
+
+Thus:
+**appearance**
+≠
+**recognition**.
+
+### M73-14 — INFORMATION/SIGNAL TRIGGERS RECOGNITION
+
+The trigger is not:
+a bodily metamorphosis narrated in the text.
+
+It is:
+**personal address/name**.
+
+This is a clean:
+signal → identity recognition
+process.
+
+### M73-15 — JOHN'S TWO ANGELS FORM A HEAD/FOOT AXIS AROUND THE ABSENT BODY POSITION
+
+Geometry:
+**angel — head-position / empty body-space / foot-position — angel**.
+
+This is a longitudinal bilateral framing,
+not left/right.
+
+Interesting cross-link to:
+two cherubim around sacred centre,
+but no identity claim.
+
+### M73-16 — "I AM ASCENDING" DISTINGUISHES RESURRECTION PRESENCE FROM LATER ASCENT
+
+John treats:
+- risen presence;
+- ascent to Father
+
+as distinguishable conceptual states.
+
+---
+
+# EMMAUS — LUKE 24:13–35
+## two travellers → Jesus joins route → recognition blocked → scriptural information opens → bread action → recognition opens → Jesus disappears → pair reverses route to Jerusalem
+
+Two disciples:
+- travel away from Jerusalem;
+- one named Cleopas;
+- discuss events.
+
+Jesus:
+- approaches;
+- walks with them;
+- is not recognized.
+
+Then:
+- interprets scripture;
+- enters house;
+- breaks bread;
+- their eyes are opened;
+- recognition occurs;
+- he vanishes from their sight.
+
+Immediately:
+- they reverse course;
+- return to Jerusalem.
+
+### M73-17 — EMMAUS IS A STRONG TWO-TRAVELLER + THIRD-GUIDE STRUCTURE
+
+Geometry:
+**traveller A + traveller B**
+→ third figure joins
+→ shared route
+→ recognition event
+→ third figure absent
+→ pair reverses route.
+
+This resembles:
+paired observers with guide/operator,
+not two halves of one body.
+
+### M73-18 — RECOGNITION STATE CHANGES WITHOUT NARRATED BODY RECONSTRUCTION
+
+Before:
+same figure visible but unidentified.
+
+After:
+recognized.
+
+The text attributes this to:
+**eyes opened**.
+
+Again:
+perception/information state matters.
+
+### M73-19 — JESUS "VANISHED FROM THEIR SIGHT" DESCRIBES OBSERVATIONAL LOSS, NOT A MECHANISM
+
+Do not automatically label:
+- teleportation;
+- dimensional transit;
+- gate closure.
+
+Text gives:
+**visible → no longer visible**.
+
+Mechanism absent.
+
+### M73-20 — EMMAUS CONTAINS A TRUE ROUTE REVERSAL
+
+Jerusalem:
+→ Emmaus direction.
+
+Recognition:
+→ immediate reversal.
+
+Emmaus:
+→ Jerusalem.
+
+This is a paired outbound/return path.
+
+---
+
+# LUKE 24:36–43
+## sudden presence → ghost hypothesis rejected → hands/feet → touch → flesh/bones → fish eaten
+
+Jesus:
+- stands among group;
+- group thinks ghost/spirit;
+- Jesus explicitly appeals to:
+  - hands;
+  - feet;
+  - touch;
+  - flesh and bones.
+- eats broiled fish.
+
+### M73-21 — LUKE STRONGLY EMPHASIZES CONTINUITY OF EMBODIED IDENTITY
+
+The risen figure is not presented as:
+a disembodied ghost.
+
+Narrative markers:
+- same person;
+- wounds/limbs;
+- touch;
+- flesh/bones;
+- eating.
+
+### M73-22 — FISH MEAL FUNCTIONS AS BODY-STATE EVIDENCE IN LUKE
+
+Food:
+does not create identity.
+
+It functions narratively to demonstrate:
+embodied presence.
+
+---
+
+# JOHN 20:19–23
+## locked doors → Jesus stands among them → wounds shown → breath/Spirit transfer
+
+Disciples:
+- inside;
+- doors locked.
+
+Then:
+- Jesus comes;
+- stands among them.
+
+John does **not** say:
+- door opens;
+- wall opens;
+- body passes through matter.
+
+### M73-23 — LOCKED-ROOM APPEARANCE IS A STRONG BOUNDARY-ANOMALY TEXT BUT MECHANISM IS UNSPECIFIED
+
+Secure facts:
+- enclosure closed/locked;
+- Jesus subsequently present inside.
+
+Unknown:
+- route;
+- aperture;
+- physical process.
+
+This should be classified:
+**presence across a closed boundary**
+rather than
+**proved wall-transit**.
+
+### M73-24 — WOUNDS AGAIN SECURE SAME-BODY IDENTITY CONTINUITY
+
+Hands + side:
+link risen Jesus to crucified Jesus.
+
+### M73-25 — BREATH TRANSFERS SPIRIT/COMMISSION AFTER PRESENCE
+
+Jesus:
+**breathes**
+→ disciples receive Spirit.
+
+This is:
+**body output / air-breath medium**
+→ **information/agency state change**.
+
+Cross-link:
+wind/breath/spirit traditions.
+
+Do not reduce Spirit to ordinary air.
+
+---
+
+# THOMAS — JOHN 20:24–29
+## absent first appearance → demands visual/tactile verification → one-week interval → same closed-boundary scene → wound invitation → recognition/confession
+
+Thomas:
+- absent at first appearance;
+- demands:
+  - see wounds;
+  - finger into nail marks;
+  - hand into side.
+
+A week later:
+- doors again shut;
+- Jesus present;
+- directly offers the requested verification.
+
+### M73-26 — THOMAS IS A CONTROLLED REPEAT OF THE SAME ENCLOSURE EVENT WITH ONE VARIABLE CHANGED
+
+Event 1:
+Thomas absent.
+
+Event 2:
+Thomas present.
+
+This is almost experimental narrative structure:
+same group/location/boundary,
+new observer.
+
+### M73-27 — THE TEXT DOES NOT ACTUALLY SAY THOMAS TOUCHES THE WOUNDS
+
+Jesus invites touch.
+
+Thomas immediately answers.
+
+Therefore:
+do not state:
+"Thomas put his hand in Jesus' side"
+as direct Johannine fact.
+
+This is important source precision.
+
+### M73-28 — RECOGNITION AGAIN DEPENDS ON INFORMATION + WOUND CONTINUITY, NOT NARRATED MORPHOLOGICAL CHANGE
+
+---
+
+# JOHN 21:1–14
+## seven disciples → night/no catch → unrecognized figure on shore → right-side net instruction → abundant catch → recognition → Peter crosses water → breakfast/fish → intact net
+
+Seven disciples are together.
+
+At daybreak:
+- Jesus stands on shore;
+- they do not recognize him.
+
+He tells them:
+- cast net on **right side**.
+
+Result:
+- huge catch;
+- beloved disciple recognizes;
+- Peter jumps into sea;
+- others bring boat/net ashore.
+
+At shore:
+- charcoal fire;
+- bread;
+- fish;
+- Jesus gives food.
+
+Count:
+**153 large fish**;
+net does not tear.
+
+### M73-29 — JOHN 21 REPEATS "VISIBLE BUT NOT RECOGNIZED" STATE
+
+Again:
+presence precedes recognition.
+
+Recognition trigger:
+**pattern/action/sign**.
+
+### M73-30 — RIGHT-SIDE CAST PRODUCES ASYMMETRIC RESULT, BUT THIS IS FISHING GEOMETRY NOT COSMIC BILATERALITY
+
+Record:
+right-side instruction.
+
+Do not force two-strand model.
+
+### M73-31 — PETER BECOMES A HUMAN WATER-CROSSING CARRIER WHILE OTHERS USE BOAT
+
+Same destination reached through:
+- swimming/body;
+- boat/carrier.
+
+This is a useful:
+**different carrier modes across same medium** control.
+
+### M73-32 — 153 MUST BE RECORDED WITHOUT FORCED NUMEROLOGY
+
+Many symbolic interpretations exist.
+
+The text also fits ordinary fishing practice where catch could be counted.
+
+No Vardath number mapping should be claimed from 153 alone.
+
+### M73-33 — NET REMAINS INTACT DESPITE ABUNDANT CARGO
+
+This is structurally useful:
+
+**distributed fish**
+→ **one net enclosure**
+→ **high load**
+→ **network remains unbroken**.
+
+A genuine containment-network analogue,
+but not sky-lattice evidence.
+
+---
+
+# JOHN 21:15–23
+## Peter's threefold restoration + future constrained movement + beloved disciple / return rumor
+
+Peter:
+- asked three times about love;
+- commissioned three times in shepherding language.
+
+Then:
+- younger self moved freely;
+- later another will fasten/lead him where he does not wish.
+
+Beloved disciple:
+- Peter asks what about him;
+- Jesus gives conditional statement involving remaining "until I come";
+- narrator explicitly corrects rumor that this meant the disciple would not die.
+
+### M73-34 — PETER'S THREEFOLD RESTORATION IS A ROLE-STATE RESET AFTER THREEFOLD DENIAL
+
+Section 72:
+three denials.
+
+Section 73:
+three shepherding commissions.
+
+This is one of the clearest:
+**failure state → restorative mirrored sequence → renewed role**
+patterns.
+
+### M73-35 — THE TEXT ITSELF WARNS AGAINST OVERREADING RETURN-TIMING LANGUAGE
+
+John 21 explicitly says:
+people misinterpreted Jesus' conditional statement as a prediction that the disciple would not die.
+
+Narrator corrects them.
+
+This is a major methodological warning for chronology research.
+
+---
+
+# MATTHEW 28:16–20
+## mountain assembly → authority in heaven/earth → mission distributed to nations → continuing presence to end of age
+
+Eleven:
+- go to mountain;
+- see Jesus;
+- worship;
+- some doubt.
+
+Jesus:
+- claims heaven/earth authority;
+- sends them to all nations;
+- promises presence until end of age.
+
+### M73-36 — MOUNTAIN FUNCTIONS AS COMMISSIONING NODE RATHER THAN ASCENSION THROAT IN MATTHEW
+
+Matthew does not narrate ascension.
+
+The mountain:
+meeting/authority/mission centre.
+
+### M73-37 — CENTRAL APPEARANCE PRODUCES DISTRIBUTED OUTBOUND NETWORK
+
+One central meeting:
+→ disciples sent to nations.
+
+This is a genuine:
+**centre → distributed mission**
+pattern.
+
+Information/social transfer,
+not material world transfer.
+
+---
+
+# LUKE 24:44–53
+## mind opened → promise from on high → Bethany → raised hands/blessing → withdrawal → carried up in some textual witnesses → return to Jerusalem
+
+Jesus:
+- opens minds to scripture;
+- orders proclamation outward;
+- tells disciples to wait for power from on high.
+
+Then:
+- leads them toward Bethany;
+- raises hands/blesses;
+- withdraws;
+- in common textual form:
+  carried up into heaven.
+
+### M73-38 — ASCENSION IS PRECEDED BY INFORMATION OPENING + COMMISSION
+
+Sequence:
+**mind opened**
+→ **mission defined**
+→ **power promised**
+→ **departure/ascent**.
+
+This is not simply a transport scene.
+
+### M73-39 — RAISED HANDS FUNCTION AS BLESSING, NOT AUTOMATIC SQUATTER-MAN BILATERAL GEOMETRY
+
+Important posture control.
+
+---
+
+# ACTS 1:1–12
+## forty-day appearance interval → restoration-time question denied → witness network → visible lift → cloud removes from sight → two white-clad men → promised same-way return
+
+Acts gives:
+- appearances over **40 days**;
+- teaching;
+- disciples ask about restoration timing.
+
+Jesus explicitly says:
+**times/periods are not theirs to know**.
+
+Then:
+- mission expands Jerusalem → Judea → Samaria → ends of earth.
+
+Ascension:
+- lifted up while watched;
+- cloud takes him from their sight.
+
+Then:
+- two men in white stand beside observers;
+- announce:
+  same Jesus will come in same way as seen going.
+
+### M73-40 — ACTS EXPLICITLY BLOCKS SPECULATIVE DATE-SETTING AT THE ASCENSION SCENE
+
+This is crucial for the project's timeline work.
+
+The text itself says:
+**times/periods are not given to the observers**.
+
+Therefore:
+no legitimate exact-return clock should be extracted from Acts 1 alone.
+
+### M73-41 — ASCENSION HAS OBSERVABLE VERTICAL MOVEMENT + OBSERVATIONAL OCCLUSION
+
+Secure sequence:
+
+**ground-level visible Jesus**
+→ **lifted upward**
+→ **cloud intersects/receives**
+→ **no longer visible**.
+
+The text does not describe:
+- internal cloud mechanics;
+- destination route geometry;
+- velocity;
+- portal.
+
+### M73-42 — CLOUD MUST BE KEPT DISTINCT FROM THE BODY
+
+Body:
+Jesus.
+
+Cloud:
+separate narrative object/function.
+
+The cloud:
+**takes him from their sight**.
+
+Possible literary functions discussed in scholarship include:
+- divine-presence marker;
+- translation/assumption motif;
+- concealing/transport imagery.
+
+Do not automatically identify:
+cloud = vehicle
+or
+cloud = gate.
+
+### M73-43 — TWO WHITE-CLAD MEN FORM A PAIRED WITNESS/INTERPRETER UNIT
+
+They:
+- stand beside observers;
+- explain departure;
+- redirect attention toward mission/future return.
+
+Pair function:
+**interpretation / transition confirmation**.
+
+Cross-link:
+two dazzling men at Luke tomb.
+
+### M73-44 — "SAME WAY" SECURES RELATIONAL RECURRENCE, NOT EVERY MICROPHYSICAL DETAIL
+
+The promised return is explicitly tied to:
+**same Jesus**
++
+**manner analogous to departure**.
+
+But the verse does not specify:
+- identical geographic coordinate;
+- exact cloud shape;
+- identical speed;
+- reverse trajectory mechanics.
+
+### M73-45 — DEPARTURE/RETURN FORMS A TRUE RECIPROCAL PAIR
+
+At literary level:
+
+**present → departure upward**
+↔
+**future return**.
+
+This is one of the strongest:
+**first/second presence**
+role recurrences.
+
+---
+
+# RESURRECTION BODY CONTINUITY
+## same-role state change test
+
+Across Luke/John/Matthew:
+
+Continuity markers include:
+- feet grasped;
+- hands/feet shown;
+- side wound shown;
+- flesh/bones;
+- eating fish;
+- voice/name recognition;
+- prior relationships;
+- prior commissions remembered.
+
+Discontinuity/change markers include:
+- not immediately recognized;
+- sudden presence;
+- disappearance from sight;
+- closed-door appearances;
+- ascent.
+
+### M73-46 — THE GOSPELS PRESENT STRONG IDENTITY CONTINUITY WITH ALTERED ACCESS/VISIBILITY CONDITIONS
+
+Best formal classification:
+
+**same person**
++
+**changed state of manifestation/access**.
+
+This is highly relevant to Vardath's:
+same-role / state-change framework.
+
+Do not reduce the texts either to:
+- ordinary resuscitation only;
+or
+- unrelated replacement body.
+
+The narratives deliberately hold continuity and change together.
+
+---
+
+# DESCENT / ASCENT PAIR
+
+Passion:
+- death;
+- burial;
+- tomb.
+
+Resurrection:
+- raised;
+- appears.
+
+Ascension:
+- lifted/carried upward.
+
+Return:
+- future reappearance promised.
+
+### M73-47 — THE GOSPEL/ACTS SEQUENCE IS A TRUE MULTI-STATE VERTICAL/RELATIONAL CYCLE
+
+**death/burial**
+→ **raised presence**
+→ **upward departure**
+→ **future return**.
+
+However:
+only the ascension supplies explicit visible upward movement.
+
+"Raised from dead" need not mean spatial vertical motion in every verse.
+
+---
+
+# FIRST / SECOND COMING PAIR
+
+Acts 1:
+same Jesus who departs
+will return.
+
+John 21:
+"until I come" motif,
+with explicit warning against overreading the timing.
+
+### M73-48 — SAME IDENTITY IS PROJECTED INTO TWO TEMPORALLY SEPARATED PRESENCE STATES
+
+This is a genuine recurrence structure:
+
+**present historical/risen appearance**
+↔
+**future return**.
+
+Formally relevant to:
+world-state recurrence.
+
+Source meaning:
+Christian eschatology.
+
+---
+
+# TOMB / LOCKED ROOM / ASCENSION AS THREE DISTINCT BOUNDARY TYPES
+
+## Tomb
+material aperture:
+stone.
+
+## Locked room
+material enclosure:
+doors shut/locked.
+
+No opening mechanism narrated.
+
+## Ascension
+open-air vertical separation:
+cloud ends visibility.
+
+### M73-49 — "BOUNDARY" IS NOT ONE MECHANISM
+
+This is a critical mature rule.
+
+Boundary types:
+1. blocked aperture;
+2. closed enclosure;
+3. visibility/sky threshold.
+
+Do not merge them.
+
+---
+
+# RECOGNITION SYSTEM
+
+Mary:
+name triggers recognition.
+
+Emmaus:
+bread/action + opened eyes.
+
+John 21:
+miraculous catch/sign triggers beloved disciple.
+
+Thomas:
+wounds + prior private demand known by Jesus.
+
+### M73-50 — RESURRECTION NARRATIVES REPEATEDLY SEPARATE PHYSICAL PRESENCE FROM IDENTITY RECOGNITION
+
+This is one of the strongest findings.
+
+Possible system variables:
+- occupant physically present;
+- observer sensory access;
+- observer interpretive state;
+- identifying signal;
+- recognition threshold.
+
+This is directly useful to projection theory.
+
+A phenomenon may be:
+**present**
+without being
+**correctly classified**.
+
+---
+
+# QUETZALCOATL / CHERUB / FEATHERED-SERPENT / SQUATTER-MAN UPDATE
+
+Section 73 gives little direct serpent/wing morphology.
+
+Its strongest contribution is instead:
+**state-continuity and visibility geometry**.
+
+Key lessons:
+
+1. same identity may be visible but unrecognized;
+2. same identity may appear in an enclosure without narrated aperture mechanics;
+3. environmental/cloud boundary can end observation;
+4. recognition may require a signal;
+5. wounds/body continuity remain while manifestation behavior changes.
+
+### M73-51 — THIS SUPPORTS A MORE SOPHISTICATED "SAME PHENOMENON" HYPOTHESIS
+
+If cherub,
+Feathered Serpent,
+dragon,
+Squatter-Man,
+tree,
+mountain
+
+are ever proposed as states of one phenomenon,
+we must test not just:
+shape similarity,
+
+but:
+- identity continuity;
+- transition trigger;
+- observer recognition;
+- boundary state;
+- functional continuity.
+
+Section 73 strengthens the **method**, not creature identification.
+
+---
+
+# STRICT FINGERTRAP TEST — SECTION 73
+
+Criteria:
+1. broad/open support structure;
+2. same structural continuity;
+3. contraction/strand-angle change;
+4. narrow throat;
+5. transfer;
+6. reopening.
+
+## Tomb
+closure/opening:
+strong.
+
+Transfer:
+un-narrated.
+
+Broad support:
+absent.
+
+Contraction:
+absent.
+
+## Locked room
+closed boundary + internal appearance:
+strong anomaly.
+
+Aperture mechanism:
+absent.
+
+## Ascension
+vertical transfer/departure:
+strong.
+
+Cloud/visibility:
+strong.
+
+Throat:
+absent.
+
+## Overall
+
+**No strict fingertrap.**
+
+But Section 73 strongly advances:
+- boundary-state separation;
+- occupant-state separation;
+- recognition-state separation;
+- same-identity state change;
+- departure/return reciprocity.
+
+---
+
+# Cross-section mechanics from Sections 72→73
+
+Section 72 ended:
+
+**living body**
+→ arrest/custody routing
+→ cross/death
+→ veil rupture
+→ tomb
+→ stone closure
+→ seal/guard.
+
+Section 73 begins:
+
+**closed tomb**
+→ boundary reversed
+→ occupant absent
+→ witnesses inspect
+→ message distributed
+→ same identity appears
+→ recognition varies
+→ body continuity demonstrated
+→ presence inside closed room
+→ mission/information distributed
+→ final visible ascent
+→ cloud removes from sight
+→ future return promised.
+
+### M73-52 — THIS IS A COMPLETE ENCLOSURE→ABSENCE→REAPPEARANCE→DEPARTURE CYCLE, BUT NOT A SINGLE MECHANICAL GATE CYCLE
+
+Each transition uses different narrative mechanism.
+
+This distinction is essential.
+
+---
+
+# Pair / mirror register — Section 73
+
+## women / male disciples
+first tomb witnesses ↔ later verifying/commissioned witnesses.
+
+## Peter / beloved disciple
+arrive/enter/believe in different order.
+
+## two angels at head/feet
+paired axial markers around former body position.
+
+## Emmaus disciple A / disciple B
+paired travellers/witnesses.
+
+## Jesus / unrecognized Jesus
+same identity across recognition-state divide.
+
+## Thomas absent / Thomas present
+controlled two-event contrast.
+
+## first locked-room appearance / second locked-room appearance
+same boundary, changed observer set.
+
+## Peter denial / Peter restoration
+threefold failure ↔ threefold commission.
+
+## death / resurrection
+same identity state change.
+
+## departure / return
+temporal reciprocal pair.
+
+## earth / heaven
+visible departure axis.
+
+## Jesus / cloud
+occupant ↔ occluding/translation-associated medium.
+
+## two men in white
+paired interpreters at transition.
+
+---
+
+# Number / timing register
+
+- "third day" resurrection tradition;
+- one week between Johannine locked-room appearances;
+- John 21:
+  - seven disciples;
+  - 153 fish;
+  - threefold Peter restoration;
+- Acts:
+  - forty-day appearance period;
+- eleven disciples after Judas.
+
+### Number control
+
+Do not force:
+- 7;
+- 40;
+- 153;
+- 3
+
+into Vardath clock mathematics without independent textual/process linkage.
+
+John 21 itself warns against overreading return-related statements,
+and Acts 1 explicitly refuses return-timing knowledge to the disciples.
+
+---
+
+# Textual / scholarly controls
+
+1. Mark 16:9–20 is textually secondary in relation to the earliest recoverable Mark ending at 16:8 in major ancient witnesses.
+2. The shorter/intermediate ending is also secondary.
+3. All four Gospels place women at the empty tomb tradition, but details differ.
+4. Matthew alone narrates the angel moving the stone and connects it with an earthquake.
+5. Mark, Luke and John present the stone as already moved when witnesses arrive.
+6. No canonical Gospel narrates Jesus physically crossing the tomb opening.
+7. Matthew's women grasp Jesus' feet.
+8. Luke emphasizes flesh/bones and fish eating.
+9. John emphasizes wounds in hands/side and repeated recognition difficulty.
+10. John does not narrate how Jesus enters the locked room.
+11. John does not explicitly say Thomas actually touches Jesus' wounds.
+12. Emmaus recognition and disappearance are narrated observationally without mechanism.
+13. John 21's 153 fish has generated many symbolic interpretations; no single numerological interpretation should be assumed.
+14. Luke 24:51 has textual variation concerning explicit ascent wording; Acts 1 gives the fuller ascension account.
+15. Luke and Acts are commonly understood as describing the same final departure event within Luke's two-volume work, though details and chronology are presented differently.
+16. Acts 1's cloud is strongly embedded in biblical divine-presence/translation imagery; its precise physical function is not specified.
+17. Acts 1:11 promises return "in the same way" but does not supply a physical engineering description.
+18. Acts 1 explicitly says the disciples are not given the times/periods for restoration.
+19. Resurrection appearances are narrated with both continuity and altered recognition/access conditions.
+20. These texts must not be harmonized into a single step-by-step physical account where the sources differ or omit mechanism.
+
+---
+
+# Sources logged — Section 73
+
+## Primary texts
+- Matthew 28 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Matthew+28&version=NRSVUE
+- Mark 16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Mark+16&version=NRSVUE
+- Luke 24 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Luke+24&version=NRSVUE
+- John 20–21 NRSVUE:
+  https://www.biblegateway.com/passage/?search=John+20-21&version=NRSVUE
+- Acts 1:1–12 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Acts+1%3A1-12&version=NRSVUE
+
+## Mark ending / resurrection-tradition scholarship
+- "The First Resurrection Appearance and the Ending of Mark's Gospel," *New Testament Studies*:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/first-resurrection-appearance-and-the-ending-of-marks-gospel/52F96AC9AFC9660277D5C25D59C5E099
+- Study of Mary Magdalene/Peter and Mark's ending:
+  http://www.scielo.org.za/scielo.php?pid=S2305-445X2022000100007&script=sci_arttext
+
+## Ascension scholarship
+- D. W. Palmer, "The Literary Background of Acts 1.1–14," *New Testament Studies*:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/literary-background-of-acts-1114/24C8936967817BA3EDB747E921DC86D3
+- *Ascent into Heaven in Luke-Acts* overview:
+  https://www.fortresspress.com/store/product/9781451496444/Ascent-into-Heaven-in-Luke-Acts
+
+---
+
+# SECTION 73 — RESURRECTION / RETURN / ASCENSION COMPLETE
+
+## Strongest new findings
+
+1. **The actual transition from Section 72 to 73 is maximally clear: reinforced tomb enclosure becomes an opened/accessible tomb state, but occupant emergence is never physically narrated.**
+2. **Matthew narrates the angel rolling back the stone after an earthquake, but Jesus is already absent; Mark, Luke and John all have witnesses arrive after the stone has already been moved.**
+3. **Therefore no canonical Gospel says the tomb aperture was opened in order for Jesus to walk through it. Boundary-opening and occupant-state change are distinct variables.**
+4. **The moved stone changes function in Matthew from closure/barrier to the angel's seat, a clean object-state transformation.**
+5. **Peter and the beloved disciple form a complementary observer pair at John's tomb: one reaches first, the other enters first, then the first arrives enters and believes.**
+6. **John's two angels at the former head/foot positions create a genuine longitudinal paired framing around the empty central body-space.**
+7. **Mary Magdalene sees Jesus before recognizing him; the identity-recognition transition is triggered when he speaks her name.**
+8. **Emmaus repeats the same distinction: Jesus is physically present and walking with the pair while unrecognized; recognition changes after scriptural/bread action, then he vanishes from sight without a mechanism being supplied.**
+9. **This establishes one of the strongest projection-method rules yet: physical presence, visible morphology, observer interpretation and identity recognition are separate variables.**
+10. **Luke strongly emphasizes same-body continuity after resurrection through hands/feet, touch, flesh/bones and eating fish.**
+11. **John reinforces identity continuity through the crucifixion wounds in hands/side.**
+12. **The locked-room appearances are genuine boundary anomalies: the doors are shut/locked and Jesus subsequently stands among the group, but John never narrates an opened door, wall transit or other physical mechanism.**
+13. **Thomas is invited to touch the wounds, but John never actually says he performs the touch; the invitation itself immediately produces his confession.**
+14. **The second Thomas appearance acts like a controlled narrative repeat: same enclosure/boundary setting, but the previously absent observer is now present.**
+15. **John 21 again gives visible-but-unrecognized Jesus; recognition is triggered by the fishing sign, not narrated bodily metamorphosis.**
+16. **Peter and the other disciples reach the same shore by different carrier modes—Peter through the water bodily, the others by boat—showing route/medium and carrier are distinct variables.**
+17. **The 153 fish and intact net are recorded without forced numerology; the structurally secure point is high cargo load in a network that remains unbroken.**
+18. **Peter's threefold restoration mirrors his threefold denial, producing a strong failure-state→restorative mirrored sequence→renewed-role pattern.**
+19. **John 21 explicitly corrects an overreading of Jesus' "until I come" statement, making the passage itself a warning against speculative return chronology.**
+20. **Matthew's mountain is a commissioning node, not an ascension throat: central appearance leads to distributed mission among nations.**
+21. **Acts 1 gives the strongest ascension mechanics available: visible Jesus is lifted, a separate cloud takes him from the observers' sight, two white-clad figures interpret the transition, and future return is promised.**
+22. **Cloud and Jesus must remain separate variables; the text securely gives occlusion/removal from sight but does not specify whether the cloud should be modeled physically as vehicle, gate, screen, or divine-presence marker.**
+23. **Acts explicitly refuses the disciples knowledge of the times/periods of restoration, so Acts 1 cannot responsibly be used to derive an exact return clock.**
+24. **"This Jesus ... will come in the same way" gives genuine identity and departure/return reciprocity, but not enough detail to claim identical microphysical route or timing.**
+25. **Across the resurrection narratives, the best formal classification is same identity + changed manifestation/access/recognition state.**
+26. **Tomb, locked room and ascension represent three different boundary types—blocked aperture, closed enclosure, and visibility/sky threshold—and should not be collapsed into one gate mechanism.**
+27. **The complete Section 72→73 sequence is enclosure→boundary reversal→absence→reappearance→variable recognition→embodied continuity→closed-boundary presence→mission→vertical departure→cloud occlusion→promised return.**
+28. **No strict fingertrap appears. Section 73 advances boundary-state logic, observer/recognition theory, same-identity state transition and departure/return reciprocity rather than the missing broad-weave→narrow-throat mechanism.**
+29. **For the cherub / Quetzalcoatl / Feathered-Serpent / dragon / Squatter-Man hypothesis, the important lesson is methodological: a single phenomenon could theoretically remain the same while its visibility, recognition and functional presentation change, but continuity must be demonstrated through process and role rather than resemblance alone.**
+
+## Next live block
+
+**Section 74 — Acts 1–12**
+
+Required roadmap:
+- ascension;
+- cloud;
+- two men in white;
+- Pentecost wind/fire;
+- Peter;
+- Stephen vision;
+- Philip/Ethiopian eunuch;
+- Saul/Paul transformation;
+- Peter prison/gates;
+- angel release.
+
+Priority pair tests:
+- Peter / Paul;
+- Philip / Ethiopian eunuch;
+- Saul / Paul explicitly same figure before/after;
+- two men at ascension.
+
+Required continuity controls:
+1. do not duplicate the Acts 1 ascension work above; cross-reference it and advance only the Acts-specific sequence;
+2. distinguish sound/wind/fire-like phenomena at Pentecost from literal atmospheric wind or ordinary fire unless text requires;
+3. track "filled" / "poured" Spirit language as information/agency state separately from physical fluid;
+4. treat Saul→Paul identity carefully: Acts continues to use Saul after conversion and explicitly introduces the double name later;
+5. distinguish angel, opened prison doors/gates, chains and sleeping prisoner as separate variables;
+6. inspect Stephen's opened-heaven vision as observer access rather than automatic physical portal;
+7. track Philip/eunuch road, water, baptism and post-baptism disappearance/transport without inventing mechanism.
+
