@@ -1,0 +1,63 @@
+name: Append staged Vardath Bible
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bible-staging/vardath-bible-*.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vardath-bible-append
+  cancel-in-progress: false
+
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Append staged Bible block
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          files=(bible-staging/vardath-bible-*.md)
+          if [ ${#files[@]} -eq 0 ]; then
+            exit 0
+          fi
+
+          if [ ${#files[@]} -ne 1 ]; then
+            echo "Expected exactly one staged Bible block, found ${#files[@]}."
+            exit 1
+          fi
+
+          f="${files[0]}"
+          expected="$(sed -n '1s/^<!-- EXPECT-BLOB-SHA:\(.*\) -->$/\1/p' "$f")"
+          if [ -z "$expected" ]; then
+            echo "Missing EXPECT-BLOB-SHA header."
+            exit 1
+          fi
+
+          current="$(git rev-parse HEAD:book/VARDATH-BIBLE.md)"
+          if [ "$current" != "$expected" ]; then
+            echo "Manuscript blob mismatch: expected $expected, current $current."
+            exit 1
+          fi
+
+          tail -n +2 "$f" >> book/VARDATH-BIBLE.md
+          rm "$f"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add book/VARDATH-BIBLE.md bible-staging
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Append staged Vardath Bible block"
+            git push
+          fi
