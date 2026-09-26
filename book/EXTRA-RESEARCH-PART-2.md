@@ -77277,3 +77277,1134 @@ Continue with:
 7. compare the resulting restart pattern with:
    **P9 destruction → P10 closure → P11 recovery → P12 redistribution → P13 successor order**.
 
+
+
+---
+
+# SYNTHESIS 8 — PASS 2
+# 713 BCE CORRECTION + 144,000-DAY LINE RECONSTRUCTION
+
+## File-end authority check
+
+This block continues from the actual live end of Part 2.
+
+No checkpoint was used to determine progress.
+
+The previous Part 2 tail ended with:
+**reconstruct every directly labelled Dark-Satellite event from the free Chronicon archives; keep 144,000 days as master recurrence; then audit Phoenix and Nemesis restart behavior.**
+
+That is the work continued here.
+
+---
+
+# CORRECTION — 718 BCE VERSUS 713 BCE
+
+Pass 1 preserved the Chronicon Archive 3 entry headed **718 BCE** because that entry explicitly narrates:
+- Hezekiah;
+- Sennacherib;
+- the Dark Satellite;
+- a close pass;
+- the change from a 360-day to 365.25-day year;
+- completion of a 395-year orbit.
+
+However, the Archaix **World History & Future Color Chart** separately places the actual day-count/calendar event at:
+
+**713 BCE**
+
+and says:
+
+- this point is **864,000 days** in the relevant count;
+- a flux-tube event occurs;
+- the year changes from 360 to 365.25 days;
+- the 144,000-day baktun changes in civil-year expression from 400 years to about 394.5 years.
+
+The two Archaix source layers therefore differ by:
+
+**718 BCE → 713 BCE = 5 years**.
+
+The user identifies **713 BCE** as the intended/true event date and 718 as an older chronographic placement.
+
+### S8-CORR-1
+
+**For recurrence calculations, preserve 713 BCE as the Archaix chart/day-count anchor while retaining 718 BCE as a separate Chronicon narrative date.**
+
+Do not delete either.
+
+The correct register is:
+
+| Field | Date |
+|---|---:|
+| Chronicon narrative heading | 718 BCE |
+| Archaix day-count/chart anchor | 713 BCE |
+| discrepancy | 5 years |
+| classification | internal Archaix chronology offset |
+
+This is exactly the kind of distinction the user warned about:
+**event/recurrence point can differ from a surviving or inherited historical label.**
+
+But the offset is source-visible here;
+it is not invented merely to improve a fit.
+
+---
+
+# THE PUBLIC 144,000-DAY CHART LINE
+## Reconstructed from Archaix chart material
+
+The World History/Future chart explicitly labels the following as **Mayan baktun / 144,000-day** boundaries:
+
+### Before the claimed 713 BCE calendar change
+- 2313 BCE
+- 1913 BCE
+- 1513 BCE
+- 1113 BCE
+- 713 BCE
+
+These are separated by:
+**400 old 360-day years**.
+
+Arithmetic:
+
+**400 × 360 = 144,000 days**.
+
+This part is internally exact by construction.
+
+### After the claimed 713 BCE change
+The same chart gives:
+- 319 BCE
+- 76 CE
+- 470 CE
+- 864 CE
+- 1258 CE
+- 1652 CE
+- 2046 CE
+
+and states that after the change:
+**144,000 days ≈ 394.5 civil years**.
+
+### S8-DS-5
+
+This gives a real Archaix two-regime day-count sequence:
+
+**360-day regime**
+→ **713 BCE break**
+→ **365/365.25-day regime**.
+
+But year-only labels cannot by themselves prove exact 144,000-day separation after the break because:
+- exact months/days are not supplied for every row;
+- civil-year labels are rounded;
+- BCE/CE year labels have no year zero;
+- 144,000 / 365.25 ≈ 394.2505 years.
+
+Therefore the **day count remains primary**.
+
+---
+
+# CRITICAL DISTINCTION
+## The published 144,000-day line is labelled as a Long-Count/baktun line, not as the Dark Satellite line
+
+This is the most important source-control correction in the Dark-Satellite audit.
+
+The public Archaix chart explicitly labels:
+- 144,000-day intervals as **Mayan baktuns / Long Count**.
+
+The public Chronicon separately says:
+- **Dark Satellite = fixed 395-year orbit**
+- future return = **2052 CE**.
+
+The two future endpoints are therefore publicly distinct:
+
+- 144,000-day Long-Count line → **2046 CE**
+- Dark Satellite → **2052 CE**
+
+difference:
+**6 years**.
+
+The user has supplied the additional working rule:
+**Dark Satellite itself also recurs every 144,000 days**.
+
+That rule is retained.
+
+But the presently indexed public Archaix sources do **not** establish that the published Long-Count dates are automatically the Dark-Satellite dates.
+
+### S8-DS-6
+
+**Do not substitute the Long-Count/baktun date list for a Dark-Satellite date list merely because both use 144,000-day arithmetic.**
+
+They could be:
+- the same period with different phase/anchor;
+- parallel clocks offset from one another;
+- or an unresolved inconsistency between different Archaix materials.
+
+Current public evidence is insufficient to decide.
+
+This is a **source gap**, not permission to manufacture dates.
+
+---
+
+# DARK-SATELLITE SOURCE STATUS AT END OF AUDIT
+
+Directly source-labelled with confidence:
+
+## 713/718 BCE complex
+- 718 BCE Chronicon narrative:
+  Dark Satellite named directly.
+- 713 BCE Archaix chart:
+  exact calendar/day-count break named directly;
+  user identifies it as the corrected Dark-Satellite event anchor.
+
+## 2052 CE
+- Dark Satellite future return stated directly in Archaix glossary/Chronicon.
+
+Not publicly source-verified during this pass as direct Dark-Satellite labels:
+- 1504 BCE;
+- 1109 BCE;
+- 714/713 BCE as a 395-year extrapolated line rather than chart/event line;
+- 319 BCE;
+- 77/76 CE;
+- 472/470 CE;
+- 867/864 CE;
+- 1262/1258 CE;
+- 1657/1652 CE.
+
+Several of these belong to either:
+- a rounded 395-year extrapolation,
+or
+- the published 144,000-day baktun line.
+
+### S8-DS-7
+
+**The historical Dark-Satellite list remains partially unpublished/unindexed in accessible public material.**
+
+The correct research action is:
+record the source gap.
+
+Not:
+fill it with inferred dates and call them historical entries.
+
+This completes the Dark-Satellite reconstruction as far as the currently accessible evidence permits.
+
+---
+
+# SYNTHESIS 8 — PASS 3
+# COMPLETED CORPUS: DOES DESTRUCTION CREATE A NEW CALENDAR?
+
+The 88-text corpus itself contains one exceptionally strong direct example.
+
+# EXODUS 12 — CALENDAR RE-ANCHOR AT THE TRANSITION
+
+Exodus 12:2 says that the Passover month is to become:
+
+**the beginning of months**
+and
+**the first month of the year**.
+
+This instruction occurs immediately before:
+- Passover;
+- death/plague judgment;
+- release from Egypt;
+- population movement;
+- crossing sequence;
+- formation of a successor social order.
+
+This is not a later historian assigning an era centuries afterward.
+
+The source itself places:
+
+**calendar re-anchoring**
+at
+**the destruction/liberation transition boundary**.
+
+### Phase map
+
+late P2 warning/preparation
+→ P3 activation
+→ P9 Egyptian destructive maximum
+→ P7/P12 population transfer/redistribution
+→ P13 successor covenantal order.
+
+The new first month is declared at the front edge of this transformation.
+
+### S8-CORPUS-1
+
+> **The corpus directly supports the principle that a major transition can become a new calendar origin.**
+
+This is much stronger than merely observing that a later civilization happens to start dating records near a disaster.
+
+However:
+
+### S8-CORPUS-2
+
+Exodus does **not** establish a universal rule that calendars begin *after* destruction by a fixed number of years.
+
+Its reset is:
+- deliberate;
+- immediate/anticipatory;
+- ritual-national;
+- attached to liberation.
+
+It therefore supports:
+**event-boundary re-anchoring**,
+
+not:
+**a universal post-catastrophe lag constant**.
+
+Primary:
+https://www.biblegateway.com/passage/?search=Exodus+12%3A1-2&version=NRSVUE
+
+---
+
+# REGNAL-YEAR CONTROL
+## Official chronology can restart at political succession without a cosmic event
+
+Egyptian evidence provides an important ordinary control.
+
+The Metropolitan Museum's review of Egyptian timekeeping notes that:
+- years could be numbered by a king's tenure;
+- the handling of the interval between coronation and New Year's Day varied by period;
+- a king's "Year 1" could therefore depend on accession/coronation and calendar convention.
+
+### S8-CORPUS-3
+
+This demonstrates a real mechanism for chronology offsets:
+
+**event/accession**
+≠ always
+**formal year boundary**.
+
+But the ordinary offset produced by this mechanism is typically:
+- part of a year;
+- or a year-numbering convention;
+
+not an unrestricted multi-year correction.
+
+This strongly supports the user's principle in its disciplined form:
+**official chronology can lag or shift relative to the event that creates the new order.**
+
+Source:
+https://www.metmuseum.org/essays/telling-time-in-ancient-egypt
+
+---
+
+# SYNTHESIS 8 — PASS 4
+# PHOENIX CATASTROPHE-ANCHOR AUDIT
+
+Archaix's public chart describes:
+- Phoenix = 138-year recurrence;
+- larger destructive spacing = multiples of 138;
+- major historical reset claims at several of those points.
+
+The audit asks:
+**does an independent historical/calendar/reign restart occur close to the claimed event?**
+
+---
+
+# PHOENIX CASE A — 2239 BCE GREAT FLOOD CLAIM
+
+Archaix:
+**2239 BCE** Great Flood/Phoenix.
+
+The same Archaix chart notes an old chronographic claim that Babylonian astronomical observations began around:
+**2233/2234 BCE**.
+
+Offset from 2239:
+approximately **+5/+6 years**.
+
+The source of that claim is the classical/late-antique report that Callisthenes sent Aristotle Babylonian observations extending **1,903 years** backward from Alexander's conquest.
+
+Older historical literature calculated this to about **2233/2234 BCE**.
+
+This is a genuine historical tradition.
+
+But it is not equivalent to possessing extant astronomical tablets demonstrably beginning in 2233 BCE.
+
+Modern archaeological periodization provides a hard control:
+- Akkadian period continues to about **2150 BCE**;
+- Egyptian Old Kingdom/Dynasty 6 continues to about **2150 BCE**.
+
+Those are roughly **nine decades after** 2239 BCE.
+
+### Classification
+
+**Old chronographic near-match: YES**
+- event 2239
+- old astronomical-record epoch ~2233/2234
+- offset ~5–6 years.
+
+**Modern archaeological civilization-reset match: NO**
+- major standard political period endings are much later.
+
+### S8-PHX-1
+
+This is a strong example of why:
+**ancient chronographic epoch**
+and
+**modern archaeological periodization**
+must not be merged.
+
+Sources:
+- Callisthenes/2233 discussion:
+  https://www.crcnh.org/downloads/history-reference/babylon/A-History-of-Babylon.pdf
+- Newton's discussion of the 1,903-year tradition:
+  https://newtonproject.ox.ac.uk/view/texts/diplomatic/THEM00186
+- Akkadian period:
+  https://www.metmuseum.org/essays/the-akkadian-period-ca-2350-2150-b-c
+- Old Kingdom:
+  https://www.metmuseum.org/essays/egypt-in-the-old-kingdom-ca-2649-2150-b-c
+
+---
+
+# PHOENIX CASE B — 1687 BCE
+
+Archaix uses **1687 BCE** as an Ogygian/Phoenix catastrophe point.
+
+Independent Egyptian chronology places:
+- the end of the Middle Kingdom / beginning of the Second Intermediate Period around **1650 BCE**.
+
+Difference:
+approximately **37 years**.
+
+### Classification
+
+**broad period proximity**
+not
+**small restart offset**.
+
+This is too large to call:
+"a few-year lag."
+
+It may be relevant to a century-scale regional comparison,
+but it does not satisfy the strict calendar-restart test.
+
+Source:
+https://www.metmuseum.org/essays/egypt-in-the-middle-kingdom-2030-1640-b-c
+
+---
+
+# PHOENIX CASE C — 1135 BCE
+
+Archaix places a major Phoenix catastrophe at **1135 BCE** and associates it with Mediterranean collapse.
+
+Independent archaeology does support a major transformation around the end of the Late Bronze Age:
+- eastern Mediterranean Late Bronze Age conventionally ends around **1200 BCE**;
+- Mycenaean palatial centers suffered widespread destruction in the late thirteenth / around 1200 BCE;
+- the subsequent centuries show major political and social reorganization.
+
+But:
+**1135 BCE is not the standard single collapse date**.
+
+### Classification
+
+**same broad transformation century**
+but
+**not an exact or few-year anchor match**.
+
+This is a valuable phase-level comparison:
+collapse → migration → reduced networks → successor Iron-Age orders.
+
+It is not a precision timing confirmation.
+
+Sources:
+- https://www.metmuseum.org/toah/ht/03/wae.html
+- Metropolitan Museum, *Greek Art From Prehistoric to Classical*:
+  https://resources.metmuseum.org/resources/metpublications/pdf/Greek_Art_From_Prehistoric_to_Classical.pdf
+
+---
+
+# PHOENIX CASE D — 31 BCE → 27 BCE
+
+Archaix's chart includes a major event point at **31 BCE**.
+
+Independent Roman history gives:
+
+**31 BCE**
+Battle of Actium / decisive end-stage civil conflict.
+
+Then:
+
+**27 BCE**
+Octavian receives the title Augustus and the Principate is conventionally marked as beginning.
+
+Offset:
+**4 years**.
+
+This is one of the cleanest independent examples in Synthesis 8.
+
+Process:
+
+**war / old-order terminal conflict**
+→ **victory and consolidation**
+→ **short restructuring interval**
+→ **new named political order**.
+
+### Vardath phase comparison
+
+P9 destructive/political maximum
+→ P10 closure
+→ P12 redistribution/consolidation
+→ P13 successor order.
+
+### Classification
+
+**small restart/epoch offset compatible**.
+
+Important:
+27 BCE is a political/constitutional epoch,
+not a new universal calendar.
+
+### S8-PHX-2
+
+> **The 31→27 BCE case strongly supports a short event→successor-order lag, but not a universal calendar-reset rule.**
+
+Source:
+Metropolitan Museum chronology:
+https://resources.metmuseum.org/resources/metpublications/pdf/The_World_between_Empires_Art_and_Identity_in_the_Ancient_Middle_East.pdf
+
+---
+
+# PHOENIX CASE E — 522 CE → 525 CE
+
+The Archaix chart identifies **522 CE** as an exceptional point:
+- end of a claimed 60-year Nemesis presence beginning in 462;
+- Phoenix/Nemesis overlap in the Archaix system;
+- transition into a Dark-Age frame.
+
+Three years later:
+
+**525 CE**
+
+Dionysius Exiguus constructs the Easter table that introduces the **Anno Domini** year-numbering era.
+
+Offset:
+**+3 years** from 522.
+
+This is the strongest literal **new dating-era** proximity found in the external audit.
+
+But controls are essential:
+
+1. Dionysius created the era for Easter computation.
+2. It was not immediately a universal civil calendar.
+3. Its widespread historical use developed later, especially through Bede and medieval adoption.
+4. No historical evidence establishes that Dionysius created AD *because of* a 522 catastrophe.
+
+### Classification
+
+**excellent chronology proximity**
++
+**real new era**
++
+**causal connection unproven**.
+
+### S8-PHX-3
+
+> **522→525 is the strongest external calendar-origin near-match in the audit, but it is correlation, not demonstrated causal memory of a catastrophe.**
+
+Primary Dionysian letter:
+https://la.wikisource.org/wiki/Epistolae_de_ratione_Paschae
+
+Calendar-history control:
+https://www.encyclopedia.com/people/history/historians-european-biographies/dionysius-exiguus
+
+---
+
+# PHOENIX CASE F — 1902 CE
+
+Archaix identifies **1902 CE** as a modern Phoenix/reset point.
+
+Modern historical documentation is dense.
+
+There is:
+- no universal calendar reset;
+- no newly founded world dating era;
+- no general collapse of record keeping;
+- no civilization-wide successor chronology beginning immediately afterward.
+
+### Classification
+
+**hard negative control**.
+
+### S8-PHX-4
+
+If every Phoenix event necessarily generated a new official era,
+1902 should be an easy modern case.
+
+It is not.
+
+Therefore:
+
+**calendar restart is optional/context-dependent, not an automatic Phoenix signature.**
+
+---
+
+# PHOENIX AUDIT CONCLUSION
+
+Phoenix chronology gives mixed results:
+
+## strong short successor-order offsets
+- 31 BCE → 27 BCE = 4 years;
+- 522 CE → AD era construction 525 = 3 years.
+
+## old chronographic near-match
+- 2239 → 2233/2234 Babylon-observation tradition ≈ 5–6 years.
+
+## broad-only
+- 1687 → Egyptian transition around 1650 ≈ 37 years;
+- 1135 → broad Late Bronze/Iron Age transformation.
+
+## failure
+- 1902 → no calendar/reign/era reset of the required scale.
+
+### S8-PHX-5
+
+**The data supports catastrophe/transition points sometimes being followed by new political or chronological orders, but not a fixed lag and not a universal reset rule.**
+
+---
+
+# SYNTHESIS 8 — PASS 5
+# NEMESIS X CATASTROPHE-ANCHOR AUDIT
+
+Archaix gives:
+**792-year Nemesis recurrence**
+with a claimed **60-year inner-system transit**.
+
+The chart supplies several anchor claims.
+
+---
+
+# NEMESIS CASE A — 1123 BCE
+## Traditional Chinese date versus modern chronology
+
+Archaix:
+**1123 BCE**
+Nemesis return;
+associates it with Shang collapse.
+
+A historically important older Chinese chronology is extremely close:
+the Han scholar **Liu Xin** dated the Shang conquest to **1122 BCE**.
+
+Difference:
+**1 year**.
+
+However modern chronological work based on:
+- radiocarbon;
+- oracle bones;
+- bronze inscriptions;
+- astronomical/textual analysis
+
+places the Zhou conquest near:
+**1046/1044 BCE**.
+
+Difference from Archaix 1123:
+roughly **77–79 years**.
+
+### S8-NEM-1
+
+This is an exceptionally useful control.
+
+It proves that a seeming exact Archaix/history fit can depend almost entirely on **which chronology is chosen**.
+
+Classification:
+
+**traditional chronology: near-exact**
+**modern archaeological chronology: incompatible as a few-year offset**.
+
+Do not average them.
+
+Source:
+Cambridge, radiocarbon dating of late Shang oracle bones:
+https://www.cambridge.org/core/journals/radiocarbon/article/radiocarbon-dating-of-oracle-bones-of-late-shang-period-in-ancient-china/38A7B64D6D538A3A7B96F912BBEE9592
+
+Western Zhou chronology:
+https://www.cambridge.org/core/journals/early-china/article/chronology-of-western-zhou/0D661C3365537C0D15AD896F72F9DF70
+
+---
+
+# NEMESIS CASE B — 331 BCE
+## Imperial destruction → first continuous numbered era
+
+Archaix:
+**331 BCE**
+Nemesis return/inner-system phase.
+
+Independent history:
+**331 BCE**
+Alexander defeats/seizes the Achaemenid Persian imperial system in Mesopotamia.
+
+Later:
+**312/311 BCE**
+becomes Year 1 of the **Seleucid Era**.
+
+Difference:
+approximately **19–20 years**.
+
+The Seleucid Era is historically important because it becomes the first broadly used system of **continuous year numbering** in the Middle East.
+
+This is a genuine:
+
+**old imperial order destroyed**
+→ **successor states struggle**
+→ **new stable dynastic order**
+→ **new formal chronological era**.
+
+### Phase map
+
+P9 imperial destruction
+→ P10 closure/interregnum
+→ P12 redistribution among successor powers
+→ P13 Seleucid stable order/era.
+
+### Classification
+
+**strong phase match**
+but
+**not a small few-year offset**.
+
+### S8-NEM-2
+
+> **331→312/311 is one of the strongest P9→P13 chronology-reset analogues in the entire audit.**
+
+Its value is the ordered transformation,
+not numerical closeness.
+
+Sources:
+- Metropolitan Museum:
+  https://www.metmuseum.org/toah/ht/04/wam.html
+- Encyclopaedia Iranica, Seleucid Era:
+  https://www.iranicaonline.org/articles/seleucid-era/
+
+---
+
+# NEMESIS CASE C — 462 CE → 522 CE transit
+## Collapse inside the window; calendar era immediately after
+
+Archaix:
+- Nemesis enters in **462 CE**;
+- 60-year transit ends in **522 CE**.
+
+Independent political milestone:
+**476 CE**
+deposition of Romulus Augustulus / conventional end of the Western Roman imperial office.
+
+Offset from entry:
+**14 years**.
+
+This falls **inside** the claimed 60-year interval.
+
+Then:
+
+**525 CE**
+Dionysius introduces the AD era.
+
+Offset from the Archaix transit endpoint 522:
+**3 years**.
+
+This creates a notable sequence:
+
+**462 claimed forcing begins**
+→ **476 western imperial office ends**
+→ **long successor restructuring**
+→ **522 claimed forcing ends**
+→ **525 new Christian year-numbering era devised**.
+
+### S8-NEM-3
+
+This is stronger as a **phase-window comparison** than as a point-date comparison.
+
+It does not prove Nemesis caused Rome's transformation or the AD system.
+
+But if the user model predicts:
+
+**disturbance persists for a phase**
+rather than
+**everything happens on one date**,
+
+then this case deserves to remain high-priority.
+
+Sources:
+- Chronicon/world-history chart for 462/522;
+- standard 476 control:
+  https://www.history.com/this-day-in-history/September-4/western-roman-empire-falls
+- Dionysius:
+  https://la.wikisource.org/wiki/Epistolae_de_ratione_Paschae
+
+---
+
+# NEMESIS CASE D — 1254 CE
+
+Archaix:
+**1254 CE**
+Nemesis return and 60-year phase to 1314.
+
+The chart associates:
+- crusading failure;
+- later famine/plague/environmental material.
+
+But this audit did not identify a major new widely adopted calendar era or a clean civilization-wide chronology restart within a few years of 1254.
+
+### Classification
+
+**no calendar-reset match found**.
+
+This failed case is retained.
+
+---
+
+# NEMESIS CASE E — 1915 BCE
+
+Archaix:
+**1915 BCE**
+Nemesis event.
+
+The Archaix chart associates nearby years with:
+- Babel;
+- Akkad;
+- widespread darkness traditions.
+
+Standard archaeological chronology places the Akkadian imperial period around:
+**2350–2150 BCE**.
+
+Therefore the chart's 19th-century-BCE political sequence is not a small offset from conventional Akkadian chronology.
+
+### Classification
+
+**alternative chronology / incompatible with standard archaeological dating as a few-year lag**.
+
+Source:
+https://www.metmuseum.org/essays/the-akkadian-period-ca-2350-2150-b-c
+
+---
+
+# NEMESIS CASE F — 2046 CE
+
+Future claim.
+
+No historical test yet possible.
+
+Classification:
+**untestable future anchor**.
+
+Do not count as confirmation or failure.
+
+---
+
+# NEMESIS AUDIT CONCLUSION
+
+Strongest findings:
+
+1. **1123/1122** gives a near-exact traditional Chinese chronology match, but modern evidence moves the conquest about 77 years.
+2. **331→312/311** gives a very strong destruction→successor-era transformation with a ~19/20-year stabilization interval.
+3. **462→522** contains the 476 western imperial collapse and is followed three years later by Dionysius's 525 era construction.
+4. **1254** yields no comparable new calendar era.
+5. **1915 BCE** conflicts strongly with standard Akkadian chronology.
+6. **2046** is future and cannot be scored.
+
+### S8-NEM-4
+
+**Nemesis comparisons work best as long transition windows, not as proof that every event date should equal a later calendar epoch.**
+
+---
+
+# SYNTHESIS 8 — MASTER CALENDAR-RESTART TABLE
+
+| Candidate event | Successor chronology/order | Offset | Classification |
+|---|---|---:|---|
+| Exodus Passover/Exodus transition | first month declared at event boundary | immediate | direct source calendar reset |
+| Archaix Phoenix 2239 BCE | Callisthenes-derived Babylon observations ~2233/2234 | +5/+6 y | old chronographic near-match; modern verification weak |
+| Archaix Phoenix 1687 BCE | Egypt Second Intermediate transition ~1650 | +37 y | broad period only |
+| Archaix Phoenix 1135 BCE | Late Bronze/Iron Age transformation | broad 12th c. | same phase-century, not precision |
+| Archaix event 31 BCE | Roman Principate 27 BCE | +4 y | strong successor-order near-match |
+| Archaix overlap/transit end 522 CE | Dionysian AD construction 525 | +3 y | strongest literal new-era near-match; causation unproven |
+| Archaix Phoenix 1902 | none comparable | — | failed calendar-reset case |
+| Archaix Nemesis 1123 BCE | Liu Xin Shang conquest 1122 | +1 y | traditional chronology near-exact |
+| Archaix Nemesis 1123 BCE | modern Zhou conquest ~1046/1044 | +77/+79 y | modern chronology incompatible with few-year lag |
+| Archaix Nemesis 331 BCE | Seleucid Era 312/311 BCE | +19/+20 y | strong P9→P13 phase match |
+| Archaix Nemesis 462 CE | Western imperial office ends 476 | +14 y | inside claimed 60-y phase |
+| Archaix Nemesis transit end 522 | AD era devised 525 | +3 y | strong chronology proximity |
+| Archaix Nemesis 1254 | no new major era found | — | failed |
+| Archaix Nemesis 1915 BCE | conventional Akkadian chronology | centuries apart | incompatible |
+| Archaix Dark-Satellite 713 chart | standard Sennacherib/Hezekiah campaign 701 | +12 y | competing chronology, not few-year |
+| Archaix Dark-Satellite 718 narrative | standard 701 campaign | +17 y | competing chronology |
+| Dark Satellite 2052 | future | — | untestable |
+
+---
+
+# WHAT THE CALENDAR-RESTART HYPOTHESIS SURVIVES
+
+The hypothesis survives in a more precise form.
+
+## Supported
+
+### 1. Major transitions can define a new calendar origin
+Exodus 12 is explicit.
+
+### 2. New political orders can receive formal epoch markers shortly after terminal conflict
+31 BCE → 27 BCE.
+
+### 3. A formal dating era can be devised shortly after a long collapse/reorganization phase
+522 → 525.
+
+### 4. Successor eras can be delayed until political stabilization
+331 → 312/311.
+
+### 5. Ancient/older chronologies can differ substantially from modern reconstructed chronologies
+1122 versus ~1046/1044 is the clearest control.
+
+### 6. Regnal dating itself creates event/calendar offsets
+ordinary Egyptian chronology demonstrates this.
+
+---
+
+# WHAT THE HYPOTHESIS DOES NOT SURVIVE
+
+## 1. No fixed lag
+The observed candidate lags include:
+- immediate;
+- 3;
+- 4;
+- 5/6;
+- 14;
+- 19/20;
+- 37;
+- much larger.
+
+There is no one post-destruction correction value.
+
+## 2. Not every claimed catastrophe gets a new era
+1902 is a decisive modern negative control.
+
+## 3. A traditional date cannot be preferred merely because it fits Archaix
+1122 versus modern ~1046/1044 demonstrates the danger.
+
+## 4. "Dark Age begins" is not automatically a calendar reset
+historical period labels are often modern scholarly constructions.
+
+## 5. A calendar boundary can precede, coincide with or follow destructive maximum
+Exodus places the new year at the front edge of the transition.
+
+### S8-MASTER-1
+
+> **The correct model is event-boundary chronogenesis, not a universal post-catastrophe delay.**
+
+A major transition can:
+- establish a new first month immediately;
+- destroy an old order;
+- require years or decades of stabilization;
+- and only later receive a formal epoch.
+
+That is exactly what a P9→P13 phase model would predict better than a one-date reset model.
+
+---
+
+# VARDATH PHASE RESULT
+
+The calendar evidence now maps naturally onto the mature event sequence:
+
+### P9 — destructive maximum
+old political/environmental order fails.
+
+### P10 — closure
+the acute event ends.
+
+### P11 — recovery
+material/ecological infrastructure resumes.
+
+### P12 — redistribution
+populations, rulers, capitals and institutions reorganize.
+
+### P13 — successor stability
+new order names itself;
+new regnal count / era / calendar can begin or become formalized.
+
+### S8-MASTER-2
+
+This means a historical calendar appearing a few years after a proposed catastrophe is **mechanistically plausible** in Vardath terms.
+
+But a lag is evidence only if:
+- the transition itself is independently evidenced;
+- the new chronology is genuinely new;
+- and the temporal relationship is not selected after the fact.
+
+---
+
+# IMPORTANT ARCHAIX RESULT
+## Day-count clocks and civil-history labels must stay separate
+
+The strongest technical improvement from Synthesis 8 is:
+
+**recurrence arithmetic**
+must not be overwritten by
+**historical year labels**.
+
+For Dark Satellite / 144,000-day work:
+
+1. preserve **144,000 days** as the raw recurrence if using the user's rule;
+2. preserve the public Archaix **395-year** wording separately;
+3. preserve **713 BCE** chart anchor separately from the **718 BCE** Chronicon heading;
+4. preserve the Long-Count/baktun line separately from the Dark-Satellite line;
+5. never shift an event year without naming the chronological reason.
+
+### S8-MASTER-3
+
+> **A few-year date discrepancy can be meaningful, but only after the clock, phase and chronology system have been identified independently.**
+
+---
+
+# HARD NEGATIVE CONTROLS RETAINED
+
+1. 1902 does not generate a new calendar.
+2. 1687→1650 is too large for a "few-year" claim.
+3. 1135 belongs only to a broad Late-Bronze transformation window.
+4. 1123 matches 1122 only in an older Chinese chronology; modern evidence gives a very different date.
+5. 1915 BCE does not align with standard Akkadian chronology.
+6. 713/718 versus 701 is a competing-chronology issue, not a simple small lag.
+7. The 144,000-day Long-Count line ending in 2046 is not automatically the Dark-Satellite line ending in 2052.
+8. A calendar/era correlation does not demonstrate a physical celestial cause.
+
+These failed/qualified cases are necessary.
+
+Without them the calendar-restart hypothesis would be unfalsifiable.
+
+---
+
+# SOURCES LOGGED — SYNTHESIS 8 COMPLETION
+
+## Archaix / primary project material
+- Archaix Chronicon PDFs:
+  https://archaix.com/chronicon-pdfs
+- Chronicon Archive 3:
+  https://img1.wsimg.com/blobby/go/eb77e6ef-cc80-4071-aa08-29346acad247/downloads/Chronicon%20Archive%203%20%28pgs%201-48%29.PDF
+- Archaix 2.0 Doomsday Chronology:
+  https://archaix.gumroad.com/l/khniz
+- World History & Future Color Chart Pack mirror:
+  https://www.scribd.com/document/651972985/World-History-Future-Color-Chart-Pack
+- Chronicon digitized mirror:
+  https://pdfcoffee.com/chronicon-pc-v5-pdf-free.html
+- Archaix glossary:
+  https://archaix.com/glossary
+- Dark Satellite lore transcript:
+  https://archaixtranscripts.wordpress.com/the-dark-satellite-lost-world-of-occult-lore/
+
+## Biblical primary
+- Exodus 12:1–2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Exodus+12%3A1-2&version=NRSVUE
+
+## Chronology / archaeology controls
+- British Museum Sennacherib Prism:
+  https://www.britishmuseum.org/collection/object/W_1855-1003-1
+- Metropolitan Museum — Akkadian Period:
+  https://www.metmuseum.org/essays/the-akkadian-period-ca-2350-2150-b-c
+- Metropolitan Museum — Old Kingdom:
+  https://www.metmuseum.org/essays/egypt-in-the-old-kingdom-ca-2649-2150-b-c
+- Metropolitan Museum — Middle Kingdom:
+  https://www.metmuseum.org/essays/egypt-in-the-middle-kingdom-2030-1640-b-c
+- Metropolitan Museum — Ancient Egyptian timekeeping:
+  https://www.metmuseum.org/essays/telling-time-in-ancient-egypt
+- Metropolitan Museum — Eastern Mediterranean 2000–1000 BCE:
+  https://www.metmuseum.org/toah/ht/03/wae.html
+- Metropolitan Museum — Mesopotamia 1000 BCE–1 CE:
+  https://www.metmuseum.org/toah/ht/04/wam.html
+- Metropolitan Museum — *Greek Art From Prehistoric to Classical*:
+  https://resources.metmuseum.org/resources/metpublications/pdf/Greek_Art_From_Prehistoric_to_Classical.pdf
+- Metropolitan Museum — *The World between Empires* chronology:
+  https://resources.metmuseum.org/resources/metpublications/pdf/The_World_between_Empires_Art_and_Identity_in_the_Ancient_Middle_East.pdf
+- Cambridge — radiocarbon dating and end of Shang:
+  https://www.cambridge.org/core/journals/radiocarbon/article/radiocarbon-dating-of-oracle-bones-of-late-shang-period-in-ancient-china/38A7B64D6D538A3A7B96F912BBEE9592
+- Cambridge — Western Zhou chronology:
+  https://www.cambridge.org/core/journals/early-china/article/chronology-of-western-zhou/0D661C3365537C0D15AD896F72F9DF70
+- Encyclopaedia Iranica — Seleucid Era:
+  https://www.iranicaonline.org/articles/seleucid-era/
+- Dionysius Exiguus, Easter letter:
+  https://la.wikisource.org/wiki/Epistolae_de_ratione_Paschae
+- Dionysius biographical/calendar control:
+  https://www.encyclopedia.com/people/history/historians-european-biographies/dionysius-exiguus
+- Callisthenes/Babylon observation tradition:
+  https://newtonproject.ox.ac.uk/view/texts/diplomatic/THEM00186
+  https://www.crcnh.org/downloads/history-reference/babylon/A-History-of-Babylon.pdf
+
+---
+
+# SYNTHESIS 8 — FINAL RESULT
+
+The completed catastrophe-anchor/calendar-restart audit supports four conclusions.
+
+## 1. Calendar reset at a transformation boundary is directly attested in the corpus
+
+Exodus 12 is decisive:
+the first month is redefined at the Passover/Exodus transition.
+
+Therefore:
+**new world/order → new time-count origin**
+is a genuine textual process.
+
+---
+
+## 2. Historical successor orders can lag destructive/terminal events
+
+Strong examples:
+- 31 BCE → Roman Principate 27 BCE = 4-year consolidation;
+- 331 BCE → Seleucid Era 312/311 BCE = ~19/20-year stabilization;
+- Archaix 462–522 window → 476 political termination + 525 AD-era construction.
+
+Therefore:
+**event date ≠ necessarily formal successor-era date**.
+
+The user's correction is valid as a methodological rule.
+
+---
+
+## 3. There is no universal lag
+
+The evidence does not support:
+"add X years after every destruction."
+
+Offsets vary,
+and several claimed reset points produce no new era at all.
+
+Therefore:
+use a **phase window**,
+not a free numerical correction.
+
+---
+
+## 4. Archaix chronology itself contains multiple date layers that must not be collapsed
+
+Specifically:
+- 718 BCE Chronicon narrative;
+- 713 BCE day-count/chart event;
+- 144,000-day Long-Count dates;
+- Dark Satellite 395-year/2052 statements.
+
+These need separate columns.
+
+The correct next-stage model is therefore:
+
+**physical recurrence clock**
++
+**event-phase clock**
++
+**historical chronology**
++
+**formal calendar/era**
++
+**record survival**
+
+rather than one date pretending to represent all five.
+
+---
+
+# SYNTHESIS 8 — COMPLETE
+
+## Progress authority
+
+The actual Part 2 end now records Synthesis 8 as complete.
+
+No **Synthesis 9** is specified by the existing sections/synthesis list.
+
+Therefore:
+
+**DO NOT INVENT A NEW SYNTHESIS SECTION FROM MEMORY OR A CHECKPOINT.**
+
+On the next continuation:
+1. read the actual Part 2 tail;
+2. check the project section list/instructions;
+3. proceed only if the file itself specifies additional unfinished work.
+
