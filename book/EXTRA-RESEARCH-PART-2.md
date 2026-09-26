@@ -47266,3 +47266,1688 @@ High-priority Vardath questions:
 7. Keep the sealed scroll/opening process separate from physical world-gate mechanics until the text itself connects them.
 8. Apply strict fingertrap criteria only after throne, creature, door, scroll and Lamb systems are separated by function.
 
+
+
+---
+
+# SECTION 78 — REVELATION 1–5
+## Direct Apocalypse pass — seven community-lamp nodes, composite axis-person, mouth-sword/information weapon, keys of Death/Hades, lampstand removal, open/shut access authority, human→pillar transformation, heavenly door/ascent, Ezekiel+Isaiah throne-creature fusion, eye/wing distributed sensing, Lion→Lamb same-referent transformation, seven horns/eyes, sealed information object, and whole-cosmos worship field
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked for Revelation material;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+Part 1 contains earlier exploratory Revelation cross-references and a roadmap, but not the completed sequential Section 78 direct pass.
+
+Part 2 actual tail identified:
+**Section 78 — Revelation 1–5**.
+
+This section is appended only here in Part 2.
+
+---
+
+# Historical / literary control first
+
+Revelation is simultaneously:
+- apocalypse;
+- prophecy;
+- circular letter addressed to seven communities in Roman Asia.
+
+The text identifies its seer as John and situates him on Patmos.
+
+Modern scholarship stresses that Revelation constructs its visions densely from earlier biblical language rather than simply copying one source.
+
+Particularly important source fields for chapters 1–5:
+- Daniel;
+- Ezekiel;
+- Isaiah;
+- Zechariah;
+- Psalms;
+- Exodus/temple imagery.
+
+Steve Moyise's Oxford Handbook survey emphasizes that Revelation's visions are built through dense allusion and fusion, especially from Isaiah, Ezekiel and Daniel.
+
+That means:
+**shared imagery with earlier books can be deliberate literary recombination**.
+
+This is important for Vardath:
+a repeated geometry may reflect:
+1. common phenomenon memory;
+2. deliberate scriptural reuse;
+3. both;
+4. neither.
+
+The literary explanation must always remain available.
+
+---
+
+# REVELATION 1
+## Patmos → Spirit-state → trumpet-like voice → turn → seven lampstands → composite humanlike central figure
+
+John:
+- is on Patmos;
+- is "in the Spirit";
+- hears a loud trumpet-like voice behind him;
+- turns to see the voice.
+
+He then sees:
+- seven golden lampstands;
+- one like a Son of Man in their midst.
+
+### M78-1 — AUDITORY INPUT PRECEDES VISUAL FORM
+
+Sequence:
+
+**voice**
+→ **observer turns**
+→ **visual field resolves**.
+
+This is important for projection research.
+
+The body is not the first datum.
+The first datum is:
+**voice/information**.
+
+Then:
+a visual form appears.
+
+Cross-link:
+- Ezekiel voice/throne;
+- 4 Ezra voice/structural transformation;
+- Daniel auditory→visual transitions.
+
+### M78-2 — THE CENTRAL FIGURE STANDS WITHIN A DISTRIBUTED SEVEN-NODE FIELD
+
+Geometry:
+
+lamp — lamp — lamp
+        |  /
+    central figure
+      /  |  \
+lamp — lamp — lamp — lamp
+
+The text later interprets:
+- lampstands = churches.
+
+Therefore the geometry is explicitly:
+
+**seven distributed communities**
+around/with
+**one central humanlike figure**.
+
+This is source-level,
+not inferred.
+
+---
+
+# Revelation 1:13–16
+## MAJOR COMPOSITE AXIS-PERSON IMAGE
+
+The humanlike figure has:
+
+- long robe;
+- gold sash;
+- head/hair white like wool/snow;
+- eyes like flame/fire;
+- feet like burnished bronze refined/heated in furnace;
+- voice like many waters;
+- seven stars in right hand;
+- sharp two-edged sword from mouth;
+- face like sun at full strength.
+
+### M78-3 — ONE HUMANLIKE BODY CARRIES FIRE, METAL, WATER, STAR, WEAPON AND SOLAR ATTRIBUTES SIMULTANEOUSLY
+
+This is one of the strongest composite anthropomorphic projections yet.
+
+Body-region mapping:
+
+**HEAD/HAIR**
+→ white wool/snow
+
+**EYES**
+→ flame/fire
+
+**FEET**
+→ furnace-refined bronze
+
+**VOICE**
+→ many waters
+
+**RIGHT HAND**
+→ seven stars
+
+**MOUTH**
+→ two-edged sword
+
+**FACE**
+→ sun.
+
+### M78-4 — THE FIGURE IS NOT MERELY "A MAN WITH FIRE"
+
+It is a cross-domain body:
+- atmospheric/thermal;
+- metallic;
+- hydrological/acoustic;
+- celestial;
+- weapon/information;
+- solar/luminous.
+
+This is highly relevant to the Squatter-Man hypothesis:
+a humanlike visual form can aggregate multiple environmental domains.
+
+But source identity is explicit:
+the risen Christ / Son-of-Man figure.
+
+Do not erase that.
+
+### M78-5 — VOICE AS MANY WATERS IS AN ENVIRONMENT→ANTHROPOMORPHIC ATTRIBUTE TRANSFER
+
+Humanlike figure:
+speaks.
+
+Acoustic field:
+rendered as
+**many waters**.
+
+This is another example where water imagery can mean:
+- sound;
+- force;
+- multitude/intensity,
+not necessarily literal flowing water.
+
+### M78-6 — SWORD FROM MOUTH IS AN INFORMATION/JUDGMENT WEAPON, NOT NORMAL ANATOMY
+
+The sword:
+emerges from mouth.
+
+In chapters 2–3:
+the same mouth-sword functions in verbal/judicial confrontation.
+
+Therefore:
+**mouth → word/judgment output**
+is the secure functional interpretation.
+
+This is very close to:
+4 Ezra 13 mouth-fire explicitly interpreted as law/reproof.
+
+### M78-7 — THE MOUTH IS AGAIN AN OUTPUT APERTURE
+
+Cross-text pattern:
+
+4 Ezra 13:
+mouth → fire/breath/sparks → interpreted law/judgment.
+
+Revelation 1:
+mouth → sword → later judgment.
+
+So:
+**mouth**
+can project
+**directed information/action output**.
+
+---
+
+# Revelation 1:17–18
+## observer collapses → right-hand contact restores → same figure spans death/alive states → keys control Death/Hades
+
+John:
+- falls as though dead.
+
+Figure:
+- places right hand on him;
+- tells him not to fear.
+
+Identity:
+- First;
+- Last;
+- Living One;
+- was dead;
+- now alive forever.
+
+Authority:
+- keys of Death and Hades.
+
+### M78-8 — SAME IDENTITY PERSISTS THROUGH DEAD→LIVING STATE TRANSITION
+
+This is a strong identity-continuity control.
+
+Not:
+old person replaced by another.
+
+Same referent:
+**dead state**
+→ **living state**.
+
+### M78-9 — RIGHT-HAND CONTACT CHANGES OBSERVER STATE
+
+John:
+collapse/death-like state
+→ touch
+→ receptive/functional state.
+
+This is a local operator→observer reset.
+
+### M78-10 — KEYS OF DEATH/HADES REPRESENT ACCESS AUTHORITY
+
+A key implies:
+- open;
+- close;
+- admit;
+- release;
+- exclude.
+
+But Revelation 1 does not yet depict a literal door to Death/Hades opening.
+
+Therefore classify:
+
+**semantic/access-control authority**
+not
+**demonstrated physical gate mechanics**.
+
+---
+
+# Revelation 1:20
+## EXPLICIT SYMBOL DECODING
+## stars = angels/messengers; lampstands = churches
+
+The text interprets itself:
+
+- seven stars = angels/messengers of seven churches;
+- seven lampstands = seven churches.
+
+### M78-11 — ONE SOCIAL SYSTEM IS PROJECTED INTO TWO DISTINCT CELESTIAL/OBJECT LAYERS
+
+For each church:
+- community = lampstand;
+- messenger/angel = star.
+
+This is important.
+
+Star and lamp are **not interchangeable**.
+
+The system distinguishes:
+1. community node;
+2. messenger node.
+
+### M78-12 — DISTRIBUTED PEOPLE/COMMUNITIES CAN BE REPRESENTED AS MATERIAL LIGHT-BEARING OBJECTS
+
+This is strong projection evidence:
+**human community → lampstand**.
+
+Cross-link:
+- living stones → house;
+- woman → city;
+- king → tree;
+- empire → beast.
+
+---
+
+# REVELATION 2
+## central figure walks among community-lamp nodes
+
+Opening description:
+figure:
+- holds seven stars;
+- **walks among seven lampstands**.
+
+### M78-13 — CENTRAL OPERATOR IS MOBILE INSIDE DISTRIBUTED NODE FIELD
+
+Revelation 1:
+central position.
+
+Revelation 2:
+active traversal.
+
+So the central figure is not fixed like:
+a static pillar.
+
+It:
+**moves among distributed community nodes**.
+
+This matters for Vardath:
+axis-person and field need not be permanently fixed to one point.
+
+---
+
+# Revelation 2:5
+## lampstand can be removed while community is being addressed
+
+Ephesus warned:
+- repent;
+- otherwise lampstand removed from its place.
+
+Since Revelation 1 says:
+lampstand = church,
+
+### M78-14 — SYSTEM STATUS CAN BE ALTERED BY REMOVING THE SYMBOLIC NODE WITHOUT PHYSICALLY DESTROYING EVERY MEMBER
+
+This is a source-level example of:
+**structural representation changing because relational/status state changes**.
+
+Do not interpret as literal giant lamp removal.
+
+---
+
+# Revelation 2:8–11
+## First/Last → dead/living → first/second death
+
+Smyrna receives identity:
+- First and Last;
+- was dead;
+- came to life.
+
+Promise:
+- conqueror not harmed by second death.
+
+### M78-15 — REVELATION DISTINGUISHES MULTIPLE DEATH STATES
+
+At minimum:
+- ordinary death;
+- "second death" later defined in the book.
+
+Therefore:
+"death" is not one simple binary variable.
+
+This will matter strongly in Revelation 20.
+
+---
+
+# Revelation 2:12–17
+## mouth-sword reused + hidden food + white stone + new private name
+
+Pergamum:
+- figure identified by two-edged sword.
+
+Threat:
+- war with sword of mouth.
+
+Rewards:
+- hidden manna;
+- white stone;
+- new name known only to receiver.
+
+### M78-16 — SWORD FUNCTION IS CONFIRMED AS COMMUNICATIVE/JUDICIAL
+
+This reinforces M78-6.
+
+### M78-17 — WHITE STONE + PRIVATE NAME IS AN INFORMATION/IDENTITY TOKEN
+
+Object:
+stone.
+
+Information:
+new name.
+
+Access:
+known to receiver.
+
+This is another:
+**material object carrying individualized information/state**.
+
+Cross-link:
+- inscribed stones;
+- books;
+- seals;
+- garment/access states.
+
+---
+
+# Revelation 2:18–29
+## fire eyes / bronze feet recur; rod + morning star
+
+Thyatira:
+- fire-eyes;
+- bronze-feet.
+
+Conqueror:
+- receives authority;
+- iron rod imagery;
+- morning star.
+
+### M78-18 — FEATURES FROM THE INITIAL BODY ARE DISTRIBUTED INTO THE LETTER SYSTEM
+
+The vision of chapter 1 is not decorative.
+
+Different communities are addressed through:
+specific attributes of the central figure.
+
+Thus the body functions like:
+**modular capability set**.
+
+### M78-19 — MORNING STAR IS AN IDENTITY/REWARD IMAGE, NOT AUTOMATIC ASTRONOMICAL TRANSFER
+
+Later Revelation 22 identifies Christ with morning star imagery.
+
+Do not interpret this as literal star-cargo movement.
+
+---
+
+# REVELATION 3
+## Sardis: reputation alive / actual dead → wake → remain/strengthen
+
+Sardis:
+- socially "alive";
+- judged dead;
+- remnant near death;
+- commanded to wake.
+
+### M78-20 — ONE COMMUNITY CAN OCCUPY DIFFERENT OBSERVER-DEPENDENT STATE DESCRIPTIONS
+
+Public name:
+alive.
+
+Evaluated state:
+dead.
+
+This is an information/perception-state mismatch,
+not physical resurrection yet.
+
+---
+
+# Revelation 3:7–13
+## MAJOR ACCESS-CONTROL PASSAGE
+## key of David → opens/no one shuts → shuts/no one opens → open door → human becomes temple pillar → city descends from heaven
+
+The Philadelphia speaker:
+- possesses key of David;
+- opens and no one shuts;
+- shuts and no one opens.
+
+Then:
+- places an open door before community.
+
+Conqueror:
+- made a pillar in God's temple;
+- will never go out;
+- receives inscriptions:
+  - God's name;
+  - name of New Jerusalem;
+  - new divine name.
+
+New Jerusalem:
+- comes down from heaven.
+
+### M78-21 — THIS IS TRUE OPEN/SHUT ACCESS AUTHORITY
+
+Unlike vague door imagery,
+the text explicitly couples:
+
+**key**
+→ **opening**
+→ **closing**
+→ **access state**.
+
+### M78-22 — THE OPEN DOOR SHOULD NOT YET BE CLASSIFIED AS A COSMIC PHYSICAL PORTAL
+
+Literary context strongly supports:
+- granted opportunity/access;
+- covenantal/kingdom authority;
+- admission.
+
+The text does not show anyone physically traversing this Philadelphia door.
+
+Keep separate from Revelation 4's heavenly door.
+
+### M78-23 — HUMAN→PILLAR IS AN EXPLICIT ARCHITECTURAL PROJECTION
+
+Conqueror:
+**person**
+→ **pillar in temple**.
+
+This is important.
+
+Cross-link:
+- woman→city;
+- people→living stones;
+- tree/person;
+- mountain/person.
+
+### M78-24 — "NEVER GO OUT" MAKES PILLAR STATUS AN ACCESS/STABILITY STATE
+
+Pillar is not merely decorative.
+
+It encodes:
+- permanence;
+- belonging;
+- stable position inside sacred structure.
+
+### M78-25 — INSCRIPTION ADDS INFORMATION/IDENTITY LAYER TO ARCHITECTURAL BODY
+
+Pillar-person carries:
+- divine name;
+- city name;
+- new name.
+
+Therefore:
+**structure**
++
+**identity information**
+are combined.
+
+---
+
+# Revelation 3:14–22
+## hot/cold/lukewarm state → refined gold → white clothing → eye medicine → door knocking → voluntary opening → shared throne
+
+Laodicea:
+- neither cold nor hot;
+- lukewarm.
+
+Corrective commodities:
+- gold refined by fire;
+- white clothing;
+- eye salve.
+
+Then:
+- figure stands at door;
+- knocks;
+- hears/opening person admits him;
+- meal shared.
+
+Conqueror:
+- sits with figure on throne.
+
+### M78-26 — THERMAL STATE HERE IS MORAL/RELATIONAL, NOT A PLASMA TEMPERATURE DIAGRAM
+
+Important anti-forcing control.
+
+### M78-27 — DOOR IN 3:20 IS RECIPROCAL RELATIONAL ACCESS
+
+Outside agent:
+knocks.
+
+Inside human:
+opens.
+
+Agent:
+enters.
+
+Then:
+shared meal.
+
+This is a real:
+**closed boundary → signal → internal authorization → entry**
+sequence.
+
+But:
+it is household/relational metaphor,
+not cosmic gate.
+
+### M78-28 — ACCESS CONTROL CAN BE OUTSIDE-INITIATED BUT INSIDE-AUTHORIZED
+
+This is a useful systems distinction.
+
+Revelation contains different gate types:
+- key-controlled;
+- inside-opened;
+- heavenly visionary door.
+
+Do not merge them.
+
+---
+
+# REVELATION 4
+# MAJOR HEAVENLY-DOOR / THRONE-CREATURE PASSAGE
+
+---
+
+# Revelation 4:1–2
+## open door in heaven → trumpet-like voice → "come up here" → observer becomes/in Spirit → heavenly throne field
+
+John sees:
+- door standing open in heaven.
+
+Voice:
+- like trumpet;
+- says "come up here";
+- promises view of what follows.
+
+Immediately:
+- John is/in Spirit;
+- throne appears in heaven.
+
+### M78-29 — THIS IS A STRONGER DOOR THAN REVELATION 3
+
+Here the open door is explicitly:
+**in heaven**.
+
+It is paired with:
+**come up here**.
+
+So:
+boundary + upward invitation are real textual elements.
+
+### M78-30 — THE MODE OF TRANSFER IS VISIONARY/SPIRITUAL, NOT CLEARLY ORDINARY BODY TRANSPORT
+
+John says:
+- "at once I was in the Spirit" / "in Spirit."
+
+The text does not describe:
+- physical body leaving Patmos;
+- flesh passing through measured aperture;
+- land transfer.
+
+Classification:
+**visionary access/ascent**.
+
+### M78-31 — DOOR AND THRONE SYSTEM ARE DISTINCT
+
+Sequence:
+door opens
+→ observer gains access
+→ throne field is viewed.
+
+Do not assume:
+door itself = throne/chariot.
+
+---
+
+# Revelation 4:2–6
+## throne → gem-like appearance → rainbow → 24 throne nodes → lightning/thunder/voices → seven fire-lamps/spirits → glass/crystal sea
+
+Central throne:
+- occupied.
+
+Around:
+- rainbow/emerald-like appearance;
+- 24 thrones;
+- 24 elders;
+- white clothes;
+- gold crowns.
+
+From throne:
+- lightning;
+- rumblings;
+- thunder;
+- voices.
+
+Before throne:
+- seven blazing lamps/torches;
+- explicitly = seven spirits of God;
+- something like sea of glass/crystal.
+
+### M78-32 — THE THRONE IS A MULTI-OUTPUT CENTRAL NODE
+
+Outputs:
+- light;
+- sound;
+- voice;
+- distributed seven-fire/spirit field.
+
+This is strongly system-like.
+
+But source function:
+divine kingship/worship.
+
+### M78-33 — SEVEN LIGHT OBJECTS CHANGE REFERENT ACROSS CHAPTERS
+
+Chapter 1:
+seven lampstands = churches.
+
+Chapter 4:
+seven blazing lamps = seven spirits.
+
+Therefore:
+**same/similar object type does not guarantee same referent**.
+
+This is a crucial anti-overfitting control.
+
+### M78-34 — "SEA OF GLASS LIKE CRYSTAL" IS A BOUNDARY/SURFACE IMAGE, NOT SECURE LIQUID WATER
+
+The text says:
+something like a sea,
+glass/crystal-like.
+
+Thus:
+do not automatically map it to literal ocean or canopy water.
+
+It may function:
+- visual expanse;
+- throne foreground;
+- heavenly boundary.
+
+Later Revelation 15 revisits it.
+
+---
+
+# Revelation 4:6–8
+# MAJOR CHERUB/SERAPH FUSION
+## four living creatures + eyes + animal/human forms + six wings + continuous praise
+
+Four creatures:
+1. like lion;
+2. like ox;
+3. face like human;
+4. like flying eagle.
+
+Each:
+- six wings;
+- eyes all around and inside;
+- unceasing praise.
+
+### Ordinary literary control
+
+Scholarly treatment widely recognizes Revelation 4 as a deliberate fusion of:
+- Ezekiel's four living creatures/cherubim;
+- Isaiah 6's six-winged seraphim.
+
+Ezekiel contributes:
+- living-creature tetrad;
+- lion/ox/human/eagle forms;
+- throne setting;
+- eyes in the broader throne-machine tradition.
+
+Isaiah contributes:
+- six wings;
+- "holy, holy, holy" worship.
+
+### M78-35 — REVELATION ITSELF RECOMBINES EARLIER WINGED-THRONE MORPHOLOGIES
+
+This is extremely important for the user's:
+cherub / Feathered Serpent / Quetzalcoatl
+hypothesis.
+
+The biblical tradition itself does **not** preserve one fixed creature anatomy.
+
+It can:
+- inherit;
+- separate;
+- recombine;
+- redistribute features.
+
+### M78-36 — REVELATION 4 CREATURES ARE NOT IDENTICAL IN SHAPE TO EZEKIEL'S CREATURES
+
+Ezekiel:
+each creature has multiple faces and four wings.
+
+Revelation:
+four creatures each display one main animal/human form;
+each has six wings.
+
+Therefore:
+this is **transformed reception**,
+not a verbatim mechanical repeat.
+
+### M78-37 — WINGS + EYES FORM A DISTRIBUTED PERCEPTION/PRESENCE BODY
+
+Eyes:
+- front/back;
+- all around;
+- inside.
+
+Wings:
+- six each.
+
+This gives:
+**highly distributed sensing/vision**
+inside
+**mobile/winged creature bodies**.
+
+The text does not explain literal optics.
+
+### M78-38 — FOUR CREATURE TYPES ARE DIFFERENT PROJECTIONS INSIDE ONE THRONE SYSTEM
+
+Lion;
+ox;
+human;
+eagle.
+
+They are:
+different bodies,
+same worship/support field.
+
+This is useful to:
+same-apparatus/different-function imagery.
+
+But:
+not one creature changing into another here.
+
+---
+
+# Revelation 4 throne-system comparison with Ezekiel
+
+## Ezekiel
+- mobile throne/chariot;
+- cherubim;
+- wheels;
+- eyes;
+- firmament/vault;
+- humanlike enthroned figure;
+- wings/noise.
+
+## Revelation 4
+- throne;
+- no wheel mechanism described;
+- four living creatures;
+- six wings;
+- eyes;
+- glass/crystal sea;
+- lightning/thunder/voices;
+- twenty-four elders.
+
+### M78-39 — REVELATION PRESERVES THE THRONE-CREATURE CORE BUT DROPS/TRANSFORMS IMPORTANT MECHANICAL ELEMENTS
+
+Especially absent in chapter 4:
+- Ezekiel's wheel system;
+- four faces on each creature;
+- explicit moving chariot.
+
+Therefore:
+do not claim identical machine description.
+
+---
+
+# REVELATION 5
+# MAJOR SAME-REFERENT CREATURE TRANSFORMATION
+
+---
+
+# Revelation 5:1–4
+## scroll in right hand → written inside/back → seven seals → no being in three cosmic domains can open
+
+The enthroned figure holds:
+- scroll;
+- writing inside/back;
+- seven seals.
+
+Search for opener spans:
+- heaven;
+- earth;
+- under earth.
+
+No one initially qualifies.
+
+### M78-40 — THE SEALED SCROLL IS AN INFORMATION OBJECT WITH ACCESS CONTROL
+
+Variables:
+
+**information**
+= writing
+
+**container**
+= scroll
+
+**locks**
+= seven seals
+
+**authorization question**
+= who is worthy?
+
+This is not a spatial world-gate.
+
+It is:
+**information/action authorization**.
+
+### M78-41 — ACCESS SEARCH SPANS THREE COSMIC DOMAINS
+
+- heaven;
+- earth;
+- under-earth.
+
+This reinforces:
+multi-level populated/agent-filled cosmology.
+
+But:
+not Vardath stacked physical world-turns.
+
+---
+
+# Revelation 5:5–6
+## HEARD Lion/Root → SAW slaughtered-standing Lamb
+
+Elder says:
+- Lion of Judah;
+- Root of David;
+- has conquered;
+- can open scroll.
+
+John looks:
+- sees Lamb;
+- standing;
+- as if slaughtered.
+
+### M78-42 — THIS IS ONE OF THE STRONGEST SAME-REFERENT PROJECTION TRANSFORMATIONS IN THE ENTIRE BIBLE PROJECT
+
+Auditory identity:
+**LION**.
+
+Visual identity:
+**LAMB**.
+
+Referent:
+same conquering messianic figure.
+
+The text does not present:
+one lion and then an unrelated lamb.
+
+Scholarly discussion routinely treats the hearing/seeing contrast as deliberate reinterpretation.
+
+### M78-43 — PREDATOR→PREY/SACRIFICIAL ANIMAL TRANSFORMATION REVERSES EXPECTED POWER IMAGE
+
+Expected:
+conquering lion.
+
+Seen:
+slaughtered lamb standing alive.
+
+So:
+power/conquest is redefined through:
+death/sacrifice/survival.
+
+This is not merely shape change;
+it changes **function semantics**.
+
+### M78-44 — "ROOT OF DAVID" ADDS A PLANT/LINEAGE PROJECTION TO THE SAME REFERENT
+
+Same figure is described as:
+- lion;
+- root;
+- lamb.
+
+Thus one referent spans:
+**animal predator**
+→ **plant/root lineage**
+→ **animal sacrificial victim**.
+
+Ordinary reading:
+messianic titles/allusions.
+
+Vardath relevance:
+body type can change radically while referent remains stable.
+
+---
+
+# Revelation 5:6
+## Lamb has seven horns + seven eyes = seven spirits sent through all earth
+
+Lamb:
+- seven horns;
+- seven eyes.
+
+Text explicitly interprets:
+seven eyes/spirits:
+**seven spirits of God sent out into all earth**.
+
+### M78-45 — ONE CENTRAL CREATURE BODY CONTAINS DISTRIBUTED WORLD-RANGING NODES
+
+Central Lamb:
+contains seven eyes.
+
+Those eyes:
+identified with spirits
+**sent into all earth**.
+
+This is a direct:
+**one center → distributed field**
+mapping.
+
+### M78-46 — EYES ARE FUNCTIONAL/PERCEPTUAL-SPIRIT NODES, NOT ORDINARY ANATOMY
+
+Seven eyes are already interpreted symbolically.
+
+Therefore:
+literal biological reconstruction would miss the text's own grammar.
+
+### M78-47 — HORNS AND EYES SHOULD NOT BE AUTOMATICALLY MERGED INTO ONE NODE TYPE
+
+Text explicitly interprets eyes as spirits.
+
+It does not in this verse explicitly decode horns.
+
+Biblical horn imagery commonly signifies power/strength/rule,
+but keep:
+**horn function**
+distinct from
+**eye/spirit function**.
+
+---
+
+# Revelation 5:7–10
+## Lamb crosses throne field → takes sealed scroll → living creatures/elders bow → bowls = prayers → distributed peoples become one kingdom/priesthood
+
+Lamb:
+- approaches;
+- takes scroll from right hand of enthroned one.
+
+Four creatures + 24 elders:
+- fall before Lamb.
+
+They hold:
+- harps;
+- golden bowls of incense.
+
+Text explains:
+bowls/incense = prayers of saints.
+
+New song:
+people ransomed from:
+- every tribe;
+- language;
+- people;
+- nation.
+
+They become:
+- kingdom;
+- priests.
+
+### M78-48 — BOWL CONTENT IS EXPLICITLY INFORMATION/PRAYER, NOT ORDINARY FLUID
+
+Another strong control.
+
+Material container:
+golden bowl.
+
+Symbolic content:
+prayers.
+
+### M78-49 — DISTRIBUTED HUMAN POPULATIONS CONVERGE INTO ONE FUNCTIONAL COLLECTIVE WITHOUT LOSING SOURCE DIVERSITY
+
+Input:
+many tribes/languages/peoples/nations.
+
+Output:
+one kingdom/priestly body.
+
+This is:
+**many→one social reconfiguration**.
+
+Not physical geographic compression.
+
+---
+
+# Revelation 5:11–14
+## concentric worship expands from throne center to every creature in every domain
+
+Sequence of praise expands:
+
+- throne;
+- Lamb;
+- living creatures;
+- elders;
+- many angels;
+- every creature:
+  - heaven;
+  - earth;
+  - under earth;
+  - sea.
+
+### M78-50 — REVELATION 5 ENDS WITH A CONCENTRIC CENTER→COSMOS EXPANSION
+
+Central throne/Lamb field
+→ angelic multitude
+→ every creature/domain.
+
+This is a very strong:
+**center → distributed whole-world field**
+sequence.
+
+### M78-51 — SEA IS INCLUDED AS A POPULATED DOMAIN
+
+The sea is not empty scenery.
+
+Creatures in sea:
+participate.
+
+This is consistent with user's insistence on populated environments,
+though not evidence for populated stacked world-turns.
+
+---
+
+# LION → LAMB → HUMANLIKE FIGURE RELATION
+
+Revelation 1:
+central referent appears as:
+**humanlike Son-of-Man figure**.
+
+Revelation 5:
+messianic referent described/heard as:
+**Lion**,
+seen as:
+**Lamb**.
+
+### M78-52 — REVELATION ITSELF SUPPORTS MULTIPLE BODY-PROJECTIONS FOR THE SAME CHRISTOLOGICAL REFERENT
+
+Humanlike;
+lion;
+root;
+lamb.
+
+This is one of the strongest source-level supports for the project's:
+**projection grammar**.
+
+It does not prove:
+all mythic creatures are one physical phenomenon.
+
+But it proves:
+shape is not enough to distinguish identity.
+
+---
+
+# CHERUB / FEATHERED SERPENT / QUETZALCOATL UPDATE
+
+Revelation 4 provides a major methodological result.
+
+The author:
+- takes Ezekiel's four living-creature/cherub throne imagery;
+- combines it with Isaiah's six-winged seraph imagery;
+- produces a new four-creature, six-wing, many-eye throne entourage.
+
+### M78-53 — WINGED CELESTIAL MORPHOLOGY IS TEXTUALLY COMPOSITE AND TRANSFORMABLE
+
+This means the research should not demand:
+"cherub must always look exactly like X."
+
+Canonical tradition itself changes the visual encoding.
+
+### M78-54 — FEATHERS/WINGS MAY BE PART OF A FUNCTIONAL FAMILY WITHOUT FIXED ANATOMY
+
+In the project so far:
+
+- cherub wings = throne/support/presence;
+- seraph wings = worship/presence/covering;
+- Zechariah wings = transport;
+- 1 Meqabyan wings = protective shade;
+- Malachi wings = radiant/healing extension;
+- Revelation 4 wings = fused throne-worship creature morphology.
+
+This makes the user's:
+Quetzalcoatl / Feathered Serpent / cherub
+comparison more productively testable as:
+**shared functional transformation family**,
+not exact zoological identity.
+
+### M78-55 — REVELATION 4 DOES NOT INTRODUCE A SERPENT BODY
+
+Therefore:
+do not claim direct Feathered Serpent identity from Revelation 4 alone.
+
+The serpent/dragon becomes explicit later in Revelation 12.
+
+Keep that for Section 80.
+
+---
+
+# SQUATTER-MAN / AXIS-PERSON UPDATE
+
+Revelation 1 is highly relevant:
+
+humanlike central body:
+- stands among distributed lights;
+- eyes = fire;
+- feet = furnace-bronze;
+- voice = many waters;
+- hand = stars;
+- mouth = sword;
+- face = sun.
+
+### M78-56 — THIS IS A VERY STRONG ENVIRONMENT/MATERIAL→ANTHROPOMORPHIC COMPOSITE
+
+But it is not yet the best **three-domain connector**.
+
+Revelation 10 will be stronger:
+- heaven/cloud body;
+- one foot sea;
+- one foot land;
+- raised hand.
+
+So:
+Revelation 1 =
+**composite axis-person**.
+
+Revelation 10 =
+likely
+**domain-spanning axis-person**.
+
+Keep separate.
+
+---
+
+# GATE / DOOR TAXONOMY FROM REVELATION 1–5
+
+This block gives at least four different access systems.
+
+## 1. Keys of Death/Hades
+Function:
+authority over restricted domains.
+
+No explicit door shown.
+
+## 2. Philadelphia open door
+Function:
+granted access/opportunity/kingdom authority.
+
+No physical traversal described.
+
+## 3. Laodicea door
+Function:
+relational household boundary.
+
+Signal:
+knock/voice.
+
+Authorization:
+inside person opens.
+
+Transfer:
+figure enters and eats.
+
+## 4. Revelation 4 heavenly door
+Function:
+visionary access to heaven.
+
+Signal:
+voice.
+
+Command:
+"come up here."
+
+Observer state:
+in Spirit.
+
+### M78-57 — "DOOR" IS NOT ONE MECHANISM EVEN INSIDE REVELATION
+
+Therefore:
+door/gate keyword matching is insufficient.
+
+Must classify:
+- controller;
+- boundary;
+- medium;
+- carrier;
+- destination;
+- result.
+
+---
+
+# SCROLL / SEAL TAXONOMY
+
+Revelation 1:
+John writes what he sees.
+
+Revelation 5:
+scroll:
+- densely written;
+- sealed;
+- controlled by worthiness;
+- opened only by authorized Lamb.
+
+### M78-58 — SEAL OPENING IS INFORMATION/EVENT AUTHORIZATION, NOT PHYSICAL THROAT OPENING
+
+The consequences become physical in later chapters,
+but the seal itself is:
+**control layer**.
+
+This matters:
+controller ≠ gate ≠ event.
+
+---
+
+# STRICT FINGERTRAP TEST — REVELATION 1–5
+
+Criteria:
+1. broad/open support structure;
+2. structural continuity;
+3. geometry/strand-angle change;
+4. narrowing into axial throat/rod;
+5. transfer/contact;
+6. reopening toward broad state.
+
+## Revelation 1
+
+Broad distributed field:
+- seven lampstands.
+
+Central axis-person:
+- strong.
+
+Contraction:
+- absent.
+
+Throat:
+- absent.
+
+Transfer:
+- information/judgment only.
+
+**Strict negative.**
+
+## Revelation 3 doors
+
+Access control:
+strong.
+
+Physical dynamic geometry:
+absent.
+
+**Strict negative.**
+
+## Revelation 4
+
+Heavenly opening:
+strong.
+
+Observer ascent:
+strong but visionary.
+
+Throne/winged system:
+strong.
+
+Broad woven support:
+absent.
+
+Contraction:
+absent.
+
+**Strict negative; strong visionary-gate + throne-system analogue.**
+
+## Revelation 5
+
+Seal/access opening:
+strong semantic control.
+
+Creature transformation:
+exceptionally strong.
+
+Distributed eye nodes:
+strong.
+
+Fingertrap mechanics:
+absent.
+
+**Strict negative.**
+
+### Overall Section 78 verdict
+
+No strict fingertrap.
+
+The block contributes most strongly to:
+- **projection identity**;
+- **distributed-node fields**;
+- **access-control taxonomy**;
+- **cherub/seraph morphology fusion**;
+- **environment/material→human composite body**.
+
+---
+
+# NUMBER / NODE REGISTER
+
+## Seven
+Revelation 1–5 repeatedly uses seven:
+- churches;
+- lampstands;
+- stars;
+- spirits;
+- fire lamps;
+- seals;
+- Lamb horns;
+- Lamb eyes.
+
+### M78-59 — SEVEN IS A DELIBERATE COMPLETENESS/STRUCTURE NUMBER IN REVELATION, BUT REFERENTS CHANGE
+
+Seven does not mean:
+one single seven-node machine.
+
+Different sevens map to:
+- communities;
+- messengers;
+- spirits;
+- locks/seals;
+- visual/power nodes.
+
+Do not collapse them into one hidden arithmetic object.
+
+## Four
+- four living creatures;
+- four major creature forms.
+
+## Twenty-four
+- elders/thrones.
+
+Do not force 24 into Vardath/JANUS arithmetic without independent process support.
+
+---
+
+# PAIR / ROLE REGISTER
+
+## seven lampstands / seven churches
+object nodes ↔ communities.
+
+## seven stars / church angels-messengers
+celestial nodes ↔ communication agents.
+
+## central Son-of-Man / seven distributed churches
+one operator ↔ distributed community field.
+
+## dead / alive
+same identity across state change.
+
+## key / door
+controller ↔ access boundary.
+
+## person / pillar
+human ↔ architectural identity.
+
+## heaven door / throne field
+access boundary ↔ destination system.
+
+## Ezekiel cherub / Isaiah seraph
+two inherited winged traditions fused in Revelation 4.
+
+## Lion / Lamb
+same messianic referent in radically different animal projections.
+
+## root / Lion / Lamb
+plant-lineage ↔ predator ↔ sacrificial-animal projections of one referent.
+
+## Lamb / seven eyes-spirits
+central body ↔ distributed perception/spirit field.
+
+## sealed scroll / authorized Lamb
+locked information object ↔ opener/controller.
+
+---
+
+# FULL REVELATION 1–5 PROCESS TIMELINE
+
+John isolated on Patmos
+→ Spirit-state
+→ trumpet-like voice behind
+→ observer turns
+→ seven lampstands appear
+→ composite humanlike figure appears among them
+→ body carries fire/metal/water/star/sun/sword attributes
+→ observer collapses
+→ central figure touches/restores observer
+→ dead/alive identity declared
+→ keys of Death/Hades declared
+→ stars/lampstands decoded as messengers/churches
+→ central figure walks among community nodes
+→ individual community states evaluated
+→ lampstand removal threatened
+→ mouth-sword reused as judgment
+→ material tokens carry identity/reward information
+→ key-of-David open/shut authority declared
+→ open door placed before Philadelphia
+→ conquering human projected as permanent temple pillar
+→ city-name/divine-name written on person/pillar
+→ New Jerusalem announced as descending from heaven
+→ household door knock
+→ internal authorization permits entry
+→ shared table / throne participation
+→ a different door stands open in heaven
+→ voice commands observer upward
+→ observer enters Spirit-state/heavenly vision
+→ central throne appears
+→ gem/rainbow field
+→ twenty-four surrounding throne nodes
+→ lightning/thunder/voices issue from throne
+→ seven fire lamps identified as spirits
+→ glass/crystal sea-like expanse
+→ four living creatures surround throne
+→ Ezekiel creature grammar fused with Isaiah six-wing grammar
+→ lion/ox/human/eagle forms + distributed eyes
+→ worship circulates around throne
+→ sealed scroll appears in enthroned right hand
+→ search spans heaven/earth/under-earth
+→ no opener found
+→ John hears Lion/Root identity
+→ John sees slaughtered-standing Lamb
+→ same referent changes animal/plant projection
+→ Lamb bears seven horns/seven eyes
+→ eyes explicitly equal spirits sent through earth
+→ Lamb takes scroll
+→ creatures/elders bow
+→ bowls interpreted as prayers
+→ distributed peoples/nations/languages gathered into kingdom/priesthood
+→ worship expands concentrically to every creature in heaven/earth/under-earth/sea.
+
+---
+
+# TEXTUAL / SCHOLARLY CONTROLS — REVELATION 1–5
+
+1. Revelation is apocalypse, prophecy and circular letter; genre combination matters.
+2. Revelation's imagery densely reuses Isaiah, Ezekiel, Daniel, Zechariah, Psalms and other earlier scriptures.
+3. Revelation 1's Son-of-Man vision deliberately combines multiple earlier divine/humanlike vision traditions.
+4. Revelation 1 explicitly interprets lampstands as churches and stars as church angels/messengers.
+5. Therefore those symbols should not be reassigned to physical machinery without preserving the text's own decoding.
+6. Sword-from-mouth functions in verbal/judicial contexts and should not be treated as literal anatomy.
+7. "Voice like many waters" is an acoustic comparison.
+8. Keys of Death/Hades express authority/access control; no literal lock mechanism is described in chapter 1.
+9. Revelation 2–3 adapt features of the chapter-1 figure to individual churches.
+10. Lampstand removal is a status/community symbol because lampstand=church has already been decoded.
+11. Philadelphia's open door should be distinguished from Revelation 4's heavenly door.
+12. Laodicea's door is household/relational imagery with knocking, voluntary opening and shared meal.
+13. Revelation 4 explicitly has a door open in heaven and an upward invitation, but John's mode is "in Spirit"; ordinary bodily transport is not stated.
+14. Revelation 4's throne vision draws heavily on Ezekiel 1/10 and Isaiah 6.
+15. Scholarly discussion explicitly describes Revelation 4's four creatures as a fusion of Ezekiel's cherubim/living creatures and Isaiah's seraphim.
+16. Revelation's creatures are not anatomically identical to Ezekiel's: six wings replace Ezekiel's four, and creature forms are redistributed.
+17. The glass/crystal "sea" is simile-like visionary material and should not be assumed literal liquid water.
+18. Revelation 5's scroll is a sealed information/action object; seal opening is authorization.
+19. Revelation 5 deliberately pairs hearing "Lion/Root" with seeing the slaughtered Lamb.
+20. Modern scholarship often treats this hear/see relation as two presentations/reinterpretations of the same messianic identity.
+21. Revelation 5 explicitly interprets the Lamb's seven eyes as the seven spirits sent throughout the earth.
+22. Horns and eyes should not be mechanically conflated; only the eyes receive explicit interpretation in the immediate verse.
+23. Bowls of incense are explicitly interpreted as prayers, another warning that container/fluid imagery can carry informational/social meaning.
+24. No broad woven lattice contracts into a narrow throat anywhere in Revelation 1–5.
+
+---
+
+# Sources logged — Revelation 1–5
+
+## Primary text
+- Revelation 1 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+1&version=NRSVUE
+- Revelation 1:12–16 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+1%3A12-16&version=NRSVUE
+- Revelation 2 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+2&version=NRSVUE
+- Revelation 3 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+3&version=NRSVUE
+- Revelation 4 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+4&version=NRSVUE
+- Revelation 4:6–9 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+4%3A6-9&version=NRSVUE
+- Revelation 5 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+5&version=NRSVUE
+- Revelation 5:1–7 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Revelation+5%3A1-7&version=NRSVUE
+
+## Scholarship / intertext controls
+- Steve Moyise, "The Old Testament in the Book of Revelation," *The Oxford Handbook of the Book of Revelation*:
+  https://academic.oup.com/edited-volume/34244/chapter-abstract/290345477
+- Bogdan G. Bucur, discussion of Revelation 4 creatures as fusion of Isaiah's seraphim and Ezekiel's cherubim:
+  https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/abs/condescension-anticipation-reciprocal-ecstasies-theological-reflections-on-early-christian-readings-of-isaiah-6-and-daniel-3/796AA170EE08B8508C8C6615F0461748
+- TheTorah, Ezekiel throne-creature morphology and winged hybrid background:
+  https://www.thetorah.com/article/ezekiels-vision-of-god-and-the-chariot
+- TheTorah, Seraphim / Ezekiel living-creature wing comparison:
+  https://www.thetorah.com/article/the-seraphim
+- "Lion as Slain Lamb: On Reading Revelation Recursively," Cambridge-hosted PDF:
+  https://www.cambridge.org/core/services/aop-cambridge-core/content/view/8F82D141F217A1AF3B6818F01C4A6B36/S0360966900029832a.pdf/lion_as_slain_lamb_on_reading_revelation_recursively.pdf
+- Harvard Theological Review article noting Rev 5:5–6 as hear-Lion / see-Lamb parallel:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/twelve-tribes-of-israel-out-from-every-nation-tribe-people-and-language-in-revelation-7917/6C9C508DEE1BEB15ACAF99338281F220
+
+---
+
+# SECTION 78 — REVELATION 1–5 COMPLETE
+
+## Strongest new findings
+
+1. **Revelation 1 gives one of the strongest composite anthropomorphic bodies yet: a humanlike central figure simultaneously carries fire-eyes, furnace-metal feet, many-water voice, seven stars in hand, sword from mouth and solar face.**
+2. **The text itself decodes the seven lampstands as seven churches and the seven stars as their angels/messengers, proving that distributed human communities and communication roles can be projected as light/celestial objects.**
+3. **The humanlike figure is first central among the seven lampstands and then walks among them, so the operator/axis-person is mobile inside a distributed node field rather than permanently fixed.**
+4. **Sword-from-mouth is confirmed by later use as verbal/judicial action; it is another directed information-output image, closely comparable to 4 Ezra 13's mouth-fire interpreted as law/reproof.**
+5. **The figure's death→life identity and John’s collapse→right-hand-contact recovery provide two strong same-identity state-transition examples.**
+6. **Keys of Death/Hades establish explicit access-control authority, but no literal Death/Hades door is shown yet.**
+7. **Revelation 2–3 demonstrate that one central body can function as a modular capability set: different churches are addressed through different body attributes first shown in chapter 1.**
+8. **Philadelphia gives genuine key/open/shut authority, but the "open door" is not shown being physically traversed and should remain distinct from the heavenly door of Revelation 4.**
+9. **The conquering person becoming a permanent temple pillar is another explicit human→architecture projection, with divine/city names added as an information layer.**
+10. **Laodicea gives a separate access type: knock/voice from outside → voluntary opening from inside → entry → shared meal. This is relational household access, not a cosmic gate.**
+11. **Revelation 4 provides an actual door standing open in heaven plus an upward invitation, but John's mode is visionary/"in Spirit," so ordinary bodily transport is not established.**
+12. **The heavenly throne is a strong central multi-output node: lightning, thunder, voices and seven fire-lamps/spirits issue from or stand before it.**
+13. **The "sea of glass like crystal" is a visionary boundary/surface image and should not automatically be treated as literal liquid water.**
+14. **Revelation 4 deliberately fuses Ezekiel's four living-creature/cherub tradition with Isaiah's six-winged seraph tradition. This is major evidence that winged celestial morphology can be recombined and transformed within scripture itself.**
+15. **Revelation's creatures are not simply Ezekiel's creatures repeated: Revelation redistributes lion/ox/human/eagle forms and gives six wings, while omitting Ezekiel's wheel mechanics in this scene.**
+16. **The cherub/Feathered-Serpent/Quetzalcoatl comparison should therefore be tested functionally rather than by demanding one fixed anatomy; the biblical tradition itself alters winged-throne morphology.**
+17. **Revelation 5 is one of the strongest same-referent projection transformations in the whole project: John HEARS that the conqueror is the Lion/Root, but LOOKS and SEES a slaughtered-standing Lamb.**
+18. **The same messianic referent therefore carries humanlike, lion, plant/root and lamb forms across chapters 1 and 5. Shape alone cannot determine identity.**
+19. **The Lamb's seven eyes are explicitly interpreted as seven spirits sent throughout the earth, giving a central-body→distributed-world-ranging node system directly in the text.**
+20. **The seven horns and seven eyes must not be collapsed into one node type; the text explicitly decodes the eyes but not the horns in the immediate passage.**
+21. **The sealed scroll is best classified as an information/event-control object: writing + seven locks + authorized opener. Seal-opening is not itself a physical spatial gate.**
+22. **Golden bowls are explicitly prayers, another strong warning that containers/material objects in apocalyptic vision can represent information/social processes rather than physical fluids.**
+23. **The chapter closes with a center→cosmos expansion: throne/Lamb → creatures/elders → angels → every creature in heaven, earth, under-earth and sea.**
+24. **No strict fingertrap appears. Revelation 1–5 contributes most strongly to projection identity, winged-throne transformation, distributed node systems and access-control taxonomy.**
+25. **The missing mechanical link remains unchanged: no single broad wind-supported covering is yet shown contracting into the narrow 4 Ezra 7 throat and then reopening into the Zechariah 14 passage/outflow state.**
+
+## Next live block
+
+**Section 79 — Revelation 6–11**
+
+Highest-priority structures:
+- four riders released by sequential seal opening;
+- earthquake;
+- sun/moon/star changes;
+- sky rolled like scroll;
+- mountains/islands displaced;
+- sealing of populations;
+- trumpets;
+- burning mountain into sea;
+- star falling into waters;
+- abyss opened by key;
+- smoke column darkening sun/air;
+- emergence from abyss;
+- four Euphrates angels released;
+- mighty angel:
+  - cloud-clothed;
+  - rainbow;
+  - face like sun;
+  - legs like pillars of fire;
+  - one foot sea / one foot land;
+  - raised hand toward heaven;
+  - seven thunders;
+- scroll ingestion;
+- measuring rod;
+- two witnesses / two olive trees / two lampstands;
+- death;
+- bodies;
+- breath/life returns;
+- "come up here";
+- ascent in cloud;
+- earthquake;
+- heavenly temple opens;
+- ark visible;
+- lightning/voices/thunder/earthquake/hail.
+
+High-priority Vardath tests:
+1. compare Revelation 10 directly against Daniel 12 as an anthropomorphic domain-bridge posture;
+2. test whether one foot sea / one land + raised hand to heaven produces the clearest three-domain Squatter-Man configuration;
+3. separate seven-thunder information channel from physical thunder;
+4. test abyss key→opening→smoke→emergence as a true lower-boundary opening sequence;
+5. compare sky rolling like scroll to broad-cover geometry and ask whether any continuity into an axial form is actually given;
+6. compare two witnesses = two olive trees + two lampstands with Zechariah 4 bilateral tree system;
+7. distinguish measuring rod from the measured temple rather than collapsing operator/tool/boundary;
+8. test witness death→breath→standing→voice→cloud ascent→earthquake as a transition/transfer sequence;
+9. apply strict fingertrap criteria only after seal, abyss, sky-scroll, giant angel, witness and temple-opening systems are kept distinct.
+
