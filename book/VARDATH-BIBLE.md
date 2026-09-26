@@ -3391,3 +3391,16 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When they open the book before the Holy One, blessed be He, half of it is fire and half of it flame. From before Him, at every moment, fire and flame go forth to execute judgment upon the wicked. His sword is drawn from its sheath; its radiance flashes like lightning and travels from one end of the world to the other.
 
 **2.** “Sparks go forth from it in number like the stars of the firmament, as it is written: ‘If I sharpen the lightning of My sword.’”
+
+
+## 3 Enoch 33
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “When the Holy One, blessed be He, sits upon the throne of true judgment, angels of mercy stand at His right, angels of peace at His left, and angels of destruction stand before Him.
+
+**2.** “One scribe stands below Him and another scribe above Him.
+
+**3.** “Seraphim of glory surround the four sides of the Throne of Glory with walls of lightning. Ophanim circle them with torches around the Throne of Glory. Clouds of fire and clouds of flame surround them on the right and on the left, and the Holy Living Creatures bear the Throne of Glory from beneath. The numerical measure attached to them is damaged in the selected public-domain Hebrew witness and is therefore not reconstructed here.
+
+**4.** “From beneath the feet of the Living Creatures seven rivers of fire draw forth and flow. The witness gives a measure of three hundred and sixty-five thousand parasangs for each river, and then says that its length is beyond searching and without number.
+
+**5.** “Each river curves like an arch through the four directions of Arabot Raqia. From there it falls and comes to an end in Ma'on; from Ma'on it descends to Zebul, from Zebul to Shehaqim, from Shehaqim to Raqia, from Raqia to Shamayim, and from Shamayim upon the heads of the wicked in Gehenna, as it is written: ‘Behold, the storm of YHWH, fury has gone forth, a whirling tempest; it shall burst upon the head of the wicked.’”
