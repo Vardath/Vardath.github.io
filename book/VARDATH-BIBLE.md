@@ -3340,3 +3340,26 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **2.** “He brings out and returns the cases of writings, opens them, takes out the books, and places them into the hand of the Holy One, blessed be He. The Holy One, blessed be He, receives them from his hand and gives them before Him to the scribes, so that they may read them in the Great Court in the height of Arabot Raqia before the heavenly household.
 
 **3.** “Why is he called Dabriel? Because from every word that goes out from him an angel comes forth and takes its place among the ministering angels, and they sing before Him when the time arrives to proclaim ‘Holy.’”
+
+
+## 3 Enoch 28
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Above all these are four great princes called Irin and Qaddishin—Watchers and Holy Ones. They are high and honored, fearsome and beloved, wondrous and mighty, greater than all the children of the heights. There is none like them among all the princes above and none equal to them among all the ministers, for each one is equal in weight to all the others together.
+
+**2.** “Their station is opposite the Throne of Glory, and the radiance of their appearance is like the radiance of the Shekinah.
+
+**3.** “They are adorned from the splendor of the Shekinah and praise with the praise of the Shekinah.
+
+**4.** “More than this: the Holy One, blessed be He, first takes counsel with them and afterward acts in His world, as it is written, ‘The decree is by the Watchers, and the matter by the word of the Holy Ones.’
+
+**5.** “There are two Watchers and two Holy Ones. One Watcher stands on one side and the other on the other side; one Holy One stands on one side and the other on the other side before the Holy One, blessed be He.
+
+**6.** “They continually raise up the lowly, bring the proud down to the earth, and lift the humble to the height.
+
+**7.** “Every day, when the Holy One, blessed be He, sits upon the throne of judgment and judges the whole world, and the Books of the Living and the Books of the Dead are open before Him, all the children of the heights stand before Him in fear, dread, trembling, and awe. At that hour He sits as judge upon the throne; His garment is white like snow, the hair of His head like clean wool, His mantle like shining light, and He is clothed all around in righteousness like armor.
+
+**8.** “The Watchers and Holy Ones stand before Him like officers before a judge. They deliberate over every matter and bring to completion the matter that comes before the Holy One, blessed be He, in judgment, as it is written, ‘The decree is by the Watchers, and the matter by the word of the Holy Ones.’
+
+**9.** “Some determine matters and some decree them in the Great Court in Arabot. Some bring questions before the Divine Majesty and some complete the matters before the Most High. Others establish the decrees upon the earth below, as it is written: ‘A Watcher and a Holy One came down from heaven and cried aloud, saying: Cut down the tree and cut off its branches; strip off its leaves and scatter its fruit.’
+
+**10.** “Why are they called Watchers and Holy Ones? Because they sanctify body and soul with fiery lashes on the third day of judgment, as it is written, ‘After two days He will revive us; on the third day He will raise us up, and we will live before Him.’”
