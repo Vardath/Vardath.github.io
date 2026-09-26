@@ -63945,3 +63945,1589 @@ Next action must be:
 4. only if no gap remains, mark the direct sequential 88-text/broader-canon pass complete;
 5. then move to synthesis/timeline work rather than another blind sequential pass.
 
+
+
+---
+
+# RECOVERED ROADMAP GAP — SECTION 12 CONTINUATION — JUBILEES 39–50
+## Post-corpus audit recovery — Joseph boundary breach and two-dream/one-event sequence, distributed grain storage, Tamar gate disguise/identity tokens, famine migration and brother-substitution, concealed→revealed Joseph identity, whole-family migration, Nile/seed recovery, bones as delayed cargo, Moses' sealed river-box carrier, Mastema binding/release, sea boundary mediator, Passover door-access marking, temporal-boundary ritual, and Jubilee/Sabbath time architecture
+
+### Why this block is appended here
+
+After completing Section 89, the required three-file corpus audit was performed.
+
+The reconstructed roadmap in Part 1 specifies:
+- Section 11 — Jubilees 11–25;
+- Section 12 — Jubilees 26–50.
+
+Actual research in Part 1 covered:
+- Jubilees 11–23;
+- then Jubilees 24–38.
+
+Searches of:
+1. Part 1;
+2. EXTRA-RESEARCH.md;
+3. Part 2
+
+found **no direct research for Jubilees 39–50**.
+
+A second range audit across the chaptered roadmap found no other missing terminal range.
+
+Therefore:
+**Jubilees 39–50 is a genuine recovered omission, not a numbering artifact.**
+
+Per continuation protocol:
+- older files are not rewritten;
+- the recovered research is appended only here in Part 2.
+
+---
+
+# Textual / historical control first
+
+Jubilees is an ancient Jewish rewriting of:
+- Genesis;
+- the opening portion of Exodus.
+
+Modern scholarship normally places its composition in the second century BCE.
+
+Its original language is now securely known to have been **Hebrew**, because Hebrew Jubilees fragments survive among the Dead Sea Scrolls.
+
+The complete text survives chiefly through the Ethiopic version, with additional ancient versional witnesses and fragments.
+
+For this recovered pass the direct working text is:
+- James C. VanderKam's modern critical translation, based on the full textual evidence;
+- checked against the public-domain R. H. Charles translation.
+
+### Major time-control rule
+
+Jubilees organizes history through:
+- weeks of years;
+- 49-year jubilees;
+- precise dates;
+- heavenly tablets;
+- festival calendars.
+
+Modern scholarship stresses that its calendar is central to its literary/theological program.
+
+Therefore:
+
+### RJ39-50-1 — JUBILEES IS A TIME-ARCHITECTURE TEXT, BUT ITS NUMBERS MUST FIRST BE READ AS THE BOOK'S EXPLICIT CALENDAR/CHRONOLOGY
+
+Do not convert:
+- 7;
+- 14;
+- 49;
+- 50;
+- 40;
+- festival dates
+
+into Vardath gate periods without independent evidence.
+
+---
+
+# JUBILEES 39
+## Joseph inside closed house → garment caught → door broken → outside → prison
+
+Joseph is pursued by Potiphar's wife.
+
+A notable detail in Jubilees:
+- she closes the door of the house;
+- holds him;
+- Joseph leaves his garment in her hands;
+- **breaks the door**;
+- runs outside.
+
+The garment then becomes:
+- false evidence used against him.
+
+Joseph is placed in royal prison.
+
+### RJ39-50-2 — THIS IS A TRUE BOUNDARY-BREACH SEQUENCE
+
+Geometry:
+
+**person inside**
+→ **door deliberately closed**
+→ **constraint**
+→ **door physically broken**
+→ **person exits outside**.
+
+This is one of the clearest ordinary aperture-breach controls in the corpus.
+
+### RJ39-50-3 — APERTURE CREATION CAN BE SIMPLE FORCE AGAINST AN ORDINARY DOOR
+
+This is important for the strict gate method.
+
+"breach" alone:
+does not prove cosmic topology.
+
+### RJ39-50-4 — CLOTHING BECOMES A DETACHED IDENTITY TOKEN THAT OUTLIVES THE PERSON'S PRESENCE
+
+Joseph:
+leaves.
+
+Garment:
+remains.
+
+The absent person is represented through:
+**detached clothing/evidence**.
+
+Cross-link:
+- priestly clothing-state;
+- Tamar's clothing;
+- visionary garment identity changes.
+
+### RJ39-50-5 — ENCLOSURE SEQUENCE CONTINUES:
+**house → broken exit → prison**.
+
+Joseph escapes one constrained interior
+and enters another,
+but through social/legal rather than cosmic routing.
+
+---
+
+# Jubilees 39 — two prisoners / two dreams / opposite outputs
+
+Chief cupbearer and chief baker:
+- each dreams;
+- Joseph interprets;
+- one is restored;
+- one dies.
+
+### RJ39-50-6 — PAIRED DREAMERS CAN OCCUPY THE SAME SYSTEM BUT EXIT INTO OPPOSITE STATES
+
+Same interpreter.
+Same prison.
+Same general event class.
+
+Outputs:
+**restoration**
+vs
+**death**.
+
+Useful pair control:
+paired figures need not be two halves of one machine.
+
+---
+
+# JUBILEES 40
+# TWO DREAMS = ONE EVENT
+## seven abundance → seven famine; distributed city storage; prisoner→second ruler transformation
+
+Pharaoh:
+- has two dreams in one night.
+
+Joseph explicitly interprets:
+**the two dreams are one**.
+
+Their process:
+- 7 years abundance;
+- then 7 years famine.
+
+Joseph recommends:
+- officers across whole land;
+- each city's food collected/stored **in that city**;
+- reserves opened during famine.
+
+### RJ39-50-7 — THIS IS AN EXPLICIT TWO-SIGN→ONE-PROCESS INTERPRETATION
+
+Very important for the project's paired-symbol method.
+
+Two visible narratives:
+→ one underlying event sequence.
+
+This is direct textual interpretation,
+not Vardath inference.
+
+### RJ39-50-8 — TWO DISTINCT PHASES FORM ONE COUPLED TIME PROCESS
+
+**abundance**
+→ **storage**
+→ **famine**
+→ **release/use of stored material**.
+
+This is a strong:
+**preparation → transition → survival**
+system.
+
+### RJ39-50-9 — STORAGE IS DISTRIBUTED RATHER THAN ONE SINGLE GRANARY
+
+Each city:
+retains its own stored food.
+
+This produces a:
+**distributed reserve-node network**.
+
+Joseph:
+central coordinator.
+
+Cities:
+distributed stores.
+
+### RJ39-50-10 — JOSEPH'S ROLE CHANGES RADICALLY WHILE PERSONAL IDENTITY REMAINS CONTINUOUS
+
+Joseph:
+**slave/prisoner**
+→ **interpreter**
+→ **second ruler of Egypt**.
+
+State markers include:
+- clothing;
+- gold chain;
+- signet;
+- second chariot;
+- authority.
+
+This is another clean:
+**same person / different state / different visible apparatus**
+example.
+
+### RJ39-50-11 — CHARIOT HERE IS STATUS/ADMINISTRATIVE VEHICLE, NOT COSMIC CHARIOT
+
+Important control for Ezekiel/cherub-chariot comparisons.
+
+---
+
+# JUBILEES 41
+## Tamar changes clothing/state and occupies a gate/road threshold; ring + chain + staff preserve hidden identity; twins emerge
+
+Tamar:
+- removes widow's clothing;
+- puts on a veil;
+- changes appearance;
+- sits at a **gate by the road**.
+
+Judah:
+- fails to recognize her.
+
+He gives:
+- ring;
+- neck chain;
+- staff
+
+as pledge.
+
+Later those objects:
+- identify him;
+- reverse the accusation against Tamar.
+
+Tamar gives birth to:
+- Perez;
+- Zerah.
+
+### RJ39-50-12 — CLOTHING CHANGE CREATES A SOCIAL-IDENTITY STATE CHANGE
+
+Same Tamar.
+
+Visible/social state:
+**widow**
+→ **veiled unknown woman**
+→ **recognized Tamar**.
+
+### RJ39-50-13 — THE GATE IS A LITERAL ROAD/ENCOUNTER THRESHOLD
+
+Tamar strategically occupies:
+**route + gate**.
+
+Function:
+encounter/interception.
+
+Not cosmic transfer.
+
+### RJ39-50-14 — RING + CHAIN + STAFF FORM A THREE-OBJECT IDENTITY PACKET
+
+The absent/hidden person:
+Judah
+
+is later reconstructed/identified from:
+- ring;
+- chain;
+- staff.
+
+Object-set:
+→ identity proof.
+
+### RJ39-50-15 — STAFF HERE IS A PERSONAL IDENTITY TOKEN, NOT A WORLD-AXIS
+
+Important rod/staff control.
+
+### RJ39-50-16 — PEREZ/ZERAH ARE A TRUE TWIN PAIR, BUT JUBILEES DOES NOT RETELL THE SCARLET-THREAD/HAND-FIRST BIRTH DETAIL
+
+Do not import Genesis-specific twin geometry into Jubilees unless explicitly cross-comparing versions.
+
+---
+
+# JUBILEES 42
+# RAIN FAILURE → EARTH FAILURE → STORED-FOOD EXCEPTION → MIGRATION
+
+The famine begins because:
+- rain is withheld;
+- nothing descends;
+- earth becomes unproductive.
+
+Egypt differs because:
+- grain was already collected;
+- storage survives environmental failure.
+
+Joseph:
+- opens storehouses.
+
+Canaan:
+- no relief.
+
+Jacob's sons repeatedly travel:
+**Canaan ↔ Egypt**.
+
+### RJ39-50-17 — THIS IS A CLEAN UPPER-WATER→GROUND-PRODUCTIVITY FAILURE CHAIN
+
+**rain stops**
+→ **earth becomes unproductive**
+→ **food crisis**.
+
+Cross-link:
+- Haggai;
+- Hosea;
+- Zechariah;
+- canopy/water research.
+
+But direct mechanism:
+ordinary drought/famine in narrative.
+
+### RJ39-50-18 — INFRASTRUCTURE BUFFER CREATES REGIONAL ASYMMETRY INSIDE THE SAME ENVIRONMENTAL CRISIS
+
+Canaan:
+food collapse.
+
+Egypt:
+food remains because of stored surplus.
+
+Thus:
+different local outcomes do not require different worlds.
+
+This is an important Vardath control.
+
+---
+
+# Reuben / Judah guarantee pair
+
+Jacob fears sending Benjamin.
+
+Reuben offers:
+- his two sons as guarantee.
+
+Jacob refuses.
+
+Judah then offers:
+- **himself / lifelong guilt** as guarantee.
+
+Jacob accepts.
+
+### RJ39-50-19 — TWO GUARANTEE MODELS ARE TESTED; THE SECOND CHANGES THE ROUTE DECISION
+
+Pair:
+
+**Reuben → substitutes his sons**
+versus
+**Judah → assumes responsibility himself**.
+
+This is a role/policy contrast,
+not cosmic polarity.
+
+---
+
+# JUBILEES 43
+## concealed Joseph tests brothers → Benjamin marked by cup → Judah offers substitution → brothers become harmonious → Joseph reveals identity
+
+Joseph:
+- hides his identity;
+- places silver cup in Benjamin's sack;
+- sends brothers away;
+- sends agent after them;
+- Benjamin becomes selected/marked container-holder.
+
+All brothers:
+- return.
+
+Judah offers:
+**himself in Benjamin's place**.
+
+Then Joseph sees:
+their minds are harmonized for good.
+
+Only then:
+- he reveals himself;
+- speaks Hebrew;
+- embraces them.
+
+### RJ39-50-20 — IDENTITY REVELATION IS TRIGGERED BY A SOCIAL/RELATIONAL STATE CHANGE
+
+Before:
+brothers had once sold Joseph.
+
+Now:
+one brother offers himself to save another.
+
+Result:
+**distributed brothers enter cooperative/harmonized state**
+→ **hidden central identity reveals itself**.
+
+This is a powerful information/state transition.
+
+### RJ39-50-21 — JUDAH/BENJAMIN IS A TRUE SUBSTITUTION PAIR
+
+Judah:
+offers to remain.
+
+Benjamin:
+would be released.
+
+This is:
+**one carrier/person in place of another**.
+
+Important for later substitution/sacrifice motifs.
+
+### RJ39-50-22 — CONTAINER SEARCH OLDEST→YOUNGEST CREATES ORDERED NODE SCAN
+
+Sacks:
+searched sequentially.
+
+Marked item:
+found in youngest's container.
+
+Interesting algorithmically,
+but ordinary narrative.
+
+---
+
+# JUBILEES 44
+## Jacob hesitates at boundary of migration → seven-day wait → vision → whole family/property moves down → Judah goes ahead as route/scout node
+
+Jacob:
+- prepares to go from Canaan to Egypt;
+- stops;
+- waits seven days for a vision;
+- receives authorization:
+  - go down;
+  - become great nation;
+  - later be led back.
+
+Then:
+- family;
+- descendants;
+- property;
+- livestock
+
+move by wagons.
+
+Judah:
+- goes ahead;
+- examines/prepares Goshen.
+
+### RJ39-50-23 — THIS IS A COMPLETE LARGE-POPULATION/CARGO MIGRATION, BUT TERRESTRIAL
+
+Variables:
+- origin;
+- uncertainty;
+- timing wait;
+- authorization;
+- carrier wagons;
+- scout ahead;
+- destination;
+- people;
+- animals;
+- property.
+
+This is a useful control for what a true population-transfer narrative looks like.
+
+### RJ39-50-24 — "GO DOWN" / "LEAD BACK" IS GEOGRAPHICAL MIGRATION LANGUAGE
+
+Do not automatically translate:
+down = past-world
+and
+up = future-world.
+
+Context:
+Canaan ↔ Egypt.
+
+### RJ39-50-25 — JUDAH FUNCTIONS AS ADVANCE ROUTE-PREPARATION NODE
+
+He goes ahead before the larger population.
+
+Cross-link:
+messenger/path-preparation structures.
+
+---
+
+# JUBILEES 45
+# FAMINE ENDS → NILE OVERFLOWS → STORED SEED DISTRIBUTED → LAND PRODUCES AGAIN
+## successor recovery from inherited material
+
+Joseph settles family in Goshen.
+
+During famine:
+- Egypt's land/people/cattle are transferred into Pharaoh's control through food economy.
+
+When famine ends:
+- Joseph gives people **seed and food**;
+- Nile overflows the land in the eighth year;
+- Egyptians sow;
+- land produces again.
+
+### RJ39-50-26 — THIS IS ONE OF THE CLEANEST SUCCESSOR-ECOLOGY RECOVERY SEQUENCES IN JUBILEES
+
+**environmental crisis**
+→ **stored reserve survives**
+→ **water regime returns**
+→ **old seed/released seed is replanted**
+→ **land becomes productive**.
+
+This strongly matches Vardath's:
+**successor state uses inherited material**
+rather than blank creation.
+
+### RJ39-50-27 — WATER RETURN AND SEED RETURN ARE COUPLED
+
+Recovery requires:
+- restored water;
+- retained biological material/seed;
+- organized redistribution.
+
+This is a good model for post-event ecological recovery.
+
+### RJ39-50-28 — THE EIGHTH YEAR IS A RECOVERY PHASE AFTER TWO SEVEN-YEAR PERIODS, BUT DO NOT TURN IT INTO A VARDATH 7→8 GATE FORMULA WITHOUT INDEPENDENT EVIDENCE
+
+The number is explicit.
+The speculative mapping is not.
+
+---
+
+# Jacob's books → Levi
+## information inheritance survives bodily death
+
+Before death Jacob:
+- transmits books;
+- gives ancestral books to Levi;
+- tells him to preserve/renew them for descendants.
+
+### RJ39-50-29 — INFORMATION IS INHERITED CARGO ACROSS GENERATIONS
+
+People die.
+
+Archive:
+continues.
+
+This is very relevant to the project's:
+culture/information as transferable cargo.
+
+---
+
+# JUBILEES 46
+# BONES AS DELAYED CARGO + NATIONAL GATES CLOSED / OPENED BY WAR STATE
+
+Joseph orders:
+- his bones must be carried out when Israel eventually leaves Egypt.
+
+Later:
+- during warfare,
+- bones of Jacob's other sons are taken out of Egypt and buried at Hebron;
+- Joseph's remain;
+- many Israelites return to Egypt;
+- a few remain near Hebron;
+- Amram remains there.
+
+At one point:
+- gates of Egypt are closed;
+- no one enters or leaves.
+
+### RJ39-50-30 — HUMAN REMAINS ARE EXPLICITLY TREATED AS LONG-DELAY TRANSFER CARGO
+
+Joseph:
+dies now.
+
+Transfer:
+scheduled generations later.
+
+Identity:
+remains attached to bones.
+
+This is a very strong:
+**cargo preserved across time until a future migration window**
+motif.
+
+### RJ39-50-31 — DIFFERENT BROTHERS' BONES HAVE DIFFERENT TRANSFER SCHEDULES
+
+Most:
+moved earlier.
+
+Joseph:
+held for Exodus.
+
+Thus:
+same class of cargo
+can have:
+different transfer timing.
+
+### RJ39-50-32 — EGYPT'S GATES ARE A REAL MACRO-BOUNDARY CONTROL
+
+State:
+**closed**
+→ no entry/exit.
+
+This is political/military control,
+not topological world separation.
+
+### RJ39-50-33 — POPULATION SPLITS AT THE BOUNDARY
+
+Some:
+return Egypt.
+
+Some:
+remain Hebron/mountain.
+
+This gives:
+one migration event
+→ two successor populations.
+
+---
+
+# JUBILEES 47
+# MOSES' RIVER BOX
+## sealed carrier at water boundary; seven-day occupancy; night/day guardians; extraction into royal household
+
+Pharaoh orders:
+male infants thrown into river.
+
+Moses:
+- hidden for three months.
+
+Mother makes:
+- a **box/ark**;
+- coated with pitch and asphalt;
+- placed among vegetation/grass at riverbank.
+
+Moses:
+- remains in it seven days.
+
+Protection:
+- mother nurses at night;
+- Miriam guards by day.
+
+Pharaoh's daughter:
+- hears crying;
+- orders carrier brought;
+- takes Moses out;
+- adopts him.
+
+### RJ39-50-34 — THIS IS ONE OF THE CLEANEST SMALL-CARRIER SYSTEMS IN THE CORPUS
+
+Variables:
+
+**cargo**
+= infant Moses;
+
+**enclosure**
+= box/ark;
+
+**seal/coating**
+= pitch + asphalt;
+
+**medium/boundary**
+= riverbank/water edge;
+
+**station**
+= reeds/grass;
+
+**guardians**
+= mother night / Miriam day;
+
+**receiver**
+= Pharaoh's daughter;
+
+**extraction**
+= out of box;
+
+**destination/status change**
+= royal household/adopted son.
+
+### RJ39-50-35 — DIRECT JUBILEES DOES NOT DESCRIBE THE BOX AS A WOVEN FINGERTRAP
+
+This is important given the user's working model:
+**baby in basket = woven fingertrap**.
+
+Jubilees' own wording emphasizes:
+- box/ark;
+- pitch;
+- asphalt;
+- riverbank.
+
+The papyrus/reed-material detail belongs more explicitly to Exodus's version.
+
+Therefore:
+the Vardath woven-fingertrap comparison remains a cross-text visual hypothesis,
+not a direct Jubilees statement.
+
+### RJ39-50-36 — DAY/NIGHT PROTECTION IS A TRUE ALTERNATING TWO-GUARDIAN SYSTEM
+
+Mother:
+night.
+
+Miriam:
+day.
+
+Same cargo:
+continuous protection across alternating phases.
+
+### RJ39-50-37 — THE RIVER IS BOTH HAZARD AND RESCUE MEDIUM
+
+For other Hebrew male infants:
+river = death.
+
+For Moses:
+sealed carrier + placement/guardianship
+turns river boundary into survival route.
+
+Same medium:
+different outcome by carrier/state.
+
+---
+
+# JUBILEES 48
+# MASTEMA CONTROL + MEDIATOR "BETWEEN" POPULATIONS + SEA-CORRIDOR REVERSAL
+
+Mastema:
+- attacks/opposes Moses;
+- assists Egyptian magicians;
+- drives pursuit.
+
+Angelic/divine counteraction:
+- limits his powers;
+- later binds/locks him for specified days;
+- releases him again;
+- he drives Egyptian pursuit.
+
+A speaker/angel says:
+**I stood between you, the Egyptians, and the Israelites**.
+
+Then:
+- Israel is brought through middle of sea as dry ground;
+- Egyptian pursuers are thrown into sea/depths.
+
+The narrative explicitly frames this as reversal:
+Egyptians had thrown Israelite sons into river;
+Egyptians are now thrown into sea in place of Israelites.
+
+### RJ39-50-38 — "STANDING BETWEEN" IS A TRUE MEDIATOR/BOUNDARY-AGENT ROLE
+
+The intervening agent:
+- is not the sea;
+- is not the population;
+- is not the corridor.
+
+This reinforces:
+**operator ≠ boundary ≠ carrier ≠ cargo**.
+
+### RJ39-50-39 — THE SAME SEA CORRIDOR PRODUCES OPPOSITE OUTCOMES FOR TWO POPULATIONS
+
+Israel:
+**crosses dry corridor**.
+
+Egypt:
+**enters pursuit corridor**
+→ drowned in returning/deep water.
+
+Same spatial system.
+Different timing/state.
+Different outcome.
+
+This is very important for gate phase theory.
+
+### RJ39-50-40 — RIVER/SEA REVERSAL IS EXPLICITLY MORAL/RETRIBUTIVE IN THE TEXT
+
+Infants:
+thrown into river.
+
+Pursuers:
+thrown into sea.
+
+Do not erase the source's theological justice logic.
+
+### RJ39-50-41 — MASTEMA'S BINDING AND RELEASE IS AN ACCESS/AGENCY STATE SWITCH
+
+He is:
+- active;
+- bound/locked;
+- unable to accuse;
+- later released;
+- active again.
+
+This is a true:
+**agent-enabled / agent-disabled**
+clocked state.
+
+Not a gate opening.
+
+### RJ39-50-42 — THE TIMING AROUND DAYS 14–19 IS TEXTUALLY EXPLICIT BUT BELONGS TO THE PASSOVER/EXODUS CHRONOLOGY
+
+Do not use it as an independent cosmic cycle without evidence.
+
+---
+
+# JUBILEES 49
+# PASSOVER — DIRECT SOURCE CONTROL FOR THE USER'S PASSOVER / PASS-UNDER HYPOTHESIS
+
+This chapter is exceptionally important because it does not merely name Passover.
+
+It explains the mechanism in its own narrative.
+
+During the first Passover:
+- destructive forces move through Egypt;
+- blood is placed on household doors;
+- forces **do not enter** houses bearing the sign;
+- they **pass over / pass by** those houses;
+- occupants remain safe inside;
+- unmarked Egyptian houses suffer firstborn death.
+
+### RJ39-50-43 — IN JUBILEES, PASSOVER IS EXPLICITLY AN ACCESS-CONTROL / ROUTING EVENT AT MARKED HOUSE DOORS
+
+Source-level variables:
+
+**moving destructive agents**
+→ inspect/encounter **door boundary**
+→ detect **blood sign**
+→ **do not enter**
+→ route continues past enclosure.
+
+This is exceptionally clear.
+
+### RJ39-50-44 — DIRECT JUBILEES MEANING DOES NOT DESCRIBE ONE LATTICE PASSING OVER ANOTHER LATTICE
+
+Therefore the user's:
+**Passover = pass-under from our perspective / one lattice passing over another**
+remains a Vardath interpretive comparison.
+
+It is not the ordinary mechanism explicitly given by Jubilees.
+
+### RJ39-50-45 — THIS DOES NOT MAKE THE VARDATH COMPARISON USELESS; IT CHANGES WHAT MUST BE EXPLAINED
+
+For a deeper physical reading to be plausible,
+it would need to account for why the received text represents the event as:
+
+**moving hazard**
++
+**marked enclosures**
++
+**selective non-entry**.
+
+That is the source constraint.
+
+---
+
+# Passover house boundary → later sanctuary centralization
+
+The original event:
+- occurs across many occupied houses.
+
+Later law in Jubilees:
+- Passover must be celebrated at the central sanctuary/tabernacle/temple;
+- not independently in cities.
+
+### RJ39-50-46 — PASSOVER RITUAL TOPOLOGY CHANGES FROM DISTRIBUTED HOUSEHOLD NODES TO ONE CENTRAL SACRED NODE
+
+Original event:
+**many marked houses**.
+
+Later recurring ritual:
+**central sanctuary**.
+
+This is a striking:
+**distributed → central**
+transition.
+
+Source meaning:
+cultic centralization.
+
+---
+
+# Temporal boundary of evening
+
+Jubilees is highly precise:
+- fourteenth day;
+- sacrifice between evenings;
+- described as the **boundary of evening**;
+- portions of day/night;
+- leftovers after defined time burned.
+
+### RJ39-50-47 — PASSOVER HAS BOTH SPATIAL AND TEMPORAL BOUNDARIES
+
+Spatial:
+door.
+
+Temporal:
+evening boundary.
+
+The rite requires:
+correct location
++
+correct time.
+
+This is very relevant to Vardath's:
+**gate state depends on time + boundary**.
+
+But source meaning:
+ritual law/calendar.
+
+### RJ39-50-48 — "BOUNDARY OF EVENING" IS A TRUE TIME-THRESHOLD PHRASE, NOT EVIDENCE OF PHYSICAL TIME DOOR
+
+Important distinction.
+
+---
+
+# Seashore completion
+
+The Unleavened Bread/Passover sequence is said to continue through the escape until:
+- sea crossing;
+- wilderness of Shur;
+- festival completed on seashore.
+
+### RJ39-50-49 — PASSOVER NARRATIVE MOVES:
+**house threshold**
+→ **departure route**
+→ **sea boundary/crossing**
+→ **seashore completion**.
+
+This sequence is highly relevant to the project's Passover geometry.
+
+Still:
+the text itself treats these as historical/ritual stages,
+not one continuous lattice object.
+
+---
+
+# JUBILEES 50
+# TIME ARCHITECTURE — SABBATHS / WEEKS / JUBILEES / LAND / CROSSING
+
+The final chapter:
+- returns to Sabbath law;
+- describes land Sabbaths;
+- describes years/jubilees;
+- states 49 jubilees have elapsed from Adam to the current revelation point, plus additional years;
+- looks ahead 40 years to entry/crossing into Canaan;
+- associates future land purity with the passing jubilees.
+
+### RJ39-50-50 — THE BOOK ENDS BY TURNING HISTORY INTO A NESTED TIME GRID
+
+Scales:
+- day/week;
+- years;
+- weeks of years;
+- jubilees;
+- historical ages.
+
+This is genuine:
+**time architecture**.
+
+### RJ39-50-51 — JUBILEES' "JUBILEE" IS A 49-YEAR UNIT IN THE BOOK'S CHRONOLOGICAL SYSTEM
+
+Do not casually treat every Jubilee reference as a 50-year repeating interval.
+
+The fiftieth-year biblical Jubilee legislation and the book's 49-year chronological blocks require careful distinction.
+
+### RJ39-50-52 — LAND ITSELF PARTICIPATES IN THE TIME SYSTEM
+
+Land:
+has Sabbaths.
+
+People:
+cross into land.
+
+Possession:
+occurs at defined historical/time position.
+
+This is:
+**space + population + calendar**
+coupled in one legal-theological system.
+
+---
+
+# Sabbath as operational-state switch
+
+On Sabbath:
+- ordinary labor stops;
+- travel is forbidden;
+- carrying outside house/tent prohibited;
+- water drawing must be prepared beforehand;
+- fire-lighting prohibited;
+- sea travel prohibited;
+- hunting/fishing/killing/war prohibited;
+- sanctuary sacrifices remain permitted.
+
+### RJ39-50-53 — SAME WORLD, DIFFERENT TIME-STATE, DIFFERENT PERMITTED OPERATIONS
+
+This is highly useful.
+
+Nothing spatial has physically changed.
+
+But temporal state:
+**Sabbath**
+changes the legal operation set.
+
+This is a strong control for:
+**state change ≠ topology change**.
+
+### RJ39-50-54 — SANCTUARY FUNCTIONS AS AN EXCEPTION NODE INSIDE THE SABBATH STATE
+
+Ordinary work:
+off.
+
+Specified sanctuary operation:
+still on.
+
+Thus:
+a global social time-state
+can contain a privileged local process.
+
+Interesting systems analogue,
+but legal/liturgical.
+
+---
+
+# FULL JUBILEES 39–50 PROCESS TIMELINE
+
+Joseph inside controlled house
+→ door is closed
+→ Joseph breaks ordinary boundary
+→ garment remains as detached identity evidence
+→ Joseph moves into prison enclosure
+→ paired prisoners receive dreams with opposite outcomes
+→ Pharaoh receives two dreams
+→ two dreams interpreted as one future process
+→ seven-year abundance phase
+→ distributed city storage network built
+→ seven-year famine phase
+→ stored food released
+→ Joseph changes from prisoner to second ruler
+→ Tamar changes clothing/identity state
+→ Tamar occupies gate beside route
+→ ring/chain/staff store hidden identity
+→ twin sons born
+→ rain ceases
+→ earth becomes unproductive
+→ Egypt survives through stored grain
+→ Canaan population must migrate repeatedly for food
+→ Reuben and Judah offer different guarantee/substitution models
+→ Joseph conceals identity
+→ Benjamin becomes selected container-holder
+→ Judah offers himself in Benjamin's place
+→ brothers reach harmonious cooperative state
+→ Joseph reveals identity
+→ wagons/material signals restore Jacob's belief
+→ Jacob pauses seven days before migration
+→ divine authorization
+→ Judah scouts ahead
+→ entire family/property/livestock moves to Egypt
+→ famine completes
+→ Nile water regime returns/overflows
+→ preserved seed redistributed
+→ agriculture restarts
+→ books transferred to Levi across generations
+→ Joseph schedules future transfer of his bones
+→ other brothers' bones moved earlier
+→ Egyptian gates enter closed national-boundary state
+→ population divides between Egypt and Hebron
+→ oppression intensifies
+→ infant males cast into river
+→ Moses placed in sealed pitch/asphalt box at water boundary
+→ alternating night/day guardians protect carrier
+→ Moses extracted and adopted into royal household
+→ Moses later leaves Egypt
+→ returns
+→ Mastema opposes
+→ signs/plagues alter Egypt
+→ Mastema bound/disabled
+→ later released
+→ mediator stands between populations
+→ Israel crosses middle of sea on dry route
+→ Egyptian pursuit enters same route later
+→ pursuers are thrown into sea/deep
+→ first Passover uses blood-marked doors
+→ destructive agents route past marked occupied enclosures
+→ population departs
+→ Passover sequence reaches sea crossing/seashore
+→ recurring rite becomes centralized at sanctuary
+→ ritual fixed to precise evening time boundary
+→ Sabbath/jubilee system orders future land occupation
+→ time state determines permitted actions
+→ book closes with divisions of times.
+
+---
+
+# MAJOR VARDATH FINDING 1
+## two dreams = one event is explicit projection logic
+
+### RJ39-50-55 — MULTIPLE SYMBOLIC SURFACES CAN REPRESENT ONE UNDERLYING PROCESS
+
+This is directly stated by Joseph.
+
+That gives strong methodological support for asking whether:
+- cherub;
+- serpent;
+- tree;
+- mountain;
+- person
+
+can sometimes be multiple depictions of one process.
+
+But each proposed equivalence still needs source-specific support.
+
+---
+
+# MAJOR VARDATH FINDING 2
+## environmental failure + stored material + water return + seed restart
+
+Jubilees 40–45 supplies a complete resilience cycle:
+
+**abundance**
+→ **storage**
+→ **rain/water failure**
+→ **famine**
+→ **stored reserves sustain population**
+→ **water returns**
+→ **seed redistributed**
+→ **productive land returns**.
+
+### RJ39-50-56 — THIS IS ONE OF THE BEST SUCCESSOR-ECOLOGY ANALOGUES YET
+
+It strongly supports:
+**new stable state uses preserved material from the previous state**.
+
+Not rewind.
+
+---
+
+# MAJOR VARDATH FINDING 3
+## Moses box is a genuine carrier, but not a direct fingertrap
+
+Carrier:
+- enclosed;
+- sealed/coated;
+- positioned at water edge;
+- protected through timed phases;
+- extracted by receiver.
+
+### RJ39-50-57 — BABY-IN-BASKET/BOX BELONGS SECURELY TO THE CARRIER FAMILY
+
+Possible Vardath comparison:
+**cargo in protected enclosure crossing hazardous medium/boundary**.
+
+Direct Jubilees evidence does not give:
+woven contraction geometry.
+
+---
+
+# MAJOR VARDATH FINDING 4
+## Passover is selective boundary access in Jubilees
+
+The direct mechanism is unusually clear:
+
+**hazard moves**
+→ **door sign read**
+→ **entry denied at marked enclosure**
+→ **hazard continues past**.
+
+### RJ39-50-58 — PASSOVER IS STRONGLY RELEVANT TO GATE THEORY, BUT AS SELECTIVE ACCESS CONTROL
+
+This may actually be more useful than a forced "pass-over = lattice overhead" reading.
+
+It gives:
+- boundary;
+- marker;
+- classification;
+- moving agent;
+- conditional entry;
+- protected interior.
+
+That resembles:
+**semantic/permission layer on a physical threshold**.
+
+Cross-link:
+Ezekiel access states.
+
+---
+
+# MAJOR VARDATH FINDING 5
+## same sea corridor, different phase, opposite outcomes
+
+Israel crosses.
+
+Egypt pursues later.
+
+Water state/outcome differs.
+
+### RJ39-50-59 — TIMING RELATIVE TO A TEMPORARY CORRIDOR MATTERS
+
+This is highly compatible with Vardath's:
+**temporary adjacency/window**
+concept at the formal level.
+
+Source mechanism:
+miraculous sea crossing.
+
+No upper/lower populated worlds are involved.
+
+---
+
+# MAJOR VARDATH FINDING 6
+## physical cargo can be scheduled generations into the future
+
+Joseph's bones:
+- preserved;
+- assigned future movement;
+- transferred only at Exodus.
+
+### RJ39-50-60 — TRANSFER CAN BE DELAYED WHILE IDENTITY/DESTINATION INTENTION REMAINS CONTINUOUS
+
+This is a useful:
+**handoff across time**
+motif.
+
+---
+
+# MAJOR VARDATH FINDING 7
+## calendar state changes permitted operations
+
+Sabbath:
+- closes most ordinary actions;
+- leaves specific sanctuary actions open.
+
+### RJ39-50-61 — "OPEN/CLOSED" CAN BE AN OPERATING-MODE PROPERTY RATHER THAN A SPATIAL APERTURE
+
+This is another critical control.
+
+---
+
+# PASSOVER / MOSES / SQUATTER-MAN SPECIFIC UPDATE
+
+The user's current working comparison includes:
+- Moses as Squatter-Man / mountain / reaching-sky projection;
+- baby in basket as woven fingertrap;
+- Passover as possible pass-under / one part of lattice passing over another.
+
+Jubilees 39–50 sharpens rather than simply confirms this.
+
+## Moses carrier
+Secure:
+- infant Moses;
+- sealed river box;
+- pitch/asphalt;
+- water-edge placement;
+- timed guardianship;
+- extraction.
+
+Not secure in Jubilees:
+- woven basket strands;
+- fingertrap contraction.
+
+## Passover
+Secure:
+- moving destructive forces;
+- occupied houses;
+- blood on door;
+- non-entry at marked threshold;
+- passing by protected enclosure.
+
+Not secure:
+- physical sky-lattice moving overhead.
+
+## Sea
+Secure:
+- temporary traversable corridor;
+- mediating agent between populations;
+- one population crosses;
+- second population enters later and is destroyed;
+- phase/timing matters.
+
+### RJ39-50-62 — THE STRONGEST VARDATH READING OF THIS JUBILEES BLOCK IS NOT "EVERYTHING IS THE FINGERTRAP"
+
+It is:
+
+**carrier**
++
+**selective threshold**
++
+**temporary route**
++
+**phase-dependent crossing**
++
+**preserved cargo/material**
++
+**precise time-state**.
+
+That is a more defensible process mapping.
+
+---
+
+# Strict fingertrap test — Jubilees 39–50
+
+## broad/open support
+No direct broad woven support structure in these chapters.
+
+## structural continuity
+Ordinary doors/sea route/carriers have continuity,
+but not with a broad sky support.
+
+## contraction / angle change
+Absent.
+
+## narrow throat
+Several constrained routes:
+- broken door;
+- Egyptian gates;
+- sea corridor;
+- marked house doors.
+
+But none formed by contraction of a broad weave.
+
+## transfer/contact
+Very strong:
+- family migration;
+- grain;
+- bones;
+- Moses carrier;
+- sea crossing;
+- Passover departure.
+
+## reopening
+Sea crossing has temporary opening/closure behavior,
+but no broad-lattice return.
+
+### Strict verdict
+
+**NEGATIVE.**
+
+Jubilees 39–50 is powerful for:
+- boundary control;
+- carriers;
+- time windows;
+- phase-dependent routes;
+- successor recovery;
+- cargo handoff;
+
+but does not supply the missing:
+**broad weave → contracted throat → same-structure reopening**.
+
+---
+
+# Pair / role register
+
+## cupbearer / baker
+same prison/interpreter → opposite life/death outcomes.
+
+## Pharaoh's two dreams
+two symbols → explicitly one process.
+
+## seven abundance / seven famine
+paired sequential environmental-economic phases.
+
+## Tamar / hidden Tamar
+same person → clothing/role projection shift.
+
+## Perez / Zerah
+twins; paired descendants.
+
+## Reuben / Judah
+two guarantee strategies.
+
+## Joseph / concealed ruler
+same person, hidden identity / revealed brother.
+
+## Judah / Benjamin
+substitute / released person.
+
+## Joseph / Benjamin
+two sons of Rachel in Jacob's perception; one lost/one threatened.
+
+## Canaan / Egypt
+famine-deficient land / stored-food land.
+
+## mother / Miriam
+night guardian / day guardian of Moses.
+
+## Israel / Egypt
+same sea corridor / opposite temporal outcomes.
+
+## marked / unmarked houses
+non-entry/protection / entry/death.
+
+## distributed houses / central sanctuary
+original Passover boundary system / later ritual centre.
+
+## workday / Sabbath
+ordinary-operation mode / restricted-operation mode.
+
+---
+
+# Number / timing register
+
+Record without forcing:
+
+- Joseph age 17 entering Egypt.
+- Joseph's imprisonment duration varies in textual traditions/details; use VanderKam critical text where needed.
+- Pharaoh: 2 dreams = 1 event.
+- 7 years abundance.
+- 7 years famine.
+- 1800-fold measure yield in Jubilees' hyperbolic abundance description.
+- twins Perez/Zerah.
+- Jacob waits 7 days before Egypt decision.
+- 70 persons enter Egypt in this recension/accounting.
+- Joseph age 110.
+- Moses infant policy lasts 7 months before his birth.
+- hidden 3 months.
+- river box 7 days.
+- Moses later chronology arranged in weeks/jubilees.
+- Mastema bound through specific Exodus days around 14–18 and released for pursuit.
+- Passover: 14th / evening of 15th.
+- day/night divided into thirds around sacrifice/eating boundary.
+- 7 days Unleavened Bread.
+- 49 jubilees elapsed in the chronology at the Sinai framing point plus further years.
+- 40 years until Jordan/Canaan entry from the narrative frame.
+- Sabbath: 6 workdays + 7th-day rest.
+
+### RJ39-50-63 — JUBILEES' NUMBERS FORM AN EXPLICIT CALENDAR AND NARRATIVE CHRONOLOGY
+
+They are not hidden numerology.
+
+Any Vardath number correspondence must survive this ordinary explanation first.
+
+---
+
+# Textual / scholarly controls — Jubilees 39–50
+
+1. Jubilees is a second-century BCE Jewish rewriting of Genesis and early Exodus.
+2. Its original language was Hebrew; Hebrew fragments survive at Qumran.
+3. The Ethiopic tradition preserves the most complete text.
+4. VanderKam's critical translation incorporates Ethiopic and all available textual evidence, including Qumran Hebrew fragments.
+5. Chapters 39–46 rewrite the Joseph/Tamar/Jacob migration material with Jubilees' distinctive chronological/legal interests.
+6. Chapter 40 explicitly interprets Pharaoh's two dreams as one process.
+7. The seven-abundance/seven-famine pattern is ordinary narrative chronology before any cosmological comparison.
+8. Chapter 41 places Tamar at a literal gate/road and uses clothing plus ring/chain/staff for concealment/recognition.
+9. Chapter 42 explicitly connects rain failure with ground unproductivity and stored Egyptian grain with survival.
+10. Chapter 43's Joseph identity reveal follows transformed brotherly behavior; it is family-reconciliation narrative.
+11. Chapters 44–45 describe an ordinary large family migration from Canaan to Egypt with people, animals and property.
+12. Chapter 45 explicitly couples post-famine Nile overflow with seed distribution and renewed agriculture.
+13. Chapter 46 gives bones/remains as transferable ancestral cargo but in ordinary burial/repatriation practice.
+14. Egyptian gates are political/military city-country boundaries, not cosmic gates.
+15. Chapter 47's Moses carrier is a pitch/asphalt-coated box/ark in the riverbank vegetation; direct Jubilees wording does not describe fingertrap weave.
+16. Chapter 48 develops Mastema's role far beyond Exodus and should be understood as Jubilees' distinctive angelological/demonic interpretation.
+17. The sea passage is a rewritten Exodus miracle in which timing and divine protection distinguish Israelite and Egyptian outcomes.
+18. Chapter 49 explicitly defines first Passover protection through blood-marked doors that destructive forces do not enter.
+19. Therefore direct Jubilees Passover language is selective threshold routing, not an explicit lattice-over/lattice-under process.
+20. Jubilees 49 strongly emphasizes precise annual timing and heavenly-tablet authority.
+21. Passover's later celebration is centralized at sanctuary/temple rather than distributed among ordinary cities.
+22. Chapter 50 closes the book with Sabbath and jubilee legislation.
+23. Jubilees' chronological "jubilee" is a 49-year period; do not conflate it casually with every possible 50-year scheme.
+24. Modern scholarship treats the book's calendar/time divisions as central to its ideology and literary construction.
+25. Calendar recurrence can structure typological/narrative relationships without implying physical time loops.
+
+---
+
+# Sources logged — recovered Jubilees 39–50
+
+## Critical modern translation
+- James C. VanderKam, _Jubilees_ critical translation:
+  https://palimpsest.stmarytx.edu/thanneken/2018/VanderKam%282018%29Jubilees-Translation.html
+
+## Modern full commentary
+- James C. VanderKam, _Jubilees: A Commentary in Two Volumes_, Hermeneia (2018):
+  https://www.jstor.org/stable/j.ctt21c4sk7
+- Chapter 47 commentary — Moses' birth/escape:
+  https://www.jstor.org/stable/j.ctt21c4sk7.56
+- Chapter 48 commentary — return/plagues/Exodus:
+  https://www.jstor.org/stable/j.ctt21c4sk7.57
+- Chapter 49 commentary — Passover:
+  https://www.jstor.org/stable/j.ctt21c4sk7.58
+- Chapter 50 commentary — Sabbaths/weeks/jubilees:
+  https://www.jstor.org/stable/j.ctt21c4sk7.59
+
+## Public-domain comparison
+- R. H. Charles, _The Book of Jubilees_:
+  https://sacred-texts.com/bib/jub/index.htm
+- Chapters 39–50 public-domain text:
+  https://www.meta-religion.com/World_Religions/Christianity/Other_Books/Old_Testament_Apocrypha/book_of_jubilees.htm
+
+## Calendar / textual controls
+- Oxford Academic, discussion of Jubilees' time/calendar/testimony:
+  https://academic.oup.com/book/59222/chapter/497874906
+- Oxford Academic, heavenly/earthly law and calendar correspondence:
+  https://academic.oup.com/book/59222/chapter/497874977
+- Walter D. Ray, "Calendar and Dates in Jubilees' Garden of Eden Story," _Harvard Theological Review_:
+  https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/calendar-and-dates-in-jubilees-garden-of-eden-story/5B9726D14F0127A0ACB692A0809A371D
+
+---
+
+# RECOVERED ROADMAP GAP — SECTION 12 CONTINUATION — JUBILEES 39–50 COMPLETE
+
+## Strongest recovered findings
+
+1. **The corpus audit proved Jubilees 39–50 was genuinely missing from all three research archives; it is now recovered here without rewriting the old archives.**
+2. **Jubilees 39 gives a literal closed-door→broken-door→outside escape sequence, a valuable ordinary boundary-breach control.**
+3. **Joseph's detached garment becomes identity/evidence after he leaves, strengthening the garment-as-state/identity-token family.**
+4. **Pharaoh's two dreams are explicitly interpreted as one event, giving direct source-level support for multiple symbolic projections representing one underlying process.**
+5. **Seven years abundance→distributed city storage→seven years famine is a complete two-phase resilience system rather than a hidden gate cycle.**
+6. **Tamar changes clothing, occupies a literal gate/road threshold, and later uses ring+chain+staff to reveal concealed identity; the staff here is an identity token, not an axis.**
+7. **Rain failure→unproductive earth→stored Egyptian grain produces a clear upper-water/ground-fertility dependency plus a strong regional-asymmetry control.**
+8. **Reuben and Judah present two different guarantee/substitution strategies, and Judah later offers himself in Benjamin's place.**
+9. **Joseph reveals his concealed identity only after the brothers' relational state changes to cooperative harmony, giving a strong information/state-transition sequence.**
+10. **The Jacob migration gives a genuine large-scale terrestrial population/cargo transfer with scout, wagons, people, livestock, property, origin and destination.**
+11. **Post-famine recovery is especially important: Nile overflow returns, preserved seed is redistributed, sowing resumes, and the land becomes productive—successor ecology built from retained material, not rewind.**
+12. **Joseph's books go to Levi, and Joseph's bones are scheduled as delayed future cargo, showing cultural and bodily material can persist across generations awaiting later handoff.**
+13. **Moses' infant carrier in Jubilees is a sealed pitch/asphalt-coated box at the river boundary with alternating night/day guardians; it belongs securely to the carrier family.**
+14. **Direct Jubilees does not call Moses' box a woven fingertrap, so that aspect remains a cross-text Vardath comparison rather than direct support from this recension.**
+15. **Jubilees 48 gives a mediator standing between Egyptians and Israelites and the same sea corridor producing safe transit for one population and destruction for the later pursuing population—timing/phase relative to a temporary route matters.**
+16. **Mastema's binding and release creates a true enabled/disabled agent-state switch, but it is not a gate opening.**
+17. **Jubilees 49 explicitly explains Passover through selective access at marked house doors: destructive agents see the blood sign, do not enter, and continue past the occupied enclosure.**
+18. **That direct source meaning constrains the user's pass-over/pass-under lattice comparison; the lattice reading is speculative and must explain rather than replace the marked-door routing mechanism.**
+19. **Passover then changes topology ritually from many distributed household boundaries to one centralized sanctuary, a strong distributed→central transition.**
+20. **Passover also combines a spatial boundary (door) with a precise temporal boundary ("boundary of evening"), making time + place jointly necessary for correct operation.**
+21. **The festival sequence runs from marked house thresholds through departure to sea crossing and ends on the seashore, which is highly relevant to the broader Passover geometry even though no single lattice structure is stated.**
+22. **Jubilees 50 closes with explicit nested time architecture—days, weeks, land Sabbaths, weeks of years and jubilees—and ties geography/land possession to that calendar system.**
+23. **Sabbath functions as an operating-mode switch: travel, water drawing, carrying, fire, sea travel, hunting and war change permission state while specific sanctuary operations remain active.**
+24. **No strict fingertrap appears. The recovered block adds carrier, boundary marker, temporal window, temporary corridor, successor ecology and delayed cargo—not the missing broad-weave contraction link.**
+
+## CORPUS AUDIT RESULT AFTER RECOVERY
+
+A title/range audit was run across:
+- Part 1;
+- EXTRA-RESEARCH.md;
+- Part 2.
+
+The audit explicitly checked the terminal ranges of every chapter-divided roadmap unit and the distinctive titles/completion markers of the whole-book / thematic units.
+
+Before this recovery:
+**Jubilees 39–50 was the only missing roadmap range found.**
+
+After this append, the reconstructed direct roadmap has no remaining identified unresearched text-unit.
+
+The numbering discrepancy around:
+- roadmap Sections 58–63
+versus
+- later research labels 53A/B and 54–57
+
+is a bookkeeping renumbering issue, not missing Daniel/Twelve research.
+
+### DIRECT SEQUENTIAL CORPUS STATUS
+
+**The reconstructed 88-text / broader-canon direct first-pass research is now COMPLETE at the roadmap-unit level.**
+
+Future work should therefore shift from blind sequential reading to:
+- gap/quality audit;
+- cross-text mechanism synthesis;
+- transformation timeline;
+- pair/role map;
+- strict-fingertrap evidence table;
+- water/current timeline;
+- cherub / Feathered Serpent / dragon / Squatter-Man projection matrix;
+- number/calendar register with textual-witness controls.
+
+If a later file audit finds a specific missing chapter/subunit,
+recover it in Part 2 as another omission rather than restarting the sequence.
+
