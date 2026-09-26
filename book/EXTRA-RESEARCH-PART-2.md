@@ -36025,7 +36025,7 @@ Required protocol:
 
 ---
 
-# SECTION 72 — TEACHING / PARABLES / SIGNS AND THE ROAD TOWARD JERUSALEM
+# SUPPLEMENTAL GOSPEL PASS — TEACHING / PARABLES / SIGNS AND THE ROAD TOWARD JERUSALEM
 ## Synoptic process pass — seed→tree expansion, mixed-field coexistence and delayed sorting, dragnet gathering, narrow gate/door and finite access windows, foundation-dependent storm response, lamps/oil and shut-door timing, lost→searched→recovered systems, road/carrier rescue, fixed gulf with communication but no transit, tree as observation node, delayed fig-tree judgment, and royal movement toward Jerusalem
 
 ### Frontier verification
@@ -37306,7 +37306,7 @@ No Vardath cycle should be inferred from these counts.
 
 ---
 
-# SECTION 72 — TEACHING / PARABLES / SIGNS AND THE ROAD TOWARD JERUSALEM COMPLETE
+# SUPPLEMENTAL GOSPEL PASS — TEACHING / PARABLES / SIGNS AND THE ROAD TOWARD JERUSALEM COMPLETE
 
 ## Strongest new findings
 
@@ -37331,15 +37331,37 @@ No Vardath cycle should be inferred from these counts.
 19. **Section 72 adds a mature four-class boundary taxonomy: selective entrance, time-window entrance, closed/permission boundary, and permanent non-crossable divide.**
 20. **No strict fingertrap appears. The section's major contribution is boundary/access/partial-coupling logic rather than the missing broad-support→contracted-throat transition.**
 
-## Next live block
+## Corrected roadmap continuation
 
-**Recover the exact roadmap wording from the three-file archive before proceeding.**
+The master roadmap in Part 1 was re-opened after this supplemental pass.
 
-Likely next phase is the Jerusalem / Passion block, but do not assume.
+The actual next canonical Gospel block is:
 
-Before continuing:
-- search all three archives for Section 73 / the next roadmap marker;
-- inspect actual Part 2 tail;
-- identify the first unfinished exact block;
-- append only after source-controlled research.
+**Section 72 — Jerusalem / Passion**
+- triumphal entry;
+- temple cleansing;
+- fig tree;
+- upper room;
+- bread/wine;
+- Gethsemane;
+- Judas/Peter;
+- arrest;
+- trial;
+- Jesus/Barabbas;
+- crucifixion;
+- two thieves;
+- darkness;
+- veil split;
+- earthquake;
+- spear/water/blood;
+- tomb sealed.
+
+Priority pair tests:
+- Jesus / Barabbas, including the textual tradition "Jesus Barabbas";
+- Peter / Judas;
+- two thieves;
+- cross as axis/rod;
+- veil as gate.
+
+This supplemental teaching/parables research remains valid but is not Section 72.
 
