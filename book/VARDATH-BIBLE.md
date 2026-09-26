@@ -3863,3 +3863,68 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **8.** And he said to me: “All these slaughter, and divide the animals into halves, one against the other, but the birds do not sever; and give to the men, whom I will shew thee, standing by thee, for these are the altar upon the Mountain, to offer a sacrifice to the Eternal.”
 
 **9.** “But the turtledove and the pigeon give to me, for I will ascend upon the wings of the bird, in order to shew thee in heaven, and on the earth, and in the sea, and in the abyss, and in the under-world, and in the Garden of Eden, and in its rivers and in the fulness of the whole world and its circle—thou shalt gaze in them all.”
+
+
+## Apocalypse of Abraham 13
+
+**1.** And I did everything according to the commandment of the angel, and gave the angels, who had come to us, the divided animals, but the angel took the birds.
+
+**2.** And I waited for the evening sacrifice.
+
+**3.** And there flew an unclean bird down upon the carcasses, and I drove it away.
+
+**4.** And the unclean bird spake to me, and said: “What doest thou, Abraham, upon the holy Heights, where no man eateth or drinketh, neither is there upon them (any) food of man, but these consume everything with fire, and (will) burn thee up.”
+
+**5.** “Forsake the man, who is with thee, and flee; for if thou ascendest to the Heights they will make an end of thee.”
+
+**6.** And it came to pass, when I saw the bird speak, I said to the angel: “What is this, my lord?”
+
+**7.** And he said: “This is ungodliness, this is Azazel.”
+
+**8.** And he said to it: “Disgrace upon thee, Azazel! For Abraham’s lot is in heaven, but thine upon the earth.”
+
+**9.** “Because thou hast chosen and loved this for the dwelling-(place) of thine uncleanness, therefore the eternal mighty Lord made thee a dweller upon the earth and through thee every evil spirit of lies, and through thee wrath and trials for the generations of ungodly men.”
+
+**10.** “For God, the Eternal, Mighty One, hath not permitted that the bodies of the righteous should be in thy hand, in order that thereby the life of the righteous and the destruction of the unclean may be assured.”
+
+**11.** “Hear, begone with shame from me. For it hath not been given to thee to play the tempter in regard to all the righteous.”
+
+**12.** “Depart from this man! Thou canst not lead him astray, because he is an enemy to thee, and of those who follow thee and love what thou willest.”
+
+**13.** “For, behold, the vesture which in heaven was formerly thine hath been set aside for him, and the mortality which was his hath been transferred to thee.”
+
+## Apocalypse of Abraham 14
+
+**1.** The angel said to me: [“Abraham!” And I said: “Here am I, thy servant.” And he said: “Know from henceforth that the Eternal One hath chosen thee, He whom thou lovest; be of good courage and use this authority, so far as I bid thee, against him who slandereth truth; should I not be able to put him to shame who hath scattered over the earth the secrets of heaven and hath rebelled against the Mighty One?”]
+
+**2.** “Say to him: ‘Be thou the burning coal of the Furnace of the earth; go, Azazel, into the inaccessible parts of the earth; [for thy heritage is to be over those existing with thee, being born with the stars and clouds, with the men whose portion thou art, and who through thy being exist; and thine enmity is justification. On this account by thy perdition disappear from me.’”
+
+**3.** And I uttered the words which the angel had taught me. [And he said: “Abraham!” And I said: “Here am I, thy servant.”]
+
+**4.** And the angel said to me: “Answer him not; for God hath given him power over those who do answer him.”
+
+**5.** [And the angel spake to me a second time and said: “Now rather, however much he speak to thee, answer him not, that his will may have no free course in thee, because the Eternal and Mighty One hath given him weight and will; answer him not.”]
+
+**6.** I did what was commanded me by the angel; and however much he spake to me, I answered him nothing whatsoever.
+
+## Apocalypse of Abraham 15
+
+**1.** And it came to pass when the sun went down, and lo! a smoke as of a furnace.
+
+**2.** And the angels who had the portions of the sacrifice ascended from the top of the smoking furnace.
+
+**3.** And the Angel took me with the right hand and set me on the right wing of the pigeon, and set himself on the left wing of the turtle dove, which birds had neither been slaughtered nor divided.
+
+**4.** And he bore me to the borders of the flaming fire [and we ascended as with many winds to the heaven which was fixed upon the surface].
+
+**5.** And I saw on the air, on the height to which we ascended, a strong light, which it was impossible to describe.
+
+**6.** And lo! in this light a fiercely burning fire for people, many people of male appearance, all constantly changing in aspect and form, running and being transformed, and worshipping and crying with a sound of words which I knew not.
+
+## Apocalypse of Abraham 16
+
+**1.** And I said to the Angel: “Why hast thou brought me up here now, because I cannot now see, for I am already grown weak, and my spirit departeth from me?”
+
+**2.** And he said to me: “Remain by me; fear not! And He whom thou seest come straight towards us with great voice of holiness—that is the Eternal One who Loveth thee; but Himself thou canst not see.”
+
+**3.** “But let not thy spirit grow faint [on account of the loud crying], for I am with thee, strengthening thee.”
