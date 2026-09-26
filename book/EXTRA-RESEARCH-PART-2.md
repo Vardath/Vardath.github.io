@@ -43740,3 +43740,1925 @@ Required controls:
 - give special attention to 2 Corinthians 12 because Paul himself says he does not know whether the third-heaven experience was "in the body or out of the body";
 - apply strict fingertrap test only after the full structural-pair pass.
 
+
+
+---
+
+# SECTION 76 — PAULINE EPISTLES
+## Structural-pair pass — Adam/Christ, death/life, flesh/Spirit, old/new self, seed/body transformation, earthly/heavenly body, Hagar/Sarah as two covenants/Jerusalems, veil/mirror, earthly tent/heavenly dwelling, third-heaven ascent uncertainty, olive-tree grafting, many-members/one-body systems, two populations→one humanity→one body→one temple, body/head, cloud/air gathering, and information versus physical constraint
+
+### Frontier verification
+
+Before beginning:
+- Part 1 was checked;
+- EXTRA-RESEARCH.md was checked;
+- Part 2 actual tail was checked.
+
+Sections 68–75 were already present in Part 2.
+
+The verified next live block was:
+**Section 76 — Pauline epistles**.
+
+This section follows the roadmap instruction that this block is **not narrative-first**. Its main task is to extract Paul's explicit structural-pair theology and compare it cautiously with Vardath projection/state mechanics.
+
+---
+
+# CORPUS / AUTHORSHIP CONTROL FIRST
+
+The New Testament contains thirteen letters attributed to Paul before Hebrews in the standard sequence.
+
+Modern critical scholarship usually distinguishes:
+
+## Widely regarded as undisputed Pauline
+- Romans;
+- 1 Corinthians;
+- 2 Corinthians;
+- Galatians;
+- Philippians;
+- 1 Thessalonians;
+- Philemon.
+
+## Disputed / commonly called deutero-Pauline
+- Ephesians;
+- Colossians;
+- 2 Thessalonians.
+
+## Pastorals, whose direct Pauline authorship is widely disputed in critical scholarship
+- 1 Timothy;
+- 2 Timothy;
+- Titus.
+
+This is not absolute unanimity.
+
+For example, Paul Foster has argued that the case against Pauline authorship of 2 Thessalonians is weaker than often assumed.
+
+Therefore this section uses:
+- **Paul** confidently for the seven undisputed letters;
+- **Pauline corpus / author of Ephesians / author of Colossians / author of the Pastorals** where authorship is debated.
+
+This distinction matters because the roadmap priority specifically asks what **Paul himself** explicitly does with paired roles.
+
+---
+
+# ROMANS 5
+## Adam / Christ = explicit paired corporate representatives
+
+Romans 5:12–21 is foundational.
+
+Adam:
+- one man;
+- trespass/disobedience;
+- sin/death enters;
+- condemnation spreads.
+
+Christ:
+- one man;
+- obedience/righteous act;
+- grace/life/justification spreads.
+
+Paul explicitly calls Adam:
+**a pattern/type of the one who was to come**.
+
+### M76-1 — PAUL HIMSELF EXPLICITLY USES ONE HISTORICAL PERSON AS THE STRUCTURAL PATTERN OF ANOTHER
+
+This is extremely important to the project's paired-person method.
+
+The relationship is not inferred from superficial similarity.
+
+Paul explicitly constructs:
+
+**Adam**
+→ old-humanity / sin / death state
+
+**Christ**
+→ new-humanity / grace / life state.
+
+### M76-2 — TWO PEOPLE CAN ENCODE TWO WORLD-HISTORICAL HUMAN STATES
+
+This is one of the strongest controls yet for the user's idea that paired persons may represent:
+- earlier/later states;
+- old/new world functions;
+- two sides of one transition.
+
+However:
+Paul's meaning is theological/corporate,
+not geometrical.
+
+### M76-3 — PAUL'S PAIR IS ASYMMETRICAL, NOT TWO EQUAL OPPOSING FORCES
+
+Christ does not merely mirror Adam.
+
+Paul repeatedly says:
+the gift exceeds the trespass.
+
+Therefore paired roles need not be equal-strength dual forces.
+
+---
+
+# ROMANS 6
+## old self crucified → buried → raised → new life
+
+Baptism language:
+
+- baptized into Christ's death;
+- buried with him;
+- raised into newness of life;
+- old self crucified;
+- body of sin disabled/destroyed;
+- person now alive to God.
+
+### M76-4 — SAME PERSON CAN BE ASSIGNED AN OLD-SELF AND NEW-LIFE STATE ACROSS DEATH/RESURRECTION GRAMMAR
+
+This is a source-level:
+**state A**
+→ **boundary/death**
+→ **state B**.
+
+The carrier/person remains referentially continuous.
+
+### M76-5 — DEATH IS USED AS A ROLE/STATE BOUNDARY BEFORE BIOLOGICAL DEATH
+
+Paul tells living readers:
+- they "died";
+- were "buried";
+- now "live."
+
+Therefore:
+death/resurrection vocabulary can be participatory/metaphorical,
+not always literal physical death mechanics.
+
+This is a major anti-forcing rule for the entire project.
+
+---
+
+# ROMANS 7–8
+## flesh / mind / Spirit; creation groaning in labor; body redemption
+
+Romans 7:
+- mind and bodily members appear in conflict;
+- sin "dwells" in members;
+- another law wages war.
+
+Romans 8:
+- flesh and Spirit are opposed orientations/domains of life;
+- Spirit dwells in believers;
+- mortal bodies are promised life;
+- whole creation groans together in labor pains;
+- believers also groan;
+- outcome = "redemption of our bodies."
+
+### M76-6 — FLESH / SPIRIT IS A FUNCTIONAL-THEOLOGICAL PAIR, NOT A SIMPLE MATTER / ENERGY PAIR
+
+This is crucial.
+
+Paul can speak positively of:
+- mortal body receiving life;
+- bodily redemption.
+
+Therefore:
+**flesh ≠ physical matter is evil**.
+
+Do not map:
+flesh = dense world
+and
+Spirit = plasma world
+without source support.
+
+### M76-7 — WHOLE CREATION IS PERSONIFIED AS A WOMAN IN LABOR
+
+Creation:
+- groans;
+- suffers labor pains;
+- waits for liberation.
+
+This is another massive-scale environmental field projected through a body process.
+
+Cross-link:
+- Zion woman/city;
+- Habakkuk deep/hands;
+- 4 Ezra woman/city.
+
+### M76-8 — PAUL EXPECTS TRANSFORMATION OF CREATION AND BODIES TOGETHER
+
+Romans 8 does not present salvation as:
+souls escaping a discarded material cosmos.
+
+It joins:
+- creation;
+- human bodies;
+- future liberation.
+
+This is formally closer to Vardath's:
+**whole environment + inhabitants transform together**
+than to a purely disembodied model.
+
+But Paul gives no gate mechanics.
+
+---
+
+# ROMANS 11
+## MAJOR TREE / GRAFTING SYSTEM
+## natural branches broken → wild branches inserted → support from same root → original branches can be grafted back
+
+Paul's olive-tree metaphor:
+
+- root is holy/supportive;
+- some natural branches broken off;
+- wild olive shoot grafted in;
+- graft shares root/richness;
+- wild branch does **not** support root;
+- root supports branch;
+- graft can be cut off;
+- broken natural branches can be grafted back.
+
+### M76-9 — THIS IS ONE OF THE STRONGEST DYNAMIC NETWORK MEMBERSHIP METAPHORS IN THE PAULINE CORPUS
+
+One continuing tree system can:
+- lose nodes;
+- receive foreign nodes;
+- restore original nodes.
+
+### M76-10 — IDENTITY OF THE WHOLE SYSTEM PERSISTS WHILE BRANCH POPULATION CHANGES
+
+Tree remains one tree.
+
+Membership changes.
+
+This is highly relevant to:
+**successor state without blank replacement**.
+
+### M76-11 — SUPPORT DIRECTION IS EXPLICIT:
+**root → branches**, not branches → root.
+
+That is useful for Vardath node hierarchy.
+
+### M76-12 — CUT / GRAFT / REGRAFT IS A TRUE STRUCTURAL TRANSFORMATION, BUT NOT A FINGERTRAP
+
+There is:
+- continuity;
+- insertion/removal;
+- living transfer.
+
+Missing:
+- broad mesh contraction;
+- throat;
+- same structure reopening.
+
+### Scholarship control
+
+Scholars agree broadly that:
+- branches encode Jewish/Gentile participation questions;
+- Paul warns Gentile believers not to boast;
+- natural branches can return.
+
+The exact identity of the "root" is debated:
+- patriarchs/promises;
+- Israel's holy root;
+- Christ;
+- other nuances.
+
+Therefore:
+do not make a Vardath mechanism depend on one disputed root identification.
+
+---
+
+# ROMANS 12
+## many members → one body → differentiated functions
+
+Paul:
+- one body;
+- many members;
+- different functions;
+- individually members of one another.
+
+### M76-13 — ONE COLLECTIVE SYSTEM IS EXPLICITLY PROJECTED AS ONE ANTHROPOMORPHIC BODY WITH SPECIALIZED NODES
+
+Members:
+- remain different;
+- perform different tasks;
+- form one body.
+
+This is a direct textual model for:
+**distributed evaluators/functions → one face/body**.
+
+Formal relevance to JANUS-like architectures is obvious,
+but this file remains Bible/Vardath research.
+
+---
+
+# 1 CORINTHIANS 12
+## one Spirit → many gifts → one body → many organs; head/feet/eyes/hands
+
+Paul develops the body metaphor in much greater detail.
+
+System:
+- one Spirit;
+- different gifts/services/activities;
+- many members;
+- one body.
+
+Body nodes:
+- foot;
+- hand;
+- ear;
+- eye;
+- head;
+- feet.
+
+No member can replace all others.
+
+### M76-14 — SAME SOURCE CAN DISTRIBUTE DIFFERENT FUNCTIONS THROUGH MANY NODES WITHOUT DESTROYING UNITY
+
+This is one-to-many functional differentiation.
+
+### M76-15 — "IF THE WHOLE BODY WERE AN EYE" IS AN EXPLICIT WARNING AGAINST COLLAPSING ALL NODES INTO ONE FUNCTION
+
+Highly important for Vardath.
+
+If:
+- tree;
+- serpent;
+- wing;
+- eye;
+- rod;
+- cherub
+
+all appear in one system,
+they need not be identical functions.
+
+One system can contain:
+different specialized projections.
+
+---
+
+# 1 CORINTHIANS 13
+## mirror → partial image now / face-to-face later
+
+Paul says:
+- now knowledge is partial;
+- now sees "as in a mirror/reflection";
+- then face to face;
+- now partial knowing;
+- later fuller knowing.
+
+### M76-16 — MIRROR IS AN EPISTEMIC / REPRESENTATIONAL BOUNDARY, NOT A PORTAL
+
+This is an important control for the user's mirror/time-door interests.
+
+Paul's mirror:
+**imperfect perception**.
+
+No traversal occurs.
+
+Do not classify every mirror as:
+gate between worlds.
+
+---
+
+# 1 CORINTHIANS 15
+# MAJOR PAIR / TRANSFORMATION TEXT
+## Adam / Christ + seed/body + earthly/heavenly + physical/spiritual + mortality/immortality + trumpet transformation
+
+This is the single most important Pauline chapter for the project.
+
+---
+
+# 1 Corinthians 15:20–28
+## Adam / Christ repeated as death/life pair
+
+Sequence:
+- Christ = first fruits;
+- death through a human;
+- resurrection through a human;
+- "all die in Adam";
+- "all will be made alive in Christ";
+- order/sequence of resurrection;
+- final defeat of death.
+
+### M76-17 — ADAM / CHRIST IS NOT ONE ISOLATED METAPHOR; IT ORGANIZES PAUL'S ESCHATOLOGICAL SEQUENCE
+
+Pair:
+**first death-bearing human**
+↔
+**resurrection-bearing human**.
+
+---
+
+# 1 Corinthians 15:35–38
+## seed dies; what is sown is NOT the body that will be; God gives it a body
+
+Paul answers:
+"With what kind of body?"
+
+Analogy:
+- seed sown;
+- seed must die;
+- seed is not the body/plant-form that later appears;
+- God gives body/form appropriate to seed.
+
+### M76-18 — THIS IS ONE OF THE STRONGEST SAME-IDENTITY / DIFFERENT-FORM TRANSFORMATION MODELS IN THE BIBLE
+
+Critical process:
+
+**small concentrated seed**
+→ **death/breakdown**
+→ **new body/form**
+→ **identity-kind continuity without shape continuity**.
+
+### M76-19 — PAUL EXPLICITLY SAYS THE INPUT FORM IS NOT THE OUTPUT FORM
+
+This directly supports the project's projection rule:
+**same underlying identity/function can appear in radically different form across states**.
+
+### Scholarship control
+
+Peter Lampe emphasizes both:
+- continuity between seed and plant;
+- major qualitative discontinuity between present and resurrection body.
+
+Therefore:
+do not reduce Paul's model to either:
+"same corpse merely restarts"
+or
+"completely unrelated replacement."
+
+---
+
+# 1 Corinthians 15:39–44
+## multiple flesh/body types; terrestrial / celestial bodies; perishable→imperishable; physical→spiritual body
+
+Paul lists:
+- human flesh;
+- animal flesh;
+- bird flesh;
+- fish flesh;
+- heavenly bodies;
+- earthly bodies;
+- sun;
+- moon;
+- stars.
+
+Then:
+- perishable → imperishable;
+- dishonor → glory;
+- weakness → power;
+- physical/natural body → spiritual body.
+
+### M76-20 — "BODY" IN PAUL IS A FLEXIBLE CATEGORY THAT CAN DIFFER RADICALLY BY DOMAIN
+
+This is directly relevant to Vardath's:
+world-body,
+animal-body,
+human-body,
+sky-body
+projection questions.
+
+### M76-21 — "SPIRITUAL BODY" REMAINS A BODY CATEGORY
+
+This is crucial.
+
+Do not rewrite:
+spiritual body = no body / pure disembodied energy.
+
+Paul deliberately keeps:
+**sōma / body**.
+
+---
+
+# 1 Corinthians 15:45–49
+## first Adam / last Adam; earth/dust / heaven; image transfer
+
+Paul explicitly gives:
+
+**first Adam**
+- living being;
+- from earth;
+- dust;
+- physical first.
+
+**last Adam / Christ**
+- life-giving spirit;
+- from heaven;
+- spiritual later.
+
+Humans:
+- have borne image of dusty one;
+- will bear image of heavenly one.
+
+### M76-22 — THIS IS THE STRONGEST EXPLICIT "FIRST FIGURE / LAST FIGURE" STATE PAIR IN THE NEW TESTAMENT SO FAR
+
+The pair includes:
+- sequence;
+- origin;
+- body mode;
+- image;
+- collective population relation.
+
+### M76-23 — A PERSON CAN FUNCTION AS THE TEMPLATE/IMAGE OF A WHOLE POPULATION STATE
+
+Adam:
+template of dusty humans.
+
+Christ:
+template of heavenly humans.
+
+This strongly validates:
+**one person = representative geometry/state of many**
+as a biblical symbolic operation.
+
+Not physical proof of Vardath worlds.
+
+---
+
+# 1 Corinthians 15:50–54
+## last trumpet → instantaneous collective change → mortality clothed with immortality
+
+Paul says:
+- mystery;
+- not all die/sleep;
+- all changed;
+- moment/twinkling;
+- last trumpet;
+- dead raised imperishable;
+- living changed;
+- mortal puts on immortality.
+
+### M76-24 — ONE SIGNAL TRIGGERS A POPULATION-WIDE STATE TRANSITION
+
+**trumpet**
+→ **dead rise**
++
+**living change**.
+
+This resembles:
+signal → global phase transition.
+
+### M76-25 — CLOTHING LANGUAGE IS AGAIN USED FOR STATE CHANGE
+
+Mortality:
+"puts on"
+immortality.
+
+Cross-link:
+- Joshua garment replacement;
+- Ezekiel priest garments;
+- Colossians old/new self;
+- 2 Corinthians heavenly clothing.
+
+Clothing repeatedly encodes:
+**same referent, changed state/role**.
+
+---
+
+# 2 CORINTHIANS 3
+## old covenant / new covenant; veil on face/mind → turning → veil removed → mirror → transformation degree by degree
+
+Paul contrasts:
+- letter / Spirit;
+- old covenant / new-covenant ministry;
+- veiled / unveiled.
+
+Veil:
+- originally Moses face;
+- then mapped onto minds/hearts;
+- removed when one turns to Lord.
+
+Then:
+- unveiled face;
+- mirror/reflection;
+- transformed into same image;
+- glory-to-glory.
+
+### M76-26 — ONE PHYSICAL OBJECT IS REPROJECTED AS AN INFORMATION/PERCEPTION BARRIER
+
+Veil:
+**face covering**
+→ **mind/covenant-perception barrier**.
+
+This is explicit cross-domain projection.
+
+### M76-27 — REMOVING THE VEIL CHANGES ACCESS TO INFORMATION/IMAGE, NOT PHYSICAL LOCATION
+
+No travel through veil is described.
+
+Therefore:
+Paul's veil is a strong **semantic gate**,
+not a physical throat.
+
+### M76-28 — TRANSFORMATION OCCURS "DEGREE BY DEGREE," NOT ALWAYS INSTANTLY
+
+Important contrast:
+1 Cor 15:
+instant last-trumpet change.
+
+2 Cor 3:
+progressive transformation.
+
+Biblical state change can operate at different temporal scales.
+
+---
+
+# 2 CORINTHIANS 4–5
+## outer/inner; earthly tent / heavenly building; clothing over mortality; body/home polarity; new creation
+
+2 Cor 4:
+- outer person wasting;
+- inner person renewed;
+- visible temporary / invisible eternal.
+
+2 Cor 5:
+- earthly tent destroyed;
+- building from God;
+- eternal house in heavens;
+- groaning;
+- desire to be further clothed;
+- not naked/unclothed;
+- mortality swallowed by life;
+- at home in body / away from Lord;
+- away from body / at home with Lord;
+- new creation.
+
+### M76-29 — SAME HUMAN IDENTITY IS PROJECTED AS:
+**person**
+→ **tent**
+→ **building/house**
+→ **clothed body**
+→ **home/away traveler**.
+
+This is an extraordinary mixed-metaphor identity cluster.
+
+### M76-30 — EARTHLY TENT / HEAVENLY BUILDING IS A STATE PAIR, BUT PAUL DOES NOT DRAW A MECHANICAL ROUTE BETWEEN THEM
+
+There is:
+- earthly;
+- heavenly;
+- mortal;
+- life;
+- body;
+- home/away.
+
+There is no:
+- gate aperture;
+- corridor;
+- carrier vehicle.
+
+### M76-31 — PAUL SPECIFICALLY PREFERS "FURTHER CLOTHED" OVER NAKED DISEMBODIMENT
+
+This is a useful control.
+
+His future hope in 5:1–5 is not simply:
+body discarded → naked spirit forever.
+
+It is:
+**mortal condition swallowed by fuller life**.
+
+### M76-32 — "NEW CREATION" IS A PERSON/COMMUNITY STATE TERM HERE
+
+2 Cor 5:17:
+"in Christ" → new creation.
+
+Do not assume every Pauline "new creation" phrase means:
+literal replacement planet.
+
+Context determines scale.
+
+---
+
+# 2 CORINTHIANS 12
+# MAJOR MULTI-HEAVEN / ASCENT CONTROL
+## caught up to third heaven / paradise; bodily state explicitly UNKNOWN
+
+Paul says:
+- visions/revelations;
+- person in Christ;
+- caught up to **third heaven**;
+- "whether in body or out of body I do not know";
+- repeats uncertainty;
+- caught up into Paradise;
+- hears unutterable things.
+
+### M76-33 — MULTIPLE HEAVEN LEVELS ARE EXPLICITLY PRESUPPOSED
+
+"Third heaven" implies a layered-heaven conception.
+
+This is a strong cosmographic datum.
+
+### M76-34 — PAUL EXPLICITLY REFUSES TO CLAIM WHETHER THE ASCENT WAS BODILY OR DISEMBODIED
+
+This is one of the most important methodological controls in the entire 88-book project.
+
+The primary experiencer himself says:
+**I do not know**.
+
+Therefore we must not confidently reconstruct:
+- body transport;
+- portal mechanics;
+- plasma vehicle;
+- physical time door
+
+from this passage.
+
+### M76-35 — EVENT LOCATION CAN BE CLAIMED WHILE CARRIER MODE REMAINS UNKNOWN
+
+This is a very useful variable separation:
+
+**destination known**
+≠
+**transport mode known**.
+
+### Scholarship control
+
+Heavenly-ascent scholarship places the passage in conversation with:
+- Jewish apocalyptic/heavenly-journey traditions;
+- later merkabah/Hekhalot comparisons;
+- Greco-Roman visionary rhetoric.
+
+Paula Gooder notes how unusually sparse Paul's account is:
+it does not explain:
+- method of ascent;
+- route;
+- structures traversed;
+- detailed cosmography.
+
+Therefore:
+do not fill missing mechanics from later texts and present them as Paul's.
+
+---
+
+# GALATIANS 4
+# MAJOR EXPLICIT ALLEGORY
+## Hagar / Sarah = two covenants; Hagar = Sinai = present Jerusalem; other woman = Jerusalem above / mother
+
+This is one of the most important structural-pair texts in the Bible because Paul tells the reader explicitly that he is allegorizing.
+
+Two women:
+- Hagar;
+- Sarah/free woman.
+
+Two sons:
+- slave woman's child;
+- free woman's child.
+
+Two modes:
+- flesh;
+- promise/Spirit.
+
+Paul says:
+**"these women are two covenants."**
+
+Then Hagar is mapped to:
+- Mount Sinai;
+- present Jerusalem;
+- slavery.
+
+The other/free woman corresponds to:
+- Jerusalem above;
+- freedom;
+- "our mother."
+
+### M76-36 — HUMAN WOMAN → COVENANT → MOUNTAIN → CITY → POPULATION-STATE IS EXPLICIT SOURCE-LEVEL PROJECTION
+
+This is enormous.
+
+One side of Paul's mapping:
+
+**Hagar**
+=
+**covenant**
+=
+**Sinai**
+=
+**present Jerusalem**
+=
+**slavery-state**.
+
+Other side:
+
+**Sarah/free woman**
+=
+**promise/free covenant side**
+=
+**Jerusalem above**
+=
+**mother/free population-state**.
+
+### M76-37 — THIS IS ONE OF THE STRONGEST CONTROLS FOR THE USER'S "PERSON MAY REPRESENT GEOMETRY/PLACE/STATE" METHOD
+
+The text itself does precisely that.
+
+However:
+Paul is consciously constructing a theological allegory.
+
+Therefore:
+this proves **symbolic representability**,
+not literal physical identity.
+
+### M76-38 — TWO JERUSALEMS OPERATE AS PAIRED WORLD/CITY STATES
+
+One:
+present / below / enslaved.
+
+One:
+above / free / maternal.
+
+This is formally relevant to:
+- lower/present versus upper/future-relative world comparison.
+
+But Paul does not say:
+they are stacked physical Earth discs,
+or that a gate periodically connects them.
+
+### Scholarship control
+
+New Testament scholarship directly describes this as:
+Paul's **allegory of the two covenants**.
+
+The precise interpretation of:
+- the two covenants;
+- Paul's opponents;
+- Hagar/Sinai/Jerusalem mapping
+
+is debated.
+
+But the existence of the explicit multi-level mapping is not.
+
+---
+
+# GALATIANS 5–6
+## flesh / Spirit opposition; sowing→harvest; world/self crucifixion; new creation
+
+Gal 5:
+- flesh desires against Spirit;
+- Spirit against flesh.
+
+Gal 6:
+- sow to flesh → corruption;
+- sow to Spirit → eternal life;
+- world crucified to Paul / Paul to world;
+- new creation.
+
+### M76-39 — FLESH/SPIRIT FUNCTIONS AS TWO COMPETING OPERATING REGIMES IN ONE LIVING PERSON/COMMUNITY
+
+Again:
+not simple matter-versus-energy.
+
+### M76-40 — SOWING / HARVEST IS AN INPUT→DELAY→OUTPUT MODEL
+
+State output depends on:
+what is planted/sown.
+
+Cross-link:
+1 Cor 15 seed transformation.
+
+---
+
+# PHILIPPIANS 2–3
+## form/status descent-ascent; heavenly citizenship; humiliating body → glorious body
+
+Philippians 2:
+Christ movement is described through:
+- divine form/status;
+- self-emptying;
+- servant/slave form;
+- human likeness;
+- death;
+- exaltation.
+
+Philippians 3:
+- citizenship/commonwealth in heaven;
+- Savior expected from there;
+- body of humiliation transformed;
+- conformed to body of glory.
+
+### M76-41 — ONE PERSON CAN MOVE THROUGH RADICALLY DIFFERENT STATUS/FORM STATES WHILE RETAINING IDENTITY
+
+This is a role/state transformation,
+not shape-shifting mechanics.
+
+### M76-42 — BODY TRANSFORMATION IS EXPLICITLY A CONFORMATION PROCESS
+
+Low/humiliated body:
+→ conformed to
+glorious body.
+
+This supports:
+same identity / different state form.
+
+---
+
+# 1 THESSALONIANS 4–5
+# VERTICAL GATHERING SEQUENCE
+## descent from heaven → command/archangel/trumpet → dead rise → living+risen caught up in clouds → meet in air
+
+Paul gives a real ordered sequence:
+
+**Lord descends from heaven**
+→ **cry of command**
+→ **archangel call**
+→ **trumpet**
+→ **dead in Christ rise**
+→ **living remainers**
++
+**risen dead**
+→ **caught up together**
+→ **clouds**
+→ **meeting in air**.
+
+### M76-43 — THIS IS THE CLEAREST PAULINE VERTICAL POPULATION-GATHERING SEQUENCE
+
+It has:
+- upper origin;
+- signal;
+- resurrection;
+- collective upward movement;
+- cloud medium;
+- air meeting point.
+
+### M76-44 — NO GATE/APERTURE/THROAT IS DESCRIBED
+
+The passage tells:
+**direction + participants + signals + destination zone**.
+
+It does not tell:
+- what boundary opens;
+- what carries people;
+- whether movement is bodily in an ordinary physical sense;
+- what spatial mechanics produce it.
+
+### M76-45 — THE DEAD AND LIVING CONVERGE INTO ONE POPULATION AFTER DIFFERENT PRE-TRANSITION STATES
+
+This is a strong:
+**two input classes → one gathered successor population**
+pattern.
+
+### 1 Thessalonians 5
+
+Paul then contrasts:
+- day / night;
+- light / darkness;
+- awake / asleep.
+
+### M76-46 — THESE ARE MORAL/ESCHATOLOGICAL STATE PAIRS, NOT ASTRONOMICAL CLOCK MECHANICS
+
+Important anti-forcing control.
+
+---
+
+# 2 THESSALONIANS 2
+## gathering, restrainer, timed revelation, breath-of-mouth destruction, deceptive signs
+
+The passage gives:
+- coming;
+- "our gathering together";
+- rebellion first;
+- lawless figure revealed;
+- restraining factor/agent;
+- removal;
+- timed revelation;
+- Lord destroys with breath of mouth / manifestation;
+- signs and lying wonders.
+
+### M76-47 — RESTRAINT / REMOVAL / REVELATION IS A TRUE CONTROL-STATE SEQUENCE
+
+Something:
+- presently restrains;
+- then is removed;
+- hidden/restrained agent becomes revealed.
+
+Formal analogy:
+**lock/interlock removed → system state exposed**.
+
+But identity of restrainer is historically debated.
+
+### M76-48 — DO NOT TURN THE "RESTRAINER" INTO A SPECIFIC VARDATH GATE PART
+
+Text does not identify enough mechanism.
+
+### Authorship control
+
+2 Thessalonians' Pauline authorship is genuinely disputed.
+
+Do not state:
+"Paul certainly changed his chronology"
+or
+"another author certainly wrote it."
+
+Record as Pauline corpus with authorship uncertainty.
+
+---
+
+# EPHESIANS 2
+# MAJOR TWO→ONE / WALL→BODY→TEMPLE PROJECTION SYSTEM
+## far/near → dividing wall broken → two peoples become one new humanity → one body → one household → one building/temple
+
+This is one of the richest projection passages in the Pauline corpus.
+
+Two populations:
+- Jew;
+- Gentile.
+
+Initial geometry:
+- far;
+- near;
+- dividing wall / hostility.
+
+Transformation:
+- wall/hostility broken;
+- "both" made one;
+- "one new humanity" from two;
+- both reconciled in "one body";
+- both gain access through one Spirit.
+
+Then the same collective identity becomes:
+- fellow citizens;
+- household;
+- building;
+- temple;
+- divine dwelling.
+
+### M76-49 — TWO POPULATIONS → ONE PERSON/BODY → ONE BUILDING/TEMPLE IS EXPLICIT CROSS-SCALE PROJECTION
+
+This is extraordinary.
+
+Same social referent is projected as:
+1. two populations;
+2. one humanity/person;
+3. one body;
+4. one household;
+5. one building;
+6. one temple.
+
+### M76-50 — WALL FUNCTION IS RELATIONAL SEPARATION; WALL REMOVAL CHANGES ADJACENCY
+
+Formally:
+**boundary**
+→ removed
+→ **previously separated groups become adjacent/unified**.
+
+This is highly relevant to Vardath's:
+gate = changed adjacency.
+
+### M76-51 — HOWEVER, THE PASSAGE'S TARGET IS ETHNIC/RELIGIOUS RECONCILIATION
+
+Scholarship on Ephesians 2 emphasizes:
+- Jew/Gentile relations;
+- peace/reconciliation;
+- temple/community metaphors.
+
+A recent cognitive-metaphor study describes the passage as a movement from:
+periphery/distance
+→ citizenship
+→ household
+→ temple-center.
+
+Therefore:
+do not turn the wall into a literal cosmic partition.
+
+### M76-52 — THIS PASSAGE PROVES THAT "BODY" AND "BUILDING" CAN BE ALTERNATE PROJECTIONS OF THE SAME COLLECTIVE SYSTEM
+
+Extremely important for:
+- tree/body/mountain/temple equivalence tests elsewhere.
+
+---
+
+# EPHESIANS 4–5
+## old self / new self clothing; body growth from head; darkness→light; church = body = bride = one flesh
+
+Ephesians 4:
+- old self put away;
+- mind renewed;
+- new self "put on"/clothed;
+- body grows through joined ligaments;
+- head coordinates body.
+
+Ephesians 5:
+- once darkness;
+- now light;
+- wake/rise from dead;
+- Christ/head;
+- church/body;
+- husband/wife;
+- two become one flesh;
+- writer explicitly says this "mystery" refers to Christ/church.
+
+### M76-53 — ONE COMMUNITY CAN BE PROJECTED SIMULTANEOUSLY AS:
+**body**
++ **bride/woman**
++ **one flesh**.
+
+This is a major cross-form identity control.
+
+### M76-54 — BODY GROWTH IS NETWORKED:
+**head → joints/ligaments → whole body growth**.
+
+This is a distributed support/communication model,
+not a gate.
+
+### M76-55 — OLD/NEW SELF IS AGAIN CLOTHING-STATE GRAMMAR
+
+Cross-link Colossians 3.
+
+---
+
+# COLOSSIANS 1–3
+## head/body; visible/invisible cosmos; transfer of kingdom; buried/raised; shadow/body; old/new self
+
+Colossians 1:
+- all visible/invisible creation;
+- Christ as head;
+- church = body;
+- firstborn from dead;
+- reconciliation of heaven/earth;
+- people "transferred" from darkness into kingdom.
+
+Colossians 2:
+- rooted/build up;
+- buried in baptism;
+- raised;
+- dead → alive;
+- regulations = shadow;
+- body/substance belongs to Christ;
+- head nourishes body through ligaments/tendons.
+
+Colossians 3:
+- died;
+- life hidden above;
+- old self stripped off;
+- new self put on;
+- renewed in image;
+- social distinctions reorganized within one body.
+
+### M76-56 — "TRANSFER" HERE IS POLITICAL/SPIRITUAL ALLEGIANCE LANGUAGE, NOT PROOF OF PHYSICAL WORLD TRANSPORT
+
+Very important.
+
+### M76-57 — SHADOW / BODY DISTINGUISHES PROJECTION FROM REFERENT
+
+This is highly relevant to Vardath research.
+
+A visible/ritual pattern can be:
+**shadow**,
+while another reality is:
+**body/substance**.
+
+Again:
+appearance ≠ underlying referent.
+
+### M76-58 — HEAD→LIGAMENTS/TENDONS→BODY GROWTH REPEATS EPHESIANS' NETWORK BODY
+
+This supports:
+central coordination + distributed members.
+
+### Authorship control
+
+Colossians and Ephesians are both disputed in modern scholarship.
+
+Their metaphors belong securely to the **Pauline corpus**,
+but not every statement should be introduced as certainly written by historical Paul.
+
+---
+
+# PASTORAL EPISTLES
+## low mechanical density, but several useful state/information controls
+
+---
+
+# 1 TIMOTHY
+## community = household / pillar / bulwark of truth
+
+1 Timothy 3:15:
+community/church is:
+- household of God;
+- pillar;
+- bulwark/foundation of truth.
+
+### M76-59 — ONE COMMUNITY IS PROJECTED AS BOTH FAMILY AND ARCHITECTURAL SUPPORT
+
+Again:
+social body
+→ building-support form.
+
+### M76-60 — "PILLAR" HERE IS INFORMATION/INSTITUTION SUPPORT, NOT COSMIC AXIS
+
+Important control.
+
+---
+
+# 2 TIMOTHY
+## body chained / word unchained; one house / many vessels; false "resurrection already happened"
+
+2 Timothy 2:
+- speaker physically chained;
+- "word of God is not chained";
+- large house contains gold/silver/wood/clay vessels with different uses;
+- some claim resurrection already occurred; author rejects this.
+
+### M76-61 — BODY CONSTRAINT AND INFORMATION CONSTRAINT ARE EXPLICITLY SEPARABLE
+
+Cross-link Acts 28.
+
+Physical carrier:
+restricted.
+
+Information:
+circulates.
+
+### M76-62 — ONE HOUSE / MANY VESSELS = FUNCTIONAL DIFFERENTIATION WITHIN ONE ENCLOSURE
+
+Cross-link 1 Cor 12 body members.
+
+### M76-63 — "RESURRECTION ALREADY HAPPENED" IS PRESENTED AS AN INCORRECT TIMING CLAIM
+
+Important for chronology:
+text distinguishes:
+- metaphorical/present participation language;
+- future resurrection event.
+
+Do not flatten all resurrection language into one time point.
+
+---
+
+# TITUS 3
+## washing/rebirth + Spirit poured out
+
+Titus:
+- washing/water of rebirth;
+- renewal by Spirit;
+- Spirit "poured out" richly.
+
+### M76-64 — WATER / POURING LANGUAGE ENCODES A STATE CHANGE IN PERSON/COMMUNITY
+
+Again:
+water may function as:
+- cleansing;
+- rebirth;
+- Spirit distribution.
+
+Not automatically physical canopy-water.
+
+---
+
+# PHILEMON
+## same human, radically changed relational identity; receive him "as me"
+
+Onesimus:
+- formerly slave;
+- returns as beloved brother;
+- Paul says:
+  - receive him as you would receive me;
+  - charge his debt to me.
+
+### M76-65 — SAME PERSON CAN CROSS SOCIAL-ROLE BOUNDARY WITHOUT CHANGING BODY
+
+Slave-role:
+→ brother-role.
+
+### M76-66 — PAUL CREATES A TEMPORARY REPRESENTATIONAL IDENTITY:
+**Onesimus received as Paul**.
+
+This is a precise example of:
+person A standing in relational role of person B
+without literal biological identity.
+
+Useful control for repeated-figure interpretation.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 1
+## Paul explicitly authorizes paired-role reading — but as theology/allegory, not hidden physics
+
+The project has repeatedly suspected:
+paired figures may encode:
+- states;
+- roles;
+- transitions.
+
+Paul supplies explicit examples:
+
+### Adam / Christ
+old-humanity/death
+↔
+new-humanity/life.
+
+### Hagar / Sarah
+slavery-covenant/present Jerusalem
+↔
+freedom/promise/Jerusalem above.
+
+### physical body / spiritual body
+perishable
+↔
+imperishable.
+
+### old self / new self
+corrupt former life
+↔
+renewed image.
+
+### flesh / Spirit
+two opposed operating orientations.
+
+### earthly tent / heavenly dwelling
+mortal condition
+↔
+future/heavenly condition.
+
+### darkness / light
+former state
+↔
+new state.
+
+### M76-67 — THE BIBLICAL TEXT ITSELF USES PAIRED PEOPLE/OBJECTS/PLACES AS STATE MACHINES
+
+This is now very strongly established.
+
+But:
+the existence of this symbolic grammar does not prove that every earlier paired character secretly denotes Vardath mechanics.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 2
+## one referent can move across body / tree / building / woman / city / clothing projections
+
+Examples:
+
+Galatians 4:
+woman
+→ covenant
+→ mountain
+→ city.
+
+Ephesians 2:
+populations
+→ one humanity
+→ body
+→ household
+→ building
+→ temple.
+
+Ephesians 5:
+church
+→ body
+→ bride
+→ one flesh.
+
+Romans 11:
+people
+→ branches/tree membership.
+
+2 Corinthians 5:
+person/body
+→ tent
+→ building
+→ clothing
+→ home.
+
+1 Corinthians 15:
+person/body
+→ seed
+→ plant-like successor body
+→ earthly/heavenly body.
+
+### M76-68 — CROSS-FORM PROJECTION IS NOT AN EXCEPTION IN PAUL; IT IS A PRIMARY REASONING METHOD
+
+This strongly validates the project's cautious projection grammar.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 3
+## change can be instantaneous OR gradual
+
+Instant:
+1 Cor 15:
+- last trumpet;
+- moment/twinkling;
+- all changed.
+
+Gradual:
+2 Cor 3:
+- transformed from one degree of glory to another.
+
+Organic:
+Romans 11 / body growth:
+- grafting;
+- branch support;
+- growth.
+
+### M76-69 — THERE IS NO SINGLE BIBLICAL TRANSFORMATION TIMESCALE
+
+This matters for Vardath:
+do not force all state changes into:
+- one sudden gate pulse;
+or
+- one slow evolutionary process.
+
+Texts may encode either.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 4
+## body continuity and body transformation
+
+Paul's strongest body texts jointly say:
+
+- same human identity matters;
+- present body is mortal;
+- resurrection body is transformed;
+- seed/body form changes radically;
+- not all body categories are the same;
+- mortal is clothed with immortality;
+- body can be conformed to glorious body;
+- Paul still calls future state a **body**.
+
+### M76-70 — PAULINE RESURRECTION IS BETTER DESCRIBED AS CONTINUITY-THROUGH-TRANSFORMATION THAN SIMPLE REWIND
+
+This is strongly compatible with Vardath's:
+**successor state is inherited/transformed, not a rewind**.
+
+Do not overclaim physical mechanism.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 5
+## upper/lower and multi-heaven data
+
+Pauline material gives:
+
+- "Jerusalem above";
+- heavenly citizenship;
+- heavenly dwelling/building;
+- Lord descends from heaven;
+- humans caught into clouds/air;
+- third heaven / paradise.
+
+### M76-71 — A VERTICALLY STRATIFIED SACRED COSMOLOGY IS REAL IN PAULINE LANGUAGE
+
+But there are different categories:
+- metaphorical/allegorical "Jerusalem above";
+- eschatological heaven/air descent;
+- visionary "third heaven";
+- heavenly citizenship.
+
+Do not merge them automatically into:
+one physical stacked-world map.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 6
+## third heaven is the strongest anti-overconfidence control
+
+Paul's own report:
+- destination named;
+- mode uncertain.
+
+### M76-72 — IF PAUL HIMSELF REFUSES TO SAY WHETHER HIS OWN ASCENT WAS IN-BODY OR OUT-OF-BODY, THIS RESEARCH MUST PRESERVE THE SAME UNCERTAINTY
+
+This should be carried into every:
+- Enoch ascent;
+- Elijah ascent;
+- Revelation ascent;
+- Vardath time-door comparison.
+
+Unknown carrier mode must remain unknown.
+
+---
+
+# MAJOR CROSS-PAULINE SYNTHESIS 7
+## adjacency / boundary imagery
+
+Ephesians 2:
+- far/near;
+- wall removed;
+- access;
+- two become one.
+
+Galatians 4:
+- below/present Jerusalem;
+- Jerusalem above.
+
+2 Corinthians 3:
+- veil blocks perception;
+- veil removed.
+
+Romans 11:
+- branch in/out of tree.
+
+### M76-73 — PAULINE "BOUNDARIES" OPERATE AT MULTIPLE LAYERS:
+1. spatial/social;
+2. covenantal;
+3. perceptual;
+4. network-membership.
+
+This is extremely useful for Vardath.
+
+Not every "boundary" is spatial geometry.
+
+---
+
+# Cherub / Quetzalcoatl / Feathered Serpent / Squatter-Man update
+
+The Pauline corpus contributes little direct:
+- serpent morphology;
+- cherub imagery;
+- feathered body imagery.
+
+Its contribution is more foundational:
+
+## 1. human template / population state
+Adam and Christ each stand for large human-state populations.
+
+## 2. environmental body projection
+creation groans in childbirth.
+
+## 3. human/place/state equivalence
+Hagar:
+woman → covenant → mountain → city.
+
+## 4. collective body/architecture equivalence
+two peoples:
+→ one humanity
+→ one body
+→ temple.
+
+## 5. four-category body flexibility
+earthly/heavenly;
+physical/spiritual;
+seed/final form;
+mortal/immortal.
+
+### M76-74 — PAUL STRONGLY SUPPORTS THE **REPRESENTATIONAL METHOD** NEEDED TO COMPARE SQUATTER-MAN / CHERUB / DRAGON / TREE / CITY FORMS, BUT PROVIDES LITTLE DIRECT MORPHOLOGICAL EVIDENCE FOR THAT SPECIFIC PHENOMENON FAMILY
+
+This distinction is important.
+
+---
+
+# Strict fingertrap test — Pauline epistles
+
+Criteria:
+1. broad/open distributed support structure;
+2. same structural continuity;
+3. angle/contraction;
+4. narrow throat/rod;
+5. transfer/contact;
+6. reopening.
+
+## Romans 11 olive tree
+Continuity:
+strong.
+
+Dynamic structural change:
+strong.
+
+Distributed node system:
+strong.
+
+Throat:
+absent.
+
+Contraction:
+absent.
+
+**Strict negative.**
+
+## 1 Corinthians 15 seed/body
+Continuity-through-transformation:
+very strong.
+
+Concentrated→distributed growth implied by seed analogy:
+strong.
+
+Throat:
+absent.
+
+**Strict negative.**
+
+## Ephesians 2
+Boundary removed:
+strong.
+
+Adjacency changes:
+very strong.
+
+Two→one:
+strong.
+
+Physical throat:
+absent.
+
+**Strict negative.**
+
+## 1 Thessalonians 4
+Vertical transfer/gathering:
+strong.
+
+Signals:
+strong.
+
+Gate/aperture:
+absent.
+
+**Strict negative.**
+
+## 2 Corinthians 12
+Multi-level destination:
+strong.
+
+Transfer/ascent:
+strong.
+
+Mechanism:
+explicitly unknown.
+
+**Strict negative and methodological caution.**
+
+### Overall verdict
+
+**No strict fingertrap appears in the Pauline epistles.**
+
+The Pauline corpus instead gives the strongest **explicit state/projection grammar** so far:
+- person ↔ population-state;
+- woman ↔ covenant ↔ mountain ↔ city;
+- two populations ↔ one person/body ↔ building;
+- old body ↔ transformed body;
+- branch membership ↔ network state;
+- veil ↔ perception boundary.
+
+---
+
+# Pair / role register — Pauline epistles
+
+## Adam / Christ
+death-bearing first human ↔ life-bearing last/second human.
+
+## old self / new self
+former operating state ↔ renewed state.
+
+## flesh / Spirit
+opposed life-orientation regimes.
+
+## death / resurrection
+state boundary / successor life.
+
+## physical body / spiritual body
+current body mode ↔ resurrection body mode.
+
+## earthly / heavenly body
+domain/status pair.
+
+## perishable / imperishable
+state-property pair.
+
+## mortal / immortal
+state-property pair.
+
+## Hagar / Sarah
+slave woman ↔ free woman.
+
+## Ishmael / Isaac
+flesh/slavery side ↔ promise/free side.
+
+## present Jerusalem / Jerusalem above
+enslaved present-city projection ↔ free upper-city/mother projection.
+
+## old covenant / new covenant
+veiled/letter ministry ↔ Spirit/unveiled ministry in 2 Cor 3.
+
+## natural branches / wild branch
+native membership ↔ grafted membership.
+
+## broken / regrafted branch
+excluded state ↔ restored network state.
+
+## many members / one body
+distributed functions ↔ unified system.
+
+## head / body
+central coordinating role ↔ distributed members.
+
+## two peoples / one new humanity
+separation ↔ reconciled collective body.
+
+## earthly tent / heavenly building
+mortal dwelling-state ↔ future dwelling-state.
+
+## in body / out of body
+explicitly unresolved ascent modes.
+
+## dead / living at Parousia
+two input populations ↔ one gathered population.
+
+## darkness / light
+former/current state pair.
+
+## Onesimus slave / Onesimus brother
+same human, transformed social role.
+
+---
+
+# Timing / number register
+
+## 1 Corinthians 15
+- "third day" resurrection tradition;
+- "last trumpet";
+- transformation "in a moment / twinkling."
+
+## 2 Corinthians 12
+- vision placed **14 years** before writing;
+- **third heaven**;
+- prayer repeated **three times** about thorn.
+
+## 1 Thessalonians 4
+- order:
+  dead rise first;
+  living caught up afterward/together.
+
+## Galatians
+- "fullness of time";
+- days/months/seasons/years mentioned as calendrical observance, not gate cycles.
+
+### M76-75 — PAULINE TIMING EMPHASIZES ORDER AND PHASE MORE THAN NUMERICAL COSMIC CYCLES
+
+Do not force:
+3,
+7,
+12,
+14
+into Vardath chronology merely because they occur.
+
+---
+
+# Textual / scholarly controls — Pauline epistles
+
+1. The seven-letter undisputed Pauline core is a widespread scholarly convention, but authorship debates remain live at the edges.
+2. Ephesians, Colossians and 2 Thessalonians are disputed; Pastorals are widely considered non-Pauline in critical scholarship.
+3. 2 Thessalonians in particular has significant scholarly defenses of Pauline authorship; label it disputed, not settled.
+4. Romans 5 explicitly calls Adam a pattern/type of the coming one and contrasts Adam/Christ as corporate representatives.
+5. Romans 6's death/burial/resurrection language is applied to living believers in baptismal/participatory theology, so it is not automatically literal biological event description.
+6. Romans 8 joins bodily redemption with creation's liberation and childbirth/groaning imagery.
+7. Romans 11's olive tree is an Israel/Gentile inclusion/restoration metaphor; the identity of the "root" is debated.
+8. Paul's grafting image should not be treated as a precise botanical instruction manual; its rhetorical function controls interpretation.
+9. 1 Corinthians 12 deliberately uses anatomical diversity to argue against identical function across all members.
+10. 1 Corinthians 13's mirror is about partial perception/knowledge, not portal traversal.
+11. 1 Corinthians 15 uses seed continuity plus radical formal change to articulate resurrection.
+12. "Spiritual body" does not mean "no body"; Paul's noun remains body.
+13. Scholarly interpretation of exact material continuity between present/resurrection bodies varies; do not claim more than Paul specifies.
+14. 2 Corinthians 3 turns Moses' veil into a perception/covenant metaphor.
+15. 2 Corinthians 5 mixes tent/building/clothing/home metaphors; they should not be mechanically flattened into one literal architecture.
+16. 2 Corinthians 12 explicitly states uncertainty over embodied versus disembodied ascent.
+17. Scholarship places 2 Corinthians 12 in heavenly-ascent/apocalyptic discussion but notes Paul's account omits route/mechanism detail.
+18. Galatians 4 explicitly says Hagar/Sarah are being allegorized and maps the women to two covenants/Jerusalems.
+19. The precise historical target of Paul's Galatians allegory is debated; avoid anti-Jewish flattening of the text.
+20. Ephesians 2's wall/body/temple metaphors target Jew/Gentile reconciliation and changed social/covenantal proximity.
+21. Ephesians/Colossians body/head language belongs to the Pauline tradition even if direct Pauline authorship is disputed.
+22. 1 Thessalonians 4 gives vertical eschatological movement but no aperture or carrier mechanics.
+23. 2 Thessalonians' restrainer is historically debated and must not be identified with a Vardath mechanism without independent evidence.
+24. Pastoral architectural/support metaphors are institutional/theological before any cosmological comparison.
+25. Philemon gives social identity transformation, not physical transformation.
+26. Across the corpus, metaphor is frequently mixed deliberately; shape similarity alone remains insufficient.
+
+---
+
+# Sources logged — Pauline epistles
+
+## Primary text
+- Romans 5–8 NRSVUE:
+  https://www.biblegateway.com/passage/?search=Romans+5-8&version=NRSVUE
+- Romans 8:18–25:
+  https://www.biblegateway.com/passage/?search=Romans+8%3A18-25&version=NRSVUE
+- Romans 11–12:
+  https://www.biblegateway.com/passage/?search=Romans+11-12&version=NRSVUE
+- 1 Corinthians 12:
+  https://www.biblegateway.com/passage/?search=1+Corinthians+12&version=NRSVUE
+- 1 Corinthians 13:
+  https://www.biblegateway.com/passage/?search=1+Corinthians+13&version=NRSVUE
+- 1 Corinthians 15:20–58:
+  https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A20-58&version=NRSVUE
+- 2 Corinthians 3:12–18:
+  https://www.biblegateway.com/passage/?search=2+Corinthians+3%3A12-18&version=NRSVUE
+- 2 Corinthians 5:1–10:
+  https://www.biblegateway.com/passage/?search=2+Corinthians+5%3A1-10&version=NRSVUE
+- 2 Corinthians 12:
+  https://www.biblegateway.com/passage/?search=2+Corinthians+12&version=NRSVUE
+- Galatians 4–6:
+  https://www.biblegateway.com/passage/?search=Galatians+4-6&version=NRSVUE
+- Philippians 3:20–21:
+  https://www.biblegateway.com/passage/?search=Philippians+3%3A20-21&version=NRSVUE
+- 1 Thessalonians 4–5:
+  https://www.biblegateway.com/passage/?search=1+Thessalonians+4-5&version=NRSVUE
+- 2 Thessalonians 2:1–12:
+  https://www.biblegateway.com/passage/?search=2+Thessalonians+2%3A1-12&version=NRSVUE
+- Ephesians 2:11–22:
+  https://www.biblegateway.com/passage/?search=Ephesians+2%3A11-22&version=NRSVUE
+- Ephesians 4:20–24:
+  https://www.biblegateway.com/passage/?search=Ephesians+4%3A20-24&version=NRSVUE
+- Colossians 1–3:
+  https://www.biblegateway.com/passage/?search=Colossians+1-3&version=NRSVUE
+- 2 Timothy 2–4:
+  https://www.biblegateway.com/passage/?search=2+Timothy+2-4&version=NRSVUE
+- Titus 3:
+  https://www.biblegateway.com/passage/?search=Titus+3&version=NRSVUE
+- Philemon:
+  https://www.biblegateway.com/passage/?search=Philemon+1&version=NRSVUE
+
+## Authorship / corpus
+- Paul Foster, "Who Wrote 2 Thessalonians? A Fresh Look at an Old Problem," *Journal for the Study of the New Testament*:
+  https://doi.org/10.1177/0142064X12462654
+
+## 1 Corinthians 15 / resurrection body
+- Peter Lampe, "Paul's Concept of a Spiritual Body":
+  https://tst-publikationen.uni-tuebingen.de/xmlui/bitstream/handle/10900/158553/Lampe_140.pdf
+- Jennifer R. Strawbridge, Oxford work on reception of 1 Corinthians 15:
+  https://ora.ox.ac.uk/objects/uuid:de4314f6-cdcb-4845-a3dc-bda40c80dc59/files/m75a4a1cc51804ea6c4e284c631063145
+- *The Resurrection Body: The Reception of 1 Corinthians 15*, Yale Scholarship Online:
+  https://academic.oup.com/yale-scholarship-online/book/45086/chapter/386480628
+
+## Galatians 4
+- Steven Di Mattei, "Paul's Allegory of the Two Covenants (Gal 4.21–31) in Light of First-Century Hellenistic Rhetoric and Jewish Hermeneutics," *New Testament Studies*:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/pauls-allegory-of-the-two-covenants-gal-42131-in-light-of-firstcentury-hellenistic-rhetoric-and-jewish-hermeneutics/0E52108ED1A9345145D25450C2E91E6C
+- "Jerusalems Above and Below," *New Testament Studies*:
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/jerusalems-above-and-below-a-critique-of-j-l-martyns-interpretation-of-the-hagarsarah-allegory-in-gal-42151/2AE47421F236B877D4A2DB45600DFE2A
+
+## Romans 11
+- Svetlana Khobnya, "The Root in Paul's Olive Tree Metaphor (Romans 11:16–24)":
+  https://doi.org/10.53751/001c.29358
+
+## 2 Corinthians 12
+- Christopher R. A. Morray-Jones, "Paradise Revisited (2 Cor 12:1–12): Paul's Heavenly Ascent and its Significance":
+  https://doi.org/10.1017/S0017816000031230
+- A. T. Lincoln, "Paul the Visionary: The Setting and Significance of the Rapture to Paradise":
+  https://www.cambridge.org/core/journals/new-testament-studies/article/abs/paul-the-visionary-the-setting-and-significance-of-the-rapture-to-paradise-in-ii-corinthians-xii-110/347134D5463207541CF56934174535F8
+- Paula R. Gooder, *Only the Third Heaven* preview:
+  https://api.pageplace.de/preview/DT0400.9780567037022_A23694586/preview-9780567037022_A23694586.pdf
+
+## Ephesians 2
+- Tet-Lim N. Yee, *Jews, Gentiles and Ethnic Reconciliation: Paul's Jewish Identity and Ephesians*:
+  https://www.cambridge.org/core/books/jews-gentiles-and-ethnic-reconciliation/B5B0A8C1BD4DD5350D2CBCC934E8EC5C
+- SBL review of Oscar Jiménez, *Metaphors in the Narrative of Ephesians 2:11–22*:
+  https://www.sblcentral.org/API/Reviews/1001644_73342.pdf
+
+---
+
+# SECTION 76 — PAULINE EPISTLES COMPLETE
+
+## Strongest new findings
+
+1. **Paul himself explicitly authorizes paired-role analysis: Romans 5 calls Adam a pattern/type of the one to come and sets Adam/Christ as death-bearing versus life-bearing corporate representatives.**
+2. **1 Corinthians 15 intensifies that pairing into first Adam / last Adam, dust/earth / heaven, physical / spiritual, and image-of-dust / image-of-heaven populations.**
+3. **A single person can therefore function as a template for an entire population-state in Paul's own reasoning.**
+4. **Romans 6 shows the same living believer can be described as dead, buried and raised into new life; death/resurrection language can be participatory state grammar rather than always literal biology.**
+5. **Romans 8 personifies the whole creation as a laboring body and joins creation's transformation to redemption of human bodies, a strong environment+population transformation model.**
+6. **Romans 11's olive tree is one of the strongest dynamic-network metaphors yet: branches are removed, foreign branches grafted in, the same root supports them, and original branches can be grafted back.**
+7. **That gives system continuity with changing node membership and restoration, but no throat or fingertrap contraction.**
+8. **Romans 12 and 1 Corinthians 12 explicitly map many differentiated functions into one anthropomorphic body; the text itself warns that not every member can perform the same function.**
+9. **This is a powerful control against collapsing every Vardath symbol—eye, wing, serpent, rod, tree, cherub—into one identical function merely because they belong to one hypothesized system.**
+10. **1 Corinthians 13's mirror is explicitly epistemic—partial reflection now / face-to-face later—not a portal.**
+11. **1 Corinthians 15's seed argument is one of the strongest continuity-through-radical-form-change models in the Bible: what is sown is not the body that will be; seed dies and receives a qualitatively different body.**
+12. **Paul therefore provides direct textual support for same identity/function across radically different visible forms, without requiring simple rewind/restoration of the previous shape.**
+13. **The resurrection sequence has both continuity and discontinuity: perishable→imperishable, weakness→power, physical→spiritual body, mortal→immortal.**
+14. **"Spiritual body" remains a body category; it should not be flattened into disembodied energy.**
+15. **The last trumpet gives a true signal→population-wide phase change: dead rise and living people are changed in a moment.**
+16. **2 Corinthians 3 turns a literal veil into a mental/covenantal perception boundary, then describes unveiled viewers being transformed degree-by-degree; one physical barrier becomes information-state grammar.**
+17. **2 Corinthians 5 projects one human identity through tent, building, clothing, body and home/away images; mixed projection is deliberate Pauline reasoning rather than an anomaly.**
+18. **2 Corinthians 12 explicitly presupposes at least a "third heaven," but Paul twice says he does not know whether the ascent occurred in the body or out of the body.**
+19. **That is one of the strongest methodological controls in the entire project: destination can be reported while carrier mode remains unknown, and the research must preserve that uncertainty.**
+20. **Galatians 4 is arguably the strongest explicit projection text in the Pauline corpus: Paul says Hagar and Sarah are an allegory/two covenants, then maps Hagar to Sinai and present Jerusalem while the free woman maps to Jerusalem above/mother.**
+21. **This gives human woman → covenant → mountain → city → population-state transformation explicitly in the source itself.**
+22. **It strongly validates the project's representational method but proves symbolic equivalence, not literal physical identity of woman, mountain and city.**
+23. **Present Jerusalem / Jerusalem above forms a real paired city-state system, but Paul supplies no stacked-world gate mechanics.**
+24. **Ephesians 2 gives another extraordinary explicit cross-scale transformation: two separated populations → one new humanity → one body → one household → one building/temple.**
+25. **The dividing wall/hostility is removed and formerly far/near populations gain common access, making it a strong changed-adjacency analogue; scholarly context shows the target is Jew/Gentile reconciliation, not a cosmic wall.**
+26. **Ephesians/Colossians body/head imagery repeatedly gives central coordination through joints/ligaments into distributed members and growth.**
+27. **1 Thessalonians 4 is the clearest Pauline vertical gathering sequence: heavenly descent + command/archangel/trumpet + dead rise + living and risen converge + caught into clouds + meeting in air.**
+28. **It describes direction, signals and population classes but no physical aperture, throat or carrier mechanism.**
+29. **2 Thessalonians gives restrainer→removal→revelation sequencing, but the restrainer's identity is debated and cannot responsibly be assigned to a Vardath gate component.**
+30. **Pastoral and Philemon material adds useful controls: a physically chained messenger can carry an unchained word; a community can be household/pillar; and Onesimus can remain the same person while changing from slave-role to brother-role and being received "as Paul."**
+31. **Across the Pauline corpus, the strongest contribution to Vardath Cosmology is not new serpent/cherub morphology. It is explicit proof that biblical authors can intentionally map one referent across person, population, city, mountain, covenant, tree, body, clothing and building states.**
+32. **No strict fingertrap appears. The broad-support→static-throat→opening chain from 1/3 Meqabyan → 4 Ezra 7 → Zechariah 14 therefore remains mechanically stronger than anything in Paul.**
+33. **Paul does, however, provide the strongest formal justification yet for treating paired figures and radical projection changes as a legitimate thing to test—provided source meaning is established first and symbolic mapping is not mistaken for literal mechanics.**
+
+## Next live block
+
+**Section 77 — Hebrews + Catholic epistles**
+
+Roadmap priorities:
+- earthly / heavenly sanctuary;
+- veil;
+- Melchizedek;
+- Sinai / Zion mountain polarity;
+- Noah;
+- Rahab;
+- Elijah;
+- Enoch;
+- 2 Peter world by water / world by fire;
+- Jude / Enoch / angels;
+- James mirror imagery.
+
+High-priority Vardath questions:
+1. Does Hebrews give a true lower-copy / upper-original architecture, and how does that differ from Galatians' present/above Jerusalem pair?
+2. Does Hebrews' veil operate as a traversed boundary in a stronger sense than Paul's semantic veil in 2 Corinthians?
+3. Does Sinai→Zion form another two-mountain / two-state transition?
+4. Does 2 Peter explicitly give old-world-by-water → present-world-reserved-for-fire → new heavens/new earth as a successor-world sequence?
+5. Does James' mirror remain epistemic/body-recognition imagery, reinforcing the negative control against mirror=portal?
+6. Do Jude/2 Peter's angels and Enoch traditions materially reconnect the winged/cherub/serpent family or mainly supply judgment/enclosure motifs?
+7. Apply the strict fingertrap test only after all Hebrews/Catholic-epistle structures are separated by function.
+
