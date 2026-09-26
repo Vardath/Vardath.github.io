@@ -3553,3 +3553,14 @@ Rabbi Ishmael said: When I ascended on high to gaze upon the vision of the Chari
 **3.** They all enter in counted order through the hand of Rahatiel into the firmament of heaven to serve the world, and they go out in counted order to praise the Holy One, blessed be He, with songs and praises, as it is written: “The heavens declare the glory of God, and the firmament proclaims the work of His hands.”
 
 **4.** In the time to come the Holy One, blessed be He, will renew them, as it is written: “They are new every morning; great is Your faithfulness.” Then they open their mouths and sing. What song do they sing? “When I behold Your heavens, the work of Your fingers...””
+
+
+## 3 Enoch 47
+
+**1.** Rabbi Ishmael said: Metatron, the angel who is Prince of the Presence, said to me, “Come, and I will show you the souls of the angels and the spirits of the ministering servants whose bodies were burned by the fire of the Omnipresent that goes forth from His little finger. Their bodies become coals of fire within the River of Fire, while their spirits and souls stand behind the Shekinah.
+
+**2.** “Whenever the ministering angels sing at the wrong time, or not properly and not fittingly, they are burned and set aflame by the fire of their Maker and the flame of their Creator in their places. A storm-wind blows upon them and casts them into the River of Fire, where they become heaps like mountains of burning coal. Their spirits and souls return to their Creator and stand behind their Master.”
+
+**3.** I went with him. He took me by the hand and showed me all the souls of the angels and the spirits of the ministering servants standing behind the Shekinah. Then a storm passed, and walls of fire surrounded them.
+
+**4.** At that hour Metatron opened for me the gates of the walls of fire within which they stood behind the Shekinah. I lifted my eyes and saw them. The form of each was like the form of angels; their wings were like the wings of birds, fashioned of flame and the work of burning fire. Then I opened my mouth in praise of the Omnipresent and said: “Great are the works of YHWH.””
