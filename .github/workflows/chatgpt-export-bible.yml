@@ -1,0 +1,20 @@
+name: ChatGPT export Vardath Bible files
+on:
+  push:
+    paths:
+      - '.github/workflows/chatgpt-export-bible.yml'
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vardath-bible-drive-transfer
+          path: |
+            book/VARDATH-BIBLE.md
+            book/88.md
+            book/source notes.md
+          if-no-files-found: error
