@@ -1,0 +1,63 @@
+name: Revise Vardath Bible order
+
+on:
+  push:
+    paths:
+      - 'bible-maintenance/remove-superseded-apocrypha.flag'
+
+permissions:
+  contents: write
+
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove superseded books and update contents
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path("book/VARDATH-BIBLE.md")
+          s = p.read_text(encoding="utf-8")
+
+          old_contents = "6. Testament of Abraham\n7. Testaments of the Twelve Patriarchs"
+          new_contents = "6. 3 Baruch / Greek Apocalypse of Baruch\n7. 2 Baruch / Syriac Apocalypse of Baruch"
+          if old_contents not in s:
+              raise SystemExit("Expected old contents entries not found")
+          s = s.replace(old_contents, new_contents, 1)
+
+          start_marker = "# Book 6 — Testament of Abraham"
+          end_marker = "# Book 8 — Jubilees"
+          start = s.find(start_marker)
+          end = s.find(end_marker)
+          if start < 0 or end < 0 or end <= start:
+              raise SystemExit(f"Removal bounds not found: start={start}, end={end}")
+
+          removed = s[start:end]
+          required = "# Book 7 — Testaments of the Twelve Patriarchs"
+          if required not in removed:
+              raise SystemExit("Book 7 heading not found inside removal span")
+
+          s = s[:start] + s[end:]
+
+          if start_marker in s or required in s:
+              raise SystemExit("Superseded book heading survived edit")
+          if "# Book 8 — Jubilees" not in s or "# Book 52 — II and III Maccabees / 2–3 Meqabyan" not in s:
+              raise SystemExit("Later manuscript continuity check failed")
+
+          p.write_text(s, encoding="utf-8")
+          print(f"Removed {len(removed)} characters; revised manuscript length {len(s)}")
+
+      - name: Commit revision
+        shell: bash
+        run: |
+          rm -f bible-maintenance/remove-superseded-apocrypha.flag
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add book/VARDATH-BIBLE.md bible-maintenance/remove-superseded-apocrypha.flag
+          git commit -m "Remove superseded apocrypha from Vardath Bible"
+          git push
