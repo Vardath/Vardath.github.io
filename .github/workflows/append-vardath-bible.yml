@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Append staged Bible block
+      - name: Apply staged Bible block
         shell: bash
         run: |
           set -euo pipefail
@@ -50,14 +50,106 @@ jobs:
             exit 1
           fi
 
-          tail -n +2 "$f" >> book/VARDATH-BIBLE.md
-          rm "$f"
+          if [ "$(basename "$f")" = "vardath-bible-replace-6-7.md" ]; then
+            tail -n +2 "$f" > /tmp/vardath-books-6-7.md
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add book/VARDATH-BIBLE.md bible-staging
+            python3 - <<'PY'
+from pathlib import Path
 
-          if ! git diff --cached --quiet; then
-            git commit -m "Append staged Vardath Bible block"
-            git push
+bible_path = Path("book/VARDATH-BIBLE.md")
+rules_path = Path("book/88.md")
+notes_path = Path("book/source notes.md")
+
+bible = bible_path.read_text(encoding="utf-8")
+rules = rules_path.read_text(encoding="utf-8")
+notes = notes_path.read_text(encoding="utf-8")
+replacement = Path("/tmp/vardath-books-6-7.md").read_text(encoding="utf-8").strip()
+
+old6 = "6. Testament of Abraham"
+old7 = "7. Testaments of the Twelve Patriarchs"
+new6 = "6. 3 Baruch / Greek Apocalypse of Baruch"
+new7 = "7. 2 Baruch / Syriac Apocalypse of Baruch"
+
+start_marker = "# Book 6 — Testament of Abraham"
+middle_marker = "# Book 7 — Testaments of the Twelve Patriarchs"
+end_marker = "# Book 8 — Jubilees"
+
+start = bible.find(start_marker)
+middle = bible.find(middle_marker)
+end = bible.find(end_marker)
+if start < 0 or middle <= start or end <= middle:
+    raise SystemExit("Expected old Book 6/7 manuscript blocks were not found in sequence.")
+
+if bible.count(old6) != 1 or bible.count(old7) != 1:
+    raise SystemExit("Unexpected VARDATH-BIBLE contents-list count for old Book 6/7.")
+if rules.count(old6) != 1 or rules.count(old7) != 1:
+    raise SystemExit("Unexpected 88.md list count for old Book 6/7.")
+
+bible = bible[:start] + replacement + "\n\n---\n\n" + bible[end:]
+bible = bible.replace(old6, new6).replace(old7, new7)
+rules = rules.replace(old6, new6).replace(old7, new7)
+
+if start_marker in bible or middle_marker in bible:
+    raise SystemExit("Old manuscript headings still remain after replacement.")
+if "# Book 6 — 3 Baruch / Greek Apocalypse of Baruch" not in bible:
+    raise SystemExit("New Book 6 heading missing.")
+if "# Book 7 — 2 Baruch / Syriac Apocalypse of Baruch" not in bible:
+    raise SystemExit("New Book 7 heading missing.")
+if end_marker not in bible:
+    raise SystemExit("Book 8 boundary lost during replacement.")
+
+source_add = """### 6. 3 Baruch / Greek Apocalypse of Baruch
+- Text used: *The Greek Apocalypse of Baruch* / **3 Baruch**.
+- English translation: **H. Maldwyn Hughes**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 527–541.
+- Rights basis: historical public-domain translation. Hughes lived **1875–1940**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
+- Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/3-baruch/3-baruch.md`, checked as the Hughes/Charles 1913 text.
+- Structure preserved: prologue material followed by chapters **1–17**; the working transcription contains **128 tagged passages**. Source reference tags are retained where the historical transcription uses irregular labels.
+- Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
+
+### 7. 2 Baruch / Syriac Apocalypse of Baruch
+- Text used: *The Syriac Apocalypse of Baruch* / **2 Baruch**.
+- English translation: **R. H. Charles**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 470–526.
+- Rights basis: historical public-domain translation. Charles lived **1855–1931**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
+- Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/2-baruch/2-baruch.md`, checked as the Charles 1913 text.
+- Structure preserved: **87 chapters**, including the closing epistle traditionally printed as chapters 78–87; the working transcription contains **696 tagged passages**.
+- Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
+
+"""
+
+if "### 6. 3 Baruch / Greek Apocalypse of Baruch" not in notes:
+    insert_at = notes.find("### 51. I Maccabees / 1 Meqabyan")
+    if insert_at < 0:
+        raise SystemExit("Could not find source-ledger insertion point before Book 51.")
+    notes = notes[:insert_at] + source_add + notes[insert_at:]
+
+if "Testament of Abraham" in notes or "Testaments of the Twelve Patriarchs" in notes:
+    raise SystemExit("Unexpected displaced-book source notes remain in the ledger.")
+
+bible_path.write_text(bible, encoding="utf-8")
+rules_path.write_text(rules, encoding="utf-8")
+notes_path.write_text(notes, encoding="utf-8")
+PY
+
+            rm "$f"
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add book/VARDATH-BIBLE.md book/88.md "book/source notes.md" bible-staging
+
+            if ! git diff --cached --quiet; then
+              git commit -m "Replace Books 6-7 with 3 Baruch and 2 Baruch"
+              git push
+            fi
+          else
+            tail -n +2 "$f" >> book/VARDATH-BIBLE.md
+            rm "$f"
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add book/VARDATH-BIBLE.md bible-staging
+
+            if ! git diff --cached --quiet; then
+              git commit -m "Append staged Vardath Bible block"
+              git push
+            fi
           fi
