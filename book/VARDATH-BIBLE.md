@@ -43907,3 +43907,9 @@ The Kittim sent to Turnus, saying, “Agnias, king of Africa, has sent to us ask
 When Agnias learned what had happened, he marched with his army against Turnus. They met in the land of Spain and fought many battles. At first Turnus had the victory, and he killed a number of Agnias’s men. Afterward Agnias prevailed over Turnus, killed him, and overran his army.
 
 Agnias ordered Turnus to be placed in a coffin of bronze and Palos, his sister’s son, in a coffin of gold. He buried them and built two great towers over their graves, facing one another beside the road. They remained standing between Albano and Rome. Then Agnias took Binah daughter of Uṣo and went with her to Carthage, the city of his kingdom.
+
+After Binah had remained in Carthage for some days, she became ill, and her sickness continued for a long time. Agnias sent physicians to treat her and asked them the cause of her illness. They said, “Her sickness is from nothing but the change of water and air. We have heard that in her own country she drank from the water of a spring that flows toward her city.”
+
+Agnias ordered water to be brought from that spring. When it was weighed, it proved lighter than all the waters of Africa. So Agnias commanded that a channel be made from that spring to Carthage. The channel was made, and the water flowed through it. He also brought stones and earth from the land of the Kittim and built houses and palaces for Binah.
+
+In those days the people of Africa began to raid the Kittim, plundering them and laying waste their land. Ṣefo son of Eliphaz was there while these raids were taking place. Ṣefo fled from Africa to the Kittim and lived among them; his condition prospered there and he became wealthy. When the raids of the Africans against the Kittim became frequent, the Kittim gathered upon a mountain and remained there, and Ṣefo son of Eliphaz was with them.
