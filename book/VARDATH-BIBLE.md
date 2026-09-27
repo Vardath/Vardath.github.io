@@ -43879,3 +43879,11 @@ In the name of the LORD, the Creator, we begin, relying on his power, to write t
 He gathered the books into eight divisions. The author of this book undertook to write the history according to the course of events, age after age, until the end of the matter.
 
 May the strength and mercy of the LORD be upon his servant, the possession of Mary, forever and ever. Amen.
+
+## Book I
+
+### The Descendants of Noah
+
+Adam fathered Seth; Seth fathered Enosh; Enosh fathered Kenan; Kenan fathered Mahalalel; Mahalalel fathered Jared; Jared fathered Enoch; Enoch fathered Methuselah; Methuselah fathered Lamech; Lamech fathered Noah.
+
+Noah fathered Shem, Ham, and Japheth. The sons of Japheth were Gomer, Magog, Madai, Javan, Tubal, Meshech, and Tiras. The sons of Gomer were Ashkenaz, Riphath, and Togarmah. The sons of Javan were Elishah, Tarshish, Kittim, and Dodanim.
