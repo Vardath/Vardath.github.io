@@ -43921,3 +43921,11 @@ When the people of the Kittim heard what he had done, they asked what honor shou
 Afterward the troops of Africa again came into the land of the Kittim to plunder it, as they had done before. Ṣefo gathered the Kittim against them. The raiders fled before him, and he drove them away and delivered the land from their incursions.
 
 Then the Kittim made Ṣefo king over them.
+
+Afterward the Kittim went out to subdue the sons of Tubal and the peoples around them. Ṣefo, whom they called Janus, went out before them and subdued them. They also called him Saturnus, after the star they worshiped in those days, the star Saturn. He first reigned in the plain of Campania in the land of the Kittim. He built there a great temple and ruled over all the Kittim and over all the land of Italy.
+
+Ṣefo, Janus Saturnus, reigned fifty-five years. Then he died and was buried in the city of Genoa.
+
+### The Kings after Ṣefo
+
+After Janus Saturnus died, Picus Faunus reigned after him for fifty years. He also built a great temple in the plain of Campania.
