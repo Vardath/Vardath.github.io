@@ -70,33 +70,51 @@ old7 = "7. Testaments of the Twelve Patriarchs"
 new6 = "6. 3 Baruch / Greek Apocalypse of Baruch"
 new7 = "7. 2 Baruch / Syriac Apocalypse of Baruch"
 
-start_marker = "# Book 6 — Testament of Abraham"
-middle_marker = "# Book 7 — Testaments of the Twelve Patriarchs"
-end_marker = "# Book 8 — Jubilees"
+old_h6 = "# Book 6 — Testament of Abraham"
+old_h7 = "# Book 7 — Testaments of the Twelve Patriarchs"
+new_h6 = "# Book 6 — 3 Baruch / Greek Apocalypse of Baruch"
+new_h7 = "# Book 7 — 2 Baruch / Syriac Apocalypse of Baruch"
+h8 = "# Book 8 — Jubilees"
 
-start = bible.find(start_marker)
-middle = bible.find(middle_marker)
-end = bible.find(end_marker)
-if start < 0 or middle <= start or end <= middle:
-    raise SystemExit("Expected old Book 6/7 manuscript blocks were not found in sequence.")
+i8 = bible.find(h8)
+if i8 < 0:
+    raise SystemExit("Book 8 boundary not found.")
 
-if bible.count(old6) != 1 or bible.count(old7) != 1:
-    raise SystemExit("Unexpected VARDATH-BIBLE contents-list count for old Book 6/7.")
-if rules.count(old6) != 1 or rules.count(old7) != 1:
-    raise SystemExit("Unexpected 88.md list count for old Book 6/7.")
+# Handle either state safely:
+# A) old Book 6/7 blocks are still present -> replace them;
+# B) another verified edit already removed them -> insert the replacement directly before Book 8.
+i6 = bible.find(old_h6)
+i7 = bible.find(old_h7)
+if i6 >= 0 or i7 >= 0:
+    if not (i6 >= 0 and i7 > i6 and i8 > i7):
+        raise SystemExit("Old Book 6/7 markers are only partially present; refusing to edit.")
+    bible = bible[:i6] + replacement + "\n\n---\n\n" + bible[i8:]
+else:
+    if new_h6 in bible or new_h7 in bible:
+        raise SystemExit("New Baruch book headings already present; refusing duplicate insertion.")
+    bible = bible[:i8] + replacement + "\n\n---\n\n" + bible[i8:]
 
-bible = bible[:start] + replacement + "\n\n---\n\n" + bible[end:]
-bible = bible.replace(old6, new6).replace(old7, new7)
-rules = rules.replace(old6, new6).replace(old7, new7)
+# Bring both contents lists to the new canon, while tolerating an already-updated list.
+for name, text in (("VARDATH-BIBLE.md", bible), ("88.md", rules)):
+    pass
 
-if start_marker in bible or middle_marker in bible:
-    raise SystemExit("Old manuscript headings still remain after replacement.")
-if "# Book 6 — 3 Baruch / Greek Apocalypse of Baruch" not in bible:
-    raise SystemExit("New Book 6 heading missing.")
-if "# Book 7 — 2 Baruch / Syriac Apocalypse of Baruch" not in bible:
-    raise SystemExit("New Book 7 heading missing.")
-if end_marker not in bible:
-    raise SystemExit("Book 8 boundary lost during replacement.")
+if old6 in bible:
+    bible = bible.replace(old6, new6)
+if old7 in bible:
+    bible = bible.replace(old7, new7)
+if old6 in rules:
+    rules = rules.replace(old6, new6)
+if old7 in rules:
+    rules = rules.replace(old7, new7)
+
+if new6 not in bible or new7 not in bible:
+    raise SystemExit("VARDATH-BIBLE contents list is not on the new Book 6/7 canon.")
+if new6 not in rules or new7 not in rules:
+    raise SystemExit("88.md is not on the new Book 6/7 canon.")
+if old_h6 in bible or old_h7 in bible:
+    raise SystemExit("Displaced book headings remain after replacement.")
+if new_h6 not in bible or new_h7 not in bible:
+    raise SystemExit("New Baruch headings missing after replacement.")
 
 source_add = """### 6. 3 Baruch / Greek Apocalypse of Baruch
 - Text used: *The Greek Apocalypse of Baruch* / **3 Baruch**.
@@ -137,7 +155,7 @@ PY
             git add book/VARDATH-BIBLE.md book/88.md "book/source notes.md" bible-staging
 
             if ! git diff --cached --quiet; then
-              git commit -m "Replace Books 6-7 with 3 Baruch and 2 Baruch"
+              git commit -m "Insert 3 Baruch and 2 Baruch as Books 6-7"
               git push
             fi
           else
