@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'bible-staging/vardath-bible-*.md'
+      - '.github/workflows/append-vardath-bible.yml'
 
 permissions:
   contents: write
@@ -26,134 +27,127 @@ jobs:
         run: |
           set -euo pipefail
           shopt -s nullglob
-
+          
           files=(bible-staging/vardath-bible-*.md)
           if [ ${#files[@]} -eq 0 ]; then
             exit 0
           fi
-
+          
           if [ ${#files[@]} -ne 1 ]; then
             echo "Expected exactly one staged Bible block, found ${#files[@]}."
             exit 1
           fi
-
+          
           f="${files[0]}"
           expected="$(sed -n '1s/^<!-- EXPECT-BLOB-SHA:\(.*\) -->$/\1/p' "$f")"
           if [ -z "$expected" ]; then
             echo "Missing EXPECT-BLOB-SHA header."
             exit 1
           fi
-
+          
           current="$(git rev-parse HEAD:book/VARDATH-BIBLE.md)"
           if [ "$current" != "$expected" ]; then
             echo "Manuscript blob mismatch: expected $expected, current $current."
             exit 1
           fi
-
+          
           if [ "$(basename "$f")" = "vardath-bible-replace-6-7.md" ]; then
             tail -n +2 "$f" > /tmp/vardath-books-6-7.md
-
+          
             python3 - <<'PY'
-from pathlib import Path
-
-bible_path = Path("book/VARDATH-BIBLE.md")
-rules_path = Path("book/88.md")
-notes_path = Path("book/source notes.md")
-
-bible = bible_path.read_text(encoding="utf-8")
-rules = rules_path.read_text(encoding="utf-8")
-notes = notes_path.read_text(encoding="utf-8")
-replacement = Path("/tmp/vardath-books-6-7.md").read_text(encoding="utf-8").strip()
-
-old6 = "6. Testament of Abraham"
-old7 = "7. Testaments of the Twelve Patriarchs"
-new6 = "6. 3 Baruch / Greek Apocalypse of Baruch"
-new7 = "7. 2 Baruch / Syriac Apocalypse of Baruch"
-
-old_h6 = "# Book 6 — Testament of Abraham"
-old_h7 = "# Book 7 — Testaments of the Twelve Patriarchs"
-new_h6 = "# Book 6 — 3 Baruch / Greek Apocalypse of Baruch"
-new_h7 = "# Book 7 — 2 Baruch / Syriac Apocalypse of Baruch"
-h8 = "# Book 8 — Jubilees"
-
-i8 = bible.find(h8)
-if i8 < 0:
-    raise SystemExit("Book 8 boundary not found.")
-
-# Handle either state safely:
-# A) old Book 6/7 blocks are still present -> replace them;
-# B) another verified edit already removed them -> insert the replacement directly before Book 8.
-i6 = bible.find(old_h6)
-i7 = bible.find(old_h7)
-if i6 >= 0 or i7 >= 0:
-    if not (i6 >= 0 and i7 > i6 and i8 > i7):
-        raise SystemExit("Old Book 6/7 markers are only partially present; refusing to edit.")
-    bible = bible[:i6] + replacement + "\n\n---\n\n" + bible[i8:]
-else:
-    if new_h6 in bible or new_h7 in bible:
-        raise SystemExit("New Baruch book headings already present; refusing duplicate insertion.")
-    bible = bible[:i8] + replacement + "\n\n---\n\n" + bible[i8:]
-
-# Bring both contents lists to the new canon, while tolerating an already-updated list.
-for name, text in (("VARDATH-BIBLE.md", bible), ("88.md", rules)):
-    pass
-
-if old6 in bible:
-    bible = bible.replace(old6, new6)
-if old7 in bible:
-    bible = bible.replace(old7, new7)
-if old6 in rules:
-    rules = rules.replace(old6, new6)
-if old7 in rules:
-    rules = rules.replace(old7, new7)
-
-if new6 not in bible or new7 not in bible:
-    raise SystemExit("VARDATH-BIBLE contents list is not on the new Book 6/7 canon.")
-if new6 not in rules or new7 not in rules:
-    raise SystemExit("88.md is not on the new Book 6/7 canon.")
-if old_h6 in bible or old_h7 in bible:
-    raise SystemExit("Displaced book headings remain after replacement.")
-if new_h6 not in bible or new_h7 not in bible:
-    raise SystemExit("New Baruch headings missing after replacement.")
-
-source_add = """### 6. 3 Baruch / Greek Apocalypse of Baruch
-- Text used: *The Greek Apocalypse of Baruch* / **3 Baruch**.
-- English translation: **H. Maldwyn Hughes**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 527–541.
-- Rights basis: historical public-domain translation. Hughes lived **1875–1940**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
-- Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/3-baruch/3-baruch.md`, checked as the Hughes/Charles 1913 text.
-- Structure preserved: prologue material followed by chapters **1–17**; the working transcription contains **128 tagged passages**. Source reference tags are retained where the historical transcription uses irregular labels.
-- Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
-
-### 7. 2 Baruch / Syriac Apocalypse of Baruch
-- Text used: *The Syriac Apocalypse of Baruch* / **2 Baruch**.
-- English translation: **R. H. Charles**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 470–526.
-- Rights basis: historical public-domain translation. Charles lived **1855–1931**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
-- Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/2-baruch/2-baruch.md`, checked as the Charles 1913 text.
-- Structure preserved: **87 chapters**, including the closing epistle traditionally printed as chapters 78–87; the working transcription contains **696 tagged passages**.
-- Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
-
-"""
-
-if "### 6. 3 Baruch / Greek Apocalypse of Baruch" not in notes:
-    insert_at = notes.find("### 51. I Maccabees / 1 Meqabyan")
-    if insert_at < 0:
-        raise SystemExit("Could not find source-ledger insertion point before Book 51.")
-    notes = notes[:insert_at] + source_add + notes[insert_at:]
-
-if "Testament of Abraham" in notes or "Testaments of the Twelve Patriarchs" in notes:
-    raise SystemExit("Unexpected displaced-book source notes remain in the ledger.")
-
-bible_path.write_text(bible, encoding="utf-8")
-rules_path.write_text(rules, encoding="utf-8")
-notes_path.write_text(notes, encoding="utf-8")
-PY
-
+          from pathlib import Path
+          
+          bible_path = Path("book/VARDATH-BIBLE.md")
+          rules_path = Path("book/88.md")
+          notes_path = Path("book/source notes.md")
+          
+          bible = bible_path.read_text(encoding="utf-8")
+          rules = rules_path.read_text(encoding="utf-8")
+          notes = notes_path.read_text(encoding="utf-8")
+          replacement = Path("/tmp/vardath-books-6-7.md").read_text(encoding="utf-8").strip()
+          
+          old6 = "6. Testament of Abraham"
+          old7 = "7. Testaments of the Twelve Patriarchs"
+          new6 = "6. 3 Baruch / Greek Apocalypse of Baruch"
+          new7 = "7. 2 Baruch / Syriac Apocalypse of Baruch"
+          
+          old_h6 = "# Book 6 — Testament of Abraham"
+          old_h7 = "# Book 7 — Testaments of the Twelve Patriarchs"
+          new_h6 = "# Book 6 — 3 Baruch / Greek Apocalypse of Baruch"
+          new_h7 = "# Book 7 — 2 Baruch / Syriac Apocalypse of Baruch"
+          h8 = "# Book 8 — Jubilees"
+          
+          i8 = bible.find(h8)
+          if i8 < 0:
+              raise SystemExit("Book 8 boundary not found.")
+          
+          i6 = bible.find(old_h6)
+          i7 = bible.find(old_h7)
+          if i6 >= 0 or i7 >= 0:
+              if not (i6 >= 0 and i7 > i6 and i8 > i7):
+                  raise SystemExit("Old Book 6/7 markers are only partially present; refusing to edit.")
+              bible = bible[:i6] + replacement + "\n\n---\n\n" + bible[i8:]
+          else:
+              if new_h6 in bible or new_h7 in bible:
+                  raise SystemExit("New Baruch book headings already present; refusing duplicate insertion.")
+              bible = bible[:i8] + replacement + "\n\n---\n\n" + bible[i8:]
+          
+          if old6 in bible:
+              bible = bible.replace(old6, new6)
+          if old7 in bible:
+              bible = bible.replace(old7, new7)
+          if old6 in rules:
+              rules = rules.replace(old6, new6)
+          if old7 in rules:
+              rules = rules.replace(old7, new7)
+          
+          if new6 not in bible or new7 not in bible:
+              raise SystemExit("VARDATH-BIBLE contents list is not on the new Book 6/7 canon.")
+          if new6 not in rules or new7 not in rules:
+              raise SystemExit("88.md is not on the new Book 6/7 canon.")
+          if old_h6 in bible or old_h7 in bible:
+              raise SystemExit("Displaced book headings remain after replacement.")
+          if new_h6 not in bible or new_h7 not in bible:
+              raise SystemExit("New Baruch headings missing after replacement.")
+          
+          source_add = """### 6. 3 Baruch / Greek Apocalypse of Baruch
+          - Text used: *The Greek Apocalypse of Baruch* / **3 Baruch**.
+          - English translation: **H. Maldwyn Hughes**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 527–541.
+          - Rights basis: historical public-domain translation. Hughes lived **1875–1940**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
+          - Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/3-baruch/3-baruch.md`, checked as the Hughes/Charles 1913 text.
+          - Structure preserved: prologue material followed by chapters **1–17**; the working transcription contains **128 tagged passages**. Source reference tags are retained where the historical transcription uses irregular labels.
+          - Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
+          
+          ### 7. 2 Baruch / Syriac Apocalypse of Baruch
+          - Text used: *The Syriac Apocalypse of Baruch* / **2 Baruch**.
+          - English translation: **R. H. Charles**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 470–526.
+          - Rights basis: historical public-domain translation. Charles lived **1855–1931**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
+          - Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/2-baruch/2-baruch.md`, checked as the Charles 1913 text.
+          - Structure preserved: **87 chapters**, including the closing epistle traditionally printed as chapters 78–87; the working transcription contains **696 tagged passages**.
+          - Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
+          
+          """
+          
+          if "### 6. 3 Baruch / Greek Apocalypse of Baruch" not in notes:
+              insert_at = notes.find("### 51. I Maccabees / 1 Meqabyan")
+              if insert_at < 0:
+                  raise SystemExit("Could not find source-ledger insertion point before Book 51.")
+              notes = notes[:insert_at] + source_add + notes[insert_at:]
+          
+          if "Testament of Abraham" in notes or "Testaments of the Twelve Patriarchs" in notes:
+              raise SystemExit("Unexpected displaced-book source notes remain in the ledger.")
+          
+          bible_path.write_text(bible, encoding="utf-8")
+          rules_path.write_text(rules, encoding="utf-8")
+          notes_path.write_text(notes, encoding="utf-8")
+          PY
+          
             rm "$f"
-
+          
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add book/VARDATH-BIBLE.md book/88.md "book/source notes.md" bible-staging
-
+          
             if ! git diff --cached --quiet; then
               git commit -m "Insert 3 Baruch and 2 Baruch as Books 6-7"
               git push
@@ -161,11 +155,11 @@ PY
           else
             tail -n +2 "$f" >> book/VARDATH-BIBLE.md
             rm "$f"
-
+          
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add book/VARDATH-BIBLE.md bible-staging
-
+          
             if ! git diff --cached --quiet; then
               git commit -m "Append staged Vardath Bible block"
               git push
