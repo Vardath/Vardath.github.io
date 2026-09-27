@@ -91,6 +91,22 @@ This file is the source-notes ledger for the Vardath Bible project.
 - Structure verified from the original edition: **32 chapters total**; Part I = chapters 1-8, Part II = chapters 9-32.
 - Editorial treatment: Box/Landsman wording is preserved apart from obvious OCR cleanup. Bold paragraph numbers are editorial navigation aids; they are not represented as original verse numbering.
 
+### 6. 3 Baruch / Greek Apocalypse of Baruch
+- Text used: *The Greek Apocalypse of Baruch* / **3 Baruch**.
+- English translation: **H. Maldwyn Hughes**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 527–541.
+- Rights basis: historical public-domain translation. Hughes lived **1875–1940**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
+- Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/3-baruch/3-baruch.md`, checked as the Hughes/Charles 1913 text.
+- Structure preserved: prologue material followed by chapters **1–17**; the working transcription contains **128 tagged passages**. Source reference tags are retained where the historical transcription uses irregular labels.
+- Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
+
+### 7. 2 Baruch / Syriac Apocalypse of Baruch
+- Text used: *The Syriac Apocalypse of Baruch* / **2 Baruch**.
+- English translation: **R. H. Charles**, in R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament in English*, Vol. II (Oxford: Clarendon Press, 1913), pp. 470–526.
+- Rights basis: historical public-domain translation. Charles lived **1855–1931**, placing the 1913 translation beyond ordinary life-plus-70 copyright terms in Australia and comparable jurisdictions.
+- Working transcription: `scrollmapper/bible_databases_deuterocanonical/sources/en/2-baruch/2-baruch.md`, checked as the Charles 1913 text.
+- Structure preserved: **87 chapters**, including the closing epistle traditionally printed as chapters 78–87; the working transcription contains **696 tagged passages**.
+- Editorial treatment: translation wording preserved; only the repository heading and surrounding Markdown presentation are normalized for the Vardath Bible.
+
 ### 51. I Maccabees / 1 Meqabyan
 - Canonical text selected: **1 Meqabyan / The First Ethiopian Book of Maccabees**, the distinct Ethiopic work; do **not** substitute Western/Greek 1 Maccabees.
 - Primary Geʽez source: Beta maṣāḥǝft textual unit **LIT1819Maccab / CAe 1819**, *The First Ethiopian Book of Maccabees*.
