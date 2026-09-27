@@ -45021,3 +45021,165 @@ Thus Menelaus died a miserable death.
 The account says that God caused punishment to overtake him in this life according to the evil of his deeds.
 
 By this judgment the king also sought to satisfy the people of Judah, for Menelaus had been one of their greatest enemies and had caused the death of many among them.
+
+### Demetrius Comes from Rome and Nicanor Enters Jerusalem
+
+After Eupator returned toward Macedonia, Demetrius son of Seleucus came out from Rome with a great army to make war against him.
+
+Eupator was defeated.
+
+Demetrius captured him and killed him, and Lysias also was killed.
+
+Demetrius then went to Antioch and established himself there.
+
+Alcimus, one of the three wicked accusers already mentioned, went to Demetrius and said:
+
+“Judah and his companions have killed many of us, driven us from our homes, and treated us as enemies because we opposed their religion.
+
+“We have therefore come to you, O king, so that you may take vengeance for us and help us against them.”
+
+Alcimus added many other accusations against the Jews.
+
+By his words he stirred the anger of Demetrius and caused the king to believe that the Jews hated him and were his enemies.
+
+Demetrius therefore sent one of his commanders, named Nicanor, toward Jerusalem and ordered him to seize Judah.
+
+Nicanor came and camped near the city.
+
+He sent to Judah with friendly and flattering words, asking him to come to him, while concealing the purpose for which he had been sent.
+
+Judah went out with a company of his companions, prepared for whatever might happen.
+
+Nicanor received him courteously and treated him with honor.
+
+Judah then departed, and Nicanor did not carry out the command to seize him.
+
+After this they met again.
+
+Friendship grew between them, and Nicanor entered Jerusalem with Judah.
+
+For a time goodwill and affection were established between them.
+
+When Alcimus learned of this, he saw that the scheme he had made against Judah had failed.
+
+He returned to Antioch, went again before Demetrius, and renewed his accusations.
+
+He told the king that Nicanor had disobeyed the order to seize Judah.
+
+Demetrius became angry.
+
+He wrote to Nicanor, reproved him severely for acting contrary to the royal command, and ordered him to capture Judah, bind him, and bring him before the king.
+
+Demetrius threatened Nicanor with death if he failed to do this.
+
+Judah learned what had happened before the king’s letter reached Nicanor.
+
+He left Jerusalem and gave out that he was going to fight against men who had rebelled against him.
+
+Then he went to Sebaste and remained there.
+
+Nicanor did not know where Judah had gone.
+
+When the letter from Demetrius arrived, he searched for Judah but could not find him.
+
+Thinking that Judah had hidden himself in Jerusalem, Nicanor entered the city and went to the priests.
+
+He demanded that they bring Judah to him.
+
+The priests answered that Judah had not come to Jerusalem and that they did not know where he was.
+
+Nicanor became enraged.
+
+He stood near the sanctuary with great insolence, stretched out his hand toward the house of God, and threatened that he would destroy it.
+
+Then he went out from the sanctuary in fury and ordered his men to enter the houses of the Jews in Jerusalem and search carefully for Judah.
+
+In carrying out the search they inflicted harsh treatment and suffering upon the people.
+
+When Judah heard what Nicanor had done, he sent word to him:
+
+“Do not search for me in the city, for I am not there.
+
+“If you desire to meet me, come out and you will find me.”
+
+Nicanor marched with his army toward Judah.
+
+As he came, he continued speaking proudly against God, against the faith of the Jews, and against the sanctuary.
+
+When Judah heard these words, and when he remembered what Nicanor had done in Jerusalem, zeal for God and for the holy place burned within him.
+
+Judah prayed:
+
+“O Lord, you are the one who destroyed the countless army of the foreign king when his men stretched out their hands against your house and sought to enter your holy places.
+
+“I ask you now concerning this unbelieving enemy who has profaned your sanctuary and reviled your faith.
+
+“Show your judgment upon him and let your wrath overtake him swiftly.”
+
+Judah then went out to meet Nicanor in battle.
+
+Nicanor was defeated before him.
+
+Judah prevailed over him and killed him.
+
+Many of Nicanor’s soldiers were also killed, and the rest fled.
+
+The Jews who lived in the surrounding villages and countryside came out against those who escaped and struck them down.
+
+Judah and his companions returned rejoicing.
+
+They gave thanks to God, praised him for his kindness, and celebrated the deliverance he had given them.
+
+They established that day as a yearly day of joy, thanksgiving, and remembrance.
+
+It was the thirteenth day of the month of Adar.
+
+Judah ordered that the head of Nicanor and the arms which he had stretched out toward the sanctuary be taken to Jerusalem.
+
+They were displayed opposite the gate of the holy place as a sign of what had happened.
+
+Because of this, the gate came to be known as the Gate of Nicanor.
+
+### The Death of Judah Maccabee
+
+In the following year a commander named Bacchides came with an army of thirty thousand men to make war against Judah.
+
+He reached Judah while Judah was near a village called Elasa.
+
+Judah had with him only three thousand horsemen.
+
+When his men saw the strength of the approaching army, most of them fled until only eight hundred remained with him.
+
+His brothers Simon and Jonathan stayed beside him.
+
+Judah went out with those who remained to fight Bacchides.
+
+Bacchides divided his army into two parts.
+
+He kept one part with himself and placed the other under his officers on another side.
+
+Judah attacked the division before him and drove it back.
+
+Bacchides fled in the direction of Azotus, and Judah pursued him.
+
+But Judah did not know that the other division of the army had been placed in ambush.
+
+When Judah came near Azotus, the hidden force advanced against him from the other side.
+
+Bacchides also came out with the soldiers who remained with him.
+
+Judah and his men were caught between the two forces.
+
+A fierce battle followed, and many were killed on both sides.
+
+Judah fell in the fighting.
+
+His companions and his brothers Simon and Jonathan took his body and carried it away.
+
+They buried him beside the grave of his father Mattathias.
+
+All Israel mourned him for many days.
+
+Judah had led the people for seven years.
+
+After him his brother Jonathan took the leadership.
