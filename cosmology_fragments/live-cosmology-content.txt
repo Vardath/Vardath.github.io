@@ -2,6 +2,29 @@
 
 <!-- Consolidated live current-model source. Original fragments retained as archives. -->
 
+<!-- BEGIN SOURCE: cosmology_fragments/f27a-video-overview.txt -->
+<section class="late-research-block" id="cosmology-video-overview-section">
+<hr/>
+<h1 id="cosmology-video-overview">Vardath Cosmology — video overview</h1>
+<p>This video presents Vardath Cosmology in audiovisual form before the written overview and experimental interactive model below.</p>
+<div style="margin:24px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050811;box-shadow:0 18px 60px rgba(0,0,0,.28)">
+  <div style="position:relative;width:100%;aspect-ratio:16/9;background:#02040a">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/rvfT1a3tQXk"
+      title="Vardath Cosmology video"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="position:absolute;inset:0;width:100%;height:100%;border:0">
+    </iframe>
+  </div>
+</div>
+<p><a href="https://youtu.be/rvfT1a3tQXk" target="_blank" rel="noopener noreferrer">Open the video on YouTube</a></p>
+</section>
+<!-- END SOURCE: cosmology_fragments/f27a-video-overview.txt -->
+
+
 <!-- BEGIN SOURCE: cosmology_fragments/f00-overview.txt -->
 <section class="current-overview" id="current-overview-section">
 <h1 id="current-cosmological-overview">Current cosmological overview — read this first</h1>
@@ -185,29 +208,6 @@
 </section>
 
 <!-- END SOURCE: cosmology_fragments/f27-central-spire-fast-time-fountain.txt -->
-
-
-<!-- BEGIN SOURCE: cosmology_fragments/f27a-video-overview.txt -->
-<section class="late-research-block" id="cosmology-video-overview-section">
-<hr/>
-<h1 id="cosmology-video-overview">Vardath Cosmology — video overview</h1>
-<p>This video presents the cosmology in audiovisual form before the experimental interactive model below.</p>
-<div style="margin:24px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050811;box-shadow:0 18px 60px rgba(0,0,0,.28)">
-  <div style="position:relative;width:100%;aspect-ratio:16/9;background:#02040a">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/rvfT1a3tQXk"
-      title="Vardath Cosmology video"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      style="position:absolute;inset:0;width:100%;height:100%;border:0">
-    </iframe>
-  </div>
-</div>
-<p><a href="https://youtu.be/rvfT1a3tQXk" target="_blank" rel="noopener noreferrer">Open the video on YouTube</a></p>
-</section>
-<!-- END SOURCE: cosmology_fragments/f27a-video-overview.txt -->
 
 
 <!-- BEGIN SOURCE: cosmology_fragments/f28-dragon-lattice-simulator.txt -->
