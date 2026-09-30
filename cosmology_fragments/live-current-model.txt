@@ -1,0 +1,792 @@
+<!-- Consolidated live current-model source. Original fragments retained as archives. -->
+
+<!-- BEGIN SOURCE: cosmology_fragments/f00-overview.txt -->
+<section class="current-overview" id="current-overview-section">
+<h1 id="current-cosmological-overview">Current cosmological overview — read this first</h1>
+<p>This is the present working shape of Vardath Cosmology. The rest of the page preserves how the idea was reached, including earlier versions, tests, failed branches and later refinements.</p>
+<div class="callout"><strong>Standing rule for this page.</strong> Vardath Cosmology is a speculative cosmology. Unless a passage explicitly identifies a source fact, measurement or established observation, it is describing a possibility inside the model — a maybe. That framing applies to the whole page, so the model does not need to stop every few paragraphs to apologise for being speculative.</div>
+<h2 id="current-model-roadmap">Current model — consolidated reading order</h2>
+<p>The current material is now grouped before the historical archive so the latest model can be read as one sequence rather than as scattered additions. The order is: <strong>world-tree / switch → central spire / time throat → carriers and boundary travel → Revelation event-sequence comparison → full 453-post synthesis → historical development</strong>.</p>
+<div class="projection-grid">
+<div><b><a href="#yggdrasil-time-switch-plenum">Yggdrasil / time-switch</a></b><span>the woven junction, moving lands, Norns and plenum rule</span></div>
+<div><b><a href="#central-spire-fast-time-fountain">Central spire / fast-time throat</a></b><span>the temporal-gradient branch, Fountain of Youth and plasma-current interpretation</span></div>
+<div><b><a href="#waterborne-children-the-prediction-meets-the-corpus">Carriers and boundary travel</a></b><span>waterborne children, travelling enclosures and the water-horse / Sleipnir carrier mode</span></div>
+<div><b><a href="#revelation-as-an-event-sequence">Revelation sequence</a></b><span>fourfold activation, rolled sky, rod, flood, rupture and renewed world</span></div>
+<div><b><a href="#archive-operating-rules">453-post synthesis</a></b><span>gate roles, shell variables, reset mechanics, comparative regions and the mature handoff model</span></div>
+<div><b><a href="#historical-development-and-research-archive">Historical archive</a></b><span>earlier versions, failures, tests and the route by which the current model developed</span></div>
+</div>
+<div class="art-gallery" style="grid-template-columns:minmax(0,1fr)">
+<a class="art-card" href="#spire-fourfold-symbol-figure"><img loading="lazy" src="/FB_IMG_1789863754873.jpg" alt="Fourfold curved rotating-cross motif around a central crossing"><span class="art-copy"><strong>Fourfold spire / crossing motif — now easy to find</strong><small>Image supplied by Vardath · exact original publication source not yet verified</small><em>Tap this card to jump directly to the full image and its place in the central-spire section.</em></span></a>
+</div>
+<p>The worlds or layers are successive stabilised turns of a larger growing spiral structure. The inhabited world is one settled turn, with a previous/lower turn beneath it and a next/upper turn forming beyond it. In the present model each inhabited turn is a <strong>broad, materially deep flat world-disc</strong> supported and enclosed by a woven lattice-dome; the larger world-body can still curve, spiral and grow around those locally flat inhabited surfaces. Between and through those turns runs a two-directional woven lattice: one part of the structure can move upward while another moves downward, the strands crossing without needing to be cut.</p>
+<p>During a quiet phase the lattice is broad and the worlds appear separated and stable. Under changing tension it can gather toward one or many convergence throats, collapse its many surface directions toward an axial state, and narrow into the scroll-like finger-trap rod. In that contracted phase the geometry can change which layers are adjacent, open temporary gates between them, and carry energy, atmosphere, water, debris or other material through the axial path. When the tension changes again, the structure reopens and a new stable arrangement forms.</p>
+<p>A second core part of the present model is the <strong>vapour-canopy / upper-water flood cycle</strong>, and I now place it inside the active-door phase rather than treating it as a permanent background atmosphere. As the door opens and the plasma environment intensifies, the model proposes that the frozen upper-water reservoir is heated: <strong>ice melts → liquid water steams → a dense vapour canopy forms</strong>. During that interval the atmosphere becomes hotter, wetter and more strongly pressurised, with the high-oxygen/plasma-rich biological conditions explored later on this page. As the event weakens, <strong>the world cools → the steam condenses → the canopy falls as floodwater</strong>. In this version, the vapour canopy and the flood are two successive phases of the same water cycle.</p>
+<p class="equation"><strong>stable shell → activation → convergence → axial gate / scroll rod → layer contact and transfer → deformation / catastrophe → reopening → stabilised world</strong></p>
+<p>The familiar symbols in the archive are read as different views of that changing geometry. Serpents and dragons describe the winding or braided current; trees, mountains, pillars, crosses, ladders and rods describe the gathered axis; wheels and eyes describe nodes or end-on views; arks, baskets, eggs, caves and enclosed worlds describe contracted or protected carrier states; opened heavens, floods, fires and wars of the gods describe the transition; and renewed worlds describe the reopened stable phase.</p>
+<p>The three-world intuition therefore becomes three phases of one continuing growth process rather than three permanently independent cosmic objects: <strong>previous/lower stabilised turn → present inhabited turn → next/upper forming turn</strong>, with the active braid as the mechanism joining them.</p>
+<p>The shortest statement of the model remains:</p>
+<p class="equation"><strong>SERPENT → AXIS → ENCLOSURE → GATE → POLARITY → LATTICE → SHELL → SCROLL ROD → RESET → NEW WORLD</strong></p>
+<span id="moved-mature-overview-anchor" hidden></span>
+</section>
+
+<!-- END SOURCE: cosmology_fragments/f00-overview.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f24-yggdrasil-time-switch-plenum.txt -->
+<section class="late-research-block" id="yggdrasil-time-switch-plenum-section">
+<hr/>
+<h1 id="yggdrasil-time-switch-plenum">Yggdrasil as the time-switch — self-to-self, Norns, moving lands and the plenum</h1>
+<p>This branch began by returning to Odin’s ordeal on Yggdrasil and asking what the story would look like if the ash tree were not only a world-axis but the <strong>physical door in the Vardath cosmology</strong>. The result sharpened the door model considerably. I am no longer picturing a simple portal that removes a traveller from one place and drops them somewhere else. I am picturing a <strong>temporary switching junction in the woven finger-trap tree</strong>, where normally separated world-layers and times become physically adjacent and exchange what occupies them.</p>
+<p class="equation"><strong>woven world-tree → strands converge → door / switch opens → separated times become adjacent → people and land exchange positions → weave closes → ordinary local time continues</strong></p>
+<div class="callout warn"><strong>Working cosmological interpretation.</strong> The Norse sources establish Yggdrasil, Odin’s self-sacrifice, Mímir’s well and the Norns at Urðarbrunnr. They do not describe the mechanical time-switch proposed here. The switch, layered-land transfer and finger-trap geometry are my interpretation of those motifs inside Vardath Cosmology.</div>
+
+<h2 id="odin-self-to-self-at-the-junction">Odin — “self to self” at the junction</h2>
+<p>In <em>Hávamál</em>, Odin hangs for nine nights on the tree, wounded by a spear, sacrificing <strong>himself to himself</strong>, looking downward before taking up the runes. Elsewhere, the prose tradition places Mímir’s well beneath one root of Yggdrasil and says that Odin leaves an eye there as the price of wisdom. The same larger tree-complex also places the Norns beside Urðr’s well.</p>
+<p>The new interpretation is that Odin is <strong>fixed to the junction while the weave changes around him</strong>. If different positions on one life-thread are temporarily brought together at the same gate, “self to self” can be read in the model as more than sacrifice: two locally separated states of the same person can become neighbours at the switch.</p>
+<p class="equation"><strong>Odin(t₁) → Yggdrasil junction ← Odin(t₂)</strong></p>
+<p>The mirror-self scenes that recur in modern stories became useful here as narrative analogies. <em>The NeverEnding Story</em> makes the traveller confront the self at the Magic Mirror Gate. <em>Annihilation</em> culminates in a lighthouse encounter where the humanoid double mirrors the traveller’s movements. These films are not evidence for the cosmology; they show how persistent the <strong>threshold → doubled self → identity transformation</strong> structure remains in modern storytelling.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:The_Sacrifice_of_Odin_by_Fr%C3%B8lich.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Sacrifice_of_Odin_by_Fr%C3%B8lich.jpg?width=720" alt="Lorenz Frolich illustration of Odin sacrificing himself on Yggdrasil"><span class="art-copy"><strong>Odin’s self-sacrifice on Yggdrasil</strong><small>Lorenz Frølich · 1895 · Wikimedia Commons</small><em>tree / axis · suspension · wound · self-to-self · revelation</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Om_Yggdrasil_by_Fr%C3%B8lich.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Om_Yggdrasil_by_Fr%C3%B8lich.jpg?width=720" alt="Lorenz Frolich illustration of Yggdrasil and the well beneath the tree"><span class="art-copy"><strong>Yggdrasil and the well beneath it</strong><small>Lorenz Frølich · 1895 · Wikimedia Commons</small><em>The world-tree presented as a vertical connector with a lower water boundary.</em></span></a>
+</div>
+
+<h2 id="norns-temporal-relations-not-three-boxes">The Norns — temporal relations at the root of the tree</h2>
+<p>The three named Norns — <strong>Urðr, Verðandi and Skuld</strong> — stand at Urðarbrunnr beneath Yggdrasil and shape lives. I am using their names less as three sealed boxes called “past, present and future” and more as three relations to one changing weave: <strong>what has become, what is becoming, and what is due / shall become</strong>.</p>
+<p>That makes the Norns useful for the switch model. They are not merely observers looking along a timeline; in the cosmological reading they stand where routes through the tree are assigned. “Fate” then becomes analogous to <strong>which strand a person, population or piece of land follows when the junction changes</strong>.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Three_Norns_by_Fr%C3%B8lich.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Three_Norns_by_Fr%C3%B8lich.jpg?width=720" alt="Urdr Verdandi and Skuld at the well beneath Yggdrasil"><span class="art-copy"><strong>The three Norns at Urðarbrunnr</strong><small>Lorenz Frølich · 1895 · Wikimedia Commons</small><em>Urðr · Verðandi · Skuld at the well beneath the world-tree.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Nornorna_spinner_%C3%B6dets_tr%C3%A5dar_vid_Yggdrasil.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Nornorna_spinner_%C3%B6dets_tr%C3%A5dar_vid_Yggdrasil.jpg?width=720" alt="Norns spinning the threads of fate at the roots of Yggdrasil"><span class="art-copy"><strong>Norns and the threads of fate</strong><small>L. B. Hansen · 1893 Edda illustration · Wikimedia Commons</small><em>A later visual tradition makes the thread metaphor explicit beside Yggdrasil.</em></span></a>
+</div>
+
+<h2 id="door-becomes-switch">The door becomes a switch rather than a hole</h2>
+<p>The important correction in this conversation was <strong>switch places</strong>. The event is not only somebody entering a doorway. During the active phase, time rearranges adjacency. A piece of one world-layer can meet a piece of another, and matter can move through the temporary contact while each traveller still experiences ordinary forward motion locally.</p>
+<figure class="vdiagram"><h4>Diagram · The Yggdrasil switch</h4><svg viewbox="0 0 1100 520" role="img" aria-label="Diagram showing three world layers converging at a Yggdrasil switching junction and exchanging land and people"><rect class="box" x="70" y="55" width="270" height="90" rx="14"></rect><rect class="box" x="760" y="55" width="270" height="90" rx="14"></rect><rect class="box" x="70" y="375" width="270" height="90" rx="14"></rect><rect class="box" x="760" y="375" width="270" height="90" rx="14"></rect><text x="105" y="88">Layer / time A</text><text class="muted" x="105" y="116">land A · people A</text><text x="795" y="88">Layer / time B</text><text class="muted" x="795" y="116">land B · people B</text><text x="105" y="408">after switch</text><text class="muted" x="105" y="436">land B / mixed travellers</text><text x="795" y="408">after switch</text><text class="muted" x="795" y="436">land A / mixed travellers</text><circle class="node" cx="550" cy="260" r="42"></circle><text x="505" y="252">YGGDRASIL</text><text class="muted" x="516" y="278">door / switch</text><path class="cyan" d="M340 100 C440 115 470 185 520 230"></path><path class="violet" d="M760 100 C660 115 630 185 580 230"></path><path class="violet" d="M520 290 C470 335 440 405 340 420"></path><path class="cyan" d="M580 290 C630 335 660 405 760 420"></path><path class="soft" d="M550 75 L550 445"></path><text class="muted" x="575" y="170">temporary adjacency</text><text class="muted" x="575" y="340">exchanged continuation</text></svg><figcaption>In the present model the junction exchanges routes. The occupants need not experience time running backward; they simply continue along a strand whose larger temporal/world-layer address has changed.</figcaption></figure>
+<p>This also changes the scale of the event. The gate could carry one person, but if the open seam extends across the lattice it could also move <strong>settlements, coastlines or larger pieces of land</strong>. Partial engagement could instead drag, compress, bury or deform material without completing an exchange.</p>
+<table><thead><tr><th>state of the weave</th><th>Vardath interpretation</th><th>possible experienced result</th></tr></thead><tbody>
+<tr><td>stable</td><td>ordinary adjacency</td><td>continuous local geography and time</td></tr>
+<tr><td>partial convergence</td><td>strands pull against one another without full transfer</td><td>compression, displacement, burial, deformation</td></tr>
+<tr><td>full switching contact</td><td>two separated layers become locally adjacent</td><td>people, structures or land physically cross / exchange</td></tr>
+<tr><td>closed after exchange</td><td>new routes become locally normal</td><td>inhabitants continue forward inside a changed world-context</td></tr>
+</tbody></table>
+
+<h2 id="mad-tea-party-locked-time-special-case">The Mad Tea Party — a locked-time special case, not the whole event</h2>
+<p>The Mad Hatter’s tea party helped distinguish two phenomena. In <em>Alice’s Adventures in Wonderland</em>, the Hatter explains that after his quarrel with Time it is always six o’clock at the table. That is a useful image for a <strong>local loop or locked temporal address</strong>, but it is only one possible failure-mode of the larger mechanism I am describing.</p>
+<p>The main event is dynamic: people and lands can move while the weave is rearranging. A locked region would instead be a strand that reconnects to the same temporal position repeatedly rather than being routed onward.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:John_Tenniel-_Alice%27s_mad_tea_party%2C_colour.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Tenniel-_Alice%27s_mad_tea_party%2C_colour.jpg?width=720" alt="John Tenniel illustration of the Mad Tea Party"><span class="art-copy"><strong>The Mad Tea Party</strong><small>John Tenniel · Alice’s Adventures in Wonderland · public-domain illustration</small><em>A useful literary image for a local temporal lock: “always six o’clock,” rather than the larger exchange event.</em></span></a>
+</div>
+
+<h2 id="moving-lands-through-time">Moving lands — absence is only half the prediction</h2>
+<p>Once the door became an exchange switch, the disappearance of a culture or land was no longer the main thing to look for. <strong>Every removal should imply an arrival or replacement somewhere else in the larger structure.</strong> That means the stronger signature is not merely “something vanished,” but mismatched adjacency: material, people, architecture, stories or landscapes appearing in a context that does not fit the sequence around them.</p>
+<p>During the conversation, <strong>Tartaria and the Maya</strong> were raised as possible examples to think with. At this stage I am treating them as candidate test cases, not confirmations. The useful question is not “can I make a vanished civilisation fit the model?” but “what physical or chronological signature would a real exchange leave that ordinary political change, migration, environmental collapse, relabelling or rebuilding would not?”</p>
+<p class="equation"><strong>transfer hypothesis → predict paired discontinuity first → then inspect archaeology / geology / maps</strong></p>
+<p>This keeps the hypothesis falsifiable. A completed land exchange should ideally leave some combination of paired boundary effects, abrupt material discontinuities, unusual chronological adjacency or matching displaced signatures elsewhere. If those are absent and ordinary historical continuity explains the record, the transfer interpretation loses support.</p>
+
+<h2 id="plenum-rearrangement-not-empty-space">The plenum — rearrangement without empty space</h2>
+<p>The final concept added in this conversation was the <strong>plenum</strong>: a space completely filled rather than containing true empty gaps. In René Descartes’ mechanical philosophy, material extension filled space and celestial motion was described through interlocking vortices. A body could not simply move into an empty place; motion required the surrounding matter to move as part of a larger circulation.</p>
+<p>That is not being adopted as modern physics. Its importance here is conceptual. A plenum gives the Vardath switch a clean rule: <strong>if every available position is already occupied, movement through the event must be displacement, circulation or exchange rather than disappearance into nothing.</strong></p>
+<p class="equation"><strong>A B C D E → E A B C D</strong></p>
+<p>In that sense the plenum analogy joins the finger-trap and Yggdrasil ideas. The woven structure does not need an empty external container into which land temporarily vanishes. The weave changes its connections, and occupied regions push, trade or reroute one another as the event runs.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Illustration_showing_Descartes%27_mechanical_view_of_a_universe_filled_with_plenum_and_a_system_of_vortexes_that_carries_planets_around_the_sun_LCCN92518505.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Illustration_showing_Descartes%27_mechanical_view_of_a_universe_filled_with_plenum_and_a_system_of_vortexes_that_carries_planets_around_the_sun_LCCN92518505.jpg?width=720" alt="Descartes diagram of a plenum filled with interlocking vortices"><span class="art-copy"><strong>Descartes’ plenum and vortices</strong><small><em>Principia philosophiae</em> · 1644 · Library of Congress / Wikimedia Commons</small><em>Historical model of a filled universe in which motion occurs through coordinated displacement and circulation.</em></span></a>
+</div>
+
+<h2 id="current-time-door-statement">Current statement of the time-door idea</h2>
+<p>The model coming out of this exchange is therefore:</p>
+<p class="equation"><strong>Yggdrasil is the woven world-tree and temporary switch. The Norn-like temporal relations describe where strands have come from, what is changing now and what route becomes due next. During the event, normally separated layers can become physically adjacent. People and land can move through that adjacency and exchange positions. Local time still feels continuous to those carried along the strand. A plenum-like rule means the event rearranges occupied reality rather than sending matter into empty nothingness.</strong></p>
+<p>This makes the earlier “door” language more exact. <strong>The door is not primarily an opening in space. It is the moment when the weave changes who and what is next to whom — and therefore when time can physically rearrange the world.</strong></p>
+</section>
+
+<!-- END SOURCE: cosmology_fragments/f24-yggdrasil-time-switch-plenum.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f27-central-spire-fast-time-fountain.txt -->
+<section class="late-research-block" id="central-spire-fast-time-fountain-section">
+<hr/>
+<h1 id="central-spire-fast-time-fountain">The central spire as the fast-time throat — Fountain of Youth, plasma flow and the open door</h1>
+
+<p>This adds another piece to the Yggdrasil time-switch. If the past, the now and the future are not completely separate places but different positions in the same woven structure, then the central spire may be the place where the distance between those positions becomes shortest. I am not picturing the spire as a clock sitting in the middle of the world. I am picturing it as the <strong>temporal throat of the world-tree</strong>: the place where a small movement through the structure can correspond to a very large movement through history.</p>
+
+<p class="equation"><strong>past + now + future remain separated while the door is closed → the weave opens at Yggdrasil → temporal layers approach one another → the spire becomes a high-throughput route through time → the weave closes → ordinary local time resumes</strong></p>
+<figure id="spire-fourfold-symbol-figure" class="hero-art-wrap" style="max-width:560px;margin-top:24px">
+<img class="hero-art" src="/FB_IMG_1789863754873.jpg" loading="eager" alt="Four-armed curved rotating-cross motif centred on a crossing" style="display:block;width:auto;max-width:100%;height:auto;margin:0 auto;object-fit:contain">
+<figcaption><strong>Fourfold rotating-cross motif.</strong> In the Vardath reading, this is a useful end-on visual analogue for four curved flows turning around a central crossing or spire: axis at the centre, circulation around it, and four directional arms. This is a visual comparison, not a claim that the original artist intended the Vardath cosmology. Source image supplied by Vardath; exact publication source is not yet verified, remembered as possibly appearing on a cover of a book titled <em>The Spire</em>.</figcaption>
+</figure>
+
+<h2 id="fast-time-does-not-have-to-mean-fast-aging">Fast time does not have to mean fast aging</h2>
+<p>There are two different things I need to keep separate. One is <strong>how quickly the world advances relative to another layer</strong>. The other is <strong>how much time the traveller personally experiences</strong>. They do not have to be the same.</p>
+
+<p>If the open spire allows a thousand years of world-history to pass while a traveller experiences only a short interval, then from the traveller's point of view the world has moved through time enormously quickly. The traveller has not necessarily aged through those thousand years. This gives the old Fountain of Youth idea a possible place in the same mechanism: the "fountain" may not reverse age at all. It may be a place where <strong>very little personal time is accumulated while a great deal of world-time passes around it</strong>.</p>
+
+<p class="equation"><strong>small traveller-time + enormous world-time = return to a much older world while remaining comparatively young</strong></p>
+
+<p>That would make the Fountain of Youth less like magical water that repairs the body and more like a surviving description of the central temporal current. Someone goes into the fountain, well, spring, tree, cave or central opening and later returns without having aged in proportion to the world outside.</p>
+
+<h2 id="the-spire-as-temporal-gradient">The spire as a temporal gradient</h2>
+<p>The central spire may therefore be the place where time is not simply "faster" or "slower" in one universal sense. It may be where the <strong>difference between temporal rates is greatest</strong>. Far from the door, neighbouring places share roughly the same time relation. Near the door, one step toward the axis could place a traveller beside a part of the weave that is much farther ahead or behind in the larger history.</p>
+
+<figure class="vdiagram">
+<h4>Diagram · The spire as a temporal throat</h4>
+<svg viewbox="0 0 1100 560" role="img" aria-label="Three temporal layers bending toward a central spire, with a traveller taking a short route through the throat while a large span of world time passes outside">
+<rect class="box" x="70" y="60" width="250" height="82" rx="14"></rect>
+<rect class="box" x="70" y="240" width="250" height="82" rx="14"></rect>
+<rect class="box" x="70" y="420" width="250" height="82" rx="14"></rect>
+<text x="105" y="95">future layer</text>
+<text class="muted" x="105" y="120">later world-state</text>
+<text x="105" y="275">now layer</text>
+<text class="muted" x="105" y="300">current world-state</text>
+<text x="105" y="455">past layer</text>
+<text class="muted" x="105" y="480">earlier world-state</text>
+<path class="soft" d="M320 100 C520 105 570 190 660 260"></path>
+<path class="cyan" d="M320 280 C500 280 575 280 660 280"></path>
+<path class="soft" d="M320 460 C520 455 570 370 660 300"></path>
+<path class="violet" d="M700 65 C650 160 650 400 700 495"></path>
+<path class="violet" d="M735 65 C685 160 685 400 735 495"></path>
+<circle class="node" cx="718" cy="280" r="48"></circle>
+<text x="676" y="272">CENTRAL</text>
+<text x="688" y="296">SPIRE</text>
+<path class="warn" d="M775 280 C865 250 925 185 1010 125"></path>
+<path class="warn" d="M775 280 C865 310 925 375 1010 435"></path>
+<text class="muted" x="820" y="175">large world-time separation</text>
+<text class="muted" x="815" y="405">short route through throat</text>
+</svg>
+<figcaption>In this version of the model, Yggdrasil does not merely connect locations. It compresses temporal separation near the central axis. A short experienced passage through the throat could correspond to a much larger interval in the surrounding world.</figcaption>
+</figure>
+
+<h2 id="plasma-as-visible-current-not-the-clock">The plasma may be the visible current, not the clock</h2>
+<p>This also changes how I interpret the intense plasma flow I associate with the open door. I do not need the plasma itself to be the thing that magically speeds time up. The more coherent possibility is that <strong>the door changes the geometry first, and the plasma is what matter and electromagnetic energy do while being forced through that changed geometry</strong>.</p>
+
+<p>When the door is closed, the temporal layers are separated and the local world follows its ordinary rhythm. When the door opens, the central path is established and the plasma fountain becomes the visible current through it. The flow may therefore mark the period in which the different layers are coupled. While that coupling remains open, time here could advance very differently relative to another layer. When the structure closes again, the ordinary relationship is restored.</p>
+
+<p class="equation"><strong>door closed → ordinary temporal relation<br/>door opens → temporal throat + intense current → different layers accumulate different amounts of elapsed time<br/>door closes → ordinary relation resumes, but the layers now contain different amounts of history</strong></p>
+
+<h2 id="why-fountain-tree-well-and-spire-may-be-one-thing">Why fountain, tree, well and spire may be one thing</h2>
+<p>This gives me a reason that the old images keep overlapping. The tree is the vertical structure. The well or fountain is the opening at its root. The spire is the same axis seen as a rising column. The flowing water is the human-scale image of a current through that axis. In the physical version I am exploring, that current may instead be plasma, charged matter or another energetic flow associated with the opening.</p>
+
+<p>The names then describe different views of one structure:</p>
+<table><thead><tr><th>image</th><th>Vardath interpretation</th></tr></thead><tbody>
+<tr><td><strong>Yggdrasil / world-tree</strong></td><td>the full woven architecture connecting the layers</td></tr>
+<tr><td><strong>central spire / world-axis</strong></td><td>the narrowest and strongest temporal-gradient region</td></tr>
+<tr><td><strong>well / fountain</strong></td><td>the accessible mouth of the central route</td></tr>
+<tr><td><strong>water / plasma fountain</strong></td><td>the visible flow through the active route</td></tr>
+<tr><td><strong>Fountain of Youth</strong></td><td>a possible memory of travellers accumulating little personal time while much more world-time passes</td></tr>
+</tbody></table>
+
+<h2 id="past-present-future-interacting-at-now">Past, present and future interacting with the now</h2>
+<p>The most important change is that the present is no longer a razor-thin line isolated from everything else. In this model the present is the part of the weave I currently occupy. The past still exists as the route the weave has already taken and the future exists as routes available farther along it. Normally they are separated by the structure itself. During the opening, that separation can collapse locally.</p>
+
+<p>That means the strange effects around the central spire would not have to be "time travel" in the simple machine sense. Past, present and future can become <strong>neighbours at the same junction</strong>. A person, a population or even a piece of land can continue moving forward locally while the route under it is switched to a different temporal address.</p>
+
+<p class="equation"><strong>the traveller does not need to run through a thousand years → the door can change which thousand-years-apart part of the weave is next to the traveller</strong></p>
+
+<p>This fits the larger model better than treating the spire as an engine that merely accelerates clocks. <strong>Yggdrasil is the structure, the door is its temporary switching state, the central spire is the temporal throat, and the fountain is the current through that throat.</strong> If the opening lasts long enough, enormous differences in elapsed history could build up between connected layers. When it closes, everybody again experiences ordinary local time, but they may now be standing in a world whose history has advanced by a radically different amount.</p>
+</section>
+
+<!-- END SOURCE: cosmology_fragments/f27-central-spire-fast-time-fountain.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f27a-video-overview.txt -->
+<section class="late-research-block" id="cosmology-video-overview-section">
+<hr/>
+<h1 id="cosmology-video-overview">Vardath Cosmology — video overview</h1>
+<p>This video presents the cosmology in audiovisual form before the experimental interactive model below.</p>
+<div style="margin:24px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050811;box-shadow:0 18px 60px rgba(0,0,0,.28)">
+  <div style="position:relative;width:100%;aspect-ratio:16/9;background:#02040a">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/rvfT1a3tQXk"
+      title="Vardath Cosmology video"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="position:absolute;inset:0;width:100%;height:100%;border:0">
+    </iframe>
+  </div>
+</div>
+<p><a href="https://youtu.be/rvfT1a3tQXk" target="_blank" rel="noopener noreferrer">Open the video on YouTube</a></p>
+</section>
+<!-- END SOURCE: cosmology_fragments/f27a-video-overview.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f28-dragon-lattice-simulator.txt -->
+<section class="late-research-block" id="nine-disc-dragon-lattice-simulator-section">
+<hr/>
+<h1 id="nine-disc-dragon-lattice-simulator">Interactive nine-disc dragon-lattice simulation — closed lattice, open door</h1>
+<p>I am now picturing the larger structure as <strong>nine flat disc-worlds stacked above one another</strong>. The moving Möbius-like action belongs to the sky-dragon lattice rather than to the discs themselves.</p>
+<p>When the door is closed, the lattice is <strong>separated and flattened into the layers</strong>. Under each disc, <strong>two twines combine to form one supporting lattice</strong>. During activation those flattened twines begin to energise, lift away from the layers, and reorganise into the opposed rising and descending weave. The crossing weave then tightens through the middle as the finger-trap / door structure. In the working sequence, plasma builds the conductive path first, atmosphere and vapour follow, water completes the bridge, and land transfer becomes possible once the geometry is fully engaged.</p>
+<div class="callout warn"><strong>Working simulation.</strong> This is an exploratory visual model of the current Vardath mechanism, not a claim that the animation is established physical behaviour. The top/bottom boundary condition is deliberately left selectable because that part of the model is still unresolved.</div>
+<div style="margin:24px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050811">
+<iframe src="nine-disc-dragon-lattice-simulator.html" title="Interactive nine-disc dragon lattice simulator" loading="lazy" style="display:block;width:100%;height:1040px;border:0;background:#02040a"></iframe>
+</div>
+<p><a href="nine-disc-dragon-lattice-simulator.html" target="_blank" rel="noopener noreferrer">Open the simulator full-screen</a></p>
+<style>
+@media(max-width:800px){#nine-disc-dragon-lattice-simulator-section iframe{height:1120px!important}}
+</style>
+</section>
+<!-- END SOURCE: cosmology_fragments/f28-dragon-lattice-simulator.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f21.txt -->
+<section class="late-research-block" id="waterborne-child-v2-section">
+<hr/>
+<h1 id="waterborne-children-the-prediction-meets-the-corpus">Waterborne children — the prediction meets the corpus</h1>
+<p>The baby-in-the-river stories became important to the travelling-fingertrap model for one reason: they gave it a way to be wrong. The idea was no longer simply that many traditions contain a child, a basket and water. The proposed sequence was more specific: <strong>a living child enters a contracted carrier, moves with a current, reaches a boundary or receiver, and emerges into a changed household, identity or world.</strong></p>
+<p>That sequence is close enough to the proposed sky mechanism to test directly:</p>
+<p class="equation"><strong>life / child → contracted fingertrap / basket / ark → current → boundary / gate → reception / reopening → changed household, identity or world</strong></p>
+<p>Before the search was run, the sequence was frozen into three parts: <strong>F1 — enclosure geometry</strong>, <strong>F2 — a boundary or receiver</strong>, and <strong>F3 — changed household, identity or second-birth language</strong>. The point was to see whether those parts actually travel together more often in waterborne-child stories than in exposed-child stories that do not use water.</p>
+
+<h2 id="waterborne-v2-test">The twenty-language test</h2>
+<p>The search was split across twenty languages: English, French, German, Spanish, Italian, Portuguese, Dutch, Polish, Czech, Russian, Ukrainian, Greek, Turkish, Arabic, Hebrew, Persian, Hindi, Bengali, Japanese and Chinese. The discovery terms deliberately did <strong>not</strong> contain the basket, enclosure, receiver or rebirth words being tested. Local discoveries were mapped through Wikidata to English records and then scored against the vocabulary that had already been fixed.</p>
+<p>The finished search produced <strong>5,204 raw discoveries</strong>, <strong>4,599 English-mapped occurrences</strong> and <strong>3,628 unique English candidates</strong>. Evidence was recovered for <strong>4,547 of the 4,599 mapped occurrences — 98.9%</strong>. After deduplication there were <strong>3,584 usable records</strong>. The frozen eligibility rules retained <strong>399 exposed-child records</strong>: <strong>203 waterborne stories</strong>, <strong>160 non-water controls</strong> and <strong>36 ambiguous-water records</strong> kept out of the direct comparison.</p>
+<p>The six stories chosen in advance as a coverage check were all recovered: <strong>Moses, Sargon of Akkad, Karna, Romulus and Remus, Danaë and Perseus</strong>. They were checks that the search could find the obvious family members, not stories forced into the result.</p>
+
+<div class="art-gallery story-art-gallery" id="waterborne-canonical-thumbnails">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Moses_in_the_Bulrushes.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moses_in_the_Bulrushes.jpg?width=720" alt="Moses in the Bulrushes"><span class="art-copy"><strong>Moses in the bulrushes</strong><small>1910 illustration · Wikimedia Commons</small><em>child · floating enclosure · current · receiver</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Sargon_of_Akkad.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sargon_of_Akkad.jpg?width=720" alt="Bronze head traditionally associated with Sargon of Akkad"><span class="art-copy"><strong>Sargon of Akkad</strong><small>Akkadian royal head · Wikimedia Commons</small><em>river exposure · enclosed carrier · reception · new life</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Karna_in_Kurukshetra.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Karna_in_Kurukshetra.jpg?width=720" alt="Karna in a Mahabharata painting"><span class="art-copy"><strong>Karna</strong><small>Mahabharata painting · Wikimedia Commons</small><em>river passage · recovery · changed household</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Romulus_and_Remus_Exposed_on_the_Tiber_,_pl_.2_from_the_series_The_Story_of_Romulus_and_Remus.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Romulus_and_Remus_Exposed_on_the_Tiber_,_pl_.2_from_the_series_The_Story_of_Romulus_and_Remus.jpg?width=720" alt="Romulus and Remus exposed on the Tiber"><span class="art-copy"><strong>Romulus and Remus on the Tiber</strong><small>Giovanni Battista Fontana · 1575 · Wikimedia Commons</small><em>water transport · reception · transformed upbringing</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Dana%C3%AB_en_Perseus_worden_in_een_boot_gezet,_RP-P-OB-38.817.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Dana%C3%AB_en_Perseus_worden_in_een_boot_gezet,_RP-P-OB-38.817.jpg?width=720" alt="Danae and Perseus cast into the sea"><span class="art-copy"><strong>Danaë and Perseus cast away</strong><small>16th-century print · Rijksmuseum / Wikimedia Commons</small><em>enclosure / vessel · sea journey · receiving shore</em></span></a>
+</div>
+
+<h2 id="waterborne-v2-results">What came back</h2>
+<table><thead><tr><th>frozen test</th><th>waterborne</th><th>non-water controls</th><th>risk ratio</th><th>result</th></tr></thead><tbody>
+<tr><td><strong>At least 2 of F1/F2/F3</strong></td><td>110/203 = <strong>54.2%</strong></td><td>49/160 = <strong>30.6%</strong></td><td><strong>1.77×</strong><br/><code>p=7.37×10⁻⁶</code></td><td><strong>PASS</strong></td></tr>
+<tr><td>F1 — strict enclosure geometry</td><td>37/203 = 18.2%</td><td>12/160 = 7.5%</td><td><strong>2.43×</strong><br/><code>q=0.00417</code></td><td><strong>PASS</strong></td></tr>
+<tr><td>F2 — boundary / receiver</td><td>132/203 = 65.0%</td><td>68/160 = 42.5%</td><td><strong>1.53×</strong><br/><code>q=0.0000833</code></td><td><strong>PASS</strong></td></tr>
+<tr><td>F3 — changed identity / second birth</td><td>138/203 = 68.0%</td><td>95/160 = 59.4%</td><td>1.14×<br/><code>q=0.0987</code></td><td><strong>FAIL</strong></td></tr>
+<tr><td><strong>All three together</strong></td><td>18/203 = <strong>8.87%</strong></td><td>2/160 = <strong>1.25%</strong></td><td><strong>7.09×</strong><br/><code>q=0.00360</code></td><td><strong>PASS</strong></td></tr>
+<tr><td>unrelated comparison motifs</td><td>71/203 = 35.0%</td><td>51/160 = 31.9%</td><td>1.10×<br/><code>p=0.576</code></td><td>flat</td></tr>
+</tbody></table>
+<p>The pattern did not come back as a vague “water stories contain water” effect. The <strong>combined package</strong> appeared in 54.2% of the waterborne group against 30.6% of the non-water exposed-child group. The strict carrier geometry was <strong>2.43 times</strong> as common, and a distinct receiver or boundary was <strong>1.53 times</strong> as common.</p>
+<p>The sharpest result was the whole sequence. <strong>Enclosure + receiver + identity change</strong> appeared in 18 waterborne records but only 2 controls — a <strong>7.09×</strong> difference. That is the closest corpus version yet of the full travelling-fingertrap path rather than one isolated motif.</p>
+
+<h2 id="waterborne-v2-meaning">What the test changed</h2>
+<p>One part of the original expectation separated from the others. <strong>F3 did not distinguish the groups by itself.</strong> Changed parentage, adoption, renaming and second-life themes already belong strongly to exposed-child stories in general. So identity change is not the water-specific key.</p>
+<p>What is different in the waterborne group is the <strong>geometry around that change</strong>: a bounded carrier and a distinct receiving edge. In other words, the result tightens the model. The sequence now looks less like “water causes rebirth” and more like:</p>
+<p class="equation"><strong>enclosure → carried transition → receiving boundary → changed state</strong></p>
+<p>That matters because it is exactly the part of the story that resembles the travelling fingertrap: something alive is enclosed in a contracted form, carried through a channel, reaches an edge, and is received on the other side.</p>
+
+<h2 id="waterborne-v2-next">The next test</h2>
+<p>The first multilingual pass has now done its job: it found a real separation and it also showed which part of the original prediction was too broad. The next experiment can therefore be narrower. Build a second corpus made only from deliberately curated myths, fables, epics and religious narratives, freeze the same carrier → boundary → changed-state structure again, and ask whether the <strong>1.77× combined effect</strong> and especially the <strong>7.09× complete sequence</strong> survive.</p>
+<p>That is the useful progression of the Cosmology research: the picture produces a prediction; the prediction is frozen; the corpus pushes back; and the model becomes more specific rather than simply absorbing whatever result appears.</p>
+</section>
+
+<div class="deepening" data-after="14b-comparative-mythology-world-atlas" id="comparative-mythology-second-pass">
+<h2>A second pass — each mythology against the same mechanism</h2>
+<p>The regional survey below becomes more useful when every tradition is asked the same question. I am not looking for identical names or theology. I am asking whether the story preserves one or more of the same structural stages: <strong>enclosure or primordial medium → differentiation → axis or gate → crossing/conflict/transfer → rupture → renewed order.</strong> This second pass makes the comparison explicit rather than leaving the reader to infer it from the separate stories.</p>
+<p class="equation"><strong>shell / water / enclosure → axis / gate → movement between layers → material or living transfer → catastrophe / release → new stable world</strong></p>
+<div class="cards">
+<div class="card"><h3>Finnish / Karelian</h3><p><strong>Primeval water + cosmic egg + Sampo.</strong> The egg gives the bounded shell that breaks into an ordered cosmos; the Sampo supplies a generative centre or support whose making, struggle, breaking and dispersal can be read as the axial state becoming active and then redistributed. This is one of the clearest northern combinations of <strong>enclosure, axis and re-formation</strong>.</p></div>
+<div class="card"><h3>Second-pass — Estonian / Baltic-Finnic</h3><p><strong>Bird + egg + water + world pillar/tree.</strong> The same watery-egg creation family is paired more visibly with a turning or supporting sky axis. In the Vardath sequence this fills the missing middle stage between shell and reopened world: <strong>shell → gathered axis → ordered heaven</strong>.</p></div>
+<div class="card"><h3>Sámi</h3><p><strong>Layered worlds + vertical cosmogram + movement between levels.</strong> The important correspondence is not an egg but access. Drum cosmograms, upper/middle/lower regions and the noaidi’s movement between them resemble a world in which layers are normally distinct but can be reached through a structured vertical relation.</p></div>
+<div class="card"><h3>Komi, Mari, Mordvin, Udmurt and related Uralic traditions</h3><p><strong>Primordial water + bird/earth-diver + dual ordering powers.</strong> Here the emphasis shifts to how stable land is extracted from or organised within an undifferentiated watery field. In Vardath terms this is the <strong>medium-to-node-to-world</strong> phase rather than the catastrophe phase.</p></div>
+<div class="card"><h3>Mesopotamian</h3><p><strong>Apsu/Tiamat + net/winds + division + flood survivor.</strong> Primordial waters become structured through capture, conflict and division; Gilgamesh then preserves the flood/reset memory at the human scale. This gives nearly the whole sequence from <strong>undifferentiated medium to divided world to catastrophic reset</strong>.</p></div>
+<div class="card"><h3>Egyptian</h3><p><strong>Nun + first mound + Nut/Shu/Geb + solar passage.</strong> The world emerges from water, an upper canopy and lower earth are separated, and a cyclical path operates through the enclosed cosmos. The strongest Vardath correspondence is <strong>water → emergence node → separated shell layers → repeated traversal</strong>.</p></div>
+<div class="card"><h3>Iranian / Zoroastrian</h3><p><strong>Yima’s Vara + preservation through catastrophe + renovation.</strong> Life is enclosed and protected while a destructive transition passes outside, then survives into renewed order. This is the large-scale equivalent of the travelling-carrier pattern: <strong>life → enclosure → catastrophe → preservation → next world</strong>.</p></div>
+<div class="card"><h3>Greek / Roman</h3><p><strong>Encompassing sky + forced separation + monster conflict + flood/enclosed survivors.</strong> Uranus/Gaia, generational replacement, Deucalion and Danaë/Perseus repeatedly return to a world that changes order through separation, conflict and transport. The strongest fit is <strong>closed state → violent opening → transfer/survival → new order</strong>.</p></div>
+<div class="card"><h3>Hebrew / Jewish</h3><p><strong>Waters divided by firmament + ark + Moses basket + ladder/mountain/rod/chariot.</strong> The same tradition carries the pattern at several scales: world enclosure, preserved life in enclosure, child in enclosure, and traveller at gate. This nesting is important to my model because the same geometry appears from world scale down to human scale.</p></div>
+<div class="card"><h3>Christian</h3><p><strong>Cross/axis + opened heaven + Revelation sequence + renewed world.</strong> Revelation adds the most complete single-text progression: fourfold activation, eyes, dragon, rod, falling stars, rolled sky, displaced land and then a new world with gates, river and tree. The separate Revelation section follows that sequence in detail.</p></div>
+<div class="card"><h3>Second-pass — Islamic / Qur’anic</h3><p><strong>Layered heavens + ark + Musa in chest + staff opening the sea.</strong> The carrier enters water, reaches a receiving boundary and later the rod itself opens a passage through water. This gives a particularly compact cluster of <strong>enclosure, current, receiver, rod and opened gate</strong>.</p></div>
+<div class="card"><h3>Second-pass — Vedic / Hindu</h3><p><strong>Primordial waters + Vṛtra + Indra + churning axis + Meru + repeated dissolution.</strong> Few traditions place so many relevant geometries together: serpent obstruction, released waters, axial churning, cosmic mountain and cyclical destruction/recreation. In my reading this is a near-complete mechanical vocabulary distributed across many stories.</p></div>
+<div class="card"><h3>Buddhist</h3><p><strong>Meru + layered heavens/continents + Bodhi tree/witness.</strong> The emphasis is the stable cosmogram rather than catastrophe: a multi-level world ordered around a centre. The Bodhi image brings the large world-axis into human scale as <strong>person beneath living axis</strong>.</p></div>
+<div class="card"><h3>Jain</h3><p><strong>Layered cosmic geography + central organising geometry + cyclical time.</strong> The correspondence is structural rather than narrative: worlds arranged in ordered levels and repeating temporal phases resemble the stable architecture before and after a transition.</p></div>
+<div class="card"><h3>Chinese</h3><p><strong>Pangu enclosure/separation + Nüwa sky repair + Yu flood ordering + dragons.</strong> Creation, rupture and repair are all explicit. The model correspondence is <strong>enclosed beginning → sky/earth separation → damage → repair → reordered water flow</strong>.</p></div>
+<div class="card"><h3>Japanese / Shintō</h3><p><strong>Floating Bridge of Heaven + heavenly spear + primeval ocean + Yomi boundary + Amaterasu reopening.</strong> This is unusually geometric: an upper platform, an axial implement entering a fluid medium, material gathering into land, then crossings and closures between realms.</p></div>
+<div class="card"><h3>Norse</h3><p><strong>Yggdrasil + Odin + Sleipnir + Bifröst + serpent + Ragnarök.</strong> Axis, operator, vehicle, bridge, boundary-serpent, catastrophe and renewed world are all present but distributed among different myths. In Vardath terms the tradition preserves almost every role in the event grammar.</p></div>
+<div class="card"><h3>Second-pass — Celtic / Insular</h3><p><strong>Otherworld across sea/beneath land + mounds + wells + trees + vessels + woven/interlaced forms.</strong> The strongest fit is not one creation myth but repeated <strong>threshold access</strong>: another layer is nearby, special places or vehicles permit crossing, and water frequently marks the boundary.</p></div>
+<div class="card"><h3>Slavic</h3><p><strong>Perun above + Veles below/watery/serpentine + world-tree conflict.</strong> The vertical opposition resembles the Indra–Vṛtra pattern: upper electrical force acts along an axis against a lower serpent/water power. The story preserves the <strong>activated axial conflict</strong> phase.</p></div>
+<div class="card"><h3>Second-pass — Yoruba</h3><p><strong>Sky above + waters below + descent by chain + formation of land.</strong> This is a direct vertical-interface story: upper realm → connecting line/axis → lower watery medium → stable land/node. It maps closely to the emergence of an inhabitable layer from a connected upper/lower system.</p></div>
+<div class="card"><h3>West African serpent / water / sky traditions</h3><p><strong>Serpent, rain, river, sky and underworld-water powers.</strong> The recurring geometry is mediation: winding force linking atmosphere, terrestrial order and water. I place this beside Rainbow Serpent, Vṛtra and Veles as another regional expression of the serpent/current role.</p></div>
+<div class="card"><h3>Haudenosaunee</h3><p><strong>Sky World + fall through boundary + water below + reception + land formed on Turtle.</strong> Sky Woman is one of the clearest vertical-transfer creation stories: life crosses from an upper world into a watery lower field and a new habitable surface grows from the receiving event.</p></div>
+<div class="card"><h3>Nahua / Aztec</h3><p><strong>Quetzalcoatl + wind + feathered serpent + repeated world ages.</strong> The serpent is joined to atmospheric motion and cyclical world replacement. In my reading it contributes the <strong>winding atmospheric current + repeated reset</strong> side of the mechanism.</p></div>
+<div class="card"><h3>Maya</h3><p><strong>Creation from primordial conditions + sky/earth ordering + rain/water powers such as Chaac.</strong> The useful comparison is the building of an ordered world through layered sky, land and water relations, then maintaining it through celestial and rain powers.</p></div>
+<div class="card"><h3>Australian Rainbow Serpent traditions</h3><p><strong>Winding creator current + water + land shaping + emergence from/return to water.</strong> This remains the earliest branch of the whole Cosmology. It is the clearest mythic image of the model’s persistent current moving through a landscape and changing the shape of Country.</p></div>
+<div class="card"><h3>Māori</h3><p><strong>Rangi and Papa enclosed together + forced separation + light/space + ordered world.</strong> The world begins compressed between sky and earth; separation opens the inhabitable realm. This maps directly to <strong>closed adjacency → axial/separating action → expanded stable world</strong>.</p></div>
+<div class="card"><h3>Wider Polynesian</h3><p><strong>Layered heavens + oceanic travel + islands raised/fished from sea + genealogical creation.</strong> The model correspondence is strongest where vertical layering meets oceanic emergence: land is brought out of a fluid medium and worlds are arranged as levels connected by descent or ascent.</p></div>
+</div>
+<h3>What survives across the whole comparison</h3>
+<p>Once every tradition is forced through the same sequence, the recurring structure is narrower than “all myths are the same.” The strongest recurring families are <strong>primordial water or enclosure; a vertical support, tree, mountain, rod, chain or bridge; a serpent/current or conflict at the boundary; movement of life or material between levels; flood/fire/rupture; and a rebuilt or reopened world.</strong></p>
+<p>That is why I now treat the mythologies as different camera positions around one proposed mechanism rather than as copies of one story. Finland and the Baltic-Finnic field preserve the shell/egg and support; Mesopotamia preserves primordial medium, capture and division; Egypt preserves canopy and separated layers; India preserves serpent, waters and axis; Norse myth preserves axis, vehicle and reset; Haudenosaunee preserves vertical transfer into a water world; Māori preserves separation of compressed sky and earth; Revelation preserves an unusually long event sequence. The differences are part of the model: each tradition emphasises what its viewpoint made memorable.</p>
+<p>The source-linked thumbnails attached to the regional subsections are there to keep the comparison tied to real manuscript, monument, codex, carving and historical-art traditions while the textual argument stays here in the Cosmology itself.</p>
+</div>
+
+<!-- END SOURCE: cosmology_fragments/f21.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_expansions/art-waterborne.txt -->
+<section class="gallery-section" id="waterborne-child-art"><h2>Waterborne-child / travelling-fingertrap test</h2><p class="art-source-note">These images are source-linked visual anchors for the canonical retrieval audit in the completed 20-language test. The images do not determine the statistics; they make the source traditions inspectable.</p><div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Moses_in_the_Bulrushes.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moses_in_the_Bulrushes.jpg?width=720" alt="Moses in the Bulrushes"><span class="art-copy"><strong>Moses in the bulrushes</strong><small>1910 illustration · Wikimedia Commons</small><em>canonical audit · floating enclosure · Nile journey · receiver</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Sargon_of_Akkad.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sargon_of_Akkad.jpg?width=720" alt="Bronze head traditionally associated with Sargon of Akkad"><span class="art-copy"><strong>Sargon of Akkad</strong><small>Akkadian royal head · Wikimedia Commons</small><em>canonical audit · ancient river-exposure birth tradition</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Karna_in_Kurukshetra.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Karna_in_Kurukshetra.jpg?width=720" alt="Karna in a Mahabharata painting"><span class="art-copy"><strong>Karna</strong><small>Mahabharata painting · Wikimedia Commons</small><em>canonical audit · river exposure · changed household</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Romulus_and_Remus_Exposed_on_the_Tiber_,_pl_.2_from_the_series_The_Story_of_Romulus_and_Remus.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Romulus_and_Remus_Exposed_on_the_Tiber_,_pl_.2_from_the_series_The_Story_of_Romulus_and_Remus.jpg?width=720" alt="Romulus and Remus exposed on the Tiber"><span class="art-copy"><strong>Romulus and Remus exposed on the Tiber</strong><small>Giovanni Battista Fontana · 1575 · Wikimedia Commons</small><em>canonical audit · water transport · reception · transformed upbringing</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Dana%C3%AB_en_Perseus_worden_in_een_boot_gezet,_RP-P-OB-38.817.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Dana%C3%AB_en_Perseus_worden_in_een_boot_gezet,_RP-P-OB-38.817.jpg?width=720" alt="Danae and Perseus cast into the sea"><span class="art-copy"><strong>Danaë and Perseus cast away</strong><small>16th-century print · Rijksmuseum / Wikimedia Commons</small><em>canonical audit · enclosure/vessel · sea journey · receiving shore</em></span></a>
+</div></section>
+<!-- END SOURCE: cosmology_expansions/art-waterborne.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_expansions/x13.txt -->
+<div class="deepening" data-after="masonic-alchemical-visual-atlas">
+<h2>Corpus-hit thumbnails — exact records scored in the 20-shard test</h2>
+<p class="art-source-note">These are not generic illustrations added after the statistics. Each card below is an actual Wikimedia Commons target record contained in the successful 20-shard artifact. The caption records the symbol-family flags assigned by the frozen test vocabulary. Click a thumbnail to open the exact source record.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:The_Masonic_Ladder.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Masonic_Ladder.jpg?width=720" alt="The Masonic Ladder, 1850"><span class="art-copy"><strong>The Masonic Ladder</strong><small>Masonic target record · 1850</small><em>Test hit: gate / ladder. This is the literal ascent family behind the Masonic gate/ladder prediction.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Washington_Masonic_print.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Washington_Masonic_print.jpg?width=720" alt="Washington Masonic print, 1870"><span class="art-copy"><strong>Washington Masonic print</strong><small>Masonic target record · 1870</small><em>Test hit: four / eight geometry. It belongs to the family that finished 8.00× more frequent than matched Masonic controls.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Collection_of_freemasons%27_symbols,_from_architectural_instru_Wellcome_V0007703.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Collection_of_freemasons%27_symbols,_from_architectural_instru_Wellcome_V0007703.jpg?width=720" alt="Collection of Freemasons' symbols, Wellcome Collection"><span class="art-copy"><strong>Collection of Freemasons’ symbols</strong><small>Wellcome Collection · sampled Masonic target</small><em>Test hits: central node / radiance + four / eight geometry. One image carries the radial-node and ordered-geometry families together.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Interior_of_the_Old_Masonic_Temple_in_the_Forepaugh-McQuillan_Block_-_DPLA_-_56624f837f5286c7072888b608e98ddf.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Interior_of_the_Old_Masonic_Temple_in_the_Forepaugh-McQuillan_Block_-_DPLA_-_56624f837f5286c7072888b608e98ddf.jpg?width=720" alt="Interior of the Old Masonic Temple"><span class="art-copy"><strong>Interior of the Old Masonic Temple</strong><small>DPLA / Commons · sampled Masonic target</small><em>Test hits: axis + gate / ladder. Architectural verticals and passage geometry occur together in the same scored record.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Alchemical_Manuscript_Wellcome_M0008735.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Alchemical_Manuscript_Wellcome_M0008735.jpg?width=720" alt="Alchemical manuscript, Wellcome Collection, 1574"><span class="art-copy"><strong>Alchemical manuscript</strong><small>Wellcome Collection · 1574</small><em>Test hit: serpent / braid. It is one of the historical visual records contributing to the strongest alchemical family.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Amphitheatrum_sapientiae_aeternae_-_Alchemist%27s_Laboratory.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Amphitheatrum_sapientiae_aeternae_-_Alchemist%27s_Laboratory.jpg?width=720" alt="Amphitheatrum sapientiae aeternae alchemist laboratory, 1595"><span class="art-copy"><strong>Amphitheatrum sapientiae aeternae — laboratory</strong><small>Alchemical target record · 1595</small><em>Four test hits in one record: axis + gate / ladder + serpent / braid + water / vessel. This was among the densest actual corpus matches.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ripley_alchemical_scroll._Leonard_Smethley,_1624,_after_George_Ripley._Princeton_University_Library.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ripley_alchemical_scroll._Leonard_Smethley,_1624,_after_George_Ripley._Princeton_University_Library.jpg?width=720" alt="Ripley alchemical scroll, Leonard Smethley, 1624"><span class="art-copy"><strong>Ripley alchemical scroll</strong><small>Leonard Smethley after George Ripley · 1624</small><em>Three test hits: axis + serpent / braid + central node / radiance. This is a direct multi-family corpus record rather than a post-test analogy.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Lion-headed_serpent_devouring_its_eagle-headed_tail_entwined_about_faces_representing_an_alchemical_combination_of_mercury_and_sulfer,_an_emblem_of_the_unity_of_all_matter_LCCN92517552.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lion-headed_serpent_devouring_its_eagle-headed_tail_entwined_about_faces_representing_an_alchemical_combination_of_mercury_and_sulfer,_an_emblem_of_the_unity_of_all_matter_LCCN92517552.jpg?width=720" alt="Lion-headed serpent devouring its tail, 1728"><span class="art-copy"><strong>Lion-headed serpent devouring its tail</strong><small>Alchemical target record · 1728</small><em>Test hit: serpent / braid. The catalogue itself describes an entwined tail and alchemical mercury/sulfur combination.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Pen-drawings_of_alchemical_symbolic_subjects,_1702_Wellcome_L0076136.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pen-drawings_of_alchemical_symbolic_subjects,_1702_Wellcome_L0076136.jpg?width=720" alt="Alchemical symbolic pen drawings, 1702"><span class="art-copy"><strong>Alchemical symbolic pen drawings</strong><small>Wellcome Collection · 1702</small><em>Test hits: serpent / braid + central node / radiance. A scored historical record combining winding and luminous/node language.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ripley_alchemical_scroll_-_Prime_matter_as_a_toad_putrefying_in_a_vessel_-_Leonard_Smethley,_Princeton_University_Library,_1624.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ripley_alchemical_scroll_-_Prime_matter_as_a_toad_putrefying_in_a_vessel_-_Leonard_Smethley,_Princeton_University_Library,_1624.jpg?width=720" alt="Ripley Scroll prime matter in vessel, 1624"><span class="art-copy"><strong>Ripley Scroll — prime matter in a vessel</strong><small>Leonard Smethley · 1624</small><em>Three test hits: gate / ladder + central node / radiance + water / vessel. It shows how the corpus could carry process families without carrying the whole Vardath package.</em></span></a>
+</div>
+<p><strong>What these exact hits show:</strong> the statistics are not being illustrated with unrelated art. The Masonic sample contains literal square/four-eight and passage/ascent records, while the alchemical sample contains a much denser historical run of serpent/entwining records. The cards also show why the broad ≥3-family prediction failed: some individual images are multi-family, but most corpus hits specialize in one or two families rather than reproducing a single complete diagram.</p>
+</div>
+
+<section class="late-research-block" id="water-horse-world-door-sleipnir">
+<hr/>
+<h1 id="water-horse-world-door-sleipnir-section">Water horse / Ceffyl Dŵr — the World Door mount and the Sleipnir connection</h1>
+<p>The water-horse family adds a new kind of transport to the cosmology. The basket and ark carry life through a dangerous current while the passenger remains enclosed. The water horse does something different: <strong>the boundary itself produces a vehicle</strong>. A rider meets the creature at a pool, river, waterfall, loch, shore or other edge, couples to it by mounting, and is carried somewhere that ordinary movement should not reach.</p>
+<p>The Welsh <a href="https://en.wikipedia.org/wiki/Ceffyl_D%C5%B5r" target="_blank" rel="noopener noreferrer"><strong>Ceffyl Dŵr</strong></a> is especially striking inside this reading. It belongs to the wider <a href="https://en.wikipedia.org/wiki/Water_horse" target="_blank" rel="noopener noreferrer"><strong>water-horse</strong></a> family alongside kelpies, each-uisge and northern nix/nøkk traditions. It is associated with mountain pools and waterfalls, but also rivers and seashores. In some accounts it carries riders enormous distances with unnatural speed; in others it flies into the sky, dissolves into air or mist, changes form, or returns violently to the water.</p>
+<p>That combination makes the horse more than an animal beside water. In the Vardath model it behaves like a <strong>moving interface at the edge of worlds</strong>. The water marks the boundary. The horse emerges from that boundary. The rider joins to it. Distance collapses. Water, air, mist and sky become different faces of the transition medium. The journey ends when the coupling breaks.</p>
+<p class="equation"><strong>boundary water → vehicle appears → rider couples → impossible transit → mist / sky / other shore → release</strong></p>
+<h2 id="ceffyl-dwr-world-door">Ceffyl Dŵr → World Door</h2>
+<p>The name also gives me a useful symbolic bridge. I hear <strong>Dŵr / Door</strong> beside the older gate language already running through the Cosmology. In that reading the water is not scenery around the horse: it is the <strong>World Door</strong>, the unstable boundary between one region and another, and the horse is the thing that can move through it.</p>
+<p>This sharpens the older gate idea. A gate does not always have to appear as a stone doorway, mountain cleft or visible opening. A pool, waterfall, shoreline, fog bank or dark river can perform the same role if crossing it changes what world, layer or state can be reached.</p>
+<h2 id="water-horse-sleipnir-connection">Why this connects to Sleipnir</h2>
+<p>This is where the water horse meets <strong>Sleipnir</strong>. Sleipnir is already the vehicle in my Norse event grammar: Odin is the operator, the spear is the rod, and Sleipnir is the mount that carries the operator between otherwise separated realms. The old Gotland image-stone tradition even preserves the rider and extraordinary horse together as an arrival/journey image.</p>
+<p>The water horse and Sleipnir are not identical creatures, but they occupy the same <strong>functional position</strong>. Both are supernatural mounts whose defining power is not strength alone but <strong>boundary-crossing movement</strong>. The Ceffyl Dŵr appears from water and can carry a rider into impossible distance, sky or mist. Sleipnir carries Odin through the worlds and is also used for the journey to Hel and back. One is remembered through the local language of pool, river, shore and dangerous water; the other through the cosmic language of the Nine Realms.</p>
+<p class="equation"><strong>water horse = local boundary mount &nbsp;|&nbsp; Sleipnir = world-system boundary mount</strong></p>
+<p>That makes the horse motif more useful to the mature model. The horse is not simply “transport.” It is a <strong>coupling mechanism between traveller and gate</strong>. The rider cannot make the crossing alone; the mount can. The same broad role appears in the earlier Vardath grammar as <strong>OPERATOR → VEHICLE → GATE</strong>, but the water-horse material shows the order from the other side: <strong>GATE → VEHICLE → RIDER TRANSFER</strong>.</p>
+<h2 id="two-carrier-modes">Two carrier modes now appear</h2>
+<div class="cards">
+<div class="card"><h3>Enclosed carrier</h3><p><strong>Basket / ark / chest / vessel.</strong> Life is protected inside a bounded form and the current carries the whole enclosure through the transition. This is the passive carrier mode seen in the waterborne-child family.</p></div>
+<div class="card"><h3>Mounted carrier</h3><p><strong>Water horse / Sleipnir.</strong> The traveller couples directly to a living or supernatural vehicle capable of crossing the boundary. This is the active carrier mode.</p></div>
+</div>
+<p>The two modes may be different cultural views of the same transport problem: <strong>how does something living survive or traverse a boundary that ordinary movement cannot cross?</strong> In one family the answer is enclosure. In the other the answer is a mount.</p>
+<h2 id="water-horse-prediction">What this predicts next</h2>
+<p>If this is a real structural family rather than a loose resemblance, supernatural-horse traditions should cluster around <strong>boundary media</strong> more often than ordinary heroic-horse stories do: water edges, mist, sky, bridges, caves, underworld roads, funeral passages, realm crossings and abrupt disappearance or return. The useful comparison is therefore not “how many myths contain magical horses?” but whether the horses that cross worlds disproportionately appear at gates and transition media.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Theodor_Kittelsen_-_N%C3%B8kken_som_hvit_hest.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Theodor_Kittelsen_-_N%C3%B8kken_som_hvit_hest.jpg?width=720" alt="The Water Sprite as a White Horse by Theodor Kittelsen"><span class="art-copy"><strong>The Water Sprite as a White Horse</strong><small>Theodor Kittelsen · 1907</small><em>A Nordic water spirit made explicitly horse-shaped: water boundary and vehicle occupy the same figure.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:The_Kelpie_by_Thomas_Millie_Dow.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Kelpie_by_Thomas_Millie_Dow.jpg?width=720" alt="The Kelpie by Thomas Millie Dow"><span class="art-copy"><strong>The Kelpie</strong><small>Thomas Millie Dow · 1895</small><em>Scottish water-horse tradition beside the Welsh Ceffyl Dŵr and the wider Celtic boundary-horse family.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ardre_Odin_Sleipnir.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ardre_Odin_Sleipnir.jpg?width=720" alt="Odin riding Sleipnir on the Tjängvide image stone"><span class="art-copy"><strong>Odin on Sleipnir</strong><small>Tjängvide image stone · Gotland · Viking Age</small><em>The realm-crossing mount appears in an archaeological image tradition, linking the local water-horse carrier role to the larger Norse world-crossing vehicle.</em></span></a>
+</div>
+</section>
+<!-- END SOURCE: cosmology_expansions/x13.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f22-revelation.txt -->
+<section class="late-research-block" id="revelation-comparison-section">
+<hr/>
+<h1 id="revelation-as-an-event-sequence">Revelation — the full event sequence beside the Vardath mechanism</h1>
+<p>Revelation deserves its own section because it does more than repeat one or two familiar symbols. Read from inside the present Vardath model, it repeatedly places <strong>axis, sevenfold light, opened heaven, fourfold movement, eyes, water, dragon, rod, falling stars, a rolled sky, displaced land, vertical transfer and a renewed world</strong> inside one sustained apocalyptic sequence.</p>
+<p>The comparison I am making is therefore not simply “Revelation has a dragon” or “Revelation has a flood.” It is the order in which the images accumulate:</p>
+<p class="equation"><strong>revealed axial figure → opened upper realm → fourfold activation → celestial disturbance → sky-scroll contraction → land displacement → dragon / rod / vertical transfer → global rupture → rider / rod return → renewed world</strong></p>
+<p>Placed beside the mechanical model:</p>
+<p class="equation"><strong>stable shell → activation → convergence → axial manifestation → changed adjacency → transfer through the gate → deformation / catastrophe → reopening → stabilised world</strong></p>
+
+<h2 id="revelation-1-axis-sevenfold-field">Revelation 1 — the axial figure inside a sevenfold field</h2>
+<p>Revelation 1 begins the visual sequence around a central anthropomorphic figure standing among seven lampstands and holding seven stars. The figure has fiery eyes, bright metal-like feet and a voice compared with many waters. In my reading this is the <strong>rod becoming visible as a figure</strong>: a central manifestation inside a sevenfold luminous field, with active eye-nodes and a direct association with water.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:BambergApocalypseFolio003rAngelWith7Candlesticks_-_2.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/BambergApocalypseFolio003rAngelWith7Candlesticks_-_2.jpg?width=720" alt="Bamberg Apocalypse figure among seven lampstands"><span class="art-copy"><strong>Son of Man and the seven lampstands</strong><small>Bamberg Apocalypse · c. 1000</small><em>The central figure is visibly surrounded by the sevenfold luminous field.</em></span></a>
+</div>
+
+<h2 id="revelation-4-open-door-throne-sea-eyes">Revelation 4 — open door, throne, lightning, crystal sea and eyes</h2>
+<p>Revelation 4 begins with a door standing open in heaven. Beyond it are the throne, flashes of lightning and thunder, seven lamps, something like a sea of glass or crystal, and four living beings covered with eyes. In the Vardath reading the <strong>open door</strong> is the temporary gate; the throne is the central ordering position; lightning and thunder are activation; the seven lamps are active nodes; the crystal sea is the upper water/ice boundary; the four beings occupy four sectors around the centre; and the many eyes are luminous apertures distributed through the canopy.</p>
+<p>The important part is that these images are assembled in one scene: <strong>gate + central axis + electrical activation + upper boundary + fourfold support + many eyes.</strong></p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:TriererApokalypse.Offenbarung.4.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/TriererApokalypse.Offenbarung.4.png?width=720" alt="Trier Apocalypse Revelation 4"><span class="art-copy"><strong>The throne vision</strong><small>Trier Apocalypse · c. 925</small><em>An early visual tradition for the throne, four living beings and ordered heavenly field.</em></span></a>
+</div>
+
+<h2 id="revelation-6-horsemen-scroll-land">Revelation 6 — four moving powers, falling stars and the sky rolling like a scroll</h2>
+<p>The opening seals produce the four horsemen. I read them as a moving fourfold system around the event rather than four isolated riders. The decisive transition arrives with the sixth seal: Sun and Moon change appearance, stars fall, the sky withdraws or rolls up like a scroll, and mountains and islands are moved from their places.</p>
+<p>That combination is central to the mature model. A woven sky contracting toward the rod is what the finger-trap mechanism is meant to describe. The text then pairs the sky change with <strong>surface displacement</strong>. In the Vardath sequence that is the transition from canopy contraction to crustal/material deformation.</p>
+<p class="equation"><strong>fourfold activation → celestial disturbance → scroll-sky contraction → land displacement</strong></p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Os_Quatro_Cavaleiros_do_Apocalipse.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht_D%C3%BCrer_-_Os_Quatro_Cavaleiros_do_Apocalipse.jpg?width=720" alt="Durer Four Horsemen of the Apocalypse"><span class="art-copy"><strong>The Four Horsemen</strong><small>Albrecht Dürer · 1497–1498</small><em>The fourfold moving phase at the opening of the seals.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:The_Opening_of_the_Fifth_and_Sixth_Seals%2C_from_The_Apocalypse%2C_Latin_Edition%2C_1511_MET_DP816077.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Opening_of_the_Fifth_and_Sixth_Seals%2C_from_The_Apocalypse%2C_Latin_Edition%2C_1511_MET_DP816077.jpg?width=720" alt="Opening of the fifth and sixth seals"><span class="art-copy"><strong>Opening of the fifth and sixth seals</strong><small>Albrecht Dürer · Apocalypse series</small><em>Celestial disturbance and terrestrial upheaval belong to the same seal transition.</em></span></a>
+</div>
+
+<h2 id="revelation-7-14-144000">Revelation 7 and 14 — the 144,000 thread</h2>
+<p>The number <strong>144,000</strong> appears in Revelation 7 in the sealing of the servants and again in Revelation 14 with the Lamb on Mount Zion. That matters here because 144,000 had already appeared in my separate timing and number research. I am keeping the relationship open rather than forcing one physical unit onto it. Inside the cosmology its useful role is as a repeated <strong>completion/state-count marker</strong> attached to preservation through catastrophe and the re-established ordered state, alongside Revelation’s wider 12/24/144 numerical architecture.</p>
+
+<h2 id="revelation-8-11-transfer-and-abyss">Revelation 8–11 — transfer between sky and surface, opening of the abyss</h2>
+<p>With the trumpets, the imagery becomes explicitly transfer-like: fire and burning material fall into earth and sea; a great star descends; waters are altered; the Sun, Moon and stars are struck; then the abyss is opened and smoke rises out of it. Later the temple is opened and the sequence again ends in lightning, thunder, earthquake and hail.</p>
+<p>In the Vardath model this is the <strong>exchange phase</strong>. Upper and lower regions are no longer sealed from one another. Material, light and destructive effects cross the boundary. The abyss is the lower gate-image corresponding to the upper door of Revelation 4: the event exposes vertical connectivity in both directions.</p>
+
+<h2 id="revelation-12-woman-dragon-rod-flood">Revelation 12 — Sun, Moon, dragon, stars, child, iron rod and flood</h2>
+<p>Revelation 12 is the closest single chapter to the symbolic vocabulary I had assembled from many different traditions. A woman appears clothed with the Sun and standing over the Moon. A great dragon appears. Stars are swept downward. A male child associated with an iron rod is born and taken upward. War occurs in heaven. The dragon is cast down and later sends a river or flood after the woman.</p>
+<p>In my reading those details form a continuous mechanical story: <strong>celestial alignment → serpent/dragon activation → loss or descent of sky nodes → appearance of the rod → vertical transfer through the gate → conflict between levels → water release.</strong></p>
+<p>This is also where the travelling-child research meets Revelation most directly. The child is not carried down a river in a basket here; instead the orientation is vertical. The role remains <strong>life crossing a dangerous boundary during a structural transition</strong>.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer%2C_The_Apocalyptic_Woman%2C_1498%2C_NGA_142358.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht_D%C3%BCrer%2C_The_Apocalyptic_Woman%2C_1498%2C_NGA_142358.jpg?width=720" alt="Durer Apocalyptic Woman and dragon"><span class="art-copy"><strong>The Apocalyptic Woman and the dragon</strong><small>Albrecht Dürer · 1498 · National Gallery of Art</small><em>Woman, celestial signs, dragon and child compressed into one visual field.</em></span></a>
+</div>
+
+<h2 id="revelation-16-global-deformation">Revelation 16 — the deformation phase becomes global</h2>
+<p>By the seventh bowl, lightning, thunder and a great earthquake return, cities fall, islands disappear and mountains are no longer found in their former state. This echoes the sixth seal at a larger scale. In my model that repetition suggests successive intensifications rather than one instantaneous snap: electrical activation, opening, falling material and geographic movement recur as the structure approaches complete reconfiguration.</p>
+
+<h2 id="revelation-19-rider-rod">Revelation 19 — the rider and iron rod as the ordered axial state</h2>
+<p>Revelation 19 returns to a white-horse rider with fiery eyes and iron-rod rulership. Earlier the rod appeared with the child; here rider and rod appear as active authority after the destructive sequence. In my synthesis this is the <strong>operator/manifestation phase</strong>: the axis that looked catastrophic during contraction becomes an ordering structure of the next state.</p>
+
+<h2 id="revelation-21-22-new-world">Revelation 21–22 — reopening into the next ordered world</h2>
+<p>The final chapters complete the cycle: a new heaven and new earth, a geometrically ordered city with gates, then a river of the water of life and the tree of life. Within Vardath Cosmology this is the <strong>reopened lattice after reset</strong>. The destructive rod becomes tree; chaotic or weaponised water becomes ordered river; the dangerous gate becomes the structured gates of the renewed world; unstable adjacency resolves into a stable inhabited configuration.</p>
+<p class="equation"><strong>scroll contraction → displacement → transfer/conflict → reset → gate re-forms → river stabilises → tree/rod becomes generative → new world</strong></p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Walters_Ms._W917_-_Apocalypse_by_Andrew_of_Caesarea_f.206v_New_Jerusalem_as_bride_of_the_lamb.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Walters_Ms._W917_-_Apocalypse_by_Andrew_of_Caesarea_f.206v_New_Jerusalem_as_bride_of_the_lamb.jpg?width=720" alt="New Jerusalem Apocalypse manuscript"><span class="art-copy"><strong>New Jerusalem</strong><small>Walters MS W.917 · Old Believer Apocalypse manuscript</small><em>The sequence closes not with empty destruction but with a rebuilt ordered world.</em></span></a>
+</div>
+
+<h2 id="revelation-vardath-phase-map">The whole Revelation sequence in Vardath terms</h2>
+<table><thead><tr><th>Revelation cluster</th><th>Vardath reading</th><th>mechanical phase</th></tr></thead><tbody>
+<tr><td>1 — seven lamps/stars, fiery eyes, many waters</td><td>central rod appears inside active nodes</td><td>axial manifestation</td></tr>
+<tr><td>4 — open door, throne, lightning, crystal sea, four beings, eyes</td><td>upper gate and canopy become visible</td><td>activation / opened adjacency</td></tr>
+<tr><td>6 — four riders, stars fall, sky rolls, land moves</td><td>fourfold motion gathers the sky toward contraction</td><td>convergence / deformation</td></tr>
+<tr><td>8–11 — falling material, altered waters, abyss opens</td><td>exchange between upper and lower regions</td><td>transfer through gates</td></tr>
+<tr><td>12 — dragon, stars, iron rod, child lifted, flood</td><td>serpent/current conflict around rod and vertical passage</td><td>contact / transport / water release</td></tr>
+<tr><td>16 — earthquake, islands and mountains displaced</td><td>surface reconfiguration reaches global scale</td><td>catastrophic deformation</td></tr>
+<tr><td>19 — white rider, fiery eyes, iron rod</td><td>axis reappears as ordering power</td><td>operator / stabilisation</td></tr>
+<tr><td>21–22 — new world, gates, river, tree</td><td>geometry reopens and becomes inhabitable again</td><td>new stable shell</td></tr>
+</tbody></table>
+<p>For me, this makes Revelation one of the strongest <strong>single-text sequence comparisons</strong> in the Cosmology. Other traditions may preserve one especially clear camera angle — the world tree, cosmic egg, serpent, flood, carrier, mountain or gate. Revelation repeatedly moves through many of those roles in sequence and ends not with annihilation alone but with a rebuilt ordered world.</p>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const section=document.getElementById('revelation-comparison-section');
+ const next=document.getElementById('15-the-32--1-direction-and-old-navigation-lattices');
+ if(section&&next) next.insertAdjacentElement('beforebegin',section);
+ document.querySelectorAll('.deepening').forEach(d=>{
+   const h=d.querySelector(':scope > h2:first-child');
+   if(h&&h.textContent.trim()==='Revelation as a compressed event sequence in the Vardath reading') d.remove();
+ });
+});
+</script>
+
+<!-- END SOURCE: cosmology_fragments/f22-revelation.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_expansions/x17-current-research-sections.txt -->
+<section class="current-research-zone" id="current-research-zone">
+<div class="callout"><strong>Current research and consolidated model.</strong> These sections collect the present form of the cosmology and the major refinements recovered from the 453-post WordPress research archive. They are placed before the historical reconstruction so the current model can be read first.</div>
+</section>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-operating-rules">The mature operating rules that emerged across the 453-article archive</h1>
+<p>The long article series sharpened several parts of the model that were previously scattered across individual myths, tests and mechanical notes. The important result is not another list of symbols. It is a set of rules that now govern how the Vardath world-cycle is supposed to behave.</p>
+<div class="note"><strong>453-post consolidation index.</strong> The article bank has been absorbed into the living page as synthesis rather than copied posts.<br/><strong>Core mechanics:</strong> <a href="#archive-operating-rules">operating rules</a> · <a href="#archive-gate-roles">gate roles</a> · <a href="#archive-gate-cargo">gate cargo</a> · <a href="#archive-shell-variables">shell variables</a> · <a href="#archive-shell-clock">shell clock</a> · <a href="#archive-number-distinctions">number/JANUS boundaries</a> · <a href="#archive-celestial">celestial branch</a> · <a href="#archive-surface-reset">surface reset</a> · <a href="#archive-material-reset">material reset</a> · <a href="#archive-vapour-canopy-cycle">vapour-canopy flood cycle</a> · <a href="#archive-waking-biology">waking biology</a> · <a href="#archive-event-handoff">event handoff</a>.<br/><strong>Comparative atlas:</strong> <a href="#archive-mountain-roles">mountain roles</a> · <a href="#archive-finnic-sami">Finnic/Sámi</a> · <a href="#archive-near-east-mediterranean">Near East/Mediterranean</a> · <a href="#archive-abrahamic-boundaries">Abrahamic boundaries</a> · <a href="#archive-south-asian">South Asia</a> · <a href="#archive-east-asian">China/Japan</a> · <a href="#archive-pacific-australia">Pacific/Australia</a> · <a href="#archive-northern-europe">northern Europe</a> · <a href="#archive-african">Africa</a> · <a href="#archive-americas">Americas</a>.<br/><strong>Research history:</strong> <a href="#archive-research-history-motifs">late narrative mirrors</a> · <a href="#archive-retired-branches">retired branches</a>.</div>
+<div class="cards">
+<div class="card"><h2>Quiet does not mean motionless</h2><p>A stable world is a <strong>dynamic equilibrium</strong>. Water, air, heat, life and celestial cycles continue moving, while the deeper lattice remains distributed enough that no single throat or axis dominates the world. Stability means the motions remain mutually compatible.</p></div>
+<div class="card"><h2>Adjacency is not ordinary distance</h2><p>Two world-turns do not have to move metre by metre until they touch. The gate is defined by a change in <strong>effective connectivity</strong>: normally separated regions acquire a short, high-capacity route through the changing weave.</p></div>
+<div class="card"><h2>A gate has duration and capacity</h2><p>An opening is not simply on or off. Width, duration, pressure difference, temperature difference, direction and cargo type determine what can cross. A narrow, brief opening may transmit gas or heat while blocking large debris or living organisms.</p></div>
+<div class="card"><h2>The gate sorts what crosses</h2><p>Water, air, fine sediment, large rock, heat, seeds, microbes, animals and people do not respond identically. The receiving world therefore inherits a <strong>filtered cargo</strong>, not a perfect copy of the source world.</p></div>
+<div class="card"><h2>Water is the tracer</h2><p>Water reacts quickly to changed geometry. Tilt a surface and drainage changes; open a boundary and water can cross; raise a ridge and rivers divide; lower a basin and water accumulates. In the mature model, flood is often the visible handwriting of a deeper structural change rather than the original cause.</p></div>
+<div class="card"><h2>Reset is not rewind</h2><p>Reopening restores a broad stable geometry, but it does not restore the old material arrangement. Sediment, coastlines, drainage, populations, ruins and ecological relationships can all be different. The next world belongs to the same structural class while carrying a different history.</p></div>
+<div class="card"><h2>Local throats can exist inside a global system</h2><p>The mature model does not require one permanent pole. A broad lattice can contain many local convergence points, with only some participating strongly during a given event. A local sacred centre or mountain therefore need not be the one centre of the entire cosmos.</p></div>
+<div class="card"><h2>Projection changes the symbol</h2><p>Broadside views favour mesh, braid and serpent; side views favour tree, rod, pillar, spear and ladder; end-on views favour eye, wheel, rosette, star, ring and cross; survival states favour egg, cave, ark, basket and shell. These are projection families inside the Vardath reading, not claims of one historical meaning.</p></div>
+</div>
+<p class="equation"><strong>dynamic equilibrium → activation → many-to-one convergence → finite-capacity throat → sorted transfer → surface response → reopening → settling → successor equilibrium</strong></p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-gate-roles">Gate roles, scale and closure — distinctions recovered from E270–E278</h1>
+<p>The gate articles sharpened the event grammar by separating roles that earlier versions sometimes collapsed together.</p>
+<div class="cards">
+<div class="card"><h2>Guardian ≠ gate</h2><p>A guardian marks, watches or restricts a threshold. The gate is the changed adjacency itself. Monster, serpent, paired sentry, giant or divine watcher can occupy the guardian role without being the mechanism that opens the boundary.</p></div>
+<div class="card"><h2>Gatekeeper ≠ operator</h2><p>The gatekeeper regulates local passage; the operator belongs to the larger apparatus or event. A traveller can encounter boundary control before ever reaching the figure associated with command.</p></div>
+<div class="card"><h2>Closed and open are two states of one boundary</h2><p>The quiet world does not lack the gate location. The same interface exists in a non-traversable state. Activation changes its function from stable separation to temporary passage, and recovery changes it back.</p></div>
+<div class="card"><h2>Surface threshold ≠ global reset</h2><p>Mountain, cave, well, bridge, mound, river edge and similar landscapes can represent local access. The archive explicitly separates <strong>local crossing → regional activation → multi-node event → global reset</strong>.</p></div>
+<div class="card"><h2>Ascent and descent share one axis</h2><p>The route does not need a different mechanism for each direction. Upward emergence and downward descent can be opposite senses through one changing throat.</p></div>
+<div class="card"><h2>Impossible distance follows changed adjacency</h2><p>Realm travel need not mean extraordinary speed along ordinary geography. If the gate shortens the effective route, sudden arrival is a consequence of topology rather than velocity.</p></div>
+<div class="card"><h2>Return is a timing problem</h2><p>A traveller can come back only while the route remains coupled strongly enough. The mountain, cave or river may remain after closure while the exceptional destination is no longer reachable.</p></div>
+<div class="card"><h2>Mythic memory begins after closure</h2><p>The witness preserves only one viewpoint. Later retelling can convert node to eye, winding strand to serpent, axis to tree or rod, enclosure to ark or egg, and material reset to flood, fire or opened heaven.</p></div>
+</div>
+<p class="equation"><strong>boundary → guardian / gatekeeper → opening → traversal → operator or destination → return window → closure → cultural memory</strong></p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-gate-cargo">Gate cargo and counterflow — the archive’s more detailed transfer model</h1>
+<p>Once the gate became a physical transfer state, the articles stopped treating “something crosses” as sufficient. Different cargo has different response times and constraints.</p>
+<table><thead><tr><th>cargo</th><th>Vardath expectation during a gate interval</th></tr></thead><tbody>
+<tr><td>gas / atmosphere</td><td>can respond rapidly to pressure gradients and may move before bulk liquid or rock</td></tr>
+<tr><td>water</td><td>can dominate mass transfer once a hydraulic path opens; direction depends on pressure, height and geometry</td></tr>
+<tr><td>heat</td><td>can cross without bulk matter through radiation, conduction or moving hot material</td></tr>
+<tr><td>fine sediment</td><td>travels efficiently with water or air and becomes part of the renewed surface</td></tr>
+<tr><td>large debris / rock</td><td>moves more slowly, can jam a narrow throat and may only cross during the strongest openings</td></tr>
+<tr><td>living material</td><td>requires not only passage but survivable pressure, temperature, chemistry and destination conditions</td></tr>
+</tbody></table>
+<p>The archive also makes transfer explicitly <strong>two-directional</strong>. Present-world material may be carried toward the next turn while water, atmosphere, debris or living material from the neighbouring turn moves toward the present one. The gate therefore behaves more like a temporary exchange throat than a one-way elevator.</p>
+<p>This is where the Haudenosaunee down/up sequence, the travelling-carrier family and the older Watcher/descending-world imagery become structurally related without being historically equated.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-shell-variables">Radius, thickness, pitch, phase and chirality — the state variables behind the shell picture</h1>
+<p>The archive eventually gave each recurring geometric word a separate job.</p>
+<table><thead><tr><th>variable</th><th>role in the mature model</th></tr></thead><tbody>
+<tr><td><strong>radius</strong></td><td>sets the scale of a particular turn; later turns may be larger without being different universes</td></tr>
+<tr><td><strong>thickness</strong></td><td>makes a world a volume rather than an infinitesimal line, allowing partial overlap and internal structure</td></tr>
+<tr><td><strong>pitch</strong></td><td>sets separation between successive turns along the growth direction</td></tr>
+<tr><td><strong>phase</strong></td><td>locates a strand or turn inside its cycle and determines when relative geometry becomes special</td></tr>
+<tr><td><strong>chirality</strong></td><td>records handedness; mirror-related structures need not open the same way under the same motion</td></tr>
+<tr><td><strong>overlap</strong></td><td>distinguishes mere angular alignment from actual shared volume or transfer-capable contact</td></tr>
+</tbody></table>
+<p>This is why the mature model separates <strong>geographic coordinates</strong> from <strong>shell coordinates</strong>. Latitude and longitude describe position inside one stable world. Turn, braid phase, local expansion and overlap describe the world’s address inside the larger structure.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-shell-clock">The shell clock after the full archive — recurrence, strength, reversal and pitch</h1>
+<p>The article bank separates several questions that were originally mixed together.</p>
+<div class="projection-grid">
+<div><b>Recurrence</b><span>when a gate condition returns</span></div>
+<div><b>Strength</b><span>how deep, broad or long the coupling becomes</span></div>
+<div><b>Reversal</b><span>what creates repeating relative gate opportunities between counter-wound structures</span></div>
+<div><b>Attraction / pitch</b><span>what changes the spacing or tightness of the spiral without itself creating the gate</span></div>
+<div><b>Chirality</b><span>which handedness the braid or shell relation has</span></div>
+<div><b>Overlap</b><span>whether angular coincidence also produces physically relevant contact</span></div>
+</div>
+<p>The fitted timing branch retained the useful construction in which a 1,104-year turn with eight gates gives 138-year spacing, opposite stronger gates give a 552-year relation, and the 1,104/736 pair closes its relative phase after 2,208 years. The archive is explicit that this is a constructed toy clock, not a derivation of the Archaix chronology.</p>
+<p>Later articles also make <strong>strength a depth variable</strong> rather than another clock. A gate can recur at the same phase while differing in width, duration, number of participating strands, pressure gradient or degree of layer overlap. That is a better physical distinction than assigning a separate celestial mechanism to every event class.</p>
+<p>The shell model still owes radius, thickness, chirality, growth law, phase, overlap and a real coupling force. Timing alone does not produce contact.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-celestial">The celestial branch after the archive — motion model first, ontology second</h1>
+<p>The later posts make a useful distinction: the model can ask what organises celestial motion without claiming it already knows what the Sun, Moon and planets physically are.</p>
+<p>The working possibilities remain open: material bodies, luminous structures, plasma phenomena, electromagnetic convergence points, or different classes of object. The more definite Vardath proposal is that their apparent tracks are organised by the broader sky geometry and its slow breathing or phase changes.</p>
+<p>The archive separates several roles:</p>
+<ul>
+<li><strong>Sun</strong> — annual dominant light path inside the stable sky;</li>
+<li><strong>Moon</strong> — faster repeating cycle and possible boundary marker in the symbolic atlas;</li>
+<li><strong>planets / wanderers</strong> — independently moving concentrations with slower drift;</li>
+<li><strong>star field</strong> — the broad-state celestial background;</li>
+<li><strong>rod-body</strong> — the speculative peak-convergence state in which separate luminous nodes could become more strongly coupled;</li>
+<li><strong>release</strong> — the return to differentiated paths after convergence.</li>
+</ul>
+<p>No version is complete until one explicit model reproduces real solar, lunar and planetary observations in both hemispheres and then predicts what, if anything, changes during the proposed gate event.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-surface-reset">The surface-reset branch in full — what a deeper moving lattice would have to reproduce</h1>
+<p>The article bank develops the “surface is cargo” idea beyond coastlines. A successful deeper-driver model would have to account for the same observed system that plate tectonics already describes quantitatively.</p>
+<div class="cards">
+<div class="card"><h2>Compression</h2><p>Mountain belts and thickened crust would be surface responses above regions where deeper flow converges or where transported blocks jam.</p></div>
+<div class="card"><h2>Extension</h2><p>Rifts and opening basins would correspond to regions where the deeper pattern pulls support apart rather than together.</p></div>
+<div class="card"><h2>Oblique shear</h2><p>Alternating or offset motion could generate curved chains, hinges and S-shaped transport paths rather than simple radial spreading.</p></div>
+<div class="card"><h2>Trenches and island arcs</h2><p>These become hard controls: the same fixed field must reproduce their location and orientation, not merely explain continent outlines after the fact.</p></div>
+<div class="card"><h2>Earthquakes</h2><p>The speculative deeper model would interpret earthquakes as sudden release in a loaded crust, but it still has to match measured fault geometry and motion.</p></div>
+<div class="card"><h2>Ocean basins</h2><p>Basins are the low regions in the surface cargo layer. Their shape, age structure and relation to ridges are constraints on any deeper-flow proposal.</p></div>
+<div class="card"><h2>Sediment</h2><p>Flood and reset material does not disappear; it blankets, sorts and becomes part of the successor surface. Sediment is therefore a direct archive of transport conditions.</p></div>
+<div class="card"><h2>Volcanism and heating</h2><p>The article bank allows material ascent, mechanical heating and speculative electrical heating during deformation, but these have to be distinguished from established magmatic and tectonic processes.</p></div>
+</div>
+<p>The falsification rule remains severe: <strong>one fixed deeper field must predict plate vectors, boundaries, mountain axes, trenches, arcs, earthquake zones and major deformation patterns simultaneously.</strong> Retuning the field for every region would make the hypothesis non-predictive.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-material-reset">From heating to cooling — the full material-reset chain</h1>
+<p>The later archive treats vitrification as only one possible stage in a longer materials sequence:</p>
+<p class="equation"><strong>loading / fracture → heating → phase change → melt or glass formation → gas / vesicle development → recrystallisation → cooling → renewed weathering and sedimentation</strong></p>
+<p>That framing matters because “melted-looking” is not a diagnosis. A claimed reset sample would need petrography, chemistry, mineral phases, microstructure and dating that distinguish natural geology, ordinary fire, industrial heat and the proposed event. The article bank keeps ordinary brick expansion and quartz inversion as controls precisely because the measured changes are far smaller than the spectacular scale claimed by fringe Meltology interpretations.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-vapour-canopy-cycle">The vapour-canopy flood cycle — ice, steam, cooling and flood</h1>
+<p>The present model now gives the vapour canopy a precise place in the door event. It is <strong>not simply assumed to sit permanently above the quiet world</strong>. It arrives as the upper waters are transformed during the active plasma phase.</p>
+<p class="equation"><strong>door opens → plasma intensifies → upper ice melts → water steams → vapour canopy forms → world cools → steam condenses → world floods</strong></p>
+<div class="cards">
+<div class="card"><h2>1. Door opening and plasma heating</h2><p>As the lattice contracts and the door becomes active, the plasma/electrical environment intensifies. In the model, that energy heats the frozen upper-water reservoir.</p></div>
+<div class="card"><h2>2. Ice melts</h2><p>The upper ice changes first into liquid water. This supplies the water that will feed both the temporary atmosphere and the later flood.</p></div>
+<div class="card"><h2>3. Water steams</h2><p>While the event remains hot, part of that meltwater is driven into steam. The atmosphere rapidly becomes wetter, denser and more highly pressurised.</p></div>
+<div class="card"><h2>4. Vapour canopy arrives</h2><p>The steam accumulates as the vapour canopy. This is the phase in which the model places its high-pressure, high-oxygen, moisture-rich, plasma-active biological environment.</p></div>
+<div class="card"><h2>5. The world cools</h2><p>As the peak plasma/door phase passes, the heat input drops. The atmosphere can no longer hold the same mass of water as steam.</p></div>
+<div class="card"><h2>6. Steam condenses and the world floods</h2><p>The canopy condenses back into liquid water and falls. The flood is therefore the cooling end of the canopy cycle, not a separate event from it.</p></div>
+</div>
+<p>This ties several older Vardath branches into one sequence: <strong>upper ice/waters, plasma activation, vapour canopy, pressure increase, biological change, cooling and flood</strong>. The canopy is the hot atmospheric phase; the flood is what happens when that phase collapses through cooling and condensation.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-waking-biology">Biology during the vapour-canopy phase — giants, longevity and mutation</h1>
+<p>In the present Vardath model, these biological conditions belong specifically to the <strong>vapour-canopy interval created by the active door</strong>. After the upper ice melts and the water steams, the canopy produces a <strong>high-pressure, high-oxygen, water-rich environment inside an intensified electrical/plasma state</strong>. Pressure, oxygen, moisture, warmth and electrical activity are therefore treated as one temporary interacting world-condition rather than unrelated variables.</p>
+<div class="projection-grid">
+<div><b>vapour canopy / pressure vessel</b><span>the water-rich upper boundary contains and loads the atmosphere beneath it</span></div>
+<div><b>high pressure + high oxygen</b><span>define the breathing and growth regime of the waking or earlier world</span></div>
+<div><b>moisture + warmth</b><span>support dense biological productivity, large vegetation and a different heat/water balance</span></div>
+<div><b>plasma / electrical environment</b><span>belongs to the same active world-state and, in the model, increases mutation and developmental variation</span></div>
+<div><b>giant-life regime</b><span>plants, animals and human or humanlike beings can grow to scales that the quiet-world environment does not normally support</span></div>
+<div><b>telomere / repair regime</b><span>the model connects the pressure-and-oxygen environment with maintained or regrown telomeres, continued repair and extreme longevity</span></div>
+</div>
+<p>Within this cosmology, giantism is therefore not a decorative mythic branch added afterward. It is a biological consequence of the canopy state. A denser atmosphere changes the physical medium in which organisms breathe, move and fly; higher oxygen changes respiratory availability; heavy moisture and warmth alter growth conditions; and the more active plasma environment changes developmental pressure. The model applies that package across life rather than to one selected species, allowing enormous plants, animals and people. Medieval and older images of outsized ordinary creatures — including giant-snail imagery — remain interesting here as possible cultural memories of such a regime.</p>
+<p>The longevity branch follows the same logic. Vardath Cosmology proposes that under the strong canopy regime, repair does not run under the same limits as in the quiet world. The model links barometric/high-pressure conditions and oxygen availability with the possibility of <strong>telomere maintenance or regrowth</strong>, so organisms can remain alive and growing for extraordinary periods while the regime persists.</p>
+<p>The most extreme biological version goes further. If growth and repair remain strongly supported by the environment, tissue that would normally fail quickly may remain viable. The model therefore allows the possibility that <strong>separated or abnormal living tissue can continue to grow</strong> — for example a severed tissue fragment or removed tumour — rather than automatically dying once separated from the body. This is part of the same speculative biological regime, not a separate claim about present-day medicine.</p>
+<p>This biological interval ends as the world cools. Steam condenses out of the atmosphere, the vapour canopy collapses into rain and floodwater, pressure and oxygen conditions move away from the canopy state, and the plasma environment becomes less intense. In the model, biological scale, lifespan and mutation pressure change with that environmental transition.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-number-distinctions">The archive’s numerical distinctions — what survived, what failed, and what must not be merged</h1>
+<p>The 453-post archive repeatedly returns to 7, 8, 11, 33 and 137, but the later articles are much stricter about keeping unlike meanings apart.</p>
+<div class="cards">
+<div class="card"><h2>7 and 8</h2><p>Seven is treated symbolically as the completed internal field, the missing/harvested component or the seven nonzero directions inside selected JANUS structures. Eight is the closure or threshold beyond that field. This remains a Vardath symbolic relation unless a specific mathematical construction forces it.</p></div>
+<div class="card"><h2>11 as doorway</h2><p>Eleven entered the project visually as two pillars, two rods or two eyes with an interval between them. In JANUS the value 11 also appears as the selected seed sum 1+3+7. Those are different reasons for the same number and should not be treated as one proof.</p></div>
+<div class="card"><h2>The Ogdoad / generative surround</h2><p>Eightfold creation or enclosure imagery is grouped by role: a generative surround through which a centre appears. The comparison is functional, not a claim that Egyptian Ogdoad material historically encodes JANUS.</p></div>
+<div class="card"><h2>Fruit, eye, seed and world</h2><p>The archive develops a generative-node family in which fruit, eye, egg, seed and enclosed world are all stable products organised around a centre. This is a symbolic projection family, not an etymology or biological derivation.</p></div>
+</div>
+<p>The exact JANUS statements remain narrower. The 3–4–5 decomposition belongs to the chosen operator and is not a pyramid code. The determinant value <strong>33</strong> is mathematically unrelated to the later <strong>33rd-direction</strong> name for the axis through a 32-bearing surface. The integer <strong>137</strong> arises in the canonical completion used in JANUS, but the audited core does not derive the physical fine-structure constant 137.036.</p>
+<p>One failed branch became especially productive: two static rods did <strong>not</strong> automatically generate a third spatial dimension. The project only obtained a genuine changing spatial relation when phase/time was introduced. That failure fed directly into the mature braid, where opposed strands plus phase can move in opposite axial senses inside one structure.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-mountain-roles">The archive forced a four-way distinction between sacred mountains</h1>
+<p>Earlier versions of the project tended to treat every important mountain as another name for the axis. The expanded article bank made that too simple. Mountains can occupy at least four different structural roles.</p>
+<div class="projection-grid">
+<div><b>Axis mountain</b><span>a vertical world-organising centre, such as Meru in the comparative atlas</span></div>
+<div><b>Support mountain</b><span>a load-bearing or stabilising element whose failure can deform the world</span></div>
+<div><b>Threshold mountain</b><span>a local place where ordinary horizontal geography becomes passage between regions, as in Mashu-type comparisons</span></div>
+<div><b>Regional anchor</b><span>one of several mountains that orient and stabilise a landscape without claiming universal centrality</span></div>
+</div>
+<p>This distinction matters mechanically. A convergence throat may appear mountainous near its base, but not every mountain need be a throat. A distributed world can have many anchors and supports while the transient axial state appears only during particular phases.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-finnic-sami">Finnish, Karelian and Sámi material — enclosure, overgrowth, fragmentation and access</h1>
+<p>The larger archive adds several stages beyond the familiar cosmic egg and Sampo. In the Finnish/Karelian sequence, primordial water and Ilmatar provide the formative medium; the egg provides enclosure; rupture differentiates the cosmos; the great oak then shows that a central growth can become <strong>too dominant</strong>, blocking ordinary light until it is reduced. The Sampo is treated as a <strong>bound engine of order and abundance</strong>: an organised productive centre whose later <strong>breakage</strong> shows that an old system can continue to affect the future through fragments. The hidden Sun and Moon add another systems rule: <strong>a source can still exist while access to it is cut off</strong>.</p>
+<p>The sequence therefore becomes:</p>
+<p class="equation"><strong>primordial water → gestation → enclosure → rupture → axial overgrowth → reduction → productive centre → fragmentation → hidden light → reconnection</strong></p>
+<p>Sámi material contributes a different part of the mechanism. Layered cosmograms, drum surfaces and accounts of exceptional travel or communication between domains make the strongest comparison at the level of <strong>access</strong>, not catastrophe. The useful Vardath lesson is that worlds can coexist before any reset occurs; a boundary can change what is reachable or perceptible without the entire cosmos collapsing.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-near-east-mediterranean">Near East, Egypt, Iran and the Mediterranean — a fuller sequence of old body, boundary and renewal</h1>
+<h2>Mesopotamia — the old world becomes the material of the new</h2>
+<p>The archive separates the roles more carefully than the earlier summary: <strong>Apsu</strong> is provisionally the deep or basal watery condition; <strong>Tiamat</strong> is the old structural world-body; <strong>Kingu</strong> is explored as activated authority; <strong>Marduk</strong> occupies the storm-operator role; net and winds provide containment and directional force; division of the old body becomes inheritance into a new order. The key principle is <strong>reorganisation rather than replacement from nothing</strong>.</p>
+<h2>Egypt — the world must be raised, supported, traversed and renewed</h2>
+<p>Nun and the first mound describe stable land emerging from primordial water. <strong>Atum</strong> adds the first self-organising centre: ordered differentiation begins from a local emergent point rather than from a finished world. Nut, Shu and Geb then describe maintained separation. The <strong>djed</strong> adds a stable-axis state after the violent transition: a pillar can represent endurance rather than an opening gate. The solar barque through the Duat makes disappearance a transit phase; Akhet makes the horizon a gate-like boundary; Apophis represents disruption at the edge of the route; Osiris adds dismemberment and reassembly; Khepri makes sunrise the renewed emergence at the end of the hidden passage.</p>
+<p class="equation"><strong>water → first land → separated sky/earth → stable support → hidden transit → disruption → reassembly → renewed emergence</strong></p>
+<h2>Iranian material — catastrophe as renovation</h2>
+<p>Hara Berezaiti, the world sea, the Chinvat Bridge, Gaokerena, ordered celestial stations, molten-metal purification, Saoshyant and Frashokereti form a complete architecture of centre, boundary, dangerous crossing, continuity of life, high-energy transition and renewed world. For Vardath the important comparison is that the world survives by <strong>becoming new</strong>, not by being discarded.</p>
+<h2>Greek and Roman material — succession, containment and boundary roles</h2>
+<p>The wider archive adds Oceanus as enclosing water, the Orphic egg as closed pre-world form, Cronus as containment before release, Zeus as release operator, Typhon as serpentine challenge to the new order, Deucalion as flood survival and re-seeding, Styx as water boundary, Hermes as guide across boundaries, Hestia as still centre, Olympus as upper region still connected to the human world, and Janus as the doorway that faces both ways. The <strong>Delphic omphalos</strong> adds an important local-node distinction: a sacred “navel” can mark a remembered centre of connection without being the one geometric centre of Earth. <strong>Phaethon</strong> adds the opposite celestial lesson: a path can exist yet become catastrophic when motion is no longer correctly coupled to it. These roles do not form one Greek technical sequence; together they sharpen the Vardath distinction between <strong>centre, enclosure, guide, gate, operator, route, survivor and successor world</strong>.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-abrahamic-boundaries">Abrahamic boundary architecture — witnessed ladder, traversed heavens and controlled passage</h1>
+<p>The expanded archive distinguishes catastrophic opening from <strong>authorised or controlled passage</strong>. Jacob at Bethel gives the witnessed vertical road: earth, ladder/stairway, moving messengers and the designation of a place as gate of heaven. The Israʾ and Miʿrāj tradition adds a traveller, guide, vehicle, repeated guarded thresholds, differentiated heavens, an upper limit and return.</p>
+<p>The combined structural lesson is:</p>
+<p class="equation"><strong>surface transfer → vertical access → repeated gate → differentiated level → upper boundary → return</strong></p>
+<p>This is important because a mature layered-world model cannot make every crossing a catastrophe. It needs at least three states: <strong>quiet separation, selective passage and destructive rupture</strong>. The article bank repeatedly returns to that distinction.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-south-asian">South Asian additions — axis, circulation and an eternal layered cosmos</h1>
+<p>The Vedic/Hindu branch becomes more precise when Meru is separated from Mandara and the churning image. Meru represents organised centre; Mandara in the churning sequence is an <strong>active axial implement</strong> around which opposed forces produce transformation. Vṛtra remains the obstruction-and-release pattern, while recurring dissolution and recreation give the larger rhythm.</p>
+<p>Jain cosmology adds a useful contrast. Its universe is eternal and layered rather than created once from nothing. For Vardath this provides a structural neighbour to the idea that previous, present and next worlds are regions or phases of one continuing total system. The comparison is architectural only: <strong>one cosmos, internally layered, differently inhabited, recurring through large temporal phases without requiring creation ex nihilo</strong>.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-east-asian">China and Japan — the detailed state transitions recovered from the archive</h1>
+<h2>Chinese sequence — separate, support, fail, repair, channel</h2>
+<p>The extended Chinese branch adds Gonggong and Mount Buzhou, multiple heavenly supports, Kunlun, Jianmu, Fusang and the dragon to the Pangu–Nüwa–Yu material already on the page. In the Vardath synthesis they form a coherent systems sequence:</p>
+<p class="equation"><strong>connected condition → separation → distributed support → support failure → deformation and abnormal water → repair → re-channelled flow → stable world → local vertical nodes → phase-dependent thresholds</strong></p>
+<p><strong>Buzhou</strong> forces a distinction between structural failure and the flood that follows it. <strong>Nüwa</strong> makes reset into repair rather than annihilation. <strong>Gun and Yu</strong> distinguish blocking water from reorganising its routes. <strong>Kunlun</strong> acts as local vertical address; <strong>Jianmu</strong> as living continuity between levels; <strong>Fusang</strong> adds phase or timing to location; the <strong>dragon</strong> becomes current made visible through water, cloud and weather. The deeper lesson is that the quiet world is a distributed network; the axis is a temporary state of that network.</p>
+<h2>Japanese sequence — boundary, axis, sealing and controlled descent</h2>
+<p>The Japanese article sequence is one of the clearest collections of boundary states in the bank:</p>
+<p class="equation"><strong>Floating Bridge → Heavenly Spear → Onogoro → Yomi descent → sealed return → purification → Rock Cave closure/reopening → Orochi network/hidden blade → Ninigi descent</strong></p>
+<p>The <strong>Floating Bridge</strong> supplies the suspended interface; the <strong>Heavenly Spear</strong> gives directional axial action into unstable material; <strong>Onogoro</strong> shows local stability before global stability; <strong>Yomi</strong> provides lower-world contact; <strong>Yomotsu Hirasaka</strong> makes resealing explicit; <strong>purification</strong> becomes the recovery process after contact; <strong>Amaterasu’s cave</strong> demonstrates that excessive closure can also make a world fail; <strong>Yamata no Orochi</strong> provides distributed serpent multiplicity containing a concentrated blade; <strong>Ninigi</strong> adds controlled descent from above. The important correction is that not every useful boundary should be open and not every closure is safe: <strong>world order depends on the right pattern of connectivity</strong>.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-pacific-australia">Polynesian and Australian archive expansion — opening worlds and distributed paths</h1>
+<h2>Polynesian sequence — compression, separation, emergence, regulation and hard boundaries</h2>
+<p>The 453-post bank develops the Māori/Polynesian material beyond the shorter Rangi-and-Papa comparison already on the page. <strong>Rangi and Papa</strong> provide the compressed beginning; <strong>Tāne</strong> supplies the operator who increases the spacing and makes ordinary life possible; <strong>Te Pō → Te Ao Mārama</strong> gives creation as successive differentiation from darkness into a world of light; <strong>Māui fishing up islands</strong> makes stable land emerge from the hidden waters; <strong>Māui slowing the Sun</strong> adds regulation, showing that a world can already exist yet still require its celestial rate to be brought into a habitable range; <strong>Hine-nui-te-pō</strong> adds a boundary that cannot simply be crossed twice; and <strong>Tangaroa</strong> keeps the ocean as an enduring domain rather than merely a catastrophe.</p>
+<p class="equation"><strong>compressed sky/earth → forced separation → light → land emergence → regulation → irreversible boundary → oceanic continuity → stable world</strong></p>
+<p>The contribution is a correction to the idea that world-formation ends when layers separate. A viable world also needs rates, boundaries and domains to settle into workable relationships.</p>
+<h2>Australian branch — world as distributed relation rather than one centre</h2>
+<p>The expanded Australian branch deliberately does <strong>not</strong> turn distinct Aboriginal traditions into one sequence. Instead it contributes a network grammar. Rainbow Serpent traditions emphasise winding movement, water and land-shaping; songlines show geography, memory, law and ancestry carried through routes rather than one central monument; Tiddalik gives a withholding-and-release pattern in which catastrophe comes from <strong>maldistribution</strong> rather than lack of total water; Seven Sisters traditions connect movement through Country with a moving star group; the Emu in the Sky shows that a coherent celestial figure can be defined by <strong>negative space</strong>; and the Milky Way supplies a broad sky band that can be read as route, river or medium.</p>
+<p class="equation"><strong>serpent path → water node → route network → concentration / release → sky journey → negative-space figure → broad celestial band</strong></p>
+<p>The mature Vardath lesson is <strong>path before centre</strong>. A woven world can be organised by routes and intersections, with local centres appearing where routes cross or become important. This branch also strengthens the observational distinction between <strong>nodes, paths, fields and the spaces between them</strong>.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-northern-europe">Norse, Irish and Slavic detail — boundaries that fail, open and return</h1>
+<h2>Norse — a full before-and-after architecture</h2>
+<p>Ginnungagap gives separation before stable relation; opposed primordial regions provide strong gradients around formation; Jörmungandr gives a quiet circumferential boundary; Fenrir gives dangerous force held under restraint; Ragnarök begins when ordinary constraints fail; Surtr gives the high-energy destruction phase; Líf and Lífþrasir preserve continuity through enclosure; the renewed earth establishes that the ending is a reset rather than permanent absence.</p>
+<p class="equation"><strong>separation → formation → boundary → stored tension → release → fire / water / breakdown → refuge → renewed world</strong></p>
+<p>Bifröst and Sleipnir remain useful precisely because they are <strong>not the same role</strong>: bridge is infrastructure, mount is vehicle, rider is operator/traveller.</p>
+<h2>Celtic / Insular — a vocabulary of local access</h2>
+<p>Welsh Annwn and Irish Tír na nÓg supply neighbouring-realm imagery; sídhe mounds supply local gate landscapes; the Voyage of Bran supplies sea-route travel; Tech Duinn supplies a receiving boundary at the western edge; the Well of Segais supplies hidden water and knowledge; Newgrange adds a bounded passage whose illumination depends on a celestial time. The strongest Vardath contribution is not catastrophe but <strong>threshold geography</strong>: nearby otherworld, route, mound, vessel, receiver, source and timed opening.</p>
+<h2>Slavic — vertical opposition inside one world tree</h2>
+<p>Perun and Veles provide upper thunder force and lower watery/serpentine power; the world tree keeps sky, human world and lower region in one connected vertical architecture; Vyraj adds a distant realm associated with birds and return; zmey/dragon traditions place serpentine power at boundaries. The useful pattern is <strong>upper activation ↔ lower water/serpent ↔ axial relation</strong>, without reducing the distinct traditions to one event.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-african">African additions — controlled descent, enduring deep water and the hidden half of a cycle</h1>
+<h2>Yoruba — world formation through controlled transfer</h2>
+<p>The fuller Yoruba sequence is one of the archive’s cleanest non-catastrophic gate models:</p>
+<p class="equation"><strong>Orun and Aiye → chain → controlled descent → enclosed cargo → land seed → outward spreading → Ile-Ife centre → Olokun deep water → stable relation between realms</strong></p>
+<p>The chain is the connector rather than the destination. Carried earth-making material shows that a gate can transfer <strong>cargo</strong>. Land spreading over primordial water is the inverse of convergence: concentrated delivery becomes distributed stability. Ile-Ife functions as remembered local centre, while Olokun shows that the older deep-water domain can persist after land forms. The mature rule is that <strong>new order partitions an older medium rather than necessarily destroying it</strong>.</p>
+<h2>Kongo — cycle, Kalunga and continuity through the unseen phase</h2>
+<p>The dikenga cosmogram adds cross-and-cycle geometry rather than another catastrophe story. The Kalunga line provides a water-associated boundary between visible and hidden domains; the Sun’s four major moments provide emergence, height, descent and hidden passage; the unseen phase still belongs to the cycle. For Vardath this becomes a compact rule:</p>
+<p class="equation"><strong>emerge → manifest → descend → hide → return</strong></p>
+<p>The important contribution is that <strong>disappearance is not annihilation</strong>. A phase can continue beyond the observer’s present boundary and return later without time reversing.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-americas">The Americas — emergence, succession, bidirectional transfer and distributed sacred geography</h1>
+<h2>Mesoamerica — world tree, underworld route and succession of worlds</h2>
+<p>The Maya world tree gives an axis connecting sky, earth and underworld; Xibalba is reached through a difficult route of descents and crossings; the Hero Twins add descent, transformation and return; the wooden people provide a failed-world-and-flood sequence; the maize people represent stable humanity formed from the established world. Mexica material adds the Five Suns as explicit successive worlds, Cipactli as primordial body becoming structured earth, and Quetzalcoatl’s descent to Mictlan to retrieve the bones of earlier humanity as <strong>inheritance from a previous human order</strong>.</p>
+<p class="equation"><strong>layered cosmos → dangerous descent → transformation / return → failed world → clearing catastrophe → stable humanity → successor ages → old material carried forward</strong></p>
+<h2>Haudenosaunee — one of the clearest bidirectional transfer sequences</h2>
+<p>Sky World already exists. A local opening allows Sky Woman to descend into a water world below. Animals receive her. Turtle provides support. The <strong>Earth-Diver brings world-material up from the deep</strong>: earth moves <strong>upward</strong> from beneath the waters while life has moved <strong>downward</strong> from the Sky World. Land then expands and paired world-shaping forces differentiate it.</p>
+<p class="equation"><strong>upper world → local gate → downward life-transfer → receiving water world → support → upward material-transfer → expanding surface → differentiation</strong></p>
+<h2>Diné — previous world, crisis, narrowing route, emergence and new directional frame</h2>
+<p>The Diné branch is one of the closest narrative analogues to the fingertrap transition. Earlier worlds precede the present one; rising water makes a former world uninhabitable; movement concentrates on a reed-like vertical route; the passage is narrow; the next world opens broad again; sacred mountains then establish the directional frame of the present homeland.</p>
+<p class="equation"><strong>world n−1 → crisis → convergence → narrow axis → emergence → world n → distributed anchors → stability</strong></p>
+<p>The reed belongs to transition geometry; the mountains belong to stable-world geometry. This prevents the project from treating the gate and the settled world as the same structure.</p>
+<h2>Hopi — successive worlds and the remembered small opening</h2>
+<p>The Hopi comparison contributes successive-world emergence and the <strong>sipapu</strong>: a small opening that can preserve the memory of passage from an earlier world into the present one. In the Vardath reading, the significance is scale: a tiny architectural aperture can symbolise a much larger transition without needing to be the physical portal itself.</p>
+<h2>Andean — event becomes geography, then network</h2>
+<p>The larger Andean sequence begins with water and darkness around the Titicaca–Viracocha creation complex, includes an earlier humanity destroyed before a later order, then becomes distributed through <strong>paqarina</strong> origin places, the radial <strong>ceque</strong> network and regional <strong>apus</strong>.</p>
+<p class="equation"><strong>formative water → local creation centre → ordered light → failed earlier world → flood / clearing → successor population → local emergence nodes → radiating lines → regional mountain anchors</strong></p>
+<p>This is especially valuable because it shows how an extraordinary world-transition can end as ordinary sacred geography: the cosmos becomes landscape, the landscape becomes network, and the network becomes culture.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-research-history-motifs">Two late narrative mirrors kept as research history — Saint Christopher and the beanstalk</h1>
+<p>Two of the WordPress articles deliberately used much later stories, not as ancient evidence, but as exceptionally clean narrative mirrors of mechanisms the model had already developed.</p>
+<h2>Saint Christopher — embodied carrier, river boundary and rod becoming tree</h2>
+<p>In the medieval Christopher legend, the giant carries a child across dangerous water while using a staff for stability; the burden becomes impossibly heavy and is revealed as Christ and the weight/maker of the world; afterward the planted staff becomes a living, fruiting tree. The Vardath interest is the compressed role sequence:</p>
+<p class="equation"><strong>embodied carrier → water boundary → exceptional child / world-weight → portable rod → far bank → planted rod → living tree</strong></p>
+<p>This adds a third carrier class beside enclosed carriers and mounted carriers: the <strong>body itself becomes the vehicle</strong>. It also makes the portable staff a reversible human-scale form of the living axis. The source is medieval hagiography, so it is retained as a research-history analogy, not an independent ancient witness.</p>
+<h2>Jack and the Beanstalk — a temporary living route that must be severed</h2>
+<p>The beanstalk story gives an unusually explicit temporary-gate sequence: seed, sudden vertical growth through the clouds, human ascent, giant-associated upper domain, material transfer downward, pursuit and deliberate severing of the route.</p>
+<p class="equation"><strong>closed separation → living connector → crossing → cargo transfer → dangerous pursuit → connector cut → separation restored</strong></p>
+<p>Its recorded literary history is modern, so the value is mechanical rather than evidential. It demonstrates in story form the distinction between a permanent world-axis and a <strong>transient access state</strong> whose closure is necessary for ordinary separation to return.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-retired-branches">Retired branches preserved as part of the research history</h1>
+<p>The article archive contains several ideas that mattered to the development but are no longer required by the mature cosmology. Keeping them visible prevents the page from rewriting its own history.</p>
+<ul>
+<li><strong>The −113 °C upper-water branch:</strong> an early attempt to make the upper region a very cold ordered water/ice layer. The temperature was exploratory and never physically derived.</li>
+<li><strong>Outward-pressure gravity:</strong> an early buoyancy-like alternative in which apparent gravity was linked to pressure inside the enclosure. This branch did not survive the later model.</li>
+<li><strong>Sun and Moon at serpent ends:</strong> a February-era caduceus interpretation in which paired channel ends were assigned to Sun and Moon. The mature braid no longer requires that identification.</li>
+<li><strong>Moon as star projector:</strong> an attractive enclosed-sky story that was later retired because it was not required and had no adequate observational derivation.</li>
+<li><strong>One literal polar-map implementation:</strong> rejected when its direct distance and shape predictions failed, especially at southern latitudes. This retired a specific map construction, <em>not</em> the broader flat world-disc premise retained in the present cosmology.</li>
+<li><strong>Spiral angle as longitude:</strong> rejected because a logarithmic spiral does not close after one full turn, making ordinary geography discontinuous.</li>
+</ul>
+<p>The surviving lesson from these failures is methodological: a visual idea can contribute a useful structural intuition without its literal first interpretation surviving.</p>
+</div>
+
+<div class="archive-consolidation current-research-section">
+<h1 id="archive-event-handoff">The archive’s final refinement: the event is a handoff, not a single catastrophe</h1>
+<p>Across the 453 articles, the model gradually stopped treating reset as one spectacular instant. The mature picture is a <strong>handoff between world states</strong>. The transition has a lead-in, a peak coupling interval and a long recovery.</p>
+<table><thead><tr><th>regime</th><th>what the model now assigns to it</th></tr></thead><tbody>
+<tr><td><strong>Quiet / distributed</strong></td><td>dynamic equilibrium, broad lattice, closed nodes, ordinary circulation, distinct world-turns</td></tr>
+<tr><td><strong>Activation</strong></td><td>growing preferred paths, stronger nodes, increasing coupling, atmospheric or hydraulic precursors in speculative branches</td></tr>
+<tr><td><strong>Convergence</strong></td><td>many directions narrow, local throats strengthen, braid becomes axial/fingertrap-like</td></tr>
+<tr><td><strong>Gate interval</strong></td><td>finite-duration adjacency, capacity-limited counterflow, sorting of gas/water/heat/sediment/debris/life</td></tr>
+<tr><td><strong>Surface response</strong></td><td>flood, wind, heat, darkness, debris movement, changed drainage, deformation and possible local material transformation</td></tr>
+<tr><td><strong>Reopening</strong></td><td>one-to-many geometry returns, coupling drops, nodes close, local directions reappear</td></tr>
+<tr><td><strong>Recovery</strong></td><td>cooling, drainage, settling, sedimentation, ecological and atmospheric re-equilibration</td></tr>
+<tr><td><strong>Successor world</strong></td><td>same broad structural class, different material history; inherited cargo and memory remain</td></tr>
+</tbody></table>
+<p>This is why the model now treats flood, fire, violent wind, darkness, falling material and moving land as potentially different <strong>surface expressions</strong> of one deeper transition rather than requiring every region to remember the same catastrophe. It is also why failure of one speculative branch—giants, upper-water physics, celestial incorporation or a particular chronology—does not automatically remove the geometric core. The strongest internal sequence remains:</p>
+<p class="equation"><strong>quiet lattice → convergence → axial throat → temporary adjacency → transfer → reopening → successor equilibrium</strong></p>
+</div>
+
+<!-- END SOURCE: cosmology_expansions/x17-current-research-sections.txt -->
