@@ -1,0 +1,693 @@
+<!-- Consolidated historical archive, part 2. Original fragments retained as archives. -->
+
+<!-- BEGIN SOURCE: cosmology_fragments/f11.txt -->
+<figure class="vdiagram"><h4>Diagram 7 · Expanded braid → scroll rod → re-opening</h4><svg viewbox="0 0 1100 340"><path class="cyan" d="M60 80 C170 95 250 120 350 170 C250 220 170 245 60 260"></path><path class="violet" d="M60 260 C170 245 250 220 350 170 C250 120 170 95 60 80"></path><path class="cyan" d="M350 170 C425 135 470 135 525 170 C470 205 425 205 350 170"></path><path class="violet" d="M350 170 C425 205 470 205 525 170 C470 135 425 135 350 170"></path><rect class="rod" height="250" rx="22" width="55" x="525" y="45"></rect><path class="cyan" d="M580 170 C645 135 700 135 770 170 C860 120 920 90 1040 80"></path><path class="violet" d="M580 170 C645 205 700 205 770 170 C860 220 920 250 1040 260"></path><text x="90" y="48">expanded lattice</text><text x="487" y="28">32 → 1</text><text class="muted" x="503" y="320">axial state</text><text x="860" y="48">1 → 32</text></svg><figcaption>The current mechanical core: two opposed strands can narrow into one axial throat without being cut, then re-emerge in a new phase.</figcaption></figure><p><strong>R(θ)=R₀e^(bθ)</strong></p><p>and places a two-strand braid inside the active transition
+region:</p><p><strong>zA = pθ + a sin(kθ)</strong><br/>
+<strong>zB = pθ − a sin(kθ)</strong></p><p>The derivatives are p±ak cos(kθ). Whenever the oscillating term
+exceeds the slow pitch, one strand is literally moving upward while its
+partner moves downward. Half a braid cycle later the roles exchange.</p><p>This is the cleanest mathematical realization so far of the user’s
+phrase that <strong>part of the lattice grows up while part grows down,
+intertwining the layers before stabilizing</strong>.</p><p>The finger-trap part supplies the contraction mechanism. For a
+helical strand of approximately fixed length S:</p><p><strong>S² = L² + (2πNa)²</strong></p><p>so increasing axial length L reduces radius a. A broad woven tube can
+become a long, thin rod without cutting its strands.</p><p>This turns the phrase <strong>“the sky rolls up like a scroll
+fingertrap rod”</strong> into a specific geometric transformation:</p><ol type="1">
+<li>expanded lattice with distinct surface directions;</li>
+<li>tension increases;</li>
+<li>the lattice narrows around one or many convergence throats;</li>
+<li>angular distinctions collapse near the axis;</li>
+<li>opposed strands pass through the axial state in opposite
+senses;</li>
+<li>the lattice re-expands;</li>
+<li>a neighbouring shell turn stabilizes.</li>
+</ol><h2 id="the-three-shells-become-three-phases-of-one-growth-process">The
+three shells become three phases of one growth process</h2><p>The mature version no longer needs three permanently independent
+shell-organisms. At a given epoch an observer may instead
+experience:</p><ul>
+<li><strong>previous/lower stabilized turn</strong>;</li>
+<li><strong>present inhabited turn</strong>;</li>
+<li><strong>next/upper forming turn</strong>;</li>
+<li>with the <strong>active braid</strong> between them.</li>
+</ul><p>This retains the original “three worlds” intuition while reducing the
+number of independent cosmic objects.</p><hr/><h1 id="14-many-myths-as-different-camera-angles-on-one-event">14. Many
+myths as different camera angles on one event</h1><p>The earlier comparative work can now be rewritten in mechanical
+language.</p><h2 id="stable-enclosure">Stable enclosure</h2><p>The ordinary world is in a low-change phase. Adjacent shell turns are
+separated. The upper structure is mostly hidden. Land, sky and celestial
+tracks appear stable.</p><h2 id="activation">Activation</h2><p>A pulse, stress change or phase condition increases tension in the
+lattice. Mythically this is where wind, fire, lightning, thunder,
+radiance or divine approach repeatedly appear.</p><h2 id="axis-and-gate-become-perceptible">Axis and gate become
+perceptible</h2><p>Local convergence throats gather the mesh. From different viewpoints
+this can appear as:</p><ul>
+<li>world mountain;</li>
+<li>world tree;</li>
+<li>rod or pillar;</li>
+<li>cross;</li>
+<li>ladder;</li>
+<li>tunnel;</li>
+<li>wheel or eye;</li>
+<li>guarded portal.</li>
+</ul><h2 id="layers-approach">Layers approach</h2><p>The active braid changes adjacency. Normally separated regions can
+become close through the throat. “Heaven opens” is the mythological
+expression of this phase in the Vardath reading.</p><h2 id="contact">Contact</h2><p>Beings, information, debris or energy may cross the temporary
+boundary if the geometry permits actual physical overlap. Watchers,
+gods, giants, teachers, operators and forbidden knowledge are assigned
+to this role in the speculative synthesis.</p><h2 id="deformation-and-catastrophe">Deformation and catastrophe</h2><p>The surface rubble does not remain rigid while the substrate moves.
+Land is dragged, rotated, uplifted or broken. Water moves
+catastrophically. Myth remembers flood, war of the gods, dragon-slaying,
+destruction or world-renewal.</p><h2 id="re-opening-and-reset">Re-opening and reset</h2>
+<!-- END SOURCE: cosmology_fragments/f11.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f12.txt -->
+<p>The lattice expands again. The gate closes. Adjacent layers separate.
+Celestial tracks and geography re-stabilize. Survivors encode the
+episode in local religious and mythic vocabulary.</p><h3 id="traditions-as-viewpoint-categories">Traditions as viewpoint
+categories</h3><table>
+<thead>
+<tr class="header">
+<th>Tradition / motif</th>
+<th>Main viewpoint in the Vardath synthesis</th>
+<th>Mechanical role proposed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainbow Serpent</td>
+<td>creator current moving through Country</td>
+<td>energetic channel / land shaping</td>
+</tr>
+<tr class="even">
+<td>Squatter Man pictographs</td>
+<td>visual silhouette of activated form</td>
+<td>axial/pinched manifestation</td>
+</tr>
+<tr class="odd">
+<td>Jesus/cross — recalled branch</td>
+<td>body at transverse axis</td>
+<td>axis + crossing plane + witness/sacrifice</td>
+</tr>
+<tr class="even">
+<td>Buddha/Bodhi — recalled branch</td>
+<td>person beneath world/wisdom tree</td>
+<td>axis + revelation/witness</td>
+</tr>
+<tr class="odd">
+<td>Odin/Yggdrasil</td>
+<td>hanging on tree, spear, runes</td>
+<td>axis + suspended witness + knowledge acquisition</td>
+</tr>
+<tr class="even">
+<td>Sleipnir</td>
+<td>realm-crossing mount</td>
+<td>vehicle / interface / “elevator”</td>
+</tr>
+<tr class="odd">
+<td>Aaron’s budding rod — recalled branch</td>
+<td>rod becomes living/tree-like sign</td>
+<td>rod → living axis / authority</td>
+</tr>
+<tr class="even">
+<td>Meru</td>
+<td>central world mountain</td>
+<td>axis/throat viewed as landscape</td>
+</tr>
+<tr class="odd">
+<td>Gilgamesh/Mashu</td>
+<td>guarded solar mountain passage</td>
+<td>traveller’s view of gate</td>
+</tr>
+<tr class="even">
+<td>Vṛtra/Indra</td>
+<td>serpent/obstruction broken by thunderbolt; waters released</td>
+<td>obstruction → activation → water release</td>
+</tr>
+<tr class="odd">
+<td>Tiamat/Marduk</td>
+<td>net, winds, division, cosmic ordering</td>
+<td>primordial lattice → divided scaffold</td>
+</tr>
+<tr class="even">
+<td>1 Enoch/Watchers</td>
+<td>portals, descent, knowledge, giants, judgment</td>
+<td>contact phase across boundary</td>
+</tr>
+<tr class="odd">
+<td>Ezekiel</td>
+<td>wheels, eyes, wings, fire, throne</td>
+<td>mechanical/visual view of moving lattice</td>
+</tr>
+<tr class="even">
+<td>Krishna universal form</td>
+<td>special sight, luminous multiplicity</td>
+<td>global view of hidden total structure</td>
+</tr>
+</tbody>
+</table><p>My working reading is that these traditions can preserve different pieces of one event grammar even when their theology, geography and story language are completely different. The wider comparison below asks what happens when the same mechanical sequence is laid beside a much broader set of world traditions.</p>
+
+<hr/><h1 id="14b-comparative-mythology-world-atlas">14B. Comparative mythology — the world traditions beside the Vardath mechanism</h1>
+<p>The comparison becomes clearer when I stop asking whether two myths tell the same story and instead ask <strong>which phase of the mechanism each tradition seems to remember most strongly</strong>. Across the material below, the recurring sequence is:</p>
+<p class="equation"><strong>primordial water / enclosure → differentiation → axis / gate → crossing or conflict → flood / fire / rupture → renewed ordered world</strong></p>
+<p>That sits naturally beside the present mechanical sequence:</p>
+<p class="equation"><strong>stable shell → activation → convergence → axial gate → changed adjacency / contact → material transfer and catastrophe → reopening → new stable shell</strong></p>
+<p>The traditions do not all carry every stage. Some preserve the enclosure, some the world-axis, some the serpent or dragon, some the opening between worlds, some the transport of life through water, and some mainly preserve the destruction-and-renewal phase. Read together, they form a kind of distributed atlas of the same geometry.</p>
+
+<h2 id="finnic-and-uralic-comparison">Finland, Karelia and the related northern traditions</h2>
+<p>This group is especially important to the present model because it combines <strong>primordial water, a broken cosmic enclosure, a rotating or supporting world-axis, layered worlds and passage between them</strong> in several neighbouring traditions.</p>
+<div class="cards">
+<div class="card"><h3>Finnish / Karelian — Kalevala and older runo-song material</h3><p>The <a href="https://finland.fi/arts-culture/8-questions-on-the-kalevala-the-epic-that-shaped-finlands-identity/" target="_blank" rel="noopener noreferrer">Kalevala creation sequence</a> begins over primeval water. A bird lays eggs on Ilmatar; the eggs fall and break, and their pieces become the ordered parts of the cosmos. Väinämöinen then belongs to the same watery creation environment. In my model this is an unusually direct <strong>enclosure → break/open → differentiated sky/earth/world</strong> sequence: one bounded form contains the future structure, then opens into the larger stable world.</p><p>The <a href="https://www.britannica.com/topic/sampo" target="_blank" rel="noopener noreferrer">Sampo</a> is even more striking. It is famously difficult to define, but one established interpretation is a cosmological pillar or support. Its making, possession, struggle, breaking and dispersal fit my axial reading as a memory of the world-support entering an active phase and then being redistributed. The Sampo does not need to be literally identical to my scroll rod for the geometry to matter: a central generative support, associated with rotation/milling and cosmic order, is exactly the role the axial state occupies here.</p></div>
+<div class="card"><h3>Estonian / Baltic-Finnic</h3><p>Estonian and wider Baltic-Finnic creation songs preserve the same broad family of <strong>bird, egg, water and ordered sky</strong> motifs found around the Gulf of Finland. The old image of the heavens turning around a central tree or pillar, associated with the fixed northern sky, adds the part that the Kalevala egg sequence leaves implicit: the opened world still has an axis. In Vardath terms the egg is the shell-state; the pillar is the gathered axial state; the ordered heavens are the reopened lattice.</p></div>
+<div class="card"><h3>Sámi</h3><p>Sámi cosmologies add a different northern camera angle. The Sun has a major cosmological role, the <a href="https://www.laits.utexas.edu/sami/diehtu/siida/religion/creationmyth.htm" target="_blank" rel="noopener noreferrer">world is understood through relations between sky, earth and living beings</a>, and drum imagery can organise upper, middle and lower regions into one traversable cosmogram. Traditions of a world tree or pillar reaching toward the northern sky fit the same vertical connection. In my reading the noaidi’s movement between levels is the human-scale narrative version of <strong>adjacent layers becoming reachable through an ordered vertical interface</strong>.</p></div>
+<div class="card"><h3>Broader Uralic — Komi, Mordvin, Mari, Udmurt and related traditions</h3><p>The wider <a href="https://www.britannica.com/topic/Finno-Ugric-religion/Mythology" target="_blank" rel="noopener noreferrer">Finno-Ugric mythic field</a> preserves recurring cosmic-egg, bird and primordial-water creation forms, while individual Komi and other Uralic traditions develop their own earth-diver, dual-creator and world-ordering stories. I read this not as one identical northern religion but as a family of related solutions to the same spatial problem: <strong>an undifferentiated watery field becomes a layered, supported and inhabitable world</strong>. That is close to the shell model’s transition from unseparated medium to stabilised world-turn.</p></div>
+</div>
+
+<h2 id="ancient-near-east-and-mediterranean">Ancient Near East, Egypt, Iran and the Mediterranean</h2>
+<div class="cards">
+<div class="card"><h3>Mesopotamia — Apsu, Tiamat, Marduk, Gilgamesh</h3><p>The <a href="https://www.metmuseum.org/essays/epic-of-creation-mesopotamia" target="_blank" rel="noopener noreferrer">Mesopotamian creation tradition</a> begins in primordial waters. Tiamat becomes the great body whose division produces cosmic order; Marduk’s winds, net and act of separation turn an undifferentiated beginning into an organised heaven-and-earth system. In my mechanism this maps naturally to <strong>active medium → captured/gathered structure → division into stable layers</strong>. The Gilgamesh journey adds Mashu as a guarded passage and the flood-survivor as a human memory of reset.</p></div>
+<div class="card"><h3>Egypt — Nun, first mound, Nut and Geb</h3><p>Egyptian creation systems begin from the <a href="https://www.britannica.com/topic/Nun-Egyptian-god" target="_blank" rel="noopener noreferrer">primeval waters of Nun</a>; ordered land emerges, while Geb and Nut form earth and sky as differentiated cosmic regions. Nut’s arched body and the solar journey through the sky give the structure an enclosed, traversable character. My reading sees <strong>primordial water → first emergence/node → separated earth and canopy → cyclical celestial passage</strong>: the same transition from an undifferentiated medium to a stable chamber with an upper boundary.</p></div>
+<div class="card"><h3>Iranian / Zoroastrian — Yima’s Vara and renovation</h3><p>In the Avestan Yima/Jamshid cycle, Yima is warned of catastrophe and creates a <strong>Vara</strong>, a protected enclosure preserving living beings. <a href="https://www.iranicaonline.org/articles/jamsid-i/" target="_blank" rel="noopener noreferrer">Encyclopaedia Iranica</a> summarises the tradition as Yima saving living beings from a natural catastrophe. This is one of the clearest large-scale versions of the carrier pattern already found in the waterborne-child work: <strong>life → enclosure → destructive transition → preserved life in a renewed order</strong>.</p></div>
+<div class="card"><h3>Greek / Roman — sky and earth, Titans, floods and enclosed survivors</h3><p>Hesiod’s world begins with Chaos and Gaia, with <a href="https://www.britannica.com/topic/Uranus-mythology" target="_blank" rel="noopener noreferrer">Uranus as the encompassing sky</a>. Later myth repeatedly returns to forced separations, divine generations replacing one another, serpent/monster conflict and flood survival. Danaë and Perseus placed into a chest at sea, and Deucalion surviving the flood, fit the transport/reset side of the model. The strongest Vardath correspondence is not one Greek god but the repeated movement from <strong>closed generation → violent separation → new ruling order</strong>.</p></div>
+</div>
+
+<h2 id="abrahamic-comparison">Hebrew, Christian and Islamic traditions</h2>
+<div class="cards">
+<div class="card"><h3>Hebrew Bible / Jewish tradition</h3><p>Genesis begins with waters and the separation of waters by a firmament, then later preserves the great ark/reset sequence. Moses repeats the pattern at human scale: child, bounded carrier, river, receiver and changed household. The same archive then develops the rod, ladder, mountain, temple, chariot and opened-heaven motifs. In my synthesis these are nested scales of one grammar: <strong>world in enclosure, life in enclosure, and traveller at gate</strong>.</p></div>
+<div class="card"><h3>Christian — cross, Revelation and renewed world</h3><p>The cross supplies the transverse-axis image; Revelation intensifies the mechanical vocabulary with wheels/eyes inherited from Ezekiel, opened heaven, stars, lightning, crystal-like sea, dragon, flood, rod, the sky receding like a scroll, displaced mountains and islands, and finally a renewed world. Within Vardath Cosmology this reads almost like a phase sequence: <strong>activation → exposed machinery → conflict/contact → scroll contraction → terrestrial rearrangement → reopened order</strong>.</p></div>
+<div class="card"><h3>Islamic / Qur’anic</h3><p>The Qur’an preserves Noah’s flood and ark, layered heavens, Moses and the staff, and a particularly sharp version of the travelling-carrier pattern: in <a href="https://quran.com/taha/39" target="_blank" rel="noopener noreferrer">Qur’an 20:39</a> infant Musa is placed in a chest, committed to the river, carried to shore and received into a new household. Later the sea itself opens under the staff. In my model these images cluster around <strong>bounded transport, water as transition medium, receiving boundary, and opened passage</strong>.</p></div>
+</div>
+
+<h2 id="indo-iranian-and-south-asian-comparison">Vedic, Hindu, Buddhist and Jain world systems</h2>
+<div class="cards">
+<div class="card"><h3>Vedic / Hindu</h3><p>The tradition supplies several of the model’s strongest geometric motifs at once: primordial waters and cosmic gestation; the serpent/obstruction Vṛtra and Indra’s release of the waters; churning around an axis; the cosmic serpent; repeated dissolution and recreation; and <a href="https://www.britannica.com/topic/Mount-Meru-mythology" target="_blank" rel="noopener noreferrer">Mount Meru as the centre and world axis</a>. My synthesis reads these not as separate coincidences but as different phases: <strong>enclosure → axial activation → serpent tension → water release → cyclical world renewal</strong>.</p></div>
+<div class="card"><h3>Buddhist / Jain cosmological systems</h3><p>South Asian religious cosmologies retain Meru/Sumeru as a central organising mountain with multiple heavens, continents and lower regions arranged around it. In Buddhist cosmology, <a href="https://www.britannica.com/topic/Buddhism/The-major-systems-and-their-literature" target="_blank" rel="noopener noreferrer">Meru stands amid a great ocean beneath higher heavens</a>. In my model this is the stable-state map: a layered world organised around a central vertical relation. The Bodhi-tree image then supplies the human-scale witness beneath that axis.</p></div>
+</div>
+
+<h2 id="east-asian-comparison">China and Japan</h2>
+<div class="cards">
+<div class="card"><h3>Chinese — Pangu, sky repair, flood ordering and dragons</h3><p>In the Pangu cycle, a primordial enclosed condition differentiates and <a href="https://www.britannica.com/topic/Pan-Gu" target="_blank" rel="noopener noreferrer">heaven and earth are separated</a>; Pangu’s body becomes features of the ordered world. Nüwa’s repair of the damaged sky and Yu’s ordering of floodwaters continue the same architectural language: the world can be built, damaged and repaired. Chinese dragons place winding power directly beside water and weather. My reading is <strong>cosmic enclosure → separation/expansion → structural support → rupture → repair and reordered flow</strong>.</p></div>
+<div class="card"><h3>Japanese / Shintō — bridge of heaven, spear and primeval ocean</h3><p>Izanagi and Izanami stand on the <a href="https://www.britannica.com/topic/Izanagi" target="_blank" rel="noopener noreferrer">Floating Bridge of Heaven and stir the primeval ocean with a heavenly spear</a>; the dripping brine becomes the first land. Other episodes move through the boundary with Yomi and through Amaterasu’s cave withdrawal and re-emergence. The geometry is remarkably compatible with my model: <strong>upper platform/interface → axial rod into fluid medium → material gathers into land → descent across a realm boundary → reopening/light</strong>.</p></div>
+</div>
+
+<h2 id="european-northern-comparison">Norse, Celtic and Slavic Europe</h2>
+<div class="cards">
+<div class="card"><h3>Norse</h3><p><a href="https://www.britannica.com/topic/Yggdrasill" target="_blank" rel="noopener noreferrer">Yggdrasil connects the worlds</a>; Odin hangs upon the tree and gains runes; Sleipnir crosses realms; serpents occupy the world-boundary and roots; Bifröst is a bridge; and <a href="https://www.britannica.com/event/Ragnarok" target="_blank" rel="noopener noreferrer">Ragnarök destroys the old order before a renewed world</a>. This is almost the full Vardath vocabulary distributed across characters: <strong>axis, traveller, vehicle, serpent, bridge, catastrophe, survival and reopening</strong>.</p></div>
+<div class="card"><h3>Celtic / Insular</h3><p>Irish and related Insular traditions repeatedly place the Otherworld <a href="https://www.britannica.com/topic/Celtic-religion/Beliefs-practices-and-institutions" target="_blank" rel="noopener noreferrer">beneath the land or across the sea on islands</a>, reached through mounds, water journeys and special thresholds. Sacred trees, wells, cauldrons and later interlace art add vertical, vessel and woven forms. In my model this is less a creation story than a <strong>boundary-access tradition</strong>: another layer is nearby but normally separated, and particular places, times or vehicles permit crossing.</p></div>
+<div class="card"><h3>Slavic — Perun and Veles</h3><p>The thunder god <a href="https://www.britannica.com/topic/Perun" target="_blank" rel="noopener noreferrer">Perun</a> belongs to the upper, storm and lightning pole while Veles is associated in reconstructed traditions with the lower/watery/chthonic pole and serpent form. Their conflict is organised vertically through the world-tree pattern. This strongly resembles the Indra–Vṛtra family in Vardath terms: <strong>upper electrical activation confronts lower serpent/water obstruction along an axial world structure</strong>.</p></div>
+</div>
+
+<h2 id="african-comparison">African traditions</h2>
+<div class="cards">
+<div class="card"><h3>Yoruba</h3><p>Yoruba creation traditions have multiple versions, but a recurring form begins with sky above and water below, followed by a descent from the upper realm and the formation of dry land at an ordered centre. In the Ife tradition preserved in <a href="https://open.maricopa.edu/worldmythologyvolume1godsandcreation/chapter/from-myths-of-ife-yoruba-creation-myth/" target="_blank" rel="noopener noreferrer">Myths of Ife</a>, a chain links the descent to the water-covered world. In my reading that is a direct vertical interface: <strong>upper realm → chain/axis → lower waters → land/node formation</strong>.</p></div>
+<div class="card"><h3>West African water / serpent / sky patterns</h3><p>Across West African traditions, serpents, rain, rivers, sky powers and underworld/water powers repeatedly form linked symbolic systems. I place these beside the Rainbow Serpent, Vṛtra and Veles families as regional versions of a broader geometry: <strong>winding power mediates between upper atmospheric force, terrestrial order and water</strong>.</p></div>
+</div>
+
+<h2 id="american-comparison">The Americas</h2>
+<div class="cards">
+<div class="card"><h3>Haudenosaunee — Sky Woman</h3><p>In the <a href="https://www.oneidaindiannation.com/the-haudenosaunee-creation-story" target="_blank" rel="noopener noreferrer">Haudenosaunee creation story</a>, there is a Sky World above; Sky Woman falls from it toward a water world; animals receive her and bring up earth, which grows upon Turtle. That gives an unusually clean sequence for this cosmology: <strong>upper inhabited layer → opening/descent → water boundary → reception → new land/world below</strong>. It is the travelling-fingertrap pattern at world scale rather than child scale.</p></div>
+<div class="card"><h3>Maya / K’iche’ — Popol Vuh</h3><p>The <a href="https://maya.nmai.si.edu/the-maya/creation-story-maya" target="_blank" rel="noopener noreferrer">Popol Vuh creation account</a> begins with darkness and primordial waters, then builds the world through repeated acts of ordering and repeated attempts at humanity. The Hero Twins later travel into Xibalba through a sequence of dangerous thresholds. In my reading the creation side expresses <strong>water → differentiation → world-forming speech/order</strong>, while the Hero Twins preserve the <strong>gate-and-traveller</strong> side.</p></div>
+<div class="card"><h3>Aztec / Nahua — successive Suns</h3><p>Aztec religion preserves successive world ages, with earlier eras ending through different catastrophes including flood; <a href="https://www.britannica.com/topic/Aztec-religion" target="_blank" rel="noopener noreferrer">Britannica summarises the successive mythological eras</a>. This is one of the strongest narrative correspondences to the shell-turn idea: <strong>world state → instability/catastrophe → replacement world state</strong>. The mechanism differs in each Sun, but the larger architecture is explicitly serial rather than a single creation followed by one final end.</p></div>
+<div class="card"><h3>Andean / Inca — Viracocha and Titicaca</h3><p><a href="https://www.britannica.com/topic/Viracocha" target="_blank" rel="noopener noreferrer">Viracocha</a> is a creator associated with Lake Titicaca and the making of sun, moon, heaven, earth and humanity; later versions also carry destruction/recreation and giant motifs. In my reading, Titicaca functions as an emergence boundary: <strong>water / darkness → creator emergence → celestial ordering → peopled world</strong>, another form of world-building out of a prior fluid state.</p></div>
+</div>
+
+<h2 id="australia-and-pacific-comparison">Australia and the Pacific</h2>
+<div class="cards">
+<div class="card"><h3>Australian Aboriginal — Rainbow Serpent traditions</h3><p>In Kakadu traditions, the <a href="https://parksaustralia.gov.au/kakadu/discover/culture/stories/" target="_blank" rel="noopener noreferrer">Rainbow Serpent is a major creation ancestor associated with forming waterholes and rock passages</a>. This was one of the original starting points of the entire Vardath project. Its strongest mechanical correspondence remains the simplest: <strong>a long winding creator current moves through Country and leaves water-bearing landscape structure behind it</strong>.</p></div>
+<div class="card"><h3>Māori / Polynesian — Rangi and Papa</h3><p>In Māori creation traditions, <a href="https://teara.govt.nz/en/maori-creation-traditions" target="_blank" rel="noopener noreferrer">Ranginui and Papatūānuku begin joined together</a>, with their children living between them in darkness until the parents are separated and light enters the world. In the Vardath model this is an exceptionally clear shell-opening image: <strong>compressed adjacent layers → inhabitants trapped in the gap → forceful separation → expanded living space and light</strong>. Ocean voyaging and island emergence then keep the wider Polynesian world strongly tied to movement through water and the making or raising of land.</p></div>
+</div>
+
+<h2 id="comparative-mythology-pattern-map">What the whole comparison looks like from inside the model</h2>
+<table><thead><tr><th>Repeated mythic form</th><th>Traditions where it is especially visible</th><th>Vardath mechanical reading</th></tr></thead><tbody>
+<tr><td>primordial water / undifferentiated deep</td><td>Mesopotamian, Egyptian, Finnic, Maya, Japanese, Yoruba, Māori/Polynesian and many others</td><td>pre-stabilised medium / boundary water before a new world-form</td></tr>
+<tr><td>egg, ark, chest, cave, Vara or other enclosure</td><td>Finnish/Karelian, Greek, Hebrew, Islamic, Iranian, Chinese</td><td>contracted carrier or protected shell-state</td></tr>
+<tr><td>tree, mountain, pillar, spear, chain, ladder or rod</td><td>Norse, Finnic, Sámi, Hindu/Buddhist, Japanese, Yoruba, biblical traditions</td><td>convergence throat / axial connection</td></tr>
+<tr><td>serpent / dragon / winding power</td><td>Australian, Norse, Vedic, Slavic, Chinese, Mesopotamian, Mesoamerican and others</td><td>braided current / tension-bearing lattice morphology</td></tr>
+<tr><td>upper and lower worlds become traversable</td><td>Norse, Celtic, Sámi, Haudenosaunee, Japanese, Enochic, Maya</td><td>changed adjacency during gate phase</td></tr>
+<tr><td>flood, fire, sky rupture or cosmic battle</td><td>Mesopotamian, biblical, Iranian, Norse, Aztec, Hindu, Maya, Greek</td><td>active transition / material redistribution / reset</td></tr>
+<tr><td>new land, new age or renewed world</td><td>Finnic, Māori, Haudenosaunee, Aztec, Norse, Maya, Andean, Mesopotamian</td><td>reopened lattice and stabilised next world-turn</td></tr>
+</tbody></table>
+<p>Seen this way, the mythologies do not collapse into one story. They become <strong>different camera positions around one proposed process</strong>. Finland and the wider Finnic/Uralic material strengthens the comparison because it contributes both ends of the mechanism at once: the <strong>cosmic enclosure breaking open into the world</strong> and the <strong>central support or axis holding the ordered world together</strong>.</p>
+
+<hr/><h1 id="15-the-32--1-direction-and-old-navigation-lattices">15. The 32 +
+1 direction and old navigation lattices</h1><p>Portolan-style navigation charts became a stronger visual analogue
+than ordinary polar flat maps because they show repeated line
+convergence rather than one static latitude/longitude grid.</p>
+<!-- END SOURCE: cosmology_fragments/f12.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f13.txt -->
+<figure class="vdiagram"><h4>Diagram 8 · 32 around + 1 through</h4><svg viewbox="0 0 900 610"><circle class="soft" cx="300" cy="300" r="220"></circle><line opacity=".72" stroke="#5ce1e6" stroke-width="2.2" x1="300.0" x2="300.0" y1="268.0" y2="80.0"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="306.2" x2="342.9" y1="268.6" y2="84.2"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="312.2" x2="384.2" y1="270.4" y2="96.7"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="317.8" x2="422.2" y1="273.4" y2="117.1"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="322.6" x2="455.6" y1="277.4" y2="144.4"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="326.6" x2="482.9" y1="282.2" y2="177.8"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="329.6" x2="503.3" y1="287.8" y2="215.8"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="331.4" x2="515.8" y1="293.8" y2="257.1"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="2.2" x1="332.0" x2="520.0" y1="300.0" y2="300.0"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="331.4" x2="515.8" y1="306.2" y2="342.9"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="329.6" x2="503.3" y1="312.2" y2="384.2"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="326.6" x2="482.9" y1="317.8" y2="422.2"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="322.6" x2="455.6" y1="322.6" y2="455.6"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="317.8" x2="422.2" y1="326.6" y2="482.9"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="312.2" x2="384.2" y1="329.6" y2="503.3"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="306.2" x2="342.9" y1="331.4" y2="515.8"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="2.2" x1="300.0" x2="300.0" y1="332.0" y2="520.0"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="293.8" x2="257.1" y1="331.4" y2="515.8"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="287.8" x2="215.8" y1="329.6" y2="503.3"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="282.2" x2="177.8" y1="326.6" y2="482.9"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="277.4" x2="144.4" y1="322.6" y2="455.6"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="273.4" x2="117.1" y1="317.8" y2="422.2"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="270.4" x2="96.7" y1="312.2" y2="384.2"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="268.6" x2="84.2" y1="306.2" y2="342.9"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="2.2" x1="268.0" x2="80.0" y1="300.0" y2="300.0"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="268.6" x2="84.2" y1="293.8" y2="257.1"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="270.4" x2="96.7" y1="287.8" y2="215.8"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="273.4" x2="117.1" y1="282.2" y2="177.8"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="277.4" x2="144.4" y1="277.4" y2="144.4"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="282.2" x2="177.8" y1="273.4" y2="117.1"></line><line opacity=".72" stroke="#5ce1e6" stroke-width="1" x1="287.8" x2="215.8" y1="270.4" y2="96.7"></line><line opacity=".72" stroke="#596580" stroke-width="1" x1="293.8" x2="257.1" y1="268.6" y2="84.2"></line><circle class="node" cx="300" cy="300" r="10"></circle><line class="violet" stroke-width="5" x1="300" x2="300" y1="35" y2="575"></line><text x="330" y="65">+ axial sense</text><text x="330" y="558">− axial sense</text><text x="255" y="292">centre</text><text class="muted" x="235" y="318">axis end-on</text><text x="590" y="175">32 bearings / phases</text><text class="muted" x="590" y="210">around the surface</text><text x="590" y="300">1 axial line</text><text class="muted" x="590" y="335">through the surface</text><text x="590" y="430">compression: 32 → 1</text><text x="590" y="475">re-opening: 1 → 32</text></svg><figcaption>The “33rd direction” is a Vardath 3-D interpretation, not a historical 33rd compass bearing.</figcaption></figure><p>Historically, portolan rhumb lines encode navigation bearings. The
+Vardath reinterpretation is three-dimensional:</p><ul>
+<li>32 circumferential/horizontal orientations;</li>
+<li>plus 1 axis through the centre.</li>
+</ul><p>The “33rd direction” is therefore not claimed as a historical compass
+point. It is a modern structural addition: the direction that a flat
+chart cannot represent as another bearing because it passes
+<strong>through</strong> the plane.</p><p>The axis itself has two senses, +z and −z, but remains one geometric
+line. This matches the two braid strands: one can move one way along the
+axis while the other moves oppositely.</p><p>At a convergence:</p><p><strong>32 → 1</strong></p>
+<!-- END SOURCE: cosmology_fragments/f13.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f14.txt -->
+<p>because angular distinctions vanish as radius tends toward zero.</p><p>On re-expansion:</p><p><strong>1 → 32</strong></p><p>and the reopened lattice may carry a different phase.</p><p>The presence of many wind roses/convergence centres on old charts
+then suggested an important mechanical refinement: the sky need not
+collapse toward one single global pole. A large woven surface can
+contain <strong>many local throats</strong>, each participating in a
+larger global deformation.</p><hr/><h1 id="16-flat-map-tests-and-the-correction-they-forced">16. Flat-map
+tests and the correction they forced</h1><p>The similarity between an end-on lattice and a north-pole-centred
+flat map was initially attractive. Direct geometry tests made the
+literal interpretation untenable.</p><p>A north-polar azimuthal-equidistant layout preserves radial distance
+from its centre but strongly distorts circumferential scale away from
+it. Southern east-west distances and continent shapes inflate
+drastically. Australia is an excellent failure case: its east-west scale
+becomes far too large relative to its north-south dimension.</p><p>A direct logarithmic-spiral longitude is even worse. If longitude θ
+is inserted into R(θ)=R₀e^(bθ), then after θ→θ+2π the radius changes. A
+coastline crossing 0°/360° does not return to the same point. Closed
+geography fails.</p><p>The mature solution separates coordinate systems:</p><p><strong>geographic state = (latitude, longitude)</strong><br/>
+<strong>shell state = (turn, braid phase, expansion)</strong></p><p>The spiral describes the relation between world layers. It does not
+replace ordinary longitude within one stable world.</p><p>This is a good example of the project improving through failure: the
+visual similarity to flat maps survives as a <strong>projection
+analogy</strong>, while the literal flat-map geography is rejected.</p><hr/><h1 id="17-lands-as-rubble-on-a-moving-substrate">17. Lands as rubble on
+a moving substrate</h1><p>The latest physical intuition is that continents are not the lattice.
+They are the material sitting on it.</p><figure class="vdiagram"><h4>Diagram 9 · Alternating shear and S-shaped transport</h4><svg viewbox="0 0 1050 330"><path class="soft" d="M55 70 C190 20 285 115 410 70 C535 25 635 115 760 70 C875 30 950 55 1000 70"></path><path class="soft" d="M55 260 C190 310 285 215 410 260 C535 305 635 215 760 260 C875 300 950 275 1000 260"></path><path class="cyan" d="M70 165 C195 70 295 70 400 165 C505 260 605 260 710 165 C815 70 900 70 1000 165" stroke-width="5"></path><path class="violet" d="M70 165 C195 260 295 260 400 165 C505 70 605 70 710 165 C815 260 900 260 1000 165"></path><text x="120" y="145">shear +</text><text x="315" y="205">shear −</text><text x="520" y="145">shear +</text><text x="725" y="205">shear −</text></svg><figcaption>A conceptual transport field, not a geographic map. The serious test is whether one fixed version predicts real tectonic vectors.</figcaption></figure><p>If the substrate has radial and tangential velocity components:</p><p><strong>v(r,θ)=vr(r,θ) r-hat + vθ(r,θ) θ-hat</strong></p><p>and the tangential component changes sign across neighbouring cells,
+transported material follows alternating curvature. The natural trace is
+an <strong>S-shape</strong>.</p><p>That immediately suggested a global chain of regions the user had
+already been visually noticing:</p><h2 id="north-america--central-america--south-america">North America →
+Central America → South America</h2><p>The two continents do not form one straight strip. The
+Caribbean/Central American region looks like a hinge between broad
+masses swept in different senses. In the lattice hypothesis this is a
+major shear/convergence transition.</p><h2 id="europe--mediterranean--africa">Europe → Mediterranean →
+Africa</h2><p>Europe and Africa bend into a highly fragmented Mediterranean jamming
+zone. The lattice reading is differential motion and rotation around a
+convergence cell.</p><h2 id="arabia--iraq--zagros">Arabia / Iraq / Zagros</h2><p>Arabia appears wedge-like: pulled apart behind along the Red Sea/Gulf
+of Aden region and driven into resistance to the north/northeast. In the
+speculative model this is a projecting packet of rubble caught between
+divergence and compression.</p><h2 id="india">India</h2><p>India is the clearest “projectile” shape in the user’s description: a
+triangular block driven into Eurasia. Conventional geology already
+records large northward plate motion and collision, so this region
+becomes a critical control rather than merely a visual match.</p><h2 id="myanmar--thailand--sumatra--java">Myanmar → Thailand → Sumatra →
+Java</h2><p>The deformation chain bends sharply east/southeast from India into
+the Sunda system. Oblique convergence and along-margin motion in
+standard tectonics already produce curvature. A Vardath flow field would
+have to recover those measured directions from one deeper lattice
+geometry.</p>
+<!-- END SOURCE: cosmology_fragments/f14.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f15.txt -->
+<h2 id="eastern-australia--new-guinea--indonesia">Eastern Australia →
+New Guinea → Indonesia</h2><p>The eastern/northern Australian margin, New Guinea, Banda and
+Indonesia form another complex curve of arcs, collisions and fragments.
+Again, ordinary plate tectonics explains the observations. Vardath
+Cosmology only gains explanatory value if its fixed nodes and shear
+directions independently predict the same patterns.</p><p>The falsification condition is therefore strong:</p><p><strong>one fixed lattice-flow field must simultaneously predict
+coastline curvature, mountain belts, faults, trenches, island arcs and
+GPS plate vectors.</strong></p><p>If nodes are moved after each mismatch, the model is not
+predictive.</p><h1 id="18-meltology-plasma-heating-and-the-expanded-brick-hypothesis">18.
+Meltology, plasma heating and the “expanded brick” hypothesis</h1><p>Meltology entered the wider research as another possible trace of a
+catastrophic energetic reset. The Meltology community describes
+mountains and unusual stone formations as the remnants of melted or
+transformed buildings and “Old World” architecture. This is a fringe
+interpretation and is not accepted geology. The official Meltology site
+itself describes its subject as “the study of melted buildings,”
+including melted buildings, mountains, old-world architecture,
+civilization and technology.</p><figure class="vdiagram"><h4>Diagram 10 · Turning the Meltology branch into a materials test</h4><svg viewbox="0 0 1100 330"><g><rect class="box" height="90" rx="12" width="165" x="40" y="115"></rect><text x="75" y="148">masonry / rock</text><text class="muted" x="72" y="177">starting material</text><rect class="box" height="90" rx="12" width="170" x="245" y="115"></rect><text x="285" y="148">rapid heating</text><text class="muted" x="268" y="177">electrical / thermal?</text><rect class="box" height="90" rx="12" width="190" x="455" y="70"></rect><text x="487" y="104">phase changes</text><text class="muted" x="483" y="133">quartz / melt / glass</text><rect class="box" height="90" rx="12" width="190" x="455" y="210"></rect><text x="485" y="244">gas / fracture</text><text class="muted" x="485" y="273">vesicles / spalling</text><rect class="box" height="90" rx="12" width="180" x="690" y="115"></rect><text x="725" y="148">cooling</text><text class="muted" x="711" y="177">recrystallization</text><rect class="box" height="90" rx="12" width="150" x="910" y="115"></rect><text x="935" y="148">sample test</text><text class="muted" x="930" y="177">XRD / chemistry</text></g><path class="cyan" d="M205 160 L245 160 M415 160 L455 115 M415 160 L455 255 M645 115 L690 150 M645 255 L690 170 M870 160 L910 160"></path></svg><figcaption>Standard brick data show modest thermal expansion followed by vitrification/shrinkage, so giant-scale expansion would require clear nonstandard evidence.</figcaption></figure><p>The Vardath version became more specific than simple “rocks were
+buildings.” The question was whether an extreme plasma/electrical event
+could cause manufactured masonry or clay-rich material to:</p><ol type="1">
+<li>heat rapidly through Joule/plasma coupling;</li>
+<li>cross mineral phase transitions;</li>
+<li>soften, partially melt or vitrify;</li>
+<li>develop gas/bloating or fracture textures;</li>
+<li>recrystallize on cooling;</li>
+<li>emerge at a different apparent scale or morphology.</li>
+</ol><p>The phrase <strong>“plasma expanding bricks via
+crystallization”</strong> belongs here. It is a proposed materials
+mechanism that can be tested.</p><h2 id="what-ordinary-brick-science-actually-shows">What ordinary brick
+science actually shows</h2><p>Fired clay does undergo real thermal changes. Quartz has an α→β
+inversion around 573 °C that produces a measurable length anomaly.
+Experimental clay specimens can show soft thermal expansion up to a
+maximum around the 700–760 °C range. However, one published study found
+maximum expansions on the order of roughly <strong>0.5–1.13%</strong>,
+followed by shrinkage as vitreous phases formed above roughly 780–800
+°C. Other brick studies likewise use quartz inversion and residual
+shrinkage as indicators of firing history.</p><p>That does <strong>not</strong> support ordinary bricks swelling into
+mountain-sized blocks. It instead gives the old hypothesis a much
+sharper test:</p><ul>
+<li>Are claimed “expanded bricks” chemically and mineralogically
+consistent with fired clay or masonry?</li>
+<li>Do they contain melt glass, vitrified surfaces, vesicles,
+recrystallized phases or former mortar boundaries?</li>
+<li>Are crystal fabrics consistent with rapid thermal processing?</li>
+<li>Can measured phase-volume changes explain the claimed scale, or
+would enormous additional porosity/gas expansion be required?</li>
+<li>Is there an energy source capable of heating the required mass?</li>
+<li>Do geologic ages and stratigraphy agree with a recent architectural
+origin, or contradict it?</li>
+</ul>
+<!-- END SOURCE: cosmology_fragments/f15.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f16.txt -->
+<h2 id="how-meltology-fits-the-cosmology-if-treated-as-a-hypothesis">How
+Meltology fits the cosmology if treated as a hypothesis</h2><p>The shell-lattice event already predicts a period of extreme surface
+deformation. A high-energy activation could, in principle, add
+thermal/electrical effects to the mechanical movement. Meltology
+therefore sits at the <strong>Reset / surface-material</strong> stage of
+the event architecture rather than at the Axis/Gate stage.</p><div class="callout good"><p>The strongest version is not “every mountain is a melted building.”
+It is a testable narrower proposition:</p></div><blockquote>
+<p>Some anomalous masonry-like formations claimed by Meltology may
+preserve high-temperature transformation textures. If the Vardath event
+involved strong electrical/plasma heating, those samples should show a
+coherent, datable mineralogical signature distinguishable from ordinary
+geology and ordinary fire damage.</p>
+</blockquote><p>If they do not, the Meltology branch should be rejected without
+damaging the rest of the cosmology.</p><hr/><h1 id="19-the-full-integrated-event">19. The full integrated event</h1><p>Putting the historical strands together gives a much richer sequence
+than the current shell section alone.</p><figure class="vdiagram"><h4>Diagram 11 · Integrated event cycle</h4><svg viewbox="0 0 1100 540"><circle class="soft" cx="550" cy="270" r="175"></circle><circle class="rod" cx="550" cy="270" r="62"></circle><text x="510" y="263">AXIAL</text><text x="497" y="289">WINDOW</text><g><rect class="box" height="60" rx="12" width="180" x="460" y="25"></rect><text x="492" y="61">stable world</text><rect class="box" height="60" rx="12" width="180" x="770" y="95"></rect><text x="803" y="131">activation</text><rect class="box" height="60" rx="12" width="180" x="860" y="250"></rect><text x="891" y="286">convergence</text><rect class="box" height="60" rx="12" width="205" x="735" y="410"></rect><text x="768" y="446">contact / transfer</text><rect class="box" height="60" rx="12" width="205" x="355" y="445"></rect><text x="391" y="481">surface reset</text><rect class="box" height="60" rx="12" width="180" x="70" y="310"></rect><text x="104" y="346">re-opening</text><rect class="box" height="60" rx="12" width="210" x="110" y="120"></rect><text x="143" y="156">new stabilization</text></g><path class="cyan" d="M640 60 C720 62 775 85 800 110 M940 155 C975 195 975 235 950 250 M930 310 C910 365 875 400 835 410 M735 455 C655 490 595 495 560 475 M355 475 C275 450 225 400 205 370 M150 310 C125 245 140 190 185 175 M320 145 C370 90 420 70 460 60"></path></svg><figcaption>The integrated sequence is the current hypothesis tying together axis imagery, gates, water/reset myths, shell mechanics and land deformation.</figcaption></figure><h2 id="phase-0--stable-world">Phase 0 — Stable world</h2><p>A present shell-turn is open and mechanically settled. Geography
+closes normally. Adjacent turns are hidden. The axis exists as geometry
+but is not necessarily visible as a luminous object.</p><h2 id="phase-1--trigger--pulse">Phase 1 — Trigger / pulse</h2><p>An unknown driver changes lattice tension or field state. Historical
+vocabulary: thunder, divine anger, fire, lightning, Birkeland current,
+Phoenix event, “god” approaching.</p><h2 id="phase-2--manifestation-of-the-axis">Phase 2 — Manifestation of
+the axis</h2><p>The changing field makes central and local convergence geometry
+visible. Different observers see:</p><ul>
+<li>Squatter-Man/hourglass plasma forms;</li>
+<li>pillar or rod;</li>
+<li>world mountain;</li>
+<li>world tree;</li>
+<li>cross;</li>
+<li>wheel/eye;</li>
+<li>many-eyed or winged entity;</li>
+<li>serpentine channels.</li>
+</ul><h2 id="phase-3--roll-up--convergence">Phase 3 — Roll-up /
+convergence</h2><p>The expanded lattice tightens finger-trap style. Surface directions
+converge toward one or many axial throats. In projection this is the
+32→1 transition.</p><h2 id="phase-4--boundary-opening">Phase 4 — Boundary opening</h2><p>Normally separated shell turns approach through the throat. Mythic
+vocabulary: doors of heaven, windows, guarded mountain passages,
+ladders, opened firmament, realm-crossing mounts.</p><h2 id="phase-5--operator--vehicle--contact">Phase 5 — Operator /
+vehicle / contact</h2><p>A recurring apparatus or gate is distinguished from whoever appears
+to command or inhabit it. Watchers, Æsir, gods, guardians or “8ers” are
+assigned to the operator/threshold class; chariots, wheels and Sleipnir
+to the vehicle/interface class.</p><p>If larger neighbouring shell turns also imply larger organisms—an
+unproven assumption—this is where giant traditions could enter.</p><h2 id="phase-6--water-release-and-surface-catastrophe">Phase 6 — Water
+release and surface catastrophe</h2>
+<!-- END SOURCE: cosmology_fragments/f16.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f17.txt -->
+<p>The event changes the distribution of water and land. Comparative
+motifs include Vṛtra’s confined waters released by Indra, Tiamat’s
+divided primordial body, Rainbow Serpent water/land creation, flood
+traditions and canopy-collapse imagery.</p><p>Mechanically, the rubble layer is sheared and jammed. Thermally, a
+speculative plasma event could alter exposed stone/masonry, which is
+where Meltology-type claims would need to be tested.</p><h2 id="phase-7--re-opening--separation">Phase 7 — Re-opening /
+separation</h2><p>The rod expands back into a woven surface. The gate closes. Adjacent
+layers become inaccessible again. Surface directions reappear: 1→32.</p><h2 id="phase-8--new-stabilized-world">Phase 8 — New stabilized
+world</h2><p>Land and water settle into new positions. Celestial tracks appear
+regular again. Survivors inherit ruins, altered geography and narratives
+of gods, serpents, giants, flood, fire, revelation and world
+renewal.</p><h2 id="phase-9--cultural-compression">Phase 9 — Cultural
+compression</h2><p>Over centuries, a complex event fragments into different symbolic
+traditions. One culture preserves the serpent and waters, another the
+world tree, another the hanging god, another the cosmic battle, another
+the giant contact, another only a calendar of recurrence.</p><p>This final step is what makes the “many myths, one event” hypothesis
+possible without demanding word-for-word narrative agreement.</p><hr/><h1 id="20-status-matrix-what-belongs-to-which-evidence-class">20.
+Status matrix: what belongs to which evidence class</h1><h2 id="independently-established-or-directly-measurable">Independently
+established or directly measurable</h2><ul>
+<li>the Bodhi tradition places Buddha’s awakening beneath the Bodhi
+tree;</li>
+<li>Hávamál preserves Odin’s hanging on a windy tree, spear wound and
+acquisition of runes/knowledge;</li>
+<li>Numbers 17 describes Aaron’s rod budding, blossoming and bearing
+almonds;</li>
+<li>Rig Veda traditions describe Indra defeating Vṛtra/Ahi and releasing
+confined waters/rivers;</li>
+<li>Rainbow Serpent traditions in multiple Aboriginal Australian regions
+are linked with water, creation and landscape features, while differing
+regionally;</li>
+<li>portolan charts historically encode navigation bearings and repeated
+line networks;</li>
+<li>clay/brick materials undergo quartz inversion, vitrification and
+measurable expansion/shrinkage under heat;</li>
+<li>plate motions, faults, mountain belts, trenches and inter-city
+distances are measurable;</li>
+<li>the exact JANUS algebra stated in its frozen audited core follows
+from its chosen axioms.</li>
+</ul><h2 id="archived-vardath-ideas-recovered-from-prior-interactions">Archived
+Vardath ideas recovered from prior interactions</h2><ul>
+<li>Rainbow Serpent as plasma/charged land-shaper and Sun-biting
+retelling;</li>
+<li>bell/tube enclosure, four lands/four rivers, central spike/hanging
+sphere;</li>
+<li>caduceus-like cosmic apparatus, paired plasma channels,
+canopy/flooded upper region;</li>
+<li>Squatter-Man/plasma morphology as an early comparison;</li>
+<li>many gods as manifestations/operators of one recurring
+phenomenon;</li>
+<li>Sleipnir as realm-interface/elevator;</li>
+<li>Watchers / “waiters” / Æsir / “8ers” as a threshold/operator
+family;</li>
+<li>7/8/11 doorway/completion symbolism;</li>
+<li>Aetio/Atel/Ase role-equivalence;</li>
+<li>JANUS physical-comparison branch, kept separate from formal
+core;</li>
+<li>Exploration of 8 gate/state-space method;</li>
+<li>three shell-organisms, Tiamat as dead structural shell, later three
+stabilized turns;</li>
+<li>scroll/finger-trap sky lattice;</li>
+<li>32+1 axial direction;</li>
+<li>lands as rubble pushed into S-curves.</li>
+</ul><h2 id="user-recalled-branches-whose-exact-old-wording-is-not-currently-recoverable">User-recalled
+branches whose exact old wording is not currently recoverable</h2><ul>
+<li>detailed Jesus-cross comparison;</li>
+<li>detailed Buddha/Bodhi comparison;</li>
+<li>parts of Loki/Yggdrasil discussion beyond the recovered
+Odin/Sleipnir branch;</li>
+<li>Aaron/rod-of-iron conversation;</li>
+<li>exact “Gilga-mesh” lattice wordplay exchange;</li>
+<li>exact Meltology/plasma-crystallization exchange.</li>
+</ul><p>These are included because they are part of the user’s remembered
+research history, but the site does not invent dates or quotes for
+them.</p><h2 id="constructed-mathematical--mechanical-models">Constructed
+mathematical / mechanical models</h2><ul>
+<li>logarithmic spiral envelope;</li>
+<li>two-strand zA/zB braid equations;</li>
+<li>finger-trap relation;</li>
+<li>eight-gate 1104/736-year timing toy model;</li>
+<li>φ growth calibrated to 552 years;</li>
+<li>32→1→32 convergence interpretation;</li>
+<li>proposed alternating-shear surface-flow field.</li>
+</ul><h2 id="failed-or-rejected-versions-retained-on-purpose">Failed or
+rejected versions retained on purpose</h2>
+<!-- END SOURCE: cosmology_fragments/f17.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f18.txt -->
+<ul>
+<li>138, ~395 and 792 as three simple pairwise constant-rate rotation
+periods;</li>
+<li>literal north-pole azimuthal map as the physical geographic
+surface;</li>
+<li>logarithmic spiral angle used directly as longitude;</li>
+<li>current φ law as exact derivation of 395/792;</li>
+<li>automatic equation of 144,000 days with 144,000 units of shell
+size;</li>
+<li>any claim that JANUS v1.0 itself derives physical cycles, α, Earth
+tilt, mythology or a literal helix.</li>
+</ul><hr/><h1 id="21-falsification-programme">21. Falsification programme</h1><p>The cosmology becomes more valuable when it can fail.</p><h2 id="a-global-deformation-field">A. Global deformation field</h2><p>Fix lattice-node coordinates and shear directions before comparing
+all continents. Generate a global vector field. Test it against
+coastlines, faults, trenches, mountain axes and GPS plate vectors.</p><p><strong>Failure:</strong> each region needs its own ad hoc node
+placement.</p><h2 id="b-stable-layer-metric">B. Stable-layer metric</h2><p>Specify the metric inside one stable world. Recover actual geodesic
+distances and closed coastlines.</p><p><strong>Failure:</strong> southern distances inherit the extreme
+distortions of ordinary polar flat maps.</p><h2 id="c-celestial-geometry">C. Celestial geometry</h2><p>Specify Sun, Moon, star and observer trajectories in the shell/braid
+system.</p><p><strong>Failure:</strong> northern and southern circumpolar
+observations cannot be generated simultaneously.</p><h2 id="d-chronology-holdout">D. Chronology holdout</h2><p>Calibrate gate layout and growth/phase laws on only part of the
+proposed event chronology. Predict withheld events.</p><p><strong>Failure:</strong> every new event requires a new phase
+offset, gate or fitted strength rule.</p><h2 id="e-myth-sequence-coding">E. Myth-sequence coding</h2><p>Before reading target myths, define objective criteria for Axis,
+Gate, Operator, Vehicle, Manifestation, Medium, Witness and Reset.
+Compare target traditions with negative controls.</p><p><strong>Failure:</strong> matches depend on flexible synonyms or only
+appear after the story is known.</p><h2 id="f-meltology-materials-test">F. Meltology materials test</h2><p>Blind-test claimed transformed masonry against ordinary rock, known
+fired brick, vitrified brick and natural volcanic/metamorphic samples
+using petrography, XRD, chemistry and dating.</p><p><strong>Failure:</strong> samples are normal geological material or
+show no coherent high-temperature architectural precursor.</p><h2 id="g-energy-budget">G. Energy budget</h2><p>Estimate the mass moved/heated and the duration of the proposed
+event. Derive a field/force/energy source.</p><p><strong>Failure:</strong> required energy is impossible within the
+model or would produce unobserved global signatures.</p><h2 id="h-layer-contact-mechanism">H. Layer-contact mechanism</h2><p>Specify real radial positions, thicknesses, chirality and overlap of
+shell turns.</p><p><strong>Failure:</strong> “contact” exists only as symbolic phase
+language with no physical intersection.</p><h2 id="i-cross-cultural-lattice-art-prediction">I. Cross-cultural lattice-art prediction</h2><p>This test is fixed before the corpus is examined. If the Vardath lattice is a repeatedly witnessed or culturally inherited world-form rather than a pattern invented only inside this research, ancient and premodern art should contain more than isolated knot decoration. The prediction is a recurring <strong>motif package</strong> across cultures that did not share one immediate decorative tradition.</p><p>The primary marker is a <strong>mesh state</strong>: interlace, knot, braid, plait, guilloche, lattice, meander or visibly entwined paths. A stronger Vardath match requires that the same object also contain at least two independent companion families from this pre-declared list:</p><ul><li><strong>axis / living rod:</strong> tree of life, sacred/world tree, staff, rod, pillar, pole or axial column;</li><li><strong>serpentine pair or channel:</strong> serpent, snake, dragon, nāga, caduceus, twin/two-tailed figure or analogous winding creature;</li><li><strong>enclosure:</strong> ring, circle, roundel, medallion, halo, mandorla or oval boundary;</li><li><strong>four/eight organisation:</strong> fourfold, quadripartite, quatrefoil, octagon, eightfold or eight-point structure;</li><li><strong>nodes / eyes / lights:</strong> eye, star, rosette, jewel, boss, Sun or luminous disc;</li><li><strong>water relation:</strong> river, sea, ocean, wave or water imagery.</li></ul><p>Celtic and Insular knotwork is an obvious target, but it is not allowed to define the rule. The same fixed vocabulary must be applied to Egyptian, Near Eastern, Greek/Roman, Byzantine, Islamic, South and East Asian, African, Mesoamerican, Andean, Oceanic and Indigenous American material wherever the museum corpus contains it. The modern Starbucks siren is treated only as a descendant/survival example because its designers deliberately drew from older maritime siren imagery; it is not an independent ancient hit.</p><p><strong>Positive prediction:</strong> mesh/interlace records should be enriched for the companion motif package relative to culture- and description-length-matched non-mesh controls, and strong matches should recur across several independent cultural groups and more than one museum collection.</p><p><strong>Failure or weakening:</strong> the mesh records show no enrichment beyond matched controls; apparent matches depend mostly on Celtic/Insular art; the effect disappears when catalogue-description length is controlled; or each culture requires a different post-hoc vocabulary.</p><p><strong>Evidence boundary:</strong> a successful corpus result would establish a cross-cultural recurrence of the predicted visual grammar. It would not by itself establish that one physical plasma/lattice event caused the art; ordinary geometry, textile technology, cultural transmission and convergent decoration remain controls.</p><h3 id="lattice-art-corpus-result">First corpus result — partial support, strongest in serpent/interlace coupling</h3><p>The first pre-registered test has now been run rather than left as a future proposal. Three open museum corpora were combined: The Metropolitan Museum of Art, the Cleveland Museum of Art and the Walters Art Museum. The program scanned <strong>575,927 catalogue records</strong>. After requiring a usable date no later than 1800 CE, <strong>260,336 premodern records</strong> remained. Of those, <strong>1,028</strong> contained one of the fixed mesh/interlace markers. Each mesh record was paired with a non-mesh control from the same museum, broad culture group and catalogue-description-length bin, producing <strong>1,028 exact matched controls</strong>.</p><p>The pre-declared stronger criterion was not simply “does interlace occur?” It was whether a mesh record is more likely than its matched control to carry <strong>two or more</strong> of the independent companion families. That prediction survived the first test: <strong>5.64% of mesh records versus 2.72% of controls</strong> contained at least two companion families, a risk ratio of <strong>2.07</strong> (two-proportion test <code>p≈0.001</code>). For at least one companion family the rates were 29.67% versus 16.54%, risk ratio 1.79.</p><table><thead><tr><th>pre-declared companion</th><th>mesh records</th><th>matched controls</th><th>risk ratio</th><th>first-pass result</th></tr></thead><tbody><tr><td>serpent / dragon / nāga / twin channel</td><td>10.12%</td><td>2.63%</td><td><strong>3.85×</strong></td><td>strongest enrichment</td></tr><tr><td>enclosure / ring / roundel</td><td>9.63%</td><td>5.06%</td><td><strong>1.90×</strong></td><td>clear enrichment</td></tr><tr><td>axis / rod / pillar / sacred tree</td><td>2.82%</td><td>1.75%</td><td>1.61×</td><td>direction predicted, low count</td></tr><tr><td>node / eye / star / rosette</td><td>8.95%</td><td>6.42%</td><td>1.39×</td><td>modest enrichment</td></tr><tr><td>four/eight structure</td><td>0.78%</td><td>0.39%</td><td>2.00×</td><td>too few records for a firm result</td></tr><tr><td>water / river / sea / wave</td><td>3.60%</td><td>3.50%</td><td>1.03×</td><td><strong>no enrichment</strong></td></tr></tbody></table><p>The most striking result is the serpent family. Serpent/dragon language occurred in 10.12% of mesh records but only 2.63% of controls: nearly a <strong>fourfold association</strong>. The enclosure result is also in the predicted direction. However, the broadest version of the prediction did <strong>not</strong> survive: records carrying three or more companion families were 0.58% of mesh objects and 0.49% of controls, essentially no useful separation. No record in either group reached four companion families under this deliberately narrow catalogue vocabulary.</p><h3>Negative controls stop this becoming an automatic “confirmation”</h3><p>The same analysis also searched unrelated subject families. Some of them rose strongly in mesh records: flowers were 2.11× as common as in matched controls, birds 1.96× and lions 1.60×. Horses and vessels were actually less common. This matters because richly ornamented objects often receive richer catalogue descriptions, and interlace itself commonly shares space with floral and animal ornament. The Vardath package therefore has a real <strong>ornamental-description confound</strong>.</p><p>Against that control, the serpent signal remains notable: its 3.85× risk ratio was larger than any unrelated control family tested. But the honest result is <strong>partial support, not decisive confirmation</strong>. The corpus supports the narrower prediction that interlace/mesh imagery is unusually coupled to serpentine and enclosing visual grammar across these museum catalogues. It does not show that every predicted component travels together, and it does not establish a physical world-lattice as the cause.</p><h3>Cross-cultural spread</h3><p>The >=2-companion package was not confined to Celtic material. It appeared in multiple independently catalogued groups: China produced 12 such mesh records, medieval/early-modern Europe 8, Greek/Roman/Etruscan material 6, ancient Egyptian/Coptic material 4, Andean material 3, Near Eastern/Iranian material 2, South Asian/Himalayan material 2, and sub-Saharan African material 2, with further individual hits in Byzantine, Islamic and Mesoamerican records. China, Greek/Roman material, the Andes, sub-Saharan Africa and European material had qualifying examples in more than one of the three institutions.</p><p>The Celtic/Insular/Norse line looks artificially weak in this particular quantitative run: only 306 dated premodern records in the three bulk datasets were classified into that group, and only two carried the strict mesh vocabulary. Independent British Museum records show that this is a coverage/vocabulary problem rather than an absence of Celtic interlace: an 8th–9th-century Viking/Celtic disc brooch has running interlace knots around a raised central roundel and a quatrefoil; a Celtic pin has an openwork interlace-knot head; and an 11th-century Ringerike pin combines interlace, three interlocking triangles, paired spirals and a crossing bound by a ring.</p><h3>Examples worth looking at directly</h3><p><strong>Moche, Peru, 500–800 CE — <a href="https://www.metmuseum.org/art/collection/search/313400">Nose ornament with intertwined creatures</a>.</strong> The Met describes two gold serpents in bilateral symmetry joined by intertwined bodies; the twisted serpents create eye-shaped openings. This is a particularly close visual match to paired serpentine channels + interlace + eye/node geometry.</p><p><strong>China, Warring States period, 481–221 BCE — <a href="https://www.clevelandart.org/art/1975.62">Hu (Jar)</a>.</strong> Cleveland describes a narrow plait-pattern band and two broad bands of interlacing dragons, with circular patterning elsewhere on the vessel. This combines mesh, serpentine bodies and repeated enclosing/circular forms without Celtic mediation.</p><p><strong>Iraq or Iran, Buyid period, 950–1050 — <a href="https://www.clevelandart.org/art/1941.292">Fragment with star pattern and griffins</a>.</strong> Interlaced bands form an eight-pointed star around a circular centre containing a floriated cross, with four corner compartments. This is an unusually direct mesh + eightfold + central-node/fourfold example.</p><p><strong>Aztec Mexico, 1100–1520 — <a href="https://art.thewalters.org/object/29.2/">Knotted Rattlesnake</a>.</strong> The object is literally a serpent formed into a knot; the Walters notes its detailed eyes and its traditional links with sky, rain, agriculture and cyclical life/death/rebirth. It is a strong independent mesh + serpent example, with a water/sky association supplied by the museum rather than added by this model.</p><p><strong>Ethiopia, 14th–15th centuries — <a href="https://art.thewalters.org/object/54.2890/">Processional Cross</a> and <a href="https://art.thewalters.org/object/54.2942/">Processional Cross</a>.</strong> One is described as a radiating lattice of crosses dominated by circular and cruciform shapes around a central hub; the other is built from interlocking circles whose intersections generate thirteen crosses. These supply mesh + enclosure + central/fourfold organization in a non-Celtic Christian tradition.</p><p><strong>Celtic/Viking external check — <a href="https://www.britishmuseum.org/collection/object/H_1891-1021-78">disc brooch</a>, <a href="https://www.britishmuseum.org/collection/object/H_1881-0310-8">Celtic pin</a>, and <a href="https://www.britishmuseum.org/collection/object/H_1893-0618-72">Ringerike pin</a>.</strong> These British Museum records independently document running/openwork interlace, central roundels, quatrefoils, paired spirals, interlocking triangles and a crossing bound by a ring.</p>
+<div id="cross-cultural-example-thumbnails" class="art-gallery story-art-gallery">
+<a class="art-card" href="https://www.metmuseum.org/art/collection/search/313400" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/313400/2347320/main-image" alt="Moche nose ornament with intertwined serpents"><span class="art-copy"><strong>Moche — intertwined serpent nose ornament</strong><small>Peru · 500–800 CE · The Met</small><em>paired serpents · bilateral symmetry · interlace · eye-shaped openings</em></span></a>
+<a class="art-card" href="https://www.clevelandart.org/art/1975.62" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://www.clevelandart.org/_next/image?url=https%3A%2F%2Fpiction.clevelandart.org%2Fcma%2Fump.di%3Fe%3D5AC335A2FB1534BC33305ADF655576A233A30BDAFD091B5305B47F4DA45DA612%26s%3D24247294%26se%3D399313166%26v%3D1%26f%3D%5Cd3118%5Cu2831189%5C1975.62_o5.jpg&amp;w=640&amp;q=75" alt="Chinese Warring States Hu jar with interlacing dragons"><span class="art-copy"><strong>China — Hu jar</strong><small>Warring States · 481–221 BCE · Cleveland Museum of Art</small><em>plait band · interlacing dragons · circular/ring forms</em></span></a>
+<a class="art-card" href="https://www.clevelandart.org/art/1941.292" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://www.clevelandart.org/_next/image?url=https%3A%2F%2Fpiction.clevelandart.org%2Fcma%2Fump.di%3Fe%3D4C9F94B61C96C186FEE8B68CE3B9C59E658ABD9508547F0CD4228E33654F39FC%26s%3D24247294%26se%3D399313166%26v%3D4%26f%3D1941.292_o5.jpg&amp;w=640&amp;q=75" alt="Buyid silk fragment with interlaced eight-point star"><span class="art-copy"><strong>Iraq / Iran — interlaced eight-point star textile</strong><small>Buyid period · 950–1050 · Cleveland Museum of Art</small><em>interlaced bands · eight-point structure · circular centre · cross</em></span></a>
+<a class="art-card" href="https://art.thewalters.org/object/29.2/" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://art.thewalters.org/images/art/thumbnails/s_PS1_29.2_VwA_DD_T09.jpg" alt="Aztec knotted rattlesnake"><span class="art-copy"><strong>Aztec — Knotted Rattlesnake</strong><small>Mexico · 1100–1520 · Walters Art Museum</small><em>serpent literally forms a knot · eye detail · sky/rain/cycle association</em></span></a>
+<a class="art-card" href="https://art.thewalters.org/object/54.2890/" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://art.thewalters.org/images/art/thumbnails/s_PS4_54.2890_SideA_DD_AT21_25613-tms.jpg" alt="Ethiopian processional cross with radiating lattice"><span class="art-copy"><strong>Ethiopia — Processional Cross</strong><small>14th–15th century · Walters Art Museum</small><em>radiating lattice · central hub · concentric rings · repeated cruciform nodes</em></span></a>
+<a class="art-card" href="https://www.britishmuseum.org/collection/object/H_1893-0618-72" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://media.britishmuseum.org/media/Repository/Documents/2014_10/1_7/0b42160a_f336_4ed3_b148_a3b700758559/mid_00034891_001.jpg" alt="Late Viking Ringerike style bone pin with interlace"><span class="art-copy"><strong>Late Viking — Ringerike interlace pin</strong><small>11th century · British Museum</small><em>interlocking triangles · paired spirals · double tendrils · ring-bound crossing</em></span></a>
+</div>
+<p class="art-source-note">These are the exact museum-linked examples named immediately above, shown here as thumbnails so the geometry can be inspected without leaving the section.</p>
+<h3>The Starbucks siren belongs to the survival test, not the ancient corpus</h3><p>Starbucks itself records that designer Terry Heckler searched old marine books and selected an illustration of a <strong>twin-tailed siren from Greek mythology</strong>. The modern logo therefore preserves a central anthropomorphic figure, two symmetrical curling tails and circular enclosure, but it is not an independent modern rediscovery of the geometry. It is exactly what the test calls a <strong>cultural survival/descendant</strong>: old mythic imagery deliberately carried into a modern emblem. See <a href="https://about.starbucks.com/history/the-story-of-the-siren/">Starbucks' own history of the siren</a>.</p><div class="callout"><strong>Current verdict:</strong> the first large corpus test is a genuine positive result for a narrower prediction—especially the interlace↔serpent association—but not a confirmation of the cosmology. The next stronger prediction is now obvious: blind image-level coding or computer vision should recover the same serpent/enclosure enrichment directly from the artwork, without relying on museum catalogue wording. If that signal disappears when the pixels rather than the descriptions are scored, the current result was largely metadata/ornament bias.</div><p>The test is reproducible. The analysis script is preserved at <a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/lattice_art_corpus.py">research/lattice_art_corpus.py</a>; the saved result report is at <a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/lattice_art_corpus_results/2026-09-13_report.md">2026-09-13_report.md</a>, with <a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/lattice_art_corpus_results/2026-09-13_culture_stats.csv">culture statistics</a> and <a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/lattice_art_corpus_results/2026-09-13_examples.csv">candidate examples</a>.</p>
+<div class="late-research-block">
+<h1 id="freemason-alchemical-art-20-shard-projection-grammar-test">Freemason &amp; alchemical art — 20-shard projection-grammar test</h1>
+<p>After the cross-cultural lattice-art test, the next targeted question was whether <strong>Freemason visual teaching and alchemical image traditions</strong> preserve the same structural families that accumulated in Vardath Cosmology. Both traditions deliberately compress complex systems into diagrams: pillars, ladders, squares, stars, eyes, circles, suns and moons in Masonic art; serpents, vessels, trees, solar/lunar pairs, enclosed worlds and transformations in alchemical art.</p>
+<h2>Prediction before the run</h2><p>Eight families were fixed before the corpus was gathered: <strong>axis</strong>, <strong>gate/ladder</strong>, <strong>serpent/braid</strong>, <strong>enclosure</strong>, <strong>central node/radiance</strong>, <strong>four/eight geometry</strong>, <strong>water/vessel</strong> and <strong>paired polarity</strong>. The strongest prediction was that target records would more often combine three or more families. The second prediction was a division of labour: Masonic material should emphasise architectural axis/gate and four/eight/radial geometry, while alchemical material should emphasise serpent/braid, polarity and vessel/transformation around a related enclosure-axis-node grammar.</p>
+<h2>The 20-shard corpus</h2><p>The preregistered test ran in <strong>20 GitHub Actions shards</strong>: ten Wikimedia Commons visual/file shards and ten Open Library document shards, with neighbouring genres as controls. The merged corpus contained <strong>8,486 unique records</strong>. Matching produced <strong>3,568 target records and 3,568 controls</strong>.</p><div class="cards"><div class="card"><span class="tag">20 shards</span><h3>8,486</h3><p>unique visual and document records</p></div><div class="card"><span class="tag">matched test</span><h3>3,568 + 3,568</h3><p>target records versus controls</p></div><div class="card"><span class="tag">predeclared</span><h3>8 families</h3><p>fixed before acquisition results</p></div><div class="card"><span class="tag">controls</span><h3>6 families</h3><p>unrelated motif controls</p></div></div>
+<h2>Primary result — the full-package prediction failed</h2><table><thead><tr><th>criterion</th><th>target</th><th>control</th><th>risk ratio</th></tr></thead><tbody><tr><td><strong>≥3 predicted families</strong></td><td><strong>0.11%</strong></td><td><strong>0.20%</strong></td><td><strong>0.57×</strong></td></tr><tr><td>≥2 predicted families</td><td>0.56%</td><td>0.78%</td><td>0.71×</td></tr></tbody></table><p>The broad idea that Masonic and alchemical records would simply contain more of the complete Vardath package at once was <strong>not supported</strong>.</p>
+<h2>What did appear — a specialization split</h2><table><thead><tr><th>tradition</th><th>predeclared family</th><th>target</th><th>control</th><th>RR</th><th>FDR q</th></tr></thead><tbody><tr><td><strong>Masonic</strong></td><td><strong>four/eight geometry</strong></td><td>1.38%</td><td>0.17%</td><td><strong>8.00×</strong></td><td><strong>0.000474</strong></td></tr><tr><td><strong>Masonic</strong></td><td><strong>gate/ladder</strong></td><td>2.48%</td><td>1.09%</td><td><strong>2.26×</strong></td><td><strong>0.01697</strong></td></tr><tr><td><strong>Alchemy</strong></td><td><strong>serpent/braid</strong></td><td>2.18%</td><td>0.16%</td><td><strong>13.33×</strong></td><td><strong>5.15e−8</strong></td></tr><tr><td><strong>Alchemy</strong></td><td><strong>paired polarity</strong></td><td>2.02%</td><td>0.33%</td><td><strong>6.17×</strong></td><td><strong>1.96e−5</strong></td></tr></tbody></table><p>The result is therefore less like two traditions repeatedly drawing one complete machine and more like <strong>different projection families being selected for different jobs</strong>: Freemasonry preferentially preserves ordered division, square/four/eight structure, architecture, ascent and threshold; alchemy preferentially preserves winding transformation, serpent/ouroboros imagery and opposed states.</p>
+<h2>Historical robustness check</h2><p>A post-run check restricted the corpus to known-year records through 1930 and rematched them. The broad three-family prediction still failed, but the historically anchored effects remained: <strong>Masonic four/eight RR 5.5×</strong>, <strong>Masonic gate/ladder RR 6.0×</strong>, and <strong>alchemical serpent/braid 5.65% versus 0 controls</strong>. The full-corpus paired-polarity result disappeared in this historical slice, so it is not treated as equally secure.</p>
+<h2 id="masonic-alchemical-visual-atlas">Visual atlas — the geometry the test was asking about</h2><p class="art-source-note">These source-linked images illustrate the declared families. They were not selected to determine the statistical outcome.</p><div class="art-gallery story-art-gallery"><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Unknown_artist_-_First_Degree_Tracing_Board_-_M2010.1203_-_Museum_of_Freemasonry.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Unknown_artist_-_First_Degree_Tracing_Board_-_M2010.1203_-_Museum_of_Freemasonry.jpg?width=720" alt="First Degree Masonic tracing board"><span class="art-copy"><strong>First Degree Tracing Board</strong><small>Museum of Freemasonry · 1810</small><em>architecture · ascent · celestial/radiant forms · ordered geometry</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:The_Masonic_Ladder.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Masonic_Ladder.jpg?width=720" alt="The Masonic Ladder"><span class="art-copy"><strong>The Masonic Ladder</strong><small>Library of Congress · 1850</small><em>literal ladder/ascent inside an ordered symbolic architecture</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Chrysopoea_of_Cleopatra_1.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Chrysopoea_of_Cleopatra_1.png?width=720" alt="Chrysopoeia of Cleopatra ouroboros"><span class="art-copy"><strong>Cleopatra’s Chrysopoeia — ouroboros</strong><small>surviving manuscript copy · c. 10th/11th century</small><em>serpent and closed enclosure become one figure</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Ripley_alchemical_scroll_-_Philosophical_mercury_in_the_tree_of_life_draws_out_a_child_-_Leonard_Smethley,_Princeton_University_Library,_1624.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ripley_alchemical_scroll_-_Philosophical_mercury_in_the_tree_of_life_draws_out_a_child_-_Leonard_Smethley,_Princeton_University_Library,_1624.jpg?width=720" alt="Ripley Scroll Tree of Life Sun and Moon"><span class="art-copy"><strong>Ripley Scroll — Tree of Life, Sun and Moon</strong><small>1624</small><em>vertical axis/tree with explicit solar-lunar polarity</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Splendor_Solis_-_Trait%C3%A9_d%27Alchimie_-_Rencontre_du_Roi_Soleil_et_de_la_Reine_Lune.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Splendor_Solis_-_Trait%C3%A9_d%27Alchimie_-_Rencontre_du_Roi_Soleil_et_de_la_Reine_Lune.jpg?width=720" alt="Splendor Solis Sun King and Moon Queen"><span class="art-copy"><strong>Splendor Solis — Sun King and Moon Queen</strong><small>c. 1572</small><em>celestial opposites personified as a complementary pair</em></span></a><a class="art-card" href="https://commons.wikimedia.org/wiki/File:Amphitheatrum_sapientiae_aeternae_-_Alchemist%27s_Laboratory.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Amphitheatrum_sapientiae_aeternae_-_Alchemist%27s_Laboratory.jpg?width=720" alt="Alchemist laboratory from Amphitheatrum sapientiae aeternae"><span class="art-copy"><strong>Amphitheatrum sapientiae aeternae — laboratory</strong><small>late 16th century</small><em>multiple declared families within one alchemical composition</em></span></a></div>
+<h2 id="masonic-alchemical-result-in-the-vardath-model">What the result adds to the model</h2><p>Taken together with the earlier lattice-art test, this experiment suggests a more constrained possibility: symbolic traditions may preserve <strong>different projections or operating states</strong> rather than complete duplicate diagrams. Masonic imagery preferentially preserves the <strong>framework</strong>; alchemical imagery preferentially preserves the <strong>process</strong>. That is a sharper hypothesis than simply collecting recurrent symbols, because the next test can ask whether those families occupy predictable positions relative to one another in the images themselves.</p>
+<h2>Reproducibility</h2><ul><li><a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/masonic_alchemy_corpus/PREREGISTRATION.md" target="_blank" rel="noopener noreferrer">preregistered predictions</a></li><li><a href="https://github.com/Vardath/Vardath.github.io/blob/main/tools/test_masonic_alchemy_corpus.py" target="_blank" rel="noopener noreferrer">test code</a></li><li><a href="https://github.com/Vardath/Vardath.github.io/blob/main/.github/workflows/masonic-alchemy-corpus-20-shard.yml" target="_blank" rel="noopener noreferrer">20-shard workflow</a></li><li><a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/masonic_alchemy_corpus_results/2026-09-13_report.md" target="_blank" rel="noopener noreferrer">full result report</a></li><li><a href="https://github.com/Vardath/Vardath.github.io/blob/main/research/masonic_alchemy_corpus_results/shard_manifest.csv" target="_blank" rel="noopener noreferrer">shard manifest</a></li><li><a href="https://github.com/Vardath/Vardath.github.io/actions/runs/34757471398" target="_blank" rel="noopener noreferrer">successful 20-shard GitHub run</a></li></ul>
+</div>
+<section class="deepening late-research-block">
+<h1 id="born-of-the-ka-ba-ge-cabbage-lettuce-lattice-and-the-field-of-eyes">Born of the KA–BA–GE — cabbage, lettuce, lattice and the field of eyes</h1>
+<p>A new phonetic-symbolic chain appeared out of the three-shell work:</p>
+<blockquote><strong>KA + BA + GE → cabbage → lettuce → lattice → “lot of eyes.”</strong></blockquote>
+<p>In the Vardath reading, the chain compresses several layers of the cosmology into one piece of language. <strong>KA</strong> is taken as the animating or vital principle, <strong>BA</strong> as the individuated or mobile being, and <strong>GE</strong> as the earth/material world. Read together as <strong>KA–BA–GE</strong>, the phrase becomes a symbolic formula for life becoming embodied in matter.</p>
+<p>The next step is visual rather than merely verbal. A cabbage or lettuce head is a living structure produced by repeated growth around a centre. Leaves layer over one another, turn around the growth point and build a bounded body from a continuing generative pattern. In that sense the plant is a small biological analogue of the shell model: <strong>centre → repeated turning → layered enclosure → living body</strong>.</p>
+<div class="projection-grid"><div><b>KA–BA–GE</b><span>life · individuated being · earth / matter</span></div><div><b>cabbage / lettuce</b><span>living layered growth turning around a centre</span></div><div><b>lattice / “lot of eyes”</b><span>the repeated framework, openings and nodes on which growth can organise</span></div></div>
+
+<h2>KA–BA–GE Patch Kids</h2>
+<p><strong>Cabbage Patch Kids</strong> makes the word-chain tighter. Read through the same phonetic-symbolic lens, it becomes <strong>KA–BA–GE Patch Kids</strong>: children or offspring born from a <em>patch</em> of the KA–BA–GE.</p>
+<p>The word <strong>patch</strong> matters because it is geometric as well as botanical. A patch is a bounded local region of a larger surface or field. In the shell model, a patch can therefore be imagined as one local neighbourhood of the greater lattice — a region around an eye, node, crossing or gate where the underlying structure becomes locally active.</p>
+<div class="projection-grid"><div><b>whole lattice</b><span>the larger woven organising field</span></div><div><b>local patch</b><span>a bounded neighbourhood around an eye / node / gate</span></div><div><b>kid / offspring</b><span>a living material body generated from that local patch</span></div></div>
+<blockquote><strong>KA–BA–GE PATCH KIDS = beings born from local living patches of the lattice.</strong></blockquote>
+<p>The familiar image of children coming from a cabbage patch therefore lands on the same architecture as the cosmology: not life appearing from nowhere, but <strong>life emerging from a fertile local region of a larger generative structure</strong>. The cabbage is the layered growth-body; the patch is its local field; the kid is the new embodied being produced there.</p>
+<p>This gives the earlier <strong>field of eyes</strong> idea a generative role too. If an eye/node is a local opening in the lattice, then a patch around an eye can be treated as a local growth zone:</p>
+<blockquote><strong>lattice → eye / node → patch → turning growth → body / child.</strong></blockquote>
+
+<h2>Picture references — growth body and Patch Kid</h2>
+<p class="art-source-note">Two source-linked visual references anchor the comparison. One shows the layered cabbage geometry; the other is an actual historical Cabbage Patch Kids object. Click either card to open its source record.</p>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Red_Cabbage_cross_section_showing_spirals.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Red_Cabbage_cross_section_showing_spirals.jpg?width=720" alt="Red cabbage cross section showing spiral leaf arrangement"><span class="art-copy"><strong>Red cabbage cross-section</strong><small>Wikimedia Commons</small><em>The cut head makes the layered, turning growth around a centre visible rather than leaving “cabbage” as a word-only analogy.</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:St._Louis_Cardinals_Cabbage_Patch_Kid_Doll_with_Accessories_and_Original_Box_-_DPLA_-_98cfeab779b7cd022d21d069795561f4_(page_1).jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/St._Louis_Cardinals_Cabbage_Patch_Kid_Doll_with_Accessories_and_Original_Box_-_DPLA_-_98cfeab779b7cd022d21d069795561f4_%28page_1%29.jpg?width=720" alt="Cabbage Patch Kid doll with original box"><span class="art-copy"><strong>Cabbage Patch Kid</strong><small>DPLA / Wikimedia Commons · Appalachian Artworks</small><em>A catalogued example of the modern “Cabbage Patch Kids” image: child / offspring associated with a cabbage patch.</em></span></a>
+</div>
+
+<p><strong>Lettuce → lattice</strong> then moves from the visible living body to the proposed hidden ordering framework beneath it. The lattice is not necessarily the flesh of the world; it is the structure around which the flesh can organise.</p>
+<p>The phrase <strong>“lot of eyes”</strong> adds another layer. A lattice naturally produces repeated openings, crossings and nodes. Seen symbolically, each opening can be read as an <em>eye</em>. A large woven field therefore becomes a field of eyes: many local apertures or nodes belonging to one larger structure.</p>
+<blockquote><strong>lattice → openings / eyes → local nodes / gates → material growth around the framework → living world.</strong></blockquote>
+<p>The idea also changes the role of the three shells. The shells do not have to be solid pre-made containers. They can be <strong>growth bodies</strong>: matter accumulating, layering and turning around an older organising geometry. The recent 20-shard shell test separated two jobs that had previously been blurred together: <strong>reversal creates recurring gates, while attraction changes the turning or pitch</strong>. In this biological analogy, the lattice supplies the recurring structure and attractive interaction helps determine how growth winds around it.</p>
+<div class="callout good"><strong>We are not simply made of the lattice. We are growth produced upon it.</strong><br>The KA–BA–GE is the living/material body; the lattice is the hidden ordering framework; the “eyes” are the repeated openings and nodes through which that framework becomes locally visible or active.</div>
+<p>Read this way, cabbage, Cabbage Patch Kids, lettuce and lattice become successive views of one process: <strong>life enters matter, a local patch becomes fertile, matter grows by repeated turning, and the turning reveals the hidden geometry that organises the living shell.</strong></p>
+</section>
+
+<section class="late-research-block" id="ark-arc-sky-section">
+<h1 id="ark-arc-sky-the-travelling-fingertrap">The travelling fingertrap — ARK → ARC → SKY</h1>
+<p>The baby-in-the-river motif changes meaning when it is placed beside the mature fingertrap geometry. Across the stories, the transport object is rarely one fixed thing. It may be a reed basket, chest, ark, trough, drum, leather bag, wicker box, hollow bamboo segment or other bounded carrier. The recurring function is more stable than the material: <strong>a living seed is enclosed inside a small protected world, surrendered to a current, carried through danger, recovered at another boundary and opened into a new domain.</strong></p>
+
+<div class="callout"><strong>Vardath reading:</strong> the basket is the fingertrap in its contracted transport state. The fingertrap does not merely sit under the sky. It can be the same woven shell that, after transit, opens outward into an arc and then into the sky of the next stable world.</div>
+
+<h2>The cross-cultural waterborne-child grammar</h2>
+<p>The pattern is wider than the familiar Moses–Sargon comparison. The examples below differ in theology, date and transmission history, but they repeatedly preserve the same structural sequence: threatened or exceptional birth → enclosure → water/current → transport → retrieval → fosterage or changed identity → later emergence as hero, ruler, prophet, holy person or culture-founder.</p>
+<table>
+<thead><tr><th>tradition</th><th>child / figure</th><th>carrier and current</th><th>source</th></tr></thead>
+<tbody>
+<tr><td>Old Hittite / Anatolian</td><td>Thirty sons of the Queen of Kaneš</td><td>baskets launched into a river and carried toward Zalpa</td><td><a href="https://scholar.lib.vt.edu/ejournals/ElAnt/V11N1/singer.html" target="_blank" rel="noopener noreferrer">Singer, Kaneš / Zalpa text</a></td></tr>
+<tr><td>Akkadian / Mesopotamian</td><td>Sargon</td><td>reed basket sealed with bitumen, entrusted to the river</td><td><a href="https://etana.org/node/578" target="_blank" rel="noopener noreferrer">ETANA, Birth Legend of Sargon</a></td></tr>
+<tr><td>Hebrew Bible</td><td>Moses</td><td>papyrus <em>tēvāh</em>, coated with bitumen and pitch, placed among Nile reeds</td><td><a href="https://www.sefaria.org/Exodus.2?lang=en" target="_blank" rel="noopener noreferrer">Exodus 2</a></td></tr>
+<tr><td>Qur'an / Arabic</td><td>Mūsā</td><td><em>al-tābūt</em> cast into the water; the water casts it onto the shore</td><td><a href="https://corpus.quran.com/translation.jsp?chapter=20&verse=39" target="_blank" rel="noopener noreferrer">Qur'an 20:39</a></td></tr>
+<tr><td>Mahābhārata / Sanskrit</td><td>Karṇa</td><td>sealed wicker / casket-like container sent through connected rivers</td><td><a href="https://www.wisdomlib.org/hinduism/book/the-mahabharata-mohan/d/doc7589.html" target="_blank" rel="noopener noreferrer">Mahābhārata, Karṇa birth narrative</a></td></tr>
+<tr><td>Roman</td><td>Romulus and Remus</td><td>floating vessel exposed to the Tiber flood</td><td><a href="https://cts.perseids.org/read/latinLit/phi0914/phi001/perseus-eng3/1.4.1-1.4.9" target="_blank" rel="noopener noreferrer">Livy 1.4</a></td></tr>
+<tr><td>Buddhist commentary</td><td>Padumavatī's 500 sons</td><td>five hundred sealed boxes thrown into the water and recovered downstream</td><td><a href="https://sacred-texts.com/journals/jras/1893-13.htm" target="_blank" rel="noopener noreferrer">Manorathapūraṇī tradition</a></td></tr>
+<tr><td>Nyanga / Congo</td><td>Mwindo</td><td>newborn sealed inside a hollow drum and thrown into the river</td><td><a href="https://edblogs.columbia.edu/worldepics/project/mwindo-epic/" target="_blank" rel="noopener noreferrer">Columbia World Epics — Mwindo</a></td></tr>
+<tr><td>Welsh Taliesin tradition</td><td>Taliesin</td><td>infant enclosed in a leather bag and cast into the sea</td><td><a href="https://en.wikisource.org/wiki/The_Mabinogion_%28Guest_1877%29/Taliesin" target="_blank" rel="noopener noreferrer">Guest, Taliesin</a></td></tr>
+<tr><td>Southwest Chinese origin tradition</td><td>Bamboo King</td><td>child found inside a hollow bamboo segment travelling on the river</td><td><a href="https://ctext.org/wiki.pl?chapter=617024&if=en" target="_blank" rel="noopener noreferrer">Chinese Text Project — Bamboo King tradition</a></td></tr>
+</tbody>
+</table>
+
+<h2>The invariant object is a travelling enclosure</h2>
+<p>Once the stories are compared structurally, the important object is not a literal basket. What survives across cultures is a <strong>small enclosed world capable of carrying life through a moving medium</strong>. The Vardath model already has such an object: a woven fingertrap whose geometry changes with tension and opening.</p>
+<div class="projection-grid">
+<div><b>living seed</b><span>baby · hero · preserved life · future world</span></div>
+<div><b>contracted fingertrap</b><span>basket · ark · chest · drum · tube · bag</span></div>
+<div><b>current</b><span>river · flood · sea · moving medium</span></div>
+<div><b>gate</b><span>shore · reeds · weir · net · bank · receiver</span></div>
+<div><b>opening</b><span>retrieval · unsealing · second birth · adoption</span></div>
+<div><b>new domain</b><span>foster household · kingdom · temple · next world</span></div>
+</div>
+
+<h2>ARK → ARC → SKY</h2>
+<p>The fingertrap supplies a single geometric object with several possible states. In the closed transport state it is the <strong>ARK</strong>: a narrow woven enclosure around the living interior. During reopening, the same structure widens and bows outward into an <strong>ARC</strong>. At maximum opening, seen from inside the new domain, the expanded woven surface becomes the <strong>SKY</strong>: the broad lattice overhead.</p>
+<div class="projection-grid">
+<div><b>ARK — contracted</b><span>narrow woven carrier · sealed survival state · world inside</span></div>
+<div><b>ARC — opening</b><span>tube flares · walls curve outward · transit becomes vault</span></div>
+<div><b>SKY — opened</b><span>broad lattice canopy · nodes/lights spread over the enclosing surface</span></div>
+</div>
+<p>The sequence is therefore not “a boat travels under a sky.” In the Vardath reading it is more radical: <strong>life travels inside the structure that will become its next sky.</strong></p>
+<blockquote><strong>life → contracted fingertrap / ark → current → gate → reopening arc → sky / next world</strong></blockquote>
+
+<h2>Moses and Noah — the same enclosure at different scales</h2>
+<p>The Hebrew wording makes this comparison unusually sharp. The noun <a href="https://biblehub.com/hebrew/8392.htm" target="_blank" rel="noopener noreferrer"><em>tēvāh</em></a> is used for Noah's Ark and for the small enclosure carrying Moses. One story preserves a whole living remnant inside the enclosure; the other preserves one child. In the Vardath model this becomes a scale relation rather than two unrelated props:</p>
+<blockquote><strong>child in ark ~ life in world ~ world in sky-shell.</strong></blockquote>
+<p>Noah is the large-scale version: life is carried through a destructive water transition inside a bounded survival world and emerges afterward. Moses, Sargon, Karṇa and the other exposed children preserve the same grammar at human scale.</p>
+
+<h2>Krishna is the controlled-crossing variant</h2>
+<p>The Krishna tradition is not a passive foundling story, but it is visually important because it makes the same architecture explicit: the newborn is carried <strong>in a basket through the river</strong> from a death-threatened birth household into a foster household. Ancient Mathura imagery already depicts Vasudeva carrying the infant Krishna in a basket across the Yamunā. In this version the carrier is guided rather than abandoned to the current, but the sequence—child, enclosure, dangerous water, crossing, new household—remains visible.</p>
+
+<h2>Visual references — carrier, current, gate and reopening</h2>
+<div class="art-gallery story-art-gallery">
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Finger_trap_toys.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Finger%20trap%20toys.jpg?width=720" alt="Woven Chinese finger traps"><span class="art-copy"><strong>Fingertrap — changing woven tube</strong><small>Wikimedia Commons · CC BY 2.5</small><em>the geometric carrier proposed by the Vardath model</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:030.The_Child_Moses_on_the_Nile.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/030.The%20Child%20Moses%20on%20the%20Nile.jpg?width=720" alt="Gustave Doré illustration of the child Moses on the Nile"><span class="art-copy"><strong>Moses — child inside the little ark</strong><small>Gustave Doré · 1866 · public domain</small><em>reed enclosure · water · reeds / shore · retrieval</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Birth_of_Sargon_BM_ME_K.3401.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Birth%20of%20Sargon%20BM%20ME%20K.3401.jpg?width=720" alt="Cuneiform tablet containing the Birth Legend of Sargon"><span class="art-copy"><strong>Sargon — birth legend tablet</strong><small>7th century BCE copy · British Museum tradition</small><em>reed basket · bitumen · river · adoption</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Romulus_and_Remus_Exposed_on_the_Tiber_,_pl_.2_from_the_series_The_Story_of_Romulus_and_Remus.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Romulus%20and%20Remus%20Exposed%20on%20the%20Tiber%20%2C%20pl%20.2%20from%20the%20series%20The%20Story%20of%20Romulus%20and%20Remus.jpg?width=720" alt="Romulus and Remus exposed on the Tiber"><span class="art-copy"><strong>Romulus and Remus — Tiber exposure</strong><small>Battista Fontana · 16th century · public domain</small><em>floating vessel · flood/current · shore · fosterage</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:Vasudeva_carrying_baby_Krishna_in_a_basket_across_the_Yamuna,_Art_of_Mathura,_circa_1st_century_CE.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vasudeva%20carrying%20baby%20Krishna%20in%20a%20basket%20across%20the%20Yamuna%2C%20Art%20of%20Mathura%2C%20circa%201st%20century%20CE.jpg?width=720" alt="Vasudeva carrying baby Krishna in a basket across the Yamuna"><span class="art-copy"><strong>Krishna — basket across the Yamunā</strong><small>Mathura tradition · c. 1st century CE</small><em>child · basket · river crossing · transfer to foster world</em></span></a>
+<a class="art-card" href="https://commons.wikimedia.org/wiki/File:The_Ark_of_Noah._Dispersed_manuscript_of_universal_history._Herat,_ca._1428._The_David_Collection,_Copenhagen,_accession_number_8-2005.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Ark%20of%20Noah.%20Dispersed%20manuscript%20of%20universal%20history.%20Herat%2C%20ca.%201428.%20The%20David%20Collection%2C%20Copenhagen%2C%20accession%20number%208-2005.jpg?width=720" alt="Noah's Ark in a fifteenth-century Herat manuscript"><span class="art-copy"><strong>Noah — the enclosure scaled up to a world</strong><small>Herat · c. 1428 · public domain</small><em>living remnant carried through water inside one bounded vessel</em></span></a>
+</div>
+<p class="art-source-note">Each thumbnail links to its source record.</p>
+
+<h2>What the waterborne-child pattern predicts next</h2>
+<p>The interpretation is testable. If the travelling-fingertrap reading is more than free resemblance, waterborne-child stories should disproportionately use <strong>woven, hollow, tubular, sealed, flexible or reopenable enclosures</strong>; they should disproportionately terminate at a distinct boundary or receiver; and the stories should disproportionately pair transport with <strong>changed household, changed identity or second-birth language</strong>. Those features can be frozen before a multilingual corpus search and tested against exposed-child stories that do not involve water.</p>
+</section>
+
+<!-- END SOURCE: cosmology_fragments/f18.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f19.txt -->
+<h1 id="24-reference-and-control-trail-for-the-reconstructed-page">24.
+Reference and control trail for the reconstructed page</h1><div class="callout warn"><strong>Archive discipline:</strong> directly recovered past-chat ideas are distinguished from user-recalled branches whose exact transcript was not recoverable. Public tradition facts are distinguished from Vardath plasma/lattice interpretations. Failed models remain on the page.</div><p>The full website version should cite or link at least the following
+source categories:</p><ul>
+<li>Kakadu / Parks Australia material for regional Rainbow Serpent
+creation-and-water traditions;</li>
+<li>Peratt’s plasma/petroglyph hypothesis, clearly labelled
+controversial and non-consensus;</li>
+<li>Hávamál translations for Odin’s hanging-tree/rune episode;</li>
+<li>Buddhist/Bodh Gaya references for the Bodhi tree and
+enlightenment;</li>
+<li>Numbers 17 for Aaron’s budding rod, with “rod of iron” treated
+separately;</li>
+<li>Rig Veda 1.32 and related hymns for Indra, Vṛtra/Ahi and release of
+waters;</li>
+<li>Enūma Eliš for Tiamat/Apsu/Kingu/Marduk;</li>
+<li>1 Enoch and giant traditions for portals/contact/reset;</li>
+<li>Epic of Gilgamesh for Mashu and flood-survivor journey;</li>
+<li>Ezekiel for wheels/eyes/wings/fire/throne;</li>
+<li>Bhagavad Gita 11 for special sight and universal form;</li>
+<li>JANUS v1.0 Audited Core for formal 1–3–7 / Q / 3–4–5 / 33 / 137
+boundaries;</li>
+<li>Exploration of 8 checkpoint for Sator/Futhark/231
+gates/144,000/state-space framework;</li>
+<li>Archaix Three-Shell Review for the 138/~395/792 tests, eight-gate
+construction and φ-growth failures;</li>
+<li>historical cartography literature for portolan/rhumb-line
+geometry;</li>
+<li>standard map-projection/geodesy controls for flat-map failures;</li>
+<li>plate tectonic/GPS datasets for land-deformation tests;</li>
+<li>Meltology.org for the community’s own claims;</li>
+<li>materials-science literature on quartz inversion, vitrification,
+thermal expansion and firing shrinkage for the brick/crystallization
+control.</li>
+</ul><h2 id="selected-external-control-links">Selected external control
+links</h2>
+<!-- END SOURCE: cosmology_fragments/f19.txt -->
+
+
+<!-- BEGIN SOURCE: cosmology_fragments/f20.txt -->
+<ul>
+<li>Parks Australia / Kakadu visitor guide — Rainbow Serpent and
+regional creation/water traditions: <a href="https://api.parksaustralia.gov.au/sites/default/files/2024-04/document/knp-visitor-guide.pdf">https://api.parksaustralia.gov.au/sites/default/files/2024-04/document/knp-visitor-guide.pdf</a></li>
+<li>Anthony L. Peratt, <em>Characteristics for the Occurrence of a
+High-Current, Z-Pinch Aurora as Recorded in Antiquity</em> (IEEE TPS
+31(6), DOI 10.1109/TPS.2003.820956): <a href="https://zenodo.org/records/1232269">https://zenodo.org/records/1232269</a></li>
+<li>Hávamál stanza 139 archive — Odin's hanging-tree passage: <a href="https://www.thehavamalarchive.org/havamal/stanza/passage-139">https://www.thehavamalarchive.org/havamal/stanza/passage-139</a></li>
+<li>British Museum — Bodhi Tree: <a href="https://www.britishmuseum.org/collection/term/BIOG138195">https://www.britishmuseum.org/collection/term/BIOG138195</a></li>
+<li>Numbers 17 — Aaron's budding rod: <a href="https://www.biblegateway.com/passage/?search=Numbers+17">https://www.biblegateway.com/passage/?search=Numbers+17</a></li>
+<li>IGNCA Rig-Veda translation, including Indra/Vṛtra/waters: <a href="https://ignca.gov.in/Asi_data/8737.pdf">https://ignca.gov.in/Asi_data/8737.pdf</a></li>
+<li>Meltology.org — community's own description as “The Study of Melted
+Buildings”: <a href="https://meltology.org/">https://meltology.org/</a></li>
+<li>Materials 2021 brick study — thermal expansion, quartz inversion and
+vitrification/shrinkage: <a href="https://www.mdpi.com/1996-1944/14/23/7471">https://www.mdpi.com/1996-1944/14/23/7471</a></li>
+</ul>
+<!-- END SOURCE: cosmology_fragments/f20.txt -->
