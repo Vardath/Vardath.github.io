@@ -137,3 +137,5 @@ jobs:
             git commit -m "Add WNG Steam Workshop support images"
             git push
           fi
+
+# trigger
