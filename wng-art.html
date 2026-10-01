@@ -57,8 +57,8 @@ const imageExt=/\.(png|webp|jpg|jpeg)$/i;
 const directional=/(?:_|-)(north|south|east|west)\.(?:png|webp|jpg|jpeg)$/i;
 const enc=p=>p.split('/').map(encodeURIComponent).join('/');
 const pretty=s=>s.replace(/[_-]+/g,' ').replace(/\b\w/g,m=>m.toUpperCase());
-async function getJson(url){const bust=url+(url.includes('?')?'&':'?')+'_='+Date.now();const r=await fetch(bust,{cache:'no-store',headers:{Accept:'application/vnd.github+json'}});if(!r.ok)throw new Error(`GitHub returned ${r.status}`);return r.json()}
-async function getText(url){const bust=url+(url.includes('?')?'&':'?')+'_='+Date.now();const r=await fetch(bust,{cache:'no-store'});if(!r.ok)throw new Error(`File returned ${r.status}`);return r.text()}
+async function getJson(url){const r=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});if(!r.ok)throw new Error(`GitHub returned ${r.status}`);return r.json()}
+async function getText(url){const r=await fetch(url);if(!r.ok)throw new Error(`File returned ${r.status}`);return r.text()}
 function status(kind,text){el.status.className=`status ${kind||''}`;el.statusText.textContent=text}
 function artPath(p){return p.startsWith('Textures/')&&imageExt.test(p)}
 function direction(p){const m=p.match(directional);return m?m[1].toLowerCase():(/WNG_AlkeshTransport\.(png|webp|jpg|jpeg)$/i.test(p)?'default':'')}
