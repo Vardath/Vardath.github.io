@@ -1,4 +1,4 @@
-# Vardath Cosmology: The World That Opens
+# Vardath Cosmology: A Big May Bee
 
 ## Stephen Michael Hawton / Vardath
 
@@ -418,11 +418,13 @@ I now think I was being too vague when I treated the current, the lattice and th
 
 In the quiet state, the broad lattice is still conducting. Current remains distributed through the ground and wider world-structure as a telluric system. The sleeping gate is therefore not electrically dead. It is the same machine in its broad state, with no single throat dominating.
 
-When the state changes, that distributed current can strengthen and concentrate into an axial plasma form. A Birkeland-like current column, pinch or fire-current is the closest physical analogy I currently have for that active state.
+When the state changes, those same telluric currents do not disappear. They reorganise.
+
+The current that was broad and distributed through the ground and lattice can gather into concentrated axial Birkeland-current fires. These are what I mean by the **Squatter-Man fires**: the telluric currents in their active state, no longer spread quietly through the world-structure but concentrated into luminous, opposed axial forms.
 
 That is also where the god-form belongs.
 
-The god or axis-person may be the active current itself seen in anthropomorphic axial form: a vast fire or current that can also appear as pillar, rod, trunk, serpent, shining person or central figure depending on scale and viewpoint.
+The god, Squatter Man or axis-person may be the active telluric current itself seen in anthropomorphic axial form: a vast Birkeland-like fire/current that can also appear as pillar, rod, trunk, serpent, shining person or central figure depending on scale and viewpoint.
 
 I also now suspect the primordial currents were not merely passengers inside a finished lattice. They may have helped form it. Current organises matter; matter retains geometry; the resulting structure then channels later current. The fire makes the route, and the route remembers where the fire can go.
 
@@ -438,9 +440,9 @@ That lets the quiet world remain alive and conducting while still allowing rare 
 
 The mature model now has two sides to the active current.
 
-One current or god-form can arise above.
+One active telluric current can gather above as a Birkeland-current Squatter-Man fire or god-form.
 
-Another can arise below.
+Another can gather below in the same way.
 
 Because every world-turn is already populated and is its own present, these are not currents joining an empty future to a living present. They belong to already existing neighbouring regions of the larger body.
 
@@ -788,7 +790,7 @@ The world survives by changing.
 
 The complete movement can now be written more precisely:
 
-**quiet populated world with distributed telluric current → current concentration / pulse → upper and lower currents align → cosmic marriage / convergence → rod-throat / changed adjacency → selective or dangerous gate routes → transfer of water, atmosphere, material and life → deformation and reset → gate closure / flow reversal → lattice spreads → current redistributes → renewed quiet world**
+**quiet populated world with distributed telluric current → telluric current concentrates into upper and lower Birkeland-current Squatter-Man fires → cosmic marriage / convergence → rod-throat / changed adjacency → selective or dangerous gate routes → transfer of water, atmosphere, material and life → deformation and reset → gate closure / flow reversal → lattice spreads → current redistributes through the quiet telluric state → renewed quiet world**
 
 That is the central machine of this book.
 
@@ -50733,13 +50735,13 @@ The current is central to that picture.
 
 In the quiet world I imagine it distributed through the lattice and ground as telluric current.
 
-In the active world it can concentrate into a Birkeland-like plasma or fire-current. Seen axially and anthropomorphically, that concentrated current is what I now mean by the god-form or axis-person.
+In the active world those same telluric currents concentrate into Birkeland-current fires. These are the **Squatter-Man fires** in the mature model: the quiet telluric system gathered into an active axial state. Seen anthropomorphically, the concentrated fire/current becomes the god-form, Squatter Man or axis-person.
 
 I also suspect those primordial currents helped build the structure they later travel through. The current organises matter, the organised matter retains the route, and later current follows the structure again.
 
 The active system has an upper and a lower side.
 
-One current or god-form can arise above and another below. When they align through the lattice, I call the junction the **cosmic marriage**.
+One Birkeland-current Squatter-Man fire can gather above and another below. They are not different substances from the quiet telluric current; they are its concentrated active forms. When the two axial fires align through the lattice, I call the junction the **cosmic marriage**.
 
 That marriage is not only a mythic comparison. It is my mechanical picture of two separated poles becoming one working circuit.
 
@@ -50849,7 +50851,7 @@ They may be different camera angles on different scales and phases of the same c
 
 The compact version of the cosmology is therefore this:
 
-**a populated world rests inside a larger populated world-body; a broad woven lattice carries distributed current; the current can concentrate into upper and lower axial forms; those forms can couple in a cosmic marriage; the weave contracts into a throat; one or more routes open between normally separated world-times; water and matter reveal the changed geometry; carriers preserve living patterns; the surface and atmosphere reorganise; the route closes; current redistributes; and a different stable world continues.**
+**a populated world rests inside a larger populated world-body; a broad woven lattice carries distributed telluric current; those same currents can concentrate into upper and lower Birkeland-current Squatter-Man fires; the two axial god-forms can couple in a cosmic marriage; the weave contracts into a throat; one or more routes open between normally separated world-times; water and matter reveal the changed geometry; carriers preserve living patterns; the surface and atmosphere reorganise; the route closes; current redistributes into the quiet telluric state; and a different stable world continues.**
 
 The world tree is the architecture.
 
@@ -50857,7 +50859,7 @@ The serpent is the current.
 
 The rod is the gathered tree.
 
-The god is the current in axial person-form.
+The god or Squatter Man is the telluric current concentrated into Birkeland-current axial fire.
 
 The river and well are the gate carrying or exposing water.
 
