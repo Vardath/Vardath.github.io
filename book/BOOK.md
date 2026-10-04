@@ -300,9 +300,9 @@ I call the ordinary condition the **quiet world**.
 
 Quiet does not mean motionless.
 
-Everything can be moving and the world can still be quiet in the sense I mean. Weather moves. Water moves. Crust moves. Life grows. The sky changes hour by hour. The deeper current proposed by the model can also remain active.
+Everything can be moving and the world can still be quiet in the sense I mean. Weather moves. Water moves. Crust moves. Life grows. The sky changes hour by hour. The deeper electrical system remains active too. In the current model the broad sleeping lattice carries distributed **telluric current** through the ground and wider world-structure.
 
-Quiet means the larger structure is not forcing neighbouring world-states into contact.
+Quiet means the current is distributed and no dominant throat is forcing neighbouring world-states into contact.
 
 The present world is stable enough to behave like one world.
 
@@ -410,39 +410,57 @@ Then the state begins to change.
 
 I call that change **activation**.
 
-## The current and the pulse
+## The current, the god-form and the pulse
 
-The model proposes a persistent deep current.
+The model proposes a persistent electrical current through the larger structure.
 
-The exact physical carrier of that current is not settled. I am not pretending I have finished the physics simply because the structural idea is clear to me.
+I now think I was being too vague when I treated the current, the lattice and the god-form as separate things that merely interacted.
 
-What matters at this stage is the difference between the current and the **pulse**.
+In the quiet state, the broad lattice is still conducting. Current remains distributed through the ground and wider world-structure as a telluric system. The sleeping gate is therefore not electrically dead. It is the same machine in its broad state, with no single throat dominating.
+
+When the state changes, that distributed current can strengthen and concentrate into an axial plasma form. A Birkeland-like current column, pinch or fire-current is the closest physical analogy I currently have for that active state.
+
+That is also where the god-form belongs.
+
+The god or axis-person may be the active current itself seen in anthropomorphic axial form: a vast fire or current that can also appear as pillar, rod, trunk, serpent, shining person or central figure depending on scale and viewpoint.
+
+I also now suspect the primordial currents were not merely passengers inside a finished lattice. They may have helped form it. Current organises matter; matter retains geometry; the resulting structure then channels later current. The fire makes the route, and the route remembers where the fire can go.
+
+The **pulse** is the change from the distributed condition toward the concentrated one.
 
 The current persists.
 
-The pulse is the active condition in which the current begins driving the world-machine into a different state.
+The pulse reorganises it.
 
-This same distinction appears all through the cosmology.
+That lets the quiet world remain alive and conducting while still allowing rare periods when the same system becomes visibly axial, energetic and traversable.
 
-The lattice exists before it contracts.
+## The paired currents and the cosmic marriage
 
-The boundary exists before it becomes a gate.
+The mature model now has two sides to the active current.
 
-The node exists before it opens.
+One current or god-form can arise above.
 
-The world tree exists before it becomes traversable.
+Another can arise below.
 
-The event is therefore not the sudden appearance of a completely foreign mechanism.
+Because every world-turn is already populated and is its own present, these are not currents joining an empty future to a living present. They belong to already existing neighbouring regions of the larger body.
 
-It is a state change in something already present.
+When the upper and lower currents align through the lattice, I call their coupling the **cosmic marriage**.
 
-During activation, local preferred paths strengthen.
+Two poles become one working junction.
 
-Nodes become more important.
+The current becomes continuous through the throat.
 
-The broad structure begins to organise.
+The surrounding water can become ordered around the same geometry, so upper and lower water relations that were normally separated can participate in one coherent passage.
 
-Then comes **convergence**.
+This is why water, river, well and gate have become harder for me to separate. The current provides the active fire. The lattice provides the route. Water can become the visible flow through that route.
+
+A successful cosmic marriage does not mean every large opening is safe. The model now allows more than one gate or route. One may be broad, destructive or badly coupled, while a smaller or narrower route may preserve what crosses it.
+
+The same paired geometry also helps explain why human-form keeps appearing around the axis. If the active god-form is a current organised into a giant axial person-shape, then a human formed from world-material can be a smaller expression of that geometry:
+
+**current/fire → god/axis-form → earth/material → human-form**
+
+I do not mean that every human figure is a literal plasma column. I mean the same geometry can be told at world scale, divine scale and human scale.
 
 ## From the broad world to the through-route
 
@@ -476,31 +494,41 @@ Pull it along its length and the weave changes angle. The sleeve becomes longer 
 
 The strands remain the same strands.
 
-That simple behaviour gave me a mechanical bridge between symbols that had previously looked unrelated.
+That simple behaviour gave me the mechanical bridge between images that had previously looked unrelated.
 
-The broad lattice did not need to disappear so that a rod could replace it.
+The broad lattice does not have to disappear so that a rod can replace it.
 
-The rod could be the lattice under contraction.
+The rod can be the gathered lattice.
 
-The ladder could be an intermediate view of the narrowed weave.
+The tree can be the same structure branching.
 
-The throat could be the most concentrated state of the same structure.
+The gate can be the same structure functioning as access.
 
-That changed the cosmology from a collection of objects into a transformation.
+The river can be the same route carrying water.
 
-A tree, ladder, pillar and rod no longer had to be competing answers to the question of what the world-axis was.
+The well can be a local vertical opening.
 
-They could be different appearances or states of one family.
+The serpent-rod can show current gathered around the axis.
 
-A wheel, eye, ring or star could be what a radial node looked like end-on.
+The sky can be the weave spread broad again.
 
-A serpent could be one moving strand.
+The god/axis-person can be the active current seen in human-like axial form.
 
-A paired-serpent image could be two opposed strands around the same centre.
+The human can repeat that form at another scale in world-material.
 
-The important claim is not that the symbols all historically meant the same thing.
+And the weave can fold around living cargo as a basket, ark, shell or other carrier.
 
-The important claim is that the geometry can generate several of them.
+So the mature identity family inside my model is:
+
+**fingertrap / rod / god / tree / gate / river / well / serpent-rod / basket / human-form**
+
+I am not saying every culture historically used those words for one object. I am saying my mechanism can produce those forms as different phases, viewpoints, scales or jobs.
+
+A wheel, eye, ring or star can still be what a radial node looks like end-on. A ladder can be an intermediate narrowed state. A mountain can be the surface expression of convergence.
+
+The important change is that I no longer need a separate machine for every image.
+
+The geometry can transform.
 
 ## The gate
 
@@ -508,33 +536,35 @@ At maximum convergence, the throat takes on its most important function.
 
 It changes **adjacency**.
 
-That is the mature definition of the gate.
+That remains the mature definition of the gate.
 
-I do not imagine a permanent portal standing open between worlds.
+I do not imagine a permanent portal standing open between worlds. I imagine normally separated populated regions becoming temporarily capable of direct exchange because the geometry and current-state that kept them apart has changed.
 
-I imagine normally separated regions becoming temporarily capable of direct exchange because the geometry that kept them apart has changed.
+During the quiet state, the previous, present and next turns remain effectively separate while the broad lattice carries distributed telluric current.
 
-During the quiet state, the previous, present and next turns are effectively separate.
-
-During the gate interval, some part of that separation weakens.
+During an active gate interval, current concentrates, the weave gathers and an upper/lower junction can form. Some part of the normal separation weakens.
 
 The present world can become connected to a region of the next world above or the previous world below.
 
-The gate therefore does not need to be a doorway installed in the sky.
+The model is now **multi-gate** rather than dependent on one universal opening. Different routes can have different width, duration, direction and capacity. One can be dangerously over-open. Another can be narrow, selective and preserving.
 
-It is a phase of the structure.
+That distinction matters because a route that can move water is not automatically safe for a person, and a world-scale opening is not automatically the desirable one.
 
-This also explains why it closes naturally.
+The gate is therefore not a doorway installed in the sky.
 
-When the contraction ends, the geometry that created the unusual adjacency ends with it.
+It is a state of the structure.
+
+When the concentration ends, the geometry that created the unusual adjacency ends with it.
 
 The lattice widens.
+
+Current redistributes.
 
 The throat loses dominance.
 
 The neighbouring turns separate again.
 
-The gate disappears because the world has changed state.
+The door disappears because the world has changed state.
 
 ## What crosses
 
@@ -580,11 +610,15 @@ They create an **inside** that stays coherent while the outside becomes dangerou
 
 That is the enclosure principle.
 
-The carrier does not have to understand the gate.
+I now think the carrier belongs even more directly to the fingertrap family than I did when I first wrote this introduction.
 
-Its job is to preserve the cargo.
+The same weave that can spread as sky or gather into rod and throat can also fold around cargo.
 
-This can happen while the medium does the moving.
+That makes the basket carrying a child down a river and the ark carrying life through a flood two scales of the same operation: the structure becomes enclosure while the surrounding medium moves.
+
+The carrier does not have to be the gate.
+
+Its job is to preserve what is inside while the gate, water, current or landscape changes around it.
 
 A basket floats.
 
@@ -594,15 +628,13 @@ A cave remains still while the world outside changes.
 
 An egg protects life until it can emerge into another environment.
 
-At world scale, the same logic applies.
-
-The stable world itself is an enclosure.
+At world scale, the stable world itself is an enclosure.
 
 During a reset, smaller enclosures can preserve continuity while the larger one changes.
 
 That is why so many creation and flood stories became interesting to me.
 
-Not because every one of them proves the cosmology, but because the same functional problem appears again and again:
+The same functional problem appears again and again:
 
 **how does life cross a world transition without ceasing to be life?**
 
@@ -754,37 +786,45 @@ The world survives by changing.
 
 ## The full cycle
 
-The complete movement can be written simply:
+The complete movement can now be written more precisely:
 
-**quiet world → activation → convergence → throat → changed adjacency → transfer → deformation and reset → reopening → renewed quiet world**
+**quiet populated world with distributed telluric current → current concentration / pulse → upper and lower currents align → cosmic marriage / convergence → rod-throat / changed adjacency → selective or dangerous gate routes → transfer of water, atmosphere, material and life → deformation and reset → gate closure / flow reversal → lattice spreads → current redistributes → renewed quiet world**
 
 That is the central machine of this book.
 
-Everything else grows around it.
-
-The serpent is the moving line.
+The serpent is current in motion.
 
 The lattice is the broad connected form.
 
-The fingertrap explains contraction.
+The fingertrap explains how the same weave changes state.
 
-The rod is the concentrated state.
+The rod, tree, god-form, river, well and gate are different faces of the gathered or branching structure.
 
-The gate is the temporary contact.
+The basket or ark is the weave acting as carrier.
 
-Water, atmosphere and land reveal the consequences.
+The human can repeat the axis-form at another scale.
+
+The paired upper and lower currents create the active marriage through which passage becomes possible.
+
+Water makes the geometry visible.
+
+The crust records the material consequences.
+
+The canopy changes the environment and biology.
 
 The carrier preserves continuity.
 
-The world tree holds the long connection.
+The time-door changes which populated world-state is adjacent.
 
-The myths give us different human views of the event.
+Then the gate closes, the current returns to the broad telluric condition and the next stable world inherits what survived and what crossed.
 
-And the renewed world becomes quiet enough that the event itself can fade into memory.
+The reset does not rewind history.
+
+It hands one world-state into another.
 
 Vardath Cosmology is therefore not fundamentally a story about the end of the world.
 
-It is a story about **how populated worlds can interact across the gate, survive destructive exchange and enter new-beginning periods without the larger world-body losing continuity**.
+It is a story about **how a living, populated world-structure can change state, open routes through time, move matter and life, survive dangerous exchange and settle into a new present without the larger body losing continuity**.
 
 ---
 
@@ -50656,6 +50696,184 @@ With a maybe strong enough to keep following.
 The world looks closed most of the time.
 
 Maybe it is only quiet.
+
+---
+
+# Book Summary — The Cosmology in One View
+
+After all of these chapters, the picture is much simpler to me than the number of symbols makes it look.
+
+I do not think I am dealing with dozens of unrelated machines.
+
+I think I am looking at one living world-structure that can change state.
+
+The world we inhabit is one populated turn of a larger growing body. There are populated turns above and below us as well. I call them future-relative and past-relative from our position, but each world is its own present to the people living there. The gate does not create those worlds. It changes which parts of them can become adjacent.
+
+Most of the time the system is quiet.
+
+Quiet does not mean dead.
+
+The lattice is broad. The sky is spread. The ground and wider structure still carry distributed telluric current. Water, atmosphere, life and ordinary time behave within the stable limits of one world. Neighbouring world-turns remain separated enough to keep their own environments and histories.
+
+The same structure can then change state.
+
+Current that was distributed begins to organise and concentrate. The broad weave gathers. The geometry that looked like sky or net can narrow through ladder-like forms into rod, pillar, trunk and throat.
+
+The fingertrap remains the simplest mechanical image I have for that transformation because the strands do not have to be replaced. The same weave becomes broad, narrow and broad again.
+
+That is why so many images now belong to one family for me.
+
+**fingertrap, sky, lattice, tree, rod, god, gate, river, well, serpent-rod, basket and human-form**
+
+They are not one word hidden behind many religions.
+
+They are different states, views, scales and jobs that the same geometry can perform.
+
+The current is central to that picture.
+
+In the quiet world I imagine it distributed through the lattice and ground as telluric current.
+
+In the active world it can concentrate into a Birkeland-like plasma or fire-current. Seen axially and anthropomorphically, that concentrated current is what I now mean by the god-form or axis-person.
+
+I also suspect those primordial currents helped build the structure they later travel through. The current organises matter, the organised matter retains the route, and later current follows the structure again.
+
+The active system has an upper and a lower side.
+
+One current or god-form can arise above and another below. When they align through the lattice, I call the junction the **cosmic marriage**.
+
+That marriage is not only a mythic comparison. It is my mechanical picture of two separated poles becoming one working circuit.
+
+The water matters because it follows and reveals that geometry. When the upper and lower systems couple, water can become coherent with the route. A river, well, fountain, flood or divided waters may therefore show the same underlying gate at different scales or phases.
+
+The marriage can also fail.
+
+A gate can open too widely.
+
+A route can carry water while destroying living cargo.
+
+A world-scale connection can become catastrophe instead of passage.
+
+That is why the mature model is multi-gate.
+
+I no longer assume there is only one opening or that the largest opening is the saving one. There may be two or more routes, with a broad or badly coupled path producing destruction while a smaller, narrower and more selective road preserves what crosses it.
+
+That distinction also explains the importance of carriers.
+
+An ark, basket, cave, egg, shell, womb or enclosed city creates a stable inside while the outside changes.
+
+The carrier is not necessarily the gate.
+
+It is the weave folded around cargo.
+
+The baby in the basket and the living world inside the ark are the same problem solved at different scales: preserve the pattern while the surrounding water and world are moving.
+
+The god-form and the human-form belong to the same scale logic.
+
+If the active current can organise itself into the axial shape remembered as a giant person or god, then the human formed from dust and earth can be a smaller material expression of the same geometry.
+
+**current/fire → god/axis-form → earth/material → human-form**
+
+That is one reason person, pillar, tree and rod keep crossing into one another in my comparisons.
+
+The gate itself is not a permanent hole.
+
+It is a phase.
+
+When the current concentrates and the lattice gathers, normally separated world-regions can become temporarily adjacent. Water, atmosphere, heat, sediment, living things and perhaps larger pieces of land can become cargo depending on the width, duration and capacity of the route.
+
+The gate is also a time-door because the world-turns are not only spatially separated. They are at different relative times.
+
+A traveller does not need to move along an abstract line called time if a different world-time can become physically adjacent to the traveller's own.
+
+That is how Yggdrasil eventually became a time-switch for me.
+
+The world tree is the larger woven architecture.
+
+The active throat is a temporary route inside it.
+
+When the strands converge, separated world-times can touch. When they spread again, the ordinary separation returns.
+
+The central spire or throat may therefore be where the temporal gradient becomes strongest. A short interval for the traveller could correspond to a much longer interval elsewhere without requiring the traveller to run backward through personal time.
+
+The atmosphere belongs to the same machine.
+
+In its stronger state I picture the upper waters and vapour canopy producing a high-pressure, oxygen-rich, water-rich environment under a more intense electrical regime. That gives me one environmental framework for giant life, unusual longevity, rapid growth and the other biological possibilities explored in the book.
+
+When the active phase intensifies further, heat and plasma can melt upper ice, create steam and load the atmosphere. When the event weakens, cooling and condensation can turn that canopy into rain and flood.
+
+So flood is often an effect of the gate-cycle rather than the original cause.
+
+The crust is cargo too.
+
+The deeper lattice can remain continuous while the surface bends, shears, rises, sinks, melts, breaks or is buried. Water then traces the changed relief. Meltology is the material side of that possibility: heat, electrical activity, pressure, melting, glazing, foaming, recrystallisation and burial may preserve physical scars after the story of the event has become myth.
+
+None of this requires a rewind.
+
+A reset is forward.
+
+The old arrangement does not return exactly.
+
+Material moves.
+
+Life survives or crosses.
+
+Water settles differently.
+
+Atmosphere changes.
+
+Land becomes new geography.
+
+Cultures inherit ruins, stories, organisms and structures from what came before.
+
+The next stable world is a new present.
+
+That is why I think so many myths can disagree and still remain interesting beside one another.
+
+One witness sees serpent.
+
+Another sees tree.
+
+Another sees a god.
+
+Another sees a wheel.
+
+Another sees flood.
+
+Another sees fire.
+
+Another sees a bridge, horse, cave, basket, ladder or well.
+
+The stories do not need to collapse into one religion.
+
+They may be different camera angles on different scales and phases of the same class of natural event.
+
+The compact version of the cosmology is therefore this:
+
+**a populated world rests inside a larger populated world-body; a broad woven lattice carries distributed current; the current can concentrate into upper and lower axial forms; those forms can couple in a cosmic marriage; the weave contracts into a throat; one or more routes open between normally separated world-times; water and matter reveal the changed geometry; carriers preserve living patterns; the surface and atmosphere reorganise; the route closes; current redistributes; and a different stable world continues.**
+
+The world tree is the architecture.
+
+The serpent is the current.
+
+The rod is the gathered tree.
+
+The god is the current in axial person-form.
+
+The river and well are the gate carrying or exposing water.
+
+The basket is the weave protecting cargo.
+
+The human is the same axis-form expressed through earth.
+
+The narrow road is the controlled possibility inside the larger dangerous system.
+
+And the door is natural.
+
+That is the picture I have reached.
+
+Not a finished answer.
+
+A world that is quiet most of the time, but perhaps not closed.
 
 ---
 
