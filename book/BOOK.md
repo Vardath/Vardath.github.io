@@ -34213,23 +34213,7 @@ The Sky Woman story is one of the strongest layered-world comparisons in this en
 
 **another world already exists above.**
 
-The lower world is not created first and then visited from nowhere.
-
-The upper region is already inhabited.
-
-A boundary exists.
-
-An opening appears.
-
-A woman crosses.
-
-Below her is water.
-
-Animals receive her.
-
-Material is brought up from the depths.
-
-A new surface begins.
+The lower world is not created first and then visited from nowhere. The upper region is already inhabited, a boundary exists, an opening appears, a woman crosses, water lies below her, animals receive her, material is brought up from the depths and a new surface begins.
 
 That is an extraordinarily complete sequence.
 
@@ -34291,11 +34275,7 @@ It is a condition of connection.
 
 The Sky Woman story fits that very naturally.
 
-The upper world exists.
-
-The lower region exists.
-
-A local opening permits transfer.
+The upper world exists, the lower region exists, and a local opening permits transfer.
 
 That is changed adjacency.
 
@@ -34339,15 +34319,7 @@ That fits one of the strongest ideas in Vardath Cosmology:
 
 They may be at different stages.
 
-Different pressures.
-
-Different atmospheres.
-
-Different surface conditions.
-
-Different balances of water and land.
-
-Different biological states.
+They may have different pressures, atmospheres, surface conditions, balances of water and land, and biological states.
 
 A next or previous world can be related to us without being a copy of present Earth.
 
@@ -34369,11 +34341,7 @@ This has always been one of my preferred readings of the gate.
 
 If another world becomes adjacent, I would expect it to have its own history.
 
-Its own material.
-
-Its own life.
-
-Its own boundary conditions.
+The destination has its own material, life and boundary conditions.
 
 The encounter should not automatically be one-sided.
 
@@ -34395,17 +34363,7 @@ The receiving world responds.
 
 Again, role separation makes the story clearer.
 
-Sky Woman is the traveller.
-
-The opening is the gate.
-
-The birds are receivers or helpers.
-
-The watery world is the destination.
-
-The later turtle becomes support.
-
-The earth-divers recover material.
+Sky Woman is the traveller, the opening the gate, the birds receivers or helpers, the watery world the destination, the later turtle support, and the earth-divers the recoverers of material.
 
 No single figure has to stand for the whole mechanism.
 
@@ -34447,15 +34405,7 @@ Different tellings credit different beings, so I do not want to fix one universa
 
 The function is what matters.
 
-A being goes down.
-
-It reaches hidden material.
-
-It comes back up.
-
-A small quantity is placed on the support.
-
-Land begins to grow.
+A being goes down, reaches hidden material, comes back up, and places a small quantity on the support before land begins to grow.
 
 This gives the Sky Woman cycle one of the most elegant two-directional transfer patterns I have found:
 
@@ -34473,15 +34423,7 @@ One of the mature Vardath corrections was realising that a gate should not autom
 
 Different materials respond differently.
 
-Water can move downward.
-
-Gas can rise.
-
-Dust can cross.
-
-Rock can be lifted.
-
-Living beings can move in either direction.
+Water can move downward, gas can rise, dust can cross, rock can be lifted and living beings can move in either direction.
 
 Pressure gradients can drive opposite flows in different parts of the same opening.
 
@@ -34587,13 +34529,7 @@ I am not building a creation-from-nothing theory.
 
 I am building a world-succession theory.
 
-The event reorganises.
-
-Transfers.
-
-Combines.
-
-Settles.
+The event reorganises, transfers, combines and settles.
 
 The new world inherits what different regions contribute.
 
@@ -34879,17 +34815,7 @@ And Sky Woman, falling from an already inhabited world into the waters below, gi
 
 The *Popol Vuh* matters to Vardath Cosmology because it does not imagine creation as one clean attempt followed immediately by a finished humanity.
 
-The world is tried.
-
-Forms appear.
-
-Some are not stable.
-
-Some fail to remember or relate properly.
-
-Some are removed.
-
-Another form follows.
+The world is tried, forms appear, some are not stable, some fail to remember or relate properly, some are removed, and another form follows.
 
 That is already much closer to the way I have come to think about world succession than a simple one-time creation.
 
@@ -34911,19 +34837,7 @@ It is the fact that the world can pass through more than one attempt before a st
 
 The Maya world-tree material belongs around this chapter because it gives the cosmology a vertical organisation.
 
-Sky.
-
-Earth.
-
-Underworld.
-
-A central relation among them.
-
-Roots.
-
-Trunk.
-
-Branches.
+Sky, Earth and underworld are joined by a central relation that can be pictured through roots, trunk and branches.
 
 I do not need to make the tree into a literal physical machine to see why it matters.
 
@@ -34933,15 +34847,7 @@ The tree solves the same architectural problem that keeps appearing across Varda
 
 A tree does that naturally.
 
-The roots occupy one environment.
-
-The trunk another.
-
-The branches another.
-
-One organism.
-
-Different regions.
+The roots occupy one environment, the trunk another and the branches another: one organism across different regions.
 
 That is close to the way I picture previous, present and next world-turns.
 
@@ -34959,13 +34865,7 @@ The underworld is not simply "below" in an empty sense.
 
 It is organised.
 
-It has rulers.
-
-Places.
-
-Routes.
-
-Trials.
+It has rulers, places, routes and trials.
 
 A traveller does not fall through one abstract boundary and instantly arrive at a featureless lower layer.
 
@@ -35019,15 +34919,7 @@ Xibalba fits that logic very well.
 
 The Hero Twins are especially useful because their journey does not stop at arrival.
 
-They descend.
-
-They face trials.
-
-They are transformed.
-
-They are destroyed and reconstituted in the story.
-
-They return with a changed status.
+They descend, face trials, are transformed, are destroyed and reconstituted in the story, and return with a changed status.
 
 That makes the journey much more than ordinary travel.
 
@@ -35089,13 +34981,7 @@ Something can work for a time and still fail at a deeper level.
 
 The same can be true of a world-state.
 
-A surface can exist.
-
-Life can survive.
-
-A civilisation can grow.
-
-And yet the larger system may still be moving toward another transition.
+A surface can exist, life can survive and a civilisation can grow, while the larger system is still moving toward another transition.
 
 That is exactly why I do not treat the present quiet world as proof that the deeper structure is permanently fixed.
 
@@ -35165,13 +35051,7 @@ This is useful because some of my more speculative branches can become too focus
 
 The *Popol Vuh* reminds me that after all the extraordinary movement, the renewed present still has to become local and ordinary again.
 
-Its people have to eat its food.
-
-Breathe its air.
-
-Stand on its land.
-
-Live inside its rhythms.
+Its people have to eat its food, breathe its air, stand on its land and live inside its rhythms.
 
 A world is not truly inherited until life can become native to it.
 
@@ -35403,13 +35283,7 @@ And a humanity that is not simply dropped into existence once, but becomes possi
 
 The Five Suns matter to Vardath Cosmology because they move the comparison from one creation sequence to the history of worlds themselves.
 
-The present world is not first.
-
-Other orders came before it.
-
-Those worlds ended.
-
-Another followed.
+The present world is not first. Other orders came before it, those worlds ended and another followed.
 
 That is exactly the scale at which my previous-present-next model becomes meaningful.
 
@@ -35517,15 +35391,7 @@ That would actually weaken the comparison.
 
 Vardath Cosmology already allows different visible effects from the same deeper class of transition.
 
-One region may be overwhelmed by water.
-
-Another by fire.
-
-Another by violent air movement.
-
-Another by land deformation.
-
-Another by darkness and atmospheric disturbance.
+One region may be overwhelmed by water, another by fire, another by violent air movement, another by land deformation, and another by darkness and atmospheric disturbance.
 
 The important invariant is not that every witness sees the same surface disaster.
 
@@ -35549,9 +35415,7 @@ The worlds are successive.
 
 They are not identical copies.
 
-The pattern recurs.
-
-The contents change.
+The pattern recurs while the contents change.
 
 That is exactly how I picture Vardath succession.
 
@@ -35581,13 +35445,7 @@ This book is not about that.
 
 The cosmological value lies in **ordinal depth**.
 
-One world before another.
-
-More than one before the present.
-
-A present that has predecessors.
-
-Possibility of a successor.
+One world before another, more than one before the present, a present with predecessors and the possibility of a successor are enough to establish ordinal depth.
 
 That is enough.
 
@@ -35713,13 +35571,7 @@ That makes them a perfect image of filtered inheritance.
 
 Not everything crosses a reset equally.
 
-Some things are durable.
-
-Some fragment.
-
-Some disappear.
-
-Some return in altered form.
+Some things are durable, some fragment, some disappear and some return in altered form.
 
 That is how I expect world succession to work.
 
@@ -35769,13 +35621,7 @@ It would just be a list of universes.
 
 What makes the model coherent is inheritance.
 
-Water moves forward.
-
-Material moves forward.
-
-Life moves forward.
-
-Memory moves forward.
+Water, material, life and memory all move forward.
 
 The pattern changes.
 
@@ -35967,17 +35813,7 @@ In later Pangu traditions, the beginning is often described through an undiffere
 
 That image belongs immediately beside one of the oldest Vardath families:
 
-egg,
-
-shell,
-
-cave,
-
-ark,
-
-womb,
-
-enclosure.
+egg, shell, cave, ark, womb and enclosure.
 
 The important feature is not shape alone.
 
@@ -36029,17 +35865,7 @@ Distance can be functional.
 
 The interval between regions can hold:
 
-air,
-
-weather,
-
-light,
-
-water cycles,
-
-life,
-
-movement.
+air, weather, light, water cycles, life and movement.
 
 Too little separation and those local systems may fail.
 
@@ -36115,19 +35941,7 @@ The previous world does not have to persist in recognizable form.
 
 It can become:
 
-rock,
-
-sediment,
-
-mountain,
-
-water,
-
-atmosphere,
-
-buried structure,
-
-landscape.
+rock, sediment, mountain, water, atmosphere, buried structure or landscape.
 
 The old arrangement disappears.
 
@@ -36139,15 +35953,7 @@ This is why the Pangu branch is so important to Vardath Cosmology.
 
 It supports a creation model based on reorganisation rather than manufacture from nothing.
 
-The new world is inherited.
-
-Matter is sorted.
-
-Regions separate.
-
-The concentrated state becomes distributed.
-
-The world settles.
+The new world is inherited: matter is sorted, regions separate, the concentrated state becomes distributed and the world settles.
 
 That is exactly how the mature Vardath model works.
 
@@ -36179,15 +35985,7 @@ The gate may be brief.
 
 The world may take much longer to settle.
 
-Water continues moving.
-
-Sediment settles.
-
-Air cools.
-
-Material redistributes.
-
-Biology expands.
+Water continues moving, sediment settles, air cools, material redistributes and biology expands.
 
 Pangu belongs naturally to that long recovery image.
 
@@ -36219,17 +36017,7 @@ This is one of the strongest Chinese contributions to the model.
 
 A reset does not have to mean total annihilation.
 
-A world can be deformed.
-
-Damaged.
-
-Tilted.
-
-Flooded.
-
-Heated.
-
-Partially broken.
+A world can be deformed, damaged, tilted, flooded, heated and partially broken.
 
 And still retain enough continuity to be repaired into another stable state.
 
@@ -36319,15 +36107,7 @@ This helps explain why I do not need every catastrophe to destroy the entire und
 
 The world can become asymmetric.
 
-One region can rise.
-
-Another can sink.
-
-Waters can move.
-
-The sky can appear altered.
-
-Different cultures can preserve different local effects.
+One region can rise, another can sink, waters can move, the sky can appear altered, and different cultures can preserve different local effects.
 
 The larger system can still persist.
 
@@ -36475,19 +36255,7 @@ The repaired world also reminds me that catastrophe can become permanent geograp
 
 A world after structural failure may retain:
 
-tilt,
-
-new channels,
-
-new basins,
-
-shifted land,
-
-buried surfaces,
-
-transformed stone,
-
-different sky relations.
+tilt, new channels, new basins, shifted land, buried surfaces, transformed stone and different sky relations.
 
 That is exactly what I expect if the present world is inherited from a previous transition.
 
@@ -36563,19 +36331,7 @@ That is what turns catastrophe into succession rather than final destruction.
 
 The Japanese material gives me one of the clearest examples of the same boundary behaving in several different ways across one larger mythic cycle.
 
-A bridge can connect.
-
-A spear can act through the boundary.
-
-Land can form.
-
-A lower world can be entered.
-
-The route can become dangerous.
-
-The traveller can return.
-
-Then the gate can be sealed.
+A bridge can connect, a spear can act through the boundary, land can form, a lower world can be entered, the route can become dangerous, the traveller can return and then the gate can be sealed.
 
 That is exactly the kind of sequence Vardath Cosmology needs.
 
@@ -36613,23 +36369,11 @@ This also gives the camera-angle method another useful example.
 
 A connection viewed from below may look like:
 
-mountain,
-
-ladder,
-
-pillar,
-
-tree.
+mountain, ladder, pillar or tree.
 
 The same relationship viewed from above may look like:
 
-bridge,
-
-platform,
-
-edge,
-
-descent route.
+bridge, platform, edge or descent route.
 
 That does not mean the traditions are describing one literal object.
 
@@ -36647,11 +36391,7 @@ The heavenly spear reaches downward into the forming material below.
 
 That turns the boundary into a working interface.
 
-The bridge is relation.
-
-The spear is active direction.
-
-The waters below respond.
+The bridge is relation, the spear is active direction, and the waters below respond.
 
 That gives a strong sequence:
 
@@ -36697,13 +36437,7 @@ The entire world does not need to become stable at once.
 
 A first region can form.
 
-An island.
-
-A mound.
-
-A support.
-
-A local anchor.
+An island, mound, support or local anchor can form first.
 
 Then wider order can spread.
 
@@ -36747,13 +36481,7 @@ That is exactly why the Japanese branch is so valuable.
 
 The same larger cosmology can contain:
 
-creation from above,
-
-descent below,
-
-return,
-
-and closure.
+creation from above, descent below, return and closure.
 
 The boundary has more than one mode.
 
@@ -36793,11 +36521,7 @@ This matters because Vardath Cosmology should not romanticise every gate as an e
 
 A route can be physically open and still be catastrophic to use.
 
-The destination matters.
-
-The conditions matter.
-
-The timing matters.
+The destination, conditions and timing all matter.
 
 ## The sealed return
 
@@ -36851,15 +36575,7 @@ In my own model, the same logic applies at world scale.
 
 After the gate closes:
 
-water still has to settle,
-
-air still has to stabilise,
-
-heat still has to dissipate,
-
-sediment still has to separate,
-
-biology still has to recover.
+water still has to settle, air stabilise, heat dissipate, sediment separate and biology recover.
 
 Closure is one phase.
 
@@ -36947,11 +36663,7 @@ That matters because not every crossing is catastrophe.
 
 A gate can be:
 
-catastrophic,
-
-desperate,
-
-or controlled.
+catastrophic, desperate or controlled.
 
 That gives the model a much better classification.
 
@@ -37005,15 +36717,7 @@ How does ordinary separation return?
 
 The Japanese underworld sequence answers mythically:
 
-the traveller escapes,
-
-the route is blocked,
-
-the boundary is restored,
-
-the traveller undergoes recovery,
-
-the worlds become distinct again.
+the traveller escapes, the route is blocked, the boundary is restored, the traveller undergoes recovery and the worlds become distinct again.
 
 That is almost exactly how the Vardath gate has to work.
 
@@ -37079,19 +36783,7 @@ Because they understand something the mechanism also requires:
 
 The Yoruba creation material gives Vardath Cosmology one of its clearest controlled-contact sequences.
 
-The worlds are distinct.
-
-A route exists between them.
-
-A figure descends.
-
-Material comes with the traveller.
-
-The lower region is watery.
-
-Land begins locally.
-
-Then it spreads.
+The worlds are distinct, a route exists between them, a figure descends, material comes with the traveller, the lower region is watery, land begins locally and then spreads.
 
 That is almost the ideal example of a gate used constructively rather than catastrophically.
 
@@ -37129,15 +36821,7 @@ The route mediates.
 
 The chain image is especially useful.
 
-A pillar is rigid.
-
-A chain is flexible.
-
-Linked.
-
-Tension-bearing.
-
-One object made from many connected parts.
+A pillar is rigid, while a chain is flexible, linked, tension-bearing and made from many connected parts.
 
 That makes it a much better analogue for a woven or articulated world structure than a single permanent rod.
 
@@ -37221,19 +36905,7 @@ It is valuable because the crossing brings something the receiving world can use
 
 That is exactly what Vardath transfer requires.
 
-Water.
-
-Air.
-
-Sediment.
-
-Biology.
-
-People.
-
-Information.
-
-World-forming material.
+Water, air, sediment, biology, people, information and world-forming material can all pass as cargo.
 
 The gate is a relationship through which cargo can pass.
 
@@ -37265,13 +36937,7 @@ Then it spreads.
 
 That is one of the strongest recurring creation patterns in the comparative atlas.
 
-First mound.
-
-First island.
-
-First patch.
-
-First centre.
+First mound, first island, first patch and first centre all belong to the same local-stability pattern.
 
 The world does not need to appear fully finished.
 
@@ -37305,15 +36971,7 @@ That is useful because the world after transfer still needs processes that turn 
 
 In physical terms those processes could be:
 
-water flow,
-
-wind,
-
-gravity,
-
-sediment transport,
-
-biology.
+water flow, wind, gravity, sediment transport and biology.
 
 The myth personifies distribution through an animal.
 
@@ -37335,13 +36993,7 @@ After transfer:
 
 That is why the Yoruba story fits the reopening side of the cycle so well.
 
-The gate concentrates.
-
-The world disperses.
-
-The transition is axial.
-
-The result is horizontal.
+The gate concentrates while the world disperses; the transition is axial and the result horizontal.
 
 ## Ile-Ife and the remembered centre
 
@@ -37389,11 +37041,7 @@ Land appearing does not mean the old watery medium is destroyed.
 
 The world becomes ordered through **partition**.
 
-Land here.
-
-Deep water there.
-
-Stable boundary between them.
+Land here, deep water there, with a stable boundary between them.
 
 That is exactly how Vardath recovery should work.
 
@@ -37409,15 +37057,7 @@ Water is not always flood.
 
 The same substance can be:
 
-stable ocean,
-
-river,
-
-basin,
-
-boundary medium,
-
-or catastrophic surge.
+stable ocean, river, basin, boundary medium or catastrophic surge.
 
 The state matters.
 
@@ -37515,15 +37155,7 @@ World endings.
 
 But if the mechanism is real, it should also have less destructive modes.
 
-A small gate.
-
-A controlled transfer.
-
-One lineage.
-
-One packet of material.
-
-One local opening.
+A small gate, controlled transfer, one lineage, one packet of material or one local opening may all be enough.
 
 That possibility makes the world-machine much more flexible.
 
@@ -37539,17 +37171,7 @@ The tradition stands on its own.
 
 But structurally it gives Vardath Cosmology one of the clearest examples of a world built through:
 
-connection,
-
-descent,
-
-cargo,
-
-release,
-
-distribution,
-
-and stabilisation.
+connection, descent, cargo, release, distribution and stabilisation.
 
 The world below does not appear from nothing.
 
@@ -37567,19 +37189,7 @@ And the creation event survives as the memory of where the first stable world be
 
 The Finnish and Karelian material gives Vardath Cosmology one of its richest sequences because it does not rely on one image.
 
-It gives water before land.
-
-A long formative interval.
-
-An egg.
-
-Breakage that becomes world-order.
-
-A great tree that grows too dominant and has to be reduced.
-
-A productive object whose whole form is lost but whose fragments remain consequential.
-
-The Sun and Moon hidden behind a boundary and later released.
+It gives water before land, a long formative interval, an egg, breakage that becomes world-order, a great tree that grows too dominant and has to be reduced, a productive object whose whole form is lost while its fragments remain consequential, and the Sun and Moon hidden behind a boundary and later released.
 
 That is not one simple creation story.
 
@@ -37605,13 +37215,7 @@ That is already useful to me because it creates a state that is neither finished
 
 It is a **world-before-world**.
 
-Potential exists.
-
-Material exists.
-
-Movement exists.
-
-Stable surface does not.
+Potential, material and movement exist, but a stable surface does not.
 
 That is very close to the kind of post-reset phase the Vardath model needs.
 
@@ -37643,11 +37247,7 @@ I no longer picture the whole cycle as one instant catastrophe.
 
 I picture different tempos.
 
-Slow build-up.
-
-Critical transition.
-
-Long settlement.
+Slow build-up, critical transition and long settlement are the three tempos I now picture.
 
 The Finnish creation material fits that beautifully.
 
@@ -37675,15 +37275,7 @@ Then the egg appears.
 
 This may be one of the clearest enclosure symbols in the whole book.
 
-A closed form.
-
-Potential inside.
-
-A boundary around it.
-
-Then breakage.
-
-Then differentiated world-order.
+A closed form holds potential inside a boundary; then breakage produces differentiated world-order.
 
 That sequence is extremely close to the enclosure logic I have been developing from arks, caves, baskets, shells and wombs.
 
@@ -37701,21 +37293,7 @@ An enclosure is not successful because it stays closed forever.
 
 Its purpose is phase-dependent.
 
-The egg protects development.
-
-Then it has to break.
-
-The ark protects life during catastrophe.
-
-Then it has to open.
-
-The cave shelters.
-
-Then the traveller has to leave.
-
-The shell encloses.
-
-Then growth moves beyond the old boundary.
+The egg protects development and then has to break; the ark protects life during catastrophe and then has to open; the cave shelters and then the traveller has to leave; the shell encloses and then growth moves beyond the old boundary.
 
 The right structure becomes the wrong structure if it outlasts its role.
 
@@ -37765,13 +37343,7 @@ The egg is one.
 
 The world after breakage is differentiated.
 
-Upper.
-
-Lower.
-
-Luminous.
-
-Terrestrial.
+Upper, lower, luminous and terrestrial domains emerge from the differentiated state.
 
 That produces one of the strongest abstract Vardath rules:
 
@@ -37843,11 +37415,7 @@ But this one is not simply a giant connector.
 
 It is a productive organised form.
 
-Forged.
-
-Controlled.
-
-Capable of repeated output.
+It is forged, controlled and capable of repeated output.
 
 Its exact shape is debated, which actually helps the Vardath comparison.
 
@@ -37863,13 +37431,7 @@ That is an unusually useful sequence.
 
 Ilmarinen's role as smith adds another category to the comparative atlas.
 
-Not gate.
-
-Not traveller.
-
-Not world-body.
-
-Fabricator.
+Not gate, traveller or world-body, but fabricator.
 
 The figure who creates organised function from raw material.
 
@@ -37887,17 +37449,7 @@ The Sampo also reminds me that the quiet world is not inactive.
 
 A stable world produces continuously.
 
-Water cycles.
-
-Plants grow.
-
-Heat moves.
-
-Atmosphere circulates.
-
-Food is generated.
-
-Life reproduces.
+Water cycles, plants grow, heat moves, atmosphere circulates, food is generated and life reproduces.
 
 Stability means **repeated useful process inside workable limits**.
 
@@ -37943,19 +37495,7 @@ The old world does not need to survive intact.
 
 Fragments can carry consequence.
 
-Ruins.
-
-Strata.
-
-Bones.
-
-Stories.
-
-Technologies.
-
-Lineages.
-
-Sediments.
+Ruins, strata, bones, stories, technologies, lineages and sediments can all carry consequence forward.
 
 Even a broken system can shape what follows.
 
@@ -38047,11 +37587,7 @@ This is more than brightness.
 
 Sun and Moon structure time.
 
-Day.
-
-Night.
-
-Cycles.
+Day, night and cycles all return with the lights.
 
 The habitable world needs reliable celestial rhythm, whatever the ultimate physical nature of the lights turns out to be in the Vardath model.
 
@@ -38183,11 +37719,7 @@ A living structure capable of becoming what the next phase requires.
 
 Māui interests me because he appears in stories that solve different problems.
 
-He brings hidden land into the world.
-
-He changes the rate of the Sun.
-
-He confronts a boundary that cannot simply be reversed.
+He brings hidden land into the world, changes the rate of the Sun and confronts a boundary that cannot simply be reversed.
 
 That makes him one of the best examples of why I should never reduce a mythic figure to one machine-part.
 
@@ -38229,15 +37761,7 @@ That immediately fits one of the strongest mature Vardath ideas:
 
 A world reset does not have to create new matter.
 
-It can move matter.
-
-Expose it.
-
-Raise it.
-
-Lower water around it.
-
-Bring one level into another relation.
+It can move matter, expose it, raise it, lower water around it and bring one level into another relation.
 
 That is much more consistent with the rest of the model.
 
@@ -38255,13 +37779,7 @@ A connection between levels does not have to allow full transit.
 
 It can carry:
 
-tension,
-
-information,
-
-force,
-
-or influence
+tension, information, force or influence
 
 without carrying a body.
 
@@ -38301,13 +37819,7 @@ The land rises through water.
 
 That changes its relationship to the same material around it.
 
-Before:
-
-water covers.
-
-After:
-
-water surrounds.
+Before, water covers; after, water surrounds.
 
 That is a useful reminder that reset often changes **relation more than substance**.
 
@@ -38323,13 +37835,7 @@ That is enough to transform the world.
 
 Once land appears, it still has to become habitable.
 
-Drain.
-
-Settle.
-
-Stabilise.
-
-Develop surface.
+Drain, settle, stabilise and develop surface.
 
 That is one of the most important chronology rules in the mature model.
 
@@ -38357,9 +37863,7 @@ Māui slows it.
 
 That is a completely different cosmological task.
 
-Not creation.
-
-Regulation.
+Not creation, but regulation.
 
 This distinction is one of the strongest contributions Māui makes to the book.
 
@@ -38379,17 +37883,7 @@ That gives one of the most important principles in Vardath Cosmology:
 
 A quiet world is not frozen.
 
-Water moves.
-
-Air moves.
-
-Heat moves.
-
-The deeper current may move.
-
-The crust may move slowly.
-
-Celestial cycles continue.
+Water, air and heat move, the deeper current may move, the crust may move slowly and celestial cycles continue.
 
 The system is stable because the rates no longer overwhelm local life.
 
@@ -38511,17 +38005,7 @@ That matters physically.
 
 A route can exist and still be incompatible with human survival.
 
-Pressure.
-
-Temperature.
-
-Atmosphere.
-
-Radiation.
-
-Biology.
-
-Timing.
+Pressure, temperature, atmosphere, radiation, biology and timing all matter.
 
 Geometry alone is not enough.
 
@@ -38703,11 +38187,7 @@ Because his stories keep asking the same question the machine has to answer:
 
 The Rainbow Serpent is where Vardath Cosmology began.
 
-Not the whole cosmology.
-
-Not the final mechanism.
-
-The first doorway.
+Not the whole cosmology or the final mechanism, but the first doorway.
 
 The earliest useful question was simple:
 
@@ -38715,21 +38195,7 @@ The earliest useful question was simple:
 
 That question opened almost everything that came later.
 
-Current.
-
-Path.
-
-Braid.
-
-Land deformation.
-
-Water release.
-
-Nodes.
-
-World tree.
-
-Gate.
+Current, path, braid, land deformation, water release, nodes, world tree and gate all grew from that first question.
 
 The serpent did not become the answer to every problem.
 
@@ -38745,15 +38211,7 @@ I need to keep one boundary very clear.
 
 Aboriginal Australian traditions vary greatly across peoples, countries, languages and regions.
 
-Names differ.
-
-Stories differ.
-
-Gender differs.
-
-Roles differ.
-
-Law and sacred meaning differ.
+Names, stories, gender, roles, law and sacred meaning all differ across traditions.
 
 There is no single pan-Australian Rainbow Serpent doctrine that belongs to everyone in one form.
 
@@ -38769,19 +38227,7 @@ That is enough.
 
 A serpent is one of the most natural images for a path that moves.
 
-It bends.
-
-Turns.
-
-Disappears.
-
-Reappears.
-
-Follows ground.
-
-Moves through water.
-
-Occupies channels.
+It bends, turns, disappears, reappears, follows ground, moves through water and occupies channels.
 
 That visual grammar is powerful even before I add any speculative cosmology.
 
@@ -38807,15 +38253,7 @@ A path can be invisible.
 
 Water makes paths visible.
 
-It fills channels.
-
-Collects in holes.
-
-Moves downhill.
-
-Responds to barriers.
-
-Marks low points.
+It fills channels, collects in holes, moves downhill, responds to barriers and marks low points.
 
 If a deeper structure changes, water often reveals the change first.
 
@@ -38863,17 +38301,7 @@ If I say "serpent can represent moving path while water responds to that path," 
 
 That allows several states:
 
-serpent without flood,
-
-water without serpent,
-
-serpent as boundary,
-
-serpent as route,
-
-serpent as danger,
-
-serpent as creator.
+serpent without flood, water without serpent, serpent as boundary, serpent as route, serpent as danger and serpent as creator.
 
 The symbol can change with role.
 
@@ -38885,21 +38313,7 @@ This is another major correction.
 
 The serpent does not have one moral value.
 
-It can create.
-
-Protect.
-
-Threaten.
-
-Punish.
-
-Bring water.
-
-Withhold water.
-
-Shape place.
-
-Mark a boundary.
+It can create, protect, threaten, punish, bring water, withhold water, shape place and mark a boundary.
 
 That is exactly how the Vardath current works conceptually.
 
@@ -38919,17 +38333,7 @@ That state-dependence is far more useful than moral symbolism.
 
 The Rainbow Serpent material also fits the later Vardath network model because sacred significance is distributed across landscape.
 
-Waterholes.
-
-Springs.
-
-Rocks.
-
-Rivers.
-
-Caves.
-
-Routes.
+Waterholes, springs, rocks, rivers, caves and routes can all become significant local nodes.
 
 There is no need for one permanent world-centre.
 
@@ -38981,17 +38385,7 @@ Songline traditions also remind me that landscape can function as archive.
 
 A route can hold:
 
-story,
-
-law,
-
-orientation,
-
-ancestry,
-
-ceremony,
-
-place.
+story, law, orientation, ancestry, ceremony and place.
 
 That means memory does not have to survive in books.
 
@@ -39019,15 +38413,7 @@ That fits the camera-angle method perfectly.
 
 Different cultures can preserve different parts of one class of phenomenon without any culture needing the whole mechanism.
 
-One remembers water.
-
-Another a tree.
-
-Another a mound.
-
-Another a bridge.
-
-Another a moving star group.
+One remembers water, another a tree, another a mound, another a bridge and another a moving star group.
 
 The fragments can be local.
 
@@ -39047,13 +38433,7 @@ That is an excellent network lesson.
 
 This fits the Vardath model extremely well.
 
-Current.
-
-Pressure.
-
-Heat.
-
-Water.
+Current, pressure, heat and water all become distribution problems inside the same network.
 
 Any distributed quantity can become destabilising when one path captures too much of it.
 
@@ -39317,15 +38697,7 @@ And the serpent remains inside it as the oldest visible strand.
 
 The Hopi material matters to Vardath Cosmology because it places the present world inside a longer sequence.
 
-Earlier worlds exist.
-
-Transitions separate them.
-
-Humanity emerges into another world.
-
-The present world becomes home.
-
-Then the transition is remembered through a small opening associated with emergence.
+Earlier worlds exist, transitions separate them, humanity emerges into another world, the present world becomes home, and the transition is remembered through a small opening associated with emergence.
 
 That is an unusually clean world-succession grammar.
 
@@ -39345,11 +38717,7 @@ The present world belongs to a sequence.
 
 That fits Vardath Cosmology at exactly the scale I care about most.
 
-Previous.
-
-Present.
-
-Next.
+Previous, present and next define the succession scale directly.
 
 One stable world does not have to be the totality of history.
 
@@ -39363,9 +38731,7 @@ The worlds are not meaningful if they are identical.
 
 The point of succession is that the conditions change.
 
-The order changes.
-
-The relationship among beings and environment changes.
+The order changes, as does the relationship among beings and environment.
 
 That is exactly what I expect from Vardath world-turns.
 
@@ -39385,11 +38751,7 @@ That is one of the strongest recurring principles in the whole book.
 
 Creation is inheritance.
 
-People continue.
-
-Memory continues.
-
-Some relationship with what came before survives.
+People and memory continue, and some relationship with what came before survives.
 
 That comparison helps me picture the Vardath handoff, but the current model is more specific.
 
@@ -39409,13 +38771,7 @@ That fits one of the most realistic parts of the model.
 
 A reset is filtered inheritance.
 
-Some life survives.
-
-Some material survives.
-
-Some culture survives.
-
-Some things disappear.
+Some life, material and culture survive while some things disappear.
 
 The renewed present after emergence is not a copy of its pre-event state.
 
@@ -39439,19 +38795,7 @@ Then another broad world opens.
 
 That geometry is one of the strongest recurring patterns across the comparative material.
 
-Fingertrap.
-
-Well.
-
-Mound.
-
-Reed.
-
-Sipapu.
-
-Ladder.
-
-Throat.
+Fingertrap, well, mound, reed, sipapu, ladder and throat all carry the broad–narrow–broad topology.
 
 Different traditions.
 
@@ -39473,15 +38817,7 @@ The model should not expect a rare world-transition route to remain physically o
 
 What persists can be:
 
-place,
-
-ritual,
-
-story,
-
-architecture,
-
-symbol.
+place, ritual, story, architecture or symbol.
 
 The active gate becomes cultural memory.
 
@@ -39495,13 +38831,7 @@ The size of the symbol does not have to match the size of the cosmological proce
 
 That sounds obvious, but it protects the model from crude literalism.
 
-A ring can represent a world.
-
-A seed can represent continuity.
-
-A small hole can represent emergence.
-
-A tree can represent layered architecture.
+A ring can represent a world, a seed continuity, a small hole emergence and a tree layered architecture.
 
 The image carries relationship, not scale.
 
@@ -39509,11 +38839,7 @@ The image carries relationship, not scale.
 
 The sipapu also preserves a vertical relation.
 
-Below.
-
-Opening.
-
-Here.
+Below, opening and here give the sipapu a clear vertical relation.
 
 That maps naturally onto the previous-present idea.
 
@@ -39529,13 +38855,7 @@ It gives one of the clearest symbolic forms of temporal depth:
 
 I find that relationship repeatedly.
 
-Buried ruins.
-
-Underworlds.
-
-Deep strata.
-
-Earlier worlds.
+Buried ruins, underworlds, deep strata and earlier worlds all reinforce the overlap between temporal depth and physical depth.
 
 The vertical and temporal axes overlap very naturally in human imagination.
 
@@ -39637,19 +38957,11 @@ World transition can be described from either side.
 
 From the earlier world:
 
-departure.
-
-End.
-
-Crisis.
+departure, end and crisis.
 
 From the renewed present after emergence:
 
-emergence.
-
-Beginning.
-
-Arrival.
+emergence, beginning and arrival.
 
 That is one of the most important camera-angle distinctions in Vardath Cosmology.
 
