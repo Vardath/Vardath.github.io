@@ -868,23 +868,11 @@ it already behaves like a **line that moves through the world**.
 
 ## From creature to path
 
-A creature is usually imagined as an object occupying a place.
-
-A serpent suggests something different.
-
-Its identity is inseparable from its path.
-
-It curves.
-
-It coils.
-
-Its body is a record of movement.
+A creature is usually imagined as an object occupying a place, but a serpent suggests something different because its identity is inseparable from its path. It curves and coils; its body is a record of movement.
 
 A long serpent across a landscape can resemble a river, fault, ridge, lightning channel, filament or current without any of those things literally being an animal.
 
-The geometry itself invites translation.
-
-That became the first Vardath move.
+The geometry itself invites translation, and that became the first Vardath move.
 
 Instead of asking only:
 
@@ -894,23 +882,13 @@ I began asking:
 
 **What physical process would leave a serpent-like path while changing water and land?**
 
-That question transformed the image.
-
-The serpent could now be read as a moving current.
+That question transformed the image. The serpent could now be read as a moving current.
 
 Not a static cosmic snake hanging in the sky, but an energetic channel whose path matters.
 
-The world around the line responds.
+The world around the line responds. Water collects, releases or changes route; ground can be cut, raised or reorganised; storm, radiance and colour can belong to the same energetic episode.
 
-Water collects, releases or changes route.
-
-Ground can be cut, raised or reorganised.
-
-Storm, radiance and colour can belong to the same energetic episode.
-
-What later became the deep lattice is already present here in embryo.
-
-The serpent is one strand before I knew there was a weave.
+What later became the deep lattice is already present here in embryo. The serpent is one strand before I knew there was a weave.
 
 ## The earliest event grammar
 
@@ -918,15 +896,7 @@ The early Rainbow Serpent branch already contained a sequence that would survive
 
 > **stable world → energetic activation → serpentine manifestation → interaction with water and land → retreat or release → changed equilibrium**
 
-At the time, I did not have the mature vocabulary.
-
-There was no formal distinction between current and pulse.
-
-There was no previous/present/next world-turn.
-
-There was no gate defined as changed adjacency.
-
-There was no finger-trap mechanism.
+At the time, I did not have the mature vocabulary. There was no formal distinction between current and pulse, no previous/present/next world-turn, no gate defined as changed adjacency and no finger-trap mechanism.
 
 But the event was already dynamic.
 
@@ -1026,37 +996,13 @@ A recurring shape can be ancestor in one tradition, enemy in another, guardian i
 
 ## From one line to two
 
-The next important step was duplication.
+The next important step was duplication. One serpent is a path; two serpents can form a braid.
 
-One serpent is a path.
-
-Two serpents can form a braid.
-
-That transition changed the whole project.
-
-A pair introduces polarity.
-
-The strands can wind in the same sense or opposite senses.
-
-They can cross.
-
-They can define an axis between them.
-
-They can create repeated local openings.
-
-They can be imagined as carrying opposite flows.
+That transition changed the whole project because a pair introduces polarity. The strands can wind in the same sense or opposite senses, cross, define an axis between them, create repeated local openings and be imagined as carrying opposite flows.
 
 This is where the later caduceus connection became mechanically useful.
 
-The familiar staff-and-serpents image should not be treated as proof of the Vardath world-machine.
-
-Its value is conceptual.
-
-It compresses three things into one diagram:
-
-1. a central axis;
-2. two winding channels;
-3. a repeating relationship between those channels.
+The familiar staff-and-serpents image should not be treated as proof of the Vardath world-machine. Its value is conceptual because it compresses a central axis, two winding channels and a repeating relationship between those channels into one diagram.
 
 The mature braid eventually turned that image from symbol into an explicit kinematic construction.
 
@@ -1179,18 +1125,7 @@ The serpent also forced me to become more careful about water.
 
 Early comparative work can become useless very quickly if every occurrence of water is counted as the same motif.
 
-Water can be:
-
-- a primordial medium;
-- an upper boundary;
-- a lower hidden domain;
-- an ocean separating regions;
-- a flood;
-- a river route;
-- a carrier medium;
-- a life source;
-- a released reservoir;
-- a receiving environment.
+Water can be a primordial medium, an upper boundary, a lower hidden domain, an ocean separating regions, a flood, a river route, a carrier medium, a life source, a released reservoir or a receiving environment.
 
 The serpent-water relationship only becomes informative when the role is specified.
 
@@ -1268,27 +1203,9 @@ This is the point where the earliest Rainbow Serpent idea connects directly to t
 
 The mature world has a hidden skeleton.
 
-In the quiet phase, the skeleton is not obvious.
+In the quiet phase, the skeleton is not obvious because the surface world dominates perception. Land, water, atmosphere and ordinary celestial motion appear self-contained.
 
-The surface world dominates perception.
-
-Land, water, atmosphere and ordinary celestial motion appear self-contained.
-
-During activation, the deeper structure expresses itself more strongly.
-
-The serpent returns.
-
-Not necessarily as a literal enormous snake.
-
-As motion.
-
-As a path.
-
-As a current.
-
-As a pattern of convergence.
-
-As a change in what the world allows to touch.
+During activation, the deeper structure expresses itself more strongly and the serpent returns—not necessarily as a literal enormous snake, but as motion, a path, a current, a pattern of convergence or a change in what the world allows to touch.
 
 The serpent is therefore the oldest image in the project and one of the least literal in the mature model.
 
@@ -1392,31 +1309,9 @@ That possibility changed the scale of the entire cosmology.
 
 ### The Squatter Man as a current-state
 
-The Squatter-Man form is important because it can be read as a sequence of plasma states rather than one frozen picture.
+The Squatter-Man form is important because it can be read as a sequence of plasma states rather than one frozen picture. It contains an axis, a narrow central region, wider structures above and below, lateral forms that can become arm-like, and changing nodes, loops and filamentary features.
 
-There is an axis.
-
-There is a narrow central region.
-
-There are wider structures above and below.
-
-There are lateral forms that can become arm-like.
-
-There are changing nodes, loops and filamentary features.
-
-A person looking at that from the ground does not need to understand plasma physics.
-
-The eye does what the eye always does.
-
-It finds a body.
-
-The column becomes a torso.
-
-The lateral structures become arms.
-
-Upper concentrations become head, horns or headdress.
-
-Lower structures become legs or supports.
+A person looking at that from the ground does not need to understand plasma physics. The eye does what the eye always does: it finds a body. The column becomes a torso, the lateral structures become arms, upper concentrations become head, horns or headdress, and lower structures become legs or supports.
 
 A dynamic electrical form becomes a giant person in the sky.
 
@@ -1612,26 +1507,11 @@ It becomes a surviving image of the same fire that may run through the entire wo
 
 ## The projection problem
 
-Suppose a three-dimensional structure contains:
-
-- a vertical axis;
-- a narrow central pinch;
-- wider upper and lower regions;
-- paired lateral forms;
-- bright local nodes;
-- changing intensity over time.
+Suppose a three-dimensional structure contains a vertical axis, a narrow central pinch, wider upper and lower regions, paired lateral forms, bright local nodes and changing intensity over time.
 
 How should a person draw it?
 
-There is no neutral answer.
-
-The observer has a position.
-
-The event has a phase.
-
-The drawing has a surface.
-
-A three-dimensional and time-dependent object has to be compressed into a two-dimensional image or a narrative.
+There is no neutral answer. The observer has a position, the event has a phase and the drawing has a surface. A three-dimensional and time-dependent object has to be compressed into a two-dimensional image or a narrative.
 
 That compression is the beginning of what I now call **projection grammar**.
 
@@ -1661,17 +1541,7 @@ I started asking whether the **human form was a way of remembering the axis**.
 
 That is a very different proposition.
 
-A human body is one of the easiest frameworks for organising vertical geometry.
-
-Head above.
-
-Torso at centre.
-
-Arms across.
-
-Legs below.
-
-If a phenomenon already contains a vertical spine and lateral structures, anthropomorphism does the rest.
+A human body is one of the easiest frameworks for organising vertical geometry: head above, torso at centre, arms across and legs below. If a phenomenon already contains a vertical spine and lateral structures, anthropomorphism does the rest.
 
 This is not mysterious.
 
@@ -2123,15 +1993,7 @@ That question produced the first world-machine.
 
 # Chapter 3 — The First World-Machine
 
-The early Vardath project had currents.
-
-It had serpents.
-
-It had a pinched humanlike axis.
-
-It had trees, rods, mountains and hanging figures.
-
-What it did not yet have was a world that could contain them.
+The early Vardath project already had currents, serpents, a pinched humanlike axis, and trees, rods, mountains and hanging figures. What it did not yet have was a world that could contain them.
 
 That changed between December 2025 and February 2026.
 
@@ -2157,25 +2019,9 @@ Above it was a structured upper region.
 
 Four elevated lands or sectors surrounded a central circular area or sea. Thin rivers divided the upper sectors. A central spike descended from the middle. A sphere or node hung below it. The outer rim continued downward into walls and a long tunnel.
 
-The important feature was not only the arrangement.
+The important feature was not only the arrangement but the **viewpoint**. The geometry was being imagined from below and inside, a direct inheritance from the Squatter Man phase.
 
-It was the **viewpoint**.
-
-The geometry was being imagined from below and inside.
-
-That was a direct inheritance from the Squatter Man phase.
-
-The observer did not have access to the blueprint.
-
-The observer saw projections.
-
-A fourfold upper arrangement could become a cross.
-
-A central circular region could become a ring or eye.
-
-A descending spike could become a rod.
-
-A hanging node could become a star, jewel, head or sphere.
+The observer did not have access to the blueprint; the observer saw projections. A fourfold upper arrangement could become a cross, a central circular region a ring or eye, a descending spike a rod, and a hanging node a star, jewel, head or sphere.
 
 The enclosure was therefore already a machine built around the problem of perspective.
 
@@ -2187,46 +2033,21 @@ Its simplest relation is:
 
 > **four around one**
 
-Four sectors around a centre.
-
-Four rivers dividing the field.
-
-Four supports around an axis.
-
-Four directional powers around a central opening.
-
-The cross is the simplest planar projection of that arrangement.
+The pattern can appear as four sectors around a centre, four rivers dividing the field, four supports around an axis or four directional powers around a central opening. The cross is the simplest planar projection of that arrangement.
 
 That does not make every cross a Vardath symbol.
 
 It gives the model a reason why a fourfold shape can naturally appear when a vertical centre intersects a transverse field.
 
-The later cosmology would expand from four directions to a denser lattice, but the old fourfold room was the first attempt to combine:
-
-- a centre;
-- a transverse field;
-- flowing boundaries;
-- a vertical connector.
+The later cosmology would expand from four directions to a denser lattice, but the old fourfold room was the first attempt to combine a centre, a transverse field, flowing boundaries and a vertical connector.
 
 That architecture would reappear repeatedly.
 
 ## The room becomes a body
 
-By February 2026, the enclosure had become more than a room.
+By February 2026, the enclosure had become more than a room. It became biological and cosmic at the same time.
 
-It became biological and cosmic at the same time.
-
-The inhabited region remained below.
-
-The upper zone was imagined as flooded, icy, vapour-rich or otherwise separated from ordinary life.
-
-The central spike developed into a rod.
-
-Two winding channels wrapped around that rod.
-
-The structure became caduceus-like.
-
-A living or crystalline cap was explored.
+The inhabited region remained below while the upper zone was imagined as flooded, icy, vapour-rich or otherwise separated from ordinary life. The central spike developed into a rod, two winding channels wrapped around it, the structure became caduceus-like, and a living or crystalline cap was explored.
 
 The whole enclosure began to feel less like a building and more like an organism.
 
@@ -2350,17 +2171,7 @@ The same region can be canopy from below, floor or lower boundary from above, an
 
 The enclosed-world picture also made me wonder whether what we call weight might involve more than one kind of support or directional force inside the world-machine.
 
-That opened several possibilities:
-
-outward pressure;
-
-buoyancy-like effects;
-
-changes in apparent weight with height;
-
-local gravitational behaviour inside a larger lattice-supported world;
-
-and interactions between ordinary weight, pressure and the deeper current.
+That opened several possibilities: outward pressure, buoyancy-like effects, changes in apparent weight with height, local gravitational behaviour inside a larger lattice-supported world, and interactions between ordinary weight, pressure and the deeper current.
 
 I do not treat those possibilities as mutually exclusive.
 
@@ -2617,17 +2428,7 @@ One of the biggest mistakes I made early in the project was assuming that if two
 
 They do not.
 
-A god is not automatically the machine.
-
-A serpent is not automatically the gate.
-
-A horse is not automatically the current.
-
-A tree is not automatically the world.
-
-A wheel is not automatically a vehicle.
-
-A mountain is not automatically the axis.
+A god is not automatically the machine, any more than a serpent is automatically the gate, a horse the current, a tree the world, a wheel a vehicle or a mountain the axis.
 
 Sometimes those roles overlap. Sometimes one image carries several roles at once. But the cosmology became much clearer when I stopped asking, **Which god is the machine?** and started asking, **What is this figure doing inside the event?**
 
@@ -2641,21 +2442,7 @@ It was the point where comparative mythology stopped being a pile of similaritie
 
 The early symbolic material was intoxicating because there were so many apparent correspondences.
 
-Serpents appeared around world creation.
-
-Trees connected worlds.
-
-Mountains sat at cosmic centres.
-
-Horses crossed boundaries.
-
-Boats carried survivors.
-
-Eyes filled wheels.
-
-Storm gods fought dragons.
-
-Floods destroyed one world and prepared another.
+Serpents appeared around world creation, trees connected worlds, mountains sat at cosmic centres, horses crossed boundaries, boats carried survivors, eyes filled wheels, storm gods fought dragons, and floods destroyed one world and prepared another.
 
 It was easy to slide from resemblance into identity.
 
@@ -2687,19 +2474,7 @@ Once I began doing that, the mythology became much more precise.
 
 The most important distinction is between **apparatus** and **operator**.
 
-The apparatus is the structure.
-
-The lattice is apparatus.
-
-The gate is apparatus.
-
-The axis is apparatus.
-
-A wheel can be apparatus.
-
-A vehicle can be apparatus.
-
-An enclosure can be apparatus.
+The apparatus is the structure. The lattice, gate and axis are apparatus; a wheel, vehicle or enclosure can be apparatus too.
 
 The operator is the figure associated with directing, commanding, activating, mastering or ordering some part of that structure.
 
@@ -2711,15 +2486,7 @@ This solved a problem I had been carrying since the first world-machine.
 
 Once the enclosure existed as architecture, I no longer needed the central god-figure to literally be the architecture.
 
-A throne could have an occupant.
-
-A chariot could have a driver.
-
-A gate could have someone who opened it.
-
-A world tree could have travellers moving through it.
-
-The machine could remain one thing while the cultural figure attached to it changed.
+A throne could have an occupant, a chariot a driver, a gate someone who opened it, and a world tree travellers moving through it. The machine could remain one thing while the cultural figure attached to it changed.
 
 That is much more realistic.
 
@@ -2741,21 +2508,7 @@ They are different camera angles.
 
 The next distinction came from guarded thresholds.
 
-Many traditions contain a dangerous boundary with someone or something stationed near it.
-
-A serpent.
-
-A monster.
-
-A pair of figures.
-
-A watchman.
-
-A divine gatekeeper.
-
-An animal.
-
-A giant.
+Many traditions contain a dangerous boundary with someone or something stationed near it: a serpent, a monster, a pair of figures, a watchman, a divine gatekeeper, an animal or a giant.
 
 At first it was tempting to treat every powerful threshold figure as the operator.
 
@@ -2785,11 +2538,7 @@ The point is that the roles can now be distinguished when they do appear.
 
 ## Guide is not vehicle
 
-The same thing happened with guides.
-
-A guide knows the route.
-
-A vehicle carries the traveller.
+The same thing happened with guides. A guide knows the route; a vehicle carries the traveller.
 
 These can easily be confused because a mythic figure may perform both functions, but they are not mechanically the same.
 
@@ -2805,17 +2554,7 @@ Sleipnir belongs more clearly to the vehicle role.
 
 The horse carries a rider through a relationship ordinary travel cannot easily cross.
 
-A boat can be a vehicle when it is being actively navigated.
-
-A bridge can function like infrastructure.
-
-A ladder can function as a route.
-
-The guide is the intelligence of passage.
-
-The vehicle is the means.
-
-The gate is the changed geometry that makes the passage possible.
+A boat can be a vehicle when it is being actively navigated, a bridge can function like infrastructure and a ladder can function as a route. The guide is the intelligence of passage, the vehicle is the means, and the gate is the changed geometry that makes the passage possible.
 
 This separation became especially important once I began thinking seriously about temporary openings.
 
@@ -2829,27 +2568,9 @@ The carrier is another role entirely.
 
 I use **carrier** for an enclosure whose main job is to preserve cargo while the environment around it becomes dangerous.
 
-An ark is the obvious example.
+An ark is the obvious example, but a basket can do the same job at smaller scale, as can a chest, cave, egg, shell, womb or sealed chamber. The cargo does not need to control the movement; it may simply survive because the enclosure keeps a local inside coherent.
 
-A basket can do the same job at smaller scale.
-
-So can a chest, cave, egg, shell, womb or sealed chamber.
-
-The cargo does not need to control the movement.
-
-It may simply survive because the enclosure keeps a local inside coherent.
-
-This is different from a vehicle.
-
-A vehicle is used for directed travel.
-
-A carrier can move passively with the medium.
-
-A basket on water is moved by the current.
-
-An ark rides the flood.
-
-A cave may not move at all; the world changes around it.
+This is different from a vehicle. A vehicle is used for directed travel, while a carrier can move passively with the medium. A basket on water is moved by the current, an ark rides the flood, and a cave may not move at all because the world changes around it.
 
 That last case taught me something important.
 
@@ -2867,37 +2588,17 @@ That is the enclosure principle in human scale.
 
 ## Traveller and witness
 
-The **traveller** and the **witness** are also different.
-
-A traveller crosses.
-
-A witness sees.
-
-Sometimes the same person does both, but not always.
+The **traveller** and the **witness** are also different. A traveller crosses; a witness sees. Sometimes the same person does both, but not always.
 
 This matters because a three-dimensional event will look completely different depending on where someone stands.
 
-A witness at a distance may see a wheel.
-
-A traveller approaching the same structure may see a tunnel or opening.
-
-A person standing beneath an axis may see a tree, column or mountain.
-
-A person looking more directly along it may see a ring or eye.
-
-A person inside a flood may not see the larger structure at all.
+A witness at a distance may see a wheel, while a traveller approaching the same structure may see a tunnel or opening. A person standing beneath an axis may see a tree, column or mountain; someone looking more directly along it may see a ring or eye; and someone inside a flood may not see the larger structure at all.
 
 The witness receives only one projection.
 
 This is one of the reasons I became reluctant to demand exact agreement among myths.
 
-If the event is large enough, no human observer sees the whole thing.
-
-The story preserves the viewpoint.
-
-The viewpoint becomes cultural memory.
-
-The cultural memory later becomes a symbol, god, monster, place or ritual.
+If the event is large enough, no human observer sees the whole thing. The story preserves the viewpoint, the viewpoint becomes cultural memory, and that cultural memory later becomes a symbol, god, monster, place or ritual.
 
 Different stories can therefore disagree honestly.
 
@@ -2909,23 +2610,9 @@ The **manifestation** role sits between physical structure and human interpretat
 
 Most of the deeper world-machine is not supposed to look dramatic during the quiet phase.
 
-The lattice is broad.
+The lattice is broad, the nodes are dormant and the current is not concentrated enough to dominate ordinary experience.
 
-Nodes are dormant.
-
-The current is not concentrated enough to dominate ordinary experience.
-
-During activation, that changes.
-
-A node brightens.
-
-A radial form appears.
-
-A current becomes luminous.
-
-A throat becomes visible.
-
-A concentration of light takes on shape.
+During activation, that changes. A node brightens, a radial form appears, a current becomes luminous, a throat becomes visible and a concentration of light takes on shape.
 
 That visible expression is what I call a manifestation.
 
@@ -2937,39 +2624,13 @@ This helps me think about radiant figures without immediately deciding whether t
 
 A bright central form can become humanlike in memory because the human mind is extremely good at seeing bodies and faces.
 
-A pair of bright nodes can become eyes.
-
-A vertical luminous structure can become a person, pillar or deity.
-
-A moving radial structure can become a wheel.
-
-A winding light can become a serpent.
+A pair of bright nodes can become eyes, a vertical luminous structure a person, pillar or deity, a moving radial structure a wheel, and a winding light a serpent.
 
 The manifestation is where geometry begins turning into story.
 
 ## Medium
 
-The gate also needs a **medium**.
-
-The medium is what surrounds the transition physically.
-
-Water.
-
-Mist.
-
-Cloud.
-
-Wind.
-
-Fire.
-
-Luminous air.
-
-Electrical activity.
-
-Dust.
-
-Smoke.
+The gate also needs a **medium**: what physically surrounds the transition. It can be water, mist, cloud, wind, fire, luminous air, electrical activity, dust or smoke.
 
 The medium changes how the structure is experienced.
 
@@ -2985,21 +2646,7 @@ A flood may carry the survivor while also concealing the deeper boundary change 
 
 This is another reason mythic disagreement does not bother me as much as it once did.
 
-Different environments produce different appearances.
-
-A world-scale event does not have to look the same from every region.
-
-One culture may preserve water.
-
-Another fire.
-
-Another darkness.
-
-Another thunder.
-
-Another opened sky.
-
-Another moving land.
+Different environments produce different appearances, so a world-scale event does not have to look the same from every region. One culture may preserve water, another fire, another darkness or thunder, another an opened sky or moving land.
 
 The medium is part of the camera angle.
 
@@ -3009,17 +2656,7 @@ The **receiver** is the region or figure where transfer ends.
 
 This role became important in the waterborne-child material.
 
-A child is enclosed.
-
-The carrier enters water.
-
-The current transports it.
-
-The enclosure reaches a receiving edge.
-
-Someone finds it.
-
-The child enters a new social world.
+A child is enclosed, the carrier enters water, the current transports it, the enclosure reaches a receiving edge, someone finds it, and the child enters a new social world.
 
 The receiver is not merely a person at the end of the story.
 
@@ -3047,17 +2684,7 @@ It is the change from one stable arrangement into another.
 
 Myth often personifies it as war, judgment, flood, burning, dismemberment, divine succession or creation.
 
-The Vardath model treats those as possible narrative forms of the same general role:
-
-the old arrangement can no longer hold;
-
-the boundary changes;
-
-material moves;
-
-the surface reorganises;
-
-a new stable world emerges.
+The Vardath model treats those as possible narrative forms of the same general role: the old arrangement can no longer hold, the boundary changes, material moves, the surface reorganises and a new stable world emerges.
 
 This is where the operator and apparatus distinction becomes especially useful.
 
@@ -3213,21 +2840,7 @@ I can see that now.
 
 At the time, I needed it to be literal because I was still trying to discover what kind of object could hold all the symbols I had been following.
 
-I had a room-like enclosure.
-
-An inhabited lower region.
-
-A structured upper region.
-
-A central spike.
-
-A hanging node.
-
-Paired winding channels.
-
-Water above.
-
-A boundary around the whole thing.
+I had a room-like enclosure with an inhabited lower region, a structured upper region, a central spike, a hanging node, paired winding channels, water above and a boundary around the whole thing.
 
 It was not the mature cosmology, but it was the first time the pieces had somewhere to belong.
 
@@ -3243,41 +2856,11 @@ It was trying to become a changing world.
 
 ## From object to state
 
-The early enclosure encouraged me to think in objects.
+The early enclosure encouraged me to think in objects: a rod, a canopy, channels, a sphere, upper regions and an inhabited floor.
 
-There is a rod.
+The mature model is much more about **states**. The rod is not a permanent object but a contracted state of the lattice. The gate is not a permanent door but a temporary state of adjacency. The upper boundary is not simply a roof but an interface between neighbouring world-turns.
 
-There is a canopy.
-
-There are channels.
-
-There is a sphere.
-
-There are upper regions.
-
-There is an inhabited floor.
-
-The mature model is much more about **states**.
-
-The rod is not a permanent object.
-
-It is a contracted state of the lattice.
-
-The gate is not a permanent door.
-
-It is a temporary state of adjacency.
-
-The upper boundary is not simply a roof.
-
-It is an interface between neighbouring world-turns.
-
-The eye is not necessarily an object floating in the sky.
-
-It can be the end-on appearance of a node.
-
-The serpent is not necessarily an animal-shaped cosmic being.
-
-It can be the way a moving line or current is remembered.
+The eye is not necessarily an object floating in the sky; it can be the end-on appearance of a node. The serpent is not necessarily an animal-shaped cosmic being; it can be the way a moving line or current is remembered.
 
 This shift from object to state was one of the biggest changes in the whole project.
 
@@ -3369,19 +2952,9 @@ The geometry did.
 
 Two counter-wound paths around one centre became one of the deepest visual ideas in the mature cosmology.
 
-The paired serpents were no longer decorative.
+The paired serpents were no longer decorative. They became a way of thinking about **opposed movement in one connected system**: one sense can move upward while another moves downward, allowing the structure to exchange rather than simply drain.
 
-They became a way of thinking about **opposed movement in one connected system**.
-
-One sense can move upward.
-
-Another can move downward.
-
-The structure can exchange rather than simply drain.
-
-The rod can look singular from outside while containing multiple internal paths.
-
-That idea eventually became the braid.
+The rod can look singular from outside while containing multiple internal paths. That idea eventually became the braid.
 
 This was important because a one-way universe did not fit the world I was trying to build.
 
@@ -3399,17 +2972,7 @@ The early enclosure also treated the upper structure too much like a fixed ceili
 
 Later, I began to think of it as a **field**.
 
-A field can contain nodes.
-
-It can contain crossings.
-
-It can distribute tension.
-
-It can reorganise.
-
-It can narrow.
-
-It can remain broad.
+A field can contain nodes and crossings, distribute tension, reorganise, narrow and remain broad.
 
 That change was essential.
 
@@ -3435,15 +2998,7 @@ That means the catastrophe is a transformation, not a replacement.
 
 The early world-machine was waiting for the fingertrap without knowing it.
 
-I had the broad upper geometry.
-
-I had paired winding channels.
-
-I had an axis.
-
-I had a gate intuition.
-
-I did not yet have the mechanical relation that turned one into the other.
+I had the broad upper geometry, paired winding channels, an axis and a gate intuition. What I did not yet have was the mechanical relation that turned one into the other.
 
 The fingertrap provided it.
 
@@ -3455,27 +3010,13 @@ The same material can therefore move between broad and rod-like states.
 
 That is exactly what the cosmology needed.
 
-Suddenly the old symbols no longer had to be separate.
-
-The mesh could become the ladder.
-
-The ladder could become the rod.
-
-The rod could become the throat.
-
-The throat could reopen into the mesh.
+Suddenly the old symbols no longer had to be separate. The mesh could become the ladder, the ladder the rod, the rod the throat, and the throat could reopen into the mesh.
 
 The whole sequence could run without cutting the structure apart.
 
 This is the point where I began thinking of the world not simply as layered, but as **breathing**.
 
-The broad world is expanded.
-
-The active world gathers.
-
-The gate is the narrow state.
-
-The renewed world expands again.
+The broad world is expanded, the active world gathers, the gate is the narrow state and the renewed world expands again.
 
 The world-machine had finally become a cycle.
 
@@ -3495,11 +3036,7 @@ It can be the place where distributed paths temporarily gather.
 
 This was a major improvement because it allowed more than one scale.
 
-A local node can converge.
-
-A region can converge.
-
-A world-scale event can drive the larger structure toward one dominant axial state.
+A local node can converge, a region can converge, and a world-scale event can drive the larger structure toward one dominant axial state.
 
 That means I no longer need one single permanent gate at one fixed geographical pole.
 
@@ -3583,17 +3120,7 @@ A floor belongs to the apparatus.
 
 Cargo rides on the apparatus.
 
-If the crust is cargo, the deeper structure can move while the visible geography deforms.
-
-Continents can bend.
-
-Basins can sink.
-
-Mountains can rise.
-
-Water can outline a new surface.
-
-Sediment can bury the old one.
+If the crust is cargo, the deeper structure can move while the visible geography deforms. Continents can bend, basins can sink, mountains can rise, water can outline a new surface and sediment can bury the old one.
 
 The lattice does not need to trace every coastline.
 
@@ -3615,25 +3142,9 @@ The mature model treats it as **handoff**.
 
 That is what gives the cosmology continuity.
 
-The present world does not simply fail.
+The present world does not simply fail; it becomes the donor. The next world does not simply appear; it becomes the receiver.
 
-It becomes the donor.
-
-The next world does not simply appear.
-
-It becomes the receiver.
-
-Water crosses.
-
-Atmosphere crosses.
-
-Sediment crosses.
-
-Living material can survive inside carriers.
-
-The old surface is deformed, buried or redistributed.
-
-The next stable world inherits the result.
+Water, atmosphere and sediment cross. Living material can survive inside carriers, the old surface is deformed, buried or redistributed, and the next stable world inherits the result.
 
 The same event can therefore be destruction and creation depending on where the observer stands.
 
@@ -3651,31 +3162,9 @@ When I look back at the first world-machine now, I see an earlier layer of the s
 
 It is an ancestor, but it is also still present inside the later picture.
 
-The literal room changed.
+The literal room, celestial assignments, fixed ceiling and permanent centre all changed, but the deeper relationships survived.
 
-The celestial assignments changed.
-
-The fixed ceiling changed.
-
-The permanent centre changed.
-
-But the deeper relationships survived.
-
-There was an inside.
-
-There was an upper boundary.
-
-There was a centre.
-
-There were winding paths.
-
-There was water.
-
-There was a separation between levels.
-
-There was the suggestion of a gate.
-
-There was the feeling that the structure was alive rather than inert.
+There was still an inside, an upper boundary, a centre, winding paths, water, a separation between levels, the suggestion of a gate and the feeling that the structure was alive rather than inert.
 
 Those questions opened relationships that later became larger, more connected and more detailed.
 
