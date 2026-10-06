@@ -3276,13 +3276,7 @@ The world has neighbours.
 
 The shell is the easiest natural image I have found for this kind of growth.
 
-A shell grows by adding to itself.
-
-Earlier structure is retained.
-
-Later structure wraps beyond it.
-
-The old does not need to disappear for the new to exist.
+A shell grows by adding to itself. Earlier structure is retained while later structure wraps beyond it, so the old does not need to disappear for the new to exist.
 
 This is what I want from the world-body.
 
@@ -3318,37 +3312,11 @@ A spiral returns to a related direction while continuing outward.
 
 Vardath Cosmology is cyclic in state but developmental in history.
 
-The world can pass through a recurring sequence:
-
-quiet;
-
-activation;
-
-convergence;
-
-gate;
-
-transfer;
-
-reset;
-
-reopening;
-
-quiet again.
+The world can pass through a recurring sequence: **quiet → activation → convergence → gate → transfer → reset → reopening → quiet again.**
 
 But the world after that cycle is not the exact world that existed before it.
 
-Material has moved.
-
-Water has moved.
-
-The crust has changed.
-
-Life has survived unevenly.
-
-The next turn has developed.
-
-The larger body has grown.
+Material and water have moved, the crust has changed, life has survived unevenly, the next turn has developed and the larger body has grown.
 
 The system returns to a familiar **kind** of stability without returning to the same historical position.
 
@@ -3420,11 +3388,7 @@ Then, when the gate interval comes, the next turn is already there to receive wh
 
 World renewal is therefore a change of relationship and inheritance between existing populated worlds, not the construction of a new habitable world.
 
-The receiver exists before the handoff.
-
-The event changes access.
-
-It does not summon the destination into existence.
+The receiver exists before the handoff. The event changes access; it does not summon the destination into existence.
 
 ## The present world is a middle world
 
@@ -3448,15 +3412,7 @@ Every living generation is the result of a previous generation and the condition
 
 The shell model extends that logic to world-scale structure.
 
-The present world contains old material.
-
-It carries old scars.
-
-Its water has history.
-
-Its crust has history.
-
-Its life has history.
+The present world contains old material and carries old scars. Its water, crust and life all have history.
 
 At the same time, some of that material may eventually become part of another stable turn.
 
@@ -3530,27 +3486,13 @@ The previous world may contain inherited conditions that no longer belong at the
 
 If those regions were permanently open to one another, the present would not remain a distinct environment.
 
-So the gap matters.
-
-The boundary matters.
-
-The spacing matters.
+So the gap, the boundary and the spacing all matter.
 
 A stable world is produced not only by what exists inside it, but by what is kept outside.
 
 This is one reason mythic images of separation became so important to me.
 
-Sky held above Earth.
-
-Waters divided.
-
-A bridge closed.
-
-A gate guarded.
-
-A serpent lying around the boundary.
-
-A pillar holding the realms apart.
+Sky held above Earth, waters divided, a bridge closed, a gate guarded, a serpent lying around the boundary and a pillar holding the realms apart.
 
 They all express the same deep requirement in different ways:
 
@@ -3570,15 +3512,7 @@ The shell model changes the question.
 
 The boundary above the present world can also be the lower boundary of the next one.
 
-One interface belongs to both sides.
-
-From here it is above.
-
-From there it is below.
-
-From here it is a ceiling.
-
-From there it can be floor.
+One interface belongs to both sides. From here it is above and can be experienced as a ceiling; from there it is below and can be experienced as a floor.
 
 That does not solve the support physics, but it solves the architectural awkwardness.
 
@@ -3604,17 +3538,7 @@ That means ordinary time is productive.
 
 The system is not sitting motionless waiting for the next disaster.
 
-Growth continues.
-
-The event is a different process.
-
-The event changes the relationship among turns.
-
-It alters adjacency.
-
-It changes transfer.
-
-It changes the state of the lattice.
+Growth continues, but the event is a different process. It changes the relationship among turns by altering adjacency, transfer and the state of the lattice.
 
 The two processes interact, but they are not identical.
 
@@ -3712,19 +3636,7 @@ For now, it is enough to see why the world-turn model makes the idea possible.
 
 I sometimes use biological language for the world-body because the shell model feels more like growth than construction.
 
-The old world resembles an earlier stage of the organism.
-
-The present world is the active surface of the current stage.
-
-The next world already exists beyond it.
-
-The deeper current persists through all three.
-
-The lattice connects them.
-
-The boundaries regulate exchange.
-
-The gate is the phase in which that regulation changes.
+The old world resembles an earlier stage of the organism, the present world is the active surface of the current stage, and the next world already exists beyond it. The deeper current persists through all three, the lattice connects them, the boundaries regulate exchange, and the gate is the phase in which that regulation changes.
 
 I am not claiming the universe is literally a biological animal.
 
@@ -3804,17 +3716,7 @@ I mean a complete world-region with depth, material, water, atmosphere and a str
 
 That distinction lets several old pictures sit together without making them compete.
 
-The world can be locally flat.
-
-The world-body can be globally curved.
-
-The sky can be a dome.
-
-The dome can be part of a lattice.
-
-The lattice can belong to a world tree.
-
-The world tree can grow through successive turns.
+The world can be locally flat while the world-body is globally curved. The sky can be a dome, the dome part of a lattice, the lattice part of a world tree, and the world tree can grow through successive turns.
 
 Those are different scales of one structure.
 
@@ -3878,21 +3780,7 @@ A dome may arch over it.
 
 The same woven system may curve around and through the world-region so that words like *above*, *below* and *support* describe different faces of one continuous structure.
 
-What matters most is that the flat inhabited surface is **not unsupported**.
-
-It belongs to an apparatus.
-
-That apparatus has shape.
-
-It has tension.
-
-It has paths.
-
-It can carry current.
-
-It can separate one world from another.
-
-And it can change state.
+What matters most is that the flat inhabited surface is **not unsupported**. It belongs to an apparatus with shape, tension and paths—one that can carry current, separate one world from another and change state.
 
 This is why the lattice dome is more useful to me than a rigid glass ceiling.
 
@@ -3942,23 +3830,7 @@ The **sky may become the gate** when the lattice changes state.
 
 That idea is radical, but it ties together many parts of the cosmology at once.
 
-The vault.
-
-The scroll.
-
-The fingertrap.
-
-The world tree.
-
-The ladder.
-
-The rod.
-
-The opened heaven.
-
-The gate.
-
-They can all belong to one changing woven structure.
+The vault, scroll, fingertrap, world tree, ladder, rod, opened heaven and gate can all belong to one changing woven structure.
 
 ## ARK, ARC and SKY
 
@@ -4000,13 +3872,7 @@ A protected structure that preserves life through transition can open back into 
 
 This sits naturally beside the flat-disc model.
 
-The affected world-disc can resettle inside or upon the reopened lattice structure.
-
-The dome becomes its sky and support.
-
-The protected interior releases its survivors back into the inhabited exterior.
-
-The carrier returns its cargo to the world.
+The affected world-disc can resettle inside or upon the reopened lattice structure. The dome becomes its sky and support, the protected interior releases its survivors back into the inhabited exterior, and the carrier returns its cargo to the world.
 
 ## The world above may stand on our sky
 
@@ -4438,13 +4304,7 @@ The current gives it life.
 
 I use the word **current** because I need something that can persist, move, organise and wake.
 
-It may be electrical.
-
-It may be plasma-like.
-
-It may be telluric.
-
-It may involve several kinds of flow at once.
+It may be electrical, plasma-like, telluric, or involve several kinds of flow at once.
 
 The exact physical identity is still open in my cosmology, but the role has become increasingly clear.
 
@@ -4458,15 +4318,7 @@ It may be the thing the world formed around.
 
 One of the pictures I keep returning to begins before the present world had its familiar surface.
 
-There is a large moving current through a less differentiated world-condition.
-
-Matter gathers around it.
-
-Stable regions form.
-
-The current produces or organises cavities, chambers, boundaries and pathways.
-
-What begins as movement gradually acquires structure around itself.
+There is a large moving current through a less differentiated world-condition. Matter gathers around it, stable regions form, and the current produces or organises cavities, chambers, boundaries and pathways. What begins as movement gradually acquires structure around itself.
 
 This is one way I connect the serpent with the world tree.
 
@@ -4480,13 +4332,7 @@ The geometry changes scale.
 
 A long active line can become the trunk or spine of a much larger living architecture.
 
-Branches can be paths.
-
-Nodes can be junctions.
-
-Worlds can settle around stable regions.
-
-The current can remain inside the finished structure like a hidden nervous system.
+Branches can be paths, nodes can be junctions, worlds can settle around stable regions, and the current can remain inside the finished structure like a hidden nervous system.
 
 That is the idea.
 
@@ -4514,17 +4360,7 @@ I think the earliest pulse may have been immense.
 
 Before the present worlds were enclosed by all the matter they now contain, the current may have had far less resistance around it.
 
-It could expand through a more open structure.
-
-It could pinch, filament and gather matter.
-
-It could heat.
-
-It could fuse.
-
-It could separate regions.
-
-It could establish the first stable boundaries.
+It could expand through a more open structure, pinch, filament and gather matter, heat, fuse, separate regions and establish the first stable boundaries.
 
 The physical material enclosing the worlds may therefore be, at least partly, **the cooled history of the current itself**.
 
@@ -4582,13 +4418,7 @@ That means each pulse can be related without being equal.
 
 If the earliest pulse helped create or organise the physical enclosure, then every later pulse enters a more difficult environment.
 
-There is more matter around the pathway.
-
-More mass to heat.
-
-More boundary to cross.
-
-More structure to absorb, conduct and redistribute the energy.
+There is more matter around the pathway, more mass to heat, more boundary to cross and more structure to absorb, conduct and redistribute the energy.
 
 The world itself becomes a damper.
 
@@ -4614,21 +4444,7 @@ This makes the Squatter Man and Mount Meru much more important.
 
 They may represent a later stage of the primordial current.
 
-The current rises through the inherited centre.
-
-It pinches.
-
-It forms lobes, branches and bright nodes.
-
-Seen as a body, it becomes Squatter Man.
-
-Seen as an enormous central rise, it becomes Meru.
-
-Seen as pure geometry, it becomes the rod or axis.
-
-Seen as current, it is Birkeland-like filamentation and pinch structure.
-
-Seen as world architecture, it is the trunk of the tree.
+The current rises through the inherited centre, pinches, and forms lobes, branches and bright nodes. Seen as a body, it becomes Squatter Man; as an enormous central rise, Meru; as pure geometry, the rod or axis; as current, Birkeland-like filamentation and pinch structure; and as world architecture, the trunk of the tree.
 
 This is the kind of integration I am looking for throughout the book.
 
@@ -4640,17 +4456,7 @@ One process producing several legitimate descriptions.
 
 I increasingly think **the fires** should be treated as a recurring phase of this same current.
 
-The phrase matters because the active world is not only flooded.
-
-It burns.
-
-The current heats.
-
-Plasma glows.
-
-Surfaces can alter.
-
-The sky can become luminous.
+The phrase matters because the active world is not only flooded; it burns. The current heats, plasma glows, surfaces alter and the sky can become luminous.
 
 The world can be both wet and fiery because water movement and electrical heating belong to different parts of the same transition.
 
@@ -4714,21 +4520,7 @@ The world is the visible material body grown around the lattice and current.
 
 That would explain why the deeper geometry keeps reappearing in so many different branches of the cosmology.
 
-It is not one mechanism among many.
-
-It is the underlying organiser.
-
-The land sits on it.
-
-The dome is formed through it.
-
-The upper water is held in relation to it.
-
-The celestial field may be organised through it.
-
-The gate is one of its active states.
-
-The world tree is its large-scale architecture.
+It is not one mechanism among many; it is the underlying organiser. The land sits on it, the dome is formed through it, the upper water is held in relation to it, the celestial field may be organised through it, the gate is one of its active states, and the world tree is its large-scale architecture.
 
 And Meltology may be one of the material traces left when the current becomes intense again.
 
@@ -5344,17 +5136,7 @@ It is not necessarily a visible net stretched over the world.
 
 It may be field, current path, tension structure, plasma geometry, material support, or several of those at once.
 
-What matters is that it is **woven**.
-
-There are paths.
-
-There are crossings.
-
-There are nodes.
-
-There are regions between the paths.
-
-There is a broad state and a narrow state.
+What matters is that it is **woven**. There are paths, crossings, nodes, regions between the paths, and both a broad state and a narrow state.
 
 And the whole thing can change shape without ceasing to be one connected structure.
 
@@ -5374,21 +5156,7 @@ It cannot be only empty if it is also part of the world-machine.
 
 The lattice sits between those extremes.
 
-It can hold.
-
-It can transmit.
-
-It can separate.
-
-It can open.
-
-It can carry current.
-
-It can distribute force.
-
-It can contain nodes.
-
-It can be crossed at some places and closed at others.
+It can hold, transmit, separate and open. It can carry current, distribute force, contain nodes, and be crossed at some places while remaining closed at others.
 
 A woven dome makes more sense to me than a featureless ceiling because it can do work.
 
@@ -5400,23 +5168,7 @@ It is held by a network of relationships.
 
 Most of the time, I imagine the lattice in its **broad state**.
 
-The weave is open.
-
-Its paths spread across the dome and through the deeper structure.
-
-No single throat dominates.
-
-No one route gathers the whole system into an axis.
-
-The world-disc remains stable.
-
-The sky appears wide.
-
-The upper waters remain separated.
-
-The nodes sleep or remain only partly active.
-
-The current is distributed.
+The weave is open, its paths spread across the dome and through the deeper structure, and no single throat or route gathers the whole system into an axis. The world-disc remains stable, the sky appears wide, the upper waters remain separated, the nodes sleep or remain only partly active, and the current is distributed.
 
 This is the quiet world.
 
@@ -5448,17 +5200,7 @@ At that scale, the dragon is no longer one creature moving through the world.
 
 The entire structure can become dragon-like.
 
-Coils.
-
-Crossings.
-
-Scales.
-
-Knots.
-
-Interlocking bodies.
-
-Curving paths that pass above and below one another.
+Coils, crossings, scales, knots, interlocking bodies and curving paths that pass above and below one another all fit the image.
 
 The dragon lattice is therefore not a separate mythic object added to the cosmology.
 
@@ -5486,19 +5228,7 @@ Those are all natural things for a woven current structure to do.
 
 Where lattice paths cross, the relationship changes.
 
-A crossing can be ordinary.
-
-Several crossings can gather into a stronger node.
-
-A node can remain quiet.
-
-A node can wake.
-
-A node can become luminous.
-
-A node can open.
-
-A node can become a throat.
+A crossing can remain ordinary, several crossings can gather into a stronger node, and that node can remain quiet, wake, become luminous, open or become a throat.
 
 This gives me a whole hierarchy without needing different machines for each level.
 
@@ -5516,23 +5246,7 @@ Radiating strands can look like spokes or rays.
 
 A bright rim can look like an iris.
 
-The same node can therefore become:
-
-eye;
-
-wheel;
-
-star;
-
-rosette;
-
-ring;
-
-flower;
-
-or gate,
-
-depending on state and viewpoint.
+The same node can therefore become an eye, wheel, star, rosette, ring, flower or gate depending on state and viewpoint.
 
 That is the projection grammar beginning to grow directly out of the lattice.
 
@@ -5578,11 +5292,7 @@ This is where the land branch becomes mechanical.
 
 I imagine the visible crust and surface material riding over or within a deeper woven support.
 
-The land is heavy material.
-
-The lattice is the organiser.
-
-When the lattice moves, the material above it responds.
+The land is heavy material; the lattice is the organiser. When the lattice moves, the material above it responds.
 
 If one region stretches, the crust can pull apart.
 
@@ -5598,17 +5308,7 @@ This is how the lattice can create the great bends, hooks, prows and S-like form
 
 The surface does not have to copy the lattice line for line.
 
-Rubble riding a moving woven substrate will deform.
-
-It will lag.
-
-It will fracture.
-
-It will pile up.
-
-It will be dragged around nodes.
-
-It can preserve a softened version of the deeper motion.
+Rubble riding a moving woven substrate will deform. It can lag, fracture, pile up, be dragged around nodes and preserve a softened version of the deeper motion.
 
 That is why I think of the continents as cargo.
 
@@ -5636,17 +5336,7 @@ If the lower lattice changes but the upper lattice does not, I would need two se
 
 If they are one continuous structure, one pulse can affect the whole world.
 
-The land moves.
-
-The sky gathers.
-
-Water shifts.
-
-Nodes open.
-
-The rod forms.
-
-The gate appears.
+The land moves, the sky gathers, water shifts, nodes open, the rod forms and the gate appears.
 
 One event becomes enough.
 
@@ -6000,13 +5690,7 @@ And if the current can move between neighbouring world-turns, does it move in on
 
 The more I worked with the model, the less convincing a one-way system became.
 
-The world I was building was not a drain.
-
-It was not a lift.
-
-It was not a pipeline carrying everything from below to above.
-
-It was a circulation.
+The world I was building was not a drain, a lift or a pipeline carrying everything from below to above. It was a circulation.
 
 That meant I needed opposite tendencies inside the same structure.
 
@@ -6016,15 +5700,7 @@ This is where the braid became essential.
 
 The simplest image is two strands winding around the same centre.
 
-One turns one way.
-
-The other turns the opposite way.
-
-They are not separate universes.
-
-They are not two unrelated currents.
-
-They belong to one larger braid.
+One turns one way and the other turns the opposite way. They are not separate universes or unrelated currents; they belong to one larger braid.
 
 That is what matters.
 
@@ -6124,17 +5800,7 @@ This helps with the upper-water problem.
 
 If water or atmosphere moves downward from the next-world boundary during activation, the present world may simultaneously be sending other material upward.
 
-Sediment.
-
-Gas.
-
-Heat.
-
-Living cargo.
-
-Debris.
-
-Different things may prefer different parts of the flow.
+Sediment, gas, heat, living cargo and debris may prefer different parts of the flow.
 
 A real physical model would need to explain exactly how that sorting occurs.
 
@@ -6156,15 +5822,7 @@ The caduceus has its own historical development and meanings.
 
 I am not claiming it was drawn as a technical schematic of Vardath Cosmology.
 
-What interests me is the geometry.
-
-Two winding channels.
-
-One shared centre.
-
-Repeated crossing.
-
-Opposed but coordinated movement.
+What interests me is the geometry: two winding channels, one shared centre, repeated crossing, and opposed but coordinated movement.
 
 That is the visual family I need.
 
@@ -6176,17 +5834,7 @@ This is one of the places where mythology can distort the physical picture if I 
 
 When traditions contain paired serpents, twins, rivals or opposing gods, the story often moralises the opposition.
 
-One becomes order.
-
-The other becomes chaos.
-
-One rises.
-
-The other falls.
-
-One protects.
-
-The other threatens.
+One becomes order and the other chaos; one rises while the other falls; one protects while the other threatens.
 
 That is human narrative.
 
@@ -6282,15 +5930,7 @@ The opposite sense belongs to the other.
 
 This is why I think the gate is better imagined as a relation than as a hole.
 
-A hole is passive.
-
-A braid has direction.
-
-A route can carry.
-
-A route can sort.
-
-A route can oppose.
+A hole is passive, but a braid has direction. A route can carry, sort and oppose.
 
 The gate is therefore not merely an absence of wall.
 
@@ -6334,21 +5974,7 @@ That would leave no present structure behind and would make inheritance too crud
 
 A braided exchange allows subtler two-way interaction among the present, the future-relative world above and the past-relative world below.
 
-Some material remains.
-
-Some rises.
-
-Some descends.
-
-Some circulates.
-
-Some is trapped.
-
-Some crosses only in fine form.
-
-Some survives inside enclosures.
-
-Some never reaches the throat.
+Some material remains, some rises, some descends, some circulates, some is trapped, some crosses only in fine form, some survives inside enclosures, and some never reaches the throat.
 
 That is much closer to how a real transition should behave.
 
@@ -6474,13 +6100,7 @@ If the previous, present and next turns are all parts of one larger body, then t
 
 But if they are too connected, they stop behaving like separate worlds.
 
-The present world needs its own atmosphere.
-
-Its own water distribution.
-
-Its own stable surface.
-
-Its own ordinary sky.
+The present world needs its own atmosphere, water distribution, stable surface and ordinary sky.
 
 The next world can already exist nearby in the larger structure, fully populated in its own right, without continuously pouring everything it contains into ours.
 
@@ -6502,17 +6122,7 @@ A wall either blocks or breaks.
 
 The Vardath boundary has to do more than that.
 
-It has to maintain different environments on opposite sides.
-
-It has to belong to the same larger structure as the lattice.
-
-It has to remain stable through long quiet periods.
-
-It has to be capable of changing state.
-
-It has to become more permeable during activation.
-
-And then it has to close again.
+It has to maintain different environments on opposite sides, belong to the same larger structure as the lattice, remain stable through long quiet periods, change state, become more permeable during activation and then close again.
 
 That makes the boundary more like an **interface**.
 
@@ -6554,19 +6164,7 @@ That is a much more coherent architecture.
 
 Water kept returning to the project long before I knew what to do with it.
 
-Primordial waters.
-
-Waters above.
-
-World seas.
-
-Floods.
-
-Boundary rivers.
-
-Serpents associated with water.
-
-Arks and baskets.
+Primordial waters, waters above, world seas, floods, boundary rivers, serpents associated with water, and arks and baskets all belong to this recurring family.
 
 The easy mistake would have been to treat every one of those as the same myth.
 
@@ -6576,17 +6174,7 @@ But the repeated structural role of water forced me to ask why water belongs so 
 
 The answer, inside my cosmology, is that water is unusually good at revealing changing geometry.
 
-It flows.
-
-It collects.
-
-It crosses openings.
-
-It responds to pressure.
-
-It changes phase.
-
-It carries debris.
+It flows, collects, crosses openings, responds to pressure, changes phase and carries debris.
 
 It can separate two shores and also become the route between them.
 
@@ -6752,15 +6340,7 @@ A biological cell membrane is not the same thing as my world boundary, obviously
 
 But the functional analogy is strong.
 
-The present world is an enclosed environment.
-
-The boundary controls exchange.
-
-Local openings can exist.
-
-A large change in state can make the interface far more permeable.
-
-Then the system can close again.
+The present world is an enclosed environment, the boundary controls exchange, and local openings can exist. A large change in state can make the interface far more permeable before the system closes again.
 
 That is almost exactly the behaviour required by the gate.
 
@@ -6792,13 +6372,7 @@ The same structure changes function.
 
 This is one of the recurring principles of Vardath Cosmology.
 
-The rod is the contracted lattice.
-
-The gate is the active boundary.
-
-The flood is the moving boundary water.
-
-The catastrophe is the world changing state.
+The rod is the contracted lattice, the gate the active boundary, the flood the moving boundary water, and the catastrophe the world changing state.
 
 The symbols multiply.
 
@@ -6964,25 +6538,7 @@ That distinction is central to Vardath Cosmology.
 
 For a long time, the dramatic imagery dominated my thinking.
 
-Serpents.
-
-Fire.
-
-Flood.
-
-Eyes.
-
-Wheels.
-
-Open heavens.
-
-A central rod.
-
-Moving land.
-
-World trees.
-
-Gateways.
+Serpents, fire, flood, eyes, wheels, open heavens, a central rod, moving land, world trees and gateways all dominated the dramatic imagery.
 
 Those images are powerful because they belong to the moments when the deeper structure becomes visible.
 
@@ -6996,27 +6552,7 @@ In fact, it matters more, because it is the state in which ordinary life becomes
 
 The quiet world is not switched off.
 
-The current still exists.
-
-The lattice still exists.
-
-The braid still exists.
-
-The neighbouring turns still exist.
-
-The boundary still exists.
-
-The world-body is still growing.
-
-Water still moves.
-
-Air still moves.
-
-Land still changes.
-
-Life still reproduces.
-
-The sky still cycles.
+The current, lattice, braid, neighbouring turns and boundary still exist, and the world-body is still growing. Water and air still move, land still changes, life still reproduces and the sky still cycles.
 
 The machine is active in the ordinary sense.
 
@@ -7034,17 +6570,7 @@ The world is quiet because its movements balance.
 
 The broad lattice is the geometry of the quiet world.
 
-Paths are distributed.
-
-No single axial route dominates.
-
-Nodes remain local.
-
-Current is spread through the weave.
-
-The upper boundary remains functionally sealed.
-
-The present world keeps its own atmosphere and water cycle.
+Paths are distributed, no single axial route dominates, nodes remain local, current is spread through the weave, the upper boundary remains functionally sealed, and the present world keeps its own atmosphere and water cycle.
 
 The crust is stressed and moved through ordinary processes without being dragged into a world-scale reset.
 
@@ -7192,19 +6718,7 @@ The waking world does not have to arrive everywhere at once.
 
 This is another improvement over the old picture of one sudden global switch.
 
-A local node can strengthen first.
-
-A region can become more active.
-
-The boundary can change permeability in one place before another.
-
-The current can begin preferring certain routes.
-
-The atmosphere can change regionally.
-
-Heat can concentrate.
-
-Water can respond.
+A local node can strengthen first, a region can become more active, the boundary can change permeability in one place before another, the current can begin preferring certain routes, the atmosphere can change regionally, heat can concentrate and water can respond.
 
 The world can therefore wake in patches before a full reset develops.
 
@@ -7218,15 +6732,7 @@ The same machine can express itself at different strengths.
 
 That matters enormously for mythology because many stories describe local crossings rather than world destruction.
 
-A cave opens.
-
-A traveller enters another realm.
-
-A horse crosses an impossible distance.
-
-A mountain becomes luminous.
-
-A being descends.
+A cave opens, a traveller enters another realm, a horse crosses an impossible distance, a mountain becomes luminous or a being descends.
 
 Those events can belong to local or regional waking states without requiring the whole surface to undergo reset.
 
@@ -7688,19 +7194,7 @@ The rest belongs to human interpretation.
 
 The atmosphere should respond quickly to activation because it is less mechanically resistant than rock.
 
-Moisture shifts.
-
-Pressure gradients change.
-
-Electrical conditions change.
-
-Clouds form.
-
-Mist gathers.
-
-Air becomes luminous in some regions.
-
-Wind can become organised around active centres.
+Moisture shifts, pressure gradients and electrical conditions change, clouds form, mist gathers, air becomes luminous in some regions, and wind can organise around active centres.
 
 This is why I think the active atmosphere is one of the best places to look conceptually for the difference between quiet and waking states.
 
@@ -7788,25 +7282,7 @@ That is the transition into convergence.
 
 The activation stage gives many mythic motifs a specific place.
 
-Sleeping gods wake.
-
-Serpents stir.
-
-Mountains smoke.
-
-Eyes open.
-
-Watchers descend.
-
-Storms gather.
-
-The heavens brighten.
-
-Waters become restless.
-
-Animals behave strangely.
-
-Fire appears before the final destruction.
+Sleeping gods wake, serpents stir, mountains smoke, eyes open, Watchers descend, storms gather, the heavens brighten, waters become restless, animals behave strangely and fire appears before the final destruction.
 
 Again, I am not saying these motifs prove one physical event.
 
@@ -7822,29 +7298,11 @@ This also explains why warning figures belong so naturally before flood or destr
 
 If activation is gradual enough, there are signs.
 
-The world changes.
-
-The atmosphere changes.
-
-Water behaves differently.
-
-The sky looks strange.
-
-Local gates may already be appearing.
-
-People may have time to respond.
+The world and atmosphere change, water behaves differently, the sky looks strange, local gates may already be appearing, and people may have time to respond.
 
 That makes preservation stories more plausible inside the cosmology.
 
-A carrier can be prepared before maximum catastrophe.
-
-A refuge can be entered.
-
-A journey can begin.
-
-A guide can recognise the route.
-
-A culture can later remember the warning as divine instruction.
+A carrier can be prepared before maximum catastrophe, a refuge can be entered, a journey can begin, a guide can recognise the route, and a culture can later remember the warning as divine instruction.
 
 The model does not need the reset to arrive with no precursor.
 
@@ -7966,17 +7424,7 @@ Convergence is what changes that.
 
 It takes distributed movement and forces more of it into a smaller effective region.
 
-That changes current density.
-
-Pressure.
-
-Heat.
-
-Flow speed.
-
-Stress.
-
-The relation between neighbouring world-turns.
+That changes current density, pressure, heat, flow speed, stress and the relation between neighbouring world-turns.
 
 The gate becomes possible because the world is no longer spreading its activity across the whole field.
 
@@ -8308,21 +7756,7 @@ It is one consequence of convergence.
 
 Rock, brick, clay, glass, metal and sediment do not all respond the same way.
 
-Some can soften.
-
-Some slump.
-
-Some vitrify.
-
-Some fracture.
-
-Some become glazed or fused.
-
-Then water can arrive.
-
-Material can cool rapidly.
-
-Mud can bury the altered surface.
+Some can soften, slump, vitrify, fracture or become glazed or fused. Then water can arrive, material can cool rapidly and mud can bury the altered surface.
 
 A later quiet world can inherit structures whose formation conditions no longer exist.
 
@@ -8330,15 +7764,7 @@ That is exactly the sort of world I would expect after a strong convergence even
 
 ## The sky narrows
 
-The sky participates as well.
-
-The quiet sky is broad.
-
-The converging sky increasingly organises around active centres.
-
-Lights can gather.
-
-Radial structures can strengthen.
+The sky participates as well. The quiet sky is broad, while the converging sky increasingly organises around active centres. Lights can gather and radial structures can strengthen.
 
 The usual spread of the heavens can give way to an overwhelming axial form.
 
@@ -8352,13 +7778,7 @@ It is part of the machine changing state.
 
 ## The world tree emerges
 
-From the side, convergence becomes tree-like.
-
-Many paths become branches.
-
-Branches feed a trunk.
-
-The trunk becomes the dominant route between levels.
+From the side, convergence becomes tree-like: many paths become branches, branches feed a trunk, and the trunk becomes the dominant route between levels.
 
 The world tree therefore does not need to be a permanent giant tree physically visible in every age.
 
@@ -8460,33 +7880,9 @@ And that is why the fingertrap changed everything.
 
 For a long time I had two pictures that refused to become one.
 
-I had the broad world.
+I had the broad world and I had the axis. The broad world was woven, extended and full of paths; the axis was narrow, vertical and powerful.
 
-And I had the axis.
-
-The broad world was woven, extended and full of paths.
-
-The axis was narrow, vertical and powerful.
-
-Myths gave me both.
-
-Trees.
-
-Pillars.
-
-Ladders.
-
-Rods.
-
-Mountains.
-
-Serpents.
-
-Nets.
-
-Wheels.
-
-Eyes.
+Myths gave me both through trees, pillars, ladders, rods, mountains, serpents, nets, wheels and eyes.
 
 But a mythology can place one symbol beside another without explaining how the structure moves between them.
 
@@ -8506,11 +7902,7 @@ Push the ends toward one another and the sleeve becomes shorter and wider.
 
 Pull the ends apart and the sleeve becomes longer and narrower.
 
-Nothing has to be cut.
-
-Nothing has to be replaced.
-
-The same strands remain woven through the whole transformation.
+Nothing has to be cut or replaced. The same strands remain woven through the whole transformation.
 
 That behaviour was almost exactly what I had been looking for.
 
@@ -8552,15 +7944,7 @@ This is where the flat-world component and the gate finally become one continuou
 
 The quiet inhabited world is dominated by the broad state.
 
-The lattice is spread.
-
-The surface is extended.
-
-Ordinary lateral geography dominates lived experience.
-
-During convergence, the braid changes angle.
-
-The structure becomes more axial.
+The lattice is spread, the surface is extended, and ordinary lateral geography dominates lived experience. During convergence, the braid changes angle and the structure becomes more axial.
 
 The same world-machine that supported the broad surface begins forming a narrow through-route.
 
@@ -8618,19 +8002,7 @@ The rod is the next step.
 
 As the radius falls further, the weave becomes difficult to distinguish as separate strands from a distance.
 
-The structure looks singular.
-
-A staff.
-
-A pillar.
-
-A trunk.
-
-A beam.
-
-A spear.
-
-A column of light.
+The structure looks singular: a staff, pillar, trunk, beam, spear or column of light.
 
 Yet internally, the braid can remain complex.
 
@@ -8652,15 +8024,7 @@ It becomes a **throat**.
 
 That word matters because a throat carries.
 
-It has finite width.
-
-It can constrict.
-
-It can open.
-
-It can control flow.
-
-It joins larger regions through a narrow interval.
+It has finite width, can constrict and open, control flow, and join larger regions through a narrow interval.
 
 That is much closer to the gate I need than a fantasy portal drawn as a glowing circle in empty space.
 
@@ -8768,11 +8132,7 @@ It only needs to enter the same **state** again.
 
 Whenever the larger structure reaches that state, the natural time door appears.
 
-Different age.
-
-Different witnesses.
-
-Same class of event.
+Different age, different witnesses, same class of event.
 
 ## The door does not need one permanent location
 
@@ -8790,13 +8150,7 @@ The geometry is repeatable without the location being unique.
 
 That is a better fit for the historical record I am interested in.
 
-Fairy hills appear in one landscape.
-
-Sacred caves in another.
-
-World mountains in another.
-
-Bridges, wells, hollow trees, mounds and towers elsewhere.
+Fairy hills appear in one landscape, sacred caves in another, world mountains in another, and bridges, wells, hollow trees, mounds and towers elsewhere.
 
 If the gate is a state of the lattice rather than one permanent monument, those different locations stop being a contradiction.
 
@@ -8868,13 +8222,7 @@ The fingertrap also transformed Yggdrasil for me.
 
 A world tree already contains the right broad symbolism.
 
-Roots below.
-
-Trunk through the middle.
-
-Branches above.
-
-Worlds associated with different regions.
+Roots below, trunk through the middle, branches above, with worlds associated with different regions.
 
 But the fingertrap adds motion.
 
@@ -8902,19 +8250,7 @@ The contraction also gives me a way to think about land displacement.
 
 If the deeper lattice changes angle and radius, the crust riding above it is not guaranteed to remain where it was.
 
-Material can be pushed.
-
-Dragged.
-
-Bent.
-
-Sheared.
-
-Lifted.
-
-Dropped.
-
-Transferred.
+Material can be pushed, dragged, bent, sheared, lifted, dropped or transferred.
 
 The event can rearrange the surface while the deeper structure passes through its cycle.
 
@@ -8942,19 +8278,7 @@ The heat is not an extra catastrophe pasted onto the gate.
 
 It is one possible consequence of the same concentration that creates the door.
 
-The throat forms.
-
-The current intensifies.
-
-The atmosphere changes.
-
-Water moves.
-
-Rock heats.
-
-Material deforms.
-
-Then the structure reopens.
+The throat forms, the current intensifies, the atmosphere changes, water moves, rock heats and material deforms. Then the structure reopens.
 
 Water cools what was heated.
 
