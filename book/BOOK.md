@@ -16023,13 +16023,7 @@ The serpent is a family.
 
 The earliest form is movement.
 
-Long.
-
-Flexible.
-
-Curving.
-
-Persistent.
+Long, flexible, curving and persistent describe the earliest serpent form: movement.
 
 The serpent is the easiest living image for a directed line that can bend through a landscape without losing continuity.
 
@@ -16055,11 +16049,7 @@ Again, not one historical symbol reduced to another.
 
 A geometric relation.
 
-Two winding paths.
-
-One centre.
-
-Opposed direction.
+Two winding paths, one centre and opposed direction define the caduceus family mechanically.
 
 The serpent now belongs to circulation between world-states.
 
@@ -16083,17 +16073,7 @@ The guardian and the mechanism can therefore blur in story.
 
 The dragon is serpent plus scale, power and danger.
 
-It flies.
-
-Breathes fire.
-
-Guards treasure.
-
-Lives in mountains or caves.
-
-Controls water.
-
-Fights storm gods.
+It flies, breathes fire, guards treasure, lives in mountains or caves, controls water and fights storm gods.
 
 Those roles make the dragon especially useful during the active-world phase.
 
@@ -16123,13 +16103,7 @@ The source tradition remains Vedic.
 
 The Vardath comparison isolates the relation:
 
-blocked water;
-
-serpentine obstruction;
-
-storm operator;
-
-release.
+blocked water, serpentine obstruction, storm operator and release.
 
 That sequence belongs naturally to the world-boundary event.
 
@@ -16189,9 +16163,7 @@ It is the boundary of the domain itself.
 
 This distinction matters.
 
-A serpent can be axial.
-
-Or circumferential.
+A serpent can be axial or circumferential.
 
 The same broad family can occupy centre or edge depending on scale.
 
@@ -16205,13 +16177,7 @@ The edge of the ordered world becomes animate.
 
 A serpent forming a closed loop adds another layer.
 
-Closure.
-
-Circuit.
-
-Return.
-
-A completed boundary.
+Closure, circuit, return and a completed boundary all belong naturally to the looped serpent.
 
 That makes the ouroboros-like form useful to the quiet world.
 
@@ -16315,15 +16281,7 @@ During reset it can destroy.
 
 After reopening it can return to hidden circulation.
 
-Creator.
-
-Destroyer.
-
-Guardian.
-
-Guide.
-
-Enemy.
+Creator, destroyer, guardian, guide and enemy are all possible story roles for the same serpent family.
 
 All of those can be human interpretations of different phases of one structural family.
 
@@ -16496,21 +16454,7 @@ Now it has a place at almost every scale of the answer.
 
 Water belongs to the gate so naturally that it appears in almost every scale of the cosmology.
 
-World ocean.
-
-Boundary river.
-
-Sacred well.
-
-Flood.
-
-Mist.
-
-Upper water.
-
-Underworld water.
-
-Carrier medium.
+World ocean, boundary river, sacred well, flood, mist, upper water, underworld water and carrier medium all belong to the wider water family.
 
 The temptation is to call all of these the same thing.
 
@@ -16600,11 +16544,7 @@ Subterranean oceans, wells and abyssal waters belong to the same broad role fami
 
 The present world sits between watery relations.
 
-Upper.
-
-Surface.
-
-Lower.
+Upper, surface and lower waters occupy different positions in that layered relation.
 
 The gate can temporarily connect them.
 
@@ -16612,13 +16552,7 @@ The gate can temporarily connect them.
 
 The well is where water and gate geometry become almost identical.
 
-A narrow vertical opening.
-
-Surface above.
-
-Hidden region below.
-
-Water inside.
+A well is a narrow vertical opening with surface above, hidden region below and water inside.
 
 A person can draw from it, fall into it, descend through it or encounter another world through it in fairy tale.
 
@@ -16690,11 +16624,7 @@ That mechanical selectivity gives human cultures a natural foundation for morali
 
 Immersion and emergence also belong to the transition family.
 
-Enter water.
-
-Leave an old state.
-
-Emerge changed.
+Enter water, leave an old state and emerge changed.
 
 Religious meanings are much richer than this simple structure, but the spatial grammar is unmistakable.
 
@@ -16710,15 +16640,7 @@ The new one emerges.
 
 Fairy tales repeatedly use lakes, rivers, wells and fountains as doors.
 
-A person enters.
-
-A being emerges.
-
-A ring lies beneath the water.
-
-A palace exists below the lake.
-
-Time changes.
+A person enters, a being emerges, a ring lies beneath the water, a palace exists below the lake, or time changes.
 
 Again, the geography looks impossible only if the water must contain the entire other realm in ordinary space.
 
@@ -16744,13 +16666,7 @@ In Vardath terms, the reflection metaphor is especially useful because neighbour
 
 The other world resembles ours.
 
-But reversed.
-
-Earlier.
-
-Later.
-
-Different.
+But it may be reversed, earlier, later or simply different.
 
 Water becomes the visual boundary between them.
 
@@ -16959,19 +16875,7 @@ The world-machine is large, abstract and difficult to imagine from inside.
 
 The traveller is human-scale.
 
-A person walks into a cave.
-
-A rider mounts a horse.
-
-A boat crosses water.
-
-A bridge appears.
-
-A ladder rises.
-
-A road leads into mist.
-
-Someone comes back.
+A person walks into a cave, a rider mounts a horse, a boat crosses water, a bridge appears, a ladder rises, a road leads into mist and someone comes back.
 
 That is how a world event becomes legend.
 
@@ -16979,15 +16883,7 @@ That is how a world event becomes legend.
 
 Ascent is the most obvious form of crossing.
 
-Climb the mountain.
-
-Climb the ladder.
-
-Rise on the tree.
-
-Ride upward.
-
-Enter heaven.
+Climb the mountain or ladder, rise on the tree, ride upward, enter heaven.
 
 From the Vardath viewpoint, ascent is movement toward the next or upper world-state along the axial route.
 
@@ -17003,15 +16899,7 @@ From there, “up” becomes passage toward the next turn.
 
 Descent is the same structure in the opposite sense.
 
-Enter the cave.
-
-Go down the well.
-
-Cross the underworld river.
-
-Follow roots.
-
-Descend beneath the mountain.
+Enter the cave, go down the well, cross the underworld river, follow roots or descend beneath the mountain.
 
 The previous or lower turn becomes accessible.
 
@@ -17073,13 +16961,7 @@ Once changed adjacency is allowed, the impossible interior stops being impossibl
 
 Time behaves strangely in many otherworld tales.
 
-A night becomes years.
-
-A feast becomes centuries.
-
-A short absence becomes a lost lifetime.
-
-The traveller remains young while everyone outside ages.
+A night becomes years, a feast becomes centuries, a short absence becomes a lost lifetime, while the traveller remains young as everyone outside ages.
 
 This is one of the strongest reasons I think fairy tales belong beside mythology in the book.
 
@@ -17139,15 +17021,7 @@ A crossing often needs a guide.
 
 Someone who knows the path.
 
-The guide may be human.
-
-Animal.
-
-Divine.
-
-Fairy.
-
-Dead.
+The guide may be human, animal, divine, fairy or dead.
 
 The important role is route knowledge.
 
@@ -17163,15 +17037,7 @@ The guide knows when the world is open.
 
 The guardian marks danger.
 
-Dragon.
-
-Dog.
-
-Watcher.
-
-Sphinx.
-
-Gatekeeper.
+Dragon, dog, Watcher, sphinx or gatekeeper can all fill the guardian role.
 
 The traveller is tested because the threshold is not ordinary.
 
@@ -17185,13 +17051,7 @@ The story personifies the threshold condition.
 
 The vehicle couples the traveller to the route.
 
-Horse.
-
-Boat.
-
-Chariot.
-
-Wheel.
+Horse, boat, chariot and wheel can all couple the traveller to the route.
 
 The vehicle is especially important when direct crossing would be impossible.
 
@@ -17231,9 +17091,7 @@ This is why the return window matters.
 
 The traveller’s story contains not one crossing but two.
 
-Departure.
-
-Return.
+Departure and return are the two crossings contained in the same journey.
 
 The gate has to persist long enough for both.
 
@@ -17247,17 +17105,7 @@ Some do not return.
 
 That can happen for many reasons inside the story.
 
-The gate closes.
-
-The traveller chooses to remain.
-
-The route changes.
-
-The destination becomes incompatible with return.
-
-The vehicle is lost.
-
-The traveller dies.
+The gate may close, the traveller may choose to remain, the route may change, the destination may become incompatible with return, the vehicle may be lost or the traveller may die.
 
 The result is the same culturally.
 
@@ -17504,33 +17352,13 @@ That sounds contradictory only if creation means something appears from nothing 
 
 Vardath Cosmology does not use either idea.
 
-The world is inherited.
-
-Creation is reorganisation.
-
-Destruction is loss of one arrangement.
-
-Renewal is the next stable arrangement.
-
-The event between them is the handoff.
+The world is inherited: creation is reorganisation, destruction is the loss of one arrangement, renewal is the next stable arrangement, and the event between them is the handoff.
 
 ## Apocalypse from inside the old world
 
 Imagine the event from the viewpoint of someone living before it.
 
-The sky changes.
-
-The land moves.
-
-Water rises.
-
-Heat increases.
-
-Structures fail.
-
-People disappear.
-
-The old geography becomes unreliable.
+The sky changes, the land moves, water rises, heat increases, structures fail, people disappear and the old geography becomes unreliable.
 
 The world as they know it is ending.
 
@@ -17542,17 +17370,7 @@ The familiar order is being destroyed.
 
 Now imagine someone born after the event.
 
-The water has settled.
-
-Land has emerged.
-
-The sky has reopened.
-
-Survivors tell stories.
-
-New populations spread.
-
-The world feels young.
+The water has settled, land has emerged, the sky has reopened, survivors tell stories, new populations spread and the world feels young.
 
 From that viewpoint, the same event belongs to creation.
 
@@ -17590,13 +17408,7 @@ That is exactly what I need from the shell-turn model.
 
 Division is a recurring creation mechanism.
 
-An old body is split.
-
-Sky and earth are separated.
-
-Waters are divided.
-
-A primordial unity becomes differentiated regions.
+An old body is split, sky and earth are separated, waters are divided, and a primordial unity becomes differentiated regions.
 
 That fits the reset naturally.
 
@@ -17666,13 +17478,7 @@ The same water changes mythic meaning simply because the witness stands on the o
 
 Fire traditions belong to the same transformation.
 
-The old surface burns.
-
-Melts.
-
-Glazes.
-
-Breaks.
+The old surface burns, melts, glazes and breaks.
 
 The religious story may describe purification.
 
@@ -17688,13 +17494,7 @@ That is why flood and fire can belong to one cycle rather than two competing apo
 
 The Osiris cycle gives another form.
 
-Body divided.
-
-Pieces gathered.
-
-Order restored.
-
-Succession continues.
+Body divided, pieces gathered, order restored and succession continued form another version of renewal.
 
 The exact theology remains Egyptian.
 
@@ -17750,11 +17550,7 @@ That is a central Vardath idea.
 
 This pattern appears almost everywhere flood and renewal are linked.
 
-Deucalion and Pyrrha.
-
-Noah.
-
-Other survivor traditions.
+Deucalion and Pyrrha, Noah and other survivor traditions all preserve versions of this pattern.
 
 The preserved remnant becomes the beginning of the new human order.
 
@@ -17770,19 +17566,7 @@ Once creation is seen as reorganisation, creator figures also change role inside
 
 The creator does not have to make matter from nothing.
 
-The figure can separate.
-
-Order.
-
-Name.
-
-Divide.
-
-Raise.
-
-Release.
-
-Establish boundaries.
+The figure can separate, order, name, divide, raise, release and establish boundaries.
 
 Those are operator actions.
 
@@ -17824,17 +17608,7 @@ This is the core idea.
 
 The same event has two faces.
 
-Looking backward:
-
-destruction.
-
-Looking forward:
-
-creation.
-
-Standing inside:
-
-transition.
+Looking backward it is destruction, looking forward it is creation, and standing inside it is transition.
 
 That is why the Roman Janus image became so useful later in the project.
 
