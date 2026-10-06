@@ -13535,15 +13535,7 @@ That is why the next world has to exist before the reset is complete.
 
 It is the populated world above, future-relative to us while remaining present to its own inhabitants.
 
-It may be unstable.
-
-Water-rich.
-
-Partly formed.
-
-Different in atmosphere.
-
-But it exists.
+It may be unstable, water-rich, partly formed and different in atmosphere, but it exists.
 
 The gate does not create the destination.
 
@@ -13659,13 +13651,7 @@ For those living before the event, the world ended. For those born after it, the
 
 The flood that destroyed the old world becomes the primordial water of the new one.
 
-The survivors become first ancestors.
-
-The deposited mound becomes first land.
-
-The reopened sky becomes the separation of heaven and earth.
-
-The old catastrophe becomes the new creation story.
+The survivors become first ancestors, the deposited mound becomes first land, the reopened sky becomes the separation of heaven and earth, and the old catastrophe becomes the new creation story.
 
 That is one of the central ideas of the entire book.
 
@@ -13707,13 +13693,7 @@ That is the handoff.
 
 ## Flood survivors
 
-Flood traditions make the handoff human.
-
-A remnant survives.
-
-The waters recede.
-
-The survivors become ancestors.
+Flood traditions make the handoff human: a remnant survives, the waters recede and the survivors become ancestors.
 
 The receiving world already has its own population; continuity adds survivors, lineages and culture to what is already there.
 
@@ -13727,13 +13707,7 @@ That is exactly how I use it in the cosmology.
 
 Fairy tales often shrink the same structure down to one person.
 
-A traveller enters another world.
-
-Time changes.
-
-The traveller returns.
-
-Something has been transferred.
+A traveller enters another world, time changes, the traveller returns and something has been transferred.
 
 Knowledge, a gift, a curse, a spouse, a child or a changed identity can all be what crosses back with the traveller.
 
@@ -15446,15 +15420,7 @@ The next visual family is what the same structure looks like when the observer f
 
 Turn the axis toward the observer and the world changes shape.
 
-The tree disappears.
-
-The rod shortens.
-
-The pillar collapses into a point.
-
-The ladder loses its length.
-
-What remains is radial structure.
+The tree disappears, the rod shortens, the pillar collapses into a point and the ladder loses its length. What remains is radial structure.
 
 That is where the eye, wheel, star and rosette enter Vardath Cosmology.
 
@@ -15468,13 +15434,7 @@ Outer region, radial paths and a central opening or concentration define the bas
 
 That is enough to produce several familiar forms depending on light, medium and detail.
 
-A bright ring around a darker centre becomes eye-like.
-
-Strong spokes become wheel-like.
-
-Sharp radial rays become star-like.
-
-Repeated petal structures become rosette-like.
+A bright ring around a darker centre becomes eye-like, strong spokes wheel-like, sharp radial rays star-like and repeated petal structures rosette-like.
 
 The underlying geometry can remain one family.
 
@@ -15602,23 +15562,11 @@ The role becomes more interesting when rosettes appear beside axial, serpent or 
 
 ## Ring
 
-The ring is the simplest radial boundary.
-
 Outer edge, interior and closure define the ring as the simplest radial boundary.
 
 That places it between node and enclosure.
 
-A ring can mark a gate.
-
-A protected region.
-
-A world boundary.
-
-A fairy circle.
-
-A halo.
-
-A serpent biting its tail.
+A ring can mark a gate, protected region, world boundary, fairy circle, halo or serpent biting its tail.
 
 The circle is too universal to be evidence by itself.
 
@@ -15668,11 +15616,7 @@ The same visual form can move from sky to person through storytelling.
 
 The radial node can also look solar.
 
-Bright disk.
-
-Rays.
-
-Central dominance.
+Bright disk, rays and central dominance make the radial node look solar.
 
 This is where the old project sometimes moved too quickly and tried to identify celestial bodies directly with structural nodes.
 
@@ -36413,13 +36357,7 @@ The creation image includes stirring.
 
 That matters to me because the Vardath axis is not a dead vertical line.
 
-The larger structure is braided.
-
-Wound.
-
-Rotational.
-
-Fingertrap-like.
+The larger structure is braided, wound, rotational and fingertrap-like.
 
 The world-axis, when it appears, should therefore contain angular or helical movement rather than being a rigid pole with no dynamics.
 
@@ -36491,11 +36429,7 @@ Like Xibalba, Yomi is not useful to this comparison merely because it is "below.
 
 It is useful because it is treated as another domain.
 
-Entry matters.
-
-Contact matters.
-
-Return matters.
+Entry, contact and return all matter.
 
 The traveller who crosses is subject to the conditions of that region.
 
@@ -36511,11 +36445,7 @@ Izanagi's journey is not a casual there-and-back excursion.
 
 The encounter with Izanami changes the situation.
 
-The lower world is dangerous.
-
-The return becomes urgent.
-
-Pursuit follows.
+The lower world is dangerous, the return becomes urgent and pursuit follows.
 
 This matters because Vardath Cosmology should not romanticise every gate as an exciting doorway.
 
@@ -36551,11 +36481,7 @@ That is one of the clearest possible transitions:
 
 I have been circling this distinction throughout the book.
 
-A node can exist in both states.
-
-Open, it permits transfer.
-
-Closed, it maintains separation.
+A node can exist in both states: open, it permits transfer; closed, it maintains separation.
 
 The Japanese story gives the transformation a simple physical image.
 
@@ -37795,11 +37721,7 @@ The hook is even more precise.
 
 The whole hidden land does not need to be attached everywhere.
 
-One point couples.
-
-Force concentrates there.
-
-A much larger mass responds.
+One point couples, force concentrates there and a much larger mass responds.
 
 That is very close to the node logic in the Vardath lattice.
 
@@ -37823,11 +37745,7 @@ Before, water covers; after, water surrounds.
 
 That is a useful reminder that reset often changes **relation more than substance**.
 
-The water may remain water.
-
-The land may remain the same material.
-
-The geometry changes.
+The water may remain water and the land the same material; the geometry changes.
 
 That is enough to transform the world.
 
@@ -37851,11 +37769,7 @@ The physical model still needs the long recovery afterward.
 
 The Sun stories solve a different problem.
 
-The world already exists.
-
-The issue is not lack of land.
-
-It is rate.
+The world already exists; the issue is not lack of land but rate.
 
 The Sun moves too quickly for ordinary life and work.
 
@@ -37869,13 +37783,7 @@ This distinction is one of the strongest contributions Māui makes to the book.
 
 ## Stability is not stillness
 
-The Sun keeps moving.
-
-That is the whole point.
-
-The goal is not to stop the cycle.
-
-It is to bring it into a workable range.
+The Sun keeps moving—that is the whole point. The goal is not to stop the cycle but to bring it into a workable range.
 
 That gives one of the most important principles in Vardath Cosmology:
 
@@ -37935,17 +37843,7 @@ By limiting it.
 
 This is an important correction to catastrophe-focused cosmology.
 
-A world can survive a reset and still not be habitable.
-
-Its cycles have to settle.
-
-The Sun has to follow a workable rhythm.
-
-The atmosphere has to stabilise.
-
-Water has to cycle instead of remaining in catastrophic transfer.
-
-Biology has to adapt.
+A world can survive a reset and still not be habitable. Its cycles have to settle, the Sun has to follow a workable rhythm, the atmosphere has to stabilise, water has to cycle instead of remaining in catastrophic transfer, and biology has to adapt.
 
 The new world is complete only when its large rhythms fall into usable ranges.
 
@@ -39146,17 +39044,7 @@ The structural role remains boundary access.
 
 The sea is especially useful because it already behaves like a different domain.
 
-Its surface is visible.
-
-Its depths are hidden.
-
-Its horizon conceals what lies beyond.
-
-A boat creates a small protected human world inside it.
-
-Currents can move travellers.
-
-The crossing can be gradual.
+Its surface is visible, its depths hidden and its horizon conceals what lies beyond. A boat creates a small protected human world inside it, currents can move travellers, and the crossing can be gradual.
 
 That makes water one of the best natural images for a **transition region**.
 
@@ -39292,11 +39180,7 @@ A traveller can cross once.
 
 That does not mean they can return whenever they wish.
 
-The route has conditions.
-
-The relationship changes.
-
-The gate can close.
+The route has conditions, the relationship changes and the gate can close.
 
 That is exactly what I mean by phase-dependent accessibility.
 
@@ -39356,11 +39240,7 @@ This may be one of the strangest implications of the time-door model.
 
 A traveller can become temporally displaced.
 
-They left one world-time.
-
-They return to another.
-
-They are continuous with themselves but no longer with their original social world.
+They left one world-time and return to another, continuous with themselves but no longer with their original social world.
 
 That is exactly the tragedy of the Oisín pattern.
 
@@ -41754,17 +41634,7 @@ That is the mature Vardath gate in fictional form.
 
 The wardrobe is the threshold most people know.
 
-A child enters an ordinary piece of furniture.
-
-The back should be solid.
-
-Instead the interior continues.
-
-Clothes become branches.
-
-Floor becomes snow.
-
-A domestic enclosure becomes landscape.
+A child enters an ordinary piece of furniture whose back should be solid, but the interior continues: clothes become branches, floor becomes snow, and a domestic enclosure becomes landscape.
 
 That is the same small-entry/large-interior problem seen in fairy mounds, wells and rabbit holes.
 
@@ -41836,13 +41706,7 @@ This may be the single clearest modern fictional analogue for the many-node Vard
 
 That distinction matters.
 
-It is an **intermediate relation-space**.
-
-A way station.
-
-The destination worlds remain distinct.
-
-The Wood provides access among them.
+It is an **intermediate relation-space**, a way station that provides access while the destination worlds remain distinct.
 
 That is extremely close to the difference between:
 
@@ -41872,11 +41736,7 @@ The Wood turns that into a simple story image.
 
 The Wood also has its own character.
 
-It is not roaring catastrophe.
-
-It is calm.
-
-Almost sedating.
+It is not roaring catastrophe but calm, almost sedating.
 
 That is useful because not every inter-world relation has to be violent.
 
@@ -41936,13 +41796,7 @@ That is especially useful to Vardath Cosmology.
 
 The multi-world system is not made of identical fresh copies.
 
-Each world has its own history.
-
-Some are alive.
-
-Some are dead.
-
-Some are in different environmental or structural phases.
+Each world has its own history: some are alive, some dead, and some in different environmental or structural phases.
 
 The useful comparison is that connected worlds can have different histories and conditions. Narnia can include dead or newly created worlds; Vardath Cosmology differs here because all of its world-turns remain populated.
 
@@ -41968,11 +41822,7 @@ The connection network does not require all destinations to be alike.
 
 That solves another Vardath problem.
 
-A next turn can be formative.
-
-A present turn as the world we currently occupy.
-
-A previous turn transformed or largely inaccessible.
+A next turn can be formative, the present turn the world we currently occupy, and a previous turn transformed or largely inaccessible.
 
 The lattice remains the relation among them.
 
