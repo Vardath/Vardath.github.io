@@ -24492,15 +24492,7 @@ That is the simplest way I can state the biological branch of Vardath Cosmology.
 
 I do not think life can be separated from the environment that contains it.
 
-Change pressure, temperature, moisture, light, oxygen, electrical activity, radiation, food availability and gravity-like loading, and organisms respond.
-
-Sometimes immediately.
-
-Sometimes across generations.
-
-Sometimes by surviving.
-
-Sometimes by growing in forms that would be difficult under the conditions we know now.
+Change pressure, temperature, moisture, light, oxygen, electrical activity, radiation, food availability and gravity-like loading, and organisms respond. Some responses are immediate, some unfold across generations, some are simply survival, and some produce forms that would be difficult under the conditions we know now.
 
 That is why stories of giants, enormous animals, long-lived people and strange hybrid-looking beings remain interesting to me.
 
@@ -24522,23 +24514,7 @@ That is a narrower question.
 
 Vardath Cosmology introduces another state.
 
-The waking world may be wetter.
-
-Warmer in some regions.
-
-Higher pressure.
-
-More electrically active.
-
-Different in gas composition.
-
-Different in available light.
-
-Different in radiation exposure.
-
-Different in nutrient movement.
-
-Different in the way land and water are distributed.
+The waking world may be wetter and warmer in some regions, under higher pressure and a more active electrical environment. Its gas composition, available light, radiation exposure, nutrient movement and distribution of land and water can all differ from the quiet world.
 
 Those conditions change together in the canopy regime. That is the biological world I am describing.
 
@@ -24546,29 +24522,7 @@ The vapour canopy, high pressure, high oxygen and plasma-rich electrical environ
 
 ## Giantism
 
-Giants appear everywhere in the material that interests me.
-
-Giant humans.
-
-Titans.
-
-Jötnar.
-
-Rakshasas.
-
-Daityas.
-
-Nephilim.
-
-Enormous ancestors.
-
-Huge animals.
-
-Monstrous birds.
-
-Serpents at impossible scale.
-
-Trees that reach the heavens.
+Giants appear everywhere in the material that interests me: giant humans, Titans, Jötnar, Rakshasas, Daityas, Nephilim, enormous ancestors, huge animals, monstrous birds, serpents at impossible scale and trees that reach the heavens.
 
 In my model, the canopy regime is one of the reasons a giant world can exist. High atmospheric pressure changes the medium every organism lives in. High oxygen changes respiratory availability. Warmth and heavy moisture alter growth and heat balance. A denser atmosphere improves aerodynamic lift. The electrically and plasma-active environment changes development and increases mutation pressure.
 
@@ -24626,35 +24580,15 @@ World trees are symbolic, but huge trees and forests also belong to many old-wor
 
 Under the vapour canopy the atmosphere is wetter, pressure is higher, oxygen is richer, soil has been replenished by enormous sediment movement, and electrical/plasma conditions are more active. In my model, plant growth under that package does not resemble the modern quiet-world state. Trees, vines, fungi and other vegetation can continue growing to extraordinary scale.
 
-A reset can destroy vegetation and prepare extraordinary new growth at the same time.
+A reset can destroy vegetation and prepare extraordinary new growth at the same time. Ash becomes nutrient, sediment becomes fresh ground, floodwater redistributes minerals, and a warmer wet world accelerates biological activity.
 
-Ash becomes nutrient.
+The renewed landscape can therefore explode with life after catastrophe. That is another reason creation and destruction sit so close together in my model.
 
-Sediment becomes fresh ground.
-
-Floodwater redistributes minerals.
-
-A warmer wet world accelerates biological activity.
-
-The renewed landscape can therefore explode with life after catastrophe.
-
-That is another reason creation and destruction sit so close together in my model.
-
-The fire clears.
-
-The flood deposits.
-
-The new world grows.
+The fire clears, the flood deposits, and the new world grows.
 
 ## Longevity, telomeres and biological persistence
 
-Long-lived ancestors and heroes form another repeated family.
-
-Hundreds of years.
-
-Unnaturally long reigns.
-
-Generations that seem stretched.
+Long-lived ancestors and heroes form another repeated family: lives measured in hundreds of years, unnaturally long reigns and generations that seem stretched.
 
 In Vardath Cosmology I connect that longevity directly to the canopy regime rather than treating it as an isolated miracle.
 
@@ -24682,21 +24616,7 @@ The most radical biological possibility comes from the gate itself.
 
 Life may not only change because the environment changes.
 
-Life may **arrive from another world-turn**.
-
-Seeds.
-
-Spores.
-
-Microbes.
-
-Eggs.
-
-Small animals.
-
-Large animals.
-
-People.
+Life may **arrive from another world-turn**: seeds, spores, microbes, eggs, small animals, large animals and people.
 
 If the gate creates temporary adjacency, biological exchange becomes possible in principle.
 
@@ -24706,17 +24626,7 @@ It may be inherited from the next or previous world.
 
 This is where the carrier material becomes so important.
 
-An egg is already a protected enclosure.
-
-A seed is a protected enclosure.
-
-A spore is a protected enclosure.
-
-An ark is a larger version of the same principle.
-
-A cave can preserve a population.
-
-A vessel can carry one.
+An egg, seed or spore is already a protected enclosure. An ark is a larger version of the same principle; a cave can preserve a population and a vessel can carry one.
 
 The world can reseed itself through nested enclosures.
 
@@ -24724,25 +24634,11 @@ The world can reseed itself through nested enclosures.
 
 Hybrid beings are much harder to interpret.
 
-Human-animal forms may simply be symbolic.
-
-They may represent masks, ritual roles, gods, clans or qualities.
-
-They may represent visual projection from plasma forms.
-
-They may represent unfamiliar animals described through known categories.
+Human-animal forms may simply be symbolic. They may represent masks, ritual roles, gods, clans or qualities; visual projection from plasma forms; or unfamiliar animals described through known categories.
 
 But if worlds exchange biological material, then the category becomes interesting in another way.
 
-A being unfamiliar to one world can look hybrid because the observer has no better vocabulary.
-
-A creature with unusual proportions becomes half this and half that.
-
-A person wearing technology becomes part bird, part man.
-
-A large helmet becomes an animal head.
-
-A plasma manifestation becomes a many-armed god.
+A being unfamiliar to one world can look hybrid because the observer has no better vocabulary. A creature with unusual proportions becomes half this and half that; a person wearing technology becomes part bird, part man; a large helmet becomes an animal head; a plasma manifestation becomes a many-armed god.
 
 The cosmology therefore does not need to decide that every hybrid was a literal crossbred organism.
 
@@ -24754,17 +24650,7 @@ That is enough.
 
 This is another place where role separation protects the model.
 
-A giant figure in the sky may be the Squatter-Man plasma form.
-
-A giant walking on the ground may be a biological being.
-
-A god may be an operator.
-
-A radiant being may be a manifestation.
-
-A huge ancestor may be a cultural memory.
-
-A titan may personify a geological force.
+A giant figure in the sky may be the Squatter-Man plasma form, while a giant walking on the ground may be a biological being. A god may be an operator, a radiant being a manifestation, a huge ancestor a cultural memory, and a titan the personification of a geological force.
 
 Those categories can overlap in mythology because stories are not technical diagrams.
 
@@ -24780,15 +24666,9 @@ If accumulated matter damps later Birkeland-like pulses, then the earliest world
 
 That could mean the biological environment also changed progressively.
 
-Earlier inhabited worlds may have had conditions very unlike ours.
+Earlier inhabited worlds may have had conditions very unlike ours, while later worlds may be more enclosed, more shielded and less energetic.
 
-Later worlds may be more enclosed, more shielded and less energetic.
-
-That creates a possible direction through mythic time.
-
-Oldest beings: largest, brightest, longest-lived, closest to the gods.
-
-Later beings: reduced, shorter-lived, more ordinary.
+That creates a possible direction through mythic time: the oldest beings are remembered as the largest, brightest, longest-lived and closest to the gods, while later beings become reduced, shorter-lived and more ordinary.
 
 I find that pattern interesting because so many traditions imagine an earlier age of greater beings followed by decline.
 
@@ -24802,15 +24682,7 @@ The same matter that reduces later pulses may also protect later life.
 
 That is another side of the damping process.
 
-A thicker enclosure absorbs energy.
-
-A more developed world has more material between life and the primordial current.
-
-The pulse becomes less direct.
-
-The sky-event becomes smaller.
-
-The surface receives less raw energy.
+A thicker enclosure absorbs energy. A more developed world has more material between life and the primordial current, so the pulse becomes less direct, the sky-event becomes smaller and the surface receives less raw energy.
 
 The world becomes safer.
 
@@ -24826,29 +24698,9 @@ The biological reset does not end with survivors crawling out of hiding.
 
 The new world has to become fertile.
 
-This may happen quickly if the catastrophe has redistributed enormous amounts of water, ash, mud and mineral-rich sediment.
+This may happen quickly if the catastrophe has redistributed enormous amounts of water, ash, mud and mineral-rich sediment. Floodplains expand, new lakes form, old seas retreat, volcanic material weathers, and organic matter is buried and mixed.
 
-Floodplains expand.
-
-New lakes form.
-
-Old seas retreat.
-
-Volcanic material weathers.
-
-Organic matter is buried and mixed.
-
-The first stable warmth after the event can produce rapid colonisation.
-
-Seeds germinate.
-
-Spores spread.
-
-Microbial communities rebuild soil.
-
-Animals follow vegetation.
-
-People follow water and food.
+The first stable warmth after the event can produce rapid colonisation. Seeds germinate, spores spread and microbial communities rebuild soil. Animals follow vegetation, and people follow water and food.
 
 The world begins again not because life was recreated from nothing, but because preserved life finds new space.
 
@@ -24856,43 +24708,11 @@ That is the biological meaning of the handoff.
 
 ## Refuges
 
-Refuges become extremely important in this picture.
-
-High ground.
-
-Caves.
-
-Enclosed valleys.
-
-Arks.
-
-Subterranean spaces.
-
-Forested pockets.
-
-Protected buildings.
-
-Other world-turns.
+Refuges become extremely important in this picture: high ground, caves, enclosed valleys, arks, subterranean spaces, forested pockets, protected buildings and even other world-turns.
 
 A refuge is simply any place where the local conditions remain survivable while the larger environment changes.
 
-This is why survivor stories matter so much.
-
-Líf and Lífþrasir.
-
-Noah.
-
-Deucalion and Pyrrha.
-
-Manu.
-
-Waterborne children.
-
-Cave survivors.
-
-Hidden ancestors.
-
-Different stories give different scales and meanings, but the structural problem is the same.
+This is why survivor stories matter so much. Líf and Lífþrasir, Noah, Deucalion and Pyrrha, Manu, waterborne children, cave survivors and hidden ancestors give the problem different scales and meanings, but the structural problem is the same.
 
 How does life remain continuous across a discontinuity in environment?
 
@@ -24900,17 +24720,7 @@ The refuge is one answer.
 
 ## Biological memory
 
-Life itself can carry memory between worlds.
-
-Genes carry inherited information.
-
-Microbes carry ecosystems.
-
-Seeds carry plant lineages.
-
-Animals carry behaviour.
-
-Humans carry language, names and stories.
+Life itself can carry memory between worlds. Genes carry inherited information, microbes carry ecosystems, seeds carry plant lineages, animals carry behaviour, and humans carry language, names and stories.
 
 This means the next world does not begin ignorant.
 
@@ -24918,13 +24728,7 @@ Some of the old world survives inside living things.
 
 That may be why mythic memory can persist even when the physical sky has returned to normal.
 
-A person survives.
-
-A child hears the story.
-
-The story becomes ritual.
-
-The ritual becomes religion.
+A person survives, a child hears the story, the story becomes ritual and the ritual becomes religion.
 
 The original environmental conditions vanish, but the biological and cultural carriers remain.
 
@@ -24944,25 +24748,7 @@ That is a much richer succession than simple repopulation by one ark.
 
 ## A waking ecology
 
-The active world may therefore possess its own ecology.
-
-Not just individual giant creatures.
-
-A whole system.
-
-Different plants.
-
-Different atmospheric tolerance.
-
-Different predators.
-
-Different flying forms.
-
-Different water organisms.
-
-Different microbial conditions.
-
-Different human or humanlike populations.
+The active world may therefore possess its own ecology, not just individual giant creatures but a whole system: different plants, atmospheric tolerances, predators, flying forms, water organisms, microbial conditions and human or humanlike populations.
 
 This is where stories of strange ages become especially interesting to me.
 
@@ -24974,27 +24760,9 @@ The result would be a biological landscape difficult to reconstruct from the qui
 
 ## Why the strange life disappears
 
-If the active environment ends, active-world specialists may disappear with it.
+If the active environment ends, active-world specialists may disappear with it. Large organisms may no longer reproduce successfully, high-pressure-adapted forms may struggle, wet-world species may lose habitat and energy-intensive life may become unsustainable.
 
-Large organisms may no longer reproduce successfully.
-
-High-pressure-adapted forms may struggle.
-
-Wet-world species may lose habitat.
-
-Energy-intensive life may become unsustainable.
-
-Some retreat.
-
-Some die out.
-
-Some become smaller across generations.
-
-Some survive only in particular refuges.
-
-Some cross with the gate.
-
-Later humans inherit fossils, bones, ruins, stories and occasional surviving lineages.
+Some retreat, some die out, some become smaller across generations, some survive only in particular refuges and some cross with the gate. Later humans inherit fossils, bones, ruins, stories and occasional surviving lineages.
 
 That gives giant and monster traditions a natural ending.
 
@@ -25018,15 +24786,7 @@ Exactly what those consequences are remains open.
 
 But the direction is clear.
 
-The quiet world produces one range of life.
-
-The waking world can produce another.
-
-The gate can mix them.
-
-The reset can select among them.
-
-The renewed world inherits what survives.
+The quiet world produces one range of life, the waking world can produce another, the gate can mix them, the reset can select among them, and the renewed world inherits what survives.
 
 ## The human question
 
