@@ -322,7 +322,7 @@ The same principle makes the biology stranger. A stronger plasma and electrical 
 
 That is not a side note to the cosmology. It is one of the ways the atmosphere, the canopy and the world-cycle become biology. It is also why old images of enormous plants, oversized animals and creatures such as giant snails remain interesting to me as possible visual memories of a different environmental regime.
 
-The quiet world is what remains when that regime is no longer dominant. Pressure falls, the atmospheric balance and canopy state change, and the plasma environment becomes less intense. Biological scale, lifespan and mutation pressure change with it.
+The quiet world is what remains when that regime is no longer dominant. Pressure falls. The atmospheric balance changes. The canopy state changes. The plasma environment becomes less intense. Biological scale, lifespan and mutation pressure change with it.
 
 ## One world inside a larger body
 
@@ -2380,11 +2380,23 @@ The earlier version imagined it mainly as part of our enclosure. The mature vers
 
 That development is worth following because it shows the canopy becoming more central rather than being discarded.
 
-The early question was simple: **how can a watery ceiling hang above our world?**
+Early question:
 
-The later question became more structural: **what if the upper watery boundary belongs to an already populated neighbouring world?**
+**How can a watery ceiling hang above our world?**
 
-That second question does not magically solve the physics, but it changes the geometry of the problem. The boundary can have two faces: from our world it is above, and from the next turn it is below.
+Later question:
+
+**What if the upper watery boundary belongs structurally to an already populated neighbouring world?**
+
+The second question does not magically solve the physics.
+
+It changes the geometry of the problem.
+
+The boundary can have two faces.
+
+From our world it is above.
+
+From the next turn it is below.
 
 This introduced a habit of thought that became central to the physical model later: one structure can be described differently from opposite sides.
 
@@ -3231,13 +3243,41 @@ It was trying to become a changing world.
 
 ## From object to state
 
-The early enclosure encouraged me to think in objects: a rod, a canopy, channels, a sphere, upper regions and an inhabited floor.
+The early enclosure encouraged me to think in objects.
+
+There is a rod.
+
+There is a canopy.
+
+There are channels.
+
+There is a sphere.
+
+There are upper regions.
+
+There is an inhabited floor.
 
 The mature model is much more about **states**.
 
-The rod is not a permanent object but a contracted state of the lattice. The gate is not a permanent door but a temporary state of adjacency. The upper boundary is not simply a roof but an interface between neighbouring world-turns.
+The rod is not a permanent object.
 
-The eye is not necessarily an object floating in the sky; it can be the end-on appearance of a node. The serpent is not necessarily an animal-shaped cosmic being; it can be the way a moving line or current is remembered.
+It is a contracted state of the lattice.
+
+The gate is not a permanent door.
+
+It is a temporary state of adjacency.
+
+The upper boundary is not simply a roof.
+
+It is an interface between neighbouring world-turns.
+
+The eye is not necessarily an object floating in the sky.
+
+It can be the end-on appearance of a node.
+
+The serpent is not necessarily an animal-shaped cosmic being.
+
+It can be the way a moving line or current is remembered.
 
 This shift from object to state was one of the biggest changes in the whole project.
 
@@ -3289,11 +3329,25 @@ That picture created more problems than it solved.
 
 It treated the upper water as an object placed in our enclosure for no deeper reason.
 
-The mature version asks a different question: what if the upper water belongs to the **boundary between turns**?
+The mature version asks a different question.
 
-From our side it is above; from the next world’s side it is below. The same interface can be ceiling and floor depending on which world is looking at it.
+What if the upper water belongs to the **boundary between turns**?
 
-That is a much stronger concept, and it also fits the gate. A gate should not have to summon water from nowhere. If water already belongs to the boundary, activation can redistribute it, making the flood a consequence of a changing interface.
+From our side, it is above.
+
+From the next world’s side, it is below.
+
+The same interface can be ceiling and floor depending on which world is looking at it.
+
+That is a much stronger concept.
+
+It also fits the gate.
+
+A gate should not have to summon water from nowhere.
+
+If water already belongs to the boundary, then activation can redistribute it.
+
+The flood becomes a consequence of a changing interface.
 
 That does not solve the physical support problem.
 
@@ -12700,9 +12754,23 @@ That makes atmosphere one of the strangest cargos in Vardath Cosmology.
 
 We live inside it constantly, so it feels like background. But a world is not habitable because land exists by itself. The atmosphere is part of the enclosure.
 
-If the gate changes adjacency between world-states, then air cannot be ignored. It moves, expands and compresses. It carries moisture, heat and sound, and it changes how living things breathe.
+If the gate changes adjacency between world-states, then air cannot be ignored.
 
-If two neighbouring world environments are suddenly connected, pressure becomes one of the first physical problems the gate has to solve.
+It moves.
+
+It expands.
+
+It compresses.
+
+It carries moisture.
+
+It carries heat.
+
+It carries sound.
+
+It changes how living things breathe.
+
+And if two neighbouring world environments are suddenly connected, pressure becomes one of the first physical problems the gate has to solve.
 
 ## Atmosphere belongs to the world
 
@@ -12752,7 +12820,13 @@ The world “breathing” is already an intuitive image.
 
 Vardath Cosmology gives that metaphor a mechanical layer.
 
-The broad world has one atmospheric balance. Activation begins changing the boundary, convergence opens pathways and gas begins moving.
+The broad world has one atmospheric balance.
+
+Activation begins changing the boundary.
+
+Convergence opens pathways.
+
+Gas begins moving.
 
 The world takes a different breath.
 
@@ -12802,7 +12876,17 @@ Heat is unavoidable once the current concentrates.
 
 That is why I place it in the same chapter as air and pressure.
 
-The atmosphere carries heat rapidly. Hot gases rise, steam expands, pressure changes and electrical discharge heats local regions. In the more extreme version of the active world, plasma-like states become possible.
+The atmosphere carries heat rapidly.
+
+Hot gases rise.
+
+Steam expands.
+
+Pressure changes.
+
+Electrical discharge heats local regions.
+
+Plasma-like states become possible in the more extreme version of the active world.
 
 The atmosphere therefore becomes part of Meltology.
 
@@ -12822,9 +12906,27 @@ The question is broader:
 
 That is the useful version.
 
-A structure can soften unevenly: edges can slump, surfaces can glaze, minerals can recrystallise, brick can deform, metals can move and glass can form.
+A structure can soften unevenly.
 
-Then water arrives. Cooling locks the new shape in place, mud buries part of it and later erosion rounds it further.
+Edges can slump.
+
+Surfaces can glaze.
+
+Minerals can recrystallise.
+
+Brick can deform.
+
+Metals can move.
+
+Glass can form.
+
+Then water arrives.
+
+Cooling locks the new shape in place.
+
+Mud buries part of it.
+
+Later erosion rounds it further.
 
 What remains may be difficult to interpret if the active-world conditions are forgotten.
 
@@ -12838,7 +12940,17 @@ I do not.
 
 A gate event can contain both.
 
-As the current concentrates, heat rises. As the boundary opens, upper water enters. Hot surfaces meet that water, steam erupts, pressure changes rapidly and material fractures.
+Heat rises as the current concentrates.
+
+Upper water enters as the boundary opens.
+
+Hot surfaces meet water.
+
+Steam erupts.
+
+Pressure changes rapidly.
+
+Material fractures.
 
 The same event can therefore be remembered as fire in one region and flood in another.
 
@@ -12860,7 +12972,25 @@ The canopy therefore links atmosphere, giantism and longevity in one chain: **va
 
 ## Thunder and sound
 
-Pressure waves create sound, and a world-scale electrical and atmospheric event should be loud. Thunder, roaring, cracking, explosions, wind, water and falling rock would make the soundscape of the gate as extraordinary as the visual one.
+Pressure waves create sound.
+
+A world-scale electrical and atmospheric event should be loud.
+
+Thunder.
+
+Roaring.
+
+Cracking.
+
+Explosions.
+
+Wind.
+
+Water.
+
+Falling rock.
+
+The soundscape of the gate would be as extraordinary as the visual one.
 
 That is worth remembering when reading myths.
 
@@ -12894,7 +13024,17 @@ It needs an atmosphere in transition.
 
 A gate is also a survivability problem.
 
-Human beings tolerate only a limited range of pressure changes. Rapid decompression or compression is dangerous, as are strong winds, heat and humidity, steam and electrical activity.
+Human beings tolerate only a limited range of pressure changes.
+
+Rapid decompression or compression is dangerous.
+
+Strong winds are dangerous.
+
+Heat and humidity are dangerous.
+
+Steam is dangerous.
+
+Electrical activity is dangerous.
 
 This is why the enclosure principle becomes essential again.
 
@@ -12914,9 +13054,19 @@ It is an environmental container.
 
 This is one of the most practical meanings of enclosure.
 
-A living cargo does not only need walls. It needs atmosphere.
+A living cargo does not only need walls.
 
-An egg contains its own controlled environment, and a womb does the same. A sealed chamber can preserve pressure, a cave can buffer wind and heat, and a ship can keep occupants above water while retaining air.
+It needs atmosphere.
+
+An egg contains its own controlled environment.
+
+A womb does the same.
+
+A sealed chamber can preserve pressure.
+
+A cave can buffer wind and heat.
+
+A ship can keep occupants above water while retaining air.
 
 The repeated enclosure imagery makes mechanical sense because survival requires a stable pocket of atmosphere inside an unstable world.
 
@@ -12932,7 +13082,13 @@ It needs enough atmosphere to support weather and life.
 
 The gate can help provide that.
 
-Some atmosphere may be inherited directly, some may be released from water or geology afterward, and some may develop through biological activity. The exact balance is open.
+Some atmosphere may be inherited directly.
+
+Some may be released from water or geology afterward.
+
+Some may develop through biological activity.
+
+The exact balance is open.
 
 But the world handoff includes atmosphere.
 
@@ -12956,7 +13112,19 @@ That is why I keep saying the sky is part of the machine.
 
 ## The air settles after the gate
 
-Reopening gradually restores atmospheric separation. The strongest cross-boundary flow weakens, pressure equalises locally, steam condenses, cloud systems reorganise, dust and ash settle, and rain removes material from the air.
+Reopening gradually restores atmospheric separation.
+
+The strongest cross-boundary flow weakens.
+
+Pressure equalises locally.
+
+Steam condenses.
+
+Cloud systems reorganise.
+
+Dust and ash settle.
+
+Rain removes material from the air.
 
 The atmosphere becomes transparent again.
 
@@ -24086,9 +24254,21 @@ I mean settled.
 
 Pressure, temperature, moisture and gas composition remain within ranges familiar enough for present life.
 
-Storms can be violent, lightning can be enormous and cyclones can reorganise whole regions, but all of that still occurs inside the ordinary environmental state of this world.
+Storms can be violent.
 
-The dome remains broad, the major boundary stays closed, the upper water remains separated and the deep current remains distributed.
+Lightning can be enormous.
+
+Cyclones can reorganise whole regions.
+
+But all of that still occurs inside the ordinary environmental state of this world.
+
+The dome remains broad.
+
+The major boundary is closed.
+
+The upper water is separated.
+
+The deep current is distributed.
 
 The present atmosphere therefore behaves like one atmosphere rather than a mixing zone among neighbouring worlds.
 
@@ -24100,9 +24280,29 @@ The waking atmosphere begins when that separation starts to weaken.
 
 Water is one of the fastest things to respond to changed structure.
 
-If the upper boundary becomes more permeable, vapour may arrive before liquid flood. Pressure changes across the interface can form cloud rapidly, increased current can push water into new phases through local heating, and a concentrating dome can organise atmospheric moisture along the same paths.
+If the upper boundary becomes more permeable, vapour may arrive before liquid flood.
 
-So I expect the waking sky to become wet before it becomes fully open: mist, cloud, steam, dense humidity, unusual rain, low luminous cloud and a sky that feels close.
+If pressure changes across the interface, cloud can form rapidly.
+
+If the current increases, local heating can push water into new phases.
+
+If the dome geometry begins concentrating flow, atmospheric moisture can become organised along those same paths.
+
+So I expect the waking sky to become wet before it becomes fully open.
+
+Mist.
+
+Cloud.
+
+Steam.
+
+Dense humidity.
+
+Unusual rain.
+
+Low luminous cloud.
+
+A sky that feels close.
 
 These images appear so often in stories about divine arrival, world change and boundary crossing that I think they deserve a physical place inside the cosmology.
 
@@ -24120,7 +24320,21 @@ The gate therefore does not only allow matter to cross because there is a hole.
 
 It can create the gradient that drives transfer.
 
-That makes the active world potentially violent before any large object moves through it. Wind can accelerate, cloud can be torn apart or packed together, and water can be driven horizontally as well as vertically. Breathing conditions and sound can change, fire can behave differently, and even the human sense of scale and distance may be altered by dense haze, moisture, light scattering and turbulent air.
+That makes the active world potentially violent before any large object moves through it.
+
+Wind can accelerate.
+
+Cloud can be torn apart or packed together.
+
+Water can be driven horizontally as well as vertically.
+
+Breathing conditions can change.
+
+Sound can change.
+
+Fire can behave differently.
+
+Even the human sense of scale and distance may be altered by dense haze, moisture, light scattering and turbulent air.
 
 The waking atmosphere can therefore transform perception at the same time as it transforms the environment.
 
@@ -24146,7 +24360,15 @@ This is one of the reasons I keep the waking-world biology open.
 
 The organisms living through the event may not be breathing the same environment they were adapted to yesterday.
 
-Pressure, humidity, oxygen availability, temperature and electrical conditions can all differ.
+Pressure can differ.
+
+Humidity can differ.
+
+Oxygen availability can differ.
+
+Temperature can differ.
+
+Electrical conditions can differ.
 
 A world-transition is not simply a flood happening under normal air.
 
@@ -24158,7 +24380,15 @@ The Peratt branch makes this even more important.
 
 If a large Birkeland-like current is pulsing through the world-machine, the air around active regions may become electrically and optically unusual.
 
-The atmosphere can become part of the current path. Ionisation can increase, luminous discharges can appear, cloud can glow, and columns, sheets and filaments of light can form.
+The atmosphere can become part of the current path.
+
+Ionisation can increase.
+
+Luminous discharges can appear.
+
+Cloud can glow.
+
+Columns, sheets and filaments of light can form.
 
 The boundary between weather and plasma becomes less obvious.
 
@@ -24168,13 +24398,31 @@ I do not need that.
 
 The cosmology works better if active regions develop around preferred paths.
 
-Some places can be wet and storm-dominated, some electrically violent, some exposed to intense heat and some comparatively sheltered.
+Some places can be wet and storm-dominated.
+
+Some can be electrically violent.
+
+Some can experience intense heat.
+
+Some can remain comparatively sheltered.
 
 The waking world is patchy because the lattice is structured.
 
 That also helps explain why different cultural memories can emphasise completely different phenomena without requiring unrelated events.
 
-One population may remember flood, another fire from the sky, another darkness or a radiant column. Elsewhere the memory may be a giant figure, moving stars or mountains opening.
+One population remembers flood.
+
+Another remembers fire from the sky.
+
+Another remembers darkness.
+
+Another remembers a radiant column.
+
+Another remembers a giant figure.
+
+Another remembers stars moving.
+
+Another remembers mountains opening.
 
 The same global transition can be locally different.
 
@@ -24186,7 +24434,19 @@ They do not have to be.
 
 Inside my model they may be expected together.
 
-Water moves because boundaries change, while fire appears because the current intensifies. Where the two meet, steam forms. Floodwater mixing with broken ground makes mud; intense heat acting on silica-rich material can produce vitrification; rapid cooling can lock altered surfaces into place; and lightning-like discharge can strike through saturated air.
+Water moves because boundaries change.
+
+Fire appears because the current intensifies.
+
+Steam forms where the two meet.
+
+Mud forms where floodwater mixes with broken ground.
+
+Vitrification can occur where intense heat acts on silica-rich material.
+
+Rapid cooling can lock altered surfaces into place.
+
+Lightning-like discharge can strike through saturated air.
 
 A soaked world can still burn electrically.
 
@@ -24208,7 +24468,27 @@ I often think about what the event would actually feel like to a person standing
 
 That question matters because myth begins with experience.
 
-The waking atmosphere may smell different: ozone, wet stone, smoke, sulphur in volcanic regions, steam, dust, burned vegetation, salt, mud and metallic electrical smells.
+The waking atmosphere may smell different.
+
+Ozone.
+
+Wet stone.
+
+Smoke.
+
+Sulphur in volcanic regions.
+
+Steam.
+
+Dust.
+
+Burned vegetation.
+
+Salt.
+
+Mud.
+
+Metallic electrical smells.
 
 People would not experience “a cosmological gate.”
 
@@ -24246,9 +24526,31 @@ A waking atmosphere gives me one.
 
 The active sky can also alternate between extremes.
 
-More vapour, smoke, dust and debris can darken the world while electrical and plasma-like activity creates extraordinary local brightness.
+More vapour, smoke, dust and debris can darken the world.
 
-That gives the event a strange visual rhythm: darkness broken by flash and glow, red sky, white columns, blue or violet discharge, orange fire, black cloud, a dim sun and sudden brilliance.
+At the same time, electrical and plasma-like activity can create extraordinary local brightness.
+
+That gives the event a strange visual rhythm.
+
+Darkness.
+
+Flash.
+
+Glow.
+
+Red sky.
+
+White columns.
+
+Blue or violet discharge.
+
+Orange fire.
+
+Black cloud.
+
+A dim sun.
+
+Sudden brilliance.
 
 This is far closer to the mythic atmosphere I keep encountering than a simple clear-sky astronomical event.
 
@@ -24260,9 +24562,31 @@ It changes the background.
 
 If the upper boundary contains a major water reservoir, the atmosphere may be the first receiving layer when that reservoir destabilises.
 
-Liquid water need not simply fall as one impossible wall. Some can enter as vapour, some condense into cloud, some become rain, some be carried by violent winds, and some arrive as direct water transfer through larger openings.
+Liquid water need not simply fall as one impossible wall.
 
-That creates a progression rather than one instant. The sky becomes heavier, cloud thickens, rain intensifies, pressure changes and the boundary lowers before the larger flood phase begins.
+Some can enter as vapour.
+
+Some can condense into cloud.
+
+Some can become rain.
+
+Some can be carried by violent winds.
+
+Some can arrive as direct water transfer through larger openings.
+
+That creates a progression rather than one instant.
+
+The sky becomes heavier.
+
+Cloud thickens.
+
+Rain intensifies.
+
+Pressure changes.
+
+The boundary lowers.
+
+Then the larger flood phase begins.
 
 This sequence feels much more physically coherent to me than imagining a dry sky that suddenly becomes a global ocean.
 
@@ -24276,9 +24600,27 @@ The atmosphere is contained beneath a larger boundary.
 
 If the dome or lattice helps maintain that boundary, then a change in dome geometry can change the volume and behaviour of the air beneath it.
 
-Contraction may compress regions, opening may connect pressure domains, and reopening may let the atmosphere expand again. This could produce weather on scales ordinary meteorology does not encounter.
+Contraction may compress regions.
 
-It also means the atmosphere can help drive material movement. Wind and pressure are not side effects; they become part of the transport system. Fine sediment can be carried enormous distances, ash and dust can enter high layers, seeds and spores can move, and light debris can be redistributed before floodwater settles it.
+Opening may connect pressure domains.
+
+Reopening may let the atmosphere expand again.
+
+This could produce weather on scales ordinary meteorology does not encounter.
+
+It also means the atmosphere can help drive material movement.
+
+Wind and pressure are not side effects.
+
+They become part of the transport system.
+
+Fine sediment can be carried enormous distances.
+
+Ash and dust can enter high layers.
+
+Seeds and spores can move.
+
+Light debris can be redistributed before floodwater settles it.
 
 The atmosphere is one of the carriers of inheritance.
 
@@ -24340,7 +24682,17 @@ The atmosphere is where hidden mechanics become weather, terror and memory.
 
 There is another possibility I keep returning to.
 
-A denser, wetter, more luminous atmosphere can change the apparent scale of the world. Distances can look different, the horizon can disappear behind haze, objects in cloud can appear enormous, and lights can be magnified or diffused. An axial structure partly hidden by vapour can look vastly larger than a clear geometric object.
+A denser, wetter, more luminous atmosphere can change the apparent scale of the world.
+
+Distances can look different.
+
+The horizon can disappear behind haze.
+
+Objects in cloud can appear enormous.
+
+Lights can be magnified or diffused.
+
+An axial structure partly hidden by vapour can look vastly larger than a clear geometric object.
 
 This may contribute to giant and god imagery even before any biological giantism is considered.
 
@@ -24368,7 +24720,17 @@ The gate is not a clean geometric tunnel.
 
 It is an environmental event.
 
-As the lattice converges, the atmosphere responds. The opening boundary moves gases and moisture; the intensifying current increases electrical activity; arriving water reorganises pressure and weather; moving land throws dust and debris into the air; and heat acting on the surface raises steam and smoke.
+As the lattice converges, the atmosphere begins responding.
+
+As the boundary opens, gases and moisture move.
+
+As the current intensifies, electrical activity increases.
+
+As water arrives, pressure and weather reorganise.
+
+As the land moves, dust and debris enter the air.
+
+As heat acts on the surface, steam and smoke rise.
 
 Then, when the gate closes, the atmosphere has to settle again.
 
@@ -24378,7 +24740,21 @@ The storm is part of what the gate **is like from inside the world**.
 
 ## After the pulse
 
-When the current weakens and the lattice reopens, the atmosphere begins to recover. Pressure differences reduce, water condenses and drains, dust and ash settle, electrical activity decreases, the sky broadens and the upper boundary separates again.
+When the current weakens and the lattice reopens, the atmosphere begins to recover.
+
+Pressure differences reduce.
+
+Water condenses and drains.
+
+Dust settles.
+
+Ash falls.
+
+Electrical activity decreases.
+
+The sky broadens.
+
+The upper boundary separates again.
 
 The world becomes breathable in the ordinary sense.
 
@@ -24412,7 +24788,13 @@ That is exactly how a world-event becomes myth.
 
 The ordinary world erases the immediate evidence from the air.
 
-Stone remains altered, sediment remains, buried structures remain and stories remain.
+Stone remains altered.
+
+Sediment remains.
+
+Buried structures remain.
+
+Stories remain.
 
 But the sky itself looks innocent.
 
@@ -24438,7 +24820,15 @@ That is the simplest way I can state the biological branch of Vardath Cosmology.
 
 I do not think life can be separated from the environment that contains it.
 
-Change pressure, temperature, moisture, light, oxygen, electrical activity, radiation, food availability and gravity-like loading, and organisms respond. Some responses are immediate, some unfold across generations, some are simply survival, and some produce forms that would be difficult under the conditions we know now.
+Change pressure, temperature, moisture, light, oxygen, electrical activity, radiation, food availability and gravity-like loading, and organisms respond.
+
+Sometimes immediately.
+
+Sometimes across generations.
+
+Sometimes by surviving.
+
+Sometimes by growing in forms that would be difficult under the conditions we know now.
 
 That is why stories of giants, enormous animals, long-lived people and strange hybrid-looking beings remain interesting to me.
 
@@ -24460,7 +24850,23 @@ That is a narrower question.
 
 Vardath Cosmology introduces another state.
 
-The waking world may be wetter and warmer in some regions, under higher pressure and a more active electrical environment. Its gas composition, available light, radiation exposure, nutrient movement and distribution of land and water can all differ from the quiet world.
+The waking world may be wetter.
+
+Warmer in some regions.
+
+Higher pressure.
+
+More electrically active.
+
+Different in gas composition.
+
+Different in available light.
+
+Different in radiation exposure.
+
+Different in nutrient movement.
+
+Different in the way land and water are distributed.
 
 Those conditions change together in the canopy regime. That is the biological world I am describing.
 
@@ -24468,7 +24874,29 @@ The vapour canopy, high pressure, high oxygen and plasma-rich electrical environ
 
 ## Giantism
 
-Giants appear everywhere in the material that interests me: giant humans, Titans, Jötnar, Rakshasas, Daityas, Nephilim, enormous ancestors, huge animals, monstrous birds, serpents at impossible scale and trees that reach the heavens.
+Giants appear everywhere in the material that interests me.
+
+Giant humans.
+
+Titans.
+
+Jötnar.
+
+Rakshasas.
+
+Daityas.
+
+Nephilim.
+
+Enormous ancestors.
+
+Huge animals.
+
+Monstrous birds.
+
+Serpents at impossible scale.
+
+Trees that reach the heavens.
 
 In my model, the canopy regime is one of the reasons a giant world can exist. High atmospheric pressure changes the medium every organism lives in. High oxygen changes respiratory availability. Warmth and heavy moisture alter growth and heat balance. A denser atmosphere improves aerodynamic lift. The electrically and plasma-active environment changes development and increases mutation pressure.
 
@@ -24526,15 +24954,35 @@ World trees are symbolic, but huge trees and forests also belong to many old-wor
 
 Under the vapour canopy the atmosphere is wetter, pressure is higher, oxygen is richer, soil has been replenished by enormous sediment movement, and electrical/plasma conditions are more active. In my model, plant growth under that package does not resemble the modern quiet-world state. Trees, vines, fungi and other vegetation can continue growing to extraordinary scale.
 
-A reset can destroy vegetation and prepare extraordinary new growth at the same time. Ash becomes nutrient, sediment becomes fresh ground, floodwater redistributes minerals, and a warmer wet world accelerates biological activity.
+A reset can destroy vegetation and prepare extraordinary new growth at the same time.
 
-The renewed landscape can therefore explode with life after catastrophe. That is another reason creation and destruction sit so close together in my model.
+Ash becomes nutrient.
 
-The fire clears, the flood deposits, and the new world grows.
+Sediment becomes fresh ground.
+
+Floodwater redistributes minerals.
+
+A warmer wet world accelerates biological activity.
+
+The renewed landscape can therefore explode with life after catastrophe.
+
+That is another reason creation and destruction sit so close together in my model.
+
+The fire clears.
+
+The flood deposits.
+
+The new world grows.
 
 ## Longevity, telomeres and biological persistence
 
-Long-lived ancestors and heroes form another repeated family: lives measured in hundreds of years, unnaturally long reigns and generations that seem stretched.
+Long-lived ancestors and heroes form another repeated family.
+
+Hundreds of years.
+
+Unnaturally long reigns.
+
+Generations that seem stretched.
 
 In Vardath Cosmology I connect that longevity directly to the canopy regime rather than treating it as an isolated miracle.
 
@@ -24562,7 +25010,21 @@ The most radical biological possibility comes from the gate itself.
 
 Life may not only change because the environment changes.
 
-Life may **arrive from another world-turn**: seeds, spores, microbes, eggs, small animals, large animals and people.
+Life may **arrive from another world-turn**.
+
+Seeds.
+
+Spores.
+
+Microbes.
+
+Eggs.
+
+Small animals.
+
+Large animals.
+
+People.
 
 If the gate creates temporary adjacency, biological exchange becomes possible in principle.
 
@@ -24572,7 +25034,17 @@ It may be inherited from the next or previous world.
 
 This is where the carrier material becomes so important.
 
-An egg, seed or spore is already a protected enclosure. An ark is a larger version of the same principle; a cave can preserve a population and a vessel can carry one.
+An egg is already a protected enclosure.
+
+A seed is a protected enclosure.
+
+A spore is a protected enclosure.
+
+An ark is a larger version of the same principle.
+
+A cave can preserve a population.
+
+A vessel can carry one.
 
 The world can reseed itself through nested enclosures.
 
@@ -24580,11 +25052,25 @@ The world can reseed itself through nested enclosures.
 
 Hybrid beings are much harder to interpret.
 
-Human-animal forms may simply be symbolic. They may represent masks, ritual roles, gods, clans or qualities; visual projection from plasma forms; or unfamiliar animals described through known categories.
+Human-animal forms may simply be symbolic.
+
+They may represent masks, ritual roles, gods, clans or qualities.
+
+They may represent visual projection from plasma forms.
+
+They may represent unfamiliar animals described through known categories.
 
 But if worlds exchange biological material, then the category becomes interesting in another way.
 
-A being unfamiliar to one world can look hybrid because the observer has no better vocabulary. A creature with unusual proportions becomes half this and half that; a person wearing technology becomes part bird, part man; a large helmet becomes an animal head; a plasma manifestation becomes a many-armed god.
+A being unfamiliar to one world can look hybrid because the observer has no better vocabulary.
+
+A creature with unusual proportions becomes half this and half that.
+
+A person wearing technology becomes part bird, part man.
+
+A large helmet becomes an animal head.
+
+A plasma manifestation becomes a many-armed god.
 
 The cosmology therefore does not need to decide that every hybrid was a literal crossbred organism.
 
@@ -24596,7 +25082,17 @@ That is enough.
 
 This is another place where role separation protects the model.
 
-A giant figure in the sky may be the Squatter-Man plasma form, while a giant walking on the ground may be a biological being. A god may be an operator, a radiant being a manifestation, a huge ancestor a cultural memory, and a titan the personification of a geological force.
+A giant figure in the sky may be the Squatter-Man plasma form.
+
+A giant walking on the ground may be a biological being.
+
+A god may be an operator.
+
+A radiant being may be a manifestation.
+
+A huge ancestor may be a cultural memory.
+
+A titan may personify a geological force.
 
 Those categories can overlap in mythology because stories are not technical diagrams.
 
@@ -24612,9 +25108,15 @@ If accumulated matter damps later Birkeland-like pulses, then the earliest world
 
 That could mean the biological environment also changed progressively.
 
-Earlier inhabited worlds may have had conditions very unlike ours, while later worlds may be more enclosed, more shielded and less energetic.
+Earlier inhabited worlds may have had conditions very unlike ours.
 
-That creates a possible direction through mythic time: the oldest beings are remembered as the largest, brightest, longest-lived and closest to the gods, while later beings become reduced, shorter-lived and more ordinary.
+Later worlds may be more enclosed, more shielded and less energetic.
+
+That creates a possible direction through mythic time.
+
+Oldest beings: largest, brightest, longest-lived, closest to the gods.
+
+Later beings: reduced, shorter-lived, more ordinary.
 
 I find that pattern interesting because so many traditions imagine an earlier age of greater beings followed by decline.
 
@@ -24628,7 +25130,15 @@ The same matter that reduces later pulses may also protect later life.
 
 That is another side of the damping process.
 
-A thicker enclosure absorbs energy. A more developed world has more material between life and the primordial current, so the pulse becomes less direct, the sky-event becomes smaller and the surface receives less raw energy.
+A thicker enclosure absorbs energy.
+
+A more developed world has more material between life and the primordial current.
+
+The pulse becomes less direct.
+
+The sky-event becomes smaller.
+
+The surface receives less raw energy.
 
 The world becomes safer.
 
@@ -24644,9 +25154,29 @@ The biological reset does not end with survivors crawling out of hiding.
 
 The new world has to become fertile.
 
-This may happen quickly if the catastrophe has redistributed enormous amounts of water, ash, mud and mineral-rich sediment. Floodplains expand, new lakes form, old seas retreat, volcanic material weathers, and organic matter is buried and mixed.
+This may happen quickly if the catastrophe has redistributed enormous amounts of water, ash, mud and mineral-rich sediment.
 
-The first stable warmth after the event can produce rapid colonisation. Seeds germinate, spores spread and microbial communities rebuild soil. Animals follow vegetation, and people follow water and food.
+Floodplains expand.
+
+New lakes form.
+
+Old seas retreat.
+
+Volcanic material weathers.
+
+Organic matter is buried and mixed.
+
+The first stable warmth after the event can produce rapid colonisation.
+
+Seeds germinate.
+
+Spores spread.
+
+Microbial communities rebuild soil.
+
+Animals follow vegetation.
+
+People follow water and food.
 
 The world begins again not because life was recreated from nothing, but because preserved life finds new space.
 
@@ -24654,11 +25184,43 @@ That is the biological meaning of the handoff.
 
 ## Refuges
 
-Refuges become extremely important in this picture: high ground, caves, enclosed valleys, arks, subterranean spaces, forested pockets, protected buildings and even other world-turns.
+Refuges become extremely important in this picture.
+
+High ground.
+
+Caves.
+
+Enclosed valleys.
+
+Arks.
+
+Subterranean spaces.
+
+Forested pockets.
+
+Protected buildings.
+
+Other world-turns.
 
 A refuge is simply any place where the local conditions remain survivable while the larger environment changes.
 
-This is why survivor stories matter so much. Líf and Lífþrasir, Noah, Deucalion and Pyrrha, Manu, waterborne children, cave survivors and hidden ancestors give the problem different scales and meanings, but the structural problem is the same.
+This is why survivor stories matter so much.
+
+Líf and Lífþrasir.
+
+Noah.
+
+Deucalion and Pyrrha.
+
+Manu.
+
+Waterborne children.
+
+Cave survivors.
+
+Hidden ancestors.
+
+Different stories give different scales and meanings, but the structural problem is the same.
 
 How does life remain continuous across a discontinuity in environment?
 
@@ -24666,7 +25228,17 @@ The refuge is one answer.
 
 ## Biological memory
 
-Life itself can carry memory between worlds. Genes carry inherited information, microbes carry ecosystems, seeds carry plant lineages, animals carry behaviour, and humans carry language, names and stories.
+Life itself can carry memory between worlds.
+
+Genes carry inherited information.
+
+Microbes carry ecosystems.
+
+Seeds carry plant lineages.
+
+Animals carry behaviour.
+
+Humans carry language, names and stories.
 
 This means the next world does not begin ignorant.
 
@@ -24674,7 +25246,13 @@ Some of the old world survives inside living things.
 
 That may be why mythic memory can persist even when the physical sky has returned to normal.
 
-A person survives, a child hears the story, the story becomes ritual and the ritual becomes religion.
+A person survives.
+
+A child hears the story.
+
+The story becomes ritual.
+
+The ritual becomes religion.
 
 The original environmental conditions vanish, but the biological and cultural carriers remain.
 
@@ -24694,7 +25272,25 @@ That is a much richer succession than simple repopulation by one ark.
 
 ## A waking ecology
 
-The active world may therefore possess its own ecology, not just individual giant creatures but a whole system: different plants, atmospheric tolerances, predators, flying forms, water organisms, microbial conditions and human or humanlike populations.
+The active world may therefore possess its own ecology.
+
+Not just individual giant creatures.
+
+A whole system.
+
+Different plants.
+
+Different atmospheric tolerance.
+
+Different predators.
+
+Different flying forms.
+
+Different water organisms.
+
+Different microbial conditions.
+
+Different human or humanlike populations.
 
 This is where stories of strange ages become especially interesting to me.
 
@@ -24706,9 +25302,27 @@ The result would be a biological landscape difficult to reconstruct from the qui
 
 ## Why the strange life disappears
 
-If the active environment ends, active-world specialists may disappear with it. Large organisms may no longer reproduce successfully, high-pressure-adapted forms may struggle, wet-world species may lose habitat and energy-intensive life may become unsustainable.
+If the active environment ends, active-world specialists may disappear with it.
 
-Some retreat, some die out, some become smaller across generations, some survive only in particular refuges and some cross with the gate. Later humans inherit fossils, bones, ruins, stories and occasional surviving lineages.
+Large organisms may no longer reproduce successfully.
+
+High-pressure-adapted forms may struggle.
+
+Wet-world species may lose habitat.
+
+Energy-intensive life may become unsustainable.
+
+Some retreat.
+
+Some die out.
+
+Some become smaller across generations.
+
+Some survive only in particular refuges.
+
+Some cross with the gate.
+
+Later humans inherit fossils, bones, ruins, stories and occasional surviving lineages.
 
 That gives giant and monster traditions a natural ending.
 
@@ -24732,7 +25346,15 @@ Exactly what those consequences are remains open.
 
 But the direction is clear.
 
-The quiet world produces one range of life, the waking world can produce another, the gate can mix them, the reset can select among them, and the renewed world inherits what survives.
+The quiet world produces one range of life.
+
+The waking world can produce another.
+
+The gate can mix them.
+
+The reset can select among them.
+
+The renewed world inherits what survives.
 
 ## The human question
 
