@@ -22929,11 +22929,7 @@ The first thing I need to separate is the **door** from the **vehicle**.
 
 A time machine in fiction is usually both.
 
-You climb into a machine.
-
-The machine travels.
-
-You arrive at another year.
+You climb into a machine, the machine travels and you arrive at another year.
 
 My model is different.
 
@@ -22999,15 +22995,7 @@ There may be places more likely to become gates.
 
 There may be local structures that repeatedly participate.
 
-Mountains.
-
-Wells.
-
-Caves.
-
-Lattice nodes.
-
-Convergence regions.
+Mountains, wells, caves, lattice nodes and convergence regions may all be places more likely to participate.
 
 But the true door is not the landscape feature by itself.
 
@@ -23021,23 +23009,13 @@ A mountain can remain a mountain.
 
 Then the larger structure activates.
 
-The node wakes.
-
-The local relationship changes.
-
-The ordinary place becomes a threshold.
+The node wakes, the local relationship changes and the ordinary place becomes a threshold.
 
 When the event ends, the place can remain while the door is gone.
 
 That is exactly the kind of structure fairy tales repeatedly describe.
 
-The hill is still there.
-
-The ring is still there.
-
-The cave is still there.
-
-But the other world cannot always be reached.
+The hill, ring or cave may still be there, but the other world cannot always be reached.
 
 Access depends on time, phase, ritual, weather, season, star, music, invitation or some other condition.
 
@@ -23067,11 +23045,7 @@ A world-scale transition may contain smaller openings before and after the main 
 
 This is why I increasingly think of the great door as a **natural recurring phenomenon**.
 
-Not one isolated miracle.
-
-Not necessarily one date.
-
-A phenomenon.
+Not one isolated miracle or necessarily one date, but a phenomenon.
 
 That distinction matters because the archive of human stories is enormous.
 
@@ -23079,15 +23053,7 @@ If every gate story had to refer to one single historical afternoon, the model w
 
 If the structure can open repeatedly, locally and globally, the diversity makes more sense.
 
-Some events can be small.
-
-Some can be catastrophic.
-
-Some may carry one traveller.
-
-Some may move water and land.
-
-Some may involve whole populations.
+Some events can be small and some catastrophic; some may carry one traveller, others move water and land, and others involve whole populations.
 
 The same world-machine can operate at different scales.
 
@@ -23129,33 +23095,9 @@ That could be why the same door seems to keep appearing.
 
 This is where fairy tale became as important to me as formal mythology.
 
-Myth often preserves cosmic structure.
+Myth often preserves cosmic structure, religion sacred meaning, legend places and ancestors, and fairy tale the strange rules of crossing.
 
-Religion preserves sacred meaning.
-
-Legend preserves places and ancestors.
-
-Fairy tale preserves the strange rules of crossing.
-
-Do not eat the food.
-
-Do not look back.
-
-Do not stay too long.
-
-Return before dawn.
-
-Enter through the hill.
-
-Cross the bridge.
-
-Follow the white animal.
-
-Step into the circle.
-
-Time passes differently inside.
-
-Come back and find the world changed.
+Do not eat the food, do not look back, do not stay too long, return before dawn, enter through the hill, cross the bridge, follow the white animal, step into the circle, and come back to find the world changed because time passed differently inside.
 
 These are not technical instructions.
 
@@ -23209,15 +23151,7 @@ The route disappears.
 
 This naturally produces stories about urgency.
 
-Do not delay.
-
-Leave before the gate closes.
-
-Do not lose track of time.
-
-Do not become distracted by the feast.
-
-Do not sleep too long.
+Do not delay, leave before the gate closes, do not lose track of time, do not become distracted by the feast and do not sleep too long.
 
 The danger is not only what lives in the other world.
 
@@ -23577,27 +23511,13 @@ That was a major shift.
 
 Time-travel stories usually move people.
 
-A traveller disappears.
-
-A rider crosses.
-
-A child is carried.
-
-A survivor emerges.
+A traveller disappears, a rider crosses, a child is carried and a survivor emerges.
 
 The landscape stays where it was and the person changes location or time.
 
 Vardath Cosmology is larger than that.
 
-The crust is cargo.
-
-Cities sit on crust.
-
-Rivers follow crust.
-
-Forests root into crust.
-
-Populations live on crust.
+The crust is cargo, and cities, rivers, forests and populations all sit upon or depend on that cargo.
 
 If the world-machine can move the cargo layer during a major transition, then the door can move **whole pieces of the inhabited world**.
 
@@ -23629,19 +23549,7 @@ Physically.
 
 A region can be shifted.
 
-Raised.
-
-Lowered.
-
-Buried.
-
-Dragged.
-
-Rotated.
-
-Split.
-
-Transferred.
+A region can be raised, lowered, buried, dragged, rotated, split or transferred.
 
 The people living on it may experience the event as movement of the sky, movement of the land or disappearance of the world around them.
 
@@ -23683,15 +23591,7 @@ That alone changes what kinds of questions are possible.
 
 We usually think of history as a sequence of events happening on stable geography.
 
-Empires rise and fall.
-
-Cities are built and abandoned.
-
-People migrate.
-
-Climate changes.
-
-The ground remains the stage.
+Empires rise and fall, cities are built and abandoned, people migrate and climate changes, but the ground usually remains the stage.
 
 Vardath Cosmology allows the stage itself to move.
 
@@ -23741,15 +23641,7 @@ Regions that appear as though they were inserted into a larger map.
 
 The same logic applies at different scales.
 
-A block of crust can shift.
-
-A valley can shift.
-
-An island can shift.
-
-A city can shift.
-
-A building can survive while the material around it changes.
+A block of crust, valley, island or city can shift, while a building can survive even as the material around it changes.
 
 The gate can reorganise the world like a hand moving pieces through layers rather than across one flat surface.
 
@@ -23837,15 +23729,7 @@ A civilisation can appear, flourish, transform and partially disappear within a 
 
 Inside the Vardath model, that does not need to mean the whole civilisation was transported.
 
-Some regions may have remained.
-
-Some may have moved.
-
-Some populations may have crossed.
-
-Some architecture may have been buried.
-
-Some may have been overgrown after abrupt environmental change.
+Some regions may have remained while others moved; some populations may have crossed, some architecture may have been buried, and some may have been overgrown after abrupt environmental change.
 
 Some traditions may preserve the previous world through myth rather than continuous written chronology.
 
@@ -23889,17 +23773,7 @@ A moved landmass does not carry only rock.
 
 It carries **time**.
 
-A city is materialised history.
-
-A road records movement.
-
-A building records technology.
-
-A cemetery records ancestry.
-
-A field records agriculture.
-
-A temple records religion.
+A city is materialised history: a road records movement, a building technology, a cemetery ancestry, a field agriculture and a temple religion.
 
 Move the land and all of that moves with it.
 
@@ -23925,21 +23799,7 @@ This also explains why so many stories do not describe a deliberate journey.
 
 People are simply caught.
 
-The flood comes.
-
-The sky changes.
-
-The mountain opens.
-
-The mist descends.
-
-The world falls asleep.
-
-A storm surrounds the traveller.
-
-The road changes.
-
-The familiar landscape disappears.
+The flood comes, the sky changes, the mountain opens, the mist descends, the world falls asleep, a storm surrounds the traveller, the road changes and the familiar landscape disappears.
 
 Then the person is somewhere else.
 
@@ -24001,25 +23861,7 @@ Not because it floats like Noah’s vessel.
 
 Because it preserves a complex inside.
 
-People.
-
-Buildings.
-
-Roads.
-
-Objects.
-
-Texts.
-
-Seeds.
-
-Animals.
-
-Water systems.
-
-Social structure.
-
-Memory.
+People, buildings, roads, objects, texts, seeds, animals, water systems, social structure and memory can all be preserved together.
 
 If the land beneath the city crosses the gate coherently enough, then the whole city becomes a carrier through the reset.
 
@@ -24315,13 +24157,7 @@ It is what the tree **does inside the integrated time model**.
 
 At first, Yggdrasil was mainly vertical for me.
 
-Roots below.
-
-Trunk through the middle.
-
-Branches above.
-
-A structure joining levels.
+Roots below, trunk through the middle and branches above form a structure joining levels.
 
 Later, once the lattice, braid, shell-turns and time door had become part of the model, the tree stopped being only vertical.
 
@@ -24337,13 +24173,7 @@ A tree looks like a pole only if the trunk is isolated from everything around it
 
 A real tree is a branching network.
 
-Roots divide.
-
-Branches divide.
-
-Smaller branches divide again.
-
-The trunk is the region where those many pathways gather.
+Roots divide, branches divide and smaller branches divide again, while the trunk is the region where those many pathways gather.
 
 That is almost exactly the relationship I need between lattice and axis.
 
@@ -24359,19 +24189,7 @@ This is why I no longer think of Yggdrasil as a permanent rigid pillar.
 
 The tree is more useful if it can **change state**.
 
-Broad.
-
-Woven.
-
-Branching.
-
-Then gathered.
-
-Axial.
-
-Traversable.
-
-Then broad again.
+Broad, woven and branching; then gathered, axial and traversable; then broad again.
 
 That is the world-cycle expressed as a living form.
 
@@ -24381,13 +24199,7 @@ Once previous, present and next became past, present and future, the tree acquir
 
 The roots naturally belong to what came before.
 
-They are deep.
-
-Hidden.
-
-Older.
-
-They feed the present from material already accumulated.
+They are deep, hidden and older, feeding the present from material already accumulated.
 
 The trunk is the current world-state.
 
@@ -24423,15 +24235,7 @@ A tree **grows through them**.
 
 A tree contains its own history.
 
-Growth rings remain.
-
-Old branches scar the trunk.
-
-Roots thicken.
-
-Dead wood can remain inside living wood.
-
-New growth appears around old growth.
+Growth rings remain, old branches scar the trunk, roots thicken, dead wood can remain inside living wood, and new growth appears around old growth.
 
 That is exactly how I picture the larger world-body.
 
@@ -24469,15 +24273,7 @@ This is one of the stranger but most important combinations in the model.
 
 Imagine the world tree not as one solid trunk, but as a woven trunk.
 
-Its fibres cross.
-
-Wind.
-
-Counter-wind.
-
-Open into mesh.
-
-Narrow into bundle.
+Its fibres cross, wind and counter-wind, open into mesh and narrow into bundle.
 
 The tree is therefore structurally closer to braided wood or woven root than to a single cylinder.
 
@@ -24517,19 +24313,7 @@ I do not claim every weaving goddess, fate figure or thread myth describes one p
 
 But structurally, thread is the natural material of a woven time cosmology.
 
-A thread has continuity.
-
-It has direction.
-
-It can cross another thread.
-
-It can knot.
-
-It can be cut.
-
-It can be rewoven.
-
-It can connect events separated along its length.
+A thread has continuity and direction; it can cross another thread, knot, be cut, be rewoven and connect events separated along its length.
 
 That makes thread almost too perfect as a human image of a temporal path.
 
@@ -24553,15 +24337,7 @@ I do not need to turn them into literal operators of a physical time machine.
 
 Their usefulness is relational.
 
-Fate.
-
-Tree.
-
-Water.
-
-Continuity.
-
-Past and future.
+Fate, tree, water, continuity, past and future already sit close together in the source tradition.
 
 These things already sit close together in the source tradition.
 
@@ -24587,15 +24363,7 @@ Relationship.
 
 Odin's self-sacrifice becomes even stranger in the woven-time reading.
 
-He hangs on Yggdrasil.
-
-He is wounded.
-
-He gives himself to himself.
-
-He remains suspended between ordinary states.
-
-He gains knowledge.
+He hangs on Yggdrasil, is wounded, gives himself to himself, remains suspended between ordinary states and gains knowledge.
 
 In the Vardath camera-angle model, that sequence looks like a being entering the world connector and returning transformed by what becomes accessible there.
 
@@ -25035,31 +24803,7 @@ And the history we experience may be only one branch of a structure that is much
 
 Everything in Vardath Cosmology eventually comes back to one cycle.
 
-The serpent.
-
-The current.
-
-The flat world-disc.
-
-The lattice dome.
-
-The world tree.
-
-The braid.
-
-The upper water.
-
-The gate.
-
-The flood.
-
-Meltology.
-
-The moving lands.
-
-The time door.
-
-The renewed world.
+The serpent, current, flat world-disc, lattice dome, world tree, braid, upper water, gate, flood, Meltology, moving lands, time door and renewed world all return to one cycle.
 
 They can look like separate branches when they are studied one at a time.
 
@@ -25081,23 +24825,7 @@ The world is quiet.
 
 Again, quiet does not mean motionless.
 
-The deep current still exists.
-
-The lattice still exists.
-
-The world tree still exists.
-
-The previous turn still lies within the larger world-body.
-
-The next turn already exists as a populated world.
-
-Water circulates.
-
-The atmosphere moves.
-
-Life grows.
-
-The crust changes slowly.
+The deep current, lattice and world tree still exist; the previous turn remains within the larger world-body and the next already exists as a populated world. Water circulates, the atmosphere moves, life grows and the crust changes slowly.
 
 What makes the world quiet is **separation**.
 
@@ -25193,15 +24921,7 @@ The world-machine begins to prefer certain directions.
 
 The change may start locally.
 
-A region becomes more electrically active.
-
-The atmosphere becomes unusual.
-
-Water behaviour changes.
-
-Animals react.
-
-The sky may become more luminous.
+A region becomes more electrically active, the atmosphere becomes unusual, water behaviour changes, animals react and the sky may become more luminous.
 
 The deep system begins entering ordinary experience.
 
@@ -25215,15 +24935,7 @@ A node that previously acted as part of the closed lattice can become more perme
 
 From below, that change may look like an eye opening.
 
-A ring.
-
-A wheel.
-
-A star.
-
-A luminous hole.
-
-A structured glow.
+A ring, wheel, star, luminous hole or structured glow may all be appearances of that activation.
 
 Different viewpoints produce different forms.
 
@@ -25261,13 +24973,7 @@ It changes geometry.
 
 The same strands that formed the broad world tighten toward the axis.
 
-Mesh becomes narrower mesh.
-
-Narrow mesh becomes ladder-like.
-
-Ladder becomes rod.
-
-Rod becomes throat.
+Mesh becomes narrower mesh, narrower mesh becomes ladder-like, ladder becomes rod and rod becomes throat.
 
 The world-machine changes state continuously.
 
