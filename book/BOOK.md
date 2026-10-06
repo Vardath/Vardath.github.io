@@ -29475,19 +29475,7 @@ Those are exactly the questions I am still asking.
 
 The Zoroastrian world catches my attention because so many of the roles I keep separating in Vardath Cosmology appear here as distinct parts of one larger sacred geography.
 
-A central mountain.
-
-A world sea.
-
-A tree of life.
-
-A bridge between conditions.
-
-A journey after death.
-
-A final purification.
-
-A renewed world.
+A central mountain, a world sea, a tree of life, a bridge between conditions, a journey after death, a final purification and a renewed world all belong to the same ordered cosmos.
 
 These are not the same object repeated.
 
@@ -29511,13 +29499,7 @@ In Zoroastrian cosmological tradition, the great mountain stands at the centre o
 
 For Vardath Cosmology, that is immediately interesting because a mountain is one of the natural surface images of an axis.
 
-Broad base.
-
-Narrow rise.
-
-A structure joining different levels.
-
-A fixed reference around which other things can be organised.
+Broad base, narrow rise, a structure joining different levels and a fixed reference around which other things can be organised all belong to the mountain role.
 
 But I do not need to say Hara Berezaiti is literally my rod.
 
@@ -29541,17 +29523,7 @@ That matters because it is not featureless infinite space.
 
 The world has arrangement.
 
-Centre.
-
-Surrounding regions.
-
-Mountain.
-
-Sea.
-
-Vault.
-
-Otherworld.
+Centre, surrounding regions, mountain, sea, vault and otherworld all have defined places within that arrangement.
 
 The exact ancient geography is its own.
 
@@ -29601,11 +29573,7 @@ Then there is the life-tree associated with the great sea.
 
 This combination is especially interesting.
 
-Tree and water.
-
-Axis and life.
-
-Central structure and world reservoir.
+Tree and water, axis and life, central structure and world reservoir all sit together in the same image.
 
 In Vardath Cosmology, the world tree is not only a mythic tree.
 
@@ -29721,17 +29689,7 @@ There are regions beyond ordinary human habitation.
 
 That fits the recurring idea that ancient cosmologies often do not picture reality as endless empty space.
 
-They picture layers.
-
-Vaults.
-
-Mountains.
-
-Seas.
-
-Bridges.
-
-Otherworlds.
+They picture layers, vaults, mountains, seas, bridges and otherworlds.
 
 That kind of world is much closer to Vardath Cosmology than a featureless container.
 
@@ -29811,13 +29769,7 @@ The result is renewal rather than permanent ruin.
 
 That is close to the Vardath idea that intense heat can be one phase of reset.
 
-Material may soften, vitrify, fuse or alter.
-
-Then it cools.
-
-The world stabilises.
-
-The scar remains.
+Material may soften, vitrify, fuse or alter; then it cools, the world stabilises and the scar remains.
 
 So I keep the comparison as a maybe.
 
@@ -29859,39 +29811,13 @@ They preserve continuity without requiring exact repetition.
 
 This is perhaps the most useful lesson from the Zoroastrian chapter.
 
-The mountain is not the sea.
-
-The sea is not the tree.
-
-The tree is not the bridge.
-
-The bridge is not the renewed world.
+The mountain is not the sea, the sea is not the tree, the tree is not the bridge, and the bridge is not the renewed world.
 
 Yet they all belong to one cosmological architecture.
 
 That is how I want Vardath Cosmology to work too.
 
-Lattice.
-
-Current.
-
-Upper water.
-
-World-disc.
-
-Axis.
-
-Gate.
-
-Carrier.
-
-Vehicle.
-
-Witness.
-
-Reset.
-
-Renewed present / new-beginning period.
+Lattice, current, upper water, world-disc, axis, gate, carrier, vehicle, witness, reset and renewed present / new-beginning period all remain distinct roles inside one architecture.
 
 The model becomes stronger when those roles remain distinct.
 
@@ -29957,19 +29883,7 @@ The Zoroastrian world gives them mountain, sea, tree, bridge and fire.
 
 The Vedic story of Indra and Vritra catches me almost immediately because the basic sequence is so compact.
 
-A great serpent or dragon blocks the waters.
-
-The waters are held.
-
-A powerful figure attacks.
-
-The weapon is the thunderbolt.
-
-The obstruction is broken.
-
-The waters are released.
-
-Light and order return with the victory.
+A great serpent or dragon blocks the waters, the waters are held, a powerful figure attacks with the thunderbolt, the obstruction is broken, the waters are released, and light and order return with the victory.
 
 That is one of the cleanest serpent-water-release patterns in the ancient material.
 
@@ -29983,33 +29897,13 @@ A mythic serpent at this scale is not interesting to me because it resembles an 
 
 It is interesting because it behaves like structure.
 
-It blocks.
-
-Encloses.
-
-Coils.
-
-Contains.
-
-Interrupts flow.
+It blocks, encloses, coils, contains and interrupts flow.
 
 The Rigvedic Vritra is associated with the obstruction of waters, and Indra's great act is to defeat that obstruction and release them.
 
 That is already enough to place the story inside my serpent grammar.
 
-The serpent can be a current.
-
-A braid.
-
-A boundary.
-
-A guardian.
-
-A constriction.
-
-A world-enclosing ring.
-
-Or, as here, an obstruction controlling water.
+The serpent can be a current, braid, boundary, guardian, constriction, world-enclosing ring or, as here, an obstruction controlling water.
 
 The role comes from what the serpent does.
 
@@ -30027,13 +29921,7 @@ In Vardath Cosmology, water is not created at the moment of flood.
 
 It is already present in the larger world-system.
 
-Upper water.
-
-Surface water.
-
-Lower water.
-
-Reservoirs associated with neighbouring turns.
+Upper water, surface water, lower water and reservoirs associated with neighbouring turns are already present in the larger world-system.
 
 The catastrophe happens when the geometry controlling those reservoirs changes.
 
@@ -30069,9 +29957,7 @@ Before:
 
 waters constrained.
 
-After:
-
-waters moving.
+After, the waters are moving.
 
 The operator is what makes the transition happen.
 
@@ -30113,11 +29999,7 @@ The result is not merely injury to a monster.
 
 It is a change in the world.
 
-Waters flow.
-
-Channels open.
-
-Light returns.
+Waters flow, channels open and light returns.
 
 That is exactly the kind of consequence that makes the weapon cosmological rather than merely martial.
 
@@ -30181,11 +30063,7 @@ In my cosmology, the serpent role is not inherently evil.
 
 The same serpent family can be creative elsewhere.
 
-Protective elsewhere.
-
-Boundary-forming elsewhere.
-
-World-enclosing elsewhere.
+It can be protective elsewhere, boundary-forming elsewhere and world-enclosing elsewhere.
 
 That difference matters.
 
@@ -30209,11 +30087,7 @@ The most important part of the Indra-Vritra story may be that the release of the
 
 The world becomes usable again.
 
-Rivers flow.
-
-Light appears.
-
-Order is restored.
+Rivers flow, light appears and order is restored.
 
 So the dragon battle is not just a victory inside an already complete world.
 
@@ -30265,21 +30139,7 @@ I have to keep the comparison open here.
 
 Indra belongs to Vedic religion, and the myth has many layers of meaning.
 
-Storm.
-
-Battle.
-
-Water.
-
-Kingship.
-
-Heroic power.
-
-Ritual.
-
-Soma.
-
-Cosmic ordering.
+Storm, battle, water, kingship, heroic power, ritual, Soma and cosmic ordering all belong to the Vedic story's wider meaning.
 
 I do not want to reduce that richness to one plasma event.
 
@@ -30303,23 +30163,11 @@ That may be the most useful abstraction.
 
 Closed:
 
-water restrained.
-
-Light withheld.
-
-Channels blocked.
-
-The world is not functioning properly.
+water restrained, light withheld and channels blocked while the world is not functioning properly.
 
 Open:
 
-obstruction broken.
-
-Water flows.
-
-Light appears.
-
-The world becomes active.
+obstruction broken, water flowing, light appearing and the world becoming active.
 
 That gives the story the same binary I see in eyes, doors, caves, bridges and gates.
 
@@ -30535,15 +30383,7 @@ That is extraordinary enough on its own.
 
 The churning image is mechanical.
 
-Mountain in the middle.
-
-Serpent used as rope.
-
-Opposed groups pulling.
-
-Ocean moving around the central structure.
-
-Substances emerging.
+Mountain in the middle, serpent used as rope, opposed groups pulling, ocean moving around the central structure and substances emerging make the churning image mechanical.
 
 The whole scene is dynamic.
 
@@ -30573,15 +30413,7 @@ The devas and asuras pull from opposite sides.
 
 That matters because Vardath Cosmology repeatedly returns to counter-wound or opposed movement.
 
-Up and down.
-
-In and out.
-
-Clockwise and counterclockwise.
-
-Contraction and expansion.
-
-Previous and next.
+Up and down, in and out, clockwise and counterclockwise, contraction and expansion, previous and next all belong to the wider family of opposed motion.
 
 Two directions organised around one larger axis.
 
@@ -30619,13 +30451,7 @@ Without the serpent, the mountain does not churn the ocean.
 
 That gives the serpent a very different function from Vritra in the previous chapter.
 
-Vritra blocks.
-
-Vasuki transmits.
-
-Same broad serpent family.
-
-Different role.
+Vritra blocks while Vasuki transmits: the same broad serpent family in different roles.
 
 This is why I refuse to make every serpent the same serpent.
 
@@ -30679,13 +30505,7 @@ That fits the reset exactly.
 
 The Vardath event can destroy old geography while creating the material arrangement of the next world.
 
-Water moves.
-
-Sediment settles.
-
-Living cargo survives.
-
-New boundaries form.
+Water moves, sediment settles, living cargo survives and new boundaries form.
 
 What is catastrophe from inside the old world becomes construction from the viewpoint of the next.
 
@@ -30705,19 +30525,7 @@ That sequence feels very natural to me.
 
 A world-reset should be dangerous before it is generative.
 
-Heat.
-
-Pressure.
-
-Water.
-
-Toxic gases.
-
-Broken crust.
-
-Unstable atmosphere.
-
-Electrical activity.
+Heat, pressure, water, toxic gases, broken crust, unstable atmosphere and electrical activity all make the productive state dangerous before it becomes generative.
 
 The productive state is not comfortable.
 
@@ -30749,13 +30557,7 @@ Something larger supports it.
 
 Again the role grammar helps.
 
-Axis is not support.
-
-Serpent is not axis.
-
-Medium is not support.
-
-Operator is not carrier.
+Axis is not support, serpent is not axis, medium is not support and operator is not carrier.
 
 Different pieces cooperate.
 
@@ -30787,19 +30589,7 @@ The later reduced axial pulse may appear differently depending on scale and view
 
 From one view:
 
-giant figure.
-
-From another:
-
-pillar.
-
-From another:
-
-mountain.
-
-From another:
-
-central rotating axis surrounded by serpentine structure.
+giant figure; from another a pillar; from another a mountain; and from another a central rotating axis surrounded by serpentine structure.
 
 That makes Meru, Mandara, Squatter Man and rod imagery worth placing near one another without claiming they are historically one symbol.
 
@@ -30875,19 +30665,7 @@ That is what I want to keep.
 
 The Vardath world may also become most creative when it is most violently in motion.
 
-The axis forms.
-
-The serpent tightens.
-
-The waters move.
-
-Opposed forces pull.
-
-Danger emerges.
-
-New material appears.
-
-Then the system settles into another order.
+The axis forms, the serpent tightens, the waters move, opposed forces pull, danger emerges and new material appears before the system settles into another order.
 
 The churning story gives that whole possibility one enormous oceanic image.
 
@@ -30901,21 +30679,7 @@ Buddhist and Jain cosmologies interest me for a different reason from the dragon
 
 They are **architectural**.
 
-Layer after layer.
-
-Heavens above.
-
-Lower regions below.
-
-Central mountains.
-
-World continents.
-
-Repeated domains.
-
-Cycles.
-
-Different classes of beings inhabiting different levels.
+Layer after layer, heavens above, lower regions below, central mountains, world continents, repeated domains, cycles, and different classes of beings inhabiting different levels make these cosmologies architectural.
 
 The important thing is not one dramatic catastrophe.
 
@@ -33015,11 +32779,7 @@ Genesis 1 describes the creation of an expanse—traditionally rendered "firmame
 
 That is one of the oldest images that kept returning in my cosmology.
 
-Water below.
-
-Water above.
-
-A separating region between them.
+Water below, water above and a separating region between them form one of the oldest recurring images in the cosmology.
 
 The text belongs to ancient Israelite cosmology and theology. I am not pretending the authors were describing a fingertrap lattice, an upper ocean between world-turns or an electromagnetic field.
 
@@ -33091,19 +32851,7 @@ That sits much more naturally beside Vardath Cosmology than a flood caused only 
 
 In my model, a world-scale flood would be a **consequence of deeper reorganisation**.
 
-Upper water may enter.
-
-Lower reservoirs may respond.
-
-Land may move.
-
-Basins may change.
-
-Pressure may change.
-
-Sediment may be carried.
-
-The atmosphere may become saturated and violent.
+Upper water may enter, lower reservoirs may respond, land and basins may move, pressure may change, sediment may be carried, and the atmosphere may become saturated and violent.
 
 The visible flood is then the surface expression of a boundary problem.
 
@@ -33157,11 +32905,7 @@ The Hebrew Bible also uses the unusual noun *tēvāh* for Noah's ark and for the
 
 That textual fact interests me because it produces a beautiful scale relationship.
 
-Child inside enclosure.
-
-Life inside ark.
-
-World inside shell.
+Child inside enclosure, life inside ark and world inside shell form the same scale relationship.
 
 I do not claim the Hebrew word secretly encodes my cosmology.
 
@@ -33251,19 +32995,7 @@ This resembles a wider pattern I keep finding.
 
 A temporary extraordinary event becomes attached to a permanent place.
 
-Mountain.
-
-Stone.
-
-Well.
-
-Tree.
-
-Cave.
-
-Mound.
-
-Pillar.
+Mountain, stone, well, tree, cave, mound and pillar can all become permanent places attached to temporary extraordinary events.
 
 The gate is not necessarily permanently open there.
 
@@ -33285,17 +33017,7 @@ The Watchers material does not come from Genesis in the form I am discussing her
 
 1 Enoch is part of ancient Jewish apocalyptic literature and expands traditions related to the enigmatic "sons of God" and Nephilim material in Genesis 6 into a much larger narrative.
 
-The Watchers descend.
-
-They take human wives.
-
-They teach knowledge and practices.
-
-Their unions produce giant offspring.
-
-Violence and disorder expand.
-
-Judgment follows.
+The Watchers descend, take human wives, teach knowledge and practices, produce giant offspring through those unions, and are followed by expanding violence, disorder and judgment.
 
 The Book of Giants develops parts of the giant world further in another ancient textual tradition.
 
@@ -33317,29 +33039,11 @@ The mature Vardath model already creates a contact problem.
 
 If neighbouring world-turns become temporarily adjacent, what can cross?
 
-Water?
-
-Air?
-
-Dust?
-
-Rock?
-
-Life?
-
-People?
-
-Knowledge?
+Water, air, dust, rock, life, people and knowledge all become possible categories of transfer.
 
 The Watchers material becomes interesting because it imagines **contact as a temporary historical condition** rather than a permanent everyday relationship.
 
-The beings arrive.
-
-The world changes.
-
-The contact period becomes dangerous.
-
-The ordinary order does not simply absorb them forever.
+The beings arrive, the world changes, the contact period becomes dangerous, and the ordinary order does not simply absorb them forever.
 
 That fits the gate-state much better than a static Heaven permanently mixed with Earth.
 
@@ -33675,17 +33379,7 @@ A guide knows the route, mediates entry and accompanies the traveller.
 
 This distinction appears repeatedly in world-crossing stories.
 
-A ferryman.
-
-An angel.
-
-A psychopomp.
-
-A fairy guide.
-
-A god who knows the path.
-
-A figure who speaks to the guardian at the threshold.
+A ferryman, angel, psychopomp, fairy guide, god who knows the path or figure who speaks to the guardian at the threshold can all fill the guide role.
 
 These roles are easy to blur if I think only in terms of symbols.
 
@@ -33713,13 +33407,7 @@ That matters enormously to Vardath Cosmology.
 
 My world-turn model also rejects the idea that everything above the present surface belongs to one homogeneous "sky."
 
-There may be distinct regions.
-
-Different boundaries.
-
-Different conditions.
-
-Different relationships to the present world.
+There may be distinct regions, boundaries, conditions and relationships to the present world.
 
 The Islamic ascent tradition therefore belongs naturally beside Buddhist, Jain and other layered cosmologies already discussed.
 
@@ -33843,23 +33531,7 @@ This is one of the strongest things the *Miʿrāj* contributes to the comparativ
 
 The journey is extraordinary, but it is not random.
 
-There is sequence.
-
-Guide.
-
-Vehicle in the earlier stage.
-
-Gates.
-
-Recognition.
-
-Levels.
-
-Encounters.
-
-Boundary.
-
-Return.
+There is sequence: guide, vehicle in the earlier stage, gates, recognition, levels, encounters, boundary and return.
 
 That resembles an organised transit system more than uncontrolled wandering.
 
@@ -33869,17 +33541,7 @@ I mean that the narrative has **rules**.
 
 That matters because a physical gate model should also have rules.
 
-Duration.
-
-Capacity.
-
-Permitted pathways.
-
-Entry conditions.
-
-Direction.
-
-Endpoints.
+Duration, capacity, permitted pathways, entry conditions, direction and endpoints are the kinds of rules a physical gate model also needs.
 
 A route without any constraints explains nothing.
 
@@ -33975,17 +33637,7 @@ That combination resembles the Vardath distinction between surface path and thro
 
 Most of the quiet world is navigated laterally.
 
-Roads.
-
-Rivers.
-
-Coasts.
-
-Songlines.
-
-Trade routes.
-
-Ordinary geography.
+Roads, rivers, coasts, songlines, trade routes and ordinary geography belong to the quiet world's lateral navigation.
 
 The gate changes the dominant direction.
 
@@ -34015,11 +33667,7 @@ The next world does not need to become fully merged with us.
 
 Temporary adjacency is enough.
 
-A path opens.
-
-Something crosses.
-
-The path closes.
+A path opens, something crosses and the path closes.
 
 The worlds remain capable of being distinct again.
 
@@ -34047,17 +33695,7 @@ This is exactly why I developed the role grammar in the first place.
 
 Myths and religious narratives become much easier to compare when I stop saying "this symbol equals that symbol" and start asking:
 
-Who moves?
-
-What carries?
-
-What opens?
-
-What guards?
-
-What remains?
-
-What changes after return?
+Who moves, what carries, what opens, what guards, what remains and what changes after return are the useful role questions.
 
 ## The ascent and the natural time door
 
@@ -34069,25 +33707,7 @@ The connection is that the tradition gives me a fully developed human experience
 
 That is what the natural time door would have to produce if a person crossed it consciously.
 
-A route.
-
-Transitions.
-
-Different regions.
-
-Recognition that ordinary geography has been exceeded.
-
-Possibly a vehicle.
-
-Possibly a guide.
-
-Limits.
-
-Return.
-
-Memory.
-
-Information carried back.
+A route, transitions, different regions, recognition that ordinary geography has been exceeded, possibly a vehicle or guide, limits, return, memory and information carried back all belong to the crossing grammar.
 
 The later fairy-time material will change the emphasis from sacred ascent to altered time.
 
@@ -34127,15 +33747,7 @@ The world exists, but there is not enough room for the world to become ordinary 
 
 Then separation happens.
 
-The sky is forced upward.
-
-The Earth remains below.
-
-Light enters.
-
-Space opens.
-
-The world becomes habitable.
+The sky is forced upward, the Earth remains below, light enters, space opens and the world becomes habitable.
 
 In Māori cosmological tradition, Ranginui is the sky father and Papatūānuku the earth mother. Their children are confined between them until the separation of their parents creates the open world.
 
@@ -34155,11 +33767,7 @@ That is almost the perfect inverse image of Vardath convergence.
 
 A lot of creation stories begin with absence.
 
-No land.
-
-No light.
-
-No ordered world.
+No land, no light and no ordered world form one familiar creation pattern.
 
 Ranginui and Papatūānuku give a different problem.
 
@@ -34179,13 +33787,7 @@ I no longer think creation has to mean making matter from nothing.
 
 A new world can be created by changing relationships among things that already exist.
 
-Water can already exist.
-
-Land can already exist.
-
-Atmosphere can already exist.
-
-Life can already exist.
+Water, land, atmosphere and life can already exist.
 
 What is missing may be correct spacing.
 
@@ -34199,19 +33801,7 @@ A world is **an interval maintained between boundaries**.
 
 This sounds almost too obvious until I apply it cosmologically.
 
-Life does not merely require matter.
-
-It requires room.
-
-Air needs volume.
-
-Water needs basins.
-
-Light needs access.
-
-Living things need surfaces separated from other surfaces.
-
-Atmospheric circulation needs space to circulate.
+Life does not merely require matter; it requires room. Air needs volume, water needs basins, light needs access, living things need surfaces separated from other surfaces, and atmospheric circulation needs space to circulate.
 
 If neighbouring world-levels interfere too strongly, the conditions of one stable environment may not be possible.
 
@@ -34233,19 +33823,7 @@ It is opening.
 
 Most of Vardath Cosmology is easiest to picture from the direction of convergence.
 
-The lattice is broad.
-
-The current strengthens.
-
-Paths gather.
-
-The world becomes increasingly axial.
-
-The fingertrap narrows.
-
-A throat forms.
-
-Adjacency changes.
+The lattice is broad, the current strengthens, paths gather, the world becomes increasingly axial, the fingertrap narrows, a throat forms and adjacency changes.
 
 Normally separated levels can interact.
 
@@ -34355,13 +33933,7 @@ That gives me a useful physical principle.
 
 A world transition does not necessarily require an external agent.
 
-Internal stress can build.
-
-Pressure can build.
-
-Current can reorganise.
-
-The lattice can change under its own dynamics.
+Internal stress and pressure can build, current can reorganise, and the lattice can change under its own dynamics.
 
 A local or axial structure can become the place where the system changes state.
 
@@ -34477,39 +34049,11 @@ Then it was made.
 
 But many cosmologies do not work that way.
 
-They begin with waters.
-
-Bodies.
-
-Darkness.
-
-An egg.
-
-A compressed Heaven and Earth.
-
-An old world.
-
-A primordial being.
+They begin with waters, bodies, darkness, an egg, a compressed Heaven and Earth, an old world or a primordial being.
 
 Then creation happens through:
 
-separation,
-
-division,
-
-release,
-
-raising,
-
-opening,
-
-ordering,
-
-naming,
-
-settling,
-
-or inheritance.
+separation, division, release, raising, opening, ordering, naming, settling or inheritance.
 
 That is very close to Vardath Cosmology.
 
@@ -34583,15 +34127,7 @@ It gives the transition an experiential signature.
 
 A population inside the compressed state would remember the new spacing not as a geometry equation but as:
 
-light,
-
-air,
-
-room,
-
-movement,
-
-life.
+light, air, room, movement and life.
 
 That is how a physical event becomes creation language.
 
