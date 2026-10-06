@@ -39104,13 +39104,7 @@ The present world can be home and still remember that it was not first.
 
 Tír na nÓg matters to Vardath Cosmology because it changes the gate problem from world succession to lived time.
 
-The traveller leaves the ordinary world.
-
-Crosses water.
-
-Enters another realm.
-
-Experiences a different order of life.
+The traveller leaves the ordinary world, crosses water, enters another realm and experiences a different order of life.
 
 Then returns to discover that ordinary time no longer matches the time of the journey.
 
@@ -39142,19 +39136,7 @@ That fits the mature Vardath model far better than a single universal portal at 
 
 The same deeper relation can appear locally as:
 
-mountain,
-
-well,
-
-mound,
-
-bridge,
-
-tree,
-
-tunnel,
-
-or sea crossing.
+mountain, well, mound, bridge, tree, tunnel or sea crossing.
 
 The local environment shapes the image.
 
@@ -39192,15 +39174,7 @@ A region of changing conditions.
 
 This chapter also helps balance the water symbolism in the book.
 
-Water can flood.
-
-Destroy.
-
-Carry sediment.
-
-Mark boundary failure.
-
-But it can also be route.
+Water can flood, destroy, carry sediment and mark boundary failure, but it can also be route.
 
 The same sea that separates can connect.
 
@@ -39220,15 +39194,7 @@ Niamh belongs to the Otherworldly side and guides or carries him into the crossi
 
 That gives the story a clean role distinction.
 
-Traveller.
-
-Guide.
-
-Carrier.
-
-Boundary.
-
-Destination.
+Traveller, guide, carrier, boundary and destination remain distinct roles.
 
 These do not have to be the same thing.
 
@@ -39246,19 +39212,7 @@ If the Vardath natural time door were real, a person caught in it would not need
 
 They would only need the experience.
 
-A horse.
-
-A boat.
-
-A guide.
-
-A road.
-
-A strange mist.
-
-A sea.
-
-A tunnel.
+A horse, boat, guide, road, strange mist, sea or tunnel is enough to preserve the human interface to the crossing.
 
 Myth would preserve the human interface, not the physics.
 
@@ -39272,11 +39226,7 @@ Tír na nÓg is not simply Ireland farther west.
 
 It belongs to another order of existence.
 
-Youth.
-
-Beauty.
-
-Different conditions.
+Youth, beauty and different conditions mark Tír na nÓg as another order of existence.
 
 Most importantly for this chapter:
 
@@ -39294,15 +39244,7 @@ The return is devastating because the traveller's experience and the home world'
 
 That is one of the most persistent Otherworld motifs across cultures.
 
-A short stay.
-
-A long absence.
-
-A traveller returns.
-
-Generations have passed.
-
-The home world has moved on.
+A short stay becomes a long absence; the traveller returns, generations have passed, and the home world has moved on.
 
 This is exactly the kind of story that first pushed the Vardath gate toward time rather than space alone.
 
@@ -39312,11 +39254,7 @@ I keep this boundary clear.
 
 The Vardath world-turn model suggests one possible geometry:
 
-previous,
-
-present,
-
-next
+previous, present and next
 
 as neighbouring states inside a larger structure.
 
@@ -39400,15 +39338,7 @@ The traveller may have changed.
 
 The warning around return matters because it tells me the gate has rules.
 
-Do not dismount.
-
-Do not touch.
-
-Do not eat.
-
-Do not look back.
-
-Do not remain too long.
+Do not dismount, touch, eat, look back or remain too long.
 
 Different traditions use different conditions.
 
@@ -39448,13 +39378,7 @@ Returning to the same geographical place does not guarantee returning to the sam
 
 If enough time has passed, the place is different.
 
-People are gone.
-
-Languages change.
-
-Institutions vanish.
-
-Landscapes shift.
+People are gone, languages change, institutions vanish and landscapes shift.
 
 The traveller can come home and still not come back.
 
@@ -39472,15 +39396,7 @@ It is not total shell transition.
 
 That means the same architecture can support smaller events.
 
-Local gates.
-
-Local boundary access.
-
-One traveller.
-
-One route.
-
-The larger world remains stable.
+Local gates and local boundary access may involve one traveller and one route while the larger world remains stable.
 
 That is exactly what the many-throat model needs.
 
@@ -39638,17 +39554,7 @@ Time does not have to come back with them.
 
 Urashima Tarō belongs in this book because it takes the Otherworld time problem and makes it almost brutally simple.
 
-A fisherman leaves home.
-
-Crosses a water boundary.
-
-Enters a palace beneath the sea.
-
-Experiences what seems like a short stay.
-
-Returns.
-
-Finds that centuries have passed.
+A fisherman leaves home, crosses a water boundary, enters a palace beneath the sea, experiences what seems like a short stay, returns and finds that centuries have passed.
 
 Then one final act collapses the distance between his experienced age and the age of the world he has returned to.
 
@@ -39674,15 +39580,7 @@ It is water.
 
 This matters because the sea is one of the best natural symbols for transition.
 
-It separates.
-
-Carries.
-
-Hides.
-
-Reflects.
-
-Contains depth.
+It separates, carries, hides, reflects and contains depth.
 
 The traveller can move across its surface while having no ordinary access to what lies beneath.
 
@@ -39700,15 +39598,7 @@ Something associated with the other domain makes passage possible.
 
 That pattern keeps recurring:
 
-Niamh.
-
-Sleipnir.
-
-al-Burāq.
-
-Water horses.
-
-Boats guided into strange seas.
+Niamh, Sleipnir, al-Burāq, water horses and boats guided into strange seas all occupy versions of the carrier or guide role.
 
 The carrier belongs to the route in a way the traveller does not.
 
@@ -39754,9 +39644,7 @@ The ordinary world does not pause while the traveller is absent.
 
 History continues.
 
-People die.
-
-Generations pass.
+People die and generations pass.
 
 The place remains geographically recognisable enough to return to, but socially it is gone.
 
@@ -39882,13 +39770,7 @@ That matters.
 
 A local gate can be enough.
 
-One fisherman.
-
-One route.
-
-One Otherworld.
-
-The larger world remains ordinary.
+One fisherman, one route and one Otherworld are enough while the larger world remains ordinary.
 
 This is why Part XI is important.
 
@@ -39906,13 +39788,7 @@ It becomes a **temporal transition medium**.
 
 That is a strong mythic image because travel over water already disconnects the traveller from ordinary land-based rhythms.
 
-No roads.
-
-No familiar landmarks.
-
-No local community.
-
-The horizon erases distance.
+No roads, familiar landmarks or local community remain, while the horizon erases distance.
 
 The story amplifies that ordinary dislocation into temporal dislocation.
 
@@ -39954,11 +39830,7 @@ A physical Vardath model would have to derive the rate from the geometry or stat
 
 The tamatebako becomes even more interesting if I treat it as an enclosure carrying a condition from the Otherworld into ordinary space.
 
-The box is closed.
-
-The consequence is deferred.
-
-Opening changes the traveller's state.
+The box is closed, the consequence is deferred, and opening changes the traveller's state.
 
 Again, this is narrative logic, not a proposed time battery.
 
@@ -40059,15 +39931,7 @@ That is what a time door looks like when the traveller survives long enough to u
 
 The Seven Sleepers belong in this book because they reverse the usual time-door pattern.
 
-The travellers do not cross into another visible world.
-
-The world moves around them.
-
-They enter an enclosure.
-
-Time outside continues.
-
-They awaken into another historical age.
+The travellers do not cross into another visible world; the world moves around them. They enter an enclosure, time outside continues, and they awaken into another historical age.
 
 That makes the cave itself the important mechanism in the comparative grammar.
 
@@ -40085,15 +39949,7 @@ That is one of the clearest examples in the entire book of **enclosure carrying 
 
 Most carriers in the book move.
 
-Boat.
-
-Horse.
-
-Ark.
-
-Bridge.
-
-Road.
+Boat, horse, ark, bridge and road are moving carriers or routes.
 
 The cave is different.
 
@@ -40113,9 +39969,7 @@ This is a powerful correction to the assumption that travel requires motion thro
 
 The sleepers' experience is defined by discontinuity.
 
-Before enclosure, one social and political world.
-
-After awakening, another.
+Before enclosure there is one social and political world; after awakening, another.
 
 The place may be similar.
 
@@ -40141,17 +39995,7 @@ It preserves identity across a historical interval.
 
 That gives the enclosure principle another function.
 
-Ark:
-
-protect life through environmental catastrophe.
-
-Egg:
-
-protect development before emergence.
-
-Cave of the Sleepers:
-
-protect identity through temporal discontinuity.
+The ark protects life through environmental catastrophe, the egg protects development before emergence, and the Cave of the Sleepers protects identity through temporal discontinuity.
 
 That is a remarkable expansion of the same basic form.
 
@@ -40175,15 +40019,7 @@ That is exactly the kind of idea I would expect if boundaries can alter relation
 
 The sleepers form a small world.
 
-The cave is boundary.
-
-Inside:
-
-continuity.
-
-Outside:
-
-history.
+The cave is boundary: inside is continuity, outside is history.
 
 That is almost a miniature version of the world-turn idea.
 
@@ -40257,13 +40093,7 @@ Those meanings do not become Vardath machinery.
 
 My comparison sits underneath at the structural level:
 
-people enclosed,
-
-long interval,
-
-changed outside world,
-
-awakening.
+people enclosed, long interval, changed outside world and awakening.
 
 ## The cave as a boundary with duration
 
@@ -40271,11 +40101,7 @@ This also deepens the gate concept.
 
 A gate usually sounds like a moment.
 
-Open.
-
-Cross.
-
-Close.
+Open, cross and close describe the usual momentary gate sequence.
 
 The Seven Sleepers suggest that a boundary can create a **duration-state**.
 
@@ -40347,17 +40173,7 @@ A physical Vardath hypothesis would need evidence for the second, not merely the
 
 If centuries pass outside while the sleepers remain biologically intact, what happens to metabolism?
 
-Food.
-
-Water.
-
-Cell repair.
-
-Ageing.
-
-Waste.
-
-Temperature.
+Food, water, cell repair, ageing, waste and temperature all become physical preservation problems.
 
 The story resolves these through divine preservation.
 
@@ -40416,11 +40232,7 @@ That is an extraordinarily clean temporal analogue.
 
 The cave also reinforces the nested-enclosure idea.
 
-Person inside cave.
-
-Cave inside world.
-
-World inside larger shell.
+Person inside cave, cave inside world, world inside larger shell.
 
 Each level can preserve an inside from conditions outside it.
 
@@ -40466,23 +40278,7 @@ What if it can also separate rates of time?
 
 Fairy stories matter to Vardath Cosmology because they make the gate local.
 
-No world-ending catastrophe.
-
-No cosmic mountain.
-
-No primordial ocean.
-
-A hill.
-
-A tree.
-
-A ford.
-
-A mound.
-
-A rider.
-
-A place that looks ordinary until the boundary changes.
+No world-ending catastrophe, cosmic mountain or primordial ocean is required: only a hill, tree, ford, mound, rider or place that looks ordinary until the boundary changes.
 
 Then another world is suddenly next door.
 
@@ -40522,15 +40318,7 @@ The important thing about fairyland is that it is not reached by rocket or cosmi
 
 The threshold belongs to ordinary country.
 
-A hill.
-
-A path.
-
-A ford.
-
-A tree.
-
-A mound.
+A hill, path, ford, tree or mound can carry the threshold.
 
 That gives Vardath Cosmology one of its strongest local principles:
 
@@ -40546,15 +40334,7 @@ That is exactly how a phase-dependent node would behave.
 
 Fairy mounds are especially useful because they combine several Vardath categories at once.
 
-Enclosure.
-
-Local node.
-
-Otherworld interior.
-
-Boundary.
-
-Time difference.
+Enclosure, local node, Otherworld interior, boundary and time difference all meet in the fairy mound.
 
 The mound is part of the landscape.
 
@@ -40602,11 +40382,7 @@ Information crosses.
 
 That is another recurring gate category.
 
-Watchers bring knowledge down.
-
-Muhammad returns from ascent with religious instruction.
-
-Fairy travellers return with prophecy, music or altered understanding.
+Watchers bring knowledge down, Muhammad returns from ascent with religious instruction, and fairy travellers return with prophecy, music or altered understanding.
 
 The gate can transfer **pattern** as well as matter.
 
@@ -40654,11 +40430,7 @@ The boundary becomes crossable under specific conditions.
 
 That is much more like a physical system than a permanent magical door.
 
-Tides work like that.
-
-Orbital windows work like that.
-
-Seasonal passes work like that.
+Tides, orbital windows and seasonal passes all work through phase-dependent access.
 
 A gate-state could also work like that.
 
@@ -40722,15 +40494,7 @@ That makes crossings politically and socially complicated as well as physically 
 
 Thomas and Tam Lin also remind me that "fairy time" covers several different problems.
 
-Different elapsed time.
-
-Seasonal gate timing.
-
-Conditional return.
-
-Changed status.
-
-Transformation.
+Different elapsed time, seasonal gate timing, conditional return, changed status and transformation should remain distinct effects.
 
 These should not be collapsed into one single claim.
 
@@ -40892,17 +40656,7 @@ They may be the smallest camera angle on the largest idea in the book.
 
 A well is one of the simplest possible gates.
 
-A hole in the ground.
-
-Water.
-
-Depth.
-
-A narrow opening.
-
-Ordinary landscape above.
-
-Another world below.
+A hole in the ground, water, depth, a narrow opening, ordinary landscape above and another world below make the well one of the simplest possible gates.
 
 That is why *Frau Holle* belongs so naturally in the Vardath time-door section.
 
@@ -40954,17 +40708,7 @@ It is beside the road.
 
 Wells are powerful threshold images because they combine several things at once.
 
-A visible surface.
-
-Hidden depth.
-
-Water.
-
-Narrowness.
-
-Reflection.
-
-Descent.
+A visible surface, hidden depth, water, narrowness, reflection and descent all meet in the well.
 
 They are natural places for human imagination to attach another world.
 
@@ -40984,11 +40728,7 @@ The traveller follows cargo.
 
 This is a small detail, but it fits the transfer grammar beautifully.
 
-Matter crosses.
-
-Then life crosses.
-
-The route exists before the traveller understands it.
+Matter crosses, then life crosses, while the route exists before the traveller understands it.
 
 That is exactly how a natural gate would look from human scale.
 
@@ -41040,13 +40780,7 @@ That is exactly the kind of small local event Part XI is meant to explore.
 
 Frau Holle occupies another familiar role.
 
-Receiver.
-
-Host.
-
-Judge.
-
-Operator of return.
+Receiver, host, judge and operator of return all sit within Frau Holle's role.
 
 The traveller does not control the Otherworld.
 
@@ -41096,13 +40830,7 @@ A throat may connect regions.
 
 That does not mean the path through it behaves identically in both directions.
 
-Pressure.
-
-Flow.
-
-Timing.
-
-Node state.
+Pressure, flow, timing and node state can all make routes asymmetric.
 
 All can make routes asymmetric.
 
@@ -41208,15 +40936,7 @@ The place looks ordinary until it does not.
 
 Part of the power of the well image comes from ordinary reality.
 
-At the surface there is air and light.
-
-Below there is cooler rock.
-
-Then groundwater.
-
-Different pressure.
-
-Different acoustics.
+At the surface there is air and light; below there is cooler rock, then groundwater, different pressure and different acoustics.
 
 A well is already a vertical route through changing conditions even before fairy tale begins.
 
@@ -41232,13 +40952,7 @@ That is another useful analogy for a Vardath node.
 
 The visible structure can stay in the same place while the hidden medium beneath it changes.
 
-Flow rises.
-
-Falls.
-
-Changes chemistry.
-
-Responds to rainfall or pressure.
+Flow rises and falls, changes chemistry and responds to rainfall or pressure.
 
 The gate analogy therefore does not depend on the well physically moving.
 
@@ -41315,17 +41029,7 @@ And once the traveller comes back, all that remains is the well.
 
 Avalon belongs in this book because it gives the Otherworld problem a geography that feels almost reachable.
 
-An island.
-
-Across water.
-
-Associated with healing.
-
-Connected to Arthur's final departure from the ordinary political world.
-
-Close enough to be named.
-
-Far enough that ordinary travel does not make it available on demand.
+An island across water, associated with healing and Arthur's final departure from the ordinary political world, is close enough to be named and far enough that ordinary travel does not make it available on demand.
 
 That is exactly the kind of place the Vardath natural time-door keeps producing.
 
@@ -41441,15 +41145,7 @@ That gives another version of the same ancient problem:
 
 **how can something remain coherent while the larger world changes?**
 
-Ark.
-
-Cave.
-
-Island.
-
-Different shapes.
-
-Same protective logic.
+Ark, cave and island are different shapes expressing the same protective logic.
 
 ## Healing changes the meaning of enclosure
 
@@ -41467,15 +41163,7 @@ A successful reset needs more than escape.
 
 After the violent phase comes:
 
-cooling,
-
-settling,
-
-repair,
-
-biological recovery,
-
-reorganisation.
+cooling, settling, repair, biological recovery and reorganisation.
 
 Avalon gives that recovery phase a human image.
 
@@ -41521,11 +41209,7 @@ The idea of Arthur as a king connected to future return is especially interestin
 
 The same figure belongs to:
 
-past memory,
-
-present absence,
-
-future expectation.
+past memory, present absence and future expectation.
 
 That is almost a human version of previous-present-next.
 
@@ -41633,11 +41317,7 @@ The Otherworld category contains several different functions and should not be r
 
 The expectation that Arthur may return preserves identity across historical discontinuity.
 
-The kingdom changes.
-
-The king is absent.
-
-Yet cultural memory treats the relationship as unfinished.
+The kingdom changes and the king is absent, yet cultural memory treats the relationship as unfinished.
 
 Structurally, that is a powerful version of handoff:
 
@@ -41692,15 +41372,7 @@ That is exactly what the world-turn model allows.
 
 This is why islands work so well in legend.
 
-They are bounded.
-
-Visible in imagination.
-
-Separated by a medium.
-
-Possible to approach.
-
-Impossible to possess completely.
+They are bounded, visible in imagination, separated by a medium, possible to approach and impossible to possess completely.
 
 The geography itself creates the right emotional structure for an Otherworld.
 
@@ -41726,19 +41398,7 @@ And the possibility of return sits outside ordinary reach.
 
 Alice belongs in this book because Lewis Carroll takes ordinary threshold objects and makes them behave like impossible geometry.
 
-A rabbit hole.
-
-A mirror.
-
-A door.
-
-A key.
-
-A bottle.
-
-A cake.
-
-A room that changes meaning when Alice changes size.
+A rabbit hole, mirror, door, key, bottle, cake and room that changes meaning when Alice changes size all turn boundary problems into story.
 
 Then, inside Wonderland, time itself becomes a character and a problem.
 
@@ -41814,13 +41474,7 @@ That is exactly the kind of mismatch I keep finding in Otherworld stories.
 
 Wonderland then gives Alice more thresholds.
 
-Doors.
-
-Keys.
-
-Passages.
-
-A tiny door into a beautiful garden.
+Doors, keys, passages and a tiny door into a beautiful garden create thresholds inside thresholds.
 
 The story does not treat crossing as one simple event.
 
@@ -41842,11 +41496,7 @@ A gate has capacity.
 
 A route that admits one thing may not admit another.
 
-Size matters.
-
-Shape matters.
-
-State matters.
+Size, shape and state all matter.
 
 Alice turns that mechanical problem into nonsense comedy.
 
@@ -41862,13 +41512,7 @@ Sometimes Alice does not alter the doorway.
 
 She alters herself.
 
-Eat.
-
-Drink.
-
-Grow.
-
-Shrink.
+Eat, drink, grow and shrink: Alice changes herself rather than the doorway.
 
 The route remains.
 
@@ -41894,13 +41538,7 @@ That connects surprisingly well to the mirror-self material later in Part XI.
 
 If a traveller changes state enough during crossing, what preserves identity?
 
-Body size can change.
-
-Environment can change.
-
-Rules can change.
-
-Time can change.
+Body size, environment, rules and time can all change while continuity of self remains.
 
 Yet the traveller still experiences continuity of self.
 
@@ -41910,15 +41548,7 @@ That is exactly the philosophical problem hidden inside any time-door story.
 
 Wonderland is absurd, but it is not empty randomness.
 
-It has characters.
-
-Places.
-
-Authorities.
-
-Games.
-
-Rules that are strange but locally persistent enough for Alice to encounter them.
+It has characters, places, authorities, games and rules strange but locally persistent enough for Alice to encounter them.
 
 That matters because an Otherworld needs local order.
 
@@ -41972,15 +41602,7 @@ A system can fail because it cannot progress.
 
 That belongs beside other state failures in the book.
 
-Too open.
-
-Too closed.
-
-Too concentrated.
-
-Too fast.
-
-Too slow.
+Too open, too closed, too concentrated, too fast or too slow are all forms of state failure.
 
 Or, here:
 
@@ -42018,13 +41640,7 @@ The Vardath next world may also be related without being a copy.
 
 The mirror captures:
 
-continuity,
-
-difference,
-
-inversion,
-
-adjacency.
+continuity, difference, inversion and adjacency.
 
 That makes it one of the strongest modern threshold symbols.
 
@@ -42098,17 +41714,7 @@ He did something more culturally revealing.
 
 He took the objects of ordinary childhood experience and showed how little they would need to change before the entire world became structurally impossible.
 
-A hole becomes too deep.
-
-A door becomes too small.
-
-A body becomes the wrong scale.
-
-A clock becomes socially alive.
-
-Time stops.
-
-A mirror becomes a road.
+A hole becomes too deep, a door too small, a body the wrong scale, a clock socially alive, time stops and a mirror becomes a road.
 
 Those are all boundary problems.
 
@@ -42130,19 +41736,7 @@ And the only thing that has to change is the relationship between here and there
 
 Narnia belongs in this book because C. S. Lewis makes the relationship among worlds explicit.
 
-Not one portal.
-
-Not one secret kingdom.
-
-Many worlds.
-
-A quiet place between them.
-
-Pools that act as local doors.
-
-Rings that allow travellers to enter the system.
-
-Different worlds existing side by side without merging.
+Not one portal or secret kingdom, but many worlds, a quiet place between them, pools acting as local doors, rings allowing travellers to enter the system, and different worlds existing side by side without merging.
 
 That is almost exactly the architecture I have been trying to describe.
 
@@ -42190,15 +41784,7 @@ The entrance is mundane.
 
 That is exactly the kind of local gate folklore keeps producing.
 
-A cupboard.
-
-A tunnel.
-
-A mound.
-
-A well.
-
-A pool.
+A cupboard, tunnel, mound, well or pool can become the mundane address of an extraordinary connection.
 
 The extraordinary is attached to ordinary structure.
 
@@ -42242,13 +41828,7 @@ That is exactly the natural time-door question.
 
 Digory and Polly use magical rings and arrive not directly in one destination world, but in the Wood Between the Worlds.
 
-The Wood is quiet.
-
-Drowsy.
-
-Full of pools.
-
-Each pool can lead to another world.
+The Wood is quiet, drowsy and full of pools, each of which can lead to another world.
 
 This may be the single clearest modern fictional analogue for the many-node Vardath system.
 
@@ -42284,13 +41864,7 @@ There are multiple local openings inside one larger connecting region.
 
 That is almost exactly how I now picture the lattice.
 
-Many nodes.
-
-Many possible throats.
-
-A larger connected architecture.
-
-Local access.
+Many nodes, many possible throats, a larger connected architecture and local access make the Wood especially close to the lattice model.
 
 The Wood turns that into a simple story image.
 
@@ -42380,13 +41954,7 @@ The story then moves into the creation of Narnia.
 
 That gives the fiction a remarkable range.
 
-Dead world.
-
-Transit world.
-
-Ordinary Earth.
-
-New world being born.
+Dead world, transit world, ordinary Earth and a new world being born coexist inside one larger architecture.
 
 Several world-states exist inside one larger architecture.
 
@@ -42436,11 +42004,7 @@ He gives the imagination a very clear example.
 
 Another interesting feature is that Narnian access is not always one permanent doorway.
 
-Wardrobe.
-
-Rings and pools.
-
-Other means in later stories.
+Wardrobe, rings and pools, and other means in later stories show that access need not rely on one permanent doorway.
 
 That fits the Vardath model far better than a single unique portal.
 
@@ -42490,11 +42054,7 @@ The wardrobe is one gate.
 
 The Wood is the network logic.
 
-Many worlds.
-
-Many local addresses.
-
-One intermediate relation-space.
+Many worlds, many local addresses and one intermediate relation-space summarise the network logic.
 
 That is why this chapter belongs near the end of the book.
 
@@ -42560,13 +42120,7 @@ The door comes to the traveller.
 
 Most portal stories begin with curiosity.
 
-Open the door.
-
-Enter the cave.
-
-Follow the rabbit.
-
-Step into the wardrobe.
+Open the door, enter the cave, follow the rabbit or step into the wardrobe: Dorothy does none of these.
 
 Dorothy does none of those things.
 
@@ -42584,17 +42138,7 @@ That is much closer to catastrophe mythology.
 
 A cyclone is an especially powerful fictional vehicle because it already has several properties the Vardath model cares about.
 
-Rotation.
-
-Pressure difference.
-
-Vertical motion.
-
-Violent wind.
-
-A defined region of extreme conditions.
-
-A quieter interior in some storm structures.
+Rotation, pressure difference, vertical motion, violent wind, a defined region of extreme conditions and a quieter interior in some storm structures all make the storm a natural transition image.
 
 The story exaggerates these natural features into inter-world transport.
 
@@ -42624,15 +42168,7 @@ That matters.
 
 In a natural catastrophe, the objects that preserve life may be improvised.
 
-House.
-
-Cave.
-
-Boat.
-
-Cellar.
-
-Island.
+House, cave, boat, cellar or island can become ark-like if it maintains a coherent inside.
 
 Anything that maintains a coherent inside can become ark-like under the right conditions.
 
@@ -42724,17 +42260,7 @@ The world on the other side can still have roads, cities, regions and ordinary l
 
 Like Wonderland and Narnia, Oz has internal structure.
 
-Munchkin Country.
-
-Emerald City.
-
-Forests.
-
-Witches.
-
-Roads.
-
-Political order.
+Munchkin Country, Emerald City, forests, witches, roads and political order make Oz an organised destination rather than a void.
 
 The traveller enters a world, not a void.
 
@@ -42778,9 +42304,7 @@ That is exactly what a complex network could produce.
 
 The Silver Shoes make return almost instantaneous.
 
-Three steps.
-
-Home.
+Three steps, then home.
 
 Again, this is fantasy.
 
@@ -42838,11 +42362,7 @@ If people crossed world-times, they would not remain neutral observers.
 
 They would interact.
 
-Leave stories.
-
-Create ancestry.
-
-Carry knowledge.
+They would leave stories, create ancestry and carry knowledge.
 
 The gate would have historical consequences.
 
@@ -42876,11 +42396,7 @@ That means transportation is not abstract.
 
 The traveller experiences force.
 
-Motion.
-
-Noise.
-
-Danger.
+Motion, noise and danger make the route environmental rather than abstract.
 
 The route is environmental.
 
@@ -42894,21 +42410,7 @@ Oz gives that intuition a familiar fictional form.
 
 So far, Part XI has used:
 
-sea,
-
-cave,
-
-mound,
-
-well,
-
-island,
-
-rabbit hole,
-
-mirror,
-
-wood and pool.
+sea, cave, mound, well, island, rabbit hole, mirror, wood and pool.
 
 Oz adds atmosphere.
 
@@ -43078,11 +42580,7 @@ This is one of the strongest ideas in the whole chapter.
 
 Bastian begins as witness.
 
-He reads.
-
-He watches.
-
-He believes the story is separate from him.
+He reads, watches and believes the story is separate from him.
 
 Then the gate reveals that his role is larger.
 
@@ -43210,13 +42708,7 @@ That is the opposite of the lattice.
 
 Fantasia survives through relation.
 
-Story.
-
-Naming.
-
-Imagination.
-
-Memory.
+Story, naming, imagination and memory all become part of Fantasia's continuity.
 
 The exact metaphysics belong to Ende's work.
 
@@ -43260,17 +42752,7 @@ This reinforces one of the strongest ideas Part XI has produced.
 
 There is no universal portal rule.
 
-One gate needs a key.
-
-Another forbids looking back.
-
-Another appears at Halloween.
-
-Another requires a guide.
-
-Another opens during a storm.
-
-Another is entered by falling.
+One gate needs a key, another forbids looking back, another appears at Halloween, another requires a guide, another opens during a storm and another is entered by falling.
 
 The diversity may be storytelling.
 
@@ -43292,15 +42774,7 @@ It breaks the assumption that one description level is the whole world.
 
 That is exactly what the cosmology keeps asking me to do.
 
-Surface.
-
-Lattice.
-
-World-turn.
-
-Time relation.
-
-Myth.
+Surface, lattice, world-turn, time relation and myth may all be different descriptive levels of one larger structure.
 
 These may all be different descriptive levels of one larger structure.
 
@@ -43318,13 +42792,7 @@ The traveller has to confront the fact that the boundary connects worlds more de
 
 That is exactly how the natural time-door idea developed for me.
 
-At first the gate joined places.
-
-Then worlds.
-
-Then times.
-
-Then it raised the possibility of meeting another version of oneself.
+At first the gate joined places, then worlds, then times, and finally raised the possibility of meeting another version of oneself.
 
 The mirror is the natural symbol for that final turn.
 
@@ -43364,17 +42832,7 @@ That turns the observer into part of the threshold.
 
 It is exactly the kind of image that appears whenever stories approach the question of self across worlds.
 
-Mirror self.
-
-Double.
-
-Future self.
-
-Past self.
-
-Reader and character.
-
-Traveller and observer.
+Mirror self, double, future self, past self, reader and character, traveller and observer all make the surface between them stop being passive.
 
 The surface between them stops being passive.
 
@@ -43410,17 +42868,7 @@ It changes.
 
 The Shimmer is a visibly bounded region.
 
-People enter.
-
-Ordinary communication and orientation degrade.
-
-Biology changes.
-
-Landscape changes.
-
-Memory becomes unreliable.
-
-Forms blend.
+People enter, ordinary communication and orientation degrade, biology and landscape change, memory becomes unreliable and forms blend.
 
 The deeper the traveller goes, the harder it becomes to say where one organism ends and another begins.
 
@@ -43480,13 +42928,7 @@ That is exactly what activation and convergence imply.
 
 Inside the film, characters describe the Shimmer through refraction.
 
-Light.
-
-Signals.
-
-DNA.
-
-Biological traits.
+Light, signals, DNA and biological traits are all described through the film's language of refraction.
 
 The fiction treats the zone as something that mixes and redirects information across organisms and environments.
 
@@ -43498,17 +42940,7 @@ It can **reorganise what crosses it**.
 
 That possibility has already appeared throughout the book.
 
-Transfer damage.
-
-Mutation.
-
-Hybridisation.
-
-Meltology.
-
-Sediment mixing.
-
-Cultural memory distortion.
+Transfer damage, mutation, hybridisation, Meltology, sediment mixing and cultural memory distortion all belong to the wider question of reorganisation across a boundary.
 
 *Annihilation* makes the same process biological and immediate.
 
@@ -43582,15 +43014,7 @@ That makes the boundary feel total.
 
 It affects:
 
-body,
-
-memory,
-
-space,
-
-communication,
-
-identity.
+body, memory, space, communication and identity.
 
 A world-state is not one variable.
 
@@ -43620,9 +43044,7 @@ As Lena approaches the lighthouse, the boundary problem intensifies.
 
 That creates a spatial gradient.
 
-Farther in.
-
-More altered.
+Farther in means more altered.
 
 That is a useful model for a real transition zone.
 
@@ -43630,11 +43052,7 @@ A gate should not necessarily have uniform conditions across its whole extent.
 
 There can be gradients.
 
-Edge.
-
-Interior.
-
-Core.
+Edge, interior and core give the transition zone a spatial gradient.
 
 That is much more physically plausible than one magical surface with no thickness.
 
@@ -43720,17 +43138,7 @@ That tells me the mirror-self motif is broader than one mechanism.
 
 It may express:
 
-duplication,
-
-identity crisis,
-
-parallel world,
-
-transformation,
-
-time displacement,
-
-or self-recognition.
+duplication, identity crisis, parallel world, transformation, time displacement or self-recognition.
 
 The image survives because it is a powerful way to represent a boundary reaching identity.
 
@@ -43738,13 +43146,7 @@ The image survives because it is a powerful way to represent a boundary reaching
 
 The film also refuses to isolate biological change from environmental change.
 
-Plants.
-
-Animals.
-
-Human bodies.
-
-Buildings and terrain.
+Plants, animals, human bodies, buildings and terrain all belong to the altered system.
 
 Everything inside the zone belongs to the altered system.
 
@@ -43784,15 +43186,7 @@ The gate can close externally.
 
 The traveller can still carry its consequence.
 
-Biological change.
-
-Memory.
-
-Knowledge.
-
-Object.
-
-Mark.
+Biological change, memory, knowledge, object or mark can remain after the external gate closes.
 
 The story after the portal can continue because the crossing has been internalised.
 
@@ -43874,21 +43268,7 @@ At the deepest point of the strange world, the traveller meets the mirror.
 
 *Spirited Away* belongs near the end of this book because it combines almost every local-threshold problem in one story.
 
-An ordinary family takes a wrong road.
-
-They find a tunnel.
-
-Cross it.
-
-Enter a place that looks abandoned.
-
-Night falls.
-
-The place fills with spirits.
-
-The parents transform.
-
-The boundary back to the ordinary world becomes unavailable.
+An ordinary family takes a wrong road, finds a tunnel, crosses it, enters a place that looks abandoned, and then night falls, spirits arrive, the parents transform and the boundary back to the ordinary world becomes unavailable.
 
 Chihiro has to work inside the other realm, recover identity, free her parents and cross back through the same landscape under different conditions.
 
@@ -43922,11 +43302,7 @@ The traveller does not necessarily know a threshold has been crossed until ordin
 
 The tunnel is the obvious gate image.
 
-Narrow.
-
-Dark.
-
-Connecting two broad environments.
+Narrow, dark and connecting two broad environments, the tunnel is the obvious gate image.
 
 Again:
 
@@ -44006,11 +43382,7 @@ That places *Spirited Away* beside *Annihilation*, though the tone and mechanism
 
 Crossing can change identity.
 
-Body.
-
-Name.
-
-Status.
+Body, name and status can all change across the crossing.
 
 The traveller is not guaranteed to remain untouched.
 
@@ -44018,11 +43390,7 @@ The traveller is not guaranteed to remain untouched.
 
 Food appears repeatedly in Otherworld traditions.
 
-Do not eat.
-
-Eat to remain.
-
-Eat and become trapped.
+Do not eat, eat to remain, or eat and become trapped: the rules vary.
 
 The rules vary.
 
@@ -44046,15 +43414,7 @@ A route can admit a person who is not yet compatible with the destination.
 
 That is mechanically sensible.
 
-Atmosphere.
-
-Pressure.
-
-Temperature.
-
-Biology.
-
-Field conditions.
+Atmosphere, pressure, temperature, biology and field conditions all affect compatibility.
 
 A real other world could be accessible and still be uninhabitable **to us**, even while supporting its own inhabitants and conditions.
 
@@ -44114,21 +43474,7 @@ That is exactly what mythology itself may do.
 
 Like every strong threshold story, the destination is not empty.
 
-It has hierarchy.
-
-Labour.
-
-Rules.
-
-Contracts.
-
-Visitors.
-
-Food.
-
-Economy.
-
-Conflict.
+It has hierarchy, labour, rules, contracts, visitors, food, economy and conflict.
 
 The other realm exists independently of Chihiro's arrival.
 
@@ -44206,13 +43552,7 @@ At the final return, Chihiro is warned not to look back until she is through.
 
 This ancient threshold rule appears again in modern animation.
 
-Orpheus.
-
-Lot's wife.
-
-Fairy-return stories.
-
-Now Chihiro.
+Orpheus, Lot's wife, fairy-return stories and now Chihiro all preserve versions of the backward-glance rule.
 
 I do not think all these stories encode one physical hazard.
 
@@ -44230,9 +43570,7 @@ This may be the most important final image.
 
 The gate closes back into landscape.
 
-The tunnel remains.
-
-The extraordinary world is no longer visibly active.
+The tunnel remains, but the extraordinary world is no longer visibly active.
 
 That is exactly the Vardath local-gate model.
 
@@ -44344,77 +43682,11 @@ And afterward the tunnel was only a tunnel again.
 
 I began this expansion by looking outward.
 
-Mesopotamia.
-
-Egypt.
-
-Iran.
-
-India.
-
-Buddhist and Jain worlds.
-
-Greece.
-
-Norse cosmology.
-
-Genesis and Enoch.
-
-Islamic ascent.
-
-Māori and Polynesian creation.
-
-Haudenosaunee descent.
-
-Maya and Mexica world sequences.
-
-Chinese and Japanese creation and boundary stories.
-
-Yoruba descent.
-
-Finnish and Karelian world formation.
-
-Aboriginal Australian paths and serpent traditions.
-
-Hopi emergence.
-
-Irish Otherworld time.
-
-Japanese fairy time.
-
-Christian and Islamic sleepers.
-
-Scottish fairyland.
-
-German wells.
-
-Avalon.
-
-Alice.
-
-Narnia.
-
-Oz.
-
-*The NeverEnding Story*.
-
-*Annihilation*.
-
-*Spirited Away*.
+Mesopotamia, Egypt, Iran, India, Buddhist and Jain worlds, Greece, Norse cosmology, Genesis and Enoch, Islamic ascent, Māori and Polynesian creation, Haudenosaunee descent, Maya and Mexica world sequences, Chinese and Japanese creation and boundary stories, Yoruba descent, Finnish and Karelian world formation, Aboriginal Australian paths and serpent traditions, Hopi emergence, Irish Otherworld time, Japanese fairy time, Christian and Islamic sleepers, Scottish fairyland, German wells, Avalon, Alice, Narnia, Oz, *The NeverEnding Story*, *Annihilation* and *Spirited Away* all entered the comparison.
 
 If I had approached all of those looking for one repeated symbol, the result would have been useless.
 
-There is no one symbol.
-
-There is no one god.
-
-There is no one mountain.
-
-There is no one serpent.
-
-There is no one flood.
-
-There is no one story.
+There is no one symbol, god, mountain, serpent, flood or story.
 
 What keeps repeating is something deeper.
 
@@ -44424,33 +43696,7 @@ That is the common structure I see.
 
 ## The door is not always a door
 
-Sometimes it is a tree.
-
-Sometimes a mountain.
-
-Sometimes a ladder.
-
-Sometimes a bridge.
-
-Sometimes a well.
-
-Sometimes a cave.
-
-Sometimes a mound.
-
-Sometimes a sea.
-
-Sometimes a tunnel.
-
-Sometimes a wardrobe.
-
-Sometimes a mirror.
-
-Sometimes a storm.
-
-Sometimes a small hole in the floor.
-
-Sometimes a world-serpent moving out of its ordinary place.
+Sometimes it is a tree, mountain, ladder, bridge, well, cave, mound, sea, tunnel, wardrobe, mirror, storm, small hole in the floor or world-serpent moving out of its ordinary place.
 
 Sometimes the boundary between Heaven and Earth simply stops behaving as it normally does.
 
@@ -44480,17 +43726,7 @@ A local node can exist while the larger structure remains quiet.
 
 Then something changes.
 
-Current.
-
-Pressure.
-
-Timing.
-
-Geometry.
-
-Phase.
-
-Adjacency.
+Current, pressure, timing, geometry, phase and adjacency can all change the route's availability.
 
 The route becomes available.
 
@@ -44510,17 +43746,7 @@ The right place is not enough.
 
 The right time matters.
 
-Sunset.
-
-Halloween.
-
-Night.
-
-A particular world-state.
-
-A storm.
-
-A period of activation.
+Sunset, Halloween, night, a particular world-state, a storm or a period of activation can all define the phase.
 
 That gives the most compact gate address I know:
 
@@ -44538,27 +43764,9 @@ That is much more like a natural process than a permanent magical portal.
 
 The geometry repeats everywhere.
 
-A broad world.
+A broad world, a narrow connector and another broad world form the recurring geometry.
 
-A narrow connector.
-
-Another broad world.
-
-Rabbit hole.
-
-Well.
-
-Sipapu.
-
-Cave mouth.
-
-Tunnel.
-
-Ladder.
-
-Bridge.
-
-Throat.
+Rabbit hole, well, sipapu, cave mouth, tunnel, ladder, bridge and throat all reduce transfer to the same intuitive topology.
 
 The stories keep reducing world-to-world transfer into the same intuitive shape:
 
@@ -44606,13 +43814,7 @@ Both statements can be true.
 
 Bifröst and Sleipnir forced another distinction.
 
-Route.
-
-Vehicle.
-
-Traveller.
-
-Guardian.
+Route, vehicle, traveller and guardian are different jobs.
 
 These are different jobs.
 
@@ -44620,35 +43822,13 @@ That role grammar became one of the most useful tools in the whole investigation
 
 A story can contain several extraordinary things without every one representing the same mechanism.
 
-The bridge connects.
-
-The horse carries.
-
-The guardian watches.
-
-The traveller crosses.
-
-The tree holds the larger world-order.
+The bridge connects, the horse carries, the guardian watches, the traveller crosses and the tree holds the larger world-order.
 
 Once I stopped collapsing those roles, the mythology became far more coherent.
 
 ## The carrier solves the survival problem
 
-Arks.
-
-Caves.
-
-Eggs.
-
-Baskets.
-
-Houses.
-
-Islands.
-
-Mounds.
-
-Sleep chambers.
+Arks, caves, eggs, baskets, houses, islands, mounds and sleep chambers all create smaller stable insides within larger unstable outsides.
 
 A carrier creates a smaller stable inside while the larger outside becomes unstable.
 
@@ -44670,15 +43850,7 @@ Sometimes the traveller opens the door.
 
 Sometimes the event takes the traveller.
 
-Cyclone.
-
-Flood.
-
-Collapse.
-
-Falling.
-
-Descent.
+Cyclone, flood, collapse, falling and descent all show the event taking the traveller rather than the traveller deliberately opening the door.
 
 A natural gate should not require human intention.
 
@@ -44694,19 +43866,7 @@ The gate does not have to create the destination.
 
 The destination can already exist.
 
-Upper world.
-
-Lower world.
-
-Spirit world.
-
-Fairyland.
-
-Narnia.
-
-Oz.
-
-Ryūgū-jō.
+Upper world, lower world, spirit world, fairyland, Narnia, Oz and Ryūgū-jō all exist as destinations with their own rules.
 
 The traveller arrives somewhere with its own rules.
 
@@ -44762,21 +43922,7 @@ Nüwa repairs.
 
 Again and again the world is made by:
 
-separating,
-
-sorting,
-
-raising,
-
-lowering,
-
-dividing,
-
-repairing,
-
-spreading,
-
-reconnecting.
+separating, sorting, raising, lowering, dividing, repairing, spreading and reconnecting.
 
 That is almost exactly how Vardath Cosmology now works.
 
@@ -44810,25 +43956,7 @@ This may be one of the most important distinctions in the entire book.
 
 Water appears almost everywhere, but not always in the same role.
 
-Primordial sea.
-
-Upper waters.
-
-Flood.
-
-Oceanic route.
-
-Well.
-
-Boundary.
-
-Carrier.
-
-Hidden land.
-
-Cleansing.
-
-Deep domain.
+Primordial sea, upper waters, flood, oceanic route, well, boundary, carrier, hidden land, cleansing and deep domain all give water different roles.
 
 This variety stopped me from treating every water story as one flood memory.
 
