@@ -13018,21 +13018,7 @@ Sometimes the same object does both, which is why the two roles are easy to blur
 
 But I think the distinction matters.
 
-An ark can be both carrier and vehicle.
-
-A cave is mostly carrier.
-
-A horse is mostly vehicle.
-
-A bridge is route infrastructure.
-
-A basket is mainly carrier moved by a medium.
-
-A chariot is an active vehicle.
-
-A world tree is structure.
-
-A guide is neither carrier nor vehicle, although the guide may use both.
+An ark can be both carrier and vehicle. A cave is mostly carrier, a horse mostly vehicle, a bridge route infrastructure, a basket mainly carrier moved by a medium, a chariot an active vehicle and a world tree structure. A guide is neither carrier nor vehicle, although the guide may use both.
 
 Separating these roles made the mythology much clearer.
 
@@ -13042,17 +13028,7 @@ The carrier’s first job is survival.
 
 It keeps cargo coherent.
 
-That cargo can be a child.
-
-A family.
-
-Animals.
-
-Seeds.
-
-Sacred objects.
-
-Memory.
+That cargo can be a child, a family, animals, seeds, sacred objects or memory.
 
 The carrier does not need to choose the route.
 
@@ -13070,13 +13046,7 @@ Their purpose is to keep the inside alive.
 
 The vehicle is more active.
 
-A horse can be ridden.
-
-A chariot can be steered.
-
-A boat can be navigated.
-
-A wheel can become a means of motion.
+A horse can be ridden, a chariot steered, a boat navigated and a wheel turned into a means of motion.
 
 The traveller uses the vehicle to cross.
 
@@ -13108,13 +13078,7 @@ That separation was a major conceptual breakthrough for me.
 
 Once Sleipnir became vehicle instead of “the whole symbol,” the other Norse roles could fall into place more naturally.
 
-Yggdrasil as world structure.
-
-Bifröst as route.
-
-Heimdall as guardian.
-
-Odin as traveller or operator depending on the episode.
+Yggdrasil can remain world structure, Bifröst the route, Heimdall the guardian, and Odin the traveller or operator depending on the episode.
 
 The mythology becomes more coherent when each role is allowed to remain itself.
 
@@ -13150,15 +13114,7 @@ That is structurally close to the Vardath idea of celestial paths carried throug
 
 Phaethon becomes the failure case.
 
-The route exists.
-
-The vehicle exists.
-
-The traveller cannot control the motion.
-
-The path breaks down.
-
-Catastrophe follows.
+The route exists and the vehicle exists, but the traveller cannot control the motion. The path breaks down and catastrophe follows.
 
 ## Boat
 
@@ -13232,15 +13188,7 @@ A guide knows how to use route and vehicle.
 
 That is different again.
 
-The guide knows when the gate is open.
-
-Where it leads.
-
-How to enter.
-
-How to return.
-
-What not to do.
+The guide knows when the gate is open, where it leads, how to enter, how to return and what not to do.
 
 That is why guides in myth often seem to possess impossible geographical knowledge.
 
@@ -13256,31 +13204,13 @@ The guardian controls the threshold.
 
 This can be physical, social, religious or mythic.
 
-The guardian may prevent entry.
-
-Demand a token.
-
-Ask a question.
-
-Fight the traveller.
-
-Judge the traveller.
+The guardian may prevent entry, demand a token, ask a question, fight the traveller or judge the traveller.
 
 The role makes sense because a gate is dangerous.
 
 A culture remembering a real hazardous threshold would naturally surround it with rules.
 
-Do not go there.
-
-Do not enter at the wrong time.
-
-Do not eat.
-
-Do not look back.
-
-Do not speak.
-
-Do not leave the path.
+Do not go there, do not enter at the wrong time, do not eat, do not look back, do not speak and do not leave the path.
 
 The guardian personifies those limits.
 
@@ -13563,17 +13493,7 @@ The final chapter of this part is about the handoff itself.
 
 I used to think of catastrophe mainly as loss.
 
-The world breaks.
-
-The flood comes.
-
-The sky changes.
-
-The land moves.
-
-Structures melt or disappear.
-
-People die.
+The world breaks, the flood comes, the sky changes, the land moves, structures melt or disappear and people die.
 
 That is all still part of the model.
 
@@ -13583,9 +13503,7 @@ The mature Vardath Cosmology is built around a different idea.
 
 **Catastrophe is also handoff.**
 
-One world gives.
-
-Another receives.
+One world gives and another receives.
 
 That is what makes the cycle continuous.
 
@@ -13593,19 +13511,7 @@ That is what makes the cycle continuous.
 
 The present world has accumulated material through a long quiet age.
 
-Water.
-
-Atmosphere.
-
-Sediment.
-
-Rock.
-
-Life.
-
-Cities.
-
-Memory.
+Water, atmosphere, sediment, rock, life, cities and memory have all accumulated through the quiet age.
 
 When the gate opens, some of that material becomes available for transfer.
 
@@ -13651,17 +13557,7 @@ This is one of the strongest reasons I think world succession is growth rather t
 
 The handoff carries the physical world forward.
 
-Water becomes future ocean.
-
-Sediment becomes future ground.
-
-Rock becomes substrate.
-
-Atmosphere becomes environment.
-
-Living cargo becomes future ecology.
-
-Built material can become future ruins.
+Water becomes future ocean, sediment future ground, rock substrate, atmosphere environment, living cargo future ecology, and built material can become future ruins.
 
 The next world is therefore made from the old one without being identical to it.
 
@@ -13675,33 +13571,13 @@ Memory.
 
 That may be just as important.
 
-A survivor remembers the sky.
-
-The flood.
-
-The road.
-
-The tree.
-
-The serpent.
-
-The beings who appeared.
-
-The land that vanished.
-
-The place where the door opened.
+A survivor remembers the sky, the flood, the road, the tree, the serpent, the beings who appeared, the land that vanished and the place where the door opened.
 
 The survivor’s children inherit the story without seeing the event themselves.
 
 After enough generations, the memory becomes mythology.
 
-Or legend.
-
-Or fairy tale.
-
-Or religion.
-
-Or a local warning about a hill nobody should enter.
+It may become legend, fairy tale, religion or even a local warning about a hill nobody should enter.
 
 The handoff therefore transfers both matter and meaning.
 
@@ -13713,17 +13589,7 @@ The event happens.
 
 Different populations experience different parts of it.
 
-Some cross.
-
-Some remain.
-
-Some are displaced.
-
-Some are carried.
-
-Some receive newcomers.
-
-Some survive in refuges.
+Some cross, some remain, some are displaced, some are carried, some receive newcomers and some survive in refuges.
 
 Their descendants preserve different fragments.
 
@@ -13757,23 +13623,7 @@ That is how the larger body accumulates history.
 
 A renewed present begins mixed after the gate event.
 
-It contains old sediment.
-
-Old water.
-
-Old organisms.
-
-Old structures.
-
-Newly formed land.
-
-Heat-altered material.
-
-Debris from the transfer.
-
-Survivors from different regions.
-
-Possibly beings or populations from different world-states.
+It contains old sediment, old water, old organisms and old structures alongside newly formed land, heat-altered material, debris from the transfer, survivors from different regions and possibly beings or populations from different world-states.
 
 That is not a pristine creation.
 
@@ -13791,21 +13641,7 @@ A world transition is not one conveyor belt carrying everything in one direction
 
 It is a reorganisation of adjacency and material.
 
-Some regions move.
-
-Others stay.
-
-Some rise a layer.
-
-Others descend.
-
-Some become buried.
-
-Some become exposed.
-
-Some people cross directly.
-
-Others survive where they are while the world-state changes around them.
+Some regions move while others stay; some rise a layer while others descend; some become buried while others are exposed. Some people cross directly while others survive where they are as the world-state changes around them.
 
 That is why the event feels like rearrangement.
 
@@ -13819,13 +13655,7 @@ The same event can be remembered as apocalypse by one generation and creation by
 
 Imagine the difference in viewpoint.
 
-For those living before the event:
-
-the world ended.
-
-For those born after it:
-
-the world began.
+For those living before the event, the world ended. For those born after it, the world began.
 
 The flood that destroyed the old world becomes the primordial water of the new one.
 
@@ -13863,13 +13693,7 @@ That is the handoff in mythic form.
 
 The Osiris cycle gives another version.
 
-Division.
-
-Gathering.
-
-Restoration.
-
-Succession.
+Division, gathering, restoration and succession form another version of the same pattern.
 
 The new order inherits from the broken old body without simply restoring the previous state exactly.
 
@@ -13877,15 +13701,7 @@ Again, the religious meaning belongs to Egypt.
 
 The Vardath reading isolates the succession structure.
 
-Old world.
-
-Division.
-
-Preservation.
-
-Reassembly.
-
-Next order.
+Old world, division, preservation, reassembly and next order form the handoff sequence.
 
 That is the handoff.
 
@@ -13919,17 +13735,7 @@ The traveller returns.
 
 Something has been transferred.
 
-Knowledge.
-
-A gift.
-
-A curse.
-
-A spouse.
-
-A child.
-
-A changed identity.
+Knowledge, a gift, a curse, a spouse, a child or a changed identity can all be what crosses back with the traveller.
 
 The world afterward is not quite the world before.
 
@@ -14163,15 +13969,7 @@ It has viewpoints.
 
 This sounds obvious until mythology is involved.
 
-A tree looks like a tree.
-
-A wheel looks like a wheel.
-
-An eye looks like an eye.
-
-A serpent looks like a serpent.
-
-A ladder looks like a ladder.
+A tree looks like a tree, a wheel like a wheel, an eye like an eye, a serpent like a serpent and a ladder like a ladder.
 
 If I treat every symbol as a literal object, then the cosmology becomes crowded very quickly. I need one cosmic tree, one cosmic wheel, one giant eye, one world serpent, one ladder and one rod all existing beside one another.
 
@@ -14187,21 +13985,7 @@ That became the bridge between geometry and mythology.
 
 When the lattice is viewed broadly or obliquely, the weave dominates.
 
-The structure looks like:
-
-net;
-
-mesh;
-
-interlace;
-
-braid;
-
-knot;
-
-serpent field;
-
-woven sky.
+The structure can look like net, mesh, interlace, braid, knot, serpent field or woven sky.
 
 This is the broadside view.
 
@@ -14219,21 +14003,7 @@ Turn the same structure and the picture changes.
 
 Now length dominates.
 
-The narrowing weave becomes:
-
-tree;
-
-rod;
-
-pillar;
-
-staff;
-
-ladder;
-
-mountain;
-
-tower.
+The narrowing weave can become tree, rod, pillar, staff, ladder, mountain or tower.
 
 This is the side-on or axial view.
 
@@ -14253,21 +14023,7 @@ Look along the axis and the picture changes again.
 
 Now radial organisation dominates.
 
-The structure can appear as:
-
-eye;
-
-wheel;
-
-star;
-
-rosette;
-
-ring;
-
-hub;
-
-sun-like disk.
+The structure can appear as eye, wheel, star, rosette, ring, hub or sun-like disk.
 
 This is the end-on view.
 
@@ -14299,15 +14055,7 @@ The world changes.
 
 This is why transitional images matter so much.
 
-A tree inside a wheel.
-
-A ladder wrapped by serpents.
-
-An eye inside a mesh.
-
-A cross inside rings.
-
-A pillar surrounded by stars.
+A tree inside a wheel, a ladder wrapped by serpents, an eye inside a mesh, a cross inside rings or a pillar surrounded by stars may be especially valuable because they preserve movement between states.
 
 Those mixed forms may be especially valuable because they preserve movement between states.
 
@@ -14471,19 +14219,7 @@ The projection grammar turns ordinary land into cosmic architecture without requ
 
 Fairy tales preserve the grammar in extremely direct forms.
 
-A tree opens.
-
-A hill contains a kingdom.
-
-A mirror becomes a road.
-
-A well leads to another realm.
-
-A staircase appears where none existed.
-
-A ring marks a place where rules change.
-
-A road through a forest takes the traveller to another age.
+A tree opens, a hill contains a kingdom, a mirror becomes a road, a well leads to another realm, a staircase appears where none existed, a ring marks a place where rules change, or a road through a forest takes the traveller to another age.
 
 These stories often simplify the cosmology more than formal mythology does.
 
@@ -14491,15 +14227,7 @@ That is useful.
 
 The function is exposed.
 
-Door.
-
-Road.
-
-Other side.
-
-Changed time.
-
-Return.
+Door, road, other side, changed time and return remain exposed as the basic functions.
 
 The symbols are domestic rather than divine, but the spatial grammar is the same.
 
@@ -14509,19 +14237,7 @@ This is one of the most important principles in the book.
 
 If a world event really occurred, I would not expect ancient people to preserve a technical diagram.
 
-I would expect perspective.
-
-Fear.
-
-Metaphor.
-
-Personification.
-
-Landscape language.
-
-Religious interpretation.
-
-Story.
+I would expect perspective, fear, metaphor, personification, landscape language, religious interpretation and story.
 
 A blueprint is only one way to record structure, and probably not the most durable cultural way.
 
@@ -14531,25 +14247,7 @@ Projection grammar explains how the same event can fracture into many traditions
 
 The image preserved in tradition may have passed through several transformations before it reaches us.
 
-First there is the event.
-
-Then the observer's position.
-
-Then weather, darkness, water, cloud or fire between observer and event.
-
-Then human perception.
-
-Then memory.
-
-Then oral retelling.
-
-Then artistic convention.
-
-Then copying.
-
-Then translation.
-
-Then modern interpretation.
+First there is the event, then the observer's position, then weather, darkness, water, cloud or fire between observer and event. After that come human perception, memory, oral retelling, artistic convention, copying, translation and finally modern interpretation.
 
 That means the final symbol can be many steps removed from the original stimulus.
 
@@ -14772,19 +14470,7 @@ I now think roles are more useful than identities.
 
 A story can distribute the world-machine across several figures.
 
-One controls.
-
-One travels.
-
-One guards.
-
-One guides.
-
-One carries.
-
-One witnesses.
-
-One becomes the visible manifestation of the event.
+One controls, one travels, one guards, one guides, one carries, one witnesses and one becomes the visible manifestation of the event.
 
 Those roles can overlap, but they do not have to.
 
@@ -14792,19 +14478,7 @@ Those roles can overlap, but they do not have to.
 
 The apparatus is the physical structure.
 
-Lattice.
-
-Axis.
-
-Gate.
-
-Boundary.
-
-Vehicle.
-
-Carrier.
-
-Route.
+Lattice, axis, gate, boundary, vehicle, carrier and route all belong to the apparatus.
 
 The apparatus does not need a personality.
 
@@ -14826,15 +14500,7 @@ The mythic figure standing beside them may be doing something entirely different
 
 The operator represents agency over the event.
 
-That can mean activation.
-
-Direction.
-
-Command.
-
-Control.
-
-Completion.
+That can mean activation, direction, command, control or completion.
 
 A storm god who releases waters can occupy the operator role.
 
@@ -14852,17 +14518,7 @@ The story places agency at the point where the world changes state.
 
 Storm gods repeatedly interested me because storms naturally belong to activation.
 
-Lightning.
-
-Thunder.
-
-Wind.
-
-Rain.
-
-Sky conflict.
-
-Release.
+Lightning, thunder, wind, rain, sky conflict and release all belong naturally around that role.
 
 Figures such as Indra or Marduk can therefore occupy operator-like positions in the Vardath comparison without becoming interchangeable gods.
 
@@ -14878,17 +14534,7 @@ If the figure releases blocked water, defeats a world-serpent, divides an old bo
 
 The guardian belongs to the threshold.
 
-The guardian may challenge.
-
-Judge.
-
-Block.
-
-Permit.
-
-Warn.
-
-Protect.
+The guardian may challenge, judge, block, permit, warn or protect.
 
 A guardian does not necessarily control the whole event.
 
@@ -14916,15 +14562,7 @@ This fits the time-door model perfectly.
 
 A temporary route is useless to a traveller who cannot find it.
 
-The guide knows where the door is.
-
-When it opens.
-
-Which path to follow.
-
-How to return.
-
-What rules apply.
+The guide knows where the door is, when it opens, which path to follow, how to return and what rules apply.
 
 The guide personifies navigational knowledge of state rather than ordinary geography.
 
@@ -14948,13 +14586,7 @@ That is often where time distortion, impossible distance and otherworld experien
 
 The vehicle carries the traveller actively.
 
-Horse.
-
-Chariot.
-
-Boat.
-
-Wheel.
+Horse, chariot, boat and wheel all fit the vehicle role.
 
 The vehicle belongs to the crossing, not necessarily to the destination.
 
@@ -14970,17 +14602,7 @@ Nothing more needs to be forced into it.
 
 The carrier protects cargo.
 
-Ark.
-
-Basket.
-
-Egg.
-
-Cave.
-
-Chest.
-
-Shell.
+Ark, basket, egg, cave, chest and shell all fit the carrier role.
 
 The carrier can move or remain still.
 
@@ -14996,11 +14618,7 @@ The witness sees.
 
 That may be the most underrated role.
 
-A witness does not control.
-
-Does not necessarily cross.
-
-Does not necessarily understand.
+A witness does not control, does not necessarily cross and does not necessarily understand.
 
 The witness receives one viewpoint.
 
@@ -15042,19 +14660,7 @@ World succession requires somewhere for continuity to arrive.
 
 The manifestation is what the active structure looks like.
 
-Luminous being.
-
-Serpent.
-
-Wheel.
-
-Eye.
-
-Tree.
-
-Fire.
-
-Cloud.
+Luminous being, serpent, wheel, eye, tree, fire and cloud can all be manifestations.
 
 The manifestation can be mistaken for the operator because the visible form is what witnesses remember.
 
