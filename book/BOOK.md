@@ -8342,17 +8342,7 @@ It was what the body itself became when it tightened.
 
 One of the strongest ideas in Vardath Cosmology is that several symbols which look unrelated can actually be different states of the same structure.
 
-Mesh.
-
-Ladder.
-
-Rod.
-
-Throat.
-
-At first they seem like four different objects.
-
-In my cosmology they form a sequence.
+Mesh, ladder, rod and throat can look like four different objects at first. In my cosmology they form a sequence.
 
 That sequence matters because the world-machine does not need to swap one object for another as it wakes. The same weave can move through all four forms.
 
@@ -8362,17 +8352,7 @@ The mesh is the broad state.
 
 This is the ordinary architecture of the quiet world.
 
-The lattice is open.
-
-Paths spread.
-
-Crossings are distributed.
-
-Nodes exist, but no single route dominates.
-
-The inhabited surface remains broad.
-
-The boundary remains stable.
+The lattice is open, paths spread, crossings are distributed and nodes exist without any single route dominating. The inhabited surface remains broad and the boundary remains stable.
 
 The current can circulate without concentrating enough to create a world-scale opening.
 
@@ -8416,15 +8396,7 @@ Myth should not only remember perfect trees or perfect wheels if the world moved
 
 It should also remember mixed shapes.
 
-Nets with a central pole.
-
-Eyes inside interlace.
-
-Trees wrapped in serpents.
-
-Ladders emerging from cloud.
-
-Wheels attached to living forms.
+Nets with a central pole, eyes inside interlace, trees wrapped in serpents, ladders emerging from cloud and wheels attached to living forms all belong to that mixed family.
 
 That is exactly the kind of imagery I find most interesting.
 
@@ -8466,17 +8438,7 @@ As the weave narrows, the side-on pattern can resemble rails and rungs.
 
 A witness interprets that as a ladder because a ladder is a familiar object for vertical passage.
 
-The same active structure could be described elsewhere as a stair.
-
-A rope.
-
-A vine.
-
-A tree.
-
-A tower.
-
-A path of light.
+The same active structure could be described elsewhere as a stair, rope, vine, tree, tower or path of light.
 
 The human image changes.
 
@@ -8510,17 +8472,7 @@ From a distance the structure looks singular.
 
 That is the rod.
 
-Staff.
-
-Pillar.
-
-Trunk.
-
-Spear.
-
-Column.
-
-Beam.
+Staff, pillar, trunk, spear, column and beam are all possible outward readings of the same narrowed form.
 
 The rod is not a new object inserted into the system.
 
@@ -8544,17 +8496,7 @@ Inside, the counter-wound braid still contains opposed directions.
 
 That means a single visible world-axis can support more than one type of movement.
 
-Upward.
-
-Downward.
-
-Incoming.
-
-Outgoing.
-
-Pastward.
-
-Futureward.
+Upward and downward, incoming and outgoing, pastward and futureward can all coexist within that apparently singular form.
 
 The rod is not simple merely because it looks simple.
 
@@ -8606,17 +8548,7 @@ A throat is different.
 
 A throat connects larger regions through a constricted passage.
 
-That means flow.
-
-Capacity.
-
-Direction.
-
-Pressure.
-
-Selection.
-
-Duration.
+That means flow, capacity, direction, pressure, selection and duration.
 
 The gate begins here.
 
@@ -8658,21 +8590,7 @@ The model cannot simply say that the whole world transfers through the gate beca
 
 Different materials should behave differently.
 
-Gas responds quickly.
-
-Vapour responds quickly.
-
-Water can move rapidly if pressure differences are large.
-
-Fine particles can be entrained.
-
-Large rock needs much stronger forces.
-
-Living bodies require survivable conditions or protection.
-
-A city-sized structure is harder again.
-
-A whole landmass requires a different scale of event.
+Gas and vapour respond quickly. Water can move rapidly if pressure differences are large, fine particles can be entrained, large rock needs much stronger forces, living bodies require survivable conditions or protection, and city-sized structures or whole landmasses require progressively larger scales of event.
 
 This is why I think the door can operate at many strengths.
 
@@ -8686,11 +8604,7 @@ The same geometry can have different capacities depending on how much of the lat
 
 ## Sorting
 
-The throat therefore sorts.
-
-Not consciously.
-
-Mechanically.
+The throat therefore sorts, not consciously but mechanically.
 
 Material that couples easily to the flow moves first.
 
@@ -8708,15 +8622,7 @@ The ark, basket, cave or egg does not magically make the gate safe.
 
 It changes how the cargo interacts with the medium.
 
-The enclosure creates a local environment.
-
-It can preserve air.
-
-Buoyancy.
-
-Temperature.
-
-Structural integrity.
+The enclosure creates a local environment and can preserve air, buoyancy, temperature and structural integrity.
 
 That is how life can survive a transition that would destroy exposed material.
 
@@ -8742,23 +8648,7 @@ The door is through time because the worlds it connects occupy different positio
 
 This also helps explain the narrow-road imagery that appears so often in legend and fairy tale.
 
-A broad world contains ordinary roads.
-
-A gate-state creates a special road.
-
-Narrow.
-
-Temporary.
-
-Difficult to find.
-
-Dangerous to leave.
-
-Sometimes guarded.
-
-Sometimes visible only under particular conditions.
-
-Sometimes entered through mist, woods, caves, hills or water.
+A broad world contains ordinary roads. A gate-state creates a special road: narrow, temporary, difficult to find, dangerous to leave, sometimes guarded, sometimes visible only under particular conditions and sometimes entered through mist, woods, caves, hills or water.
 
 In Vardath Cosmology, those stories fit the throat perfectly.
 
@@ -8900,19 +8790,7 @@ That is the next chapter.
 
 For a long time, the word **gate** was doing too much work.
 
-It could mean a doorway.
-
-A portal.
-
-A hole in the sky.
-
-A passage between worlds.
-
-A mystical threshold.
-
-A place.
-
-A symbol.
+It could mean a doorway, portal, hole in the sky, passage between worlds, mystical threshold, place or symbol.
 
 That was too vague.
 
@@ -8942,13 +8820,7 @@ A door proves that.
 
 Two rooms can remain exactly where they are while one small change in the boundary between them transforms their relationship.
 
-Closed door:
-
-separate spaces.
-
-Open door:
-
-direct passage.
+With a closed door there are separate spaces; with an open door there is direct passage.
 
 The rooms did not have to travel across the building to become connected.
 
@@ -9010,19 +8882,7 @@ The cultural memory changes.
 
 The natural mechanism does not need to.
 
-A fairy tale can preserve one appearance.
-
-A religious vision another.
-
-A legend of a vanished traveller another.
-
-A flood tradition another.
-
-A story of a hidden kingdom another.
-
-A myth of a god descending from the sky another.
-
-A tale of someone entering a mound and returning generations later another.
+A fairy tale can preserve one appearance, a religious vision another, a legend of a vanished traveller another, a flood tradition another, a story of a hidden kingdom another, a myth of a god descending from the sky another, and a tale of someone entering a mound and returning generations later another.
 
 From the Vardath perspective, those are all candidates for the same deeper question:
 
@@ -9044,17 +8904,7 @@ A traveller can cross while the wider world remains stable.
 
 That gives the cosmology a spectrum.
 
-At one end:
-
-a local crossing.
-
-At the other:
-
-a world-scale reset.
-
-Between them:
-
-regional openings, large transfer events and broader periods of instability.
+At one end is a local crossing; at the other, a world-scale reset. Between them sit regional openings, large transfer events and broader periods of instability.
 
 This is one reason folklore matters so much.
 
@@ -9074,15 +8924,7 @@ That would destroy the distinction among them.
 
 So the gate has duration.
 
-The throat forms.
-
-The adjacency changes.
-
-Transfer becomes possible.
-
-Then the structure reopens.
-
-The ordinary separation returns.
+The throat forms, adjacency changes and transfer becomes possible. Then the structure reopens and ordinary separation returns.
 
 This makes temporary-road stories extremely natural inside the model.
 
@@ -9168,23 +9010,11 @@ That is exactly what changed adjacency would feel like.
 
 The simplest cargo is a traveller.
 
-A person.
-
-An animal.
-
-A small group.
+A person, an animal or a small group can cross at this scale.
 
 This is the scale most legends and fairy tales naturally preserve.
 
-Someone crosses.
-
-Someone vanishes.
-
-Someone returns.
-
-Someone emerges in the wrong age.
-
-Someone meets people who belong elsewhere in history.
+Someone crosses, vanishes, returns, emerges in the wrong age or meets people who belong elsewhere in history.
 
 At this scale, the gate is a route.
 
@@ -9196,19 +9026,7 @@ That is the local-door form of the event.
 
 At larger scale, the throat can carry more.
 
-Water.
-
-Air.
-
-Sediment.
-
-Debris.
-
-Living populations.
-
-Built structures.
-
-Land.
+Water, air, sediment, debris, living populations, built structures and land can all become cargo at larger scales.
 
 That is where the cosmology moves from folklore into reset.
 
@@ -9240,13 +9058,7 @@ The idea is not merely that history forgot them.
 
 It is that the world itself may have **moved them through the door**.
 
-Some lands may rise or descend a level.
-
-Some may exchange position.
-
-Some may be buried under the new surface.
-
-Some may reappear where the later geography makes them difficult to interpret.
+Some lands may rise or descend a level, exchange position, be buried under the new surface or reappear where later geography makes them difficult to interpret.
 
 That is the world-scale version of the same gate.
 
@@ -9256,13 +9068,7 @@ This also changed how I think about time.
 
 The gate is not only about a traveller moving while the world stays fixed.
 
-The world can move too.
-
-People can switch relation to one another.
-
-Lands can switch relation.
-
-A place can move from one temporal layer into another.
+The world can move too. People and lands can switch relation to one another, and a place can move from one temporal layer into another.
 
 The event can rearrange where things belong in history.
 
@@ -9300,13 +9106,7 @@ A larger throat may carry sediment and rock.
 
 A world-scale event may reorganise whole regions.
 
-The medium matters.
-
-The carrier matters.
-
-The timing matters.
-
-The route matters.
+The medium, carrier, timing and route all matter.
 
 This sorting is one reason the historical record would be messy.
 
@@ -9334,27 +9134,7 @@ I am not saying every myth is history.
 
 I am saying that the same natural event, if it appeared repeatedly through human history, would be remembered exactly this way.
 
-Distorted by language.
-
-Moralised.
-
-Personified.
-
-Localised.
-
-Turned into religion.
-
-Turned into legend.
-
-Turned into fairy tale.
-
-Turned into warnings for children.
-
-Turned into stories about gods.
-
-Turned into stories about monsters.
-
-Turned into stories about places where time behaves strangely.
+The memory can be distorted by language, moralised, personified, localised, turned into religion, legend, fairy tale, warnings for children, stories about gods or monsters, or stories about places where time behaves strangely.
 
 The cultural form changes.
 
@@ -9368,23 +9148,7 @@ The event can look supernatural without being outside nature.
 
 A natural process can be so rare and so different from ordinary quiet-world conditions that later people have no ordinary category for it.
 
-The sky changes.
-
-The land moves.
-
-Time behaves strangely.
-
-The dead or ancient seem to return.
-
-People vanish.
-
-Other beings appear.
-
-Roads lead where they should not.
-
-Water falls or rises where it should not.
-
-Stone changes shape under heat.
+The sky changes, the land moves, time behaves strangely, the dead or ancient seem to return, people vanish, other beings appear, roads lead where they should not, water falls or rises where it should not, and stone changes shape under heat.
 
 A whole culture living afterward may reasonably remember that as divine, magical or otherworldly.
 
@@ -9434,13 +9198,7 @@ Once I stopped treating the gate as one permanent place, the geography of the co
 
 Earlier versions of the project were naturally attracted to a single centre.
 
-One pole.
-
-One world mountain.
-
-One opening.
-
-One great axis.
+One pole, one world mountain, one opening, one great axis.
 
 That picture is simple, but it becomes restrictive very quickly.
 
@@ -9482,25 +9240,7 @@ A local opening can be small.
 
 Small enough that the wider world remains ordinary.
 
-A person crosses.
-
-An animal crosses.
-
-A small group disappears.
-
-A being appears.
-
-A local patch of sky changes.
-
-A cave behaves strangely.
-
-A mound opens.
-
-A road takes someone somewhere impossible.
-
-The event ends.
-
-The landscape looks normal again.
+A person or animal crosses, a small group disappears, a being appears, a local patch of sky changes, a cave behaves strangely, a mound opens or a road takes someone somewhere impossible. Then the event ends and the landscape looks normal again.
 
 This scale fits folklore extremely well.
 
@@ -9536,13 +9276,7 @@ That is why hollow hills, barrows, caves and mounds belong so naturally beside t
 
 Wells belong to the same family from a different angle.
 
-A well is narrow.
-
-Vertical.
-
-Boundary-like.
-
-It joins the surface to a hidden region below.
+A well is narrow, vertical and boundary-like, joining the surface to a hidden region below.
 
 That makes it almost a perfect everyday image for a local throat.
 
@@ -9598,19 +9332,7 @@ Several regions may be coupling.
 
 This is the scale where legends can begin turning into regional catastrophe traditions.
 
-Flood.
-
-Fire.
-
-Darkness.
-
-Moving mountains.
-
-Strange skies.
-
-Mass disappearance.
-
-Large transfers of population or land.
+Flood, fire, darkness, moving mountains, strange skies, mass disappearance and large transfers of population or land can all belong to the same regional scale.
 
 The basic mechanism has not changed.
 
@@ -9624,15 +9346,7 @@ It may be a coordinated network of active nodes.
 
 That is more consistent with the lattice.
 
-One region opens.
-
-Another responds.
-
-Currents redistribute.
-
-Pressure changes elsewhere.
-
-Water moves through several pathways.
+One region opens, another responds, currents redistribute, pressure changes elsewhere and water moves through several pathways.
 
 The world begins behaving like a connected active system rather than a single hole opening in one place.
 
@@ -9664,19 +9378,7 @@ Different communities encounter different openings.
 
 Their stories preserve the local door they knew.
 
-One people remember a mountain.
-
-Another a cave.
-
-Another a bridge.
-
-Another a tree.
-
-Another a lake.
-
-Another a fairy road.
-
-Another a heavenly opening.
+One people remember a mountain, another a cave, another a bridge, another a tree, another a lake, another a fairy road and another a heavenly opening.
 
 The forms differ because the local nodes and viewpoints differ.
 
@@ -9694,23 +9396,7 @@ They become parts of one global transition.
 
 This is the reset scale.
 
-Water moves between levels.
-
-Atmosphere transfers.
-
-The crust reorganises.
-
-Heat effects become widespread.
-
-The sky changes.
-
-Large regions may be displaced.
-
-The next world receives inheritance.
-
-The previous world becomes more deeply embedded.
-
-The present loses its old stability.
+Water moves between levels, atmosphere transfers, the crust reorganises, heat effects become widespread, the sky changes, large regions may be displaced, the next world receives inheritance, the previous world becomes more deeply embedded and the present loses its old stability.
 
 This is the scale of creation and destruction myths.
 
@@ -9780,21 +9466,7 @@ The connected state can vary.
 
 Even after the gate closes, the location can remain culturally marked.
 
-People remember.
-
-Stories accumulate.
-
-Taboos form.
-
-Shrines appear.
-
-A mound remains sacred.
-
-A cave remains feared.
-
-A mountain becomes the dwelling of gods.
-
-A well becomes a boundary to another realm.
+People remember, stories accumulate, taboos form and shrines appear. A mound remains sacred, a cave feared, a mountain becomes the dwelling of gods and a well becomes a boundary to another realm.
 
 The physical gate-state may be gone, but the social memory remains attached to the place.
 
@@ -9850,17 +9522,7 @@ The centre can migrate.
 
 If some places activate more easily than others, their surface geography may accumulate unusual cultural importance.
 
-Repeated stories.
-
-Repeated settlement avoidance.
-
-Sacred wells.
-
-Mountains.
-
-Caves.
-
-Odd local weather.
+Repeated stories, repeated settlement avoidance, sacred wells, mountains, caves and odd local weather can all make a place interesting.
 
 That possibility is interesting, but it is also easy to abuse.
 
@@ -9873,15 +9535,7 @@ The model would need independent physical evidence before cultural recurrence be
 
 The many-throat model gives Vardath Cosmology a way to connect the tiny and the enormous.
 
-A child entering fairyland.
-
-A hero descending through a cave.
-
-A god crossing a bridge.
-
-A regional flood.
-
-A world reset.
+A child entering fairyland, a hero descending through a cave, a god crossing a bridge, a regional flood and a world reset do not have to belong to different cosmologies.
 
 These do not have to be different cosmologies.
 
@@ -9893,13 +9547,7 @@ I ask where the lattice is capable of becoming a throat.
 
 The answer may be:
 
-many places.
-
-Many ages.
-
-Many witnesses.
-
-One underlying world-machine.
+many places, many ages and many witnesses within one underlying world-machine.
 
 ---
 
@@ -11999,15 +11647,7 @@ The visible surface is material carried by a deeper organiser.
 
 That means the deep structure can persist while the land above it changes radically.
 
-A coastline can move.
-
-A basin can sink.
-
-A mountain can rise.
-
-A region can rotate.
-
-A whole belt of crust can shear.
+A coastline can move, a basin can sink, a mountain can rise, a region can rotate and a whole belt of crust can shear.
 
 The lattice does not need to break every time the surface breaks.
 
@@ -12043,13 +11683,7 @@ I do not mean that every piece of rock is loose gravel.
 
 I mean the crust is secondary to the deeper structural field.
 
-It is accumulated material.
-
-Inherited material.
-
-Broken material.
-
-Reworked material.
+It is accumulated, inherited, broken and reworked material.
 
 It can be large enough and coherent enough to form continents while still being cargo from the perspective of the world-machine.
 
@@ -12065,19 +11699,7 @@ The overlying crust responds.
 
 Because the crust is thick and heterogeneous, it does not move like a sheet of paper.
 
-Some regions compress.
-
-Others stretch.
-
-Some rotate.
-
-Some fracture.
-
-Some rise.
-
-Some sink.
-
-Some are dragged along curved paths.
+Some regions compress while others stretch; some rotate, fracture, rise, sink or are dragged along curved paths.
 
 This is where the large bends and S-shapes in the world map become central to my cosmology.
 
@@ -12143,17 +11765,7 @@ The final visible map is not produced by rock alone.
 
 Water finishes it.
 
-A region sinks and becomes sea.
-
-A region rises and becomes land.
-
-A channel opens and fills.
-
-A basin deepens and becomes ocean.
-
-A ridge diverts water.
-
-Sediment fills another depression.
+A region sinks and becomes sea, another rises and becomes land, a channel opens and fills, a basin deepens and becomes ocean, a ridge diverts water and sediment fills another depression.
 
 The coastlines we see are therefore the result of both solid deformation and water settlement.
 
@@ -12167,17 +11779,7 @@ Sediment is crust made mobile.
 
 That makes it one of the most important cargos of the reset.
 
-Rock breaks.
-
-Water carries the fragments.
-
-Wind carries finer particles.
-
-Heat alters some material.
-
-Mud suspends more.
-
-The active world becomes a transport system.
+Rock breaks, water carries the fragments, wind carries finer particles, heat alters some material and mud suspends more. The active world becomes a transport system.
 
 When energy falls, sediment settles into the next surface.
 
@@ -12205,13 +11807,7 @@ The new quiet world then treats the new surface as normal.
 
 This is where Meltology and mud-burial ideas meet naturally in my cosmology.
 
-Heat changes.
-
-Water carries.
-
-Sediment buries.
-
-The later age inherits.
+Heat changes, water carries, sediment buries and the later age inherits.
 
 ## Melted stone
 
@@ -12277,15 +11873,7 @@ Later people encounter it in a context different from the one in which it was bu
 
 That creates chronological confusion.
 
-A structure can look too old.
-
-Too advanced.
-
-Too buried.
-
-Too melted.
-
-Too large for its apparent context.
+A structure can look too old, too advanced, too buried, too melted or too large for its apparent context.
 
 The Vardath model gives those anomalies a place inside world succession.
 
@@ -12305,15 +11893,7 @@ That does not require every old building to come from one lost empire.
 
 It means the world-reset mechanism can preserve civilisation unevenly.
 
-Some places remain.
-
-Some are buried.
-
-Some are transferred.
-
-Some are rebuilt.
-
-Some are renamed.
+Some places remain, some are buried, some transferred, some rebuilt and some renamed.
 
 History after the event is written over a mixed surface.
 
@@ -12361,15 +11941,7 @@ This also explains why a gate event could be enormous and still become difficult
 
 The event creates its own cover.
 
-Flood carries sediment.
-
-Sediment settles over damaged surfaces.
-
-Vegetation returns.
-
-Soil develops.
-
-New construction begins.
+Flood carries sediment, sediment settles over damaged surfaces, vegetation returns, soil develops and new construction begins.
 
 The active-world landscape disappears beneath the quiet-world landscape.
 
@@ -12381,21 +11953,7 @@ The myth survives above the buried world.
 
 This chapter can only be useful if ordinary geological explanations remain the default comparison.
 
-Folding.
-
-Faulting.
-
-Volcanism.
-
-Impact.
-
-Metamorphism.
-
-Erosion.
-
-Sedimentation.
-
-Human quarrying and construction.
+Folding, faulting, volcanism, impact, metamorphism, erosion, sedimentation, human quarrying and construction can all create strange forms without any Vardath event.
 
 All of those can create strange forms without any Vardath event.
 
@@ -12550,19 +12108,7 @@ It needs a reason.
 
 Not all life is equally fragile.
 
-A microbe can survive conditions that kill a person.
-
-A seed can remain dormant.
-
-An egg can protect development.
-
-Spores can travel through air.
-
-Small organisms can ride water or sediment.
-
-Large animals require food, air, temperature control and protection from injury.
-
-Human beings require all of that plus enough continuity to preserve culture.
+A microbe can survive conditions that kill a person, a seed can remain dormant, an egg can protect development, spores can travel through air and small organisms can ride water or sediment. Large animals require food, air, temperature control and protection from injury, while human beings require all of that plus enough continuity to preserve culture.
 
 So the gate does not move “life” as one category.
 
@@ -12572,15 +12118,7 @@ It sorts living cargo by form.
 
 Microbial life is the easiest continuity problem.
 
-Microbes can inhabit water.
-
-Soil.
-
-Rock.
-
-Sediment.
-
-Bodies.
+Microbes can inhabit water, soil, rock, sediment and bodies.
 
 They can be carried without deliberate protection.
 
@@ -12596,15 +12134,7 @@ This gives biological renewal a natural foundation.
 
 Spores and seeds are almost designed for world transition.
 
-They are compact.
-
-Protected.
-
-Capable of dormancy.
-
-Able to travel.
-
-Able to wait for better conditions.
+They are compact, protected, capable of dormancy, able to travel and able to wait for better conditions.
 
 This makes them some of the most plausible cargos in the entire model.
 
@@ -12642,13 +12172,7 @@ That is the enclosure principle in its most natural form.
 
 Large animals are much harder to move.
 
-Some can swim.
-
-Some can float.
-
-Some can shelter.
-
-Some can survive short periods of extreme conditions.
+Some can swim, some can float, some can shelter and some can survive short periods of extreme conditions.
 
 But world-scale transfer would still be brutal.
 
@@ -12672,27 +12196,7 @@ A person can survive physically and still lose the cultural world that makes lat
 
 So people carry two forms of cargo.
 
-Biology.
-
-And memory.
-
-Language.
-
-Names.
-
-Stories.
-
-Ritual.
-
-Techniques.
-
-Food knowledge.
-
-Navigation.
-
-Architecture.
-
-Genealogy.
+People therefore carry biology and memory together: language, names, stories, ritual, techniques, food knowledge, navigation, architecture and genealogy.
 
 The gate therefore transfers culture through people.
 
@@ -12730,19 +12234,7 @@ Not all living cargo needs to cross the throat directly.
 
 Some can survive in protected regions while the world changes around them.
 
-A highland refuge.
-
-A cave.
-
-A sealed valley.
-
-A vessel.
-
-An underground chamber.
-
-A forest shelter.
-
-A region outside the strongest convergence.
+A highland refuge, cave, sealed valley, vessel, underground chamber, forest shelter or region outside the strongest convergence can all preserve life without direct passage through the throat.
 
 This creates two survival modes:
 
@@ -12780,15 +12272,7 @@ It can move living continuity across history.
 
 Fairy tales and legends often preserve the human-scale version.
 
-Someone is taken.
-
-Someone enters.
-
-Someone disappears.
-
-Someone returns unchanged while the outside world has aged.
-
-Or returns changed after what seems like a short absence.
+Someone is taken, enters, disappears, returns unchanged while the outside world has aged, or returns changed after what seems like a short absence.
 
 I do not need every story to be literal.
 
@@ -12816,17 +12300,7 @@ If the door is two-way, travellers can arrive as well as leave.
 
 The witness may describe them using the categories available in that culture.
 
-Divine.
-
-Monstrous.
-
-Fair.
-
-Giant.
-
-Ancestor.
-
-Spirit.
+Divine, monstrous, fair, giant, ancestor or spirit are all possible cultural descriptions of incoming living cargo.
 
 The role is incoming living cargo.
 
@@ -12852,15 +12326,7 @@ This is why the next chapter is entirely about enclosure.
 
 A living thing needs a local world.
 
-Air.
-
-Temperature.
-
-Pressure.
-
-Protection.
-
-Water in the right amount rather than everywhere.
+Air, temperature, pressure, protection and water in the right amount rather than everywhere are all part of that local world.
 
 An enclosure creates that local world.
 
@@ -12908,17 +12374,7 @@ A useful biological carrier would rarely preserve one species alone.
 
 Life survives through relationships.
 
-Plant and pollinator.
-
-Animal and gut microbes.
-
-Seed and soil organisms.
-
-Predator and prey.
-
-Human and food species.
-
-Fresh water and the organisms that keep it from becoming biologically dead.
+Plant and pollinator, animal and gut microbes, seed and soil organisms, predator and prey, human and food species, and fresh water with the organisms that keep it biologically alive all belong to that ecological package.
 
 The true cargo is therefore an **ecological package**.
 
@@ -12940,15 +12396,7 @@ If the world undergoes a violent transition, microbes may cross almost accidenta
 
 That means the biological handoff can begin before visible ecosystems recover.
 
-First microbes.
-
-Then pioneer organisms.
-
-Then plants.
-
-Then larger animals.
-
-Then complex human settlement.
+First microbes, then pioneer organisms, then plants, then larger animals and eventually complex human settlement.
 
 A renewed present does not need to recover biologically all at once.
 
@@ -12998,15 +12446,7 @@ The mythology of one surviving hero is narratively powerful, but one literal per
 
 A physical handoff would require:
 
-groups,
-
-families,
-
-stored reproductive material,
-
-multiple refuges,
-
-or repeated transfer.
+groups, families, stored reproductive material, multiple refuges or repeated transfer.
 
 That is one reason I treat "one survivor" stories as compressed cultural images rather than demographic records.
 
@@ -13117,15 +12557,7 @@ The enclosure is one of the oldest structures in my cosmology.
 
 Before I fully understood the lattice, I was already thinking about insides and outsides.
 
-A world inside a boundary.
-
-A child inside a basket.
-
-Life inside an egg.
-
-A person inside a cave.
-
-Survivors inside an ark.
+A world inside a boundary, a child inside a basket, life inside an egg, a person inside a cave and survivors inside an ark all repeat the same basic relationship.
 
 The more the model developed, the more those images began solving the same mechanical problem.
 
@@ -13137,15 +12569,7 @@ That is the enclosure principle.
 
 An enclosure creates a local environment.
 
-Inside it, pressure can differ from outside.
-
-Temperature can be buffered.
-
-Water can be excluded.
-
-Air can be retained.
-
-Cargo can remain together.
+Inside it, pressure can differ from outside, temperature can be buffered, water can be excluded, air can be retained and cargo can remain together.
 
 That makes every enclosure a kind of miniature world.
 
@@ -13167,15 +12591,7 @@ It preserves an inside while the outside becomes flood.
 
 That makes the ark almost a direct mechanical analogy for world continuity.
 
-The old surface fails.
-
-The carrier remains.
-
-The water moves it.
-
-The carrier reaches the next stable condition.
-
-Life emerges.
+The old surface fails, the carrier remains, the water moves it, the carrier reaches the next stable condition and life emerges.
 
 This is the enclosure principle operating through transport.
 
@@ -13183,17 +12599,7 @@ This is the enclosure principle operating through transport.
 
 The basket is the same problem at smaller scale.
 
-A child is enclosed.
-
-The carrier enters a dangerous current.
-
-The current moves it.
-
-The child survives because the enclosure keeps the immediate environment coherent.
-
-The carrier reaches a receiver.
-
-The child enters a new social order.
+A child is enclosed, the carrier enters a dangerous current and the current moves it. The child survives because the enclosure keeps the immediate environment coherent; the carrier reaches a receiver and the child enters a new social order.
 
 This is why waterborne-child stories became so important to me.
 
@@ -13205,13 +12611,7 @@ A cave is different.
 
 It may not move.
 
-The cave carries through **time**, not distance.
-
-The world outside changes.
-
-The occupants remain inside.
-
-When they emerge, they enter another state of the world.
+The cave carries through **time**, not distance. The world outside changes while the occupants remain inside, and when they emerge they enter another state of the world.
 
 This is one of the cleanest natural analogies for a refuge surviving a reset.
 
@@ -13257,15 +12657,7 @@ The gate is birth-like because it changes the relation between inside and outsid
 
 ## Shell
 
-The shell is the enclosure principle at world scale.
-
-It grows.
-
-It preserves old structure.
-
-It creates protected interior space.
-
-It can add new turns while retaining earlier ones.
+The shell is the enclosure principle at world scale. It grows, preserves old structure, creates protected interior space and can add new turns while retaining earlier ones.
 
 This is why the shell became the best large-scale image for Vardath Cosmology.
 
@@ -13311,15 +12703,7 @@ The route can become carrier.
 
 This nested structure appears everywhere.
 
-Person inside vehicle.
-
-Vehicle inside flood.
-
-Flood inside world.
-
-World inside shell-turn.
-
-Shell-turn inside larger world-body.
+Person inside vehicle, vehicle inside flood, flood inside world, world inside shell-turn, shell-turn inside larger world-body.
 
 The same logic repeats.
 
@@ -13423,25 +12807,7 @@ A stone box can survive a shock and still fail every living thing inside it.
 
 For biological cargo, an enclosure has to manage an entire local environment.
 
-Air.
-
-Moisture.
-
-Temperature.
-
-Pressure.
-
-Waste.
-
-Food.
-
-Water.
-
-Light.
-
-Microbes.
-
-Time.
+Air, moisture, temperature, pressure, waste, food, water, light, microbes and time all have to remain workable inside the enclosure.
 
 That means the ark principle becomes more interesting when treated as **environmental buffering** rather than simply physical protection.
 
@@ -13479,23 +12845,7 @@ The enclosure therefore becomes a small-scale model of the whole cosmology.
 
 The principle can repeat by scale.
 
-Cell membrane.
-
-Body.
-
-Clothing.
-
-Room.
-
-House.
-
-Cave.
-
-Ark.
-
-Valley.
-
-World boundary.
+Cell membrane, body, clothing, room, house, cave, ark, valley and world boundary form a repeating scale of enclosures.
 
 Each enclosure creates a smaller local regime inside a larger one.
 
