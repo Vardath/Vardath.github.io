@@ -12754,23 +12754,9 @@ That makes atmosphere one of the strangest cargos in Vardath Cosmology.
 
 We live inside it constantly, so it feels like background. But a world is not habitable because land exists by itself. The atmosphere is part of the enclosure.
 
-If the gate changes adjacency between world-states, then air cannot be ignored.
+If the gate changes adjacency between world-states, then air cannot be ignored. It moves, expands and compresses. It carries moisture, heat and sound, and it changes how living things breathe.
 
-It moves.
-
-It expands.
-
-It compresses.
-
-It carries moisture.
-
-It carries heat.
-
-It carries sound.
-
-It changes how living things breathe.
-
-And if two neighbouring world environments are suddenly connected, pressure becomes one of the first physical problems the gate has to solve.
+If two neighbouring world environments are suddenly connected, pressure becomes one of the first physical problems the gate has to solve.
 
 ## Atmosphere belongs to the world
 
@@ -12820,13 +12806,7 @@ The world “breathing” is already an intuitive image.
 
 Vardath Cosmology gives that metaphor a mechanical layer.
 
-The broad world has one atmospheric balance.
-
-Activation begins changing the boundary.
-
-Convergence opens pathways.
-
-Gas begins moving.
+The broad world has one atmospheric balance. Activation begins changing the boundary, convergence opens pathways and gas begins moving.
 
 The world takes a different breath.
 
@@ -12876,17 +12856,7 @@ Heat is unavoidable once the current concentrates.
 
 That is why I place it in the same chapter as air and pressure.
 
-The atmosphere carries heat rapidly.
-
-Hot gases rise.
-
-Steam expands.
-
-Pressure changes.
-
-Electrical discharge heats local regions.
-
-Plasma-like states become possible in the more extreme version of the active world.
+The atmosphere carries heat rapidly. Hot gases rise, steam expands, pressure changes and electrical discharge heats local regions. In the more extreme version of the active world, plasma-like states become possible.
 
 The atmosphere therefore becomes part of Meltology.
 
@@ -12906,27 +12876,9 @@ The question is broader:
 
 That is the useful version.
 
-A structure can soften unevenly.
+A structure can soften unevenly: edges can slump, surfaces can glaze, minerals can recrystallise, brick can deform, metals can move and glass can form.
 
-Edges can slump.
-
-Surfaces can glaze.
-
-Minerals can recrystallise.
-
-Brick can deform.
-
-Metals can move.
-
-Glass can form.
-
-Then water arrives.
-
-Cooling locks the new shape in place.
-
-Mud buries part of it.
-
-Later erosion rounds it further.
+Then water arrives. Cooling locks the new shape in place, mud buries part of it and later erosion rounds it further.
 
 What remains may be difficult to interpret if the active-world conditions are forgotten.
 
@@ -12940,17 +12892,7 @@ I do not.
 
 A gate event can contain both.
 
-Heat rises as the current concentrates.
-
-Upper water enters as the boundary opens.
-
-Hot surfaces meet water.
-
-Steam erupts.
-
-Pressure changes rapidly.
-
-Material fractures.
+As the current concentrates, heat rises. As the boundary opens, upper water enters. Hot surfaces meet that water, steam erupts, pressure changes rapidly and material fractures.
 
 The same event can therefore be remembered as fire in one region and flood in another.
 
@@ -12972,25 +12914,7 @@ The canopy therefore links atmosphere, giantism and longevity in one chain: **va
 
 ## Thunder and sound
 
-Pressure waves create sound.
-
-A world-scale electrical and atmospheric event should be loud.
-
-Thunder.
-
-Roaring.
-
-Cracking.
-
-Explosions.
-
-Wind.
-
-Water.
-
-Falling rock.
-
-The soundscape of the gate would be as extraordinary as the visual one.
+Pressure waves create sound, and a world-scale electrical and atmospheric event should be loud. Thunder, roaring, cracking, explosions, wind, water and falling rock would make the soundscape of the gate as extraordinary as the visual one.
 
 That is worth remembering when reading myths.
 
@@ -13024,17 +12948,7 @@ It needs an atmosphere in transition.
 
 A gate is also a survivability problem.
 
-Human beings tolerate only a limited range of pressure changes.
-
-Rapid decompression or compression is dangerous.
-
-Strong winds are dangerous.
-
-Heat and humidity are dangerous.
-
-Steam is dangerous.
-
-Electrical activity is dangerous.
+Human beings tolerate only a limited range of pressure changes. Rapid decompression or compression is dangerous, as are strong winds, heat and humidity, steam and electrical activity.
 
 This is why the enclosure principle becomes essential again.
 
@@ -13054,19 +12968,9 @@ It is an environmental container.
 
 This is one of the most practical meanings of enclosure.
 
-A living cargo does not only need walls.
+A living cargo does not only need walls. It needs atmosphere.
 
-It needs atmosphere.
-
-An egg contains its own controlled environment.
-
-A womb does the same.
-
-A sealed chamber can preserve pressure.
-
-A cave can buffer wind and heat.
-
-A ship can keep occupants above water while retaining air.
+An egg contains its own controlled environment, and a womb does the same. A sealed chamber can preserve pressure, a cave can buffer wind and heat, and a ship can keep occupants above water while retaining air.
 
 The repeated enclosure imagery makes mechanical sense because survival requires a stable pocket of atmosphere inside an unstable world.
 
@@ -13082,13 +12986,7 @@ It needs enough atmosphere to support weather and life.
 
 The gate can help provide that.
 
-Some atmosphere may be inherited directly.
-
-Some may be released from water or geology afterward.
-
-Some may develop through biological activity.
-
-The exact balance is open.
+Some atmosphere may be inherited directly, some may be released from water or geology afterward, and some may develop through biological activity. The exact balance is open.
 
 But the world handoff includes atmosphere.
 
@@ -13112,19 +13010,7 @@ That is why I keep saying the sky is part of the machine.
 
 ## The air settles after the gate
 
-Reopening gradually restores atmospheric separation.
-
-The strongest cross-boundary flow weakens.
-
-Pressure equalises locally.
-
-Steam condenses.
-
-Cloud systems reorganise.
-
-Dust and ash settle.
-
-Rain removes material from the air.
+Reopening gradually restores atmospheric separation. The strongest cross-boundary flow weakens, pressure equalises locally, steam condenses, cloud systems reorganise, dust and ash settle, and rain removes material from the air.
 
 The atmosphere becomes transparent again.
 
@@ -24254,21 +24140,9 @@ I mean settled.
 
 Pressure, temperature, moisture and gas composition remain within ranges familiar enough for present life.
 
-Storms can be violent.
+Storms can be violent, lightning can be enormous and cyclones can reorganise whole regions, but all of that still occurs inside the ordinary environmental state of this world.
 
-Lightning can be enormous.
-
-Cyclones can reorganise whole regions.
-
-But all of that still occurs inside the ordinary environmental state of this world.
-
-The dome remains broad.
-
-The major boundary is closed.
-
-The upper water is separated.
-
-The deep current is distributed.
+The dome remains broad, the major boundary stays closed, the upper water remains separated and the deep current remains distributed.
 
 The present atmosphere therefore behaves like one atmosphere rather than a mixing zone among neighbouring worlds.
 
@@ -24280,29 +24154,9 @@ The waking atmosphere begins when that separation starts to weaken.
 
 Water is one of the fastest things to respond to changed structure.
 
-If the upper boundary becomes more permeable, vapour may arrive before liquid flood.
+If the upper boundary becomes more permeable, vapour may arrive before liquid flood. Pressure changes across the interface can form cloud rapidly, increased current can push water into new phases through local heating, and a concentrating dome can organise atmospheric moisture along the same paths.
 
-If pressure changes across the interface, cloud can form rapidly.
-
-If the current increases, local heating can push water into new phases.
-
-If the dome geometry begins concentrating flow, atmospheric moisture can become organised along those same paths.
-
-So I expect the waking sky to become wet before it becomes fully open.
-
-Mist.
-
-Cloud.
-
-Steam.
-
-Dense humidity.
-
-Unusual rain.
-
-Low luminous cloud.
-
-A sky that feels close.
+So I expect the waking sky to become wet before it becomes fully open: mist, cloud, steam, dense humidity, unusual rain, low luminous cloud and a sky that feels close.
 
 These images appear so often in stories about divine arrival, world change and boundary crossing that I think they deserve a physical place inside the cosmology.
 
@@ -24320,21 +24174,7 @@ The gate therefore does not only allow matter to cross because there is a hole.
 
 It can create the gradient that drives transfer.
 
-That makes the active world potentially violent before any large object moves through it.
-
-Wind can accelerate.
-
-Cloud can be torn apart or packed together.
-
-Water can be driven horizontally as well as vertically.
-
-Breathing conditions can change.
-
-Sound can change.
-
-Fire can behave differently.
-
-Even the human sense of scale and distance may be altered by dense haze, moisture, light scattering and turbulent air.
+That makes the active world potentially violent before any large object moves through it. Wind can accelerate, cloud can be torn apart or packed together, and water can be driven horizontally as well as vertically. Breathing conditions and sound can change, fire can behave differently, and even the human sense of scale and distance may be altered by dense haze, moisture, light scattering and turbulent air.
 
 The waking atmosphere can therefore transform perception at the same time as it transforms the environment.
 
@@ -24360,15 +24200,7 @@ This is one of the reasons I keep the waking-world biology open.
 
 The organisms living through the event may not be breathing the same environment they were adapted to yesterday.
 
-Pressure can differ.
-
-Humidity can differ.
-
-Oxygen availability can differ.
-
-Temperature can differ.
-
-Electrical conditions can differ.
+Pressure, humidity, oxygen availability, temperature and electrical conditions can all differ.
 
 A world-transition is not simply a flood happening under normal air.
 
@@ -24380,15 +24212,7 @@ The Peratt branch makes this even more important.
 
 If a large Birkeland-like current is pulsing through the world-machine, the air around active regions may become electrically and optically unusual.
 
-The atmosphere can become part of the current path.
-
-Ionisation can increase.
-
-Luminous discharges can appear.
-
-Cloud can glow.
-
-Columns, sheets and filaments of light can form.
+The atmosphere can become part of the current path. Ionisation can increase, luminous discharges can appear, cloud can glow, and columns, sheets and filaments of light can form.
 
 The boundary between weather and plasma becomes less obvious.
 
@@ -24398,31 +24222,13 @@ I do not need that.
 
 The cosmology works better if active regions develop around preferred paths.
 
-Some places can be wet and storm-dominated.
-
-Some can be electrically violent.
-
-Some can experience intense heat.
-
-Some can remain comparatively sheltered.
+Some places can be wet and storm-dominated, some electrically violent, some exposed to intense heat and some comparatively sheltered.
 
 The waking world is patchy because the lattice is structured.
 
 That also helps explain why different cultural memories can emphasise completely different phenomena without requiring unrelated events.
 
-One population remembers flood.
-
-Another remembers fire from the sky.
-
-Another remembers darkness.
-
-Another remembers a radiant column.
-
-Another remembers a giant figure.
-
-Another remembers stars moving.
-
-Another remembers mountains opening.
+One population may remember flood, another fire from the sky, another darkness or a radiant column. Elsewhere the memory may be a giant figure, moving stars or mountains opening.
 
 The same global transition can be locally different.
 
@@ -24434,19 +24240,7 @@ They do not have to be.
 
 Inside my model they may be expected together.
 
-Water moves because boundaries change.
-
-Fire appears because the current intensifies.
-
-Steam forms where the two meet.
-
-Mud forms where floodwater mixes with broken ground.
-
-Vitrification can occur where intense heat acts on silica-rich material.
-
-Rapid cooling can lock altered surfaces into place.
-
-Lightning-like discharge can strike through saturated air.
+Water moves because boundaries change, while fire appears because the current intensifies. Where the two meet, steam forms. Floodwater mixing with broken ground makes mud; intense heat acting on silica-rich material can produce vitrification; rapid cooling can lock altered surfaces into place; and lightning-like discharge can strike through saturated air.
 
 A soaked world can still burn electrically.
 
@@ -24468,27 +24262,7 @@ I often think about what the event would actually feel like to a person standing
 
 That question matters because myth begins with experience.
 
-The waking atmosphere may smell different.
-
-Ozone.
-
-Wet stone.
-
-Smoke.
-
-Sulphur in volcanic regions.
-
-Steam.
-
-Dust.
-
-Burned vegetation.
-
-Salt.
-
-Mud.
-
-Metallic electrical smells.
+The waking atmosphere may smell different: ozone, wet stone, smoke, sulphur in volcanic regions, steam, dust, burned vegetation, salt, mud and metallic electrical smells.
 
 People would not experience “a cosmological gate.”
 
@@ -24526,31 +24300,9 @@ A waking atmosphere gives me one.
 
 The active sky can also alternate between extremes.
 
-More vapour, smoke, dust and debris can darken the world.
+More vapour, smoke, dust and debris can darken the world while electrical and plasma-like activity creates extraordinary local brightness.
 
-At the same time, electrical and plasma-like activity can create extraordinary local brightness.
-
-That gives the event a strange visual rhythm.
-
-Darkness.
-
-Flash.
-
-Glow.
-
-Red sky.
-
-White columns.
-
-Blue or violet discharge.
-
-Orange fire.
-
-Black cloud.
-
-A dim sun.
-
-Sudden brilliance.
+That gives the event a strange visual rhythm: darkness broken by flash and glow, red sky, white columns, blue or violet discharge, orange fire, black cloud, a dim sun and sudden brilliance.
 
 This is far closer to the mythic atmosphere I keep encountering than a simple clear-sky astronomical event.
 
@@ -24562,31 +24314,9 @@ It changes the background.
 
 If the upper boundary contains a major water reservoir, the atmosphere may be the first receiving layer when that reservoir destabilises.
 
-Liquid water need not simply fall as one impossible wall.
+Liquid water need not simply fall as one impossible wall. Some can enter as vapour, some condense into cloud, some become rain, some be carried by violent winds, and some arrive as direct water transfer through larger openings.
 
-Some can enter as vapour.
-
-Some can condense into cloud.
-
-Some can become rain.
-
-Some can be carried by violent winds.
-
-Some can arrive as direct water transfer through larger openings.
-
-That creates a progression rather than one instant.
-
-The sky becomes heavier.
-
-Cloud thickens.
-
-Rain intensifies.
-
-Pressure changes.
-
-The boundary lowers.
-
-Then the larger flood phase begins.
+That creates a progression rather than one instant. The sky becomes heavier, cloud thickens, rain intensifies, pressure changes and the boundary lowers before the larger flood phase begins.
 
 This sequence feels much more physically coherent to me than imagining a dry sky that suddenly becomes a global ocean.
 
@@ -24600,27 +24330,9 @@ The atmosphere is contained beneath a larger boundary.
 
 If the dome or lattice helps maintain that boundary, then a change in dome geometry can change the volume and behaviour of the air beneath it.
 
-Contraction may compress regions.
+Contraction may compress regions, opening may connect pressure domains, and reopening may let the atmosphere expand again. This could produce weather on scales ordinary meteorology does not encounter.
 
-Opening may connect pressure domains.
-
-Reopening may let the atmosphere expand again.
-
-This could produce weather on scales ordinary meteorology does not encounter.
-
-It also means the atmosphere can help drive material movement.
-
-Wind and pressure are not side effects.
-
-They become part of the transport system.
-
-Fine sediment can be carried enormous distances.
-
-Ash and dust can enter high layers.
-
-Seeds and spores can move.
-
-Light debris can be redistributed before floodwater settles it.
+It also means the atmosphere can help drive material movement. Wind and pressure are not side effects; they become part of the transport system. Fine sediment can be carried enormous distances, ash and dust can enter high layers, seeds and spores can move, and light debris can be redistributed before floodwater settles it.
 
 The atmosphere is one of the carriers of inheritance.
 
@@ -24682,17 +24394,7 @@ The atmosphere is where hidden mechanics become weather, terror and memory.
 
 There is another possibility I keep returning to.
 
-A denser, wetter, more luminous atmosphere can change the apparent scale of the world.
-
-Distances can look different.
-
-The horizon can disappear behind haze.
-
-Objects in cloud can appear enormous.
-
-Lights can be magnified or diffused.
-
-An axial structure partly hidden by vapour can look vastly larger than a clear geometric object.
+A denser, wetter, more luminous atmosphere can change the apparent scale of the world. Distances can look different, the horizon can disappear behind haze, objects in cloud can appear enormous, and lights can be magnified or diffused. An axial structure partly hidden by vapour can look vastly larger than a clear geometric object.
 
 This may contribute to giant and god imagery even before any biological giantism is considered.
 
@@ -24720,17 +24422,7 @@ The gate is not a clean geometric tunnel.
 
 It is an environmental event.
 
-As the lattice converges, the atmosphere begins responding.
-
-As the boundary opens, gases and moisture move.
-
-As the current intensifies, electrical activity increases.
-
-As water arrives, pressure and weather reorganise.
-
-As the land moves, dust and debris enter the air.
-
-As heat acts on the surface, steam and smoke rise.
+As the lattice converges, the atmosphere responds. The opening boundary moves gases and moisture; the intensifying current increases electrical activity; arriving water reorganises pressure and weather; moving land throws dust and debris into the air; and heat acting on the surface raises steam and smoke.
 
 Then, when the gate closes, the atmosphere has to settle again.
 
@@ -24740,21 +24432,7 @@ The storm is part of what the gate **is like from inside the world**.
 
 ## After the pulse
 
-When the current weakens and the lattice reopens, the atmosphere begins to recover.
-
-Pressure differences reduce.
-
-Water condenses and drains.
-
-Dust settles.
-
-Ash falls.
-
-Electrical activity decreases.
-
-The sky broadens.
-
-The upper boundary separates again.
+When the current weakens and the lattice reopens, the atmosphere begins to recover. Pressure differences reduce, water condenses and drains, dust and ash settle, electrical activity decreases, the sky broadens and the upper boundary separates again.
 
 The world becomes breathable in the ordinary sense.
 
@@ -24788,13 +24466,7 @@ That is exactly how a world-event becomes myth.
 
 The ordinary world erases the immediate evidence from the air.
 
-Stone remains altered.
-
-Sediment remains.
-
-Buried structures remain.
-
-Stories remain.
+Stone remains altered, sediment remains, buried structures remain and stories remain.
 
 But the sky itself looks innocent.
 
