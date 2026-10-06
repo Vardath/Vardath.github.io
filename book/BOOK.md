@@ -14979,21 +14979,7 @@ The next chapters move through the major visual families one by one.
 
 The axis is one of the oldest structures in cosmology because vertical connection is one of the oldest human experiences.
 
-Root below.
-
-Ground in the middle.
-
-Sky above.
-
-A tree naturally spans those regions.
-
-A mountain naturally rises between them.
-
-A pillar holds them apart.
-
-A ladder crosses the separation.
-
-A rod reduces the whole relationship to one line.
+Root below, ground in the middle and sky above: a tree naturally spans those regions, a mountain rises between them, a pillar holds them apart, a ladder crosses the separation, and a rod reduces the whole relationship to one line.
 
 That is why these forms belong together in Vardath Cosmology.
 
@@ -15005,19 +14991,7 @@ Because they occupy the same structural family.
 
 The tree is the richest axial image.
 
-It contains roots.
-
-Trunk.
-
-Branches.
-
-Growth.
-
-Circulation.
-
-Seasonal death and return.
-
-Connection among levels.
+It contains roots, trunk, branches, growth, circulation, seasonal death and return, and connection among levels.
 
 That makes it much more than a pole.
 
@@ -15031,11 +15005,7 @@ Its trunk gathers.
 
 That is almost a perfect organic image of convergence.
 
-Broad field above.
-
-Broad field below.
-
-Narrow route through the middle.
+Broad field above, broad field below and a narrow route through the middle.
 
 This is why Yggdrasil became so central to my model.
 
@@ -15053,15 +15023,7 @@ Only concentration remains.
 
 That makes it the strongest image for maximum contraction.
 
-Staff.
-
-Spear.
-
-Beam.
-
-Column.
-
-Pole.
+Staff, spear, beam, column and pole are all stripped-down axial forms.
 
 The rod is what the tree becomes when the distributed structure is no longer visually important.
 
@@ -15075,27 +15037,13 @@ In my model, that is the gate-state.
 
 The mountain is the axis translated into landscape.
 
-Broad base.
-
-Narrow summit.
-
-Vertical rise.
-
-Different environmental zones as height increases.
+Broad base, narrow summit, vertical rise and different environmental zones as height increases all make the mountain look like convergence made solid.
 
 A mountain naturally looks like convergence made solid.
 
 That is why world mountains are so common and so useful to the Vardath comparison.
 
-Meru.
-
-Hara Berezaiti.
-
-Olympus.
-
-Mashu.
-
-Sinai in a different role.
+Meru, Hara Berezaiti, Olympus, Mashu and Sinai in a different role all belong to the wider mountain family.
 
 They are not one mountain.
 
@@ -15131,11 +15079,7 @@ The pillar emphasises support.
 
 This is different from travel.
 
-A pillar holds.
-
-Separates.
-
-Stabilises.
+A pillar holds, separates and stabilises.
 
 That makes it especially important in the quiet or post-reset state.
 
@@ -15189,11 +15133,7 @@ The cross also belongs near this family.
 
 It marks the intersection of axial and transverse directions.
 
-Vertical.
-
-Horizontal.
-
-Centre.
+Vertical, horizontal and centre meet in the cross.
 
 That makes it one of the simplest possible diagrams of a world with a through-route intersecting a broad surface.
 
@@ -15239,11 +15179,7 @@ They remain connected to the living structure above.
 
 That is almost exactly how I think of the previous world-turn.
 
-Old.
-
-Hidden.
-
-Still feeding the present.
+Old, hidden and still feeding the present: that is the root-like quality of the previous world-turn.
 
 The lower world is not dead simply because it is old.
 
@@ -15528,11 +15464,7 @@ They are the end-on family.
 
 A converging node has a simple visual logic.
 
-Outer region.
-
-Radial paths.
-
-Central opening or concentration.
+Outer region, radial paths and a central opening or concentration define the basic visual logic of a converging node.
 
 That is enough to produce several familiar forms depending on light, medium and detail.
 
@@ -15554,11 +15486,7 @@ The eye is perhaps the most psychologically powerful radial form.
 
 Human beings are built to notice eyes.
 
-An eye implies attention.
-
-Agency.
-
-Awareness.
+An eye implies attention, agency and awareness.
 
 That makes personification almost automatic.
 
@@ -15574,9 +15502,7 @@ The path from geometry to being is unusually short.
 
 The eye also contains state.
 
-Closed.
-
-Open.
+Closed and open give the eye its state distinction.
 
 That makes it a perfect symbol for the gate.
 
@@ -15618,13 +15544,7 @@ The wheel appears when radial paths and circular motion dominate.
 
 A node can look like a wheel even if it is not mechanically rotating like a cartwheel.
 
-Spokes.
-
-Rim.
-
-Hub.
-
-Concentric organisation.
+Spokes, rim, hub and concentric organisation are enough to produce the wheel family.
 
 Those features are enough.
 
@@ -15636,19 +15556,7 @@ That makes it especially easy for a radial manifestation to become vehicle image
 
 Ezekiel’s wheels are therefore one of the most interesting comparative cases.
 
-Wheels associated with wheels.
-
-Eyes.
-
-Living beings.
-
-Fire.
-
-Radiance.
-
-Movement.
-
-An upper vault and throne-like structure.
+Wheels associated with wheels, eyes, living beings, fire, radiance, movement, and an upper vault with a throne-like structure all appear together in the vision.
 
 I do not need to claim the vision is a technical report of Vardath Cosmology.
 
@@ -15656,15 +15564,7 @@ The importance lies in the combination.
 
 Several roles the model keeps separate appear densely connected in one vision.
 
-Radial geometry.
-
-Eye imagery.
-
-Motion.
-
-Living manifestation.
-
-Authority above.
+Radial geometry, eye imagery, motion, living manifestation and authority above appear densely connected.
 
 That is exactly the sort of multi-role witness account I would expect from a complex active event.
 
@@ -15672,11 +15572,7 @@ That is exactly the sort of multi-role witness account I would expect from a com
 
 A star is another radial projection.
 
-Bright centre.
-
-Rays.
-
-Directional symmetry.
+Bright centre, rays and directional symmetry make the star a natural radial projection.
 
 That makes the star a natural appearance for an active luminous node.
 
@@ -15692,11 +15588,7 @@ An active node can appear star-like even if its physical nature is not an astron
 
 The rosette is the more organic radial form.
 
-Petals.
-
-Layers.
-
-Repeated sectors.
+Petals, layers and repeated sectors give the rosette its organic radial form.
 
 It can look floral, solar or geometric.
 
@@ -15712,11 +15604,7 @@ The role becomes more interesting when rosettes appear beside axial, serpent or 
 
 The ring is the simplest radial boundary.
 
-Outer edge.
-
-Interior.
-
-Closure.
+Outer edge, interior and closure define the ring as the simplest radial boundary.
 
 That places it between node and enclosure.
 
@@ -17789,27 +17677,7 @@ My interest is structural.
 
 When I place the sequence of the vision beside the sequence of my world-cycle, several stages sit in remarkably familiar positions.
 
-Opening.
-
-Celestial disturbance.
-
-A sky that changes form.
-
-Falling or displaced heavenly lights.
-
-Earth movement.
-
-Fire.
-
-Water.
-
-Conflict.
-
-Judgment.
-
-A transformed world.
-
-A renewed city and ordered creation.
+Opening, celestial disturbance, a sky that changes form, falling or displaced heavenly lights, earth movement, fire, water, conflict, judgment, a transformed world, and a renewed city with ordered creation form the sequence I am comparing.
 
 The comparison is strongest when I keep the sequence intact.
 
@@ -17819,13 +17687,7 @@ The Vardath event begins with activation and opening.
 
 Revelation is full of openings.
 
-Seals open.
-
-Heaven opens.
-
-Hidden things become visible.
-
-The ordinary world gives way to another level of reality.
+Seals open, heaven opens, hidden things become visible, and the ordinary world gives way to another level of reality.
 
 I do not treat those openings as literal descriptions of lattice nodes.
 
@@ -17883,13 +17745,7 @@ The open expanse no longer behaves like an ordinary sky.
 
 This is precisely the transformation I was trying to picture when the scroll analogy entered the cosmology.
 
-Broad field.
-
-Rolling.
-
-Narrowing.
-
-Axial concentration.
+Broad field, rolling, narrowing and axial concentration belong to the same visual family.
 
 I do not claim the text describes a fingertrap.
 
@@ -17941,15 +17797,7 @@ That is the disciplined version of the comparison.
 
 Water is also transformed.
 
-Rivers.
-
-Sea.
-
-Blood-like imagery.
-
-Bitter water.
-
-Destructive water.
+Rivers, sea, blood-like imagery, bitter water and destructive water all become active parts of the crisis.
 
 The exact theological meanings belong to the text.
 
@@ -17963,13 +17811,7 @@ That is exactly what happens when the boundary opens.
 
 The apocalypse is loud.
 
-Trumpets.
-
-Voices.
-
-Thunder.
-
-Roaring.
+Trumpets, voices, thunder and roaring make the apocalypse loud as well as visual.
 
 That fits the atmospheric side of the event.
 
@@ -18286,29 +18128,7 @@ A woven door through time.
 
 This is where many of the ideas in the book finally meet.
 
-Tree.
-
-Braid.
-
-Fingertrap.
-
-Previous world.
-
-Present world.
-
-Next world.
-
-Threads.
-
-Fate.
-
-Travel between realms.
-
-Odin hanging on the tree.
-
-The mirror self.
-
-Lands and people moving between ages.
+Tree, braid, fingertrap, previous world, present world, next world, threads, fate, travel between realms, Odin hanging on the tree, the mirror self, and lands and people moving between ages all meet here.
 
 Yggdrasil is the image that lets me hold all of those together.
 
@@ -18316,23 +18136,13 @@ Yggdrasil is the image that lets me hold all of those together.
 
 A normal reading of a world tree emphasises levels.
 
-Roots below.
-
-World in the middle.
-
-Branches above.
+Roots below, world in the middle and branches above already fit the layered structure of Vardath Cosmology.
 
 That already fits the layered structure of Vardath Cosmology.
 
 But once previous, present and next become stages of one growing world-body, the vertical relation changes meaning.
 
-Below is not only lower.
-
-It is older.
-
-Above is not only higher.
-
-It is later.
+Below is not only lower but older, while above is not only higher but later.
 
 The tree therefore becomes temporal as well as spatial.
 
@@ -18384,11 +18194,7 @@ To climb toward the branches is therefore to move toward later world-states.
 
 The trunk joins root and branch.
 
-It carries.
-
-Supports.
-
-Connects.
+It carries, supports and connects.
 
 That makes it the present through-route.
 
@@ -18406,15 +18212,7 @@ The door is what the tree becomes when the lattice tightens.
 
 Yggdrasil also belongs naturally beside thread imagery.
 
-The Vardath world is woven.
-
-The fingertrap is woven.
-
-The braid is woven.
-
-Fate is often described through threads in myth.
-
-Time itself is often described as a thread.
+The Vardath world, the fingertrap and the braid are all woven, while fate and time are often described through threads in myth.
 
 That relationship became impossible for me to ignore.
 
@@ -18422,13 +18220,7 @@ A woven world tree is not simply standing inside time.
 
 Its changing threads can **create the relationship among times**.
 
-Pull the weave.
-
-Change the angle.
-
-Change adjacency.
-
-The door opens.
+Pull the weave, change the angle, change adjacency, and the door opens.
 
 ## The fingertrap tree
 
@@ -18458,9 +18250,7 @@ He is offered to himself.
 
 That phrase contains a strange doubling.
 
-Self to self.
-
-One position of the person confronting another.
+Self to self: one position of the person confronting another.
 
 I do not claim the Norse source is secretly a time-travel story.
 
@@ -18893,17 +18683,7 @@ The organiser establishes large-scale tendencies.
 
 The cargo responds according to its own properties.
 
-Strong rock resists.
-
-Weak rock deforms.
-
-Wet sediment moves more easily.
-
-Existing fractures redirect stress.
-
-Water changes the result.
-
-Heat changes the result again.
+Strong rock resists, weak rock deforms, wet sediment moves more easily, existing fractures redirect stress, water changes the result and heat changes it again.
 
 A city, a mountain and a sediment basin can therefore respond differently to the same deeper movement.
 
@@ -18919,23 +18699,7 @@ That would confuse cause with result.
 
 A deeper current can influence a region without leaving a coastline shaped exactly like the current.
 
-The final map appears after:
-
-uplift;
-
-subsidence;
-
-fracture;
-
-rotation;
-
-erosion;
-
-sedimentation;
-
-water redistribution;
-
-and long recovery.
+The final map appears after uplift, subsidence, fracture, rotation, erosion, sedimentation, water redistribution and long recovery.
 
 The map is the aftermath.
 
@@ -18969,15 +18733,7 @@ During ordinary life, the land feels fundamental.
 
 That is natural.
 
-We stand on it.
-
-Build on it.
-
-Name places on it.
-
-Draw borders across it.
-
-Write history around it.
+We stand on it, build on it, name places on it, draw borders across it and write history around it.
 
 The deeper structure is not part of daily experience.
 
@@ -18995,13 +18751,7 @@ During activation, the relationship changes.
 
 The land stops behaving like an unquestioned base.
 
-Water moves across it.
-
-Sediment shifts.
-
-Heat alters surfaces.
-
-Regions can rise, sink, rotate, bend or fracture.
+Water moves across it, sediment shifts, heat alters surfaces, and regions can rise, sink, rotate, bend or fracture.
 
 The deeper organiser becomes more important than familiar geography.
 
@@ -19069,15 +18819,7 @@ The sky is not unrelated empty infinity in this picture.
 
 It belongs to the architecture of the inhabited world.
 
-Atmosphere.
-
-Lattice dome.
-
-Upper boundary.
-
-Possible upper waters.
-
-Celestial nodes or lights.
+Atmosphere, lattice dome, upper boundary, possible upper waters, and celestial nodes or lights all occupy a direct structural relation to the surface below.
 
 These occupy a direct structural relation to the surface below.
 
@@ -19089,31 +18831,9 @@ The sky is part of the same machine as the land.
 
 A broad flat inhabited surface can still have enormous depth.
 
-Below the lived surface can be:
+Below the lived surface can be crust, sediment, buried older surfaces, heat-altered material, previous-world inheritance and deeper lattice structure.
 
-crust;
-
-sediment;
-
-buried older surfaces;
-
-heat-altered material;
-
-previous-world inheritance;
-
-and deeper lattice structure.
-
-Above it can be:
-
-atmosphere;
-
-cloud;
-
-boundary;
-
-upper water;
-
-and the relation toward the next turn.
+Above it can be atmosphere, cloud, boundary, upper water and the relation toward the next turn.
 
 Flatness does not remove vertical complexity.
 
@@ -19357,21 +19077,7 @@ The land begins to look less like a fixed map and more like a frozen frame from 
 
 A map encourages us to think of geography as a set of objects.
 
-Africa.
-
-Europe.
-
-Asia.
-
-Australia.
-
-North America.
-
-South America.
-
-Islands.
-
-Seas.
+Africa, Europe, Asia, Australia, North America, South America, islands and seas are useful names, but they make the boundaries feel permanent.
 
 Those names are useful, but they make the boundaries feel permanent.
 
@@ -19493,13 +19199,7 @@ Southeast Asia is full of them.
 
 The path from the eastern side of India through Myanmar, Thailand, Sumatra, Java and onward into the Indonesian systems does not look like a straight continental edge.
 
-It bends.
-
-Fragments.
-
-Curves again.
-
-New Guinea and the islands beyond it continue the complexity.
+It bends, fragments and curves again, while New Guinea and the islands beyond it continue the complexity.
 
 Eastern Australia sits beside another large arc relation.
 
@@ -19557,21 +19257,7 @@ Inside Vardath Cosmology, a continent is still cargo.
 
 Large cargo, but cargo.
 
-It can rotate.
-
-Bend.
-
-Break.
-
-Partly subside.
-
-Ride over another region.
-
-Be buried at its margins.
-
-Have pieces detached.
-
-Have other material attached.
+It can rotate, bend, break, partly subside, ride over another region, be buried at its margins, have pieces detached and have other material attached.
 
 The important thing is that the deeper lattice can continue through those changes.
 
@@ -19589,17 +19275,7 @@ This is where the land branch begins to connect with the time-door branch.
 
 If the gate changes adjacency among world-turns, then movement does not have to be limited to small objects.
 
-The simplest crossing is a particle.
-
-Then water.
-
-Air.
-
-Sediment.
-
-Rock.
-
-Living things.
+The simplest crossing is a particle, then water, air, sediment, rock and living things as the scale increases.
 
 But once the event becomes large enough, I do not see a reason to assume the boundary must stop at the scale of a person or a boat.
 
@@ -19669,13 +19345,7 @@ If the geometry changes enough, the event can rearrange the relationship of whol
 
 That means the traveller may not be the only thing moving.
 
-The road can move.
-
-The house can move.
-
-The city can move.
-
-The land beneath the city can move.
+The road, house, city and even the land beneath the city can move.
 
 A region can become part of another time not because every person walked through a portal one by one, but because the larger piece of the world containing them changed its adjacency.
 
@@ -19697,13 +19367,7 @@ Those are different levels of the model.
 
 When two regions are driven together, the material between them has to go somewhere.
 
-It folds.
-
-Thickens.
-
-Fractures.
-
-Rises.
+It folds, thickens, fractures and rises.
 
 The mountain preserves that struggle after the deeper active state has quieted.
 
@@ -19917,23 +19581,7 @@ My method is not to take one photograph, declare victory and stop.
 
 It is to look for the **strongest repeated relationships**.
 
-Stone that looks softened.
-
-Brick or masonry that appears distorted as a mass rather than simply broken.
-
-Glassy surfaces.
-
-Vitrification.
-
-Foaming.
-
-Flow-like forms.
-
-Buildings that seem to merge into surrounding material.
-
-Mountain-like masses that preserve architectural-looking regularity.
-
-Buried lower levels.
+Stone that looks softened, brick or masonry distorted as a mass rather than simply broken, glassy surfaces, vitrification, foaming, flow-like forms, buildings that seem to merge into surrounding material, mountain-like masses preserving architectural-looking regularity, and buried lower levels all belong to that repeated pattern.
 
 Surfaces that appear to have been heated and then rapidly fixed in another state.
 
@@ -20029,25 +19677,7 @@ This is where the electrical side of the cosmology matters most.
 
 A plasma-like or electrical event does not need to heat everything evenly like an oven.
 
-It can follow paths.
-
-It can arc.
-
-Branch.
-
-Concentrate.
-
-Jump.
-
-Track conductive material.
-
-Follow water.
-
-Gather at sharp points.
-
-Spread over wet surfaces.
-
-Enter cracks.
+It can follow paths, arc, branch, concentrate, jump, track conductive material, follow water, gather at sharp points, spread over wet surfaces and enter cracks.
 
 That creates a very different pattern from slow uniform heating.
 
@@ -20109,17 +19739,7 @@ Natural geology can already produce remarkable shapes.
 
 A wall or tower gives a reference.
 
-Straight lines.
-
-Repeated openings.
-
-Courses of brick.
-
-Decorative stone.
-
-Arches.
-
-Blocks.
+Straight lines, repeated openings, courses of brick, decorative stone, arches and blocks provide the reference that natural geology lacks.
 
 When those forms appear to sag, bulge, glaze, blend or disappear into a more amorphous mass, the transformation becomes visually striking.
 
@@ -20201,13 +19821,7 @@ That is exactly the sort of discontinuity the world-reset model is built to expl
 
 Some Meltology forms do not simply look melted.
 
-They look foamed.
-
-Pocked.
-
-Bubbled.
-
-Expanded.
+They can look foamed, pocked, bubbled and expanded.
 
 That suggests more than heat alone.
 
@@ -20219,13 +19833,7 @@ Pressure matters.
 
 A wet porous material heated rapidly can behave violently.
 
-Water flashes toward steam.
-
-Gas expands.
-
-Voids form.
-
-Softened material swells or tears.
+Water flashes toward steam, gas expands, voids form and softened material swells or tears.
 
 If cooling follows quickly, those cavities can be frozen into the final form.
 
@@ -20235,13 +19843,7 @@ Water is not only what arrives after the fire.
 
 It may be inside the material while the heating happens.
 
-It may be raining.
-
-Flooding.
-
-Running through walls and sediment.
-
-Saturating the ground.
+It may be raining, flooding, running through walls and sediment, or saturating the ground.
 
 The same event can therefore create both molten-looking and foamed-looking surfaces.
 
@@ -20291,21 +19893,7 @@ Cooling is just as important as heating.
 
 A material that has been altered at high temperature does not stay in that state forever.
 
-It cools.
-
-Minerals recrystallise.
-
-Glass fractures.
-
-Water penetrates.
-
-New chemical reactions occur.
-
-Weathering begins.
-
-Sediment covers the surface.
-
-Vegetation returns.
+It cools, minerals recrystallise, glass fractures, water penetrates, new chemical reactions occur, weathering begins, sediment covers the surface and vegetation returns.
 
 The final object may no longer look freshly melted.
 
@@ -20329,33 +19917,13 @@ The active event can contain both extreme heat and huge amounts of water.
 
 That combination allows violent thermal transitions.
 
-A surface heats.
-
-Softens.
-
-Vitrifies.
-
-Then water arrives.
-
-Or pressure changes.
-
-Or the current pulse ends.
-
-The material cools quickly.
+A surface heats, softens and vitrifies; then water arrives, pressure changes or the current pulse ends, and the material cools quickly.
 
 The altered shape freezes in place before gravity and ordinary weathering have time to smooth it into something more familiar.
 
 This can preserve flow-like forms.
 
-Bulges.
-
-Glass skins.
-
-Cracks.
-
-Layer separations.
-
-Foamed interiors.
+Bulges, glass skins, cracks, layer separations and foamed interiors can all be preserved.
 
 The reset therefore has a natural **heat-and-quench** sequence.
 
@@ -20365,19 +19933,7 @@ That is one of the strongest connections between Meltology and the larger event 
 
 The transformed material may then be buried almost immediately.
 
-Floodwater carries sediment.
-
-Slopes collapse.
-
-Mud fills low areas.
-
-Ash and dust settle.
-
-Buildings already weakened by heat can collapse under debris.
-
-Lower storeys disappear.
-
-Ground level rises.
+Floodwater carries sediment, slopes collapse, mud fills low areas, ash and dust settle, buildings already weakened by heat can collapse under debris, lower storeys disappear and ground level rises.
 
 A later population builds above or around the surviving upper parts.
 
@@ -20385,17 +19941,7 @@ This is how the Meltology branch connects directly to buried-city and mudflood i
 
 The same reset can:
 
-heat;
-
-break;
-
-flood;
-
-bury;
-
-cool;
-
-and then renew.
+heat, break, flood, bury, cool and then renew.
 
 The sequence matters more than the label.
 
@@ -20709,15 +20255,7 @@ What matters first is architecture.
 
 The sky belongs to the same world-system as the land.
 
-It has structure.
-
-It has layers.
-
-It has paths.
-
-It has boundaries.
-
-It can change state.
+It has structure, layers, paths and boundaries, and it can change state.
 
 That is the part I keep.
 
@@ -20759,31 +20297,11 @@ That gives the sky a role in the world cycle instead of leaving it untouched whi
 
 A world-scale reset should affect the whole world.
 
-Land.
-
-Water.
-
-Air.
-
-Sky.
+Land, water, air and sky all belong to the same world-scale reset.
 
 That is what the mythology often looks like too.
 
-The heavens open.
-
-Stars fall.
-
-The Sun changes.
-
-The Moon changes.
-
-A wheel appears.
-
-A great light becomes visible.
-
-The sky rolls or departs.
-
-A new sky appears after the crisis.
+The heavens open, stars fall, the Sun changes, the Moon changes, a wheel appears, a great light becomes visible, the sky rolls or departs, and a new sky appears after the crisis.
 
 Those images make much more sense to me inside a cosmology where the sky itself is part of the changing apparatus.
 
@@ -20839,13 +20357,7 @@ The important thing is that the lattice gives me a reason for the sky to contain
 
 A node can be dormant or active.
 
-It can brighten.
-
-It can open.
-
-It can become eye-like.
-
-It can participate in a larger radial pattern.
+It can brighten, open, become eye-like and participate in a larger radial pattern.
 
 That is exactly where the eye-wheel-star family enters the cosmology.
 
@@ -20875,11 +20387,7 @@ The stronger point is that both belong to the structured upper world.
 
 Their motion, light and relationship to the lattice may differ from the stars.
 
-They may occupy different paths.
-
-Different layers.
-
-Different roles.
+They may occupy different paths, layers and roles.
 
 The sky does not have to be uniform.
 
@@ -20891,19 +20399,7 @@ A complex apparatus contains different moving parts.
 
 The idea of celestial paths appears again and again in old cosmologies.
 
-Sun roads.
-
-Moon stations.
-
-Star paths.
-
-Boats across the sky.
-
-Chariots.
-
-Wheels.
-
-Gates at the horizon.
+Sun roads, Moon stations, star paths, boats across the sky, chariots, wheels and gates at the horizon all belong to the family of celestial paths.
 
 I do not read those as primitive mistakes that become irrelevant once modern astronomy exists.
 
@@ -20971,13 +20467,7 @@ From above, it can belong to the lower side of the next world-turn.
 
 The sky therefore becomes a layered interface:
 
-atmosphere below;
-
-lattice and nodes through the region;
-
-water-bearing boundary;
-
-next-world relation beyond.
+atmosphere below, lattice and nodes through the region, water-bearing boundary, and next-world relation beyond.
 
 During quiet conditions those layers remain ordered.
 
@@ -21011,29 +20501,13 @@ It can be the human interpretation of an opening that looks as though it is look
 
 An opening sky is one of the most persistent motifs in the comparative material.
 
-Heaven opens.
-
-A door appears.
-
-A hole appears.
-
-A stair, ladder or beam connects worlds.
-
-Something descends.
-
-Something ascends.
+Heaven opens, a door or hole appears, a stair, ladder or beam connects worlds, and something descends or ascends.
 
 In the Vardath model, that is not a separate miracle added to the cosmology.
 
 It is the gate event seen from below.
 
-The lattice contracts.
-
-A throat forms.
-
-The upper boundary becomes permeable.
-
-The next world becomes adjacent.
+The lattice contracts, a throat forms, the upper boundary becomes permeable and the next world becomes adjacent.
 
 The sky opens because the world relation has changed.
 
@@ -21047,13 +20521,7 @@ The opening is the active boundary.
 
 The image of the sky rolling or folding became especially important because it suggests that the broad upper field is not permanent in its broad form.
 
-A scroll can open.
-
-A scroll can roll.
-
-A woven field can spread.
-
-A woven field can narrow.
+A scroll can open or roll, and a woven field can spread or narrow.
 
 These are different analogies for the same transformation.
 
@@ -21121,27 +20589,7 @@ The more I developed the model, the less I liked the idea of a dead sky.
 
 The old traditions often describe the heavens as alive.
 
-They move.
-
-Open.
-
-Close.
-
-Rotate.
-
-Speak.
-
-Watch.
-
-Send fire.
-
-Release water.
-
-Carry gods.
-
-Receive the dead.
-
-Produce new worlds.
+They move, open, close, rotate, speak, watch, send fire, release water, carry gods, receive the dead and produce new worlds.
 
 I do not need to take every description literally to recognise the underlying intuition.
 
@@ -21255,21 +20703,7 @@ It should have states.
 
 That is why I think of the sky as **breathing**.
 
-Not breathing air in the biological sense.
-
-Breathing geometry.
-
-Expanding.
-
-Contracting.
-
-Opening.
-
-Closing.
-
-Distributing.
-
-Concentrating.
+Not breathing air in the biological sense, but breathing geometry: expanding, contracting, opening, closing, distributing and concentrating.
 
 The quiet sky is broad.
 
@@ -21285,25 +20719,13 @@ That is the breath.
 
 The broad sky is the state we know.
 
-The heavens stretch over the world.
-
-Lights are distributed.
-
-The dome or lattice does not announce itself as machinery.
-
-The horizon remains stable.
-
-The upper boundary is not visibly open.
+The heavens stretch over the world, lights are distributed, the dome or lattice does not announce itself as machinery, the horizon remains stable and the upper boundary is not visibly open.
 
 Whatever current runs through the deeper structure is spread widely enough that the sky appears calm.
 
 This is the inhaled-looking state if I use the breathing metaphor.
 
-The structure has room.
-
-The mesh is open.
-
-The world is wide.
+The structure has room, the mesh is open and the world is wide.
 
 ## Gathering
 
@@ -21311,17 +20733,7 @@ Activation changes that.
 
 The first step does not need to be dramatic.
 
-A few nodes may strengthen.
-
-A few preferred paths become more important.
-
-The sky may show unusual lights.
-
-Electrical activity can increase.
-
-Cloud and vapour can organise around deeper pathways.
-
-The field begins to reveal structure.
+A few nodes may strengthen, preferred paths become more important, the sky may show unusual lights, electrical activity can increase, and cloud and vapour can organise around deeper pathways as the field begins to reveal structure.
 
 At this point the sky is not yet a rod.
 
@@ -21351,11 +20763,7 @@ From below, a converging region is seen end-on.
 
 That is exactly the viewpoint that turns a three-dimensional throat into a circular image.
 
-The eye opens because the node has become active.
-
-The wheel appears because the paths around it are now visible.
-
-The star appears because radial brightness dominates.
+The eye opens because the node has become active, the wheel appears because the paths around it are now visible, and the star appears because radial brightness dominates.
 
 The symbol changes with the same underlying geometry.
 
@@ -21369,17 +20777,7 @@ The key relation is that the **supporting geometry changes**.
 
 If the lattice is carrying or organising the lights, then contraction can alter their apparent positions.
 
-Some may move toward the active region.
-
-Some may disappear behind changing layers.
-
-Some may brighten.
-
-Some may dim.
-
-Some may appear to fall.
-
-Some may be carried into the rod-body.
+Some may move toward the active region, disappear behind changing layers, brighten, dim, appear to fall or be carried into the rod-body.
 
 The sky that looked permanent can suddenly become fluid.
 
@@ -21395,15 +20793,7 @@ I mean the geometry that matters most becomes axial.
 
 The through-route takes over from the spread field.
 
-From one viewpoint this can look like a pillar.
-
-From another, a tree.
-
-From another, a luminous person.
-
-From another, a ladder or rope.
-
-From below, the end may appear as an eye or wheel.
+From one viewpoint this can look like a pillar, from another a tree, from another a luminous person, and from another a ladder or rope; from below, the end may appear as an eye or wheel.
 
 The sky has not become several different objects.
 
@@ -21421,13 +20811,7 @@ If the sky contracts, lights carried by the field may appear incorporated into t
 
 The rod can then look star-studded.
 
-Eye-covered.
-
-Scaled.
-
-Jeweled.
-
-Alive.
+It can look eye-covered, scaled, jeweled and alive.
 
 A being covered in eyes and stars can be the human interpretation of a concentrated celestial field.
 
@@ -21493,17 +20877,7 @@ The atmosphere is inside the same region.
 
 As the lattice changes, air and vapour can respond.
 
-Pressure can change.
-
-Cloud can thicken.
-
-Moisture can gather around active paths.
-
-Electrical discharge can become more common.
-
-Wind can accelerate.
-
-Heat can move.
+Pressure can change, cloud can thicken, moisture can gather around active paths, electrical discharge can become more common, wind can accelerate and heat can move.
 
 The geometric breath and atmospheric breath become coupled.
 
@@ -22949,11 +22323,7 @@ The longer I worked on the world-turn model, the harder it became to keep preten
 
 They began as a convenient way of talking about neighbouring layers.
 
-One below.
-
-One here.
-
-One above.
+One below, one here and one above was the first simple description.
 
 But that description was never quite enough.
 
@@ -22979,11 +22349,7 @@ Time as **position inside the growing world-body**.
 
 The usual way of talking about time makes the past unavailable and the future nonexistent.
 
-The past is gone.
-
-The future has not happened.
-
-The present is the only thing physically here.
+The ordinary assumption is that the past is gone, the future has not happened and the present is the only thing physically here.
 
 Vardath Cosmology increasingly pushes me toward a different picture.
 
@@ -22999,11 +22365,7 @@ I am not picturing time as a row of complete frozen scenes.
 
 I am picturing **world-states preserved in the growth of one larger body**.
 
-The older turn contains what came before in structural form.
-
-The present turn carries the current stable environment.
-
-The next turn contains what is becoming.
+The older turn contains what came before in structural form, the present turn carries the current stable environment, and the next turn contains what is becoming.
 
 The three belong to one continuous architecture.
 
@@ -23049,15 +22411,7 @@ The old turn is still there.
 
 This is the quality I want from the world-tree and shell together.
 
-The world grows.
-
-The growth remains.
-
-The past becomes depth.
-
-The future becomes the region still opening.
-
-The present is the active edge of habitability.
+The world grows and the growth remains. The past becomes depth, the future becomes the region still opening, and the present is the active edge of habitability.
 
 That is a very different cosmology from a universe in which time is only a number attached to changing objects.
 
@@ -23081,21 +22435,7 @@ It becomes **inherited matter and inherited geometry**.
 
 This gives the lower world an enormous symbolic power.
 
-It can contain ancestors.
-
-Old cities.
-
-Buried worlds.
-
-Former waters.
-
-Dead rulers.
-
-Lost creatures.
-
-Old gods.
-
-Memory.
+It can contain ancestors, old cities, buried worlds, former waters, dead rulers, lost creatures, old gods and memory.
 
 Again, I am not saying every underworld tradition literally describes the previous world-turn.
 
@@ -23125,13 +22465,7 @@ It feels complete because ordinary human life happens inside it.
 
 But from the viewpoint of the larger world-body, it is one phase in an ongoing handoff.
 
-The present receives from the past.
-
-The present gives to the future.
-
-The current runs through all three.
-
-The lattice connects all three.
+The present receives from the past and gives to the future, while the current runs through all three and the lattice connects them.
 
 The gate temporarily changes the relationship among them.
 
@@ -23203,13 +22537,7 @@ The same gate principle used between world-levels can also apply to world-states
 
 If previous, present and next are already regions of one larger structure, then time travel can become a problem of access rather than speed.
 
-The door opens.
-
-The relationship changes.
-
-A region that was normally separated becomes locally connected.
-
-The traveller crosses.
+The door opens, the relationship changes, a region that was normally separated becomes locally connected, and the traveller crosses.
 
 That is why I increasingly think of the Vardath gate as a natural **time door**.
 
@@ -23235,17 +22563,7 @@ For a brief interval, the two conditions overlap enough for transfer.
 
 That gives the event a strange temporal character.
 
-People can move.
-
-Water can move.
-
-Land can move.
-
-Objects can move.
-
-Information can move.
-
-Stories can move.
+People, water, land, objects, information and stories can all move through that interval.
 
 The event does not merely happen *in* time.
 
@@ -23263,11 +22581,7 @@ This is where Yggdrasil changed meaning for me.
 
 At first, the world tree was useful because it connects realms.
 
-Roots below.
-
-Trunk through the middle.
-
-Branches above.
+Roots below, trunk through the middle and branches above already fit the axial structure.
 
 That already fits the axial structure.
 
