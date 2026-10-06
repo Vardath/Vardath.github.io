@@ -25753,17 +25753,7 @@ Continuity therefore comes from **interaction and inheritance between persistent
 
 Every stable world is already made from older material.
 
-Rock has history.
-
-Water has history.
-
-Life has history.
-
-Cities inherit stone from earlier structures.
-
-Soil contains the remains of older life.
-
-Sediment contains older surfaces.
+Rock, water and life all have history. Cities inherit stone from earlier structures, soil contains the remains of older life, and sediment contains older surfaces.
 
 The present is always built from the past.
 
@@ -25773,19 +25763,7 @@ When the reset comes, the present world becomes the donor.
 
 Its material is redistributed.
 
-Some remains.
-
-Some is buried.
-
-Some moves upward.
-
-Some moves downward.
-
-Some is transformed by heat.
-
-Some is broken apart.
-
-Some remains coherent inside carriers.
+Some remains, some is buried, some moves upward or downward, some is transformed by heat or broken apart, and some remains coherent inside carriers.
 
 The next world is therefore not made from our world at all.
 
@@ -25875,23 +25853,7 @@ For a new-beginning period to carry continuity across the event, matter can cros
 
 The handoff cannot be symbolic only.
 
-Water matters because the new environment needs water.
-
-Atmosphere matters because life needs air.
-
-Sediment matters because the new surface needs material.
-
-Microbes matter because ecosystems need microscopic continuity.
-
-Seeds matter because plants need continuity.
-
-Animals matter.
-
-People matter.
-
-Structures may matter.
-
-Memory matters.
+Water matters because the new environment needs water, atmosphere because life needs air, sediment because the new surface needs material, microbes because ecosystems need microscopic continuity, and seeds because plants need continuity. Animals, people, structures and memory may matter as well.
 
 This is why the gate has to be physically rich.
 
@@ -25913,15 +25875,7 @@ That gives the new world one of its essential materials.
 
 Water can arrive through the upper/lower boundary relation.
 
-It can carry sediment.
-
-It can carry seeds.
-
-It can carry organisms.
-
-It can move heat.
-
-It can erode the old world and deposit the results into the new.
+It can carry sediment, seeds and organisms, move heat, erode the old world and deposit the results into the new.
 
 This is why water can be destroyer and mother at the same time.
 
@@ -25943,13 +25897,7 @@ So the gate can transfer gas, moisture, heat and pressure relationships.
 
 The new world may initially have an atmosphere very different from the quiet state we know.
 
-It may be denser.
-
-Wetter.
-
-More electrically active.
-
-More energetic.
+It may be denser, wetter, more electrically active and more energetic.
 
 Then, as the gate closes, the atmosphere settles.
 
@@ -25973,15 +25921,7 @@ Water carries those pieces.
 
 The new world receives them.
 
-Mud settles.
-
-Sand settles.
-
-Ash settles.
-
-Organic material settles.
-
-Broken masonry settles.
+Mud, sand, ash, organic material and broken masonry all settle into the new surface.
 
 The new ground is therefore literally composed of the old world.
 
@@ -26003,21 +25943,7 @@ It does not arrive as ordinary rubble.
 
 It arrives transformed.
 
-Glazed.
-
-Fused.
-
-Foamed.
-
-Vitrified.
-
-Slumped.
-
-Recrystallised.
-
-Partly melted.
-
-Partly buried.
+It can arrive glazed, fused, foamed, vitrified, slumped, recrystallised, partly melted or partly buried.
 
 A building can arrive looking like geology.
 
@@ -26039,17 +25965,7 @@ Not everything has to be broken apart first.
 
 Some regions may cross coherently enough to remain recognisable.
 
-A block of land.
-
-An island.
-
-A city.
-
-A mountain.
-
-A valley.
-
-A cultural region.
+A block of land, island, city, mountain, valley or cultural region may cross coherently enough to remain recognisable.
 
 The whole piece becomes inheritance.
 
@@ -26079,17 +25995,7 @@ A world is not truly successor if everything living has to begin again from chem
 
 Vardath Cosmology instead allows life to cross.
 
-Seeds.
-
-Spores.
-
-Microbes.
-
-Eggs.
-
-Animals.
-
-People.
+Seeds, spores, microbes, eggs, animals and people can all cross.
 
 Some travel in carriers.
 
@@ -26113,17 +26019,7 @@ The reset selects.
 
 The enclosure principle becomes especially important here.
 
-An ark is a miniature world.
-
-A basket is a miniature world.
-
-An egg is a miniature world.
-
-A womb is a miniature world.
-
-A cave is a miniature world.
-
-A city can be a miniature world.
+An ark, basket, egg, womb or cave is a miniature world, and a city can be one too.
 
 Each preserves an inside while the larger outside becomes unstable.
 
@@ -26131,11 +26027,7 @@ The renewed present can therefore be reseeded by protected local enclosures and 
 
 This nesting feels important to me.
 
-World inside world.
-
-Carrier inside world.
-
-Life inside carrier.
+World inside world, carrier inside world and life inside carrier repeat the same nesting principle.
 
 The same principle repeats by scale.
 
@@ -26145,27 +26037,7 @@ That kind of repetition is exactly what I expect from a living cosmology.
 
 A surviving person carries more than biology.
 
-Language.
-
-Memory.
-
-Tools.
-
-Stories.
-
-Rituals.
-
-Songs.
-
-Names.
-
-Knowledge.
-
-Trauma.
-
-Maps.
-
-Genealogy.
+Language, memory, tools, stories, rituals, songs, names, knowledge, trauma, maps and genealogy can all cross through surviving people.
 
 That means cultural continuity can cross the reset even when institutions collapse.
 
@@ -26195,19 +26067,7 @@ The figure survives because the story survives.
 
 The role may change.
 
-The god can become an ancestor.
-
-A demon.
-
-A saint.
-
-A giant.
-
-A legendary king.
-
-A star.
-
-A monster.
+The god can become an ancestor, demon, saint, giant, legendary king, star or monster.
 
 The name may change.
 
@@ -26235,23 +26095,7 @@ Later people hear descriptions that no longer resemble anything they see.
 
 The old world therefore becomes mythic.
 
-An age of giants.
-
-An age of gods.
-
-A golden age.
-
-A drowned land.
-
-A lost empire.
-
-A world before the flood.
-
-A time when heaven and earth were close.
-
-A time when animals spoke.
-
-A time when people lived longer.
+An age of giants or gods, a golden age, a drowned land, a lost empire, a world before the flood, a time when heaven and earth were close, animals spoke or people lived longer can all grow from that remembered difference.
 
 The remembered difference becomes symbolic because the physical reference has vanished.
 
@@ -26385,23 +26229,7 @@ The first thing I expect from a real world-scale event is disagreement.
 
 If a gate opens across a huge structure, people in different places will not see the same thing.
 
-One population may see the sky brighten.
-
-Another sees darkness.
-
-Another sees water.
-
-Another fire.
-
-Another a towering axial form.
-
-Another only the aftermath.
-
-Another is carried away and remembers the journey rather than the sky.
-
-Another survives underground and remembers enclosure.
-
-Another lives on transferred land and remembers that the world changed around them.
+One population may see the sky brighten, another darkness, another water, another fire, another a towering axial form and another only the aftermath. One may be carried away and remember the journey rather than the sky, another survive underground and remember enclosure, and another live on transferred land and remember the world changing around them.
 
 That means different stories can preserve the same larger event without sharing the same imagery.
 
@@ -26419,35 +26247,13 @@ Human beings have lived beside snakes for as long as we have been human.
 
 Snakes are visually striking.
 
-They shed skin.
-
-They live in holes.
-
-They move strangely.
-
-They can be dangerous.
-
-They naturally acquire symbolic meaning.
+They shed skin, live in holes, move strangely, can be dangerous and naturally acquire symbolic meaning.
 
 So the fact that two cultures have a serpent myth tells me very little on its own.
 
 The comparison becomes stronger when the serpent does something structurally specific.
 
-Shapes land.
-
-Carries or releases water.
-
-Surrounds the world.
-
-Wraps around an axis.
-
-Guards a gate.
-
-Appears during world destruction.
-
-Connects upper and lower regions.
-
-Becomes associated with lightning or radiant sky forms.
+It may shape land, carry or release water, surround the world, wrap around an axis, guard a gate, appear during world destruction, connect upper and lower regions, or become associated with lightning or radiant sky forms.
 
 Then the serpent is no longer just a shared animal symbol.
 
@@ -26463,11 +26269,7 @@ Trees are universal human experience.
 
 A world tree could emerge independently in many cultures because trees naturally connect below, middle and above.
 
-Roots enter the ground.
-
-Trunk occupies human space.
-
-Branches reach the sky.
+Roots enter the ground, the trunk occupies human space and branches reach the sky.
 
 That alone does not prove anything.
 
@@ -26487,21 +26289,7 @@ The comparisons that matter most to me are the ones where several things happen 
 
 For example:
 
-A stable world exists.
-
-A boundary changes.
-
-A route opens.
-
-Water or fire becomes active.
-
-A traveller, survivor or god crosses.
-
-The old order breaks.
-
-A remnant survives.
-
-The world is renewed.
+A stable world exists, a boundary changes, a route opens, water or fire becomes active, a traveller, survivor or god crosses, the old order breaks, a remnant survives and the world is renewed.
 
 That sequence is much harder to reduce to one isolated symbol.
 
@@ -26543,25 +26331,7 @@ Human memory does not preserve a world-scale event as a scientific paper.
 
 It compresses.
 
-A current becomes a serpent.
-
-A convergence becomes a mountain.
-
-A node becomes an eye.
-
-A radial sky form becomes a wheel.
-
-A gate becomes a cave, door or bridge.
-
-A carried population becomes an ark story.
-
-A world-level becomes heaven or underworld.
-
-A transferred city becomes a lost kingdom.
-
-A heated surface becomes a land burned by gods.
-
-A giant plasma form becomes a giant being.
+A current becomes a serpent, a convergence a mountain, a node an eye, a radial sky form a wheel, a gate a cave, door or bridge, a carried population an ark story, a world-level heaven or underworld, a transferred city a lost kingdom, a heated surface a land burned by gods, and a giant plasma form a giant being.
 
 This compression is not error in the simple sense.
 
@@ -26573,21 +26343,7 @@ That is why myth can preserve structure while changing explanation.
 
 I also do not think every myth is memory.
 
-Human imagination creates.
-
-Poets combine stories.
-
-Priests reorganise traditions.
-
-Kings reshape ancestry.
-
-Religions absorb older gods.
-
-Stories travel.
-
-Symbols are borrowed.
-
-Local landscapes change the meaning of imported motifs.
+Human imagination creates, poets combine stories, priests reorganise traditions, kings reshape ancestry, religions absorb older gods, stories travel, symbols are borrowed and local landscapes change the meaning of imported motifs.
 
 A flood story can spread from one culture to another.
 
@@ -26679,37 +26435,11 @@ Flood myths are some of the clearest candidates for event memory because water i
 
 But even here I do not treat every flood as the same flood.
 
-Local floods happen.
-
-River floods happen.
-
-Tsunamis happen.
-
-Storm surges happen.
-
-Coastlines change.
-
-Human beings naturally tell flood stories.
+Local and river floods happen, tsunamis and storm surges happen, coastlines change, and human beings naturally tell flood stories.
 
 The Vardath comparison becomes stronger when flood appears with other gate roles.
 
-Opened heaven.
-
-Upper waters.
-
-A chosen carrier.
-
-World renewal.
-
-Mountain refuge.
-
-Celestial disturbance.
-
-Fire.
-
-New ancestry.
-
-Changed world geography.
+Opened heaven, upper waters, a chosen carrier, world renewal, mountain refuge, celestial disturbance, fire, new ancestry and changed world geography make the comparison stronger when they appear together.
 
 That cluster looks much more like a world transition than a simple regional flood.
 
@@ -26721,21 +26451,7 @@ Mountains are another universal human experience.
 
 But a world mountain is doing more than being tall.
 
-It sits at the centre.
-
-Connects levels.
-
-Carries gods.
-
-Touches the sky.
-
-Organises celestial motion.
-
-Contains gates.
-
-Hides worlds.
-
-Survives catastrophe.
+It may sit at the centre, connect levels, carry gods, touch the sky, organise celestial motion, contain gates, hide worlds and survive catastrophe.
 
 Those are axial roles.
 
@@ -26753,17 +26469,7 @@ The eye-wheel family is especially interesting because it is harder to explain a
 
 An active node viewed end-on can naturally become radial.
 
-Rings.
-
-Spokes.
-
-Central opening.
-
-Bright rim.
-
-Dark centre.
-
-Many smaller points around a larger form.
+Rings, spokes, a central opening, bright rim, dark centre and many smaller points around a larger form all belong to the radial family.
 
 That can be read as eye, wheel, star or rosette depending on culture and context.
 
@@ -26809,15 +26515,7 @@ That tells me more than height alone.
 
 The operator category remains one of the most useful.
 
-A storm god who opens waters.
-
-A king who establishes order after catastrophe.
-
-A rider who crosses worlds.
-
-A saviour who completes renewal.
-
-A radiant throne figure above a cosmic mechanism.
+A storm god who opens waters, a king who establishes order after catastrophe, a rider who crosses worlds, a saviour who completes renewal, or a radiant throne figure above a cosmic mechanism may all carry operator-like agency.
 
 These figures may represent agency attached to the event.
 
@@ -27289,17 +26987,7 @@ The upper-water branch remains central.
 
 I think a water-bearing boundary between present and next world can explain a great deal.
 
-Flood.
-
-Waters above.
-
-Opening heaven.
-
-World sea.
-
-Upper reservoir.
-
-The first waters of the next world.
+Flood, waters above, opening heaven, world sea, upper reservoir and the first waters of the next world all belong to the unresolved upper-water branch.
 
 The idea that one boundary can be ceiling from below and floor from above remains one of the most elegant relationships in the model.
 
@@ -27343,13 +27031,7 @@ Then the sky can reopen.
 
 What I do not yet want to force is the identity of every celestial object.
 
-Sun.
-
-Moon.
-
-Planets.
-
-Stars.
+Sun, Moon, planets and stars remain partly open categories in the model.
 
 Some may be nodes.
 
@@ -27403,17 +27085,7 @@ Meltology remains one of the areas I want to pursue most deeply.
 
 The cosmology gives it a natural place.
 
-The current concentrates.
-
-The surface heats.
-
-Material softens, vitrifies, foams, fuses, recrystallises or slumps.
-
-Water arrives.
-
-The altered material cools rapidly.
-
-Sediment buries it.
+The current concentrates, the surface heats, material softens, vitrifies, foams, fuses, recrystallises or slumps, water arrives, the altered material cools rapidly and sediment buries it.
 
 Later people inherit forms that lie somewhere between architecture and geology.
 
@@ -27477,25 +27149,7 @@ I do not need one simplified global empire story.
 
 What interests me is the larger discontinuity.
 
-Monumental architecture.
-
-Buried lower levels.
-
-Repurposed structures.
-
-Melted or mountain-like forms.
-
-Mud-flood imagery.
-
-Reset stories.
-
-Populations inheriting cities.
-
-Historical compression.
-
-Possibly moved land.
-
-Possibly moved time.
+Monumental architecture, buried lower levels, repurposed structures, melted or mountain-like forms, mud-flood imagery, reset stories, populations inheriting cities, historical compression, possibly moved land and possibly moved time all belong to the larger discontinuity I want to investigate.
 
 The Vardath model can contain all of those without forcing them into one rigid chronology.
 
@@ -27529,21 +27183,7 @@ That possibility deserves more thought.
 
 The waking-world biology is still wide open.
 
-Different atmosphere.
-
-Different pressure.
-
-More moisture.
-
-Different electrical conditions.
-
-Different heat.
-
-Different radiation.
-
-Different available energy.
-
-Biological transfer among world-turns.
+Different atmosphere, pressure, moisture, electrical conditions, heat, radiation, available energy and biological transfer among world-turns could all change life.
 
 All of those could change life.
 
@@ -27569,25 +27209,7 @@ The operator question is even more open.
 
 Who or what occupies the central role in some of these stories?
 
-A god.
-
-A rider.
-
-A king.
-
-A radiant being.
-
-A giant.
-
-A watcher.
-
-A guide.
-
-A survivor.
-
-A natural process personified.
-
-A real intelligence using the world-machine.
+A god, rider, king, radiant being, giant, watcher, guide, survivor, natural process personified or real intelligence using the world-machine could occupy that central role.
 
 I do not know.
 
@@ -27877,15 +27499,7 @@ But his work gives me something I needed long before I understood how much I nee
 
 **a large current can have anatomy.**
 
-It can filament.
-
-It can pinch.
-
-It can form lobes.
-
-It can organise around an axis.
-
-It can develop repeated shapes.
+It can filament, pinch, form lobes, organise around an axis and develop repeated shapes.
 
 And under extreme conditions, something that is fundamentally a current can become something a human witness might remember as a figure in the sky.
 
@@ -27923,49 +27537,17 @@ The Squatter Man matters to me because it breaks the habit of thinking that a ph
 
 Imagine a large current system viewed from the ground.
 
-At one stage it is a column.
-
-At another it narrows through a pinch.
-
-At another it produces wider structures above and below.
-
-Filaments separate and rejoin.
-
-Bright concentrations form.
-
-Transverse structures appear.
+At one stage it is a column, at another it narrows through a pinch, and at another it produces wider structures above and below. Filaments separate and rejoin, bright concentrations form and transverse structures appear.
 
 The human eye is very good at turning geometry into bodies.
 
-A bright upper concentration becomes a head.
-
-A narrow central region becomes a waist.
-
-Lateral forms become arms.
-
-Lower structures become legs.
+A bright upper concentration becomes a head, a narrow central region a waist, lateral forms arms and lower structures legs.
 
 The event becomes a person.
 
 But turn the geometry or change the phase and the same system may no longer look human at all.
 
-It may look like a rod.
-
-A tree.
-
-A mountain.
-
-A torch.
-
-A ladder.
-
-A pair of serpents.
-
-A wheel seen end-on.
-
-A star or rosette.
-
-A many-eyed thing.
+It may look like a rod, tree, mountain, torch, ladder, pair of serpents, wheel seen end-on, star or rosette, or many-eyed thing.
 
 That is one of the reasons Peratt became so important to the projection grammar I use later in the book.
 
@@ -28031,13 +27613,7 @@ The first major pulse may have had far more room to expand than any later pulse.
 
 There may have been less settled matter around it.
 
-Less enclosure.
-
-Less shielding.
-
-Less thermal mass.
-
-Fewer inherited barriers.
+There may have been less enclosure, less shielding, less thermal mass and fewer inherited barriers.
 
 The current could therefore have occupied an immense volume.
 
@@ -28083,13 +27659,7 @@ Previous, present and next are neighbouring stages within a larger structure tha
 
 The natural image that keeps returning is the spiral.
 
-An ammonite.
-
-A coiled shell.
-
-A world tree whose newer growth contains and extends what came before.
-
-A fingertrap-like weave changing width and length while preserving continuity.
+An ammonite, a coiled shell, a world tree whose newer growth contains and extends what came before, and a fingertrap-like weave changing width and length while preserving continuity all carry the same spiral intuition.
 
 I often use Fibonacci-like growth as the visual shorthand because the important thing is not a mystical number.
 
@@ -28277,23 +27847,7 @@ That is where the sky story meets Meltology.
 
 If an intense current becomes visible in the sky, concentrates through the lattice, opens nodes and interacts with the surface, then I would expect the material world to remember that interaction.
 
-Heat.
-
-Electrical alteration.
-
-Vitrification.
-
-Glazing.
-
-Foaming.
-
-Fusion.
-
-Recrystallisation.
-
-Sudden thermal stress.
-
-Softened or distorted surfaces.
+Heat, electrical alteration, vitrification, glazing, foaming, fusion, recrystallisation, sudden thermal stress, and softened or distorted surfaces all belong to this material branch.
 
 Material that looks as though it was exposed to conditions very different from the quiet world.
 
@@ -28701,17 +28255,7 @@ That is exactly the kind of continuity I am looking for in Vardath Cosmology.
 
 In my model, the old world does not simply cease to matter when the reset begins.
 
-Its water remains.
-
-Its crust remains.
-
-Its sediment remains.
-
-Its atmosphere may become part of the transfer.
-
-Its living material may survive in protected carriers.
-
-Its larger structural relationship remains inside the world-body.
+Its water, crust and sediment remain; its atmosphere may become part of the transfer, its living material may survive in protected carriers, and its larger structural relationship remains inside the world-body.
 
 The old world becomes inheritance.
 
@@ -28727,15 +28271,7 @@ It becomes the new environment.
 
 This idea is more powerful than it first appears because a body already contains structure.
 
-A body has an inside and an outside.
-
-It has channels.
-
-It has fluids.
-
-It has boundaries.
-
-It has regions with different functions.
+A body has an inside and an outside, channels, fluids, boundaries and regions with different functions.
 
 It has an organising form that can be broken without the matter itself vanishing.
 
@@ -28747,19 +28283,7 @@ It is organised matter.
 
 Its identity comes from arrangement.
 
-Land belongs here.
-
-Water belongs there.
-
-The upper boundary remains above.
-
-The lower inherited structure remains below.
-
-The current follows preferred paths.
-
-The lattice holds one broad state.
-
-Life occupies a particular environment.
+Land belongs here and water there; the upper boundary remains above, the lower inherited structure below, the current follows preferred paths, the lattice holds one broad state, and life occupies a particular environment.
 
 When the reset happens, those relationships change.
 
@@ -28841,19 +28365,7 @@ The sky is not simply nothing above the land.
 
 It belongs to the world-machine.
 
-It can have a boundary.
-
-It can hold water.
-
-It can contain routes.
-
-It can carry luminous structure.
-
-It can change state.
-
-It can open.
-
-It can close.
+It can have a boundary, hold water, contain routes, carry luminous structure, change state, open and close.
 
 The *Enūma Eliš* gives us a very old image of a cosmos in which the upper world is built from material and then organised so that waters do not simply pour through without limit.
 
@@ -28939,15 +28451,7 @@ That is useful because so many mythic comparisons become confused when every imp
 
 The Vardath role grammar lets the story remain complex.
 
-Tiamat can be old world-body.
-
-Marduk can be reorganising operator.
-
-The winds can belong to the active medium.
-
-The net can belong to containment.
-
-The division can belong to reset.
+Tiamat can be old world-body, Marduk the reorganising operator, the winds part of the active medium, the net part of containment, and the division part of reset.
 
 The resulting sky and earth can belong to the renewed present after the gate event.
 
@@ -29403,23 +28907,7 @@ Mesopotamia gives me an old body broken into a new world and a flood carrier cro
 
 Egypt gives me a **layered machine that remains in motion**.
 
-Primeval water.
-
-First land.
-
-Sky held apart from earth.
-
-A body for the sky.
-
-A route through the lower world.
-
-A solar traveller that disappears from one region and continues through another.
-
-Gates.
-
-Return.
-
-Rebirth.
+Primeval water, first land, sky held apart from earth, a body for the sky, a route through the lower world, a solar traveller that disappears from one region and continues through another, gates, return and rebirth all belong to this layered machine.
 
 The more I look at those relationships together, the less Egyptian cosmology feels like a collection of disconnected symbols and the more it feels like a complete architecture of separation, passage and renewal.
 
@@ -29443,15 +28931,7 @@ I keep coming back to this distinction:
 
 A stable world has organised reservoirs.
 
-Sea here.
-
-Land there.
-
-Atmosphere above.
-
-Upper boundary farther beyond.
-
-Deep water below.
+Sea here, land there, atmosphere above, upper boundary farther beyond and deep water below define the organised reservoirs of a stable world.
 
 The reset temporarily weakens those distinctions.
 
@@ -29465,13 +28945,7 @@ The world is less differentiated.
 
 That makes Nun interesting to me as an image of the world before stable separation.
 
-Not empty space.
-
-Water.
-
-Potential structure inside water.
-
-A world waiting to become distinct.
+Not empty space, but water: potential structure inside water, a world waiting to become distinct.
 
 ## The first mound
 
@@ -29481,13 +28955,7 @@ The first mound is one of the clearest creation images I know because it solves 
 
 If the world begins in a water-dominated condition, then habitable geography begins when **something stays above the water**.
 
-A first stable point.
-
-A mound.
-
-An island.
-
-A raised region.
+A first stable point can be a mound, island or raised region.
 
 From there, order can spread.
 
@@ -29605,15 +29073,7 @@ This gives me the reverse image as well.
 
 If the quiet world depends on maintained separation, then the gate event is partly a failure or reversal of that separation.
 
-The lattice contracts.
-
-The broad interval narrows.
-
-The worlds become more adjacent.
-
-The upper boundary becomes active.
-
-Water and atmosphere can cross.
+The lattice contracts, the broad interval narrows, the worlds become more adjacent, the upper boundary becomes active, and water and atmosphere can cross.
 
 So I can write the cycle in almost Egyptian-looking terms:
 
@@ -29651,19 +29111,7 @@ My sky is structured.
 
 It may be a dome or vault at the scale of the inhabited disc.
 
-It may be woven.
-
-It can contain nodes.
-
-It can carry upper waters.
-
-It can change state.
-
-It can contract.
-
-It can open.
-
-It can breathe.
+It may be woven, contain nodes, carry upper waters, change state, contract, open and breathe.
 
 The Egyptian image does not give me the mechanics of my lattice.
 
@@ -29691,15 +29139,7 @@ The Vardath world also has atmosphere inside a maintained interval.
 
 If that interval changes, the atmosphere changes with it.
 
-Pressure.
-
-Moisture.
-
-Heat.
-
-Cloud.
-
-Electrical conditions.
+Pressure, moisture, heat, cloud and electrical conditions all respond inside that maintained interval.
 
 The waking atmosphere is not separate from the changing boundary.
 
@@ -29757,13 +29197,7 @@ The world no longer collapsing into the throat.
 
 The Egyptian horizon image also interests me because it turns the edge of visibility into a place of transition.
 
-The Sun disappears.
-
-But it does not simply cease.
-
-It continues through another region.
-
-Then it returns.
+The Sun disappears, but it does not simply cease; it continues through another region and then returns.
 
 That is the part that matters.
 
@@ -29773,15 +29207,7 @@ This fits naturally beside my gate grammar.
 
 A gate does not have to be a freestanding door.
 
-It can be a mountain pass.
-
-A cave.
-
-A well.
-
-A bridge.
-
-A horizon.
+It can be a mountain pass, cave, well, bridge or horizon.
 
 The important thing is that the traveller leaves one accessible domain and continues through another.
 
@@ -29831,15 +29257,7 @@ The Duat becomes much more interesting when I stop thinking of it simply as "the
 
 It is also a route.
 
-It contains regions.
-
-Gates.
-
-Beings.
-
-Dangers.
-
-Transformations.
+It contains regions, gates, beings, dangers and transformations.
 
 The Sun passes through it.
 
