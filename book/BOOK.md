@@ -322,7 +322,7 @@ The same principle makes the biology stranger. A stronger plasma and electrical 
 
 That is not a side note to the cosmology. It is one of the ways the atmosphere, the canopy and the world-cycle become biology. It is also why old images of enormous plants, oversized animals and creatures such as giant snails remain interesting to me as possible visual memories of a different environmental regime.
 
-The quiet world is what remains when that regime is no longer dominant. Pressure falls. The atmospheric balance changes. The canopy state changes. The plasma environment becomes less intense. Biological scale, lifespan and mutation pressure change with it.
+The quiet world is what remains when that regime is no longer dominant. Pressure falls, the atmospheric balance and canopy state change, and the plasma environment becomes less intense. Biological scale, lifespan and mutation pressure change with it.
 
 ## One world inside a larger body
 
@@ -2380,23 +2380,11 @@ The earlier version imagined it mainly as part of our enclosure. The mature vers
 
 That development is worth following because it shows the canopy becoming more central rather than being discarded.
 
-Early question:
+The early question was simple: **how can a watery ceiling hang above our world?**
 
-**How can a watery ceiling hang above our world?**
+The later question became more structural: **what if the upper watery boundary belongs to an already populated neighbouring world?**
 
-Later question:
-
-**What if the upper watery boundary belongs structurally to an already populated neighbouring world?**
-
-The second question does not magically solve the physics.
-
-It changes the geometry of the problem.
-
-The boundary can have two faces.
-
-From our world it is above.
-
-From the next turn it is below.
+That second question does not magically solve the physics, but it changes the geometry of the problem. The boundary can have two faces: from our world it is above, and from the next turn it is below.
 
 This introduced a habit of thought that became central to the physical model later: one structure can be described differently from opposite sides.
 
@@ -3243,41 +3231,13 @@ It was trying to become a changing world.
 
 ## From object to state
 
-The early enclosure encouraged me to think in objects.
-
-There is a rod.
-
-There is a canopy.
-
-There are channels.
-
-There is a sphere.
-
-There are upper regions.
-
-There is an inhabited floor.
+The early enclosure encouraged me to think in objects: a rod, a canopy, channels, a sphere, upper regions and an inhabited floor.
 
 The mature model is much more about **states**.
 
-The rod is not a permanent object.
+The rod is not a permanent object but a contracted state of the lattice. The gate is not a permanent door but a temporary state of adjacency. The upper boundary is not simply a roof but an interface between neighbouring world-turns.
 
-It is a contracted state of the lattice.
-
-The gate is not a permanent door.
-
-It is a temporary state of adjacency.
-
-The upper boundary is not simply a roof.
-
-It is an interface between neighbouring world-turns.
-
-The eye is not necessarily an object floating in the sky.
-
-It can be the end-on appearance of a node.
-
-The serpent is not necessarily an animal-shaped cosmic being.
-
-It can be the way a moving line or current is remembered.
+The eye is not necessarily an object floating in the sky; it can be the end-on appearance of a node. The serpent is not necessarily an animal-shaped cosmic being; it can be the way a moving line or current is remembered.
 
 This shift from object to state was one of the biggest changes in the whole project.
 
@@ -3329,25 +3289,11 @@ That picture created more problems than it solved.
 
 It treated the upper water as an object placed in our enclosure for no deeper reason.
 
-The mature version asks a different question.
+The mature version asks a different question: what if the upper water belongs to the **boundary between turns**?
 
-What if the upper water belongs to the **boundary between turns**?
+From our side it is above; from the next world’s side it is below. The same interface can be ceiling and floor depending on which world is looking at it.
 
-From our side, it is above.
-
-From the next world’s side, it is below.
-
-The same interface can be ceiling and floor depending on which world is looking at it.
-
-That is a much stronger concept.
-
-It also fits the gate.
-
-A gate should not have to summon water from nowhere.
-
-If water already belongs to the boundary, then activation can redistribute it.
-
-The flood becomes a consequence of a changing interface.
+That is a much stronger concept, and it also fits the gate. A gate should not have to summon water from nowhere. If water already belongs to the boundary, activation can redistribute it, making the flood a consequence of a changing interface.
 
 That does not solve the physical support problem.
 
