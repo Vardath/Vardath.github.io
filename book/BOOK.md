@@ -838,11 +838,7 @@ To see how I arrived at that picture, I need to go back to the first line I foll
 
 # Chapter 1 — The Serpent and the Question
 
-The oldest recoverable part of Vardath Cosmology is not the shell.
-
-It is not the lattice.
-
-It is not the shell, the upper ocean, the layered worlds or the finger-trap rod.
+The oldest recoverable part of Vardath Cosmology is not the shell, the lattice, the upper ocean, the layered worlds or the finger-trap rod.
 
 It is the Rainbow Serpent.
 
@@ -9550,8 +9546,6 @@ The model would need independent physical evidence before cultural recurrence be
 The many-throat model gives Vardath Cosmology a way to connect the tiny and the enormous.
 
 A child entering fairyland, a hero descending through a cave, a god crossing a bridge, a regional flood and a world reset do not have to belong to different cosmologies.
-
-These do not have to be different cosmologies.
 
 They can be different scales of one gate architecture.
 
@@ -31023,19 +31017,17 @@ They give me the building the door could exist inside.
 
 Greek succession mythology interests me because it does not begin with a finished world occupied by a stable pantheon.
 
-It begins with generations of order replacing generations of order.
+It begins with one order giving way to another.
 
-Sky and Earth are not simply scenery behind the gods. They are part of the first architecture. Children can exist before they are allowed to occupy the open world. A ruler can contain the generation that will replace him. A new order can emerge by forcing what has been hidden or swallowed back into visibility.
+Sky and Earth are not simply scenery behind the gods. They are part of the first architecture. Children can exist before they are allowed to occupy the open world, a ruler can contain the generation that will replace him, and a new order can emerge by forcing what has been hidden or swallowed back into visibility.
 
-That sequence is much more interesting to me than treating the story as a family tree of divine names.
+That is much more interesting to me than treating the story as a family tree of divine names.
 
-I see a recurring structural problem inside it:
+The movement I keep seeing is:
 
 **coupling → confinement → rupture → containment → release → successor order.**
 
-The stages do not map perfectly onto Vardath Cosmology, and I do not need them to. What matters is that Greek myth repeatedly imagines cosmic succession as a change in the relationships between already-existing regions and beings.
-
-The world becomes different because the old arrangement can no longer hold.
+It does not map perfectly onto Vardath Cosmology, and I do not need it to. What matters to me is the way the world changes because relationships among things that already exist can no longer hold their old form.
 
 ## Gaia and Uranus: Earth under Sky
 
@@ -31531,7 +31523,9 @@ In the Greek succession story, what was future in the narrative becomes the ordi
 
 Greek myth expresses that through generations of gods rather than world-shells.
 
-But the architecture of succession is strong enough that I want it in the book.
+That does not make it my model.
+
+What keeps me interested is the succession pattern.
 
 Gaia and Uranus give me compressed boundaries.
 
@@ -43572,7 +43566,9 @@ One tunnel is enough to tell that story locally. The final chapter steps back an
 
 I began this expansion by looking outward.
 
-Mesopotamia, Egypt, Iran, India, Buddhist and Jain worlds, Greece, Norse cosmology, Genesis and Enoch, Islamic ascent, Māori and Polynesian creation, Haudenosaunee descent, Maya and Mexica world sequences, Chinese and Japanese creation and boundary stories, Yoruba descent, Finnish and Karelian world formation, Aboriginal Australian paths and serpent traditions, Hopi emergence, Irish Otherworld time, Japanese fairy time, Christian and Islamic sleepers, Scottish fairyland, German wells, Avalon, Alice, Narnia, Oz, *The NeverEnding Story*, *Annihilation* and *Spirited Away* all entered the comparison.
+I moved from Mesopotamia, Egypt and Iran into India and Buddhist and Jain worlds; from Greece and Norse cosmology into Genesis, Enoch and Islamic ascent; then through Māori and Polynesian creation, Haudenosaunee descent, Maya and Mexica world sequences, Chinese and Japanese creation and boundary stories, Yoruba descent, Finnish and Karelian world formation, Aboriginal Australian paths and serpent traditions, and Hopi emergence.
+
+From there the book moved into Irish Otherworld time, Japanese fairy time, Christian and Islamic sleepers, Scottish fairyland, German wells, Avalon, Alice, Narnia, Oz, *The NeverEnding Story*, *Annihilation* and *Spirited Away*.
 
 If I had approached all of those looking for one repeated symbol, the result would have been useless.
 
@@ -44696,9 +44692,11 @@ The stories do not need to collapse into one religion.
 
 They may be different camera angles on different scales and phases of the same class of natural event.
 
-The compact version of the cosmology is therefore this:
+The compact version of the cosmology is therefore this.
 
-**a populated world rests inside a larger populated world-body; a broad woven lattice carries distributed telluric current; those same currents can concentrate into upper and lower Birkeland-current Squatter-Man fires; the two axial god-forms can couple in a cosmic marriage; the weave contracts into a throat; one or more routes open between normally separated world-times; water and matter reveal the changed geometry; carriers preserve living patterns; the surface and atmosphere reorganise; the route closes; current redistributes into the quiet telluric state; and a different stable world continues.**
+A populated world rests inside a larger populated world-body. A broad woven lattice carries distributed telluric current. Under stronger conditions, those same currents can concentrate into upper and lower Birkeland-current Squatter-Man fires, and the two axial god-forms can couple in a cosmic marriage.
+
+As the weave contracts into a throat, one or more routes open between normally separated world-times. Water and matter reveal the changed geometry while carriers preserve living patterns. The surface and atmosphere reorganise, the route closes, current redistributes into the quiet telluric state, and a different stable world continues.
 
 The world tree is the architecture.
 
