@@ -272,6 +272,8 @@ Not as a final answer.
 
 As the clearest version of the world I have been trying to describe.
 
+The best place to begin is with the quiet world before anything opens.
+
 ---
 
 # Introduction — A World That Changes Its Adjacencies
@@ -827,6 +829,8 @@ It hands one world-state into another.
 Vardath Cosmology is therefore not fundamentally a story about the end of the world.
 
 It is a story about **how a living, populated world-structure can change state, open routes through time, move matter and life, survive dangerous exchange and settle into a new present without the larger body losing continuity**.
+
+To see how I arrived at that picture, I need to go back to the first line I followed.
 
 ---
 
@@ -2420,6 +2424,8 @@ Its parts were already asking the central question:
 
 The rest of the book is the attempt to answer that.
 
+Before the architecture could become coherent, though, I had to stop confusing the figures around it with the machine itself.
+
 ---
 
 # Chapter 4 — One Phenomenon, Many Gods
@@ -2834,6 +2840,8 @@ Because once I learned to separate the roles, the world-machine finally had a ca
 
 # Chapter 5 — What the Early World-Machine Was Becoming
 
+With the cast separated from the stage, I could look back at the stage itself more clearly.
+
 The first world-machine was too literal.
 
 I can see that now.
@@ -3197,6 +3205,8 @@ A world that can remain itself for a long time, gather into a different geometry
 Once I understood that, I no longer needed to keep asking what object the cosmos was.
 
 I could finally ask what state it was in.
+
+That change—from object to state—made the next question possible: what does one inhabited world belong to?
 
 ---
 
