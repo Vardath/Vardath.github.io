@@ -16298,6 +16298,8 @@ The serpent began the question.
 
 Now it has a place at almost every scale of the answer.
 
+One of its oldest companions in that answer is water, but water changes role just as the serpent does.
+
 ---
 
 # Chapter 33 — Water at the Threshold
@@ -19517,6 +19519,8 @@ I think of them as material in motion.
 
 The present geography is the quiet shape of that motion after the last great rearrangement.
 
+But movement is not the only thing a reset can leave behind. The material itself may retain the event.
+
 ---
 
 # Chapter 40 — Meltology: The Material Memory of Reset
@@ -20196,6 +20200,8 @@ Vardath Cosmology already contains such a world.
 It is the waking world.
 
 And if the material record contains genuine traces of that state, then Meltology may be one of the places where the door left fingerprints in stone.
+
+Stone records what happened below. The next question is what the same waking state does above it.
 
 ---
 
@@ -24757,6 +24763,8 @@ The time door is one of its states.
 
 And the history we experience may be only one branch of a structure that is much larger than the present moment.
 
+With the structure, movement and time relation now in place, I can walk through the whole cycle as one system.
+
 ---
 
 # Part VIII — The Integrated Vardath Cosmology
@@ -26157,6 +26165,8 @@ Each remains its own present.
 
 What has changed is the composition and history of the present after contact.
 
+With that distinction clear, I can return to the question of what human stories may have preserved from such events.
+
 ---
 
 # Chapter 51 — What I Think the Myths May Be Remembering
@@ -26837,7 +26847,7 @@ The whole project began because I kept finding connections that did not fit comf
 
 If I now pretend the current picture is finished, I would be repeating the same mistake at a larger scale.
 
-So I want to end the main body of this book with the parts I am still exploring.
+So I want to close this integrated statement of the cosmology with the parts I am still exploring.
 
 Not as a list of failures.
 
@@ -27415,7 +27425,7 @@ And the cosmology itself remains open.
 
 That last part matters most.
 
-I do not want the final page to close the world.
+I do not want this integrated statement to close the world.
 
 I want it to leave the reader standing where I am still standing:
 
@@ -27428,6 +27438,8 @@ a tree that became a gate,
 a gate that became a door through time,
 
 and wondering what else the world might become when it opens again.
+
+The chapters that follow turn outward again, placing that open model beside older cosmologies, sacred worlds, otherworld journeys and later stories without pretending the questions have been closed.
 
 ---
 
