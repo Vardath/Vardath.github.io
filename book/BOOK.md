@@ -30279,6 +30279,8 @@ That is a very old idea.
 
 And it sits remarkably close to the centre of mine.
 
+The next tradition keeps water, serpent and axis in the same field, but turns the movement into something larger and more mechanical: churning.
+
 ---
 
 # Chapter 58 — Meru and the Churning of the Cosmic Ocean
@@ -30644,6 +30646,8 @@ The axis forms, the serpent tightens, the waters move, opposed forces pull, dang
 The churning story gives that whole possibility one enormous oceanic image.
 
 And that is why Meru and Mandara remain near the centre of my cosmology.
+
+After that violent moving machine, the next comparison is quieter. It gives me the architecture the movement could happen inside.
 
 ---
 
@@ -32723,6 +32727,8 @@ And in Vardath Cosmology, that is also what a reset has always been trying to be
 
 **not the destruction of the world, but one world becoming the previous world while another becomes home.**
 
+The next material breaks that same larger problem into boundary, water, carrier, ascent and descent.
+
 ---
 
 # Chapter 63 — Genesis and Enoch: Firmament, Waters, Ladder and Watchers
@@ -34178,6 +34184,8 @@ The children gain room.
 Light enters the interval.
 
 And creation becomes something I can understand inside Vardath Cosmology not as the manufacture of a world from nothing, but as **the moment a compressed world is finally opened enough to live in.**
+
+The next story begins from the other side of that relation: not with worlds pressed together, but with an already inhabited world above and another world below it.
 
 ---
 
@@ -43555,6 +43563,8 @@ The rules were different.
 Then somehow we returned.
 
 And afterward the tunnel was only a tunnel again.
+
+One tunnel is enough to tell that story locally. The final chapter steps back and asks what all of these doors look like when they are placed beside one another.
 
 ---
 
