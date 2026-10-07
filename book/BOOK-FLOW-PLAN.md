@@ -23,7 +23,27 @@ Use the existing vapour-canopy passages as the reference for:
 
 Do not make the manuscript generically academic, polished into another author's voice, or artificially uniform.
 
-## Pass 1 — Full-book flow pass
+## Step 1 — Establish the vapour-canopy style anchor
+
+Read the existing vapour-canopy sections closely before rewriting the rest of the book.
+
+Identify the qualities that make those passages work as the benchmark:
+
+- connected prose rather than research-note stacks;
+- clear cause-and-effect movement;
+- natural transitions between ideas;
+- paragraphs that carry the argument forward;
+- deliberate short standalone lines where they sound like Stephen;
+- Stephen's existing first-person explanatory voice;
+- preservation of uncertainty, speculation and open questions without making the prose hesitant or academic.
+
+Do not rewrite the vapour-canopy sections to make them resemble the rest of the manuscript.
+
+They are the reference point the rest of the book should move toward.
+
+The purpose of this step is to establish the benchmark before touching the wider manuscript, not to change cosmological information.
+
+## Step 2 — Full-book flow pass
 
 Work through the narrative body from beginning to end.
 
@@ -35,7 +55,7 @@ Do not rewrite the vapour-canopy sections merely for consistency; they are the b
 
 Do not turn functional reference material into prose. Contents, glossary, index, structured source material, tables, and genuinely useful lists may remain structured.
 
-## Pass 2 — Continuity pass
+## Step 3 — Continuity pass
 
 Read the revised manuscript in sequence.
 
@@ -43,9 +63,9 @@ Smooth chapter openings, chapter endings, subsection joins, and transitions wher
 
 Do not add new cosmological information during this pass.
 
-## Pass 3 — Voice pass
+## Step 4 — Voice pass
 
-Compare representative revised sections from the early, middle, and late book directly against the vapour-canopy style anchor.
+Compare representative revised sections from the early, middle, and late book directly against the vapour-canopy style anchor established in Step 1.
 
 Correct passages that have become:
 
@@ -56,7 +76,7 @@ Correct passages that have become:
 - unlike Stephen's established voice;
 - stripped of deliberate rhythm or emphasis.
 
-## Pass 4 — Preservation audit
+## Step 5 — Preservation audit
 
 Compare the revised manuscript against the pre-edit version.
 
@@ -81,4 +101,12 @@ This is an audit, not another stylistic rewrite.
 
 ## Execution rule
 
-Use one major rewriting pass, followed by the continuity pass, voice pass, and preservation audit. Do not attempt a single blind rewrite of the whole manuscript without these checks.
+Use the five-step sequence in order:
+
+1. establish the vapour-canopy style anchor;
+2. perform one major full-book flow pass;
+3. perform the continuity pass;
+4. perform the voice pass against the established anchor;
+5. perform the preservation audit.
+
+Do not attempt a single blind rewrite of the whole manuscript without these checks.
