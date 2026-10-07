@@ -50,6 +50,7 @@ jobs:
           }
 
           html { font-size: 10.25pt; }
+
           body {
             font-family: "DejaVu Serif", serif;
             line-height: 1.38;
@@ -176,8 +177,8 @@ jobs:
 
       - name: Convert Markdown to 7x10 PDF
         run: |
-          pandoc export/body.md             --from=gfm             --to=html5             --standalone             --toc             --toc-depth=2             --metadata title="Vardath Cosmology: A Big May Bee"             --metadata author="Stephen Michael Hawton / Vardath"             --css=export/book.css             --output=export/book.html
-          weasyprint export/book.html export/Vardath-Cosmology-A-Big-May-Bee-FRESH.pdf
+          pandoc export/body.md --from=gfm --to=html5 --standalone --toc --toc-depth=2 --metadata title="Vardath Cosmology: A Big May Bee" --metadata author="Stephen Michael Hawton / Vardath" --css=book.css --output=export/book.html
+          weasyprint -s export/book.css export/book.html export/Vardath-Cosmology-A-Big-May-Bee-FRESH.pdf
 
       - name: Package fresh manuscript
         run: |
