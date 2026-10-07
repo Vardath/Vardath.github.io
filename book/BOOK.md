@@ -3704,6 +3704,8 @@ During the great transition, they can touch.
 
 And when they touch, the world we experience as complete becomes one part of a much larger process.
 
+Before asking how those worlds touch, though, I need to describe the shape of the world we actually inhabit inside that larger body.
+
 ---
 
 # Chapter 7 — The World-Disc and the Lattice Dome
@@ -9200,6 +9202,8 @@ And the event can be stated simply:
 
 **the world changes what is next to what.**
 
+Once the gate is a condition rather than a permanent object, it no longer has to belong to one permanent place.
+
 ---
 
 # Chapter 18 — Many Throats and the Larger Axis
@@ -9558,6 +9562,8 @@ I ask where the lattice is capable of becoming a throat.
 The answer may be:
 
 many places, many ages and many witnesses within one underlying world-machine.
+
+Wherever a throat forms, the next question is the same: what can actually move through it?
 
 ---
 
@@ -12558,6 +12564,8 @@ That is why living cargo matters so much.
 The door is not only moving matter.
 
 It is moving continuity.
+
+For living continuity to survive that movement, some kind of inside has to remain coherent while the outside changes.
 
 ---
 
