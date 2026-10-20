@@ -3,302 +3,266 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="An interactive numerical sand simulation on independently rotating discs arranged in the extended Flower of Life lattice.">
-<title>Flower of Life — Sand on Rotating Discs | Vardath</title>
-<link rel="icon" href="/favicon.png" type="image/png">
+<title>Flower of Life — 3D Edge-Weave Sediment Experiment</title>
 <style>
-:root{color-scheme:dark;--bg:#0c111b;--panel:#151e2a;--line:#2a3545;--fg:#e8edf5;--muted:#9daec1;--sand:#efba68}
+:root{color-scheme:dark;--bg:#07101a;--panel:#131d29;--line:#2a384b;--fg:#eaf0f7;--muted:#a6b4c4;--sand:#f0c27a;--water:#3f79b7;--accent:#86b7de}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1400px;margin:auto;padding:18px 20px 36px}
-h1{font-weight:650;font-size:23px;letter-spacing:-.02em;margin:5px 0 0}
-nav{display:flex;gap:16px;align-items:center;font-size:13px;color:var(--muted)}
-nav a{color:#91d2e7;text-decoration:none}
-nav a:hover{text-decoration:underline}
-header p{color:var(--muted);margin:5px 0 16px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:17px}
-.viewport{position:relative;border:1px solid var(--line);background:#060c14;border-radius:11px;overflow:hidden}
-.viewport canvas{width:100%;height:auto;display:block;touch-action:pan-y}
-.viewlabels{position:absolute;left:16px;right:16px;top:12px;display:flex;justify-content:space-between;gap:12px;color:#d2dbe5;font-size:12px;pointer-events:none;text-shadow:0 1px 5px #000}
-.viewlabels span{background:#09121bc7;padding:4px 9px;border-radius:5px}
-.side{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:17px;align-self:start}
-.side h2{font-size:14px;margin:0 0 12px}
-fieldset{border:0;padding:0;margin:0 0 17px}
-label{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 5px;font-weight:540}
-label output{color:var(--sand);font-variant-numeric:tabular-nums}
-select,input[type=range]{width:100%}
-select{border:1px solid #35465c;border-radius:7px;background:#0c1522;color:var(--fg);padding:9px 8px;font:inherit}
-input[type=range]{accent-color:var(--sand);cursor:pointer}
-.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.buttons button{border:1px solid #405168;border-radius:8px;color:var(--fg);font:inherit;font-weight:600;padding:10px 7px;cursor:pointer;background:#203044}
-.buttons button.primary{background:#a16823;border-color:#b77a30;color:#fff}
-.buttons button:disabled{opacity:.5;cursor:not-allowed}
-.buttons button:hover:not(:disabled){filter:brightness(1.15)}
-.details{color:var(--muted);font-size:13px}
-.details strong{color:var(--fg)}
-.details p{margin:7px 0 0}
-.stats{display:flex;flex-wrap:wrap;gap:18px;padding:13px 3px;color:#a7b6c6;font-size:13px}
-.stats b{font-weight:600;color:#f0f4fb;font-variant-numeric:tabular-nums}
-section.explain{border-top:1px solid var(--line);margin-top:19px;padding-top:13px;color:#adbbc8;max-width:1040px}
-section.explain h2{font-size:15px;color:var(--fg);margin:3px 0}
-section.explain p{margin:7px 0}
-.legend{height:7px;background:linear-gradient(90deg,#0c111b,#6a4b34,#d29b50,#ffe3aa);border-radius:6px;margin:8px 0 3px}
-.legendlabels{display:flex;justify-content:space-between;color:#a7b6c6;font-size:11px}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px}.side h2{grid-column:1/-1}.buttons{align-self:start}}
-@media(max-width:620px){main{padding:10px 10px 20px}h1{font-size:19px}.side{grid-template-columns:1fr;padding:14px}.viewport .viewlabels{font-size:10px;left:6px;right:6px;top:5px}.viewlabels span{padding:3px}.stats{gap:10px}}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1440px;margin:auto;padding:16px 18px 28px}
+header h1{margin:0 0 4px;font-size:23px;font-weight:650;letter-spacing:-.02em}
+header p{margin:0 0 14px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 332px;gap:16px}
+.viewport{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#040b13}
+.viewport canvas{display:block;width:100%;height:auto}
+.labels{position:absolute;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;gap:8px;pointer-events:none;color:#dbe9f5;font-size:12px}
+.labels span{background:#0b1320d4;padding:4px 8px;border-radius:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.panel h2{margin:0 0 10px;font-size:15px}
+.control{margin:11px 0 6px}
+.control .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:5px}
+.control output{color:var(--sand);font-variant-numeric:tabular-nums}
+input[type=range],select{width:100%}
+select{padding:8px 10px;border-radius:8px;border:1px solid #394863;background:#0d1624;color:#eef4fb;font:inherit}
+input[type=range]{accent-color:var(--sand)}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.buttons button{padding:10px 8px;border-radius:8px;border:1px solid #40516b;background:#203146;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.buttons button.primary{background:#9d6a27;border-color:#b57e35}
+.stats{display:flex;flex-wrap:wrap;gap:14px;padding:11px 2px;color:#aebccd;font-size:13px}
+.stats b{color:#fff;font-weight:650;font-variant-numeric:tabular-nums}
+.legend{height:9px;border-radius:7px;background:linear-gradient(90deg,#07101a,#2d4d76,#5f8dbd,#6c5e40,#b48749,#f9dfaa);margin-top:8px}.legendlabels{display:flex;justify-content:space-between;font-size:11px;color:#9eb1c4}
+.help{margin-top:10px;color:var(--muted);font-size:13px}.help p{margin:8px 0}
+section{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted)}section h2{margin:0 0 7px;color:var(--fg);font-size:15px}
+code{background:#0b1420;padding:2px 5px;border-radius:5px}
+@media(max-width:940px){.layout{grid-template-columns:1fr}.panel{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}.panel h2,.buttons,.help{grid-column:1/-1}}
+@media(max-width:620px){main{padding:8px}.panel{grid-template-columns:1fr}.labels{font-size:10px;top:5px;left:5px;right:5px}}
 </style>
 </head>
 <body>
 <main>
 <header>
-<nav><a href="/">← Vardath home</a><span>Interactive experiments</span></nav>
-<h1>Flower of Life · Sediment and continental-form experiment</h1>
-<p>Research model · full overlapping clockwise rotors · sediment transport, deposition and emergent accumulation regions</p>
+<h1>Flower of Life · 3D edge-weave sediment experiment</h1>
+<p>Full overlapping circles · arc-following force lines · alternating over/under weave · finer grain sediment · optional water level</p>
 </header>
-<div class="layout"><div>
-<div class="viewport"><canvas id="sim" width="1080" height="680" aria-label="Animated grain-density distribution over rotating discs">This experiment needs a browser that supports the canvas element.</canvas>
-<div class="viewlabels"><span id="geomlabel">Flower of Life · full overlapping discs</span><span id="state">RUNNING</span></div></div>
-<div class="stats"><span>Elapsed: <b id="elapsed">0.0 s</b></span><span>Grains on surfaces: <b id="count">0</b></span><span>Visible rotors: <b id="discs">0</b></span><span>Maximum height: <b id="pile">0</b></span><span>Largest connected deposit: <b id="largest">0%</b></span><span>Regions: <b id="regions">0</b></span></div>
-<div class="legend"></div><div class="legendlabels"><span>no sand</span><span>thin dusting</span><span>high grain density</span></div>
+<div class="layout">
+  <div>
+    <div class="viewport">
+      <canvas id="sim" width="1080" height="680" aria-label="Flower of Life sediment simulation"></canvas>
+      <div class="labels"><span id="geom">Weaving rim transport</span><span id="state">RUNNING</span></div>
+    </div>
+    <div class="stats">
+      <span>Elapsed <b id="elapsed">0.0 s</b></span>
+      <span>Total sediment <b id="mass">0</b></span>
+      <span>Visible circles <b id="circles">0</b></span>
+      <span>Peak height <b id="peak">0</b></span>
+      <span>Largest land region <b id="largest">0%</b></span>
+      <span>Land regions <b id="regions">0</b></span>
+    </div>
+    <div class="legend"></div>
+    <div class="legendlabels"><span>deep water</span><span>shallow water</span><span>shore</span><span>higher land</span></div>
+  </div>
+  <aside class="panel">
+    <h2>Controls</h2>
+    <div class="control"><div class="row"><label for="view">Display</label></div><select id="view"><option value="coast">Waterline / landmasses</option><option value="height">Topographic height</option><option value="flow">Weaving force lines</option></select></div>
+    <div class="control"><div class="row"><label for="rpm">Arc-force speed</label><output id="rpmValue">11</output></div><input id="rpm" type="range" min="0" max="30" step="1" value="11"></div>
+    <div class="control"><div class="row"><label for="rain">Sediment input</label><output id="rainValue">3800</output></div><input id="rain" type="range" min="0" max="12000" step="100" value="3800"></div>
+    <div class="control"><div class="row"><label for="scale">Lattice size</label><output id="scaleValue">50</output></div><input id="scale" type="range" min="34" max="86" step="2" value="50"></div>
+    <div class="control"><div class="row"><label for="edgeWidth">Rim width</label><output id="edgeWidthValue">0.17</output></div><input id="edgeWidth" type="range" min="0.06" max="0.40" step="0.01" value="0.17"></div>
+    <div class="control"><div class="row"><label for="weave">Weave height</label><output id="weaveValue">0.80</output></div><input id="weave" type="range" min="0" max="1.4" step="0.05" value="0.80"></div>
+    <div class="control"><div class="row"><label for="drag">Transport strength</label><output id="dragValue">2.4</output></div><input id="drag" type="range" min="0.2" max="6" step="0.1" value="2.4"></div>
+    <div class="control"><div class="row"><label for="diffusion">Micro-diffusion</label><output id="diffusionValue">0.75</output></div><input id="diffusion" type="range" min="0" max="3" step="0.05" value="0.75"></div>
+    <div class="control"><div class="row"><label for="water">Water level % of peak</label><output id="waterValue">58</output></div><input id="water" type="range" min="0" max="95" step="1" value="58"></div>
+    <div class="control"><div class="row"><label for="feed">Sediment entry</label></div><select id="feed"><option value="uniform">Uniform fine rain</option><option value="central">Central source</option></select></div>
+    <div class="buttons"><button id="play" class="primary">Pause</button><button id="reset">Reset</button><button id="advance">+10 s</button><button id="record">Record 10 s</button></div>
+    <div class="help">
+      <p><strong>Main change:</strong> each circle now acts primarily through its <em>rim / edge path</em>. The strongest force is on the Flower of Life arcs, not at the centre.</p>
+      <p><strong>3D-ish weave:</strong> where circles overlap, each circle has an alternating over/under height along its rim. The locally highest rim segment dominates the force direction, like woven snakes crossing.</p>
+      <p><strong>Waterline:</strong> in the default view, the water slider floods low terrain to help judge whether broad continent-like land regions emerge.</p>
+    </div>
+  </aside>
 </div>
-<aside class="side">
-<h2>Experiment controls</h2>
-<fieldset>
-<label for="layout">Disc arrangement</label><select id="layout"><option value="flower">Flower of Life (full overlapping discs)</option><option value="physical">Tangent discs (physically separable)</option></select>
-<label for="rpm">All discs · clockwise RPM <output id="rpmValue">12</output></label><input id="rpm" type="range" min="0" max="40" step="1" value="12">
-<label for="rain">Sand deposition · grains/s <output id="rainValue">4500</output></label><input id="rain" type="range" min="0" max="12000" step="250" value="4500">
-<label for="friction">Grain/surface drag · 1/s <output id="frictionValue">3.5</output></label><input id="friction" type="range" min="0.5" max="12" step="0.5" value="3.5">
-<label for="agitation">Random grain agitation <output id="agitationValue">0.5</output></label><input id="agitation" type="range" min="0" max="4" step="0.25" value="0.5">
-<label for="view">Scientific display</label><select id="view"><option value="coast">Sediment contours / connected regions</option><option value="height">Sediment height map</option><option value="flow">Rotational motion and transport</option></select><label for="threshold">Contour threshold · % of max <output id="thresholdValue">58</output></label><input id="threshold" type="range" min="10" max="95" step="1" value="58"><label for="feed">Sand entry</label><select id="feed"><option value="uniform">Uniform rain over entire grid</option><option value="central">Single overhead sand stream</option></select>
-<label for="rim">Physical disc edge</label><select id="rim"><option value="retain">Raised rim (grains retained)</option><option value="spill">Open edge (grains spill off)</option></select>
-</fieldset>
-<div class="buttons"><button id="play" class="primary" type="button">Pause</button><button id="reset" type="button">Reset</button><button id="advance" type="button">+5 simulated sec</button><button id="record" type="button">Record 10 s</button></div>
-<div class="details">
-<p id="modehelp"><strong>Geometry:</strong> Each full-sized circular disc has independent clockwise surface motion. In overlapping regions the discs are modeled as conceptual superposed layers, not as interpenetrating solid hardware.</p>
-<p><strong>Hypothesis:</strong> Can repeated overlapping clockwise motion concentrate randomly supplied sediment into large, contiguous regions, rather than only local circular patterns?</p>
-<p><strong>How to read this:</strong> Gold shows accumulated sediment mass; the bright contour marks a user-chosen height threshold. The largest connected deposit is measured on the thresholded map, not assumed to be a continent.</p>
-<p><strong>Controls:</strong> Set RPM to zero for a control experiment. Vary the threshold and try extended simulation times using +5 simulated seconds.</p>
-<p><strong>Limits:</strong> This is a 2D, idealized transport/deposition experiment. The overlapping discs are mathematically superposed rotating surfaces, not possible solid hardware. This is not a calibrated DEM, erosion model, or evidence of geographic continent formation.</p>
-</div>
-</aside>
-</div>
-<section class="explain"><h2>Continental-form hypothesis</h2><p>The question is whether a hexagonal lattice of full overlapping clockwise rotations can spontaneously redistribute uniformly supplied sediment into persistent, broad, interconnected patches with irregular boundaries. No continents, coastline shapes, or target outcome are programmed into the initial sand distribution.</p><p><strong>Interpretation:</strong> A contour is a thresholded sand-height map, not an actual shoreline. The system is spatially periodic, so repeated flower motifs may be the genuine outcome. Compare with a stationary (0 RPM) control before attributing any large-scale structure to rotation. This simplified coupled-field numerical experiment omits grain collisions, topography, gravity-driven avalanches and 3D granular mechanics.</p></section>
+<section>
+  <h2>Notes</h2>
+  <p>This is still an exploratory 2.5D transport model rather than a full granular mechanics simulation. It does, however, encode the key ideas you asked for: <strong>full overlapping circles</strong>, <strong>edge-following motion</strong>, <strong>alternating weave height</strong>, <strong>finer grains</strong>, and an optional <strong>water level</strong> for coastline reading.</p>
+  <p>If you replace your site page with this file, it is intended as a clean drop-in for <code>flower-of-life-sand.html</code>.</p>
+</section>
 </main>
 <script>
-
 (()=>{'use strict';
-const W=1080,H=680,GW=216,GH=136,N=GW*GH,CELL=5,R=86,PI=Math.PI,RT3=Math.sqrt(3),CY=RT3/2,DT=1/30;
-const cv=document.getElementById('sim'),cx=cv.getContext('2d',{alpha:false});
-const mini=document.createElement('canvas');mini.width=GW;mini.height=GH;const mc=mini.getContext('2d');
-const rgba=mc.createImageData(GW,GH);
-const ids=['layout','rpm','rain','friction','agitation','feed','rim','view','threshold'];
-const ui={};ids.forEach(k=>ui[k]=document.getElementById(k));
-const val=k=>Number(ui[k].value);
-const flowX=new Float32Array(N),flowY=new Float32Array(N),speed=new Float32Array(N);
-const height=new Float32Array(N),mobile=new Float32Array(N),next=new Float32Array(N);
-const owner=new Int32Array(N),present=new Uint8Array(N);
-const regionsStat=document.getElementById('regions'),largestStat=document.getElementById('largest');
-const offsets=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
-let running=true,steps=0,time=0,drained=0,last=0,acc=0,rand=1337147;
-let spacing=R,discs=[],peak=0,thresholdAbs=0,lastRegions=0,lastLargest=0,advancing=false;
-function rng(){rand=(Math.imul(rand,1664525)+1013904223)|0;return (rand>>>0)/4294967296;}
-function center(q,r){return[W/2+spacing*(q+r*.5),H/2+spacing*CY*r];}
-function nearest(x,y){
- const fq=(x-W/2)/spacing-(y-H/2)/(RT3*spacing),fr=(y-H/2)/(CY*spacing),fs=-fq-fr;
- let q=Math.round(fq),r=Math.round(fr),s=Math.round(fs);
- const dq=Math.abs(q-fq),dr=Math.abs(r-fr),ds=Math.abs(s-fs);
- if(dq>dr&&dq>ds)q=-r-s;else if(dr>ds)r=-q-s;
- return[q,r];
+const W=1080,H=680,CELL=4,GW=Math.floor(W/CELL),GH=Math.floor(H/CELL),N=GW*GH,PI=Math.PI,TAU=2*PI,RT3=Math.sqrt(3),CY=RT3/2,DT=1/30;
+const canvas=document.getElementById('sim'),ctx=canvas.getContext('2d',{alpha:false});
+const mini=document.createElement('canvas'); mini.width=GW; mini.height=GH; const mctx=mini.getContext('2d');
+const image=mctx.createImageData(GW,GH), pixels=image.data;
+const ui={}; for(const id of ['view','rpm','rain','scale','edgeWidth','weave','drag','diffusion','water','feed']) ui[id]=document.getElementById(id);
+const outputs={}; for(const id of ['rpm','rain','scale','edgeWidth','weave','drag','diffusion','water']) outputs[id]=document.getElementById(id+'Value');
+const flowX=new Float32Array(N), flowY=new Float32Array(N), speed=new Float32Array(N), present=new Uint8Array(N);
+const bed=new Float32Array(N), mobile=new Float32Array(N), nextMobile=new Float32Array(N), grainNoise=new Float32Array(N);
+let circles=[], running=true, advancing=false, last=0, acc=0, t=0, peak=0, largestPct=0, regionCount=0, seed=8731, radius=50, spacing=50;
+function rand(){ seed=(Math.imul(seed,1664525)+1013904223)|0; return (seed>>>0)/4294967296; }
+function center(q,r){ return [W/2+spacing*(q+r*0.5), H/2+spacing*CY*r, q, r]; }
+function nearest(x,y){ const fq=(x-W/2)/spacing-(y-H/2)/(RT3*spacing), fr=(y-H/2)/(CY*spacing), fs=-fq-fr; let q=Math.round(fq), r=Math.round(fr), s=Math.round(fs); const dq=Math.abs(q-fq), dr=Math.abs(r-fr), ds=Math.abs(s-fs); if(dq>dr&&dq>ds) q=-r-s; else if(dr>ds) r=-q-s; return [q,r]; }
+function wrapAng(a){ while(a<=-PI)a+=TAU; while(a>PI)a-=TAU; return a; }
+function smoothstep(x){ x=Math.max(0,Math.min(1,x)); return x*x*(3-2*x); }
+function weaveHeight(theta,q,r,amp){
+  // Alternating over-under weave along the rim. Nearby circles have phase offsets so overlap crossings alternate.
+  const parity=((q-r)&1)?1:-1;
+  const phase=((q*0.83+r*1.37)%2)*PI;
+  return amp*parity*Math.sin(2*theta+phase);
 }
-function rebuild(){
- spacing=ui.layout.value==='flower'?R:R*2.04;
- discs=[];
- let nrows=Math.ceil(H/(spacing*CY))+4,ncols=Math.ceil(W/spacing)+4;
- for(let row=-nrows;row<=nrows;row++)for(let col=-ncols;col<=ncols;col++){
-  let c=center(col,row);
-  if(c[0]>-R&&c[0]<W+R&&c[1]>-R&&c[1]<H+R)discs.push(c);
- }
- const omega=val('rpm')*PI/30;
- const traction=val('friction')/(val('friction')+1.5);
- let i=0;
- for(let y=0;y<GH;y++)for(let x=0;x<GW;x++,i++){
-  let px=(x+.5)*CELL,py=(y+.5)*CELL,near=nearest(px,py);
-  let sx=0,sy=0,w=0,own=near[0]*10000+near[1],covered=0;
-  for(const [dq,dr] of offsets){
-   if(ui.layout.value==='physical'&&(dq||dr))continue;
-   let c=center(near[0]+dq,near[1]+dr),dx=px-c[0],dy=py-c[1],d2=dx*dx+dy*dy;
-   if(d2>R*R)continue;
-   // Each entire circle contributes its independently rotating local tangent.
-   // Average multiple contacts where full circles overlap; no clipping to hex cells.
-   const weight=1; sx+=-dy*omega*weight;sy+=dx*omega*weight;w+=weight;covered++;
+function rebuildField(){
+  radius=Number(ui.scale.value); spacing=radius; circles=[];
+  const rows=Math.ceil(H/(spacing*CY))+4, cols=Math.ceil(W/spacing)+4;
+  for(let r=-rows;r<=rows;r++) for(let q=-cols;q<=cols;q++){
+    const c=center(q,r); if(c[0]>-radius&&c[0]<W+radius&&c[1]>-radius&&c[1]<H+radius) circles.push(c);
   }
-  present[i]=covered?1:0;owner[i]=own;
-  flowX[i]=w?sx/w*traction:0;flowY[i]=w?sy/w*traction:0;
-  speed[i]=Math.hypot(flowX[i],flowY[i]);
- }
- document.getElementById('discs').textContent=discs.length;
- document.getElementById('geomlabel').textContent=ui.layout.value==='flower'?'Full circles · overlapping independent rotations':'Full discs · tangent arrangement';
- document.getElementById('modehelp').innerHTML=ui.layout.value==='flower'
- ?'<strong>Geometry:</strong> Each entire circle contributes a clockwise velocity field, including all overlap regions. Transport follows the combined contact field. This is an idealized mathematical coupling of independent discs.'
- :'<strong>Geometry:</strong> Discs are separated. Grains are prevented from crossing into neighbouring disc footprints.';
+  const omega=Number(ui.rpm.value)*PI/30;
+  const rimWidth=Math.max(2,radius*Number(ui.edgeWidth.value));
+  const weaveAmp=Number(ui.weave.value);
+  let i=0;
+  for(let gy=0;gy<GH;gy++) for(let gx=0;gx<GW;gx++,i++){
+    const px=(gx+0.5)*CELL, py=(gy+0.5)*CELL, near=nearest(px,py);
+    let vx=0, vy=0, weightSum=0, bestZ=-1e9, bestVX=0, bestVY=0;
+    for(let dr=-2;dr<=2;dr++) for(let dq=-2;dq<=2;dq++){
+      const c=center(near[0]+dq,near[1]+dr), cx=c[0], cy=c[1], q=c[2], r=c[3];
+      const dx=px-cx, dy=py-cy; const rad=Math.hypot(dx,dy); if(rad>radius) continue;
+      const edgeProx=Math.exp(-((radius-rad)*(radius-rad))/(2*rimWidth*rimWidth));
+      if(edgeProx<1e-4) continue;
+      const theta=Math.atan2(dy,dx);
+      const z=weaveHeight(theta,q,r,weaveAmp);
+      const tx=-Math.sin(theta), ty=Math.cos(theta); // tangent direction along the circle rim
+      const localVX=tx*omega*radius*edgeProx, localVY=ty*omega*radius*edgeProx;
+      // topmost weave segment dominates, but nearby lower layers still contribute softly
+      if(z>bestZ){ bestZ=z; bestVX=localVX; bestVY=localVY; }
+      const softW=edgeProx*Math.exp((z-bestZ)*0.0); // keep edgeProx for present test; actual blend below uses top dominance
+      vx+=localVX*softW; vy+=localVY*softW; weightSum+=softW;
+    }
+    present[i]=weightSum>0?1:0;
+    // Dominant woven track + small soft blend from nearby tracks
+    flowX[i]=weightSum ? bestVX*0.78 + (vx/weightSum)*0.22 : 0;
+    flowY[i]=weightSum ? bestVY*0.78 + (vy/weightSum)*0.22 : 0;
+    speed[i]=Math.hypot(flowX[i],flowY[i]);
+    grainNoise[i]=rand();
+  }
+  document.getElementById('circles').textContent=String(circles.length);
 }
-function reset(){
- rand=1337147;time=0;steps=0;drained=0;peak=0;thresholdAbs=0;acc=0;
- height.fill(0);mobile.fill(0);next.fill(0);rebuild();measure();draw();
-}
-function permitted(src,dst){return dst>=0&&dst<N&&present[dst]&&(ui.layout.value==='flower'||owner[src]===owner[dst]);}
 function step(){
- next.fill(0);
- const injection=val('rain')/N*DT;
- const turbulent=Math.min(.16,val('agitation')*.016);
- const central=ui.feed.value==='central';
- let seedIndex=Math.floor(GH*.5)*GW+Math.floor(GW*.5);
- for(let i=0;i<N;i++){
-  if(!present[i])continue;
-  let incoming=central?(i===seedIndex?val('rain')*DT:0):injection*(.75+.5*rng());
-  let m=mobile[i]+incoming,h=height[i],v=speed[i];
-  // Surface scour: higher velocity re-entrains a small fraction of sediment.
-  let erode=Math.min(h,h*DT*.034*(v/(v+35)));
-  h-=erode;m+=erode;
-  // Sedimentation in slower regions; accumulated deposits can retain more sand.
-  let trap=.022+.43/(1+(v/42)*(v/42))+.02*Math.min(1,h/6);
-  let settled=m*(1-Math.exp(-trap*DT));
-  h+=settled;m-=settled;height[i]=h;
-  const xx=i%GW,yy=(i/GW)|0;
-  const fx=flowX[i]*DT/CELL,fy=flowY[i]*DT/CELL;
-  let ax=Math.abs(fx),ay=Math.abs(fy),sum=ax+ay;
-  let limiter=sum>.88?.88/sum:1;
-  ax*=limiter;ay*=limiter;
-  let diffuse=Math.min(.14,turbulent*DT*10);
-  let remain=m*(1-ax-ay-diffuse);
-  next[i]+=remain;
-  let toX=fx>=0?(xx<GW-1?i+1:-1):(xx>0?i-1:-1);
-  let toY=fy>=0?(yy<GH-1?i+GW:-1):(yy>0?i-GW:-1);
-  if(permitted(i,toX))next[toX]+=m*ax;else if(ui.rim.value==='retain')next[i]+=m*ax;else drained+=m*ax;
-  if(permitted(i,toY))next[toY]+=m*ay;else if(ui.rim.value==='retain')next[i]+=m*ay;else drained+=m*ay;
-  let q=m*diffuse*.25;
-  for(const j of [xx>0?i-1:-1,xx<GW-1?i+1:-1,yy>0?i-GW:-1,yy<GH-1?i+GW:-1]){
-   if(permitted(i,j))next[j]+=q;else next[i]+=q;
+  const input=Number(ui.rain.value), drag=Number(ui.drag.value), diff=Number(ui.diffusion.value), central=ui.feed.value==='central';
+  nextMobile.fill(0);
+  const source=((GH/2)|0)*GW+((GW/2)|0);
+  for(let i=0;i<N;i++){
+    if(!present[i]) continue;
+    let m=mobile[i], h=bed[i];
+    m += central ? (i===source ? input*DT : 0) : input*DT/N*(0.8+0.4*grainNoise[i]);
+    const v=speed[i];
+    // shear pickup from existing bed, but small so land can persist
+    const erode=Math.min(h, h*DT*0.022*(v/(v+30)));
+    h-=erode; m+=erode;
+    // preferential settling where transport is weaker; still allows deposition on arcs via slower overlap pockets
+    const settle=0.015 + 0.30/(1+(v/34)*(v/34));
+    const dropped=m*(1-Math.exp(-settle*DT));
+    h+=dropped; m-=dropped; bed[i]=h;
+    const fx=flowX[i]*DT/CELL*drag, fy=flowY[i]*DT/CELL*drag;
+    let ax=Math.abs(fx), ay=Math.abs(fy), total=ax+ay;
+    if(total>0.88){ const s=0.88/total; ax*=s; ay*=s; }
+    const diffuse=Math.min(0.20,diff*0.018);
+    nextMobile[i]+=m*Math.max(0,1-ax-ay-diffuse);
+    const x=i%GW, y=(i/GW)|0;
+    const toX=fx>=0 ? (x<GW-1? i+1 : -1) : (x>0? i-1 : -1);
+    const toY=fy>=0 ? (y<GH-1? i+GW : -1) : (y>0? i-GW : -1);
+    if(toX>=0 && present[toX]) nextMobile[toX]+=m*ax; else nextMobile[i]+=m*ax;
+    if(toY>=0 && present[toY]) nextMobile[toY]+=m*ay; else nextMobile[i]+=m*ay;
+    const q=m*diffuse*0.25;
+    const nbr=[x? i-1:-1, x<GW-1? i+1:-1, y? i-GW:-1, y<GH-1? i+GW:-1];
+    for(const j of nbr){ if(j>=0 && present[j]) nextMobile[j]+=q; else nextMobile[i]+=q; }
   }
- }
- mobile.set(next);time+=DT;steps++;
- if(steps%15===0)measure();
+  mobile.set(nextMobile);
+  t+=DT;
 }
-function threshold(){
- let max=0;for(let i=0;i<N;i++)if(height[i]>max)max=height[i];
- peak=max;thresholdAbs=max*val('threshold')/100;
- return thresholdAbs;
-}
-function measure(){
- const cut=threshold();let seen=new Uint8Array(N),queue=new Int32Array(N),count=0,largest=0,total=0;
- if(peak<.035){lastRegions=0;lastLargest=0;return;}
- for(let i=0;i<N;i++){
-  if(!present[i]||seen[i]||height[i]<cut)continue;
-  let start=0,end=1,area=0;queue[0]=i;seen[i]=1;
-  while(start<end){
-   let k=queue[start++],x=k%GW,y=(k/GW)|0;area++;
-   const neighbors=[x? k-1:-1,x<GW-1?k+1:-1,y?k-GW:-1,y<GH-1?k+GW:-1];
-   for(const j of neighbors)if(j>=0&&present[j]&&!seen[j]&&height[j]>=cut){seen[j]=1;queue[end++]=j;}
+function measureRegions(){
+  let max=0; for(let i=0;i<N;i++) if(bed[i]>max) max=bed[i]; peak=max;
+  const waterline=max*(Number(ui.water.value)/100); if(max<1e-9){ largestPct=0; regionCount=0; return; }
+  const seen=new Uint8Array(N), queue=new Int32Array(N); let totalLand=0, largest=0, regions=0;
+  for(let i=0;i<N;i++) if(present[i] && bed[i]>=waterline) totalLand++;
+  for(let i=0;i<N;i++){
+    if(!present[i] || seen[i] || bed[i]<waterline) continue;
+    let head=0, tail=1, area=0; queue[0]=i; seen[i]=1;
+    while(head<tail){ const k=queue[head++],x=k%GW,y=(k/GW)|0; area++; const nbr=[x? k-1:-1, x<GW-1? k+1:-1, y? k-GW:-1, y<GH-1? k+GW:-1]; for(const j of nbr){ if(j>=0 && present[j] && !seen[j] && bed[j]>=waterline){ seen[j]=1; queue[tail++]=j; } } }
+    if(area>=3){ regions++; if(area>largest) largest=area; }
   }
-  if(area>=3){count++;total+=area;if(area>largest)largest=area;}
- }
- lastRegions=count;lastLargest=total?100*largest/total:0;
+  regionCount=regions; largestPct=totalLand? (100*largest/totalLand) : 0;
 }
-function outline(){
- cx.save();cx.lineWidth=1.15;cx.strokeStyle='rgba(117,181,216,.48)';
- for(const c of discs){cx.beginPath();cx.arc(c[0],c[1],R,0,2*PI);cx.stroke();}
- cx.restore();
+function drawBase(){
+  ctx.fillStyle='#07101a'; ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(100,151,191,.35)'; ctx.lineWidth=1.0;
+  for(const c of circles){ ctx.beginPath(); ctx.arc(c[0],c[1],radius,0,TAU); ctx.stroke(); }
 }
 function draw(){
- let mx=peak;if(!mx)mx=threshold();
- const data=rgba.data,cut=mx*val('threshold')/100,view=ui.view.value;
- for(let i=0;i<N;i++){
-  let o=i*4,h=height[i],z=mx?Math.pow(Math.log1p(h*2.5)/Math.log1p(mx*2.5),.9):0;
-  let r=10,g=23,b=39;
-  if(!present[i]){r=7;g=13;b=22;}
-  else if(view==='flow'){const v=speed[i],s=Math.min(1,v/85);r=15+s*40;g=37+s*93;b=58+s*105;}
-  else{
-   const a=Math.min(1,z*1.18);
-   r=16+220*a;g=35+161*a;b=53+61*a;
-   if(view==='coast'&&h>=cut&&peak>.035){r=66+190*z;g=86+159*z;b=52+110*z;}
+  drawBase();
+  const max=peak||1e-9, waterline=max*(Number(ui.water.value)/100), view=ui.view.value;
+  for(let i=0;i<N;i++){
+    const o=i*4;
+    let r=6,g=14,b=24;
+    if(present[i]){
+      if(view==='flow'){
+        const s=Math.min(1,speed[i]/65);
+        r=10+34*s; g=28+110*s; b=42+135*s;
+      }else{
+        const z=Math.min(1, Math.log1p(bed[i]*2.6)/Math.log1p(max*2.6));
+        if(view==='height'){
+          r=18+208*z; g=32+162*z; b=44+88*z;
+        }else{
+          if(bed[i] < waterline){
+            const w=waterline>0 ? bed[i]/waterline : 0;
+            r=14+40*w; g=35+95*w; b=62+155*w;
+          }else{
+            const l=(bed[i]-waterline)/Math.max(1e-6,max-waterline);
+            r=92+158*l; g=106+132*l; b=57+74*l;
+          }
+        }
+      }
+    }
+    pixels[o]=r|0; pixels[o+1]=g|0; pixels[o+2]=b|0; pixels[o+3]=255;
   }
-  data[o]=r|0;data[o+1]=g|0;data[o+2]=b|0;data[o+3]=255;
- }
- mc.putImageData(rgba,0,0);
- cx.imageSmoothingEnabled=true;cx.drawImage(mini,0,0,W,H);
- if(view==='coast'&&peak>.035){
-  // Contours are calculated from sediment thickness, not pre-drawn coastlines.
-  cx.save();cx.strokeStyle='rgba(245,244,197,.82)';cx.lineWidth=1;
-  cx.beginPath();
-  for(let y=0;y<GH-1;y++)for(let x=0;x<GW-1;x++){
-   let i=y*GW+x,a=height[i]>=cut;
-   if(!present[i])continue;
-   if(a!==(height[i+1]>=cut)){let px=(x+1)*CELL,py=y*CELL;cx.moveTo(px,py);cx.lineTo(px,py+CELL);}
-   if(a!==(height[i+GW]>=cut)){let px=x*CELL,py=(y+1)*CELL;cx.moveTo(px,py);cx.lineTo(px+CELL,py);}
+  mctx.putImageData(image,0,0);
+  ctx.imageSmoothingEnabled=true;
+  ctx.drawImage(mini,0,0,W,H);
+  // fine grain speckle from mobile sediment to make grains appear smaller and more numerous
+  ctx.save(); ctx.fillStyle='rgba(250,228,183,0.30)';
+  for(let y=0;y<GH;y+=1) for(let x=0;x<GW;x+=1){ const i=y*GW+x; if(!present[i]) continue; const m=mobile[i]; if(m>0.015 && grainNoise[i] < Math.min(0.20,m*0.004)){ ctx.fillRect(x*CELL+((i*37)%3)*0.3, y*CELL+((i*53)%3)*0.3, 1, 1); } }
+  ctx.restore();
+  if(view==='coast' && peak>0){
+    ctx.save(); ctx.strokeStyle='rgba(245,241,196,.88)'; ctx.lineWidth=1.0; ctx.beginPath();
+    for(let y=0;y<GH-1;y++) for(let x=0;x<GW-1;x++){
+      const i=y*GW+x; if(!present[i]) continue; const a=bed[i]>=waterline;
+      if(a !== (bed[i+1]>=waterline)){ const px=(x+1)*CELL, py=y*CELL; ctx.moveTo(px,py); ctx.lineTo(px,py+CELL); }
+      if(a !== (bed[i+GW]>=waterline)){ const px=x*CELL, py=(y+1)*CELL; ctx.moveTo(px,py); ctx.lineTo(px+CELL,py); }
+    }
+    ctx.stroke(); ctx.restore();
   }
-  cx.stroke();cx.restore();
- }
- outline();
- if(view==='flow'){
-  cx.save();cx.lineWidth=1.4;cx.strokeStyle='#f4c77b';
-  for(let y=6;y<GH-6;y+=8)for(let x=6;x<GW-6;x+=8){
-   let i=y*GW+x,v=speed[i];if(v<.2||!present[i])continue;
-   let d=Math.min(22,6+v*.1),a=Math.atan2(flowY[i],flowX[i]),px=(x+.5)*CELL,py=(y+.5)*CELL;
-   cx.beginPath();cx.moveTo(px-Math.cos(a)*d*.4,py-Math.sin(a)*d*.4);
-   cx.lineTo(px+Math.cos(a)*d*.6,py+Math.sin(a)*d*.6);cx.stroke();
-  }cx.restore();
- }
- document.getElementById('elapsed').textContent=time.toFixed(1)+' s';
- let mass=0;for(let i=0;i<N;i++)mass+=height[i]+mobile[i];
- document.getElementById('count').textContent=Math.round(mass).toLocaleString();
- document.getElementById('pile').textContent=peak.toFixed(2);
- regionsStat.textContent=String(lastRegions);
- largestStat.textContent=lastLargest.toFixed(1)+'%';
- document.getElementById('state').textContent=running?'RUNNING':'PAUSED';
+  if(view==='flow'){
+    ctx.save(); ctx.strokeStyle='rgba(242,197,119,.94)'; ctx.lineWidth=1.2;
+    for(let y=5;y<GH-5;y+=6) for(let x=5;x<GW-5;x+=6){ const i=y*GW+x; if(!present[i]||speed[i]<0.4) continue; const a=Math.atan2(flowY[i],flowX[i]), d=Math.min(16,4+speed[i]*0.08), px=(x+0.5)*CELL, py=(y+0.5)*CELL; ctx.beginPath(); ctx.moveTo(px-Math.cos(a)*d*0.35, py-Math.sin(a)*d*0.35); ctx.lineTo(px+Math.cos(a)*d*0.65, py+Math.sin(a)*d*0.65); ctx.stroke(); }
+    ctx.restore();
+  }
+  // lattice redrawn on top for clarity
+  ctx.strokeStyle='rgba(124,187,226,.76)'; ctx.lineWidth=1.0;
+  for(const c of circles){ ctx.beginPath(); ctx.arc(c[0],c[1],radius,0,TAU); ctx.stroke(); }
+  let total=0; for(let i=0;i<N;i++) total += bed[i]+mobile[i];
+  document.getElementById('elapsed').textContent=t.toFixed(1)+' s';
+  document.getElementById('mass').textContent=Math.round(total).toLocaleString();
+  document.getElementById('peak').textContent=peak.toFixed(2);
+  document.getElementById('largest').textContent=largestPct.toFixed(1)+'%';
+  document.getElementById('regions').textContent=String(regionCount);
+  document.getElementById('state').textContent=running?'RUNNING':'PAUSED';
 }
-function play(b){running=b;document.getElementById('play').textContent=running?'Pause':'Play';draw();}
-function tick(ms){
- if(!last)last=ms;
- let elapsed=Math.min(.10,(ms-last)/1000);last=ms;
- if(running&&!advancing){
-  acc+=elapsed;let n=0;while(acc>=DT&&n<2){step();acc-=DT;n++;}
-  if(n)draw();
- }
- requestAnimationFrame(tick);
-}
-document.getElementById('play').onclick=()=>play(!running);
+function reset(){ seed=8731; t=0; last=0; acc=0; peak=0; largestPct=0; regionCount=0; bed.fill(0); mobile.fill(0); nextMobile.fill(0); rebuildField(); measureRegions(); draw(); }
+function tick(ms){ if(!last) last=ms; const elapsed=Math.min(0.1,(ms-last)/1000); last=ms; if(running && !advancing){ acc+=elapsed; let n=0; while(acc>=DT && n<2){ step(); acc-=DT; n++; } if(n){ measureRegions(); draw(); } } requestAnimationFrame(tick); }
+for(const id in outputs){ const input=ui[id], out=outputs[id]; const update=()=>{ out.textContent=input.value; if(id==='scale'||id==='rpm'||id==='edgeWidth'||id==='weave') reset(); else if(id==='water'){ measureRegions(); draw(); } }; input.addEventListener('input',update); update(); }
+ui.view.addEventListener('change',draw); ui.feed.addEventListener('change',reset); ui.drag.addEventListener('input',()=>{}); ui.diffusion.addEventListener('input',()=>{}); ui.rain.addEventListener('input',()=>{});
+document.getElementById('play').onclick=()=>{ running=!running; document.getElementById('play').textContent=running?'Pause':'Play'; draw(); };
 document.getElementById('reset').onclick=reset;
-document.getElementById('advance').onclick=()=>{
- if(advancing)return;advancing=true;let was=running;running=false;
- let todo=Math.round(5/DT);
- const batch=()=>{let n=Math.min(25,todo);for(let k=0;k<n;k++)step();todo-=n;measure();draw();
-  if(todo>0)setTimeout(batch,0);else{advancing=false;play(was);}
- };batch();
-};
-for(const k of ['rpm','friction','layout'])ui[k].addEventListener('change',reset);
-for(const k of ['view','threshold'])ui[k].addEventListener('change',()=>{measure();draw();});
-for(const [k,input] of Object.entries(ui))if(input.type==='range'){
- const output=document.getElementById(k+'Value');
- const update=()=>{if(output)output.textContent=input.value;};
- input.addEventListener('input',()=>{update();if(k==='threshold'){measure();draw();}});
- update();
-}
-const record=document.getElementById('record');
-record.onclick=()=>{
- if(!cv.captureStream||typeof MediaRecorder==='undefined'){alert('Your browser does not support canvas video recording.');return;}
- const stream=cv.captureStream(24),mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp8')?'video/webm;codecs=vp8':'video/webm';
- const recorder=new MediaRecorder(stream,{mimeType:mime}),chunks=[];
- recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
- recorder.onstop=()=>{
-  const url=URL.createObjectURL(new Blob(chunks,{type:mime})),a=document.createElement('a');
-  a.href=url;a.download='flower-lattice-sediment-experiment.webm';a.click();
-  setTimeout(()=>URL.revokeObjectURL(url),15000);record.disabled=false;record.textContent='Record 10 s';
- };
- record.disabled=true;record.textContent='Recording…';play(true);recorder.start();
- setTimeout(()=>{if(recorder.state==='recording')recorder.stop();},10000);
-};
-document.addEventListener('visibilitychange',()=>{last=0;acc=0;});
-reset();requestAnimationFrame(tick);
+document.getElementById('advance').onclick=()=>{ if(advancing) return; advancing=true; const was=running; running=false; let todo=Math.round(10/DT); const batch=()=>{ const n=Math.min(24,todo); for(let i=0;i<n;i++) step(); todo-=n; measureRegions(); draw(); if(todo>0) setTimeout(batch,0); else { advancing=false; running=was; document.getElementById('play').textContent=running?'Pause':'Play'; } }; batch(); };
+document.getElementById('record').onclick=()=>{ if(!canvas.captureStream || typeof MediaRecorder==='undefined'){ alert('Recording is not supported in this browser.'); return; } const stream=canvas.captureStream(24); const mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp8')?'video/webm;codecs=vp8':'video/webm'; const rec=new MediaRecorder(stream,{mimeType:mime}); const chunks=[]; rec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); }; rec.onstop=()=>{ const url=URL.createObjectURL(new Blob(chunks,{type:mime})); const a=document.createElement('a'); a.href=url; a.download='flower-of-life-3d-edge-weave.webm'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),15000); document.getElementById('record').disabled=false; document.getElementById('record').textContent='Record 10 s'; }; document.getElementById('record').disabled=true; document.getElementById('record').textContent='Recording…'; rec.start(); setTimeout(()=>{ if(rec.state==='recording') rec.stop(); },10000); };
+reset(); requestAnimationFrame(tick);
 })();
 </script>
 </body>
