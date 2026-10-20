@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An interactive numerical sand simulation on independently rotating discs arranged in the extended Flower of Life lattice.">
+<title>Flower of Life — Sand on Rotating Discs | Vardath</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<style>
+:root{color-scheme:dark;--bg:#0c111b;--panel:#151e2a;--line:#2a3545;--fg:#e8edf5;--muted:#9daec1;--sand:#efba68}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1400px;margin:auto;padding:18px 20px 36px}
+h1{font-weight:650;font-size:23px;letter-spacing:-.02em;margin:5px 0 0}
+nav{display:flex;gap:16px;align-items:center;font-size:13px;color:var(--muted)}
+nav a{color:#91d2e7;text-decoration:none}
+nav a:hover{text-decoration:underline}
+header p{color:var(--muted);margin:5px 0 16px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:17px}
+.viewport{position:relative;border:1px solid var(--line);background:#060c14;border-radius:11px;overflow:hidden}
+.viewport canvas{width:100%;height:auto;display:block;touch-action:pan-y}
+.viewlabels{position:absolute;left:16px;right:16px;top:12px;display:flex;justify-content:space-between;gap:12px;color:#d2dbe5;font-size:12px;pointer-events:none;text-shadow:0 1px 5px #000}
+.viewlabels span{background:#09121bc7;padding:4px 9px;border-radius:5px}
+.side{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:17px;align-self:start}
+.side h2{font-size:14px;margin:0 0 12px}
+fieldset{border:0;padding:0;margin:0 0 17px}
+label{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:14px 0 5px;font-weight:540}
+label output{color:var(--sand);font-variant-numeric:tabular-nums}
+select,input[type=range]{width:100%}
+select{border:1px solid #35465c;border-radius:7px;background:#0c1522;color:var(--fg);padding:9px 8px;font:inherit}
+input[type=range]{accent-color:var(--sand);cursor:pointer}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.buttons button{border:1px solid #405168;border-radius:8px;color:var(--fg);font:inherit;font-weight:600;padding:10px 7px;cursor:pointer;background:#203044}
+.buttons button.primary{background:#a16823;border-color:#b77a30;color:#fff}
+.buttons button:disabled{opacity:.5;cursor:not-allowed}
+.buttons button:hover:not(:disabled){filter:brightness(1.15)}
+.details{color:var(--muted);font-size:13px}
+.details strong{color:var(--fg)}
+.details p{margin:7px 0 0}
+.stats{display:flex;flex-wrap:wrap;gap:18px;padding:13px 3px;color:#a7b6c6;font-size:13px}
+.stats b{font-weight:600;color:#f0f4fb;font-variant-numeric:tabular-nums}
+section.explain{border-top:1px solid var(--line);margin-top:19px;padding-top:13px;color:#adbbc8;max-width:1040px}
+section.explain h2{font-size:15px;color:var(--fg);margin:3px 0}
+section.explain p{margin:7px 0}
+.legend{height:7px;background:linear-gradient(90deg,#0c111b,#6a4b34,#d29b50,#ffe3aa);border-radius:6px;margin:8px 0 3px}
+.legendlabels{display:flex;justify-content:space-between;color:#a7b6c6;font-size:11px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px}.side h2{grid-column:1/-1}.buttons{align-self:start}}
+@media(max-width:620px){main{padding:10px 10px 20px}h1{font-size:19px}.side{grid-template-columns:1fr;padding:14px}.viewport .viewlabels{font-size:10px;left:6px;right:6px;top:5px}.viewlabels span{padding:3px}.stats{gap:10px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<nav><a href="/">← Vardath home</a><span>Interactive experiments</span></nav>
+<h1>Flower of Life · Sand on rotating discs</h1>
+<p>Live numerical particle simulation · Each disc spins clockwise independently · Sand falls continuously from above</p>
+</header>
+<div class="layout"><div>
+<div class="viewport"><canvas id="sim" width="1080" height="680" aria-label="Animated grain-density distribution over rotating discs">This experiment needs a browser that supports the canvas element.</canvas>
+<div class="viewlabels"><span id="geomlabel">Flower of Life · overlapping velocity fields</span><span id="state">RUNNING</span></div></div>
+<div class="stats"><span>Elapsed: <b id="elapsed">0.0 s</b></span><span>Grains on surfaces: <b id="count">0</b></span><span>Visible rotors: <b id="discs">0</b></span><span>Max relative accumulation: <b id="pile">0</b></span></div>
+<div class="legend"></div><div class="legendlabels"><span>no sand</span><span>thin dusting</span><span>high grain density</span></div>
+</div>
+<aside class="side">
+<h2>Experiment controls</h2>
+<fieldset>
+<label for="layout">Disc arrangement</label><select id="layout"><option value="flower">Flower of Life (overlapping circles)</option><option value="physical">Tangent discs (physically separable)</option></select>
+<label for="rpm">All discs · clockwise RPM <output id="rpmValue">12</output></label><input id="rpm" type="range" min="0" max="40" step="1" value="12">
+<label for="rain">Sand deposition · grains/s <output id="rainValue">4500</output></label><input id="rain" type="range" min="0" max="12000" step="250" value="4500">
+<label for="friction">Grain/surface drag · 1/s <output id="frictionValue">3.5</output></label><input id="friction" type="range" min="0.5" max="12" step="0.5" value="3.5">
+<label for="agitation">Random grain agitation <output id="agitationValue">0.5</output></label><input id="agitation" type="range" min="0" max="4" step="0.25" value="0.5">
+<label for="feed">Sand entry</label><select id="feed"><option value="uniform">Uniform rain over entire grid</option><option value="central">Single overhead sand stream</option></select>
+<label for="rim">Physical disc edge</label><select id="rim"><option value="retain">Raised rim (grains retained)</option><option value="spill">Open edge (grains spill off)</option></select>
+</fieldset>
+<div class="buttons"><button id="play" class="primary" type="button">Pause</button><button id="reset" type="button">Reset</button><button id="advance" type="button">+5 simulated sec</button><button id="record" type="button">Record 10 s</button></div>
+<div class="details">
+<p id="modehelp"><strong>Geometry:</strong> Classical Flower of Life discs overlap geometrically. Rigid discs cannot physically interpenetrate, so this mode blends their independently rotating local surface-velocity fields.</p>
+<p><strong>Physics:</strong> Grains receive tangential acceleration from substrate drag, retain inertia, undergo centrifugal migration and random agitation. Density is calculated from <em>actual simulated particle positions</em>, not an image of a sand pattern.</p>
+<p><strong>Limit:</strong> Simplified two-dimensional granular transport. Individual grain collisions and three-dimensional piles are not modelled.</p>
+</div>
+</aside>
+</div>
+<section class="explain"><h2>About the experiment</h2>
+<p>With uniform sand rain onto featureless horizontal spinning discs, rotation alone does not guarantee spiral ridges. Depending on friction, particle inertia and edge confinement, sand can remain broadly distributed, migrate to edges, or collect along shear and convergence regions.</p>
+<p>Choose <strong>Single overhead sand stream</strong> to trace grain motion, or switch to <strong>Tangent discs</strong> for a physically realizable hexagonal array. Pause, reset, advance the simulation and record a 10-second WebM video from the controls.</p>
+</section>
+</main>
+<script>
+(()=>{'use strict';
+const W=1080,H=680,R=49,SQRT3=Math.sqrt(3),CY=SQRT3/2;
+const canvas=document.getElementById('sim'),ctx=canvas.getContext('2d',{alpha:false});
+const densityCanvas=document.createElement('canvas'),DCW=540,DCH=340;densityCanvas.width=DCW;densityCanvas.height=DCH;
+const dctx=densityCanvas.getContext('2d'),pix=dctx.createImageData(DCW,DCH),dens=new Float32Array(DCW*DCH);
+const ui={layout:document.getElementById('layout'),rpm:document.getElementById('rpm'),rain:document.getElementById('rain'),friction:document.getElementById('friction'),agitation:document.getElementById('agitation'),feed:document.getElementById('feed'),rim:document.getElementById('rim')};
+let running=true,t=0,last=0,acc=0,spawnPartial=0,p=[],rotors=[],seed=238572,maxDensity=0,fastForwarding=false;
+const MAX=window.matchMedia('(max-width:620px)').matches?48000:112000,DT=1/45,ADVANCE_STEPS=225;
+let spacing=R,omega=12*Math.PI/30;
+const randy=()=>{seed=(Math.imul(1664525,seed)+1013904223)|0;return (seed>>>0)/4294967296};
+function chooseGeometry(){
+ spacing=ui.layout.value==='flower'?R:2.07*R;rotors=[];
+ let cols=Math.ceil(W/spacing)+4,rows=Math.ceil(H/(CY*spacing))+4;
+ for(let row=-rows;row<=rows;row++)for(let col=-cols;col<=cols;col++){
+  let x=col*spacing+row*spacing/2+W/2,y=row*spacing*CY+H/2;
+  if(x>-R&&x<W+R&&y>-R&&y<H+R)rotors.push({x,y});
+ }
+ document.getElementById('discs').textContent=rotors.length;
+ document.getElementById('modehelp').innerHTML=ui.layout.value==='flower'?
+ '<strong>Geometry:</strong> Classical Flower of Life circles overlap geometrically. Rigid discs cannot physically interpenetrate, so this mode blends their independently rotating local velocity fields. This is a <em>mathematical overlap model</em>.':
+ '<strong>Geometry:</strong> Physical round discs in hexagonal packing with small gaps. Each disc spins clockwise independently without intersecting another disc.';
+ document.getElementById('geomlabel').textContent=ui.layout.value==='flower'?'Flower of Life · mathematical overlap':'Physical discs · hexagonal close packing';
+}
+function hexNearest(x,y){
+ let q=(x-W/2)/spacing-(y-H/2)/(SQRT3*spacing),r=(y-H/2)/(CY*spacing),c=-q-r;
+ let rq=Math.round(q),rr=Math.round(r),rc=Math.round(c);
+ let dq=Math.abs(rq-q),dr=Math.abs(rr-r),dc=Math.abs(rc-c);
+ if(dq>dr&&dq>dc)rq=-rr-rc;else if(dr>dc)rr=-rq-rc;
+ return[rq,rr];
+}
+function center(q,r){return[W/2+spacing*(q+r/2),H/2+spacing*CY*r];}
+function newParticle(){
+ let x,y;
+ if(ui.feed.value==='central'){
+  let theta=randy()*2*Math.PI,rad=Math.sqrt(-2*Math.log(Math.max(1e-6,randy())))*15;
+  x=W/2+Math.cos(theta)*rad;y=H/2+Math.sin(theta)*rad;
+ }else{x=randy()*W;y=randy()*H;}
+ if(ui.layout.value==='physical'){
+  let loc=hexNearest(x,y),c=center(loc[0],loc[1]),dx=x-c[0],dy=y-c[1],d=Math.hypot(dx,dy);
+  if(d>R-1){let ang=randy()*Math.PI*2,rad=Math.sqrt(randy())*(R-3);x=c[0]+Math.cos(ang)*rad;y=c[1]+Math.sin(ang)*rad;}
+ }
+ return{x,y,vx:0,vy:0,age:0};
+}
+function addSand(h){
+ spawnPartial+=Number(ui.rain.value)*h;
+ let n=Math.min(Math.floor(spawnPartial),MAX-p.length);
+ spawnPartial-=Math.floor(spawnPartial);
+ for(let i=0;i<n;i++)p.push(newParticle());
+}
+function velocity(x,y){
+ let loc=hexNearest(x,y),q=loc[0],r=loc[1];
+ if(ui.layout.value==='physical'){
+  let ctr=center(q,r);return[omega*(ctr[1]-y),omega*(x-ctr[0]),ctr[0],ctr[1]];
+ }
+ let cx=0,cy=0,sum=0;
+ const ds=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
+ for(let k=0;k<7;k++){
+  let qq=q+ds[k][0],rr=r+ds[k][1],xx=W/2+spacing*(qq+rr/2),yy=H/2+spacing*CY*rr;
+  let dx=x-xx,dy=y-yy,u=1-(dx*dx+dy*dy)/(R*R);
+  if(u>0){let weight=u*u;sum+=weight;cx+=weight*xx;cy+=weight*yy;}
+ }
+ if(sum<=0){let c=center(q,r);cx=c[0];cy=c[1];}else{cx/=sum;cy/=sum;}
+ return[omega*(cy-y),omega*(x-cx),cx,cy];
+}
+function physicsStep(h){
+ omega=Number(ui.rpm.value)*Math.PI/30;
+ let drag=Number(ui.friction.value),agitation=Number(ui.agitation.value);
+ addSand(h);
+ let damp=1-Math.exp(-drag*h);
+ for(let i=0;i<p.length;i++){
+  let b=p[i],a=velocity(b.x,b.y);
+  b.vx+=(a[0]-b.vx)*damp;b.vy+=(a[1]-b.vy)*damp;
+  if(agitation){
+   let f=agitation*Math.sqrt(h)*6;
+   b.vx+=(randy()+randy()+randy()-1.5)*f;
+   b.vy+=(randy()+randy()+randy()-1.5)*f;
+  }
+  b.x+=b.vx*h;b.y+=b.vy*h;b.age+=h;
+  if(ui.layout.value==='physical'){
+   let dx=b.x-a[2],dy=b.y-a[3],d=Math.hypot(dx,dy);
+   if(d>R-1.5){
+    if(ui.rim.value==='spill'){p[i]=p[p.length-1];p.pop();i--;continue;}
+    let nx=dx/(d||1),ny=dy/(d||1);b.x=a[2]+nx*(R-1.5);b.y=a[3]+ny*(R-1.5);
+    let out=b.vx*nx+b.vy*ny;
+    if(out>0){b.vx-=out*nx*1.4;b.vy-=out*ny*1.4;}
+   }
+  }
+  if(b.x<0||b.x>=W||b.y<0||b.y>=H||b.age>160){
+   p[i]=p[p.length-1];p.pop();i--;
+  }
+ }
+ t+=h;
+}
+function drawDiscs(){
+ ctx.fillStyle='#08101b';ctx.fillRect(0,0,W,H);
+ if(ui.layout.value==='physical'){
+  for(const c of rotors){
+   ctx.beginPath();ctx.arc(c.x,c.y,R,0,Math.PI*2);ctx.fillStyle='#1b2932';ctx.fill();
+   ctx.lineWidth=1;ctx.strokeStyle='#547080';ctx.stroke();
+   ctx.beginPath();ctx.arc(c.x,c.y,3,0,Math.PI*2);ctx.fillStyle='#7e9ba3';ctx.fill();
+  }
+ }else{
+  ctx.lineWidth=1;ctx.strokeStyle='rgba(95,133,159,.32)';
+  for(const c of rotors){ctx.beginPath();ctx.arc(c.x,c.y,R,0,Math.PI*2);ctx.stroke();}
+  for(const c of rotors){
+   ctx.beginPath();ctx.arc(c.x,c.y,1.6,0,Math.PI*2);
+   ctx.fillStyle='rgba(115,161,182,.5)';ctx.fill();
+  }
+ }
+}
+function drawSand(){
+ dens.fill(0);
+ for(const a of p){
+  let xx=a.x*.5,yy=a.y*.5,ix=xx|0,iy=yy|0,fx=xx-ix,fy=yy-iy;
+  if(ix>=0&&iy>=0&&ix<DCW-1&&iy<DCH-1){
+   let idx=iy*DCW+ix;
+   dens[idx]+=(1-fx)*(1-fy);dens[idx+1]+=fx*(1-fy);
+   dens[idx+DCW]+=(1-fx)*fy;dens[idx+DCW+1]+=fx*fy;
+  }
+ }
+ let data=pix.data,mx=0;
+ for(let j=0;j<dens.length;j++){
+  let v=dens[j];if(v>mx)mx=v;
+  let z=1-Math.exp(-v*.84),o=j*4;
+  data[o]=249;data[o+1]=190+Math.min(55,Math.round(z*62));
+  data[o+2]=109+Math.min(70,Math.round(z*80));
+  data[o+3]=Math.min(255,Math.round(255*z));
+ }
+ maxDensity=Math.max(maxDensity*.99,mx);
+ dctx.putImageData(pix,0,0);ctx.imageSmoothingEnabled=true;
+ ctx.drawImage(densityCanvas,0,0,W,H);
+ let stride=p.length>70000?5:p.length>35000?3:2;
+ ctx.fillStyle='rgba(255,229,168,.50)';
+ for(let k=0;k<p.length;k+=stride){let a=p[k];ctx.fillRect(a.x,a.y,1.15,1.15);}
+}
+function draw(){
+ drawDiscs();drawSand();
+ document.getElementById('elapsed').textContent=t.toFixed(1)+' s';
+ document.getElementById('count').textContent=p.length.toLocaleString();
+ document.getElementById('pile').textContent=maxDensity.toFixed(1)+' grains/cell';
+ document.getElementById('state').textContent=running?'RUNNING':'PAUSED';
+}
+function reset(){t=0;p.length=0;spawnPartial=0;seed=238572;maxDensity=0;chooseGeometry();draw();}
+function tick(time){
+ if(!last)last=time;
+ let elapsed=Math.min(.1,(time-last)/1000);last=time;
+ if(running&&!fastForwarding){
+  acc+=elapsed;let n=0;
+  while(acc>=DT&&n<3){physicsStep(DT);acc-=DT;n++;}
+  if(n)draw();
+ }
+ requestAnimationFrame(tick);
+}
+function pause(b){running=b;document.getElementById('play').textContent=running?'Pause':'Play';draw();}
+document.getElementById('play').onclick=()=>pause(!running);
+document.getElementById('reset').onclick=reset;
+document.getElementById('advance').onclick=()=>{
+ let was=running;running=false;fastForwarding=true;let total=0;
+ function batch(){
+  for(let i=0;i<45&&total<ADVANCE_STEPS;i++,total++)physicsStep(DT);
+  draw();
+  if(total<ADVANCE_STEPS)setTimeout(batch,0);
+  else{fastForwarding=false;pause(was);}
+ }batch();
+};
+ui.layout.addEventListener('change',reset);
+for(const[k,input]of Object.entries(ui)){
+ if(input.type==='range'){
+  let out=document.getElementById(k+'Value');
+  const update=()=>{out.textContent=input.value;};
+  input.addEventListener('input',update);update();
+ }
+}
+const record=document.getElementById('record');
+record.onclick=()=>{
+ if(!canvas.captureStream||typeof MediaRecorder==='undefined'){
+  alert('Recording is not supported by this browser. The live simulation still works.');return;
+ }
+ let stream=canvas.captureStream(24);
+ let mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm';
+ let rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:3800000}),chunks=[];
+ rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+ rec.onstop=()=>{
+  let u=URL.createObjectURL(new Blob(chunks,{type:mime})),a=document.createElement('a');
+  a.href=u;a.download='flower-of-life-granular-simulation.webm';a.click();
+  setTimeout(()=>URL.revokeObjectURL(u),10000);
+  record.disabled=false;record.textContent='Record 10 s';
+ };
+ record.disabled=true;record.textContent='Recording…';pause(true);rec.start();
+ setTimeout(()=>{if(rec.state!=='inactive')rec.stop();},10000);
+};
+document.addEventListener('visibilitychange',()=>{last=0;acc=0;});
+reset();requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
