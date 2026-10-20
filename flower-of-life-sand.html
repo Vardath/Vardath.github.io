@@ -57,14 +57,14 @@ section.explain p{margin:7px 0}
 </header>
 <div class="layout"><div>
 <div class="viewport"><canvas id="sim" width="1080" height="680" aria-label="Animated grain-density distribution over rotating discs">This experiment needs a browser that supports the canvas element.</canvas>
-<div class="viewlabels"><span id="geomlabel">Flower of Life · overlapping velocity fields</span><span id="state">RUNNING</span></div></div>
+<div class="viewlabels"><span id="geomlabel">Flower of Life · full overlapping discs</span><span id="state">RUNNING</span></div></div>
 <div class="stats"><span>Elapsed: <b id="elapsed">0.0 s</b></span><span>Grains on surfaces: <b id="count">0</b></span><span>Visible rotors: <b id="discs">0</b></span><span>Max relative accumulation: <b id="pile">0</b></span></div>
 <div class="legend"></div><div class="legendlabels"><span>no sand</span><span>thin dusting</span><span>high grain density</span></div>
 </div>
 <aside class="side">
 <h2>Experiment controls</h2>
 <fieldset>
-<label for="layout">Disc arrangement</label><select id="layout"><option value="flower">Flower of Life (overlapping circles)</option><option value="physical">Tangent discs (physically separable)</option></select>
+<label for="layout">Disc arrangement</label><select id="layout"><option value="flower">Flower of Life (full overlapping discs)</option><option value="physical">Tangent discs (physically separable)</option></select>
 <label for="rpm">All discs · clockwise RPM <output id="rpmValue">12</output></label><input id="rpm" type="range" min="0" max="40" step="1" value="12">
 <label for="rain">Sand deposition · grains/s <output id="rainValue">4500</output></label><input id="rain" type="range" min="0" max="12000" step="250" value="4500">
 <label for="friction">Grain/surface drag · 1/s <output id="frictionValue">3.5</output></label><input id="friction" type="range" min="0.5" max="12" step="0.5" value="3.5">
@@ -74,20 +74,20 @@ section.explain p{margin:7px 0}
 </fieldset>
 <div class="buttons"><button id="play" class="primary" type="button">Pause</button><button id="reset" type="button">Reset</button><button id="advance" type="button">+5 simulated sec</button><button id="record" type="button">Record 10 s</button></div>
 <div class="details">
-<p id="modehelp"><strong>Geometry:</strong> Classical Flower of Life discs overlap geometrically. Rigid discs cannot physically interpenetrate, so this mode blends their independently rotating local surface-velocity fields.</p>
+<p id="modehelp"><strong>Geometry:</strong> Each full-sized circular disc has independent clockwise surface motion. In overlapping regions the discs are modeled as conceptual superposed layers, not as interpenetrating solid hardware.</p>
 <p><strong>Physics:</strong> Grains receive tangential acceleration from substrate drag, retain inertia, undergo centrifugal migration and random agitation. Density is calculated from <em>actual simulated particle positions</em>, not an image of a sand pattern.</p>
 <p><strong>Limit:</strong> Simplified two-dimensional granular transport. Individual grain collisions and three-dimensional piles are not modelled.</p>
 </div>
 </aside>
 </div>
 <section class="explain"><h2>About the experiment</h2>
-<p>With uniform sand rain onto featureless horizontal spinning discs, rotation alone does not guarantee spiral ridges. Depending on friction, particle inertia and edge confinement, sand can remain broadly distributed, migrate to edges, or collect along shear and convergence regions.</p>
+<p>This model keeps every disc as a complete circle, including its overlapping portions. Solid discs cannot occupy the same plane, so the configuration is a conceptual superposition of independently moving surfaces. With uniform sand rain onto featureless horizontal spinning discs, rotation alone does not guarantee spiral ridges. Depending on friction, particle inertia and edge confinement, sand can remain broadly distributed, migrate to edges, or collect along shear and convergence regions.</p>
 <p>Choose <strong>Single overhead sand stream</strong> to trace grain motion, or switch to <strong>Tangent discs</strong> for a physically realizable hexagonal array. Pause, reset, advance the simulation and record a 10-second WebM video from the controls.</p>
 </section>
 </main>
 <script>
 (()=>{'use strict';
-const W=1080,H=680,R=49,SQRT3=Math.sqrt(3),CY=SQRT3/2;
+const W=1080,H=680,R=76,SQRT3=Math.sqrt(3),CY=SQRT3/2;
 const canvas=document.getElementById('sim'),ctx=canvas.getContext('2d',{alpha:false});
 const densityCanvas=document.createElement('canvas'),DCW=540,DCH=340;densityCanvas.width=DCW;densityCanvas.height=DCH;
 const dctx=densityCanvas.getContext('2d'),pix=dctx.createImageData(DCW,DCH),dens=new Float32Array(DCW*DCH);
@@ -105,9 +105,9 @@ function chooseGeometry(){
  }
  document.getElementById('discs').textContent=rotors.length;
  document.getElementById('modehelp').innerHTML=ui.layout.value==='flower'?
- '<strong>Geometry:</strong> Classical Flower of Life circles overlap geometrically. Rigid discs cannot physically interpenetrate, so this mode blends their independently rotating local velocity fields. This is a <em>mathematical overlap model</em>.':
+ '<strong>Geometry:</strong> Every disc is a complete circle and rotates independently, including across overlap regions. Because solid discs cannot occupy the same plane, overlapping surfaces are idealized independent layers in this simulation.':
  '<strong>Geometry:</strong> Physical round discs in hexagonal packing with small gaps. Each disc spins clockwise independently without intersecting another disc.';
- document.getElementById('geomlabel').textContent=ui.layout.value==='flower'?'Flower of Life · mathematical overlap':'Physical discs · hexagonal close packing';
+ document.getElementById('geomlabel').textContent=ui.layout.value==='flower'?'Flower of Life · full discs, independent rotation':'Physical discs · hexagonal close packing';
 }
 function hexNearest(x,y){
  let q=(x-W/2)/spacing-(y-H/2)/(SQRT3*spacing),r=(y-H/2)/(CY*spacing),c=-q-r;
@@ -123,11 +123,24 @@ function newParticle(){
   let theta=randy()*2*Math.PI,rad=Math.sqrt(-2*Math.log(Math.max(1e-6,randy())))*15;
   x=W/2+Math.cos(theta)*rad;y=H/2+Math.sin(theta)*rad;
  }else{x=randy()*W;y=randy()*H;}
- if(ui.layout.value==='physical'){
-  let loc=hexNearest(x,y),c=center(loc[0],loc[1]),dx=x-c[0],dy=y-c[1],d=Math.hypot(dx,dy);
-  if(d>R-1){let ang=randy()*Math.PI*2,rad=Math.sqrt(randy())*(R-3);x=c[0]+Math.cos(ang)*rad;y=c[1]+Math.sin(ang)*rad;}
+ let loc=hexNearest(x,y),q=loc[0],r=loc[1],choices=[];
+ if(ui.layout.value==='flower'){
+  const offsets=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
+  for(let k=0;k<offsets.length;k++){
+   let c=center(q+offsets[k][0],r+offsets[k][1]);
+   let dx=x-c[0],dy=y-c[1];
+   if(dx*dx+dy*dy<=R*R)choices.push(c);
+  }
  }
- return{x,y,vx:0,vy:0,age:0};
+ let c=choices.length?choices[Math.floor(randy()*choices.length)]:center(q,r);
+ let dx=x-c[0],dy=y-c[1],d=Math.hypot(dx,dy);
+ if(d>R-1.5){
+  let a=Math.atan2(dy,dx);
+  if(d<0.01)a=randy()*2*Math.PI;
+  let radius=Math.min(R-3,Math.max(0,d-2));
+  x=c[0]+Math.cos(a)*radius;y=c[1]+Math.sin(a)*radius;
+ }
+ return{x,y,vx:0,vy:0,age:0,cx:c[0],cy:c[1]};
 }
 function addSand(h){
  spawnPartial+=Number(ui.rain.value)*h;
@@ -135,20 +148,10 @@ function addSand(h){
  spawnPartial-=Math.floor(spawnPartial);
  for(let i=0;i<n;i++)p.push(newParticle());
 }
-function velocity(x,y){
- let loc=hexNearest(x,y),q=loc[0],r=loc[1];
- if(ui.layout.value==='physical'){
-  let ctr=center(q,r);return[omega*(ctr[1]-y),omega*(x-ctr[0]),ctr[0],ctr[1]];
- }
- let cx=0,cy=0,sum=0;
- const ds=[[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
- for(let k=0;k<7;k++){
-  let qq=q+ds[k][0],rr=r+ds[k][1],xx=W/2+spacing*(qq+rr/2),yy=H/2+spacing*CY*rr;
-  let dx=x-xx,dy=y-yy,u=1-(dx*dx+dy*dy)/(R*R);
-  if(u>0){let weight=u*u;sum+=weight;cx+=weight*xx;cy+=weight*yy;}
- }
- if(sum<=0){let c=center(q,r);cx=c[0];cy=c[1];}else{cx/=sum;cy/=sum;}
- return[omega*(cy-y),omega*(x-cx),cx,cy];
+// Each grain belongs to one whole circular disc. Neighbouring discs never
+// cancel each other's motion; their footprints may overlap in projection.
+function velocity(b){
+ return[omega*(b.cy-b.y),omega*(b.x-b.cx)];
 }
 function physicsStep(h){
  omega=Number(ui.rpm.value)*Math.PI/30;
@@ -156,7 +159,7 @@ function physicsStep(h){
  addSand(h);
  let damp=1-Math.exp(-drag*h);
  for(let i=0;i<p.length;i++){
-  let b=p[i],a=velocity(b.x,b.y);
+  let b=p[i],a=velocity(b);
   b.vx+=(a[0]-b.vx)*damp;b.vy+=(a[1]-b.vy)*damp;
   if(agitation){
    let f=agitation*Math.sqrt(h)*6;
@@ -164,11 +167,14 @@ function physicsStep(h){
    b.vy+=(randy()+randy()+randy()-1.5)*f;
   }
   b.x+=b.vx*h;b.y+=b.vy*h;b.age+=h;
-  if(ui.layout.value==='physical'){
-   let dx=b.x-a[2],dy=b.y-a[3],d=Math.hypot(dx,dy);
+  // Rims are enforced for every complete disc in either arrangement.
+  // The Flower mode represents overlapping independent layers, not one shared surface.
+  {
+   let dx=b.x-b.cx,dy=b.y-b.cy,d=Math.hypot(dx,dy);
    if(d>R-1.5){
     if(ui.rim.value==='spill'){p[i]=p[p.length-1];p.pop();i--;continue;}
-    let nx=dx/(d||1),ny=dy/(d||1);b.x=a[2]+nx*(R-1.5);b.y=a[3]+ny*(R-1.5);
+    let nx=dx/(d||1),ny=dy/(d||1);
+    b.x=b.cx+nx*(R-1.5);b.y=b.cy+ny*(R-1.5);
     let out=b.vx*nx+b.vy*ny;
     if(out>0){b.vx-=out*nx*1.4;b.vy-=out*ny*1.4;}
    }
@@ -188,7 +194,7 @@ function drawDiscs(){
    ctx.beginPath();ctx.arc(c.x,c.y,3,0,Math.PI*2);ctx.fillStyle='#7e9ba3';ctx.fill();
   }
  }else{
-  ctx.lineWidth=1;ctx.strokeStyle='rgba(95,133,159,.32)';
+  ctx.lineWidth=1.6;ctx.strokeStyle='rgba(110,184,215,.55)';
   for(const c of rotors){ctx.beginPath();ctx.arc(c.x,c.y,R,0,Math.PI*2);ctx.stroke();}
   for(const c of rotors){
    ctx.beginPath();ctx.arc(c.x,c.y,1.6,0,Math.PI*2);
@@ -223,6 +229,12 @@ function drawSand(){
 }
 function draw(){
  drawDiscs();drawSand();
+ // Show each FULL circumference above sand, even where discs overlap.
+ if(ui.layout.value==='flower'){
+  ctx.save();ctx.strokeStyle='rgba(128,195,224,.85)';ctx.lineWidth=1.35;
+  for(const c of rotors){ctx.beginPath();ctx.arc(c.x,c.y,R,0,2*Math.PI);ctx.stroke();}
+  ctx.restore();
+ }
  document.getElementById('elapsed').textContent=t.toFixed(1)+' s';
  document.getElementById('count').textContent=p.length.toLocaleString();
  document.getElementById('pile').textContent=maxDensity.toFixed(1)+' grains/cell';
